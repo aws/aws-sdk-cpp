@@ -24,9 +24,8 @@ EngineAttribute::EngineAttribute() :
 {
 }
 
-EngineAttribute::EngineAttribute(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
+EngineAttribute::EngineAttribute(JsonView jsonValue)
+  : EngineAttribute()
 {
   *this = jsonValue;
 }

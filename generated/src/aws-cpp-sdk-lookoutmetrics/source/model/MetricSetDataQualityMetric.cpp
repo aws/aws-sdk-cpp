@@ -24,9 +24,8 @@ MetricSetDataQualityMetric::MetricSetDataQualityMetric() :
 {
 }
 
-MetricSetDataQualityMetric::MetricSetDataQualityMetric(JsonView jsonValue) : 
-    m_metricSetArnHasBeenSet(false),
-    m_dataQualityMetricListHasBeenSet(false)
+MetricSetDataQualityMetric::MetricSetDataQualityMetric(JsonView jsonValue)
+  : MetricSetDataQualityMetric()
 {
   *this = jsonValue;
 }

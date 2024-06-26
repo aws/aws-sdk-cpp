@@ -34,19 +34,8 @@ EventType::EventType() :
 {
 }
 
-EventType::EventType(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_eventVariablesHasBeenSet(false),
-    m_labelsHasBeenSet(false),
-    m_entityTypesHasBeenSet(false),
-    m_eventIngestion(EventIngestion::NOT_SET),
-    m_eventIngestionHasBeenSet(false),
-    m_ingestedEventStatisticsHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_eventOrchestrationHasBeenSet(false)
+EventType::EventType(JsonView jsonValue)
+  : EventType()
 {
   *this = jsonValue;
 }

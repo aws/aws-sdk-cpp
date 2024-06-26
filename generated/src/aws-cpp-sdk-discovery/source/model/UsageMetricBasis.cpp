@@ -25,10 +25,8 @@ UsageMetricBasis::UsageMetricBasis() :
 {
 }
 
-UsageMetricBasis::UsageMetricBasis(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_percentageAdjust(0.0),
-    m_percentageAdjustHasBeenSet(false)
+UsageMetricBasis::UsageMetricBasis(JsonView jsonValue)
+  : UsageMetricBasis()
 {
   *this = jsonValue;
 }

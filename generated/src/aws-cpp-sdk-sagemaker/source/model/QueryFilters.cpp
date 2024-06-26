@@ -29,14 +29,8 @@ QueryFilters::QueryFilters() :
 {
 }
 
-QueryFilters::QueryFilters(JsonView jsonValue) : 
-    m_typesHasBeenSet(false),
-    m_lineageTypesHasBeenSet(false),
-    m_createdBeforeHasBeenSet(false),
-    m_createdAfterHasBeenSet(false),
-    m_modifiedBeforeHasBeenSet(false),
-    m_modifiedAfterHasBeenSet(false),
-    m_propertiesHasBeenSet(false)
+QueryFilters::QueryFilters(JsonView jsonValue)
+  : QueryFilters()
 {
   *this = jsonValue;
 }

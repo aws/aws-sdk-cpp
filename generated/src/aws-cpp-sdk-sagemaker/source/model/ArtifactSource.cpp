@@ -24,9 +24,8 @@ ArtifactSource::ArtifactSource() :
 {
 }
 
-ArtifactSource::ArtifactSource(JsonView jsonValue) : 
-    m_sourceUriHasBeenSet(false),
-    m_sourceTypesHasBeenSet(false)
+ArtifactSource::ArtifactSource(JsonView jsonValue)
+  : ArtifactSource()
 {
   *this = jsonValue;
 }

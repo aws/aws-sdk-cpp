@@ -25,10 +25,8 @@ P95Metrics::P95Metrics() :
 {
 }
 
-P95Metrics::P95Metrics(JsonView jsonValue) : 
-    m_iOPSHasBeenSet(false),
-    m_throughputHasBeenSet(false),
-    m_latencyHasBeenSet(false)
+P95Metrics::P95Metrics(JsonView jsonValue)
+  : P95Metrics()
 {
   *this = jsonValue;
 }

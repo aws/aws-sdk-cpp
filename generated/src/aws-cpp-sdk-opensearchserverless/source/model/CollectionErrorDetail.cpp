@@ -26,11 +26,8 @@ CollectionErrorDetail::CollectionErrorDetail() :
 {
 }
 
-CollectionErrorDetail::CollectionErrorDetail(JsonView jsonValue) : 
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false)
+CollectionErrorDetail::CollectionErrorDetail(JsonView jsonValue)
+  : CollectionErrorDetail()
 {
   *this = jsonValue;
 }

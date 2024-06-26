@@ -37,22 +37,8 @@ ContainerDefinition::ContainerDefinition() :
 {
 }
 
-ContainerDefinition::ContainerDefinition(JsonView jsonValue) : 
-    m_containerNameHasBeenSet(false),
-    m_imageUriHasBeenSet(false),
-    m_resolvedImageDigestHasBeenSet(false),
-    m_memoryLimitsHasBeenSet(false),
-    m_portConfigurationHasBeenSet(false),
-    m_cpu(0),
-    m_cpuHasBeenSet(false),
-    m_healthCheckHasBeenSet(false),
-    m_commandHasBeenSet(false),
-    m_essential(false),
-    m_essentialHasBeenSet(false),
-    m_entryPointHasBeenSet(false),
-    m_workingDirectoryHasBeenSet(false),
-    m_environmentHasBeenSet(false),
-    m_dependsOnHasBeenSet(false)
+ContainerDefinition::ContainerDefinition(JsonView jsonValue)
+  : ContainerDefinition()
 {
   *this = jsonValue;
 }

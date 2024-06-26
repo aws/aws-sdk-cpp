@@ -25,10 +25,8 @@ BatchResourceRequirement::BatchResourceRequirement() :
 {
 }
 
-BatchResourceRequirement::BatchResourceRequirement(JsonView jsonValue) : 
-    m_type(BatchResourceRequirementType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_valueHasBeenSet(false)
+BatchResourceRequirement::BatchResourceRequirement(JsonView jsonValue)
+  : BatchResourceRequirement()
 {
   *this = jsonValue;
 }

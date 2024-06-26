@@ -23,8 +23,8 @@ WorkflowMetrics::WorkflowMetrics() :
 {
 }
 
-WorkflowMetrics::WorkflowMetrics(JsonView jsonValue) : 
-    m_appflowIntegrationHasBeenSet(false)
+WorkflowMetrics::WorkflowMetrics(JsonView jsonValue)
+  : WorkflowMetrics()
 {
   *this = jsonValue;
 }

@@ -34,19 +34,8 @@ KubernetesApiCallAction::KubernetesApiCallAction() :
 {
 }
 
-KubernetesApiCallAction::KubernetesApiCallAction(JsonView jsonValue) : 
-    m_requestUriHasBeenSet(false),
-    m_verbHasBeenSet(false),
-    m_sourceIpsHasBeenSet(false),
-    m_userAgentHasBeenSet(false),
-    m_remoteIpDetailsHasBeenSet(false),
-    m_statusCode(0),
-    m_statusCodeHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_resourceHasBeenSet(false),
-    m_subresourceHasBeenSet(false),
-    m_namespaceHasBeenSet(false),
-    m_resourceNameHasBeenSet(false)
+KubernetesApiCallAction::KubernetesApiCallAction(JsonView jsonValue)
+  : KubernetesApiCallAction()
 {
   *this = jsonValue;
 }

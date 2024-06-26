@@ -24,9 +24,8 @@ CustomDeliveryConfiguration::CustomDeliveryConfiguration() :
 {
 }
 
-CustomDeliveryConfiguration::CustomDeliveryConfiguration(JsonView jsonValue) : 
-    m_deliveryUriHasBeenSet(false),
-    m_endpointTypesHasBeenSet(false)
+CustomDeliveryConfiguration::CustomDeliveryConfiguration(JsonView jsonValue)
+  : CustomDeliveryConfiguration()
 {
   *this = jsonValue;
 }

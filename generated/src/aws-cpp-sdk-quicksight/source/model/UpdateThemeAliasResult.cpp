@@ -22,8 +22,8 @@ UpdateThemeAliasResult::UpdateThemeAliasResult() :
 {
 }
 
-UpdateThemeAliasResult::UpdateThemeAliasResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+UpdateThemeAliasResult::UpdateThemeAliasResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateThemeAliasResult()
 {
   *this = result;
 }

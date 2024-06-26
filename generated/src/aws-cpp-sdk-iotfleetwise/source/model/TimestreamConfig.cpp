@@ -24,9 +24,8 @@ TimestreamConfig::TimestreamConfig() :
 {
 }
 
-TimestreamConfig::TimestreamConfig(JsonView jsonValue) : 
-    m_timestreamTableArnHasBeenSet(false),
-    m_executionRoleArnHasBeenSet(false)
+TimestreamConfig::TimestreamConfig(JsonView jsonValue)
+  : TimestreamConfig()
 {
   *this = jsonValue;
 }

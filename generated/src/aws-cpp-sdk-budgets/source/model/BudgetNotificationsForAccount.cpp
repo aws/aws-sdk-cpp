@@ -24,9 +24,8 @@ BudgetNotificationsForAccount::BudgetNotificationsForAccount() :
 {
 }
 
-BudgetNotificationsForAccount::BudgetNotificationsForAccount(JsonView jsonValue) : 
-    m_notificationsHasBeenSet(false),
-    m_budgetNameHasBeenSet(false)
+BudgetNotificationsForAccount::BudgetNotificationsForAccount(JsonView jsonValue)
+  : BudgetNotificationsForAccount()
 {
   *this = jsonValue;
 }

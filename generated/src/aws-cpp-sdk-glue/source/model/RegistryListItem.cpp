@@ -29,14 +29,8 @@ RegistryListItem::RegistryListItem() :
 {
 }
 
-RegistryListItem::RegistryListItem(JsonView jsonValue) : 
-    m_registryNameHasBeenSet(false),
-    m_registryArnHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_status(RegistryStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_updatedTimeHasBeenSet(false)
+RegistryListItem::RegistryListItem(JsonView jsonValue)
+  : RegistryListItem()
 {
   *this = jsonValue;
 }

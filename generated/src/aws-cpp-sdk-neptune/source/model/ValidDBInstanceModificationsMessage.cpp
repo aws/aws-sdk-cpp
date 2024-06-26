@@ -25,8 +25,8 @@ ValidDBInstanceModificationsMessage::ValidDBInstanceModificationsMessage() :
 {
 }
 
-ValidDBInstanceModificationsMessage::ValidDBInstanceModificationsMessage(const XmlNode& xmlNode) : 
-    m_storageHasBeenSet(false)
+ValidDBInstanceModificationsMessage::ValidDBInstanceModificationsMessage(const XmlNode& xmlNode)
+  : ValidDBInstanceModificationsMessage()
 {
   *this = xmlNode;
 }

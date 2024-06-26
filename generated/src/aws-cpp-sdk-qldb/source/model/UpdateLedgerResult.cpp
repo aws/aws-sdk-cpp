@@ -23,9 +23,8 @@ UpdateLedgerResult::UpdateLedgerResult() :
 {
 }
 
-UpdateLedgerResult::UpdateLedgerResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_state(LedgerState::NOT_SET),
-    m_deletionProtection(false)
+UpdateLedgerResult::UpdateLedgerResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateLedgerResult()
 {
   *this = result;
 }

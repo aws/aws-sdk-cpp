@@ -27,12 +27,8 @@ Device::Device() :
 {
 }
 
-Device::Device(JsonView jsonValue) : 
-    m_certificateArnHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_syncShadow(false),
-    m_syncShadowHasBeenSet(false),
-    m_thingArnHasBeenSet(false)
+Device::Device(JsonView jsonValue)
+  : Device()
 {
   *this = jsonValue;
 }

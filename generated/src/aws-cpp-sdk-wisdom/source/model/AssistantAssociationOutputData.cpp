@@ -23,8 +23,8 @@ AssistantAssociationOutputData::AssistantAssociationOutputData() :
 {
 }
 
-AssistantAssociationOutputData::AssistantAssociationOutputData(JsonView jsonValue) : 
-    m_knowledgeBaseAssociationHasBeenSet(false)
+AssistantAssociationOutputData::AssistantAssociationOutputData(JsonView jsonValue)
+  : AssistantAssociationOutputData()
 {
   *this = jsonValue;
 }

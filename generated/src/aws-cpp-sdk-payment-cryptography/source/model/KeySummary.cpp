@@ -31,16 +31,8 @@ KeySummary::KeySummary() :
 {
 }
 
-KeySummary::KeySummary(JsonView jsonValue) : 
-    m_keyArnHasBeenSet(false),
-    m_keyState(KeyState::NOT_SET),
-    m_keyStateHasBeenSet(false),
-    m_keyAttributesHasBeenSet(false),
-    m_keyCheckValueHasBeenSet(false),
-    m_exportable(false),
-    m_exportableHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
+KeySummary::KeySummary(JsonView jsonValue)
+  : KeySummary()
 {
   *this = jsonValue;
 }

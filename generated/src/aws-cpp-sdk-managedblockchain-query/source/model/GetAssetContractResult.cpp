@@ -22,8 +22,8 @@ GetAssetContractResult::GetAssetContractResult() :
 {
 }
 
-GetAssetContractResult::GetAssetContractResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_tokenStandard(QueryTokenStandard::NOT_SET)
+GetAssetContractResult::GetAssetContractResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetAssetContractResult()
 {
   *this = result;
 }

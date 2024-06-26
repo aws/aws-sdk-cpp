@@ -27,12 +27,8 @@ ClientPolicyTls::ClientPolicyTls() :
 {
 }
 
-ClientPolicyTls::ClientPolicyTls(JsonView jsonValue) : 
-    m_certificateHasBeenSet(false),
-    m_enforce(false),
-    m_enforceHasBeenSet(false),
-    m_portsHasBeenSet(false),
-    m_validationHasBeenSet(false)
+ClientPolicyTls::ClientPolicyTls(JsonView jsonValue)
+  : ClientPolicyTls()
 {
   *this = jsonValue;
 }

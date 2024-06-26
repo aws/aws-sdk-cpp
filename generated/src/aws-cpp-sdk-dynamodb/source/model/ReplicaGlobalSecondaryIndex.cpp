@@ -25,10 +25,8 @@ ReplicaGlobalSecondaryIndex::ReplicaGlobalSecondaryIndex() :
 {
 }
 
-ReplicaGlobalSecondaryIndex::ReplicaGlobalSecondaryIndex(JsonView jsonValue) : 
-    m_indexNameHasBeenSet(false),
-    m_provisionedThroughputOverrideHasBeenSet(false),
-    m_onDemandThroughputOverrideHasBeenSet(false)
+ReplicaGlobalSecondaryIndex::ReplicaGlobalSecondaryIndex(JsonView jsonValue)
+  : ReplicaGlobalSecondaryIndex()
 {
   *this = jsonValue;
 }

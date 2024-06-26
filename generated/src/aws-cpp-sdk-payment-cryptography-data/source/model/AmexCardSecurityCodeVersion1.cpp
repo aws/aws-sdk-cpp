@@ -23,8 +23,8 @@ AmexCardSecurityCodeVersion1::AmexCardSecurityCodeVersion1() :
 {
 }
 
-AmexCardSecurityCodeVersion1::AmexCardSecurityCodeVersion1(JsonView jsonValue) : 
-    m_cardExpiryDateHasBeenSet(false)
+AmexCardSecurityCodeVersion1::AmexCardSecurityCodeVersion1(JsonView jsonValue)
+  : AmexCardSecurityCodeVersion1()
 {
   *this = jsonValue;
 }

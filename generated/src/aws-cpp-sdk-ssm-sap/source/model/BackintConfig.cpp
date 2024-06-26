@@ -26,11 +26,8 @@ BackintConfig::BackintConfig() :
 {
 }
 
-BackintConfig::BackintConfig(JsonView jsonValue) : 
-    m_backintMode(BackintMode::NOT_SET),
-    m_backintModeHasBeenSet(false),
-    m_ensureNoBackupInProcess(false),
-    m_ensureNoBackupInProcessHasBeenSet(false)
+BackintConfig::BackintConfig(JsonView jsonValue)
+  : BackintConfig()
 {
   *this = jsonValue;
 }

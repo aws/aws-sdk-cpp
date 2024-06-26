@@ -26,11 +26,8 @@ ServiceMetadata::ServiceMetadata() :
 {
 }
 
-ServiceMetadata::ServiceMetadata(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_categoryHasBeenSet(false)
+ServiceMetadata::ServiceMetadata(JsonView jsonValue)
+  : ServiceMetadata()
 {
   *this = jsonValue;
 }

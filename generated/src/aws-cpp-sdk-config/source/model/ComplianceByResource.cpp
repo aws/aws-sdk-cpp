@@ -25,10 +25,8 @@ ComplianceByResource::ComplianceByResource() :
 {
 }
 
-ComplianceByResource::ComplianceByResource(JsonView jsonValue) : 
-    m_resourceTypeHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_complianceHasBeenSet(false)
+ComplianceByResource::ComplianceByResource(JsonView jsonValue)
+  : ComplianceByResource()
 {
   *this = jsonValue;
 }

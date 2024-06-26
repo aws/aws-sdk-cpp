@@ -29,14 +29,8 @@ SubscribedListing::SubscribedListing() :
 {
 }
 
-SubscribedListing::SubscribedListing(JsonView jsonValue) : 
-    m_descriptionHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_itemHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_ownerProjectIdHasBeenSet(false),
-    m_ownerProjectNameHasBeenSet(false),
-    m_revisionHasBeenSet(false)
+SubscribedListing::SubscribedListing(JsonView jsonValue)
+  : SubscribedListing()
 {
   *this = jsonValue;
 }

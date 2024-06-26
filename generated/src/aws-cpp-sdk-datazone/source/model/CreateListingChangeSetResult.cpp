@@ -22,8 +22,8 @@ CreateListingChangeSetResult::CreateListingChangeSetResult() :
 {
 }
 
-CreateListingChangeSetResult::CreateListingChangeSetResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(ListingStatus::NOT_SET)
+CreateListingChangeSetResult::CreateListingChangeSetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateListingChangeSetResult()
 {
   *this = result;
 }

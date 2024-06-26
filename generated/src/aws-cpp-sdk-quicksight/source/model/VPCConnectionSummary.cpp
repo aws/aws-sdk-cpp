@@ -36,21 +36,8 @@ VPCConnectionSummary::VPCConnectionSummary() :
 {
 }
 
-VPCConnectionSummary::VPCConnectionSummary(JsonView jsonValue) : 
-    m_vPCConnectionIdHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_vPCIdHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false),
-    m_dnsResolversHasBeenSet(false),
-    m_status(VPCConnectionResourceStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_availabilityStatus(VPCConnectionAvailabilityStatus::NOT_SET),
-    m_availabilityStatusHasBeenSet(false),
-    m_networkInterfacesHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false)
+VPCConnectionSummary::VPCConnectionSummary(JsonView jsonValue)
+  : VPCConnectionSummary()
 {
   *this = jsonValue;
 }

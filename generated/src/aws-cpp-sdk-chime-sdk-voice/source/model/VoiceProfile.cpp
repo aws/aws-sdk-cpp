@@ -28,13 +28,8 @@ VoiceProfile::VoiceProfile() :
 {
 }
 
-VoiceProfile::VoiceProfile(JsonView jsonValue) : 
-    m_voiceProfileIdHasBeenSet(false),
-    m_voiceProfileArnHasBeenSet(false),
-    m_voiceProfileDomainIdHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false),
-    m_updatedTimestampHasBeenSet(false),
-    m_expirationTimestampHasBeenSet(false)
+VoiceProfile::VoiceProfile(JsonView jsonValue)
+  : VoiceProfile()
 {
   *this = jsonValue;
 }

@@ -25,8 +25,8 @@ JSONOutput::JSONOutput() :
 {
 }
 
-JSONOutput::JSONOutput(const XmlNode& xmlNode) : 
-    m_recordDelimiterHasBeenSet(false)
+JSONOutput::JSONOutput(const XmlNode& xmlNode)
+  : JSONOutput()
 {
   *this = xmlNode;
 }

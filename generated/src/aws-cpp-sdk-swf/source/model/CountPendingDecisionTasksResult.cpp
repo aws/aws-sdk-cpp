@@ -23,9 +23,8 @@ CountPendingDecisionTasksResult::CountPendingDecisionTasksResult() :
 {
 }
 
-CountPendingDecisionTasksResult::CountPendingDecisionTasksResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_count(0),
-    m_truncated(false)
+CountPendingDecisionTasksResult::CountPendingDecisionTasksResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CountPendingDecisionTasksResult()
 {
   *this = result;
 }

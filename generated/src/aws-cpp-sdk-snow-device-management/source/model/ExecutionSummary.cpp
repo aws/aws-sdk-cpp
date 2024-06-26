@@ -27,12 +27,8 @@ ExecutionSummary::ExecutionSummary() :
 {
 }
 
-ExecutionSummary::ExecutionSummary(JsonView jsonValue) : 
-    m_executionIdHasBeenSet(false),
-    m_managedDeviceIdHasBeenSet(false),
-    m_state(ExecutionState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_taskIdHasBeenSet(false)
+ExecutionSummary::ExecutionSummary(JsonView jsonValue)
+  : ExecutionSummary()
 {
   *this = jsonValue;
 }

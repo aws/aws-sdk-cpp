@@ -26,11 +26,8 @@ ProductionVariantStatus::ProductionVariantStatus() :
 {
 }
 
-ProductionVariantStatus::ProductionVariantStatus(JsonView jsonValue) : 
-    m_status(VariantStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_startTimeHasBeenSet(false)
+ProductionVariantStatus::ProductionVariantStatus(JsonView jsonValue)
+  : ProductionVariantStatus()
 {
   *this = jsonValue;
 }

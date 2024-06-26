@@ -26,11 +26,8 @@ MySqlParameters::MySqlParameters() :
 {
 }
 
-MySqlParameters::MySqlParameters(JsonView jsonValue) : 
-    m_hostHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_databaseHasBeenSet(false)
+MySqlParameters::MySqlParameters(JsonView jsonValue)
+  : MySqlParameters()
 {
   *this = jsonValue;
 }

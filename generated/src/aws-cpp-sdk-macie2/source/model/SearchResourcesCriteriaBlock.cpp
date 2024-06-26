@@ -23,8 +23,8 @@ SearchResourcesCriteriaBlock::SearchResourcesCriteriaBlock() :
 {
 }
 
-SearchResourcesCriteriaBlock::SearchResourcesCriteriaBlock(JsonView jsonValue) : 
-    m_andHasBeenSet(false)
+SearchResourcesCriteriaBlock::SearchResourcesCriteriaBlock(JsonView jsonValue)
+  : SearchResourcesCriteriaBlock()
 {
   *this = jsonValue;
 }

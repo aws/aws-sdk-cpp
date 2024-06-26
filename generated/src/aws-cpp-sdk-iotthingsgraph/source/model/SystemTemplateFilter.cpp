@@ -25,10 +25,8 @@ SystemTemplateFilter::SystemTemplateFilter() :
 {
 }
 
-SystemTemplateFilter::SystemTemplateFilter(JsonView jsonValue) : 
-    m_name(SystemTemplateFilterName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
+SystemTemplateFilter::SystemTemplateFilter(JsonView jsonValue)
+  : SystemTemplateFilter()
 {
   *this = jsonValue;
 }

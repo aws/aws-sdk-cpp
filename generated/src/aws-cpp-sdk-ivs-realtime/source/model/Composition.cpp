@@ -31,16 +31,8 @@ Composition::Composition() :
 {
 }
 
-Composition::Composition(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_stageArnHasBeenSet(false),
-    m_state(CompositionState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_layoutHasBeenSet(false),
-    m_destinationsHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
+Composition::Composition(JsonView jsonValue)
+  : Composition()
 {
   *this = jsonValue;
 }

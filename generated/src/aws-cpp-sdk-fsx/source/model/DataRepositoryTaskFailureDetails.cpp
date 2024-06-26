@@ -23,8 +23,8 @@ DataRepositoryTaskFailureDetails::DataRepositoryTaskFailureDetails() :
 {
 }
 
-DataRepositoryTaskFailureDetails::DataRepositoryTaskFailureDetails(JsonView jsonValue) : 
-    m_messageHasBeenSet(false)
+DataRepositoryTaskFailureDetails::DataRepositoryTaskFailureDetails(JsonView jsonValue)
+  : DataRepositoryTaskFailureDetails()
 {
   *this = jsonValue;
 }

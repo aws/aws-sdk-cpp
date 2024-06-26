@@ -24,9 +24,8 @@ VirtualNodeGrpcConnectionPool::VirtualNodeGrpcConnectionPool() :
 {
 }
 
-VirtualNodeGrpcConnectionPool::VirtualNodeGrpcConnectionPool(JsonView jsonValue) : 
-    m_maxRequests(0),
-    m_maxRequestsHasBeenSet(false)
+VirtualNodeGrpcConnectionPool::VirtualNodeGrpcConnectionPool(JsonView jsonValue)
+  : VirtualNodeGrpcConnectionPool()
 {
   *this = jsonValue;
 }

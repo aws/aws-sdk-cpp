@@ -25,10 +25,8 @@ S3ContentLocationUpdate::S3ContentLocationUpdate() :
 {
 }
 
-S3ContentLocationUpdate::S3ContentLocationUpdate(JsonView jsonValue) : 
-    m_bucketARNUpdateHasBeenSet(false),
-    m_fileKeyUpdateHasBeenSet(false),
-    m_objectVersionUpdateHasBeenSet(false)
+S3ContentLocationUpdate::S3ContentLocationUpdate(JsonView jsonValue)
+  : S3ContentLocationUpdate()
 {
   *this = jsonValue;
 }

@@ -32,17 +32,8 @@ TemplateResponse::TemplateResponse() :
 {
 }
 
-TemplateResponse::TemplateResponse(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_defaultSubstitutionsHasBeenSet(false),
-    m_lastModifiedDateHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_templateDescriptionHasBeenSet(false),
-    m_templateNameHasBeenSet(false),
-    m_templateType(TemplateType::NOT_SET),
-    m_templateTypeHasBeenSet(false),
-    m_versionHasBeenSet(false)
+TemplateResponse::TemplateResponse(JsonView jsonValue)
+  : TemplateResponse()
 {
   *this = jsonValue;
 }

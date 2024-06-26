@@ -22,8 +22,8 @@ DescribeSpaceResult::DescribeSpaceResult() :
 {
 }
 
-DescribeSpaceResult::DescribeSpaceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(SpaceStatus::NOT_SET)
+DescribeSpaceResult::DescribeSpaceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeSpaceResult()
 {
   *this = result;
 }

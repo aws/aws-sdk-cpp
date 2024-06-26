@@ -25,10 +25,8 @@ DeleteStatisticsValueMap::DeleteStatisticsValueMap() :
 {
 }
 
-DeleteStatisticsValueMap::DeleteStatisticsValueMap(JsonView jsonValue) : 
-    m_active(false),
-    m_activeHasBeenSet(false),
-    m_statisticsIdHasBeenSet(false)
+DeleteStatisticsValueMap::DeleteStatisticsValueMap(JsonView jsonValue)
+  : DeleteStatisticsValueMap()
 {
   *this = jsonValue;
 }

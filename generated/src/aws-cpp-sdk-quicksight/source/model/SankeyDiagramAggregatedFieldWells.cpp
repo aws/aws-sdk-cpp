@@ -25,10 +25,8 @@ SankeyDiagramAggregatedFieldWells::SankeyDiagramAggregatedFieldWells() :
 {
 }
 
-SankeyDiagramAggregatedFieldWells::SankeyDiagramAggregatedFieldWells(JsonView jsonValue) : 
-    m_sourceHasBeenSet(false),
-    m_destinationHasBeenSet(false),
-    m_weightHasBeenSet(false)
+SankeyDiagramAggregatedFieldWells::SankeyDiagramAggregatedFieldWells(JsonView jsonValue)
+  : SankeyDiagramAggregatedFieldWells()
 {
   *this = jsonValue;
 }

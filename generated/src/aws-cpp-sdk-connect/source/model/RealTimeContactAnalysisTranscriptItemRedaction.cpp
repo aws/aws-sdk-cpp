@@ -23,8 +23,8 @@ RealTimeContactAnalysisTranscriptItemRedaction::RealTimeContactAnalysisTranscrip
 {
 }
 
-RealTimeContactAnalysisTranscriptItemRedaction::RealTimeContactAnalysisTranscriptItemRedaction(JsonView jsonValue) : 
-    m_characterOffsetsHasBeenSet(false)
+RealTimeContactAnalysisTranscriptItemRedaction::RealTimeContactAnalysisTranscriptItemRedaction(JsonView jsonValue)
+  : RealTimeContactAnalysisTranscriptItemRedaction()
 {
   *this = jsonValue;
 }

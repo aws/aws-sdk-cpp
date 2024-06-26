@@ -30,15 +30,8 @@ DashboardSummary::DashboardSummary() :
 {
 }
 
-DashboardSummary::DashboardSummary(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_dashboardIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_publishedVersionNumber(0),
-    m_publishedVersionNumberHasBeenSet(false),
-    m_lastPublishedTimeHasBeenSet(false)
+DashboardSummary::DashboardSummary(JsonView jsonValue)
+  : DashboardSummary()
 {
   *this = jsonValue;
 }

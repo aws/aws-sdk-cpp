@@ -31,16 +31,8 @@ ContactFlowSearchCriteria::ContactFlowSearchCriteria() :
 {
 }
 
-ContactFlowSearchCriteria::ContactFlowSearchCriteria(JsonView jsonValue) : 
-    m_orConditionsHasBeenSet(false),
-    m_andConditionsHasBeenSet(false),
-    m_stringConditionHasBeenSet(false),
-    m_typeCondition(ContactFlowType::NOT_SET),
-    m_typeConditionHasBeenSet(false),
-    m_stateCondition(ContactFlowState::NOT_SET),
-    m_stateConditionHasBeenSet(false),
-    m_statusCondition(ContactFlowStatus::NOT_SET),
-    m_statusConditionHasBeenSet(false)
+ContactFlowSearchCriteria::ContactFlowSearchCriteria(JsonView jsonValue)
+  : ContactFlowSearchCriteria()
 {
   *this = jsonValue;
 }

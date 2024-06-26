@@ -22,8 +22,8 @@ GetCoreDeviceResult::GetCoreDeviceResult() :
 {
 }
 
-GetCoreDeviceResult::GetCoreDeviceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(CoreDeviceStatus::NOT_SET)
+GetCoreDeviceResult::GetCoreDeviceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetCoreDeviceResult()
 {
   *this = result;
 }

@@ -32,17 +32,8 @@ LoRaWANDeviceMetadata::LoRaWANDeviceMetadata() :
 {
 }
 
-LoRaWANDeviceMetadata::LoRaWANDeviceMetadata(JsonView jsonValue) : 
-    m_devEuiHasBeenSet(false),
-    m_fPort(0),
-    m_fPortHasBeenSet(false),
-    m_dataRate(0),
-    m_dataRateHasBeenSet(false),
-    m_frequency(0),
-    m_frequencyHasBeenSet(false),
-    m_timestampHasBeenSet(false),
-    m_gatewaysHasBeenSet(false),
-    m_publicGatewaysHasBeenSet(false)
+LoRaWANDeviceMetadata::LoRaWANDeviceMetadata(JsonView jsonValue)
+  : LoRaWANDeviceMetadata()
 {
   *this = jsonValue;
 }

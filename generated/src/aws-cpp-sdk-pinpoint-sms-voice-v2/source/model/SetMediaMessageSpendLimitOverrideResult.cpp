@@ -22,8 +22,8 @@ SetMediaMessageSpendLimitOverrideResult::SetMediaMessageSpendLimitOverrideResult
 {
 }
 
-SetMediaMessageSpendLimitOverrideResult::SetMediaMessageSpendLimitOverrideResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_monthlyLimit(0)
+SetMediaMessageSpendLimitOverrideResult::SetMediaMessageSpendLimitOverrideResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : SetMediaMessageSpendLimitOverrideResult()
 {
   *this = result;
 }

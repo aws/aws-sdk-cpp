@@ -26,11 +26,8 @@ AwsEc2LaunchTemplateDataInstanceRequirementsVCpuCountDetails::AwsEc2LaunchTempla
 {
 }
 
-AwsEc2LaunchTemplateDataInstanceRequirementsVCpuCountDetails::AwsEc2LaunchTemplateDataInstanceRequirementsVCpuCountDetails(JsonView jsonValue) : 
-    m_max(0),
-    m_maxHasBeenSet(false),
-    m_min(0),
-    m_minHasBeenSet(false)
+AwsEc2LaunchTemplateDataInstanceRequirementsVCpuCountDetails::AwsEc2LaunchTemplateDataInstanceRequirementsVCpuCountDetails(JsonView jsonValue)
+  : AwsEc2LaunchTemplateDataInstanceRequirementsVCpuCountDetails()
 {
   *this = jsonValue;
 }

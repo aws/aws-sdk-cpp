@@ -24,10 +24,8 @@ GetAttachedFileResult::GetAttachedFileResult() :
 {
 }
 
-GetAttachedFileResult::GetAttachedFileResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_fileStatus(FileStatusType::NOT_SET),
-    m_fileSizeInBytes(0),
-    m_fileUseCaseType(FileUseCaseType::NOT_SET)
+GetAttachedFileResult::GetAttachedFileResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetAttachedFileResult()
 {
   *this = result;
 }

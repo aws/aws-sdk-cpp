@@ -25,10 +25,8 @@ CidrBlockAssociation::CidrBlockAssociation() :
 {
 }
 
-CidrBlockAssociation::CidrBlockAssociation(JsonView jsonValue) : 
-    m_associationIdHasBeenSet(false),
-    m_cidrBlockHasBeenSet(false),
-    m_cidrBlockStateHasBeenSet(false)
+CidrBlockAssociation::CidrBlockAssociation(JsonView jsonValue)
+  : CidrBlockAssociation()
 {
   *this = jsonValue;
 }

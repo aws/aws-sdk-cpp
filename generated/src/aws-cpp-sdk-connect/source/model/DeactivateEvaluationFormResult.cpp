@@ -22,8 +22,8 @@ DeactivateEvaluationFormResult::DeactivateEvaluationFormResult() :
 {
 }
 
-DeactivateEvaluationFormResult::DeactivateEvaluationFormResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_evaluationFormVersion(0)
+DeactivateEvaluationFormResult::DeactivateEvaluationFormResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeactivateEvaluationFormResult()
 {
   *this = result;
 }

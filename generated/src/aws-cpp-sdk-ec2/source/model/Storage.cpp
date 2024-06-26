@@ -25,8 +25,8 @@ Storage::Storage() :
 {
 }
 
-Storage::Storage(const XmlNode& xmlNode) : 
-    m_s3HasBeenSet(false)
+Storage::Storage(const XmlNode& xmlNode)
+  : Storage()
 {
   *this = xmlNode;
 }

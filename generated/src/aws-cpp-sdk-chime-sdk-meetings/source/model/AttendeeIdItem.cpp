@@ -23,8 +23,8 @@ AttendeeIdItem::AttendeeIdItem() :
 {
 }
 
-AttendeeIdItem::AttendeeIdItem(JsonView jsonValue) : 
-    m_attendeeIdHasBeenSet(false)
+AttendeeIdItem::AttendeeIdItem(JsonView jsonValue)
+  : AttendeeIdItem()
 {
   *this = jsonValue;
 }

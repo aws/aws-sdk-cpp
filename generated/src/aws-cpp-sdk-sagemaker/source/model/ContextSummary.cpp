@@ -28,13 +28,8 @@ ContextSummary::ContextSummary() :
 {
 }
 
-ContextSummary::ContextSummary(JsonView jsonValue) : 
-    m_contextArnHasBeenSet(false),
-    m_contextNameHasBeenSet(false),
-    m_sourceHasBeenSet(false),
-    m_contextTypeHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false)
+ContextSummary::ContextSummary(JsonView jsonValue)
+  : ContextSummary()
 {
   *this = jsonValue;
 }

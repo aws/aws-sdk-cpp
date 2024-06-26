@@ -30,15 +30,8 @@ VolumeStatistics::VolumeStatistics() :
 {
 }
 
-VolumeStatistics::VolumeStatistics(JsonView jsonValue) : 
-    m_inboxRawCount(0),
-    m_inboxRawCountHasBeenSet(false),
-    m_spamRawCount(0),
-    m_spamRawCountHasBeenSet(false),
-    m_projectedInbox(0),
-    m_projectedInboxHasBeenSet(false),
-    m_projectedSpam(0),
-    m_projectedSpamHasBeenSet(false)
+VolumeStatistics::VolumeStatistics(JsonView jsonValue)
+  : VolumeStatistics()
 {
   *this = jsonValue;
 }

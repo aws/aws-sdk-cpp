@@ -24,9 +24,8 @@ Span::Span() :
 {
 }
 
-Span::Span(JsonView jsonValue) : 
-    m_startHasBeenSet(false),
-    m_endHasBeenSet(false)
+Span::Span(JsonView jsonValue)
+  : Span()
 {
   *this = jsonValue;
 }

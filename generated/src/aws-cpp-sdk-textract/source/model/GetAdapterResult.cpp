@@ -22,8 +22,8 @@ GetAdapterResult::GetAdapterResult() :
 {
 }
 
-GetAdapterResult::GetAdapterResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_autoUpdate(AutoUpdate::NOT_SET)
+GetAdapterResult::GetAdapterResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetAdapterResult()
 {
   *this = result;
 }

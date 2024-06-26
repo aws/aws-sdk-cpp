@@ -24,9 +24,8 @@ FailedRemediationBatch::FailedRemediationBatch() :
 {
 }
 
-FailedRemediationBatch::FailedRemediationBatch(JsonView jsonValue) : 
-    m_failureMessageHasBeenSet(false),
-    m_failedItemsHasBeenSet(false)
+FailedRemediationBatch::FailedRemediationBatch(JsonView jsonValue)
+  : FailedRemediationBatch()
 {
   *this = jsonValue;
 }

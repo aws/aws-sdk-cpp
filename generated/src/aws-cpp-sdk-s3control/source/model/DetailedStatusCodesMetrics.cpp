@@ -26,9 +26,8 @@ DetailedStatusCodesMetrics::DetailedStatusCodesMetrics() :
 {
 }
 
-DetailedStatusCodesMetrics::DetailedStatusCodesMetrics(const XmlNode& xmlNode) : 
-    m_isEnabled(false),
-    m_isEnabledHasBeenSet(false)
+DetailedStatusCodesMetrics::DetailedStatusCodesMetrics(const XmlNode& xmlNode)
+  : DetailedStatusCodesMetrics()
 {
   *this = xmlNode;
 }

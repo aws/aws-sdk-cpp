@@ -26,11 +26,8 @@ VersionSummary::VersionSummary() :
 {
 }
 
-VersionSummary::VersionSummary(JsonView jsonValue) : 
-    m_applicationIdHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_semanticVersionHasBeenSet(false),
-    m_sourceCodeUrlHasBeenSet(false)
+VersionSummary::VersionSummary(JsonView jsonValue)
+  : VersionSummary()
 {
   *this = jsonValue;
 }

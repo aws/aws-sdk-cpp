@@ -27,12 +27,8 @@ AwsS3BucketObjectLockConfigurationRuleDefaultRetentionDetails::AwsS3BucketObject
 {
 }
 
-AwsS3BucketObjectLockConfigurationRuleDefaultRetentionDetails::AwsS3BucketObjectLockConfigurationRuleDefaultRetentionDetails(JsonView jsonValue) : 
-    m_days(0),
-    m_daysHasBeenSet(false),
-    m_modeHasBeenSet(false),
-    m_years(0),
-    m_yearsHasBeenSet(false)
+AwsS3BucketObjectLockConfigurationRuleDefaultRetentionDetails::AwsS3BucketObjectLockConfigurationRuleDefaultRetentionDetails(JsonView jsonValue)
+  : AwsS3BucketObjectLockConfigurationRuleDefaultRetentionDetails()
 {
   *this = jsonValue;
 }

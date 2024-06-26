@@ -25,10 +25,8 @@ CustomVocabularyImportSpecification::CustomVocabularyImportSpecification() :
 {
 }
 
-CustomVocabularyImportSpecification::CustomVocabularyImportSpecification(JsonView jsonValue) : 
-    m_botIdHasBeenSet(false),
-    m_botVersionHasBeenSet(false),
-    m_localeIdHasBeenSet(false)
+CustomVocabularyImportSpecification::CustomVocabularyImportSpecification(JsonView jsonValue)
+  : CustomVocabularyImportSpecification()
 {
   *this = jsonValue;
 }

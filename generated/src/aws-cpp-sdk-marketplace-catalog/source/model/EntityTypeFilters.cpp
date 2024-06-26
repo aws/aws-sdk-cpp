@@ -28,13 +28,8 @@ EntityTypeFilters::EntityTypeFilters() :
 {
 }
 
-EntityTypeFilters::EntityTypeFilters(JsonView jsonValue) : 
-    m_dataProductFiltersHasBeenSet(false),
-    m_saaSProductFiltersHasBeenSet(false),
-    m_amiProductFiltersHasBeenSet(false),
-    m_offerFiltersHasBeenSet(false),
-    m_containerProductFiltersHasBeenSet(false),
-    m_resaleAuthorizationFiltersHasBeenSet(false)
+EntityTypeFilters::EntityTypeFilters(JsonView jsonValue)
+  : EntityTypeFilters()
 {
   *this = jsonValue;
 }

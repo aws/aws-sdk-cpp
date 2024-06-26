@@ -26,11 +26,8 @@ DynamicCardVerificationValue::DynamicCardVerificationValue() :
 {
 }
 
-DynamicCardVerificationValue::DynamicCardVerificationValue(JsonView jsonValue) : 
-    m_applicationTransactionCounterHasBeenSet(false),
-    m_cardExpiryDateHasBeenSet(false),
-    m_panSequenceNumberHasBeenSet(false),
-    m_serviceCodeHasBeenSet(false)
+DynamicCardVerificationValue::DynamicCardVerificationValue(JsonView jsonValue)
+  : DynamicCardVerificationValue()
 {
   *this = jsonValue;
 }

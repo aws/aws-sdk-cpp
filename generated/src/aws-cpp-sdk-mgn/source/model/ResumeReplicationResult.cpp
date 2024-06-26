@@ -23,9 +23,8 @@ ResumeReplicationResult::ResumeReplicationResult() :
 {
 }
 
-ResumeReplicationResult::ResumeReplicationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_isArchived(false),
-    m_replicationType(ReplicationType::NOT_SET)
+ResumeReplicationResult::ResumeReplicationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ResumeReplicationResult()
 {
   *this = result;
 }

@@ -26,11 +26,8 @@ AccountSettings::AccountSettings() :
 {
 }
 
-AccountSettings::AccountSettings(JsonView jsonValue) : 
-    m_disableRemoteControl(false),
-    m_disableRemoteControlHasBeenSet(false),
-    m_enableDialOut(false),
-    m_enableDialOutHasBeenSet(false)
+AccountSettings::AccountSettings(JsonView jsonValue)
+  : AccountSettings()
 {
   *this = jsonValue;
 }

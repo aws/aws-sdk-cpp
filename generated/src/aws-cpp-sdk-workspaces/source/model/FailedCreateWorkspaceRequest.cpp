@@ -25,10 +25,8 @@ FailedCreateWorkspaceRequest::FailedCreateWorkspaceRequest() :
 {
 }
 
-FailedCreateWorkspaceRequest::FailedCreateWorkspaceRequest(JsonView jsonValue) : 
-    m_workspaceRequestHasBeenSet(false),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
+FailedCreateWorkspaceRequest::FailedCreateWorkspaceRequest(JsonView jsonValue)
+  : FailedCreateWorkspaceRequest()
 {
   *this = jsonValue;
 }

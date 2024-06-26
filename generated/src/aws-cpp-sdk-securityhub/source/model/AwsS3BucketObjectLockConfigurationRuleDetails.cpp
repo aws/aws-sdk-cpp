@@ -23,8 +23,8 @@ AwsS3BucketObjectLockConfigurationRuleDetails::AwsS3BucketObjectLockConfiguratio
 {
 }
 
-AwsS3BucketObjectLockConfigurationRuleDetails::AwsS3BucketObjectLockConfigurationRuleDetails(JsonView jsonValue) : 
-    m_defaultRetentionHasBeenSet(false)
+AwsS3BucketObjectLockConfigurationRuleDetails::AwsS3BucketObjectLockConfigurationRuleDetails(JsonView jsonValue)
+  : AwsS3BucketObjectLockConfigurationRuleDetails()
 {
   *this = jsonValue;
 }

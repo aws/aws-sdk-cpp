@@ -25,10 +25,8 @@ AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails::AwsEcsTaskDefin
 {
 }
 
-AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails(JsonView jsonValue) : 
-    m_logDriverHasBeenSet(false),
-    m_optionsHasBeenSet(false),
-    m_secretOptionsHasBeenSet(false)
+AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails(JsonView jsonValue)
+  : AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails()
 {
   *this = jsonValue;
 }

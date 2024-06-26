@@ -23,8 +23,8 @@ FilterSelectableValues::FilterSelectableValues() :
 {
 }
 
-FilterSelectableValues::FilterSelectableValues(JsonView jsonValue) : 
-    m_valuesHasBeenSet(false)
+FilterSelectableValues::FilterSelectableValues(JsonView jsonValue)
+  : FilterSelectableValues()
 {
   *this = jsonValue;
 }

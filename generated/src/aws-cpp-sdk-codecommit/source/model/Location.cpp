@@ -27,12 +27,8 @@ Location::Location() :
 {
 }
 
-Location::Location(JsonView jsonValue) : 
-    m_filePathHasBeenSet(false),
-    m_filePosition(0),
-    m_filePositionHasBeenSet(false),
-    m_relativeFileVersion(RelativeFileVersionEnum::NOT_SET),
-    m_relativeFileVersionHasBeenSet(false)
+Location::Location(JsonView jsonValue)
+  : Location()
 {
   *this = jsonValue;
 }

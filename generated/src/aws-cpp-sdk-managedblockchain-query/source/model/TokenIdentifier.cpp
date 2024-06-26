@@ -26,11 +26,8 @@ TokenIdentifier::TokenIdentifier() :
 {
 }
 
-TokenIdentifier::TokenIdentifier(JsonView jsonValue) : 
-    m_network(QueryNetwork::NOT_SET),
-    m_networkHasBeenSet(false),
-    m_contractAddressHasBeenSet(false),
-    m_tokenIdHasBeenSet(false)
+TokenIdentifier::TokenIdentifier(JsonView jsonValue)
+  : TokenIdentifier()
 {
   *this = jsonValue;
 }

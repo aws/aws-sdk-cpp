@@ -26,11 +26,8 @@ PardotConnectorProfileProperties::PardotConnectorProfileProperties() :
 {
 }
 
-PardotConnectorProfileProperties::PardotConnectorProfileProperties(JsonView jsonValue) : 
-    m_instanceUrlHasBeenSet(false),
-    m_isSandboxEnvironment(false),
-    m_isSandboxEnvironmentHasBeenSet(false),
-    m_businessUnitIdHasBeenSet(false)
+PardotConnectorProfileProperties::PardotConnectorProfileProperties(JsonView jsonValue)
+  : PardotConnectorProfileProperties()
 {
   *this = jsonValue;
 }

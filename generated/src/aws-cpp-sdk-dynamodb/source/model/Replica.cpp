@@ -23,8 +23,8 @@ Replica::Replica() :
 {
 }
 
-Replica::Replica(JsonView jsonValue) : 
-    m_regionNameHasBeenSet(false)
+Replica::Replica(JsonView jsonValue)
+  : Replica()
 {
   *this = jsonValue;
 }

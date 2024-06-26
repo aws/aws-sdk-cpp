@@ -37,22 +37,8 @@ EksAnywhereSubscription::EksAnywhereSubscription() :
 {
 }
 
-EksAnywhereSubscription::EksAnywhereSubscription(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_effectiveDateHasBeenSet(false),
-    m_expirationDateHasBeenSet(false),
-    m_licenseQuantity(0),
-    m_licenseQuantityHasBeenSet(false),
-    m_licenseType(EksAnywhereSubscriptionLicenseType::NOT_SET),
-    m_licenseTypeHasBeenSet(false),
-    m_termHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_autoRenew(false),
-    m_autoRenewHasBeenSet(false),
-    m_licenseArnsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+EksAnywhereSubscription::EksAnywhereSubscription(JsonView jsonValue)
+  : EksAnywhereSubscription()
 {
   *this = jsonValue;
 }

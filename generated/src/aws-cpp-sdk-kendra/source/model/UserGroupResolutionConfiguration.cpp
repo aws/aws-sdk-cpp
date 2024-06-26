@@ -24,9 +24,8 @@ UserGroupResolutionConfiguration::UserGroupResolutionConfiguration() :
 {
 }
 
-UserGroupResolutionConfiguration::UserGroupResolutionConfiguration(JsonView jsonValue) : 
-    m_userGroupResolutionMode(UserGroupResolutionMode::NOT_SET),
-    m_userGroupResolutionModeHasBeenSet(false)
+UserGroupResolutionConfiguration::UserGroupResolutionConfiguration(JsonView jsonValue)
+  : UserGroupResolutionConfiguration()
 {
   *this = jsonValue;
 }

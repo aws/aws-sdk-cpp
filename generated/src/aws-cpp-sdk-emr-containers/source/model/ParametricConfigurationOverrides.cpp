@@ -24,9 +24,8 @@ ParametricConfigurationOverrides::ParametricConfigurationOverrides() :
 {
 }
 
-ParametricConfigurationOverrides::ParametricConfigurationOverrides(JsonView jsonValue) : 
-    m_applicationConfigurationHasBeenSet(false),
-    m_monitoringConfigurationHasBeenSet(false)
+ParametricConfigurationOverrides::ParametricConfigurationOverrides(JsonView jsonValue)
+  : ParametricConfigurationOverrides()
 {
   *this = jsonValue;
 }

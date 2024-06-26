@@ -29,12 +29,8 @@ IpamPoolSourceResource::IpamPoolSourceResource() :
 {
 }
 
-IpamPoolSourceResource::IpamPoolSourceResource(const XmlNode& xmlNode) : 
-    m_resourceIdHasBeenSet(false),
-    m_resourceType(IpamPoolSourceResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_resourceRegionHasBeenSet(false),
-    m_resourceOwnerHasBeenSet(false)
+IpamPoolSourceResource::IpamPoolSourceResource(const XmlNode& xmlNode)
+  : IpamPoolSourceResource()
 {
   *this = xmlNode;
 }

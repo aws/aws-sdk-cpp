@@ -34,19 +34,8 @@ InferenceExperimentSummary::InferenceExperimentSummary() :
 {
 }
 
-InferenceExperimentSummary::InferenceExperimentSummary(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_type(InferenceExperimentType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_scheduleHasBeenSet(false),
-    m_status(InferenceExperimentStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusReasonHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_completionTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
+InferenceExperimentSummary::InferenceExperimentSummary(JsonView jsonValue)
+  : InferenceExperimentSummary()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ CoreDefinitionVersion::CoreDefinitionVersion() :
 {
 }
 
-CoreDefinitionVersion::CoreDefinitionVersion(JsonView jsonValue) : 
-    m_coresHasBeenSet(false)
+CoreDefinitionVersion::CoreDefinitionVersion(JsonView jsonValue)
+  : CoreDefinitionVersion()
 {
   *this = jsonValue;
 }

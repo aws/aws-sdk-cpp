@@ -24,9 +24,8 @@ SenderIdAndCountry::SenderIdAndCountry() :
 {
 }
 
-SenderIdAndCountry::SenderIdAndCountry(JsonView jsonValue) : 
-    m_senderIdHasBeenSet(false),
-    m_isoCountryCodeHasBeenSet(false)
+SenderIdAndCountry::SenderIdAndCountry(JsonView jsonValue)
+  : SenderIdAndCountry()
 {
   *this = jsonValue;
 }

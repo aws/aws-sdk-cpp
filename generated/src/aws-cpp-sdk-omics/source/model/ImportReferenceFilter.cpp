@@ -26,11 +26,8 @@ ImportReferenceFilter::ImportReferenceFilter() :
 {
 }
 
-ImportReferenceFilter::ImportReferenceFilter(JsonView jsonValue) : 
-    m_status(ReferenceImportJobStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_createdAfterHasBeenSet(false),
-    m_createdBeforeHasBeenSet(false)
+ImportReferenceFilter::ImportReferenceFilter(JsonView jsonValue)
+  : ImportReferenceFilter()
 {
   *this = jsonValue;
 }

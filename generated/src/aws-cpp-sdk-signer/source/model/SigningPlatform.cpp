@@ -34,19 +34,8 @@ SigningPlatform::SigningPlatform() :
 {
 }
 
-SigningPlatform::SigningPlatform(JsonView jsonValue) : 
-    m_platformIdHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_partnerHasBeenSet(false),
-    m_targetHasBeenSet(false),
-    m_category(Category::NOT_SET),
-    m_categoryHasBeenSet(false),
-    m_signingConfigurationHasBeenSet(false),
-    m_signingImageFormatHasBeenSet(false),
-    m_maxSizeInMB(0),
-    m_maxSizeInMBHasBeenSet(false),
-    m_revocationSupported(false),
-    m_revocationSupportedHasBeenSet(false)
+SigningPlatform::SigningPlatform(JsonView jsonValue)
+  : SigningPlatform()
 {
   *this = jsonValue;
 }

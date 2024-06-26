@@ -28,13 +28,8 @@ DeviceJob::DeviceJob() :
 {
 }
 
-DeviceJob::DeviceJob(JsonView jsonValue) : 
-    m_createdTimeHasBeenSet(false),
-    m_deviceIdHasBeenSet(false),
-    m_deviceNameHasBeenSet(false),
-    m_jobIdHasBeenSet(false),
-    m_jobType(JobType::NOT_SET),
-    m_jobTypeHasBeenSet(false)
+DeviceJob::DeviceJob(JsonView jsonValue)
+  : DeviceJob()
 {
   *this = jsonValue;
 }

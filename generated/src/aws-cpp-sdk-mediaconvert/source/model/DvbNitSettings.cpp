@@ -27,12 +27,8 @@ DvbNitSettings::DvbNitSettings() :
 {
 }
 
-DvbNitSettings::DvbNitSettings(JsonView jsonValue) : 
-    m_networkId(0),
-    m_networkIdHasBeenSet(false),
-    m_networkNameHasBeenSet(false),
-    m_nitInterval(0),
-    m_nitIntervalHasBeenSet(false)
+DvbNitSettings::DvbNitSettings(JsonView jsonValue)
+  : DvbNitSettings()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ IdentityCenterConfiguration::IdentityCenterConfiguration() :
 {
 }
 
-IdentityCenterConfiguration::IdentityCenterConfiguration(JsonView jsonValue) : 
-    m_enableIdentityCenter(false),
-    m_enableIdentityCenterHasBeenSet(false),
-    m_identityCenterInstanceArnHasBeenSet(false)
+IdentityCenterConfiguration::IdentityCenterConfiguration(JsonView jsonValue)
+  : IdentityCenterConfiguration()
 {
   *this = jsonValue;
 }

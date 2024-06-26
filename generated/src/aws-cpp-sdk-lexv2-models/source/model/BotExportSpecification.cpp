@@ -24,9 +24,8 @@ BotExportSpecification::BotExportSpecification() :
 {
 }
 
-BotExportSpecification::BotExportSpecification(JsonView jsonValue) : 
-    m_botIdHasBeenSet(false),
-    m_botVersionHasBeenSet(false)
+BotExportSpecification::BotExportSpecification(JsonView jsonValue)
+  : BotExportSpecification()
 {
   *this = jsonValue;
 }

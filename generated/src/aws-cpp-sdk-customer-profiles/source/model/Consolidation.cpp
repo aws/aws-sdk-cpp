@@ -23,8 +23,8 @@ Consolidation::Consolidation() :
 {
 }
 
-Consolidation::Consolidation(JsonView jsonValue) : 
-    m_matchingAttributesListHasBeenSet(false)
+Consolidation::Consolidation(JsonView jsonValue)
+  : Consolidation()
 {
   *this = jsonValue;
 }

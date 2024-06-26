@@ -29,14 +29,8 @@ TrustedAdvisorCheckSummary::TrustedAdvisorCheckSummary() :
 {
 }
 
-TrustedAdvisorCheckSummary::TrustedAdvisorCheckSummary(JsonView jsonValue) : 
-    m_checkIdHasBeenSet(false),
-    m_timestampHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_hasFlaggedResources(false),
-    m_hasFlaggedResourcesHasBeenSet(false),
-    m_resourcesSummaryHasBeenSet(false),
-    m_categorySpecificSummaryHasBeenSet(false)
+TrustedAdvisorCheckSummary::TrustedAdvisorCheckSummary(JsonView jsonValue)
+  : TrustedAdvisorCheckSummary()
 {
   *this = jsonValue;
 }

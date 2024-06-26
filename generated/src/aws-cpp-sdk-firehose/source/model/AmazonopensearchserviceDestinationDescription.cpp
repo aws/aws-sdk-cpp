@@ -38,23 +38,8 @@ AmazonopensearchserviceDestinationDescription::AmazonopensearchserviceDestinatio
 {
 }
 
-AmazonopensearchserviceDestinationDescription::AmazonopensearchserviceDestinationDescription(JsonView jsonValue) : 
-    m_roleARNHasBeenSet(false),
-    m_domainARNHasBeenSet(false),
-    m_clusterEndpointHasBeenSet(false),
-    m_indexNameHasBeenSet(false),
-    m_typeNameHasBeenSet(false),
-    m_indexRotationPeriod(AmazonopensearchserviceIndexRotationPeriod::NOT_SET),
-    m_indexRotationPeriodHasBeenSet(false),
-    m_bufferingHintsHasBeenSet(false),
-    m_retryOptionsHasBeenSet(false),
-    m_s3BackupMode(AmazonopensearchserviceS3BackupMode::NOT_SET),
-    m_s3BackupModeHasBeenSet(false),
-    m_s3DestinationDescriptionHasBeenSet(false),
-    m_processingConfigurationHasBeenSet(false),
-    m_cloudWatchLoggingOptionsHasBeenSet(false),
-    m_vpcConfigurationDescriptionHasBeenSet(false),
-    m_documentIdOptionsHasBeenSet(false)
+AmazonopensearchserviceDestinationDescription::AmazonopensearchserviceDestinationDescription(JsonView jsonValue)
+  : AmazonopensearchserviceDestinationDescription()
 {
   *this = jsonValue;
 }

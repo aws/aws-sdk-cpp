@@ -22,8 +22,8 @@ GetWirelessGatewayStatisticsResult::GetWirelessGatewayStatisticsResult() :
 {
 }
 
-GetWirelessGatewayStatisticsResult::GetWirelessGatewayStatisticsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_connectionStatus(ConnectionStatus::NOT_SET)
+GetWirelessGatewayStatisticsResult::GetWirelessGatewayStatisticsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetWirelessGatewayStatisticsResult()
 {
   *this = result;
 }

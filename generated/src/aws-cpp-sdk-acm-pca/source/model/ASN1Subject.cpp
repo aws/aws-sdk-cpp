@@ -37,22 +37,8 @@ ASN1Subject::ASN1Subject() :
 {
 }
 
-ASN1Subject::ASN1Subject(JsonView jsonValue) : 
-    m_countryHasBeenSet(false),
-    m_organizationHasBeenSet(false),
-    m_organizationalUnitHasBeenSet(false),
-    m_distinguishedNameQualifierHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_commonNameHasBeenSet(false),
-    m_serialNumberHasBeenSet(false),
-    m_localityHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_surnameHasBeenSet(false),
-    m_givenNameHasBeenSet(false),
-    m_initialsHasBeenSet(false),
-    m_pseudonymHasBeenSet(false),
-    m_generationQualifierHasBeenSet(false),
-    m_customAttributesHasBeenSet(false)
+ASN1Subject::ASN1Subject(JsonView jsonValue)
+  : ASN1Subject()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ UserAccessLoggingSettingsSummary::UserAccessLoggingSettingsSummary() :
 {
 }
 
-UserAccessLoggingSettingsSummary::UserAccessLoggingSettingsSummary(JsonView jsonValue) : 
-    m_kinesisStreamArnHasBeenSet(false),
-    m_userAccessLoggingSettingsArnHasBeenSet(false)
+UserAccessLoggingSettingsSummary::UserAccessLoggingSettingsSummary(JsonView jsonValue)
+  : UserAccessLoggingSettingsSummary()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ IntentClassificationTestResultItem::IntentClassificationTestResultItem() :
 {
 }
 
-IntentClassificationTestResultItem::IntentClassificationTestResultItem(JsonView jsonValue) : 
-    m_intentNameHasBeenSet(false),
-    m_multiTurnConversation(false),
-    m_multiTurnConversationHasBeenSet(false),
-    m_resultCountsHasBeenSet(false)
+IntentClassificationTestResultItem::IntentClassificationTestResultItem(JsonView jsonValue)
+  : IntentClassificationTestResultItem()
 {
   *this = jsonValue;
 }

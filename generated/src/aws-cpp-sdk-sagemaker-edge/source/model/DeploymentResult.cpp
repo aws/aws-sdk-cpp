@@ -28,13 +28,8 @@ DeploymentResult::DeploymentResult() :
 {
 }
 
-DeploymentResult::DeploymentResult(JsonView jsonValue) : 
-    m_deploymentNameHasBeenSet(false),
-    m_deploymentStatusHasBeenSet(false),
-    m_deploymentStatusMessageHasBeenSet(false),
-    m_deploymentStartTimeHasBeenSet(false),
-    m_deploymentEndTimeHasBeenSet(false),
-    m_deploymentModelsHasBeenSet(false)
+DeploymentResult::DeploymentResult(JsonView jsonValue)
+  : DeploymentResult()
 {
   *this = jsonValue;
 }

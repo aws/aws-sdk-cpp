@@ -25,10 +25,8 @@ DataSourceToIndexFieldMapping::DataSourceToIndexFieldMapping() :
 {
 }
 
-DataSourceToIndexFieldMapping::DataSourceToIndexFieldMapping(JsonView jsonValue) : 
-    m_dataSourceFieldNameHasBeenSet(false),
-    m_dateFieldFormatHasBeenSet(false),
-    m_indexFieldNameHasBeenSet(false)
+DataSourceToIndexFieldMapping::DataSourceToIndexFieldMapping(JsonView jsonValue)
+  : DataSourceToIndexFieldMapping()
 {
   *this = jsonValue;
 }

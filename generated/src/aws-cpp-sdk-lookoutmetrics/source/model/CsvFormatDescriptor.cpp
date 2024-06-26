@@ -30,15 +30,8 @@ CsvFormatDescriptor::CsvFormatDescriptor() :
 {
 }
 
-CsvFormatDescriptor::CsvFormatDescriptor(JsonView jsonValue) : 
-    m_fileCompression(CSVFileCompression::NOT_SET),
-    m_fileCompressionHasBeenSet(false),
-    m_charsetHasBeenSet(false),
-    m_containsHeader(false),
-    m_containsHeaderHasBeenSet(false),
-    m_delimiterHasBeenSet(false),
-    m_headerListHasBeenSet(false),
-    m_quoteSymbolHasBeenSet(false)
+CsvFormatDescriptor::CsvFormatDescriptor(JsonView jsonValue)
+  : CsvFormatDescriptor()
 {
   *this = jsonValue;
 }

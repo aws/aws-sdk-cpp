@@ -22,8 +22,8 @@ DeleteStorageVirtualMachineResult::DeleteStorageVirtualMachineResult() :
 {
 }
 
-DeleteStorageVirtualMachineResult::DeleteStorageVirtualMachineResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_lifecycle(StorageVirtualMachineLifecycle::NOT_SET)
+DeleteStorageVirtualMachineResult::DeleteStorageVirtualMachineResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeleteStorageVirtualMachineResult()
 {
   *this = result;
 }

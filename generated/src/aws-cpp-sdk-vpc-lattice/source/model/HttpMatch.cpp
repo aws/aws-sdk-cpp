@@ -25,10 +25,8 @@ HttpMatch::HttpMatch() :
 {
 }
 
-HttpMatch::HttpMatch(JsonView jsonValue) : 
-    m_headerMatchesHasBeenSet(false),
-    m_methodHasBeenSet(false),
-    m_pathMatchHasBeenSet(false)
+HttpMatch::HttpMatch(JsonView jsonValue)
+  : HttpMatch()
 {
   *this = jsonValue;
 }

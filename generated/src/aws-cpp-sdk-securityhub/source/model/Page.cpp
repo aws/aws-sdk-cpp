@@ -26,11 +26,8 @@ Page::Page() :
 {
 }
 
-Page::Page(JsonView jsonValue) : 
-    m_pageNumber(0),
-    m_pageNumberHasBeenSet(false),
-    m_lineRangeHasBeenSet(false),
-    m_offsetRangeHasBeenSet(false)
+Page::Page(JsonView jsonValue)
+  : Page()
 {
   *this = jsonValue;
 }

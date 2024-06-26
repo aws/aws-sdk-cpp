@@ -31,16 +31,8 @@ AggregatedSourceStatus::AggregatedSourceStatus() :
 {
 }
 
-AggregatedSourceStatus::AggregatedSourceStatus(JsonView jsonValue) : 
-    m_sourceIdHasBeenSet(false),
-    m_sourceType(AggregatedSourceType::NOT_SET),
-    m_sourceTypeHasBeenSet(false),
-    m_awsRegionHasBeenSet(false),
-    m_lastUpdateStatus(AggregatedSourceStatusType::NOT_SET),
-    m_lastUpdateStatusHasBeenSet(false),
-    m_lastUpdateTimeHasBeenSet(false),
-    m_lastErrorCodeHasBeenSet(false),
-    m_lastErrorMessageHasBeenSet(false)
+AggregatedSourceStatus::AggregatedSourceStatus(JsonView jsonValue)
+  : AggregatedSourceStatus()
 {
   *this = jsonValue;
 }

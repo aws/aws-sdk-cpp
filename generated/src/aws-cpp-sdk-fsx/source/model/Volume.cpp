@@ -36,21 +36,8 @@ Volume::Volume() :
 {
 }
 
-Volume::Volume(JsonView jsonValue) : 
-    m_creationTimeHasBeenSet(false),
-    m_fileSystemIdHasBeenSet(false),
-    m_lifecycle(VolumeLifecycle::NOT_SET),
-    m_lifecycleHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_ontapConfigurationHasBeenSet(false),
-    m_resourceARNHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_volumeIdHasBeenSet(false),
-    m_volumeType(VolumeType::NOT_SET),
-    m_volumeTypeHasBeenSet(false),
-    m_lifecycleTransitionReasonHasBeenSet(false),
-    m_administrativeActionsHasBeenSet(false),
-    m_openZFSConfigurationHasBeenSet(false)
+Volume::Volume(JsonView jsonValue)
+  : Volume()
 {
   *this = jsonValue;
 }

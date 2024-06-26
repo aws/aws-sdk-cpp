@@ -26,11 +26,8 @@ ConditionalFormattingCustomIconCondition::ConditionalFormattingCustomIconConditi
 {
 }
 
-ConditionalFormattingCustomIconCondition::ConditionalFormattingCustomIconCondition(JsonView jsonValue) : 
-    m_expressionHasBeenSet(false),
-    m_iconOptionsHasBeenSet(false),
-    m_colorHasBeenSet(false),
-    m_displayConfigurationHasBeenSet(false)
+ConditionalFormattingCustomIconCondition::ConditionalFormattingCustomIconCondition(JsonView jsonValue)
+  : ConditionalFormattingCustomIconCondition()
 {
   *this = jsonValue;
 }

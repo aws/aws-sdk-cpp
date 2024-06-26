@@ -22,8 +22,8 @@ DeleteIndexResult::DeleteIndexResult() :
 {
 }
 
-DeleteIndexResult::DeleteIndexResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_state(IndexState::NOT_SET)
+DeleteIndexResult::DeleteIndexResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeleteIndexResult()
 {
   *this = result;
 }

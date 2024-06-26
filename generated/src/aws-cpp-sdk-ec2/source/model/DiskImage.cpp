@@ -27,10 +27,8 @@ DiskImage::DiskImage() :
 {
 }
 
-DiskImage::DiskImage(const XmlNode& xmlNode) : 
-    m_descriptionHasBeenSet(false),
-    m_imageHasBeenSet(false),
-    m_volumeHasBeenSet(false)
+DiskImage::DiskImage(const XmlNode& xmlNode)
+  : DiskImage()
 {
   *this = xmlNode;
 }

@@ -30,15 +30,8 @@ BatchLoadTask::BatchLoadTask() :
 {
 }
 
-BatchLoadTask::BatchLoadTask(JsonView jsonValue) : 
-    m_taskIdHasBeenSet(false),
-    m_taskStatus(BatchLoadStatus::NOT_SET),
-    m_taskStatusHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_tableNameHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_resumableUntilHasBeenSet(false)
+BatchLoadTask::BatchLoadTask(JsonView jsonValue)
+  : BatchLoadTask()
 {
   *this = jsonValue;
 }

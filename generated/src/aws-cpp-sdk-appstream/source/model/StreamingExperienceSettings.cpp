@@ -24,9 +24,8 @@ StreamingExperienceSettings::StreamingExperienceSettings() :
 {
 }
 
-StreamingExperienceSettings::StreamingExperienceSettings(JsonView jsonValue) : 
-    m_preferredProtocol(PreferredProtocol::NOT_SET),
-    m_preferredProtocolHasBeenSet(false)
+StreamingExperienceSettings::StreamingExperienceSettings(JsonView jsonValue)
+  : StreamingExperienceSettings()
 {
   *this = jsonValue;
 }

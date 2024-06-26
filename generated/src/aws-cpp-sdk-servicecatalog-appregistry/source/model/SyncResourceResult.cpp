@@ -22,8 +22,8 @@ SyncResourceResult::SyncResourceResult() :
 {
 }
 
-SyncResourceResult::SyncResourceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_actionTaken(SyncAction::NOT_SET)
+SyncResourceResult::SyncResourceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : SyncResourceResult()
 {
   *this = result;
 }

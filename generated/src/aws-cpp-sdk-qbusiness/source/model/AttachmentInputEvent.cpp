@@ -23,8 +23,8 @@ AttachmentInputEvent::AttachmentInputEvent() :
 {
 }
 
-AttachmentInputEvent::AttachmentInputEvent(JsonView jsonValue) : 
-    m_attachmentHasBeenSet(false)
+AttachmentInputEvent::AttachmentInputEvent(JsonView jsonValue)
+  : AttachmentInputEvent()
 {
   *this = jsonValue;
 }

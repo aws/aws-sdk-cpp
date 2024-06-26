@@ -34,19 +34,8 @@ VideoConfiguration::VideoConfiguration() :
 {
 }
 
-VideoConfiguration::VideoConfiguration(JsonView jsonValue) : 
-    m_avcLevelHasBeenSet(false),
-    m_avcProfileHasBeenSet(false),
-    m_codecHasBeenSet(false),
-    m_encoderHasBeenSet(false),
-    m_targetBitrate(0),
-    m_targetBitrateHasBeenSet(false),
-    m_targetFramerate(0),
-    m_targetFramerateHasBeenSet(false),
-    m_videoHeight(0),
-    m_videoHeightHasBeenSet(false),
-    m_videoWidth(0),
-    m_videoWidthHasBeenSet(false)
+VideoConfiguration::VideoConfiguration(JsonView jsonValue)
+  : VideoConfiguration()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ AddressIdentifierFilter::AddressIdentifierFilter() :
 {
 }
 
-AddressIdentifierFilter::AddressIdentifierFilter(JsonView jsonValue) : 
-    m_transactionEventToAddressHasBeenSet(false)
+AddressIdentifierFilter::AddressIdentifierFilter(JsonView jsonValue)
+  : AddressIdentifierFilter()
 {
   *this = jsonValue;
 }

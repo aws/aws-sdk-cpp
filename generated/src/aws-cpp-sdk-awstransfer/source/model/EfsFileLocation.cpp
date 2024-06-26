@@ -24,9 +24,8 @@ EfsFileLocation::EfsFileLocation() :
 {
 }
 
-EfsFileLocation::EfsFileLocation(JsonView jsonValue) : 
-    m_fileSystemIdHasBeenSet(false),
-    m_pathHasBeenSet(false)
+EfsFileLocation::EfsFileLocation(JsonView jsonValue)
+  : EfsFileLocation()
 {
   *this = jsonValue;
 }

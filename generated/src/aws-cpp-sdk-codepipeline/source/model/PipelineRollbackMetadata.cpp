@@ -23,8 +23,8 @@ PipelineRollbackMetadata::PipelineRollbackMetadata() :
 {
 }
 
-PipelineRollbackMetadata::PipelineRollbackMetadata(JsonView jsonValue) : 
-    m_rollbackTargetPipelineExecutionIdHasBeenSet(false)
+PipelineRollbackMetadata::PipelineRollbackMetadata(JsonView jsonValue)
+  : PipelineRollbackMetadata()
 {
   *this = jsonValue;
 }

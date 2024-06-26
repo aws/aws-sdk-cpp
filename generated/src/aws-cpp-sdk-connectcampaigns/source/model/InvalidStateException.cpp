@@ -25,9 +25,8 @@ InvalidStateException::InvalidStateException() :
 {
 }
 
-InvalidStateException::InvalidStateException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_xAmzErrorTypeHasBeenSet(false)
+InvalidStateException::InvalidStateException(JsonView jsonValue)
+  : InvalidStateException()
 {
   *this = jsonValue;
 }

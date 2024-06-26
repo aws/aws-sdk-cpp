@@ -29,12 +29,8 @@ PropertyDifference::PropertyDifference() :
 {
 }
 
-PropertyDifference::PropertyDifference(const XmlNode& xmlNode) : 
-    m_propertyPathHasBeenSet(false),
-    m_expectedValueHasBeenSet(false),
-    m_actualValueHasBeenSet(false),
-    m_differenceType(DifferenceType::NOT_SET),
-    m_differenceTypeHasBeenSet(false)
+PropertyDifference::PropertyDifference(const XmlNode& xmlNode)
+  : PropertyDifference()
 {
   *this = xmlNode;
 }

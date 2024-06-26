@@ -27,12 +27,8 @@ WorkflowExecutionSignaledEventAttributes::WorkflowExecutionSignaledEventAttribut
 {
 }
 
-WorkflowExecutionSignaledEventAttributes::WorkflowExecutionSignaledEventAttributes(JsonView jsonValue) : 
-    m_signalNameHasBeenSet(false),
-    m_inputHasBeenSet(false),
-    m_externalWorkflowExecutionHasBeenSet(false),
-    m_externalInitiatedEventId(0),
-    m_externalInitiatedEventIdHasBeenSet(false)
+WorkflowExecutionSignaledEventAttributes::WorkflowExecutionSignaledEventAttributes(JsonView jsonValue)
+  : WorkflowExecutionSignaledEventAttributes()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ S3BucketLogDestination::S3BucketLogDestination() :
 {
 }
 
-S3BucketLogDestination::S3BucketLogDestination(JsonView jsonValue) : 
-    m_kmsKeyArnHasBeenSet(false),
-    m_s3BucketArnHasBeenSet(false),
-    m_logPrefixHasBeenSet(false)
+S3BucketLogDestination::S3BucketLogDestination(JsonView jsonValue)
+  : S3BucketLogDestination()
 {
   *this = jsonValue;
 }

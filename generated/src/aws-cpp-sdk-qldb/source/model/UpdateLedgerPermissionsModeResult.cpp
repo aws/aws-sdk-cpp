@@ -22,8 +22,8 @@ UpdateLedgerPermissionsModeResult::UpdateLedgerPermissionsModeResult() :
 {
 }
 
-UpdateLedgerPermissionsModeResult::UpdateLedgerPermissionsModeResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_permissionsMode(PermissionsMode::NOT_SET)
+UpdateLedgerPermissionsModeResult::UpdateLedgerPermissionsModeResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateLedgerPermissionsModeResult()
 {
   *this = result;
 }

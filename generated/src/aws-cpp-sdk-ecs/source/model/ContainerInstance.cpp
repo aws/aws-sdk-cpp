@@ -45,30 +45,8 @@ ContainerInstance::ContainerInstance() :
 {
 }
 
-ContainerInstance::ContainerInstance(JsonView jsonValue) : 
-    m_containerInstanceArnHasBeenSet(false),
-    m_ec2InstanceIdHasBeenSet(false),
-    m_capacityProviderNameHasBeenSet(false),
-    m_version(0),
-    m_versionHasBeenSet(false),
-    m_versionInfoHasBeenSet(false),
-    m_remainingResourcesHasBeenSet(false),
-    m_registeredResourcesHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_statusReasonHasBeenSet(false),
-    m_agentConnected(false),
-    m_agentConnectedHasBeenSet(false),
-    m_runningTasksCount(0),
-    m_runningTasksCountHasBeenSet(false),
-    m_pendingTasksCount(0),
-    m_pendingTasksCountHasBeenSet(false),
-    m_agentUpdateStatus(AgentUpdateStatus::NOT_SET),
-    m_agentUpdateStatusHasBeenSet(false),
-    m_attributesHasBeenSet(false),
-    m_registeredAtHasBeenSet(false),
-    m_attachmentsHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_healthStatusHasBeenSet(false)
+ContainerInstance::ContainerInstance(JsonView jsonValue)
+  : ContainerInstance()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ GetDataLakeExceptionSubscriptionResult::GetDataLakeExceptionSubscriptionResult()
 {
 }
 
-GetDataLakeExceptionSubscriptionResult::GetDataLakeExceptionSubscriptionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_exceptionTimeToLive(0)
+GetDataLakeExceptionSubscriptionResult::GetDataLakeExceptionSubscriptionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetDataLakeExceptionSubscriptionResult()
 {
   *this = result;
 }

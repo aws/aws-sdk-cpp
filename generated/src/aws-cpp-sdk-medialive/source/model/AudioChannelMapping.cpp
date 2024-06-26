@@ -25,10 +25,8 @@ AudioChannelMapping::AudioChannelMapping() :
 {
 }
 
-AudioChannelMapping::AudioChannelMapping(JsonView jsonValue) : 
-    m_inputChannelLevelsHasBeenSet(false),
-    m_outputChannel(0),
-    m_outputChannelHasBeenSet(false)
+AudioChannelMapping::AudioChannelMapping(JsonView jsonValue)
+  : AudioChannelMapping()
 {
   *this = jsonValue;
 }

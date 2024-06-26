@@ -25,10 +25,8 @@ ComponentRunWith::ComponentRunWith() :
 {
 }
 
-ComponentRunWith::ComponentRunWith(JsonView jsonValue) : 
-    m_posixUserHasBeenSet(false),
-    m_systemResourceLimitsHasBeenSet(false),
-    m_windowsUserHasBeenSet(false)
+ComponentRunWith::ComponentRunWith(JsonView jsonValue)
+  : ComponentRunWith()
 {
   *this = jsonValue;
 }

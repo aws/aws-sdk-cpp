@@ -24,9 +24,8 @@ ReplicationNotFound::ReplicationNotFound() :
 {
 }
 
-ReplicationNotFound::ReplicationNotFound(JsonView jsonValue) : 
-    m_errorCodeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+ReplicationNotFound::ReplicationNotFound(JsonView jsonValue)
+  : ReplicationNotFound()
 {
   *this = jsonValue;
 }

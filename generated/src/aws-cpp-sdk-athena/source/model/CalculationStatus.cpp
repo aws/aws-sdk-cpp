@@ -27,12 +27,8 @@ CalculationStatus::CalculationStatus() :
 {
 }
 
-CalculationStatus::CalculationStatus(JsonView jsonValue) : 
-    m_submissionDateTimeHasBeenSet(false),
-    m_completionDateTimeHasBeenSet(false),
-    m_state(CalculationExecutionState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_stateChangeReasonHasBeenSet(false)
+CalculationStatus::CalculationStatus(JsonView jsonValue)
+  : CalculationStatus()
 {
   *this = jsonValue;
 }

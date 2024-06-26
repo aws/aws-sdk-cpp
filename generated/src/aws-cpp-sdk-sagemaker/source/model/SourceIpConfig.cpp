@@ -23,8 +23,8 @@ SourceIpConfig::SourceIpConfig() :
 {
 }
 
-SourceIpConfig::SourceIpConfig(JsonView jsonValue) : 
-    m_cidrsHasBeenSet(false)
+SourceIpConfig::SourceIpConfig(JsonView jsonValue)
+  : SourceIpConfig()
 {
   *this = jsonValue;
 }

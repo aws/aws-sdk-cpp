@@ -26,11 +26,8 @@ AnalysisError::AnalysisError() :
 {
 }
 
-AnalysisError::AnalysisError(JsonView jsonValue) : 
-    m_type(AnalysisErrorType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_violatedEntitiesHasBeenSet(false)
+AnalysisError::AnalysisError(JsonView jsonValue)
+  : AnalysisError()
 {
   *this = jsonValue;
 }

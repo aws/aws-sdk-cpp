@@ -22,8 +22,8 @@ GetAssociationForServiceQuotaTemplateResult::GetAssociationForServiceQuotaTempla
 {
 }
 
-GetAssociationForServiceQuotaTemplateResult::GetAssociationForServiceQuotaTemplateResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_serviceQuotaTemplateAssociationStatus(ServiceQuotaTemplateAssociationStatus::NOT_SET)
+GetAssociationForServiceQuotaTemplateResult::GetAssociationForServiceQuotaTemplateResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetAssociationForServiceQuotaTemplateResult()
 {
   *this = result;
 }

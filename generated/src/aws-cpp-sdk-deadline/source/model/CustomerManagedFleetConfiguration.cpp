@@ -26,11 +26,8 @@ CustomerManagedFleetConfiguration::CustomerManagedFleetConfiguration() :
 {
 }
 
-CustomerManagedFleetConfiguration::CustomerManagedFleetConfiguration(JsonView jsonValue) : 
-    m_mode(AutoScalingMode::NOT_SET),
-    m_modeHasBeenSet(false),
-    m_storageProfileIdHasBeenSet(false),
-    m_workerCapabilitiesHasBeenSet(false)
+CustomerManagedFleetConfiguration::CustomerManagedFleetConfiguration(JsonView jsonValue)
+  : CustomerManagedFleetConfiguration()
 {
   *this = jsonValue;
 }

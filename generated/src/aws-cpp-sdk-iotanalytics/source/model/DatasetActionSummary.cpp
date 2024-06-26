@@ -25,10 +25,8 @@ DatasetActionSummary::DatasetActionSummary() :
 {
 }
 
-DatasetActionSummary::DatasetActionSummary(JsonView jsonValue) : 
-    m_actionNameHasBeenSet(false),
-    m_actionType(DatasetActionType::NOT_SET),
-    m_actionTypeHasBeenSet(false)
+DatasetActionSummary::DatasetActionSummary(JsonView jsonValue)
+  : DatasetActionSummary()
 {
   *this = jsonValue;
 }

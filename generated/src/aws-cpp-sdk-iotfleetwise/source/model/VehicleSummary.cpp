@@ -29,14 +29,8 @@ VehicleSummary::VehicleSummary() :
 {
 }
 
-VehicleSummary::VehicleSummary(JsonView jsonValue) : 
-    m_vehicleNameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_modelManifestArnHasBeenSet(false),
-    m_decoderManifestArnHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastModificationTimeHasBeenSet(false),
-    m_attributesHasBeenSet(false)
+VehicleSummary::VehicleSummary(JsonView jsonValue)
+  : VehicleSummary()
 {
   *this = jsonValue;
 }

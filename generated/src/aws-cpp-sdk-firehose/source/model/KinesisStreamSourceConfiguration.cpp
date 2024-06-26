@@ -24,9 +24,8 @@ KinesisStreamSourceConfiguration::KinesisStreamSourceConfiguration() :
 {
 }
 
-KinesisStreamSourceConfiguration::KinesisStreamSourceConfiguration(JsonView jsonValue) : 
-    m_kinesisStreamARNHasBeenSet(false),
-    m_roleARNHasBeenSet(false)
+KinesisStreamSourceConfiguration::KinesisStreamSourceConfiguration(JsonView jsonValue)
+  : KinesisStreamSourceConfiguration()
 {
   *this = jsonValue;
 }

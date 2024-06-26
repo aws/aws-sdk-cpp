@@ -27,12 +27,8 @@ EntitiesDetectionJobFilter::EntitiesDetectionJobFilter() :
 {
 }
 
-EntitiesDetectionJobFilter::EntitiesDetectionJobFilter(JsonView jsonValue) : 
-    m_jobNameHasBeenSet(false),
-    m_jobStatus(JobStatus::NOT_SET),
-    m_jobStatusHasBeenSet(false),
-    m_submitTimeBeforeHasBeenSet(false),
-    m_submitTimeAfterHasBeenSet(false)
+EntitiesDetectionJobFilter::EntitiesDetectionJobFilter(JsonView jsonValue)
+  : EntitiesDetectionJobFilter()
 {
   *this = jsonValue;
 }

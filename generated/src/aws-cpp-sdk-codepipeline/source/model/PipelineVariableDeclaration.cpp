@@ -25,10 +25,8 @@ PipelineVariableDeclaration::PipelineVariableDeclaration() :
 {
 }
 
-PipelineVariableDeclaration::PipelineVariableDeclaration(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_defaultValueHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+PipelineVariableDeclaration::PipelineVariableDeclaration(JsonView jsonValue)
+  : PipelineVariableDeclaration()
 {
   *this = jsonValue;
 }

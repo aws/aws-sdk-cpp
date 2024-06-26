@@ -24,9 +24,8 @@ PriorityConfiguration::PriorityConfiguration() :
 {
 }
 
-PriorityConfiguration::PriorityConfiguration(JsonView jsonValue) : 
-    m_priorityOrderHasBeenSet(false),
-    m_locationOrderHasBeenSet(false)
+PriorityConfiguration::PriorityConfiguration(JsonView jsonValue)
+  : PriorityConfiguration()
 {
   *this = jsonValue;
 }

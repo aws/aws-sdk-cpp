@@ -25,10 +25,8 @@ EC2Capacity::EC2Capacity() :
 {
 }
 
-EC2Capacity::EC2Capacity(JsonView jsonValue) : 
-    m_familyHasBeenSet(false),
-    m_maxSizeHasBeenSet(false),
-    m_quantityHasBeenSet(false)
+EC2Capacity::EC2Capacity(JsonView jsonValue)
+  : EC2Capacity()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ ThingTypeMetadata::ThingTypeMetadata() :
 {
 }
 
-ThingTypeMetadata::ThingTypeMetadata(JsonView jsonValue) : 
-    m_deprecated(false),
-    m_deprecatedHasBeenSet(false),
-    m_deprecationDateHasBeenSet(false),
-    m_creationDateHasBeenSet(false)
+ThingTypeMetadata::ThingTypeMetadata(JsonView jsonValue)
+  : ThingTypeMetadata()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ KernelCapabilities::KernelCapabilities() :
 {
 }
 
-KernelCapabilities::KernelCapabilities(JsonView jsonValue) : 
-    m_addHasBeenSet(false),
-    m_dropHasBeenSet(false)
+KernelCapabilities::KernelCapabilities(JsonView jsonValue)
+  : KernelCapabilities()
 {
   *this = jsonValue;
 }

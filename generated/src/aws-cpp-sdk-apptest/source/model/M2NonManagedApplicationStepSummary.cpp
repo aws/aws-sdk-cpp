@@ -24,9 +24,8 @@ M2NonManagedApplicationStepSummary::M2NonManagedApplicationStepSummary() :
 {
 }
 
-M2NonManagedApplicationStepSummary::M2NonManagedApplicationStepSummary(JsonView jsonValue) : 
-    m_stepInputHasBeenSet(false),
-    m_stepOutputHasBeenSet(false)
+M2NonManagedApplicationStepSummary::M2NonManagedApplicationStepSummary(JsonView jsonValue)
+  : M2NonManagedApplicationStepSummary()
 {
   *this = jsonValue;
 }

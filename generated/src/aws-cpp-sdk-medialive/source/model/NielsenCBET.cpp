@@ -26,11 +26,8 @@ NielsenCBET::NielsenCBET() :
 {
 }
 
-NielsenCBET::NielsenCBET(JsonView jsonValue) : 
-    m_cbetCheckDigitStringHasBeenSet(false),
-    m_cbetStepaside(NielsenWatermarksCbetStepaside::NOT_SET),
-    m_cbetStepasideHasBeenSet(false),
-    m_csidHasBeenSet(false)
+NielsenCBET::NielsenCBET(JsonView jsonValue)
+  : NielsenCBET()
 {
   *this = jsonValue;
 }

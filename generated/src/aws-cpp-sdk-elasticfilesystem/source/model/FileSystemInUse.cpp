@@ -24,9 +24,8 @@ FileSystemInUse::FileSystemInUse() :
 {
 }
 
-FileSystemInUse::FileSystemInUse(JsonView jsonValue) : 
-    m_errorCodeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+FileSystemInUse::FileSystemInUse(JsonView jsonValue)
+  : FileSystemInUse()
 {
   *this = jsonValue;
 }

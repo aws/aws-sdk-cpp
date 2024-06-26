@@ -29,14 +29,8 @@ Celebrity::Celebrity() :
 {
 }
 
-Celebrity::Celebrity(JsonView jsonValue) : 
-    m_urlsHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_faceHasBeenSet(false),
-    m_matchConfidence(0.0),
-    m_matchConfidenceHasBeenSet(false),
-    m_knownGenderHasBeenSet(false)
+Celebrity::Celebrity(JsonView jsonValue)
+  : Celebrity()
 {
   *this = jsonValue;
 }

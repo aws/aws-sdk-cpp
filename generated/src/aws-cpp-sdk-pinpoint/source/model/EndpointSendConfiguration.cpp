@@ -27,12 +27,8 @@ EndpointSendConfiguration::EndpointSendConfiguration() :
 {
 }
 
-EndpointSendConfiguration::EndpointSendConfiguration(JsonView jsonValue) : 
-    m_bodyOverrideHasBeenSet(false),
-    m_contextHasBeenSet(false),
-    m_rawContentHasBeenSet(false),
-    m_substitutionsHasBeenSet(false),
-    m_titleOverrideHasBeenSet(false)
+EndpointSendConfiguration::EndpointSendConfiguration(JsonView jsonValue)
+  : EndpointSendConfiguration()
 {
   *this = jsonValue;
 }

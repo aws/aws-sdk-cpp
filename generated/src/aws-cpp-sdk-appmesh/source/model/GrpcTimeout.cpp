@@ -24,9 +24,8 @@ GrpcTimeout::GrpcTimeout() :
 {
 }
 
-GrpcTimeout::GrpcTimeout(JsonView jsonValue) : 
-    m_idleHasBeenSet(false),
-    m_perRequestHasBeenSet(false)
+GrpcTimeout::GrpcTimeout(JsonView jsonValue)
+  : GrpcTimeout()
 {
   *this = jsonValue;
 }

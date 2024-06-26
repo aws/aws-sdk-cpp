@@ -22,8 +22,8 @@ GetPackageVersionResult::GetPackageVersionResult() :
 {
 }
 
-GetPackageVersionResult::GetPackageVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(PackageVersionStatus::NOT_SET)
+GetPackageVersionResult::GetPackageVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetPackageVersionResult()
 {
   *this = result;
 }

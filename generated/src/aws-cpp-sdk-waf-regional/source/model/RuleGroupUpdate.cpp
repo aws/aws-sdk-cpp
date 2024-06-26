@@ -25,10 +25,8 @@ RuleGroupUpdate::RuleGroupUpdate() :
 {
 }
 
-RuleGroupUpdate::RuleGroupUpdate(JsonView jsonValue) : 
-    m_action(ChangeAction::NOT_SET),
-    m_actionHasBeenSet(false),
-    m_activatedRuleHasBeenSet(false)
+RuleGroupUpdate::RuleGroupUpdate(JsonView jsonValue)
+  : RuleGroupUpdate()
 {
   *this = jsonValue;
 }

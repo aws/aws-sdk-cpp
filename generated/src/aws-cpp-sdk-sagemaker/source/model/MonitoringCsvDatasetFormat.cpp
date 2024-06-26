@@ -24,9 +24,8 @@ MonitoringCsvDatasetFormat::MonitoringCsvDatasetFormat() :
 {
 }
 
-MonitoringCsvDatasetFormat::MonitoringCsvDatasetFormat(JsonView jsonValue) : 
-    m_header(false),
-    m_headerHasBeenSet(false)
+MonitoringCsvDatasetFormat::MonitoringCsvDatasetFormat(JsonView jsonValue)
+  : MonitoringCsvDatasetFormat()
 {
   *this = jsonValue;
 }

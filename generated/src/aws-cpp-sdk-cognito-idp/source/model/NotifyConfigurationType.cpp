@@ -28,13 +28,8 @@ NotifyConfigurationType::NotifyConfigurationType() :
 {
 }
 
-NotifyConfigurationType::NotifyConfigurationType(JsonView jsonValue) : 
-    m_fromHasBeenSet(false),
-    m_replyToHasBeenSet(false),
-    m_sourceArnHasBeenSet(false),
-    m_blockEmailHasBeenSet(false),
-    m_noActionEmailHasBeenSet(false),
-    m_mfaEmailHasBeenSet(false)
+NotifyConfigurationType::NotifyConfigurationType(JsonView jsonValue)
+  : NotifyConfigurationType()
 {
   *this = jsonValue;
 }

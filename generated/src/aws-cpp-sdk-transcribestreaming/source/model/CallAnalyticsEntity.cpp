@@ -31,16 +31,8 @@ CallAnalyticsEntity::CallAnalyticsEntity() :
 {
 }
 
-CallAnalyticsEntity::CallAnalyticsEntity(JsonView jsonValue) : 
-    m_beginOffsetMillis(0),
-    m_beginOffsetMillisHasBeenSet(false),
-    m_endOffsetMillis(0),
-    m_endOffsetMillisHasBeenSet(false),
-    m_categoryHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_contentHasBeenSet(false),
-    m_confidence(0.0),
-    m_confidenceHasBeenSet(false)
+CallAnalyticsEntity::CallAnalyticsEntity(JsonView jsonValue)
+  : CallAnalyticsEntity()
 {
   *this = jsonValue;
 }

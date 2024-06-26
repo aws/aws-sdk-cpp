@@ -23,8 +23,8 @@ ClassificationExportConfiguration::ClassificationExportConfiguration() :
 {
 }
 
-ClassificationExportConfiguration::ClassificationExportConfiguration(JsonView jsonValue) : 
-    m_s3DestinationHasBeenSet(false)
+ClassificationExportConfiguration::ClassificationExportConfiguration(JsonView jsonValue)
+  : ClassificationExportConfiguration()
 {
   *this = jsonValue;
 }

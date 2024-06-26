@@ -27,10 +27,8 @@ MaintenanceDetails::MaintenanceDetails() :
 {
 }
 
-MaintenanceDetails::MaintenanceDetails(const XmlNode& xmlNode) : 
-    m_pendingMaintenanceHasBeenSet(false),
-    m_maintenanceAutoAppliedAfterHasBeenSet(false),
-    m_lastMaintenanceAppliedHasBeenSet(false)
+MaintenanceDetails::MaintenanceDetails(const XmlNode& xmlNode)
+  : MaintenanceDetails()
 {
   *this = xmlNode;
 }

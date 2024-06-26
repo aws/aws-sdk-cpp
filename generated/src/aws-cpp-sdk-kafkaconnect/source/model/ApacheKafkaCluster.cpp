@@ -24,9 +24,8 @@ ApacheKafkaCluster::ApacheKafkaCluster() :
 {
 }
 
-ApacheKafkaCluster::ApacheKafkaCluster(JsonView jsonValue) : 
-    m_bootstrapServersHasBeenSet(false),
-    m_vpcHasBeenSet(false)
+ApacheKafkaCluster::ApacheKafkaCluster(JsonView jsonValue)
+  : ApacheKafkaCluster()
 {
   *this = jsonValue;
 }

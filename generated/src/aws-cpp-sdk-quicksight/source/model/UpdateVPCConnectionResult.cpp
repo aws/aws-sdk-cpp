@@ -24,10 +24,8 @@ UpdateVPCConnectionResult::UpdateVPCConnectionResult() :
 {
 }
 
-UpdateVPCConnectionResult::UpdateVPCConnectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_updateStatus(VPCConnectionResourceStatus::NOT_SET),
-    m_availabilityStatus(VPCConnectionAvailabilityStatus::NOT_SET),
-    m_status(0)
+UpdateVPCConnectionResult::UpdateVPCConnectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateVPCConnectionResult()
 {
   *this = result;
 }

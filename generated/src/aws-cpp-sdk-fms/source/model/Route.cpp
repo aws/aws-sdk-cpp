@@ -28,13 +28,8 @@ Route::Route() :
 {
 }
 
-Route::Route(JsonView jsonValue) : 
-    m_destinationType(DestinationType::NOT_SET),
-    m_destinationTypeHasBeenSet(false),
-    m_targetType(TargetType::NOT_SET),
-    m_targetTypeHasBeenSet(false),
-    m_destinationHasBeenSet(false),
-    m_targetHasBeenSet(false)
+Route::Route(JsonView jsonValue)
+  : Route()
 {
   *this = jsonValue;
 }

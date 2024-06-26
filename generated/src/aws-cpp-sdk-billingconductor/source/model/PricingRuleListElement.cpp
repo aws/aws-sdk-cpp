@@ -42,27 +42,8 @@ PricingRuleListElement::PricingRuleListElement() :
 {
 }
 
-PricingRuleListElement::PricingRuleListElement(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_scope(PricingRuleScope::NOT_SET),
-    m_scopeHasBeenSet(false),
-    m_type(PricingRuleType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_modifierPercentage(0.0),
-    m_modifierPercentageHasBeenSet(false),
-    m_serviceHasBeenSet(false),
-    m_associatedPricingPlanCount(0),
-    m_associatedPricingPlanCountHasBeenSet(false),
-    m_creationTime(0),
-    m_creationTimeHasBeenSet(false),
-    m_lastModifiedTime(0),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_billingEntityHasBeenSet(false),
-    m_tieringHasBeenSet(false),
-    m_usageTypeHasBeenSet(false),
-    m_operationHasBeenSet(false)
+PricingRuleListElement::PricingRuleListElement(JsonView jsonValue)
+  : PricingRuleListElement()
 {
   *this = jsonValue;
 }

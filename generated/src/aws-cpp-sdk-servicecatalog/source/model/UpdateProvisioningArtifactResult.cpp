@@ -22,8 +22,8 @@ UpdateProvisioningArtifactResult::UpdateProvisioningArtifactResult() :
 {
 }
 
-UpdateProvisioningArtifactResult::UpdateProvisioningArtifactResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(Status::NOT_SET)
+UpdateProvisioningArtifactResult::UpdateProvisioningArtifactResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateProvisioningArtifactResult()
 {
   *this = result;
 }

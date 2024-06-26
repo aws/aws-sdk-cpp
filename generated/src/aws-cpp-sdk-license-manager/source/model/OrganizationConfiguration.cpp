@@ -24,9 +24,8 @@ OrganizationConfiguration::OrganizationConfiguration() :
 {
 }
 
-OrganizationConfiguration::OrganizationConfiguration(JsonView jsonValue) : 
-    m_enableIntegration(false),
-    m_enableIntegrationHasBeenSet(false)
+OrganizationConfiguration::OrganizationConfiguration(JsonView jsonValue)
+  : OrganizationConfiguration()
 {
   *this = jsonValue;
 }

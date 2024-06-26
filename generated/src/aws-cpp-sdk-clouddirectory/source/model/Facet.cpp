@@ -27,12 +27,8 @@ Facet::Facet() :
 {
 }
 
-Facet::Facet(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_objectType(ObjectType::NOT_SET),
-    m_objectTypeHasBeenSet(false),
-    m_facetStyle(FacetStyle::NOT_SET),
-    m_facetStyleHasBeenSet(false)
+Facet::Facet(JsonView jsonValue)
+  : Facet()
 {
   *this = jsonValue;
 }

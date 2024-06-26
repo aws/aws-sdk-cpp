@@ -34,19 +34,8 @@ Link::Link() :
 {
 }
 
-Link::Link(JsonView jsonValue) : 
-    m_linkIdHasBeenSet(false),
-    m_linkArnHasBeenSet(false),
-    m_globalNetworkIdHasBeenSet(false),
-    m_siteIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_bandwidthHasBeenSet(false),
-    m_providerHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_state(LinkState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+Link::Link(JsonView jsonValue)
+  : Link()
 {
   *this = jsonValue;
 }

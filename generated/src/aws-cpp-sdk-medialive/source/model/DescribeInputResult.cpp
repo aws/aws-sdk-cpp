@@ -25,11 +25,8 @@ DescribeInputResult::DescribeInputResult() :
 {
 }
 
-DescribeInputResult::DescribeInputResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_inputClass(InputClass::NOT_SET),
-    m_inputSourceType(InputSourceType::NOT_SET),
-    m_state(InputState::NOT_SET),
-    m_type(InputType::NOT_SET)
+DescribeInputResult::DescribeInputResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeInputResult()
 {
   *this = result;
 }

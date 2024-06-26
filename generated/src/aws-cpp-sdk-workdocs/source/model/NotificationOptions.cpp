@@ -25,10 +25,8 @@ NotificationOptions::NotificationOptions() :
 {
 }
 
-NotificationOptions::NotificationOptions(JsonView jsonValue) : 
-    m_sendEmail(false),
-    m_sendEmailHasBeenSet(false),
-    m_emailMessageHasBeenSet(false)
+NotificationOptions::NotificationOptions(JsonView jsonValue)
+  : NotificationOptions()
 {
   *this = jsonValue;
 }

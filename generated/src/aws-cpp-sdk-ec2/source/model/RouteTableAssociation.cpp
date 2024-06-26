@@ -31,14 +31,8 @@ RouteTableAssociation::RouteTableAssociation() :
 {
 }
 
-RouteTableAssociation::RouteTableAssociation(const XmlNode& xmlNode) : 
-    m_main(false),
-    m_mainHasBeenSet(false),
-    m_routeTableAssociationIdHasBeenSet(false),
-    m_routeTableIdHasBeenSet(false),
-    m_subnetIdHasBeenSet(false),
-    m_gatewayIdHasBeenSet(false),
-    m_associationStateHasBeenSet(false)
+RouteTableAssociation::RouteTableAssociation(const XmlNode& xmlNode)
+  : RouteTableAssociation()
 {
   *this = xmlNode;
 }

@@ -25,10 +25,8 @@ AwsElbLoadBalancerPolicies::AwsElbLoadBalancerPolicies() :
 {
 }
 
-AwsElbLoadBalancerPolicies::AwsElbLoadBalancerPolicies(JsonView jsonValue) : 
-    m_appCookieStickinessPoliciesHasBeenSet(false),
-    m_lbCookieStickinessPoliciesHasBeenSet(false),
-    m_otherPoliciesHasBeenSet(false)
+AwsElbLoadBalancerPolicies::AwsElbLoadBalancerPolicies(JsonView jsonValue)
+  : AwsElbLoadBalancerPolicies()
 {
   *this = jsonValue;
 }

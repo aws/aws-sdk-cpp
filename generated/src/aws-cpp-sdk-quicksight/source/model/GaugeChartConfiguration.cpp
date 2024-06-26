@@ -29,14 +29,8 @@ GaugeChartConfiguration::GaugeChartConfiguration() :
 {
 }
 
-GaugeChartConfiguration::GaugeChartConfiguration(JsonView jsonValue) : 
-    m_fieldWellsHasBeenSet(false),
-    m_gaugeChartOptionsHasBeenSet(false),
-    m_dataLabelsHasBeenSet(false),
-    m_tooltipOptionsHasBeenSet(false),
-    m_visualPaletteHasBeenSet(false),
-    m_colorConfigurationHasBeenSet(false),
-    m_interactionsHasBeenSet(false)
+GaugeChartConfiguration::GaugeChartConfiguration(JsonView jsonValue)
+  : GaugeChartConfiguration()
 {
   *this = jsonValue;
 }

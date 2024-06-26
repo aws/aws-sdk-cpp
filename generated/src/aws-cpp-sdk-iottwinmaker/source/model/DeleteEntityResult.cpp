@@ -22,8 +22,8 @@ DeleteEntityResult::DeleteEntityResult() :
 {
 }
 
-DeleteEntityResult::DeleteEntityResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_state(State::NOT_SET)
+DeleteEntityResult::DeleteEntityResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeleteEntityResult()
 {
   *this = result;
 }

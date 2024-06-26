@@ -22,8 +22,8 @@ StartPrimaryEmailUpdateResult::StartPrimaryEmailUpdateResult() :
 {
 }
 
-StartPrimaryEmailUpdateResult::StartPrimaryEmailUpdateResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(PrimaryEmailUpdateStatus::NOT_SET)
+StartPrimaryEmailUpdateResult::StartPrimaryEmailUpdateResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : StartPrimaryEmailUpdateResult()
 {
   *this = result;
 }

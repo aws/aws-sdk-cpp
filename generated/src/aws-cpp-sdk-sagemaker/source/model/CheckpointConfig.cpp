@@ -24,9 +24,8 @@ CheckpointConfig::CheckpointConfig() :
 {
 }
 
-CheckpointConfig::CheckpointConfig(JsonView jsonValue) : 
-    m_s3UriHasBeenSet(false),
-    m_localPathHasBeenSet(false)
+CheckpointConfig::CheckpointConfig(JsonView jsonValue)
+  : CheckpointConfig()
 {
   *this = jsonValue;
 }

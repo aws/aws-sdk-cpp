@@ -38,23 +38,8 @@ AwsElasticBeanstalkEnvironmentDetails::AwsElasticBeanstalkEnvironmentDetails() :
 {
 }
 
-AwsElasticBeanstalkEnvironmentDetails::AwsElasticBeanstalkEnvironmentDetails(JsonView jsonValue) : 
-    m_applicationNameHasBeenSet(false),
-    m_cnameHasBeenSet(false),
-    m_dateCreatedHasBeenSet(false),
-    m_dateUpdatedHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_endpointUrlHasBeenSet(false),
-    m_environmentArnHasBeenSet(false),
-    m_environmentIdHasBeenSet(false),
-    m_environmentLinksHasBeenSet(false),
-    m_environmentNameHasBeenSet(false),
-    m_optionSettingsHasBeenSet(false),
-    m_platformArnHasBeenSet(false),
-    m_solutionStackNameHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_tierHasBeenSet(false),
-    m_versionLabelHasBeenSet(false)
+AwsElasticBeanstalkEnvironmentDetails::AwsElasticBeanstalkEnvironmentDetails(JsonView jsonValue)
+  : AwsElasticBeanstalkEnvironmentDetails()
 {
   *this = jsonValue;
 }

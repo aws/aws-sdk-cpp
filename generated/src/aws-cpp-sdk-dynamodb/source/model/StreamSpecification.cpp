@@ -26,11 +26,8 @@ StreamSpecification::StreamSpecification() :
 {
 }
 
-StreamSpecification::StreamSpecification(JsonView jsonValue) : 
-    m_streamEnabled(false),
-    m_streamEnabledHasBeenSet(false),
-    m_streamViewType(StreamViewType::NOT_SET),
-    m_streamViewTypeHasBeenSet(false)
+StreamSpecification::StreamSpecification(JsonView jsonValue)
+  : StreamSpecification()
 {
   *this = jsonValue;
 }

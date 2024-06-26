@@ -27,12 +27,8 @@ TaskTemplateField::TaskTemplateField() :
 {
 }
 
-TaskTemplateField::TaskTemplateField(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_type(TaskTemplateFieldType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_singleSelectOptionsHasBeenSet(false)
+TaskTemplateField::TaskTemplateField(JsonView jsonValue)
+  : TaskTemplateField()
 {
   *this = jsonValue;
 }

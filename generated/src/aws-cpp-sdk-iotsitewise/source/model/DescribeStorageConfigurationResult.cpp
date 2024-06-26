@@ -24,10 +24,8 @@ DescribeStorageConfigurationResult::DescribeStorageConfigurationResult() :
 {
 }
 
-DescribeStorageConfigurationResult::DescribeStorageConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_storageType(StorageType::NOT_SET),
-    m_disassociatedDataStorage(DisassociatedDataStorageState::NOT_SET),
-    m_warmTier(WarmTierState::NOT_SET)
+DescribeStorageConfigurationResult::DescribeStorageConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeStorageConfigurationResult()
 {
   *this = result;
 }

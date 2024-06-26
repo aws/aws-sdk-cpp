@@ -23,8 +23,8 @@ IAMUserIdentity::IAMUserIdentity() :
 {
 }
 
-IAMUserIdentity::IAMUserIdentity(JsonView jsonValue) : 
-    m_arnHasBeenSet(false)
+IAMUserIdentity::IAMUserIdentity(JsonView jsonValue)
+  : IAMUserIdentity()
 {
   *this = jsonValue;
 }

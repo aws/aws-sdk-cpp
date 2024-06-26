@@ -24,9 +24,8 @@ FilterV2::FilterV2() :
 {
 }
 
-FilterV2::FilterV2(JsonView jsonValue) : 
-    m_filterKeyHasBeenSet(false),
-    m_filterValuesHasBeenSet(false)
+FilterV2::FilterV2(JsonView jsonValue)
+  : FilterV2()
 {
   *this = jsonValue;
 }

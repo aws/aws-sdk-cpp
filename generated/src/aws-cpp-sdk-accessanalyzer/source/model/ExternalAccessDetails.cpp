@@ -28,13 +28,8 @@ ExternalAccessDetails::ExternalAccessDetails() :
 {
 }
 
-ExternalAccessDetails::ExternalAccessDetails(JsonView jsonValue) : 
-    m_actionHasBeenSet(false),
-    m_conditionHasBeenSet(false),
-    m_isPublic(false),
-    m_isPublicHasBeenSet(false),
-    m_principalHasBeenSet(false),
-    m_sourcesHasBeenSet(false)
+ExternalAccessDetails::ExternalAccessDetails(JsonView jsonValue)
+  : ExternalAccessDetails()
 {
   *this = jsonValue;
 }

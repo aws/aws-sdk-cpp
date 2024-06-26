@@ -24,9 +24,8 @@ AlgorithmStatusDetails::AlgorithmStatusDetails() :
 {
 }
 
-AlgorithmStatusDetails::AlgorithmStatusDetails(JsonView jsonValue) : 
-    m_validationStatusesHasBeenSet(false),
-    m_imageScanStatusesHasBeenSet(false)
+AlgorithmStatusDetails::AlgorithmStatusDetails(JsonView jsonValue)
+  : AlgorithmStatusDetails()
 {
   *this = jsonValue;
 }

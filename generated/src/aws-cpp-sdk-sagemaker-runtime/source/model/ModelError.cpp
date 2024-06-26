@@ -27,12 +27,8 @@ ModelError::ModelError() :
 {
 }
 
-ModelError::ModelError(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_originalStatusCode(0),
-    m_originalStatusCodeHasBeenSet(false),
-    m_originalMessageHasBeenSet(false),
-    m_logStreamArnHasBeenSet(false)
+ModelError::ModelError(JsonView jsonValue)
+  : ModelError()
 {
   *this = jsonValue;
 }

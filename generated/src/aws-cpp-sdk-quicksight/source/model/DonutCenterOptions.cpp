@@ -24,9 +24,8 @@ DonutCenterOptions::DonutCenterOptions() :
 {
 }
 
-DonutCenterOptions::DonutCenterOptions(JsonView jsonValue) : 
-    m_labelVisibility(Visibility::NOT_SET),
-    m_labelVisibilityHasBeenSet(false)
+DonutCenterOptions::DonutCenterOptions(JsonView jsonValue)
+  : DonutCenterOptions()
 {
   *this = jsonValue;
 }

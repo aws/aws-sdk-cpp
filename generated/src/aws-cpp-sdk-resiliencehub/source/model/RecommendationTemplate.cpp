@@ -39,24 +39,8 @@ RecommendationTemplate::RecommendationTemplate() :
 {
 }
 
-RecommendationTemplate::RecommendationTemplate(JsonView jsonValue) : 
-    m_appArnHasBeenSet(false),
-    m_assessmentArnHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_format(TemplateFormat::NOT_SET),
-    m_formatHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_needsReplacements(false),
-    m_needsReplacementsHasBeenSet(false),
-    m_recommendationIdsHasBeenSet(false),
-    m_recommendationTemplateArnHasBeenSet(false),
-    m_recommendationTypesHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_status(RecommendationTemplateStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_templatesLocationHasBeenSet(false)
+RecommendationTemplate::RecommendationTemplate(JsonView jsonValue)
+  : RecommendationTemplate()
 {
   *this = jsonValue;
 }

@@ -47,32 +47,8 @@ EngineTranscribeSettings::EngineTranscribeSettings() :
 {
 }
 
-EngineTranscribeSettings::EngineTranscribeSettings(JsonView jsonValue) : 
-    m_languageCode(TranscribeLanguageCode::NOT_SET),
-    m_languageCodeHasBeenSet(false),
-    m_vocabularyFilterMethod(TranscribeVocabularyFilterMethod::NOT_SET),
-    m_vocabularyFilterMethodHasBeenSet(false),
-    m_vocabularyFilterNameHasBeenSet(false),
-    m_vocabularyNameHasBeenSet(false),
-    m_region(TranscribeRegion::NOT_SET),
-    m_regionHasBeenSet(false),
-    m_enablePartialResultsStabilization(false),
-    m_enablePartialResultsStabilizationHasBeenSet(false),
-    m_partialResultsStability(TranscribePartialResultsStability::NOT_SET),
-    m_partialResultsStabilityHasBeenSet(false),
-    m_contentIdentificationType(TranscribeContentIdentificationType::NOT_SET),
-    m_contentIdentificationTypeHasBeenSet(false),
-    m_contentRedactionType(TranscribeContentRedactionType::NOT_SET),
-    m_contentRedactionTypeHasBeenSet(false),
-    m_piiEntityTypesHasBeenSet(false),
-    m_languageModelNameHasBeenSet(false),
-    m_identifyLanguage(false),
-    m_identifyLanguageHasBeenSet(false),
-    m_languageOptionsHasBeenSet(false),
-    m_preferredLanguage(TranscribeLanguageCode::NOT_SET),
-    m_preferredLanguageHasBeenSet(false),
-    m_vocabularyNamesHasBeenSet(false),
-    m_vocabularyFilterNamesHasBeenSet(false)
+EngineTranscribeSettings::EngineTranscribeSettings(JsonView jsonValue)
+  : EngineTranscribeSettings()
 {
   *this = jsonValue;
 }

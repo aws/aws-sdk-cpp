@@ -25,10 +25,8 @@ ExternalFilteringConfiguration::ExternalFilteringConfiguration() :
 {
 }
 
-ExternalFilteringConfiguration::ExternalFilteringConfiguration(JsonView jsonValue) : 
-    m_status(EnableStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_authorizedTargetsHasBeenSet(false)
+ExternalFilteringConfiguration::ExternalFilteringConfiguration(JsonView jsonValue)
+  : ExternalFilteringConfiguration()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ EcrContainerImageMetadata::EcrContainerImageMetadata() :
 {
 }
 
-EcrContainerImageMetadata::EcrContainerImageMetadata(JsonView jsonValue) : 
-    m_imagePulledAtHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+EcrContainerImageMetadata::EcrContainerImageMetadata(JsonView jsonValue)
+  : EcrContainerImageMetadata()
 {
   *this = jsonValue;
 }

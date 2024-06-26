@@ -29,14 +29,8 @@ TestCaseScenario::TestCaseScenario() :
 {
 }
 
-TestCaseScenario::TestCaseScenario(JsonView jsonValue) : 
-    m_testCaseScenarioIdHasBeenSet(false),
-    m_testCaseScenarioType(TestCaseScenarioType::NOT_SET),
-    m_testCaseScenarioTypeHasBeenSet(false),
-    m_status(TestCaseScenarioStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_failureHasBeenSet(false),
-    m_systemMessageHasBeenSet(false)
+TestCaseScenario::TestCaseScenario(JsonView jsonValue)
+  : TestCaseScenario()
 {
   *this = jsonValue;
 }

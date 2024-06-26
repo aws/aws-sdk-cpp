@@ -26,11 +26,8 @@ TemplateStepGroupSummary::TemplateStepGroupSummary() :
 {
 }
 
-TemplateStepGroupSummary::TemplateStepGroupSummary(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_previousHasBeenSet(false),
-    m_nextHasBeenSet(false)
+TemplateStepGroupSummary::TemplateStepGroupSummary(JsonView jsonValue)
+  : TemplateStepGroupSummary()
 {
   *this = jsonValue;
 }

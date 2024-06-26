@@ -27,12 +27,8 @@ DialogAction::DialogAction() :
 {
 }
 
-DialogAction::DialogAction(JsonView jsonValue) : 
-    m_type(DialogActionType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_slotToElicitHasBeenSet(false),
-    m_suppressNextMessage(false),
-    m_suppressNextMessageHasBeenSet(false)
+DialogAction::DialogAction(JsonView jsonValue)
+  : DialogAction()
 {
   *this = jsonValue;
 }

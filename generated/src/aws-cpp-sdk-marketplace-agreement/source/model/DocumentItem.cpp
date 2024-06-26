@@ -25,10 +25,8 @@ DocumentItem::DocumentItem() :
 {
 }
 
-DocumentItem::DocumentItem(JsonView jsonValue) : 
-    m_typeHasBeenSet(false),
-    m_urlHasBeenSet(false),
-    m_versionHasBeenSet(false)
+DocumentItem::DocumentItem(JsonView jsonValue)
+  : DocumentItem()
 {
   *this = jsonValue;
 }

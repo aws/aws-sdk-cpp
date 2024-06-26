@@ -23,8 +23,8 @@ ManifestProcessingRules::ManifestProcessingRules() :
 {
 }
 
-ManifestProcessingRules::ManifestProcessingRules(JsonView jsonValue) : 
-    m_adMarkerPassthroughHasBeenSet(false)
+ManifestProcessingRules::ManifestProcessingRules(JsonView jsonValue)
+  : ManifestProcessingRules()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ Endpoint::Endpoint() :
 {
 }
 
-Endpoint::Endpoint(JsonView jsonValue) : 
-    m_addressHasBeenSet(false),
-    m_cachePeriodInMinutes(0),
-    m_cachePeriodInMinutesHasBeenSet(false)
+Endpoint::Endpoint(JsonView jsonValue)
+  : Endpoint()
 {
   *this = jsonValue;
 }

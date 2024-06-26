@@ -24,9 +24,8 @@ KafkaClusterSummary::KafkaClusterSummary() :
 {
 }
 
-KafkaClusterSummary::KafkaClusterSummary(JsonView jsonValue) : 
-    m_amazonMskClusterHasBeenSet(false),
-    m_kafkaClusterAliasHasBeenSet(false)
+KafkaClusterSummary::KafkaClusterSummary(JsonView jsonValue)
+  : KafkaClusterSummary()
 {
   *this = jsonValue;
 }

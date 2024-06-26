@@ -24,9 +24,8 @@ ModelBiasBaselineConfig::ModelBiasBaselineConfig() :
 {
 }
 
-ModelBiasBaselineConfig::ModelBiasBaselineConfig(JsonView jsonValue) : 
-    m_baseliningJobNameHasBeenSet(false),
-    m_constraintsResourceHasBeenSet(false)
+ModelBiasBaselineConfig::ModelBiasBaselineConfig(JsonView jsonValue)
+  : ModelBiasBaselineConfig()
 {
   *this = jsonValue;
 }

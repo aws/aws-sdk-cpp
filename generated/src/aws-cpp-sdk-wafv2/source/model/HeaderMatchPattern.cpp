@@ -25,10 +25,8 @@ HeaderMatchPattern::HeaderMatchPattern() :
 {
 }
 
-HeaderMatchPattern::HeaderMatchPattern(JsonView jsonValue) : 
-    m_allHasBeenSet(false),
-    m_includedHeadersHasBeenSet(false),
-    m_excludedHeadersHasBeenSet(false)
+HeaderMatchPattern::HeaderMatchPattern(JsonView jsonValue)
+  : HeaderMatchPattern()
 {
   *this = jsonValue;
 }

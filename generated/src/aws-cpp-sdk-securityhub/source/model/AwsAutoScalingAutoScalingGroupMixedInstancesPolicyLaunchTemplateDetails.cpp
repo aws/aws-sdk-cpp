@@ -24,9 +24,8 @@ AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetails::AwsAuto
 {
 }
 
-AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetails::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetails(JsonView jsonValue) : 
-    m_launchTemplateSpecificationHasBeenSet(false),
-    m_overridesHasBeenSet(false)
+AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetails::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetails(JsonView jsonValue)
+  : AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetails()
 {
   *this = jsonValue;
 }

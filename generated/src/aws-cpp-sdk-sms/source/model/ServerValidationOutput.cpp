@@ -23,8 +23,8 @@ ServerValidationOutput::ServerValidationOutput() :
 {
 }
 
-ServerValidationOutput::ServerValidationOutput(JsonView jsonValue) : 
-    m_serverHasBeenSet(false)
+ServerValidationOutput::ServerValidationOutput(JsonView jsonValue)
+  : ServerValidationOutput()
 {
   *this = jsonValue;
 }

@@ -23,9 +23,8 @@ DiscardRegistrationVersionResult::DiscardRegistrationVersionResult() :
 {
 }
 
-DiscardRegistrationVersionResult::DiscardRegistrationVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_versionNumber(0),
-    m_registrationVersionStatus(RegistrationVersionStatus::NOT_SET)
+DiscardRegistrationVersionResult::DiscardRegistrationVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DiscardRegistrationVersionResult()
 {
   *this = result;
 }

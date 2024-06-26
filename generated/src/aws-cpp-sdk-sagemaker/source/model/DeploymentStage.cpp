@@ -25,10 +25,8 @@ DeploymentStage::DeploymentStage() :
 {
 }
 
-DeploymentStage::DeploymentStage(JsonView jsonValue) : 
-    m_stageNameHasBeenSet(false),
-    m_deviceSelectionConfigHasBeenSet(false),
-    m_deploymentConfigHasBeenSet(false)
+DeploymentStage::DeploymentStage(JsonView jsonValue)
+  : DeploymentStage()
 {
   *this = jsonValue;
 }

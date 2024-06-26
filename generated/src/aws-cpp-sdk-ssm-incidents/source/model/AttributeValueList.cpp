@@ -24,9 +24,8 @@ AttributeValueList::AttributeValueList() :
 {
 }
 
-AttributeValueList::AttributeValueList(JsonView jsonValue) : 
-    m_integerValuesHasBeenSet(false),
-    m_stringValuesHasBeenSet(false)
+AttributeValueList::AttributeValueList(JsonView jsonValue)
+  : AttributeValueList()
 {
   *this = jsonValue;
 }

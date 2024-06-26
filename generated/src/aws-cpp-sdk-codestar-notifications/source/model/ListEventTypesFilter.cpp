@@ -25,10 +25,8 @@ ListEventTypesFilter::ListEventTypesFilter() :
 {
 }
 
-ListEventTypesFilter::ListEventTypesFilter(JsonView jsonValue) : 
-    m_name(ListEventTypesFilterName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
+ListEventTypesFilter::ListEventTypesFilter(JsonView jsonValue)
+  : ListEventTypesFilter()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ ActionIdentifier::ActionIdentifier() :
 {
 }
 
-ActionIdentifier::ActionIdentifier(JsonView jsonValue) : 
-    m_actionTypeHasBeenSet(false),
-    m_actionIdHasBeenSet(false)
+ActionIdentifier::ActionIdentifier(JsonView jsonValue)
+  : ActionIdentifier()
 {
   *this = jsonValue;
 }

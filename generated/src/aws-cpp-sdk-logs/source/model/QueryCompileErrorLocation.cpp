@@ -26,11 +26,8 @@ QueryCompileErrorLocation::QueryCompileErrorLocation() :
 {
 }
 
-QueryCompileErrorLocation::QueryCompileErrorLocation(JsonView jsonValue) : 
-    m_startCharOffset(0),
-    m_startCharOffsetHasBeenSet(false),
-    m_endCharOffset(0),
-    m_endCharOffsetHasBeenSet(false)
+QueryCompileErrorLocation::QueryCompileErrorLocation(JsonView jsonValue)
+  : QueryCompileErrorLocation()
 {
   *this = jsonValue;
 }

@@ -26,9 +26,8 @@ AccountWithRestoreAccess::AccountWithRestoreAccess() :
 {
 }
 
-AccountWithRestoreAccess::AccountWithRestoreAccess(const XmlNode& xmlNode) : 
-    m_accountIdHasBeenSet(false),
-    m_accountAliasHasBeenSet(false)
+AccountWithRestoreAccess::AccountWithRestoreAccess(const XmlNode& xmlNode)
+  : AccountWithRestoreAccess()
 {
   *this = xmlNode;
 }

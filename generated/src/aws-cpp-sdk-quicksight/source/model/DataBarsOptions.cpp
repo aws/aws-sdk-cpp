@@ -25,10 +25,8 @@ DataBarsOptions::DataBarsOptions() :
 {
 }
 
-DataBarsOptions::DataBarsOptions(JsonView jsonValue) : 
-    m_fieldIdHasBeenSet(false),
-    m_positiveColorHasBeenSet(false),
-    m_negativeColorHasBeenSet(false)
+DataBarsOptions::DataBarsOptions(JsonView jsonValue)
+  : DataBarsOptions()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ BatchListObjectAttributesResponse::BatchListObjectAttributesResponse() :
 {
 }
 
-BatchListObjectAttributesResponse::BatchListObjectAttributesResponse(JsonView jsonValue) : 
-    m_attributesHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
+BatchListObjectAttributesResponse::BatchListObjectAttributesResponse(JsonView jsonValue)
+  : BatchListObjectAttributesResponse()
 {
   *this = jsonValue;
 }

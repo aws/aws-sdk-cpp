@@ -23,8 +23,8 @@ ServiceNowParameters::ServiceNowParameters() :
 {
 }
 
-ServiceNowParameters::ServiceNowParameters(JsonView jsonValue) : 
-    m_siteBaseUrlHasBeenSet(false)
+ServiceNowParameters::ServiceNowParameters(JsonView jsonValue)
+  : ServiceNowParameters()
 {
   *this = jsonValue;
 }

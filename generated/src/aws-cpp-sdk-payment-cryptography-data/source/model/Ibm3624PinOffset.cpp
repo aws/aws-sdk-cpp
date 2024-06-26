@@ -26,11 +26,8 @@ Ibm3624PinOffset::Ibm3624PinOffset() :
 {
 }
 
-Ibm3624PinOffset::Ibm3624PinOffset(JsonView jsonValue) : 
-    m_decimalizationTableHasBeenSet(false),
-    m_encryptedPinBlockHasBeenSet(false),
-    m_pinValidationDataHasBeenSet(false),
-    m_pinValidationDataPadCharacterHasBeenSet(false)
+Ibm3624PinOffset::Ibm3624PinOffset(JsonView jsonValue)
+  : Ibm3624PinOffset()
 {
   *this = jsonValue;
 }

@@ -34,19 +34,8 @@ RegionDescription::RegionDescription() :
 {
 }
 
-RegionDescription::RegionDescription(JsonView jsonValue) : 
-    m_directoryIdHasBeenSet(false),
-    m_regionNameHasBeenSet(false),
-    m_regionType(RegionType::NOT_SET),
-    m_regionTypeHasBeenSet(false),
-    m_status(DirectoryStage::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_vpcSettingsHasBeenSet(false),
-    m_desiredNumberOfDomainControllers(0),
-    m_desiredNumberOfDomainControllersHasBeenSet(false),
-    m_launchTimeHasBeenSet(false),
-    m_statusLastUpdatedDateTimeHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false)
+RegionDescription::RegionDescription(JsonView jsonValue)
+  : RegionDescription()
 {
   *this = jsonValue;
 }

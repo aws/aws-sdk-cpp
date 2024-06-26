@@ -26,9 +26,8 @@ Queue::Queue() :
 {
 }
 
-Queue::Queue(const XmlNode& xmlNode) : 
-    m_nameHasBeenSet(false),
-    m_uRLHasBeenSet(false)
+Queue::Queue(const XmlNode& xmlNode)
+  : Queue()
 {
   *this = xmlNode;
 }

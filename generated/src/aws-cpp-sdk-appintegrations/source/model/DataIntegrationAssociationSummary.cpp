@@ -25,10 +25,8 @@ DataIntegrationAssociationSummary::DataIntegrationAssociationSummary() :
 {
 }
 
-DataIntegrationAssociationSummary::DataIntegrationAssociationSummary(JsonView jsonValue) : 
-    m_dataIntegrationAssociationArnHasBeenSet(false),
-    m_dataIntegrationArnHasBeenSet(false),
-    m_clientIdHasBeenSet(false)
+DataIntegrationAssociationSummary::DataIntegrationAssociationSummary(JsonView jsonValue)
+  : DataIntegrationAssociationSummary()
 {
   *this = jsonValue;
 }

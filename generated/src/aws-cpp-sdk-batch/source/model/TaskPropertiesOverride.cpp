@@ -23,8 +23,8 @@ TaskPropertiesOverride::TaskPropertiesOverride() :
 {
 }
 
-TaskPropertiesOverride::TaskPropertiesOverride(JsonView jsonValue) : 
-    m_containersHasBeenSet(false)
+TaskPropertiesOverride::TaskPropertiesOverride(JsonView jsonValue)
+  : TaskPropertiesOverride()
 {
   *this = jsonValue;
 }

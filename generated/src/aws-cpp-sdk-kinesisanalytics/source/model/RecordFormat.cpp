@@ -25,10 +25,8 @@ RecordFormat::RecordFormat() :
 {
 }
 
-RecordFormat::RecordFormat(JsonView jsonValue) : 
-    m_recordFormatType(RecordFormatType::NOT_SET),
-    m_recordFormatTypeHasBeenSet(false),
-    m_mappingParametersHasBeenSet(false)
+RecordFormat::RecordFormat(JsonView jsonValue)
+  : RecordFormat()
 {
   *this = jsonValue;
 }

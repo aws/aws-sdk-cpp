@@ -33,18 +33,8 @@ DeploymentModel::DeploymentModel() :
 {
 }
 
-DeploymentModel::DeploymentModel(JsonView jsonValue) : 
-    m_modelHandleHasBeenSet(false),
-    m_modelNameHasBeenSet(false),
-    m_modelVersionHasBeenSet(false),
-    m_desiredState(ModelState::NOT_SET),
-    m_desiredStateHasBeenSet(false),
-    m_state(ModelState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_status(DeploymentStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusReasonHasBeenSet(false),
-    m_rollbackFailureReasonHasBeenSet(false)
+DeploymentModel::DeploymentModel(JsonView jsonValue)
+  : DeploymentModel()
 {
   *this = jsonValue;
 }

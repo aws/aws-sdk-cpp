@@ -23,8 +23,8 @@ ClusterMarker::ClusterMarker() :
 {
 }
 
-ClusterMarker::ClusterMarker(JsonView jsonValue) : 
-    m_simpleClusterMarkerHasBeenSet(false)
+ClusterMarker::ClusterMarker(JsonView jsonValue)
+  : ClusterMarker()
 {
   *this = jsonValue;
 }

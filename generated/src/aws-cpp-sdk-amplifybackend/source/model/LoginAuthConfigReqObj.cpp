@@ -26,11 +26,8 @@ LoginAuthConfigReqObj::LoginAuthConfigReqObj() :
 {
 }
 
-LoginAuthConfigReqObj::LoginAuthConfigReqObj(JsonView jsonValue) : 
-    m_awsCognitoIdentityPoolIdHasBeenSet(false),
-    m_awsCognitoRegionHasBeenSet(false),
-    m_awsUserPoolsIdHasBeenSet(false),
-    m_awsUserPoolsWebClientIdHasBeenSet(false)
+LoginAuthConfigReqObj::LoginAuthConfigReqObj(JsonView jsonValue)
+  : LoginAuthConfigReqObj()
 {
   *this = jsonValue;
 }

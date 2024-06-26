@@ -25,8 +25,8 @@ ServerSideEncryptionConfiguration::ServerSideEncryptionConfiguration() :
 {
 }
 
-ServerSideEncryptionConfiguration::ServerSideEncryptionConfiguration(const XmlNode& xmlNode) : 
-    m_rulesHasBeenSet(false)
+ServerSideEncryptionConfiguration::ServerSideEncryptionConfiguration(const XmlNode& xmlNode)
+  : ServerSideEncryptionConfiguration()
 {
   *this = xmlNode;
 }

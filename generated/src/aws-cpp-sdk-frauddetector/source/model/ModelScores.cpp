@@ -24,9 +24,8 @@ ModelScores::ModelScores() :
 {
 }
 
-ModelScores::ModelScores(JsonView jsonValue) : 
-    m_modelVersionHasBeenSet(false),
-    m_scoresHasBeenSet(false)
+ModelScores::ModelScores(JsonView jsonValue)
+  : ModelScores()
 {
   *this = jsonValue;
 }

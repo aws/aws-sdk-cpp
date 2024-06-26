@@ -27,12 +27,8 @@ PutAssetPropertyValueEntry::PutAssetPropertyValueEntry() :
 {
 }
 
-PutAssetPropertyValueEntry::PutAssetPropertyValueEntry(JsonView jsonValue) : 
-    m_entryIdHasBeenSet(false),
-    m_assetIdHasBeenSet(false),
-    m_propertyIdHasBeenSet(false),
-    m_propertyAliasHasBeenSet(false),
-    m_propertyValuesHasBeenSet(false)
+PutAssetPropertyValueEntry::PutAssetPropertyValueEntry(JsonView jsonValue)
+  : PutAssetPropertyValueEntry()
 {
   *this = jsonValue;
 }

@@ -31,16 +31,8 @@ SamplingStatisticsDocument::SamplingStatisticsDocument() :
 {
 }
 
-SamplingStatisticsDocument::SamplingStatisticsDocument(JsonView jsonValue) : 
-    m_ruleNameHasBeenSet(false),
-    m_clientIDHasBeenSet(false),
-    m_timestampHasBeenSet(false),
-    m_requestCount(0),
-    m_requestCountHasBeenSet(false),
-    m_sampledCount(0),
-    m_sampledCountHasBeenSet(false),
-    m_borrowCount(0),
-    m_borrowCountHasBeenSet(false)
+SamplingStatisticsDocument::SamplingStatisticsDocument(JsonView jsonValue)
+  : SamplingStatisticsDocument()
 {
   *this = jsonValue;
 }

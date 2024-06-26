@@ -24,9 +24,8 @@ RedshiftDatabase::RedshiftDatabase() :
 {
 }
 
-RedshiftDatabase::RedshiftDatabase(JsonView jsonValue) : 
-    m_databaseNameHasBeenSet(false),
-    m_clusterIdentifierHasBeenSet(false)
+RedshiftDatabase::RedshiftDatabase(JsonView jsonValue)
+  : RedshiftDatabase()
 {
   *this = jsonValue;
 }

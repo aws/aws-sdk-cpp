@@ -24,9 +24,8 @@ LabelsS3InputConfiguration::LabelsS3InputConfiguration() :
 {
 }
 
-LabelsS3InputConfiguration::LabelsS3InputConfiguration(JsonView jsonValue) : 
-    m_bucketHasBeenSet(false),
-    m_prefixHasBeenSet(false)
+LabelsS3InputConfiguration::LabelsS3InputConfiguration(JsonView jsonValue)
+  : LabelsS3InputConfiguration()
 {
   *this = jsonValue;
 }

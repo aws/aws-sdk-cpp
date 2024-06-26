@@ -24,9 +24,8 @@ ContentConcatenationConfiguration::ContentConcatenationConfiguration() :
 {
 }
 
-ContentConcatenationConfiguration::ContentConcatenationConfiguration(JsonView jsonValue) : 
-    m_state(ArtifactsConcatenationState::NOT_SET),
-    m_stateHasBeenSet(false)
+ContentConcatenationConfiguration::ContentConcatenationConfiguration(JsonView jsonValue)
+  : ContentConcatenationConfiguration()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ PutEmailIdentityDkimSigningAttributesResult::PutEmailIdentityDkimSigningAttribut
 {
 }
 
-PutEmailIdentityDkimSigningAttributesResult::PutEmailIdentityDkimSigningAttributesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_dkimStatus(DkimStatus::NOT_SET)
+PutEmailIdentityDkimSigningAttributesResult::PutEmailIdentityDkimSigningAttributesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : PutEmailIdentityDkimSigningAttributesResult()
 {
   *this = result;
 }

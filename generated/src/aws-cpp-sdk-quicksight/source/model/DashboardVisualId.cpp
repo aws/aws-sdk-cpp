@@ -25,10 +25,8 @@ DashboardVisualId::DashboardVisualId() :
 {
 }
 
-DashboardVisualId::DashboardVisualId(JsonView jsonValue) : 
-    m_dashboardIdHasBeenSet(false),
-    m_sheetIdHasBeenSet(false),
-    m_visualIdHasBeenSet(false)
+DashboardVisualId::DashboardVisualId(JsonView jsonValue)
+  : DashboardVisualId()
 {
   *this = jsonValue;
 }

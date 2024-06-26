@@ -34,19 +34,8 @@ CrawlerHistory::CrawlerHistory() :
 {
 }
 
-CrawlerHistory::CrawlerHistory(JsonView jsonValue) : 
-    m_crawlIdHasBeenSet(false),
-    m_state(CrawlerHistoryState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_summaryHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_logGroupHasBeenSet(false),
-    m_logStreamHasBeenSet(false),
-    m_messagePrefixHasBeenSet(false),
-    m_dPUHour(0.0),
-    m_dPUHourHasBeenSet(false)
+CrawlerHistory::CrawlerHistory(JsonView jsonValue)
+  : CrawlerHistory()
 {
   *this = jsonValue;
 }

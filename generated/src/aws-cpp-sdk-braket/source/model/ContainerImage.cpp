@@ -23,8 +23,8 @@ ContainerImage::ContainerImage() :
 {
 }
 
-ContainerImage::ContainerImage(JsonView jsonValue) : 
-    m_uriHasBeenSet(false)
+ContainerImage::ContainerImage(JsonView jsonValue)
+  : ContainerImage()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ StreamingDataPreviewOptions::StreamingDataPreviewOptions() :
 {
 }
 
-StreamingDataPreviewOptions::StreamingDataPreviewOptions(JsonView jsonValue) : 
-    m_pollingTime(0),
-    m_pollingTimeHasBeenSet(false),
-    m_recordPollingLimit(0),
-    m_recordPollingLimitHasBeenSet(false)
+StreamingDataPreviewOptions::StreamingDataPreviewOptions(JsonView jsonValue)
+  : StreamingDataPreviewOptions()
 {
   *this = jsonValue;
 }

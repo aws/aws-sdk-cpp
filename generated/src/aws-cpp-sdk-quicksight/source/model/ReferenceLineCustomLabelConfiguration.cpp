@@ -23,8 +23,8 @@ ReferenceLineCustomLabelConfiguration::ReferenceLineCustomLabelConfiguration() :
 {
 }
 
-ReferenceLineCustomLabelConfiguration::ReferenceLineCustomLabelConfiguration(JsonView jsonValue) : 
-    m_customLabelHasBeenSet(false)
+ReferenceLineCustomLabelConfiguration::ReferenceLineCustomLabelConfiguration(JsonView jsonValue)
+  : ReferenceLineCustomLabelConfiguration()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ OrderedPhoneNumber::OrderedPhoneNumber() :
 {
 }
 
-OrderedPhoneNumber::OrderedPhoneNumber(JsonView jsonValue) : 
-    m_e164PhoneNumberHasBeenSet(false),
-    m_status(OrderedPhoneNumberStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+OrderedPhoneNumber::OrderedPhoneNumber(JsonView jsonValue)
+  : OrderedPhoneNumber()
 {
   *this = jsonValue;
 }

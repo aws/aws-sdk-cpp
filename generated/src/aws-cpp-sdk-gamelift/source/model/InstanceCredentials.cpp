@@ -24,9 +24,8 @@ InstanceCredentials::InstanceCredentials() :
 {
 }
 
-InstanceCredentials::InstanceCredentials(JsonView jsonValue) : 
-    m_userNameHasBeenSet(false),
-    m_secretHasBeenSet(false)
+InstanceCredentials::InstanceCredentials(JsonView jsonValue)
+  : InstanceCredentials()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ RecordColumn::RecordColumn() :
 {
 }
 
-RecordColumn::RecordColumn(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_mappingHasBeenSet(false),
-    m_sqlTypeHasBeenSet(false)
+RecordColumn::RecordColumn(JsonView jsonValue)
+  : RecordColumn()
 {
   *this = jsonValue;
 }

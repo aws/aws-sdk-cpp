@@ -24,9 +24,8 @@ WordCloudSortConfiguration::WordCloudSortConfiguration() :
 {
 }
 
-WordCloudSortConfiguration::WordCloudSortConfiguration(JsonView jsonValue) : 
-    m_categoryItemsLimitHasBeenSet(false),
-    m_categorySortHasBeenSet(false)
+WordCloudSortConfiguration::WordCloudSortConfiguration(JsonView jsonValue)
+  : WordCloudSortConfiguration()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ QueryInfo::QueryInfo() :
 {
 }
 
-QueryInfo::QueryInfo(JsonView jsonValue) : 
-    m_selectFieldsHasBeenSet(false)
+QueryInfo::QueryInfo(JsonView jsonValue)
+  : QueryInfo()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ ListKeysResult::ListKeysResult() :
 {
 }
 
-ListKeysResult::ListKeysResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_truncated(false)
+ListKeysResult::ListKeysResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ListKeysResult()
 {
   *this = result;
 }

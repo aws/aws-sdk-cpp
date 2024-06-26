@@ -25,10 +25,8 @@ ColumnImportance::ColumnImportance() :
 {
 }
 
-ColumnImportance::ColumnImportance(JsonView jsonValue) : 
-    m_columnNameHasBeenSet(false),
-    m_importance(0.0),
-    m_importanceHasBeenSet(false)
+ColumnImportance::ColumnImportance(JsonView jsonValue)
+  : ColumnImportance()
 {
   *this = jsonValue;
 }

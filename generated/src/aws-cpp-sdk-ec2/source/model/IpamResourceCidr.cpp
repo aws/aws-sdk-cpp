@@ -44,27 +44,8 @@ IpamResourceCidr::IpamResourceCidr() :
 {
 }
 
-IpamResourceCidr::IpamResourceCidr(const XmlNode& xmlNode) : 
-    m_ipamIdHasBeenSet(false),
-    m_ipamScopeIdHasBeenSet(false),
-    m_ipamPoolIdHasBeenSet(false),
-    m_resourceRegionHasBeenSet(false),
-    m_resourceOwnerIdHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_resourceNameHasBeenSet(false),
-    m_resourceCidrHasBeenSet(false),
-    m_resourceType(IpamResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_resourceTagsHasBeenSet(false),
-    m_ipUsage(0.0),
-    m_ipUsageHasBeenSet(false),
-    m_complianceStatus(IpamComplianceStatus::NOT_SET),
-    m_complianceStatusHasBeenSet(false),
-    m_managementState(IpamManagementState::NOT_SET),
-    m_managementStateHasBeenSet(false),
-    m_overlapStatus(IpamOverlapStatus::NOT_SET),
-    m_overlapStatusHasBeenSet(false),
-    m_vpcIdHasBeenSet(false)
+IpamResourceCidr::IpamResourceCidr(const XmlNode& xmlNode)
+  : IpamResourceCidr()
 {
   *this = xmlNode;
 }

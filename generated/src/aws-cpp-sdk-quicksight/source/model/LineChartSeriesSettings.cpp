@@ -24,9 +24,8 @@ LineChartSeriesSettings::LineChartSeriesSettings() :
 {
 }
 
-LineChartSeriesSettings::LineChartSeriesSettings(JsonView jsonValue) : 
-    m_lineStyleSettingsHasBeenSet(false),
-    m_markerStyleSettingsHasBeenSet(false)
+LineChartSeriesSettings::LineChartSeriesSettings(JsonView jsonValue)
+  : LineChartSeriesSettings()
 {
   *this = jsonValue;
 }

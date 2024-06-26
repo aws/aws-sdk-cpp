@@ -25,10 +25,8 @@ CommitDiffSourceCodeType::CommitDiffSourceCodeType() :
 {
 }
 
-CommitDiffSourceCodeType::CommitDiffSourceCodeType(JsonView jsonValue) : 
-    m_sourceCommitHasBeenSet(false),
-    m_destinationCommitHasBeenSet(false),
-    m_mergeBaseCommitHasBeenSet(false)
+CommitDiffSourceCodeType::CommitDiffSourceCodeType(JsonView jsonValue)
+  : CommitDiffSourceCodeType()
 {
   *this = jsonValue;
 }

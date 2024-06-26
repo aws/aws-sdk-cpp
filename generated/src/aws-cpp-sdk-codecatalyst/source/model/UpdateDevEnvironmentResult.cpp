@@ -23,9 +23,8 @@ UpdateDevEnvironmentResult::UpdateDevEnvironmentResult() :
 {
 }
 
-UpdateDevEnvironmentResult::UpdateDevEnvironmentResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_instanceType(InstanceType::NOT_SET),
-    m_inactivityTimeoutMinutes(0)
+UpdateDevEnvironmentResult::UpdateDevEnvironmentResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateDevEnvironmentResult()
 {
   *this = result;
 }

@@ -27,12 +27,8 @@ AppInstance::AppInstance() :
 {
 }
 
-AppInstance::AppInstance(JsonView jsonValue) : 
-    m_appInstanceArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_metadataHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false),
-    m_lastUpdatedTimestampHasBeenSet(false)
+AppInstance::AppInstance(JsonView jsonValue)
+  : AppInstance()
 {
   *this = jsonValue;
 }

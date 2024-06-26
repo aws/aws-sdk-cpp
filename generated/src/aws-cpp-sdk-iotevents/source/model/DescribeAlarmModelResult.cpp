@@ -23,9 +23,8 @@ DescribeAlarmModelResult::DescribeAlarmModelResult() :
 {
 }
 
-DescribeAlarmModelResult::DescribeAlarmModelResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(AlarmModelVersionStatus::NOT_SET),
-    m_severity(0)
+DescribeAlarmModelResult::DescribeAlarmModelResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeAlarmModelResult()
 {
   *this = result;
 }

@@ -30,15 +30,8 @@ ApplicationConfiguration::ApplicationConfiguration() :
 {
 }
 
-ApplicationConfiguration::ApplicationConfiguration(JsonView jsonValue) : 
-    m_sqlApplicationConfigurationHasBeenSet(false),
-    m_flinkApplicationConfigurationHasBeenSet(false),
-    m_environmentPropertiesHasBeenSet(false),
-    m_applicationCodeConfigurationHasBeenSet(false),
-    m_applicationSnapshotConfigurationHasBeenSet(false),
-    m_applicationSystemRollbackConfigurationHasBeenSet(false),
-    m_vpcConfigurationsHasBeenSet(false),
-    m_zeppelinApplicationConfigurationHasBeenSet(false)
+ApplicationConfiguration::ApplicationConfiguration(JsonView jsonValue)
+  : ApplicationConfiguration()
 {
   *this = jsonValue;
 }

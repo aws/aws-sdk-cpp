@@ -25,10 +25,8 @@ TcpRoute::TcpRoute() :
 {
 }
 
-TcpRoute::TcpRoute(JsonView jsonValue) : 
-    m_actionHasBeenSet(false),
-    m_matchHasBeenSet(false),
-    m_timeoutHasBeenSet(false)
+TcpRoute::TcpRoute(JsonView jsonValue)
+  : TcpRoute()
 {
   *this = jsonValue;
 }

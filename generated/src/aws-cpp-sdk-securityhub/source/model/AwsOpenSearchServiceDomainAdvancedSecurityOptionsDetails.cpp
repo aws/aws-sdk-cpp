@@ -27,12 +27,8 @@ AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails::AwsOpenSearchServiceDo
 {
 }
 
-AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails::AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails(JsonView jsonValue) : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_internalUserDatabaseEnabled(false),
-    m_internalUserDatabaseEnabledHasBeenSet(false),
-    m_masterUserOptionsHasBeenSet(false)
+AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails::AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails(JsonView jsonValue)
+  : AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails()
 {
   *this = jsonValue;
 }

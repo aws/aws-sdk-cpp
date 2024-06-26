@@ -31,14 +31,8 @@ AddressTransfer::AddressTransfer() :
 {
 }
 
-AddressTransfer::AddressTransfer(const XmlNode& xmlNode) : 
-    m_publicIpHasBeenSet(false),
-    m_allocationIdHasBeenSet(false),
-    m_transferAccountIdHasBeenSet(false),
-    m_transferOfferExpirationTimestampHasBeenSet(false),
-    m_transferOfferAcceptedTimestampHasBeenSet(false),
-    m_addressTransferStatus(AddressTransferStatus::NOT_SET),
-    m_addressTransferStatusHasBeenSet(false)
+AddressTransfer::AddressTransfer(const XmlNode& xmlNode)
+  : AddressTransfer()
 {
   *this = xmlNode;
 }

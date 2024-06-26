@@ -28,14 +28,8 @@ DescribeQuerySuggestionsConfigResult::DescribeQuerySuggestionsConfigResult() :
 {
 }
 
-DescribeQuerySuggestionsConfigResult::DescribeQuerySuggestionsConfigResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_mode(Mode::NOT_SET),
-    m_status(QuerySuggestionsStatus::NOT_SET),
-    m_queryLogLookBackWindowInDays(0),
-    m_includeQueriesWithoutUserInformation(false),
-    m_minimumNumberOfQueryingUsers(0),
-    m_minimumQueryCount(0),
-    m_totalSuggestionsCount(0)
+DescribeQuerySuggestionsConfigResult::DescribeQuerySuggestionsConfigResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeQuerySuggestionsConfigResult()
 {
   *this = result;
 }

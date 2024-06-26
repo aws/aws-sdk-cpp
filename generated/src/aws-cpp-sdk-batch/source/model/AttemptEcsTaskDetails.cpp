@@ -25,10 +25,8 @@ AttemptEcsTaskDetails::AttemptEcsTaskDetails() :
 {
 }
 
-AttemptEcsTaskDetails::AttemptEcsTaskDetails(JsonView jsonValue) : 
-    m_containerInstanceArnHasBeenSet(false),
-    m_taskArnHasBeenSet(false),
-    m_containersHasBeenSet(false)
+AttemptEcsTaskDetails::AttemptEcsTaskDetails(JsonView jsonValue)
+  : AttemptEcsTaskDetails()
 {
   *this = jsonValue;
 }

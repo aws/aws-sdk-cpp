@@ -25,10 +25,8 @@ PipelineOutputConfig::PipelineOutputConfig() :
 {
 }
 
-PipelineOutputConfig::PipelineOutputConfig(JsonView jsonValue) : 
-    m_bucketHasBeenSet(false),
-    m_storageClassHasBeenSet(false),
-    m_permissionsHasBeenSet(false)
+PipelineOutputConfig::PipelineOutputConfig(JsonView jsonValue)
+  : PipelineOutputConfig()
 {
   *this = jsonValue;
 }

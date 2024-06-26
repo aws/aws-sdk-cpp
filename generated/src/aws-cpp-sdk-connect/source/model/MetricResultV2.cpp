@@ -25,10 +25,8 @@ MetricResultV2::MetricResultV2() :
 {
 }
 
-MetricResultV2::MetricResultV2(JsonView jsonValue) : 
-    m_dimensionsHasBeenSet(false),
-    m_metricIntervalHasBeenSet(false),
-    m_collectionsHasBeenSet(false)
+MetricResultV2::MetricResultV2(JsonView jsonValue)
+  : MetricResultV2()
 {
   *this = jsonValue;
 }

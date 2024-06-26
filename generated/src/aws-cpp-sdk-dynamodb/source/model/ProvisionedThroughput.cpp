@@ -26,11 +26,8 @@ ProvisionedThroughput::ProvisionedThroughput() :
 {
 }
 
-ProvisionedThroughput::ProvisionedThroughput(JsonView jsonValue) : 
-    m_readCapacityUnits(0),
-    m_readCapacityUnitsHasBeenSet(false),
-    m_writeCapacityUnits(0),
-    m_writeCapacityUnitsHasBeenSet(false)
+ProvisionedThroughput::ProvisionedThroughput(JsonView jsonValue)
+  : ProvisionedThroughput()
 {
   *this = jsonValue;
 }

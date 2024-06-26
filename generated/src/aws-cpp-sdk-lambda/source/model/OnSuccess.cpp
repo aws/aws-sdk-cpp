@@ -23,8 +23,8 @@ OnSuccess::OnSuccess() :
 {
 }
 
-OnSuccess::OnSuccess(JsonView jsonValue) : 
-    m_destinationHasBeenSet(false)
+OnSuccess::OnSuccess(JsonView jsonValue)
+  : OnSuccess()
 {
   *this = jsonValue;
 }

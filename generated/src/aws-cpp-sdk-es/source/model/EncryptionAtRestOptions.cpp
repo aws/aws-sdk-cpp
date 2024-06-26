@@ -25,10 +25,8 @@ EncryptionAtRestOptions::EncryptionAtRestOptions() :
 {
 }
 
-EncryptionAtRestOptions::EncryptionAtRestOptions(JsonView jsonValue) : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
+EncryptionAtRestOptions::EncryptionAtRestOptions(JsonView jsonValue)
+  : EncryptionAtRestOptions()
 {
   *this = jsonValue;
 }

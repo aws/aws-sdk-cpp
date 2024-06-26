@@ -25,10 +25,8 @@ QueryLimitExceededException::QueryLimitExceededException() :
 {
 }
 
-QueryLimitExceededException::QueryLimitExceededException(JsonView jsonValue) : 
-    m_detailedMessageHasBeenSet(false),
-    m_requestIdHasBeenSet(false),
-    m_codeHasBeenSet(false)
+QueryLimitExceededException::QueryLimitExceededException(JsonView jsonValue)
+  : QueryLimitExceededException()
 {
   *this = jsonValue;
 }

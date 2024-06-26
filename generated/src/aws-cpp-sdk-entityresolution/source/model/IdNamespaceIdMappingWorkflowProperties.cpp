@@ -25,10 +25,8 @@ IdNamespaceIdMappingWorkflowProperties::IdNamespaceIdMappingWorkflowProperties()
 {
 }
 
-IdNamespaceIdMappingWorkflowProperties::IdNamespaceIdMappingWorkflowProperties(JsonView jsonValue) : 
-    m_idMappingType(IdMappingType::NOT_SET),
-    m_idMappingTypeHasBeenSet(false),
-    m_providerPropertiesHasBeenSet(false)
+IdNamespaceIdMappingWorkflowProperties::IdNamespaceIdMappingWorkflowProperties(JsonView jsonValue)
+  : IdNamespaceIdMappingWorkflowProperties()
 {
   *this = jsonValue;
 }

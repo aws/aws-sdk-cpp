@@ -26,9 +26,8 @@ SecurityGroupRuleDescription::SecurityGroupRuleDescription() :
 {
 }
 
-SecurityGroupRuleDescription::SecurityGroupRuleDescription(const XmlNode& xmlNode) : 
-    m_securityGroupRuleIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+SecurityGroupRuleDescription::SecurityGroupRuleDescription(const XmlNode& xmlNode)
+  : SecurityGroupRuleDescription()
 {
   *this = xmlNode;
 }

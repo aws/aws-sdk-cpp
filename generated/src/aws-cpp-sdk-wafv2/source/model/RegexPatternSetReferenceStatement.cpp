@@ -25,10 +25,8 @@ RegexPatternSetReferenceStatement::RegexPatternSetReferenceStatement() :
 {
 }
 
-RegexPatternSetReferenceStatement::RegexPatternSetReferenceStatement(JsonView jsonValue) : 
-    m_aRNHasBeenSet(false),
-    m_fieldToMatchHasBeenSet(false),
-    m_textTransformationsHasBeenSet(false)
+RegexPatternSetReferenceStatement::RegexPatternSetReferenceStatement(JsonView jsonValue)
+  : RegexPatternSetReferenceStatement()
 {
   *this = jsonValue;
 }

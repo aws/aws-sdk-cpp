@@ -23,9 +23,8 @@ GetCommandInvocationResult::GetCommandInvocationResult() :
 {
 }
 
-GetCommandInvocationResult::GetCommandInvocationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_responseCode(0),
-    m_status(CommandInvocationStatus::NOT_SET)
+GetCommandInvocationResult::GetCommandInvocationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetCommandInvocationResult()
 {
   *this = result;
 }

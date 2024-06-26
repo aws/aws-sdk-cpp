@@ -23,8 +23,8 @@ S3ClassificationScopeUpdate::S3ClassificationScopeUpdate() :
 {
 }
 
-S3ClassificationScopeUpdate::S3ClassificationScopeUpdate(JsonView jsonValue) : 
-    m_excludesHasBeenSet(false)
+S3ClassificationScopeUpdate::S3ClassificationScopeUpdate(JsonView jsonValue)
+  : S3ClassificationScopeUpdate()
 {
   *this = jsonValue;
 }

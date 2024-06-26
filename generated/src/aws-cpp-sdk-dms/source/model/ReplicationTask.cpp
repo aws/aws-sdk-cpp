@@ -42,27 +42,8 @@ ReplicationTask::ReplicationTask() :
 {
 }
 
-ReplicationTask::ReplicationTask(JsonView jsonValue) : 
-    m_replicationTaskIdentifierHasBeenSet(false),
-    m_sourceEndpointArnHasBeenSet(false),
-    m_targetEndpointArnHasBeenSet(false),
-    m_replicationInstanceArnHasBeenSet(false),
-    m_migrationType(MigrationTypeValue::NOT_SET),
-    m_migrationTypeHasBeenSet(false),
-    m_tableMappingsHasBeenSet(false),
-    m_replicationTaskSettingsHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_lastFailureMessageHasBeenSet(false),
-    m_stopReasonHasBeenSet(false),
-    m_replicationTaskCreationDateHasBeenSet(false),
-    m_replicationTaskStartDateHasBeenSet(false),
-    m_cdcStartPositionHasBeenSet(false),
-    m_cdcStopPositionHasBeenSet(false),
-    m_recoveryCheckpointHasBeenSet(false),
-    m_replicationTaskArnHasBeenSet(false),
-    m_replicationTaskStatsHasBeenSet(false),
-    m_taskDataHasBeenSet(false),
-    m_targetReplicationInstanceArnHasBeenSet(false)
+ReplicationTask::ReplicationTask(JsonView jsonValue)
+  : ReplicationTask()
 {
   *this = jsonValue;
 }

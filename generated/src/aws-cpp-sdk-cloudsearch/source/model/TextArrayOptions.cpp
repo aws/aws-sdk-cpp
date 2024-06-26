@@ -31,14 +31,8 @@ TextArrayOptions::TextArrayOptions() :
 {
 }
 
-TextArrayOptions::TextArrayOptions(const XmlNode& xmlNode) : 
-    m_defaultValueHasBeenSet(false),
-    m_sourceFieldsHasBeenSet(false),
-    m_returnEnabled(false),
-    m_returnEnabledHasBeenSet(false),
-    m_highlightEnabled(false),
-    m_highlightEnabledHasBeenSet(false),
-    m_analysisSchemeHasBeenSet(false)
+TextArrayOptions::TextArrayOptions(const XmlNode& xmlNode)
+  : TextArrayOptions()
 {
   *this = xmlNode;
 }

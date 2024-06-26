@@ -35,20 +35,8 @@ LifecyclePolicy::LifecyclePolicy() :
 {
 }
 
-LifecyclePolicy::LifecyclePolicy(JsonView jsonValue) : 
-    m_policyIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_state(GettablePolicyStateValues::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_executionRoleArnHasBeenSet(false),
-    m_dateCreatedHasBeenSet(false),
-    m_dateModifiedHasBeenSet(false),
-    m_policyDetailsHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_policyArnHasBeenSet(false),
-    m_defaultPolicy(false),
-    m_defaultPolicyHasBeenSet(false)
+LifecyclePolicy::LifecyclePolicy(JsonView jsonValue)
+  : LifecyclePolicy()
 {
   *this = jsonValue;
 }

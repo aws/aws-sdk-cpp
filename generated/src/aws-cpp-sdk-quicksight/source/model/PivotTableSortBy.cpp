@@ -25,10 +25,8 @@ PivotTableSortBy::PivotTableSortBy() :
 {
 }
 
-PivotTableSortBy::PivotTableSortBy(JsonView jsonValue) : 
-    m_fieldHasBeenSet(false),
-    m_columnHasBeenSet(false),
-    m_dataPathHasBeenSet(false)
+PivotTableSortBy::PivotTableSortBy(JsonView jsonValue)
+  : PivotTableSortBy()
 {
   *this = jsonValue;
 }

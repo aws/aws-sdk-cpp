@@ -27,12 +27,8 @@ FirewallDomainListMetadata::FirewallDomainListMetadata() :
 {
 }
 
-FirewallDomainListMetadata::FirewallDomainListMetadata(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_creatorRequestIdHasBeenSet(false),
-    m_managedOwnerNameHasBeenSet(false)
+FirewallDomainListMetadata::FirewallDomainListMetadata(JsonView jsonValue)
+  : FirewallDomainListMetadata()
 {
   *this = jsonValue;
 }

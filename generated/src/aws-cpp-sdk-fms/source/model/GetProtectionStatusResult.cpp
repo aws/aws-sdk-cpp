@@ -22,8 +22,8 @@ GetProtectionStatusResult::GetProtectionStatusResult() :
 {
 }
 
-GetProtectionStatusResult::GetProtectionStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_serviceType(SecurityServiceType::NOT_SET)
+GetProtectionStatusResult::GetProtectionStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetProtectionStatusResult()
 {
   *this = result;
 }

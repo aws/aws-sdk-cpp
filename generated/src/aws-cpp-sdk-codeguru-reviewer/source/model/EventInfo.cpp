@@ -24,9 +24,8 @@ EventInfo::EventInfo() :
 {
 }
 
-EventInfo::EventInfo(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_stateHasBeenSet(false)
+EventInfo::EventInfo(JsonView jsonValue)
+  : EventInfo()
 {
   *this = jsonValue;
 }

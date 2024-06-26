@@ -37,22 +37,8 @@ Connection::Connection() :
 {
 }
 
-Connection::Connection(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_connectionType(ConnectionType::NOT_SET),
-    m_connectionTypeHasBeenSet(false),
-    m_matchCriteriaHasBeenSet(false),
-    m_connectionPropertiesHasBeenSet(false),
-    m_physicalConnectionRequirementsHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_lastUpdatedByHasBeenSet(false),
-    m_status(ConnectionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusReasonHasBeenSet(false),
-    m_lastConnectionValidationTimeHasBeenSet(false),
-    m_authenticationConfigurationHasBeenSet(false)
+Connection::Connection(JsonView jsonValue)
+  : Connection()
 {
   *this = jsonValue;
 }

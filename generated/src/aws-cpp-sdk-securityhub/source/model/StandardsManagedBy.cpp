@@ -24,9 +24,8 @@ StandardsManagedBy::StandardsManagedBy() :
 {
 }
 
-StandardsManagedBy::StandardsManagedBy(JsonView jsonValue) : 
-    m_companyHasBeenSet(false),
-    m_productHasBeenSet(false)
+StandardsManagedBy::StandardsManagedBy(JsonView jsonValue)
+  : StandardsManagedBy()
 {
   *this = jsonValue;
 }

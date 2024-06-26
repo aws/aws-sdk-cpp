@@ -27,10 +27,8 @@ OperationResultFilter::OperationResultFilter() :
 {
 }
 
-OperationResultFilter::OperationResultFilter(const XmlNode& xmlNode) : 
-    m_name(OperationResultFilterName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+OperationResultFilter::OperationResultFilter(const XmlNode& xmlNode)
+  : OperationResultFilter()
 {
   *this = xmlNode;
 }

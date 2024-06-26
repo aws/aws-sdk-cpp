@@ -23,8 +23,8 @@ DetectedMetricSource::DetectedMetricSource() :
 {
 }
 
-DetectedMetricSource::DetectedMetricSource(JsonView jsonValue) : 
-    m_s3SourceConfigHasBeenSet(false)
+DetectedMetricSource::DetectedMetricSource(JsonView jsonValue)
+  : DetectedMetricSource()
 {
   *this = jsonValue;
 }

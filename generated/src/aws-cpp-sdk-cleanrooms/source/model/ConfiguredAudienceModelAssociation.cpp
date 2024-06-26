@@ -35,20 +35,8 @@ ConfiguredAudienceModelAssociation::ConfiguredAudienceModelAssociation() :
 {
 }
 
-ConfiguredAudienceModelAssociation::ConfiguredAudienceModelAssociation(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_configuredAudienceModelArnHasBeenSet(false),
-    m_membershipIdHasBeenSet(false),
-    m_membershipArnHasBeenSet(false),
-    m_collaborationIdHasBeenSet(false),
-    m_collaborationArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_manageResourcePolicies(false),
-    m_manageResourcePoliciesHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
+ConfiguredAudienceModelAssociation::ConfiguredAudienceModelAssociation(JsonView jsonValue)
+  : ConfiguredAudienceModelAssociation()
 {
   *this = jsonValue;
 }

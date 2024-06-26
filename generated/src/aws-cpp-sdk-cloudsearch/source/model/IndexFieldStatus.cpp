@@ -26,9 +26,8 @@ IndexFieldStatus::IndexFieldStatus() :
 {
 }
 
-IndexFieldStatus::IndexFieldStatus(const XmlNode& xmlNode) : 
-    m_optionsHasBeenSet(false),
-    m_statusHasBeenSet(false)
+IndexFieldStatus::IndexFieldStatus(const XmlNode& xmlNode)
+  : IndexFieldStatus()
 {
   *this = xmlNode;
 }

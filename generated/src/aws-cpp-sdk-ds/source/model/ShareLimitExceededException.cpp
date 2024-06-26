@@ -24,9 +24,8 @@ ShareLimitExceededException::ShareLimitExceededException() :
 {
 }
 
-ShareLimitExceededException::ShareLimitExceededException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
+ShareLimitExceededException::ShareLimitExceededException(JsonView jsonValue)
+  : ShareLimitExceededException()
 {
   *this = jsonValue;
 }

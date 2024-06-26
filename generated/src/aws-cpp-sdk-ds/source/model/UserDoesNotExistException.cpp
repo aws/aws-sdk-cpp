@@ -24,9 +24,8 @@ UserDoesNotExistException::UserDoesNotExistException() :
 {
 }
 
-UserDoesNotExistException::UserDoesNotExistException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
+UserDoesNotExistException::UserDoesNotExistException(JsonView jsonValue)
+  : UserDoesNotExistException()
 {
   *this = jsonValue;
 }

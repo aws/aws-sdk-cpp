@@ -24,9 +24,8 @@ S3BucketDefinitionForJob::S3BucketDefinitionForJob() :
 {
 }
 
-S3BucketDefinitionForJob::S3BucketDefinitionForJob(JsonView jsonValue) : 
-    m_accountIdHasBeenSet(false),
-    m_bucketsHasBeenSet(false)
+S3BucketDefinitionForJob::S3BucketDefinitionForJob(JsonView jsonValue)
+  : S3BucketDefinitionForJob()
 {
   *this = jsonValue;
 }

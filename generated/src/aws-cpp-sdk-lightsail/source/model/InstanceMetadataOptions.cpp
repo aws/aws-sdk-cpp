@@ -32,17 +32,8 @@ InstanceMetadataOptions::InstanceMetadataOptions() :
 {
 }
 
-InstanceMetadataOptions::InstanceMetadataOptions(JsonView jsonValue) : 
-    m_state(InstanceMetadataState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_httpTokens(HttpTokens::NOT_SET),
-    m_httpTokensHasBeenSet(false),
-    m_httpEndpoint(HttpEndpoint::NOT_SET),
-    m_httpEndpointHasBeenSet(false),
-    m_httpPutResponseHopLimit(0),
-    m_httpPutResponseHopLimitHasBeenSet(false),
-    m_httpProtocolIpv6(HttpProtocolIpv6::NOT_SET),
-    m_httpProtocolIpv6HasBeenSet(false)
+InstanceMetadataOptions::InstanceMetadataOptions(JsonView jsonValue)
+  : InstanceMetadataOptions()
 {
   *this = jsonValue;
 }

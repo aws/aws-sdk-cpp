@@ -30,15 +30,8 @@ LicenseConfigurationUsage::LicenseConfigurationUsage() :
 {
 }
 
-LicenseConfigurationUsage::LicenseConfigurationUsage(JsonView jsonValue) : 
-    m_resourceArnHasBeenSet(false),
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_resourceStatusHasBeenSet(false),
-    m_resourceOwnerIdHasBeenSet(false),
-    m_associationTimeHasBeenSet(false),
-    m_consumedLicenses(0),
-    m_consumedLicensesHasBeenSet(false)
+LicenseConfigurationUsage::LicenseConfigurationUsage(JsonView jsonValue)
+  : LicenseConfigurationUsage()
 {
   *this = jsonValue;
 }

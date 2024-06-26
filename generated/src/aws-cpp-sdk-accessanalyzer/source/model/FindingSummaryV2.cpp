@@ -35,20 +35,8 @@ FindingSummaryV2::FindingSummaryV2() :
 {
 }
 
-FindingSummaryV2::FindingSummaryV2(JsonView jsonValue) : 
-    m_analyzedAtHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_errorHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_resourceHasBeenSet(false),
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_resourceOwnerAccountHasBeenSet(false),
-    m_status(FindingStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_findingType(FindingType::NOT_SET),
-    m_findingTypeHasBeenSet(false)
+FindingSummaryV2::FindingSummaryV2(JsonView jsonValue)
+  : FindingSummaryV2()
 {
   *this = jsonValue;
 }

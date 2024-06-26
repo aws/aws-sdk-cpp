@@ -30,15 +30,8 @@ Item::Item() :
 {
 }
 
-Item::Item(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_type(ItemType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_eTagHasBeenSet(false),
-    m_lastModifiedHasBeenSet(false),
-    m_contentTypeHasBeenSet(false),
-    m_contentLength(0),
-    m_contentLengthHasBeenSet(false)
+Item::Item(JsonView jsonValue)
+  : Item()
 {
   *this = jsonValue;
 }

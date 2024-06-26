@@ -35,20 +35,8 @@ AuthorizerDescription::AuthorizerDescription() :
 {
 }
 
-AuthorizerDescription::AuthorizerDescription(JsonView jsonValue) : 
-    m_authorizerNameHasBeenSet(false),
-    m_authorizerArnHasBeenSet(false),
-    m_authorizerFunctionArnHasBeenSet(false),
-    m_tokenKeyNameHasBeenSet(false),
-    m_tokenSigningPublicKeysHasBeenSet(false),
-    m_status(AuthorizerStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_lastModifiedDateHasBeenSet(false),
-    m_signingDisabled(false),
-    m_signingDisabledHasBeenSet(false),
-    m_enableCachingForHttp(false),
-    m_enableCachingForHttpHasBeenSet(false)
+AuthorizerDescription::AuthorizerDescription(JsonView jsonValue)
+  : AuthorizerDescription()
 {
   *this = jsonValue;
 }

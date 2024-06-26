@@ -36,21 +36,8 @@ Namespace::Namespace() :
 {
 }
 
-Namespace::Namespace(JsonView jsonValue) : 
-    m_adminPasswordSecretArnHasBeenSet(false),
-    m_adminPasswordSecretKmsKeyIdHasBeenSet(false),
-    m_adminUsernameHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_dbNameHasBeenSet(false),
-    m_defaultIamRoleArnHasBeenSet(false),
-    m_iamRolesHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_logExportsHasBeenSet(false),
-    m_namespaceArnHasBeenSet(false),
-    m_namespaceIdHasBeenSet(false),
-    m_namespaceNameHasBeenSet(false),
-    m_status(NamespaceStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+Namespace::Namespace(JsonView jsonValue)
+  : Namespace()
 {
   *this = jsonValue;
 }

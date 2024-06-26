@@ -27,13 +27,8 @@ DescribeImageVersionResult::DescribeImageVersionResult() :
 {
 }
 
-DescribeImageVersionResult::DescribeImageVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_imageVersionStatus(ImageVersionStatus::NOT_SET),
-    m_version(0),
-    m_vendorGuidance(VendorGuidance::NOT_SET),
-    m_jobType(JobType::NOT_SET),
-    m_processor(Processor::NOT_SET),
-    m_horovod(false)
+DescribeImageVersionResult::DescribeImageVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeImageVersionResult()
 {
   *this = result;
 }

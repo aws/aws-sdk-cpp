@@ -29,14 +29,8 @@ JobStateTimeLimitAction::JobStateTimeLimitAction() :
 {
 }
 
-JobStateTimeLimitAction::JobStateTimeLimitAction(JsonView jsonValue) : 
-    m_reasonHasBeenSet(false),
-    m_state(JobStateTimeLimitActionsState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_maxTimeSeconds(0),
-    m_maxTimeSecondsHasBeenSet(false),
-    m_action(JobStateTimeLimitActionsAction::NOT_SET),
-    m_actionHasBeenSet(false)
+JobStateTimeLimitAction::JobStateTimeLimitAction(JsonView jsonValue)
+  : JobStateTimeLimitAction()
 {
   *this = jsonValue;
 }

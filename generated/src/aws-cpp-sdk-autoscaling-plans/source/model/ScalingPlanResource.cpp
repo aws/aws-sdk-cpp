@@ -34,19 +34,8 @@ ScalingPlanResource::ScalingPlanResource() :
 {
 }
 
-ScalingPlanResource::ScalingPlanResource(JsonView jsonValue) : 
-    m_scalingPlanNameHasBeenSet(false),
-    m_scalingPlanVersion(0),
-    m_scalingPlanVersionHasBeenSet(false),
-    m_serviceNamespace(ServiceNamespace::NOT_SET),
-    m_serviceNamespaceHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_scalableDimension(ScalableDimension::NOT_SET),
-    m_scalableDimensionHasBeenSet(false),
-    m_scalingPoliciesHasBeenSet(false),
-    m_scalingStatusCode(ScalingStatusCode::NOT_SET),
-    m_scalingStatusCodeHasBeenSet(false),
-    m_scalingStatusMessageHasBeenSet(false)
+ScalingPlanResource::ScalingPlanResource(JsonView jsonValue)
+  : ScalingPlanResource()
 {
   *this = jsonValue;
 }

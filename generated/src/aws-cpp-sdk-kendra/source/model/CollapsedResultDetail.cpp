@@ -24,9 +24,8 @@ CollapsedResultDetail::CollapsedResultDetail() :
 {
 }
 
-CollapsedResultDetail::CollapsedResultDetail(JsonView jsonValue) : 
-    m_documentAttributeHasBeenSet(false),
-    m_expandedResultsHasBeenSet(false)
+CollapsedResultDetail::CollapsedResultDetail(JsonView jsonValue)
+  : CollapsedResultDetail()
 {
   *this = jsonValue;
 }

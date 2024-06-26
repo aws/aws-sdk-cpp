@@ -27,12 +27,8 @@ TimerStartedEventAttributes::TimerStartedEventAttributes() :
 {
 }
 
-TimerStartedEventAttributes::TimerStartedEventAttributes(JsonView jsonValue) : 
-    m_timerIdHasBeenSet(false),
-    m_controlHasBeenSet(false),
-    m_startToFireTimeoutHasBeenSet(false),
-    m_decisionTaskCompletedEventId(0),
-    m_decisionTaskCompletedEventIdHasBeenSet(false)
+TimerStartedEventAttributes::TimerStartedEventAttributes(JsonView jsonValue)
+  : TimerStartedEventAttributes()
 {
   *this = jsonValue;
 }

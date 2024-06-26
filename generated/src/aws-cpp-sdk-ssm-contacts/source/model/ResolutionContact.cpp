@@ -27,12 +27,8 @@ ResolutionContact::ResolutionContact() :
 {
 }
 
-ResolutionContact::ResolutionContact(JsonView jsonValue) : 
-    m_contactArnHasBeenSet(false),
-    m_type(ContactType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_stageIndex(0),
-    m_stageIndexHasBeenSet(false)
+ResolutionContact::ResolutionContact(JsonView jsonValue)
+  : ResolutionContact()
 {
   *this = jsonValue;
 }

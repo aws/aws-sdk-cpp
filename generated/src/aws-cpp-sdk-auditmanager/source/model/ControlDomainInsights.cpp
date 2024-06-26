@@ -30,15 +30,8 @@ ControlDomainInsights::ControlDomainInsights() :
 {
 }
 
-ControlDomainInsights::ControlDomainInsights(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_controlsCountByNoncompliantEvidence(0),
-    m_controlsCountByNoncompliantEvidenceHasBeenSet(false),
-    m_totalControlsCount(0),
-    m_totalControlsCountHasBeenSet(false),
-    m_evidenceInsightsHasBeenSet(false),
-    m_lastUpdatedHasBeenSet(false)
+ControlDomainInsights::ControlDomainInsights(JsonView jsonValue)
+  : ControlDomainInsights()
 {
   *this = jsonValue;
 }

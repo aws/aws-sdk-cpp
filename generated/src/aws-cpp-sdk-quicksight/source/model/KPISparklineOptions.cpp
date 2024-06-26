@@ -29,14 +29,8 @@ KPISparklineOptions::KPISparklineOptions() :
 {
 }
 
-KPISparklineOptions::KPISparklineOptions(JsonView jsonValue) : 
-    m_visibility(Visibility::NOT_SET),
-    m_visibilityHasBeenSet(false),
-    m_type(KPISparklineType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_colorHasBeenSet(false),
-    m_tooltipVisibility(Visibility::NOT_SET),
-    m_tooltipVisibilityHasBeenSet(false)
+KPISparklineOptions::KPISparklineOptions(JsonView jsonValue)
+  : KPISparklineOptions()
 {
   *this = jsonValue;
 }

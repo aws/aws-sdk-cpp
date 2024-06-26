@@ -24,9 +24,8 @@ Policy::Policy() :
 {
 }
 
-Policy::Policy(JsonView jsonValue) : 
-    m_policyNameHasBeenSet(false),
-    m_policyArnHasBeenSet(false)
+Policy::Policy(JsonView jsonValue)
+  : Policy()
 {
   *this = jsonValue;
 }

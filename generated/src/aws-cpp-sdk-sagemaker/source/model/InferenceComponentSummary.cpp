@@ -31,16 +31,8 @@ InferenceComponentSummary::InferenceComponentSummary() :
 {
 }
 
-InferenceComponentSummary::InferenceComponentSummary(JsonView jsonValue) : 
-    m_creationTimeHasBeenSet(false),
-    m_inferenceComponentArnHasBeenSet(false),
-    m_inferenceComponentNameHasBeenSet(false),
-    m_endpointArnHasBeenSet(false),
-    m_endpointNameHasBeenSet(false),
-    m_variantNameHasBeenSet(false),
-    m_inferenceComponentStatus(InferenceComponentStatus::NOT_SET),
-    m_inferenceComponentStatusHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false)
+InferenceComponentSummary::InferenceComponentSummary(JsonView jsonValue)
+  : InferenceComponentSummary()
 {
   *this = jsonValue;
 }

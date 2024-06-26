@@ -24,9 +24,8 @@ RuleGroupDetails::RuleGroupDetails() :
 {
 }
 
-RuleGroupDetails::RuleGroupDetails(JsonView jsonValue) : 
-    m_ruleVariablesHasBeenSet(false),
-    m_rulesSourceHasBeenSet(false)
+RuleGroupDetails::RuleGroupDetails(JsonView jsonValue)
+  : RuleGroupDetails()
 {
   *this = jsonValue;
 }

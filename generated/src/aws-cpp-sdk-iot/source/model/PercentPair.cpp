@@ -26,11 +26,8 @@ PercentPair::PercentPair() :
 {
 }
 
-PercentPair::PercentPair(JsonView jsonValue) : 
-    m_percent(0.0),
-    m_percentHasBeenSet(false),
-    m_value(0.0),
-    m_valueHasBeenSet(false)
+PercentPair::PercentPair(JsonView jsonValue)
+  : PercentPair()
 {
   *this = jsonValue;
 }

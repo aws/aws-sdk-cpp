@@ -25,10 +25,8 @@ CreateFaceLivenessSessionRequestSettings::CreateFaceLivenessSessionRequestSettin
 {
 }
 
-CreateFaceLivenessSessionRequestSettings::CreateFaceLivenessSessionRequestSettings(JsonView jsonValue) : 
-    m_outputConfigHasBeenSet(false),
-    m_auditImagesLimit(0),
-    m_auditImagesLimitHasBeenSet(false)
+CreateFaceLivenessSessionRequestSettings::CreateFaceLivenessSessionRequestSettings(JsonView jsonValue)
+  : CreateFaceLivenessSessionRequestSettings()
 {
   *this = jsonValue;
 }

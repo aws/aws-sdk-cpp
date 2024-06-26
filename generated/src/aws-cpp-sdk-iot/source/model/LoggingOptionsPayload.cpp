@@ -25,10 +25,8 @@ LoggingOptionsPayload::LoggingOptionsPayload() :
 {
 }
 
-LoggingOptionsPayload::LoggingOptionsPayload(JsonView jsonValue) : 
-    m_roleArnHasBeenSet(false),
-    m_logLevel(LogLevel::NOT_SET),
-    m_logLevelHasBeenSet(false)
+LoggingOptionsPayload::LoggingOptionsPayload(JsonView jsonValue)
+  : LoggingOptionsPayload()
 {
   *this = jsonValue;
 }

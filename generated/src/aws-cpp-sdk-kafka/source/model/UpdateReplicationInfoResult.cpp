@@ -22,8 +22,8 @@ UpdateReplicationInfoResult::UpdateReplicationInfoResult() :
 {
 }
 
-UpdateReplicationInfoResult::UpdateReplicationInfoResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_replicatorState(ReplicatorState::NOT_SET)
+UpdateReplicationInfoResult::UpdateReplicationInfoResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateReplicationInfoResult()
 {
   *this = result;
 }

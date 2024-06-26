@@ -27,12 +27,8 @@ UpdatePipeSourceRabbitMQBrokerParameters::UpdatePipeSourceRabbitMQBrokerParamete
 {
 }
 
-UpdatePipeSourceRabbitMQBrokerParameters::UpdatePipeSourceRabbitMQBrokerParameters(JsonView jsonValue) : 
-    m_credentialsHasBeenSet(false),
-    m_batchSize(0),
-    m_batchSizeHasBeenSet(false),
-    m_maximumBatchingWindowInSeconds(0),
-    m_maximumBatchingWindowInSecondsHasBeenSet(false)
+UpdatePipeSourceRabbitMQBrokerParameters::UpdatePipeSourceRabbitMQBrokerParameters(JsonView jsonValue)
+  : UpdatePipeSourceRabbitMQBrokerParameters()
 {
   *this = jsonValue;
 }

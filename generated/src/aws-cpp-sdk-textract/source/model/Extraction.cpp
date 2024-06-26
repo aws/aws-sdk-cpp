@@ -25,10 +25,8 @@ Extraction::Extraction() :
 {
 }
 
-Extraction::Extraction(JsonView jsonValue) : 
-    m_lendingDocumentHasBeenSet(false),
-    m_expenseDocumentHasBeenSet(false),
-    m_identityDocumentHasBeenSet(false)
+Extraction::Extraction(JsonView jsonValue)
+  : Extraction()
 {
   *this = jsonValue;
 }

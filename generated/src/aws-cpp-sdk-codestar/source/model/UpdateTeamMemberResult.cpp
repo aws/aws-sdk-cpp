@@ -22,8 +22,8 @@ UpdateTeamMemberResult::UpdateTeamMemberResult() :
 {
 }
 
-UpdateTeamMemberResult::UpdateTeamMemberResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_remoteAccessAllowed(false)
+UpdateTeamMemberResult::UpdateTeamMemberResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateTeamMemberResult()
 {
   *this = result;
 }

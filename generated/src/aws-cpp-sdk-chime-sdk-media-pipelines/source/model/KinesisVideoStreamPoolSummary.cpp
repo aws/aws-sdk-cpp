@@ -25,10 +25,8 @@ KinesisVideoStreamPoolSummary::KinesisVideoStreamPoolSummary() :
 {
 }
 
-KinesisVideoStreamPoolSummary::KinesisVideoStreamPoolSummary(JsonView jsonValue) : 
-    m_poolNameHasBeenSet(false),
-    m_poolIdHasBeenSet(false),
-    m_poolArnHasBeenSet(false)
+KinesisVideoStreamPoolSummary::KinesisVideoStreamPoolSummary(JsonView jsonValue)
+  : KinesisVideoStreamPoolSummary()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ NamespaceAlreadyExists::NamespaceAlreadyExists() :
 {
 }
 
-NamespaceAlreadyExists::NamespaceAlreadyExists(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_creatorRequestIdHasBeenSet(false),
-    m_namespaceIdHasBeenSet(false)
+NamespaceAlreadyExists::NamespaceAlreadyExists(JsonView jsonValue)
+  : NamespaceAlreadyExists()
 {
   *this = jsonValue;
 }

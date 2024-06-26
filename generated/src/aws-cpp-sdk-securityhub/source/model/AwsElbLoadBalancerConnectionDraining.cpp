@@ -26,11 +26,8 @@ AwsElbLoadBalancerConnectionDraining::AwsElbLoadBalancerConnectionDraining() :
 {
 }
 
-AwsElbLoadBalancerConnectionDraining::AwsElbLoadBalancerConnectionDraining(JsonView jsonValue) : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_timeout(0),
-    m_timeoutHasBeenSet(false)
+AwsElbLoadBalancerConnectionDraining::AwsElbLoadBalancerConnectionDraining(JsonView jsonValue)
+  : AwsElbLoadBalancerConnectionDraining()
 {
   *this = jsonValue;
 }

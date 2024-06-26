@@ -26,11 +26,8 @@ ControlPlaneUserAttributeFilter::ControlPlaneUserAttributeFilter() :
 {
 }
 
-ControlPlaneUserAttributeFilter::ControlPlaneUserAttributeFilter(JsonView jsonValue) : 
-    m_orConditionsHasBeenSet(false),
-    m_andConditionHasBeenSet(false),
-    m_tagConditionHasBeenSet(false),
-    m_hierarchyGroupConditionHasBeenSet(false)
+ControlPlaneUserAttributeFilter::ControlPlaneUserAttributeFilter(JsonView jsonValue)
+  : ControlPlaneUserAttributeFilter()
 {
   *this = jsonValue;
 }

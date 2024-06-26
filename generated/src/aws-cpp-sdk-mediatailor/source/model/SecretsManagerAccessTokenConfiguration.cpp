@@ -25,10 +25,8 @@ SecretsManagerAccessTokenConfiguration::SecretsManagerAccessTokenConfiguration()
 {
 }
 
-SecretsManagerAccessTokenConfiguration::SecretsManagerAccessTokenConfiguration(JsonView jsonValue) : 
-    m_headerNameHasBeenSet(false),
-    m_secretArnHasBeenSet(false),
-    m_secretStringKeyHasBeenSet(false)
+SecretsManagerAccessTokenConfiguration::SecretsManagerAccessTokenConfiguration(JsonView jsonValue)
+  : SecretsManagerAccessTokenConfiguration()
 {
   *this = jsonValue;
 }

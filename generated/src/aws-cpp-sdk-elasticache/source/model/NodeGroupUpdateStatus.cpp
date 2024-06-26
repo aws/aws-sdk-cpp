@@ -26,9 +26,8 @@ NodeGroupUpdateStatus::NodeGroupUpdateStatus() :
 {
 }
 
-NodeGroupUpdateStatus::NodeGroupUpdateStatus(const XmlNode& xmlNode) : 
-    m_nodeGroupIdHasBeenSet(false),
-    m_nodeGroupMemberUpdateStatusHasBeenSet(false)
+NodeGroupUpdateStatus::NodeGroupUpdateStatus(const XmlNode& xmlNode)
+  : NodeGroupUpdateStatus()
 {
   *this = xmlNode;
 }

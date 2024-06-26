@@ -26,11 +26,8 @@ DatabaseOutput::DatabaseOutput() :
 {
 }
 
-DatabaseOutput::DatabaseOutput(JsonView jsonValue) : 
-    m_glueConnectionNameHasBeenSet(false),
-    m_databaseOptionsHasBeenSet(false),
-    m_databaseOutputMode(DatabaseOutputMode::NOT_SET),
-    m_databaseOutputModeHasBeenSet(false)
+DatabaseOutput::DatabaseOutput(JsonView jsonValue)
+  : DatabaseOutput()
 {
   *this = jsonValue;
 }

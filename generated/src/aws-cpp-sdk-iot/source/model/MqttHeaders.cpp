@@ -28,13 +28,8 @@ MqttHeaders::MqttHeaders() :
 {
 }
 
-MqttHeaders::MqttHeaders(JsonView jsonValue) : 
-    m_payloadFormatIndicatorHasBeenSet(false),
-    m_contentTypeHasBeenSet(false),
-    m_responseTopicHasBeenSet(false),
-    m_correlationDataHasBeenSet(false),
-    m_messageExpiryHasBeenSet(false),
-    m_userPropertiesHasBeenSet(false)
+MqttHeaders::MqttHeaders(JsonView jsonValue)
+  : MqttHeaders()
 {
   *this = jsonValue;
 }

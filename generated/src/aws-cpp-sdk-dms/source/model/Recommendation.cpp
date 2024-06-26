@@ -30,15 +30,8 @@ Recommendation::Recommendation() :
 {
 }
 
-Recommendation::Recommendation(JsonView jsonValue) : 
-    m_databaseIdHasBeenSet(false),
-    m_engineNameHasBeenSet(false),
-    m_createdDateHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_preferred(false),
-    m_preferredHasBeenSet(false),
-    m_settingsHasBeenSet(false),
-    m_dataHasBeenSet(false)
+Recommendation::Recommendation(JsonView jsonValue)
+  : Recommendation()
 {
   *this = jsonValue;
 }

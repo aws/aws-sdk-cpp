@@ -22,8 +22,8 @@ GetDistributionMetricDataResult::GetDistributionMetricDataResult() :
 {
 }
 
-GetDistributionMetricDataResult::GetDistributionMetricDataResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_metricName(DistributionMetricName::NOT_SET)
+GetDistributionMetricDataResult::GetDistributionMetricDataResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetDistributionMetricDataResult()
 {
   *this = result;
 }

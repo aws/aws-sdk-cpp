@@ -26,9 +26,8 @@ RequestTimeout::RequestTimeout() :
 {
 }
 
-RequestTimeout::RequestTimeout(const XmlNode& xmlNode) : 
-    m_boxUsage(0.0),
-    m_boxUsageHasBeenSet(false)
+RequestTimeout::RequestTimeout(const XmlNode& xmlNode)
+  : RequestTimeout()
 {
   *this = xmlNode;
 }

@@ -23,8 +23,8 @@ ParentHyperParameterTuningJob::ParentHyperParameterTuningJob() :
 {
 }
 
-ParentHyperParameterTuningJob::ParentHyperParameterTuningJob(JsonView jsonValue) : 
-    m_hyperParameterTuningJobNameHasBeenSet(false)
+ParentHyperParameterTuningJob::ParentHyperParameterTuningJob(JsonView jsonValue)
+  : ParentHyperParameterTuningJob()
 {
   *this = jsonValue;
 }

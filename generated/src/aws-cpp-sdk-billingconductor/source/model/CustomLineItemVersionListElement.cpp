@@ -41,26 +41,8 @@ CustomLineItemVersionListElement::CustomLineItemVersionListElement() :
 {
 }
 
-CustomLineItemVersionListElement::CustomLineItemVersionListElement(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_chargeDetailsHasBeenSet(false),
-    m_currencyCode(CurrencyCode::NOT_SET),
-    m_currencyCodeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_productCodeHasBeenSet(false),
-    m_billingGroupArnHasBeenSet(false),
-    m_creationTime(0),
-    m_creationTimeHasBeenSet(false),
-    m_lastModifiedTime(0),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_associationSize(0),
-    m_associationSizeHasBeenSet(false),
-    m_startBillingPeriodHasBeenSet(false),
-    m_endBillingPeriodHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_startTime(0),
-    m_startTimeHasBeenSet(false),
-    m_accountIdHasBeenSet(false)
+CustomLineItemVersionListElement::CustomLineItemVersionListElement(JsonView jsonValue)
+  : CustomLineItemVersionListElement()
 {
   *this = jsonValue;
 }

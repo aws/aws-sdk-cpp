@@ -24,9 +24,8 @@ ServiceManagedEc2InstanceMarketOptions::ServiceManagedEc2InstanceMarketOptions()
 {
 }
 
-ServiceManagedEc2InstanceMarketOptions::ServiceManagedEc2InstanceMarketOptions(JsonView jsonValue) : 
-    m_type(Ec2MarketType::NOT_SET),
-    m_typeHasBeenSet(false)
+ServiceManagedEc2InstanceMarketOptions::ServiceManagedEc2InstanceMarketOptions(JsonView jsonValue)
+  : ServiceManagedEc2InstanceMarketOptions()
 {
   *this = jsonValue;
 }

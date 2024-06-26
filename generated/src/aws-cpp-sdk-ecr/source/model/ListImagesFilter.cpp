@@ -24,9 +24,8 @@ ListImagesFilter::ListImagesFilter() :
 {
 }
 
-ListImagesFilter::ListImagesFilter(JsonView jsonValue) : 
-    m_tagStatus(TagStatus::NOT_SET),
-    m_tagStatusHasBeenSet(false)
+ListImagesFilter::ListImagesFilter(JsonView jsonValue)
+  : ListImagesFilter()
 {
   *this = jsonValue;
 }

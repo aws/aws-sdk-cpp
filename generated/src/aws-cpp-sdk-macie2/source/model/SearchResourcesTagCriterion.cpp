@@ -25,10 +25,8 @@ SearchResourcesTagCriterion::SearchResourcesTagCriterion() :
 {
 }
 
-SearchResourcesTagCriterion::SearchResourcesTagCriterion(JsonView jsonValue) : 
-    m_comparator(SearchResourcesComparator::NOT_SET),
-    m_comparatorHasBeenSet(false),
-    m_tagValuesHasBeenSet(false)
+SearchResourcesTagCriterion::SearchResourcesTagCriterion(JsonView jsonValue)
+  : SearchResourcesTagCriterion()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ MinimumHealthyHosts::MinimumHealthyHosts() :
 {
 }
 
-MinimumHealthyHosts::MinimumHealthyHosts(JsonView jsonValue) : 
-    m_type(MinimumHealthyHostsType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_value(0),
-    m_valueHasBeenSet(false)
+MinimumHealthyHosts::MinimumHealthyHosts(JsonView jsonValue)
+  : MinimumHealthyHosts()
 {
   *this = jsonValue;
 }

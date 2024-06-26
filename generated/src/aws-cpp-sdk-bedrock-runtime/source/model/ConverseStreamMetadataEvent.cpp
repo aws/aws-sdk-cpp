@@ -25,10 +25,8 @@ ConverseStreamMetadataEvent::ConverseStreamMetadataEvent() :
 {
 }
 
-ConverseStreamMetadataEvent::ConverseStreamMetadataEvent(JsonView jsonValue) : 
-    m_usageHasBeenSet(false),
-    m_metricsHasBeenSet(false),
-    m_traceHasBeenSet(false)
+ConverseStreamMetadataEvent::ConverseStreamMetadataEvent(JsonView jsonValue)
+  : ConverseStreamMetadataEvent()
 {
   *this = jsonValue;
 }

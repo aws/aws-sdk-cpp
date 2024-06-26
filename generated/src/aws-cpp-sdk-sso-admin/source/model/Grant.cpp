@@ -26,11 +26,8 @@ Grant::Grant() :
 {
 }
 
-Grant::Grant(JsonView jsonValue) : 
-    m_authorizationCodeHasBeenSet(false),
-    m_jwtBearerHasBeenSet(false),
-    m_refreshTokenHasBeenSet(false),
-    m_tokenExchangeHasBeenSet(false)
+Grant::Grant(JsonView jsonValue)
+  : Grant()
 {
   *this = jsonValue;
 }

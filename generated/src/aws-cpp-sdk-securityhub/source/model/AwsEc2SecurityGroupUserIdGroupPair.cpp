@@ -28,13 +28,8 @@ AwsEc2SecurityGroupUserIdGroupPair::AwsEc2SecurityGroupUserIdGroupPair() :
 {
 }
 
-AwsEc2SecurityGroupUserIdGroupPair::AwsEc2SecurityGroupUserIdGroupPair(JsonView jsonValue) : 
-    m_groupIdHasBeenSet(false),
-    m_groupNameHasBeenSet(false),
-    m_peeringStatusHasBeenSet(false),
-    m_userIdHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_vpcPeeringConnectionIdHasBeenSet(false)
+AwsEc2SecurityGroupUserIdGroupPair::AwsEc2SecurityGroupUserIdGroupPair(JsonView jsonValue)
+  : AwsEc2SecurityGroupUserIdGroupPair()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ ExperimentConfig::ExperimentConfig() :
 {
 }
 
-ExperimentConfig::ExperimentConfig(JsonView jsonValue) : 
-    m_experimentNameHasBeenSet(false),
-    m_trialNameHasBeenSet(false),
-    m_trialComponentDisplayNameHasBeenSet(false),
-    m_runNameHasBeenSet(false)
+ExperimentConfig::ExperimentConfig(JsonView jsonValue)
+  : ExperimentConfig()
 {
   *this = jsonValue;
 }

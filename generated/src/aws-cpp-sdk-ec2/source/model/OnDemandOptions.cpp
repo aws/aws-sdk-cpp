@@ -34,17 +34,8 @@ OnDemandOptions::OnDemandOptions() :
 {
 }
 
-OnDemandOptions::OnDemandOptions(const XmlNode& xmlNode) : 
-    m_allocationStrategy(FleetOnDemandAllocationStrategy::NOT_SET),
-    m_allocationStrategyHasBeenSet(false),
-    m_capacityReservationOptionsHasBeenSet(false),
-    m_singleInstanceType(false),
-    m_singleInstanceTypeHasBeenSet(false),
-    m_singleAvailabilityZone(false),
-    m_singleAvailabilityZoneHasBeenSet(false),
-    m_minTargetCapacity(0),
-    m_minTargetCapacityHasBeenSet(false),
-    m_maxTotalPriceHasBeenSet(false)
+OnDemandOptions::OnDemandOptions(const XmlNode& xmlNode)
+  : OnDemandOptions()
 {
   *this = xmlNode;
 }

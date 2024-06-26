@@ -28,13 +28,8 @@ HealthEventsConfig::HealthEventsConfig() :
 {
 }
 
-HealthEventsConfig::HealthEventsConfig(JsonView jsonValue) : 
-    m_availabilityScoreThreshold(0.0),
-    m_availabilityScoreThresholdHasBeenSet(false),
-    m_performanceScoreThreshold(0.0),
-    m_performanceScoreThresholdHasBeenSet(false),
-    m_availabilityLocalHealthEventsConfigHasBeenSet(false),
-    m_performanceLocalHealthEventsConfigHasBeenSet(false)
+HealthEventsConfig::HealthEventsConfig(JsonView jsonValue)
+  : HealthEventsConfig()
 {
   *this = jsonValue;
 }

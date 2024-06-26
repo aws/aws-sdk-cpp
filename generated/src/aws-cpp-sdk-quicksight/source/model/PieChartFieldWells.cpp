@@ -23,8 +23,8 @@ PieChartFieldWells::PieChartFieldWells() :
 {
 }
 
-PieChartFieldWells::PieChartFieldWells(JsonView jsonValue) : 
-    m_pieChartAggregatedFieldWellsHasBeenSet(false)
+PieChartFieldWells::PieChartFieldWells(JsonView jsonValue)
+  : PieChartFieldWells()
 {
   *this = jsonValue;
 }

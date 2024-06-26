@@ -24,9 +24,8 @@ IndexStatistics::IndexStatistics() :
 {
 }
 
-IndexStatistics::IndexStatistics(JsonView jsonValue) : 
-    m_faqStatisticsHasBeenSet(false),
-    m_textDocumentStatisticsHasBeenSet(false)
+IndexStatistics::IndexStatistics(JsonView jsonValue)
+  : IndexStatistics()
 {
   *this = jsonValue;
 }

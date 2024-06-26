@@ -24,9 +24,8 @@ UserSearchFilter::UserSearchFilter() :
 {
 }
 
-UserSearchFilter::UserSearchFilter(JsonView jsonValue) : 
-    m_tagFilterHasBeenSet(false),
-    m_userAttributeFilterHasBeenSet(false)
+UserSearchFilter::UserSearchFilter(JsonView jsonValue)
+  : UserSearchFilter()
 {
   *this = jsonValue;
 }

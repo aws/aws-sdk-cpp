@@ -25,10 +25,8 @@ ResourceActionSummary::ResourceActionSummary() :
 {
 }
 
-ResourceActionSummary::ResourceActionSummary(JsonView jsonValue) : 
-    m_cloudFormationHasBeenSet(false),
-    m_m2ManagedApplicationHasBeenSet(false),
-    m_m2NonManagedApplicationHasBeenSet(false)
+ResourceActionSummary::ResourceActionSummary(JsonView jsonValue)
+  : ResourceActionSummary()
 {
   *this = jsonValue;
 }

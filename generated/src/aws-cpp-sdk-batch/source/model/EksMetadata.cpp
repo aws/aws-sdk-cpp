@@ -23,8 +23,8 @@ EksMetadata::EksMetadata() :
 {
 }
 
-EksMetadata::EksMetadata(JsonView jsonValue) : 
-    m_labelsHasBeenSet(false)
+EksMetadata::EksMetadata(JsonView jsonValue)
+  : EksMetadata()
 {
   *this = jsonValue;
 }

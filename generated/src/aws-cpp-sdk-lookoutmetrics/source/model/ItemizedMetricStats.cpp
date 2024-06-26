@@ -25,10 +25,8 @@ ItemizedMetricStats::ItemizedMetricStats() :
 {
 }
 
-ItemizedMetricStats::ItemizedMetricStats(JsonView jsonValue) : 
-    m_metricNameHasBeenSet(false),
-    m_occurrenceCount(0),
-    m_occurrenceCountHasBeenSet(false)
+ItemizedMetricStats::ItemizedMetricStats(JsonView jsonValue)
+  : ItemizedMetricStats()
 {
   *this = jsonValue;
 }

@@ -29,14 +29,8 @@ Termination::Termination() :
 {
 }
 
-Termination::Termination(JsonView jsonValue) : 
-    m_cpsLimit(0),
-    m_cpsLimitHasBeenSet(false),
-    m_defaultPhoneNumberHasBeenSet(false),
-    m_callingRegionsHasBeenSet(false),
-    m_cidrAllowedListHasBeenSet(false),
-    m_disabled(false),
-    m_disabledHasBeenSet(false)
+Termination::Termination(JsonView jsonValue)
+  : Termination()
 {
   *this = jsonValue;
 }

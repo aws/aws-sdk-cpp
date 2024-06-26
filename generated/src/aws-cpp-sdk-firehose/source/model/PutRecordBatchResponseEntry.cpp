@@ -25,10 +25,8 @@ PutRecordBatchResponseEntry::PutRecordBatchResponseEntry() :
 {
 }
 
-PutRecordBatchResponseEntry::PutRecordBatchResponseEntry(JsonView jsonValue) : 
-    m_recordIdHasBeenSet(false),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
+PutRecordBatchResponseEntry::PutRecordBatchResponseEntry(JsonView jsonValue)
+  : PutRecordBatchResponseEntry()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ CaptionSourceFramerate::CaptionSourceFramerate() :
 {
 }
 
-CaptionSourceFramerate::CaptionSourceFramerate(JsonView jsonValue) : 
-    m_framerateDenominator(0),
-    m_framerateDenominatorHasBeenSet(false),
-    m_framerateNumerator(0),
-    m_framerateNumeratorHasBeenSet(false)
+CaptionSourceFramerate::CaptionSourceFramerate(JsonView jsonValue)
+  : CaptionSourceFramerate()
 {
   *this = jsonValue;
 }

@@ -32,15 +32,8 @@ ReservedInstancesConfiguration::ReservedInstancesConfiguration() :
 {
 }
 
-ReservedInstancesConfiguration::ReservedInstancesConfiguration(const XmlNode& xmlNode) : 
-    m_availabilityZoneHasBeenSet(false),
-    m_instanceCount(0),
-    m_instanceCountHasBeenSet(false),
-    m_instanceType(InstanceType::NOT_SET),
-    m_instanceTypeHasBeenSet(false),
-    m_platformHasBeenSet(false),
-    m_scope(Scope::NOT_SET),
-    m_scopeHasBeenSet(false)
+ReservedInstancesConfiguration::ReservedInstancesConfiguration(const XmlNode& xmlNode)
+  : ReservedInstancesConfiguration()
 {
   *this = xmlNode;
 }

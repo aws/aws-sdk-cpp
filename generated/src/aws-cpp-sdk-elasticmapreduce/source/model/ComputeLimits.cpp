@@ -32,17 +32,8 @@ ComputeLimits::ComputeLimits() :
 {
 }
 
-ComputeLimits::ComputeLimits(JsonView jsonValue) : 
-    m_unitType(ComputeLimitsUnitType::NOT_SET),
-    m_unitTypeHasBeenSet(false),
-    m_minimumCapacityUnits(0),
-    m_minimumCapacityUnitsHasBeenSet(false),
-    m_maximumCapacityUnits(0),
-    m_maximumCapacityUnitsHasBeenSet(false),
-    m_maximumOnDemandCapacityUnits(0),
-    m_maximumOnDemandCapacityUnitsHasBeenSet(false),
-    m_maximumCoreCapacityUnits(0),
-    m_maximumCoreCapacityUnitsHasBeenSet(false)
+ComputeLimits::ComputeLimits(JsonView jsonValue)
+  : ComputeLimits()
 {
   *this = jsonValue;
 }

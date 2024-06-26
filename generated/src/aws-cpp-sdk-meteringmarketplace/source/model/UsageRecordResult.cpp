@@ -26,11 +26,8 @@ UsageRecordResult::UsageRecordResult() :
 {
 }
 
-UsageRecordResult::UsageRecordResult(JsonView jsonValue) : 
-    m_usageRecordHasBeenSet(false),
-    m_meteringRecordIdHasBeenSet(false),
-    m_status(UsageRecordResultStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+UsageRecordResult::UsageRecordResult(JsonView jsonValue)
+  : UsageRecordResult()
 {
   *this = jsonValue;
 }

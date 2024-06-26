@@ -26,11 +26,8 @@ BatchListPolicyAttachments::BatchListPolicyAttachments() :
 {
 }
 
-BatchListPolicyAttachments::BatchListPolicyAttachments(JsonView jsonValue) : 
-    m_policyReferenceHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
+BatchListPolicyAttachments::BatchListPolicyAttachments(JsonView jsonValue)
+  : BatchListPolicyAttachments()
 {
   *this = jsonValue;
 }

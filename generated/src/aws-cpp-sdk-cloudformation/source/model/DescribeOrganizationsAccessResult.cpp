@@ -22,8 +22,8 @@ DescribeOrganizationsAccessResult::DescribeOrganizationsAccessResult() :
 {
 }
 
-DescribeOrganizationsAccessResult::DescribeOrganizationsAccessResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_status(OrganizationStatus::NOT_SET)
+DescribeOrganizationsAccessResult::DescribeOrganizationsAccessResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : DescribeOrganizationsAccessResult()
 {
   *this = result;
 }

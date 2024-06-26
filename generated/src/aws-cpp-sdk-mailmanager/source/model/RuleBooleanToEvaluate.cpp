@@ -24,9 +24,8 @@ RuleBooleanToEvaluate::RuleBooleanToEvaluate() :
 {
 }
 
-RuleBooleanToEvaluate::RuleBooleanToEvaluate(JsonView jsonValue) : 
-    m_attribute(RuleBooleanEmailAttribute::NOT_SET),
-    m_attributeHasBeenSet(false)
+RuleBooleanToEvaluate::RuleBooleanToEvaluate(JsonView jsonValue)
+  : RuleBooleanToEvaluate()
 {
   *this = jsonValue;
 }

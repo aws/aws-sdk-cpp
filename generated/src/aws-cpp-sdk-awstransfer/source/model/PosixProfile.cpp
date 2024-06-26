@@ -27,12 +27,8 @@ PosixProfile::PosixProfile() :
 {
 }
 
-PosixProfile::PosixProfile(JsonView jsonValue) : 
-    m_uid(0),
-    m_uidHasBeenSet(false),
-    m_gid(0),
-    m_gidHasBeenSet(false),
-    m_secondaryGidsHasBeenSet(false)
+PosixProfile::PosixProfile(JsonView jsonValue)
+  : PosixProfile()
 {
   *this = jsonValue;
 }

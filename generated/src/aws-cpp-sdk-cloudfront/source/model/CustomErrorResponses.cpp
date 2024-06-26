@@ -27,10 +27,8 @@ CustomErrorResponses::CustomErrorResponses() :
 {
 }
 
-CustomErrorResponses::CustomErrorResponses(const XmlNode& xmlNode) : 
-    m_quantity(0),
-    m_quantityHasBeenSet(false),
-    m_itemsHasBeenSet(false)
+CustomErrorResponses::CustomErrorResponses(const XmlNode& xmlNode)
+  : CustomErrorResponses()
 {
   *this = xmlNode;
 }

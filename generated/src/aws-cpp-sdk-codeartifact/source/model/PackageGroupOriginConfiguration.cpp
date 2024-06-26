@@ -23,8 +23,8 @@ PackageGroupOriginConfiguration::PackageGroupOriginConfiguration() :
 {
 }
 
-PackageGroupOriginConfiguration::PackageGroupOriginConfiguration(JsonView jsonValue) : 
-    m_restrictionsHasBeenSet(false)
+PackageGroupOriginConfiguration::PackageGroupOriginConfiguration(JsonView jsonValue)
+  : PackageGroupOriginConfiguration()
 {
   *this = jsonValue;
 }

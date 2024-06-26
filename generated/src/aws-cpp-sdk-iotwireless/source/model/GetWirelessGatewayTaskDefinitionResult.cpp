@@ -22,8 +22,8 @@ GetWirelessGatewayTaskDefinitionResult::GetWirelessGatewayTaskDefinitionResult()
 {
 }
 
-GetWirelessGatewayTaskDefinitionResult::GetWirelessGatewayTaskDefinitionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_autoCreateTasks(false)
+GetWirelessGatewayTaskDefinitionResult::GetWirelessGatewayTaskDefinitionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetWirelessGatewayTaskDefinitionResult()
 {
   *this = result;
 }

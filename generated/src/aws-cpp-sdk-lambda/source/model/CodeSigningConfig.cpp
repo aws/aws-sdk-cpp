@@ -28,13 +28,8 @@ CodeSigningConfig::CodeSigningConfig() :
 {
 }
 
-CodeSigningConfig::CodeSigningConfig(JsonView jsonValue) : 
-    m_codeSigningConfigIdHasBeenSet(false),
-    m_codeSigningConfigArnHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_allowedPublishersHasBeenSet(false),
-    m_codeSigningPoliciesHasBeenSet(false),
-    m_lastModifiedHasBeenSet(false)
+CodeSigningConfig::CodeSigningConfig(JsonView jsonValue)
+  : CodeSigningConfig()
 {
   *this = jsonValue;
 }

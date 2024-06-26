@@ -33,18 +33,8 @@ ParameterValue::ParameterValue() :
 {
 }
 
-ParameterValue::ParameterValue(JsonView jsonValue) : 
-    m_integer(0),
-    m_integerHasBeenSet(false),
-    m_integerListHasBeenSet(false),
-    m_double(0.0),
-    m_doubleHasBeenSet(false),
-    m_stringHasBeenSet(false),
-    m_stringListHasBeenSet(false),
-    m_boolean(false),
-    m_booleanHasBeenSet(false),
-    m_enumHasBeenSet(false),
-    m_enumListHasBeenSet(false)
+ParameterValue::ParameterValue(JsonView jsonValue)
+  : ParameterValue()
 {
   *this = jsonValue;
 }

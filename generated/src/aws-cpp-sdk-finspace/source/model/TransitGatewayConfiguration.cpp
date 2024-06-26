@@ -25,10 +25,8 @@ TransitGatewayConfiguration::TransitGatewayConfiguration() :
 {
 }
 
-TransitGatewayConfiguration::TransitGatewayConfiguration(JsonView jsonValue) : 
-    m_transitGatewayIDHasBeenSet(false),
-    m_routableCIDRSpaceHasBeenSet(false),
-    m_attachmentNetworkAclConfigurationHasBeenSet(false)
+TransitGatewayConfiguration::TransitGatewayConfiguration(JsonView jsonValue)
+  : TransitGatewayConfiguration()
 {
   *this = jsonValue;
 }

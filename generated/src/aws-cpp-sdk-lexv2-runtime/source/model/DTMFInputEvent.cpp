@@ -26,11 +26,8 @@ DTMFInputEvent::DTMFInputEvent() :
 {
 }
 
-DTMFInputEvent::DTMFInputEvent(JsonView jsonValue) : 
-    m_inputCharacterHasBeenSet(false),
-    m_eventIdHasBeenSet(false),
-    m_clientTimestampMillis(0),
-    m_clientTimestampMillisHasBeenSet(false)
+DTMFInputEvent::DTMFInputEvent(JsonView jsonValue)
+  : DTMFInputEvent()
 {
   *this = jsonValue;
 }

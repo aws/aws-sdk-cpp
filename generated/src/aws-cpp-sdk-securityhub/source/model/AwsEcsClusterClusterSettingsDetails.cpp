@@ -24,9 +24,8 @@ AwsEcsClusterClusterSettingsDetails::AwsEcsClusterClusterSettingsDetails() :
 {
 }
 
-AwsEcsClusterClusterSettingsDetails::AwsEcsClusterClusterSettingsDetails(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
+AwsEcsClusterClusterSettingsDetails::AwsEcsClusterClusterSettingsDetails(JsonView jsonValue)
+  : AwsEcsClusterClusterSettingsDetails()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ StepAttributeCapability::StepAttributeCapability() :
 {
 }
 
-StepAttributeCapability::StepAttributeCapability(JsonView jsonValue) : 
-    m_allOfHasBeenSet(false),
-    m_anyOfHasBeenSet(false),
-    m_nameHasBeenSet(false)
+StepAttributeCapability::StepAttributeCapability(JsonView jsonValue)
+  : StepAttributeCapability()
 {
   *this = jsonValue;
 }

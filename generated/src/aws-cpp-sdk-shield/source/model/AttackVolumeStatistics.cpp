@@ -24,9 +24,8 @@ AttackVolumeStatistics::AttackVolumeStatistics() :
 {
 }
 
-AttackVolumeStatistics::AttackVolumeStatistics(JsonView jsonValue) : 
-    m_max(0.0),
-    m_maxHasBeenSet(false)
+AttackVolumeStatistics::AttackVolumeStatistics(JsonView jsonValue)
+  : AttackVolumeStatistics()
 {
   *this = jsonValue;
 }

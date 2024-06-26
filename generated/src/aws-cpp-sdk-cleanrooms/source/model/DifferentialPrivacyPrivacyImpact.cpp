@@ -23,8 +23,8 @@ DifferentialPrivacyPrivacyImpact::DifferentialPrivacyPrivacyImpact() :
 {
 }
 
-DifferentialPrivacyPrivacyImpact::DifferentialPrivacyPrivacyImpact(JsonView jsonValue) : 
-    m_aggregationsHasBeenSet(false)
+DifferentialPrivacyPrivacyImpact::DifferentialPrivacyPrivacyImpact(JsonView jsonValue)
+  : DifferentialPrivacyPrivacyImpact()
 {
   *this = jsonValue;
 }

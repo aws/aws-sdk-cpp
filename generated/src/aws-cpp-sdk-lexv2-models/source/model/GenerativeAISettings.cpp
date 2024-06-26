@@ -24,9 +24,8 @@ GenerativeAISettings::GenerativeAISettings() :
 {
 }
 
-GenerativeAISettings::GenerativeAISettings(JsonView jsonValue) : 
-    m_runtimeSettingsHasBeenSet(false),
-    m_buildtimeSettingsHasBeenSet(false)
+GenerativeAISettings::GenerativeAISettings(JsonView jsonValue)
+  : GenerativeAISettings()
 {
   *this = jsonValue;
 }

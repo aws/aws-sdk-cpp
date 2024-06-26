@@ -33,18 +33,8 @@ AwsCodeBuildProjectArtifactsDetails::AwsCodeBuildProjectArtifactsDetails() :
 {
 }
 
-AwsCodeBuildProjectArtifactsDetails::AwsCodeBuildProjectArtifactsDetails(JsonView jsonValue) : 
-    m_artifactIdentifierHasBeenSet(false),
-    m_encryptionDisabled(false),
-    m_encryptionDisabledHasBeenSet(false),
-    m_locationHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_namespaceTypeHasBeenSet(false),
-    m_overrideArtifactName(false),
-    m_overrideArtifactNameHasBeenSet(false),
-    m_packagingHasBeenSet(false),
-    m_pathHasBeenSet(false),
-    m_typeHasBeenSet(false)
+AwsCodeBuildProjectArtifactsDetails::AwsCodeBuildProjectArtifactsDetails(JsonView jsonValue)
+  : AwsCodeBuildProjectArtifactsDetails()
 {
   *this = jsonValue;
 }

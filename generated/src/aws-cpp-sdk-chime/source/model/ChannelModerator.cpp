@@ -26,11 +26,8 @@ ChannelModerator::ChannelModerator() :
 {
 }
 
-ChannelModerator::ChannelModerator(JsonView jsonValue) : 
-    m_moderatorHasBeenSet(false),
-    m_channelArnHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false),
-    m_createdByHasBeenSet(false)
+ChannelModerator::ChannelModerator(JsonView jsonValue)
+  : ChannelModerator()
 {
   *this = jsonValue;
 }

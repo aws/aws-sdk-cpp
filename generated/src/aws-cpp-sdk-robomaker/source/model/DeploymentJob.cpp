@@ -32,17 +32,8 @@ DeploymentJob::DeploymentJob() :
 {
 }
 
-DeploymentJob::DeploymentJob(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_fleetHasBeenSet(false),
-    m_status(DeploymentStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_deploymentApplicationConfigsHasBeenSet(false),
-    m_deploymentConfigHasBeenSet(false),
-    m_failureReasonHasBeenSet(false),
-    m_failureCode(DeploymentJobErrorCode::NOT_SET),
-    m_failureCodeHasBeenSet(false),
-    m_createdAtHasBeenSet(false)
+DeploymentJob::DeploymentJob(JsonView jsonValue)
+  : DeploymentJob()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ AccountFreeTrialInfo::AccountFreeTrialInfo() :
 {
 }
 
-AccountFreeTrialInfo::AccountFreeTrialInfo(JsonView jsonValue) : 
-    m_accountIdHasBeenSet(false),
-    m_featuresHasBeenSet(false)
+AccountFreeTrialInfo::AccountFreeTrialInfo(JsonView jsonValue)
+  : AccountFreeTrialInfo()
 {
   *this = jsonValue;
 }

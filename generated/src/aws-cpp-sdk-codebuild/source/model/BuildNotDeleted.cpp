@@ -24,9 +24,8 @@ BuildNotDeleted::BuildNotDeleted() :
 {
 }
 
-BuildNotDeleted::BuildNotDeleted(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_statusCodeHasBeenSet(false)
+BuildNotDeleted::BuildNotDeleted(JsonView jsonValue)
+  : BuildNotDeleted()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ HttpEndpointRetryOptions::HttpEndpointRetryOptions() :
 {
 }
 
-HttpEndpointRetryOptions::HttpEndpointRetryOptions(JsonView jsonValue) : 
-    m_durationInSeconds(0),
-    m_durationInSecondsHasBeenSet(false)
+HttpEndpointRetryOptions::HttpEndpointRetryOptions(JsonView jsonValue)
+  : HttpEndpointRetryOptions()
 {
   *this = jsonValue;
 }

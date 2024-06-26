@@ -23,8 +23,8 @@ OutputArtifact::OutputArtifact() :
 {
 }
 
-OutputArtifact::OutputArtifact(JsonView jsonValue) : 
-    m_nameHasBeenSet(false)
+OutputArtifact::OutputArtifact(JsonView jsonValue)
+  : OutputArtifact()
 {
   *this = jsonValue;
 }

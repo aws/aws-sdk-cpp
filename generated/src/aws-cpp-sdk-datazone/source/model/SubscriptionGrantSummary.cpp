@@ -34,19 +34,8 @@ SubscriptionGrantSummary::SubscriptionGrantSummary() :
 {
 }
 
-SubscriptionGrantSummary::SubscriptionGrantSummary(JsonView jsonValue) : 
-    m_assetsHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_domainIdHasBeenSet(false),
-    m_grantedEntityHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_status(SubscriptionGrantOverallStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_subscriptionIdHasBeenSet(false),
-    m_subscriptionTargetIdHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_updatedByHasBeenSet(false)
+SubscriptionGrantSummary::SubscriptionGrantSummary(JsonView jsonValue)
+  : SubscriptionGrantSummary()
 {
   *this = jsonValue;
 }

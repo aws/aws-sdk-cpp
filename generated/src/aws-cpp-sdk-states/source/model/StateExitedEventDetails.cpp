@@ -25,10 +25,8 @@ StateExitedEventDetails::StateExitedEventDetails() :
 {
 }
 
-StateExitedEventDetails::StateExitedEventDetails(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_outputHasBeenSet(false),
-    m_outputDetailsHasBeenSet(false)
+StateExitedEventDetails::StateExitedEventDetails(JsonView jsonValue)
+  : StateExitedEventDetails()
 {
   *this = jsonValue;
 }

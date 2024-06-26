@@ -42,25 +42,8 @@ Route::Route() :
 {
 }
 
-Route::Route(const XmlNode& xmlNode) : 
-    m_destinationCidrBlockHasBeenSet(false),
-    m_destinationIpv6CidrBlockHasBeenSet(false),
-    m_destinationPrefixListIdHasBeenSet(false),
-    m_egressOnlyInternetGatewayIdHasBeenSet(false),
-    m_gatewayIdHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_instanceOwnerIdHasBeenSet(false),
-    m_natGatewayIdHasBeenSet(false),
-    m_transitGatewayIdHasBeenSet(false),
-    m_localGatewayIdHasBeenSet(false),
-    m_carrierGatewayIdHasBeenSet(false),
-    m_networkInterfaceIdHasBeenSet(false),
-    m_origin(RouteOrigin::NOT_SET),
-    m_originHasBeenSet(false),
-    m_state(RouteState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_vpcPeeringConnectionIdHasBeenSet(false),
-    m_coreNetworkArnHasBeenSet(false)
+Route::Route(const XmlNode& xmlNode)
+  : Route()
 {
   *this = xmlNode;
 }

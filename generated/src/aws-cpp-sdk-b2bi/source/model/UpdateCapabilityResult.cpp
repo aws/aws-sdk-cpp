@@ -22,8 +22,8 @@ UpdateCapabilityResult::UpdateCapabilityResult() :
 {
 }
 
-UpdateCapabilityResult::UpdateCapabilityResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_type(CapabilityType::NOT_SET)
+UpdateCapabilityResult::UpdateCapabilityResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateCapabilityResult()
 {
   *this = result;
 }

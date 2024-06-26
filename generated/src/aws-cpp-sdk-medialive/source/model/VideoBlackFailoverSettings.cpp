@@ -26,11 +26,8 @@ VideoBlackFailoverSettings::VideoBlackFailoverSettings() :
 {
 }
 
-VideoBlackFailoverSettings::VideoBlackFailoverSettings(JsonView jsonValue) : 
-    m_blackDetectThreshold(0.0),
-    m_blackDetectThresholdHasBeenSet(false),
-    m_videoBlackThresholdMsec(0),
-    m_videoBlackThresholdMsecHasBeenSet(false)
+VideoBlackFailoverSettings::VideoBlackFailoverSettings(JsonView jsonValue)
+  : VideoBlackFailoverSettings()
 {
   *this = jsonValue;
 }

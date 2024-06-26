@@ -26,11 +26,8 @@ AwsBackupRecoveryPointCreatedByDetails::AwsBackupRecoveryPointCreatedByDetails()
 {
 }
 
-AwsBackupRecoveryPointCreatedByDetails::AwsBackupRecoveryPointCreatedByDetails(JsonView jsonValue) : 
-    m_backupPlanArnHasBeenSet(false),
-    m_backupPlanIdHasBeenSet(false),
-    m_backupPlanVersionHasBeenSet(false),
-    m_backupRuleIdHasBeenSet(false)
+AwsBackupRecoveryPointCreatedByDetails::AwsBackupRecoveryPointCreatedByDetails(JsonView jsonValue)
+  : AwsBackupRecoveryPointCreatedByDetails()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ InsightCategorySpecificSummary::InsightCategorySpecificSummary() :
 {
 }
 
-InsightCategorySpecificSummary::InsightCategorySpecificSummary(JsonView jsonValue) : 
-    m_deprecationDetailsHasBeenSet(false)
+InsightCategorySpecificSummary::InsightCategorySpecificSummary(JsonView jsonValue)
+  : InsightCategorySpecificSummary()
 {
   *this = jsonValue;
 }

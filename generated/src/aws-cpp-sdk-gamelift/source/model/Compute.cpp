@@ -40,25 +40,8 @@ Compute::Compute() :
 {
 }
 
-Compute::Compute(JsonView jsonValue) : 
-    m_fleetIdHasBeenSet(false),
-    m_fleetArnHasBeenSet(false),
-    m_computeNameHasBeenSet(false),
-    m_computeArnHasBeenSet(false),
-    m_ipAddressHasBeenSet(false),
-    m_dnsNameHasBeenSet(false),
-    m_computeStatus(ComputeStatus::NOT_SET),
-    m_computeStatusHasBeenSet(false),
-    m_locationHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_operatingSystem(OperatingSystem::NOT_SET),
-    m_operatingSystemHasBeenSet(false),
-    m_type(EC2InstanceType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_gameLiftServiceSdkEndpointHasBeenSet(false),
-    m_gameLiftAgentEndpointHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_containerAttributesHasBeenSet(false)
+Compute::Compute(JsonView jsonValue)
+  : Compute()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ ListRecordHistorySearchFilter::ListRecordHistorySearchFilter() :
 {
 }
 
-ListRecordHistorySearchFilter::ListRecordHistorySearchFilter(JsonView jsonValue) : 
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false)
+ListRecordHistorySearchFilter::ListRecordHistorySearchFilter(JsonView jsonValue)
+  : ListRecordHistorySearchFilter()
 {
   *this = jsonValue;
 }

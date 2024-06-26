@@ -25,10 +25,8 @@ BatchGetObjectAttributes::BatchGetObjectAttributes() :
 {
 }
 
-BatchGetObjectAttributes::BatchGetObjectAttributes(JsonView jsonValue) : 
-    m_objectReferenceHasBeenSet(false),
-    m_schemaFacetHasBeenSet(false),
-    m_attributeNamesHasBeenSet(false)
+BatchGetObjectAttributes::BatchGetObjectAttributes(JsonView jsonValue)
+  : BatchGetObjectAttributes()
 {
   *this = jsonValue;
 }

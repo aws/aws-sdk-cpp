@@ -26,11 +26,8 @@ CreateVpcEndpointDetail::CreateVpcEndpointDetail() :
 {
 }
 
-CreateVpcEndpointDetail::CreateVpcEndpointDetail(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_status(VpcEndpointStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+CreateVpcEndpointDetail::CreateVpcEndpointDetail(JsonView jsonValue)
+  : CreateVpcEndpointDetail()
 {
   *this = jsonValue;
 }

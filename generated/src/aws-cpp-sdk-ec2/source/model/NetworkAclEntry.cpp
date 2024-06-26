@@ -35,18 +35,8 @@ NetworkAclEntry::NetworkAclEntry() :
 {
 }
 
-NetworkAclEntry::NetworkAclEntry(const XmlNode& xmlNode) : 
-    m_cidrBlockHasBeenSet(false),
-    m_egress(false),
-    m_egressHasBeenSet(false),
-    m_icmpTypeCodeHasBeenSet(false),
-    m_ipv6CidrBlockHasBeenSet(false),
-    m_portRangeHasBeenSet(false),
-    m_protocolHasBeenSet(false),
-    m_ruleAction(RuleAction::NOT_SET),
-    m_ruleActionHasBeenSet(false),
-    m_ruleNumber(0),
-    m_ruleNumberHasBeenSet(false)
+NetworkAclEntry::NetworkAclEntry(const XmlNode& xmlNode)
+  : NetworkAclEntry()
 {
   *this = xmlNode;
 }

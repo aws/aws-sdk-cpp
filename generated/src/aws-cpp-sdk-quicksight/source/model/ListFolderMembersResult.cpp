@@ -22,8 +22,8 @@ ListFolderMembersResult::ListFolderMembersResult() :
 {
 }
 
-ListFolderMembersResult::ListFolderMembersResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+ListFolderMembersResult::ListFolderMembersResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ListFolderMembersResult()
 {
   *this = result;
 }

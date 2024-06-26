@@ -41,26 +41,8 @@ LustreFileSystemConfiguration::LustreFileSystemConfiguration() :
 {
 }
 
-LustreFileSystemConfiguration::LustreFileSystemConfiguration(JsonView jsonValue) : 
-    m_weeklyMaintenanceStartTimeHasBeenSet(false),
-    m_dataRepositoryConfigurationHasBeenSet(false),
-    m_deploymentType(LustreDeploymentType::NOT_SET),
-    m_deploymentTypeHasBeenSet(false),
-    m_perUnitStorageThroughput(0),
-    m_perUnitStorageThroughputHasBeenSet(false),
-    m_mountNameHasBeenSet(false),
-    m_dailyAutomaticBackupStartTimeHasBeenSet(false),
-    m_automaticBackupRetentionDays(0),
-    m_automaticBackupRetentionDaysHasBeenSet(false),
-    m_copyTagsToBackups(false),
-    m_copyTagsToBackupsHasBeenSet(false),
-    m_driveCacheType(DriveCacheType::NOT_SET),
-    m_driveCacheTypeHasBeenSet(false),
-    m_dataCompressionType(DataCompressionType::NOT_SET),
-    m_dataCompressionTypeHasBeenSet(false),
-    m_logConfigurationHasBeenSet(false),
-    m_rootSquashConfigurationHasBeenSet(false),
-    m_metadataConfigurationHasBeenSet(false)
+LustreFileSystemConfiguration::LustreFileSystemConfiguration(JsonView jsonValue)
+  : LustreFileSystemConfiguration()
 {
   *this = jsonValue;
 }

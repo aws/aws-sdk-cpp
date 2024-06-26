@@ -29,14 +29,8 @@ EnabledControlDetails::EnabledControlDetails() :
 {
 }
 
-EnabledControlDetails::EnabledControlDetails(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_controlIdentifierHasBeenSet(false),
-    m_driftStatusSummaryHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_statusSummaryHasBeenSet(false),
-    m_targetIdentifierHasBeenSet(false),
-    m_targetRegionsHasBeenSet(false)
+EnabledControlDetails::EnabledControlDetails(JsonView jsonValue)
+  : EnabledControlDetails()
 {
   *this = jsonValue;
 }

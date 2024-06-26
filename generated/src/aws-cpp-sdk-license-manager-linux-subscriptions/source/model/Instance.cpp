@@ -32,17 +32,8 @@ Instance::Instance() :
 {
 }
 
-Instance::Instance(JsonView jsonValue) : 
-    m_accountIDHasBeenSet(false),
-    m_amiIdHasBeenSet(false),
-    m_instanceIDHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_productCodeHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_subscriptionNameHasBeenSet(false),
-    m_usageOperationHasBeenSet(false)
+Instance::Instance(JsonView jsonValue)
+  : Instance()
 {
   *this = jsonValue;
 }

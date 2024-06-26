@@ -25,10 +25,8 @@ Permission::Permission() :
 {
 }
 
-Permission::Permission(JsonView jsonValue) : 
-    m_granteeTypeHasBeenSet(false),
-    m_granteeHasBeenSet(false),
-    m_accessHasBeenSet(false)
+Permission::Permission(JsonView jsonValue)
+  : Permission()
 {
   *this = jsonValue;
 }

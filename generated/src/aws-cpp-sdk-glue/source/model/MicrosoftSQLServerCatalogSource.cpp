@@ -25,10 +25,8 @@ MicrosoftSQLServerCatalogSource::MicrosoftSQLServerCatalogSource() :
 {
 }
 
-MicrosoftSQLServerCatalogSource::MicrosoftSQLServerCatalogSource(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_databaseHasBeenSet(false),
-    m_tableHasBeenSet(false)
+MicrosoftSQLServerCatalogSource::MicrosoftSQLServerCatalogSource(JsonView jsonValue)
+  : MicrosoftSQLServerCatalogSource()
 {
   *this = jsonValue;
 }

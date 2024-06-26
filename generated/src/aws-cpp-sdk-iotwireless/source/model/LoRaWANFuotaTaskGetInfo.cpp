@@ -24,9 +24,8 @@ LoRaWANFuotaTaskGetInfo::LoRaWANFuotaTaskGetInfo() :
 {
 }
 
-LoRaWANFuotaTaskGetInfo::LoRaWANFuotaTaskGetInfo(JsonView jsonValue) : 
-    m_rfRegionHasBeenSet(false),
-    m_startTimeHasBeenSet(false)
+LoRaWANFuotaTaskGetInfo::LoRaWANFuotaTaskGetInfo(JsonView jsonValue)
+  : LoRaWANFuotaTaskGetInfo()
 {
   *this = jsonValue;
 }

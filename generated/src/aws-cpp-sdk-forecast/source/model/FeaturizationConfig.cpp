@@ -25,10 +25,8 @@ FeaturizationConfig::FeaturizationConfig() :
 {
 }
 
-FeaturizationConfig::FeaturizationConfig(JsonView jsonValue) : 
-    m_forecastFrequencyHasBeenSet(false),
-    m_forecastDimensionsHasBeenSet(false),
-    m_featurizationsHasBeenSet(false)
+FeaturizationConfig::FeaturizationConfig(JsonView jsonValue)
+  : FeaturizationConfig()
 {
   *this = jsonValue;
 }

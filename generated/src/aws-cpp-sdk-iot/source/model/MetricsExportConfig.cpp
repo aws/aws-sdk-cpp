@@ -24,9 +24,8 @@ MetricsExportConfig::MetricsExportConfig() :
 {
 }
 
-MetricsExportConfig::MetricsExportConfig(JsonView jsonValue) : 
-    m_mqttTopicHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
+MetricsExportConfig::MetricsExportConfig(JsonView jsonValue)
+  : MetricsExportConfig()
 {
   *this = jsonValue;
 }

@@ -31,16 +31,8 @@ DomainDescriptionType::DomainDescriptionType() :
 {
 }
 
-DomainDescriptionType::DomainDescriptionType(JsonView jsonValue) : 
-    m_userPoolIdHasBeenSet(false),
-    m_aWSAccountIdHasBeenSet(false),
-    m_domainHasBeenSet(false),
-    m_s3BucketHasBeenSet(false),
-    m_cloudFrontDistributionHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_status(DomainStatusType::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_customDomainConfigHasBeenSet(false)
+DomainDescriptionType::DomainDescriptionType(JsonView jsonValue)
+  : DomainDescriptionType()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ CancelQuantumTaskResult::CancelQuantumTaskResult() :
 {
 }
 
-CancelQuantumTaskResult::CancelQuantumTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_cancellationStatus(CancellationStatus::NOT_SET)
+CancelQuantumTaskResult::CancelQuantumTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CancelQuantumTaskResult()
 {
   *this = result;
 }

@@ -26,11 +26,8 @@ BatchItemError::BatchItemError() :
 {
 }
 
-BatchItemError::BatchItemError(JsonView jsonValue) : 
-    m_index(0),
-    m_indexHasBeenSet(false),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
+BatchItemError::BatchItemError(JsonView jsonValue)
+  : BatchItemError()
 {
   *this = jsonValue;
 }

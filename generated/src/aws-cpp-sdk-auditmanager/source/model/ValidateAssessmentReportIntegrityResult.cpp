@@ -22,8 +22,8 @@ ValidateAssessmentReportIntegrityResult::ValidateAssessmentReportIntegrityResult
 {
 }
 
-ValidateAssessmentReportIntegrityResult::ValidateAssessmentReportIntegrityResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_signatureValid(false)
+ValidateAssessmentReportIntegrityResult::ValidateAssessmentReportIntegrityResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ValidateAssessmentReportIntegrityResult()
 {
   *this = result;
 }

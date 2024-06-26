@@ -58,42 +58,8 @@ VirtualInterface::VirtualInterface() :
 {
 }
 
-VirtualInterface::VirtualInterface(JsonView jsonValue) : 
-    m_ownerAccountHasBeenSet(false),
-    m_virtualInterfaceIdHasBeenSet(false),
-    m_locationHasBeenSet(false),
-    m_connectionIdHasBeenSet(false),
-    m_virtualInterfaceTypeHasBeenSet(false),
-    m_virtualInterfaceNameHasBeenSet(false),
-    m_vlan(0),
-    m_vlanHasBeenSet(false),
-    m_asn(0),
-    m_asnHasBeenSet(false),
-    m_amazonSideAsn(0),
-    m_amazonSideAsnHasBeenSet(false),
-    m_authKeyHasBeenSet(false),
-    m_amazonAddressHasBeenSet(false),
-    m_customerAddressHasBeenSet(false),
-    m_addressFamily(AddressFamily::NOT_SET),
-    m_addressFamilyHasBeenSet(false),
-    m_virtualInterfaceState(VirtualInterfaceState::NOT_SET),
-    m_virtualInterfaceStateHasBeenSet(false),
-    m_customerRouterConfigHasBeenSet(false),
-    m_mtu(0),
-    m_mtuHasBeenSet(false),
-    m_jumboFrameCapable(false),
-    m_jumboFrameCapableHasBeenSet(false),
-    m_virtualGatewayIdHasBeenSet(false),
-    m_directConnectGatewayIdHasBeenSet(false),
-    m_routeFilterPrefixesHasBeenSet(false),
-    m_bgpPeersHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_awsDeviceV2HasBeenSet(false),
-    m_awsLogicalDeviceIdHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_siteLinkEnabled(false),
-    m_siteLinkEnabledHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
+VirtualInterface::VirtualInterface(JsonView jsonValue)
+  : VirtualInterface()
 {
   *this = jsonValue;
 }

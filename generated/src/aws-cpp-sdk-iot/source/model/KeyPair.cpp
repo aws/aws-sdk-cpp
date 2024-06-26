@@ -24,9 +24,8 @@ KeyPair::KeyPair() :
 {
 }
 
-KeyPair::KeyPair(JsonView jsonValue) : 
-    m_publicKeyHasBeenSet(false),
-    m_privateKeyHasBeenSet(false)
+KeyPair::KeyPair(JsonView jsonValue)
+  : KeyPair()
 {
   *this = jsonValue;
 }

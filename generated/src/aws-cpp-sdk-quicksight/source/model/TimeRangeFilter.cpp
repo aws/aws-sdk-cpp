@@ -36,21 +36,8 @@ TimeRangeFilter::TimeRangeFilter() :
 {
 }
 
-TimeRangeFilter::TimeRangeFilter(JsonView jsonValue) : 
-    m_filterIdHasBeenSet(false),
-    m_columnHasBeenSet(false),
-    m_includeMinimum(false),
-    m_includeMinimumHasBeenSet(false),
-    m_includeMaximum(false),
-    m_includeMaximumHasBeenSet(false),
-    m_rangeMinimumValueHasBeenSet(false),
-    m_rangeMaximumValueHasBeenSet(false),
-    m_nullOption(FilterNullOption::NOT_SET),
-    m_nullOptionHasBeenSet(false),
-    m_excludePeriodConfigurationHasBeenSet(false),
-    m_timeGranularity(TimeGranularity::NOT_SET),
-    m_timeGranularityHasBeenSet(false),
-    m_defaultFilterControlConfigurationHasBeenSet(false)
+TimeRangeFilter::TimeRangeFilter(JsonView jsonValue)
+  : TimeRangeFilter()
 {
   *this = jsonValue;
 }

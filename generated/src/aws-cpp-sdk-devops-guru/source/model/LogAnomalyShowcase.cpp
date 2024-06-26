@@ -23,8 +23,8 @@ LogAnomalyShowcase::LogAnomalyShowcase() :
 {
 }
 
-LogAnomalyShowcase::LogAnomalyShowcase(JsonView jsonValue) : 
-    m_logAnomalyClassesHasBeenSet(false)
+LogAnomalyShowcase::LogAnomalyShowcase(JsonView jsonValue)
+  : LogAnomalyShowcase()
 {
   *this = jsonValue;
 }

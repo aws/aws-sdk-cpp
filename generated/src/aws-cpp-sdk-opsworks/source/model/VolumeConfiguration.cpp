@@ -34,19 +34,8 @@ VolumeConfiguration::VolumeConfiguration() :
 {
 }
 
-VolumeConfiguration::VolumeConfiguration(JsonView jsonValue) : 
-    m_mountPointHasBeenSet(false),
-    m_raidLevel(0),
-    m_raidLevelHasBeenSet(false),
-    m_numberOfDisks(0),
-    m_numberOfDisksHasBeenSet(false),
-    m_size(0),
-    m_sizeHasBeenSet(false),
-    m_volumeTypeHasBeenSet(false),
-    m_iops(0),
-    m_iopsHasBeenSet(false),
-    m_encrypted(false),
-    m_encryptedHasBeenSet(false)
+VolumeConfiguration::VolumeConfiguration(JsonView jsonValue)
+  : VolumeConfiguration()
 {
   *this = jsonValue;
 }

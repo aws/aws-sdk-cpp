@@ -22,8 +22,8 @@ TestEventPatternResult::TestEventPatternResult() :
 {
 }
 
-TestEventPatternResult::TestEventPatternResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_result(false)
+TestEventPatternResult::TestEventPatternResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : TestEventPatternResult()
 {
   *this = result;
 }

@@ -40,25 +40,8 @@ LambdaExecutionParameters::LambdaExecutionParameters() :
 {
 }
 
-LambdaExecutionParameters::LambdaExecutionParameters(JsonView jsonValue) : 
-    m_eventSourcesHasBeenSet(false),
-    m_maxQueueSize(0),
-    m_maxQueueSizeHasBeenSet(false),
-    m_maxInstancesCount(0),
-    m_maxInstancesCountHasBeenSet(false),
-    m_maxIdleTimeInSeconds(0),
-    m_maxIdleTimeInSecondsHasBeenSet(false),
-    m_timeoutInSeconds(0),
-    m_timeoutInSecondsHasBeenSet(false),
-    m_statusTimeoutInSeconds(0),
-    m_statusTimeoutInSecondsHasBeenSet(false),
-    m_pinned(false),
-    m_pinnedHasBeenSet(false),
-    m_inputPayloadEncodingType(LambdaInputPayloadEncodingType::NOT_SET),
-    m_inputPayloadEncodingTypeHasBeenSet(false),
-    m_execArgsHasBeenSet(false),
-    m_environmentVariablesHasBeenSet(false),
-    m_linuxProcessParamsHasBeenSet(false)
+LambdaExecutionParameters::LambdaExecutionParameters(JsonView jsonValue)
+  : LambdaExecutionParameters()
 {
   *this = jsonValue;
 }

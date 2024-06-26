@@ -25,10 +25,8 @@ Stage::Stage() :
 {
 }
 
-Stage::Stage(JsonView jsonValue) : 
-    m_durationInMinutes(0),
-    m_durationInMinutesHasBeenSet(false),
-    m_targetsHasBeenSet(false)
+Stage::Stage(JsonView jsonValue)
+  : Stage()
 {
   *this = jsonValue;
 }

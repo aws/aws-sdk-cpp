@@ -24,9 +24,8 @@ RecentCaseCommunications::RecentCaseCommunications() :
 {
 }
 
-RecentCaseCommunications::RecentCaseCommunications(JsonView jsonValue) : 
-    m_communicationsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
+RecentCaseCommunications::RecentCaseCommunications(JsonView jsonValue)
+  : RecentCaseCommunications()
 {
   *this = jsonValue;
 }

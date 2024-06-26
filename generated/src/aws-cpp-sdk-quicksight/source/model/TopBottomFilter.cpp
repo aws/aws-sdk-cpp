@@ -31,16 +31,8 @@ TopBottomFilter::TopBottomFilter() :
 {
 }
 
-TopBottomFilter::TopBottomFilter(JsonView jsonValue) : 
-    m_filterIdHasBeenSet(false),
-    m_columnHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false),
-    m_aggregationSortConfigurationsHasBeenSet(false),
-    m_timeGranularity(TimeGranularity::NOT_SET),
-    m_timeGranularityHasBeenSet(false),
-    m_parameterNameHasBeenSet(false),
-    m_defaultFilterControlConfigurationHasBeenSet(false)
+TopBottomFilter::TopBottomFilter(JsonView jsonValue)
+  : TopBottomFilter()
 {
   *this = jsonValue;
 }

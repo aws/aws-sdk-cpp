@@ -25,10 +25,8 @@ ComparisonConfiguration::ComparisonConfiguration() :
 {
 }
 
-ComparisonConfiguration::ComparisonConfiguration(JsonView jsonValue) : 
-    m_comparisonMethod(ComparisonMethod::NOT_SET),
-    m_comparisonMethodHasBeenSet(false),
-    m_comparisonFormatHasBeenSet(false)
+ComparisonConfiguration::ComparisonConfiguration(JsonView jsonValue)
+  : ComparisonConfiguration()
 {
   *this = jsonValue;
 }

@@ -31,14 +31,8 @@ InstanceStatus::InstanceStatus() :
 {
 }
 
-InstanceStatus::InstanceStatus(const XmlNode& xmlNode) : 
-    m_availabilityZoneHasBeenSet(false),
-    m_outpostArnHasBeenSet(false),
-    m_eventsHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_instanceStateHasBeenSet(false),
-    m_instanceStatusHasBeenSet(false),
-    m_systemStatusHasBeenSet(false)
+InstanceStatus::InstanceStatus(const XmlNode& xmlNode)
+  : InstanceStatus()
 {
   *this = xmlNode;
 }

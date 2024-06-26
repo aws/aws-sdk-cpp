@@ -26,11 +26,8 @@ BucketPolicy::BucketPolicy() :
 {
 }
 
-BucketPolicy::BucketPolicy(JsonView jsonValue) : 
-    m_allowsPublicReadAccess(false),
-    m_allowsPublicReadAccessHasBeenSet(false),
-    m_allowsPublicWriteAccess(false),
-    m_allowsPublicWriteAccessHasBeenSet(false)
+BucketPolicy::BucketPolicy(JsonView jsonValue)
+  : BucketPolicy()
 {
   *this = jsonValue;
 }

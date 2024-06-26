@@ -23,8 +23,8 @@ AwsStepFunctionStateMachineLoggingConfigurationDestinationsCloudWatchLogsLogGrou
 {
 }
 
-AwsStepFunctionStateMachineLoggingConfigurationDestinationsCloudWatchLogsLogGroupDetails::AwsStepFunctionStateMachineLoggingConfigurationDestinationsCloudWatchLogsLogGroupDetails(JsonView jsonValue) : 
-    m_logGroupArnHasBeenSet(false)
+AwsStepFunctionStateMachineLoggingConfigurationDestinationsCloudWatchLogsLogGroupDetails::AwsStepFunctionStateMachineLoggingConfigurationDestinationsCloudWatchLogsLogGroupDetails(JsonView jsonValue)
+  : AwsStepFunctionStateMachineLoggingConfigurationDestinationsCloudWatchLogsLogGroupDetails()
 {
   *this = jsonValue;
 }

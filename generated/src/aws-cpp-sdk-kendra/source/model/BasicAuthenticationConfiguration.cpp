@@ -26,11 +26,8 @@ BasicAuthenticationConfiguration::BasicAuthenticationConfiguration() :
 {
 }
 
-BasicAuthenticationConfiguration::BasicAuthenticationConfiguration(JsonView jsonValue) : 
-    m_hostHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_credentialsHasBeenSet(false)
+BasicAuthenticationConfiguration::BasicAuthenticationConfiguration(JsonView jsonValue)
+  : BasicAuthenticationConfiguration()
 {
   *this = jsonValue;
 }

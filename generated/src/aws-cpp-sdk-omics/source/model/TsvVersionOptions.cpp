@@ -26,11 +26,8 @@ TsvVersionOptions::TsvVersionOptions() :
 {
 }
 
-TsvVersionOptions::TsvVersionOptions(JsonView jsonValue) : 
-    m_annotationType(AnnotationType::NOT_SET),
-    m_annotationTypeHasBeenSet(false),
-    m_formatToHeaderHasBeenSet(false),
-    m_schemaHasBeenSet(false)
+TsvVersionOptions::TsvVersionOptions(JsonView jsonValue)
+  : TsvVersionOptions()
 {
   *this = jsonValue;
 }

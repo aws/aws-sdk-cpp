@@ -24,9 +24,8 @@ RuleAction::RuleAction() :
 {
 }
 
-RuleAction::RuleAction(JsonView jsonValue) : 
-    m_fixedResponseHasBeenSet(false),
-    m_forwardHasBeenSet(false)
+RuleAction::RuleAction(JsonView jsonValue)
+  : RuleAction()
 {
   *this = jsonValue;
 }

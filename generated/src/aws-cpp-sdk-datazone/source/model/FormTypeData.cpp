@@ -35,20 +35,8 @@ FormTypeData::FormTypeData() :
 {
 }
 
-FormTypeData::FormTypeData(JsonView jsonValue) : 
-    m_createdAtHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_domainIdHasBeenSet(false),
-    m_importsHasBeenSet(false),
-    m_modelHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_originDomainIdHasBeenSet(false),
-    m_originProjectIdHasBeenSet(false),
-    m_owningProjectIdHasBeenSet(false),
-    m_revisionHasBeenSet(false),
-    m_status(FormTypeStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+FormTypeData::FormTypeData(JsonView jsonValue)
+  : FormTypeData()
 {
   *this = jsonValue;
 }

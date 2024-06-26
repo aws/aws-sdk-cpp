@@ -22,8 +22,8 @@ AcceptGrantResult::AcceptGrantResult() :
 {
 }
 
-AcceptGrantResult::AcceptGrantResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(GrantStatus::NOT_SET)
+AcceptGrantResult::AcceptGrantResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : AcceptGrantResult()
 {
   *this = result;
 }

@@ -25,10 +25,8 @@ DeviceRegistrationStateEventConfiguration::DeviceRegistrationStateEventConfigura
 {
 }
 
-DeviceRegistrationStateEventConfiguration::DeviceRegistrationStateEventConfiguration(JsonView jsonValue) : 
-    m_sidewalkHasBeenSet(false),
-    m_wirelessDeviceIdEventTopic(EventNotificationTopicStatus::NOT_SET),
-    m_wirelessDeviceIdEventTopicHasBeenSet(false)
+DeviceRegistrationStateEventConfiguration::DeviceRegistrationStateEventConfiguration(JsonView jsonValue)
+  : DeviceRegistrationStateEventConfiguration()
 {
   *this = jsonValue;
 }

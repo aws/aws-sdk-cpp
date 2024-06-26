@@ -26,11 +26,8 @@ RetentionProperties::RetentionProperties() :
 {
 }
 
-RetentionProperties::RetentionProperties(JsonView jsonValue) : 
-    m_memoryStoreRetentionPeriodInHours(0),
-    m_memoryStoreRetentionPeriodInHoursHasBeenSet(false),
-    m_magneticStoreRetentionPeriodInDays(0),
-    m_magneticStoreRetentionPeriodInDaysHasBeenSet(false)
+RetentionProperties::RetentionProperties(JsonView jsonValue)
+  : RetentionProperties()
 {
   *this = jsonValue;
 }

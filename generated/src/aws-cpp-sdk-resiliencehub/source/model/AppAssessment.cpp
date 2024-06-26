@@ -44,29 +44,8 @@ AppAssessment::AppAssessment() :
 {
 }
 
-AppAssessment::AppAssessment(JsonView jsonValue) : 
-    m_appArnHasBeenSet(false),
-    m_appVersionHasBeenSet(false),
-    m_assessmentArnHasBeenSet(false),
-    m_assessmentNameHasBeenSet(false),
-    m_assessmentStatus(AssessmentStatus::NOT_SET),
-    m_assessmentStatusHasBeenSet(false),
-    m_complianceHasBeenSet(false),
-    m_complianceStatus(ComplianceStatus::NOT_SET),
-    m_complianceStatusHasBeenSet(false),
-    m_costHasBeenSet(false),
-    m_driftStatus(DriftStatus::NOT_SET),
-    m_driftStatusHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_invoker(AssessmentInvoker::NOT_SET),
-    m_invokerHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_policyHasBeenSet(false),
-    m_resiliencyScoreHasBeenSet(false),
-    m_resourceErrorsDetailsHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_versionNameHasBeenSet(false)
+AppAssessment::AppAssessment(JsonView jsonValue)
+  : AppAssessment()
 {
   *this = jsonValue;
 }

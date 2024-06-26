@@ -32,15 +32,8 @@ ConnectionPoolConfiguration::ConnectionPoolConfiguration() :
 {
 }
 
-ConnectionPoolConfiguration::ConnectionPoolConfiguration(const XmlNode& xmlNode) : 
-    m_maxConnectionsPercent(0),
-    m_maxConnectionsPercentHasBeenSet(false),
-    m_maxIdleConnectionsPercent(0),
-    m_maxIdleConnectionsPercentHasBeenSet(false),
-    m_connectionBorrowTimeout(0),
-    m_connectionBorrowTimeoutHasBeenSet(false),
-    m_sessionPinningFiltersHasBeenSet(false),
-    m_initQueryHasBeenSet(false)
+ConnectionPoolConfiguration::ConnectionPoolConfiguration(const XmlNode& xmlNode)
+  : ConnectionPoolConfiguration()
 {
   *this = xmlNode;
 }

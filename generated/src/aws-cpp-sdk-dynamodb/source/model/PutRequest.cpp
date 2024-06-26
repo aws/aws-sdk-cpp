@@ -23,8 +23,8 @@ PutRequest::PutRequest() :
 {
 }
 
-PutRequest::PutRequest(JsonView jsonValue) : 
-    m_itemHasBeenSet(false)
+PutRequest::PutRequest(JsonView jsonValue)
+  : PutRequest()
 {
   *this = jsonValue;
 }

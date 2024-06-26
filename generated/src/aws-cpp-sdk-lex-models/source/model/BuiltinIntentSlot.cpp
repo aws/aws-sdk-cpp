@@ -23,8 +23,8 @@ BuiltinIntentSlot::BuiltinIntentSlot() :
 {
 }
 
-BuiltinIntentSlot::BuiltinIntentSlot(JsonView jsonValue) : 
-    m_nameHasBeenSet(false)
+BuiltinIntentSlot::BuiltinIntentSlot(JsonView jsonValue)
+  : BuiltinIntentSlot()
 {
   *this = jsonValue;
 }

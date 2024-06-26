@@ -24,9 +24,8 @@ SliderControlDisplayOptions::SliderControlDisplayOptions() :
 {
 }
 
-SliderControlDisplayOptions::SliderControlDisplayOptions(JsonView jsonValue) : 
-    m_titleOptionsHasBeenSet(false),
-    m_infoIconLabelOptionsHasBeenSet(false)
+SliderControlDisplayOptions::SliderControlDisplayOptions(JsonView jsonValue)
+  : SliderControlDisplayOptions()
 {
   *this = jsonValue;
 }

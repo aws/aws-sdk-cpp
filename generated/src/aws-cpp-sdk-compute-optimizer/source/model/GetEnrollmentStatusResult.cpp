@@ -24,10 +24,8 @@ GetEnrollmentStatusResult::GetEnrollmentStatusResult() :
 {
 }
 
-GetEnrollmentStatusResult::GetEnrollmentStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(Status::NOT_SET),
-    m_memberAccountsEnrolled(false),
-    m_numberOfMemberAccountsOptedIn(0)
+GetEnrollmentStatusResult::GetEnrollmentStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetEnrollmentStatusResult()
 {
   *this = result;
 }

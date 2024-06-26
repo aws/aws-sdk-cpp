@@ -26,11 +26,8 @@ EntityAggregate::EntityAggregate() :
 {
 }
 
-EntityAggregate::EntityAggregate(JsonView jsonValue) : 
-    m_eventArnHasBeenSet(false),
-    m_count(0),
-    m_countHasBeenSet(false),
-    m_statusesHasBeenSet(false)
+EntityAggregate::EntityAggregate(JsonView jsonValue)
+  : EntityAggregate()
 {
   *this = jsonValue;
 }

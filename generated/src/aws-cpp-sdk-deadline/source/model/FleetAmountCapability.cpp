@@ -27,12 +27,8 @@ FleetAmountCapability::FleetAmountCapability() :
 {
 }
 
-FleetAmountCapability::FleetAmountCapability(JsonView jsonValue) : 
-    m_max(0.0),
-    m_maxHasBeenSet(false),
-    m_min(0.0),
-    m_minHasBeenSet(false),
-    m_nameHasBeenSet(false)
+FleetAmountCapability::FleetAmountCapability(JsonView jsonValue)
+  : FleetAmountCapability()
 {
   *this = jsonValue;
 }

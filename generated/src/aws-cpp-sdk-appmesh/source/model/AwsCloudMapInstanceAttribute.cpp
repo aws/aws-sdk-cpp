@@ -24,9 +24,8 @@ AwsCloudMapInstanceAttribute::AwsCloudMapInstanceAttribute() :
 {
 }
 
-AwsCloudMapInstanceAttribute::AwsCloudMapInstanceAttribute(JsonView jsonValue) : 
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false)
+AwsCloudMapInstanceAttribute::AwsCloudMapInstanceAttribute(JsonView jsonValue)
+  : AwsCloudMapInstanceAttribute()
 {
   *this = jsonValue;
 }

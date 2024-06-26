@@ -25,10 +25,8 @@ DatasourcePackageIngestDetail::DatasourcePackageIngestDetail() :
 {
 }
 
-DatasourcePackageIngestDetail::DatasourcePackageIngestDetail(JsonView jsonValue) : 
-    m_datasourcePackageIngestState(DatasourcePackageIngestState::NOT_SET),
-    m_datasourcePackageIngestStateHasBeenSet(false),
-    m_lastIngestStateChangeHasBeenSet(false)
+DatasourcePackageIngestDetail::DatasourcePackageIngestDetail(JsonView jsonValue)
+  : DatasourcePackageIngestDetail()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ PercentileAggregation::PercentileAggregation() :
 {
 }
 
-PercentileAggregation::PercentileAggregation(JsonView jsonValue) : 
-    m_percentileValue(0.0),
-    m_percentileValueHasBeenSet(false)
+PercentileAggregation::PercentileAggregation(JsonView jsonValue)
+  : PercentileAggregation()
 {
   *this = jsonValue;
 }

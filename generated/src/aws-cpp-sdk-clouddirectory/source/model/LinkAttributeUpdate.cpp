@@ -24,9 +24,8 @@ LinkAttributeUpdate::LinkAttributeUpdate() :
 {
 }
 
-LinkAttributeUpdate::LinkAttributeUpdate(JsonView jsonValue) : 
-    m_attributeKeyHasBeenSet(false),
-    m_attributeActionHasBeenSet(false)
+LinkAttributeUpdate::LinkAttributeUpdate(JsonView jsonValue)
+  : LinkAttributeUpdate()
 {
   *this = jsonValue;
 }

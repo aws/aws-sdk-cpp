@@ -44,27 +44,8 @@ Ipam::Ipam() :
 {
 }
 
-Ipam::Ipam(const XmlNode& xmlNode) : 
-    m_ownerIdHasBeenSet(false),
-    m_ipamIdHasBeenSet(false),
-    m_ipamArnHasBeenSet(false),
-    m_ipamRegionHasBeenSet(false),
-    m_publicDefaultScopeIdHasBeenSet(false),
-    m_privateDefaultScopeIdHasBeenSet(false),
-    m_scopeCount(0),
-    m_scopeCountHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_operatingRegionsHasBeenSet(false),
-    m_state(IpamState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_defaultResourceDiscoveryIdHasBeenSet(false),
-    m_defaultResourceDiscoveryAssociationIdHasBeenSet(false),
-    m_resourceDiscoveryAssociationCount(0),
-    m_resourceDiscoveryAssociationCountHasBeenSet(false),
-    m_stateMessageHasBeenSet(false),
-    m_tier(IpamTier::NOT_SET),
-    m_tierHasBeenSet(false)
+Ipam::Ipam(const XmlNode& xmlNode)
+  : Ipam()
 {
   *this = xmlNode;
 }

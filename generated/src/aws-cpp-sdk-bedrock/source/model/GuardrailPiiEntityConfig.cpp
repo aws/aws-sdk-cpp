@@ -26,11 +26,8 @@ GuardrailPiiEntityConfig::GuardrailPiiEntityConfig() :
 {
 }
 
-GuardrailPiiEntityConfig::GuardrailPiiEntityConfig(JsonView jsonValue) : 
-    m_type(GuardrailPiiEntityType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_action(GuardrailSensitiveInformationAction::NOT_SET),
-    m_actionHasBeenSet(false)
+GuardrailPiiEntityConfig::GuardrailPiiEntityConfig(JsonView jsonValue)
+  : GuardrailPiiEntityConfig()
 {
   *this = jsonValue;
 }

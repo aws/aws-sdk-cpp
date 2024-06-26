@@ -24,9 +24,8 @@ EnabledBaselineParameter::EnabledBaselineParameter() :
 {
 }
 
-EnabledBaselineParameter::EnabledBaselineParameter(JsonView jsonValue) : 
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false)
+EnabledBaselineParameter::EnabledBaselineParameter(JsonView jsonValue)
+  : EnabledBaselineParameter()
 {
   *this = jsonValue;
 }

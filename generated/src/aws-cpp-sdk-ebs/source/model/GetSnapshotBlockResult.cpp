@@ -47,9 +47,8 @@ GetSnapshotBlockResult& GetSnapshotBlockResult::operator=(GetSnapshotBlockResult
    return *this;
 }
 
-GetSnapshotBlockResult::GetSnapshotBlockResult(Aws::AmazonWebServiceResult<ResponseStream>&& result) : 
-    m_dataLength(0),
-    m_checksumAlgorithm(ChecksumAlgorithm::NOT_SET)
+GetSnapshotBlockResult::GetSnapshotBlockResult(Aws::AmazonWebServiceResult<ResponseStream>&& result)
+  : GetSnapshotBlockResult()
 {
   *this = std::move(result);
 }

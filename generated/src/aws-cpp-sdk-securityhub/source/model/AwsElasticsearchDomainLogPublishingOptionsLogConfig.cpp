@@ -25,10 +25,8 @@ AwsElasticsearchDomainLogPublishingOptionsLogConfig::AwsElasticsearchDomainLogPu
 {
 }
 
-AwsElasticsearchDomainLogPublishingOptionsLogConfig::AwsElasticsearchDomainLogPublishingOptionsLogConfig(JsonView jsonValue) : 
-    m_cloudWatchLogsLogGroupArnHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
+AwsElasticsearchDomainLogPublishingOptionsLogConfig::AwsElasticsearchDomainLogPublishingOptionsLogConfig(JsonView jsonValue)
+  : AwsElasticsearchDomainLogPublishingOptionsLogConfig()
 {
   *this = jsonValue;
 }

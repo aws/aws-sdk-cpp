@@ -26,11 +26,8 @@ LineChartAggregatedFieldWells::LineChartAggregatedFieldWells() :
 {
 }
 
-LineChartAggregatedFieldWells::LineChartAggregatedFieldWells(JsonView jsonValue) : 
-    m_categoryHasBeenSet(false),
-    m_valuesHasBeenSet(false),
-    m_colorsHasBeenSet(false),
-    m_smallMultiplesHasBeenSet(false)
+LineChartAggregatedFieldWells::LineChartAggregatedFieldWells(JsonView jsonValue)
+  : LineChartAggregatedFieldWells()
 {
   *this = jsonValue;
 }

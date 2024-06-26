@@ -24,10 +24,8 @@ DescribeApplicationResult::DescribeApplicationResult() :
 {
 }
 
-DescribeApplicationResult::DescribeApplicationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_applicationState(ApplicationState::NOT_SET),
-    m_applicationCreationDate(0),
-    m_applicationLastUpdateDate(0)
+DescribeApplicationResult::DescribeApplicationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeApplicationResult()
 {
   *this = result;
 }

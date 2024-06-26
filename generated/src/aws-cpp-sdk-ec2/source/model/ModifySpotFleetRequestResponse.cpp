@@ -22,8 +22,8 @@ ModifySpotFleetRequestResponse::ModifySpotFleetRequestResponse() :
 {
 }
 
-ModifySpotFleetRequestResponse::ModifySpotFleetRequestResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_return(false)
+ModifySpotFleetRequestResponse::ModifySpotFleetRequestResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : ModifySpotFleetRequestResponse()
 {
   *this = result;
 }

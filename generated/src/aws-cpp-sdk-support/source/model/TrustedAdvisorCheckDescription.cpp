@@ -27,12 +27,8 @@ TrustedAdvisorCheckDescription::TrustedAdvisorCheckDescription() :
 {
 }
 
-TrustedAdvisorCheckDescription::TrustedAdvisorCheckDescription(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_categoryHasBeenSet(false),
-    m_metadataHasBeenSet(false)
+TrustedAdvisorCheckDescription::TrustedAdvisorCheckDescription(JsonView jsonValue)
+  : TrustedAdvisorCheckDescription()
 {
   *this = jsonValue;
 }

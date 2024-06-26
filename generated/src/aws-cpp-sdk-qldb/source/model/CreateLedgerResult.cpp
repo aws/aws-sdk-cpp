@@ -24,10 +24,8 @@ CreateLedgerResult::CreateLedgerResult() :
 {
 }
 
-CreateLedgerResult::CreateLedgerResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_state(LedgerState::NOT_SET),
-    m_permissionsMode(PermissionsMode::NOT_SET),
-    m_deletionProtection(false)
+CreateLedgerResult::CreateLedgerResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateLedgerResult()
 {
   *this = result;
 }

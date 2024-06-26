@@ -22,8 +22,8 @@ CreateAccessPointResult::CreateAccessPointResult() :
 {
 }
 
-CreateAccessPointResult::CreateAccessPointResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_lifeCycleState(LifeCycleState::NOT_SET)
+CreateAccessPointResult::CreateAccessPointResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateAccessPointResult()
 {
   *this = result;
 }

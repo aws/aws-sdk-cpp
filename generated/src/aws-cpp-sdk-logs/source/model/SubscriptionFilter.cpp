@@ -31,16 +31,8 @@ SubscriptionFilter::SubscriptionFilter() :
 {
 }
 
-SubscriptionFilter::SubscriptionFilter(JsonView jsonValue) : 
-    m_filterNameHasBeenSet(false),
-    m_logGroupNameHasBeenSet(false),
-    m_filterPatternHasBeenSet(false),
-    m_destinationArnHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_distribution(Distribution::NOT_SET),
-    m_distributionHasBeenSet(false),
-    m_creationTime(0),
-    m_creationTimeHasBeenSet(false)
+SubscriptionFilter::SubscriptionFilter(JsonView jsonValue)
+  : SubscriptionFilter()
 {
   *this = jsonValue;
 }

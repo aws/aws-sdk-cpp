@@ -29,14 +29,8 @@ Network::Network() :
 {
 }
 
-Network::Network(JsonView jsonValue) : 
-    m_createdAtHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_networkArnHasBeenSet(false),
-    m_networkNameHasBeenSet(false),
-    m_status(NetworkStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusReasonHasBeenSet(false)
+Network::Network(JsonView jsonValue)
+  : Network()
 {
   *this = jsonValue;
 }

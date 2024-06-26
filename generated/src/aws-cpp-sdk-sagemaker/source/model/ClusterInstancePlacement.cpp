@@ -24,9 +24,8 @@ ClusterInstancePlacement::ClusterInstancePlacement() :
 {
 }
 
-ClusterInstancePlacement::ClusterInstancePlacement(JsonView jsonValue) : 
-    m_availabilityZoneHasBeenSet(false),
-    m_availabilityZoneIdHasBeenSet(false)
+ClusterInstancePlacement::ClusterInstancePlacement(JsonView jsonValue)
+  : ClusterInstancePlacement()
 {
   *this = jsonValue;
 }

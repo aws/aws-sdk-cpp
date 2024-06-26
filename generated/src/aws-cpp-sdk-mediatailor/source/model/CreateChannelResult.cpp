@@ -22,8 +22,8 @@ CreateChannelResult::CreateChannelResult() :
 {
 }
 
-CreateChannelResult::CreateChannelResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_channelState(ChannelState::NOT_SET)
+CreateChannelResult::CreateChannelResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateChannelResult()
 {
   *this = result;
 }

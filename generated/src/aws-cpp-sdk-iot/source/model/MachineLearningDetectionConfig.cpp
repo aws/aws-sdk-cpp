@@ -24,9 +24,8 @@ MachineLearningDetectionConfig::MachineLearningDetectionConfig() :
 {
 }
 
-MachineLearningDetectionConfig::MachineLearningDetectionConfig(JsonView jsonValue) : 
-    m_confidenceLevel(ConfidenceLevel::NOT_SET),
-    m_confidenceLevelHasBeenSet(false)
+MachineLearningDetectionConfig::MachineLearningDetectionConfig(JsonView jsonValue)
+  : MachineLearningDetectionConfig()
 {
   *this = jsonValue;
 }

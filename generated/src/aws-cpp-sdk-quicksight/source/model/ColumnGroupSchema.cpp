@@ -24,9 +24,8 @@ ColumnGroupSchema::ColumnGroupSchema() :
 {
 }
 
-ColumnGroupSchema::ColumnGroupSchema(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_columnGroupColumnSchemaListHasBeenSet(false)
+ColumnGroupSchema::ColumnGroupSchema(JsonView jsonValue)
+  : ColumnGroupSchema()
 {
   *this = jsonValue;
 }

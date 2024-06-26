@@ -23,9 +23,8 @@ GetResourceProfileResult::GetResourceProfileResult() :
 {
 }
 
-GetResourceProfileResult::GetResourceProfileResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_sensitivityScore(0),
-    m_sensitivityScoreOverridden(false)
+GetResourceProfileResult::GetResourceProfileResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetResourceProfileResult()
 {
   *this = result;
 }

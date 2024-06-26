@@ -24,9 +24,8 @@ ColdStorageOptions::ColdStorageOptions() :
 {
 }
 
-ColdStorageOptions::ColdStorageOptions(JsonView jsonValue) : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
+ColdStorageOptions::ColdStorageOptions(JsonView jsonValue)
+  : ColdStorageOptions()
 {
   *this = jsonValue;
 }

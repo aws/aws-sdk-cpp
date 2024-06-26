@@ -22,8 +22,8 @@ GetMatchingJobResult::GetMatchingJobResult() :
 {
 }
 
-GetMatchingJobResult::GetMatchingJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(JobStatus::NOT_SET)
+GetMatchingJobResult::GetMatchingJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetMatchingJobResult()
 {
   *this = result;
 }

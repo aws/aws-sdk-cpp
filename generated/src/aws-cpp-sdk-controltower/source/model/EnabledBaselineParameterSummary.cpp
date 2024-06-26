@@ -24,9 +24,8 @@ EnabledBaselineParameterSummary::EnabledBaselineParameterSummary() :
 {
 }
 
-EnabledBaselineParameterSummary::EnabledBaselineParameterSummary(JsonView jsonValue) : 
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false)
+EnabledBaselineParameterSummary::EnabledBaselineParameterSummary(JsonView jsonValue)
+  : EnabledBaselineParameterSummary()
 {
   *this = jsonValue;
 }

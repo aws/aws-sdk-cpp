@@ -23,8 +23,8 @@ PropertyParameters::PropertyParameters() :
 {
 }
 
-PropertyParameters::PropertyParameters(JsonView jsonValue) : 
-    m_propertiesHasBeenSet(false)
+PropertyParameters::PropertyParameters(JsonView jsonValue)
+  : PropertyParameters()
 {
   *this = jsonValue;
 }

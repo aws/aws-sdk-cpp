@@ -28,13 +28,8 @@ ExperimentSummary::ExperimentSummary() :
 {
 }
 
-ExperimentSummary::ExperimentSummary(JsonView jsonValue) : 
-    m_experimentArnHasBeenSet(false),
-    m_experimentNameHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_experimentSourceHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false)
+ExperimentSummary::ExperimentSummary(JsonView jsonValue)
+  : ExperimentSummary()
 {
   *this = jsonValue;
 }

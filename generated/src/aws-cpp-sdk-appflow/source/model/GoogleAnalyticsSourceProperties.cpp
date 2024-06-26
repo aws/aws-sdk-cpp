@@ -23,8 +23,8 @@ GoogleAnalyticsSourceProperties::GoogleAnalyticsSourceProperties() :
 {
 }
 
-GoogleAnalyticsSourceProperties::GoogleAnalyticsSourceProperties(JsonView jsonValue) : 
-    m_objectHasBeenSet(false)
+GoogleAnalyticsSourceProperties::GoogleAnalyticsSourceProperties(JsonView jsonValue)
+  : GoogleAnalyticsSourceProperties()
 {
   *this = jsonValue;
 }

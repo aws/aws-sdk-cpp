@@ -25,10 +25,8 @@ RuleDmarcExpression::RuleDmarcExpression() :
 {
 }
 
-RuleDmarcExpression::RuleDmarcExpression(JsonView jsonValue) : 
-    m_operator(RuleDmarcOperator::NOT_SET),
-    m_operatorHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+RuleDmarcExpression::RuleDmarcExpression(JsonView jsonValue)
+  : RuleDmarcExpression()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ DataRepositoryTaskFilter::DataRepositoryTaskFilter() :
 {
 }
 
-DataRepositoryTaskFilter::DataRepositoryTaskFilter(JsonView jsonValue) : 
-    m_name(DataRepositoryTaskFilterName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+DataRepositoryTaskFilter::DataRepositoryTaskFilter(JsonView jsonValue)
+  : DataRepositoryTaskFilter()
 {
   *this = jsonValue;
 }

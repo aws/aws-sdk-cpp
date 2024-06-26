@@ -24,9 +24,8 @@ AuthorizationPendingException::AuthorizationPendingException() :
 {
 }
 
-AuthorizationPendingException::AuthorizationPendingException(JsonView jsonValue) : 
-    m_errorHasBeenSet(false),
-    m_error_descriptionHasBeenSet(false)
+AuthorizationPendingException::AuthorizationPendingException(JsonView jsonValue)
+  : AuthorizationPendingException()
 {
   *this = jsonValue;
 }

@@ -23,9 +23,8 @@ CreateRegistrationResult::CreateRegistrationResult() :
 {
 }
 
-CreateRegistrationResult::CreateRegistrationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_registrationStatus(RegistrationStatus::NOT_SET),
-    m_currentVersionNumber(0)
+CreateRegistrationResult::CreateRegistrationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateRegistrationResult()
 {
   *this = result;
 }

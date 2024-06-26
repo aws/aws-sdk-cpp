@@ -23,8 +23,8 @@ TranscriptSourceSetting::TranscriptSourceSetting() :
 {
 }
 
-TranscriptSourceSetting::TranscriptSourceSetting(JsonView jsonValue) : 
-    m_s3BucketTranscriptSourceHasBeenSet(false)
+TranscriptSourceSetting::TranscriptSourceSetting(JsonView jsonValue)
+  : TranscriptSourceSetting()
 {
   *this = jsonValue;
 }

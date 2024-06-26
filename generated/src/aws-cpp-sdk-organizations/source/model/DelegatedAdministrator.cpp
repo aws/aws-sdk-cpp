@@ -32,17 +32,8 @@ DelegatedAdministrator::DelegatedAdministrator() :
 {
 }
 
-DelegatedAdministrator::DelegatedAdministrator(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_emailHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_status(AccountStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_joinedMethod(AccountJoinedMethod::NOT_SET),
-    m_joinedMethodHasBeenSet(false),
-    m_joinedTimestampHasBeenSet(false),
-    m_delegationEnabledDateHasBeenSet(false)
+DelegatedAdministrator::DelegatedAdministrator(JsonView jsonValue)
+  : DelegatedAdministrator()
 {
   *this = jsonValue;
 }

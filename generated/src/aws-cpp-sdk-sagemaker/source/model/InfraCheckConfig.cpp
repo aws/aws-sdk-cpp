@@ -24,9 +24,8 @@ InfraCheckConfig::InfraCheckConfig() :
 {
 }
 
-InfraCheckConfig::InfraCheckConfig(JsonView jsonValue) : 
-    m_enableInfraCheck(false),
-    m_enableInfraCheckHasBeenSet(false)
+InfraCheckConfig::InfraCheckConfig(JsonView jsonValue)
+  : InfraCheckConfig()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ SyncState::SyncState() :
 {
 }
 
-SyncState::SyncState(JsonView jsonValue) : 
-    m_attachmentHasBeenSet(false),
-    m_configHasBeenSet(false)
+SyncState::SyncState(JsonView jsonValue)
+  : SyncState()
 {
   *this = jsonValue;
 }

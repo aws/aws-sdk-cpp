@@ -24,9 +24,8 @@ SecretsManagerSecretResourceData::SecretsManagerSecretResourceData() :
 {
 }
 
-SecretsManagerSecretResourceData::SecretsManagerSecretResourceData(JsonView jsonValue) : 
-    m_aRNHasBeenSet(false),
-    m_additionalStagingLabelsToDownloadHasBeenSet(false)
+SecretsManagerSecretResourceData::SecretsManagerSecretResourceData(JsonView jsonValue)
+  : SecretsManagerSecretResourceData()
 {
   *this = jsonValue;
 }

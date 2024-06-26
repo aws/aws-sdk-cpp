@@ -24,9 +24,8 @@ DeriveSharedSecretResult::DeriveSharedSecretResult() :
 {
 }
 
-DeriveSharedSecretResult::DeriveSharedSecretResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_keyAgreementAlgorithm(KeyAgreementAlgorithmSpec::NOT_SET),
-    m_keyOrigin(OriginType::NOT_SET)
+DeriveSharedSecretResult::DeriveSharedSecretResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeriveSharedSecretResult()
 {
   *this = result;
 }

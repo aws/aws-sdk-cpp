@@ -26,9 +26,8 @@ AttachedPolicy::AttachedPolicy() :
 {
 }
 
-AttachedPolicy::AttachedPolicy(const XmlNode& xmlNode) : 
-    m_policyNameHasBeenSet(false),
-    m_policyArnHasBeenSet(false)
+AttachedPolicy::AttachedPolicy(const XmlNode& xmlNode)
+  : AttachedPolicy()
 {
   *this = xmlNode;
 }

@@ -23,8 +23,8 @@ FirehoseDestinationConfiguration::FirehoseDestinationConfiguration() :
 {
 }
 
-FirehoseDestinationConfiguration::FirehoseDestinationConfiguration(JsonView jsonValue) : 
-    m_deliveryStreamNameHasBeenSet(false)
+FirehoseDestinationConfiguration::FirehoseDestinationConfiguration(JsonView jsonValue)
+  : FirehoseDestinationConfiguration()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ ManifestFileLocation::ManifestFileLocation() :
 {
 }
 
-ManifestFileLocation::ManifestFileLocation(JsonView jsonValue) : 
-    m_bucketHasBeenSet(false),
-    m_keyHasBeenSet(false)
+ManifestFileLocation::ManifestFileLocation(JsonView jsonValue)
+  : ManifestFileLocation()
 {
   *this = jsonValue;
 }

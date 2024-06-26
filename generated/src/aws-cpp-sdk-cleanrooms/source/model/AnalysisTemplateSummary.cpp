@@ -32,17 +32,8 @@ AnalysisTemplateSummary::AnalysisTemplateSummary() :
 {
 }
 
-AnalysisTemplateSummary::AnalysisTemplateSummary(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_updateTimeHasBeenSet(false),
-    m_membershipArnHasBeenSet(false),
-    m_membershipIdHasBeenSet(false),
-    m_collaborationArnHasBeenSet(false),
-    m_collaborationIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+AnalysisTemplateSummary::AnalysisTemplateSummary(JsonView jsonValue)
+  : AnalysisTemplateSummary()
 {
   *this = jsonValue;
 }

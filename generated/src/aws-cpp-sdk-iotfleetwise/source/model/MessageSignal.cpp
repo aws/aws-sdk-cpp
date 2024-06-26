@@ -24,9 +24,8 @@ MessageSignal::MessageSignal() :
 {
 }
 
-MessageSignal::MessageSignal(JsonView jsonValue) : 
-    m_topicNameHasBeenSet(false),
-    m_structuredMessageHasBeenSet(false)
+MessageSignal::MessageSignal(JsonView jsonValue)
+  : MessageSignal()
 {
   *this = jsonValue;
 }

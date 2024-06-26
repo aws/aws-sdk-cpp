@@ -26,11 +26,8 @@ ThingGroupIndexingConfiguration::ThingGroupIndexingConfiguration() :
 {
 }
 
-ThingGroupIndexingConfiguration::ThingGroupIndexingConfiguration(JsonView jsonValue) : 
-    m_thingGroupIndexingMode(ThingGroupIndexingMode::NOT_SET),
-    m_thingGroupIndexingModeHasBeenSet(false),
-    m_managedFieldsHasBeenSet(false),
-    m_customFieldsHasBeenSet(false)
+ThingGroupIndexingConfiguration::ThingGroupIndexingConfiguration(JsonView jsonValue)
+  : ThingGroupIndexingConfiguration()
 {
   *this = jsonValue;
 }

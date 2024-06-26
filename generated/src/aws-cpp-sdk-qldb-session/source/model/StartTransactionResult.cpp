@@ -24,9 +24,8 @@ StartTransactionResult::StartTransactionResult() :
 {
 }
 
-StartTransactionResult::StartTransactionResult(JsonView jsonValue) : 
-    m_transactionIdHasBeenSet(false),
-    m_timingInformationHasBeenSet(false)
+StartTransactionResult::StartTransactionResult(JsonView jsonValue)
+  : StartTransactionResult()
 {
   *this = jsonValue;
 }

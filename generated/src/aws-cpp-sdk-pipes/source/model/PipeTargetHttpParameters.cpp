@@ -25,10 +25,8 @@ PipeTargetHttpParameters::PipeTargetHttpParameters() :
 {
 }
 
-PipeTargetHttpParameters::PipeTargetHttpParameters(JsonView jsonValue) : 
-    m_pathParameterValuesHasBeenSet(false),
-    m_headerParametersHasBeenSet(false),
-    m_queryStringParametersHasBeenSet(false)
+PipeTargetHttpParameters::PipeTargetHttpParameters(JsonView jsonValue)
+  : PipeTargetHttpParameters()
 {
   *this = jsonValue;
 }

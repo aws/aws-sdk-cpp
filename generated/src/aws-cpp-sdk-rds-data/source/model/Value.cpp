@@ -40,23 +40,8 @@ Value::Value() :
 {
 }
 
-Value::Value(JsonView jsonValue) : 
-    m_isNull(false),
-    m_isNullHasBeenSet(false),
-    m_bitValue(false),
-    m_bitValueHasBeenSet(false),
-    m_bigIntValue(0),
-    m_bigIntValueHasBeenSet(false),
-    m_intValue(0),
-    m_intValueHasBeenSet(false),
-    m_doubleValue(0.0),
-    m_doubleValueHasBeenSet(false),
-    m_realValue(0.0),
-    m_realValueHasBeenSet(false),
-    m_stringValueHasBeenSet(false),
-    m_blobValueHasBeenSet(false),
-    m_arrayValuesHasBeenSet(false),
-    m_structValueHasBeenSet(false)
+Value::Value(JsonView jsonValue)
+  : Value()
 {
   *this = jsonValue;
 }

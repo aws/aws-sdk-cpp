@@ -24,9 +24,8 @@ DataProductTitleFilter::DataProductTitleFilter() :
 {
 }
 
-DataProductTitleFilter::DataProductTitleFilter(JsonView jsonValue) : 
-    m_valueListHasBeenSet(false),
-    m_wildCardValueHasBeenSet(false)
+DataProductTitleFilter::DataProductTitleFilter(JsonView jsonValue)
+  : DataProductTitleFilter()
 {
   *this = jsonValue;
 }

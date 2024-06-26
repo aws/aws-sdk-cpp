@@ -24,9 +24,8 @@ DetectorModelDefinition::DetectorModelDefinition() :
 {
 }
 
-DetectorModelDefinition::DetectorModelDefinition(JsonView jsonValue) : 
-    m_statesHasBeenSet(false),
-    m_initialStateNameHasBeenSet(false)
+DetectorModelDefinition::DetectorModelDefinition(JsonView jsonValue)
+  : DetectorModelDefinition()
 {
   *this = jsonValue;
 }

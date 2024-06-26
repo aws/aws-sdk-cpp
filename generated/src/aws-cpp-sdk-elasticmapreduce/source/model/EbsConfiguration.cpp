@@ -25,10 +25,8 @@ EbsConfiguration::EbsConfiguration() :
 {
 }
 
-EbsConfiguration::EbsConfiguration(JsonView jsonValue) : 
-    m_ebsBlockDeviceConfigsHasBeenSet(false),
-    m_ebsOptimized(false),
-    m_ebsOptimizedHasBeenSet(false)
+EbsConfiguration::EbsConfiguration(JsonView jsonValue)
+  : EbsConfiguration()
 {
   *this = jsonValue;
 }

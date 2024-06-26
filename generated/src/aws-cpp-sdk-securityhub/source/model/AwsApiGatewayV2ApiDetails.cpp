@@ -32,17 +32,8 @@ AwsApiGatewayV2ApiDetails::AwsApiGatewayV2ApiDetails() :
 {
 }
 
-AwsApiGatewayV2ApiDetails::AwsApiGatewayV2ApiDetails(JsonView jsonValue) : 
-    m_apiEndpointHasBeenSet(false),
-    m_apiIdHasBeenSet(false),
-    m_apiKeySelectionExpressionHasBeenSet(false),
-    m_createdDateHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_protocolTypeHasBeenSet(false),
-    m_routeSelectionExpressionHasBeenSet(false),
-    m_corsConfigurationHasBeenSet(false)
+AwsApiGatewayV2ApiDetails::AwsApiGatewayV2ApiDetails(JsonView jsonValue)
+  : AwsApiGatewayV2ApiDetails()
 {
   *this = jsonValue;
 }

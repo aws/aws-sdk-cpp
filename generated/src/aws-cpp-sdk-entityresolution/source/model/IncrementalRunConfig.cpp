@@ -24,9 +24,8 @@ IncrementalRunConfig::IncrementalRunConfig() :
 {
 }
 
-IncrementalRunConfig::IncrementalRunConfig(JsonView jsonValue) : 
-    m_incrementalRunType(IncrementalRunType::NOT_SET),
-    m_incrementalRunTypeHasBeenSet(false)
+IncrementalRunConfig::IncrementalRunConfig(JsonView jsonValue)
+  : IncrementalRunConfig()
 {
   *this = jsonValue;
 }

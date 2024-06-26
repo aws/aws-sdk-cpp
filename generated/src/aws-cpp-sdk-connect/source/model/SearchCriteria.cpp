@@ -29,14 +29,8 @@ SearchCriteria::SearchCriteria() :
 {
 }
 
-SearchCriteria::SearchCriteria(JsonView jsonValue) : 
-    m_agentIdsHasBeenSet(false),
-    m_agentHierarchyGroupsHasBeenSet(false),
-    m_channelsHasBeenSet(false),
-    m_contactAnalysisHasBeenSet(false),
-    m_initiationMethodsHasBeenSet(false),
-    m_queueIdsHasBeenSet(false),
-    m_searchableContactAttributesHasBeenSet(false)
+SearchCriteria::SearchCriteria(JsonView jsonValue)
+  : SearchCriteria()
 {
   *this = jsonValue;
 }

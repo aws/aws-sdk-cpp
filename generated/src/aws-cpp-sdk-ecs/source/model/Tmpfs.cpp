@@ -26,11 +26,8 @@ Tmpfs::Tmpfs() :
 {
 }
 
-Tmpfs::Tmpfs(JsonView jsonValue) : 
-    m_containerPathHasBeenSet(false),
-    m_size(0),
-    m_sizeHasBeenSet(false),
-    m_mountOptionsHasBeenSet(false)
+Tmpfs::Tmpfs(JsonView jsonValue)
+  : Tmpfs()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ PointInTimeRecoverySummary::PointInTimeRecoverySummary() :
 {
 }
 
-PointInTimeRecoverySummary::PointInTimeRecoverySummary(JsonView jsonValue) : 
-    m_status(PointInTimeRecoveryStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_earliestRestorableTimestampHasBeenSet(false)
+PointInTimeRecoverySummary::PointInTimeRecoverySummary(JsonView jsonValue)
+  : PointInTimeRecoverySummary()
 {
   *this = jsonValue;
 }

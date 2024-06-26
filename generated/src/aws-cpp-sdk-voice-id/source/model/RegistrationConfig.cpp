@@ -27,12 +27,8 @@ RegistrationConfig::RegistrationConfig() :
 {
 }
 
-RegistrationConfig::RegistrationConfig(JsonView jsonValue) : 
-    m_duplicateRegistrationAction(DuplicateRegistrationAction::NOT_SET),
-    m_duplicateRegistrationActionHasBeenSet(false),
-    m_fraudsterSimilarityThreshold(0),
-    m_fraudsterSimilarityThresholdHasBeenSet(false),
-    m_watchlistIdsHasBeenSet(false)
+RegistrationConfig::RegistrationConfig(JsonView jsonValue)
+  : RegistrationConfig()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ KxDeploymentConfiguration::KxDeploymentConfiguration() :
 {
 }
 
-KxDeploymentConfiguration::KxDeploymentConfiguration(JsonView jsonValue) : 
-    m_deploymentStrategy(KxDeploymentStrategy::NOT_SET),
-    m_deploymentStrategyHasBeenSet(false)
+KxDeploymentConfiguration::KxDeploymentConfiguration(JsonView jsonValue)
+  : KxDeploymentConfiguration()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ AmiProductLastModifiedDateFilter::AmiProductLastModifiedDateFilter() :
 {
 }
 
-AmiProductLastModifiedDateFilter::AmiProductLastModifiedDateFilter(JsonView jsonValue) : 
-    m_dateRangeHasBeenSet(false)
+AmiProductLastModifiedDateFilter::AmiProductLastModifiedDateFilter(JsonView jsonValue)
+  : AmiProductLastModifiedDateFilter()
 {
   *this = jsonValue;
 }

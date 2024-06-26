@@ -27,12 +27,8 @@ AssetRevision::AssetRevision() :
 {
 }
 
-AssetRevision::AssetRevision(JsonView jsonValue) : 
-    m_createdAtHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_domainIdHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_revisionHasBeenSet(false)
+AssetRevision::AssetRevision(JsonView jsonValue)
+  : AssetRevision()
 {
   *this = jsonValue;
 }

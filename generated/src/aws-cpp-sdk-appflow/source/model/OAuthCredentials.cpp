@@ -27,12 +27,8 @@ OAuthCredentials::OAuthCredentials() :
 {
 }
 
-OAuthCredentials::OAuthCredentials(JsonView jsonValue) : 
-    m_clientIdHasBeenSet(false),
-    m_clientSecretHasBeenSet(false),
-    m_accessTokenHasBeenSet(false),
-    m_refreshTokenHasBeenSet(false),
-    m_oAuthRequestHasBeenSet(false)
+OAuthCredentials::OAuthCredentials(JsonView jsonValue)
+  : OAuthCredentials()
 {
   *this = jsonValue;
 }

@@ -31,16 +31,8 @@ EksAttemptDetail::EksAttemptDetail() :
 {
 }
 
-EksAttemptDetail::EksAttemptDetail(JsonView jsonValue) : 
-    m_containersHasBeenSet(false),
-    m_initContainersHasBeenSet(false),
-    m_podNameHasBeenSet(false),
-    m_nodeNameHasBeenSet(false),
-    m_startedAt(0),
-    m_startedAtHasBeenSet(false),
-    m_stoppedAt(0),
-    m_stoppedAtHasBeenSet(false),
-    m_statusReasonHasBeenSet(false)
+EksAttemptDetail::EksAttemptDetail(JsonView jsonValue)
+  : EksAttemptDetail()
 {
   *this = jsonValue;
 }

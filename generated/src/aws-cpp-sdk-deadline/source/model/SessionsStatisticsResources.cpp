@@ -24,9 +24,8 @@ SessionsStatisticsResources::SessionsStatisticsResources() :
 {
 }
 
-SessionsStatisticsResources::SessionsStatisticsResources(JsonView jsonValue) : 
-    m_fleetIdsHasBeenSet(false),
-    m_queueIdsHasBeenSet(false)
+SessionsStatisticsResources::SessionsStatisticsResources(JsonView jsonValue)
+  : SessionsStatisticsResources()
 {
   *this = jsonValue;
 }

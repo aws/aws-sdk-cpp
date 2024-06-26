@@ -25,10 +25,8 @@ ApprovalStateChangedEventMetadata::ApprovalStateChangedEventMetadata() :
 {
 }
 
-ApprovalStateChangedEventMetadata::ApprovalStateChangedEventMetadata(JsonView jsonValue) : 
-    m_revisionIdHasBeenSet(false),
-    m_approvalStatus(ApprovalState::NOT_SET),
-    m_approvalStatusHasBeenSet(false)
+ApprovalStateChangedEventMetadata::ApprovalStateChangedEventMetadata(JsonView jsonValue)
+  : ApprovalStateChangedEventMetadata()
 {
   *this = jsonValue;
 }

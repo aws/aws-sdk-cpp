@@ -26,11 +26,8 @@ UpdateGrokClassifierRequest::UpdateGrokClassifierRequest() :
 {
 }
 
-UpdateGrokClassifierRequest::UpdateGrokClassifierRequest(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_classificationHasBeenSet(false),
-    m_grokPatternHasBeenSet(false),
-    m_customPatternsHasBeenSet(false)
+UpdateGrokClassifierRequest::UpdateGrokClassifierRequest(JsonView jsonValue)
+  : UpdateGrokClassifierRequest()
 {
   *this = jsonValue;
 }

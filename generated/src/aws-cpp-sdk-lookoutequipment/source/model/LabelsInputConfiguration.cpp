@@ -24,9 +24,8 @@ LabelsInputConfiguration::LabelsInputConfiguration() :
 {
 }
 
-LabelsInputConfiguration::LabelsInputConfiguration(JsonView jsonValue) : 
-    m_s3InputConfigurationHasBeenSet(false),
-    m_labelGroupNameHasBeenSet(false)
+LabelsInputConfiguration::LabelsInputConfiguration(JsonView jsonValue)
+  : LabelsInputConfiguration()
 {
   *this = jsonValue;
 }

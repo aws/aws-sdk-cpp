@@ -25,10 +25,8 @@ DocumentFilter::DocumentFilter() :
 {
 }
 
-DocumentFilter::DocumentFilter(JsonView jsonValue) : 
-    m_key(DocumentFilterKey::NOT_SET),
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false)
+DocumentFilter::DocumentFilter(JsonView jsonValue)
+  : DocumentFilter()
 {
   *this = jsonValue;
 }

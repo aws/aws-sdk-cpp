@@ -28,11 +28,8 @@ S3Grantee::S3Grantee() :
 {
 }
 
-S3Grantee::S3Grantee(const XmlNode& xmlNode) : 
-    m_typeIdentifier(S3GranteeTypeIdentifier::NOT_SET),
-    m_typeIdentifierHasBeenSet(false),
-    m_identifierHasBeenSet(false),
-    m_displayNameHasBeenSet(false)
+S3Grantee::S3Grantee(const XmlNode& xmlNode)
+  : S3Grantee()
 {
   *this = xmlNode;
 }

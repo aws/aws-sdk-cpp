@@ -33,18 +33,8 @@ ProvisioningArtifactDetail::ProvisioningArtifactDetail() :
 {
 }
 
-ProvisioningArtifactDetail::ProvisioningArtifactDetail(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_type(ProvisioningArtifactType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_active(false),
-    m_activeHasBeenSet(false),
-    m_guidance(ProvisioningArtifactGuidance::NOT_SET),
-    m_guidanceHasBeenSet(false),
-    m_sourceRevisionHasBeenSet(false)
+ProvisioningArtifactDetail::ProvisioningArtifactDetail(JsonView jsonValue)
+  : ProvisioningArtifactDetail()
 {
   *this = jsonValue;
 }

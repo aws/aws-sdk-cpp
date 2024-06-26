@@ -27,12 +27,8 @@ RejectedRecord::RejectedRecord() :
 {
 }
 
-RejectedRecord::RejectedRecord(JsonView jsonValue) : 
-    m_recordIndex(0),
-    m_recordIndexHasBeenSet(false),
-    m_reasonHasBeenSet(false),
-    m_existingVersion(0),
-    m_existingVersionHasBeenSet(false)
+RejectedRecord::RejectedRecord(JsonView jsonValue)
+  : RejectedRecord()
 {
   *this = jsonValue;
 }

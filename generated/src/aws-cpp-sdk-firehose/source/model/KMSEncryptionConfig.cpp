@@ -23,8 +23,8 @@ KMSEncryptionConfig::KMSEncryptionConfig() :
 {
 }
 
-KMSEncryptionConfig::KMSEncryptionConfig(JsonView jsonValue) : 
-    m_aWSKMSKeyARNHasBeenSet(false)
+KMSEncryptionConfig::KMSEncryptionConfig(JsonView jsonValue)
+  : KMSEncryptionConfig()
 {
   *this = jsonValue;
 }

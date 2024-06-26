@@ -29,14 +29,8 @@ JobPostLaunchActionsLaunchStatus::JobPostLaunchActionsLaunchStatus() :
 {
 }
 
-JobPostLaunchActionsLaunchStatus::JobPostLaunchActionsLaunchStatus(JsonView jsonValue) : 
-    m_executionIDHasBeenSet(false),
-    m_executionStatus(PostLaunchActionExecutionStatus::NOT_SET),
-    m_executionStatusHasBeenSet(false),
-    m_failureReasonHasBeenSet(false),
-    m_ssmDocumentHasBeenSet(false),
-    m_ssmDocumentType(SsmDocumentType::NOT_SET),
-    m_ssmDocumentTypeHasBeenSet(false)
+JobPostLaunchActionsLaunchStatus::JobPostLaunchActionsLaunchStatus(JsonView jsonValue)
+  : JobPostLaunchActionsLaunchStatus()
 {
   *this = jsonValue;
 }

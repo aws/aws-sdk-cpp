@@ -26,11 +26,8 @@ EstimatedMonthlySavings::EstimatedMonthlySavings() :
 {
 }
 
-EstimatedMonthlySavings::EstimatedMonthlySavings(JsonView jsonValue) : 
-    m_currency(Currency::NOT_SET),
-    m_currencyHasBeenSet(false),
-    m_value(0.0),
-    m_valueHasBeenSet(false)
+EstimatedMonthlySavings::EstimatedMonthlySavings(JsonView jsonValue)
+  : EstimatedMonthlySavings()
 {
   *this = jsonValue;
 }

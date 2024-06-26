@@ -24,9 +24,8 @@ AddRegionAction::AddRegionAction() :
 {
 }
 
-AddRegionAction::AddRegionAction(JsonView jsonValue) : 
-    m_regionNameHasBeenSet(false),
-    m_sseKmsKeyIdHasBeenSet(false)
+AddRegionAction::AddRegionAction(JsonView jsonValue)
+  : AddRegionAction()
 {
   *this = jsonValue;
 }

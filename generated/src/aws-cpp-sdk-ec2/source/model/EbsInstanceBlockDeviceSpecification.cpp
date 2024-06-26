@@ -27,10 +27,8 @@ EbsInstanceBlockDeviceSpecification::EbsInstanceBlockDeviceSpecification() :
 {
 }
 
-EbsInstanceBlockDeviceSpecification::EbsInstanceBlockDeviceSpecification(const XmlNode& xmlNode) : 
-    m_deleteOnTermination(false),
-    m_deleteOnTerminationHasBeenSet(false),
-    m_volumeIdHasBeenSet(false)
+EbsInstanceBlockDeviceSpecification::EbsInstanceBlockDeviceSpecification(const XmlNode& xmlNode)
+  : EbsInstanceBlockDeviceSpecification()
 {
   *this = xmlNode;
 }

@@ -39,24 +39,8 @@ Feature::Feature() :
 {
 }
 
-Feature::Feature(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_defaultVariationHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_entityOverridesHasBeenSet(false),
-    m_evaluationRulesHasBeenSet(false),
-    m_evaluationStrategy(FeatureEvaluationStrategy::NOT_SET),
-    m_evaluationStrategyHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_projectHasBeenSet(false),
-    m_status(FeatureStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_valueType(VariationValueType::NOT_SET),
-    m_valueTypeHasBeenSet(false),
-    m_variationsHasBeenSet(false)
+Feature::Feature(JsonView jsonValue)
+  : Feature()
 {
   *this = jsonValue;
 }

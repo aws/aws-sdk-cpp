@@ -27,12 +27,8 @@ AwsEc2LaunchTemplateDataPrivateDnsNameOptionsDetails::AwsEc2LaunchTemplateDataPr
 {
 }
 
-AwsEc2LaunchTemplateDataPrivateDnsNameOptionsDetails::AwsEc2LaunchTemplateDataPrivateDnsNameOptionsDetails(JsonView jsonValue) : 
-    m_enableResourceNameDnsAAAARecord(false),
-    m_enableResourceNameDnsAAAARecordHasBeenSet(false),
-    m_enableResourceNameDnsARecord(false),
-    m_enableResourceNameDnsARecordHasBeenSet(false),
-    m_hostnameTypeHasBeenSet(false)
+AwsEc2LaunchTemplateDataPrivateDnsNameOptionsDetails::AwsEc2LaunchTemplateDataPrivateDnsNameOptionsDetails(JsonView jsonValue)
+  : AwsEc2LaunchTemplateDataPrivateDnsNameOptionsDetails()
 {
   *this = jsonValue;
 }

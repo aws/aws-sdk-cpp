@@ -24,9 +24,8 @@ EntitlementAttribute::EntitlementAttribute() :
 {
 }
 
-EntitlementAttribute::EntitlementAttribute(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
+EntitlementAttribute::EntitlementAttribute(JsonView jsonValue)
+  : EntitlementAttribute()
 {
   *this = jsonValue;
 }

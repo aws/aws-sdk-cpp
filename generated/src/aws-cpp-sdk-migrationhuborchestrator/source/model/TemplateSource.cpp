@@ -23,8 +23,8 @@ TemplateSource::TemplateSource() :
 {
 }
 
-TemplateSource::TemplateSource(JsonView jsonValue) : 
-    m_workflowIdHasBeenSet(false)
+TemplateSource::TemplateSource(JsonView jsonValue)
+  : TemplateSource()
 {
   *this = jsonValue;
 }

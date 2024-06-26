@@ -22,8 +22,8 @@ GetAccountSendingEnabledResult::GetAccountSendingEnabledResult() :
 {
 }
 
-GetAccountSendingEnabledResult::GetAccountSendingEnabledResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_enabled(false)
+GetAccountSendingEnabledResult::GetAccountSendingEnabledResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : GetAccountSendingEnabledResult()
 {
   *this = result;
 }

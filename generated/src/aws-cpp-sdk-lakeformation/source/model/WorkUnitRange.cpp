@@ -27,12 +27,8 @@ WorkUnitRange::WorkUnitRange() :
 {
 }
 
-WorkUnitRange::WorkUnitRange(JsonView jsonValue) : 
-    m_workUnitIdMax(0),
-    m_workUnitIdMaxHasBeenSet(false),
-    m_workUnitIdMin(0),
-    m_workUnitIdMinHasBeenSet(false),
-    m_workUnitTokenHasBeenSet(false)
+WorkUnitRange::WorkUnitRange(JsonView jsonValue)
+  : WorkUnitRange()
 {
   *this = jsonValue;
 }

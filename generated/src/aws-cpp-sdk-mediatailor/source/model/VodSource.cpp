@@ -29,14 +29,8 @@ VodSource::VodSource() :
 {
 }
 
-VodSource::VodSource(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_httpPackageConfigurationsHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_sourceLocationNameHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_vodSourceNameHasBeenSet(false)
+VodSource::VodSource(JsonView jsonValue)
+  : VodSource()
 {
   *this = jsonValue;
 }

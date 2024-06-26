@@ -26,11 +26,8 @@ DeliverToMailboxAction::DeliverToMailboxAction() :
 {
 }
 
-DeliverToMailboxAction::DeliverToMailboxAction(JsonView jsonValue) : 
-    m_actionFailurePolicy(ActionFailurePolicy::NOT_SET),
-    m_actionFailurePolicyHasBeenSet(false),
-    m_mailboxArnHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
+DeliverToMailboxAction::DeliverToMailboxAction(JsonView jsonValue)
+  : DeliverToMailboxAction()
 {
   *this = jsonValue;
 }

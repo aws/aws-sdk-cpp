@@ -28,13 +28,8 @@ Principal::Principal() :
 {
 }
 
-Principal::Principal(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_resourceShareArnHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_external(false),
-    m_externalHasBeenSet(false)
+Principal::Principal(JsonView jsonValue)
+  : Principal()
 {
   *this = jsonValue;
 }

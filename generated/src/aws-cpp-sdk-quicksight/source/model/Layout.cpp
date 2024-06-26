@@ -23,8 +23,8 @@ Layout::Layout() :
 {
 }
 
-Layout::Layout(JsonView jsonValue) : 
-    m_configurationHasBeenSet(false)
+Layout::Layout(JsonView jsonValue)
+  : Layout()
 {
   *this = jsonValue;
 }

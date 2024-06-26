@@ -24,9 +24,8 @@ InternalServerError::InternalServerError() :
 {
 }
 
-InternalServerError::InternalServerError(JsonView jsonValue) : 
-    m_errorCodeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+InternalServerError::InternalServerError(JsonView jsonValue)
+  : InternalServerError()
 {
   *this = jsonValue;
 }

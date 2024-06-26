@@ -24,9 +24,8 @@ PostProcessingTrace::PostProcessingTrace() :
 {
 }
 
-PostProcessingTrace::PostProcessingTrace(JsonView jsonValue) : 
-    m_modelInvocationInputHasBeenSet(false),
-    m_modelInvocationOutputHasBeenSet(false)
+PostProcessingTrace::PostProcessingTrace(JsonView jsonValue)
+  : PostProcessingTrace()
 {
   *this = jsonValue;
 }

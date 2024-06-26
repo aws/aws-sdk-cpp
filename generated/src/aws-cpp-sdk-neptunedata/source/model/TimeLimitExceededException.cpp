@@ -25,10 +25,8 @@ TimeLimitExceededException::TimeLimitExceededException() :
 {
 }
 
-TimeLimitExceededException::TimeLimitExceededException(JsonView jsonValue) : 
-    m_detailedMessageHasBeenSet(false),
-    m_requestIdHasBeenSet(false),
-    m_codeHasBeenSet(false)
+TimeLimitExceededException::TimeLimitExceededException(JsonView jsonValue)
+  : TimeLimitExceededException()
 {
   *this = jsonValue;
 }

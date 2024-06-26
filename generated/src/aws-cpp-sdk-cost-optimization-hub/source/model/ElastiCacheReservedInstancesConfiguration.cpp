@@ -36,21 +36,8 @@ ElastiCacheReservedInstancesConfiguration::ElastiCacheReservedInstancesConfigura
 {
 }
 
-ElastiCacheReservedInstancesConfiguration::ElastiCacheReservedInstancesConfiguration(JsonView jsonValue) : 
-    m_accountScopeHasBeenSet(false),
-    m_serviceHasBeenSet(false),
-    m_normalizedUnitsToPurchaseHasBeenSet(false),
-    m_termHasBeenSet(false),
-    m_paymentOptionHasBeenSet(false),
-    m_numberOfInstancesToPurchaseHasBeenSet(false),
-    m_instanceFamilyHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_reservedInstancesRegionHasBeenSet(false),
-    m_currentGenerationHasBeenSet(false),
-    m_sizeFlexEligible(false),
-    m_sizeFlexEligibleHasBeenSet(false),
-    m_upfrontCostHasBeenSet(false),
-    m_monthlyRecurringCostHasBeenSet(false)
+ElastiCacheReservedInstancesConfiguration::ElastiCacheReservedInstancesConfiguration(JsonView jsonValue)
+  : ElastiCacheReservedInstancesConfiguration()
 {
   *this = jsonValue;
 }

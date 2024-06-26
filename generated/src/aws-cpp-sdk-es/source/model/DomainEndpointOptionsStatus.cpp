@@ -24,9 +24,8 @@ DomainEndpointOptionsStatus::DomainEndpointOptionsStatus() :
 {
 }
 
-DomainEndpointOptionsStatus::DomainEndpointOptionsStatus(JsonView jsonValue) : 
-    m_optionsHasBeenSet(false),
-    m_statusHasBeenSet(false)
+DomainEndpointOptionsStatus::DomainEndpointOptionsStatus(JsonView jsonValue)
+  : DomainEndpointOptionsStatus()
 {
   *this = jsonValue;
 }

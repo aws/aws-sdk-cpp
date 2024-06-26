@@ -23,8 +23,8 @@ DatastoreIotSiteWiseMultiLayerStorageSummary::DatastoreIotSiteWiseMultiLayerStor
 {
 }
 
-DatastoreIotSiteWiseMultiLayerStorageSummary::DatastoreIotSiteWiseMultiLayerStorageSummary(JsonView jsonValue) : 
-    m_customerManagedS3StorageHasBeenSet(false)
+DatastoreIotSiteWiseMultiLayerStorageSummary::DatastoreIotSiteWiseMultiLayerStorageSummary(JsonView jsonValue)
+  : DatastoreIotSiteWiseMultiLayerStorageSummary()
 {
   *this = jsonValue;
 }

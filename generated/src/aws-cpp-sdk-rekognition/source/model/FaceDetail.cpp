@@ -40,25 +40,8 @@ FaceDetail::FaceDetail() :
 {
 }
 
-FaceDetail::FaceDetail(JsonView jsonValue) : 
-    m_boundingBoxHasBeenSet(false),
-    m_ageRangeHasBeenSet(false),
-    m_smileHasBeenSet(false),
-    m_eyeglassesHasBeenSet(false),
-    m_sunglassesHasBeenSet(false),
-    m_genderHasBeenSet(false),
-    m_beardHasBeenSet(false),
-    m_mustacheHasBeenSet(false),
-    m_eyesOpenHasBeenSet(false),
-    m_mouthOpenHasBeenSet(false),
-    m_emotionsHasBeenSet(false),
-    m_landmarksHasBeenSet(false),
-    m_poseHasBeenSet(false),
-    m_qualityHasBeenSet(false),
-    m_confidence(0.0),
-    m_confidenceHasBeenSet(false),
-    m_faceOccludedHasBeenSet(false),
-    m_eyeDirectionHasBeenSet(false)
+FaceDetail::FaceDetail(JsonView jsonValue)
+  : FaceDetail()
 {
   *this = jsonValue;
 }

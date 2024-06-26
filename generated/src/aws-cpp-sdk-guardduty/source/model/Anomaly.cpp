@@ -24,9 +24,8 @@ Anomaly::Anomaly() :
 {
 }
 
-Anomaly::Anomaly(JsonView jsonValue) : 
-    m_profilesHasBeenSet(false),
-    m_unusualHasBeenSet(false)
+Anomaly::Anomaly(JsonView jsonValue)
+  : Anomaly()
 {
   *this = jsonValue;
 }

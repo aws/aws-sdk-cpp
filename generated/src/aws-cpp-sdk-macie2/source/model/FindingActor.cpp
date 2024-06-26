@@ -25,10 +25,8 @@ FindingActor::FindingActor() :
 {
 }
 
-FindingActor::FindingActor(JsonView jsonValue) : 
-    m_domainDetailsHasBeenSet(false),
-    m_ipAddressDetailsHasBeenSet(false),
-    m_userIdentityHasBeenSet(false)
+FindingActor::FindingActor(JsonView jsonValue)
+  : FindingActor()
 {
   *this = jsonValue;
 }

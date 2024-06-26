@@ -22,8 +22,8 @@ PutActionRevisionResult::PutActionRevisionResult() :
 {
 }
 
-PutActionRevisionResult::PutActionRevisionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_newRevision(false)
+PutActionRevisionResult::PutActionRevisionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : PutActionRevisionResult()
 {
   *this = result;
 }

@@ -23,8 +23,8 @@ BillingGroupProperties::BillingGroupProperties() :
 {
 }
 
-BillingGroupProperties::BillingGroupProperties(JsonView jsonValue) : 
-    m_billingGroupDescriptionHasBeenSet(false)
+BillingGroupProperties::BillingGroupProperties(JsonView jsonValue)
+  : BillingGroupProperties()
 {
   *this = jsonValue;
 }

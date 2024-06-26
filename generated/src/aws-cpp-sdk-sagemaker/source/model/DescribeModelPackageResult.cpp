@@ -26,12 +26,8 @@ DescribeModelPackageResult::DescribeModelPackageResult() :
 {
 }
 
-DescribeModelPackageResult::DescribeModelPackageResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_modelPackageVersion(0),
-    m_modelPackageStatus(ModelPackageStatus::NOT_SET),
-    m_certifyForMarketplace(false),
-    m_modelApprovalStatus(ModelApprovalStatus::NOT_SET),
-    m_skipModelValidation(SkipModelValidation::NOT_SET)
+DescribeModelPackageResult::DescribeModelPackageResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeModelPackageResult()
 {
   *this = result;
 }

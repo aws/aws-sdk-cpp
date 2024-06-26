@@ -25,10 +25,8 @@ AddBridgeFlowSourceRequest::AddBridgeFlowSourceRequest() :
 {
 }
 
-AddBridgeFlowSourceRequest::AddBridgeFlowSourceRequest(JsonView jsonValue) : 
-    m_flowArnHasBeenSet(false),
-    m_flowVpcInterfaceAttachmentHasBeenSet(false),
-    m_nameHasBeenSet(false)
+AddBridgeFlowSourceRequest::AddBridgeFlowSourceRequest(JsonView jsonValue)
+  : AddBridgeFlowSourceRequest()
 {
   *this = jsonValue;
 }

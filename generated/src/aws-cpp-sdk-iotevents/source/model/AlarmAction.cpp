@@ -31,16 +31,8 @@ AlarmAction::AlarmAction() :
 {
 }
 
-AlarmAction::AlarmAction(JsonView jsonValue) : 
-    m_snsHasBeenSet(false),
-    m_iotTopicPublishHasBeenSet(false),
-    m_lambdaHasBeenSet(false),
-    m_iotEventsHasBeenSet(false),
-    m_sqsHasBeenSet(false),
-    m_firehoseHasBeenSet(false),
-    m_dynamoDBHasBeenSet(false),
-    m_dynamoDBv2HasBeenSet(false),
-    m_iotSiteWiseHasBeenSet(false)
+AlarmAction::AlarmAction(JsonView jsonValue)
+  : AlarmAction()
 {
   *this = jsonValue;
 }

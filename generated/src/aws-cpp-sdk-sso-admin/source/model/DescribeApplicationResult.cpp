@@ -22,8 +22,8 @@ DescribeApplicationResult::DescribeApplicationResult() :
 {
 }
 
-DescribeApplicationResult::DescribeApplicationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(ApplicationStatus::NOT_SET)
+DescribeApplicationResult::DescribeApplicationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeApplicationResult()
 {
   *this = result;
 }

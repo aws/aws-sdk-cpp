@@ -69,52 +69,8 @@ Image::Image() :
 {
 }
 
-Image::Image(const XmlNode& xmlNode) : 
-    m_architecture(ArchitectureValues::NOT_SET),
-    m_architectureHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_imageIdHasBeenSet(false),
-    m_imageLocationHasBeenSet(false),
-    m_imageType(ImageTypeValues::NOT_SET),
-    m_imageTypeHasBeenSet(false),
-    m_public(false),
-    m_publicHasBeenSet(false),
-    m_kernelIdHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_platform(PlatformValues::NOT_SET),
-    m_platformHasBeenSet(false),
-    m_platformDetailsHasBeenSet(false),
-    m_usageOperationHasBeenSet(false),
-    m_productCodesHasBeenSet(false),
-    m_ramdiskIdHasBeenSet(false),
-    m_state(ImageState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_blockDeviceMappingsHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_enaSupport(false),
-    m_enaSupportHasBeenSet(false),
-    m_hypervisor(HypervisorType::NOT_SET),
-    m_hypervisorHasBeenSet(false),
-    m_imageOwnerAliasHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_rootDeviceNameHasBeenSet(false),
-    m_rootDeviceType(DeviceType::NOT_SET),
-    m_rootDeviceTypeHasBeenSet(false),
-    m_sriovNetSupportHasBeenSet(false),
-    m_stateReasonHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_virtualizationType(VirtualizationType::NOT_SET),
-    m_virtualizationTypeHasBeenSet(false),
-    m_bootMode(BootModeValues::NOT_SET),
-    m_bootModeHasBeenSet(false),
-    m_tpmSupport(TpmSupportValues::NOT_SET),
-    m_tpmSupportHasBeenSet(false),
-    m_deprecationTimeHasBeenSet(false),
-    m_imdsSupport(ImdsSupportValues::NOT_SET),
-    m_imdsSupportHasBeenSet(false),
-    m_sourceInstanceIdHasBeenSet(false),
-    m_deregistrationProtectionHasBeenSet(false),
-    m_lastLaunchedTimeHasBeenSet(false)
+Image::Image(const XmlNode& xmlNode)
+  : Image()
 {
   *this = xmlNode;
 }

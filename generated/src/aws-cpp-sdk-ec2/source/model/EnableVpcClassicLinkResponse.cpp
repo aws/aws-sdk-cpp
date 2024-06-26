@@ -22,8 +22,8 @@ EnableVpcClassicLinkResponse::EnableVpcClassicLinkResponse() :
 {
 }
 
-EnableVpcClassicLinkResponse::EnableVpcClassicLinkResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_return(false)
+EnableVpcClassicLinkResponse::EnableVpcClassicLinkResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : EnableVpcClassicLinkResponse()
 {
   *this = result;
 }

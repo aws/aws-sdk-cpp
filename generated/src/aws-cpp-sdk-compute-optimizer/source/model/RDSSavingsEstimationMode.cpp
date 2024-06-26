@@ -24,9 +24,8 @@ RDSSavingsEstimationMode::RDSSavingsEstimationMode() :
 {
 }
 
-RDSSavingsEstimationMode::RDSSavingsEstimationMode(JsonView jsonValue) : 
-    m_source(RDSSavingsEstimationModeSource::NOT_SET),
-    m_sourceHasBeenSet(false)
+RDSSavingsEstimationMode::RDSSavingsEstimationMode(JsonView jsonValue)
+  : RDSSavingsEstimationMode()
 {
   *this = jsonValue;
 }

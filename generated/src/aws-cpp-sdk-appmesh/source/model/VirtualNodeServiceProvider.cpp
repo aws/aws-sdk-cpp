@@ -23,8 +23,8 @@ VirtualNodeServiceProvider::VirtualNodeServiceProvider() :
 {
 }
 
-VirtualNodeServiceProvider::VirtualNodeServiceProvider(JsonView jsonValue) : 
-    m_virtualNodeNameHasBeenSet(false)
+VirtualNodeServiceProvider::VirtualNodeServiceProvider(JsonView jsonValue)
+  : VirtualNodeServiceProvider()
 {
   *this = jsonValue;
 }

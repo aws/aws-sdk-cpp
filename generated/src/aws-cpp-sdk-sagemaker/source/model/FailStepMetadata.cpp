@@ -23,8 +23,8 @@ FailStepMetadata::FailStepMetadata() :
 {
 }
 
-FailStepMetadata::FailStepMetadata(JsonView jsonValue) : 
-    m_errorMessageHasBeenSet(false)
+FailStepMetadata::FailStepMetadata(JsonView jsonValue)
+  : FailStepMetadata()
 {
   *this = jsonValue;
 }

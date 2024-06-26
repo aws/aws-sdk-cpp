@@ -23,8 +23,8 @@ EntityRecognizerEntityList::EntityRecognizerEntityList() :
 {
 }
 
-EntityRecognizerEntityList::EntityRecognizerEntityList(JsonView jsonValue) : 
-    m_s3UriHasBeenSet(false)
+EntityRecognizerEntityList::EntityRecognizerEntityList(JsonView jsonValue)
+  : EntityRecognizerEntityList()
 {
   *this = jsonValue;
 }

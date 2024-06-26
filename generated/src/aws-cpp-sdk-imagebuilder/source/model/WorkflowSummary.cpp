@@ -33,18 +33,8 @@ WorkflowSummary::WorkflowSummary() :
 {
 }
 
-WorkflowSummary::WorkflowSummary(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_changeDescriptionHasBeenSet(false),
-    m_type(WorkflowType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_ownerHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_dateCreatedHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+WorkflowSummary::WorkflowSummary(JsonView jsonValue)
+  : WorkflowSummary()
 {
   *this = jsonValue;
 }

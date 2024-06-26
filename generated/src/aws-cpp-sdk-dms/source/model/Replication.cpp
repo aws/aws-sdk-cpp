@@ -42,27 +42,8 @@ Replication::Replication() :
 {
 }
 
-Replication::Replication(JsonView jsonValue) : 
-    m_replicationConfigIdentifierHasBeenSet(false),
-    m_replicationConfigArnHasBeenSet(false),
-    m_sourceEndpointArnHasBeenSet(false),
-    m_targetEndpointArnHasBeenSet(false),
-    m_replicationType(MigrationTypeValue::NOT_SET),
-    m_replicationTypeHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_provisionDataHasBeenSet(false),
-    m_stopReasonHasBeenSet(false),
-    m_failureMessagesHasBeenSet(false),
-    m_replicationStatsHasBeenSet(false),
-    m_startReplicationTypeHasBeenSet(false),
-    m_cdcStartTimeHasBeenSet(false),
-    m_cdcStartPositionHasBeenSet(false),
-    m_cdcStopPositionHasBeenSet(false),
-    m_recoveryCheckpointHasBeenSet(false),
-    m_replicationCreateTimeHasBeenSet(false),
-    m_replicationUpdateTimeHasBeenSet(false),
-    m_replicationLastStopTimeHasBeenSet(false),
-    m_replicationDeprovisionTimeHasBeenSet(false)
+Replication::Replication(JsonView jsonValue)
+  : Replication()
 {
   *this = jsonValue;
 }

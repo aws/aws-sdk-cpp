@@ -25,10 +25,8 @@ EdgeStructure::EdgeStructure() :
 {
 }
 
-EdgeStructure::EdgeStructure(JsonView jsonValue) : 
-    m_count(0),
-    m_countHasBeenSet(false),
-    m_edgePropertiesHasBeenSet(false)
+EdgeStructure::EdgeStructure(JsonView jsonValue)
+  : EdgeStructure()
 {
   *this = jsonValue;
 }

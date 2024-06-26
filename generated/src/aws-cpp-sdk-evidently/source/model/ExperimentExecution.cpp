@@ -24,9 +24,8 @@ ExperimentExecution::ExperimentExecution() :
 {
 }
 
-ExperimentExecution::ExperimentExecution(JsonView jsonValue) : 
-    m_endedTimeHasBeenSet(false),
-    m_startedTimeHasBeenSet(false)
+ExperimentExecution::ExperimentExecution(JsonView jsonValue)
+  : ExperimentExecution()
 {
   *this = jsonValue;
 }

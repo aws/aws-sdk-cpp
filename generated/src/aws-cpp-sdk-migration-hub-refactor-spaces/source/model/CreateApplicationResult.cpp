@@ -23,9 +23,8 @@ CreateApplicationResult::CreateApplicationResult() :
 {
 }
 
-CreateApplicationResult::CreateApplicationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_proxyType(ProxyType::NOT_SET),
-    m_state(ApplicationState::NOT_SET)
+CreateApplicationResult::CreateApplicationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateApplicationResult()
 {
   *this = result;
 }

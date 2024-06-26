@@ -31,16 +31,8 @@ ProtectionGroup::ProtectionGroup() :
 {
 }
 
-ProtectionGroup::ProtectionGroup(JsonView jsonValue) : 
-    m_protectionGroupIdHasBeenSet(false),
-    m_aggregation(ProtectionGroupAggregation::NOT_SET),
-    m_aggregationHasBeenSet(false),
-    m_pattern(ProtectionGroupPattern::NOT_SET),
-    m_patternHasBeenSet(false),
-    m_resourceType(ProtectedResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_membersHasBeenSet(false),
-    m_protectionGroupArnHasBeenSet(false)
+ProtectionGroup::ProtectionGroup(JsonView jsonValue)
+  : ProtectionGroup()
 {
   *this = jsonValue;
 }

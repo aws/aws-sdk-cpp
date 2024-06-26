@@ -23,8 +23,8 @@ KubernetesConfiguration::KubernetesConfiguration() :
 {
 }
 
-KubernetesConfiguration::KubernetesConfiguration(JsonView jsonValue) : 
-    m_auditLogsHasBeenSet(false)
+KubernetesConfiguration::KubernetesConfiguration(JsonView jsonValue)
+  : KubernetesConfiguration()
 {
   *this = jsonValue;
 }

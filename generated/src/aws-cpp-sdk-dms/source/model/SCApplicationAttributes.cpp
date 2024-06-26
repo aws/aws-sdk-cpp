@@ -24,9 +24,8 @@ SCApplicationAttributes::SCApplicationAttributes() :
 {
 }
 
-SCApplicationAttributes::SCApplicationAttributes(JsonView jsonValue) : 
-    m_s3BucketPathHasBeenSet(false),
-    m_s3BucketRoleArnHasBeenSet(false)
+SCApplicationAttributes::SCApplicationAttributes(JsonView jsonValue)
+  : SCApplicationAttributes()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ RateCardItem::RateCardItem() :
 {
 }
 
-RateCardItem::RateCardItem(JsonView jsonValue) : 
-    m_dimensionKeyHasBeenSet(false),
-    m_priceHasBeenSet(false)
+RateCardItem::RateCardItem(JsonView jsonValue)
+  : RateCardItem()
 {
   *this = jsonValue;
 }

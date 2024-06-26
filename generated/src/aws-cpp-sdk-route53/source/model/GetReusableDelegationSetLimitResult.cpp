@@ -21,8 +21,8 @@ GetReusableDelegationSetLimitResult::GetReusableDelegationSetLimitResult() :
 {
 }
 
-GetReusableDelegationSetLimitResult::GetReusableDelegationSetLimitResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_count(0)
+GetReusableDelegationSetLimitResult::GetReusableDelegationSetLimitResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : GetReusableDelegationSetLimitResult()
 {
   *this = result;
 }

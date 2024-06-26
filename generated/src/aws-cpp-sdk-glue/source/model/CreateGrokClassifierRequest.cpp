@@ -26,11 +26,8 @@ CreateGrokClassifierRequest::CreateGrokClassifierRequest() :
 {
 }
 
-CreateGrokClassifierRequest::CreateGrokClassifierRequest(JsonView jsonValue) : 
-    m_classificationHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_grokPatternHasBeenSet(false),
-    m_customPatternsHasBeenSet(false)
+CreateGrokClassifierRequest::CreateGrokClassifierRequest(JsonView jsonValue)
+  : CreateGrokClassifierRequest()
 {
   *this = jsonValue;
 }

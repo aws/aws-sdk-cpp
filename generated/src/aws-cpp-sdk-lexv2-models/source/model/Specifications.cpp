@@ -24,9 +24,8 @@ Specifications::Specifications() :
 {
 }
 
-Specifications::Specifications(JsonView jsonValue) : 
-    m_slotTypeIdHasBeenSet(false),
-    m_valueElicitationSettingHasBeenSet(false)
+Specifications::Specifications(JsonView jsonValue)
+  : Specifications()
 {
   *this = jsonValue;
 }

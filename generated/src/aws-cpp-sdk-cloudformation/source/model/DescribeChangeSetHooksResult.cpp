@@ -22,8 +22,8 @@ DescribeChangeSetHooksResult::DescribeChangeSetHooksResult() :
 {
 }
 
-DescribeChangeSetHooksResult::DescribeChangeSetHooksResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_status(ChangeSetHooksStatus::NOT_SET)
+DescribeChangeSetHooksResult::DescribeChangeSetHooksResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : DescribeChangeSetHooksResult()
 {
   *this = result;
 }

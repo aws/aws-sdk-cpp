@@ -24,9 +24,8 @@ ConditionalCheckFailedException::ConditionalCheckFailedException() :
 {
 }
 
-ConditionalCheckFailedException::ConditionalCheckFailedException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_itemHasBeenSet(false)
+ConditionalCheckFailedException::ConditionalCheckFailedException(JsonView jsonValue)
+  : ConditionalCheckFailedException()
 {
   *this = jsonValue;
 }

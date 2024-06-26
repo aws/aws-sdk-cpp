@@ -24,9 +24,8 @@ NotificationWithSubscribers::NotificationWithSubscribers() :
 {
 }
 
-NotificationWithSubscribers::NotificationWithSubscribers(JsonView jsonValue) : 
-    m_notificationHasBeenSet(false),
-    m_subscribersHasBeenSet(false)
+NotificationWithSubscribers::NotificationWithSubscribers(JsonView jsonValue)
+  : NotificationWithSubscribers()
 {
   *this = jsonValue;
 }

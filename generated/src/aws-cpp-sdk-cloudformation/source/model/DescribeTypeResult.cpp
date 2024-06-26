@@ -29,15 +29,8 @@ DescribeTypeResult::DescribeTypeResult() :
 {
 }
 
-DescribeTypeResult::DescribeTypeResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_type(RegistryType::NOT_SET),
-    m_isDefaultVersion(false),
-    m_typeTestsStatus(TypeTestsStatus::NOT_SET),
-    m_provisioningType(ProvisioningType::NOT_SET),
-    m_deprecatedStatus(DeprecatedStatus::NOT_SET),
-    m_visibility(Visibility::NOT_SET),
-    m_isActivated(false),
-    m_autoUpdate(false)
+DescribeTypeResult::DescribeTypeResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : DescribeTypeResult()
 {
   *this = result;
 }

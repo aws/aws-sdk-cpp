@@ -22,8 +22,8 @@ PutPipelineDefinitionResult::PutPipelineDefinitionResult() :
 {
 }
 
-PutPipelineDefinitionResult::PutPipelineDefinitionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_errored(false)
+PutPipelineDefinitionResult::PutPipelineDefinitionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : PutPipelineDefinitionResult()
 {
   *this = result;
 }

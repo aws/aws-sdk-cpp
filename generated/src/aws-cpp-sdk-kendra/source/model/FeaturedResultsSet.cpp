@@ -33,18 +33,8 @@ FeaturedResultsSet::FeaturedResultsSet() :
 {
 }
 
-FeaturedResultsSet::FeaturedResultsSet(JsonView jsonValue) : 
-    m_featuredResultsSetIdHasBeenSet(false),
-    m_featuredResultsSetNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_status(FeaturedResultsSetStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_queryTextsHasBeenSet(false),
-    m_featuredDocumentsHasBeenSet(false),
-    m_lastUpdatedTimestamp(0),
-    m_lastUpdatedTimestampHasBeenSet(false),
-    m_creationTimestamp(0),
-    m_creationTimestampHasBeenSet(false)
+FeaturedResultsSet::FeaturedResultsSet(JsonView jsonValue)
+  : FeaturedResultsSet()
 {
   *this = jsonValue;
 }

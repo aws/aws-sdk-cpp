@@ -30,15 +30,8 @@ UpdateBridgeNetworkOutputRequest::UpdateBridgeNetworkOutputRequest() :
 {
 }
 
-UpdateBridgeNetworkOutputRequest::UpdateBridgeNetworkOutputRequest(JsonView jsonValue) : 
-    m_ipAddressHasBeenSet(false),
-    m_networkNameHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_protocol(Protocol::NOT_SET),
-    m_protocolHasBeenSet(false),
-    m_ttl(0),
-    m_ttlHasBeenSet(false)
+UpdateBridgeNetworkOutputRequest::UpdateBridgeNetworkOutputRequest(JsonView jsonValue)
+  : UpdateBridgeNetworkOutputRequest()
 {
   *this = jsonValue;
 }

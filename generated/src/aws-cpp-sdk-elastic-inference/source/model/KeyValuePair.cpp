@@ -25,10 +25,8 @@ KeyValuePair::KeyValuePair() :
 {
 }
 
-KeyValuePair::KeyValuePair(JsonView jsonValue) : 
-    m_keyHasBeenSet(false),
-    m_value(0),
-    m_valueHasBeenSet(false)
+KeyValuePair::KeyValuePair(JsonView jsonValue)
+  : KeyValuePair()
 {
   *this = jsonValue;
 }

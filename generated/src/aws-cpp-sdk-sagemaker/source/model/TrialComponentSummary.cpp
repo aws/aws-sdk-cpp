@@ -33,18 +33,8 @@ TrialComponentSummary::TrialComponentSummary() :
 {
 }
 
-TrialComponentSummary::TrialComponentSummary(JsonView jsonValue) : 
-    m_trialComponentNameHasBeenSet(false),
-    m_trialComponentArnHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_trialComponentSourceHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_lastModifiedByHasBeenSet(false)
+TrialComponentSummary::TrialComponentSummary(JsonView jsonValue)
+  : TrialComponentSummary()
 {
   *this = jsonValue;
 }

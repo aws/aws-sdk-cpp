@@ -25,10 +25,8 @@ Resource::Resource() :
 {
 }
 
-Resource::Resource(JsonView jsonValue) : 
-    m_endpointIdHasBeenSet(false),
-    m_cidrHasBeenSet(false),
-    m_regionHasBeenSet(false)
+Resource::Resource(JsonView jsonValue)
+  : Resource()
 {
   *this = jsonValue;
 }

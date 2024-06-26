@@ -25,10 +25,8 @@ VpcAttachment::VpcAttachment() :
 {
 }
 
-VpcAttachment::VpcAttachment(JsonView jsonValue) : 
-    m_attachmentHasBeenSet(false),
-    m_subnetArnsHasBeenSet(false),
-    m_optionsHasBeenSet(false)
+VpcAttachment::VpcAttachment(JsonView jsonValue)
+  : VpcAttachment()
 {
   *this = jsonValue;
 }

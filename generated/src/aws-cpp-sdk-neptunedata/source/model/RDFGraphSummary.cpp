@@ -33,18 +33,8 @@ RDFGraphSummary::RDFGraphSummary() :
 {
 }
 
-RDFGraphSummary::RDFGraphSummary(JsonView jsonValue) : 
-    m_numDistinctSubjects(0),
-    m_numDistinctSubjectsHasBeenSet(false),
-    m_numDistinctPredicates(0),
-    m_numDistinctPredicatesHasBeenSet(false),
-    m_numQuads(0),
-    m_numQuadsHasBeenSet(false),
-    m_numClasses(0),
-    m_numClassesHasBeenSet(false),
-    m_classesHasBeenSet(false),
-    m_predicatesHasBeenSet(false),
-    m_subjectStructuresHasBeenSet(false)
+RDFGraphSummary::RDFGraphSummary(JsonView jsonValue)
+  : RDFGraphSummary()
 {
   *this = jsonValue;
 }

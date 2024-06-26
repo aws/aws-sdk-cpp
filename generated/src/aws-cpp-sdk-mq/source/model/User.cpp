@@ -29,14 +29,8 @@ User::User() :
 {
 }
 
-User::User(JsonView jsonValue) : 
-    m_consoleAccess(false),
-    m_consoleAccessHasBeenSet(false),
-    m_groupsHasBeenSet(false),
-    m_passwordHasBeenSet(false),
-    m_usernameHasBeenSet(false),
-    m_replicationUser(false),
-    m_replicationUserHasBeenSet(false)
+User::User(JsonView jsonValue)
+  : User()
 {
   *this = jsonValue;
 }

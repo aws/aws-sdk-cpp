@@ -30,15 +30,8 @@ Page::Page() :
 {
 }
 
-Page::Page(JsonView jsonValue) : 
-    m_pageArnHasBeenSet(false),
-    m_engagementArnHasBeenSet(false),
-    m_contactArnHasBeenSet(false),
-    m_senderHasBeenSet(false),
-    m_incidentIdHasBeenSet(false),
-    m_sentTimeHasBeenSet(false),
-    m_deliveryTimeHasBeenSet(false),
-    m_readTimeHasBeenSet(false)
+Page::Page(JsonView jsonValue)
+  : Page()
 {
   *this = jsonValue;
 }

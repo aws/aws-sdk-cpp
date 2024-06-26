@@ -24,9 +24,8 @@ SuppressedDestinationAttributes::SuppressedDestinationAttributes() :
 {
 }
 
-SuppressedDestinationAttributes::SuppressedDestinationAttributes(JsonView jsonValue) : 
-    m_messageIdHasBeenSet(false),
-    m_feedbackIdHasBeenSet(false)
+SuppressedDestinationAttributes::SuppressedDestinationAttributes(JsonView jsonValue)
+  : SuppressedDestinationAttributes()
 {
   *this = jsonValue;
 }

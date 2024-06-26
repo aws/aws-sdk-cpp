@@ -31,16 +31,8 @@ AwsCodeBuildProjectDetails::AwsCodeBuildProjectDetails() :
 {
 }
 
-AwsCodeBuildProjectDetails::AwsCodeBuildProjectDetails(JsonView jsonValue) : 
-    m_encryptionKeyHasBeenSet(false),
-    m_artifactsHasBeenSet(false),
-    m_environmentHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_sourceHasBeenSet(false),
-    m_serviceRoleHasBeenSet(false),
-    m_logsConfigHasBeenSet(false),
-    m_vpcConfigHasBeenSet(false),
-    m_secondaryArtifactsHasBeenSet(false)
+AwsCodeBuildProjectDetails::AwsCodeBuildProjectDetails(JsonView jsonValue)
+  : AwsCodeBuildProjectDetails()
 {
   *this = jsonValue;
 }

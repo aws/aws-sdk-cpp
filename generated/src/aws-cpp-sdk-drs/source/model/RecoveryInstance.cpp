@@ -41,26 +41,8 @@ RecoveryInstance::RecoveryInstance() :
 {
 }
 
-RecoveryInstance::RecoveryInstance(JsonView jsonValue) : 
-    m_agentVersionHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_dataReplicationInfoHasBeenSet(false),
-    m_ec2InstanceIDHasBeenSet(false),
-    m_ec2InstanceState(EC2InstanceState::NOT_SET),
-    m_ec2InstanceStateHasBeenSet(false),
-    m_failbackHasBeenSet(false),
-    m_isDrill(false),
-    m_isDrillHasBeenSet(false),
-    m_jobIDHasBeenSet(false),
-    m_originAvailabilityZoneHasBeenSet(false),
-    m_originEnvironment(OriginEnvironment::NOT_SET),
-    m_originEnvironmentHasBeenSet(false),
-    m_pointInTimeSnapshotDateTimeHasBeenSet(false),
-    m_recoveryInstanceIDHasBeenSet(false),
-    m_recoveryInstancePropertiesHasBeenSet(false),
-    m_sourceOutpostArnHasBeenSet(false),
-    m_sourceServerIDHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+RecoveryInstance::RecoveryInstance(JsonView jsonValue)
+  : RecoveryInstance()
 {
   *this = jsonValue;
 }

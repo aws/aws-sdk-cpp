@@ -25,10 +25,8 @@ OutboundConnectionStatus::OutboundConnectionStatus() :
 {
 }
 
-OutboundConnectionStatus::OutboundConnectionStatus(JsonView jsonValue) : 
-    m_statusCode(OutboundConnectionStatusCode::NOT_SET),
-    m_statusCodeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+OutboundConnectionStatus::OutboundConnectionStatus(JsonView jsonValue)
+  : OutboundConnectionStatus()
 {
   *this = jsonValue;
 }

@@ -34,19 +34,8 @@ ModelCustomizationJobSummary::ModelCustomizationJobSummary() :
 {
 }
 
-ModelCustomizationJobSummary::ModelCustomizationJobSummary(JsonView jsonValue) : 
-    m_jobArnHasBeenSet(false),
-    m_baseModelArnHasBeenSet(false),
-    m_jobNameHasBeenSet(false),
-    m_status(ModelCustomizationJobStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_customModelArnHasBeenSet(false),
-    m_customModelNameHasBeenSet(false),
-    m_customizationType(CustomizationType::NOT_SET),
-    m_customizationTypeHasBeenSet(false)
+ModelCustomizationJobSummary::ModelCustomizationJobSummary(JsonView jsonValue)
+  : ModelCustomizationJobSummary()
 {
   *this = jsonValue;
 }

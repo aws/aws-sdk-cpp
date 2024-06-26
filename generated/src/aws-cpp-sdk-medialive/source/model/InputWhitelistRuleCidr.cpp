@@ -23,8 +23,8 @@ InputWhitelistRuleCidr::InputWhitelistRuleCidr() :
 {
 }
 
-InputWhitelistRuleCidr::InputWhitelistRuleCidr(JsonView jsonValue) : 
-    m_cidrHasBeenSet(false)
+InputWhitelistRuleCidr::InputWhitelistRuleCidr(JsonView jsonValue)
+  : InputWhitelistRuleCidr()
 {
   *this = jsonValue;
 }

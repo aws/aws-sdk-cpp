@@ -23,8 +23,8 @@ SecurityProfilesSearchFilter::SecurityProfilesSearchFilter() :
 {
 }
 
-SecurityProfilesSearchFilter::SecurityProfilesSearchFilter(JsonView jsonValue) : 
-    m_tagFilterHasBeenSet(false)
+SecurityProfilesSearchFilter::SecurityProfilesSearchFilter(JsonView jsonValue)
+  : SecurityProfilesSearchFilter()
 {
   *this = jsonValue;
 }

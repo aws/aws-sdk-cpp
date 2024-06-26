@@ -26,11 +26,8 @@ LaunchedInstance::LaunchedInstance() :
 {
 }
 
-LaunchedInstance::LaunchedInstance(JsonView jsonValue) : 
-    m_ec2InstanceIDHasBeenSet(false),
-    m_firstBoot(FirstBoot::NOT_SET),
-    m_firstBootHasBeenSet(false),
-    m_jobIDHasBeenSet(false)
+LaunchedInstance::LaunchedInstance(JsonView jsonValue)
+  : LaunchedInstance()
 {
   *this = jsonValue;
 }

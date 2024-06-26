@@ -32,17 +32,8 @@ Connection::Connection() :
 {
 }
 
-Connection::Connection(JsonView jsonValue) : 
-    m_connectionArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_connectionState(ConnectionState::NOT_SET),
-    m_connectionStateHasBeenSet(false),
-    m_stateReasonHasBeenSet(false),
-    m_authorizationType(ConnectionAuthorizationType::NOT_SET),
-    m_authorizationTypeHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_lastAuthorizedTimeHasBeenSet(false)
+Connection::Connection(JsonView jsonValue)
+  : Connection()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ RevealConfiguration::RevealConfiguration() :
 {
 }
 
-RevealConfiguration::RevealConfiguration(JsonView jsonValue) : 
-    m_kmsKeyIdHasBeenSet(false),
-    m_status(RevealStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+RevealConfiguration::RevealConfiguration(JsonView jsonValue)
+  : RevealConfiguration()
 {
   *this = jsonValue;
 }

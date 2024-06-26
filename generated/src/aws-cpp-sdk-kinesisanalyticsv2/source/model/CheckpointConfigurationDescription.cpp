@@ -30,15 +30,8 @@ CheckpointConfigurationDescription::CheckpointConfigurationDescription() :
 {
 }
 
-CheckpointConfigurationDescription::CheckpointConfigurationDescription(JsonView jsonValue) : 
-    m_configurationType(ConfigurationType::NOT_SET),
-    m_configurationTypeHasBeenSet(false),
-    m_checkpointingEnabled(false),
-    m_checkpointingEnabledHasBeenSet(false),
-    m_checkpointInterval(0),
-    m_checkpointIntervalHasBeenSet(false),
-    m_minPauseBetweenCheckpoints(0),
-    m_minPauseBetweenCheckpointsHasBeenSet(false)
+CheckpointConfigurationDescription::CheckpointConfigurationDescription(JsonView jsonValue)
+  : CheckpointConfigurationDescription()
 {
   *this = jsonValue;
 }

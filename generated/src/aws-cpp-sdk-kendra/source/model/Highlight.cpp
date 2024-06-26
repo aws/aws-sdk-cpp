@@ -30,15 +30,8 @@ Highlight::Highlight() :
 {
 }
 
-Highlight::Highlight(JsonView jsonValue) : 
-    m_beginOffset(0),
-    m_beginOffsetHasBeenSet(false),
-    m_endOffset(0),
-    m_endOffsetHasBeenSet(false),
-    m_topAnswer(false),
-    m_topAnswerHasBeenSet(false),
-    m_type(HighlightType::NOT_SET),
-    m_typeHasBeenSet(false)
+Highlight::Highlight(JsonView jsonValue)
+  : Highlight()
 {
   *this = jsonValue;
 }

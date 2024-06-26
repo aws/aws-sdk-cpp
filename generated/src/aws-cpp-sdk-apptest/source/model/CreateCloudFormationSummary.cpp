@@ -24,9 +24,8 @@ CreateCloudFormationSummary::CreateCloudFormationSummary() :
 {
 }
 
-CreateCloudFormationSummary::CreateCloudFormationSummary(JsonView jsonValue) : 
-    m_stepInputHasBeenSet(false),
-    m_stepOutputHasBeenSet(false)
+CreateCloudFormationSummary::CreateCloudFormationSummary(JsonView jsonValue)
+  : CreateCloudFormationSummary()
 {
   *this = jsonValue;
 }

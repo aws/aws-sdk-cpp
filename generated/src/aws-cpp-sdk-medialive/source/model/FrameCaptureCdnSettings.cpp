@@ -23,8 +23,8 @@ FrameCaptureCdnSettings::FrameCaptureCdnSettings() :
 {
 }
 
-FrameCaptureCdnSettings::FrameCaptureCdnSettings(JsonView jsonValue) : 
-    m_frameCaptureS3SettingsHasBeenSet(false)
+FrameCaptureCdnSettings::FrameCaptureCdnSettings(JsonView jsonValue)
+  : FrameCaptureCdnSettings()
 {
   *this = jsonValue;
 }

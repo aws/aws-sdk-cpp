@@ -22,8 +22,8 @@ CreateStreamResult::CreateStreamResult() :
 {
 }
 
-CreateStreamResult::CreateStreamResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_streamVersion(0)
+CreateStreamResult::CreateStreamResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateStreamResult()
 {
   *this = result;
 }

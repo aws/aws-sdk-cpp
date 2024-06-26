@@ -23,8 +23,8 @@ SuppressionAttributes::SuppressionAttributes() :
 {
 }
 
-SuppressionAttributes::SuppressionAttributes(JsonView jsonValue) : 
-    m_suppressedReasonsHasBeenSet(false)
+SuppressionAttributes::SuppressionAttributes(JsonView jsonValue)
+  : SuppressionAttributes()
 {
   *this = jsonValue;
 }

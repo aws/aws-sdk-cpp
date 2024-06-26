@@ -23,8 +23,8 @@ SlackConnectorProfileProperties::SlackConnectorProfileProperties() :
 {
 }
 
-SlackConnectorProfileProperties::SlackConnectorProfileProperties(JsonView jsonValue) : 
-    m_instanceUrlHasBeenSet(false)
+SlackConnectorProfileProperties::SlackConnectorProfileProperties(JsonView jsonValue)
+  : SlackConnectorProfileProperties()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ ControlInputParameter::ControlInputParameter() :
 {
 }
 
-ControlInputParameter::ControlInputParameter(JsonView jsonValue) : 
-    m_parameterNameHasBeenSet(false),
-    m_parameterValueHasBeenSet(false)
+ControlInputParameter::ControlInputParameter(JsonView jsonValue)
+  : ControlInputParameter()
 {
   *this = jsonValue;
 }

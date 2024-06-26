@@ -25,10 +25,8 @@ PackageGroupAllowedRepository::PackageGroupAllowedRepository() :
 {
 }
 
-PackageGroupAllowedRepository::PackageGroupAllowedRepository(JsonView jsonValue) : 
-    m_repositoryNameHasBeenSet(false),
-    m_originRestrictionType(PackageGroupOriginRestrictionType::NOT_SET),
-    m_originRestrictionTypeHasBeenSet(false)
+PackageGroupAllowedRepository::PackageGroupAllowedRepository(JsonView jsonValue)
+  : PackageGroupAllowedRepository()
 {
   *this = jsonValue;
 }

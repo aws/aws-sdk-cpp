@@ -26,11 +26,8 @@ RulesSourceList::RulesSourceList() :
 {
 }
 
-RulesSourceList::RulesSourceList(JsonView jsonValue) : 
-    m_targetsHasBeenSet(false),
-    m_targetTypesHasBeenSet(false),
-    m_generatedRulesType(GeneratedRulesType::NOT_SET),
-    m_generatedRulesTypeHasBeenSet(false)
+RulesSourceList::RulesSourceList(JsonView jsonValue)
+  : RulesSourceList()
 {
   *this = jsonValue;
 }

@@ -27,12 +27,8 @@ CellTowers::CellTowers() :
 {
 }
 
-CellTowers::CellTowers(JsonView jsonValue) : 
-    m_gsmHasBeenSet(false),
-    m_wcdmaHasBeenSet(false),
-    m_tdscdmaHasBeenSet(false),
-    m_lteHasBeenSet(false),
-    m_cdmaHasBeenSet(false)
+CellTowers::CellTowers(JsonView jsonValue)
+  : CellTowers()
 {
   *this = jsonValue;
 }

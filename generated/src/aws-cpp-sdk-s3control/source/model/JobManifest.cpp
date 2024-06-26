@@ -26,9 +26,8 @@ JobManifest::JobManifest() :
 {
 }
 
-JobManifest::JobManifest(const XmlNode& xmlNode) : 
-    m_specHasBeenSet(false),
-    m_locationHasBeenSet(false)
+JobManifest::JobManifest(const XmlNode& xmlNode)
+  : JobManifest()
 {
   *this = xmlNode;
 }

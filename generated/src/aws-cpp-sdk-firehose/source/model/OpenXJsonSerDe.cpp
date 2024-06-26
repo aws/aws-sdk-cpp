@@ -27,12 +27,8 @@ OpenXJsonSerDe::OpenXJsonSerDe() :
 {
 }
 
-OpenXJsonSerDe::OpenXJsonSerDe(JsonView jsonValue) : 
-    m_convertDotsInJsonKeysToUnderscores(false),
-    m_convertDotsInJsonKeysToUnderscoresHasBeenSet(false),
-    m_caseInsensitive(false),
-    m_caseInsensitiveHasBeenSet(false),
-    m_columnToJsonKeyMappingsHasBeenSet(false)
+OpenXJsonSerDe::OpenXJsonSerDe(JsonView jsonValue)
+  : OpenXJsonSerDe()
 {
   *this = jsonValue;
 }

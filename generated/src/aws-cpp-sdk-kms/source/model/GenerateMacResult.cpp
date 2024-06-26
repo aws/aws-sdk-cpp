@@ -23,8 +23,8 @@ GenerateMacResult::GenerateMacResult() :
 {
 }
 
-GenerateMacResult::GenerateMacResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_macAlgorithm(MacAlgorithmSpec::NOT_SET)
+GenerateMacResult::GenerateMacResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GenerateMacResult()
 {
   *this = result;
 }

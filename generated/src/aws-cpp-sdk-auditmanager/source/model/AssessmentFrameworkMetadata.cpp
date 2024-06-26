@@ -36,21 +36,8 @@ AssessmentFrameworkMetadata::AssessmentFrameworkMetadata() :
 {
 }
 
-AssessmentFrameworkMetadata::AssessmentFrameworkMetadata(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_type(FrameworkType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_logoHasBeenSet(false),
-    m_complianceTypeHasBeenSet(false),
-    m_controlsCount(0),
-    m_controlsCountHasBeenSet(false),
-    m_controlSetsCount(0),
-    m_controlSetsCountHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false)
+AssessmentFrameworkMetadata::AssessmentFrameworkMetadata(JsonView jsonValue)
+  : AssessmentFrameworkMetadata()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ RetrieveAndGenerateSessionConfiguration::RetrieveAndGenerateSessionConfiguration
 {
 }
 
-RetrieveAndGenerateSessionConfiguration::RetrieveAndGenerateSessionConfiguration(JsonView jsonValue) : 
-    m_kmsKeyArnHasBeenSet(false)
+RetrieveAndGenerateSessionConfiguration::RetrieveAndGenerateSessionConfiguration(JsonView jsonValue)
+  : RetrieveAndGenerateSessionConfiguration()
 {
   *this = jsonValue;
 }

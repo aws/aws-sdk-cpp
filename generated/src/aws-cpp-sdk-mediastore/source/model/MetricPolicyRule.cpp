@@ -24,9 +24,8 @@ MetricPolicyRule::MetricPolicyRule() :
 {
 }
 
-MetricPolicyRule::MetricPolicyRule(JsonView jsonValue) : 
-    m_objectGroupHasBeenSet(false),
-    m_objectGroupNameHasBeenSet(false)
+MetricPolicyRule::MetricPolicyRule(JsonView jsonValue)
+  : MetricPolicyRule()
 {
   *this = jsonValue;
 }

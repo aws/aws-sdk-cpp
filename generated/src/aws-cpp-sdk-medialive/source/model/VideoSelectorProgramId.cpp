@@ -24,9 +24,8 @@ VideoSelectorProgramId::VideoSelectorProgramId() :
 {
 }
 
-VideoSelectorProgramId::VideoSelectorProgramId(JsonView jsonValue) : 
-    m_programId(0),
-    m_programIdHasBeenSet(false)
+VideoSelectorProgramId::VideoSelectorProgramId(JsonView jsonValue)
+  : VideoSelectorProgramId()
 {
   *this = jsonValue;
 }

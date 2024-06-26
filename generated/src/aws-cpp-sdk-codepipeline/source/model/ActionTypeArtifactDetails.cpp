@@ -26,11 +26,8 @@ ActionTypeArtifactDetails::ActionTypeArtifactDetails() :
 {
 }
 
-ActionTypeArtifactDetails::ActionTypeArtifactDetails(JsonView jsonValue) : 
-    m_minimumCount(0),
-    m_minimumCountHasBeenSet(false),
-    m_maximumCount(0),
-    m_maximumCountHasBeenSet(false)
+ActionTypeArtifactDetails::ActionTypeArtifactDetails(JsonView jsonValue)
+  : ActionTypeArtifactDetails()
 {
   *this = jsonValue;
 }

@@ -27,12 +27,8 @@ ApplicationProvider::ApplicationProvider() :
 {
 }
 
-ApplicationProvider::ApplicationProvider(JsonView jsonValue) : 
-    m_applicationProviderArnHasBeenSet(false),
-    m_displayDataHasBeenSet(false),
-    m_federationProtocol(FederationProtocol::NOT_SET),
-    m_federationProtocolHasBeenSet(false),
-    m_resourceServerConfigHasBeenSet(false)
+ApplicationProvider::ApplicationProvider(JsonView jsonValue)
+  : ApplicationProvider()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ DnsRecordCreationState::DnsRecordCreationState() :
 {
 }
 
-DnsRecordCreationState::DnsRecordCreationState(JsonView jsonValue) : 
-    m_code(DnsRecordCreationStateCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+DnsRecordCreationState::DnsRecordCreationState(JsonView jsonValue)
+  : DnsRecordCreationState()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ UtteranceDataSortBy::UtteranceDataSortBy() :
 {
 }
 
-UtteranceDataSortBy::UtteranceDataSortBy(JsonView jsonValue) : 
-    m_name(AnalyticsUtteranceSortByName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_order(AnalyticsSortOrder::NOT_SET),
-    m_orderHasBeenSet(false)
+UtteranceDataSortBy::UtteranceDataSortBy(JsonView jsonValue)
+  : UtteranceDataSortBy()
 {
   *this = jsonValue;
 }

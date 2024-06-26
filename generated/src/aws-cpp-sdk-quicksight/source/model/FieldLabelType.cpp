@@ -25,10 +25,8 @@ FieldLabelType::FieldLabelType() :
 {
 }
 
-FieldLabelType::FieldLabelType(JsonView jsonValue) : 
-    m_fieldIdHasBeenSet(false),
-    m_visibility(Visibility::NOT_SET),
-    m_visibilityHasBeenSet(false)
+FieldLabelType::FieldLabelType(JsonView jsonValue)
+  : FieldLabelType()
 {
   *this = jsonValue;
 }

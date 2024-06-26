@@ -24,9 +24,8 @@ GeneratedPolicyResults::GeneratedPolicyResults() :
 {
 }
 
-GeneratedPolicyResults::GeneratedPolicyResults(JsonView jsonValue) : 
-    m_propertiesHasBeenSet(false),
-    m_generatedPoliciesHasBeenSet(false)
+GeneratedPolicyResults::GeneratedPolicyResults(JsonView jsonValue)
+  : GeneratedPolicyResults()
 {
   *this = jsonValue;
 }

@@ -26,9 +26,8 @@ CloudwatchLogsExportConfiguration::CloudwatchLogsExportConfiguration() :
 {
 }
 
-CloudwatchLogsExportConfiguration::CloudwatchLogsExportConfiguration(const XmlNode& xmlNode) : 
-    m_enableLogTypesHasBeenSet(false),
-    m_disableLogTypesHasBeenSet(false)
+CloudwatchLogsExportConfiguration::CloudwatchLogsExportConfiguration(const XmlNode& xmlNode)
+  : CloudwatchLogsExportConfiguration()
 {
   *this = xmlNode;
 }

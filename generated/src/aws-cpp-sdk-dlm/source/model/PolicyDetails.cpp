@@ -45,30 +45,8 @@ PolicyDetails::PolicyDetails() :
 {
 }
 
-PolicyDetails::PolicyDetails(JsonView jsonValue) : 
-    m_policyType(PolicyTypeValues::NOT_SET),
-    m_policyTypeHasBeenSet(false),
-    m_resourceTypesHasBeenSet(false),
-    m_resourceLocationsHasBeenSet(false),
-    m_targetTagsHasBeenSet(false),
-    m_schedulesHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_eventSourceHasBeenSet(false),
-    m_actionsHasBeenSet(false),
-    m_policyLanguage(PolicyLanguageValues::NOT_SET),
-    m_policyLanguageHasBeenSet(false),
-    m_resourceType(ResourceTypeValues::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_createInterval(0),
-    m_createIntervalHasBeenSet(false),
-    m_retainInterval(0),
-    m_retainIntervalHasBeenSet(false),
-    m_copyTags(false),
-    m_copyTagsHasBeenSet(false),
-    m_crossRegionCopyTargetsHasBeenSet(false),
-    m_extendDeletion(false),
-    m_extendDeletionHasBeenSet(false),
-    m_exclusionsHasBeenSet(false)
+PolicyDetails::PolicyDetails(JsonView jsonValue)
+  : PolicyDetails()
 {
   *this = jsonValue;
 }

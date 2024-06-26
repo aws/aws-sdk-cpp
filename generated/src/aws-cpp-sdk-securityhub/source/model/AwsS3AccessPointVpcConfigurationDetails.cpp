@@ -23,8 +23,8 @@ AwsS3AccessPointVpcConfigurationDetails::AwsS3AccessPointVpcConfigurationDetails
 {
 }
 
-AwsS3AccessPointVpcConfigurationDetails::AwsS3AccessPointVpcConfigurationDetails(JsonView jsonValue) : 
-    m_vpcIdHasBeenSet(false)
+AwsS3AccessPointVpcConfigurationDetails::AwsS3AccessPointVpcConfigurationDetails(JsonView jsonValue)
+  : AwsS3AccessPointVpcConfigurationDetails()
 {
   *this = jsonValue;
 }

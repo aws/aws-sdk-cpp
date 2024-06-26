@@ -36,21 +36,8 @@ PipelineExecutionStepMetadata::PipelineExecutionStepMetadata() :
 {
 }
 
-PipelineExecutionStepMetadata::PipelineExecutionStepMetadata(JsonView jsonValue) : 
-    m_trainingJobHasBeenSet(false),
-    m_processingJobHasBeenSet(false),
-    m_transformJobHasBeenSet(false),
-    m_tuningJobHasBeenSet(false),
-    m_modelHasBeenSet(false),
-    m_registerModelHasBeenSet(false),
-    m_conditionHasBeenSet(false),
-    m_callbackHasBeenSet(false),
-    m_lambdaHasBeenSet(false),
-    m_eMRHasBeenSet(false),
-    m_qualityCheckHasBeenSet(false),
-    m_clarifyCheckHasBeenSet(false),
-    m_failHasBeenSet(false),
-    m_autoMLJobHasBeenSet(false)
+PipelineExecutionStepMetadata::PipelineExecutionStepMetadata(JsonView jsonValue)
+  : PipelineExecutionStepMetadata()
 {
   *this = jsonValue;
 }

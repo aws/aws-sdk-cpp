@@ -24,9 +24,8 @@ FileMetadata::FileMetadata() :
 {
 }
 
-FileMetadata::FileMetadata(JsonView jsonValue) : 
-    m_dataSetsHasBeenSet(false),
-    m_databaseCDCHasBeenSet(false)
+FileMetadata::FileMetadata(JsonView jsonValue)
+  : FileMetadata()
 {
   *this = jsonValue;
 }

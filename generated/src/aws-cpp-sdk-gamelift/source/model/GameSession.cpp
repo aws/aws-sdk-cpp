@@ -47,32 +47,8 @@ GameSession::GameSession() :
 {
 }
 
-GameSession::GameSession(JsonView jsonValue) : 
-    m_gameSessionIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_fleetIdHasBeenSet(false),
-    m_fleetArnHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_terminationTimeHasBeenSet(false),
-    m_currentPlayerSessionCount(0),
-    m_currentPlayerSessionCountHasBeenSet(false),
-    m_maximumPlayerSessionCount(0),
-    m_maximumPlayerSessionCountHasBeenSet(false),
-    m_status(GameSessionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusReason(GameSessionStatusReason::NOT_SET),
-    m_statusReasonHasBeenSet(false),
-    m_gamePropertiesHasBeenSet(false),
-    m_ipAddressHasBeenSet(false),
-    m_dnsNameHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_playerSessionCreationPolicy(PlayerSessionCreationPolicy::NOT_SET),
-    m_playerSessionCreationPolicyHasBeenSet(false),
-    m_creatorIdHasBeenSet(false),
-    m_gameSessionDataHasBeenSet(false),
-    m_matchmakerDataHasBeenSet(false),
-    m_locationHasBeenSet(false)
+GameSession::GameSession(JsonView jsonValue)
+  : GameSession()
 {
   *this = jsonValue;
 }

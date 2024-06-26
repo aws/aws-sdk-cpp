@@ -25,10 +25,8 @@ SalesforceKnowledgeArticleConfiguration::SalesforceKnowledgeArticleConfiguration
 {
 }
 
-SalesforceKnowledgeArticleConfiguration::SalesforceKnowledgeArticleConfiguration(JsonView jsonValue) : 
-    m_includedStatesHasBeenSet(false),
-    m_standardKnowledgeArticleTypeConfigurationHasBeenSet(false),
-    m_customKnowledgeArticleTypeConfigurationsHasBeenSet(false)
+SalesforceKnowledgeArticleConfiguration::SalesforceKnowledgeArticleConfiguration(JsonView jsonValue)
+  : SalesforceKnowledgeArticleConfiguration()
 {
   *this = jsonValue;
 }

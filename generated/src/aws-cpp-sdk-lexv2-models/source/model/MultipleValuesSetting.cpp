@@ -24,9 +24,8 @@ MultipleValuesSetting::MultipleValuesSetting() :
 {
 }
 
-MultipleValuesSetting::MultipleValuesSetting(JsonView jsonValue) : 
-    m_allowMultipleValues(false),
-    m_allowMultipleValuesHasBeenSet(false)
+MultipleValuesSetting::MultipleValuesSetting(JsonView jsonValue)
+  : MultipleValuesSetting()
 {
   *this = jsonValue;
 }

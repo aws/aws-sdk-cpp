@@ -26,11 +26,8 @@ BatchListAttachedIndices::BatchListAttachedIndices() :
 {
 }
 
-BatchListAttachedIndices::BatchListAttachedIndices(JsonView jsonValue) : 
-    m_targetReferenceHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
+BatchListAttachedIndices::BatchListAttachedIndices(JsonView jsonValue)
+  : BatchListAttachedIndices()
 {
   *this = jsonValue;
 }

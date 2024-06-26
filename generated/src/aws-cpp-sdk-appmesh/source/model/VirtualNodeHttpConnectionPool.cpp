@@ -26,11 +26,8 @@ VirtualNodeHttpConnectionPool::VirtualNodeHttpConnectionPool() :
 {
 }
 
-VirtualNodeHttpConnectionPool::VirtualNodeHttpConnectionPool(JsonView jsonValue) : 
-    m_maxConnections(0),
-    m_maxConnectionsHasBeenSet(false),
-    m_maxPendingRequests(0),
-    m_maxPendingRequestsHasBeenSet(false)
+VirtualNodeHttpConnectionPool::VirtualNodeHttpConnectionPool(JsonView jsonValue)
+  : VirtualNodeHttpConnectionPool()
 {
   *this = jsonValue;
 }

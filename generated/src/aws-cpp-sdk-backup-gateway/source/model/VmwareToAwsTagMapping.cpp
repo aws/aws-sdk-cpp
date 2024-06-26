@@ -26,11 +26,8 @@ VmwareToAwsTagMapping::VmwareToAwsTagMapping() :
 {
 }
 
-VmwareToAwsTagMapping::VmwareToAwsTagMapping(JsonView jsonValue) : 
-    m_awsTagKeyHasBeenSet(false),
-    m_awsTagValueHasBeenSet(false),
-    m_vmwareCategoryHasBeenSet(false),
-    m_vmwareTagNameHasBeenSet(false)
+VmwareToAwsTagMapping::VmwareToAwsTagMapping(JsonView jsonValue)
+  : VmwareToAwsTagMapping()
 {
   *this = jsonValue;
 }

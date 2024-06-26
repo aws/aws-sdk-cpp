@@ -28,13 +28,8 @@ BatchStatementRequest::BatchStatementRequest() :
 {
 }
 
-BatchStatementRequest::BatchStatementRequest(JsonView jsonValue) : 
-    m_statementHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_consistentRead(false),
-    m_consistentReadHasBeenSet(false),
-    m_returnValuesOnConditionCheckFailure(ReturnValuesOnConditionCheckFailure::NOT_SET),
-    m_returnValuesOnConditionCheckFailureHasBeenSet(false)
+BatchStatementRequest::BatchStatementRequest(JsonView jsonValue)
+  : BatchStatementRequest()
 {
   *this = jsonValue;
 }

@@ -28,11 +28,8 @@ ListAccessGrantsInstanceEntry::ListAccessGrantsInstanceEntry() :
 {
 }
 
-ListAccessGrantsInstanceEntry::ListAccessGrantsInstanceEntry(const XmlNode& xmlNode) : 
-    m_accessGrantsInstanceIdHasBeenSet(false),
-    m_accessGrantsInstanceArnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_identityCenterArnHasBeenSet(false)
+ListAccessGrantsInstanceEntry::ListAccessGrantsInstanceEntry(const XmlNode& xmlNode)
+  : ListAccessGrantsInstanceEntry()
 {
   *this = xmlNode;
 }

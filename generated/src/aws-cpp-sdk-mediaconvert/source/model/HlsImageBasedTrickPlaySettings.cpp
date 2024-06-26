@@ -34,19 +34,8 @@ HlsImageBasedTrickPlaySettings::HlsImageBasedTrickPlaySettings() :
 {
 }
 
-HlsImageBasedTrickPlaySettings::HlsImageBasedTrickPlaySettings(JsonView jsonValue) : 
-    m_intervalCadence(HlsIntervalCadence::NOT_SET),
-    m_intervalCadenceHasBeenSet(false),
-    m_thumbnailHeight(0),
-    m_thumbnailHeightHasBeenSet(false),
-    m_thumbnailInterval(0.0),
-    m_thumbnailIntervalHasBeenSet(false),
-    m_thumbnailWidth(0),
-    m_thumbnailWidthHasBeenSet(false),
-    m_tileHeight(0),
-    m_tileHeightHasBeenSet(false),
-    m_tileWidth(0),
-    m_tileWidthHasBeenSet(false)
+HlsImageBasedTrickPlaySettings::HlsImageBasedTrickPlaySettings(JsonView jsonValue)
+  : HlsImageBasedTrickPlaySettings()
 {
   *this = jsonValue;
 }

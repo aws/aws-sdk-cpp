@@ -31,14 +31,8 @@ UserIdGroupPair::UserIdGroupPair() :
 {
 }
 
-UserIdGroupPair::UserIdGroupPair(const XmlNode& xmlNode) : 
-    m_descriptionHasBeenSet(false),
-    m_groupIdHasBeenSet(false),
-    m_groupNameHasBeenSet(false),
-    m_peeringStatusHasBeenSet(false),
-    m_userIdHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_vpcPeeringConnectionIdHasBeenSet(false)
+UserIdGroupPair::UserIdGroupPair(const XmlNode& xmlNode)
+  : UserIdGroupPair()
 {
   *this = xmlNode;
 }

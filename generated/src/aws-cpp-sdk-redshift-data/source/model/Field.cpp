@@ -33,17 +33,8 @@ Field::Field() :
 {
 }
 
-Field::Field(JsonView jsonValue) : 
-    m_blobValueHasBeenSet(false),
-    m_booleanValue(false),
-    m_booleanValueHasBeenSet(false),
-    m_doubleValue(0.0),
-    m_doubleValueHasBeenSet(false),
-    m_isNull(false),
-    m_isNullHasBeenSet(false),
-    m_longValue(0),
-    m_longValueHasBeenSet(false),
-    m_stringValueHasBeenSet(false)
+Field::Field(JsonView jsonValue)
+  : Field()
 {
   *this = jsonValue;
 }

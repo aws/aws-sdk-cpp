@@ -23,8 +23,8 @@ MultiplexOutputSettings::MultiplexOutputSettings() :
 {
 }
 
-MultiplexOutputSettings::MultiplexOutputSettings(JsonView jsonValue) : 
-    m_destinationHasBeenSet(false)
+MultiplexOutputSettings::MultiplexOutputSettings(JsonView jsonValue)
+  : MultiplexOutputSettings()
 {
   *this = jsonValue;
 }

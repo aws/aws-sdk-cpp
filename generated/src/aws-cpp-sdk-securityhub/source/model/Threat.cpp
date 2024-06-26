@@ -27,12 +27,8 @@ Threat::Threat() :
 {
 }
 
-Threat::Threat(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_severityHasBeenSet(false),
-    m_itemCount(0),
-    m_itemCountHasBeenSet(false),
-    m_filePathsHasBeenSet(false)
+Threat::Threat(JsonView jsonValue)
+  : Threat()
 {
   *this = jsonValue;
 }

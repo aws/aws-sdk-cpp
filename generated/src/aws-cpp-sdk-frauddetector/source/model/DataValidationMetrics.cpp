@@ -24,9 +24,8 @@ DataValidationMetrics::DataValidationMetrics() :
 {
 }
 
-DataValidationMetrics::DataValidationMetrics(JsonView jsonValue) : 
-    m_fileLevelMessagesHasBeenSet(false),
-    m_fieldLevelMessagesHasBeenSet(false)
+DataValidationMetrics::DataValidationMetrics(JsonView jsonValue)
+  : DataValidationMetrics()
 {
   *this = jsonValue;
 }

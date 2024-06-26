@@ -23,8 +23,8 @@ ByolPricingTerm::ByolPricingTerm() :
 {
 }
 
-ByolPricingTerm::ByolPricingTerm(JsonView jsonValue) : 
-    m_typeHasBeenSet(false)
+ByolPricingTerm::ByolPricingTerm(JsonView jsonValue)
+  : ByolPricingTerm()
 {
   *this = jsonValue;
 }

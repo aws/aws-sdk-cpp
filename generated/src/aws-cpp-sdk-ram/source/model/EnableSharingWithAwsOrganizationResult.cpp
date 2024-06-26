@@ -22,8 +22,8 @@ EnableSharingWithAwsOrganizationResult::EnableSharingWithAwsOrganizationResult()
 {
 }
 
-EnableSharingWithAwsOrganizationResult::EnableSharingWithAwsOrganizationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_returnValue(false)
+EnableSharingWithAwsOrganizationResult::EnableSharingWithAwsOrganizationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : EnableSharingWithAwsOrganizationResult()
 {
   *this = result;
 }

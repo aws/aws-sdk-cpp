@@ -26,11 +26,8 @@ AwsEc2LaunchTemplateDataInstanceRequirementsMemoryMiBDetails::AwsEc2LaunchTempla
 {
 }
 
-AwsEc2LaunchTemplateDataInstanceRequirementsMemoryMiBDetails::AwsEc2LaunchTemplateDataInstanceRequirementsMemoryMiBDetails(JsonView jsonValue) : 
-    m_max(0),
-    m_maxHasBeenSet(false),
-    m_min(0),
-    m_minHasBeenSet(false)
+AwsEc2LaunchTemplateDataInstanceRequirementsMemoryMiBDetails::AwsEc2LaunchTemplateDataInstanceRequirementsMemoryMiBDetails(JsonView jsonValue)
+  : AwsEc2LaunchTemplateDataInstanceRequirementsMemoryMiBDetails()
 {
   *this = jsonValue;
 }

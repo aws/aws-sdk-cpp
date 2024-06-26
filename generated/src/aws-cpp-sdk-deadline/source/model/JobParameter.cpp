@@ -26,11 +26,8 @@ JobParameter::JobParameter() :
 {
 }
 
-JobParameter::JobParameter(JsonView jsonValue) : 
-    m_floatHasBeenSet(false),
-    m_intHasBeenSet(false),
-    m_pathHasBeenSet(false),
-    m_stringHasBeenSet(false)
+JobParameter::JobParameter(JsonView jsonValue)
+  : JobParameter()
 {
   *this = jsonValue;
 }

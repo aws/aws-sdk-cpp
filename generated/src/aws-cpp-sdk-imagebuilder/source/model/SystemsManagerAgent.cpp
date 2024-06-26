@@ -24,9 +24,8 @@ SystemsManagerAgent::SystemsManagerAgent() :
 {
 }
 
-SystemsManagerAgent::SystemsManagerAgent(JsonView jsonValue) : 
-    m_uninstallAfterBuild(false),
-    m_uninstallAfterBuildHasBeenSet(false)
+SystemsManagerAgent::SystemsManagerAgent(JsonView jsonValue)
+  : SystemsManagerAgent()
 {
   *this = jsonValue;
 }

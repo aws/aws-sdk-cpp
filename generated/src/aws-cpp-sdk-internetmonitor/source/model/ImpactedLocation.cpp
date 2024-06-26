@@ -41,26 +41,8 @@ ImpactedLocation::ImpactedLocation() :
 {
 }
 
-ImpactedLocation::ImpactedLocation(JsonView jsonValue) : 
-    m_aSNameHasBeenSet(false),
-    m_aSNumber(0),
-    m_aSNumberHasBeenSet(false),
-    m_countryHasBeenSet(false),
-    m_subdivisionHasBeenSet(false),
-    m_metroHasBeenSet(false),
-    m_cityHasBeenSet(false),
-    m_latitude(0.0),
-    m_latitudeHasBeenSet(false),
-    m_longitude(0.0),
-    m_longitudeHasBeenSet(false),
-    m_countryCodeHasBeenSet(false),
-    m_subdivisionCodeHasBeenSet(false),
-    m_serviceLocationHasBeenSet(false),
-    m_status(HealthEventStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_causedByHasBeenSet(false),
-    m_internetHealthHasBeenSet(false),
-    m_ipv4PrefixesHasBeenSet(false)
+ImpactedLocation::ImpactedLocation(JsonView jsonValue)
+  : ImpactedLocation()
 {
   *this = jsonValue;
 }

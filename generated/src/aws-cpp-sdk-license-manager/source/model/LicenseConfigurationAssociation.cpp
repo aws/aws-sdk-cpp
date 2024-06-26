@@ -28,13 +28,8 @@ LicenseConfigurationAssociation::LicenseConfigurationAssociation() :
 {
 }
 
-LicenseConfigurationAssociation::LicenseConfigurationAssociation(JsonView jsonValue) : 
-    m_resourceArnHasBeenSet(false),
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_resourceOwnerIdHasBeenSet(false),
-    m_associationTimeHasBeenSet(false),
-    m_amiAssociationScopeHasBeenSet(false)
+LicenseConfigurationAssociation::LicenseConfigurationAssociation(JsonView jsonValue)
+  : LicenseConfigurationAssociation()
 {
   *this = jsonValue;
 }

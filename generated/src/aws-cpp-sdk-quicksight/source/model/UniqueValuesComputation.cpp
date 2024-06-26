@@ -25,10 +25,8 @@ UniqueValuesComputation::UniqueValuesComputation() :
 {
 }
 
-UniqueValuesComputation::UniqueValuesComputation(JsonView jsonValue) : 
-    m_computationIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_categoryHasBeenSet(false)
+UniqueValuesComputation::UniqueValuesComputation(JsonView jsonValue)
+  : UniqueValuesComputation()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ RegistrySummary::RegistrySummary() :
 {
 }
 
-RegistrySummary::RegistrySummary(JsonView jsonValue) : 
-    m_registryArnHasBeenSet(false),
-    m_registryNameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+RegistrySummary::RegistrySummary(JsonView jsonValue)
+  : RegistrySummary()
 {
   *this = jsonValue;
 }

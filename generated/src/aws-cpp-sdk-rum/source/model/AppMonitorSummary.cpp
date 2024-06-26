@@ -28,13 +28,8 @@ AppMonitorSummary::AppMonitorSummary() :
 {
 }
 
-AppMonitorSummary::AppMonitorSummary(JsonView jsonValue) : 
-    m_createdHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_lastModifiedHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_state(StateEnum::NOT_SET),
-    m_stateHasBeenSet(false)
+AppMonitorSummary::AppMonitorSummary(JsonView jsonValue)
+  : AppMonitorSummary()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ PathToObjectIdentifiers::PathToObjectIdentifiers() :
 {
 }
 
-PathToObjectIdentifiers::PathToObjectIdentifiers(JsonView jsonValue) : 
-    m_pathHasBeenSet(false),
-    m_objectIdentifiersHasBeenSet(false)
+PathToObjectIdentifiers::PathToObjectIdentifiers(JsonView jsonValue)
+  : PathToObjectIdentifiers()
 {
   *this = jsonValue;
 }

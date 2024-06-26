@@ -28,13 +28,8 @@ S3Config::S3Config() :
 {
 }
 
-S3Config::S3Config(JsonView jsonValue) : 
-    m_bucketArnHasBeenSet(false),
-    m_dataFormat(DataFormat::NOT_SET),
-    m_dataFormatHasBeenSet(false),
-    m_storageCompressionFormat(StorageCompressionFormat::NOT_SET),
-    m_storageCompressionFormatHasBeenSet(false),
-    m_prefixHasBeenSet(false)
+S3Config::S3Config(JsonView jsonValue)
+  : S3Config()
 {
   *this = jsonValue;
 }

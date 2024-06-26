@@ -26,11 +26,8 @@ AnalysisResult::AnalysisResult() :
 {
 }
 
-AnalysisResult::AnalysisResult(JsonView jsonValue) : 
-    m_identifiedRuleIdsHasBeenSet(false),
-    m_identifiedType(IdentifiedType::NOT_SET),
-    m_identifiedTypeHasBeenSet(false),
-    m_analysisDetailHasBeenSet(false)
+AnalysisResult::AnalysisResult(JsonView jsonValue)
+  : AnalysisResult()
 {
   *this = jsonValue;
 }

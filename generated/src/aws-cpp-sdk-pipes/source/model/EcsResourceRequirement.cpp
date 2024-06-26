@@ -25,10 +25,8 @@ EcsResourceRequirement::EcsResourceRequirement() :
 {
 }
 
-EcsResourceRequirement::EcsResourceRequirement(JsonView jsonValue) : 
-    m_type(EcsResourceRequirementType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_valueHasBeenSet(false)
+EcsResourceRequirement::EcsResourceRequirement(JsonView jsonValue)
+  : EcsResourceRequirement()
 {
   *this = jsonValue;
 }

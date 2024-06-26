@@ -21,8 +21,8 @@ ListBucketInventoryConfigurationsResult::ListBucketInventoryConfigurationsResult
 {
 }
 
-ListBucketInventoryConfigurationsResult::ListBucketInventoryConfigurationsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_isTruncated(false)
+ListBucketInventoryConfigurationsResult::ListBucketInventoryConfigurationsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : ListBucketInventoryConfigurationsResult()
 {
   *this = result;
 }

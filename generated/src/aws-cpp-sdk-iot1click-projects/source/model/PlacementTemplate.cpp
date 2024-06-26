@@ -24,9 +24,8 @@ PlacementTemplate::PlacementTemplate() :
 {
 }
 
-PlacementTemplate::PlacementTemplate(JsonView jsonValue) : 
-    m_defaultAttributesHasBeenSet(false),
-    m_deviceTemplatesHasBeenSet(false)
+PlacementTemplate::PlacementTemplate(JsonView jsonValue)
+  : PlacementTemplate()
 {
   *this = jsonValue;
 }

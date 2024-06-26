@@ -25,10 +25,8 @@ AssociatedTranscriptFilter::AssociatedTranscriptFilter() :
 {
 }
 
-AssociatedTranscriptFilter::AssociatedTranscriptFilter(JsonView jsonValue) : 
-    m_name(AssociatedTranscriptFilterName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+AssociatedTranscriptFilter::AssociatedTranscriptFilter(JsonView jsonValue)
+  : AssociatedTranscriptFilter()
 {
   *this = jsonValue;
 }

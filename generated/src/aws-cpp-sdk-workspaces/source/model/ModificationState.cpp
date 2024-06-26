@@ -26,11 +26,8 @@ ModificationState::ModificationState() :
 {
 }
 
-ModificationState::ModificationState(JsonView jsonValue) : 
-    m_resource(ModificationResourceEnum::NOT_SET),
-    m_resourceHasBeenSet(false),
-    m_state(ModificationStateEnum::NOT_SET),
-    m_stateHasBeenSet(false)
+ModificationState::ModificationState(JsonView jsonValue)
+  : ModificationState()
 {
   *this = jsonValue;
 }

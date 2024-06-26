@@ -27,12 +27,8 @@ AwsRdsDbStatusInfo::AwsRdsDbStatusInfo() :
 {
 }
 
-AwsRdsDbStatusInfo::AwsRdsDbStatusInfo(JsonView jsonValue) : 
-    m_statusTypeHasBeenSet(false),
-    m_normal(false),
-    m_normalHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_messageHasBeenSet(false)
+AwsRdsDbStatusInfo::AwsRdsDbStatusInfo(JsonView jsonValue)
+  : AwsRdsDbStatusInfo()
 {
   *this = jsonValue;
 }

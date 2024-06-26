@@ -34,19 +34,8 @@ ActionExecution::ActionExecution() :
 {
 }
 
-ActionExecution::ActionExecution(JsonView jsonValue) : 
-    m_actionExecutionIdHasBeenSet(false),
-    m_status(ActionExecutionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_summaryHasBeenSet(false),
-    m_lastStatusChangeHasBeenSet(false),
-    m_tokenHasBeenSet(false),
-    m_lastUpdatedByHasBeenSet(false),
-    m_externalExecutionIdHasBeenSet(false),
-    m_externalExecutionUrlHasBeenSet(false),
-    m_percentComplete(0),
-    m_percentCompleteHasBeenSet(false),
-    m_errorDetailsHasBeenSet(false)
+ActionExecution::ActionExecution(JsonView jsonValue)
+  : ActionExecution()
 {
   *this = jsonValue;
 }

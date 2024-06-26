@@ -26,11 +26,8 @@ OtaaV1_0_x::OtaaV1_0_x() :
 {
 }
 
-OtaaV1_0_x::OtaaV1_0_x(JsonView jsonValue) : 
-    m_appKeyHasBeenSet(false),
-    m_appEuiHasBeenSet(false),
-    m_joinEuiHasBeenSet(false),
-    m_genAppKeyHasBeenSet(false)
+OtaaV1_0_x::OtaaV1_0_x(JsonView jsonValue)
+  : OtaaV1_0_x()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ PartitionIndex::PartitionIndex() :
 {
 }
 
-PartitionIndex::PartitionIndex(JsonView jsonValue) : 
-    m_keysHasBeenSet(false),
-    m_indexNameHasBeenSet(false)
+PartitionIndex::PartitionIndex(JsonView jsonValue)
+  : PartitionIndex()
 {
   *this = jsonValue;
 }

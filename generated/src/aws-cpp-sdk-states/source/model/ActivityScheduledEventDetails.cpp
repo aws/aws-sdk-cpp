@@ -29,14 +29,8 @@ ActivityScheduledEventDetails::ActivityScheduledEventDetails() :
 {
 }
 
-ActivityScheduledEventDetails::ActivityScheduledEventDetails(JsonView jsonValue) : 
-    m_resourceHasBeenSet(false),
-    m_inputHasBeenSet(false),
-    m_inputDetailsHasBeenSet(false),
-    m_timeoutInSeconds(0),
-    m_timeoutInSecondsHasBeenSet(false),
-    m_heartbeatInSeconds(0),
-    m_heartbeatInSecondsHasBeenSet(false)
+ActivityScheduledEventDetails::ActivityScheduledEventDetails(JsonView jsonValue)
+  : ActivityScheduledEventDetails()
 {
   *this = jsonValue;
 }

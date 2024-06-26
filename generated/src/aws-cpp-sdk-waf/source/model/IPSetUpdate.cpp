@@ -25,10 +25,8 @@ IPSetUpdate::IPSetUpdate() :
 {
 }
 
-IPSetUpdate::IPSetUpdate(JsonView jsonValue) : 
-    m_action(ChangeAction::NOT_SET),
-    m_actionHasBeenSet(false),
-    m_iPSetDescriptorHasBeenSet(false)
+IPSetUpdate::IPSetUpdate(JsonView jsonValue)
+  : IPSetUpdate()
 {
   *this = jsonValue;
 }

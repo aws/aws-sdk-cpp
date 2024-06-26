@@ -24,9 +24,8 @@ InputParallelismUpdate::InputParallelismUpdate() :
 {
 }
 
-InputParallelismUpdate::InputParallelismUpdate(JsonView jsonValue) : 
-    m_countUpdate(0),
-    m_countUpdateHasBeenSet(false)
+InputParallelismUpdate::InputParallelismUpdate(JsonView jsonValue)
+  : InputParallelismUpdate()
 {
   *this = jsonValue;
 }

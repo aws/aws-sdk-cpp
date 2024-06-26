@@ -27,12 +27,8 @@ DataQualityEvaluationRunAdditionalRunOptions::DataQualityEvaluationRunAdditional
 {
 }
 
-DataQualityEvaluationRunAdditionalRunOptions::DataQualityEvaluationRunAdditionalRunOptions(JsonView jsonValue) : 
-    m_cloudWatchMetricsEnabled(false),
-    m_cloudWatchMetricsEnabledHasBeenSet(false),
-    m_resultsS3PrefixHasBeenSet(false),
-    m_compositeRuleEvaluationMethod(DQCompositeRuleEvaluationMethod::NOT_SET),
-    m_compositeRuleEvaluationMethodHasBeenSet(false)
+DataQualityEvaluationRunAdditionalRunOptions::DataQualityEvaluationRunAdditionalRunOptions(JsonView jsonValue)
+  : DataQualityEvaluationRunAdditionalRunOptions()
 {
   *this = jsonValue;
 }

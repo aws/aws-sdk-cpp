@@ -34,19 +34,8 @@ FirewallDomainList::FirewallDomainList() :
 {
 }
 
-FirewallDomainList::FirewallDomainList(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_domainCount(0),
-    m_domainCountHasBeenSet(false),
-    m_status(FirewallDomainListStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_managedOwnerNameHasBeenSet(false),
-    m_creatorRequestIdHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_modificationTimeHasBeenSet(false)
+FirewallDomainList::FirewallDomainList(JsonView jsonValue)
+  : FirewallDomainList()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ UnfilteredPartition::UnfilteredPartition() :
 {
 }
 
-UnfilteredPartition::UnfilteredPartition(JsonView jsonValue) : 
-    m_partitionHasBeenSet(false),
-    m_authorizedColumnsHasBeenSet(false),
-    m_isRegisteredWithLakeFormation(false),
-    m_isRegisteredWithLakeFormationHasBeenSet(false)
+UnfilteredPartition::UnfilteredPartition(JsonView jsonValue)
+  : UnfilteredPartition()
 {
   *this = jsonValue;
 }

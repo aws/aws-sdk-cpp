@@ -25,10 +25,8 @@ DomainInformation::DomainInformation() :
 {
 }
 
-DomainInformation::DomainInformation(JsonView jsonValue) : 
-    m_ownerIdHasBeenSet(false),
-    m_domainNameHasBeenSet(false),
-    m_regionHasBeenSet(false)
+DomainInformation::DomainInformation(JsonView jsonValue)
+  : DomainInformation()
 {
   *this = jsonValue;
 }

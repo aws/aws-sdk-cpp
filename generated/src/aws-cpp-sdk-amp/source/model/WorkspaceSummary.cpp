@@ -29,14 +29,8 @@ WorkspaceSummary::WorkspaceSummary() :
 {
 }
 
-WorkspaceSummary::WorkspaceSummary(JsonView jsonValue) : 
-    m_aliasHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_kmsKeyArnHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_workspaceIdHasBeenSet(false)
+WorkspaceSummary::WorkspaceSummary(JsonView jsonValue)
+  : WorkspaceSummary()
 {
   *this = jsonValue;
 }

@@ -29,14 +29,8 @@ PatchBaselineIdentity::PatchBaselineIdentity() :
 {
 }
 
-PatchBaselineIdentity::PatchBaselineIdentity(JsonView jsonValue) : 
-    m_baselineIdHasBeenSet(false),
-    m_baselineNameHasBeenSet(false),
-    m_operatingSystem(OperatingSystem::NOT_SET),
-    m_operatingSystemHasBeenSet(false),
-    m_baselineDescriptionHasBeenSet(false),
-    m_defaultBaseline(false),
-    m_defaultBaselineHasBeenSet(false)
+PatchBaselineIdentity::PatchBaselineIdentity(JsonView jsonValue)
+  : PatchBaselineIdentity()
 {
   *this = jsonValue;
 }

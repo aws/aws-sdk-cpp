@@ -25,10 +25,8 @@ ScheduleActionStartSettings::ScheduleActionStartSettings() :
 {
 }
 
-ScheduleActionStartSettings::ScheduleActionStartSettings(JsonView jsonValue) : 
-    m_fixedModeScheduleActionStartSettingsHasBeenSet(false),
-    m_followModeScheduleActionStartSettingsHasBeenSet(false),
-    m_immediateModeScheduleActionStartSettingsHasBeenSet(false)
+ScheduleActionStartSettings::ScheduleActionStartSettings(JsonView jsonValue)
+  : ScheduleActionStartSettings()
 {
   *this = jsonValue;
 }

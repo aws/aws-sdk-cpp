@@ -32,15 +32,8 @@ TransitGatewayPrefixListReference::TransitGatewayPrefixListReference() :
 {
 }
 
-TransitGatewayPrefixListReference::TransitGatewayPrefixListReference(const XmlNode& xmlNode) : 
-    m_transitGatewayRouteTableIdHasBeenSet(false),
-    m_prefixListIdHasBeenSet(false),
-    m_prefixListOwnerIdHasBeenSet(false),
-    m_state(TransitGatewayPrefixListReferenceState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_blackhole(false),
-    m_blackholeHasBeenSet(false),
-    m_transitGatewayAttachmentHasBeenSet(false)
+TransitGatewayPrefixListReference::TransitGatewayPrefixListReference(const XmlNode& xmlNode)
+  : TransitGatewayPrefixListReference()
 {
   *this = xmlNode;
 }

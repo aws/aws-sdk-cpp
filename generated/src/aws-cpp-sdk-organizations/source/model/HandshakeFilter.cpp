@@ -25,10 +25,8 @@ HandshakeFilter::HandshakeFilter() :
 {
 }
 
-HandshakeFilter::HandshakeFilter(JsonView jsonValue) : 
-    m_actionType(ActionType::NOT_SET),
-    m_actionTypeHasBeenSet(false),
-    m_parentHandshakeIdHasBeenSet(false)
+HandshakeFilter::HandshakeFilter(JsonView jsonValue)
+  : HandshakeFilter()
 {
   *this = jsonValue;
 }

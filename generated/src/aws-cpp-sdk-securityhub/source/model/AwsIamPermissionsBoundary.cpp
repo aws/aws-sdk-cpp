@@ -24,9 +24,8 @@ AwsIamPermissionsBoundary::AwsIamPermissionsBoundary() :
 {
 }
 
-AwsIamPermissionsBoundary::AwsIamPermissionsBoundary(JsonView jsonValue) : 
-    m_permissionsBoundaryArnHasBeenSet(false),
-    m_permissionsBoundaryTypeHasBeenSet(false)
+AwsIamPermissionsBoundary::AwsIamPermissionsBoundary(JsonView jsonValue)
+  : AwsIamPermissionsBoundary()
 {
   *this = jsonValue;
 }

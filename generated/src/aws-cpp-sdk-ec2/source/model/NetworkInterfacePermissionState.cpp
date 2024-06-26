@@ -27,10 +27,8 @@ NetworkInterfacePermissionState::NetworkInterfacePermissionState() :
 {
 }
 
-NetworkInterfacePermissionState::NetworkInterfacePermissionState(const XmlNode& xmlNode) : 
-    m_state(NetworkInterfacePermissionStateCode::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_statusMessageHasBeenSet(false)
+NetworkInterfacePermissionState::NetworkInterfacePermissionState(const XmlNode& xmlNode)
+  : NetworkInterfacePermissionState()
 {
   *this = xmlNode;
 }

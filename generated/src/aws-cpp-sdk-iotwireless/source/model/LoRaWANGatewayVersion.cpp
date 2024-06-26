@@ -25,10 +25,8 @@ LoRaWANGatewayVersion::LoRaWANGatewayVersion() :
 {
 }
 
-LoRaWANGatewayVersion::LoRaWANGatewayVersion(JsonView jsonValue) : 
-    m_packageVersionHasBeenSet(false),
-    m_modelHasBeenSet(false),
-    m_stationHasBeenSet(false)
+LoRaWANGatewayVersion::LoRaWANGatewayVersion(JsonView jsonValue)
+  : LoRaWANGatewayVersion()
 {
   *this = jsonValue;
 }

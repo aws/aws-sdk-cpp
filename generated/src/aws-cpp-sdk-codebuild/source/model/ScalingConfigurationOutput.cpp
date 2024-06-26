@@ -29,14 +29,8 @@ ScalingConfigurationOutput::ScalingConfigurationOutput() :
 {
 }
 
-ScalingConfigurationOutput::ScalingConfigurationOutput(JsonView jsonValue) : 
-    m_scalingType(FleetScalingType::NOT_SET),
-    m_scalingTypeHasBeenSet(false),
-    m_targetTrackingScalingConfigsHasBeenSet(false),
-    m_maxCapacity(0),
-    m_maxCapacityHasBeenSet(false),
-    m_desiredCapacity(0),
-    m_desiredCapacityHasBeenSet(false)
+ScalingConfigurationOutput::ScalingConfigurationOutput(JsonView jsonValue)
+  : ScalingConfigurationOutput()
 {
   *this = jsonValue;
 }

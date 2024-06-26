@@ -24,9 +24,8 @@ RejectChoice::RejectChoice() :
 {
 }
 
-RejectChoice::RejectChoice(JsonView jsonValue) : 
-    m_predictionChoicesHasBeenSet(false),
-    m_predictionTargetHasBeenSet(false)
+RejectChoice::RejectChoice(JsonView jsonValue)
+  : RejectChoice()
 {
   *this = jsonValue;
 }

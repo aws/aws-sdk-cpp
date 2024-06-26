@@ -24,9 +24,8 @@ TurnSpecification::TurnSpecification() :
 {
 }
 
-TurnSpecification::TurnSpecification(JsonView jsonValue) : 
-    m_agentTurnHasBeenSet(false),
-    m_userTurnHasBeenSet(false)
+TurnSpecification::TurnSpecification(JsonView jsonValue)
+  : TurnSpecification()
 {
   *this = jsonValue;
 }

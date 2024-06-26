@@ -27,12 +27,8 @@ SubResourceSummary::SubResourceSummary() :
 {
 }
 
-SubResourceSummary::SubResourceSummary(JsonView jsonValue) : 
-    m_type(SubResourceType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_attackVectorsHasBeenSet(false),
-    m_countersHasBeenSet(false)
+SubResourceSummary::SubResourceSummary(JsonView jsonValue)
+  : SubResourceSummary()
 {
   *this = jsonValue;
 }

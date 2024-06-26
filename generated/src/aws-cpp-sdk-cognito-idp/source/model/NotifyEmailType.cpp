@@ -25,10 +25,8 @@ NotifyEmailType::NotifyEmailType() :
 {
 }
 
-NotifyEmailType::NotifyEmailType(JsonView jsonValue) : 
-    m_subjectHasBeenSet(false),
-    m_htmlBodyHasBeenSet(false),
-    m_textBodyHasBeenSet(false)
+NotifyEmailType::NotifyEmailType(JsonView jsonValue)
+  : NotifyEmailType()
 {
   *this = jsonValue;
 }

@@ -27,12 +27,8 @@ KnowledgeBaseRetrievalResult::KnowledgeBaseRetrievalResult() :
 {
 }
 
-KnowledgeBaseRetrievalResult::KnowledgeBaseRetrievalResult(JsonView jsonValue) : 
-    m_contentHasBeenSet(false),
-    m_locationHasBeenSet(false),
-    m_metadataHasBeenSet(false),
-    m_score(0.0),
-    m_scoreHasBeenSet(false)
+KnowledgeBaseRetrievalResult::KnowledgeBaseRetrievalResult(JsonView jsonValue)
+  : KnowledgeBaseRetrievalResult()
 {
   *this = jsonValue;
 }

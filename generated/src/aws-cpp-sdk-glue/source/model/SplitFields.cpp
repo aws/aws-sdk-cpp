@@ -25,10 +25,8 @@ SplitFields::SplitFields() :
 {
 }
 
-SplitFields::SplitFields(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_inputsHasBeenSet(false),
-    m_pathsHasBeenSet(false)
+SplitFields::SplitFields(JsonView jsonValue)
+  : SplitFields()
 {
   *this = jsonValue;
 }

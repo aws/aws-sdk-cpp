@@ -24,9 +24,8 @@ KinesisStreamsInputUpdate::KinesisStreamsInputUpdate() :
 {
 }
 
-KinesisStreamsInputUpdate::KinesisStreamsInputUpdate(JsonView jsonValue) : 
-    m_resourceARNUpdateHasBeenSet(false),
-    m_roleARNUpdateHasBeenSet(false)
+KinesisStreamsInputUpdate::KinesisStreamsInputUpdate(JsonView jsonValue)
+  : KinesisStreamsInputUpdate()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ PublishAppVersionResult::PublishAppVersionResult() :
 {
 }
 
-PublishAppVersionResult::PublishAppVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_identifier(0)
+PublishAppVersionResult::PublishAppVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : PublishAppVersionResult()
 {
   *this = result;
 }

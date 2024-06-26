@@ -24,9 +24,8 @@ Participants::Participants() :
 {
 }
 
-Participants::Participants(JsonView jsonValue) : 
-    m_usersHasBeenSet(false),
-    m_groupsHasBeenSet(false)
+Participants::Participants(JsonView jsonValue)
+  : Participants()
 {
   *this = jsonValue;
 }

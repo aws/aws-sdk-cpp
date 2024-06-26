@@ -30,15 +30,8 @@ DataCellsFilter::DataCellsFilter() :
 {
 }
 
-DataCellsFilter::DataCellsFilter(JsonView jsonValue) : 
-    m_tableCatalogIdHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_tableNameHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_rowFilterHasBeenSet(false),
-    m_columnNamesHasBeenSet(false),
-    m_columnWildcardHasBeenSet(false),
-    m_versionIdHasBeenSet(false)
+DataCellsFilter::DataCellsFilter(JsonView jsonValue)
+  : DataCellsFilter()
 {
   *this = jsonValue;
 }

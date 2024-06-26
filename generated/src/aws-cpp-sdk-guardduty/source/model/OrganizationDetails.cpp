@@ -24,9 +24,8 @@ OrganizationDetails::OrganizationDetails() :
 {
 }
 
-OrganizationDetails::OrganizationDetails(JsonView jsonValue) : 
-    m_updatedAtHasBeenSet(false),
-    m_organizationStatisticsHasBeenSet(false)
+OrganizationDetails::OrganizationDetails(JsonView jsonValue)
+  : OrganizationDetails()
 {
   *this = jsonValue;
 }

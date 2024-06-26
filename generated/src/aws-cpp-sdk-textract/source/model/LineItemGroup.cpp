@@ -25,10 +25,8 @@ LineItemGroup::LineItemGroup() :
 {
 }
 
-LineItemGroup::LineItemGroup(JsonView jsonValue) : 
-    m_lineItemGroupIndex(0),
-    m_lineItemGroupIndexHasBeenSet(false),
-    m_lineItemsHasBeenSet(false)
+LineItemGroup::LineItemGroup(JsonView jsonValue)
+  : LineItemGroup()
 {
   *this = jsonValue;
 }

@@ -29,14 +29,8 @@ EntityRecognizerInputDataConfig::EntityRecognizerInputDataConfig() :
 {
 }
 
-EntityRecognizerInputDataConfig::EntityRecognizerInputDataConfig(JsonView jsonValue) : 
-    m_dataFormat(EntityRecognizerDataFormat::NOT_SET),
-    m_dataFormatHasBeenSet(false),
-    m_entityTypesHasBeenSet(false),
-    m_documentsHasBeenSet(false),
-    m_annotationsHasBeenSet(false),
-    m_entityListHasBeenSet(false),
-    m_augmentedManifestsHasBeenSet(false)
+EntityRecognizerInputDataConfig::EntityRecognizerInputDataConfig(JsonView jsonValue)
+  : EntityRecognizerInputDataConfig()
 {
   *this = jsonValue;
 }

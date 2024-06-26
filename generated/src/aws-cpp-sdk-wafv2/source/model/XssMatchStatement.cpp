@@ -24,9 +24,8 @@ XssMatchStatement::XssMatchStatement() :
 {
 }
 
-XssMatchStatement::XssMatchStatement(JsonView jsonValue) : 
-    m_fieldToMatchHasBeenSet(false),
-    m_textTransformationsHasBeenSet(false)
+XssMatchStatement::XssMatchStatement(JsonView jsonValue)
+  : XssMatchStatement()
 {
   *this = jsonValue;
 }

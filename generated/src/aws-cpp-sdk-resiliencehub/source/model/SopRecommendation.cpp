@@ -33,18 +33,8 @@ SopRecommendation::SopRecommendation() :
 {
 }
 
-SopRecommendation::SopRecommendation(JsonView jsonValue) : 
-    m_appComponentNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_itemsHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_prerequisiteHasBeenSet(false),
-    m_recommendationIdHasBeenSet(false),
-    m_recommendationStatus(RecommendationStatus::NOT_SET),
-    m_recommendationStatusHasBeenSet(false),
-    m_referenceIdHasBeenSet(false),
-    m_serviceType(SopServiceType::NOT_SET),
-    m_serviceTypeHasBeenSet(false)
+SopRecommendation::SopRecommendation(JsonView jsonValue)
+  : SopRecommendation()
 {
   *this = jsonValue;
 }

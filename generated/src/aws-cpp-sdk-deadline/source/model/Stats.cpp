@@ -30,15 +30,8 @@ Stats::Stats() :
 {
 }
 
-Stats::Stats(JsonView jsonValue) : 
-    m_avg(0.0),
-    m_avgHasBeenSet(false),
-    m_max(0.0),
-    m_maxHasBeenSet(false),
-    m_min(0.0),
-    m_minHasBeenSet(false),
-    m_sum(0.0),
-    m_sumHasBeenSet(false)
+Stats::Stats(JsonView jsonValue)
+  : Stats()
 {
   *this = jsonValue;
 }

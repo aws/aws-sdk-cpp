@@ -26,11 +26,8 @@ SlackWorkspaceConfiguration::SlackWorkspaceConfiguration() :
 {
 }
 
-SlackWorkspaceConfiguration::SlackWorkspaceConfiguration(JsonView jsonValue) : 
-    m_allowOrganizationMemberAccount(false),
-    m_allowOrganizationMemberAccountHasBeenSet(false),
-    m_teamIdHasBeenSet(false),
-    m_teamNameHasBeenSet(false)
+SlackWorkspaceConfiguration::SlackWorkspaceConfiguration(JsonView jsonValue)
+  : SlackWorkspaceConfiguration()
 {
   *this = jsonValue;
 }

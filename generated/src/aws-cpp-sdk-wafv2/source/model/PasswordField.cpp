@@ -23,8 +23,8 @@ PasswordField::PasswordField() :
 {
 }
 
-PasswordField::PasswordField(JsonView jsonValue) : 
-    m_identifierHasBeenSet(false)
+PasswordField::PasswordField(JsonView jsonValue)
+  : PasswordField()
 {
   *this = jsonValue;
 }

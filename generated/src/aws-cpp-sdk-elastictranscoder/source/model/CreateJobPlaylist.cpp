@@ -27,12 +27,8 @@ CreateJobPlaylist::CreateJobPlaylist() :
 {
 }
 
-CreateJobPlaylist::CreateJobPlaylist(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_formatHasBeenSet(false),
-    m_outputKeysHasBeenSet(false),
-    m_hlsContentProtectionHasBeenSet(false),
-    m_playReadyDrmHasBeenSet(false)
+CreateJobPlaylist::CreateJobPlaylist(JsonView jsonValue)
+  : CreateJobPlaylist()
 {
   *this = jsonValue;
 }

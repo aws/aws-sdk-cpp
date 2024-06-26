@@ -24,9 +24,8 @@ FieldValue::FieldValue() :
 {
 }
 
-FieldValue::FieldValue(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_valueHasBeenSet(false)
+FieldValue::FieldValue(JsonView jsonValue)
+  : FieldValue()
 {
   *this = jsonValue;
 }

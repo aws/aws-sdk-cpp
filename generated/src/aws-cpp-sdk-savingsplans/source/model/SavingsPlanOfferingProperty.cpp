@@ -25,10 +25,8 @@ SavingsPlanOfferingProperty::SavingsPlanOfferingProperty() :
 {
 }
 
-SavingsPlanOfferingProperty::SavingsPlanOfferingProperty(JsonView jsonValue) : 
-    m_name(SavingsPlanOfferingPropertyKey::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
+SavingsPlanOfferingProperty::SavingsPlanOfferingProperty(JsonView jsonValue)
+  : SavingsPlanOfferingProperty()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ DetectedS3SourceConfig::DetectedS3SourceConfig() :
 {
 }
 
-DetectedS3SourceConfig::DetectedS3SourceConfig(JsonView jsonValue) : 
-    m_fileFormatDescriptorHasBeenSet(false)
+DetectedS3SourceConfig::DetectedS3SourceConfig(JsonView jsonValue)
+  : DetectedS3SourceConfig()
 {
   *this = jsonValue;
 }

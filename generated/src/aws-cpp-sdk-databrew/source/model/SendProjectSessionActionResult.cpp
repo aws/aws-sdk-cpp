@@ -22,8 +22,8 @@ SendProjectSessionActionResult::SendProjectSessionActionResult() :
 {
 }
 
-SendProjectSessionActionResult::SendProjectSessionActionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_actionId(0)
+SendProjectSessionActionResult::SendProjectSessionActionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : SendProjectSessionActionResult()
 {
   *this = result;
 }

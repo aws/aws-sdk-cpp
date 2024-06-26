@@ -22,8 +22,8 @@ GetDataSourceResult::GetDataSourceResult() :
 {
 }
 
-GetDataSourceResult::GetDataSourceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(DataSourceStatus::NOT_SET)
+GetDataSourceResult::GetDataSourceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetDataSourceResult()
 {
   *this = result;
 }

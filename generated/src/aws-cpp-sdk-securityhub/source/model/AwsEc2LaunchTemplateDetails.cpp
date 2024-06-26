@@ -29,14 +29,8 @@ AwsEc2LaunchTemplateDetails::AwsEc2LaunchTemplateDetails() :
 {
 }
 
-AwsEc2LaunchTemplateDetails::AwsEc2LaunchTemplateDetails(JsonView jsonValue) : 
-    m_launchTemplateNameHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_launchTemplateDataHasBeenSet(false),
-    m_defaultVersionNumber(0),
-    m_defaultVersionNumberHasBeenSet(false),
-    m_latestVersionNumber(0),
-    m_latestVersionNumberHasBeenSet(false)
+AwsEc2LaunchTemplateDetails::AwsEc2LaunchTemplateDetails(JsonView jsonValue)
+  : AwsEc2LaunchTemplateDetails()
 {
   *this = jsonValue;
 }

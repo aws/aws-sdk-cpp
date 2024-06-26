@@ -23,8 +23,8 @@ ExclusionByResourceTypes::ExclusionByResourceTypes() :
 {
 }
 
-ExclusionByResourceTypes::ExclusionByResourceTypes(JsonView jsonValue) : 
-    m_resourceTypesHasBeenSet(false)
+ExclusionByResourceTypes::ExclusionByResourceTypes(JsonView jsonValue)
+  : ExclusionByResourceTypes()
 {
   *this = jsonValue;
 }

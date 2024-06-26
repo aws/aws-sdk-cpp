@@ -31,14 +31,8 @@ PhoneNumberInformation::PhoneNumberInformation() :
 {
 }
 
-PhoneNumberInformation::PhoneNumberInformation(const XmlNode& xmlNode) : 
-    m_createdAtHasBeenSet(false),
-    m_phoneNumberHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_iso2CountryCodeHasBeenSet(false),
-    m_routeType(RouteType::NOT_SET),
-    m_routeTypeHasBeenSet(false),
-    m_numberCapabilitiesHasBeenSet(false)
+PhoneNumberInformation::PhoneNumberInformation(const XmlNode& xmlNode)
+  : PhoneNumberInformation()
 {
   *this = xmlNode;
 }

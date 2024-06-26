@@ -31,16 +31,8 @@ LoRaWANPublicGatewayMetadata::LoRaWANPublicGatewayMetadata() :
 {
 }
 
-LoRaWANPublicGatewayMetadata::LoRaWANPublicGatewayMetadata(JsonView jsonValue) : 
-    m_providerNetIdHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_rssi(0.0),
-    m_rssiHasBeenSet(false),
-    m_snr(0.0),
-    m_snrHasBeenSet(false),
-    m_rfRegionHasBeenSet(false),
-    m_dlAllowed(false),
-    m_dlAllowedHasBeenSet(false)
+LoRaWANPublicGatewayMetadata::LoRaWANPublicGatewayMetadata(JsonView jsonValue)
+  : LoRaWANPublicGatewayMetadata()
 {
   *this = jsonValue;
 }

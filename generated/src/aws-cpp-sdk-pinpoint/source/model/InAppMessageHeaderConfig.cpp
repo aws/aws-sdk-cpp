@@ -26,11 +26,8 @@ InAppMessageHeaderConfig::InAppMessageHeaderConfig() :
 {
 }
 
-InAppMessageHeaderConfig::InAppMessageHeaderConfig(JsonView jsonValue) : 
-    m_alignment(Alignment::NOT_SET),
-    m_alignmentHasBeenSet(false),
-    m_headerHasBeenSet(false),
-    m_textColorHasBeenSet(false)
+InAppMessageHeaderConfig::InAppMessageHeaderConfig(JsonView jsonValue)
+  : InAppMessageHeaderConfig()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ DataLakePrincipal::DataLakePrincipal() :
 {
 }
 
-DataLakePrincipal::DataLakePrincipal(JsonView jsonValue) : 
-    m_dataLakePrincipalIdentifierHasBeenSet(false)
+DataLakePrincipal::DataLakePrincipal(JsonView jsonValue)
+  : DataLakePrincipal()
 {
   *this = jsonValue;
 }

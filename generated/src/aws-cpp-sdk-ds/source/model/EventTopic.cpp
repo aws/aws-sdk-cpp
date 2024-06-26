@@ -28,13 +28,8 @@ EventTopic::EventTopic() :
 {
 }
 
-EventTopic::EventTopic(JsonView jsonValue) : 
-    m_directoryIdHasBeenSet(false),
-    m_topicNameHasBeenSet(false),
-    m_topicArnHasBeenSet(false),
-    m_createdDateTimeHasBeenSet(false),
-    m_status(TopicStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+EventTopic::EventTopic(JsonView jsonValue)
+  : EventTopic()
 {
   *this = jsonValue;
 }

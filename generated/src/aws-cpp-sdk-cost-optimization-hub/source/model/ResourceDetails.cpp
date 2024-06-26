@@ -37,22 +37,8 @@ ResourceDetails::ResourceDetails() :
 {
 }
 
-ResourceDetails::ResourceDetails(JsonView jsonValue) : 
-    m_lambdaFunctionHasBeenSet(false),
-    m_ecsServiceHasBeenSet(false),
-    m_ec2InstanceHasBeenSet(false),
-    m_ebsVolumeHasBeenSet(false),
-    m_ec2AutoScalingGroupHasBeenSet(false),
-    m_ec2ReservedInstancesHasBeenSet(false),
-    m_rdsReservedInstancesHasBeenSet(false),
-    m_elastiCacheReservedInstancesHasBeenSet(false),
-    m_openSearchReservedInstancesHasBeenSet(false),
-    m_redshiftReservedInstancesHasBeenSet(false),
-    m_ec2InstanceSavingsPlansHasBeenSet(false),
-    m_computeSavingsPlansHasBeenSet(false),
-    m_sageMakerSavingsPlansHasBeenSet(false),
-    m_rdsDbInstanceHasBeenSet(false),
-    m_rdsDbInstanceStorageHasBeenSet(false)
+ResourceDetails::ResourceDetails(JsonView jsonValue)
+  : ResourceDetails()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ UpdatePublicSharingSettingsResult::UpdatePublicSharingSettingsResult() :
 {
 }
 
-UpdatePublicSharingSettingsResult::UpdatePublicSharingSettingsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+UpdatePublicSharingSettingsResult::UpdatePublicSharingSettingsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdatePublicSharingSettingsResult()
 {
   *this = result;
 }

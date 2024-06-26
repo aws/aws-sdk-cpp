@@ -26,11 +26,8 @@ DimensionValues::DimensionValues() :
 {
 }
 
-DimensionValues::DimensionValues(JsonView jsonValue) : 
-    m_key(Dimension::NOT_SET),
-    m_keyHasBeenSet(false),
-    m_valuesHasBeenSet(false),
-    m_matchOptionsHasBeenSet(false)
+DimensionValues::DimensionValues(JsonView jsonValue)
+  : DimensionValues()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ ReportFilter::ReportFilter() :
 {
 }
 
-ReportFilter::ReportFilter(JsonView jsonValue) : 
-    m_status(ReportStatusType::NOT_SET),
-    m_statusHasBeenSet(false)
+ReportFilter::ReportFilter(JsonView jsonValue)
+  : ReportFilter()
 {
   *this = jsonValue;
 }

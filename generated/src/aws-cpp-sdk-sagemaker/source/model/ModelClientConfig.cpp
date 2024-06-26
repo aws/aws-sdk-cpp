@@ -26,11 +26,8 @@ ModelClientConfig::ModelClientConfig() :
 {
 }
 
-ModelClientConfig::ModelClientConfig(JsonView jsonValue) : 
-    m_invocationsTimeoutInSeconds(0),
-    m_invocationsTimeoutInSecondsHasBeenSet(false),
-    m_invocationsMaxRetries(0),
-    m_invocationsMaxRetriesHasBeenSet(false)
+ModelClientConfig::ModelClientConfig(JsonView jsonValue)
+  : ModelClientConfig()
 {
   *this = jsonValue;
 }

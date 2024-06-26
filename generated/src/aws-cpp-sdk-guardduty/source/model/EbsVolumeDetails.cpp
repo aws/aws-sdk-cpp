@@ -24,9 +24,8 @@ EbsVolumeDetails::EbsVolumeDetails() :
 {
 }
 
-EbsVolumeDetails::EbsVolumeDetails(JsonView jsonValue) : 
-    m_scannedVolumeDetailsHasBeenSet(false),
-    m_skippedVolumeDetailsHasBeenSet(false)
+EbsVolumeDetails::EbsVolumeDetails(JsonView jsonValue)
+  : EbsVolumeDetails()
 {
   *this = jsonValue;
 }

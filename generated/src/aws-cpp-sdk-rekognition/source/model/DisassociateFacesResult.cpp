@@ -22,8 +22,8 @@ DisassociateFacesResult::DisassociateFacesResult() :
 {
 }
 
-DisassociateFacesResult::DisassociateFacesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_userStatus(UserStatus::NOT_SET)
+DisassociateFacesResult::DisassociateFacesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DisassociateFacesResult()
 {
   *this = result;
 }

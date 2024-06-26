@@ -28,11 +28,8 @@ TargetHealthDescription::TargetHealthDescription() :
 {
 }
 
-TargetHealthDescription::TargetHealthDescription(const XmlNode& xmlNode) : 
-    m_targetHasBeenSet(false),
-    m_healthCheckPortHasBeenSet(false),
-    m_targetHealthHasBeenSet(false),
-    m_anomalyDetectionHasBeenSet(false)
+TargetHealthDescription::TargetHealthDescription(const XmlNode& xmlNode)
+  : TargetHealthDescription()
 {
   *this = xmlNode;
 }

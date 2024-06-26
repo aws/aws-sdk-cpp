@@ -23,9 +23,8 @@ GetFailbackReplicationConfigurationResult::GetFailbackReplicationConfigurationRe
 {
 }
 
-GetFailbackReplicationConfigurationResult::GetFailbackReplicationConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_bandwidthThrottling(0),
-    m_usePrivateIP(false)
+GetFailbackReplicationConfigurationResult::GetFailbackReplicationConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetFailbackReplicationConfigurationResult()
 {
   *this = result;
 }

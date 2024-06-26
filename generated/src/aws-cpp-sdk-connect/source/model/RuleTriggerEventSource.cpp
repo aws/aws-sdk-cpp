@@ -25,10 +25,8 @@ RuleTriggerEventSource::RuleTriggerEventSource() :
 {
 }
 
-RuleTriggerEventSource::RuleTriggerEventSource(JsonView jsonValue) : 
-    m_eventSourceName(EventSourceName::NOT_SET),
-    m_eventSourceNameHasBeenSet(false),
-    m_integrationAssociationIdHasBeenSet(false)
+RuleTriggerEventSource::RuleTriggerEventSource(JsonView jsonValue)
+  : RuleTriggerEventSource()
 {
   *this = jsonValue;
 }

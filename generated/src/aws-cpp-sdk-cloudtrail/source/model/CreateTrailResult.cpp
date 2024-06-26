@@ -25,11 +25,8 @@ CreateTrailResult::CreateTrailResult() :
 {
 }
 
-CreateTrailResult::CreateTrailResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_includeGlobalServiceEvents(false),
-    m_isMultiRegionTrail(false),
-    m_logFileValidationEnabled(false),
-    m_isOrganizationTrail(false)
+CreateTrailResult::CreateTrailResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateTrailResult()
 {
   *this = result;
 }

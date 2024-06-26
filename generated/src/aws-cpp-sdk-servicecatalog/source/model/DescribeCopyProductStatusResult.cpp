@@ -22,8 +22,8 @@ DescribeCopyProductStatusResult::DescribeCopyProductStatusResult() :
 {
 }
 
-DescribeCopyProductStatusResult::DescribeCopyProductStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_copyProductStatus(CopyProductStatus::NOT_SET)
+DescribeCopyProductStatusResult::DescribeCopyProductStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeCopyProductStatusResult()
 {
   *this = result;
 }

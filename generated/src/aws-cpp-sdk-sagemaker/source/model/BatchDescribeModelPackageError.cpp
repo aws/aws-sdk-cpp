@@ -24,9 +24,8 @@ BatchDescribeModelPackageError::BatchDescribeModelPackageError() :
 {
 }
 
-BatchDescribeModelPackageError::BatchDescribeModelPackageError(JsonView jsonValue) : 
-    m_errorCodeHasBeenSet(false),
-    m_errorResponseHasBeenSet(false)
+BatchDescribeModelPackageError::BatchDescribeModelPackageError(JsonView jsonValue)
+  : BatchDescribeModelPackageError()
 {
   *this = jsonValue;
 }

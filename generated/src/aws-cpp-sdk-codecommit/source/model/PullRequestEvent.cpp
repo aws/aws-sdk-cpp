@@ -34,19 +34,8 @@ PullRequestEvent::PullRequestEvent() :
 {
 }
 
-PullRequestEvent::PullRequestEvent(JsonView jsonValue) : 
-    m_pullRequestIdHasBeenSet(false),
-    m_eventDateHasBeenSet(false),
-    m_pullRequestEventType(PullRequestEventType::NOT_SET),
-    m_pullRequestEventTypeHasBeenSet(false),
-    m_actorArnHasBeenSet(false),
-    m_pullRequestCreatedEventMetadataHasBeenSet(false),
-    m_pullRequestStatusChangedEventMetadataHasBeenSet(false),
-    m_pullRequestSourceReferenceUpdatedEventMetadataHasBeenSet(false),
-    m_pullRequestMergedStateChangedEventMetadataHasBeenSet(false),
-    m_approvalRuleEventMetadataHasBeenSet(false),
-    m_approvalStateChangedEventMetadataHasBeenSet(false),
-    m_approvalRuleOverriddenEventMetadataHasBeenSet(false)
+PullRequestEvent::PullRequestEvent(JsonView jsonValue)
+  : PullRequestEvent()
 {
   *this = jsonValue;
 }

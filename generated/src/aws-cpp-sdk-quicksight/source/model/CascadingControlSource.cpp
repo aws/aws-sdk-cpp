@@ -24,9 +24,8 @@ CascadingControlSource::CascadingControlSource() :
 {
 }
 
-CascadingControlSource::CascadingControlSource(JsonView jsonValue) : 
-    m_sourceSheetControlIdHasBeenSet(false),
-    m_columnToMatchHasBeenSet(false)
+CascadingControlSource::CascadingControlSource(JsonView jsonValue)
+  : CascadingControlSource()
 {
   *this = jsonValue;
 }

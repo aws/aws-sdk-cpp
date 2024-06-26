@@ -24,9 +24,8 @@ KubernetesAuditLogsConfiguration::KubernetesAuditLogsConfiguration() :
 {
 }
 
-KubernetesAuditLogsConfiguration::KubernetesAuditLogsConfiguration(JsonView jsonValue) : 
-    m_enable(false),
-    m_enableHasBeenSet(false)
+KubernetesAuditLogsConfiguration::KubernetesAuditLogsConfiguration(JsonView jsonValue)
+  : KubernetesAuditLogsConfiguration()
 {
   *this = jsonValue;
 }

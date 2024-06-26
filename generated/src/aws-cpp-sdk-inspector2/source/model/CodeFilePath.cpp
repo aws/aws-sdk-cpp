@@ -28,13 +28,8 @@ CodeFilePath::CodeFilePath() :
 {
 }
 
-CodeFilePath::CodeFilePath(JsonView jsonValue) : 
-    m_endLine(0),
-    m_endLineHasBeenSet(false),
-    m_fileNameHasBeenSet(false),
-    m_filePathHasBeenSet(false),
-    m_startLine(0),
-    m_startLineHasBeenSet(false)
+CodeFilePath::CodeFilePath(JsonView jsonValue)
+  : CodeFilePath()
 {
   *this = jsonValue;
 }

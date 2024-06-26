@@ -24,9 +24,8 @@ AwsEc2LaunchTemplateDataMonitoringDetails::AwsEc2LaunchTemplateDataMonitoringDet
 {
 }
 
-AwsEc2LaunchTemplateDataMonitoringDetails::AwsEc2LaunchTemplateDataMonitoringDetails(JsonView jsonValue) : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
+AwsEc2LaunchTemplateDataMonitoringDetails::AwsEc2LaunchTemplateDataMonitoringDetails(JsonView jsonValue)
+  : AwsEc2LaunchTemplateDataMonitoringDetails()
 {
   *this = jsonValue;
 }

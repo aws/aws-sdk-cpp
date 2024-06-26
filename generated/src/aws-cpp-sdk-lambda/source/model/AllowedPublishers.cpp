@@ -23,8 +23,8 @@ AllowedPublishers::AllowedPublishers() :
 {
 }
 
-AllowedPublishers::AllowedPublishers(JsonView jsonValue) : 
-    m_signingProfileVersionArnsHasBeenSet(false)
+AllowedPublishers::AllowedPublishers(JsonView jsonValue)
+  : AllowedPublishers()
 {
   *this = jsonValue;
 }

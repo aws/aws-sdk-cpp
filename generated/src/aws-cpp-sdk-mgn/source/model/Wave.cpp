@@ -34,18 +34,8 @@ Wave::Wave() :
 {
 }
 
-Wave::Wave(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_creationDateTimeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_isArchived(false),
-    m_isArchivedHasBeenSet(false),
-    m_lastModifiedDateTimeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_waveAggregatedStatusHasBeenSet(false),
-    m_waveIDHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
+Wave::Wave(JsonView jsonValue)
+  : Wave()
 {
   *this = jsonValue;
 }

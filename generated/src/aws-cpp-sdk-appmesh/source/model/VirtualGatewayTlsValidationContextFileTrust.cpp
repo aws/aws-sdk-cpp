@@ -23,8 +23,8 @@ VirtualGatewayTlsValidationContextFileTrust::VirtualGatewayTlsValidationContextF
 {
 }
 
-VirtualGatewayTlsValidationContextFileTrust::VirtualGatewayTlsValidationContextFileTrust(JsonView jsonValue) : 
-    m_certificateChainHasBeenSet(false)
+VirtualGatewayTlsValidationContextFileTrust::VirtualGatewayTlsValidationContextFileTrust(JsonView jsonValue)
+  : VirtualGatewayTlsValidationContextFileTrust()
 {
   *this = jsonValue;
 }

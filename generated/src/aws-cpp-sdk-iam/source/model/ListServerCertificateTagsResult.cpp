@@ -22,8 +22,8 @@ ListServerCertificateTagsResult::ListServerCertificateTagsResult() :
 {
 }
 
-ListServerCertificateTagsResult::ListServerCertificateTagsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_isTruncated(false)
+ListServerCertificateTagsResult::ListServerCertificateTagsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : ListServerCertificateTagsResult()
 {
   *this = result;
 }

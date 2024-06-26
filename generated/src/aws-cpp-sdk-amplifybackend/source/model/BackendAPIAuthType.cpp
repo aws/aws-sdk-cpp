@@ -25,10 +25,8 @@ BackendAPIAuthType::BackendAPIAuthType() :
 {
 }
 
-BackendAPIAuthType::BackendAPIAuthType(JsonView jsonValue) : 
-    m_mode(Mode::NOT_SET),
-    m_modeHasBeenSet(false),
-    m_settingsHasBeenSet(false)
+BackendAPIAuthType::BackendAPIAuthType(JsonView jsonValue)
+  : BackendAPIAuthType()
 {
   *this = jsonValue;
 }

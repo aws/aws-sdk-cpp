@@ -24,9 +24,8 @@ RouteAnalysisPath::RouteAnalysisPath() :
 {
 }
 
-RouteAnalysisPath::RouteAnalysisPath(JsonView jsonValue) : 
-    m_completionStatusHasBeenSet(false),
-    m_pathHasBeenSet(false)
+RouteAnalysisPath::RouteAnalysisPath(JsonView jsonValue)
+  : RouteAnalysisPath()
 {
   *this = jsonValue;
 }

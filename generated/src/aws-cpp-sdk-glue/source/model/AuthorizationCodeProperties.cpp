@@ -24,9 +24,8 @@ AuthorizationCodeProperties::AuthorizationCodeProperties() :
 {
 }
 
-AuthorizationCodeProperties::AuthorizationCodeProperties(JsonView jsonValue) : 
-    m_authorizationCodeHasBeenSet(false),
-    m_redirectUriHasBeenSet(false)
+AuthorizationCodeProperties::AuthorizationCodeProperties(JsonView jsonValue)
+  : AuthorizationCodeProperties()
 {
   *this = jsonValue;
 }

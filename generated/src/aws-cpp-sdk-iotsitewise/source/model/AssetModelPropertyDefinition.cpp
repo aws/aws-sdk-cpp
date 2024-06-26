@@ -30,15 +30,8 @@ AssetModelPropertyDefinition::AssetModelPropertyDefinition() :
 {
 }
 
-AssetModelPropertyDefinition::AssetModelPropertyDefinition(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_dataType(PropertyDataType::NOT_SET),
-    m_dataTypeHasBeenSet(false),
-    m_dataTypeSpecHasBeenSet(false),
-    m_unitHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_externalIdHasBeenSet(false)
+AssetModelPropertyDefinition::AssetModelPropertyDefinition(JsonView jsonValue)
+  : AssetModelPropertyDefinition()
 {
   *this = jsonValue;
 }

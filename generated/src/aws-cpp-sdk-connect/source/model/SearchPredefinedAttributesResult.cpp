@@ -22,8 +22,8 @@ SearchPredefinedAttributesResult::SearchPredefinedAttributesResult() :
 {
 }
 
-SearchPredefinedAttributesResult::SearchPredefinedAttributesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_approximateTotalCount(0)
+SearchPredefinedAttributesResult::SearchPredefinedAttributesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : SearchPredefinedAttributesResult()
 {
   *this = result;
 }

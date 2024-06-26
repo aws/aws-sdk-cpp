@@ -32,17 +32,8 @@ BackupJobSummary::BackupJobSummary() :
 {
 }
 
-BackupJobSummary::BackupJobSummary(JsonView jsonValue) : 
-    m_regionHasBeenSet(false),
-    m_accountIdHasBeenSet(false),
-    m_state(BackupJobStatus::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
-    m_messageCategoryHasBeenSet(false),
-    m_count(0),
-    m_countHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
+BackupJobSummary::BackupJobSummary(JsonView jsonValue)
+  : BackupJobSummary()
 {
   *this = jsonValue;
 }

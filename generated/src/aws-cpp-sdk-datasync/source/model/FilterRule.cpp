@@ -25,10 +25,8 @@ FilterRule::FilterRule() :
 {
 }
 
-FilterRule::FilterRule(JsonView jsonValue) : 
-    m_filterType(FilterType::NOT_SET),
-    m_filterTypeHasBeenSet(false),
-    m_valueHasBeenSet(false)
+FilterRule::FilterRule(JsonView jsonValue)
+  : FilterRule()
 {
   *this = jsonValue;
 }

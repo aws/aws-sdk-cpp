@@ -26,11 +26,8 @@ LabelingJobStoppingConditions::LabelingJobStoppingConditions() :
 {
 }
 
-LabelingJobStoppingConditions::LabelingJobStoppingConditions(JsonView jsonValue) : 
-    m_maxHumanLabeledObjectCount(0),
-    m_maxHumanLabeledObjectCountHasBeenSet(false),
-    m_maxPercentageOfInputDatasetLabeled(0),
-    m_maxPercentageOfInputDatasetLabeledHasBeenSet(false)
+LabelingJobStoppingConditions::LabelingJobStoppingConditions(JsonView jsonValue)
+  : LabelingJobStoppingConditions()
 {
   *this = jsonValue;
 }

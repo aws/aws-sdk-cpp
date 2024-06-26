@@ -26,11 +26,8 @@ RasterDataCollectionQueryInput::RasterDataCollectionQueryInput() :
 {
 }
 
-RasterDataCollectionQueryInput::RasterDataCollectionQueryInput(JsonView jsonValue) : 
-    m_areaOfInterestHasBeenSet(false),
-    m_propertyFiltersHasBeenSet(false),
-    m_rasterDataCollectionArnHasBeenSet(false),
-    m_timeRangeFilterHasBeenSet(false)
+RasterDataCollectionQueryInput::RasterDataCollectionQueryInput(JsonView jsonValue)
+  : RasterDataCollectionQueryInput()
 {
   *this = jsonValue;
 }

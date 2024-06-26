@@ -25,10 +25,8 @@ FunctionParameter::FunctionParameter() :
 {
 }
 
-FunctionParameter::FunctionParameter(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_valueHasBeenSet(false)
+FunctionParameter::FunctionParameter(JsonView jsonValue)
+  : FunctionParameter()
 {
   *this = jsonValue;
 }

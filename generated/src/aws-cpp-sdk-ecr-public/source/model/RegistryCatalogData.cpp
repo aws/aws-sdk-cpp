@@ -23,8 +23,8 @@ RegistryCatalogData::RegistryCatalogData() :
 {
 }
 
-RegistryCatalogData::RegistryCatalogData(JsonView jsonValue) : 
-    m_displayNameHasBeenSet(false)
+RegistryCatalogData::RegistryCatalogData(JsonView jsonValue)
+  : RegistryCatalogData()
 {
   *this = jsonValue;
 }

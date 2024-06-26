@@ -22,8 +22,8 @@ CopySnapshotAndUpdateVolumeResult::CopySnapshotAndUpdateVolumeResult() :
 {
 }
 
-CopySnapshotAndUpdateVolumeResult::CopySnapshotAndUpdateVolumeResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_lifecycle(VolumeLifecycle::NOT_SET)
+CopySnapshotAndUpdateVolumeResult::CopySnapshotAndUpdateVolumeResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CopySnapshotAndUpdateVolumeResult()
 {
   *this = result;
 }

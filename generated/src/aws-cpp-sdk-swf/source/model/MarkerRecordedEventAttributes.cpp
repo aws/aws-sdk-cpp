@@ -26,11 +26,8 @@ MarkerRecordedEventAttributes::MarkerRecordedEventAttributes() :
 {
 }
 
-MarkerRecordedEventAttributes::MarkerRecordedEventAttributes(JsonView jsonValue) : 
-    m_markerNameHasBeenSet(false),
-    m_detailsHasBeenSet(false),
-    m_decisionTaskCompletedEventId(0),
-    m_decisionTaskCompletedEventIdHasBeenSet(false)
+MarkerRecordedEventAttributes::MarkerRecordedEventAttributes(JsonView jsonValue)
+  : MarkerRecordedEventAttributes()
 {
   *this = jsonValue;
 }

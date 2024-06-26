@@ -29,12 +29,8 @@ IntelligentTieringConfiguration::IntelligentTieringConfiguration() :
 {
 }
 
-IntelligentTieringConfiguration::IntelligentTieringConfiguration(const XmlNode& xmlNode) : 
-    m_idHasBeenSet(false),
-    m_filterHasBeenSet(false),
-    m_status(IntelligentTieringStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_tieringsHasBeenSet(false)
+IntelligentTieringConfiguration::IntelligentTieringConfiguration(const XmlNode& xmlNode)
+  : IntelligentTieringConfiguration()
 {
   *this = xmlNode;
 }

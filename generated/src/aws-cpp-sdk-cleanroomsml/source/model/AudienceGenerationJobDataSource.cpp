@@ -24,9 +24,8 @@ AudienceGenerationJobDataSource::AudienceGenerationJobDataSource() :
 {
 }
 
-AudienceGenerationJobDataSource::AudienceGenerationJobDataSource(JsonView jsonValue) : 
-    m_dataSourceHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
+AudienceGenerationJobDataSource::AudienceGenerationJobDataSource(JsonView jsonValue)
+  : AudienceGenerationJobDataSource()
 {
   *this = jsonValue;
 }

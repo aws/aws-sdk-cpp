@@ -26,9 +26,8 @@ TagDescription::TagDescription() :
 {
 }
 
-TagDescription::TagDescription(const XmlNode& xmlNode) : 
-    m_resourceArnHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+TagDescription::TagDescription(const XmlNode& xmlNode)
+  : TagDescription()
 {
   *this = xmlNode;
 }

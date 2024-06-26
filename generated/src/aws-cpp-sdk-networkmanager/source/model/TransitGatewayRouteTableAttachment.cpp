@@ -25,10 +25,8 @@ TransitGatewayRouteTableAttachment::TransitGatewayRouteTableAttachment() :
 {
 }
 
-TransitGatewayRouteTableAttachment::TransitGatewayRouteTableAttachment(JsonView jsonValue) : 
-    m_attachmentHasBeenSet(false),
-    m_peeringIdHasBeenSet(false),
-    m_transitGatewayRouteTableArnHasBeenSet(false)
+TransitGatewayRouteTableAttachment::TransitGatewayRouteTableAttachment(JsonView jsonValue)
+  : TransitGatewayRouteTableAttachment()
 {
   *this = jsonValue;
 }

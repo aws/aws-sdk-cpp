@@ -27,10 +27,8 @@ SnapshotCopyGrant::SnapshotCopyGrant() :
 {
 }
 
-SnapshotCopyGrant::SnapshotCopyGrant(const XmlNode& xmlNode) : 
-    m_snapshotCopyGrantNameHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+SnapshotCopyGrant::SnapshotCopyGrant(const XmlNode& xmlNode)
+  : SnapshotCopyGrant()
 {
   *this = xmlNode;
 }

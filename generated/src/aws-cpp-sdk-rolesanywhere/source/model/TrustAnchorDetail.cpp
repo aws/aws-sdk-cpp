@@ -31,16 +31,8 @@ TrustAnchorDetail::TrustAnchorDetail() :
 {
 }
 
-TrustAnchorDetail::TrustAnchorDetail(JsonView jsonValue) : 
-    m_createdAtHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_notificationSettingsHasBeenSet(false),
-    m_sourceHasBeenSet(false),
-    m_trustAnchorArnHasBeenSet(false),
-    m_trustAnchorIdHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+TrustAnchorDetail::TrustAnchorDetail(JsonView jsonValue)
+  : TrustAnchorDetail()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ AgentAliasHistoryEvent::AgentAliasHistoryEvent() :
 {
 }
 
-AgentAliasHistoryEvent::AgentAliasHistoryEvent(JsonView jsonValue) : 
-    m_endDateHasBeenSet(false),
-    m_routingConfigurationHasBeenSet(false),
-    m_startDateHasBeenSet(false)
+AgentAliasHistoryEvent::AgentAliasHistoryEvent(JsonView jsonValue)
+  : AgentAliasHistoryEvent()
 {
   *this = jsonValue;
 }

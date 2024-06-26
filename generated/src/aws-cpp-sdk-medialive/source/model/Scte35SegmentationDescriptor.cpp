@@ -42,27 +42,8 @@ Scte35SegmentationDescriptor::Scte35SegmentationDescriptor() :
 {
 }
 
-Scte35SegmentationDescriptor::Scte35SegmentationDescriptor(JsonView jsonValue) : 
-    m_deliveryRestrictionsHasBeenSet(false),
-    m_segmentNum(0),
-    m_segmentNumHasBeenSet(false),
-    m_segmentationCancelIndicator(Scte35SegmentationCancelIndicator::NOT_SET),
-    m_segmentationCancelIndicatorHasBeenSet(false),
-    m_segmentationDuration(0),
-    m_segmentationDurationHasBeenSet(false),
-    m_segmentationEventId(0),
-    m_segmentationEventIdHasBeenSet(false),
-    m_segmentationTypeId(0),
-    m_segmentationTypeIdHasBeenSet(false),
-    m_segmentationUpidHasBeenSet(false),
-    m_segmentationUpidType(0),
-    m_segmentationUpidTypeHasBeenSet(false),
-    m_segmentsExpected(0),
-    m_segmentsExpectedHasBeenSet(false),
-    m_subSegmentNum(0),
-    m_subSegmentNumHasBeenSet(false),
-    m_subSegmentsExpected(0),
-    m_subSegmentsExpectedHasBeenSet(false)
+Scte35SegmentationDescriptor::Scte35SegmentationDescriptor(JsonView jsonValue)
+  : Scte35SegmentationDescriptor()
 {
   *this = jsonValue;
 }

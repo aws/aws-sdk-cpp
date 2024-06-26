@@ -26,11 +26,8 @@ RequestOutputItem::RequestOutputItem() :
 {
 }
 
-RequestOutputItem::RequestOutputItem(JsonView jsonValue) : 
-    m_dashPlaylistSettingsHasBeenSet(false),
-    m_hlsPlaylistSettingsHasBeenSet(false),
-    m_manifestNameHasBeenSet(false),
-    m_sourceGroupHasBeenSet(false)
+RequestOutputItem::RequestOutputItem(JsonView jsonValue)
+  : RequestOutputItem()
 {
   *this = jsonValue;
 }

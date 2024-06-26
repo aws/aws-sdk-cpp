@@ -24,9 +24,8 @@ MethodNotAllowedException::MethodNotAllowedException() :
 {
 }
 
-MethodNotAllowedException::MethodNotAllowedException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_requestIDHasBeenSet(false)
+MethodNotAllowedException::MethodNotAllowedException(JsonView jsonValue)
+  : MethodNotAllowedException()
 {
   *this = jsonValue;
 }

@@ -27,12 +27,8 @@ InspectionDataResponse::InspectionDataResponse() :
 {
 }
 
-InspectionDataResponse::InspectionDataResponse(JsonView jsonValue) : 
-    m_protocolHasBeenSet(false),
-    m_statusCodeHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_headersHasBeenSet(false),
-    m_bodyHasBeenSet(false)
+InspectionDataResponse::InspectionDataResponse(JsonView jsonValue)
+  : InspectionDataResponse()
 {
   *this = jsonValue;
 }

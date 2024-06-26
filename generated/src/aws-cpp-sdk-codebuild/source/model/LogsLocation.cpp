@@ -30,15 +30,8 @@ LogsLocation::LogsLocation() :
 {
 }
 
-LogsLocation::LogsLocation(JsonView jsonValue) : 
-    m_groupNameHasBeenSet(false),
-    m_streamNameHasBeenSet(false),
-    m_deepLinkHasBeenSet(false),
-    m_s3DeepLinkHasBeenSet(false),
-    m_cloudWatchLogsArnHasBeenSet(false),
-    m_s3LogsArnHasBeenSet(false),
-    m_cloudWatchLogsHasBeenSet(false),
-    m_s3LogsHasBeenSet(false)
+LogsLocation::LogsLocation(JsonView jsonValue)
+  : LogsLocation()
 {
   *this = jsonValue;
 }

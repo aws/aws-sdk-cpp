@@ -24,9 +24,8 @@ CustomerManagedS3Storage::CustomerManagedS3Storage() :
 {
 }
 
-CustomerManagedS3Storage::CustomerManagedS3Storage(JsonView jsonValue) : 
-    m_s3ResourceArnHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
+CustomerManagedS3Storage::CustomerManagedS3Storage(JsonView jsonValue)
+  : CustomerManagedS3Storage()
 {
   *this = jsonValue;
 }

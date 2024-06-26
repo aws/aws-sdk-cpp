@@ -32,17 +32,8 @@ MedicalScribeSettings::MedicalScribeSettings() :
 {
 }
 
-MedicalScribeSettings::MedicalScribeSettings(JsonView jsonValue) : 
-    m_showSpeakerLabels(false),
-    m_showSpeakerLabelsHasBeenSet(false),
-    m_maxSpeakerLabels(0),
-    m_maxSpeakerLabelsHasBeenSet(false),
-    m_channelIdentification(false),
-    m_channelIdentificationHasBeenSet(false),
-    m_vocabularyNameHasBeenSet(false),
-    m_vocabularyFilterNameHasBeenSet(false),
-    m_vocabularyFilterMethod(VocabularyFilterMethod::NOT_SET),
-    m_vocabularyFilterMethodHasBeenSet(false)
+MedicalScribeSettings::MedicalScribeSettings(JsonView jsonValue)
+  : MedicalScribeSettings()
 {
   *this = jsonValue;
 }

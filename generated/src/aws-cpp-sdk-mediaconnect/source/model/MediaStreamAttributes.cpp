@@ -24,9 +24,8 @@ MediaStreamAttributes::MediaStreamAttributes() :
 {
 }
 
-MediaStreamAttributes::MediaStreamAttributes(JsonView jsonValue) : 
-    m_fmtpHasBeenSet(false),
-    m_langHasBeenSet(false)
+MediaStreamAttributes::MediaStreamAttributes(JsonView jsonValue)
+  : MediaStreamAttributes()
 {
   *this = jsonValue;
 }

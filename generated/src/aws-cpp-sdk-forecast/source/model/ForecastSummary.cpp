@@ -32,17 +32,8 @@ ForecastSummary::ForecastSummary() :
 {
 }
 
-ForecastSummary::ForecastSummary(JsonView jsonValue) : 
-    m_forecastArnHasBeenSet(false),
-    m_forecastNameHasBeenSet(false),
-    m_predictorArnHasBeenSet(false),
-    m_createdUsingAutoPredictor(false),
-    m_createdUsingAutoPredictorHasBeenSet(false),
-    m_datasetGroupArnHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastModificationTimeHasBeenSet(false)
+ForecastSummary::ForecastSummary(JsonView jsonValue)
+  : ForecastSummary()
 {
   *this = jsonValue;
 }

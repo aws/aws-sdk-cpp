@@ -28,13 +28,8 @@ ProviderSchemaAttribute::ProviderSchemaAttribute() :
 {
 }
 
-ProviderSchemaAttribute::ProviderSchemaAttribute(JsonView jsonValue) : 
-    m_fieldNameHasBeenSet(false),
-    m_hashing(false),
-    m_hashingHasBeenSet(false),
-    m_subTypeHasBeenSet(false),
-    m_type(SchemaAttributeType::NOT_SET),
-    m_typeHasBeenSet(false)
+ProviderSchemaAttribute::ProviderSchemaAttribute(JsonView jsonValue)
+  : ProviderSchemaAttribute()
 {
   *this = jsonValue;
 }

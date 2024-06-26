@@ -22,8 +22,8 @@ UpdateTopicPermissionsResult::UpdateTopicPermissionsResult() :
 {
 }
 
-UpdateTopicPermissionsResult::UpdateTopicPermissionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+UpdateTopicPermissionsResult::UpdateTopicPermissionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateTopicPermissionsResult()
 {
   *this = result;
 }

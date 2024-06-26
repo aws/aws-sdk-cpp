@@ -24,9 +24,8 @@ AwsSecurityFindingIdentifier::AwsSecurityFindingIdentifier() :
 {
 }
 
-AwsSecurityFindingIdentifier::AwsSecurityFindingIdentifier(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_productArnHasBeenSet(false)
+AwsSecurityFindingIdentifier::AwsSecurityFindingIdentifier(JsonView jsonValue)
+  : AwsSecurityFindingIdentifier()
 {
   *this = jsonValue;
 }

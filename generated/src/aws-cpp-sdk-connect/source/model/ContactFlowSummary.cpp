@@ -31,16 +31,8 @@ ContactFlowSummary::ContactFlowSummary() :
 {
 }
 
-ContactFlowSummary::ContactFlowSummary(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_contactFlowType(ContactFlowType::NOT_SET),
-    m_contactFlowTypeHasBeenSet(false),
-    m_contactFlowState(ContactFlowState::NOT_SET),
-    m_contactFlowStateHasBeenSet(false),
-    m_contactFlowStatus(ContactFlowStatus::NOT_SET),
-    m_contactFlowStatusHasBeenSet(false)
+ContactFlowSummary::ContactFlowSummary(JsonView jsonValue)
+  : ContactFlowSummary()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ GetApplicationComponentDetailsResult::GetApplicationComponentDetailsResult() :
 {
 }
 
-GetApplicationComponentDetailsResult::GetApplicationComponentDetailsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_moreApplicationResource(false)
+GetApplicationComponentDetailsResult::GetApplicationComponentDetailsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetApplicationComponentDetailsResult()
 {
   *this = result;
 }

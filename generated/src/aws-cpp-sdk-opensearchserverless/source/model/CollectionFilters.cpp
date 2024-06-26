@@ -25,10 +25,8 @@ CollectionFilters::CollectionFilters() :
 {
 }
 
-CollectionFilters::CollectionFilters(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_status(CollectionStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+CollectionFilters::CollectionFilters(JsonView jsonValue)
+  : CollectionFilters()
 {
   *this = jsonValue;
 }

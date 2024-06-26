@@ -36,21 +36,8 @@ WirelessDeviceStatistics::WirelessDeviceStatistics() :
 {
 }
 
-WirelessDeviceStatistics::WirelessDeviceStatistics(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_type(WirelessDeviceType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_destinationNameHasBeenSet(false),
-    m_lastUplinkReceivedAtHasBeenSet(false),
-    m_loRaWANHasBeenSet(false),
-    m_sidewalkHasBeenSet(false),
-    m_fuotaDeviceStatus(FuotaDeviceStatus::NOT_SET),
-    m_fuotaDeviceStatusHasBeenSet(false),
-    m_multicastDeviceStatusHasBeenSet(false),
-    m_mcGroupId(0),
-    m_mcGroupIdHasBeenSet(false)
+WirelessDeviceStatistics::WirelessDeviceStatistics(JsonView jsonValue)
+  : WirelessDeviceStatistics()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ MultiplexProgramSummary::MultiplexProgramSummary() :
 {
 }
 
-MultiplexProgramSummary::MultiplexProgramSummary(JsonView jsonValue) : 
-    m_channelIdHasBeenSet(false),
-    m_programNameHasBeenSet(false)
+MultiplexProgramSummary::MultiplexProgramSummary(JsonView jsonValue)
+  : MultiplexProgramSummary()
 {
   *this = jsonValue;
 }

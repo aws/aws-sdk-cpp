@@ -23,8 +23,8 @@ WatchlistDetails::WatchlistDetails() :
 {
 }
 
-WatchlistDetails::WatchlistDetails(JsonView jsonValue) : 
-    m_defaultWatchlistIdHasBeenSet(false)
+WatchlistDetails::WatchlistDetails(JsonView jsonValue)
+  : WatchlistDetails()
 {
   *this = jsonValue;
 }

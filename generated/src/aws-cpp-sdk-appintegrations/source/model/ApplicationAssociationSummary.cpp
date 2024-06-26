@@ -25,10 +25,8 @@ ApplicationAssociationSummary::ApplicationAssociationSummary() :
 {
 }
 
-ApplicationAssociationSummary::ApplicationAssociationSummary(JsonView jsonValue) : 
-    m_applicationAssociationArnHasBeenSet(false),
-    m_applicationArnHasBeenSet(false),
-    m_clientIdHasBeenSet(false)
+ApplicationAssociationSummary::ApplicationAssociationSummary(JsonView jsonValue)
+  : ApplicationAssociationSummary()
 {
   *this = jsonValue;
 }

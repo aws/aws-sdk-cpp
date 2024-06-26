@@ -26,11 +26,8 @@ TagFilter::TagFilter() :
 {
 }
 
-TagFilter::TagFilter(JsonView jsonValue) : 
-    m_comparison(TagComparison::NOT_SET),
-    m_comparisonHasBeenSet(false),
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false)
+TagFilter::TagFilter(JsonView jsonValue)
+  : TagFilter()
 {
   *this = jsonValue;
 }

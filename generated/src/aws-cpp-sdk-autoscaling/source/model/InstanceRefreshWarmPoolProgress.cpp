@@ -28,11 +28,8 @@ InstanceRefreshWarmPoolProgress::InstanceRefreshWarmPoolProgress() :
 {
 }
 
-InstanceRefreshWarmPoolProgress::InstanceRefreshWarmPoolProgress(const XmlNode& xmlNode) : 
-    m_percentageComplete(0),
-    m_percentageCompleteHasBeenSet(false),
-    m_instancesToUpdate(0),
-    m_instancesToUpdateHasBeenSet(false)
+InstanceRefreshWarmPoolProgress::InstanceRefreshWarmPoolProgress(const XmlNode& xmlNode)
+  : InstanceRefreshWarmPoolProgress()
 {
   *this = xmlNode;
 }

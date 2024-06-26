@@ -27,12 +27,8 @@ OpenHours::OpenHours() :
 {
 }
 
-OpenHours::OpenHours(JsonView jsonValue) : 
-    m_eMAILHasBeenSet(false),
-    m_sMSHasBeenSet(false),
-    m_pUSHHasBeenSet(false),
-    m_vOICEHasBeenSet(false),
-    m_cUSTOMHasBeenSet(false)
+OpenHours::OpenHours(JsonView jsonValue)
+  : OpenHours()
 {
   *this = jsonValue;
 }

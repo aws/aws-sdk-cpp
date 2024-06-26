@@ -23,8 +23,8 @@ StreamProcessingStartSelector::StreamProcessingStartSelector() :
 {
 }
 
-StreamProcessingStartSelector::StreamProcessingStartSelector(JsonView jsonValue) : 
-    m_kVSStreamStartSelectorHasBeenSet(false)
+StreamProcessingStartSelector::StreamProcessingStartSelector(JsonView jsonValue)
+  : StreamProcessingStartSelector()
 {
   *this = jsonValue;
 }

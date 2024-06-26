@@ -29,14 +29,8 @@ Prompt::Prompt() :
 {
 }
 
-Prompt::Prompt(JsonView jsonValue) : 
-    m_promptARNHasBeenSet(false),
-    m_promptIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_lastModifiedRegionHasBeenSet(false)
+Prompt::Prompt(JsonView jsonValue)
+  : Prompt()
 {
   *this = jsonValue;
 }

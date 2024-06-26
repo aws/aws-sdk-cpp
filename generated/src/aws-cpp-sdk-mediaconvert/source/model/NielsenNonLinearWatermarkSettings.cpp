@@ -37,22 +37,8 @@ NielsenNonLinearWatermarkSettings::NielsenNonLinearWatermarkSettings() :
 {
 }
 
-NielsenNonLinearWatermarkSettings::NielsenNonLinearWatermarkSettings(JsonView jsonValue) : 
-    m_activeWatermarkProcess(NielsenActiveWatermarkProcessType::NOT_SET),
-    m_activeWatermarkProcessHasBeenSet(false),
-    m_adiFilenameHasBeenSet(false),
-    m_assetIdHasBeenSet(false),
-    m_assetNameHasBeenSet(false),
-    m_cbetSourceIdHasBeenSet(false),
-    m_episodeIdHasBeenSet(false),
-    m_metadataDestinationHasBeenSet(false),
-    m_sourceId(0),
-    m_sourceIdHasBeenSet(false),
-    m_sourceWatermarkStatus(NielsenSourceWatermarkStatusType::NOT_SET),
-    m_sourceWatermarkStatusHasBeenSet(false),
-    m_ticServerUrlHasBeenSet(false),
-    m_uniqueTicPerAudioTrack(NielsenUniqueTicPerAudioTrackType::NOT_SET),
-    m_uniqueTicPerAudioTrackHasBeenSet(false)
+NielsenNonLinearWatermarkSettings::NielsenNonLinearWatermarkSettings(JsonView jsonValue)
+  : NielsenNonLinearWatermarkSettings()
 {
   *this = jsonValue;
 }

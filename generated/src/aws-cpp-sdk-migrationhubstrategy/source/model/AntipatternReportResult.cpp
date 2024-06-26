@@ -27,12 +27,8 @@ AntipatternReportResult::AntipatternReportResult() :
 {
 }
 
-AntipatternReportResult::AntipatternReportResult(JsonView jsonValue) : 
-    m_analyzerNameHasBeenSet(false),
-    m_antiPatternReportS3ObjectHasBeenSet(false),
-    m_antipatternReportStatus(AntipatternReportStatus::NOT_SET),
-    m_antipatternReportStatusHasBeenSet(false),
-    m_antipatternReportStatusMessageHasBeenSet(false)
+AntipatternReportResult::AntipatternReportResult(JsonView jsonValue)
+  : AntipatternReportResult()
 {
   *this = jsonValue;
 }

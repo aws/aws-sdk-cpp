@@ -30,13 +30,8 @@ ApplicationMetrics::ApplicationMetrics() :
 {
 }
 
-ApplicationMetrics::ApplicationMetrics(const XmlNode& xmlNode) : 
-    m_duration(0),
-    m_durationHasBeenSet(false),
-    m_requestCount(0),
-    m_requestCountHasBeenSet(false),
-    m_statusCodesHasBeenSet(false),
-    m_latencyHasBeenSet(false)
+ApplicationMetrics::ApplicationMetrics(const XmlNode& xmlNode)
+  : ApplicationMetrics()
 {
   *this = xmlNode;
 }

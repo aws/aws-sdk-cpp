@@ -26,11 +26,8 @@ RepositorySyncAttempt::RepositorySyncAttempt() :
 {
 }
 
-RepositorySyncAttempt::RepositorySyncAttempt(JsonView jsonValue) : 
-    m_startedAtHasBeenSet(false),
-    m_status(RepositorySyncStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_eventsHasBeenSet(false)
+RepositorySyncAttempt::RepositorySyncAttempt(JsonView jsonValue)
+  : RepositorySyncAttempt()
 {
   *this = jsonValue;
 }

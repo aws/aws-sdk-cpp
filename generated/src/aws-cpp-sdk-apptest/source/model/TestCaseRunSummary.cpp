@@ -31,16 +31,8 @@ TestCaseRunSummary::TestCaseRunSummary() :
 {
 }
 
-TestCaseRunSummary::TestCaseRunSummary(JsonView jsonValue) : 
-    m_testCaseIdHasBeenSet(false),
-    m_testCaseVersion(0),
-    m_testCaseVersionHasBeenSet(false),
-    m_testRunIdHasBeenSet(false),
-    m_status(TestCaseRunStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusReasonHasBeenSet(false),
-    m_runStartTimeHasBeenSet(false),
-    m_runEndTimeHasBeenSet(false)
+TestCaseRunSummary::TestCaseRunSummary(JsonView jsonValue)
+  : TestCaseRunSummary()
 {
   *this = jsonValue;
 }

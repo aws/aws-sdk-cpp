@@ -28,13 +28,8 @@ SupportedAssociation::SupportedAssociation() :
 {
 }
 
-SupportedAssociation::SupportedAssociation(JsonView jsonValue) : 
-    m_resourceTypeHasBeenSet(false),
-    m_isoCountryCodeHasBeenSet(false),
-    m_associationBehavior(RegistrationAssociationBehavior::NOT_SET),
-    m_associationBehaviorHasBeenSet(false),
-    m_disassociationBehavior(RegistrationDisassociationBehavior::NOT_SET),
-    m_disassociationBehaviorHasBeenSet(false)
+SupportedAssociation::SupportedAssociation(JsonView jsonValue)
+  : SupportedAssociation()
 {
   *this = jsonValue;
 }

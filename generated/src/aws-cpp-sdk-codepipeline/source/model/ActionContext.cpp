@@ -24,9 +24,8 @@ ActionContext::ActionContext() :
 {
 }
 
-ActionContext::ActionContext(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_actionExecutionIdHasBeenSet(false)
+ActionContext::ActionContext(JsonView jsonValue)
+  : ActionContext()
 {
   *this = jsonValue;
 }

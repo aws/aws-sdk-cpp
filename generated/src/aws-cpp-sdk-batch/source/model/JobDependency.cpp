@@ -25,10 +25,8 @@ JobDependency::JobDependency() :
 {
 }
 
-JobDependency::JobDependency(JsonView jsonValue) : 
-    m_jobIdHasBeenSet(false),
-    m_type(ArrayJobDependency::NOT_SET),
-    m_typeHasBeenSet(false)
+JobDependency::JobDependency(JsonView jsonValue)
+  : JobDependency()
 {
   *this = jsonValue;
 }

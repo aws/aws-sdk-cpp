@@ -26,11 +26,8 @@ FunctionRunAsConfig::FunctionRunAsConfig() :
 {
 }
 
-FunctionRunAsConfig::FunctionRunAsConfig(JsonView jsonValue) : 
-    m_gid(0),
-    m_gidHasBeenSet(false),
-    m_uid(0),
-    m_uidHasBeenSet(false)
+FunctionRunAsConfig::FunctionRunAsConfig(JsonView jsonValue)
+  : FunctionRunAsConfig()
 {
   *this = jsonValue;
 }

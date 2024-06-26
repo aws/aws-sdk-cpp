@@ -32,17 +32,8 @@ DetectMitigationActionExecution::DetectMitigationActionExecution() :
 {
 }
 
-DetectMitigationActionExecution::DetectMitigationActionExecution(JsonView jsonValue) : 
-    m_taskIdHasBeenSet(false),
-    m_violationIdHasBeenSet(false),
-    m_actionNameHasBeenSet(false),
-    m_thingNameHasBeenSet(false),
-    m_executionStartDateHasBeenSet(false),
-    m_executionEndDateHasBeenSet(false),
-    m_status(DetectMitigationActionExecutionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_errorCodeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+DetectMitigationActionExecution::DetectMitigationActionExecution(JsonView jsonValue)
+  : DetectMitigationActionExecution()
 {
   *this = jsonValue;
 }

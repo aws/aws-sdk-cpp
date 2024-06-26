@@ -48,31 +48,8 @@ CompositeAlarm::CompositeAlarm() :
 {
 }
 
-CompositeAlarm::CompositeAlarm(const XmlNode& xmlNode) : 
-    m_actionsEnabled(false),
-    m_actionsEnabledHasBeenSet(false),
-    m_alarmActionsHasBeenSet(false),
-    m_alarmArnHasBeenSet(false),
-    m_alarmConfigurationUpdatedTimestampHasBeenSet(false),
-    m_alarmDescriptionHasBeenSet(false),
-    m_alarmNameHasBeenSet(false),
-    m_alarmRuleHasBeenSet(false),
-    m_insufficientDataActionsHasBeenSet(false),
-    m_oKActionsHasBeenSet(false),
-    m_stateReasonHasBeenSet(false),
-    m_stateReasonDataHasBeenSet(false),
-    m_stateUpdatedTimestampHasBeenSet(false),
-    m_stateValue(StateValue::NOT_SET),
-    m_stateValueHasBeenSet(false),
-    m_stateTransitionedTimestampHasBeenSet(false),
-    m_actionsSuppressedBy(ActionsSuppressedBy::NOT_SET),
-    m_actionsSuppressedByHasBeenSet(false),
-    m_actionsSuppressedReasonHasBeenSet(false),
-    m_actionsSuppressorHasBeenSet(false),
-    m_actionsSuppressorWaitPeriod(0),
-    m_actionsSuppressorWaitPeriodHasBeenSet(false),
-    m_actionsSuppressorExtensionPeriod(0),
-    m_actionsSuppressorExtensionPeriodHasBeenSet(false)
+CompositeAlarm::CompositeAlarm(const XmlNode& xmlNode)
+  : CompositeAlarm()
 {
   *this = xmlNode;
 }

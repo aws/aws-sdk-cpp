@@ -24,9 +24,8 @@ InvocationResultMember::InvocationResultMember() :
 {
 }
 
-InvocationResultMember::InvocationResultMember(JsonView jsonValue) : 
-    m_apiResultHasBeenSet(false),
-    m_functionResultHasBeenSet(false)
+InvocationResultMember::InvocationResultMember(JsonView jsonValue)
+  : InvocationResultMember()
 {
   *this = jsonValue;
 }

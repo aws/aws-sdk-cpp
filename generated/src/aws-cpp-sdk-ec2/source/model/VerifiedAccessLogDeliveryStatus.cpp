@@ -27,10 +27,8 @@ VerifiedAccessLogDeliveryStatus::VerifiedAccessLogDeliveryStatus() :
 {
 }
 
-VerifiedAccessLogDeliveryStatus::VerifiedAccessLogDeliveryStatus(const XmlNode& xmlNode) : 
-    m_code(VerifiedAccessLogDeliveryStatusCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+VerifiedAccessLogDeliveryStatus::VerifiedAccessLogDeliveryStatus(const XmlNode& xmlNode)
+  : VerifiedAccessLogDeliveryStatus()
 {
   *this = xmlNode;
 }

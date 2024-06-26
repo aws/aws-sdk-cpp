@@ -27,12 +27,8 @@ BotRecommendationSummary::BotRecommendationSummary() :
 {
 }
 
-BotRecommendationSummary::BotRecommendationSummary(JsonView jsonValue) : 
-    m_botRecommendationStatus(BotRecommendationStatus::NOT_SET),
-    m_botRecommendationStatusHasBeenSet(false),
-    m_botRecommendationIdHasBeenSet(false),
-    m_creationDateTimeHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false)
+BotRecommendationSummary::BotRecommendationSummary(JsonView jsonValue)
+  : BotRecommendationSummary()
 {
   *this = jsonValue;
 }

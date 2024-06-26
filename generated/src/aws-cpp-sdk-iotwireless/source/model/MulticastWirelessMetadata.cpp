@@ -23,8 +23,8 @@ MulticastWirelessMetadata::MulticastWirelessMetadata() :
 {
 }
 
-MulticastWirelessMetadata::MulticastWirelessMetadata(JsonView jsonValue) : 
-    m_loRaWANHasBeenSet(false)
+MulticastWirelessMetadata::MulticastWirelessMetadata(JsonView jsonValue)
+  : MulticastWirelessMetadata()
 {
   *this = jsonValue;
 }

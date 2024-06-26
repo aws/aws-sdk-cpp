@@ -58,43 +58,8 @@ DirectoryDescription::DirectoryDescription() :
 {
 }
 
-DirectoryDescription::DirectoryDescription(JsonView jsonValue) : 
-    m_directoryIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_shortNameHasBeenSet(false),
-    m_size(DirectorySize::NOT_SET),
-    m_sizeHasBeenSet(false),
-    m_edition(DirectoryEdition::NOT_SET),
-    m_editionHasBeenSet(false),
-    m_aliasHasBeenSet(false),
-    m_accessUrlHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_dnsIpAddrsHasBeenSet(false),
-    m_stage(DirectoryStage::NOT_SET),
-    m_stageHasBeenSet(false),
-    m_shareStatus(ShareStatus::NOT_SET),
-    m_shareStatusHasBeenSet(false),
-    m_shareMethod(ShareMethod::NOT_SET),
-    m_shareMethodHasBeenSet(false),
-    m_shareNotesHasBeenSet(false),
-    m_launchTimeHasBeenSet(false),
-    m_stageLastUpdatedDateTimeHasBeenSet(false),
-    m_type(DirectoryType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_vpcSettingsHasBeenSet(false),
-    m_connectSettingsHasBeenSet(false),
-    m_radiusSettingsHasBeenSet(false),
-    m_radiusStatus(RadiusStatus::NOT_SET),
-    m_radiusStatusHasBeenSet(false),
-    m_stageReasonHasBeenSet(false),
-    m_ssoEnabled(false),
-    m_ssoEnabledHasBeenSet(false),
-    m_desiredNumberOfDomainControllers(0),
-    m_desiredNumberOfDomainControllersHasBeenSet(false),
-    m_ownerDirectoryDescriptionHasBeenSet(false),
-    m_regionsInfoHasBeenSet(false),
-    m_osVersion(OSVersion::NOT_SET),
-    m_osVersionHasBeenSet(false)
+DirectoryDescription::DirectoryDescription(JsonView jsonValue)
+  : DirectoryDescription()
 {
   *this = jsonValue;
 }

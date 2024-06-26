@@ -26,11 +26,8 @@ SourceDatabaseMetadata::SourceDatabaseMetadata() :
 {
 }
 
-SourceDatabaseMetadata::SourceDatabaseMetadata(JsonView jsonValue) : 
-    m_type(SourceDatabase::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_captureTool(CaptureTool::NOT_SET),
-    m_captureToolHasBeenSet(false)
+SourceDatabaseMetadata::SourceDatabaseMetadata(JsonView jsonValue)
+  : SourceDatabaseMetadata()
 {
   *this = jsonValue;
 }

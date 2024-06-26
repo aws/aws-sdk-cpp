@@ -23,8 +23,8 @@ RegisterModelStepMetadata::RegisterModelStepMetadata() :
 {
 }
 
-RegisterModelStepMetadata::RegisterModelStepMetadata(JsonView jsonValue) : 
-    m_arnHasBeenSet(false)
+RegisterModelStepMetadata::RegisterModelStepMetadata(JsonView jsonValue)
+  : RegisterModelStepMetadata()
 {
   *this = jsonValue;
 }

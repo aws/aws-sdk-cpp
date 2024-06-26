@@ -27,12 +27,8 @@ AwsWafv2VisibilityConfigDetails::AwsWafv2VisibilityConfigDetails() :
 {
 }
 
-AwsWafv2VisibilityConfigDetails::AwsWafv2VisibilityConfigDetails(JsonView jsonValue) : 
-    m_cloudWatchMetricsEnabled(false),
-    m_cloudWatchMetricsEnabledHasBeenSet(false),
-    m_metricNameHasBeenSet(false),
-    m_sampledRequestsEnabled(false),
-    m_sampledRequestsEnabledHasBeenSet(false)
+AwsWafv2VisibilityConfigDetails::AwsWafv2VisibilityConfigDetails(JsonView jsonValue)
+  : AwsWafv2VisibilityConfigDetails()
 {
   *this = jsonValue;
 }

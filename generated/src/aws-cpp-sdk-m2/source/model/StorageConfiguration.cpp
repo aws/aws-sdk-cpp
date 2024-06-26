@@ -24,9 +24,8 @@ StorageConfiguration::StorageConfiguration() :
 {
 }
 
-StorageConfiguration::StorageConfiguration(JsonView jsonValue) : 
-    m_efsHasBeenSet(false),
-    m_fsxHasBeenSet(false)
+StorageConfiguration::StorageConfiguration(JsonView jsonValue)
+  : StorageConfiguration()
 {
   *this = jsonValue;
 }

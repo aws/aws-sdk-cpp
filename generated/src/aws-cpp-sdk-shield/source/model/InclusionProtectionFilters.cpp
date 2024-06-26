@@ -25,10 +25,8 @@ InclusionProtectionFilters::InclusionProtectionFilters() :
 {
 }
 
-InclusionProtectionFilters::InclusionProtectionFilters(JsonView jsonValue) : 
-    m_resourceArnsHasBeenSet(false),
-    m_protectionNamesHasBeenSet(false),
-    m_resourceTypesHasBeenSet(false)
+InclusionProtectionFilters::InclusionProtectionFilters(JsonView jsonValue)
+  : InclusionProtectionFilters()
 {
   *this = jsonValue;
 }

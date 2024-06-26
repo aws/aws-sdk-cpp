@@ -30,15 +30,8 @@ TestGridSession::TestGridSession() :
 {
 }
 
-TestGridSession::TestGridSession(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_status(TestGridSessionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_createdHasBeenSet(false),
-    m_endedHasBeenSet(false),
-    m_billingMinutes(0.0),
-    m_billingMinutesHasBeenSet(false),
-    m_seleniumPropertiesHasBeenSet(false)
+TestGridSession::TestGridSession(JsonView jsonValue)
+  : TestGridSession()
 {
   *this = jsonValue;
 }

@@ -27,12 +27,8 @@ FlowTemplateSummary::FlowTemplateSummary() :
 {
 }
 
-FlowTemplateSummary::FlowTemplateSummary(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_revisionNumber(0),
-    m_revisionNumberHasBeenSet(false),
-    m_createdAtHasBeenSet(false)
+FlowTemplateSummary::FlowTemplateSummary(JsonView jsonValue)
+  : FlowTemplateSummary()
 {
   *this = jsonValue;
 }

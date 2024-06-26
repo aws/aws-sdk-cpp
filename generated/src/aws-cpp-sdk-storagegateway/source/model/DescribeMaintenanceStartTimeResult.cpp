@@ -25,11 +25,8 @@ DescribeMaintenanceStartTimeResult::DescribeMaintenanceStartTimeResult() :
 {
 }
 
-DescribeMaintenanceStartTimeResult::DescribeMaintenanceStartTimeResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_hourOfDay(0),
-    m_minuteOfHour(0),
-    m_dayOfWeek(0),
-    m_dayOfMonth(0)
+DescribeMaintenanceStartTimeResult::DescribeMaintenanceStartTimeResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeMaintenanceStartTimeResult()
 {
   *this = result;
 }

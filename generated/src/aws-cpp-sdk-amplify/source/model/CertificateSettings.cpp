@@ -25,10 +25,8 @@ CertificateSettings::CertificateSettings() :
 {
 }
 
-CertificateSettings::CertificateSettings(JsonView jsonValue) : 
-    m_type(CertificateType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_customCertificateArnHasBeenSet(false)
+CertificateSettings::CertificateSettings(JsonView jsonValue)
+  : CertificateSettings()
 {
   *this = jsonValue;
 }

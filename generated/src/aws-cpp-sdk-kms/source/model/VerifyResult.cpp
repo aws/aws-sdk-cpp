@@ -23,9 +23,8 @@ VerifyResult::VerifyResult() :
 {
 }
 
-VerifyResult::VerifyResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_signatureValid(false),
-    m_signingAlgorithm(SigningAlgorithmSpec::NOT_SET)
+VerifyResult::VerifyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : VerifyResult()
 {
   *this = result;
 }

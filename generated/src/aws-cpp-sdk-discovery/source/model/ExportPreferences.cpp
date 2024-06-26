@@ -23,8 +23,8 @@ ExportPreferences::ExportPreferences() :
 {
 }
 
-ExportPreferences::ExportPreferences(JsonView jsonValue) : 
-    m_ec2RecommendationsPreferencesHasBeenSet(false)
+ExportPreferences::ExportPreferences(JsonView jsonValue)
+  : ExportPreferences()
 {
   *this = jsonValue;
 }

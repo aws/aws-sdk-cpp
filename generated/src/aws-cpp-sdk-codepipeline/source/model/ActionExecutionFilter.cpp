@@ -24,9 +24,8 @@ ActionExecutionFilter::ActionExecutionFilter() :
 {
 }
 
-ActionExecutionFilter::ActionExecutionFilter(JsonView jsonValue) : 
-    m_pipelineExecutionIdHasBeenSet(false),
-    m_latestInPipelineExecutionHasBeenSet(false)
+ActionExecutionFilter::ActionExecutionFilter(JsonView jsonValue)
+  : ActionExecutionFilter()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ CustomerQualityMetrics::CustomerQualityMetrics() :
 {
 }
 
-CustomerQualityMetrics::CustomerQualityMetrics(JsonView jsonValue) : 
-    m_audioHasBeenSet(false)
+CustomerQualityMetrics::CustomerQualityMetrics(JsonView jsonValue)
+  : CustomerQualityMetrics()
 {
   *this = jsonValue;
 }

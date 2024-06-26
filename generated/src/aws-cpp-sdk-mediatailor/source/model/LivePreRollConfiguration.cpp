@@ -25,10 +25,8 @@ LivePreRollConfiguration::LivePreRollConfiguration() :
 {
 }
 
-LivePreRollConfiguration::LivePreRollConfiguration(JsonView jsonValue) : 
-    m_adDecisionServerUrlHasBeenSet(false),
-    m_maxDurationSeconds(0),
-    m_maxDurationSecondsHasBeenSet(false)
+LivePreRollConfiguration::LivePreRollConfiguration(JsonView jsonValue)
+  : LivePreRollConfiguration()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ SAPODataParallelismConfig::SAPODataParallelismConfig() :
 {
 }
 
-SAPODataParallelismConfig::SAPODataParallelismConfig(JsonView jsonValue) : 
-    m_maxParallelism(0),
-    m_maxParallelismHasBeenSet(false)
+SAPODataParallelismConfig::SAPODataParallelismConfig(JsonView jsonValue)
+  : SAPODataParallelismConfig()
 {
   *this = jsonValue;
 }

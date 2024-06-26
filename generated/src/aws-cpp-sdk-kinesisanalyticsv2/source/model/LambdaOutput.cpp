@@ -23,8 +23,8 @@ LambdaOutput::LambdaOutput() :
 {
 }
 
-LambdaOutput::LambdaOutput(JsonView jsonValue) : 
-    m_resourceARNHasBeenSet(false)
+LambdaOutput::LambdaOutput(JsonView jsonValue)
+  : LambdaOutput()
 {
   *this = jsonValue;
 }

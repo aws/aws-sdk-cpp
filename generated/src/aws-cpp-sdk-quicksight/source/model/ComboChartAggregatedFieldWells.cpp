@@ -26,11 +26,8 @@ ComboChartAggregatedFieldWells::ComboChartAggregatedFieldWells() :
 {
 }
 
-ComboChartAggregatedFieldWells::ComboChartAggregatedFieldWells(JsonView jsonValue) : 
-    m_categoryHasBeenSet(false),
-    m_barValuesHasBeenSet(false),
-    m_colorsHasBeenSet(false),
-    m_lineValuesHasBeenSet(false)
+ComboChartAggregatedFieldWells::ComboChartAggregatedFieldWells(JsonView jsonValue)
+  : ComboChartAggregatedFieldWells()
 {
   *this = jsonValue;
 }

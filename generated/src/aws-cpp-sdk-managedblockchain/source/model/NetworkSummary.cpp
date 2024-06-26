@@ -32,17 +32,8 @@ NetworkSummary::NetworkSummary() :
 {
 }
 
-NetworkSummary::NetworkSummary(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_framework(Framework::NOT_SET),
-    m_frameworkHasBeenSet(false),
-    m_frameworkVersionHasBeenSet(false),
-    m_status(NetworkStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_arnHasBeenSet(false)
+NetworkSummary::NetworkSummary(JsonView jsonValue)
+  : NetworkSummary()
 {
   *this = jsonValue;
 }

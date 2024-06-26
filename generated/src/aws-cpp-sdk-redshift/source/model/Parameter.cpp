@@ -35,18 +35,8 @@ Parameter::Parameter() :
 {
 }
 
-Parameter::Parameter(const XmlNode& xmlNode) : 
-    m_parameterNameHasBeenSet(false),
-    m_parameterValueHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_sourceHasBeenSet(false),
-    m_dataTypeHasBeenSet(false),
-    m_allowedValuesHasBeenSet(false),
-    m_applyType(ParameterApplyType::NOT_SET),
-    m_applyTypeHasBeenSet(false),
-    m_isModifiable(false),
-    m_isModifiableHasBeenSet(false),
-    m_minimumEngineVersionHasBeenSet(false)
+Parameter::Parameter(const XmlNode& xmlNode)
+  : Parameter()
 {
   *this = xmlNode;
 }

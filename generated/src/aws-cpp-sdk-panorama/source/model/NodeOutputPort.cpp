@@ -26,11 +26,8 @@ NodeOutputPort::NodeOutputPort() :
 {
 }
 
-NodeOutputPort::NodeOutputPort(JsonView jsonValue) : 
-    m_descriptionHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_type(PortType::NOT_SET),
-    m_typeHasBeenSet(false)
+NodeOutputPort::NodeOutputPort(JsonView jsonValue)
+  : NodeOutputPort()
 {
   *this = jsonValue;
 }

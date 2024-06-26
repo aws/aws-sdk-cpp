@@ -27,10 +27,8 @@ ClientCertificateRevocationListStatus::ClientCertificateRevocationListStatus() :
 {
 }
 
-ClientCertificateRevocationListStatus::ClientCertificateRevocationListStatus(const XmlNode& xmlNode) : 
-    m_code(ClientCertificateRevocationListStatusCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+ClientCertificateRevocationListStatus::ClientCertificateRevocationListStatus(const XmlNode& xmlNode)
+  : ClientCertificateRevocationListStatus()
 {
   *this = xmlNode;
 }

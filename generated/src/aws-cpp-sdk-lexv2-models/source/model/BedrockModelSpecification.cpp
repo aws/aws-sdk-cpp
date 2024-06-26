@@ -23,8 +23,8 @@ BedrockModelSpecification::BedrockModelSpecification() :
 {
 }
 
-BedrockModelSpecification::BedrockModelSpecification(JsonView jsonValue) : 
-    m_modelArnHasBeenSet(false)
+BedrockModelSpecification::BedrockModelSpecification(JsonView jsonValue)
+  : BedrockModelSpecification()
 {
   *this = jsonValue;
 }

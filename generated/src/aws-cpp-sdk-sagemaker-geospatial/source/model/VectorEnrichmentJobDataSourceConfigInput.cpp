@@ -23,8 +23,8 @@ VectorEnrichmentJobDataSourceConfigInput::VectorEnrichmentJobDataSourceConfigInp
 {
 }
 
-VectorEnrichmentJobDataSourceConfigInput::VectorEnrichmentJobDataSourceConfigInput(JsonView jsonValue) : 
-    m_s3DataHasBeenSet(false)
+VectorEnrichmentJobDataSourceConfigInput::VectorEnrichmentJobDataSourceConfigInput(JsonView jsonValue)
+  : VectorEnrichmentJobDataSourceConfigInput()
 {
   *this = jsonValue;
 }

@@ -31,16 +31,8 @@ PostDialogCodeHookInvocationSpecification::PostDialogCodeHookInvocationSpecifica
 {
 }
 
-PostDialogCodeHookInvocationSpecification::PostDialogCodeHookInvocationSpecification(JsonView jsonValue) : 
-    m_successResponseHasBeenSet(false),
-    m_successNextStepHasBeenSet(false),
-    m_successConditionalHasBeenSet(false),
-    m_failureResponseHasBeenSet(false),
-    m_failureNextStepHasBeenSet(false),
-    m_failureConditionalHasBeenSet(false),
-    m_timeoutResponseHasBeenSet(false),
-    m_timeoutNextStepHasBeenSet(false),
-    m_timeoutConditionalHasBeenSet(false)
+PostDialogCodeHookInvocationSpecification::PostDialogCodeHookInvocationSpecification(JsonView jsonValue)
+  : PostDialogCodeHookInvocationSpecification()
 {
   *this = jsonValue;
 }

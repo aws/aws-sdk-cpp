@@ -25,11 +25,8 @@ ModifyActivityStreamResult::ModifyActivityStreamResult() :
 {
 }
 
-ModifyActivityStreamResult::ModifyActivityStreamResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_status(ActivityStreamStatus::NOT_SET),
-    m_mode(ActivityStreamMode::NOT_SET),
-    m_engineNativeAuditFieldsIncluded(false),
-    m_policyStatus(ActivityStreamPolicyStatus::NOT_SET)
+ModifyActivityStreamResult::ModifyActivityStreamResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : ModifyActivityStreamResult()
 {
   *this = result;
 }

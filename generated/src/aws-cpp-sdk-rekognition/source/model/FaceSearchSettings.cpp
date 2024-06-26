@@ -25,10 +25,8 @@ FaceSearchSettings::FaceSearchSettings() :
 {
 }
 
-FaceSearchSettings::FaceSearchSettings(JsonView jsonValue) : 
-    m_collectionIdHasBeenSet(false),
-    m_faceMatchThreshold(0.0),
-    m_faceMatchThresholdHasBeenSet(false)
+FaceSearchSettings::FaceSearchSettings(JsonView jsonValue)
+  : FaceSearchSettings()
 {
   *this = jsonValue;
 }

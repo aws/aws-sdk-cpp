@@ -38,23 +38,8 @@ Experiment::Experiment() :
 {
 }
 
-Experiment::Experiment(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_experimentTemplateIdHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_targetsHasBeenSet(false),
-    m_actionsHasBeenSet(false),
-    m_stopConditionsHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_logConfigurationHasBeenSet(false),
-    m_experimentOptionsHasBeenSet(false),
-    m_targetAccountConfigurationsCount(0),
-    m_targetAccountConfigurationsCountHasBeenSet(false)
+Experiment::Experiment(JsonView jsonValue)
+  : Experiment()
 {
   *this = jsonValue;
 }

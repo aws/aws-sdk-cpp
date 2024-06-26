@@ -23,9 +23,8 @@ GetEffectiveRecommendationPreferencesResult::GetEffectiveRecommendationPreferenc
 {
 }
 
-GetEffectiveRecommendationPreferencesResult::GetEffectiveRecommendationPreferencesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_enhancedInfrastructureMetrics(EnhancedInfrastructureMetrics::NOT_SET),
-    m_lookBackPeriod(LookBackPeriodPreference::NOT_SET)
+GetEffectiveRecommendationPreferencesResult::GetEffectiveRecommendationPreferencesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetEffectiveRecommendationPreferencesResult()
 {
   *this = result;
 }

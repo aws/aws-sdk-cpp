@@ -26,12 +26,8 @@ DescribeNotebookInstanceResult::DescribeNotebookInstanceResult() :
 {
 }
 
-DescribeNotebookInstanceResult::DescribeNotebookInstanceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_notebookInstanceStatus(NotebookInstanceStatus::NOT_SET),
-    m_instanceType(InstanceType::NOT_SET),
-    m_directInternetAccess(DirectInternetAccess::NOT_SET),
-    m_volumeSizeInGB(0),
-    m_rootAccess(RootAccess::NOT_SET)
+DescribeNotebookInstanceResult::DescribeNotebookInstanceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeNotebookInstanceResult()
 {
   *this = result;
 }

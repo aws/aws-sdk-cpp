@@ -33,18 +33,8 @@ AppMonitor::AppMonitor() :
 {
 }
 
-AppMonitor::AppMonitor(JsonView jsonValue) : 
-    m_appMonitorConfigurationHasBeenSet(false),
-    m_createdHasBeenSet(false),
-    m_customEventsHasBeenSet(false),
-    m_dataStorageHasBeenSet(false),
-    m_domainHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_lastModifiedHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_state(StateEnum::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+AppMonitor::AppMonitor(JsonView jsonValue)
+  : AppMonitor()
 {
   *this = jsonValue;
 }

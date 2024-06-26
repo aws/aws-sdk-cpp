@@ -30,15 +30,8 @@ RecurrenceSettings::RecurrenceSettings() :
 {
 }
 
-RecurrenceSettings::RecurrenceSettings(JsonView jsonValue) : 
-    m_monthlySettingsHasBeenSet(false),
-    m_weeklySettingsHasBeenSet(false),
-    m_dailySettingsHasBeenSet(false),
-    m_numberOfOnCalls(0),
-    m_numberOfOnCallsHasBeenSet(false),
-    m_shiftCoveragesHasBeenSet(false),
-    m_recurrenceMultiplier(0),
-    m_recurrenceMultiplierHasBeenSet(false)
+RecurrenceSettings::RecurrenceSettings(JsonView jsonValue)
+  : RecurrenceSettings()
 {
   *this = jsonValue;
 }

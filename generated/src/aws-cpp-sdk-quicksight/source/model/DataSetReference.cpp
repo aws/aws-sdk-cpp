@@ -24,9 +24,8 @@ DataSetReference::DataSetReference() :
 {
 }
 
-DataSetReference::DataSetReference(JsonView jsonValue) : 
-    m_dataSetPlaceholderHasBeenSet(false),
-    m_dataSetArnHasBeenSet(false)
+DataSetReference::DataSetReference(JsonView jsonValue)
+  : DataSetReference()
 {
   *this = jsonValue;
 }

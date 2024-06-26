@@ -30,15 +30,8 @@ SamplingStatisticSummary::SamplingStatisticSummary() :
 {
 }
 
-SamplingStatisticSummary::SamplingStatisticSummary(JsonView jsonValue) : 
-    m_ruleNameHasBeenSet(false),
-    m_timestampHasBeenSet(false),
-    m_requestCount(0),
-    m_requestCountHasBeenSet(false),
-    m_borrowCount(0),
-    m_borrowCountHasBeenSet(false),
-    m_sampledCount(0),
-    m_sampledCountHasBeenSet(false)
+SamplingStatisticSummary::SamplingStatisticSummary(JsonView jsonValue)
+  : SamplingStatisticSummary()
 {
   *this = jsonValue;
 }

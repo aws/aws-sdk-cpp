@@ -23,8 +23,8 @@ UnusedIamUserPasswordDetails::UnusedIamUserPasswordDetails() :
 {
 }
 
-UnusedIamUserPasswordDetails::UnusedIamUserPasswordDetails(JsonView jsonValue) : 
-    m_lastAccessedHasBeenSet(false)
+UnusedIamUserPasswordDetails::UnusedIamUserPasswordDetails(JsonView jsonValue)
+  : UnusedIamUserPasswordDetails()
 {
   *this = jsonValue;
 }

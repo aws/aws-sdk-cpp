@@ -29,14 +29,8 @@ ScheduledQueryRunSummary::ScheduledQueryRunSummary() :
 {
 }
 
-ScheduledQueryRunSummary::ScheduledQueryRunSummary(JsonView jsonValue) : 
-    m_invocationTimeHasBeenSet(false),
-    m_triggerTimeHasBeenSet(false),
-    m_runStatus(ScheduledQueryRunStatus::NOT_SET),
-    m_runStatusHasBeenSet(false),
-    m_executionStatsHasBeenSet(false),
-    m_errorReportLocationHasBeenSet(false),
-    m_failureReasonHasBeenSet(false)
+ScheduledQueryRunSummary::ScheduledQueryRunSummary(JsonView jsonValue)
+  : ScheduledQueryRunSummary()
 {
   *this = jsonValue;
 }

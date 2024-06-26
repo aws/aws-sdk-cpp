@@ -30,15 +30,8 @@ ModelManifestSummary::ModelManifestSummary() :
 {
 }
 
-ModelManifestSummary::ModelManifestSummary(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_signalCatalogArnHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_status(ManifestStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastModificationTimeHasBeenSet(false)
+ModelManifestSummary::ModelManifestSummary(JsonView jsonValue)
+  : ModelManifestSummary()
 {
   *this = jsonValue;
 }

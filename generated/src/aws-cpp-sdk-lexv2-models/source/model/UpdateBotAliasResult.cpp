@@ -22,8 +22,8 @@ UpdateBotAliasResult::UpdateBotAliasResult() :
 {
 }
 
-UpdateBotAliasResult::UpdateBotAliasResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_botAliasStatus(BotAliasStatus::NOT_SET)
+UpdateBotAliasResult::UpdateBotAliasResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateBotAliasResult()
 {
   *this = result;
 }

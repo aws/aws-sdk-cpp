@@ -29,14 +29,8 @@ PickupDetails::PickupDetails() :
 {
 }
 
-PickupDetails::PickupDetails(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_phoneNumberHasBeenSet(false),
-    m_emailHasBeenSet(false),
-    m_identificationNumberHasBeenSet(false),
-    m_identificationExpirationDateHasBeenSet(false),
-    m_identificationIssuingOrgHasBeenSet(false),
-    m_devicePickupIdHasBeenSet(false)
+PickupDetails::PickupDetails(JsonView jsonValue)
+  : PickupDetails()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ EcsEphemeralStorage::EcsEphemeralStorage() :
 {
 }
 
-EcsEphemeralStorage::EcsEphemeralStorage(JsonView jsonValue) : 
-    m_sizeInGiB(0),
-    m_sizeInGiBHasBeenSet(false)
+EcsEphemeralStorage::EcsEphemeralStorage(JsonView jsonValue)
+  : EcsEphemeralStorage()
 {
   *this = jsonValue;
 }

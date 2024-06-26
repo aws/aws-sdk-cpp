@@ -24,9 +24,8 @@ EgressFilter::EgressFilter() :
 {
 }
 
-EgressFilter::EgressFilter(JsonView jsonValue) : 
-    m_type(EgressFilterType::NOT_SET),
-    m_typeHasBeenSet(false)
+EgressFilter::EgressFilter(JsonView jsonValue)
+  : EgressFilter()
 {
   *this = jsonValue;
 }

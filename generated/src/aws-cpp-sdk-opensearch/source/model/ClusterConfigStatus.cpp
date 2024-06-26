@@ -24,9 +24,8 @@ ClusterConfigStatus::ClusterConfigStatus() :
 {
 }
 
-ClusterConfigStatus::ClusterConfigStatus(JsonView jsonValue) : 
-    m_optionsHasBeenSet(false),
-    m_statusHasBeenSet(false)
+ClusterConfigStatus::ClusterConfigStatus(JsonView jsonValue)
+  : ClusterConfigStatus()
 {
   *this = jsonValue;
 }

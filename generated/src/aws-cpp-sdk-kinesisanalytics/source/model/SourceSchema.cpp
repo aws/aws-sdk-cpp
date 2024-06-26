@@ -25,10 +25,8 @@ SourceSchema::SourceSchema() :
 {
 }
 
-SourceSchema::SourceSchema(JsonView jsonValue) : 
-    m_recordFormatHasBeenSet(false),
-    m_recordEncodingHasBeenSet(false),
-    m_recordColumnsHasBeenSet(false)
+SourceSchema::SourceSchema(JsonView jsonValue)
+  : SourceSchema()
 {
   *this = jsonValue;
 }

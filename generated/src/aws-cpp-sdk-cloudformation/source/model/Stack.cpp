@@ -56,39 +56,8 @@ Stack::Stack() :
 {
 }
 
-Stack::Stack(const XmlNode& xmlNode) : 
-    m_stackIdHasBeenSet(false),
-    m_stackNameHasBeenSet(false),
-    m_changeSetIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_deletionTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_rollbackConfigurationHasBeenSet(false),
-    m_stackStatus(StackStatus::NOT_SET),
-    m_stackStatusHasBeenSet(false),
-    m_stackStatusReasonHasBeenSet(false),
-    m_disableRollback(false),
-    m_disableRollbackHasBeenSet(false),
-    m_notificationARNsHasBeenSet(false),
-    m_timeoutInMinutes(0),
-    m_timeoutInMinutesHasBeenSet(false),
-    m_capabilitiesHasBeenSet(false),
-    m_outputsHasBeenSet(false),
-    m_roleARNHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_enableTerminationProtection(false),
-    m_enableTerminationProtectionHasBeenSet(false),
-    m_parentIdHasBeenSet(false),
-    m_rootIdHasBeenSet(false),
-    m_driftInformationHasBeenSet(false),
-    m_retainExceptOnCreate(false),
-    m_retainExceptOnCreateHasBeenSet(false),
-    m_deletionMode(DeletionMode::NOT_SET),
-    m_deletionModeHasBeenSet(false),
-    m_detailedStatus(DetailedStatus::NOT_SET),
-    m_detailedStatusHasBeenSet(false)
+Stack::Stack(const XmlNode& xmlNode)
+  : Stack()
 {
   *this = xmlNode;
 }

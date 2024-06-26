@@ -25,10 +25,8 @@ IdMappingJobOutputSource::IdMappingJobOutputSource() :
 {
 }
 
-IdMappingJobOutputSource::IdMappingJobOutputSource(JsonView jsonValue) : 
-    m_kMSArnHasBeenSet(false),
-    m_outputS3PathHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
+IdMappingJobOutputSource::IdMappingJobOutputSource(JsonView jsonValue)
+  : IdMappingJobOutputSource()
 {
   *this = jsonValue;
 }

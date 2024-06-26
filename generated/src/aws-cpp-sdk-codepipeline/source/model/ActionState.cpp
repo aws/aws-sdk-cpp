@@ -27,12 +27,8 @@ ActionState::ActionState() :
 {
 }
 
-ActionState::ActionState(JsonView jsonValue) : 
-    m_actionNameHasBeenSet(false),
-    m_currentRevisionHasBeenSet(false),
-    m_latestExecutionHasBeenSet(false),
-    m_entityUrlHasBeenSet(false),
-    m_revisionUrlHasBeenSet(false)
+ActionState::ActionState(JsonView jsonValue)
+  : ActionState()
 {
   *this = jsonValue;
 }

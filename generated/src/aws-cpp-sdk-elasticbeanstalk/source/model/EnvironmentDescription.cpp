@@ -49,32 +49,8 @@ EnvironmentDescription::EnvironmentDescription() :
 {
 }
 
-EnvironmentDescription::EnvironmentDescription(const XmlNode& xmlNode) : 
-    m_environmentNameHasBeenSet(false),
-    m_environmentIdHasBeenSet(false),
-    m_applicationNameHasBeenSet(false),
-    m_versionLabelHasBeenSet(false),
-    m_solutionStackNameHasBeenSet(false),
-    m_platformArnHasBeenSet(false),
-    m_templateNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_endpointURLHasBeenSet(false),
-    m_cNAMEHasBeenSet(false),
-    m_dateCreatedHasBeenSet(false),
-    m_dateUpdatedHasBeenSet(false),
-    m_status(EnvironmentStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_abortableOperationInProgress(false),
-    m_abortableOperationInProgressHasBeenSet(false),
-    m_health(EnvironmentHealth::NOT_SET),
-    m_healthHasBeenSet(false),
-    m_healthStatus(EnvironmentHealthStatus::NOT_SET),
-    m_healthStatusHasBeenSet(false),
-    m_resourcesHasBeenSet(false),
-    m_tierHasBeenSet(false),
-    m_environmentLinksHasBeenSet(false),
-    m_environmentArnHasBeenSet(false),
-    m_operationsRoleHasBeenSet(false)
+EnvironmentDescription::EnvironmentDescription(const XmlNode& xmlNode)
+  : EnvironmentDescription()
 {
   *this = xmlNode;
 }

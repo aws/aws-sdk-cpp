@@ -25,10 +25,8 @@ AggregatedLogOddsMetric::AggregatedLogOddsMetric() :
 {
 }
 
-AggregatedLogOddsMetric::AggregatedLogOddsMetric(JsonView jsonValue) : 
-    m_variableNamesHasBeenSet(false),
-    m_aggregatedVariablesImportance(0.0),
-    m_aggregatedVariablesImportanceHasBeenSet(false)
+AggregatedLogOddsMetric::AggregatedLogOddsMetric(JsonView jsonValue)
+  : AggregatedLogOddsMetric()
 {
   *this = jsonValue;
 }

@@ -27,12 +27,8 @@ SlotFilter::SlotFilter() :
 {
 }
 
-SlotFilter::SlotFilter(JsonView jsonValue) : 
-    m_name(SlotFilterName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_valuesHasBeenSet(false),
-    m_operator(SlotFilterOperator::NOT_SET),
-    m_operatorHasBeenSet(false)
+SlotFilter::SlotFilter(JsonView jsonValue)
+  : SlotFilter()
 {
   *this = jsonValue;
 }

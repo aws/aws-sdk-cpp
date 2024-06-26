@@ -23,8 +23,8 @@ GenerateDataKeyPairWithoutPlaintextResult::GenerateDataKeyPairWithoutPlaintextRe
 {
 }
 
-GenerateDataKeyPairWithoutPlaintextResult::GenerateDataKeyPairWithoutPlaintextResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_keyPairSpec(DataKeyPairSpec::NOT_SET)
+GenerateDataKeyPairWithoutPlaintextResult::GenerateDataKeyPairWithoutPlaintextResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GenerateDataKeyPairWithoutPlaintextResult()
 {
   *this = result;
 }

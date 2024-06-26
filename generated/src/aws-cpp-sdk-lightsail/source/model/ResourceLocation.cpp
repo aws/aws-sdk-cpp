@@ -25,10 +25,8 @@ ResourceLocation::ResourceLocation() :
 {
 }
 
-ResourceLocation::ResourceLocation(JsonView jsonValue) : 
-    m_availabilityZoneHasBeenSet(false),
-    m_regionName(RegionName::NOT_SET),
-    m_regionNameHasBeenSet(false)
+ResourceLocation::ResourceLocation(JsonView jsonValue)
+  : ResourceLocation()
 {
   *this = jsonValue;
 }

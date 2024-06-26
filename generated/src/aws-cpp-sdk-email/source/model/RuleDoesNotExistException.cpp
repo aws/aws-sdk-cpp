@@ -25,8 +25,8 @@ RuleDoesNotExistException::RuleDoesNotExistException() :
 {
 }
 
-RuleDoesNotExistException::RuleDoesNotExistException(const XmlNode& xmlNode) : 
-    m_nameHasBeenSet(false)
+RuleDoesNotExistException::RuleDoesNotExistException(const XmlNode& xmlNode)
+  : RuleDoesNotExistException()
 {
   *this = xmlNode;
 }

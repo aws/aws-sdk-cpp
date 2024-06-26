@@ -27,12 +27,8 @@ VideoOverlayInput::VideoOverlayInput() :
 {
 }
 
-VideoOverlayInput::VideoOverlayInput(JsonView jsonValue) : 
-    m_fileInputHasBeenSet(false),
-    m_inputClippingsHasBeenSet(false),
-    m_timecodeSource(InputTimecodeSource::NOT_SET),
-    m_timecodeSourceHasBeenSet(false),
-    m_timecodeStartHasBeenSet(false)
+VideoOverlayInput::VideoOverlayInput(JsonView jsonValue)
+  : VideoOverlayInput()
 {
   *this = jsonValue;
 }

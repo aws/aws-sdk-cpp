@@ -31,14 +31,8 @@ CORSRule::CORSRule() :
 {
 }
 
-CORSRule::CORSRule(const XmlNode& xmlNode) : 
-    m_iDHasBeenSet(false),
-    m_allowedHeadersHasBeenSet(false),
-    m_allowedMethodsHasBeenSet(false),
-    m_allowedOriginsHasBeenSet(false),
-    m_exposeHeadersHasBeenSet(false),
-    m_maxAgeSeconds(0),
-    m_maxAgeSecondsHasBeenSet(false)
+CORSRule::CORSRule(const XmlNode& xmlNode)
+  : CORSRule()
 {
   *this = xmlNode;
 }

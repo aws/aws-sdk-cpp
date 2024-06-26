@@ -30,15 +30,8 @@ RepositoryLinkInfo::RepositoryLinkInfo() :
 {
 }
 
-RepositoryLinkInfo::RepositoryLinkInfo(JsonView jsonValue) : 
-    m_connectionArnHasBeenSet(false),
-    m_encryptionKeyArnHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_providerType(ProviderType::NOT_SET),
-    m_providerTypeHasBeenSet(false),
-    m_repositoryLinkArnHasBeenSet(false),
-    m_repositoryLinkIdHasBeenSet(false),
-    m_repositoryNameHasBeenSet(false)
+RepositoryLinkInfo::RepositoryLinkInfo(JsonView jsonValue)
+  : RepositoryLinkInfo()
 {
   *this = jsonValue;
 }

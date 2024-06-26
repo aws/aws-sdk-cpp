@@ -23,8 +23,8 @@ TargetConfiguration::TargetConfiguration() :
 {
 }
 
-TargetConfiguration::TargetConfiguration(JsonView jsonValue) : 
-    m_timestreamConfigurationHasBeenSet(false)
+TargetConfiguration::TargetConfiguration(JsonView jsonValue)
+  : TargetConfiguration()
 {
   *this = jsonValue;
 }

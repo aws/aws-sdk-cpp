@@ -23,8 +23,8 @@ Observations::Observations() :
 {
 }
 
-Observations::Observations(JsonView jsonValue) : 
-    m_textHasBeenSet(false)
+Observations::Observations(JsonView jsonValue)
+  : Observations()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ GeorgiaAdditionalInfo::GeorgiaAdditionalInfo() :
 {
 }
 
-GeorgiaAdditionalInfo::GeorgiaAdditionalInfo(JsonView jsonValue) : 
-    m_personType(PersonType::NOT_SET),
-    m_personTypeHasBeenSet(false)
+GeorgiaAdditionalInfo::GeorgiaAdditionalInfo(JsonView jsonValue)
+  : GeorgiaAdditionalInfo()
 {
   *this = jsonValue;
 }

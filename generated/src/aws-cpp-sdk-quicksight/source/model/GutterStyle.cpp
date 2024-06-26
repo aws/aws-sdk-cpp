@@ -24,9 +24,8 @@ GutterStyle::GutterStyle() :
 {
 }
 
-GutterStyle::GutterStyle(JsonView jsonValue) : 
-    m_show(false),
-    m_showHasBeenSet(false)
+GutterStyle::GutterStyle(JsonView jsonValue)
+  : GutterStyle()
 {
   *this = jsonValue;
 }

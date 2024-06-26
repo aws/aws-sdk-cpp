@@ -29,14 +29,8 @@ RedshiftInstanceDetails::RedshiftInstanceDetails() :
 {
 }
 
-RedshiftInstanceDetails::RedshiftInstanceDetails(JsonView jsonValue) : 
-    m_familyHasBeenSet(false),
-    m_nodeTypeHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_currentGeneration(false),
-    m_currentGenerationHasBeenSet(false),
-    m_sizeFlexEligible(false),
-    m_sizeFlexEligibleHasBeenSet(false)
+RedshiftInstanceDetails::RedshiftInstanceDetails(JsonView jsonValue)
+  : RedshiftInstanceDetails()
 {
   *this = jsonValue;
 }

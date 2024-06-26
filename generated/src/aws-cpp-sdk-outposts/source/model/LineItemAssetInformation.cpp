@@ -24,9 +24,8 @@ LineItemAssetInformation::LineItemAssetInformation() :
 {
 }
 
-LineItemAssetInformation::LineItemAssetInformation(JsonView jsonValue) : 
-    m_assetIdHasBeenSet(false),
-    m_macAddressListHasBeenSet(false)
+LineItemAssetInformation::LineItemAssetInformation(JsonView jsonValue)
+  : LineItemAssetInformation()
 {
   *this = jsonValue;
 }

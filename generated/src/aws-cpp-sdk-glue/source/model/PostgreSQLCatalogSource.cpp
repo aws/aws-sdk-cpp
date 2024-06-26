@@ -25,10 +25,8 @@ PostgreSQLCatalogSource::PostgreSQLCatalogSource() :
 {
 }
 
-PostgreSQLCatalogSource::PostgreSQLCatalogSource(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_databaseHasBeenSet(false),
-    m_tableHasBeenSet(false)
+PostgreSQLCatalogSource::PostgreSQLCatalogSource(JsonView jsonValue)
+  : PostgreSQLCatalogSource()
 {
   *this = jsonValue;
 }

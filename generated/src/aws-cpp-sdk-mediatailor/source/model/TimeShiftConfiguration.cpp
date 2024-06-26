@@ -24,9 +24,8 @@ TimeShiftConfiguration::TimeShiftConfiguration() :
 {
 }
 
-TimeShiftConfiguration::TimeShiftConfiguration(JsonView jsonValue) : 
-    m_maxTimeDelaySeconds(0),
-    m_maxTimeDelaySecondsHasBeenSet(false)
+TimeShiftConfiguration::TimeShiftConfiguration(JsonView jsonValue)
+  : TimeShiftConfiguration()
 {
   *this = jsonValue;
 }

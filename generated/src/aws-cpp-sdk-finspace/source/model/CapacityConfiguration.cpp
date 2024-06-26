@@ -25,10 +25,8 @@ CapacityConfiguration::CapacityConfiguration() :
 {
 }
 
-CapacityConfiguration::CapacityConfiguration(JsonView jsonValue) : 
-    m_nodeTypeHasBeenSet(false),
-    m_nodeCount(0),
-    m_nodeCountHasBeenSet(false)
+CapacityConfiguration::CapacityConfiguration(JsonView jsonValue)
+  : CapacityConfiguration()
 {
   *this = jsonValue;
 }

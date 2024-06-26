@@ -34,19 +34,8 @@ ObdInterface::ObdInterface() :
 {
 }
 
-ObdInterface::ObdInterface(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_requestMessageId(0),
-    m_requestMessageIdHasBeenSet(false),
-    m_obdStandardHasBeenSet(false),
-    m_pidRequestIntervalSeconds(0),
-    m_pidRequestIntervalSecondsHasBeenSet(false),
-    m_dtcRequestIntervalSeconds(0),
-    m_dtcRequestIntervalSecondsHasBeenSet(false),
-    m_useExtendedIds(false),
-    m_useExtendedIdsHasBeenSet(false),
-    m_hasTransmissionEcu(false),
-    m_hasTransmissionEcuHasBeenSet(false)
+ObdInterface::ObdInterface(JsonView jsonValue)
+  : ObdInterface()
 {
   *this = jsonValue;
 }

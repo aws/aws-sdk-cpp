@@ -22,8 +22,8 @@ GetLayoutResult::GetLayoutResult() :
 {
 }
 
-GetLayoutResult::GetLayoutResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_deleted(false)
+GetLayoutResult::GetLayoutResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetLayoutResult()
 {
   *this = result;
 }

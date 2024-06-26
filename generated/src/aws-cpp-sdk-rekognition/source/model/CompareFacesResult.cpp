@@ -23,9 +23,8 @@ CompareFacesResult::CompareFacesResult() :
 {
 }
 
-CompareFacesResult::CompareFacesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_sourceImageOrientationCorrection(OrientationCorrection::NOT_SET),
-    m_targetImageOrientationCorrection(OrientationCorrection::NOT_SET)
+CompareFacesResult::CompareFacesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CompareFacesResult()
 {
   *this = result;
 }

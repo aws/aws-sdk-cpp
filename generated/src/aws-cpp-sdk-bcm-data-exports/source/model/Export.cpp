@@ -28,13 +28,8 @@ Export::Export() :
 {
 }
 
-Export::Export(JsonView jsonValue) : 
-    m_dataQueryHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_destinationConfigurationsHasBeenSet(false),
-    m_exportArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_refreshCadenceHasBeenSet(false)
+Export::Export(JsonView jsonValue)
+  : Export()
 {
   *this = jsonValue;
 }

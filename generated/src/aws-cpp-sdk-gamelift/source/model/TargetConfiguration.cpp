@@ -24,9 +24,8 @@ TargetConfiguration::TargetConfiguration() :
 {
 }
 
-TargetConfiguration::TargetConfiguration(JsonView jsonValue) : 
-    m_targetValue(0.0),
-    m_targetValueHasBeenSet(false)
+TargetConfiguration::TargetConfiguration(JsonView jsonValue)
+  : TargetConfiguration()
 {
   *this = jsonValue;
 }

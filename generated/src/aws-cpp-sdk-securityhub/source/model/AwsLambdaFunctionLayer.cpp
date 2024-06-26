@@ -25,10 +25,8 @@ AwsLambdaFunctionLayer::AwsLambdaFunctionLayer() :
 {
 }
 
-AwsLambdaFunctionLayer::AwsLambdaFunctionLayer(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_codeSize(0),
-    m_codeSizeHasBeenSet(false)
+AwsLambdaFunctionLayer::AwsLambdaFunctionLayer(JsonView jsonValue)
+  : AwsLambdaFunctionLayer()
 {
   *this = jsonValue;
 }

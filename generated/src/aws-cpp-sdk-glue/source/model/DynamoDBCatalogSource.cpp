@@ -25,10 +25,8 @@ DynamoDBCatalogSource::DynamoDBCatalogSource() :
 {
 }
 
-DynamoDBCatalogSource::DynamoDBCatalogSource(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_databaseHasBeenSet(false),
-    m_tableHasBeenSet(false)
+DynamoDBCatalogSource::DynamoDBCatalogSource(JsonView jsonValue)
+  : DynamoDBCatalogSource()
 {
   *this = jsonValue;
 }

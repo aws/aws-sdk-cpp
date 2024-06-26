@@ -26,11 +26,8 @@ PlacementSummary::PlacementSummary() :
 {
 }
 
-PlacementSummary::PlacementSummary(JsonView jsonValue) : 
-    m_projectNameHasBeenSet(false),
-    m_placementNameHasBeenSet(false),
-    m_createdDateHasBeenSet(false),
-    m_updatedDateHasBeenSet(false)
+PlacementSummary::PlacementSummary(JsonView jsonValue)
+  : PlacementSummary()
 {
   *this = jsonValue;
 }

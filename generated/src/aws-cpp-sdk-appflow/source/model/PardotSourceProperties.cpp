@@ -23,8 +23,8 @@ PardotSourceProperties::PardotSourceProperties() :
 {
 }
 
-PardotSourceProperties::PardotSourceProperties(JsonView jsonValue) : 
-    m_objectHasBeenSet(false)
+PardotSourceProperties::PardotSourceProperties(JsonView jsonValue)
+  : PardotSourceProperties()
 {
   *this = jsonValue;
 }

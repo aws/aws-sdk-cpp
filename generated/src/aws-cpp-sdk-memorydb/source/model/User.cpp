@@ -29,14 +29,8 @@ User::User() :
 {
 }
 
-User::User(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_accessStringHasBeenSet(false),
-    m_aCLNamesHasBeenSet(false),
-    m_minimumEngineVersionHasBeenSet(false),
-    m_authenticationHasBeenSet(false),
-    m_aRNHasBeenSet(false)
+User::User(JsonView jsonValue)
+  : User()
 {
   *this = jsonValue;
 }

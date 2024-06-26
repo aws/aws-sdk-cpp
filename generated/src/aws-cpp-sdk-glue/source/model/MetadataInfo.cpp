@@ -25,10 +25,8 @@ MetadataInfo::MetadataInfo() :
 {
 }
 
-MetadataInfo::MetadataInfo(JsonView jsonValue) : 
-    m_metadataValueHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_otherMetadataValueListHasBeenSet(false)
+MetadataInfo::MetadataInfo(JsonView jsonValue)
+  : MetadataInfo()
 {
   *this = jsonValue;
 }

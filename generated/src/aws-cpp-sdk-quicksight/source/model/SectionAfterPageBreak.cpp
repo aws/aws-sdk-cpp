@@ -24,9 +24,8 @@ SectionAfterPageBreak::SectionAfterPageBreak() :
 {
 }
 
-SectionAfterPageBreak::SectionAfterPageBreak(JsonView jsonValue) : 
-    m_status(SectionPageBreakStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+SectionAfterPageBreak::SectionAfterPageBreak(JsonView jsonValue)
+  : SectionAfterPageBreak()
 {
   *this = jsonValue;
 }

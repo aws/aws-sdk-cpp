@@ -24,9 +24,8 @@ IpAddresses::IpAddresses() :
 {
 }
 
-IpAddresses::IpAddresses(JsonView jsonValue) : 
-    m_ipV4AddressesHasBeenSet(false),
-    m_ipV6AddressesHasBeenSet(false)
+IpAddresses::IpAddresses(JsonView jsonValue)
+  : IpAddresses()
 {
   *this = jsonValue;
 }

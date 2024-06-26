@@ -23,8 +23,8 @@ MessagingSessionEndpoint::MessagingSessionEndpoint() :
 {
 }
 
-MessagingSessionEndpoint::MessagingSessionEndpoint(JsonView jsonValue) : 
-    m_urlHasBeenSet(false)
+MessagingSessionEndpoint::MessagingSessionEndpoint(JsonView jsonValue)
+  : MessagingSessionEndpoint()
 {
   *this = jsonValue;
 }

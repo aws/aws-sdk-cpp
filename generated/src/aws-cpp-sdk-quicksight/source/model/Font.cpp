@@ -23,8 +23,8 @@ Font::Font() :
 {
 }
 
-Font::Font(JsonView jsonValue) : 
-    m_fontFamilyHasBeenSet(false)
+Font::Font(JsonView jsonValue)
+  : Font()
 {
   *this = jsonValue;
 }

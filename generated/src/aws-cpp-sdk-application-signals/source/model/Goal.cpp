@@ -27,12 +27,8 @@ Goal::Goal() :
 {
 }
 
-Goal::Goal(JsonView jsonValue) : 
-    m_intervalHasBeenSet(false),
-    m_attainmentGoal(0.0),
-    m_attainmentGoalHasBeenSet(false),
-    m_warningThreshold(0.0),
-    m_warningThresholdHasBeenSet(false)
+Goal::Goal(JsonView jsonValue)
+  : Goal()
 {
   *this = jsonValue;
 }

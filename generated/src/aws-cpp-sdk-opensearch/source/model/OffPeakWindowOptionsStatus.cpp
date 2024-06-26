@@ -24,9 +24,8 @@ OffPeakWindowOptionsStatus::OffPeakWindowOptionsStatus() :
 {
 }
 
-OffPeakWindowOptionsStatus::OffPeakWindowOptionsStatus(JsonView jsonValue) : 
-    m_optionsHasBeenSet(false),
-    m_statusHasBeenSet(false)
+OffPeakWindowOptionsStatus::OffPeakWindowOptionsStatus(JsonView jsonValue)
+  : OffPeakWindowOptionsStatus()
 {
   *this = jsonValue;
 }

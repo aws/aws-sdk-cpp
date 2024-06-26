@@ -25,10 +25,8 @@ QueueTransition::QueueTransition() :
 {
 }
 
-QueueTransition::QueueTransition(JsonView jsonValue) : 
-    m_destinationQueueHasBeenSet(false),
-    m_sourceQueueHasBeenSet(false),
-    m_timestampHasBeenSet(false)
+QueueTransition::QueueTransition(JsonView jsonValue)
+  : QueueTransition()
 {
   *this = jsonValue;
 }

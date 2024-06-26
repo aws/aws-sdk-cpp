@@ -31,16 +31,8 @@ S3BucketDetail::S3BucketDetail() :
 {
 }
 
-S3BucketDetail::S3BucketDetail(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_ownerHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_defaultServerSideEncryptionHasBeenSet(false),
-    m_publicAccessHasBeenSet(false),
-    m_s3ObjectDetailsHasBeenSet(false)
+S3BucketDetail::S3BucketDetail(JsonView jsonValue)
+  : S3BucketDetail()
 {
   *this = jsonValue;
 }

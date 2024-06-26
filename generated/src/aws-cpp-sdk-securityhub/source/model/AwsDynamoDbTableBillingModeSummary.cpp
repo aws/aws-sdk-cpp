@@ -24,9 +24,8 @@ AwsDynamoDbTableBillingModeSummary::AwsDynamoDbTableBillingModeSummary() :
 {
 }
 
-AwsDynamoDbTableBillingModeSummary::AwsDynamoDbTableBillingModeSummary(JsonView jsonValue) : 
-    m_billingModeHasBeenSet(false),
-    m_lastUpdateToPayPerRequestDateTimeHasBeenSet(false)
+AwsDynamoDbTableBillingModeSummary::AwsDynamoDbTableBillingModeSummary(JsonView jsonValue)
+  : AwsDynamoDbTableBillingModeSummary()
 {
   *this = jsonValue;
 }

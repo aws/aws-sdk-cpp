@@ -24,9 +24,8 @@ SSEDescription::SSEDescription() :
 {
 }
 
-SSEDescription::SSEDescription(JsonView jsonValue) : 
-    m_status(SSEStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+SSEDescription::SSEDescription(JsonView jsonValue)
+  : SSEDescription()
 {
   *this = jsonValue;
 }

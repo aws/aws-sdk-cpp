@@ -41,26 +41,8 @@ ImageSummary::ImageSummary() :
 {
 }
 
-ImageSummary::ImageSummary(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_type(ImageType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_platform(Platform::NOT_SET),
-    m_platformHasBeenSet(false),
-    m_osVersionHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_ownerHasBeenSet(false),
-    m_dateCreatedHasBeenSet(false),
-    m_outputResourcesHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_buildType(BuildType::NOT_SET),
-    m_buildTypeHasBeenSet(false),
-    m_imageSource(ImageSource::NOT_SET),
-    m_imageSourceHasBeenSet(false),
-    m_deprecationTimeHasBeenSet(false),
-    m_lifecycleExecutionIdHasBeenSet(false)
+ImageSummary::ImageSummary(JsonView jsonValue)
+  : ImageSummary()
 {
   *this = jsonValue;
 }

@@ -33,18 +33,8 @@ JournalS3ExportDescription::JournalS3ExportDescription() :
 {
 }
 
-JournalS3ExportDescription::JournalS3ExportDescription(JsonView jsonValue) : 
-    m_ledgerNameHasBeenSet(false),
-    m_exportIdHasBeenSet(false),
-    m_exportCreationTimeHasBeenSet(false),
-    m_status(ExportStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_inclusiveStartTimeHasBeenSet(false),
-    m_exclusiveEndTimeHasBeenSet(false),
-    m_s3ExportConfigurationHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_outputFormat(OutputFormat::NOT_SET),
-    m_outputFormatHasBeenSet(false)
+JournalS3ExportDescription::JournalS3ExportDescription(JsonView jsonValue)
+  : JournalS3ExportDescription()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ SheetLayoutElementMaximizationOption::SheetLayoutElementMaximizationOption() :
 {
 }
 
-SheetLayoutElementMaximizationOption::SheetLayoutElementMaximizationOption(JsonView jsonValue) : 
-    m_availabilityStatus(DashboardBehavior::NOT_SET),
-    m_availabilityStatusHasBeenSet(false)
+SheetLayoutElementMaximizationOption::SheetLayoutElementMaximizationOption(JsonView jsonValue)
+  : SheetLayoutElementMaximizationOption()
 {
   *this = jsonValue;
 }

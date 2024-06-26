@@ -27,10 +27,8 @@ InstanceStateChange::InstanceStateChange() :
 {
 }
 
-InstanceStateChange::InstanceStateChange(const XmlNode& xmlNode) : 
-    m_currentStateHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_previousStateHasBeenSet(false)
+InstanceStateChange::InstanceStateChange(const XmlNode& xmlNode)
+  : InstanceStateChange()
 {
   *this = xmlNode;
 }

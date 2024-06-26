@@ -27,12 +27,8 @@ PolicyStoreItem::PolicyStoreItem() :
 {
 }
 
-PolicyStoreItem::PolicyStoreItem(JsonView jsonValue) : 
-    m_policyStoreIdHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_createdDateHasBeenSet(false),
-    m_lastUpdatedDateHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+PolicyStoreItem::PolicyStoreItem(JsonView jsonValue)
+  : PolicyStoreItem()
 {
   *this = jsonValue;
 }

@@ -30,15 +30,8 @@ MetadataTransferJobProgress::MetadataTransferJobProgress() :
 {
 }
 
-MetadataTransferJobProgress::MetadataTransferJobProgress(JsonView jsonValue) : 
-    m_totalCount(0),
-    m_totalCountHasBeenSet(false),
-    m_succeededCount(0),
-    m_succeededCountHasBeenSet(false),
-    m_skippedCount(0),
-    m_skippedCountHasBeenSet(false),
-    m_failedCount(0),
-    m_failedCountHasBeenSet(false)
+MetadataTransferJobProgress::MetadataTransferJobProgress(JsonView jsonValue)
+  : MetadataTransferJobProgress()
 {
   *this = jsonValue;
 }

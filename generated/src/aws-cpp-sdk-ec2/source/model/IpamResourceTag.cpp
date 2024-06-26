@@ -26,9 +26,8 @@ IpamResourceTag::IpamResourceTag() :
 {
 }
 
-IpamResourceTag::IpamResourceTag(const XmlNode& xmlNode) : 
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false)
+IpamResourceTag::IpamResourceTag(const XmlNode& xmlNode)
+  : IpamResourceTag()
 {
   *this = xmlNode;
 }

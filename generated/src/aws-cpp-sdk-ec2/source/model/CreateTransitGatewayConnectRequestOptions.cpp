@@ -26,9 +26,8 @@ CreateTransitGatewayConnectRequestOptions::CreateTransitGatewayConnectRequestOpt
 {
 }
 
-CreateTransitGatewayConnectRequestOptions::CreateTransitGatewayConnectRequestOptions(const XmlNode& xmlNode) : 
-    m_protocol(ProtocolValue::NOT_SET),
-    m_protocolHasBeenSet(false)
+CreateTransitGatewayConnectRequestOptions::CreateTransitGatewayConnectRequestOptions(const XmlNode& xmlNode)
+  : CreateTransitGatewayConnectRequestOptions()
 {
   *this = xmlNode;
 }

@@ -24,9 +24,8 @@ Authorization::Authorization() :
 {
 }
 
-Authorization::Authorization(JsonView jsonValue) : 
-    m_cdnIdentifierSecretHasBeenSet(false),
-    m_secretsRoleArnHasBeenSet(false)
+Authorization::Authorization(JsonView jsonValue)
+  : Authorization()
 {
   *this = jsonValue;
 }

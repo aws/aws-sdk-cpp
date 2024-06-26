@@ -25,10 +25,8 @@ FlowTemplateFilter::FlowTemplateFilter() :
 {
 }
 
-FlowTemplateFilter::FlowTemplateFilter(JsonView jsonValue) : 
-    m_name(FlowTemplateFilterName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
+FlowTemplateFilter::FlowTemplateFilter(JsonView jsonValue)
+  : FlowTemplateFilter()
 {
   *this = jsonValue;
 }

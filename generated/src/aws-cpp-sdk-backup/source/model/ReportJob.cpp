@@ -30,15 +30,8 @@ ReportJob::ReportJob() :
 {
 }
 
-ReportJob::ReportJob(JsonView jsonValue) : 
-    m_reportJobIdHasBeenSet(false),
-    m_reportPlanArnHasBeenSet(false),
-    m_reportTemplateHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_completionTimeHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_reportDestinationHasBeenSet(false)
+ReportJob::ReportJob(JsonView jsonValue)
+  : ReportJob()
 {
   *this = jsonValue;
 }

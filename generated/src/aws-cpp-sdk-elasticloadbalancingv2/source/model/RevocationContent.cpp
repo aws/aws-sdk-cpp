@@ -29,12 +29,8 @@ RevocationContent::RevocationContent() :
 {
 }
 
-RevocationContent::RevocationContent(const XmlNode& xmlNode) : 
-    m_s3BucketHasBeenSet(false),
-    m_s3KeyHasBeenSet(false),
-    m_s3ObjectVersionHasBeenSet(false),
-    m_revocationType(RevocationType::NOT_SET),
-    m_revocationTypeHasBeenSet(false)
+RevocationContent::RevocationContent(const XmlNode& xmlNode)
+  : RevocationContent()
 {
   *this = xmlNode;
 }

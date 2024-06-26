@@ -27,12 +27,8 @@ Parameters::Parameters() :
 {
 }
 
-Parameters::Parameters(JsonView jsonValue) : 
-    m_excludeBootVolume(false),
-    m_excludeBootVolumeHasBeenSet(false),
-    m_noReboot(false),
-    m_noRebootHasBeenSet(false),
-    m_excludeDataVolumeTagsHasBeenSet(false)
+Parameters::Parameters(JsonView jsonValue)
+  : Parameters()
 {
   *this = jsonValue;
 }

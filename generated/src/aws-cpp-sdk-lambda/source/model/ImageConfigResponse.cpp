@@ -24,9 +24,8 @@ ImageConfigResponse::ImageConfigResponse() :
 {
 }
 
-ImageConfigResponse::ImageConfigResponse(JsonView jsonValue) : 
-    m_imageConfigHasBeenSet(false),
-    m_errorHasBeenSet(false)
+ImageConfigResponse::ImageConfigResponse(JsonView jsonValue)
+  : ImageConfigResponse()
 {
   *this = jsonValue;
 }

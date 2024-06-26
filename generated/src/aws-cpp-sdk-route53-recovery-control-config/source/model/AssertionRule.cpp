@@ -32,17 +32,8 @@ AssertionRule::AssertionRule() :
 {
 }
 
-AssertionRule::AssertionRule(JsonView jsonValue) : 
-    m_assertedControlsHasBeenSet(false),
-    m_controlPanelArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_ruleConfigHasBeenSet(false),
-    m_safetyRuleArnHasBeenSet(false),
-    m_status(Status::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_waitPeriodMs(0),
-    m_waitPeriodMsHasBeenSet(false),
-    m_ownerHasBeenSet(false)
+AssertionRule::AssertionRule(JsonView jsonValue)
+  : AssertionRule()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ DataViewDestinationTypeParams::DataViewDestinationTypeParams() :
 {
 }
 
-DataViewDestinationTypeParams::DataViewDestinationTypeParams(JsonView jsonValue) : 
-    m_destinationTypeHasBeenSet(false),
-    m_s3DestinationExportFileFormat(ExportFileFormat::NOT_SET),
-    m_s3DestinationExportFileFormatHasBeenSet(false),
-    m_s3DestinationExportFileFormatOptionsHasBeenSet(false)
+DataViewDestinationTypeParams::DataViewDestinationTypeParams(JsonView jsonValue)
+  : DataViewDestinationTypeParams()
 {
   *this = jsonValue;
 }

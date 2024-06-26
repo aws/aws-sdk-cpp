@@ -43,28 +43,8 @@ FieldSourceProfileIds::FieldSourceProfileIds() :
 {
 }
 
-FieldSourceProfileIds::FieldSourceProfileIds(JsonView jsonValue) : 
-    m_accountNumberHasBeenSet(false),
-    m_additionalInformationHasBeenSet(false),
-    m_partyTypeHasBeenSet(false),
-    m_businessNameHasBeenSet(false),
-    m_firstNameHasBeenSet(false),
-    m_middleNameHasBeenSet(false),
-    m_lastNameHasBeenSet(false),
-    m_birthDateHasBeenSet(false),
-    m_genderHasBeenSet(false),
-    m_phoneNumberHasBeenSet(false),
-    m_mobilePhoneNumberHasBeenSet(false),
-    m_homePhoneNumberHasBeenSet(false),
-    m_businessPhoneNumberHasBeenSet(false),
-    m_emailAddressHasBeenSet(false),
-    m_personalEmailAddressHasBeenSet(false),
-    m_businessEmailAddressHasBeenSet(false),
-    m_addressHasBeenSet(false),
-    m_shippingAddressHasBeenSet(false),
-    m_mailingAddressHasBeenSet(false),
-    m_billingAddressHasBeenSet(false),
-    m_attributesHasBeenSet(false)
+FieldSourceProfileIds::FieldSourceProfileIds(JsonView jsonValue)
+  : FieldSourceProfileIds()
 {
   *this = jsonValue;
 }

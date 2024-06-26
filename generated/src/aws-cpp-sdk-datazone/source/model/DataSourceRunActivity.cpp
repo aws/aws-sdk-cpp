@@ -33,18 +33,8 @@ DataSourceRunActivity::DataSourceRunActivity() :
 {
 }
 
-DataSourceRunActivity::DataSourceRunActivity(JsonView jsonValue) : 
-    m_createdAtHasBeenSet(false),
-    m_dataAssetIdHasBeenSet(false),
-    m_dataAssetStatus(DataAssetActivityStatus::NOT_SET),
-    m_dataAssetStatusHasBeenSet(false),
-    m_dataSourceRunIdHasBeenSet(false),
-    m_databaseHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_projectIdHasBeenSet(false),
-    m_technicalDescriptionHasBeenSet(false),
-    m_technicalNameHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+DataSourceRunActivity::DataSourceRunActivity(JsonView jsonValue)
+  : DataSourceRunActivity()
 {
   *this = jsonValue;
 }

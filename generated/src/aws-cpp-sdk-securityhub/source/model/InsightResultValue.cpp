@@ -25,10 +25,8 @@ InsightResultValue::InsightResultValue() :
 {
 }
 
-InsightResultValue::InsightResultValue(JsonView jsonValue) : 
-    m_groupByAttributeValueHasBeenSet(false),
-    m_count(0),
-    m_countHasBeenSet(false)
+InsightResultValue::InsightResultValue(JsonView jsonValue)
+  : InsightResultValue()
 {
   *this = jsonValue;
 }

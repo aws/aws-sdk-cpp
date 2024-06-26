@@ -27,12 +27,8 @@ WebsiteAuthorizationProviderSummary::WebsiteAuthorizationProviderSummary() :
 {
 }
 
-WebsiteAuthorizationProviderSummary::WebsiteAuthorizationProviderSummary(JsonView jsonValue) : 
-    m_authorizationProviderIdHasBeenSet(false),
-    m_authorizationProviderType(AuthorizationProviderType::NOT_SET),
-    m_authorizationProviderTypeHasBeenSet(false),
-    m_domainNameHasBeenSet(false),
-    m_createdTimeHasBeenSet(false)
+WebsiteAuthorizationProviderSummary::WebsiteAuthorizationProviderSummary(JsonView jsonValue)
+  : WebsiteAuthorizationProviderSummary()
 {
   *this = jsonValue;
 }

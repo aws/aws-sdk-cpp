@@ -40,23 +40,8 @@ Latency::Latency() :
 {
 }
 
-Latency::Latency(const XmlNode& xmlNode) : 
-    m_p999(0.0),
-    m_p999HasBeenSet(false),
-    m_p99(0.0),
-    m_p99HasBeenSet(false),
-    m_p95(0.0),
-    m_p95HasBeenSet(false),
-    m_p90(0.0),
-    m_p90HasBeenSet(false),
-    m_p85(0.0),
-    m_p85HasBeenSet(false),
-    m_p75(0.0),
-    m_p75HasBeenSet(false),
-    m_p50(0.0),
-    m_p50HasBeenSet(false),
-    m_p10(0.0),
-    m_p10HasBeenSet(false)
+Latency::Latency(const XmlNode& xmlNode)
+  : Latency()
 {
   *this = xmlNode;
 }

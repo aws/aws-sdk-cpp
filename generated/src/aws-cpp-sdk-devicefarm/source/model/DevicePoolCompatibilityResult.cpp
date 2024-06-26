@@ -26,11 +26,8 @@ DevicePoolCompatibilityResult::DevicePoolCompatibilityResult() :
 {
 }
 
-DevicePoolCompatibilityResult::DevicePoolCompatibilityResult(JsonView jsonValue) : 
-    m_deviceHasBeenSet(false),
-    m_compatible(false),
-    m_compatibleHasBeenSet(false),
-    m_incompatibilityMessagesHasBeenSet(false)
+DevicePoolCompatibilityResult::DevicePoolCompatibilityResult(JsonView jsonValue)
+  : DevicePoolCompatibilityResult()
 {
   *this = jsonValue;
 }

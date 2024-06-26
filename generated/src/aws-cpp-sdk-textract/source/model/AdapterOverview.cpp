@@ -26,11 +26,8 @@ AdapterOverview::AdapterOverview() :
 {
 }
 
-AdapterOverview::AdapterOverview(JsonView jsonValue) : 
-    m_adapterIdHasBeenSet(false),
-    m_adapterNameHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_featureTypesHasBeenSet(false)
+AdapterOverview::AdapterOverview(JsonView jsonValue)
+  : AdapterOverview()
 {
   *this = jsonValue;
 }

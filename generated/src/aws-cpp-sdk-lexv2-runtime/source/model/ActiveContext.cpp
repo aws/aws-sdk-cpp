@@ -25,10 +25,8 @@ ActiveContext::ActiveContext() :
 {
 }
 
-ActiveContext::ActiveContext(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_timeToLiveHasBeenSet(false),
-    m_contextAttributesHasBeenSet(false)
+ActiveContext::ActiveContext(JsonView jsonValue)
+  : ActiveContext()
 {
   *this = jsonValue;
 }

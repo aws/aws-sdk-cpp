@@ -22,8 +22,8 @@ UpdateProgramResult::UpdateProgramResult() :
 {
 }
 
-UpdateProgramResult::UpdateProgramResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_durationMillis(0)
+UpdateProgramResult::UpdateProgramResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateProgramResult()
 {
   *this = result;
 }

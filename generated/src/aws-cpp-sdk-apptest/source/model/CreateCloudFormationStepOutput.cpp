@@ -24,9 +24,8 @@ CreateCloudFormationStepOutput::CreateCloudFormationStepOutput() :
 {
 }
 
-CreateCloudFormationStepOutput::CreateCloudFormationStepOutput(JsonView jsonValue) : 
-    m_stackIdHasBeenSet(false),
-    m_exportsHasBeenSet(false)
+CreateCloudFormationStepOutput::CreateCloudFormationStepOutput(JsonView jsonValue)
+  : CreateCloudFormationStepOutput()
 {
   *this = jsonValue;
 }

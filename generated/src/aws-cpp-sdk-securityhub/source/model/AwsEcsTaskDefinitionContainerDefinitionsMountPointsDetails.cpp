@@ -26,11 +26,8 @@ AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails::AwsEcsTaskDefinition
 {
 }
 
-AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails::AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails(JsonView jsonValue) : 
-    m_containerPathHasBeenSet(false),
-    m_readOnly(false),
-    m_readOnlyHasBeenSet(false),
-    m_sourceVolumeHasBeenSet(false)
+AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails::AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails(JsonView jsonValue)
+  : AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails()
 {
   *this = jsonValue;
 }

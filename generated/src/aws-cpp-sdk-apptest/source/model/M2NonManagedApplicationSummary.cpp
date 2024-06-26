@@ -28,13 +28,8 @@ M2NonManagedApplicationSummary::M2NonManagedApplicationSummary() :
 {
 }
 
-M2NonManagedApplicationSummary::M2NonManagedApplicationSummary(JsonView jsonValue) : 
-    m_vpcEndpointServiceNameHasBeenSet(false),
-    m_listenerPort(0),
-    m_listenerPortHasBeenSet(false),
-    m_runtime(M2NonManagedRuntime::NOT_SET),
-    m_runtimeHasBeenSet(false),
-    m_webAppNameHasBeenSet(false)
+M2NonManagedApplicationSummary::M2NonManagedApplicationSummary(JsonView jsonValue)
+  : M2NonManagedApplicationSummary()
 {
   *this = jsonValue;
 }

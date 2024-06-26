@@ -24,9 +24,8 @@ EffectivePatch::EffectivePatch() :
 {
 }
 
-EffectivePatch::EffectivePatch(JsonView jsonValue) : 
-    m_patchHasBeenSet(false),
-    m_patchStatusHasBeenSet(false)
+EffectivePatch::EffectivePatch(JsonView jsonValue)
+  : EffectivePatch()
 {
   *this = jsonValue;
 }

@@ -26,10 +26,8 @@ AudioResponseEvent::AudioResponseEvent() :
 {
 }
 
-AudioResponseEvent::AudioResponseEvent(JsonView jsonValue) : 
-    m_audioChunkHasBeenSet(false),
-    m_contentTypeHasBeenSet(false),
-    m_eventIdHasBeenSet(false)
+AudioResponseEvent::AudioResponseEvent(JsonView jsonValue)
+  : AudioResponseEvent()
 {
   *this = jsonValue;
 }

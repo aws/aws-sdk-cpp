@@ -26,9 +26,8 @@ JobTimers::JobTimers() :
 {
 }
 
-JobTimers::JobTimers(const XmlNode& xmlNode) : 
-    m_elapsedTimeInActiveSeconds(0),
-    m_elapsedTimeInActiveSecondsHasBeenSet(false)
+JobTimers::JobTimers(const XmlNode& xmlNode)
+  : JobTimers()
 {
   *this = xmlNode;
 }

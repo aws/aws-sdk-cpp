@@ -34,19 +34,8 @@ UpdateComponentData::UpdateComponentData() :
 {
 }
 
-UpdateComponentData::UpdateComponentData(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_sourceIdHasBeenSet(false),
-    m_componentTypeHasBeenSet(false),
-    m_propertiesHasBeenSet(false),
-    m_childrenHasBeenSet(false),
-    m_variantsHasBeenSet(false),
-    m_overridesHasBeenSet(false),
-    m_bindingPropertiesHasBeenSet(false),
-    m_collectionPropertiesHasBeenSet(false),
-    m_eventsHasBeenSet(false),
-    m_schemaVersionHasBeenSet(false)
+UpdateComponentData::UpdateComponentData(JsonView jsonValue)
+  : UpdateComponentData()
 {
   *this = jsonValue;
 }

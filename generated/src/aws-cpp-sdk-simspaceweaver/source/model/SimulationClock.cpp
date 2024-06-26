@@ -26,11 +26,8 @@ SimulationClock::SimulationClock() :
 {
 }
 
-SimulationClock::SimulationClock(JsonView jsonValue) : 
-    m_status(ClockStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_targetStatus(ClockTargetStatus::NOT_SET),
-    m_targetStatusHasBeenSet(false)
+SimulationClock::SimulationClock(JsonView jsonValue)
+  : SimulationClock()
 {
   *this = jsonValue;
 }

@@ -30,15 +30,8 @@ InstanceSummary::InstanceSummary() :
 {
 }
 
-InstanceSummary::InstanceSummary(JsonView jsonValue) : 
-    m_deploymentIdHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_status(InstanceStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false),
-    m_lifecycleEventsHasBeenSet(false),
-    m_instanceType(InstanceType::NOT_SET),
-    m_instanceTypeHasBeenSet(false)
+InstanceSummary::InstanceSummary(JsonView jsonValue)
+  : InstanceSummary()
 {
   *this = jsonValue;
 }

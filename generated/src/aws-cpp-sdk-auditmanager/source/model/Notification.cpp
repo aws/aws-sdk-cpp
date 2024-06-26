@@ -30,15 +30,8 @@ Notification::Notification() :
 {
 }
 
-Notification::Notification(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_assessmentIdHasBeenSet(false),
-    m_assessmentNameHasBeenSet(false),
-    m_controlSetIdHasBeenSet(false),
-    m_controlSetNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_eventTimeHasBeenSet(false),
-    m_sourceHasBeenSet(false)
+Notification::Notification(JsonView jsonValue)
+  : Notification()
 {
   *this = jsonValue;
 }

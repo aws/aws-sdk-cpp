@@ -24,9 +24,8 @@ AgentNetworkInfo::AgentNetworkInfo() :
 {
 }
 
-AgentNetworkInfo::AgentNetworkInfo(JsonView jsonValue) : 
-    m_ipAddressHasBeenSet(false),
-    m_macAddressHasBeenSet(false)
+AgentNetworkInfo::AgentNetworkInfo(JsonView jsonValue)
+  : AgentNetworkInfo()
 {
   *this = jsonValue;
 }

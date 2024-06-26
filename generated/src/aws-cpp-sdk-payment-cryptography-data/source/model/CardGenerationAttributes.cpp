@@ -29,14 +29,8 @@ CardGenerationAttributes::CardGenerationAttributes() :
 {
 }
 
-CardGenerationAttributes::CardGenerationAttributes(JsonView jsonValue) : 
-    m_amexCardSecurityCodeVersion1HasBeenSet(false),
-    m_amexCardSecurityCodeVersion2HasBeenSet(false),
-    m_cardHolderVerificationValueHasBeenSet(false),
-    m_cardVerificationValue1HasBeenSet(false),
-    m_cardVerificationValue2HasBeenSet(false),
-    m_dynamicCardVerificationCodeHasBeenSet(false),
-    m_dynamicCardVerificationValueHasBeenSet(false)
+CardGenerationAttributes::CardGenerationAttributes(JsonView jsonValue)
+  : CardGenerationAttributes()
 {
   *this = jsonValue;
 }

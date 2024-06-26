@@ -24,9 +24,8 @@ JmxExporterInfo::JmxExporterInfo() :
 {
 }
 
-JmxExporterInfo::JmxExporterInfo(JsonView jsonValue) : 
-    m_enabledInBroker(false),
-    m_enabledInBrokerHasBeenSet(false)
+JmxExporterInfo::JmxExporterInfo(JsonView jsonValue)
+  : JmxExporterInfo()
 {
   *this = jsonValue;
 }

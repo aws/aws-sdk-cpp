@@ -22,8 +22,8 @@ ListDatasetsResult::ListDatasetsResult() :
 {
 }
 
-ListDatasetsResult::ListDatasetsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_count(0)
+ListDatasetsResult::ListDatasetsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ListDatasetsResult()
 {
   *this = result;
 }

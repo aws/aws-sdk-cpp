@@ -25,10 +25,8 @@ BatchStartRecommendationsErrorEntry::BatchStartRecommendationsErrorEntry() :
 {
 }
 
-BatchStartRecommendationsErrorEntry::BatchStartRecommendationsErrorEntry(JsonView jsonValue) : 
-    m_databaseIdHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_codeHasBeenSet(false)
+BatchStartRecommendationsErrorEntry::BatchStartRecommendationsErrorEntry(JsonView jsonValue)
+  : BatchStartRecommendationsErrorEntry()
 {
   *this = jsonValue;
 }

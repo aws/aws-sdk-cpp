@@ -27,10 +27,8 @@ FieldLevelEncryptionProfile::FieldLevelEncryptionProfile() :
 {
 }
 
-FieldLevelEncryptionProfile::FieldLevelEncryptionProfile(const XmlNode& xmlNode) : 
-    m_idHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_fieldLevelEncryptionProfileConfigHasBeenSet(false)
+FieldLevelEncryptionProfile::FieldLevelEncryptionProfile(const XmlNode& xmlNode)
+  : FieldLevelEncryptionProfile()
 {
   *this = xmlNode;
 }

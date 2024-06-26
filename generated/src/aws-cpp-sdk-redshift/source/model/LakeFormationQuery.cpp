@@ -26,9 +26,8 @@ LakeFormationQuery::LakeFormationQuery() :
 {
 }
 
-LakeFormationQuery::LakeFormationQuery(const XmlNode& xmlNode) : 
-    m_authorization(ServiceAuthorization::NOT_SET),
-    m_authorizationHasBeenSet(false)
+LakeFormationQuery::LakeFormationQuery(const XmlNode& xmlNode)
+  : LakeFormationQuery()
 {
   *this = xmlNode;
 }

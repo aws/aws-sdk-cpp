@@ -25,10 +25,8 @@ GeoLocationTarget::GeoLocationTarget() :
 {
 }
 
-GeoLocationTarget::GeoLocationTarget(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_order(TargetFieldOrder::NOT_SET),
-    m_orderHasBeenSet(false)
+GeoLocationTarget::GeoLocationTarget(JsonView jsonValue)
+  : GeoLocationTarget()
 {
   *this = jsonValue;
 }

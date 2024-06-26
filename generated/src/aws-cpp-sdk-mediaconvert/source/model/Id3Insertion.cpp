@@ -24,9 +24,8 @@ Id3Insertion::Id3Insertion() :
 {
 }
 
-Id3Insertion::Id3Insertion(JsonView jsonValue) : 
-    m_id3HasBeenSet(false),
-    m_timecodeHasBeenSet(false)
+Id3Insertion::Id3Insertion(JsonView jsonValue)
+  : Id3Insertion()
 {
   *this = jsonValue;
 }

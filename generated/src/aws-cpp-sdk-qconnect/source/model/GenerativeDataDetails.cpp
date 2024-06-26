@@ -25,10 +25,8 @@ GenerativeDataDetails::GenerativeDataDetails() :
 {
 }
 
-GenerativeDataDetails::GenerativeDataDetails(JsonView jsonValue) : 
-    m_completionHasBeenSet(false),
-    m_rankingDataHasBeenSet(false),
-    m_referencesHasBeenSet(false)
+GenerativeDataDetails::GenerativeDataDetails(JsonView jsonValue)
+  : GenerativeDataDetails()
 {
   *this = jsonValue;
 }

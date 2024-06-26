@@ -27,10 +27,8 @@ PrivateIpAddressSpecification::PrivateIpAddressSpecification() :
 {
 }
 
-PrivateIpAddressSpecification::PrivateIpAddressSpecification(const XmlNode& xmlNode) : 
-    m_primary(false),
-    m_primaryHasBeenSet(false),
-    m_privateIpAddressHasBeenSet(false)
+PrivateIpAddressSpecification::PrivateIpAddressSpecification(const XmlNode& xmlNode)
+  : PrivateIpAddressSpecification()
 {
   *this = xmlNode;
 }

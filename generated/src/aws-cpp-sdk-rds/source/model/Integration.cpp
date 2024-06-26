@@ -37,20 +37,8 @@ Integration::Integration() :
 {
 }
 
-Integration::Integration(const XmlNode& xmlNode) : 
-    m_sourceArnHasBeenSet(false),
-    m_targetArnHasBeenSet(false),
-    m_integrationNameHasBeenSet(false),
-    m_integrationArnHasBeenSet(false),
-    m_kMSKeyIdHasBeenSet(false),
-    m_additionalEncryptionContextHasBeenSet(false),
-    m_status(IntegrationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_errorsHasBeenSet(false),
-    m_dataFilterHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+Integration::Integration(const XmlNode& xmlNode)
+  : Integration()
 {
   *this = xmlNode;
 }

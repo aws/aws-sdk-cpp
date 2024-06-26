@@ -23,8 +23,8 @@ AwsApiCallActionDomainDetails::AwsApiCallActionDomainDetails() :
 {
 }
 
-AwsApiCallActionDomainDetails::AwsApiCallActionDomainDetails(JsonView jsonValue) : 
-    m_domainHasBeenSet(false)
+AwsApiCallActionDomainDetails::AwsApiCallActionDomainDetails(JsonView jsonValue)
+  : AwsApiCallActionDomainDetails()
 {
   *this = jsonValue;
 }

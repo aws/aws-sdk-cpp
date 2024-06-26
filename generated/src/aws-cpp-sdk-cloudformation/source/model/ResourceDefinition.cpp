@@ -27,10 +27,8 @@ ResourceDefinition::ResourceDefinition() :
 {
 }
 
-ResourceDefinition::ResourceDefinition(const XmlNode& xmlNode) : 
-    m_resourceTypeHasBeenSet(false),
-    m_logicalResourceIdHasBeenSet(false),
-    m_resourceIdentifierHasBeenSet(false)
+ResourceDefinition::ResourceDefinition(const XmlNode& xmlNode)
+  : ResourceDefinition()
 {
   *this = xmlNode;
 }

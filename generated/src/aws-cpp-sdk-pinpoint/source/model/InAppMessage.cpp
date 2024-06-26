@@ -26,11 +26,8 @@ InAppMessage::InAppMessage() :
 {
 }
 
-InAppMessage::InAppMessage(JsonView jsonValue) : 
-    m_contentHasBeenSet(false),
-    m_customConfigHasBeenSet(false),
-    m_layout(Layout::NOT_SET),
-    m_layoutHasBeenSet(false)
+InAppMessage::InAppMessage(JsonView jsonValue)
+  : InAppMessage()
 {
   *this = jsonValue;
 }

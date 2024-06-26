@@ -26,11 +26,8 @@ ExpirationSettings::ExpirationSettings() :
 {
 }
 
-ExpirationSettings::ExpirationSettings(JsonView jsonValue) : 
-    m_expirationDays(0),
-    m_expirationDaysHasBeenSet(false),
-    m_expirationCriterion(ExpirationCriterion::NOT_SET),
-    m_expirationCriterionHasBeenSet(false)
+ExpirationSettings::ExpirationSettings(JsonView jsonValue)
+  : ExpirationSettings()
 {
   *this = jsonValue;
 }

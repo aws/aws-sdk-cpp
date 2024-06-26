@@ -29,14 +29,8 @@ ConditionBasedCollectionScheme::ConditionBasedCollectionScheme() :
 {
 }
 
-ConditionBasedCollectionScheme::ConditionBasedCollectionScheme(JsonView jsonValue) : 
-    m_expressionHasBeenSet(false),
-    m_minimumTriggerIntervalMs(0),
-    m_minimumTriggerIntervalMsHasBeenSet(false),
-    m_triggerMode(TriggerMode::NOT_SET),
-    m_triggerModeHasBeenSet(false),
-    m_conditionLanguageVersion(0),
-    m_conditionLanguageVersionHasBeenSet(false)
+ConditionBasedCollectionScheme::ConditionBasedCollectionScheme(JsonView jsonValue)
+  : ConditionBasedCollectionScheme()
 {
   *this = jsonValue;
 }

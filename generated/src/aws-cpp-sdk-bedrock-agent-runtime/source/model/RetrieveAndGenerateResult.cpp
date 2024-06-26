@@ -22,8 +22,8 @@ RetrieveAndGenerateResult::RetrieveAndGenerateResult() :
 {
 }
 
-RetrieveAndGenerateResult::RetrieveAndGenerateResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_guardrailAction(GuadrailAction::NOT_SET)
+RetrieveAndGenerateResult::RetrieveAndGenerateResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : RetrieveAndGenerateResult()
 {
   *this = result;
 }

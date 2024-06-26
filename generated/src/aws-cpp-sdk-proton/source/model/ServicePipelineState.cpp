@@ -26,11 +26,8 @@ ServicePipelineState::ServicePipelineState() :
 {
 }
 
-ServicePipelineState::ServicePipelineState(JsonView jsonValue) : 
-    m_specHasBeenSet(false),
-    m_templateMajorVersionHasBeenSet(false),
-    m_templateMinorVersionHasBeenSet(false),
-    m_templateNameHasBeenSet(false)
+ServicePipelineState::ServicePipelineState(JsonView jsonValue)
+  : ServicePipelineState()
 {
   *this = jsonValue;
 }

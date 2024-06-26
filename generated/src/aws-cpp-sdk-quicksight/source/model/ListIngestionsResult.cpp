@@ -22,8 +22,8 @@ ListIngestionsResult::ListIngestionsResult() :
 {
 }
 
-ListIngestionsResult::ListIngestionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+ListIngestionsResult::ListIngestionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ListIngestionsResult()
 {
   *this = result;
 }

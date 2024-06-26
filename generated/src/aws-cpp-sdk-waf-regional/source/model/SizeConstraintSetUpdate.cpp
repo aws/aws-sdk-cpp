@@ -25,10 +25,8 @@ SizeConstraintSetUpdate::SizeConstraintSetUpdate() :
 {
 }
 
-SizeConstraintSetUpdate::SizeConstraintSetUpdate(JsonView jsonValue) : 
-    m_action(ChangeAction::NOT_SET),
-    m_actionHasBeenSet(false),
-    m_sizeConstraintHasBeenSet(false)
+SizeConstraintSetUpdate::SizeConstraintSetUpdate(JsonView jsonValue)
+  : SizeConstraintSetUpdate()
 {
   *this = jsonValue;
 }

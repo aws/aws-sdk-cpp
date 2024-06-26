@@ -30,15 +30,8 @@ LoRaWANGateway::LoRaWANGateway() :
 {
 }
 
-LoRaWANGateway::LoRaWANGateway(JsonView jsonValue) : 
-    m_gatewayEuiHasBeenSet(false),
-    m_rfRegionHasBeenSet(false),
-    m_joinEuiFiltersHasBeenSet(false),
-    m_netIdFiltersHasBeenSet(false),
-    m_subBandsHasBeenSet(false),
-    m_beaconingHasBeenSet(false),
-    m_maxEirp(0.0),
-    m_maxEirpHasBeenSet(false)
+LoRaWANGateway::LoRaWANGateway(JsonView jsonValue)
+  : LoRaWANGateway()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ NotificationDestinationConfig::NotificationDestinationConfig() :
 {
 }
 
-NotificationDestinationConfig::NotificationDestinationConfig(JsonView jsonValue) : 
-    m_uriHasBeenSet(false)
+NotificationDestinationConfig::NotificationDestinationConfig(JsonView jsonValue)
+  : NotificationDestinationConfig()
 {
   *this = jsonValue;
 }

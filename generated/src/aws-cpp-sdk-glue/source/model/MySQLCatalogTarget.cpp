@@ -26,11 +26,8 @@ MySQLCatalogTarget::MySQLCatalogTarget() :
 {
 }
 
-MySQLCatalogTarget::MySQLCatalogTarget(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_inputsHasBeenSet(false),
-    m_databaseHasBeenSet(false),
-    m_tableHasBeenSet(false)
+MySQLCatalogTarget::MySQLCatalogTarget(JsonView jsonValue)
+  : MySQLCatalogTarget()
 {
   *this = jsonValue;
 }

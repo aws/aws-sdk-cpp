@@ -23,8 +23,8 @@ Logging::Logging() :
 {
 }
 
-Logging::Logging(JsonView jsonValue) : 
-    m_accessLogHasBeenSet(false)
+Logging::Logging(JsonView jsonValue)
+  : Logging()
 {
   *this = jsonValue;
 }

@@ -28,13 +28,8 @@ AccountMetaData::AccountMetaData() :
 {
 }
 
-AccountMetaData::AccountMetaData(JsonView jsonValue) : 
-    m_accountNameHasBeenSet(false),
-    m_addressHasBeenSet(false),
-    m_addressRoleMapHasBeenSet(false),
-    m_addressType(AddressRoleType::NOT_SET),
-    m_addressTypeHasBeenSet(false),
-    m_sellerHasBeenSet(false)
+AccountMetaData::AccountMetaData(JsonView jsonValue)
+  : AccountMetaData()
 {
   *this = jsonValue;
 }

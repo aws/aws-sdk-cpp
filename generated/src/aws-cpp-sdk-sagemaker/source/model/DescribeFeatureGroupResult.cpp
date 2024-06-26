@@ -23,9 +23,8 @@ DescribeFeatureGroupResult::DescribeFeatureGroupResult() :
 {
 }
 
-DescribeFeatureGroupResult::DescribeFeatureGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_featureGroupStatus(FeatureGroupStatus::NOT_SET),
-    m_onlineStoreTotalSizeBytes(0)
+DescribeFeatureGroupResult::DescribeFeatureGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeFeatureGroupResult()
 {
   *this = result;
 }

@@ -23,8 +23,8 @@ DbInstanceConfiguration::DbInstanceConfiguration() :
 {
 }
 
-DbInstanceConfiguration::DbInstanceConfiguration(JsonView jsonValue) : 
-    m_dbInstanceClassHasBeenSet(false)
+DbInstanceConfiguration::DbInstanceConfiguration(JsonView jsonValue)
+  : DbInstanceConfiguration()
 {
   *this = jsonValue;
 }

@@ -23,9 +23,8 @@ DescribeQueryResult::DescribeQueryResult() :
 {
 }
 
-DescribeQueryResult::DescribeQueryResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_queryStatus(QueryStatus::NOT_SET),
-    m_deliveryStatus(DeliveryStatus::NOT_SET)
+DescribeQueryResult::DescribeQueryResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeQueryResult()
 {
   *this = result;
 }

@@ -25,10 +25,8 @@ SupportedLanguage::SupportedLanguage() :
 {
 }
 
-SupportedLanguage::SupportedLanguage(JsonView jsonValue) : 
-    m_codeHasBeenSet(false),
-    m_languageHasBeenSet(false),
-    m_displayHasBeenSet(false)
+SupportedLanguage::SupportedLanguage(JsonView jsonValue)
+  : SupportedLanguage()
 {
   *this = jsonValue;
 }

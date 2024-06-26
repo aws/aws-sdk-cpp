@@ -31,14 +31,8 @@ PublishBatchRequestEntry::PublishBatchRequestEntry() :
 {
 }
 
-PublishBatchRequestEntry::PublishBatchRequestEntry(const XmlNode& xmlNode) : 
-    m_idHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_subjectHasBeenSet(false),
-    m_messageStructureHasBeenSet(false),
-    m_messageAttributesHasBeenSet(false),
-    m_messageDeduplicationIdHasBeenSet(false),
-    m_messageGroupIdHasBeenSet(false)
+PublishBatchRequestEntry::PublishBatchRequestEntry(const XmlNode& xmlNode)
+  : PublishBatchRequestEntry()
 {
   *this = xmlNode;
 }

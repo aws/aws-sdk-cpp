@@ -24,9 +24,8 @@ AggregateConformancePackComplianceSummary::AggregateConformancePackComplianceSum
 {
 }
 
-AggregateConformancePackComplianceSummary::AggregateConformancePackComplianceSummary(JsonView jsonValue) : 
-    m_complianceSummaryHasBeenSet(false),
-    m_groupNameHasBeenSet(false)
+AggregateConformancePackComplianceSummary::AggregateConformancePackComplianceSummary(JsonView jsonValue)
+  : AggregateConformancePackComplianceSummary()
 {
   *this = jsonValue;
 }

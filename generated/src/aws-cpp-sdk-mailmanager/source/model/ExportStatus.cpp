@@ -27,12 +27,8 @@ ExportStatus::ExportStatus() :
 {
 }
 
-ExportStatus::ExportStatus(JsonView jsonValue) : 
-    m_completionTimestampHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_state(ExportState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_submissionTimestampHasBeenSet(false)
+ExportStatus::ExportStatus(JsonView jsonValue)
+  : ExportStatus()
 {
   *this = jsonValue;
 }

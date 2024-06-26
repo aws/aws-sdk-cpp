@@ -25,10 +25,8 @@ WhatIfPointScenario::WhatIfPointScenario() :
 {
 }
 
-WhatIfPointScenario::WhatIfPointScenario(JsonView jsonValue) : 
-    m_dateHasBeenSet(false),
-    m_value(0.0),
-    m_valueHasBeenSet(false)
+WhatIfPointScenario::WhatIfPointScenario(JsonView jsonValue)
+  : WhatIfPointScenario()
 {
   *this = jsonValue;
 }

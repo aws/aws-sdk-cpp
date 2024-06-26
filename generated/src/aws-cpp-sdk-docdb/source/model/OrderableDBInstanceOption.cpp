@@ -32,15 +32,8 @@ OrderableDBInstanceOption::OrderableDBInstanceOption() :
 {
 }
 
-OrderableDBInstanceOption::OrderableDBInstanceOption(const XmlNode& xmlNode) : 
-    m_engineHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_dBInstanceClassHasBeenSet(false),
-    m_licenseModelHasBeenSet(false),
-    m_availabilityZonesHasBeenSet(false),
-    m_vpc(false),
-    m_vpcHasBeenSet(false),
-    m_storageTypeHasBeenSet(false)
+OrderableDBInstanceOption::OrderableDBInstanceOption(const XmlNode& xmlNode)
+  : OrderableDBInstanceOption()
 {
   *this = xmlNode;
 }

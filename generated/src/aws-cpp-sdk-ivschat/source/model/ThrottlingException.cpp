@@ -28,13 +28,8 @@ ThrottlingException::ThrottlingException() :
 {
 }
 
-ThrottlingException::ThrottlingException(JsonView jsonValue) : 
-    m_limit(0),
-    m_limitHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false)
+ThrottlingException::ThrottlingException(JsonView jsonValue)
+  : ThrottlingException()
 {
   *this = jsonValue;
 }

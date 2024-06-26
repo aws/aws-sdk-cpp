@@ -23,8 +23,8 @@ Plugin::Plugin() :
 {
 }
 
-Plugin::Plugin(JsonView jsonValue) : 
-    m_customPluginHasBeenSet(false)
+Plugin::Plugin(JsonView jsonValue)
+  : Plugin()
 {
   *this = jsonValue;
 }

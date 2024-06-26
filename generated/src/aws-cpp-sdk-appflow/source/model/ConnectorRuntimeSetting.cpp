@@ -30,15 +30,8 @@ ConnectorRuntimeSetting::ConnectorRuntimeSetting() :
 {
 }
 
-ConnectorRuntimeSetting::ConnectorRuntimeSetting(JsonView jsonValue) : 
-    m_keyHasBeenSet(false),
-    m_dataTypeHasBeenSet(false),
-    m_isRequired(false),
-    m_isRequiredHasBeenSet(false),
-    m_labelHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_scopeHasBeenSet(false),
-    m_connectorSuppliedValueOptionsHasBeenSet(false)
+ConnectorRuntimeSetting::ConnectorRuntimeSetting(JsonView jsonValue)
+  : ConnectorRuntimeSetting()
 {
   *this = jsonValue;
 }

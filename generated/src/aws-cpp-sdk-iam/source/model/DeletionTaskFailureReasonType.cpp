@@ -26,9 +26,8 @@ DeletionTaskFailureReasonType::DeletionTaskFailureReasonType() :
 {
 }
 
-DeletionTaskFailureReasonType::DeletionTaskFailureReasonType(const XmlNode& xmlNode) : 
-    m_reasonHasBeenSet(false),
-    m_roleUsageListHasBeenSet(false)
+DeletionTaskFailureReasonType::DeletionTaskFailureReasonType(const XmlNode& xmlNode)
+  : DeletionTaskFailureReasonType()
 {
   *this = xmlNode;
 }

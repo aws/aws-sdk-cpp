@@ -22,8 +22,8 @@ GetReferenceMetadataResult::GetReferenceMetadataResult() :
 {
 }
 
-GetReferenceMetadataResult::GetReferenceMetadataResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(ReferenceStatus::NOT_SET)
+GetReferenceMetadataResult::GetReferenceMetadataResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetReferenceMetadataResult()
 {
   *this = result;
 }

@@ -32,17 +32,8 @@ ProcessingS3Input::ProcessingS3Input() :
 {
 }
 
-ProcessingS3Input::ProcessingS3Input(JsonView jsonValue) : 
-    m_s3UriHasBeenSet(false),
-    m_localPathHasBeenSet(false),
-    m_s3DataType(ProcessingS3DataType::NOT_SET),
-    m_s3DataTypeHasBeenSet(false),
-    m_s3InputMode(ProcessingS3InputMode::NOT_SET),
-    m_s3InputModeHasBeenSet(false),
-    m_s3DataDistributionType(ProcessingS3DataDistributionType::NOT_SET),
-    m_s3DataDistributionTypeHasBeenSet(false),
-    m_s3CompressionType(ProcessingS3CompressionType::NOT_SET),
-    m_s3CompressionTypeHasBeenSet(false)
+ProcessingS3Input::ProcessingS3Input(JsonView jsonValue)
+  : ProcessingS3Input()
 {
   *this = jsonValue;
 }

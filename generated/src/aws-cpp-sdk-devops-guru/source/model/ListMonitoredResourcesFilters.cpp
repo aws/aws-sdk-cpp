@@ -25,10 +25,8 @@ ListMonitoredResourcesFilters::ListMonitoredResourcesFilters() :
 {
 }
 
-ListMonitoredResourcesFilters::ListMonitoredResourcesFilters(JsonView jsonValue) : 
-    m_resourcePermission(ResourcePermission::NOT_SET),
-    m_resourcePermissionHasBeenSet(false),
-    m_resourceTypeFiltersHasBeenSet(false)
+ListMonitoredResourcesFilters::ListMonitoredResourcesFilters(JsonView jsonValue)
+  : ListMonitoredResourcesFilters()
 {
   *this = jsonValue;
 }

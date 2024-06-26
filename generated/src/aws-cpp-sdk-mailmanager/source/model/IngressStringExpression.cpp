@@ -26,11 +26,8 @@ IngressStringExpression::IngressStringExpression() :
 {
 }
 
-IngressStringExpression::IngressStringExpression(JsonView jsonValue) : 
-    m_evaluateHasBeenSet(false),
-    m_operator(IngressStringOperator::NOT_SET),
-    m_operatorHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+IngressStringExpression::IngressStringExpression(JsonView jsonValue)
+  : IngressStringExpression()
 {
   *this = jsonValue;
 }

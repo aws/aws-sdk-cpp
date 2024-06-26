@@ -25,10 +25,8 @@ ProfilingStatus::ProfilingStatus() :
 {
 }
 
-ProfilingStatus::ProfilingStatus(JsonView jsonValue) : 
-    m_latestAgentOrchestratedAtHasBeenSet(false),
-    m_latestAgentProfileReportedAtHasBeenSet(false),
-    m_latestAggregatedProfileHasBeenSet(false)
+ProfilingStatus::ProfilingStatus(JsonView jsonValue)
+  : ProfilingStatus()
 {
   *this = jsonValue;
 }

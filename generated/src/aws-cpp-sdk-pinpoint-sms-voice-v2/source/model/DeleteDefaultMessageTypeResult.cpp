@@ -22,8 +22,8 @@ DeleteDefaultMessageTypeResult::DeleteDefaultMessageTypeResult() :
 {
 }
 
-DeleteDefaultMessageTypeResult::DeleteDefaultMessageTypeResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_messageType(MessageType::NOT_SET)
+DeleteDefaultMessageTypeResult::DeleteDefaultMessageTypeResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeleteDefaultMessageTypeResult()
 {
   *this = result;
 }

@@ -26,11 +26,8 @@ VpcConfigurationDescription::VpcConfigurationDescription() :
 {
 }
 
-VpcConfigurationDescription::VpcConfigurationDescription(JsonView jsonValue) : 
-    m_vpcConfigurationIdHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_subnetIdsHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false)
+VpcConfigurationDescription::VpcConfigurationDescription(JsonView jsonValue)
+  : VpcConfigurationDescription()
 {
   *this = jsonValue;
 }

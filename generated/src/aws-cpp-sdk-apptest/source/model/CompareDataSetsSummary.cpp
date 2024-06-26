@@ -24,9 +24,8 @@ CompareDataSetsSummary::CompareDataSetsSummary() :
 {
 }
 
-CompareDataSetsSummary::CompareDataSetsSummary(JsonView jsonValue) : 
-    m_stepInputHasBeenSet(false),
-    m_stepOutputHasBeenSet(false)
+CompareDataSetsSummary::CompareDataSetsSummary(JsonView jsonValue)
+  : CompareDataSetsSummary()
 {
   *this = jsonValue;
 }

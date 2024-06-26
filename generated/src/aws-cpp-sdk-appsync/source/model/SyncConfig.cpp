@@ -27,12 +27,8 @@ SyncConfig::SyncConfig() :
 {
 }
 
-SyncConfig::SyncConfig(JsonView jsonValue) : 
-    m_conflictHandler(ConflictHandlerType::NOT_SET),
-    m_conflictHandlerHasBeenSet(false),
-    m_conflictDetection(ConflictDetectionType::NOT_SET),
-    m_conflictDetectionHasBeenSet(false),
-    m_lambdaConflictHandlerConfigHasBeenSet(false)
+SyncConfig::SyncConfig(JsonView jsonValue)
+  : SyncConfig()
 {
   *this = jsonValue;
 }

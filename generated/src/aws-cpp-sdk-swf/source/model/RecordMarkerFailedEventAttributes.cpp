@@ -27,12 +27,8 @@ RecordMarkerFailedEventAttributes::RecordMarkerFailedEventAttributes() :
 {
 }
 
-RecordMarkerFailedEventAttributes::RecordMarkerFailedEventAttributes(JsonView jsonValue) : 
-    m_markerNameHasBeenSet(false),
-    m_cause(RecordMarkerFailedCause::NOT_SET),
-    m_causeHasBeenSet(false),
-    m_decisionTaskCompletedEventId(0),
-    m_decisionTaskCompletedEventIdHasBeenSet(false)
+RecordMarkerFailedEventAttributes::RecordMarkerFailedEventAttributes(JsonView jsonValue)
+  : RecordMarkerFailedEventAttributes()
 {
   *this = jsonValue;
 }

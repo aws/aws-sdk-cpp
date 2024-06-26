@@ -24,9 +24,8 @@ DevEnvironmentRepositorySummary::DevEnvironmentRepositorySummary() :
 {
 }
 
-DevEnvironmentRepositorySummary::DevEnvironmentRepositorySummary(JsonView jsonValue) : 
-    m_repositoryNameHasBeenSet(false),
-    m_branchNameHasBeenSet(false)
+DevEnvironmentRepositorySummary::DevEnvironmentRepositorySummary(JsonView jsonValue)
+  : DevEnvironmentRepositorySummary()
 {
   *this = jsonValue;
 }

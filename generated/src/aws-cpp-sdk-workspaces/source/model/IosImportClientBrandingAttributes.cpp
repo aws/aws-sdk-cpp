@@ -30,14 +30,8 @@ IosImportClientBrandingAttributes::IosImportClientBrandingAttributes() :
 {
 }
 
-IosImportClientBrandingAttributes::IosImportClientBrandingAttributes(JsonView jsonValue) : 
-    m_logoHasBeenSet(false),
-    m_logo2xHasBeenSet(false),
-    m_logo3xHasBeenSet(false),
-    m_supportEmailHasBeenSet(false),
-    m_supportLinkHasBeenSet(false),
-    m_forgotPasswordLinkHasBeenSet(false),
-    m_loginMessageHasBeenSet(false)
+IosImportClientBrandingAttributes::IosImportClientBrandingAttributes(JsonView jsonValue)
+  : IosImportClientBrandingAttributes()
 {
   *this = jsonValue;
 }

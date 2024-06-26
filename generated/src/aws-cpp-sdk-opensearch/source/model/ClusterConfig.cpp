@@ -44,29 +44,8 @@ ClusterConfig::ClusterConfig() :
 {
 }
 
-ClusterConfig::ClusterConfig(JsonView jsonValue) : 
-    m_instanceType(OpenSearchPartitionInstanceType::NOT_SET),
-    m_instanceTypeHasBeenSet(false),
-    m_instanceCount(0),
-    m_instanceCountHasBeenSet(false),
-    m_dedicatedMasterEnabled(false),
-    m_dedicatedMasterEnabledHasBeenSet(false),
-    m_zoneAwarenessEnabled(false),
-    m_zoneAwarenessEnabledHasBeenSet(false),
-    m_zoneAwarenessConfigHasBeenSet(false),
-    m_dedicatedMasterType(OpenSearchPartitionInstanceType::NOT_SET),
-    m_dedicatedMasterTypeHasBeenSet(false),
-    m_dedicatedMasterCount(0),
-    m_dedicatedMasterCountHasBeenSet(false),
-    m_warmEnabled(false),
-    m_warmEnabledHasBeenSet(false),
-    m_warmType(OpenSearchWarmPartitionInstanceType::NOT_SET),
-    m_warmTypeHasBeenSet(false),
-    m_warmCount(0),
-    m_warmCountHasBeenSet(false),
-    m_coldStorageOptionsHasBeenSet(false),
-    m_multiAZWithStandbyEnabled(false),
-    m_multiAZWithStandbyEnabledHasBeenSet(false)
+ClusterConfig::ClusterConfig(JsonView jsonValue)
+  : ClusterConfig()
 {
   *this = jsonValue;
 }

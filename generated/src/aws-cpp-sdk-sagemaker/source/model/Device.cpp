@@ -25,10 +25,8 @@ Device::Device() :
 {
 }
 
-Device::Device(JsonView jsonValue) : 
-    m_deviceNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_iotThingNameHasBeenSet(false)
+Device::Device(JsonView jsonValue)
+  : Device()
 {
   *this = jsonValue;
 }

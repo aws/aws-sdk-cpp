@@ -25,10 +25,8 @@ Document::Document() :
 {
 }
 
-Document::Document(JsonView jsonValue) : 
-    m_contentReferenceHasBeenSet(false),
-    m_excerptHasBeenSet(false),
-    m_titleHasBeenSet(false)
+Document::Document(JsonView jsonValue)
+  : Document()
 {
   *this = jsonValue;
 }

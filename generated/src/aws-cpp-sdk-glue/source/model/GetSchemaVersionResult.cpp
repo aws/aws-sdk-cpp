@@ -24,10 +24,8 @@ GetSchemaVersionResult::GetSchemaVersionResult() :
 {
 }
 
-GetSchemaVersionResult::GetSchemaVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_dataFormat(DataFormat::NOT_SET),
-    m_versionNumber(0),
-    m_status(SchemaVersionStatus::NOT_SET)
+GetSchemaVersionResult::GetSchemaVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetSchemaVersionResult()
 {
   *this = result;
 }

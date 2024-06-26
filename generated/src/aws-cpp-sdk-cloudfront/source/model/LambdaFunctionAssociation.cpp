@@ -29,12 +29,8 @@ LambdaFunctionAssociation::LambdaFunctionAssociation() :
 {
 }
 
-LambdaFunctionAssociation::LambdaFunctionAssociation(const XmlNode& xmlNode) : 
-    m_lambdaFunctionARNHasBeenSet(false),
-    m_eventType(EventType::NOT_SET),
-    m_eventTypeHasBeenSet(false),
-    m_includeBody(false),
-    m_includeBodyHasBeenSet(false)
+LambdaFunctionAssociation::LambdaFunctionAssociation(const XmlNode& xmlNode)
+  : LambdaFunctionAssociation()
 {
   *this = xmlNode;
 }

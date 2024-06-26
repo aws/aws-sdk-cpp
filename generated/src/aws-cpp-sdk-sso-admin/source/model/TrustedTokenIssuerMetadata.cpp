@@ -26,11 +26,8 @@ TrustedTokenIssuerMetadata::TrustedTokenIssuerMetadata() :
 {
 }
 
-TrustedTokenIssuerMetadata::TrustedTokenIssuerMetadata(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_trustedTokenIssuerArnHasBeenSet(false),
-    m_trustedTokenIssuerType(TrustedTokenIssuerType::NOT_SET),
-    m_trustedTokenIssuerTypeHasBeenSet(false)
+TrustedTokenIssuerMetadata::TrustedTokenIssuerMetadata(JsonView jsonValue)
+  : TrustedTokenIssuerMetadata()
 {
   *this = jsonValue;
 }

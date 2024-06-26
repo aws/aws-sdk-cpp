@@ -29,14 +29,8 @@ DataSourceSummary::DataSourceSummary() :
 {
 }
 
-DataSourceSummary::DataSourceSummary(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_dataSourceIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_type(DataSourceType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false)
+DataSourceSummary::DataSourceSummary(JsonView jsonValue)
+  : DataSourceSummary()
 {
   *this = jsonValue;
 }

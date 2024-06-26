@@ -24,9 +24,8 @@ ActivityFailedEventDetails::ActivityFailedEventDetails() :
 {
 }
 
-ActivityFailedEventDetails::ActivityFailedEventDetails(JsonView jsonValue) : 
-    m_errorHasBeenSet(false),
-    m_causeHasBeenSet(false)
+ActivityFailedEventDetails::ActivityFailedEventDetails(JsonView jsonValue)
+  : ActivityFailedEventDetails()
 {
   *this = jsonValue;
 }

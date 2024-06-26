@@ -26,11 +26,8 @@ AccountAssociationsListElement::AccountAssociationsListElement() :
 {
 }
 
-AccountAssociationsListElement::AccountAssociationsListElement(JsonView jsonValue) : 
-    m_accountIdHasBeenSet(false),
-    m_billingGroupArnHasBeenSet(false),
-    m_accountNameHasBeenSet(false),
-    m_accountEmailHasBeenSet(false)
+AccountAssociationsListElement::AccountAssociationsListElement(JsonView jsonValue)
+  : AccountAssociationsListElement()
 {
   *this = jsonValue;
 }

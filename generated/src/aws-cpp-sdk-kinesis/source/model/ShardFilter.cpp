@@ -26,11 +26,8 @@ ShardFilter::ShardFilter() :
 {
 }
 
-ShardFilter::ShardFilter(JsonView jsonValue) : 
-    m_type(ShardFilterType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_shardIdHasBeenSet(false),
-    m_timestampHasBeenSet(false)
+ShardFilter::ShardFilter(JsonView jsonValue)
+  : ShardFilter()
 {
   *this = jsonValue;
 }

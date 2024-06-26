@@ -24,9 +24,8 @@ WebhookAuthConfiguration::WebhookAuthConfiguration() :
 {
 }
 
-WebhookAuthConfiguration::WebhookAuthConfiguration(JsonView jsonValue) : 
-    m_allowedIPRangeHasBeenSet(false),
-    m_secretTokenHasBeenSet(false)
+WebhookAuthConfiguration::WebhookAuthConfiguration(JsonView jsonValue)
+  : WebhookAuthConfiguration()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ RecordOutput::RecordOutput() :
 {
 }
 
-RecordOutput::RecordOutput(JsonView jsonValue) : 
-    m_outputKeyHasBeenSet(false),
-    m_outputValueHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+RecordOutput::RecordOutput(JsonView jsonValue)
+  : RecordOutput()
 {
   *this = jsonValue;
 }

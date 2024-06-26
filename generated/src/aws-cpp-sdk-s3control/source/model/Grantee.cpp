@@ -27,10 +27,8 @@ Grantee::Grantee() :
 {
 }
 
-Grantee::Grantee(const XmlNode& xmlNode) : 
-    m_granteeType(GranteeType::NOT_SET),
-    m_granteeTypeHasBeenSet(false),
-    m_granteeIdentifierHasBeenSet(false)
+Grantee::Grantee(const XmlNode& xmlNode)
+  : Grantee()
 {
   *this = xmlNode;
 }

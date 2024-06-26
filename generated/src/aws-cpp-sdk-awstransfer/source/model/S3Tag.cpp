@@ -24,9 +24,8 @@ S3Tag::S3Tag() :
 {
 }
 
-S3Tag::S3Tag(JsonView jsonValue) : 
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false)
+S3Tag::S3Tag(JsonView jsonValue)
+  : S3Tag()
 {
   *this = jsonValue;
 }

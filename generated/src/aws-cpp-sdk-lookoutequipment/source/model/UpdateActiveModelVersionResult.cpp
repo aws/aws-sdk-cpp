@@ -23,9 +23,8 @@ UpdateActiveModelVersionResult::UpdateActiveModelVersionResult() :
 {
 }
 
-UpdateActiveModelVersionResult::UpdateActiveModelVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_currentActiveVersion(0),
-    m_previousActiveVersion(0)
+UpdateActiveModelVersionResult::UpdateActiveModelVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateActiveModelVersionResult()
 {
   *this = result;
 }

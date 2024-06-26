@@ -31,16 +31,8 @@ BackendAPIAppSyncAuthSettings::BackendAPIAppSyncAuthSettings() :
 {
 }
 
-BackendAPIAppSyncAuthSettings::BackendAPIAppSyncAuthSettings(JsonView jsonValue) : 
-    m_cognitoUserPoolIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_expirationTime(0.0),
-    m_expirationTimeHasBeenSet(false),
-    m_openIDAuthTTLHasBeenSet(false),
-    m_openIDClientIdHasBeenSet(false),
-    m_openIDIatTTLHasBeenSet(false),
-    m_openIDIssueURLHasBeenSet(false),
-    m_openIDProviderNameHasBeenSet(false)
+BackendAPIAppSyncAuthSettings::BackendAPIAppSyncAuthSettings(JsonView jsonValue)
+  : BackendAPIAppSyncAuthSettings()
 {
   *this = jsonValue;
 }

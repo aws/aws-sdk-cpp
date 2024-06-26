@@ -23,9 +23,8 @@ DescribeComponentConfigurationResult::DescribeComponentConfigurationResult() :
 {
 }
 
-DescribeComponentConfigurationResult::DescribeComponentConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_monitor(false),
-    m_tier(Tier::NOT_SET)
+DescribeComponentConfigurationResult::DescribeComponentConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeComponentConfigurationResult()
 {
   *this = result;
 }

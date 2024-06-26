@@ -24,9 +24,8 @@ UpdateResourceCollectionFilter::UpdateResourceCollectionFilter() :
 {
 }
 
-UpdateResourceCollectionFilter::UpdateResourceCollectionFilter(JsonView jsonValue) : 
-    m_cloudFormationHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+UpdateResourceCollectionFilter::UpdateResourceCollectionFilter(JsonView jsonValue)
+  : UpdateResourceCollectionFilter()
 {
   *this = jsonValue;
 }

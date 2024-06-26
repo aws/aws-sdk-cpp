@@ -29,14 +29,8 @@ StillWaitingResponseSpecification::StillWaitingResponseSpecification() :
 {
 }
 
-StillWaitingResponseSpecification::StillWaitingResponseSpecification(JsonView jsonValue) : 
-    m_messageGroupsHasBeenSet(false),
-    m_frequencyInSeconds(0),
-    m_frequencyInSecondsHasBeenSet(false),
-    m_timeoutInSeconds(0),
-    m_timeoutInSecondsHasBeenSet(false),
-    m_allowInterrupt(false),
-    m_allowInterruptHasBeenSet(false)
+StillWaitingResponseSpecification::StillWaitingResponseSpecification(JsonView jsonValue)
+  : StillWaitingResponseSpecification()
 {
   *this = jsonValue;
 }

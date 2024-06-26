@@ -28,13 +28,8 @@ ContainerPortRange::ContainerPortRange() :
 {
 }
 
-ContainerPortRange::ContainerPortRange(JsonView jsonValue) : 
-    m_fromPort(0),
-    m_fromPortHasBeenSet(false),
-    m_toPort(0),
-    m_toPortHasBeenSet(false),
-    m_protocol(IpProtocol::NOT_SET),
-    m_protocolHasBeenSet(false)
+ContainerPortRange::ContainerPortRange(JsonView jsonValue)
+  : ContainerPortRange()
 {
   *this = jsonValue;
 }

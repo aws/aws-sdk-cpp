@@ -32,17 +32,8 @@ PresetWatermark::PresetWatermark() :
 {
 }
 
-PresetWatermark::PresetWatermark(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_maxWidthHasBeenSet(false),
-    m_maxHeightHasBeenSet(false),
-    m_sizingPolicyHasBeenSet(false),
-    m_horizontalAlignHasBeenSet(false),
-    m_horizontalOffsetHasBeenSet(false),
-    m_verticalAlignHasBeenSet(false),
-    m_verticalOffsetHasBeenSet(false),
-    m_opacityHasBeenSet(false),
-    m_targetHasBeenSet(false)
+PresetWatermark::PresetWatermark(JsonView jsonValue)
+  : PresetWatermark()
 {
   *this = jsonValue;
 }

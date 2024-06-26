@@ -38,23 +38,8 @@ Evaluation::Evaluation() :
 {
 }
 
-Evaluation::Evaluation(JsonView jsonValue) : 
-    m_evaluationIdHasBeenSet(false),
-    m_mLModelIdHasBeenSet(false),
-    m_evaluationDataSourceIdHasBeenSet(false),
-    m_inputDataLocationS3HasBeenSet(false),
-    m_createdByIamUserHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_status(EntityStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_performanceMetricsHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_computeTime(0),
-    m_computeTimeHasBeenSet(false),
-    m_finishedAtHasBeenSet(false),
-    m_startedAtHasBeenSet(false)
+Evaluation::Evaluation(JsonView jsonValue)
+  : Evaluation()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ FilterOperationSelectedFieldsConfiguration::FilterOperationSelectedFieldsConfigu
 {
 }
 
-FilterOperationSelectedFieldsConfiguration::FilterOperationSelectedFieldsConfiguration(JsonView jsonValue) : 
-    m_selectedFieldsHasBeenSet(false),
-    m_selectedFieldOptions(SelectedFieldOptions::NOT_SET),
-    m_selectedFieldOptionsHasBeenSet(false),
-    m_selectedColumnsHasBeenSet(false)
+FilterOperationSelectedFieldsConfiguration::FilterOperationSelectedFieldsConfiguration(JsonView jsonValue)
+  : FilterOperationSelectedFieldsConfiguration()
 {
   *this = jsonValue;
 }

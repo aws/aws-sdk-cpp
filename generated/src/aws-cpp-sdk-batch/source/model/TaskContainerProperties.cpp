@@ -41,26 +41,8 @@ TaskContainerProperties::TaskContainerProperties() :
 {
 }
 
-TaskContainerProperties::TaskContainerProperties(JsonView jsonValue) : 
-    m_commandHasBeenSet(false),
-    m_dependsOnHasBeenSet(false),
-    m_environmentHasBeenSet(false),
-    m_essential(false),
-    m_essentialHasBeenSet(false),
-    m_imageHasBeenSet(false),
-    m_linuxParametersHasBeenSet(false),
-    m_logConfigurationHasBeenSet(false),
-    m_mountPointsHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_privileged(false),
-    m_privilegedHasBeenSet(false),
-    m_readonlyRootFilesystem(false),
-    m_readonlyRootFilesystemHasBeenSet(false),
-    m_repositoryCredentialsHasBeenSet(false),
-    m_resourceRequirementsHasBeenSet(false),
-    m_secretsHasBeenSet(false),
-    m_ulimitsHasBeenSet(false),
-    m_userHasBeenSet(false)
+TaskContainerProperties::TaskContainerProperties(JsonView jsonValue)
+  : TaskContainerProperties()
 {
   *this = jsonValue;
 }

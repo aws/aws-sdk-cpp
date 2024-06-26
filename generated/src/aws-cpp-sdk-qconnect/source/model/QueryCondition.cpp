@@ -23,8 +23,8 @@ QueryCondition::QueryCondition() :
 {
 }
 
-QueryCondition::QueryCondition(JsonView jsonValue) : 
-    m_singleHasBeenSet(false)
+QueryCondition::QueryCondition(JsonView jsonValue)
+  : QueryCondition()
 {
   *this = jsonValue;
 }

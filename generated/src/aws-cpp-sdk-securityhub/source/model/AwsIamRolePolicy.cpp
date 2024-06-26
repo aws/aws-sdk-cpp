@@ -23,8 +23,8 @@ AwsIamRolePolicy::AwsIamRolePolicy() :
 {
 }
 
-AwsIamRolePolicy::AwsIamRolePolicy(JsonView jsonValue) : 
-    m_policyNameHasBeenSet(false)
+AwsIamRolePolicy::AwsIamRolePolicy(JsonView jsonValue)
+  : AwsIamRolePolicy()
 {
   *this = jsonValue;
 }

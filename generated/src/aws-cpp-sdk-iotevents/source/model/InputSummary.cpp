@@ -29,14 +29,8 @@ InputSummary::InputSummary() :
 {
 }
 
-InputSummary::InputSummary(JsonView jsonValue) : 
-    m_inputNameHasBeenSet(false),
-    m_inputDescriptionHasBeenSet(false),
-    m_inputArnHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastUpdateTimeHasBeenSet(false),
-    m_status(InputStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+InputSummary::InputSummary(JsonView jsonValue)
+  : InputSummary()
 {
   *this = jsonValue;
 }

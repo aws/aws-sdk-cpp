@@ -25,8 +25,8 @@ DBInstanceAutomatedBackupsReplication::DBInstanceAutomatedBackupsReplication() :
 {
 }
 
-DBInstanceAutomatedBackupsReplication::DBInstanceAutomatedBackupsReplication(const XmlNode& xmlNode) : 
-    m_dBInstanceAutomatedBackupsArnHasBeenSet(false)
+DBInstanceAutomatedBackupsReplication::DBInstanceAutomatedBackupsReplication(const XmlNode& xmlNode)
+  : DBInstanceAutomatedBackupsReplication()
 {
   *this = xmlNode;
 }

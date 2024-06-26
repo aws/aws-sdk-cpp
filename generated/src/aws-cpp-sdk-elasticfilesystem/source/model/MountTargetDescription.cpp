@@ -35,19 +35,8 @@ MountTargetDescription::MountTargetDescription() :
 {
 }
 
-MountTargetDescription::MountTargetDescription(JsonView jsonValue) : 
-    m_ownerIdHasBeenSet(false),
-    m_mountTargetIdHasBeenSet(false),
-    m_fileSystemIdHasBeenSet(false),
-    m_subnetIdHasBeenSet(false),
-    m_lifeCycleState(LifeCycleState::NOT_SET),
-    m_lifeCycleStateHasBeenSet(false),
-    m_ipAddressHasBeenSet(false),
-    m_networkInterfaceIdHasBeenSet(false),
-    m_availabilityZoneIdHasBeenSet(false),
-    m_availabilityZoneNameHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
+MountTargetDescription::MountTargetDescription(JsonView jsonValue)
+  : MountTargetDescription()
 {
   *this = jsonValue;
 }

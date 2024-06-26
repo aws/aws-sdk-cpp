@@ -23,8 +23,8 @@ RecommendationPillarSpecificAggregates::RecommendationPillarSpecificAggregates()
 {
 }
 
-RecommendationPillarSpecificAggregates::RecommendationPillarSpecificAggregates(JsonView jsonValue) : 
-    m_costOptimizingHasBeenSet(false)
+RecommendationPillarSpecificAggregates::RecommendationPillarSpecificAggregates(JsonView jsonValue)
+  : RecommendationPillarSpecificAggregates()
 {
   *this = jsonValue;
 }

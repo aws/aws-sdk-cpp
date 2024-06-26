@@ -25,10 +25,8 @@ ActionRevision::ActionRevision() :
 {
 }
 
-ActionRevision::ActionRevision(JsonView jsonValue) : 
-    m_revisionIdHasBeenSet(false),
-    m_revisionChangeIdHasBeenSet(false),
-    m_createdHasBeenSet(false)
+ActionRevision::ActionRevision(JsonView jsonValue)
+  : ActionRevision()
 {
   *this = jsonValue;
 }

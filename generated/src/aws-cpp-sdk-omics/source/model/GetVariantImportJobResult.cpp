@@ -23,9 +23,8 @@ GetVariantImportJobResult::GetVariantImportJobResult() :
 {
 }
 
-GetVariantImportJobResult::GetVariantImportJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(JobStatus::NOT_SET),
-    m_runLeftNormalization(false)
+GetVariantImportJobResult::GetVariantImportJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetVariantImportJobResult()
 {
   *this = result;
 }

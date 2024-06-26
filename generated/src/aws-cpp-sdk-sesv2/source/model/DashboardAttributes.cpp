@@ -24,9 +24,8 @@ DashboardAttributes::DashboardAttributes() :
 {
 }
 
-DashboardAttributes::DashboardAttributes(JsonView jsonValue) : 
-    m_engagementMetrics(FeatureStatus::NOT_SET),
-    m_engagementMetricsHasBeenSet(false)
+DashboardAttributes::DashboardAttributes(JsonView jsonValue)
+  : DashboardAttributes()
 {
   *this = jsonValue;
 }

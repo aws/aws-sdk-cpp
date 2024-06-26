@@ -32,17 +32,8 @@ TrafficDistributionGroup::TrafficDistributionGroup() :
 {
 }
 
-TrafficDistributionGroup::TrafficDistributionGroup(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_instanceArnHasBeenSet(false),
-    m_status(TrafficDistributionGroupStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_isDefault(false),
-    m_isDefaultHasBeenSet(false)
+TrafficDistributionGroup::TrafficDistributionGroup(JsonView jsonValue)
+  : TrafficDistributionGroup()
 {
   *this = jsonValue;
 }

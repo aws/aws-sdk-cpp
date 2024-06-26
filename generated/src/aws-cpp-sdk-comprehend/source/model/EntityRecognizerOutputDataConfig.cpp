@@ -23,8 +23,8 @@ EntityRecognizerOutputDataConfig::EntityRecognizerOutputDataConfig() :
 {
 }
 
-EntityRecognizerOutputDataConfig::EntityRecognizerOutputDataConfig(JsonView jsonValue) : 
-    m_flywheelStatsS3PrefixHasBeenSet(false)
+EntityRecognizerOutputDataConfig::EntityRecognizerOutputDataConfig(JsonView jsonValue)
+  : EntityRecognizerOutputDataConfig()
 {
   *this = jsonValue;
 }

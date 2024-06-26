@@ -25,10 +25,8 @@ ColumnDescription::ColumnDescription() :
 {
 }
 
-ColumnDescription::ColumnDescription(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_type(ColumnType::NOT_SET),
-    m_typeHasBeenSet(false)
+ColumnDescription::ColumnDescription(JsonView jsonValue)
+  : ColumnDescription()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ CanaryCodeOutput::CanaryCodeOutput() :
 {
 }
 
-CanaryCodeOutput::CanaryCodeOutput(JsonView jsonValue) : 
-    m_sourceLocationArnHasBeenSet(false),
-    m_handlerHasBeenSet(false)
+CanaryCodeOutput::CanaryCodeOutput(JsonView jsonValue)
+  : CanaryCodeOutput()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ RequiredField::RequiredField() :
 {
 }
 
-RequiredField::RequiredField(JsonView jsonValue) : 
-    m_fieldIdHasBeenSet(false)
+RequiredField::RequiredField(JsonView jsonValue)
+  : RequiredField()
 {
   *this = jsonValue;
 }

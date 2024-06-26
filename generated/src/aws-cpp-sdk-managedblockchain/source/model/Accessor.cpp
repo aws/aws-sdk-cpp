@@ -33,18 +33,8 @@ Accessor::Accessor() :
 {
 }
 
-Accessor::Accessor(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_type(AccessorType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_billingTokenHasBeenSet(false),
-    m_status(AccessorStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_networkType(AccessorNetworkType::NOT_SET),
-    m_networkTypeHasBeenSet(false)
+Accessor::Accessor(JsonView jsonValue)
+  : Accessor()
 {
   *this = jsonValue;
 }

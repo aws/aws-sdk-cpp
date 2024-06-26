@@ -36,21 +36,8 @@ DataQualityResult::DataQualityResult() :
 {
 }
 
-DataQualityResult::DataQualityResult(JsonView jsonValue) : 
-    m_resultIdHasBeenSet(false),
-    m_score(0.0),
-    m_scoreHasBeenSet(false),
-    m_dataSourceHasBeenSet(false),
-    m_rulesetNameHasBeenSet(false),
-    m_evaluationContextHasBeenSet(false),
-    m_startedOnHasBeenSet(false),
-    m_completedOnHasBeenSet(false),
-    m_jobNameHasBeenSet(false),
-    m_jobRunIdHasBeenSet(false),
-    m_rulesetEvaluationRunIdHasBeenSet(false),
-    m_ruleResultsHasBeenSet(false),
-    m_analyzerResultsHasBeenSet(false),
-    m_observationsHasBeenSet(false)
+DataQualityResult::DataQualityResult(JsonView jsonValue)
+  : DataQualityResult()
 {
   *this = jsonValue;
 }

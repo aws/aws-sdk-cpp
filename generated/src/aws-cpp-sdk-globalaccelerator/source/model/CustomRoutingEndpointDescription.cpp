@@ -23,8 +23,8 @@ CustomRoutingEndpointDescription::CustomRoutingEndpointDescription() :
 {
 }
 
-CustomRoutingEndpointDescription::CustomRoutingEndpointDescription(JsonView jsonValue) : 
-    m_endpointIdHasBeenSet(false)
+CustomRoutingEndpointDescription::CustomRoutingEndpointDescription(JsonView jsonValue)
+  : CustomRoutingEndpointDescription()
 {
   *this = jsonValue;
 }

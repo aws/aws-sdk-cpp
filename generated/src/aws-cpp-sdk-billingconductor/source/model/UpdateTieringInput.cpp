@@ -23,8 +23,8 @@ UpdateTieringInput::UpdateTieringInput() :
 {
 }
 
-UpdateTieringInput::UpdateTieringInput(JsonView jsonValue) : 
-    m_freeTierHasBeenSet(false)
+UpdateTieringInput::UpdateTieringInput(JsonView jsonValue)
+  : UpdateTieringInput()
 {
   *this = jsonValue;
 }

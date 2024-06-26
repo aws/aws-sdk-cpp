@@ -25,10 +25,8 @@ UsageFeatureResult::UsageFeatureResult() :
 {
 }
 
-UsageFeatureResult::UsageFeatureResult(JsonView jsonValue) : 
-    m_feature(UsageFeature::NOT_SET),
-    m_featureHasBeenSet(false),
-    m_totalHasBeenSet(false)
+UsageFeatureResult::UsageFeatureResult(JsonView jsonValue)
+  : UsageFeatureResult()
 {
   *this = jsonValue;
 }

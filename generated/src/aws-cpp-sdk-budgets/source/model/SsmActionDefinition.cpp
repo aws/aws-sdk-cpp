@@ -26,11 +26,8 @@ SsmActionDefinition::SsmActionDefinition() :
 {
 }
 
-SsmActionDefinition::SsmActionDefinition(JsonView jsonValue) : 
-    m_actionSubType(ActionSubType::NOT_SET),
-    m_actionSubTypeHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_instanceIdsHasBeenSet(false)
+SsmActionDefinition::SsmActionDefinition(JsonView jsonValue)
+  : SsmActionDefinition()
 {
   *this = jsonValue;
 }

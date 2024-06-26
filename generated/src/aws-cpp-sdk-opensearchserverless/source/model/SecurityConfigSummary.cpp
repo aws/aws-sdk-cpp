@@ -31,16 +31,8 @@ SecurityConfigSummary::SecurityConfigSummary() :
 {
 }
 
-SecurityConfigSummary::SecurityConfigSummary(JsonView jsonValue) : 
-    m_configVersionHasBeenSet(false),
-    m_createdDate(0),
-    m_createdDateHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_lastModifiedDate(0),
-    m_lastModifiedDateHasBeenSet(false),
-    m_type(SecurityConfigType::NOT_SET),
-    m_typeHasBeenSet(false)
+SecurityConfigSummary::SecurityConfigSummary(JsonView jsonValue)
+  : SecurityConfigSummary()
 {
   *this = jsonValue;
 }

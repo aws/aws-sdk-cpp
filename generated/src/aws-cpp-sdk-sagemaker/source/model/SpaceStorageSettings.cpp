@@ -23,8 +23,8 @@ SpaceStorageSettings::SpaceStorageSettings() :
 {
 }
 
-SpaceStorageSettings::SpaceStorageSettings(JsonView jsonValue) : 
-    m_ebsStorageSettingsHasBeenSet(false)
+SpaceStorageSettings::SpaceStorageSettings(JsonView jsonValue)
+  : SpaceStorageSettings()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ MeshServiceDiscovery::MeshServiceDiscovery() :
 {
 }
 
-MeshServiceDiscovery::MeshServiceDiscovery(JsonView jsonValue) : 
-    m_ipPreference(IpPreference::NOT_SET),
-    m_ipPreferenceHasBeenSet(false)
+MeshServiceDiscovery::MeshServiceDiscovery(JsonView jsonValue)
+  : MeshServiceDiscovery()
 {
   *this = jsonValue;
 }

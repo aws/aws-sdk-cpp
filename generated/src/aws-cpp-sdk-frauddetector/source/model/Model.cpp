@@ -30,15 +30,8 @@ Model::Model() :
 {
 }
 
-Model::Model(JsonView jsonValue) : 
-    m_modelIdHasBeenSet(false),
-    m_modelType(ModelTypeEnum::NOT_SET),
-    m_modelTypeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_eventTypeNameHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_arnHasBeenSet(false)
+Model::Model(JsonView jsonValue)
+  : Model()
 {
   *this = jsonValue;
 }

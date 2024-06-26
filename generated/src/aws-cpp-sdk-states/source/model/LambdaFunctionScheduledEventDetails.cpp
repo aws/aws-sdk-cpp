@@ -28,13 +28,8 @@ LambdaFunctionScheduledEventDetails::LambdaFunctionScheduledEventDetails() :
 {
 }
 
-LambdaFunctionScheduledEventDetails::LambdaFunctionScheduledEventDetails(JsonView jsonValue) : 
-    m_resourceHasBeenSet(false),
-    m_inputHasBeenSet(false),
-    m_inputDetailsHasBeenSet(false),
-    m_timeoutInSeconds(0),
-    m_timeoutInSecondsHasBeenSet(false),
-    m_taskCredentialsHasBeenSet(false)
+LambdaFunctionScheduledEventDetails::LambdaFunctionScheduledEventDetails(JsonView jsonValue)
+  : LambdaFunctionScheduledEventDetails()
 {
   *this = jsonValue;
 }

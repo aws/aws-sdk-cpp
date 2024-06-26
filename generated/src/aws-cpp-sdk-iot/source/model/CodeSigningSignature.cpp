@@ -24,8 +24,8 @@ CodeSigningSignature::CodeSigningSignature() :
 {
 }
 
-CodeSigningSignature::CodeSigningSignature(JsonView jsonValue) : 
-    m_inlineDocumentHasBeenSet(false)
+CodeSigningSignature::CodeSigningSignature(JsonView jsonValue)
+  : CodeSigningSignature()
 {
   *this = jsonValue;
 }

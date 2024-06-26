@@ -23,9 +23,8 @@ DescribeFaqResult::DescribeFaqResult() :
 {
 }
 
-DescribeFaqResult::DescribeFaqResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(FaqStatus::NOT_SET),
-    m_fileFormat(FaqFileFormat::NOT_SET)
+DescribeFaqResult::DescribeFaqResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeFaqResult()
 {
   *this = result;
 }

@@ -39,24 +39,8 @@ UserSettings::UserSettings() :
 {
 }
 
-UserSettings::UserSettings(JsonView jsonValue) : 
-    m_executionRoleHasBeenSet(false),
-    m_securityGroupsHasBeenSet(false),
-    m_sharingSettingsHasBeenSet(false),
-    m_jupyterServerAppSettingsHasBeenSet(false),
-    m_kernelGatewayAppSettingsHasBeenSet(false),
-    m_tensorBoardAppSettingsHasBeenSet(false),
-    m_rStudioServerProAppSettingsHasBeenSet(false),
-    m_rSessionAppSettingsHasBeenSet(false),
-    m_canvasAppSettingsHasBeenSet(false),
-    m_codeEditorAppSettingsHasBeenSet(false),
-    m_jupyterLabAppSettingsHasBeenSet(false),
-    m_spaceStorageSettingsHasBeenSet(false),
-    m_defaultLandingUriHasBeenSet(false),
-    m_studioWebPortal(StudioWebPortal::NOT_SET),
-    m_studioWebPortalHasBeenSet(false),
-    m_customPosixUserConfigHasBeenSet(false),
-    m_customFileSystemConfigsHasBeenSet(false)
+UserSettings::UserSettings(JsonView jsonValue)
+  : UserSettings()
 {
   *this = jsonValue;
 }

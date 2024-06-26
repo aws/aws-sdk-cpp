@@ -23,9 +23,8 @@ StartImportTaskResult::StartImportTaskResult() :
 {
 }
 
-StartImportTaskResult::StartImportTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_format(Format::NOT_SET),
-    m_status(ImportTaskStatus::NOT_SET)
+StartImportTaskResult::StartImportTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : StartImportTaskResult()
 {
   *this = result;
 }

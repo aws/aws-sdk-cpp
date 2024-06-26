@@ -22,8 +22,8 @@ StartSchemaMergeResult::StartSchemaMergeResult() :
 {
 }
 
-StartSchemaMergeResult::StartSchemaMergeResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_sourceApiAssociationStatus(SourceApiAssociationStatus::NOT_SET)
+StartSchemaMergeResult::StartSchemaMergeResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : StartSchemaMergeResult()
 {
   *this = result;
 }

@@ -25,10 +25,8 @@ Role::Role() :
 {
 }
 
-Role::Role(JsonView jsonValue) : 
-    m_roleType(RoleType::NOT_SET),
-    m_roleTypeHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
+Role::Role(JsonView jsonValue)
+  : Role()
 {
   *this = jsonValue;
 }

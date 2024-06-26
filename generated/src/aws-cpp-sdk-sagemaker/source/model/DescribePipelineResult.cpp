@@ -22,8 +22,8 @@ DescribePipelineResult::DescribePipelineResult() :
 {
 }
 
-DescribePipelineResult::DescribePipelineResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_pipelineStatus(PipelineStatus::NOT_SET)
+DescribePipelineResult::DescribePipelineResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribePipelineResult()
 {
   *this = result;
 }

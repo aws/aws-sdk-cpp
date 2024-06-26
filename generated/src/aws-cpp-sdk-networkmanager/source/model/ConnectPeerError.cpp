@@ -27,12 +27,8 @@ ConnectPeerError::ConnectPeerError() :
 {
 }
 
-ConnectPeerError::ConnectPeerError(JsonView jsonValue) : 
-    m_code(ConnectPeerErrorCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_resourceArnHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
+ConnectPeerError::ConnectPeerError(JsonView jsonValue)
+  : ConnectPeerError()
 {
   *this = jsonValue;
 }

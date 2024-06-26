@@ -30,13 +30,8 @@ TypeConfigurationIdentifier::TypeConfigurationIdentifier() :
 {
 }
 
-TypeConfigurationIdentifier::TypeConfigurationIdentifier(const XmlNode& xmlNode) : 
-    m_typeArnHasBeenSet(false),
-    m_typeConfigurationAliasHasBeenSet(false),
-    m_typeConfigurationArnHasBeenSet(false),
-    m_type(ThirdPartyType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_typeNameHasBeenSet(false)
+TypeConfigurationIdentifier::TypeConfigurationIdentifier(const XmlNode& xmlNode)
+  : TypeConfigurationIdentifier()
 {
   *this = xmlNode;
 }

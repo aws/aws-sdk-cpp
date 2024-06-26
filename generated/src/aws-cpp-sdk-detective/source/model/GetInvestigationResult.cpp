@@ -25,11 +25,8 @@ GetInvestigationResult::GetInvestigationResult() :
 {
 }
 
-GetInvestigationResult::GetInvestigationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_entityType(EntityType::NOT_SET),
-    m_status(Status::NOT_SET),
-    m_severity(Severity::NOT_SET),
-    m_state(State::NOT_SET)
+GetInvestigationResult::GetInvestigationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetInvestigationResult()
 {
   *this = result;
 }

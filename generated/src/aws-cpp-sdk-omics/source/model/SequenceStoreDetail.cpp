@@ -31,16 +31,8 @@ SequenceStoreDetail::SequenceStoreDetail() :
 {
 }
 
-SequenceStoreDetail::SequenceStoreDetail(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_sseConfigHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_fallbackLocationHasBeenSet(false),
-    m_eTagAlgorithmFamily(ETagAlgorithmFamily::NOT_SET),
-    m_eTagAlgorithmFamilyHasBeenSet(false)
+SequenceStoreDetail::SequenceStoreDetail(JsonView jsonValue)
+  : SequenceStoreDetail()
 {
   *this = jsonValue;
 }

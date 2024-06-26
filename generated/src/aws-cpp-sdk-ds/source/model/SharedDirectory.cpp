@@ -33,18 +33,8 @@ SharedDirectory::SharedDirectory() :
 {
 }
 
-SharedDirectory::SharedDirectory(JsonView jsonValue) : 
-    m_ownerAccountIdHasBeenSet(false),
-    m_ownerDirectoryIdHasBeenSet(false),
-    m_shareMethod(ShareMethod::NOT_SET),
-    m_shareMethodHasBeenSet(false),
-    m_sharedAccountIdHasBeenSet(false),
-    m_sharedDirectoryIdHasBeenSet(false),
-    m_shareStatus(ShareStatus::NOT_SET),
-    m_shareStatusHasBeenSet(false),
-    m_shareNotesHasBeenSet(false),
-    m_createdDateTimeHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false)
+SharedDirectory::SharedDirectory(JsonView jsonValue)
+  : SharedDirectory()
 {
   *this = jsonValue;
 }

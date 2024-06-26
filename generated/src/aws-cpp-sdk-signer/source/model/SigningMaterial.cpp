@@ -23,8 +23,8 @@ SigningMaterial::SigningMaterial() :
 {
 }
 
-SigningMaterial::SigningMaterial(JsonView jsonValue) : 
-    m_certificateArnHasBeenSet(false)
+SigningMaterial::SigningMaterial(JsonView jsonValue)
+  : SigningMaterial()
 {
   *this = jsonValue;
 }

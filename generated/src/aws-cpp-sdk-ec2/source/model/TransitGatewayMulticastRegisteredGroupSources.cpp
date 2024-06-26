@@ -27,10 +27,8 @@ TransitGatewayMulticastRegisteredGroupSources::TransitGatewayMulticastRegistered
 {
 }
 
-TransitGatewayMulticastRegisteredGroupSources::TransitGatewayMulticastRegisteredGroupSources(const XmlNode& xmlNode) : 
-    m_transitGatewayMulticastDomainIdHasBeenSet(false),
-    m_registeredNetworkInterfaceIdsHasBeenSet(false),
-    m_groupIpAddressHasBeenSet(false)
+TransitGatewayMulticastRegisteredGroupSources::TransitGatewayMulticastRegisteredGroupSources(const XmlNode& xmlNode)
+  : TransitGatewayMulticastRegisteredGroupSources()
 {
   *this = xmlNode;
 }

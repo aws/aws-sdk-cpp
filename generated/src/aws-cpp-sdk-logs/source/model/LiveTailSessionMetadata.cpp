@@ -24,9 +24,8 @@ LiveTailSessionMetadata::LiveTailSessionMetadata() :
 {
 }
 
-LiveTailSessionMetadata::LiveTailSessionMetadata(JsonView jsonValue) : 
-    m_sampled(false),
-    m_sampledHasBeenSet(false)
+LiveTailSessionMetadata::LiveTailSessionMetadata(JsonView jsonValue)
+  : LiveTailSessionMetadata()
 {
   *this = jsonValue;
 }

@@ -29,14 +29,8 @@ FarmSummary::FarmSummary() :
 {
 }
 
-FarmSummary::FarmSummary(JsonView jsonValue) : 
-    m_createdAtHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_farmIdHasBeenSet(false),
-    m_kmsKeyArnHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_updatedByHasBeenSet(false)
+FarmSummary::FarmSummary(JsonView jsonValue)
+  : FarmSummary()
 {
   *this = jsonValue;
 }

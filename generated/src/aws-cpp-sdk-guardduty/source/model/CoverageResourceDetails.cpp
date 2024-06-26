@@ -27,12 +27,8 @@ CoverageResourceDetails::CoverageResourceDetails() :
 {
 }
 
-CoverageResourceDetails::CoverageResourceDetails(JsonView jsonValue) : 
-    m_eksClusterDetailsHasBeenSet(false),
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_ecsClusterDetailsHasBeenSet(false),
-    m_ec2InstanceDetailsHasBeenSet(false)
+CoverageResourceDetails::CoverageResourceDetails(JsonView jsonValue)
+  : CoverageResourceDetails()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ DecimalDefaultValues::DecimalDefaultValues() :
 {
 }
 
-DecimalDefaultValues::DecimalDefaultValues(JsonView jsonValue) : 
-    m_dynamicValueHasBeenSet(false),
-    m_staticValuesHasBeenSet(false)
+DecimalDefaultValues::DecimalDefaultValues(JsonView jsonValue)
+  : DecimalDefaultValues()
 {
   *this = jsonValue;
 }

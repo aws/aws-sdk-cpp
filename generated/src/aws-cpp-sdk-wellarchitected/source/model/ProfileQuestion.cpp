@@ -31,16 +31,8 @@ ProfileQuestion::ProfileQuestion() :
 {
 }
 
-ProfileQuestion::ProfileQuestion(JsonView jsonValue) : 
-    m_questionIdHasBeenSet(false),
-    m_questionTitleHasBeenSet(false),
-    m_questionDescriptionHasBeenSet(false),
-    m_questionChoicesHasBeenSet(false),
-    m_selectedChoiceIdsHasBeenSet(false),
-    m_minSelectedChoices(0),
-    m_minSelectedChoicesHasBeenSet(false),
-    m_maxSelectedChoices(0),
-    m_maxSelectedChoicesHasBeenSet(false)
+ProfileQuestion::ProfileQuestion(JsonView jsonValue)
+  : ProfileQuestion()
 {
   *this = jsonValue;
 }

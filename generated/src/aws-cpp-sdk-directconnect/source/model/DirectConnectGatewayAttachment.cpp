@@ -31,16 +31,8 @@ DirectConnectGatewayAttachment::DirectConnectGatewayAttachment() :
 {
 }
 
-DirectConnectGatewayAttachment::DirectConnectGatewayAttachment(JsonView jsonValue) : 
-    m_directConnectGatewayIdHasBeenSet(false),
-    m_virtualInterfaceIdHasBeenSet(false),
-    m_virtualInterfaceRegionHasBeenSet(false),
-    m_virtualInterfaceOwnerAccountHasBeenSet(false),
-    m_attachmentState(DirectConnectGatewayAttachmentState::NOT_SET),
-    m_attachmentStateHasBeenSet(false),
-    m_attachmentType(DirectConnectGatewayAttachmentType::NOT_SET),
-    m_attachmentTypeHasBeenSet(false),
-    m_stateChangeErrorHasBeenSet(false)
+DirectConnectGatewayAttachment::DirectConnectGatewayAttachment(JsonView jsonValue)
+  : DirectConnectGatewayAttachment()
 {
   *this = jsonValue;
 }

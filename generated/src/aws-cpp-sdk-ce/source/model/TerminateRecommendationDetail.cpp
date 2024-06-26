@@ -24,9 +24,8 @@ TerminateRecommendationDetail::TerminateRecommendationDetail() :
 {
 }
 
-TerminateRecommendationDetail::TerminateRecommendationDetail(JsonView jsonValue) : 
-    m_estimatedMonthlySavingsHasBeenSet(false),
-    m_currencyCodeHasBeenSet(false)
+TerminateRecommendationDetail::TerminateRecommendationDetail(JsonView jsonValue)
+  : TerminateRecommendationDetail()
 {
   *this = jsonValue;
 }

@@ -30,15 +30,8 @@ ConfiguredTableSummary::ConfiguredTableSummary() :
 {
 }
 
-ConfiguredTableSummary::ConfiguredTableSummary(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false),
-    m_analysisRuleTypesHasBeenSet(false),
-    m_analysisMethod(AnalysisMethod::NOT_SET),
-    m_analysisMethodHasBeenSet(false)
+ConfiguredTableSummary::ConfiguredTableSummary(JsonView jsonValue)
+  : ConfiguredTableSummary()
 {
   *this = jsonValue;
 }

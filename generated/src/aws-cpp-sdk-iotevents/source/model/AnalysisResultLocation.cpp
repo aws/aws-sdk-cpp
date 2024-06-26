@@ -23,8 +23,8 @@ AnalysisResultLocation::AnalysisResultLocation() :
 {
 }
 
-AnalysisResultLocation::AnalysisResultLocation(JsonView jsonValue) : 
-    m_pathHasBeenSet(false)
+AnalysisResultLocation::AnalysisResultLocation(JsonView jsonValue)
+  : AnalysisResultLocation()
 {
   *this = jsonValue;
 }

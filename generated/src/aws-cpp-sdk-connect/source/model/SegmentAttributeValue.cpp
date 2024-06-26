@@ -23,8 +23,8 @@ SegmentAttributeValue::SegmentAttributeValue() :
 {
 }
 
-SegmentAttributeValue::SegmentAttributeValue(JsonView jsonValue) : 
-    m_valueStringHasBeenSet(false)
+SegmentAttributeValue::SegmentAttributeValue(JsonView jsonValue)
+  : SegmentAttributeValue()
 {
   *this = jsonValue;
 }

@@ -26,9 +26,8 @@ LoadPermissionModifications::LoadPermissionModifications() :
 {
 }
 
-LoadPermissionModifications::LoadPermissionModifications(const XmlNode& xmlNode) : 
-    m_addHasBeenSet(false),
-    m_removeHasBeenSet(false)
+LoadPermissionModifications::LoadPermissionModifications(const XmlNode& xmlNode)
+  : LoadPermissionModifications()
 {
   *this = xmlNode;
 }

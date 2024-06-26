@@ -25,10 +25,8 @@ PivotTableAggregatedFieldWells::PivotTableAggregatedFieldWells() :
 {
 }
 
-PivotTableAggregatedFieldWells::PivotTableAggregatedFieldWells(JsonView jsonValue) : 
-    m_rowsHasBeenSet(false),
-    m_columnsHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+PivotTableAggregatedFieldWells::PivotTableAggregatedFieldWells(JsonView jsonValue)
+  : PivotTableAggregatedFieldWells()
 {
   *this = jsonValue;
 }

@@ -28,13 +28,8 @@ ListCalculatedAttributeDefinitionItem::ListCalculatedAttributeDefinitionItem() :
 {
 }
 
-ListCalculatedAttributeDefinitionItem::ListCalculatedAttributeDefinitionItem(JsonView jsonValue) : 
-    m_calculatedAttributeNameHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+ListCalculatedAttributeDefinitionItem::ListCalculatedAttributeDefinitionItem(JsonView jsonValue)
+  : ListCalculatedAttributeDefinitionItem()
 {
   *this = jsonValue;
 }

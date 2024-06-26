@@ -24,9 +24,8 @@ OpsCenterIntegration::OpsCenterIntegration() :
 {
 }
 
-OpsCenterIntegration::OpsCenterIntegration(JsonView jsonValue) : 
-    m_optInStatus(OptInStatus::NOT_SET),
-    m_optInStatusHasBeenSet(false)
+OpsCenterIntegration::OpsCenterIntegration(JsonView jsonValue)
+  : OpsCenterIntegration()
 {
   *this = jsonValue;
 }

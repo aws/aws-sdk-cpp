@@ -26,11 +26,8 @@ WarningGroup::WarningGroup() :
 {
 }
 
-WarningGroup::WarningGroup(JsonView jsonValue) : 
-    m_code(0),
-    m_codeHasBeenSet(false),
-    m_count(0),
-    m_countHasBeenSet(false)
+WarningGroup::WarningGroup(JsonView jsonValue)
+  : WarningGroup()
 {
   *this = jsonValue;
 }

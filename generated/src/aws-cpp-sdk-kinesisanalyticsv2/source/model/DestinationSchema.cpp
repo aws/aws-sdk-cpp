@@ -24,9 +24,8 @@ DestinationSchema::DestinationSchema() :
 {
 }
 
-DestinationSchema::DestinationSchema(JsonView jsonValue) : 
-    m_recordFormatType(RecordFormatType::NOT_SET),
-    m_recordFormatTypeHasBeenSet(false)
+DestinationSchema::DestinationSchema(JsonView jsonValue)
+  : DestinationSchema()
 {
   *this = jsonValue;
 }

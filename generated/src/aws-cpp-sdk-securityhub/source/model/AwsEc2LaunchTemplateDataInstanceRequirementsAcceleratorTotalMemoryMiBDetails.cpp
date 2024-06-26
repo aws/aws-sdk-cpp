@@ -26,11 +26,8 @@ AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorTotalMemoryMiBDetails::Aw
 {
 }
 
-AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorTotalMemoryMiBDetails::AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorTotalMemoryMiBDetails(JsonView jsonValue) : 
-    m_max(0),
-    m_maxHasBeenSet(false),
-    m_min(0),
-    m_minHasBeenSet(false)
+AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorTotalMemoryMiBDetails::AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorTotalMemoryMiBDetails(JsonView jsonValue)
+  : AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorTotalMemoryMiBDetails()
 {
   *this = jsonValue;
 }

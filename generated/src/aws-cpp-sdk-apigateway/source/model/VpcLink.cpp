@@ -32,16 +32,8 @@ VpcLink::VpcLink() :
 {
 }
 
-VpcLink::VpcLink(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_targetArnsHasBeenSet(false),
-    m_status(VpcLinkStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
+VpcLink::VpcLink(JsonView jsonValue)
+  : VpcLink()
 {
   *this = jsonValue;
 }

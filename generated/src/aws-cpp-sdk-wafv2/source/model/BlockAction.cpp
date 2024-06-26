@@ -23,8 +23,8 @@ BlockAction::BlockAction() :
 {
 }
 
-BlockAction::BlockAction(JsonView jsonValue) : 
-    m_customResponseHasBeenSet(false)
+BlockAction::BlockAction(JsonView jsonValue)
+  : BlockAction()
 {
   *this = jsonValue;
 }

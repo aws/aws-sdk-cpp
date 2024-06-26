@@ -27,12 +27,8 @@ MatchingResponse::MatchingResponse() :
 {
 }
 
-MatchingResponse::MatchingResponse(JsonView jsonValue) : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_jobScheduleHasBeenSet(false),
-    m_autoMergingHasBeenSet(false),
-    m_exportingConfigHasBeenSet(false)
+MatchingResponse::MatchingResponse(JsonView jsonValue)
+  : MatchingResponse()
 {
   *this = jsonValue;
 }

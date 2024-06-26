@@ -25,10 +25,8 @@ MediaAnalysisJobFailureDetails::MediaAnalysisJobFailureDetails() :
 {
 }
 
-MediaAnalysisJobFailureDetails::MediaAnalysisJobFailureDetails(JsonView jsonValue) : 
-    m_code(MediaAnalysisJobFailureCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+MediaAnalysisJobFailureDetails::MediaAnalysisJobFailureDetails(JsonView jsonValue)
+  : MediaAnalysisJobFailureDetails()
 {
   *this = jsonValue;
 }

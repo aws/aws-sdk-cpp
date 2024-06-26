@@ -24,9 +24,8 @@ ToscaOverride::ToscaOverride() :
 {
 }
 
-ToscaOverride::ToscaOverride(JsonView jsonValue) : 
-    m_defaultValueHasBeenSet(false),
-    m_nameHasBeenSet(false)
+ToscaOverride::ToscaOverride(JsonView jsonValue)
+  : ToscaOverride()
 {
   *this = jsonValue;
 }

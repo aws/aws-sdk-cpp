@@ -25,10 +25,8 @@ AnalyticsIntentStageResult::AnalyticsIntentStageResult() :
 {
 }
 
-AnalyticsIntentStageResult::AnalyticsIntentStageResult(JsonView jsonValue) : 
-    m_binKeysHasBeenSet(false),
-    m_groupByKeysHasBeenSet(false),
-    m_metricsResultsHasBeenSet(false)
+AnalyticsIntentStageResult::AnalyticsIntentStageResult(JsonView jsonValue)
+  : AnalyticsIntentStageResult()
 {
   *this = jsonValue;
 }

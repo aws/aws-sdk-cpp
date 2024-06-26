@@ -26,11 +26,8 @@ AssociatedHost::AssociatedHost() :
 {
 }
 
-AssociatedHost::AssociatedHost(JsonView jsonValue) : 
-    m_hostnameHasBeenSet(false),
-    m_ec2InstanceIdHasBeenSet(false),
-    m_ipAddressesHasBeenSet(false),
-    m_osVersionHasBeenSet(false)
+AssociatedHost::AssociatedHost(JsonView jsonValue)
+  : AssociatedHost()
 {
   *this = jsonValue;
 }

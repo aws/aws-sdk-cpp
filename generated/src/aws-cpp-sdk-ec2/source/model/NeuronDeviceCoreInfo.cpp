@@ -28,11 +28,8 @@ NeuronDeviceCoreInfo::NeuronDeviceCoreInfo() :
 {
 }
 
-NeuronDeviceCoreInfo::NeuronDeviceCoreInfo(const XmlNode& xmlNode) : 
-    m_count(0),
-    m_countHasBeenSet(false),
-    m_version(0),
-    m_versionHasBeenSet(false)
+NeuronDeviceCoreInfo::NeuronDeviceCoreInfo(const XmlNode& xmlNode)
+  : NeuronDeviceCoreInfo()
 {
   *this = xmlNode;
 }

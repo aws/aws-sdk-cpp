@@ -24,9 +24,8 @@ ListRecommenderConfigurationsResponse::ListRecommenderConfigurationsResponse() :
 {
 }
 
-ListRecommenderConfigurationsResponse::ListRecommenderConfigurationsResponse(JsonView jsonValue) : 
-    m_itemHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
+ListRecommenderConfigurationsResponse::ListRecommenderConfigurationsResponse(JsonView jsonValue)
+  : ListRecommenderConfigurationsResponse()
 {
   *this = jsonValue;
 }

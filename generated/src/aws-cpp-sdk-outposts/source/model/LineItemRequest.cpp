@@ -25,10 +25,8 @@ LineItemRequest::LineItemRequest() :
 {
 }
 
-LineItemRequest::LineItemRequest(JsonView jsonValue) : 
-    m_catalogItemIdHasBeenSet(false),
-    m_quantity(0),
-    m_quantityHasBeenSet(false)
+LineItemRequest::LineItemRequest(JsonView jsonValue)
+  : LineItemRequest()
 {
   *this = jsonValue;
 }

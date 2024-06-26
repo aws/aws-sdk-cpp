@@ -28,13 +28,8 @@ PercentageDisplayFormatConfiguration::PercentageDisplayFormatConfiguration() :
 {
 }
 
-PercentageDisplayFormatConfiguration::PercentageDisplayFormatConfiguration(JsonView jsonValue) : 
-    m_prefixHasBeenSet(false),
-    m_suffixHasBeenSet(false),
-    m_separatorConfigurationHasBeenSet(false),
-    m_decimalPlacesConfigurationHasBeenSet(false),
-    m_negativeValueConfigurationHasBeenSet(false),
-    m_nullValueFormatConfigurationHasBeenSet(false)
+PercentageDisplayFormatConfiguration::PercentageDisplayFormatConfiguration(JsonView jsonValue)
+  : PercentageDisplayFormatConfiguration()
 {
   *this = jsonValue;
 }

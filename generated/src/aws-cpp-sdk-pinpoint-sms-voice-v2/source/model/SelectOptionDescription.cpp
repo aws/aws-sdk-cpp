@@ -25,10 +25,8 @@ SelectOptionDescription::SelectOptionDescription() :
 {
 }
 
-SelectOptionDescription::SelectOptionDescription(JsonView jsonValue) : 
-    m_optionHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+SelectOptionDescription::SelectOptionDescription(JsonView jsonValue)
+  : SelectOptionDescription()
 {
   *this = jsonValue;
 }

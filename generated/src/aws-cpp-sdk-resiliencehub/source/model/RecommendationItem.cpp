@@ -31,16 +31,8 @@ RecommendationItem::RecommendationItem() :
 {
 }
 
-RecommendationItem::RecommendationItem(JsonView jsonValue) : 
-    m_alreadyImplemented(false),
-    m_alreadyImplementedHasBeenSet(false),
-    m_excludeReason(ExcludeRecommendationReason::NOT_SET),
-    m_excludeReasonHasBeenSet(false),
-    m_excluded(false),
-    m_excludedHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_targetAccountIdHasBeenSet(false),
-    m_targetRegionHasBeenSet(false)
+RecommendationItem::RecommendationItem(JsonView jsonValue)
+  : RecommendationItem()
 {
   *this = jsonValue;
 }

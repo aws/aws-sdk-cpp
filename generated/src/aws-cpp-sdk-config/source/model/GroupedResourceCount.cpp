@@ -25,10 +25,8 @@ GroupedResourceCount::GroupedResourceCount() :
 {
 }
 
-GroupedResourceCount::GroupedResourceCount(JsonView jsonValue) : 
-    m_groupNameHasBeenSet(false),
-    m_resourceCount(0),
-    m_resourceCountHasBeenSet(false)
+GroupedResourceCount::GroupedResourceCount(JsonView jsonValue)
+  : GroupedResourceCount()
 {
   *this = jsonValue;
 }

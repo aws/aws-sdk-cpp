@@ -27,12 +27,8 @@ IpAddressMember::IpAddressMember() :
 {
 }
 
-IpAddressMember::IpAddressMember(JsonView jsonValue) : 
-    m_ipAddressHasBeenSet(false),
-    m_primary(false),
-    m_primaryHasBeenSet(false),
-    m_allocationType(AllocationType::NOT_SET),
-    m_allocationTypeHasBeenSet(false)
+IpAddressMember::IpAddressMember(JsonView jsonValue)
+  : IpAddressMember()
 {
   *this = jsonValue;
 }

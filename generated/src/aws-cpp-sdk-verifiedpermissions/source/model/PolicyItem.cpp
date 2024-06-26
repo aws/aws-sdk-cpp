@@ -34,19 +34,8 @@ PolicyItem::PolicyItem() :
 {
 }
 
-PolicyItem::PolicyItem(JsonView jsonValue) : 
-    m_policyStoreIdHasBeenSet(false),
-    m_policyIdHasBeenSet(false),
-    m_policyType(PolicyType::NOT_SET),
-    m_policyTypeHasBeenSet(false),
-    m_principalHasBeenSet(false),
-    m_resourceHasBeenSet(false),
-    m_actionsHasBeenSet(false),
-    m_definitionHasBeenSet(false),
-    m_createdDateHasBeenSet(false),
-    m_lastUpdatedDateHasBeenSet(false),
-    m_effect(PolicyEffect::NOT_SET),
-    m_effectHasBeenSet(false)
+PolicyItem::PolicyItem(JsonView jsonValue)
+  : PolicyItem()
 {
   *this = jsonValue;
 }

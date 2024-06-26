@@ -31,16 +31,8 @@ RemixSettings::RemixSettings() :
 {
 }
 
-RemixSettings::RemixSettings(JsonView jsonValue) : 
-    m_audioDescriptionAudioChannel(0),
-    m_audioDescriptionAudioChannelHasBeenSet(false),
-    m_audioDescriptionDataChannel(0),
-    m_audioDescriptionDataChannelHasBeenSet(false),
-    m_channelMappingHasBeenSet(false),
-    m_channelsIn(0),
-    m_channelsInHasBeenSet(false),
-    m_channelsOut(0),
-    m_channelsOutHasBeenSet(false)
+RemixSettings::RemixSettings(JsonView jsonValue)
+  : RemixSettings()
 {
   *this = jsonValue;
 }

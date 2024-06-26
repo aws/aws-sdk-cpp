@@ -35,20 +35,8 @@ ClaimedPhoneNumberSummary::ClaimedPhoneNumberSummary() :
 {
 }
 
-ClaimedPhoneNumberSummary::ClaimedPhoneNumberSummary(JsonView jsonValue) : 
-    m_phoneNumberIdHasBeenSet(false),
-    m_phoneNumberArnHasBeenSet(false),
-    m_phoneNumberHasBeenSet(false),
-    m_phoneNumberCountryCode(PhoneNumberCountryCode::NOT_SET),
-    m_phoneNumberCountryCodeHasBeenSet(false),
-    m_phoneNumberType(PhoneNumberType::NOT_SET),
-    m_phoneNumberTypeHasBeenSet(false),
-    m_phoneNumberDescriptionHasBeenSet(false),
-    m_targetArnHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_phoneNumberStatusHasBeenSet(false),
-    m_sourcePhoneNumberArnHasBeenSet(false)
+ClaimedPhoneNumberSummary::ClaimedPhoneNumberSummary(JsonView jsonValue)
+  : ClaimedPhoneNumberSummary()
 {
   *this = jsonValue;
 }

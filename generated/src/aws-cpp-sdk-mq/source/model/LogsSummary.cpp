@@ -29,14 +29,8 @@ LogsSummary::LogsSummary() :
 {
 }
 
-LogsSummary::LogsSummary(JsonView jsonValue) : 
-    m_audit(false),
-    m_auditHasBeenSet(false),
-    m_auditLogGroupHasBeenSet(false),
-    m_general(false),
-    m_generalHasBeenSet(false),
-    m_generalLogGroupHasBeenSet(false),
-    m_pendingHasBeenSet(false)
+LogsSummary::LogsSummary(JsonView jsonValue)
+  : LogsSummary()
 {
   *this = jsonValue;
 }

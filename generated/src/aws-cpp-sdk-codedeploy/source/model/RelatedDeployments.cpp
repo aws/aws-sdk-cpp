@@ -24,9 +24,8 @@ RelatedDeployments::RelatedDeployments() :
 {
 }
 
-RelatedDeployments::RelatedDeployments(JsonView jsonValue) : 
-    m_autoUpdateOutdatedInstancesRootDeploymentIdHasBeenSet(false),
-    m_autoUpdateOutdatedInstancesDeploymentIdsHasBeenSet(false)
+RelatedDeployments::RelatedDeployments(JsonView jsonValue)
+  : RelatedDeployments()
 {
   *this = jsonValue;
 }

@@ -24,10 +24,8 @@ CreateSolFunctionPackageResult::CreateSolFunctionPackageResult() :
 {
 }
 
-CreateSolFunctionPackageResult::CreateSolFunctionPackageResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_onboardingState(OnboardingState::NOT_SET),
-    m_operationalState(OperationalState::NOT_SET),
-    m_usageState(UsageState::NOT_SET)
+CreateSolFunctionPackageResult::CreateSolFunctionPackageResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateSolFunctionPackageResult()
 {
   *this = result;
 }

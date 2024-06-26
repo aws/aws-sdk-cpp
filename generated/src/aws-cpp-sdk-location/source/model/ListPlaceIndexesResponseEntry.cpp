@@ -27,12 +27,8 @@ ListPlaceIndexesResponseEntry::ListPlaceIndexesResponseEntry() :
 {
 }
 
-ListPlaceIndexesResponseEntry::ListPlaceIndexesResponseEntry(JsonView jsonValue) : 
-    m_indexNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_dataSourceHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
+ListPlaceIndexesResponseEntry::ListPlaceIndexesResponseEntry(JsonView jsonValue)
+  : ListPlaceIndexesResponseEntry()
 {
   *this = jsonValue;
 }

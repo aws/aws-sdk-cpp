@@ -27,12 +27,8 @@ LambdaDeviceMount::LambdaDeviceMount() :
 {
 }
 
-LambdaDeviceMount::LambdaDeviceMount(JsonView jsonValue) : 
-    m_pathHasBeenSet(false),
-    m_permission(LambdaFilesystemPermission::NOT_SET),
-    m_permissionHasBeenSet(false),
-    m_addGroupOwner(false),
-    m_addGroupOwnerHasBeenSet(false)
+LambdaDeviceMount::LambdaDeviceMount(JsonView jsonValue)
+  : LambdaDeviceMount()
 {
   *this = jsonValue;
 }

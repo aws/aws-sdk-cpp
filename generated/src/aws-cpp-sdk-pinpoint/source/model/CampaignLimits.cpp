@@ -32,17 +32,8 @@ CampaignLimits::CampaignLimits() :
 {
 }
 
-CampaignLimits::CampaignLimits(JsonView jsonValue) : 
-    m_daily(0),
-    m_dailyHasBeenSet(false),
-    m_maximumDuration(0),
-    m_maximumDurationHasBeenSet(false),
-    m_messagesPerSecond(0),
-    m_messagesPerSecondHasBeenSet(false),
-    m_total(0),
-    m_totalHasBeenSet(false),
-    m_session(0),
-    m_sessionHasBeenSet(false)
+CampaignLimits::CampaignLimits(JsonView jsonValue)
+  : CampaignLimits()
 {
   *this = jsonValue;
 }

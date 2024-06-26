@@ -24,9 +24,8 @@ FlowDefinitionOutputConfig::FlowDefinitionOutputConfig() :
 {
 }
 
-FlowDefinitionOutputConfig::FlowDefinitionOutputConfig(JsonView jsonValue) : 
-    m_s3OutputPathHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
+FlowDefinitionOutputConfig::FlowDefinitionOutputConfig(JsonView jsonValue)
+  : FlowDefinitionOutputConfig()
 {
   *this = jsonValue;
 }

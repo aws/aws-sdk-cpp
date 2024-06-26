@@ -27,10 +27,8 @@ ContentTypeProfileConfig::ContentTypeProfileConfig() :
 {
 }
 
-ContentTypeProfileConfig::ContentTypeProfileConfig(const XmlNode& xmlNode) : 
-    m_forwardWhenContentTypeIsUnknown(false),
-    m_forwardWhenContentTypeIsUnknownHasBeenSet(false),
-    m_contentTypeProfilesHasBeenSet(false)
+ContentTypeProfileConfig::ContentTypeProfileConfig(const XmlNode& xmlNode)
+  : ContentTypeProfileConfig()
 {
   *this = xmlNode;
 }

@@ -24,9 +24,8 @@ DatastoreActivity::DatastoreActivity() :
 {
 }
 
-DatastoreActivity::DatastoreActivity(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_datastoreNameHasBeenSet(false)
+DatastoreActivity::DatastoreActivity(JsonView jsonValue)
+  : DatastoreActivity()
 {
   *this = jsonValue;
 }

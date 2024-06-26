@@ -27,12 +27,8 @@ SentimentConfiguration::SentimentConfiguration() :
 {
 }
 
-SentimentConfiguration::SentimentConfiguration(JsonView jsonValue) : 
-    m_ruleNameHasBeenSet(false),
-    m_sentimentType(SentimentType::NOT_SET),
-    m_sentimentTypeHasBeenSet(false),
-    m_timePeriod(0),
-    m_timePeriodHasBeenSet(false)
+SentimentConfiguration::SentimentConfiguration(JsonView jsonValue)
+  : SentimentConfiguration()
 {
   *this = jsonValue;
 }

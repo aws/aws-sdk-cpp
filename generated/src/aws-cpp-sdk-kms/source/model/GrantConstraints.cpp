@@ -24,9 +24,8 @@ GrantConstraints::GrantConstraints() :
 {
 }
 
-GrantConstraints::GrantConstraints(JsonView jsonValue) : 
-    m_encryptionContextSubsetHasBeenSet(false),
-    m_encryptionContextEqualsHasBeenSet(false)
+GrantConstraints::GrantConstraints(JsonView jsonValue)
+  : GrantConstraints()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ GetKeyspaceResult::GetKeyspaceResult() :
 {
 }
 
-GetKeyspaceResult::GetKeyspaceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_replicationStrategy(Rs::NOT_SET)
+GetKeyspaceResult::GetKeyspaceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetKeyspaceResult()
 {
   *this = result;
 }

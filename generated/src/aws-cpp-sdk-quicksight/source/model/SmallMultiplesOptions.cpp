@@ -29,14 +29,8 @@ SmallMultiplesOptions::SmallMultiplesOptions() :
 {
 }
 
-SmallMultiplesOptions::SmallMultiplesOptions(JsonView jsonValue) : 
-    m_maxVisibleRows(0),
-    m_maxVisibleRowsHasBeenSet(false),
-    m_maxVisibleColumns(0),
-    m_maxVisibleColumnsHasBeenSet(false),
-    m_panelConfigurationHasBeenSet(false),
-    m_xAxisHasBeenSet(false),
-    m_yAxisHasBeenSet(false)
+SmallMultiplesOptions::SmallMultiplesOptions(JsonView jsonValue)
+  : SmallMultiplesOptions()
 {
   *this = jsonValue;
 }

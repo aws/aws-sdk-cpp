@@ -23,8 +23,8 @@ DocumentsMetadataConfiguration::DocumentsMetadataConfiguration() :
 {
 }
 
-DocumentsMetadataConfiguration::DocumentsMetadataConfiguration(JsonView jsonValue) : 
-    m_s3PrefixHasBeenSet(false)
+DocumentsMetadataConfiguration::DocumentsMetadataConfiguration(JsonView jsonValue)
+  : DocumentsMetadataConfiguration()
 {
   *this = jsonValue;
 }

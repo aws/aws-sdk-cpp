@@ -26,11 +26,8 @@ ModelPackageStatusItem::ModelPackageStatusItem() :
 {
 }
 
-ModelPackageStatusItem::ModelPackageStatusItem(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_status(DetailedModelPackageStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_failureReasonHasBeenSet(false)
+ModelPackageStatusItem::ModelPackageStatusItem(JsonView jsonValue)
+  : ModelPackageStatusItem()
 {
   *this = jsonValue;
 }

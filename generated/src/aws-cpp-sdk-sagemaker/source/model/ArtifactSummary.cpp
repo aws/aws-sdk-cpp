@@ -28,13 +28,8 @@ ArtifactSummary::ArtifactSummary() :
 {
 }
 
-ArtifactSummary::ArtifactSummary(JsonView jsonValue) : 
-    m_artifactArnHasBeenSet(false),
-    m_artifactNameHasBeenSet(false),
-    m_sourceHasBeenSet(false),
-    m_artifactTypeHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false)
+ArtifactSummary::ArtifactSummary(JsonView jsonValue)
+  : ArtifactSummary()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ DateInterval::DateInterval() :
 {
 }
 
-DateInterval::DateInterval(JsonView jsonValue) : 
-    m_startHasBeenSet(false),
-    m_endHasBeenSet(false)
+DateInterval::DateInterval(JsonView jsonValue)
+  : DateInterval()
 {
   *this = jsonValue;
 }

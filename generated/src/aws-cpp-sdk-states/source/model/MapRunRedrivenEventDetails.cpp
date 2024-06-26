@@ -25,10 +25,8 @@ MapRunRedrivenEventDetails::MapRunRedrivenEventDetails() :
 {
 }
 
-MapRunRedrivenEventDetails::MapRunRedrivenEventDetails(JsonView jsonValue) : 
-    m_mapRunArnHasBeenSet(false),
-    m_redriveCount(0),
-    m_redriveCountHasBeenSet(false)
+MapRunRedrivenEventDetails::MapRunRedrivenEventDetails(JsonView jsonValue)
+  : MapRunRedrivenEventDetails()
 {
   *this = jsonValue;
 }

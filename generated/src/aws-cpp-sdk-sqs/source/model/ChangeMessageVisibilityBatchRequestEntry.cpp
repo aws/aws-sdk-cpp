@@ -26,11 +26,8 @@ ChangeMessageVisibilityBatchRequestEntry::ChangeMessageVisibilityBatchRequestEnt
 {
 }
 
-ChangeMessageVisibilityBatchRequestEntry::ChangeMessageVisibilityBatchRequestEntry(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_receiptHandleHasBeenSet(false),
-    m_visibilityTimeout(0),
-    m_visibilityTimeoutHasBeenSet(false)
+ChangeMessageVisibilityBatchRequestEntry::ChangeMessageVisibilityBatchRequestEntry(JsonView jsonValue)
+  : ChangeMessageVisibilityBatchRequestEntry()
 {
   *this = jsonValue;
 }

@@ -34,19 +34,8 @@ RecommendationSummary::RecommendationSummary() :
 {
 }
 
-RecommendationSummary::RecommendationSummary(JsonView jsonValue) : 
-    m_filePathHasBeenSet(false),
-    m_recommendationIdHasBeenSet(false),
-    m_startLine(0),
-    m_startLineHasBeenSet(false),
-    m_endLine(0),
-    m_endLineHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_recommendationCategory(RecommendationCategory::NOT_SET),
-    m_recommendationCategoryHasBeenSet(false),
-    m_ruleMetadataHasBeenSet(false),
-    m_severity(Severity::NOT_SET),
-    m_severityHasBeenSet(false)
+RecommendationSummary::RecommendationSummary(JsonView jsonValue)
+  : RecommendationSummary()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ Srt::Srt() :
 {
 }
 
-Srt::Srt(JsonView jsonValue) : 
-    m_endpointHasBeenSet(false),
-    m_passphraseHasBeenSet(false)
+Srt::Srt(JsonView jsonValue)
+  : Srt()
 {
   *this = jsonValue;
 }

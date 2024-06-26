@@ -32,17 +32,8 @@ SourceControlDetails::SourceControlDetails() :
 {
 }
 
-SourceControlDetails::SourceControlDetails(JsonView jsonValue) : 
-    m_provider(SourceControlProvider::NOT_SET),
-    m_providerHasBeenSet(false),
-    m_repositoryHasBeenSet(false),
-    m_ownerHasBeenSet(false),
-    m_branchHasBeenSet(false),
-    m_folderHasBeenSet(false),
-    m_lastCommitIdHasBeenSet(false),
-    m_authStrategy(SourceControlAuthStrategy::NOT_SET),
-    m_authStrategyHasBeenSet(false),
-    m_authTokenHasBeenSet(false)
+SourceControlDetails::SourceControlDetails(JsonView jsonValue)
+  : SourceControlDetails()
 {
   *this = jsonValue;
 }

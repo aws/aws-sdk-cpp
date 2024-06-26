@@ -24,9 +24,8 @@ FailoverConfig::FailoverConfig() :
 {
 }
 
-FailoverConfig::FailoverConfig(JsonView jsonValue) : 
-    m_primaryHasBeenSet(false),
-    m_secondaryHasBeenSet(false)
+FailoverConfig::FailoverConfig(JsonView jsonValue)
+  : FailoverConfig()
 {
   *this = jsonValue;
 }

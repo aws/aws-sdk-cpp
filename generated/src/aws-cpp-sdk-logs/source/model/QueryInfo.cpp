@@ -29,14 +29,8 @@ QueryInfo::QueryInfo() :
 {
 }
 
-QueryInfo::QueryInfo(JsonView jsonValue) : 
-    m_queryIdHasBeenSet(false),
-    m_queryStringHasBeenSet(false),
-    m_status(QueryStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_createTime(0),
-    m_createTimeHasBeenSet(false),
-    m_logGroupNameHasBeenSet(false)
+QueryInfo::QueryInfo(JsonView jsonValue)
+  : QueryInfo()
 {
   *this = jsonValue;
 }

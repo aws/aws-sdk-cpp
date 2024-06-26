@@ -28,13 +28,8 @@ Listener::Listener() :
 {
 }
 
-Listener::Listener(JsonView jsonValue) : 
-    m_connectionPoolHasBeenSet(false),
-    m_healthCheckHasBeenSet(false),
-    m_outlierDetectionHasBeenSet(false),
-    m_portMappingHasBeenSet(false),
-    m_timeoutHasBeenSet(false),
-    m_tlsHasBeenSet(false)
+Listener::Listener(JsonView jsonValue)
+  : Listener()
 {
   *this = jsonValue;
 }

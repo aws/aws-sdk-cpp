@@ -25,10 +25,8 @@ LogTargetConfiguration::LogTargetConfiguration() :
 {
 }
 
-LogTargetConfiguration::LogTargetConfiguration(JsonView jsonValue) : 
-    m_logTargetHasBeenSet(false),
-    m_logLevel(LogLevel::NOT_SET),
-    m_logLevelHasBeenSet(false)
+LogTargetConfiguration::LogTargetConfiguration(JsonView jsonValue)
+  : LogTargetConfiguration()
 {
   *this = jsonValue;
 }

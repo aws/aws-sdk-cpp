@@ -24,9 +24,8 @@ AreaOfInterestGeometry::AreaOfInterestGeometry() :
 {
 }
 
-AreaOfInterestGeometry::AreaOfInterestGeometry(JsonView jsonValue) : 
-    m_multiPolygonGeometryHasBeenSet(false),
-    m_polygonGeometryHasBeenSet(false)
+AreaOfInterestGeometry::AreaOfInterestGeometry(JsonView jsonValue)
+  : AreaOfInterestGeometry()
 {
   *this = jsonValue;
 }

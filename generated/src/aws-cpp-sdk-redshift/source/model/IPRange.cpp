@@ -27,10 +27,8 @@ IPRange::IPRange() :
 {
 }
 
-IPRange::IPRange(const XmlNode& xmlNode) : 
-    m_statusHasBeenSet(false),
-    m_cIDRIPHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+IPRange::IPRange(const XmlNode& xmlNode)
+  : IPRange()
 {
   *this = xmlNode;
 }

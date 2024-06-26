@@ -23,8 +23,8 @@ EntitledApplication::EntitledApplication() :
 {
 }
 
-EntitledApplication::EntitledApplication(JsonView jsonValue) : 
-    m_applicationIdentifierHasBeenSet(false)
+EntitledApplication::EntitledApplication(JsonView jsonValue)
+  : EntitledApplication()
 {
   *this = jsonValue;
 }

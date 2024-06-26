@@ -25,10 +25,8 @@ ComputeEnvironmentOrder::ComputeEnvironmentOrder() :
 {
 }
 
-ComputeEnvironmentOrder::ComputeEnvironmentOrder(JsonView jsonValue) : 
-    m_order(0),
-    m_orderHasBeenSet(false),
-    m_computeEnvironmentHasBeenSet(false)
+ComputeEnvironmentOrder::ComputeEnvironmentOrder(JsonView jsonValue)
+  : ComputeEnvironmentOrder()
 {
   *this = jsonValue;
 }

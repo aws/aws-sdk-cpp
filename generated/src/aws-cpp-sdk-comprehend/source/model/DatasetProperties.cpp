@@ -35,20 +35,8 @@ DatasetProperties::DatasetProperties() :
 {
 }
 
-DatasetProperties::DatasetProperties(JsonView jsonValue) : 
-    m_datasetArnHasBeenSet(false),
-    m_datasetNameHasBeenSet(false),
-    m_datasetType(DatasetType::NOT_SET),
-    m_datasetTypeHasBeenSet(false),
-    m_datasetS3UriHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_status(DatasetStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_numberOfDocuments(0),
-    m_numberOfDocumentsHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
+DatasetProperties::DatasetProperties(JsonView jsonValue)
+  : DatasetProperties()
 {
   *this = jsonValue;
 }

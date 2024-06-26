@@ -26,11 +26,8 @@ HlsSettings::HlsSettings() :
 {
 }
 
-HlsSettings::HlsSettings(JsonView jsonValue) : 
-    m_audioOnlyHlsSettingsHasBeenSet(false),
-    m_fmp4HlsSettingsHasBeenSet(false),
-    m_frameCaptureHlsSettingsHasBeenSet(false),
-    m_standardHlsSettingsHasBeenSet(false)
+HlsSettings::HlsSettings(JsonView jsonValue)
+  : HlsSettings()
 {
   *this = jsonValue;
 }

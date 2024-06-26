@@ -26,11 +26,8 @@ ExecuteCommandConfiguration::ExecuteCommandConfiguration() :
 {
 }
 
-ExecuteCommandConfiguration::ExecuteCommandConfiguration(JsonView jsonValue) : 
-    m_kmsKeyIdHasBeenSet(false),
-    m_logging(ExecuteCommandLogging::NOT_SET),
-    m_loggingHasBeenSet(false),
-    m_logConfigurationHasBeenSet(false)
+ExecuteCommandConfiguration::ExecuteCommandConfiguration(JsonView jsonValue)
+  : ExecuteCommandConfiguration()
 {
   *this = jsonValue;
 }

@@ -29,14 +29,8 @@ MessageResult::MessageResult() :
 {
 }
 
-MessageResult::MessageResult(JsonView jsonValue) : 
-    m_deliveryStatus(DeliveryStatus::NOT_SET),
-    m_deliveryStatusHasBeenSet(false),
-    m_messageIdHasBeenSet(false),
-    m_statusCode(0),
-    m_statusCodeHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_updatedTokenHasBeenSet(false)
+MessageResult::MessageResult(JsonView jsonValue)
+  : MessageResult()
 {
   *this = jsonValue;
 }

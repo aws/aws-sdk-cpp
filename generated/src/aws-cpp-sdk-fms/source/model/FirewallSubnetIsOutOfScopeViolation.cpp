@@ -27,12 +27,8 @@ FirewallSubnetIsOutOfScopeViolation::FirewallSubnetIsOutOfScopeViolation() :
 {
 }
 
-FirewallSubnetIsOutOfScopeViolation::FirewallSubnetIsOutOfScopeViolation(JsonView jsonValue) : 
-    m_firewallSubnetIdHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_subnetAvailabilityZoneHasBeenSet(false),
-    m_subnetAvailabilityZoneIdHasBeenSet(false),
-    m_vpcEndpointIdHasBeenSet(false)
+FirewallSubnetIsOutOfScopeViolation::FirewallSubnetIsOutOfScopeViolation(JsonView jsonValue)
+  : FirewallSubnetIsOutOfScopeViolation()
 {
   *this = jsonValue;
 }

@@ -36,21 +36,8 @@ RecommendationMetrics::RecommendationMetrics() :
 {
 }
 
-RecommendationMetrics::RecommendationMetrics(JsonView jsonValue) : 
-    m_costPerHour(0.0),
-    m_costPerHourHasBeenSet(false),
-    m_costPerInference(0.0),
-    m_costPerInferenceHasBeenSet(false),
-    m_maxInvocations(0),
-    m_maxInvocationsHasBeenSet(false),
-    m_modelLatency(0),
-    m_modelLatencyHasBeenSet(false),
-    m_cpuUtilization(0.0),
-    m_cpuUtilizationHasBeenSet(false),
-    m_memoryUtilization(0.0),
-    m_memoryUtilizationHasBeenSet(false),
-    m_modelSetupTime(0),
-    m_modelSetupTimeHasBeenSet(false)
+RecommendationMetrics::RecommendationMetrics(JsonView jsonValue)
+  : RecommendationMetrics()
 {
   *this = jsonValue;
 }

@@ -29,12 +29,8 @@ OriginRequestPolicyConfig::OriginRequestPolicyConfig() :
 {
 }
 
-OriginRequestPolicyConfig::OriginRequestPolicyConfig(const XmlNode& xmlNode) : 
-    m_commentHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_headersConfigHasBeenSet(false),
-    m_cookiesConfigHasBeenSet(false),
-    m_queryStringsConfigHasBeenSet(false)
+OriginRequestPolicyConfig::OriginRequestPolicyConfig(const XmlNode& xmlNode)
+  : OriginRequestPolicyConfig()
 {
   *this = xmlNode;
 }

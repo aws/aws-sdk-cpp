@@ -26,11 +26,8 @@ LedgerSummary::LedgerSummary() :
 {
 }
 
-LedgerSummary::LedgerSummary(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_state(LedgerState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_creationDateTimeHasBeenSet(false)
+LedgerSummary::LedgerSummary(JsonView jsonValue)
+  : LedgerSummary()
 {
   *this = jsonValue;
 }

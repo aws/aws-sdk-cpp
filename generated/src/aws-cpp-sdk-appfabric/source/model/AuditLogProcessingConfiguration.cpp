@@ -26,11 +26,8 @@ AuditLogProcessingConfiguration::AuditLogProcessingConfiguration() :
 {
 }
 
-AuditLogProcessingConfiguration::AuditLogProcessingConfiguration(JsonView jsonValue) : 
-    m_schema(Schema::NOT_SET),
-    m_schemaHasBeenSet(false),
-    m_format(Format::NOT_SET),
-    m_formatHasBeenSet(false)
+AuditLogProcessingConfiguration::AuditLogProcessingConfiguration(JsonView jsonValue)
+  : AuditLogProcessingConfiguration()
 {
   *this = jsonValue;
 }

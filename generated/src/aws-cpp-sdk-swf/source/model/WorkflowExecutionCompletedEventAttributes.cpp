@@ -25,10 +25,8 @@ WorkflowExecutionCompletedEventAttributes::WorkflowExecutionCompletedEventAttrib
 {
 }
 
-WorkflowExecutionCompletedEventAttributes::WorkflowExecutionCompletedEventAttributes(JsonView jsonValue) : 
-    m_resultHasBeenSet(false),
-    m_decisionTaskCompletedEventId(0),
-    m_decisionTaskCompletedEventIdHasBeenSet(false)
+WorkflowExecutionCompletedEventAttributes::WorkflowExecutionCompletedEventAttributes(JsonView jsonValue)
+  : WorkflowExecutionCompletedEventAttributes()
 {
   *this = jsonValue;
 }

@@ -29,14 +29,8 @@ StepAutomationConfiguration::StepAutomationConfiguration() :
 {
 }
 
-StepAutomationConfiguration::StepAutomationConfiguration(JsonView jsonValue) : 
-    m_scriptLocationS3BucketHasBeenSet(false),
-    m_scriptLocationS3KeyHasBeenSet(false),
-    m_commandHasBeenSet(false),
-    m_runEnvironment(RunEnvironment::NOT_SET),
-    m_runEnvironmentHasBeenSet(false),
-    m_targetType(TargetType::NOT_SET),
-    m_targetTypeHasBeenSet(false)
+StepAutomationConfiguration::StepAutomationConfiguration(JsonView jsonValue)
+  : StepAutomationConfiguration()
 {
   *this = jsonValue;
 }

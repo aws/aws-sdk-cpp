@@ -29,12 +29,8 @@ TagDescription::TagDescription() :
 {
 }
 
-TagDescription::TagDescription(const XmlNode& xmlNode) : 
-    m_keyHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_valueHasBeenSet(false)
+TagDescription::TagDescription(const XmlNode& xmlNode)
+  : TagDescription()
 {
   *this = xmlNode;
 }

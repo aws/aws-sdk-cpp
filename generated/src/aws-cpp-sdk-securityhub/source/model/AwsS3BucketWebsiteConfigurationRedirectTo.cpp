@@ -24,9 +24,8 @@ AwsS3BucketWebsiteConfigurationRedirectTo::AwsS3BucketWebsiteConfigurationRedire
 {
 }
 
-AwsS3BucketWebsiteConfigurationRedirectTo::AwsS3BucketWebsiteConfigurationRedirectTo(JsonView jsonValue) : 
-    m_hostnameHasBeenSet(false),
-    m_protocolHasBeenSet(false)
+AwsS3BucketWebsiteConfigurationRedirectTo::AwsS3BucketWebsiteConfigurationRedirectTo(JsonView jsonValue)
+  : AwsS3BucketWebsiteConfigurationRedirectTo()
 {
   *this = jsonValue;
 }

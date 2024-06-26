@@ -24,9 +24,8 @@ TableFieldCustomTextContent::TableFieldCustomTextContent() :
 {
 }
 
-TableFieldCustomTextContent::TableFieldCustomTextContent(JsonView jsonValue) : 
-    m_valueHasBeenSet(false),
-    m_fontConfigurationHasBeenSet(false)
+TableFieldCustomTextContent::TableFieldCustomTextContent(JsonView jsonValue)
+  : TableFieldCustomTextContent()
 {
   *this = jsonValue;
 }

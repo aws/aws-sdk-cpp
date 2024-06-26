@@ -25,10 +25,8 @@ FileSystemAlreadyExists::FileSystemAlreadyExists() :
 {
 }
 
-FileSystemAlreadyExists::FileSystemAlreadyExists(JsonView jsonValue) : 
-    m_errorCodeHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_fileSystemIdHasBeenSet(false)
+FileSystemAlreadyExists::FileSystemAlreadyExists(JsonView jsonValue)
+  : FileSystemAlreadyExists()
 {
   *this = jsonValue;
 }

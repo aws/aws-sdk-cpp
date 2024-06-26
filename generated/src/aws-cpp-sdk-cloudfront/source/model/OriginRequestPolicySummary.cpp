@@ -27,10 +27,8 @@ OriginRequestPolicySummary::OriginRequestPolicySummary() :
 {
 }
 
-OriginRequestPolicySummary::OriginRequestPolicySummary(const XmlNode& xmlNode) : 
-    m_type(OriginRequestPolicyType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_originRequestPolicyHasBeenSet(false)
+OriginRequestPolicySummary::OriginRequestPolicySummary(const XmlNode& xmlNode)
+  : OriginRequestPolicySummary()
 {
   *this = xmlNode;
 }

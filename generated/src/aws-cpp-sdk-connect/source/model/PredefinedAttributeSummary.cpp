@@ -25,10 +25,8 @@ PredefinedAttributeSummary::PredefinedAttributeSummary() :
 {
 }
 
-PredefinedAttributeSummary::PredefinedAttributeSummary(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_lastModifiedRegionHasBeenSet(false)
+PredefinedAttributeSummary::PredefinedAttributeSummary(JsonView jsonValue)
+  : PredefinedAttributeSummary()
 {
   *this = jsonValue;
 }

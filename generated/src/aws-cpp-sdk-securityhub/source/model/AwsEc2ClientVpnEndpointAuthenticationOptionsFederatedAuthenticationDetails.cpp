@@ -24,9 +24,8 @@ AwsEc2ClientVpnEndpointAuthenticationOptionsFederatedAuthenticationDetails::AwsE
 {
 }
 
-AwsEc2ClientVpnEndpointAuthenticationOptionsFederatedAuthenticationDetails::AwsEc2ClientVpnEndpointAuthenticationOptionsFederatedAuthenticationDetails(JsonView jsonValue) : 
-    m_samlProviderArnHasBeenSet(false),
-    m_selfServiceSamlProviderArnHasBeenSet(false)
+AwsEc2ClientVpnEndpointAuthenticationOptionsFederatedAuthenticationDetails::AwsEc2ClientVpnEndpointAuthenticationOptionsFederatedAuthenticationDetails(JsonView jsonValue)
+  : AwsEc2ClientVpnEndpointAuthenticationOptionsFederatedAuthenticationDetails()
 {
   *this = jsonValue;
 }

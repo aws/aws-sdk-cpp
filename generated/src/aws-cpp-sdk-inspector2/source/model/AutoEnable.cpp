@@ -30,15 +30,8 @@ AutoEnable::AutoEnable() :
 {
 }
 
-AutoEnable::AutoEnable(JsonView jsonValue) : 
-    m_ec2(false),
-    m_ec2HasBeenSet(false),
-    m_ecr(false),
-    m_ecrHasBeenSet(false),
-    m_lambda(false),
-    m_lambdaHasBeenSet(false),
-    m_lambdaCode(false),
-    m_lambdaCodeHasBeenSet(false)
+AutoEnable::AutoEnable(JsonView jsonValue)
+  : AutoEnable()
 {
   *this = jsonValue;
 }

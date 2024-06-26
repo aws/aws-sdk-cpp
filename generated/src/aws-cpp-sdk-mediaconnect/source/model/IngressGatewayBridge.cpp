@@ -27,12 +27,8 @@ IngressGatewayBridge::IngressGatewayBridge() :
 {
 }
 
-IngressGatewayBridge::IngressGatewayBridge(JsonView jsonValue) : 
-    m_instanceIdHasBeenSet(false),
-    m_maxBitrate(0),
-    m_maxBitrateHasBeenSet(false),
-    m_maxOutputs(0),
-    m_maxOutputsHasBeenSet(false)
+IngressGatewayBridge::IngressGatewayBridge(JsonView jsonValue)
+  : IngressGatewayBridge()
 {
   *this = jsonValue;
 }

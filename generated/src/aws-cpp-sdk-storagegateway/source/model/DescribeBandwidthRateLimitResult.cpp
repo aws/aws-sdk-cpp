@@ -23,9 +23,8 @@ DescribeBandwidthRateLimitResult::DescribeBandwidthRateLimitResult() :
 {
 }
 
-DescribeBandwidthRateLimitResult::DescribeBandwidthRateLimitResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_averageUploadRateLimitInBitsPerSec(0),
-    m_averageDownloadRateLimitInBitsPerSec(0)
+DescribeBandwidthRateLimitResult::DescribeBandwidthRateLimitResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeBandwidthRateLimitResult()
 {
   *this = result;
 }

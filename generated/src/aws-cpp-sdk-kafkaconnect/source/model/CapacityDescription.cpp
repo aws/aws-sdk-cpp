@@ -24,9 +24,8 @@ CapacityDescription::CapacityDescription() :
 {
 }
 
-CapacityDescription::CapacityDescription(JsonView jsonValue) : 
-    m_autoScalingHasBeenSet(false),
-    m_provisionedCapacityHasBeenSet(false)
+CapacityDescription::CapacityDescription(JsonView jsonValue)
+  : CapacityDescription()
 {
   *this = jsonValue;
 }

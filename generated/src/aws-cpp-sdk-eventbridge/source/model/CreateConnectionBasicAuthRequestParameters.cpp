@@ -24,9 +24,8 @@ CreateConnectionBasicAuthRequestParameters::CreateConnectionBasicAuthRequestPara
 {
 }
 
-CreateConnectionBasicAuthRequestParameters::CreateConnectionBasicAuthRequestParameters(JsonView jsonValue) : 
-    m_usernameHasBeenSet(false),
-    m_passwordHasBeenSet(false)
+CreateConnectionBasicAuthRequestParameters::CreateConnectionBasicAuthRequestParameters(JsonView jsonValue)
+  : CreateConnectionBasicAuthRequestParameters()
 {
   *this = jsonValue;
 }

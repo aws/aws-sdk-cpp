@@ -28,13 +28,8 @@ PodIdentityAssociationSummary::PodIdentityAssociationSummary() :
 {
 }
 
-PodIdentityAssociationSummary::PodIdentityAssociationSummary(JsonView jsonValue) : 
-    m_clusterNameHasBeenSet(false),
-    m_namespaceHasBeenSet(false),
-    m_serviceAccountHasBeenSet(false),
-    m_associationArnHasBeenSet(false),
-    m_associationIdHasBeenSet(false),
-    m_ownerArnHasBeenSet(false)
+PodIdentityAssociationSummary::PodIdentityAssociationSummary(JsonView jsonValue)
+  : PodIdentityAssociationSummary()
 {
   *this = jsonValue;
 }

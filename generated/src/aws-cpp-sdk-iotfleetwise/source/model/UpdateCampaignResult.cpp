@@ -22,8 +22,8 @@ UpdateCampaignResult::UpdateCampaignResult() :
 {
 }
 
-UpdateCampaignResult::UpdateCampaignResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(CampaignStatus::NOT_SET)
+UpdateCampaignResult::UpdateCampaignResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateCampaignResult()
 {
   *this = result;
 }

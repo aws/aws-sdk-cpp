@@ -24,9 +24,8 @@ SourceServerConnectorAction::SourceServerConnectorAction() :
 {
 }
 
-SourceServerConnectorAction::SourceServerConnectorAction(JsonView jsonValue) : 
-    m_connectorArnHasBeenSet(false),
-    m_credentialsSecretArnHasBeenSet(false)
+SourceServerConnectorAction::SourceServerConnectorAction(JsonView jsonValue)
+  : SourceServerConnectorAction()
 {
   *this = jsonValue;
 }

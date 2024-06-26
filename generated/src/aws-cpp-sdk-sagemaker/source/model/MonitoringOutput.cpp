@@ -23,8 +23,8 @@ MonitoringOutput::MonitoringOutput() :
 {
 }
 
-MonitoringOutput::MonitoringOutput(JsonView jsonValue) : 
-    m_s3OutputHasBeenSet(false)
+MonitoringOutput::MonitoringOutput(JsonView jsonValue)
+  : MonitoringOutput()
 {
   *this = jsonValue;
 }

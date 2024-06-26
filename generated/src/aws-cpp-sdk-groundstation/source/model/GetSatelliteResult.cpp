@@ -22,8 +22,8 @@ GetSatelliteResult::GetSatelliteResult() :
 {
 }
 
-GetSatelliteResult::GetSatelliteResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_noradSatelliteID(0)
+GetSatelliteResult::GetSatelliteResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetSatelliteResult()
 {
   *this = result;
 }

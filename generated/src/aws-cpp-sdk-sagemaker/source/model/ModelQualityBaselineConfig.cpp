@@ -24,9 +24,8 @@ ModelQualityBaselineConfig::ModelQualityBaselineConfig() :
 {
 }
 
-ModelQualityBaselineConfig::ModelQualityBaselineConfig(JsonView jsonValue) : 
-    m_baseliningJobNameHasBeenSet(false),
-    m_constraintsResourceHasBeenSet(false)
+ModelQualityBaselineConfig::ModelQualityBaselineConfig(JsonView jsonValue)
+  : ModelQualityBaselineConfig()
 {
   *this = jsonValue;
 }

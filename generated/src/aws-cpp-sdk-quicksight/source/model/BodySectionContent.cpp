@@ -23,8 +23,8 @@ BodySectionContent::BodySectionContent() :
 {
 }
 
-BodySectionContent::BodySectionContent(JsonView jsonValue) : 
-    m_layoutHasBeenSet(false)
+BodySectionContent::BodySectionContent(JsonView jsonValue)
+  : BodySectionContent()
 {
   *this = jsonValue;
 }

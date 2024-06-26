@@ -26,11 +26,8 @@ DateRange::DateRange() :
 {
 }
 
-DateRange::DateRange(JsonView jsonValue) : 
-    m_value(0),
-    m_valueHasBeenSet(false),
-    m_unit(DateRangeUnit::NOT_SET),
-    m_unitHasBeenSet(false)
+DateRange::DateRange(JsonView jsonValue)
+  : DateRange()
 {
   *this = jsonValue;
 }

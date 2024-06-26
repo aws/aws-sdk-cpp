@@ -28,13 +28,8 @@ GlobalTableDescription::GlobalTableDescription() :
 {
 }
 
-GlobalTableDescription::GlobalTableDescription(JsonView jsonValue) : 
-    m_replicationGroupHasBeenSet(false),
-    m_globalTableArnHasBeenSet(false),
-    m_creationDateTimeHasBeenSet(false),
-    m_globalTableStatus(GlobalTableStatus::NOT_SET),
-    m_globalTableStatusHasBeenSet(false),
-    m_globalTableNameHasBeenSet(false)
+GlobalTableDescription::GlobalTableDescription(JsonView jsonValue)
+  : GlobalTableDescription()
 {
   *this = jsonValue;
 }

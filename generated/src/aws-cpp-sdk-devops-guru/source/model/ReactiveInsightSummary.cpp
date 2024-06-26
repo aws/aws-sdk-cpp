@@ -32,17 +32,8 @@ ReactiveInsightSummary::ReactiveInsightSummary() :
 {
 }
 
-ReactiveInsightSummary::ReactiveInsightSummary(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_severity(InsightSeverity::NOT_SET),
-    m_severityHasBeenSet(false),
-    m_status(InsightStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_insightTimeRangeHasBeenSet(false),
-    m_resourceCollectionHasBeenSet(false),
-    m_serviceCollectionHasBeenSet(false),
-    m_associatedResourceArnsHasBeenSet(false)
+ReactiveInsightSummary::ReactiveInsightSummary(JsonView jsonValue)
+  : ReactiveInsightSummary()
 {
   *this = jsonValue;
 }

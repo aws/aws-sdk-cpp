@@ -22,8 +22,8 @@ DescribeHumanLoopResult::DescribeHumanLoopResult() :
 {
 }
 
-DescribeHumanLoopResult::DescribeHumanLoopResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_humanLoopStatus(HumanLoopStatus::NOT_SET)
+DescribeHumanLoopResult::DescribeHumanLoopResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeHumanLoopResult()
 {
   *this = result;
 }

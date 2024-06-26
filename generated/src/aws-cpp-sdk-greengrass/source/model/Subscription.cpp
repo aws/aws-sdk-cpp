@@ -26,11 +26,8 @@ Subscription::Subscription() :
 {
 }
 
-Subscription::Subscription(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_sourceHasBeenSet(false),
-    m_subjectHasBeenSet(false),
-    m_targetHasBeenSet(false)
+Subscription::Subscription(JsonView jsonValue)
+  : Subscription()
 {
   *this = jsonValue;
 }

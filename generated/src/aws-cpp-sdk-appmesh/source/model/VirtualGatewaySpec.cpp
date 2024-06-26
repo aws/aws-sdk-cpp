@@ -25,10 +25,8 @@ VirtualGatewaySpec::VirtualGatewaySpec() :
 {
 }
 
-VirtualGatewaySpec::VirtualGatewaySpec(JsonView jsonValue) : 
-    m_backendDefaultsHasBeenSet(false),
-    m_listenersHasBeenSet(false),
-    m_loggingHasBeenSet(false)
+VirtualGatewaySpec::VirtualGatewaySpec(JsonView jsonValue)
+  : VirtualGatewaySpec()
 {
   *this = jsonValue;
 }

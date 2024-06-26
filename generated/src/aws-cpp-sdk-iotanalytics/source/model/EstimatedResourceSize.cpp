@@ -25,10 +25,8 @@ EstimatedResourceSize::EstimatedResourceSize() :
 {
 }
 
-EstimatedResourceSize::EstimatedResourceSize(JsonView jsonValue) : 
-    m_estimatedSizeInBytes(0.0),
-    m_estimatedSizeInBytesHasBeenSet(false),
-    m_estimatedOnHasBeenSet(false)
+EstimatedResourceSize::EstimatedResourceSize(JsonView jsonValue)
+  : EstimatedResourceSize()
 {
   *this = jsonValue;
 }

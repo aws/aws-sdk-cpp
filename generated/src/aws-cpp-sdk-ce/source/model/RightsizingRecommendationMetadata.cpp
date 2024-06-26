@@ -27,12 +27,8 @@ RightsizingRecommendationMetadata::RightsizingRecommendationMetadata() :
 {
 }
 
-RightsizingRecommendationMetadata::RightsizingRecommendationMetadata(JsonView jsonValue) : 
-    m_recommendationIdHasBeenSet(false),
-    m_generationTimestampHasBeenSet(false),
-    m_lookbackPeriodInDays(LookbackPeriodInDays::NOT_SET),
-    m_lookbackPeriodInDaysHasBeenSet(false),
-    m_additionalMetadataHasBeenSet(false)
+RightsizingRecommendationMetadata::RightsizingRecommendationMetadata(JsonView jsonValue)
+  : RightsizingRecommendationMetadata()
 {
   *this = jsonValue;
 }

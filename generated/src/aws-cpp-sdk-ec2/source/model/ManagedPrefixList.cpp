@@ -37,20 +37,8 @@ ManagedPrefixList::ManagedPrefixList() :
 {
 }
 
-ManagedPrefixList::ManagedPrefixList(const XmlNode& xmlNode) : 
-    m_prefixListIdHasBeenSet(false),
-    m_addressFamilyHasBeenSet(false),
-    m_state(PrefixListState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_stateMessageHasBeenSet(false),
-    m_prefixListArnHasBeenSet(false),
-    m_prefixListNameHasBeenSet(false),
-    m_maxEntries(0),
-    m_maxEntriesHasBeenSet(false),
-    m_version(0),
-    m_versionHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_ownerIdHasBeenSet(false)
+ManagedPrefixList::ManagedPrefixList(const XmlNode& xmlNode)
+  : ManagedPrefixList()
 {
   *this = xmlNode;
 }

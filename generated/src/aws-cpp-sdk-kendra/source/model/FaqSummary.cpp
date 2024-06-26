@@ -31,16 +31,8 @@ FaqSummary::FaqSummary() :
 {
 }
 
-FaqSummary::FaqSummary(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_status(FaqStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_fileFormat(FaqFileFormat::NOT_SET),
-    m_fileFormatHasBeenSet(false),
-    m_languageCodeHasBeenSet(false)
+FaqSummary::FaqSummary(JsonView jsonValue)
+  : FaqSummary()
 {
   *this = jsonValue;
 }

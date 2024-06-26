@@ -38,23 +38,8 @@ Membership::Membership() :
 {
 }
 
-Membership::Membership(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_collaborationArnHasBeenSet(false),
-    m_collaborationIdHasBeenSet(false),
-    m_collaborationCreatorAccountIdHasBeenSet(false),
-    m_collaborationCreatorDisplayNameHasBeenSet(false),
-    m_collaborationNameHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false),
-    m_status(MembershipStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_memberAbilitiesHasBeenSet(false),
-    m_queryLogStatus(MembershipQueryLogStatus::NOT_SET),
-    m_queryLogStatusHasBeenSet(false),
-    m_defaultResultConfigurationHasBeenSet(false),
-    m_paymentConfigurationHasBeenSet(false)
+Membership::Membership(JsonView jsonValue)
+  : Membership()
 {
   *this = jsonValue;
 }

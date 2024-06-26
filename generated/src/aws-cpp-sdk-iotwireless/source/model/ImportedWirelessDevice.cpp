@@ -23,8 +23,8 @@ ImportedWirelessDevice::ImportedWirelessDevice() :
 {
 }
 
-ImportedWirelessDevice::ImportedWirelessDevice(JsonView jsonValue) : 
-    m_sidewalkHasBeenSet(false)
+ImportedWirelessDevice::ImportedWirelessDevice(JsonView jsonValue)
+  : ImportedWirelessDevice()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ EvaluateCodeErrorDetail::EvaluateCodeErrorDetail() :
 {
 }
 
-EvaluateCodeErrorDetail::EvaluateCodeErrorDetail(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_codeErrorsHasBeenSet(false)
+EvaluateCodeErrorDetail::EvaluateCodeErrorDetail(JsonView jsonValue)
+  : EvaluateCodeErrorDetail()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ ClusterMarkerConfiguration::ClusterMarkerConfiguration() :
 {
 }
 
-ClusterMarkerConfiguration::ClusterMarkerConfiguration(JsonView jsonValue) : 
-    m_clusterMarkerHasBeenSet(false)
+ClusterMarkerConfiguration::ClusterMarkerConfiguration(JsonView jsonValue)
+  : ClusterMarkerConfiguration()
 {
   *this = jsonValue;
 }

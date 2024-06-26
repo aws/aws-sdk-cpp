@@ -23,9 +23,8 @@ CreateMedicalVocabularyResult::CreateMedicalVocabularyResult() :
 {
 }
 
-CreateMedicalVocabularyResult::CreateMedicalVocabularyResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_languageCode(LanguageCode::NOT_SET),
-    m_vocabularyState(VocabularyState::NOT_SET)
+CreateMedicalVocabularyResult::CreateMedicalVocabularyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateMedicalVocabularyResult()
 {
   *this = result;
 }

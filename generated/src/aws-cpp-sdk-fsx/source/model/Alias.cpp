@@ -25,10 +25,8 @@ Alias::Alias() :
 {
 }
 
-Alias::Alias(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_lifecycle(AliasLifecycle::NOT_SET),
-    m_lifecycleHasBeenSet(false)
+Alias::Alias(JsonView jsonValue)
+  : Alias()
 {
   *this = jsonValue;
 }

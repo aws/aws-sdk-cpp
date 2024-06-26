@@ -23,9 +23,8 @@ GetEntityResult::GetEntityResult() :
 {
 }
 
-GetEntityResult::GetEntityResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_hasChildEntities(false),
-    m_areAllComponentsReturned(false)
+GetEntityResult::GetEntityResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetEntityResult()
 {
   *this = result;
 }

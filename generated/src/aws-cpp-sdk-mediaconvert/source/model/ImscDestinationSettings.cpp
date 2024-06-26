@@ -26,11 +26,8 @@ ImscDestinationSettings::ImscDestinationSettings() :
 {
 }
 
-ImscDestinationSettings::ImscDestinationSettings(JsonView jsonValue) : 
-    m_accessibility(ImscAccessibilitySubs::NOT_SET),
-    m_accessibilityHasBeenSet(false),
-    m_stylePassthrough(ImscStylePassthrough::NOT_SET),
-    m_stylePassthroughHasBeenSet(false)
+ImscDestinationSettings::ImscDestinationSettings(JsonView jsonValue)
+  : ImscDestinationSettings()
 {
   *this = jsonValue;
 }

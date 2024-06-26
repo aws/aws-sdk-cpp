@@ -25,8 +25,8 @@ ClassicLoadBalancer::ClassicLoadBalancer() :
 {
 }
 
-ClassicLoadBalancer::ClassicLoadBalancer(const XmlNode& xmlNode) : 
-    m_nameHasBeenSet(false)
+ClassicLoadBalancer::ClassicLoadBalancer(const XmlNode& xmlNode)
+  : ClassicLoadBalancer()
 {
   *this = xmlNode;
 }

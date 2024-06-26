@@ -36,21 +36,8 @@ EbsInstanceBlockDeviceSpecification::EbsInstanceBlockDeviceSpecification() :
 {
 }
 
-EbsInstanceBlockDeviceSpecification::EbsInstanceBlockDeviceSpecification(JsonView jsonValue) : 
-    m_encrypted(false),
-    m_encryptedHasBeenSet(false),
-    m_deleteOnTermination(false),
-    m_deleteOnTerminationHasBeenSet(false),
-    m_iops(0),
-    m_iopsHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_snapshotIdHasBeenSet(false),
-    m_volumeSize(0),
-    m_volumeSizeHasBeenSet(false),
-    m_volumeType(EbsVolumeType::NOT_SET),
-    m_volumeTypeHasBeenSet(false),
-    m_throughput(0),
-    m_throughputHasBeenSet(false)
+EbsInstanceBlockDeviceSpecification::EbsInstanceBlockDeviceSpecification(JsonView jsonValue)
+  : EbsInstanceBlockDeviceSpecification()
 {
   *this = jsonValue;
 }

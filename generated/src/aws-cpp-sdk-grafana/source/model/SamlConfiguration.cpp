@@ -28,13 +28,8 @@ SamlConfiguration::SamlConfiguration() :
 {
 }
 
-SamlConfiguration::SamlConfiguration(JsonView jsonValue) : 
-    m_allowedOrganizationsHasBeenSet(false),
-    m_assertionAttributesHasBeenSet(false),
-    m_idpMetadataHasBeenSet(false),
-    m_loginValidityDuration(0),
-    m_loginValidityDurationHasBeenSet(false),
-    m_roleValuesHasBeenSet(false)
+SamlConfiguration::SamlConfiguration(JsonView jsonValue)
+  : SamlConfiguration()
 {
   *this = jsonValue;
 }

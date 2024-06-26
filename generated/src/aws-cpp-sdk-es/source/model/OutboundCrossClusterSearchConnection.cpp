@@ -27,12 +27,8 @@ OutboundCrossClusterSearchConnection::OutboundCrossClusterSearchConnection() :
 {
 }
 
-OutboundCrossClusterSearchConnection::OutboundCrossClusterSearchConnection(JsonView jsonValue) : 
-    m_sourceDomainInfoHasBeenSet(false),
-    m_destinationDomainInfoHasBeenSet(false),
-    m_crossClusterSearchConnectionIdHasBeenSet(false),
-    m_connectionAliasHasBeenSet(false),
-    m_connectionStatusHasBeenSet(false)
+OutboundCrossClusterSearchConnection::OutboundCrossClusterSearchConnection(JsonView jsonValue)
+  : OutboundCrossClusterSearchConnection()
 {
   *this = jsonValue;
 }

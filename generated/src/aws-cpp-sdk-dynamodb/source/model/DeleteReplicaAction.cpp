@@ -23,8 +23,8 @@ DeleteReplicaAction::DeleteReplicaAction() :
 {
 }
 
-DeleteReplicaAction::DeleteReplicaAction(JsonView jsonValue) : 
-    m_regionNameHasBeenSet(false)
+DeleteReplicaAction::DeleteReplicaAction(JsonView jsonValue)
+  : DeleteReplicaAction()
 {
   *this = jsonValue;
 }

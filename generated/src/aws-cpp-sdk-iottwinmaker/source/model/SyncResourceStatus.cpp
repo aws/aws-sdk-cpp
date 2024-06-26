@@ -25,10 +25,8 @@ SyncResourceStatus::SyncResourceStatus() :
 {
 }
 
-SyncResourceStatus::SyncResourceStatus(JsonView jsonValue) : 
-    m_state(SyncResourceState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_errorHasBeenSet(false)
+SyncResourceStatus::SyncResourceStatus(JsonView jsonValue)
+  : SyncResourceStatus()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ PercentVisibleRange::PercentVisibleRange() :
 {
 }
 
-PercentVisibleRange::PercentVisibleRange(JsonView jsonValue) : 
-    m_from(0.0),
-    m_fromHasBeenSet(false),
-    m_to(0.0),
-    m_toHasBeenSet(false)
+PercentVisibleRange::PercentVisibleRange(JsonView jsonValue)
+  : PercentVisibleRange()
 {
   *this = jsonValue;
 }

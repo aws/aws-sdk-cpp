@@ -42,27 +42,8 @@ AmazonTranscribeCallAnalyticsProcessorConfiguration::AmazonTranscribeCallAnalyti
 {
 }
 
-AmazonTranscribeCallAnalyticsProcessorConfiguration::AmazonTranscribeCallAnalyticsProcessorConfiguration(JsonView jsonValue) : 
-    m_languageCode(CallAnalyticsLanguageCode::NOT_SET),
-    m_languageCodeHasBeenSet(false),
-    m_vocabularyNameHasBeenSet(false),
-    m_vocabularyFilterNameHasBeenSet(false),
-    m_vocabularyFilterMethod(VocabularyFilterMethod::NOT_SET),
-    m_vocabularyFilterMethodHasBeenSet(false),
-    m_languageModelNameHasBeenSet(false),
-    m_enablePartialResultsStabilization(false),
-    m_enablePartialResultsStabilizationHasBeenSet(false),
-    m_partialResultsStability(PartialResultsStability::NOT_SET),
-    m_partialResultsStabilityHasBeenSet(false),
-    m_contentIdentificationType(ContentType::NOT_SET),
-    m_contentIdentificationTypeHasBeenSet(false),
-    m_contentRedactionType(ContentType::NOT_SET),
-    m_contentRedactionTypeHasBeenSet(false),
-    m_piiEntityTypesHasBeenSet(false),
-    m_filterPartialResults(false),
-    m_filterPartialResultsHasBeenSet(false),
-    m_postCallAnalyticsSettingsHasBeenSet(false),
-    m_callAnalyticsStreamCategoriesHasBeenSet(false)
+AmazonTranscribeCallAnalyticsProcessorConfiguration::AmazonTranscribeCallAnalyticsProcessorConfiguration(JsonView jsonValue)
+  : AmazonTranscribeCallAnalyticsProcessorConfiguration()
 {
   *this = jsonValue;
 }

@@ -29,14 +29,8 @@ ImportTr34KeyBlock::ImportTr34KeyBlock() :
 {
 }
 
-ImportTr34KeyBlock::ImportTr34KeyBlock(JsonView jsonValue) : 
-    m_certificateAuthorityPublicKeyIdentifierHasBeenSet(false),
-    m_signingKeyCertificateHasBeenSet(false),
-    m_importTokenHasBeenSet(false),
-    m_wrappedKeyBlockHasBeenSet(false),
-    m_keyBlockFormat(Tr34KeyBlockFormat::NOT_SET),
-    m_keyBlockFormatHasBeenSet(false),
-    m_randomNonceHasBeenSet(false)
+ImportTr34KeyBlock::ImportTr34KeyBlock(JsonView jsonValue)
+  : ImportTr34KeyBlock()
 {
   *this = jsonValue;
 }

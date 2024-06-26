@@ -29,14 +29,8 @@ SnapshotCopyConfiguration::SnapshotCopyConfiguration() :
 {
 }
 
-SnapshotCopyConfiguration::SnapshotCopyConfiguration(JsonView jsonValue) : 
-    m_destinationKmsKeyIdHasBeenSet(false),
-    m_destinationRegionHasBeenSet(false),
-    m_namespaceNameHasBeenSet(false),
-    m_snapshotCopyConfigurationArnHasBeenSet(false),
-    m_snapshotCopyConfigurationIdHasBeenSet(false),
-    m_snapshotRetentionPeriod(0),
-    m_snapshotRetentionPeriodHasBeenSet(false)
+SnapshotCopyConfiguration::SnapshotCopyConfiguration(JsonView jsonValue)
+  : SnapshotCopyConfiguration()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ PivotTableSortConfiguration::PivotTableSortConfiguration() :
 {
 }
 
-PivotTableSortConfiguration::PivotTableSortConfiguration(JsonView jsonValue) : 
-    m_fieldSortOptionsHasBeenSet(false)
+PivotTableSortConfiguration::PivotTableSortConfiguration(JsonView jsonValue)
+  : PivotTableSortConfiguration()
 {
   *this = jsonValue;
 }

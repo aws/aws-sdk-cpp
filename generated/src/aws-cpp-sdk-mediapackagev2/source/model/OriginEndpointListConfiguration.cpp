@@ -35,20 +35,8 @@ OriginEndpointListConfiguration::OriginEndpointListConfiguration() :
 {
 }
 
-OriginEndpointListConfiguration::OriginEndpointListConfiguration(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_channelGroupNameHasBeenSet(false),
-    m_channelNameHasBeenSet(false),
-    m_originEndpointNameHasBeenSet(false),
-    m_containerType(ContainerType::NOT_SET),
-    m_containerTypeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_modifiedAtHasBeenSet(false),
-    m_hlsManifestsHasBeenSet(false),
-    m_lowLatencyHlsManifestsHasBeenSet(false),
-    m_dashManifestsHasBeenSet(false),
-    m_forceEndpointErrorConfigurationHasBeenSet(false)
+OriginEndpointListConfiguration::OriginEndpointListConfiguration(JsonView jsonValue)
+  : OriginEndpointListConfiguration()
 {
   *this = jsonValue;
 }

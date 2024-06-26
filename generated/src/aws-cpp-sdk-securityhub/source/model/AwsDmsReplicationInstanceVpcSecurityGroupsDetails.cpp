@@ -23,8 +23,8 @@ AwsDmsReplicationInstanceVpcSecurityGroupsDetails::AwsDmsReplicationInstanceVpcS
 {
 }
 
-AwsDmsReplicationInstanceVpcSecurityGroupsDetails::AwsDmsReplicationInstanceVpcSecurityGroupsDetails(JsonView jsonValue) : 
-    m_vpcSecurityGroupIdHasBeenSet(false)
+AwsDmsReplicationInstanceVpcSecurityGroupsDetails::AwsDmsReplicationInstanceVpcSecurityGroupsDetails(JsonView jsonValue)
+  : AwsDmsReplicationInstanceVpcSecurityGroupsDetails()
 {
   *this = jsonValue;
 }

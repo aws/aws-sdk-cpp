@@ -28,13 +28,8 @@ StoppingCondition::StoppingCondition() :
 {
 }
 
-StoppingCondition::StoppingCondition(JsonView jsonValue) : 
-    m_maxRuntimeInSeconds(0),
-    m_maxRuntimeInSecondsHasBeenSet(false),
-    m_maxWaitTimeInSeconds(0),
-    m_maxWaitTimeInSecondsHasBeenSet(false),
-    m_maxPendingTimeInSeconds(0),
-    m_maxPendingTimeInSecondsHasBeenSet(false)
+StoppingCondition::StoppingCondition(JsonView jsonValue)
+  : StoppingCondition()
 {
   *this = jsonValue;
 }

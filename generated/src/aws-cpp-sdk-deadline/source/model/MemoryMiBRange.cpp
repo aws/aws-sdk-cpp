@@ -26,11 +26,8 @@ MemoryMiBRange::MemoryMiBRange() :
 {
 }
 
-MemoryMiBRange::MemoryMiBRange(JsonView jsonValue) : 
-    m_max(0),
-    m_maxHasBeenSet(false),
-    m_min(0),
-    m_minHasBeenSet(false)
+MemoryMiBRange::MemoryMiBRange(JsonView jsonValue)
+  : MemoryMiBRange()
 {
   *this = jsonValue;
 }

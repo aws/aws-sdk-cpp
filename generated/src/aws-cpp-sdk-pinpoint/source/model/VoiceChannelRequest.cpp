@@ -24,9 +24,8 @@ VoiceChannelRequest::VoiceChannelRequest() :
 {
 }
 
-VoiceChannelRequest::VoiceChannelRequest(JsonView jsonValue) : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
+VoiceChannelRequest::VoiceChannelRequest(JsonView jsonValue)
+  : VoiceChannelRequest()
 {
   *this = jsonValue;
 }

@@ -27,12 +27,8 @@ SearchResourcesSimpleCriterion::SearchResourcesSimpleCriterion() :
 {
 }
 
-SearchResourcesSimpleCriterion::SearchResourcesSimpleCriterion(JsonView jsonValue) : 
-    m_comparator(SearchResourcesComparator::NOT_SET),
-    m_comparatorHasBeenSet(false),
-    m_key(SearchResourcesSimpleCriterionKey::NOT_SET),
-    m_keyHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+SearchResourcesSimpleCriterion::SearchResourcesSimpleCriterion(JsonView jsonValue)
+  : SearchResourcesSimpleCriterion()
 {
   *this = jsonValue;
 }

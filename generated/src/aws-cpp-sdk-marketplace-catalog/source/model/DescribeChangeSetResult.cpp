@@ -24,10 +24,8 @@ DescribeChangeSetResult::DescribeChangeSetResult() :
 {
 }
 
-DescribeChangeSetResult::DescribeChangeSetResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_intent(Intent::NOT_SET),
-    m_status(ChangeStatus::NOT_SET),
-    m_failureCode(FailureCode::NOT_SET)
+DescribeChangeSetResult::DescribeChangeSetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeChangeSetResult()
 {
   *this = result;
 }

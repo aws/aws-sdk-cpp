@@ -22,8 +22,8 @@ DescribeTimeSeriesResult::DescribeTimeSeriesResult() :
 {
 }
 
-DescribeTimeSeriesResult::DescribeTimeSeriesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_dataType(PropertyDataType::NOT_SET)
+DescribeTimeSeriesResult::DescribeTimeSeriesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeTimeSeriesResult()
 {
   *this = result;
 }

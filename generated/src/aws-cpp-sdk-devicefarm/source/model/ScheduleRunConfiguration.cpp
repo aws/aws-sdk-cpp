@@ -32,17 +32,8 @@ ScheduleRunConfiguration::ScheduleRunConfiguration() :
 {
 }
 
-ScheduleRunConfiguration::ScheduleRunConfiguration(JsonView jsonValue) : 
-    m_extraDataPackageArnHasBeenSet(false),
-    m_networkProfileArnHasBeenSet(false),
-    m_localeHasBeenSet(false),
-    m_locationHasBeenSet(false),
-    m_vpceConfigurationArnsHasBeenSet(false),
-    m_customerArtifactPathsHasBeenSet(false),
-    m_radiosHasBeenSet(false),
-    m_auxiliaryAppsHasBeenSet(false),
-    m_billingMethod(BillingMethod::NOT_SET),
-    m_billingMethodHasBeenSet(false)
+ScheduleRunConfiguration::ScheduleRunConfiguration(JsonView jsonValue)
+  : ScheduleRunConfiguration()
 {
   *this = jsonValue;
 }

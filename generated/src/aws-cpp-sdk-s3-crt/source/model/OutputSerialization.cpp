@@ -26,9 +26,8 @@ OutputSerialization::OutputSerialization() :
 {
 }
 
-OutputSerialization::OutputSerialization(const XmlNode& xmlNode) : 
-    m_cSVHasBeenSet(false),
-    m_jSONHasBeenSet(false)
+OutputSerialization::OutputSerialization(const XmlNode& xmlNode)
+  : OutputSerialization()
 {
   *this = xmlNode;
 }

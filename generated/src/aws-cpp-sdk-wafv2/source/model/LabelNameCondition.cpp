@@ -23,8 +23,8 @@ LabelNameCondition::LabelNameCondition() :
 {
 }
 
-LabelNameCondition::LabelNameCondition(JsonView jsonValue) : 
-    m_labelNameHasBeenSet(false)
+LabelNameCondition::LabelNameCondition(JsonView jsonValue)
+  : LabelNameCondition()
 {
   *this = jsonValue;
 }

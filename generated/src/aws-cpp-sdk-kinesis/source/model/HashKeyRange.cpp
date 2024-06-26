@@ -24,9 +24,8 @@ HashKeyRange::HashKeyRange() :
 {
 }
 
-HashKeyRange::HashKeyRange(JsonView jsonValue) : 
-    m_startingHashKeyHasBeenSet(false),
-    m_endingHashKeyHasBeenSet(false)
+HashKeyRange::HashKeyRange(JsonView jsonValue)
+  : HashKeyRange()
 {
   *this = jsonValue;
 }

@@ -27,12 +27,8 @@ ManagedJobTemplateSummary::ManagedJobTemplateSummary() :
 {
 }
 
-ManagedJobTemplateSummary::ManagedJobTemplateSummary(JsonView jsonValue) : 
-    m_templateArnHasBeenSet(false),
-    m_templateNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_environmentsHasBeenSet(false),
-    m_templateVersionHasBeenSet(false)
+ManagedJobTemplateSummary::ManagedJobTemplateSummary(JsonView jsonValue)
+  : ManagedJobTemplateSummary()
 {
   *this = jsonValue;
 }

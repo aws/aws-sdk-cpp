@@ -24,9 +24,8 @@ EnvironmentDetailsIdentifiers::EnvironmentDetailsIdentifiers() :
 {
 }
 
-EnvironmentDetailsIdentifiers::EnvironmentDetailsIdentifiers(JsonView jsonValue) : 
-    m_environmentIdHasBeenSet(false),
-    m_jobIdHasBeenSet(false)
+EnvironmentDetailsIdentifiers::EnvironmentDetailsIdentifiers(JsonView jsonValue)
+  : EnvironmentDetailsIdentifiers()
 {
   *this = jsonValue;
 }

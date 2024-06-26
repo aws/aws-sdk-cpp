@@ -25,10 +25,8 @@ RateBasedStatementManagedKeysIPSet::RateBasedStatementManagedKeysIPSet() :
 {
 }
 
-RateBasedStatementManagedKeysIPSet::RateBasedStatementManagedKeysIPSet(JsonView jsonValue) : 
-    m_iPAddressVersion(IPAddressVersion::NOT_SET),
-    m_iPAddressVersionHasBeenSet(false),
-    m_addressesHasBeenSet(false)
+RateBasedStatementManagedKeysIPSet::RateBasedStatementManagedKeysIPSet(JsonView jsonValue)
+  : RateBasedStatementManagedKeysIPSet()
 {
   *this = jsonValue;
 }

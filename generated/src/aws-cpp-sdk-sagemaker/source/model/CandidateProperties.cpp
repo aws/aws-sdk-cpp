@@ -24,9 +24,8 @@ CandidateProperties::CandidateProperties() :
 {
 }
 
-CandidateProperties::CandidateProperties(JsonView jsonValue) : 
-    m_candidateArtifactLocationsHasBeenSet(false),
-    m_candidateMetricsHasBeenSet(false)
+CandidateProperties::CandidateProperties(JsonView jsonValue)
+  : CandidateProperties()
 {
   *this = jsonValue;
 }

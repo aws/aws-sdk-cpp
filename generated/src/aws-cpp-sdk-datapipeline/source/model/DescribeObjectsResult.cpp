@@ -22,8 +22,8 @@ DescribeObjectsResult::DescribeObjectsResult() :
 {
 }
 
-DescribeObjectsResult::DescribeObjectsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_hasMoreResults(false)
+DescribeObjectsResult::DescribeObjectsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeObjectsResult()
 {
   *this = result;
 }

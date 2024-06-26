@@ -32,17 +32,8 @@ PromptConfiguration::PromptConfiguration() :
 {
 }
 
-PromptConfiguration::PromptConfiguration(JsonView jsonValue) : 
-    m_basePromptTemplateHasBeenSet(false),
-    m_inferenceConfigurationHasBeenSet(false),
-    m_parserMode(CreationMode::NOT_SET),
-    m_parserModeHasBeenSet(false),
-    m_promptCreationMode(CreationMode::NOT_SET),
-    m_promptCreationModeHasBeenSet(false),
-    m_promptState(PromptState::NOT_SET),
-    m_promptStateHasBeenSet(false),
-    m_promptType(PromptType::NOT_SET),
-    m_promptTypeHasBeenSet(false)
+PromptConfiguration::PromptConfiguration(JsonView jsonValue)
+  : PromptConfiguration()
 {
   *this = jsonValue;
 }

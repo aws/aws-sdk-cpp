@@ -24,9 +24,8 @@ RuleIpToEvaluate::RuleIpToEvaluate() :
 {
 }
 
-RuleIpToEvaluate::RuleIpToEvaluate(JsonView jsonValue) : 
-    m_attribute(RuleIpEmailAttribute::NOT_SET),
-    m_attributeHasBeenSet(false)
+RuleIpToEvaluate::RuleIpToEvaluate(JsonView jsonValue)
+  : RuleIpToEvaluate()
 {
   *this = jsonValue;
 }

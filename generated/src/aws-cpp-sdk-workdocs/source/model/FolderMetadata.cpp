@@ -36,21 +36,8 @@ FolderMetadata::FolderMetadata() :
 {
 }
 
-FolderMetadata::FolderMetadata(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_creatorIdHasBeenSet(false),
-    m_parentFolderIdHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false),
-    m_modifiedTimestampHasBeenSet(false),
-    m_resourceState(ResourceStateType::NOT_SET),
-    m_resourceStateHasBeenSet(false),
-    m_signatureHasBeenSet(false),
-    m_labelsHasBeenSet(false),
-    m_size(0),
-    m_sizeHasBeenSet(false),
-    m_latestVersionSize(0),
-    m_latestVersionSizeHasBeenSet(false)
+FolderMetadata::FolderMetadata(JsonView jsonValue)
+  : FolderMetadata()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ PutIntegrationResult::PutIntegrationResult() :
 {
 }
 
-PutIntegrationResult::PutIntegrationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_isUnstructured(false)
+PutIntegrationResult::PutIntegrationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : PutIntegrationResult()
 {
   *this = result;
 }

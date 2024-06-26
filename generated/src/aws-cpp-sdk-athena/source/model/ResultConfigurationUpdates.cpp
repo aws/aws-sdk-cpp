@@ -34,19 +34,8 @@ ResultConfigurationUpdates::ResultConfigurationUpdates() :
 {
 }
 
-ResultConfigurationUpdates::ResultConfigurationUpdates(JsonView jsonValue) : 
-    m_outputLocationHasBeenSet(false),
-    m_removeOutputLocation(false),
-    m_removeOutputLocationHasBeenSet(false),
-    m_encryptionConfigurationHasBeenSet(false),
-    m_removeEncryptionConfiguration(false),
-    m_removeEncryptionConfigurationHasBeenSet(false),
-    m_expectedBucketOwnerHasBeenSet(false),
-    m_removeExpectedBucketOwner(false),
-    m_removeExpectedBucketOwnerHasBeenSet(false),
-    m_aclConfigurationHasBeenSet(false),
-    m_removeAclConfiguration(false),
-    m_removeAclConfigurationHasBeenSet(false)
+ResultConfigurationUpdates::ResultConfigurationUpdates(JsonView jsonValue)
+  : ResultConfigurationUpdates()
 {
   *this = jsonValue;
 }

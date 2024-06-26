@@ -25,10 +25,8 @@ TimeZone::TimeZone() :
 {
 }
 
-TimeZone::TimeZone(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_offset(0),
-    m_offsetHasBeenSet(false)
+TimeZone::TimeZone(JsonView jsonValue)
+  : TimeZone()
 {
   *this = jsonValue;
 }

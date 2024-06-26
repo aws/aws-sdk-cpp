@@ -27,12 +27,8 @@ SalesforceConnectorProfileProperties::SalesforceConnectorProfileProperties() :
 {
 }
 
-SalesforceConnectorProfileProperties::SalesforceConnectorProfileProperties(JsonView jsonValue) : 
-    m_instanceUrlHasBeenSet(false),
-    m_isSandboxEnvironment(false),
-    m_isSandboxEnvironmentHasBeenSet(false),
-    m_usePrivateLinkForMetadataAndAuthorization(false),
-    m_usePrivateLinkForMetadataAndAuthorizationHasBeenSet(false)
+SalesforceConnectorProfileProperties::SalesforceConnectorProfileProperties(JsonView jsonValue)
+  : SalesforceConnectorProfileProperties()
 {
   *this = jsonValue;
 }

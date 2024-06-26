@@ -25,10 +25,8 @@ FailedResource::FailedResource() :
 {
 }
 
-FailedResource::FailedResource(JsonView jsonValue) : 
-    m_resourceArnHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_errorCodeHasBeenSet(false)
+FailedResource::FailedResource(JsonView jsonValue)
+  : FailedResource()
 {
   *this = jsonValue;
 }

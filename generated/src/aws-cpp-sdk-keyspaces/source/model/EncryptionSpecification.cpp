@@ -25,10 +25,8 @@ EncryptionSpecification::EncryptionSpecification() :
 {
 }
 
-EncryptionSpecification::EncryptionSpecification(JsonView jsonValue) : 
-    m_type(EncryptionType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_kmsKeyIdentifierHasBeenSet(false)
+EncryptionSpecification::EncryptionSpecification(JsonView jsonValue)
+  : EncryptionSpecification()
 {
   *this = jsonValue;
 }

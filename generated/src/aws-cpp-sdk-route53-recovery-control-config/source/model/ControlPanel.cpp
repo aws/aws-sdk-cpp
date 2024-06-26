@@ -32,17 +32,8 @@ ControlPanel::ControlPanel() :
 {
 }
 
-ControlPanel::ControlPanel(JsonView jsonValue) : 
-    m_clusterArnHasBeenSet(false),
-    m_controlPanelArnHasBeenSet(false),
-    m_defaultControlPanel(false),
-    m_defaultControlPanelHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_routingControlCount(0),
-    m_routingControlCountHasBeenSet(false),
-    m_status(Status::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_ownerHasBeenSet(false)
+ControlPanel::ControlPanel(JsonView jsonValue)
+  : ControlPanel()
 {
   *this = jsonValue;
 }

@@ -32,17 +32,8 @@ ContactFlowModule::ContactFlowModule() :
 {
 }
 
-ContactFlowModule::ContactFlowModule(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_contentHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_state(ContactFlowModuleState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_status(ContactFlowModuleStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+ContactFlowModule::ContactFlowModule(JsonView jsonValue)
+  : ContactFlowModule()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ Master::Master() :
 {
 }
 
-Master::Master(JsonView jsonValue) : 
-    m_accountIdHasBeenSet(false),
-    m_invitationIdHasBeenSet(false),
-    m_relationshipStatusHasBeenSet(false),
-    m_invitedAtHasBeenSet(false)
+Master::Master(JsonView jsonValue)
+  : Master()
 {
   *this = jsonValue;
 }

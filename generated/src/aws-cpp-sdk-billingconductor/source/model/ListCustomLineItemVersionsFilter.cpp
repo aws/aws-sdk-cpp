@@ -23,8 +23,8 @@ ListCustomLineItemVersionsFilter::ListCustomLineItemVersionsFilter() :
 {
 }
 
-ListCustomLineItemVersionsFilter::ListCustomLineItemVersionsFilter(JsonView jsonValue) : 
-    m_billingPeriodRangeHasBeenSet(false)
+ListCustomLineItemVersionsFilter::ListCustomLineItemVersionsFilter(JsonView jsonValue)
+  : ListCustomLineItemVersionsFilter()
 {
   *this = jsonValue;
 }

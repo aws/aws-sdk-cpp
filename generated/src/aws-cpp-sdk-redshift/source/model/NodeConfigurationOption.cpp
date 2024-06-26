@@ -31,14 +31,8 @@ NodeConfigurationOption::NodeConfigurationOption() :
 {
 }
 
-NodeConfigurationOption::NodeConfigurationOption(const XmlNode& xmlNode) : 
-    m_nodeTypeHasBeenSet(false),
-    m_numberOfNodes(0),
-    m_numberOfNodesHasBeenSet(false),
-    m_estimatedDiskUtilizationPercent(0.0),
-    m_estimatedDiskUtilizationPercentHasBeenSet(false),
-    m_mode(Mode::NOT_SET),
-    m_modeHasBeenSet(false)
+NodeConfigurationOption::NodeConfigurationOption(const XmlNode& xmlNode)
+  : NodeConfigurationOption()
 {
   *this = xmlNode;
 }

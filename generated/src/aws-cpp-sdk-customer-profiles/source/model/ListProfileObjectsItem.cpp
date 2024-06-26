@@ -25,10 +25,8 @@ ListProfileObjectsItem::ListProfileObjectsItem() :
 {
 }
 
-ListProfileObjectsItem::ListProfileObjectsItem(JsonView jsonValue) : 
-    m_objectTypeNameHasBeenSet(false),
-    m_profileObjectUniqueKeyHasBeenSet(false),
-    m_objectHasBeenSet(false)
+ListProfileObjectsItem::ListProfileObjectsItem(JsonView jsonValue)
+  : ListProfileObjectsItem()
 {
   *this = jsonValue;
 }

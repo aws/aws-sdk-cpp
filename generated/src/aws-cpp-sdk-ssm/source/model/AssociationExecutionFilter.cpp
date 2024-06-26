@@ -27,12 +27,8 @@ AssociationExecutionFilter::AssociationExecutionFilter() :
 {
 }
 
-AssociationExecutionFilter::AssociationExecutionFilter(JsonView jsonValue) : 
-    m_key(AssociationExecutionFilterKey::NOT_SET),
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_type(AssociationFilterOperatorType::NOT_SET),
-    m_typeHasBeenSet(false)
+AssociationExecutionFilter::AssociationExecutionFilter(JsonView jsonValue)
+  : AssociationExecutionFilter()
 {
   *this = jsonValue;
 }

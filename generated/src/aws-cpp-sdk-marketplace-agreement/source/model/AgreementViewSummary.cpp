@@ -32,17 +32,8 @@ AgreementViewSummary::AgreementViewSummary() :
 {
 }
 
-AgreementViewSummary::AgreementViewSummary(JsonView jsonValue) : 
-    m_acceptanceTimeHasBeenSet(false),
-    m_acceptorHasBeenSet(false),
-    m_agreementIdHasBeenSet(false),
-    m_agreementTypeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_proposalSummaryHasBeenSet(false),
-    m_proposerHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_status(AgreementStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+AgreementViewSummary::AgreementViewSummary(JsonView jsonValue)
+  : AgreementViewSummary()
 {
   *this = jsonValue;
 }

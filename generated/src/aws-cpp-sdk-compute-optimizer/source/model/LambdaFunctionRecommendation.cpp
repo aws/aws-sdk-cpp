@@ -41,26 +41,8 @@ LambdaFunctionRecommendation::LambdaFunctionRecommendation() :
 {
 }
 
-LambdaFunctionRecommendation::LambdaFunctionRecommendation(JsonView jsonValue) : 
-    m_functionArnHasBeenSet(false),
-    m_functionVersionHasBeenSet(false),
-    m_accountIdHasBeenSet(false),
-    m_currentMemorySize(0),
-    m_currentMemorySizeHasBeenSet(false),
-    m_numberOfInvocations(0),
-    m_numberOfInvocationsHasBeenSet(false),
-    m_utilizationMetricsHasBeenSet(false),
-    m_lookbackPeriodInDays(0.0),
-    m_lookbackPeriodInDaysHasBeenSet(false),
-    m_lastRefreshTimestampHasBeenSet(false),
-    m_finding(LambdaFunctionRecommendationFinding::NOT_SET),
-    m_findingHasBeenSet(false),
-    m_findingReasonCodesHasBeenSet(false),
-    m_memorySizeRecommendationOptionsHasBeenSet(false),
-    m_currentPerformanceRisk(CurrentPerformanceRisk::NOT_SET),
-    m_currentPerformanceRiskHasBeenSet(false),
-    m_effectiveRecommendationPreferencesHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+LambdaFunctionRecommendation::LambdaFunctionRecommendation(JsonView jsonValue)
+  : LambdaFunctionRecommendation()
 {
   *this = jsonValue;
 }

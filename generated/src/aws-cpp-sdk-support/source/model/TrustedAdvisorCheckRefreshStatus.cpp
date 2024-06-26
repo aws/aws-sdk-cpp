@@ -26,11 +26,8 @@ TrustedAdvisorCheckRefreshStatus::TrustedAdvisorCheckRefreshStatus() :
 {
 }
 
-TrustedAdvisorCheckRefreshStatus::TrustedAdvisorCheckRefreshStatus(JsonView jsonValue) : 
-    m_checkIdHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_millisUntilNextRefreshable(0),
-    m_millisUntilNextRefreshableHasBeenSet(false)
+TrustedAdvisorCheckRefreshStatus::TrustedAdvisorCheckRefreshStatus(JsonView jsonValue)
+  : TrustedAdvisorCheckRefreshStatus()
 {
   *this = jsonValue;
 }

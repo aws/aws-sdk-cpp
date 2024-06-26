@@ -29,14 +29,8 @@ VirtualMachineDetails::VirtualMachineDetails() :
 {
 }
 
-VirtualMachineDetails::VirtualMachineDetails(JsonView jsonValue) : 
-    m_hostNameHasBeenSet(false),
-    m_hypervisorIdHasBeenSet(false),
-    m_lastBackupDateHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_pathHasBeenSet(false),
-    m_resourceArnHasBeenSet(false),
-    m_vmwareTagsHasBeenSet(false)
+VirtualMachineDetails::VirtualMachineDetails(JsonView jsonValue)
+  : VirtualMachineDetails()
 {
   *this = jsonValue;
 }

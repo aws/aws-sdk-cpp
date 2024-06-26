@@ -24,9 +24,8 @@ UpdateKinesisStreamingConfiguration::UpdateKinesisStreamingConfiguration() :
 {
 }
 
-UpdateKinesisStreamingConfiguration::UpdateKinesisStreamingConfiguration(JsonView jsonValue) : 
-    m_approximateCreationDateTimePrecision(ApproximateCreationDateTimePrecision::NOT_SET),
-    m_approximateCreationDateTimePrecisionHasBeenSet(false)
+UpdateKinesisStreamingConfiguration::UpdateKinesisStreamingConfiguration(JsonView jsonValue)
+  : UpdateKinesisStreamingConfiguration()
 {
   *this = jsonValue;
 }

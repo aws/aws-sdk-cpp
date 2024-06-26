@@ -23,8 +23,8 @@ SnippetExcerpt::SnippetExcerpt() :
 {
 }
 
-SnippetExcerpt::SnippetExcerpt(JsonView jsonValue) : 
-    m_textHasBeenSet(false)
+SnippetExcerpt::SnippetExcerpt(JsonView jsonValue)
+  : SnippetExcerpt()
 {
   *this = jsonValue;
 }

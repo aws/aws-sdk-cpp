@@ -26,11 +26,8 @@ VideoDetail::VideoDetail() :
 {
 }
 
-VideoDetail::VideoDetail(JsonView jsonValue) : 
-    m_heightInPx(0),
-    m_heightInPxHasBeenSet(false),
-    m_widthInPx(0),
-    m_widthInPxHasBeenSet(false)
+VideoDetail::VideoDetail(JsonView jsonValue)
+  : VideoDetail()
 {
   *this = jsonValue;
 }

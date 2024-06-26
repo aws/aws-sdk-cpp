@@ -40,25 +40,8 @@ KinesisSettings::KinesisSettings() :
 {
 }
 
-KinesisSettings::KinesisSettings(JsonView jsonValue) : 
-    m_streamArnHasBeenSet(false),
-    m_messageFormat(MessageFormatValue::NOT_SET),
-    m_messageFormatHasBeenSet(false),
-    m_serviceAccessRoleArnHasBeenSet(false),
-    m_includeTransactionDetails(false),
-    m_includeTransactionDetailsHasBeenSet(false),
-    m_includePartitionValue(false),
-    m_includePartitionValueHasBeenSet(false),
-    m_partitionIncludeSchemaTable(false),
-    m_partitionIncludeSchemaTableHasBeenSet(false),
-    m_includeTableAlterOperations(false),
-    m_includeTableAlterOperationsHasBeenSet(false),
-    m_includeControlDetails(false),
-    m_includeControlDetailsHasBeenSet(false),
-    m_includeNullAndEmpty(false),
-    m_includeNullAndEmptyHasBeenSet(false),
-    m_noHexPrefix(false),
-    m_noHexPrefixHasBeenSet(false)
+KinesisSettings::KinesisSettings(JsonView jsonValue)
+  : KinesisSettings()
 {
   *this = jsonValue;
 }

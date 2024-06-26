@@ -43,26 +43,8 @@ DomainStatus::DomainStatus() :
 {
 }
 
-DomainStatus::DomainStatus(const XmlNode& xmlNode) : 
-    m_domainIdHasBeenSet(false),
-    m_domainNameHasBeenSet(false),
-    m_aRNHasBeenSet(false),
-    m_created(false),
-    m_createdHasBeenSet(false),
-    m_deleted(false),
-    m_deletedHasBeenSet(false),
-    m_docServiceHasBeenSet(false),
-    m_searchServiceHasBeenSet(false),
-    m_requiresIndexDocuments(false),
-    m_requiresIndexDocumentsHasBeenSet(false),
-    m_processing(false),
-    m_processingHasBeenSet(false),
-    m_searchInstanceTypeHasBeenSet(false),
-    m_searchPartitionCount(0),
-    m_searchPartitionCountHasBeenSet(false),
-    m_searchInstanceCount(0),
-    m_searchInstanceCountHasBeenSet(false),
-    m_limitsHasBeenSet(false)
+DomainStatus::DomainStatus(const XmlNode& xmlNode)
+  : DomainStatus()
 {
   *this = xmlNode;
 }

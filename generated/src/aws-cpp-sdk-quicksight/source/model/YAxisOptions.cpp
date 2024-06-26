@@ -24,9 +24,8 @@ YAxisOptions::YAxisOptions() :
 {
 }
 
-YAxisOptions::YAxisOptions(JsonView jsonValue) : 
-    m_yAxis(SingleYAxisOption::NOT_SET),
-    m_yAxisHasBeenSet(false)
+YAxisOptions::YAxisOptions(JsonView jsonValue)
+  : YAxisOptions()
 {
   *this = jsonValue;
 }

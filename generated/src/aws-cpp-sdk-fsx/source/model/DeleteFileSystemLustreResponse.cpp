@@ -24,9 +24,8 @@ DeleteFileSystemLustreResponse::DeleteFileSystemLustreResponse() :
 {
 }
 
-DeleteFileSystemLustreResponse::DeleteFileSystemLustreResponse(JsonView jsonValue) : 
-    m_finalBackupIdHasBeenSet(false),
-    m_finalBackupTagsHasBeenSet(false)
+DeleteFileSystemLustreResponse::DeleteFileSystemLustreResponse(JsonView jsonValue)
+  : DeleteFileSystemLustreResponse()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ CancellationReason::CancellationReason() :
 {
 }
 
-CancellationReason::CancellationReason(JsonView jsonValue) : 
-    m_itemHasBeenSet(false),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+CancellationReason::CancellationReason(JsonView jsonValue)
+  : CancellationReason()
 {
   *this = jsonValue;
 }

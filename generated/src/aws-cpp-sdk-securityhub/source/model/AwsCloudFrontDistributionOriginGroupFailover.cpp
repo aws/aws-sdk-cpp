@@ -23,8 +23,8 @@ AwsCloudFrontDistributionOriginGroupFailover::AwsCloudFrontDistributionOriginGro
 {
 }
 
-AwsCloudFrontDistributionOriginGroupFailover::AwsCloudFrontDistributionOriginGroupFailover(JsonView jsonValue) : 
-    m_statusCodesHasBeenSet(false)
+AwsCloudFrontDistributionOriginGroupFailover::AwsCloudFrontDistributionOriginGroupFailover(JsonView jsonValue)
+  : AwsCloudFrontDistributionOriginGroupFailover()
 {
   *this = jsonValue;
 }

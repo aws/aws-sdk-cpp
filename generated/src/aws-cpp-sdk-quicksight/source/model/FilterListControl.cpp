@@ -30,15 +30,8 @@ FilterListControl::FilterListControl() :
 {
 }
 
-FilterListControl::FilterListControl(JsonView jsonValue) : 
-    m_filterControlIdHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_sourceFilterIdHasBeenSet(false),
-    m_displayOptionsHasBeenSet(false),
-    m_type(SheetControlListType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_selectableValuesHasBeenSet(false),
-    m_cascadingControlConfigurationHasBeenSet(false)
+FilterListControl::FilterListControl(JsonView jsonValue)
+  : FilterListControl()
 {
   *this = jsonValue;
 }

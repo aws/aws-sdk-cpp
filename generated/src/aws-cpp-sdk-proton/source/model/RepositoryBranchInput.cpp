@@ -26,11 +26,8 @@ RepositoryBranchInput::RepositoryBranchInput() :
 {
 }
 
-RepositoryBranchInput::RepositoryBranchInput(JsonView jsonValue) : 
-    m_branchHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_provider(RepositoryProvider::NOT_SET),
-    m_providerHasBeenSet(false)
+RepositoryBranchInput::RepositoryBranchInput(JsonView jsonValue)
+  : RepositoryBranchInput()
 {
   *this = jsonValue;
 }

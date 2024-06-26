@@ -23,8 +23,8 @@ StreamUnavailable::StreamUnavailable() :
 {
 }
 
-StreamUnavailable::StreamUnavailable(JsonView jsonValue) : 
-    m_exceptionMessageHasBeenSet(false)
+StreamUnavailable::StreamUnavailable(JsonView jsonValue)
+  : StreamUnavailable()
 {
   *this = jsonValue;
 }

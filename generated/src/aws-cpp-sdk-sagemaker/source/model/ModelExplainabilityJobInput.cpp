@@ -24,9 +24,8 @@ ModelExplainabilityJobInput::ModelExplainabilityJobInput() :
 {
 }
 
-ModelExplainabilityJobInput::ModelExplainabilityJobInput(JsonView jsonValue) : 
-    m_endpointInputHasBeenSet(false),
-    m_batchTransformInputHasBeenSet(false)
+ModelExplainabilityJobInput::ModelExplainabilityJobInput(JsonView jsonValue)
+  : ModelExplainabilityJobInput()
 {
   *this = jsonValue;
 }

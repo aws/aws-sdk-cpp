@@ -32,15 +32,8 @@ PredictiveScalingMetricSpecification::PredictiveScalingMetricSpecification() :
 {
 }
 
-PredictiveScalingMetricSpecification::PredictiveScalingMetricSpecification(const XmlNode& xmlNode) : 
-    m_targetValue(0.0),
-    m_targetValueHasBeenSet(false),
-    m_predefinedMetricPairSpecificationHasBeenSet(false),
-    m_predefinedScalingMetricSpecificationHasBeenSet(false),
-    m_predefinedLoadMetricSpecificationHasBeenSet(false),
-    m_customizedScalingMetricSpecificationHasBeenSet(false),
-    m_customizedLoadMetricSpecificationHasBeenSet(false),
-    m_customizedCapacityMetricSpecificationHasBeenSet(false)
+PredictiveScalingMetricSpecification::PredictiveScalingMetricSpecification(const XmlNode& xmlNode)
+  : PredictiveScalingMetricSpecification()
 {
   *this = xmlNode;
 }

@@ -22,8 +22,8 @@ AuthorizeSecurityGroupIngressResponse::AuthorizeSecurityGroupIngressResponse() :
 {
 }
 
-AuthorizeSecurityGroupIngressResponse::AuthorizeSecurityGroupIngressResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_return(false)
+AuthorizeSecurityGroupIngressResponse::AuthorizeSecurityGroupIngressResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : AuthorizeSecurityGroupIngressResponse()
 {
   *this = result;
 }

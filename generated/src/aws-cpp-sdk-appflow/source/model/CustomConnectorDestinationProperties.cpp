@@ -28,13 +28,8 @@ CustomConnectorDestinationProperties::CustomConnectorDestinationProperties() :
 {
 }
 
-CustomConnectorDestinationProperties::CustomConnectorDestinationProperties(JsonView jsonValue) : 
-    m_entityNameHasBeenSet(false),
-    m_errorHandlingConfigHasBeenSet(false),
-    m_writeOperationType(WriteOperationType::NOT_SET),
-    m_writeOperationTypeHasBeenSet(false),
-    m_idFieldNamesHasBeenSet(false),
-    m_customPropertiesHasBeenSet(false)
+CustomConnectorDestinationProperties::CustomConnectorDestinationProperties(JsonView jsonValue)
+  : CustomConnectorDestinationProperties()
 {
   *this = jsonValue;
 }

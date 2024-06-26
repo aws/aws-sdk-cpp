@@ -24,9 +24,8 @@ VariableDefinition::VariableDefinition() :
 {
 }
 
-VariableDefinition::VariableDefinition(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
+VariableDefinition::VariableDefinition(JsonView jsonValue)
+  : VariableDefinition()
 {
   *this = jsonValue;
 }

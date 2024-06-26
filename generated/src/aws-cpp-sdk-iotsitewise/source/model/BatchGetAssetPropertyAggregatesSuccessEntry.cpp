@@ -24,9 +24,8 @@ BatchGetAssetPropertyAggregatesSuccessEntry::BatchGetAssetPropertyAggregatesSucc
 {
 }
 
-BatchGetAssetPropertyAggregatesSuccessEntry::BatchGetAssetPropertyAggregatesSuccessEntry(JsonView jsonValue) : 
-    m_entryIdHasBeenSet(false),
-    m_aggregatedValuesHasBeenSet(false)
+BatchGetAssetPropertyAggregatesSuccessEntry::BatchGetAssetPropertyAggregatesSuccessEntry(JsonView jsonValue)
+  : BatchGetAssetPropertyAggregatesSuccessEntry()
 {
   *this = jsonValue;
 }

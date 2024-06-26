@@ -23,9 +23,8 @@ GetEbsEncryptionByDefaultResponse::GetEbsEncryptionByDefaultResponse() :
 {
 }
 
-GetEbsEncryptionByDefaultResponse::GetEbsEncryptionByDefaultResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_ebsEncryptionByDefault(false),
-    m_sseType(SSEType::NOT_SET)
+GetEbsEncryptionByDefaultResponse::GetEbsEncryptionByDefaultResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : GetEbsEncryptionByDefaultResponse()
 {
   *this = result;
 }

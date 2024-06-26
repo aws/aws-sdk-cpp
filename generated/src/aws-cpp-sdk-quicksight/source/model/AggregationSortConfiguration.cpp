@@ -26,11 +26,8 @@ AggregationSortConfiguration::AggregationSortConfiguration() :
 {
 }
 
-AggregationSortConfiguration::AggregationSortConfiguration(JsonView jsonValue) : 
-    m_columnHasBeenSet(false),
-    m_sortDirection(SortDirection::NOT_SET),
-    m_sortDirectionHasBeenSet(false),
-    m_aggregationFunctionHasBeenSet(false)
+AggregationSortConfiguration::AggregationSortConfiguration(JsonView jsonValue)
+  : AggregationSortConfiguration()
 {
   *this = jsonValue;
 }

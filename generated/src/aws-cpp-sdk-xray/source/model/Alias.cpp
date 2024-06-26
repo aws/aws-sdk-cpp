@@ -25,10 +25,8 @@ Alias::Alias() :
 {
 }
 
-Alias::Alias(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_namesHasBeenSet(false),
-    m_typeHasBeenSet(false)
+Alias::Alias(JsonView jsonValue)
+  : Alias()
 {
   *this = jsonValue;
 }

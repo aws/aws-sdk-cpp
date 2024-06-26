@@ -25,11 +25,8 @@ GetRouteResult::GetRouteResult() :
 {
 }
 
-GetRouteResult::GetRouteResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_appendSourcePath(false),
-    m_includeChildPaths(false),
-    m_routeType(RouteType::NOT_SET),
-    m_state(RouteState::NOT_SET)
+GetRouteResult::GetRouteResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetRouteResult()
 {
   *this = result;
 }

@@ -26,10 +26,8 @@ CodeContentUpdate::CodeContentUpdate() :
 {
 }
 
-CodeContentUpdate::CodeContentUpdate(JsonView jsonValue) : 
-    m_textContentUpdateHasBeenSet(false),
-    m_zipFileContentUpdateHasBeenSet(false),
-    m_s3ContentLocationUpdateHasBeenSet(false)
+CodeContentUpdate::CodeContentUpdate(JsonView jsonValue)
+  : CodeContentUpdate()
 {
   *this = jsonValue;
 }

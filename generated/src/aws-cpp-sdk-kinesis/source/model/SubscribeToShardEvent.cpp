@@ -27,12 +27,8 @@ SubscribeToShardEvent::SubscribeToShardEvent() :
 {
 }
 
-SubscribeToShardEvent::SubscribeToShardEvent(JsonView jsonValue) : 
-    m_recordsHasBeenSet(false),
-    m_continuationSequenceNumberHasBeenSet(false),
-    m_millisBehindLatest(0),
-    m_millisBehindLatestHasBeenSet(false),
-    m_childShardsHasBeenSet(false)
+SubscribeToShardEvent::SubscribeToShardEvent(JsonView jsonValue)
+  : SubscribeToShardEvent()
 {
   *this = jsonValue;
 }

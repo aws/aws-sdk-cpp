@@ -24,9 +24,8 @@ ApiPassthrough::ApiPassthrough() :
 {
 }
 
-ApiPassthrough::ApiPassthrough(JsonView jsonValue) : 
-    m_extensionsHasBeenSet(false),
-    m_subjectHasBeenSet(false)
+ApiPassthrough::ApiPassthrough(JsonView jsonValue)
+  : ApiPassthrough()
 {
   *this = jsonValue;
 }

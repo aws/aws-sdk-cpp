@@ -27,10 +27,8 @@ VolumeStatusInfo::VolumeStatusInfo() :
 {
 }
 
-VolumeStatusInfo::VolumeStatusInfo(const XmlNode& xmlNode) : 
-    m_detailsHasBeenSet(false),
-    m_status(VolumeStatusInfoStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+VolumeStatusInfo::VolumeStatusInfo(const XmlNode& xmlNode)
+  : VolumeStatusInfo()
 {
   *this = xmlNode;
 }

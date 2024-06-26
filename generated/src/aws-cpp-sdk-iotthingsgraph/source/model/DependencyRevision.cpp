@@ -25,10 +25,8 @@ DependencyRevision::DependencyRevision() :
 {
 }
 
-DependencyRevision::DependencyRevision(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_revisionNumber(0),
-    m_revisionNumberHasBeenSet(false)
+DependencyRevision::DependencyRevision(JsonView jsonValue)
+  : DependencyRevision()
 {
   *this = jsonValue;
 }

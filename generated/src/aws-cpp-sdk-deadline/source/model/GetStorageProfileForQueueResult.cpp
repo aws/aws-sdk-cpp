@@ -22,8 +22,8 @@ GetStorageProfileForQueueResult::GetStorageProfileForQueueResult() :
 {
 }
 
-GetStorageProfileForQueueResult::GetStorageProfileForQueueResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_osFamily(StorageProfileOperatingSystemFamily::NOT_SET)
+GetStorageProfileForQueueResult::GetStorageProfileForQueueResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetStorageProfileForQueueResult()
 {
   *this = result;
 }

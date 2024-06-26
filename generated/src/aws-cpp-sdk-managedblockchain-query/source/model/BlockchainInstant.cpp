@@ -23,8 +23,8 @@ BlockchainInstant::BlockchainInstant() :
 {
 }
 
-BlockchainInstant::BlockchainInstant(JsonView jsonValue) : 
-    m_timeHasBeenSet(false)
+BlockchainInstant::BlockchainInstant(JsonView jsonValue)
+  : BlockchainInstant()
 {
   *this = jsonValue;
 }

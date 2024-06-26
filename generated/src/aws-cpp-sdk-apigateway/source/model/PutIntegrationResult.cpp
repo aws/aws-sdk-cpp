@@ -25,11 +25,8 @@ PutIntegrationResult::PutIntegrationResult() :
 {
 }
 
-PutIntegrationResult::PutIntegrationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_type(IntegrationType::NOT_SET),
-    m_connectionType(ConnectionType::NOT_SET),
-    m_contentHandling(ContentHandlingStrategy::NOT_SET),
-    m_timeoutInMillis(0)
+PutIntegrationResult::PutIntegrationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : PutIntegrationResult()
 {
   *this = result;
 }

@@ -24,9 +24,8 @@ AppflowIntegration::AppflowIntegration() :
 {
 }
 
-AppflowIntegration::AppflowIntegration(JsonView jsonValue) : 
-    m_flowDefinitionHasBeenSet(false),
-    m_batchesHasBeenSet(false)
+AppflowIntegration::AppflowIntegration(JsonView jsonValue)
+  : AppflowIntegration()
 {
   *this = jsonValue;
 }

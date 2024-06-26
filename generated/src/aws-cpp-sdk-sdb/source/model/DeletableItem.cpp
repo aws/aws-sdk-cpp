@@ -26,9 +26,8 @@ DeletableItem::DeletableItem() :
 {
 }
 
-DeletableItem::DeletableItem(const XmlNode& xmlNode) : 
-    m_nameHasBeenSet(false),
-    m_attributesHasBeenSet(false)
+DeletableItem::DeletableItem(const XmlNode& xmlNode)
+  : DeletableItem()
 {
   *this = xmlNode;
 }

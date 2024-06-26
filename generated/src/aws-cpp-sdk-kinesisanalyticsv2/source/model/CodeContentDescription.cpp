@@ -27,12 +27,8 @@ CodeContentDescription::CodeContentDescription() :
 {
 }
 
-CodeContentDescription::CodeContentDescription(JsonView jsonValue) : 
-    m_textContentHasBeenSet(false),
-    m_codeMD5HasBeenSet(false),
-    m_codeSize(0),
-    m_codeSizeHasBeenSet(false),
-    m_s3ApplicationCodeLocationDescriptionHasBeenSet(false)
+CodeContentDescription::CodeContentDescription(JsonView jsonValue)
+  : CodeContentDescription()
 {
   *this = jsonValue;
 }

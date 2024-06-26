@@ -30,15 +30,8 @@ Qualification::Qualification() :
 {
 }
 
-Qualification::Qualification(JsonView jsonValue) : 
-    m_qualificationTypeIdHasBeenSet(false),
-    m_workerIdHasBeenSet(false),
-    m_grantTimeHasBeenSet(false),
-    m_integerValue(0),
-    m_integerValueHasBeenSet(false),
-    m_localeValueHasBeenSet(false),
-    m_status(QualificationStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+Qualification::Qualification(JsonView jsonValue)
+  : Qualification()
 {
   *this = jsonValue;
 }

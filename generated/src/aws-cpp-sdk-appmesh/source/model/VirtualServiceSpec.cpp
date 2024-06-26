@@ -23,8 +23,8 @@ VirtualServiceSpec::VirtualServiceSpec() :
 {
 }
 
-VirtualServiceSpec::VirtualServiceSpec(JsonView jsonValue) : 
-    m_providerHasBeenSet(false)
+VirtualServiceSpec::VirtualServiceSpec(JsonView jsonValue)
+  : VirtualServiceSpec()
 {
   *this = jsonValue;
 }

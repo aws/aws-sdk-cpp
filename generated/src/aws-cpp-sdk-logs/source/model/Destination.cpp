@@ -29,14 +29,8 @@ Destination::Destination() :
 {
 }
 
-Destination::Destination(JsonView jsonValue) : 
-    m_destinationNameHasBeenSet(false),
-    m_targetArnHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_accessPolicyHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_creationTime(0),
-    m_creationTimeHasBeenSet(false)
+Destination::Destination(JsonView jsonValue)
+  : Destination()
 {
   *this = jsonValue;
 }

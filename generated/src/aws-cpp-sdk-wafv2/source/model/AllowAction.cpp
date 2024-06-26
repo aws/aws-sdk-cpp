@@ -23,8 +23,8 @@ AllowAction::AllowAction() :
 {
 }
 
-AllowAction::AllowAction(JsonView jsonValue) : 
-    m_customRequestHandlingHasBeenSet(false)
+AllowAction::AllowAction(JsonView jsonValue)
+  : AllowAction()
 {
   *this = jsonValue;
 }

@@ -53,38 +53,8 @@ JobMetadata::JobMetadata() :
 {
 }
 
-JobMetadata::JobMetadata(JsonView jsonValue) : 
-    m_jobIdHasBeenSet(false),
-    m_jobState(JobState::NOT_SET),
-    m_jobStateHasBeenSet(false),
-    m_jobType(JobType::NOT_SET),
-    m_jobTypeHasBeenSet(false),
-    m_snowballType(SnowballType::NOT_SET),
-    m_snowballTypeHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_resourcesHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_kmsKeyARNHasBeenSet(false),
-    m_roleARNHasBeenSet(false),
-    m_addressIdHasBeenSet(false),
-    m_shippingDetailsHasBeenSet(false),
-    m_snowballCapacityPreference(SnowballCapacity::NOT_SET),
-    m_snowballCapacityPreferenceHasBeenSet(false),
-    m_notificationHasBeenSet(false),
-    m_dataTransferProgressHasBeenSet(false),
-    m_jobLogInfoHasBeenSet(false),
-    m_clusterIdHasBeenSet(false),
-    m_forwardingAddressIdHasBeenSet(false),
-    m_taxDocumentsHasBeenSet(false),
-    m_deviceConfigurationHasBeenSet(false),
-    m_remoteManagement(RemoteManagement::NOT_SET),
-    m_remoteManagementHasBeenSet(false),
-    m_longTermPricingIdHasBeenSet(false),
-    m_onDeviceServiceConfigurationHasBeenSet(false),
-    m_impactLevel(ImpactLevel::NOT_SET),
-    m_impactLevelHasBeenSet(false),
-    m_pickupDetailsHasBeenSet(false),
-    m_snowballIdHasBeenSet(false)
+JobMetadata::JobMetadata(JsonView jsonValue)
+  : JobMetadata()
 {
   *this = jsonValue;
 }

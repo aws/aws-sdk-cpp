@@ -25,8 +25,8 @@ QueryStringConditionConfig::QueryStringConditionConfig() :
 {
 }
 
-QueryStringConditionConfig::QueryStringConditionConfig(const XmlNode& xmlNode) : 
-    m_valuesHasBeenSet(false)
+QueryStringConditionConfig::QueryStringConditionConfig(const XmlNode& xmlNode)
+  : QueryStringConditionConfig()
 {
   *this = xmlNode;
 }

@@ -24,9 +24,8 @@ InvalidClientException::InvalidClientException() :
 {
 }
 
-InvalidClientException::InvalidClientException(JsonView jsonValue) : 
-    m_errorHasBeenSet(false),
-    m_error_descriptionHasBeenSet(false)
+InvalidClientException::InvalidClientException(JsonView jsonValue)
+  : InvalidClientException()
 {
   *this = jsonValue;
 }

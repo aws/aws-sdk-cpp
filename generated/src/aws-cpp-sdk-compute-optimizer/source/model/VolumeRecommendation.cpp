@@ -36,21 +36,8 @@ VolumeRecommendation::VolumeRecommendation() :
 {
 }
 
-VolumeRecommendation::VolumeRecommendation(JsonView jsonValue) : 
-    m_volumeArnHasBeenSet(false),
-    m_accountIdHasBeenSet(false),
-    m_currentConfigurationHasBeenSet(false),
-    m_finding(EBSFinding::NOT_SET),
-    m_findingHasBeenSet(false),
-    m_utilizationMetricsHasBeenSet(false),
-    m_lookBackPeriodInDays(0.0),
-    m_lookBackPeriodInDaysHasBeenSet(false),
-    m_volumeRecommendationOptionsHasBeenSet(false),
-    m_lastRefreshTimestampHasBeenSet(false),
-    m_currentPerformanceRisk(CurrentPerformanceRisk::NOT_SET),
-    m_currentPerformanceRiskHasBeenSet(false),
-    m_effectiveRecommendationPreferencesHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+VolumeRecommendation::VolumeRecommendation(JsonView jsonValue)
+  : VolumeRecommendation()
 {
   *this = jsonValue;
 }

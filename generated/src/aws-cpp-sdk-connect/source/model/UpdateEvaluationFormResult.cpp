@@ -22,8 +22,8 @@ UpdateEvaluationFormResult::UpdateEvaluationFormResult() :
 {
 }
 
-UpdateEvaluationFormResult::UpdateEvaluationFormResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_evaluationFormVersion(0)
+UpdateEvaluationFormResult::UpdateEvaluationFormResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateEvaluationFormResult()
 {
   *this = result;
 }

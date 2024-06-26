@@ -35,18 +35,8 @@ DBShardGroup::DBShardGroup() :
 {
 }
 
-DBShardGroup::DBShardGroup(const XmlNode& xmlNode) : 
-    m_dBShardGroupResourceIdHasBeenSet(false),
-    m_dBShardGroupIdentifierHasBeenSet(false),
-    m_dBClusterIdentifierHasBeenSet(false),
-    m_maxACU(0.0),
-    m_maxACUHasBeenSet(false),
-    m_computeRedundancy(0),
-    m_computeRedundancyHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_publiclyAccessible(false),
-    m_publiclyAccessibleHasBeenSet(false),
-    m_endpointHasBeenSet(false)
+DBShardGroup::DBShardGroup(const XmlNode& xmlNode)
+  : DBShardGroup()
 {
   *this = xmlNode;
 }

@@ -24,9 +24,8 @@ MultiplexProgramPipelineDetail::MultiplexProgramPipelineDetail() :
 {
 }
 
-MultiplexProgramPipelineDetail::MultiplexProgramPipelineDetail(JsonView jsonValue) : 
-    m_activeChannelPipelineHasBeenSet(false),
-    m_pipelineIdHasBeenSet(false)
+MultiplexProgramPipelineDetail::MultiplexProgramPipelineDetail(JsonView jsonValue)
+  : MultiplexProgramPipelineDetail()
 {
   *this = jsonValue;
 }

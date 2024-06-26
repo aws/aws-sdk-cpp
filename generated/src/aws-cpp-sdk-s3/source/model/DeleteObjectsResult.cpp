@@ -21,8 +21,8 @@ DeleteObjectsResult::DeleteObjectsResult() :
 {
 }
 
-DeleteObjectsResult::DeleteObjectsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_requestCharged(RequestCharged::NOT_SET)
+DeleteObjectsResult::DeleteObjectsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : DeleteObjectsResult()
 {
   *this = result;
 }

@@ -35,20 +35,8 @@ AwsEc2VpcEndpointServiceDetails::AwsEc2VpcEndpointServiceDetails() :
 {
 }
 
-AwsEc2VpcEndpointServiceDetails::AwsEc2VpcEndpointServiceDetails(JsonView jsonValue) : 
-    m_acceptanceRequired(false),
-    m_acceptanceRequiredHasBeenSet(false),
-    m_availabilityZonesHasBeenSet(false),
-    m_baseEndpointDnsNamesHasBeenSet(false),
-    m_managesVpcEndpoints(false),
-    m_managesVpcEndpointsHasBeenSet(false),
-    m_gatewayLoadBalancerArnsHasBeenSet(false),
-    m_networkLoadBalancerArnsHasBeenSet(false),
-    m_privateDnsNameHasBeenSet(false),
-    m_serviceIdHasBeenSet(false),
-    m_serviceNameHasBeenSet(false),
-    m_serviceStateHasBeenSet(false),
-    m_serviceTypeHasBeenSet(false)
+AwsEc2VpcEndpointServiceDetails::AwsEc2VpcEndpointServiceDetails(JsonView jsonValue)
+  : AwsEc2VpcEndpointServiceDetails()
 {
   *this = jsonValue;
 }

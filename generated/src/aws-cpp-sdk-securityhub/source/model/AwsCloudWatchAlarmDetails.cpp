@@ -49,34 +49,8 @@ AwsCloudWatchAlarmDetails::AwsCloudWatchAlarmDetails() :
 {
 }
 
-AwsCloudWatchAlarmDetails::AwsCloudWatchAlarmDetails(JsonView jsonValue) : 
-    m_actionsEnabled(false),
-    m_actionsEnabledHasBeenSet(false),
-    m_alarmActionsHasBeenSet(false),
-    m_alarmArnHasBeenSet(false),
-    m_alarmConfigurationUpdatedTimestampHasBeenSet(false),
-    m_alarmDescriptionHasBeenSet(false),
-    m_alarmNameHasBeenSet(false),
-    m_comparisonOperatorHasBeenSet(false),
-    m_datapointsToAlarm(0),
-    m_datapointsToAlarmHasBeenSet(false),
-    m_dimensionsHasBeenSet(false),
-    m_evaluateLowSampleCountPercentileHasBeenSet(false),
-    m_evaluationPeriods(0),
-    m_evaluationPeriodsHasBeenSet(false),
-    m_extendedStatisticHasBeenSet(false),
-    m_insufficientDataActionsHasBeenSet(false),
-    m_metricNameHasBeenSet(false),
-    m_namespaceHasBeenSet(false),
-    m_okActionsHasBeenSet(false),
-    m_period(0),
-    m_periodHasBeenSet(false),
-    m_statisticHasBeenSet(false),
-    m_threshold(0.0),
-    m_thresholdHasBeenSet(false),
-    m_thresholdMetricIdHasBeenSet(false),
-    m_treatMissingDataHasBeenSet(false),
-    m_unitHasBeenSet(false)
+AwsCloudWatchAlarmDetails::AwsCloudWatchAlarmDetails(JsonView jsonValue)
+  : AwsCloudWatchAlarmDetails()
 {
   *this = jsonValue;
 }

@@ -28,13 +28,8 @@ ResourceBudgetEstimate::ResourceBudgetEstimate() :
 {
 }
 
-ResourceBudgetEstimate::ResourceBudgetEstimate(JsonView jsonValue) : 
-    m_resourceNameHasBeenSet(false),
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_costEstimatesHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
+ResourceBudgetEstimate::ResourceBudgetEstimate(JsonView jsonValue)
+  : ResourceBudgetEstimate()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ MemberIdArnPair::MemberIdArnPair() :
 {
 }
 
-MemberIdArnPair::MemberIdArnPair(JsonView jsonValue) : 
-    m_memberIdHasBeenSet(false),
-    m_memberArnHasBeenSet(false)
+MemberIdArnPair::MemberIdArnPair(JsonView jsonValue)
+  : MemberIdArnPair()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ ModelSettings::ModelSettings() :
 {
 }
 
-ModelSettings::ModelSettings(JsonView jsonValue) : 
-    m_languageModelNameHasBeenSet(false)
+ModelSettings::ModelSettings(JsonView jsonValue)
+  : ModelSettings()
 {
   *this = jsonValue;
 }

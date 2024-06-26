@@ -25,10 +25,8 @@ Adapter::Adapter() :
 {
 }
 
-Adapter::Adapter(JsonView jsonValue) : 
-    m_adapterIdHasBeenSet(false),
-    m_pagesHasBeenSet(false),
-    m_versionHasBeenSet(false)
+Adapter::Adapter(JsonView jsonValue)
+  : Adapter()
 {
   *this = jsonValue;
 }

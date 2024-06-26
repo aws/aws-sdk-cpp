@@ -26,12 +26,8 @@ AssociateConnectionWithLagResult::AssociateConnectionWithLagResult() :
 {
 }
 
-AssociateConnectionWithLagResult::AssociateConnectionWithLagResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_connectionState(ConnectionState::NOT_SET),
-    m_vlan(0),
-    m_jumboFrameCapable(false),
-    m_hasLogicalRedundancy(HasLogicalRedundancy::NOT_SET),
-    m_macSecCapable(false)
+AssociateConnectionWithLagResult::AssociateConnectionWithLagResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : AssociateConnectionWithLagResult()
 {
   *this = result;
 }

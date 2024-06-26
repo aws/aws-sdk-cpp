@@ -25,10 +25,8 @@ LaunchGroup::LaunchGroup() :
 {
 }
 
-LaunchGroup::LaunchGroup(JsonView jsonValue) : 
-    m_descriptionHasBeenSet(false),
-    m_featureVariationsHasBeenSet(false),
-    m_nameHasBeenSet(false)
+LaunchGroup::LaunchGroup(JsonView jsonValue)
+  : LaunchGroup()
 {
   *this = jsonValue;
 }

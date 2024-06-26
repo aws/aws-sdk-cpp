@@ -25,10 +25,8 @@ Destination::Destination() :
 {
 }
 
-Destination::Destination(JsonView jsonValue) : 
-    m_bucketNameHasBeenSet(false),
-    m_keyPrefixHasBeenSet(false),
-    m_kmsKeyArnHasBeenSet(false)
+Destination::Destination(JsonView jsonValue)
+  : Destination()
 {
   *this = jsonValue;
 }

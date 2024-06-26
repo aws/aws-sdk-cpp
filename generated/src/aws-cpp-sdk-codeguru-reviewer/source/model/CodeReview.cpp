@@ -42,27 +42,8 @@ CodeReview::CodeReview() :
 {
 }
 
-CodeReview::CodeReview(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_codeReviewArnHasBeenSet(false),
-    m_repositoryNameHasBeenSet(false),
-    m_ownerHasBeenSet(false),
-    m_providerType(ProviderType::NOT_SET),
-    m_providerTypeHasBeenSet(false),
-    m_state(JobState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_stateReasonHasBeenSet(false),
-    m_createdTimeStampHasBeenSet(false),
-    m_lastUpdatedTimeStampHasBeenSet(false),
-    m_type(Type::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_pullRequestIdHasBeenSet(false),
-    m_sourceCodeTypeHasBeenSet(false),
-    m_associationArnHasBeenSet(false),
-    m_metricsHasBeenSet(false),
-    m_analysisTypesHasBeenSet(false),
-    m_configFileState(ConfigFileState::NOT_SET),
-    m_configFileStateHasBeenSet(false)
+CodeReview::CodeReview(JsonView jsonValue)
+  : CodeReview()
 {
   *this = jsonValue;
 }

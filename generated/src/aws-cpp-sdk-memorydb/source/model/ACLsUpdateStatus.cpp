@@ -23,8 +23,8 @@ ACLsUpdateStatus::ACLsUpdateStatus() :
 {
 }
 
-ACLsUpdateStatus::ACLsUpdateStatus(JsonView jsonValue) : 
-    m_aCLToApplyHasBeenSet(false)
+ACLsUpdateStatus::ACLsUpdateStatus(JsonView jsonValue)
+  : ACLsUpdateStatus()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ PostProcessingParsedResponse::PostProcessingParsedResponse() :
 {
 }
 
-PostProcessingParsedResponse::PostProcessingParsedResponse(JsonView jsonValue) : 
-    m_textHasBeenSet(false)
+PostProcessingParsedResponse::PostProcessingParsedResponse(JsonView jsonValue)
+  : PostProcessingParsedResponse()
 {
   *this = jsonValue;
 }

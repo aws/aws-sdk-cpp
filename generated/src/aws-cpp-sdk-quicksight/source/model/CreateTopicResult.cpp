@@ -22,8 +22,8 @@ CreateTopicResult::CreateTopicResult() :
 {
 }
 
-CreateTopicResult::CreateTopicResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+CreateTopicResult::CreateTopicResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateTopicResult()
 {
   *this = result;
 }

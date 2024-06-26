@@ -28,13 +28,8 @@ PermissionSet::PermissionSet() :
 {
 }
 
-PermissionSet::PermissionSet(JsonView jsonValue) : 
-    m_createdDateHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_permissionSetArnHasBeenSet(false),
-    m_relayStateHasBeenSet(false),
-    m_sessionDurationHasBeenSet(false)
+PermissionSet::PermissionSet(JsonView jsonValue)
+  : PermissionSet()
 {
   *this = jsonValue;
 }

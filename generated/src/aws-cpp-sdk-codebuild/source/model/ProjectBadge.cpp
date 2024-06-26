@@ -25,10 +25,8 @@ ProjectBadge::ProjectBadge() :
 {
 }
 
-ProjectBadge::ProjectBadge(JsonView jsonValue) : 
-    m_badgeEnabled(false),
-    m_badgeEnabledHasBeenSet(false),
-    m_badgeRequestUrlHasBeenSet(false)
+ProjectBadge::ProjectBadge(JsonView jsonValue)
+  : ProjectBadge()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ JobAttachmentDetailsEntity::JobAttachmentDetailsEntity() :
 {
 }
 
-JobAttachmentDetailsEntity::JobAttachmentDetailsEntity(JsonView jsonValue) : 
-    m_attachmentsHasBeenSet(false),
-    m_jobIdHasBeenSet(false)
+JobAttachmentDetailsEntity::JobAttachmentDetailsEntity(JsonView jsonValue)
+  : JobAttachmentDetailsEntity()
 {
   *this = jsonValue;
 }

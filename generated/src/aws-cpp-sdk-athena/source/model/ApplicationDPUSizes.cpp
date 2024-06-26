@@ -24,9 +24,8 @@ ApplicationDPUSizes::ApplicationDPUSizes() :
 {
 }
 
-ApplicationDPUSizes::ApplicationDPUSizes(JsonView jsonValue) : 
-    m_applicationRuntimeIdHasBeenSet(false),
-    m_supportedDPUSizesHasBeenSet(false)
+ApplicationDPUSizes::ApplicationDPUSizes(JsonView jsonValue)
+  : ApplicationDPUSizes()
 {
   *this = jsonValue;
 }

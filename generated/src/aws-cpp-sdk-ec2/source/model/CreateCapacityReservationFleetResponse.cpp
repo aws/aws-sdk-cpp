@@ -26,12 +26,8 @@ CreateCapacityReservationFleetResponse::CreateCapacityReservationFleetResponse()
 {
 }
 
-CreateCapacityReservationFleetResponse::CreateCapacityReservationFleetResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_state(CapacityReservationFleetState::NOT_SET),
-    m_totalTargetCapacity(0),
-    m_totalFulfilledCapacity(0.0),
-    m_instanceMatchCriteria(FleetInstanceMatchCriteria::NOT_SET),
-    m_tenancy(FleetCapacityReservationTenancy::NOT_SET)
+CreateCapacityReservationFleetResponse::CreateCapacityReservationFleetResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : CreateCapacityReservationFleetResponse()
 {
   *this = result;
 }

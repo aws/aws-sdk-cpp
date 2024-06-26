@@ -22,8 +22,8 @@ ExportVectorEnrichmentJobResult::ExportVectorEnrichmentJobResult() :
 {
 }
 
-ExportVectorEnrichmentJobResult::ExportVectorEnrichmentJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_exportStatus(VectorEnrichmentJobExportStatus::NOT_SET)
+ExportVectorEnrichmentJobResult::ExportVectorEnrichmentJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ExportVectorEnrichmentJobResult()
 {
   *this = result;
 }

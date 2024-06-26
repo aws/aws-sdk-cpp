@@ -25,10 +25,8 @@ MFAOptionType::MFAOptionType() :
 {
 }
 
-MFAOptionType::MFAOptionType(JsonView jsonValue) : 
-    m_deliveryMedium(DeliveryMediumType::NOT_SET),
-    m_deliveryMediumHasBeenSet(false),
-    m_attributeNameHasBeenSet(false)
+MFAOptionType::MFAOptionType(JsonView jsonValue)
+  : MFAOptionType()
 {
   *this = jsonValue;
 }

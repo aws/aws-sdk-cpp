@@ -23,8 +23,8 @@ ChannelMapping::ChannelMapping() :
 {
 }
 
-ChannelMapping::ChannelMapping(JsonView jsonValue) : 
-    m_outputChannelsHasBeenSet(false)
+ChannelMapping::ChannelMapping(JsonView jsonValue)
+  : ChannelMapping()
 {
   *this = jsonValue;
 }

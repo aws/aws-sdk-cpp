@@ -24,9 +24,8 @@ MultipleOperatingModes::MultipleOperatingModes() :
 {
 }
 
-MultipleOperatingModes::MultipleOperatingModes(JsonView jsonValue) : 
-    m_status(StatisticalIssueStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+MultipleOperatingModes::MultipleOperatingModes(JsonView jsonValue)
+  : MultipleOperatingModes()
 {
   *this = jsonValue;
 }

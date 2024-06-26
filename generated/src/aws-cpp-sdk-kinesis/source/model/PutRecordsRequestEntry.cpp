@@ -26,10 +26,8 @@ PutRecordsRequestEntry::PutRecordsRequestEntry() :
 {
 }
 
-PutRecordsRequestEntry::PutRecordsRequestEntry(JsonView jsonValue) : 
-    m_dataHasBeenSet(false),
-    m_explicitHashKeyHasBeenSet(false),
-    m_partitionKeyHasBeenSet(false)
+PutRecordsRequestEntry::PutRecordsRequestEntry(JsonView jsonValue)
+  : PutRecordsRequestEntry()
 {
   *this = jsonValue;
 }

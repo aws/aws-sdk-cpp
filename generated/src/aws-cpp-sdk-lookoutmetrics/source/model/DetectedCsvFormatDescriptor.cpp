@@ -28,13 +28,8 @@ DetectedCsvFormatDescriptor::DetectedCsvFormatDescriptor() :
 {
 }
 
-DetectedCsvFormatDescriptor::DetectedCsvFormatDescriptor(JsonView jsonValue) : 
-    m_fileCompressionHasBeenSet(false),
-    m_charsetHasBeenSet(false),
-    m_containsHeaderHasBeenSet(false),
-    m_delimiterHasBeenSet(false),
-    m_headerListHasBeenSet(false),
-    m_quoteSymbolHasBeenSet(false)
+DetectedCsvFormatDescriptor::DetectedCsvFormatDescriptor(JsonView jsonValue)
+  : DetectedCsvFormatDescriptor()
 {
   *this = jsonValue;
 }

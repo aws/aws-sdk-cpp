@@ -26,11 +26,8 @@ ContentReference::ContentReference() :
 {
 }
 
-ContentReference::ContentReference(JsonView jsonValue) : 
-    m_contentArnHasBeenSet(false),
-    m_contentIdHasBeenSet(false),
-    m_knowledgeBaseArnHasBeenSet(false),
-    m_knowledgeBaseIdHasBeenSet(false)
+ContentReference::ContentReference(JsonView jsonValue)
+  : ContentReference()
 {
   *this = jsonValue;
 }

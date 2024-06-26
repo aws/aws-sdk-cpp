@@ -22,8 +22,8 @@ GetIdMappingJobResult::GetIdMappingJobResult() :
 {
 }
 
-GetIdMappingJobResult::GetIdMappingJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(JobStatus::NOT_SET)
+GetIdMappingJobResult::GetIdMappingJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetIdMappingJobResult()
 {
   *this = result;
 }

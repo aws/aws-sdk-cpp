@@ -25,10 +25,8 @@ ResourceAction::ResourceAction() :
 {
 }
 
-ResourceAction::ResourceAction(JsonView jsonValue) : 
-    m_m2ManagedApplicationActionHasBeenSet(false),
-    m_m2NonManagedApplicationActionHasBeenSet(false),
-    m_cloudFormationActionHasBeenSet(false)
+ResourceAction::ResourceAction(JsonView jsonValue)
+  : ResourceAction()
 {
   *this = jsonValue;
 }

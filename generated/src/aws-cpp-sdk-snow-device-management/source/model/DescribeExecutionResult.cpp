@@ -22,8 +22,8 @@ DescribeExecutionResult::DescribeExecutionResult() :
 {
 }
 
-DescribeExecutionResult::DescribeExecutionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_state(ExecutionState::NOT_SET)
+DescribeExecutionResult::DescribeExecutionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeExecutionResult()
 {
   *this = result;
 }

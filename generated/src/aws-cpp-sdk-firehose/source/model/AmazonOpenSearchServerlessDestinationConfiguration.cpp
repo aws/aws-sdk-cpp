@@ -33,18 +33,8 @@ AmazonOpenSearchServerlessDestinationConfiguration::AmazonOpenSearchServerlessDe
 {
 }
 
-AmazonOpenSearchServerlessDestinationConfiguration::AmazonOpenSearchServerlessDestinationConfiguration(JsonView jsonValue) : 
-    m_roleARNHasBeenSet(false),
-    m_collectionEndpointHasBeenSet(false),
-    m_indexNameHasBeenSet(false),
-    m_bufferingHintsHasBeenSet(false),
-    m_retryOptionsHasBeenSet(false),
-    m_s3BackupMode(AmazonOpenSearchServerlessS3BackupMode::NOT_SET),
-    m_s3BackupModeHasBeenSet(false),
-    m_s3ConfigurationHasBeenSet(false),
-    m_processingConfigurationHasBeenSet(false),
-    m_cloudWatchLoggingOptionsHasBeenSet(false),
-    m_vpcConfigurationHasBeenSet(false)
+AmazonOpenSearchServerlessDestinationConfiguration::AmazonOpenSearchServerlessDestinationConfiguration(JsonView jsonValue)
+  : AmazonOpenSearchServerlessDestinationConfiguration()
 {
   *this = jsonValue;
 }

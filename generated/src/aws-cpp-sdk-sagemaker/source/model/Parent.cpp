@@ -24,9 +24,8 @@ Parent::Parent() :
 {
 }
 
-Parent::Parent(JsonView jsonValue) : 
-    m_trialNameHasBeenSet(false),
-    m_experimentNameHasBeenSet(false)
+Parent::Parent(JsonView jsonValue)
+  : Parent()
 {
   *this = jsonValue;
 }

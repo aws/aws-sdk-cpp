@@ -22,8 +22,8 @@ StartAssetBundleImportJobResult::StartAssetBundleImportJobResult() :
 {
 }
 
-StartAssetBundleImportJobResult::StartAssetBundleImportJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+StartAssetBundleImportJobResult::StartAssetBundleImportJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : StartAssetBundleImportJobResult()
 {
   *this = result;
 }

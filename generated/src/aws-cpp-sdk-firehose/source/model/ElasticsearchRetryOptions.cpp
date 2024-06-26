@@ -24,9 +24,8 @@ ElasticsearchRetryOptions::ElasticsearchRetryOptions() :
 {
 }
 
-ElasticsearchRetryOptions::ElasticsearchRetryOptions(JsonView jsonValue) : 
-    m_durationInSeconds(0),
-    m_durationInSecondsHasBeenSet(false)
+ElasticsearchRetryOptions::ElasticsearchRetryOptions(JsonView jsonValue)
+  : ElasticsearchRetryOptions()
 {
   *this = jsonValue;
 }

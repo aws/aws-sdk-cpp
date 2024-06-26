@@ -26,11 +26,8 @@ ScanDetections::ScanDetections() :
 {
 }
 
-ScanDetections::ScanDetections(JsonView jsonValue) : 
-    m_scannedItemCountHasBeenSet(false),
-    m_threatsDetectedItemCountHasBeenSet(false),
-    m_highestSeverityThreatDetailsHasBeenSet(false),
-    m_threatDetectedByNameHasBeenSet(false)
+ScanDetections::ScanDetections(JsonView jsonValue)
+  : ScanDetections()
 {
   *this = jsonValue;
 }

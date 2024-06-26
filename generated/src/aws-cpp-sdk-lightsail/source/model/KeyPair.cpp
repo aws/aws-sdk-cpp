@@ -31,16 +31,8 @@ KeyPair::KeyPair() :
 {
 }
 
-KeyPair::KeyPair(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_supportCodeHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_locationHasBeenSet(false),
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_fingerprintHasBeenSet(false)
+KeyPair::KeyPair(JsonView jsonValue)
+  : KeyPair()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ UserTurnOutputSpecification::UserTurnOutputSpecification() :
 {
 }
 
-UserTurnOutputSpecification::UserTurnOutputSpecification(JsonView jsonValue) : 
-    m_intentHasBeenSet(false),
-    m_activeContextsHasBeenSet(false),
-    m_transcriptHasBeenSet(false)
+UserTurnOutputSpecification::UserTurnOutputSpecification(JsonView jsonValue)
+  : UserTurnOutputSpecification()
 {
   *this = jsonValue;
 }

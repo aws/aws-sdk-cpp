@@ -26,11 +26,8 @@ AttributeSuggestionsGetConfig::AttributeSuggestionsGetConfig() :
 {
 }
 
-AttributeSuggestionsGetConfig::AttributeSuggestionsGetConfig(JsonView jsonValue) : 
-    m_suggestionAttributesHasBeenSet(false),
-    m_additionalResponseAttributesHasBeenSet(false),
-    m_attributeFilterHasBeenSet(false),
-    m_userContextHasBeenSet(false)
+AttributeSuggestionsGetConfig::AttributeSuggestionsGetConfig(JsonView jsonValue)
+  : AttributeSuggestionsGetConfig()
 {
   *this = jsonValue;
 }

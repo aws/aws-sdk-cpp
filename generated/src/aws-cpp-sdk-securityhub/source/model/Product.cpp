@@ -31,16 +31,8 @@ Product::Product() :
 {
 }
 
-Product::Product(JsonView jsonValue) : 
-    m_productArnHasBeenSet(false),
-    m_productNameHasBeenSet(false),
-    m_companyNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_categoriesHasBeenSet(false),
-    m_integrationTypesHasBeenSet(false),
-    m_marketplaceUrlHasBeenSet(false),
-    m_activationUrlHasBeenSet(false),
-    m_productSubscriptionResourcePolicyHasBeenSet(false)
+Product::Product(JsonView jsonValue)
+  : Product()
 {
   *this = jsonValue;
 }

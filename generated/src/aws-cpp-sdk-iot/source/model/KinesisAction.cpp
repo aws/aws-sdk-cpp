@@ -25,10 +25,8 @@ KinesisAction::KinesisAction() :
 {
 }
 
-KinesisAction::KinesisAction(JsonView jsonValue) : 
-    m_roleArnHasBeenSet(false),
-    m_streamNameHasBeenSet(false),
-    m_partitionKeyHasBeenSet(false)
+KinesisAction::KinesisAction(JsonView jsonValue)
+  : KinesisAction()
 {
   *this = jsonValue;
 }

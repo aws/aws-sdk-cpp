@@ -38,23 +38,8 @@ FirewallRuleGroupAssociation::FirewallRuleGroupAssociation() :
 {
 }
 
-FirewallRuleGroupAssociation::FirewallRuleGroupAssociation(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_firewallRuleGroupIdHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_priority(0),
-    m_priorityHasBeenSet(false),
-    m_mutationProtection(MutationProtectionStatus::NOT_SET),
-    m_mutationProtectionHasBeenSet(false),
-    m_managedOwnerNameHasBeenSet(false),
-    m_status(FirewallRuleGroupAssociationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_creatorRequestIdHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_modificationTimeHasBeenSet(false)
+FirewallRuleGroupAssociation::FirewallRuleGroupAssociation(JsonView jsonValue)
+  : FirewallRuleGroupAssociation()
 {
   *this = jsonValue;
 }

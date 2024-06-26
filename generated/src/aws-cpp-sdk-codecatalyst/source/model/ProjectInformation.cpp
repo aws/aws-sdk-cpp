@@ -24,9 +24,8 @@ ProjectInformation::ProjectInformation() :
 {
 }
 
-ProjectInformation::ProjectInformation(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_projectIdHasBeenSet(false)
+ProjectInformation::ProjectInformation(JsonView jsonValue)
+  : ProjectInformation()
 {
   *this = jsonValue;
 }

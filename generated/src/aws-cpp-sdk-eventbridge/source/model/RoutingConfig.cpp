@@ -23,8 +23,8 @@ RoutingConfig::RoutingConfig() :
 {
 }
 
-RoutingConfig::RoutingConfig(JsonView jsonValue) : 
-    m_failoverConfigHasBeenSet(false)
+RoutingConfig::RoutingConfig(JsonView jsonValue)
+  : RoutingConfig()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ CreateBackendAuthIdentityPoolConfig::CreateBackendAuthIdentityPoolConfig() :
 {
 }
 
-CreateBackendAuthIdentityPoolConfig::CreateBackendAuthIdentityPoolConfig(JsonView jsonValue) : 
-    m_identityPoolNameHasBeenSet(false),
-    m_unauthenticatedLogin(false),
-    m_unauthenticatedLoginHasBeenSet(false)
+CreateBackendAuthIdentityPoolConfig::CreateBackendAuthIdentityPoolConfig(JsonView jsonValue)
+  : CreateBackendAuthIdentityPoolConfig()
 {
   *this = jsonValue;
 }

@@ -32,15 +32,8 @@ ServiceLastAccessed::ServiceLastAccessed() :
 {
 }
 
-ServiceLastAccessed::ServiceLastAccessed(const XmlNode& xmlNode) : 
-    m_serviceNameHasBeenSet(false),
-    m_lastAuthenticatedHasBeenSet(false),
-    m_serviceNamespaceHasBeenSet(false),
-    m_lastAuthenticatedEntityHasBeenSet(false),
-    m_lastAuthenticatedRegionHasBeenSet(false),
-    m_totalAuthenticatedEntities(0),
-    m_totalAuthenticatedEntitiesHasBeenSet(false),
-    m_trackedActionsLastAccessedHasBeenSet(false)
+ServiceLastAccessed::ServiceLastAccessed(const XmlNode& xmlNode)
+  : ServiceLastAccessed()
 {
   *this = xmlNode;
 }

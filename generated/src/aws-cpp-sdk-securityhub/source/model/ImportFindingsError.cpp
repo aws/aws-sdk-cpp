@@ -25,10 +25,8 @@ ImportFindingsError::ImportFindingsError() :
 {
 }
 
-ImportFindingsError::ImportFindingsError(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
+ImportFindingsError::ImportFindingsError(JsonView jsonValue)
+  : ImportFindingsError()
 {
   *this = jsonValue;
 }

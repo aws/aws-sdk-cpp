@@ -27,10 +27,8 @@ InstanceExportDetails::InstanceExportDetails() :
 {
 }
 
-InstanceExportDetails::InstanceExportDetails(const XmlNode& xmlNode) : 
-    m_instanceIdHasBeenSet(false),
-    m_targetEnvironment(ExportEnvironment::NOT_SET),
-    m_targetEnvironmentHasBeenSet(false)
+InstanceExportDetails::InstanceExportDetails(const XmlNode& xmlNode)
+  : InstanceExportDetails()
 {
   *this = xmlNode;
 }

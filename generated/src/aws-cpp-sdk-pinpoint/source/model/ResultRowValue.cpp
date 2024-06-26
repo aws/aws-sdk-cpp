@@ -25,10 +25,8 @@ ResultRowValue::ResultRowValue() :
 {
 }
 
-ResultRowValue::ResultRowValue(JsonView jsonValue) : 
-    m_keyHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_valueHasBeenSet(false)
+ResultRowValue::ResultRowValue(JsonView jsonValue)
+  : ResultRowValue()
 {
   *this = jsonValue;
 }

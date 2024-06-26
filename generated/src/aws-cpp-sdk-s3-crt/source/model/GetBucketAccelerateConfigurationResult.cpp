@@ -22,9 +22,8 @@ GetBucketAccelerateConfigurationResult::GetBucketAccelerateConfigurationResult()
 {
 }
 
-GetBucketAccelerateConfigurationResult::GetBucketAccelerateConfigurationResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_status(BucketAccelerateStatus::NOT_SET),
-    m_requestCharged(RequestCharged::NOT_SET)
+GetBucketAccelerateConfigurationResult::GetBucketAccelerateConfigurationResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : GetBucketAccelerateConfigurationResult()
 {
   *this = result;
 }

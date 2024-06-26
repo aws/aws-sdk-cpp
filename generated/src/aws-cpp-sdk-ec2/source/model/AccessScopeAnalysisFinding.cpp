@@ -28,11 +28,8 @@ AccessScopeAnalysisFinding::AccessScopeAnalysisFinding() :
 {
 }
 
-AccessScopeAnalysisFinding::AccessScopeAnalysisFinding(const XmlNode& xmlNode) : 
-    m_networkInsightsAccessScopeAnalysisIdHasBeenSet(false),
-    m_networkInsightsAccessScopeIdHasBeenSet(false),
-    m_findingIdHasBeenSet(false),
-    m_findingComponentsHasBeenSet(false)
+AccessScopeAnalysisFinding::AccessScopeAnalysisFinding(const XmlNode& xmlNode)
+  : AccessScopeAnalysisFinding()
 {
   *this = xmlNode;
 }

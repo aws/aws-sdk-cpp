@@ -36,21 +36,8 @@ SendOTPMessageRequestParameters::SendOTPMessageRequestParameters() :
 {
 }
 
-SendOTPMessageRequestParameters::SendOTPMessageRequestParameters(JsonView jsonValue) : 
-    m_allowedAttempts(0),
-    m_allowedAttemptsHasBeenSet(false),
-    m_brandNameHasBeenSet(false),
-    m_channelHasBeenSet(false),
-    m_codeLength(0),
-    m_codeLengthHasBeenSet(false),
-    m_destinationIdentityHasBeenSet(false),
-    m_entityIdHasBeenSet(false),
-    m_languageHasBeenSet(false),
-    m_originationIdentityHasBeenSet(false),
-    m_referenceIdHasBeenSet(false),
-    m_templateIdHasBeenSet(false),
-    m_validityPeriod(0),
-    m_validityPeriodHasBeenSet(false)
+SendOTPMessageRequestParameters::SendOTPMessageRequestParameters(JsonView jsonValue)
+  : SendOTPMessageRequestParameters()
 {
   *this = jsonValue;
 }

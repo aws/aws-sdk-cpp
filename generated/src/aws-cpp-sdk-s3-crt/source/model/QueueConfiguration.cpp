@@ -28,11 +28,8 @@ QueueConfiguration::QueueConfiguration() :
 {
 }
 
-QueueConfiguration::QueueConfiguration(const XmlNode& xmlNode) : 
-    m_idHasBeenSet(false),
-    m_queueArnHasBeenSet(false),
-    m_eventsHasBeenSet(false),
-    m_filterHasBeenSet(false)
+QueueConfiguration::QueueConfiguration(const XmlNode& xmlNode)
+  : QueueConfiguration()
 {
   *this = xmlNode;
 }

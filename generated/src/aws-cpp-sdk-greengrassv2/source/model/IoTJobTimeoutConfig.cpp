@@ -24,9 +24,8 @@ IoTJobTimeoutConfig::IoTJobTimeoutConfig() :
 {
 }
 
-IoTJobTimeoutConfig::IoTJobTimeoutConfig(JsonView jsonValue) : 
-    m_inProgressTimeoutInMinutes(0),
-    m_inProgressTimeoutInMinutesHasBeenSet(false)
+IoTJobTimeoutConfig::IoTJobTimeoutConfig(JsonView jsonValue)
+  : IoTJobTimeoutConfig()
 {
   *this = jsonValue;
 }

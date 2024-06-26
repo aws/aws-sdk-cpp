@@ -26,11 +26,8 @@ TablePropertyDescription::TablePropertyDescription() :
 {
 }
 
-TablePropertyDescription::TablePropertyDescription(JsonView jsonValue) : 
-    m_defaultValueHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_validValuesHasBeenSet(false)
+TablePropertyDescription::TablePropertyDescription(JsonView jsonValue)
+  : TablePropertyDescription()
 {
   *this = jsonValue;
 }

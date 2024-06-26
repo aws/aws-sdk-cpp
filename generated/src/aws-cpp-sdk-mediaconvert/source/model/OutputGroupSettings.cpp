@@ -29,14 +29,8 @@ OutputGroupSettings::OutputGroupSettings() :
 {
 }
 
-OutputGroupSettings::OutputGroupSettings(JsonView jsonValue) : 
-    m_cmafGroupSettingsHasBeenSet(false),
-    m_dashIsoGroupSettingsHasBeenSet(false),
-    m_fileGroupSettingsHasBeenSet(false),
-    m_hlsGroupSettingsHasBeenSet(false),
-    m_msSmoothGroupSettingsHasBeenSet(false),
-    m_type(OutputGroupType::NOT_SET),
-    m_typeHasBeenSet(false)
+OutputGroupSettings::OutputGroupSettings(JsonView jsonValue)
+  : OutputGroupSettings()
 {
   *this = jsonValue;
 }

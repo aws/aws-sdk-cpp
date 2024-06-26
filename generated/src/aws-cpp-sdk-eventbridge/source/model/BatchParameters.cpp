@@ -26,11 +26,8 @@ BatchParameters::BatchParameters() :
 {
 }
 
-BatchParameters::BatchParameters(JsonView jsonValue) : 
-    m_jobDefinitionHasBeenSet(false),
-    m_jobNameHasBeenSet(false),
-    m_arrayPropertiesHasBeenSet(false),
-    m_retryStrategyHasBeenSet(false)
+BatchParameters::BatchParameters(JsonView jsonValue)
+  : BatchParameters()
 {
   *this = jsonValue;
 }

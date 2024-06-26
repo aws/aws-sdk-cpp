@@ -26,9 +26,8 @@ ScheduledInstancesPlacement::ScheduledInstancesPlacement() :
 {
 }
 
-ScheduledInstancesPlacement::ScheduledInstancesPlacement(const XmlNode& xmlNode) : 
-    m_availabilityZoneHasBeenSet(false),
-    m_groupNameHasBeenSet(false)
+ScheduledInstancesPlacement::ScheduledInstancesPlacement(const XmlNode& xmlNode)
+  : ScheduledInstancesPlacement()
 {
   *this = xmlNode;
 }

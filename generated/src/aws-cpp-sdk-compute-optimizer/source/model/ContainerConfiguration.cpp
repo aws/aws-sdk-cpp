@@ -26,11 +26,8 @@ ContainerConfiguration::ContainerConfiguration() :
 {
 }
 
-ContainerConfiguration::ContainerConfiguration(JsonView jsonValue) : 
-    m_containerNameHasBeenSet(false),
-    m_memorySizeConfigurationHasBeenSet(false),
-    m_cpu(0),
-    m_cpuHasBeenSet(false)
+ContainerConfiguration::ContainerConfiguration(JsonView jsonValue)
+  : ContainerConfiguration()
 {
   *this = jsonValue;
 }

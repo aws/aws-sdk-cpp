@@ -31,16 +31,8 @@ OutputGroupSettings::OutputGroupSettings() :
 {
 }
 
-OutputGroupSettings::OutputGroupSettings(JsonView jsonValue) : 
-    m_archiveGroupSettingsHasBeenSet(false),
-    m_frameCaptureGroupSettingsHasBeenSet(false),
-    m_hlsGroupSettingsHasBeenSet(false),
-    m_mediaPackageGroupSettingsHasBeenSet(false),
-    m_msSmoothGroupSettingsHasBeenSet(false),
-    m_multiplexGroupSettingsHasBeenSet(false),
-    m_rtmpGroupSettingsHasBeenSet(false),
-    m_udpGroupSettingsHasBeenSet(false),
-    m_cmafIngestGroupSettingsHasBeenSet(false)
+OutputGroupSettings::OutputGroupSettings(JsonView jsonValue)
+  : OutputGroupSettings()
 {
   *this = jsonValue;
 }

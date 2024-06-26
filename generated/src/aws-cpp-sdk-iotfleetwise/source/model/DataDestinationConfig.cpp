@@ -24,9 +24,8 @@ DataDestinationConfig::DataDestinationConfig() :
 {
 }
 
-DataDestinationConfig::DataDestinationConfig(JsonView jsonValue) : 
-    m_s3ConfigHasBeenSet(false),
-    m_timestreamConfigHasBeenSet(false)
+DataDestinationConfig::DataDestinationConfig(JsonView jsonValue)
+  : DataDestinationConfig()
 {
   *this = jsonValue;
 }

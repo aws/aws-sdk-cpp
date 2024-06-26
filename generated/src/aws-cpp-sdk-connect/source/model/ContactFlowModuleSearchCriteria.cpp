@@ -25,10 +25,8 @@ ContactFlowModuleSearchCriteria::ContactFlowModuleSearchCriteria() :
 {
 }
 
-ContactFlowModuleSearchCriteria::ContactFlowModuleSearchCriteria(JsonView jsonValue) : 
-    m_orConditionsHasBeenSet(false),
-    m_andConditionsHasBeenSet(false),
-    m_stringConditionHasBeenSet(false)
+ContactFlowModuleSearchCriteria::ContactFlowModuleSearchCriteria(JsonView jsonValue)
+  : ContactFlowModuleSearchCriteria()
 {
   *this = jsonValue;
 }

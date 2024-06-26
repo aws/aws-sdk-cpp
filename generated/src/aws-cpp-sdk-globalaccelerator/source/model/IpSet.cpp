@@ -25,10 +25,8 @@ IpSet::IpSet() :
 {
 }
 
-IpSet::IpSet(JsonView jsonValue) : 
-    m_ipAddressesHasBeenSet(false),
-    m_ipAddressFamily(IpAddressFamily::NOT_SET),
-    m_ipAddressFamilyHasBeenSet(false)
+IpSet::IpSet(JsonView jsonValue)
+  : IpSet()
 {
   *this = jsonValue;
 }

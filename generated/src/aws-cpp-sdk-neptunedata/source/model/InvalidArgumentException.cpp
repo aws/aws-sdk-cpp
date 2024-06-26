@@ -25,10 +25,8 @@ InvalidArgumentException::InvalidArgumentException() :
 {
 }
 
-InvalidArgumentException::InvalidArgumentException(JsonView jsonValue) : 
-    m_detailedMessageHasBeenSet(false),
-    m_requestIdHasBeenSet(false),
-    m_codeHasBeenSet(false)
+InvalidArgumentException::InvalidArgumentException(JsonView jsonValue)
+  : InvalidArgumentException()
 {
   *this = jsonValue;
 }

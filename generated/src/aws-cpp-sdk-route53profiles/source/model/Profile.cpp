@@ -34,19 +34,8 @@ Profile::Profile() :
 {
 }
 
-Profile::Profile(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_clientTokenHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_modificationTimeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_shareStatus(ShareStatus::NOT_SET),
-    m_shareStatusHasBeenSet(false),
-    m_status(ProfileStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false)
+Profile::Profile(JsonView jsonValue)
+  : Profile()
 {
   *this = jsonValue;
 }

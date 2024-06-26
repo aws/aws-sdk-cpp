@@ -24,9 +24,8 @@ SnowflakeRetryOptions::SnowflakeRetryOptions() :
 {
 }
 
-SnowflakeRetryOptions::SnowflakeRetryOptions(JsonView jsonValue) : 
-    m_durationInSeconds(0),
-    m_durationInSecondsHasBeenSet(false)
+SnowflakeRetryOptions::SnowflakeRetryOptions(JsonView jsonValue)
+  : SnowflakeRetryOptions()
 {
   *this = jsonValue;
 }

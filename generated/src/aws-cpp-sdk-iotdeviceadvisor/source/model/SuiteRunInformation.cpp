@@ -35,20 +35,8 @@ SuiteRunInformation::SuiteRunInformation() :
 {
 }
 
-SuiteRunInformation::SuiteRunInformation(JsonView jsonValue) : 
-    m_suiteDefinitionIdHasBeenSet(false),
-    m_suiteDefinitionVersionHasBeenSet(false),
-    m_suiteDefinitionNameHasBeenSet(false),
-    m_suiteRunIdHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_startedAtHasBeenSet(false),
-    m_endAtHasBeenSet(false),
-    m_status(SuiteRunStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_passed(0),
-    m_passedHasBeenSet(false),
-    m_failed(0),
-    m_failedHasBeenSet(false)
+SuiteRunInformation::SuiteRunInformation(JsonView jsonValue)
+  : SuiteRunInformation()
 {
   *this = jsonValue;
 }

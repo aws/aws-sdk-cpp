@@ -27,12 +27,8 @@ MxfSettings::MxfSettings() :
 {
 }
 
-MxfSettings::MxfSettings(JsonView jsonValue) : 
-    m_afdSignaling(MxfAfdSignaling::NOT_SET),
-    m_afdSignalingHasBeenSet(false),
-    m_profile(MxfProfile::NOT_SET),
-    m_profileHasBeenSet(false),
-    m_xavcProfileSettingsHasBeenSet(false)
+MxfSettings::MxfSettings(JsonView jsonValue)
+  : MxfSettings()
 {
   *this = jsonValue;
 }

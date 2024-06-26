@@ -30,15 +30,8 @@ S3DirectTarget::S3DirectTarget() :
 {
 }
 
-S3DirectTarget::S3DirectTarget(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_inputsHasBeenSet(false),
-    m_partitionKeysHasBeenSet(false),
-    m_pathHasBeenSet(false),
-    m_compressionHasBeenSet(false),
-    m_format(TargetFormat::NOT_SET),
-    m_formatHasBeenSet(false),
-    m_schemaChangePolicyHasBeenSet(false)
+S3DirectTarget::S3DirectTarget(JsonView jsonValue)
+  : S3DirectTarget()
 {
   *this = jsonValue;
 }

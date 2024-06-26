@@ -24,9 +24,8 @@ CriteriaForJob::CriteriaForJob() :
 {
 }
 
-CriteriaForJob::CriteriaForJob(JsonView jsonValue) : 
-    m_simpleCriterionHasBeenSet(false),
-    m_tagCriterionHasBeenSet(false)
+CriteriaForJob::CriteriaForJob(JsonView jsonValue)
+  : CriteriaForJob()
 {
   *this = jsonValue;
 }

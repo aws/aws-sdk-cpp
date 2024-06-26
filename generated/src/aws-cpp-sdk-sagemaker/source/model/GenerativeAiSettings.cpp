@@ -23,8 +23,8 @@ GenerativeAiSettings::GenerativeAiSettings() :
 {
 }
 
-GenerativeAiSettings::GenerativeAiSettings(JsonView jsonValue) : 
-    m_amazonBedrockRoleArnHasBeenSet(false)
+GenerativeAiSettings::GenerativeAiSettings(JsonView jsonValue)
+  : GenerativeAiSettings()
 {
   *this = jsonValue;
 }

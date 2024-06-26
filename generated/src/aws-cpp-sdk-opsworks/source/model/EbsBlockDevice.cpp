@@ -31,16 +31,8 @@ EbsBlockDevice::EbsBlockDevice() :
 {
 }
 
-EbsBlockDevice::EbsBlockDevice(JsonView jsonValue) : 
-    m_snapshotIdHasBeenSet(false),
-    m_iops(0),
-    m_iopsHasBeenSet(false),
-    m_volumeSize(0),
-    m_volumeSizeHasBeenSet(false),
-    m_volumeType(VolumeType::NOT_SET),
-    m_volumeTypeHasBeenSet(false),
-    m_deleteOnTermination(false),
-    m_deleteOnTerminationHasBeenSet(false)
+EbsBlockDevice::EbsBlockDevice(JsonView jsonValue)
+  : EbsBlockDevice()
 {
   *this = jsonValue;
 }

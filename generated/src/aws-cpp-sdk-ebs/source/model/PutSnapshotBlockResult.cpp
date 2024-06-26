@@ -22,8 +22,8 @@ PutSnapshotBlockResult::PutSnapshotBlockResult() :
 {
 }
 
-PutSnapshotBlockResult::PutSnapshotBlockResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_checksumAlgorithm(ChecksumAlgorithm::NOT_SET)
+PutSnapshotBlockResult::PutSnapshotBlockResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : PutSnapshotBlockResult()
 {
   *this = result;
 }

@@ -27,12 +27,8 @@ UpdateBackendAuthUserPoolConfig::UpdateBackendAuthUserPoolConfig() :
 {
 }
 
-UpdateBackendAuthUserPoolConfig::UpdateBackendAuthUserPoolConfig(JsonView jsonValue) : 
-    m_forgotPasswordHasBeenSet(false),
-    m_mfaHasBeenSet(false),
-    m_oAuthHasBeenSet(false),
-    m_passwordPolicyHasBeenSet(false),
-    m_verificationMessageHasBeenSet(false)
+UpdateBackendAuthUserPoolConfig::UpdateBackendAuthUserPoolConfig(JsonView jsonValue)
+  : UpdateBackendAuthUserPoolConfig()
 {
   *this = jsonValue;
 }

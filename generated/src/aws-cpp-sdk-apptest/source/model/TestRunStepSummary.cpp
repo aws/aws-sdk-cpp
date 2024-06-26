@@ -39,24 +39,8 @@ TestRunStepSummary::TestRunStepSummary() :
 {
 }
 
-TestRunStepSummary::TestRunStepSummary(JsonView jsonValue) : 
-    m_stepNameHasBeenSet(false),
-    m_testRunIdHasBeenSet(false),
-    m_testCaseIdHasBeenSet(false),
-    m_testCaseVersion(0),
-    m_testCaseVersionHasBeenSet(false),
-    m_testSuiteIdHasBeenSet(false),
-    m_testSuiteVersion(0),
-    m_testSuiteVersionHasBeenSet(false),
-    m_beforeStep(false),
-    m_beforeStepHasBeenSet(false),
-    m_afterStep(false),
-    m_afterStepHasBeenSet(false),
-    m_status(StepRunStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusReasonHasBeenSet(false),
-    m_runStartTimeHasBeenSet(false),
-    m_runEndTimeHasBeenSet(false)
+TestRunStepSummary::TestRunStepSummary(JsonView jsonValue)
+  : TestRunStepSummary()
 {
   *this = jsonValue;
 }

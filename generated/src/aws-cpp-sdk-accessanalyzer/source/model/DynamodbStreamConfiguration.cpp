@@ -23,8 +23,8 @@ DynamodbStreamConfiguration::DynamodbStreamConfiguration() :
 {
 }
 
-DynamodbStreamConfiguration::DynamodbStreamConfiguration(JsonView jsonValue) : 
-    m_streamPolicyHasBeenSet(false)
+DynamodbStreamConfiguration::DynamodbStreamConfiguration(JsonView jsonValue)
+  : DynamodbStreamConfiguration()
 {
   *this = jsonValue;
 }

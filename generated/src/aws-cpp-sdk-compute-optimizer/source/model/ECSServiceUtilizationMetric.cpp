@@ -28,13 +28,8 @@ ECSServiceUtilizationMetric::ECSServiceUtilizationMetric() :
 {
 }
 
-ECSServiceUtilizationMetric::ECSServiceUtilizationMetric(JsonView jsonValue) : 
-    m_name(ECSServiceMetricName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_statistic(ECSServiceMetricStatistic::NOT_SET),
-    m_statisticHasBeenSet(false),
-    m_value(0.0),
-    m_valueHasBeenSet(false)
+ECSServiceUtilizationMetric::ECSServiceUtilizationMetric(JsonView jsonValue)
+  : ECSServiceUtilizationMetric()
 {
   *this = jsonValue;
 }

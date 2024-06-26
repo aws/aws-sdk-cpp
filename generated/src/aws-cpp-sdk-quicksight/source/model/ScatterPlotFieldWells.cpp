@@ -24,9 +24,8 @@ ScatterPlotFieldWells::ScatterPlotFieldWells() :
 {
 }
 
-ScatterPlotFieldWells::ScatterPlotFieldWells(JsonView jsonValue) : 
-    m_scatterPlotCategoricallyAggregatedFieldWellsHasBeenSet(false),
-    m_scatterPlotUnaggregatedFieldWellsHasBeenSet(false)
+ScatterPlotFieldWells::ScatterPlotFieldWells(JsonView jsonValue)
+  : ScatterPlotFieldWells()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ AwsRedshiftClusterIamRole::AwsRedshiftClusterIamRole() :
 {
 }
 
-AwsRedshiftClusterIamRole::AwsRedshiftClusterIamRole(JsonView jsonValue) : 
-    m_applyStatusHasBeenSet(false),
-    m_iamRoleArnHasBeenSet(false)
+AwsRedshiftClusterIamRole::AwsRedshiftClusterIamRole(JsonView jsonValue)
+  : AwsRedshiftClusterIamRole()
 {
   *this = jsonValue;
 }

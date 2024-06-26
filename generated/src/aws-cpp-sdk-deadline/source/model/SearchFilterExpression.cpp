@@ -28,12 +28,8 @@ SearchFilterExpression::SearchFilterExpression() :
 {
 }
 
-SearchFilterExpression::SearchFilterExpression(JsonView jsonValue) : 
-    m_dateTimeFilterHasBeenSet(false),
-    m_groupFilterHasBeenSet(false),
-    m_parameterFilterHasBeenSet(false),
-    m_searchTermFilterHasBeenSet(false),
-    m_stringFilterHasBeenSet(false)
+SearchFilterExpression::SearchFilterExpression(JsonView jsonValue)
+  : SearchFilterExpression()
 {
   *this = jsonValue;
 }

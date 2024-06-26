@@ -24,9 +24,8 @@ EphemerisDescription::EphemerisDescription() :
 {
 }
 
-EphemerisDescription::EphemerisDescription(JsonView jsonValue) : 
-    m_ephemerisDataHasBeenSet(false),
-    m_sourceS3ObjectHasBeenSet(false)
+EphemerisDescription::EphemerisDescription(JsonView jsonValue)
+  : EphemerisDescription()
 {
   *this = jsonValue;
 }

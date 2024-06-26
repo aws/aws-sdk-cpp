@@ -30,13 +30,8 @@ DataShare::DataShare() :
 {
 }
 
-DataShare::DataShare(const XmlNode& xmlNode) : 
-    m_dataShareArnHasBeenSet(false),
-    m_producerArnHasBeenSet(false),
-    m_allowPubliclyAccessibleConsumers(false),
-    m_allowPubliclyAccessibleConsumersHasBeenSet(false),
-    m_dataShareAssociationsHasBeenSet(false),
-    m_managedByHasBeenSet(false)
+DataShare::DataShare(const XmlNode& xmlNode)
+  : DataShare()
 {
   *this = xmlNode;
 }

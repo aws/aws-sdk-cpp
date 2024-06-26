@@ -28,13 +28,8 @@ ClusterSnapshotInList::ClusterSnapshotInList() :
 {
 }
 
-ClusterSnapshotInList::ClusterSnapshotInList(JsonView jsonValue) : 
-    m_clusterArnHasBeenSet(false),
-    m_snapshotArnHasBeenSet(false),
-    m_snapshotCreationTimeHasBeenSet(false),
-    m_snapshotNameHasBeenSet(false),
-    m_status(Status::NOT_SET),
-    m_statusHasBeenSet(false)
+ClusterSnapshotInList::ClusterSnapshotInList(JsonView jsonValue)
+  : ClusterSnapshotInList()
 {
   *this = jsonValue;
 }

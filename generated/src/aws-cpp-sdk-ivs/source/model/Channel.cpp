@@ -40,25 +40,8 @@ Channel::Channel() :
 {
 }
 
-Channel::Channel(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_authorized(false),
-    m_authorizedHasBeenSet(false),
-    m_ingestEndpointHasBeenSet(false),
-    m_insecureIngest(false),
-    m_insecureIngestHasBeenSet(false),
-    m_latencyMode(ChannelLatencyMode::NOT_SET),
-    m_latencyModeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_playbackRestrictionPolicyArnHasBeenSet(false),
-    m_playbackUrlHasBeenSet(false),
-    m_preset(TranscodePreset::NOT_SET),
-    m_presetHasBeenSet(false),
-    m_recordingConfigurationArnHasBeenSet(false),
-    m_srtHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_type(ChannelType::NOT_SET),
-    m_typeHasBeenSet(false)
+Channel::Channel(JsonView jsonValue)
+  : Channel()
 {
   *this = jsonValue;
 }

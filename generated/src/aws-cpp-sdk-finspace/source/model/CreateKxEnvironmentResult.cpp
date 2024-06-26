@@ -22,8 +22,8 @@ CreateKxEnvironmentResult::CreateKxEnvironmentResult() :
 {
 }
 
-CreateKxEnvironmentResult::CreateKxEnvironmentResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(EnvironmentStatus::NOT_SET)
+CreateKxEnvironmentResult::CreateKxEnvironmentResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateKxEnvironmentResult()
 {
   *this = result;
 }

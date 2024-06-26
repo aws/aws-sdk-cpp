@@ -24,9 +24,8 @@ LocationListEntry::LocationListEntry() :
 {
 }
 
-LocationListEntry::LocationListEntry(JsonView jsonValue) : 
-    m_locationArnHasBeenSet(false),
-    m_locationUriHasBeenSet(false)
+LocationListEntry::LocationListEntry(JsonView jsonValue)
+  : LocationListEntry()
 {
   *this = jsonValue;
 }

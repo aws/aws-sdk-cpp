@@ -29,14 +29,8 @@ StreamSession::StreamSession() :
 {
 }
 
-StreamSession::StreamSession(JsonView jsonValue) : 
-    m_channelHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_ingestConfigurationHasBeenSet(false),
-    m_recordingConfigurationHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_streamIdHasBeenSet(false),
-    m_truncatedEventsHasBeenSet(false)
+StreamSession::StreamSession(JsonView jsonValue)
+  : StreamSession()
 {
   *this = jsonValue;
 }

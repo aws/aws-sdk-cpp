@@ -23,8 +23,8 @@ NotificationConfiguration::NotificationConfiguration() :
 {
 }
 
-NotificationConfiguration::NotificationConfiguration(JsonView jsonValue) : 
-    m_snsConfigurationHasBeenSet(false)
+NotificationConfiguration::NotificationConfiguration(JsonView jsonValue)
+  : NotificationConfiguration()
 {
   *this = jsonValue;
 }

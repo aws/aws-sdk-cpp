@@ -24,9 +24,8 @@ InputVpcRequest::InputVpcRequest() :
 {
 }
 
-InputVpcRequest::InputVpcRequest(JsonView jsonValue) : 
-    m_securityGroupIdsHasBeenSet(false),
-    m_subnetIdsHasBeenSet(false)
+InputVpcRequest::InputVpcRequest(JsonView jsonValue)
+  : InputVpcRequest()
 {
   *this = jsonValue;
 }

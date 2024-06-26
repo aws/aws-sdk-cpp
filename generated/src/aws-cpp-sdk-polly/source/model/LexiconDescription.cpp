@@ -24,9 +24,8 @@ LexiconDescription::LexiconDescription() :
 {
 }
 
-LexiconDescription::LexiconDescription(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_attributesHasBeenSet(false)
+LexiconDescription::LexiconDescription(JsonView jsonValue)
+  : LexiconDescription()
 {
   *this = jsonValue;
 }

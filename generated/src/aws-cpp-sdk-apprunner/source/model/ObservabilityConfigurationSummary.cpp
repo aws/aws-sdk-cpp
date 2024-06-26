@@ -26,11 +26,8 @@ ObservabilityConfigurationSummary::ObservabilityConfigurationSummary() :
 {
 }
 
-ObservabilityConfigurationSummary::ObservabilityConfigurationSummary(JsonView jsonValue) : 
-    m_observabilityConfigurationArnHasBeenSet(false),
-    m_observabilityConfigurationNameHasBeenSet(false),
-    m_observabilityConfigurationRevision(0),
-    m_observabilityConfigurationRevisionHasBeenSet(false)
+ObservabilityConfigurationSummary::ObservabilityConfigurationSummary(JsonView jsonValue)
+  : ObservabilityConfigurationSummary()
 {
   *this = jsonValue;
 }

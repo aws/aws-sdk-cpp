@@ -46,31 +46,8 @@ Block::Block() :
 {
 }
 
-Block::Block(JsonView jsonValue) : 
-    m_blockType(BlockType::NOT_SET),
-    m_blockTypeHasBeenSet(false),
-    m_confidence(0.0),
-    m_confidenceHasBeenSet(false),
-    m_textHasBeenSet(false),
-    m_textType(TextType::NOT_SET),
-    m_textTypeHasBeenSet(false),
-    m_rowIndex(0),
-    m_rowIndexHasBeenSet(false),
-    m_columnIndex(0),
-    m_columnIndexHasBeenSet(false),
-    m_rowSpan(0),
-    m_rowSpanHasBeenSet(false),
-    m_columnSpan(0),
-    m_columnSpanHasBeenSet(false),
-    m_geometryHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_relationshipsHasBeenSet(false),
-    m_entityTypesHasBeenSet(false),
-    m_selectionStatus(SelectionStatus::NOT_SET),
-    m_selectionStatusHasBeenSet(false),
-    m_page(0),
-    m_pageHasBeenSet(false),
-    m_queryHasBeenSet(false)
+Block::Block(JsonView jsonValue)
+  : Block()
 {
   *this = jsonValue;
 }

@@ -30,15 +30,8 @@ MediaStreamPipeline::MediaStreamPipeline() :
 {
 }
 
-MediaStreamPipeline::MediaStreamPipeline(JsonView jsonValue) : 
-    m_mediaPipelineIdHasBeenSet(false),
-    m_mediaPipelineArnHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false),
-    m_updatedTimestampHasBeenSet(false),
-    m_status(MediaPipelineStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_sourcesHasBeenSet(false),
-    m_sinksHasBeenSet(false)
+MediaStreamPipeline::MediaStreamPipeline(JsonView jsonValue)
+  : MediaStreamPipeline()
 {
   *this = jsonValue;
 }

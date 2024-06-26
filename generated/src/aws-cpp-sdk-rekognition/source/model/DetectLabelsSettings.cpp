@@ -24,9 +24,8 @@ DetectLabelsSettings::DetectLabelsSettings() :
 {
 }
 
-DetectLabelsSettings::DetectLabelsSettings(JsonView jsonValue) : 
-    m_generalLabelsHasBeenSet(false),
-    m_imagePropertiesHasBeenSet(false)
+DetectLabelsSettings::DetectLabelsSettings(JsonView jsonValue)
+  : DetectLabelsSettings()
 {
   *this = jsonValue;
 }

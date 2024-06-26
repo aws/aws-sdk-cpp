@@ -29,14 +29,8 @@ LabelingJobForWorkteamSummary::LabelingJobForWorkteamSummary() :
 {
 }
 
-LabelingJobForWorkteamSummary::LabelingJobForWorkteamSummary(JsonView jsonValue) : 
-    m_labelingJobNameHasBeenSet(false),
-    m_jobReferenceCodeHasBeenSet(false),
-    m_workRequesterAccountIdHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_labelCountersHasBeenSet(false),
-    m_numberOfHumanWorkersPerDataObject(0),
-    m_numberOfHumanWorkersPerDataObjectHasBeenSet(false)
+LabelingJobForWorkteamSummary::LabelingJobForWorkteamSummary(JsonView jsonValue)
+  : LabelingJobForWorkteamSummary()
 {
   *this = jsonValue;
 }

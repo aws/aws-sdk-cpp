@@ -25,10 +25,8 @@ APIErrorType::APIErrorType() :
 {
 }
 
-APIErrorType::APIErrorType(JsonView jsonValue) : 
-    m_secretIdHasBeenSet(false),
-    m_errorCodeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+APIErrorType::APIErrorType(JsonView jsonValue)
+  : APIErrorType()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ AttributeKey::AttributeKey() :
 {
 }
 
-AttributeKey::AttributeKey(JsonView jsonValue) : 
-    m_schemaArnHasBeenSet(false),
-    m_facetNameHasBeenSet(false),
-    m_nameHasBeenSet(false)
+AttributeKey::AttributeKey(JsonView jsonValue)
+  : AttributeKey()
 {
   *this = jsonValue;
 }

@@ -28,11 +28,8 @@ TrafficMirrorPortRange::TrafficMirrorPortRange() :
 {
 }
 
-TrafficMirrorPortRange::TrafficMirrorPortRange(const XmlNode& xmlNode) : 
-    m_fromPort(0),
-    m_fromPortHasBeenSet(false),
-    m_toPort(0),
-    m_toPortHasBeenSet(false)
+TrafficMirrorPortRange::TrafficMirrorPortRange(const XmlNode& xmlNode)
+  : TrafficMirrorPortRange()
 {
   *this = xmlNode;
 }

@@ -25,11 +25,8 @@ UpdateStageResult::UpdateStageResult() :
 {
 }
 
-UpdateStageResult::UpdateStageResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_cacheClusterEnabled(false),
-    m_cacheClusterSize(CacheClusterSize::NOT_SET),
-    m_cacheClusterStatus(CacheClusterStatus::NOT_SET),
-    m_tracingEnabled(false)
+UpdateStageResult::UpdateStageResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateStageResult()
 {
   *this = result;
 }

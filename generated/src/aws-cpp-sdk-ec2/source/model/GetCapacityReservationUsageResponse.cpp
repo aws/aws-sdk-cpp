@@ -24,10 +24,8 @@ GetCapacityReservationUsageResponse::GetCapacityReservationUsageResponse() :
 {
 }
 
-GetCapacityReservationUsageResponse::GetCapacityReservationUsageResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_totalInstanceCount(0),
-    m_availableInstanceCount(0),
-    m_state(CapacityReservationState::NOT_SET)
+GetCapacityReservationUsageResponse::GetCapacityReservationUsageResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : GetCapacityReservationUsageResponse()
 {
   *this = result;
 }

@@ -27,12 +27,8 @@ SourceCode::SourceCode() :
 {
 }
 
-SourceCode::SourceCode(JsonView jsonValue) : 
-    m_locationHasBeenSet(false),
-    m_projectNameHasBeenSet(false),
-    m_sourceVersionHasBeenSet(false),
-    m_versionControl(VersionControl::NOT_SET),
-    m_versionControlHasBeenSet(false)
+SourceCode::SourceCode(JsonView jsonValue)
+  : SourceCode()
 {
   *this = jsonValue;
 }

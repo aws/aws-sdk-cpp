@@ -24,9 +24,8 @@ QueryCompileError::QueryCompileError() :
 {
 }
 
-QueryCompileError::QueryCompileError(JsonView jsonValue) : 
-    m_locationHasBeenSet(false),
-    m_messageHasBeenSet(false)
+QueryCompileError::QueryCompileError(JsonView jsonValue)
+  : QueryCompileError()
 {
   *this = jsonValue;
 }

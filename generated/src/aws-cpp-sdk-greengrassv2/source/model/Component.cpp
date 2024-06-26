@@ -25,10 +25,8 @@ Component::Component() :
 {
 }
 
-Component::Component(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_componentNameHasBeenSet(false),
-    m_latestVersionHasBeenSet(false)
+Component::Component(JsonView jsonValue)
+  : Component()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ ActionCondition::ActionCondition() :
 {
 }
 
-ActionCondition::ActionCondition(JsonView jsonValue) : 
-    m_action(ActionValue::NOT_SET),
-    m_actionHasBeenSet(false)
+ActionCondition::ActionCondition(JsonView jsonValue)
+  : ActionCondition()
 {
   *this = jsonValue;
 }

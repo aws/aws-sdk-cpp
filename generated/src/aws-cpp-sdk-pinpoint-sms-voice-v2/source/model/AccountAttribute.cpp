@@ -25,10 +25,8 @@ AccountAttribute::AccountAttribute() :
 {
 }
 
-AccountAttribute::AccountAttribute(JsonView jsonValue) : 
-    m_name(AccountAttributeName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
+AccountAttribute::AccountAttribute(JsonView jsonValue)
+  : AccountAttribute()
 {
   *this = jsonValue;
 }

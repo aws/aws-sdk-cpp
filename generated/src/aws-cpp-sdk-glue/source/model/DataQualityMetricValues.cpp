@@ -30,15 +30,8 @@ DataQualityMetricValues::DataQualityMetricValues() :
 {
 }
 
-DataQualityMetricValues::DataQualityMetricValues(JsonView jsonValue) : 
-    m_actualValue(0.0),
-    m_actualValueHasBeenSet(false),
-    m_expectedValue(0.0),
-    m_expectedValueHasBeenSet(false),
-    m_lowerLimit(0.0),
-    m_lowerLimitHasBeenSet(false),
-    m_upperLimit(0.0),
-    m_upperLimitHasBeenSet(false)
+DataQualityMetricValues::DataQualityMetricValues(JsonView jsonValue)
+  : DataQualityMetricValues()
 {
   *this = jsonValue;
 }

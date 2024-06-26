@@ -24,9 +24,8 @@ AgentFilter::AgentFilter() :
 {
 }
 
-AgentFilter::AgentFilter(JsonView jsonValue) : 
-    m_agentHealthsHasBeenSet(false),
-    m_agentHealthCodesHasBeenSet(false)
+AgentFilter::AgentFilter(JsonView jsonValue)
+  : AgentFilter()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ FaqStatistics::FaqStatistics() :
 {
 }
 
-FaqStatistics::FaqStatistics(JsonView jsonValue) : 
-    m_indexedQuestionAnswersCount(0),
-    m_indexedQuestionAnswersCountHasBeenSet(false)
+FaqStatistics::FaqStatistics(JsonView jsonValue)
+  : FaqStatistics()
 {
   *this = jsonValue;
 }

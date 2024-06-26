@@ -32,17 +32,8 @@ LteNmrObj::LteNmrObj() :
 {
 }
 
-LteNmrObj::LteNmrObj(JsonView jsonValue) : 
-    m_pci(0),
-    m_pciHasBeenSet(false),
-    m_earfcn(0),
-    m_earfcnHasBeenSet(false),
-    m_eutranCid(0),
-    m_eutranCidHasBeenSet(false),
-    m_rsrp(0),
-    m_rsrpHasBeenSet(false),
-    m_rsrq(0.0),
-    m_rsrqHasBeenSet(false)
+LteNmrObj::LteNmrObj(JsonView jsonValue)
+  : LteNmrObj()
 {
   *this = jsonValue;
 }

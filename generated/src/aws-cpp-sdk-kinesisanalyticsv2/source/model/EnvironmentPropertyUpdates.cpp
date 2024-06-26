@@ -23,8 +23,8 @@ EnvironmentPropertyUpdates::EnvironmentPropertyUpdates() :
 {
 }
 
-EnvironmentPropertyUpdates::EnvironmentPropertyUpdates(JsonView jsonValue) : 
-    m_propertyGroupsHasBeenSet(false)
+EnvironmentPropertyUpdates::EnvironmentPropertyUpdates(JsonView jsonValue)
+  : EnvironmentPropertyUpdates()
 {
   *this = jsonValue;
 }

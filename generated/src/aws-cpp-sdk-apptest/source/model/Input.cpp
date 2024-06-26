@@ -23,8 +23,8 @@ Input::Input() :
 {
 }
 
-Input::Input(JsonView jsonValue) : 
-    m_fileHasBeenSet(false)
+Input::Input(JsonView jsonValue)
+  : Input()
 {
   *this = jsonValue;
 }

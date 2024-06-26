@@ -25,10 +25,8 @@ UnauthorizedClientException::UnauthorizedClientException() :
 {
 }
 
-UnauthorizedClientException::UnauthorizedClientException(JsonView jsonValue) : 
-    m_code(ErrorCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+UnauthorizedClientException::UnauthorizedClientException(JsonView jsonValue)
+  : UnauthorizedClientException()
 {
   *this = jsonValue;
 }

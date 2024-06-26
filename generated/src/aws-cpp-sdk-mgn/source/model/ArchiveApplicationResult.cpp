@@ -22,8 +22,8 @@ ArchiveApplicationResult::ArchiveApplicationResult() :
 {
 }
 
-ArchiveApplicationResult::ArchiveApplicationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_isArchived(false)
+ArchiveApplicationResult::ArchiveApplicationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ArchiveApplicationResult()
 {
   *this = result;
 }

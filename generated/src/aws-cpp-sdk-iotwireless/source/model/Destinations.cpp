@@ -29,14 +29,8 @@ Destinations::Destinations() :
 {
 }
 
-Destinations::Destinations(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_expressionType(ExpressionType::NOT_SET),
-    m_expressionTypeHasBeenSet(false),
-    m_expressionHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
+Destinations::Destinations(JsonView jsonValue)
+  : Destinations()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ NetworkInfo::NetworkInfo() :
 {
 }
 
-NetworkInfo::NetworkInfo(JsonView jsonValue) : 
-    m_interfaceNameHasBeenSet(false),
-    m_ipAddressHasBeenSet(false),
-    m_macAddressHasBeenSet(false),
-    m_netMaskHasBeenSet(false)
+NetworkInfo::NetworkInfo(JsonView jsonValue)
+  : NetworkInfo()
 {
   *this = jsonValue;
 }

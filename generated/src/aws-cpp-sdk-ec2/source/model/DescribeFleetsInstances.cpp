@@ -32,15 +32,8 @@ DescribeFleetsInstances::DescribeFleetsInstances() :
 {
 }
 
-DescribeFleetsInstances::DescribeFleetsInstances(const XmlNode& xmlNode) : 
-    m_launchTemplateAndOverridesHasBeenSet(false),
-    m_lifecycle(InstanceLifecycle::NOT_SET),
-    m_lifecycleHasBeenSet(false),
-    m_instanceIdsHasBeenSet(false),
-    m_instanceType(InstanceType::NOT_SET),
-    m_instanceTypeHasBeenSet(false),
-    m_platform(PlatformValues::NOT_SET),
-    m_platformHasBeenSet(false)
+DescribeFleetsInstances::DescribeFleetsInstances(const XmlNode& xmlNode)
+  : DescribeFleetsInstances()
 {
   *this = xmlNode;
 }

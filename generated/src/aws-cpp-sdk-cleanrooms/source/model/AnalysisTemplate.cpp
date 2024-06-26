@@ -38,23 +38,8 @@ AnalysisTemplate::AnalysisTemplate() :
 {
 }
 
-AnalysisTemplate::AnalysisTemplate(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_collaborationIdHasBeenSet(false),
-    m_collaborationArnHasBeenSet(false),
-    m_membershipIdHasBeenSet(false),
-    m_membershipArnHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false),
-    m_schemaHasBeenSet(false),
-    m_format(AnalysisFormat::NOT_SET),
-    m_formatHasBeenSet(false),
-    m_sourceHasBeenSet(false),
-    m_analysisParametersHasBeenSet(false),
-    m_validationsHasBeenSet(false)
+AnalysisTemplate::AnalysisTemplate(JsonView jsonValue)
+  : AnalysisTemplate()
 {
   *this = jsonValue;
 }

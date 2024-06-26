@@ -25,10 +25,8 @@ SqlStatementResult::SqlStatementResult() :
 {
 }
 
-SqlStatementResult::SqlStatementResult(JsonView jsonValue) : 
-    m_resultFrameHasBeenSet(false),
-    m_numberOfRecordsUpdated(0),
-    m_numberOfRecordsUpdatedHasBeenSet(false)
+SqlStatementResult::SqlStatementResult(JsonView jsonValue)
+  : SqlStatementResult()
 {
   *this = jsonValue;
 }

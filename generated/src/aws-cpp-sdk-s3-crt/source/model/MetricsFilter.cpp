@@ -28,11 +28,8 @@ MetricsFilter::MetricsFilter() :
 {
 }
 
-MetricsFilter::MetricsFilter(const XmlNode& xmlNode) : 
-    m_prefixHasBeenSet(false),
-    m_tagHasBeenSet(false),
-    m_accessPointArnHasBeenSet(false),
-    m_andHasBeenSet(false)
+MetricsFilter::MetricsFilter(const XmlNode& xmlNode)
+  : MetricsFilter()
 {
   *this = xmlNode;
 }

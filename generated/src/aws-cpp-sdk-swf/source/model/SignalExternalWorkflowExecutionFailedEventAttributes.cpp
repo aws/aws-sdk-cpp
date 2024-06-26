@@ -31,16 +31,8 @@ SignalExternalWorkflowExecutionFailedEventAttributes::SignalExternalWorkflowExec
 {
 }
 
-SignalExternalWorkflowExecutionFailedEventAttributes::SignalExternalWorkflowExecutionFailedEventAttributes(JsonView jsonValue) : 
-    m_workflowIdHasBeenSet(false),
-    m_runIdHasBeenSet(false),
-    m_cause(SignalExternalWorkflowExecutionFailedCause::NOT_SET),
-    m_causeHasBeenSet(false),
-    m_initiatedEventId(0),
-    m_initiatedEventIdHasBeenSet(false),
-    m_decisionTaskCompletedEventId(0),
-    m_decisionTaskCompletedEventIdHasBeenSet(false),
-    m_controlHasBeenSet(false)
+SignalExternalWorkflowExecutionFailedEventAttributes::SignalExternalWorkflowExecutionFailedEventAttributes(JsonView jsonValue)
+  : SignalExternalWorkflowExecutionFailedEventAttributes()
 {
   *this = jsonValue;
 }

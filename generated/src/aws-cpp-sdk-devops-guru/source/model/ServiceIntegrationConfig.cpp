@@ -25,10 +25,8 @@ ServiceIntegrationConfig::ServiceIntegrationConfig() :
 {
 }
 
-ServiceIntegrationConfig::ServiceIntegrationConfig(JsonView jsonValue) : 
-    m_opsCenterHasBeenSet(false),
-    m_logsAnomalyDetectionHasBeenSet(false),
-    m_kMSServerSideEncryptionHasBeenSet(false)
+ServiceIntegrationConfig::ServiceIntegrationConfig(JsonView jsonValue)
+  : ServiceIntegrationConfig()
 {
   *this = jsonValue;
 }

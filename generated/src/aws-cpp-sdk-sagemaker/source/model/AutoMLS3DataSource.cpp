@@ -25,10 +25,8 @@ AutoMLS3DataSource::AutoMLS3DataSource() :
 {
 }
 
-AutoMLS3DataSource::AutoMLS3DataSource(JsonView jsonValue) : 
-    m_s3DataType(AutoMLS3DataType::NOT_SET),
-    m_s3DataTypeHasBeenSet(false),
-    m_s3UriHasBeenSet(false)
+AutoMLS3DataSource::AutoMLS3DataSource(JsonView jsonValue)
+  : AutoMLS3DataSource()
 {
   *this = jsonValue;
 }

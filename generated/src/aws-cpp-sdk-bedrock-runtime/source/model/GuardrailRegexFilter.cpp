@@ -27,12 +27,8 @@ GuardrailRegexFilter::GuardrailRegexFilter() :
 {
 }
 
-GuardrailRegexFilter::GuardrailRegexFilter(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_matchHasBeenSet(false),
-    m_regexHasBeenSet(false),
-    m_action(GuardrailSensitiveInformationPolicyAction::NOT_SET),
-    m_actionHasBeenSet(false)
+GuardrailRegexFilter::GuardrailRegexFilter(JsonView jsonValue)
+  : GuardrailRegexFilter()
 {
   *this = jsonValue;
 }

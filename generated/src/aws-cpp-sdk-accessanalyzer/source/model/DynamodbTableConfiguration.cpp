@@ -23,8 +23,8 @@ DynamodbTableConfiguration::DynamodbTableConfiguration() :
 {
 }
 
-DynamodbTableConfiguration::DynamodbTableConfiguration(JsonView jsonValue) : 
-    m_tablePolicyHasBeenSet(false)
+DynamodbTableConfiguration::DynamodbTableConfiguration(JsonView jsonValue)
+  : DynamodbTableConfiguration()
 {
   *this = jsonValue;
 }

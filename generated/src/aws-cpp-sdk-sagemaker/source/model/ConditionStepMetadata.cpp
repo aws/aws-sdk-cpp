@@ -24,9 +24,8 @@ ConditionStepMetadata::ConditionStepMetadata() :
 {
 }
 
-ConditionStepMetadata::ConditionStepMetadata(JsonView jsonValue) : 
-    m_outcome(ConditionOutcome::NOT_SET),
-    m_outcomeHasBeenSet(false)
+ConditionStepMetadata::ConditionStepMetadata(JsonView jsonValue)
+  : ConditionStepMetadata()
 {
   *this = jsonValue;
 }

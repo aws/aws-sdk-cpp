@@ -22,8 +22,8 @@ StartDataIngestionJobResult::StartDataIngestionJobResult() :
 {
 }
 
-StartDataIngestionJobResult::StartDataIngestionJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(IngestionJobStatus::NOT_SET)
+StartDataIngestionJobResult::StartDataIngestionJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : StartDataIngestionJobResult()
 {
   *this = result;
 }

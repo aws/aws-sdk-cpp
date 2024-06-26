@@ -24,9 +24,8 @@ DataSourceIntrospectionResult::DataSourceIntrospectionResult() :
 {
 }
 
-DataSourceIntrospectionResult::DataSourceIntrospectionResult(JsonView jsonValue) : 
-    m_modelsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
+DataSourceIntrospectionResult::DataSourceIntrospectionResult(JsonView jsonValue)
+  : DataSourceIntrospectionResult()
 {
   *this = jsonValue;
 }

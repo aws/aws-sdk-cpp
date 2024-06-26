@@ -26,11 +26,8 @@ ReviewInformation::ReviewInformation() :
 {
 }
 
-ReviewInformation::ReviewInformation(JsonView jsonValue) : 
-    m_reviewedTimeHasBeenSet(false),
-    m_status(ReviewStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_reviewerHasBeenSet(false)
+ReviewInformation::ReviewInformation(JsonView jsonValue)
+  : ReviewInformation()
 {
   *this = jsonValue;
 }

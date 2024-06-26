@@ -24,9 +24,8 @@ AssociatedDomainSummary::AssociatedDomainSummary() :
 {
 }
 
-AssociatedDomainSummary::AssociatedDomainSummary(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false)
+AssociatedDomainSummary::AssociatedDomainSummary(JsonView jsonValue)
+  : AssociatedDomainSummary()
 {
   *this = jsonValue;
 }

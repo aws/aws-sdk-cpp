@@ -30,15 +30,8 @@ FPorts::FPorts() :
 {
 }
 
-FPorts::FPorts(JsonView jsonValue) : 
-    m_fuota(0),
-    m_fuotaHasBeenSet(false),
-    m_multicast(0),
-    m_multicastHasBeenSet(false),
-    m_clockSync(0),
-    m_clockSyncHasBeenSet(false),
-    m_positioningHasBeenSet(false),
-    m_applicationsHasBeenSet(false)
+FPorts::FPorts(JsonView jsonValue)
+  : FPorts()
 {
   *this = jsonValue;
 }

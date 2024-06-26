@@ -23,8 +23,8 @@ CaseEventIncludedData::CaseEventIncludedData() :
 {
 }
 
-CaseEventIncludedData::CaseEventIncludedData(JsonView jsonValue) : 
-    m_fieldsHasBeenSet(false)
+CaseEventIncludedData::CaseEventIncludedData(JsonView jsonValue)
+  : CaseEventIncludedData()
 {
   *this = jsonValue;
 }

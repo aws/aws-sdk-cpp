@@ -27,10 +27,8 @@ StackInstanceFilter::StackInstanceFilter() :
 {
 }
 
-StackInstanceFilter::StackInstanceFilter(const XmlNode& xmlNode) : 
-    m_name(StackInstanceFilterName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+StackInstanceFilter::StackInstanceFilter(const XmlNode& xmlNode)
+  : StackInstanceFilter()
 {
   *this = xmlNode;
 }

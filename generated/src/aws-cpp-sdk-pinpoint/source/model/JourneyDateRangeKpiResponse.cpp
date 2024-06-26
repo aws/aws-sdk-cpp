@@ -29,14 +29,8 @@ JourneyDateRangeKpiResponse::JourneyDateRangeKpiResponse() :
 {
 }
 
-JourneyDateRangeKpiResponse::JourneyDateRangeKpiResponse(JsonView jsonValue) : 
-    m_applicationIdHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_journeyIdHasBeenSet(false),
-    m_kpiNameHasBeenSet(false),
-    m_kpiResultHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_startTimeHasBeenSet(false)
+JourneyDateRangeKpiResponse::JourneyDateRangeKpiResponse(JsonView jsonValue)
+  : JourneyDateRangeKpiResponse()
 {
   *this = jsonValue;
 }

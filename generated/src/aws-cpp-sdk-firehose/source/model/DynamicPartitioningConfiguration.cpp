@@ -25,10 +25,8 @@ DynamicPartitioningConfiguration::DynamicPartitioningConfiguration() :
 {
 }
 
-DynamicPartitioningConfiguration::DynamicPartitioningConfiguration(JsonView jsonValue) : 
-    m_retryOptionsHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
+DynamicPartitioningConfiguration::DynamicPartitioningConfiguration(JsonView jsonValue)
+  : DynamicPartitioningConfiguration()
 {
   *this = jsonValue;
 }

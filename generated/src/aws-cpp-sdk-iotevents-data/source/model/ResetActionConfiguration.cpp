@@ -23,8 +23,8 @@ ResetActionConfiguration::ResetActionConfiguration() :
 {
 }
 
-ResetActionConfiguration::ResetActionConfiguration(JsonView jsonValue) : 
-    m_noteHasBeenSet(false)
+ResetActionConfiguration::ResetActionConfiguration(JsonView jsonValue)
+  : ResetActionConfiguration()
 {
   *this = jsonValue;
 }

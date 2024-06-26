@@ -27,12 +27,8 @@ RegexPatternSetSummary::RegexPatternSetSummary() :
 {
 }
 
-RegexPatternSetSummary::RegexPatternSetSummary(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_lockTokenHasBeenSet(false),
-    m_aRNHasBeenSet(false)
+RegexPatternSetSummary::RegexPatternSetSummary(JsonView jsonValue)
+  : RegexPatternSetSummary()
 {
   *this = jsonValue;
 }

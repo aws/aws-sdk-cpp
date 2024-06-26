@@ -27,12 +27,8 @@ LoggingConfigurationMetadata::LoggingConfigurationMetadata() :
 {
 }
 
-LoggingConfigurationMetadata::LoggingConfigurationMetadata(JsonView jsonValue) : 
-    m_createdAtHasBeenSet(false),
-    m_logGroupArnHasBeenSet(false),
-    m_modifiedAtHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_workspaceHasBeenSet(false)
+LoggingConfigurationMetadata::LoggingConfigurationMetadata(JsonView jsonValue)
+  : LoggingConfigurationMetadata()
 {
   *this = jsonValue;
 }

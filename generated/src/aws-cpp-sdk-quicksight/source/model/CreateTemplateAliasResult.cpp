@@ -22,8 +22,8 @@ CreateTemplateAliasResult::CreateTemplateAliasResult() :
 {
 }
 
-CreateTemplateAliasResult::CreateTemplateAliasResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+CreateTemplateAliasResult::CreateTemplateAliasResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateTemplateAliasResult()
 {
   *this = result;
 }

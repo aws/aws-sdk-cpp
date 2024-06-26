@@ -30,15 +30,8 @@ InspectionData::InspectionData() :
 {
 }
 
-InspectionData::InspectionData(JsonView jsonValue) : 
-    m_inputHasBeenSet(false),
-    m_afterInputPathHasBeenSet(false),
-    m_afterParametersHasBeenSet(false),
-    m_resultHasBeenSet(false),
-    m_afterResultSelectorHasBeenSet(false),
-    m_afterResultPathHasBeenSet(false),
-    m_requestHasBeenSet(false),
-    m_responseHasBeenSet(false)
+InspectionData::InspectionData(JsonView jsonValue)
+  : InspectionData()
 {
   *this = jsonValue;
 }

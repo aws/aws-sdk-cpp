@@ -40,25 +40,8 @@ ApplicationSummary::ApplicationSummary() :
 {
 }
 
-ApplicationSummary::ApplicationSummary(JsonView jsonValue) : 
-    m_applicationArnHasBeenSet(false),
-    m_applicationIdHasBeenSet(false),
-    m_applicationVersion(0),
-    m_applicationVersionHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_deploymentStatus(ApplicationDeploymentLifecycle::NOT_SET),
-    m_deploymentStatusHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_engineType(EngineType::NOT_SET),
-    m_engineTypeHasBeenSet(false),
-    m_environmentIdHasBeenSet(false),
-    m_lastStartTimeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_status(ApplicationLifecycle::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_versionStatus(ApplicationVersionLifecycle::NOT_SET),
-    m_versionStatusHasBeenSet(false)
+ApplicationSummary::ApplicationSummary(JsonView jsonValue)
+  : ApplicationSummary()
 {
   *this = jsonValue;
 }

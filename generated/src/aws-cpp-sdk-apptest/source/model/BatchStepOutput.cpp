@@ -25,10 +25,8 @@ BatchStepOutput::BatchStepOutput() :
 {
 }
 
-BatchStepOutput::BatchStepOutput(JsonView jsonValue) : 
-    m_dataSetExportLocationHasBeenSet(false),
-    m_dmsOutputLocationHasBeenSet(false),
-    m_dataSetDetailsHasBeenSet(false)
+BatchStepOutput::BatchStepOutput(JsonView jsonValue)
+  : BatchStepOutput()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ ItemsLimitConfiguration::ItemsLimitConfiguration() :
 {
 }
 
-ItemsLimitConfiguration::ItemsLimitConfiguration(JsonView jsonValue) : 
-    m_itemsLimit(0),
-    m_itemsLimitHasBeenSet(false),
-    m_otherCategories(OtherCategories::NOT_SET),
-    m_otherCategoriesHasBeenSet(false)
+ItemsLimitConfiguration::ItemsLimitConfiguration(JsonView jsonValue)
+  : ItemsLimitConfiguration()
 {
   *this = jsonValue;
 }

@@ -27,12 +27,8 @@ ConnectorConfigResponse::ConnectorConfigResponse() :
 {
 }
 
-ConnectorConfigResponse::ConnectorConfigResponse(JsonView jsonValue) : 
-    m_activationIdHasBeenSet(false),
-    m_activationCodeHasBeenSet(false),
-    m_activationExpiryHasBeenSet(false),
-    m_providerHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
+ConnectorConfigResponse::ConnectorConfigResponse(JsonView jsonValue)
+  : ConnectorConfigResponse()
 {
   *this = jsonValue;
 }

@@ -33,16 +33,8 @@ SendDataPoint::SendDataPoint() :
 {
 }
 
-SendDataPoint::SendDataPoint(const XmlNode& xmlNode) : 
-    m_timestampHasBeenSet(false),
-    m_deliveryAttempts(0),
-    m_deliveryAttemptsHasBeenSet(false),
-    m_bounces(0),
-    m_bouncesHasBeenSet(false),
-    m_complaints(0),
-    m_complaintsHasBeenSet(false),
-    m_rejects(0),
-    m_rejectsHasBeenSet(false)
+SendDataPoint::SendDataPoint(const XmlNode& xmlNode)
+  : SendDataPoint()
 {
   *this = xmlNode;
 }

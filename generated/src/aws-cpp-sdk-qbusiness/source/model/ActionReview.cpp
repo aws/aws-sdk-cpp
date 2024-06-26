@@ -27,12 +27,8 @@ ActionReview::ActionReview() :
 {
 }
 
-ActionReview::ActionReview(JsonView jsonValue) : 
-    m_pluginIdHasBeenSet(false),
-    m_pluginType(PluginType::NOT_SET),
-    m_pluginTypeHasBeenSet(false),
-    m_payloadHasBeenSet(false),
-    m_payloadFieldNameSeparatorHasBeenSet(false)
+ActionReview::ActionReview(JsonView jsonValue)
+  : ActionReview()
 {
   *this = jsonValue;
 }

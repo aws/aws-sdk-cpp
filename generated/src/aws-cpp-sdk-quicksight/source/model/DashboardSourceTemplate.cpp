@@ -24,9 +24,8 @@ DashboardSourceTemplate::DashboardSourceTemplate() :
 {
 }
 
-DashboardSourceTemplate::DashboardSourceTemplate(JsonView jsonValue) : 
-    m_dataSetReferencesHasBeenSet(false),
-    m_arnHasBeenSet(false)
+DashboardSourceTemplate::DashboardSourceTemplate(JsonView jsonValue)
+  : DashboardSourceTemplate()
 {
   *this = jsonValue;
 }

@@ -27,12 +27,8 @@ Model::Model() :
 {
 }
 
-Model::Model(JsonView jsonValue) : 
-    m_modelNameHasBeenSet(false),
-    m_modelVersionHasBeenSet(false),
-    m_latestSampleTimeHasBeenSet(false),
-    m_latestInferenceHasBeenSet(false),
-    m_modelMetricsHasBeenSet(false)
+Model::Model(JsonView jsonValue)
+  : Model()
 {
   *this = jsonValue;
 }

@@ -32,17 +32,8 @@ RunStatisticsForAssets::RunStatisticsForAssets() :
 {
 }
 
-RunStatisticsForAssets::RunStatisticsForAssets(JsonView jsonValue) : 
-    m_added(0),
-    m_addedHasBeenSet(false),
-    m_failed(0),
-    m_failedHasBeenSet(false),
-    m_skipped(0),
-    m_skippedHasBeenSet(false),
-    m_unchanged(0),
-    m_unchangedHasBeenSet(false),
-    m_updated(0),
-    m_updatedHasBeenSet(false)
+RunStatisticsForAssets::RunStatisticsForAssets(JsonView jsonValue)
+  : RunStatisticsForAssets()
 {
   *this = jsonValue;
 }

@@ -30,15 +30,8 @@ DependencyCounts::DependencyCounts() :
 {
 }
 
-DependencyCounts::DependencyCounts(JsonView jsonValue) : 
-    m_consumersResolved(0),
-    m_consumersResolvedHasBeenSet(false),
-    m_consumersUnresolved(0),
-    m_consumersUnresolvedHasBeenSet(false),
-    m_dependenciesResolved(0),
-    m_dependenciesResolvedHasBeenSet(false),
-    m_dependenciesUnresolved(0),
-    m_dependenciesUnresolvedHasBeenSet(false)
+DependencyCounts::DependencyCounts(JsonView jsonValue)
+  : DependencyCounts()
 {
   *this = jsonValue;
 }

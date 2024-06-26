@@ -28,13 +28,8 @@ AudioNormalizationSettings::AudioNormalizationSettings() :
 {
 }
 
-AudioNormalizationSettings::AudioNormalizationSettings(JsonView jsonValue) : 
-    m_algorithm(AudioNormalizationAlgorithm::NOT_SET),
-    m_algorithmHasBeenSet(false),
-    m_algorithmControl(AudioNormalizationAlgorithmControl::NOT_SET),
-    m_algorithmControlHasBeenSet(false),
-    m_targetLkfs(0.0),
-    m_targetLkfsHasBeenSet(false)
+AudioNormalizationSettings::AudioNormalizationSettings(JsonView jsonValue)
+  : AudioNormalizationSettings()
 {
   *this = jsonValue;
 }

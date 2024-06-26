@@ -23,8 +23,8 @@ CaptchaAction::CaptchaAction() :
 {
 }
 
-CaptchaAction::CaptchaAction(JsonView jsonValue) : 
-    m_customRequestHandlingHasBeenSet(false)
+CaptchaAction::CaptchaAction(JsonView jsonValue)
+  : CaptchaAction()
 {
   *this = jsonValue;
 }

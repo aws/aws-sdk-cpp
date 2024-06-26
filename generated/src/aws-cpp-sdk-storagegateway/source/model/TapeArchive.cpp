@@ -38,23 +38,8 @@ TapeArchive::TapeArchive() :
 {
 }
 
-TapeArchive::TapeArchive(JsonView jsonValue) : 
-    m_tapeARNHasBeenSet(false),
-    m_tapeBarcodeHasBeenSet(false),
-    m_tapeCreatedDateHasBeenSet(false),
-    m_tapeSizeInBytes(0),
-    m_tapeSizeInBytesHasBeenSet(false),
-    m_completionTimeHasBeenSet(false),
-    m_retrievedToHasBeenSet(false),
-    m_tapeStatusHasBeenSet(false),
-    m_tapeUsedInBytes(0),
-    m_tapeUsedInBytesHasBeenSet(false),
-    m_kMSKeyHasBeenSet(false),
-    m_poolIdHasBeenSet(false),
-    m_worm(false),
-    m_wormHasBeenSet(false),
-    m_retentionStartDateHasBeenSet(false),
-    m_poolEntryDateHasBeenSet(false)
+TapeArchive::TapeArchive(JsonView jsonValue)
+  : TapeArchive()
 {
   *this = jsonValue;
 }

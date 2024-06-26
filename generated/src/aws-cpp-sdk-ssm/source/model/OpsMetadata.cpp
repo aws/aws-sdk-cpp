@@ -27,12 +27,8 @@ OpsMetadata::OpsMetadata() :
 {
 }
 
-OpsMetadata::OpsMetadata(JsonView jsonValue) : 
-    m_resourceIdHasBeenSet(false),
-    m_opsMetadataArnHasBeenSet(false),
-    m_lastModifiedDateHasBeenSet(false),
-    m_lastModifiedUserHasBeenSet(false),
-    m_creationDateHasBeenSet(false)
+OpsMetadata::OpsMetadata(JsonView jsonValue)
+  : OpsMetadata()
 {
   *this = jsonValue;
 }

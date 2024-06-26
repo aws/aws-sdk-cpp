@@ -28,13 +28,8 @@ SdkConfigurationProperty::SdkConfigurationProperty() :
 {
 }
 
-SdkConfigurationProperty::SdkConfigurationProperty(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_friendlyNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_required(false),
-    m_requiredHasBeenSet(false),
-    m_defaultValueHasBeenSet(false)
+SdkConfigurationProperty::SdkConfigurationProperty(JsonView jsonValue)
+  : SdkConfigurationProperty()
 {
   *this = jsonValue;
 }

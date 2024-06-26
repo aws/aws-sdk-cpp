@@ -22,8 +22,8 @@ StopDeploymentResult::StopDeploymentResult() :
 {
 }
 
-StopDeploymentResult::StopDeploymentResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(StopStatus::NOT_SET)
+StopDeploymentResult::StopDeploymentResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : StopDeploymentResult()
 {
   *this = result;
 }

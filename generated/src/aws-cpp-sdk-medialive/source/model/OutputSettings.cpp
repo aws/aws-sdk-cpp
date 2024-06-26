@@ -31,16 +31,8 @@ OutputSettings::OutputSettings() :
 {
 }
 
-OutputSettings::OutputSettings(JsonView jsonValue) : 
-    m_archiveOutputSettingsHasBeenSet(false),
-    m_frameCaptureOutputSettingsHasBeenSet(false),
-    m_hlsOutputSettingsHasBeenSet(false),
-    m_mediaPackageOutputSettingsHasBeenSet(false),
-    m_msSmoothOutputSettingsHasBeenSet(false),
-    m_multiplexOutputSettingsHasBeenSet(false),
-    m_rtmpOutputSettingsHasBeenSet(false),
-    m_udpOutputSettingsHasBeenSet(false),
-    m_cmafIngestOutputSettingsHasBeenSet(false)
+OutputSettings::OutputSettings(JsonView jsonValue)
+  : OutputSettings()
 {
   *this = jsonValue;
 }

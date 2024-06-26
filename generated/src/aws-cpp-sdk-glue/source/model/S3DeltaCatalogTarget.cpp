@@ -29,14 +29,8 @@ S3DeltaCatalogTarget::S3DeltaCatalogTarget() :
 {
 }
 
-S3DeltaCatalogTarget::S3DeltaCatalogTarget(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_inputsHasBeenSet(false),
-    m_partitionKeysHasBeenSet(false),
-    m_tableHasBeenSet(false),
-    m_databaseHasBeenSet(false),
-    m_additionalOptionsHasBeenSet(false),
-    m_schemaChangePolicyHasBeenSet(false)
+S3DeltaCatalogTarget::S3DeltaCatalogTarget(JsonView jsonValue)
+  : S3DeltaCatalogTarget()
 {
   *this = jsonValue;
 }

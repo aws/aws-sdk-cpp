@@ -22,8 +22,8 @@ ValidatePipelineDefinitionResult::ValidatePipelineDefinitionResult() :
 {
 }
 
-ValidatePipelineDefinitionResult::ValidatePipelineDefinitionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_errored(false)
+ValidatePipelineDefinitionResult::ValidatePipelineDefinitionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ValidatePipelineDefinitionResult()
 {
   *this = result;
 }

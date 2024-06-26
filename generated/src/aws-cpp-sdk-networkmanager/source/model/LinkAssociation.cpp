@@ -27,12 +27,8 @@ LinkAssociation::LinkAssociation() :
 {
 }
 
-LinkAssociation::LinkAssociation(JsonView jsonValue) : 
-    m_globalNetworkIdHasBeenSet(false),
-    m_deviceIdHasBeenSet(false),
-    m_linkIdHasBeenSet(false),
-    m_linkAssociationState(LinkAssociationState::NOT_SET),
-    m_linkAssociationStateHasBeenSet(false)
+LinkAssociation::LinkAssociation(JsonView jsonValue)
+  : LinkAssociation()
 {
   *this = jsonValue;
 }

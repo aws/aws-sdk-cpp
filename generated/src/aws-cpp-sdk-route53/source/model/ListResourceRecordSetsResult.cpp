@@ -22,9 +22,8 @@ ListResourceRecordSetsResult::ListResourceRecordSetsResult() :
 {
 }
 
-ListResourceRecordSetsResult::ListResourceRecordSetsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_isTruncated(false),
-    m_nextRecordType(RRType::NOT_SET)
+ListResourceRecordSetsResult::ListResourceRecordSetsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : ListResourceRecordSetsResult()
 {
   *this = result;
 }

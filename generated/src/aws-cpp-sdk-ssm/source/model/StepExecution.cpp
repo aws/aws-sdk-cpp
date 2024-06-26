@@ -51,36 +51,8 @@ StepExecution::StepExecution() :
 {
 }
 
-StepExecution::StepExecution(JsonView jsonValue) : 
-    m_stepNameHasBeenSet(false),
-    m_actionHasBeenSet(false),
-    m_timeoutSeconds(0),
-    m_timeoutSecondsHasBeenSet(false),
-    m_onFailureHasBeenSet(false),
-    m_maxAttempts(0),
-    m_maxAttemptsHasBeenSet(false),
-    m_executionStartTimeHasBeenSet(false),
-    m_executionEndTimeHasBeenSet(false),
-    m_stepStatus(AutomationExecutionStatus::NOT_SET),
-    m_stepStatusHasBeenSet(false),
-    m_responseCodeHasBeenSet(false),
-    m_inputsHasBeenSet(false),
-    m_outputsHasBeenSet(false),
-    m_responseHasBeenSet(false),
-    m_failureMessageHasBeenSet(false),
-    m_failureDetailsHasBeenSet(false),
-    m_stepExecutionIdHasBeenSet(false),
-    m_overriddenParametersHasBeenSet(false),
-    m_isEnd(false),
-    m_isEndHasBeenSet(false),
-    m_nextStepHasBeenSet(false),
-    m_isCritical(false),
-    m_isCriticalHasBeenSet(false),
-    m_validNextStepsHasBeenSet(false),
-    m_targetsHasBeenSet(false),
-    m_targetLocationHasBeenSet(false),
-    m_triggeredAlarmsHasBeenSet(false),
-    m_parentStepDetailsHasBeenSet(false)
+StepExecution::StepExecution(JsonView jsonValue)
+  : StepExecution()
 {
   *this = jsonValue;
 }

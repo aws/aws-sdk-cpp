@@ -24,9 +24,8 @@ ClipTimestampRange::ClipTimestampRange() :
 {
 }
 
-ClipTimestampRange::ClipTimestampRange(JsonView jsonValue) : 
-    m_startTimestampHasBeenSet(false),
-    m_endTimestampHasBeenSet(false)
+ClipTimestampRange::ClipTimestampRange(JsonView jsonValue)
+  : ClipTimestampRange()
 {
   *this = jsonValue;
 }

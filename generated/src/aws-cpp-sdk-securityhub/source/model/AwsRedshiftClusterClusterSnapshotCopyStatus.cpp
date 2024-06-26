@@ -28,13 +28,8 @@ AwsRedshiftClusterClusterSnapshotCopyStatus::AwsRedshiftClusterClusterSnapshotCo
 {
 }
 
-AwsRedshiftClusterClusterSnapshotCopyStatus::AwsRedshiftClusterClusterSnapshotCopyStatus(JsonView jsonValue) : 
-    m_destinationRegionHasBeenSet(false),
-    m_manualSnapshotRetentionPeriod(0),
-    m_manualSnapshotRetentionPeriodHasBeenSet(false),
-    m_retentionPeriod(0),
-    m_retentionPeriodHasBeenSet(false),
-    m_snapshotCopyGrantNameHasBeenSet(false)
+AwsRedshiftClusterClusterSnapshotCopyStatus::AwsRedshiftClusterClusterSnapshotCopyStatus(JsonView jsonValue)
+  : AwsRedshiftClusterClusterSnapshotCopyStatus()
 {
   *this = jsonValue;
 }

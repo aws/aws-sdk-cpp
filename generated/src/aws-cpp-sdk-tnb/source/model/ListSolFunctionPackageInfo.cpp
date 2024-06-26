@@ -35,20 +35,8 @@ ListSolFunctionPackageInfo::ListSolFunctionPackageInfo() :
 {
 }
 
-ListSolFunctionPackageInfo::ListSolFunctionPackageInfo(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_metadataHasBeenSet(false),
-    m_onboardingState(OnboardingState::NOT_SET),
-    m_onboardingStateHasBeenSet(false),
-    m_operationalState(OperationalState::NOT_SET),
-    m_operationalStateHasBeenSet(false),
-    m_usageState(UsageState::NOT_SET),
-    m_usageStateHasBeenSet(false),
-    m_vnfProductNameHasBeenSet(false),
-    m_vnfProviderHasBeenSet(false),
-    m_vnfdIdHasBeenSet(false),
-    m_vnfdVersionHasBeenSet(false)
+ListSolFunctionPackageInfo::ListSolFunctionPackageInfo(JsonView jsonValue)
+  : ListSolFunctionPackageInfo()
 {
   *this = jsonValue;
 }

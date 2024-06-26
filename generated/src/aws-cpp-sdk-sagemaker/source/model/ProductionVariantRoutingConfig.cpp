@@ -24,9 +24,8 @@ ProductionVariantRoutingConfig::ProductionVariantRoutingConfig() :
 {
 }
 
-ProductionVariantRoutingConfig::ProductionVariantRoutingConfig(JsonView jsonValue) : 
-    m_routingStrategy(RoutingStrategy::NOT_SET),
-    m_routingStrategyHasBeenSet(false)
+ProductionVariantRoutingConfig::ProductionVariantRoutingConfig(JsonView jsonValue)
+  : ProductionVariantRoutingConfig()
 {
   *this = jsonValue;
 }

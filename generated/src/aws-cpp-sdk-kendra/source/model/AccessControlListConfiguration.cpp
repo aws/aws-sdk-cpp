@@ -23,8 +23,8 @@ AccessControlListConfiguration::AccessControlListConfiguration() :
 {
 }
 
-AccessControlListConfiguration::AccessControlListConfiguration(JsonView jsonValue) : 
-    m_keyPathHasBeenSet(false)
+AccessControlListConfiguration::AccessControlListConfiguration(JsonView jsonValue)
+  : AccessControlListConfiguration()
 {
   *this = jsonValue;
 }

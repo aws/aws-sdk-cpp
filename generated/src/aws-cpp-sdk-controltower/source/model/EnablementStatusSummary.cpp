@@ -25,10 +25,8 @@ EnablementStatusSummary::EnablementStatusSummary() :
 {
 }
 
-EnablementStatusSummary::EnablementStatusSummary(JsonView jsonValue) : 
-    m_lastOperationIdentifierHasBeenSet(false),
-    m_status(EnablementStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+EnablementStatusSummary::EnablementStatusSummary(JsonView jsonValue)
+  : EnablementStatusSummary()
 {
   *this = jsonValue;
 }

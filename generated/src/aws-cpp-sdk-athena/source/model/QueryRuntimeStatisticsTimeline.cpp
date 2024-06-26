@@ -34,19 +34,8 @@ QueryRuntimeStatisticsTimeline::QueryRuntimeStatisticsTimeline() :
 {
 }
 
-QueryRuntimeStatisticsTimeline::QueryRuntimeStatisticsTimeline(JsonView jsonValue) : 
-    m_queryQueueTimeInMillis(0),
-    m_queryQueueTimeInMillisHasBeenSet(false),
-    m_servicePreProcessingTimeInMillis(0),
-    m_servicePreProcessingTimeInMillisHasBeenSet(false),
-    m_queryPlanningTimeInMillis(0),
-    m_queryPlanningTimeInMillisHasBeenSet(false),
-    m_engineExecutionTimeInMillis(0),
-    m_engineExecutionTimeInMillisHasBeenSet(false),
-    m_serviceProcessingTimeInMillis(0),
-    m_serviceProcessingTimeInMillisHasBeenSet(false),
-    m_totalExecutionTimeInMillis(0),
-    m_totalExecutionTimeInMillisHasBeenSet(false)
+QueryRuntimeStatisticsTimeline::QueryRuntimeStatisticsTimeline(JsonView jsonValue)
+  : QueryRuntimeStatisticsTimeline()
 {
   *this = jsonValue;
 }

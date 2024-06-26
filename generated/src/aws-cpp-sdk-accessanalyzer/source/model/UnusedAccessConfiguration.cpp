@@ -24,9 +24,8 @@ UnusedAccessConfiguration::UnusedAccessConfiguration() :
 {
 }
 
-UnusedAccessConfiguration::UnusedAccessConfiguration(JsonView jsonValue) : 
-    m_unusedAccessAge(0),
-    m_unusedAccessAgeHasBeenSet(false)
+UnusedAccessConfiguration::UnusedAccessConfiguration(JsonView jsonValue)
+  : UnusedAccessConfiguration()
 {
   *this = jsonValue;
 }

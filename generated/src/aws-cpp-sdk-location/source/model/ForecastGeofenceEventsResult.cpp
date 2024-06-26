@@ -23,9 +23,8 @@ ForecastGeofenceEventsResult::ForecastGeofenceEventsResult() :
 {
 }
 
-ForecastGeofenceEventsResult::ForecastGeofenceEventsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_distanceUnit(DistanceUnit::NOT_SET),
-    m_speedUnit(SpeedUnit::NOT_SET)
+ForecastGeofenceEventsResult::ForecastGeofenceEventsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ForecastGeofenceEventsResult()
 {
   *this = result;
 }

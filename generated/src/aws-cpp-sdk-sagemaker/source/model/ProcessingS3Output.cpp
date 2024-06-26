@@ -26,11 +26,8 @@ ProcessingS3Output::ProcessingS3Output() :
 {
 }
 
-ProcessingS3Output::ProcessingS3Output(JsonView jsonValue) : 
-    m_s3UriHasBeenSet(false),
-    m_localPathHasBeenSet(false),
-    m_s3UploadMode(ProcessingS3UploadMode::NOT_SET),
-    m_s3UploadModeHasBeenSet(false)
+ProcessingS3Output::ProcessingS3Output(JsonView jsonValue)
+  : ProcessingS3Output()
 {
   *this = jsonValue;
 }

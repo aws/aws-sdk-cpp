@@ -24,9 +24,8 @@ AgentlessDialerConfig::AgentlessDialerConfig() :
 {
 }
 
-AgentlessDialerConfig::AgentlessDialerConfig(JsonView jsonValue) : 
-    m_dialingCapacity(0.0),
-    m_dialingCapacityHasBeenSet(false)
+AgentlessDialerConfig::AgentlessDialerConfig(JsonView jsonValue)
+  : AgentlessDialerConfig()
 {
   *this = jsonValue;
 }

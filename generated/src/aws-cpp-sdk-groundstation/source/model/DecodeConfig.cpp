@@ -23,8 +23,8 @@ DecodeConfig::DecodeConfig() :
 {
 }
 
-DecodeConfig::DecodeConfig(JsonView jsonValue) : 
-    m_unvalidatedJSONHasBeenSet(false)
+DecodeConfig::DecodeConfig(JsonView jsonValue)
+  : DecodeConfig()
 {
   *this = jsonValue;
 }

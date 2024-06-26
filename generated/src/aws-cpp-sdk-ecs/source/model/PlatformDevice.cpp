@@ -25,10 +25,8 @@ PlatformDevice::PlatformDevice() :
 {
 }
 
-PlatformDevice::PlatformDevice(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_type(PlatformDeviceType::NOT_SET),
-    m_typeHasBeenSet(false)
+PlatformDevice::PlatformDevice(JsonView jsonValue)
+  : PlatformDevice()
 {
   *this = jsonValue;
 }

@@ -30,13 +30,8 @@ TransitGatewayPolicyTable::TransitGatewayPolicyTable() :
 {
 }
 
-TransitGatewayPolicyTable::TransitGatewayPolicyTable(const XmlNode& xmlNode) : 
-    m_transitGatewayPolicyTableIdHasBeenSet(false),
-    m_transitGatewayIdHasBeenSet(false),
-    m_state(TransitGatewayPolicyTableState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+TransitGatewayPolicyTable::TransitGatewayPolicyTable(const XmlNode& xmlNode)
+  : TransitGatewayPolicyTable()
 {
   *this = xmlNode;
 }

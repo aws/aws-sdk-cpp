@@ -25,10 +25,8 @@ DeleteAgent::DeleteAgent() :
 {
 }
 
-DeleteAgent::DeleteAgent(JsonView jsonValue) : 
-    m_agentIdHasBeenSet(false),
-    m_force(false),
-    m_forceHasBeenSet(false)
+DeleteAgent::DeleteAgent(JsonView jsonValue)
+  : DeleteAgent()
 {
   *this = jsonValue;
 }

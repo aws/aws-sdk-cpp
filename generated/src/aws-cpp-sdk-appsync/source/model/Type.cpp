@@ -28,13 +28,8 @@ Type::Type() :
 {
 }
 
-Type::Type(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_definitionHasBeenSet(false),
-    m_format(TypeDefinitionFormat::NOT_SET),
-    m_formatHasBeenSet(false)
+Type::Type(JsonView jsonValue)
+  : Type()
 {
   *this = jsonValue;
 }

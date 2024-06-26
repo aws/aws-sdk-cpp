@@ -23,8 +23,8 @@ ForceEndpointErrorConfiguration::ForceEndpointErrorConfiguration() :
 {
 }
 
-ForceEndpointErrorConfiguration::ForceEndpointErrorConfiguration(JsonView jsonValue) : 
-    m_endpointErrorConditionsHasBeenSet(false)
+ForceEndpointErrorConfiguration::ForceEndpointErrorConfiguration(JsonView jsonValue)
+  : ForceEndpointErrorConfiguration()
 {
   *this = jsonValue;
 }

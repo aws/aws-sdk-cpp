@@ -23,8 +23,8 @@ HostVolumeProperties::HostVolumeProperties() :
 {
 }
 
-HostVolumeProperties::HostVolumeProperties(JsonView jsonValue) : 
-    m_sourcePathHasBeenSet(false)
+HostVolumeProperties::HostVolumeProperties(JsonView jsonValue)
+  : HostVolumeProperties()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ FirewallMetadata::FirewallMetadata() :
 {
 }
 
-FirewallMetadata::FirewallMetadata(JsonView jsonValue) : 
-    m_firewallNameHasBeenSet(false),
-    m_firewallArnHasBeenSet(false)
+FirewallMetadata::FirewallMetadata(JsonView jsonValue)
+  : FirewallMetadata()
 {
   *this = jsonValue;
 }

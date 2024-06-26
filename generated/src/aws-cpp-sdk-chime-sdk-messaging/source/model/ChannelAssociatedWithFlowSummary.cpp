@@ -29,14 +29,8 @@ ChannelAssociatedWithFlowSummary::ChannelAssociatedWithFlowSummary() :
 {
 }
 
-ChannelAssociatedWithFlowSummary::ChannelAssociatedWithFlowSummary(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_channelArnHasBeenSet(false),
-    m_mode(ChannelMode::NOT_SET),
-    m_modeHasBeenSet(false),
-    m_privacy(ChannelPrivacy::NOT_SET),
-    m_privacyHasBeenSet(false),
-    m_metadataHasBeenSet(false)
+ChannelAssociatedWithFlowSummary::ChannelAssociatedWithFlowSummary(JsonView jsonValue)
+  : ChannelAssociatedWithFlowSummary()
 {
   *this = jsonValue;
 }

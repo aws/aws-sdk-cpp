@@ -26,11 +26,8 @@ CancelStepsInfo::CancelStepsInfo() :
 {
 }
 
-CancelStepsInfo::CancelStepsInfo(JsonView jsonValue) : 
-    m_stepIdHasBeenSet(false),
-    m_status(CancelStepsRequestStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_reasonHasBeenSet(false)
+CancelStepsInfo::CancelStepsInfo(JsonView jsonValue)
+  : CancelStepsInfo()
 {
   *this = jsonValue;
 }

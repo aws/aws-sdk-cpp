@@ -26,11 +26,8 @@ FileSystemLocation::FileSystemLocation() :
 {
 }
 
-FileSystemLocation::FileSystemLocation(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_pathHasBeenSet(false),
-    m_type(FileSystemLocationType::NOT_SET),
-    m_typeHasBeenSet(false)
+FileSystemLocation::FileSystemLocation(JsonView jsonValue)
+  : FileSystemLocation()
 {
   *this = jsonValue;
 }

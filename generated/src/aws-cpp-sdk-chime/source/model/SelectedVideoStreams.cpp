@@ -24,9 +24,8 @@ SelectedVideoStreams::SelectedVideoStreams() :
 {
 }
 
-SelectedVideoStreams::SelectedVideoStreams(JsonView jsonValue) : 
-    m_attendeeIdsHasBeenSet(false),
-    m_externalUserIdsHasBeenSet(false)
+SelectedVideoStreams::SelectedVideoStreams(JsonView jsonValue)
+  : SelectedVideoStreams()
 {
   *this = jsonValue;
 }

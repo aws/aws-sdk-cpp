@@ -26,11 +26,8 @@ ImportTaskSummaryApplications::ImportTaskSummaryApplications() :
 {
 }
 
-ImportTaskSummaryApplications::ImportTaskSummaryApplications(JsonView jsonValue) : 
-    m_createdCount(0),
-    m_createdCountHasBeenSet(false),
-    m_modifiedCount(0),
-    m_modifiedCountHasBeenSet(false)
+ImportTaskSummaryApplications::ImportTaskSummaryApplications(JsonView jsonValue)
+  : ImportTaskSummaryApplications()
 {
   *this = jsonValue;
 }

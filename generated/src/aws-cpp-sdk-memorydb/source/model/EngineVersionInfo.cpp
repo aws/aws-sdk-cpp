@@ -25,10 +25,8 @@ EngineVersionInfo::EngineVersionInfo() :
 {
 }
 
-EngineVersionInfo::EngineVersionInfo(JsonView jsonValue) : 
-    m_engineVersionHasBeenSet(false),
-    m_enginePatchVersionHasBeenSet(false),
-    m_parameterGroupFamilyHasBeenSet(false)
+EngineVersionInfo::EngineVersionInfo(JsonView jsonValue)
+  : EngineVersionInfo()
 {
   *this = jsonValue;
 }

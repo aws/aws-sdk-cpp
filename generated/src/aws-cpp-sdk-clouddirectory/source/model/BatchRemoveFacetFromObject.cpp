@@ -24,9 +24,8 @@ BatchRemoveFacetFromObject::BatchRemoveFacetFromObject() :
 {
 }
 
-BatchRemoveFacetFromObject::BatchRemoveFacetFromObject(JsonView jsonValue) : 
-    m_schemaFacetHasBeenSet(false),
-    m_objectReferenceHasBeenSet(false)
+BatchRemoveFacetFromObject::BatchRemoveFacetFromObject(JsonView jsonValue)
+  : BatchRemoveFacetFromObject()
 {
   *this = jsonValue;
 }

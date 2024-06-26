@@ -24,9 +24,8 @@ VectorEnrichmentJobConfig::VectorEnrichmentJobConfig() :
 {
 }
 
-VectorEnrichmentJobConfig::VectorEnrichmentJobConfig(JsonView jsonValue) : 
-    m_mapMatchingConfigHasBeenSet(false),
-    m_reverseGeocodingConfigHasBeenSet(false)
+VectorEnrichmentJobConfig::VectorEnrichmentJobConfig(JsonView jsonValue)
+  : VectorEnrichmentJobConfig()
 {
   *this = jsonValue;
 }

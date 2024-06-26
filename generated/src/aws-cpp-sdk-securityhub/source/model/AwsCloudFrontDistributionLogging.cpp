@@ -28,13 +28,8 @@ AwsCloudFrontDistributionLogging::AwsCloudFrontDistributionLogging() :
 {
 }
 
-AwsCloudFrontDistributionLogging::AwsCloudFrontDistributionLogging(JsonView jsonValue) : 
-    m_bucketHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_includeCookies(false),
-    m_includeCookiesHasBeenSet(false),
-    m_prefixHasBeenSet(false)
+AwsCloudFrontDistributionLogging::AwsCloudFrontDistributionLogging(JsonView jsonValue)
+  : AwsCloudFrontDistributionLogging()
 {
   *this = jsonValue;
 }

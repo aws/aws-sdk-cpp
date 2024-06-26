@@ -43,28 +43,8 @@ HlsPackage::HlsPackage() :
 {
 }
 
-HlsPackage::HlsPackage(JsonView jsonValue) : 
-    m_adMarkers(AdMarkers::NOT_SET),
-    m_adMarkersHasBeenSet(false),
-    m_adTriggersHasBeenSet(false),
-    m_adsOnDeliveryRestrictions(AdsOnDeliveryRestrictions::NOT_SET),
-    m_adsOnDeliveryRestrictionsHasBeenSet(false),
-    m_encryptionHasBeenSet(false),
-    m_includeDvbSubtitles(false),
-    m_includeDvbSubtitlesHasBeenSet(false),
-    m_includeIframeOnlyStream(false),
-    m_includeIframeOnlyStreamHasBeenSet(false),
-    m_playlistType(PlaylistType::NOT_SET),
-    m_playlistTypeHasBeenSet(false),
-    m_playlistWindowSeconds(0),
-    m_playlistWindowSecondsHasBeenSet(false),
-    m_programDateTimeIntervalSeconds(0),
-    m_programDateTimeIntervalSecondsHasBeenSet(false),
-    m_segmentDurationSeconds(0),
-    m_segmentDurationSecondsHasBeenSet(false),
-    m_streamSelectionHasBeenSet(false),
-    m_useAudioRenditionGroup(false),
-    m_useAudioRenditionGroupHasBeenSet(false)
+HlsPackage::HlsPackage(JsonView jsonValue)
+  : HlsPackage()
 {
   *this = jsonValue;
 }

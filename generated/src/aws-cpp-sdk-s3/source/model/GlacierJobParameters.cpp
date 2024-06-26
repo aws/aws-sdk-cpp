@@ -26,9 +26,8 @@ GlacierJobParameters::GlacierJobParameters() :
 {
 }
 
-GlacierJobParameters::GlacierJobParameters(const XmlNode& xmlNode) : 
-    m_tier(Tier::NOT_SET),
-    m_tierHasBeenSet(false)
+GlacierJobParameters::GlacierJobParameters(const XmlNode& xmlNode)
+  : GlacierJobParameters()
 {
   *this = xmlNode;
 }

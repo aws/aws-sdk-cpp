@@ -22,8 +22,8 @@ DescribeModelPackageGroupResult::DescribeModelPackageGroupResult() :
 {
 }
 
-DescribeModelPackageGroupResult::DescribeModelPackageGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_modelPackageGroupStatus(ModelPackageGroupStatus::NOT_SET)
+DescribeModelPackageGroupResult::DescribeModelPackageGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeModelPackageGroupResult()
 {
   *this = result;
 }

@@ -24,9 +24,8 @@ OneDriveUsers::OneDriveUsers() :
 {
 }
 
-OneDriveUsers::OneDriveUsers(JsonView jsonValue) : 
-    m_oneDriveUserListHasBeenSet(false),
-    m_oneDriveUserS3PathHasBeenSet(false)
+OneDriveUsers::OneDriveUsers(JsonView jsonValue)
+  : OneDriveUsers()
 {
   *this = jsonValue;
 }

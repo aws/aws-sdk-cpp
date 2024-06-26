@@ -28,13 +28,8 @@ FileSizes::FileSizes() :
 {
 }
 
-FileSizes::FileSizes(JsonView jsonValue) : 
-    m_source(0),
-    m_sourceHasBeenSet(false),
-    m_destination(0),
-    m_destinationHasBeenSet(false),
-    m_base(0),
-    m_baseHasBeenSet(false)
+FileSizes::FileSizes(JsonView jsonValue)
+  : FileSizes()
 {
   *this = jsonValue;
 }

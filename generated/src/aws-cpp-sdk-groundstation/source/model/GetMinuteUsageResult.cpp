@@ -26,12 +26,8 @@ GetMinuteUsageResult::GetMinuteUsageResult() :
 {
 }
 
-GetMinuteUsageResult::GetMinuteUsageResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_estimatedMinutesRemaining(0),
-    m_isReservedMinutesCustomer(false),
-    m_totalReservedMinuteAllocation(0),
-    m_totalScheduledMinutes(0),
-    m_upcomingMinutesScheduled(0)
+GetMinuteUsageResult::GetMinuteUsageResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetMinuteUsageResult()
 {
   *this = result;
 }

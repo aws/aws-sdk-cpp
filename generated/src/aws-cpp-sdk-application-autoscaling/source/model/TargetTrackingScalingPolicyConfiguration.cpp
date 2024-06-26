@@ -32,17 +32,8 @@ TargetTrackingScalingPolicyConfiguration::TargetTrackingScalingPolicyConfigurati
 {
 }
 
-TargetTrackingScalingPolicyConfiguration::TargetTrackingScalingPolicyConfiguration(JsonView jsonValue) : 
-    m_targetValue(0.0),
-    m_targetValueHasBeenSet(false),
-    m_predefinedMetricSpecificationHasBeenSet(false),
-    m_customizedMetricSpecificationHasBeenSet(false),
-    m_scaleOutCooldown(0),
-    m_scaleOutCooldownHasBeenSet(false),
-    m_scaleInCooldown(0),
-    m_scaleInCooldownHasBeenSet(false),
-    m_disableScaleIn(false),
-    m_disableScaleInHasBeenSet(false)
+TargetTrackingScalingPolicyConfiguration::TargetTrackingScalingPolicyConfiguration(JsonView jsonValue)
+  : TargetTrackingScalingPolicyConfiguration()
 {
   *this = jsonValue;
 }

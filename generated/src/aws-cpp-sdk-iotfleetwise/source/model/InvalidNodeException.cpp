@@ -25,10 +25,8 @@ InvalidNodeException::InvalidNodeException() :
 {
 }
 
-InvalidNodeException::InvalidNodeException(JsonView jsonValue) : 
-    m_invalidNodesHasBeenSet(false),
-    m_reasonHasBeenSet(false),
-    m_messageHasBeenSet(false)
+InvalidNodeException::InvalidNodeException(JsonView jsonValue)
+  : InvalidNodeException()
 {
   *this = jsonValue;
 }

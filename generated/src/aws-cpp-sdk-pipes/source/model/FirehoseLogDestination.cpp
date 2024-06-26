@@ -23,8 +23,8 @@ FirehoseLogDestination::FirehoseLogDestination() :
 {
 }
 
-FirehoseLogDestination::FirehoseLogDestination(JsonView jsonValue) : 
-    m_deliveryStreamArnHasBeenSet(false)
+FirehoseLogDestination::FirehoseLogDestination(JsonView jsonValue)
+  : FirehoseLogDestination()
 {
   *this = jsonValue;
 }

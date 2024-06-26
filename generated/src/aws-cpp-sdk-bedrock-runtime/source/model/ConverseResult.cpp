@@ -22,8 +22,8 @@ ConverseResult::ConverseResult() :
 {
 }
 
-ConverseResult::ConverseResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_stopReason(StopReason::NOT_SET)
+ConverseResult::ConverseResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ConverseResult()
 {
   *this = result;
 }

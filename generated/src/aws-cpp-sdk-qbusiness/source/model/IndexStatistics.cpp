@@ -23,8 +23,8 @@ IndexStatistics::IndexStatistics() :
 {
 }
 
-IndexStatistics::IndexStatistics(JsonView jsonValue) : 
-    m_textDocumentStatisticsHasBeenSet(false)
+IndexStatistics::IndexStatistics(JsonView jsonValue)
+  : IndexStatistics()
 {
   *this = jsonValue;
 }

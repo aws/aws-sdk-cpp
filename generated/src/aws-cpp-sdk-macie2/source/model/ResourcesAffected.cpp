@@ -24,9 +24,8 @@ ResourcesAffected::ResourcesAffected() :
 {
 }
 
-ResourcesAffected::ResourcesAffected(JsonView jsonValue) : 
-    m_s3BucketHasBeenSet(false),
-    m_s3ObjectHasBeenSet(false)
+ResourcesAffected::ResourcesAffected(JsonView jsonValue)
+  : ResourcesAffected()
 {
   *this = jsonValue;
 }

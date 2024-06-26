@@ -23,8 +23,8 @@ PhoneNumberField::PhoneNumberField() :
 {
 }
 
-PhoneNumberField::PhoneNumberField(JsonView jsonValue) : 
-    m_identifierHasBeenSet(false)
+PhoneNumberField::PhoneNumberField(JsonView jsonValue)
+  : PhoneNumberField()
 {
   *this = jsonValue;
 }

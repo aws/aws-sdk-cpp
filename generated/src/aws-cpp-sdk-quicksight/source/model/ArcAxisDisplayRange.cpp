@@ -26,11 +26,8 @@ ArcAxisDisplayRange::ArcAxisDisplayRange() :
 {
 }
 
-ArcAxisDisplayRange::ArcAxisDisplayRange(JsonView jsonValue) : 
-    m_min(0.0),
-    m_minHasBeenSet(false),
-    m_max(0.0),
-    m_maxHasBeenSet(false)
+ArcAxisDisplayRange::ArcAxisDisplayRange(JsonView jsonValue)
+  : ArcAxisDisplayRange()
 {
   *this = jsonValue;
 }

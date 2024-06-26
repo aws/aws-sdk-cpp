@@ -25,10 +25,8 @@ SourceCodeVersion::SourceCodeVersion() :
 {
 }
 
-SourceCodeVersion::SourceCodeVersion(JsonView jsonValue) : 
-    m_type(SourceCodeVersionType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_valueHasBeenSet(false)
+SourceCodeVersion::SourceCodeVersion(JsonView jsonValue)
+  : SourceCodeVersion()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ AttachmentStateChange::AttachmentStateChange() :
 {
 }
 
-AttachmentStateChange::AttachmentStateChange(JsonView jsonValue) : 
-    m_attachmentArnHasBeenSet(false),
-    m_statusHasBeenSet(false)
+AttachmentStateChange::AttachmentStateChange(JsonView jsonValue)
+  : AttachmentStateChange()
 {
   *this = jsonValue;
 }

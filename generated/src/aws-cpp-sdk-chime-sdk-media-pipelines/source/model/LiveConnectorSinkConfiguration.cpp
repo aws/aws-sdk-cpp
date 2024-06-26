@@ -25,10 +25,8 @@ LiveConnectorSinkConfiguration::LiveConnectorSinkConfiguration() :
 {
 }
 
-LiveConnectorSinkConfiguration::LiveConnectorSinkConfiguration(JsonView jsonValue) : 
-    m_sinkType(LiveConnectorSinkType::NOT_SET),
-    m_sinkTypeHasBeenSet(false),
-    m_rTMPConfigurationHasBeenSet(false)
+LiveConnectorSinkConfiguration::LiveConnectorSinkConfiguration(JsonView jsonValue)
+  : LiveConnectorSinkConfiguration()
 {
   *this = jsonValue;
 }

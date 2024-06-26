@@ -28,13 +28,8 @@ ModerationLabel::ModerationLabel() :
 {
 }
 
-ModerationLabel::ModerationLabel(JsonView jsonValue) : 
-    m_confidence(0.0),
-    m_confidenceHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_parentNameHasBeenSet(false),
-    m_taxonomyLevel(0),
-    m_taxonomyLevelHasBeenSet(false)
+ModerationLabel::ModerationLabel(JsonView jsonValue)
+  : ModerationLabel()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ ListenerTlsValidationContextTrust::ListenerTlsValidationContextTrust() :
 {
 }
 
-ListenerTlsValidationContextTrust::ListenerTlsValidationContextTrust(JsonView jsonValue) : 
-    m_fileHasBeenSet(false),
-    m_sdsHasBeenSet(false)
+ListenerTlsValidationContextTrust::ListenerTlsValidationContextTrust(JsonView jsonValue)
+  : ListenerTlsValidationContextTrust()
 {
   *this = jsonValue;
 }

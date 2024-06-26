@@ -24,9 +24,8 @@ RomaniaAdditionalInfo::RomaniaAdditionalInfo() :
 {
 }
 
-RomaniaAdditionalInfo::RomaniaAdditionalInfo(JsonView jsonValue) : 
-    m_taxRegistrationNumberType(TaxRegistrationNumberType::NOT_SET),
-    m_taxRegistrationNumberTypeHasBeenSet(false)
+RomaniaAdditionalInfo::RomaniaAdditionalInfo(JsonView jsonValue)
+  : RomaniaAdditionalInfo()
 {
   *this = jsonValue;
 }

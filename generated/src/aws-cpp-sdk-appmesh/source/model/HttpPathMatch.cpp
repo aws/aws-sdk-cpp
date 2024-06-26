@@ -24,9 +24,8 @@ HttpPathMatch::HttpPathMatch() :
 {
 }
 
-HttpPathMatch::HttpPathMatch(JsonView jsonValue) : 
-    m_exactHasBeenSet(false),
-    m_regexHasBeenSet(false)
+HttpPathMatch::HttpPathMatch(JsonView jsonValue)
+  : HttpPathMatch()
 {
   *this = jsonValue;
 }

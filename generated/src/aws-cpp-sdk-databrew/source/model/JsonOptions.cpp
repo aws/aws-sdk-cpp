@@ -24,9 +24,8 @@ JsonOptions::JsonOptions() :
 {
 }
 
-JsonOptions::JsonOptions(JsonView jsonValue) : 
-    m_multiLine(false),
-    m_multiLineHasBeenSet(false)
+JsonOptions::JsonOptions(JsonView jsonValue)
+  : JsonOptions()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ CreateWorkspaceServiceAccountResult::CreateWorkspaceServiceAccountResult() :
 {
 }
 
-CreateWorkspaceServiceAccountResult::CreateWorkspaceServiceAccountResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_grafanaRole(Role::NOT_SET)
+CreateWorkspaceServiceAccountResult::CreateWorkspaceServiceAccountResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateWorkspaceServiceAccountResult()
 {
   *this = result;
 }

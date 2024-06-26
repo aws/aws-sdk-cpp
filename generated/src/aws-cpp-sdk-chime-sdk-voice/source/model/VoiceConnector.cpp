@@ -32,17 +32,8 @@ VoiceConnector::VoiceConnector() :
 {
 }
 
-VoiceConnector::VoiceConnector(JsonView jsonValue) : 
-    m_voiceConnectorIdHasBeenSet(false),
-    m_awsRegion(VoiceConnectorAwsRegion::NOT_SET),
-    m_awsRegionHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_outboundHostNameHasBeenSet(false),
-    m_requireEncryption(false),
-    m_requireEncryptionHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false),
-    m_updatedTimestampHasBeenSet(false),
-    m_voiceConnectorArnHasBeenSet(false)
+VoiceConnector::VoiceConnector(JsonView jsonValue)
+  : VoiceConnector()
 {
   *this = jsonValue;
 }

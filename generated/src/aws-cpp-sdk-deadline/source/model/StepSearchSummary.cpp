@@ -38,23 +38,8 @@ StepSearchSummary::StepSearchSummary() :
 {
 }
 
-StepSearchSummary::StepSearchSummary(JsonView jsonValue) : 
-    m_createdAtHasBeenSet(false),
-    m_endedAtHasBeenSet(false),
-    m_jobIdHasBeenSet(false),
-    m_lifecycleStatus(StepLifecycleStatus::NOT_SET),
-    m_lifecycleStatusHasBeenSet(false),
-    m_lifecycleStatusMessageHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_parameterSpaceHasBeenSet(false),
-    m_queueIdHasBeenSet(false),
-    m_startedAtHasBeenSet(false),
-    m_stepIdHasBeenSet(false),
-    m_targetTaskRunStatus(StepTargetTaskRunStatus::NOT_SET),
-    m_targetTaskRunStatusHasBeenSet(false),
-    m_taskRunStatus(TaskRunStatus::NOT_SET),
-    m_taskRunStatusHasBeenSet(false),
-    m_taskRunStatusCountsHasBeenSet(false)
+StepSearchSummary::StepSearchSummary(JsonView jsonValue)
+  : StepSearchSummary()
 {
   *this = jsonValue;
 }

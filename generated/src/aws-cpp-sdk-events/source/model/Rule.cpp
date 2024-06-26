@@ -32,17 +32,8 @@ Rule::Rule() :
 {
 }
 
-Rule::Rule(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_eventPatternHasBeenSet(false),
-    m_state(RuleState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_scheduleExpressionHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_managedByHasBeenSet(false),
-    m_eventBusNameHasBeenSet(false)
+Rule::Rule(JsonView jsonValue)
+  : Rule()
 {
   *this = jsonValue;
 }

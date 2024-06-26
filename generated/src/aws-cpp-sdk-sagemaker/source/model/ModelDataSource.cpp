@@ -23,8 +23,8 @@ ModelDataSource::ModelDataSource() :
 {
 }
 
-ModelDataSource::ModelDataSource(JsonView jsonValue) : 
-    m_s3DataSourceHasBeenSet(false)
+ModelDataSource::ModelDataSource(JsonView jsonValue)
+  : ModelDataSource()
 {
   *this = jsonValue;
 }

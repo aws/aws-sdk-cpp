@@ -28,13 +28,8 @@ ComponentChild::ComponentChild() :
 {
 }
 
-ComponentChild::ComponentChild(JsonView jsonValue) : 
-    m_componentTypeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_propertiesHasBeenSet(false),
-    m_childrenHasBeenSet(false),
-    m_eventsHasBeenSet(false),
-    m_sourceIdHasBeenSet(false)
+ComponentChild::ComponentChild(JsonView jsonValue)
+  : ComponentChild()
 {
   *this = jsonValue;
 }

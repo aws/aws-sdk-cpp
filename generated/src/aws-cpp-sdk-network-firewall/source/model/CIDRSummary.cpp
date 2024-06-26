@@ -27,12 +27,8 @@ CIDRSummary::CIDRSummary() :
 {
 }
 
-CIDRSummary::CIDRSummary(JsonView jsonValue) : 
-    m_availableCIDRCount(0),
-    m_availableCIDRCountHasBeenSet(false),
-    m_utilizedCIDRCount(0),
-    m_utilizedCIDRCountHasBeenSet(false),
-    m_iPSetReferencesHasBeenSet(false)
+CIDRSummary::CIDRSummary(JsonView jsonValue)
+  : CIDRSummary()
 {
   *this = jsonValue;
 }

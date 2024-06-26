@@ -24,9 +24,8 @@ ReportOverride::ReportOverride() :
 {
 }
 
-ReportOverride::ReportOverride(JsonView jsonValue) : 
-    m_reportLevel(ReportLevel::NOT_SET),
-    m_reportLevelHasBeenSet(false)
+ReportOverride::ReportOverride(JsonView jsonValue)
+  : ReportOverride()
 {
   *this = jsonValue;
 }

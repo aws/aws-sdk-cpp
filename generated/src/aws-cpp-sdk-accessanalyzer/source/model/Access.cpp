@@ -24,9 +24,8 @@ Access::Access() :
 {
 }
 
-Access::Access(JsonView jsonValue) : 
-    m_actionsHasBeenSet(false),
-    m_resourcesHasBeenSet(false)
+Access::Access(JsonView jsonValue)
+  : Access()
 {
   *this = jsonValue;
 }

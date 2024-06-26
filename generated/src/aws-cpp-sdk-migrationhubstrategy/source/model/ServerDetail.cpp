@@ -38,23 +38,8 @@ ServerDetail::ServerDetail() :
 {
 }
 
-ServerDetail::ServerDetail(JsonView jsonValue) : 
-    m_antipatternReportS3ObjectHasBeenSet(false),
-    m_antipatternReportStatus(AntipatternReportStatus::NOT_SET),
-    m_antipatternReportStatusHasBeenSet(false),
-    m_antipatternReportStatusMessageHasBeenSet(false),
-    m_applicationComponentStrategySummaryHasBeenSet(false),
-    m_dataCollectionStatus(RunTimeAssessmentStatus::NOT_SET),
-    m_dataCollectionStatusHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_lastAnalyzedTimestampHasBeenSet(false),
-    m_listAntipatternSeveritySummaryHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_recommendationSetHasBeenSet(false),
-    m_serverErrorHasBeenSet(false),
-    m_serverTypeHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_systemInfoHasBeenSet(false)
+ServerDetail::ServerDetail(JsonView jsonValue)
+  : ServerDetail()
 {
   *this = jsonValue;
 }

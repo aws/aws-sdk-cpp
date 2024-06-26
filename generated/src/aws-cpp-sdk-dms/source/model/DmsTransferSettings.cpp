@@ -24,9 +24,8 @@ DmsTransferSettings::DmsTransferSettings() :
 {
 }
 
-DmsTransferSettings::DmsTransferSettings(JsonView jsonValue) : 
-    m_serviceAccessRoleArnHasBeenSet(false),
-    m_bucketNameHasBeenSet(false)
+DmsTransferSettings::DmsTransferSettings(JsonView jsonValue)
+  : DmsTransferSettings()
 {
   *this = jsonValue;
 }

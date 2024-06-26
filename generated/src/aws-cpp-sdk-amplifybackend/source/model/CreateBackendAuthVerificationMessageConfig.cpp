@@ -26,11 +26,8 @@ CreateBackendAuthVerificationMessageConfig::CreateBackendAuthVerificationMessage
 {
 }
 
-CreateBackendAuthVerificationMessageConfig::CreateBackendAuthVerificationMessageConfig(JsonView jsonValue) : 
-    m_deliveryMethod(DeliveryMethod::NOT_SET),
-    m_deliveryMethodHasBeenSet(false),
-    m_emailSettingsHasBeenSet(false),
-    m_smsSettingsHasBeenSet(false)
+CreateBackendAuthVerificationMessageConfig::CreateBackendAuthVerificationMessageConfig(JsonView jsonValue)
+  : CreateBackendAuthVerificationMessageConfig()
 {
   *this = jsonValue;
 }

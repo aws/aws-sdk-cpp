@@ -22,8 +22,8 @@ CreateFolderMembershipResult::CreateFolderMembershipResult() :
 {
 }
 
-CreateFolderMembershipResult::CreateFolderMembershipResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+CreateFolderMembershipResult::CreateFolderMembershipResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateFolderMembershipResult()
 {
   *this = result;
 }

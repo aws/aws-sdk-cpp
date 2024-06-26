@@ -39,24 +39,8 @@ ReservationAggregates::ReservationAggregates() :
 {
 }
 
-ReservationAggregates::ReservationAggregates(JsonView jsonValue) : 
-    m_utilizationPercentageHasBeenSet(false),
-    m_utilizationPercentageInUnitsHasBeenSet(false),
-    m_purchasedHoursHasBeenSet(false),
-    m_purchasedUnitsHasBeenSet(false),
-    m_totalActualHoursHasBeenSet(false),
-    m_totalActualUnitsHasBeenSet(false),
-    m_unusedHoursHasBeenSet(false),
-    m_unusedUnitsHasBeenSet(false),
-    m_onDemandCostOfRIHoursUsedHasBeenSet(false),
-    m_netRISavingsHasBeenSet(false),
-    m_totalPotentialRISavingsHasBeenSet(false),
-    m_amortizedUpfrontFeeHasBeenSet(false),
-    m_amortizedRecurringFeeHasBeenSet(false),
-    m_totalAmortizedFeeHasBeenSet(false),
-    m_rICostForUnusedHoursHasBeenSet(false),
-    m_realizedSavingsHasBeenSet(false),
-    m_unrealizedSavingsHasBeenSet(false)
+ReservationAggregates::ReservationAggregates(JsonView jsonValue)
+  : ReservationAggregates()
 {
   *this = jsonValue;
 }

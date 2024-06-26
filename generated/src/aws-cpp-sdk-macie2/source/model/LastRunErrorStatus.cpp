@@ -24,9 +24,8 @@ LastRunErrorStatus::LastRunErrorStatus() :
 {
 }
 
-LastRunErrorStatus::LastRunErrorStatus(JsonView jsonValue) : 
-    m_code(LastRunErrorStatusCode::NOT_SET),
-    m_codeHasBeenSet(false)
+LastRunErrorStatus::LastRunErrorStatus(JsonView jsonValue)
+  : LastRunErrorStatus()
 {
   *this = jsonValue;
 }

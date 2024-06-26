@@ -31,16 +31,8 @@ MetricDataQuery::MetricDataQuery() :
 {
 }
 
-MetricDataQuery::MetricDataQuery(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_metricStatHasBeenSet(false),
-    m_expressionHasBeenSet(false),
-    m_labelHasBeenSet(false),
-    m_returnData(false),
-    m_returnDataHasBeenSet(false),
-    m_period(0),
-    m_periodHasBeenSet(false),
-    m_accountIdHasBeenSet(false)
+MetricDataQuery::MetricDataQuery(JsonView jsonValue)
+  : MetricDataQuery()
 {
   *this = jsonValue;
 }

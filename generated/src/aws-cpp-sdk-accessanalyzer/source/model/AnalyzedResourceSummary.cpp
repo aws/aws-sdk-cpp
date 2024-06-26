@@ -26,11 +26,8 @@ AnalyzedResourceSummary::AnalyzedResourceSummary() :
 {
 }
 
-AnalyzedResourceSummary::AnalyzedResourceSummary(JsonView jsonValue) : 
-    m_resourceArnHasBeenSet(false),
-    m_resourceOwnerAccountHasBeenSet(false),
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false)
+AnalyzedResourceSummary::AnalyzedResourceSummary(JsonView jsonValue)
+  : AnalyzedResourceSummary()
 {
   *this = jsonValue;
 }

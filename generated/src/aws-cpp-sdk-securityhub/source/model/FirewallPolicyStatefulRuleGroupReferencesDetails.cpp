@@ -23,8 +23,8 @@ FirewallPolicyStatefulRuleGroupReferencesDetails::FirewallPolicyStatefulRuleGrou
 {
 }
 
-FirewallPolicyStatefulRuleGroupReferencesDetails::FirewallPolicyStatefulRuleGroupReferencesDetails(JsonView jsonValue) : 
-    m_resourceArnHasBeenSet(false)
+FirewallPolicyStatefulRuleGroupReferencesDetails::FirewallPolicyStatefulRuleGroupReferencesDetails(JsonView jsonValue)
+  : FirewallPolicyStatefulRuleGroupReferencesDetails()
 {
   *this = jsonValue;
 }

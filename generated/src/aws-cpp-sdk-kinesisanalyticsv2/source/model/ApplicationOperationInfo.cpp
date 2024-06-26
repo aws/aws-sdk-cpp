@@ -28,13 +28,8 @@ ApplicationOperationInfo::ApplicationOperationInfo() :
 {
 }
 
-ApplicationOperationInfo::ApplicationOperationInfo(JsonView jsonValue) : 
-    m_operationHasBeenSet(false),
-    m_operationIdHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_operationStatus(OperationStatus::NOT_SET),
-    m_operationStatusHasBeenSet(false)
+ApplicationOperationInfo::ApplicationOperationInfo(JsonView jsonValue)
+  : ApplicationOperationInfo()
 {
   *this = jsonValue;
 }

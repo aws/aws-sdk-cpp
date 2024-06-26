@@ -31,16 +31,8 @@ Recipe::Recipe() :
 {
 }
 
-Recipe::Recipe(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_recipeArnHasBeenSet(false),
-    m_algorithmArnHasBeenSet(false),
-    m_featureTransformationArnHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_creationDateTimeHasBeenSet(false),
-    m_recipeTypeHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false)
+Recipe::Recipe(JsonView jsonValue)
+  : Recipe()
 {
   *this = jsonValue;
 }

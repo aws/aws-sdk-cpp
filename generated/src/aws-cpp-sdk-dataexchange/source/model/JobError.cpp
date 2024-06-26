@@ -33,18 +33,8 @@ JobError::JobError() :
 {
 }
 
-JobError::JobError(JsonView jsonValue) : 
-    m_code(Code::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_detailsHasBeenSet(false),
-    m_limitName(JobErrorLimitName::NOT_SET),
-    m_limitNameHasBeenSet(false),
-    m_limitValue(0.0),
-    m_limitValueHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_resourceType(JobErrorResourceTypes::NOT_SET),
-    m_resourceTypeHasBeenSet(false)
+JobError::JobError(JsonView jsonValue)
+  : JobError()
 {
   *this = jsonValue;
 }

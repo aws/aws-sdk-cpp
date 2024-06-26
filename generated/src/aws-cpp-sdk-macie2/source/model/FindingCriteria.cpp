@@ -23,8 +23,8 @@ FindingCriteria::FindingCriteria() :
 {
 }
 
-FindingCriteria::FindingCriteria(JsonView jsonValue) : 
-    m_criterionHasBeenSet(false)
+FindingCriteria::FindingCriteria(JsonView jsonValue)
+  : FindingCriteria()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ EligibleDataSource::EligibleDataSource() :
 {
 }
 
-EligibleDataSource::EligibleDataSource(JsonView jsonValue) : 
-    m_indexIdHasBeenSet(false),
-    m_dataSourceIdHasBeenSet(false)
+EligibleDataSource::EligibleDataSource(JsonView jsonValue)
+  : EligibleDataSource()
 {
   *this = jsonValue;
 }

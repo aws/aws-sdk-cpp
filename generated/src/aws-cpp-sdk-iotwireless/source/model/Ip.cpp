@@ -23,8 +23,8 @@ Ip::Ip() :
 {
 }
 
-Ip::Ip(JsonView jsonValue) : 
-    m_ipAddressHasBeenSet(false)
+Ip::Ip(JsonView jsonValue)
+  : Ip()
 {
   *this = jsonValue;
 }

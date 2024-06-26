@@ -43,26 +43,8 @@ HostReservation::HostReservation() :
 {
 }
 
-HostReservation::HostReservation(const XmlNode& xmlNode) : 
-    m_count(0),
-    m_countHasBeenSet(false),
-    m_currencyCode(CurrencyCodeValues::NOT_SET),
-    m_currencyCodeHasBeenSet(false),
-    m_duration(0),
-    m_durationHasBeenSet(false),
-    m_endHasBeenSet(false),
-    m_hostIdSetHasBeenSet(false),
-    m_hostReservationIdHasBeenSet(false),
-    m_hourlyPriceHasBeenSet(false),
-    m_instanceFamilyHasBeenSet(false),
-    m_offeringIdHasBeenSet(false),
-    m_paymentOption(PaymentOption::NOT_SET),
-    m_paymentOptionHasBeenSet(false),
-    m_startHasBeenSet(false),
-    m_state(ReservationState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_upfrontPriceHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+HostReservation::HostReservation(const XmlNode& xmlNode)
+  : HostReservation()
 {
   *this = xmlNode;
 }

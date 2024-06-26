@@ -24,9 +24,8 @@ ReferenceLineStaticDataConfiguration::ReferenceLineStaticDataConfiguration() :
 {
 }
 
-ReferenceLineStaticDataConfiguration::ReferenceLineStaticDataConfiguration(JsonView jsonValue) : 
-    m_value(0.0),
-    m_valueHasBeenSet(false)
+ReferenceLineStaticDataConfiguration::ReferenceLineStaticDataConfiguration(JsonView jsonValue)
+  : ReferenceLineStaticDataConfiguration()
 {
   *this = jsonValue;
 }

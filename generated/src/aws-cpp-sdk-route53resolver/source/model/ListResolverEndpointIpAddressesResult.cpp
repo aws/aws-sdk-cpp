@@ -22,8 +22,8 @@ ListResolverEndpointIpAddressesResult::ListResolverEndpointIpAddressesResult() :
 {
 }
 
-ListResolverEndpointIpAddressesResult::ListResolverEndpointIpAddressesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_maxResults(0)
+ListResolverEndpointIpAddressesResult::ListResolverEndpointIpAddressesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ListResolverEndpointIpAddressesResult()
 {
   *this = result;
 }

@@ -25,10 +25,8 @@ GatewayCapabilitySummary::GatewayCapabilitySummary() :
 {
 }
 
-GatewayCapabilitySummary::GatewayCapabilitySummary(JsonView jsonValue) : 
-    m_capabilityNamespaceHasBeenSet(false),
-    m_capabilitySyncStatus(CapabilitySyncStatus::NOT_SET),
-    m_capabilitySyncStatusHasBeenSet(false)
+GatewayCapabilitySummary::GatewayCapabilitySummary(JsonView jsonValue)
+  : GatewayCapabilitySummary()
 {
   *this = jsonValue;
 }

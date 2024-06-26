@@ -26,11 +26,8 @@ CoverageNormalizedUnits::CoverageNormalizedUnits() :
 {
 }
 
-CoverageNormalizedUnits::CoverageNormalizedUnits(JsonView jsonValue) : 
-    m_onDemandNormalizedUnitsHasBeenSet(false),
-    m_reservedNormalizedUnitsHasBeenSet(false),
-    m_totalRunningNormalizedUnitsHasBeenSet(false),
-    m_coverageNormalizedUnitsPercentageHasBeenSet(false)
+CoverageNormalizedUnits::CoverageNormalizedUnits(JsonView jsonValue)
+  : CoverageNormalizedUnits()
 {
   *this = jsonValue;
 }

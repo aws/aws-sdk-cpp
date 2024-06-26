@@ -33,18 +33,8 @@ AssistantData::AssistantData() :
 {
 }
 
-AssistantData::AssistantData(JsonView jsonValue) : 
-    m_assistantArnHasBeenSet(false),
-    m_assistantIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_integrationConfigurationHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_serverSideEncryptionConfigurationHasBeenSet(false),
-    m_status(AssistantStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_type(AssistantType::NOT_SET),
-    m_typeHasBeenSet(false)
+AssistantData::AssistantData(JsonView jsonValue)
+  : AssistantData()
 {
   *this = jsonValue;
 }

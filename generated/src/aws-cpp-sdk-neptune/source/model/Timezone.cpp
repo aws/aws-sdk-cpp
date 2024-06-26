@@ -25,8 +25,8 @@ Timezone::Timezone() :
 {
 }
 
-Timezone::Timezone(const XmlNode& xmlNode) : 
-    m_timezoneNameHasBeenSet(false)
+Timezone::Timezone(const XmlNode& xmlNode)
+  : Timezone()
 {
   *this = xmlNode;
 }

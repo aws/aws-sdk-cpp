@@ -42,27 +42,8 @@ ChannelSummary::ChannelSummary() :
 {
 }
 
-ChannelSummary::ChannelSummary(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_cdiInputSpecificationHasBeenSet(false),
-    m_channelClass(ChannelClass::NOT_SET),
-    m_channelClassHasBeenSet(false),
-    m_destinationsHasBeenSet(false),
-    m_egressEndpointsHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_inputAttachmentsHasBeenSet(false),
-    m_inputSpecificationHasBeenSet(false),
-    m_logLevel(LogLevel::NOT_SET),
-    m_logLevelHasBeenSet(false),
-    m_maintenanceHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_pipelinesRunningCount(0),
-    m_pipelinesRunningCountHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_state(ChannelState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_vpcHasBeenSet(false)
+ChannelSummary::ChannelSummary(JsonView jsonValue)
+  : ChannelSummary()
 {
   *this = jsonValue;
 }

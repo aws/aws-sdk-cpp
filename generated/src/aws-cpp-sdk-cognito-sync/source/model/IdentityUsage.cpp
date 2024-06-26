@@ -29,14 +29,8 @@ IdentityUsage::IdentityUsage() :
 {
 }
 
-IdentityUsage::IdentityUsage(JsonView jsonValue) : 
-    m_identityIdHasBeenSet(false),
-    m_identityPoolIdHasBeenSet(false),
-    m_lastModifiedDateHasBeenSet(false),
-    m_datasetCount(0),
-    m_datasetCountHasBeenSet(false),
-    m_dataStorage(0),
-    m_dataStorageHasBeenSet(false)
+IdentityUsage::IdentityUsage(JsonView jsonValue)
+  : IdentityUsage()
 {
   *this = jsonValue;
 }

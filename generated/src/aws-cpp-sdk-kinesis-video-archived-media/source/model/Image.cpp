@@ -26,11 +26,8 @@ Image::Image() :
 {
 }
 
-Image::Image(JsonView jsonValue) : 
-    m_timeStampHasBeenSet(false),
-    m_error(ImageError::NOT_SET),
-    m_errorHasBeenSet(false),
-    m_imageContentHasBeenSet(false)
+Image::Image(JsonView jsonValue)
+  : Image()
 {
   *this = jsonValue;
 }

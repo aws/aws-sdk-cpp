@@ -25,10 +25,8 @@ SentimentResponse::SentimentResponse() :
 {
 }
 
-SentimentResponse::SentimentResponse(JsonView jsonValue) : 
-    m_sentiment(SentimentType::NOT_SET),
-    m_sentimentHasBeenSet(false),
-    m_sentimentScoreHasBeenSet(false)
+SentimentResponse::SentimentResponse(JsonView jsonValue)
+  : SentimentResponse()
 {
   *this = jsonValue;
 }

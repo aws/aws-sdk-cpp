@@ -24,9 +24,8 @@ Ec2AmiResource::Ec2AmiResource() :
 {
 }
 
-Ec2AmiResource::Ec2AmiResource(JsonView jsonValue) : 
-    m_amiIdHasBeenSet(false),
-    m_snowballAmiIdHasBeenSet(false)
+Ec2AmiResource::Ec2AmiResource(JsonView jsonValue)
+  : Ec2AmiResource()
 {
   *this = jsonValue;
 }

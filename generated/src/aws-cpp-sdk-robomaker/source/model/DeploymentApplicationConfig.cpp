@@ -25,10 +25,8 @@ DeploymentApplicationConfig::DeploymentApplicationConfig() :
 {
 }
 
-DeploymentApplicationConfig::DeploymentApplicationConfig(JsonView jsonValue) : 
-    m_applicationHasBeenSet(false),
-    m_applicationVersionHasBeenSet(false),
-    m_launchConfigHasBeenSet(false)
+DeploymentApplicationConfig::DeploymentApplicationConfig(JsonView jsonValue)
+  : DeploymentApplicationConfig()
 {
   *this = jsonValue;
 }

@@ -27,13 +27,8 @@ DescribeRecoveryPointResult::DescribeRecoveryPointResult() :
 {
 }
 
-DescribeRecoveryPointResult::DescribeRecoveryPointResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(RecoveryPointStatus::NOT_SET),
-    m_backupSizeInBytes(0),
-    m_isEncrypted(false),
-    m_storageClass(StorageClass::NOT_SET),
-    m_isParent(false),
-    m_vaultType(VaultType::NOT_SET)
+DescribeRecoveryPointResult::DescribeRecoveryPointResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeRecoveryPointResult()
 {
   *this = result;
 }

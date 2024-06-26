@@ -26,9 +26,8 @@ LaunchPermissionModifications::LaunchPermissionModifications() :
 {
 }
 
-LaunchPermissionModifications::LaunchPermissionModifications(const XmlNode& xmlNode) : 
-    m_addHasBeenSet(false),
-    m_removeHasBeenSet(false)
+LaunchPermissionModifications::LaunchPermissionModifications(const XmlNode& xmlNode)
+  : LaunchPermissionModifications()
 {
   *this = xmlNode;
 }

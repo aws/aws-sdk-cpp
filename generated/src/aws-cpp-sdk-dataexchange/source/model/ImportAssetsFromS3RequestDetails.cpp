@@ -25,10 +25,8 @@ ImportAssetsFromS3RequestDetails::ImportAssetsFromS3RequestDetails() :
 {
 }
 
-ImportAssetsFromS3RequestDetails::ImportAssetsFromS3RequestDetails(JsonView jsonValue) : 
-    m_assetSourcesHasBeenSet(false),
-    m_dataSetIdHasBeenSet(false),
-    m_revisionIdHasBeenSet(false)
+ImportAssetsFromS3RequestDetails::ImportAssetsFromS3RequestDetails(JsonView jsonValue)
+  : ImportAssetsFromS3RequestDetails()
 {
   *this = jsonValue;
 }

@@ -35,18 +35,8 @@ JobManifestGeneratorFilter::JobManifestGeneratorFilter() :
 {
 }
 
-JobManifestGeneratorFilter::JobManifestGeneratorFilter(const XmlNode& xmlNode) : 
-    m_eligibleForReplication(false),
-    m_eligibleForReplicationHasBeenSet(false),
-    m_createdAfterHasBeenSet(false),
-    m_createdBeforeHasBeenSet(false),
-    m_objectReplicationStatusesHasBeenSet(false),
-    m_keyNameConstraintHasBeenSet(false),
-    m_objectSizeGreaterThanBytes(0),
-    m_objectSizeGreaterThanBytesHasBeenSet(false),
-    m_objectSizeLessThanBytes(0),
-    m_objectSizeLessThanBytesHasBeenSet(false),
-    m_matchAnyStorageClassHasBeenSet(false)
+JobManifestGeneratorFilter::JobManifestGeneratorFilter(const XmlNode& xmlNode)
+  : JobManifestGeneratorFilter()
 {
   *this = xmlNode;
 }

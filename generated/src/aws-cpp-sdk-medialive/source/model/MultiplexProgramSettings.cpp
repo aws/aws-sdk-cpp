@@ -28,13 +28,8 @@ MultiplexProgramSettings::MultiplexProgramSettings() :
 {
 }
 
-MultiplexProgramSettings::MultiplexProgramSettings(JsonView jsonValue) : 
-    m_preferredChannelPipeline(PreferredChannelPipeline::NOT_SET),
-    m_preferredChannelPipelineHasBeenSet(false),
-    m_programNumber(0),
-    m_programNumberHasBeenSet(false),
-    m_serviceDescriptorHasBeenSet(false),
-    m_videoSettingsHasBeenSet(false)
+MultiplexProgramSettings::MultiplexProgramSettings(JsonView jsonValue)
+  : MultiplexProgramSettings()
 {
   *this = jsonValue;
 }

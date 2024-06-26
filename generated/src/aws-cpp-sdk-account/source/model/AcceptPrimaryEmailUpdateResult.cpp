@@ -22,8 +22,8 @@ AcceptPrimaryEmailUpdateResult::AcceptPrimaryEmailUpdateResult() :
 {
 }
 
-AcceptPrimaryEmailUpdateResult::AcceptPrimaryEmailUpdateResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(PrimaryEmailUpdateStatus::NOT_SET)
+AcceptPrimaryEmailUpdateResult::AcceptPrimaryEmailUpdateResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : AcceptPrimaryEmailUpdateResult()
 {
   *this = result;
 }

@@ -49,34 +49,8 @@ ExportDescription::ExportDescription() :
 {
 }
 
-ExportDescription::ExportDescription(JsonView jsonValue) : 
-    m_exportArnHasBeenSet(false),
-    m_exportStatus(ExportStatus::NOT_SET),
-    m_exportStatusHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_exportManifestHasBeenSet(false),
-    m_tableArnHasBeenSet(false),
-    m_tableIdHasBeenSet(false),
-    m_exportTimeHasBeenSet(false),
-    m_clientTokenHasBeenSet(false),
-    m_s3BucketHasBeenSet(false),
-    m_s3BucketOwnerHasBeenSet(false),
-    m_s3PrefixHasBeenSet(false),
-    m_s3SseAlgorithm(S3SseAlgorithm::NOT_SET),
-    m_s3SseAlgorithmHasBeenSet(false),
-    m_s3SseKmsKeyIdHasBeenSet(false),
-    m_failureCodeHasBeenSet(false),
-    m_failureMessageHasBeenSet(false),
-    m_exportFormat(ExportFormat::NOT_SET),
-    m_exportFormatHasBeenSet(false),
-    m_billedSizeBytes(0),
-    m_billedSizeBytesHasBeenSet(false),
-    m_itemCount(0),
-    m_itemCountHasBeenSet(false),
-    m_exportType(ExportType::NOT_SET),
-    m_exportTypeHasBeenSet(false),
-    m_incrementalExportSpecificationHasBeenSet(false)
+ExportDescription::ExportDescription(JsonView jsonValue)
+  : ExportDescription()
 {
   *this = jsonValue;
 }

@@ -28,11 +28,8 @@ MatchObjectSize::MatchObjectSize() :
 {
 }
 
-MatchObjectSize::MatchObjectSize(const XmlNode& xmlNode) : 
-    m_bytesGreaterThan(0),
-    m_bytesGreaterThanHasBeenSet(false),
-    m_bytesLessThan(0),
-    m_bytesLessThanHasBeenSet(false)
+MatchObjectSize::MatchObjectSize(const XmlNode& xmlNode)
+  : MatchObjectSize()
 {
   *this = xmlNode;
 }

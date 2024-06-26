@@ -23,9 +23,8 @@ PutSchemaVersionMetadataResult::PutSchemaVersionMetadataResult() :
 {
 }
 
-PutSchemaVersionMetadataResult::PutSchemaVersionMetadataResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_latestVersion(false),
-    m_versionNumber(0)
+PutSchemaVersionMetadataResult::PutSchemaVersionMetadataResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : PutSchemaVersionMetadataResult()
 {
   *this = result;
 }

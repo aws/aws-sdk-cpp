@@ -52,36 +52,8 @@ Lag::Lag() :
 {
 }
 
-Lag::Lag(JsonView jsonValue) : 
-    m_connectionsBandwidthHasBeenSet(false),
-    m_numberOfConnections(0),
-    m_numberOfConnectionsHasBeenSet(false),
-    m_lagIdHasBeenSet(false),
-    m_ownerAccountHasBeenSet(false),
-    m_lagNameHasBeenSet(false),
-    m_lagState(LagState::NOT_SET),
-    m_lagStateHasBeenSet(false),
-    m_locationHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_minimumLinks(0),
-    m_minimumLinksHasBeenSet(false),
-    m_awsDeviceHasBeenSet(false),
-    m_awsDeviceV2HasBeenSet(false),
-    m_awsLogicalDeviceIdHasBeenSet(false),
-    m_connectionsHasBeenSet(false),
-    m_allowsHostedConnections(false),
-    m_allowsHostedConnectionsHasBeenSet(false),
-    m_jumboFrameCapable(false),
-    m_jumboFrameCapableHasBeenSet(false),
-    m_hasLogicalRedundancy(HasLogicalRedundancy::NOT_SET),
-    m_hasLogicalRedundancyHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_providerNameHasBeenSet(false),
-    m_macSecCapable(false),
-    m_macSecCapableHasBeenSet(false),
-    m_encryptionModeHasBeenSet(false),
-    m_macSecKeysHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
+Lag::Lag(JsonView jsonValue)
+  : Lag()
 {
   *this = jsonValue;
 }

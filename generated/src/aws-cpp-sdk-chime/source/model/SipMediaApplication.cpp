@@ -28,13 +28,8 @@ SipMediaApplication::SipMediaApplication() :
 {
 }
 
-SipMediaApplication::SipMediaApplication(JsonView jsonValue) : 
-    m_sipMediaApplicationIdHasBeenSet(false),
-    m_awsRegionHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_endpointsHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false),
-    m_updatedTimestampHasBeenSet(false)
+SipMediaApplication::SipMediaApplication(JsonView jsonValue)
+  : SipMediaApplication()
 {
   *this = jsonValue;
 }

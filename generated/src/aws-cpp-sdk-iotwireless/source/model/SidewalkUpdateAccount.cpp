@@ -23,8 +23,8 @@ SidewalkUpdateAccount::SidewalkUpdateAccount() :
 {
 }
 
-SidewalkUpdateAccount::SidewalkUpdateAccount(JsonView jsonValue) : 
-    m_appServerPrivateKeyHasBeenSet(false)
+SidewalkUpdateAccount::SidewalkUpdateAccount(JsonView jsonValue)
+  : SidewalkUpdateAccount()
 {
   *this = jsonValue;
 }

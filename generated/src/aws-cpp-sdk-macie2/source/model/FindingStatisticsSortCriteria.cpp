@@ -26,11 +26,8 @@ FindingStatisticsSortCriteria::FindingStatisticsSortCriteria() :
 {
 }
 
-FindingStatisticsSortCriteria::FindingStatisticsSortCriteria(JsonView jsonValue) : 
-    m_attributeName(FindingStatisticsSortAttributeName::NOT_SET),
-    m_attributeNameHasBeenSet(false),
-    m_orderBy(OrderBy::NOT_SET),
-    m_orderByHasBeenSet(false)
+FindingStatisticsSortCriteria::FindingStatisticsSortCriteria(JsonView jsonValue)
+  : FindingStatisticsSortCriteria()
 {
   *this = jsonValue;
 }

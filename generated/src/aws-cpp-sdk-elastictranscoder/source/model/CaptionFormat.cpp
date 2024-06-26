@@ -25,10 +25,8 @@ CaptionFormat::CaptionFormat() :
 {
 }
 
-CaptionFormat::CaptionFormat(JsonView jsonValue) : 
-    m_formatHasBeenSet(false),
-    m_patternHasBeenSet(false),
-    m_encryptionHasBeenSet(false)
+CaptionFormat::CaptionFormat(JsonView jsonValue)
+  : CaptionFormat()
 {
   *this = jsonValue;
 }

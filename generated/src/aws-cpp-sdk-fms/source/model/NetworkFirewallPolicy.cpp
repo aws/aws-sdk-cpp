@@ -24,9 +24,8 @@ NetworkFirewallPolicy::NetworkFirewallPolicy() :
 {
 }
 
-NetworkFirewallPolicy::NetworkFirewallPolicy(JsonView jsonValue) : 
-    m_firewallDeploymentModel(FirewallDeploymentModel::NOT_SET),
-    m_firewallDeploymentModelHasBeenSet(false)
+NetworkFirewallPolicy::NetworkFirewallPolicy(JsonView jsonValue)
+  : NetworkFirewallPolicy()
 {
   *this = jsonValue;
 }

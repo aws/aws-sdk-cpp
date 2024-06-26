@@ -60,45 +60,8 @@ AutomationRulesFindingFilters::AutomationRulesFindingFilters() :
 {
 }
 
-AutomationRulesFindingFilters::AutomationRulesFindingFilters(JsonView jsonValue) : 
-    m_productArnHasBeenSet(false),
-    m_awsAccountIdHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_generatorIdHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_firstObservedAtHasBeenSet(false),
-    m_lastObservedAtHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_confidenceHasBeenSet(false),
-    m_criticalityHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_sourceUrlHasBeenSet(false),
-    m_productNameHasBeenSet(false),
-    m_companyNameHasBeenSet(false),
-    m_severityLabelHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_resourcePartitionHasBeenSet(false),
-    m_resourceRegionHasBeenSet(false),
-    m_resourceTagsHasBeenSet(false),
-    m_resourceDetailsOtherHasBeenSet(false),
-    m_complianceStatusHasBeenSet(false),
-    m_complianceSecurityControlIdHasBeenSet(false),
-    m_complianceAssociatedStandardsIdHasBeenSet(false),
-    m_verificationStateHasBeenSet(false),
-    m_workflowStatusHasBeenSet(false),
-    m_recordStateHasBeenSet(false),
-    m_relatedFindingsProductArnHasBeenSet(false),
-    m_relatedFindingsIdHasBeenSet(false),
-    m_noteTextHasBeenSet(false),
-    m_noteUpdatedAtHasBeenSet(false),
-    m_noteUpdatedByHasBeenSet(false),
-    m_userDefinedFieldsHasBeenSet(false),
-    m_resourceApplicationArnHasBeenSet(false),
-    m_resourceApplicationNameHasBeenSet(false),
-    m_awsAccountNameHasBeenSet(false)
+AutomationRulesFindingFilters::AutomationRulesFindingFilters(JsonView jsonValue)
+  : AutomationRulesFindingFilters()
 {
   *this = jsonValue;
 }

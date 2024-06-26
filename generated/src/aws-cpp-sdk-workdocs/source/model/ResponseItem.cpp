@@ -29,14 +29,8 @@ ResponseItem::ResponseItem() :
 {
 }
 
-ResponseItem::ResponseItem(JsonView jsonValue) : 
-    m_resourceType(ResponseItemType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_webUrlHasBeenSet(false),
-    m_documentMetadataHasBeenSet(false),
-    m_folderMetadataHasBeenSet(false),
-    m_commentMetadataHasBeenSet(false),
-    m_documentVersionMetadataHasBeenSet(false)
+ResponseItem::ResponseItem(JsonView jsonValue)
+  : ResponseItem()
 {
   *this = jsonValue;
 }

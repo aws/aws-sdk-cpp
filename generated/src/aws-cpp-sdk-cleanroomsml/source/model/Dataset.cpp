@@ -25,10 +25,8 @@ Dataset::Dataset() :
 {
 }
 
-Dataset::Dataset(JsonView jsonValue) : 
-    m_inputConfigHasBeenSet(false),
-    m_type(DatasetType::NOT_SET),
-    m_typeHasBeenSet(false)
+Dataset::Dataset(JsonView jsonValue)
+  : Dataset()
 {
   *this = jsonValue;
 }

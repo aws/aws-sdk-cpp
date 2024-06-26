@@ -23,9 +23,8 @@ CreateEmailIdentityResult::CreateEmailIdentityResult() :
 {
 }
 
-CreateEmailIdentityResult::CreateEmailIdentityResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_identityType(IdentityType::NOT_SET),
-    m_verifiedForSendingStatus(false)
+CreateEmailIdentityResult::CreateEmailIdentityResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateEmailIdentityResult()
 {
   *this = result;
 }

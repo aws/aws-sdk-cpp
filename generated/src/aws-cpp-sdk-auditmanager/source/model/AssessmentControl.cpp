@@ -35,20 +35,8 @@ AssessmentControl::AssessmentControl() :
 {
 }
 
-AssessmentControl::AssessmentControl(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_status(ControlStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_response(ControlResponse::NOT_SET),
-    m_responseHasBeenSet(false),
-    m_commentsHasBeenSet(false),
-    m_evidenceSourcesHasBeenSet(false),
-    m_evidenceCount(0),
-    m_evidenceCountHasBeenSet(false),
-    m_assessmentReportEvidenceCount(0),
-    m_assessmentReportEvidenceCountHasBeenSet(false)
+AssessmentControl::AssessmentControl(JsonView jsonValue)
+  : AssessmentControl()
 {
   *this = jsonValue;
 }

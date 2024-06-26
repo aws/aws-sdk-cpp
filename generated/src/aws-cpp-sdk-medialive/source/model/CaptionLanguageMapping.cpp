@@ -26,11 +26,8 @@ CaptionLanguageMapping::CaptionLanguageMapping() :
 {
 }
 
-CaptionLanguageMapping::CaptionLanguageMapping(JsonView jsonValue) : 
-    m_captionChannel(0),
-    m_captionChannelHasBeenSet(false),
-    m_languageCodeHasBeenSet(false),
-    m_languageDescriptionHasBeenSet(false)
+CaptionLanguageMapping::CaptionLanguageMapping(JsonView jsonValue)
+  : CaptionLanguageMapping()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ CopySourceImageSetInformation::CopySourceImageSetInformation() :
 {
 }
 
-CopySourceImageSetInformation::CopySourceImageSetInformation(JsonView jsonValue) : 
-    m_latestVersionIdHasBeenSet(false)
+CopySourceImageSetInformation::CopySourceImageSetInformation(JsonView jsonValue)
+  : CopySourceImageSetInformation()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ ImageState::ImageState() :
 {
 }
 
-ImageState::ImageState(JsonView jsonValue) : 
-    m_status(ImageStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_reasonHasBeenSet(false)
+ImageState::ImageState(JsonView jsonValue)
+  : ImageState()
 {
   *this = jsonValue;
 }

@@ -35,20 +35,8 @@ AssetBundleExportJobSummary::AssetBundleExportJobSummary() :
 {
 }
 
-AssetBundleExportJobSummary::AssetBundleExportJobSummary(JsonView jsonValue) : 
-    m_jobStatus(AssetBundleExportJobStatus::NOT_SET),
-    m_jobStatusHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_assetBundleExportJobIdHasBeenSet(false),
-    m_includeAllDependencies(false),
-    m_includeAllDependenciesHasBeenSet(false),
-    m_exportFormat(AssetBundleExportFormat::NOT_SET),
-    m_exportFormatHasBeenSet(false),
-    m_includePermissions(false),
-    m_includePermissionsHasBeenSet(false),
-    m_includeTags(false),
-    m_includeTagsHasBeenSet(false)
+AssetBundleExportJobSummary::AssetBundleExportJobSummary(JsonView jsonValue)
+  : AssetBundleExportJobSummary()
 {
   *this = jsonValue;
 }

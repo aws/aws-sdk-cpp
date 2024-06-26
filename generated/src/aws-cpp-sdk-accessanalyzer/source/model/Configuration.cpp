@@ -36,21 +36,8 @@ Configuration::Configuration() :
 {
 }
 
-Configuration::Configuration(JsonView jsonValue) : 
-    m_ebsSnapshotHasBeenSet(false),
-    m_ecrRepositoryHasBeenSet(false),
-    m_iamRoleHasBeenSet(false),
-    m_efsFileSystemHasBeenSet(false),
-    m_kmsKeyHasBeenSet(false),
-    m_rdsDbClusterSnapshotHasBeenSet(false),
-    m_rdsDbSnapshotHasBeenSet(false),
-    m_secretsManagerSecretHasBeenSet(false),
-    m_s3BucketHasBeenSet(false),
-    m_snsTopicHasBeenSet(false),
-    m_sqsQueueHasBeenSet(false),
-    m_s3ExpressDirectoryBucketHasBeenSet(false),
-    m_dynamodbStreamHasBeenSet(false),
-    m_dynamodbTableHasBeenSet(false)
+Configuration::Configuration(JsonView jsonValue)
+  : Configuration()
 {
   *this = jsonValue;
 }

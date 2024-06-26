@@ -25,11 +25,8 @@ UpdateApiResult::UpdateApiResult() :
 {
 }
 
-UpdateApiResult::UpdateApiResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_apiGatewayManaged(false),
-    m_disableSchemaValidation(false),
-    m_disableExecuteApiEndpoint(false),
-    m_protocolType(ProtocolType::NOT_SET)
+UpdateApiResult::UpdateApiResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateApiResult()
 {
   *this = result;
 }

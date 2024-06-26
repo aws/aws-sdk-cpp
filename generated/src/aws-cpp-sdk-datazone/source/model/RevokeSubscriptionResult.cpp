@@ -23,9 +23,8 @@ RevokeSubscriptionResult::RevokeSubscriptionResult() :
 {
 }
 
-RevokeSubscriptionResult::RevokeSubscriptionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_retainPermissions(false),
-    m_status(SubscriptionStatus::NOT_SET)
+RevokeSubscriptionResult::RevokeSubscriptionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : RevokeSubscriptionResult()
 {
   *this = result;
 }

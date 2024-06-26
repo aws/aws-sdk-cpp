@@ -24,9 +24,8 @@ GreenFleetProvisioningOption::GreenFleetProvisioningOption() :
 {
 }
 
-GreenFleetProvisioningOption::GreenFleetProvisioningOption(JsonView jsonValue) : 
-    m_action(GreenFleetProvisioningAction::NOT_SET),
-    m_actionHasBeenSet(false)
+GreenFleetProvisioningOption::GreenFleetProvisioningOption(JsonView jsonValue)
+  : GreenFleetProvisioningOption()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ Sort::Sort() :
 {
 }
 
-Sort::Sort(JsonView jsonValue) : 
-    m_sortOrder(SortOrder::NOT_SET),
-    m_sortOrderHasBeenSet(false),
-    m_sortField(SortField::NOT_SET),
-    m_sortFieldHasBeenSet(false)
+Sort::Sort(JsonView jsonValue)
+  : Sort()
 {
   *this = jsonValue;
 }

@@ -28,13 +28,8 @@ JobStats::JobStats() :
 {
 }
 
-JobStats::JobStats(JsonView jsonValue) : 
-    m_numberOfProfilesReviewed(0),
-    m_numberOfProfilesReviewedHasBeenSet(false),
-    m_numberOfMatchesFound(0),
-    m_numberOfMatchesFoundHasBeenSet(false),
-    m_numberOfMergesDone(0),
-    m_numberOfMergesDoneHasBeenSet(false)
+JobStats::JobStats(JsonView jsonValue)
+  : JobStats()
 {
   *this = jsonValue;
 }

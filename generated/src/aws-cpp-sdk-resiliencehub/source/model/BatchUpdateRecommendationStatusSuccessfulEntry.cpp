@@ -29,14 +29,8 @@ BatchUpdateRecommendationStatusSuccessfulEntry::BatchUpdateRecommendationStatusS
 {
 }
 
-BatchUpdateRecommendationStatusSuccessfulEntry::BatchUpdateRecommendationStatusSuccessfulEntry(JsonView jsonValue) : 
-    m_entryIdHasBeenSet(false),
-    m_excludeReason(ExcludeRecommendationReason::NOT_SET),
-    m_excludeReasonHasBeenSet(false),
-    m_excluded(false),
-    m_excludedHasBeenSet(false),
-    m_itemHasBeenSet(false),
-    m_referenceIdHasBeenSet(false)
+BatchUpdateRecommendationStatusSuccessfulEntry::BatchUpdateRecommendationStatusSuccessfulEntry(JsonView jsonValue)
+  : BatchUpdateRecommendationStatusSuccessfulEntry()
 {
   *this = jsonValue;
 }

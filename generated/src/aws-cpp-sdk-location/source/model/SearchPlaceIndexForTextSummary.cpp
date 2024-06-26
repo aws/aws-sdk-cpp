@@ -32,17 +32,8 @@ SearchPlaceIndexForTextSummary::SearchPlaceIndexForTextSummary() :
 {
 }
 
-SearchPlaceIndexForTextSummary::SearchPlaceIndexForTextSummary(JsonView jsonValue) : 
-    m_textHasBeenSet(false),
-    m_biasPositionHasBeenSet(false),
-    m_filterBBoxHasBeenSet(false),
-    m_filterCountriesHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_resultBBoxHasBeenSet(false),
-    m_dataSourceHasBeenSet(false),
-    m_languageHasBeenSet(false),
-    m_filterCategoriesHasBeenSet(false)
+SearchPlaceIndexForTextSummary::SearchPlaceIndexForTextSummary(JsonView jsonValue)
+  : SearchPlaceIndexForTextSummary()
 {
   *this = jsonValue;
 }

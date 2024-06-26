@@ -24,9 +24,8 @@ VirtualServiceStatus::VirtualServiceStatus() :
 {
 }
 
-VirtualServiceStatus::VirtualServiceStatus(JsonView jsonValue) : 
-    m_status(VirtualServiceStatusCode::NOT_SET),
-    m_statusHasBeenSet(false)
+VirtualServiceStatus::VirtualServiceStatus(JsonView jsonValue)
+  : VirtualServiceStatus()
 {
   *this = jsonValue;
 }

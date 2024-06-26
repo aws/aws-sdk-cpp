@@ -23,8 +23,8 @@ DatasetEntityRecognizerEntityList::DatasetEntityRecognizerEntityList() :
 {
 }
 
-DatasetEntityRecognizerEntityList::DatasetEntityRecognizerEntityList(JsonView jsonValue) : 
-    m_s3UriHasBeenSet(false)
+DatasetEntityRecognizerEntityList::DatasetEntityRecognizerEntityList(JsonView jsonValue)
+  : DatasetEntityRecognizerEntityList()
 {
   *this = jsonValue;
 }

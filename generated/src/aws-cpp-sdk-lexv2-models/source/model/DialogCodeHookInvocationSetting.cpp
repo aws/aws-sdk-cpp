@@ -28,13 +28,8 @@ DialogCodeHookInvocationSetting::DialogCodeHookInvocationSetting() :
 {
 }
 
-DialogCodeHookInvocationSetting::DialogCodeHookInvocationSetting(JsonView jsonValue) : 
-    m_enableCodeHookInvocation(false),
-    m_enableCodeHookInvocationHasBeenSet(false),
-    m_active(false),
-    m_activeHasBeenSet(false),
-    m_invocationLabelHasBeenSet(false),
-    m_postCodeHookSpecificationHasBeenSet(false)
+DialogCodeHookInvocationSetting::DialogCodeHookInvocationSetting(JsonView jsonValue)
+  : DialogCodeHookInvocationSetting()
 {
   *this = jsonValue;
 }

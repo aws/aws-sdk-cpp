@@ -26,11 +26,8 @@ OracleParameters::OracleParameters() :
 {
 }
 
-OracleParameters::OracleParameters(JsonView jsonValue) : 
-    m_hostHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_databaseHasBeenSet(false)
+OracleParameters::OracleParameters(JsonView jsonValue)
+  : OracleParameters()
 {
   *this = jsonValue;
 }

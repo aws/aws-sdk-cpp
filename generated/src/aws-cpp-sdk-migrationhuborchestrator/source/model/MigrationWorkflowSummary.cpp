@@ -35,20 +35,8 @@ MigrationWorkflowSummary::MigrationWorkflowSummary() :
 {
 }
 
-MigrationWorkflowSummary::MigrationWorkflowSummary(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_templateIdHasBeenSet(false),
-    m_adsApplicationConfigurationNameHasBeenSet(false),
-    m_status(MigrationWorkflowStatusEnum::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_completedSteps(0),
-    m_completedStepsHasBeenSet(false),
-    m_totalSteps(0),
-    m_totalStepsHasBeenSet(false)
+MigrationWorkflowSummary::MigrationWorkflowSummary(JsonView jsonValue)
+  : MigrationWorkflowSummary()
 {
   *this = jsonValue;
 }

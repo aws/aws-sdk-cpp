@@ -25,10 +25,8 @@ FindingHistoryUpdate::FindingHistoryUpdate() :
 {
 }
 
-FindingHistoryUpdate::FindingHistoryUpdate(JsonView jsonValue) : 
-    m_updatedFieldHasBeenSet(false),
-    m_oldValueHasBeenSet(false),
-    m_newValueHasBeenSet(false)
+FindingHistoryUpdate::FindingHistoryUpdate(JsonView jsonValue)
+  : FindingHistoryUpdate()
 {
   *this = jsonValue;
 }

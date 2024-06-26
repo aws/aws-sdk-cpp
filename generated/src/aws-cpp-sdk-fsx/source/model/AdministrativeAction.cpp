@@ -40,22 +40,8 @@ AdministrativeAction::AdministrativeAction() :
 {
 }
 
-AdministrativeAction::AdministrativeAction(JsonView jsonValue) : 
-    m_administrativeActionType(AdministrativeActionType::NOT_SET),
-    m_administrativeActionTypeHasBeenSet(false),
-    m_progressPercent(0),
-    m_progressPercentHasBeenSet(false),
-    m_requestTimeHasBeenSet(false),
-    m_status(Status::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_targetFileSystemValuesHasBeenSet(false),
-    m_failureDetailsHasBeenSet(false),
-    m_targetVolumeValuesHasBeenSet(false),
-    m_targetSnapshotValuesHasBeenSet(false),
-    m_totalTransferBytes(0),
-    m_totalTransferBytesHasBeenSet(false),
-    m_remainingTransferBytes(0),
-    m_remainingTransferBytesHasBeenSet(false)
+AdministrativeAction::AdministrativeAction(JsonView jsonValue)
+  : AdministrativeAction()
 {
   *this = jsonValue;
 }

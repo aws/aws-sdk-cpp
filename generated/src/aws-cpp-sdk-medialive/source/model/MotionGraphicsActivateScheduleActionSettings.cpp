@@ -27,12 +27,8 @@ MotionGraphicsActivateScheduleActionSettings::MotionGraphicsActivateScheduleActi
 {
 }
 
-MotionGraphicsActivateScheduleActionSettings::MotionGraphicsActivateScheduleActionSettings(JsonView jsonValue) : 
-    m_duration(0),
-    m_durationHasBeenSet(false),
-    m_passwordParamHasBeenSet(false),
-    m_urlHasBeenSet(false),
-    m_usernameHasBeenSet(false)
+MotionGraphicsActivateScheduleActionSettings::MotionGraphicsActivateScheduleActionSettings(JsonView jsonValue)
+  : MotionGraphicsActivateScheduleActionSettings()
 {
   *this = jsonValue;
 }

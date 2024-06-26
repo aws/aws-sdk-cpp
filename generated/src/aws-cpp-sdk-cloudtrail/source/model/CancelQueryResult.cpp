@@ -22,8 +22,8 @@ CancelQueryResult::CancelQueryResult() :
 {
 }
 
-CancelQueryResult::CancelQueryResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_queryStatus(QueryStatus::NOT_SET)
+CancelQueryResult::CancelQueryResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CancelQueryResult()
 {
   *this = result;
 }

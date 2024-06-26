@@ -24,9 +24,8 @@ AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersCapabilitiesDetails::AwsE
 {
 }
 
-AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersCapabilitiesDetails::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersCapabilitiesDetails(JsonView jsonValue) : 
-    m_addHasBeenSet(false),
-    m_dropHasBeenSet(false)
+AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersCapabilitiesDetails::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersCapabilitiesDetails(JsonView jsonValue)
+  : AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersCapabilitiesDetails()
 {
   *this = jsonValue;
 }

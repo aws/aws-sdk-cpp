@@ -25,10 +25,8 @@ CommandFilter::CommandFilter() :
 {
 }
 
-CommandFilter::CommandFilter(JsonView jsonValue) : 
-    m_key(CommandFilterKey::NOT_SET),
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false)
+CommandFilter::CommandFilter(JsonView jsonValue)
+  : CommandFilter()
 {
   *this = jsonValue;
 }

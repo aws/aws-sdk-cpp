@@ -26,11 +26,8 @@ InferenceComponentRuntimeConfigSummary::InferenceComponentRuntimeConfigSummary()
 {
 }
 
-InferenceComponentRuntimeConfigSummary::InferenceComponentRuntimeConfigSummary(JsonView jsonValue) : 
-    m_desiredCopyCount(0),
-    m_desiredCopyCountHasBeenSet(false),
-    m_currentCopyCount(0),
-    m_currentCopyCountHasBeenSet(false)
+InferenceComponentRuntimeConfigSummary::InferenceComponentRuntimeConfigSummary(JsonView jsonValue)
+  : InferenceComponentRuntimeConfigSummary()
 {
   *this = jsonValue;
 }

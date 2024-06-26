@@ -25,10 +25,8 @@ OTAJobConfig::OTAJobConfig() :
 {
 }
 
-OTAJobConfig::OTAJobConfig(JsonView jsonValue) : 
-    m_allowMajorVersionUpdate(false),
-    m_allowMajorVersionUpdateHasBeenSet(false),
-    m_imageVersionHasBeenSet(false)
+OTAJobConfig::OTAJobConfig(JsonView jsonValue)
+  : OTAJobConfig()
 {
   *this = jsonValue;
 }

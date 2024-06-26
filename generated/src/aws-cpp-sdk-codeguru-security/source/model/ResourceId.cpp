@@ -23,8 +23,8 @@ ResourceId::ResourceId() :
 {
 }
 
-ResourceId::ResourceId(JsonView jsonValue) : 
-    m_codeArtifactIdHasBeenSet(false)
+ResourceId::ResourceId(JsonView jsonValue)
+  : ResourceId()
 {
   *this = jsonValue;
 }

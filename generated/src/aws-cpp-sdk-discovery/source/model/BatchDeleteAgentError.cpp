@@ -26,11 +26,8 @@ BatchDeleteAgentError::BatchDeleteAgentError() :
 {
 }
 
-BatchDeleteAgentError::BatchDeleteAgentError(JsonView jsonValue) : 
-    m_agentIdHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_errorCode(DeleteAgentErrorCode::NOT_SET),
-    m_errorCodeHasBeenSet(false)
+BatchDeleteAgentError::BatchDeleteAgentError(JsonView jsonValue)
+  : BatchDeleteAgentError()
 {
   *this = jsonValue;
 }

@@ -29,12 +29,8 @@ GpuDeviceInfo::GpuDeviceInfo() :
 {
 }
 
-GpuDeviceInfo::GpuDeviceInfo(const XmlNode& xmlNode) : 
-    m_nameHasBeenSet(false),
-    m_manufacturerHasBeenSet(false),
-    m_count(0),
-    m_countHasBeenSet(false),
-    m_memoryInfoHasBeenSet(false)
+GpuDeviceInfo::GpuDeviceInfo(const XmlNode& xmlNode)
+  : GpuDeviceInfo()
 {
   *this = xmlNode;
 }

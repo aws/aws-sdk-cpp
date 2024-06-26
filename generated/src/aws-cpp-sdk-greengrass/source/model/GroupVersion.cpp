@@ -29,14 +29,8 @@ GroupVersion::GroupVersion() :
 {
 }
 
-GroupVersion::GroupVersion(JsonView jsonValue) : 
-    m_connectorDefinitionVersionArnHasBeenSet(false),
-    m_coreDefinitionVersionArnHasBeenSet(false),
-    m_deviceDefinitionVersionArnHasBeenSet(false),
-    m_functionDefinitionVersionArnHasBeenSet(false),
-    m_loggerDefinitionVersionArnHasBeenSet(false),
-    m_resourceDefinitionVersionArnHasBeenSet(false),
-    m_subscriptionDefinitionVersionArnHasBeenSet(false)
+GroupVersion::GroupVersion(JsonView jsonValue)
+  : GroupVersion()
 {
   *this = jsonValue;
 }

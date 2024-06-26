@@ -24,9 +24,8 @@ DataModelS3Configuration::DataModelS3Configuration() :
 {
 }
 
-DataModelS3Configuration::DataModelS3Configuration(JsonView jsonValue) : 
-    m_bucketNameHasBeenSet(false),
-    m_objectKeyHasBeenSet(false)
+DataModelS3Configuration::DataModelS3Configuration(JsonView jsonValue)
+  : DataModelS3Configuration()
 {
   *this = jsonValue;
 }

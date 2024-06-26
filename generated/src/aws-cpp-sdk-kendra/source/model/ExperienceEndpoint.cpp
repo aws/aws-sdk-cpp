@@ -25,10 +25,8 @@ ExperienceEndpoint::ExperienceEndpoint() :
 {
 }
 
-ExperienceEndpoint::ExperienceEndpoint(JsonView jsonValue) : 
-    m_endpointType(EndpointType::NOT_SET),
-    m_endpointTypeHasBeenSet(false),
-    m_endpointHasBeenSet(false)
+ExperienceEndpoint::ExperienceEndpoint(JsonView jsonValue)
+  : ExperienceEndpoint()
 {
   *this = jsonValue;
 }

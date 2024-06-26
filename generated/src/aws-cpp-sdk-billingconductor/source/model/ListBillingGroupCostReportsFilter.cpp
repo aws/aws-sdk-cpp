@@ -23,8 +23,8 @@ ListBillingGroupCostReportsFilter::ListBillingGroupCostReportsFilter() :
 {
 }
 
-ListBillingGroupCostReportsFilter::ListBillingGroupCostReportsFilter(JsonView jsonValue) : 
-    m_billingGroupArnsHasBeenSet(false)
+ListBillingGroupCostReportsFilter::ListBillingGroupCostReportsFilter(JsonView jsonValue)
+  : ListBillingGroupCostReportsFilter()
 {
   *this = jsonValue;
 }

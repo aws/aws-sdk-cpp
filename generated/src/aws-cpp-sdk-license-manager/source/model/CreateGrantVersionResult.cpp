@@ -22,8 +22,8 @@ CreateGrantVersionResult::CreateGrantVersionResult() :
 {
 }
 
-CreateGrantVersionResult::CreateGrantVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(GrantStatus::NOT_SET)
+CreateGrantVersionResult::CreateGrantVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateGrantVersionResult()
 {
   *this = result;
 }

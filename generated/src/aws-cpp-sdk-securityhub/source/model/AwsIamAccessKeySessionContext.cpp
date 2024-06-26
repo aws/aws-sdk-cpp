@@ -24,9 +24,8 @@ AwsIamAccessKeySessionContext::AwsIamAccessKeySessionContext() :
 {
 }
 
-AwsIamAccessKeySessionContext::AwsIamAccessKeySessionContext(JsonView jsonValue) : 
-    m_attributesHasBeenSet(false),
-    m_sessionIssuerHasBeenSet(false)
+AwsIamAccessKeySessionContext::AwsIamAccessKeySessionContext(JsonView jsonValue)
+  : AwsIamAccessKeySessionContext()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ TrialSource::TrialSource() :
 {
 }
 
-TrialSource::TrialSource(JsonView jsonValue) : 
-    m_sourceArnHasBeenSet(false),
-    m_sourceTypeHasBeenSet(false)
+TrialSource::TrialSource(JsonView jsonValue)
+  : TrialSource()
 {
   *this = jsonValue;
 }

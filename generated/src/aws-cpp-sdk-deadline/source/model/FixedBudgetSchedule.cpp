@@ -24,9 +24,8 @@ FixedBudgetSchedule::FixedBudgetSchedule() :
 {
 }
 
-FixedBudgetSchedule::FixedBudgetSchedule(JsonView jsonValue) : 
-    m_endTimeHasBeenSet(false),
-    m_startTimeHasBeenSet(false)
+FixedBudgetSchedule::FixedBudgetSchedule(JsonView jsonValue)
+  : FixedBudgetSchedule()
 {
   *this = jsonValue;
 }

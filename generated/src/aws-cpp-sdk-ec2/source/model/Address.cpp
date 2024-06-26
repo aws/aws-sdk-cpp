@@ -39,22 +39,8 @@ Address::Address() :
 {
 }
 
-Address::Address(const XmlNode& xmlNode) : 
-    m_instanceIdHasBeenSet(false),
-    m_publicIpHasBeenSet(false),
-    m_allocationIdHasBeenSet(false),
-    m_associationIdHasBeenSet(false),
-    m_domain(DomainType::NOT_SET),
-    m_domainHasBeenSet(false),
-    m_networkInterfaceIdHasBeenSet(false),
-    m_networkInterfaceOwnerIdHasBeenSet(false),
-    m_privateIpAddressHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_publicIpv4PoolHasBeenSet(false),
-    m_networkBorderGroupHasBeenSet(false),
-    m_customerOwnedIpHasBeenSet(false),
-    m_customerOwnedIpv4PoolHasBeenSet(false),
-    m_carrierIpHasBeenSet(false)
+Address::Address(const XmlNode& xmlNode)
+  : Address()
 {
   *this = xmlNode;
 }

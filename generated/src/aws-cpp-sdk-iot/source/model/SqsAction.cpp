@@ -26,11 +26,8 @@ SqsAction::SqsAction() :
 {
 }
 
-SqsAction::SqsAction(JsonView jsonValue) : 
-    m_roleArnHasBeenSet(false),
-    m_queueUrlHasBeenSet(false),
-    m_useBase64(false),
-    m_useBase64HasBeenSet(false)
+SqsAction::SqsAction(JsonView jsonValue)
+  : SqsAction()
 {
   *this = jsonValue;
 }

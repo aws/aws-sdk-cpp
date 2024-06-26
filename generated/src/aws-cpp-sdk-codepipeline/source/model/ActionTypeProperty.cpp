@@ -32,17 +32,8 @@ ActionTypeProperty::ActionTypeProperty() :
 {
 }
 
-ActionTypeProperty::ActionTypeProperty(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_optional(false),
-    m_optionalHasBeenSet(false),
-    m_key(false),
-    m_keyHasBeenSet(false),
-    m_noEcho(false),
-    m_noEchoHasBeenSet(false),
-    m_queryable(false),
-    m_queryableHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+ActionTypeProperty::ActionTypeProperty(JsonView jsonValue)
+  : ActionTypeProperty()
 {
   *this = jsonValue;
 }

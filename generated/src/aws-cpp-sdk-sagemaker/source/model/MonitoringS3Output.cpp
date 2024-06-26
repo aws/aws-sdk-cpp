@@ -26,11 +26,8 @@ MonitoringS3Output::MonitoringS3Output() :
 {
 }
 
-MonitoringS3Output::MonitoringS3Output(JsonView jsonValue) : 
-    m_s3UriHasBeenSet(false),
-    m_localPathHasBeenSet(false),
-    m_s3UploadMode(ProcessingS3UploadMode::NOT_SET),
-    m_s3UploadModeHasBeenSet(false)
+MonitoringS3Output::MonitoringS3Output(JsonView jsonValue)
+  : MonitoringS3Output()
 {
   *this = jsonValue;
 }

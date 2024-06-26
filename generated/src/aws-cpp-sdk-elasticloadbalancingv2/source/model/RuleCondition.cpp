@@ -32,15 +32,8 @@ RuleCondition::RuleCondition() :
 {
 }
 
-RuleCondition::RuleCondition(const XmlNode& xmlNode) : 
-    m_fieldHasBeenSet(false),
-    m_valuesHasBeenSet(false),
-    m_hostHeaderConfigHasBeenSet(false),
-    m_pathPatternConfigHasBeenSet(false),
-    m_httpHeaderConfigHasBeenSet(false),
-    m_queryStringConfigHasBeenSet(false),
-    m_httpRequestMethodConfigHasBeenSet(false),
-    m_sourceIpConfigHasBeenSet(false)
+RuleCondition::RuleCondition(const XmlNode& xmlNode)
+  : RuleCondition()
 {
   *this = xmlNode;
 }

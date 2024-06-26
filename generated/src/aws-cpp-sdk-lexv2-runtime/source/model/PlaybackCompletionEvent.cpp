@@ -25,10 +25,8 @@ PlaybackCompletionEvent::PlaybackCompletionEvent() :
 {
 }
 
-PlaybackCompletionEvent::PlaybackCompletionEvent(JsonView jsonValue) : 
-    m_eventIdHasBeenSet(false),
-    m_clientTimestampMillis(0),
-    m_clientTimestampMillisHasBeenSet(false)
+PlaybackCompletionEvent::PlaybackCompletionEvent(JsonView jsonValue)
+  : PlaybackCompletionEvent()
 {
   *this = jsonValue;
 }

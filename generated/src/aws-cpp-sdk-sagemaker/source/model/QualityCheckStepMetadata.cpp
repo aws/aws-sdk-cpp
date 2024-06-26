@@ -34,19 +34,8 @@ QualityCheckStepMetadata::QualityCheckStepMetadata() :
 {
 }
 
-QualityCheckStepMetadata::QualityCheckStepMetadata(JsonView jsonValue) : 
-    m_checkTypeHasBeenSet(false),
-    m_baselineUsedForDriftCheckStatisticsHasBeenSet(false),
-    m_baselineUsedForDriftCheckConstraintsHasBeenSet(false),
-    m_calculatedBaselineStatisticsHasBeenSet(false),
-    m_calculatedBaselineConstraintsHasBeenSet(false),
-    m_modelPackageGroupNameHasBeenSet(false),
-    m_violationReportHasBeenSet(false),
-    m_checkJobArnHasBeenSet(false),
-    m_skipCheck(false),
-    m_skipCheckHasBeenSet(false),
-    m_registerNewBaseline(false),
-    m_registerNewBaselineHasBeenSet(false)
+QualityCheckStepMetadata::QualityCheckStepMetadata(JsonView jsonValue)
+  : QualityCheckStepMetadata()
 {
   *this = jsonValue;
 }

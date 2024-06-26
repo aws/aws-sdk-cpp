@@ -25,10 +25,8 @@ ServiceAccountTokenSummaryWithKey::ServiceAccountTokenSummaryWithKey() :
 {
 }
 
-ServiceAccountTokenSummaryWithKey::ServiceAccountTokenSummaryWithKey(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_keyHasBeenSet(false),
-    m_nameHasBeenSet(false)
+ServiceAccountTokenSummaryWithKey::ServiceAccountTokenSummaryWithKey(JsonView jsonValue)
+  : ServiceAccountTokenSummaryWithKey()
 {
   *this = jsonValue;
 }

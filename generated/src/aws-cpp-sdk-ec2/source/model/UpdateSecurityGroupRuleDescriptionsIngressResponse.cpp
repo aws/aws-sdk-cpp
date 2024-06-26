@@ -22,8 +22,8 @@ UpdateSecurityGroupRuleDescriptionsIngressResponse::UpdateSecurityGroupRuleDescr
 {
 }
 
-UpdateSecurityGroupRuleDescriptionsIngressResponse::UpdateSecurityGroupRuleDescriptionsIngressResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_return(false)
+UpdateSecurityGroupRuleDescriptionsIngressResponse::UpdateSecurityGroupRuleDescriptionsIngressResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : UpdateSecurityGroupRuleDescriptionsIngressResponse()
 {
   *this = result;
 }

@@ -24,9 +24,8 @@ TestSetIntentDiscrepancyItem::TestSetIntentDiscrepancyItem() :
 {
 }
 
-TestSetIntentDiscrepancyItem::TestSetIntentDiscrepancyItem(JsonView jsonValue) : 
-    m_intentNameHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
+TestSetIntentDiscrepancyItem::TestSetIntentDiscrepancyItem(JsonView jsonValue)
+  : TestSetIntentDiscrepancyItem()
 {
   *this = jsonValue;
 }

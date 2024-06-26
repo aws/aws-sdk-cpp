@@ -24,9 +24,8 @@ PredictionExplanations::PredictionExplanations() :
 {
 }
 
-PredictionExplanations::PredictionExplanations(JsonView jsonValue) : 
-    m_variableImpactExplanationsHasBeenSet(false),
-    m_aggregatedVariablesImpactExplanationsHasBeenSet(false)
+PredictionExplanations::PredictionExplanations(JsonView jsonValue)
+  : PredictionExplanations()
 {
   *this = jsonValue;
 }

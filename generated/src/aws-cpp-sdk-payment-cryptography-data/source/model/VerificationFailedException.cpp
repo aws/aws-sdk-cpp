@@ -25,10 +25,8 @@ VerificationFailedException::VerificationFailedException() :
 {
 }
 
-VerificationFailedException::VerificationFailedException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_reason(VerificationFailedReason::NOT_SET),
-    m_reasonHasBeenSet(false)
+VerificationFailedException::VerificationFailedException(JsonView jsonValue)
+  : VerificationFailedException()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ DriftCheckExplainability::DriftCheckExplainability() :
 {
 }
 
-DriftCheckExplainability::DriftCheckExplainability(JsonView jsonValue) : 
-    m_constraintsHasBeenSet(false),
-    m_configFileHasBeenSet(false)
+DriftCheckExplainability::DriftCheckExplainability(JsonView jsonValue)
+  : DriftCheckExplainability()
 {
   *this = jsonValue;
 }

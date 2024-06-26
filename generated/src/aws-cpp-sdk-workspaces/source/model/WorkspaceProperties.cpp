@@ -35,20 +35,8 @@ WorkspaceProperties::WorkspaceProperties() :
 {
 }
 
-WorkspaceProperties::WorkspaceProperties(JsonView jsonValue) : 
-    m_runningMode(RunningMode::NOT_SET),
-    m_runningModeHasBeenSet(false),
-    m_runningModeAutoStopTimeoutInMinutes(0),
-    m_runningModeAutoStopTimeoutInMinutesHasBeenSet(false),
-    m_rootVolumeSizeGib(0),
-    m_rootVolumeSizeGibHasBeenSet(false),
-    m_userVolumeSizeGib(0),
-    m_userVolumeSizeGibHasBeenSet(false),
-    m_computeTypeName(Compute::NOT_SET),
-    m_computeTypeNameHasBeenSet(false),
-    m_protocolsHasBeenSet(false),
-    m_operatingSystemName(OperatingSystemName::NOT_SET),
-    m_operatingSystemNameHasBeenSet(false)
+WorkspaceProperties::WorkspaceProperties(JsonView jsonValue)
+  : WorkspaceProperties()
 {
   *this = jsonValue;
 }

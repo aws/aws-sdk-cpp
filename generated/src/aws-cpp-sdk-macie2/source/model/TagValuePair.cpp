@@ -24,9 +24,8 @@ TagValuePair::TagValuePair() :
 {
 }
 
-TagValuePair::TagValuePair(JsonView jsonValue) : 
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false)
+TagValuePair::TagValuePair(JsonView jsonValue)
+  : TagValuePair()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ ListApplicationsResult::ListApplicationsResult() :
 {
 }
 
-ListApplicationsResult::ListApplicationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_hasMoreApplications(false)
+ListApplicationsResult::ListApplicationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ListApplicationsResult()
 {
   *this = result;
 }

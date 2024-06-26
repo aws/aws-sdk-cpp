@@ -26,11 +26,8 @@ Hit::Hit() :
 {
 }
 
-Hit::Hit(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_fieldsHasBeenSet(false),
-    m_exprsHasBeenSet(false),
-    m_highlightsHasBeenSet(false)
+Hit::Hit(JsonView jsonValue)
+  : Hit()
 {
   *this = jsonValue;
 }

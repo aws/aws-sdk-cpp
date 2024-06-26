@@ -34,19 +34,8 @@ SourceApiAssociation::SourceApiAssociation() :
 {
 }
 
-SourceApiAssociation::SourceApiAssociation(JsonView jsonValue) : 
-    m_associationIdHasBeenSet(false),
-    m_associationArnHasBeenSet(false),
-    m_sourceApiIdHasBeenSet(false),
-    m_sourceApiArnHasBeenSet(false),
-    m_mergedApiArnHasBeenSet(false),
-    m_mergedApiIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_sourceApiAssociationConfigHasBeenSet(false),
-    m_sourceApiAssociationStatus(SourceApiAssociationStatus::NOT_SET),
-    m_sourceApiAssociationStatusHasBeenSet(false),
-    m_sourceApiAssociationStatusDetailHasBeenSet(false),
-    m_lastSuccessfulMergeDateHasBeenSet(false)
+SourceApiAssociation::SourceApiAssociation(JsonView jsonValue)
+  : SourceApiAssociation()
 {
   *this = jsonValue;
 }

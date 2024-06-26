@@ -23,8 +23,8 @@ Matcher::Matcher() :
 {
 }
 
-Matcher::Matcher(JsonView jsonValue) : 
-    m_httpCodeHasBeenSet(false)
+Matcher::Matcher(JsonView jsonValue)
+  : Matcher()
 {
   *this = jsonValue;
 }

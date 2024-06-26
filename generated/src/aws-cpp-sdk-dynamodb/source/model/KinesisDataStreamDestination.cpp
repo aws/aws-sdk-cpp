@@ -28,13 +28,8 @@ KinesisDataStreamDestination::KinesisDataStreamDestination() :
 {
 }
 
-KinesisDataStreamDestination::KinesisDataStreamDestination(JsonView jsonValue) : 
-    m_streamArnHasBeenSet(false),
-    m_destinationStatus(DestinationStatus::NOT_SET),
-    m_destinationStatusHasBeenSet(false),
-    m_destinationStatusDescriptionHasBeenSet(false),
-    m_approximateCreationDateTimePrecision(ApproximateCreationDateTimePrecision::NOT_SET),
-    m_approximateCreationDateTimePrecisionHasBeenSet(false)
+KinesisDataStreamDestination::KinesisDataStreamDestination(JsonView jsonValue)
+  : KinesisDataStreamDestination()
 {
   *this = jsonValue;
 }

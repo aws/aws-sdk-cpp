@@ -24,9 +24,8 @@ ClientTlsCertificate::ClientTlsCertificate() :
 {
 }
 
-ClientTlsCertificate::ClientTlsCertificate(JsonView jsonValue) : 
-    m_fileHasBeenSet(false),
-    m_sdsHasBeenSet(false)
+ClientTlsCertificate::ClientTlsCertificate(JsonView jsonValue)
+  : ClientTlsCertificate()
 {
   *this = jsonValue;
 }

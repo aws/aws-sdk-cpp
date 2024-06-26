@@ -28,13 +28,8 @@ TagScopeTerm::TagScopeTerm() :
 {
 }
 
-TagScopeTerm::TagScopeTerm(JsonView jsonValue) : 
-    m_comparator(JobComparator::NOT_SET),
-    m_comparatorHasBeenSet(false),
-    m_keyHasBeenSet(false),
-    m_tagValuesHasBeenSet(false),
-    m_target(TagTarget::NOT_SET),
-    m_targetHasBeenSet(false)
+TagScopeTerm::TagScopeTerm(JsonView jsonValue)
+  : TagScopeTerm()
 {
   *this = jsonValue;
 }

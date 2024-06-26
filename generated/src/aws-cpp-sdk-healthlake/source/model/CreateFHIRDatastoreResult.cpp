@@ -22,8 +22,8 @@ CreateFHIRDatastoreResult::CreateFHIRDatastoreResult() :
 {
 }
 
-CreateFHIRDatastoreResult::CreateFHIRDatastoreResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_datastoreStatus(DatastoreStatus::NOT_SET)
+CreateFHIRDatastoreResult::CreateFHIRDatastoreResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateFHIRDatastoreResult()
 {
   *this = result;
 }

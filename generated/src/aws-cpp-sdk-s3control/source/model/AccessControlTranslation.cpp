@@ -26,9 +26,8 @@ AccessControlTranslation::AccessControlTranslation() :
 {
 }
 
-AccessControlTranslation::AccessControlTranslation(const XmlNode& xmlNode) : 
-    m_owner(OwnerOverride::NOT_SET),
-    m_ownerHasBeenSet(false)
+AccessControlTranslation::AccessControlTranslation(const XmlNode& xmlNode)
+  : AccessControlTranslation()
 {
   *this = xmlNode;
 }

@@ -30,15 +30,8 @@ Capacity::Capacity() :
 {
 }
 
-Capacity::Capacity(JsonView jsonValue) : 
-    m_used(0),
-    m_usedHasBeenSet(false),
-    m_provisioned(0),
-    m_provisionedHasBeenSet(false),
-    m_logicalUsed(0),
-    m_logicalUsedHasBeenSet(false),
-    m_clusterCloudStorageUsed(0),
-    m_clusterCloudStorageUsedHasBeenSet(false)
+Capacity::Capacity(JsonView jsonValue)
+  : Capacity()
 {
   *this = jsonValue;
 }

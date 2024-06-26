@@ -28,11 +28,8 @@ SnapshotDiskContainer::SnapshotDiskContainer() :
 {
 }
 
-SnapshotDiskContainer::SnapshotDiskContainer(const XmlNode& xmlNode) : 
-    m_descriptionHasBeenSet(false),
-    m_formatHasBeenSet(false),
-    m_urlHasBeenSet(false),
-    m_userBucketHasBeenSet(false)
+SnapshotDiskContainer::SnapshotDiskContainer(const XmlNode& xmlNode)
+  : SnapshotDiskContainer()
 {
   *this = xmlNode;
 }

@@ -24,9 +24,8 @@ ProtectedQueryError::ProtectedQueryError() :
 {
 }
 
-ProtectedQueryError::ProtectedQueryError(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_codeHasBeenSet(false)
+ProtectedQueryError::ProtectedQueryError(JsonView jsonValue)
+  : ProtectedQueryError()
 {
   *this = jsonValue;
 }

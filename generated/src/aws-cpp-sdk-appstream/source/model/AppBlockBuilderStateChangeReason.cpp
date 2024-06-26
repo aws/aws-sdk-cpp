@@ -25,10 +25,8 @@ AppBlockBuilderStateChangeReason::AppBlockBuilderStateChangeReason() :
 {
 }
 
-AppBlockBuilderStateChangeReason::AppBlockBuilderStateChangeReason(JsonView jsonValue) : 
-    m_code(AppBlockBuilderStateChangeReasonCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+AppBlockBuilderStateChangeReason::AppBlockBuilderStateChangeReason(JsonView jsonValue)
+  : AppBlockBuilderStateChangeReason()
 {
   *this = jsonValue;
 }

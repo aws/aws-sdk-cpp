@@ -24,9 +24,8 @@ NotificationChannel::NotificationChannel() :
 {
 }
 
-NotificationChannel::NotificationChannel(JsonView jsonValue) : 
-    m_sNSTopicArnHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
+NotificationChannel::NotificationChannel(JsonView jsonValue)
+  : NotificationChannel()
 {
   *this = jsonValue;
 }

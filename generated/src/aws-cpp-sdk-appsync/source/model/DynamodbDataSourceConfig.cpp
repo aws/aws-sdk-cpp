@@ -29,14 +29,8 @@ DynamodbDataSourceConfig::DynamodbDataSourceConfig() :
 {
 }
 
-DynamodbDataSourceConfig::DynamodbDataSourceConfig(JsonView jsonValue) : 
-    m_tableNameHasBeenSet(false),
-    m_awsRegionHasBeenSet(false),
-    m_useCallerCredentials(false),
-    m_useCallerCredentialsHasBeenSet(false),
-    m_deltaSyncConfigHasBeenSet(false),
-    m_versioned(false),
-    m_versionedHasBeenSet(false)
+DynamodbDataSourceConfig::DynamodbDataSourceConfig(JsonView jsonValue)
+  : DynamodbDataSourceConfig()
 {
   *this = jsonValue;
 }

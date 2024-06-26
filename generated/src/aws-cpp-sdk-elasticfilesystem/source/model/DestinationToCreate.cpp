@@ -26,11 +26,8 @@ DestinationToCreate::DestinationToCreate() :
 {
 }
 
-DestinationToCreate::DestinationToCreate(JsonView jsonValue) : 
-    m_regionHasBeenSet(false),
-    m_availabilityZoneNameHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_fileSystemIdHasBeenSet(false)
+DestinationToCreate::DestinationToCreate(JsonView jsonValue)
+  : DestinationToCreate()
 {
   *this = jsonValue;
 }

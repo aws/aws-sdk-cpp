@@ -26,11 +26,8 @@ CodeDeployDeployment::CodeDeployDeployment() :
 {
 }
 
-CodeDeployDeployment::CodeDeployDeployment(JsonView jsonValue) : 
-    m_deploymentGroupArnHasBeenSet(false),
-    m_deploymentIdHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_startTimeHasBeenSet(false)
+CodeDeployDeployment::CodeDeployDeployment(JsonView jsonValue)
+  : CodeDeployDeployment()
 {
   *this = jsonValue;
 }

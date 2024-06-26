@@ -31,14 +31,8 @@ ServiceSpecificCredentialMetadata::ServiceSpecificCredentialMetadata() :
 {
 }
 
-ServiceSpecificCredentialMetadata::ServiceSpecificCredentialMetadata(const XmlNode& xmlNode) : 
-    m_userNameHasBeenSet(false),
-    m_status(StatusType::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_serviceUserNameHasBeenSet(false),
-    m_createDateHasBeenSet(false),
-    m_serviceSpecificCredentialIdHasBeenSet(false),
-    m_serviceNameHasBeenSet(false)
+ServiceSpecificCredentialMetadata::ServiceSpecificCredentialMetadata(const XmlNode& xmlNode)
+  : ServiceSpecificCredentialMetadata()
 {
   *this = xmlNode;
 }

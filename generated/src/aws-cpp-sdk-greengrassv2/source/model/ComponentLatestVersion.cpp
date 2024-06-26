@@ -28,13 +28,8 @@ ComponentLatestVersion::ComponentLatestVersion() :
 {
 }
 
-ComponentLatestVersion::ComponentLatestVersion(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_componentVersionHasBeenSet(false),
-    m_creationTimestampHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_publisherHasBeenSet(false),
-    m_platformsHasBeenSet(false)
+ComponentLatestVersion::ComponentLatestVersion(JsonView jsonValue)
+  : ComponentLatestVersion()
 {
   *this = jsonValue;
 }

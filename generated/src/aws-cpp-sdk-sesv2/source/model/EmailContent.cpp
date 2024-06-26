@@ -25,10 +25,8 @@ EmailContent::EmailContent() :
 {
 }
 
-EmailContent::EmailContent(JsonView jsonValue) : 
-    m_simpleHasBeenSet(false),
-    m_rawHasBeenSet(false),
-    m_templateHasBeenSet(false)
+EmailContent::EmailContent(JsonView jsonValue)
+  : EmailContent()
 {
   *this = jsonValue;
 }

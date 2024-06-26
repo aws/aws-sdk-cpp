@@ -27,13 +27,8 @@ CreateBotVersionResult::CreateBotVersionResult() :
 {
 }
 
-CreateBotVersionResult::CreateBotVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(Status::NOT_SET),
-    m_idleSessionTTLInSeconds(0),
-    m_locale(Locale::NOT_SET),
-    m_childDirected(false),
-    m_enableModelImprovements(false),
-    m_detectSentiment(false)
+CreateBotVersionResult::CreateBotVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateBotVersionResult()
 {
   *this = result;
 }

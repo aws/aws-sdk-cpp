@@ -28,13 +28,8 @@ TranslationSettings::TranslationSettings() :
 {
 }
 
-TranslationSettings::TranslationSettings(JsonView jsonValue) : 
-    m_formality(Formality::NOT_SET),
-    m_formalityHasBeenSet(false),
-    m_profanity(Profanity::NOT_SET),
-    m_profanityHasBeenSet(false),
-    m_brevity(Brevity::NOT_SET),
-    m_brevityHasBeenSet(false)
+TranslationSettings::TranslationSettings(JsonView jsonValue)
+  : TranslationSettings()
 {
   *this = jsonValue;
 }

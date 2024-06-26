@@ -24,9 +24,8 @@ ApiKeyFilter::ApiKeyFilter() :
 {
 }
 
-ApiKeyFilter::ApiKeyFilter(JsonView jsonValue) : 
-    m_keyStatus(Status::NOT_SET),
-    m_keyStatusHasBeenSet(false)
+ApiKeyFilter::ApiKeyFilter(JsonView jsonValue)
+  : ApiKeyFilter()
 {
   *this = jsonValue;
 }

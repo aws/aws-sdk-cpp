@@ -25,10 +25,8 @@ RdsDataApiConfig::RdsDataApiConfig() :
 {
 }
 
-RdsDataApiConfig::RdsDataApiConfig(JsonView jsonValue) : 
-    m_resourceArnHasBeenSet(false),
-    m_secretArnHasBeenSet(false),
-    m_databaseNameHasBeenSet(false)
+RdsDataApiConfig::RdsDataApiConfig(JsonView jsonValue)
+  : RdsDataApiConfig()
 {
   *this = jsonValue;
 }

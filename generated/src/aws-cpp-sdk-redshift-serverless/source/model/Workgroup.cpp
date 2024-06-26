@@ -49,34 +49,8 @@ Workgroup::Workgroup() :
 {
 }
 
-Workgroup::Workgroup(JsonView jsonValue) : 
-    m_baseCapacity(0),
-    m_baseCapacityHasBeenSet(false),
-    m_configParametersHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_crossAccountVpcsHasBeenSet(false),
-    m_customDomainCertificateArnHasBeenSet(false),
-    m_customDomainCertificateExpiryTimeHasBeenSet(false),
-    m_customDomainNameHasBeenSet(false),
-    m_endpointHasBeenSet(false),
-    m_enhancedVpcRouting(false),
-    m_enhancedVpcRoutingHasBeenSet(false),
-    m_maxCapacity(0),
-    m_maxCapacityHasBeenSet(false),
-    m_namespaceNameHasBeenSet(false),
-    m_patchVersionHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_publiclyAccessible(false),
-    m_publiclyAccessibleHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false),
-    m_status(WorkgroupStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_subnetIdsHasBeenSet(false),
-    m_workgroupArnHasBeenSet(false),
-    m_workgroupIdHasBeenSet(false),
-    m_workgroupNameHasBeenSet(false),
-    m_workgroupVersionHasBeenSet(false)
+Workgroup::Workgroup(JsonView jsonValue)
+  : Workgroup()
 {
   *this = jsonValue;
 }

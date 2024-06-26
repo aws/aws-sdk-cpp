@@ -23,8 +23,8 @@ SuppressionOptions::SuppressionOptions() :
 {
 }
 
-SuppressionOptions::SuppressionOptions(JsonView jsonValue) : 
-    m_suppressedReasonsHasBeenSet(false)
+SuppressionOptions::SuppressionOptions(JsonView jsonValue)
+  : SuppressionOptions()
 {
   *this = jsonValue;
 }

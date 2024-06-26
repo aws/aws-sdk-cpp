@@ -23,8 +23,8 @@ PropertyNameQuery::PropertyNameQuery() :
 {
 }
 
-PropertyNameQuery::PropertyNameQuery(JsonView jsonValue) : 
-    m_propertyNameHintHasBeenSet(false)
+PropertyNameQuery::PropertyNameQuery(JsonView jsonValue)
+  : PropertyNameQuery()
 {
   *this = jsonValue;
 }

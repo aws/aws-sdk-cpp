@@ -22,8 +22,8 @@ DescribeIAMPolicyAssignmentResult::DescribeIAMPolicyAssignmentResult() :
 {
 }
 
-DescribeIAMPolicyAssignmentResult::DescribeIAMPolicyAssignmentResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+DescribeIAMPolicyAssignmentResult::DescribeIAMPolicyAssignmentResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeIAMPolicyAssignmentResult()
 {
   *this = result;
 }

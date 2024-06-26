@@ -24,9 +24,8 @@ DQStopJobOnFailureOptions::DQStopJobOnFailureOptions() :
 {
 }
 
-DQStopJobOnFailureOptions::DQStopJobOnFailureOptions(JsonView jsonValue) : 
-    m_stopJobOnFailureTiming(DQStopJobOnFailureTiming::NOT_SET),
-    m_stopJobOnFailureTimingHasBeenSet(false)
+DQStopJobOnFailureOptions::DQStopJobOnFailureOptions(JsonView jsonValue)
+  : DQStopJobOnFailureOptions()
 {
   *this = jsonValue;
 }

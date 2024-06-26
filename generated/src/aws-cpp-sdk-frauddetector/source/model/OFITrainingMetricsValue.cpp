@@ -24,9 +24,8 @@ OFITrainingMetricsValue::OFITrainingMetricsValue() :
 {
 }
 
-OFITrainingMetricsValue::OFITrainingMetricsValue(JsonView jsonValue) : 
-    m_metricDataPointsHasBeenSet(false),
-    m_modelPerformanceHasBeenSet(false)
+OFITrainingMetricsValue::OFITrainingMetricsValue(JsonView jsonValue)
+  : OFITrainingMetricsValue()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ StreamConfigurationSessionBackup::StreamConfigurationSessionBackup() :
 {
 }
 
-StreamConfigurationSessionBackup::StreamConfigurationSessionBackup(JsonView jsonValue) : 
-    m_maxBackupsToRetain(0),
-    m_maxBackupsToRetainHasBeenSet(false),
-    m_mode(SessionBackupMode::NOT_SET),
-    m_modeHasBeenSet(false)
+StreamConfigurationSessionBackup::StreamConfigurationSessionBackup(JsonView jsonValue)
+  : StreamConfigurationSessionBackup()
 {
   *this = jsonValue;
 }

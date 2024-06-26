@@ -24,9 +24,8 @@ ImageScanFindingsFilter::ImageScanFindingsFilter() :
 {
 }
 
-ImageScanFindingsFilter::ImageScanFindingsFilter(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+ImageScanFindingsFilter::ImageScanFindingsFilter(JsonView jsonValue)
+  : ImageScanFindingsFilter()
 {
   *this = jsonValue;
 }

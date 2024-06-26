@@ -22,8 +22,8 @@ UpdateAccountSettingsResult::UpdateAccountSettingsResult() :
 {
 }
 
-UpdateAccountSettingsResult::UpdateAccountSettingsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+UpdateAccountSettingsResult::UpdateAccountSettingsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateAccountSettingsResult()
 {
   *this = result;
 }

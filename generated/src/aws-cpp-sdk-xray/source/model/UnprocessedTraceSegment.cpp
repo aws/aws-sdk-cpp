@@ -25,10 +25,8 @@ UnprocessedTraceSegment::UnprocessedTraceSegment() :
 {
 }
 
-UnprocessedTraceSegment::UnprocessedTraceSegment(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_errorCodeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+UnprocessedTraceSegment::UnprocessedTraceSegment(JsonView jsonValue)
+  : UnprocessedTraceSegment()
 {
   *this = jsonValue;
 }

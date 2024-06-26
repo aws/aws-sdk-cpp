@@ -32,17 +32,8 @@ RuleSummary::RuleSummary() :
 {
 }
 
-RuleSummary::RuleSummary(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_ruleIdHasBeenSet(false),
-    m_ruleArnHasBeenSet(false),
-    m_eventSourceName(EventSourceName::NOT_SET),
-    m_eventSourceNameHasBeenSet(false),
-    m_publishStatus(RulePublishStatus::NOT_SET),
-    m_publishStatusHasBeenSet(false),
-    m_actionSummariesHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false)
+RuleSummary::RuleSummary(JsonView jsonValue)
+  : RuleSummary()
 {
   *this = jsonValue;
 }

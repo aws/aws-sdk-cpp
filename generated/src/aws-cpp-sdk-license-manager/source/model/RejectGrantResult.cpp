@@ -22,8 +22,8 @@ RejectGrantResult::RejectGrantResult() :
 {
 }
 
-RejectGrantResult::RejectGrantResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(GrantStatus::NOT_SET)
+RejectGrantResult::RejectGrantResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : RejectGrantResult()
 {
   *this = result;
 }

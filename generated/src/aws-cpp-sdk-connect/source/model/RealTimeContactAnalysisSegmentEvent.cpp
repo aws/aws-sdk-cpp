@@ -29,14 +29,8 @@ RealTimeContactAnalysisSegmentEvent::RealTimeContactAnalysisSegmentEvent() :
 {
 }
 
-RealTimeContactAnalysisSegmentEvent::RealTimeContactAnalysisSegmentEvent(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_participantIdHasBeenSet(false),
-    m_participantRole(ParticipantRole::NOT_SET),
-    m_participantRoleHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_eventTypeHasBeenSet(false),
-    m_timeHasBeenSet(false)
+RealTimeContactAnalysisSegmentEvent::RealTimeContactAnalysisSegmentEvent(JsonView jsonValue)
+  : RealTimeContactAnalysisSegmentEvent()
 {
   *this = jsonValue;
 }

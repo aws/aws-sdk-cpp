@@ -24,9 +24,8 @@ TracingConfigResponse::TracingConfigResponse() :
 {
 }
 
-TracingConfigResponse::TracingConfigResponse(JsonView jsonValue) : 
-    m_mode(TracingMode::NOT_SET),
-    m_modeHasBeenSet(false)
+TracingConfigResponse::TracingConfigResponse(JsonView jsonValue)
+  : TracingConfigResponse()
 {
   *this = jsonValue;
 }

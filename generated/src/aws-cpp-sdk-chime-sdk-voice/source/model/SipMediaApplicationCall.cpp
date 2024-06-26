@@ -23,8 +23,8 @@ SipMediaApplicationCall::SipMediaApplicationCall() :
 {
 }
 
-SipMediaApplicationCall::SipMediaApplicationCall(JsonView jsonValue) : 
-    m_transactionIdHasBeenSet(false)
+SipMediaApplicationCall::SipMediaApplicationCall(JsonView jsonValue)
+  : SipMediaApplicationCall()
 {
   *this = jsonValue;
 }

@@ -48,33 +48,8 @@ DeploymentGroupInfo::DeploymentGroupInfo() :
 {
 }
 
-DeploymentGroupInfo::DeploymentGroupInfo(JsonView jsonValue) : 
-    m_applicationNameHasBeenSet(false),
-    m_deploymentGroupIdHasBeenSet(false),
-    m_deploymentGroupNameHasBeenSet(false),
-    m_deploymentConfigNameHasBeenSet(false),
-    m_ec2TagFiltersHasBeenSet(false),
-    m_onPremisesInstanceTagFiltersHasBeenSet(false),
-    m_autoScalingGroupsHasBeenSet(false),
-    m_serviceRoleArnHasBeenSet(false),
-    m_targetRevisionHasBeenSet(false),
-    m_triggerConfigurationsHasBeenSet(false),
-    m_alarmConfigurationHasBeenSet(false),
-    m_autoRollbackConfigurationHasBeenSet(false),
-    m_deploymentStyleHasBeenSet(false),
-    m_outdatedInstancesStrategy(OutdatedInstancesStrategy::NOT_SET),
-    m_outdatedInstancesStrategyHasBeenSet(false),
-    m_blueGreenDeploymentConfigurationHasBeenSet(false),
-    m_loadBalancerInfoHasBeenSet(false),
-    m_lastSuccessfulDeploymentHasBeenSet(false),
-    m_lastAttemptedDeploymentHasBeenSet(false),
-    m_ec2TagSetHasBeenSet(false),
-    m_onPremisesTagSetHasBeenSet(false),
-    m_computePlatform(ComputePlatform::NOT_SET),
-    m_computePlatformHasBeenSet(false),
-    m_ecsServicesHasBeenSet(false),
-    m_terminationHookEnabled(false),
-    m_terminationHookEnabledHasBeenSet(false)
+DeploymentGroupInfo::DeploymentGroupInfo(JsonView jsonValue)
+  : DeploymentGroupInfo()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ HlsId3SegmentTaggingScheduleActionSettings::HlsId3SegmentTaggingScheduleActionSe
 {
 }
 
-HlsId3SegmentTaggingScheduleActionSettings::HlsId3SegmentTaggingScheduleActionSettings(JsonView jsonValue) : 
-    m_tagHasBeenSet(false),
-    m_id3HasBeenSet(false)
+HlsId3SegmentTaggingScheduleActionSettings::HlsId3SegmentTaggingScheduleActionSettings(JsonView jsonValue)
+  : HlsId3SegmentTaggingScheduleActionSettings()
 {
   *this = jsonValue;
 }

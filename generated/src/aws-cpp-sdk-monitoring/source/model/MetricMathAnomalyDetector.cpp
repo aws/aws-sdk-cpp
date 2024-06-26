@@ -25,8 +25,8 @@ MetricMathAnomalyDetector::MetricMathAnomalyDetector() :
 {
 }
 
-MetricMathAnomalyDetector::MetricMathAnomalyDetector(const XmlNode& xmlNode) : 
-    m_metricDataQueriesHasBeenSet(false)
+MetricMathAnomalyDetector::MetricMathAnomalyDetector(const XmlNode& xmlNode)
+  : MetricMathAnomalyDetector()
 {
   *this = xmlNode;
 }

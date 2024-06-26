@@ -31,16 +31,8 @@ InstanceTarget::InstanceTarget() :
 {
 }
 
-InstanceTarget::InstanceTarget(JsonView jsonValue) : 
-    m_deploymentIdHasBeenSet(false),
-    m_targetIdHasBeenSet(false),
-    m_targetArnHasBeenSet(false),
-    m_status(TargetStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false),
-    m_lifecycleEventsHasBeenSet(false),
-    m_instanceLabel(TargetLabel::NOT_SET),
-    m_instanceLabelHasBeenSet(false)
+InstanceTarget::InstanceTarget(JsonView jsonValue)
+  : InstanceTarget()
 {
   *this = jsonValue;
 }

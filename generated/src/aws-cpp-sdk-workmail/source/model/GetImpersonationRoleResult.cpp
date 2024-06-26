@@ -22,8 +22,8 @@ GetImpersonationRoleResult::GetImpersonationRoleResult() :
 {
 }
 
-GetImpersonationRoleResult::GetImpersonationRoleResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_type(ImpersonationRoleType::NOT_SET)
+GetImpersonationRoleResult::GetImpersonationRoleResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetImpersonationRoleResult()
 {
   *this = result;
 }

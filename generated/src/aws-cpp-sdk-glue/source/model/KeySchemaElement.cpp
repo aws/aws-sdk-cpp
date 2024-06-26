@@ -24,9 +24,8 @@ KeySchemaElement::KeySchemaElement() :
 {
 }
 
-KeySchemaElement::KeySchemaElement(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_typeHasBeenSet(false)
+KeySchemaElement::KeySchemaElement(JsonView jsonValue)
+  : KeySchemaElement()
 {
   *this = jsonValue;
 }

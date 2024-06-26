@@ -24,9 +24,8 @@ DataQuery::DataQuery() :
 {
 }
 
-DataQuery::DataQuery(JsonView jsonValue) : 
-    m_queryStatementHasBeenSet(false),
-    m_tableConfigurationsHasBeenSet(false)
+DataQuery::DataQuery(JsonView jsonValue)
+  : DataQuery()
 {
   *this = jsonValue;
 }

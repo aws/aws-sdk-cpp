@@ -24,9 +24,8 @@ SetTimerAction::SetTimerAction() :
 {
 }
 
-SetTimerAction::SetTimerAction(JsonView jsonValue) : 
-    m_timerNameHasBeenSet(false),
-    m_durationExpressionHasBeenSet(false)
+SetTimerAction::SetTimerAction(JsonView jsonValue)
+  : SetTimerAction()
 {
   *this = jsonValue;
 }

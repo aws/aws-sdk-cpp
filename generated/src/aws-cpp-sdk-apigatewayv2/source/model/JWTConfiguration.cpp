@@ -24,9 +24,8 @@ JWTConfiguration::JWTConfiguration() :
 {
 }
 
-JWTConfiguration::JWTConfiguration(JsonView jsonValue) : 
-    m_audienceHasBeenSet(false),
-    m_issuerHasBeenSet(false)
+JWTConfiguration::JWTConfiguration(JsonView jsonValue)
+  : JWTConfiguration()
 {
   *this = jsonValue;
 }

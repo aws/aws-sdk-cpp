@@ -28,13 +28,8 @@ VideoSelector::VideoSelector() :
 {
 }
 
-VideoSelector::VideoSelector(JsonView jsonValue) : 
-    m_colorSpace(VideoSelectorColorSpace::NOT_SET),
-    m_colorSpaceHasBeenSet(false),
-    m_colorSpaceSettingsHasBeenSet(false),
-    m_colorSpaceUsage(VideoSelectorColorSpaceUsage::NOT_SET),
-    m_colorSpaceUsageHasBeenSet(false),
-    m_selectorSettingsHasBeenSet(false)
+VideoSelector::VideoSelector(JsonView jsonValue)
+  : VideoSelector()
 {
   *this = jsonValue;
 }

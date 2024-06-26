@@ -25,10 +25,8 @@ VpcEndpoint::VpcEndpoint() :
 {
 }
 
-VpcEndpoint::VpcEndpoint(JsonView jsonValue) : 
-    m_vpcEndpointIdHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_vpcOptionsHasBeenSet(false)
+VpcEndpoint::VpcEndpoint(JsonView jsonValue)
+  : VpcEndpoint()
 {
   *this = jsonValue;
 }

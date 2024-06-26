@@ -24,9 +24,8 @@ ExpressionVariable::ExpressionVariable() :
 {
 }
 
-ExpressionVariable::ExpressionVariable(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
+ExpressionVariable::ExpressionVariable(JsonView jsonValue)
+  : ExpressionVariable()
 {
   *this = jsonValue;
 }

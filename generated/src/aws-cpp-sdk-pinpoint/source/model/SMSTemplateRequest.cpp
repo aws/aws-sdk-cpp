@@ -27,12 +27,8 @@ SMSTemplateRequest::SMSTemplateRequest() :
 {
 }
 
-SMSTemplateRequest::SMSTemplateRequest(JsonView jsonValue) : 
-    m_bodyHasBeenSet(false),
-    m_defaultSubstitutionsHasBeenSet(false),
-    m_recommenderIdHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_templateDescriptionHasBeenSet(false)
+SMSTemplateRequest::SMSTemplateRequest(JsonView jsonValue)
+  : SMSTemplateRequest()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ AssetPropertyValue::AssetPropertyValue() :
 {
 }
 
-AssetPropertyValue::AssetPropertyValue(JsonView jsonValue) : 
-    m_valueHasBeenSet(false),
-    m_timestampHasBeenSet(false),
-    m_quality(Quality::NOT_SET),
-    m_qualityHasBeenSet(false)
+AssetPropertyValue::AssetPropertyValue(JsonView jsonValue)
+  : AssetPropertyValue()
 {
   *this = jsonValue;
 }

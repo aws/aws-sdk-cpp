@@ -26,11 +26,8 @@ EksContainerVolumeMount::EksContainerVolumeMount() :
 {
 }
 
-EksContainerVolumeMount::EksContainerVolumeMount(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_mountPathHasBeenSet(false),
-    m_readOnly(false),
-    m_readOnlyHasBeenSet(false)
+EksContainerVolumeMount::EksContainerVolumeMount(JsonView jsonValue)
+  : EksContainerVolumeMount()
 {
   *this = jsonValue;
 }

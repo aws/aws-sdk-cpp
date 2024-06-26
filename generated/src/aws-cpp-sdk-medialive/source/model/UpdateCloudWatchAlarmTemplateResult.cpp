@@ -29,15 +29,8 @@ UpdateCloudWatchAlarmTemplateResult::UpdateCloudWatchAlarmTemplateResult() :
 {
 }
 
-UpdateCloudWatchAlarmTemplateResult::UpdateCloudWatchAlarmTemplateResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_comparisonOperator(CloudWatchAlarmTemplateComparisonOperator::NOT_SET),
-    m_datapointsToAlarm(0),
-    m_evaluationPeriods(0),
-    m_period(0),
-    m_statistic(CloudWatchAlarmTemplateStatistic::NOT_SET),
-    m_targetResourceType(CloudWatchAlarmTemplateTargetResourceType::NOT_SET),
-    m_threshold(0.0),
-    m_treatMissingData(CloudWatchAlarmTemplateTreatMissingData::NOT_SET)
+UpdateCloudWatchAlarmTemplateResult::UpdateCloudWatchAlarmTemplateResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateCloudWatchAlarmTemplateResult()
 {
   *this = result;
 }

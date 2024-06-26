@@ -29,14 +29,8 @@ JoinInstruction::JoinInstruction() :
 {
 }
 
-JoinInstruction::JoinInstruction(JsonView jsonValue) : 
-    m_leftOperandHasBeenSet(false),
-    m_rightOperandHasBeenSet(false),
-    m_leftJoinKeyPropertiesHasBeenSet(false),
-    m_rightJoinKeyPropertiesHasBeenSet(false),
-    m_type(JoinType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_onClauseHasBeenSet(false)
+JoinInstruction::JoinInstruction(JsonView jsonValue)
+  : JoinInstruction()
 {
   *this = jsonValue;
 }

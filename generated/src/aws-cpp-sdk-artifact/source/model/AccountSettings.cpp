@@ -24,9 +24,8 @@ AccountSettings::AccountSettings() :
 {
 }
 
-AccountSettings::AccountSettings(JsonView jsonValue) : 
-    m_notificationSubscriptionStatus(NotificationSubscriptionStatus::NOT_SET),
-    m_notificationSubscriptionStatusHasBeenSet(false)
+AccountSettings::AccountSettings(JsonView jsonValue)
+  : AccountSettings()
 {
   *this = jsonValue;
 }

@@ -35,20 +35,8 @@ CallAnalyticsItem::CallAnalyticsItem() :
 {
 }
 
-CallAnalyticsItem::CallAnalyticsItem(JsonView jsonValue) : 
-    m_beginOffsetMillis(0),
-    m_beginOffsetMillisHasBeenSet(false),
-    m_endOffsetMillis(0),
-    m_endOffsetMillisHasBeenSet(false),
-    m_type(ItemType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_contentHasBeenSet(false),
-    m_confidence(0.0),
-    m_confidenceHasBeenSet(false),
-    m_vocabularyFilterMatch(false),
-    m_vocabularyFilterMatchHasBeenSet(false),
-    m_stable(false),
-    m_stableHasBeenSet(false)
+CallAnalyticsItem::CallAnalyticsItem(JsonView jsonValue)
+  : CallAnalyticsItem()
 {
   *this = jsonValue;
 }

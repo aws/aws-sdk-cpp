@@ -22,8 +22,8 @@ UpdateRoleCustomPermissionResult::UpdateRoleCustomPermissionResult() :
 {
 }
 
-UpdateRoleCustomPermissionResult::UpdateRoleCustomPermissionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+UpdateRoleCustomPermissionResult::UpdateRoleCustomPermissionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateRoleCustomPermissionResult()
 {
   *this = result;
 }

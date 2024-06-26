@@ -26,11 +26,8 @@ GetContentModerationRequestMetadata::GetContentModerationRequestMetadata() :
 {
 }
 
-GetContentModerationRequestMetadata::GetContentModerationRequestMetadata(JsonView jsonValue) : 
-    m_sortBy(ContentModerationSortBy::NOT_SET),
-    m_sortByHasBeenSet(false),
-    m_aggregateBy(ContentModerationAggregateBy::NOT_SET),
-    m_aggregateByHasBeenSet(false)
+GetContentModerationRequestMetadata::GetContentModerationRequestMetadata(JsonView jsonValue)
+  : GetContentModerationRequestMetadata()
 {
   *this = jsonValue;
 }

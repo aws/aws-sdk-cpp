@@ -27,12 +27,8 @@ Group::Group() :
 {
 }
 
-Group::Group(JsonView jsonValue) : 
-    m_groupIdHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_externalIdsHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_identityStoreIdHasBeenSet(false)
+Group::Group(JsonView jsonValue)
+  : Group()
 {
   *this = jsonValue;
 }

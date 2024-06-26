@@ -25,10 +25,8 @@ DailyVolume::DailyVolume() :
 {
 }
 
-DailyVolume::DailyVolume(JsonView jsonValue) : 
-    m_startDateHasBeenSet(false),
-    m_volumeStatisticsHasBeenSet(false),
-    m_domainIspPlacementsHasBeenSet(false)
+DailyVolume::DailyVolume(JsonView jsonValue)
+  : DailyVolume()
 {
   *this = jsonValue;
 }

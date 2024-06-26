@@ -23,8 +23,8 @@ PinpointDestination::PinpointDestination() :
 {
 }
 
-PinpointDestination::PinpointDestination(JsonView jsonValue) : 
-    m_applicationArnHasBeenSet(false)
+PinpointDestination::PinpointDestination(JsonView jsonValue)
+  : PinpointDestination()
 {
   *this = jsonValue;
 }

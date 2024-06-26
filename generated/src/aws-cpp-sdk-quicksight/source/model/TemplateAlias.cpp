@@ -26,11 +26,8 @@ TemplateAlias::TemplateAlias() :
 {
 }
 
-TemplateAlias::TemplateAlias(JsonView jsonValue) : 
-    m_aliasNameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_templateVersionNumber(0),
-    m_templateVersionNumberHasBeenSet(false)
+TemplateAlias::TemplateAlias(JsonView jsonValue)
+  : TemplateAlias()
 {
   *this = jsonValue;
 }

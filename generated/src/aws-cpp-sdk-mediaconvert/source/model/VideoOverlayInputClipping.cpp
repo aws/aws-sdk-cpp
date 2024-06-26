@@ -24,9 +24,8 @@ VideoOverlayInputClipping::VideoOverlayInputClipping() :
 {
 }
 
-VideoOverlayInputClipping::VideoOverlayInputClipping(JsonView jsonValue) : 
-    m_endTimecodeHasBeenSet(false),
-    m_startTimecodeHasBeenSet(false)
+VideoOverlayInputClipping::VideoOverlayInputClipping(JsonView jsonValue)
+  : VideoOverlayInputClipping()
 {
   *this = jsonValue;
 }

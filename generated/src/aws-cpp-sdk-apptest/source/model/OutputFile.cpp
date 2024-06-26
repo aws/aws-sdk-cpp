@@ -23,8 +23,8 @@ OutputFile::OutputFile() :
 {
 }
 
-OutputFile::OutputFile(JsonView jsonValue) : 
-    m_fileLocationHasBeenSet(false)
+OutputFile::OutputFile(JsonView jsonValue)
+  : OutputFile()
 {
   *this = jsonValue;
 }

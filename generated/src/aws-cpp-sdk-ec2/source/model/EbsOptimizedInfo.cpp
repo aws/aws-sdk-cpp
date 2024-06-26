@@ -36,19 +36,8 @@ EbsOptimizedInfo::EbsOptimizedInfo() :
 {
 }
 
-EbsOptimizedInfo::EbsOptimizedInfo(const XmlNode& xmlNode) : 
-    m_baselineBandwidthInMbps(0),
-    m_baselineBandwidthInMbpsHasBeenSet(false),
-    m_baselineThroughputInMBps(0.0),
-    m_baselineThroughputInMBpsHasBeenSet(false),
-    m_baselineIops(0),
-    m_baselineIopsHasBeenSet(false),
-    m_maximumBandwidthInMbps(0),
-    m_maximumBandwidthInMbpsHasBeenSet(false),
-    m_maximumThroughputInMBps(0.0),
-    m_maximumThroughputInMBpsHasBeenSet(false),
-    m_maximumIops(0),
-    m_maximumIopsHasBeenSet(false)
+EbsOptimizedInfo::EbsOptimizedInfo(const XmlNode& xmlNode)
+  : EbsOptimizedInfo()
 {
   *this = xmlNode;
 }

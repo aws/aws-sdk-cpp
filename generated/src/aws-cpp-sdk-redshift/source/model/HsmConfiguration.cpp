@@ -29,12 +29,8 @@ HsmConfiguration::HsmConfiguration() :
 {
 }
 
-HsmConfiguration::HsmConfiguration(const XmlNode& xmlNode) : 
-    m_hsmConfigurationIdentifierHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_hsmIpAddressHasBeenSet(false),
-    m_hsmPartitionNameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+HsmConfiguration::HsmConfiguration(const XmlNode& xmlNode)
+  : HsmConfiguration()
 {
   *this = xmlNode;
 }

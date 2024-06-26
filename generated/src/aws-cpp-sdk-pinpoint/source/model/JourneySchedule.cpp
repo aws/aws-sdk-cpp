@@ -25,10 +25,8 @@ JourneySchedule::JourneySchedule() :
 {
 }
 
-JourneySchedule::JourneySchedule(JsonView jsonValue) : 
-    m_endTimeHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_timezoneHasBeenSet(false)
+JourneySchedule::JourneySchedule(JsonView jsonValue)
+  : JourneySchedule()
 {
   *this = jsonValue;
 }

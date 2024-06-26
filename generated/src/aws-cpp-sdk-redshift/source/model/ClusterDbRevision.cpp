@@ -28,11 +28,8 @@ ClusterDbRevision::ClusterDbRevision() :
 {
 }
 
-ClusterDbRevision::ClusterDbRevision(const XmlNode& xmlNode) : 
-    m_clusterIdentifierHasBeenSet(false),
-    m_currentDatabaseRevisionHasBeenSet(false),
-    m_databaseRevisionReleaseDateHasBeenSet(false),
-    m_revisionTargetsHasBeenSet(false)
+ClusterDbRevision::ClusterDbRevision(const XmlNode& xmlNode)
+  : ClusterDbRevision()
 {
   *this = xmlNode;
 }

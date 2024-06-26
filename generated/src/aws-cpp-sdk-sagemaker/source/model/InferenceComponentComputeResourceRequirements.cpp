@@ -30,15 +30,8 @@ InferenceComponentComputeResourceRequirements::InferenceComponentComputeResource
 {
 }
 
-InferenceComponentComputeResourceRequirements::InferenceComponentComputeResourceRequirements(JsonView jsonValue) : 
-    m_numberOfCpuCoresRequired(0.0),
-    m_numberOfCpuCoresRequiredHasBeenSet(false),
-    m_numberOfAcceleratorDevicesRequired(0.0),
-    m_numberOfAcceleratorDevicesRequiredHasBeenSet(false),
-    m_minMemoryRequiredInMb(0),
-    m_minMemoryRequiredInMbHasBeenSet(false),
-    m_maxMemoryRequiredInMb(0),
-    m_maxMemoryRequiredInMbHasBeenSet(false)
+InferenceComponentComputeResourceRequirements::InferenceComponentComputeResourceRequirements(JsonView jsonValue)
+  : InferenceComponentComputeResourceRequirements()
 {
   *this = jsonValue;
 }

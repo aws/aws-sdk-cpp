@@ -36,21 +36,8 @@ CommandPlugin::CommandPlugin() :
 {
 }
 
-CommandPlugin::CommandPlugin(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_status(CommandPluginStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusDetailsHasBeenSet(false),
-    m_responseCode(0),
-    m_responseCodeHasBeenSet(false),
-    m_responseStartDateTimeHasBeenSet(false),
-    m_responseFinishDateTimeHasBeenSet(false),
-    m_outputHasBeenSet(false),
-    m_standardOutputUrlHasBeenSet(false),
-    m_standardErrorUrlHasBeenSet(false),
-    m_outputS3RegionHasBeenSet(false),
-    m_outputS3BucketNameHasBeenSet(false),
-    m_outputS3KeyPrefixHasBeenSet(false)
+CommandPlugin::CommandPlugin(JsonView jsonValue)
+  : CommandPlugin()
 {
   *this = jsonValue;
 }

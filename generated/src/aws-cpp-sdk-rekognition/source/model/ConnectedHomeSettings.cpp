@@ -25,10 +25,8 @@ ConnectedHomeSettings::ConnectedHomeSettings() :
 {
 }
 
-ConnectedHomeSettings::ConnectedHomeSettings(JsonView jsonValue) : 
-    m_labelsHasBeenSet(false),
-    m_minConfidence(0.0),
-    m_minConfidenceHasBeenSet(false)
+ConnectedHomeSettings::ConnectedHomeSettings(JsonView jsonValue)
+  : ConnectedHomeSettings()
 {
   *this = jsonValue;
 }

@@ -31,16 +31,8 @@ OfferSummary::OfferSummary() :
 {
 }
 
-OfferSummary::OfferSummary(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_productIdHasBeenSet(false),
-    m_resaleAuthorizationIdHasBeenSet(false),
-    m_releaseDateHasBeenSet(false),
-    m_availabilityEndDateHasBeenSet(false),
-    m_buyerAccountsHasBeenSet(false),
-    m_state(OfferStateString::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_targetingHasBeenSet(false)
+OfferSummary::OfferSummary(JsonView jsonValue)
+  : OfferSummary()
 {
   *this = jsonValue;
 }

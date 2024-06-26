@@ -30,15 +30,8 @@ ProfileSummary::ProfileSummary() :
 {
 }
 
-ProfileSummary::ProfileSummary(JsonView jsonValue) : 
-    m_profileIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_businessNameHasBeenSet(false),
-    m_logging(Logging::NOT_SET),
-    m_loggingHasBeenSet(false),
-    m_logGroupNameHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_modifiedAtHasBeenSet(false)
+ProfileSummary::ProfileSummary(JsonView jsonValue)
+  : ProfileSummary()
 {
   *this = jsonValue;
 }

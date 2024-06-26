@@ -25,10 +25,8 @@ EventDimensions::EventDimensions() :
 {
 }
 
-EventDimensions::EventDimensions(JsonView jsonValue) : 
-    m_attributesHasBeenSet(false),
-    m_eventTypeHasBeenSet(false),
-    m_metricsHasBeenSet(false)
+EventDimensions::EventDimensions(JsonView jsonValue)
+  : EventDimensions()
 {
   *this = jsonValue;
 }

@@ -23,9 +23,8 @@ TestInvokeAuthorizerResult::TestInvokeAuthorizerResult() :
 {
 }
 
-TestInvokeAuthorizerResult::TestInvokeAuthorizerResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_clientStatus(0),
-    m_latency(0)
+TestInvokeAuthorizerResult::TestInvokeAuthorizerResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : TestInvokeAuthorizerResult()
 {
   *this = result;
 }

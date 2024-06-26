@@ -25,10 +25,8 @@ PolicyAttachment::PolicyAttachment() :
 {
 }
 
-PolicyAttachment::PolicyAttachment(JsonView jsonValue) : 
-    m_policyIdHasBeenSet(false),
-    m_objectIdentifierHasBeenSet(false),
-    m_policyTypeHasBeenSet(false)
+PolicyAttachment::PolicyAttachment(JsonView jsonValue)
+  : PolicyAttachment()
 {
   *this = jsonValue;
 }

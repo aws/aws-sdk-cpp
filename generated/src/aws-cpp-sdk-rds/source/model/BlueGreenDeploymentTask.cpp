@@ -26,9 +26,8 @@ BlueGreenDeploymentTask::BlueGreenDeploymentTask() :
 {
 }
 
-BlueGreenDeploymentTask::BlueGreenDeploymentTask(const XmlNode& xmlNode) : 
-    m_nameHasBeenSet(false),
-    m_statusHasBeenSet(false)
+BlueGreenDeploymentTask::BlueGreenDeploymentTask(const XmlNode& xmlNode)
+  : BlueGreenDeploymentTask()
 {
   *this = xmlNode;
 }

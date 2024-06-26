@@ -27,13 +27,8 @@ UpdateDbInstanceResult::UpdateDbInstanceResult() :
 {
 }
 
-UpdateDbInstanceResult::UpdateDbInstanceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(Status::NOT_SET),
-    m_dbInstanceType(DbInstanceType::NOT_SET),
-    m_dbStorageType(DbStorageType::NOT_SET),
-    m_allocatedStorage(0),
-    m_deploymentType(DeploymentType::NOT_SET),
-    m_publiclyAccessible(false)
+UpdateDbInstanceResult::UpdateDbInstanceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateDbInstanceResult()
 {
   *this = result;
 }

@@ -24,9 +24,8 @@ FleetAttributeCapability::FleetAttributeCapability() :
 {
 }
 
-FleetAttributeCapability::FleetAttributeCapability(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+FleetAttributeCapability::FleetAttributeCapability(JsonView jsonValue)
+  : FleetAttributeCapability()
 {
   *this = jsonValue;
 }

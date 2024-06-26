@@ -22,8 +22,8 @@ CreateProfileResult::CreateProfileResult() :
 {
 }
 
-CreateProfileResult::CreateProfileResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_logging(Logging::NOT_SET)
+CreateProfileResult::CreateProfileResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateProfileResult()
 {
   *this = result;
 }

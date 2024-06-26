@@ -24,9 +24,8 @@ SpaceSharingSettingsSummary::SpaceSharingSettingsSummary() :
 {
 }
 
-SpaceSharingSettingsSummary::SpaceSharingSettingsSummary(JsonView jsonValue) : 
-    m_sharingType(SharingType::NOT_SET),
-    m_sharingTypeHasBeenSet(false)
+SpaceSharingSettingsSummary::SpaceSharingSettingsSummary(JsonView jsonValue)
+  : SpaceSharingSettingsSummary()
 {
   *this = jsonValue;
 }

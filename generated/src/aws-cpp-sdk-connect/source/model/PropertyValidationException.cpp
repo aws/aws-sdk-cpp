@@ -24,9 +24,8 @@ PropertyValidationException::PropertyValidationException() :
 {
 }
 
-PropertyValidationException::PropertyValidationException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_propertyListHasBeenSet(false)
+PropertyValidationException::PropertyValidationException(JsonView jsonValue)
+  : PropertyValidationException()
 {
   *this = jsonValue;
 }

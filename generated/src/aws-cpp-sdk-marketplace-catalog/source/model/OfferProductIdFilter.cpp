@@ -23,8 +23,8 @@ OfferProductIdFilter::OfferProductIdFilter() :
 {
 }
 
-OfferProductIdFilter::OfferProductIdFilter(JsonView jsonValue) : 
-    m_valueListHasBeenSet(false)
+OfferProductIdFilter::OfferProductIdFilter(JsonView jsonValue)
+  : OfferProductIdFilter()
 {
   *this = jsonValue;
 }

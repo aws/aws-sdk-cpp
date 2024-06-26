@@ -26,11 +26,8 @@ CurrentMetricSortCriteria::CurrentMetricSortCriteria() :
 {
 }
 
-CurrentMetricSortCriteria::CurrentMetricSortCriteria(JsonView jsonValue) : 
-    m_sortByMetric(CurrentMetricName::NOT_SET),
-    m_sortByMetricHasBeenSet(false),
-    m_sortOrder(SortOrder::NOT_SET),
-    m_sortOrderHasBeenSet(false)
+CurrentMetricSortCriteria::CurrentMetricSortCriteria(JsonView jsonValue)
+  : CurrentMetricSortCriteria()
 {
   *this = jsonValue;
 }

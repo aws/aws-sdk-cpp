@@ -26,11 +26,8 @@ SOARecord::SOARecord() :
 {
 }
 
-SOARecord::SOARecord(JsonView jsonValue) : 
-    m_primaryNameServerHasBeenSet(false),
-    m_adminEmailHasBeenSet(false),
-    m_serialNumber(0),
-    m_serialNumberHasBeenSet(false)
+SOARecord::SOARecord(JsonView jsonValue)
+  : SOARecord()
 {
   *this = jsonValue;
 }

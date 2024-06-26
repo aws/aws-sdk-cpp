@@ -29,14 +29,8 @@ Volume::Volume() :
 {
 }
 
-Volume::Volume(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_hostHasBeenSet(false),
-    m_dockerVolumeConfigurationHasBeenSet(false),
-    m_efsVolumeConfigurationHasBeenSet(false),
-    m_fsxWindowsFileServerVolumeConfigurationHasBeenSet(false),
-    m_configuredAtLaunch(false),
-    m_configuredAtLaunchHasBeenSet(false)
+Volume::Volume(JsonView jsonValue)
+  : Volume()
 {
   *this = jsonValue;
 }

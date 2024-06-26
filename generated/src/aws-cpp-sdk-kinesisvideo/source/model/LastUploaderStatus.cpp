@@ -27,12 +27,8 @@ LastUploaderStatus::LastUploaderStatus() :
 {
 }
 
-LastUploaderStatus::LastUploaderStatus(JsonView jsonValue) : 
-    m_jobStatusDetailsHasBeenSet(false),
-    m_lastCollectedTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_uploaderStatus(UploaderStatus::NOT_SET),
-    m_uploaderStatusHasBeenSet(false)
+LastUploaderStatus::LastUploaderStatus(JsonView jsonValue)
+  : LastUploaderStatus()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ UpdateVehicleError::UpdateVehicleError() :
 {
 }
 
-UpdateVehicleError::UpdateVehicleError(JsonView jsonValue) : 
-    m_vehicleNameHasBeenSet(false),
-    m_code(0),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+UpdateVehicleError::UpdateVehicleError(JsonView jsonValue)
+  : UpdateVehicleError()
 {
   *this = jsonValue;
 }

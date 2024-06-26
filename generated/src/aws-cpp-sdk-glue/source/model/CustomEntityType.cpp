@@ -25,10 +25,8 @@ CustomEntityType::CustomEntityType() :
 {
 }
 
-CustomEntityType::CustomEntityType(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_regexStringHasBeenSet(false),
-    m_contextWordsHasBeenSet(false)
+CustomEntityType::CustomEntityType(JsonView jsonValue)
+  : CustomEntityType()
 {
   *this = jsonValue;
 }

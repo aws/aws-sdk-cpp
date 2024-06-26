@@ -25,10 +25,8 @@ CurrentMetricData::CurrentMetricData() :
 {
 }
 
-CurrentMetricData::CurrentMetricData(JsonView jsonValue) : 
-    m_metricHasBeenSet(false),
-    m_value(0.0),
-    m_valueHasBeenSet(false)
+CurrentMetricData::CurrentMetricData(JsonView jsonValue)
+  : CurrentMetricData()
 {
   *this = jsonValue;
 }

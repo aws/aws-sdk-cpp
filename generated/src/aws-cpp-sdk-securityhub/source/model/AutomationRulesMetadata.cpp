@@ -34,19 +34,8 @@ AutomationRulesMetadata::AutomationRulesMetadata() :
 {
 }
 
-AutomationRulesMetadata::AutomationRulesMetadata(JsonView jsonValue) : 
-    m_ruleArnHasBeenSet(false),
-    m_ruleStatus(RuleStatus::NOT_SET),
-    m_ruleStatusHasBeenSet(false),
-    m_ruleOrder(0),
-    m_ruleOrderHasBeenSet(false),
-    m_ruleNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_isTerminal(false),
-    m_isTerminalHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_createdByHasBeenSet(false)
+AutomationRulesMetadata::AutomationRulesMetadata(JsonView jsonValue)
+  : AutomationRulesMetadata()
 {
   *this = jsonValue;
 }

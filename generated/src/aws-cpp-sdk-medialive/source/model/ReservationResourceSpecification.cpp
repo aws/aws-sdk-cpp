@@ -38,23 +38,8 @@ ReservationResourceSpecification::ReservationResourceSpecification() :
 {
 }
 
-ReservationResourceSpecification::ReservationResourceSpecification(JsonView jsonValue) : 
-    m_channelClass(ChannelClass::NOT_SET),
-    m_channelClassHasBeenSet(false),
-    m_codec(ReservationCodec::NOT_SET),
-    m_codecHasBeenSet(false),
-    m_maximumBitrate(ReservationMaximumBitrate::NOT_SET),
-    m_maximumBitrateHasBeenSet(false),
-    m_maximumFramerate(ReservationMaximumFramerate::NOT_SET),
-    m_maximumFramerateHasBeenSet(false),
-    m_resolution(ReservationResolution::NOT_SET),
-    m_resolutionHasBeenSet(false),
-    m_resourceType(ReservationResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_specialFeature(ReservationSpecialFeature::NOT_SET),
-    m_specialFeatureHasBeenSet(false),
-    m_videoQuality(ReservationVideoQuality::NOT_SET),
-    m_videoQualityHasBeenSet(false)
+ReservationResourceSpecification::ReservationResourceSpecification(JsonView jsonValue)
+  : ReservationResourceSpecification()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ ListWavesRequestFilters::ListWavesRequestFilters() :
 {
 }
 
-ListWavesRequestFilters::ListWavesRequestFilters(JsonView jsonValue) : 
-    m_isArchived(false),
-    m_isArchivedHasBeenSet(false),
-    m_waveIDsHasBeenSet(false)
+ListWavesRequestFilters::ListWavesRequestFilters(JsonView jsonValue)
+  : ListWavesRequestFilters()
 {
   *this = jsonValue;
 }

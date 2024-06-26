@@ -24,9 +24,8 @@ ExperimentTemplateStopCondition::ExperimentTemplateStopCondition() :
 {
 }
 
-ExperimentTemplateStopCondition::ExperimentTemplateStopCondition(JsonView jsonValue) : 
-    m_sourceHasBeenSet(false),
-    m_valueHasBeenSet(false)
+ExperimentTemplateStopCondition::ExperimentTemplateStopCondition(JsonView jsonValue)
+  : ExperimentTemplateStopCondition()
 {
   *this = jsonValue;
 }

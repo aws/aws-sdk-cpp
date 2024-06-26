@@ -24,9 +24,8 @@ CloudFormationStepSummary::CloudFormationStepSummary() :
 {
 }
 
-CloudFormationStepSummary::CloudFormationStepSummary(JsonView jsonValue) : 
-    m_createCloudformationHasBeenSet(false),
-    m_deleteCloudformationHasBeenSet(false)
+CloudFormationStepSummary::CloudFormationStepSummary(JsonView jsonValue)
+  : CloudFormationStepSummary()
 {
   *this = jsonValue;
 }

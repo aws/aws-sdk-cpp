@@ -27,12 +27,8 @@ M2ManagedApplication::M2ManagedApplication() :
 {
 }
 
-M2ManagedApplication::M2ManagedApplication(JsonView jsonValue) : 
-    m_applicationIdHasBeenSet(false),
-    m_runtime(M2ManagedRuntime::NOT_SET),
-    m_runtimeHasBeenSet(false),
-    m_vpcEndpointServiceNameHasBeenSet(false),
-    m_listenerPortHasBeenSet(false)
+M2ManagedApplication::M2ManagedApplication(JsonView jsonValue)
+  : M2ManagedApplication()
 {
   *this = jsonValue;
 }

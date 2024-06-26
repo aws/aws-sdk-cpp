@@ -26,12 +26,8 @@ GetDataSourceResult::GetDataSourceResult() :
 {
 }
 
-GetDataSourceResult::GetDataSourceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_enableSetting(EnableSetting::NOT_SET),
-    m_lastRunAssetCount(0),
-    m_lastRunStatus(DataSourceRunStatus::NOT_SET),
-    m_publishOnImport(false),
-    m_status(DataSourceStatus::NOT_SET)
+GetDataSourceResult::GetDataSourceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetDataSourceResult()
 {
   *this = result;
 }

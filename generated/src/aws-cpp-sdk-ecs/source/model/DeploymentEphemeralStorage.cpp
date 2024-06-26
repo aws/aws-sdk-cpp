@@ -23,8 +23,8 @@ DeploymentEphemeralStorage::DeploymentEphemeralStorage() :
 {
 }
 
-DeploymentEphemeralStorage::DeploymentEphemeralStorage(JsonView jsonValue) : 
-    m_kmsKeyIdHasBeenSet(false)
+DeploymentEphemeralStorage::DeploymentEphemeralStorage(JsonView jsonValue)
+  : DeploymentEphemeralStorage()
 {
   *this = jsonValue;
 }

@@ -29,14 +29,8 @@ Fleet::Fleet() :
 {
 }
 
-Fleet::Fleet(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_lastDeploymentStatus(DeploymentStatus::NOT_SET),
-    m_lastDeploymentStatusHasBeenSet(false),
-    m_lastDeploymentJobHasBeenSet(false),
-    m_lastDeploymentTimeHasBeenSet(false)
+Fleet::Fleet(JsonView jsonValue)
+  : Fleet()
 {
   *this = jsonValue;
 }

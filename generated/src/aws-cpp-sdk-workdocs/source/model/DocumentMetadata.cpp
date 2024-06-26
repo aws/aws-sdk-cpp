@@ -31,16 +31,8 @@ DocumentMetadata::DocumentMetadata() :
 {
 }
 
-DocumentMetadata::DocumentMetadata(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_creatorIdHasBeenSet(false),
-    m_parentFolderIdHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false),
-    m_modifiedTimestampHasBeenSet(false),
-    m_latestVersionMetadataHasBeenSet(false),
-    m_resourceState(ResourceStateType::NOT_SET),
-    m_resourceStateHasBeenSet(false),
-    m_labelsHasBeenSet(false)
+DocumentMetadata::DocumentMetadata(JsonView jsonValue)
+  : DocumentMetadata()
 {
   *this = jsonValue;
 }

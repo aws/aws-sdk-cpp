@@ -28,13 +28,8 @@ InstanceHealthCheckResult::InstanceHealthCheckResult() :
 {
 }
 
-InstanceHealthCheckResult::InstanceHealthCheckResult(JsonView jsonValue) : 
-    m_type(InstanceHealthCheckType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_status(InstanceHealthCheckState::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_lastUpdatedHasBeenSet(false),
-    m_lastStatusChangeHasBeenSet(false)
+InstanceHealthCheckResult::InstanceHealthCheckResult(JsonView jsonValue)
+  : InstanceHealthCheckResult()
 {
   *this = jsonValue;
 }

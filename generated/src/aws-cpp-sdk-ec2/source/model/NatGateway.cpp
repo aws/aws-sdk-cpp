@@ -38,21 +38,8 @@ NatGateway::NatGateway() :
 {
 }
 
-NatGateway::NatGateway(const XmlNode& xmlNode) : 
-    m_createTimeHasBeenSet(false),
-    m_deleteTimeHasBeenSet(false),
-    m_failureCodeHasBeenSet(false),
-    m_failureMessageHasBeenSet(false),
-    m_natGatewayAddressesHasBeenSet(false),
-    m_natGatewayIdHasBeenSet(false),
-    m_provisionedBandwidthHasBeenSet(false),
-    m_state(NatGatewayState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_subnetIdHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_connectivityType(ConnectivityType::NOT_SET),
-    m_connectivityTypeHasBeenSet(false)
+NatGateway::NatGateway(const XmlNode& xmlNode)
+  : NatGateway()
 {
   *this = xmlNode;
 }

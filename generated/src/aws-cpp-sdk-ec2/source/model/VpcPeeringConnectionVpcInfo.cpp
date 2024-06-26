@@ -31,14 +31,8 @@ VpcPeeringConnectionVpcInfo::VpcPeeringConnectionVpcInfo() :
 {
 }
 
-VpcPeeringConnectionVpcInfo::VpcPeeringConnectionVpcInfo(const XmlNode& xmlNode) : 
-    m_cidrBlockHasBeenSet(false),
-    m_ipv6CidrBlockSetHasBeenSet(false),
-    m_cidrBlockSetHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_peeringOptionsHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_regionHasBeenSet(false)
+VpcPeeringConnectionVpcInfo::VpcPeeringConnectionVpcInfo(const XmlNode& xmlNode)
+  : VpcPeeringConnectionVpcInfo()
 {
   *this = xmlNode;
 }

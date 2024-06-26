@@ -42,27 +42,8 @@ ComputeEnvironmentDetail::ComputeEnvironmentDetail() :
 {
 }
 
-ComputeEnvironmentDetail::ComputeEnvironmentDetail(JsonView jsonValue) : 
-    m_computeEnvironmentNameHasBeenSet(false),
-    m_computeEnvironmentArnHasBeenSet(false),
-    m_unmanagedvCpus(0),
-    m_unmanagedvCpusHasBeenSet(false),
-    m_ecsClusterArnHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_type(CEType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_state(CEState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_status(CEStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusReasonHasBeenSet(false),
-    m_computeResourcesHasBeenSet(false),
-    m_serviceRoleHasBeenSet(false),
-    m_updatePolicyHasBeenSet(false),
-    m_eksConfigurationHasBeenSet(false),
-    m_containerOrchestrationType(OrchestrationType::NOT_SET),
-    m_containerOrchestrationTypeHasBeenSet(false),
-    m_uuidHasBeenSet(false)
+ComputeEnvironmentDetail::ComputeEnvironmentDetail(JsonView jsonValue)
+  : ComputeEnvironmentDetail()
 {
   *this = jsonValue;
 }

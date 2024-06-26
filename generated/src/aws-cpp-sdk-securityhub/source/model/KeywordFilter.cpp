@@ -23,8 +23,8 @@ KeywordFilter::KeywordFilter() :
 {
 }
 
-KeywordFilter::KeywordFilter(JsonView jsonValue) : 
-    m_valueHasBeenSet(false)
+KeywordFilter::KeywordFilter(JsonView jsonValue)
+  : KeywordFilter()
 {
   *this = jsonValue;
 }

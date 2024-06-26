@@ -28,13 +28,8 @@ FieldConfig::FieldConfig() :
 {
 }
 
-FieldConfig::FieldConfig(JsonView jsonValue) : 
-    m_labelHasBeenSet(false),
-    m_positionHasBeenSet(false),
-    m_excluded(false),
-    m_excludedHasBeenSet(false),
-    m_inputTypeHasBeenSet(false),
-    m_validationsHasBeenSet(false)
+FieldConfig::FieldConfig(JsonView jsonValue)
+  : FieldConfig()
 {
   *this = jsonValue;
 }

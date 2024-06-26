@@ -23,9 +23,8 @@ CreateIAMPolicyAssignmentResult::CreateIAMPolicyAssignmentResult() :
 {
 }
 
-CreateIAMPolicyAssignmentResult::CreateIAMPolicyAssignmentResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_assignmentStatus(AssignmentStatus::NOT_SET),
-    m_status(0)
+CreateIAMPolicyAssignmentResult::CreateIAMPolicyAssignmentResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateIAMPolicyAssignmentResult()
 {
   *this = result;
 }

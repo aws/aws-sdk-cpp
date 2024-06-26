@@ -23,8 +23,8 @@ ProtectionLimits::ProtectionLimits() :
 {
 }
 
-ProtectionLimits::ProtectionLimits(JsonView jsonValue) : 
-    m_protectedResourceTypeLimitsHasBeenSet(false)
+ProtectionLimits::ProtectionLimits(JsonView jsonValue)
+  : ProtectionLimits()
 {
   *this = jsonValue;
 }

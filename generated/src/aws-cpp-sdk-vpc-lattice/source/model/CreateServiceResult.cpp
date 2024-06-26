@@ -23,9 +23,8 @@ CreateServiceResult::CreateServiceResult() :
 {
 }
 
-CreateServiceResult::CreateServiceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_authType(AuthType::NOT_SET),
-    m_status(ServiceStatus::NOT_SET)
+CreateServiceResult::CreateServiceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateServiceResult()
 {
   *this = result;
 }

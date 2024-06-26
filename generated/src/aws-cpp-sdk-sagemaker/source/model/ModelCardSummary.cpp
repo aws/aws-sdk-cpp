@@ -28,13 +28,8 @@ ModelCardSummary::ModelCardSummary() :
 {
 }
 
-ModelCardSummary::ModelCardSummary(JsonView jsonValue) : 
-    m_modelCardNameHasBeenSet(false),
-    m_modelCardArnHasBeenSet(false),
-    m_modelCardStatus(ModelCardStatus::NOT_SET),
-    m_modelCardStatusHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false)
+ModelCardSummary::ModelCardSummary(JsonView jsonValue)
+  : ModelCardSummary()
 {
   *this = jsonValue;
 }

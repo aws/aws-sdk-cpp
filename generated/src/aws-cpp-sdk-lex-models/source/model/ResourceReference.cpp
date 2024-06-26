@@ -24,9 +24,8 @@ ResourceReference::ResourceReference() :
 {
 }
 
-ResourceReference::ResourceReference(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_versionHasBeenSet(false)
+ResourceReference::ResourceReference(JsonView jsonValue)
+  : ResourceReference()
 {
   *this = jsonValue;
 }

@@ -37,22 +37,8 @@ ContainerGroupDefinition::ContainerGroupDefinition() :
 {
 }
 
-ContainerGroupDefinition::ContainerGroupDefinition(JsonView jsonValue) : 
-    m_containerGroupDefinitionArnHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_operatingSystem(ContainerOperatingSystem::NOT_SET),
-    m_operatingSystemHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_schedulingStrategy(ContainerSchedulingStrategy::NOT_SET),
-    m_schedulingStrategyHasBeenSet(false),
-    m_totalMemoryLimit(0),
-    m_totalMemoryLimitHasBeenSet(false),
-    m_totalCpuLimit(0),
-    m_totalCpuLimitHasBeenSet(false),
-    m_containerDefinitionsHasBeenSet(false),
-    m_status(ContainerGroupDefinitionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusReasonHasBeenSet(false)
+ContainerGroupDefinition::ContainerGroupDefinition(JsonView jsonValue)
+  : ContainerGroupDefinition()
 {
   *this = jsonValue;
 }

@@ -45,30 +45,8 @@ DataSource::DataSource() :
 {
 }
 
-DataSource::DataSource(JsonView jsonValue) : 
-    m_dataSourceIdHasBeenSet(false),
-    m_dataLocationS3HasBeenSet(false),
-    m_dataRearrangementHasBeenSet(false),
-    m_createdByIamUserHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false),
-    m_dataSizeInBytes(0),
-    m_dataSizeInBytesHasBeenSet(false),
-    m_numberOfFiles(0),
-    m_numberOfFilesHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_status(EntityStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_redshiftMetadataHasBeenSet(false),
-    m_rDSMetadataHasBeenSet(false),
-    m_roleARNHasBeenSet(false),
-    m_computeStatistics(false),
-    m_computeStatisticsHasBeenSet(false),
-    m_computeTime(0),
-    m_computeTimeHasBeenSet(false),
-    m_finishedAtHasBeenSet(false),
-    m_startedAtHasBeenSet(false)
+DataSource::DataSource(JsonView jsonValue)
+  : DataSource()
 {
   *this = jsonValue;
 }

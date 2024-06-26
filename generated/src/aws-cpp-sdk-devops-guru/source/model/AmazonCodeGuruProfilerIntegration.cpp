@@ -24,9 +24,8 @@ AmazonCodeGuruProfilerIntegration::AmazonCodeGuruProfilerIntegration() :
 {
 }
 
-AmazonCodeGuruProfilerIntegration::AmazonCodeGuruProfilerIntegration(JsonView jsonValue) : 
-    m_status(EventSourceOptInStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+AmazonCodeGuruProfilerIntegration::AmazonCodeGuruProfilerIntegration(JsonView jsonValue)
+  : AmazonCodeGuruProfilerIntegration()
 {
   *this = jsonValue;
 }

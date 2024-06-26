@@ -24,9 +24,8 @@ KafkaClusterEncryptionInTransit::KafkaClusterEncryptionInTransit() :
 {
 }
 
-KafkaClusterEncryptionInTransit::KafkaClusterEncryptionInTransit(JsonView jsonValue) : 
-    m_encryptionType(KafkaClusterEncryptionInTransitType::NOT_SET),
-    m_encryptionTypeHasBeenSet(false)
+KafkaClusterEncryptionInTransit::KafkaClusterEncryptionInTransit(JsonView jsonValue)
+  : KafkaClusterEncryptionInTransit()
 {
   *this = jsonValue;
 }

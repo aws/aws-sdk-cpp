@@ -22,8 +22,8 @@ ListVocabulariesResult::ListVocabulariesResult() :
 {
 }
 
-ListVocabulariesResult::ListVocabulariesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(VocabularyState::NOT_SET)
+ListVocabulariesResult::ListVocabulariesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ListVocabulariesResult()
 {
   *this = result;
 }

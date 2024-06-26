@@ -28,11 +28,8 @@ OrderableClusterOption::OrderableClusterOption() :
 {
 }
 
-OrderableClusterOption::OrderableClusterOption(const XmlNode& xmlNode) : 
-    m_clusterVersionHasBeenSet(false),
-    m_clusterTypeHasBeenSet(false),
-    m_nodeTypeHasBeenSet(false),
-    m_availabilityZonesHasBeenSet(false)
+OrderableClusterOption::OrderableClusterOption(const XmlNode& xmlNode)
+  : OrderableClusterOption()
 {
   *this = xmlNode;
 }

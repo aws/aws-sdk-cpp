@@ -33,16 +33,8 @@ PredictiveScalingConfiguration::PredictiveScalingConfiguration() :
 {
 }
 
-PredictiveScalingConfiguration::PredictiveScalingConfiguration(const XmlNode& xmlNode) : 
-    m_metricSpecificationsHasBeenSet(false),
-    m_mode(PredictiveScalingMode::NOT_SET),
-    m_modeHasBeenSet(false),
-    m_schedulingBufferTime(0),
-    m_schedulingBufferTimeHasBeenSet(false),
-    m_maxCapacityBreachBehavior(PredictiveScalingMaxCapacityBreachBehavior::NOT_SET),
-    m_maxCapacityBreachBehaviorHasBeenSet(false),
-    m_maxCapacityBuffer(0),
-    m_maxCapacityBufferHasBeenSet(false)
+PredictiveScalingConfiguration::PredictiveScalingConfiguration(const XmlNode& xmlNode)
+  : PredictiveScalingConfiguration()
 {
   *this = xmlNode;
 }

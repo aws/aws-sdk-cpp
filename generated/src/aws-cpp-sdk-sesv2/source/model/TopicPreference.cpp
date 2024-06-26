@@ -25,10 +25,8 @@ TopicPreference::TopicPreference() :
 {
 }
 
-TopicPreference::TopicPreference(JsonView jsonValue) : 
-    m_topicNameHasBeenSet(false),
-    m_subscriptionStatus(SubscriptionStatus::NOT_SET),
-    m_subscriptionStatusHasBeenSet(false)
+TopicPreference::TopicPreference(JsonView jsonValue)
+  : TopicPreference()
 {
   *this = jsonValue;
 }

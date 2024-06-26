@@ -25,10 +25,8 @@ TestSetStorageLocation::TestSetStorageLocation() :
 {
 }
 
-TestSetStorageLocation::TestSetStorageLocation(JsonView jsonValue) : 
-    m_s3BucketNameHasBeenSet(false),
-    m_s3PathHasBeenSet(false),
-    m_kmsKeyArnHasBeenSet(false)
+TestSetStorageLocation::TestSetStorageLocation(JsonView jsonValue)
+  : TestSetStorageLocation()
 {
   *this = jsonValue;
 }

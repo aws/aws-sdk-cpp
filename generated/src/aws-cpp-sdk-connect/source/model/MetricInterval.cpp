@@ -26,11 +26,8 @@ MetricInterval::MetricInterval() :
 {
 }
 
-MetricInterval::MetricInterval(JsonView jsonValue) : 
-    m_interval(IntervalPeriod::NOT_SET),
-    m_intervalHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
+MetricInterval::MetricInterval(JsonView jsonValue)
+  : MetricInterval()
 {
   *this = jsonValue;
 }

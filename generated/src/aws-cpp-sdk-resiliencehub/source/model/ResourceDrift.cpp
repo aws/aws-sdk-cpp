@@ -28,13 +28,8 @@ ResourceDrift::ResourceDrift() :
 {
 }
 
-ResourceDrift::ResourceDrift(JsonView jsonValue) : 
-    m_appArnHasBeenSet(false),
-    m_appVersionHasBeenSet(false),
-    m_diffType(DifferenceType::NOT_SET),
-    m_diffTypeHasBeenSet(false),
-    m_referenceIdHasBeenSet(false),
-    m_resourceIdentifierHasBeenSet(false)
+ResourceDrift::ResourceDrift(JsonView jsonValue)
+  : ResourceDrift()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ PostProcessingModelInvocationOutput::PostProcessingModelInvocationOutput() :
 {
 }
 
-PostProcessingModelInvocationOutput::PostProcessingModelInvocationOutput(JsonView jsonValue) : 
-    m_parsedResponseHasBeenSet(false),
-    m_traceIdHasBeenSet(false)
+PostProcessingModelInvocationOutput::PostProcessingModelInvocationOutput(JsonView jsonValue)
+  : PostProcessingModelInvocationOutput()
 {
   *this = jsonValue;
 }

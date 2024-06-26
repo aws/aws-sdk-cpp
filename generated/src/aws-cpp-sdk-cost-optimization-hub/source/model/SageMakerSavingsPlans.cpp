@@ -24,9 +24,8 @@ SageMakerSavingsPlans::SageMakerSavingsPlans() :
 {
 }
 
-SageMakerSavingsPlans::SageMakerSavingsPlans(JsonView jsonValue) : 
-    m_configurationHasBeenSet(false),
-    m_costCalculationHasBeenSet(false)
+SageMakerSavingsPlans::SageMakerSavingsPlans(JsonView jsonValue)
+  : SageMakerSavingsPlans()
 {
   *this = jsonValue;
 }

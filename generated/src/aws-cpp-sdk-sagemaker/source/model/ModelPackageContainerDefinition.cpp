@@ -34,19 +34,8 @@ ModelPackageContainerDefinition::ModelPackageContainerDefinition() :
 {
 }
 
-ModelPackageContainerDefinition::ModelPackageContainerDefinition(JsonView jsonValue) : 
-    m_containerHostnameHasBeenSet(false),
-    m_imageHasBeenSet(false),
-    m_imageDigestHasBeenSet(false),
-    m_modelDataUrlHasBeenSet(false),
-    m_modelDataSourceHasBeenSet(false),
-    m_productIdHasBeenSet(false),
-    m_environmentHasBeenSet(false),
-    m_modelInputHasBeenSet(false),
-    m_frameworkHasBeenSet(false),
-    m_frameworkVersionHasBeenSet(false),
-    m_nearestModelNameHasBeenSet(false),
-    m_additionalS3DataSourceHasBeenSet(false)
+ModelPackageContainerDefinition::ModelPackageContainerDefinition(JsonView jsonValue)
+  : ModelPackageContainerDefinition()
 {
   *this = jsonValue;
 }

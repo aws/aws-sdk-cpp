@@ -28,13 +28,8 @@ LambdaContainerParams::LambdaContainerParams() :
 {
 }
 
-LambdaContainerParams::LambdaContainerParams(JsonView jsonValue) : 
-    m_memorySizeInKB(0),
-    m_memorySizeInKBHasBeenSet(false),
-    m_mountROSysfs(false),
-    m_mountROSysfsHasBeenSet(false),
-    m_volumesHasBeenSet(false),
-    m_devicesHasBeenSet(false)
+LambdaContainerParams::LambdaContainerParams(JsonView jsonValue)
+  : LambdaContainerParams()
 {
   *this = jsonValue;
 }

@@ -26,9 +26,8 @@ S3Origin::S3Origin() :
 {
 }
 
-S3Origin::S3Origin(const XmlNode& xmlNode) : 
-    m_domainNameHasBeenSet(false),
-    m_originAccessIdentityHasBeenSet(false)
+S3Origin::S3Origin(const XmlNode& xmlNode)
+  : S3Origin()
 {
   *this = xmlNode;
 }

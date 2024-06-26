@@ -39,22 +39,8 @@ ImportInstanceLaunchSpecification::ImportInstanceLaunchSpecification() :
 {
 }
 
-ImportInstanceLaunchSpecification::ImportInstanceLaunchSpecification(const XmlNode& xmlNode) : 
-    m_additionalInfoHasBeenSet(false),
-    m_architecture(ArchitectureValues::NOT_SET),
-    m_architectureHasBeenSet(false),
-    m_groupIdsHasBeenSet(false),
-    m_groupNamesHasBeenSet(false),
-    m_instanceInitiatedShutdownBehavior(ShutdownBehavior::NOT_SET),
-    m_instanceInitiatedShutdownBehaviorHasBeenSet(false),
-    m_instanceType(InstanceType::NOT_SET),
-    m_instanceTypeHasBeenSet(false),
-    m_monitoring(false),
-    m_monitoringHasBeenSet(false),
-    m_placementHasBeenSet(false),
-    m_privateIpAddressHasBeenSet(false),
-    m_subnetIdHasBeenSet(false),
-    m_userDataHasBeenSet(false)
+ImportInstanceLaunchSpecification::ImportInstanceLaunchSpecification(const XmlNode& xmlNode)
+  : ImportInstanceLaunchSpecification()
 {
   *this = xmlNode;
 }

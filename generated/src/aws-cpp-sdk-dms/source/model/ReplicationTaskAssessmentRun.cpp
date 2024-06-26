@@ -34,19 +34,8 @@ ReplicationTaskAssessmentRun::ReplicationTaskAssessmentRun() :
 {
 }
 
-ReplicationTaskAssessmentRun::ReplicationTaskAssessmentRun(JsonView jsonValue) : 
-    m_replicationTaskAssessmentRunArnHasBeenSet(false),
-    m_replicationTaskArnHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_replicationTaskAssessmentRunCreationDateHasBeenSet(false),
-    m_assessmentProgressHasBeenSet(false),
-    m_lastFailureMessageHasBeenSet(false),
-    m_serviceAccessRoleArnHasBeenSet(false),
-    m_resultLocationBucketHasBeenSet(false),
-    m_resultLocationFolderHasBeenSet(false),
-    m_resultEncryptionModeHasBeenSet(false),
-    m_resultKmsKeyArnHasBeenSet(false),
-    m_assessmentRunNameHasBeenSet(false)
+ReplicationTaskAssessmentRun::ReplicationTaskAssessmentRun(JsonView jsonValue)
+  : ReplicationTaskAssessmentRun()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ InforNexusConnectorProfileProperties::InforNexusConnectorProfileProperties() :
 {
 }
 
-InforNexusConnectorProfileProperties::InforNexusConnectorProfileProperties(JsonView jsonValue) : 
-    m_instanceUrlHasBeenSet(false)
+InforNexusConnectorProfileProperties::InforNexusConnectorProfileProperties(JsonView jsonValue)
+  : InforNexusConnectorProfileProperties()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ MarketoConnectorProfileCredentials::MarketoConnectorProfileCredentials() :
 {
 }
 
-MarketoConnectorProfileCredentials::MarketoConnectorProfileCredentials(JsonView jsonValue) : 
-    m_clientIdHasBeenSet(false),
-    m_clientSecretHasBeenSet(false),
-    m_accessTokenHasBeenSet(false),
-    m_oAuthRequestHasBeenSet(false)
+MarketoConnectorProfileCredentials::MarketoConnectorProfileCredentials(JsonView jsonValue)
+  : MarketoConnectorProfileCredentials()
 {
   *this = jsonValue;
 }

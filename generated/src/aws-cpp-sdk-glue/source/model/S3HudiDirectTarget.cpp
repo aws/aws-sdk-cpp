@@ -32,17 +32,8 @@ S3HudiDirectTarget::S3HudiDirectTarget() :
 {
 }
 
-S3HudiDirectTarget::S3HudiDirectTarget(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_inputsHasBeenSet(false),
-    m_pathHasBeenSet(false),
-    m_compression(HudiTargetCompressionType::NOT_SET),
-    m_compressionHasBeenSet(false),
-    m_partitionKeysHasBeenSet(false),
-    m_format(TargetFormat::NOT_SET),
-    m_formatHasBeenSet(false),
-    m_additionalOptionsHasBeenSet(false),
-    m_schemaChangePolicyHasBeenSet(false)
+S3HudiDirectTarget::S3HudiDirectTarget(JsonView jsonValue)
+  : S3HudiDirectTarget()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ ResourceCount::ResourceCount() :
 {
 }
 
-ResourceCount::ResourceCount(JsonView jsonValue) : 
-    m_complete(false),
-    m_completeHasBeenSet(false),
-    m_totalResources(0),
-    m_totalResourcesHasBeenSet(false)
+ResourceCount::ResourceCount(JsonView jsonValue)
+  : ResourceCount()
 {
   *this = jsonValue;
 }

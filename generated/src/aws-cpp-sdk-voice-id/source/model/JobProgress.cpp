@@ -24,9 +24,8 @@ JobProgress::JobProgress() :
 {
 }
 
-JobProgress::JobProgress(JsonView jsonValue) : 
-    m_percentComplete(0),
-    m_percentCompleteHasBeenSet(false)
+JobProgress::JobProgress(JsonView jsonValue)
+  : JobProgress()
 {
   *this = jsonValue;
 }

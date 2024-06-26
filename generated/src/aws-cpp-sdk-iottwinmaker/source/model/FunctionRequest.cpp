@@ -26,11 +26,8 @@ FunctionRequest::FunctionRequest() :
 {
 }
 
-FunctionRequest::FunctionRequest(JsonView jsonValue) : 
-    m_requiredPropertiesHasBeenSet(false),
-    m_scope(Scope::NOT_SET),
-    m_scopeHasBeenSet(false),
-    m_implementedByHasBeenSet(false)
+FunctionRequest::FunctionRequest(JsonView jsonValue)
+  : FunctionRequest()
 {
   *this = jsonValue;
 }

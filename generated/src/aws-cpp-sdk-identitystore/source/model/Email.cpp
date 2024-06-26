@@ -26,11 +26,8 @@ Email::Email() :
 {
 }
 
-Email::Email(JsonView jsonValue) : 
-    m_valueHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_primary(false),
-    m_primaryHasBeenSet(false)
+Email::Email(JsonView jsonValue)
+  : Email()
 {
   *this = jsonValue;
 }

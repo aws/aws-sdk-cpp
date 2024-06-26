@@ -31,14 +31,8 @@ ScheduledInstanceRecurrenceRequest::ScheduledInstanceRecurrenceRequest() :
 {
 }
 
-ScheduledInstanceRecurrenceRequest::ScheduledInstanceRecurrenceRequest(const XmlNode& xmlNode) : 
-    m_frequencyHasBeenSet(false),
-    m_interval(0),
-    m_intervalHasBeenSet(false),
-    m_occurrenceDaysHasBeenSet(false),
-    m_occurrenceRelativeToEnd(false),
-    m_occurrenceRelativeToEndHasBeenSet(false),
-    m_occurrenceUnitHasBeenSet(false)
+ScheduledInstanceRecurrenceRequest::ScheduledInstanceRecurrenceRequest(const XmlNode& xmlNode)
+  : ScheduledInstanceRecurrenceRequest()
 {
   *this = xmlNode;
 }

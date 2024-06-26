@@ -30,15 +30,8 @@ IpAccessSettings::IpAccessSettings() :
 {
 }
 
-IpAccessSettings::IpAccessSettings(JsonView jsonValue) : 
-    m_additionalEncryptionContextHasBeenSet(false),
-    m_associatedPortalArnsHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_customerManagedKeyHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_ipAccessSettingsArnHasBeenSet(false),
-    m_ipRulesHasBeenSet(false)
+IpAccessSettings::IpAccessSettings(JsonView jsonValue)
+  : IpAccessSettings()
 {
   *this = jsonValue;
 }

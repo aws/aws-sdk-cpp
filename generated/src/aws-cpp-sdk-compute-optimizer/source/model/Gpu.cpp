@@ -26,11 +26,8 @@ Gpu::Gpu() :
 {
 }
 
-Gpu::Gpu(JsonView jsonValue) : 
-    m_gpuCount(0),
-    m_gpuCountHasBeenSet(false),
-    m_gpuMemorySizeInMiB(0),
-    m_gpuMemorySizeInMiBHasBeenSet(false)
+Gpu::Gpu(JsonView jsonValue)
+  : Gpu()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ CreateSnapshotScheduleResult::CreateSnapshotScheduleResult() :
 {
 }
 
-CreateSnapshotScheduleResult::CreateSnapshotScheduleResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_associatedClusterCount(0)
+CreateSnapshotScheduleResult::CreateSnapshotScheduleResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : CreateSnapshotScheduleResult()
 {
   *this = result;
 }

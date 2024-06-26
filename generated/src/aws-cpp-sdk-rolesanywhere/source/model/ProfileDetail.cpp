@@ -38,23 +38,8 @@ ProfileDetail::ProfileDetail() :
 {
 }
 
-ProfileDetail::ProfileDetail(JsonView jsonValue) : 
-    m_attributeMappingsHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_durationSeconds(0),
-    m_durationSecondsHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_managedPolicyArnsHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_profileArnHasBeenSet(false),
-    m_profileIdHasBeenSet(false),
-    m_requireInstanceProperties(false),
-    m_requireInstancePropertiesHasBeenSet(false),
-    m_roleArnsHasBeenSet(false),
-    m_sessionPolicyHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+ProfileDetail::ProfileDetail(JsonView jsonValue)
+  : ProfileDetail()
 {
   *this = jsonValue;
 }

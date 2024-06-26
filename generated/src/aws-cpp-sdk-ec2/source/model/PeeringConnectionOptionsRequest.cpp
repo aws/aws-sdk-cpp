@@ -30,13 +30,8 @@ PeeringConnectionOptionsRequest::PeeringConnectionOptionsRequest() :
 {
 }
 
-PeeringConnectionOptionsRequest::PeeringConnectionOptionsRequest(const XmlNode& xmlNode) : 
-    m_allowDnsResolutionFromRemoteVpc(false),
-    m_allowDnsResolutionFromRemoteVpcHasBeenSet(false),
-    m_allowEgressFromLocalClassicLinkToRemoteVpc(false),
-    m_allowEgressFromLocalClassicLinkToRemoteVpcHasBeenSet(false),
-    m_allowEgressFromLocalVpcToRemoteClassicLink(false),
-    m_allowEgressFromLocalVpcToRemoteClassicLinkHasBeenSet(false)
+PeeringConnectionOptionsRequest::PeeringConnectionOptionsRequest(const XmlNode& xmlNode)
+  : PeeringConnectionOptionsRequest()
 {
   *this = xmlNode;
 }

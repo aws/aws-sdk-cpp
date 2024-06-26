@@ -24,9 +24,8 @@ LabelingJobResourceConfig::LabelingJobResourceConfig() :
 {
 }
 
-LabelingJobResourceConfig::LabelingJobResourceConfig(JsonView jsonValue) : 
-    m_volumeKmsKeyIdHasBeenSet(false),
-    m_vpcConfigHasBeenSet(false)
+LabelingJobResourceConfig::LabelingJobResourceConfig(JsonView jsonValue)
+  : LabelingJobResourceConfig()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ DifferentialPrivacyConfiguration::DifferentialPrivacyConfiguration() :
 {
 }
 
-DifferentialPrivacyConfiguration::DifferentialPrivacyConfiguration(JsonView jsonValue) : 
-    m_columnsHasBeenSet(false)
+DifferentialPrivacyConfiguration::DifferentialPrivacyConfiguration(JsonView jsonValue)
+  : DifferentialPrivacyConfiguration()
 {
   *this = jsonValue;
 }

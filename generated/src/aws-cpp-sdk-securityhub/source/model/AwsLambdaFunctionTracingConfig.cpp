@@ -23,8 +23,8 @@ AwsLambdaFunctionTracingConfig::AwsLambdaFunctionTracingConfig() :
 {
 }
 
-AwsLambdaFunctionTracingConfig::AwsLambdaFunctionTracingConfig(JsonView jsonValue) : 
-    m_modeHasBeenSet(false)
+AwsLambdaFunctionTracingConfig::AwsLambdaFunctionTracingConfig(JsonView jsonValue)
+  : AwsLambdaFunctionTracingConfig()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ AssociateResourceError::AssociateResourceError() :
 {
 }
 
-AssociateResourceError::AssociateResourceError(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_reason(AssociateResourceErrorReason::NOT_SET),
-    m_reasonHasBeenSet(false)
+AssociateResourceError::AssociateResourceError(JsonView jsonValue)
+  : AssociateResourceError()
 {
   *this = jsonValue;
 }

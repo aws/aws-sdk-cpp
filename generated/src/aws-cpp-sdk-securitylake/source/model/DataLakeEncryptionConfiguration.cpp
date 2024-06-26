@@ -23,8 +23,8 @@ DataLakeEncryptionConfiguration::DataLakeEncryptionConfiguration() :
 {
 }
 
-DataLakeEncryptionConfiguration::DataLakeEncryptionConfiguration(JsonView jsonValue) : 
-    m_kmsKeyIdHasBeenSet(false)
+DataLakeEncryptionConfiguration::DataLakeEncryptionConfiguration(JsonView jsonValue)
+  : DataLakeEncryptionConfiguration()
 {
   *this = jsonValue;
 }

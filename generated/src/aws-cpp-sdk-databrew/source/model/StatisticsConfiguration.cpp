@@ -24,9 +24,8 @@ StatisticsConfiguration::StatisticsConfiguration() :
 {
 }
 
-StatisticsConfiguration::StatisticsConfiguration(JsonView jsonValue) : 
-    m_includedStatisticsHasBeenSet(false),
-    m_overridesHasBeenSet(false)
+StatisticsConfiguration::StatisticsConfiguration(JsonView jsonValue)
+  : StatisticsConfiguration()
 {
   *this = jsonValue;
 }

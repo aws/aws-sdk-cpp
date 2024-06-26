@@ -26,9 +26,8 @@ OptionGroupMembership::OptionGroupMembership() :
 {
 }
 
-OptionGroupMembership::OptionGroupMembership(const XmlNode& xmlNode) : 
-    m_optionGroupNameHasBeenSet(false),
-    m_statusHasBeenSet(false)
+OptionGroupMembership::OptionGroupMembership(const XmlNode& xmlNode)
+  : OptionGroupMembership()
 {
   *this = xmlNode;
 }

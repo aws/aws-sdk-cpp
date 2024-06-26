@@ -25,10 +25,8 @@ PendingMaintenanceAction::PendingMaintenanceAction() :
 {
 }
 
-PendingMaintenanceAction::PendingMaintenanceAction(JsonView jsonValue) : 
-    m_actionHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_currentApplyDateHasBeenSet(false)
+PendingMaintenanceAction::PendingMaintenanceAction(JsonView jsonValue)
+  : PendingMaintenanceAction()
 {
   *this = jsonValue;
 }

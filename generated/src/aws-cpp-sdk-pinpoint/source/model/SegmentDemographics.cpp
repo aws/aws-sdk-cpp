@@ -28,13 +28,8 @@ SegmentDemographics::SegmentDemographics() :
 {
 }
 
-SegmentDemographics::SegmentDemographics(JsonView jsonValue) : 
-    m_appVersionHasBeenSet(false),
-    m_channelHasBeenSet(false),
-    m_deviceTypeHasBeenSet(false),
-    m_makeHasBeenSet(false),
-    m_modelHasBeenSet(false),
-    m_platformHasBeenSet(false)
+SegmentDemographics::SegmentDemographics(JsonView jsonValue)
+  : SegmentDemographics()
 {
   *this = jsonValue;
 }

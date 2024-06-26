@@ -27,12 +27,8 @@ DataQualityResultDescription::DataQualityResultDescription() :
 {
 }
 
-DataQualityResultDescription::DataQualityResultDescription(JsonView jsonValue) : 
-    m_resultIdHasBeenSet(false),
-    m_dataSourceHasBeenSet(false),
-    m_jobNameHasBeenSet(false),
-    m_jobRunIdHasBeenSet(false),
-    m_startedOnHasBeenSet(false)
+DataQualityResultDescription::DataQualityResultDescription(JsonView jsonValue)
+  : DataQualityResultDescription()
 {
   *this = jsonValue;
 }

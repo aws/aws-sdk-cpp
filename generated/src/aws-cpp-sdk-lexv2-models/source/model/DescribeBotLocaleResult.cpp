@@ -25,11 +25,8 @@ DescribeBotLocaleResult::DescribeBotLocaleResult() :
 {
 }
 
-DescribeBotLocaleResult::DescribeBotLocaleResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_nluIntentConfidenceThreshold(0.0),
-    m_intentsCount(0),
-    m_slotTypesCount(0),
-    m_botLocaleStatus(BotLocaleStatus::NOT_SET)
+DescribeBotLocaleResult::DescribeBotLocaleResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeBotLocaleResult()
 {
   *this = result;
 }

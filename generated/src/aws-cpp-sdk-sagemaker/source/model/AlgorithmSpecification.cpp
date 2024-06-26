@@ -32,17 +32,8 @@ AlgorithmSpecification::AlgorithmSpecification() :
 {
 }
 
-AlgorithmSpecification::AlgorithmSpecification(JsonView jsonValue) : 
-    m_trainingImageHasBeenSet(false),
-    m_algorithmNameHasBeenSet(false),
-    m_trainingInputMode(TrainingInputMode::NOT_SET),
-    m_trainingInputModeHasBeenSet(false),
-    m_metricDefinitionsHasBeenSet(false),
-    m_enableSageMakerMetricsTimeSeries(false),
-    m_enableSageMakerMetricsTimeSeriesHasBeenSet(false),
-    m_containerEntrypointHasBeenSet(false),
-    m_containerArgumentsHasBeenSet(false),
-    m_trainingImageConfigHasBeenSet(false)
+AlgorithmSpecification::AlgorithmSpecification(JsonView jsonValue)
+  : AlgorithmSpecification()
 {
   *this = jsonValue;
 }

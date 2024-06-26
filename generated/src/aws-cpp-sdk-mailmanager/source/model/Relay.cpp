@@ -25,10 +25,8 @@ Relay::Relay() :
 {
 }
 
-Relay::Relay(JsonView jsonValue) : 
-    m_lastModifiedTimestampHasBeenSet(false),
-    m_relayIdHasBeenSet(false),
-    m_relayNameHasBeenSet(false)
+Relay::Relay(JsonView jsonValue)
+  : Relay()
 {
   *this = jsonValue;
 }

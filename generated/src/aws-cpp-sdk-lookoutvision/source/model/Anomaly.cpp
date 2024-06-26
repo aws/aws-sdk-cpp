@@ -24,9 +24,8 @@ Anomaly::Anomaly() :
 {
 }
 
-Anomaly::Anomaly(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_pixelAnomalyHasBeenSet(false)
+Anomaly::Anomaly(JsonView jsonValue)
+  : Anomaly()
 {
   *this = jsonValue;
 }

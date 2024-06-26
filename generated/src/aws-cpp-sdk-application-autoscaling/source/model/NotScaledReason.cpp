@@ -29,14 +29,8 @@ NotScaledReason::NotScaledReason() :
 {
 }
 
-NotScaledReason::NotScaledReason(JsonView jsonValue) : 
-    m_codeHasBeenSet(false),
-    m_maxCapacity(0),
-    m_maxCapacityHasBeenSet(false),
-    m_minCapacity(0),
-    m_minCapacityHasBeenSet(false),
-    m_currentCapacity(0),
-    m_currentCapacityHasBeenSet(false)
+NotScaledReason::NotScaledReason(JsonView jsonValue)
+  : NotScaledReason()
 {
   *this = jsonValue;
 }

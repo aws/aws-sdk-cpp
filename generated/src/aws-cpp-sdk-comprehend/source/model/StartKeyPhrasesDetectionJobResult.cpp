@@ -22,8 +22,8 @@ StartKeyPhrasesDetectionJobResult::StartKeyPhrasesDetectionJobResult() :
 {
 }
 
-StartKeyPhrasesDetectionJobResult::StartKeyPhrasesDetectionJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_jobStatus(JobStatus::NOT_SET)
+StartKeyPhrasesDetectionJobResult::StartKeyPhrasesDetectionJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : StartKeyPhrasesDetectionJobResult()
 {
   *this = result;
 }

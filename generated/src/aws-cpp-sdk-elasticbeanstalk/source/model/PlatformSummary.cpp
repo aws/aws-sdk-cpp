@@ -37,20 +37,8 @@ PlatformSummary::PlatformSummary() :
 {
 }
 
-PlatformSummary::PlatformSummary(const XmlNode& xmlNode) : 
-    m_platformArnHasBeenSet(false),
-    m_platformOwnerHasBeenSet(false),
-    m_platformStatus(PlatformStatus::NOT_SET),
-    m_platformStatusHasBeenSet(false),
-    m_platformCategoryHasBeenSet(false),
-    m_operatingSystemNameHasBeenSet(false),
-    m_operatingSystemVersionHasBeenSet(false),
-    m_supportedTierListHasBeenSet(false),
-    m_supportedAddonListHasBeenSet(false),
-    m_platformLifecycleStateHasBeenSet(false),
-    m_platformVersionHasBeenSet(false),
-    m_platformBranchNameHasBeenSet(false),
-    m_platformBranchLifecycleStateHasBeenSet(false)
+PlatformSummary::PlatformSummary(const XmlNode& xmlNode)
+  : PlatformSummary()
 {
   *this = xmlNode;
 }

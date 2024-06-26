@@ -26,11 +26,8 @@ HttpRoute::HttpRoute() :
 {
 }
 
-HttpRoute::HttpRoute(JsonView jsonValue) : 
-    m_actionHasBeenSet(false),
-    m_matchHasBeenSet(false),
-    m_retryPolicyHasBeenSet(false),
-    m_timeoutHasBeenSet(false)
+HttpRoute::HttpRoute(JsonView jsonValue)
+  : HttpRoute()
 {
   *this = jsonValue;
 }

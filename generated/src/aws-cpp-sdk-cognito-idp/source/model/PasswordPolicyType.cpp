@@ -34,19 +34,8 @@ PasswordPolicyType::PasswordPolicyType() :
 {
 }
 
-PasswordPolicyType::PasswordPolicyType(JsonView jsonValue) : 
-    m_minimumLength(0),
-    m_minimumLengthHasBeenSet(false),
-    m_requireUppercase(false),
-    m_requireUppercaseHasBeenSet(false),
-    m_requireLowercase(false),
-    m_requireLowercaseHasBeenSet(false),
-    m_requireNumbers(false),
-    m_requireNumbersHasBeenSet(false),
-    m_requireSymbols(false),
-    m_requireSymbolsHasBeenSet(false),
-    m_temporaryPasswordValidityDays(0),
-    m_temporaryPasswordValidityDaysHasBeenSet(false)
+PasswordPolicyType::PasswordPolicyType(JsonView jsonValue)
+  : PasswordPolicyType()
 {
   *this = jsonValue;
 }

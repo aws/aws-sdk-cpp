@@ -25,10 +25,8 @@ TopicSingularFilterConstant::TopicSingularFilterConstant() :
 {
 }
 
-TopicSingularFilterConstant::TopicSingularFilterConstant(JsonView jsonValue) : 
-    m_constantType(ConstantType::NOT_SET),
-    m_constantTypeHasBeenSet(false),
-    m_singularConstantHasBeenSet(false)
+TopicSingularFilterConstant::TopicSingularFilterConstant(JsonView jsonValue)
+  : TopicSingularFilterConstant()
 {
   *this = jsonValue;
 }

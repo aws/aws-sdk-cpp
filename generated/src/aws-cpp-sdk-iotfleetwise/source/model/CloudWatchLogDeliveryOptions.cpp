@@ -25,10 +25,8 @@ CloudWatchLogDeliveryOptions::CloudWatchLogDeliveryOptions() :
 {
 }
 
-CloudWatchLogDeliveryOptions::CloudWatchLogDeliveryOptions(JsonView jsonValue) : 
-    m_logType(LogType::NOT_SET),
-    m_logTypeHasBeenSet(false),
-    m_logGroupNameHasBeenSet(false)
+CloudWatchLogDeliveryOptions::CloudWatchLogDeliveryOptions(JsonView jsonValue)
+  : CloudWatchLogDeliveryOptions()
 {
   *this = jsonValue;
 }

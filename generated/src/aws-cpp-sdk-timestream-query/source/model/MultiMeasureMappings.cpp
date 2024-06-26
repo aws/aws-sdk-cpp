@@ -24,9 +24,8 @@ MultiMeasureMappings::MultiMeasureMappings() :
 {
 }
 
-MultiMeasureMappings::MultiMeasureMappings(JsonView jsonValue) : 
-    m_targetMultiMeasureNameHasBeenSet(false),
-    m_multiMeasureAttributeMappingsHasBeenSet(false)
+MultiMeasureMappings::MultiMeasureMappings(JsonView jsonValue)
+  : MultiMeasureMappings()
 {
   *this = jsonValue;
 }

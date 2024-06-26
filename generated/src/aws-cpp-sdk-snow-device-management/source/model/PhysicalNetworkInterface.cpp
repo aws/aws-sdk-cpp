@@ -31,16 +31,8 @@ PhysicalNetworkInterface::PhysicalNetworkInterface() :
 {
 }
 
-PhysicalNetworkInterface::PhysicalNetworkInterface(JsonView jsonValue) : 
-    m_defaultGatewayHasBeenSet(false),
-    m_ipAddressHasBeenSet(false),
-    m_ipAddressAssignment(IpAddressAssignment::NOT_SET),
-    m_ipAddressAssignmentHasBeenSet(false),
-    m_macAddressHasBeenSet(false),
-    m_netmaskHasBeenSet(false),
-    m_physicalConnectorType(PhysicalConnectorType::NOT_SET),
-    m_physicalConnectorTypeHasBeenSet(false),
-    m_physicalNetworkInterfaceIdHasBeenSet(false)
+PhysicalNetworkInterface::PhysicalNetworkInterface(JsonView jsonValue)
+  : PhysicalNetworkInterface()
 {
   *this = jsonValue;
 }

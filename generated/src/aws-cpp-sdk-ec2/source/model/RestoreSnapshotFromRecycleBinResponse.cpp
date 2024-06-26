@@ -25,11 +25,8 @@ RestoreSnapshotFromRecycleBinResponse::RestoreSnapshotFromRecycleBinResponse() :
 {
 }
 
-RestoreSnapshotFromRecycleBinResponse::RestoreSnapshotFromRecycleBinResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_encrypted(false),
-    m_state(SnapshotState::NOT_SET),
-    m_volumeSize(0),
-    m_sseType(SSEType::NOT_SET)
+RestoreSnapshotFromRecycleBinResponse::RestoreSnapshotFromRecycleBinResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : RestoreSnapshotFromRecycleBinResponse()
 {
   *this = result;
 }

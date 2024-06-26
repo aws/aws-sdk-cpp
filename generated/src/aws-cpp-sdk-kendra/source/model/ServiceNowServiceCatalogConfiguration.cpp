@@ -29,14 +29,8 @@ ServiceNowServiceCatalogConfiguration::ServiceNowServiceCatalogConfiguration() :
 {
 }
 
-ServiceNowServiceCatalogConfiguration::ServiceNowServiceCatalogConfiguration(JsonView jsonValue) : 
-    m_crawlAttachments(false),
-    m_crawlAttachmentsHasBeenSet(false),
-    m_includeAttachmentFilePatternsHasBeenSet(false),
-    m_excludeAttachmentFilePatternsHasBeenSet(false),
-    m_documentDataFieldNameHasBeenSet(false),
-    m_documentTitleFieldNameHasBeenSet(false),
-    m_fieldMappingsHasBeenSet(false)
+ServiceNowServiceCatalogConfiguration::ServiceNowServiceCatalogConfiguration(JsonView jsonValue)
+  : ServiceNowServiceCatalogConfiguration()
 {
   *this = jsonValue;
 }

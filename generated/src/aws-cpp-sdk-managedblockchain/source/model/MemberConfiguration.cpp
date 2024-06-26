@@ -28,13 +28,8 @@ MemberConfiguration::MemberConfiguration() :
 {
 }
 
-MemberConfiguration::MemberConfiguration(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_frameworkConfigurationHasBeenSet(false),
-    m_logPublishingConfigurationHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_kmsKeyArnHasBeenSet(false)
+MemberConfiguration::MemberConfiguration(JsonView jsonValue)
+  : MemberConfiguration()
 {
   *this = jsonValue;
 }

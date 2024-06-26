@@ -23,8 +23,8 @@ PolicyGenerationDetails::PolicyGenerationDetails() :
 {
 }
 
-PolicyGenerationDetails::PolicyGenerationDetails(JsonView jsonValue) : 
-    m_principalArnHasBeenSet(false)
+PolicyGenerationDetails::PolicyGenerationDetails(JsonView jsonValue)
+  : PolicyGenerationDetails()
 {
   *this = jsonValue;
 }

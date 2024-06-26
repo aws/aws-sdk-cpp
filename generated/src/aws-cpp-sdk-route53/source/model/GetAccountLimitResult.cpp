@@ -21,8 +21,8 @@ GetAccountLimitResult::GetAccountLimitResult() :
 {
 }
 
-GetAccountLimitResult::GetAccountLimitResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_count(0)
+GetAccountLimitResult::GetAccountLimitResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : GetAccountLimitResult()
 {
   *this = result;
 }

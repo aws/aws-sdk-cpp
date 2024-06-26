@@ -24,9 +24,8 @@ AwsS3BucketWebsiteConfigurationRoutingRuleCondition::AwsS3BucketWebsiteConfigura
 {
 }
 
-AwsS3BucketWebsiteConfigurationRoutingRuleCondition::AwsS3BucketWebsiteConfigurationRoutingRuleCondition(JsonView jsonValue) : 
-    m_httpErrorCodeReturnedEqualsHasBeenSet(false),
-    m_keyPrefixEqualsHasBeenSet(false)
+AwsS3BucketWebsiteConfigurationRoutingRuleCondition::AwsS3BucketWebsiteConfigurationRoutingRuleCondition(JsonView jsonValue)
+  : AwsS3BucketWebsiteConfigurationRoutingRuleCondition()
 {
   *this = jsonValue;
 }

@@ -26,12 +26,8 @@ GetWorkflowResult::GetWorkflowResult() :
 {
 }
 
-GetWorkflowResult::GetWorkflowResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(WorkflowStatus::NOT_SET),
-    m_type(WorkflowType::NOT_SET),
-    m_engine(WorkflowEngine::NOT_SET),
-    m_storageCapacity(0),
-    m_accelerators(Accelerators::NOT_SET)
+GetWorkflowResult::GetWorkflowResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetWorkflowResult()
 {
   *this = result;
 }

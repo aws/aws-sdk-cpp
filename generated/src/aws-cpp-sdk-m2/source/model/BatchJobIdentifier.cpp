@@ -26,11 +26,8 @@ BatchJobIdentifier::BatchJobIdentifier() :
 {
 }
 
-BatchJobIdentifier::BatchJobIdentifier(JsonView jsonValue) : 
-    m_fileBatchJobIdentifierHasBeenSet(false),
-    m_restartBatchJobIdentifierHasBeenSet(false),
-    m_s3BatchJobIdentifierHasBeenSet(false),
-    m_scriptBatchJobIdentifierHasBeenSet(false)
+BatchJobIdentifier::BatchJobIdentifier(JsonView jsonValue)
+  : BatchJobIdentifier()
 {
   *this = jsonValue;
 }

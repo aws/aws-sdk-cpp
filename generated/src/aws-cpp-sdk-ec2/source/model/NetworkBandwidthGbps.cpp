@@ -28,11 +28,8 @@ NetworkBandwidthGbps::NetworkBandwidthGbps() :
 {
 }
 
-NetworkBandwidthGbps::NetworkBandwidthGbps(const XmlNode& xmlNode) : 
-    m_min(0.0),
-    m_minHasBeenSet(false),
-    m_max(0.0),
-    m_maxHasBeenSet(false)
+NetworkBandwidthGbps::NetworkBandwidthGbps(const XmlNode& xmlNode)
+  : NetworkBandwidthGbps()
 {
   *this = xmlNode;
 }

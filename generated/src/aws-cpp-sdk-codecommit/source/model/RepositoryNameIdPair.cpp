@@ -24,9 +24,8 @@ RepositoryNameIdPair::RepositoryNameIdPair() :
 {
 }
 
-RepositoryNameIdPair::RepositoryNameIdPair(JsonView jsonValue) : 
-    m_repositoryNameHasBeenSet(false),
-    m_repositoryIdHasBeenSet(false)
+RepositoryNameIdPair::RepositoryNameIdPair(JsonView jsonValue)
+  : RepositoryNameIdPair()
 {
   *this = jsonValue;
 }

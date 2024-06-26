@@ -24,9 +24,8 @@ ExportSqlDetails::ExportSqlDetails() :
 {
 }
 
-ExportSqlDetails::ExportSqlDetails(JsonView jsonValue) : 
-    m_s3ObjectKeyHasBeenSet(false),
-    m_objectURLHasBeenSet(false)
+ExportSqlDetails::ExportSqlDetails(JsonView jsonValue)
+  : ExportSqlDetails()
 {
   *this = jsonValue;
 }

@@ -30,15 +30,8 @@ Script::Script() :
 {
 }
 
-Script::Script(JsonView jsonValue) : 
-    m_scriptIdHasBeenSet(false),
-    m_scriptArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_sizeOnDisk(0),
-    m_sizeOnDiskHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_storageLocationHasBeenSet(false)
+Script::Script(JsonView jsonValue)
+  : Script()
 {
   *this = jsonValue;
 }

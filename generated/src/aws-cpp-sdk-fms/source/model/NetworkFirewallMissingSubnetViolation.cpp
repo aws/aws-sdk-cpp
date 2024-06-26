@@ -26,11 +26,8 @@ NetworkFirewallMissingSubnetViolation::NetworkFirewallMissingSubnetViolation() :
 {
 }
 
-NetworkFirewallMissingSubnetViolation::NetworkFirewallMissingSubnetViolation(JsonView jsonValue) : 
-    m_violationTargetHasBeenSet(false),
-    m_vPCHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_targetViolationReasonHasBeenSet(false)
+NetworkFirewallMissingSubnetViolation::NetworkFirewallMissingSubnetViolation(JsonView jsonValue)
+  : NetworkFirewallMissingSubnetViolation()
 {
   *this = jsonValue;
 }

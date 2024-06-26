@@ -24,9 +24,8 @@ UnsupportedTimestamps::UnsupportedTimestamps() :
 {
 }
 
-UnsupportedTimestamps::UnsupportedTimestamps(JsonView jsonValue) : 
-    m_totalNumberOfUnsupportedTimestamps(0),
-    m_totalNumberOfUnsupportedTimestampsHasBeenSet(false)
+UnsupportedTimestamps::UnsupportedTimestamps(JsonView jsonValue)
+  : UnsupportedTimestamps()
 {
   *this = jsonValue;
 }

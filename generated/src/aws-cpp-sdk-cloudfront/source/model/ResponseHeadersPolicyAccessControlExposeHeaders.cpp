@@ -27,10 +27,8 @@ ResponseHeadersPolicyAccessControlExposeHeaders::ResponseHeadersPolicyAccessCont
 {
 }
 
-ResponseHeadersPolicyAccessControlExposeHeaders::ResponseHeadersPolicyAccessControlExposeHeaders(const XmlNode& xmlNode) : 
-    m_quantity(0),
-    m_quantityHasBeenSet(false),
-    m_itemsHasBeenSet(false)
+ResponseHeadersPolicyAccessControlExposeHeaders::ResponseHeadersPolicyAccessControlExposeHeaders(const XmlNode& xmlNode)
+  : ResponseHeadersPolicyAccessControlExposeHeaders()
 {
   *this = xmlNode;
 }

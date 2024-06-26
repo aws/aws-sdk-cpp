@@ -24,9 +24,8 @@ CoverageFilterCondition::CoverageFilterCondition() :
 {
 }
 
-CoverageFilterCondition::CoverageFilterCondition(JsonView jsonValue) : 
-    m_equalsHasBeenSet(false),
-    m_notEqualsHasBeenSet(false)
+CoverageFilterCondition::CoverageFilterCondition(JsonView jsonValue)
+  : CoverageFilterCondition()
 {
   *this = jsonValue;
 }

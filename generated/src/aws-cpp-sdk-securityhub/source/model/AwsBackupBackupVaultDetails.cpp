@@ -27,12 +27,8 @@ AwsBackupBackupVaultDetails::AwsBackupBackupVaultDetails() :
 {
 }
 
-AwsBackupBackupVaultDetails::AwsBackupBackupVaultDetails(JsonView jsonValue) : 
-    m_backupVaultArnHasBeenSet(false),
-    m_backupVaultNameHasBeenSet(false),
-    m_encryptionKeyArnHasBeenSet(false),
-    m_notificationsHasBeenSet(false),
-    m_accessPolicyHasBeenSet(false)
+AwsBackupBackupVaultDetails::AwsBackupBackupVaultDetails(JsonView jsonValue)
+  : AwsBackupBackupVaultDetails()
 {
   *this = jsonValue;
 }

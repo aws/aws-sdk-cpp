@@ -29,14 +29,8 @@ TemplateSummary::TemplateSummary() :
 {
 }
 
-TemplateSummary::TemplateSummary(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_templateIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_latestVersionNumber(0),
-    m_latestVersionNumberHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false)
+TemplateSummary::TemplateSummary(JsonView jsonValue)
+  : TemplateSummary()
 {
   *this = jsonValue;
 }

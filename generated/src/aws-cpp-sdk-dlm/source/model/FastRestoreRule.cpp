@@ -29,14 +29,8 @@ FastRestoreRule::FastRestoreRule() :
 {
 }
 
-FastRestoreRule::FastRestoreRule(JsonView jsonValue) : 
-    m_count(0),
-    m_countHasBeenSet(false),
-    m_interval(0),
-    m_intervalHasBeenSet(false),
-    m_intervalUnit(RetentionIntervalUnitValues::NOT_SET),
-    m_intervalUnitHasBeenSet(false),
-    m_availabilityZonesHasBeenSet(false)
+FastRestoreRule::FastRestoreRule(JsonView jsonValue)
+  : FastRestoreRule()
 {
   *this = jsonValue;
 }

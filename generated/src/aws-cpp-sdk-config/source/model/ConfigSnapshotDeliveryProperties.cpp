@@ -24,9 +24,8 @@ ConfigSnapshotDeliveryProperties::ConfigSnapshotDeliveryProperties() :
 {
 }
 
-ConfigSnapshotDeliveryProperties::ConfigSnapshotDeliveryProperties(JsonView jsonValue) : 
-    m_deliveryFrequency(MaximumExecutionFrequency::NOT_SET),
-    m_deliveryFrequencyHasBeenSet(false)
+ConfigSnapshotDeliveryProperties::ConfigSnapshotDeliveryProperties(JsonView jsonValue)
+  : ConfigSnapshotDeliveryProperties()
 {
   *this = jsonValue;
 }

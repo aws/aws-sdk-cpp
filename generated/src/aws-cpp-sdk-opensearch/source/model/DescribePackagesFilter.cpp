@@ -25,10 +25,8 @@ DescribePackagesFilter::DescribePackagesFilter() :
 {
 }
 
-DescribePackagesFilter::DescribePackagesFilter(JsonView jsonValue) : 
-    m_name(DescribePackagesFilterName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
+DescribePackagesFilter::DescribePackagesFilter(JsonView jsonValue)
+  : DescribePackagesFilter()
 {
   *this = jsonValue;
 }

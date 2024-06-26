@@ -22,8 +22,8 @@ StartEventsDetectionJobResult::StartEventsDetectionJobResult() :
 {
 }
 
-StartEventsDetectionJobResult::StartEventsDetectionJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_jobStatus(JobStatus::NOT_SET)
+StartEventsDetectionJobResult::StartEventsDetectionJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : StartEventsDetectionJobResult()
 {
   *this = result;
 }

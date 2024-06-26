@@ -22,8 +22,8 @@ DeleteIntegrationResult::DeleteIntegrationResult() :
 {
 }
 
-DeleteIntegrationResult::DeleteIntegrationResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_status(IntegrationStatus::NOT_SET)
+DeleteIntegrationResult::DeleteIntegrationResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : DeleteIntegrationResult()
 {
   *this = result;
 }

@@ -23,8 +23,8 @@ ToolUseBlockDelta::ToolUseBlockDelta() :
 {
 }
 
-ToolUseBlockDelta::ToolUseBlockDelta(JsonView jsonValue) : 
-    m_inputHasBeenSet(false)
+ToolUseBlockDelta::ToolUseBlockDelta(JsonView jsonValue)
+  : ToolUseBlockDelta()
 {
   *this = jsonValue;
 }

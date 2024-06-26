@@ -50,35 +50,8 @@ TraceSummary::TraceSummary() :
 {
 }
 
-TraceSummary::TraceSummary(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_duration(0.0),
-    m_durationHasBeenSet(false),
-    m_responseTime(0.0),
-    m_responseTimeHasBeenSet(false),
-    m_hasFault(false),
-    m_hasFaultHasBeenSet(false),
-    m_hasError(false),
-    m_hasErrorHasBeenSet(false),
-    m_hasThrottle(false),
-    m_hasThrottleHasBeenSet(false),
-    m_isPartial(false),
-    m_isPartialHasBeenSet(false),
-    m_httpHasBeenSet(false),
-    m_annotationsHasBeenSet(false),
-    m_usersHasBeenSet(false),
-    m_serviceIdsHasBeenSet(false),
-    m_resourceARNsHasBeenSet(false),
-    m_instanceIdsHasBeenSet(false),
-    m_availabilityZonesHasBeenSet(false),
-    m_entryPointHasBeenSet(false),
-    m_faultRootCausesHasBeenSet(false),
-    m_errorRootCausesHasBeenSet(false),
-    m_responseTimeRootCausesHasBeenSet(false),
-    m_revision(0),
-    m_revisionHasBeenSet(false),
-    m_matchedEventTimeHasBeenSet(false)
+TraceSummary::TraceSummary(JsonView jsonValue)
+  : TraceSummary()
 {
   *this = jsonValue;
 }

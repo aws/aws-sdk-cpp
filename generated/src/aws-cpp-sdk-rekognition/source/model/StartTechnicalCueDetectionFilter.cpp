@@ -25,10 +25,8 @@ StartTechnicalCueDetectionFilter::StartTechnicalCueDetectionFilter() :
 {
 }
 
-StartTechnicalCueDetectionFilter::StartTechnicalCueDetectionFilter(JsonView jsonValue) : 
-    m_minSegmentConfidence(0.0),
-    m_minSegmentConfidenceHasBeenSet(false),
-    m_blackFrameHasBeenSet(false)
+StartTechnicalCueDetectionFilter::StartTechnicalCueDetectionFilter(JsonView jsonValue)
+  : StartTechnicalCueDetectionFilter()
 {
   *this = jsonValue;
 }

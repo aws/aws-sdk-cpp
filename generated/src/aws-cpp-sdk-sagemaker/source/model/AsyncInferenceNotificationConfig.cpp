@@ -25,10 +25,8 @@ AsyncInferenceNotificationConfig::AsyncInferenceNotificationConfig() :
 {
 }
 
-AsyncInferenceNotificationConfig::AsyncInferenceNotificationConfig(JsonView jsonValue) : 
-    m_successTopicHasBeenSet(false),
-    m_errorTopicHasBeenSet(false),
-    m_includeInferenceResponseInHasBeenSet(false)
+AsyncInferenceNotificationConfig::AsyncInferenceNotificationConfig(JsonView jsonValue)
+  : AsyncInferenceNotificationConfig()
 {
   *this = jsonValue;
 }

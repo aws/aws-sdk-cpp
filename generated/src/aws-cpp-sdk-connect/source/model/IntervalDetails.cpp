@@ -25,10 +25,8 @@ IntervalDetails::IntervalDetails() :
 {
 }
 
-IntervalDetails::IntervalDetails(JsonView jsonValue) : 
-    m_timeZoneHasBeenSet(false),
-    m_intervalPeriod(IntervalPeriod::NOT_SET),
-    m_intervalPeriodHasBeenSet(false)
+IntervalDetails::IntervalDetails(JsonView jsonValue)
+  : IntervalDetails()
 {
   *this = jsonValue;
 }

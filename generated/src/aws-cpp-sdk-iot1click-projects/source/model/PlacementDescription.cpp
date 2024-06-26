@@ -27,12 +27,8 @@ PlacementDescription::PlacementDescription() :
 {
 }
 
-PlacementDescription::PlacementDescription(JsonView jsonValue) : 
-    m_projectNameHasBeenSet(false),
-    m_placementNameHasBeenSet(false),
-    m_attributesHasBeenSet(false),
-    m_createdDateHasBeenSet(false),
-    m_updatedDateHasBeenSet(false)
+PlacementDescription::PlacementDescription(JsonView jsonValue)
+  : PlacementDescription()
 {
   *this = jsonValue;
 }

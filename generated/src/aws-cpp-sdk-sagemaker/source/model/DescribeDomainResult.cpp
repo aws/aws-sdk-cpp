@@ -25,11 +25,8 @@ DescribeDomainResult::DescribeDomainResult() :
 {
 }
 
-DescribeDomainResult::DescribeDomainResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(DomainStatus::NOT_SET),
-    m_authMode(AuthMode::NOT_SET),
-    m_appNetworkAccessType(AppNetworkAccessType::NOT_SET),
-    m_appSecurityGroupManagement(AppSecurityGroupManagement::NOT_SET)
+DescribeDomainResult::DescribeDomainResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeDomainResult()
 {
   *this = result;
 }

@@ -29,12 +29,8 @@ AnalyticsS3BucketDestination::AnalyticsS3BucketDestination() :
 {
 }
 
-AnalyticsS3BucketDestination::AnalyticsS3BucketDestination(const XmlNode& xmlNode) : 
-    m_format(AnalyticsS3ExportFileFormat::NOT_SET),
-    m_formatHasBeenSet(false),
-    m_bucketAccountIdHasBeenSet(false),
-    m_bucketHasBeenSet(false),
-    m_prefixHasBeenSet(false)
+AnalyticsS3BucketDestination::AnalyticsS3BucketDestination(const XmlNode& xmlNode)
+  : AnalyticsS3BucketDestination()
 {
   *this = xmlNode;
 }

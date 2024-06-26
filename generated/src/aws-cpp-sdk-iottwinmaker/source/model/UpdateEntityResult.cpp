@@ -22,8 +22,8 @@ UpdateEntityResult::UpdateEntityResult() :
 {
 }
 
-UpdateEntityResult::UpdateEntityResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_state(State::NOT_SET)
+UpdateEntityResult::UpdateEntityResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateEntityResult()
 {
   *this = result;
 }

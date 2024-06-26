@@ -27,12 +27,8 @@ UnusedPermissionsRecommendedStep::UnusedPermissionsRecommendedStep() :
 {
 }
 
-UnusedPermissionsRecommendedStep::UnusedPermissionsRecommendedStep(JsonView jsonValue) : 
-    m_policyUpdatedAtHasBeenSet(false),
-    m_recommendedAction(RecommendedRemediationAction::NOT_SET),
-    m_recommendedActionHasBeenSet(false),
-    m_recommendedPolicyHasBeenSet(false),
-    m_existingPolicyIdHasBeenSet(false)
+UnusedPermissionsRecommendedStep::UnusedPermissionsRecommendedStep(JsonView jsonValue)
+  : UnusedPermissionsRecommendedStep()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ TestGridVpcConfig::TestGridVpcConfig() :
 {
 }
 
-TestGridVpcConfig::TestGridVpcConfig(JsonView jsonValue) : 
-    m_securityGroupIdsHasBeenSet(false),
-    m_subnetIdsHasBeenSet(false),
-    m_vpcIdHasBeenSet(false)
+TestGridVpcConfig::TestGridVpcConfig(JsonView jsonValue)
+  : TestGridVpcConfig()
 {
   *this = jsonValue;
 }

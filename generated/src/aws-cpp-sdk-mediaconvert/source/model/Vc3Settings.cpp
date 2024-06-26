@@ -40,25 +40,8 @@ Vc3Settings::Vc3Settings() :
 {
 }
 
-Vc3Settings::Vc3Settings(JsonView jsonValue) : 
-    m_framerateControl(Vc3FramerateControl::NOT_SET),
-    m_framerateControlHasBeenSet(false),
-    m_framerateConversionAlgorithm(Vc3FramerateConversionAlgorithm::NOT_SET),
-    m_framerateConversionAlgorithmHasBeenSet(false),
-    m_framerateDenominator(0),
-    m_framerateDenominatorHasBeenSet(false),
-    m_framerateNumerator(0),
-    m_framerateNumeratorHasBeenSet(false),
-    m_interlaceMode(Vc3InterlaceMode::NOT_SET),
-    m_interlaceModeHasBeenSet(false),
-    m_scanTypeConversionMode(Vc3ScanTypeConversionMode::NOT_SET),
-    m_scanTypeConversionModeHasBeenSet(false),
-    m_slowPal(Vc3SlowPal::NOT_SET),
-    m_slowPalHasBeenSet(false),
-    m_telecine(Vc3Telecine::NOT_SET),
-    m_telecineHasBeenSet(false),
-    m_vc3Class(Vc3Class::NOT_SET),
-    m_vc3ClassHasBeenSet(false)
+Vc3Settings::Vc3Settings(JsonView jsonValue)
+  : Vc3Settings()
 {
   *this = jsonValue;
 }

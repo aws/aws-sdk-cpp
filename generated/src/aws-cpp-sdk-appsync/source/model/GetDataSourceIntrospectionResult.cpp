@@ -22,8 +22,8 @@ GetDataSourceIntrospectionResult::GetDataSourceIntrospectionResult() :
 {
 }
 
-GetDataSourceIntrospectionResult::GetDataSourceIntrospectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_introspectionStatus(DataSourceIntrospectionStatus::NOT_SET)
+GetDataSourceIntrospectionResult::GetDataSourceIntrospectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetDataSourceIntrospectionResult()
 {
   *this = result;
 }

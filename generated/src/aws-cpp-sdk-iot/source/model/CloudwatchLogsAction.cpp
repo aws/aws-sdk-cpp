@@ -26,11 +26,8 @@ CloudwatchLogsAction::CloudwatchLogsAction() :
 {
 }
 
-CloudwatchLogsAction::CloudwatchLogsAction(JsonView jsonValue) : 
-    m_roleArnHasBeenSet(false),
-    m_logGroupNameHasBeenSet(false),
-    m_batchMode(false),
-    m_batchModeHasBeenSet(false)
+CloudwatchLogsAction::CloudwatchLogsAction(JsonView jsonValue)
+  : CloudwatchLogsAction()
 {
   *this = jsonValue;
 }

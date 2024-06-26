@@ -27,12 +27,8 @@ SecurityProfileSummary::SecurityProfileSummary() :
 {
 }
 
-SecurityProfileSummary::SecurityProfileSummary(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_lastModifiedRegionHasBeenSet(false)
+SecurityProfileSummary::SecurityProfileSummary(JsonView jsonValue)
+  : SecurityProfileSummary()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ ReferenceDataSourceUpdate::ReferenceDataSourceUpdate() :
 {
 }
 
-ReferenceDataSourceUpdate::ReferenceDataSourceUpdate(JsonView jsonValue) : 
-    m_referenceIdHasBeenSet(false),
-    m_tableNameUpdateHasBeenSet(false),
-    m_s3ReferenceDataSourceUpdateHasBeenSet(false),
-    m_referenceSchemaUpdateHasBeenSet(false)
+ReferenceDataSourceUpdate::ReferenceDataSourceUpdate(JsonView jsonValue)
+  : ReferenceDataSourceUpdate()
 {
   *this = jsonValue;
 }

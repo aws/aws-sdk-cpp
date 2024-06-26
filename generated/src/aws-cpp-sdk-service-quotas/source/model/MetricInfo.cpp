@@ -26,11 +26,8 @@ MetricInfo::MetricInfo() :
 {
 }
 
-MetricInfo::MetricInfo(JsonView jsonValue) : 
-    m_metricNamespaceHasBeenSet(false),
-    m_metricNameHasBeenSet(false),
-    m_metricDimensionsHasBeenSet(false),
-    m_metricStatisticRecommendationHasBeenSet(false)
+MetricInfo::MetricInfo(JsonView jsonValue)
+  : MetricInfo()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ GetSampledRequestsResult::GetSampledRequestsResult() :
 {
 }
 
-GetSampledRequestsResult::GetSampledRequestsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_populationSize(0)
+GetSampledRequestsResult::GetSampledRequestsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetSampledRequestsResult()
 {
   *this = result;
 }

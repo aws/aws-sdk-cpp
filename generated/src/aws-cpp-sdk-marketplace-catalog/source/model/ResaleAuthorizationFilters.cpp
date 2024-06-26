@@ -35,20 +35,8 @@ ResaleAuthorizationFilters::ResaleAuthorizationFilters() :
 {
 }
 
-ResaleAuthorizationFilters::ResaleAuthorizationFilters(JsonView jsonValue) : 
-    m_entityIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_productIdHasBeenSet(false),
-    m_createdDateHasBeenSet(false),
-    m_availabilityEndDateHasBeenSet(false),
-    m_manufacturerAccountIdHasBeenSet(false),
-    m_productNameHasBeenSet(false),
-    m_manufacturerLegalNameHasBeenSet(false),
-    m_resellerAccountIDHasBeenSet(false),
-    m_resellerLegalNameHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_offerExtendedStatusHasBeenSet(false),
-    m_lastModifiedDateHasBeenSet(false)
+ResaleAuthorizationFilters::ResaleAuthorizationFilters(JsonView jsonValue)
+  : ResaleAuthorizationFilters()
 {
   *this = jsonValue;
 }

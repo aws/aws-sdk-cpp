@@ -25,10 +25,8 @@ ResourceRequirement::ResourceRequirement() :
 {
 }
 
-ResourceRequirement::ResourceRequirement(JsonView jsonValue) : 
-    m_valueHasBeenSet(false),
-    m_type(ResourceType::NOT_SET),
-    m_typeHasBeenSet(false)
+ResourceRequirement::ResourceRequirement(JsonView jsonValue)
+  : ResourceRequirement()
 {
   *this = jsonValue;
 }

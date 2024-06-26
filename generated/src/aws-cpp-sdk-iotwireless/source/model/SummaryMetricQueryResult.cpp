@@ -36,21 +36,8 @@ SummaryMetricQueryResult::SummaryMetricQueryResult() :
 {
 }
 
-SummaryMetricQueryResult::SummaryMetricQueryResult(JsonView jsonValue) : 
-    m_queryIdHasBeenSet(false),
-    m_queryStatus(MetricQueryStatus::NOT_SET),
-    m_queryStatusHasBeenSet(false),
-    m_errorHasBeenSet(false),
-    m_metricName(MetricName::NOT_SET),
-    m_metricNameHasBeenSet(false),
-    m_dimensionsHasBeenSet(false),
-    m_aggregationPeriod(AggregationPeriod::NOT_SET),
-    m_aggregationPeriodHasBeenSet(false),
-    m_startTimestampHasBeenSet(false),
-    m_endTimestampHasBeenSet(false),
-    m_timestampsHasBeenSet(false),
-    m_valuesHasBeenSet(false),
-    m_unitHasBeenSet(false)
+SummaryMetricQueryResult::SummaryMetricQueryResult(JsonView jsonValue)
+  : SummaryMetricQueryResult()
 {
   *this = jsonValue;
 }

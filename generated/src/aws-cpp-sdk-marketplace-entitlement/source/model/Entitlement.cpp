@@ -27,12 +27,8 @@ Entitlement::Entitlement() :
 {
 }
 
-Entitlement::Entitlement(JsonView jsonValue) : 
-    m_productCodeHasBeenSet(false),
-    m_dimensionHasBeenSet(false),
-    m_customerIdentifierHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_expirationDateHasBeenSet(false)
+Entitlement::Entitlement(JsonView jsonValue)
+  : Entitlement()
 {
   *this = jsonValue;
 }

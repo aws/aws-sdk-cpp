@@ -23,8 +23,8 @@ ObjectReference::ObjectReference() :
 {
 }
 
-ObjectReference::ObjectReference(JsonView jsonValue) : 
-    m_selectorHasBeenSet(false)
+ObjectReference::ObjectReference(JsonView jsonValue)
+  : ObjectReference()
 {
   *this = jsonValue;
 }

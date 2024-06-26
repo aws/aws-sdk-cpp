@@ -26,11 +26,8 @@ BulkEmailEntryResult::BulkEmailEntryResult() :
 {
 }
 
-BulkEmailEntryResult::BulkEmailEntryResult(JsonView jsonValue) : 
-    m_status(BulkEmailStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_errorHasBeenSet(false),
-    m_messageIdHasBeenSet(false)
+BulkEmailEntryResult::BulkEmailEntryResult(JsonView jsonValue)
+  : BulkEmailEntryResult()
 {
   *this = jsonValue;
 }

@@ -34,19 +34,8 @@ AppMonitorConfiguration::AppMonitorConfiguration() :
 {
 }
 
-AppMonitorConfiguration::AppMonitorConfiguration(JsonView jsonValue) : 
-    m_allowCookies(false),
-    m_allowCookiesHasBeenSet(false),
-    m_enableXRay(false),
-    m_enableXRayHasBeenSet(false),
-    m_excludedPagesHasBeenSet(false),
-    m_favoritePagesHasBeenSet(false),
-    m_guestRoleArnHasBeenSet(false),
-    m_identityPoolIdHasBeenSet(false),
-    m_includedPagesHasBeenSet(false),
-    m_sessionSampleRate(0.0),
-    m_sessionSampleRateHasBeenSet(false),
-    m_telemetriesHasBeenSet(false)
+AppMonitorConfiguration::AppMonitorConfiguration(JsonView jsonValue)
+  : AppMonitorConfiguration()
 {
   *this = jsonValue;
 }

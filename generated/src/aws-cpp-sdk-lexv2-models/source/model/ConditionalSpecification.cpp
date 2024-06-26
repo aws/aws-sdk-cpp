@@ -26,11 +26,8 @@ ConditionalSpecification::ConditionalSpecification() :
 {
 }
 
-ConditionalSpecification::ConditionalSpecification(JsonView jsonValue) : 
-    m_active(false),
-    m_activeHasBeenSet(false),
-    m_conditionalBranchesHasBeenSet(false),
-    m_defaultBranchHasBeenSet(false)
+ConditionalSpecification::ConditionalSpecification(JsonView jsonValue)
+  : ConditionalSpecification()
 {
   *this = jsonValue;
 }

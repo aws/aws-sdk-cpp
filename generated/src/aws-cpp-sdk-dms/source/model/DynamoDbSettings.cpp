@@ -23,8 +23,8 @@ DynamoDbSettings::DynamoDbSettings() :
 {
 }
 
-DynamoDbSettings::DynamoDbSettings(JsonView jsonValue) : 
-    m_serviceAccessRoleArnHasBeenSet(false)
+DynamoDbSettings::DynamoDbSettings(JsonView jsonValue)
+  : DynamoDbSettings()
 {
   *this = jsonValue;
 }

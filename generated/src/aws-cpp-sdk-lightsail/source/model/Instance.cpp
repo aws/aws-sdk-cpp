@@ -47,32 +47,8 @@ Instance::Instance() :
 {
 }
 
-Instance::Instance(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_supportCodeHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_locationHasBeenSet(false),
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_blueprintIdHasBeenSet(false),
-    m_blueprintNameHasBeenSet(false),
-    m_bundleIdHasBeenSet(false),
-    m_addOnsHasBeenSet(false),
-    m_isStaticIp(false),
-    m_isStaticIpHasBeenSet(false),
-    m_privateIpAddressHasBeenSet(false),
-    m_publicIpAddressHasBeenSet(false),
-    m_ipv6AddressesHasBeenSet(false),
-    m_ipAddressType(IpAddressType::NOT_SET),
-    m_ipAddressTypeHasBeenSet(false),
-    m_hardwareHasBeenSet(false),
-    m_networkingHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_usernameHasBeenSet(false),
-    m_sshKeyNameHasBeenSet(false),
-    m_metadataOptionsHasBeenSet(false)
+Instance::Instance(JsonView jsonValue)
+  : Instance()
 {
   *this = jsonValue;
 }

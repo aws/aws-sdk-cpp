@@ -30,15 +30,8 @@ ActionSummary::ActionSummary() :
 {
 }
 
-ActionSummary::ActionSummary(JsonView jsonValue) : 
-    m_actionArnHasBeenSet(false),
-    m_actionNameHasBeenSet(false),
-    m_sourceHasBeenSet(false),
-    m_actionTypeHasBeenSet(false),
-    m_status(ActionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false)
+ActionSummary::ActionSummary(JsonView jsonValue)
+  : ActionSummary()
 {
   *this = jsonValue;
 }

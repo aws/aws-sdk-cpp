@@ -24,9 +24,8 @@ SaaSProductTitleFilter::SaaSProductTitleFilter() :
 {
 }
 
-SaaSProductTitleFilter::SaaSProductTitleFilter(JsonView jsonValue) : 
-    m_valueListHasBeenSet(false),
-    m_wildCardValueHasBeenSet(false)
+SaaSProductTitleFilter::SaaSProductTitleFilter(JsonView jsonValue)
+  : SaaSProductTitleFilter()
 {
   *this = jsonValue;
 }

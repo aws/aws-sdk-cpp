@@ -26,9 +26,8 @@ CreateTransitGatewayPeeringAttachmentRequestOptions::CreateTransitGatewayPeering
 {
 }
 
-CreateTransitGatewayPeeringAttachmentRequestOptions::CreateTransitGatewayPeeringAttachmentRequestOptions(const XmlNode& xmlNode) : 
-    m_dynamicRouting(DynamicRoutingValue::NOT_SET),
-    m_dynamicRoutingHasBeenSet(false)
+CreateTransitGatewayPeeringAttachmentRequestOptions::CreateTransitGatewayPeeringAttachmentRequestOptions(const XmlNode& xmlNode)
+  : CreateTransitGatewayPeeringAttachmentRequestOptions()
 {
   *this = xmlNode;
 }

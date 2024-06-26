@@ -26,12 +26,8 @@ PutLaunchActionResult::PutLaunchActionResult() :
 {
 }
 
-PutLaunchActionResult::PutLaunchActionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_active(false),
-    m_category(LaunchActionCategory::NOT_SET),
-    m_optional(false),
-    m_order(0),
-    m_type(LaunchActionType::NOT_SET)
+PutLaunchActionResult::PutLaunchActionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : PutLaunchActionResult()
 {
   *this = result;
 }

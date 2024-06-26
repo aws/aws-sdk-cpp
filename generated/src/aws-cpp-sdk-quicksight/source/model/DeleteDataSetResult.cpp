@@ -22,8 +22,8 @@ DeleteDataSetResult::DeleteDataSetResult() :
 {
 }
 
-DeleteDataSetResult::DeleteDataSetResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+DeleteDataSetResult::DeleteDataSetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeleteDataSetResult()
 {
   *this = result;
 }

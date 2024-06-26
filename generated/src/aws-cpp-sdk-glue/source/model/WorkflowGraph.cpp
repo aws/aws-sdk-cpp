@@ -24,9 +24,8 @@ WorkflowGraph::WorkflowGraph() :
 {
 }
 
-WorkflowGraph::WorkflowGraph(JsonView jsonValue) : 
-    m_nodesHasBeenSet(false),
-    m_edgesHasBeenSet(false)
+WorkflowGraph::WorkflowGraph(JsonView jsonValue)
+  : WorkflowGraph()
 {
   *this = jsonValue;
 }

@@ -32,17 +32,8 @@ RdsDbInstance::RdsDbInstance() :
 {
 }
 
-RdsDbInstance::RdsDbInstance(JsonView jsonValue) : 
-    m_rdsDbInstanceArnHasBeenSet(false),
-    m_dbInstanceIdentifierHasBeenSet(false),
-    m_dbUserHasBeenSet(false),
-    m_dbPasswordHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_addressHasBeenSet(false),
-    m_engineHasBeenSet(false),
-    m_stackIdHasBeenSet(false),
-    m_missingOnRds(false),
-    m_missingOnRdsHasBeenSet(false)
+RdsDbInstance::RdsDbInstance(JsonView jsonValue)
+  : RdsDbInstance()
 {
   *this = jsonValue;
 }

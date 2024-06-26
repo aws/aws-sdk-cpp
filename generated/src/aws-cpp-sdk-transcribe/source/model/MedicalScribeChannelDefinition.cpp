@@ -26,11 +26,8 @@ MedicalScribeChannelDefinition::MedicalScribeChannelDefinition() :
 {
 }
 
-MedicalScribeChannelDefinition::MedicalScribeChannelDefinition(JsonView jsonValue) : 
-    m_channelId(0),
-    m_channelIdHasBeenSet(false),
-    m_participantRole(MedicalScribeParticipantRole::NOT_SET),
-    m_participantRoleHasBeenSet(false)
+MedicalScribeChannelDefinition::MedicalScribeChannelDefinition(JsonView jsonValue)
+  : MedicalScribeChannelDefinition()
 {
   *this = jsonValue;
 }

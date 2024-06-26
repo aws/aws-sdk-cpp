@@ -34,19 +34,8 @@ ActionDeclaration::ActionDeclaration() :
 {
 }
 
-ActionDeclaration::ActionDeclaration(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_actionTypeIdHasBeenSet(false),
-    m_runOrder(0),
-    m_runOrderHasBeenSet(false),
-    m_configurationHasBeenSet(false),
-    m_outputArtifactsHasBeenSet(false),
-    m_inputArtifactsHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_namespaceHasBeenSet(false),
-    m_timeoutInMinutes(0),
-    m_timeoutInMinutesHasBeenSet(false)
+ActionDeclaration::ActionDeclaration(JsonView jsonValue)
+  : ActionDeclaration()
 {
   *this = jsonValue;
 }

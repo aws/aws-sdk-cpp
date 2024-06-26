@@ -23,8 +23,8 @@ PublicDnsNamespaceProperties::PublicDnsNamespaceProperties() :
 {
 }
 
-PublicDnsNamespaceProperties::PublicDnsNamespaceProperties(JsonView jsonValue) : 
-    m_dnsPropertiesHasBeenSet(false)
+PublicDnsNamespaceProperties::PublicDnsNamespaceProperties(JsonView jsonValue)
+  : PublicDnsNamespaceProperties()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ ActionHistoryDetails::ActionHistoryDetails() :
 {
 }
 
-ActionHistoryDetails::ActionHistoryDetails(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_actionHasBeenSet(false)
+ActionHistoryDetails::ActionHistoryDetails(JsonView jsonValue)
+  : ActionHistoryDetails()
 {
   *this = jsonValue;
 }

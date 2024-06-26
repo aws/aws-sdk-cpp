@@ -32,17 +32,8 @@ Rule::Rule() :
 {
 }
 
-Rule::Rule(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_priority(0),
-    m_priorityHasBeenSet(false),
-    m_statementHasBeenSet(false),
-    m_actionHasBeenSet(false),
-    m_overrideActionHasBeenSet(false),
-    m_ruleLabelsHasBeenSet(false),
-    m_visibilityConfigHasBeenSet(false),
-    m_captchaConfigHasBeenSet(false),
-    m_challengeConfigHasBeenSet(false)
+Rule::Rule(JsonView jsonValue)
+  : Rule()
 {
   *this = jsonValue;
 }

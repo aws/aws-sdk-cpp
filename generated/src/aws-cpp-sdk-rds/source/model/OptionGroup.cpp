@@ -36,19 +36,8 @@ OptionGroup::OptionGroup() :
 {
 }
 
-OptionGroup::OptionGroup(const XmlNode& xmlNode) : 
-    m_optionGroupNameHasBeenSet(false),
-    m_optionGroupDescriptionHasBeenSet(false),
-    m_engineNameHasBeenSet(false),
-    m_majorEngineVersionHasBeenSet(false),
-    m_optionsHasBeenSet(false),
-    m_allowsVpcAndNonVpcInstanceMemberships(false),
-    m_allowsVpcAndNonVpcInstanceMembershipsHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_optionGroupArnHasBeenSet(false),
-    m_sourceOptionGroupHasBeenSet(false),
-    m_sourceAccountIdHasBeenSet(false),
-    m_copyTimestampHasBeenSet(false)
+OptionGroup::OptionGroup(const XmlNode& xmlNode)
+  : OptionGroup()
 {
   *this = xmlNode;
 }

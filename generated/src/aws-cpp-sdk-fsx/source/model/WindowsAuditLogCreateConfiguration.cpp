@@ -27,12 +27,8 @@ WindowsAuditLogCreateConfiguration::WindowsAuditLogCreateConfiguration() :
 {
 }
 
-WindowsAuditLogCreateConfiguration::WindowsAuditLogCreateConfiguration(JsonView jsonValue) : 
-    m_fileAccessAuditLogLevel(WindowsAccessAuditLogLevel::NOT_SET),
-    m_fileAccessAuditLogLevelHasBeenSet(false),
-    m_fileShareAccessAuditLogLevel(WindowsAccessAuditLogLevel::NOT_SET),
-    m_fileShareAccessAuditLogLevelHasBeenSet(false),
-    m_auditLogDestinationHasBeenSet(false)
+WindowsAuditLogCreateConfiguration::WindowsAuditLogCreateConfiguration(JsonView jsonValue)
+  : WindowsAuditLogCreateConfiguration()
 {
   *this = jsonValue;
 }

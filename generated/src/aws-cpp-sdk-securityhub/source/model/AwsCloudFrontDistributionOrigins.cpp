@@ -23,8 +23,8 @@ AwsCloudFrontDistributionOrigins::AwsCloudFrontDistributionOrigins() :
 {
 }
 
-AwsCloudFrontDistributionOrigins::AwsCloudFrontDistributionOrigins(JsonView jsonValue) : 
-    m_itemsHasBeenSet(false)
+AwsCloudFrontDistributionOrigins::AwsCloudFrontDistributionOrigins(JsonView jsonValue)
+  : AwsCloudFrontDistributionOrigins()
 {
   *this = jsonValue;
 }

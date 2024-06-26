@@ -30,15 +30,8 @@ AggregateConformancePackCompliance::AggregateConformancePackCompliance() :
 {
 }
 
-AggregateConformancePackCompliance::AggregateConformancePackCompliance(JsonView jsonValue) : 
-    m_complianceType(ConformancePackComplianceType::NOT_SET),
-    m_complianceTypeHasBeenSet(false),
-    m_compliantRuleCount(0),
-    m_compliantRuleCountHasBeenSet(false),
-    m_nonCompliantRuleCount(0),
-    m_nonCompliantRuleCountHasBeenSet(false),
-    m_totalRuleCount(0),
-    m_totalRuleCountHasBeenSet(false)
+AggregateConformancePackCompliance::AggregateConformancePackCompliance(JsonView jsonValue)
+  : AggregateConformancePackCompliance()
 {
   *this = jsonValue;
 }

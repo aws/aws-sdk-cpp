@@ -31,16 +31,8 @@ ApplicationResourceAssociation::ApplicationResourceAssociation() :
 {
 }
 
-ApplicationResourceAssociation::ApplicationResourceAssociation(JsonView jsonValue) : 
-    m_applicationIdHasBeenSet(false),
-    m_associatedResourceIdHasBeenSet(false),
-    m_associatedResourceType(ApplicationAssociatedResourceType::NOT_SET),
-    m_associatedResourceTypeHasBeenSet(false),
-    m_createdHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_state(AssociationState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_stateReasonHasBeenSet(false)
+ApplicationResourceAssociation::ApplicationResourceAssociation(JsonView jsonValue)
+  : ApplicationResourceAssociation()
 {
   *this = jsonValue;
 }

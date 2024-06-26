@@ -24,9 +24,8 @@ TagOperationException::TagOperationException() :
 {
 }
 
-TagOperationException::TagOperationException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_resourceNameHasBeenSet(false)
+TagOperationException::TagOperationException(JsonView jsonValue)
+  : TagOperationException()
 {
   *this = jsonValue;
 }

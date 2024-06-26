@@ -35,20 +35,8 @@ GetFieldResponse::GetFieldResponse() :
 {
 }
 
-GetFieldResponse::GetFieldResponse(JsonView jsonValue) : 
-    m_createdTimeHasBeenSet(false),
-    m_deleted(false),
-    m_deletedHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_fieldArnHasBeenSet(false),
-    m_fieldIdHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_namespace(FieldNamespace::NOT_SET),
-    m_namespaceHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_type(FieldType::NOT_SET),
-    m_typeHasBeenSet(false)
+GetFieldResponse::GetFieldResponse(JsonView jsonValue)
+  : GetFieldResponse()
 {
   *this = jsonValue;
 }

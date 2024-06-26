@@ -24,9 +24,8 @@ CaptureContentTypeHeader::CaptureContentTypeHeader() :
 {
 }
 
-CaptureContentTypeHeader::CaptureContentTypeHeader(JsonView jsonValue) : 
-    m_csvContentTypesHasBeenSet(false),
-    m_jsonContentTypesHasBeenSet(false)
+CaptureContentTypeHeader::CaptureContentTypeHeader(JsonView jsonValue)
+  : CaptureContentTypeHeader()
 {
   *this = jsonValue;
 }

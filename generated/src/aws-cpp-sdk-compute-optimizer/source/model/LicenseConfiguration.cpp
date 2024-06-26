@@ -34,19 +34,8 @@ LicenseConfiguration::LicenseConfiguration() :
 {
 }
 
-LicenseConfiguration::LicenseConfiguration(JsonView jsonValue) : 
-    m_numberOfCores(0),
-    m_numberOfCoresHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_operatingSystemHasBeenSet(false),
-    m_licenseEdition(LicenseEdition::NOT_SET),
-    m_licenseEditionHasBeenSet(false),
-    m_licenseName(LicenseName::NOT_SET),
-    m_licenseNameHasBeenSet(false),
-    m_licenseModel(LicenseModel::NOT_SET),
-    m_licenseModelHasBeenSet(false),
-    m_licenseVersionHasBeenSet(false),
-    m_metricsSourceHasBeenSet(false)
+LicenseConfiguration::LicenseConfiguration(JsonView jsonValue)
+  : LicenseConfiguration()
 {
   *this = jsonValue;
 }

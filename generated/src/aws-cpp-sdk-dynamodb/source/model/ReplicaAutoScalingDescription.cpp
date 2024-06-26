@@ -28,13 +28,8 @@ ReplicaAutoScalingDescription::ReplicaAutoScalingDescription() :
 {
 }
 
-ReplicaAutoScalingDescription::ReplicaAutoScalingDescription(JsonView jsonValue) : 
-    m_regionNameHasBeenSet(false),
-    m_globalSecondaryIndexesHasBeenSet(false),
-    m_replicaProvisionedReadCapacityAutoScalingSettingsHasBeenSet(false),
-    m_replicaProvisionedWriteCapacityAutoScalingSettingsHasBeenSet(false),
-    m_replicaStatus(ReplicaStatus::NOT_SET),
-    m_replicaStatusHasBeenSet(false)
+ReplicaAutoScalingDescription::ReplicaAutoScalingDescription(JsonView jsonValue)
+  : ReplicaAutoScalingDescription()
 {
   *this = jsonValue;
 }

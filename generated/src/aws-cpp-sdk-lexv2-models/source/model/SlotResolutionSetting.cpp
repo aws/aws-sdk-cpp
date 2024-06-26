@@ -24,9 +24,8 @@ SlotResolutionSetting::SlotResolutionSetting() :
 {
 }
 
-SlotResolutionSetting::SlotResolutionSetting(JsonView jsonValue) : 
-    m_slotResolutionStrategy(SlotResolutionStrategy::NOT_SET),
-    m_slotResolutionStrategyHasBeenSet(false)
+SlotResolutionSetting::SlotResolutionSetting(JsonView jsonValue)
+  : SlotResolutionSetting()
 {
   *this = jsonValue;
 }

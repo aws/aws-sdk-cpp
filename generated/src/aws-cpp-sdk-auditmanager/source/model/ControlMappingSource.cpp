@@ -33,18 +33,8 @@ ControlMappingSource::ControlMappingSource() :
 {
 }
 
-ControlMappingSource::ControlMappingSource(JsonView jsonValue) : 
-    m_sourceIdHasBeenSet(false),
-    m_sourceNameHasBeenSet(false),
-    m_sourceDescriptionHasBeenSet(false),
-    m_sourceSetUpOption(SourceSetUpOption::NOT_SET),
-    m_sourceSetUpOptionHasBeenSet(false),
-    m_sourceType(SourceType::NOT_SET),
-    m_sourceTypeHasBeenSet(false),
-    m_sourceKeywordHasBeenSet(false),
-    m_sourceFrequency(SourceFrequency::NOT_SET),
-    m_sourceFrequencyHasBeenSet(false),
-    m_troubleshootingTextHasBeenSet(false)
+ControlMappingSource::ControlMappingSource(JsonView jsonValue)
+  : ControlMappingSource()
 {
   *this = jsonValue;
 }

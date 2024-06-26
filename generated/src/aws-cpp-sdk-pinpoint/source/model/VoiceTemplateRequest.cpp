@@ -28,13 +28,8 @@ VoiceTemplateRequest::VoiceTemplateRequest() :
 {
 }
 
-VoiceTemplateRequest::VoiceTemplateRequest(JsonView jsonValue) : 
-    m_bodyHasBeenSet(false),
-    m_defaultSubstitutionsHasBeenSet(false),
-    m_languageCodeHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_templateDescriptionHasBeenSet(false),
-    m_voiceIdHasBeenSet(false)
+VoiceTemplateRequest::VoiceTemplateRequest(JsonView jsonValue)
+  : VoiceTemplateRequest()
 {
   *this = jsonValue;
 }

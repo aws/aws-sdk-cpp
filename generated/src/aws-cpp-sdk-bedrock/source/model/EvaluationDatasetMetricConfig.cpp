@@ -26,11 +26,8 @@ EvaluationDatasetMetricConfig::EvaluationDatasetMetricConfig() :
 {
 }
 
-EvaluationDatasetMetricConfig::EvaluationDatasetMetricConfig(JsonView jsonValue) : 
-    m_taskType(EvaluationTaskType::NOT_SET),
-    m_taskTypeHasBeenSet(false),
-    m_datasetHasBeenSet(false),
-    m_metricNamesHasBeenSet(false)
+EvaluationDatasetMetricConfig::EvaluationDatasetMetricConfig(JsonView jsonValue)
+  : EvaluationDatasetMetricConfig()
 {
   *this = jsonValue;
 }

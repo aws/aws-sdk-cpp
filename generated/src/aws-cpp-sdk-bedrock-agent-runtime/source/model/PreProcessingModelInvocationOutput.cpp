@@ -24,9 +24,8 @@ PreProcessingModelInvocationOutput::PreProcessingModelInvocationOutput() :
 {
 }
 
-PreProcessingModelInvocationOutput::PreProcessingModelInvocationOutput(JsonView jsonValue) : 
-    m_parsedResponseHasBeenSet(false),
-    m_traceIdHasBeenSet(false)
+PreProcessingModelInvocationOutput::PreProcessingModelInvocationOutput(JsonView jsonValue)
+  : PreProcessingModelInvocationOutput()
 {
   *this = jsonValue;
 }

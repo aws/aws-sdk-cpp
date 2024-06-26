@@ -24,9 +24,8 @@ Definition::Definition() :
 {
 }
 
-Definition::Definition(JsonView jsonValue) : 
-    m_contentHasBeenSet(false),
-    m_s3LocationHasBeenSet(false)
+Definition::Definition(JsonView jsonValue)
+  : Definition()
 {
   *this = jsonValue;
 }

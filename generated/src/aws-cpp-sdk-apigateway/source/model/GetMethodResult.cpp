@@ -22,8 +22,8 @@ GetMethodResult::GetMethodResult() :
 {
 }
 
-GetMethodResult::GetMethodResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_apiKeyRequired(false)
+GetMethodResult::GetMethodResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetMethodResult()
 {
   *this = result;
 }

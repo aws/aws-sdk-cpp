@@ -25,10 +25,8 @@ StorageGatewayError::StorageGatewayError() :
 {
 }
 
-StorageGatewayError::StorageGatewayError(JsonView jsonValue) : 
-    m_errorCode(ErrorCode::NOT_SET),
-    m_errorCodeHasBeenSet(false),
-    m_errorDetailsHasBeenSet(false)
+StorageGatewayError::StorageGatewayError(JsonView jsonValue)
+  : StorageGatewayError()
 {
   *this = jsonValue;
 }

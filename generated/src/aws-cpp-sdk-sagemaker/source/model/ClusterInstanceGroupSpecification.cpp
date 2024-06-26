@@ -32,17 +32,8 @@ ClusterInstanceGroupSpecification::ClusterInstanceGroupSpecification() :
 {
 }
 
-ClusterInstanceGroupSpecification::ClusterInstanceGroupSpecification(JsonView jsonValue) : 
-    m_instanceCount(0),
-    m_instanceCountHasBeenSet(false),
-    m_instanceGroupNameHasBeenSet(false),
-    m_instanceType(ClusterInstanceType::NOT_SET),
-    m_instanceTypeHasBeenSet(false),
-    m_lifeCycleConfigHasBeenSet(false),
-    m_executionRoleHasBeenSet(false),
-    m_threadsPerCore(0),
-    m_threadsPerCoreHasBeenSet(false),
-    m_instanceStorageConfigsHasBeenSet(false)
+ClusterInstanceGroupSpecification::ClusterInstanceGroupSpecification(JsonView jsonValue)
+  : ClusterInstanceGroupSpecification()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ PostgreSQLCatalogTarget::PostgreSQLCatalogTarget() :
 {
 }
 
-PostgreSQLCatalogTarget::PostgreSQLCatalogTarget(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_inputsHasBeenSet(false),
-    m_databaseHasBeenSet(false),
-    m_tableHasBeenSet(false)
+PostgreSQLCatalogTarget::PostgreSQLCatalogTarget(JsonView jsonValue)
+  : PostgreSQLCatalogTarget()
 {
   *this = jsonValue;
 }

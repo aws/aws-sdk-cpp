@@ -23,8 +23,8 @@ OverallTestResults::OverallTestResults() :
 {
 }
 
-OverallTestResults::OverallTestResults(JsonView jsonValue) : 
-    m_itemsHasBeenSet(false)
+OverallTestResults::OverallTestResults(JsonView jsonValue)
+  : OverallTestResults()
 {
   *this = jsonValue;
 }

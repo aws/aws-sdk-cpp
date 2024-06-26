@@ -27,12 +27,8 @@ RepositoryAggregation::RepositoryAggregation() :
 {
 }
 
-RepositoryAggregation::RepositoryAggregation(JsonView jsonValue) : 
-    m_repositoriesHasBeenSet(false),
-    m_sortBy(RepositorySortBy::NOT_SET),
-    m_sortByHasBeenSet(false),
-    m_sortOrder(SortOrder::NOT_SET),
-    m_sortOrderHasBeenSet(false)
+RepositoryAggregation::RepositoryAggregation(JsonView jsonValue)
+  : RepositoryAggregation()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails::AwsE
 {
 }
 
-AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails::AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails(JsonView jsonValue) : 
-    m_availabilityZoneCount(0),
-    m_availabilityZoneCountHasBeenSet(false)
+AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails::AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails(JsonView jsonValue)
+  : AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails()
 {
   *this = jsonValue;
 }

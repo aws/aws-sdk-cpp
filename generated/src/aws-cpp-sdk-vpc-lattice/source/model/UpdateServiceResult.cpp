@@ -22,8 +22,8 @@ UpdateServiceResult::UpdateServiceResult() :
 {
 }
 
-UpdateServiceResult::UpdateServiceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_authType(AuthType::NOT_SET)
+UpdateServiceResult::UpdateServiceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateServiceResult()
 {
   *this = result;
 }

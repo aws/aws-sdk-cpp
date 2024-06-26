@@ -31,16 +31,8 @@ AdvancedSecurityOptionsInput::AdvancedSecurityOptionsInput() :
 {
 }
 
-AdvancedSecurityOptionsInput::AdvancedSecurityOptionsInput(JsonView jsonValue) : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_internalUserDatabaseEnabled(false),
-    m_internalUserDatabaseEnabledHasBeenSet(false),
-    m_masterUserOptionsHasBeenSet(false),
-    m_sAMLOptionsHasBeenSet(false),
-    m_jWTOptionsHasBeenSet(false),
-    m_anonymousAuthEnabled(false),
-    m_anonymousAuthEnabledHasBeenSet(false)
+AdvancedSecurityOptionsInput::AdvancedSecurityOptionsInput(JsonView jsonValue)
+  : AdvancedSecurityOptionsInput()
 {
   *this = jsonValue;
 }

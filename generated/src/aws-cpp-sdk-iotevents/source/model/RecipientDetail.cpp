@@ -23,8 +23,8 @@ RecipientDetail::RecipientDetail() :
 {
 }
 
-RecipientDetail::RecipientDetail(JsonView jsonValue) : 
-    m_ssoIdentityHasBeenSet(false)
+RecipientDetail::RecipientDetail(JsonView jsonValue)
+  : RecipientDetail()
 {
   *this = jsonValue;
 }

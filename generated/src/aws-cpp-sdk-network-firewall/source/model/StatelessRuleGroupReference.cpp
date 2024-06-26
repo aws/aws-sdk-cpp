@@ -25,10 +25,8 @@ StatelessRuleGroupReference::StatelessRuleGroupReference() :
 {
 }
 
-StatelessRuleGroupReference::StatelessRuleGroupReference(JsonView jsonValue) : 
-    m_resourceArnHasBeenSet(false),
-    m_priority(0),
-    m_priorityHasBeenSet(false)
+StatelessRuleGroupReference::StatelessRuleGroupReference(JsonView jsonValue)
+  : StatelessRuleGroupReference()
 {
   *this = jsonValue;
 }

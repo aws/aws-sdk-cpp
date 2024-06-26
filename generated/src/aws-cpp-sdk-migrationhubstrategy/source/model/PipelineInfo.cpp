@@ -25,10 +25,8 @@ PipelineInfo::PipelineInfo() :
 {
 }
 
-PipelineInfo::PipelineInfo(JsonView jsonValue) : 
-    m_pipelineConfigurationTimeStampHasBeenSet(false),
-    m_pipelineType(PipelineType::NOT_SET),
-    m_pipelineTypeHasBeenSet(false)
+PipelineInfo::PipelineInfo(JsonView jsonValue)
+  : PipelineInfo()
 {
   *this = jsonValue;
 }

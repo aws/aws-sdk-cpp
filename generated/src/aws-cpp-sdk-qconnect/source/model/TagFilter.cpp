@@ -25,10 +25,8 @@ TagFilter::TagFilter() :
 {
 }
 
-TagFilter::TagFilter(JsonView jsonValue) : 
-    m_andConditionsHasBeenSet(false),
-    m_orConditionsHasBeenSet(false),
-    m_tagConditionHasBeenSet(false)
+TagFilter::TagFilter(JsonView jsonValue)
+  : TagFilter()
 {
   *this = jsonValue;
 }

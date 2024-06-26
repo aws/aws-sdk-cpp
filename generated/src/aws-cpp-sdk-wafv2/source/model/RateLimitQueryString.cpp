@@ -23,8 +23,8 @@ RateLimitQueryString::RateLimitQueryString() :
 {
 }
 
-RateLimitQueryString::RateLimitQueryString(JsonView jsonValue) : 
-    m_textTransformationsHasBeenSet(false)
+RateLimitQueryString::RateLimitQueryString(JsonView jsonValue)
+  : RateLimitQueryString()
 {
   *this = jsonValue;
 }

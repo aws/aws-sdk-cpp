@@ -27,10 +27,8 @@ UpdateTarget::UpdateTarget() :
 {
 }
 
-UpdateTarget::UpdateTarget(const XmlNode& xmlNode) : 
-    m_maintenanceTrackNameHasBeenSet(false),
-    m_databaseVersionHasBeenSet(false),
-    m_supportedOperationsHasBeenSet(false)
+UpdateTarget::UpdateTarget(const XmlNode& xmlNode)
+  : UpdateTarget()
 {
   *this = xmlNode;
 }

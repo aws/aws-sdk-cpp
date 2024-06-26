@@ -26,11 +26,8 @@ GremlinQueryStatusAttributes::GremlinQueryStatusAttributes() :
 {
 }
 
-GremlinQueryStatusAttributes::GremlinQueryStatusAttributes(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_code(0),
-    m_codeHasBeenSet(false),
-    m_attributesHasBeenSet(false)
+GremlinQueryStatusAttributes::GremlinQueryStatusAttributes(JsonView jsonValue)
+  : GremlinQueryStatusAttributes()
 {
   *this = jsonValue;
 }

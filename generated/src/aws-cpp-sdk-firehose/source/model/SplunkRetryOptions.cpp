@@ -24,9 +24,8 @@ SplunkRetryOptions::SplunkRetryOptions() :
 {
 }
 
-SplunkRetryOptions::SplunkRetryOptions(JsonView jsonValue) : 
-    m_durationInSeconds(0),
-    m_durationInSecondsHasBeenSet(false)
+SplunkRetryOptions::SplunkRetryOptions(JsonView jsonValue)
+  : SplunkRetryOptions()
 {
   *this = jsonValue;
 }

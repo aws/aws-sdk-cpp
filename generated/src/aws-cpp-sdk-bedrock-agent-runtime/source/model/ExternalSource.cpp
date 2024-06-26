@@ -26,11 +26,8 @@ ExternalSource::ExternalSource() :
 {
 }
 
-ExternalSource::ExternalSource(JsonView jsonValue) : 
-    m_byteContentHasBeenSet(false),
-    m_s3LocationHasBeenSet(false),
-    m_sourceType(ExternalSourceType::NOT_SET),
-    m_sourceTypeHasBeenSet(false)
+ExternalSource::ExternalSource(JsonView jsonValue)
+  : ExternalSource()
 {
   *this = jsonValue;
 }

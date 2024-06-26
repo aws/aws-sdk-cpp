@@ -26,11 +26,8 @@ ProposedSegmentChange::ProposedSegmentChange() :
 {
 }
 
-ProposedSegmentChange::ProposedSegmentChange(JsonView jsonValue) : 
-    m_tagsHasBeenSet(false),
-    m_attachmentPolicyRuleNumber(0),
-    m_attachmentPolicyRuleNumberHasBeenSet(false),
-    m_segmentNameHasBeenSet(false)
+ProposedSegmentChange::ProposedSegmentChange(JsonView jsonValue)
+  : ProposedSegmentChange()
 {
   *this = jsonValue;
 }

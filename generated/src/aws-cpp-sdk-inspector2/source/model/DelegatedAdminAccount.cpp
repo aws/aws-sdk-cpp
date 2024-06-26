@@ -25,10 +25,8 @@ DelegatedAdminAccount::DelegatedAdminAccount() :
 {
 }
 
-DelegatedAdminAccount::DelegatedAdminAccount(JsonView jsonValue) : 
-    m_accountIdHasBeenSet(false),
-    m_status(DelegatedAdminStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+DelegatedAdminAccount::DelegatedAdminAccount(JsonView jsonValue)
+  : DelegatedAdminAccount()
 {
   *this = jsonValue;
 }

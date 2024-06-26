@@ -25,8 +25,8 @@ AvailabilityZoneMessage::AvailabilityZoneMessage() :
 {
 }
 
-AvailabilityZoneMessage::AvailabilityZoneMessage(const XmlNode& xmlNode) : 
-    m_messageHasBeenSet(false)
+AvailabilityZoneMessage::AvailabilityZoneMessage(const XmlNode& xmlNode)
+  : AvailabilityZoneMessage()
 {
   *this = xmlNode;
 }

@@ -25,10 +25,8 @@ UpdateDataSecurityConfig::UpdateDataSecurityConfig() :
 {
 }
 
-UpdateDataSecurityConfig::UpdateDataSecurityConfig(JsonView jsonValue) : 
-    m_modelKmsKeyIdHasBeenSet(false),
-    m_volumeKmsKeyIdHasBeenSet(false),
-    m_vpcConfigHasBeenSet(false)
+UpdateDataSecurityConfig::UpdateDataSecurityConfig(JsonView jsonValue)
+  : UpdateDataSecurityConfig()
 {
   *this = jsonValue;
 }

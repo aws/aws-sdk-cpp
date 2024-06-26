@@ -23,8 +23,8 @@ IncrementalRefresh::IncrementalRefresh() :
 {
 }
 
-IncrementalRefresh::IncrementalRefresh(JsonView jsonValue) : 
-    m_lookbackWindowHasBeenSet(false)
+IncrementalRefresh::IncrementalRefresh(JsonView jsonValue)
+  : IncrementalRefresh()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ ProtectionGroupPatternTypeLimits::ProtectionGroupPatternTypeLimits() :
 {
 }
 
-ProtectionGroupPatternTypeLimits::ProtectionGroupPatternTypeLimits(JsonView jsonValue) : 
-    m_arbitraryPatternLimitsHasBeenSet(false)
+ProtectionGroupPatternTypeLimits::ProtectionGroupPatternTypeLimits(JsonView jsonValue)
+  : ProtectionGroupPatternTypeLimits()
 {
   *this = jsonValue;
 }

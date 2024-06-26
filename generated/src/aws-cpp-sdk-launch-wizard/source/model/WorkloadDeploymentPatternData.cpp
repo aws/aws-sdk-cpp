@@ -31,16 +31,8 @@ WorkloadDeploymentPatternData::WorkloadDeploymentPatternData() :
 {
 }
 
-WorkloadDeploymentPatternData::WorkloadDeploymentPatternData(JsonView jsonValue) : 
-    m_deploymentPatternNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_specificationsHasBeenSet(false),
-    m_status(WorkloadDeploymentPatternStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_workloadNameHasBeenSet(false),
-    m_workloadVersionNameHasBeenSet(false)
+WorkloadDeploymentPatternData::WorkloadDeploymentPatternData(JsonView jsonValue)
+  : WorkloadDeploymentPatternData()
 {
   *this = jsonValue;
 }

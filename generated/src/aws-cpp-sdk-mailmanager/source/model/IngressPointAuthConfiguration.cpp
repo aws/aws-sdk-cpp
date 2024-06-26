@@ -24,9 +24,8 @@ IngressPointAuthConfiguration::IngressPointAuthConfiguration() :
 {
 }
 
-IngressPointAuthConfiguration::IngressPointAuthConfiguration(JsonView jsonValue) : 
-    m_ingressPointPasswordConfigurationHasBeenSet(false),
-    m_secretArnHasBeenSet(false)
+IngressPointAuthConfiguration::IngressPointAuthConfiguration(JsonView jsonValue)
+  : IngressPointAuthConfiguration()
 {
   *this = jsonValue;
 }

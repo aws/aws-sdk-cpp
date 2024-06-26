@@ -26,11 +26,8 @@ ChannelDefinition::ChannelDefinition() :
 {
 }
 
-ChannelDefinition::ChannelDefinition(JsonView jsonValue) : 
-    m_channelId(0),
-    m_channelIdHasBeenSet(false),
-    m_participantRole(ParticipantRole::NOT_SET),
-    m_participantRoleHasBeenSet(false)
+ChannelDefinition::ChannelDefinition(JsonView jsonValue)
+  : ChannelDefinition()
 {
   *this = jsonValue;
 }

@@ -44,27 +44,8 @@ ServiceDetail::ServiceDetail() :
 {
 }
 
-ServiceDetail::ServiceDetail(const XmlNode& xmlNode) : 
-    m_serviceNameHasBeenSet(false),
-    m_serviceIdHasBeenSet(false),
-    m_serviceTypeHasBeenSet(false),
-    m_availabilityZonesHasBeenSet(false),
-    m_ownerHasBeenSet(false),
-    m_baseEndpointDnsNamesHasBeenSet(false),
-    m_privateDnsNameHasBeenSet(false),
-    m_privateDnsNamesHasBeenSet(false),
-    m_vpcEndpointPolicySupported(false),
-    m_vpcEndpointPolicySupportedHasBeenSet(false),
-    m_acceptanceRequired(false),
-    m_acceptanceRequiredHasBeenSet(false),
-    m_managesVpcEndpoints(false),
-    m_managesVpcEndpointsHasBeenSet(false),
-    m_payerResponsibility(PayerResponsibility::NOT_SET),
-    m_payerResponsibilityHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_privateDnsNameVerificationState(DnsNameState::NOT_SET),
-    m_privateDnsNameVerificationStateHasBeenSet(false),
-    m_supportedIpAddressTypesHasBeenSet(false)
+ServiceDetail::ServiceDetail(const XmlNode& xmlNode)
+  : ServiceDetail()
 {
   *this = xmlNode;
 }

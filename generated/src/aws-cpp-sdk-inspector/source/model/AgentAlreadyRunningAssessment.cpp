@@ -24,9 +24,8 @@ AgentAlreadyRunningAssessment::AgentAlreadyRunningAssessment() :
 {
 }
 
-AgentAlreadyRunningAssessment::AgentAlreadyRunningAssessment(JsonView jsonValue) : 
-    m_agentIdHasBeenSet(false),
-    m_assessmentRunArnHasBeenSet(false)
+AgentAlreadyRunningAssessment::AgentAlreadyRunningAssessment(JsonView jsonValue)
+  : AgentAlreadyRunningAssessment()
 {
   *this = jsonValue;
 }

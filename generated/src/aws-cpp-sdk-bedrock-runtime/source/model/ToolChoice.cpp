@@ -25,10 +25,8 @@ ToolChoice::ToolChoice() :
 {
 }
 
-ToolChoice::ToolChoice(JsonView jsonValue) : 
-    m_autoHasBeenSet(false),
-    m_anyHasBeenSet(false),
-    m_toolHasBeenSet(false)
+ToolChoice::ToolChoice(JsonView jsonValue)
+  : ToolChoice()
 {
   *this = jsonValue;
 }

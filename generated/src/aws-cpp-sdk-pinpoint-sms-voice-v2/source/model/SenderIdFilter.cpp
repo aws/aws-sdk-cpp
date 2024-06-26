@@ -25,10 +25,8 @@ SenderIdFilter::SenderIdFilter() :
 {
 }
 
-SenderIdFilter::SenderIdFilter(JsonView jsonValue) : 
-    m_name(SenderIdFilterName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+SenderIdFilter::SenderIdFilter(JsonView jsonValue)
+  : SenderIdFilter()
 {
   *this = jsonValue;
 }

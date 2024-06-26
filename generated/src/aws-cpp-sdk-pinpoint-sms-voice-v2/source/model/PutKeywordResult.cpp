@@ -22,8 +22,8 @@ PutKeywordResult::PutKeywordResult() :
 {
 }
 
-PutKeywordResult::PutKeywordResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_keywordAction(KeywordAction::NOT_SET)
+PutKeywordResult::PutKeywordResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : PutKeywordResult()
 {
   *this = result;
 }

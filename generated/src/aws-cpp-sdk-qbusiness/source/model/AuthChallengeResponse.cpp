@@ -23,8 +23,8 @@ AuthChallengeResponse::AuthChallengeResponse() :
 {
 }
 
-AuthChallengeResponse::AuthChallengeResponse(JsonView jsonValue) : 
-    m_responseMapHasBeenSet(false)
+AuthChallengeResponse::AuthChallengeResponse(JsonView jsonValue)
+  : AuthChallengeResponse()
 {
   *this = jsonValue;
 }

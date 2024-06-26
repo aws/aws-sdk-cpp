@@ -27,12 +27,8 @@ Contact::Contact() :
 {
 }
 
-Contact::Contact(JsonView jsonValue) : 
-    m_contactArnHasBeenSet(false),
-    m_aliasHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_type(ContactType::NOT_SET),
-    m_typeHasBeenSet(false)
+Contact::Contact(JsonView jsonValue)
+  : Contact()
 {
   *this = jsonValue;
 }

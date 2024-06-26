@@ -23,8 +23,8 @@ KPIVisualLayoutOptions::KPIVisualLayoutOptions() :
 {
 }
 
-KPIVisualLayoutOptions::KPIVisualLayoutOptions(JsonView jsonValue) : 
-    m_standardLayoutHasBeenSet(false)
+KPIVisualLayoutOptions::KPIVisualLayoutOptions(JsonView jsonValue)
+  : KPIVisualLayoutOptions()
 {
   *this = jsonValue;
 }

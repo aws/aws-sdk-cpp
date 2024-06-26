@@ -30,15 +30,8 @@ GeospatialMapConfiguration::GeospatialMapConfiguration() :
 {
 }
 
-GeospatialMapConfiguration::GeospatialMapConfiguration(JsonView jsonValue) : 
-    m_fieldWellsHasBeenSet(false),
-    m_legendHasBeenSet(false),
-    m_tooltipHasBeenSet(false),
-    m_windowOptionsHasBeenSet(false),
-    m_mapStyleOptionsHasBeenSet(false),
-    m_pointStyleOptionsHasBeenSet(false),
-    m_visualPaletteHasBeenSet(false),
-    m_interactionsHasBeenSet(false)
+GeospatialMapConfiguration::GeospatialMapConfiguration(JsonView jsonValue)
+  : GeospatialMapConfiguration()
 {
   *this = jsonValue;
 }

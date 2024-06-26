@@ -36,19 +36,8 @@ PlacementGroup::PlacementGroup() :
 {
 }
 
-PlacementGroup::PlacementGroup(const XmlNode& xmlNode) : 
-    m_groupNameHasBeenSet(false),
-    m_state(PlacementGroupState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_strategy(PlacementStrategy::NOT_SET),
-    m_strategyHasBeenSet(false),
-    m_partitionCount(0),
-    m_partitionCountHasBeenSet(false),
-    m_groupIdHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_groupArnHasBeenSet(false),
-    m_spreadLevel(SpreadLevel::NOT_SET),
-    m_spreadLevelHasBeenSet(false)
+PlacementGroup::PlacementGroup(const XmlNode& xmlNode)
+  : PlacementGroup()
 {
   *this = xmlNode;
 }

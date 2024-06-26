@@ -26,11 +26,8 @@ PerformanceInsightsMetricDimensionGroup::PerformanceInsightsMetricDimensionGroup
 {
 }
 
-PerformanceInsightsMetricDimensionGroup::PerformanceInsightsMetricDimensionGroup(JsonView jsonValue) : 
-    m_groupHasBeenSet(false),
-    m_dimensionsHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false)
+PerformanceInsightsMetricDimensionGroup::PerformanceInsightsMetricDimensionGroup(JsonView jsonValue)
+  : PerformanceInsightsMetricDimensionGroup()
 {
   *this = jsonValue;
 }

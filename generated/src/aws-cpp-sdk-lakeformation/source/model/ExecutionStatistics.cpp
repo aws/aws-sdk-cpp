@@ -28,13 +28,8 @@ ExecutionStatistics::ExecutionStatistics() :
 {
 }
 
-ExecutionStatistics::ExecutionStatistics(JsonView jsonValue) : 
-    m_averageExecutionTimeMillis(0),
-    m_averageExecutionTimeMillisHasBeenSet(false),
-    m_dataScannedBytes(0),
-    m_dataScannedBytesHasBeenSet(false),
-    m_workUnitsExecutedCount(0),
-    m_workUnitsExecutedCountHasBeenSet(false)
+ExecutionStatistics::ExecutionStatistics(JsonView jsonValue)
+  : ExecutionStatistics()
 {
   *this = jsonValue;
 }

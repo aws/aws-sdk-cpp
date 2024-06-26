@@ -23,9 +23,8 @@ GetMaintenanceWindowExecutionTaskInvocationResult::GetMaintenanceWindowExecution
 {
 }
 
-GetMaintenanceWindowExecutionTaskInvocationResult::GetMaintenanceWindowExecutionTaskInvocationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_taskType(MaintenanceWindowTaskType::NOT_SET),
-    m_status(MaintenanceWindowExecutionStatus::NOT_SET)
+GetMaintenanceWindowExecutionTaskInvocationResult::GetMaintenanceWindowExecutionTaskInvocationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetMaintenanceWindowExecutionTaskInvocationResult()
 {
   *this = result;
 }

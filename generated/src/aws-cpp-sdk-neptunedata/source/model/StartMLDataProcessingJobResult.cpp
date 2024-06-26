@@ -22,8 +22,8 @@ StartMLDataProcessingJobResult::StartMLDataProcessingJobResult() :
 {
 }
 
-StartMLDataProcessingJobResult::StartMLDataProcessingJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_creationTimeInMillis(0)
+StartMLDataProcessingJobResult::StartMLDataProcessingJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : StartMLDataProcessingJobResult()
 {
   *this = result;
 }

@@ -23,8 +23,8 @@ SpecificToolChoice::SpecificToolChoice() :
 {
 }
 
-SpecificToolChoice::SpecificToolChoice(JsonView jsonValue) : 
-    m_nameHasBeenSet(false)
+SpecificToolChoice::SpecificToolChoice(JsonView jsonValue)
+  : SpecificToolChoice()
 {
   *this = jsonValue;
 }

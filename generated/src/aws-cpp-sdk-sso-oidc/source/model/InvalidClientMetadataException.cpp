@@ -24,9 +24,8 @@ InvalidClientMetadataException::InvalidClientMetadataException() :
 {
 }
 
-InvalidClientMetadataException::InvalidClientMetadataException(JsonView jsonValue) : 
-    m_errorHasBeenSet(false),
-    m_error_descriptionHasBeenSet(false)
+InvalidClientMetadataException::InvalidClientMetadataException(JsonView jsonValue)
+  : InvalidClientMetadataException()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ SpaceSharingSettings::SpaceSharingSettings() :
 {
 }
 
-SpaceSharingSettings::SpaceSharingSettings(JsonView jsonValue) : 
-    m_sharingType(SharingType::NOT_SET),
-    m_sharingTypeHasBeenSet(false)
+SpaceSharingSettings::SpaceSharingSettings(JsonView jsonValue)
+  : SpaceSharingSettings()
 {
   *this = jsonValue;
 }

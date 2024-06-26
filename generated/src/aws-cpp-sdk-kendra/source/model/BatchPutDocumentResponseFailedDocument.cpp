@@ -26,11 +26,8 @@ BatchPutDocumentResponseFailedDocument::BatchPutDocumentResponseFailedDocument()
 {
 }
 
-BatchPutDocumentResponseFailedDocument::BatchPutDocumentResponseFailedDocument(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_errorCode(ErrorCode::NOT_SET),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
+BatchPutDocumentResponseFailedDocument::BatchPutDocumentResponseFailedDocument(JsonView jsonValue)
+  : BatchPutDocumentResponseFailedDocument()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ PutDataSetRefreshPropertiesResult::PutDataSetRefreshPropertiesResult() :
 {
 }
 
-PutDataSetRefreshPropertiesResult::PutDataSetRefreshPropertiesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+PutDataSetRefreshPropertiesResult::PutDataSetRefreshPropertiesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : PutDataSetRefreshPropertiesResult()
 {
   *this = result;
 }

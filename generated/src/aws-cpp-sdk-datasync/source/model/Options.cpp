@@ -52,37 +52,8 @@ Options::Options() :
 {
 }
 
-Options::Options(JsonView jsonValue) : 
-    m_verifyMode(VerifyMode::NOT_SET),
-    m_verifyModeHasBeenSet(false),
-    m_overwriteMode(OverwriteMode::NOT_SET),
-    m_overwriteModeHasBeenSet(false),
-    m_atime(Atime::NOT_SET),
-    m_atimeHasBeenSet(false),
-    m_mtime(Mtime::NOT_SET),
-    m_mtimeHasBeenSet(false),
-    m_uid(Uid::NOT_SET),
-    m_uidHasBeenSet(false),
-    m_gid(Gid::NOT_SET),
-    m_gidHasBeenSet(false),
-    m_preserveDeletedFiles(PreserveDeletedFiles::NOT_SET),
-    m_preserveDeletedFilesHasBeenSet(false),
-    m_preserveDevices(PreserveDevices::NOT_SET),
-    m_preserveDevicesHasBeenSet(false),
-    m_posixPermissions(PosixPermissions::NOT_SET),
-    m_posixPermissionsHasBeenSet(false),
-    m_bytesPerSecond(0),
-    m_bytesPerSecondHasBeenSet(false),
-    m_taskQueueing(TaskQueueing::NOT_SET),
-    m_taskQueueingHasBeenSet(false),
-    m_logLevel(LogLevel::NOT_SET),
-    m_logLevelHasBeenSet(false),
-    m_transferMode(TransferMode::NOT_SET),
-    m_transferModeHasBeenSet(false),
-    m_securityDescriptorCopyFlags(SmbSecurityDescriptorCopyFlags::NOT_SET),
-    m_securityDescriptorCopyFlagsHasBeenSet(false),
-    m_objectTags(ObjectTags::NOT_SET),
-    m_objectTagsHasBeenSet(false)
+Options::Options(JsonView jsonValue)
+  : Options()
 {
   *this = jsonValue;
 }

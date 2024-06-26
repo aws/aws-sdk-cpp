@@ -24,9 +24,8 @@ WorkflowDetails::WorkflowDetails() :
 {
 }
 
-WorkflowDetails::WorkflowDetails(JsonView jsonValue) : 
-    m_onUploadHasBeenSet(false),
-    m_onPartialUploadHasBeenSet(false)
+WorkflowDetails::WorkflowDetails(JsonView jsonValue)
+  : WorkflowDetails()
 {
   *this = jsonValue;
 }

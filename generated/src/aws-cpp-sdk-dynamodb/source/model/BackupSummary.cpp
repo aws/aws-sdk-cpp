@@ -35,20 +35,8 @@ BackupSummary::BackupSummary() :
 {
 }
 
-BackupSummary::BackupSummary(JsonView jsonValue) : 
-    m_tableNameHasBeenSet(false),
-    m_tableIdHasBeenSet(false),
-    m_tableArnHasBeenSet(false),
-    m_backupArnHasBeenSet(false),
-    m_backupNameHasBeenSet(false),
-    m_backupCreationDateTimeHasBeenSet(false),
-    m_backupExpiryDateTimeHasBeenSet(false),
-    m_backupStatus(BackupStatus::NOT_SET),
-    m_backupStatusHasBeenSet(false),
-    m_backupType(BackupType::NOT_SET),
-    m_backupTypeHasBeenSet(false),
-    m_backupSizeBytes(0),
-    m_backupSizeBytesHasBeenSet(false)
+BackupSummary::BackupSummary(JsonView jsonValue)
+  : BackupSummary()
 {
   *this = jsonValue;
 }

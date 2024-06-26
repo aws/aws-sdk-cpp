@@ -26,11 +26,8 @@ FormEntryInput::FormEntryInput() :
 {
 }
 
-FormEntryInput::FormEntryInput(JsonView jsonValue) : 
-    m_required(false),
-    m_requiredHasBeenSet(false),
-    m_typeIdentifierHasBeenSet(false),
-    m_typeRevisionHasBeenSet(false)
+FormEntryInput::FormEntryInput(JsonView jsonValue)
+  : FormEntryInput()
 {
   *this = jsonValue;
 }

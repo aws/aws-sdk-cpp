@@ -26,10 +26,8 @@ AuditImage::AuditImage() :
 {
 }
 
-AuditImage::AuditImage(JsonView jsonValue) : 
-    m_bytesHasBeenSet(false),
-    m_s3ObjectHasBeenSet(false),
-    m_boundingBoxHasBeenSet(false)
+AuditImage::AuditImage(JsonView jsonValue)
+  : AuditImage()
 {
   *this = jsonValue;
 }

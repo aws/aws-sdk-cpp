@@ -24,9 +24,8 @@ IncorrectMountTargetState::IncorrectMountTargetState() :
 {
 }
 
-IncorrectMountTargetState::IncorrectMountTargetState(JsonView jsonValue) : 
-    m_errorCodeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+IncorrectMountTargetState::IncorrectMountTargetState(JsonView jsonValue)
+  : IncorrectMountTargetState()
 {
   *this = jsonValue;
 }

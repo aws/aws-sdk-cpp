@@ -26,11 +26,8 @@ PieChartSortConfiguration::PieChartSortConfiguration() :
 {
 }
 
-PieChartSortConfiguration::PieChartSortConfiguration(JsonView jsonValue) : 
-    m_categorySortHasBeenSet(false),
-    m_categoryItemsLimitHasBeenSet(false),
-    m_smallMultiplesSortHasBeenSet(false),
-    m_smallMultiplesLimitConfigurationHasBeenSet(false)
+PieChartSortConfiguration::PieChartSortConfiguration(JsonView jsonValue)
+  : PieChartSortConfiguration()
 {
   *this = jsonValue;
 }

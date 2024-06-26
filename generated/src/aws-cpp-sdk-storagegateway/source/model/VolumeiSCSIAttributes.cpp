@@ -30,15 +30,8 @@ VolumeiSCSIAttributes::VolumeiSCSIAttributes() :
 {
 }
 
-VolumeiSCSIAttributes::VolumeiSCSIAttributes(JsonView jsonValue) : 
-    m_targetARNHasBeenSet(false),
-    m_networkInterfaceIdHasBeenSet(false),
-    m_networkInterfacePort(0),
-    m_networkInterfacePortHasBeenSet(false),
-    m_lunNumber(0),
-    m_lunNumberHasBeenSet(false),
-    m_chapEnabled(false),
-    m_chapEnabledHasBeenSet(false)
+VolumeiSCSIAttributes::VolumeiSCSIAttributes(JsonView jsonValue)
+  : VolumeiSCSIAttributes()
 {
   *this = jsonValue;
 }

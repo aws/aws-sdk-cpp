@@ -26,11 +26,8 @@ ErrorRootCauseEntity::ErrorRootCauseEntity() :
 {
 }
 
-ErrorRootCauseEntity::ErrorRootCauseEntity(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_exceptionsHasBeenSet(false),
-    m_remote(false),
-    m_remoteHasBeenSet(false)
+ErrorRootCauseEntity::ErrorRootCauseEntity(JsonView jsonValue)
+  : ErrorRootCauseEntity()
 {
   *this = jsonValue;
 }

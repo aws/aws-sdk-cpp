@@ -24,9 +24,8 @@ AttributeAndCondition::AttributeAndCondition() :
 {
 }
 
-AttributeAndCondition::AttributeAndCondition(JsonView jsonValue) : 
-    m_tagConditionsHasBeenSet(false),
-    m_hierarchyGroupConditionHasBeenSet(false)
+AttributeAndCondition::AttributeAndCondition(JsonView jsonValue)
+  : AttributeAndCondition()
 {
   *this = jsonValue;
 }

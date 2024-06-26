@@ -25,10 +25,8 @@ ChangesetErrorInfo::ChangesetErrorInfo() :
 {
 }
 
-ChangesetErrorInfo::ChangesetErrorInfo(JsonView jsonValue) : 
-    m_errorMessageHasBeenSet(false),
-    m_errorCategory(ErrorCategory::NOT_SET),
-    m_errorCategoryHasBeenSet(false)
+ChangesetErrorInfo::ChangesetErrorInfo(JsonView jsonValue)
+  : ChangesetErrorInfo()
 {
   *this = jsonValue;
 }

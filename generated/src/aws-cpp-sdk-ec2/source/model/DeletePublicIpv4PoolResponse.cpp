@@ -22,8 +22,8 @@ DeletePublicIpv4PoolResponse::DeletePublicIpv4PoolResponse() :
 {
 }
 
-DeletePublicIpv4PoolResponse::DeletePublicIpv4PoolResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_returnValue(false)
+DeletePublicIpv4PoolResponse::DeletePublicIpv4PoolResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : DeletePublicIpv4PoolResponse()
 {
   *this = result;
 }

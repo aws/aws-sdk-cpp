@@ -26,11 +26,8 @@ StorageConnector::StorageConnector() :
 {
 }
 
-StorageConnector::StorageConnector(JsonView jsonValue) : 
-    m_connectorType(StorageConnectorType::NOT_SET),
-    m_connectorTypeHasBeenSet(false),
-    m_resourceIdentifierHasBeenSet(false),
-    m_domainsHasBeenSet(false)
+StorageConnector::StorageConnector(JsonView jsonValue)
+  : StorageConnector()
 {
   *this = jsonValue;
 }

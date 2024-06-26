@@ -28,13 +28,8 @@ CanarySettings::CanarySettings() :
 {
 }
 
-CanarySettings::CanarySettings(JsonView jsonValue) : 
-    m_percentTraffic(0.0),
-    m_percentTrafficHasBeenSet(false),
-    m_deploymentIdHasBeenSet(false),
-    m_stageVariableOverridesHasBeenSet(false),
-    m_useStageCache(false),
-    m_useStageCacheHasBeenSet(false)
+CanarySettings::CanarySettings(JsonView jsonValue)
+  : CanarySettings()
 {
   *this = jsonValue;
 }

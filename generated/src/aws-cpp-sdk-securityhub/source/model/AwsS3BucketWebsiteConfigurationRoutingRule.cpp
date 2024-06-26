@@ -24,9 +24,8 @@ AwsS3BucketWebsiteConfigurationRoutingRule::AwsS3BucketWebsiteConfigurationRouti
 {
 }
 
-AwsS3BucketWebsiteConfigurationRoutingRule::AwsS3BucketWebsiteConfigurationRoutingRule(JsonView jsonValue) : 
-    m_conditionHasBeenSet(false),
-    m_redirectHasBeenSet(false)
+AwsS3BucketWebsiteConfigurationRoutingRule::AwsS3BucketWebsiteConfigurationRoutingRule(JsonView jsonValue)
+  : AwsS3BucketWebsiteConfigurationRoutingRule()
 {
   *this = jsonValue;
 }

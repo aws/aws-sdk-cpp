@@ -23,8 +23,8 @@ RecommendationRelatedAnomalySourceDetail::RecommendationRelatedAnomalySourceDeta
 {
 }
 
-RecommendationRelatedAnomalySourceDetail::RecommendationRelatedAnomalySourceDetail(JsonView jsonValue) : 
-    m_cloudWatchMetricsHasBeenSet(false)
+RecommendationRelatedAnomalySourceDetail::RecommendationRelatedAnomalySourceDetail(JsonView jsonValue)
+  : RecommendationRelatedAnomalySourceDetail()
 {
   *this = jsonValue;
 }

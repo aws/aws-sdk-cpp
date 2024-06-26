@@ -37,22 +37,8 @@ License::License() :
 {
 }
 
-License::License(JsonView jsonValue) : 
-    m_licenseArnHasBeenSet(false),
-    m_licenseNameHasBeenSet(false),
-    m_productNameHasBeenSet(false),
-    m_productSKUHasBeenSet(false),
-    m_issuerHasBeenSet(false),
-    m_homeRegionHasBeenSet(false),
-    m_status(LicenseStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_validityHasBeenSet(false),
-    m_beneficiaryHasBeenSet(false),
-    m_entitlementsHasBeenSet(false),
-    m_consumptionConfigurationHasBeenSet(false),
-    m_licenseMetadataHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_versionHasBeenSet(false)
+License::License(JsonView jsonValue)
+  : License()
 {
   *this = jsonValue;
 }

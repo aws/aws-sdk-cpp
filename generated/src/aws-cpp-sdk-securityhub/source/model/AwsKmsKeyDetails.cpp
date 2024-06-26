@@ -32,17 +32,8 @@ AwsKmsKeyDetails::AwsKmsKeyDetails() :
 {
 }
 
-AwsKmsKeyDetails::AwsKmsKeyDetails(JsonView jsonValue) : 
-    m_aWSAccountIdHasBeenSet(false),
-    m_creationDate(0.0),
-    m_creationDateHasBeenSet(false),
-    m_keyIdHasBeenSet(false),
-    m_keyManagerHasBeenSet(false),
-    m_keyStateHasBeenSet(false),
-    m_originHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_keyRotationStatus(false),
-    m_keyRotationStatusHasBeenSet(false)
+AwsKmsKeyDetails::AwsKmsKeyDetails(JsonView jsonValue)
+  : AwsKmsKeyDetails()
 {
   *this = jsonValue;
 }

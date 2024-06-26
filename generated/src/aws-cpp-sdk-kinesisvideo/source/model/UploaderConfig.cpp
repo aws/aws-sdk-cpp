@@ -23,8 +23,8 @@ UploaderConfig::UploaderConfig() :
 {
 }
 
-UploaderConfig::UploaderConfig(JsonView jsonValue) : 
-    m_scheduleConfigHasBeenSet(false)
+UploaderConfig::UploaderConfig(JsonView jsonValue)
+  : UploaderConfig()
 {
   *this = jsonValue;
 }

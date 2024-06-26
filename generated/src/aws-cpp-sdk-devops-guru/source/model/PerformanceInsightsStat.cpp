@@ -25,10 +25,8 @@ PerformanceInsightsStat::PerformanceInsightsStat() :
 {
 }
 
-PerformanceInsightsStat::PerformanceInsightsStat(JsonView jsonValue) : 
-    m_typeHasBeenSet(false),
-    m_value(0.0),
-    m_valueHasBeenSet(false)
+PerformanceInsightsStat::PerformanceInsightsStat(JsonView jsonValue)
+  : PerformanceInsightsStat()
 {
   *this = jsonValue;
 }

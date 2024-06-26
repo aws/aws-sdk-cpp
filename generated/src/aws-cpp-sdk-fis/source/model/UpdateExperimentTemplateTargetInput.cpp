@@ -28,13 +28,8 @@ UpdateExperimentTemplateTargetInput::UpdateExperimentTemplateTargetInput() :
 {
 }
 
-UpdateExperimentTemplateTargetInput::UpdateExperimentTemplateTargetInput(JsonView jsonValue) : 
-    m_resourceTypeHasBeenSet(false),
-    m_resourceArnsHasBeenSet(false),
-    m_resourceTagsHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_selectionModeHasBeenSet(false),
-    m_parametersHasBeenSet(false)
+UpdateExperimentTemplateTargetInput::UpdateExperimentTemplateTargetInput(JsonView jsonValue)
+  : UpdateExperimentTemplateTargetInput()
 {
   *this = jsonValue;
 }

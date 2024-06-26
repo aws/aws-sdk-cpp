@@ -28,13 +28,8 @@ RelatedWorkspaceProperties::RelatedWorkspaceProperties() :
 {
 }
 
-RelatedWorkspaceProperties::RelatedWorkspaceProperties(JsonView jsonValue) : 
-    m_workspaceIdHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_state(WorkspaceState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_type(StandbyWorkspaceRelationshipType::NOT_SET),
-    m_typeHasBeenSet(false)
+RelatedWorkspaceProperties::RelatedWorkspaceProperties(JsonView jsonValue)
+  : RelatedWorkspaceProperties()
 {
   *this = jsonValue;
 }

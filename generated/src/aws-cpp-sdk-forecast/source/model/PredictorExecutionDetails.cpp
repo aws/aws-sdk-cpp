@@ -23,8 +23,8 @@ PredictorExecutionDetails::PredictorExecutionDetails() :
 {
 }
 
-PredictorExecutionDetails::PredictorExecutionDetails(JsonView jsonValue) : 
-    m_predictorExecutionsHasBeenSet(false)
+PredictorExecutionDetails::PredictorExecutionDetails(JsonView jsonValue)
+  : PredictorExecutionDetails()
 {
   *this = jsonValue;
 }

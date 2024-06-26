@@ -23,8 +23,8 @@ PagerDutyIncidentConfiguration::PagerDutyIncidentConfiguration() :
 {
 }
 
-PagerDutyIncidentConfiguration::PagerDutyIncidentConfiguration(JsonView jsonValue) : 
-    m_serviceIdHasBeenSet(false)
+PagerDutyIncidentConfiguration::PagerDutyIncidentConfiguration(JsonView jsonValue)
+  : PagerDutyIncidentConfiguration()
 {
   *this = jsonValue;
 }

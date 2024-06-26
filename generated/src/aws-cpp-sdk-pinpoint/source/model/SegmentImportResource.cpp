@@ -30,15 +30,8 @@ SegmentImportResource::SegmentImportResource() :
 {
 }
 
-SegmentImportResource::SegmentImportResource(JsonView jsonValue) : 
-    m_channelCountsHasBeenSet(false),
-    m_externalIdHasBeenSet(false),
-    m_format(Format::NOT_SET),
-    m_formatHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_s3UrlHasBeenSet(false),
-    m_size(0),
-    m_sizeHasBeenSet(false)
+SegmentImportResource::SegmentImportResource(JsonView jsonValue)
+  : SegmentImportResource()
 {
   *this = jsonValue;
 }

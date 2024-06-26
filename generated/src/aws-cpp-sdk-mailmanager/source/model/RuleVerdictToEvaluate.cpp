@@ -25,10 +25,8 @@ RuleVerdictToEvaluate::RuleVerdictToEvaluate() :
 {
 }
 
-RuleVerdictToEvaluate::RuleVerdictToEvaluate(JsonView jsonValue) : 
-    m_analysisHasBeenSet(false),
-    m_attribute(RuleVerdictAttribute::NOT_SET),
-    m_attributeHasBeenSet(false)
+RuleVerdictToEvaluate::RuleVerdictToEvaluate(JsonView jsonValue)
+  : RuleVerdictToEvaluate()
 {
   *this = jsonValue;
 }

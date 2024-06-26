@@ -24,9 +24,8 @@ PerformanceInsightsReferenceScalar::PerformanceInsightsReferenceScalar() :
 {
 }
 
-PerformanceInsightsReferenceScalar::PerformanceInsightsReferenceScalar(JsonView jsonValue) : 
-    m_value(0.0),
-    m_valueHasBeenSet(false)
+PerformanceInsightsReferenceScalar::PerformanceInsightsReferenceScalar(JsonView jsonValue)
+  : PerformanceInsightsReferenceScalar()
 {
   *this = jsonValue;
 }

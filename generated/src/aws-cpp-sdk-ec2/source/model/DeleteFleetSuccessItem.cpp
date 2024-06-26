@@ -29,12 +29,8 @@ DeleteFleetSuccessItem::DeleteFleetSuccessItem() :
 {
 }
 
-DeleteFleetSuccessItem::DeleteFleetSuccessItem(const XmlNode& xmlNode) : 
-    m_currentFleetState(FleetStateCode::NOT_SET),
-    m_currentFleetStateHasBeenSet(false),
-    m_previousFleetState(FleetStateCode::NOT_SET),
-    m_previousFleetStateHasBeenSet(false),
-    m_fleetIdHasBeenSet(false)
+DeleteFleetSuccessItem::DeleteFleetSuccessItem(const XmlNode& xmlNode)
+  : DeleteFleetSuccessItem()
 {
   *this = xmlNode;
 }

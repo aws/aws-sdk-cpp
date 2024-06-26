@@ -25,10 +25,8 @@ TestingData::TestingData() :
 {
 }
 
-TestingData::TestingData(JsonView jsonValue) : 
-    m_assetsHasBeenSet(false),
-    m_autoCreate(false),
-    m_autoCreateHasBeenSet(false)
+TestingData::TestingData(JsonView jsonValue)
+  : TestingData()
 {
   *this = jsonValue;
 }

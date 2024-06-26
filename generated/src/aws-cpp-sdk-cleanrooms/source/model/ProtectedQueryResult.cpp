@@ -23,8 +23,8 @@ ProtectedQueryResult::ProtectedQueryResult() :
 {
 }
 
-ProtectedQueryResult::ProtectedQueryResult(JsonView jsonValue) : 
-    m_outputHasBeenSet(false)
+ProtectedQueryResult::ProtectedQueryResult(JsonView jsonValue)
+  : ProtectedQueryResult()
 {
   *this = jsonValue;
 }

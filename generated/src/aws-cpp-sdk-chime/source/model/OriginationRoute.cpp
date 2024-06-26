@@ -31,16 +31,8 @@ OriginationRoute::OriginationRoute() :
 {
 }
 
-OriginationRoute::OriginationRoute(JsonView jsonValue) : 
-    m_hostHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_protocol(OriginationRouteProtocol::NOT_SET),
-    m_protocolHasBeenSet(false),
-    m_priority(0),
-    m_priorityHasBeenSet(false),
-    m_weight(0),
-    m_weightHasBeenSet(false)
+OriginationRoute::OriginationRoute(JsonView jsonValue)
+  : OriginationRoute()
 {
   *this = jsonValue;
 }

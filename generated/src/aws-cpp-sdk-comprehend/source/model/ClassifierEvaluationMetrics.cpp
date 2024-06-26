@@ -38,23 +38,8 @@ ClassifierEvaluationMetrics::ClassifierEvaluationMetrics() :
 {
 }
 
-ClassifierEvaluationMetrics::ClassifierEvaluationMetrics(JsonView jsonValue) : 
-    m_accuracy(0.0),
-    m_accuracyHasBeenSet(false),
-    m_precision(0.0),
-    m_precisionHasBeenSet(false),
-    m_recall(0.0),
-    m_recallHasBeenSet(false),
-    m_f1Score(0.0),
-    m_f1ScoreHasBeenSet(false),
-    m_microPrecision(0.0),
-    m_microPrecisionHasBeenSet(false),
-    m_microRecall(0.0),
-    m_microRecallHasBeenSet(false),
-    m_microF1Score(0.0),
-    m_microF1ScoreHasBeenSet(false),
-    m_hammingLoss(0.0),
-    m_hammingLossHasBeenSet(false)
+ClassifierEvaluationMetrics::ClassifierEvaluationMetrics(JsonView jsonValue)
+  : ClassifierEvaluationMetrics()
 {
   *this = jsonValue;
 }

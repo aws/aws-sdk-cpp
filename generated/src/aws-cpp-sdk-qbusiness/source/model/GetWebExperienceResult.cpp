@@ -23,9 +23,8 @@ GetWebExperienceResult::GetWebExperienceResult() :
 {
 }
 
-GetWebExperienceResult::GetWebExperienceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(WebExperienceStatus::NOT_SET),
-    m_samplePromptsControlMode(WebExperienceSamplePromptsControlMode::NOT_SET)
+GetWebExperienceResult::GetWebExperienceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetWebExperienceResult()
 {
   *this = result;
 }

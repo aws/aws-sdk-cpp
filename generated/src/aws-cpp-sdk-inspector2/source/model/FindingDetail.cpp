@@ -34,19 +34,8 @@ FindingDetail::FindingDetail() :
 {
 }
 
-FindingDetail::FindingDetail(JsonView jsonValue) : 
-    m_cisaDataHasBeenSet(false),
-    m_cwesHasBeenSet(false),
-    m_epssScore(0.0),
-    m_epssScoreHasBeenSet(false),
-    m_evidencesHasBeenSet(false),
-    m_exploitObservedHasBeenSet(false),
-    m_findingArnHasBeenSet(false),
-    m_referenceUrlsHasBeenSet(false),
-    m_riskScore(0),
-    m_riskScoreHasBeenSet(false),
-    m_toolsHasBeenSet(false),
-    m_ttpsHasBeenSet(false)
+FindingDetail::FindingDetail(JsonView jsonValue)
+  : FindingDetail()
 {
   *this = jsonValue;
 }

@@ -29,14 +29,8 @@ JobFlowExecutionStatusDetail::JobFlowExecutionStatusDetail() :
 {
 }
 
-JobFlowExecutionStatusDetail::JobFlowExecutionStatusDetail(JsonView jsonValue) : 
-    m_state(JobFlowExecutionState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_creationDateTimeHasBeenSet(false),
-    m_startDateTimeHasBeenSet(false),
-    m_readyDateTimeHasBeenSet(false),
-    m_endDateTimeHasBeenSet(false),
-    m_lastStateChangeReasonHasBeenSet(false)
+JobFlowExecutionStatusDetail::JobFlowExecutionStatusDetail(JsonView jsonValue)
+  : JobFlowExecutionStatusDetail()
 {
   *this = jsonValue;
 }

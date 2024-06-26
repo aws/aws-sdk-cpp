@@ -23,8 +23,8 @@ SelfManageResources::SelfManageResources() :
 {
 }
 
-SelfManageResources::SelfManageResources(JsonView jsonValue) : 
-    m_targetDestinationHasBeenSet(false)
+SelfManageResources::SelfManageResources(JsonView jsonValue)
+  : SelfManageResources()
 {
   *this = jsonValue;
 }

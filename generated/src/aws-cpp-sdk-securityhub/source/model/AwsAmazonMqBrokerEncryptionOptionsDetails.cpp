@@ -25,10 +25,8 @@ AwsAmazonMqBrokerEncryptionOptionsDetails::AwsAmazonMqBrokerEncryptionOptionsDet
 {
 }
 
-AwsAmazonMqBrokerEncryptionOptionsDetails::AwsAmazonMqBrokerEncryptionOptionsDetails(JsonView jsonValue) : 
-    m_kmsKeyIdHasBeenSet(false),
-    m_useAwsOwnedKey(false),
-    m_useAwsOwnedKeyHasBeenSet(false)
+AwsAmazonMqBrokerEncryptionOptionsDetails::AwsAmazonMqBrokerEncryptionOptionsDetails(JsonView jsonValue)
+  : AwsAmazonMqBrokerEncryptionOptionsDetails()
 {
   *this = jsonValue;
 }

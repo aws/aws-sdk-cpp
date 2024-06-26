@@ -24,9 +24,8 @@ ReverseGeocodingConfig::ReverseGeocodingConfig() :
 {
 }
 
-ReverseGeocodingConfig::ReverseGeocodingConfig(JsonView jsonValue) : 
-    m_xAttributeNameHasBeenSet(false),
-    m_yAttributeNameHasBeenSet(false)
+ReverseGeocodingConfig::ReverseGeocodingConfig(JsonView jsonValue)
+  : ReverseGeocodingConfig()
 {
   *this = jsonValue;
 }

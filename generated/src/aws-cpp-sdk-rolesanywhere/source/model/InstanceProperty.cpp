@@ -26,11 +26,8 @@ InstanceProperty::InstanceProperty() :
 {
 }
 
-InstanceProperty::InstanceProperty(JsonView jsonValue) : 
-    m_failed(false),
-    m_failedHasBeenSet(false),
-    m_propertiesHasBeenSet(false),
-    m_seenAtHasBeenSet(false)
+InstanceProperty::InstanceProperty(JsonView jsonValue)
+  : InstanceProperty()
 {
   *this = jsonValue;
 }

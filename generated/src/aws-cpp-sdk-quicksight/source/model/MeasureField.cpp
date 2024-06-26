@@ -26,11 +26,8 @@ MeasureField::MeasureField() :
 {
 }
 
-MeasureField::MeasureField(JsonView jsonValue) : 
-    m_numericalMeasureFieldHasBeenSet(false),
-    m_categoricalMeasureFieldHasBeenSet(false),
-    m_dateMeasureFieldHasBeenSet(false),
-    m_calculatedMeasureFieldHasBeenSet(false)
+MeasureField::MeasureField(JsonView jsonValue)
+  : MeasureField()
 {
   *this = jsonValue;
 }

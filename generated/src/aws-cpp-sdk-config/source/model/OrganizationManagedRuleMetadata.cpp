@@ -31,16 +31,8 @@ OrganizationManagedRuleMetadata::OrganizationManagedRuleMetadata() :
 {
 }
 
-OrganizationManagedRuleMetadata::OrganizationManagedRuleMetadata(JsonView jsonValue) : 
-    m_descriptionHasBeenSet(false),
-    m_ruleIdentifierHasBeenSet(false),
-    m_inputParametersHasBeenSet(false),
-    m_maximumExecutionFrequency(MaximumExecutionFrequency::NOT_SET),
-    m_maximumExecutionFrequencyHasBeenSet(false),
-    m_resourceTypesScopeHasBeenSet(false),
-    m_resourceIdScopeHasBeenSet(false),
-    m_tagKeyScopeHasBeenSet(false),
-    m_tagValueScopeHasBeenSet(false)
+OrganizationManagedRuleMetadata::OrganizationManagedRuleMetadata(JsonView jsonValue)
+  : OrganizationManagedRuleMetadata()
 {
   *this = jsonValue;
 }

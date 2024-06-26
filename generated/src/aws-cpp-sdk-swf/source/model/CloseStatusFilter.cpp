@@ -24,9 +24,8 @@ CloseStatusFilter::CloseStatusFilter() :
 {
 }
 
-CloseStatusFilter::CloseStatusFilter(JsonView jsonValue) : 
-    m_status(CloseStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+CloseStatusFilter::CloseStatusFilter(JsonView jsonValue)
+  : CloseStatusFilter()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ SlackWorkspace::SlackWorkspace() :
 {
 }
 
-SlackWorkspace::SlackWorkspace(JsonView jsonValue) : 
-    m_slackTeamIdHasBeenSet(false),
-    m_slackTeamNameHasBeenSet(false)
+SlackWorkspace::SlackWorkspace(JsonView jsonValue)
+  : SlackWorkspace()
 {
   *this = jsonValue;
 }

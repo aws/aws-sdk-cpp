@@ -28,13 +28,8 @@ BuildGroup::BuildGroup() :
 {
 }
 
-BuildGroup::BuildGroup(JsonView jsonValue) : 
-    m_identifierHasBeenSet(false),
-    m_dependsOnHasBeenSet(false),
-    m_ignoreFailure(false),
-    m_ignoreFailureHasBeenSet(false),
-    m_currentBuildSummaryHasBeenSet(false),
-    m_priorBuildSummaryListHasBeenSet(false)
+BuildGroup::BuildGroup(JsonView jsonValue)
+  : BuildGroup()
 {
   *this = jsonValue;
 }

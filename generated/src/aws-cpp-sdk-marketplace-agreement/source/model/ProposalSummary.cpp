@@ -24,9 +24,8 @@ ProposalSummary::ProposalSummary() :
 {
 }
 
-ProposalSummary::ProposalSummary(JsonView jsonValue) : 
-    m_offerIdHasBeenSet(false),
-    m_resourcesHasBeenSet(false)
+ProposalSummary::ProposalSummary(JsonView jsonValue)
+  : ProposalSummary()
 {
   *this = jsonValue;
 }

@@ -23,9 +23,8 @@ GetBotChannelAssociationResult::GetBotChannelAssociationResult() :
 {
 }
 
-GetBotChannelAssociationResult::GetBotChannelAssociationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_type(ChannelType::NOT_SET),
-    m_status(ChannelStatus::NOT_SET)
+GetBotChannelAssociationResult::GetBotChannelAssociationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetBotChannelAssociationResult()
 {
   *this = result;
 }

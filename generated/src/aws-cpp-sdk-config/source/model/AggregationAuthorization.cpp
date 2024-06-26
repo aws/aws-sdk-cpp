@@ -26,11 +26,8 @@ AggregationAuthorization::AggregationAuthorization() :
 {
 }
 
-AggregationAuthorization::AggregationAuthorization(JsonView jsonValue) : 
-    m_aggregationAuthorizationArnHasBeenSet(false),
-    m_authorizedAccountIdHasBeenSet(false),
-    m_authorizedAwsRegionHasBeenSet(false),
-    m_creationTimeHasBeenSet(false)
+AggregationAuthorization::AggregationAuthorization(JsonView jsonValue)
+  : AggregationAuthorization()
 {
   *this = jsonValue;
 }

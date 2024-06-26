@@ -26,11 +26,8 @@ InstanceBlockDeviceMapping::InstanceBlockDeviceMapping() :
 {
 }
 
-InstanceBlockDeviceMapping::InstanceBlockDeviceMapping(JsonView jsonValue) : 
-    m_deviceNameHasBeenSet(false),
-    m_ebsHasBeenSet(false),
-    m_virtualNameHasBeenSet(false),
-    m_noDeviceHasBeenSet(false)
+InstanceBlockDeviceMapping::InstanceBlockDeviceMapping(JsonView jsonValue)
+  : InstanceBlockDeviceMapping()
 {
   *this = jsonValue;
 }

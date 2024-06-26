@@ -24,9 +24,8 @@ IncompatibleParameterError::IncompatibleParameterError() :
 {
 }
 
-IncompatibleParameterError::IncompatibleParameterError(JsonView jsonValue) : 
-    m_parameterHasBeenSet(false),
-    m_messageHasBeenSet(false)
+IncompatibleParameterError::IncompatibleParameterError(JsonView jsonValue)
+  : IncompatibleParameterError()
 {
   *this = jsonValue;
 }

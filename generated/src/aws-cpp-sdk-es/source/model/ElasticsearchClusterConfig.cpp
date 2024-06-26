@@ -42,27 +42,8 @@ ElasticsearchClusterConfig::ElasticsearchClusterConfig() :
 {
 }
 
-ElasticsearchClusterConfig::ElasticsearchClusterConfig(JsonView jsonValue) : 
-    m_instanceType(ESPartitionInstanceType::NOT_SET),
-    m_instanceTypeHasBeenSet(false),
-    m_instanceCount(0),
-    m_instanceCountHasBeenSet(false),
-    m_dedicatedMasterEnabled(false),
-    m_dedicatedMasterEnabledHasBeenSet(false),
-    m_zoneAwarenessEnabled(false),
-    m_zoneAwarenessEnabledHasBeenSet(false),
-    m_zoneAwarenessConfigHasBeenSet(false),
-    m_dedicatedMasterType(ESPartitionInstanceType::NOT_SET),
-    m_dedicatedMasterTypeHasBeenSet(false),
-    m_dedicatedMasterCount(0),
-    m_dedicatedMasterCountHasBeenSet(false),
-    m_warmEnabled(false),
-    m_warmEnabledHasBeenSet(false),
-    m_warmType(ESWarmPartitionInstanceType::NOT_SET),
-    m_warmTypeHasBeenSet(false),
-    m_warmCount(0),
-    m_warmCountHasBeenSet(false),
-    m_coldStorageOptionsHasBeenSet(false)
+ElasticsearchClusterConfig::ElasticsearchClusterConfig(JsonView jsonValue)
+  : ElasticsearchClusterConfig()
 {
   *this = jsonValue;
 }

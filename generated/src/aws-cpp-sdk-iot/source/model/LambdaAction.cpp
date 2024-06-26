@@ -23,8 +23,8 @@ LambdaAction::LambdaAction() :
 {
 }
 
-LambdaAction::LambdaAction(JsonView jsonValue) : 
-    m_functionArnHasBeenSet(false)
+LambdaAction::LambdaAction(JsonView jsonValue)
+  : LambdaAction()
 {
   *this = jsonValue;
 }

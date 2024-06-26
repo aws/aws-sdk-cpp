@@ -24,9 +24,8 @@ AwsDynamoDbTableProjection::AwsDynamoDbTableProjection() :
 {
 }
 
-AwsDynamoDbTableProjection::AwsDynamoDbTableProjection(JsonView jsonValue) : 
-    m_nonKeyAttributesHasBeenSet(false),
-    m_projectionTypeHasBeenSet(false)
+AwsDynamoDbTableProjection::AwsDynamoDbTableProjection(JsonView jsonValue)
+  : AwsDynamoDbTableProjection()
 {
   *this = jsonValue;
 }

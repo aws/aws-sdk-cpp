@@ -24,9 +24,8 @@ TargetTrackingConfiguration::TargetTrackingConfiguration() :
 {
 }
 
-TargetTrackingConfiguration::TargetTrackingConfiguration(JsonView jsonValue) : 
-    m_targetValue(0.0),
-    m_targetValueHasBeenSet(false)
+TargetTrackingConfiguration::TargetTrackingConfiguration(JsonView jsonValue)
+  : TargetTrackingConfiguration()
 {
   *this = jsonValue;
 }

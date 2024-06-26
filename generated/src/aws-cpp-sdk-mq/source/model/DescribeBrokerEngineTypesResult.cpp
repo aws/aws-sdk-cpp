@@ -22,8 +22,8 @@ DescribeBrokerEngineTypesResult::DescribeBrokerEngineTypesResult() :
 {
 }
 
-DescribeBrokerEngineTypesResult::DescribeBrokerEngineTypesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_maxResults(0)
+DescribeBrokerEngineTypesResult::DescribeBrokerEngineTypesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeBrokerEngineTypesResult()
 {
   *this = result;
 }

@@ -30,13 +30,8 @@ AccessLog::AccessLog() :
 {
 }
 
-AccessLog::AccessLog(const XmlNode& xmlNode) : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_s3BucketNameHasBeenSet(false),
-    m_emitInterval(0),
-    m_emitIntervalHasBeenSet(false),
-    m_s3BucketPrefixHasBeenSet(false)
+AccessLog::AccessLog(const XmlNode& xmlNode)
+  : AccessLog()
 {
   *this = xmlNode;
 }

@@ -23,8 +23,8 @@ TaskTemplateDefaults::TaskTemplateDefaults() :
 {
 }
 
-TaskTemplateDefaults::TaskTemplateDefaults(JsonView jsonValue) : 
-    m_defaultFieldValuesHasBeenSet(false)
+TaskTemplateDefaults::TaskTemplateDefaults(JsonView jsonValue)
+  : TaskTemplateDefaults()
 {
   *this = jsonValue;
 }

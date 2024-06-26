@@ -23,8 +23,8 @@ StartReadSetActivationJobSourceItem::StartReadSetActivationJobSourceItem() :
 {
 }
 
-StartReadSetActivationJobSourceItem::StartReadSetActivationJobSourceItem(JsonView jsonValue) : 
-    m_readSetIdHasBeenSet(false)
+StartReadSetActivationJobSourceItem::StartReadSetActivationJobSourceItem(JsonView jsonValue)
+  : StartReadSetActivationJobSourceItem()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ BatchPutGeofenceSuccess::BatchPutGeofenceSuccess() :
 {
 }
 
-BatchPutGeofenceSuccess::BatchPutGeofenceSuccess(JsonView jsonValue) : 
-    m_geofenceIdHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
+BatchPutGeofenceSuccess::BatchPutGeofenceSuccess(JsonView jsonValue)
+  : BatchPutGeofenceSuccess()
 {
   *this = jsonValue;
 }

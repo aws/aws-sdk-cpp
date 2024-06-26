@@ -22,8 +22,8 @@ RegisterUserResult::RegisterUserResult() :
 {
 }
 
-RegisterUserResult::RegisterUserResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+RegisterUserResult::RegisterUserResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : RegisterUserResult()
 {
   *this = result;
 }

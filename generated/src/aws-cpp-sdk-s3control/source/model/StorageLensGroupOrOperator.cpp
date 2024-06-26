@@ -29,12 +29,8 @@ StorageLensGroupOrOperator::StorageLensGroupOrOperator() :
 {
 }
 
-StorageLensGroupOrOperator::StorageLensGroupOrOperator(const XmlNode& xmlNode) : 
-    m_matchAnyPrefixHasBeenSet(false),
-    m_matchAnySuffixHasBeenSet(false),
-    m_matchAnyTagHasBeenSet(false),
-    m_matchObjectAgeHasBeenSet(false),
-    m_matchObjectSizeHasBeenSet(false)
+StorageLensGroupOrOperator::StorageLensGroupOrOperator(const XmlNode& xmlNode)
+  : StorageLensGroupOrOperator()
 {
   *this = xmlNode;
 }

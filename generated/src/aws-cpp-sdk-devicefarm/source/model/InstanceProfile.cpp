@@ -30,15 +30,8 @@ InstanceProfile::InstanceProfile() :
 {
 }
 
-InstanceProfile::InstanceProfile(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_packageCleanup(false),
-    m_packageCleanupHasBeenSet(false),
-    m_excludeAppPackagesFromCleanupHasBeenSet(false),
-    m_rebootAfterUse(false),
-    m_rebootAfterUseHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+InstanceProfile::InstanceProfile(JsonView jsonValue)
+  : InstanceProfile()
 {
   *this = jsonValue;
 }

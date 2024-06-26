@@ -39,24 +39,8 @@ Solution::Solution() :
 {
 }
 
-Solution::Solution(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_solutionArnHasBeenSet(false),
-    m_performHPO(false),
-    m_performHPOHasBeenSet(false),
-    m_performAutoML(false),
-    m_performAutoMLHasBeenSet(false),
-    m_performAutoTraining(false),
-    m_performAutoTrainingHasBeenSet(false),
-    m_recipeArnHasBeenSet(false),
-    m_datasetGroupArnHasBeenSet(false),
-    m_eventTypeHasBeenSet(false),
-    m_solutionConfigHasBeenSet(false),
-    m_autoMLResultHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_creationDateTimeHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false),
-    m_latestSolutionVersionHasBeenSet(false)
+Solution::Solution(JsonView jsonValue)
+  : Solution()
 {
   *this = jsonValue;
 }

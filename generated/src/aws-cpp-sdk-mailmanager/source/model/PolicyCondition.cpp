@@ -26,11 +26,8 @@ PolicyCondition::PolicyCondition() :
 {
 }
 
-PolicyCondition::PolicyCondition(JsonView jsonValue) : 
-    m_booleanExpressionHasBeenSet(false),
-    m_ipExpressionHasBeenSet(false),
-    m_stringExpressionHasBeenSet(false),
-    m_tlsExpressionHasBeenSet(false)
+PolicyCondition::PolicyCondition(JsonView jsonValue)
+  : PolicyCondition()
 {
   *this = jsonValue;
 }

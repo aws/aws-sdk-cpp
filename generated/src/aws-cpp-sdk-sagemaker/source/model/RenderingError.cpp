@@ -24,9 +24,8 @@ RenderingError::RenderingError() :
 {
 }
 
-RenderingError::RenderingError(JsonView jsonValue) : 
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+RenderingError::RenderingError(JsonView jsonValue)
+  : RenderingError()
 {
   *this = jsonValue;
 }

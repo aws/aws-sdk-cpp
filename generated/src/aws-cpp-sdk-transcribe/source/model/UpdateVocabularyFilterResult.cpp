@@ -22,8 +22,8 @@ UpdateVocabularyFilterResult::UpdateVocabularyFilterResult() :
 {
 }
 
-UpdateVocabularyFilterResult::UpdateVocabularyFilterResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_languageCode(LanguageCode::NOT_SET)
+UpdateVocabularyFilterResult::UpdateVocabularyFilterResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateVocabularyFilterResult()
 {
   *this = result;
 }

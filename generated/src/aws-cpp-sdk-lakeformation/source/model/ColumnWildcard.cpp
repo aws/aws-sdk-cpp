@@ -23,8 +23,8 @@ ColumnWildcard::ColumnWildcard() :
 {
 }
 
-ColumnWildcard::ColumnWildcard(JsonView jsonValue) : 
-    m_excludedColumnNamesHasBeenSet(false)
+ColumnWildcard::ColumnWildcard(JsonView jsonValue)
+  : ColumnWildcard()
 {
   *this = jsonValue;
 }

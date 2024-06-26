@@ -23,8 +23,8 @@ BucketsAggregationType::BucketsAggregationType() :
 {
 }
 
-BucketsAggregationType::BucketsAggregationType(JsonView jsonValue) : 
-    m_termsAggregationHasBeenSet(false)
+BucketsAggregationType::BucketsAggregationType(JsonView jsonValue)
+  : BucketsAggregationType()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ ValidatorMetric::ValidatorMetric() :
 {
 }
 
-ValidatorMetric::ValidatorMetric(JsonView jsonValue) : 
-    m_validationLoss(0.0),
-    m_validationLossHasBeenSet(false)
+ValidatorMetric::ValidatorMetric(JsonView jsonValue)
+  : ValidatorMetric()
 {
   *this = jsonValue;
 }

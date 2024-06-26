@@ -25,11 +25,8 @@ DescribeJobRunResult::DescribeJobRunResult() :
 {
 }
 
-DescribeJobRunResult::DescribeJobRunResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_attempt(0),
-    m_executionTime(0),
-    m_state(JobRunState::NOT_SET),
-    m_logSubscription(LogSubscription::NOT_SET)
+DescribeJobRunResult::DescribeJobRunResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeJobRunResult()
 {
   *this = result;
 }

@@ -33,18 +33,8 @@ ShareDetails::ShareDetails() :
 {
 }
 
-ShareDetails::ShareDetails(JsonView jsonValue) : 
-    m_shareIdHasBeenSet(false),
-    m_resourceArnHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_principalSubscriberHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_status(ShareStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_shareNameHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
+ShareDetails::ShareDetails(JsonView jsonValue)
+  : ShareDetails()
 {
   *this = jsonValue;
 }

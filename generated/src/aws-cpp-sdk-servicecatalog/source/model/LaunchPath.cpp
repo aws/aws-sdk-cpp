@@ -24,9 +24,8 @@ LaunchPath::LaunchPath() :
 {
 }
 
-LaunchPath::LaunchPath(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false)
+LaunchPath::LaunchPath(JsonView jsonValue)
+  : LaunchPath()
 {
   *this = jsonValue;
 }

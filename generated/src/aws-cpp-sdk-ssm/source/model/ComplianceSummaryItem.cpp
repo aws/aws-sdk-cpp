@@ -25,10 +25,8 @@ ComplianceSummaryItem::ComplianceSummaryItem() :
 {
 }
 
-ComplianceSummaryItem::ComplianceSummaryItem(JsonView jsonValue) : 
-    m_complianceTypeHasBeenSet(false),
-    m_compliantSummaryHasBeenSet(false),
-    m_nonCompliantSummaryHasBeenSet(false)
+ComplianceSummaryItem::ComplianceSummaryItem(JsonView jsonValue)
+  : ComplianceSummaryItem()
 {
   *this = jsonValue;
 }

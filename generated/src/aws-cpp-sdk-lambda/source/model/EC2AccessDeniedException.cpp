@@ -24,9 +24,8 @@ EC2AccessDeniedException::EC2AccessDeniedException() :
 {
 }
 
-EC2AccessDeniedException::EC2AccessDeniedException(JsonView jsonValue) : 
-    m_typeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+EC2AccessDeniedException::EC2AccessDeniedException(JsonView jsonValue)
+  : EC2AccessDeniedException()
 {
   *this = jsonValue;
 }

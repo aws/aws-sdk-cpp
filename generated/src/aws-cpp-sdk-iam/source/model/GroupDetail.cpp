@@ -31,14 +31,8 @@ GroupDetail::GroupDetail() :
 {
 }
 
-GroupDetail::GroupDetail(const XmlNode& xmlNode) : 
-    m_pathHasBeenSet(false),
-    m_groupNameHasBeenSet(false),
-    m_groupIdHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_createDateHasBeenSet(false),
-    m_groupPolicyListHasBeenSet(false),
-    m_attachedManagedPoliciesHasBeenSet(false)
+GroupDetail::GroupDetail(const XmlNode& xmlNode)
+  : GroupDetail()
 {
   *this = xmlNode;
 }

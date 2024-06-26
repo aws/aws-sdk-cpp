@@ -25,10 +25,8 @@ DataTransferApi::DataTransferApi() :
 {
 }
 
-DataTransferApi::DataTransferApi(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_type(DataTransferApiType::NOT_SET),
-    m_typeHasBeenSet(false)
+DataTransferApi::DataTransferApi(JsonView jsonValue)
+  : DataTransferApi()
 {
   *this = jsonValue;
 }

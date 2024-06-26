@@ -27,12 +27,8 @@ BudgetActionToAdd::BudgetActionToAdd() :
 {
 }
 
-BudgetActionToAdd::BudgetActionToAdd(JsonView jsonValue) : 
-    m_descriptionHasBeenSet(false),
-    m_thresholdPercentage(0.0),
-    m_thresholdPercentageHasBeenSet(false),
-    m_type(BudgetActionType::NOT_SET),
-    m_typeHasBeenSet(false)
+BudgetActionToAdd::BudgetActionToAdd(JsonView jsonValue)
+  : BudgetActionToAdd()
 {
   *this = jsonValue;
 }

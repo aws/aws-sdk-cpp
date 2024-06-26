@@ -24,9 +24,8 @@ AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateTagDetails::AwsS3Buck
 {
 }
 
-AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateTagDetails::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateTagDetails(JsonView jsonValue) : 
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false)
+AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateTagDetails::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateTagDetails(JsonView jsonValue)
+  : AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateTagDetails()
 {
   *this = jsonValue;
 }

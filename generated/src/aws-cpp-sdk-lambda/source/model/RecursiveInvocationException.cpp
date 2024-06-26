@@ -24,9 +24,8 @@ RecursiveInvocationException::RecursiveInvocationException() :
 {
 }
 
-RecursiveInvocationException::RecursiveInvocationException(JsonView jsonValue) : 
-    m_typeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+RecursiveInvocationException::RecursiveInvocationException(JsonView jsonValue)
+  : RecursiveInvocationException()
 {
   *this = jsonValue;
 }

@@ -30,12 +30,8 @@ NotificationConfiguration::NotificationConfiguration() :
 {
 }
 
-NotificationConfiguration::NotificationConfiguration(const XmlNode& xmlNode) : 
-    m_topicConfigurationsHasBeenSet(false),
-    m_queueConfigurationsHasBeenSet(false),
-    m_lambdaFunctionConfigurationsHasBeenSet(false),
-    m_eventBridgeConfigurationHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
+NotificationConfiguration::NotificationConfiguration(const XmlNode& xmlNode)
+  : NotificationConfiguration()
 {
   *this = xmlNode;
 }

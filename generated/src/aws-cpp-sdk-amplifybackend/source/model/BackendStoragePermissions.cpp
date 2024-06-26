@@ -24,9 +24,8 @@ BackendStoragePermissions::BackendStoragePermissions() :
 {
 }
 
-BackendStoragePermissions::BackendStoragePermissions(JsonView jsonValue) : 
-    m_authenticatedHasBeenSet(false),
-    m_unAuthenticatedHasBeenSet(false)
+BackendStoragePermissions::BackendStoragePermissions(JsonView jsonValue)
+  : BackendStoragePermissions()
 {
   *this = jsonValue;
 }

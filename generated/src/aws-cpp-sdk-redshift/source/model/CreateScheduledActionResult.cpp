@@ -22,8 +22,8 @@ CreateScheduledActionResult::CreateScheduledActionResult() :
 {
 }
 
-CreateScheduledActionResult::CreateScheduledActionResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_state(ScheduledActionState::NOT_SET)
+CreateScheduledActionResult::CreateScheduledActionResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : CreateScheduledActionResult()
 {
   *this = result;
 }

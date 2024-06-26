@@ -23,8 +23,8 @@ DeterminingPolicyItem::DeterminingPolicyItem() :
 {
 }
 
-DeterminingPolicyItem::DeterminingPolicyItem(JsonView jsonValue) : 
-    m_policyIdHasBeenSet(false)
+DeterminingPolicyItem::DeterminingPolicyItem(JsonView jsonValue)
+  : DeterminingPolicyItem()
 {
   *this = jsonValue;
 }

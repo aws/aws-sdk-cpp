@@ -26,11 +26,8 @@ ReportResult::ReportResult() :
 {
 }
 
-ReportResult::ReportResult(JsonView jsonValue) : 
-    m_status(PhaseStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_errorCodeHasBeenSet(false),
-    m_errorDetailHasBeenSet(false)
+ReportResult::ReportResult(JsonView jsonValue)
+  : ReportResult()
 {
   *this = jsonValue;
 }

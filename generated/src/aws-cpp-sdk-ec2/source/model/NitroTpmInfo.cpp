@@ -25,8 +25,8 @@ NitroTpmInfo::NitroTpmInfo() :
 {
 }
 
-NitroTpmInfo::NitroTpmInfo(const XmlNode& xmlNode) : 
-    m_supportedVersionsHasBeenSet(false)
+NitroTpmInfo::NitroTpmInfo(const XmlNode& xmlNode)
+  : NitroTpmInfo()
 {
   *this = xmlNode;
 }

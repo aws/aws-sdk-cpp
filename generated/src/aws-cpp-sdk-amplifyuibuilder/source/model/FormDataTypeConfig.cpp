@@ -25,10 +25,8 @@ FormDataTypeConfig::FormDataTypeConfig() :
 {
 }
 
-FormDataTypeConfig::FormDataTypeConfig(JsonView jsonValue) : 
-    m_dataSourceType(FormDataSourceType::NOT_SET),
-    m_dataSourceTypeHasBeenSet(false),
-    m_dataTypeNameHasBeenSet(false)
+FormDataTypeConfig::FormDataTypeConfig(JsonView jsonValue)
+  : FormDataTypeConfig()
 {
   *this = jsonValue;
 }

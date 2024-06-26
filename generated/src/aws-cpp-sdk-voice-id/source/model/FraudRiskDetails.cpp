@@ -24,9 +24,8 @@ FraudRiskDetails::FraudRiskDetails() :
 {
 }
 
-FraudRiskDetails::FraudRiskDetails(JsonView jsonValue) : 
-    m_knownFraudsterRiskHasBeenSet(false),
-    m_voiceSpoofingRiskHasBeenSet(false)
+FraudRiskDetails::FraudRiskDetails(JsonView jsonValue)
+  : FraudRiskDetails()
 {
   *this = jsonValue;
 }

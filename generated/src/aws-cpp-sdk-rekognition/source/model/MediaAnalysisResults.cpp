@@ -24,9 +24,8 @@ MediaAnalysisResults::MediaAnalysisResults() :
 {
 }
 
-MediaAnalysisResults::MediaAnalysisResults(JsonView jsonValue) : 
-    m_s3ObjectHasBeenSet(false),
-    m_modelVersionsHasBeenSet(false)
+MediaAnalysisResults::MediaAnalysisResults(JsonView jsonValue)
+  : MediaAnalysisResults()
 {
   *this = jsonValue;
 }

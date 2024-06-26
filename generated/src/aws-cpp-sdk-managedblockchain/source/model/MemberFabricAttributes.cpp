@@ -24,9 +24,8 @@ MemberFabricAttributes::MemberFabricAttributes() :
 {
 }
 
-MemberFabricAttributes::MemberFabricAttributes(JsonView jsonValue) : 
-    m_adminUsernameHasBeenSet(false),
-    m_caEndpointHasBeenSet(false)
+MemberFabricAttributes::MemberFabricAttributes(JsonView jsonValue)
+  : MemberFabricAttributes()
 {
   *this = jsonValue;
 }

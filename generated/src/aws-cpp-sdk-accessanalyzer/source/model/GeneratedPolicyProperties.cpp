@@ -26,11 +26,8 @@ GeneratedPolicyProperties::GeneratedPolicyProperties() :
 {
 }
 
-GeneratedPolicyProperties::GeneratedPolicyProperties(JsonView jsonValue) : 
-    m_isComplete(false),
-    m_isCompleteHasBeenSet(false),
-    m_principalArnHasBeenSet(false),
-    m_cloudTrailPropertiesHasBeenSet(false)
+GeneratedPolicyProperties::GeneratedPolicyProperties(JsonView jsonValue)
+  : GeneratedPolicyProperties()
 {
   *this = jsonValue;
 }

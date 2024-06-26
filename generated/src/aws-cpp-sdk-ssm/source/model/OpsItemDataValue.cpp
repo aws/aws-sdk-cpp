@@ -25,10 +25,8 @@ OpsItemDataValue::OpsItemDataValue() :
 {
 }
 
-OpsItemDataValue::OpsItemDataValue(JsonView jsonValue) : 
-    m_valueHasBeenSet(false),
-    m_type(OpsItemDataType::NOT_SET),
-    m_typeHasBeenSet(false)
+OpsItemDataValue::OpsItemDataValue(JsonView jsonValue)
+  : OpsItemDataValue()
 {
   *this = jsonValue;
 }

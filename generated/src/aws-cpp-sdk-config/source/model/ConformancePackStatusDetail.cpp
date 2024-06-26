@@ -31,16 +31,8 @@ ConformancePackStatusDetail::ConformancePackStatusDetail() :
 {
 }
 
-ConformancePackStatusDetail::ConformancePackStatusDetail(JsonView jsonValue) : 
-    m_conformancePackNameHasBeenSet(false),
-    m_conformancePackIdHasBeenSet(false),
-    m_conformancePackArnHasBeenSet(false),
-    m_conformancePackState(ConformancePackState::NOT_SET),
-    m_conformancePackStateHasBeenSet(false),
-    m_stackArnHasBeenSet(false),
-    m_conformancePackStatusReasonHasBeenSet(false),
-    m_lastUpdateRequestedTimeHasBeenSet(false),
-    m_lastUpdateCompletedTimeHasBeenSet(false)
+ConformancePackStatusDetail::ConformancePackStatusDetail(JsonView jsonValue)
+  : ConformancePackStatusDetail()
 {
   *this = jsonValue;
 }

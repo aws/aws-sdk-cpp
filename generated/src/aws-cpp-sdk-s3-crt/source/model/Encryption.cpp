@@ -28,11 +28,8 @@ Encryption::Encryption() :
 {
 }
 
-Encryption::Encryption(const XmlNode& xmlNode) : 
-    m_encryptionType(ServerSideEncryption::NOT_SET),
-    m_encryptionTypeHasBeenSet(false),
-    m_kMSKeyIdHasBeenSet(false),
-    m_kMSContextHasBeenSet(false)
+Encryption::Encryption(const XmlNode& xmlNode)
+  : Encryption()
 {
   *this = xmlNode;
 }

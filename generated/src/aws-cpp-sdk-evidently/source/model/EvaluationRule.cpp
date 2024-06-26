@@ -24,9 +24,8 @@ EvaluationRule::EvaluationRule() :
 {
 }
 
-EvaluationRule::EvaluationRule(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_typeHasBeenSet(false)
+EvaluationRule::EvaluationRule(JsonView jsonValue)
+  : EvaluationRule()
 {
   *this = jsonValue;
 }

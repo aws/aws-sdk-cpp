@@ -27,12 +27,8 @@ MergeHunkDetail::MergeHunkDetail() :
 {
 }
 
-MergeHunkDetail::MergeHunkDetail(JsonView jsonValue) : 
-    m_startLine(0),
-    m_startLineHasBeenSet(false),
-    m_endLine(0),
-    m_endLineHasBeenSet(false),
-    m_hunkContentHasBeenSet(false)
+MergeHunkDetail::MergeHunkDetail(JsonView jsonValue)
+  : MergeHunkDetail()
 {
   *this = jsonValue;
 }

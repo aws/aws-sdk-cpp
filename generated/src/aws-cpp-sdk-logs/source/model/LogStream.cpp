@@ -33,18 +33,8 @@ LogStream::LogStream() :
 {
 }
 
-LogStream::LogStream(JsonView jsonValue) : 
-    m_logStreamNameHasBeenSet(false),
-    m_creationTime(0),
-    m_creationTimeHasBeenSet(false),
-    m_firstEventTimestamp(0),
-    m_firstEventTimestampHasBeenSet(false),
-    m_lastEventTimestamp(0),
-    m_lastEventTimestampHasBeenSet(false),
-    m_lastIngestionTime(0),
-    m_lastIngestionTimeHasBeenSet(false),
-    m_uploadSequenceTokenHasBeenSet(false),
-    m_arnHasBeenSet(false)
+LogStream::LogStream(JsonView jsonValue)
+  : LogStream()
 {
   *this = jsonValue;
 }

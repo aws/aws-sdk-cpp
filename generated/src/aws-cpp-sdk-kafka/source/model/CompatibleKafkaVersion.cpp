@@ -24,9 +24,8 @@ CompatibleKafkaVersion::CompatibleKafkaVersion() :
 {
 }
 
-CompatibleKafkaVersion::CompatibleKafkaVersion(JsonView jsonValue) : 
-    m_sourceVersionHasBeenSet(false),
-    m_targetVersionsHasBeenSet(false)
+CompatibleKafkaVersion::CompatibleKafkaVersion(JsonView jsonValue)
+  : CompatibleKafkaVersion()
 {
   *this = jsonValue;
 }

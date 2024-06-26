@@ -26,11 +26,8 @@ SearchForPositionResult::SearchForPositionResult() :
 {
 }
 
-SearchForPositionResult::SearchForPositionResult(JsonView jsonValue) : 
-    m_placeHasBeenSet(false),
-    m_distance(0.0),
-    m_distanceHasBeenSet(false),
-    m_placeIdHasBeenSet(false)
+SearchForPositionResult::SearchForPositionResult(JsonView jsonValue)
+  : SearchForPositionResult()
 {
   *this = jsonValue;
 }

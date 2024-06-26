@@ -25,10 +25,8 @@ S3BucketConfiguration::S3BucketConfiguration() :
 {
 }
 
-S3BucketConfiguration::S3BucketConfiguration(JsonView jsonValue) : 
-    m_bucketNameHasBeenSet(false),
-    m_bucketPrefixHasBeenSet(false),
-    m_bucketRegionHasBeenSet(false)
+S3BucketConfiguration::S3BucketConfiguration(JsonView jsonValue)
+  : S3BucketConfiguration()
 {
   *this = jsonValue;
 }

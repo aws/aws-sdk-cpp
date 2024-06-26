@@ -23,8 +23,8 @@ FilledMapFieldWells::FilledMapFieldWells() :
 {
 }
 
-FilledMapFieldWells::FilledMapFieldWells(JsonView jsonValue) : 
-    m_filledMapAggregatedFieldWellsHasBeenSet(false)
+FilledMapFieldWells::FilledMapFieldWells(JsonView jsonValue)
+  : FilledMapFieldWells()
 {
   *this = jsonValue;
 }

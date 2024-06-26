@@ -33,16 +33,8 @@ InvalidationList::InvalidationList() :
 {
 }
 
-InvalidationList::InvalidationList(const XmlNode& xmlNode) : 
-    m_markerHasBeenSet(false),
-    m_nextMarkerHasBeenSet(false),
-    m_maxItems(0),
-    m_maxItemsHasBeenSet(false),
-    m_isTruncated(false),
-    m_isTruncatedHasBeenSet(false),
-    m_quantity(0),
-    m_quantityHasBeenSet(false),
-    m_itemsHasBeenSet(false)
+InvalidationList::InvalidationList(const XmlNode& xmlNode)
+  : InvalidationList()
 {
   *this = xmlNode;
 }

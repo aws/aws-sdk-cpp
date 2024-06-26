@@ -24,9 +24,8 @@ PolicyNotFound::PolicyNotFound() :
 {
 }
 
-PolicyNotFound::PolicyNotFound(JsonView jsonValue) : 
-    m_errorCodeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+PolicyNotFound::PolicyNotFound(JsonView jsonValue)
+  : PolicyNotFound()
 {
   *this = jsonValue;
 }

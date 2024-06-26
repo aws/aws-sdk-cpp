@@ -27,12 +27,8 @@ AttachmentError::AttachmentError() :
 {
 }
 
-AttachmentError::AttachmentError(JsonView jsonValue) : 
-    m_code(AttachmentErrorCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_resourceArnHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
+AttachmentError::AttachmentError(JsonView jsonValue)
+  : AttachmentError()
 {
   *this = jsonValue;
 }

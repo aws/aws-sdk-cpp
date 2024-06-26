@@ -23,8 +23,8 @@ CompositionRelationshipItem::CompositionRelationshipItem() :
 {
 }
 
-CompositionRelationshipItem::CompositionRelationshipItem(JsonView jsonValue) : 
-    m_idHasBeenSet(false)
+CompositionRelationshipItem::CompositionRelationshipItem(JsonView jsonValue)
+  : CompositionRelationshipItem()
 {
   *this = jsonValue;
 }

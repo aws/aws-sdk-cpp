@@ -26,9 +26,8 @@ MetricCharacteristics::MetricCharacteristics() :
 {
 }
 
-MetricCharacteristics::MetricCharacteristics(const XmlNode& xmlNode) : 
-    m_periodicSpikes(false),
-    m_periodicSpikesHasBeenSet(false)
+MetricCharacteristics::MetricCharacteristics(const XmlNode& xmlNode)
+  : MetricCharacteristics()
 {
   *this = xmlNode;
 }

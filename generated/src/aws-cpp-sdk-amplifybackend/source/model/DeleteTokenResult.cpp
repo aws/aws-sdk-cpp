@@ -22,8 +22,8 @@ DeleteTokenResult::DeleteTokenResult() :
 {
 }
 
-DeleteTokenResult::DeleteTokenResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_isSuccess(false)
+DeleteTokenResult::DeleteTokenResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeleteTokenResult()
 {
   *this = result;
 }

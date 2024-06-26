@@ -26,11 +26,8 @@ NewSessionDetails::NewSessionDetails() :
 {
 }
 
-NewSessionDetails::NewSessionDetails(JsonView jsonValue) : 
-    m_supportedMessagingContentTypesHasBeenSet(false),
-    m_participantDetailsHasBeenSet(false),
-    m_attributesHasBeenSet(false),
-    m_streamingConfigurationHasBeenSet(false)
+NewSessionDetails::NewSessionDetails(JsonView jsonValue)
+  : NewSessionDetails()
 {
   *this = jsonValue;
 }

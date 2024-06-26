@@ -28,13 +28,8 @@ SyncResourceFilter::SyncResourceFilter() :
 {
 }
 
-SyncResourceFilter::SyncResourceFilter(JsonView jsonValue) : 
-    m_state(SyncResourceState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_resourceType(SyncResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_externalIdHasBeenSet(false)
+SyncResourceFilter::SyncResourceFilter(JsonView jsonValue)
+  : SyncResourceFilter()
 {
   *this = jsonValue;
 }

@@ -34,19 +34,8 @@ FeatureSummary::FeatureSummary() :
 {
 }
 
-FeatureSummary::FeatureSummary(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_defaultVariationHasBeenSet(false),
-    m_evaluationRulesHasBeenSet(false),
-    m_evaluationStrategy(FeatureEvaluationStrategy::NOT_SET),
-    m_evaluationStrategyHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_projectHasBeenSet(false),
-    m_status(FeatureStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+FeatureSummary::FeatureSummary(JsonView jsonValue)
+  : FeatureSummary()
 {
   *this = jsonValue;
 }

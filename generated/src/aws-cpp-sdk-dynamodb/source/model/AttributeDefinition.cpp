@@ -25,10 +25,8 @@ AttributeDefinition::AttributeDefinition() :
 {
 }
 
-AttributeDefinition::AttributeDefinition(JsonView jsonValue) : 
-    m_attributeNameHasBeenSet(false),
-    m_attributeType(ScalarAttributeType::NOT_SET),
-    m_attributeTypeHasBeenSet(false)
+AttributeDefinition::AttributeDefinition(JsonView jsonValue)
+  : AttributeDefinition()
 {
   *this = jsonValue;
 }

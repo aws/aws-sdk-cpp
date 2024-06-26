@@ -30,13 +30,8 @@ Job::Job() :
 {
 }
 
-Job::Job(const XmlNode& xmlNode) : 
-    m_jobIdHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_isCanceled(false),
-    m_isCanceledHasBeenSet(false),
-    m_jobType(JobType::NOT_SET),
-    m_jobTypeHasBeenSet(false)
+Job::Job(const XmlNode& xmlNode)
+  : Job()
 {
   *this = xmlNode;
 }

@@ -25,10 +25,8 @@ AwsElasticsearchDomainLogPublishingOptions::AwsElasticsearchDomainLogPublishingO
 {
 }
 
-AwsElasticsearchDomainLogPublishingOptions::AwsElasticsearchDomainLogPublishingOptions(JsonView jsonValue) : 
-    m_indexSlowLogsHasBeenSet(false),
-    m_searchSlowLogsHasBeenSet(false),
-    m_auditLogsHasBeenSet(false)
+AwsElasticsearchDomainLogPublishingOptions::AwsElasticsearchDomainLogPublishingOptions(JsonView jsonValue)
+  : AwsElasticsearchDomainLogPublishingOptions()
 {
   *this = jsonValue;
 }

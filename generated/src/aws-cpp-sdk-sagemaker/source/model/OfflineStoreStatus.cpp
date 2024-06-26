@@ -25,10 +25,8 @@ OfflineStoreStatus::OfflineStoreStatus() :
 {
 }
 
-OfflineStoreStatus::OfflineStoreStatus(JsonView jsonValue) : 
-    m_status(OfflineStoreStatusValue::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_blockedReasonHasBeenSet(false)
+OfflineStoreStatus::OfflineStoreStatus(JsonView jsonValue)
+  : OfflineStoreStatus()
 {
   *this = jsonValue;
 }

@@ -31,14 +31,8 @@ ResourceSpecificResult::ResourceSpecificResult() :
 {
 }
 
-ResourceSpecificResult::ResourceSpecificResult(const XmlNode& xmlNode) : 
-    m_evalResourceNameHasBeenSet(false),
-    m_evalResourceDecision(PolicyEvaluationDecisionType::NOT_SET),
-    m_evalResourceDecisionHasBeenSet(false),
-    m_matchedStatementsHasBeenSet(false),
-    m_missingContextValuesHasBeenSet(false),
-    m_evalDecisionDetailsHasBeenSet(false),
-    m_permissionsBoundaryDecisionDetailHasBeenSet(false)
+ResourceSpecificResult::ResourceSpecificResult(const XmlNode& xmlNode)
+  : ResourceSpecificResult()
 {
   *this = xmlNode;
 }

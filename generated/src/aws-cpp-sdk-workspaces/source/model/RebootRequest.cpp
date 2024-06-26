@@ -23,8 +23,8 @@ RebootRequest::RebootRequest() :
 {
 }
 
-RebootRequest::RebootRequest(JsonView jsonValue) : 
-    m_workspaceIdHasBeenSet(false)
+RebootRequest::RebootRequest(JsonView jsonValue)
+  : RebootRequest()
 {
   *this = jsonValue;
 }

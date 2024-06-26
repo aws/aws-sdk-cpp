@@ -24,9 +24,8 @@ IpRoute::IpRoute() :
 {
 }
 
-IpRoute::IpRoute(JsonView jsonValue) : 
-    m_cidrIpHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+IpRoute::IpRoute(JsonView jsonValue)
+  : IpRoute()
 {
   *this = jsonValue;
 }

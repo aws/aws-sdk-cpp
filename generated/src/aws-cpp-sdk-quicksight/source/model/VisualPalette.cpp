@@ -24,9 +24,8 @@ VisualPalette::VisualPalette() :
 {
 }
 
-VisualPalette::VisualPalette(JsonView jsonValue) : 
-    m_chartColorHasBeenSet(false),
-    m_colorMapHasBeenSet(false)
+VisualPalette::VisualPalette(JsonView jsonValue)
+  : VisualPalette()
 {
   *this = jsonValue;
 }

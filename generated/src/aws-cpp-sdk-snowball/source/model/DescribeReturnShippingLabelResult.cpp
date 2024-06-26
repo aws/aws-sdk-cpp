@@ -22,8 +22,8 @@ DescribeReturnShippingLabelResult::DescribeReturnShippingLabelResult() :
 {
 }
 
-DescribeReturnShippingLabelResult::DescribeReturnShippingLabelResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(ShippingLabelStatus::NOT_SET)
+DescribeReturnShippingLabelResult::DescribeReturnShippingLabelResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeReturnShippingLabelResult()
 {
   *this = result;
 }

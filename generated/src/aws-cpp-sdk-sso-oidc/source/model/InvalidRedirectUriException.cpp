@@ -24,9 +24,8 @@ InvalidRedirectUriException::InvalidRedirectUriException() :
 {
 }
 
-InvalidRedirectUriException::InvalidRedirectUriException(JsonView jsonValue) : 
-    m_errorHasBeenSet(false),
-    m_error_descriptionHasBeenSet(false)
+InvalidRedirectUriException::InvalidRedirectUriException(JsonView jsonValue)
+  : InvalidRedirectUriException()
 {
   *this = jsonValue;
 }

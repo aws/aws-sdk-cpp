@@ -36,21 +36,8 @@ AwsDmsEndpointDetails::AwsDmsEndpointDetails() :
 {
 }
 
-AwsDmsEndpointDetails::AwsDmsEndpointDetails(JsonView jsonValue) : 
-    m_certificateArnHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_endpointArnHasBeenSet(false),
-    m_endpointIdentifierHasBeenSet(false),
-    m_endpointTypeHasBeenSet(false),
-    m_engineNameHasBeenSet(false),
-    m_externalIdHasBeenSet(false),
-    m_extraConnectionAttributesHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_serverNameHasBeenSet(false),
-    m_sslModeHasBeenSet(false),
-    m_usernameHasBeenSet(false)
+AwsDmsEndpointDetails::AwsDmsEndpointDetails(JsonView jsonValue)
+  : AwsDmsEndpointDetails()
 {
   *this = jsonValue;
 }

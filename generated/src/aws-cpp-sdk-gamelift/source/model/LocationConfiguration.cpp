@@ -23,8 +23,8 @@ LocationConfiguration::LocationConfiguration() :
 {
 }
 
-LocationConfiguration::LocationConfiguration(JsonView jsonValue) : 
-    m_locationHasBeenSet(false)
+LocationConfiguration::LocationConfiguration(JsonView jsonValue)
+  : LocationConfiguration()
 {
   *this = jsonValue;
 }

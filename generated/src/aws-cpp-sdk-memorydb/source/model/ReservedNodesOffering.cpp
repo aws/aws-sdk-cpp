@@ -30,15 +30,8 @@ ReservedNodesOffering::ReservedNodesOffering() :
 {
 }
 
-ReservedNodesOffering::ReservedNodesOffering(JsonView jsonValue) : 
-    m_reservedNodesOfferingIdHasBeenSet(false),
-    m_nodeTypeHasBeenSet(false),
-    m_duration(0),
-    m_durationHasBeenSet(false),
-    m_fixedPrice(0.0),
-    m_fixedPriceHasBeenSet(false),
-    m_offeringTypeHasBeenSet(false),
-    m_recurringChargesHasBeenSet(false)
+ReservedNodesOffering::ReservedNodesOffering(JsonView jsonValue)
+  : ReservedNodesOffering()
 {
   *this = jsonValue;
 }

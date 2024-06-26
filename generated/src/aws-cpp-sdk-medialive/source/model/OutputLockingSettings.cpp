@@ -24,9 +24,8 @@ OutputLockingSettings::OutputLockingSettings() :
 {
 }
 
-OutputLockingSettings::OutputLockingSettings(JsonView jsonValue) : 
-    m_epochLockingSettingsHasBeenSet(false),
-    m_pipelineLockingSettingsHasBeenSet(false)
+OutputLockingSettings::OutputLockingSettings(JsonView jsonValue)
+  : OutputLockingSettings()
 {
   *this = jsonValue;
 }

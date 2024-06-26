@@ -34,19 +34,8 @@ SMSTemplateResponse::SMSTemplateResponse() :
 {
 }
 
-SMSTemplateResponse::SMSTemplateResponse(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_bodyHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_defaultSubstitutionsHasBeenSet(false),
-    m_lastModifiedDateHasBeenSet(false),
-    m_recommenderIdHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_templateDescriptionHasBeenSet(false),
-    m_templateNameHasBeenSet(false),
-    m_templateType(TemplateType::NOT_SET),
-    m_templateTypeHasBeenSet(false),
-    m_versionHasBeenSet(false)
+SMSTemplateResponse::SMSTemplateResponse(JsonView jsonValue)
+  : SMSTemplateResponse()
 {
   *this = jsonValue;
 }

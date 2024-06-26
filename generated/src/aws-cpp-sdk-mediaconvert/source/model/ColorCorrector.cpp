@@ -42,27 +42,8 @@ ColorCorrector::ColorCorrector() :
 {
 }
 
-ColorCorrector::ColorCorrector(JsonView jsonValue) : 
-    m_brightness(0),
-    m_brightnessHasBeenSet(false),
-    m_clipLimitsHasBeenSet(false),
-    m_colorSpaceConversion(ColorSpaceConversion::NOT_SET),
-    m_colorSpaceConversionHasBeenSet(false),
-    m_contrast(0),
-    m_contrastHasBeenSet(false),
-    m_hdr10MetadataHasBeenSet(false),
-    m_hdrToSdrToneMapper(HDRToSDRToneMapper::NOT_SET),
-    m_hdrToSdrToneMapperHasBeenSet(false),
-    m_hue(0),
-    m_hueHasBeenSet(false),
-    m_maxLuminance(0),
-    m_maxLuminanceHasBeenSet(false),
-    m_sampleRangeConversion(SampleRangeConversion::NOT_SET),
-    m_sampleRangeConversionHasBeenSet(false),
-    m_saturation(0),
-    m_saturationHasBeenSet(false),
-    m_sdrReferenceWhiteLevel(0),
-    m_sdrReferenceWhiteLevelHasBeenSet(false)
+ColorCorrector::ColorCorrector(JsonView jsonValue)
+  : ColorCorrector()
 {
   *this = jsonValue;
 }

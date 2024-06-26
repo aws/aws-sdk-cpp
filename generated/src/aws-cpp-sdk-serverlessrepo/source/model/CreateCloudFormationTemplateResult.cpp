@@ -22,8 +22,8 @@ CreateCloudFormationTemplateResult::CreateCloudFormationTemplateResult() :
 {
 }
 
-CreateCloudFormationTemplateResult::CreateCloudFormationTemplateResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(Status::NOT_SET)
+CreateCloudFormationTemplateResult::CreateCloudFormationTemplateResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateCloudFormationTemplateResult()
 {
   *this = result;
 }

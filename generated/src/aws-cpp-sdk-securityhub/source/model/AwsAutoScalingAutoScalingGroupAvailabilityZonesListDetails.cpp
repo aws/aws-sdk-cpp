@@ -23,8 +23,8 @@ AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails::AwsAutoScalingAutoSc
 {
 }
 
-AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails::AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails(JsonView jsonValue) : 
-    m_valueHasBeenSet(false)
+AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails::AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails(JsonView jsonValue)
+  : AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails()
 {
   *this = jsonValue;
 }

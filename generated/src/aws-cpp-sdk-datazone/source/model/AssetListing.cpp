@@ -30,15 +30,8 @@ AssetListing::AssetListing() :
 {
 }
 
-AssetListing::AssetListing(JsonView jsonValue) : 
-    m_assetIdHasBeenSet(false),
-    m_assetRevisionHasBeenSet(false),
-    m_assetTypeHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_formsHasBeenSet(false),
-    m_glossaryTermsHasBeenSet(false),
-    m_latestTimeSeriesDataPointFormsHasBeenSet(false),
-    m_owningProjectIdHasBeenSet(false)
+AssetListing::AssetListing(JsonView jsonValue)
+  : AssetListing()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ AwsCloudFrontDistributionOriginS3OriginConfig::AwsCloudFrontDistributionOriginS3
 {
 }
 
-AwsCloudFrontDistributionOriginS3OriginConfig::AwsCloudFrontDistributionOriginS3OriginConfig(JsonView jsonValue) : 
-    m_originAccessIdentityHasBeenSet(false)
+AwsCloudFrontDistributionOriginS3OriginConfig::AwsCloudFrontDistributionOriginS3OriginConfig(JsonView jsonValue)
+  : AwsCloudFrontDistributionOriginS3OriginConfig()
 {
   *this = jsonValue;
 }

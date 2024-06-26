@@ -23,8 +23,8 @@ TagsModel::TagsModel() :
 {
 }
 
-TagsModel::TagsModel(JsonView jsonValue) : 
-    m_tagsHasBeenSet(false)
+TagsModel::TagsModel(JsonView jsonValue)
+  : TagsModel()
 {
   *this = jsonValue;
 }

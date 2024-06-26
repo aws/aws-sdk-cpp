@@ -30,13 +30,8 @@ Rule::Rule() :
 {
 }
 
-Rule::Rule(const XmlNode& xmlNode) : 
-    m_ruleArnHasBeenSet(false),
-    m_priorityHasBeenSet(false),
-    m_conditionsHasBeenSet(false),
-    m_actionsHasBeenSet(false),
-    m_isDefault(false),
-    m_isDefaultHasBeenSet(false)
+Rule::Rule(const XmlNode& xmlNode)
+  : Rule()
 {
   *this = xmlNode;
 }

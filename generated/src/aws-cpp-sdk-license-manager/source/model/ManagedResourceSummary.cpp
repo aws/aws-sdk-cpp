@@ -26,11 +26,8 @@ ManagedResourceSummary::ManagedResourceSummary() :
 {
 }
 
-ManagedResourceSummary::ManagedResourceSummary(JsonView jsonValue) : 
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_associationCount(0),
-    m_associationCountHasBeenSet(false)
+ManagedResourceSummary::ManagedResourceSummary(JsonView jsonValue)
+  : ManagedResourceSummary()
 {
   *this = jsonValue;
 }

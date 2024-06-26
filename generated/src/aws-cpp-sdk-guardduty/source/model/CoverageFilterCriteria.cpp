@@ -23,8 +23,8 @@ CoverageFilterCriteria::CoverageFilterCriteria() :
 {
 }
 
-CoverageFilterCriteria::CoverageFilterCriteria(JsonView jsonValue) : 
-    m_filterCriterionHasBeenSet(false)
+CoverageFilterCriteria::CoverageFilterCriteria(JsonView jsonValue)
+  : CoverageFilterCriteria()
 {
   *this = jsonValue;
 }

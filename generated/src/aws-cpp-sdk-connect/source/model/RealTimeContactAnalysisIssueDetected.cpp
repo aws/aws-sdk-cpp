@@ -23,8 +23,8 @@ RealTimeContactAnalysisIssueDetected::RealTimeContactAnalysisIssueDetected() :
 {
 }
 
-RealTimeContactAnalysisIssueDetected::RealTimeContactAnalysisIssueDetected(JsonView jsonValue) : 
-    m_transcriptItemsHasBeenSet(false)
+RealTimeContactAnalysisIssueDetected::RealTimeContactAnalysisIssueDetected(JsonView jsonValue)
+  : RealTimeContactAnalysisIssueDetected()
 {
   *this = jsonValue;
 }

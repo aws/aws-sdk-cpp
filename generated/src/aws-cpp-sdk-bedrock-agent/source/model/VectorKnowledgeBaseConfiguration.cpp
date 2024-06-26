@@ -24,9 +24,8 @@ VectorKnowledgeBaseConfiguration::VectorKnowledgeBaseConfiguration() :
 {
 }
 
-VectorKnowledgeBaseConfiguration::VectorKnowledgeBaseConfiguration(JsonView jsonValue) : 
-    m_embeddingModelArnHasBeenSet(false),
-    m_embeddingModelConfigurationHasBeenSet(false)
+VectorKnowledgeBaseConfiguration::VectorKnowledgeBaseConfiguration(JsonView jsonValue)
+  : VectorKnowledgeBaseConfiguration()
 {
   *this = jsonValue;
 }

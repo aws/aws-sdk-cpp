@@ -25,10 +25,8 @@ EnvironmentImage::EnvironmentImage() :
 {
 }
 
-EnvironmentImage::EnvironmentImage(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_versionsHasBeenSet(false)
+EnvironmentImage::EnvironmentImage(JsonView jsonValue)
+  : EnvironmentImage()
 {
   *this = jsonValue;
 }

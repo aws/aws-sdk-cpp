@@ -26,11 +26,8 @@ EncoderConfiguration::EncoderConfiguration() :
 {
 }
 
-EncoderConfiguration::EncoderConfiguration(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_videoHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+EncoderConfiguration::EncoderConfiguration(JsonView jsonValue)
+  : EncoderConfiguration()
 {
   *this = jsonValue;
 }

@@ -28,13 +28,8 @@ AwsEc2RouteTableDetails::AwsEc2RouteTableDetails() :
 {
 }
 
-AwsEc2RouteTableDetails::AwsEc2RouteTableDetails(JsonView jsonValue) : 
-    m_associationSetHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_propagatingVgwSetHasBeenSet(false),
-    m_routeTableIdHasBeenSet(false),
-    m_routeSetHasBeenSet(false),
-    m_vpcIdHasBeenSet(false)
+AwsEc2RouteTableDetails::AwsEc2RouteTableDetails(JsonView jsonValue)
+  : AwsEc2RouteTableDetails()
 {
   *this = jsonValue;
 }

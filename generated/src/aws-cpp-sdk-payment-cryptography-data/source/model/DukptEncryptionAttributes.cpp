@@ -30,15 +30,8 @@ DukptEncryptionAttributes::DukptEncryptionAttributes() :
 {
 }
 
-DukptEncryptionAttributes::DukptEncryptionAttributes(JsonView jsonValue) : 
-    m_dukptKeyDerivationType(DukptDerivationType::NOT_SET),
-    m_dukptKeyDerivationTypeHasBeenSet(false),
-    m_dukptKeyVariant(DukptKeyVariant::NOT_SET),
-    m_dukptKeyVariantHasBeenSet(false),
-    m_initializationVectorHasBeenSet(false),
-    m_keySerialNumberHasBeenSet(false),
-    m_mode(DukptEncryptionMode::NOT_SET),
-    m_modeHasBeenSet(false)
+DukptEncryptionAttributes::DukptEncryptionAttributes(JsonView jsonValue)
+  : DukptEncryptionAttributes()
 {
   *this = jsonValue;
 }

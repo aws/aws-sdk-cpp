@@ -25,10 +25,8 @@ ExpiredStreamException::ExpiredStreamException() :
 {
 }
 
-ExpiredStreamException::ExpiredStreamException(JsonView jsonValue) : 
-    m_detailedMessageHasBeenSet(false),
-    m_requestIdHasBeenSet(false),
-    m_codeHasBeenSet(false)
+ExpiredStreamException::ExpiredStreamException(JsonView jsonValue)
+  : ExpiredStreamException()
 {
   *this = jsonValue;
 }

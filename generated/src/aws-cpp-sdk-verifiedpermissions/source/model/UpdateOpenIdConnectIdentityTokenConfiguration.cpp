@@ -24,9 +24,8 @@ UpdateOpenIdConnectIdentityTokenConfiguration::UpdateOpenIdConnectIdentityTokenC
 {
 }
 
-UpdateOpenIdConnectIdentityTokenConfiguration::UpdateOpenIdConnectIdentityTokenConfiguration(JsonView jsonValue) : 
-    m_principalIdClaimHasBeenSet(false),
-    m_clientIdsHasBeenSet(false)
+UpdateOpenIdConnectIdentityTokenConfiguration::UpdateOpenIdConnectIdentityTokenConfiguration(JsonView jsonValue)
+  : UpdateOpenIdConnectIdentityTokenConfiguration()
 {
   *this = jsonValue;
 }

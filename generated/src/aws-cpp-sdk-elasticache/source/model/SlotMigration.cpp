@@ -26,9 +26,8 @@ SlotMigration::SlotMigration() :
 {
 }
 
-SlotMigration::SlotMigration(const XmlNode& xmlNode) : 
-    m_progressPercentage(0.0),
-    m_progressPercentageHasBeenSet(false)
+SlotMigration::SlotMigration(const XmlNode& xmlNode)
+  : SlotMigration()
 {
   *this = xmlNode;
 }

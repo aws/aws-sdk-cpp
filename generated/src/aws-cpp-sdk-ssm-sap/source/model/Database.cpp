@@ -36,21 +36,8 @@ Database::Database() :
 {
 }
 
-Database::Database(JsonView jsonValue) : 
-    m_applicationIdHasBeenSet(false),
-    m_componentIdHasBeenSet(false),
-    m_credentialsHasBeenSet(false),
-    m_databaseIdHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_databaseType(DatabaseType::NOT_SET),
-    m_databaseTypeHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_status(DatabaseStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_primaryHostHasBeenSet(false),
-    m_sQLPort(0),
-    m_sQLPortHasBeenSet(false),
-    m_lastUpdatedHasBeenSet(false)
+Database::Database(JsonView jsonValue)
+  : Database()
 {
   *this = jsonValue;
 }

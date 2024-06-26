@@ -23,9 +23,8 @@ GetSessionResult::GetSessionResult() :
 {
 }
 
-GetSessionResult::GetSessionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_lifecycleStatus(SessionLifecycleStatus::NOT_SET),
-    m_targetLifecycleStatus(SessionLifecycleTargetStatus::NOT_SET)
+GetSessionResult::GetSessionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetSessionResult()
 {
   *this = result;
 }

@@ -23,8 +23,8 @@ ToolInputSchema::ToolInputSchema() :
 {
 }
 
-ToolInputSchema::ToolInputSchema(JsonView jsonValue) : 
-    m_jsonHasBeenSet(false)
+ToolInputSchema::ToolInputSchema(JsonView jsonValue)
+  : ToolInputSchema()
 {
   *this = jsonValue;
 }

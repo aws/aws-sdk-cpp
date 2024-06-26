@@ -25,10 +25,8 @@ ListMetadataTransferJobsFilter::ListMetadataTransferJobsFilter() :
 {
 }
 
-ListMetadataTransferJobsFilter::ListMetadataTransferJobsFilter(JsonView jsonValue) : 
-    m_workspaceIdHasBeenSet(false),
-    m_state(MetadataTransferJobState::NOT_SET),
-    m_stateHasBeenSet(false)
+ListMetadataTransferJobsFilter::ListMetadataTransferJobsFilter(JsonView jsonValue)
+  : ListMetadataTransferJobsFilter()
 {
   *this = jsonValue;
 }

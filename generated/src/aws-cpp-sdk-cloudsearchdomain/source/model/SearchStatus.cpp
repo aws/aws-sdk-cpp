@@ -25,10 +25,8 @@ SearchStatus::SearchStatus() :
 {
 }
 
-SearchStatus::SearchStatus(JsonView jsonValue) : 
-    m_timems(0),
-    m_timemsHasBeenSet(false),
-    m_ridHasBeenSet(false)
+SearchStatus::SearchStatus(JsonView jsonValue)
+  : SearchStatus()
 {
   *this = jsonValue;
 }

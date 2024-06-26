@@ -24,9 +24,8 @@ PolicyToPath::PolicyToPath() :
 {
 }
 
-PolicyToPath::PolicyToPath(JsonView jsonValue) : 
-    m_pathHasBeenSet(false),
-    m_policiesHasBeenSet(false)
+PolicyToPath::PolicyToPath(JsonView jsonValue)
+  : PolicyToPath()
 {
   *this = jsonValue;
 }

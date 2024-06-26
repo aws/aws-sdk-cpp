@@ -26,12 +26,8 @@ DescribeChangeSetResult::DescribeChangeSetResult() :
 {
 }
 
-DescribeChangeSetResult::DescribeChangeSetResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_executionStatus(ExecutionStatus::NOT_SET),
-    m_status(ChangeSetStatus::NOT_SET),
-    m_includeNestedStacks(false),
-    m_onStackFailure(OnStackFailure::NOT_SET),
-    m_importExistingResources(false)
+DescribeChangeSetResult::DescribeChangeSetResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : DescribeChangeSetResult()
 {
   *this = result;
 }

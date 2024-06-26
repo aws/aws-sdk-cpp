@@ -25,10 +25,8 @@ ServiceChange::ServiceChange() :
 {
 }
 
-ServiceChange::ServiceChange(JsonView jsonValue) : 
-    m_descriptionHasBeenSet(false),
-    m_dnsConfigHasBeenSet(false),
-    m_healthCheckConfigHasBeenSet(false)
+ServiceChange::ServiceChange(JsonView jsonValue)
+  : ServiceChange()
 {
   *this = jsonValue;
 }

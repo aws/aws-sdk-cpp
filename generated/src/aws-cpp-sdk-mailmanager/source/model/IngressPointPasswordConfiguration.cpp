@@ -25,10 +25,8 @@ IngressPointPasswordConfiguration::IngressPointPasswordConfiguration() :
 {
 }
 
-IngressPointPasswordConfiguration::IngressPointPasswordConfiguration(JsonView jsonValue) : 
-    m_previousSmtpPasswordExpiryTimestampHasBeenSet(false),
-    m_previousSmtpPasswordVersionHasBeenSet(false),
-    m_smtpPasswordVersionHasBeenSet(false)
+IngressPointPasswordConfiguration::IngressPointPasswordConfiguration(JsonView jsonValue)
+  : IngressPointPasswordConfiguration()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ Transform::Transform() :
 {
 }
 
-Transform::Transform(JsonView jsonValue) : 
-    m_expressionHasBeenSet(false),
-    m_variablesHasBeenSet(false),
-    m_processingConfigHasBeenSet(false)
+Transform::Transform(JsonView jsonValue)
+  : Transform()
 {
   *this = jsonValue;
 }

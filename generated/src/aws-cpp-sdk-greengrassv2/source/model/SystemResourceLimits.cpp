@@ -26,11 +26,8 @@ SystemResourceLimits::SystemResourceLimits() :
 {
 }
 
-SystemResourceLimits::SystemResourceLimits(JsonView jsonValue) : 
-    m_memory(0),
-    m_memoryHasBeenSet(false),
-    m_cpus(0.0),
-    m_cpusHasBeenSet(false)
+SystemResourceLimits::SystemResourceLimits(JsonView jsonValue)
+  : SystemResourceLimits()
 {
   *this = jsonValue;
 }

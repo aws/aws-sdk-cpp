@@ -28,13 +28,8 @@ OperationEvent::OperationEvent() :
 {
 }
 
-OperationEvent::OperationEvent(JsonView jsonValue) : 
-    m_descriptionHasBeenSet(false),
-    m_resourceHasBeenSet(false),
-    m_status(OperationEventStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_timestampHasBeenSet(false)
+OperationEvent::OperationEvent(JsonView jsonValue)
+  : OperationEvent()
 {
   *this = jsonValue;
 }

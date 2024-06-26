@@ -26,11 +26,8 @@ ReplicaSpecification::ReplicaSpecification() :
 {
 }
 
-ReplicaSpecification::ReplicaSpecification(JsonView jsonValue) : 
-    m_regionHasBeenSet(false),
-    m_readCapacityUnits(0),
-    m_readCapacityUnitsHasBeenSet(false),
-    m_readCapacityAutoScalingHasBeenSet(false)
+ReplicaSpecification::ReplicaSpecification(JsonView jsonValue)
+  : ReplicaSpecification()
 {
   *this = jsonValue;
 }

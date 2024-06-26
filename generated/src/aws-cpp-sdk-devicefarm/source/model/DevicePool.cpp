@@ -30,15 +30,8 @@ DevicePool::DevicePool() :
 {
 }
 
-DevicePool::DevicePool(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_type(DevicePoolType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_rulesHasBeenSet(false),
-    m_maxDevices(0),
-    m_maxDevicesHasBeenSet(false)
+DevicePool::DevicePool(JsonView jsonValue)
+  : DevicePool()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ IndexCapacityConfiguration::IndexCapacityConfiguration() :
 {
 }
 
-IndexCapacityConfiguration::IndexCapacityConfiguration(JsonView jsonValue) : 
-    m_units(0),
-    m_unitsHasBeenSet(false)
+IndexCapacityConfiguration::IndexCapacityConfiguration(JsonView jsonValue)
+  : IndexCapacityConfiguration()
 {
   *this = jsonValue;
 }

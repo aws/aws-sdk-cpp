@@ -24,9 +24,8 @@ FailedReason::FailedReason() :
 {
 }
 
-FailedReason::FailedReason(JsonView jsonValue) : 
-    m_errorCodeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+FailedReason::FailedReason(JsonView jsonValue)
+  : FailedReason()
 {
   *this = jsonValue;
 }

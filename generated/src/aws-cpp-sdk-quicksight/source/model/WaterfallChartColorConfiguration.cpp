@@ -23,8 +23,8 @@ WaterfallChartColorConfiguration::WaterfallChartColorConfiguration() :
 {
 }
 
-WaterfallChartColorConfiguration::WaterfallChartColorConfiguration(JsonView jsonValue) : 
-    m_groupColorConfigurationHasBeenSet(false)
+WaterfallChartColorConfiguration::WaterfallChartColorConfiguration(JsonView jsonValue)
+  : WaterfallChartColorConfiguration()
 {
   *this = jsonValue;
 }

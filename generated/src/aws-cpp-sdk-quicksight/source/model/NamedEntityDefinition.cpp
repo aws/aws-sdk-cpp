@@ -29,14 +29,8 @@ NamedEntityDefinition::NamedEntityDefinition() :
 {
 }
 
-NamedEntityDefinition::NamedEntityDefinition(JsonView jsonValue) : 
-    m_fieldNameHasBeenSet(false),
-    m_propertyNameHasBeenSet(false),
-    m_propertyRole(PropertyRole::NOT_SET),
-    m_propertyRoleHasBeenSet(false),
-    m_propertyUsage(PropertyUsage::NOT_SET),
-    m_propertyUsageHasBeenSet(false),
-    m_metricHasBeenSet(false)
+NamedEntityDefinition::NamedEntityDefinition(JsonView jsonValue)
+  : NamedEntityDefinition()
 {
   *this = jsonValue;
 }

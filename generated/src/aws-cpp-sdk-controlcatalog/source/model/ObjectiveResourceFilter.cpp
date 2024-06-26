@@ -23,8 +23,8 @@ ObjectiveResourceFilter::ObjectiveResourceFilter() :
 {
 }
 
-ObjectiveResourceFilter::ObjectiveResourceFilter(JsonView jsonValue) : 
-    m_arnHasBeenSet(false)
+ObjectiveResourceFilter::ObjectiveResourceFilter(JsonView jsonValue)
+  : ObjectiveResourceFilter()
 {
   *this = jsonValue;
 }

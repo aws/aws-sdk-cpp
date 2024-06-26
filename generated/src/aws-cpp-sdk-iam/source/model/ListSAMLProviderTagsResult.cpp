@@ -22,8 +22,8 @@ ListSAMLProviderTagsResult::ListSAMLProviderTagsResult() :
 {
 }
 
-ListSAMLProviderTagsResult::ListSAMLProviderTagsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_isTruncated(false)
+ListSAMLProviderTagsResult::ListSAMLProviderTagsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : ListSAMLProviderTagsResult()
 {
   *this = result;
 }

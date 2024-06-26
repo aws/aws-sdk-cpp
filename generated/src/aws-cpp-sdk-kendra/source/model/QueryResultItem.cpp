@@ -37,22 +37,8 @@ QueryResultItem::QueryResultItem() :
 {
 }
 
-QueryResultItem::QueryResultItem(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_type(QueryResultType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_format(QueryResultFormat::NOT_SET),
-    m_formatHasBeenSet(false),
-    m_additionalAttributesHasBeenSet(false),
-    m_documentIdHasBeenSet(false),
-    m_documentTitleHasBeenSet(false),
-    m_documentExcerptHasBeenSet(false),
-    m_documentURIHasBeenSet(false),
-    m_documentAttributesHasBeenSet(false),
-    m_scoreAttributesHasBeenSet(false),
-    m_feedbackTokenHasBeenSet(false),
-    m_tableExcerptHasBeenSet(false),
-    m_collapsedResultDetailHasBeenSet(false)
+QueryResultItem::QueryResultItem(JsonView jsonValue)
+  : QueryResultItem()
 {
   *this = jsonValue;
 }

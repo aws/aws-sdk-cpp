@@ -27,12 +27,8 @@ AwsS3BucketWebsiteConfigurationRoutingRuleRedirect::AwsS3BucketWebsiteConfigurat
 {
 }
 
-AwsS3BucketWebsiteConfigurationRoutingRuleRedirect::AwsS3BucketWebsiteConfigurationRoutingRuleRedirect(JsonView jsonValue) : 
-    m_hostnameHasBeenSet(false),
-    m_httpRedirectCodeHasBeenSet(false),
-    m_protocolHasBeenSet(false),
-    m_replaceKeyPrefixWithHasBeenSet(false),
-    m_replaceKeyWithHasBeenSet(false)
+AwsS3BucketWebsiteConfigurationRoutingRuleRedirect::AwsS3BucketWebsiteConfigurationRoutingRuleRedirect(JsonView jsonValue)
+  : AwsS3BucketWebsiteConfigurationRoutingRuleRedirect()
 {
   *this = jsonValue;
 }

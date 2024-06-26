@@ -31,14 +31,8 @@ PolicyGrantingServiceAccess::PolicyGrantingServiceAccess() :
 {
 }
 
-PolicyGrantingServiceAccess::PolicyGrantingServiceAccess(const XmlNode& xmlNode) : 
-    m_policyNameHasBeenSet(false),
-    m_policyType(PolicyType::NOT_SET),
-    m_policyTypeHasBeenSet(false),
-    m_policyArnHasBeenSet(false),
-    m_entityType(PolicyOwnerEntityType::NOT_SET),
-    m_entityTypeHasBeenSet(false),
-    m_entityNameHasBeenSet(false)
+PolicyGrantingServiceAccess::PolicyGrantingServiceAccess(const XmlNode& xmlNode)
+  : PolicyGrantingServiceAccess()
 {
   *this = xmlNode;
 }

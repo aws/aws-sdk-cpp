@@ -34,17 +34,8 @@ TransitGatewayRouteTable::TransitGatewayRouteTable() :
 {
 }
 
-TransitGatewayRouteTable::TransitGatewayRouteTable(const XmlNode& xmlNode) : 
-    m_transitGatewayRouteTableIdHasBeenSet(false),
-    m_transitGatewayIdHasBeenSet(false),
-    m_state(TransitGatewayRouteTableState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_defaultAssociationRouteTable(false),
-    m_defaultAssociationRouteTableHasBeenSet(false),
-    m_defaultPropagationRouteTable(false),
-    m_defaultPropagationRouteTableHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+TransitGatewayRouteTable::TransitGatewayRouteTable(const XmlNode& xmlNode)
+  : TransitGatewayRouteTable()
 {
   *this = xmlNode;
 }

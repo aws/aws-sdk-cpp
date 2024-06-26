@@ -23,9 +23,8 @@ DescribeAlgorithmResult::DescribeAlgorithmResult() :
 {
 }
 
-DescribeAlgorithmResult::DescribeAlgorithmResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_algorithmStatus(AlgorithmStatus::NOT_SET),
-    m_certifyForMarketplace(false)
+DescribeAlgorithmResult::DescribeAlgorithmResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeAlgorithmResult()
 {
   *this = result;
 }

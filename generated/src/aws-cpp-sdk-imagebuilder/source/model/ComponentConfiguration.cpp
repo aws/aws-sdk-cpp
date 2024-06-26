@@ -24,9 +24,8 @@ ComponentConfiguration::ComponentConfiguration() :
 {
 }
 
-ComponentConfiguration::ComponentConfiguration(JsonView jsonValue) : 
-    m_componentArnHasBeenSet(false),
-    m_parametersHasBeenSet(false)
+ComponentConfiguration::ComponentConfiguration(JsonView jsonValue)
+  : ComponentConfiguration()
 {
   *this = jsonValue;
 }

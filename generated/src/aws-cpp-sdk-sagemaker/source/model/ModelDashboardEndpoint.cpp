@@ -28,13 +28,8 @@ ModelDashboardEndpoint::ModelDashboardEndpoint() :
 {
 }
 
-ModelDashboardEndpoint::ModelDashboardEndpoint(JsonView jsonValue) : 
-    m_endpointNameHasBeenSet(false),
-    m_endpointArnHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_endpointStatus(EndpointStatus::NOT_SET),
-    m_endpointStatusHasBeenSet(false)
+ModelDashboardEndpoint::ModelDashboardEndpoint(JsonView jsonValue)
+  : ModelDashboardEndpoint()
 {
   *this = jsonValue;
 }

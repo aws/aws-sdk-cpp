@@ -24,9 +24,8 @@ TableCellConditionalFormatting::TableCellConditionalFormatting() :
 {
 }
 
-TableCellConditionalFormatting::TableCellConditionalFormatting(JsonView jsonValue) : 
-    m_fieldIdHasBeenSet(false),
-    m_textFormatHasBeenSet(false)
+TableCellConditionalFormatting::TableCellConditionalFormatting(JsonView jsonValue)
+  : TableCellConditionalFormatting()
 {
   *this = jsonValue;
 }

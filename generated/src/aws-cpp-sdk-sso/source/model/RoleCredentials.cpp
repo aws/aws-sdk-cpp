@@ -27,12 +27,8 @@ RoleCredentials::RoleCredentials() :
 {
 }
 
-RoleCredentials::RoleCredentials(JsonView jsonValue) : 
-    m_accessKeyIdHasBeenSet(false),
-    m_secretAccessKeyHasBeenSet(false),
-    m_sessionTokenHasBeenSet(false),
-    m_expiration(0),
-    m_expirationHasBeenSet(false)
+RoleCredentials::RoleCredentials(JsonView jsonValue)
+  : RoleCredentials()
 {
   *this = jsonValue;
 }

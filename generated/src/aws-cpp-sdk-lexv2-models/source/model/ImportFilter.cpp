@@ -27,12 +27,8 @@ ImportFilter::ImportFilter() :
 {
 }
 
-ImportFilter::ImportFilter(JsonView jsonValue) : 
-    m_name(ImportFilterName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_valuesHasBeenSet(false),
-    m_operator(ImportFilterOperator::NOT_SET),
-    m_operatorHasBeenSet(false)
+ImportFilter::ImportFilter(JsonView jsonValue)
+  : ImportFilter()
 {
   *this = jsonValue;
 }

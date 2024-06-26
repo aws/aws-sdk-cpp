@@ -26,11 +26,8 @@ ExternalSourcesGenerationConfiguration::ExternalSourcesGenerationConfiguration()
 {
 }
 
-ExternalSourcesGenerationConfiguration::ExternalSourcesGenerationConfiguration(JsonView jsonValue) : 
-    m_additionalModelRequestFieldsHasBeenSet(false),
-    m_guardrailConfigurationHasBeenSet(false),
-    m_inferenceConfigHasBeenSet(false),
-    m_promptTemplateHasBeenSet(false)
+ExternalSourcesGenerationConfiguration::ExternalSourcesGenerationConfiguration(JsonView jsonValue)
+  : ExternalSourcesGenerationConfiguration()
 {
   *this = jsonValue;
 }

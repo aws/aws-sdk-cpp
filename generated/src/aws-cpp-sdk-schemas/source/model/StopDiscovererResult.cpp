@@ -22,8 +22,8 @@ StopDiscovererResult::StopDiscovererResult() :
 {
 }
 
-StopDiscovererResult::StopDiscovererResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_state(DiscovererState::NOT_SET)
+StopDiscovererResult::StopDiscovererResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : StopDiscovererResult()
 {
   *this = result;
 }

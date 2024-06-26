@@ -23,8 +23,8 @@ MalformedQueryException::MalformedQueryException() :
 {
 }
 
-MalformedQueryException::MalformedQueryException(JsonView jsonValue) : 
-    m_queryCompileErrorHasBeenSet(false)
+MalformedQueryException::MalformedQueryException(JsonView jsonValue)
+  : MalformedQueryException()
 {
   *this = jsonValue;
 }

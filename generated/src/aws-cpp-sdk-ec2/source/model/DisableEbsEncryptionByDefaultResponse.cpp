@@ -22,8 +22,8 @@ DisableEbsEncryptionByDefaultResponse::DisableEbsEncryptionByDefaultResponse() :
 {
 }
 
-DisableEbsEncryptionByDefaultResponse::DisableEbsEncryptionByDefaultResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_ebsEncryptionByDefault(false)
+DisableEbsEncryptionByDefaultResponse::DisableEbsEncryptionByDefaultResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : DisableEbsEncryptionByDefaultResponse()
 {
   *this = result;
 }

@@ -29,14 +29,8 @@ RtmpOutputSettings::RtmpOutputSettings() :
 {
 }
 
-RtmpOutputSettings::RtmpOutputSettings(JsonView jsonValue) : 
-    m_certificateMode(RtmpOutputCertificateMode::NOT_SET),
-    m_certificateModeHasBeenSet(false),
-    m_connectionRetryInterval(0),
-    m_connectionRetryIntervalHasBeenSet(false),
-    m_destinationHasBeenSet(false),
-    m_numRetries(0),
-    m_numRetriesHasBeenSet(false)
+RtmpOutputSettings::RtmpOutputSettings(JsonView jsonValue)
+  : RtmpOutputSettings()
 {
   *this = jsonValue;
 }

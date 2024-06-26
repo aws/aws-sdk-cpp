@@ -25,10 +25,8 @@ RouteTableIdentifier::RouteTableIdentifier() :
 {
 }
 
-RouteTableIdentifier::RouteTableIdentifier(JsonView jsonValue) : 
-    m_transitGatewayRouteTableArnHasBeenSet(false),
-    m_coreNetworkSegmentEdgeHasBeenSet(false),
-    m_coreNetworkNetworkFunctionGroupHasBeenSet(false)
+RouteTableIdentifier::RouteTableIdentifier(JsonView jsonValue)
+  : RouteTableIdentifier()
 {
   *this = jsonValue;
 }

@@ -29,12 +29,8 @@ MetricPoint::MetricPoint() :
 {
 }
 
-MetricPoint::MetricPoint(const XmlNode& xmlNode) : 
-    m_startDateHasBeenSet(false),
-    m_endDateHasBeenSet(false),
-    m_value(0.0),
-    m_valueHasBeenSet(false),
-    m_statusHasBeenSet(false)
+MetricPoint::MetricPoint(const XmlNode& xmlNode)
+  : MetricPoint()
 {
   *this = xmlNode;
 }

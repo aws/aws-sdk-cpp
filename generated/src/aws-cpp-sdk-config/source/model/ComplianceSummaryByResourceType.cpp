@@ -24,9 +24,8 @@ ComplianceSummaryByResourceType::ComplianceSummaryByResourceType() :
 {
 }
 
-ComplianceSummaryByResourceType::ComplianceSummaryByResourceType(JsonView jsonValue) : 
-    m_resourceTypeHasBeenSet(false),
-    m_complianceSummaryHasBeenSet(false)
+ComplianceSummaryByResourceType::ComplianceSummaryByResourceType(JsonView jsonValue)
+  : ComplianceSummaryByResourceType()
 {
   *this = jsonValue;
 }

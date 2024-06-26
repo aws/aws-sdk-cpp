@@ -27,12 +27,8 @@ ConfigRuleComplianceFilters::ConfigRuleComplianceFilters() :
 {
 }
 
-ConfigRuleComplianceFilters::ConfigRuleComplianceFilters(JsonView jsonValue) : 
-    m_configRuleNameHasBeenSet(false),
-    m_complianceType(ComplianceType::NOT_SET),
-    m_complianceTypeHasBeenSet(false),
-    m_accountIdHasBeenSet(false),
-    m_awsRegionHasBeenSet(false)
+ConfigRuleComplianceFilters::ConfigRuleComplianceFilters(JsonView jsonValue)
+  : ConfigRuleComplianceFilters()
 {
   *this = jsonValue;
 }

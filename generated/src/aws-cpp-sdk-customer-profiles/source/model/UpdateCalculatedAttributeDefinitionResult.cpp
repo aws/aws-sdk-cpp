@@ -22,8 +22,8 @@ UpdateCalculatedAttributeDefinitionResult::UpdateCalculatedAttributeDefinitionRe
 {
 }
 
-UpdateCalculatedAttributeDefinitionResult::UpdateCalculatedAttributeDefinitionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_statistic(Statistic::NOT_SET)
+UpdateCalculatedAttributeDefinitionResult::UpdateCalculatedAttributeDefinitionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateCalculatedAttributeDefinitionResult()
 {
   *this = result;
 }

@@ -30,15 +30,8 @@ BoundingBox::BoundingBox() :
 {
 }
 
-BoundingBox::BoundingBox(JsonView jsonValue) : 
-    m_height(0.0),
-    m_heightHasBeenSet(false),
-    m_left(0.0),
-    m_leftHasBeenSet(false),
-    m_top(0.0),
-    m_topHasBeenSet(false),
-    m_width(0.0),
-    m_widthHasBeenSet(false)
+BoundingBox::BoundingBox(JsonView jsonValue)
+  : BoundingBox()
 {
   *this = jsonValue;
 }

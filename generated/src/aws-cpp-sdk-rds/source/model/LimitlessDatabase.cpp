@@ -28,11 +28,8 @@ LimitlessDatabase::LimitlessDatabase() :
 {
 }
 
-LimitlessDatabase::LimitlessDatabase(const XmlNode& xmlNode) : 
-    m_status(LimitlessDatabaseStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_minRequiredACU(0.0),
-    m_minRequiredACUHasBeenSet(false)
+LimitlessDatabase::LimitlessDatabase(const XmlNode& xmlNode)
+  : LimitlessDatabase()
 {
   *this = xmlNode;
 }

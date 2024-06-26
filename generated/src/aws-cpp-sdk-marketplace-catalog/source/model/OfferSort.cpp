@@ -26,11 +26,8 @@ OfferSort::OfferSort() :
 {
 }
 
-OfferSort::OfferSort(JsonView jsonValue) : 
-    m_sortBy(OfferSortBy::NOT_SET),
-    m_sortByHasBeenSet(false),
-    m_sortOrder(SortOrder::NOT_SET),
-    m_sortOrderHasBeenSet(false)
+OfferSort::OfferSort(JsonView jsonValue)
+  : OfferSort()
 {
   *this = jsonValue;
 }

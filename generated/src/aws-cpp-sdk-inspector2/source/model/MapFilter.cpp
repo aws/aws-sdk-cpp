@@ -26,11 +26,8 @@ MapFilter::MapFilter() :
 {
 }
 
-MapFilter::MapFilter(JsonView jsonValue) : 
-    m_comparison(MapComparison::NOT_SET),
-    m_comparisonHasBeenSet(false),
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false)
+MapFilter::MapFilter(JsonView jsonValue)
+  : MapFilter()
 {
   *this = jsonValue;
 }

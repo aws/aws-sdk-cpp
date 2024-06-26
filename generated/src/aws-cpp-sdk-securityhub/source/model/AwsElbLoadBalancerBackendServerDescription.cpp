@@ -25,10 +25,8 @@ AwsElbLoadBalancerBackendServerDescription::AwsElbLoadBalancerBackendServerDescr
 {
 }
 
-AwsElbLoadBalancerBackendServerDescription::AwsElbLoadBalancerBackendServerDescription(JsonView jsonValue) : 
-    m_instancePort(0),
-    m_instancePortHasBeenSet(false),
-    m_policyNamesHasBeenSet(false)
+AwsElbLoadBalancerBackendServerDescription::AwsElbLoadBalancerBackendServerDescription(JsonView jsonValue)
+  : AwsElbLoadBalancerBackendServerDescription()
 {
   *this = jsonValue;
 }

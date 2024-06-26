@@ -26,11 +26,8 @@ ConversationLogsDataSource::ConversationLogsDataSource() :
 {
 }
 
-ConversationLogsDataSource::ConversationLogsDataSource(JsonView jsonValue) : 
-    m_botIdHasBeenSet(false),
-    m_botAliasIdHasBeenSet(false),
-    m_localeIdHasBeenSet(false),
-    m_filterHasBeenSet(false)
+ConversationLogsDataSource::ConversationLogsDataSource(JsonView jsonValue)
+  : ConversationLogsDataSource()
 {
   *this = jsonValue;
 }

@@ -28,13 +28,8 @@ EyeDirection::EyeDirection() :
 {
 }
 
-EyeDirection::EyeDirection(JsonView jsonValue) : 
-    m_yaw(0.0),
-    m_yawHasBeenSet(false),
-    m_pitch(0.0),
-    m_pitchHasBeenSet(false),
-    m_confidence(0.0),
-    m_confidenceHasBeenSet(false)
+EyeDirection::EyeDirection(JsonView jsonValue)
+  : EyeDirection()
 {
   *this = jsonValue;
 }

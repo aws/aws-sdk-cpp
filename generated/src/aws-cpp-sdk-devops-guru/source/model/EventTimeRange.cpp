@@ -24,9 +24,8 @@ EventTimeRange::EventTimeRange() :
 {
 }
 
-EventTimeRange::EventTimeRange(JsonView jsonValue) : 
-    m_fromTimeHasBeenSet(false),
-    m_toTimeHasBeenSet(false)
+EventTimeRange::EventTimeRange(JsonView jsonValue)
+  : EventTimeRange()
 {
   *this = jsonValue;
 }

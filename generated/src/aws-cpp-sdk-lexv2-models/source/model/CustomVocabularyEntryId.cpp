@@ -23,8 +23,8 @@ CustomVocabularyEntryId::CustomVocabularyEntryId() :
 {
 }
 
-CustomVocabularyEntryId::CustomVocabularyEntryId(JsonView jsonValue) : 
-    m_itemIdHasBeenSet(false)
+CustomVocabularyEntryId::CustomVocabularyEntryId(JsonView jsonValue)
+  : CustomVocabularyEntryId()
 {
   *this = jsonValue;
 }

@@ -29,14 +29,8 @@ RequestInspectionACFP::RequestInspectionACFP() :
 {
 }
 
-RequestInspectionACFP::RequestInspectionACFP(JsonView jsonValue) : 
-    m_payloadType(PayloadType::NOT_SET),
-    m_payloadTypeHasBeenSet(false),
-    m_usernameFieldHasBeenSet(false),
-    m_passwordFieldHasBeenSet(false),
-    m_emailFieldHasBeenSet(false),
-    m_phoneNumberFieldsHasBeenSet(false),
-    m_addressFieldsHasBeenSet(false)
+RequestInspectionACFP::RequestInspectionACFP(JsonView jsonValue)
+  : RequestInspectionACFP()
 {
   *this = jsonValue;
 }

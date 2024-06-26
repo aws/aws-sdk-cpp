@@ -26,11 +26,8 @@ StoredQueryMetadata::StoredQueryMetadata() :
 {
 }
 
-StoredQueryMetadata::StoredQueryMetadata(JsonView jsonValue) : 
-    m_queryIdHasBeenSet(false),
-    m_queryArnHasBeenSet(false),
-    m_queryNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+StoredQueryMetadata::StoredQueryMetadata(JsonView jsonValue)
+  : StoredQueryMetadata()
 {
   *this = jsonValue;
 }

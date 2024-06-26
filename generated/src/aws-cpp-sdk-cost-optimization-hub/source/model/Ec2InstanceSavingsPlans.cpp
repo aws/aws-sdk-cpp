@@ -24,9 +24,8 @@ Ec2InstanceSavingsPlans::Ec2InstanceSavingsPlans() :
 {
 }
 
-Ec2InstanceSavingsPlans::Ec2InstanceSavingsPlans(JsonView jsonValue) : 
-    m_configurationHasBeenSet(false),
-    m_costCalculationHasBeenSet(false)
+Ec2InstanceSavingsPlans::Ec2InstanceSavingsPlans(JsonView jsonValue)
+  : Ec2InstanceSavingsPlans()
 {
   *this = jsonValue;
 }

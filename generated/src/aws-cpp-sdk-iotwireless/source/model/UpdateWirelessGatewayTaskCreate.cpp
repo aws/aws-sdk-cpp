@@ -25,10 +25,8 @@ UpdateWirelessGatewayTaskCreate::UpdateWirelessGatewayTaskCreate() :
 {
 }
 
-UpdateWirelessGatewayTaskCreate::UpdateWirelessGatewayTaskCreate(JsonView jsonValue) : 
-    m_updateDataSourceHasBeenSet(false),
-    m_updateDataRoleHasBeenSet(false),
-    m_loRaWANHasBeenSet(false)
+UpdateWirelessGatewayTaskCreate::UpdateWirelessGatewayTaskCreate(JsonView jsonValue)
+  : UpdateWirelessGatewayTaskCreate()
 {
   *this = jsonValue;
 }

@@ -37,22 +37,8 @@ Statistics::Statistics() :
 {
 }
 
-Statistics::Statistics(JsonView jsonValue) : 
-    m_aggregationEndTimeHasBeenSet(false),
-    m_aggregationStartTimeHasBeenSet(false),
-    m_costInUsdHasBeenSet(false),
-    m_count(0),
-    m_countHasBeenSet(false),
-    m_fleetIdHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_jobIdHasBeenSet(false),
-    m_jobNameHasBeenSet(false),
-    m_licenseProductHasBeenSet(false),
-    m_queueIdHasBeenSet(false),
-    m_runtimeInSecondsHasBeenSet(false),
-    m_usageType(UsageType::NOT_SET),
-    m_usageTypeHasBeenSet(false),
-    m_userIdHasBeenSet(false)
+Statistics::Statistics(JsonView jsonValue)
+  : Statistics()
 {
   *this = jsonValue;
 }

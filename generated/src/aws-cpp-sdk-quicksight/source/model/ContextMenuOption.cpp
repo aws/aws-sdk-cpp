@@ -24,9 +24,8 @@ ContextMenuOption::ContextMenuOption() :
 {
 }
 
-ContextMenuOption::ContextMenuOption(JsonView jsonValue) : 
-    m_availabilityStatus(DashboardBehavior::NOT_SET),
-    m_availabilityStatusHasBeenSet(false)
+ContextMenuOption::ContextMenuOption(JsonView jsonValue)
+  : ContextMenuOption()
 {
   *this = jsonValue;
 }

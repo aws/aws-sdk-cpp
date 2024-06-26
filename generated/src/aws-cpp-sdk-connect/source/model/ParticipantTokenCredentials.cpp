@@ -24,9 +24,8 @@ ParticipantTokenCredentials::ParticipantTokenCredentials() :
 {
 }
 
-ParticipantTokenCredentials::ParticipantTokenCredentials(JsonView jsonValue) : 
-    m_participantTokenHasBeenSet(false),
-    m_expiryHasBeenSet(false)
+ParticipantTokenCredentials::ParticipantTokenCredentials(JsonView jsonValue)
+  : ParticipantTokenCredentials()
 {
   *this = jsonValue;
 }

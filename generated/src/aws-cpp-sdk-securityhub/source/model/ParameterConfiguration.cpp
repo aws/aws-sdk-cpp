@@ -25,10 +25,8 @@ ParameterConfiguration::ParameterConfiguration() :
 {
 }
 
-ParameterConfiguration::ParameterConfiguration(JsonView jsonValue) : 
-    m_valueType(ParameterValueType::NOT_SET),
-    m_valueTypeHasBeenSet(false),
-    m_valueHasBeenSet(false)
+ParameterConfiguration::ParameterConfiguration(JsonView jsonValue)
+  : ParameterConfiguration()
 {
   *this = jsonValue;
 }

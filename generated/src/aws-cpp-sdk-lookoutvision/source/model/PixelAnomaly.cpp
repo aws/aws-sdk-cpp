@@ -25,10 +25,8 @@ PixelAnomaly::PixelAnomaly() :
 {
 }
 
-PixelAnomaly::PixelAnomaly(JsonView jsonValue) : 
-    m_totalPercentageArea(0.0),
-    m_totalPercentageAreaHasBeenSet(false),
-    m_colorHasBeenSet(false)
+PixelAnomaly::PixelAnomaly(JsonView jsonValue)
+  : PixelAnomaly()
 {
   *this = jsonValue;
 }

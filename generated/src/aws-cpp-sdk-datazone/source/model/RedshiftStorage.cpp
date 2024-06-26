@@ -24,9 +24,8 @@ RedshiftStorage::RedshiftStorage() :
 {
 }
 
-RedshiftStorage::RedshiftStorage(JsonView jsonValue) : 
-    m_redshiftClusterSourceHasBeenSet(false),
-    m_redshiftServerlessSourceHasBeenSet(false)
+RedshiftStorage::RedshiftStorage(JsonView jsonValue)
+  : RedshiftStorage()
 {
   *this = jsonValue;
 }

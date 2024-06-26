@@ -27,12 +27,8 @@ StudioMembership::StudioMembership() :
 {
 }
 
-StudioMembership::StudioMembership(JsonView jsonValue) : 
-    m_identityStoreIdHasBeenSet(false),
-    m_persona(StudioPersona::NOT_SET),
-    m_personaHasBeenSet(false),
-    m_principalIdHasBeenSet(false),
-    m_sidHasBeenSet(false)
+StudioMembership::StudioMembership(JsonView jsonValue)
+  : StudioMembership()
 {
   *this = jsonValue;
 }

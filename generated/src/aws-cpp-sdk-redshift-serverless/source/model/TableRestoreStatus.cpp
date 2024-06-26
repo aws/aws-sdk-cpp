@@ -40,25 +40,8 @@ TableRestoreStatus::TableRestoreStatus() :
 {
 }
 
-TableRestoreStatus::TableRestoreStatus(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_namespaceNameHasBeenSet(false),
-    m_newTableNameHasBeenSet(false),
-    m_progressInMegaBytes(0),
-    m_progressInMegaBytesHasBeenSet(false),
-    m_recoveryPointIdHasBeenSet(false),
-    m_requestTimeHasBeenSet(false),
-    m_snapshotNameHasBeenSet(false),
-    m_sourceDatabaseNameHasBeenSet(false),
-    m_sourceSchemaNameHasBeenSet(false),
-    m_sourceTableNameHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_tableRestoreRequestIdHasBeenSet(false),
-    m_targetDatabaseNameHasBeenSet(false),
-    m_targetSchemaNameHasBeenSet(false),
-    m_totalDataInMegaBytes(0),
-    m_totalDataInMegaBytesHasBeenSet(false),
-    m_workgroupNameHasBeenSet(false)
+TableRestoreStatus::TableRestoreStatus(JsonView jsonValue)
+  : TableRestoreStatus()
 {
   *this = jsonValue;
 }

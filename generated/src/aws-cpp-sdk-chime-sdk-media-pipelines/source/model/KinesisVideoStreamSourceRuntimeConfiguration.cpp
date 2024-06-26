@@ -27,12 +27,8 @@ KinesisVideoStreamSourceRuntimeConfiguration::KinesisVideoStreamSourceRuntimeCon
 {
 }
 
-KinesisVideoStreamSourceRuntimeConfiguration::KinesisVideoStreamSourceRuntimeConfiguration(JsonView jsonValue) : 
-    m_streamsHasBeenSet(false),
-    m_mediaEncoding(MediaEncoding::NOT_SET),
-    m_mediaEncodingHasBeenSet(false),
-    m_mediaSampleRate(0),
-    m_mediaSampleRateHasBeenSet(false)
+KinesisVideoStreamSourceRuntimeConfiguration::KinesisVideoStreamSourceRuntimeConfiguration(JsonView jsonValue)
+  : KinesisVideoStreamSourceRuntimeConfiguration()
 {
   *this = jsonValue;
 }

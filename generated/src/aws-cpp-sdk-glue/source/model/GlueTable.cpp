@@ -27,12 +27,8 @@ GlueTable::GlueTable() :
 {
 }
 
-GlueTable::GlueTable(JsonView jsonValue) : 
-    m_databaseNameHasBeenSet(false),
-    m_tableNameHasBeenSet(false),
-    m_catalogIdHasBeenSet(false),
-    m_connectionNameHasBeenSet(false),
-    m_additionalOptionsHasBeenSet(false)
+GlueTable::GlueTable(JsonView jsonValue)
+  : GlueTable()
 {
   *this = jsonValue;
 }

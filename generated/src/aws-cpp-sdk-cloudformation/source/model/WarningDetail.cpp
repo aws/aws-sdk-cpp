@@ -27,10 +27,8 @@ WarningDetail::WarningDetail() :
 {
 }
 
-WarningDetail::WarningDetail(const XmlNode& xmlNode) : 
-    m_type(WarningType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_propertiesHasBeenSet(false)
+WarningDetail::WarningDetail(const XmlNode& xmlNode)
+  : WarningDetail()
 {
   *this = xmlNode;
 }

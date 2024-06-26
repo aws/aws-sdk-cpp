@@ -26,11 +26,8 @@ LineChartDefaultSeriesSettings::LineChartDefaultSeriesSettings() :
 {
 }
 
-LineChartDefaultSeriesSettings::LineChartDefaultSeriesSettings(JsonView jsonValue) : 
-    m_axisBinding(AxisBinding::NOT_SET),
-    m_axisBindingHasBeenSet(false),
-    m_lineStyleSettingsHasBeenSet(false),
-    m_markerStyleSettingsHasBeenSet(false)
+LineChartDefaultSeriesSettings::LineChartDefaultSeriesSettings(JsonView jsonValue)
+  : LineChartDefaultSeriesSettings()
 {
   *this = jsonValue;
 }

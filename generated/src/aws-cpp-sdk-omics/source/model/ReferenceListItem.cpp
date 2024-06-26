@@ -32,17 +32,8 @@ ReferenceListItem::ReferenceListItem() :
 {
 }
 
-ReferenceListItem::ReferenceListItem(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_referenceStoreIdHasBeenSet(false),
-    m_md5HasBeenSet(false),
-    m_status(ReferenceStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
+ReferenceListItem::ReferenceListItem(JsonView jsonValue)
+  : ReferenceListItem()
 {
   *this = jsonValue;
 }

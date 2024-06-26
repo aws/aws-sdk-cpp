@@ -29,14 +29,8 @@ TimestreamRegistrationResponse::TimestreamRegistrationResponse() :
 {
 }
 
-TimestreamRegistrationResponse::TimestreamRegistrationResponse(JsonView jsonValue) : 
-    m_timestreamDatabaseNameHasBeenSet(false),
-    m_timestreamTableNameHasBeenSet(false),
-    m_timestreamDatabaseArnHasBeenSet(false),
-    m_timestreamTableArnHasBeenSet(false),
-    m_registrationStatus(RegistrationStatus::NOT_SET),
-    m_registrationStatusHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
+TimestreamRegistrationResponse::TimestreamRegistrationResponse(JsonView jsonValue)
+  : TimestreamRegistrationResponse()
 {
   *this = jsonValue;
 }

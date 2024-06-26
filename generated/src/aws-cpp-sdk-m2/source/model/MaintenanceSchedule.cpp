@@ -24,9 +24,8 @@ MaintenanceSchedule::MaintenanceSchedule() :
 {
 }
 
-MaintenanceSchedule::MaintenanceSchedule(JsonView jsonValue) : 
-    m_endTimeHasBeenSet(false),
-    m_startTimeHasBeenSet(false)
+MaintenanceSchedule::MaintenanceSchedule(JsonView jsonValue)
+  : MaintenanceSchedule()
 {
   *this = jsonValue;
 }

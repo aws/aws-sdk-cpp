@@ -38,23 +38,8 @@ EventLogEntry::EventLogEntry() :
 {
 }
 
-EventLogEntry::EventLogEntry(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_eventNameHasBeenSet(false),
-    m_eventTypeHasBeenSet(false),
-    m_eventCategoryHasBeenSet(false),
-    m_eventSourceHasBeenSet(false),
-    m_eventTimeHasBeenSet(false),
-    m_operationType(OperationType::NOT_SET),
-    m_operationTypeHasBeenSet(false),
-    m_userIdentityHasBeenSet(false),
-    m_projectInformationHasBeenSet(false),
-    m_requestIdHasBeenSet(false),
-    m_requestPayloadHasBeenSet(false),
-    m_responsePayloadHasBeenSet(false),
-    m_errorCodeHasBeenSet(false),
-    m_sourceIpAddressHasBeenSet(false),
-    m_userAgentHasBeenSet(false)
+EventLogEntry::EventLogEntry(JsonView jsonValue)
+  : EventLogEntry()
 {
   *this = jsonValue;
 }

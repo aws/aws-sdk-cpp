@@ -25,10 +25,8 @@ AssessmentRunStateChange::AssessmentRunStateChange() :
 {
 }
 
-AssessmentRunStateChange::AssessmentRunStateChange(JsonView jsonValue) : 
-    m_stateChangedAtHasBeenSet(false),
-    m_state(AssessmentRunState::NOT_SET),
-    m_stateHasBeenSet(false)
+AssessmentRunStateChange::AssessmentRunStateChange(JsonView jsonValue)
+  : AssessmentRunStateChange()
 {
   *this = jsonValue;
 }

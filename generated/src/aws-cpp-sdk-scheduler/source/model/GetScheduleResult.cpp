@@ -23,9 +23,8 @@ GetScheduleResult::GetScheduleResult() :
 {
 }
 
-GetScheduleResult::GetScheduleResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_actionAfterCompletion(ActionAfterCompletion::NOT_SET),
-    m_state(ScheduleState::NOT_SET)
+GetScheduleResult::GetScheduleResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetScheduleResult()
 {
   *this = result;
 }

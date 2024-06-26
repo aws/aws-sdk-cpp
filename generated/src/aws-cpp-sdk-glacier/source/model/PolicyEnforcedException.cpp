@@ -25,10 +25,8 @@ PolicyEnforcedException::PolicyEnforcedException() :
 {
 }
 
-PolicyEnforcedException::PolicyEnforcedException(JsonView jsonValue) : 
-    m_typeHasBeenSet(false),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+PolicyEnforcedException::PolicyEnforcedException(JsonView jsonValue)
+  : PolicyEnforcedException()
 {
   *this = jsonValue;
 }

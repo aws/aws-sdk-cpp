@@ -26,11 +26,8 @@ VpcEndpointError::VpcEndpointError() :
 {
 }
 
-VpcEndpointError::VpcEndpointError(JsonView jsonValue) : 
-    m_vpcEndpointIdHasBeenSet(false),
-    m_errorCode(VpcEndpointErrorCode::NOT_SET),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
+VpcEndpointError::VpcEndpointError(JsonView jsonValue)
+  : VpcEndpointError()
 {
   *this = jsonValue;
 }

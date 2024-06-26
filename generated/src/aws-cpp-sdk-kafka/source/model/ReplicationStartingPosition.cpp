@@ -24,9 +24,8 @@ ReplicationStartingPosition::ReplicationStartingPosition() :
 {
 }
 
-ReplicationStartingPosition::ReplicationStartingPosition(JsonView jsonValue) : 
-    m_type(ReplicationStartingPositionType::NOT_SET),
-    m_typeHasBeenSet(false)
+ReplicationStartingPosition::ReplicationStartingPosition(JsonView jsonValue)
+  : ReplicationStartingPosition()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ SMSMessageActivity::SMSMessageActivity() :
 {
 }
 
-SMSMessageActivity::SMSMessageActivity(JsonView jsonValue) : 
-    m_messageConfigHasBeenSet(false),
-    m_nextActivityHasBeenSet(false),
-    m_templateNameHasBeenSet(false),
-    m_templateVersionHasBeenSet(false)
+SMSMessageActivity::SMSMessageActivity(JsonView jsonValue)
+  : SMSMessageActivity()
 {
   *this = jsonValue;
 }

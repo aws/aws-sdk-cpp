@@ -25,10 +25,8 @@ BucketServerSideEncryption::BucketServerSideEncryption() :
 {
 }
 
-BucketServerSideEncryption::BucketServerSideEncryption(JsonView jsonValue) : 
-    m_kmsMasterKeyIdHasBeenSet(false),
-    m_type(Type::NOT_SET),
-    m_typeHasBeenSet(false)
+BucketServerSideEncryption::BucketServerSideEncryption(JsonView jsonValue)
+  : BucketServerSideEncryption()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ InlineDocumentEnrichmentConfiguration::InlineDocumentEnrichmentConfiguration() :
 {
 }
 
-InlineDocumentEnrichmentConfiguration::InlineDocumentEnrichmentConfiguration(JsonView jsonValue) : 
-    m_conditionHasBeenSet(false),
-    m_targetHasBeenSet(false),
-    m_documentContentOperator(DocumentContentOperator::NOT_SET),
-    m_documentContentOperatorHasBeenSet(false)
+InlineDocumentEnrichmentConfiguration::InlineDocumentEnrichmentConfiguration(JsonView jsonValue)
+  : InlineDocumentEnrichmentConfiguration()
 {
   *this = jsonValue;
 }

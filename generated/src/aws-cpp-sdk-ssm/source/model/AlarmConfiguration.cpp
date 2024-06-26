@@ -25,10 +25,8 @@ AlarmConfiguration::AlarmConfiguration() :
 {
 }
 
-AlarmConfiguration::AlarmConfiguration(JsonView jsonValue) : 
-    m_ignorePollAlarmFailure(false),
-    m_ignorePollAlarmFailureHasBeenSet(false),
-    m_alarmsHasBeenSet(false)
+AlarmConfiguration::AlarmConfiguration(JsonView jsonValue)
+  : AlarmConfiguration()
 {
   *this = jsonValue;
 }

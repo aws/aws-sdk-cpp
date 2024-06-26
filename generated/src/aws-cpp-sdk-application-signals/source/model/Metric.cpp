@@ -25,10 +25,8 @@ Metric::Metric() :
 {
 }
 
-Metric::Metric(JsonView jsonValue) : 
-    m_namespaceHasBeenSet(false),
-    m_metricNameHasBeenSet(false),
-    m_dimensionsHasBeenSet(false)
+Metric::Metric(JsonView jsonValue)
+  : Metric()
 {
   *this = jsonValue;
 }

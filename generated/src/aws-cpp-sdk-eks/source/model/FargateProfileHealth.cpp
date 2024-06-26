@@ -23,8 +23,8 @@ FargateProfileHealth::FargateProfileHealth() :
 {
 }
 
-FargateProfileHealth::FargateProfileHealth(JsonView jsonValue) : 
-    m_issuesHasBeenSet(false)
+FargateProfileHealth::FargateProfileHealth(JsonView jsonValue)
+  : FargateProfileHealth()
 {
   *this = jsonValue;
 }

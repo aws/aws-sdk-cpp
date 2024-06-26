@@ -25,8 +25,8 @@ CreditSpecificationRequest::CreditSpecificationRequest() :
 {
 }
 
-CreditSpecificationRequest::CreditSpecificationRequest(const XmlNode& xmlNode) : 
-    m_cpuCreditsHasBeenSet(false)
+CreditSpecificationRequest::CreditSpecificationRequest(const XmlNode& xmlNode)
+  : CreditSpecificationRequest()
 {
   *this = xmlNode;
 }

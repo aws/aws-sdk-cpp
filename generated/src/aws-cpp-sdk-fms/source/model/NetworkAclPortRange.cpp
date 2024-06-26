@@ -26,11 +26,8 @@ NetworkAclPortRange::NetworkAclPortRange() :
 {
 }
 
-NetworkAclPortRange::NetworkAclPortRange(JsonView jsonValue) : 
-    m_from(0),
-    m_fromHasBeenSet(false),
-    m_to(0),
-    m_toHasBeenSet(false)
+NetworkAclPortRange::NetworkAclPortRange(JsonView jsonValue)
+  : NetworkAclPortRange()
 {
   *this = jsonValue;
 }

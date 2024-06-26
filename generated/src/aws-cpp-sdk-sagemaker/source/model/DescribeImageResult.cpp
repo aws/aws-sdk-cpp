@@ -22,8 +22,8 @@ DescribeImageResult::DescribeImageResult() :
 {
 }
 
-DescribeImageResult::DescribeImageResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_imageStatus(ImageStatus::NOT_SET)
+DescribeImageResult::DescribeImageResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeImageResult()
 {
   *this = result;
 }

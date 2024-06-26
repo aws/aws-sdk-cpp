@@ -33,18 +33,8 @@ DestinationFieldProperties::DestinationFieldProperties() :
 {
 }
 
-DestinationFieldProperties::DestinationFieldProperties(JsonView jsonValue) : 
-    m_isCreatable(false),
-    m_isCreatableHasBeenSet(false),
-    m_isNullable(false),
-    m_isNullableHasBeenSet(false),
-    m_isUpsertable(false),
-    m_isUpsertableHasBeenSet(false),
-    m_isUpdatable(false),
-    m_isUpdatableHasBeenSet(false),
-    m_isDefaultedOnCreate(false),
-    m_isDefaultedOnCreateHasBeenSet(false),
-    m_supportedWriteOperationsHasBeenSet(false)
+DestinationFieldProperties::DestinationFieldProperties(JsonView jsonValue)
+  : DestinationFieldProperties()
 {
   *this = jsonValue;
 }

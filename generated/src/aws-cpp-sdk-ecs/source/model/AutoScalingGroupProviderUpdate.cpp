@@ -27,12 +27,8 @@ AutoScalingGroupProviderUpdate::AutoScalingGroupProviderUpdate() :
 {
 }
 
-AutoScalingGroupProviderUpdate::AutoScalingGroupProviderUpdate(JsonView jsonValue) : 
-    m_managedScalingHasBeenSet(false),
-    m_managedTerminationProtection(ManagedTerminationProtection::NOT_SET),
-    m_managedTerminationProtectionHasBeenSet(false),
-    m_managedDraining(ManagedDraining::NOT_SET),
-    m_managedDrainingHasBeenSet(false)
+AutoScalingGroupProviderUpdate::AutoScalingGroupProviderUpdate(JsonView jsonValue)
+  : AutoScalingGroupProviderUpdate()
 {
   *this = jsonValue;
 }

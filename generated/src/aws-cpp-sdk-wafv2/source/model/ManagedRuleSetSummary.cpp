@@ -28,13 +28,8 @@ ManagedRuleSetSummary::ManagedRuleSetSummary() :
 {
 }
 
-ManagedRuleSetSummary::ManagedRuleSetSummary(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_lockTokenHasBeenSet(false),
-    m_aRNHasBeenSet(false),
-    m_labelNamespaceHasBeenSet(false)
+ManagedRuleSetSummary::ManagedRuleSetSummary(JsonView jsonValue)
+  : ManagedRuleSetSummary()
 {
   *this = jsonValue;
 }

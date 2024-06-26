@@ -26,11 +26,8 @@ ChapInfo::ChapInfo() :
 {
 }
 
-ChapInfo::ChapInfo(JsonView jsonValue) : 
-    m_targetARNHasBeenSet(false),
-    m_secretToAuthenticateInitiatorHasBeenSet(false),
-    m_initiatorNameHasBeenSet(false),
-    m_secretToAuthenticateTargetHasBeenSet(false)
+ChapInfo::ChapInfo(JsonView jsonValue)
+  : ChapInfo()
 {
   *this = jsonValue;
 }

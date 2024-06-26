@@ -22,8 +22,8 @@ ListPoliciesGrantingServiceAccessResult::ListPoliciesGrantingServiceAccessResult
 {
 }
 
-ListPoliciesGrantingServiceAccessResult::ListPoliciesGrantingServiceAccessResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_isTruncated(false)
+ListPoliciesGrantingServiceAccessResult::ListPoliciesGrantingServiceAccessResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : ListPoliciesGrantingServiceAccessResult()
 {
   *this = result;
 }

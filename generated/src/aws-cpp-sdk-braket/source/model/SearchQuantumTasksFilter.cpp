@@ -26,11 +26,8 @@ SearchQuantumTasksFilter::SearchQuantumTasksFilter() :
 {
 }
 
-SearchQuantumTasksFilter::SearchQuantumTasksFilter(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_operator(SearchQuantumTasksFilterOperator::NOT_SET),
-    m_operatorHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+SearchQuantumTasksFilter::SearchQuantumTasksFilter(JsonView jsonValue)
+  : SearchQuantumTasksFilter()
 {
   *this = jsonValue;
 }

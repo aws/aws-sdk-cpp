@@ -27,12 +27,8 @@ StartLambdaFunctionFailedEventAttributes::StartLambdaFunctionFailedEventAttribut
 {
 }
 
-StartLambdaFunctionFailedEventAttributes::StartLambdaFunctionFailedEventAttributes(JsonView jsonValue) : 
-    m_scheduledEventId(0),
-    m_scheduledEventIdHasBeenSet(false),
-    m_cause(StartLambdaFunctionFailedCause::NOT_SET),
-    m_causeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+StartLambdaFunctionFailedEventAttributes::StartLambdaFunctionFailedEventAttributes(JsonView jsonValue)
+  : StartLambdaFunctionFailedEventAttributes()
 {
   *this = jsonValue;
 }

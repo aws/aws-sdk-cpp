@@ -26,11 +26,8 @@ CustomizableMetricParameters::CustomizableMetricParameters() :
 {
 }
 
-CustomizableMetricParameters::CustomizableMetricParameters(JsonView jsonValue) : 
-    m_threshold(CustomizableMetricThreshold::NOT_SET),
-    m_thresholdHasBeenSet(false),
-    m_headroom(CustomizableMetricHeadroom::NOT_SET),
-    m_headroomHasBeenSet(false)
+CustomizableMetricParameters::CustomizableMetricParameters(JsonView jsonValue)
+  : CustomizableMetricParameters()
 {
   *this = jsonValue;
 }

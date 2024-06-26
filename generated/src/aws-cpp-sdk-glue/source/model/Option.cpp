@@ -25,10 +25,8 @@ Option::Option() :
 {
 }
 
-Option::Option(JsonView jsonValue) : 
-    m_valueHasBeenSet(false),
-    m_labelHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+Option::Option(JsonView jsonValue)
+  : Option()
 {
   *this = jsonValue;
 }

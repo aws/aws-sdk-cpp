@@ -28,13 +28,8 @@ LambdaFunctionRecipeSource::LambdaFunctionRecipeSource() :
 {
 }
 
-LambdaFunctionRecipeSource::LambdaFunctionRecipeSource(JsonView jsonValue) : 
-    m_lambdaArnHasBeenSet(false),
-    m_componentNameHasBeenSet(false),
-    m_componentVersionHasBeenSet(false),
-    m_componentPlatformsHasBeenSet(false),
-    m_componentDependenciesHasBeenSet(false),
-    m_componentLambdaParametersHasBeenSet(false)
+LambdaFunctionRecipeSource::LambdaFunctionRecipeSource(JsonView jsonValue)
+  : LambdaFunctionRecipeSource()
 {
   *this = jsonValue;
 }

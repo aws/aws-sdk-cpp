@@ -24,9 +24,8 @@ AuthorizerSummary::AuthorizerSummary() :
 {
 }
 
-AuthorizerSummary::AuthorizerSummary(JsonView jsonValue) : 
-    m_authorizerNameHasBeenSet(false),
-    m_authorizerArnHasBeenSet(false)
+AuthorizerSummary::AuthorizerSummary(JsonView jsonValue)
+  : AuthorizerSummary()
 {
   *this = jsonValue;
 }

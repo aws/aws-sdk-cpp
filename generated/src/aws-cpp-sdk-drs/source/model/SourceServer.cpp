@@ -40,24 +40,8 @@ SourceServer::SourceServer() :
 {
 }
 
-SourceServer::SourceServer(JsonView jsonValue) : 
-    m_agentVersionHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_dataReplicationInfoHasBeenSet(false),
-    m_lastLaunchResult(LastLaunchResult::NOT_SET),
-    m_lastLaunchResultHasBeenSet(false),
-    m_lifeCycleHasBeenSet(false),
-    m_recoveryInstanceIdHasBeenSet(false),
-    m_replicationDirection(ReplicationDirection::NOT_SET),
-    m_replicationDirectionHasBeenSet(false),
-    m_reversedDirectionSourceServerArnHasBeenSet(false),
-    m_sourceCloudPropertiesHasBeenSet(false),
-    m_sourceNetworkIDHasBeenSet(false),
-    m_sourcePropertiesHasBeenSet(false),
-    m_sourceServerIDHasBeenSet(false),
-    m_stagingAreaHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
+SourceServer::SourceServer(JsonView jsonValue)
+  : SourceServer()
 {
   *this = jsonValue;
 }

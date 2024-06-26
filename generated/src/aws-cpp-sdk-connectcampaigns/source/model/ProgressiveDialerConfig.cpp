@@ -26,11 +26,8 @@ ProgressiveDialerConfig::ProgressiveDialerConfig() :
 {
 }
 
-ProgressiveDialerConfig::ProgressiveDialerConfig(JsonView jsonValue) : 
-    m_bandwidthAllocation(0.0),
-    m_bandwidthAllocationHasBeenSet(false),
-    m_dialingCapacity(0.0),
-    m_dialingCapacityHasBeenSet(false)
+ProgressiveDialerConfig::ProgressiveDialerConfig(JsonView jsonValue)
+  : ProgressiveDialerConfig()
 {
   *this = jsonValue;
 }

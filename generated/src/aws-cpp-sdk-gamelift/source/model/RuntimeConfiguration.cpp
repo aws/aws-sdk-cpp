@@ -27,12 +27,8 @@ RuntimeConfiguration::RuntimeConfiguration() :
 {
 }
 
-RuntimeConfiguration::RuntimeConfiguration(JsonView jsonValue) : 
-    m_serverProcessesHasBeenSet(false),
-    m_maxConcurrentGameSessionActivations(0),
-    m_maxConcurrentGameSessionActivationsHasBeenSet(false),
-    m_gameSessionActivationTimeoutSeconds(0),
-    m_gameSessionActivationTimeoutSecondsHasBeenSet(false)
+RuntimeConfiguration::RuntimeConfiguration(JsonView jsonValue)
+  : RuntimeConfiguration()
 {
   *this = jsonValue;
 }

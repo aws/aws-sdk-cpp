@@ -23,8 +23,8 @@ ConnectorDefinitionVersion::ConnectorDefinitionVersion() :
 {
 }
 
-ConnectorDefinitionVersion::ConnectorDefinitionVersion(JsonView jsonValue) : 
-    m_connectorsHasBeenSet(false)
+ConnectorDefinitionVersion::ConnectorDefinitionVersion(JsonView jsonValue)
+  : ConnectorDefinitionVersion()
 {
   *this = jsonValue;
 }

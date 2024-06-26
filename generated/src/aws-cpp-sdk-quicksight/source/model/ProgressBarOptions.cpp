@@ -24,9 +24,8 @@ ProgressBarOptions::ProgressBarOptions() :
 {
 }
 
-ProgressBarOptions::ProgressBarOptions(JsonView jsonValue) : 
-    m_visibility(Visibility::NOT_SET),
-    m_visibilityHasBeenSet(false)
+ProgressBarOptions::ProgressBarOptions(JsonView jsonValue)
+  : ProgressBarOptions()
 {
   *this = jsonValue;
 }

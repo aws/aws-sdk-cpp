@@ -24,9 +24,8 @@ SaaSProductLastModifiedDateFilterDateRange::SaaSProductLastModifiedDateFilterDat
 {
 }
 
-SaaSProductLastModifiedDateFilterDateRange::SaaSProductLastModifiedDateFilterDateRange(JsonView jsonValue) : 
-    m_afterValueHasBeenSet(false),
-    m_beforeValueHasBeenSet(false)
+SaaSProductLastModifiedDateFilterDateRange::SaaSProductLastModifiedDateFilterDateRange(JsonView jsonValue)
+  : SaaSProductLastModifiedDateFilterDateRange()
 {
   *this = jsonValue;
 }

@@ -28,13 +28,8 @@ FirewallStatus::FirewallStatus() :
 {
 }
 
-FirewallStatus::FirewallStatus(JsonView jsonValue) : 
-    m_status(FirewallStatusValue::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_configurationSyncStateSummary(ConfigurationSyncState::NOT_SET),
-    m_configurationSyncStateSummaryHasBeenSet(false),
-    m_syncStatesHasBeenSet(false),
-    m_capacityUsageSummaryHasBeenSet(false)
+FirewallStatus::FirewallStatus(JsonView jsonValue)
+  : FirewallStatus()
 {
   *this = jsonValue;
 }

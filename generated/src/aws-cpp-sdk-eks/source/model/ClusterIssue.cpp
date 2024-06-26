@@ -26,11 +26,8 @@ ClusterIssue::ClusterIssue() :
 {
 }
 
-ClusterIssue::ClusterIssue(JsonView jsonValue) : 
-    m_code(ClusterIssueCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_resourceIdsHasBeenSet(false)
+ClusterIssue::ClusterIssue(JsonView jsonValue)
+  : ClusterIssue()
 {
   *this = jsonValue;
 }

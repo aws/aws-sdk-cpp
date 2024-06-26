@@ -25,10 +25,8 @@ MessageDetail::MessageDetail() :
 {
 }
 
-MessageDetail::MessageDetail(JsonView jsonValue) : 
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_resourceNameHasBeenSet(false)
+MessageDetail::MessageDetail(JsonView jsonValue)
+  : MessageDetail()
 {
   *this = jsonValue;
 }

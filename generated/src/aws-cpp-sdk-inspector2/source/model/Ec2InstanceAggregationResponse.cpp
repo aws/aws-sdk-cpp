@@ -30,15 +30,8 @@ Ec2InstanceAggregationResponse::Ec2InstanceAggregationResponse() :
 {
 }
 
-Ec2InstanceAggregationResponse::Ec2InstanceAggregationResponse(JsonView jsonValue) : 
-    m_accountIdHasBeenSet(false),
-    m_amiHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_instanceTagsHasBeenSet(false),
-    m_networkFindings(0),
-    m_networkFindingsHasBeenSet(false),
-    m_operatingSystemHasBeenSet(false),
-    m_severityCountsHasBeenSet(false)
+Ec2InstanceAggregationResponse::Ec2InstanceAggregationResponse(JsonView jsonValue)
+  : Ec2InstanceAggregationResponse()
 {
   *this = jsonValue;
 }

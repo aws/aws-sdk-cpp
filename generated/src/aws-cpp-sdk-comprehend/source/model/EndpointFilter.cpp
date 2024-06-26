@@ -27,12 +27,8 @@ EndpointFilter::EndpointFilter() :
 {
 }
 
-EndpointFilter::EndpointFilter(JsonView jsonValue) : 
-    m_modelArnHasBeenSet(false),
-    m_status(EndpointStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_creationTimeBeforeHasBeenSet(false),
-    m_creationTimeAfterHasBeenSet(false)
+EndpointFilter::EndpointFilter(JsonView jsonValue)
+  : EndpointFilter()
 {
   *this = jsonValue;
 }

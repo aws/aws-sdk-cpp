@@ -25,10 +25,8 @@ FindingHistoryUpdateSource::FindingHistoryUpdateSource() :
 {
 }
 
-FindingHistoryUpdateSource::FindingHistoryUpdateSource(JsonView jsonValue) : 
-    m_type(FindingHistoryUpdateSourceType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_identityHasBeenSet(false)
+FindingHistoryUpdateSource::FindingHistoryUpdateSource(JsonView jsonValue)
+  : FindingHistoryUpdateSource()
 {
   *this = jsonValue;
 }

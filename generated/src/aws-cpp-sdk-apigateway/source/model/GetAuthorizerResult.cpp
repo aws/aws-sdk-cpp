@@ -23,9 +23,8 @@ GetAuthorizerResult::GetAuthorizerResult() :
 {
 }
 
-GetAuthorizerResult::GetAuthorizerResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_type(AuthorizerType::NOT_SET),
-    m_authorizerResultTtlInSeconds(0)
+GetAuthorizerResult::GetAuthorizerResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetAuthorizerResult()
 {
   *this = result;
 }

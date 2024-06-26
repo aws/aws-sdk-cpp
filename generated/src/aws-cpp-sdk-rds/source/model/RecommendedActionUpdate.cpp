@@ -26,9 +26,8 @@ RecommendedActionUpdate::RecommendedActionUpdate() :
 {
 }
 
-RecommendedActionUpdate::RecommendedActionUpdate(const XmlNode& xmlNode) : 
-    m_actionIdHasBeenSet(false),
-    m_statusHasBeenSet(false)
+RecommendedActionUpdate::RecommendedActionUpdate(const XmlNode& xmlNode)
+  : RecommendedActionUpdate()
 {
   *this = xmlNode;
 }

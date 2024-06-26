@@ -31,16 +31,8 @@ MedicalScribeJobSummary::MedicalScribeJobSummary() :
 {
 }
 
-MedicalScribeJobSummary::MedicalScribeJobSummary(JsonView jsonValue) : 
-    m_medicalScribeJobNameHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_completionTimeHasBeenSet(false),
-    m_languageCode(MedicalScribeLanguageCode::NOT_SET),
-    m_languageCodeHasBeenSet(false),
-    m_medicalScribeJobStatus(MedicalScribeJobStatus::NOT_SET),
-    m_medicalScribeJobStatusHasBeenSet(false),
-    m_failureReasonHasBeenSet(false)
+MedicalScribeJobSummary::MedicalScribeJobSummary(JsonView jsonValue)
+  : MedicalScribeJobSummary()
 {
   *this = jsonValue;
 }

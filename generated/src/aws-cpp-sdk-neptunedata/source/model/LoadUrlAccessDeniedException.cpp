@@ -25,10 +25,8 @@ LoadUrlAccessDeniedException::LoadUrlAccessDeniedException() :
 {
 }
 
-LoadUrlAccessDeniedException::LoadUrlAccessDeniedException(JsonView jsonValue) : 
-    m_detailedMessageHasBeenSet(false),
-    m_requestIdHasBeenSet(false),
-    m_codeHasBeenSet(false)
+LoadUrlAccessDeniedException::LoadUrlAccessDeniedException(JsonView jsonValue)
+  : LoadUrlAccessDeniedException()
 {
   *this = jsonValue;
 }

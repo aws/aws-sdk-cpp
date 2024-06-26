@@ -26,11 +26,8 @@ MediaStreamSourceConfiguration::MediaStreamSourceConfiguration() :
 {
 }
 
-MediaStreamSourceConfiguration::MediaStreamSourceConfiguration(JsonView jsonValue) : 
-    m_encodingName(EncodingName::NOT_SET),
-    m_encodingNameHasBeenSet(false),
-    m_inputConfigurationsHasBeenSet(false),
-    m_mediaStreamNameHasBeenSet(false)
+MediaStreamSourceConfiguration::MediaStreamSourceConfiguration(JsonView jsonValue)
+  : MediaStreamSourceConfiguration()
 {
   *this = jsonValue;
 }

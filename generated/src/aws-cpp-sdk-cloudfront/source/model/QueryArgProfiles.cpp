@@ -27,10 +27,8 @@ QueryArgProfiles::QueryArgProfiles() :
 {
 }
 
-QueryArgProfiles::QueryArgProfiles(const XmlNode& xmlNode) : 
-    m_quantity(0),
-    m_quantityHasBeenSet(false),
-    m_itemsHasBeenSet(false)
+QueryArgProfiles::QueryArgProfiles(const XmlNode& xmlNode)
+  : QueryArgProfiles()
 {
   *this = xmlNode;
 }

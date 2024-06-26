@@ -25,10 +25,8 @@ ScheduledWindowExecution::ScheduledWindowExecution() :
 {
 }
 
-ScheduledWindowExecution::ScheduledWindowExecution(JsonView jsonValue) : 
-    m_windowIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_executionTimeHasBeenSet(false)
+ScheduledWindowExecution::ScheduledWindowExecution(JsonView jsonValue)
+  : ScheduledWindowExecution()
 {
   *this = jsonValue;
 }

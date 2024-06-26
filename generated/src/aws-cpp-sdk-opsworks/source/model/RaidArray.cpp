@@ -39,24 +39,8 @@ RaidArray::RaidArray() :
 {
 }
 
-RaidArray::RaidArray(JsonView jsonValue) : 
-    m_raidArrayIdHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_raidLevel(0),
-    m_raidLevelHasBeenSet(false),
-    m_numberOfDisks(0),
-    m_numberOfDisksHasBeenSet(false),
-    m_size(0),
-    m_sizeHasBeenSet(false),
-    m_deviceHasBeenSet(false),
-    m_mountPointHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_stackIdHasBeenSet(false),
-    m_volumeTypeHasBeenSet(false),
-    m_iops(0),
-    m_iopsHasBeenSet(false)
+RaidArray::RaidArray(JsonView jsonValue)
+  : RaidArray()
 {
   *this = jsonValue;
 }

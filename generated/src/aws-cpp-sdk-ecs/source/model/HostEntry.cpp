@@ -24,9 +24,8 @@ HostEntry::HostEntry() :
 {
 }
 
-HostEntry::HostEntry(JsonView jsonValue) : 
-    m_hostnameHasBeenSet(false),
-    m_ipAddressHasBeenSet(false)
+HostEntry::HostEntry(JsonView jsonValue)
+  : HostEntry()
 {
   *this = jsonValue;
 }

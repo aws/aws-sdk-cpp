@@ -22,8 +22,8 @@ DescribeCustomKeyStoresResult::DescribeCustomKeyStoresResult() :
 {
 }
 
-DescribeCustomKeyStoresResult::DescribeCustomKeyStoresResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_truncated(false)
+DescribeCustomKeyStoresResult::DescribeCustomKeyStoresResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeCustomKeyStoresResult()
 {
   *this = result;
 }

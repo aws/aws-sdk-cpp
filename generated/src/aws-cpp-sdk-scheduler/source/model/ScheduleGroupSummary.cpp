@@ -28,13 +28,8 @@ ScheduleGroupSummary::ScheduleGroupSummary() :
 {
 }
 
-ScheduleGroupSummary::ScheduleGroupSummary(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_lastModificationDateHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_state(ScheduleGroupState::NOT_SET),
-    m_stateHasBeenSet(false)
+ScheduleGroupSummary::ScheduleGroupSummary(JsonView jsonValue)
+  : ScheduleGroupSummary()
 {
   *this = jsonValue;
 }

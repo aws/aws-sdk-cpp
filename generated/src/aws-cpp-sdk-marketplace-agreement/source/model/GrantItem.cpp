@@ -25,10 +25,8 @@ GrantItem::GrantItem() :
 {
 }
 
-GrantItem::GrantItem(JsonView jsonValue) : 
-    m_dimensionKeyHasBeenSet(false),
-    m_maxQuantity(0),
-    m_maxQuantityHasBeenSet(false)
+GrantItem::GrantItem(JsonView jsonValue)
+  : GrantItem()
 {
   *this = jsonValue;
 }

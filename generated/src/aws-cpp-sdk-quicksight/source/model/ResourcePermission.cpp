@@ -24,9 +24,8 @@ ResourcePermission::ResourcePermission() :
 {
 }
 
-ResourcePermission::ResourcePermission(JsonView jsonValue) : 
-    m_principalHasBeenSet(false),
-    m_actionsHasBeenSet(false)
+ResourcePermission::ResourcePermission(JsonView jsonValue)
+  : ResourcePermission()
 {
   *this = jsonValue;
 }

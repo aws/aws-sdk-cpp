@@ -23,8 +23,8 @@ GenerateDataKeyPairResult::GenerateDataKeyPairResult() :
 {
 }
 
-GenerateDataKeyPairResult::GenerateDataKeyPairResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_keyPairSpec(DataKeyPairSpec::NOT_SET)
+GenerateDataKeyPairResult::GenerateDataKeyPairResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GenerateDataKeyPairResult()
 {
   *this = result;
 }

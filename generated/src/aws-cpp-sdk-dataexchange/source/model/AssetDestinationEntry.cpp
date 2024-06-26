@@ -25,10 +25,8 @@ AssetDestinationEntry::AssetDestinationEntry() :
 {
 }
 
-AssetDestinationEntry::AssetDestinationEntry(JsonView jsonValue) : 
-    m_assetIdHasBeenSet(false),
-    m_bucketHasBeenSet(false),
-    m_keyHasBeenSet(false)
+AssetDestinationEntry::AssetDestinationEntry(JsonView jsonValue)
+  : AssetDestinationEntry()
 {
   *this = jsonValue;
 }

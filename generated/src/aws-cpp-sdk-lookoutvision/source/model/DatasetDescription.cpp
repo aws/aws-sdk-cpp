@@ -30,15 +30,8 @@ DatasetDescription::DatasetDescription() :
 {
 }
 
-DatasetDescription::DatasetDescription(JsonView jsonValue) : 
-    m_projectNameHasBeenSet(false),
-    m_datasetTypeHasBeenSet(false),
-    m_creationTimestampHasBeenSet(false),
-    m_lastUpdatedTimestampHasBeenSet(false),
-    m_status(DatasetStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_imageStatsHasBeenSet(false)
+DatasetDescription::DatasetDescription(JsonView jsonValue)
+  : DatasetDescription()
 {
   *this = jsonValue;
 }

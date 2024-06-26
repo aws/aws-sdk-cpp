@@ -26,11 +26,8 @@ InferenceComponentStartupParameters::InferenceComponentStartupParameters() :
 {
 }
 
-InferenceComponentStartupParameters::InferenceComponentStartupParameters(JsonView jsonValue) : 
-    m_modelDataDownloadTimeoutInSeconds(0),
-    m_modelDataDownloadTimeoutInSecondsHasBeenSet(false),
-    m_containerStartupHealthCheckTimeoutInSeconds(0),
-    m_containerStartupHealthCheckTimeoutInSecondsHasBeenSet(false)
+InferenceComponentStartupParameters::InferenceComponentStartupParameters(JsonView jsonValue)
+  : InferenceComponentStartupParameters()
 {
   *this = jsonValue;
 }

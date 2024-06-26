@@ -25,10 +25,8 @@ RelationalDatabaseEndpoint::RelationalDatabaseEndpoint() :
 {
 }
 
-RelationalDatabaseEndpoint::RelationalDatabaseEndpoint(JsonView jsonValue) : 
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_addressHasBeenSet(false)
+RelationalDatabaseEndpoint::RelationalDatabaseEndpoint(JsonView jsonValue)
+  : RelationalDatabaseEndpoint()
 {
   *this = jsonValue;
 }

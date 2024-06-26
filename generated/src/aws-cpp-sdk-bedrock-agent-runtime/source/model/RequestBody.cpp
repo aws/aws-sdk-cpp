@@ -23,8 +23,8 @@ RequestBody::RequestBody() :
 {
 }
 
-RequestBody::RequestBody(JsonView jsonValue) : 
-    m_contentHasBeenSet(false)
+RequestBody::RequestBody(JsonView jsonValue)
+  : RequestBody()
 {
   *this = jsonValue;
 }

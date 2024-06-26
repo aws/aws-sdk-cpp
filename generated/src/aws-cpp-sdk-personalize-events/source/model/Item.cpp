@@ -24,9 +24,8 @@ Item::Item() :
 {
 }
 
-Item::Item(JsonView jsonValue) : 
-    m_itemIdHasBeenSet(false),
-    m_propertiesHasBeenSet(false)
+Item::Item(JsonView jsonValue)
+  : Item()
 {
   *this = jsonValue;
 }

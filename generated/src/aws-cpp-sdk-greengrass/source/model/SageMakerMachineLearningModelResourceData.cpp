@@ -25,10 +25,8 @@ SageMakerMachineLearningModelResourceData::SageMakerMachineLearningModelResource
 {
 }
 
-SageMakerMachineLearningModelResourceData::SageMakerMachineLearningModelResourceData(JsonView jsonValue) : 
-    m_destinationPathHasBeenSet(false),
-    m_ownerSettingHasBeenSet(false),
-    m_sageMakerJobArnHasBeenSet(false)
+SageMakerMachineLearningModelResourceData::SageMakerMachineLearningModelResourceData(JsonView jsonValue)
+  : SageMakerMachineLearningModelResourceData()
 {
   *this = jsonValue;
 }

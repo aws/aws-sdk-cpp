@@ -24,9 +24,8 @@ DiscoveredResource::DiscoveredResource() :
 {
 }
 
-DiscoveredResource::DiscoveredResource(JsonView jsonValue) : 
-    m_configurationIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+DiscoveredResource::DiscoveredResource(JsonView jsonValue)
+  : DiscoveredResource()
 {
   *this = jsonValue;
 }

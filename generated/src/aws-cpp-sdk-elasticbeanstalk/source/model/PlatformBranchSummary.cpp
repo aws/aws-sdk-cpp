@@ -30,13 +30,8 @@ PlatformBranchSummary::PlatformBranchSummary() :
 {
 }
 
-PlatformBranchSummary::PlatformBranchSummary(const XmlNode& xmlNode) : 
-    m_platformNameHasBeenSet(false),
-    m_branchNameHasBeenSet(false),
-    m_lifecycleStateHasBeenSet(false),
-    m_branchOrder(0),
-    m_branchOrderHasBeenSet(false),
-    m_supportedTierListHasBeenSet(false)
+PlatformBranchSummary::PlatformBranchSummary(const XmlNode& xmlNode)
+  : PlatformBranchSummary()
 {
   *this = xmlNode;
 }

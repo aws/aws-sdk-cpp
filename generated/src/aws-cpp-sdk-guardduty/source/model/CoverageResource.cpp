@@ -30,15 +30,8 @@ CoverageResource::CoverageResource() :
 {
 }
 
-CoverageResource::CoverageResource(JsonView jsonValue) : 
-    m_resourceIdHasBeenSet(false),
-    m_detectorIdHasBeenSet(false),
-    m_accountIdHasBeenSet(false),
-    m_resourceDetailsHasBeenSet(false),
-    m_coverageStatus(CoverageStatus::NOT_SET),
-    m_coverageStatusHasBeenSet(false),
-    m_issueHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+CoverageResource::CoverageResource(JsonView jsonValue)
+  : CoverageResource()
 {
   *this = jsonValue;
 }

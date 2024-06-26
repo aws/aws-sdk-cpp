@@ -38,23 +38,8 @@ View::View() :
 {
 }
 
-View::View(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_status(ViewStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_type(ViewType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_version(0),
-    m_versionHasBeenSet(false),
-    m_versionDescriptionHasBeenSet(false),
-    m_contentHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_viewContentSha256HasBeenSet(false)
+View::View(JsonView jsonValue)
+  : View()
 {
   *this = jsonValue;
 }

@@ -31,16 +31,8 @@ CmafEncryptionSettings::CmafEncryptionSettings() :
 {
 }
 
-CmafEncryptionSettings::CmafEncryptionSettings(JsonView jsonValue) : 
-    m_constantInitializationVectorHasBeenSet(false),
-    m_encryptionMethod(CmafEncryptionType::NOT_SET),
-    m_encryptionMethodHasBeenSet(false),
-    m_initializationVectorInManifest(CmafInitializationVectorInManifest::NOT_SET),
-    m_initializationVectorInManifestHasBeenSet(false),
-    m_spekeKeyProviderHasBeenSet(false),
-    m_staticKeyProviderHasBeenSet(false),
-    m_type(CmafKeyProviderType::NOT_SET),
-    m_typeHasBeenSet(false)
+CmafEncryptionSettings::CmafEncryptionSettings(JsonView jsonValue)
+  : CmafEncryptionSettings()
 {
   *this = jsonValue;
 }

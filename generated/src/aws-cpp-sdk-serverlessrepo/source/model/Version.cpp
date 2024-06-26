@@ -32,17 +32,8 @@ Version::Version() :
 {
 }
 
-Version::Version(JsonView jsonValue) : 
-    m_applicationIdHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_parameterDefinitionsHasBeenSet(false),
-    m_requiredCapabilitiesHasBeenSet(false),
-    m_resourcesSupported(false),
-    m_resourcesSupportedHasBeenSet(false),
-    m_semanticVersionHasBeenSet(false),
-    m_sourceCodeArchiveUrlHasBeenSet(false),
-    m_sourceCodeUrlHasBeenSet(false),
-    m_templateUrlHasBeenSet(false)
+Version::Version(JsonView jsonValue)
+  : Version()
 {
   *this = jsonValue;
 }

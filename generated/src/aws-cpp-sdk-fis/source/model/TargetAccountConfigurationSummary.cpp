@@ -25,10 +25,8 @@ TargetAccountConfigurationSummary::TargetAccountConfigurationSummary() :
 {
 }
 
-TargetAccountConfigurationSummary::TargetAccountConfigurationSummary(JsonView jsonValue) : 
-    m_roleArnHasBeenSet(false),
-    m_accountIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+TargetAccountConfigurationSummary::TargetAccountConfigurationSummary(JsonView jsonValue)
+  : TargetAccountConfigurationSummary()
 {
   *this = jsonValue;
 }

@@ -23,9 +23,8 @@ GetMedicalVocabularyResult::GetMedicalVocabularyResult() :
 {
 }
 
-GetMedicalVocabularyResult::GetMedicalVocabularyResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_languageCode(LanguageCode::NOT_SET),
-    m_vocabularyState(VocabularyState::NOT_SET)
+GetMedicalVocabularyResult::GetMedicalVocabularyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetMedicalVocabularyResult()
 {
   *this = result;
 }

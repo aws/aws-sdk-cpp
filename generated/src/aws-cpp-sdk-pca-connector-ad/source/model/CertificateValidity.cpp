@@ -24,9 +24,8 @@ CertificateValidity::CertificateValidity() :
 {
 }
 
-CertificateValidity::CertificateValidity(JsonView jsonValue) : 
-    m_renewalPeriodHasBeenSet(false),
-    m_validityPeriodHasBeenSet(false)
+CertificateValidity::CertificateValidity(JsonView jsonValue)
+  : CertificateValidity()
 {
   *this = jsonValue;
 }

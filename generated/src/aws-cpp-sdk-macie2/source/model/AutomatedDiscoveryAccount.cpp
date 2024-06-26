@@ -25,10 +25,8 @@ AutomatedDiscoveryAccount::AutomatedDiscoveryAccount() :
 {
 }
 
-AutomatedDiscoveryAccount::AutomatedDiscoveryAccount(JsonView jsonValue) : 
-    m_accountIdHasBeenSet(false),
-    m_status(AutomatedDiscoveryAccountStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+AutomatedDiscoveryAccount::AutomatedDiscoveryAccount(JsonView jsonValue)
+  : AutomatedDiscoveryAccount()
 {
   *this = jsonValue;
 }

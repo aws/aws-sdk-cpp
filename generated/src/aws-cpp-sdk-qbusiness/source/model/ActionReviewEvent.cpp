@@ -30,15 +30,8 @@ ActionReviewEvent::ActionReviewEvent() :
 {
 }
 
-ActionReviewEvent::ActionReviewEvent(JsonView jsonValue) : 
-    m_conversationIdHasBeenSet(false),
-    m_userMessageIdHasBeenSet(false),
-    m_systemMessageIdHasBeenSet(false),
-    m_pluginIdHasBeenSet(false),
-    m_pluginType(PluginType::NOT_SET),
-    m_pluginTypeHasBeenSet(false),
-    m_payloadHasBeenSet(false),
-    m_payloadFieldNameSeparatorHasBeenSet(false)
+ActionReviewEvent::ActionReviewEvent(JsonView jsonValue)
+  : ActionReviewEvent()
 {
   *this = jsonValue;
 }

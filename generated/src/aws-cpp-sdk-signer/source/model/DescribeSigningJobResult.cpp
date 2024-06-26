@@ -22,8 +22,8 @@ DescribeSigningJobResult::DescribeSigningJobResult() :
 {
 }
 
-DescribeSigningJobResult::DescribeSigningJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(SigningStatus::NOT_SET)
+DescribeSigningJobResult::DescribeSigningJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeSigningJobResult()
 {
   *this = result;
 }

@@ -23,8 +23,8 @@ DefaultSectionBasedLayoutConfiguration::DefaultSectionBasedLayoutConfiguration()
 {
 }
 
-DefaultSectionBasedLayoutConfiguration::DefaultSectionBasedLayoutConfiguration(JsonView jsonValue) : 
-    m_canvasSizeOptionsHasBeenSet(false)
+DefaultSectionBasedLayoutConfiguration::DefaultSectionBasedLayoutConfiguration(JsonView jsonValue)
+  : DefaultSectionBasedLayoutConfiguration()
 {
   *this = jsonValue;
 }

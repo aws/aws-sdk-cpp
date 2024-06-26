@@ -30,15 +30,8 @@ TaskTemplateMetadata::TaskTemplateMetadata() :
 {
 }
 
-TaskTemplateMetadata::TaskTemplateMetadata(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_status(TaskTemplateStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_createdTimeHasBeenSet(false)
+TaskTemplateMetadata::TaskTemplateMetadata(JsonView jsonValue)
+  : TaskTemplateMetadata()
 {
   *this = jsonValue;
 }

@@ -42,27 +42,8 @@ Backup::Backup() :
 {
 }
 
-Backup::Backup(JsonView jsonValue) : 
-    m_backupIdHasBeenSet(false),
-    m_lifecycle(BackupLifecycle::NOT_SET),
-    m_lifecycleHasBeenSet(false),
-    m_failureDetailsHasBeenSet(false),
-    m_type(BackupType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_progressPercent(0),
-    m_progressPercentHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_resourceARNHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_fileSystemHasBeenSet(false),
-    m_directoryInformationHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_sourceBackupIdHasBeenSet(false),
-    m_sourceBackupRegionHasBeenSet(false),
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_volumeHasBeenSet(false)
+Backup::Backup(JsonView jsonValue)
+  : Backup()
 {
   *this = jsonValue;
 }

@@ -27,12 +27,8 @@ HlsOutputSettings::HlsOutputSettings() :
 {
 }
 
-HlsOutputSettings::HlsOutputSettings(JsonView jsonValue) : 
-    m_h265PackagingType(HlsH265PackagingType::NOT_SET),
-    m_h265PackagingTypeHasBeenSet(false),
-    m_hlsSettingsHasBeenSet(false),
-    m_nameModifierHasBeenSet(false),
-    m_segmentModifierHasBeenSet(false)
+HlsOutputSettings::HlsOutputSettings(JsonView jsonValue)
+  : HlsOutputSettings()
 {
   *this = jsonValue;
 }

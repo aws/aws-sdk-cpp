@@ -24,10 +24,8 @@ GetQueueResult::GetQueueResult() :
 {
 }
 
-GetQueueResult::GetQueueResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_blockedReason(QueueBlockedReason::NOT_SET),
-    m_defaultBudgetAction(DefaultQueueBudgetAction::NOT_SET),
-    m_status(QueueStatus::NOT_SET)
+GetQueueResult::GetQueueResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetQueueResult()
 {
   *this = result;
 }

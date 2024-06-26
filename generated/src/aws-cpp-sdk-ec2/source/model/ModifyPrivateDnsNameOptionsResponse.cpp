@@ -22,8 +22,8 @@ ModifyPrivateDnsNameOptionsResponse::ModifyPrivateDnsNameOptionsResponse() :
 {
 }
 
-ModifyPrivateDnsNameOptionsResponse::ModifyPrivateDnsNameOptionsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_return(false)
+ModifyPrivateDnsNameOptionsResponse::ModifyPrivateDnsNameOptionsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : ModifyPrivateDnsNameOptionsResponse()
 {
   *this = result;
 }

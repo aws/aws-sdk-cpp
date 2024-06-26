@@ -24,9 +24,8 @@ Ec2Config::Ec2Config() :
 {
 }
 
-Ec2Config::Ec2Config(JsonView jsonValue) : 
-    m_subnetArnHasBeenSet(false),
-    m_securityGroupArnsHasBeenSet(false)
+Ec2Config::Ec2Config(JsonView jsonValue)
+  : Ec2Config()
 {
   *this = jsonValue;
 }

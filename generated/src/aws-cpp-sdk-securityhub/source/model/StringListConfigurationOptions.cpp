@@ -27,12 +27,8 @@ StringListConfigurationOptions::StringListConfigurationOptions() :
 {
 }
 
-StringListConfigurationOptions::StringListConfigurationOptions(JsonView jsonValue) : 
-    m_defaultValueHasBeenSet(false),
-    m_re2ExpressionHasBeenSet(false),
-    m_maxItems(0),
-    m_maxItemsHasBeenSet(false),
-    m_expressionDescriptionHasBeenSet(false)
+StringListConfigurationOptions::StringListConfigurationOptions(JsonView jsonValue)
+  : StringListConfigurationOptions()
 {
   *this = jsonValue;
 }

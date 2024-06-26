@@ -24,9 +24,8 @@ TLEEphemeris::TLEEphemeris() :
 {
 }
 
-TLEEphemeris::TLEEphemeris(JsonView jsonValue) : 
-    m_s3ObjectHasBeenSet(false),
-    m_tleDataHasBeenSet(false)
+TLEEphemeris::TLEEphemeris(JsonView jsonValue)
+  : TLEEphemeris()
 {
   *this = jsonValue;
 }

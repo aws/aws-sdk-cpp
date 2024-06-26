@@ -25,10 +25,8 @@ StepRunSummary::StepRunSummary() :
 {
 }
 
-StepRunSummary::StepRunSummary(JsonView jsonValue) : 
-    m_mainframeActionHasBeenSet(false),
-    m_compareActionHasBeenSet(false),
-    m_resourceActionHasBeenSet(false)
+StepRunSummary::StepRunSummary(JsonView jsonValue)
+  : StepRunSummary()
 {
   *this = jsonValue;
 }

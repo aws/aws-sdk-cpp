@@ -23,8 +23,8 @@ HeartbeatEvent::HeartbeatEvent() :
 {
 }
 
-HeartbeatEvent::HeartbeatEvent(JsonView jsonValue) : 
-    m_eventIdHasBeenSet(false)
+HeartbeatEvent::HeartbeatEvent(JsonView jsonValue)
+  : HeartbeatEvent()
 {
   *this = jsonValue;
 }

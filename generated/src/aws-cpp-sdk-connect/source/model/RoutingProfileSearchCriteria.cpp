@@ -25,10 +25,8 @@ RoutingProfileSearchCriteria::RoutingProfileSearchCriteria() :
 {
 }
 
-RoutingProfileSearchCriteria::RoutingProfileSearchCriteria(JsonView jsonValue) : 
-    m_orConditionsHasBeenSet(false),
-    m_andConditionsHasBeenSet(false),
-    m_stringConditionHasBeenSet(false)
+RoutingProfileSearchCriteria::RoutingProfileSearchCriteria(JsonView jsonValue)
+  : RoutingProfileSearchCriteria()
 {
   *this = jsonValue;
 }

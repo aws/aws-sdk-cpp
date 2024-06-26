@@ -22,8 +22,8 @@ DescribeConfigurationResult::DescribeConfigurationResult() :
 {
 }
 
-DescribeConfigurationResult::DescribeConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_state(ConfigurationState::NOT_SET)
+DescribeConfigurationResult::DescribeConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeConfigurationResult()
 {
   *this = result;
 }

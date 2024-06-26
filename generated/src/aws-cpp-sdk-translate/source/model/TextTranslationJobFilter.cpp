@@ -27,12 +27,8 @@ TextTranslationJobFilter::TextTranslationJobFilter() :
 {
 }
 
-TextTranslationJobFilter::TextTranslationJobFilter(JsonView jsonValue) : 
-    m_jobNameHasBeenSet(false),
-    m_jobStatus(JobStatus::NOT_SET),
-    m_jobStatusHasBeenSet(false),
-    m_submittedBeforeTimeHasBeenSet(false),
-    m_submittedAfterTimeHasBeenSet(false)
+TextTranslationJobFilter::TextTranslationJobFilter(JsonView jsonValue)
+  : TextTranslationJobFilter()
 {
   *this = jsonValue;
 }

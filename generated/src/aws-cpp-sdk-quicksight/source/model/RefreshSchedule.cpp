@@ -28,13 +28,8 @@ RefreshSchedule::RefreshSchedule() :
 {
 }
 
-RefreshSchedule::RefreshSchedule(JsonView jsonValue) : 
-    m_scheduleIdHasBeenSet(false),
-    m_scheduleFrequencyHasBeenSet(false),
-    m_startAfterDateTimeHasBeenSet(false),
-    m_refreshType(IngestionType::NOT_SET),
-    m_refreshTypeHasBeenSet(false),
-    m_arnHasBeenSet(false)
+RefreshSchedule::RefreshSchedule(JsonView jsonValue)
+  : RefreshSchedule()
 {
   *this = jsonValue;
 }

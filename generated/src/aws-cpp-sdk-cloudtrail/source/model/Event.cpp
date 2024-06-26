@@ -31,16 +31,8 @@ Event::Event() :
 {
 }
 
-Event::Event(JsonView jsonValue) : 
-    m_eventIdHasBeenSet(false),
-    m_eventNameHasBeenSet(false),
-    m_readOnlyHasBeenSet(false),
-    m_accessKeyIdHasBeenSet(false),
-    m_eventTimeHasBeenSet(false),
-    m_eventSourceHasBeenSet(false),
-    m_usernameHasBeenSet(false),
-    m_resourcesHasBeenSet(false),
-    m_cloudTrailEventHasBeenSet(false)
+Event::Event(JsonView jsonValue)
+  : Event()
 {
   *this = jsonValue;
 }

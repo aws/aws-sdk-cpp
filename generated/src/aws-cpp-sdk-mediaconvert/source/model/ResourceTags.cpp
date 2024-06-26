@@ -24,9 +24,8 @@ ResourceTags::ResourceTags() :
 {
 }
 
-ResourceTags::ResourceTags(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+ResourceTags::ResourceTags(JsonView jsonValue)
+  : ResourceTags()
 {
   *this = jsonValue;
 }

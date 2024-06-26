@@ -24,9 +24,8 @@ S3InputFormatConfig::S3InputFormatConfig() :
 {
 }
 
-S3InputFormatConfig::S3InputFormatConfig(JsonView jsonValue) : 
-    m_s3InputFileType(S3InputFileType::NOT_SET),
-    m_s3InputFileTypeHasBeenSet(false)
+S3InputFormatConfig::S3InputFormatConfig(JsonView jsonValue)
+  : S3InputFormatConfig()
 {
   *this = jsonValue;
 }

@@ -50,35 +50,8 @@ JobUpdate::JobUpdate() :
 {
 }
 
-JobUpdate::JobUpdate(JsonView jsonValue) : 
-    m_jobMode(JobMode::NOT_SET),
-    m_jobModeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_logUriHasBeenSet(false),
-    m_roleHasBeenSet(false),
-    m_executionPropertyHasBeenSet(false),
-    m_commandHasBeenSet(false),
-    m_defaultArgumentsHasBeenSet(false),
-    m_nonOverridableArgumentsHasBeenSet(false),
-    m_connectionsHasBeenSet(false),
-    m_maxRetries(0),
-    m_maxRetriesHasBeenSet(false),
-    m_timeout(0),
-    m_timeoutHasBeenSet(false),
-    m_maxCapacity(0.0),
-    m_maxCapacityHasBeenSet(false),
-    m_workerType(WorkerType::NOT_SET),
-    m_workerTypeHasBeenSet(false),
-    m_numberOfWorkers(0),
-    m_numberOfWorkersHasBeenSet(false),
-    m_securityConfigurationHasBeenSet(false),
-    m_notificationPropertyHasBeenSet(false),
-    m_glueVersionHasBeenSet(false),
-    m_codeGenConfigurationNodesHasBeenSet(false),
-    m_executionClass(ExecutionClass::NOT_SET),
-    m_executionClassHasBeenSet(false),
-    m_sourceControlDetailsHasBeenSet(false),
-    m_maintenanceWindowHasBeenSet(false)
+JobUpdate::JobUpdate(JsonView jsonValue)
+  : JobUpdate()
 {
   *this = jsonValue;
 }

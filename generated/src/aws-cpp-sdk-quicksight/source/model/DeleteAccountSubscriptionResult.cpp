@@ -22,8 +22,8 @@ DeleteAccountSubscriptionResult::DeleteAccountSubscriptionResult() :
 {
 }
 
-DeleteAccountSubscriptionResult::DeleteAccountSubscriptionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+DeleteAccountSubscriptionResult::DeleteAccountSubscriptionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeleteAccountSubscriptionResult()
 {
   *this = result;
 }

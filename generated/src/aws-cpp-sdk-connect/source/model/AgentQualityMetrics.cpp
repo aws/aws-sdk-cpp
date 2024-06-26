@@ -23,8 +23,8 @@ AgentQualityMetrics::AgentQualityMetrics() :
 {
 }
 
-AgentQualityMetrics::AgentQualityMetrics(JsonView jsonValue) : 
-    m_audioHasBeenSet(false)
+AgentQualityMetrics::AgentQualityMetrics(JsonView jsonValue)
+  : AgentQualityMetrics()
 {
   *this = jsonValue;
 }

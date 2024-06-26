@@ -23,8 +23,8 @@ TestSetDiscrepancyReportResourceTarget::TestSetDiscrepancyReportResourceTarget()
 {
 }
 
-TestSetDiscrepancyReportResourceTarget::TestSetDiscrepancyReportResourceTarget(JsonView jsonValue) : 
-    m_botAliasTargetHasBeenSet(false)
+TestSetDiscrepancyReportResourceTarget::TestSetDiscrepancyReportResourceTarget(JsonView jsonValue)
+  : TestSetDiscrepancyReportResourceTarget()
 {
   *this = jsonValue;
 }

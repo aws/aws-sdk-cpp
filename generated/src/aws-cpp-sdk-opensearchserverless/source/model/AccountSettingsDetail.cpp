@@ -23,8 +23,8 @@ AccountSettingsDetail::AccountSettingsDetail() :
 {
 }
 
-AccountSettingsDetail::AccountSettingsDetail(JsonView jsonValue) : 
-    m_capacityLimitsHasBeenSet(false)
+AccountSettingsDetail::AccountSettingsDetail(JsonView jsonValue)
+  : AccountSettingsDetail()
 {
   *this = jsonValue;
 }

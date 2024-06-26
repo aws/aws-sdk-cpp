@@ -24,9 +24,8 @@ SAMLIdp::SAMLIdp() :
 {
 }
 
-SAMLIdp::SAMLIdp(JsonView jsonValue) : 
-    m_metadataContentHasBeenSet(false),
-    m_entityIdHasBeenSet(false)
+SAMLIdp::SAMLIdp(JsonView jsonValue)
+  : SAMLIdp()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ LambdaConnectorProvisioningConfig::LambdaConnectorProvisioningConfig() :
 {
 }
 
-LambdaConnectorProvisioningConfig::LambdaConnectorProvisioningConfig(JsonView jsonValue) : 
-    m_lambdaArnHasBeenSet(false)
+LambdaConnectorProvisioningConfig::LambdaConnectorProvisioningConfig(JsonView jsonValue)
+  : LambdaConnectorProvisioningConfig()
 {
   *this = jsonValue;
 }

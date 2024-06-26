@@ -23,9 +23,8 @@ UpdateBotLocaleResult::UpdateBotLocaleResult() :
 {
 }
 
-UpdateBotLocaleResult::UpdateBotLocaleResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_nluIntentConfidenceThreshold(0.0),
-    m_botLocaleStatus(BotLocaleStatus::NOT_SET)
+UpdateBotLocaleResult::UpdateBotLocaleResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateBotLocaleResult()
 {
   *this = result;
 }

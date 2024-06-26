@@ -23,9 +23,8 @@ UpdateDomainNameResult::UpdateDomainNameResult() :
 {
 }
 
-UpdateDomainNameResult::UpdateDomainNameResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_domainNameStatus(DomainNameStatus::NOT_SET),
-    m_securityPolicy(SecurityPolicy::NOT_SET)
+UpdateDomainNameResult::UpdateDomainNameResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateDomainNameResult()
 {
   *this = result;
 }

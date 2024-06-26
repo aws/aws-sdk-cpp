@@ -43,28 +43,8 @@ Bundle::Bundle() :
 {
 }
 
-Bundle::Bundle(JsonView jsonValue) : 
-    m_price(0.0),
-    m_priceHasBeenSet(false),
-    m_cpuCount(0),
-    m_cpuCountHasBeenSet(false),
-    m_diskSizeInGb(0),
-    m_diskSizeInGbHasBeenSet(false),
-    m_bundleIdHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_isActive(false),
-    m_isActiveHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_power(0),
-    m_powerHasBeenSet(false),
-    m_ramSizeInGb(0.0),
-    m_ramSizeInGbHasBeenSet(false),
-    m_transferPerMonthInGb(0),
-    m_transferPerMonthInGbHasBeenSet(false),
-    m_supportedPlatformsHasBeenSet(false),
-    m_supportedAppCategoriesHasBeenSet(false),
-    m_publicIpv4AddressCount(0),
-    m_publicIpv4AddressCountHasBeenSet(false)
+Bundle::Bundle(JsonView jsonValue)
+  : Bundle()
 {
   *this = jsonValue;
 }

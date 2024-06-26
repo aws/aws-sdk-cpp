@@ -29,14 +29,8 @@ ScanSummary::ScanSummary() :
 {
 }
 
-ScanSummary::ScanSummary(JsonView jsonValue) : 
-    m_createdAtHasBeenSet(false),
-    m_runIdHasBeenSet(false),
-    m_scanNameHasBeenSet(false),
-    m_scanNameArnHasBeenSet(false),
-    m_scanState(ScanState::NOT_SET),
-    m_scanStateHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+ScanSummary::ScanSummary(JsonView jsonValue)
+  : ScanSummary()
 {
   *this = jsonValue;
 }

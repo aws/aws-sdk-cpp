@@ -32,17 +32,8 @@ RepositoryAssociationSummary::RepositoryAssociationSummary() :
 {
 }
 
-RepositoryAssociationSummary::RepositoryAssociationSummary(JsonView jsonValue) : 
-    m_associationArnHasBeenSet(false),
-    m_connectionArnHasBeenSet(false),
-    m_lastUpdatedTimeStampHasBeenSet(false),
-    m_associationIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_ownerHasBeenSet(false),
-    m_providerType(ProviderType::NOT_SET),
-    m_providerTypeHasBeenSet(false),
-    m_state(RepositoryAssociationState::NOT_SET),
-    m_stateHasBeenSet(false)
+RepositoryAssociationSummary::RepositoryAssociationSummary(JsonView jsonValue)
+  : RepositoryAssociationSummary()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ SnapshotFile::SnapshotFile() :
 {
 }
 
-SnapshotFile::SnapshotFile(JsonView jsonValue) : 
-    m_sheetSelectionsHasBeenSet(false),
-    m_formatType(SnapshotFileFormatType::NOT_SET),
-    m_formatTypeHasBeenSet(false)
+SnapshotFile::SnapshotFile(JsonView jsonValue)
+  : SnapshotFile()
 {
   *this = jsonValue;
 }

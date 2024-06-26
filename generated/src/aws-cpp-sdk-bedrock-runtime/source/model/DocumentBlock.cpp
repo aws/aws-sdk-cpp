@@ -26,11 +26,8 @@ DocumentBlock::DocumentBlock() :
 {
 }
 
-DocumentBlock::DocumentBlock(JsonView jsonValue) : 
-    m_format(DocumentFormat::NOT_SET),
-    m_formatHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_sourceHasBeenSet(false)
+DocumentBlock::DocumentBlock(JsonView jsonValue)
+  : DocumentBlock()
 {
   *this = jsonValue;
 }

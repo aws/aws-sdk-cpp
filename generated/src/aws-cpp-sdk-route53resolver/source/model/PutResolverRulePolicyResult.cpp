@@ -22,8 +22,8 @@ PutResolverRulePolicyResult::PutResolverRulePolicyResult() :
 {
 }
 
-PutResolverRulePolicyResult::PutResolverRulePolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_returnValue(false)
+PutResolverRulePolicyResult::PutResolverRulePolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : PutResolverRulePolicyResult()
 {
   *this = result;
 }

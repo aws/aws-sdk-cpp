@@ -64,49 +64,8 @@ Environment::Environment() :
 {
 }
 
-Environment::Environment(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_status(EnvironmentStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_webserverUrlHasBeenSet(false),
-    m_executionRoleArnHasBeenSet(false),
-    m_serviceRoleArnHasBeenSet(false),
-    m_kmsKeyHasBeenSet(false),
-    m_airflowVersionHasBeenSet(false),
-    m_sourceBucketArnHasBeenSet(false),
-    m_dagS3PathHasBeenSet(false),
-    m_pluginsS3PathHasBeenSet(false),
-    m_pluginsS3ObjectVersionHasBeenSet(false),
-    m_requirementsS3PathHasBeenSet(false),
-    m_requirementsS3ObjectVersionHasBeenSet(false),
-    m_startupScriptS3PathHasBeenSet(false),
-    m_startupScriptS3ObjectVersionHasBeenSet(false),
-    m_airflowConfigurationOptionsHasBeenSet(false),
-    m_environmentClassHasBeenSet(false),
-    m_maxWorkers(0),
-    m_maxWorkersHasBeenSet(false),
-    m_networkConfigurationHasBeenSet(false),
-    m_loggingConfigurationHasBeenSet(false),
-    m_lastUpdateHasBeenSet(false),
-    m_weeklyMaintenanceWindowStartHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_webserverAccessMode(WebserverAccessMode::NOT_SET),
-    m_webserverAccessModeHasBeenSet(false),
-    m_minWorkers(0),
-    m_minWorkersHasBeenSet(false),
-    m_schedulers(0),
-    m_schedulersHasBeenSet(false),
-    m_webserverVpcEndpointServiceHasBeenSet(false),
-    m_databaseVpcEndpointServiceHasBeenSet(false),
-    m_celeryExecutorQueueHasBeenSet(false),
-    m_endpointManagement(EndpointManagement::NOT_SET),
-    m_endpointManagementHasBeenSet(false),
-    m_minWebservers(0),
-    m_minWebserversHasBeenSet(false),
-    m_maxWebservers(0),
-    m_maxWebserversHasBeenSet(false)
+Environment::Environment(JsonView jsonValue)
+  : Environment()
 {
   *this = jsonValue;
 }

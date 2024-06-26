@@ -22,8 +22,8 @@ GetMergeConflictsResult::GetMergeConflictsResult() :
 {
 }
 
-GetMergeConflictsResult::GetMergeConflictsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_mergeable(false)
+GetMergeConflictsResult::GetMergeConflictsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetMergeConflictsResult()
 {
   *this = result;
 }

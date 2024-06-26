@@ -43,26 +43,8 @@ FlowLog::FlowLog() :
 {
 }
 
-FlowLog::FlowLog(const XmlNode& xmlNode) : 
-    m_creationTimeHasBeenSet(false),
-    m_deliverLogsErrorMessageHasBeenSet(false),
-    m_deliverLogsPermissionArnHasBeenSet(false),
-    m_deliverCrossAccountRoleHasBeenSet(false),
-    m_deliverLogsStatusHasBeenSet(false),
-    m_flowLogIdHasBeenSet(false),
-    m_flowLogStatusHasBeenSet(false),
-    m_logGroupNameHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_trafficType(TrafficType::NOT_SET),
-    m_trafficTypeHasBeenSet(false),
-    m_logDestinationType(LogDestinationType::NOT_SET),
-    m_logDestinationTypeHasBeenSet(false),
-    m_logDestinationHasBeenSet(false),
-    m_logFormatHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_maxAggregationInterval(0),
-    m_maxAggregationIntervalHasBeenSet(false),
-    m_destinationOptionsHasBeenSet(false)
+FlowLog::FlowLog(const XmlNode& xmlNode)
+  : FlowLog()
 {
   *this = xmlNode;
 }

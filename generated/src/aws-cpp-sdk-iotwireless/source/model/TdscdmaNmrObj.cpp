@@ -32,17 +32,8 @@ TdscdmaNmrObj::TdscdmaNmrObj() :
 {
 }
 
-TdscdmaNmrObj::TdscdmaNmrObj(JsonView jsonValue) : 
-    m_uarfcn(0),
-    m_uarfcnHasBeenSet(false),
-    m_cellParams(0),
-    m_cellParamsHasBeenSet(false),
-    m_utranCid(0),
-    m_utranCidHasBeenSet(false),
-    m_rscp(0),
-    m_rscpHasBeenSet(false),
-    m_pathLoss(0),
-    m_pathLossHasBeenSet(false)
+TdscdmaNmrObj::TdscdmaNmrObj(JsonView jsonValue)
+  : TdscdmaNmrObj()
 {
   *this = jsonValue;
 }

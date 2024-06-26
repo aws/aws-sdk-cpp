@@ -31,16 +31,8 @@ AwsElasticsearchDomainServiceSoftwareOptions::AwsElasticsearchDomainServiceSoftw
 {
 }
 
-AwsElasticsearchDomainServiceSoftwareOptions::AwsElasticsearchDomainServiceSoftwareOptions(JsonView jsonValue) : 
-    m_automatedUpdateDateHasBeenSet(false),
-    m_cancellable(false),
-    m_cancellableHasBeenSet(false),
-    m_currentVersionHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_newVersionHasBeenSet(false),
-    m_updateAvailable(false),
-    m_updateAvailableHasBeenSet(false),
-    m_updateStatusHasBeenSet(false)
+AwsElasticsearchDomainServiceSoftwareOptions::AwsElasticsearchDomainServiceSoftwareOptions(JsonView jsonValue)
+  : AwsElasticsearchDomainServiceSoftwareOptions()
 {
   *this = jsonValue;
 }

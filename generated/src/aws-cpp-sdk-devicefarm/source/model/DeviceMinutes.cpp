@@ -28,13 +28,8 @@ DeviceMinutes::DeviceMinutes() :
 {
 }
 
-DeviceMinutes::DeviceMinutes(JsonView jsonValue) : 
-    m_total(0.0),
-    m_totalHasBeenSet(false),
-    m_metered(0.0),
-    m_meteredHasBeenSet(false),
-    m_unmetered(0.0),
-    m_unmeteredHasBeenSet(false)
+DeviceMinutes::DeviceMinutes(JsonView jsonValue)
+  : DeviceMinutes()
 {
   *this = jsonValue;
 }

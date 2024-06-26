@@ -22,8 +22,8 @@ ResetFpgaImageAttributeResponse::ResetFpgaImageAttributeResponse() :
 {
 }
 
-ResetFpgaImageAttributeResponse::ResetFpgaImageAttributeResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_return(false)
+ResetFpgaImageAttributeResponse::ResetFpgaImageAttributeResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : ResetFpgaImageAttributeResponse()
 {
   *this = result;
 }

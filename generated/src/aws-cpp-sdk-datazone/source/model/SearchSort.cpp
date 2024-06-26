@@ -25,10 +25,8 @@ SearchSort::SearchSort() :
 {
 }
 
-SearchSort::SearchSort(JsonView jsonValue) : 
-    m_attributeHasBeenSet(false),
-    m_order(SortOrder::NOT_SET),
-    m_orderHasBeenSet(false)
+SearchSort::SearchSort(JsonView jsonValue)
+  : SearchSort()
 {
   *this = jsonValue;
 }

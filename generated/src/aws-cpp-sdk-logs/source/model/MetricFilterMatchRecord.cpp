@@ -26,11 +26,8 @@ MetricFilterMatchRecord::MetricFilterMatchRecord() :
 {
 }
 
-MetricFilterMatchRecord::MetricFilterMatchRecord(JsonView jsonValue) : 
-    m_eventNumber(0),
-    m_eventNumberHasBeenSet(false),
-    m_eventMessageHasBeenSet(false),
-    m_extractedValuesHasBeenSet(false)
+MetricFilterMatchRecord::MetricFilterMatchRecord(JsonView jsonValue)
+  : MetricFilterMatchRecord()
 {
   *this = jsonValue;
 }

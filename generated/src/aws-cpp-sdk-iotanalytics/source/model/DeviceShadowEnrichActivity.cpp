@@ -27,12 +27,8 @@ DeviceShadowEnrichActivity::DeviceShadowEnrichActivity() :
 {
 }
 
-DeviceShadowEnrichActivity::DeviceShadowEnrichActivity(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_attributeHasBeenSet(false),
-    m_thingNameHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_nextHasBeenSet(false)
+DeviceShadowEnrichActivity::DeviceShadowEnrichActivity(JsonView jsonValue)
+  : DeviceShadowEnrichActivity()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ ResourceState::ResourceState() :
 {
 }
 
-ResourceState::ResourceState(JsonView jsonValue) : 
-    m_status(ResourceStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+ResourceState::ResourceState(JsonView jsonValue)
+  : ResourceState()
 {
   *this = jsonValue;
 }

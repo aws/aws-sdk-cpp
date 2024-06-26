@@ -28,11 +28,8 @@ NetworkInterfaceCount::NetworkInterfaceCount() :
 {
 }
 
-NetworkInterfaceCount::NetworkInterfaceCount(const XmlNode& xmlNode) : 
-    m_min(0),
-    m_minHasBeenSet(false),
-    m_max(0),
-    m_maxHasBeenSet(false)
+NetworkInterfaceCount::NetworkInterfaceCount(const XmlNode& xmlNode)
+  : NetworkInterfaceCount()
 {
   *this = xmlNode;
 }

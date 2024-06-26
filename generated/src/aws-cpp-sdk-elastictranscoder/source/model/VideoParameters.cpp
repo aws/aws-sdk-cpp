@@ -37,22 +37,8 @@ VideoParameters::VideoParameters() :
 {
 }
 
-VideoParameters::VideoParameters(JsonView jsonValue) : 
-    m_codecHasBeenSet(false),
-    m_codecOptionsHasBeenSet(false),
-    m_keyframesMaxDistHasBeenSet(false),
-    m_fixedGOPHasBeenSet(false),
-    m_bitRateHasBeenSet(false),
-    m_frameRateHasBeenSet(false),
-    m_maxFrameRateHasBeenSet(false),
-    m_resolutionHasBeenSet(false),
-    m_aspectRatioHasBeenSet(false),
-    m_maxWidthHasBeenSet(false),
-    m_maxHeightHasBeenSet(false),
-    m_displayAspectRatioHasBeenSet(false),
-    m_sizingPolicyHasBeenSet(false),
-    m_paddingPolicyHasBeenSet(false),
-    m_watermarksHasBeenSet(false)
+VideoParameters::VideoParameters(JsonView jsonValue)
+  : VideoParameters()
 {
   *this = jsonValue;
 }

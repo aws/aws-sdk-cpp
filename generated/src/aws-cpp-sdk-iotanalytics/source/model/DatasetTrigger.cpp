@@ -24,9 +24,8 @@ DatasetTrigger::DatasetTrigger() :
 {
 }
 
-DatasetTrigger::DatasetTrigger(JsonView jsonValue) : 
-    m_scheduleHasBeenSet(false),
-    m_datasetHasBeenSet(false)
+DatasetTrigger::DatasetTrigger(JsonView jsonValue)
+  : DatasetTrigger()
 {
   *this = jsonValue;
 }

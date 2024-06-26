@@ -31,16 +31,8 @@ Order::Order() :
 {
 }
 
-Order::Order(JsonView jsonValue) : 
-    m_acknowledgmentStatus(AcknowledgmentStatus::NOT_SET),
-    m_acknowledgmentStatusHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_networkArnHasBeenSet(false),
-    m_networkSiteArnHasBeenSet(false),
-    m_orderArnHasBeenSet(false),
-    m_orderedResourcesHasBeenSet(false),
-    m_shippingAddressHasBeenSet(false),
-    m_trackingInformationHasBeenSet(false)
+Order::Order(JsonView jsonValue)
+  : Order()
 {
   *this = jsonValue;
 }

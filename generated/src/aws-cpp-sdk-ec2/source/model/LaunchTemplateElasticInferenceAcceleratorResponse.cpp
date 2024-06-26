@@ -27,10 +27,8 @@ LaunchTemplateElasticInferenceAcceleratorResponse::LaunchTemplateElasticInferenc
 {
 }
 
-LaunchTemplateElasticInferenceAcceleratorResponse::LaunchTemplateElasticInferenceAcceleratorResponse(const XmlNode& xmlNode) : 
-    m_typeHasBeenSet(false),
-    m_count(0),
-    m_countHasBeenSet(false)
+LaunchTemplateElasticInferenceAcceleratorResponse::LaunchTemplateElasticInferenceAcceleratorResponse(const XmlNode& xmlNode)
+  : LaunchTemplateElasticInferenceAcceleratorResponse()
 {
   *this = xmlNode;
 }

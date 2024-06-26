@@ -23,8 +23,8 @@ IamResources::IamResources() :
 {
 }
 
-IamResources::IamResources(JsonView jsonValue) : 
-    m_roleArnHasBeenSet(false)
+IamResources::IamResources(JsonView jsonValue)
+  : IamResources()
 {
   *this = jsonValue;
 }

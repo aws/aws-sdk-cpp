@@ -25,10 +25,8 @@ ExternalWorkflowExecutionCancelRequestedEventAttributes::ExternalWorkflowExecuti
 {
 }
 
-ExternalWorkflowExecutionCancelRequestedEventAttributes::ExternalWorkflowExecutionCancelRequestedEventAttributes(JsonView jsonValue) : 
-    m_workflowExecutionHasBeenSet(false),
-    m_initiatedEventId(0),
-    m_initiatedEventIdHasBeenSet(false)
+ExternalWorkflowExecutionCancelRequestedEventAttributes::ExternalWorkflowExecutionCancelRequestedEventAttributes(JsonView jsonValue)
+  : ExternalWorkflowExecutionCancelRequestedEventAttributes()
 {
   *this = jsonValue;
 }

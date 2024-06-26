@@ -32,17 +32,8 @@ AddMediaStreamRequest::AddMediaStreamRequest() :
 {
 }
 
-AddMediaStreamRequest::AddMediaStreamRequest(JsonView jsonValue) : 
-    m_attributesHasBeenSet(false),
-    m_clockRate(0),
-    m_clockRateHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_mediaStreamId(0),
-    m_mediaStreamIdHasBeenSet(false),
-    m_mediaStreamNameHasBeenSet(false),
-    m_mediaStreamType(MediaStreamType::NOT_SET),
-    m_mediaStreamTypeHasBeenSet(false),
-    m_videoFormatHasBeenSet(false)
+AddMediaStreamRequest::AddMediaStreamRequest(JsonView jsonValue)
+  : AddMediaStreamRequest()
 {
   *this = jsonValue;
 }

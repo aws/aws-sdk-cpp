@@ -24,9 +24,8 @@ FileSystemEndpoint::FileSystemEndpoint() :
 {
 }
 
-FileSystemEndpoint::FileSystemEndpoint(JsonView jsonValue) : 
-    m_dNSNameHasBeenSet(false),
-    m_ipAddressesHasBeenSet(false)
+FileSystemEndpoint::FileSystemEndpoint(JsonView jsonValue)
+  : FileSystemEndpoint()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ ServerCertificateConfig::ServerCertificateConfig() :
 {
 }
 
-ServerCertificateConfig::ServerCertificateConfig(JsonView jsonValue) : 
-    m_enableOCSPCheck(false),
-    m_enableOCSPCheckHasBeenSet(false)
+ServerCertificateConfig::ServerCertificateConfig(JsonView jsonValue)
+  : ServerCertificateConfig()
 {
   *this = jsonValue;
 }

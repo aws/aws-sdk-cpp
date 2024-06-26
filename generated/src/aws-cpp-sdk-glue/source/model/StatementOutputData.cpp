@@ -23,8 +23,8 @@ StatementOutputData::StatementOutputData() :
 {
 }
 
-StatementOutputData::StatementOutputData(JsonView jsonValue) : 
-    m_textPlainHasBeenSet(false)
+StatementOutputData::StatementOutputData(JsonView jsonValue)
+  : StatementOutputData()
 {
   *this = jsonValue;
 }

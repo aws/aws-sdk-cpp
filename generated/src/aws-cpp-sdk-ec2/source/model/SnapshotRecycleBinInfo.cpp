@@ -29,12 +29,8 @@ SnapshotRecycleBinInfo::SnapshotRecycleBinInfo() :
 {
 }
 
-SnapshotRecycleBinInfo::SnapshotRecycleBinInfo(const XmlNode& xmlNode) : 
-    m_snapshotIdHasBeenSet(false),
-    m_recycleBinEnterTimeHasBeenSet(false),
-    m_recycleBinExitTimeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_volumeIdHasBeenSet(false)
+SnapshotRecycleBinInfo::SnapshotRecycleBinInfo(const XmlNode& xmlNode)
+  : SnapshotRecycleBinInfo()
 {
   *this = xmlNode;
 }

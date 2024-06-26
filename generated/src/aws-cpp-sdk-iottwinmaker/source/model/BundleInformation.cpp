@@ -25,10 +25,8 @@ BundleInformation::BundleInformation() :
 {
 }
 
-BundleInformation::BundleInformation(JsonView jsonValue) : 
-    m_bundleNamesHasBeenSet(false),
-    m_pricingTier(PricingTier::NOT_SET),
-    m_pricingTierHasBeenSet(false)
+BundleInformation::BundleInformation(JsonView jsonValue)
+  : BundleInformation()
 {
   *this = jsonValue;
 }

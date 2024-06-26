@@ -23,8 +23,8 @@ RegisteredUserQSearchBarEmbeddingConfiguration::RegisteredUserQSearchBarEmbeddin
 {
 }
 
-RegisteredUserQSearchBarEmbeddingConfiguration::RegisteredUserQSearchBarEmbeddingConfiguration(JsonView jsonValue) : 
-    m_initialTopicIdHasBeenSet(false)
+RegisteredUserQSearchBarEmbeddingConfiguration::RegisteredUserQSearchBarEmbeddingConfiguration(JsonView jsonValue)
+  : RegisteredUserQSearchBarEmbeddingConfiguration()
 {
   *this = jsonValue;
 }

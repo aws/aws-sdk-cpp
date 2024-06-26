@@ -25,10 +25,8 @@ MsSmoothOutputSettings::MsSmoothOutputSettings() :
 {
 }
 
-MsSmoothOutputSettings::MsSmoothOutputSettings(JsonView jsonValue) : 
-    m_h265PackagingType(MsSmoothH265PackagingType::NOT_SET),
-    m_h265PackagingTypeHasBeenSet(false),
-    m_nameModifierHasBeenSet(false)
+MsSmoothOutputSettings::MsSmoothOutputSettings(JsonView jsonValue)
+  : MsSmoothOutputSettings()
 {
   *this = jsonValue;
 }

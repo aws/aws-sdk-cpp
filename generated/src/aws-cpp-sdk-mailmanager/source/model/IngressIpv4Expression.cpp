@@ -26,11 +26,8 @@ IngressIpv4Expression::IngressIpv4Expression() :
 {
 }
 
-IngressIpv4Expression::IngressIpv4Expression(JsonView jsonValue) : 
-    m_evaluateHasBeenSet(false),
-    m_operator(IngressIpOperator::NOT_SET),
-    m_operatorHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+IngressIpv4Expression::IngressIpv4Expression(JsonView jsonValue)
+  : IngressIpv4Expression()
 {
   *this = jsonValue;
 }

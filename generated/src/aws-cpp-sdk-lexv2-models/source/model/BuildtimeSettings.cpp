@@ -24,9 +24,8 @@ BuildtimeSettings::BuildtimeSettings() :
 {
 }
 
-BuildtimeSettings::BuildtimeSettings(JsonView jsonValue) : 
-    m_descriptiveBotBuilderHasBeenSet(false),
-    m_sampleUtteranceGenerationHasBeenSet(false)
+BuildtimeSettings::BuildtimeSettings(JsonView jsonValue)
+  : BuildtimeSettings()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ InputSchemaUpdate::InputSchemaUpdate() :
 {
 }
 
-InputSchemaUpdate::InputSchemaUpdate(JsonView jsonValue) : 
-    m_recordFormatUpdateHasBeenSet(false),
-    m_recordEncodingUpdateHasBeenSet(false),
-    m_recordColumnUpdatesHasBeenSet(false)
+InputSchemaUpdate::InputSchemaUpdate(JsonView jsonValue)
+  : InputSchemaUpdate()
 {
   *this = jsonValue;
 }

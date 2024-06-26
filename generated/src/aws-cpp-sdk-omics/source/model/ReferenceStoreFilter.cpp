@@ -25,10 +25,8 @@ ReferenceStoreFilter::ReferenceStoreFilter() :
 {
 }
 
-ReferenceStoreFilter::ReferenceStoreFilter(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_createdAfterHasBeenSet(false),
-    m_createdBeforeHasBeenSet(false)
+ReferenceStoreFilter::ReferenceStoreFilter(JsonView jsonValue)
+  : ReferenceStoreFilter()
 {
   *this = jsonValue;
 }

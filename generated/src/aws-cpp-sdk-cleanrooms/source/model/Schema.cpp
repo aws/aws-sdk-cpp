@@ -37,22 +37,8 @@ Schema::Schema() :
 {
 }
 
-Schema::Schema(JsonView jsonValue) : 
-    m_columnsHasBeenSet(false),
-    m_partitionKeysHasBeenSet(false),
-    m_analysisRuleTypesHasBeenSet(false),
-    m_analysisMethod(AnalysisMethod::NOT_SET),
-    m_analysisMethodHasBeenSet(false),
-    m_creatorAccountIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_collaborationIdHasBeenSet(false),
-    m_collaborationArnHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false),
-    m_type(SchemaType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_schemaStatusDetailsHasBeenSet(false)
+Schema::Schema(JsonView jsonValue)
+  : Schema()
 {
   *this = jsonValue;
 }

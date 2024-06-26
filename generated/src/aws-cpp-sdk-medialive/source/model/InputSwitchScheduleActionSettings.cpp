@@ -25,10 +25,8 @@ InputSwitchScheduleActionSettings::InputSwitchScheduleActionSettings() :
 {
 }
 
-InputSwitchScheduleActionSettings::InputSwitchScheduleActionSettings(JsonView jsonValue) : 
-    m_inputAttachmentNameReferenceHasBeenSet(false),
-    m_inputClippingSettingsHasBeenSet(false),
-    m_urlPathHasBeenSet(false)
+InputSwitchScheduleActionSettings::InputSwitchScheduleActionSettings(JsonView jsonValue)
+  : InputSwitchScheduleActionSettings()
 {
   *this = jsonValue;
 }

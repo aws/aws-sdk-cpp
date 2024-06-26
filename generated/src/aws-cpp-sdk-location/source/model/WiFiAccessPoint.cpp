@@ -25,10 +25,8 @@ WiFiAccessPoint::WiFiAccessPoint() :
 {
 }
 
-WiFiAccessPoint::WiFiAccessPoint(JsonView jsonValue) : 
-    m_macAddressHasBeenSet(false),
-    m_rss(0),
-    m_rssHasBeenSet(false)
+WiFiAccessPoint::WiFiAccessPoint(JsonView jsonValue)
+  : WiFiAccessPoint()
 {
   *this = jsonValue;
 }

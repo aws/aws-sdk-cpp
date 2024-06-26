@@ -67,52 +67,8 @@ TrainingJob::TrainingJob() :
 {
 }
 
-TrainingJob::TrainingJob(JsonView jsonValue) : 
-    m_trainingJobNameHasBeenSet(false),
-    m_trainingJobArnHasBeenSet(false),
-    m_tuningJobArnHasBeenSet(false),
-    m_labelingJobArnHasBeenSet(false),
-    m_autoMLJobArnHasBeenSet(false),
-    m_modelArtifactsHasBeenSet(false),
-    m_trainingJobStatus(TrainingJobStatus::NOT_SET),
-    m_trainingJobStatusHasBeenSet(false),
-    m_secondaryStatus(SecondaryStatus::NOT_SET),
-    m_secondaryStatusHasBeenSet(false),
-    m_failureReasonHasBeenSet(false),
-    m_hyperParametersHasBeenSet(false),
-    m_algorithmSpecificationHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_inputDataConfigHasBeenSet(false),
-    m_outputDataConfigHasBeenSet(false),
-    m_resourceConfigHasBeenSet(false),
-    m_vpcConfigHasBeenSet(false),
-    m_stoppingConditionHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_trainingStartTimeHasBeenSet(false),
-    m_trainingEndTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_secondaryStatusTransitionsHasBeenSet(false),
-    m_finalMetricDataListHasBeenSet(false),
-    m_enableNetworkIsolation(false),
-    m_enableNetworkIsolationHasBeenSet(false),
-    m_enableInterContainerTrafficEncryption(false),
-    m_enableInterContainerTrafficEncryptionHasBeenSet(false),
-    m_enableManagedSpotTraining(false),
-    m_enableManagedSpotTrainingHasBeenSet(false),
-    m_checkpointConfigHasBeenSet(false),
-    m_trainingTimeInSeconds(0),
-    m_trainingTimeInSecondsHasBeenSet(false),
-    m_billableTimeInSeconds(0),
-    m_billableTimeInSecondsHasBeenSet(false),
-    m_debugHookConfigHasBeenSet(false),
-    m_experimentConfigHasBeenSet(false),
-    m_debugRuleConfigurationsHasBeenSet(false),
-    m_tensorBoardOutputConfigHasBeenSet(false),
-    m_debugRuleEvaluationStatusesHasBeenSet(false),
-    m_profilerConfigHasBeenSet(false),
-    m_environmentHasBeenSet(false),
-    m_retryStrategyHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+TrainingJob::TrainingJob(JsonView jsonValue)
+  : TrainingJob()
 {
   *this = jsonValue;
 }

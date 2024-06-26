@@ -35,20 +35,8 @@ SourceTableDetails::SourceTableDetails() :
 {
 }
 
-SourceTableDetails::SourceTableDetails(JsonView jsonValue) : 
-    m_tableNameHasBeenSet(false),
-    m_tableIdHasBeenSet(false),
-    m_tableArnHasBeenSet(false),
-    m_tableSizeBytes(0),
-    m_tableSizeBytesHasBeenSet(false),
-    m_keySchemaHasBeenSet(false),
-    m_tableCreationDateTimeHasBeenSet(false),
-    m_provisionedThroughputHasBeenSet(false),
-    m_onDemandThroughputHasBeenSet(false),
-    m_itemCount(0),
-    m_itemCountHasBeenSet(false),
-    m_billingMode(BillingMode::NOT_SET),
-    m_billingModeHasBeenSet(false)
+SourceTableDetails::SourceTableDetails(JsonView jsonValue)
+  : SourceTableDetails()
 {
   *this = jsonValue;
 }

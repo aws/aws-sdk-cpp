@@ -23,8 +23,8 @@ RoutingProfileSearchFilter::RoutingProfileSearchFilter() :
 {
 }
 
-RoutingProfileSearchFilter::RoutingProfileSearchFilter(JsonView jsonValue) : 
-    m_tagFilterHasBeenSet(false)
+RoutingProfileSearchFilter::RoutingProfileSearchFilter(JsonView jsonValue)
+  : RoutingProfileSearchFilter()
 {
   *this = jsonValue;
 }

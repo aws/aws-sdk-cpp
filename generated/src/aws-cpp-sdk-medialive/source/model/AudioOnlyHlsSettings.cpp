@@ -28,13 +28,8 @@ AudioOnlyHlsSettings::AudioOnlyHlsSettings() :
 {
 }
 
-AudioOnlyHlsSettings::AudioOnlyHlsSettings(JsonView jsonValue) : 
-    m_audioGroupIdHasBeenSet(false),
-    m_audioOnlyImageHasBeenSet(false),
-    m_audioTrackType(AudioOnlyHlsTrackType::NOT_SET),
-    m_audioTrackTypeHasBeenSet(false),
-    m_segmentType(AudioOnlyHlsSegmentType::NOT_SET),
-    m_segmentTypeHasBeenSet(false)
+AudioOnlyHlsSettings::AudioOnlyHlsSettings(JsonView jsonValue)
+  : AudioOnlyHlsSettings()
 {
   *this = jsonValue;
 }

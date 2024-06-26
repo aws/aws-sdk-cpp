@@ -30,15 +30,8 @@ ContactChannel::ContactChannel() :
 {
 }
 
-ContactChannel::ContactChannel(JsonView jsonValue) : 
-    m_contactChannelArnHasBeenSet(false),
-    m_contactArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_type(ChannelType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_deliveryAddressHasBeenSet(false),
-    m_activationStatus(ActivationStatus::NOT_SET),
-    m_activationStatusHasBeenSet(false)
+ContactChannel::ContactChannel(JsonView jsonValue)
+  : ContactChannel()
 {
   *this = jsonValue;
 }

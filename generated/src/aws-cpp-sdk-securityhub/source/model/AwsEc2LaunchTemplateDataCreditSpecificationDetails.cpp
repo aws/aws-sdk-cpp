@@ -23,8 +23,8 @@ AwsEc2LaunchTemplateDataCreditSpecificationDetails::AwsEc2LaunchTemplateDataCred
 {
 }
 
-AwsEc2LaunchTemplateDataCreditSpecificationDetails::AwsEc2LaunchTemplateDataCreditSpecificationDetails(JsonView jsonValue) : 
-    m_cpuCreditsHasBeenSet(false)
+AwsEc2LaunchTemplateDataCreditSpecificationDetails::AwsEc2LaunchTemplateDataCreditSpecificationDetails(JsonView jsonValue)
+  : AwsEc2LaunchTemplateDataCreditSpecificationDetails()
 {
   *this = jsonValue;
 }

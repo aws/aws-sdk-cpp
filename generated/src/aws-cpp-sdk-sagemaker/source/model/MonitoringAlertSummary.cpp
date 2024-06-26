@@ -32,17 +32,8 @@ MonitoringAlertSummary::MonitoringAlertSummary() :
 {
 }
 
-MonitoringAlertSummary::MonitoringAlertSummary(JsonView jsonValue) : 
-    m_monitoringAlertNameHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_alertStatus(MonitoringAlertStatus::NOT_SET),
-    m_alertStatusHasBeenSet(false),
-    m_datapointsToAlert(0),
-    m_datapointsToAlertHasBeenSet(false),
-    m_evaluationPeriod(0),
-    m_evaluationPeriodHasBeenSet(false),
-    m_actionsHasBeenSet(false)
+MonitoringAlertSummary::MonitoringAlertSummary(JsonView jsonValue)
+  : MonitoringAlertSummary()
 {
   *this = jsonValue;
 }

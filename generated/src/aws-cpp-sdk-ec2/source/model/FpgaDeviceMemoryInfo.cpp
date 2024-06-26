@@ -26,9 +26,8 @@ FpgaDeviceMemoryInfo::FpgaDeviceMemoryInfo() :
 {
 }
 
-FpgaDeviceMemoryInfo::FpgaDeviceMemoryInfo(const XmlNode& xmlNode) : 
-    m_sizeInMiB(0),
-    m_sizeInMiBHasBeenSet(false)
+FpgaDeviceMemoryInfo::FpgaDeviceMemoryInfo(const XmlNode& xmlNode)
+  : FpgaDeviceMemoryInfo()
 {
   *this = xmlNode;
 }

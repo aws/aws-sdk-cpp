@@ -23,8 +23,8 @@ ClientCertAuthSettings::ClientCertAuthSettings() :
 {
 }
 
-ClientCertAuthSettings::ClientCertAuthSettings(JsonView jsonValue) : 
-    m_oCSPUrlHasBeenSet(false)
+ClientCertAuthSettings::ClientCertAuthSettings(JsonView jsonValue)
+  : ClientCertAuthSettings()
 {
   *this = jsonValue;
 }

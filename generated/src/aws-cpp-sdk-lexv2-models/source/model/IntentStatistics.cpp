@@ -24,9 +24,8 @@ IntentStatistics::IntentStatistics() :
 {
 }
 
-IntentStatistics::IntentStatistics(JsonView jsonValue) : 
-    m_discoveredIntentCount(0),
-    m_discoveredIntentCountHasBeenSet(false)
+IntentStatistics::IntentStatistics(JsonView jsonValue)
+  : IntentStatistics()
 {
   *this = jsonValue;
 }

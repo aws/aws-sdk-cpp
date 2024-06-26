@@ -22,8 +22,8 @@ CheckDNSAvailabilityResult::CheckDNSAvailabilityResult() :
 {
 }
 
-CheckDNSAvailabilityResult::CheckDNSAvailabilityResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_available(false)
+CheckDNSAvailabilityResult::CheckDNSAvailabilityResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : CheckDNSAvailabilityResult()
 {
   *this = result;
 }

@@ -24,9 +24,8 @@ AttributeKeyAndValue::AttributeKeyAndValue() :
 {
 }
 
-AttributeKeyAndValue::AttributeKeyAndValue(JsonView jsonValue) : 
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false)
+AttributeKeyAndValue::AttributeKeyAndValue(JsonView jsonValue)
+  : AttributeKeyAndValue()
 {
   *this = jsonValue;
 }

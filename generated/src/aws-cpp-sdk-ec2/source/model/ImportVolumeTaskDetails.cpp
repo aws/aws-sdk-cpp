@@ -30,13 +30,8 @@ ImportVolumeTaskDetails::ImportVolumeTaskDetails() :
 {
 }
 
-ImportVolumeTaskDetails::ImportVolumeTaskDetails(const XmlNode& xmlNode) : 
-    m_availabilityZoneHasBeenSet(false),
-    m_bytesConverted(0),
-    m_bytesConvertedHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_imageHasBeenSet(false),
-    m_volumeHasBeenSet(false)
+ImportVolumeTaskDetails::ImportVolumeTaskDetails(const XmlNode& xmlNode)
+  : ImportVolumeTaskDetails()
 {
   *this = xmlNode;
 }

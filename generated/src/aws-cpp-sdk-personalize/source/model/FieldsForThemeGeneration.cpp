@@ -23,8 +23,8 @@ FieldsForThemeGeneration::FieldsForThemeGeneration() :
 {
 }
 
-FieldsForThemeGeneration::FieldsForThemeGeneration(JsonView jsonValue) : 
-    m_itemNameHasBeenSet(false)
+FieldsForThemeGeneration::FieldsForThemeGeneration(JsonView jsonValue)
+  : FieldsForThemeGeneration()
 {
   *this = jsonValue;
 }

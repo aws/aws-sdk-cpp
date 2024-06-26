@@ -25,10 +25,8 @@ DataPathSort::DataPathSort() :
 {
 }
 
-DataPathSort::DataPathSort(JsonView jsonValue) : 
-    m_direction(SortDirection::NOT_SET),
-    m_directionHasBeenSet(false),
-    m_sortPathsHasBeenSet(false)
+DataPathSort::DataPathSort(JsonView jsonValue)
+  : DataPathSort()
 {
   *this = jsonValue;
 }

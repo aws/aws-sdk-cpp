@@ -27,12 +27,8 @@ DataSourceDetails::DataSourceDetails() :
 {
 }
 
-DataSourceDetails::DataSourceDetails(JsonView jsonValue) : 
-    m_dataSourceTypeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_status(DataSourceStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+DataSourceDetails::DataSourceDetails(JsonView jsonValue)
+  : DataSourceDetails()
 {
   *this = jsonValue;
 }

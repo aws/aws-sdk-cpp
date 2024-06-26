@@ -24,9 +24,8 @@ DetectorModel::DetectorModel() :
 {
 }
 
-DetectorModel::DetectorModel(JsonView jsonValue) : 
-    m_detectorModelDefinitionHasBeenSet(false),
-    m_detectorModelConfigurationHasBeenSet(false)
+DetectorModel::DetectorModel(JsonView jsonValue)
+  : DetectorModel()
 {
   *this = jsonValue;
 }

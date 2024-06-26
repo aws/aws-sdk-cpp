@@ -25,10 +25,8 @@ TargetResourceType::TargetResourceType() :
 {
 }
 
-TargetResourceType::TargetResourceType(JsonView jsonValue) : 
-    m_resourceTypeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_parametersHasBeenSet(false)
+TargetResourceType::TargetResourceType(JsonView jsonValue)
+  : TargetResourceType()
 {
   *this = jsonValue;
 }

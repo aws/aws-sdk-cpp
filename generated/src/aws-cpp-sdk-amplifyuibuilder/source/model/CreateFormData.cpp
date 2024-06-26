@@ -34,19 +34,8 @@ CreateFormData::CreateFormData() :
 {
 }
 
-CreateFormData::CreateFormData(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_dataTypeHasBeenSet(false),
-    m_formActionType(FormActionType::NOT_SET),
-    m_formActionTypeHasBeenSet(false),
-    m_fieldsHasBeenSet(false),
-    m_styleHasBeenSet(false),
-    m_sectionalElementsHasBeenSet(false),
-    m_schemaVersionHasBeenSet(false),
-    m_ctaHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_labelDecorator(LabelDecorator::NOT_SET),
-    m_labelDecoratorHasBeenSet(false)
+CreateFormData::CreateFormData(JsonView jsonValue)
+  : CreateFormData()
 {
   *this = jsonValue;
 }

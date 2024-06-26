@@ -23,8 +23,8 @@ AppSyncParameters::AppSyncParameters() :
 {
 }
 
-AppSyncParameters::AppSyncParameters(JsonView jsonValue) : 
-    m_graphQLOperationHasBeenSet(false)
+AppSyncParameters::AppSyncParameters(JsonView jsonValue)
+  : AppSyncParameters()
 {
   *this = jsonValue;
 }

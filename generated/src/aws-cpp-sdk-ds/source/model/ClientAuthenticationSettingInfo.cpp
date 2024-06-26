@@ -27,12 +27,8 @@ ClientAuthenticationSettingInfo::ClientAuthenticationSettingInfo() :
 {
 }
 
-ClientAuthenticationSettingInfo::ClientAuthenticationSettingInfo(JsonView jsonValue) : 
-    m_type(ClientAuthenticationType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_status(ClientAuthenticationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false)
+ClientAuthenticationSettingInfo::ClientAuthenticationSettingInfo(JsonView jsonValue)
+  : ClientAuthenticationSettingInfo()
 {
   *this = jsonValue;
 }

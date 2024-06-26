@@ -27,12 +27,8 @@ CodegenJobGenericDataSchema::CodegenJobGenericDataSchema() :
 {
 }
 
-CodegenJobGenericDataSchema::CodegenJobGenericDataSchema(JsonView jsonValue) : 
-    m_dataSourceType(CodegenJobGenericDataSourceType::NOT_SET),
-    m_dataSourceTypeHasBeenSet(false),
-    m_modelsHasBeenSet(false),
-    m_enumsHasBeenSet(false),
-    m_nonModelsHasBeenSet(false)
+CodegenJobGenericDataSchema::CodegenJobGenericDataSchema(JsonView jsonValue)
+  : CodegenJobGenericDataSchema()
 {
   *this = jsonValue;
 }

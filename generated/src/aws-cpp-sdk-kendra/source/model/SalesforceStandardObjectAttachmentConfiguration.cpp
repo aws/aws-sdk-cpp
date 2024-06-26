@@ -24,9 +24,8 @@ SalesforceStandardObjectAttachmentConfiguration::SalesforceStandardObjectAttachm
 {
 }
 
-SalesforceStandardObjectAttachmentConfiguration::SalesforceStandardObjectAttachmentConfiguration(JsonView jsonValue) : 
-    m_documentTitleFieldNameHasBeenSet(false),
-    m_fieldMappingsHasBeenSet(false)
+SalesforceStandardObjectAttachmentConfiguration::SalesforceStandardObjectAttachmentConfiguration(JsonView jsonValue)
+  : SalesforceStandardObjectAttachmentConfiguration()
 {
   *this = jsonValue;
 }

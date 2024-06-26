@@ -25,10 +25,8 @@ ImportLabelsTaskRunProperties::ImportLabelsTaskRunProperties() :
 {
 }
 
-ImportLabelsTaskRunProperties::ImportLabelsTaskRunProperties(JsonView jsonValue) : 
-    m_inputS3PathHasBeenSet(false),
-    m_replace(false),
-    m_replaceHasBeenSet(false)
+ImportLabelsTaskRunProperties::ImportLabelsTaskRunProperties(JsonView jsonValue)
+  : ImportLabelsTaskRunProperties()
 {
   *this = jsonValue;
 }

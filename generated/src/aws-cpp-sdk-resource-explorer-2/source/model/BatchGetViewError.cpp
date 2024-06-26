@@ -24,9 +24,8 @@ BatchGetViewError::BatchGetViewError() :
 {
 }
 
-BatchGetViewError::BatchGetViewError(JsonView jsonValue) : 
-    m_errorMessageHasBeenSet(false),
-    m_viewArnHasBeenSet(false)
+BatchGetViewError::BatchGetViewError(JsonView jsonValue)
+  : BatchGetViewError()
 {
   *this = jsonValue;
 }

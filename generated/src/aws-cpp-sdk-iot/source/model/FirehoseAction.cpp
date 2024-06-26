@@ -27,12 +27,8 @@ FirehoseAction::FirehoseAction() :
 {
 }
 
-FirehoseAction::FirehoseAction(JsonView jsonValue) : 
-    m_roleArnHasBeenSet(false),
-    m_deliveryStreamNameHasBeenSet(false),
-    m_separatorHasBeenSet(false),
-    m_batchMode(false),
-    m_batchModeHasBeenSet(false)
+FirehoseAction::FirehoseAction(JsonView jsonValue)
+  : FirehoseAction()
 {
   *this = jsonValue;
 }

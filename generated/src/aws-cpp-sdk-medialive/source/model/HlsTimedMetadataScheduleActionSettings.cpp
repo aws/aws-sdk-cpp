@@ -23,8 +23,8 @@ HlsTimedMetadataScheduleActionSettings::HlsTimedMetadataScheduleActionSettings()
 {
 }
 
-HlsTimedMetadataScheduleActionSettings::HlsTimedMetadataScheduleActionSettings(JsonView jsonValue) : 
-    m_id3HasBeenSet(false)
+HlsTimedMetadataScheduleActionSettings::HlsTimedMetadataScheduleActionSettings(JsonView jsonValue)
+  : HlsTimedMetadataScheduleActionSettings()
 {
   *this = jsonValue;
 }

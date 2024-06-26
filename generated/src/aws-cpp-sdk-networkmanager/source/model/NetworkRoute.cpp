@@ -29,14 +29,8 @@ NetworkRoute::NetworkRoute() :
 {
 }
 
-NetworkRoute::NetworkRoute(JsonView jsonValue) : 
-    m_destinationCidrBlockHasBeenSet(false),
-    m_destinationsHasBeenSet(false),
-    m_prefixListIdHasBeenSet(false),
-    m_state(RouteState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_type(RouteType::NOT_SET),
-    m_typeHasBeenSet(false)
+NetworkRoute::NetworkRoute(JsonView jsonValue)
+  : NetworkRoute()
 {
   *this = jsonValue;
 }

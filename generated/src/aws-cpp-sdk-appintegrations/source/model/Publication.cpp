@@ -25,10 +25,8 @@ Publication::Publication() :
 {
 }
 
-Publication::Publication(JsonView jsonValue) : 
-    m_eventHasBeenSet(false),
-    m_schemaHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+Publication::Publication(JsonView jsonValue)
+  : Publication()
 {
   *this = jsonValue;
 }

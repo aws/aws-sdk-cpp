@@ -25,10 +25,8 @@ Disk::Disk() :
 {
 }
 
-Disk::Disk(JsonView jsonValue) : 
-    m_bytes(0),
-    m_bytesHasBeenSet(false),
-    m_deviceNameHasBeenSet(false)
+Disk::Disk(JsonView jsonValue)
+  : Disk()
 {
   *this = jsonValue;
 }

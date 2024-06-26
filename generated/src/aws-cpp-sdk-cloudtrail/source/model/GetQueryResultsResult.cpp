@@ -22,8 +22,8 @@ GetQueryResultsResult::GetQueryResultsResult() :
 {
 }
 
-GetQueryResultsResult::GetQueryResultsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_queryStatus(QueryStatus::NOT_SET)
+GetQueryResultsResult::GetQueryResultsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetQueryResultsResult()
 {
   *this = result;
 }

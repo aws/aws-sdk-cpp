@@ -27,12 +27,8 @@ ECSServiceProjectedMetric::ECSServiceProjectedMetric() :
 {
 }
 
-ECSServiceProjectedMetric::ECSServiceProjectedMetric(JsonView jsonValue) : 
-    m_name(ECSServiceMetricName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_timestampsHasBeenSet(false),
-    m_upperBoundValuesHasBeenSet(false),
-    m_lowerBoundValuesHasBeenSet(false)
+ECSServiceProjectedMetric::ECSServiceProjectedMetric(JsonView jsonValue)
+  : ECSServiceProjectedMetric()
 {
   *this = jsonValue;
 }

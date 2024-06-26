@@ -22,8 +22,8 @@ ListAliasesResult::ListAliasesResult() :
 {
 }
 
-ListAliasesResult::ListAliasesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_truncated(false)
+ListAliasesResult::ListAliasesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ListAliasesResult()
 {
   *this = result;
 }

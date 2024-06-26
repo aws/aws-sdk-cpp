@@ -24,9 +24,8 @@ NetworkInterfaceLimitExceeded::NetworkInterfaceLimitExceeded() :
 {
 }
 
-NetworkInterfaceLimitExceeded::NetworkInterfaceLimitExceeded(JsonView jsonValue) : 
-    m_errorCodeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+NetworkInterfaceLimitExceeded::NetworkInterfaceLimitExceeded(JsonView jsonValue)
+  : NetworkInterfaceLimitExceeded()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ AutoMLOutputDataConfig::AutoMLOutputDataConfig() :
 {
 }
 
-AutoMLOutputDataConfig::AutoMLOutputDataConfig(JsonView jsonValue) : 
-    m_kmsKeyIdHasBeenSet(false),
-    m_s3OutputPathHasBeenSet(false)
+AutoMLOutputDataConfig::AutoMLOutputDataConfig(JsonView jsonValue)
+  : AutoMLOutputDataConfig()
 {
   *this = jsonValue;
 }

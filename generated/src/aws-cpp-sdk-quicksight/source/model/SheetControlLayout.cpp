@@ -23,8 +23,8 @@ SheetControlLayout::SheetControlLayout() :
 {
 }
 
-SheetControlLayout::SheetControlLayout(JsonView jsonValue) : 
-    m_configurationHasBeenSet(false)
+SheetControlLayout::SheetControlLayout(JsonView jsonValue)
+  : SheetControlLayout()
 {
   *this = jsonValue;
 }

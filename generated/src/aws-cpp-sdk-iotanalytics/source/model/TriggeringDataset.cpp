@@ -23,8 +23,8 @@ TriggeringDataset::TriggeringDataset() :
 {
 }
 
-TriggeringDataset::TriggeringDataset(JsonView jsonValue) : 
-    m_nameHasBeenSet(false)
+TriggeringDataset::TriggeringDataset(JsonView jsonValue)
+  : TriggeringDataset()
 {
   *this = jsonValue;
 }

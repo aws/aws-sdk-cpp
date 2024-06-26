@@ -43,28 +43,8 @@ TrialComponent::TrialComponent() :
 {
 }
 
-TrialComponent::TrialComponent(JsonView jsonValue) : 
-    m_trialComponentNameHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_trialComponentArnHasBeenSet(false),
-    m_sourceHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_lastModifiedByHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_inputArtifactsHasBeenSet(false),
-    m_outputArtifactsHasBeenSet(false),
-    m_metricsHasBeenSet(false),
-    m_metadataPropertiesHasBeenSet(false),
-    m_sourceDetailHasBeenSet(false),
-    m_lineageGroupArnHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_parentsHasBeenSet(false),
-    m_runNameHasBeenSet(false)
+TrialComponent::TrialComponent(JsonView jsonValue)
+  : TrialComponent()
 {
   *this = jsonValue;
 }

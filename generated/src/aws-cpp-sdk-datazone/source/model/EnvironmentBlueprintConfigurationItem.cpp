@@ -30,15 +30,8 @@ EnvironmentBlueprintConfigurationItem::EnvironmentBlueprintConfigurationItem() :
 {
 }
 
-EnvironmentBlueprintConfigurationItem::EnvironmentBlueprintConfigurationItem(JsonView jsonValue) : 
-    m_createdAtHasBeenSet(false),
-    m_domainIdHasBeenSet(false),
-    m_enabledRegionsHasBeenSet(false),
-    m_environmentBlueprintIdHasBeenSet(false),
-    m_manageAccessRoleArnHasBeenSet(false),
-    m_provisioningRoleArnHasBeenSet(false),
-    m_regionalParametersHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+EnvironmentBlueprintConfigurationItem::EnvironmentBlueprintConfigurationItem(JsonView jsonValue)
+  : EnvironmentBlueprintConfigurationItem()
 {
   *this = jsonValue;
 }

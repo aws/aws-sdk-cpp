@@ -22,8 +22,8 @@ DescribeProtectedResourceResult::DescribeProtectedResourceResult() :
 {
 }
 
-DescribeProtectedResourceResult::DescribeProtectedResourceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_latestRestoreExecutionTimeMinutes(0)
+DescribeProtectedResourceResult::DescribeProtectedResourceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeProtectedResourceResult()
 {
   *this = result;
 }

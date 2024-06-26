@@ -23,8 +23,8 @@ StorageInfo::StorageInfo() :
 {
 }
 
-StorageInfo::StorageInfo(JsonView jsonValue) : 
-    m_ebsStorageInfoHasBeenSet(false)
+StorageInfo::StorageInfo(JsonView jsonValue)
+  : StorageInfo()
 {
   *this = jsonValue;
 }

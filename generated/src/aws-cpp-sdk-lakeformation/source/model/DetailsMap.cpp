@@ -23,8 +23,8 @@ DetailsMap::DetailsMap() :
 {
 }
 
-DetailsMap::DetailsMap(JsonView jsonValue) : 
-    m_resourceShareHasBeenSet(false)
+DetailsMap::DetailsMap(JsonView jsonValue)
+  : DetailsMap()
 {
   *this = jsonValue;
 }

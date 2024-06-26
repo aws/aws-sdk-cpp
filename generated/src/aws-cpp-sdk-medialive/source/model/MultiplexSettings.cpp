@@ -30,15 +30,8 @@ MultiplexSettings::MultiplexSettings() :
 {
 }
 
-MultiplexSettings::MultiplexSettings(JsonView jsonValue) : 
-    m_maximumVideoBufferDelayMilliseconds(0),
-    m_maximumVideoBufferDelayMillisecondsHasBeenSet(false),
-    m_transportStreamBitrate(0),
-    m_transportStreamBitrateHasBeenSet(false),
-    m_transportStreamId(0),
-    m_transportStreamIdHasBeenSet(false),
-    m_transportStreamReservedBitrate(0),
-    m_transportStreamReservedBitrateHasBeenSet(false)
+MultiplexSettings::MultiplexSettings(JsonView jsonValue)
+  : MultiplexSettings()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ CloudRemovalConfigInput::CloudRemovalConfigInput() :
 {
 }
 
-CloudRemovalConfigInput::CloudRemovalConfigInput(JsonView jsonValue) : 
-    m_algorithmName(AlgorithmNameCloudRemoval::NOT_SET),
-    m_algorithmNameHasBeenSet(false),
-    m_interpolationValueHasBeenSet(false),
-    m_targetBandsHasBeenSet(false)
+CloudRemovalConfigInput::CloudRemovalConfigInput(JsonView jsonValue)
+  : CloudRemovalConfigInput()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ ConnectionData::ConnectionData() :
 {
 }
 
-ConnectionData::ConnectionData(JsonView jsonValue) : 
-    m_attendeeHasBeenSet(false),
-    m_meetingHasBeenSet(false)
+ConnectionData::ConnectionData(JsonView jsonValue)
+  : ConnectionData()
 {
   *this = jsonValue;
 }

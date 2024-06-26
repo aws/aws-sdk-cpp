@@ -28,11 +28,8 @@ RecurringCharge::RecurringCharge() :
 {
 }
 
-RecurringCharge::RecurringCharge(const XmlNode& xmlNode) : 
-    m_amount(0.0),
-    m_amountHasBeenSet(false),
-    m_frequency(RecurringChargeFrequency::NOT_SET),
-    m_frequencyHasBeenSet(false)
+RecurringCharge::RecurringCharge(const XmlNode& xmlNode)
+  : RecurringCharge()
 {
   *this = xmlNode;
 }

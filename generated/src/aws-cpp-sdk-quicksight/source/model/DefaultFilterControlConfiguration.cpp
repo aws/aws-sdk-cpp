@@ -24,9 +24,8 @@ DefaultFilterControlConfiguration::DefaultFilterControlConfiguration() :
 {
 }
 
-DefaultFilterControlConfiguration::DefaultFilterControlConfiguration(JsonView jsonValue) : 
-    m_titleHasBeenSet(false),
-    m_controlOptionsHasBeenSet(false)
+DefaultFilterControlConfiguration::DefaultFilterControlConfiguration(JsonView jsonValue)
+  : DefaultFilterControlConfiguration()
 {
   *this = jsonValue;
 }

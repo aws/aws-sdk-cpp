@@ -30,15 +30,8 @@ RowLevelPermissionDataSet::RowLevelPermissionDataSet() :
 {
 }
 
-RowLevelPermissionDataSet::RowLevelPermissionDataSet(JsonView jsonValue) : 
-    m_namespaceHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_permissionPolicy(RowLevelPermissionPolicy::NOT_SET),
-    m_permissionPolicyHasBeenSet(false),
-    m_formatVersion(RowLevelPermissionFormatVersion::NOT_SET),
-    m_formatVersionHasBeenSet(false),
-    m_status(Status::NOT_SET),
-    m_statusHasBeenSet(false)
+RowLevelPermissionDataSet::RowLevelPermissionDataSet(JsonView jsonValue)
+  : RowLevelPermissionDataSet()
 {
   *this = jsonValue;
 }

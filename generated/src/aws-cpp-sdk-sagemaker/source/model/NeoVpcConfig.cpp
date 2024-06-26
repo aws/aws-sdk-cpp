@@ -24,9 +24,8 @@ NeoVpcConfig::NeoVpcConfig() :
 {
 }
 
-NeoVpcConfig::NeoVpcConfig(JsonView jsonValue) : 
-    m_securityGroupIdsHasBeenSet(false),
-    m_subnetsHasBeenSet(false)
+NeoVpcConfig::NeoVpcConfig(JsonView jsonValue)
+  : NeoVpcConfig()
 {
   *this = jsonValue;
 }

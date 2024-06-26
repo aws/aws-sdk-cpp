@@ -22,8 +22,8 @@ UpdateDashboardPermissionsResult::UpdateDashboardPermissionsResult() :
 {
 }
 
-UpdateDashboardPermissionsResult::UpdateDashboardPermissionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+UpdateDashboardPermissionsResult::UpdateDashboardPermissionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateDashboardPermissionsResult()
 {
   *this = result;
 }

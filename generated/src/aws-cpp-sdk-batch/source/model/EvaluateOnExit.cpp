@@ -27,12 +27,8 @@ EvaluateOnExit::EvaluateOnExit() :
 {
 }
 
-EvaluateOnExit::EvaluateOnExit(JsonView jsonValue) : 
-    m_onStatusReasonHasBeenSet(false),
-    m_onReasonHasBeenSet(false),
-    m_onExitCodeHasBeenSet(false),
-    m_action(RetryAction::NOT_SET),
-    m_actionHasBeenSet(false)
+EvaluateOnExit::EvaluateOnExit(JsonView jsonValue)
+  : EvaluateOnExit()
 {
   *this = jsonValue;
 }

@@ -28,13 +28,8 @@ DetectLabelsImageQuality::DetectLabelsImageQuality() :
 {
 }
 
-DetectLabelsImageQuality::DetectLabelsImageQuality(JsonView jsonValue) : 
-    m_brightness(0.0),
-    m_brightnessHasBeenSet(false),
-    m_sharpness(0.0),
-    m_sharpnessHasBeenSet(false),
-    m_contrast(0.0),
-    m_contrastHasBeenSet(false)
+DetectLabelsImageQuality::DetectLabelsImageQuality(JsonView jsonValue)
+  : DetectLabelsImageQuality()
 {
   *this = jsonValue;
 }

@@ -34,19 +34,8 @@ MediaStream::MediaStream() :
 {
 }
 
-MediaStream::MediaStream(JsonView jsonValue) : 
-    m_attributesHasBeenSet(false),
-    m_clockRate(0),
-    m_clockRateHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_fmt(0),
-    m_fmtHasBeenSet(false),
-    m_mediaStreamId(0),
-    m_mediaStreamIdHasBeenSet(false),
-    m_mediaStreamNameHasBeenSet(false),
-    m_mediaStreamType(MediaStreamType::NOT_SET),
-    m_mediaStreamTypeHasBeenSet(false),
-    m_videoFormatHasBeenSet(false)
+MediaStream::MediaStream(JsonView jsonValue)
+  : MediaStream()
 {
   *this = jsonValue;
 }

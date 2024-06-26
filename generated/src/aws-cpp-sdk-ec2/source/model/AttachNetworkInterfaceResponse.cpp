@@ -22,8 +22,8 @@ AttachNetworkInterfaceResponse::AttachNetworkInterfaceResponse() :
 {
 }
 
-AttachNetworkInterfaceResponse::AttachNetworkInterfaceResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_networkCardIndex(0)
+AttachNetworkInterfaceResponse::AttachNetworkInterfaceResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : AttachNetworkInterfaceResponse()
 {
   *this = result;
 }

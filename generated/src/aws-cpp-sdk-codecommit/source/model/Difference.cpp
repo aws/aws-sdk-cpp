@@ -26,11 +26,8 @@ Difference::Difference() :
 {
 }
 
-Difference::Difference(JsonView jsonValue) : 
-    m_beforeBlobHasBeenSet(false),
-    m_afterBlobHasBeenSet(false),
-    m_changeType(ChangeTypeEnum::NOT_SET),
-    m_changeTypeHasBeenSet(false)
+Difference::Difference(JsonView jsonValue)
+  : Difference()
 {
   *this = jsonValue;
 }

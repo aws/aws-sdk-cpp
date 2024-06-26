@@ -32,17 +32,8 @@ CreateJobOutput::CreateJobOutput() :
 {
 }
 
-CreateJobOutput::CreateJobOutput(JsonView jsonValue) : 
-    m_keyHasBeenSet(false),
-    m_thumbnailPatternHasBeenSet(false),
-    m_thumbnailEncryptionHasBeenSet(false),
-    m_rotateHasBeenSet(false),
-    m_presetIdHasBeenSet(false),
-    m_segmentDurationHasBeenSet(false),
-    m_watermarksHasBeenSet(false),
-    m_albumArtHasBeenSet(false),
-    m_captionsHasBeenSet(false),
-    m_encryptionHasBeenSet(false)
+CreateJobOutput::CreateJobOutput(JsonView jsonValue)
+  : CreateJobOutput()
 {
   *this = jsonValue;
 }

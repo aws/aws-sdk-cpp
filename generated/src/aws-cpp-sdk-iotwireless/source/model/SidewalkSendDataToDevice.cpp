@@ -28,13 +28,8 @@ SidewalkSendDataToDevice::SidewalkSendDataToDevice() :
 {
 }
 
-SidewalkSendDataToDevice::SidewalkSendDataToDevice(JsonView jsonValue) : 
-    m_seq(0),
-    m_seqHasBeenSet(false),
-    m_messageType(MessageType::NOT_SET),
-    m_messageTypeHasBeenSet(false),
-    m_ackModeRetryDurationSecs(0),
-    m_ackModeRetryDurationSecsHasBeenSet(false)
+SidewalkSendDataToDevice::SidewalkSendDataToDevice(JsonView jsonValue)
+  : SidewalkSendDataToDevice()
 {
   *this = jsonValue;
 }

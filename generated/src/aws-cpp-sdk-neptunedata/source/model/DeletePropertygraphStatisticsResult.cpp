@@ -22,8 +22,8 @@ DeletePropertygraphStatisticsResult::DeletePropertygraphStatisticsResult() :
 {
 }
 
-DeletePropertygraphStatisticsResult::DeletePropertygraphStatisticsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_statusCode(0)
+DeletePropertygraphStatisticsResult::DeletePropertygraphStatisticsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeletePropertygraphStatisticsResult()
 {
   *this = result;
 }

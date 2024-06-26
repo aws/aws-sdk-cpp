@@ -30,15 +30,8 @@ Configuration::Configuration() :
 {
 }
 
-Configuration::Configuration(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_kafkaVersionsHasBeenSet(false),
-    m_latestRevisionHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_state(ConfigurationState::NOT_SET),
-    m_stateHasBeenSet(false)
+Configuration::Configuration(JsonView jsonValue)
+  : Configuration()
 {
   *this = jsonValue;
 }

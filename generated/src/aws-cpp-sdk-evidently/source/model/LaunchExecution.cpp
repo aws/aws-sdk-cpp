@@ -24,9 +24,8 @@ LaunchExecution::LaunchExecution() :
 {
 }
 
-LaunchExecution::LaunchExecution(JsonView jsonValue) : 
-    m_endedTimeHasBeenSet(false),
-    m_startedTimeHasBeenSet(false)
+LaunchExecution::LaunchExecution(JsonView jsonValue)
+  : LaunchExecution()
 {
   *this = jsonValue;
 }

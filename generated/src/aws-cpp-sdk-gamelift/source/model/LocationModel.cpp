@@ -24,9 +24,8 @@ LocationModel::LocationModel() :
 {
 }
 
-LocationModel::LocationModel(JsonView jsonValue) : 
-    m_locationNameHasBeenSet(false),
-    m_locationArnHasBeenSet(false)
+LocationModel::LocationModel(JsonView jsonValue)
+  : LocationModel()
 {
   *this = jsonValue;
 }

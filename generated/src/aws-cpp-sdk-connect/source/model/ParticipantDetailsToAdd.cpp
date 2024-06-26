@@ -25,10 +25,8 @@ ParticipantDetailsToAdd::ParticipantDetailsToAdd() :
 {
 }
 
-ParticipantDetailsToAdd::ParticipantDetailsToAdd(JsonView jsonValue) : 
-    m_participantRole(ParticipantRole::NOT_SET),
-    m_participantRoleHasBeenSet(false),
-    m_displayNameHasBeenSet(false)
+ParticipantDetailsToAdd::ParticipantDetailsToAdd(JsonView jsonValue)
+  : ParticipantDetailsToAdd()
 {
   *this = jsonValue;
 }

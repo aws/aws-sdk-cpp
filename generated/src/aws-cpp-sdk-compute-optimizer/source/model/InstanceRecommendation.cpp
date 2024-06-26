@@ -46,31 +46,8 @@ InstanceRecommendation::InstanceRecommendation() :
 {
 }
 
-InstanceRecommendation::InstanceRecommendation(JsonView jsonValue) : 
-    m_instanceArnHasBeenSet(false),
-    m_accountIdHasBeenSet(false),
-    m_instanceNameHasBeenSet(false),
-    m_currentInstanceTypeHasBeenSet(false),
-    m_finding(Finding::NOT_SET),
-    m_findingHasBeenSet(false),
-    m_findingReasonCodesHasBeenSet(false),
-    m_utilizationMetricsHasBeenSet(false),
-    m_lookBackPeriodInDays(0.0),
-    m_lookBackPeriodInDaysHasBeenSet(false),
-    m_recommendationOptionsHasBeenSet(false),
-    m_recommendationSourcesHasBeenSet(false),
-    m_lastRefreshTimestampHasBeenSet(false),
-    m_currentPerformanceRisk(CurrentPerformanceRisk::NOT_SET),
-    m_currentPerformanceRiskHasBeenSet(false),
-    m_effectiveRecommendationPreferencesHasBeenSet(false),
-    m_inferredWorkloadTypesHasBeenSet(false),
-    m_instanceState(InstanceState::NOT_SET),
-    m_instanceStateHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_externalMetricStatusHasBeenSet(false),
-    m_currentInstanceGpuInfoHasBeenSet(false),
-    m_idle(InstanceIdle::NOT_SET),
-    m_idleHasBeenSet(false)
+InstanceRecommendation::InstanceRecommendation(JsonView jsonValue)
+  : InstanceRecommendation()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ FlowLogsConfigurationResult::FlowLogsConfigurationResult() :
 {
 }
 
-FlowLogsConfigurationResult::FlowLogsConfigurationResult(JsonView jsonValue) : 
-    m_status(DataSourceStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+FlowLogsConfigurationResult::FlowLogsConfigurationResult(JsonView jsonValue)
+  : FlowLogsConfigurationResult()
 {
   *this = jsonValue;
 }

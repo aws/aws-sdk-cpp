@@ -27,12 +27,8 @@ InvalidConfigurationDetail::InvalidConfigurationDetail() :
 {
 }
 
-InvalidConfigurationDetail::InvalidConfigurationDetail(JsonView jsonValue) : 
-    m_constraintHasBeenSet(false),
-    m_locationHasBeenSet(false),
-    m_reasonHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_valueHasBeenSet(false)
+InvalidConfigurationDetail::InvalidConfigurationDetail(JsonView jsonValue)
+  : InvalidConfigurationDetail()
 {
   *this = jsonValue;
 }

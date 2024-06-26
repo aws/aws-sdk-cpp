@@ -22,8 +22,8 @@ DescribePortalResult::DescribePortalResult() :
 {
 }
 
-DescribePortalResult::DescribePortalResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_portalAuthMode(AuthMode::NOT_SET)
+DescribePortalResult::DescribePortalResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribePortalResult()
 {
   *this = result;
 }

@@ -24,9 +24,8 @@ AssetPropertyTimestamp::AssetPropertyTimestamp() :
 {
 }
 
-AssetPropertyTimestamp::AssetPropertyTimestamp(JsonView jsonValue) : 
-    m_timeInSecondsHasBeenSet(false),
-    m_offsetInNanosHasBeenSet(false)
+AssetPropertyTimestamp::AssetPropertyTimestamp(JsonView jsonValue)
+  : AssetPropertyTimestamp()
 {
   *this = jsonValue;
 }

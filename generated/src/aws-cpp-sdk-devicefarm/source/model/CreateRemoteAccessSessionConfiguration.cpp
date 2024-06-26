@@ -25,10 +25,8 @@ CreateRemoteAccessSessionConfiguration::CreateRemoteAccessSessionConfiguration()
 {
 }
 
-CreateRemoteAccessSessionConfiguration::CreateRemoteAccessSessionConfiguration(JsonView jsonValue) : 
-    m_billingMethod(BillingMethod::NOT_SET),
-    m_billingMethodHasBeenSet(false),
-    m_vpceConfigurationArnsHasBeenSet(false)
+CreateRemoteAccessSessionConfiguration::CreateRemoteAccessSessionConfiguration(JsonView jsonValue)
+  : CreateRemoteAccessSessionConfiguration()
 {
   *this = jsonValue;
 }

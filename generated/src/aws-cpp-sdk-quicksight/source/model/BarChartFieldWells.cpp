@@ -23,8 +23,8 @@ BarChartFieldWells::BarChartFieldWells() :
 {
 }
 
-BarChartFieldWells::BarChartFieldWells(JsonView jsonValue) : 
-    m_barChartAggregatedFieldWellsHasBeenSet(false)
+BarChartFieldWells::BarChartFieldWells(JsonView jsonValue)
+  : BarChartFieldWells()
 {
   *this = jsonValue;
 }

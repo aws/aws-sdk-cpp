@@ -22,8 +22,8 @@ UpdateGroupProfileResult::UpdateGroupProfileResult() :
 {
 }
 
-UpdateGroupProfileResult::UpdateGroupProfileResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(GroupProfileStatus::NOT_SET)
+UpdateGroupProfileResult::UpdateGroupProfileResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateGroupProfileResult()
 {
   *this = result;
 }

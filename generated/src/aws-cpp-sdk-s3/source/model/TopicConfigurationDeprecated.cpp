@@ -27,10 +27,8 @@ TopicConfigurationDeprecated::TopicConfigurationDeprecated() :
 {
 }
 
-TopicConfigurationDeprecated::TopicConfigurationDeprecated(const XmlNode& xmlNode) : 
-    m_idHasBeenSet(false),
-    m_eventsHasBeenSet(false),
-    m_topicHasBeenSet(false)
+TopicConfigurationDeprecated::TopicConfigurationDeprecated(const XmlNode& xmlNode)
+  : TopicConfigurationDeprecated()
 {
   *this = xmlNode;
 }

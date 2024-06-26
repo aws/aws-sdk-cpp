@@ -23,8 +23,8 @@ TemplateActionsRequestFilters::TemplateActionsRequestFilters() :
 {
 }
 
-TemplateActionsRequestFilters::TemplateActionsRequestFilters(JsonView jsonValue) : 
-    m_actionIDsHasBeenSet(false)
+TemplateActionsRequestFilters::TemplateActionsRequestFilters(JsonView jsonValue)
+  : TemplateActionsRequestFilters()
 {
   *this = jsonValue;
 }

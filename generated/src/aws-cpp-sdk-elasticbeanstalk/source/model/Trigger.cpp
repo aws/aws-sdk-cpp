@@ -25,8 +25,8 @@ Trigger::Trigger() :
 {
 }
 
-Trigger::Trigger(const XmlNode& xmlNode) : 
-    m_nameHasBeenSet(false)
+Trigger::Trigger(const XmlNode& xmlNode)
+  : Trigger()
 {
   *this = xmlNode;
 }

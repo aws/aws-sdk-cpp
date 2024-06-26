@@ -33,16 +33,8 @@ Rule::Rule() :
 {
 }
 
-Rule::Rule(const XmlNode& xmlNode) : 
-    m_expirationHasBeenSet(false),
-    m_iDHasBeenSet(false),
-    m_prefixHasBeenSet(false),
-    m_status(ExpirationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_transitionHasBeenSet(false),
-    m_noncurrentVersionTransitionHasBeenSet(false),
-    m_noncurrentVersionExpirationHasBeenSet(false),
-    m_abortIncompleteMultipartUploadHasBeenSet(false)
+Rule::Rule(const XmlNode& xmlNode)
+  : Rule()
 {
   *this = xmlNode;
 }

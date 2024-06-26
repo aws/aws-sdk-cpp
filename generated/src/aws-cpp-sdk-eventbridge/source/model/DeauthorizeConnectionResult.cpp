@@ -22,8 +22,8 @@ DeauthorizeConnectionResult::DeauthorizeConnectionResult() :
 {
 }
 
-DeauthorizeConnectionResult::DeauthorizeConnectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_connectionState(ConnectionState::NOT_SET)
+DeauthorizeConnectionResult::DeauthorizeConnectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeauthorizeConnectionResult()
 {
   *this = result;
 }

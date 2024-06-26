@@ -26,9 +26,8 @@ TemplateSummaryConfig::TemplateSummaryConfig() :
 {
 }
 
-TemplateSummaryConfig::TemplateSummaryConfig(const XmlNode& xmlNode) : 
-    m_treatUnrecognizedResourceTypesAsWarnings(false),
-    m_treatUnrecognizedResourceTypesAsWarningsHasBeenSet(false)
+TemplateSummaryConfig::TemplateSummaryConfig(const XmlNode& xmlNode)
+  : TemplateSummaryConfig()
 {
   *this = xmlNode;
 }

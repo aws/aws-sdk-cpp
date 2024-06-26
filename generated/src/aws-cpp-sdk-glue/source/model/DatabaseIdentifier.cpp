@@ -25,10 +25,8 @@ DatabaseIdentifier::DatabaseIdentifier() :
 {
 }
 
-DatabaseIdentifier::DatabaseIdentifier(JsonView jsonValue) : 
-    m_catalogIdHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_regionHasBeenSet(false)
+DatabaseIdentifier::DatabaseIdentifier(JsonView jsonValue)
+  : DatabaseIdentifier()
 {
   *this = jsonValue;
 }

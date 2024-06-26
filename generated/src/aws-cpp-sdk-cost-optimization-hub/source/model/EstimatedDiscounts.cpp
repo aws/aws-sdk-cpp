@@ -28,13 +28,8 @@ EstimatedDiscounts::EstimatedDiscounts() :
 {
 }
 
-EstimatedDiscounts::EstimatedDiscounts(JsonView jsonValue) : 
-    m_savingsPlansDiscount(0.0),
-    m_savingsPlansDiscountHasBeenSet(false),
-    m_reservedInstancesDiscount(0.0),
-    m_reservedInstancesDiscountHasBeenSet(false),
-    m_otherDiscount(0.0),
-    m_otherDiscountHasBeenSet(false)
+EstimatedDiscounts::EstimatedDiscounts(JsonView jsonValue)
+  : EstimatedDiscounts()
 {
   *this = jsonValue;
 }

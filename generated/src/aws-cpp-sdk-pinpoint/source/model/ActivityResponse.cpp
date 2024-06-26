@@ -40,25 +40,8 @@ ActivityResponse::ActivityResponse() :
 {
 }
 
-ActivityResponse::ActivityResponse(JsonView jsonValue) : 
-    m_applicationIdHasBeenSet(false),
-    m_campaignIdHasBeenSet(false),
-    m_endHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_resultHasBeenSet(false),
-    m_scheduledStartHasBeenSet(false),
-    m_startHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_successfulEndpointCount(0),
-    m_successfulEndpointCountHasBeenSet(false),
-    m_timezonesCompletedCount(0),
-    m_timezonesCompletedCountHasBeenSet(false),
-    m_timezonesTotalCount(0),
-    m_timezonesTotalCountHasBeenSet(false),
-    m_totalEndpointCount(0),
-    m_totalEndpointCountHasBeenSet(false),
-    m_treatmentIdHasBeenSet(false),
-    m_executionMetricsHasBeenSet(false)
+ActivityResponse::ActivityResponse(JsonView jsonValue)
+  : ActivityResponse()
 {
   *this = jsonValue;
 }

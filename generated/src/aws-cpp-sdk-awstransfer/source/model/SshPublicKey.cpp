@@ -25,10 +25,8 @@ SshPublicKey::SshPublicKey() :
 {
 }
 
-SshPublicKey::SshPublicKey(JsonView jsonValue) : 
-    m_dateImportedHasBeenSet(false),
-    m_sshPublicKeyBodyHasBeenSet(false),
-    m_sshPublicKeyIdHasBeenSet(false)
+SshPublicKey::SshPublicKey(JsonView jsonValue)
+  : SshPublicKey()
 {
   *this = jsonValue;
 }

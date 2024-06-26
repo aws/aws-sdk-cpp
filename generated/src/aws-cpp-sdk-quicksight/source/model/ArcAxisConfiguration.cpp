@@ -25,10 +25,8 @@ ArcAxisConfiguration::ArcAxisConfiguration() :
 {
 }
 
-ArcAxisConfiguration::ArcAxisConfiguration(JsonView jsonValue) : 
-    m_rangeHasBeenSet(false),
-    m_reserveRange(0),
-    m_reserveRangeHasBeenSet(false)
+ArcAxisConfiguration::ArcAxisConfiguration(JsonView jsonValue)
+  : ArcAxisConfiguration()
 {
   *this = jsonValue;
 }

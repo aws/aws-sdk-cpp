@@ -23,8 +23,8 @@ AwsEc2SecurityGroupIpv6Range::AwsEc2SecurityGroupIpv6Range() :
 {
 }
 
-AwsEc2SecurityGroupIpv6Range::AwsEc2SecurityGroupIpv6Range(JsonView jsonValue) : 
-    m_cidrIpv6HasBeenSet(false)
+AwsEc2SecurityGroupIpv6Range::AwsEc2SecurityGroupIpv6Range(JsonView jsonValue)
+  : AwsEc2SecurityGroupIpv6Range()
 {
   *this = jsonValue;
 }

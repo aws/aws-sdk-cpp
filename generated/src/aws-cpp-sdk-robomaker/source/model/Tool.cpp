@@ -30,15 +30,8 @@ Tool::Tool() :
 {
 }
 
-Tool::Tool(JsonView jsonValue) : 
-    m_streamUI(false),
-    m_streamUIHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_commandHasBeenSet(false),
-    m_streamOutputToCloudWatch(false),
-    m_streamOutputToCloudWatchHasBeenSet(false),
-    m_exitBehavior(ExitBehavior::NOT_SET),
-    m_exitBehaviorHasBeenSet(false)
+Tool::Tool(JsonView jsonValue)
+  : Tool()
 {
   *this = jsonValue;
 }

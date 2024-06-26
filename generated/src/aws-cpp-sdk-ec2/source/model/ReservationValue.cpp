@@ -27,10 +27,8 @@ ReservationValue::ReservationValue() :
 {
 }
 
-ReservationValue::ReservationValue(const XmlNode& xmlNode) : 
-    m_hourlyPriceHasBeenSet(false),
-    m_remainingTotalValueHasBeenSet(false),
-    m_remainingUpfrontValueHasBeenSet(false)
+ReservationValue::ReservationValue(const XmlNode& xmlNode)
+  : ReservationValue()
 {
   *this = xmlNode;
 }

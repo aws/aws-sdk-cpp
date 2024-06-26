@@ -25,10 +25,8 @@ AwsElasticBeanstalkEnvironmentTier::AwsElasticBeanstalkEnvironmentTier() :
 {
 }
 
-AwsElasticBeanstalkEnvironmentTier::AwsElasticBeanstalkEnvironmentTier(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_versionHasBeenSet(false)
+AwsElasticBeanstalkEnvironmentTier::AwsElasticBeanstalkEnvironmentTier(JsonView jsonValue)
+  : AwsElasticBeanstalkEnvironmentTier()
 {
   *this = jsonValue;
 }

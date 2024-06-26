@@ -25,10 +25,8 @@ ResourceInUseException::ResourceInUseException() :
 {
 }
 
-ResourceInUseException::ResourceInUseException(JsonView jsonValue) : 
-    m_referenceType(ReferenceType::NOT_SET),
-    m_referenceTypeHasBeenSet(false),
-    m_exampleReferenceHasBeenSet(false)
+ResourceInUseException::ResourceInUseException(JsonView jsonValue)
+  : ResourceInUseException()
 {
   *this = jsonValue;
 }

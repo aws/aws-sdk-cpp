@@ -27,12 +27,8 @@ HierarchyGroupSummary::HierarchyGroupSummary() :
 {
 }
 
-HierarchyGroupSummary::HierarchyGroupSummary(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_lastModifiedRegionHasBeenSet(false)
+HierarchyGroupSummary::HierarchyGroupSummary(JsonView jsonValue)
+  : HierarchyGroupSummary()
 {
   *this = jsonValue;
 }

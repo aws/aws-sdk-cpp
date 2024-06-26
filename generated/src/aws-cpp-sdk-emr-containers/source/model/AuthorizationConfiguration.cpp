@@ -24,9 +24,8 @@ AuthorizationConfiguration::AuthorizationConfiguration() :
 {
 }
 
-AuthorizationConfiguration::AuthorizationConfiguration(JsonView jsonValue) : 
-    m_lakeFormationConfigurationHasBeenSet(false),
-    m_encryptionConfigurationHasBeenSet(false)
+AuthorizationConfiguration::AuthorizationConfiguration(JsonView jsonValue)
+  : AuthorizationConfiguration()
 {
   *this = jsonValue;
 }

@@ -35,18 +35,8 @@ ApplicationVersionDescription::ApplicationVersionDescription() :
 {
 }
 
-ApplicationVersionDescription::ApplicationVersionDescription(const XmlNode& xmlNode) : 
-    m_applicationVersionArnHasBeenSet(false),
-    m_applicationNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_versionLabelHasBeenSet(false),
-    m_sourceBuildInformationHasBeenSet(false),
-    m_buildArnHasBeenSet(false),
-    m_sourceBundleHasBeenSet(false),
-    m_dateCreatedHasBeenSet(false),
-    m_dateUpdatedHasBeenSet(false),
-    m_status(ApplicationVersionStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+ApplicationVersionDescription::ApplicationVersionDescription(const XmlNode& xmlNode)
+  : ApplicationVersionDescription()
 {
   *this = xmlNode;
 }

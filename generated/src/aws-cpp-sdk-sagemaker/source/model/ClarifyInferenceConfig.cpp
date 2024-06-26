@@ -37,22 +37,8 @@ ClarifyInferenceConfig::ClarifyInferenceConfig() :
 {
 }
 
-ClarifyInferenceConfig::ClarifyInferenceConfig(JsonView jsonValue) : 
-    m_featuresAttributeHasBeenSet(false),
-    m_contentTemplateHasBeenSet(false),
-    m_maxRecordCount(0),
-    m_maxRecordCountHasBeenSet(false),
-    m_maxPayloadInMB(0),
-    m_maxPayloadInMBHasBeenSet(false),
-    m_probabilityIndex(0),
-    m_probabilityIndexHasBeenSet(false),
-    m_labelIndex(0),
-    m_labelIndexHasBeenSet(false),
-    m_probabilityAttributeHasBeenSet(false),
-    m_labelAttributeHasBeenSet(false),
-    m_labelHeadersHasBeenSet(false),
-    m_featureHeadersHasBeenSet(false),
-    m_featureTypesHasBeenSet(false)
+ClarifyInferenceConfig::ClarifyInferenceConfig(JsonView jsonValue)
+  : ClarifyInferenceConfig()
 {
   *this = jsonValue;
 }

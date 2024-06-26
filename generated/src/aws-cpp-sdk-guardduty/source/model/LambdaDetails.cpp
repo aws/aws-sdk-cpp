@@ -31,16 +31,8 @@ LambdaDetails::LambdaDetails() :
 {
 }
 
-LambdaDetails::LambdaDetails(JsonView jsonValue) : 
-    m_functionArnHasBeenSet(false),
-    m_functionNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_lastModifiedAtHasBeenSet(false),
-    m_revisionIdHasBeenSet(false),
-    m_functionVersionHasBeenSet(false),
-    m_roleHasBeenSet(false),
-    m_vpcConfigHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+LambdaDetails::LambdaDetails(JsonView jsonValue)
+  : LambdaDetails()
 {
   *this = jsonValue;
 }

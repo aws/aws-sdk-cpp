@@ -25,10 +25,8 @@ EventAggregate::EventAggregate() :
 {
 }
 
-EventAggregate::EventAggregate(JsonView jsonValue) : 
-    m_aggregateValueHasBeenSet(false),
-    m_count(0),
-    m_countHasBeenSet(false)
+EventAggregate::EventAggregate(JsonView jsonValue)
+  : EventAggregate()
 {
   *this = jsonValue;
 }

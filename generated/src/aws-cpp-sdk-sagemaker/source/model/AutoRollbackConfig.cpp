@@ -23,8 +23,8 @@ AutoRollbackConfig::AutoRollbackConfig() :
 {
 }
 
-AutoRollbackConfig::AutoRollbackConfig(JsonView jsonValue) : 
-    m_alarmsHasBeenSet(false)
+AutoRollbackConfig::AutoRollbackConfig(JsonView jsonValue)
+  : AutoRollbackConfig()
 {
   *this = jsonValue;
 }

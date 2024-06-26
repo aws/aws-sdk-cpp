@@ -30,15 +30,8 @@ BucketCountByEffectivePermission::BucketCountByEffectivePermission() :
 {
 }
 
-BucketCountByEffectivePermission::BucketCountByEffectivePermission(JsonView jsonValue) : 
-    m_publiclyAccessible(0),
-    m_publiclyAccessibleHasBeenSet(false),
-    m_publiclyReadable(0),
-    m_publiclyReadableHasBeenSet(false),
-    m_publiclyWritable(0),
-    m_publiclyWritableHasBeenSet(false),
-    m_unknown(0),
-    m_unknownHasBeenSet(false)
+BucketCountByEffectivePermission::BucketCountByEffectivePermission(JsonView jsonValue)
+  : BucketCountByEffectivePermission()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ File::File() :
 {
 }
 
-File::File(JsonView jsonValue) : 
-    m_fileTypeHasBeenSet(false)
+File::File(JsonView jsonValue)
+  : File()
 {
   *this = jsonValue;
 }

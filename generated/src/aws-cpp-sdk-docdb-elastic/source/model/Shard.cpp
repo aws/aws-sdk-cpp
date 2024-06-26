@@ -26,11 +26,8 @@ Shard::Shard() :
 {
 }
 
-Shard::Shard(JsonView jsonValue) : 
-    m_createTimeHasBeenSet(false),
-    m_shardIdHasBeenSet(false),
-    m_status(Status::NOT_SET),
-    m_statusHasBeenSet(false)
+Shard::Shard(JsonView jsonValue)
+  : Shard()
 {
   *this = jsonValue;
 }

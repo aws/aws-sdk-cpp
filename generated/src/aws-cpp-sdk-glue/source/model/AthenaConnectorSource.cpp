@@ -29,14 +29,8 @@ AthenaConnectorSource::AthenaConnectorSource() :
 {
 }
 
-AthenaConnectorSource::AthenaConnectorSource(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_connectionNameHasBeenSet(false),
-    m_connectorNameHasBeenSet(false),
-    m_connectionTypeHasBeenSet(false),
-    m_connectionTableHasBeenSet(false),
-    m_schemaNameHasBeenSet(false),
-    m_outputSchemasHasBeenSet(false)
+AthenaConnectorSource::AthenaConnectorSource(JsonView jsonValue)
+  : AthenaConnectorSource()
 {
   *this = jsonValue;
 }

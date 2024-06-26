@@ -25,10 +25,8 @@ BrokerEngineType::BrokerEngineType() :
 {
 }
 
-BrokerEngineType::BrokerEngineType(JsonView jsonValue) : 
-    m_engineType(EngineType::NOT_SET),
-    m_engineTypeHasBeenSet(false),
-    m_engineVersionsHasBeenSet(false)
+BrokerEngineType::BrokerEngineType(JsonView jsonValue)
+  : BrokerEngineType()
 {
   *this = jsonValue;
 }

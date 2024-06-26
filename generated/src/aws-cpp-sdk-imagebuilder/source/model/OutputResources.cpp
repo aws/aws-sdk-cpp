@@ -24,9 +24,8 @@ OutputResources::OutputResources() :
 {
 }
 
-OutputResources::OutputResources(JsonView jsonValue) : 
-    m_amisHasBeenSet(false),
-    m_containersHasBeenSet(false)
+OutputResources::OutputResources(JsonView jsonValue)
+  : OutputResources()
 {
   *this = jsonValue;
 }

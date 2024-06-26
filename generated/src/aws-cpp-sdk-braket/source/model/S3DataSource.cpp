@@ -23,8 +23,8 @@ S3DataSource::S3DataSource() :
 {
 }
 
-S3DataSource::S3DataSource(JsonView jsonValue) : 
-    m_s3UriHasBeenSet(false)
+S3DataSource::S3DataSource(JsonView jsonValue)
+  : S3DataSource()
 {
   *this = jsonValue;
 }

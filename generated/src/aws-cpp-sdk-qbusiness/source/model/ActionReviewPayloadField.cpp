@@ -33,18 +33,8 @@ ActionReviewPayloadField::ActionReviewPayloadField() :
 {
 }
 
-ActionReviewPayloadField::ActionReviewPayloadField(JsonView jsonValue) : 
-    m_displayNameHasBeenSet(false),
-    m_displayOrder(0),
-    m_displayOrderHasBeenSet(false),
-    m_displayDescriptionHasBeenSet(false),
-    m_type(ActionPayloadFieldType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_allowedValuesHasBeenSet(false),
-    m_allowedFormatHasBeenSet(false),
-    m_required(false),
-    m_requiredHasBeenSet(false)
+ActionReviewPayloadField::ActionReviewPayloadField(JsonView jsonValue)
+  : ActionReviewPayloadField()
 {
   *this = jsonValue;
 }

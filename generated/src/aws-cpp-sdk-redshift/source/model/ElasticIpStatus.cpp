@@ -26,9 +26,8 @@ ElasticIpStatus::ElasticIpStatus() :
 {
 }
 
-ElasticIpStatus::ElasticIpStatus(const XmlNode& xmlNode) : 
-    m_elasticIpHasBeenSet(false),
-    m_statusHasBeenSet(false)
+ElasticIpStatus::ElasticIpStatus(const XmlNode& xmlNode)
+  : ElasticIpStatus()
 {
   *this = xmlNode;
 }

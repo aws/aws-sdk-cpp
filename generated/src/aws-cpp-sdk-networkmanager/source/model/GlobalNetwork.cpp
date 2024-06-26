@@ -29,14 +29,8 @@ GlobalNetwork::GlobalNetwork() :
 {
 }
 
-GlobalNetwork::GlobalNetwork(JsonView jsonValue) : 
-    m_globalNetworkIdHasBeenSet(false),
-    m_globalNetworkArnHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_state(GlobalNetworkState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+GlobalNetwork::GlobalNetwork(JsonView jsonValue)
+  : GlobalNetwork()
 {
   *this = jsonValue;
 }

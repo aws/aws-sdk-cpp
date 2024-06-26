@@ -24,9 +24,8 @@ ValidationErrorsEntry::ValidationErrorsEntry() :
 {
 }
 
-ValidationErrorsEntry::ValidationErrorsEntry(JsonView jsonValue) : 
-    m_checkNameHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
+ValidationErrorsEntry::ValidationErrorsEntry(JsonView jsonValue)
+  : ValidationErrorsEntry()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ CompositeSlotTypeSetting::CompositeSlotTypeSetting() :
 {
 }
 
-CompositeSlotTypeSetting::CompositeSlotTypeSetting(JsonView jsonValue) : 
-    m_subSlotsHasBeenSet(false)
+CompositeSlotTypeSetting::CompositeSlotTypeSetting(JsonView jsonValue)
+  : CompositeSlotTypeSetting()
 {
   *this = jsonValue;
 }

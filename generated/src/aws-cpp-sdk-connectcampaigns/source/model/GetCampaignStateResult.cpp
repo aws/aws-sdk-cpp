@@ -22,8 +22,8 @@ GetCampaignStateResult::GetCampaignStateResult() :
 {
 }
 
-GetCampaignStateResult::GetCampaignStateResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_state(CampaignState::NOT_SET)
+GetCampaignStateResult::GetCampaignStateResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetCampaignStateResult()
 {
   *this = result;
 }

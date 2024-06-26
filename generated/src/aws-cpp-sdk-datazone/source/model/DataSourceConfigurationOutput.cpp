@@ -24,9 +24,8 @@ DataSourceConfigurationOutput::DataSourceConfigurationOutput() :
 {
 }
 
-DataSourceConfigurationOutput::DataSourceConfigurationOutput(JsonView jsonValue) : 
-    m_glueRunConfigurationHasBeenSet(false),
-    m_redshiftRunConfigurationHasBeenSet(false)
+DataSourceConfigurationOutput::DataSourceConfigurationOutput(JsonView jsonValue)
+  : DataSourceConfigurationOutput()
 {
   *this = jsonValue;
 }

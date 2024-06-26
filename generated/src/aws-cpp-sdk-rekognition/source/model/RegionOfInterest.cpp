@@ -24,9 +24,8 @@ RegionOfInterest::RegionOfInterest() :
 {
 }
 
-RegionOfInterest::RegionOfInterest(JsonView jsonValue) : 
-    m_boundingBoxHasBeenSet(false),
-    m_polygonHasBeenSet(false)
+RegionOfInterest::RegionOfInterest(JsonView jsonValue)
+  : RegionOfInterest()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ GenerationConfiguration::GenerationConfiguration() :
 {
 }
 
-GenerationConfiguration::GenerationConfiguration(JsonView jsonValue) : 
-    m_additionalModelRequestFieldsHasBeenSet(false),
-    m_guardrailConfigurationHasBeenSet(false),
-    m_inferenceConfigHasBeenSet(false),
-    m_promptTemplateHasBeenSet(false)
+GenerationConfiguration::GenerationConfiguration(JsonView jsonValue)
+  : GenerationConfiguration()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ HumanWorkflowConfig::HumanWorkflowConfig() :
 {
 }
 
-HumanWorkflowConfig::HumanWorkflowConfig(JsonView jsonValue) : 
-    m_flowDefinitionArnHasBeenSet(false),
-    m_instructionsHasBeenSet(false)
+HumanWorkflowConfig::HumanWorkflowConfig(JsonView jsonValue)
+  : HumanWorkflowConfig()
 {
   *this = jsonValue;
 }

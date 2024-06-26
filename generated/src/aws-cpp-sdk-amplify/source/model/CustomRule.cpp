@@ -26,11 +26,8 @@ CustomRule::CustomRule() :
 {
 }
 
-CustomRule::CustomRule(JsonView jsonValue) : 
-    m_sourceHasBeenSet(false),
-    m_targetHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_conditionHasBeenSet(false)
+CustomRule::CustomRule(JsonView jsonValue)
+  : CustomRule()
 {
   *this = jsonValue;
 }

@@ -27,10 +27,8 @@ InstanceEventWindowAssociationTarget::InstanceEventWindowAssociationTarget() :
 {
 }
 
-InstanceEventWindowAssociationTarget::InstanceEventWindowAssociationTarget(const XmlNode& xmlNode) : 
-    m_instanceIdsHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_dedicatedHostIdsHasBeenSet(false)
+InstanceEventWindowAssociationTarget::InstanceEventWindowAssociationTarget(const XmlNode& xmlNode)
+  : InstanceEventWindowAssociationTarget()
 {
   *this = xmlNode;
 }

@@ -24,9 +24,8 @@ KafkaCluster::KafkaCluster() :
 {
 }
 
-KafkaCluster::KafkaCluster(JsonView jsonValue) : 
-    m_amazonMskClusterHasBeenSet(false),
-    m_vpcConfigHasBeenSet(false)
+KafkaCluster::KafkaCluster(JsonView jsonValue)
+  : KafkaCluster()
 {
   *this = jsonValue;
 }

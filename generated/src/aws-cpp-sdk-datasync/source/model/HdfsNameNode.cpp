@@ -25,10 +25,8 @@ HdfsNameNode::HdfsNameNode() :
 {
 }
 
-HdfsNameNode::HdfsNameNode(JsonView jsonValue) : 
-    m_hostnameHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false)
+HdfsNameNode::HdfsNameNode(JsonView jsonValue)
+  : HdfsNameNode()
 {
   *this = jsonValue;
 }

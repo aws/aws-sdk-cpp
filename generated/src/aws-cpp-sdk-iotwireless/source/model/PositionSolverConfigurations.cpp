@@ -23,8 +23,8 @@ PositionSolverConfigurations::PositionSolverConfigurations() :
 {
 }
 
-PositionSolverConfigurations::PositionSolverConfigurations(JsonView jsonValue) : 
-    m_semtechGnssHasBeenSet(false)
+PositionSolverConfigurations::PositionSolverConfigurations(JsonView jsonValue)
+  : PositionSolverConfigurations()
 {
   *this = jsonValue;
 }

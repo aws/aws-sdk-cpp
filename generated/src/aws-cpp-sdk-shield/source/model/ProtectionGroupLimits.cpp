@@ -25,10 +25,8 @@ ProtectionGroupLimits::ProtectionGroupLimits() :
 {
 }
 
-ProtectionGroupLimits::ProtectionGroupLimits(JsonView jsonValue) : 
-    m_maxProtectionGroups(0),
-    m_maxProtectionGroupsHasBeenSet(false),
-    m_patternTypeLimitsHasBeenSet(false)
+ProtectionGroupLimits::ProtectionGroupLimits(JsonView jsonValue)
+  : ProtectionGroupLimits()
 {
   *this = jsonValue;
 }

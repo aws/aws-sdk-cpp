@@ -22,8 +22,8 @@ DeleteBotLocaleResult::DeleteBotLocaleResult() :
 {
 }
 
-DeleteBotLocaleResult::DeleteBotLocaleResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_botLocaleStatus(BotLocaleStatus::NOT_SET)
+DeleteBotLocaleResult::DeleteBotLocaleResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeleteBotLocaleResult()
 {
   *this = result;
 }

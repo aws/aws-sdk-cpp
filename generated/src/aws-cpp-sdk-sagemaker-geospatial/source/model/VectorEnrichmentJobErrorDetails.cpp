@@ -25,10 +25,8 @@ VectorEnrichmentJobErrorDetails::VectorEnrichmentJobErrorDetails() :
 {
 }
 
-VectorEnrichmentJobErrorDetails::VectorEnrichmentJobErrorDetails(JsonView jsonValue) : 
-    m_errorMessageHasBeenSet(false),
-    m_errorType(VectorEnrichmentJobErrorType::NOT_SET),
-    m_errorTypeHasBeenSet(false)
+VectorEnrichmentJobErrorDetails::VectorEnrichmentJobErrorDetails(JsonView jsonValue)
+  : VectorEnrichmentJobErrorDetails()
 {
   *this = jsonValue;
 }

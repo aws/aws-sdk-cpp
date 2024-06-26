@@ -31,16 +31,8 @@ InputDescription::InputDescription() :
 {
 }
 
-InputDescription::InputDescription(JsonView jsonValue) : 
-    m_inputIdHasBeenSet(false),
-    m_namePrefixHasBeenSet(false),
-    m_inAppStreamNamesHasBeenSet(false),
-    m_inputProcessingConfigurationDescriptionHasBeenSet(false),
-    m_kinesisStreamsInputDescriptionHasBeenSet(false),
-    m_kinesisFirehoseInputDescriptionHasBeenSet(false),
-    m_inputSchemaHasBeenSet(false),
-    m_inputParallelismHasBeenSet(false),
-    m_inputStartingPositionConfigurationHasBeenSet(false)
+InputDescription::InputDescription(JsonView jsonValue)
+  : InputDescription()
 {
   *this = jsonValue;
 }

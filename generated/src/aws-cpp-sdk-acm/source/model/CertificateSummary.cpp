@@ -47,32 +47,8 @@ CertificateSummary::CertificateSummary() :
 {
 }
 
-CertificateSummary::CertificateSummary(JsonView jsonValue) : 
-    m_certificateArnHasBeenSet(false),
-    m_domainNameHasBeenSet(false),
-    m_subjectAlternativeNameSummariesHasBeenSet(false),
-    m_hasAdditionalSubjectAlternativeNames(false),
-    m_hasAdditionalSubjectAlternativeNamesHasBeenSet(false),
-    m_status(CertificateStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_type(CertificateType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_keyAlgorithm(KeyAlgorithm::NOT_SET),
-    m_keyAlgorithmHasBeenSet(false),
-    m_keyUsagesHasBeenSet(false),
-    m_extendedKeyUsagesHasBeenSet(false),
-    m_inUse(false),
-    m_inUseHasBeenSet(false),
-    m_exported(false),
-    m_exportedHasBeenSet(false),
-    m_renewalEligibility(RenewalEligibility::NOT_SET),
-    m_renewalEligibilityHasBeenSet(false),
-    m_notBeforeHasBeenSet(false),
-    m_notAfterHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_issuedAtHasBeenSet(false),
-    m_importedAtHasBeenSet(false),
-    m_revokedAtHasBeenSet(false)
+CertificateSummary::CertificateSummary(JsonView jsonValue)
+  : CertificateSummary()
 {
   *this = jsonValue;
 }

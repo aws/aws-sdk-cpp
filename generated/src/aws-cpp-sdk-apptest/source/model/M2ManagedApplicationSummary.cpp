@@ -27,12 +27,8 @@ M2ManagedApplicationSummary::M2ManagedApplicationSummary() :
 {
 }
 
-M2ManagedApplicationSummary::M2ManagedApplicationSummary(JsonView jsonValue) : 
-    m_applicationIdHasBeenSet(false),
-    m_runtime(M2ManagedRuntime::NOT_SET),
-    m_runtimeHasBeenSet(false),
-    m_listenerPort(0),
-    m_listenerPortHasBeenSet(false)
+M2ManagedApplicationSummary::M2ManagedApplicationSummary(JsonView jsonValue)
+  : M2ManagedApplicationSummary()
 {
   *this = jsonValue;
 }

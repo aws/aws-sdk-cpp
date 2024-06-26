@@ -25,8 +25,8 @@ ConfigurationSetAlreadyExistsException::ConfigurationSetAlreadyExistsException()
 {
 }
 
-ConfigurationSetAlreadyExistsException::ConfigurationSetAlreadyExistsException(const XmlNode& xmlNode) : 
-    m_configurationSetNameHasBeenSet(false)
+ConfigurationSetAlreadyExistsException::ConfigurationSetAlreadyExistsException(const XmlNode& xmlNode)
+  : ConfigurationSetAlreadyExistsException()
 {
   *this = xmlNode;
 }

@@ -25,10 +25,8 @@ TargetTrackingMetricStat::TargetTrackingMetricStat() :
 {
 }
 
-TargetTrackingMetricStat::TargetTrackingMetricStat(JsonView jsonValue) : 
-    m_metricHasBeenSet(false),
-    m_statHasBeenSet(false),
-    m_unitHasBeenSet(false)
+TargetTrackingMetricStat::TargetTrackingMetricStat(JsonView jsonValue)
+  : TargetTrackingMetricStat()
 {
   *this = jsonValue;
 }

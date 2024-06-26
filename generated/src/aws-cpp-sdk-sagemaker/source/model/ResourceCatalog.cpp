@@ -26,11 +26,8 @@ ResourceCatalog::ResourceCatalog() :
 {
 }
 
-ResourceCatalog::ResourceCatalog(JsonView jsonValue) : 
-    m_resourceCatalogArnHasBeenSet(false),
-    m_resourceCatalogNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_creationTimeHasBeenSet(false)
+ResourceCatalog::ResourceCatalog(JsonView jsonValue)
+  : ResourceCatalog()
 {
   *this = jsonValue;
 }

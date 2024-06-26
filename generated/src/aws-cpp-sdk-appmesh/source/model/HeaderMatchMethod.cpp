@@ -27,12 +27,8 @@ HeaderMatchMethod::HeaderMatchMethod() :
 {
 }
 
-HeaderMatchMethod::HeaderMatchMethod(JsonView jsonValue) : 
-    m_exactHasBeenSet(false),
-    m_prefixHasBeenSet(false),
-    m_rangeHasBeenSet(false),
-    m_regexHasBeenSet(false),
-    m_suffixHasBeenSet(false)
+HeaderMatchMethod::HeaderMatchMethod(JsonView jsonValue)
+  : HeaderMatchMethod()
 {
   *this = jsonValue;
 }

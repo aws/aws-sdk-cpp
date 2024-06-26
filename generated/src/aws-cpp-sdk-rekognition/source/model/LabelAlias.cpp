@@ -23,8 +23,8 @@ LabelAlias::LabelAlias() :
 {
 }
 
-LabelAlias::LabelAlias(JsonView jsonValue) : 
-    m_nameHasBeenSet(false)
+LabelAlias::LabelAlias(JsonView jsonValue)
+  : LabelAlias()
 {
   *this = jsonValue;
 }

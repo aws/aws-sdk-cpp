@@ -27,12 +27,8 @@ Match::Match() :
 {
 }
 
-Match::Match(JsonView jsonValue) : 
-    m_frameAddressHasBeenSet(false),
-    m_targetFramesIndex(0),
-    m_targetFramesIndexHasBeenSet(false),
-    m_thresholdBreachValue(0.0),
-    m_thresholdBreachValueHasBeenSet(false)
+Match::Match(JsonView jsonValue)
+  : Match()
 {
   *this = jsonValue;
 }

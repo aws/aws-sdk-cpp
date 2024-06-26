@@ -34,17 +34,8 @@ StreamingDistributionConfig::StreamingDistributionConfig() :
 {
 }
 
-StreamingDistributionConfig::StreamingDistributionConfig(const XmlNode& xmlNode) : 
-    m_callerReferenceHasBeenSet(false),
-    m_s3OriginHasBeenSet(false),
-    m_aliasesHasBeenSet(false),
-    m_commentHasBeenSet(false),
-    m_loggingHasBeenSet(false),
-    m_trustedSignersHasBeenSet(false),
-    m_priceClass(PriceClass::NOT_SET),
-    m_priceClassHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
+StreamingDistributionConfig::StreamingDistributionConfig(const XmlNode& xmlNode)
+  : StreamingDistributionConfig()
 {
   *this = xmlNode;
 }

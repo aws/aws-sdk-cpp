@@ -26,11 +26,8 @@ ImageTestsConfiguration::ImageTestsConfiguration() :
 {
 }
 
-ImageTestsConfiguration::ImageTestsConfiguration(JsonView jsonValue) : 
-    m_imageTestsEnabled(false),
-    m_imageTestsEnabledHasBeenSet(false),
-    m_timeoutMinutes(0),
-    m_timeoutMinutesHasBeenSet(false)
+ImageTestsConfiguration::ImageTestsConfiguration(JsonView jsonValue)
+  : ImageTestsConfiguration()
 {
   *this = jsonValue;
 }

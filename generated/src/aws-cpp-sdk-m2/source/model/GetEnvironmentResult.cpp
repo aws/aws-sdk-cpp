@@ -25,11 +25,8 @@ GetEnvironmentResult::GetEnvironmentResult() :
 {
 }
 
-GetEnvironmentResult::GetEnvironmentResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_actualCapacity(0),
-    m_engineType(EngineType::NOT_SET),
-    m_publiclyAccessible(false),
-    m_status(EnvironmentLifecycle::NOT_SET)
+GetEnvironmentResult::GetEnvironmentResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetEnvironmentResult()
 {
   *this = result;
 }

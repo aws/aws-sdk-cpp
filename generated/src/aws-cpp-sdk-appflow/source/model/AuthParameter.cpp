@@ -30,15 +30,8 @@ AuthParameter::AuthParameter() :
 {
 }
 
-AuthParameter::AuthParameter(JsonView jsonValue) : 
-    m_keyHasBeenSet(false),
-    m_isRequired(false),
-    m_isRequiredHasBeenSet(false),
-    m_labelHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_isSensitiveField(false),
-    m_isSensitiveFieldHasBeenSet(false),
-    m_connectorSuppliedValuesHasBeenSet(false)
+AuthParameter::AuthParameter(JsonView jsonValue)
+  : AuthParameter()
 {
   *this = jsonValue;
 }

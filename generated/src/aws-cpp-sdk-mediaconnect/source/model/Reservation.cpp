@@ -39,24 +39,8 @@ Reservation::Reservation() :
 {
 }
 
-Reservation::Reservation(JsonView jsonValue) : 
-    m_currencyCodeHasBeenSet(false),
-    m_duration(0),
-    m_durationHasBeenSet(false),
-    m_durationUnits(DurationUnits::NOT_SET),
-    m_durationUnitsHasBeenSet(false),
-    m_endHasBeenSet(false),
-    m_offeringArnHasBeenSet(false),
-    m_offeringDescriptionHasBeenSet(false),
-    m_pricePerUnitHasBeenSet(false),
-    m_priceUnits(PriceUnits::NOT_SET),
-    m_priceUnitsHasBeenSet(false),
-    m_reservationArnHasBeenSet(false),
-    m_reservationNameHasBeenSet(false),
-    m_reservationState(ReservationState::NOT_SET),
-    m_reservationStateHasBeenSet(false),
-    m_resourceSpecificationHasBeenSet(false),
-    m_startHasBeenSet(false)
+Reservation::Reservation(JsonView jsonValue)
+  : Reservation()
 {
   *this = jsonValue;
 }

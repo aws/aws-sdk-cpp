@@ -29,14 +29,8 @@ ExecutionStatus::ExecutionStatus() :
 {
 }
 
-ExecutionStatus::ExecutionStatus(JsonView jsonValue) : 
-    m_completedAtHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false),
-    m_statusCode(ExecutionStatusCode::NOT_SET),
-    m_statusCodeHasBeenSet(false),
-    m_statusReason(ExecutionStatusReason::NOT_SET),
-    m_statusReasonHasBeenSet(false)
+ExecutionStatus::ExecutionStatus(JsonView jsonValue)
+  : ExecutionStatus()
 {
   *this = jsonValue;
 }

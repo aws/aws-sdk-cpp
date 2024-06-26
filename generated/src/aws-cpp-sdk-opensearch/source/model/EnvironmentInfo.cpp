@@ -23,8 +23,8 @@ EnvironmentInfo::EnvironmentInfo() :
 {
 }
 
-EnvironmentInfo::EnvironmentInfo(JsonView jsonValue) : 
-    m_availabilityZoneInformationHasBeenSet(false)
+EnvironmentInfo::EnvironmentInfo(JsonView jsonValue)
+  : EnvironmentInfo()
 {
   *this = jsonValue;
 }

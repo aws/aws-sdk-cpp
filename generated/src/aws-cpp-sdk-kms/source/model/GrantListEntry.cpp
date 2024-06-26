@@ -31,16 +31,8 @@ GrantListEntry::GrantListEntry() :
 {
 }
 
-GrantListEntry::GrantListEntry(JsonView jsonValue) : 
-    m_keyIdHasBeenSet(false),
-    m_grantIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_granteePrincipalHasBeenSet(false),
-    m_retiringPrincipalHasBeenSet(false),
-    m_issuingAccountHasBeenSet(false),
-    m_operationsHasBeenSet(false),
-    m_constraintsHasBeenSet(false)
+GrantListEntry::GrantListEntry(JsonView jsonValue)
+  : GrantListEntry()
 {
   *this = jsonValue;
 }

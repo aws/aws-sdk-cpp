@@ -23,8 +23,8 @@ SubscribedListingInput::SubscribedListingInput() :
 {
 }
 
-SubscribedListingInput::SubscribedListingInput(JsonView jsonValue) : 
-    m_identifierHasBeenSet(false)
+SubscribedListingInput::SubscribedListingInput(JsonView jsonValue)
+  : SubscribedListingInput()
 {
   *this = jsonValue;
 }

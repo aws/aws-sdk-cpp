@@ -27,12 +27,8 @@ Cost::Cost() :
 {
 }
 
-Cost::Cost(JsonView jsonValue) : 
-    m_amount(0.0),
-    m_amountHasBeenSet(false),
-    m_currencyHasBeenSet(false),
-    m_frequency(CostFrequency::NOT_SET),
-    m_frequencyHasBeenSet(false)
+Cost::Cost(JsonView jsonValue)
+  : Cost()
 {
   *this = jsonValue;
 }

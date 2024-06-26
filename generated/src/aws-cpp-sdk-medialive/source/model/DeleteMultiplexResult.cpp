@@ -24,10 +24,8 @@ DeleteMultiplexResult::DeleteMultiplexResult() :
 {
 }
 
-DeleteMultiplexResult::DeleteMultiplexResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_pipelinesRunningCount(0),
-    m_programCount(0),
-    m_state(MultiplexState::NOT_SET)
+DeleteMultiplexResult::DeleteMultiplexResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeleteMultiplexResult()
 {
   *this = result;
 }

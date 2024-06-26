@@ -22,8 +22,8 @@ DeleteClusterResult::DeleteClusterResult() :
 {
 }
 
-DeleteClusterResult::DeleteClusterResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_state(ClusterState::NOT_SET)
+DeleteClusterResult::DeleteClusterResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeleteClusterResult()
 {
   *this = result;
 }

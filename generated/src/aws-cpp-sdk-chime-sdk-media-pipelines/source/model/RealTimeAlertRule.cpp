@@ -27,12 +27,8 @@ RealTimeAlertRule::RealTimeAlertRule() :
 {
 }
 
-RealTimeAlertRule::RealTimeAlertRule(JsonView jsonValue) : 
-    m_type(RealTimeAlertRuleType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_keywordMatchConfigurationHasBeenSet(false),
-    m_sentimentConfigurationHasBeenSet(false),
-    m_issueDetectionConfigurationHasBeenSet(false)
+RealTimeAlertRule::RealTimeAlertRule(JsonView jsonValue)
+  : RealTimeAlertRule()
 {
   *this = jsonValue;
 }

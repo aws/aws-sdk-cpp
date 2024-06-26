@@ -31,16 +31,8 @@ OpsItemRelatedItemSummary::OpsItemRelatedItemSummary() :
 {
 }
 
-OpsItemRelatedItemSummary::OpsItemRelatedItemSummary(JsonView jsonValue) : 
-    m_opsItemIdHasBeenSet(false),
-    m_associationIdHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
-    m_associationTypeHasBeenSet(false),
-    m_resourceUriHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_lastModifiedByHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false)
+OpsItemRelatedItemSummary::OpsItemRelatedItemSummary(JsonView jsonValue)
+  : OpsItemRelatedItemSummary()
 {
   *this = jsonValue;
 }

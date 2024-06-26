@@ -24,9 +24,8 @@ EnumConfigurationOptions::EnumConfigurationOptions() :
 {
 }
 
-EnumConfigurationOptions::EnumConfigurationOptions(JsonView jsonValue) : 
-    m_defaultValueHasBeenSet(false),
-    m_allowedValuesHasBeenSet(false)
+EnumConfigurationOptions::EnumConfigurationOptions(JsonView jsonValue)
+  : EnumConfigurationOptions()
 {
   *this = jsonValue;
 }

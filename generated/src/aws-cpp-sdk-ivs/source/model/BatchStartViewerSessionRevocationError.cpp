@@ -26,11 +26,8 @@ BatchStartViewerSessionRevocationError::BatchStartViewerSessionRevocationError()
 {
 }
 
-BatchStartViewerSessionRevocationError::BatchStartViewerSessionRevocationError(JsonView jsonValue) : 
-    m_channelArnHasBeenSet(false),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_viewerIdHasBeenSet(false)
+BatchStartViewerSessionRevocationError::BatchStartViewerSessionRevocationError(JsonView jsonValue)
+  : BatchStartViewerSessionRevocationError()
 {
   *this = jsonValue;
 }

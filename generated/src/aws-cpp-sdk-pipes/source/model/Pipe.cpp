@@ -34,19 +34,8 @@ Pipe::Pipe() :
 {
 }
 
-Pipe::Pipe(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_desiredState(RequestedPipeState::NOT_SET),
-    m_desiredStateHasBeenSet(false),
-    m_currentState(PipeState::NOT_SET),
-    m_currentStateHasBeenSet(false),
-    m_stateReasonHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_sourceHasBeenSet(false),
-    m_targetHasBeenSet(false),
-    m_enrichmentHasBeenSet(false)
+Pipe::Pipe(JsonView jsonValue)
+  : Pipe()
 {
   *this = jsonValue;
 }

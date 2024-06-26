@@ -25,10 +25,8 @@ BlobMetadata::BlobMetadata() :
 {
 }
 
-BlobMetadata::BlobMetadata(JsonView jsonValue) : 
-    m_blobIdHasBeenSet(false),
-    m_pathHasBeenSet(false),
-    m_modeHasBeenSet(false)
+BlobMetadata::BlobMetadata(JsonView jsonValue)
+  : BlobMetadata()
 {
   *this = jsonValue;
 }

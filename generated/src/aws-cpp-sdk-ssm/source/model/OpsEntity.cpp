@@ -24,9 +24,8 @@ OpsEntity::OpsEntity() :
 {
 }
 
-OpsEntity::OpsEntity(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_dataHasBeenSet(false)
+OpsEntity::OpsEntity(JsonView jsonValue)
+  : OpsEntity()
 {
   *this = jsonValue;
 }

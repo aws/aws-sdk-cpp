@@ -23,8 +23,8 @@ DataSetSchema::DataSetSchema() :
 {
 }
 
-DataSetSchema::DataSetSchema(JsonView jsonValue) : 
-    m_columnSchemaListHasBeenSet(false)
+DataSetSchema::DataSetSchema(JsonView jsonValue)
+  : DataSetSchema()
 {
   *this = jsonValue;
 }

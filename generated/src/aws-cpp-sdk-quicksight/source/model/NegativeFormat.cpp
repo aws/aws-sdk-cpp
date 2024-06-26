@@ -24,9 +24,8 @@ NegativeFormat::NegativeFormat() :
 {
 }
 
-NegativeFormat::NegativeFormat(JsonView jsonValue) : 
-    m_prefixHasBeenSet(false),
-    m_suffixHasBeenSet(false)
+NegativeFormat::NegativeFormat(JsonView jsonValue)
+  : NegativeFormat()
 {
   *this = jsonValue;
 }

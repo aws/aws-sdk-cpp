@@ -25,10 +25,8 @@ DialogState::DialogState() :
 {
 }
 
-DialogState::DialogState(JsonView jsonValue) : 
-    m_dialogActionHasBeenSet(false),
-    m_intentHasBeenSet(false),
-    m_sessionAttributesHasBeenSet(false)
+DialogState::DialogState(JsonView jsonValue)
+  : DialogState()
 {
   *this = jsonValue;
 }

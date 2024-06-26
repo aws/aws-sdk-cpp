@@ -33,18 +33,8 @@ HypervisorDetails::HypervisorDetails() :
 {
 }
 
-HypervisorDetails::HypervisorDetails(JsonView jsonValue) : 
-    m_hostHasBeenSet(false),
-    m_hypervisorArnHasBeenSet(false),
-    m_kmsKeyArnHasBeenSet(false),
-    m_lastSuccessfulMetadataSyncTimeHasBeenSet(false),
-    m_latestMetadataSyncStatus(SyncMetadataStatus::NOT_SET),
-    m_latestMetadataSyncStatusHasBeenSet(false),
-    m_latestMetadataSyncStatusMessageHasBeenSet(false),
-    m_logGroupArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_state(HypervisorState::NOT_SET),
-    m_stateHasBeenSet(false)
+HypervisorDetails::HypervisorDetails(JsonView jsonValue)
+  : HypervisorDetails()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ ActivateReadSetFilter::ActivateReadSetFilter() :
 {
 }
 
-ActivateReadSetFilter::ActivateReadSetFilter(JsonView jsonValue) : 
-    m_status(ReadSetActivationJobStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_createdAfterHasBeenSet(false),
-    m_createdBeforeHasBeenSet(false)
+ActivateReadSetFilter::ActivateReadSetFilter(JsonView jsonValue)
+  : ActivateReadSetFilter()
 {
   *this = jsonValue;
 }

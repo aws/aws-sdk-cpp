@@ -26,11 +26,8 @@ CustomExtension::CustomExtension() :
 {
 }
 
-CustomExtension::CustomExtension(JsonView jsonValue) : 
-    m_objectIdentifierHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_critical(false),
-    m_criticalHasBeenSet(false)
+CustomExtension::CustomExtension(JsonView jsonValue)
+  : CustomExtension()
 {
   *this = jsonValue;
 }

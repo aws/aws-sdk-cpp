@@ -26,9 +26,8 @@ IntegrationError::IntegrationError() :
 {
 }
 
-IntegrationError::IntegrationError(const XmlNode& xmlNode) : 
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
+IntegrationError::IntegrationError(const XmlNode& xmlNode)
+  : IntegrationError()
 {
   *this = xmlNode;
 }

@@ -23,8 +23,8 @@ LambdaEndpointInput::LambdaEndpointInput() :
 {
 }
 
-LambdaEndpointInput::LambdaEndpointInput(JsonView jsonValue) : 
-    m_arnHasBeenSet(false)
+LambdaEndpointInput::LambdaEndpointInput(JsonView jsonValue)
+  : LambdaEndpointInput()
 {
   *this = jsonValue;
 }

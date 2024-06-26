@@ -23,8 +23,8 @@ ReadSetS3Access::ReadSetS3Access() :
 {
 }
 
-ReadSetS3Access::ReadSetS3Access(JsonView jsonValue) : 
-    m_s3UriHasBeenSet(false)
+ReadSetS3Access::ReadSetS3Access(JsonView jsonValue)
+  : ReadSetS3Access()
 {
   *this = jsonValue;
 }

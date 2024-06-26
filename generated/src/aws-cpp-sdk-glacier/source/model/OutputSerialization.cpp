@@ -23,8 +23,8 @@ OutputSerialization::OutputSerialization() :
 {
 }
 
-OutputSerialization::OutputSerialization(JsonView jsonValue) : 
-    m_csvHasBeenSet(false)
+OutputSerialization::OutputSerialization(JsonView jsonValue)
+  : OutputSerialization()
 {
   *this = jsonValue;
 }

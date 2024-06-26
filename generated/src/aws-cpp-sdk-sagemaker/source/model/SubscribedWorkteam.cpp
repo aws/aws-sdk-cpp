@@ -27,12 +27,8 @@ SubscribedWorkteam::SubscribedWorkteam() :
 {
 }
 
-SubscribedWorkteam::SubscribedWorkteam(JsonView jsonValue) : 
-    m_workteamArnHasBeenSet(false),
-    m_marketplaceTitleHasBeenSet(false),
-    m_sellerNameHasBeenSet(false),
-    m_marketplaceDescriptionHasBeenSet(false),
-    m_listingIdHasBeenSet(false)
+SubscribedWorkteam::SubscribedWorkteam(JsonView jsonValue)
+  : SubscribedWorkteam()
 {
   *this = jsonValue;
 }

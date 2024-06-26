@@ -24,9 +24,8 @@ AncillarySourceSettings::AncillarySourceSettings() :
 {
 }
 
-AncillarySourceSettings::AncillarySourceSettings(JsonView jsonValue) : 
-    m_sourceAncillaryChannelNumber(0),
-    m_sourceAncillaryChannelNumberHasBeenSet(false)
+AncillarySourceSettings::AncillarySourceSettings(JsonView jsonValue)
+  : AncillarySourceSettings()
 {
   *this = jsonValue;
 }

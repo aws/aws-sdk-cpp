@@ -24,9 +24,8 @@ AdvancedRecognitionSetting::AdvancedRecognitionSetting() :
 {
 }
 
-AdvancedRecognitionSetting::AdvancedRecognitionSetting(JsonView jsonValue) : 
-    m_audioRecognitionStrategy(AudioRecognitionStrategy::NOT_SET),
-    m_audioRecognitionStrategyHasBeenSet(false)
+AdvancedRecognitionSetting::AdvancedRecognitionSetting(JsonView jsonValue)
+  : AdvancedRecognitionSetting()
 {
   *this = jsonValue;
 }

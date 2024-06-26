@@ -23,8 +23,8 @@ AuthorizationCodeGrant::AuthorizationCodeGrant() :
 {
 }
 
-AuthorizationCodeGrant::AuthorizationCodeGrant(JsonView jsonValue) : 
-    m_redirectUrisHasBeenSet(false)
+AuthorizationCodeGrant::AuthorizationCodeGrant(JsonView jsonValue)
+  : AuthorizationCodeGrant()
 {
   *this = jsonValue;
 }

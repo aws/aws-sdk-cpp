@@ -28,13 +28,8 @@ AnalyticsConfigurationType::AnalyticsConfigurationType() :
 {
 }
 
-AnalyticsConfigurationType::AnalyticsConfigurationType(JsonView jsonValue) : 
-    m_applicationIdHasBeenSet(false),
-    m_applicationArnHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_externalIdHasBeenSet(false),
-    m_userDataShared(false),
-    m_userDataSharedHasBeenSet(false)
+AnalyticsConfigurationType::AnalyticsConfigurationType(JsonView jsonValue)
+  : AnalyticsConfigurationType()
 {
   *this = jsonValue;
 }

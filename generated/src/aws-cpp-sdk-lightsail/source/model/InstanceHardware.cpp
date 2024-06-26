@@ -27,12 +27,8 @@ InstanceHardware::InstanceHardware() :
 {
 }
 
-InstanceHardware::InstanceHardware(JsonView jsonValue) : 
-    m_cpuCount(0),
-    m_cpuCountHasBeenSet(false),
-    m_disksHasBeenSet(false),
-    m_ramSizeInGb(0.0),
-    m_ramSizeInGbHasBeenSet(false)
+InstanceHardware::InstanceHardware(JsonView jsonValue)
+  : InstanceHardware()
 {
   *this = jsonValue;
 }

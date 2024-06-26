@@ -31,16 +31,8 @@ IngestionDestination::IngestionDestination() :
 {
 }
 
-IngestionDestination::IngestionDestination(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_ingestionArnHasBeenSet(false),
-    m_processingConfigurationHasBeenSet(false),
-    m_destinationConfigurationHasBeenSet(false),
-    m_status(IngestionDestinationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusReasonHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+IngestionDestination::IngestionDestination(JsonView jsonValue)
+  : IngestionDestination()
 {
   *this = jsonValue;
 }

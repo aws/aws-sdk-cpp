@@ -24,9 +24,8 @@ ModelPackageStatusDetails::ModelPackageStatusDetails() :
 {
 }
 
-ModelPackageStatusDetails::ModelPackageStatusDetails(JsonView jsonValue) : 
-    m_validationStatusesHasBeenSet(false),
-    m_imageScanStatusesHasBeenSet(false)
+ModelPackageStatusDetails::ModelPackageStatusDetails(JsonView jsonValue)
+  : ModelPackageStatusDetails()
 {
   *this = jsonValue;
 }

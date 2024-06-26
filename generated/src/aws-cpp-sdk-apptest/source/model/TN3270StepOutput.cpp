@@ -26,11 +26,8 @@ TN3270StepOutput::TN3270StepOutput() :
 {
 }
 
-TN3270StepOutput::TN3270StepOutput(JsonView jsonValue) : 
-    m_dataSetExportLocationHasBeenSet(false),
-    m_dmsOutputLocationHasBeenSet(false),
-    m_dataSetDetailsHasBeenSet(false),
-    m_scriptOutputLocationHasBeenSet(false)
+TN3270StepOutput::TN3270StepOutput(JsonView jsonValue)
+  : TN3270StepOutput()
 {
   *this = jsonValue;
 }

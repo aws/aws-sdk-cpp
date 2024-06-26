@@ -22,8 +22,8 @@ DeleteGraphSnapshotResult::DeleteGraphSnapshotResult() :
 {
 }
 
-DeleteGraphSnapshotResult::DeleteGraphSnapshotResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(SnapshotStatus::NOT_SET)
+DeleteGraphSnapshotResult::DeleteGraphSnapshotResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeleteGraphSnapshotResult()
 {
   *this = result;
 }

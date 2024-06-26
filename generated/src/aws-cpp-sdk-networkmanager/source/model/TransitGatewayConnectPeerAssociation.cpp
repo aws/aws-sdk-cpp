@@ -28,13 +28,8 @@ TransitGatewayConnectPeerAssociation::TransitGatewayConnectPeerAssociation() :
 {
 }
 
-TransitGatewayConnectPeerAssociation::TransitGatewayConnectPeerAssociation(JsonView jsonValue) : 
-    m_transitGatewayConnectPeerArnHasBeenSet(false),
-    m_globalNetworkIdHasBeenSet(false),
-    m_deviceIdHasBeenSet(false),
-    m_linkIdHasBeenSet(false),
-    m_state(TransitGatewayConnectPeerAssociationState::NOT_SET),
-    m_stateHasBeenSet(false)
+TransitGatewayConnectPeerAssociation::TransitGatewayConnectPeerAssociation(JsonView jsonValue)
+  : TransitGatewayConnectPeerAssociation()
 {
   *this = jsonValue;
 }

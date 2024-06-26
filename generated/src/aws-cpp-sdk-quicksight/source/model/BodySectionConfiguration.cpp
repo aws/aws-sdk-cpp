@@ -26,11 +26,8 @@ BodySectionConfiguration::BodySectionConfiguration() :
 {
 }
 
-BodySectionConfiguration::BodySectionConfiguration(JsonView jsonValue) : 
-    m_sectionIdHasBeenSet(false),
-    m_contentHasBeenSet(false),
-    m_styleHasBeenSet(false),
-    m_pageBreakConfigurationHasBeenSet(false)
+BodySectionConfiguration::BodySectionConfiguration(JsonView jsonValue)
+  : BodySectionConfiguration()
 {
   *this = jsonValue;
 }

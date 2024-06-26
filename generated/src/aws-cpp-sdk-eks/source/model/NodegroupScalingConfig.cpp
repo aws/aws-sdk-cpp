@@ -28,13 +28,8 @@ NodegroupScalingConfig::NodegroupScalingConfig() :
 {
 }
 
-NodegroupScalingConfig::NodegroupScalingConfig(JsonView jsonValue) : 
-    m_minSize(0),
-    m_minSizeHasBeenSet(false),
-    m_maxSize(0),
-    m_maxSizeHasBeenSet(false),
-    m_desiredSize(0),
-    m_desiredSizeHasBeenSet(false)
+NodegroupScalingConfig::NodegroupScalingConfig(JsonView jsonValue)
+  : NodegroupScalingConfig()
 {
   *this = jsonValue;
 }

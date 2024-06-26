@@ -25,10 +25,8 @@ ServiceEvent::ServiceEvent() :
 {
 }
 
-ServiceEvent::ServiceEvent(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_messageHasBeenSet(false)
+ServiceEvent::ServiceEvent(JsonView jsonValue)
+  : ServiceEvent()
 {
   *this = jsonValue;
 }

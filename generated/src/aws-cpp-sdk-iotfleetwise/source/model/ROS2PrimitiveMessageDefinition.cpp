@@ -30,15 +30,8 @@ ROS2PrimitiveMessageDefinition::ROS2PrimitiveMessageDefinition() :
 {
 }
 
-ROS2PrimitiveMessageDefinition::ROS2PrimitiveMessageDefinition(JsonView jsonValue) : 
-    m_primitiveType(ROS2PrimitiveType::NOT_SET),
-    m_primitiveTypeHasBeenSet(false),
-    m_offset(0.0),
-    m_offsetHasBeenSet(false),
-    m_scaling(0.0),
-    m_scalingHasBeenSet(false),
-    m_upperBound(0),
-    m_upperBoundHasBeenSet(false)
+ROS2PrimitiveMessageDefinition::ROS2PrimitiveMessageDefinition(JsonView jsonValue)
+  : ROS2PrimitiveMessageDefinition()
 {
   *this = jsonValue;
 }

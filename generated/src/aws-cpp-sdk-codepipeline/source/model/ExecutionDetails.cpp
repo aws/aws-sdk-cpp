@@ -26,11 +26,8 @@ ExecutionDetails::ExecutionDetails() :
 {
 }
 
-ExecutionDetails::ExecutionDetails(JsonView jsonValue) : 
-    m_summaryHasBeenSet(false),
-    m_externalExecutionIdHasBeenSet(false),
-    m_percentComplete(0),
-    m_percentCompleteHasBeenSet(false)
+ExecutionDetails::ExecutionDetails(JsonView jsonValue)
+  : ExecutionDetails()
 {
   *this = jsonValue;
 }

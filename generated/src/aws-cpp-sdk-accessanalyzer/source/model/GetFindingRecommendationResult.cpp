@@ -23,9 +23,8 @@ GetFindingRecommendationResult::GetFindingRecommendationResult() :
 {
 }
 
-GetFindingRecommendationResult::GetFindingRecommendationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_recommendationType(RecommendationType::NOT_SET),
-    m_status(Status::NOT_SET)
+GetFindingRecommendationResult::GetFindingRecommendationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetFindingRecommendationResult()
 {
   *this = result;
 }

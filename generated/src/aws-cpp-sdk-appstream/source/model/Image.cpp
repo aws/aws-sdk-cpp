@@ -43,28 +43,8 @@ Image::Image() :
 {
 }
 
-Image::Image(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_baseImageArnHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_state(ImageState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_visibility(VisibilityType::NOT_SET),
-    m_visibilityHasBeenSet(false),
-    m_imageBuilderSupported(false),
-    m_imageBuilderSupportedHasBeenSet(false),
-    m_imageBuilderNameHasBeenSet(false),
-    m_platform(PlatformType::NOT_SET),
-    m_platformHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_stateChangeReasonHasBeenSet(false),
-    m_applicationsHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_publicBaseImageReleasedDateHasBeenSet(false),
-    m_appstreamAgentVersionHasBeenSet(false),
-    m_imagePermissionsHasBeenSet(false),
-    m_imageErrorsHasBeenSet(false)
+Image::Image(JsonView jsonValue)
+  : Image()
 {
   *this = jsonValue;
 }

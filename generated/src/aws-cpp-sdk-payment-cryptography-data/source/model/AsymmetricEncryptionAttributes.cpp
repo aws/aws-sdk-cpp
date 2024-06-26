@@ -24,9 +24,8 @@ AsymmetricEncryptionAttributes::AsymmetricEncryptionAttributes() :
 {
 }
 
-AsymmetricEncryptionAttributes::AsymmetricEncryptionAttributes(JsonView jsonValue) : 
-    m_paddingType(PaddingType::NOT_SET),
-    m_paddingTypeHasBeenSet(false)
+AsymmetricEncryptionAttributes::AsymmetricEncryptionAttributes(JsonView jsonValue)
+  : AsymmetricEncryptionAttributes()
 {
   *this = jsonValue;
 }

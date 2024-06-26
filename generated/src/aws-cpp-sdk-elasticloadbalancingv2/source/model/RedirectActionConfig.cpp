@@ -31,14 +31,8 @@ RedirectActionConfig::RedirectActionConfig() :
 {
 }
 
-RedirectActionConfig::RedirectActionConfig(const XmlNode& xmlNode) : 
-    m_protocolHasBeenSet(false),
-    m_portHasBeenSet(false),
-    m_hostHasBeenSet(false),
-    m_pathHasBeenSet(false),
-    m_queryHasBeenSet(false),
-    m_statusCode(RedirectActionStatusCodeEnum::NOT_SET),
-    m_statusCodeHasBeenSet(false)
+RedirectActionConfig::RedirectActionConfig(const XmlNode& xmlNode)
+  : RedirectActionConfig()
 {
   *this = xmlNode;
 }

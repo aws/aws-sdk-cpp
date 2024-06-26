@@ -29,12 +29,8 @@ BlockDeviceMapping::BlockDeviceMapping() :
 {
 }
 
-BlockDeviceMapping::BlockDeviceMapping(const XmlNode& xmlNode) : 
-    m_virtualNameHasBeenSet(false),
-    m_deviceNameHasBeenSet(false),
-    m_ebsHasBeenSet(false),
-    m_noDevice(false),
-    m_noDeviceHasBeenSet(false)
+BlockDeviceMapping::BlockDeviceMapping(const XmlNode& xmlNode)
+  : BlockDeviceMapping()
 {
   *this = xmlNode;
 }

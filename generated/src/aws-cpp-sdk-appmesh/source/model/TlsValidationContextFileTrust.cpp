@@ -23,8 +23,8 @@ TlsValidationContextFileTrust::TlsValidationContextFileTrust() :
 {
 }
 
-TlsValidationContextFileTrust::TlsValidationContextFileTrust(JsonView jsonValue) : 
-    m_certificateChainHasBeenSet(false)
+TlsValidationContextFileTrust::TlsValidationContextFileTrust(JsonView jsonValue)
+  : TlsValidationContextFileTrust()
 {
   *this = jsonValue;
 }

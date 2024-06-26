@@ -24,9 +24,8 @@ HumanLoopRequestSource::HumanLoopRequestSource() :
 {
 }
 
-HumanLoopRequestSource::HumanLoopRequestSource(JsonView jsonValue) : 
-    m_awsManagedHumanLoopRequestSource(AwsManagedHumanLoopRequestSource::NOT_SET),
-    m_awsManagedHumanLoopRequestSourceHasBeenSet(false)
+HumanLoopRequestSource::HumanLoopRequestSource(JsonView jsonValue)
+  : HumanLoopRequestSource()
 {
   *this = jsonValue;
 }

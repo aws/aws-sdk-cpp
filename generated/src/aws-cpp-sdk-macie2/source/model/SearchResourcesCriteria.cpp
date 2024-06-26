@@ -24,9 +24,8 @@ SearchResourcesCriteria::SearchResourcesCriteria() :
 {
 }
 
-SearchResourcesCriteria::SearchResourcesCriteria(JsonView jsonValue) : 
-    m_simpleCriterionHasBeenSet(false),
-    m_tagCriterionHasBeenSet(false)
+SearchResourcesCriteria::SearchResourcesCriteria(JsonView jsonValue)
+  : SearchResourcesCriteria()
 {
   *this = jsonValue;
 }

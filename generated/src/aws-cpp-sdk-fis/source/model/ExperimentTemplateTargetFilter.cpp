@@ -24,9 +24,8 @@ ExperimentTemplateTargetFilter::ExperimentTemplateTargetFilter() :
 {
 }
 
-ExperimentTemplateTargetFilter::ExperimentTemplateTargetFilter(JsonView jsonValue) : 
-    m_pathHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+ExperimentTemplateTargetFilter::ExperimentTemplateTargetFilter(JsonView jsonValue)
+  : ExperimentTemplateTargetFilter()
 {
   *this = jsonValue;
 }

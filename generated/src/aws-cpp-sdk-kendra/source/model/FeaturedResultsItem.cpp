@@ -32,17 +32,8 @@ FeaturedResultsItem::FeaturedResultsItem() :
 {
 }
 
-FeaturedResultsItem::FeaturedResultsItem(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_type(QueryResultType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_additionalAttributesHasBeenSet(false),
-    m_documentIdHasBeenSet(false),
-    m_documentTitleHasBeenSet(false),
-    m_documentExcerptHasBeenSet(false),
-    m_documentURIHasBeenSet(false),
-    m_documentAttributesHasBeenSet(false),
-    m_feedbackTokenHasBeenSet(false)
+FeaturedResultsItem::FeaturedResultsItem(JsonView jsonValue)
+  : FeaturedResultsItem()
 {
   *this = jsonValue;
 }

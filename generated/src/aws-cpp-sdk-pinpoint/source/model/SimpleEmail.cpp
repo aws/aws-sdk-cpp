@@ -26,11 +26,8 @@ SimpleEmail::SimpleEmail() :
 {
 }
 
-SimpleEmail::SimpleEmail(JsonView jsonValue) : 
-    m_htmlPartHasBeenSet(false),
-    m_subjectHasBeenSet(false),
-    m_textPartHasBeenSet(false),
-    m_headersHasBeenSet(false)
+SimpleEmail::SimpleEmail(JsonView jsonValue)
+  : SimpleEmail()
 {
   *this = jsonValue;
 }

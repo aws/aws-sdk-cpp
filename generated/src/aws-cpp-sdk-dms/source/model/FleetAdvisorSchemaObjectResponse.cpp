@@ -30,15 +30,8 @@ FleetAdvisorSchemaObjectResponse::FleetAdvisorSchemaObjectResponse() :
 {
 }
 
-FleetAdvisorSchemaObjectResponse::FleetAdvisorSchemaObjectResponse(JsonView jsonValue) : 
-    m_schemaIdHasBeenSet(false),
-    m_objectTypeHasBeenSet(false),
-    m_numberOfObjects(0),
-    m_numberOfObjectsHasBeenSet(false),
-    m_codeLineCount(0),
-    m_codeLineCountHasBeenSet(false),
-    m_codeSize(0),
-    m_codeSizeHasBeenSet(false)
+FleetAdvisorSchemaObjectResponse::FleetAdvisorSchemaObjectResponse(JsonView jsonValue)
+  : FleetAdvisorSchemaObjectResponse()
 {
   *this = jsonValue;
 }

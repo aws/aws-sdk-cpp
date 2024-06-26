@@ -27,10 +27,8 @@ DeregisterInstanceTagAttributeRequest::DeregisterInstanceTagAttributeRequest() :
 {
 }
 
-DeregisterInstanceTagAttributeRequest::DeregisterInstanceTagAttributeRequest(const XmlNode& xmlNode) : 
-    m_includeAllTagsOfInstance(false),
-    m_includeAllTagsOfInstanceHasBeenSet(false),
-    m_instanceTagKeysHasBeenSet(false)
+DeregisterInstanceTagAttributeRequest::DeregisterInstanceTagAttributeRequest(const XmlNode& xmlNode)
+  : DeregisterInstanceTagAttributeRequest()
 {
   *this = xmlNode;
 }

@@ -24,9 +24,8 @@ ReplicaRegionType::ReplicaRegionType() :
 {
 }
 
-ReplicaRegionType::ReplicaRegionType(JsonView jsonValue) : 
-    m_regionHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
+ReplicaRegionType::ReplicaRegionType(JsonView jsonValue)
+  : ReplicaRegionType()
 {
   *this = jsonValue;
 }

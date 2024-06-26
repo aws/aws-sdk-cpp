@@ -27,12 +27,8 @@ NetworkConfig::NetworkConfig() :
 {
 }
 
-NetworkConfig::NetworkConfig(JsonView jsonValue) : 
-    m_enableInterContainerTrafficEncryption(false),
-    m_enableInterContainerTrafficEncryptionHasBeenSet(false),
-    m_enableNetworkIsolation(false),
-    m_enableNetworkIsolationHasBeenSet(false),
-    m_vpcConfigHasBeenSet(false)
+NetworkConfig::NetworkConfig(JsonView jsonValue)
+  : NetworkConfig()
 {
   *this = jsonValue;
 }

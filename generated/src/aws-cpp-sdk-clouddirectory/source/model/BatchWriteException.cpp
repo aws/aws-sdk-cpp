@@ -27,12 +27,8 @@ BatchWriteException::BatchWriteException() :
 {
 }
 
-BatchWriteException::BatchWriteException(JsonView jsonValue) : 
-    m_index(0),
-    m_indexHasBeenSet(false),
-    m_type(BatchWriteExceptionType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+BatchWriteException::BatchWriteException(JsonView jsonValue)
+  : BatchWriteException()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ CreateConnectionOAuthClientRequestParameters::CreateConnectionOAuthClientRequest
 {
 }
 
-CreateConnectionOAuthClientRequestParameters::CreateConnectionOAuthClientRequestParameters(JsonView jsonValue) : 
-    m_clientIDHasBeenSet(false),
-    m_clientSecretHasBeenSet(false)
+CreateConnectionOAuthClientRequestParameters::CreateConnectionOAuthClientRequestParameters(JsonView jsonValue)
+  : CreateConnectionOAuthClientRequestParameters()
 {
   *this = jsonValue;
 }

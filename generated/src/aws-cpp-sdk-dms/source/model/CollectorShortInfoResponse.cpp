@@ -24,9 +24,8 @@ CollectorShortInfoResponse::CollectorShortInfoResponse() :
 {
 }
 
-CollectorShortInfoResponse::CollectorShortInfoResponse(JsonView jsonValue) : 
-    m_collectorReferencedIdHasBeenSet(false),
-    m_collectorNameHasBeenSet(false)
+CollectorShortInfoResponse::CollectorShortInfoResponse(JsonView jsonValue)
+  : CollectorShortInfoResponse()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ ExportSummary::ExportSummary() :
 {
 }
 
-ExportSummary::ExportSummary(JsonView jsonValue) : 
-    m_exportIdHasBeenSet(false),
-    m_statusHasBeenSet(false)
+ExportSummary::ExportSummary(JsonView jsonValue)
+  : ExportSummary()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ InstanceConfiguration::InstanceConfiguration() :
 {
 }
 
-InstanceConfiguration::InstanceConfiguration(JsonView jsonValue) : 
-    m_cpuHasBeenSet(false),
-    m_memoryHasBeenSet(false),
-    m_instanceRoleArnHasBeenSet(false)
+InstanceConfiguration::InstanceConfiguration(JsonView jsonValue)
+  : InstanceConfiguration()
 {
   *this = jsonValue;
 }

@@ -27,12 +27,8 @@ AppValidationConfiguration::AppValidationConfiguration() :
 {
 }
 
-AppValidationConfiguration::AppValidationConfiguration(JsonView jsonValue) : 
-    m_validationIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_appValidationStrategy(AppValidationStrategy::NOT_SET),
-    m_appValidationStrategyHasBeenSet(false),
-    m_ssmValidationParametersHasBeenSet(false)
+AppValidationConfiguration::AppValidationConfiguration(JsonView jsonValue)
+  : AppValidationConfiguration()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ FinishedWorldsSummary::FinishedWorldsSummary() :
 {
 }
 
-FinishedWorldsSummary::FinishedWorldsSummary(JsonView jsonValue) : 
-    m_finishedCount(0),
-    m_finishedCountHasBeenSet(false),
-    m_succeededWorldsHasBeenSet(false),
-    m_failureSummaryHasBeenSet(false)
+FinishedWorldsSummary::FinishedWorldsSummary(JsonView jsonValue)
+  : FinishedWorldsSummary()
 {
   *this = jsonValue;
 }

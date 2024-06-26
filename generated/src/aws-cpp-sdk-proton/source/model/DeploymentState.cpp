@@ -26,11 +26,8 @@ DeploymentState::DeploymentState() :
 {
 }
 
-DeploymentState::DeploymentState(JsonView jsonValue) : 
-    m_componentHasBeenSet(false),
-    m_environmentHasBeenSet(false),
-    m_serviceInstanceHasBeenSet(false),
-    m_servicePipelineHasBeenSet(false)
+DeploymentState::DeploymentState(JsonView jsonValue)
+  : DeploymentState()
 {
   *this = jsonValue;
 }

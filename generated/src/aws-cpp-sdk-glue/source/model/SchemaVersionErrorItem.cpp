@@ -25,10 +25,8 @@ SchemaVersionErrorItem::SchemaVersionErrorItem() :
 {
 }
 
-SchemaVersionErrorItem::SchemaVersionErrorItem(JsonView jsonValue) : 
-    m_versionNumber(0),
-    m_versionNumberHasBeenSet(false),
-    m_errorDetailsHasBeenSet(false)
+SchemaVersionErrorItem::SchemaVersionErrorItem(JsonView jsonValue)
+  : SchemaVersionErrorItem()
 {
   *this = jsonValue;
 }

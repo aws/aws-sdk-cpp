@@ -28,13 +28,8 @@ DnsRuleGroupPriorityConflictViolation::DnsRuleGroupPriorityConflictViolation() :
 {
 }
 
-DnsRuleGroupPriorityConflictViolation::DnsRuleGroupPriorityConflictViolation(JsonView jsonValue) : 
-    m_violationTargetHasBeenSet(false),
-    m_violationTargetDescriptionHasBeenSet(false),
-    m_conflictingPriority(0),
-    m_conflictingPriorityHasBeenSet(false),
-    m_conflictingPolicyIdHasBeenSet(false),
-    m_unavailablePrioritiesHasBeenSet(false)
+DnsRuleGroupPriorityConflictViolation::DnsRuleGroupPriorityConflictViolation(JsonView jsonValue)
+  : DnsRuleGroupPriorityConflictViolation()
 {
   *this = jsonValue;
 }

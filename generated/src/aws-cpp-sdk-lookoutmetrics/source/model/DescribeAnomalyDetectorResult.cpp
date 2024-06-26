@@ -23,9 +23,8 @@ DescribeAnomalyDetectorResult::DescribeAnomalyDetectorResult() :
 {
 }
 
-DescribeAnomalyDetectorResult::DescribeAnomalyDetectorResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(AnomalyDetectorStatus::NOT_SET),
-    m_failureType(AnomalyDetectorFailureType::NOT_SET)
+DescribeAnomalyDetectorResult::DescribeAnomalyDetectorResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeAnomalyDetectorResult()
 {
   *this = result;
 }

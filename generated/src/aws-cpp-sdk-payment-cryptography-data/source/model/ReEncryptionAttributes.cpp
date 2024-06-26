@@ -24,9 +24,8 @@ ReEncryptionAttributes::ReEncryptionAttributes() :
 {
 }
 
-ReEncryptionAttributes::ReEncryptionAttributes(JsonView jsonValue) : 
-    m_dukptHasBeenSet(false),
-    m_symmetricHasBeenSet(false)
+ReEncryptionAttributes::ReEncryptionAttributes(JsonView jsonValue)
+  : ReEncryptionAttributes()
 {
   *this = jsonValue;
 }

@@ -28,13 +28,8 @@ DetectionFilter::DetectionFilter() :
 {
 }
 
-DetectionFilter::DetectionFilter(JsonView jsonValue) : 
-    m_minConfidence(0.0),
-    m_minConfidenceHasBeenSet(false),
-    m_minBoundingBoxHeight(0.0),
-    m_minBoundingBoxHeightHasBeenSet(false),
-    m_minBoundingBoxWidth(0.0),
-    m_minBoundingBoxWidthHasBeenSet(false)
+DetectionFilter::DetectionFilter(JsonView jsonValue)
+  : DetectionFilter()
 {
   *this = jsonValue;
 }

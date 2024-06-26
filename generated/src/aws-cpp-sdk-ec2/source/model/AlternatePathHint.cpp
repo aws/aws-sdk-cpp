@@ -26,9 +26,8 @@ AlternatePathHint::AlternatePathHint() :
 {
 }
 
-AlternatePathHint::AlternatePathHint(const XmlNode& xmlNode) : 
-    m_componentIdHasBeenSet(false),
-    m_componentArnHasBeenSet(false)
+AlternatePathHint::AlternatePathHint(const XmlNode& xmlNode)
+  : AlternatePathHint()
 {
   *this = xmlNode;
 }

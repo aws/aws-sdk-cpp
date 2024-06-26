@@ -25,11 +25,8 @@ CreateKxDataviewResult::CreateKxDataviewResult() :
 {
 }
 
-CreateKxDataviewResult::CreateKxDataviewResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_azMode(KxAzMode::NOT_SET),
-    m_autoUpdate(false),
-    m_readWrite(false),
-    m_status(KxDataviewStatus::NOT_SET)
+CreateKxDataviewResult::CreateKxDataviewResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateKxDataviewResult()
 {
   *this = result;
 }

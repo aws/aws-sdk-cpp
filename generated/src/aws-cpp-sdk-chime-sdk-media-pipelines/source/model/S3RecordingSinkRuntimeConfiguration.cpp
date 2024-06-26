@@ -25,10 +25,8 @@ S3RecordingSinkRuntimeConfiguration::S3RecordingSinkRuntimeConfiguration() :
 {
 }
 
-S3RecordingSinkRuntimeConfiguration::S3RecordingSinkRuntimeConfiguration(JsonView jsonValue) : 
-    m_destinationHasBeenSet(false),
-    m_recordingFileFormat(RecordingFileFormat::NOT_SET),
-    m_recordingFileFormatHasBeenSet(false)
+S3RecordingSinkRuntimeConfiguration::S3RecordingSinkRuntimeConfiguration(JsonView jsonValue)
+  : S3RecordingSinkRuntimeConfiguration()
 {
   *this = jsonValue;
 }

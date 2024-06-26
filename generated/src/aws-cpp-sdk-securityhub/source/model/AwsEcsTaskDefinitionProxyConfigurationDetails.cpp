@@ -25,10 +25,8 @@ AwsEcsTaskDefinitionProxyConfigurationDetails::AwsEcsTaskDefinitionProxyConfigur
 {
 }
 
-AwsEcsTaskDefinitionProxyConfigurationDetails::AwsEcsTaskDefinitionProxyConfigurationDetails(JsonView jsonValue) : 
-    m_containerNameHasBeenSet(false),
-    m_proxyConfigurationPropertiesHasBeenSet(false),
-    m_typeHasBeenSet(false)
+AwsEcsTaskDefinitionProxyConfigurationDetails::AwsEcsTaskDefinitionProxyConfigurationDetails(JsonView jsonValue)
+  : AwsEcsTaskDefinitionProxyConfigurationDetails()
 {
   *this = jsonValue;
 }

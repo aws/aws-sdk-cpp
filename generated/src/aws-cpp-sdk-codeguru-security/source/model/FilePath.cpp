@@ -29,14 +29,8 @@ FilePath::FilePath() :
 {
 }
 
-FilePath::FilePath(JsonView jsonValue) : 
-    m_codeSnippetHasBeenSet(false),
-    m_endLine(0),
-    m_endLineHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_pathHasBeenSet(false),
-    m_startLine(0),
-    m_startLineHasBeenSet(false)
+FilePath::FilePath(JsonView jsonValue)
+  : FilePath()
 {
   *this = jsonValue;
 }

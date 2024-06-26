@@ -26,11 +26,8 @@ GetJobEntityError::GetJobEntityError() :
 {
 }
 
-GetJobEntityError::GetJobEntityError(JsonView jsonValue) : 
-    m_environmentDetailsHasBeenSet(false),
-    m_jobAttachmentDetailsHasBeenSet(false),
-    m_jobDetailsHasBeenSet(false),
-    m_stepDetailsHasBeenSet(false)
+GetJobEntityError::GetJobEntityError(JsonView jsonValue)
+  : GetJobEntityError()
 {
   *this = jsonValue;
 }

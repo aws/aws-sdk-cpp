@@ -27,12 +27,8 @@ TestSuiteLatestVersion::TestSuiteLatestVersion() :
 {
 }
 
-TestSuiteLatestVersion::TestSuiteLatestVersion(JsonView jsonValue) : 
-    m_version(0),
-    m_versionHasBeenSet(false),
-    m_status(TestSuiteLifecycle::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusReasonHasBeenSet(false)
+TestSuiteLatestVersion::TestSuiteLatestVersion(JsonView jsonValue)
+  : TestSuiteLatestVersion()
 {
   *this = jsonValue;
 }

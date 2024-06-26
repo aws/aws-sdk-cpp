@@ -34,19 +34,8 @@ ReviewTemplate::ReviewTemplate() :
 {
 }
 
-ReviewTemplate::ReviewTemplate(JsonView jsonValue) : 
-    m_descriptionHasBeenSet(false),
-    m_lensesHasBeenSet(false),
-    m_notesHasBeenSet(false),
-    m_questionCountsHasBeenSet(false),
-    m_ownerHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_templateArnHasBeenSet(false),
-    m_templateNameHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_updateStatus(ReviewTemplateUpdateStatus::NOT_SET),
-    m_updateStatusHasBeenSet(false),
-    m_shareInvitationIdHasBeenSet(false)
+ReviewTemplate::ReviewTemplate(JsonView jsonValue)
+  : ReviewTemplate()
 {
   *this = jsonValue;
 }

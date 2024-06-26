@@ -24,9 +24,8 @@ InvocationInputMember::InvocationInputMember() :
 {
 }
 
-InvocationInputMember::InvocationInputMember(JsonView jsonValue) : 
-    m_apiInvocationInputHasBeenSet(false),
-    m_functionInvocationInputHasBeenSet(false)
+InvocationInputMember::InvocationInputMember(JsonView jsonValue)
+  : InvocationInputMember()
 {
   *this = jsonValue;
 }

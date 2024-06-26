@@ -23,8 +23,8 @@ VectorIngestionConfiguration::VectorIngestionConfiguration() :
 {
 }
 
-VectorIngestionConfiguration::VectorIngestionConfiguration(JsonView jsonValue) : 
-    m_chunkingConfigurationHasBeenSet(false)
+VectorIngestionConfiguration::VectorIngestionConfiguration(JsonView jsonValue)
+  : VectorIngestionConfiguration()
 {
   *this = jsonValue;
 }

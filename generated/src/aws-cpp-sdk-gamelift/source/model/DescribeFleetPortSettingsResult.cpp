@@ -22,8 +22,8 @@ DescribeFleetPortSettingsResult::DescribeFleetPortSettingsResult() :
 {
 }
 
-DescribeFleetPortSettingsResult::DescribeFleetPortSettingsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_updateStatus(LocationUpdateStatus::NOT_SET)
+DescribeFleetPortSettingsResult::DescribeFleetPortSettingsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeFleetPortSettingsResult()
 {
   *this = result;
 }

@@ -25,10 +25,8 @@ SparkParameters::SparkParameters() :
 {
 }
 
-SparkParameters::SparkParameters(JsonView jsonValue) : 
-    m_hostHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false)
+SparkParameters::SparkParameters(JsonView jsonValue)
+  : SparkParameters()
 {
   *this = jsonValue;
 }

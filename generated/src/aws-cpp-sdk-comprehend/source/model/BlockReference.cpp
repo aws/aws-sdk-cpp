@@ -28,13 +28,8 @@ BlockReference::BlockReference() :
 {
 }
 
-BlockReference::BlockReference(JsonView jsonValue) : 
-    m_blockIdHasBeenSet(false),
-    m_beginOffset(0),
-    m_beginOffsetHasBeenSet(false),
-    m_endOffset(0),
-    m_endOffsetHasBeenSet(false),
-    m_childBlocksHasBeenSet(false)
+BlockReference::BlockReference(JsonView jsonValue)
+  : BlockReference()
 {
   *this = jsonValue;
 }

@@ -28,13 +28,8 @@ LastSync::LastSync() :
 {
 }
 
-LastSync::LastSync(JsonView jsonValue) : 
-    m_lastSyncTimeHasBeenSet(false),
-    m_lastSyncStatus(LastSyncStatus::NOT_SET),
-    m_lastSyncStatusHasBeenSet(false),
-    m_lastSyncStatusMessageHasBeenSet(false),
-    m_lastSuccessfulSyncTimeHasBeenSet(false),
-    m_lastSuccessfulSyncProvisioningArtifactIdHasBeenSet(false)
+LastSync::LastSync(JsonView jsonValue)
+  : LastSync()
 {
   *this = jsonValue;
 }

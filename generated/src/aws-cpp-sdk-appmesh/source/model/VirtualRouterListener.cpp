@@ -23,8 +23,8 @@ VirtualRouterListener::VirtualRouterListener() :
 {
 }
 
-VirtualRouterListener::VirtualRouterListener(JsonView jsonValue) : 
-    m_portMappingHasBeenSet(false)
+VirtualRouterListener::VirtualRouterListener(JsonView jsonValue)
+  : VirtualRouterListener()
 {
   *this = jsonValue;
 }

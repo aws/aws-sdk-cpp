@@ -31,16 +31,8 @@ BatchInferenceJobSummary::BatchInferenceJobSummary() :
 {
 }
 
-BatchInferenceJobSummary::BatchInferenceJobSummary(JsonView jsonValue) : 
-    m_batchInferenceJobArnHasBeenSet(false),
-    m_jobNameHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_creationDateTimeHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false),
-    m_failureReasonHasBeenSet(false),
-    m_solutionVersionArnHasBeenSet(false),
-    m_batchInferenceJobMode(BatchInferenceJobMode::NOT_SET),
-    m_batchInferenceJobModeHasBeenSet(false)
+BatchInferenceJobSummary::BatchInferenceJobSummary(JsonView jsonValue)
+  : BatchInferenceJobSummary()
 {
   *this = jsonValue;
 }

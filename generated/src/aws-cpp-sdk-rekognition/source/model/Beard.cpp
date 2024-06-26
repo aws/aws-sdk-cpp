@@ -26,11 +26,8 @@ Beard::Beard() :
 {
 }
 
-Beard::Beard(JsonView jsonValue) : 
-    m_value(false),
-    m_valueHasBeenSet(false),
-    m_confidence(0.0),
-    m_confidenceHasBeenSet(false)
+Beard::Beard(JsonView jsonValue)
+  : Beard()
 {
   *this = jsonValue;
 }

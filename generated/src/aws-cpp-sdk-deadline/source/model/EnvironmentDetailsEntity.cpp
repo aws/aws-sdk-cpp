@@ -26,11 +26,8 @@ EnvironmentDetailsEntity::EnvironmentDetailsEntity() :
 {
 }
 
-EnvironmentDetailsEntity::EnvironmentDetailsEntity(JsonView jsonValue) : 
-    m_environmentIdHasBeenSet(false),
-    m_jobIdHasBeenSet(false),
-    m_schemaVersionHasBeenSet(false),
-    m_templateHasBeenSet(false)
+EnvironmentDetailsEntity::EnvironmentDetailsEntity(JsonView jsonValue)
+  : EnvironmentDetailsEntity()
 {
   *this = jsonValue;
 }

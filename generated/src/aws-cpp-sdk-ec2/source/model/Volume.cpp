@@ -50,33 +50,8 @@ Volume::Volume() :
 {
 }
 
-Volume::Volume(const XmlNode& xmlNode) : 
-    m_attachmentsHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_encrypted(false),
-    m_encryptedHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_outpostArnHasBeenSet(false),
-    m_size(0),
-    m_sizeHasBeenSet(false),
-    m_snapshotIdHasBeenSet(false),
-    m_state(VolumeState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_volumeIdHasBeenSet(false),
-    m_iops(0),
-    m_iopsHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_volumeType(VolumeType::NOT_SET),
-    m_volumeTypeHasBeenSet(false),
-    m_fastRestored(false),
-    m_fastRestoredHasBeenSet(false),
-    m_multiAttachEnabled(false),
-    m_multiAttachEnabledHasBeenSet(false),
-    m_throughput(0),
-    m_throughputHasBeenSet(false),
-    m_sseType(SSEType::NOT_SET),
-    m_sseTypeHasBeenSet(false)
+Volume::Volume(const XmlNode& xmlNode)
+  : Volume()
 {
   *this = xmlNode;
 }

@@ -23,8 +23,8 @@ UserJobsFirst::UserJobsFirst() :
 {
 }
 
-UserJobsFirst::UserJobsFirst(JsonView jsonValue) : 
-    m_userIdentityIdHasBeenSet(false)
+UserJobsFirst::UserJobsFirst(JsonView jsonValue)
+  : UserJobsFirst()
 {
   *this = jsonValue;
 }

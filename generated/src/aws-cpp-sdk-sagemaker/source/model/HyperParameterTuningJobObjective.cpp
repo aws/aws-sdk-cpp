@@ -25,10 +25,8 @@ HyperParameterTuningJobObjective::HyperParameterTuningJobObjective() :
 {
 }
 
-HyperParameterTuningJobObjective::HyperParameterTuningJobObjective(JsonView jsonValue) : 
-    m_type(HyperParameterTuningJobObjectiveType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_metricNameHasBeenSet(false)
+HyperParameterTuningJobObjective::HyperParameterTuningJobObjective(JsonView jsonValue)
+  : HyperParameterTuningJobObjective()
 {
   *this = jsonValue;
 }

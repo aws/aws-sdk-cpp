@@ -24,9 +24,8 @@ Spend::Spend() :
 {
 }
 
-Spend::Spend(JsonView jsonValue) : 
-    m_amountHasBeenSet(false),
-    m_unitHasBeenSet(false)
+Spend::Spend(JsonView jsonValue)
+  : Spend()
 {
   *this = jsonValue;
 }

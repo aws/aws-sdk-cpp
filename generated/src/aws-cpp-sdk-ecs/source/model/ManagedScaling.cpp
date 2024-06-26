@@ -32,17 +32,8 @@ ManagedScaling::ManagedScaling() :
 {
 }
 
-ManagedScaling::ManagedScaling(JsonView jsonValue) : 
-    m_status(ManagedScalingStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_targetCapacity(0),
-    m_targetCapacityHasBeenSet(false),
-    m_minimumScalingStepSize(0),
-    m_minimumScalingStepSizeHasBeenSet(false),
-    m_maximumScalingStepSize(0),
-    m_maximumScalingStepSizeHasBeenSet(false),
-    m_instanceWarmupPeriod(0),
-    m_instanceWarmupPeriodHasBeenSet(false)
+ManagedScaling::ManagedScaling(JsonView jsonValue)
+  : ManagedScaling()
 {
   *this = jsonValue;
 }

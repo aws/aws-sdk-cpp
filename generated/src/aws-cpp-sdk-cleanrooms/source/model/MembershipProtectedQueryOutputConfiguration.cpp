@@ -23,8 +23,8 @@ MembershipProtectedQueryOutputConfiguration::MembershipProtectedQueryOutputConfi
 {
 }
 
-MembershipProtectedQueryOutputConfiguration::MembershipProtectedQueryOutputConfiguration(JsonView jsonValue) : 
-    m_s3HasBeenSet(false)
+MembershipProtectedQueryOutputConfiguration::MembershipProtectedQueryOutputConfiguration(JsonView jsonValue)
+  : MembershipProtectedQueryOutputConfiguration()
 {
   *this = jsonValue;
 }

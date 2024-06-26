@@ -22,8 +22,8 @@ UpdateFlowResult::UpdateFlowResult() :
 {
 }
 
-UpdateFlowResult::UpdateFlowResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_flowStatus(FlowStatus::NOT_SET)
+UpdateFlowResult::UpdateFlowResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateFlowResult()
 {
   *this = result;
 }

@@ -24,9 +24,8 @@ HistoryEventExecutionDataDetails::HistoryEventExecutionDataDetails() :
 {
 }
 
-HistoryEventExecutionDataDetails::HistoryEventExecutionDataDetails(JsonView jsonValue) : 
-    m_truncated(false),
-    m_truncatedHasBeenSet(false)
+HistoryEventExecutionDataDetails::HistoryEventExecutionDataDetails(JsonView jsonValue)
+  : HistoryEventExecutionDataDetails()
 {
   *this = jsonValue;
 }

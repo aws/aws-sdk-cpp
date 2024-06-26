@@ -28,13 +28,8 @@ ThingAttribute::ThingAttribute() :
 {
 }
 
-ThingAttribute::ThingAttribute(JsonView jsonValue) : 
-    m_thingNameHasBeenSet(false),
-    m_thingTypeNameHasBeenSet(false),
-    m_thingArnHasBeenSet(false),
-    m_attributesHasBeenSet(false),
-    m_version(0),
-    m_versionHasBeenSet(false)
+ThingAttribute::ThingAttribute(JsonView jsonValue)
+  : ThingAttribute()
 {
   *this = jsonValue;
 }

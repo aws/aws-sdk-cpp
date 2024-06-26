@@ -26,11 +26,8 @@ NumericalMeasureField::NumericalMeasureField() :
 {
 }
 
-NumericalMeasureField::NumericalMeasureField(JsonView jsonValue) : 
-    m_fieldIdHasBeenSet(false),
-    m_columnHasBeenSet(false),
-    m_aggregationFunctionHasBeenSet(false),
-    m_formatConfigurationHasBeenSet(false)
+NumericalMeasureField::NumericalMeasureField(JsonView jsonValue)
+  : NumericalMeasureField()
 {
   *this = jsonValue;
 }

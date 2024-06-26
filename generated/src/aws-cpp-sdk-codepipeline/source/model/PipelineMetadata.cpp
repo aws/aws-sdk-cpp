@@ -26,11 +26,8 @@ PipelineMetadata::PipelineMetadata() :
 {
 }
 
-PipelineMetadata::PipelineMetadata(JsonView jsonValue) : 
-    m_pipelineArnHasBeenSet(false),
-    m_createdHasBeenSet(false),
-    m_updatedHasBeenSet(false),
-    m_pollingDisabledAtHasBeenSet(false)
+PipelineMetadata::PipelineMetadata(JsonView jsonValue)
+  : PipelineMetadata()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ DestinationConfiguration::DestinationConfiguration() :
 {
 }
 
-DestinationConfiguration::DestinationConfiguration(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_channelHasBeenSet(false),
-    m_s3HasBeenSet(false)
+DestinationConfiguration::DestinationConfiguration(JsonView jsonValue)
+  : DestinationConfiguration()
 {
   *this = jsonValue;
 }

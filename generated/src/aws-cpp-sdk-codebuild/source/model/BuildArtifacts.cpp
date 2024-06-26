@@ -32,17 +32,8 @@ BuildArtifacts::BuildArtifacts() :
 {
 }
 
-BuildArtifacts::BuildArtifacts(JsonView jsonValue) : 
-    m_locationHasBeenSet(false),
-    m_sha256sumHasBeenSet(false),
-    m_md5sumHasBeenSet(false),
-    m_overrideArtifactName(false),
-    m_overrideArtifactNameHasBeenSet(false),
-    m_encryptionDisabled(false),
-    m_encryptionDisabledHasBeenSet(false),
-    m_artifactIdentifierHasBeenSet(false),
-    m_bucketOwnerAccess(BucketOwnerAccess::NOT_SET),
-    m_bucketOwnerAccessHasBeenSet(false)
+BuildArtifacts::BuildArtifacts(JsonView jsonValue)
+  : BuildArtifacts()
 {
   *this = jsonValue;
 }

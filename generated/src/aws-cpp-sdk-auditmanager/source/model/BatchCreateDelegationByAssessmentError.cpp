@@ -25,10 +25,8 @@ BatchCreateDelegationByAssessmentError::BatchCreateDelegationByAssessmentError()
 {
 }
 
-BatchCreateDelegationByAssessmentError::BatchCreateDelegationByAssessmentError(JsonView jsonValue) : 
-    m_createDelegationRequestHasBeenSet(false),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
+BatchCreateDelegationByAssessmentError::BatchCreateDelegationByAssessmentError(JsonView jsonValue)
+  : BatchCreateDelegationByAssessmentError()
 {
   *this = jsonValue;
 }

@@ -32,15 +32,8 @@ NodeGroupConfiguration::NodeGroupConfiguration() :
 {
 }
 
-NodeGroupConfiguration::NodeGroupConfiguration(const XmlNode& xmlNode) : 
-    m_nodeGroupIdHasBeenSet(false),
-    m_slotsHasBeenSet(false),
-    m_replicaCount(0),
-    m_replicaCountHasBeenSet(false),
-    m_primaryAvailabilityZoneHasBeenSet(false),
-    m_replicaAvailabilityZonesHasBeenSet(false),
-    m_primaryOutpostArnHasBeenSet(false),
-    m_replicaOutpostArnsHasBeenSet(false)
+NodeGroupConfiguration::NodeGroupConfiguration(const XmlNode& xmlNode)
+  : NodeGroupConfiguration()
 {
   *this = xmlNode;
 }

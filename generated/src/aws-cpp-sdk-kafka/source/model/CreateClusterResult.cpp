@@ -22,8 +22,8 @@ CreateClusterResult::CreateClusterResult() :
 {
 }
 
-CreateClusterResult::CreateClusterResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_state(ClusterState::NOT_SET)
+CreateClusterResult::CreateClusterResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateClusterResult()
 {
   *this = result;
 }

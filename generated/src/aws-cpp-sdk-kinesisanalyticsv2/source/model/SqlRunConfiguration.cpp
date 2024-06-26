@@ -24,9 +24,8 @@ SqlRunConfiguration::SqlRunConfiguration() :
 {
 }
 
-SqlRunConfiguration::SqlRunConfiguration(JsonView jsonValue) : 
-    m_inputIdHasBeenSet(false),
-    m_inputStartingPositionConfigurationHasBeenSet(false)
+SqlRunConfiguration::SqlRunConfiguration(JsonView jsonValue)
+  : SqlRunConfiguration()
 {
   *this = jsonValue;
 }

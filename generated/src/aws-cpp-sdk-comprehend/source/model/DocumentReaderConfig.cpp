@@ -27,12 +27,8 @@ DocumentReaderConfig::DocumentReaderConfig() :
 {
 }
 
-DocumentReaderConfig::DocumentReaderConfig(JsonView jsonValue) : 
-    m_documentReadAction(DocumentReadAction::NOT_SET),
-    m_documentReadActionHasBeenSet(false),
-    m_documentReadMode(DocumentReadMode::NOT_SET),
-    m_documentReadModeHasBeenSet(false),
-    m_featureTypesHasBeenSet(false)
+DocumentReaderConfig::DocumentReaderConfig(JsonView jsonValue)
+  : DocumentReaderConfig()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ AdvancedBackupSetting::AdvancedBackupSetting() :
 {
 }
 
-AdvancedBackupSetting::AdvancedBackupSetting(JsonView jsonValue) : 
-    m_resourceTypeHasBeenSet(false),
-    m_backupOptionsHasBeenSet(false)
+AdvancedBackupSetting::AdvancedBackupSetting(JsonView jsonValue)
+  : AdvancedBackupSetting()
 {
   *this = jsonValue;
 }

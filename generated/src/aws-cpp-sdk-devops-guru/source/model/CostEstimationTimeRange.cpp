@@ -24,9 +24,8 @@ CostEstimationTimeRange::CostEstimationTimeRange() :
 {
 }
 
-CostEstimationTimeRange::CostEstimationTimeRange(JsonView jsonValue) : 
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
+CostEstimationTimeRange::CostEstimationTimeRange(JsonView jsonValue)
+  : CostEstimationTimeRange()
 {
   *this = jsonValue;
 }

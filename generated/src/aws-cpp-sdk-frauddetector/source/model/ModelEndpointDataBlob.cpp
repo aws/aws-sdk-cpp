@@ -25,9 +25,8 @@ ModelEndpointDataBlob::ModelEndpointDataBlob() :
 {
 }
 
-ModelEndpointDataBlob::ModelEndpointDataBlob(JsonView jsonValue) : 
-    m_byteBufferHasBeenSet(false),
-    m_contentTypeHasBeenSet(false)
+ModelEndpointDataBlob::ModelEndpointDataBlob(JsonView jsonValue)
+  : ModelEndpointDataBlob()
 {
   *this = jsonValue;
 }

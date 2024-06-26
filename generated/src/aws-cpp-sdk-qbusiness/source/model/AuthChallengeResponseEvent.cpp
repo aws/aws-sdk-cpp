@@ -23,8 +23,8 @@ AuthChallengeResponseEvent::AuthChallengeResponseEvent() :
 {
 }
 
-AuthChallengeResponseEvent::AuthChallengeResponseEvent(JsonView jsonValue) : 
-    m_responseMapHasBeenSet(false)
+AuthChallengeResponseEvent::AuthChallengeResponseEvent(JsonView jsonValue)
+  : AuthChallengeResponseEvent()
 {
   *this = jsonValue;
 }

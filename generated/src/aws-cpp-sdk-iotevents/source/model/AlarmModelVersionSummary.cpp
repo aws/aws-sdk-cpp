@@ -31,16 +31,8 @@ AlarmModelVersionSummary::AlarmModelVersionSummary() :
 {
 }
 
-AlarmModelVersionSummary::AlarmModelVersionSummary(JsonView jsonValue) : 
-    m_alarmModelNameHasBeenSet(false),
-    m_alarmModelArnHasBeenSet(false),
-    m_alarmModelVersionHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastUpdateTimeHasBeenSet(false),
-    m_status(AlarmModelVersionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false)
+AlarmModelVersionSummary::AlarmModelVersionSummary(JsonView jsonValue)
+  : AlarmModelVersionSummary()
 {
   *this = jsonValue;
 }

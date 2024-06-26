@@ -22,8 +22,8 @@ DescribeDataSourceResult::DescribeDataSourceResult() :
 {
 }
 
-DescribeDataSourceResult::DescribeDataSourceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+DescribeDataSourceResult::DescribeDataSourceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeDataSourceResult()
 {
   *this = result;
 }

@@ -26,9 +26,8 @@ ObjectLockLegalHold::ObjectLockLegalHold() :
 {
 }
 
-ObjectLockLegalHold::ObjectLockLegalHold(const XmlNode& xmlNode) : 
-    m_status(ObjectLockLegalHoldStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+ObjectLockLegalHold::ObjectLockLegalHold(const XmlNode& xmlNode)
+  : ObjectLockLegalHold()
 {
   *this = xmlNode;
 }

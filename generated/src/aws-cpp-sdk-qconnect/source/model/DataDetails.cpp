@@ -26,10 +26,8 @@ DataDetails::DataDetails() :
 {
 }
 
-DataDetails::DataDetails(JsonView jsonValue) : 
-    m_contentDataHasBeenSet(false),
-    m_generativeDataHasBeenSet(false),
-    m_sourceContentDataHasBeenSet(false)
+DataDetails::DataDetails(JsonView jsonValue)
+  : DataDetails()
 {
   *this = jsonValue;
 }

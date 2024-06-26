@@ -26,11 +26,8 @@ AntipatternSeveritySummary::AntipatternSeveritySummary() :
 {
 }
 
-AntipatternSeveritySummary::AntipatternSeveritySummary(JsonView jsonValue) : 
-    m_count(0),
-    m_countHasBeenSet(false),
-    m_severity(Severity::NOT_SET),
-    m_severityHasBeenSet(false)
+AntipatternSeveritySummary::AntipatternSeveritySummary(JsonView jsonValue)
+  : AntipatternSeveritySummary()
 {
   *this = jsonValue;
 }

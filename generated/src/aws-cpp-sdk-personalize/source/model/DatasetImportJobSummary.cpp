@@ -30,15 +30,8 @@ DatasetImportJobSummary::DatasetImportJobSummary() :
 {
 }
 
-DatasetImportJobSummary::DatasetImportJobSummary(JsonView jsonValue) : 
-    m_datasetImportJobArnHasBeenSet(false),
-    m_jobNameHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_creationDateTimeHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false),
-    m_failureReasonHasBeenSet(false),
-    m_importMode(ImportMode::NOT_SET),
-    m_importModeHasBeenSet(false)
+DatasetImportJobSummary::DatasetImportJobSummary(JsonView jsonValue)
+  : DatasetImportJobSummary()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ CardVerificationValue1::CardVerificationValue1() :
 {
 }
 
-CardVerificationValue1::CardVerificationValue1(JsonView jsonValue) : 
-    m_cardExpiryDateHasBeenSet(false),
-    m_serviceCodeHasBeenSet(false)
+CardVerificationValue1::CardVerificationValue1(JsonView jsonValue)
+  : CardVerificationValue1()
 {
   *this = jsonValue;
 }

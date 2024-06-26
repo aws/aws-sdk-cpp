@@ -26,11 +26,8 @@ VCpuCountRange::VCpuCountRange() :
 {
 }
 
-VCpuCountRange::VCpuCountRange(JsonView jsonValue) : 
-    m_max(0),
-    m_maxHasBeenSet(false),
-    m_min(0),
-    m_minHasBeenSet(false)
+VCpuCountRange::VCpuCountRange(JsonView jsonValue)
+  : VCpuCountRange()
 {
   *this = jsonValue;
 }

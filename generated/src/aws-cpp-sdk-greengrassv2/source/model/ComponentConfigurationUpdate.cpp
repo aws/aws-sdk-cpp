@@ -24,9 +24,8 @@ ComponentConfigurationUpdate::ComponentConfigurationUpdate() :
 {
 }
 
-ComponentConfigurationUpdate::ComponentConfigurationUpdate(JsonView jsonValue) : 
-    m_mergeHasBeenSet(false),
-    m_resetHasBeenSet(false)
+ComponentConfigurationUpdate::ComponentConfigurationUpdate(JsonView jsonValue)
+  : ComponentConfigurationUpdate()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ SipMediaApplicationAlexaSkillConfiguration::SipMediaApplicationAlexaSkillConfigu
 {
 }
 
-SipMediaApplicationAlexaSkillConfiguration::SipMediaApplicationAlexaSkillConfiguration(JsonView jsonValue) : 
-    m_alexaSkillStatus(AlexaSkillStatus::NOT_SET),
-    m_alexaSkillStatusHasBeenSet(false),
-    m_alexaSkillIdsHasBeenSet(false)
+SipMediaApplicationAlexaSkillConfiguration::SipMediaApplicationAlexaSkillConfiguration(JsonView jsonValue)
+  : SipMediaApplicationAlexaSkillConfiguration()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ LayoutConfiguration::LayoutConfiguration() :
 {
 }
 
-LayoutConfiguration::LayoutConfiguration(JsonView jsonValue) : 
-    m_defaultLayoutHasBeenSet(false)
+LayoutConfiguration::LayoutConfiguration(JsonView jsonValue)
+  : LayoutConfiguration()
 {
   *this = jsonValue;
 }

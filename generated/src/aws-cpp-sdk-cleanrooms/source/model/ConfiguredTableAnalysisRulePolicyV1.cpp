@@ -25,10 +25,8 @@ ConfiguredTableAnalysisRulePolicyV1::ConfiguredTableAnalysisRulePolicyV1() :
 {
 }
 
-ConfiguredTableAnalysisRulePolicyV1::ConfiguredTableAnalysisRulePolicyV1(JsonView jsonValue) : 
-    m_listHasBeenSet(false),
-    m_aggregationHasBeenSet(false),
-    m_customHasBeenSet(false)
+ConfiguredTableAnalysisRulePolicyV1::ConfiguredTableAnalysisRulePolicyV1(JsonView jsonValue)
+  : ConfiguredTableAnalysisRulePolicyV1()
 {
   *this = jsonValue;
 }

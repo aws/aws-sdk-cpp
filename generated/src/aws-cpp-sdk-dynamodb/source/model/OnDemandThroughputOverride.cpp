@@ -24,9 +24,8 @@ OnDemandThroughputOverride::OnDemandThroughputOverride() :
 {
 }
 
-OnDemandThroughputOverride::OnDemandThroughputOverride(JsonView jsonValue) : 
-    m_maxReadRequestUnits(0),
-    m_maxReadRequestUnitsHasBeenSet(false)
+OnDemandThroughputOverride::OnDemandThroughputOverride(JsonView jsonValue)
+  : OnDemandThroughputOverride()
 {
   *this = jsonValue;
 }

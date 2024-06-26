@@ -23,8 +23,8 @@ ComboChartFieldWells::ComboChartFieldWells() :
 {
 }
 
-ComboChartFieldWells::ComboChartFieldWells(JsonView jsonValue) : 
-    m_comboChartAggregatedFieldWellsHasBeenSet(false)
+ComboChartFieldWells::ComboChartFieldWells(JsonView jsonValue)
+  : ComboChartFieldWells()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ RevokeSecurityGroupIngressResponse::RevokeSecurityGroupIngressResponse() :
 {
 }
 
-RevokeSecurityGroupIngressResponse::RevokeSecurityGroupIngressResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_return(false)
+RevokeSecurityGroupIngressResponse::RevokeSecurityGroupIngressResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : RevokeSecurityGroupIngressResponse()
 {
   *this = result;
 }

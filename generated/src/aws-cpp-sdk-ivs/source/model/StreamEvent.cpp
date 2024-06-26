@@ -25,10 +25,8 @@ StreamEvent::StreamEvent() :
 {
 }
 
-StreamEvent::StreamEvent(JsonView jsonValue) : 
-    m_eventTimeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_typeHasBeenSet(false)
+StreamEvent::StreamEvent(JsonView jsonValue)
+  : StreamEvent()
 {
   *this = jsonValue;
 }

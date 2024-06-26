@@ -30,15 +30,8 @@ RecoveryInstanceProperties::RecoveryInstanceProperties() :
 {
 }
 
-RecoveryInstanceProperties::RecoveryInstanceProperties(JsonView jsonValue) : 
-    m_cpusHasBeenSet(false),
-    m_disksHasBeenSet(false),
-    m_identificationHintsHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false),
-    m_networkInterfacesHasBeenSet(false),
-    m_osHasBeenSet(false),
-    m_ramBytes(0),
-    m_ramBytesHasBeenSet(false)
+RecoveryInstanceProperties::RecoveryInstanceProperties(JsonView jsonValue)
+  : RecoveryInstanceProperties()
 {
   *this = jsonValue;
 }

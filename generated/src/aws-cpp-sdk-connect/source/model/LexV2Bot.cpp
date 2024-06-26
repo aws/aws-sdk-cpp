@@ -23,8 +23,8 @@ LexV2Bot::LexV2Bot() :
 {
 }
 
-LexV2Bot::LexV2Bot(JsonView jsonValue) : 
-    m_aliasArnHasBeenSet(false)
+LexV2Bot::LexV2Bot(JsonView jsonValue)
+  : LexV2Bot()
 {
   *this = jsonValue;
 }

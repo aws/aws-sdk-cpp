@@ -29,14 +29,8 @@ PolicyComplianceStatus::PolicyComplianceStatus() :
 {
 }
 
-PolicyComplianceStatus::PolicyComplianceStatus(JsonView jsonValue) : 
-    m_policyOwnerHasBeenSet(false),
-    m_policyIdHasBeenSet(false),
-    m_policyNameHasBeenSet(false),
-    m_memberAccountHasBeenSet(false),
-    m_evaluationResultsHasBeenSet(false),
-    m_lastUpdatedHasBeenSet(false),
-    m_issueInfoMapHasBeenSet(false)
+PolicyComplianceStatus::PolicyComplianceStatus(JsonView jsonValue)
+  : PolicyComplianceStatus()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ ResamplingConfigInput::ResamplingConfigInput() :
 {
 }
 
-ResamplingConfigInput::ResamplingConfigInput(JsonView jsonValue) : 
-    m_algorithmName(AlgorithmNameResampling::NOT_SET),
-    m_algorithmNameHasBeenSet(false),
-    m_outputResolutionHasBeenSet(false),
-    m_targetBandsHasBeenSet(false)
+ResamplingConfigInput::ResamplingConfigInput(JsonView jsonValue)
+  : ResamplingConfigInput()
 {
   *this = jsonValue;
 }

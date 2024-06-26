@@ -28,13 +28,8 @@ ConformancePackEvaluationResult::ConformancePackEvaluationResult() :
 {
 }
 
-ConformancePackEvaluationResult::ConformancePackEvaluationResult(JsonView jsonValue) : 
-    m_complianceType(ConformancePackComplianceType::NOT_SET),
-    m_complianceTypeHasBeenSet(false),
-    m_evaluationResultIdentifierHasBeenSet(false),
-    m_configRuleInvokedTimeHasBeenSet(false),
-    m_resultRecordedTimeHasBeenSet(false),
-    m_annotationHasBeenSet(false)
+ConformancePackEvaluationResult::ConformancePackEvaluationResult(JsonView jsonValue)
+  : ConformancePackEvaluationResult()
 {
   *this = jsonValue;
 }

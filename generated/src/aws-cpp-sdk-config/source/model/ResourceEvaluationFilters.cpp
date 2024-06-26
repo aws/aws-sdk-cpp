@@ -26,11 +26,8 @@ ResourceEvaluationFilters::ResourceEvaluationFilters() :
 {
 }
 
-ResourceEvaluationFilters::ResourceEvaluationFilters(JsonView jsonValue) : 
-    m_evaluationMode(EvaluationMode::NOT_SET),
-    m_evaluationModeHasBeenSet(false),
-    m_timeWindowHasBeenSet(false),
-    m_evaluationContextIdentifierHasBeenSet(false)
+ResourceEvaluationFilters::ResourceEvaluationFilters(JsonView jsonValue)
+  : ResourceEvaluationFilters()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ ContainerInstanceDetails::ContainerInstanceDetails() :
 {
 }
 
-ContainerInstanceDetails::ContainerInstanceDetails(JsonView jsonValue) : 
-    m_coveredContainerInstances(0),
-    m_coveredContainerInstancesHasBeenSet(false),
-    m_compatibleContainerInstances(0),
-    m_compatibleContainerInstancesHasBeenSet(false)
+ContainerInstanceDetails::ContainerInstanceDetails(JsonView jsonValue)
+  : ContainerInstanceDetails()
 {
   *this = jsonValue;
 }

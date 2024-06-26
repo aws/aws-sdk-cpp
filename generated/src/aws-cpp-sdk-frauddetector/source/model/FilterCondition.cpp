@@ -23,8 +23,8 @@ FilterCondition::FilterCondition() :
 {
 }
 
-FilterCondition::FilterCondition(JsonView jsonValue) : 
-    m_valueHasBeenSet(false)
+FilterCondition::FilterCondition(JsonView jsonValue)
+  : FilterCondition()
 {
   *this = jsonValue;
 }

@@ -31,16 +31,8 @@ CloudFormationTarget::CloudFormationTarget() :
 {
 }
 
-CloudFormationTarget::CloudFormationTarget(JsonView jsonValue) : 
-    m_deploymentIdHasBeenSet(false),
-    m_targetIdHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false),
-    m_lifecycleEventsHasBeenSet(false),
-    m_status(TargetStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
-    m_targetVersionWeight(0.0),
-    m_targetVersionWeightHasBeenSet(false)
+CloudFormationTarget::CloudFormationTarget(JsonView jsonValue)
+  : CloudFormationTarget()
 {
   *this = jsonValue;
 }

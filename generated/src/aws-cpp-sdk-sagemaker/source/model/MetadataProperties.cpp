@@ -26,11 +26,8 @@ MetadataProperties::MetadataProperties() :
 {
 }
 
-MetadataProperties::MetadataProperties(JsonView jsonValue) : 
-    m_commitIdHasBeenSet(false),
-    m_repositoryHasBeenSet(false),
-    m_generatedByHasBeenSet(false),
-    m_projectIdHasBeenSet(false)
+MetadataProperties::MetadataProperties(JsonView jsonValue)
+  : MetadataProperties()
 {
   *this = jsonValue;
 }

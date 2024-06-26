@@ -48,33 +48,8 @@ ImportTableDescription::ImportTableDescription() :
 {
 }
 
-ImportTableDescription::ImportTableDescription(JsonView jsonValue) : 
-    m_importArnHasBeenSet(false),
-    m_importStatus(ImportStatus::NOT_SET),
-    m_importStatusHasBeenSet(false),
-    m_tableArnHasBeenSet(false),
-    m_tableIdHasBeenSet(false),
-    m_clientTokenHasBeenSet(false),
-    m_s3BucketSourceHasBeenSet(false),
-    m_errorCount(0),
-    m_errorCountHasBeenSet(false),
-    m_cloudWatchLogGroupArnHasBeenSet(false),
-    m_inputFormat(InputFormat::NOT_SET),
-    m_inputFormatHasBeenSet(false),
-    m_inputFormatOptionsHasBeenSet(false),
-    m_inputCompressionType(InputCompressionType::NOT_SET),
-    m_inputCompressionTypeHasBeenSet(false),
-    m_tableCreationParametersHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_processedSizeBytes(0),
-    m_processedSizeBytesHasBeenSet(false),
-    m_processedItemCount(0),
-    m_processedItemCountHasBeenSet(false),
-    m_importedItemCount(0),
-    m_importedItemCountHasBeenSet(false),
-    m_failureCodeHasBeenSet(false),
-    m_failureMessageHasBeenSet(false)
+ImportTableDescription::ImportTableDescription(JsonView jsonValue)
+  : ImportTableDescription()
 {
   *this = jsonValue;
 }

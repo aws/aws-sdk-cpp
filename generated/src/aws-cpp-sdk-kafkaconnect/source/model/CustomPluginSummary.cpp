@@ -29,14 +29,8 @@ CustomPluginSummary::CustomPluginSummary() :
 {
 }
 
-CustomPluginSummary::CustomPluginSummary(JsonView jsonValue) : 
-    m_creationTimeHasBeenSet(false),
-    m_customPluginArnHasBeenSet(false),
-    m_customPluginState(CustomPluginState::NOT_SET),
-    m_customPluginStateHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_latestRevisionHasBeenSet(false),
-    m_nameHasBeenSet(false)
+CustomPluginSummary::CustomPluginSummary(JsonView jsonValue)
+  : CustomPluginSummary()
 {
   *this = jsonValue;
 }

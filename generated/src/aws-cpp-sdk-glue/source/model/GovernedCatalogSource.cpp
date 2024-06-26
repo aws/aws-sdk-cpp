@@ -27,12 +27,8 @@ GovernedCatalogSource::GovernedCatalogSource() :
 {
 }
 
-GovernedCatalogSource::GovernedCatalogSource(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_databaseHasBeenSet(false),
-    m_tableHasBeenSet(false),
-    m_partitionPredicateHasBeenSet(false),
-    m_additionalOptionsHasBeenSet(false)
+GovernedCatalogSource::GovernedCatalogSource(JsonView jsonValue)
+  : GovernedCatalogSource()
 {
   *this = jsonValue;
 }

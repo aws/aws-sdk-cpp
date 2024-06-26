@@ -25,10 +25,8 @@ UnprocessedStatistics::UnprocessedStatistics() :
 {
 }
 
-UnprocessedStatistics::UnprocessedStatistics(JsonView jsonValue) : 
-    m_ruleNameHasBeenSet(false),
-    m_errorCodeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+UnprocessedStatistics::UnprocessedStatistics(JsonView jsonValue)
+  : UnprocessedStatistics()
 {
   *this = jsonValue;
 }

@@ -30,15 +30,8 @@ AwsS3AccessPointDetails::AwsS3AccessPointDetails() :
 {
 }
 
-AwsS3AccessPointDetails::AwsS3AccessPointDetails(JsonView jsonValue) : 
-    m_accessPointArnHasBeenSet(false),
-    m_aliasHasBeenSet(false),
-    m_bucketHasBeenSet(false),
-    m_bucketAccountIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_networkOriginHasBeenSet(false),
-    m_publicAccessBlockConfigurationHasBeenSet(false),
-    m_vpcConfigurationHasBeenSet(false)
+AwsS3AccessPointDetails::AwsS3AccessPointDetails(JsonView jsonValue)
+  : AwsS3AccessPointDetails()
 {
   *this = jsonValue;
 }

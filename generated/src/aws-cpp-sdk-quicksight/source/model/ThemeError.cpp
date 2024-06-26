@@ -25,10 +25,8 @@ ThemeError::ThemeError() :
 {
 }
 
-ThemeError::ThemeError(JsonView jsonValue) : 
-    m_type(ThemeErrorType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+ThemeError::ThemeError(JsonView jsonValue)
+  : ThemeError()
 {
   *this = jsonValue;
 }

@@ -31,14 +31,8 @@ PartnerIntegrationInfo::PartnerIntegrationInfo() :
 {
 }
 
-PartnerIntegrationInfo::PartnerIntegrationInfo(const XmlNode& xmlNode) : 
-    m_databaseNameHasBeenSet(false),
-    m_partnerNameHasBeenSet(false),
-    m_status(PartnerIntegrationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+PartnerIntegrationInfo::PartnerIntegrationInfo(const XmlNode& xmlNode)
+  : PartnerIntegrationInfo()
 {
   *this = xmlNode;
 }

@@ -24,9 +24,8 @@ ValidationError::ValidationError() :
 {
 }
 
-ValidationError::ValidationError(JsonView jsonValue) : 
-    m_elementPathHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
+ValidationError::ValidationError(JsonView jsonValue)
+  : ValidationError()
 {
   *this = jsonValue;
 }

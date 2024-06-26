@@ -30,15 +30,8 @@ CampaignUpdateSummary::CampaignUpdateSummary() :
 {
 }
 
-CampaignUpdateSummary::CampaignUpdateSummary(JsonView jsonValue) : 
-    m_solutionVersionArnHasBeenSet(false),
-    m_minProvisionedTPS(0),
-    m_minProvisionedTPSHasBeenSet(false),
-    m_campaignConfigHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_failureReasonHasBeenSet(false),
-    m_creationDateTimeHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false)
+CampaignUpdateSummary::CampaignUpdateSummary(JsonView jsonValue)
+  : CampaignUpdateSummary()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ VirtualGatewayListenerTlsValidationContextTrust::VirtualGatewayListenerTlsValida
 {
 }
 
-VirtualGatewayListenerTlsValidationContextTrust::VirtualGatewayListenerTlsValidationContextTrust(JsonView jsonValue) : 
-    m_fileHasBeenSet(false),
-    m_sdsHasBeenSet(false)
+VirtualGatewayListenerTlsValidationContextTrust::VirtualGatewayListenerTlsValidationContextTrust(JsonView jsonValue)
+  : VirtualGatewayListenerTlsValidationContextTrust()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ AwsIamGroupPolicy::AwsIamGroupPolicy() :
 {
 }
 
-AwsIamGroupPolicy::AwsIamGroupPolicy(JsonView jsonValue) : 
-    m_policyNameHasBeenSet(false)
+AwsIamGroupPolicy::AwsIamGroupPolicy(JsonView jsonValue)
+  : AwsIamGroupPolicy()
 {
   *this = jsonValue;
 }

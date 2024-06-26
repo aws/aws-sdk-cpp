@@ -25,10 +25,8 @@ CandidateArtifactLocations::CandidateArtifactLocations() :
 {
 }
 
-CandidateArtifactLocations::CandidateArtifactLocations(JsonView jsonValue) : 
-    m_explainabilityHasBeenSet(false),
-    m_modelInsightsHasBeenSet(false),
-    m_backtestResultsHasBeenSet(false)
+CandidateArtifactLocations::CandidateArtifactLocations(JsonView jsonValue)
+  : CandidateArtifactLocations()
 {
   *this = jsonValue;
 }

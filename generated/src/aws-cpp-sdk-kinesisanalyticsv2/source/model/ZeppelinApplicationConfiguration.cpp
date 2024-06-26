@@ -26,11 +26,8 @@ ZeppelinApplicationConfiguration::ZeppelinApplicationConfiguration() :
 {
 }
 
-ZeppelinApplicationConfiguration::ZeppelinApplicationConfiguration(JsonView jsonValue) : 
-    m_monitoringConfigurationHasBeenSet(false),
-    m_catalogConfigurationHasBeenSet(false),
-    m_deployAsApplicationConfigurationHasBeenSet(false),
-    m_customArtifactsConfigurationHasBeenSet(false)
+ZeppelinApplicationConfiguration::ZeppelinApplicationConfiguration(JsonView jsonValue)
+  : ZeppelinApplicationConfiguration()
 {
   *this = jsonValue;
 }

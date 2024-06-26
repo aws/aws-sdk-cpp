@@ -22,8 +22,8 @@ DescribeReplayResult::DescribeReplayResult() :
 {
 }
 
-DescribeReplayResult::DescribeReplayResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_state(ReplayState::NOT_SET)
+DescribeReplayResult::DescribeReplayResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeReplayResult()
 {
   *this = result;
 }

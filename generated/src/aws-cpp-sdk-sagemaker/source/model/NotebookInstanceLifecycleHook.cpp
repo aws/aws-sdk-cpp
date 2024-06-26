@@ -23,8 +23,8 @@ NotebookInstanceLifecycleHook::NotebookInstanceLifecycleHook() :
 {
 }
 
-NotebookInstanceLifecycleHook::NotebookInstanceLifecycleHook(JsonView jsonValue) : 
-    m_contentHasBeenSet(false)
+NotebookInstanceLifecycleHook::NotebookInstanceLifecycleHook(JsonView jsonValue)
+  : NotebookInstanceLifecycleHook()
 {
   *this = jsonValue;
 }

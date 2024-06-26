@@ -23,8 +23,8 @@ SlackMetadata::SlackMetadata() :
 {
 }
 
-SlackMetadata::SlackMetadata(JsonView jsonValue) : 
-    m_oAuthScopesHasBeenSet(false)
+SlackMetadata::SlackMetadata(JsonView jsonValue)
+  : SlackMetadata()
 {
   *this = jsonValue;
 }

@@ -27,10 +27,8 @@ AsyncRequestParameters::AsyncRequestParameters() :
 {
 }
 
-AsyncRequestParameters::AsyncRequestParameters(const XmlNode& xmlNode) : 
-    m_createMultiRegionAccessPointRequestHasBeenSet(false),
-    m_deleteMultiRegionAccessPointRequestHasBeenSet(false),
-    m_putMultiRegionAccessPointPolicyRequestHasBeenSet(false)
+AsyncRequestParameters::AsyncRequestParameters(const XmlNode& xmlNode)
+  : AsyncRequestParameters()
 {
   *this = xmlNode;
 }

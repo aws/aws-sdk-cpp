@@ -28,13 +28,8 @@ NewAssertionRule::NewAssertionRule() :
 {
 }
 
-NewAssertionRule::NewAssertionRule(JsonView jsonValue) : 
-    m_assertedControlsHasBeenSet(false),
-    m_controlPanelArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_ruleConfigHasBeenSet(false),
-    m_waitPeriodMs(0),
-    m_waitPeriodMsHasBeenSet(false)
+NewAssertionRule::NewAssertionRule(JsonView jsonValue)
+  : NewAssertionRule()
 {
   *this = jsonValue;
 }

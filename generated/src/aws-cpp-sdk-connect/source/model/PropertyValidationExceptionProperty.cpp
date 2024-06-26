@@ -26,11 +26,8 @@ PropertyValidationExceptionProperty::PropertyValidationExceptionProperty() :
 {
 }
 
-PropertyValidationExceptionProperty::PropertyValidationExceptionProperty(JsonView jsonValue) : 
-    m_propertyPathHasBeenSet(false),
-    m_reason(PropertyValidationExceptionReason::NOT_SET),
-    m_reasonHasBeenSet(false),
-    m_messageHasBeenSet(false)
+PropertyValidationExceptionProperty::PropertyValidationExceptionProperty(JsonView jsonValue)
+  : PropertyValidationExceptionProperty()
 {
   *this = jsonValue;
 }

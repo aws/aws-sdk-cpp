@@ -23,8 +23,8 @@ EvaluationOutputDataConfig::EvaluationOutputDataConfig() :
 {
 }
 
-EvaluationOutputDataConfig::EvaluationOutputDataConfig(JsonView jsonValue) : 
-    m_s3UriHasBeenSet(false)
+EvaluationOutputDataConfig::EvaluationOutputDataConfig(JsonView jsonValue)
+  : EvaluationOutputDataConfig()
 {
   *this = jsonValue;
 }

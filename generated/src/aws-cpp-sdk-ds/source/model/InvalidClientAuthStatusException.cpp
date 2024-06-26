@@ -24,9 +24,8 @@ InvalidClientAuthStatusException::InvalidClientAuthStatusException() :
 {
 }
 
-InvalidClientAuthStatusException::InvalidClientAuthStatusException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
+InvalidClientAuthStatusException::InvalidClientAuthStatusException(JsonView jsonValue)
+  : InvalidClientAuthStatusException()
 {
   *this = jsonValue;
 }

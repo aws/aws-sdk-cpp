@@ -31,16 +31,8 @@ LoggingConfigurationSummary::LoggingConfigurationSummary() :
 {
 }
 
-LoggingConfigurationSummary::LoggingConfigurationSummary(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_destinationConfigurationHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_state(LoggingConfigurationState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
+LoggingConfigurationSummary::LoggingConfigurationSummary(JsonView jsonValue)
+  : LoggingConfigurationSummary()
 {
   *this = jsonValue;
 }

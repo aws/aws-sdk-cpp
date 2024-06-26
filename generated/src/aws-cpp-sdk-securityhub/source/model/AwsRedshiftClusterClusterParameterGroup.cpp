@@ -25,10 +25,8 @@ AwsRedshiftClusterClusterParameterGroup::AwsRedshiftClusterClusterParameterGroup
 {
 }
 
-AwsRedshiftClusterClusterParameterGroup::AwsRedshiftClusterClusterParameterGroup(JsonView jsonValue) : 
-    m_clusterParameterStatusListHasBeenSet(false),
-    m_parameterApplyStatusHasBeenSet(false),
-    m_parameterGroupNameHasBeenSet(false)
+AwsRedshiftClusterClusterParameterGroup::AwsRedshiftClusterClusterParameterGroup(JsonView jsonValue)
+  : AwsRedshiftClusterClusterParameterGroup()
 {
   *this = jsonValue;
 }

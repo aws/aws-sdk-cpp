@@ -25,10 +25,8 @@ StreamProcessor::StreamProcessor() :
 {
 }
 
-StreamProcessor::StreamProcessor(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_status(StreamProcessorStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+StreamProcessor::StreamProcessor(JsonView jsonValue)
+  : StreamProcessor()
 {
   *this = jsonValue;
 }

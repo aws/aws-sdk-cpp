@@ -22,8 +22,8 @@ GetAdminScopeResult::GetAdminScopeResult() :
 {
 }
 
-GetAdminScopeResult::GetAdminScopeResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(OrganizationStatus::NOT_SET)
+GetAdminScopeResult::GetAdminScopeResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetAdminScopeResult()
 {
   *this = result;
 }

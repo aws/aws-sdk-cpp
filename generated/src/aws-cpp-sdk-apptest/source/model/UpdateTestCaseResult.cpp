@@ -22,8 +22,8 @@ UpdateTestCaseResult::UpdateTestCaseResult() :
 {
 }
 
-UpdateTestCaseResult::UpdateTestCaseResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_testCaseVersion(0)
+UpdateTestCaseResult::UpdateTestCaseResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateTestCaseResult()
 {
   *this = result;
 }

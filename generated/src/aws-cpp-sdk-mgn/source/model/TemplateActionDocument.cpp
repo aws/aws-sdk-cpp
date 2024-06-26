@@ -42,26 +42,8 @@ TemplateActionDocument::TemplateActionDocument() :
 {
 }
 
-TemplateActionDocument::TemplateActionDocument(JsonView jsonValue) : 
-    m_actionIDHasBeenSet(false),
-    m_actionNameHasBeenSet(false),
-    m_active(false),
-    m_activeHasBeenSet(false),
-    m_category(ActionCategory::NOT_SET),
-    m_categoryHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_documentIdentifierHasBeenSet(false),
-    m_documentVersionHasBeenSet(false),
-    m_externalParametersHasBeenSet(false),
-    m_mustSucceedForCutover(false),
-    m_mustSucceedForCutoverHasBeenSet(false),
-    m_operatingSystemHasBeenSet(false),
-    m_order(0),
-    m_orderHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_timeoutSeconds(0),
-    m_timeoutSecondsHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
+TemplateActionDocument::TemplateActionDocument(JsonView jsonValue)
+  : TemplateActionDocument()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ ListGrantsResult::ListGrantsResult() :
 {
 }
 
-ListGrantsResult::ListGrantsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_truncated(false)
+ListGrantsResult::ListGrantsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ListGrantsResult()
 {
   *this = result;
 }

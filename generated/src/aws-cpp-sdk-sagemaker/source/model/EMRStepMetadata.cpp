@@ -26,11 +26,8 @@ EMRStepMetadata::EMRStepMetadata() :
 {
 }
 
-EMRStepMetadata::EMRStepMetadata(JsonView jsonValue) : 
-    m_clusterIdHasBeenSet(false),
-    m_stepIdHasBeenSet(false),
-    m_stepNameHasBeenSet(false),
-    m_logFilePathHasBeenSet(false)
+EMRStepMetadata::EMRStepMetadata(JsonView jsonValue)
+  : EMRStepMetadata()
 {
   *this = jsonValue;
 }

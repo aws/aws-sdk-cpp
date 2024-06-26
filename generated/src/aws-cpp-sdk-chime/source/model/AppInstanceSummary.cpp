@@ -25,10 +25,8 @@ AppInstanceSummary::AppInstanceSummary() :
 {
 }
 
-AppInstanceSummary::AppInstanceSummary(JsonView jsonValue) : 
-    m_appInstanceArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_metadataHasBeenSet(false)
+AppInstanceSummary::AppInstanceSummary(JsonView jsonValue)
+  : AppInstanceSummary()
 {
   *this = jsonValue;
 }

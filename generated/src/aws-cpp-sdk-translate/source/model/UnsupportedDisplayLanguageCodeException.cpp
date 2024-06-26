@@ -24,9 +24,8 @@ UnsupportedDisplayLanguageCodeException::UnsupportedDisplayLanguageCodeException
 {
 }
 
-UnsupportedDisplayLanguageCodeException::UnsupportedDisplayLanguageCodeException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_displayLanguageCodeHasBeenSet(false)
+UnsupportedDisplayLanguageCodeException::UnsupportedDisplayLanguageCodeException(JsonView jsonValue)
+  : UnsupportedDisplayLanguageCodeException()
 {
   *this = jsonValue;
 }

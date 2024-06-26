@@ -25,10 +25,8 @@ AwsCloudFrontDistributionOriginGroupFailoverStatusCodes::AwsCloudFrontDistributi
 {
 }
 
-AwsCloudFrontDistributionOriginGroupFailoverStatusCodes::AwsCloudFrontDistributionOriginGroupFailoverStatusCodes(JsonView jsonValue) : 
-    m_itemsHasBeenSet(false),
-    m_quantity(0),
-    m_quantityHasBeenSet(false)
+AwsCloudFrontDistributionOriginGroupFailoverStatusCodes::AwsCloudFrontDistributionOriginGroupFailoverStatusCodes(JsonView jsonValue)
+  : AwsCloudFrontDistributionOriginGroupFailoverStatusCodes()
 {
   *this = jsonValue;
 }

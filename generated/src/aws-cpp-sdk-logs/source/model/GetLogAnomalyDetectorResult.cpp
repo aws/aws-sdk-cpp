@@ -26,12 +26,8 @@ GetLogAnomalyDetectorResult::GetLogAnomalyDetectorResult() :
 {
 }
 
-GetLogAnomalyDetectorResult::GetLogAnomalyDetectorResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_evaluationFrequency(EvaluationFrequency::NOT_SET),
-    m_anomalyDetectorStatus(AnomalyDetectorStatus::NOT_SET),
-    m_creationTimeStamp(0),
-    m_lastModifiedTimeStamp(0),
-    m_anomalyVisibilityTime(0)
+GetLogAnomalyDetectorResult::GetLogAnomalyDetectorResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetLogAnomalyDetectorResult()
 {
   *this = result;
 }

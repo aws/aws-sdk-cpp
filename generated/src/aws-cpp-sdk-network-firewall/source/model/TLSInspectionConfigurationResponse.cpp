@@ -35,20 +35,8 @@ TLSInspectionConfigurationResponse::TLSInspectionConfigurationResponse() :
 {
 }
 
-TLSInspectionConfigurationResponse::TLSInspectionConfigurationResponse(JsonView jsonValue) : 
-    m_tLSInspectionConfigurationArnHasBeenSet(false),
-    m_tLSInspectionConfigurationNameHasBeenSet(false),
-    m_tLSInspectionConfigurationIdHasBeenSet(false),
-    m_tLSInspectionConfigurationStatus(ResourceStatus::NOT_SET),
-    m_tLSInspectionConfigurationStatusHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_numberOfAssociations(0),
-    m_numberOfAssociationsHasBeenSet(false),
-    m_encryptionConfigurationHasBeenSet(false),
-    m_certificatesHasBeenSet(false),
-    m_certificateAuthorityHasBeenSet(false)
+TLSInspectionConfigurationResponse::TLSInspectionConfigurationResponse(JsonView jsonValue)
+  : TLSInspectionConfigurationResponse()
 {
   *this = jsonValue;
 }

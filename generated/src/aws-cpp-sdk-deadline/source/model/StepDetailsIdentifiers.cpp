@@ -24,9 +24,8 @@ StepDetailsIdentifiers::StepDetailsIdentifiers() :
 {
 }
 
-StepDetailsIdentifiers::StepDetailsIdentifiers(JsonView jsonValue) : 
-    m_jobIdHasBeenSet(false),
-    m_stepIdHasBeenSet(false)
+StepDetailsIdentifiers::StepDetailsIdentifiers(JsonView jsonValue)
+  : StepDetailsIdentifiers()
 {
   *this = jsonValue;
 }

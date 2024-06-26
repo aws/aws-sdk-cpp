@@ -25,10 +25,8 @@ PhoneNumberStatus::PhoneNumberStatus() :
 {
 }
 
-PhoneNumberStatus::PhoneNumberStatus(JsonView jsonValue) : 
-    m_status(PhoneNumberWorkflowStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_messageHasBeenSet(false)
+PhoneNumberStatus::PhoneNumberStatus(JsonView jsonValue)
+  : PhoneNumberStatus()
 {
   *this = jsonValue;
 }

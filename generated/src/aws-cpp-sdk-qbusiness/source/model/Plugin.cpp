@@ -33,18 +33,8 @@ Plugin::Plugin() :
 {
 }
 
-Plugin::Plugin(JsonView jsonValue) : 
-    m_pluginIdHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_type(PluginType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_serverUrlHasBeenSet(false),
-    m_state(PluginState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_buildStatus(PluginBuildStatus::NOT_SET),
-    m_buildStatusHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+Plugin::Plugin(JsonView jsonValue)
+  : Plugin()
 {
   *this = jsonValue;
 }

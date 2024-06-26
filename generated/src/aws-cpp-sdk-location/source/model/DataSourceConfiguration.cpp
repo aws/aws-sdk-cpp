@@ -24,9 +24,8 @@ DataSourceConfiguration::DataSourceConfiguration() :
 {
 }
 
-DataSourceConfiguration::DataSourceConfiguration(JsonView jsonValue) : 
-    m_intendedUse(IntendedUse::NOT_SET),
-    m_intendedUseHasBeenSet(false)
+DataSourceConfiguration::DataSourceConfiguration(JsonView jsonValue)
+  : DataSourceConfiguration()
 {
   *this = jsonValue;
 }

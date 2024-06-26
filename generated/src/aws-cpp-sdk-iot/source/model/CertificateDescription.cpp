@@ -39,24 +39,8 @@ CertificateDescription::CertificateDescription() :
 {
 }
 
-CertificateDescription::CertificateDescription(JsonView jsonValue) : 
-    m_certificateArnHasBeenSet(false),
-    m_certificateIdHasBeenSet(false),
-    m_caCertificateIdHasBeenSet(false),
-    m_status(CertificateStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_certificatePemHasBeenSet(false),
-    m_ownedByHasBeenSet(false),
-    m_previousOwnedByHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_lastModifiedDateHasBeenSet(false),
-    m_customerVersion(0),
-    m_customerVersionHasBeenSet(false),
-    m_transferDataHasBeenSet(false),
-    m_generationIdHasBeenSet(false),
-    m_validityHasBeenSet(false),
-    m_certificateMode(CertificateMode::NOT_SET),
-    m_certificateModeHasBeenSet(false)
+CertificateDescription::CertificateDescription(JsonView jsonValue)
+  : CertificateDescription()
 {
   *this = jsonValue;
 }

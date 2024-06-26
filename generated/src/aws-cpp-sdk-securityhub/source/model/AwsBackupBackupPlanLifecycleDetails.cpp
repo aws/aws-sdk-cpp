@@ -26,11 +26,8 @@ AwsBackupBackupPlanLifecycleDetails::AwsBackupBackupPlanLifecycleDetails() :
 {
 }
 
-AwsBackupBackupPlanLifecycleDetails::AwsBackupBackupPlanLifecycleDetails(JsonView jsonValue) : 
-    m_deleteAfterDays(0),
-    m_deleteAfterDaysHasBeenSet(false),
-    m_moveToColdStorageAfterDays(0),
-    m_moveToColdStorageAfterDaysHasBeenSet(false)
+AwsBackupBackupPlanLifecycleDetails::AwsBackupBackupPlanLifecycleDetails(JsonView jsonValue)
+  : AwsBackupBackupPlanLifecycleDetails()
 {
   *this = jsonValue;
 }

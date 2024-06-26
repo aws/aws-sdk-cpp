@@ -26,11 +26,8 @@ CampaignHook::CampaignHook() :
 {
 }
 
-CampaignHook::CampaignHook(JsonView jsonValue) : 
-    m_lambdaFunctionNameHasBeenSet(false),
-    m_mode(Mode::NOT_SET),
-    m_modeHasBeenSet(false),
-    m_webUrlHasBeenSet(false)
+CampaignHook::CampaignHook(JsonView jsonValue)
+  : CampaignHook()
 {
   *this = jsonValue;
 }

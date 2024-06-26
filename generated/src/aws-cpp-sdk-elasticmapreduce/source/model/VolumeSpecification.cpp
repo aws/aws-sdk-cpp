@@ -29,14 +29,8 @@ VolumeSpecification::VolumeSpecification() :
 {
 }
 
-VolumeSpecification::VolumeSpecification(JsonView jsonValue) : 
-    m_volumeTypeHasBeenSet(false),
-    m_iops(0),
-    m_iopsHasBeenSet(false),
-    m_sizeInGB(0),
-    m_sizeInGBHasBeenSet(false),
-    m_throughput(0),
-    m_throughputHasBeenSet(false)
+VolumeSpecification::VolumeSpecification(JsonView jsonValue)
+  : VolumeSpecification()
 {
   *this = jsonValue;
 }

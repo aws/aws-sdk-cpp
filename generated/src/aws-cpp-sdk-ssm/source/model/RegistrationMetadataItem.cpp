@@ -24,9 +24,8 @@ RegistrationMetadataItem::RegistrationMetadataItem() :
 {
 }
 
-RegistrationMetadataItem::RegistrationMetadataItem(JsonView jsonValue) : 
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false)
+RegistrationMetadataItem::RegistrationMetadataItem(JsonView jsonValue)
+  : RegistrationMetadataItem()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ InsufficientThroughputCapacity::InsufficientThroughputCapacity() :
 {
 }
 
-InsufficientThroughputCapacity::InsufficientThroughputCapacity(JsonView jsonValue) : 
-    m_errorCodeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+InsufficientThroughputCapacity::InsufficientThroughputCapacity(JsonView jsonValue)
+  : InsufficientThroughputCapacity()
 {
   *this = jsonValue;
 }

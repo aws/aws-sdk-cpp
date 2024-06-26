@@ -27,12 +27,8 @@ StepInput::StepInput() :
 {
 }
 
-StepInput::StepInput(JsonView jsonValue) : 
-    m_integerValue(0),
-    m_integerValueHasBeenSet(false),
-    m_stringValueHasBeenSet(false),
-    m_listOfStringsValueHasBeenSet(false),
-    m_mapOfStringValueHasBeenSet(false)
+StepInput::StepInput(JsonView jsonValue)
+  : StepInput()
 {
   *this = jsonValue;
 }

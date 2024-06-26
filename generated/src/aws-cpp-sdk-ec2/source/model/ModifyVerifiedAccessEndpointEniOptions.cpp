@@ -28,11 +28,8 @@ ModifyVerifiedAccessEndpointEniOptions::ModifyVerifiedAccessEndpointEniOptions()
 {
 }
 
-ModifyVerifiedAccessEndpointEniOptions::ModifyVerifiedAccessEndpointEniOptions(const XmlNode& xmlNode) : 
-    m_protocol(VerifiedAccessEndpointProtocol::NOT_SET),
-    m_protocolHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false)
+ModifyVerifiedAccessEndpointEniOptions::ModifyVerifiedAccessEndpointEniOptions(const XmlNode& xmlNode)
+  : ModifyVerifiedAccessEndpointEniOptions()
 {
   *this = xmlNode;
 }

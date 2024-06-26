@@ -33,18 +33,8 @@ DescribedAgreement::DescribedAgreement() :
 {
 }
 
-DescribedAgreement::DescribedAgreement(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_agreementIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_status(AgreementStatusType::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_serverIdHasBeenSet(false),
-    m_localProfileIdHasBeenSet(false),
-    m_partnerProfileIdHasBeenSet(false),
-    m_baseDirectoryHasBeenSet(false),
-    m_accessRoleHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+DescribedAgreement::DescribedAgreement(JsonView jsonValue)
+  : DescribedAgreement()
 {
   *this = jsonValue;
 }

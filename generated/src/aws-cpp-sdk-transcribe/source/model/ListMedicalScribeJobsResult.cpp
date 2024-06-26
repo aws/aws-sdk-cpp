@@ -22,8 +22,8 @@ ListMedicalScribeJobsResult::ListMedicalScribeJobsResult() :
 {
 }
 
-ListMedicalScribeJobsResult::ListMedicalScribeJobsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(MedicalScribeJobStatus::NOT_SET)
+ListMedicalScribeJobsResult::ListMedicalScribeJobsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ListMedicalScribeJobsResult()
 {
   *this = result;
 }

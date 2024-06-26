@@ -25,10 +25,8 @@ UsageCriteria::UsageCriteria() :
 {
 }
 
-UsageCriteria::UsageCriteria(JsonView jsonValue) : 
-    m_accountIdsHasBeenSet(false),
-    m_resourcesHasBeenSet(false),
-    m_featuresHasBeenSet(false)
+UsageCriteria::UsageCriteria(JsonView jsonValue)
+  : UsageCriteria()
 {
   *this = jsonValue;
 }

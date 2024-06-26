@@ -41,24 +41,8 @@ Ec2InstanceConnectEndpoint::Ec2InstanceConnectEndpoint() :
 {
 }
 
-Ec2InstanceConnectEndpoint::Ec2InstanceConnectEndpoint(const XmlNode& xmlNode) : 
-    m_ownerIdHasBeenSet(false),
-    m_instanceConnectEndpointIdHasBeenSet(false),
-    m_instanceConnectEndpointArnHasBeenSet(false),
-    m_state(Ec2InstanceConnectEndpointState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_stateMessageHasBeenSet(false),
-    m_dnsNameHasBeenSet(false),
-    m_fipsDnsNameHasBeenSet(false),
-    m_networkInterfaceIdsHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_subnetIdHasBeenSet(false),
-    m_preserveClientIp(false),
-    m_preserveClientIpHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+Ec2InstanceConnectEndpoint::Ec2InstanceConnectEndpoint(const XmlNode& xmlNode)
+  : Ec2InstanceConnectEndpoint()
 {
   *this = xmlNode;
 }

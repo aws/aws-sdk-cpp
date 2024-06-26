@@ -24,9 +24,8 @@ OutputSource::OutputSource() :
 {
 }
 
-OutputSource::OutputSource(JsonView jsonValue) : 
-    m_outputSourceIdHasBeenSet(false),
-    m_outputSourceTypeHasBeenSet(false)
+OutputSource::OutputSource(JsonView jsonValue)
+  : OutputSource()
 {
   *this = jsonValue;
 }

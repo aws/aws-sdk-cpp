@@ -24,9 +24,8 @@ CategoricalParameterRange::CategoricalParameterRange() :
 {
 }
 
-CategoricalParameterRange::CategoricalParameterRange(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+CategoricalParameterRange::CategoricalParameterRange(JsonView jsonValue)
+  : CategoricalParameterRange()
 {
   *this = jsonValue;
 }

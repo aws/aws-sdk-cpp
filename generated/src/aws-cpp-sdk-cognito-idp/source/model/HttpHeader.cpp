@@ -24,9 +24,8 @@ HttpHeader::HttpHeader() :
 {
 }
 
-HttpHeader::HttpHeader(JsonView jsonValue) : 
-    m_headerNameHasBeenSet(false),
-    m_headerValueHasBeenSet(false)
+HttpHeader::HttpHeader(JsonView jsonValue)
+  : HttpHeader()
 {
   *this = jsonValue;
 }

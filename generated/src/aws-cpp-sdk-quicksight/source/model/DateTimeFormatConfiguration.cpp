@@ -25,10 +25,8 @@ DateTimeFormatConfiguration::DateTimeFormatConfiguration() :
 {
 }
 
-DateTimeFormatConfiguration::DateTimeFormatConfiguration(JsonView jsonValue) : 
-    m_dateTimeFormatHasBeenSet(false),
-    m_nullValueFormatConfigurationHasBeenSet(false),
-    m_numericFormatConfigurationHasBeenSet(false)
+DateTimeFormatConfiguration::DateTimeFormatConfiguration(JsonView jsonValue)
+  : DateTimeFormatConfiguration()
 {
   *this = jsonValue;
 }

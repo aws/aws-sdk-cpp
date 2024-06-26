@@ -27,12 +27,8 @@ RelayAction::RelayAction() :
 {
 }
 
-RelayAction::RelayAction(JsonView jsonValue) : 
-    m_actionFailurePolicy(ActionFailurePolicy::NOT_SET),
-    m_actionFailurePolicyHasBeenSet(false),
-    m_mailFrom(MailFrom::NOT_SET),
-    m_mailFromHasBeenSet(false),
-    m_relayHasBeenSet(false)
+RelayAction::RelayAction(JsonView jsonValue)
+  : RelayAction()
 {
   *this = jsonValue;
 }

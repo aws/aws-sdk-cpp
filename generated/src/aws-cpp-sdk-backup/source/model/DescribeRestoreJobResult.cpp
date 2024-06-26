@@ -26,12 +26,8 @@ DescribeRestoreJobResult::DescribeRestoreJobResult() :
 {
 }
 
-DescribeRestoreJobResult::DescribeRestoreJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(RestoreJobStatus::NOT_SET),
-    m_backupSizeInBytes(0),
-    m_expectedCompletionTimeMinutes(0),
-    m_validationStatus(RestoreValidationStatus::NOT_SET),
-    m_deletionStatus(RestoreDeletionStatus::NOT_SET)
+DescribeRestoreJobResult::DescribeRestoreJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeRestoreJobResult()
 {
   *this = result;
 }

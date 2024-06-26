@@ -23,8 +23,8 @@ ManagedScalingPolicy::ManagedScalingPolicy() :
 {
 }
 
-ManagedScalingPolicy::ManagedScalingPolicy(JsonView jsonValue) : 
-    m_computeLimitsHasBeenSet(false)
+ManagedScalingPolicy::ManagedScalingPolicy(JsonView jsonValue)
+  : ManagedScalingPolicy()
 {
   *this = jsonValue;
 }

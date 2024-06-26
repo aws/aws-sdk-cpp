@@ -26,11 +26,8 @@ ServiceDependent::ServiceDependent() :
 {
 }
 
-ServiceDependent::ServiceDependent(JsonView jsonValue) : 
-    m_operationNameHasBeenSet(false),
-    m_dependentKeyAttributesHasBeenSet(false),
-    m_dependentOperationNameHasBeenSet(false),
-    m_metricReferencesHasBeenSet(false)
+ServiceDependent::ServiceDependent(JsonView jsonValue)
+  : ServiceDependent()
 {
   *this = jsonValue;
 }

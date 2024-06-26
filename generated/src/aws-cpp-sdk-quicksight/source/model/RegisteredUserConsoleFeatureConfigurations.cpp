@@ -23,8 +23,8 @@ RegisteredUserConsoleFeatureConfigurations::RegisteredUserConsoleFeatureConfigur
 {
 }
 
-RegisteredUserConsoleFeatureConfigurations::RegisteredUserConsoleFeatureConfigurations(JsonView jsonValue) : 
-    m_statePersistenceHasBeenSet(false)
+RegisteredUserConsoleFeatureConfigurations::RegisteredUserConsoleFeatureConfigurations(JsonView jsonValue)
+  : RegisteredUserConsoleFeatureConfigurations()
 {
   *this = jsonValue;
 }

@@ -29,12 +29,8 @@ UnprocessedUpdateAction::UnprocessedUpdateAction() :
 {
 }
 
-UnprocessedUpdateAction::UnprocessedUpdateAction(const XmlNode& xmlNode) : 
-    m_replicationGroupIdHasBeenSet(false),
-    m_cacheClusterIdHasBeenSet(false),
-    m_serviceUpdateNameHasBeenSet(false),
-    m_errorTypeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
+UnprocessedUpdateAction::UnprocessedUpdateAction(const XmlNode& xmlNode)
+  : UnprocessedUpdateAction()
 {
   *this = xmlNode;
 }

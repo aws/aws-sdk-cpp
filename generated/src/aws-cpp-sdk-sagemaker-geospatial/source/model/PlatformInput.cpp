@@ -25,10 +25,8 @@ PlatformInput::PlatformInput() :
 {
 }
 
-PlatformInput::PlatformInput(JsonView jsonValue) : 
-    m_comparisonOperator(ComparisonOperator::NOT_SET),
-    m_comparisonOperatorHasBeenSet(false),
-    m_valueHasBeenSet(false)
+PlatformInput::PlatformInput(JsonView jsonValue)
+  : PlatformInput()
 {
   *this = jsonValue;
 }

@@ -29,14 +29,8 @@ OrganizationConformancePack::OrganizationConformancePack() :
 {
 }
 
-OrganizationConformancePack::OrganizationConformancePack(JsonView jsonValue) : 
-    m_organizationConformancePackNameHasBeenSet(false),
-    m_organizationConformancePackArnHasBeenSet(false),
-    m_deliveryS3BucketHasBeenSet(false),
-    m_deliveryS3KeyPrefixHasBeenSet(false),
-    m_conformancePackInputParametersHasBeenSet(false),
-    m_excludedAccountsHasBeenSet(false),
-    m_lastUpdateTimeHasBeenSet(false)
+OrganizationConformancePack::OrganizationConformancePack(JsonView jsonValue)
+  : OrganizationConformancePack()
 {
   *this = jsonValue;
 }

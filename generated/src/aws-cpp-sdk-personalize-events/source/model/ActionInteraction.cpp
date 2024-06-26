@@ -31,16 +31,8 @@ ActionInteraction::ActionInteraction() :
 {
 }
 
-ActionInteraction::ActionInteraction(JsonView jsonValue) : 
-    m_actionIdHasBeenSet(false),
-    m_userIdHasBeenSet(false),
-    m_sessionIdHasBeenSet(false),
-    m_timestampHasBeenSet(false),
-    m_eventTypeHasBeenSet(false),
-    m_eventIdHasBeenSet(false),
-    m_recommendationIdHasBeenSet(false),
-    m_impressionHasBeenSet(false),
-    m_propertiesHasBeenSet(false)
+ActionInteraction::ActionInteraction(JsonView jsonValue)
+  : ActionInteraction()
 {
   *this = jsonValue;
 }

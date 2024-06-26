@@ -24,9 +24,8 @@ RuleGroupSourceCustomActionsDetails::RuleGroupSourceCustomActionsDetails() :
 {
 }
 
-RuleGroupSourceCustomActionsDetails::RuleGroupSourceCustomActionsDetails(JsonView jsonValue) : 
-    m_actionDefinitionHasBeenSet(false),
-    m_actionNameHasBeenSet(false)
+RuleGroupSourceCustomActionsDetails::RuleGroupSourceCustomActionsDetails(JsonView jsonValue)
+  : RuleGroupSourceCustomActionsDetails()
 {
   *this = jsonValue;
 }

@@ -23,9 +23,8 @@ GetExportJobResult::GetExportJobResult() :
 {
 }
 
-GetExportJobResult::GetExportJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_exportSourceType(ExportSourceType::NOT_SET),
-    m_jobStatus(JobStatus::NOT_SET)
+GetExportJobResult::GetExportJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetExportJobResult()
 {
   *this = result;
 }

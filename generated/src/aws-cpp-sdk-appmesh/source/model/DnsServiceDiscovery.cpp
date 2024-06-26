@@ -27,12 +27,8 @@ DnsServiceDiscovery::DnsServiceDiscovery() :
 {
 }
 
-DnsServiceDiscovery::DnsServiceDiscovery(JsonView jsonValue) : 
-    m_hostnameHasBeenSet(false),
-    m_ipPreference(IpPreference::NOT_SET),
-    m_ipPreferenceHasBeenSet(false),
-    m_responseType(DnsResponseType::NOT_SET),
-    m_responseTypeHasBeenSet(false)
+DnsServiceDiscovery::DnsServiceDiscovery(JsonView jsonValue)
+  : DnsServiceDiscovery()
 {
   *this = jsonValue;
 }

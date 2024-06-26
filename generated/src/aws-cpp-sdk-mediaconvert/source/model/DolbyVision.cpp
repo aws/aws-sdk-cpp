@@ -29,14 +29,8 @@ DolbyVision::DolbyVision() :
 {
 }
 
-DolbyVision::DolbyVision(JsonView jsonValue) : 
-    m_l6MetadataHasBeenSet(false),
-    m_l6Mode(DolbyVisionLevel6Mode::NOT_SET),
-    m_l6ModeHasBeenSet(false),
-    m_mapping(DolbyVisionMapping::NOT_SET),
-    m_mappingHasBeenSet(false),
-    m_profile(DolbyVisionProfile::NOT_SET),
-    m_profileHasBeenSet(false)
+DolbyVision::DolbyVision(JsonView jsonValue)
+  : DolbyVision()
 {
   *this = jsonValue;
 }

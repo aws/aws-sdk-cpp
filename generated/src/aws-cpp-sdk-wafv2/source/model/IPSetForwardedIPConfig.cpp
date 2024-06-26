@@ -27,12 +27,8 @@ IPSetForwardedIPConfig::IPSetForwardedIPConfig() :
 {
 }
 
-IPSetForwardedIPConfig::IPSetForwardedIPConfig(JsonView jsonValue) : 
-    m_headerNameHasBeenSet(false),
-    m_fallbackBehavior(FallbackBehavior::NOT_SET),
-    m_fallbackBehaviorHasBeenSet(false),
-    m_position(ForwardedIPPosition::NOT_SET),
-    m_positionHasBeenSet(false)
+IPSetForwardedIPConfig::IPSetForwardedIPConfig(JsonView jsonValue)
+  : IPSetForwardedIPConfig()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ SessionIntegrationConfiguration::SessionIntegrationConfiguration() :
 {
 }
 
-SessionIntegrationConfiguration::SessionIntegrationConfiguration(JsonView jsonValue) : 
-    m_topicIntegrationArnHasBeenSet(false)
+SessionIntegrationConfiguration::SessionIntegrationConfiguration(JsonView jsonValue)
+  : SessionIntegrationConfiguration()
 {
   *this = jsonValue;
 }

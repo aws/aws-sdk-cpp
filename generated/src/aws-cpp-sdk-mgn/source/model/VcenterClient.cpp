@@ -30,15 +30,8 @@ VcenterClient::VcenterClient() :
 {
 }
 
-VcenterClient::VcenterClient(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_datacenterNameHasBeenSet(false),
-    m_hostnameHasBeenSet(false),
-    m_lastSeenDatetimeHasBeenSet(false),
-    m_sourceServerTagsHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_vcenterClientIDHasBeenSet(false),
-    m_vcenterUUIDHasBeenSet(false)
+VcenterClient::VcenterClient(JsonView jsonValue)
+  : VcenterClient()
 {
   *this = jsonValue;
 }

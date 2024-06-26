@@ -29,13 +29,8 @@ TypedAttributeValue::TypedAttributeValue() :
 {
 }
 
-TypedAttributeValue::TypedAttributeValue(JsonView jsonValue) : 
-    m_stringValueHasBeenSet(false),
-    m_binaryValueHasBeenSet(false),
-    m_booleanValue(false),
-    m_booleanValueHasBeenSet(false),
-    m_numberValueHasBeenSet(false),
-    m_datetimeValueHasBeenSet(false)
+TypedAttributeValue::TypedAttributeValue(JsonView jsonValue)
+  : TypedAttributeValue()
 {
   *this = jsonValue;
 }

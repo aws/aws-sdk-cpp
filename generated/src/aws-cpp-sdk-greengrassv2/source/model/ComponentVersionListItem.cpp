@@ -25,10 +25,8 @@ ComponentVersionListItem::ComponentVersionListItem() :
 {
 }
 
-ComponentVersionListItem::ComponentVersionListItem(JsonView jsonValue) : 
-    m_componentNameHasBeenSet(false),
-    m_componentVersionHasBeenSet(false),
-    m_arnHasBeenSet(false)
+ComponentVersionListItem::ComponentVersionListItem(JsonView jsonValue)
+  : ComponentVersionListItem()
 {
   *this = jsonValue;
 }

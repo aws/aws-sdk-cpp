@@ -25,10 +25,8 @@ ResponsePlanSummary::ResponsePlanSummary() :
 {
 }
 
-ResponsePlanSummary::ResponsePlanSummary(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_nameHasBeenSet(false)
+ResponsePlanSummary::ResponsePlanSummary(JsonView jsonValue)
+  : ResponsePlanSummary()
 {
   *this = jsonValue;
 }

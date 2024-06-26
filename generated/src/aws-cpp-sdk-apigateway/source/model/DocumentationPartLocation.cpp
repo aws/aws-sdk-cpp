@@ -28,13 +28,8 @@ DocumentationPartLocation::DocumentationPartLocation() :
 {
 }
 
-DocumentationPartLocation::DocumentationPartLocation(JsonView jsonValue) : 
-    m_type(DocumentationPartType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_pathHasBeenSet(false),
-    m_methodHasBeenSet(false),
-    m_statusCodeHasBeenSet(false),
-    m_nameHasBeenSet(false)
+DocumentationPartLocation::DocumentationPartLocation(JsonView jsonValue)
+  : DocumentationPartLocation()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ MouthOpen::MouthOpen() :
 {
 }
 
-MouthOpen::MouthOpen(JsonView jsonValue) : 
-    m_value(false),
-    m_valueHasBeenSet(false),
-    m_confidence(0.0),
-    m_confidenceHasBeenSet(false)
+MouthOpen::MouthOpen(JsonView jsonValue)
+  : MouthOpen()
 {
   *this = jsonValue;
 }

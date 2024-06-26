@@ -28,11 +28,8 @@ LambdaAction::LambdaAction() :
 {
 }
 
-LambdaAction::LambdaAction(const XmlNode& xmlNode) : 
-    m_topicArnHasBeenSet(false),
-    m_functionArnHasBeenSet(false),
-    m_invocationType(InvocationType::NOT_SET),
-    m_invocationTypeHasBeenSet(false)
+LambdaAction::LambdaAction(const XmlNode& xmlNode)
+  : LambdaAction()
 {
   *this = xmlNode;
 }

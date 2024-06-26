@@ -26,11 +26,8 @@ DefaultEbsStorageSettings::DefaultEbsStorageSettings() :
 {
 }
 
-DefaultEbsStorageSettings::DefaultEbsStorageSettings(JsonView jsonValue) : 
-    m_defaultEbsVolumeSizeInGb(0),
-    m_defaultEbsVolumeSizeInGbHasBeenSet(false),
-    m_maximumEbsVolumeSizeInGb(0),
-    m_maximumEbsVolumeSizeInGbHasBeenSet(false)
+DefaultEbsStorageSettings::DefaultEbsStorageSettings(JsonView jsonValue)
+  : DefaultEbsStorageSettings()
 {
   *this = jsonValue;
 }

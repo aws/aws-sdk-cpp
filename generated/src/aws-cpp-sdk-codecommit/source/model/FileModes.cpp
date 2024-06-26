@@ -28,13 +28,8 @@ FileModes::FileModes() :
 {
 }
 
-FileModes::FileModes(JsonView jsonValue) : 
-    m_source(FileModeTypeEnum::NOT_SET),
-    m_sourceHasBeenSet(false),
-    m_destination(FileModeTypeEnum::NOT_SET),
-    m_destinationHasBeenSet(false),
-    m_base(FileModeTypeEnum::NOT_SET),
-    m_baseHasBeenSet(false)
+FileModes::FileModes(JsonView jsonValue)
+  : FileModes()
 {
   *this = jsonValue;
 }

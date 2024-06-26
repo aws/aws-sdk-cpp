@@ -24,9 +24,8 @@ Unauthenticated::Unauthenticated() :
 {
 }
 
-Unauthenticated::Unauthenticated(JsonView jsonValue) : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
+Unauthenticated::Unauthenticated(JsonView jsonValue)
+  : Unauthenticated()
 {
   *this = jsonValue;
 }

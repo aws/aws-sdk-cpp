@@ -24,9 +24,8 @@ CustomLogSourceProvider::CustomLogSourceProvider() :
 {
 }
 
-CustomLogSourceProvider::CustomLogSourceProvider(JsonView jsonValue) : 
-    m_locationHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
+CustomLogSourceProvider::CustomLogSourceProvider(JsonView jsonValue)
+  : CustomLogSourceProvider()
 {
   *this = jsonValue;
 }

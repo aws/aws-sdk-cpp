@@ -25,10 +25,8 @@ AwsEc2ClientVpnEndpointClientLoginBannerOptionsDetails::AwsEc2ClientVpnEndpointC
 {
 }
 
-AwsEc2ClientVpnEndpointClientLoginBannerOptionsDetails::AwsEc2ClientVpnEndpointClientLoginBannerOptionsDetails(JsonView jsonValue) : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_bannerTextHasBeenSet(false)
+AwsEc2ClientVpnEndpointClientLoginBannerOptionsDetails::AwsEc2ClientVpnEndpointClientLoginBannerOptionsDetails(JsonView jsonValue)
+  : AwsEc2ClientVpnEndpointClientLoginBannerOptionsDetails()
 {
   *this = jsonValue;
 }

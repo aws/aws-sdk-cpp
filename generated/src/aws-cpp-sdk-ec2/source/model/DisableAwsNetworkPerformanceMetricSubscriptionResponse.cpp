@@ -22,8 +22,8 @@ DisableAwsNetworkPerformanceMetricSubscriptionResponse::DisableAwsNetworkPerform
 {
 }
 
-DisableAwsNetworkPerformanceMetricSubscriptionResponse::DisableAwsNetworkPerformanceMetricSubscriptionResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_output(false)
+DisableAwsNetworkPerformanceMetricSubscriptionResponse::DisableAwsNetworkPerformanceMetricSubscriptionResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : DisableAwsNetworkPerformanceMetricSubscriptionResponse()
 {
   *this = result;
 }

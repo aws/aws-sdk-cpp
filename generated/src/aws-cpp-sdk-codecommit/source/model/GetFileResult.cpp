@@ -24,9 +24,8 @@ GetFileResult::GetFileResult() :
 {
 }
 
-GetFileResult::GetFileResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_fileMode(FileModeTypeEnum::NOT_SET),
-    m_fileSize(0)
+GetFileResult::GetFileResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetFileResult()
 {
   *this = result;
 }

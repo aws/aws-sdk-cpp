@@ -27,12 +27,8 @@ ManifestConfig::ManifestConfig() :
 {
 }
 
-ManifestConfig::ManifestConfig(JsonView jsonValue) : 
-    m_action(ManifestAction::NOT_SET),
-    m_actionHasBeenSet(false),
-    m_format(ManifestFormat::NOT_SET),
-    m_formatHasBeenSet(false),
-    m_sourceHasBeenSet(false)
+ManifestConfig::ManifestConfig(JsonView jsonValue)
+  : ManifestConfig()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ UpdateDashboardPublishedVersionResult::UpdateDashboardPublishedVersionResult() :
 {
 }
 
-UpdateDashboardPublishedVersionResult::UpdateDashboardPublishedVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+UpdateDashboardPublishedVersionResult::UpdateDashboardPublishedVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateDashboardPublishedVersionResult()
 {
   *this = result;
 }

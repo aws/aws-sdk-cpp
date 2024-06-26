@@ -22,8 +22,8 @@ StartTestRunResult::StartTestRunResult() :
 {
 }
 
-StartTestRunResult::StartTestRunResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_testRunStatus(TestRunStatus::NOT_SET)
+StartTestRunResult::StartTestRunResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : StartTestRunResult()
 {
   *this = result;
 }

@@ -26,11 +26,8 @@ DirectoryVpcSettingsDescription::DirectoryVpcSettingsDescription() :
 {
 }
 
-DirectoryVpcSettingsDescription::DirectoryVpcSettingsDescription(JsonView jsonValue) : 
-    m_vpcIdHasBeenSet(false),
-    m_subnetIdsHasBeenSet(false),
-    m_securityGroupIdHasBeenSet(false),
-    m_availabilityZonesHasBeenSet(false)
+DirectoryVpcSettingsDescription::DirectoryVpcSettingsDescription(JsonView jsonValue)
+  : DirectoryVpcSettingsDescription()
 {
   *this = jsonValue;
 }

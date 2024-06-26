@@ -32,17 +32,8 @@ SubjectDetail::SubjectDetail() :
 {
 }
 
-SubjectDetail::SubjectDetail(JsonView jsonValue) : 
-    m_createdAtHasBeenSet(false),
-    m_credentialsHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_instancePropertiesHasBeenSet(false),
-    m_lastSeenAtHasBeenSet(false),
-    m_subjectArnHasBeenSet(false),
-    m_subjectIdHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_x509SubjectHasBeenSet(false)
+SubjectDetail::SubjectDetail(JsonView jsonValue)
+  : SubjectDetail()
 {
   *this = jsonValue;
 }

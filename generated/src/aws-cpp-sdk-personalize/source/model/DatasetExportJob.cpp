@@ -33,18 +33,8 @@ DatasetExportJob::DatasetExportJob() :
 {
 }
 
-DatasetExportJob::DatasetExportJob(JsonView jsonValue) : 
-    m_jobNameHasBeenSet(false),
-    m_datasetExportJobArnHasBeenSet(false),
-    m_datasetArnHasBeenSet(false),
-    m_ingestionMode(IngestionMode::NOT_SET),
-    m_ingestionModeHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_jobOutputHasBeenSet(false),
-    m_creationDateTimeHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false),
-    m_failureReasonHasBeenSet(false)
+DatasetExportJob::DatasetExportJob(JsonView jsonValue)
+  : DatasetExportJob()
 {
   *this = jsonValue;
 }

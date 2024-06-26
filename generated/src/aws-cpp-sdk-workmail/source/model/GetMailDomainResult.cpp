@@ -25,11 +25,8 @@ GetMailDomainResult::GetMailDomainResult() :
 {
 }
 
-GetMailDomainResult::GetMailDomainResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_isTestDomain(false),
-    m_isDefault(false),
-    m_ownershipVerificationStatus(DnsRecordVerificationStatus::NOT_SET),
-    m_dkimVerificationStatus(DnsRecordVerificationStatus::NOT_SET)
+GetMailDomainResult::GetMailDomainResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetMailDomainResult()
 {
   *this = result;
 }

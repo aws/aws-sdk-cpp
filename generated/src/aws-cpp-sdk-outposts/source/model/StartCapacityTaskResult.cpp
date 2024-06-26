@@ -23,9 +23,8 @@ StartCapacityTaskResult::StartCapacityTaskResult() :
 {
 }
 
-StartCapacityTaskResult::StartCapacityTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_dryRun(false),
-    m_capacityTaskStatus(CapacityTaskStatus::NOT_SET)
+StartCapacityTaskResult::StartCapacityTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : StartCapacityTaskResult()
 {
   *this = result;
 }

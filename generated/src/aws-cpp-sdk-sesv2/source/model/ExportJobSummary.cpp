@@ -29,14 +29,8 @@ ExportJobSummary::ExportJobSummary() :
 {
 }
 
-ExportJobSummary::ExportJobSummary(JsonView jsonValue) : 
-    m_jobIdHasBeenSet(false),
-    m_exportSourceType(ExportSourceType::NOT_SET),
-    m_exportSourceTypeHasBeenSet(false),
-    m_jobStatus(JobStatus::NOT_SET),
-    m_jobStatusHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false),
-    m_completedTimestampHasBeenSet(false)
+ExportJobSummary::ExportJobSummary(JsonView jsonValue)
+  : ExportJobSummary()
 {
   *this = jsonValue;
 }

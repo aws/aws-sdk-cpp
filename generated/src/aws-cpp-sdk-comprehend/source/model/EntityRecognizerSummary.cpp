@@ -29,14 +29,8 @@ EntityRecognizerSummary::EntityRecognizerSummary() :
 {
 }
 
-EntityRecognizerSummary::EntityRecognizerSummary(JsonView jsonValue) : 
-    m_recognizerNameHasBeenSet(false),
-    m_numberOfVersions(0),
-    m_numberOfVersionsHasBeenSet(false),
-    m_latestVersionCreatedAtHasBeenSet(false),
-    m_latestVersionNameHasBeenSet(false),
-    m_latestVersionStatus(ModelStatus::NOT_SET),
-    m_latestVersionStatusHasBeenSet(false)
+EntityRecognizerSummary::EntityRecognizerSummary(JsonView jsonValue)
+  : EntityRecognizerSummary()
 {
   *this = jsonValue;
 }

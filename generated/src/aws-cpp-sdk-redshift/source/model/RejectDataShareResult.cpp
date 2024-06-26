@@ -22,8 +22,8 @@ RejectDataShareResult::RejectDataShareResult() :
 {
 }
 
-RejectDataShareResult::RejectDataShareResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_allowPubliclyAccessibleConsumers(false)
+RejectDataShareResult::RejectDataShareResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : RejectDataShareResult()
 {
   *this = result;
 }

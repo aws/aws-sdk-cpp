@@ -23,8 +23,8 @@ DefaultGridLayoutConfiguration::DefaultGridLayoutConfiguration() :
 {
 }
 
-DefaultGridLayoutConfiguration::DefaultGridLayoutConfiguration(JsonView jsonValue) : 
-    m_canvasSizeOptionsHasBeenSet(false)
+DefaultGridLayoutConfiguration::DefaultGridLayoutConfiguration(JsonView jsonValue)
+  : DefaultGridLayoutConfiguration()
 {
   *this = jsonValue;
 }

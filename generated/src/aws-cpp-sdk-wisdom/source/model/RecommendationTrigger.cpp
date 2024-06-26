@@ -29,14 +29,8 @@ RecommendationTrigger::RecommendationTrigger() :
 {
 }
 
-RecommendationTrigger::RecommendationTrigger(JsonView jsonValue) : 
-    m_dataHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_recommendationIdsHasBeenSet(false),
-    m_source(RecommendationSourceType::NOT_SET),
-    m_sourceHasBeenSet(false),
-    m_type(RecommendationTriggerType::NOT_SET),
-    m_typeHasBeenSet(false)
+RecommendationTrigger::RecommendationTrigger(JsonView jsonValue)
+  : RecommendationTrigger()
 {
   *this = jsonValue;
 }

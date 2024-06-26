@@ -25,10 +25,8 @@ DocumentEnrichmentConfiguration::DocumentEnrichmentConfiguration() :
 {
 }
 
-DocumentEnrichmentConfiguration::DocumentEnrichmentConfiguration(JsonView jsonValue) : 
-    m_inlineConfigurationsHasBeenSet(false),
-    m_preExtractionHookConfigurationHasBeenSet(false),
-    m_postExtractionHookConfigurationHasBeenSet(false)
+DocumentEnrichmentConfiguration::DocumentEnrichmentConfiguration(JsonView jsonValue)
+  : DocumentEnrichmentConfiguration()
 {
   *this = jsonValue;
 }

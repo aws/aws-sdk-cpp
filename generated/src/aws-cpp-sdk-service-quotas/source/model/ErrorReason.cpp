@@ -25,10 +25,8 @@ ErrorReason::ErrorReason() :
 {
 }
 
-ErrorReason::ErrorReason(JsonView jsonValue) : 
-    m_errorCode(ErrorCode::NOT_SET),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
+ErrorReason::ErrorReason(JsonView jsonValue)
+  : ErrorReason()
 {
   *this = jsonValue;
 }

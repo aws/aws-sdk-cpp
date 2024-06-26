@@ -25,10 +25,8 @@ Device::Device() :
 {
 }
 
-Device::Device(JsonView jsonValue) : 
-    m_attributesHasBeenSet(false),
-    m_deviceIdHasBeenSet(false),
-    m_typeHasBeenSet(false)
+Device::Device(JsonView jsonValue)
+  : Device()
 {
   *this = jsonValue;
 }

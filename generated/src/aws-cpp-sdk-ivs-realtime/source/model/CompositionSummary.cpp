@@ -30,15 +30,8 @@ CompositionSummary::CompositionSummary() :
 {
 }
 
-CompositionSummary::CompositionSummary(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_stageArnHasBeenSet(false),
-    m_destinationsHasBeenSet(false),
-    m_state(CompositionState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
+CompositionSummary::CompositionSummary(JsonView jsonValue)
+  : CompositionSummary()
 {
   *this = jsonValue;
 }

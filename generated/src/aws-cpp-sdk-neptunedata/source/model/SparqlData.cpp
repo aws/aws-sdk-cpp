@@ -23,8 +23,8 @@ SparqlData::SparqlData() :
 {
 }
 
-SparqlData::SparqlData(JsonView jsonValue) : 
-    m_stmtHasBeenSet(false)
+SparqlData::SparqlData(JsonView jsonValue)
+  : SparqlData()
 {
   *this = jsonValue;
 }

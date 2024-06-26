@@ -30,15 +30,8 @@ QuickConnect::QuickConnect() :
 {
 }
 
-QuickConnect::QuickConnect(JsonView jsonValue) : 
-    m_quickConnectARNHasBeenSet(false),
-    m_quickConnectIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_quickConnectConfigHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_lastModifiedRegionHasBeenSet(false)
+QuickConnect::QuickConnect(JsonView jsonValue)
+  : QuickConnect()
 {
   *this = jsonValue;
 }

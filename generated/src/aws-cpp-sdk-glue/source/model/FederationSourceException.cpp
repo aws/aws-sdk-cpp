@@ -25,10 +25,8 @@ FederationSourceException::FederationSourceException() :
 {
 }
 
-FederationSourceException::FederationSourceException(JsonView jsonValue) : 
-    m_federationSourceErrorCode(FederationSourceErrorCode::NOT_SET),
-    m_federationSourceErrorCodeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+FederationSourceException::FederationSourceException(JsonView jsonValue)
+  : FederationSourceException()
 {
   *this = jsonValue;
 }

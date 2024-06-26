@@ -38,21 +38,8 @@ SpotOptions::SpotOptions() :
 {
 }
 
-SpotOptions::SpotOptions(const XmlNode& xmlNode) : 
-    m_allocationStrategy(SpotAllocationStrategy::NOT_SET),
-    m_allocationStrategyHasBeenSet(false),
-    m_maintenanceStrategiesHasBeenSet(false),
-    m_instanceInterruptionBehavior(SpotInstanceInterruptionBehavior::NOT_SET),
-    m_instanceInterruptionBehaviorHasBeenSet(false),
-    m_instancePoolsToUseCount(0),
-    m_instancePoolsToUseCountHasBeenSet(false),
-    m_singleInstanceType(false),
-    m_singleInstanceTypeHasBeenSet(false),
-    m_singleAvailabilityZone(false),
-    m_singleAvailabilityZoneHasBeenSet(false),
-    m_minTargetCapacity(0),
-    m_minTargetCapacityHasBeenSet(false),
-    m_maxTotalPriceHasBeenSet(false)
+SpotOptions::SpotOptions(const XmlNode& xmlNode)
+  : SpotOptions()
 {
   *this = xmlNode;
 }

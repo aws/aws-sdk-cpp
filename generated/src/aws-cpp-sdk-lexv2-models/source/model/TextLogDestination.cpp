@@ -23,8 +23,8 @@ TextLogDestination::TextLogDestination() :
 {
 }
 
-TextLogDestination::TextLogDestination(JsonView jsonValue) : 
-    m_cloudWatchHasBeenSet(false)
+TextLogDestination::TextLogDestination(JsonView jsonValue)
+  : TextLogDestination()
 {
   *this = jsonValue;
 }

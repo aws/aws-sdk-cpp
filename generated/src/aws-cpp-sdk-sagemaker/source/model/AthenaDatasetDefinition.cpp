@@ -32,17 +32,8 @@ AthenaDatasetDefinition::AthenaDatasetDefinition() :
 {
 }
 
-AthenaDatasetDefinition::AthenaDatasetDefinition(JsonView jsonValue) : 
-    m_catalogHasBeenSet(false),
-    m_databaseHasBeenSet(false),
-    m_queryStringHasBeenSet(false),
-    m_workGroupHasBeenSet(false),
-    m_outputS3UriHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_outputFormat(AthenaResultFormat::NOT_SET),
-    m_outputFormatHasBeenSet(false),
-    m_outputCompression(AthenaResultCompressionType::NOT_SET),
-    m_outputCompressionHasBeenSet(false)
+AthenaDatasetDefinition::AthenaDatasetDefinition(JsonView jsonValue)
+  : AthenaDatasetDefinition()
 {
   *this = jsonValue;
 }

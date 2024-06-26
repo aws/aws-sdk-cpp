@@ -22,8 +22,8 @@ StopImportResult::StopImportResult() :
 {
 }
 
-StopImportResult::StopImportResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_importStatus(ImportStatus::NOT_SET)
+StopImportResult::StopImportResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : StopImportResult()
 {
   *this = result;
 }

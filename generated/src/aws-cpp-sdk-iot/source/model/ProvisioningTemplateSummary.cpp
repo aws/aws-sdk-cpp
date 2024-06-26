@@ -31,16 +31,8 @@ ProvisioningTemplateSummary::ProvisioningTemplateSummary() :
 {
 }
 
-ProvisioningTemplateSummary::ProvisioningTemplateSummary(JsonView jsonValue) : 
-    m_templateArnHasBeenSet(false),
-    m_templateNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_lastModifiedDateHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_type(TemplateType::NOT_SET),
-    m_typeHasBeenSet(false)
+ProvisioningTemplateSummary::ProvisioningTemplateSummary(JsonView jsonValue)
+  : ProvisioningTemplateSummary()
 {
   *this = jsonValue;
 }

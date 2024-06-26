@@ -24,9 +24,8 @@ TeletextDestinationSettings::TeletextDestinationSettings() :
 {
 }
 
-TeletextDestinationSettings::TeletextDestinationSettings(JsonView jsonValue) : 
-    m_pageNumberHasBeenSet(false),
-    m_pageTypesHasBeenSet(false)
+TeletextDestinationSettings::TeletextDestinationSettings(JsonView jsonValue)
+  : TeletextDestinationSettings()
 {
   *this = jsonValue;
 }

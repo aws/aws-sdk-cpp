@@ -26,9 +26,8 @@ CustomDBEngineVersionAMI::CustomDBEngineVersionAMI() :
 {
 }
 
-CustomDBEngineVersionAMI::CustomDBEngineVersionAMI(const XmlNode& xmlNode) : 
-    m_imageIdHasBeenSet(false),
-    m_statusHasBeenSet(false)
+CustomDBEngineVersionAMI::CustomDBEngineVersionAMI(const XmlNode& xmlNode)
+  : CustomDBEngineVersionAMI()
 {
   *this = xmlNode;
 }

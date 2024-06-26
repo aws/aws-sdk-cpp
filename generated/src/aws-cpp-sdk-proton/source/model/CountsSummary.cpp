@@ -29,14 +29,8 @@ CountsSummary::CountsSummary() :
 {
 }
 
-CountsSummary::CountsSummary(JsonView jsonValue) : 
-    m_componentsHasBeenSet(false),
-    m_environmentTemplatesHasBeenSet(false),
-    m_environmentsHasBeenSet(false),
-    m_pipelinesHasBeenSet(false),
-    m_serviceInstancesHasBeenSet(false),
-    m_serviceTemplatesHasBeenSet(false),
-    m_servicesHasBeenSet(false)
+CountsSummary::CountsSummary(JsonView jsonValue)
+  : CountsSummary()
 {
   *this = jsonValue;
 }

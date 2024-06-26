@@ -25,10 +25,8 @@ ActionSummary::ActionSummary() :
 {
 }
 
-ActionSummary::ActionSummary(JsonView jsonValue) : 
-    m_actionIdHasBeenSet(false),
-    m_actionDefinitionIdHasBeenSet(false),
-    m_targetResourceHasBeenSet(false)
+ActionSummary::ActionSummary(JsonView jsonValue)
+  : ActionSummary()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ EC2CopyRouteTableAction::EC2CopyRouteTableAction() :
 {
 }
 
-EC2CopyRouteTableAction::EC2CopyRouteTableAction(JsonView jsonValue) : 
-    m_descriptionHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_routeTableIdHasBeenSet(false)
+EC2CopyRouteTableAction::EC2CopyRouteTableAction(JsonView jsonValue)
+  : EC2CopyRouteTableAction()
 {
   *this = jsonValue;
 }

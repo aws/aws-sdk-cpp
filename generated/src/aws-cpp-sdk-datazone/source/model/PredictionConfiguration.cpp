@@ -23,8 +23,8 @@ PredictionConfiguration::PredictionConfiguration() :
 {
 }
 
-PredictionConfiguration::PredictionConfiguration(JsonView jsonValue) : 
-    m_businessNameGenerationHasBeenSet(false)
+PredictionConfiguration::PredictionConfiguration(JsonView jsonValue)
+  : PredictionConfiguration()
 {
   *this = jsonValue;
 }

@@ -32,15 +32,8 @@ TransitGatewayRoute::TransitGatewayRoute() :
 {
 }
 
-TransitGatewayRoute::TransitGatewayRoute(const XmlNode& xmlNode) : 
-    m_destinationCidrBlockHasBeenSet(false),
-    m_prefixListIdHasBeenSet(false),
-    m_transitGatewayRouteTableAnnouncementIdHasBeenSet(false),
-    m_transitGatewayAttachmentsHasBeenSet(false),
-    m_type(TransitGatewayRouteType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_state(TransitGatewayRouteState::NOT_SET),
-    m_stateHasBeenSet(false)
+TransitGatewayRoute::TransitGatewayRoute(const XmlNode& xmlNode)
+  : TransitGatewayRoute()
 {
   *this = xmlNode;
 }

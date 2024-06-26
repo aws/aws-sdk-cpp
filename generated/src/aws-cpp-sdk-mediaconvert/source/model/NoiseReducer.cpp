@@ -27,12 +27,8 @@ NoiseReducer::NoiseReducer() :
 {
 }
 
-NoiseReducer::NoiseReducer(JsonView jsonValue) : 
-    m_filter(NoiseReducerFilter::NOT_SET),
-    m_filterHasBeenSet(false),
-    m_filterSettingsHasBeenSet(false),
-    m_spatialFilterSettingsHasBeenSet(false),
-    m_temporalFilterSettingsHasBeenSet(false)
+NoiseReducer::NoiseReducer(JsonView jsonValue)
+  : NoiseReducer()
 {
   *this = jsonValue;
 }

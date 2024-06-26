@@ -23,8 +23,8 @@ TableFieldImageConfiguration::TableFieldImageConfiguration() :
 {
 }
 
-TableFieldImageConfiguration::TableFieldImageConfiguration(JsonView jsonValue) : 
-    m_sizingOptionsHasBeenSet(false)
+TableFieldImageConfiguration::TableFieldImageConfiguration(JsonView jsonValue)
+  : TableFieldImageConfiguration()
 {
   *this = jsonValue;
 }

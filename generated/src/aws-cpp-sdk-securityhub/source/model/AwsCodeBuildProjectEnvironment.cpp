@@ -29,14 +29,8 @@ AwsCodeBuildProjectEnvironment::AwsCodeBuildProjectEnvironment() :
 {
 }
 
-AwsCodeBuildProjectEnvironment::AwsCodeBuildProjectEnvironment(JsonView jsonValue) : 
-    m_certificateHasBeenSet(false),
-    m_environmentVariablesHasBeenSet(false),
-    m_privilegedMode(false),
-    m_privilegedModeHasBeenSet(false),
-    m_imagePullCredentialsTypeHasBeenSet(false),
-    m_registryCredentialHasBeenSet(false),
-    m_typeHasBeenSet(false)
+AwsCodeBuildProjectEnvironment::AwsCodeBuildProjectEnvironment(JsonView jsonValue)
+  : AwsCodeBuildProjectEnvironment()
 {
   *this = jsonValue;
 }

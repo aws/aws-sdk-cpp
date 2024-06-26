@@ -30,15 +30,8 @@ TopicRuleDestinationSummary::TopicRuleDestinationSummary() :
 {
 }
 
-TopicRuleDestinationSummary::TopicRuleDestinationSummary(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_status(TopicRuleDestinationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false),
-    m_statusReasonHasBeenSet(false),
-    m_httpUrlSummaryHasBeenSet(false),
-    m_vpcDestinationSummaryHasBeenSet(false)
+TopicRuleDestinationSummary::TopicRuleDestinationSummary(JsonView jsonValue)
+  : TopicRuleDestinationSummary()
 {
   *this = jsonValue;
 }

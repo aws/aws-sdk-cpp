@@ -27,10 +27,8 @@ AliasICPRecordal::AliasICPRecordal() :
 {
 }
 
-AliasICPRecordal::AliasICPRecordal(const XmlNode& xmlNode) : 
-    m_cNAMEHasBeenSet(false),
-    m_iCPRecordalStatus(ICPRecordalStatus::NOT_SET),
-    m_iCPRecordalStatusHasBeenSet(false)
+AliasICPRecordal::AliasICPRecordal(const XmlNode& xmlNode)
+  : AliasICPRecordal()
 {
   *this = xmlNode;
 }

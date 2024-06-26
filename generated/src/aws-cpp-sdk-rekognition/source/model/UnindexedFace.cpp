@@ -24,9 +24,8 @@ UnindexedFace::UnindexedFace() :
 {
 }
 
-UnindexedFace::UnindexedFace(JsonView jsonValue) : 
-    m_reasonsHasBeenSet(false),
-    m_faceDetailHasBeenSet(false)
+UnindexedFace::UnindexedFace(JsonView jsonValue)
+  : UnindexedFace()
 {
   *this = jsonValue;
 }

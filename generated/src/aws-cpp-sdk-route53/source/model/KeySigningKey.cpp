@@ -44,27 +44,8 @@ KeySigningKey::KeySigningKey() :
 {
 }
 
-KeySigningKey::KeySigningKey(const XmlNode& xmlNode) : 
-    m_nameHasBeenSet(false),
-    m_kmsArnHasBeenSet(false),
-    m_flag(0),
-    m_flagHasBeenSet(false),
-    m_signingAlgorithmMnemonicHasBeenSet(false),
-    m_signingAlgorithmType(0),
-    m_signingAlgorithmTypeHasBeenSet(false),
-    m_digestAlgorithmMnemonicHasBeenSet(false),
-    m_digestAlgorithmType(0),
-    m_digestAlgorithmTypeHasBeenSet(false),
-    m_keyTag(0),
-    m_keyTagHasBeenSet(false),
-    m_digestValueHasBeenSet(false),
-    m_publicKeyHasBeenSet(false),
-    m_dSRecordHasBeenSet(false),
-    m_dNSKEYRecordHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_createdDateHasBeenSet(false),
-    m_lastModifiedDateHasBeenSet(false)
+KeySigningKey::KeySigningKey(const XmlNode& xmlNode)
+  : KeySigningKey()
 {
   *this = xmlNode;
 }

@@ -30,15 +30,8 @@ LifeCycle::LifeCycle() :
 {
 }
 
-LifeCycle::LifeCycle(JsonView jsonValue) : 
-    m_addedToServiceDateTimeHasBeenSet(false),
-    m_elapsedReplicationDurationHasBeenSet(false),
-    m_firstByteDateTimeHasBeenSet(false),
-    m_lastCutoverHasBeenSet(false),
-    m_lastSeenByServiceDateTimeHasBeenSet(false),
-    m_lastTestHasBeenSet(false),
-    m_state(LifeCycleState::NOT_SET),
-    m_stateHasBeenSet(false)
+LifeCycle::LifeCycle(JsonView jsonValue)
+  : LifeCycle()
 {
   *this = jsonValue;
 }

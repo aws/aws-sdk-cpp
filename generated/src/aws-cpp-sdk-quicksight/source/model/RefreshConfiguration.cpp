@@ -23,8 +23,8 @@ RefreshConfiguration::RefreshConfiguration() :
 {
 }
 
-RefreshConfiguration::RefreshConfiguration(JsonView jsonValue) : 
-    m_incrementalRefreshHasBeenSet(false)
+RefreshConfiguration::RefreshConfiguration(JsonView jsonValue)
+  : RefreshConfiguration()
 {
   *this = jsonValue;
 }

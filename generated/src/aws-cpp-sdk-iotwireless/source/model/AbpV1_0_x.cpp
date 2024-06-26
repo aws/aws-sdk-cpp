@@ -26,11 +26,8 @@ AbpV1_0_x::AbpV1_0_x() :
 {
 }
 
-AbpV1_0_x::AbpV1_0_x(JsonView jsonValue) : 
-    m_devAddrHasBeenSet(false),
-    m_sessionKeysHasBeenSet(false),
-    m_fCntStart(0),
-    m_fCntStartHasBeenSet(false)
+AbpV1_0_x::AbpV1_0_x(JsonView jsonValue)
+  : AbpV1_0_x()
 {
   *this = jsonValue;
 }

@@ -27,12 +27,8 @@ ServiceLevelObjectiveSummary::ServiceLevelObjectiveSummary() :
 {
 }
 
-ServiceLevelObjectiveSummary::ServiceLevelObjectiveSummary(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_keyAttributesHasBeenSet(false),
-    m_operationNameHasBeenSet(false),
-    m_createdTimeHasBeenSet(false)
+ServiceLevelObjectiveSummary::ServiceLevelObjectiveSummary(JsonView jsonValue)
+  : ServiceLevelObjectiveSummary()
 {
   *this = jsonValue;
 }

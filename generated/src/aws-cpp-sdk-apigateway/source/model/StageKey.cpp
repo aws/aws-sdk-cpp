@@ -24,9 +24,8 @@ StageKey::StageKey() :
 {
 }
 
-StageKey::StageKey(JsonView jsonValue) : 
-    m_restApiIdHasBeenSet(false),
-    m_stageNameHasBeenSet(false)
+StageKey::StageKey(JsonView jsonValue)
+  : StageKey()
 {
   *this = jsonValue;
 }

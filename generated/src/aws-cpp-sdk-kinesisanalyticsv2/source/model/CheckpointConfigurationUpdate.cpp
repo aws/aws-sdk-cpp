@@ -30,15 +30,8 @@ CheckpointConfigurationUpdate::CheckpointConfigurationUpdate() :
 {
 }
 
-CheckpointConfigurationUpdate::CheckpointConfigurationUpdate(JsonView jsonValue) : 
-    m_configurationTypeUpdate(ConfigurationType::NOT_SET),
-    m_configurationTypeUpdateHasBeenSet(false),
-    m_checkpointingEnabledUpdate(false),
-    m_checkpointingEnabledUpdateHasBeenSet(false),
-    m_checkpointIntervalUpdate(0),
-    m_checkpointIntervalUpdateHasBeenSet(false),
-    m_minPauseBetweenCheckpointsUpdate(0),
-    m_minPauseBetweenCheckpointsUpdateHasBeenSet(false)
+CheckpointConfigurationUpdate::CheckpointConfigurationUpdate(JsonView jsonValue)
+  : CheckpointConfigurationUpdate()
 {
   *this = jsonValue;
 }

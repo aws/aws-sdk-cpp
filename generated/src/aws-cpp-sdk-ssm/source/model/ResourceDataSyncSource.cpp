@@ -29,14 +29,8 @@ ResourceDataSyncSource::ResourceDataSyncSource() :
 {
 }
 
-ResourceDataSyncSource::ResourceDataSyncSource(JsonView jsonValue) : 
-    m_sourceTypeHasBeenSet(false),
-    m_awsOrganizationsSourceHasBeenSet(false),
-    m_sourceRegionsHasBeenSet(false),
-    m_includeFutureRegions(false),
-    m_includeFutureRegionsHasBeenSet(false),
-    m_enableAllOpsDataSources(false),
-    m_enableAllOpsDataSourcesHasBeenSet(false)
+ResourceDataSyncSource::ResourceDataSyncSource(JsonView jsonValue)
+  : ResourceDataSyncSource()
 {
   *this = jsonValue;
 }

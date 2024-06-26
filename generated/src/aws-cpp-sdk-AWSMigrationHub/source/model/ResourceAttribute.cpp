@@ -25,10 +25,8 @@ ResourceAttribute::ResourceAttribute() :
 {
 }
 
-ResourceAttribute::ResourceAttribute(JsonView jsonValue) : 
-    m_type(ResourceAttributeType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_valueHasBeenSet(false)
+ResourceAttribute::ResourceAttribute(JsonView jsonValue)
+  : ResourceAttribute()
 {
   *this = jsonValue;
 }

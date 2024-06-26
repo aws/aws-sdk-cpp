@@ -27,12 +27,8 @@ PrimaryKey::PrimaryKey() :
 {
 }
 
-PrimaryKey::PrimaryKey(JsonView jsonValue) : 
-    m_length(0),
-    m_lengthHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_offset(0),
-    m_offsetHasBeenSet(false)
+PrimaryKey::PrimaryKey(JsonView jsonValue)
+  : PrimaryKey()
 {
   *this = jsonValue;
 }

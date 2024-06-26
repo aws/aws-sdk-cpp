@@ -27,12 +27,8 @@ CanadaAdditionalInfo::CanadaAdditionalInfo() :
 {
 }
 
-CanadaAdditionalInfo::CanadaAdditionalInfo(JsonView jsonValue) : 
-    m_canadaQuebecSalesTaxNumberHasBeenSet(false),
-    m_canadaRetailSalesTaxNumberHasBeenSet(false),
-    m_isResellerAccount(false),
-    m_isResellerAccountHasBeenSet(false),
-    m_provincialSalesTaxIdHasBeenSet(false)
+CanadaAdditionalInfo::CanadaAdditionalInfo(JsonView jsonValue)
+  : CanadaAdditionalInfo()
 {
   *this = jsonValue;
 }

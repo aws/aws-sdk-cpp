@@ -23,8 +23,8 @@ DocumentServiceWarning::DocumentServiceWarning() :
 {
 }
 
-DocumentServiceWarning::DocumentServiceWarning(JsonView jsonValue) : 
-    m_messageHasBeenSet(false)
+DocumentServiceWarning::DocumentServiceWarning(JsonView jsonValue)
+  : DocumentServiceWarning()
 {
   *this = jsonValue;
 }

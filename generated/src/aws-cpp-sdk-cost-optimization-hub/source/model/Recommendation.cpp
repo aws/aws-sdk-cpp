@@ -50,35 +50,8 @@ Recommendation::Recommendation() :
 {
 }
 
-Recommendation::Recommendation(JsonView jsonValue) : 
-    m_recommendationIdHasBeenSet(false),
-    m_accountIdHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_resourceArnHasBeenSet(false),
-    m_currentResourceTypeHasBeenSet(false),
-    m_recommendedResourceTypeHasBeenSet(false),
-    m_estimatedMonthlySavings(0.0),
-    m_estimatedMonthlySavingsHasBeenSet(false),
-    m_estimatedSavingsPercentage(0.0),
-    m_estimatedSavingsPercentageHasBeenSet(false),
-    m_estimatedMonthlyCost(0.0),
-    m_estimatedMonthlyCostHasBeenSet(false),
-    m_currencyCodeHasBeenSet(false),
-    m_implementationEffortHasBeenSet(false),
-    m_restartNeeded(false),
-    m_restartNeededHasBeenSet(false),
-    m_actionTypeHasBeenSet(false),
-    m_rollbackPossible(false),
-    m_rollbackPossibleHasBeenSet(false),
-    m_currentResourceSummaryHasBeenSet(false),
-    m_recommendedResourceSummaryHasBeenSet(false),
-    m_lastRefreshTimestampHasBeenSet(false),
-    m_recommendationLookbackPeriodInDays(0),
-    m_recommendationLookbackPeriodInDaysHasBeenSet(false),
-    m_source(Source::NOT_SET),
-    m_sourceHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+Recommendation::Recommendation(JsonView jsonValue)
+  : Recommendation()
 {
   *this = jsonValue;
 }

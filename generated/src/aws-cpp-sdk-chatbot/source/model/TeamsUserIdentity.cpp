@@ -29,14 +29,8 @@ TeamsUserIdentity::TeamsUserIdentity() :
 {
 }
 
-TeamsUserIdentity::TeamsUserIdentity(JsonView jsonValue) : 
-    m_iamRoleArnHasBeenSet(false),
-    m_chatConfigurationArnHasBeenSet(false),
-    m_teamIdHasBeenSet(false),
-    m_userIdHasBeenSet(false),
-    m_awsUserIdentityHasBeenSet(false),
-    m_teamsChannelIdHasBeenSet(false),
-    m_teamsTenantIdHasBeenSet(false)
+TeamsUserIdentity::TeamsUserIdentity(JsonView jsonValue)
+  : TeamsUserIdentity()
 {
   *this = jsonValue;
 }

@@ -27,12 +27,8 @@ ParticipantTimerConfiguration::ParticipantTimerConfiguration() :
 {
 }
 
-ParticipantTimerConfiguration::ParticipantTimerConfiguration(JsonView jsonValue) : 
-    m_participantRole(TimerEligibleParticipantRoles::NOT_SET),
-    m_participantRoleHasBeenSet(false),
-    m_timerType(ParticipantTimerType::NOT_SET),
-    m_timerTypeHasBeenSet(false),
-    m_timerValueHasBeenSet(false)
+ParticipantTimerConfiguration::ParticipantTimerConfiguration(JsonView jsonValue)
+  : ParticipantTimerConfiguration()
 {
   *this = jsonValue;
 }

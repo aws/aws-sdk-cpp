@@ -24,9 +24,8 @@ Featurization::Featurization() :
 {
 }
 
-Featurization::Featurization(JsonView jsonValue) : 
-    m_attributeNameHasBeenSet(false),
-    m_featurizationPipelineHasBeenSet(false)
+Featurization::Featurization(JsonView jsonValue)
+  : Featurization()
 {
   *this = jsonValue;
 }

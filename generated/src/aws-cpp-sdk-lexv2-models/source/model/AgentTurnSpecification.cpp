@@ -23,8 +23,8 @@ AgentTurnSpecification::AgentTurnSpecification() :
 {
 }
 
-AgentTurnSpecification::AgentTurnSpecification(JsonView jsonValue) : 
-    m_agentPromptHasBeenSet(false)
+AgentTurnSpecification::AgentTurnSpecification(JsonView jsonValue)
+  : AgentTurnSpecification()
 {
   *this = jsonValue;
 }

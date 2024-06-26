@@ -24,9 +24,8 @@ ProcessingOutputConfig::ProcessingOutputConfig() :
 {
 }
 
-ProcessingOutputConfig::ProcessingOutputConfig(JsonView jsonValue) : 
-    m_outputsHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
+ProcessingOutputConfig::ProcessingOutputConfig(JsonView jsonValue)
+  : ProcessingOutputConfig()
 {
   *this = jsonValue;
 }

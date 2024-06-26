@@ -23,9 +23,8 @@ DescribeMailboxExportJobResult::DescribeMailboxExportJobResult() :
 {
 }
 
-DescribeMailboxExportJobResult::DescribeMailboxExportJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_estimatedProgress(0),
-    m_state(MailboxExportJobState::NOT_SET)
+DescribeMailboxExportJobResult::DescribeMailboxExportJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeMailboxExportJobResult()
 {
   *this = result;
 }

@@ -25,10 +25,8 @@ Attachments::Attachments() :
 {
 }
 
-Attachments::Attachments(JsonView jsonValue) : 
-    m_fileSystem(JobAttachmentsFileSystem::NOT_SET),
-    m_fileSystemHasBeenSet(false),
-    m_manifestsHasBeenSet(false)
+Attachments::Attachments(JsonView jsonValue)
+  : Attachments()
 {
   *this = jsonValue;
 }

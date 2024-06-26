@@ -28,11 +28,8 @@ FleetSpotCapacityRebalanceRequest::FleetSpotCapacityRebalanceRequest() :
 {
 }
 
-FleetSpotCapacityRebalanceRequest::FleetSpotCapacityRebalanceRequest(const XmlNode& xmlNode) : 
-    m_replacementStrategy(FleetReplacementStrategy::NOT_SET),
-    m_replacementStrategyHasBeenSet(false),
-    m_terminationDelay(0),
-    m_terminationDelayHasBeenSet(false)
+FleetSpotCapacityRebalanceRequest::FleetSpotCapacityRebalanceRequest(const XmlNode& xmlNode)
+  : FleetSpotCapacityRebalanceRequest()
 {
   *this = xmlNode;
 }

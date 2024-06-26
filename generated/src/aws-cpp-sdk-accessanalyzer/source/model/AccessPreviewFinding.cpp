@@ -42,27 +42,8 @@ AccessPreviewFinding::AccessPreviewFinding() :
 {
 }
 
-AccessPreviewFinding::AccessPreviewFinding(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_existingFindingIdHasBeenSet(false),
-    m_existingFindingStatus(FindingStatus::NOT_SET),
-    m_existingFindingStatusHasBeenSet(false),
-    m_principalHasBeenSet(false),
-    m_actionHasBeenSet(false),
-    m_conditionHasBeenSet(false),
-    m_resourceHasBeenSet(false),
-    m_isPublic(false),
-    m_isPublicHasBeenSet(false),
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_changeType(FindingChangeType::NOT_SET),
-    m_changeTypeHasBeenSet(false),
-    m_status(FindingStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_resourceOwnerAccountHasBeenSet(false),
-    m_errorHasBeenSet(false),
-    m_sourcesHasBeenSet(false)
+AccessPreviewFinding::AccessPreviewFinding(JsonView jsonValue)
+  : AccessPreviewFinding()
 {
   *this = jsonValue;
 }

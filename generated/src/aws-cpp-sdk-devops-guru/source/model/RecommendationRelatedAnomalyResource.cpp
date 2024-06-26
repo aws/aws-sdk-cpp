@@ -24,9 +24,8 @@ RecommendationRelatedAnomalyResource::RecommendationRelatedAnomalyResource() :
 {
 }
 
-RecommendationRelatedAnomalyResource::RecommendationRelatedAnomalyResource(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_typeHasBeenSet(false)
+RecommendationRelatedAnomalyResource::RecommendationRelatedAnomalyResource(JsonView jsonValue)
+  : RecommendationRelatedAnomalyResource()
 {
   *this = jsonValue;
 }

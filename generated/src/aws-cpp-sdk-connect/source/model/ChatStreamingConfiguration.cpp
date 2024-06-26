@@ -23,8 +23,8 @@ ChatStreamingConfiguration::ChatStreamingConfiguration() :
 {
 }
 
-ChatStreamingConfiguration::ChatStreamingConfiguration(JsonView jsonValue) : 
-    m_streamingEndpointArnHasBeenSet(false)
+ChatStreamingConfiguration::ChatStreamingConfiguration(JsonView jsonValue)
+  : ChatStreamingConfiguration()
 {
   *this = jsonValue;
 }

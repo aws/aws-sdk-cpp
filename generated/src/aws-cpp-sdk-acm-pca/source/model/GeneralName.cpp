@@ -30,15 +30,8 @@ GeneralName::GeneralName() :
 {
 }
 
-GeneralName::GeneralName(JsonView jsonValue) : 
-    m_otherNameHasBeenSet(false),
-    m_rfc822NameHasBeenSet(false),
-    m_dnsNameHasBeenSet(false),
-    m_directoryNameHasBeenSet(false),
-    m_ediPartyNameHasBeenSet(false),
-    m_uniformResourceIdentifierHasBeenSet(false),
-    m_ipAddressHasBeenSet(false),
-    m_registeredIdHasBeenSet(false)
+GeneralName::GeneralName(JsonView jsonValue)
+  : GeneralName()
 {
   *this = jsonValue;
 }

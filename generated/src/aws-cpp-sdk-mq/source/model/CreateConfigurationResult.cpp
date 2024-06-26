@@ -22,8 +22,8 @@ CreateConfigurationResult::CreateConfigurationResult() :
 {
 }
 
-CreateConfigurationResult::CreateConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_authenticationStrategy(AuthenticationStrategy::NOT_SET)
+CreateConfigurationResult::CreateConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateConfigurationResult()
 {
   *this = result;
 }

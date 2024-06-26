@@ -24,9 +24,8 @@ M2tsScte35Esam::M2tsScte35Esam() :
 {
 }
 
-M2tsScte35Esam::M2tsScte35Esam(JsonView jsonValue) : 
-    m_scte35EsamPid(0),
-    m_scte35EsamPidHasBeenSet(false)
+M2tsScte35Esam::M2tsScte35Esam(JsonView jsonValue)
+  : M2tsScte35Esam()
 {
   *this = jsonValue;
 }

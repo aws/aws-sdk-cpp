@@ -26,11 +26,8 @@ AwsEc2VpcDetails::AwsEc2VpcDetails() :
 {
 }
 
-AwsEc2VpcDetails::AwsEc2VpcDetails(JsonView jsonValue) : 
-    m_cidrBlockAssociationSetHasBeenSet(false),
-    m_ipv6CidrBlockAssociationSetHasBeenSet(false),
-    m_dhcpOptionsIdHasBeenSet(false),
-    m_stateHasBeenSet(false)
+AwsEc2VpcDetails::AwsEc2VpcDetails(JsonView jsonValue)
+  : AwsEc2VpcDetails()
 {
   *this = jsonValue;
 }

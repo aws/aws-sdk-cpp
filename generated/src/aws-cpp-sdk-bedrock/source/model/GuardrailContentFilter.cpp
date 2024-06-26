@@ -28,13 +28,8 @@ GuardrailContentFilter::GuardrailContentFilter() :
 {
 }
 
-GuardrailContentFilter::GuardrailContentFilter(JsonView jsonValue) : 
-    m_type(GuardrailContentFilterType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_inputStrength(GuardrailFilterStrength::NOT_SET),
-    m_inputStrengthHasBeenSet(false),
-    m_outputStrength(GuardrailFilterStrength::NOT_SET),
-    m_outputStrengthHasBeenSet(false)
+GuardrailContentFilter::GuardrailContentFilter(JsonView jsonValue)
+  : GuardrailContentFilter()
 {
   *this = jsonValue;
 }

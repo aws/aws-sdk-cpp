@@ -28,13 +28,8 @@ EntryViolation::EntryViolation() :
 {
 }
 
-EntryViolation::EntryViolation(JsonView jsonValue) : 
-    m_expectedEntryHasBeenSet(false),
-    m_expectedEvaluationOrderHasBeenSet(false),
-    m_actualEvaluationOrderHasBeenSet(false),
-    m_entryAtExpectedEvaluationOrderHasBeenSet(false),
-    m_entriesWithConflictsHasBeenSet(false),
-    m_entryViolationReasonsHasBeenSet(false)
+EntryViolation::EntryViolation(JsonView jsonValue)
+  : EntryViolation()
 {
   *this = jsonValue;
 }

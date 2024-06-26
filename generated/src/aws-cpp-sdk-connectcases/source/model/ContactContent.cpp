@@ -25,10 +25,8 @@ ContactContent::ContactContent() :
 {
 }
 
-ContactContent::ContactContent(JsonView jsonValue) : 
-    m_channelHasBeenSet(false),
-    m_connectedToSystemTimeHasBeenSet(false),
-    m_contactArnHasBeenSet(false)
+ContactContent::ContactContent(JsonView jsonValue)
+  : ContactContent()
 {
   *this = jsonValue;
 }

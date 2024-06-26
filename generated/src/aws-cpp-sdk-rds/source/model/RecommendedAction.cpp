@@ -33,16 +33,8 @@ RecommendedAction::RecommendedAction() :
 {
 }
 
-RecommendedAction::RecommendedAction(const XmlNode& xmlNode) : 
-    m_actionIdHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_operationHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_applyModesHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_issueDetailsHasBeenSet(false),
-    m_contextAttributesHasBeenSet(false)
+RecommendedAction::RecommendedAction(const XmlNode& xmlNode)
+  : RecommendedAction()
 {
   *this = xmlNode;
 }

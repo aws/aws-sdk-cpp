@@ -25,8 +25,8 @@ IKEVersionsRequestListValue::IKEVersionsRequestListValue() :
 {
 }
 
-IKEVersionsRequestListValue::IKEVersionsRequestListValue(const XmlNode& xmlNode) : 
-    m_valueHasBeenSet(false)
+IKEVersionsRequestListValue::IKEVersionsRequestListValue(const XmlNode& xmlNode)
+  : IKEVersionsRequestListValue()
 {
   *this = xmlNode;
 }

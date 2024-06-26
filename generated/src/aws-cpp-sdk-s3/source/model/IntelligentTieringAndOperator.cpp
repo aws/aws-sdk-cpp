@@ -26,9 +26,8 @@ IntelligentTieringAndOperator::IntelligentTieringAndOperator() :
 {
 }
 
-IntelligentTieringAndOperator::IntelligentTieringAndOperator(const XmlNode& xmlNode) : 
-    m_prefixHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+IntelligentTieringAndOperator::IntelligentTieringAndOperator(const XmlNode& xmlNode)
+  : IntelligentTieringAndOperator()
 {
   *this = xmlNode;
 }

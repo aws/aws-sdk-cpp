@@ -24,9 +24,8 @@ SidewalkEventNotificationConfigurations::SidewalkEventNotificationConfigurations
 {
 }
 
-SidewalkEventNotificationConfigurations::SidewalkEventNotificationConfigurations(JsonView jsonValue) : 
-    m_amazonIdEventTopic(EventNotificationTopicStatus::NOT_SET),
-    m_amazonIdEventTopicHasBeenSet(false)
+SidewalkEventNotificationConfigurations::SidewalkEventNotificationConfigurations(JsonView jsonValue)
+  : SidewalkEventNotificationConfigurations()
 {
   *this = jsonValue;
 }

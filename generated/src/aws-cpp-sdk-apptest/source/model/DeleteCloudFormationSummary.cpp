@@ -24,9 +24,8 @@ DeleteCloudFormationSummary::DeleteCloudFormationSummary() :
 {
 }
 
-DeleteCloudFormationSummary::DeleteCloudFormationSummary(JsonView jsonValue) : 
-    m_stepInputHasBeenSet(false),
-    m_stepOutputHasBeenSet(false)
+DeleteCloudFormationSummary::DeleteCloudFormationSummary(JsonView jsonValue)
+  : DeleteCloudFormationSummary()
 {
   *this = jsonValue;
 }

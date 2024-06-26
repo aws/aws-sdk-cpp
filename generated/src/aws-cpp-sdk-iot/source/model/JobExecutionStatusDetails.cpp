@@ -23,8 +23,8 @@ JobExecutionStatusDetails::JobExecutionStatusDetails() :
 {
 }
 
-JobExecutionStatusDetails::JobExecutionStatusDetails(JsonView jsonValue) : 
-    m_detailsMapHasBeenSet(false)
+JobExecutionStatusDetails::JobExecutionStatusDetails(JsonView jsonValue)
+  : JobExecutionStatusDetails()
 {
   *this = jsonValue;
 }

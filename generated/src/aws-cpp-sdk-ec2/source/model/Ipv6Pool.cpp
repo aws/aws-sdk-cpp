@@ -28,11 +28,8 @@ Ipv6Pool::Ipv6Pool() :
 {
 }
 
-Ipv6Pool::Ipv6Pool(const XmlNode& xmlNode) : 
-    m_poolIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_poolCidrBlocksHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+Ipv6Pool::Ipv6Pool(const XmlNode& xmlNode)
+  : Ipv6Pool()
 {
   *this = xmlNode;
 }

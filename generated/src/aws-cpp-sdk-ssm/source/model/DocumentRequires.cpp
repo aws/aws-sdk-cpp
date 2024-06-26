@@ -26,11 +26,8 @@ DocumentRequires::DocumentRequires() :
 {
 }
 
-DocumentRequires::DocumentRequires(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_requireTypeHasBeenSet(false),
-    m_versionNameHasBeenSet(false)
+DocumentRequires::DocumentRequires(JsonView jsonValue)
+  : DocumentRequires()
 {
   *this = jsonValue;
 }

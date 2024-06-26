@@ -43,26 +43,8 @@ ImportImageTask::ImportImageTask() :
 {
 }
 
-ImportImageTask::ImportImageTask(const XmlNode& xmlNode) : 
-    m_architectureHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_encrypted(false),
-    m_encryptedHasBeenSet(false),
-    m_hypervisorHasBeenSet(false),
-    m_imageIdHasBeenSet(false),
-    m_importTaskIdHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_licenseTypeHasBeenSet(false),
-    m_platformHasBeenSet(false),
-    m_progressHasBeenSet(false),
-    m_snapshotDetailsHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_licenseSpecificationsHasBeenSet(false),
-    m_usageOperationHasBeenSet(false),
-    m_bootMode(BootModeValues::NOT_SET),
-    m_bootModeHasBeenSet(false)
+ImportImageTask::ImportImageTask(const XmlNode& xmlNode)
+  : ImportImageTask()
 {
   *this = xmlNode;
 }

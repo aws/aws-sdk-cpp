@@ -46,31 +46,8 @@ AwsEc2LaunchTemplateDataInstanceRequirementsDetails::AwsEc2LaunchTemplateDataIns
 {
 }
 
-AwsEc2LaunchTemplateDataInstanceRequirementsDetails::AwsEc2LaunchTemplateDataInstanceRequirementsDetails(JsonView jsonValue) : 
-    m_acceleratorCountHasBeenSet(false),
-    m_acceleratorManufacturersHasBeenSet(false),
-    m_acceleratorNamesHasBeenSet(false),
-    m_acceleratorTotalMemoryMiBHasBeenSet(false),
-    m_acceleratorTypesHasBeenSet(false),
-    m_bareMetalHasBeenSet(false),
-    m_baselineEbsBandwidthMbpsHasBeenSet(false),
-    m_burstablePerformanceHasBeenSet(false),
-    m_cpuManufacturersHasBeenSet(false),
-    m_excludedInstanceTypesHasBeenSet(false),
-    m_instanceGenerationsHasBeenSet(false),
-    m_localStorageHasBeenSet(false),
-    m_localStorageTypesHasBeenSet(false),
-    m_memoryGiBPerVCpuHasBeenSet(false),
-    m_memoryMiBHasBeenSet(false),
-    m_networkInterfaceCountHasBeenSet(false),
-    m_onDemandMaxPricePercentageOverLowestPrice(0),
-    m_onDemandMaxPricePercentageOverLowestPriceHasBeenSet(false),
-    m_requireHibernateSupport(false),
-    m_requireHibernateSupportHasBeenSet(false),
-    m_spotMaxPricePercentageOverLowestPrice(0),
-    m_spotMaxPricePercentageOverLowestPriceHasBeenSet(false),
-    m_totalLocalStorageGBHasBeenSet(false),
-    m_vCpuCountHasBeenSet(false)
+AwsEc2LaunchTemplateDataInstanceRequirementsDetails::AwsEc2LaunchTemplateDataInstanceRequirementsDetails(JsonView jsonValue)
+  : AwsEc2LaunchTemplateDataInstanceRequirementsDetails()
 {
   *this = jsonValue;
 }

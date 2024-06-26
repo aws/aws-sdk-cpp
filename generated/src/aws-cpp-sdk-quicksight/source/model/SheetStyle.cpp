@@ -24,9 +24,8 @@ SheetStyle::SheetStyle() :
 {
 }
 
-SheetStyle::SheetStyle(JsonView jsonValue) : 
-    m_tileHasBeenSet(false),
-    m_tileLayoutHasBeenSet(false)
+SheetStyle::SheetStyle(JsonView jsonValue)
+  : SheetStyle()
 {
   *this = jsonValue;
 }

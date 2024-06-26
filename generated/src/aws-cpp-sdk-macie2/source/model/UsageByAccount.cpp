@@ -28,13 +28,8 @@ UsageByAccount::UsageByAccount() :
 {
 }
 
-UsageByAccount::UsageByAccount(JsonView jsonValue) : 
-    m_currency(Currency::NOT_SET),
-    m_currencyHasBeenSet(false),
-    m_estimatedCostHasBeenSet(false),
-    m_serviceLimitHasBeenSet(false),
-    m_type(UsageType::NOT_SET),
-    m_typeHasBeenSet(false)
+UsageByAccount::UsageByAccount(JsonView jsonValue)
+  : UsageByAccount()
 {
   *this = jsonValue;
 }

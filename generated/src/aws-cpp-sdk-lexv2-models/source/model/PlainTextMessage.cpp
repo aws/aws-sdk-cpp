@@ -23,8 +23,8 @@ PlainTextMessage::PlainTextMessage() :
 {
 }
 
-PlainTextMessage::PlainTextMessage(JsonView jsonValue) : 
-    m_valueHasBeenSet(false)
+PlainTextMessage::PlainTextMessage(JsonView jsonValue)
+  : PlainTextMessage()
 {
   *this = jsonValue;
 }

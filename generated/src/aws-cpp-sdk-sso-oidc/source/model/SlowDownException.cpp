@@ -24,9 +24,8 @@ SlowDownException::SlowDownException() :
 {
 }
 
-SlowDownException::SlowDownException(JsonView jsonValue) : 
-    m_errorHasBeenSet(false),
-    m_error_descriptionHasBeenSet(false)
+SlowDownException::SlowDownException(JsonView jsonValue)
+  : SlowDownException()
 {
   *this = jsonValue;
 }

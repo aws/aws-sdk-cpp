@@ -22,8 +22,8 @@ DescribeCustomerMetadataResult::DescribeCustomerMetadataResult() :
 {
 }
 
-DescribeCustomerMetadataResult::DescribeCustomerMetadataResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_nniPartnerType(NniPartnerType::NOT_SET)
+DescribeCustomerMetadataResult::DescribeCustomerMetadataResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeCustomerMetadataResult()
 {
   *this = result;
 }

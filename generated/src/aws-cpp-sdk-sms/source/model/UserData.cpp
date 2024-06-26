@@ -23,8 +23,8 @@ UserData::UserData() :
 {
 }
 
-UserData::UserData(JsonView jsonValue) : 
-    m_s3LocationHasBeenSet(false)
+UserData::UserData(JsonView jsonValue)
+  : UserData()
 {
   *this = jsonValue;
 }

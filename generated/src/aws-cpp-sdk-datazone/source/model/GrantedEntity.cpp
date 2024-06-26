@@ -23,8 +23,8 @@ GrantedEntity::GrantedEntity() :
 {
 }
 
-GrantedEntity::GrantedEntity(JsonView jsonValue) : 
-    m_listingHasBeenSet(false)
+GrantedEntity::GrantedEntity(JsonView jsonValue)
+  : GrantedEntity()
 {
   *this = jsonValue;
 }

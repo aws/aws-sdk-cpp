@@ -25,8 +25,8 @@ ResponseMetadata::ResponseMetadata() :
 {
 }
 
-ResponseMetadata::ResponseMetadata(const XmlNode& xmlNode) : 
-    m_requestIdHasBeenSet(false)
+ResponseMetadata::ResponseMetadata(const XmlNode& xmlNode)
+  : ResponseMetadata()
 {
   *this = xmlNode;
 }

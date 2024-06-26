@@ -26,11 +26,8 @@ TeamMember::TeamMember() :
 {
 }
 
-TeamMember::TeamMember(JsonView jsonValue) : 
-    m_userArnHasBeenSet(false),
-    m_projectRoleHasBeenSet(false),
-    m_remoteAccessAllowed(false),
-    m_remoteAccessAllowedHasBeenSet(false)
+TeamMember::TeamMember(JsonView jsonValue)
+  : TeamMember()
 {
   *this = jsonValue;
 }

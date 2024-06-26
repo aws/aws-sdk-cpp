@@ -23,8 +23,8 @@ VirtualGatewayBackendDefaults::VirtualGatewayBackendDefaults() :
 {
 }
 
-VirtualGatewayBackendDefaults::VirtualGatewayBackendDefaults(JsonView jsonValue) : 
-    m_clientPolicyHasBeenSet(false)
+VirtualGatewayBackendDefaults::VirtualGatewayBackendDefaults(JsonView jsonValue)
+  : VirtualGatewayBackendDefaults()
 {
   *this = jsonValue;
 }

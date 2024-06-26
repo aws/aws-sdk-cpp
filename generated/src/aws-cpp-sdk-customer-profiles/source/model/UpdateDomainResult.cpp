@@ -22,8 +22,8 @@ UpdateDomainResult::UpdateDomainResult() :
 {
 }
 
-UpdateDomainResult::UpdateDomainResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_defaultExpirationDays(0)
+UpdateDomainResult::UpdateDomainResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateDomainResult()
 {
   *this = result;
 }

@@ -24,9 +24,8 @@ AwsRdsPendingCloudWatchLogsExports::AwsRdsPendingCloudWatchLogsExports() :
 {
 }
 
-AwsRdsPendingCloudWatchLogsExports::AwsRdsPendingCloudWatchLogsExports(JsonView jsonValue) : 
-    m_logTypesToEnableHasBeenSet(false),
-    m_logTypesToDisableHasBeenSet(false)
+AwsRdsPendingCloudWatchLogsExports::AwsRdsPendingCloudWatchLogsExports(JsonView jsonValue)
+  : AwsRdsPendingCloudWatchLogsExports()
 {
   *this = jsonValue;
 }

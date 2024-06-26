@@ -23,8 +23,8 @@ ChangeMessageVisibilityBatchResultEntry::ChangeMessageVisibilityBatchResultEntry
 {
 }
 
-ChangeMessageVisibilityBatchResultEntry::ChangeMessageVisibilityBatchResultEntry(JsonView jsonValue) : 
-    m_idHasBeenSet(false)
+ChangeMessageVisibilityBatchResultEntry::ChangeMessageVisibilityBatchResultEntry(JsonView jsonValue)
+  : ChangeMessageVisibilityBatchResultEntry()
 {
   *this = jsonValue;
 }

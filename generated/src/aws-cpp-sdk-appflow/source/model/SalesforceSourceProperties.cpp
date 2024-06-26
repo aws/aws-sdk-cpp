@@ -29,14 +29,8 @@ SalesforceSourceProperties::SalesforceSourceProperties() :
 {
 }
 
-SalesforceSourceProperties::SalesforceSourceProperties(JsonView jsonValue) : 
-    m_objectHasBeenSet(false),
-    m_enableDynamicFieldUpdate(false),
-    m_enableDynamicFieldUpdateHasBeenSet(false),
-    m_includeDeletedRecords(false),
-    m_includeDeletedRecordsHasBeenSet(false),
-    m_dataTransferApi(SalesforceDataTransferApi::NOT_SET),
-    m_dataTransferApiHasBeenSet(false)
+SalesforceSourceProperties::SalesforceSourceProperties(JsonView jsonValue)
+  : SalesforceSourceProperties()
 {
   *this = jsonValue;
 }

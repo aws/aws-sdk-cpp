@@ -34,19 +34,8 @@ SeveritySummary::SeveritySummary() :
 {
 }
 
-SeveritySummary::SeveritySummary(JsonView jsonValue) : 
-    m_criticalCount(0),
-    m_criticalCountHasBeenSet(false),
-    m_highCount(0),
-    m_highCountHasBeenSet(false),
-    m_mediumCount(0),
-    m_mediumCountHasBeenSet(false),
-    m_lowCount(0),
-    m_lowCountHasBeenSet(false),
-    m_informationalCount(0),
-    m_informationalCountHasBeenSet(false),
-    m_unspecifiedCount(0),
-    m_unspecifiedCountHasBeenSet(false)
+SeveritySummary::SeveritySummary(JsonView jsonValue)
+  : SeveritySummary()
 {
   *this = jsonValue;
 }

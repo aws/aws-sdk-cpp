@@ -32,17 +32,8 @@ TestConfigurationSummary::TestConfigurationSummary() :
 {
 }
 
-TestConfigurationSummary::TestConfigurationSummary(JsonView jsonValue) : 
-    m_testConfigurationIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_statusReasonHasBeenSet(false),
-    m_latestVersion(0),
-    m_latestVersionHasBeenSet(false),
-    m_testConfigurationArnHasBeenSet(false),
-    m_status(TestConfigurationLifecycle::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastUpdateTimeHasBeenSet(false)
+TestConfigurationSummary::TestConfigurationSummary(JsonView jsonValue)
+  : TestConfigurationSummary()
 {
   *this = jsonValue;
 }

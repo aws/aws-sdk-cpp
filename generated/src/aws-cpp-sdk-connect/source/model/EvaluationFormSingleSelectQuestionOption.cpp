@@ -28,13 +28,8 @@ EvaluationFormSingleSelectQuestionOption::EvaluationFormSingleSelectQuestionOpti
 {
 }
 
-EvaluationFormSingleSelectQuestionOption::EvaluationFormSingleSelectQuestionOption(JsonView jsonValue) : 
-    m_refIdHasBeenSet(false),
-    m_textHasBeenSet(false),
-    m_score(0),
-    m_scoreHasBeenSet(false),
-    m_automaticFail(false),
-    m_automaticFailHasBeenSet(false)
+EvaluationFormSingleSelectQuestionOption::EvaluationFormSingleSelectQuestionOption(JsonView jsonValue)
+  : EvaluationFormSingleSelectQuestionOption()
 {
   *this = jsonValue;
 }

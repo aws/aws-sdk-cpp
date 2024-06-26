@@ -24,9 +24,8 @@ StatePersistenceConfigurations::StatePersistenceConfigurations() :
 {
 }
 
-StatePersistenceConfigurations::StatePersistenceConfigurations(JsonView jsonValue) : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
+StatePersistenceConfigurations::StatePersistenceConfigurations(JsonView jsonValue)
+  : StatePersistenceConfigurations()
 {
   *this = jsonValue;
 }

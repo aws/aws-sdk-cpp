@@ -27,12 +27,8 @@ S3CatalogSource::S3CatalogSource() :
 {
 }
 
-S3CatalogSource::S3CatalogSource(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_databaseHasBeenSet(false),
-    m_tableHasBeenSet(false),
-    m_partitionPredicateHasBeenSet(false),
-    m_additionalOptionsHasBeenSet(false)
+S3CatalogSource::S3CatalogSource(JsonView jsonValue)
+  : S3CatalogSource()
 {
   *this = jsonValue;
 }

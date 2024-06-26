@@ -24,9 +24,8 @@ ContentDataDetails::ContentDataDetails() :
 {
 }
 
-ContentDataDetails::ContentDataDetails(JsonView jsonValue) : 
-    m_rankingDataHasBeenSet(false),
-    m_textDataHasBeenSet(false)
+ContentDataDetails::ContentDataDetails(JsonView jsonValue)
+  : ContentDataDetails()
 {
   *this = jsonValue;
 }

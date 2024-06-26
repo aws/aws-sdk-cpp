@@ -30,15 +30,8 @@ DatasetStats::DatasetStats() :
 {
 }
 
-DatasetStats::DatasetStats(JsonView jsonValue) : 
-    m_labeledEntries(0),
-    m_labeledEntriesHasBeenSet(false),
-    m_totalEntries(0),
-    m_totalEntriesHasBeenSet(false),
-    m_totalLabels(0),
-    m_totalLabelsHasBeenSet(false),
-    m_errorEntries(0),
-    m_errorEntriesHasBeenSet(false)
+DatasetStats::DatasetStats(JsonView jsonValue)
+  : DatasetStats()
 {
   *this = jsonValue;
 }

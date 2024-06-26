@@ -44,27 +44,8 @@ UpgradeTarget::UpgradeTarget() :
 {
 }
 
-UpgradeTarget::UpgradeTarget(const XmlNode& xmlNode) : 
-    m_engineHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_autoUpgrade(false),
-    m_autoUpgradeHasBeenSet(false),
-    m_isMajorVersionUpgrade(false),
-    m_isMajorVersionUpgradeHasBeenSet(false),
-    m_supportedEngineModesHasBeenSet(false),
-    m_supportsParallelQuery(false),
-    m_supportsParallelQueryHasBeenSet(false),
-    m_supportsGlobalDatabases(false),
-    m_supportsGlobalDatabasesHasBeenSet(false),
-    m_supportsBabelfish(false),
-    m_supportsBabelfishHasBeenSet(false),
-    m_supportsLimitlessDatabase(false),
-    m_supportsLimitlessDatabaseHasBeenSet(false),
-    m_supportsLocalWriteForwarding(false),
-    m_supportsLocalWriteForwardingHasBeenSet(false),
-    m_supportsIntegrations(false),
-    m_supportsIntegrationsHasBeenSet(false)
+UpgradeTarget::UpgradeTarget(const XmlNode& xmlNode)
+  : UpgradeTarget()
 {
   *this = xmlNode;
 }

@@ -23,8 +23,8 @@ FreeFormSectionLayoutConfiguration::FreeFormSectionLayoutConfiguration() :
 {
 }
 
-FreeFormSectionLayoutConfiguration::FreeFormSectionLayoutConfiguration(JsonView jsonValue) : 
-    m_elementsHasBeenSet(false)
+FreeFormSectionLayoutConfiguration::FreeFormSectionLayoutConfiguration(JsonView jsonValue)
+  : FreeFormSectionLayoutConfiguration()
 {
   *this = jsonValue;
 }

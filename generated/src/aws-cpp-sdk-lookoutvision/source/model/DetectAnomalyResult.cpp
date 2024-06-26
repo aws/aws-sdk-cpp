@@ -30,14 +30,8 @@ DetectAnomalyResult::DetectAnomalyResult() :
 {
 }
 
-DetectAnomalyResult::DetectAnomalyResult(JsonView jsonValue) : 
-    m_sourceHasBeenSet(false),
-    m_isAnomalous(false),
-    m_isAnomalousHasBeenSet(false),
-    m_confidence(0.0),
-    m_confidenceHasBeenSet(false),
-    m_anomaliesHasBeenSet(false),
-    m_anomalyMaskHasBeenSet(false)
+DetectAnomalyResult::DetectAnomalyResult(JsonView jsonValue)
+  : DetectAnomalyResult()
 {
   *this = jsonValue;
 }

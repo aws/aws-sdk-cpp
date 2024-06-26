@@ -25,10 +25,8 @@ AvailConfiguration::AvailConfiguration() :
 {
 }
 
-AvailConfiguration::AvailConfiguration(JsonView jsonValue) : 
-    m_availSettingsHasBeenSet(false),
-    m_scte35SegmentationScope(Scte35SegmentationScope::NOT_SET),
-    m_scte35SegmentationScopeHasBeenSet(false)
+AvailConfiguration::AvailConfiguration(JsonView jsonValue)
+  : AvailConfiguration()
 {
   *this = jsonValue;
 }

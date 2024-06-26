@@ -23,9 +23,8 @@ GetAudienceGenerationJobResult::GetAudienceGenerationJobResult() :
 {
 }
 
-GetAudienceGenerationJobResult::GetAudienceGenerationJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_includeSeedInOutput(false),
-    m_status(AudienceGenerationJobStatus::NOT_SET)
+GetAudienceGenerationJobResult::GetAudienceGenerationJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetAudienceGenerationJobResult()
 {
   *this = result;
 }

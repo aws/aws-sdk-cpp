@@ -29,14 +29,8 @@ DefaultIntegerHyperParameterRange::DefaultIntegerHyperParameterRange() :
 {
 }
 
-DefaultIntegerHyperParameterRange::DefaultIntegerHyperParameterRange(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_minValue(0),
-    m_minValueHasBeenSet(false),
-    m_maxValue(0),
-    m_maxValueHasBeenSet(false),
-    m_isTunable(false),
-    m_isTunableHasBeenSet(false)
+DefaultIntegerHyperParameterRange::DefaultIntegerHyperParameterRange(JsonView jsonValue)
+  : DefaultIntegerHyperParameterRange()
 {
   *this = jsonValue;
 }

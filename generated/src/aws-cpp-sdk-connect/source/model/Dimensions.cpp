@@ -27,12 +27,8 @@ Dimensions::Dimensions() :
 {
 }
 
-Dimensions::Dimensions(JsonView jsonValue) : 
-    m_queueHasBeenSet(false),
-    m_channel(Channel::NOT_SET),
-    m_channelHasBeenSet(false),
-    m_routingProfileHasBeenSet(false),
-    m_routingStepExpressionHasBeenSet(false)
+Dimensions::Dimensions(JsonView jsonValue)
+  : Dimensions()
 {
   *this = jsonValue;
 }

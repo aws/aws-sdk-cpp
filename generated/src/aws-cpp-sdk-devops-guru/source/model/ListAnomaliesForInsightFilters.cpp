@@ -23,8 +23,8 @@ ListAnomaliesForInsightFilters::ListAnomaliesForInsightFilters() :
 {
 }
 
-ListAnomaliesForInsightFilters::ListAnomaliesForInsightFilters(JsonView jsonValue) : 
-    m_serviceCollectionHasBeenSet(false)
+ListAnomaliesForInsightFilters::ListAnomaliesForInsightFilters(JsonView jsonValue)
+  : ListAnomaliesForInsightFilters()
 {
   *this = jsonValue;
 }

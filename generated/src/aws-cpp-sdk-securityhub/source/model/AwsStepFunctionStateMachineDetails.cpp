@@ -30,15 +30,8 @@ AwsStepFunctionStateMachineDetails::AwsStepFunctionStateMachineDetails() :
 {
 }
 
-AwsStepFunctionStateMachineDetails::AwsStepFunctionStateMachineDetails(JsonView jsonValue) : 
-    m_labelHasBeenSet(false),
-    m_loggingConfigurationHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_stateMachineArnHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_tracingConfigurationHasBeenSet(false),
-    m_typeHasBeenSet(false)
+AwsStepFunctionStateMachineDetails::AwsStepFunctionStateMachineDetails(JsonView jsonValue)
+  : AwsStepFunctionStateMachineDetails()
 {
   *this = jsonValue;
 }

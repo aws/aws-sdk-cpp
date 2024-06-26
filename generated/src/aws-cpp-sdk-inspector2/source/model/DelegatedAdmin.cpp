@@ -25,10 +25,8 @@ DelegatedAdmin::DelegatedAdmin() :
 {
 }
 
-DelegatedAdmin::DelegatedAdmin(JsonView jsonValue) : 
-    m_accountIdHasBeenSet(false),
-    m_relationshipStatus(RelationshipStatus::NOT_SET),
-    m_relationshipStatusHasBeenSet(false)
+DelegatedAdmin::DelegatedAdmin(JsonView jsonValue)
+  : DelegatedAdmin()
 {
   *this = jsonValue;
 }

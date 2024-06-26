@@ -24,9 +24,8 @@ PreparedStatementSummary::PreparedStatementSummary() :
 {
 }
 
-PreparedStatementSummary::PreparedStatementSummary(JsonView jsonValue) : 
-    m_statementNameHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false)
+PreparedStatementSummary::PreparedStatementSummary(JsonView jsonValue)
+  : PreparedStatementSummary()
 {
   *this = jsonValue;
 }

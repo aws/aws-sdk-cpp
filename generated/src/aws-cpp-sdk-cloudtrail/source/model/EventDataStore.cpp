@@ -24,9 +24,8 @@ EventDataStore::EventDataStore() :
 {
 }
 
-EventDataStore::EventDataStore(JsonView jsonValue) : 
-    m_eventDataStoreArnHasBeenSet(false),
-    m_nameHasBeenSet(false)
+EventDataStore::EventDataStore(JsonView jsonValue)
+  : EventDataStore()
 {
   *this = jsonValue;
 }

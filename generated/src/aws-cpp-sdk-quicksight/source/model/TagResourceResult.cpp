@@ -22,8 +22,8 @@ TagResourceResult::TagResourceResult() :
 {
 }
 
-TagResourceResult::TagResourceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+TagResourceResult::TagResourceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : TagResourceResult()
 {
   *this = result;
 }

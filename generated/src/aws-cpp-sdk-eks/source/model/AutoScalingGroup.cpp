@@ -23,8 +23,8 @@ AutoScalingGroup::AutoScalingGroup() :
 {
 }
 
-AutoScalingGroup::AutoScalingGroup(JsonView jsonValue) : 
-    m_nameHasBeenSet(false)
+AutoScalingGroup::AutoScalingGroup(JsonView jsonValue)
+  : AutoScalingGroup()
 {
   *this = jsonValue;
 }

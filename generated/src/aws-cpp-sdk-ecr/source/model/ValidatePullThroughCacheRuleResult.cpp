@@ -22,8 +22,8 @@ ValidatePullThroughCacheRuleResult::ValidatePullThroughCacheRuleResult() :
 {
 }
 
-ValidatePullThroughCacheRuleResult::ValidatePullThroughCacheRuleResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_isValid(false)
+ValidatePullThroughCacheRuleResult::ValidatePullThroughCacheRuleResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ValidatePullThroughCacheRuleResult()
 {
   *this = result;
 }

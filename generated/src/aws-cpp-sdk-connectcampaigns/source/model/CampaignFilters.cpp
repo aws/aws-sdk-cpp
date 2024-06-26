@@ -23,8 +23,8 @@ CampaignFilters::CampaignFilters() :
 {
 }
 
-CampaignFilters::CampaignFilters(JsonView jsonValue) : 
-    m_instanceIdFilterHasBeenSet(false)
+CampaignFilters::CampaignFilters(JsonView jsonValue)
+  : CampaignFilters()
 {
   *this = jsonValue;
 }

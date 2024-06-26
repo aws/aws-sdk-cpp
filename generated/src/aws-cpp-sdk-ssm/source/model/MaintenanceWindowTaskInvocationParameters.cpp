@@ -26,11 +26,8 @@ MaintenanceWindowTaskInvocationParameters::MaintenanceWindowTaskInvocationParame
 {
 }
 
-MaintenanceWindowTaskInvocationParameters::MaintenanceWindowTaskInvocationParameters(JsonView jsonValue) : 
-    m_runCommandHasBeenSet(false),
-    m_automationHasBeenSet(false),
-    m_stepFunctionsHasBeenSet(false),
-    m_lambdaHasBeenSet(false)
+MaintenanceWindowTaskInvocationParameters::MaintenanceWindowTaskInvocationParameters(JsonView jsonValue)
+  : MaintenanceWindowTaskInvocationParameters()
 {
   *this = jsonValue;
 }

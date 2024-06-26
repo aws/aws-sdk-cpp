@@ -30,15 +30,8 @@ FilterControl::FilterControl() :
 {
 }
 
-FilterControl::FilterControl(JsonView jsonValue) : 
-    m_dateTimePickerHasBeenSet(false),
-    m_listHasBeenSet(false),
-    m_dropdownHasBeenSet(false),
-    m_textFieldHasBeenSet(false),
-    m_textAreaHasBeenSet(false),
-    m_sliderHasBeenSet(false),
-    m_relativeDateTimeHasBeenSet(false),
-    m_crossSheetHasBeenSet(false)
+FilterControl::FilterControl(JsonView jsonValue)
+  : FilterControl()
 {
   *this = jsonValue;
 }

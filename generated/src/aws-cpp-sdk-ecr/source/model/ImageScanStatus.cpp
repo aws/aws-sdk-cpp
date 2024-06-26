@@ -25,10 +25,8 @@ ImageScanStatus::ImageScanStatus() :
 {
 }
 
-ImageScanStatus::ImageScanStatus(JsonView jsonValue) : 
-    m_status(ScanStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+ImageScanStatus::ImageScanStatus(JsonView jsonValue)
+  : ImageScanStatus()
 {
   *this = jsonValue;
 }

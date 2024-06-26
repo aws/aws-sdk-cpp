@@ -24,9 +24,8 @@ TypedLinkAttributeRange::TypedLinkAttributeRange() :
 {
 }
 
-TypedLinkAttributeRange::TypedLinkAttributeRange(JsonView jsonValue) : 
-    m_attributeNameHasBeenSet(false),
-    m_rangeHasBeenSet(false)
+TypedLinkAttributeRange::TypedLinkAttributeRange(JsonView jsonValue)
+  : TypedLinkAttributeRange()
 {
   *this = jsonValue;
 }

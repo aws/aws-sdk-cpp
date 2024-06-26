@@ -24,9 +24,8 @@ Serverless::Serverless() :
 {
 }
 
-Serverless::Serverless(JsonView jsonValue) : 
-    m_vpcConfigsHasBeenSet(false),
-    m_clientAuthenticationHasBeenSet(false)
+Serverless::Serverless(JsonView jsonValue)
+  : Serverless()
 {
   *this = jsonValue;
 }

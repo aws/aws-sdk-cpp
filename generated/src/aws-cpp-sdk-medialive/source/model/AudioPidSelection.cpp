@@ -24,9 +24,8 @@ AudioPidSelection::AudioPidSelection() :
 {
 }
 
-AudioPidSelection::AudioPidSelection(JsonView jsonValue) : 
-    m_pid(0),
-    m_pidHasBeenSet(false)
+AudioPidSelection::AudioPidSelection(JsonView jsonValue)
+  : AudioPidSelection()
 {
   *this = jsonValue;
 }

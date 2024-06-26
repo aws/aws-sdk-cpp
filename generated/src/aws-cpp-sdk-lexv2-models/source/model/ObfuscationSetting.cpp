@@ -24,9 +24,8 @@ ObfuscationSetting::ObfuscationSetting() :
 {
 }
 
-ObfuscationSetting::ObfuscationSetting(JsonView jsonValue) : 
-    m_obfuscationSettingType(ObfuscationSettingType::NOT_SET),
-    m_obfuscationSettingTypeHasBeenSet(false)
+ObfuscationSetting::ObfuscationSetting(JsonView jsonValue)
+  : ObfuscationSetting()
 {
   *this = jsonValue;
 }

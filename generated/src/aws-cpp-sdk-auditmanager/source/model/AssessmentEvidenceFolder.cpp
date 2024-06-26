@@ -49,34 +49,8 @@ AssessmentEvidenceFolder::AssessmentEvidenceFolder() :
 {
 }
 
-AssessmentEvidenceFolder::AssessmentEvidenceFolder(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_dateHasBeenSet(false),
-    m_assessmentIdHasBeenSet(false),
-    m_controlSetIdHasBeenSet(false),
-    m_controlIdHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_dataSourceHasBeenSet(false),
-    m_authorHasBeenSet(false),
-    m_totalEvidence(0),
-    m_totalEvidenceHasBeenSet(false),
-    m_assessmentReportSelectionCount(0),
-    m_assessmentReportSelectionCountHasBeenSet(false),
-    m_controlNameHasBeenSet(false),
-    m_evidenceResourcesIncludedCount(0),
-    m_evidenceResourcesIncludedCountHasBeenSet(false),
-    m_evidenceByTypeConfigurationDataCount(0),
-    m_evidenceByTypeConfigurationDataCountHasBeenSet(false),
-    m_evidenceByTypeManualCount(0),
-    m_evidenceByTypeManualCountHasBeenSet(false),
-    m_evidenceByTypeComplianceCheckCount(0),
-    m_evidenceByTypeComplianceCheckCountHasBeenSet(false),
-    m_evidenceByTypeComplianceCheckIssuesCount(0),
-    m_evidenceByTypeComplianceCheckIssuesCountHasBeenSet(false),
-    m_evidenceByTypeUserActivityCount(0),
-    m_evidenceByTypeUserActivityCountHasBeenSet(false),
-    m_evidenceAwsServiceSourceCount(0),
-    m_evidenceAwsServiceSourceCountHasBeenSet(false)
+AssessmentEvidenceFolder::AssessmentEvidenceFolder(JsonView jsonValue)
+  : AssessmentEvidenceFolder()
 {
   *this = jsonValue;
 }

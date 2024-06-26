@@ -22,8 +22,8 @@ ModifyInstanceMetadataDefaultsResponse::ModifyInstanceMetadataDefaultsResponse()
 {
 }
 
-ModifyInstanceMetadataDefaultsResponse::ModifyInstanceMetadataDefaultsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_return(false)
+ModifyInstanceMetadataDefaultsResponse::ModifyInstanceMetadataDefaultsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : ModifyInstanceMetadataDefaultsResponse()
 {
   *this = result;
 }

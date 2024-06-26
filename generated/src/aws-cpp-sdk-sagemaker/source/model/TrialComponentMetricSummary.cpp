@@ -37,22 +37,8 @@ TrialComponentMetricSummary::TrialComponentMetricSummary() :
 {
 }
 
-TrialComponentMetricSummary::TrialComponentMetricSummary(JsonView jsonValue) : 
-    m_metricNameHasBeenSet(false),
-    m_sourceArnHasBeenSet(false),
-    m_timeStampHasBeenSet(false),
-    m_max(0.0),
-    m_maxHasBeenSet(false),
-    m_min(0.0),
-    m_minHasBeenSet(false),
-    m_last(0.0),
-    m_lastHasBeenSet(false),
-    m_count(0),
-    m_countHasBeenSet(false),
-    m_avg(0.0),
-    m_avgHasBeenSet(false),
-    m_stdDev(0.0),
-    m_stdDevHasBeenSet(false)
+TrialComponentMetricSummary::TrialComponentMetricSummary(JsonView jsonValue)
+  : TrialComponentMetricSummary()
 {
   *this = jsonValue;
 }

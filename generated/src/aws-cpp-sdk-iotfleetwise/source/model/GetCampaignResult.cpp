@@ -27,13 +27,8 @@ GetCampaignResult::GetCampaignResult() :
 {
 }
 
-GetCampaignResult::GetCampaignResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(CampaignStatus::NOT_SET),
-    m_postTriggerCollectionDuration(0),
-    m_diagnosticsMode(DiagnosticsMode::NOT_SET),
-    m_spoolingMode(SpoolingMode::NOT_SET),
-    m_compression(Compression::NOT_SET),
-    m_priority(0)
+GetCampaignResult::GetCampaignResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetCampaignResult()
 {
   *this = result;
 }

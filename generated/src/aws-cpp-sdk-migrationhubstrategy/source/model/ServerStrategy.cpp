@@ -29,14 +29,8 @@ ServerStrategy::ServerStrategy() :
 {
 }
 
-ServerStrategy::ServerStrategy(JsonView jsonValue) : 
-    m_isPreferred(false),
-    m_isPreferredHasBeenSet(false),
-    m_numberOfApplicationComponents(0),
-    m_numberOfApplicationComponentsHasBeenSet(false),
-    m_recommendationHasBeenSet(false),
-    m_status(StrategyRecommendation::NOT_SET),
-    m_statusHasBeenSet(false)
+ServerStrategy::ServerStrategy(JsonView jsonValue)
+  : ServerStrategy()
 {
   *this = jsonValue;
 }

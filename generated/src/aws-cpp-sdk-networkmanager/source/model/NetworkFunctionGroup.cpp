@@ -23,8 +23,8 @@ NetworkFunctionGroup::NetworkFunctionGroup() :
 {
 }
 
-NetworkFunctionGroup::NetworkFunctionGroup(JsonView jsonValue) : 
-    m_nameHasBeenSet(false)
+NetworkFunctionGroup::NetworkFunctionGroup(JsonView jsonValue)
+  : NetworkFunctionGroup()
 {
   *this = jsonValue;
 }

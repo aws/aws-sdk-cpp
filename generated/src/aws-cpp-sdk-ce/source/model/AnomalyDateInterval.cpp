@@ -24,9 +24,8 @@ AnomalyDateInterval::AnomalyDateInterval() :
 {
 }
 
-AnomalyDateInterval::AnomalyDateInterval(JsonView jsonValue) : 
-    m_startDateHasBeenSet(false),
-    m_endDateHasBeenSet(false)
+AnomalyDateInterval::AnomalyDateInterval(JsonView jsonValue)
+  : AnomalyDateInterval()
 {
   *this = jsonValue;
 }

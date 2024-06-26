@@ -25,10 +25,8 @@ FeatureValue::FeatureValue() :
 {
 }
 
-FeatureValue::FeatureValue(JsonView jsonValue) : 
-    m_featureNameHasBeenSet(false),
-    m_valueAsStringHasBeenSet(false),
-    m_valueAsStringListHasBeenSet(false)
+FeatureValue::FeatureValue(JsonView jsonValue)
+  : FeatureValue()
 {
   *this = jsonValue;
 }

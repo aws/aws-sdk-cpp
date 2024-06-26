@@ -26,11 +26,8 @@ GeoSpatialColumnGroup::GeoSpatialColumnGroup() :
 {
 }
 
-GeoSpatialColumnGroup::GeoSpatialColumnGroup(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_countryCode(GeoSpatialCountryCode::NOT_SET),
-    m_countryCodeHasBeenSet(false),
-    m_columnsHasBeenSet(false)
+GeoSpatialColumnGroup::GeoSpatialColumnGroup(JsonView jsonValue)
+  : GeoSpatialColumnGroup()
 {
   *this = jsonValue;
 }

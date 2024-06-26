@@ -30,13 +30,8 @@ DefaultRetention::DefaultRetention() :
 {
 }
 
-DefaultRetention::DefaultRetention(const XmlNode& xmlNode) : 
-    m_mode(ObjectLockRetentionMode::NOT_SET),
-    m_modeHasBeenSet(false),
-    m_days(0),
-    m_daysHasBeenSet(false),
-    m_years(0),
-    m_yearsHasBeenSet(false)
+DefaultRetention::DefaultRetention(const XmlNode& xmlNode)
+  : DefaultRetention()
 {
   *this = xmlNode;
 }

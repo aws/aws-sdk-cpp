@@ -26,11 +26,8 @@ ReservationUtilizationGroup::ReservationUtilizationGroup() :
 {
 }
 
-ReservationUtilizationGroup::ReservationUtilizationGroup(JsonView jsonValue) : 
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_attributesHasBeenSet(false),
-    m_utilizationHasBeenSet(false)
+ReservationUtilizationGroup::ReservationUtilizationGroup(JsonView jsonValue)
+  : ReservationUtilizationGroup()
 {
   *this = jsonValue;
 }

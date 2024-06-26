@@ -24,9 +24,8 @@ TimestreamDimension::TimestreamDimension() :
 {
 }
 
-TimestreamDimension::TimestreamDimension(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
+TimestreamDimension::TimestreamDimension(JsonView jsonValue)
+  : TimestreamDimension()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ SourceCloudProperties::SourceCloudProperties() :
 {
 }
 
-SourceCloudProperties::SourceCloudProperties(JsonView jsonValue) : 
-    m_originAccountIDHasBeenSet(false),
-    m_originAvailabilityZoneHasBeenSet(false),
-    m_originRegionHasBeenSet(false),
-    m_sourceOutpostArnHasBeenSet(false)
+SourceCloudProperties::SourceCloudProperties(JsonView jsonValue)
+  : SourceCloudProperties()
 {
   *this = jsonValue;
 }

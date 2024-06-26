@@ -24,9 +24,8 @@ InstanceSavingsEstimationMode::InstanceSavingsEstimationMode() :
 {
 }
 
-InstanceSavingsEstimationMode::InstanceSavingsEstimationMode(JsonView jsonValue) : 
-    m_source(InstanceSavingsEstimationModeSource::NOT_SET),
-    m_sourceHasBeenSet(false)
+InstanceSavingsEstimationMode::InstanceSavingsEstimationMode(JsonView jsonValue)
+  : InstanceSavingsEstimationMode()
 {
   *this = jsonValue;
 }

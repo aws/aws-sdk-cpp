@@ -23,8 +23,8 @@ SelfManagedKafkaEventSourceConfig::SelfManagedKafkaEventSourceConfig() :
 {
 }
 
-SelfManagedKafkaEventSourceConfig::SelfManagedKafkaEventSourceConfig(JsonView jsonValue) : 
-    m_consumerGroupIdHasBeenSet(false)
+SelfManagedKafkaEventSourceConfig::SelfManagedKafkaEventSourceConfig(JsonView jsonValue)
+  : SelfManagedKafkaEventSourceConfig()
 {
   *this = jsonValue;
 }

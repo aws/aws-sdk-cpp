@@ -24,9 +24,8 @@ AuthenticationFailedException::AuthenticationFailedException() :
 {
 }
 
-AuthenticationFailedException::AuthenticationFailedException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
+AuthenticationFailedException::AuthenticationFailedException(JsonView jsonValue)
+  : AuthenticationFailedException()
 {
   *this = jsonValue;
 }

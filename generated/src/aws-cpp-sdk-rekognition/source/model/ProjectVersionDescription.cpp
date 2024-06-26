@@ -46,31 +46,8 @@ ProjectVersionDescription::ProjectVersionDescription() :
 {
 }
 
-ProjectVersionDescription::ProjectVersionDescription(JsonView jsonValue) : 
-    m_projectVersionArnHasBeenSet(false),
-    m_creationTimestampHasBeenSet(false),
-    m_minInferenceUnits(0),
-    m_minInferenceUnitsHasBeenSet(false),
-    m_status(ProjectVersionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_billableTrainingTimeInSeconds(0),
-    m_billableTrainingTimeInSecondsHasBeenSet(false),
-    m_trainingEndTimestampHasBeenSet(false),
-    m_outputConfigHasBeenSet(false),
-    m_trainingDataResultHasBeenSet(false),
-    m_testingDataResultHasBeenSet(false),
-    m_evaluationResultHasBeenSet(false),
-    m_manifestSummaryHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_maxInferenceUnits(0),
-    m_maxInferenceUnitsHasBeenSet(false),
-    m_sourceProjectVersionArnHasBeenSet(false),
-    m_versionDescriptionHasBeenSet(false),
-    m_feature(CustomizationFeature::NOT_SET),
-    m_featureHasBeenSet(false),
-    m_baseModelVersionHasBeenSet(false),
-    m_featureConfigHasBeenSet(false)
+ProjectVersionDescription::ProjectVersionDescription(JsonView jsonValue)
+  : ProjectVersionDescription()
 {
   *this = jsonValue;
 }

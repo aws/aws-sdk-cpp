@@ -24,9 +24,8 @@ NullValueField::NullValueField() :
 {
 }
 
-NullValueField::NullValueField(JsonView jsonValue) : 
-    m_valueHasBeenSet(false),
-    m_datatypeHasBeenSet(false)
+NullValueField::NullValueField(JsonView jsonValue)
+  : NullValueField()
 {
   *this = jsonValue;
 }

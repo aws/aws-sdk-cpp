@@ -24,9 +24,8 @@ AxisLabelReferenceOptions::AxisLabelReferenceOptions() :
 {
 }
 
-AxisLabelReferenceOptions::AxisLabelReferenceOptions(JsonView jsonValue) : 
-    m_fieldIdHasBeenSet(false),
-    m_columnHasBeenSet(false)
+AxisLabelReferenceOptions::AxisLabelReferenceOptions(JsonView jsonValue)
+  : AxisLabelReferenceOptions()
 {
   *this = jsonValue;
 }

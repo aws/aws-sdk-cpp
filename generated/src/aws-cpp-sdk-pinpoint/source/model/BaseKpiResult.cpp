@@ -23,8 +23,8 @@ BaseKpiResult::BaseKpiResult() :
 {
 }
 
-BaseKpiResult::BaseKpiResult(JsonView jsonValue) : 
-    m_rowsHasBeenSet(false)
+BaseKpiResult::BaseKpiResult(JsonView jsonValue)
+  : BaseKpiResult()
 {
   *this = jsonValue;
 }

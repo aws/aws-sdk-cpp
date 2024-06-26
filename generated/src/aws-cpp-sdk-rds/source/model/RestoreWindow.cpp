@@ -26,9 +26,8 @@ RestoreWindow::RestoreWindow() :
 {
 }
 
-RestoreWindow::RestoreWindow(const XmlNode& xmlNode) : 
-    m_earliestTimeHasBeenSet(false),
-    m_latestTimeHasBeenSet(false)
+RestoreWindow::RestoreWindow(const XmlNode& xmlNode)
+  : RestoreWindow()
 {
   *this = xmlNode;
 }

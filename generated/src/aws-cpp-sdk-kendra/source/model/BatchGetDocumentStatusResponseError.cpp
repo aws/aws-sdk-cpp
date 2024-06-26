@@ -26,11 +26,8 @@ BatchGetDocumentStatusResponseError::BatchGetDocumentStatusResponseError() :
 {
 }
 
-BatchGetDocumentStatusResponseError::BatchGetDocumentStatusResponseError(JsonView jsonValue) : 
-    m_documentIdHasBeenSet(false),
-    m_errorCode(ErrorCode::NOT_SET),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
+BatchGetDocumentStatusResponseError::BatchGetDocumentStatusResponseError(JsonView jsonValue)
+  : BatchGetDocumentStatusResponseError()
 {
   *this = jsonValue;
 }

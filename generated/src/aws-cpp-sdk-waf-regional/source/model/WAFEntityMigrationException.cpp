@@ -26,11 +26,8 @@ WAFEntityMigrationException::WAFEntityMigrationException() :
 {
 }
 
-WAFEntityMigrationException::WAFEntityMigrationException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_migrationErrorType(MigrationErrorType::NOT_SET),
-    m_migrationErrorTypeHasBeenSet(false),
-    m_migrationErrorReasonHasBeenSet(false)
+WAFEntityMigrationException::WAFEntityMigrationException(JsonView jsonValue)
+  : WAFEntityMigrationException()
 {
   *this = jsonValue;
 }

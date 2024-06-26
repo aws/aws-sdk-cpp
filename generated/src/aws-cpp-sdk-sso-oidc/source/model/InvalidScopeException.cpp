@@ -24,9 +24,8 @@ InvalidScopeException::InvalidScopeException() :
 {
 }
 
-InvalidScopeException::InvalidScopeException(JsonView jsonValue) : 
-    m_errorHasBeenSet(false),
-    m_error_descriptionHasBeenSet(false)
+InvalidScopeException::InvalidScopeException(JsonView jsonValue)
+  : InvalidScopeException()
 {
   *this = jsonValue;
 }

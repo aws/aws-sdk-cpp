@@ -24,9 +24,8 @@ OperatingSystem::OperatingSystem() :
 {
 }
 
-OperatingSystem::OperatingSystem(JsonView jsonValue) : 
-    m_type(OperatingSystemType::NOT_SET),
-    m_typeHasBeenSet(false)
+OperatingSystem::OperatingSystem(JsonView jsonValue)
+  : OperatingSystem()
 {
   *this = jsonValue;
 }

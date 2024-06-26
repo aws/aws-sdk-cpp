@@ -28,13 +28,8 @@ NamedQuery::NamedQuery() :
 {
 }
 
-NamedQuery::NamedQuery(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_databaseHasBeenSet(false),
-    m_queryStringHasBeenSet(false),
-    m_namedQueryIdHasBeenSet(false),
-    m_workGroupHasBeenSet(false)
+NamedQuery::NamedQuery(JsonView jsonValue)
+  : NamedQuery()
 {
   *this = jsonValue;
 }

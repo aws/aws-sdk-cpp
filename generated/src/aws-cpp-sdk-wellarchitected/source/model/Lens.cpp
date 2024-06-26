@@ -29,14 +29,8 @@ Lens::Lens() :
 {
 }
 
-Lens::Lens(JsonView jsonValue) : 
-    m_lensArnHasBeenSet(false),
-    m_lensVersionHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_ownerHasBeenSet(false),
-    m_shareInvitationIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+Lens::Lens(JsonView jsonValue)
+  : Lens()
 {
   *this = jsonValue;
 }

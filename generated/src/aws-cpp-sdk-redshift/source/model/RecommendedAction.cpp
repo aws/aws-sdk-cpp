@@ -29,12 +29,8 @@ RecommendedAction::RecommendedAction() :
 {
 }
 
-RecommendedAction::RecommendedAction(const XmlNode& xmlNode) : 
-    m_textHasBeenSet(false),
-    m_databaseHasBeenSet(false),
-    m_commandHasBeenSet(false),
-    m_type(RecommendedActionType::NOT_SET),
-    m_typeHasBeenSet(false)
+RecommendedAction::RecommendedAction(const XmlNode& xmlNode)
+  : RecommendedAction()
 {
   *this = xmlNode;
 }

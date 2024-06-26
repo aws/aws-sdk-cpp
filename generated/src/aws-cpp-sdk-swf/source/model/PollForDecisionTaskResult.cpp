@@ -23,9 +23,8 @@ PollForDecisionTaskResult::PollForDecisionTaskResult() :
 {
 }
 
-PollForDecisionTaskResult::PollForDecisionTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_startedEventId(0),
-    m_previousStartedEventId(0)
+PollForDecisionTaskResult::PollForDecisionTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : PollForDecisionTaskResult()
 {
   *this = result;
 }

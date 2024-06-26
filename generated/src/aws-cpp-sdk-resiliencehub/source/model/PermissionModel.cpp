@@ -26,11 +26,8 @@ PermissionModel::PermissionModel() :
 {
 }
 
-PermissionModel::PermissionModel(JsonView jsonValue) : 
-    m_crossAccountRoleArnsHasBeenSet(false),
-    m_invokerRoleNameHasBeenSet(false),
-    m_type(PermissionModelType::NOT_SET),
-    m_typeHasBeenSet(false)
+PermissionModel::PermissionModel(JsonView jsonValue)
+  : PermissionModel()
 {
   *this = jsonValue;
 }

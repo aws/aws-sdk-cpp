@@ -24,9 +24,8 @@ ListAnnotationStoresFilter::ListAnnotationStoresFilter() :
 {
 }
 
-ListAnnotationStoresFilter::ListAnnotationStoresFilter(JsonView jsonValue) : 
-    m_status(StoreStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+ListAnnotationStoresFilter::ListAnnotationStoresFilter(JsonView jsonValue)
+  : ListAnnotationStoresFilter()
 {
   *this = jsonValue;
 }

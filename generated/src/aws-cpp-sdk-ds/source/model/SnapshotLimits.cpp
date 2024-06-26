@@ -28,13 +28,8 @@ SnapshotLimits::SnapshotLimits() :
 {
 }
 
-SnapshotLimits::SnapshotLimits(JsonView jsonValue) : 
-    m_manualSnapshotsLimit(0),
-    m_manualSnapshotsLimitHasBeenSet(false),
-    m_manualSnapshotsCurrentCount(0),
-    m_manualSnapshotsCurrentCountHasBeenSet(false),
-    m_manualSnapshotsLimitReached(false),
-    m_manualSnapshotsLimitReachedHasBeenSet(false)
+SnapshotLimits::SnapshotLimits(JsonView jsonValue)
+  : SnapshotLimits()
 {
   *this = jsonValue;
 }

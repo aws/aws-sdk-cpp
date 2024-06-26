@@ -22,8 +22,8 @@ RestoreVolumeFromSnapshotResult::RestoreVolumeFromSnapshotResult() :
 {
 }
 
-RestoreVolumeFromSnapshotResult::RestoreVolumeFromSnapshotResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_lifecycle(VolumeLifecycle::NOT_SET)
+RestoreVolumeFromSnapshotResult::RestoreVolumeFromSnapshotResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : RestoreVolumeFromSnapshotResult()
 {
   *this = result;
 }

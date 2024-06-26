@@ -22,8 +22,8 @@ CreateComponentTypeResult::CreateComponentTypeResult() :
 {
 }
 
-CreateComponentTypeResult::CreateComponentTypeResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_state(State::NOT_SET)
+CreateComponentTypeResult::CreateComponentTypeResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateComponentTypeResult()
 {
   *this = result;
 }

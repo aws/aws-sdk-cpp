@@ -29,14 +29,8 @@ TopicCategoryFilter::TopicCategoryFilter() :
 {
 }
 
-TopicCategoryFilter::TopicCategoryFilter(JsonView jsonValue) : 
-    m_categoryFilterFunction(CategoryFilterFunction::NOT_SET),
-    m_categoryFilterFunctionHasBeenSet(false),
-    m_categoryFilterType(CategoryFilterType::NOT_SET),
-    m_categoryFilterTypeHasBeenSet(false),
-    m_constantHasBeenSet(false),
-    m_inverse(false),
-    m_inverseHasBeenSet(false)
+TopicCategoryFilter::TopicCategoryFilter(JsonView jsonValue)
+  : TopicCategoryFilter()
 {
   *this = jsonValue;
 }

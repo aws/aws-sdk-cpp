@@ -34,19 +34,8 @@ DeploymentData::DeploymentData() :
 {
 }
 
-DeploymentData::DeploymentData(JsonView jsonValue) : 
-    m_createdAtHasBeenSet(false),
-    m_deletedAtHasBeenSet(false),
-    m_deploymentArnHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_patternNameHasBeenSet(false),
-    m_resourceGroupHasBeenSet(false),
-    m_specificationsHasBeenSet(false),
-    m_status(DeploymentStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_workloadNameHasBeenSet(false)
+DeploymentData::DeploymentData(JsonView jsonValue)
+  : DeploymentData()
 {
   *this = jsonValue;
 }

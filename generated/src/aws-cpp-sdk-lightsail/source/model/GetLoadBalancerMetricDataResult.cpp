@@ -22,8 +22,8 @@ GetLoadBalancerMetricDataResult::GetLoadBalancerMetricDataResult() :
 {
 }
 
-GetLoadBalancerMetricDataResult::GetLoadBalancerMetricDataResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_metricName(LoadBalancerMetricName::NOT_SET)
+GetLoadBalancerMetricDataResult::GetLoadBalancerMetricDataResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetLoadBalancerMetricDataResult()
 {
   *this = result;
 }

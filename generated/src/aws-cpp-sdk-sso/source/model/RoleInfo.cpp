@@ -24,9 +24,8 @@ RoleInfo::RoleInfo() :
 {
 }
 
-RoleInfo::RoleInfo(JsonView jsonValue) : 
-    m_roleNameHasBeenSet(false),
-    m_accountIdHasBeenSet(false)
+RoleInfo::RoleInfo(JsonView jsonValue)
+  : RoleInfo()
 {
   *this = jsonValue;
 }

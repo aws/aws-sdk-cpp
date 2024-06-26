@@ -24,9 +24,8 @@ BatchPutGeofenceError::BatchPutGeofenceError() :
 {
 }
 
-BatchPutGeofenceError::BatchPutGeofenceError(JsonView jsonValue) : 
-    m_geofenceIdHasBeenSet(false),
-    m_errorHasBeenSet(false)
+BatchPutGeofenceError::BatchPutGeofenceError(JsonView jsonValue)
+  : BatchPutGeofenceError()
 {
   *this = jsonValue;
 }

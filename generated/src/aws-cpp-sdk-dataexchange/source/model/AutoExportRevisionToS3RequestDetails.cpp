@@ -24,9 +24,8 @@ AutoExportRevisionToS3RequestDetails::AutoExportRevisionToS3RequestDetails() :
 {
 }
 
-AutoExportRevisionToS3RequestDetails::AutoExportRevisionToS3RequestDetails(JsonView jsonValue) : 
-    m_encryptionHasBeenSet(false),
-    m_revisionDestinationHasBeenSet(false)
+AutoExportRevisionToS3RequestDetails::AutoExportRevisionToS3RequestDetails(JsonView jsonValue)
+  : AutoExportRevisionToS3RequestDetails()
 {
   *this = jsonValue;
 }

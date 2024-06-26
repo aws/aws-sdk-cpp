@@ -27,12 +27,8 @@ AwsIamAccessKeySessionContextSessionIssuer::AwsIamAccessKeySessionContextSession
 {
 }
 
-AwsIamAccessKeySessionContextSessionIssuer::AwsIamAccessKeySessionContextSessionIssuer(JsonView jsonValue) : 
-    m_typeHasBeenSet(false),
-    m_principalIdHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_accountIdHasBeenSet(false),
-    m_userNameHasBeenSet(false)
+AwsIamAccessKeySessionContextSessionIssuer::AwsIamAccessKeySessionContextSessionIssuer(JsonView jsonValue)
+  : AwsIamAccessKeySessionContextSessionIssuer()
 {
   *this = jsonValue;
 }

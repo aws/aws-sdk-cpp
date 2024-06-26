@@ -24,9 +24,8 @@ SupportedHour::SupportedHour() :
 {
 }
 
-SupportedHour::SupportedHour(JsonView jsonValue) : 
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
+SupportedHour::SupportedHour(JsonView jsonValue)
+  : SupportedHour()
 {
   *this = jsonValue;
 }

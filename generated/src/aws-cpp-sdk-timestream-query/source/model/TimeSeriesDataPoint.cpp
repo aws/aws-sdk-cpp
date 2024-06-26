@@ -25,9 +25,8 @@ TimeSeriesDataPoint::TimeSeriesDataPoint() :
 {
 }
 
-TimeSeriesDataPoint::TimeSeriesDataPoint(JsonView jsonValue) : 
-    m_timeHasBeenSet(false),
-    m_valueHasBeenSet(false)
+TimeSeriesDataPoint::TimeSeriesDataPoint(JsonView jsonValue)
+  : TimeSeriesDataPoint()
 {
   *this = jsonValue;
 }

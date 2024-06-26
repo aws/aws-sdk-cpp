@@ -40,25 +40,8 @@ ResourceStatistics::ResourceStatistics() :
 {
 }
 
-ResourceStatistics::ResourceStatistics(JsonView jsonValue) : 
-    m_totalBytesClassified(0),
-    m_totalBytesClassifiedHasBeenSet(false),
-    m_totalDetections(0),
-    m_totalDetectionsHasBeenSet(false),
-    m_totalDetectionsSuppressed(0),
-    m_totalDetectionsSuppressedHasBeenSet(false),
-    m_totalItemsClassified(0),
-    m_totalItemsClassifiedHasBeenSet(false),
-    m_totalItemsSensitive(0),
-    m_totalItemsSensitiveHasBeenSet(false),
-    m_totalItemsSkipped(0),
-    m_totalItemsSkippedHasBeenSet(false),
-    m_totalItemsSkippedInvalidEncryption(0),
-    m_totalItemsSkippedInvalidEncryptionHasBeenSet(false),
-    m_totalItemsSkippedInvalidKms(0),
-    m_totalItemsSkippedInvalidKmsHasBeenSet(false),
-    m_totalItemsSkippedPermissionDenied(0),
-    m_totalItemsSkippedPermissionDeniedHasBeenSet(false)
+ResourceStatistics::ResourceStatistics(JsonView jsonValue)
+  : ResourceStatistics()
 {
   *this = jsonValue;
 }

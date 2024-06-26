@@ -32,17 +32,8 @@ CostCategory::CostCategory() :
 {
 }
 
-CostCategory::CostCategory(JsonView jsonValue) : 
-    m_costCategoryArnHasBeenSet(false),
-    m_effectiveStartHasBeenSet(false),
-    m_effectiveEndHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_ruleVersion(CostCategoryRuleVersion::NOT_SET),
-    m_ruleVersionHasBeenSet(false),
-    m_rulesHasBeenSet(false),
-    m_splitChargeRulesHasBeenSet(false),
-    m_processingStatusHasBeenSet(false),
-    m_defaultValueHasBeenSet(false)
+CostCategory::CostCategory(JsonView jsonValue)
+  : CostCategory()
 {
   *this = jsonValue;
 }

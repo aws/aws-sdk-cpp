@@ -27,12 +27,8 @@ SourceContentDataDetails::SourceContentDataDetails() :
 {
 }
 
-SourceContentDataDetails::SourceContentDataDetails(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_rankingDataHasBeenSet(false),
-    m_textDataHasBeenSet(false),
-    m_type(SourceContentType::NOT_SET),
-    m_typeHasBeenSet(false)
+SourceContentDataDetails::SourceContentDataDetails(JsonView jsonValue)
+  : SourceContentDataDetails()
 {
   *this = jsonValue;
 }

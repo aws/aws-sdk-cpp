@@ -26,11 +26,8 @@ CodeDeliveryDetailsType::CodeDeliveryDetailsType() :
 {
 }
 
-CodeDeliveryDetailsType::CodeDeliveryDetailsType(JsonView jsonValue) : 
-    m_destinationHasBeenSet(false),
-    m_deliveryMedium(DeliveryMediumType::NOT_SET),
-    m_deliveryMediumHasBeenSet(false),
-    m_attributeNameHasBeenSet(false)
+CodeDeliveryDetailsType::CodeDeliveryDetailsType(JsonView jsonValue)
+  : CodeDeliveryDetailsType()
 {
   *this = jsonValue;
 }

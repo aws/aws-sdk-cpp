@@ -26,11 +26,8 @@ SlotResolutionTestResultItemCounts::SlotResolutionTestResultItemCounts() :
 {
 }
 
-SlotResolutionTestResultItemCounts::SlotResolutionTestResultItemCounts(JsonView jsonValue) : 
-    m_totalResultCount(0),
-    m_totalResultCountHasBeenSet(false),
-    m_speechTranscriptionResultCountsHasBeenSet(false),
-    m_slotMatchResultCountsHasBeenSet(false)
+SlotResolutionTestResultItemCounts::SlotResolutionTestResultItemCounts(JsonView jsonValue)
+  : SlotResolutionTestResultItemCounts()
 {
   *this = jsonValue;
 }

@@ -30,15 +30,8 @@ ExplainabilitySummary::ExplainabilitySummary() :
 {
 }
 
-ExplainabilitySummary::ExplainabilitySummary(JsonView jsonValue) : 
-    m_explainabilityArnHasBeenSet(false),
-    m_explainabilityNameHasBeenSet(false),
-    m_resourceArnHasBeenSet(false),
-    m_explainabilityConfigHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastModificationTimeHasBeenSet(false)
+ExplainabilitySummary::ExplainabilitySummary(JsonView jsonValue)
+  : ExplainabilitySummary()
 {
   *this = jsonValue;
 }

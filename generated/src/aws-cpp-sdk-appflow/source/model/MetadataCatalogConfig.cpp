@@ -23,8 +23,8 @@ MetadataCatalogConfig::MetadataCatalogConfig() :
 {
 }
 
-MetadataCatalogConfig::MetadataCatalogConfig(JsonView jsonValue) : 
-    m_glueDataCatalogHasBeenSet(false)
+MetadataCatalogConfig::MetadataCatalogConfig(JsonView jsonValue)
+  : MetadataCatalogConfig()
 {
   *this = jsonValue;
 }

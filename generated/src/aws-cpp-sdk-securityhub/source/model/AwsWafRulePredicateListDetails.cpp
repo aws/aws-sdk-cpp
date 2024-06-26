@@ -26,11 +26,8 @@ AwsWafRulePredicateListDetails::AwsWafRulePredicateListDetails() :
 {
 }
 
-AwsWafRulePredicateListDetails::AwsWafRulePredicateListDetails(JsonView jsonValue) : 
-    m_dataIdHasBeenSet(false),
-    m_negated(false),
-    m_negatedHasBeenSet(false),
-    m_typeHasBeenSet(false)
+AwsWafRulePredicateListDetails::AwsWafRulePredicateListDetails(JsonView jsonValue)
+  : AwsWafRulePredicateListDetails()
 {
   *this = jsonValue;
 }

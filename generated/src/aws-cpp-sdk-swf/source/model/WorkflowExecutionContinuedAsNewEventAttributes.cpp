@@ -35,20 +35,8 @@ WorkflowExecutionContinuedAsNewEventAttributes::WorkflowExecutionContinuedAsNewE
 {
 }
 
-WorkflowExecutionContinuedAsNewEventAttributes::WorkflowExecutionContinuedAsNewEventAttributes(JsonView jsonValue) : 
-    m_inputHasBeenSet(false),
-    m_decisionTaskCompletedEventId(0),
-    m_decisionTaskCompletedEventIdHasBeenSet(false),
-    m_newExecutionRunIdHasBeenSet(false),
-    m_executionStartToCloseTimeoutHasBeenSet(false),
-    m_taskListHasBeenSet(false),
-    m_taskPriorityHasBeenSet(false),
-    m_taskStartToCloseTimeoutHasBeenSet(false),
-    m_childPolicy(ChildPolicy::NOT_SET),
-    m_childPolicyHasBeenSet(false),
-    m_tagListHasBeenSet(false),
-    m_workflowTypeHasBeenSet(false),
-    m_lambdaRoleHasBeenSet(false)
+WorkflowExecutionContinuedAsNewEventAttributes::WorkflowExecutionContinuedAsNewEventAttributes(JsonView jsonValue)
+  : WorkflowExecutionContinuedAsNewEventAttributes()
 {
   *this = jsonValue;
 }

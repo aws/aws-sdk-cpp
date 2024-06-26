@@ -23,8 +23,8 @@ SubscriptionDefinitionVersion::SubscriptionDefinitionVersion() :
 {
 }
 
-SubscriptionDefinitionVersion::SubscriptionDefinitionVersion(JsonView jsonValue) : 
-    m_subscriptionsHasBeenSet(false)
+SubscriptionDefinitionVersion::SubscriptionDefinitionVersion(JsonView jsonValue)
+  : SubscriptionDefinitionVersion()
 {
   *this = jsonValue;
 }

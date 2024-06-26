@@ -37,22 +37,8 @@ DocumentVersionMetadata::DocumentVersionMetadata() :
 {
 }
 
-DocumentVersionMetadata::DocumentVersionMetadata(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_contentTypeHasBeenSet(false),
-    m_size(0),
-    m_sizeHasBeenSet(false),
-    m_signatureHasBeenSet(false),
-    m_status(DocumentStatusType::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false),
-    m_modifiedTimestampHasBeenSet(false),
-    m_contentCreatedTimestampHasBeenSet(false),
-    m_contentModifiedTimestampHasBeenSet(false),
-    m_creatorIdHasBeenSet(false),
-    m_thumbnailHasBeenSet(false),
-    m_sourceHasBeenSet(false)
+DocumentVersionMetadata::DocumentVersionMetadata(JsonView jsonValue)
+  : DocumentVersionMetadata()
 {
   *this = jsonValue;
 }

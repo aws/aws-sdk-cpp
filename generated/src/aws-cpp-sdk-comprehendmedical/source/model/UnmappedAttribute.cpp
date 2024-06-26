@@ -25,10 +25,8 @@ UnmappedAttribute::UnmappedAttribute() :
 {
 }
 
-UnmappedAttribute::UnmappedAttribute(JsonView jsonValue) : 
-    m_type(EntityType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_attributeHasBeenSet(false)
+UnmappedAttribute::UnmappedAttribute(JsonView jsonValue)
+  : UnmappedAttribute()
 {
   *this = jsonValue;
 }

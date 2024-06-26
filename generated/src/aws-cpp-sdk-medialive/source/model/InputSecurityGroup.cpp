@@ -29,14 +29,8 @@ InputSecurityGroup::InputSecurityGroup() :
 {
 }
 
-InputSecurityGroup::InputSecurityGroup(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_inputsHasBeenSet(false),
-    m_state(InputSecurityGroupState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_whitelistRulesHasBeenSet(false)
+InputSecurityGroup::InputSecurityGroup(JsonView jsonValue)
+  : InputSecurityGroup()
 {
   *this = jsonValue;
 }

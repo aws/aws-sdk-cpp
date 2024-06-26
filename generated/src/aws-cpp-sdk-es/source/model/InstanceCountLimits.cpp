@@ -26,11 +26,8 @@ InstanceCountLimits::InstanceCountLimits() :
 {
 }
 
-InstanceCountLimits::InstanceCountLimits(JsonView jsonValue) : 
-    m_minimumInstanceCount(0),
-    m_minimumInstanceCountHasBeenSet(false),
-    m_maximumInstanceCount(0),
-    m_maximumInstanceCountHasBeenSet(false)
+InstanceCountLimits::InstanceCountLimits(JsonView jsonValue)
+  : InstanceCountLimits()
 {
   *this = jsonValue;
 }

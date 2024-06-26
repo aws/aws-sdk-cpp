@@ -26,11 +26,8 @@ RDSDatabaseProjectedMetric::RDSDatabaseProjectedMetric() :
 {
 }
 
-RDSDatabaseProjectedMetric::RDSDatabaseProjectedMetric(JsonView jsonValue) : 
-    m_name(RDSDBMetricName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_timestampsHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+RDSDatabaseProjectedMetric::RDSDatabaseProjectedMetric(JsonView jsonValue)
+  : RDSDatabaseProjectedMetric()
 {
   *this = jsonValue;
 }

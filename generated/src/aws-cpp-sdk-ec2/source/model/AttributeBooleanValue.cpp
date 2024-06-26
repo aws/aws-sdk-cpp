@@ -26,9 +26,8 @@ AttributeBooleanValue::AttributeBooleanValue() :
 {
 }
 
-AttributeBooleanValue::AttributeBooleanValue(const XmlNode& xmlNode) : 
-    m_value(false),
-    m_valueHasBeenSet(false)
+AttributeBooleanValue::AttributeBooleanValue(const XmlNode& xmlNode)
+  : AttributeBooleanValue()
 {
   *this = xmlNode;
 }

@@ -40,23 +40,8 @@ TransitGatewayMulticastGroup::TransitGatewayMulticastGroup() :
 {
 }
 
-TransitGatewayMulticastGroup::TransitGatewayMulticastGroup(const XmlNode& xmlNode) : 
-    m_groupIpAddressHasBeenSet(false),
-    m_transitGatewayAttachmentIdHasBeenSet(false),
-    m_subnetIdHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_resourceType(TransitGatewayAttachmentResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_resourceOwnerIdHasBeenSet(false),
-    m_networkInterfaceIdHasBeenSet(false),
-    m_groupMember(false),
-    m_groupMemberHasBeenSet(false),
-    m_groupSource(false),
-    m_groupSourceHasBeenSet(false),
-    m_memberType(MembershipType::NOT_SET),
-    m_memberTypeHasBeenSet(false),
-    m_sourceType(MembershipType::NOT_SET),
-    m_sourceTypeHasBeenSet(false)
+TransitGatewayMulticastGroup::TransitGatewayMulticastGroup(const XmlNode& xmlNode)
+  : TransitGatewayMulticastGroup()
 {
   *this = xmlNode;
 }

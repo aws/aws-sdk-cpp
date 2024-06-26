@@ -24,9 +24,8 @@ NoiseReducerFilterSettings::NoiseReducerFilterSettings() :
 {
 }
 
-NoiseReducerFilterSettings::NoiseReducerFilterSettings(JsonView jsonValue) : 
-    m_strength(0),
-    m_strengthHasBeenSet(false)
+NoiseReducerFilterSettings::NoiseReducerFilterSettings(JsonView jsonValue)
+  : NoiseReducerFilterSettings()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ UpdateDeviceCertificateParams::UpdateDeviceCertificateParams() :
 {
 }
 
-UpdateDeviceCertificateParams::UpdateDeviceCertificateParams(JsonView jsonValue) : 
-    m_action(DeviceCertificateUpdateAction::NOT_SET),
-    m_actionHasBeenSet(false)
+UpdateDeviceCertificateParams::UpdateDeviceCertificateParams(JsonView jsonValue)
+  : UpdateDeviceCertificateParams()
 {
   *this = jsonValue;
 }

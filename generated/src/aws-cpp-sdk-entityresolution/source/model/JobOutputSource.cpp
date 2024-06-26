@@ -25,10 +25,8 @@ JobOutputSource::JobOutputSource() :
 {
 }
 
-JobOutputSource::JobOutputSource(JsonView jsonValue) : 
-    m_kMSArnHasBeenSet(false),
-    m_outputS3PathHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
+JobOutputSource::JobOutputSource(JsonView jsonValue)
+  : JobOutputSource()
 {
   *this = jsonValue;
 }

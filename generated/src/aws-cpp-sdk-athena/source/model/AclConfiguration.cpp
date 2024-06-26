@@ -24,9 +24,8 @@ AclConfiguration::AclConfiguration() :
 {
 }
 
-AclConfiguration::AclConfiguration(JsonView jsonValue) : 
-    m_s3AclOption(S3AclOption::NOT_SET),
-    m_s3AclOptionHasBeenSet(false)
+AclConfiguration::AclConfiguration(JsonView jsonValue)
+  : AclConfiguration()
 {
   *this = jsonValue;
 }

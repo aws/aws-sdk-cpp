@@ -25,10 +25,8 @@ Recipe::Recipe() :
 {
 }
 
-Recipe::Recipe(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_inputsHasBeenSet(false),
-    m_recipeReferenceHasBeenSet(false)
+Recipe::Recipe(JsonView jsonValue)
+  : Recipe()
 {
   *this = jsonValue;
 }

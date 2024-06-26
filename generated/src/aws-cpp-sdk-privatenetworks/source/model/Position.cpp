@@ -32,17 +32,8 @@ Position::Position() :
 {
 }
 
-Position::Position(JsonView jsonValue) : 
-    m_elevation(0.0),
-    m_elevationHasBeenSet(false),
-    m_elevationReference(ElevationReference::NOT_SET),
-    m_elevationReferenceHasBeenSet(false),
-    m_elevationUnit(ElevationUnit::NOT_SET),
-    m_elevationUnitHasBeenSet(false),
-    m_latitude(0.0),
-    m_latitudeHasBeenSet(false),
-    m_longitude(0.0),
-    m_longitudeHasBeenSet(false)
+Position::Position(JsonView jsonValue)
+  : Position()
 {
   *this = jsonValue;
 }

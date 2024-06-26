@@ -29,14 +29,8 @@ SparkConnectorTarget::SparkConnectorTarget() :
 {
 }
 
-SparkConnectorTarget::SparkConnectorTarget(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_inputsHasBeenSet(false),
-    m_connectionNameHasBeenSet(false),
-    m_connectorNameHasBeenSet(false),
-    m_connectionTypeHasBeenSet(false),
-    m_additionalOptionsHasBeenSet(false),
-    m_outputSchemasHasBeenSet(false)
+SparkConnectorTarget::SparkConnectorTarget(JsonView jsonValue)
+  : SparkConnectorTarget()
 {
   *this = jsonValue;
 }

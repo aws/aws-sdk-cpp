@@ -28,11 +28,8 @@ Authentication::Authentication() :
 {
 }
 
-Authentication::Authentication(const XmlNode& xmlNode) : 
-    m_type(AuthenticationType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_passwordCount(0),
-    m_passwordCountHasBeenSet(false)
+Authentication::Authentication(const XmlNode& xmlNode)
+  : Authentication()
 {
   *this = xmlNode;
 }

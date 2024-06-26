@@ -22,8 +22,8 @@ DeleteEgressOnlyInternetGatewayResponse::DeleteEgressOnlyInternetGatewayResponse
 {
 }
 
-DeleteEgressOnlyInternetGatewayResponse::DeleteEgressOnlyInternetGatewayResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_returnCode(false)
+DeleteEgressOnlyInternetGatewayResponse::DeleteEgressOnlyInternetGatewayResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : DeleteEgressOnlyInternetGatewayResponse()
 {
   *this = result;
 }

@@ -25,10 +25,8 @@ Projection::Projection() :
 {
 }
 
-Projection::Projection(JsonView jsonValue) : 
-    m_projectionType(ProjectionType::NOT_SET),
-    m_projectionTypeHasBeenSet(false),
-    m_nonKeyAttributesHasBeenSet(false)
+Projection::Projection(JsonView jsonValue)
+  : Projection()
 {
   *this = jsonValue;
 }

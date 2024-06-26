@@ -25,10 +25,8 @@ IPSet::IPSet() :
 {
 }
 
-IPSet::IPSet(JsonView jsonValue) : 
-    m_iPSetIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_iPSetDescriptorsHasBeenSet(false)
+IPSet::IPSet(JsonView jsonValue)
+  : IPSet()
 {
   *this = jsonValue;
 }

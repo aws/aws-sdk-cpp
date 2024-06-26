@@ -25,10 +25,8 @@ AssetBundleImportJobDashboardOverridePermissions::AssetBundleImportJobDashboardO
 {
 }
 
-AssetBundleImportJobDashboardOverridePermissions::AssetBundleImportJobDashboardOverridePermissions(JsonView jsonValue) : 
-    m_dashboardIdsHasBeenSet(false),
-    m_permissionsHasBeenSet(false),
-    m_linkSharingConfigurationHasBeenSet(false)
+AssetBundleImportJobDashboardOverridePermissions::AssetBundleImportJobDashboardOverridePermissions(JsonView jsonValue)
+  : AssetBundleImportJobDashboardOverridePermissions()
 {
   *this = jsonValue;
 }

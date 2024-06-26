@@ -25,10 +25,8 @@ BatchError::BatchError() :
 {
 }
 
-BatchError::BatchError(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+BatchError::BatchError(JsonView jsonValue)
+  : BatchError()
 {
   *this = jsonValue;
 }

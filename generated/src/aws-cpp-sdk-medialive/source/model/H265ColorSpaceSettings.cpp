@@ -27,12 +27,8 @@ H265ColorSpaceSettings::H265ColorSpaceSettings() :
 {
 }
 
-H265ColorSpaceSettings::H265ColorSpaceSettings(JsonView jsonValue) : 
-    m_colorSpacePassthroughSettingsHasBeenSet(false),
-    m_dolbyVision81SettingsHasBeenSet(false),
-    m_hdr10SettingsHasBeenSet(false),
-    m_rec601SettingsHasBeenSet(false),
-    m_rec709SettingsHasBeenSet(false)
+H265ColorSpaceSettings::H265ColorSpaceSettings(JsonView jsonValue)
+  : H265ColorSpaceSettings()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ VerificationDetails::VerificationDetails() :
 {
 }
 
-VerificationDetails::VerificationDetails(JsonView jsonValue) : 
-    m_dateOfBirthHasBeenSet(false),
-    m_taxRegistrationDocumentsHasBeenSet(false)
+VerificationDetails::VerificationDetails(JsonView jsonValue)
+  : VerificationDetails()
 {
   *this = jsonValue;
 }

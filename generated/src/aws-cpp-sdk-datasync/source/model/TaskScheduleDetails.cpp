@@ -26,11 +26,8 @@ TaskScheduleDetails::TaskScheduleDetails() :
 {
 }
 
-TaskScheduleDetails::TaskScheduleDetails(JsonView jsonValue) : 
-    m_statusUpdateTimeHasBeenSet(false),
-    m_disabledReasonHasBeenSet(false),
-    m_disabledBy(ScheduleDisabledBy::NOT_SET),
-    m_disabledByHasBeenSet(false)
+TaskScheduleDetails::TaskScheduleDetails(JsonView jsonValue)
+  : TaskScheduleDetails()
 {
   *this = jsonValue;
 }

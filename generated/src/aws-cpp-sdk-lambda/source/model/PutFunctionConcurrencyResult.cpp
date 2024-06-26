@@ -22,8 +22,8 @@ PutFunctionConcurrencyResult::PutFunctionConcurrencyResult() :
 {
 }
 
-PutFunctionConcurrencyResult::PutFunctionConcurrencyResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_reservedConcurrentExecutions(0)
+PutFunctionConcurrencyResult::PutFunctionConcurrencyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : PutFunctionConcurrencyResult()
 {
   *this = result;
 }

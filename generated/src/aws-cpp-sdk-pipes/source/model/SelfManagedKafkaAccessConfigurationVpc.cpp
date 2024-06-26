@@ -24,9 +24,8 @@ SelfManagedKafkaAccessConfigurationVpc::SelfManagedKafkaAccessConfigurationVpc()
 {
 }
 
-SelfManagedKafkaAccessConfigurationVpc::SelfManagedKafkaAccessConfigurationVpc(JsonView jsonValue) : 
-    m_subnetsHasBeenSet(false),
-    m_securityGroupHasBeenSet(false)
+SelfManagedKafkaAccessConfigurationVpc::SelfManagedKafkaAccessConfigurationVpc(JsonView jsonValue)
+  : SelfManagedKafkaAccessConfigurationVpc()
 {
   *this = jsonValue;
 }

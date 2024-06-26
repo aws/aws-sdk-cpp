@@ -71,9 +71,8 @@ PostContentResult& PostContentResult::operator=(PostContentResult&& toMove)
    return *this;
 }
 
-PostContentResult::PostContentResult(Aws::AmazonWebServiceResult<ResponseStream>&& result) : 
-    m_messageFormat(MessageFormatType::NOT_SET),
-    m_dialogState(DialogState::NOT_SET)
+PostContentResult::PostContentResult(Aws::AmazonWebServiceResult<ResponseStream>&& result)
+  : PostContentResult()
 {
   *this = std::move(result);
 }

@@ -44,29 +44,8 @@ TransactionEvent::TransactionEvent() :
 {
 }
 
-TransactionEvent::TransactionEvent(JsonView jsonValue) : 
-    m_network(QueryNetwork::NOT_SET),
-    m_networkHasBeenSet(false),
-    m_transactionHashHasBeenSet(false),
-    m_eventType(QueryTransactionEventType::NOT_SET),
-    m_eventTypeHasBeenSet(false),
-    m_fromHasBeenSet(false),
-    m_toHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_contractAddressHasBeenSet(false),
-    m_tokenIdHasBeenSet(false),
-    m_transactionIdHasBeenSet(false),
-    m_voutIndex(0),
-    m_voutIndexHasBeenSet(false),
-    m_voutSpent(false),
-    m_voutSpentHasBeenSet(false),
-    m_spentVoutTransactionIdHasBeenSet(false),
-    m_spentVoutTransactionHashHasBeenSet(false),
-    m_spentVoutIndex(0),
-    m_spentVoutIndexHasBeenSet(false),
-    m_blockchainInstantHasBeenSet(false),
-    m_confirmationStatus(ConfirmationStatus::NOT_SET),
-    m_confirmationStatusHasBeenSet(false)
+TransactionEvent::TransactionEvent(JsonView jsonValue)
+  : TransactionEvent()
 {
   *this = jsonValue;
 }

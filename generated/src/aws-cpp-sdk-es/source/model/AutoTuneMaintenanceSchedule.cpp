@@ -25,10 +25,8 @@ AutoTuneMaintenanceSchedule::AutoTuneMaintenanceSchedule() :
 {
 }
 
-AutoTuneMaintenanceSchedule::AutoTuneMaintenanceSchedule(JsonView jsonValue) : 
-    m_startAtHasBeenSet(false),
-    m_durationHasBeenSet(false),
-    m_cronExpressionForRecurrenceHasBeenSet(false)
+AutoTuneMaintenanceSchedule::AutoTuneMaintenanceSchedule(JsonView jsonValue)
+  : AutoTuneMaintenanceSchedule()
 {
   *this = jsonValue;
 }

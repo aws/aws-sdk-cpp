@@ -23,8 +23,8 @@ ValidationMessage::ValidationMessage() :
 {
 }
 
-ValidationMessage::ValidationMessage(JsonView jsonValue) : 
-    m_messageHasBeenSet(false)
+ValidationMessage::ValidationMessage(JsonView jsonValue)
+  : ValidationMessage()
 {
   *this = jsonValue;
 }

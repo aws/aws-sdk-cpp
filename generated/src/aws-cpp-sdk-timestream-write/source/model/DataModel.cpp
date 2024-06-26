@@ -29,14 +29,8 @@ DataModel::DataModel() :
 {
 }
 
-DataModel::DataModel(JsonView jsonValue) : 
-    m_timeColumnHasBeenSet(false),
-    m_timeUnit(TimeUnit::NOT_SET),
-    m_timeUnitHasBeenSet(false),
-    m_dimensionMappingsHasBeenSet(false),
-    m_multiMeasureMappingsHasBeenSet(false),
-    m_mixedMeasureMappingsHasBeenSet(false),
-    m_measureNameColumnHasBeenSet(false)
+DataModel::DataModel(JsonView jsonValue)
+  : DataModel()
 {
   *this = jsonValue;
 }

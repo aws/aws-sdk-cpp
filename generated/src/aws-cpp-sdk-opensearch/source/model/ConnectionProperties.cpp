@@ -24,9 +24,8 @@ ConnectionProperties::ConnectionProperties() :
 {
 }
 
-ConnectionProperties::ConnectionProperties(JsonView jsonValue) : 
-    m_endpointHasBeenSet(false),
-    m_crossClusterSearchHasBeenSet(false)
+ConnectionProperties::ConnectionProperties(JsonView jsonValue)
+  : ConnectionProperties()
 {
   *this = jsonValue;
 }

@@ -32,17 +32,8 @@ HlsManifest::HlsManifest() :
 {
 }
 
-HlsManifest::HlsManifest(JsonView jsonValue) : 
-    m_adMarkers(AdMarkers::NOT_SET),
-    m_adMarkersHasBeenSet(false),
-    m_includeIframeOnlyStream(false),
-    m_includeIframeOnlyStreamHasBeenSet(false),
-    m_manifestNameHasBeenSet(false),
-    m_programDateTimeIntervalSeconds(0),
-    m_programDateTimeIntervalSecondsHasBeenSet(false),
-    m_repeatExtXKey(false),
-    m_repeatExtXKeyHasBeenSet(false),
-    m_streamSelectionHasBeenSet(false)
+HlsManifest::HlsManifest(JsonView jsonValue)
+  : HlsManifest()
 {
   *this = jsonValue;
 }

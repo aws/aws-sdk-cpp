@@ -29,14 +29,8 @@ HistoricalMetric::HistoricalMetric() :
 {
 }
 
-HistoricalMetric::HistoricalMetric(JsonView jsonValue) : 
-    m_name(HistoricalMetricName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_thresholdHasBeenSet(false),
-    m_statistic(Statistic::NOT_SET),
-    m_statisticHasBeenSet(false),
-    m_unit(Unit::NOT_SET),
-    m_unitHasBeenSet(false)
+HistoricalMetric::HistoricalMetric(JsonView jsonValue)
+  : HistoricalMetric()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ ExperimentTemplateS3LogConfiguration::ExperimentTemplateS3LogConfiguration() :
 {
 }
 
-ExperimentTemplateS3LogConfiguration::ExperimentTemplateS3LogConfiguration(JsonView jsonValue) : 
-    m_bucketNameHasBeenSet(false),
-    m_prefixHasBeenSet(false)
+ExperimentTemplateS3LogConfiguration::ExperimentTemplateS3LogConfiguration(JsonView jsonValue)
+  : ExperimentTemplateS3LogConfiguration()
 {
   *this = jsonValue;
 }

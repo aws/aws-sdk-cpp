@@ -29,14 +29,8 @@ CampaignSmsMessage::CampaignSmsMessage() :
 {
 }
 
-CampaignSmsMessage::CampaignSmsMessage(JsonView jsonValue) : 
-    m_bodyHasBeenSet(false),
-    m_messageType(MessageType::NOT_SET),
-    m_messageTypeHasBeenSet(false),
-    m_originationNumberHasBeenSet(false),
-    m_senderIdHasBeenSet(false),
-    m_entityIdHasBeenSet(false),
-    m_templateIdHasBeenSet(false)
+CampaignSmsMessage::CampaignSmsMessage(JsonView jsonValue)
+  : CampaignSmsMessage()
 {
   *this = jsonValue;
 }

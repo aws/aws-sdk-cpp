@@ -24,9 +24,8 @@ StreamProcessorSettings::StreamProcessorSettings() :
 {
 }
 
-StreamProcessorSettings::StreamProcessorSettings(JsonView jsonValue) : 
-    m_faceSearchHasBeenSet(false),
-    m_connectedHomeHasBeenSet(false)
+StreamProcessorSettings::StreamProcessorSettings(JsonView jsonValue)
+  : StreamProcessorSettings()
 {
   *this = jsonValue;
 }

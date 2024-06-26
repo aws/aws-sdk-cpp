@@ -28,13 +28,8 @@ IntegerParameterDeclaration::IntegerParameterDeclaration() :
 {
 }
 
-IntegerParameterDeclaration::IntegerParameterDeclaration(JsonView jsonValue) : 
-    m_parameterValueType(ParameterValueType::NOT_SET),
-    m_parameterValueTypeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_defaultValuesHasBeenSet(false),
-    m_valueWhenUnsetHasBeenSet(false),
-    m_mappedDataSetParametersHasBeenSet(false)
+IntegerParameterDeclaration::IntegerParameterDeclaration(JsonView jsonValue)
+  : IntegerParameterDeclaration()
 {
   *this = jsonValue;
 }

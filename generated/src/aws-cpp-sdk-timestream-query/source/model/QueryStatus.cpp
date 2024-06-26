@@ -28,13 +28,8 @@ QueryStatus::QueryStatus() :
 {
 }
 
-QueryStatus::QueryStatus(JsonView jsonValue) : 
-    m_progressPercentage(0.0),
-    m_progressPercentageHasBeenSet(false),
-    m_cumulativeBytesScanned(0),
-    m_cumulativeBytesScannedHasBeenSet(false),
-    m_cumulativeBytesMetered(0),
-    m_cumulativeBytesMeteredHasBeenSet(false)
+QueryStatus::QueryStatus(JsonView jsonValue)
+  : QueryStatus()
 {
   *this = jsonValue;
 }

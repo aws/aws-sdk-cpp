@@ -25,10 +25,8 @@ AutomatedDiscoveryAccountUpdateError::AutomatedDiscoveryAccountUpdateError() :
 {
 }
 
-AutomatedDiscoveryAccountUpdateError::AutomatedDiscoveryAccountUpdateError(JsonView jsonValue) : 
-    m_accountIdHasBeenSet(false),
-    m_errorCode(AutomatedDiscoveryAccountUpdateErrorCode::NOT_SET),
-    m_errorCodeHasBeenSet(false)
+AutomatedDiscoveryAccountUpdateError::AutomatedDiscoveryAccountUpdateError(JsonView jsonValue)
+  : AutomatedDiscoveryAccountUpdateError()
 {
   *this = jsonValue;
 }

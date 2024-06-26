@@ -24,9 +24,8 @@ TagCollection::TagCollection() :
 {
 }
 
-TagCollection::TagCollection(JsonView jsonValue) : 
-    m_appBoundaryKeyHasBeenSet(false),
-    m_tagValuesHasBeenSet(false)
+TagCollection::TagCollection(JsonView jsonValue)
+  : TagCollection()
 {
   *this = jsonValue;
 }

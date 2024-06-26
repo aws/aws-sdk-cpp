@@ -25,10 +25,8 @@ ConcurrentModificationException::ConcurrentModificationException() :
 {
 }
 
-ConcurrentModificationException::ConcurrentModificationException(JsonView jsonValue) : 
-    m_detailedMessageHasBeenSet(false),
-    m_requestIdHasBeenSet(false),
-    m_codeHasBeenSet(false)
+ConcurrentModificationException::ConcurrentModificationException(JsonView jsonValue)
+  : ConcurrentModificationException()
 {
   *this = jsonValue;
 }

@@ -28,13 +28,8 @@ EventConfigurationItem::EventConfigurationItem() :
 {
 }
 
-EventConfigurationItem::EventConfigurationItem(JsonView jsonValue) : 
-    m_identifierHasBeenSet(false),
-    m_identifierType(IdentifierType::NOT_SET),
-    m_identifierTypeHasBeenSet(false),
-    m_partnerType(EventNotificationPartnerType::NOT_SET),
-    m_partnerTypeHasBeenSet(false),
-    m_eventsHasBeenSet(false)
+EventConfigurationItem::EventConfigurationItem(JsonView jsonValue)
+  : EventConfigurationItem()
 {
   *this = jsonValue;
 }

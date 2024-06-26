@@ -40,25 +40,8 @@ ParameterDefinition::ParameterDefinition() :
 {
 }
 
-ParameterDefinition::ParameterDefinition(JsonView jsonValue) : 
-    m_allowedPatternHasBeenSet(false),
-    m_allowedValuesHasBeenSet(false),
-    m_constraintDescriptionHasBeenSet(false),
-    m_defaultValueHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_maxLength(0),
-    m_maxLengthHasBeenSet(false),
-    m_maxValue(0),
-    m_maxValueHasBeenSet(false),
-    m_minLength(0),
-    m_minLengthHasBeenSet(false),
-    m_minValue(0),
-    m_minValueHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_noEcho(false),
-    m_noEchoHasBeenSet(false),
-    m_referencedByResourcesHasBeenSet(false),
-    m_typeHasBeenSet(false)
+ParameterDefinition::ParameterDefinition(JsonView jsonValue)
+  : ParameterDefinition()
 {
   *this = jsonValue;
 }

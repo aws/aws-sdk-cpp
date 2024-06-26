@@ -24,9 +24,8 @@ GatewayPlatform::GatewayPlatform() :
 {
 }
 
-GatewayPlatform::GatewayPlatform(JsonView jsonValue) : 
-    m_greengrassHasBeenSet(false),
-    m_greengrassV2HasBeenSet(false)
+GatewayPlatform::GatewayPlatform(JsonView jsonValue)
+  : GatewayPlatform()
 {
   *this = jsonValue;
 }

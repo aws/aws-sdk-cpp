@@ -25,8 +25,8 @@ Outpost::Outpost() :
 {
 }
 
-Outpost::Outpost(const XmlNode& xmlNode) : 
-    m_arnHasBeenSet(false)
+Outpost::Outpost(const XmlNode& xmlNode)
+  : Outpost()
 {
   *this = xmlNode;
 }

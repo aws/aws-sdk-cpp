@@ -27,12 +27,8 @@ LogDestinationConfig::LogDestinationConfig() :
 {
 }
 
-LogDestinationConfig::LogDestinationConfig(JsonView jsonValue) : 
-    m_logType(LogType::NOT_SET),
-    m_logTypeHasBeenSet(false),
-    m_logDestinationType(LogDestinationType::NOT_SET),
-    m_logDestinationTypeHasBeenSet(false),
-    m_logDestinationHasBeenSet(false)
+LogDestinationConfig::LogDestinationConfig(JsonView jsonValue)
+  : LogDestinationConfig()
 {
   *this = jsonValue;
 }

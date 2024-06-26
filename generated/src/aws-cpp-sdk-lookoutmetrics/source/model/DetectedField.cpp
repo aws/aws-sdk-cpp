@@ -26,11 +26,8 @@ DetectedField::DetectedField() :
 {
 }
 
-DetectedField::DetectedField(JsonView jsonValue) : 
-    m_valueHasBeenSet(false),
-    m_confidence(Confidence::NOT_SET),
-    m_confidenceHasBeenSet(false),
-    m_messageHasBeenSet(false)
+DetectedField::DetectedField(JsonView jsonValue)
+  : DetectedField()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ ImageConfiguration::ImageConfiguration() :
 {
 }
 
-ImageConfiguration::ImageConfiguration(JsonView jsonValue) : 
-    m_imageUriHasBeenSet(false),
-    m_resolvedImageDigestHasBeenSet(false)
+ImageConfiguration::ImageConfiguration(JsonView jsonValue)
+  : ImageConfiguration()
 {
   *this = jsonValue;
 }

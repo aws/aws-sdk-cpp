@@ -35,20 +35,8 @@ ResolverQueryLogConfig::ResolverQueryLogConfig() :
 {
 }
 
-ResolverQueryLogConfig::ResolverQueryLogConfig(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_status(ResolverQueryLogConfigStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_shareStatus(ShareStatus::NOT_SET),
-    m_shareStatusHasBeenSet(false),
-    m_associationCount(0),
-    m_associationCountHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_destinationArnHasBeenSet(false),
-    m_creatorRequestIdHasBeenSet(false),
-    m_creationTimeHasBeenSet(false)
+ResolverQueryLogConfig::ResolverQueryLogConfig(JsonView jsonValue)
+  : ResolverQueryLogConfig()
 {
   *this = jsonValue;
 }

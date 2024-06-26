@@ -25,10 +25,8 @@ PhysicalConnectionRequirements::PhysicalConnectionRequirements() :
 {
 }
 
-PhysicalConnectionRequirements::PhysicalConnectionRequirements(JsonView jsonValue) : 
-    m_subnetIdHasBeenSet(false),
-    m_securityGroupIdListHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false)
+PhysicalConnectionRequirements::PhysicalConnectionRequirements(JsonView jsonValue)
+  : PhysicalConnectionRequirements()
 {
   *this = jsonValue;
 }

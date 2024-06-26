@@ -22,8 +22,8 @@ DescribeAnalysisResult::DescribeAnalysisResult() :
 {
 }
 
-DescribeAnalysisResult::DescribeAnalysisResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+DescribeAnalysisResult::DescribeAnalysisResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeAnalysisResult()
 {
   *this = result;
 }

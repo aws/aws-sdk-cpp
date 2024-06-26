@@ -41,26 +41,8 @@ ReportDefinition::ReportDefinition() :
 {
 }
 
-ReportDefinition::ReportDefinition(JsonView jsonValue) : 
-    m_reportNameHasBeenSet(false),
-    m_timeUnit(TimeUnit::NOT_SET),
-    m_timeUnitHasBeenSet(false),
-    m_format(ReportFormat::NOT_SET),
-    m_formatHasBeenSet(false),
-    m_compression(CompressionFormat::NOT_SET),
-    m_compressionHasBeenSet(false),
-    m_additionalSchemaElementsHasBeenSet(false),
-    m_s3BucketHasBeenSet(false),
-    m_s3PrefixHasBeenSet(false),
-    m_s3Region(AWSRegion::NOT_SET),
-    m_s3RegionHasBeenSet(false),
-    m_additionalArtifactsHasBeenSet(false),
-    m_refreshClosedReports(false),
-    m_refreshClosedReportsHasBeenSet(false),
-    m_reportVersioning(ReportVersioning::NOT_SET),
-    m_reportVersioningHasBeenSet(false),
-    m_billingViewArnHasBeenSet(false),
-    m_reportStatusHasBeenSet(false)
+ReportDefinition::ReportDefinition(JsonView jsonValue)
+  : ReportDefinition()
 {
   *this = jsonValue;
 }

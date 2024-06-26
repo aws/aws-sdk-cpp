@@ -27,12 +27,8 @@ CanaryRun::CanaryRun() :
 {
 }
 
-CanaryRun::CanaryRun(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_timelineHasBeenSet(false),
-    m_artifactS3LocationHasBeenSet(false)
+CanaryRun::CanaryRun(JsonView jsonValue)
+  : CanaryRun()
 {
   *this = jsonValue;
 }

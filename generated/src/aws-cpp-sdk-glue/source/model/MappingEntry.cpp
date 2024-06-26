@@ -28,13 +28,8 @@ MappingEntry::MappingEntry() :
 {
 }
 
-MappingEntry::MappingEntry(JsonView jsonValue) : 
-    m_sourceTableHasBeenSet(false),
-    m_sourcePathHasBeenSet(false),
-    m_sourceTypeHasBeenSet(false),
-    m_targetTableHasBeenSet(false),
-    m_targetPathHasBeenSet(false),
-    m_targetTypeHasBeenSet(false)
+MappingEntry::MappingEntry(JsonView jsonValue)
+  : MappingEntry()
 {
   *this = jsonValue;
 }

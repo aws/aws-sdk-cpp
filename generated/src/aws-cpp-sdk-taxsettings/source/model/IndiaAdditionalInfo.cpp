@@ -23,8 +23,8 @@ IndiaAdditionalInfo::IndiaAdditionalInfo() :
 {
 }
 
-IndiaAdditionalInfo::IndiaAdditionalInfo(JsonView jsonValue) : 
-    m_panHasBeenSet(false)
+IndiaAdditionalInfo::IndiaAdditionalInfo(JsonView jsonValue)
+  : IndiaAdditionalInfo()
 {
   *this = jsonValue;
 }

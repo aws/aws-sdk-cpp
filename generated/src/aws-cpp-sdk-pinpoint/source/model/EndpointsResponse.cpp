@@ -23,8 +23,8 @@ EndpointsResponse::EndpointsResponse() :
 {
 }
 
-EndpointsResponse::EndpointsResponse(JsonView jsonValue) : 
-    m_itemHasBeenSet(false)
+EndpointsResponse::EndpointsResponse(JsonView jsonValue)
+  : EndpointsResponse()
 {
   *this = jsonValue;
 }

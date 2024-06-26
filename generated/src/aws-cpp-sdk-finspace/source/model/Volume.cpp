@@ -25,10 +25,8 @@ Volume::Volume() :
 {
 }
 
-Volume::Volume(JsonView jsonValue) : 
-    m_volumeNameHasBeenSet(false),
-    m_volumeType(VolumeType::NOT_SET),
-    m_volumeTypeHasBeenSet(false)
+Volume::Volume(JsonView jsonValue)
+  : Volume()
 {
   *this = jsonValue;
 }

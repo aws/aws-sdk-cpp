@@ -26,11 +26,8 @@ CustomPolicyDetails::CustomPolicyDetails() :
 {
 }
 
-CustomPolicyDetails::CustomPolicyDetails(JsonView jsonValue) : 
-    m_policyRuntimeHasBeenSet(false),
-    m_policyTextHasBeenSet(false),
-    m_enableDebugLogDelivery(false),
-    m_enableDebugLogDeliveryHasBeenSet(false)
+CustomPolicyDetails::CustomPolicyDetails(JsonView jsonValue)
+  : CustomPolicyDetails()
 {
   *this = jsonValue;
 }

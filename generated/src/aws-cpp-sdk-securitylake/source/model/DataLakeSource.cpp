@@ -26,11 +26,8 @@ DataLakeSource::DataLakeSource() :
 {
 }
 
-DataLakeSource::DataLakeSource(JsonView jsonValue) : 
-    m_accountHasBeenSet(false),
-    m_eventClassesHasBeenSet(false),
-    m_sourceNameHasBeenSet(false),
-    m_sourceStatusesHasBeenSet(false)
+DataLakeSource::DataLakeSource(JsonView jsonValue)
+  : DataLakeSource()
 {
   *this = jsonValue;
 }

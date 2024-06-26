@@ -34,19 +34,8 @@ Trial::Trial() :
 {
 }
 
-Trial::Trial(JsonView jsonValue) : 
-    m_trialNameHasBeenSet(false),
-    m_trialArnHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_experimentNameHasBeenSet(false),
-    m_sourceHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_lastModifiedByHasBeenSet(false),
-    m_metadataPropertiesHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_trialComponentSummariesHasBeenSet(false)
+Trial::Trial(JsonView jsonValue)
+  : Trial()
 {
   *this = jsonValue;
 }

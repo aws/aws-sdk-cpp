@@ -25,10 +25,8 @@ ManualEvidence::ManualEvidence() :
 {
 }
 
-ManualEvidence::ManualEvidence(JsonView jsonValue) : 
-    m_s3ResourcePathHasBeenSet(false),
-    m_textResponseHasBeenSet(false),
-    m_evidenceFileNameHasBeenSet(false)
+ManualEvidence::ManualEvidence(JsonView jsonValue)
+  : ManualEvidence()
 {
   *this = jsonValue;
 }

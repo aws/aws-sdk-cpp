@@ -23,8 +23,8 @@ Row::Row() :
 {
 }
 
-Row::Row(JsonView jsonValue) : 
-    m_dataHasBeenSet(false)
+Row::Row(JsonView jsonValue)
+  : Row()
 {
   *this = jsonValue;
 }

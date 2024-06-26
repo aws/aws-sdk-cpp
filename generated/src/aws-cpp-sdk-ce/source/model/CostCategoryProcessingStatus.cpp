@@ -26,11 +26,8 @@ CostCategoryProcessingStatus::CostCategoryProcessingStatus() :
 {
 }
 
-CostCategoryProcessingStatus::CostCategoryProcessingStatus(JsonView jsonValue) : 
-    m_component(CostCategoryStatusComponent::NOT_SET),
-    m_componentHasBeenSet(false),
-    m_status(CostCategoryStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+CostCategoryProcessingStatus::CostCategoryProcessingStatus(JsonView jsonValue)
+  : CostCategoryProcessingStatus()
 {
   *this = jsonValue;
 }

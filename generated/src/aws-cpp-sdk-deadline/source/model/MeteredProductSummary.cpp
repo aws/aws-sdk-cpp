@@ -27,12 +27,8 @@ MeteredProductSummary::MeteredProductSummary() :
 {
 }
 
-MeteredProductSummary::MeteredProductSummary(JsonView jsonValue) : 
-    m_familyHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_productIdHasBeenSet(false),
-    m_vendorHasBeenSet(false)
+MeteredProductSummary::MeteredProductSummary(JsonView jsonValue)
+  : MeteredProductSummary()
 {
   *this = jsonValue;
 }

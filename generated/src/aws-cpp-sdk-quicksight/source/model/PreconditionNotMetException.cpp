@@ -24,9 +24,8 @@ PreconditionNotMetException::PreconditionNotMetException() :
 {
 }
 
-PreconditionNotMetException::PreconditionNotMetException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
+PreconditionNotMetException::PreconditionNotMetException(JsonView jsonValue)
+  : PreconditionNotMetException()
 {
   *this = jsonValue;
 }

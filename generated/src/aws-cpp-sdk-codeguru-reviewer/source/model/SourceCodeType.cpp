@@ -27,12 +27,8 @@ SourceCodeType::SourceCodeType() :
 {
 }
 
-SourceCodeType::SourceCodeType(JsonView jsonValue) : 
-    m_commitDiffHasBeenSet(false),
-    m_repositoryHeadHasBeenSet(false),
-    m_branchDiffHasBeenSet(false),
-    m_s3BucketRepositoryHasBeenSet(false),
-    m_requestMetadataHasBeenSet(false)
+SourceCodeType::SourceCodeType(JsonView jsonValue)
+  : SourceCodeType()
 {
   *this = jsonValue;
 }

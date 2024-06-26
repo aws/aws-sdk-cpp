@@ -29,14 +29,8 @@ ChimeWebhookConfiguration::ChimeWebhookConfiguration() :
 {
 }
 
-ChimeWebhookConfiguration::ChimeWebhookConfiguration(JsonView jsonValue) : 
-    m_webhookDescriptionHasBeenSet(false),
-    m_chatConfigurationArnHasBeenSet(false),
-    m_iamRoleArnHasBeenSet(false),
-    m_snsTopicArnsHasBeenSet(false),
-    m_configurationNameHasBeenSet(false),
-    m_loggingLevelHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+ChimeWebhookConfiguration::ChimeWebhookConfiguration(JsonView jsonValue)
+  : ChimeWebhookConfiguration()
 {
   *this = jsonValue;
 }

@@ -35,18 +35,8 @@ LaunchTemplatePlacement::LaunchTemplatePlacement() :
 {
 }
 
-LaunchTemplatePlacement::LaunchTemplatePlacement(const XmlNode& xmlNode) : 
-    m_availabilityZoneHasBeenSet(false),
-    m_affinityHasBeenSet(false),
-    m_groupNameHasBeenSet(false),
-    m_hostIdHasBeenSet(false),
-    m_tenancy(Tenancy::NOT_SET),
-    m_tenancyHasBeenSet(false),
-    m_spreadDomainHasBeenSet(false),
-    m_hostResourceGroupArnHasBeenSet(false),
-    m_partitionNumber(0),
-    m_partitionNumberHasBeenSet(false),
-    m_groupIdHasBeenSet(false)
+LaunchTemplatePlacement::LaunchTemplatePlacement(const XmlNode& xmlNode)
+  : LaunchTemplatePlacement()
 {
   *this = xmlNode;
 }

@@ -22,8 +22,8 @@ AddCommunicationToCaseResult::AddCommunicationToCaseResult() :
 {
 }
 
-AddCommunicationToCaseResult::AddCommunicationToCaseResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_result(false)
+AddCommunicationToCaseResult::AddCommunicationToCaseResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : AddCommunicationToCaseResult()
 {
   *this = result;
 }

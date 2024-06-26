@@ -33,18 +33,8 @@ CustomerManagedWorkerCapabilities::CustomerManagedWorkerCapabilities() :
 {
 }
 
-CustomerManagedWorkerCapabilities::CustomerManagedWorkerCapabilities(JsonView jsonValue) : 
-    m_acceleratorCountHasBeenSet(false),
-    m_acceleratorTotalMemoryMiBHasBeenSet(false),
-    m_acceleratorTypesHasBeenSet(false),
-    m_cpuArchitectureType(CpuArchitectureType::NOT_SET),
-    m_cpuArchitectureTypeHasBeenSet(false),
-    m_customAmountsHasBeenSet(false),
-    m_customAttributesHasBeenSet(false),
-    m_memoryMiBHasBeenSet(false),
-    m_osFamily(CustomerManagedFleetOperatingSystemFamily::NOT_SET),
-    m_osFamilyHasBeenSet(false),
-    m_vCpuCountHasBeenSet(false)
+CustomerManagedWorkerCapabilities::CustomerManagedWorkerCapabilities(JsonView jsonValue)
+  : CustomerManagedWorkerCapabilities()
 {
   *this = jsonValue;
 }

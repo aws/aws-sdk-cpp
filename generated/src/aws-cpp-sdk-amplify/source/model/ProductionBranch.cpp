@@ -26,11 +26,8 @@ ProductionBranch::ProductionBranch() :
 {
 }
 
-ProductionBranch::ProductionBranch(JsonView jsonValue) : 
-    m_lastDeployTimeHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_thumbnailUrlHasBeenSet(false),
-    m_branchNameHasBeenSet(false)
+ProductionBranch::ProductionBranch(JsonView jsonValue)
+  : ProductionBranch()
 {
   *this = jsonValue;
 }

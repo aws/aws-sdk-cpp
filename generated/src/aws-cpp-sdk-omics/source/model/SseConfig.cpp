@@ -25,10 +25,8 @@ SseConfig::SseConfig() :
 {
 }
 
-SseConfig::SseConfig(JsonView jsonValue) : 
-    m_type(EncryptionType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_keyArnHasBeenSet(false)
+SseConfig::SseConfig(JsonView jsonValue)
+  : SseConfig()
 {
   *this = jsonValue;
 }

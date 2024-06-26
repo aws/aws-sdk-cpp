@@ -36,21 +36,8 @@ NumericRangeFilter::NumericRangeFilter() :
 {
 }
 
-NumericRangeFilter::NumericRangeFilter(JsonView jsonValue) : 
-    m_filterIdHasBeenSet(false),
-    m_columnHasBeenSet(false),
-    m_includeMinimum(false),
-    m_includeMinimumHasBeenSet(false),
-    m_includeMaximum(false),
-    m_includeMaximumHasBeenSet(false),
-    m_rangeMinimumHasBeenSet(false),
-    m_rangeMaximumHasBeenSet(false),
-    m_selectAllOptions(NumericFilterSelectAllOptions::NOT_SET),
-    m_selectAllOptionsHasBeenSet(false),
-    m_aggregationFunctionHasBeenSet(false),
-    m_nullOption(FilterNullOption::NOT_SET),
-    m_nullOptionHasBeenSet(false),
-    m_defaultFilterControlConfigurationHasBeenSet(false)
+NumericRangeFilter::NumericRangeFilter(JsonView jsonValue)
+  : NumericRangeFilter()
 {
   *this = jsonValue;
 }

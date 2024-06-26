@@ -24,9 +24,8 @@ BufferOptions::BufferOptions() :
 {
 }
 
-BufferOptions::BufferOptions(JsonView jsonValue) : 
-    m_persistentBufferEnabled(false),
-    m_persistentBufferEnabledHasBeenSet(false)
+BufferOptions::BufferOptions(JsonView jsonValue)
+  : BufferOptions()
 {
   *this = jsonValue;
 }

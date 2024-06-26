@@ -30,15 +30,8 @@ GraphSnapshotSummary::GraphSnapshotSummary() :
 {
 }
 
-GraphSnapshotSummary::GraphSnapshotSummary(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_sourceGraphIdHasBeenSet(false),
-    m_snapshotCreateTimeHasBeenSet(false),
-    m_status(SnapshotStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_kmsKeyIdentifierHasBeenSet(false)
+GraphSnapshotSummary::GraphSnapshotSummary(JsonView jsonValue)
+  : GraphSnapshotSummary()
 {
   *this = jsonValue;
 }

@@ -30,13 +30,8 @@ CopyObjectResultDetails::CopyObjectResultDetails() :
 {
 }
 
-CopyObjectResultDetails::CopyObjectResultDetails(const XmlNode& xmlNode) : 
-    m_eTagHasBeenSet(false),
-    m_lastModifiedHasBeenSet(false),
-    m_checksumCRC32HasBeenSet(false),
-    m_checksumCRC32CHasBeenSet(false),
-    m_checksumSHA1HasBeenSet(false),
-    m_checksumSHA256HasBeenSet(false)
+CopyObjectResultDetails::CopyObjectResultDetails(const XmlNode& xmlNode)
+  : CopyObjectResultDetails()
 {
   *this = xmlNode;
 }

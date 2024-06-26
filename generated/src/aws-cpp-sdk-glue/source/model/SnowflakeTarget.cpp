@@ -25,10 +25,8 @@ SnowflakeTarget::SnowflakeTarget() :
 {
 }
 
-SnowflakeTarget::SnowflakeTarget(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_dataHasBeenSet(false),
-    m_inputsHasBeenSet(false)
+SnowflakeTarget::SnowflakeTarget(JsonView jsonValue)
+  : SnowflakeTarget()
 {
   *this = jsonValue;
 }

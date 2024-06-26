@@ -22,8 +22,8 @@ CreateDatastoreResult::CreateDatastoreResult() :
 {
 }
 
-CreateDatastoreResult::CreateDatastoreResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_datastoreStatus(DatastoreStatus::NOT_SET)
+CreateDatastoreResult::CreateDatastoreResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateDatastoreResult()
 {
   *this = result;
 }

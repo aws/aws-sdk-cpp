@@ -30,15 +30,8 @@ SemtechGnssDetail::SemtechGnssDetail() :
 {
 }
 
-SemtechGnssDetail::SemtechGnssDetail(JsonView jsonValue) : 
-    m_provider(PositionSolverProvider::NOT_SET),
-    m_providerHasBeenSet(false),
-    m_type(PositionSolverType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_status(PositionConfigurationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_fec(PositionConfigurationFec::NOT_SET),
-    m_fecHasBeenSet(false)
+SemtechGnssDetail::SemtechGnssDetail(JsonView jsonValue)
+  : SemtechGnssDetail()
 {
   *this = jsonValue;
 }

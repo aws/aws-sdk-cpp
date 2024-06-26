@@ -24,9 +24,8 @@ FindingSummary::FindingSummary() :
 {
 }
 
-FindingSummary::FindingSummary(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false)
+FindingSummary::FindingSummary(JsonView jsonValue)
+  : FindingSummary()
 {
   *this = jsonValue;
 }

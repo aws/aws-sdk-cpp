@@ -24,9 +24,8 @@ VirtualGatewayFileAccessLog::VirtualGatewayFileAccessLog() :
 {
 }
 
-VirtualGatewayFileAccessLog::VirtualGatewayFileAccessLog(JsonView jsonValue) : 
-    m_formatHasBeenSet(false),
-    m_pathHasBeenSet(false)
+VirtualGatewayFileAccessLog::VirtualGatewayFileAccessLog(JsonView jsonValue)
+  : VirtualGatewayFileAccessLog()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ ModelPackageModelCard::ModelPackageModelCard() :
 {
 }
 
-ModelPackageModelCard::ModelPackageModelCard(JsonView jsonValue) : 
-    m_modelCardContentHasBeenSet(false),
-    m_modelCardStatus(ModelCardStatus::NOT_SET),
-    m_modelCardStatusHasBeenSet(false)
+ModelPackageModelCard::ModelPackageModelCard(JsonView jsonValue)
+  : ModelPackageModelCard()
 {
   *this = jsonValue;
 }

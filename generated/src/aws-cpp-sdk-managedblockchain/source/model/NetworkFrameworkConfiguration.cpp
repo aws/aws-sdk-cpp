@@ -23,8 +23,8 @@ NetworkFrameworkConfiguration::NetworkFrameworkConfiguration() :
 {
 }
 
-NetworkFrameworkConfiguration::NetworkFrameworkConfiguration(JsonView jsonValue) : 
-    m_fabricHasBeenSet(false)
+NetworkFrameworkConfiguration::NetworkFrameworkConfiguration(JsonView jsonValue)
+  : NetworkFrameworkConfiguration()
 {
   *this = jsonValue;
 }

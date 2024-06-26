@@ -24,9 +24,8 @@ KinesisFirehoseOutputDescription::KinesisFirehoseOutputDescription() :
 {
 }
 
-KinesisFirehoseOutputDescription::KinesisFirehoseOutputDescription(JsonView jsonValue) : 
-    m_resourceARNHasBeenSet(false),
-    m_roleARNHasBeenSet(false)
+KinesisFirehoseOutputDescription::KinesisFirehoseOutputDescription(JsonView jsonValue)
+  : KinesisFirehoseOutputDescription()
 {
   *this = jsonValue;
 }

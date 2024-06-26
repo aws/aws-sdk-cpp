@@ -27,12 +27,8 @@ BrowserSettings::BrowserSettings() :
 {
 }
 
-BrowserSettings::BrowserSettings(JsonView jsonValue) : 
-    m_additionalEncryptionContextHasBeenSet(false),
-    m_associatedPortalArnsHasBeenSet(false),
-    m_browserPolicyHasBeenSet(false),
-    m_browserSettingsArnHasBeenSet(false),
-    m_customerManagedKeyHasBeenSet(false)
+BrowserSettings::BrowserSettings(JsonView jsonValue)
+  : BrowserSettings()
 {
   *this = jsonValue;
 }

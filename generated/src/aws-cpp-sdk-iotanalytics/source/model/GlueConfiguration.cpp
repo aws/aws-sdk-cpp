@@ -24,9 +24,8 @@ GlueConfiguration::GlueConfiguration() :
 {
 }
 
-GlueConfiguration::GlueConfiguration(JsonView jsonValue) : 
-    m_tableNameHasBeenSet(false),
-    m_databaseNameHasBeenSet(false)
+GlueConfiguration::GlueConfiguration(JsonView jsonValue)
+  : GlueConfiguration()
 {
   *this = jsonValue;
 }

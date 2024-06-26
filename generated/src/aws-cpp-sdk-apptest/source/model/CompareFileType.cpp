@@ -24,9 +24,8 @@ CompareFileType::CompareFileType() :
 {
 }
 
-CompareFileType::CompareFileType(JsonView jsonValue) : 
-    m_datasetsHasBeenSet(false),
-    m_databaseCDCHasBeenSet(false)
+CompareFileType::CompareFileType(JsonView jsonValue)
+  : CompareFileType()
 {
   *this = jsonValue;
 }

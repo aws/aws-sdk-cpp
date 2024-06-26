@@ -23,8 +23,8 @@ LicenseUsage::LicenseUsage() :
 {
 }
 
-LicenseUsage::LicenseUsage(JsonView jsonValue) : 
-    m_entitlementUsagesHasBeenSet(false)
+LicenseUsage::LicenseUsage(JsonView jsonValue)
+  : LicenseUsage()
 {
   *this = jsonValue;
 }

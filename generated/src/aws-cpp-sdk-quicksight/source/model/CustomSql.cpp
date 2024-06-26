@@ -26,11 +26,8 @@ CustomSql::CustomSql() :
 {
 }
 
-CustomSql::CustomSql(JsonView jsonValue) : 
-    m_dataSourceArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_sqlQueryHasBeenSet(false),
-    m_columnsHasBeenSet(false)
+CustomSql::CustomSql(JsonView jsonValue)
+  : CustomSql()
 {
   *this = jsonValue;
 }

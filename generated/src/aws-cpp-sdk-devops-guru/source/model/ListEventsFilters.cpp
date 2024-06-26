@@ -30,15 +30,8 @@ ListEventsFilters::ListEventsFilters() :
 {
 }
 
-ListEventsFilters::ListEventsFilters(JsonView jsonValue) : 
-    m_insightIdHasBeenSet(false),
-    m_eventTimeRangeHasBeenSet(false),
-    m_eventClass(EventClass::NOT_SET),
-    m_eventClassHasBeenSet(false),
-    m_eventSourceHasBeenSet(false),
-    m_dataSource(EventDataSource::NOT_SET),
-    m_dataSourceHasBeenSet(false),
-    m_resourceCollectionHasBeenSet(false)
+ListEventsFilters::ListEventsFilters(JsonView jsonValue)
+  : ListEventsFilters()
 {
   *this = jsonValue;
 }

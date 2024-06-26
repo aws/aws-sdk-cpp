@@ -24,9 +24,8 @@ S3KeyOutput::S3KeyOutput() :
 {
 }
 
-S3KeyOutput::S3KeyOutput(JsonView jsonValue) : 
-    m_s3KeyHasBeenSet(false),
-    m_etagHasBeenSet(false)
+S3KeyOutput::S3KeyOutput(JsonView jsonValue)
+  : S3KeyOutput()
 {
   *this = jsonValue;
 }

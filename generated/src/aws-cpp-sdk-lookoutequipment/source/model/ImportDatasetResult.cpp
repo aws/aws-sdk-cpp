@@ -22,8 +22,8 @@ ImportDatasetResult::ImportDatasetResult() :
 {
 }
 
-ImportDatasetResult::ImportDatasetResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(DatasetStatus::NOT_SET)
+ImportDatasetResult::ImportDatasetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ImportDatasetResult()
 {
   *this = result;
 }

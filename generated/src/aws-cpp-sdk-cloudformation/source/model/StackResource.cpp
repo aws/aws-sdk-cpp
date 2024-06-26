@@ -36,19 +36,8 @@ StackResource::StackResource() :
 {
 }
 
-StackResource::StackResource(const XmlNode& xmlNode) : 
-    m_stackNameHasBeenSet(false),
-    m_stackIdHasBeenSet(false),
-    m_logicalResourceIdHasBeenSet(false),
-    m_physicalResourceIdHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
-    m_timestampHasBeenSet(false),
-    m_resourceStatus(ResourceStatus::NOT_SET),
-    m_resourceStatusHasBeenSet(false),
-    m_resourceStatusReasonHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_driftInformationHasBeenSet(false),
-    m_moduleInfoHasBeenSet(false)
+StackResource::StackResource(const XmlNode& xmlNode)
+  : StackResource()
 {
   *this = xmlNode;
 }

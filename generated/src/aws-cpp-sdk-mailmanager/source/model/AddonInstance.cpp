@@ -27,12 +27,8 @@ AddonInstance::AddonInstance() :
 {
 }
 
-AddonInstance::AddonInstance(JsonView jsonValue) : 
-    m_addonInstanceArnHasBeenSet(false),
-    m_addonInstanceIdHasBeenSet(false),
-    m_addonNameHasBeenSet(false),
-    m_addonSubscriptionIdHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false)
+AddonInstance::AddonInstance(JsonView jsonValue)
+  : AddonInstance()
 {
   *this = jsonValue;
 }

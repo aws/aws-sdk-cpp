@@ -22,8 +22,8 @@ GetAssociatedPackageGroupResult::GetAssociatedPackageGroupResult() :
 {
 }
 
-GetAssociatedPackageGroupResult::GetAssociatedPackageGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_associationType(PackageGroupAssociationType::NOT_SET)
+GetAssociatedPackageGroupResult::GetAssociatedPackageGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetAssociatedPackageGroupResult()
 {
   *this = result;
 }

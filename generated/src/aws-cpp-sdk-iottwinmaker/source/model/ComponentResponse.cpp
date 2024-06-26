@@ -35,20 +35,8 @@ ComponentResponse::ComponentResponse() :
 {
 }
 
-ComponentResponse::ComponentResponse(JsonView jsonValue) : 
-    m_componentNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_componentTypeIdHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_definedInHasBeenSet(false),
-    m_propertiesHasBeenSet(false),
-    m_propertyGroupsHasBeenSet(false),
-    m_syncSourceHasBeenSet(false),
-    m_areAllPropertiesReturned(false),
-    m_areAllPropertiesReturnedHasBeenSet(false),
-    m_compositeComponentsHasBeenSet(false),
-    m_areAllCompositeComponentsReturned(false),
-    m_areAllCompositeComponentsReturnedHasBeenSet(false)
+ComponentResponse::ComponentResponse(JsonView jsonValue)
+  : ComponentResponse()
 {
   *this = jsonValue;
 }

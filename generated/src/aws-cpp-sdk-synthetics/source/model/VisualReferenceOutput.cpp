@@ -24,9 +24,8 @@ VisualReferenceOutput::VisualReferenceOutput() :
 {
 }
 
-VisualReferenceOutput::VisualReferenceOutput(JsonView jsonValue) : 
-    m_baseScreenshotsHasBeenSet(false),
-    m_baseCanaryRunIdHasBeenSet(false)
+VisualReferenceOutput::VisualReferenceOutput(JsonView jsonValue)
+  : VisualReferenceOutput()
 {
   *this = jsonValue;
 }

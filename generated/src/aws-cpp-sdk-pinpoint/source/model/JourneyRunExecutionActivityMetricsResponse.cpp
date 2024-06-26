@@ -29,14 +29,8 @@ JourneyRunExecutionActivityMetricsResponse::JourneyRunExecutionActivityMetricsRe
 {
 }
 
-JourneyRunExecutionActivityMetricsResponse::JourneyRunExecutionActivityMetricsResponse(JsonView jsonValue) : 
-    m_activityTypeHasBeenSet(false),
-    m_applicationIdHasBeenSet(false),
-    m_journeyActivityIdHasBeenSet(false),
-    m_journeyIdHasBeenSet(false),
-    m_lastEvaluatedTimeHasBeenSet(false),
-    m_metricsHasBeenSet(false),
-    m_runIdHasBeenSet(false)
+JourneyRunExecutionActivityMetricsResponse::JourneyRunExecutionActivityMetricsResponse(JsonView jsonValue)
+  : JourneyRunExecutionActivityMetricsResponse()
 {
   *this = jsonValue;
 }

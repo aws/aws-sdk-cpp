@@ -22,8 +22,8 @@ VerifySoftwareTokenResult::VerifySoftwareTokenResult() :
 {
 }
 
-VerifySoftwareTokenResult::VerifySoftwareTokenResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(VerifySoftwareTokenResponseType::NOT_SET)
+VerifySoftwareTokenResult::VerifySoftwareTokenResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : VerifySoftwareTokenResult()
 {
   *this = result;
 }

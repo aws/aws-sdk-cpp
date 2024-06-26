@@ -34,19 +34,8 @@ NewPublicVirtualInterface::NewPublicVirtualInterface() :
 {
 }
 
-NewPublicVirtualInterface::NewPublicVirtualInterface(JsonView jsonValue) : 
-    m_virtualInterfaceNameHasBeenSet(false),
-    m_vlan(0),
-    m_vlanHasBeenSet(false),
-    m_asn(0),
-    m_asnHasBeenSet(false),
-    m_authKeyHasBeenSet(false),
-    m_amazonAddressHasBeenSet(false),
-    m_customerAddressHasBeenSet(false),
-    m_addressFamily(AddressFamily::NOT_SET),
-    m_addressFamilyHasBeenSet(false),
-    m_routeFilterPrefixesHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+NewPublicVirtualInterface::NewPublicVirtualInterface(JsonView jsonValue)
+  : NewPublicVirtualInterface()
 {
   *this = jsonValue;
 }

@@ -28,13 +28,8 @@ H264QvbrSettings::H264QvbrSettings() :
 {
 }
 
-H264QvbrSettings::H264QvbrSettings(JsonView jsonValue) : 
-    m_maxAverageBitrate(0),
-    m_maxAverageBitrateHasBeenSet(false),
-    m_qvbrQualityLevel(0),
-    m_qvbrQualityLevelHasBeenSet(false),
-    m_qvbrQualityLevelFineTune(0.0),
-    m_qvbrQualityLevelFineTuneHasBeenSet(false)
+H264QvbrSettings::H264QvbrSettings(JsonView jsonValue)
+  : H264QvbrSettings()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ AwsWafRegionalRulePredicateListDetails::AwsWafRegionalRulePredicateListDetails()
 {
 }
 
-AwsWafRegionalRulePredicateListDetails::AwsWafRegionalRulePredicateListDetails(JsonView jsonValue) : 
-    m_dataIdHasBeenSet(false),
-    m_negated(false),
-    m_negatedHasBeenSet(false),
-    m_typeHasBeenSet(false)
+AwsWafRegionalRulePredicateListDetails::AwsWafRegionalRulePredicateListDetails(JsonView jsonValue)
+  : AwsWafRegionalRulePredicateListDetails()
 {
   *this = jsonValue;
 }

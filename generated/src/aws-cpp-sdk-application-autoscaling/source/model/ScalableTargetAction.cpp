@@ -26,11 +26,8 @@ ScalableTargetAction::ScalableTargetAction() :
 {
 }
 
-ScalableTargetAction::ScalableTargetAction(JsonView jsonValue) : 
-    m_minCapacity(0),
-    m_minCapacityHasBeenSet(false),
-    m_maxCapacity(0),
-    m_maxCapacityHasBeenSet(false)
+ScalableTargetAction::ScalableTargetAction(JsonView jsonValue)
+  : ScalableTargetAction()
 {
   *this = jsonValue;
 }

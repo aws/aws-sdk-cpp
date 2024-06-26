@@ -23,8 +23,8 @@ WaterfallChartFieldWells::WaterfallChartFieldWells() :
 {
 }
 
-WaterfallChartFieldWells::WaterfallChartFieldWells(JsonView jsonValue) : 
-    m_waterfallChartAggregatedFieldWellsHasBeenSet(false)
+WaterfallChartFieldWells::WaterfallChartFieldWells(JsonView jsonValue)
+  : WaterfallChartFieldWells()
 {
   *this = jsonValue;
 }

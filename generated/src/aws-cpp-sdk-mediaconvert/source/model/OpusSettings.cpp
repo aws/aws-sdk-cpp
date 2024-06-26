@@ -28,13 +28,8 @@ OpusSettings::OpusSettings() :
 {
 }
 
-OpusSettings::OpusSettings(JsonView jsonValue) : 
-    m_bitrate(0),
-    m_bitrateHasBeenSet(false),
-    m_channels(0),
-    m_channelsHasBeenSet(false),
-    m_sampleRate(0),
-    m_sampleRateHasBeenSet(false)
+OpusSettings::OpusSettings(JsonView jsonValue)
+  : OpusSettings()
 {
   *this = jsonValue;
 }

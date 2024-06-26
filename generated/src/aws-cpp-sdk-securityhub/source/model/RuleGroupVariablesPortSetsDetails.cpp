@@ -23,8 +23,8 @@ RuleGroupVariablesPortSetsDetails::RuleGroupVariablesPortSetsDetails() :
 {
 }
 
-RuleGroupVariablesPortSetsDetails::RuleGroupVariablesPortSetsDetails(JsonView jsonValue) : 
-    m_definitionHasBeenSet(false)
+RuleGroupVariablesPortSetsDetails::RuleGroupVariablesPortSetsDetails(JsonView jsonValue)
+  : RuleGroupVariablesPortSetsDetails()
 {
   *this = jsonValue;
 }

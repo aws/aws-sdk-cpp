@@ -24,9 +24,8 @@ JobMessages::JobMessages() :
 {
 }
 
-JobMessages::JobMessages(JsonView jsonValue) : 
-    m_infoHasBeenSet(false),
-    m_warningHasBeenSet(false)
+JobMessages::JobMessages(JsonView jsonValue)
+  : JobMessages()
 {
   *this = jsonValue;
 }

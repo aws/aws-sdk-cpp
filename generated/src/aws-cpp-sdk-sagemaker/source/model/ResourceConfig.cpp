@@ -32,17 +32,8 @@ ResourceConfig::ResourceConfig() :
 {
 }
 
-ResourceConfig::ResourceConfig(JsonView jsonValue) : 
-    m_instanceType(TrainingInstanceType::NOT_SET),
-    m_instanceTypeHasBeenSet(false),
-    m_instanceCount(0),
-    m_instanceCountHasBeenSet(false),
-    m_volumeSizeInGB(0),
-    m_volumeSizeInGBHasBeenSet(false),
-    m_volumeKmsKeyIdHasBeenSet(false),
-    m_keepAlivePeriodInSeconds(0),
-    m_keepAlivePeriodInSecondsHasBeenSet(false),
-    m_instanceGroupsHasBeenSet(false)
+ResourceConfig::ResourceConfig(JsonView jsonValue)
+  : ResourceConfig()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ LaunchTemplateConfiguration::LaunchTemplateConfiguration() :
 {
 }
 
-LaunchTemplateConfiguration::LaunchTemplateConfiguration(JsonView jsonValue) : 
-    m_launchTemplateIdHasBeenSet(false),
-    m_accountIdHasBeenSet(false),
-    m_setDefaultVersion(false),
-    m_setDefaultVersionHasBeenSet(false)
+LaunchTemplateConfiguration::LaunchTemplateConfiguration(JsonView jsonValue)
+  : LaunchTemplateConfiguration()
 {
   *this = jsonValue;
 }

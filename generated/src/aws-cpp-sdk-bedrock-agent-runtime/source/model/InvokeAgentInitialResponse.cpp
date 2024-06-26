@@ -25,9 +25,8 @@ InvokeAgentInitialResponse::InvokeAgentInitialResponse() :
 {
 }
 
-InvokeAgentInitialResponse::InvokeAgentInitialResponse(JsonView jsonValue) : 
-    m_sessionIdHasBeenSet(false),
-    m_contentTypeHasBeenSet(false)
+InvokeAgentInitialResponse::InvokeAgentInitialResponse(JsonView jsonValue)
+  : InvokeAgentInitialResponse()
 {
   *this = jsonValue;
 }

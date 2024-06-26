@@ -28,13 +28,8 @@ HyperParameterTuningInstanceConfig::HyperParameterTuningInstanceConfig() :
 {
 }
 
-HyperParameterTuningInstanceConfig::HyperParameterTuningInstanceConfig(JsonView jsonValue) : 
-    m_instanceType(TrainingInstanceType::NOT_SET),
-    m_instanceTypeHasBeenSet(false),
-    m_instanceCount(0),
-    m_instanceCountHasBeenSet(false),
-    m_volumeSizeInGB(0),
-    m_volumeSizeInGBHasBeenSet(false)
+HyperParameterTuningInstanceConfig::HyperParameterTuningInstanceConfig(JsonView jsonValue)
+  : HyperParameterTuningInstanceConfig()
 {
   *this = jsonValue;
 }

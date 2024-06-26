@@ -22,8 +22,8 @@ AssumeRoleResult::AssumeRoleResult() :
 {
 }
 
-AssumeRoleResult::AssumeRoleResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_packedPolicySize(0)
+AssumeRoleResult::AssumeRoleResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : AssumeRoleResult()
 {
   *this = result;
 }

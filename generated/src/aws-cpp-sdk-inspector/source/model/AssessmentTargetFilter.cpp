@@ -23,8 +23,8 @@ AssessmentTargetFilter::AssessmentTargetFilter() :
 {
 }
 
-AssessmentTargetFilter::AssessmentTargetFilter(JsonView jsonValue) : 
-    m_assessmentTargetNamePatternHasBeenSet(false)
+AssessmentTargetFilter::AssessmentTargetFilter(JsonView jsonValue)
+  : AssessmentTargetFilter()
 {
   *this = jsonValue;
 }

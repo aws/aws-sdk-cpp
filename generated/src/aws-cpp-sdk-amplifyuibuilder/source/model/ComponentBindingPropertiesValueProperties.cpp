@@ -30,15 +30,8 @@ ComponentBindingPropertiesValueProperties::ComponentBindingPropertiesValueProper
 {
 }
 
-ComponentBindingPropertiesValueProperties::ComponentBindingPropertiesValueProperties(JsonView jsonValue) : 
-    m_modelHasBeenSet(false),
-    m_fieldHasBeenSet(false),
-    m_predicatesHasBeenSet(false),
-    m_userAttributeHasBeenSet(false),
-    m_bucketHasBeenSet(false),
-    m_keyHasBeenSet(false),
-    m_defaultValueHasBeenSet(false),
-    m_slotNameHasBeenSet(false)
+ComponentBindingPropertiesValueProperties::ComponentBindingPropertiesValueProperties(JsonView jsonValue)
+  : ComponentBindingPropertiesValueProperties()
 {
   *this = jsonValue;
 }

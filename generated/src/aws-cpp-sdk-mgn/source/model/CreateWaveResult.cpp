@@ -22,8 +22,8 @@ CreateWaveResult::CreateWaveResult() :
 {
 }
 
-CreateWaveResult::CreateWaveResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_isArchived(false)
+CreateWaveResult::CreateWaveResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateWaveResult()
 {
   *this = result;
 }

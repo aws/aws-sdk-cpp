@@ -26,11 +26,8 @@ RealTimeInferenceConfig::RealTimeInferenceConfig() :
 {
 }
 
-RealTimeInferenceConfig::RealTimeInferenceConfig(JsonView jsonValue) : 
-    m_instanceType(InstanceType::NOT_SET),
-    m_instanceTypeHasBeenSet(false),
-    m_instanceCount(0),
-    m_instanceCountHasBeenSet(false)
+RealTimeInferenceConfig::RealTimeInferenceConfig(JsonView jsonValue)
+  : RealTimeInferenceConfig()
 {
   *this = jsonValue;
 }

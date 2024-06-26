@@ -22,8 +22,8 @@ ListFindingAggregationsResult::ListFindingAggregationsResult() :
 {
 }
 
-ListFindingAggregationsResult::ListFindingAggregationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_aggregationType(AggregationType::NOT_SET)
+ListFindingAggregationsResult::ListFindingAggregationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ListFindingAggregationsResult()
 {
   *this = result;
 }

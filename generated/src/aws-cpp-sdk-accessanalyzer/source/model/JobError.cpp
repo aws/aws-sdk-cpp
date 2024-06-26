@@ -25,10 +25,8 @@ JobError::JobError() :
 {
 }
 
-JobError::JobError(JsonView jsonValue) : 
-    m_code(JobErrorCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+JobError::JobError(JsonView jsonValue)
+  : JobError()
 {
   *this = jsonValue;
 }

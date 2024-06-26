@@ -28,11 +28,8 @@ HostedZoneLimit::HostedZoneLimit() :
 {
 }
 
-HostedZoneLimit::HostedZoneLimit(const XmlNode& xmlNode) : 
-    m_type(HostedZoneLimitType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_value(0),
-    m_valueHasBeenSet(false)
+HostedZoneLimit::HostedZoneLimit(const XmlNode& xmlNode)
+  : HostedZoneLimit()
 {
   *this = xmlNode;
 }

@@ -33,18 +33,8 @@ BlueprintRun::BlueprintRun() :
 {
 }
 
-BlueprintRun::BlueprintRun(JsonView jsonValue) : 
-    m_blueprintNameHasBeenSet(false),
-    m_runIdHasBeenSet(false),
-    m_workflowNameHasBeenSet(false),
-    m_state(BlueprintRunState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_startedOnHasBeenSet(false),
-    m_completedOnHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_rollbackErrorMessageHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
+BlueprintRun::BlueprintRun(JsonView jsonValue)
+  : BlueprintRun()
 {
   *this = jsonValue;
 }

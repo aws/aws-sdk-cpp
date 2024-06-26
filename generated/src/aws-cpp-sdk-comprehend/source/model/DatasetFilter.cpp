@@ -28,13 +28,8 @@ DatasetFilter::DatasetFilter() :
 {
 }
 
-DatasetFilter::DatasetFilter(JsonView jsonValue) : 
-    m_status(DatasetStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_datasetType(DatasetType::NOT_SET),
-    m_datasetTypeHasBeenSet(false),
-    m_creationTimeAfterHasBeenSet(false),
-    m_creationTimeBeforeHasBeenSet(false)
+DatasetFilter::DatasetFilter(JsonView jsonValue)
+  : DatasetFilter()
 {
   *this = jsonValue;
 }

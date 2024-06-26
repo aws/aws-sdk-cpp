@@ -22,8 +22,8 @@ SearchPromptsResult::SearchPromptsResult() :
 {
 }
 
-SearchPromptsResult::SearchPromptsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_approximateTotalCount(0)
+SearchPromptsResult::SearchPromptsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : SearchPromptsResult()
 {
   *this = result;
 }

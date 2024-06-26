@@ -29,14 +29,8 @@ DockerVolumeConfiguration::DockerVolumeConfiguration() :
 {
 }
 
-DockerVolumeConfiguration::DockerVolumeConfiguration(JsonView jsonValue) : 
-    m_scope(Scope::NOT_SET),
-    m_scopeHasBeenSet(false),
-    m_autoprovision(false),
-    m_autoprovisionHasBeenSet(false),
-    m_driverHasBeenSet(false),
-    m_driverOptsHasBeenSet(false),
-    m_labelsHasBeenSet(false)
+DockerVolumeConfiguration::DockerVolumeConfiguration(JsonView jsonValue)
+  : DockerVolumeConfiguration()
 {
   *this = jsonValue;
 }

@@ -26,9 +26,8 @@ ReplaceableItem::ReplaceableItem() :
 {
 }
 
-ReplaceableItem::ReplaceableItem(const XmlNode& xmlNode) : 
-    m_nameHasBeenSet(false),
-    m_attributesHasBeenSet(false)
+ReplaceableItem::ReplaceableItem(const XmlNode& xmlNode)
+  : ReplaceableItem()
 {
   *this = xmlNode;
 }

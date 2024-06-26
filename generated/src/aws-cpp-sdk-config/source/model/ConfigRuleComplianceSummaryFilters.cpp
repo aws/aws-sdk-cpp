@@ -24,9 +24,8 @@ ConfigRuleComplianceSummaryFilters::ConfigRuleComplianceSummaryFilters() :
 {
 }
 
-ConfigRuleComplianceSummaryFilters::ConfigRuleComplianceSummaryFilters(JsonView jsonValue) : 
-    m_accountIdHasBeenSet(false),
-    m_awsRegionHasBeenSet(false)
+ConfigRuleComplianceSummaryFilters::ConfigRuleComplianceSummaryFilters(JsonView jsonValue)
+  : ConfigRuleComplianceSummaryFilters()
 {
   *this = jsonValue;
 }

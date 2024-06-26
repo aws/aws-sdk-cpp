@@ -24,9 +24,8 @@ URL::URL() :
 {
 }
 
-URL::URL(JsonView jsonValue) : 
-    m_hyperlinkNameHasBeenSet(false),
-    m_linkHasBeenSet(false)
+URL::URL(JsonView jsonValue)
+  : URL()
 {
   *this = jsonValue;
 }

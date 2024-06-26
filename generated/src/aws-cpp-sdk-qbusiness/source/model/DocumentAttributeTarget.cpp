@@ -26,11 +26,8 @@ DocumentAttributeTarget::DocumentAttributeTarget() :
 {
 }
 
-DocumentAttributeTarget::DocumentAttributeTarget(JsonView jsonValue) : 
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_attributeValueOperator(AttributeValueOperator::NOT_SET),
-    m_attributeValueOperatorHasBeenSet(false)
+DocumentAttributeTarget::DocumentAttributeTarget(JsonView jsonValue)
+  : DocumentAttributeTarget()
 {
   *this = jsonValue;
 }

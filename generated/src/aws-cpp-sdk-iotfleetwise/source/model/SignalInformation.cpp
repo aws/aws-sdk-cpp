@@ -27,12 +27,8 @@ SignalInformation::SignalInformation() :
 {
 }
 
-SignalInformation::SignalInformation(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_maxSampleCount(0),
-    m_maxSampleCountHasBeenSet(false),
-    m_minimumSamplingIntervalMs(0),
-    m_minimumSamplingIntervalMsHasBeenSet(false)
+SignalInformation::SignalInformation(JsonView jsonValue)
+  : SignalInformation()
 {
   *this = jsonValue;
 }

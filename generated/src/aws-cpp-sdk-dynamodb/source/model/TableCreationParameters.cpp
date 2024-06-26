@@ -31,16 +31,8 @@ TableCreationParameters::TableCreationParameters() :
 {
 }
 
-TableCreationParameters::TableCreationParameters(JsonView jsonValue) : 
-    m_tableNameHasBeenSet(false),
-    m_attributeDefinitionsHasBeenSet(false),
-    m_keySchemaHasBeenSet(false),
-    m_billingMode(BillingMode::NOT_SET),
-    m_billingModeHasBeenSet(false),
-    m_provisionedThroughputHasBeenSet(false),
-    m_onDemandThroughputHasBeenSet(false),
-    m_sSESpecificationHasBeenSet(false),
-    m_globalSecondaryIndexesHasBeenSet(false)
+TableCreationParameters::TableCreationParameters(JsonView jsonValue)
+  : TableCreationParameters()
 {
   *this = jsonValue;
 }

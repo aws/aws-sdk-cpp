@@ -31,16 +31,8 @@ FeatureMetadata::FeatureMetadata() :
 {
 }
 
-FeatureMetadata::FeatureMetadata(JsonView jsonValue) : 
-    m_featureGroupArnHasBeenSet(false),
-    m_featureGroupNameHasBeenSet(false),
-    m_featureNameHasBeenSet(false),
-    m_featureType(FeatureType::NOT_SET),
-    m_featureTypeHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_parametersHasBeenSet(false)
+FeatureMetadata::FeatureMetadata(JsonView jsonValue)
+  : FeatureMetadata()
 {
   *this = jsonValue;
 }

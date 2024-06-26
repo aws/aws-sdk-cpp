@@ -23,8 +23,8 @@ AudioWatermarkSettings::AudioWatermarkSettings() :
 {
 }
 
-AudioWatermarkSettings::AudioWatermarkSettings(JsonView jsonValue) : 
-    m_nielsenWatermarksSettingsHasBeenSet(false)
+AudioWatermarkSettings::AudioWatermarkSettings(JsonView jsonValue)
+  : AudioWatermarkSettings()
 {
   *this = jsonValue;
 }

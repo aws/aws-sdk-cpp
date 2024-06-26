@@ -26,11 +26,8 @@ ConfigurationObject::ConfigurationObject() :
 {
 }
 
-ConfigurationObject::ConfigurationObject(JsonView jsonValue) : 
-    m_defaultValueHasBeenSet(false),
-    m_allowedValuesHasBeenSet(false),
-    m_minValueHasBeenSet(false),
-    m_maxValueHasBeenSet(false)
+ConfigurationObject::ConfigurationObject(JsonView jsonValue)
+  : ConfigurationObject()
 {
   *this = jsonValue;
 }

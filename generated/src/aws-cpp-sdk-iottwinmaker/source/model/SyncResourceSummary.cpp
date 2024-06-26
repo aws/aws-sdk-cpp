@@ -28,13 +28,8 @@ SyncResourceSummary::SyncResourceSummary() :
 {
 }
 
-SyncResourceSummary::SyncResourceSummary(JsonView jsonValue) : 
-    m_resourceType(SyncResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_externalIdHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_updateDateTimeHasBeenSet(false)
+SyncResourceSummary::SyncResourceSummary(JsonView jsonValue)
+  : SyncResourceSummary()
 {
   *this = jsonValue;
 }

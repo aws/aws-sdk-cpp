@@ -35,20 +35,8 @@ ElasticsearchDestinationUpdate::ElasticsearchDestinationUpdate() :
 {
 }
 
-ElasticsearchDestinationUpdate::ElasticsearchDestinationUpdate(JsonView jsonValue) : 
-    m_roleARNHasBeenSet(false),
-    m_domainARNHasBeenSet(false),
-    m_clusterEndpointHasBeenSet(false),
-    m_indexNameHasBeenSet(false),
-    m_typeNameHasBeenSet(false),
-    m_indexRotationPeriod(ElasticsearchIndexRotationPeriod::NOT_SET),
-    m_indexRotationPeriodHasBeenSet(false),
-    m_bufferingHintsHasBeenSet(false),
-    m_retryOptionsHasBeenSet(false),
-    m_s3UpdateHasBeenSet(false),
-    m_processingConfigurationHasBeenSet(false),
-    m_cloudWatchLoggingOptionsHasBeenSet(false),
-    m_documentIdOptionsHasBeenSet(false)
+ElasticsearchDestinationUpdate::ElasticsearchDestinationUpdate(JsonView jsonValue)
+  : ElasticsearchDestinationUpdate()
 {
   *this = jsonValue;
 }

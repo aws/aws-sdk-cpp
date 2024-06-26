@@ -24,9 +24,8 @@ PolicyLengthExceededException::PolicyLengthExceededException() :
 {
 }
 
-PolicyLengthExceededException::PolicyLengthExceededException(JsonView jsonValue) : 
-    m_typeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+PolicyLengthExceededException::PolicyLengthExceededException(JsonView jsonValue)
+  : PolicyLengthExceededException()
 {
   *this = jsonValue;
 }

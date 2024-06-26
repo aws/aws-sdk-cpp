@@ -24,9 +24,8 @@ ContactSearchSummaryQueueInfo::ContactSearchSummaryQueueInfo() :
 {
 }
 
-ContactSearchSummaryQueueInfo::ContactSearchSummaryQueueInfo(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_enqueueTimestampHasBeenSet(false)
+ContactSearchSummaryQueueInfo::ContactSearchSummaryQueueInfo(JsonView jsonValue)
+  : ContactSearchSummaryQueueInfo()
 {
   *this = jsonValue;
 }

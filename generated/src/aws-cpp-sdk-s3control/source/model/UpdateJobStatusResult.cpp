@@ -21,8 +21,8 @@ UpdateJobStatusResult::UpdateJobStatusResult() :
 {
 }
 
-UpdateJobStatusResult::UpdateJobStatusResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_status(JobStatus::NOT_SET)
+UpdateJobStatusResult::UpdateJobStatusResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : UpdateJobStatusResult()
 {
   *this = result;
 }

@@ -22,8 +22,8 @@ DescribeAssetModelResult::DescribeAssetModelResult() :
 {
 }
 
-DescribeAssetModelResult::DescribeAssetModelResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_assetModelType(AssetModelType::NOT_SET)
+DescribeAssetModelResult::DescribeAssetModelResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeAssetModelResult()
 {
   *this = result;
 }

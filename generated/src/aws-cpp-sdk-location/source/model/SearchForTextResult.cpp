@@ -28,13 +28,8 @@ SearchForTextResult::SearchForTextResult() :
 {
 }
 
-SearchForTextResult::SearchForTextResult(JsonView jsonValue) : 
-    m_placeHasBeenSet(false),
-    m_distance(0.0),
-    m_distanceHasBeenSet(false),
-    m_relevance(0.0),
-    m_relevanceHasBeenSet(false),
-    m_placeIdHasBeenSet(false)
+SearchForTextResult::SearchForTextResult(JsonView jsonValue)
+  : SearchForTextResult()
 {
   *this = jsonValue;
 }

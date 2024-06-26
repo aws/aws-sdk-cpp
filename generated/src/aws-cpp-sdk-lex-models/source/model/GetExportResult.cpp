@@ -24,10 +24,8 @@ GetExportResult::GetExportResult() :
 {
 }
 
-GetExportResult::GetExportResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_resourceType(ResourceType::NOT_SET),
-    m_exportType(ExportType::NOT_SET),
-    m_exportStatus(ExportStatus::NOT_SET)
+GetExportResult::GetExportResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetExportResult()
 {
   *this = result;
 }

@@ -28,11 +28,8 @@ ElasticInferenceAcceleratorAssociation::ElasticInferenceAcceleratorAssociation()
 {
 }
 
-ElasticInferenceAcceleratorAssociation::ElasticInferenceAcceleratorAssociation(const XmlNode& xmlNode) : 
-    m_elasticInferenceAcceleratorArnHasBeenSet(false),
-    m_elasticInferenceAcceleratorAssociationIdHasBeenSet(false),
-    m_elasticInferenceAcceleratorAssociationStateHasBeenSet(false),
-    m_elasticInferenceAcceleratorAssociationTimeHasBeenSet(false)
+ElasticInferenceAcceleratorAssociation::ElasticInferenceAcceleratorAssociation(const XmlNode& xmlNode)
+  : ElasticInferenceAcceleratorAssociation()
 {
   *this = xmlNode;
 }

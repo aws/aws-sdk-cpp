@@ -26,11 +26,8 @@ AttachmentOutput::AttachmentOutput() :
 {
 }
 
-AttachmentOutput::AttachmentOutput(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_status(AttachmentStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_errorHasBeenSet(false)
+AttachmentOutput::AttachmentOutput(JsonView jsonValue)
+  : AttachmentOutput()
 {
   *this = jsonValue;
 }

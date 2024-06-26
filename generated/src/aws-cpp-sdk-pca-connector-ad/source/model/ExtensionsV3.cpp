@@ -24,9 +24,8 @@ ExtensionsV3::ExtensionsV3() :
 {
 }
 
-ExtensionsV3::ExtensionsV3(JsonView jsonValue) : 
-    m_applicationPoliciesHasBeenSet(false),
-    m_keyUsageHasBeenSet(false)
+ExtensionsV3::ExtensionsV3(JsonView jsonValue)
+  : ExtensionsV3()
 {
   *this = jsonValue;
 }

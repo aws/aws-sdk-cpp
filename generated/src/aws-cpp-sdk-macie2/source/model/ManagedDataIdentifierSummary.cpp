@@ -25,10 +25,8 @@ ManagedDataIdentifierSummary::ManagedDataIdentifierSummary() :
 {
 }
 
-ManagedDataIdentifierSummary::ManagedDataIdentifierSummary(JsonView jsonValue) : 
-    m_category(SensitiveDataItemCategory::NOT_SET),
-    m_categoryHasBeenSet(false),
-    m_idHasBeenSet(false)
+ManagedDataIdentifierSummary::ManagedDataIdentifierSummary(JsonView jsonValue)
+  : ManagedDataIdentifierSummary()
 {
   *this = jsonValue;
 }

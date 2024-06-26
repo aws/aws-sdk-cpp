@@ -25,10 +25,8 @@ AnalysisRuleCustom::AnalysisRuleCustom() :
 {
 }
 
-AnalysisRuleCustom::AnalysisRuleCustom(JsonView jsonValue) : 
-    m_allowedAnalysesHasBeenSet(false),
-    m_allowedAnalysisProvidersHasBeenSet(false),
-    m_differentialPrivacyHasBeenSet(false)
+AnalysisRuleCustom::AnalysisRuleCustom(JsonView jsonValue)
+  : AnalysisRuleCustom()
 {
   *this = jsonValue;
 }

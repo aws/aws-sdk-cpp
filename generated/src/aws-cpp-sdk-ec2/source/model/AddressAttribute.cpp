@@ -28,11 +28,8 @@ AddressAttribute::AddressAttribute() :
 {
 }
 
-AddressAttribute::AddressAttribute(const XmlNode& xmlNode) : 
-    m_publicIpHasBeenSet(false),
-    m_allocationIdHasBeenSet(false),
-    m_ptrRecordHasBeenSet(false),
-    m_ptrRecordUpdateHasBeenSet(false)
+AddressAttribute::AddressAttribute(const XmlNode& xmlNode)
+  : AddressAttribute()
 {
   *this = xmlNode;
 }

@@ -21,8 +21,8 @@ ListHealthChecksResult::ListHealthChecksResult() :
 {
 }
 
-ListHealthChecksResult::ListHealthChecksResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_isTruncated(false)
+ListHealthChecksResult::ListHealthChecksResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : ListHealthChecksResult()
 {
   *this = result;
 }

@@ -40,25 +40,8 @@ RdsReservedInstancesConfiguration::RdsReservedInstancesConfiguration() :
 {
 }
 
-RdsReservedInstancesConfiguration::RdsReservedInstancesConfiguration(JsonView jsonValue) : 
-    m_accountScopeHasBeenSet(false),
-    m_serviceHasBeenSet(false),
-    m_normalizedUnitsToPurchaseHasBeenSet(false),
-    m_termHasBeenSet(false),
-    m_paymentOptionHasBeenSet(false),
-    m_numberOfInstancesToPurchaseHasBeenSet(false),
-    m_instanceFamilyHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_reservedInstancesRegionHasBeenSet(false),
-    m_sizeFlexEligible(false),
-    m_sizeFlexEligibleHasBeenSet(false),
-    m_currentGenerationHasBeenSet(false),
-    m_upfrontCostHasBeenSet(false),
-    m_monthlyRecurringCostHasBeenSet(false),
-    m_licenseModelHasBeenSet(false),
-    m_databaseEditionHasBeenSet(false),
-    m_databaseEngineHasBeenSet(false),
-    m_deploymentOptionHasBeenSet(false)
+RdsReservedInstancesConfiguration::RdsReservedInstancesConfiguration(JsonView jsonValue)
+  : RdsReservedInstancesConfiguration()
 {
   *this = jsonValue;
 }

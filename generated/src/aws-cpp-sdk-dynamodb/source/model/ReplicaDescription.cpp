@@ -33,18 +33,8 @@ ReplicaDescription::ReplicaDescription() :
 {
 }
 
-ReplicaDescription::ReplicaDescription(JsonView jsonValue) : 
-    m_regionNameHasBeenSet(false),
-    m_replicaStatus(ReplicaStatus::NOT_SET),
-    m_replicaStatusHasBeenSet(false),
-    m_replicaStatusDescriptionHasBeenSet(false),
-    m_replicaStatusPercentProgressHasBeenSet(false),
-    m_kMSMasterKeyIdHasBeenSet(false),
-    m_provisionedThroughputOverrideHasBeenSet(false),
-    m_onDemandThroughputOverrideHasBeenSet(false),
-    m_globalSecondaryIndexesHasBeenSet(false),
-    m_replicaInaccessibleDateTimeHasBeenSet(false),
-    m_replicaTableClassSummaryHasBeenSet(false)
+ReplicaDescription::ReplicaDescription(JsonView jsonValue)
+  : ReplicaDescription()
 {
   *this = jsonValue;
 }

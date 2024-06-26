@@ -26,11 +26,8 @@ PivotTablePaginatedReportOptions::PivotTablePaginatedReportOptions() :
 {
 }
 
-PivotTablePaginatedReportOptions::PivotTablePaginatedReportOptions(JsonView jsonValue) : 
-    m_verticalOverflowVisibility(Visibility::NOT_SET),
-    m_verticalOverflowVisibilityHasBeenSet(false),
-    m_overflowColumnHeaderVisibility(Visibility::NOT_SET),
-    m_overflowColumnHeaderVisibilityHasBeenSet(false)
+PivotTablePaginatedReportOptions::PivotTablePaginatedReportOptions(JsonView jsonValue)
+  : PivotTablePaginatedReportOptions()
 {
   *this = jsonValue;
 }

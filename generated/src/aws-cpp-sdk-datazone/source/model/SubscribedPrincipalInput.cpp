@@ -23,8 +23,8 @@ SubscribedPrincipalInput::SubscribedPrincipalInput() :
 {
 }
 
-SubscribedPrincipalInput::SubscribedPrincipalInput(JsonView jsonValue) : 
-    m_projectHasBeenSet(false)
+SubscribedPrincipalInput::SubscribedPrincipalInput(JsonView jsonValue)
+  : SubscribedPrincipalInput()
 {
   *this = jsonValue;
 }

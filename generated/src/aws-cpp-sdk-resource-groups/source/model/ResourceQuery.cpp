@@ -25,10 +25,8 @@ ResourceQuery::ResourceQuery() :
 {
 }
 
-ResourceQuery::ResourceQuery(JsonView jsonValue) : 
-    m_type(QueryType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_queryHasBeenSet(false)
+ResourceQuery::ResourceQuery(JsonView jsonValue)
+  : ResourceQuery()
 {
   *this = jsonValue;
 }

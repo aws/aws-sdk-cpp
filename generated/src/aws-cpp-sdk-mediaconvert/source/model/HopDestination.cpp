@@ -27,12 +27,8 @@ HopDestination::HopDestination() :
 {
 }
 
-HopDestination::HopDestination(JsonView jsonValue) : 
-    m_priority(0),
-    m_priorityHasBeenSet(false),
-    m_queueHasBeenSet(false),
-    m_waitMinutes(0),
-    m_waitMinutesHasBeenSet(false)
+HopDestination::HopDestination(JsonView jsonValue)
+  : HopDestination()
 {
   *this = jsonValue;
 }

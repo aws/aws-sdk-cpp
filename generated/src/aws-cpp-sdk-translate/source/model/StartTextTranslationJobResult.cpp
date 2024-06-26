@@ -22,8 +22,8 @@ StartTextTranslationJobResult::StartTextTranslationJobResult() :
 {
 }
 
-StartTextTranslationJobResult::StartTextTranslationJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_jobStatus(JobStatus::NOT_SET)
+StartTextTranslationJobResult::StartTextTranslationJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : StartTextTranslationJobResult()
 {
   *this = result;
 }

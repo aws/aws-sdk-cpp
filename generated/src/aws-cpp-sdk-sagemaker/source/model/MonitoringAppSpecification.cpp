@@ -27,12 +27,8 @@ MonitoringAppSpecification::MonitoringAppSpecification() :
 {
 }
 
-MonitoringAppSpecification::MonitoringAppSpecification(JsonView jsonValue) : 
-    m_imageUriHasBeenSet(false),
-    m_containerEntrypointHasBeenSet(false),
-    m_containerArgumentsHasBeenSet(false),
-    m_recordPreprocessorSourceUriHasBeenSet(false),
-    m_postAnalyticsProcessorSourceUriHasBeenSet(false)
+MonitoringAppSpecification::MonitoringAppSpecification(JsonView jsonValue)
+  : MonitoringAppSpecification()
 {
   *this = jsonValue;
 }

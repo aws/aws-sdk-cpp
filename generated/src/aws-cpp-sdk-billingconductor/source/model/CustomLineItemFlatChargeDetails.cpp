@@ -24,9 +24,8 @@ CustomLineItemFlatChargeDetails::CustomLineItemFlatChargeDetails() :
 {
 }
 
-CustomLineItemFlatChargeDetails::CustomLineItemFlatChargeDetails(JsonView jsonValue) : 
-    m_chargeValue(0.0),
-    m_chargeValueHasBeenSet(false)
+CustomLineItemFlatChargeDetails::CustomLineItemFlatChargeDetails(JsonView jsonValue)
+  : CustomLineItemFlatChargeDetails()
 {
   *this = jsonValue;
 }

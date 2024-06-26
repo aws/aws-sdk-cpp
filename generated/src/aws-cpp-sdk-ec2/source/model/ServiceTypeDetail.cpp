@@ -26,9 +26,8 @@ ServiceTypeDetail::ServiceTypeDetail() :
 {
 }
 
-ServiceTypeDetail::ServiceTypeDetail(const XmlNode& xmlNode) : 
-    m_serviceType(ServiceType::NOT_SET),
-    m_serviceTypeHasBeenSet(false)
+ServiceTypeDetail::ServiceTypeDetail(const XmlNode& xmlNode)
+  : ServiceTypeDetail()
 {
   *this = xmlNode;
 }

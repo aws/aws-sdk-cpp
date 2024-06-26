@@ -41,26 +41,8 @@ KxDataviewListEntry::KxDataviewListEntry() :
 {
 }
 
-KxDataviewListEntry::KxDataviewListEntry(JsonView jsonValue) : 
-    m_environmentIdHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_dataviewNameHasBeenSet(false),
-    m_azMode(KxAzMode::NOT_SET),
-    m_azModeHasBeenSet(false),
-    m_availabilityZoneIdHasBeenSet(false),
-    m_changesetIdHasBeenSet(false),
-    m_segmentConfigurationsHasBeenSet(false),
-    m_activeVersionsHasBeenSet(false),
-    m_status(KxDataviewStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_autoUpdate(false),
-    m_autoUpdateHasBeenSet(false),
-    m_readWrite(false),
-    m_readWriteHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false),
-    m_lastModifiedTimestampHasBeenSet(false),
-    m_statusReasonHasBeenSet(false)
+KxDataviewListEntry::KxDataviewListEntry(JsonView jsonValue)
+  : KxDataviewListEntry()
 {
   *this = jsonValue;
 }

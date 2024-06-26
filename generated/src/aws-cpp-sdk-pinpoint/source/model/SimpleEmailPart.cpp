@@ -24,9 +24,8 @@ SimpleEmailPart::SimpleEmailPart() :
 {
 }
 
-SimpleEmailPart::SimpleEmailPart(JsonView jsonValue) : 
-    m_charsetHasBeenSet(false),
-    m_dataHasBeenSet(false)
+SimpleEmailPart::SimpleEmailPart(JsonView jsonValue)
+  : SimpleEmailPart()
 {
   *this = jsonValue;
 }

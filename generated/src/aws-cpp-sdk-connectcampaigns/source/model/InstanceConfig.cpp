@@ -25,10 +25,8 @@ InstanceConfig::InstanceConfig() :
 {
 }
 
-InstanceConfig::InstanceConfig(JsonView jsonValue) : 
-    m_connectInstanceIdHasBeenSet(false),
-    m_serviceLinkedRoleArnHasBeenSet(false),
-    m_encryptionConfigHasBeenSet(false)
+InstanceConfig::InstanceConfig(JsonView jsonValue)
+  : InstanceConfig()
 {
   *this = jsonValue;
 }

@@ -29,14 +29,8 @@ IpPermission::IpPermission() :
 {
 }
 
-IpPermission::IpPermission(JsonView jsonValue) : 
-    m_fromPort(0),
-    m_fromPortHasBeenSet(false),
-    m_toPort(0),
-    m_toPortHasBeenSet(false),
-    m_ipRangeHasBeenSet(false),
-    m_protocol(IpProtocol::NOT_SET),
-    m_protocolHasBeenSet(false)
+IpPermission::IpPermission(JsonView jsonValue)
+  : IpPermission()
 {
   *this = jsonValue;
 }

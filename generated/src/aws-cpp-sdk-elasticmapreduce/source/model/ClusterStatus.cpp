@@ -27,12 +27,8 @@ ClusterStatus::ClusterStatus() :
 {
 }
 
-ClusterStatus::ClusterStatus(JsonView jsonValue) : 
-    m_state(ClusterState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_stateChangeReasonHasBeenSet(false),
-    m_timelineHasBeenSet(false),
-    m_errorDetailsHasBeenSet(false)
+ClusterStatus::ClusterStatus(JsonView jsonValue)
+  : ClusterStatus()
 {
   *this = jsonValue;
 }

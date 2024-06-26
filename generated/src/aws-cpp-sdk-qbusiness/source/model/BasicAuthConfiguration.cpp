@@ -24,9 +24,8 @@ BasicAuthConfiguration::BasicAuthConfiguration() :
 {
 }
 
-BasicAuthConfiguration::BasicAuthConfiguration(JsonView jsonValue) : 
-    m_secretArnHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
+BasicAuthConfiguration::BasicAuthConfiguration(JsonView jsonValue)
+  : BasicAuthConfiguration()
 {
   *this = jsonValue;
 }

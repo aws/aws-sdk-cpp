@@ -25,10 +25,8 @@ InputLocation::InputLocation() :
 {
 }
 
-InputLocation::InputLocation(JsonView jsonValue) : 
-    m_passwordParamHasBeenSet(false),
-    m_uriHasBeenSet(false),
-    m_usernameHasBeenSet(false)
+InputLocation::InputLocation(JsonView jsonValue)
+  : InputLocation()
 {
   *this = jsonValue;
 }

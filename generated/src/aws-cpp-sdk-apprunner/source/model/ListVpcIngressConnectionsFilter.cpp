@@ -24,9 +24,8 @@ ListVpcIngressConnectionsFilter::ListVpcIngressConnectionsFilter() :
 {
 }
 
-ListVpcIngressConnectionsFilter::ListVpcIngressConnectionsFilter(JsonView jsonValue) : 
-    m_serviceArnHasBeenSet(false),
-    m_vpcEndpointIdHasBeenSet(false)
+ListVpcIngressConnectionsFilter::ListVpcIngressConnectionsFilter(JsonView jsonValue)
+  : ListVpcIngressConnectionsFilter()
 {
   *this = jsonValue;
 }

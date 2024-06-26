@@ -30,13 +30,8 @@ TransitGatewayPolicyRule::TransitGatewayPolicyRule() :
 {
 }
 
-TransitGatewayPolicyRule::TransitGatewayPolicyRule(const XmlNode& xmlNode) : 
-    m_sourceCidrBlockHasBeenSet(false),
-    m_sourcePortRangeHasBeenSet(false),
-    m_destinationCidrBlockHasBeenSet(false),
-    m_destinationPortRangeHasBeenSet(false),
-    m_protocolHasBeenSet(false),
-    m_metaDataHasBeenSet(false)
+TransitGatewayPolicyRule::TransitGatewayPolicyRule(const XmlNode& xmlNode)
+  : TransitGatewayPolicyRule()
 {
   *this = xmlNode;
 }

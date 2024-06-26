@@ -23,8 +23,8 @@ ReshardingStatus::ReshardingStatus() :
 {
 }
 
-ReshardingStatus::ReshardingStatus(JsonView jsonValue) : 
-    m_slotMigrationHasBeenSet(false)
+ReshardingStatus::ReshardingStatus(JsonView jsonValue)
+  : ReshardingStatus()
 {
   *this = jsonValue;
 }

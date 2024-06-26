@@ -24,9 +24,8 @@ AgentAliasRoutingConfigurationListItem::AgentAliasRoutingConfigurationListItem()
 {
 }
 
-AgentAliasRoutingConfigurationListItem::AgentAliasRoutingConfigurationListItem(JsonView jsonValue) : 
-    m_agentVersionHasBeenSet(false),
-    m_provisionedThroughputHasBeenSet(false)
+AgentAliasRoutingConfigurationListItem::AgentAliasRoutingConfigurationListItem(JsonView jsonValue)
+  : AgentAliasRoutingConfigurationListItem()
 {
   *this = jsonValue;
 }

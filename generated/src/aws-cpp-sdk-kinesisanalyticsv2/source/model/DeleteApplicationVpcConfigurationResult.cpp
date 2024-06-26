@@ -22,8 +22,8 @@ DeleteApplicationVpcConfigurationResult::DeleteApplicationVpcConfigurationResult
 {
 }
 
-DeleteApplicationVpcConfigurationResult::DeleteApplicationVpcConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_applicationVersionId(0)
+DeleteApplicationVpcConfigurationResult::DeleteApplicationVpcConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeleteApplicationVpcConfigurationResult()
 {
   *this = result;
 }

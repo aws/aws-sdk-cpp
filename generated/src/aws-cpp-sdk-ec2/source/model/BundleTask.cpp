@@ -33,16 +33,8 @@ BundleTask::BundleTask() :
 {
 }
 
-BundleTask::BundleTask(const XmlNode& xmlNode) : 
-    m_bundleIdHasBeenSet(false),
-    m_bundleTaskErrorHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_progressHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_state(BundleTaskState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_storageHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
+BundleTask::BundleTask(const XmlNode& xmlNode)
+  : BundleTask()
 {
   *this = xmlNode;
 }

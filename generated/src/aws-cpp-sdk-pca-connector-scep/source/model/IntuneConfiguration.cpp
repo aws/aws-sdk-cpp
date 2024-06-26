@@ -24,9 +24,8 @@ IntuneConfiguration::IntuneConfiguration() :
 {
 }
 
-IntuneConfiguration::IntuneConfiguration(JsonView jsonValue) : 
-    m_azureApplicationIdHasBeenSet(false),
-    m_domainHasBeenSet(false)
+IntuneConfiguration::IntuneConfiguration(JsonView jsonValue)
+  : IntuneConfiguration()
 {
   *this = jsonValue;
 }

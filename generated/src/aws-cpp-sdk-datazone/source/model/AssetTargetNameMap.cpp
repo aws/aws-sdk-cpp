@@ -24,9 +24,8 @@ AssetTargetNameMap::AssetTargetNameMap() :
 {
 }
 
-AssetTargetNameMap::AssetTargetNameMap(JsonView jsonValue) : 
-    m_assetIdHasBeenSet(false),
-    m_targetNameHasBeenSet(false)
+AssetTargetNameMap::AssetTargetNameMap(JsonView jsonValue)
+  : AssetTargetNameMap()
 {
   *this = jsonValue;
 }

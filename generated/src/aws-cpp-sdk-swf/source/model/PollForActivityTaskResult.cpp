@@ -22,8 +22,8 @@ PollForActivityTaskResult::PollForActivityTaskResult() :
 {
 }
 
-PollForActivityTaskResult::PollForActivityTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_startedEventId(0)
+PollForActivityTaskResult::PollForActivityTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : PollForActivityTaskResult()
 {
   *this = result;
 }

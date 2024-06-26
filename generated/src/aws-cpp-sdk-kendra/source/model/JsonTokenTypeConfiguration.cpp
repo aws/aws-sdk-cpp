@@ -24,9 +24,8 @@ JsonTokenTypeConfiguration::JsonTokenTypeConfiguration() :
 {
 }
 
-JsonTokenTypeConfiguration::JsonTokenTypeConfiguration(JsonView jsonValue) : 
-    m_userNameAttributeFieldHasBeenSet(false),
-    m_groupAttributeFieldHasBeenSet(false)
+JsonTokenTypeConfiguration::JsonTokenTypeConfiguration(JsonView jsonValue)
+  : JsonTokenTypeConfiguration()
 {
   *this = jsonValue;
 }

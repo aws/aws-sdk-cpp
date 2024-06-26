@@ -25,10 +25,8 @@ TrialComponentParameterValue::TrialComponentParameterValue() :
 {
 }
 
-TrialComponentParameterValue::TrialComponentParameterValue(JsonView jsonValue) : 
-    m_stringValueHasBeenSet(false),
-    m_numberValue(0.0),
-    m_numberValueHasBeenSet(false)
+TrialComponentParameterValue::TrialComponentParameterValue(JsonView jsonValue)
+  : TrialComponentParameterValue()
 {
   *this = jsonValue;
 }

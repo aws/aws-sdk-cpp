@@ -30,15 +30,8 @@ RestoreTestingSelectionForCreate::RestoreTestingSelectionForCreate() :
 {
 }
 
-RestoreTestingSelectionForCreate::RestoreTestingSelectionForCreate(JsonView jsonValue) : 
-    m_iamRoleArnHasBeenSet(false),
-    m_protectedResourceArnsHasBeenSet(false),
-    m_protectedResourceConditionsHasBeenSet(false),
-    m_protectedResourceTypeHasBeenSet(false),
-    m_restoreMetadataOverridesHasBeenSet(false),
-    m_restoreTestingSelectionNameHasBeenSet(false),
-    m_validationWindowHours(0),
-    m_validationWindowHoursHasBeenSet(false)
+RestoreTestingSelectionForCreate::RestoreTestingSelectionForCreate(JsonView jsonValue)
+  : RestoreTestingSelectionForCreate()
 {
   *this = jsonValue;
 }

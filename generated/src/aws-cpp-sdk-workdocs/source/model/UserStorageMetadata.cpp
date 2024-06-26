@@ -25,10 +25,8 @@ UserStorageMetadata::UserStorageMetadata() :
 {
 }
 
-UserStorageMetadata::UserStorageMetadata(JsonView jsonValue) : 
-    m_storageUtilizedInBytes(0),
-    m_storageUtilizedInBytesHasBeenSet(false),
-    m_storageRuleHasBeenSet(false)
+UserStorageMetadata::UserStorageMetadata(JsonView jsonValue)
+  : UserStorageMetadata()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ LambdaFunction::LambdaFunction() :
 {
 }
 
-LambdaFunction::LambdaFunction(JsonView jsonValue) : 
-    m_configurationHasBeenSet(false),
-    m_costCalculationHasBeenSet(false)
+LambdaFunction::LambdaFunction(JsonView jsonValue)
+  : LambdaFunction()
 {
   *this = jsonValue;
 }

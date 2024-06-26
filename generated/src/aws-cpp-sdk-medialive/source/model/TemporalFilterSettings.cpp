@@ -26,11 +26,8 @@ TemporalFilterSettings::TemporalFilterSettings() :
 {
 }
 
-TemporalFilterSettings::TemporalFilterSettings(JsonView jsonValue) : 
-    m_postFilterSharpening(TemporalFilterPostFilterSharpening::NOT_SET),
-    m_postFilterSharpeningHasBeenSet(false),
-    m_strength(TemporalFilterStrength::NOT_SET),
-    m_strengthHasBeenSet(false)
+TemporalFilterSettings::TemporalFilterSettings(JsonView jsonValue)
+  : TemporalFilterSettings()
 {
   *this = jsonValue;
 }

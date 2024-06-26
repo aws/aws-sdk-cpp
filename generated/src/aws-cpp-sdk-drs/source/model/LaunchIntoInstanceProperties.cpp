@@ -23,8 +23,8 @@ LaunchIntoInstanceProperties::LaunchIntoInstanceProperties() :
 {
 }
 
-LaunchIntoInstanceProperties::LaunchIntoInstanceProperties(JsonView jsonValue) : 
-    m_launchIntoEC2InstanceIDHasBeenSet(false)
+LaunchIntoInstanceProperties::LaunchIntoInstanceProperties(JsonView jsonValue)
+  : LaunchIntoInstanceProperties()
 {
   *this = jsonValue;
 }

@@ -26,9 +26,8 @@ Phase1DHGroupNumbersListValue::Phase1DHGroupNumbersListValue() :
 {
 }
 
-Phase1DHGroupNumbersListValue::Phase1DHGroupNumbersListValue(const XmlNode& xmlNode) : 
-    m_value(0),
-    m_valueHasBeenSet(false)
+Phase1DHGroupNumbersListValue::Phase1DHGroupNumbersListValue(const XmlNode& xmlNode)
+  : Phase1DHGroupNumbersListValue()
 {
   *this = xmlNode;
 }

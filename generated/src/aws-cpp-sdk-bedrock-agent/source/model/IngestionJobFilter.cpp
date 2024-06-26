@@ -27,12 +27,8 @@ IngestionJobFilter::IngestionJobFilter() :
 {
 }
 
-IngestionJobFilter::IngestionJobFilter(JsonView jsonValue) : 
-    m_attribute(IngestionJobFilterAttribute::NOT_SET),
-    m_attributeHasBeenSet(false),
-    m_operator(IngestionJobFilterOperator::NOT_SET),
-    m_operatorHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+IngestionJobFilter::IngestionJobFilter(JsonView jsonValue)
+  : IngestionJobFilter()
 {
   *this = jsonValue;
 }

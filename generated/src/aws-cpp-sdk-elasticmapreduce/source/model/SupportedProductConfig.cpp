@@ -24,9 +24,8 @@ SupportedProductConfig::SupportedProductConfig() :
 {
 }
 
-SupportedProductConfig::SupportedProductConfig(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_argsHasBeenSet(false)
+SupportedProductConfig::SupportedProductConfig(JsonView jsonValue)
+  : SupportedProductConfig()
 {
   *this = jsonValue;
 }

@@ -54,37 +54,8 @@ Subnet::Subnet() :
 {
 }
 
-Subnet::Subnet(const XmlNode& xmlNode) : 
-    m_availabilityZoneHasBeenSet(false),
-    m_availabilityZoneIdHasBeenSet(false),
-    m_availableIpAddressCount(0),
-    m_availableIpAddressCountHasBeenSet(false),
-    m_cidrBlockHasBeenSet(false),
-    m_defaultForAz(false),
-    m_defaultForAzHasBeenSet(false),
-    m_enableLniAtDeviceIndex(0),
-    m_enableLniAtDeviceIndexHasBeenSet(false),
-    m_mapPublicIpOnLaunch(false),
-    m_mapPublicIpOnLaunchHasBeenSet(false),
-    m_mapCustomerOwnedIpOnLaunch(false),
-    m_mapCustomerOwnedIpOnLaunchHasBeenSet(false),
-    m_customerOwnedIpv4PoolHasBeenSet(false),
-    m_state(SubnetState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_subnetIdHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_assignIpv6AddressOnCreation(false),
-    m_assignIpv6AddressOnCreationHasBeenSet(false),
-    m_ipv6CidrBlockAssociationSetHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_subnetArnHasBeenSet(false),
-    m_outpostArnHasBeenSet(false),
-    m_enableDns64(false),
-    m_enableDns64HasBeenSet(false),
-    m_ipv6Native(false),
-    m_ipv6NativeHasBeenSet(false),
-    m_privateDnsNameOptionsOnLaunchHasBeenSet(false)
+Subnet::Subnet(const XmlNode& xmlNode)
+  : Subnet()
 {
   *this = xmlNode;
 }

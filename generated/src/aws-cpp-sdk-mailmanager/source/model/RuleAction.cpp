@@ -30,15 +30,8 @@ RuleAction::RuleAction() :
 {
 }
 
-RuleAction::RuleAction(JsonView jsonValue) : 
-    m_addHeaderHasBeenSet(false),
-    m_archiveHasBeenSet(false),
-    m_deliverToMailboxHasBeenSet(false),
-    m_dropHasBeenSet(false),
-    m_relayHasBeenSet(false),
-    m_replaceRecipientHasBeenSet(false),
-    m_sendHasBeenSet(false),
-    m_writeToS3HasBeenSet(false)
+RuleAction::RuleAction(JsonView jsonValue)
+  : RuleAction()
 {
   *this = jsonValue;
 }

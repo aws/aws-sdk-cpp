@@ -25,10 +25,8 @@ IngressBooleanExpression::IngressBooleanExpression() :
 {
 }
 
-IngressBooleanExpression::IngressBooleanExpression(JsonView jsonValue) : 
-    m_evaluateHasBeenSet(false),
-    m_operator(IngressBooleanOperator::NOT_SET),
-    m_operatorHasBeenSet(false)
+IngressBooleanExpression::IngressBooleanExpression(JsonView jsonValue)
+  : IngressBooleanExpression()
 {
   *this = jsonValue;
 }

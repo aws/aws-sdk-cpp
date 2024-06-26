@@ -24,9 +24,8 @@ AssetBundleResourcePermissions::AssetBundleResourcePermissions() :
 {
 }
 
-AssetBundleResourcePermissions::AssetBundleResourcePermissions(JsonView jsonValue) : 
-    m_principalsHasBeenSet(false),
-    m_actionsHasBeenSet(false)
+AssetBundleResourcePermissions::AssetBundleResourcePermissions(JsonView jsonValue)
+  : AssetBundleResourcePermissions()
 {
   *this = jsonValue;
 }

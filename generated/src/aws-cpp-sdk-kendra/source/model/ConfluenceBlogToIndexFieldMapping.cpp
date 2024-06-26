@@ -26,11 +26,8 @@ ConfluenceBlogToIndexFieldMapping::ConfluenceBlogToIndexFieldMapping() :
 {
 }
 
-ConfluenceBlogToIndexFieldMapping::ConfluenceBlogToIndexFieldMapping(JsonView jsonValue) : 
-    m_dataSourceFieldName(ConfluenceBlogFieldName::NOT_SET),
-    m_dataSourceFieldNameHasBeenSet(false),
-    m_dateFieldFormatHasBeenSet(false),
-    m_indexFieldNameHasBeenSet(false)
+ConfluenceBlogToIndexFieldMapping::ConfluenceBlogToIndexFieldMapping(JsonView jsonValue)
+  : ConfluenceBlogToIndexFieldMapping()
 {
   *this = jsonValue;
 }

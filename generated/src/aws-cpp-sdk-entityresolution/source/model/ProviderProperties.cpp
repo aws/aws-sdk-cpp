@@ -25,10 +25,8 @@ ProviderProperties::ProviderProperties() :
 {
 }
 
-ProviderProperties::ProviderProperties(JsonView jsonValue) : 
-    m_intermediateSourceConfigurationHasBeenSet(false),
-    m_providerConfigurationHasBeenSet(false),
-    m_providerServiceArnHasBeenSet(false)
+ProviderProperties::ProviderProperties(JsonView jsonValue)
+  : ProviderProperties()
 {
   *this = jsonValue;
 }

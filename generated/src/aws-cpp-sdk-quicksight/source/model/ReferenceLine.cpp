@@ -27,12 +27,8 @@ ReferenceLine::ReferenceLine() :
 {
 }
 
-ReferenceLine::ReferenceLine(JsonView jsonValue) : 
-    m_status(WidgetStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_dataConfigurationHasBeenSet(false),
-    m_styleConfigurationHasBeenSet(false),
-    m_labelConfigurationHasBeenSet(false)
+ReferenceLine::ReferenceLine(JsonView jsonValue)
+  : ReferenceLine()
 {
   *this = jsonValue;
 }

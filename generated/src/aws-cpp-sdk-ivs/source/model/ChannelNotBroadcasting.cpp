@@ -23,8 +23,8 @@ ChannelNotBroadcasting::ChannelNotBroadcasting() :
 {
 }
 
-ChannelNotBroadcasting::ChannelNotBroadcasting(JsonView jsonValue) : 
-    m_exceptionMessageHasBeenSet(false)
+ChannelNotBroadcasting::ChannelNotBroadcasting(JsonView jsonValue)
+  : ChannelNotBroadcasting()
 {
   *this = jsonValue;
 }

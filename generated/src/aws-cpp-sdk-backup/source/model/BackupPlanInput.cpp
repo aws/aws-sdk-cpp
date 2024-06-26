@@ -25,10 +25,8 @@ BackupPlanInput::BackupPlanInput() :
 {
 }
 
-BackupPlanInput::BackupPlanInput(JsonView jsonValue) : 
-    m_backupPlanNameHasBeenSet(false),
-    m_rulesHasBeenSet(false),
-    m_advancedBackupSettingsHasBeenSet(false)
+BackupPlanInput::BackupPlanInput(JsonView jsonValue)
+  : BackupPlanInput()
 {
   *this = jsonValue;
 }

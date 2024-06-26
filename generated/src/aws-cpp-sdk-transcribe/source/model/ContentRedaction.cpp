@@ -27,12 +27,8 @@ ContentRedaction::ContentRedaction() :
 {
 }
 
-ContentRedaction::ContentRedaction(JsonView jsonValue) : 
-    m_redactionType(RedactionType::NOT_SET),
-    m_redactionTypeHasBeenSet(false),
-    m_redactionOutput(RedactionOutput::NOT_SET),
-    m_redactionOutputHasBeenSet(false),
-    m_piiEntityTypesHasBeenSet(false)
+ContentRedaction::ContentRedaction(JsonView jsonValue)
+  : ContentRedaction()
 {
   *this = jsonValue;
 }

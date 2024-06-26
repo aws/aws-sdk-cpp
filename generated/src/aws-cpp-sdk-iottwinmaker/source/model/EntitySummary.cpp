@@ -32,17 +32,8 @@ EntitySummary::EntitySummary() :
 {
 }
 
-EntitySummary::EntitySummary(JsonView jsonValue) : 
-    m_entityIdHasBeenSet(false),
-    m_entityNameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_parentEntityIdHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_hasChildEntities(false),
-    m_hasChildEntitiesHasBeenSet(false),
-    m_creationDateTimeHasBeenSet(false),
-    m_updateDateTimeHasBeenSet(false)
+EntitySummary::EntitySummary(JsonView jsonValue)
+  : EntitySummary()
 {
   *this = jsonValue;
 }

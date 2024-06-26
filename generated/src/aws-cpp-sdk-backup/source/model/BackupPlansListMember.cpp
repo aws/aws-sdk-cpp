@@ -31,16 +31,8 @@ BackupPlansListMember::BackupPlansListMember() :
 {
 }
 
-BackupPlansListMember::BackupPlansListMember(JsonView jsonValue) : 
-    m_backupPlanArnHasBeenSet(false),
-    m_backupPlanIdHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_deletionDateHasBeenSet(false),
-    m_versionIdHasBeenSet(false),
-    m_backupPlanNameHasBeenSet(false),
-    m_creatorRequestIdHasBeenSet(false),
-    m_lastExecutionDateHasBeenSet(false),
-    m_advancedBackupSettingsHasBeenSet(false)
+BackupPlansListMember::BackupPlansListMember(JsonView jsonValue)
+  : BackupPlansListMember()
 {
   *this = jsonValue;
 }

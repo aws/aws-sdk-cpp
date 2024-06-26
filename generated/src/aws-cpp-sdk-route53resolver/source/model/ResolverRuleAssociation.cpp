@@ -29,14 +29,8 @@ ResolverRuleAssociation::ResolverRuleAssociation() :
 {
 }
 
-ResolverRuleAssociation::ResolverRuleAssociation(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_resolverRuleIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_vPCIdHasBeenSet(false),
-    m_status(ResolverRuleAssociationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false)
+ResolverRuleAssociation::ResolverRuleAssociation(JsonView jsonValue)
+  : ResolverRuleAssociation()
 {
   *this = jsonValue;
 }

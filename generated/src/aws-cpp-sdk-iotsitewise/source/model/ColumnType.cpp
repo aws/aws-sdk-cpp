@@ -24,9 +24,8 @@ ColumnType::ColumnType() :
 {
 }
 
-ColumnType::ColumnType(JsonView jsonValue) : 
-    m_scalarType(ScalarType::NOT_SET),
-    m_scalarTypeHasBeenSet(false)
+ColumnType::ColumnType(JsonView jsonValue)
+  : ColumnType()
 {
   *this = jsonValue;
 }

@@ -36,21 +36,8 @@ Suite::Suite() :
 {
 }
 
-Suite::Suite(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_type(TestType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_createdHasBeenSet(false),
-    m_status(ExecutionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_result(ExecutionResult::NOT_SET),
-    m_resultHasBeenSet(false),
-    m_startedHasBeenSet(false),
-    m_stoppedHasBeenSet(false),
-    m_countersHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_deviceMinutesHasBeenSet(false)
+Suite::Suite(JsonView jsonValue)
+  : Suite()
 {
   *this = jsonValue;
 }

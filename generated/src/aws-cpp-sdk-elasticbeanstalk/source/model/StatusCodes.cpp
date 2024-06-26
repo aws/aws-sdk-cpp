@@ -32,15 +32,8 @@ StatusCodes::StatusCodes() :
 {
 }
 
-StatusCodes::StatusCodes(const XmlNode& xmlNode) : 
-    m_status2xx(0),
-    m_status2xxHasBeenSet(false),
-    m_status3xx(0),
-    m_status3xxHasBeenSet(false),
-    m_status4xx(0),
-    m_status4xxHasBeenSet(false),
-    m_status5xx(0),
-    m_status5xxHasBeenSet(false)
+StatusCodes::StatusCodes(const XmlNode& xmlNode)
+  : StatusCodes()
 {
   *this = xmlNode;
 }

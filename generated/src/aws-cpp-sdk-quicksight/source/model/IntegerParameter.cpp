@@ -24,9 +24,8 @@ IntegerParameter::IntegerParameter() :
 {
 }
 
-IntegerParameter::IntegerParameter(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+IntegerParameter::IntegerParameter(JsonView jsonValue)
+  : IntegerParameter()
 {
   *this = jsonValue;
 }

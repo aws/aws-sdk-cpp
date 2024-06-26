@@ -26,11 +26,8 @@ AwsEc2ClientVpnEndpointConnectionLogOptionsDetails::AwsEc2ClientVpnEndpointConne
 {
 }
 
-AwsEc2ClientVpnEndpointConnectionLogOptionsDetails::AwsEc2ClientVpnEndpointConnectionLogOptionsDetails(JsonView jsonValue) : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_cloudwatchLogGroupHasBeenSet(false),
-    m_cloudwatchLogStreamHasBeenSet(false)
+AwsEc2ClientVpnEndpointConnectionLogOptionsDetails::AwsEc2ClientVpnEndpointConnectionLogOptionsDetails(JsonView jsonValue)
+  : AwsEc2ClientVpnEndpointConnectionLogOptionsDetails()
 {
   *this = jsonValue;
 }

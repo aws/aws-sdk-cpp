@@ -65,50 +65,8 @@ HistoryEvent::HistoryEvent() :
 {
 }
 
-HistoryEvent::HistoryEvent(JsonView jsonValue) : 
-    m_timestampHasBeenSet(false),
-    m_type(HistoryEventType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_id(0),
-    m_idHasBeenSet(false),
-    m_previousEventId(0),
-    m_previousEventIdHasBeenSet(false),
-    m_activityFailedEventDetailsHasBeenSet(false),
-    m_activityScheduleFailedEventDetailsHasBeenSet(false),
-    m_activityScheduledEventDetailsHasBeenSet(false),
-    m_activityStartedEventDetailsHasBeenSet(false),
-    m_activitySucceededEventDetailsHasBeenSet(false),
-    m_activityTimedOutEventDetailsHasBeenSet(false),
-    m_taskFailedEventDetailsHasBeenSet(false),
-    m_taskScheduledEventDetailsHasBeenSet(false),
-    m_taskStartFailedEventDetailsHasBeenSet(false),
-    m_taskStartedEventDetailsHasBeenSet(false),
-    m_taskSubmitFailedEventDetailsHasBeenSet(false),
-    m_taskSubmittedEventDetailsHasBeenSet(false),
-    m_taskSucceededEventDetailsHasBeenSet(false),
-    m_taskTimedOutEventDetailsHasBeenSet(false),
-    m_executionFailedEventDetailsHasBeenSet(false),
-    m_executionStartedEventDetailsHasBeenSet(false),
-    m_executionSucceededEventDetailsHasBeenSet(false),
-    m_executionAbortedEventDetailsHasBeenSet(false),
-    m_executionTimedOutEventDetailsHasBeenSet(false),
-    m_executionRedrivenEventDetailsHasBeenSet(false),
-    m_mapStateStartedEventDetailsHasBeenSet(false),
-    m_mapIterationStartedEventDetailsHasBeenSet(false),
-    m_mapIterationSucceededEventDetailsHasBeenSet(false),
-    m_mapIterationFailedEventDetailsHasBeenSet(false),
-    m_mapIterationAbortedEventDetailsHasBeenSet(false),
-    m_lambdaFunctionFailedEventDetailsHasBeenSet(false),
-    m_lambdaFunctionScheduleFailedEventDetailsHasBeenSet(false),
-    m_lambdaFunctionScheduledEventDetailsHasBeenSet(false),
-    m_lambdaFunctionStartFailedEventDetailsHasBeenSet(false),
-    m_lambdaFunctionSucceededEventDetailsHasBeenSet(false),
-    m_lambdaFunctionTimedOutEventDetailsHasBeenSet(false),
-    m_stateEnteredEventDetailsHasBeenSet(false),
-    m_stateExitedEventDetailsHasBeenSet(false),
-    m_mapRunStartedEventDetailsHasBeenSet(false),
-    m_mapRunFailedEventDetailsHasBeenSet(false),
-    m_mapRunRedrivenEventDetailsHasBeenSet(false)
+HistoryEvent::HistoryEvent(JsonView jsonValue)
+  : HistoryEvent()
 {
   *this = jsonValue;
 }

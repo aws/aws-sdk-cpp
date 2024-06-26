@@ -24,9 +24,8 @@ KernelGatewayImageConfig::KernelGatewayImageConfig() :
 {
 }
 
-KernelGatewayImageConfig::KernelGatewayImageConfig(JsonView jsonValue) : 
-    m_kernelSpecsHasBeenSet(false),
-    m_fileSystemConfigHasBeenSet(false)
+KernelGatewayImageConfig::KernelGatewayImageConfig(JsonView jsonValue)
+  : KernelGatewayImageConfig()
 {
   *this = jsonValue;
 }

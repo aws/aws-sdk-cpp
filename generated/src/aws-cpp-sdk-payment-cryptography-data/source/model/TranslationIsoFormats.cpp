@@ -26,11 +26,8 @@ TranslationIsoFormats::TranslationIsoFormats() :
 {
 }
 
-TranslationIsoFormats::TranslationIsoFormats(JsonView jsonValue) : 
-    m_isoFormat0HasBeenSet(false),
-    m_isoFormat1HasBeenSet(false),
-    m_isoFormat3HasBeenSet(false),
-    m_isoFormat4HasBeenSet(false)
+TranslationIsoFormats::TranslationIsoFormats(JsonView jsonValue)
+  : TranslationIsoFormats()
 {
   *this = jsonValue;
 }

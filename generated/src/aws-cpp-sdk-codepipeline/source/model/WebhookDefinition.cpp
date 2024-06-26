@@ -29,14 +29,8 @@ WebhookDefinition::WebhookDefinition() :
 {
 }
 
-WebhookDefinition::WebhookDefinition(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_targetPipelineHasBeenSet(false),
-    m_targetActionHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_authentication(WebhookAuthenticationType::NOT_SET),
-    m_authenticationHasBeenSet(false),
-    m_authenticationConfigurationHasBeenSet(false)
+WebhookDefinition::WebhookDefinition(JsonView jsonValue)
+  : WebhookDefinition()
 {
   *this = jsonValue;
 }

@@ -27,12 +27,8 @@ WorkerConfigurationRevisionDescription::WorkerConfigurationRevisionDescription()
 {
 }
 
-WorkerConfigurationRevisionDescription::WorkerConfigurationRevisionDescription(JsonView jsonValue) : 
-    m_creationTimeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_propertiesFileContentHasBeenSet(false),
-    m_revision(0),
-    m_revisionHasBeenSet(false)
+WorkerConfigurationRevisionDescription::WorkerConfigurationRevisionDescription(JsonView jsonValue)
+  : WorkerConfigurationRevisionDescription()
 {
   *this = jsonValue;
 }

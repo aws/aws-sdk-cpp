@@ -23,8 +23,8 @@ AccessControlAttributeValue::AccessControlAttributeValue() :
 {
 }
 
-AccessControlAttributeValue::AccessControlAttributeValue(JsonView jsonValue) : 
-    m_sourceHasBeenSet(false)
+AccessControlAttributeValue::AccessControlAttributeValue(JsonView jsonValue)
+  : AccessControlAttributeValue()
 {
   *this = jsonValue;
 }

@@ -30,15 +30,8 @@ CisScanConfiguration::CisScanConfiguration() :
 {
 }
 
-CisScanConfiguration::CisScanConfiguration(JsonView jsonValue) : 
-    m_ownerIdHasBeenSet(false),
-    m_scanConfigurationArnHasBeenSet(false),
-    m_scanNameHasBeenSet(false),
-    m_scheduleHasBeenSet(false),
-    m_securityLevel(CisSecurityLevel::NOT_SET),
-    m_securityLevelHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_targetsHasBeenSet(false)
+CisScanConfiguration::CisScanConfiguration(JsonView jsonValue)
+  : CisScanConfiguration()
 {
   *this = jsonValue;
 }

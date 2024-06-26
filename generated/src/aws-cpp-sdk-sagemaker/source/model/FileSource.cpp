@@ -25,10 +25,8 @@ FileSource::FileSource() :
 {
 }
 
-FileSource::FileSource(JsonView jsonValue) : 
-    m_contentTypeHasBeenSet(false),
-    m_contentDigestHasBeenSet(false),
-    m_s3UriHasBeenSet(false)
+FileSource::FileSource(JsonView jsonValue)
+  : FileSource()
 {
   *this = jsonValue;
 }

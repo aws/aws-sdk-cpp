@@ -28,13 +28,8 @@ LiveTailSessionStart::LiveTailSessionStart() :
 {
 }
 
-LiveTailSessionStart::LiveTailSessionStart(JsonView jsonValue) : 
-    m_requestIdHasBeenSet(false),
-    m_sessionIdHasBeenSet(false),
-    m_logGroupIdentifiersHasBeenSet(false),
-    m_logStreamNamesHasBeenSet(false),
-    m_logStreamNamePrefixesHasBeenSet(false),
-    m_logEventFilterPatternHasBeenSet(false)
+LiveTailSessionStart::LiveTailSessionStart(JsonView jsonValue)
+  : LiveTailSessionStart()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ RemoteDebugConfig::RemoteDebugConfig() :
 {
 }
 
-RemoteDebugConfig::RemoteDebugConfig(JsonView jsonValue) : 
-    m_enableRemoteDebug(false),
-    m_enableRemoteDebugHasBeenSet(false)
+RemoteDebugConfig::RemoteDebugConfig(JsonView jsonValue)
+  : RemoteDebugConfig()
 {
   *this = jsonValue;
 }

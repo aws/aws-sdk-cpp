@@ -26,11 +26,8 @@ UpdateIngressGatewayBridgeRequest::UpdateIngressGatewayBridgeRequest() :
 {
 }
 
-UpdateIngressGatewayBridgeRequest::UpdateIngressGatewayBridgeRequest(JsonView jsonValue) : 
-    m_maxBitrate(0),
-    m_maxBitrateHasBeenSet(false),
-    m_maxOutputs(0),
-    m_maxOutputsHasBeenSet(false)
+UpdateIngressGatewayBridgeRequest::UpdateIngressGatewayBridgeRequest(JsonView jsonValue)
+  : UpdateIngressGatewayBridgeRequest()
 {
   *this = jsonValue;
 }

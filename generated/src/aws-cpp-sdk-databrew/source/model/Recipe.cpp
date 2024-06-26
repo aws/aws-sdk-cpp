@@ -35,20 +35,8 @@ Recipe::Recipe() :
 {
 }
 
-Recipe::Recipe(JsonView jsonValue) : 
-    m_createdByHasBeenSet(false),
-    m_createDateHasBeenSet(false),
-    m_lastModifiedByHasBeenSet(false),
-    m_lastModifiedDateHasBeenSet(false),
-    m_projectNameHasBeenSet(false),
-    m_publishedByHasBeenSet(false),
-    m_publishedDateHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_resourceArnHasBeenSet(false),
-    m_stepsHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_recipeVersionHasBeenSet(false)
+Recipe::Recipe(JsonView jsonValue)
+  : Recipe()
 {
   *this = jsonValue;
 }

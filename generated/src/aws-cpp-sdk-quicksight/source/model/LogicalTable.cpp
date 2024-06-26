@@ -25,10 +25,8 @@ LogicalTable::LogicalTable() :
 {
 }
 
-LogicalTable::LogicalTable(JsonView jsonValue) : 
-    m_aliasHasBeenSet(false),
-    m_dataTransformsHasBeenSet(false),
-    m_sourceHasBeenSet(false)
+LogicalTable::LogicalTable(JsonView jsonValue)
+  : LogicalTable()
 {
   *this = jsonValue;
 }

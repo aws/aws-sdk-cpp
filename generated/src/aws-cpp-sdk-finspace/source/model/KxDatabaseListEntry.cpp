@@ -25,10 +25,8 @@ KxDatabaseListEntry::KxDatabaseListEntry() :
 {
 }
 
-KxDatabaseListEntry::KxDatabaseListEntry(JsonView jsonValue) : 
-    m_databaseNameHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false),
-    m_lastModifiedTimestampHasBeenSet(false)
+KxDatabaseListEntry::KxDatabaseListEntry(JsonView jsonValue)
+  : KxDatabaseListEntry()
 {
   *this = jsonValue;
 }

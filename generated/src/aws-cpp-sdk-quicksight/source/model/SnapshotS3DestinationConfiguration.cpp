@@ -23,8 +23,8 @@ SnapshotS3DestinationConfiguration::SnapshotS3DestinationConfiguration() :
 {
 }
 
-SnapshotS3DestinationConfiguration::SnapshotS3DestinationConfiguration(JsonView jsonValue) : 
-    m_bucketConfigurationHasBeenSet(false)
+SnapshotS3DestinationConfiguration::SnapshotS3DestinationConfiguration(JsonView jsonValue)
+  : SnapshotS3DestinationConfiguration()
 {
   *this = jsonValue;
 }

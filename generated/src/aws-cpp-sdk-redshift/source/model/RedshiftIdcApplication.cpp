@@ -34,17 +34,8 @@ RedshiftIdcApplication::RedshiftIdcApplication() :
 {
 }
 
-RedshiftIdcApplication::RedshiftIdcApplication(const XmlNode& xmlNode) : 
-    m_idcInstanceArnHasBeenSet(false),
-    m_redshiftIdcApplicationNameHasBeenSet(false),
-    m_redshiftIdcApplicationArnHasBeenSet(false),
-    m_identityNamespaceHasBeenSet(false),
-    m_idcDisplayNameHasBeenSet(false),
-    m_iamRoleArnHasBeenSet(false),
-    m_idcManagedApplicationArnHasBeenSet(false),
-    m_idcOnboardStatusHasBeenSet(false),
-    m_authorizedTokenIssuerListHasBeenSet(false),
-    m_serviceIntegrationsHasBeenSet(false)
+RedshiftIdcApplication::RedshiftIdcApplication(const XmlNode& xmlNode)
+  : RedshiftIdcApplication()
 {
   *this = xmlNode;
 }

@@ -22,8 +22,8 @@ DescribeCustomMetricResult::DescribeCustomMetricResult() :
 {
 }
 
-DescribeCustomMetricResult::DescribeCustomMetricResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_metricType(CustomMetricType::NOT_SET)
+DescribeCustomMetricResult::DescribeCustomMetricResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeCustomMetricResult()
 {
   *this = result;
 }

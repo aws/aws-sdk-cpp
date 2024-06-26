@@ -22,8 +22,8 @@ GetPartnerAccountResult::GetPartnerAccountResult() :
 {
 }
 
-GetPartnerAccountResult::GetPartnerAccountResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_accountLinked(false)
+GetPartnerAccountResult::GetPartnerAccountResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetPartnerAccountResult()
 {
   *this = result;
 }

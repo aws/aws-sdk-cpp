@@ -25,10 +25,8 @@ PlacementStrategy::PlacementStrategy() :
 {
 }
 
-PlacementStrategy::PlacementStrategy(JsonView jsonValue) : 
-    m_fieldHasBeenSet(false),
-    m_type(PlacementStrategyType::NOT_SET),
-    m_typeHasBeenSet(false)
+PlacementStrategy::PlacementStrategy(JsonView jsonValue)
+  : PlacementStrategy()
 {
   *this = jsonValue;
 }

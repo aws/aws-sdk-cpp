@@ -23,8 +23,8 @@ Logging::Logging() :
 {
 }
 
-Logging::Logging(JsonView jsonValue) : 
-    m_s3LogsHasBeenSet(false)
+Logging::Logging(JsonView jsonValue)
+  : Logging()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ ExportTr31KeyBlock::ExportTr31KeyBlock() :
 {
 }
 
-ExportTr31KeyBlock::ExportTr31KeyBlock(JsonView jsonValue) : 
-    m_wrappingKeyIdentifierHasBeenSet(false),
-    m_keyBlockHeadersHasBeenSet(false)
+ExportTr31KeyBlock::ExportTr31KeyBlock(JsonView jsonValue)
+  : ExportTr31KeyBlock()
 {
   *this = jsonValue;
 }

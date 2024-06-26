@@ -38,23 +38,8 @@ TaskExecutionResultDetail::TaskExecutionResultDetail() :
 {
 }
 
-TaskExecutionResultDetail::TaskExecutionResultDetail(JsonView jsonValue) : 
-    m_prepareDuration(0),
-    m_prepareDurationHasBeenSet(false),
-    m_prepareStatus(PhaseStatus::NOT_SET),
-    m_prepareStatusHasBeenSet(false),
-    m_totalDuration(0),
-    m_totalDurationHasBeenSet(false),
-    m_transferDuration(0),
-    m_transferDurationHasBeenSet(false),
-    m_transferStatus(PhaseStatus::NOT_SET),
-    m_transferStatusHasBeenSet(false),
-    m_verifyDuration(0),
-    m_verifyDurationHasBeenSet(false),
-    m_verifyStatus(PhaseStatus::NOT_SET),
-    m_verifyStatusHasBeenSet(false),
-    m_errorCodeHasBeenSet(false),
-    m_errorDetailHasBeenSet(false)
+TaskExecutionResultDetail::TaskExecutionResultDetail(JsonView jsonValue)
+  : TaskExecutionResultDetail()
 {
   *this = jsonValue;
 }

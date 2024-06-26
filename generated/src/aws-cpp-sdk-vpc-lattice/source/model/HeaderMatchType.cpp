@@ -25,10 +25,8 @@ HeaderMatchType::HeaderMatchType() :
 {
 }
 
-HeaderMatchType::HeaderMatchType(JsonView jsonValue) : 
-    m_containsHasBeenSet(false),
-    m_exactHasBeenSet(false),
-    m_prefixHasBeenSet(false)
+HeaderMatchType::HeaderMatchType(JsonView jsonValue)
+  : HeaderMatchType()
 {
   *this = jsonValue;
 }

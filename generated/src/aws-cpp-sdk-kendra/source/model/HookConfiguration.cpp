@@ -25,10 +25,8 @@ HookConfiguration::HookConfiguration() :
 {
 }
 
-HookConfiguration::HookConfiguration(JsonView jsonValue) : 
-    m_invocationConditionHasBeenSet(false),
-    m_lambdaArnHasBeenSet(false),
-    m_s3BucketHasBeenSet(false)
+HookConfiguration::HookConfiguration(JsonView jsonValue)
+  : HookConfiguration()
 {
   *this = jsonValue;
 }

@@ -23,9 +23,8 @@ DescribeExplainabilityResult::DescribeExplainabilityResult() :
 {
 }
 
-DescribeExplainabilityResult::DescribeExplainabilityResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_enableVisualization(false),
-    m_estimatedTimeRemainingInMinutes(0)
+DescribeExplainabilityResult::DescribeExplainabilityResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeExplainabilityResult()
 {
   *this = result;
 }

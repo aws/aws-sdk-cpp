@@ -24,9 +24,8 @@ Category::Category() :
 {
 }
 
-Category::Category(JsonView jsonValue) : 
-    m_codeHasBeenSet(false),
-    m_nameHasBeenSet(false)
+Category::Category(JsonView jsonValue)
+  : Category()
 {
   *this = jsonValue;
 }

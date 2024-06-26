@@ -33,18 +33,8 @@ ReservationPurchaseRecommendation::ReservationPurchaseRecommendation() :
 {
 }
 
-ReservationPurchaseRecommendation::ReservationPurchaseRecommendation(JsonView jsonValue) : 
-    m_accountScope(AccountScope::NOT_SET),
-    m_accountScopeHasBeenSet(false),
-    m_lookbackPeriodInDays(LookbackPeriodInDays::NOT_SET),
-    m_lookbackPeriodInDaysHasBeenSet(false),
-    m_termInYears(TermInYears::NOT_SET),
-    m_termInYearsHasBeenSet(false),
-    m_paymentOption(PaymentOption::NOT_SET),
-    m_paymentOptionHasBeenSet(false),
-    m_serviceSpecificationHasBeenSet(false),
-    m_recommendationDetailsHasBeenSet(false),
-    m_recommendationSummaryHasBeenSet(false)
+ReservationPurchaseRecommendation::ReservationPurchaseRecommendation(JsonView jsonValue)
+  : ReservationPurchaseRecommendation()
 {
   *this = jsonValue;
 }

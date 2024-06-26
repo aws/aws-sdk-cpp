@@ -25,10 +25,8 @@ BatchDescribeMergeConflictsError::BatchDescribeMergeConflictsError() :
 {
 }
 
-BatchDescribeMergeConflictsError::BatchDescribeMergeConflictsError(JsonView jsonValue) : 
-    m_filePathHasBeenSet(false),
-    m_exceptionNameHasBeenSet(false),
-    m_messageHasBeenSet(false)
+BatchDescribeMergeConflictsError::BatchDescribeMergeConflictsError(JsonView jsonValue)
+  : BatchDescribeMergeConflictsError()
 {
   *this = jsonValue;
 }

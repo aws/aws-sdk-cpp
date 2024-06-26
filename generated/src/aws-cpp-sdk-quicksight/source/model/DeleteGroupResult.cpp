@@ -22,8 +22,8 @@ DeleteGroupResult::DeleteGroupResult() :
 {
 }
 
-DeleteGroupResult::DeleteGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+DeleteGroupResult::DeleteGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeleteGroupResult()
 {
   *this = result;
 }

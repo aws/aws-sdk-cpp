@@ -28,13 +28,8 @@ CastColumnTypeOperation::CastColumnTypeOperation() :
 {
 }
 
-CastColumnTypeOperation::CastColumnTypeOperation(JsonView jsonValue) : 
-    m_columnNameHasBeenSet(false),
-    m_newColumnType(ColumnDataType::NOT_SET),
-    m_newColumnTypeHasBeenSet(false),
-    m_subType(ColumnDataSubType::NOT_SET),
-    m_subTypeHasBeenSet(false),
-    m_formatHasBeenSet(false)
+CastColumnTypeOperation::CastColumnTypeOperation(JsonView jsonValue)
+  : CastColumnTypeOperation()
 {
   *this = jsonValue;
 }

@@ -33,18 +33,8 @@ AggregationResponse::AggregationResponse() :
 {
 }
 
-AggregationResponse::AggregationResponse(JsonView jsonValue) : 
-    m_accountAggregationHasBeenSet(false),
-    m_amiAggregationHasBeenSet(false),
-    m_awsEcrContainerAggregationHasBeenSet(false),
-    m_ec2InstanceAggregationHasBeenSet(false),
-    m_findingTypeAggregationHasBeenSet(false),
-    m_imageLayerAggregationHasBeenSet(false),
-    m_lambdaFunctionAggregationHasBeenSet(false),
-    m_lambdaLayerAggregationHasBeenSet(false),
-    m_packageAggregationHasBeenSet(false),
-    m_repositoryAggregationHasBeenSet(false),
-    m_titleAggregationHasBeenSet(false)
+AggregationResponse::AggregationResponse(JsonView jsonValue)
+  : AggregationResponse()
 {
   *this = jsonValue;
 }

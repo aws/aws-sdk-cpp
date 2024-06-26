@@ -23,8 +23,8 @@ Entity::Entity() :
 {
 }
 
-Entity::Entity(JsonView jsonValue) : 
-    m_pathHasBeenSet(false)
+Entity::Entity(JsonView jsonValue)
+  : Entity()
 {
   *this = jsonValue;
 }

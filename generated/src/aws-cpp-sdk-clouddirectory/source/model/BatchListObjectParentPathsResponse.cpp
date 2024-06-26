@@ -24,9 +24,8 @@ BatchListObjectParentPathsResponse::BatchListObjectParentPathsResponse() :
 {
 }
 
-BatchListObjectParentPathsResponse::BatchListObjectParentPathsResponse(JsonView jsonValue) : 
-    m_pathToObjectIdentifiersListHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
+BatchListObjectParentPathsResponse::BatchListObjectParentPathsResponse(JsonView jsonValue)
+  : BatchListObjectParentPathsResponse()
 {
   *this = jsonValue;
 }

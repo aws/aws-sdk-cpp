@@ -30,15 +30,8 @@ ImprovementSummary::ImprovementSummary() :
 {
 }
 
-ImprovementSummary::ImprovementSummary(JsonView jsonValue) : 
-    m_questionIdHasBeenSet(false),
-    m_pillarIdHasBeenSet(false),
-    m_questionTitleHasBeenSet(false),
-    m_risk(Risk::NOT_SET),
-    m_riskHasBeenSet(false),
-    m_improvementPlanUrlHasBeenSet(false),
-    m_improvementPlansHasBeenSet(false),
-    m_jiraConfigurationHasBeenSet(false)
+ImprovementSummary::ImprovementSummary(JsonView jsonValue)
+  : ImprovementSummary()
 {
   *this = jsonValue;
 }

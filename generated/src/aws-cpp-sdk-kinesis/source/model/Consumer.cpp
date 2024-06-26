@@ -27,12 +27,8 @@ Consumer::Consumer() :
 {
 }
 
-Consumer::Consumer(JsonView jsonValue) : 
-    m_consumerNameHasBeenSet(false),
-    m_consumerARNHasBeenSet(false),
-    m_consumerStatus(ConsumerStatus::NOT_SET),
-    m_consumerStatusHasBeenSet(false),
-    m_consumerCreationTimestampHasBeenSet(false)
+Consumer::Consumer(JsonView jsonValue)
+  : Consumer()
 {
   *this = jsonValue;
 }

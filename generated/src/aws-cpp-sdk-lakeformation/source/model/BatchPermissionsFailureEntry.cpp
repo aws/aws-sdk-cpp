@@ -24,9 +24,8 @@ BatchPermissionsFailureEntry::BatchPermissionsFailureEntry() :
 {
 }
 
-BatchPermissionsFailureEntry::BatchPermissionsFailureEntry(JsonView jsonValue) : 
-    m_requestEntryHasBeenSet(false),
-    m_errorHasBeenSet(false)
+BatchPermissionsFailureEntry::BatchPermissionsFailureEntry(JsonView jsonValue)
+  : BatchPermissionsFailureEntry()
 {
   *this = jsonValue;
 }

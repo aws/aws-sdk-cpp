@@ -22,8 +22,8 @@ DescribeModelResult::DescribeModelResult() :
 {
 }
 
-DescribeModelResult::DescribeModelResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_enableNetworkIsolation(false)
+DescribeModelResult::DescribeModelResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeModelResult()
 {
   *this = result;
 }

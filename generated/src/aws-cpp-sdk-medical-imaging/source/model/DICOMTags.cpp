@@ -41,26 +41,8 @@ DICOMTags::DICOMTags() :
 {
 }
 
-DICOMTags::DICOMTags(JsonView jsonValue) : 
-    m_dICOMPatientIdHasBeenSet(false),
-    m_dICOMPatientNameHasBeenSet(false),
-    m_dICOMPatientBirthDateHasBeenSet(false),
-    m_dICOMPatientSexHasBeenSet(false),
-    m_dICOMStudyInstanceUIDHasBeenSet(false),
-    m_dICOMStudyIdHasBeenSet(false),
-    m_dICOMStudyDescriptionHasBeenSet(false),
-    m_dICOMNumberOfStudyRelatedSeries(0),
-    m_dICOMNumberOfStudyRelatedSeriesHasBeenSet(false),
-    m_dICOMNumberOfStudyRelatedInstances(0),
-    m_dICOMNumberOfStudyRelatedInstancesHasBeenSet(false),
-    m_dICOMAccessionNumberHasBeenSet(false),
-    m_dICOMSeriesInstanceUIDHasBeenSet(false),
-    m_dICOMSeriesModalityHasBeenSet(false),
-    m_dICOMSeriesBodyPartHasBeenSet(false),
-    m_dICOMSeriesNumber(0),
-    m_dICOMSeriesNumberHasBeenSet(false),
-    m_dICOMStudyDateHasBeenSet(false),
-    m_dICOMStudyTimeHasBeenSet(false)
+DICOMTags::DICOMTags(JsonView jsonValue)
+  : DICOMTags()
 {
   *this = jsonValue;
 }

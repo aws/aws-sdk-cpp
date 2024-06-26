@@ -25,10 +25,8 @@ SnapshotJobS3Result::SnapshotJobS3Result() :
 {
 }
 
-SnapshotJobS3Result::SnapshotJobS3Result(JsonView jsonValue) : 
-    m_s3DestinationConfigurationHasBeenSet(false),
-    m_s3UriHasBeenSet(false),
-    m_errorInfoHasBeenSet(false)
+SnapshotJobS3Result::SnapshotJobS3Result(JsonView jsonValue)
+  : SnapshotJobS3Result()
 {
   *this = jsonValue;
 }

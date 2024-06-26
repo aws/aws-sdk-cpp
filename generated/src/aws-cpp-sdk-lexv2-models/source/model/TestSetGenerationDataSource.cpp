@@ -23,8 +23,8 @@ TestSetGenerationDataSource::TestSetGenerationDataSource() :
 {
 }
 
-TestSetGenerationDataSource::TestSetGenerationDataSource(JsonView jsonValue) : 
-    m_conversationLogsDataSourceHasBeenSet(false)
+TestSetGenerationDataSource::TestSetGenerationDataSource(JsonView jsonValue)
+  : TestSetGenerationDataSource()
 {
   *this = jsonValue;
 }

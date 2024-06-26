@@ -24,9 +24,8 @@ TlsConfig::TlsConfig() :
 {
 }
 
-TlsConfig::TlsConfig(JsonView jsonValue) : 
-    m_insecureSkipVerification(false),
-    m_insecureSkipVerificationHasBeenSet(false)
+TlsConfig::TlsConfig(JsonView jsonValue)
+  : TlsConfig()
 {
   *this = jsonValue;
 }

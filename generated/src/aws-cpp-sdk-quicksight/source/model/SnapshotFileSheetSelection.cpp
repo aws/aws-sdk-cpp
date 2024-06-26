@@ -26,11 +26,8 @@ SnapshotFileSheetSelection::SnapshotFileSheetSelection() :
 {
 }
 
-SnapshotFileSheetSelection::SnapshotFileSheetSelection(JsonView jsonValue) : 
-    m_sheetIdHasBeenSet(false),
-    m_selectionScope(SnapshotFileSheetSelectionScope::NOT_SET),
-    m_selectionScopeHasBeenSet(false),
-    m_visualIdsHasBeenSet(false)
+SnapshotFileSheetSelection::SnapshotFileSheetSelection(JsonView jsonValue)
+  : SnapshotFileSheetSelection()
 {
   *this = jsonValue;
 }

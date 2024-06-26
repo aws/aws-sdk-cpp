@@ -24,9 +24,8 @@ EvaluationFormQuestionTypeProperties::EvaluationFormQuestionTypeProperties() :
 {
 }
 
-EvaluationFormQuestionTypeProperties::EvaluationFormQuestionTypeProperties(JsonView jsonValue) : 
-    m_numericHasBeenSet(false),
-    m_singleSelectHasBeenSet(false)
+EvaluationFormQuestionTypeProperties::EvaluationFormQuestionTypeProperties(JsonView jsonValue)
+  : EvaluationFormQuestionTypeProperties()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ CertificateProviderSummary::CertificateProviderSummary() :
 {
 }
 
-CertificateProviderSummary::CertificateProviderSummary(JsonView jsonValue) : 
-    m_certificateProviderNameHasBeenSet(false),
-    m_certificateProviderArnHasBeenSet(false)
+CertificateProviderSummary::CertificateProviderSummary(JsonView jsonValue)
+  : CertificateProviderSummary()
 {
   *this = jsonValue;
 }

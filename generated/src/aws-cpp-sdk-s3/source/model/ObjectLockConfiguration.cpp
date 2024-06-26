@@ -27,10 +27,8 @@ ObjectLockConfiguration::ObjectLockConfiguration() :
 {
 }
 
-ObjectLockConfiguration::ObjectLockConfiguration(const XmlNode& xmlNode) : 
-    m_objectLockEnabled(ObjectLockEnabled::NOT_SET),
-    m_objectLockEnabledHasBeenSet(false),
-    m_ruleHasBeenSet(false)
+ObjectLockConfiguration::ObjectLockConfiguration(const XmlNode& xmlNode)
+  : ObjectLockConfiguration()
 {
   *this = xmlNode;
 }

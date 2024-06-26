@@ -22,8 +22,8 @@ UpdateGroupResult::UpdateGroupResult() :
 {
 }
 
-UpdateGroupResult::UpdateGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+UpdateGroupResult::UpdateGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateGroupResult()
 {
   *this = result;
 }

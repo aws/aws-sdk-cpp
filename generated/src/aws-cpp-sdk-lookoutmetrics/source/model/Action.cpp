@@ -24,9 +24,8 @@ Action::Action() :
 {
 }
 
-Action::Action(JsonView jsonValue) : 
-    m_sNSConfigurationHasBeenSet(false),
-    m_lambdaConfigurationHasBeenSet(false)
+Action::Action(JsonView jsonValue)
+  : Action()
 {
   *this = jsonValue;
 }

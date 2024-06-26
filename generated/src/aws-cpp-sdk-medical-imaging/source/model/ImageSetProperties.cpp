@@ -32,17 +32,8 @@ ImageSetProperties::ImageSetProperties() :
 {
 }
 
-ImageSetProperties::ImageSetProperties(JsonView jsonValue) : 
-    m_imageSetIdHasBeenSet(false),
-    m_versionIdHasBeenSet(false),
-    m_imageSetState(ImageSetState::NOT_SET),
-    m_imageSetStateHasBeenSet(false),
-    m_imageSetWorkflowStatus(ImageSetWorkflowStatus::NOT_SET),
-    m_imageSetWorkflowStatusHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_deletedAtHasBeenSet(false),
-    m_messageHasBeenSet(false)
+ImageSetProperties::ImageSetProperties(JsonView jsonValue)
+  : ImageSetProperties()
 {
   *this = jsonValue;
 }

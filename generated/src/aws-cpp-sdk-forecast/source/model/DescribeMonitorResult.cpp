@@ -22,8 +22,8 @@ DescribeMonitorResult::DescribeMonitorResult() :
 {
 }
 
-DescribeMonitorResult::DescribeMonitorResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_estimatedEvaluationTimeRemainingInMinutes(0)
+DescribeMonitorResult::DescribeMonitorResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeMonitorResult()
 {
   *this = result;
 }

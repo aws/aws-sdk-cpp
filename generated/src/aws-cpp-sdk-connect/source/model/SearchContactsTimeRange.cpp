@@ -26,11 +26,8 @@ SearchContactsTimeRange::SearchContactsTimeRange() :
 {
 }
 
-SearchContactsTimeRange::SearchContactsTimeRange(JsonView jsonValue) : 
-    m_type(SearchContactsTimeRangeType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
+SearchContactsTimeRange::SearchContactsTimeRange(JsonView jsonValue)
+  : SearchContactsTimeRange()
 {
   *this = jsonValue;
 }

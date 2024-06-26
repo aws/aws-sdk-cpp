@@ -29,12 +29,8 @@ ClientData::ClientData() :
 {
 }
 
-ClientData::ClientData(const XmlNode& xmlNode) : 
-    m_commentHasBeenSet(false),
-    m_uploadEndHasBeenSet(false),
-    m_uploadSize(0.0),
-    m_uploadSizeHasBeenSet(false),
-    m_uploadStartHasBeenSet(false)
+ClientData::ClientData(const XmlNode& xmlNode)
+  : ClientData()
 {
   *this = xmlNode;
 }

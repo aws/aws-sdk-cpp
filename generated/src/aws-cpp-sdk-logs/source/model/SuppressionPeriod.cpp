@@ -26,11 +26,8 @@ SuppressionPeriod::SuppressionPeriod() :
 {
 }
 
-SuppressionPeriod::SuppressionPeriod(JsonView jsonValue) : 
-    m_value(0),
-    m_valueHasBeenSet(false),
-    m_suppressionUnit(SuppressionUnit::NOT_SET),
-    m_suppressionUnitHasBeenSet(false)
+SuppressionPeriod::SuppressionPeriod(JsonView jsonValue)
+  : SuppressionPeriod()
 {
   *this = jsonValue;
 }

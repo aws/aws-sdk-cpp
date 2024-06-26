@@ -24,9 +24,8 @@ DriftCheckModelQuality::DriftCheckModelQuality() :
 {
 }
 
-DriftCheckModelQuality::DriftCheckModelQuality(JsonView jsonValue) : 
-    m_statisticsHasBeenSet(false),
-    m_constraintsHasBeenSet(false)
+DriftCheckModelQuality::DriftCheckModelQuality(JsonView jsonValue)
+  : DriftCheckModelQuality()
 {
   *this = jsonValue;
 }

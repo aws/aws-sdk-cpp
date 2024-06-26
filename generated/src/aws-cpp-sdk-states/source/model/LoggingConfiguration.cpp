@@ -27,12 +27,8 @@ LoggingConfiguration::LoggingConfiguration() :
 {
 }
 
-LoggingConfiguration::LoggingConfiguration(JsonView jsonValue) : 
-    m_level(LogLevel::NOT_SET),
-    m_levelHasBeenSet(false),
-    m_includeExecutionData(false),
-    m_includeExecutionDataHasBeenSet(false),
-    m_destinationsHasBeenSet(false)
+LoggingConfiguration::LoggingConfiguration(JsonView jsonValue)
+  : LoggingConfiguration()
 {
   *this = jsonValue;
 }

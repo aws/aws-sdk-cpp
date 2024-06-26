@@ -24,9 +24,8 @@ AppFlowConfig::AppFlowConfig() :
 {
 }
 
-AppFlowConfig::AppFlowConfig(JsonView jsonValue) : 
-    m_roleArnHasBeenSet(false),
-    m_flowNameHasBeenSet(false)
+AppFlowConfig::AppFlowConfig(JsonView jsonValue)
+  : AppFlowConfig()
 {
   *this = jsonValue;
 }

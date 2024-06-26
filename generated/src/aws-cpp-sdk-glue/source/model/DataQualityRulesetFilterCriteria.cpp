@@ -29,14 +29,8 @@ DataQualityRulesetFilterCriteria::DataQualityRulesetFilterCriteria() :
 {
 }
 
-DataQualityRulesetFilterCriteria::DataQualityRulesetFilterCriteria(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_createdBeforeHasBeenSet(false),
-    m_createdAfterHasBeenSet(false),
-    m_lastModifiedBeforeHasBeenSet(false),
-    m_lastModifiedAfterHasBeenSet(false),
-    m_targetTableHasBeenSet(false)
+DataQualityRulesetFilterCriteria::DataQualityRulesetFilterCriteria(JsonView jsonValue)
+  : DataQualityRulesetFilterCriteria()
 {
   *this = jsonValue;
 }

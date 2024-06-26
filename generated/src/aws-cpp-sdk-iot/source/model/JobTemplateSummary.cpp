@@ -26,11 +26,8 @@ JobTemplateSummary::JobTemplateSummary() :
 {
 }
 
-JobTemplateSummary::JobTemplateSummary(JsonView jsonValue) : 
-    m_jobTemplateArnHasBeenSet(false),
-    m_jobTemplateIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_createdAtHasBeenSet(false)
+JobTemplateSummary::JobTemplateSummary(JsonView jsonValue)
+  : JobTemplateSummary()
 {
   *this = jsonValue;
 }

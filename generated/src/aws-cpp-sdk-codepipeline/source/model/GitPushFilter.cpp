@@ -25,10 +25,8 @@ GitPushFilter::GitPushFilter() :
 {
 }
 
-GitPushFilter::GitPushFilter(JsonView jsonValue) : 
-    m_tagsHasBeenSet(false),
-    m_branchesHasBeenSet(false),
-    m_filePathsHasBeenSet(false)
+GitPushFilter::GitPushFilter(JsonView jsonValue)
+  : GitPushFilter()
 {
   *this = jsonValue;
 }

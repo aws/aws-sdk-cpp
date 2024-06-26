@@ -24,9 +24,8 @@ MultiConditionalBranch::MultiConditionalBranch() :
 {
 }
 
-MultiConditionalBranch::MultiConditionalBranch(JsonView jsonValue) : 
-    m_conditionHasBeenSet(false),
-    m_nextActivityHasBeenSet(false)
+MultiConditionalBranch::MultiConditionalBranch(JsonView jsonValue)
+  : MultiConditionalBranch()
 {
   *this = jsonValue;
 }

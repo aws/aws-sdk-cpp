@@ -24,9 +24,8 @@ EncryptionConfig::EncryptionConfig() :
 {
 }
 
-EncryptionConfig::EncryptionConfig(JsonView jsonValue) : 
-    m_resourcesHasBeenSet(false),
-    m_providerHasBeenSet(false)
+EncryptionConfig::EncryptionConfig(JsonView jsonValue)
+  : EncryptionConfig()
 {
   *this = jsonValue;
 }

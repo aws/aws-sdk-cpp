@@ -26,11 +26,8 @@ PackageDependency::PackageDependency() :
 {
 }
 
-PackageDependency::PackageDependency(JsonView jsonValue) : 
-    m_namespaceHasBeenSet(false),
-    m_packageHasBeenSet(false),
-    m_dependencyTypeHasBeenSet(false),
-    m_versionRequirementHasBeenSet(false)
+PackageDependency::PackageDependency(JsonView jsonValue)
+  : PackageDependency()
 {
   *this = jsonValue;
 }

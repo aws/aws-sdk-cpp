@@ -25,10 +25,8 @@ AutomationRulesAction::AutomationRulesAction() :
 {
 }
 
-AutomationRulesAction::AutomationRulesAction(JsonView jsonValue) : 
-    m_type(AutomationRulesActionType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_findingFieldsUpdateHasBeenSet(false)
+AutomationRulesAction::AutomationRulesAction(JsonView jsonValue)
+  : AutomationRulesAction()
 {
   *this = jsonValue;
 }

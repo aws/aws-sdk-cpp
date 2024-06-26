@@ -24,9 +24,8 @@ RegistrationSectionDefinition::RegistrationSectionDefinition() :
 {
 }
 
-RegistrationSectionDefinition::RegistrationSectionDefinition(JsonView jsonValue) : 
-    m_sectionPathHasBeenSet(false),
-    m_displayHintsHasBeenSet(false)
+RegistrationSectionDefinition::RegistrationSectionDefinition(JsonView jsonValue)
+  : RegistrationSectionDefinition()
 {
   *this = jsonValue;
 }

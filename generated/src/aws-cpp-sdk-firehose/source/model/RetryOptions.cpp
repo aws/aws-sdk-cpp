@@ -24,9 +24,8 @@ RetryOptions::RetryOptions() :
 {
 }
 
-RetryOptions::RetryOptions(JsonView jsonValue) : 
-    m_durationInSeconds(0),
-    m_durationInSecondsHasBeenSet(false)
+RetryOptions::RetryOptions(JsonView jsonValue)
+  : RetryOptions()
 {
   *this = jsonValue;
 }

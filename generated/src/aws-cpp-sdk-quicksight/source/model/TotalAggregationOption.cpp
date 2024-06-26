@@ -24,9 +24,8 @@ TotalAggregationOption::TotalAggregationOption() :
 {
 }
 
-TotalAggregationOption::TotalAggregationOption(JsonView jsonValue) : 
-    m_fieldIdHasBeenSet(false),
-    m_totalAggregationFunctionHasBeenSet(false)
+TotalAggregationOption::TotalAggregationOption(JsonView jsonValue)
+  : TotalAggregationOption()
 {
   *this = jsonValue;
 }

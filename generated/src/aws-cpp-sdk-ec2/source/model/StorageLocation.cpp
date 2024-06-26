@@ -26,9 +26,8 @@ StorageLocation::StorageLocation() :
 {
 }
 
-StorageLocation::StorageLocation(const XmlNode& xmlNode) : 
-    m_bucketHasBeenSet(false),
-    m_keyHasBeenSet(false)
+StorageLocation::StorageLocation(const XmlNode& xmlNode)
+  : StorageLocation()
 {
   *this = xmlNode;
 }

@@ -40,23 +40,8 @@ CPUUtilization::CPUUtilization() :
 {
 }
 
-CPUUtilization::CPUUtilization(const XmlNode& xmlNode) : 
-    m_user(0.0),
-    m_userHasBeenSet(false),
-    m_nice(0.0),
-    m_niceHasBeenSet(false),
-    m_system(0.0),
-    m_systemHasBeenSet(false),
-    m_idle(0.0),
-    m_idleHasBeenSet(false),
-    m_iOWait(0.0),
-    m_iOWaitHasBeenSet(false),
-    m_iRQ(0.0),
-    m_iRQHasBeenSet(false),
-    m_softIRQ(0.0),
-    m_softIRQHasBeenSet(false),
-    m_privileged(0.0),
-    m_privilegedHasBeenSet(false)
+CPUUtilization::CPUUtilization(const XmlNode& xmlNode)
+  : CPUUtilization()
 {
   *this = xmlNode;
 }

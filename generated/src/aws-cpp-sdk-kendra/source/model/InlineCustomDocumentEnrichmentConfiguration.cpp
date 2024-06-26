@@ -26,11 +26,8 @@ InlineCustomDocumentEnrichmentConfiguration::InlineCustomDocumentEnrichmentConfi
 {
 }
 
-InlineCustomDocumentEnrichmentConfiguration::InlineCustomDocumentEnrichmentConfiguration(JsonView jsonValue) : 
-    m_conditionHasBeenSet(false),
-    m_targetHasBeenSet(false),
-    m_documentContentDeletion(false),
-    m_documentContentDeletionHasBeenSet(false)
+InlineCustomDocumentEnrichmentConfiguration::InlineCustomDocumentEnrichmentConfiguration(JsonView jsonValue)
+  : InlineCustomDocumentEnrichmentConfiguration()
 {
   *this = jsonValue;
 }

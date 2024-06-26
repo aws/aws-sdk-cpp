@@ -28,13 +28,8 @@ NoiseReducerSpatialFilterSettings::NoiseReducerSpatialFilterSettings() :
 {
 }
 
-NoiseReducerSpatialFilterSettings::NoiseReducerSpatialFilterSettings(JsonView jsonValue) : 
-    m_postFilterSharpenStrength(0),
-    m_postFilterSharpenStrengthHasBeenSet(false),
-    m_speed(0),
-    m_speedHasBeenSet(false),
-    m_strength(0),
-    m_strengthHasBeenSet(false)
+NoiseReducerSpatialFilterSettings::NoiseReducerSpatialFilterSettings(JsonView jsonValue)
+  : NoiseReducerSpatialFilterSettings()
 {
   *this = jsonValue;
 }

@@ -40,25 +40,8 @@ Studio::Studio() :
 {
 }
 
-Studio::Studio(JsonView jsonValue) : 
-    m_adminRoleArnHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_homeRegionHasBeenSet(false),
-    m_ssoClientIdHasBeenSet(false),
-    m_state(StudioState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_statusCode(StudioStatusCode::NOT_SET),
-    m_statusCodeHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_studioEncryptionConfigurationHasBeenSet(false),
-    m_studioIdHasBeenSet(false),
-    m_studioNameHasBeenSet(false),
-    m_studioUrlHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_userRoleArnHasBeenSet(false)
+Studio::Studio(JsonView jsonValue)
+  : Studio()
 {
   *this = jsonValue;
 }

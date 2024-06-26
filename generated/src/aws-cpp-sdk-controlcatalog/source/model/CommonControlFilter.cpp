@@ -23,8 +23,8 @@ CommonControlFilter::CommonControlFilter() :
 {
 }
 
-CommonControlFilter::CommonControlFilter(JsonView jsonValue) : 
-    m_objectivesHasBeenSet(false)
+CommonControlFilter::CommonControlFilter(JsonView jsonValue)
+  : CommonControlFilter()
 {
   *this = jsonValue;
 }

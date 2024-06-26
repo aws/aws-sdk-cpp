@@ -25,10 +25,8 @@ PackageAggregationResponse::PackageAggregationResponse() :
 {
 }
 
-PackageAggregationResponse::PackageAggregationResponse(JsonView jsonValue) : 
-    m_accountIdHasBeenSet(false),
-    m_packageNameHasBeenSet(false),
-    m_severityCountsHasBeenSet(false)
+PackageAggregationResponse::PackageAggregationResponse(JsonView jsonValue)
+  : PackageAggregationResponse()
 {
   *this = jsonValue;
 }

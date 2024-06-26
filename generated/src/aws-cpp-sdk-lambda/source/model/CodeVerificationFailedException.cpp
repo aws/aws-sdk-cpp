@@ -24,9 +24,8 @@ CodeVerificationFailedException::CodeVerificationFailedException() :
 {
 }
 
-CodeVerificationFailedException::CodeVerificationFailedException(JsonView jsonValue) : 
-    m_typeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+CodeVerificationFailedException::CodeVerificationFailedException(JsonView jsonValue)
+  : CodeVerificationFailedException()
 {
   *this = jsonValue;
 }

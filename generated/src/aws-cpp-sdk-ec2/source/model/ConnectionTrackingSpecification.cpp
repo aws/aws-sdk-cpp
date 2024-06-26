@@ -30,13 +30,8 @@ ConnectionTrackingSpecification::ConnectionTrackingSpecification() :
 {
 }
 
-ConnectionTrackingSpecification::ConnectionTrackingSpecification(const XmlNode& xmlNode) : 
-    m_tcpEstablishedTimeout(0),
-    m_tcpEstablishedTimeoutHasBeenSet(false),
-    m_udpTimeout(0),
-    m_udpTimeoutHasBeenSet(false),
-    m_udpStreamTimeout(0),
-    m_udpStreamTimeoutHasBeenSet(false)
+ConnectionTrackingSpecification::ConnectionTrackingSpecification(const XmlNode& xmlNode)
+  : ConnectionTrackingSpecification()
 {
   *this = xmlNode;
 }

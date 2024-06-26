@@ -24,9 +24,8 @@ ClusterLifeCycleConfig::ClusterLifeCycleConfig() :
 {
 }
 
-ClusterLifeCycleConfig::ClusterLifeCycleConfig(JsonView jsonValue) : 
-    m_sourceS3UriHasBeenSet(false),
-    m_onCreateHasBeenSet(false)
+ClusterLifeCycleConfig::ClusterLifeCycleConfig(JsonView jsonValue)
+  : ClusterLifeCycleConfig()
 {
   *this = jsonValue;
 }

@@ -25,11 +25,8 @@ DescribeThingRegistrationTaskResult::DescribeThingRegistrationTaskResult() :
 {
 }
 
-DescribeThingRegistrationTaskResult::DescribeThingRegistrationTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(Status::NOT_SET),
-    m_successCount(0),
-    m_failureCount(0),
-    m_percentageProgress(0)
+DescribeThingRegistrationTaskResult::DescribeThingRegistrationTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeThingRegistrationTaskResult()
 {
   *this = result;
 }

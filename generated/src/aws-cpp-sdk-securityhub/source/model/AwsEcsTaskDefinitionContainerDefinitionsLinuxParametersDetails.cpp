@@ -33,18 +33,8 @@ AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails::AwsEcsTaskDefini
 {
 }
 
-AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails(JsonView jsonValue) : 
-    m_capabilitiesHasBeenSet(false),
-    m_devicesHasBeenSet(false),
-    m_initProcessEnabled(false),
-    m_initProcessEnabledHasBeenSet(false),
-    m_maxSwap(0),
-    m_maxSwapHasBeenSet(false),
-    m_sharedMemorySize(0),
-    m_sharedMemorySizeHasBeenSet(false),
-    m_swappiness(0),
-    m_swappinessHasBeenSet(false),
-    m_tmpfsHasBeenSet(false)
+AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails(JsonView jsonValue)
+  : AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails()
 {
   *this = jsonValue;
 }

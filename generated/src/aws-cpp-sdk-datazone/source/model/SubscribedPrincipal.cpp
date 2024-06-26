@@ -23,8 +23,8 @@ SubscribedPrincipal::SubscribedPrincipal() :
 {
 }
 
-SubscribedPrincipal::SubscribedPrincipal(JsonView jsonValue) : 
-    m_projectHasBeenSet(false)
+SubscribedPrincipal::SubscribedPrincipal(JsonView jsonValue)
+  : SubscribedPrincipal()
 {
   *this = jsonValue;
 }

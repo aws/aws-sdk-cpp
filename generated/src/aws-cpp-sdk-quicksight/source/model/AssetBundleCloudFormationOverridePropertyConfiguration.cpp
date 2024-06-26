@@ -30,15 +30,8 @@ AssetBundleCloudFormationOverridePropertyConfiguration::AssetBundleCloudFormatio
 {
 }
 
-AssetBundleCloudFormationOverridePropertyConfiguration::AssetBundleCloudFormationOverridePropertyConfiguration(JsonView jsonValue) : 
-    m_resourceIdOverrideConfigurationHasBeenSet(false),
-    m_vPCConnectionsHasBeenSet(false),
-    m_refreshSchedulesHasBeenSet(false),
-    m_dataSourcesHasBeenSet(false),
-    m_dataSetsHasBeenSet(false),
-    m_themesHasBeenSet(false),
-    m_analysesHasBeenSet(false),
-    m_dashboardsHasBeenSet(false)
+AssetBundleCloudFormationOverridePropertyConfiguration::AssetBundleCloudFormationOverridePropertyConfiguration(JsonView jsonValue)
+  : AssetBundleCloudFormationOverridePropertyConfiguration()
 {
   *this = jsonValue;
 }

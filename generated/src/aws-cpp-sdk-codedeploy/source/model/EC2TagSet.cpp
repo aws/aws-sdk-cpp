@@ -23,8 +23,8 @@ EC2TagSet::EC2TagSet() :
 {
 }
 
-EC2TagSet::EC2TagSet(JsonView jsonValue) : 
-    m_ec2TagSetListHasBeenSet(false)
+EC2TagSet::EC2TagSet(JsonView jsonValue)
+  : EC2TagSet()
 {
   *this = jsonValue;
 }

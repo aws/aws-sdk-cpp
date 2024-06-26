@@ -23,8 +23,8 @@ SourceConnectionParameters::SourceConnectionParameters() :
 {
 }
 
-SourceConnectionParameters::SourceConnectionParameters(JsonView jsonValue) : 
-    m_codeStarHasBeenSet(false)
+SourceConnectionParameters::SourceConnectionParameters(JsonView jsonValue)
+  : SourceConnectionParameters()
 {
   *this = jsonValue;
 }

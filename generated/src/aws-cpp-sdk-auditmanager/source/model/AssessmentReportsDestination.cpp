@@ -25,10 +25,8 @@ AssessmentReportsDestination::AssessmentReportsDestination() :
 {
 }
 
-AssessmentReportsDestination::AssessmentReportsDestination(JsonView jsonValue) : 
-    m_destinationType(AssessmentReportDestinationType::NOT_SET),
-    m_destinationTypeHasBeenSet(false),
-    m_destinationHasBeenSet(false)
+AssessmentReportsDestination::AssessmentReportsDestination(JsonView jsonValue)
+  : AssessmentReportsDestination()
 {
   *this = jsonValue;
 }

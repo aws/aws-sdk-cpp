@@ -30,14 +30,8 @@ ComponentConditionProperty::ComponentConditionProperty() :
 {
 }
 
-ComponentConditionProperty::ComponentConditionProperty(JsonView jsonValue) : 
-    m_propertyHasBeenSet(false),
-    m_fieldHasBeenSet(false),
-    m_operatorHasBeenSet(false),
-    m_operandHasBeenSet(false),
-    m_thenHasBeenSet(false),
-    m_elseHasBeenSet(false),
-    m_operandTypeHasBeenSet(false)
+ComponentConditionProperty::ComponentConditionProperty(JsonView jsonValue)
+  : ComponentConditionProperty()
 {
   *this = jsonValue;
 }

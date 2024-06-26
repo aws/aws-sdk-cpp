@@ -48,33 +48,8 @@ UtteranceSpecification::UtteranceSpecification() :
 {
 }
 
-UtteranceSpecification::UtteranceSpecification(JsonView jsonValue) : 
-    m_botAliasIdHasBeenSet(false),
-    m_botVersionHasBeenSet(false),
-    m_localeIdHasBeenSet(false),
-    m_sessionIdHasBeenSet(false),
-    m_channelHasBeenSet(false),
-    m_mode(AnalyticsModality::NOT_SET),
-    m_modeHasBeenSet(false),
-    m_conversationStartTimeHasBeenSet(false),
-    m_conversationEndTimeHasBeenSet(false),
-    m_utteranceHasBeenSet(false),
-    m_utteranceTimestampHasBeenSet(false),
-    m_audioVoiceDurationMillis(0),
-    m_audioVoiceDurationMillisHasBeenSet(false),
-    m_utteranceUnderstood(false),
-    m_utteranceUnderstoodHasBeenSet(false),
-    m_inputTypeHasBeenSet(false),
-    m_outputTypeHasBeenSet(false),
-    m_associatedIntentNameHasBeenSet(false),
-    m_associatedSlotNameHasBeenSet(false),
-    m_intentState(IntentState::NOT_SET),
-    m_intentStateHasBeenSet(false),
-    m_dialogActionTypeHasBeenSet(false),
-    m_botResponseAudioVoiceIdHasBeenSet(false),
-    m_slotsFilledInSessionHasBeenSet(false),
-    m_utteranceRequestIdHasBeenSet(false),
-    m_botResponsesHasBeenSet(false)
+UtteranceSpecification::UtteranceSpecification(JsonView jsonValue)
+  : UtteranceSpecification()
 {
   *this = jsonValue;
 }

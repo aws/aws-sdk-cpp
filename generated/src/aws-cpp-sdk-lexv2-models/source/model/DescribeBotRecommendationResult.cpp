@@ -22,8 +22,8 @@ DescribeBotRecommendationResult::DescribeBotRecommendationResult() :
 {
 }
 
-DescribeBotRecommendationResult::DescribeBotRecommendationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_botRecommendationStatus(BotRecommendationStatus::NOT_SET)
+DescribeBotRecommendationResult::DescribeBotRecommendationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeBotRecommendationResult()
 {
   *this = result;
 }

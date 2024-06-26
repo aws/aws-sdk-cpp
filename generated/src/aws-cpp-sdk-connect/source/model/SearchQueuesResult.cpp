@@ -22,8 +22,8 @@ SearchQueuesResult::SearchQueuesResult() :
 {
 }
 
-SearchQueuesResult::SearchQueuesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_approximateTotalCount(0)
+SearchQueuesResult::SearchQueuesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : SearchQueuesResult()
 {
   *this = result;
 }

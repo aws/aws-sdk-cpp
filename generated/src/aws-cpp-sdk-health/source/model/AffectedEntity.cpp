@@ -31,16 +31,8 @@ AffectedEntity::AffectedEntity() :
 {
 }
 
-AffectedEntity::AffectedEntity(JsonView jsonValue) : 
-    m_entityArnHasBeenSet(false),
-    m_eventArnHasBeenSet(false),
-    m_entityValueHasBeenSet(false),
-    m_entityUrlHasBeenSet(false),
-    m_awsAccountIdHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_statusCode(EntityStatusCode::NOT_SET),
-    m_statusCodeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+AffectedEntity::AffectedEntity(JsonView jsonValue)
+  : AffectedEntity()
 {
   *this = jsonValue;
 }

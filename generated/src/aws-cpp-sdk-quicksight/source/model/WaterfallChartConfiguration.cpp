@@ -34,19 +34,8 @@ WaterfallChartConfiguration::WaterfallChartConfiguration() :
 {
 }
 
-WaterfallChartConfiguration::WaterfallChartConfiguration(JsonView jsonValue) : 
-    m_fieldWellsHasBeenSet(false),
-    m_sortConfigurationHasBeenSet(false),
-    m_waterfallChartOptionsHasBeenSet(false),
-    m_categoryAxisLabelOptionsHasBeenSet(false),
-    m_categoryAxisDisplayOptionsHasBeenSet(false),
-    m_primaryYAxisLabelOptionsHasBeenSet(false),
-    m_primaryYAxisDisplayOptionsHasBeenSet(false),
-    m_legendHasBeenSet(false),
-    m_dataLabelsHasBeenSet(false),
-    m_visualPaletteHasBeenSet(false),
-    m_colorConfigurationHasBeenSet(false),
-    m_interactionsHasBeenSet(false)
+WaterfallChartConfiguration::WaterfallChartConfiguration(JsonView jsonValue)
+  : WaterfallChartConfiguration()
 {
   *this = jsonValue;
 }

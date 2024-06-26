@@ -24,9 +24,8 @@ DeviceMethod::DeviceMethod() :
 {
 }
 
-DeviceMethod::DeviceMethod(JsonView jsonValue) : 
-    m_deviceTypeHasBeenSet(false),
-    m_methodNameHasBeenSet(false)
+DeviceMethod::DeviceMethod(JsonView jsonValue)
+  : DeviceMethod()
 {
   *this = jsonValue;
 }

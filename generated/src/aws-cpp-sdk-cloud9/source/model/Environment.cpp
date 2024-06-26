@@ -34,19 +34,8 @@ Environment::Environment() :
 {
 }
 
-Environment::Environment(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_type(EnvironmentType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_connectionType(ConnectionType::NOT_SET),
-    m_connectionTypeHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_ownerArnHasBeenSet(false),
-    m_lifecycleHasBeenSet(false),
-    m_managedCredentialsStatus(ManagedCredentialsStatus::NOT_SET),
-    m_managedCredentialsStatusHasBeenSet(false)
+Environment::Environment(JsonView jsonValue)
+  : Environment()
 {
   *this = jsonValue;
 }

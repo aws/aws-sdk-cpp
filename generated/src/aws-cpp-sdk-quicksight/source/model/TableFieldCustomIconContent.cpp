@@ -24,9 +24,8 @@ TableFieldCustomIconContent::TableFieldCustomIconContent() :
 {
 }
 
-TableFieldCustomIconContent::TableFieldCustomIconContent(JsonView jsonValue) : 
-    m_icon(TableFieldIconSetType::NOT_SET),
-    m_iconHasBeenSet(false)
+TableFieldCustomIconContent::TableFieldCustomIconContent(JsonView jsonValue)
+  : TableFieldCustomIconContent()
 {
   *this = jsonValue;
 }

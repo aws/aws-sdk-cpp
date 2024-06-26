@@ -25,10 +25,8 @@ FlaggedIpAddressDetail::FlaggedIpAddressDetail() :
 {
 }
 
-FlaggedIpAddressDetail::FlaggedIpAddressDetail(JsonView jsonValue) : 
-    m_ipAddressHasBeenSet(false),
-    m_reason(Reason::NOT_SET),
-    m_reasonHasBeenSet(false)
+FlaggedIpAddressDetail::FlaggedIpAddressDetail(JsonView jsonValue)
+  : FlaggedIpAddressDetail()
 {
   *this = jsonValue;
 }

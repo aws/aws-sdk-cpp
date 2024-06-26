@@ -28,13 +28,8 @@ RouteData::RouteData() :
 {
 }
 
-RouteData::RouteData(JsonView jsonValue) : 
-    m_meshNameHasBeenSet(false),
-    m_metadataHasBeenSet(false),
-    m_routeNameHasBeenSet(false),
-    m_specHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_virtualRouterNameHasBeenSet(false)
+RouteData::RouteData(JsonView jsonValue)
+  : RouteData()
 {
   *this = jsonValue;
 }

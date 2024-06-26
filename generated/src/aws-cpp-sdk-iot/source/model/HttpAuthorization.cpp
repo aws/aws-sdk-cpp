@@ -23,8 +23,8 @@ HttpAuthorization::HttpAuthorization() :
 {
 }
 
-HttpAuthorization::HttpAuthorization(JsonView jsonValue) : 
-    m_sigv4HasBeenSet(false)
+HttpAuthorization::HttpAuthorization(JsonView jsonValue)
+  : HttpAuthorization()
 {
   *this = jsonValue;
 }

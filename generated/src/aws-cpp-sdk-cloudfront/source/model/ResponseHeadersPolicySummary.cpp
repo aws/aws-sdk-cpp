@@ -27,10 +27,8 @@ ResponseHeadersPolicySummary::ResponseHeadersPolicySummary() :
 {
 }
 
-ResponseHeadersPolicySummary::ResponseHeadersPolicySummary(const XmlNode& xmlNode) : 
-    m_type(ResponseHeadersPolicyType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_responseHeadersPolicyHasBeenSet(false)
+ResponseHeadersPolicySummary::ResponseHeadersPolicySummary(const XmlNode& xmlNode)
+  : ResponseHeadersPolicySummary()
 {
   *this = xmlNode;
 }

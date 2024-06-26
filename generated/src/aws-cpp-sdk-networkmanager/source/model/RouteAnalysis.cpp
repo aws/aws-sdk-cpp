@@ -36,21 +36,8 @@ RouteAnalysis::RouteAnalysis() :
 {
 }
 
-RouteAnalysis::RouteAnalysis(JsonView jsonValue) : 
-    m_globalNetworkIdHasBeenSet(false),
-    m_ownerAccountIdHasBeenSet(false),
-    m_routeAnalysisIdHasBeenSet(false),
-    m_startTimestampHasBeenSet(false),
-    m_status(RouteAnalysisStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_sourceHasBeenSet(false),
-    m_destinationHasBeenSet(false),
-    m_includeReturnPath(false),
-    m_includeReturnPathHasBeenSet(false),
-    m_useMiddleboxes(false),
-    m_useMiddleboxesHasBeenSet(false),
-    m_forwardPathHasBeenSet(false),
-    m_returnPathHasBeenSet(false)
+RouteAnalysis::RouteAnalysis(JsonView jsonValue)
+  : RouteAnalysis()
 {
   *this = jsonValue;
 }

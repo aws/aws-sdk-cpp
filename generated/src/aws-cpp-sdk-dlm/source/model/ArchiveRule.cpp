@@ -23,8 +23,8 @@ ArchiveRule::ArchiveRule() :
 {
 }
 
-ArchiveRule::ArchiveRule(JsonView jsonValue) : 
-    m_retainRuleHasBeenSet(false)
+ArchiveRule::ArchiveRule(JsonView jsonValue)
+  : ArchiveRule()
 {
   *this = jsonValue;
 }

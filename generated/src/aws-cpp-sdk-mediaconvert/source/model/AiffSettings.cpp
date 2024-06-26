@@ -28,13 +28,8 @@ AiffSettings::AiffSettings() :
 {
 }
 
-AiffSettings::AiffSettings(JsonView jsonValue) : 
-    m_bitDepth(0),
-    m_bitDepthHasBeenSet(false),
-    m_channels(0),
-    m_channelsHasBeenSet(false),
-    m_sampleRate(0),
-    m_sampleRateHasBeenSet(false)
+AiffSettings::AiffSettings(JsonView jsonValue)
+  : AiffSettings()
 {
   *this = jsonValue;
 }

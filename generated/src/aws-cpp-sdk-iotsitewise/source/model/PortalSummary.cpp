@@ -30,15 +30,8 @@ PortalSummary::PortalSummary() :
 {
 }
 
-PortalSummary::PortalSummary(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_startUrlHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_lastUpdateDateHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_statusHasBeenSet(false)
+PortalSummary::PortalSummary(JsonView jsonValue)
+  : PortalSummary()
 {
   *this = jsonValue;
 }

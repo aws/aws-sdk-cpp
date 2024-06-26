@@ -36,21 +36,8 @@ AdditionalInfoRequest::AdditionalInfoRequest() :
 {
 }
 
-AdditionalInfoRequest::AdditionalInfoRequest(JsonView jsonValue) : 
-    m_canadaAdditionalInfoHasBeenSet(false),
-    m_estoniaAdditionalInfoHasBeenSet(false),
-    m_georgiaAdditionalInfoHasBeenSet(false),
-    m_israelAdditionalInfoHasBeenSet(false),
-    m_italyAdditionalInfoHasBeenSet(false),
-    m_kenyaAdditionalInfoHasBeenSet(false),
-    m_malaysiaAdditionalInfoHasBeenSet(false),
-    m_polandAdditionalInfoHasBeenSet(false),
-    m_romaniaAdditionalInfoHasBeenSet(false),
-    m_saudiArabiaAdditionalInfoHasBeenSet(false),
-    m_southKoreaAdditionalInfoHasBeenSet(false),
-    m_spainAdditionalInfoHasBeenSet(false),
-    m_turkeyAdditionalInfoHasBeenSet(false),
-    m_ukraineAdditionalInfoHasBeenSet(false)
+AdditionalInfoRequest::AdditionalInfoRequest(JsonView jsonValue)
+  : AdditionalInfoRequest()
 {
   *this = jsonValue;
 }

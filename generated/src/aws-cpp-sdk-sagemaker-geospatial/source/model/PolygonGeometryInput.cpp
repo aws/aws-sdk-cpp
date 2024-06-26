@@ -23,8 +23,8 @@ PolygonGeometryInput::PolygonGeometryInput() :
 {
 }
 
-PolygonGeometryInput::PolygonGeometryInput(JsonView jsonValue) : 
-    m_coordinatesHasBeenSet(false)
+PolygonGeometryInput::PolygonGeometryInput(JsonView jsonValue)
+  : PolygonGeometryInput()
 {
   *this = jsonValue;
 }

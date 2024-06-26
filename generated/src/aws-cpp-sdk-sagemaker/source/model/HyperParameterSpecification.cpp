@@ -32,17 +32,8 @@ HyperParameterSpecification::HyperParameterSpecification() :
 {
 }
 
-HyperParameterSpecification::HyperParameterSpecification(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_type(ParameterType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_rangeHasBeenSet(false),
-    m_isTunable(false),
-    m_isTunableHasBeenSet(false),
-    m_isRequired(false),
-    m_isRequiredHasBeenSet(false),
-    m_defaultValueHasBeenSet(false)
+HyperParameterSpecification::HyperParameterSpecification(JsonView jsonValue)
+  : HyperParameterSpecification()
 {
   *this = jsonValue;
 }

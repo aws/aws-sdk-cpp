@@ -23,8 +23,8 @@ GeneratedResponsePart::GeneratedResponsePart() :
 {
 }
 
-GeneratedResponsePart::GeneratedResponsePart(JsonView jsonValue) : 
-    m_textResponsePartHasBeenSet(false)
+GeneratedResponsePart::GeneratedResponsePart(JsonView jsonValue)
+  : GeneratedResponsePart()
 {
   *this = jsonValue;
 }

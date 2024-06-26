@@ -24,9 +24,8 @@ SearchDevicesFilter::SearchDevicesFilter() :
 {
 }
 
-SearchDevicesFilter::SearchDevicesFilter(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+SearchDevicesFilter::SearchDevicesFilter(JsonView jsonValue)
+  : SearchDevicesFilter()
 {
   *this = jsonValue;
 }

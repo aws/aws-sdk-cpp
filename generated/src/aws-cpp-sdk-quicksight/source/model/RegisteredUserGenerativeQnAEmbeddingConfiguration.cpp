@@ -23,8 +23,8 @@ RegisteredUserGenerativeQnAEmbeddingConfiguration::RegisteredUserGenerativeQnAEm
 {
 }
 
-RegisteredUserGenerativeQnAEmbeddingConfiguration::RegisteredUserGenerativeQnAEmbeddingConfiguration(JsonView jsonValue) : 
-    m_initialTopicIdHasBeenSet(false)
+RegisteredUserGenerativeQnAEmbeddingConfiguration::RegisteredUserGenerativeQnAEmbeddingConfiguration(JsonView jsonValue)
+  : RegisteredUserGenerativeQnAEmbeddingConfiguration()
 {
   *this = jsonValue;
 }

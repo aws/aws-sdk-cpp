@@ -38,23 +38,8 @@ JobProgressReport::JobProgressReport() :
 {
 }
 
-JobProgressReport::JobProgressReport(JsonView jsonValue) : 
-    m_totalNumberOfScannedFiles(0),
-    m_totalNumberOfScannedFilesHasBeenSet(false),
-    m_totalSizeOfScannedFilesInMB(0.0),
-    m_totalSizeOfScannedFilesInMBHasBeenSet(false),
-    m_totalNumberOfImportedFiles(0),
-    m_totalNumberOfImportedFilesHasBeenSet(false),
-    m_totalNumberOfResourcesScanned(0),
-    m_totalNumberOfResourcesScannedHasBeenSet(false),
-    m_totalNumberOfResourcesImported(0),
-    m_totalNumberOfResourcesImportedHasBeenSet(false),
-    m_totalNumberOfResourcesWithCustomerError(0),
-    m_totalNumberOfResourcesWithCustomerErrorHasBeenSet(false),
-    m_totalNumberOfFilesReadWithCustomerError(0),
-    m_totalNumberOfFilesReadWithCustomerErrorHasBeenSet(false),
-    m_throughput(0.0),
-    m_throughputHasBeenSet(false)
+JobProgressReport::JobProgressReport(JsonView jsonValue)
+  : JobProgressReport()
 {
   *this = jsonValue;
 }

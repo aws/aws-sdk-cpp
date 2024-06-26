@@ -26,9 +26,8 @@ PrefixListId::PrefixListId() :
 {
 }
 
-PrefixListId::PrefixListId(const XmlNode& xmlNode) : 
-    m_descriptionHasBeenSet(false),
-    m_prefixListIdHasBeenSet(false)
+PrefixListId::PrefixListId(const XmlNode& xmlNode)
+  : PrefixListId()
 {
   *this = xmlNode;
 }

@@ -26,11 +26,8 @@ UpdateConnectionAuthRequestParameters::UpdateConnectionAuthRequestParameters() :
 {
 }
 
-UpdateConnectionAuthRequestParameters::UpdateConnectionAuthRequestParameters(JsonView jsonValue) : 
-    m_basicAuthParametersHasBeenSet(false),
-    m_oAuthParametersHasBeenSet(false),
-    m_apiKeyAuthParametersHasBeenSet(false),
-    m_invocationHttpParametersHasBeenSet(false)
+UpdateConnectionAuthRequestParameters::UpdateConnectionAuthRequestParameters(JsonView jsonValue)
+  : UpdateConnectionAuthRequestParameters()
 {
   *this = jsonValue;
 }

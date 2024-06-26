@@ -25,10 +25,8 @@ PaymentScheduleTerm::PaymentScheduleTerm() :
 {
 }
 
-PaymentScheduleTerm::PaymentScheduleTerm(JsonView jsonValue) : 
-    m_currencyCodeHasBeenSet(false),
-    m_scheduleHasBeenSet(false),
-    m_typeHasBeenSet(false)
+PaymentScheduleTerm::PaymentScheduleTerm(JsonView jsonValue)
+  : PaymentScheduleTerm()
 {
   *this = jsonValue;
 }

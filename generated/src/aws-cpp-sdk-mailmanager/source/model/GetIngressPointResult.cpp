@@ -23,9 +23,8 @@ GetIngressPointResult::GetIngressPointResult() :
 {
 }
 
-GetIngressPointResult::GetIngressPointResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(IngressPointStatus::NOT_SET),
-    m_type(IngressPointType::NOT_SET)
+GetIngressPointResult::GetIngressPointResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetIngressPointResult()
 {
   *this = result;
 }

@@ -29,14 +29,8 @@ AwsKinesisStreamDetails::AwsKinesisStreamDetails() :
 {
 }
 
-AwsKinesisStreamDetails::AwsKinesisStreamDetails(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_streamEncryptionHasBeenSet(false),
-    m_shardCount(0),
-    m_shardCountHasBeenSet(false),
-    m_retentionPeriodHours(0),
-    m_retentionPeriodHoursHasBeenSet(false)
+AwsKinesisStreamDetails::AwsKinesisStreamDetails(JsonView jsonValue)
+  : AwsKinesisStreamDetails()
 {
   *this = jsonValue;
 }

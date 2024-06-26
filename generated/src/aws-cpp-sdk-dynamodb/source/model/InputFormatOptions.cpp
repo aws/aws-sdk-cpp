@@ -23,8 +23,8 @@ InputFormatOptions::InputFormatOptions() :
 {
 }
 
-InputFormatOptions::InputFormatOptions(JsonView jsonValue) : 
-    m_csvHasBeenSet(false)
+InputFormatOptions::InputFormatOptions(JsonView jsonValue)
+  : InputFormatOptions()
 {
   *this = jsonValue;
 }

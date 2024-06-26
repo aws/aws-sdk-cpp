@@ -29,13 +29,8 @@ Resource::Resource() :
 {
 }
 
-Resource::Resource(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_parentIdHasBeenSet(false),
-    m_pathPartHasBeenSet(false),
-    m_pathHasBeenSet(false),
-    m_resourceMethodsHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
+Resource::Resource(JsonView jsonValue)
+  : Resource()
 {
   *this = jsonValue;
 }

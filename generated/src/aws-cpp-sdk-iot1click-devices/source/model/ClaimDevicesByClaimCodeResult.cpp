@@ -22,8 +22,8 @@ ClaimDevicesByClaimCodeResult::ClaimDevicesByClaimCodeResult() :
 {
 }
 
-ClaimDevicesByClaimCodeResult::ClaimDevicesByClaimCodeResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_total(0)
+ClaimDevicesByClaimCodeResult::ClaimDevicesByClaimCodeResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ClaimDevicesByClaimCodeResult()
 {
   *this = result;
 }

@@ -27,12 +27,8 @@ NetworkFirewallUnexpectedFirewallRoutesViolation::NetworkFirewallUnexpectedFirew
 {
 }
 
-NetworkFirewallUnexpectedFirewallRoutesViolation::NetworkFirewallUnexpectedFirewallRoutesViolation(JsonView jsonValue) : 
-    m_firewallSubnetIdHasBeenSet(false),
-    m_violatingRoutesHasBeenSet(false),
-    m_routeTableIdHasBeenSet(false),
-    m_firewallEndpointHasBeenSet(false),
-    m_vpcIdHasBeenSet(false)
+NetworkFirewallUnexpectedFirewallRoutesViolation::NetworkFirewallUnexpectedFirewallRoutesViolation(JsonView jsonValue)
+  : NetworkFirewallUnexpectedFirewallRoutesViolation()
 {
   *this = jsonValue;
 }

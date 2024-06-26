@@ -31,16 +31,8 @@ GridConfiguration::GridConfiguration() :
 {
 }
 
-GridConfiguration::GridConfiguration(JsonView jsonValue) : 
-    m_featuredParticipantAttributeHasBeenSet(false),
-    m_omitStoppedVideo(false),
-    m_omitStoppedVideoHasBeenSet(false),
-    m_videoAspectRatio(VideoAspectRatio::NOT_SET),
-    m_videoAspectRatioHasBeenSet(false),
-    m_videoFillMode(VideoFillMode::NOT_SET),
-    m_videoFillModeHasBeenSet(false),
-    m_gridGap(0),
-    m_gridGapHasBeenSet(false)
+GridConfiguration::GridConfiguration(JsonView jsonValue)
+  : GridConfiguration()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ NumericalAggregationFunction::NumericalAggregationFunction() :
 {
 }
 
-NumericalAggregationFunction::NumericalAggregationFunction(JsonView jsonValue) : 
-    m_simpleNumericalAggregation(SimpleNumericalAggregationFunction::NOT_SET),
-    m_simpleNumericalAggregationHasBeenSet(false),
-    m_percentileAggregationHasBeenSet(false)
+NumericalAggregationFunction::NumericalAggregationFunction(JsonView jsonValue)
+  : NumericalAggregationFunction()
 {
   *this = jsonValue;
 }

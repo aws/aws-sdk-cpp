@@ -23,8 +23,8 @@ SubmitAutoEvaluationActionDefinition::SubmitAutoEvaluationActionDefinition() :
 {
 }
 
-SubmitAutoEvaluationActionDefinition::SubmitAutoEvaluationActionDefinition(JsonView jsonValue) : 
-    m_evaluationFormIdHasBeenSet(false)
+SubmitAutoEvaluationActionDefinition::SubmitAutoEvaluationActionDefinition(JsonView jsonValue)
+  : SubmitAutoEvaluationActionDefinition()
 {
   *this = jsonValue;
 }

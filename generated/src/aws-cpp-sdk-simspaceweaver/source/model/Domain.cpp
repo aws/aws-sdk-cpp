@@ -25,10 +25,8 @@ Domain::Domain() :
 {
 }
 
-Domain::Domain(JsonView jsonValue) : 
-    m_lifecycle(LifecycleManagementStrategy::NOT_SET),
-    m_lifecycleHasBeenSet(false),
-    m_nameHasBeenSet(false)
+Domain::Domain(JsonView jsonValue)
+  : Domain()
 {
   *this = jsonValue;
 }

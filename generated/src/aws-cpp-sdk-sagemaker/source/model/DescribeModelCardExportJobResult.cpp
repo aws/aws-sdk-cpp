@@ -23,9 +23,8 @@ DescribeModelCardExportJobResult::DescribeModelCardExportJobResult() :
 {
 }
 
-DescribeModelCardExportJobResult::DescribeModelCardExportJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(ModelCardExportJobStatus::NOT_SET),
-    m_modelCardVersion(0)
+DescribeModelCardExportJobResult::DescribeModelCardExportJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeModelCardExportJobResult()
 {
   *this = result;
 }

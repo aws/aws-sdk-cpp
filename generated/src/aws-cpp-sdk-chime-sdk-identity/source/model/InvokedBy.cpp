@@ -26,11 +26,8 @@ InvokedBy::InvokedBy() :
 {
 }
 
-InvokedBy::InvokedBy(JsonView jsonValue) : 
-    m_standardMessages(StandardMessages::NOT_SET),
-    m_standardMessagesHasBeenSet(false),
-    m_targetedMessages(TargetedMessages::NOT_SET),
-    m_targetedMessagesHasBeenSet(false)
+InvokedBy::InvokedBy(JsonView jsonValue)
+  : InvokedBy()
 {
   *this = jsonValue;
 }

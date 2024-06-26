@@ -26,11 +26,8 @@ LFTagPolicyDetails::LFTagPolicyDetails() :
 {
 }
 
-LFTagPolicyDetails::LFTagPolicyDetails(JsonView jsonValue) : 
-    m_catalogIdHasBeenSet(false),
-    m_resourceType(LFResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_resourceDetailsHasBeenSet(false)
+LFTagPolicyDetails::LFTagPolicyDetails(JsonView jsonValue)
+  : LFTagPolicyDetails()
 {
   *this = jsonValue;
 }

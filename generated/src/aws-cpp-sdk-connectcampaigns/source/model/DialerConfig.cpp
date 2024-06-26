@@ -25,10 +25,8 @@ DialerConfig::DialerConfig() :
 {
 }
 
-DialerConfig::DialerConfig(JsonView jsonValue) : 
-    m_progressiveDialerConfigHasBeenSet(false),
-    m_predictiveDialerConfigHasBeenSet(false),
-    m_agentlessDialerConfigHasBeenSet(false)
+DialerConfig::DialerConfig(JsonView jsonValue)
+  : DialerConfig()
 {
   *this = jsonValue;
 }

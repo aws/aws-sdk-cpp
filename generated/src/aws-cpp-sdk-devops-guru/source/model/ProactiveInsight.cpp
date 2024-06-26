@@ -33,18 +33,8 @@ ProactiveInsight::ProactiveInsight() :
 {
 }
 
-ProactiveInsight::ProactiveInsight(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_severity(InsightSeverity::NOT_SET),
-    m_severityHasBeenSet(false),
-    m_status(InsightStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_insightTimeRangeHasBeenSet(false),
-    m_predictionTimeRangeHasBeenSet(false),
-    m_resourceCollectionHasBeenSet(false),
-    m_ssmOpsItemIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+ProactiveInsight::ProactiveInsight(JsonView jsonValue)
+  : ProactiveInsight()
 {
   *this = jsonValue;
 }

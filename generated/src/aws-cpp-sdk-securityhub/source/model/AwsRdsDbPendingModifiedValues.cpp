@@ -42,27 +42,8 @@ AwsRdsDbPendingModifiedValues::AwsRdsDbPendingModifiedValues() :
 {
 }
 
-AwsRdsDbPendingModifiedValues::AwsRdsDbPendingModifiedValues(JsonView jsonValue) : 
-    m_dbInstanceClassHasBeenSet(false),
-    m_allocatedStorage(0),
-    m_allocatedStorageHasBeenSet(false),
-    m_masterUserPasswordHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_backupRetentionPeriod(0),
-    m_backupRetentionPeriodHasBeenSet(false),
-    m_multiAZ(false),
-    m_multiAZHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_licenseModelHasBeenSet(false),
-    m_iops(0),
-    m_iopsHasBeenSet(false),
-    m_dbInstanceIdentifierHasBeenSet(false),
-    m_storageTypeHasBeenSet(false),
-    m_caCertificateIdentifierHasBeenSet(false),
-    m_dbSubnetGroupNameHasBeenSet(false),
-    m_pendingCloudWatchLogsExportsHasBeenSet(false),
-    m_processorFeaturesHasBeenSet(false)
+AwsRdsDbPendingModifiedValues::AwsRdsDbPendingModifiedValues(JsonView jsonValue)
+  : AwsRdsDbPendingModifiedValues()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ ReplicaGlobalSecondaryIndexAutoScalingUpdate::ReplicaGlobalSecondaryIndexAutoSca
 {
 }
 
-ReplicaGlobalSecondaryIndexAutoScalingUpdate::ReplicaGlobalSecondaryIndexAutoScalingUpdate(JsonView jsonValue) : 
-    m_indexNameHasBeenSet(false),
-    m_provisionedReadCapacityAutoScalingUpdateHasBeenSet(false)
+ReplicaGlobalSecondaryIndexAutoScalingUpdate::ReplicaGlobalSecondaryIndexAutoScalingUpdate(JsonView jsonValue)
+  : ReplicaGlobalSecondaryIndexAutoScalingUpdate()
 {
   *this = jsonValue;
 }

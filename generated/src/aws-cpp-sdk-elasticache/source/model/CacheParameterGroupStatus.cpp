@@ -27,10 +27,8 @@ CacheParameterGroupStatus::CacheParameterGroupStatus() :
 {
 }
 
-CacheParameterGroupStatus::CacheParameterGroupStatus(const XmlNode& xmlNode) : 
-    m_cacheParameterGroupNameHasBeenSet(false),
-    m_parameterApplyStatusHasBeenSet(false),
-    m_cacheNodeIdsToRebootHasBeenSet(false)
+CacheParameterGroupStatus::CacheParameterGroupStatus(const XmlNode& xmlNode)
+  : CacheParameterGroupStatus()
 {
   *this = xmlNode;
 }

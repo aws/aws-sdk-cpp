@@ -23,8 +23,8 @@ LoggingInfo::LoggingInfo() :
 {
 }
 
-LoggingInfo::LoggingInfo(JsonView jsonValue) : 
-    m_brokerLogsHasBeenSet(false)
+LoggingInfo::LoggingInfo(JsonView jsonValue)
+  : LoggingInfo()
 {
   *this = jsonValue;
 }

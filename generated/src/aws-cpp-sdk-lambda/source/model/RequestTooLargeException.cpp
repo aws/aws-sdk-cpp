@@ -24,9 +24,8 @@ RequestTooLargeException::RequestTooLargeException() :
 {
 }
 
-RequestTooLargeException::RequestTooLargeException(JsonView jsonValue) : 
-    m_typeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+RequestTooLargeException::RequestTooLargeException(JsonView jsonValue)
+  : RequestTooLargeException()
 {
   *this = jsonValue;
 }

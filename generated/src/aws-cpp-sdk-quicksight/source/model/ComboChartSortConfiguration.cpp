@@ -26,11 +26,8 @@ ComboChartSortConfiguration::ComboChartSortConfiguration() :
 {
 }
 
-ComboChartSortConfiguration::ComboChartSortConfiguration(JsonView jsonValue) : 
-    m_categorySortHasBeenSet(false),
-    m_categoryItemsLimitHasBeenSet(false),
-    m_colorSortHasBeenSet(false),
-    m_colorItemsLimitHasBeenSet(false)
+ComboChartSortConfiguration::ComboChartSortConfiguration(JsonView jsonValue)
+  : ComboChartSortConfiguration()
 {
   *this = jsonValue;
 }

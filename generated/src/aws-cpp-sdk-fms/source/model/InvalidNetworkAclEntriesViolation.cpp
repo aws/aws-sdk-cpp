@@ -27,12 +27,8 @@ InvalidNetworkAclEntriesViolation::InvalidNetworkAclEntriesViolation() :
 {
 }
 
-InvalidNetworkAclEntriesViolation::InvalidNetworkAclEntriesViolation(JsonView jsonValue) : 
-    m_vpcHasBeenSet(false),
-    m_subnetHasBeenSet(false),
-    m_subnetAvailabilityZoneHasBeenSet(false),
-    m_currentAssociatedNetworkAclHasBeenSet(false),
-    m_entryViolationsHasBeenSet(false)
+InvalidNetworkAclEntriesViolation::InvalidNetworkAclEntriesViolation(JsonView jsonValue)
+  : InvalidNetworkAclEntriesViolation()
 {
   *this = jsonValue;
 }

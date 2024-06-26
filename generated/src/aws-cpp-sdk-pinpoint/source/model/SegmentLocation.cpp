@@ -24,9 +24,8 @@ SegmentLocation::SegmentLocation() :
 {
 }
 
-SegmentLocation::SegmentLocation(JsonView jsonValue) : 
-    m_countryHasBeenSet(false),
-    m_gPSPointHasBeenSet(false)
+SegmentLocation::SegmentLocation(JsonView jsonValue)
+  : SegmentLocation()
 {
   *this = jsonValue;
 }

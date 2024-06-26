@@ -24,9 +24,8 @@ TabularConditions::TabularConditions() :
 {
 }
 
-TabularConditions::TabularConditions(JsonView jsonValue) : 
-    m_orderByHasBeenSet(false),
-    m_propertyFiltersHasBeenSet(false)
+TabularConditions::TabularConditions(JsonView jsonValue)
+  : TabularConditions()
 {
   *this = jsonValue;
 }

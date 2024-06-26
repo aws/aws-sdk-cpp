@@ -26,11 +26,8 @@ InsightsEvent::InsightsEvent() :
 {
 }
 
-InsightsEvent::InsightsEvent(JsonView jsonValue) : 
-    m_timestampHasBeenSet(false),
-    m_type(EventType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_detailsHasBeenSet(false)
+InsightsEvent::InsightsEvent(JsonView jsonValue)
+  : InsightsEvent()
 {
   *this = jsonValue;
 }

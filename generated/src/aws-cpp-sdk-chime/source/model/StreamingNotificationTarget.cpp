@@ -24,9 +24,8 @@ StreamingNotificationTarget::StreamingNotificationTarget() :
 {
 }
 
-StreamingNotificationTarget::StreamingNotificationTarget(JsonView jsonValue) : 
-    m_notificationTarget(NotificationTarget::NOT_SET),
-    m_notificationTargetHasBeenSet(false)
+StreamingNotificationTarget::StreamingNotificationTarget(JsonView jsonValue)
+  : StreamingNotificationTarget()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ ParticipantTimerValue::ParticipantTimerValue() :
 {
 }
 
-ParticipantTimerValue::ParticipantTimerValue(JsonView jsonValue) : 
-    m_participantTimerAction(ParticipantTimerAction::NOT_SET),
-    m_participantTimerActionHasBeenSet(false),
-    m_participantTimerDurationInMinutes(0),
-    m_participantTimerDurationInMinutesHasBeenSet(false)
+ParticipantTimerValue::ParticipantTimerValue(JsonView jsonValue)
+  : ParticipantTimerValue()
 {
   *this = jsonValue;
 }

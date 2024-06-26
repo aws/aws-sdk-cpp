@@ -28,13 +28,8 @@ CapacitySpecification::CapacitySpecification() :
 {
 }
 
-CapacitySpecification::CapacitySpecification(JsonView jsonValue) : 
-    m_throughputMode(ThroughputMode::NOT_SET),
-    m_throughputModeHasBeenSet(false),
-    m_readCapacityUnits(0),
-    m_readCapacityUnitsHasBeenSet(false),
-    m_writeCapacityUnits(0),
-    m_writeCapacityUnitsHasBeenSet(false)
+CapacitySpecification::CapacitySpecification(JsonView jsonValue)
+  : CapacitySpecification()
 {
   *this = jsonValue;
 }

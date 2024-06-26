@@ -24,9 +24,8 @@ CategoryDrillDownFilter::CategoryDrillDownFilter() :
 {
 }
 
-CategoryDrillDownFilter::CategoryDrillDownFilter(JsonView jsonValue) : 
-    m_columnHasBeenSet(false),
-    m_categoryValuesHasBeenSet(false)
+CategoryDrillDownFilter::CategoryDrillDownFilter(JsonView jsonValue)
+  : CategoryDrillDownFilter()
 {
   *this = jsonValue;
 }

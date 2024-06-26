@@ -23,8 +23,8 @@ DemodulationConfig::DemodulationConfig() :
 {
 }
 
-DemodulationConfig::DemodulationConfig(JsonView jsonValue) : 
-    m_unvalidatedJSONHasBeenSet(false)
+DemodulationConfig::DemodulationConfig(JsonView jsonValue)
+  : DemodulationConfig()
 {
   *this = jsonValue;
 }

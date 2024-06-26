@@ -22,8 +22,8 @@ StartCopyJobResult::StartCopyJobResult() :
 {
 }
 
-StartCopyJobResult::StartCopyJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_isParent(false)
+StartCopyJobResult::StartCopyJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : StartCopyJobResult()
 {
   *this = result;
 }

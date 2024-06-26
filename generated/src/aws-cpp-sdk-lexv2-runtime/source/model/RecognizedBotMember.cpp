@@ -24,9 +24,8 @@ RecognizedBotMember::RecognizedBotMember() :
 {
 }
 
-RecognizedBotMember::RecognizedBotMember(JsonView jsonValue) : 
-    m_botIdHasBeenSet(false),
-    m_botNameHasBeenSet(false)
+RecognizedBotMember::RecognizedBotMember(JsonView jsonValue)
+  : RecognizedBotMember()
 {
   *this = jsonValue;
 }

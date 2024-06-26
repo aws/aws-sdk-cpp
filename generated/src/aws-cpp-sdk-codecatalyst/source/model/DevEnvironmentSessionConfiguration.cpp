@@ -25,10 +25,8 @@ DevEnvironmentSessionConfiguration::DevEnvironmentSessionConfiguration() :
 {
 }
 
-DevEnvironmentSessionConfiguration::DevEnvironmentSessionConfiguration(JsonView jsonValue) : 
-    m_sessionType(DevEnvironmentSessionType::NOT_SET),
-    m_sessionTypeHasBeenSet(false),
-    m_executeCommandSessionConfigurationHasBeenSet(false)
+DevEnvironmentSessionConfiguration::DevEnvironmentSessionConfiguration(JsonView jsonValue)
+  : DevEnvironmentSessionConfiguration()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ DescribeInstanceAccessControlAttributeConfigurationResult::DescribeInstanceAcces
 {
 }
 
-DescribeInstanceAccessControlAttributeConfigurationResult::DescribeInstanceAccessControlAttributeConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(InstanceAccessControlAttributeConfigurationStatus::NOT_SET)
+DescribeInstanceAccessControlAttributeConfigurationResult::DescribeInstanceAccessControlAttributeConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeInstanceAccessControlAttributeConfigurationResult()
 {
   *this = result;
 }

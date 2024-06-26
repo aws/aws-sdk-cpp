@@ -25,11 +25,8 @@ GetProvisionedModelThroughputResult::GetProvisionedModelThroughputResult() :
 {
 }
 
-GetProvisionedModelThroughputResult::GetProvisionedModelThroughputResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_modelUnits(0),
-    m_desiredModelUnits(0),
-    m_status(ProvisionedModelStatus::NOT_SET),
-    m_commitmentDuration(CommitmentDuration::NOT_SET)
+GetProvisionedModelThroughputResult::GetProvisionedModelThroughputResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetProvisionedModelThroughputResult()
 {
   *this = result;
 }

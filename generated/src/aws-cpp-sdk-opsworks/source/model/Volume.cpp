@@ -39,24 +39,8 @@ Volume::Volume() :
 {
 }
 
-Volume::Volume(JsonView jsonValue) : 
-    m_volumeIdHasBeenSet(false),
-    m_ec2VolumeIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_raidArrayIdHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_size(0),
-    m_sizeHasBeenSet(false),
-    m_deviceHasBeenSet(false),
-    m_mountPointHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_volumeTypeHasBeenSet(false),
-    m_iops(0),
-    m_iopsHasBeenSet(false),
-    m_encrypted(false),
-    m_encryptedHasBeenSet(false)
+Volume::Volume(JsonView jsonValue)
+  : Volume()
 {
   *this = jsonValue;
 }

@@ -27,12 +27,8 @@ AdditionalAuthenticationProvider::AdditionalAuthenticationProvider() :
 {
 }
 
-AdditionalAuthenticationProvider::AdditionalAuthenticationProvider(JsonView jsonValue) : 
-    m_authenticationType(AuthenticationType::NOT_SET),
-    m_authenticationTypeHasBeenSet(false),
-    m_openIDConnectConfigHasBeenSet(false),
-    m_userPoolConfigHasBeenSet(false),
-    m_lambdaAuthorizerConfigHasBeenSet(false)
+AdditionalAuthenticationProvider::AdditionalAuthenticationProvider(JsonView jsonValue)
+  : AdditionalAuthenticationProvider()
 {
   *this = jsonValue;
 }

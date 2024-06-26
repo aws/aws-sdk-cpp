@@ -26,11 +26,8 @@ WorkforceVpcConfigResponse::WorkforceVpcConfigResponse() :
 {
 }
 
-WorkforceVpcConfigResponse::WorkforceVpcConfigResponse(JsonView jsonValue) : 
-    m_vpcIdHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false),
-    m_subnetsHasBeenSet(false),
-    m_vpcEndpointIdHasBeenSet(false)
+WorkforceVpcConfigResponse::WorkforceVpcConfigResponse(JsonView jsonValue)
+  : WorkforceVpcConfigResponse()
 {
   *this = jsonValue;
 }

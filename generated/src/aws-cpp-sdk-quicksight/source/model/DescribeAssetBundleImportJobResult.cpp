@@ -24,10 +24,8 @@ DescribeAssetBundleImportJobResult::DescribeAssetBundleImportJobResult() :
 {
 }
 
-DescribeAssetBundleImportJobResult::DescribeAssetBundleImportJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_jobStatus(AssetBundleImportJobStatus::NOT_SET),
-    m_failureAction(AssetBundleImportFailureAction::NOT_SET),
-    m_status(0)
+DescribeAssetBundleImportJobResult::DescribeAssetBundleImportJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeAssetBundleImportJobResult()
 {
   *this = result;
 }

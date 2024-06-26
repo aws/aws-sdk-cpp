@@ -27,12 +27,8 @@ ColumnConfiguration::ColumnConfiguration() :
 {
 }
 
-ColumnConfiguration::ColumnConfiguration(JsonView jsonValue) : 
-    m_columnHasBeenSet(false),
-    m_formatConfigurationHasBeenSet(false),
-    m_role(ColumnRole::NOT_SET),
-    m_roleHasBeenSet(false),
-    m_colorsConfigurationHasBeenSet(false)
+ColumnConfiguration::ColumnConfiguration(JsonView jsonValue)
+  : ColumnConfiguration()
 {
   *this = jsonValue;
 }

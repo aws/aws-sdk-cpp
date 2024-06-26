@@ -22,8 +22,8 @@ GetProfileObjectTypeTemplateResult::GetProfileObjectTypeTemplateResult() :
 {
 }
 
-GetProfileObjectTypeTemplateResult::GetProfileObjectTypeTemplateResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_allowProfileCreation(false)
+GetProfileObjectTypeTemplateResult::GetProfileObjectTypeTemplateResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetProfileObjectTypeTemplateResult()
 {
   *this = result;
 }

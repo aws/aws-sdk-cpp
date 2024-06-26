@@ -23,8 +23,8 @@ RecommendedStep::RecommendedStep() :
 {
 }
 
-RecommendedStep::RecommendedStep(JsonView jsonValue) : 
-    m_unusedPermissionsRecommendedStepHasBeenSet(false)
+RecommendedStep::RecommendedStep(JsonView jsonValue)
+  : RecommendedStep()
 {
   *this = jsonValue;
 }

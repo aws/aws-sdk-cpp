@@ -27,10 +27,8 @@ QueryStringNames::QueryStringNames() :
 {
 }
 
-QueryStringNames::QueryStringNames(const XmlNode& xmlNode) : 
-    m_quantity(0),
-    m_quantityHasBeenSet(false),
-    m_itemsHasBeenSet(false)
+QueryStringNames::QueryStringNames(const XmlNode& xmlNode)
+  : QueryStringNames()
 {
   *this = xmlNode;
 }

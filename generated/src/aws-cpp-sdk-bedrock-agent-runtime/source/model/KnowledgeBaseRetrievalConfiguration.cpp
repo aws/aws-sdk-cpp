@@ -23,8 +23,8 @@ KnowledgeBaseRetrievalConfiguration::KnowledgeBaseRetrievalConfiguration() :
 {
 }
 
-KnowledgeBaseRetrievalConfiguration::KnowledgeBaseRetrievalConfiguration(JsonView jsonValue) : 
-    m_vectorSearchConfigurationHasBeenSet(false)
+KnowledgeBaseRetrievalConfiguration::KnowledgeBaseRetrievalConfiguration(JsonView jsonValue)
+  : KnowledgeBaseRetrievalConfiguration()
 {
   *this = jsonValue;
 }

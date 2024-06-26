@@ -30,15 +30,8 @@ WorkspaceDescription::WorkspaceDescription() :
 {
 }
 
-WorkspaceDescription::WorkspaceDescription(JsonView jsonValue) : 
-    m_aliasHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_kmsKeyArnHasBeenSet(false),
-    m_prometheusEndpointHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_workspaceIdHasBeenSet(false)
+WorkspaceDescription::WorkspaceDescription(JsonView jsonValue)
+  : WorkspaceDescription()
 {
   *this = jsonValue;
 }

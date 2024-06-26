@@ -26,11 +26,8 @@ ListApplicationsRequestFilters::ListApplicationsRequestFilters() :
 {
 }
 
-ListApplicationsRequestFilters::ListApplicationsRequestFilters(JsonView jsonValue) : 
-    m_applicationIDsHasBeenSet(false),
-    m_isArchived(false),
-    m_isArchivedHasBeenSet(false),
-    m_waveIDsHasBeenSet(false)
+ListApplicationsRequestFilters::ListApplicationsRequestFilters(JsonView jsonValue)
+  : ListApplicationsRequestFilters()
 {
   *this = jsonValue;
 }

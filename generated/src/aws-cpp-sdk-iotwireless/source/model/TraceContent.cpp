@@ -28,13 +28,8 @@ TraceContent::TraceContent() :
 {
 }
 
-TraceContent::TraceContent(JsonView jsonValue) : 
-    m_wirelessDeviceFrameInfo(WirelessDeviceFrameInfo::NOT_SET),
-    m_wirelessDeviceFrameInfoHasBeenSet(false),
-    m_logLevel(LogLevel::NOT_SET),
-    m_logLevelHasBeenSet(false),
-    m_multicastFrameInfo(MulticastFrameInfo::NOT_SET),
-    m_multicastFrameInfoHasBeenSet(false)
+TraceContent::TraceContent(JsonView jsonValue)
+  : TraceContent()
 {
   *this = jsonValue;
 }

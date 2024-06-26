@@ -22,8 +22,8 @@ AddApplicationInputResult::AddApplicationInputResult() :
 {
 }
 
-AddApplicationInputResult::AddApplicationInputResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_applicationVersionId(0)
+AddApplicationInputResult::AddApplicationInputResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : AddApplicationInputResult()
 {
   *this = result;
 }

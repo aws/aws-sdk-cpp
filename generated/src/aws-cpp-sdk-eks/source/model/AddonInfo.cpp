@@ -28,13 +28,8 @@ AddonInfo::AddonInfo() :
 {
 }
 
-AddonInfo::AddonInfo(JsonView jsonValue) : 
-    m_addonNameHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_addonVersionsHasBeenSet(false),
-    m_publisherHasBeenSet(false),
-    m_ownerHasBeenSet(false),
-    m_marketplaceInformationHasBeenSet(false)
+AddonInfo::AddonInfo(JsonView jsonValue)
+  : AddonInfo()
 {
   *this = jsonValue;
 }

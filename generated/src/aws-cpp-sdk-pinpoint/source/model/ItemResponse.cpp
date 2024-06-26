@@ -24,9 +24,8 @@ ItemResponse::ItemResponse() :
 {
 }
 
-ItemResponse::ItemResponse(JsonView jsonValue) : 
-    m_endpointItemResponseHasBeenSet(false),
-    m_eventsItemResponseHasBeenSet(false)
+ItemResponse::ItemResponse(JsonView jsonValue)
+  : ItemResponse()
 {
   *this = jsonValue;
 }

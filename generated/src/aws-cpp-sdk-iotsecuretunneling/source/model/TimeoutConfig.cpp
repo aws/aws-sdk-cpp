@@ -24,9 +24,8 @@ TimeoutConfig::TimeoutConfig() :
 {
 }
 
-TimeoutConfig::TimeoutConfig(JsonView jsonValue) : 
-    m_maxLifetimeTimeoutMinutes(0),
-    m_maxLifetimeTimeoutMinutesHasBeenSet(false)
+TimeoutConfig::TimeoutConfig(JsonView jsonValue)
+  : TimeoutConfig()
 {
   *this = jsonValue;
 }

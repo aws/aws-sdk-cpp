@@ -22,8 +22,8 @@ GetFlowAssociationResult::GetFlowAssociationResult() :
 {
 }
 
-GetFlowAssociationResult::GetFlowAssociationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_resourceType(FlowAssociationResourceType::NOT_SET)
+GetFlowAssociationResult::GetFlowAssociationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetFlowAssociationResult()
 {
   *this = result;
 }

@@ -27,12 +27,8 @@ ClusterListEntry::ClusterListEntry() :
 {
 }
 
-ClusterListEntry::ClusterListEntry(JsonView jsonValue) : 
-    m_clusterIdHasBeenSet(false),
-    m_clusterState(ClusterState::NOT_SET),
-    m_clusterStateHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+ClusterListEntry::ClusterListEntry(JsonView jsonValue)
+  : ClusterListEntry()
 {
   *this = jsonValue;
 }

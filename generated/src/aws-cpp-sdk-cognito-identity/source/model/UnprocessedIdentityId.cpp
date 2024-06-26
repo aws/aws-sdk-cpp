@@ -25,10 +25,8 @@ UnprocessedIdentityId::UnprocessedIdentityId() :
 {
 }
 
-UnprocessedIdentityId::UnprocessedIdentityId(JsonView jsonValue) : 
-    m_identityIdHasBeenSet(false),
-    m_errorCode(ErrorCode::NOT_SET),
-    m_errorCodeHasBeenSet(false)
+UnprocessedIdentityId::UnprocessedIdentityId(JsonView jsonValue)
+  : UnprocessedIdentityId()
 {
   *this = jsonValue;
 }

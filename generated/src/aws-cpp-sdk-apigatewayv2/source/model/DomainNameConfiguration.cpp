@@ -35,20 +35,8 @@ DomainNameConfiguration::DomainNameConfiguration() :
 {
 }
 
-DomainNameConfiguration::DomainNameConfiguration(JsonView jsonValue) : 
-    m_apiGatewayDomainNameHasBeenSet(false),
-    m_certificateArnHasBeenSet(false),
-    m_certificateNameHasBeenSet(false),
-    m_certificateUploadDateHasBeenSet(false),
-    m_domainNameStatus(DomainNameStatus::NOT_SET),
-    m_domainNameStatusHasBeenSet(false),
-    m_domainNameStatusMessageHasBeenSet(false),
-    m_endpointType(EndpointType::NOT_SET),
-    m_endpointTypeHasBeenSet(false),
-    m_hostedZoneIdHasBeenSet(false),
-    m_securityPolicy(SecurityPolicy::NOT_SET),
-    m_securityPolicyHasBeenSet(false),
-    m_ownershipVerificationCertificateArnHasBeenSet(false)
+DomainNameConfiguration::DomainNameConfiguration(JsonView jsonValue)
+  : DomainNameConfiguration()
 {
   *this = jsonValue;
 }

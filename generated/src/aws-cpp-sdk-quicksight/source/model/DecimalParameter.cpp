@@ -24,9 +24,8 @@ DecimalParameter::DecimalParameter() :
 {
 }
 
-DecimalParameter::DecimalParameter(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+DecimalParameter::DecimalParameter(JsonView jsonValue)
+  : DecimalParameter()
 {
   *this = jsonValue;
 }

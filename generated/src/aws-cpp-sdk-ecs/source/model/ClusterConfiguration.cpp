@@ -24,9 +24,8 @@ ClusterConfiguration::ClusterConfiguration() :
 {
 }
 
-ClusterConfiguration::ClusterConfiguration(JsonView jsonValue) : 
-    m_executeCommandConfigurationHasBeenSet(false),
-    m_managedStorageConfigurationHasBeenSet(false)
+ClusterConfiguration::ClusterConfiguration(JsonView jsonValue)
+  : ClusterConfiguration()
 {
   *this = jsonValue;
 }

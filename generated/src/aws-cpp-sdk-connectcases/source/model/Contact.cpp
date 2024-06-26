@@ -23,8 +23,8 @@ Contact::Contact() :
 {
 }
 
-Contact::Contact(JsonView jsonValue) : 
-    m_contactArnHasBeenSet(false)
+Contact::Contact(JsonView jsonValue)
+  : Contact()
 {
   *this = jsonValue;
 }

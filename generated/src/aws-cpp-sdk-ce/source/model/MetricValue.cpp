@@ -24,9 +24,8 @@ MetricValue::MetricValue() :
 {
 }
 
-MetricValue::MetricValue(JsonView jsonValue) : 
-    m_amountHasBeenSet(false),
-    m_unitHasBeenSet(false)
+MetricValue::MetricValue(JsonView jsonValue)
+  : MetricValue()
 {
   *this = jsonValue;
 }

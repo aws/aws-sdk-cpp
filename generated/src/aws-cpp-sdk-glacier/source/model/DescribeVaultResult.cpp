@@ -23,9 +23,8 @@ DescribeVaultResult::DescribeVaultResult() :
 {
 }
 
-DescribeVaultResult::DescribeVaultResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_numberOfArchives(0),
-    m_sizeInBytes(0)
+DescribeVaultResult::DescribeVaultResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeVaultResult()
 {
   *this = result;
 }

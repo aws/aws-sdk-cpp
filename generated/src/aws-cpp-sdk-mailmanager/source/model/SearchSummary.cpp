@@ -24,9 +24,8 @@ SearchSummary::SearchSummary() :
 {
 }
 
-SearchSummary::SearchSummary(JsonView jsonValue) : 
-    m_searchIdHasBeenSet(false),
-    m_statusHasBeenSet(false)
+SearchSummary::SearchSummary(JsonView jsonValue)
+  : SearchSummary()
 {
   *this = jsonValue;
 }

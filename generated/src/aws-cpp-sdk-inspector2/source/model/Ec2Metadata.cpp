@@ -26,11 +26,8 @@ Ec2Metadata::Ec2Metadata() :
 {
 }
 
-Ec2Metadata::Ec2Metadata(JsonView jsonValue) : 
-    m_amiIdHasBeenSet(false),
-    m_platform(Ec2Platform::NOT_SET),
-    m_platformHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+Ec2Metadata::Ec2Metadata(JsonView jsonValue)
+  : Ec2Metadata()
 {
   *this = jsonValue;
 }

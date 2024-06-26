@@ -24,9 +24,8 @@ CodeSigningPolicies::CodeSigningPolicies() :
 {
 }
 
-CodeSigningPolicies::CodeSigningPolicies(JsonView jsonValue) : 
-    m_untrustedArtifactOnDeployment(CodeSigningPolicy::NOT_SET),
-    m_untrustedArtifactOnDeploymentHasBeenSet(false)
+CodeSigningPolicies::CodeSigningPolicies(JsonView jsonValue)
+  : CodeSigningPolicies()
 {
   *this = jsonValue;
 }

@@ -125,19 +125,8 @@ GetObjectResult& GetObjectResult::operator=(GetObjectResult&& toMove)
    return *this;
 }
 
-GetObjectResult::GetObjectResult(Aws::AmazonWebServiceResult<ResponseStream>&& result) : 
-    m_deleteMarker(false),
-    m_contentLength(0),
-    m_missingMeta(0),
-    m_serverSideEncryption(ServerSideEncryption::NOT_SET),
-    m_bucketKeyEnabled(false),
-    m_storageClass(StorageClass::NOT_SET),
-    m_requestCharged(RequestCharged::NOT_SET),
-    m_replicationStatus(ReplicationStatus::NOT_SET),
-    m_partsCount(0),
-    m_tagCount(0),
-    m_objectLockMode(ObjectLockMode::NOT_SET),
-    m_objectLockLegalHoldStatus(ObjectLockLegalHoldStatus::NOT_SET)
+GetObjectResult::GetObjectResult(Aws::AmazonWebServiceResult<ResponseStream>&& result)
+  : GetObjectResult()
 {
   *this = std::move(result);
 }

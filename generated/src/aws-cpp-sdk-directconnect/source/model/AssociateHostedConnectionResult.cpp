@@ -26,12 +26,8 @@ AssociateHostedConnectionResult::AssociateHostedConnectionResult() :
 {
 }
 
-AssociateHostedConnectionResult::AssociateHostedConnectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_connectionState(ConnectionState::NOT_SET),
-    m_vlan(0),
-    m_jumboFrameCapable(false),
-    m_hasLogicalRedundancy(HasLogicalRedundancy::NOT_SET),
-    m_macSecCapable(false)
+AssociateHostedConnectionResult::AssociateHostedConnectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : AssociateHostedConnectionResult()
 {
   *this = result;
 }

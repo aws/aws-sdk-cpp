@@ -28,13 +28,8 @@ Positioning::Positioning() :
 {
 }
 
-Positioning::Positioning(JsonView jsonValue) : 
-    m_clockSync(0),
-    m_clockSyncHasBeenSet(false),
-    m_stream(0),
-    m_streamHasBeenSet(false),
-    m_gnss(0),
-    m_gnssHasBeenSet(false)
+Positioning::Positioning(JsonView jsonValue)
+  : Positioning()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ LaunchActionParameter::LaunchActionParameter() :
 {
 }
 
-LaunchActionParameter::LaunchActionParameter(JsonView jsonValue) : 
-    m_type(LaunchActionParameterType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_valueHasBeenSet(false)
+LaunchActionParameter::LaunchActionParameter(JsonView jsonValue)
+  : LaunchActionParameter()
 {
   *this = jsonValue;
 }

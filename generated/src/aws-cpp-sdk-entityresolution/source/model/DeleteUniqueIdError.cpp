@@ -25,10 +25,8 @@ DeleteUniqueIdError::DeleteUniqueIdError() :
 {
 }
 
-DeleteUniqueIdError::DeleteUniqueIdError(JsonView jsonValue) : 
-    m_errorType(DeleteUniqueIdErrorType::NOT_SET),
-    m_errorTypeHasBeenSet(false),
-    m_uniqueIdHasBeenSet(false)
+DeleteUniqueIdError::DeleteUniqueIdError(JsonView jsonValue)
+  : DeleteUniqueIdError()
 {
   *this = jsonValue;
 }

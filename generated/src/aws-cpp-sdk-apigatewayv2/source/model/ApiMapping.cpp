@@ -26,11 +26,8 @@ ApiMapping::ApiMapping() :
 {
 }
 
-ApiMapping::ApiMapping(JsonView jsonValue) : 
-    m_apiIdHasBeenSet(false),
-    m_apiMappingIdHasBeenSet(false),
-    m_apiMappingKeyHasBeenSet(false),
-    m_stageHasBeenSet(false)
+ApiMapping::ApiMapping(JsonView jsonValue)
+  : ApiMapping()
 {
   *this = jsonValue;
 }

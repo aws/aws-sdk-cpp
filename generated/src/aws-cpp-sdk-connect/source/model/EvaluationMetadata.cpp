@@ -26,11 +26,8 @@ EvaluationMetadata::EvaluationMetadata() :
 {
 }
 
-EvaluationMetadata::EvaluationMetadata(JsonView jsonValue) : 
-    m_contactIdHasBeenSet(false),
-    m_evaluatorArnHasBeenSet(false),
-    m_contactAgentIdHasBeenSet(false),
-    m_scoreHasBeenSet(false)
+EvaluationMetadata::EvaluationMetadata(JsonView jsonValue)
+  : EvaluationMetadata()
 {
   *this = jsonValue;
 }

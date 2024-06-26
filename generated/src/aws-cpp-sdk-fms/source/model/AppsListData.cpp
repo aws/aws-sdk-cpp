@@ -29,14 +29,8 @@ AppsListData::AppsListData() :
 {
 }
 
-AppsListData::AppsListData(JsonView jsonValue) : 
-    m_listIdHasBeenSet(false),
-    m_listNameHasBeenSet(false),
-    m_listUpdateTokenHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_lastUpdateTimeHasBeenSet(false),
-    m_appsListHasBeenSet(false),
-    m_previousAppsListHasBeenSet(false)
+AppsListData::AppsListData(JsonView jsonValue)
+  : AppsListData()
 {
   *this = jsonValue;
 }

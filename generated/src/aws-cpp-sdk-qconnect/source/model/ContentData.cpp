@@ -37,22 +37,8 @@ ContentData::ContentData() :
 {
 }
 
-ContentData::ContentData(JsonView jsonValue) : 
-    m_contentArnHasBeenSet(false),
-    m_contentIdHasBeenSet(false),
-    m_contentTypeHasBeenSet(false),
-    m_knowledgeBaseArnHasBeenSet(false),
-    m_knowledgeBaseIdHasBeenSet(false),
-    m_linkOutUriHasBeenSet(false),
-    m_metadataHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_revisionIdHasBeenSet(false),
-    m_status(ContentStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_urlHasBeenSet(false),
-    m_urlExpiryHasBeenSet(false)
+ContentData::ContentData(JsonView jsonValue)
+  : ContentData()
 {
   *this = jsonValue;
 }

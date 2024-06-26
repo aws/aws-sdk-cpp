@@ -26,11 +26,8 @@ DetectLabelsImageProperties::DetectLabelsImageProperties() :
 {
 }
 
-DetectLabelsImageProperties::DetectLabelsImageProperties(JsonView jsonValue) : 
-    m_qualityHasBeenSet(false),
-    m_dominantColorsHasBeenSet(false),
-    m_foregroundHasBeenSet(false),
-    m_backgroundHasBeenSet(false)
+DetectLabelsImageProperties::DetectLabelsImageProperties(JsonView jsonValue)
+  : DetectLabelsImageProperties()
 {
   *this = jsonValue;
 }

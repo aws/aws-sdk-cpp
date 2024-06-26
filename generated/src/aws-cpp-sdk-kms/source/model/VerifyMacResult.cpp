@@ -23,9 +23,8 @@ VerifyMacResult::VerifyMacResult() :
 {
 }
 
-VerifyMacResult::VerifyMacResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_macValid(false),
-    m_macAlgorithm(MacAlgorithmSpec::NOT_SET)
+VerifyMacResult::VerifyMacResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : VerifyMacResult()
 {
   *this = result;
 }

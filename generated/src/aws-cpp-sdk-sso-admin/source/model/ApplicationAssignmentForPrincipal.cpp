@@ -26,11 +26,8 @@ ApplicationAssignmentForPrincipal::ApplicationAssignmentForPrincipal() :
 {
 }
 
-ApplicationAssignmentForPrincipal::ApplicationAssignmentForPrincipal(JsonView jsonValue) : 
-    m_applicationArnHasBeenSet(false),
-    m_principalIdHasBeenSet(false),
-    m_principalType(PrincipalType::NOT_SET),
-    m_principalTypeHasBeenSet(false)
+ApplicationAssignmentForPrincipal::ApplicationAssignmentForPrincipal(JsonView jsonValue)
+  : ApplicationAssignmentForPrincipal()
 {
   *this = jsonValue;
 }

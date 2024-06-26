@@ -26,11 +26,8 @@ ListCustomLineItemsFilter::ListCustomLineItemsFilter() :
 {
 }
 
-ListCustomLineItemsFilter::ListCustomLineItemsFilter(JsonView jsonValue) : 
-    m_namesHasBeenSet(false),
-    m_billingGroupsHasBeenSet(false),
-    m_arnsHasBeenSet(false),
-    m_accountIdsHasBeenSet(false)
+ListCustomLineItemsFilter::ListCustomLineItemsFilter(JsonView jsonValue)
+  : ListCustomLineItemsFilter()
 {
   *this = jsonValue;
 }

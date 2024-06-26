@@ -27,12 +27,8 @@ IpAddressDetails::IpAddressDetails() :
 {
 }
 
-IpAddressDetails::IpAddressDetails(JsonView jsonValue) : 
-    m_ipAddressV4HasBeenSet(false),
-    m_ipCityHasBeenSet(false),
-    m_ipCountryHasBeenSet(false),
-    m_ipGeoLocationHasBeenSet(false),
-    m_ipOwnerHasBeenSet(false)
+IpAddressDetails::IpAddressDetails(JsonView jsonValue)
+  : IpAddressDetails()
 {
   *this = jsonValue;
 }

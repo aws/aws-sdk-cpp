@@ -26,11 +26,8 @@ MessageBody::MessageBody() :
 {
 }
 
-MessageBody::MessageBody(JsonView jsonValue) : 
-    m_htmlHasBeenSet(false),
-    m_messageMalformed(false),
-    m_messageMalformedHasBeenSet(false),
-    m_textHasBeenSet(false)
+MessageBody::MessageBody(JsonView jsonValue)
+  : MessageBody()
 {
   *this = jsonValue;
 }

@@ -36,21 +36,8 @@ AudioNormalizationSettings::AudioNormalizationSettings() :
 {
 }
 
-AudioNormalizationSettings::AudioNormalizationSettings(JsonView jsonValue) : 
-    m_algorithm(AudioNormalizationAlgorithm::NOT_SET),
-    m_algorithmHasBeenSet(false),
-    m_algorithmControl(AudioNormalizationAlgorithmControl::NOT_SET),
-    m_algorithmControlHasBeenSet(false),
-    m_correctionGateLevel(0),
-    m_correctionGateLevelHasBeenSet(false),
-    m_loudnessLogging(AudioNormalizationLoudnessLogging::NOT_SET),
-    m_loudnessLoggingHasBeenSet(false),
-    m_peakCalculation(AudioNormalizationPeakCalculation::NOT_SET),
-    m_peakCalculationHasBeenSet(false),
-    m_targetLkfs(0.0),
-    m_targetLkfsHasBeenSet(false),
-    m_truePeakLimiterThreshold(0.0),
-    m_truePeakLimiterThresholdHasBeenSet(false)
+AudioNormalizationSettings::AudioNormalizationSettings(JsonView jsonValue)
+  : AudioNormalizationSettings()
 {
   *this = jsonValue;
 }

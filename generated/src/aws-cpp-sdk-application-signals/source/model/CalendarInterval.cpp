@@ -27,12 +27,8 @@ CalendarInterval::CalendarInterval() :
 {
 }
 
-CalendarInterval::CalendarInterval(JsonView jsonValue) : 
-    m_startTimeHasBeenSet(false),
-    m_durationUnit(DurationUnit::NOT_SET),
-    m_durationUnitHasBeenSet(false),
-    m_duration(0),
-    m_durationHasBeenSet(false)
+CalendarInterval::CalendarInterval(JsonView jsonValue)
+  : CalendarInterval()
 {
   *this = jsonValue;
 }

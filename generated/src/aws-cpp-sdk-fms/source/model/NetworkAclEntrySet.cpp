@@ -28,13 +28,8 @@ NetworkAclEntrySet::NetworkAclEntrySet() :
 {
 }
 
-NetworkAclEntrySet::NetworkAclEntrySet(JsonView jsonValue) : 
-    m_firstEntriesHasBeenSet(false),
-    m_forceRemediateForFirstEntries(false),
-    m_forceRemediateForFirstEntriesHasBeenSet(false),
-    m_lastEntriesHasBeenSet(false),
-    m_forceRemediateForLastEntries(false),
-    m_forceRemediateForLastEntriesHasBeenSet(false)
+NetworkAclEntrySet::NetworkAclEntrySet(JsonView jsonValue)
+  : NetworkAclEntrySet()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ CreatePolicyVersionResult::CreatePolicyVersionResult() :
 {
 }
 
-CreatePolicyVersionResult::CreatePolicyVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_isDefaultVersion(false)
+CreatePolicyVersionResult::CreatePolicyVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreatePolicyVersionResult()
 {
   *this = result;
 }

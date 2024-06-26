@@ -33,18 +33,8 @@ GatingRule::GatingRule() :
 {
 }
 
-GatingRule::GatingRule(JsonView jsonValue) : 
-    m_controlPanelArnHasBeenSet(false),
-    m_gatingControlsHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_ruleConfigHasBeenSet(false),
-    m_safetyRuleArnHasBeenSet(false),
-    m_status(Status::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_targetControlsHasBeenSet(false),
-    m_waitPeriodMs(0),
-    m_waitPeriodMsHasBeenSet(false),
-    m_ownerHasBeenSet(false)
+GatingRule::GatingRule(JsonView jsonValue)
+  : GatingRule()
 {
   *this = jsonValue;
 }

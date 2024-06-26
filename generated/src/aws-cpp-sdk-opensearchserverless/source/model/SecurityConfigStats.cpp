@@ -24,9 +24,8 @@ SecurityConfigStats::SecurityConfigStats() :
 {
 }
 
-SecurityConfigStats::SecurityConfigStats(JsonView jsonValue) : 
-    m_samlConfigCount(0),
-    m_samlConfigCountHasBeenSet(false)
+SecurityConfigStats::SecurityConfigStats(JsonView jsonValue)
+  : SecurityConfigStats()
 {
   *this = jsonValue;
 }

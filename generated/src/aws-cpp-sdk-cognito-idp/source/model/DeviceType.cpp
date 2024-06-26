@@ -27,12 +27,8 @@ DeviceType::DeviceType() :
 {
 }
 
-DeviceType::DeviceType(JsonView jsonValue) : 
-    m_deviceKeyHasBeenSet(false),
-    m_deviceAttributesHasBeenSet(false),
-    m_deviceCreateDateHasBeenSet(false),
-    m_deviceLastModifiedDateHasBeenSet(false),
-    m_deviceLastAuthenticatedDateHasBeenSet(false)
+DeviceType::DeviceType(JsonView jsonValue)
+  : DeviceType()
 {
   *this = jsonValue;
 }

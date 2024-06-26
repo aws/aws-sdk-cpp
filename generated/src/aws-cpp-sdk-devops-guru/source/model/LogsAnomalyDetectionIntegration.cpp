@@ -24,9 +24,8 @@ LogsAnomalyDetectionIntegration::LogsAnomalyDetectionIntegration() :
 {
 }
 
-LogsAnomalyDetectionIntegration::LogsAnomalyDetectionIntegration(JsonView jsonValue) : 
-    m_optInStatus(OptInStatus::NOT_SET),
-    m_optInStatusHasBeenSet(false)
+LogsAnomalyDetectionIntegration::LogsAnomalyDetectionIntegration(JsonView jsonValue)
+  : LogsAnomalyDetectionIntegration()
 {
   *this = jsonValue;
 }

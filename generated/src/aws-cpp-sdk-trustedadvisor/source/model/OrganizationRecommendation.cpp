@@ -48,33 +48,8 @@ OrganizationRecommendation::OrganizationRecommendation() :
 {
 }
 
-OrganizationRecommendation::OrganizationRecommendation(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_awsServicesHasBeenSet(false),
-    m_checkArnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false),
-    m_lifecycleStage(RecommendationLifecycleStage::NOT_SET),
-    m_lifecycleStageHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_pillarSpecificAggregatesHasBeenSet(false),
-    m_pillarsHasBeenSet(false),
-    m_resolvedAtHasBeenSet(false),
-    m_resourcesAggregatesHasBeenSet(false),
-    m_source(RecommendationSource::NOT_SET),
-    m_sourceHasBeenSet(false),
-    m_status(RecommendationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_type(RecommendationType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_updateReasonHasBeenSet(false),
-    m_updateReasonCode(UpdateRecommendationLifecycleStageReasonCode::NOT_SET),
-    m_updateReasonCodeHasBeenSet(false),
-    m_updatedOnBehalfOfHasBeenSet(false),
-    m_updatedOnBehalfOfJobTitleHasBeenSet(false)
+OrganizationRecommendation::OrganizationRecommendation(JsonView jsonValue)
+  : OrganizationRecommendation()
 {
   *this = jsonValue;
 }

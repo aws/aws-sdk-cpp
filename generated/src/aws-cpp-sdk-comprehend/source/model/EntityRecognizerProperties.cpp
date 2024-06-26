@@ -42,27 +42,8 @@ EntityRecognizerProperties::EntityRecognizerProperties() :
 {
 }
 
-EntityRecognizerProperties::EntityRecognizerProperties(JsonView jsonValue) : 
-    m_entityRecognizerArnHasBeenSet(false),
-    m_languageCode(LanguageCode::NOT_SET),
-    m_languageCodeHasBeenSet(false),
-    m_status(ModelStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_submitTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_trainingStartTimeHasBeenSet(false),
-    m_trainingEndTimeHasBeenSet(false),
-    m_inputDataConfigHasBeenSet(false),
-    m_recognizerMetadataHasBeenSet(false),
-    m_dataAccessRoleArnHasBeenSet(false),
-    m_volumeKmsKeyIdHasBeenSet(false),
-    m_vpcConfigHasBeenSet(false),
-    m_modelKmsKeyIdHasBeenSet(false),
-    m_versionNameHasBeenSet(false),
-    m_sourceModelArnHasBeenSet(false),
-    m_flywheelArnHasBeenSet(false),
-    m_outputDataConfigHasBeenSet(false)
+EntityRecognizerProperties::EntityRecognizerProperties(JsonView jsonValue)
+  : EntityRecognizerProperties()
 {
   *this = jsonValue;
 }

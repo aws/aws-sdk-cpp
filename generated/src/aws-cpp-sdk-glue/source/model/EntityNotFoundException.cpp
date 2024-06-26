@@ -25,10 +25,8 @@ EntityNotFoundException::EntityNotFoundException() :
 {
 }
 
-EntityNotFoundException::EntityNotFoundException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_fromFederationSource(false),
-    m_fromFederationSourceHasBeenSet(false)
+EntityNotFoundException::EntityNotFoundException(JsonView jsonValue)
+  : EntityNotFoundException()
 {
   *this = jsonValue;
 }

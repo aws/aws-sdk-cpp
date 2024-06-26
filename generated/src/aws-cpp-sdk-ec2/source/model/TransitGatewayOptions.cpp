@@ -43,26 +43,8 @@ TransitGatewayOptions::TransitGatewayOptions() :
 {
 }
 
-TransitGatewayOptions::TransitGatewayOptions(const XmlNode& xmlNode) : 
-    m_amazonSideAsn(0),
-    m_amazonSideAsnHasBeenSet(false),
-    m_transitGatewayCidrBlocksHasBeenSet(false),
-    m_autoAcceptSharedAttachments(AutoAcceptSharedAttachmentsValue::NOT_SET),
-    m_autoAcceptSharedAttachmentsHasBeenSet(false),
-    m_defaultRouteTableAssociation(DefaultRouteTableAssociationValue::NOT_SET),
-    m_defaultRouteTableAssociationHasBeenSet(false),
-    m_associationDefaultRouteTableIdHasBeenSet(false),
-    m_defaultRouteTablePropagation(DefaultRouteTablePropagationValue::NOT_SET),
-    m_defaultRouteTablePropagationHasBeenSet(false),
-    m_propagationDefaultRouteTableIdHasBeenSet(false),
-    m_vpnEcmpSupport(VpnEcmpSupportValue::NOT_SET),
-    m_vpnEcmpSupportHasBeenSet(false),
-    m_dnsSupport(DnsSupportValue::NOT_SET),
-    m_dnsSupportHasBeenSet(false),
-    m_securityGroupReferencingSupport(SecurityGroupReferencingSupportValue::NOT_SET),
-    m_securityGroupReferencingSupportHasBeenSet(false),
-    m_multicastSupport(MulticastSupportValue::NOT_SET),
-    m_multicastSupportHasBeenSet(false)
+TransitGatewayOptions::TransitGatewayOptions(const XmlNode& xmlNode)
+  : TransitGatewayOptions()
 {
   *this = xmlNode;
 }

@@ -29,14 +29,8 @@ ThumbnailConfiguration::ThumbnailConfiguration() :
 {
 }
 
-ThumbnailConfiguration::ThumbnailConfiguration(JsonView jsonValue) : 
-    m_recordingMode(RecordingMode::NOT_SET),
-    m_recordingModeHasBeenSet(false),
-    m_resolution(ThumbnailConfigurationResolution::NOT_SET),
-    m_resolutionHasBeenSet(false),
-    m_storageHasBeenSet(false),
-    m_targetIntervalSeconds(0),
-    m_targetIntervalSecondsHasBeenSet(false)
+ThumbnailConfiguration::ThumbnailConfiguration(JsonView jsonValue)
+  : ThumbnailConfiguration()
 {
   *this = jsonValue;
 }

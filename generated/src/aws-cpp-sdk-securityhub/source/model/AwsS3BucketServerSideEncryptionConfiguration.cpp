@@ -23,8 +23,8 @@ AwsS3BucketServerSideEncryptionConfiguration::AwsS3BucketServerSideEncryptionCon
 {
 }
 
-AwsS3BucketServerSideEncryptionConfiguration::AwsS3BucketServerSideEncryptionConfiguration(JsonView jsonValue) : 
-    m_rulesHasBeenSet(false)
+AwsS3BucketServerSideEncryptionConfiguration::AwsS3BucketServerSideEncryptionConfiguration(JsonView jsonValue)
+  : AwsS3BucketServerSideEncryptionConfiguration()
 {
   *this = jsonValue;
 }

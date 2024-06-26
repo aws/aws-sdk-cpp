@@ -51,36 +51,8 @@ NFSFileShareInfo::NFSFileShareInfo() :
 {
 }
 
-NFSFileShareInfo::NFSFileShareInfo(JsonView jsonValue) : 
-    m_nFSFileShareDefaultsHasBeenSet(false),
-    m_fileShareARNHasBeenSet(false),
-    m_fileShareIdHasBeenSet(false),
-    m_fileShareStatusHasBeenSet(false),
-    m_gatewayARNHasBeenSet(false),
-    m_kMSEncrypted(false),
-    m_kMSEncryptedHasBeenSet(false),
-    m_kMSKeyHasBeenSet(false),
-    m_pathHasBeenSet(false),
-    m_roleHasBeenSet(false),
-    m_locationARNHasBeenSet(false),
-    m_defaultStorageClassHasBeenSet(false),
-    m_objectACL(ObjectACL::NOT_SET),
-    m_objectACLHasBeenSet(false),
-    m_clientListHasBeenSet(false),
-    m_squashHasBeenSet(false),
-    m_readOnly(false),
-    m_readOnlyHasBeenSet(false),
-    m_guessMIMETypeEnabled(false),
-    m_guessMIMETypeEnabledHasBeenSet(false),
-    m_requesterPays(false),
-    m_requesterPaysHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_fileShareNameHasBeenSet(false),
-    m_cacheAttributesHasBeenSet(false),
-    m_notificationPolicyHasBeenSet(false),
-    m_vPCEndpointDNSNameHasBeenSet(false),
-    m_bucketRegionHasBeenSet(false),
-    m_auditDestinationARNHasBeenSet(false)
+NFSFileShareInfo::NFSFileShareInfo(JsonView jsonValue)
+  : NFSFileShareInfo()
 {
   *this = jsonValue;
 }

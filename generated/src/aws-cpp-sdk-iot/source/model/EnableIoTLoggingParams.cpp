@@ -25,10 +25,8 @@ EnableIoTLoggingParams::EnableIoTLoggingParams() :
 {
 }
 
-EnableIoTLoggingParams::EnableIoTLoggingParams(JsonView jsonValue) : 
-    m_roleArnForLoggingHasBeenSet(false),
-    m_logLevel(LogLevel::NOT_SET),
-    m_logLevelHasBeenSet(false)
+EnableIoTLoggingParams::EnableIoTLoggingParams(JsonView jsonValue)
+  : EnableIoTLoggingParams()
 {
   *this = jsonValue;
 }

@@ -27,12 +27,8 @@ KnowledgeBaseVectorSearchConfiguration::KnowledgeBaseVectorSearchConfiguration()
 {
 }
 
-KnowledgeBaseVectorSearchConfiguration::KnowledgeBaseVectorSearchConfiguration(JsonView jsonValue) : 
-    m_filterHasBeenSet(false),
-    m_numberOfResults(0),
-    m_numberOfResultsHasBeenSet(false),
-    m_overrideSearchType(SearchType::NOT_SET),
-    m_overrideSearchTypeHasBeenSet(false)
+KnowledgeBaseVectorSearchConfiguration::KnowledgeBaseVectorSearchConfiguration(JsonView jsonValue)
+  : KnowledgeBaseVectorSearchConfiguration()
 {
   *this = jsonValue;
 }

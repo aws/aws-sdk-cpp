@@ -24,9 +24,8 @@ SecurityGroupNotFound::SecurityGroupNotFound() :
 {
 }
 
-SecurityGroupNotFound::SecurityGroupNotFound(JsonView jsonValue) : 
-    m_errorCodeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+SecurityGroupNotFound::SecurityGroupNotFound(JsonView jsonValue)
+  : SecurityGroupNotFound()
 {
   *this = jsonValue;
 }

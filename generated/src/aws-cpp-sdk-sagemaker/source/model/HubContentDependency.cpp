@@ -24,9 +24,8 @@ HubContentDependency::HubContentDependency() :
 {
 }
 
-HubContentDependency::HubContentDependency(JsonView jsonValue) : 
-    m_dependencyOriginPathHasBeenSet(false),
-    m_dependencyCopyPathHasBeenSet(false)
+HubContentDependency::HubContentDependency(JsonView jsonValue)
+  : HubContentDependency()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ OutputFileUriValue::OutputFileUriValue() :
 {
 }
 
-OutputFileUriValue::OutputFileUriValue(JsonView jsonValue) : 
-    m_fileNameHasBeenSet(false)
+OutputFileUriValue::OutputFileUriValue(JsonView jsonValue)
+  : OutputFileUriValue()
 {
   *this = jsonValue;
 }

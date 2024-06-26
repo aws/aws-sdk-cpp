@@ -23,9 +23,8 @@ SearchWorkersResult::SearchWorkersResult() :
 {
 }
 
-SearchWorkersResult::SearchWorkersResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_nextItemOffset(0),
-    m_totalResults(0)
+SearchWorkersResult::SearchWorkersResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : SearchWorkersResult()
 {
   *this = result;
 }

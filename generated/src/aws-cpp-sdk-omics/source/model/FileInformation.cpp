@@ -29,14 +29,8 @@ FileInformation::FileInformation() :
 {
 }
 
-FileInformation::FileInformation(JsonView jsonValue) : 
-    m_totalParts(0),
-    m_totalPartsHasBeenSet(false),
-    m_partSize(0),
-    m_partSizeHasBeenSet(false),
-    m_contentLength(0),
-    m_contentLengthHasBeenSet(false),
-    m_s3AccessHasBeenSet(false)
+FileInformation::FileInformation(JsonView jsonValue)
+  : FileInformation()
 {
   *this = jsonValue;
 }

@@ -26,9 +26,8 @@ CidrRoutingConfig::CidrRoutingConfig() :
 {
 }
 
-CidrRoutingConfig::CidrRoutingConfig(const XmlNode& xmlNode) : 
-    m_collectionIdHasBeenSet(false),
-    m_locationNameHasBeenSet(false)
+CidrRoutingConfig::CidrRoutingConfig(const XmlNode& xmlNode)
+  : CidrRoutingConfig()
 {
   *this = xmlNode;
 }

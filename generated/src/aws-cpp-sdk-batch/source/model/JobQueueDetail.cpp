@@ -35,20 +35,8 @@ JobQueueDetail::JobQueueDetail() :
 {
 }
 
-JobQueueDetail::JobQueueDetail(JsonView jsonValue) : 
-    m_jobQueueNameHasBeenSet(false),
-    m_jobQueueArnHasBeenSet(false),
-    m_state(JQState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_schedulingPolicyArnHasBeenSet(false),
-    m_status(JQStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusReasonHasBeenSet(false),
-    m_priority(0),
-    m_priorityHasBeenSet(false),
-    m_computeEnvironmentOrderHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_jobStateTimeLimitActionsHasBeenSet(false)
+JobQueueDetail::JobQueueDetail(JsonView jsonValue)
+  : JobQueueDetail()
 {
   *this = jsonValue;
 }

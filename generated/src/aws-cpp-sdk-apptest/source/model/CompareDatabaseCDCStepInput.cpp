@@ -27,12 +27,8 @@ CompareDatabaseCDCStepInput::CompareDatabaseCDCStepInput() :
 {
 }
 
-CompareDatabaseCDCStepInput::CompareDatabaseCDCStepInput(JsonView jsonValue) : 
-    m_sourceLocationHasBeenSet(false),
-    m_targetLocationHasBeenSet(false),
-    m_outputLocationHasBeenSet(false),
-    m_sourceMetadataHasBeenSet(false),
-    m_targetMetadataHasBeenSet(false)
+CompareDatabaseCDCStepInput::CompareDatabaseCDCStepInput(JsonView jsonValue)
+  : CompareDatabaseCDCStepInput()
 {
   *this = jsonValue;
 }

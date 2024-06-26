@@ -25,8 +25,8 @@ EncryptionConfiguration::EncryptionConfiguration() :
 {
 }
 
-EncryptionConfiguration::EncryptionConfiguration(const XmlNode& xmlNode) : 
-    m_replicaKmsKeyIDHasBeenSet(false)
+EncryptionConfiguration::EncryptionConfiguration(const XmlNode& xmlNode)
+  : EncryptionConfiguration()
 {
   *this = xmlNode;
 }

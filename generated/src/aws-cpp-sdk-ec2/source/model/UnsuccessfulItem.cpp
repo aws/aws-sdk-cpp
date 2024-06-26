@@ -26,9 +26,8 @@ UnsuccessfulItem::UnsuccessfulItem() :
 {
 }
 
-UnsuccessfulItem::UnsuccessfulItem(const XmlNode& xmlNode) : 
-    m_errorHasBeenSet(false),
-    m_resourceIdHasBeenSet(false)
+UnsuccessfulItem::UnsuccessfulItem(const XmlNode& xmlNode)
+  : UnsuccessfulItem()
 {
   *this = xmlNode;
 }

@@ -28,13 +28,8 @@ EventIntegration::EventIntegration() :
 {
 }
 
-EventIntegration::EventIntegration(JsonView jsonValue) : 
-    m_eventIntegrationArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_eventFilterHasBeenSet(false),
-    m_eventBridgeBusHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+EventIntegration::EventIntegration(JsonView jsonValue)
+  : EventIntegration()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ VaultNotificationConfig::VaultNotificationConfig() :
 {
 }
 
-VaultNotificationConfig::VaultNotificationConfig(JsonView jsonValue) : 
-    m_sNSTopicHasBeenSet(false),
-    m_eventsHasBeenSet(false)
+VaultNotificationConfig::VaultNotificationConfig(JsonView jsonValue)
+  : VaultNotificationConfig()
 {
   *this = jsonValue;
 }

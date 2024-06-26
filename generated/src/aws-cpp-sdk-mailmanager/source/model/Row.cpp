@@ -37,22 +37,8 @@ Row::Row() :
 {
 }
 
-Row::Row(JsonView jsonValue) : 
-    m_archivedMessageIdHasBeenSet(false),
-    m_ccHasBeenSet(false),
-    m_dateHasBeenSet(false),
-    m_fromHasBeenSet(false),
-    m_hasAttachments(false),
-    m_hasAttachmentsHasBeenSet(false),
-    m_inReplyToHasBeenSet(false),
-    m_messageIdHasBeenSet(false),
-    m_receivedHeadersHasBeenSet(false),
-    m_receivedTimestampHasBeenSet(false),
-    m_subjectHasBeenSet(false),
-    m_toHasBeenSet(false),
-    m_xMailerHasBeenSet(false),
-    m_xOriginalMailerHasBeenSet(false),
-    m_xPriorityHasBeenSet(false)
+Row::Row(JsonView jsonValue)
+  : Row()
 {
   *this = jsonValue;
 }

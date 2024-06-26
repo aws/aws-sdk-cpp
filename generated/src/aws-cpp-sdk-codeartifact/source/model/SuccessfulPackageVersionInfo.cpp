@@ -25,10 +25,8 @@ SuccessfulPackageVersionInfo::SuccessfulPackageVersionInfo() :
 {
 }
 
-SuccessfulPackageVersionInfo::SuccessfulPackageVersionInfo(JsonView jsonValue) : 
-    m_revisionHasBeenSet(false),
-    m_status(PackageVersionStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+SuccessfulPackageVersionInfo::SuccessfulPackageVersionInfo(JsonView jsonValue)
+  : SuccessfulPackageVersionInfo()
 {
   *this = jsonValue;
 }

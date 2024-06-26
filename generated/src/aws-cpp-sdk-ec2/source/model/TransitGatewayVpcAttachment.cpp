@@ -34,17 +34,8 @@ TransitGatewayVpcAttachment::TransitGatewayVpcAttachment() :
 {
 }
 
-TransitGatewayVpcAttachment::TransitGatewayVpcAttachment(const XmlNode& xmlNode) : 
-    m_transitGatewayAttachmentIdHasBeenSet(false),
-    m_transitGatewayIdHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_vpcOwnerIdHasBeenSet(false),
-    m_state(TransitGatewayAttachmentState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_subnetIdsHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_optionsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+TransitGatewayVpcAttachment::TransitGatewayVpcAttachment(const XmlNode& xmlNode)
+  : TransitGatewayVpcAttachment()
 {
   *this = xmlNode;
 }

@@ -23,9 +23,8 @@ UpdateSenderIdResult::UpdateSenderIdResult() :
 {
 }
 
-UpdateSenderIdResult::UpdateSenderIdResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_deletionProtectionEnabled(false),
-    m_registered(false)
+UpdateSenderIdResult::UpdateSenderIdResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateSenderIdResult()
 {
   *this = result;
 }

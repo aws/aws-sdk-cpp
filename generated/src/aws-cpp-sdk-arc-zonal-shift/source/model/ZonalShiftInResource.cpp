@@ -32,17 +32,8 @@ ZonalShiftInResource::ZonalShiftInResource() :
 {
 }
 
-ZonalShiftInResource::ZonalShiftInResource(JsonView jsonValue) : 
-    m_appliedStatus(AppliedStatus::NOT_SET),
-    m_appliedStatusHasBeenSet(false),
-    m_awayFromHasBeenSet(false),
-    m_commentHasBeenSet(false),
-    m_expiryTimeHasBeenSet(false),
-    m_practiceRunOutcome(PracticeRunOutcome::NOT_SET),
-    m_practiceRunOutcomeHasBeenSet(false),
-    m_resourceIdentifierHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_zonalShiftIdHasBeenSet(false)
+ZonalShiftInResource::ZonalShiftInResource(JsonView jsonValue)
+  : ZonalShiftInResource()
 {
   *this = jsonValue;
 }

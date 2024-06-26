@@ -24,9 +24,8 @@ RollbackTrigger::RollbackTrigger() :
 {
 }
 
-RollbackTrigger::RollbackTrigger(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_typeHasBeenSet(false)
+RollbackTrigger::RollbackTrigger(JsonView jsonValue)
+  : RollbackTrigger()
 {
   *this = jsonValue;
 }

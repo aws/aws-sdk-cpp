@@ -26,9 +26,8 @@ DeviceOptions::DeviceOptions() :
 {
 }
 
-DeviceOptions::DeviceOptions(const XmlNode& xmlNode) : 
-    m_tenantIdHasBeenSet(false),
-    m_publicSigningKeyUrlHasBeenSet(false)
+DeviceOptions::DeviceOptions(const XmlNode& xmlNode)
+  : DeviceOptions()
 {
   *this = xmlNode;
 }

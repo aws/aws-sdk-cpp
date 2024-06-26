@@ -51,36 +51,8 @@ InstanceProperty::InstanceProperty() :
 {
 }
 
-InstanceProperty::InstanceProperty(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_instanceRoleHasBeenSet(false),
-    m_keyNameHasBeenSet(false),
-    m_instanceStateHasBeenSet(false),
-    m_architectureHasBeenSet(false),
-    m_iPAddressHasBeenSet(false),
-    m_launchTimeHasBeenSet(false),
-    m_pingStatus(PingStatus::NOT_SET),
-    m_pingStatusHasBeenSet(false),
-    m_lastPingDateTimeHasBeenSet(false),
-    m_agentVersionHasBeenSet(false),
-    m_platformType(PlatformType::NOT_SET),
-    m_platformTypeHasBeenSet(false),
-    m_platformNameHasBeenSet(false),
-    m_platformVersionHasBeenSet(false),
-    m_activationIdHasBeenSet(false),
-    m_iamRoleHasBeenSet(false),
-    m_registrationDateHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
-    m_computerNameHasBeenSet(false),
-    m_associationStatusHasBeenSet(false),
-    m_lastAssociationExecutionDateHasBeenSet(false),
-    m_lastSuccessfulAssociationExecutionDateHasBeenSet(false),
-    m_associationOverviewHasBeenSet(false),
-    m_sourceIdHasBeenSet(false),
-    m_sourceType(SourceType::NOT_SET),
-    m_sourceTypeHasBeenSet(false)
+InstanceProperty::InstanceProperty(JsonView jsonValue)
+  : InstanceProperty()
 {
   *this = jsonValue;
 }

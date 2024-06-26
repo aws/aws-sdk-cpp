@@ -27,12 +27,8 @@ PipeTargetEventBridgeEventBusParameters::PipeTargetEventBridgeEventBusParameters
 {
 }
 
-PipeTargetEventBridgeEventBusParameters::PipeTargetEventBridgeEventBusParameters(JsonView jsonValue) : 
-    m_endpointIdHasBeenSet(false),
-    m_detailTypeHasBeenSet(false),
-    m_sourceHasBeenSet(false),
-    m_resourcesHasBeenSet(false),
-    m_timeHasBeenSet(false)
+PipeTargetEventBridgeEventBusParameters::PipeTargetEventBridgeEventBusParameters(JsonView jsonValue)
+  : PipeTargetEventBridgeEventBusParameters()
 {
   *this = jsonValue;
 }

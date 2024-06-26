@@ -25,10 +25,8 @@ ListInsightsClosedStatusFilter::ListInsightsClosedStatusFilter() :
 {
 }
 
-ListInsightsClosedStatusFilter::ListInsightsClosedStatusFilter(JsonView jsonValue) : 
-    m_type(InsightType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_endTimeRangeHasBeenSet(false)
+ListInsightsClosedStatusFilter::ListInsightsClosedStatusFilter(JsonView jsonValue)
+  : ListInsightsClosedStatusFilter()
 {
   *this = jsonValue;
 }

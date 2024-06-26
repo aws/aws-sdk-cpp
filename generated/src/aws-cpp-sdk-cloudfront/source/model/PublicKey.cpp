@@ -27,10 +27,8 @@ PublicKey::PublicKey() :
 {
 }
 
-PublicKey::PublicKey(const XmlNode& xmlNode) : 
-    m_idHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_publicKeyConfigHasBeenSet(false)
+PublicKey::PublicKey(const XmlNode& xmlNode)
+  : PublicKey()
 {
   *this = xmlNode;
 }

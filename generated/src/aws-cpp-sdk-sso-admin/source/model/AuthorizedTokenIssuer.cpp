@@ -24,9 +24,8 @@ AuthorizedTokenIssuer::AuthorizedTokenIssuer() :
 {
 }
 
-AuthorizedTokenIssuer::AuthorizedTokenIssuer(JsonView jsonValue) : 
-    m_authorizedAudiencesHasBeenSet(false),
-    m_trustedTokenIssuerArnHasBeenSet(false)
+AuthorizedTokenIssuer::AuthorizedTokenIssuer(JsonView jsonValue)
+  : AuthorizedTokenIssuer()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ IamPolicyConstraints::IamPolicyConstraints() :
 {
 }
 
-IamPolicyConstraints::IamPolicyConstraints(JsonView jsonValue) : 
-    m_sourceIp(EnabledOrDisabled::NOT_SET),
-    m_sourceIpHasBeenSet(false),
-    m_vpcSourceIp(EnabledOrDisabled::NOT_SET),
-    m_vpcSourceIpHasBeenSet(false)
+IamPolicyConstraints::IamPolicyConstraints(JsonView jsonValue)
+  : IamPolicyConstraints()
 {
   *this = jsonValue;
 }

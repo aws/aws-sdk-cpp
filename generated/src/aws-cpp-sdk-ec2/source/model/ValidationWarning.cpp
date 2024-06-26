@@ -25,8 +25,8 @@ ValidationWarning::ValidationWarning() :
 {
 }
 
-ValidationWarning::ValidationWarning(const XmlNode& xmlNode) : 
-    m_errorsHasBeenSet(false)
+ValidationWarning::ValidationWarning(const XmlNode& xmlNode)
+  : ValidationWarning()
 {
   *this = xmlNode;
 }

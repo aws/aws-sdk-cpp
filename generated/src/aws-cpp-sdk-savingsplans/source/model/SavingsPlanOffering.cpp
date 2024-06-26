@@ -37,22 +37,8 @@ SavingsPlanOffering::SavingsPlanOffering() :
 {
 }
 
-SavingsPlanOffering::SavingsPlanOffering(JsonView jsonValue) : 
-    m_offeringIdHasBeenSet(false),
-    m_productTypesHasBeenSet(false),
-    m_planType(SavingsPlanType::NOT_SET),
-    m_planTypeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_paymentOption(SavingsPlanPaymentOption::NOT_SET),
-    m_paymentOptionHasBeenSet(false),
-    m_durationSeconds(0),
-    m_durationSecondsHasBeenSet(false),
-    m_currency(CurrencyCode::NOT_SET),
-    m_currencyHasBeenSet(false),
-    m_serviceCodeHasBeenSet(false),
-    m_usageTypeHasBeenSet(false),
-    m_operationHasBeenSet(false),
-    m_propertiesHasBeenSet(false)
+SavingsPlanOffering::SavingsPlanOffering(JsonView jsonValue)
+  : SavingsPlanOffering()
 {
   *this = jsonValue;
 }

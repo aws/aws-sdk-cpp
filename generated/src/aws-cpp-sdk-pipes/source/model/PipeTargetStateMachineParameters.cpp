@@ -24,9 +24,8 @@ PipeTargetStateMachineParameters::PipeTargetStateMachineParameters() :
 {
 }
 
-PipeTargetStateMachineParameters::PipeTargetStateMachineParameters(JsonView jsonValue) : 
-    m_invocationType(PipeTargetInvocationType::NOT_SET),
-    m_invocationTypeHasBeenSet(false)
+PipeTargetStateMachineParameters::PipeTargetStateMachineParameters(JsonView jsonValue)
+  : PipeTargetStateMachineParameters()
 {
   *this = jsonValue;
 }

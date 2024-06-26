@@ -24,9 +24,8 @@ PlacedPlayerSession::PlacedPlayerSession() :
 {
 }
 
-PlacedPlayerSession::PlacedPlayerSession(JsonView jsonValue) : 
-    m_playerIdHasBeenSet(false),
-    m_playerSessionIdHasBeenSet(false)
+PlacedPlayerSession::PlacedPlayerSession(JsonView jsonValue)
+  : PlacedPlayerSession()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ DefaultFormatting::DefaultFormatting() :
 {
 }
 
-DefaultFormatting::DefaultFormatting(JsonView jsonValue) : 
-    m_displayFormat(DisplayFormat::NOT_SET),
-    m_displayFormatHasBeenSet(false),
-    m_displayFormatOptionsHasBeenSet(false)
+DefaultFormatting::DefaultFormatting(JsonView jsonValue)
+  : DefaultFormatting()
 {
   *this = jsonValue;
 }

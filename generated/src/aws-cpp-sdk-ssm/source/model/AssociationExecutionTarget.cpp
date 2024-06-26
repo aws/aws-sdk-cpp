@@ -31,16 +31,8 @@ AssociationExecutionTarget::AssociationExecutionTarget() :
 {
 }
 
-AssociationExecutionTarget::AssociationExecutionTarget(JsonView jsonValue) : 
-    m_associationIdHasBeenSet(false),
-    m_associationVersionHasBeenSet(false),
-    m_executionIdHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_detailedStatusHasBeenSet(false),
-    m_lastExecutionDateHasBeenSet(false),
-    m_outputSourceHasBeenSet(false)
+AssociationExecutionTarget::AssociationExecutionTarget(JsonView jsonValue)
+  : AssociationExecutionTarget()
 {
   *this = jsonValue;
 }

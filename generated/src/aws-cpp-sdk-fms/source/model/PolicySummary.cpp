@@ -34,19 +34,8 @@ PolicySummary::PolicySummary() :
 {
 }
 
-PolicySummary::PolicySummary(JsonView jsonValue) : 
-    m_policyArnHasBeenSet(false),
-    m_policyIdHasBeenSet(false),
-    m_policyNameHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
-    m_securityServiceType(SecurityServiceType::NOT_SET),
-    m_securityServiceTypeHasBeenSet(false),
-    m_remediationEnabled(false),
-    m_remediationEnabledHasBeenSet(false),
-    m_deleteUnusedFMManagedResources(false),
-    m_deleteUnusedFMManagedResourcesHasBeenSet(false),
-    m_policyStatus(CustomerPolicyStatus::NOT_SET),
-    m_policyStatusHasBeenSet(false)
+PolicySummary::PolicySummary(JsonView jsonValue)
+  : PolicySummary()
 {
   *this = jsonValue;
 }

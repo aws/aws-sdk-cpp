@@ -27,12 +27,8 @@ UserIdentityInfo::UserIdentityInfo() :
 {
 }
 
-UserIdentityInfo::UserIdentityInfo(JsonView jsonValue) : 
-    m_firstNameHasBeenSet(false),
-    m_lastNameHasBeenSet(false),
-    m_emailHasBeenSet(false),
-    m_secondaryEmailHasBeenSet(false),
-    m_mobileHasBeenSet(false)
+UserIdentityInfo::UserIdentityInfo(JsonView jsonValue)
+  : UserIdentityInfo()
 {
   *this = jsonValue;
 }

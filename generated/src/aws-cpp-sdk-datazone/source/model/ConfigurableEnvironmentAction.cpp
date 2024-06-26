@@ -26,11 +26,8 @@ ConfigurableEnvironmentAction::ConfigurableEnvironmentAction() :
 {
 }
 
-ConfigurableEnvironmentAction::ConfigurableEnvironmentAction(JsonView jsonValue) : 
-    m_auth(ConfigurableActionTypeAuthorization::NOT_SET),
-    m_authHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_typeHasBeenSet(false)
+ConfigurableEnvironmentAction::ConfigurableEnvironmentAction(JsonView jsonValue)
+  : ConfigurableEnvironmentAction()
 {
   *this = jsonValue;
 }

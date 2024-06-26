@@ -45,30 +45,8 @@ CreateFileSystemLustreConfiguration::CreateFileSystemLustreConfiguration() :
 {
 }
 
-CreateFileSystemLustreConfiguration::CreateFileSystemLustreConfiguration(JsonView jsonValue) : 
-    m_weeklyMaintenanceStartTimeHasBeenSet(false),
-    m_importPathHasBeenSet(false),
-    m_exportPathHasBeenSet(false),
-    m_importedFileChunkSize(0),
-    m_importedFileChunkSizeHasBeenSet(false),
-    m_deploymentType(LustreDeploymentType::NOT_SET),
-    m_deploymentTypeHasBeenSet(false),
-    m_autoImportPolicy(AutoImportPolicyType::NOT_SET),
-    m_autoImportPolicyHasBeenSet(false),
-    m_perUnitStorageThroughput(0),
-    m_perUnitStorageThroughputHasBeenSet(false),
-    m_dailyAutomaticBackupStartTimeHasBeenSet(false),
-    m_automaticBackupRetentionDays(0),
-    m_automaticBackupRetentionDaysHasBeenSet(false),
-    m_copyTagsToBackups(false),
-    m_copyTagsToBackupsHasBeenSet(false),
-    m_driveCacheType(DriveCacheType::NOT_SET),
-    m_driveCacheTypeHasBeenSet(false),
-    m_dataCompressionType(DataCompressionType::NOT_SET),
-    m_dataCompressionTypeHasBeenSet(false),
-    m_logConfigurationHasBeenSet(false),
-    m_rootSquashConfigurationHasBeenSet(false),
-    m_metadataConfigurationHasBeenSet(false)
+CreateFileSystemLustreConfiguration::CreateFileSystemLustreConfiguration(JsonView jsonValue)
+  : CreateFileSystemLustreConfiguration()
 {
   *this = jsonValue;
 }

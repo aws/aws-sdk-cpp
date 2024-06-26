@@ -25,10 +25,8 @@ InvalidInputException::InvalidInputException() :
 {
 }
 
-InvalidInputException::InvalidInputException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_fromFederationSource(false),
-    m_fromFederationSourceHasBeenSet(false)
+InvalidInputException::InvalidInputException(JsonView jsonValue)
+  : InvalidInputException()
 {
   *this = jsonValue;
 }

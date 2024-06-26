@@ -27,12 +27,8 @@ TestReportSummary::TestReportSummary() :
 {
 }
 
-TestReportSummary::TestReportSummary(JsonView jsonValue) : 
-    m_total(0),
-    m_totalHasBeenSet(false),
-    m_statusCountsHasBeenSet(false),
-    m_durationInNanoSeconds(0),
-    m_durationInNanoSecondsHasBeenSet(false)
+TestReportSummary::TestReportSummary(JsonView jsonValue)
+  : TestReportSummary()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ TrackingOptions::TrackingOptions() :
 {
 }
 
-TrackingOptions::TrackingOptions(JsonView jsonValue) : 
-    m_customRedirectDomainHasBeenSet(false)
+TrackingOptions::TrackingOptions(JsonView jsonValue)
+  : TrackingOptions()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ AwsLambdaFunctionEnvironmentError::AwsLambdaFunctionEnvironmentError() :
 {
 }
 
-AwsLambdaFunctionEnvironmentError::AwsLambdaFunctionEnvironmentError(JsonView jsonValue) : 
-    m_errorCodeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+AwsLambdaFunctionEnvironmentError::AwsLambdaFunctionEnvironmentError(JsonView jsonValue)
+  : AwsLambdaFunctionEnvironmentError()
 {
   *this = jsonValue;
 }

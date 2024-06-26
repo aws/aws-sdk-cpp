@@ -24,9 +24,8 @@ QualityMetrics::QualityMetrics() :
 {
 }
 
-QualityMetrics::QualityMetrics(JsonView jsonValue) : 
-    m_agentHasBeenSet(false),
-    m_customerHasBeenSet(false)
+QualityMetrics::QualityMetrics(JsonView jsonValue)
+  : QualityMetrics()
 {
   *this = jsonValue;
 }

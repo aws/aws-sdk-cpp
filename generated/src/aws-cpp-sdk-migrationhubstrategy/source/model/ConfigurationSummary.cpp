@@ -27,12 +27,8 @@ ConfigurationSummary::ConfigurationSummary() :
 {
 }
 
-ConfigurationSummary::ConfigurationSummary(JsonView jsonValue) : 
-    m_ipAddressBasedRemoteInfoListHasBeenSet(false),
-    m_pipelineInfoListHasBeenSet(false),
-    m_remoteSourceCodeAnalysisServerInfoHasBeenSet(false),
-    m_vcenterBasedRemoteInfoListHasBeenSet(false),
-    m_versionControlInfoListHasBeenSet(false)
+ConfigurationSummary::ConfigurationSummary(JsonView jsonValue)
+  : ConfigurationSummary()
 {
   *this = jsonValue;
 }

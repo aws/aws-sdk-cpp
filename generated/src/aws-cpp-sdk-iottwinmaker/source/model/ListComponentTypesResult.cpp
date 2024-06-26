@@ -22,8 +22,8 @@ ListComponentTypesResult::ListComponentTypesResult() :
 {
 }
 
-ListComponentTypesResult::ListComponentTypesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_maxResults(0)
+ListComponentTypesResult::ListComponentTypesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ListComponentTypesResult()
 {
   *this = result;
 }

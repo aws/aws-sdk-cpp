@@ -31,14 +31,8 @@ BuildConfiguration::BuildConfiguration() :
 {
 }
 
-BuildConfiguration::BuildConfiguration(const XmlNode& xmlNode) : 
-    m_artifactNameHasBeenSet(false),
-    m_codeBuildServiceRoleHasBeenSet(false),
-    m_computeType(ComputeType::NOT_SET),
-    m_computeTypeHasBeenSet(false),
-    m_imageHasBeenSet(false),
-    m_timeoutInMinutes(0),
-    m_timeoutInMinutesHasBeenSet(false)
+BuildConfiguration::BuildConfiguration(const XmlNode& xmlNode)
+  : BuildConfiguration()
 {
   *this = xmlNode;
 }

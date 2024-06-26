@@ -24,9 +24,8 @@ TemplatesResponse::TemplatesResponse() :
 {
 }
 
-TemplatesResponse::TemplatesResponse(JsonView jsonValue) : 
-    m_itemHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
+TemplatesResponse::TemplatesResponse(JsonView jsonValue)
+  : TemplatesResponse()
 {
   *this = jsonValue;
 }

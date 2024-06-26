@@ -30,15 +30,8 @@ Capacity::Capacity() :
 {
 }
 
-Capacity::Capacity(JsonView jsonValue) : 
-    m_available(0),
-    m_availableHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_total(0),
-    m_totalHasBeenSet(false),
-    m_unitHasBeenSet(false),
-    m_used(0),
-    m_usedHasBeenSet(false)
+Capacity::Capacity(JsonView jsonValue)
+  : Capacity()
 {
   *this = jsonValue;
 }

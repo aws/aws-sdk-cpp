@@ -25,10 +25,8 @@ S3DestinationConfiguration::S3DestinationConfiguration() :
 {
 }
 
-S3DestinationConfiguration::S3DestinationConfiguration(JsonView jsonValue) : 
-    m_storageConfigurationArnHasBeenSet(false),
-    m_encoderConfigurationArnsHasBeenSet(false),
-    m_recordingConfigurationHasBeenSet(false)
+S3DestinationConfiguration::S3DestinationConfiguration(JsonView jsonValue)
+  : S3DestinationConfiguration()
 {
   *this = jsonValue;
 }

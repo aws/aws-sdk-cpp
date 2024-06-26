@@ -42,25 +42,8 @@ ReservedNode::ReservedNode() :
 {
 }
 
-ReservedNode::ReservedNode(const XmlNode& xmlNode) : 
-    m_reservedNodeIdHasBeenSet(false),
-    m_reservedNodeOfferingIdHasBeenSet(false),
-    m_nodeTypeHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_duration(0),
-    m_durationHasBeenSet(false),
-    m_fixedPrice(0.0),
-    m_fixedPriceHasBeenSet(false),
-    m_usagePrice(0.0),
-    m_usagePriceHasBeenSet(false),
-    m_currencyCodeHasBeenSet(false),
-    m_nodeCount(0),
-    m_nodeCountHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_offeringTypeHasBeenSet(false),
-    m_recurringChargesHasBeenSet(false),
-    m_reservedNodeOfferingType(ReservedNodeOfferingType::NOT_SET),
-    m_reservedNodeOfferingTypeHasBeenSet(false)
+ReservedNode::ReservedNode(const XmlNode& xmlNode)
+  : ReservedNode()
 {
   *this = xmlNode;
 }

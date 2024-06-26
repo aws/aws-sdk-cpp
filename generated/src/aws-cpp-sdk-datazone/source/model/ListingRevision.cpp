@@ -24,9 +24,8 @@ ListingRevision::ListingRevision() :
 {
 }
 
-ListingRevision::ListingRevision(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_revisionHasBeenSet(false)
+ListingRevision::ListingRevision(JsonView jsonValue)
+  : ListingRevision()
 {
   *this = jsonValue;
 }

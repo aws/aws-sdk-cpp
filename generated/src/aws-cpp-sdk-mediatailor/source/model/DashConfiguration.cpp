@@ -26,11 +26,8 @@ DashConfiguration::DashConfiguration() :
 {
 }
 
-DashConfiguration::DashConfiguration(JsonView jsonValue) : 
-    m_manifestEndpointPrefixHasBeenSet(false),
-    m_mpdLocationHasBeenSet(false),
-    m_originManifestType(OriginManifestType::NOT_SET),
-    m_originManifestTypeHasBeenSet(false)
+DashConfiguration::DashConfiguration(JsonView jsonValue)
+  : DashConfiguration()
 {
   *this = jsonValue;
 }

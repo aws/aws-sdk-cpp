@@ -25,8 +25,8 @@ Topic::Topic() :
 {
 }
 
-Topic::Topic(const XmlNode& xmlNode) : 
-    m_topicArnHasBeenSet(false)
+Topic::Topic(const XmlNode& xmlNode)
+  : Topic()
 {
   *this = xmlNode;
 }

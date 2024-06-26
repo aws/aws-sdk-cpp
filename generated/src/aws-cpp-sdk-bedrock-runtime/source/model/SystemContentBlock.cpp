@@ -24,9 +24,8 @@ SystemContentBlock::SystemContentBlock() :
 {
 }
 
-SystemContentBlock::SystemContentBlock(JsonView jsonValue) : 
-    m_textHasBeenSet(false),
-    m_guardContentHasBeenSet(false)
+SystemContentBlock::SystemContentBlock(JsonView jsonValue)
+  : SystemContentBlock()
 {
   *this = jsonValue;
 }

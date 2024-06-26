@@ -26,11 +26,8 @@ FlowAssociationSummary::FlowAssociationSummary() :
 {
 }
 
-FlowAssociationSummary::FlowAssociationSummary(JsonView jsonValue) : 
-    m_resourceIdHasBeenSet(false),
-    m_flowIdHasBeenSet(false),
-    m_resourceType(ListFlowAssociationResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false)
+FlowAssociationSummary::FlowAssociationSummary(JsonView jsonValue)
+  : FlowAssociationSummary()
 {
   *this = jsonValue;
 }

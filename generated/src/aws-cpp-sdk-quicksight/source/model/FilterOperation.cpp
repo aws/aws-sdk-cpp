@@ -23,8 +23,8 @@ FilterOperation::FilterOperation() :
 {
 }
 
-FilterOperation::FilterOperation(JsonView jsonValue) : 
-    m_conditionExpressionHasBeenSet(false)
+FilterOperation::FilterOperation(JsonView jsonValue)
+  : FilterOperation()
 {
   *this = jsonValue;
 }

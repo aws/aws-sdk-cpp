@@ -25,10 +25,8 @@ CalculationStatistics::CalculationStatistics() :
 {
 }
 
-CalculationStatistics::CalculationStatistics(JsonView jsonValue) : 
-    m_dpuExecutionInMillis(0),
-    m_dpuExecutionInMillisHasBeenSet(false),
-    m_progressHasBeenSet(false)
+CalculationStatistics::CalculationStatistics(JsonView jsonValue)
+  : CalculationStatistics()
 {
   *this = jsonValue;
 }

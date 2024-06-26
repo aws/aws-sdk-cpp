@@ -28,13 +28,8 @@ ComboChartVisual::ComboChartVisual() :
 {
 }
 
-ComboChartVisual::ComboChartVisual(JsonView jsonValue) : 
-    m_visualIdHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_subtitleHasBeenSet(false),
-    m_chartConfigurationHasBeenSet(false),
-    m_actionsHasBeenSet(false),
-    m_columnHierarchiesHasBeenSet(false)
+ComboChartVisual::ComboChartVisual(JsonView jsonValue)
+  : ComboChartVisual()
 {
   *this = jsonValue;
 }

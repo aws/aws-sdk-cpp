@@ -26,11 +26,8 @@ AccountAggregationSource::AccountAggregationSource() :
 {
 }
 
-AccountAggregationSource::AccountAggregationSource(JsonView jsonValue) : 
-    m_accountIdsHasBeenSet(false),
-    m_allAwsRegions(false),
-    m_allAwsRegionsHasBeenSet(false),
-    m_awsRegionsHasBeenSet(false)
+AccountAggregationSource::AccountAggregationSource(JsonView jsonValue)
+  : AccountAggregationSource()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ CustomPosixUserConfig::CustomPosixUserConfig() :
 {
 }
 
-CustomPosixUserConfig::CustomPosixUserConfig(JsonView jsonValue) : 
-    m_uid(0),
-    m_uidHasBeenSet(false),
-    m_gid(0),
-    m_gidHasBeenSet(false)
+CustomPosixUserConfig::CustomPosixUserConfig(JsonView jsonValue)
+  : CustomPosixUserConfig()
 {
   *this = jsonValue;
 }

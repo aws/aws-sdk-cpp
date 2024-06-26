@@ -32,17 +32,8 @@ SalesforceConfiguration::SalesforceConfiguration() :
 {
 }
 
-SalesforceConfiguration::SalesforceConfiguration(JsonView jsonValue) : 
-    m_serverUrlHasBeenSet(false),
-    m_secretArnHasBeenSet(false),
-    m_standardObjectConfigurationsHasBeenSet(false),
-    m_knowledgeArticleConfigurationHasBeenSet(false),
-    m_chatterFeedConfigurationHasBeenSet(false),
-    m_crawlAttachments(false),
-    m_crawlAttachmentsHasBeenSet(false),
-    m_standardObjectAttachmentConfigurationHasBeenSet(false),
-    m_includeAttachmentFilePatternsHasBeenSet(false),
-    m_excludeAttachmentFilePatternsHasBeenSet(false)
+SalesforceConfiguration::SalesforceConfiguration(JsonView jsonValue)
+  : SalesforceConfiguration()
 {
   *this = jsonValue;
 }

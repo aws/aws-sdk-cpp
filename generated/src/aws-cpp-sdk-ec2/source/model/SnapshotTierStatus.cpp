@@ -40,23 +40,8 @@ SnapshotTierStatus::SnapshotTierStatus() :
 {
 }
 
-SnapshotTierStatus::SnapshotTierStatus(const XmlNode& xmlNode) : 
-    m_snapshotIdHasBeenSet(false),
-    m_volumeIdHasBeenSet(false),
-    m_status(SnapshotState::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_storageTier(StorageTier::NOT_SET),
-    m_storageTierHasBeenSet(false),
-    m_lastTieringStartTimeHasBeenSet(false),
-    m_lastTieringProgress(0),
-    m_lastTieringProgressHasBeenSet(false),
-    m_lastTieringOperationStatus(TieringOperationStatus::NOT_SET),
-    m_lastTieringOperationStatusHasBeenSet(false),
-    m_lastTieringOperationStatusDetailHasBeenSet(false),
-    m_archivalCompleteTimeHasBeenSet(false),
-    m_restoreExpiryTimeHasBeenSet(false)
+SnapshotTierStatus::SnapshotTierStatus(const XmlNode& xmlNode)
+  : SnapshotTierStatus()
 {
   *this = xmlNode;
 }

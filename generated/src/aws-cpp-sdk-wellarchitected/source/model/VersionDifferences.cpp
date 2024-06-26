@@ -23,8 +23,8 @@ VersionDifferences::VersionDifferences() :
 {
 }
 
-VersionDifferences::VersionDifferences(JsonView jsonValue) : 
-    m_pillarDifferencesHasBeenSet(false)
+VersionDifferences::VersionDifferences(JsonView jsonValue)
+  : VersionDifferences()
 {
   *this = jsonValue;
 }

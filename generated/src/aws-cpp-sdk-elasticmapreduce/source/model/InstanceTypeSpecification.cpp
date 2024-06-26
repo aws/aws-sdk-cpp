@@ -33,18 +33,8 @@ InstanceTypeSpecification::InstanceTypeSpecification() :
 {
 }
 
-InstanceTypeSpecification::InstanceTypeSpecification(JsonView jsonValue) : 
-    m_instanceTypeHasBeenSet(false),
-    m_weightedCapacity(0),
-    m_weightedCapacityHasBeenSet(false),
-    m_bidPriceHasBeenSet(false),
-    m_bidPriceAsPercentageOfOnDemandPrice(0.0),
-    m_bidPriceAsPercentageOfOnDemandPriceHasBeenSet(false),
-    m_configurationsHasBeenSet(false),
-    m_ebsBlockDevicesHasBeenSet(false),
-    m_ebsOptimized(false),
-    m_ebsOptimizedHasBeenSet(false),
-    m_customAmiIdHasBeenSet(false)
+InstanceTypeSpecification::InstanceTypeSpecification(JsonView jsonValue)
+  : InstanceTypeSpecification()
 {
   *this = jsonValue;
 }

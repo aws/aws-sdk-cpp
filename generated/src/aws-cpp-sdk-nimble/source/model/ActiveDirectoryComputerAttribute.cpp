@@ -24,9 +24,8 @@ ActiveDirectoryComputerAttribute::ActiveDirectoryComputerAttribute() :
 {
 }
 
-ActiveDirectoryComputerAttribute::ActiveDirectoryComputerAttribute(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
+ActiveDirectoryComputerAttribute::ActiveDirectoryComputerAttribute(JsonView jsonValue)
+  : ActiveDirectoryComputerAttribute()
 {
   *this = jsonValue;
 }

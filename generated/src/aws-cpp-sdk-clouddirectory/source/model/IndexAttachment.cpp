@@ -24,9 +24,8 @@ IndexAttachment::IndexAttachment() :
 {
 }
 
-IndexAttachment::IndexAttachment(JsonView jsonValue) : 
-    m_indexedAttributesHasBeenSet(false),
-    m_objectIdentifierHasBeenSet(false)
+IndexAttachment::IndexAttachment(JsonView jsonValue)
+  : IndexAttachment()
 {
   *this = jsonValue;
 }

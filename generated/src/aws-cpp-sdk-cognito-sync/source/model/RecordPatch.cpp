@@ -29,14 +29,8 @@ RecordPatch::RecordPatch() :
 {
 }
 
-RecordPatch::RecordPatch(JsonView jsonValue) : 
-    m_op(Operation::NOT_SET),
-    m_opHasBeenSet(false),
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_syncCount(0),
-    m_syncCountHasBeenSet(false),
-    m_deviceLastModifiedDateHasBeenSet(false)
+RecordPatch::RecordPatch(JsonView jsonValue)
+  : RecordPatch()
 {
   *this = jsonValue;
 }

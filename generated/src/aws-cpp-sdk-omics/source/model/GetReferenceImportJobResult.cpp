@@ -22,8 +22,8 @@ GetReferenceImportJobResult::GetReferenceImportJobResult() :
 {
 }
 
-GetReferenceImportJobResult::GetReferenceImportJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(ReferenceImportJobStatus::NOT_SET)
+GetReferenceImportJobResult::GetReferenceImportJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetReferenceImportJobResult()
 {
   *this = result;
 }

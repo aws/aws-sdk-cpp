@@ -24,9 +24,8 @@ ResourceDoesNotSupportTagging::ResourceDoesNotSupportTagging() :
 {
 }
 
-ResourceDoesNotSupportTagging::ResourceDoesNotSupportTagging(JsonView jsonValue) : 
-    m_resourceARNHasBeenSet(false),
-    m_messageHasBeenSet(false)
+ResourceDoesNotSupportTagging::ResourceDoesNotSupportTagging(JsonView jsonValue)
+  : ResourceDoesNotSupportTagging()
 {
   *this = jsonValue;
 }

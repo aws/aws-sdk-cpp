@@ -23,8 +23,8 @@ FormInputBindingPropertiesValueProperties::FormInputBindingPropertiesValueProper
 {
 }
 
-FormInputBindingPropertiesValueProperties::FormInputBindingPropertiesValueProperties(JsonView jsonValue) : 
-    m_modelHasBeenSet(false)
+FormInputBindingPropertiesValueProperties::FormInputBindingPropertiesValueProperties(JsonView jsonValue)
+  : FormInputBindingPropertiesValueProperties()
 {
   *this = jsonValue;
 }

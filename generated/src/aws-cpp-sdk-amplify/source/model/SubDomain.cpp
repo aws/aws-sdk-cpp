@@ -26,11 +26,8 @@ SubDomain::SubDomain() :
 {
 }
 
-SubDomain::SubDomain(JsonView jsonValue) : 
-    m_subDomainSettingHasBeenSet(false),
-    m_verified(false),
-    m_verifiedHasBeenSet(false),
-    m_dnsRecordHasBeenSet(false)
+SubDomain::SubDomain(JsonView jsonValue)
+  : SubDomain()
 {
   *this = jsonValue;
 }

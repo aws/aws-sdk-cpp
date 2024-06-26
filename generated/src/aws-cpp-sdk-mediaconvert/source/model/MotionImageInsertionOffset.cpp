@@ -26,11 +26,8 @@ MotionImageInsertionOffset::MotionImageInsertionOffset() :
 {
 }
 
-MotionImageInsertionOffset::MotionImageInsertionOffset(JsonView jsonValue) : 
-    m_imageX(0),
-    m_imageXHasBeenSet(false),
-    m_imageY(0),
-    m_imageYHasBeenSet(false)
+MotionImageInsertionOffset::MotionImageInsertionOffset(JsonView jsonValue)
+  : MotionImageInsertionOffset()
 {
   *this = jsonValue;
 }

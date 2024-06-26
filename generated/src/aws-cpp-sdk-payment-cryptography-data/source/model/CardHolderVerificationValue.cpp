@@ -25,10 +25,8 @@ CardHolderVerificationValue::CardHolderVerificationValue() :
 {
 }
 
-CardHolderVerificationValue::CardHolderVerificationValue(JsonView jsonValue) : 
-    m_applicationTransactionCounterHasBeenSet(false),
-    m_panSequenceNumberHasBeenSet(false),
-    m_unpredictableNumberHasBeenSet(false)
+CardHolderVerificationValue::CardHolderVerificationValue(JsonView jsonValue)
+  : CardHolderVerificationValue()
 {
   *this = jsonValue;
 }

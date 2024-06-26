@@ -26,9 +26,8 @@ InvalidFirehoseDestinationException::InvalidFirehoseDestinationException() :
 {
 }
 
-InvalidFirehoseDestinationException::InvalidFirehoseDestinationException(const XmlNode& xmlNode) : 
-    m_configurationSetNameHasBeenSet(false),
-    m_eventDestinationNameHasBeenSet(false)
+InvalidFirehoseDestinationException::InvalidFirehoseDestinationException(const XmlNode& xmlNode)
+  : InvalidFirehoseDestinationException()
 {
   *this = xmlNode;
 }

@@ -27,10 +27,8 @@ FieldLevelEncryption::FieldLevelEncryption() :
 {
 }
 
-FieldLevelEncryption::FieldLevelEncryption(const XmlNode& xmlNode) : 
-    m_idHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_fieldLevelEncryptionConfigHasBeenSet(false)
+FieldLevelEncryption::FieldLevelEncryption(const XmlNode& xmlNode)
+  : FieldLevelEncryption()
 {
   *this = xmlNode;
 }

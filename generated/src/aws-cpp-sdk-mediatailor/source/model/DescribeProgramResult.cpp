@@ -22,8 +22,8 @@ DescribeProgramResult::DescribeProgramResult() :
 {
 }
 
-DescribeProgramResult::DescribeProgramResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_durationMillis(0)
+DescribeProgramResult::DescribeProgramResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeProgramResult()
 {
   *this = result;
 }

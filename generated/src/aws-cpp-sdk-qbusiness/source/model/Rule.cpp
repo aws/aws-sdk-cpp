@@ -27,12 +27,8 @@ Rule::Rule() :
 {
 }
 
-Rule::Rule(JsonView jsonValue) : 
-    m_includedUsersAndGroupsHasBeenSet(false),
-    m_excludedUsersAndGroupsHasBeenSet(false),
-    m_ruleType(RuleType::NOT_SET),
-    m_ruleTypeHasBeenSet(false),
-    m_ruleConfigurationHasBeenSet(false)
+Rule::Rule(JsonView jsonValue)
+  : Rule()
 {
   *this = jsonValue;
 }

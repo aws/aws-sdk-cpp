@@ -24,10 +24,8 @@ StartMultiplexResult::StartMultiplexResult() :
 {
 }
 
-StartMultiplexResult::StartMultiplexResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_pipelinesRunningCount(0),
-    m_programCount(0),
-    m_state(MultiplexState::NOT_SET)
+StartMultiplexResult::StartMultiplexResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : StartMultiplexResult()
 {
   *this = result;
 }

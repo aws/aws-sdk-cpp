@@ -30,15 +30,8 @@ ResourceMetadata::ResourceMetadata() :
 {
 }
 
-ResourceMetadata::ResourceMetadata(JsonView jsonValue) : 
-    m_type(ResourceType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_originalNameHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_versionIdHasBeenSet(false),
-    m_ownerHasBeenSet(false),
-    m_parentIdHasBeenSet(false)
+ResourceMetadata::ResourceMetadata(JsonView jsonValue)
+  : ResourceMetadata()
 {
   *this = jsonValue;
 }

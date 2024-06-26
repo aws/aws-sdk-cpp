@@ -26,11 +26,8 @@ ServiceNameAndResourceType::ServiceNameAndResourceType() :
 {
 }
 
-ServiceNameAndResourceType::ServiceNameAndResourceType(JsonView jsonValue) : 
-    m_resourceTypeHasBeenSet(false),
-    m_serviceNameHasBeenSet(false),
-    m_resourceRegionScope(ResourceRegionScope::NOT_SET),
-    m_resourceRegionScopeHasBeenSet(false)
+ServiceNameAndResourceType::ServiceNameAndResourceType(JsonView jsonValue)
+  : ServiceNameAndResourceType()
 {
   *this = jsonValue;
 }

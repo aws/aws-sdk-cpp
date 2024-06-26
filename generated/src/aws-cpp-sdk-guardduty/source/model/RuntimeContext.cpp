@@ -48,33 +48,8 @@ RuntimeContext::RuntimeContext() :
 {
 }
 
-RuntimeContext::RuntimeContext(JsonView jsonValue) : 
-    m_modifyingProcessHasBeenSet(false),
-    m_modifiedAtHasBeenSet(false),
-    m_scriptPathHasBeenSet(false),
-    m_libraryPathHasBeenSet(false),
-    m_ldPreloadValueHasBeenSet(false),
-    m_socketPathHasBeenSet(false),
-    m_runcBinaryPathHasBeenSet(false),
-    m_releaseAgentPathHasBeenSet(false),
-    m_mountSourceHasBeenSet(false),
-    m_mountTargetHasBeenSet(false),
-    m_fileSystemTypeHasBeenSet(false),
-    m_flagsHasBeenSet(false),
-    m_moduleNameHasBeenSet(false),
-    m_moduleFilePathHasBeenSet(false),
-    m_moduleSha256HasBeenSet(false),
-    m_shellHistoryFilePathHasBeenSet(false),
-    m_targetProcessHasBeenSet(false),
-    m_addressFamilyHasBeenSet(false),
-    m_ianaProtocolNumber(0),
-    m_ianaProtocolNumberHasBeenSet(false),
-    m_memoryRegionsHasBeenSet(false),
-    m_toolNameHasBeenSet(false),
-    m_toolCategoryHasBeenSet(false),
-    m_serviceNameHasBeenSet(false),
-    m_commandLineExampleHasBeenSet(false),
-    m_threatFilePathHasBeenSet(false)
+RuntimeContext::RuntimeContext(JsonView jsonValue)
+  : RuntimeContext()
 {
   *this = jsonValue;
 }

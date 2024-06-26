@@ -23,8 +23,8 @@ SnowconeDeviceConfiguration::SnowconeDeviceConfiguration() :
 {
 }
 
-SnowconeDeviceConfiguration::SnowconeDeviceConfiguration(JsonView jsonValue) : 
-    m_wirelessConnectionHasBeenSet(false)
+SnowconeDeviceConfiguration::SnowconeDeviceConfiguration(JsonView jsonValue)
+  : SnowconeDeviceConfiguration()
 {
   *this = jsonValue;
 }

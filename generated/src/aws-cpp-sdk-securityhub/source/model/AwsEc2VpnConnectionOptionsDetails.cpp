@@ -25,10 +25,8 @@ AwsEc2VpnConnectionOptionsDetails::AwsEc2VpnConnectionOptionsDetails() :
 {
 }
 
-AwsEc2VpnConnectionOptionsDetails::AwsEc2VpnConnectionOptionsDetails(JsonView jsonValue) : 
-    m_staticRoutesOnly(false),
-    m_staticRoutesOnlyHasBeenSet(false),
-    m_tunnelOptionsHasBeenSet(false)
+AwsEc2VpnConnectionOptionsDetails::AwsEc2VpnConnectionOptionsDetails(JsonView jsonValue)
+  : AwsEc2VpnConnectionOptionsDetails()
 {
   *this = jsonValue;
 }

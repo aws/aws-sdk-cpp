@@ -27,10 +27,8 @@ EngineDefaults::EngineDefaults() :
 {
 }
 
-EngineDefaults::EngineDefaults(const XmlNode& xmlNode) : 
-    m_dBParameterGroupFamilyHasBeenSet(false),
-    m_markerHasBeenSet(false),
-    m_parametersHasBeenSet(false)
+EngineDefaults::EngineDefaults(const XmlNode& xmlNode)
+  : EngineDefaults()
 {
   *this = xmlNode;
 }

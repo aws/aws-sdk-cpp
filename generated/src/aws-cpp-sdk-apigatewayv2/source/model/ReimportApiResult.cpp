@@ -25,11 +25,8 @@ ReimportApiResult::ReimportApiResult() :
 {
 }
 
-ReimportApiResult::ReimportApiResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_apiGatewayManaged(false),
-    m_disableSchemaValidation(false),
-    m_disableExecuteApiEndpoint(false),
-    m_protocolType(ProtocolType::NOT_SET)
+ReimportApiResult::ReimportApiResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ReimportApiResult()
 {
   *this = result;
 }

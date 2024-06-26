@@ -27,12 +27,8 @@ MetricsSummary::MetricsSummary() :
 {
 }
 
-MetricsSummary::MetricsSummary(JsonView jsonValue) : 
-    m_categoriesWithMostFindingsHasBeenSet(false),
-    m_dateHasBeenSet(false),
-    m_openFindingsHasBeenSet(false),
-    m_scansWithMostOpenCriticalFindingsHasBeenSet(false),
-    m_scansWithMostOpenFindingsHasBeenSet(false)
+MetricsSummary::MetricsSummary(JsonView jsonValue)
+  : MetricsSummary()
 {
   *this = jsonValue;
 }

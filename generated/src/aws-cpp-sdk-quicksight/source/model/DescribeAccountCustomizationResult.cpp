@@ -22,8 +22,8 @@ DescribeAccountCustomizationResult::DescribeAccountCustomizationResult() :
 {
 }
 
-DescribeAccountCustomizationResult::DescribeAccountCustomizationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+DescribeAccountCustomizationResult::DescribeAccountCustomizationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeAccountCustomizationResult()
 {
   *this = result;
 }

@@ -32,17 +32,8 @@ AuditMitigationActionExecutionMetadata::AuditMitigationActionExecutionMetadata()
 {
 }
 
-AuditMitigationActionExecutionMetadata::AuditMitigationActionExecutionMetadata(JsonView jsonValue) : 
-    m_taskIdHasBeenSet(false),
-    m_findingIdHasBeenSet(false),
-    m_actionNameHasBeenSet(false),
-    m_actionIdHasBeenSet(false),
-    m_status(AuditMitigationActionsExecutionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_errorCodeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+AuditMitigationActionExecutionMetadata::AuditMitigationActionExecutionMetadata(JsonView jsonValue)
+  : AuditMitigationActionExecutionMetadata()
 {
   *this = jsonValue;
 }

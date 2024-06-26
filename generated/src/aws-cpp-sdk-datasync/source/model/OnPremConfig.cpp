@@ -23,8 +23,8 @@ OnPremConfig::OnPremConfig() :
 {
 }
 
-OnPremConfig::OnPremConfig(JsonView jsonValue) : 
-    m_agentArnsHasBeenSet(false)
+OnPremConfig::OnPremConfig(JsonView jsonValue)
+  : OnPremConfig()
 {
   *this = jsonValue;
 }

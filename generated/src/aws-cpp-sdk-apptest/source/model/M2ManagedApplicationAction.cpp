@@ -26,11 +26,8 @@ M2ManagedApplicationAction::M2ManagedApplicationAction() :
 {
 }
 
-M2ManagedApplicationAction::M2ManagedApplicationAction(JsonView jsonValue) : 
-    m_resourceHasBeenSet(false),
-    m_actionType(M2ManagedActionType::NOT_SET),
-    m_actionTypeHasBeenSet(false),
-    m_propertiesHasBeenSet(false)
+M2ManagedApplicationAction::M2ManagedApplicationAction(JsonView jsonValue)
+  : M2ManagedApplicationAction()
 {
   *this = jsonValue;
 }

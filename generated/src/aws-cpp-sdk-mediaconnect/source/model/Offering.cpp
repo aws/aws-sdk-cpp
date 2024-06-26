@@ -33,18 +33,8 @@ Offering::Offering() :
 {
 }
 
-Offering::Offering(JsonView jsonValue) : 
-    m_currencyCodeHasBeenSet(false),
-    m_duration(0),
-    m_durationHasBeenSet(false),
-    m_durationUnits(DurationUnits::NOT_SET),
-    m_durationUnitsHasBeenSet(false),
-    m_offeringArnHasBeenSet(false),
-    m_offeringDescriptionHasBeenSet(false),
-    m_pricePerUnitHasBeenSet(false),
-    m_priceUnits(PriceUnits::NOT_SET),
-    m_priceUnitsHasBeenSet(false),
-    m_resourceSpecificationHasBeenSet(false)
+Offering::Offering(JsonView jsonValue)
+  : Offering()
 {
   *this = jsonValue;
 }

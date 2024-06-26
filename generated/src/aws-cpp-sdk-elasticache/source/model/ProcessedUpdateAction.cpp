@@ -29,12 +29,8 @@ ProcessedUpdateAction::ProcessedUpdateAction() :
 {
 }
 
-ProcessedUpdateAction::ProcessedUpdateAction(const XmlNode& xmlNode) : 
-    m_replicationGroupIdHasBeenSet(false),
-    m_cacheClusterIdHasBeenSet(false),
-    m_serviceUpdateNameHasBeenSet(false),
-    m_updateActionStatus(UpdateActionStatus::NOT_SET),
-    m_updateActionStatusHasBeenSet(false)
+ProcessedUpdateAction::ProcessedUpdateAction(const XmlNode& xmlNode)
+  : ProcessedUpdateAction()
 {
   *this = xmlNode;
 }

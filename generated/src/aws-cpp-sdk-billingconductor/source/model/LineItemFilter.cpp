@@ -27,12 +27,8 @@ LineItemFilter::LineItemFilter() :
 {
 }
 
-LineItemFilter::LineItemFilter(JsonView jsonValue) : 
-    m_attribute(LineItemFilterAttributeName::NOT_SET),
-    m_attributeHasBeenSet(false),
-    m_matchOption(MatchOption::NOT_SET),
-    m_matchOptionHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+LineItemFilter::LineItemFilter(JsonView jsonValue)
+  : LineItemFilter()
 {
   *this = jsonValue;
 }

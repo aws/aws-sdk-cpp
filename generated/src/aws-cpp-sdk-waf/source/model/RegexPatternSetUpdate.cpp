@@ -25,10 +25,8 @@ RegexPatternSetUpdate::RegexPatternSetUpdate() :
 {
 }
 
-RegexPatternSetUpdate::RegexPatternSetUpdate(JsonView jsonValue) : 
-    m_action(ChangeAction::NOT_SET),
-    m_actionHasBeenSet(false),
-    m_regexPatternStringHasBeenSet(false)
+RegexPatternSetUpdate::RegexPatternSetUpdate(JsonView jsonValue)
+  : RegexPatternSetUpdate()
 {
   *this = jsonValue;
 }

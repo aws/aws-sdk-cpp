@@ -27,12 +27,8 @@ AttributeCondition::AttributeCondition() :
 {
 }
 
-AttributeCondition::AttributeCondition(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_proficiencyLevel(0.0),
-    m_proficiencyLevelHasBeenSet(false),
-    m_comparisonOperatorHasBeenSet(false)
+AttributeCondition::AttributeCondition(JsonView jsonValue)
+  : AttributeCondition()
 {
   *this = jsonValue;
 }

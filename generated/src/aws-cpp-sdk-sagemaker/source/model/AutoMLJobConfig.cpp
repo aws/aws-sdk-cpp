@@ -28,13 +28,8 @@ AutoMLJobConfig::AutoMLJobConfig() :
 {
 }
 
-AutoMLJobConfig::AutoMLJobConfig(JsonView jsonValue) : 
-    m_completionCriteriaHasBeenSet(false),
-    m_securityConfigHasBeenSet(false),
-    m_candidateGenerationConfigHasBeenSet(false),
-    m_dataSplitConfigHasBeenSet(false),
-    m_mode(AutoMLMode::NOT_SET),
-    m_modeHasBeenSet(false)
+AutoMLJobConfig::AutoMLJobConfig(JsonView jsonValue)
+  : AutoMLJobConfig()
 {
   *this = jsonValue;
 }

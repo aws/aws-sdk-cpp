@@ -26,11 +26,8 @@ VpcOptions::VpcOptions() :
 {
 }
 
-VpcOptions::VpcOptions(JsonView jsonValue) : 
-    m_ipv6Support(false),
-    m_ipv6SupportHasBeenSet(false),
-    m_applianceModeSupport(false),
-    m_applianceModeSupportHasBeenSet(false)
+VpcOptions::VpcOptions(JsonView jsonValue)
+  : VpcOptions()
 {
   *this = jsonValue;
 }

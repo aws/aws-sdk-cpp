@@ -25,10 +25,8 @@ LoggingFilter::LoggingFilter() :
 {
 }
 
-LoggingFilter::LoggingFilter(JsonView jsonValue) : 
-    m_filtersHasBeenSet(false),
-    m_defaultBehavior(FilterBehavior::NOT_SET),
-    m_defaultBehaviorHasBeenSet(false)
+LoggingFilter::LoggingFilter(JsonView jsonValue)
+  : LoggingFilter()
 {
   *this = jsonValue;
 }

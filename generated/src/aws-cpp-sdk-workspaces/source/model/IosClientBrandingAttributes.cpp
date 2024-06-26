@@ -29,14 +29,8 @@ IosClientBrandingAttributes::IosClientBrandingAttributes() :
 {
 }
 
-IosClientBrandingAttributes::IosClientBrandingAttributes(JsonView jsonValue) : 
-    m_logoUrlHasBeenSet(false),
-    m_logo2xUrlHasBeenSet(false),
-    m_logo3xUrlHasBeenSet(false),
-    m_supportEmailHasBeenSet(false),
-    m_supportLinkHasBeenSet(false),
-    m_forgotPasswordLinkHasBeenSet(false),
-    m_loginMessageHasBeenSet(false)
+IosClientBrandingAttributes::IosClientBrandingAttributes(JsonView jsonValue)
+  : IosClientBrandingAttributes()
 {
   *this = jsonValue;
 }

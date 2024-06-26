@@ -27,12 +27,8 @@ DataSourceSyncJobMetrics::DataSourceSyncJobMetrics() :
 {
 }
 
-DataSourceSyncJobMetrics::DataSourceSyncJobMetrics(JsonView jsonValue) : 
-    m_documentsAddedHasBeenSet(false),
-    m_documentsModifiedHasBeenSet(false),
-    m_documentsDeletedHasBeenSet(false),
-    m_documentsFailedHasBeenSet(false),
-    m_documentsScannedHasBeenSet(false)
+DataSourceSyncJobMetrics::DataSourceSyncJobMetrics(JsonView jsonValue)
+  : DataSourceSyncJobMetrics()
 {
   *this = jsonValue;
 }

@@ -33,18 +33,8 @@ WorkSpaceApplication::WorkSpaceApplication() :
 {
 }
 
-WorkSpaceApplication::WorkSpaceApplication(JsonView jsonValue) : 
-    m_applicationIdHasBeenSet(false),
-    m_createdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_licenseType(WorkSpaceApplicationLicenseType::NOT_SET),
-    m_licenseTypeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_ownerHasBeenSet(false),
-    m_state(WorkSpaceApplicationState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_supportedComputeTypeNamesHasBeenSet(false),
-    m_supportedOperatingSystemNamesHasBeenSet(false)
+WorkSpaceApplication::WorkSpaceApplication(JsonView jsonValue)
+  : WorkSpaceApplication()
 {
   *this = jsonValue;
 }

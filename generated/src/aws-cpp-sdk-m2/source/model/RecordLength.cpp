@@ -26,11 +26,8 @@ RecordLength::RecordLength() :
 {
 }
 
-RecordLength::RecordLength(JsonView jsonValue) : 
-    m_max(0),
-    m_maxHasBeenSet(false),
-    m_min(0),
-    m_minHasBeenSet(false)
+RecordLength::RecordLength(JsonView jsonValue)
+  : RecordLength()
 {
   *this = jsonValue;
 }

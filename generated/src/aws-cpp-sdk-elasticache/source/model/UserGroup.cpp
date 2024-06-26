@@ -33,16 +33,8 @@ UserGroup::UserGroup() :
 {
 }
 
-UserGroup::UserGroup(const XmlNode& xmlNode) : 
-    m_userGroupIdHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_engineHasBeenSet(false),
-    m_userIdsHasBeenSet(false),
-    m_minimumEngineVersionHasBeenSet(false),
-    m_pendingChangesHasBeenSet(false),
-    m_replicationGroupsHasBeenSet(false),
-    m_serverlessCachesHasBeenSet(false),
-    m_aRNHasBeenSet(false)
+UserGroup::UserGroup(const XmlNode& xmlNode)
+  : UserGroup()
 {
   *this = xmlNode;
 }

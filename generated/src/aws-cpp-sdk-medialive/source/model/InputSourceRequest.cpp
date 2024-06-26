@@ -25,10 +25,8 @@ InputSourceRequest::InputSourceRequest() :
 {
 }
 
-InputSourceRequest::InputSourceRequest(JsonView jsonValue) : 
-    m_passwordParamHasBeenSet(false),
-    m_urlHasBeenSet(false),
-    m_usernameHasBeenSet(false)
+InputSourceRequest::InputSourceRequest(JsonView jsonValue)
+  : InputSourceRequest()
 {
   *this = jsonValue;
 }

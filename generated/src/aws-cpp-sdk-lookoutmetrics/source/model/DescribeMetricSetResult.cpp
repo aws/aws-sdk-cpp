@@ -23,9 +23,8 @@ DescribeMetricSetResult::DescribeMetricSetResult() :
 {
 }
 
-DescribeMetricSetResult::DescribeMetricSetResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_offset(0),
-    m_metricSetFrequency(Frequency::NOT_SET)
+DescribeMetricSetResult::DescribeMetricSetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeMetricSetResult()
 {
   *this = result;
 }

@@ -27,12 +27,8 @@ DeviceRegistryEnrichActivity::DeviceRegistryEnrichActivity() :
 {
 }
 
-DeviceRegistryEnrichActivity::DeviceRegistryEnrichActivity(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_attributeHasBeenSet(false),
-    m_thingNameHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_nextHasBeenSet(false)
+DeviceRegistryEnrichActivity::DeviceRegistryEnrichActivity(JsonView jsonValue)
+  : DeviceRegistryEnrichActivity()
 {
   *this = jsonValue;
 }

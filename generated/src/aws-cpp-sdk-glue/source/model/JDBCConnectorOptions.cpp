@@ -33,18 +33,8 @@ JDBCConnectorOptions::JDBCConnectorOptions() :
 {
 }
 
-JDBCConnectorOptions::JDBCConnectorOptions(JsonView jsonValue) : 
-    m_filterPredicateHasBeenSet(false),
-    m_partitionColumnHasBeenSet(false),
-    m_lowerBound(0),
-    m_lowerBoundHasBeenSet(false),
-    m_upperBound(0),
-    m_upperBoundHasBeenSet(false),
-    m_numPartitions(0),
-    m_numPartitionsHasBeenSet(false),
-    m_jobBookmarkKeysHasBeenSet(false),
-    m_jobBookmarkKeysSortOrderHasBeenSet(false),
-    m_dataTypeMappingHasBeenSet(false)
+JDBCConnectorOptions::JDBCConnectorOptions(JsonView jsonValue)
+  : JDBCConnectorOptions()
 {
   *this = jsonValue;
 }

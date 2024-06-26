@@ -29,12 +29,8 @@ SingleMetricAnomalyDetector::SingleMetricAnomalyDetector() :
 {
 }
 
-SingleMetricAnomalyDetector::SingleMetricAnomalyDetector(const XmlNode& xmlNode) : 
-    m_accountIdHasBeenSet(false),
-    m_namespaceHasBeenSet(false),
-    m_metricNameHasBeenSet(false),
-    m_dimensionsHasBeenSet(false),
-    m_statHasBeenSet(false)
+SingleMetricAnomalyDetector::SingleMetricAnomalyDetector(const XmlNode& xmlNode)
+  : SingleMetricAnomalyDetector()
 {
   *this = xmlNode;
 }

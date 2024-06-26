@@ -25,10 +25,8 @@ AppInstanceUserSummary::AppInstanceUserSummary() :
 {
 }
 
-AppInstanceUserSummary::AppInstanceUserSummary(JsonView jsonValue) : 
-    m_appInstanceUserArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_metadataHasBeenSet(false)
+AppInstanceUserSummary::AppInstanceUserSummary(JsonView jsonValue)
+  : AppInstanceUserSummary()
 {
   *this = jsonValue;
 }

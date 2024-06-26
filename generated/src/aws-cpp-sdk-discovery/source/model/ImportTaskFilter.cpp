@@ -25,10 +25,8 @@ ImportTaskFilter::ImportTaskFilter() :
 {
 }
 
-ImportTaskFilter::ImportTaskFilter(JsonView jsonValue) : 
-    m_name(ImportTaskFilterName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+ImportTaskFilter::ImportTaskFilter(JsonView jsonValue)
+  : ImportTaskFilter()
 {
   *this = jsonValue;
 }

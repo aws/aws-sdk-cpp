@@ -28,11 +28,8 @@ FunctionSummary::FunctionSummary() :
 {
 }
 
-FunctionSummary::FunctionSummary(const XmlNode& xmlNode) : 
-    m_nameHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_functionConfigHasBeenSet(false),
-    m_functionMetadataHasBeenSet(false)
+FunctionSummary::FunctionSummary(const XmlNode& xmlNode)
+  : FunctionSummary()
 {
   *this = xmlNode;
 }

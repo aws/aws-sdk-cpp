@@ -26,11 +26,8 @@ SearchCasesResponseItem::SearchCasesResponseItem() :
 {
 }
 
-SearchCasesResponseItem::SearchCasesResponseItem(JsonView jsonValue) : 
-    m_caseIdHasBeenSet(false),
-    m_fieldsHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_templateIdHasBeenSet(false)
+SearchCasesResponseItem::SearchCasesResponseItem(JsonView jsonValue)
+  : SearchCasesResponseItem()
 {
   *this = jsonValue;
 }

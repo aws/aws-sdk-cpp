@@ -24,9 +24,8 @@ MonitoringInput::MonitoringInput() :
 {
 }
 
-MonitoringInput::MonitoringInput(JsonView jsonValue) : 
-    m_endpointInputHasBeenSet(false),
-    m_batchTransformInputHasBeenSet(false)
+MonitoringInput::MonitoringInput(JsonView jsonValue)
+  : MonitoringInput()
 {
   *this = jsonValue;
 }

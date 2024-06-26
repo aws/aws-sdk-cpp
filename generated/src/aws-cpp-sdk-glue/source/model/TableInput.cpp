@@ -37,22 +37,8 @@ TableInput::TableInput() :
 {
 }
 
-TableInput::TableInput(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_ownerHasBeenSet(false),
-    m_lastAccessTimeHasBeenSet(false),
-    m_lastAnalyzedTimeHasBeenSet(false),
-    m_retention(0),
-    m_retentionHasBeenSet(false),
-    m_storageDescriptorHasBeenSet(false),
-    m_partitionKeysHasBeenSet(false),
-    m_viewOriginalTextHasBeenSet(false),
-    m_viewExpandedTextHasBeenSet(false),
-    m_tableTypeHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_targetTableHasBeenSet(false),
-    m_viewDefinitionHasBeenSet(false)
+TableInput::TableInput(JsonView jsonValue)
+  : TableInput()
 {
   *this = jsonValue;
 }

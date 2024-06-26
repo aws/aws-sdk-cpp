@@ -30,15 +30,8 @@ ExportSummary::ExportSummary() :
 {
 }
 
-ExportSummary::ExportSummary(JsonView jsonValue) : 
-    m_exportIdHasBeenSet(false),
-    m_resourceSpecificationHasBeenSet(false),
-    m_fileFormat(ImportExportFileFormat::NOT_SET),
-    m_fileFormatHasBeenSet(false),
-    m_exportStatus(ExportStatus::NOT_SET),
-    m_exportStatusHasBeenSet(false),
-    m_creationDateTimeHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false)
+ExportSummary::ExportSummary(JsonView jsonValue)
+  : ExportSummary()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ BatchGetObjectInformationResponse::BatchGetObjectInformationResponse() :
 {
 }
 
-BatchGetObjectInformationResponse::BatchGetObjectInformationResponse(JsonView jsonValue) : 
-    m_schemaFacetsHasBeenSet(false),
-    m_objectIdentifierHasBeenSet(false)
+BatchGetObjectInformationResponse::BatchGetObjectInformationResponse(JsonView jsonValue)
+  : BatchGetObjectInformationResponse()
 {
   *this = jsonValue;
 }

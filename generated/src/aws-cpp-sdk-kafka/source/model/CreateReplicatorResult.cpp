@@ -22,8 +22,8 @@ CreateReplicatorResult::CreateReplicatorResult() :
 {
 }
 
-CreateReplicatorResult::CreateReplicatorResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_replicatorState(ReplicatorState::NOT_SET)
+CreateReplicatorResult::CreateReplicatorResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateReplicatorResult()
 {
   *this = result;
 }

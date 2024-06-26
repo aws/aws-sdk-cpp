@@ -34,17 +34,8 @@ AuthenticateCognitoActionConfig::AuthenticateCognitoActionConfig() :
 {
 }
 
-AuthenticateCognitoActionConfig::AuthenticateCognitoActionConfig(const XmlNode& xmlNode) : 
-    m_userPoolArnHasBeenSet(false),
-    m_userPoolClientIdHasBeenSet(false),
-    m_userPoolDomainHasBeenSet(false),
-    m_sessionCookieNameHasBeenSet(false),
-    m_scopeHasBeenSet(false),
-    m_sessionTimeout(0),
-    m_sessionTimeoutHasBeenSet(false),
-    m_authenticationRequestExtraParamsHasBeenSet(false),
-    m_onUnauthenticatedRequest(AuthenticateCognitoActionConditionalBehaviorEnum::NOT_SET),
-    m_onUnauthenticatedRequestHasBeenSet(false)
+AuthenticateCognitoActionConfig::AuthenticateCognitoActionConfig(const XmlNode& xmlNode)
+  : AuthenticateCognitoActionConfig()
 {
   *this = xmlNode;
 }

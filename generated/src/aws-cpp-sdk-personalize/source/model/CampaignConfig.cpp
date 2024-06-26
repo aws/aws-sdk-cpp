@@ -27,12 +27,8 @@ CampaignConfig::CampaignConfig() :
 {
 }
 
-CampaignConfig::CampaignConfig(JsonView jsonValue) : 
-    m_itemExplorationConfigHasBeenSet(false),
-    m_enableMetadataWithRecommendations(false),
-    m_enableMetadataWithRecommendationsHasBeenSet(false),
-    m_syncWithLatestSolutionVersion(false),
-    m_syncWithLatestSolutionVersionHasBeenSet(false)
+CampaignConfig::CampaignConfig(JsonView jsonValue)
+  : CampaignConfig()
 {
   *this = jsonValue;
 }

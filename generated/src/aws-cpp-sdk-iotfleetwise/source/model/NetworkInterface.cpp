@@ -28,13 +28,8 @@ NetworkInterface::NetworkInterface() :
 {
 }
 
-NetworkInterface::NetworkInterface(JsonView jsonValue) : 
-    m_interfaceIdHasBeenSet(false),
-    m_type(NetworkInterfaceType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_canInterfaceHasBeenSet(false),
-    m_obdInterfaceHasBeenSet(false),
-    m_vehicleMiddlewareHasBeenSet(false)
+NetworkInterface::NetworkInterface(JsonView jsonValue)
+  : NetworkInterface()
 {
   *this = jsonValue;
 }

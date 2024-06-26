@@ -24,9 +24,8 @@ RouteStatus::RouteStatus() :
 {
 }
 
-RouteStatus::RouteStatus(JsonView jsonValue) : 
-    m_status(RouteStatusCode::NOT_SET),
-    m_statusHasBeenSet(false)
+RouteStatus::RouteStatus(JsonView jsonValue)
+  : RouteStatus()
 {
   *this = jsonValue;
 }

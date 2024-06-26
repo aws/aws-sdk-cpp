@@ -24,9 +24,8 @@ AggregateConformancePackComplianceSummaryFilters::AggregateConformancePackCompli
 {
 }
 
-AggregateConformancePackComplianceSummaryFilters::AggregateConformancePackComplianceSummaryFilters(JsonView jsonValue) : 
-    m_accountIdHasBeenSet(false),
-    m_awsRegionHasBeenSet(false)
+AggregateConformancePackComplianceSummaryFilters::AggregateConformancePackComplianceSummaryFilters(JsonView jsonValue)
+  : AggregateConformancePackComplianceSummaryFilters()
 {
   *this = jsonValue;
 }

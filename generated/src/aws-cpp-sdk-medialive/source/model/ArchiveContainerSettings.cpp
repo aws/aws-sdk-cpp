@@ -24,9 +24,8 @@ ArchiveContainerSettings::ArchiveContainerSettings() :
 {
 }
 
-ArchiveContainerSettings::ArchiveContainerSettings(JsonView jsonValue) : 
-    m_m2tsSettingsHasBeenSet(false),
-    m_rawSettingsHasBeenSet(false)
+ArchiveContainerSettings::ArchiveContainerSettings(JsonView jsonValue)
+  : ArchiveContainerSettings()
 {
   *this = jsonValue;
 }

@@ -21,8 +21,8 @@ ListGeoLocationsResult::ListGeoLocationsResult() :
 {
 }
 
-ListGeoLocationsResult::ListGeoLocationsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_isTruncated(false)
+ListGeoLocationsResult::ListGeoLocationsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : ListGeoLocationsResult()
 {
   *this = result;
 }

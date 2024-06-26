@@ -31,16 +31,8 @@ AlternateMedia::AlternateMedia() :
 {
 }
 
-AlternateMedia::AlternateMedia(JsonView jsonValue) : 
-    m_adBreaksHasBeenSet(false),
-    m_clipRangeHasBeenSet(false),
-    m_durationMillis(0),
-    m_durationMillisHasBeenSet(false),
-    m_liveSourceNameHasBeenSet(false),
-    m_scheduledStartTimeMillis(0),
-    m_scheduledStartTimeMillisHasBeenSet(false),
-    m_sourceLocationNameHasBeenSet(false),
-    m_vodSourceNameHasBeenSet(false)
+AlternateMedia::AlternateMedia(JsonView jsonValue)
+  : AlternateMedia()
 {
   *this = jsonValue;
 }

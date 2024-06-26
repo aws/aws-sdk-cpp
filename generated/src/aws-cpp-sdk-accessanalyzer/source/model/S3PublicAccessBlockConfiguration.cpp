@@ -26,11 +26,8 @@ S3PublicAccessBlockConfiguration::S3PublicAccessBlockConfiguration() :
 {
 }
 
-S3PublicAccessBlockConfiguration::S3PublicAccessBlockConfiguration(JsonView jsonValue) : 
-    m_ignorePublicAcls(false),
-    m_ignorePublicAclsHasBeenSet(false),
-    m_restrictPublicBuckets(false),
-    m_restrictPublicBucketsHasBeenSet(false)
+S3PublicAccessBlockConfiguration::S3PublicAccessBlockConfiguration(JsonView jsonValue)
+  : S3PublicAccessBlockConfiguration()
 {
   *this = jsonValue;
 }

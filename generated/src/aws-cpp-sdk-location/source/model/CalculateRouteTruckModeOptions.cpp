@@ -28,13 +28,8 @@ CalculateRouteTruckModeOptions::CalculateRouteTruckModeOptions() :
 {
 }
 
-CalculateRouteTruckModeOptions::CalculateRouteTruckModeOptions(JsonView jsonValue) : 
-    m_avoidFerries(false),
-    m_avoidFerriesHasBeenSet(false),
-    m_avoidTolls(false),
-    m_avoidTollsHasBeenSet(false),
-    m_dimensionsHasBeenSet(false),
-    m_weightHasBeenSet(false)
+CalculateRouteTruckModeOptions::CalculateRouteTruckModeOptions(JsonView jsonValue)
+  : CalculateRouteTruckModeOptions()
 {
   *this = jsonValue;
 }

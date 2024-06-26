@@ -30,15 +30,8 @@ ElasticsearchSettings::ElasticsearchSettings() :
 {
 }
 
-ElasticsearchSettings::ElasticsearchSettings(JsonView jsonValue) : 
-    m_serviceAccessRoleArnHasBeenSet(false),
-    m_endpointUriHasBeenSet(false),
-    m_fullLoadErrorPercentage(0),
-    m_fullLoadErrorPercentageHasBeenSet(false),
-    m_errorRetryDuration(0),
-    m_errorRetryDurationHasBeenSet(false),
-    m_useNewMappingType(false),
-    m_useNewMappingTypeHasBeenSet(false)
+ElasticsearchSettings::ElasticsearchSettings(JsonView jsonValue)
+  : ElasticsearchSettings()
 {
   *this = jsonValue;
 }

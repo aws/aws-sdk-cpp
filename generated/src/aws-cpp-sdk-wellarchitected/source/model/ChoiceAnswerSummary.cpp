@@ -27,12 +27,8 @@ ChoiceAnswerSummary::ChoiceAnswerSummary() :
 {
 }
 
-ChoiceAnswerSummary::ChoiceAnswerSummary(JsonView jsonValue) : 
-    m_choiceIdHasBeenSet(false),
-    m_status(ChoiceStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_reason(ChoiceReason::NOT_SET),
-    m_reasonHasBeenSet(false)
+ChoiceAnswerSummary::ChoiceAnswerSummary(JsonView jsonValue)
+  : ChoiceAnswerSummary()
 {
   *this = jsonValue;
 }

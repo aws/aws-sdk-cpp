@@ -28,11 +28,8 @@ GlobalClusterMember::GlobalClusterMember() :
 {
 }
 
-GlobalClusterMember::GlobalClusterMember(const XmlNode& xmlNode) : 
-    m_dBClusterArnHasBeenSet(false),
-    m_readersHasBeenSet(false),
-    m_isWriter(false),
-    m_isWriterHasBeenSet(false)
+GlobalClusterMember::GlobalClusterMember(const XmlNode& xmlNode)
+  : GlobalClusterMember()
 {
   *this = xmlNode;
 }

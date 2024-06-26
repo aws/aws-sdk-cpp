@@ -23,8 +23,8 @@ Output::Output() :
 {
 }
 
-Output::Output(JsonView jsonValue) : 
-    m_fileHasBeenSet(false)
+Output::Output(JsonView jsonValue)
+  : Output()
 {
   *this = jsonValue;
 }

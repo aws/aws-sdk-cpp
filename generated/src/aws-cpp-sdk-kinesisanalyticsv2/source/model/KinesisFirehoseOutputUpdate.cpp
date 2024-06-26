@@ -23,8 +23,8 @@ KinesisFirehoseOutputUpdate::KinesisFirehoseOutputUpdate() :
 {
 }
 
-KinesisFirehoseOutputUpdate::KinesisFirehoseOutputUpdate(JsonView jsonValue) : 
-    m_resourceARNUpdateHasBeenSet(false)
+KinesisFirehoseOutputUpdate::KinesisFirehoseOutputUpdate(JsonView jsonValue)
+  : KinesisFirehoseOutputUpdate()
 {
   *this = jsonValue;
 }

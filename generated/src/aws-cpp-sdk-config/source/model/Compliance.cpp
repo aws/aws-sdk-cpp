@@ -25,10 +25,8 @@ Compliance::Compliance() :
 {
 }
 
-Compliance::Compliance(JsonView jsonValue) : 
-    m_complianceType(ComplianceType::NOT_SET),
-    m_complianceTypeHasBeenSet(false),
-    m_complianceContributorCountHasBeenSet(false)
+Compliance::Compliance(JsonView jsonValue)
+  : Compliance()
 {
   *this = jsonValue;
 }

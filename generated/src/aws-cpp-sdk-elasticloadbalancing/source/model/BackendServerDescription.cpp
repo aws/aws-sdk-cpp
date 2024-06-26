@@ -27,10 +27,8 @@ BackendServerDescription::BackendServerDescription() :
 {
 }
 
-BackendServerDescription::BackendServerDescription(const XmlNode& xmlNode) : 
-    m_instancePort(0),
-    m_instancePortHasBeenSet(false),
-    m_policyNamesHasBeenSet(false)
+BackendServerDescription::BackendServerDescription(const XmlNode& xmlNode)
+  : BackendServerDescription()
 {
   *this = xmlNode;
 }

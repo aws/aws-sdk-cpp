@@ -28,13 +28,8 @@ DesiredWeightAndCapacity::DesiredWeightAndCapacity() :
 {
 }
 
-DesiredWeightAndCapacity::DesiredWeightAndCapacity(JsonView jsonValue) : 
-    m_variantNameHasBeenSet(false),
-    m_desiredWeight(0.0),
-    m_desiredWeightHasBeenSet(false),
-    m_desiredInstanceCount(0),
-    m_desiredInstanceCountHasBeenSet(false),
-    m_serverlessUpdateConfigHasBeenSet(false)
+DesiredWeightAndCapacity::DesiredWeightAndCapacity(JsonView jsonValue)
+  : DesiredWeightAndCapacity()
 {
   *this = jsonValue;
 }

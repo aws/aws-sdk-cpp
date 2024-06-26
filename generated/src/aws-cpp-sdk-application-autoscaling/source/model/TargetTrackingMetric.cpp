@@ -25,10 +25,8 @@ TargetTrackingMetric::TargetTrackingMetric() :
 {
 }
 
-TargetTrackingMetric::TargetTrackingMetric(JsonView jsonValue) : 
-    m_dimensionsHasBeenSet(false),
-    m_metricNameHasBeenSet(false),
-    m_namespaceHasBeenSet(false)
+TargetTrackingMetric::TargetTrackingMetric(JsonView jsonValue)
+  : TargetTrackingMetric()
 {
   *this = jsonValue;
 }

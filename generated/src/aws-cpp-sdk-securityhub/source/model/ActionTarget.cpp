@@ -25,10 +25,8 @@ ActionTarget::ActionTarget() :
 {
 }
 
-ActionTarget::ActionTarget(JsonView jsonValue) : 
-    m_actionTargetArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+ActionTarget::ActionTarget(JsonView jsonValue)
+  : ActionTarget()
 {
   *this = jsonValue;
 }

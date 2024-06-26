@@ -24,9 +24,8 @@ DeltaTimeSessionWindowConfiguration::DeltaTimeSessionWindowConfiguration() :
 {
 }
 
-DeltaTimeSessionWindowConfiguration::DeltaTimeSessionWindowConfiguration(JsonView jsonValue) : 
-    m_timeoutInMinutes(0),
-    m_timeoutInMinutesHasBeenSet(false)
+DeltaTimeSessionWindowConfiguration::DeltaTimeSessionWindowConfiguration(JsonView jsonValue)
+  : DeltaTimeSessionWindowConfiguration()
 {
   *this = jsonValue;
 }

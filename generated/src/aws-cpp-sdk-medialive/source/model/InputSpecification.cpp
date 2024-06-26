@@ -28,13 +28,8 @@ InputSpecification::InputSpecification() :
 {
 }
 
-InputSpecification::InputSpecification(JsonView jsonValue) : 
-    m_codec(InputCodec::NOT_SET),
-    m_codecHasBeenSet(false),
-    m_maximumBitrate(InputMaximumBitrate::NOT_SET),
-    m_maximumBitrateHasBeenSet(false),
-    m_resolution(InputResolution::NOT_SET),
-    m_resolutionHasBeenSet(false)
+InputSpecification::InputSpecification(JsonView jsonValue)
+  : InputSpecification()
 {
   *this = jsonValue;
 }

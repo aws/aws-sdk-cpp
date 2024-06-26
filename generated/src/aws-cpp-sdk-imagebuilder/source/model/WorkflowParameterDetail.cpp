@@ -26,11 +26,8 @@ WorkflowParameterDetail::WorkflowParameterDetail() :
 {
 }
 
-WorkflowParameterDetail::WorkflowParameterDetail(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_defaultValueHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+WorkflowParameterDetail::WorkflowParameterDetail(JsonView jsonValue)
+  : WorkflowParameterDetail()
 {
   *this = jsonValue;
 }

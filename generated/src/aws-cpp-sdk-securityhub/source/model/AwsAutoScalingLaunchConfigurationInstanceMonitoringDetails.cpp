@@ -24,9 +24,8 @@ AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails::AwsAutoScalingLaunch
 {
 }
 
-AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails::AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails(JsonView jsonValue) : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
+AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails::AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails(JsonView jsonValue)
+  : AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails()
 {
   *this = jsonValue;
 }

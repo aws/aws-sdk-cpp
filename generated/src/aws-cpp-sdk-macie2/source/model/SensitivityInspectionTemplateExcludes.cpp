@@ -23,8 +23,8 @@ SensitivityInspectionTemplateExcludes::SensitivityInspectionTemplateExcludes() :
 {
 }
 
-SensitivityInspectionTemplateExcludes::SensitivityInspectionTemplateExcludes(JsonView jsonValue) : 
-    m_managedDataIdentifierIdsHasBeenSet(false)
+SensitivityInspectionTemplateExcludes::SensitivityInspectionTemplateExcludes(JsonView jsonValue)
+  : SensitivityInspectionTemplateExcludes()
 {
   *this = jsonValue;
 }

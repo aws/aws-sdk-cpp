@@ -23,8 +23,8 @@ MultiplexOutputDestination::MultiplexOutputDestination() :
 {
 }
 
-MultiplexOutputDestination::MultiplexOutputDestination(JsonView jsonValue) : 
-    m_mediaConnectSettingsHasBeenSet(false)
+MultiplexOutputDestination::MultiplexOutputDestination(JsonView jsonValue)
+  : MultiplexOutputDestination()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ DiskIopsConfiguration::DiskIopsConfiguration() :
 {
 }
 
-DiskIopsConfiguration::DiskIopsConfiguration(JsonView jsonValue) : 
-    m_mode(DiskIopsConfigurationMode::NOT_SET),
-    m_modeHasBeenSet(false),
-    m_iops(0),
-    m_iopsHasBeenSet(false)
+DiskIopsConfiguration::DiskIopsConfiguration(JsonView jsonValue)
+  : DiskIopsConfiguration()
 {
   *this = jsonValue;
 }

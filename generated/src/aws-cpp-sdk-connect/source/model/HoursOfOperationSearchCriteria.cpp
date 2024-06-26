@@ -25,10 +25,8 @@ HoursOfOperationSearchCriteria::HoursOfOperationSearchCriteria() :
 {
 }
 
-HoursOfOperationSearchCriteria::HoursOfOperationSearchCriteria(JsonView jsonValue) : 
-    m_orConditionsHasBeenSet(false),
-    m_andConditionsHasBeenSet(false),
-    m_stringConditionHasBeenSet(false)
+HoursOfOperationSearchCriteria::HoursOfOperationSearchCriteria(JsonView jsonValue)
+  : HoursOfOperationSearchCriteria()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ ClickFeedback::ClickFeedback() :
 {
 }
 
-ClickFeedback::ClickFeedback(JsonView jsonValue) : 
-    m_resultIdHasBeenSet(false),
-    m_clickTimeHasBeenSet(false)
+ClickFeedback::ClickFeedback(JsonView jsonValue)
+  : ClickFeedback()
 {
   *this = jsonValue;
 }

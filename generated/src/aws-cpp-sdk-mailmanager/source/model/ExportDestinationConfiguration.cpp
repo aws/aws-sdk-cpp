@@ -23,8 +23,8 @@ ExportDestinationConfiguration::ExportDestinationConfiguration() :
 {
 }
 
-ExportDestinationConfiguration::ExportDestinationConfiguration(JsonView jsonValue) : 
-    m_s3HasBeenSet(false)
+ExportDestinationConfiguration::ExportDestinationConfiguration(JsonView jsonValue)
+  : ExportDestinationConfiguration()
 {
   *this = jsonValue;
 }

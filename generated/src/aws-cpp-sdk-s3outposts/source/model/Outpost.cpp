@@ -28,13 +28,8 @@ Outpost::Outpost() :
 {
 }
 
-Outpost::Outpost(JsonView jsonValue) : 
-    m_outpostArnHasBeenSet(false),
-    m_s3OutpostArnHasBeenSet(false),
-    m_outpostIdHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_capacityInBytes(0),
-    m_capacityInBytesHasBeenSet(false)
+Outpost::Outpost(JsonView jsonValue)
+  : Outpost()
 {
   *this = jsonValue;
 }

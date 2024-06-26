@@ -22,8 +22,8 @@ DeleteRoleCustomPermissionResult::DeleteRoleCustomPermissionResult() :
 {
 }
 
-DeleteRoleCustomPermissionResult::DeleteRoleCustomPermissionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+DeleteRoleCustomPermissionResult::DeleteRoleCustomPermissionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeleteRoleCustomPermissionResult()
 {
   *this = result;
 }

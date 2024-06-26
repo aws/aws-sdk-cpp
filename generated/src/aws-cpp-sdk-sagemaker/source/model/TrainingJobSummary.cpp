@@ -30,15 +30,8 @@ TrainingJobSummary::TrainingJobSummary() :
 {
 }
 
-TrainingJobSummary::TrainingJobSummary(JsonView jsonValue) : 
-    m_trainingJobNameHasBeenSet(false),
-    m_trainingJobArnHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_trainingEndTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_trainingJobStatus(TrainingJobStatus::NOT_SET),
-    m_trainingJobStatusHasBeenSet(false),
-    m_warmPoolStatusHasBeenSet(false)
+TrainingJobSummary::TrainingJobSummary(JsonView jsonValue)
+  : TrainingJobSummary()
 {
   *this = jsonValue;
 }

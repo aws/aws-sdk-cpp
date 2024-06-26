@@ -26,11 +26,8 @@ NotifyWorkersFailureStatus::NotifyWorkersFailureStatus() :
 {
 }
 
-NotifyWorkersFailureStatus::NotifyWorkersFailureStatus(JsonView jsonValue) : 
-    m_notifyWorkersFailureCode(NotifyWorkersFailureCode::NOT_SET),
-    m_notifyWorkersFailureCodeHasBeenSet(false),
-    m_notifyWorkersFailureMessageHasBeenSet(false),
-    m_workerIdHasBeenSet(false)
+NotifyWorkersFailureStatus::NotifyWorkersFailureStatus(JsonView jsonValue)
+  : NotifyWorkersFailureStatus()
 {
   *this = jsonValue;
 }

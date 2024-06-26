@@ -23,8 +23,8 @@ TimeSignalMessage::TimeSignalMessage() :
 {
 }
 
-TimeSignalMessage::TimeSignalMessage(JsonView jsonValue) : 
-    m_segmentationDescriptorsHasBeenSet(false)
+TimeSignalMessage::TimeSignalMessage(JsonView jsonValue)
+  : TimeSignalMessage()
 {
   *this = jsonValue;
 }

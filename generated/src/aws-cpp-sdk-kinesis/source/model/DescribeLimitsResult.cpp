@@ -25,11 +25,8 @@ DescribeLimitsResult::DescribeLimitsResult() :
 {
 }
 
-DescribeLimitsResult::DescribeLimitsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_shardLimit(0),
-    m_openShardCount(0),
-    m_onDemandStreamCount(0),
-    m_onDemandStreamCountLimit(0)
+DescribeLimitsResult::DescribeLimitsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeLimitsResult()
 {
   *this = result;
 }

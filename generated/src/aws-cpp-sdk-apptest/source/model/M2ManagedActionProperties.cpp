@@ -25,10 +25,8 @@ M2ManagedActionProperties::M2ManagedActionProperties() :
 {
 }
 
-M2ManagedActionProperties::M2ManagedActionProperties(JsonView jsonValue) : 
-    m_forceStop(false),
-    m_forceStopHasBeenSet(false),
-    m_importDataSetLocationHasBeenSet(false)
+M2ManagedActionProperties::M2ManagedActionProperties(JsonView jsonValue)
+  : M2ManagedActionProperties()
 {
   *this = jsonValue;
 }

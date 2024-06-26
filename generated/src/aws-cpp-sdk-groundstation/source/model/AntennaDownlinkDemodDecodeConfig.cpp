@@ -25,10 +25,8 @@ AntennaDownlinkDemodDecodeConfig::AntennaDownlinkDemodDecodeConfig() :
 {
 }
 
-AntennaDownlinkDemodDecodeConfig::AntennaDownlinkDemodDecodeConfig(JsonView jsonValue) : 
-    m_decodeConfigHasBeenSet(false),
-    m_demodulationConfigHasBeenSet(false),
-    m_spectrumConfigHasBeenSet(false)
+AntennaDownlinkDemodDecodeConfig::AntennaDownlinkDemodDecodeConfig(JsonView jsonValue)
+  : AntennaDownlinkDemodDecodeConfig()
 {
   *this = jsonValue;
 }

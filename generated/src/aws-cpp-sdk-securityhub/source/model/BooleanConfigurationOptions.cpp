@@ -24,9 +24,8 @@ BooleanConfigurationOptions::BooleanConfigurationOptions() :
 {
 }
 
-BooleanConfigurationOptions::BooleanConfigurationOptions(JsonView jsonValue) : 
-    m_defaultValue(false),
-    m_defaultValueHasBeenSet(false)
+BooleanConfigurationOptions::BooleanConfigurationOptions(JsonView jsonValue)
+  : BooleanConfigurationOptions()
 {
   *this = jsonValue;
 }

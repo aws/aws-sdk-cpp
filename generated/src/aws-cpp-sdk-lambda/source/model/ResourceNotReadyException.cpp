@@ -24,9 +24,8 @@ ResourceNotReadyException::ResourceNotReadyException() :
 {
 }
 
-ResourceNotReadyException::ResourceNotReadyException(JsonView jsonValue) : 
-    m_typeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+ResourceNotReadyException::ResourceNotReadyException(JsonView jsonValue)
+  : ResourceNotReadyException()
 {
   *this = jsonValue;
 }

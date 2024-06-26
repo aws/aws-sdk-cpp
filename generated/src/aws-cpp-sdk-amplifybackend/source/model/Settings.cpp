@@ -24,9 +24,8 @@ Settings::Settings() :
 {
 }
 
-Settings::Settings(JsonView jsonValue) : 
-    m_mfaTypesHasBeenSet(false),
-    m_smsMessageHasBeenSet(false)
+Settings::Settings(JsonView jsonValue)
+  : Settings()
 {
   *this = jsonValue;
 }

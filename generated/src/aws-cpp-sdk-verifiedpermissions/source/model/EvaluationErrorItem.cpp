@@ -23,8 +23,8 @@ EvaluationErrorItem::EvaluationErrorItem() :
 {
 }
 
-EvaluationErrorItem::EvaluationErrorItem(JsonView jsonValue) : 
-    m_errorDescriptionHasBeenSet(false)
+EvaluationErrorItem::EvaluationErrorItem(JsonView jsonValue)
+  : EvaluationErrorItem()
 {
   *this = jsonValue;
 }

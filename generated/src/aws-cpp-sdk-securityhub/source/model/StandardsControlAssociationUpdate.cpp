@@ -27,12 +27,8 @@ StandardsControlAssociationUpdate::StandardsControlAssociationUpdate() :
 {
 }
 
-StandardsControlAssociationUpdate::StandardsControlAssociationUpdate(JsonView jsonValue) : 
-    m_standardsArnHasBeenSet(false),
-    m_securityControlIdHasBeenSet(false),
-    m_associationStatus(AssociationStatus::NOT_SET),
-    m_associationStatusHasBeenSet(false),
-    m_updatedReasonHasBeenSet(false)
+StandardsControlAssociationUpdate::StandardsControlAssociationUpdate(JsonView jsonValue)
+  : StandardsControlAssociationUpdate()
 {
   *this = jsonValue;
 }

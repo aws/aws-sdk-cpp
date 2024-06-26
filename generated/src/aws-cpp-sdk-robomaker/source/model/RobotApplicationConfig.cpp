@@ -27,12 +27,8 @@ RobotApplicationConfig::RobotApplicationConfig() :
 {
 }
 
-RobotApplicationConfig::RobotApplicationConfig(JsonView jsonValue) : 
-    m_applicationHasBeenSet(false),
-    m_applicationVersionHasBeenSet(false),
-    m_launchConfigHasBeenSet(false),
-    m_uploadConfigurationsHasBeenSet(false),
-    m_toolsHasBeenSet(false)
+RobotApplicationConfig::RobotApplicationConfig(JsonView jsonValue)
+  : RobotApplicationConfig()
 {
   *this = jsonValue;
 }

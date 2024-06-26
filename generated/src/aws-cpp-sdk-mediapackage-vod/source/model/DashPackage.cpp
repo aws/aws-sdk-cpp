@@ -33,18 +33,8 @@ DashPackage::DashPackage() :
 {
 }
 
-DashPackage::DashPackage(JsonView jsonValue) : 
-    m_dashManifestsHasBeenSet(false),
-    m_encryptionHasBeenSet(false),
-    m_includeEncoderConfigurationInSegments(false),
-    m_includeEncoderConfigurationInSegmentsHasBeenSet(false),
-    m_includeIframeOnlyStream(false),
-    m_includeIframeOnlyStreamHasBeenSet(false),
-    m_periodTriggersHasBeenSet(false),
-    m_segmentDurationSeconds(0),
-    m_segmentDurationSecondsHasBeenSet(false),
-    m_segmentTemplateFormat(SegmentTemplateFormat::NOT_SET),
-    m_segmentTemplateFormatHasBeenSet(false)
+DashPackage::DashPackage(JsonView jsonValue)
+  : DashPackage()
 {
   *this = jsonValue;
 }

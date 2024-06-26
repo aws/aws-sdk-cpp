@@ -42,27 +42,8 @@ Attachment::Attachment() :
 {
 }
 
-Attachment::Attachment(JsonView jsonValue) : 
-    m_coreNetworkIdHasBeenSet(false),
-    m_coreNetworkArnHasBeenSet(false),
-    m_attachmentIdHasBeenSet(false),
-    m_ownerAccountIdHasBeenSet(false),
-    m_attachmentType(AttachmentType::NOT_SET),
-    m_attachmentTypeHasBeenSet(false),
-    m_state(AttachmentState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_edgeLocationHasBeenSet(false),
-    m_resourceArnHasBeenSet(false),
-    m_attachmentPolicyRuleNumber(0),
-    m_attachmentPolicyRuleNumberHasBeenSet(false),
-    m_segmentNameHasBeenSet(false),
-    m_networkFunctionGroupNameHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_proposedSegmentChangeHasBeenSet(false),
-    m_proposedNetworkFunctionGroupChangeHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_lastModificationErrorsHasBeenSet(false)
+Attachment::Attachment(JsonView jsonValue)
+  : Attachment()
 {
   *this = jsonValue;
 }

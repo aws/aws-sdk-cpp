@@ -26,11 +26,8 @@ WorkerResourceConfig::WorkerResourceConfig() :
 {
 }
 
-WorkerResourceConfig::WorkerResourceConfig(JsonView jsonValue) : 
-    m_cpuHasBeenSet(false),
-    m_memoryHasBeenSet(false),
-    m_diskHasBeenSet(false),
-    m_diskTypeHasBeenSet(false)
+WorkerResourceConfig::WorkerResourceConfig(JsonView jsonValue)
+  : WorkerResourceConfig()
 {
   *this = jsonValue;
 }

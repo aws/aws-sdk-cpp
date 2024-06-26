@@ -22,8 +22,8 @@ DisableSerialConsoleAccessResponse::DisableSerialConsoleAccessResponse() :
 {
 }
 
-DisableSerialConsoleAccessResponse::DisableSerialConsoleAccessResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_serialConsoleAccessEnabled(false)
+DisableSerialConsoleAccessResponse::DisableSerialConsoleAccessResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : DisableSerialConsoleAccessResponse()
 {
   *this = result;
 }

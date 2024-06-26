@@ -33,18 +33,8 @@ CoreNetwork::CoreNetwork() :
 {
 }
 
-CoreNetwork::CoreNetwork(JsonView jsonValue) : 
-    m_globalNetworkIdHasBeenSet(false),
-    m_coreNetworkIdHasBeenSet(false),
-    m_coreNetworkArnHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_state(CoreNetworkState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_segmentsHasBeenSet(false),
-    m_networkFunctionGroupsHasBeenSet(false),
-    m_edgesHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+CoreNetwork::CoreNetwork(JsonView jsonValue)
+  : CoreNetwork()
 {
   *this = jsonValue;
 }

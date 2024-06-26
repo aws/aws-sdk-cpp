@@ -29,14 +29,8 @@ Filter::Filter() :
 {
 }
 
-Filter::Filter(JsonView jsonValue) : 
-    m_categoryFilterHasBeenSet(false),
-    m_numericRangeFilterHasBeenSet(false),
-    m_numericEqualityFilterHasBeenSet(false),
-    m_timeEqualityFilterHasBeenSet(false),
-    m_timeRangeFilterHasBeenSet(false),
-    m_relativeDatesFilterHasBeenSet(false),
-    m_topBottomFilterHasBeenSet(false)
+Filter::Filter(JsonView jsonValue)
+  : Filter()
 {
   *this = jsonValue;
 }

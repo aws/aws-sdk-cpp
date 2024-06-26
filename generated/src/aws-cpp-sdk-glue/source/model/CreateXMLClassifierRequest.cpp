@@ -25,10 +25,8 @@ CreateXMLClassifierRequest::CreateXMLClassifierRequest() :
 {
 }
 
-CreateXMLClassifierRequest::CreateXMLClassifierRequest(JsonView jsonValue) : 
-    m_classificationHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_rowTagHasBeenSet(false)
+CreateXMLClassifierRequest::CreateXMLClassifierRequest(JsonView jsonValue)
+  : CreateXMLClassifierRequest()
 {
   *this = jsonValue;
 }

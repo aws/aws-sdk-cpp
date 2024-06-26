@@ -25,10 +25,8 @@ HttpParameters::HttpParameters() :
 {
 }
 
-HttpParameters::HttpParameters(JsonView jsonValue) : 
-    m_pathParameterValuesHasBeenSet(false),
-    m_headerParametersHasBeenSet(false),
-    m_queryStringParametersHasBeenSet(false)
+HttpParameters::HttpParameters(JsonView jsonValue)
+  : HttpParameters()
 {
   *this = jsonValue;
 }

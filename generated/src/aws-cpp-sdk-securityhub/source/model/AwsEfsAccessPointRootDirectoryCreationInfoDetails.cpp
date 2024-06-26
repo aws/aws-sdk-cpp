@@ -25,10 +25,8 @@ AwsEfsAccessPointRootDirectoryCreationInfoDetails::AwsEfsAccessPointRootDirector
 {
 }
 
-AwsEfsAccessPointRootDirectoryCreationInfoDetails::AwsEfsAccessPointRootDirectoryCreationInfoDetails(JsonView jsonValue) : 
-    m_ownerGidHasBeenSet(false),
-    m_ownerUidHasBeenSet(false),
-    m_permissionsHasBeenSet(false)
+AwsEfsAccessPointRootDirectoryCreationInfoDetails::AwsEfsAccessPointRootDirectoryCreationInfoDetails(JsonView jsonValue)
+  : AwsEfsAccessPointRootDirectoryCreationInfoDetails()
 {
   *this = jsonValue;
 }

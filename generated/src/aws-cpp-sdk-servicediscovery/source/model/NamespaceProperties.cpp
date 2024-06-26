@@ -24,9 +24,8 @@ NamespaceProperties::NamespaceProperties() :
 {
 }
 
-NamespaceProperties::NamespaceProperties(JsonView jsonValue) : 
-    m_dnsPropertiesHasBeenSet(false),
-    m_httpPropertiesHasBeenSet(false)
+NamespaceProperties::NamespaceProperties(JsonView jsonValue)
+  : NamespaceProperties()
 {
   *this = jsonValue;
 }

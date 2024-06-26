@@ -23,8 +23,8 @@ SearchInItem::SearchInItem() :
 {
 }
 
-SearchInItem::SearchInItem(JsonView jsonValue) : 
-    m_attributeHasBeenSet(false)
+SearchInItem::SearchInItem(JsonView jsonValue)
+  : SearchInItem()
 {
   *this = jsonValue;
 }

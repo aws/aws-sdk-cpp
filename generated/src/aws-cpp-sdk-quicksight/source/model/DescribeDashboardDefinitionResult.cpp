@@ -23,9 +23,8 @@ DescribeDashboardDefinitionResult::DescribeDashboardDefinitionResult() :
 {
 }
 
-DescribeDashboardDefinitionResult::DescribeDashboardDefinitionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_resourceStatus(ResourceStatus::NOT_SET),
-    m_status(0)
+DescribeDashboardDefinitionResult::DescribeDashboardDefinitionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeDashboardDefinitionResult()
 {
   *this = result;
 }

@@ -24,9 +24,8 @@ AssistantCapabilityConfiguration::AssistantCapabilityConfiguration() :
 {
 }
 
-AssistantCapabilityConfiguration::AssistantCapabilityConfiguration(JsonView jsonValue) : 
-    m_type(AssistantCapabilityType::NOT_SET),
-    m_typeHasBeenSet(false)
+AssistantCapabilityConfiguration::AssistantCapabilityConfiguration(JsonView jsonValue)
+  : AssistantCapabilityConfiguration()
 {
   *this = jsonValue;
 }

@@ -32,17 +32,8 @@ CodegenGenericDataField::CodegenGenericDataField() :
 {
 }
 
-CodegenGenericDataField::CodegenGenericDataField(JsonView jsonValue) : 
-    m_dataType(CodegenGenericDataFieldDataType::NOT_SET),
-    m_dataTypeHasBeenSet(false),
-    m_dataTypeValueHasBeenSet(false),
-    m_required(false),
-    m_requiredHasBeenSet(false),
-    m_readOnly(false),
-    m_readOnlyHasBeenSet(false),
-    m_isArray(false),
-    m_isArrayHasBeenSet(false),
-    m_relationshipHasBeenSet(false)
+CodegenGenericDataField::CodegenGenericDataField(JsonView jsonValue)
+  : CodegenGenericDataField()
 {
   *this = jsonValue;
 }

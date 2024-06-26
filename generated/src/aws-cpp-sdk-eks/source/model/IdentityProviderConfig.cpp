@@ -24,9 +24,8 @@ IdentityProviderConfig::IdentityProviderConfig() :
 {
 }
 
-IdentityProviderConfig::IdentityProviderConfig(JsonView jsonValue) : 
-    m_typeHasBeenSet(false),
-    m_nameHasBeenSet(false)
+IdentityProviderConfig::IdentityProviderConfig(JsonView jsonValue)
+  : IdentityProviderConfig()
 {
   *this = jsonValue;
 }

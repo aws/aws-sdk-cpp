@@ -26,11 +26,8 @@ CognitoIdentityProvider::CognitoIdentityProvider() :
 {
 }
 
-CognitoIdentityProvider::CognitoIdentityProvider(JsonView jsonValue) : 
-    m_providerNameHasBeenSet(false),
-    m_clientIdHasBeenSet(false),
-    m_serverSideTokenCheck(false),
-    m_serverSideTokenCheckHasBeenSet(false)
+CognitoIdentityProvider::CognitoIdentityProvider(JsonView jsonValue)
+  : CognitoIdentityProvider()
 {
   *this = jsonValue;
 }

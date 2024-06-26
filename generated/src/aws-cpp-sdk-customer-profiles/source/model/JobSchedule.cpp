@@ -25,10 +25,8 @@ JobSchedule::JobSchedule() :
 {
 }
 
-JobSchedule::JobSchedule(JsonView jsonValue) : 
-    m_dayOfTheWeek(JobScheduleDayOfTheWeek::NOT_SET),
-    m_dayOfTheWeekHasBeenSet(false),
-    m_timeHasBeenSet(false)
+JobSchedule::JobSchedule(JsonView jsonValue)
+  : JobSchedule()
 {
   *this = jsonValue;
 }

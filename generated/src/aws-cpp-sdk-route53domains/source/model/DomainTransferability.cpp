@@ -24,9 +24,8 @@ DomainTransferability::DomainTransferability() :
 {
 }
 
-DomainTransferability::DomainTransferability(JsonView jsonValue) : 
-    m_transferable(Transferable::NOT_SET),
-    m_transferableHasBeenSet(false)
+DomainTransferability::DomainTransferability(JsonView jsonValue)
+  : DomainTransferability()
 {
   *this = jsonValue;
 }

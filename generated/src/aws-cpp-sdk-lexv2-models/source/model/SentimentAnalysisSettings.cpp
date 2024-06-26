@@ -24,9 +24,8 @@ SentimentAnalysisSettings::SentimentAnalysisSettings() :
 {
 }
 
-SentimentAnalysisSettings::SentimentAnalysisSettings(JsonView jsonValue) : 
-    m_detectSentiment(false),
-    m_detectSentimentHasBeenSet(false)
+SentimentAnalysisSettings::SentimentAnalysisSettings(JsonView jsonValue)
+  : SentimentAnalysisSettings()
 {
   *this = jsonValue;
 }

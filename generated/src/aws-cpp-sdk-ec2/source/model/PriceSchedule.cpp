@@ -32,15 +32,8 @@ PriceSchedule::PriceSchedule() :
 {
 }
 
-PriceSchedule::PriceSchedule(const XmlNode& xmlNode) : 
-    m_active(false),
-    m_activeHasBeenSet(false),
-    m_currencyCode(CurrencyCodeValues::NOT_SET),
-    m_currencyCodeHasBeenSet(false),
-    m_price(0.0),
-    m_priceHasBeenSet(false),
-    m_term(0),
-    m_termHasBeenSet(false)
+PriceSchedule::PriceSchedule(const XmlNode& xmlNode)
+  : PriceSchedule()
 {
   *this = xmlNode;
 }

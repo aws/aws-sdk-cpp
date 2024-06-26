@@ -59,44 +59,8 @@ PostgreSQLSettings::PostgreSQLSettings() :
 {
 }
 
-PostgreSQLSettings::PostgreSQLSettings(JsonView jsonValue) : 
-    m_afterConnectScriptHasBeenSet(false),
-    m_captureDdls(false),
-    m_captureDdlsHasBeenSet(false),
-    m_maxFileSize(0),
-    m_maxFileSizeHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_ddlArtifactsSchemaHasBeenSet(false),
-    m_executeTimeout(0),
-    m_executeTimeoutHasBeenSet(false),
-    m_failTasksOnLobTruncation(false),
-    m_failTasksOnLobTruncationHasBeenSet(false),
-    m_heartbeatEnable(false),
-    m_heartbeatEnableHasBeenSet(false),
-    m_heartbeatSchemaHasBeenSet(false),
-    m_heartbeatFrequency(0),
-    m_heartbeatFrequencyHasBeenSet(false),
-    m_passwordHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_serverNameHasBeenSet(false),
-    m_usernameHasBeenSet(false),
-    m_slotNameHasBeenSet(false),
-    m_pluginName(PluginNameValue::NOT_SET),
-    m_pluginNameHasBeenSet(false),
-    m_secretsManagerAccessRoleArnHasBeenSet(false),
-    m_secretsManagerSecretIdHasBeenSet(false),
-    m_trimSpaceInChar(false),
-    m_trimSpaceInCharHasBeenSet(false),
-    m_mapBooleanAsBoolean(false),
-    m_mapBooleanAsBooleanHasBeenSet(false),
-    m_mapJsonbAsClob(false),
-    m_mapJsonbAsClobHasBeenSet(false),
-    m_mapLongVarcharAs(LongVarcharMappingType::NOT_SET),
-    m_mapLongVarcharAsHasBeenSet(false),
-    m_databaseMode(DatabaseMode::NOT_SET),
-    m_databaseModeHasBeenSet(false),
-    m_babelfishDatabaseNameHasBeenSet(false)
+PostgreSQLSettings::PostgreSQLSettings(JsonView jsonValue)
+  : PostgreSQLSettings()
 {
   *this = jsonValue;
 }

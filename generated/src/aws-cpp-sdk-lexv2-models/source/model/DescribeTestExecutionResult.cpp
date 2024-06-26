@@ -24,10 +24,8 @@ DescribeTestExecutionResult::DescribeTestExecutionResult() :
 {
 }
 
-DescribeTestExecutionResult::DescribeTestExecutionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_testExecutionStatus(TestExecutionStatus::NOT_SET),
-    m_apiMode(TestExecutionApiMode::NOT_SET),
-    m_testExecutionModality(TestExecutionModality::NOT_SET)
+DescribeTestExecutionResult::DescribeTestExecutionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeTestExecutionResult()
 {
   *this = result;
 }

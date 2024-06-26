@@ -23,8 +23,8 @@ BudgetDetail::BudgetDetail() :
 {
 }
 
-BudgetDetail::BudgetDetail(JsonView jsonValue) : 
-    m_budgetNameHasBeenSet(false)
+BudgetDetail::BudgetDetail(JsonView jsonValue)
+  : BudgetDetail()
 {
   *this = jsonValue;
 }

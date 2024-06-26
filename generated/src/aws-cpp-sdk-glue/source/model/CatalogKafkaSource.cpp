@@ -31,16 +31,8 @@ CatalogKafkaSource::CatalogKafkaSource() :
 {
 }
 
-CatalogKafkaSource::CatalogKafkaSource(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_windowSize(0),
-    m_windowSizeHasBeenSet(false),
-    m_detectSchema(false),
-    m_detectSchemaHasBeenSet(false),
-    m_tableHasBeenSet(false),
-    m_databaseHasBeenSet(false),
-    m_streamingOptionsHasBeenSet(false),
-    m_dataPreviewOptionsHasBeenSet(false)
+CatalogKafkaSource::CatalogKafkaSource(JsonView jsonValue)
+  : CatalogKafkaSource()
 {
   *this = jsonValue;
 }

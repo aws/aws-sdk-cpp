@@ -22,8 +22,8 @@ DeleteAccountCustomizationResult::DeleteAccountCustomizationResult() :
 {
 }
 
-DeleteAccountCustomizationResult::DeleteAccountCustomizationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+DeleteAccountCustomizationResult::DeleteAccountCustomizationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeleteAccountCustomizationResult()
 {
   *this = result;
 }

@@ -25,10 +25,8 @@ ConnectorConfigRequest::ConnectorConfigRequest() :
 {
 }
 
-ConnectorConfigRequest::ConnectorConfigRequest(JsonView jsonValue) : 
-    m_roleArnHasBeenSet(false),
-    m_provider(ConnectorConfigProvider::NOT_SET),
-    m_providerHasBeenSet(false)
+ConnectorConfigRequest::ConnectorConfigRequest(JsonView jsonValue)
+  : ConnectorConfigRequest()
 {
   *this = jsonValue;
 }

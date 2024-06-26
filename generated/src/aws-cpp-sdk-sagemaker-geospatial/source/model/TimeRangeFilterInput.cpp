@@ -24,9 +24,8 @@ TimeRangeFilterInput::TimeRangeFilterInput() :
 {
 }
 
-TimeRangeFilterInput::TimeRangeFilterInput(JsonView jsonValue) : 
-    m_endTimeHasBeenSet(false),
-    m_startTimeHasBeenSet(false)
+TimeRangeFilterInput::TimeRangeFilterInput(JsonView jsonValue)
+  : TimeRangeFilterInput()
 {
   *this = jsonValue;
 }

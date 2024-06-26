@@ -25,10 +25,8 @@ RegistryScanningConfiguration::RegistryScanningConfiguration() :
 {
 }
 
-RegistryScanningConfiguration::RegistryScanningConfiguration(JsonView jsonValue) : 
-    m_scanType(ScanType::NOT_SET),
-    m_scanTypeHasBeenSet(false),
-    m_rulesHasBeenSet(false)
+RegistryScanningConfiguration::RegistryScanningConfiguration(JsonView jsonValue)
+  : RegistryScanningConfiguration()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ DnsRecord::DnsRecord() :
 {
 }
 
-DnsRecord::DnsRecord(JsonView jsonValue) : 
-    m_type(RecordType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_tTL(0),
-    m_tTLHasBeenSet(false)
+DnsRecord::DnsRecord(JsonView jsonValue)
+  : DnsRecord()
 {
   *this = jsonValue;
 }

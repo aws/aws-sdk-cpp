@@ -33,18 +33,8 @@ PivotTotalOptions::PivotTotalOptions() :
 {
 }
 
-PivotTotalOptions::PivotTotalOptions(JsonView jsonValue) : 
-    m_totalsVisibility(Visibility::NOT_SET),
-    m_totalsVisibilityHasBeenSet(false),
-    m_placement(TableTotalsPlacement::NOT_SET),
-    m_placementHasBeenSet(false),
-    m_scrollStatus(TableTotalsScrollStatus::NOT_SET),
-    m_scrollStatusHasBeenSet(false),
-    m_customLabelHasBeenSet(false),
-    m_totalCellStyleHasBeenSet(false),
-    m_valueCellStyleHasBeenSet(false),
-    m_metricHeaderCellStyleHasBeenSet(false),
-    m_totalAggregationOptionsHasBeenSet(false)
+PivotTotalOptions::PivotTotalOptions(JsonView jsonValue)
+  : PivotTotalOptions()
 {
   *this = jsonValue;
 }

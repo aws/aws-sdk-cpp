@@ -25,10 +25,8 @@ ActionGroupExecutor::ActionGroupExecutor() :
 {
 }
 
-ActionGroupExecutor::ActionGroupExecutor(JsonView jsonValue) : 
-    m_customControl(CustomControlMethod::NOT_SET),
-    m_customControlHasBeenSet(false),
-    m_lambdaHasBeenSet(false)
+ActionGroupExecutor::ActionGroupExecutor(JsonView jsonValue)
+  : ActionGroupExecutor()
 {
   *this = jsonValue;
 }

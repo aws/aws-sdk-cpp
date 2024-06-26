@@ -26,11 +26,8 @@ GeneralLabelsSettings::GeneralLabelsSettings() :
 {
 }
 
-GeneralLabelsSettings::GeneralLabelsSettings(JsonView jsonValue) : 
-    m_labelInclusionFiltersHasBeenSet(false),
-    m_labelExclusionFiltersHasBeenSet(false),
-    m_labelCategoryInclusionFiltersHasBeenSet(false),
-    m_labelCategoryExclusionFiltersHasBeenSet(false)
+GeneralLabelsSettings::GeneralLabelsSettings(JsonView jsonValue)
+  : GeneralLabelsSettings()
 {
   *this = jsonValue;
 }

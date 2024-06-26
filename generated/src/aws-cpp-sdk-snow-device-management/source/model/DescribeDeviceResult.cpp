@@ -22,8 +22,8 @@ DescribeDeviceResult::DescribeDeviceResult() :
 {
 }
 
-DescribeDeviceResult::DescribeDeviceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_deviceState(UnlockState::NOT_SET)
+DescribeDeviceResult::DescribeDeviceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeDeviceResult()
 {
   *this = result;
 }

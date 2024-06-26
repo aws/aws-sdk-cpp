@@ -29,14 +29,8 @@ FieldTypeDetails::FieldTypeDetails() :
 {
 }
 
-FieldTypeDetails::FieldTypeDetails(JsonView jsonValue) : 
-    m_fieldTypeHasBeenSet(false),
-    m_filterOperatorsHasBeenSet(false),
-    m_supportedValuesHasBeenSet(false),
-    m_valueRegexPatternHasBeenSet(false),
-    m_supportedDateFormatHasBeenSet(false),
-    m_fieldValueRangeHasBeenSet(false),
-    m_fieldLengthRangeHasBeenSet(false)
+FieldTypeDetails::FieldTypeDetails(JsonView jsonValue)
+  : FieldTypeDetails()
 {
   *this = jsonValue;
 }

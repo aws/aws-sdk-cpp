@@ -25,10 +25,8 @@ AwsAmazonMqBrokerMaintenanceWindowStartTimeDetails::AwsAmazonMqBrokerMaintenance
 {
 }
 
-AwsAmazonMqBrokerMaintenanceWindowStartTimeDetails::AwsAmazonMqBrokerMaintenanceWindowStartTimeDetails(JsonView jsonValue) : 
-    m_dayOfWeekHasBeenSet(false),
-    m_timeOfDayHasBeenSet(false),
-    m_timeZoneHasBeenSet(false)
+AwsAmazonMqBrokerMaintenanceWindowStartTimeDetails::AwsAmazonMqBrokerMaintenanceWindowStartTimeDetails(JsonView jsonValue)
+  : AwsAmazonMqBrokerMaintenanceWindowStartTimeDetails()
 {
   *this = jsonValue;
 }

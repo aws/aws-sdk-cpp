@@ -23,8 +23,8 @@ ConfigurationPolicyAssociation::ConfigurationPolicyAssociation() :
 {
 }
 
-ConfigurationPolicyAssociation::ConfigurationPolicyAssociation(JsonView jsonValue) : 
-    m_targetHasBeenSet(false)
+ConfigurationPolicyAssociation::ConfigurationPolicyAssociation(JsonView jsonValue)
+  : ConfigurationPolicyAssociation()
 {
   *this = jsonValue;
 }

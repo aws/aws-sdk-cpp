@@ -29,14 +29,8 @@ MongoDbAtlasConfiguration::MongoDbAtlasConfiguration() :
 {
 }
 
-MongoDbAtlasConfiguration::MongoDbAtlasConfiguration(JsonView jsonValue) : 
-    m_collectionNameHasBeenSet(false),
-    m_credentialsSecretArnHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_endpointHasBeenSet(false),
-    m_endpointServiceNameHasBeenSet(false),
-    m_fieldMappingHasBeenSet(false),
-    m_vectorIndexNameHasBeenSet(false)
+MongoDbAtlasConfiguration::MongoDbAtlasConfiguration(JsonView jsonValue)
+  : MongoDbAtlasConfiguration()
 {
   *this = jsonValue;
 }

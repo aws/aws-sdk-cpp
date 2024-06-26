@@ -25,10 +25,8 @@ PlacementConstraint::PlacementConstraint() :
 {
 }
 
-PlacementConstraint::PlacementConstraint(JsonView jsonValue) : 
-    m_expressionHasBeenSet(false),
-    m_type(PlacementConstraintType::NOT_SET),
-    m_typeHasBeenSet(false)
+PlacementConstraint::PlacementConstraint(JsonView jsonValue)
+  : PlacementConstraint()
 {
   *this = jsonValue;
 }

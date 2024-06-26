@@ -27,12 +27,8 @@ ServiceHealth::ServiceHealth() :
 {
 }
 
-ServiceHealth::ServiceHealth(JsonView jsonValue) : 
-    m_serviceName(ServiceName::NOT_SET),
-    m_serviceNameHasBeenSet(false),
-    m_insightHasBeenSet(false),
-    m_analyzedResourceCount(0),
-    m_analyzedResourceCountHasBeenSet(false)
+ServiceHealth::ServiceHealth(JsonView jsonValue)
+  : ServiceHealth()
 {
   *this = jsonValue;
 }

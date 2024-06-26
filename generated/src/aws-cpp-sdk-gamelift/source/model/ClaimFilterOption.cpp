@@ -23,8 +23,8 @@ ClaimFilterOption::ClaimFilterOption() :
 {
 }
 
-ClaimFilterOption::ClaimFilterOption(JsonView jsonValue) : 
-    m_instanceStatusesHasBeenSet(false)
+ClaimFilterOption::ClaimFilterOption(JsonView jsonValue)
+  : ClaimFilterOption()
 {
   *this = jsonValue;
 }

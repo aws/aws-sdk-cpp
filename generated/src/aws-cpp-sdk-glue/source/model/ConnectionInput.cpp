@@ -32,17 +32,8 @@ ConnectionInput::ConnectionInput() :
 {
 }
 
-ConnectionInput::ConnectionInput(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_connectionType(ConnectionType::NOT_SET),
-    m_connectionTypeHasBeenSet(false),
-    m_matchCriteriaHasBeenSet(false),
-    m_connectionPropertiesHasBeenSet(false),
-    m_physicalConnectionRequirementsHasBeenSet(false),
-    m_authenticationConfigurationHasBeenSet(false),
-    m_validateCredentials(false),
-    m_validateCredentialsHasBeenSet(false)
+ConnectionInput::ConnectionInput(JsonView jsonValue)
+  : ConnectionInput()
 {
   *this = jsonValue;
 }

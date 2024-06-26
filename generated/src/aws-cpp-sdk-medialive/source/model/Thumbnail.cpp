@@ -27,12 +27,8 @@ Thumbnail::Thumbnail() :
 {
 }
 
-Thumbnail::Thumbnail(JsonView jsonValue) : 
-    m_bodyHasBeenSet(false),
-    m_contentTypeHasBeenSet(false),
-    m_thumbnailType(ThumbnailType::NOT_SET),
-    m_thumbnailTypeHasBeenSet(false),
-    m_timeStampHasBeenSet(false)
+Thumbnail::Thumbnail(JsonView jsonValue)
+  : Thumbnail()
 {
   *this = jsonValue;
 }

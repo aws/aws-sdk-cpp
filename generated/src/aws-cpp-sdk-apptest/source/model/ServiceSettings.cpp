@@ -23,8 +23,8 @@ ServiceSettings::ServiceSettings() :
 {
 }
 
-ServiceSettings::ServiceSettings(JsonView jsonValue) : 
-    m_kmsKeyIdHasBeenSet(false)
+ServiceSettings::ServiceSettings(JsonView jsonValue)
+  : ServiceSettings()
 {
   *this = jsonValue;
 }

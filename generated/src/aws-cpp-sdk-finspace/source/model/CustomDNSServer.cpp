@@ -24,9 +24,8 @@ CustomDNSServer::CustomDNSServer() :
 {
 }
 
-CustomDNSServer::CustomDNSServer(JsonView jsonValue) : 
-    m_customDNSServerNameHasBeenSet(false),
-    m_customDNSServerIPHasBeenSet(false)
+CustomDNSServer::CustomDNSServer(JsonView jsonValue)
+  : CustomDNSServer()
 {
   *this = jsonValue;
 }

@@ -42,27 +42,8 @@ KxEnvironment::KxEnvironment() :
 {
 }
 
-KxEnvironment::KxEnvironment(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_environmentIdHasBeenSet(false),
-    m_awsAccountIdHasBeenSet(false),
-    m_status(EnvironmentStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_tgwStatus(TgwStatus::NOT_SET),
-    m_tgwStatusHasBeenSet(false),
-    m_dnsStatus(DnsStatus::NOT_SET),
-    m_dnsStatusHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_environmentArnHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_dedicatedServiceAccountIdHasBeenSet(false),
-    m_transitGatewayConfigurationHasBeenSet(false),
-    m_customDNSConfigurationHasBeenSet(false),
-    m_creationTimestampHasBeenSet(false),
-    m_updateTimestampHasBeenSet(false),
-    m_availabilityZoneIdsHasBeenSet(false),
-    m_certificateAuthorityArnHasBeenSet(false)
+KxEnvironment::KxEnvironment(JsonView jsonValue)
+  : KxEnvironment()
 {
   *this = jsonValue;
 }

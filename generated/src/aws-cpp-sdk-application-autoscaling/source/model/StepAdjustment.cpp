@@ -28,13 +28,8 @@ StepAdjustment::StepAdjustment() :
 {
 }
 
-StepAdjustment::StepAdjustment(JsonView jsonValue) : 
-    m_metricIntervalLowerBound(0.0),
-    m_metricIntervalLowerBoundHasBeenSet(false),
-    m_metricIntervalUpperBound(0.0),
-    m_metricIntervalUpperBoundHasBeenSet(false),
-    m_scalingAdjustment(0),
-    m_scalingAdjustmentHasBeenSet(false)
+StepAdjustment::StepAdjustment(JsonView jsonValue)
+  : StepAdjustment()
 {
   *this = jsonValue;
 }

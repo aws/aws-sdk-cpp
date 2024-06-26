@@ -26,11 +26,8 @@ Emotion::Emotion() :
 {
 }
 
-Emotion::Emotion(JsonView jsonValue) : 
-    m_type(EmotionName::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_confidence(0.0),
-    m_confidenceHasBeenSet(false)
+Emotion::Emotion(JsonView jsonValue)
+  : Emotion()
 {
   *this = jsonValue;
 }

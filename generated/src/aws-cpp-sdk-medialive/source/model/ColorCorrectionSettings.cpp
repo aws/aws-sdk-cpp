@@ -23,8 +23,8 @@ ColorCorrectionSettings::ColorCorrectionSettings() :
 {
 }
 
-ColorCorrectionSettings::ColorCorrectionSettings(JsonView jsonValue) : 
-    m_globalColorCorrectionsHasBeenSet(false)
+ColorCorrectionSettings::ColorCorrectionSettings(JsonView jsonValue)
+  : ColorCorrectionSettings()
 {
   *this = jsonValue;
 }

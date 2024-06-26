@@ -26,11 +26,8 @@ KnowledgeBaseRetrieveAndGenerateConfiguration::KnowledgeBaseRetrieveAndGenerateC
 {
 }
 
-KnowledgeBaseRetrieveAndGenerateConfiguration::KnowledgeBaseRetrieveAndGenerateConfiguration(JsonView jsonValue) : 
-    m_generationConfigurationHasBeenSet(false),
-    m_knowledgeBaseIdHasBeenSet(false),
-    m_modelArnHasBeenSet(false),
-    m_retrievalConfigurationHasBeenSet(false)
+KnowledgeBaseRetrieveAndGenerateConfiguration::KnowledgeBaseRetrieveAndGenerateConfiguration(JsonView jsonValue)
+  : KnowledgeBaseRetrieveAndGenerateConfiguration()
 {
   *this = jsonValue;
 }

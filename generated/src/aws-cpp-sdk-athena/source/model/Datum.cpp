@@ -23,8 +23,8 @@ Datum::Datum() :
 {
 }
 
-Datum::Datum(JsonView jsonValue) : 
-    m_varCharValueHasBeenSet(false)
+Datum::Datum(JsonView jsonValue)
+  : Datum()
 {
   *this = jsonValue;
 }

@@ -26,9 +26,8 @@ InstanceMonitoring::InstanceMonitoring() :
 {
 }
 
-InstanceMonitoring::InstanceMonitoring(const XmlNode& xmlNode) : 
-    m_instanceIdHasBeenSet(false),
-    m_monitoringHasBeenSet(false)
+InstanceMonitoring::InstanceMonitoring(const XmlNode& xmlNode)
+  : InstanceMonitoring()
 {
   *this = xmlNode;
 }

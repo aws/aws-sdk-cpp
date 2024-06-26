@@ -24,9 +24,8 @@ VirtualNodeTcpConnectionPool::VirtualNodeTcpConnectionPool() :
 {
 }
 
-VirtualNodeTcpConnectionPool::VirtualNodeTcpConnectionPool(JsonView jsonValue) : 
-    m_maxConnections(0),
-    m_maxConnectionsHasBeenSet(false)
+VirtualNodeTcpConnectionPool::VirtualNodeTcpConnectionPool(JsonView jsonValue)
+  : VirtualNodeTcpConnectionPool()
 {
   *this = jsonValue;
 }

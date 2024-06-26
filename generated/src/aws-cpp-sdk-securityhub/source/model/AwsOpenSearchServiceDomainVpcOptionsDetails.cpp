@@ -24,9 +24,8 @@ AwsOpenSearchServiceDomainVpcOptionsDetails::AwsOpenSearchServiceDomainVpcOption
 {
 }
 
-AwsOpenSearchServiceDomainVpcOptionsDetails::AwsOpenSearchServiceDomainVpcOptionsDetails(JsonView jsonValue) : 
-    m_securityGroupIdsHasBeenSet(false),
-    m_subnetIdsHasBeenSet(false)
+AwsOpenSearchServiceDomainVpcOptionsDetails::AwsOpenSearchServiceDomainVpcOptionsDetails(JsonView jsonValue)
+  : AwsOpenSearchServiceDomainVpcOptionsDetails()
 {
   *this = jsonValue;
 }

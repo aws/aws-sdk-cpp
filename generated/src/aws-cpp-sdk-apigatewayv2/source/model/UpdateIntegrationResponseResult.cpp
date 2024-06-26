@@ -22,8 +22,8 @@ UpdateIntegrationResponseResult::UpdateIntegrationResponseResult() :
 {
 }
 
-UpdateIntegrationResponseResult::UpdateIntegrationResponseResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_contentHandlingStrategy(ContentHandlingStrategy::NOT_SET)
+UpdateIntegrationResponseResult::UpdateIntegrationResponseResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateIntegrationResponseResult()
 {
   *this = result;
 }

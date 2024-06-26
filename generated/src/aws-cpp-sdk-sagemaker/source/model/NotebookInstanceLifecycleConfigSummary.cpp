@@ -26,11 +26,8 @@ NotebookInstanceLifecycleConfigSummary::NotebookInstanceLifecycleConfigSummary()
 {
 }
 
-NotebookInstanceLifecycleConfigSummary::NotebookInstanceLifecycleConfigSummary(JsonView jsonValue) : 
-    m_notebookInstanceLifecycleConfigNameHasBeenSet(false),
-    m_notebookInstanceLifecycleConfigArnHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false)
+NotebookInstanceLifecycleConfigSummary::NotebookInstanceLifecycleConfigSummary(JsonView jsonValue)
+  : NotebookInstanceLifecycleConfigSummary()
 {
   *this = jsonValue;
 }

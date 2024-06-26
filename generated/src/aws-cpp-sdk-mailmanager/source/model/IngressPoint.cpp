@@ -29,14 +29,8 @@ IngressPoint::IngressPoint() :
 {
 }
 
-IngressPoint::IngressPoint(JsonView jsonValue) : 
-    m_aRecordHasBeenSet(false),
-    m_ingressPointIdHasBeenSet(false),
-    m_ingressPointNameHasBeenSet(false),
-    m_status(IngressPointStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_type(IngressPointType::NOT_SET),
-    m_typeHasBeenSet(false)
+IngressPoint::IngressPoint(JsonView jsonValue)
+  : IngressPoint()
 {
   *this = jsonValue;
 }

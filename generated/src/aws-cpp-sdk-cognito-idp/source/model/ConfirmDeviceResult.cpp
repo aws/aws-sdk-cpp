@@ -22,8 +22,8 @@ ConfirmDeviceResult::ConfirmDeviceResult() :
 {
 }
 
-ConfirmDeviceResult::ConfirmDeviceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_userConfirmationNecessary(false)
+ConfirmDeviceResult::ConfirmDeviceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ConfirmDeviceResult()
 {
   *this = result;
 }

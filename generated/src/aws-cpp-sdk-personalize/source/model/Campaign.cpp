@@ -33,18 +33,8 @@ Campaign::Campaign() :
 {
 }
 
-Campaign::Campaign(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_campaignArnHasBeenSet(false),
-    m_solutionVersionArnHasBeenSet(false),
-    m_minProvisionedTPS(0),
-    m_minProvisionedTPSHasBeenSet(false),
-    m_campaignConfigHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_failureReasonHasBeenSet(false),
-    m_creationDateTimeHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false),
-    m_latestCampaignUpdateHasBeenSet(false)
+Campaign::Campaign(JsonView jsonValue)
+  : Campaign()
 {
   *this = jsonValue;
 }

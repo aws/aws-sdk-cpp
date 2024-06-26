@@ -26,9 +26,8 @@ TenantDatabasePendingModifiedValues::TenantDatabasePendingModifiedValues() :
 {
 }
 
-TenantDatabasePendingModifiedValues::TenantDatabasePendingModifiedValues(const XmlNode& xmlNode) : 
-    m_masterUserPasswordHasBeenSet(false),
-    m_tenantDBNameHasBeenSet(false)
+TenantDatabasePendingModifiedValues::TenantDatabasePendingModifiedValues(const XmlNode& xmlNode)
+  : TenantDatabasePendingModifiedValues()
 {
   *this = xmlNode;
 }

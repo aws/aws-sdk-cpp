@@ -25,10 +25,8 @@ FunctionInvocationInput::FunctionInvocationInput() :
 {
 }
 
-FunctionInvocationInput::FunctionInvocationInput(JsonView jsonValue) : 
-    m_actionGroupHasBeenSet(false),
-    m_functionHasBeenSet(false),
-    m_parametersHasBeenSet(false)
+FunctionInvocationInput::FunctionInvocationInput(JsonView jsonValue)
+  : FunctionInvocationInput()
 {
   *this = jsonValue;
 }

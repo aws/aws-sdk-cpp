@@ -23,8 +23,8 @@ BudgetSchedule::BudgetSchedule() :
 {
 }
 
-BudgetSchedule::BudgetSchedule(JsonView jsonValue) : 
-    m_fixedHasBeenSet(false)
+BudgetSchedule::BudgetSchedule(JsonView jsonValue)
+  : BudgetSchedule()
 {
   *this = jsonValue;
 }

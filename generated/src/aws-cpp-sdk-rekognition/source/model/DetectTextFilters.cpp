@@ -24,9 +24,8 @@ DetectTextFilters::DetectTextFilters() :
 {
 }
 
-DetectTextFilters::DetectTextFilters(JsonView jsonValue) : 
-    m_wordFilterHasBeenSet(false),
-    m_regionsOfInterestHasBeenSet(false)
+DetectTextFilters::DetectTextFilters(JsonView jsonValue)
+  : DetectTextFilters()
 {
   *this = jsonValue;
 }

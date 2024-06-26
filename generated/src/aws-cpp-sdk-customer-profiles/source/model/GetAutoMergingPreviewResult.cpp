@@ -24,10 +24,8 @@ GetAutoMergingPreviewResult::GetAutoMergingPreviewResult() :
 {
 }
 
-GetAutoMergingPreviewResult::GetAutoMergingPreviewResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_numberOfMatchesInSample(0),
-    m_numberOfProfilesInSample(0),
-    m_numberOfProfilesWillBeMerged(0)
+GetAutoMergingPreviewResult::GetAutoMergingPreviewResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetAutoMergingPreviewResult()
 {
   *this = result;
 }

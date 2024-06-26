@@ -25,11 +25,8 @@ StopChannelResult::StopChannelResult() :
 {
 }
 
-StopChannelResult::StopChannelResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_channelClass(ChannelClass::NOT_SET),
-    m_logLevel(LogLevel::NOT_SET),
-    m_pipelinesRunningCount(0),
-    m_state(ChannelState::NOT_SET)
+StopChannelResult::StopChannelResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : StopChannelResult()
 {
   *this = result;
 }

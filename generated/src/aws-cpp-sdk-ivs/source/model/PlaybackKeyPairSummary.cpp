@@ -25,10 +25,8 @@ PlaybackKeyPairSummary::PlaybackKeyPairSummary() :
 {
 }
 
-PlaybackKeyPairSummary::PlaybackKeyPairSummary(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+PlaybackKeyPairSummary::PlaybackKeyPairSummary(JsonView jsonValue)
+  : PlaybackKeyPairSummary()
 {
   *this = jsonValue;
 }

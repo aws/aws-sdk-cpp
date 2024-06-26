@@ -23,8 +23,8 @@ ArchiveCdnSettings::ArchiveCdnSettings() :
 {
 }
 
-ArchiveCdnSettings::ArchiveCdnSettings(JsonView jsonValue) : 
-    m_archiveS3SettingsHasBeenSet(false)
+ArchiveCdnSettings::ArchiveCdnSettings(JsonView jsonValue)
+  : ArchiveCdnSettings()
 {
   *this = jsonValue;
 }

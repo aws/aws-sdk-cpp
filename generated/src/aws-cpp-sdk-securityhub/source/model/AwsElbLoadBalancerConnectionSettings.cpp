@@ -24,9 +24,8 @@ AwsElbLoadBalancerConnectionSettings::AwsElbLoadBalancerConnectionSettings() :
 {
 }
 
-AwsElbLoadBalancerConnectionSettings::AwsElbLoadBalancerConnectionSettings(JsonView jsonValue) : 
-    m_idleTimeout(0),
-    m_idleTimeoutHasBeenSet(false)
+AwsElbLoadBalancerConnectionSettings::AwsElbLoadBalancerConnectionSettings(JsonView jsonValue)
+  : AwsElbLoadBalancerConnectionSettings()
 {
   *this = jsonValue;
 }

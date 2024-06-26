@@ -24,9 +24,8 @@ PiiOutputDataConfig::PiiOutputDataConfig() :
 {
 }
 
-PiiOutputDataConfig::PiiOutputDataConfig(JsonView jsonValue) : 
-    m_s3UriHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
+PiiOutputDataConfig::PiiOutputDataConfig(JsonView jsonValue)
+  : PiiOutputDataConfig()
 {
   *this = jsonValue;
 }

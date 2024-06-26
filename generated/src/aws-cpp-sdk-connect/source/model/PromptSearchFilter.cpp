@@ -23,8 +23,8 @@ PromptSearchFilter::PromptSearchFilter() :
 {
 }
 
-PromptSearchFilter::PromptSearchFilter(JsonView jsonValue) : 
-    m_tagFilterHasBeenSet(false)
+PromptSearchFilter::PromptSearchFilter(JsonView jsonValue)
+  : PromptSearchFilter()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ CodeGenEdge::CodeGenEdge() :
 {
 }
 
-CodeGenEdge::CodeGenEdge(JsonView jsonValue) : 
-    m_sourceHasBeenSet(false),
-    m_targetHasBeenSet(false),
-    m_targetParameterHasBeenSet(false)
+CodeGenEdge::CodeGenEdge(JsonView jsonValue)
+  : CodeGenEdge()
 {
   *this = jsonValue;
 }

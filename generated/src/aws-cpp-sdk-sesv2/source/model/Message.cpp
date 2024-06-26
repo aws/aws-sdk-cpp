@@ -25,10 +25,8 @@ Message::Message() :
 {
 }
 
-Message::Message(JsonView jsonValue) : 
-    m_subjectHasBeenSet(false),
-    m_bodyHasBeenSet(false),
-    m_headersHasBeenSet(false)
+Message::Message(JsonView jsonValue)
+  : Message()
 {
   *this = jsonValue;
 }

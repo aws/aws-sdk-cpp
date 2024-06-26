@@ -24,9 +24,8 @@ TooltipItem::TooltipItem() :
 {
 }
 
-TooltipItem::TooltipItem(JsonView jsonValue) : 
-    m_fieldTooltipItemHasBeenSet(false),
-    m_columnTooltipItemHasBeenSet(false)
+TooltipItem::TooltipItem(JsonView jsonValue)
+  : TooltipItem()
 {
   *this = jsonValue;
 }

@@ -32,17 +32,8 @@ ContinuousExportDescription::ContinuousExportDescription() :
 {
 }
 
-ContinuousExportDescription::ContinuousExportDescription(JsonView jsonValue) : 
-    m_exportIdHasBeenSet(false),
-    m_status(ContinuousExportStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusDetailHasBeenSet(false),
-    m_s3BucketHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_stopTimeHasBeenSet(false),
-    m_dataSource(DataSource::NOT_SET),
-    m_dataSourceHasBeenSet(false),
-    m_schemaStorageConfigHasBeenSet(false)
+ContinuousExportDescription::ContinuousExportDescription(JsonView jsonValue)
+  : ContinuousExportDescription()
 {
   *this = jsonValue;
 }

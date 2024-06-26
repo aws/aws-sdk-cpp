@@ -25,8 +25,8 @@ TrackingOptionsAlreadyExistsException::TrackingOptionsAlreadyExistsException() :
 {
 }
 
-TrackingOptionsAlreadyExistsException::TrackingOptionsAlreadyExistsException(const XmlNode& xmlNode) : 
-    m_configurationSetNameHasBeenSet(false)
+TrackingOptionsAlreadyExistsException::TrackingOptionsAlreadyExistsException(const XmlNode& xmlNode)
+  : TrackingOptionsAlreadyExistsException()
 {
   *this = xmlNode;
 }

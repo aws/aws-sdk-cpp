@@ -24,9 +24,8 @@ HeaderOrder::HeaderOrder() :
 {
 }
 
-HeaderOrder::HeaderOrder(JsonView jsonValue) : 
-    m_oversizeHandling(OversizeHandling::NOT_SET),
-    m_oversizeHandlingHasBeenSet(false)
+HeaderOrder::HeaderOrder(JsonView jsonValue)
+  : HeaderOrder()
 {
   *this = jsonValue;
 }

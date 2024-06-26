@@ -38,23 +38,8 @@ Instance::Instance() :
 {
 }
 
-Instance::Instance(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_identityManagementType(DirectoryType::NOT_SET),
-    m_identityManagementTypeHasBeenSet(false),
-    m_instanceAliasHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_serviceRoleHasBeenSet(false),
-    m_instanceStatus(InstanceStatus::NOT_SET),
-    m_instanceStatusHasBeenSet(false),
-    m_statusReasonHasBeenSet(false),
-    m_inboundCallsEnabled(false),
-    m_inboundCallsEnabledHasBeenSet(false),
-    m_outboundCallsEnabled(false),
-    m_outboundCallsEnabledHasBeenSet(false),
-    m_instanceAccessUrlHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+Instance::Instance(JsonView jsonValue)
+  : Instance()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ ViewInputContent::ViewInputContent() :
 {
 }
 
-ViewInputContent::ViewInputContent(JsonView jsonValue) : 
-    m_templateHasBeenSet(false),
-    m_actionsHasBeenSet(false)
+ViewInputContent::ViewInputContent(JsonView jsonValue)
+  : ViewInputContent()
 {
   *this = jsonValue;
 }

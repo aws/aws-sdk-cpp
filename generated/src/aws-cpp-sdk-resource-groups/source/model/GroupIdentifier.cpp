@@ -24,9 +24,8 @@ GroupIdentifier::GroupIdentifier() :
 {
 }
 
-GroupIdentifier::GroupIdentifier(JsonView jsonValue) : 
-    m_groupNameHasBeenSet(false),
-    m_groupArnHasBeenSet(false)
+GroupIdentifier::GroupIdentifier(JsonView jsonValue)
+  : GroupIdentifier()
 {
   *this = jsonValue;
 }

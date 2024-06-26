@@ -34,19 +34,8 @@ MigrationSummary::MigrationSummary() :
 {
 }
 
-MigrationSummary::MigrationSummary(JsonView jsonValue) : 
-    m_migrationIdHasBeenSet(false),
-    m_v1BotNameHasBeenSet(false),
-    m_v1BotVersionHasBeenSet(false),
-    m_v1BotLocale(Locale::NOT_SET),
-    m_v1BotLocaleHasBeenSet(false),
-    m_v2BotIdHasBeenSet(false),
-    m_v2BotRoleHasBeenSet(false),
-    m_migrationStatus(MigrationStatus::NOT_SET),
-    m_migrationStatusHasBeenSet(false),
-    m_migrationStrategy(MigrationStrategy::NOT_SET),
-    m_migrationStrategyHasBeenSet(false),
-    m_migrationTimestampHasBeenSet(false)
+MigrationSummary::MigrationSummary(JsonView jsonValue)
+  : MigrationSummary()
 {
   *this = jsonValue;
 }

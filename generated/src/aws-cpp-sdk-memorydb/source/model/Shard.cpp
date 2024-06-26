@@ -28,13 +28,8 @@ Shard::Shard() :
 {
 }
 
-Shard::Shard(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_slotsHasBeenSet(false),
-    m_nodesHasBeenSet(false),
-    m_numberOfNodes(0),
-    m_numberOfNodesHasBeenSet(false)
+Shard::Shard(JsonView jsonValue)
+  : Shard()
 {
   *this = jsonValue;
 }

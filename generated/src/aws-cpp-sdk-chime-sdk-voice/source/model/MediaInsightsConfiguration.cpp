@@ -25,10 +25,8 @@ MediaInsightsConfiguration::MediaInsightsConfiguration() :
 {
 }
 
-MediaInsightsConfiguration::MediaInsightsConfiguration(JsonView jsonValue) : 
-    m_disabled(false),
-    m_disabledHasBeenSet(false),
-    m_configurationArnHasBeenSet(false)
+MediaInsightsConfiguration::MediaInsightsConfiguration(JsonView jsonValue)
+  : MediaInsightsConfiguration()
 {
   *this = jsonValue;
 }

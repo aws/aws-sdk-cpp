@@ -26,11 +26,8 @@ TestExecutionSortBy::TestExecutionSortBy() :
 {
 }
 
-TestExecutionSortBy::TestExecutionSortBy(JsonView jsonValue) : 
-    m_attribute(TestExecutionSortAttribute::NOT_SET),
-    m_attributeHasBeenSet(false),
-    m_order(SortOrder::NOT_SET),
-    m_orderHasBeenSet(false)
+TestExecutionSortBy::TestExecutionSortBy(JsonView jsonValue)
+  : TestExecutionSortBy()
 {
   *this = jsonValue;
 }

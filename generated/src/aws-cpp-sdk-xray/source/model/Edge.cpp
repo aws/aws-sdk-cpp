@@ -31,16 +31,8 @@ Edge::Edge() :
 {
 }
 
-Edge::Edge(JsonView jsonValue) : 
-    m_referenceId(0),
-    m_referenceIdHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_summaryStatisticsHasBeenSet(false),
-    m_responseTimeHistogramHasBeenSet(false),
-    m_aliasesHasBeenSet(false),
-    m_edgeTypeHasBeenSet(false),
-    m_receivedEventAgeHistogramHasBeenSet(false)
+Edge::Edge(JsonView jsonValue)
+  : Edge()
 {
   *this = jsonValue;
 }

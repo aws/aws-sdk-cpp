@@ -38,23 +38,8 @@ ReactiveAnomalySummary::ReactiveAnomalySummary() :
 {
 }
 
-ReactiveAnomalySummary::ReactiveAnomalySummary(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_severity(AnomalySeverity::NOT_SET),
-    m_severityHasBeenSet(false),
-    m_status(AnomalyStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_anomalyTimeRangeHasBeenSet(false),
-    m_anomalyReportedTimeRangeHasBeenSet(false),
-    m_sourceDetailsHasBeenSet(false),
-    m_associatedInsightIdHasBeenSet(false),
-    m_resourceCollectionHasBeenSet(false),
-    m_type(AnomalyType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_causalAnomalyIdHasBeenSet(false),
-    m_anomalyResourcesHasBeenSet(false)
+ReactiveAnomalySummary::ReactiveAnomalySummary(JsonView jsonValue)
+  : ReactiveAnomalySummary()
 {
   *this = jsonValue;
 }

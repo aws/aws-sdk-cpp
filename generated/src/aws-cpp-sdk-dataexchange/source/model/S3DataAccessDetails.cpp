@@ -24,9 +24,8 @@ S3DataAccessDetails::S3DataAccessDetails() :
 {
 }
 
-S3DataAccessDetails::S3DataAccessDetails(JsonView jsonValue) : 
-    m_keyPrefixesHasBeenSet(false),
-    m_keysHasBeenSet(false)
+S3DataAccessDetails::S3DataAccessDetails(JsonView jsonValue)
+  : S3DataAccessDetails()
 {
   *this = jsonValue;
 }

@@ -27,12 +27,8 @@ WaitAndContinueSpecification::WaitAndContinueSpecification() :
 {
 }
 
-WaitAndContinueSpecification::WaitAndContinueSpecification(JsonView jsonValue) : 
-    m_waitingResponseHasBeenSet(false),
-    m_continueResponseHasBeenSet(false),
-    m_stillWaitingResponseHasBeenSet(false),
-    m_active(false),
-    m_activeHasBeenSet(false)
+WaitAndContinueSpecification::WaitAndContinueSpecification(JsonView jsonValue)
+  : WaitAndContinueSpecification()
 {
   *this = jsonValue;
 }

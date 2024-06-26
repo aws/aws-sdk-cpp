@@ -29,14 +29,8 @@ FarmMember::FarmMember() :
 {
 }
 
-FarmMember::FarmMember(JsonView jsonValue) : 
-    m_farmIdHasBeenSet(false),
-    m_identityStoreIdHasBeenSet(false),
-    m_membershipLevel(MembershipLevel::NOT_SET),
-    m_membershipLevelHasBeenSet(false),
-    m_principalIdHasBeenSet(false),
-    m_principalType(PrincipalType::NOT_SET),
-    m_principalTypeHasBeenSet(false)
+FarmMember::FarmMember(JsonView jsonValue)
+  : FarmMember()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ FormInputValueProperty::FormInputValueProperty() :
 {
 }
 
-FormInputValueProperty::FormInputValueProperty(JsonView jsonValue) : 
-    m_valueHasBeenSet(false),
-    m_bindingPropertiesHasBeenSet(false),
-    m_concatHasBeenSet(false)
+FormInputValueProperty::FormInputValueProperty(JsonView jsonValue)
+  : FormInputValueProperty()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ SchemaAnalysisRuleRequest::SchemaAnalysisRuleRequest() :
 {
 }
 
-SchemaAnalysisRuleRequest::SchemaAnalysisRuleRequest(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_type(AnalysisRuleType::NOT_SET),
-    m_typeHasBeenSet(false)
+SchemaAnalysisRuleRequest::SchemaAnalysisRuleRequest(JsonView jsonValue)
+  : SchemaAnalysisRuleRequest()
 {
   *this = jsonValue;
 }

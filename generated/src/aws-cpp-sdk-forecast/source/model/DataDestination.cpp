@@ -23,8 +23,8 @@ DataDestination::DataDestination() :
 {
 }
 
-DataDestination::DataDestination(JsonView jsonValue) : 
-    m_s3ConfigHasBeenSet(false)
+DataDestination::DataDestination(JsonView jsonValue)
+  : DataDestination()
 {
   *this = jsonValue;
 }

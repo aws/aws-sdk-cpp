@@ -31,16 +31,8 @@ IdentityProviderType::IdentityProviderType() :
 {
 }
 
-IdentityProviderType::IdentityProviderType(JsonView jsonValue) : 
-    m_userPoolIdHasBeenSet(false),
-    m_providerNameHasBeenSet(false),
-    m_providerType(IdentityProviderTypeType::NOT_SET),
-    m_providerTypeHasBeenSet(false),
-    m_providerDetailsHasBeenSet(false),
-    m_attributeMappingHasBeenSet(false),
-    m_idpIdentifiersHasBeenSet(false),
-    m_lastModifiedDateHasBeenSet(false),
-    m_creationDateHasBeenSet(false)
+IdentityProviderType::IdentityProviderType(JsonView jsonValue)
+  : IdentityProviderType()
 {
   *this = jsonValue;
 }

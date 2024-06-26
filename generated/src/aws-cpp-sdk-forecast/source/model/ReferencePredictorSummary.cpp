@@ -25,10 +25,8 @@ ReferencePredictorSummary::ReferencePredictorSummary() :
 {
 }
 
-ReferencePredictorSummary::ReferencePredictorSummary(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_state(State::NOT_SET),
-    m_stateHasBeenSet(false)
+ReferencePredictorSummary::ReferencePredictorSummary(JsonView jsonValue)
+  : ReferencePredictorSummary()
 {
   *this = jsonValue;
 }

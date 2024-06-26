@@ -25,8 +25,8 @@ ScheduledInstancesIpv6Address::ScheduledInstancesIpv6Address() :
 {
 }
 
-ScheduledInstancesIpv6Address::ScheduledInstancesIpv6Address(const XmlNode& xmlNode) : 
-    m_ipv6AddressHasBeenSet(false)
+ScheduledInstancesIpv6Address::ScheduledInstancesIpv6Address(const XmlNode& xmlNode)
+  : ScheduledInstancesIpv6Address()
 {
   *this = xmlNode;
 }

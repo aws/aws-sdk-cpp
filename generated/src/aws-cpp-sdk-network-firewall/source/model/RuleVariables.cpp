@@ -24,9 +24,8 @@ RuleVariables::RuleVariables() :
 {
 }
 
-RuleVariables::RuleVariables(JsonView jsonValue) : 
-    m_iPSetsHasBeenSet(false),
-    m_portSetsHasBeenSet(false)
+RuleVariables::RuleVariables(JsonView jsonValue)
+  : RuleVariables()
 {
   *this = jsonValue;
 }

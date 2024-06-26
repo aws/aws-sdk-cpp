@@ -25,10 +25,8 @@ CategoryWithFindingNum::CategoryWithFindingNum() :
 {
 }
 
-CategoryWithFindingNum::CategoryWithFindingNum(JsonView jsonValue) : 
-    m_categoryNameHasBeenSet(false),
-    m_findingNumber(0),
-    m_findingNumberHasBeenSet(false)
+CategoryWithFindingNum::CategoryWithFindingNum(JsonView jsonValue)
+  : CategoryWithFindingNum()
 {
   *this = jsonValue;
 }

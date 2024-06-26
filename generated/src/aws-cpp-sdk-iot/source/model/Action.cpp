@@ -45,30 +45,8 @@ Action::Action() :
 {
 }
 
-Action::Action(JsonView jsonValue) : 
-    m_dynamoDBHasBeenSet(false),
-    m_dynamoDBv2HasBeenSet(false),
-    m_lambdaHasBeenSet(false),
-    m_snsHasBeenSet(false),
-    m_sqsHasBeenSet(false),
-    m_kinesisHasBeenSet(false),
-    m_republishHasBeenSet(false),
-    m_s3HasBeenSet(false),
-    m_firehoseHasBeenSet(false),
-    m_cloudwatchMetricHasBeenSet(false),
-    m_cloudwatchAlarmHasBeenSet(false),
-    m_cloudwatchLogsHasBeenSet(false),
-    m_elasticsearchHasBeenSet(false),
-    m_salesforceHasBeenSet(false),
-    m_iotAnalyticsHasBeenSet(false),
-    m_iotEventsHasBeenSet(false),
-    m_iotSiteWiseHasBeenSet(false),
-    m_stepFunctionsHasBeenSet(false),
-    m_timestreamHasBeenSet(false),
-    m_httpHasBeenSet(false),
-    m_kafkaHasBeenSet(false),
-    m_openSearchHasBeenSet(false),
-    m_locationHasBeenSet(false)
+Action::Action(JsonView jsonValue)
+  : Action()
 {
   *this = jsonValue;
 }

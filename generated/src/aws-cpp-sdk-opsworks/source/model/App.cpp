@@ -38,23 +38,8 @@ App::App() :
 {
 }
 
-App::App(JsonView jsonValue) : 
-    m_appIdHasBeenSet(false),
-    m_stackIdHasBeenSet(false),
-    m_shortnameHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_dataSourcesHasBeenSet(false),
-    m_type(AppType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_appSourceHasBeenSet(false),
-    m_domainsHasBeenSet(false),
-    m_enableSsl(false),
-    m_enableSslHasBeenSet(false),
-    m_sslConfigurationHasBeenSet(false),
-    m_attributesHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_environmentHasBeenSet(false)
+App::App(JsonView jsonValue)
+  : App()
 {
   *this = jsonValue;
 }

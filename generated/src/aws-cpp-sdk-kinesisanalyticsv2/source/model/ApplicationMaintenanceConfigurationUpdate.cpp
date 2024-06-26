@@ -23,8 +23,8 @@ ApplicationMaintenanceConfigurationUpdate::ApplicationMaintenanceConfigurationUp
 {
 }
 
-ApplicationMaintenanceConfigurationUpdate::ApplicationMaintenanceConfigurationUpdate(JsonView jsonValue) : 
-    m_applicationMaintenanceWindowStartTimeUpdateHasBeenSet(false)
+ApplicationMaintenanceConfigurationUpdate::ApplicationMaintenanceConfigurationUpdate(JsonView jsonValue)
+  : ApplicationMaintenanceConfigurationUpdate()
 {
   *this = jsonValue;
 }

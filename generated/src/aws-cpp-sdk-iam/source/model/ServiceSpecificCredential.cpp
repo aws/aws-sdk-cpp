@@ -32,15 +32,8 @@ ServiceSpecificCredential::ServiceSpecificCredential() :
 {
 }
 
-ServiceSpecificCredential::ServiceSpecificCredential(const XmlNode& xmlNode) : 
-    m_createDateHasBeenSet(false),
-    m_serviceNameHasBeenSet(false),
-    m_serviceUserNameHasBeenSet(false),
-    m_servicePasswordHasBeenSet(false),
-    m_serviceSpecificCredentialIdHasBeenSet(false),
-    m_userNameHasBeenSet(false),
-    m_status(StatusType::NOT_SET),
-    m_statusHasBeenSet(false)
+ServiceSpecificCredential::ServiceSpecificCredential(const XmlNode& xmlNode)
+  : ServiceSpecificCredential()
 {
   *this = xmlNode;
 }

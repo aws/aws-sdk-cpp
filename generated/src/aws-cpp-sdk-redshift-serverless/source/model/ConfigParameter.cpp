@@ -24,9 +24,8 @@ ConfigParameter::ConfigParameter() :
 {
 }
 
-ConfigParameter::ConfigParameter(JsonView jsonValue) : 
-    m_parameterKeyHasBeenSet(false),
-    m_parameterValueHasBeenSet(false)
+ConfigParameter::ConfigParameter(JsonView jsonValue)
+  : ConfigParameter()
 {
   *this = jsonValue;
 }

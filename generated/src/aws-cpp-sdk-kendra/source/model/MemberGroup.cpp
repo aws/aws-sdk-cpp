@@ -24,9 +24,8 @@ MemberGroup::MemberGroup() :
 {
 }
 
-MemberGroup::MemberGroup(JsonView jsonValue) : 
-    m_groupIdHasBeenSet(false),
-    m_dataSourceIdHasBeenSet(false)
+MemberGroup::MemberGroup(JsonView jsonValue)
+  : MemberGroup()
 {
   *this = jsonValue;
 }

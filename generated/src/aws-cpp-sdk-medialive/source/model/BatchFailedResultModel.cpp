@@ -26,11 +26,8 @@ BatchFailedResultModel::BatchFailedResultModel() :
 {
 }
 
-BatchFailedResultModel::BatchFailedResultModel(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_codeHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_messageHasBeenSet(false)
+BatchFailedResultModel::BatchFailedResultModel(JsonView jsonValue)
+  : BatchFailedResultModel()
 {
   *this = jsonValue;
 }

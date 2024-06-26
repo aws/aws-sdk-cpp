@@ -26,11 +26,8 @@ ForecastStatistics::ForecastStatistics() :
 {
 }
 
-ForecastStatistics::ForecastStatistics(JsonView jsonValue) : 
-    m_faultCountHigh(0),
-    m_faultCountHighHasBeenSet(false),
-    m_faultCountLow(0),
-    m_faultCountLowHasBeenSet(false)
+ForecastStatistics::ForecastStatistics(JsonView jsonValue)
+  : ForecastStatistics()
 {
   *this = jsonValue;
 }

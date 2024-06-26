@@ -31,16 +31,8 @@ RedshiftSourceConfig::RedshiftSourceConfig() :
 {
 }
 
-RedshiftSourceConfig::RedshiftSourceConfig(JsonView jsonValue) : 
-    m_clusterIdentifierHasBeenSet(false),
-    m_databaseHostHasBeenSet(false),
-    m_databasePort(0),
-    m_databasePortHasBeenSet(false),
-    m_secretManagerArnHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_tableNameHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_vpcConfigurationHasBeenSet(false)
+RedshiftSourceConfig::RedshiftSourceConfig(JsonView jsonValue)
+  : RedshiftSourceConfig()
 {
   *this = jsonValue;
 }

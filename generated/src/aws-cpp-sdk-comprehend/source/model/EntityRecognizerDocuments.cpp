@@ -26,11 +26,8 @@ EntityRecognizerDocuments::EntityRecognizerDocuments() :
 {
 }
 
-EntityRecognizerDocuments::EntityRecognizerDocuments(JsonView jsonValue) : 
-    m_s3UriHasBeenSet(false),
-    m_testS3UriHasBeenSet(false),
-    m_inputFormat(InputFormat::NOT_SET),
-    m_inputFormatHasBeenSet(false)
+EntityRecognizerDocuments::EntityRecognizerDocuments(JsonView jsonValue)
+  : EntityRecognizerDocuments()
 {
   *this = jsonValue;
 }

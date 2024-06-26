@@ -25,10 +25,8 @@ AuthorizedPrincipal::AuthorizedPrincipal() :
 {
 }
 
-AuthorizedPrincipal::AuthorizedPrincipal(JsonView jsonValue) : 
-    m_principalType(PrincipalType::NOT_SET),
-    m_principalTypeHasBeenSet(false),
-    m_principalHasBeenSet(false)
+AuthorizedPrincipal::AuthorizedPrincipal(JsonView jsonValue)
+  : AuthorizedPrincipal()
 {
   *this = jsonValue;
 }

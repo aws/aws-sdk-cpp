@@ -26,9 +26,8 @@ CertificateAssociation::CertificateAssociation() :
 {
 }
 
-CertificateAssociation::CertificateAssociation(const XmlNode& xmlNode) : 
-    m_customDomainNameHasBeenSet(false),
-    m_clusterIdentifierHasBeenSet(false)
+CertificateAssociation::CertificateAssociation(const XmlNode& xmlNode)
+  : CertificateAssociation()
 {
   *this = xmlNode;
 }

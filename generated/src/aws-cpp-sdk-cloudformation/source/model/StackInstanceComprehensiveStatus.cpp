@@ -26,9 +26,8 @@ StackInstanceComprehensiveStatus::StackInstanceComprehensiveStatus() :
 {
 }
 
-StackInstanceComprehensiveStatus::StackInstanceComprehensiveStatus(const XmlNode& xmlNode) : 
-    m_detailedStatus(StackInstanceDetailedStatus::NOT_SET),
-    m_detailedStatusHasBeenSet(false)
+StackInstanceComprehensiveStatus::StackInstanceComprehensiveStatus(const XmlNode& xmlNode)
+  : StackInstanceComprehensiveStatus()
 {
   *this = xmlNode;
 }

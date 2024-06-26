@@ -40,25 +40,8 @@ PipConfiguration::PipConfiguration() :
 {
 }
 
-PipConfiguration::PipConfiguration(JsonView jsonValue) : 
-    m_featuredParticipantAttributeHasBeenSet(false),
-    m_omitStoppedVideo(false),
-    m_omitStoppedVideoHasBeenSet(false),
-    m_videoFillMode(VideoFillMode::NOT_SET),
-    m_videoFillModeHasBeenSet(false),
-    m_gridGap(0),
-    m_gridGapHasBeenSet(false),
-    m_pipParticipantAttributeHasBeenSet(false),
-    m_pipBehavior(PipBehavior::NOT_SET),
-    m_pipBehaviorHasBeenSet(false),
-    m_pipOffset(0),
-    m_pipOffsetHasBeenSet(false),
-    m_pipPosition(PipPosition::NOT_SET),
-    m_pipPositionHasBeenSet(false),
-    m_pipWidth(0),
-    m_pipWidthHasBeenSet(false),
-    m_pipHeight(0),
-    m_pipHeightHasBeenSet(false)
+PipConfiguration::PipConfiguration(JsonView jsonValue)
+  : PipConfiguration()
 {
   *this = jsonValue;
 }

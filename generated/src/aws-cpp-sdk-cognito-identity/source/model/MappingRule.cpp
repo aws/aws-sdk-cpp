@@ -27,12 +27,8 @@ MappingRule::MappingRule() :
 {
 }
 
-MappingRule::MappingRule(JsonView jsonValue) : 
-    m_claimHasBeenSet(false),
-    m_matchType(MappingRuleMatchType::NOT_SET),
-    m_matchTypeHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_roleARNHasBeenSet(false)
+MappingRule::MappingRule(JsonView jsonValue)
+  : MappingRule()
 {
   *this = jsonValue;
 }

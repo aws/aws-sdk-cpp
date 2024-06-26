@@ -25,10 +25,8 @@ SubModule::SubModule() :
 {
 }
 
-SubModule::SubModule(JsonView jsonValue) : 
-    m_commitIdHasBeenSet(false),
-    m_absolutePathHasBeenSet(false),
-    m_relativePathHasBeenSet(false)
+SubModule::SubModule(JsonView jsonValue)
+  : SubModule()
 {
   *this = jsonValue;
 }

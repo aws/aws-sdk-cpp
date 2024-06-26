@@ -25,10 +25,8 @@ RecommendationResourceExclusion::RecommendationResourceExclusion() :
 {
 }
 
-RecommendationResourceExclusion::RecommendationResourceExclusion(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_isExcluded(false),
-    m_isExcludedHasBeenSet(false)
+RecommendationResourceExclusion::RecommendationResourceExclusion(JsonView jsonValue)
+  : RecommendationResourceExclusion()
 {
   *this = jsonValue;
 }

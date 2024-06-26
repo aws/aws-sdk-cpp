@@ -24,9 +24,8 @@ AdvancedOptionsStatus::AdvancedOptionsStatus() :
 {
 }
 
-AdvancedOptionsStatus::AdvancedOptionsStatus(JsonView jsonValue) : 
-    m_optionsHasBeenSet(false),
-    m_statusHasBeenSet(false)
+AdvancedOptionsStatus::AdvancedOptionsStatus(JsonView jsonValue)
+  : AdvancedOptionsStatus()
 {
   *this = jsonValue;
 }

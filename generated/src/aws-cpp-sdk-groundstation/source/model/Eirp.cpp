@@ -26,11 +26,8 @@ Eirp::Eirp() :
 {
 }
 
-Eirp::Eirp(JsonView jsonValue) : 
-    m_units(EirpUnits::NOT_SET),
-    m_unitsHasBeenSet(false),
-    m_value(0.0),
-    m_valueHasBeenSet(false)
+Eirp::Eirp(JsonView jsonValue)
+  : Eirp()
 {
   *this = jsonValue;
 }

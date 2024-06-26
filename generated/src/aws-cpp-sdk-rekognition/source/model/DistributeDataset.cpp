@@ -23,8 +23,8 @@ DistributeDataset::DistributeDataset() :
 {
 }
 
-DistributeDataset::DistributeDataset(JsonView jsonValue) : 
-    m_arnHasBeenSet(false)
+DistributeDataset::DistributeDataset(JsonView jsonValue)
+  : DistributeDataset()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ TableError::TableError() :
 {
 }
 
-TableError::TableError(JsonView jsonValue) : 
-    m_tableNameHasBeenSet(false),
-    m_errorDetailHasBeenSet(false)
+TableError::TableError(JsonView jsonValue)
+  : TableError()
 {
   *this = jsonValue;
 }

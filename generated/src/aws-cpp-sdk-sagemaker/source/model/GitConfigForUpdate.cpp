@@ -23,8 +23,8 @@ GitConfigForUpdate::GitConfigForUpdate() :
 {
 }
 
-GitConfigForUpdate::GitConfigForUpdate(JsonView jsonValue) : 
-    m_secretArnHasBeenSet(false)
+GitConfigForUpdate::GitConfigForUpdate(JsonView jsonValue)
+  : GitConfigForUpdate()
 {
   *this = jsonValue;
 }

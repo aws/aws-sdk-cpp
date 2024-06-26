@@ -34,19 +34,8 @@ Application::Application() :
 {
 }
 
-Application::Application(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_type(ApplicationType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_appRegistryArnHasBeenSet(false),
-    m_status(ApplicationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_discoveryStatus(ApplicationDiscoveryStatus::NOT_SET),
-    m_discoveryStatusHasBeenSet(false),
-    m_componentsHasBeenSet(false),
-    m_lastUpdatedHasBeenSet(false),
-    m_statusMessageHasBeenSet(false)
+Application::Application(JsonView jsonValue)
+  : Application()
 {
   *this = jsonValue;
 }

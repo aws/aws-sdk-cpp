@@ -25,10 +25,8 @@ ModelVariantConfig::ModelVariantConfig() :
 {
 }
 
-ModelVariantConfig::ModelVariantConfig(JsonView jsonValue) : 
-    m_modelNameHasBeenSet(false),
-    m_variantNameHasBeenSet(false),
-    m_infrastructureConfigHasBeenSet(false)
+ModelVariantConfig::ModelVariantConfig(JsonView jsonValue)
+  : ModelVariantConfig()
 {
   *this = jsonValue;
 }

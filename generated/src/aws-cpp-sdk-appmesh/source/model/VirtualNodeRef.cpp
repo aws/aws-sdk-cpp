@@ -31,16 +31,8 @@ VirtualNodeRef::VirtualNodeRef() :
 {
 }
 
-VirtualNodeRef::VirtualNodeRef(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false),
-    m_meshNameHasBeenSet(false),
-    m_meshOwnerHasBeenSet(false),
-    m_resourceOwnerHasBeenSet(false),
-    m_version(0),
-    m_versionHasBeenSet(false),
-    m_virtualNodeNameHasBeenSet(false)
+VirtualNodeRef::VirtualNodeRef(JsonView jsonValue)
+  : VirtualNodeRef()
 {
   *this = jsonValue;
 }

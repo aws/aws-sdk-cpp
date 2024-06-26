@@ -25,10 +25,8 @@ PackageObject::PackageObject() :
 {
 }
 
-PackageObject::PackageObject(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_packageVersionHasBeenSet(false),
-    m_patchVersionHasBeenSet(false)
+PackageObject::PackageObject(JsonView jsonValue)
+  : PackageObject()
 {
   *this = jsonValue;
 }

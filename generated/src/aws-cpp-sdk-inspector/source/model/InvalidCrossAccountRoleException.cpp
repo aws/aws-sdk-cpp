@@ -27,12 +27,8 @@ InvalidCrossAccountRoleException::InvalidCrossAccountRoleException() :
 {
 }
 
-InvalidCrossAccountRoleException::InvalidCrossAccountRoleException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_errorCode(InvalidCrossAccountRoleErrorCode::NOT_SET),
-    m_errorCodeHasBeenSet(false),
-    m_canRetry(false),
-    m_canRetryHasBeenSet(false)
+InvalidCrossAccountRoleException::InvalidCrossAccountRoleException(JsonView jsonValue)
+  : InvalidCrossAccountRoleException()
 {
   *this = jsonValue;
 }

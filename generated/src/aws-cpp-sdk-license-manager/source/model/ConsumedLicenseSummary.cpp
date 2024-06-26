@@ -26,11 +26,8 @@ ConsumedLicenseSummary::ConsumedLicenseSummary() :
 {
 }
 
-ConsumedLicenseSummary::ConsumedLicenseSummary(JsonView jsonValue) : 
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_consumedLicenses(0),
-    m_consumedLicensesHasBeenSet(false)
+ConsumedLicenseSummary::ConsumedLicenseSummary(JsonView jsonValue)
+  : ConsumedLicenseSummary()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ LoadBalancerTlsCertificateDomainValidationOption::LoadBalancerTlsCertificateDoma
 {
 }
 
-LoadBalancerTlsCertificateDomainValidationOption::LoadBalancerTlsCertificateDomainValidationOption(JsonView jsonValue) : 
-    m_domainNameHasBeenSet(false),
-    m_validationStatus(LoadBalancerTlsCertificateDomainStatus::NOT_SET),
-    m_validationStatusHasBeenSet(false)
+LoadBalancerTlsCertificateDomainValidationOption::LoadBalancerTlsCertificateDomainValidationOption(JsonView jsonValue)
+  : LoadBalancerTlsCertificateDomainValidationOption()
 {
   *this = jsonValue;
 }

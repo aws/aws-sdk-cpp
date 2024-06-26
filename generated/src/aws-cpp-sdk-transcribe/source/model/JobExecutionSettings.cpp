@@ -25,10 +25,8 @@ JobExecutionSettings::JobExecutionSettings() :
 {
 }
 
-JobExecutionSettings::JobExecutionSettings(JsonView jsonValue) : 
-    m_allowDeferredExecution(false),
-    m_allowDeferredExecutionHasBeenSet(false),
-    m_dataAccessRoleArnHasBeenSet(false)
+JobExecutionSettings::JobExecutionSettings(JsonView jsonValue)
+  : JobExecutionSettings()
 {
   *this = jsonValue;
 }

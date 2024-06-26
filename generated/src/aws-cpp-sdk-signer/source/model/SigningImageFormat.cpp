@@ -25,10 +25,8 @@ SigningImageFormat::SigningImageFormat() :
 {
 }
 
-SigningImageFormat::SigningImageFormat(JsonView jsonValue) : 
-    m_supportedFormatsHasBeenSet(false),
-    m_defaultFormat(ImageFormat::NOT_SET),
-    m_defaultFormatHasBeenSet(false)
+SigningImageFormat::SigningImageFormat(JsonView jsonValue)
+  : SigningImageFormat()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ UpdateSolFunctionPackageResult::UpdateSolFunctionPackageResult() :
 {
 }
 
-UpdateSolFunctionPackageResult::UpdateSolFunctionPackageResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_operationalState(OperationalState::NOT_SET)
+UpdateSolFunctionPackageResult::UpdateSolFunctionPackageResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateSolFunctionPackageResult()
 {
   *this = result;
 }

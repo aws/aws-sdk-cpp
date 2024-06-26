@@ -22,8 +22,8 @@ DeleteFpgaImageResponse::DeleteFpgaImageResponse() :
 {
 }
 
-DeleteFpgaImageResponse::DeleteFpgaImageResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_return(false)
+DeleteFpgaImageResponse::DeleteFpgaImageResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : DeleteFpgaImageResponse()
 {
   *this = result;
 }

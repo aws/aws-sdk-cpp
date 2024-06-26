@@ -34,19 +34,8 @@ FunctionConfiguration::FunctionConfiguration() :
 {
 }
 
-FunctionConfiguration::FunctionConfiguration(JsonView jsonValue) : 
-    m_encodingType(EncodingType::NOT_SET),
-    m_encodingTypeHasBeenSet(false),
-    m_environmentHasBeenSet(false),
-    m_execArgsHasBeenSet(false),
-    m_executableHasBeenSet(false),
-    m_memorySize(0),
-    m_memorySizeHasBeenSet(false),
-    m_pinned(false),
-    m_pinnedHasBeenSet(false),
-    m_timeout(0),
-    m_timeoutHasBeenSet(false),
-    m_functionRuntimeOverrideHasBeenSet(false)
+FunctionConfiguration::FunctionConfiguration(JsonView jsonValue)
+  : FunctionConfiguration()
 {
   *this = jsonValue;
 }

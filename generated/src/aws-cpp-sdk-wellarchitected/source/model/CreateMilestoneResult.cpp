@@ -22,8 +22,8 @@ CreateMilestoneResult::CreateMilestoneResult() :
 {
 }
 
-CreateMilestoneResult::CreateMilestoneResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_milestoneNumber(0)
+CreateMilestoneResult::CreateMilestoneResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateMilestoneResult()
 {
   *this = result;
 }

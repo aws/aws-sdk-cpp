@@ -22,8 +22,8 @@ StartEntitiesDetectionJobResult::StartEntitiesDetectionJobResult() :
 {
 }
 
-StartEntitiesDetectionJobResult::StartEntitiesDetectionJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_jobStatus(JobStatus::NOT_SET)
+StartEntitiesDetectionJobResult::StartEntitiesDetectionJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : StartEntitiesDetectionJobResult()
 {
   *this = result;
 }

@@ -24,9 +24,8 @@ VirtualServiceBackend::VirtualServiceBackend() :
 {
 }
 
-VirtualServiceBackend::VirtualServiceBackend(JsonView jsonValue) : 
-    m_clientPolicyHasBeenSet(false),
-    m_virtualServiceNameHasBeenSet(false)
+VirtualServiceBackend::VirtualServiceBackend(JsonView jsonValue)
+  : VirtualServiceBackend()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ AwsElbLbCookieStickinessPolicy::AwsElbLbCookieStickinessPolicy() :
 {
 }
 
-AwsElbLbCookieStickinessPolicy::AwsElbLbCookieStickinessPolicy(JsonView jsonValue) : 
-    m_cookieExpirationPeriod(0),
-    m_cookieExpirationPeriodHasBeenSet(false),
-    m_policyNameHasBeenSet(false)
+AwsElbLbCookieStickinessPolicy::AwsElbLbCookieStickinessPolicy(JsonView jsonValue)
+  : AwsElbLbCookieStickinessPolicy()
 {
   *this = jsonValue;
 }

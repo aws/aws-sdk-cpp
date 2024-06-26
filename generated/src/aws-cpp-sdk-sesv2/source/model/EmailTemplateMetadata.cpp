@@ -24,9 +24,8 @@ EmailTemplateMetadata::EmailTemplateMetadata() :
 {
 }
 
-EmailTemplateMetadata::EmailTemplateMetadata(JsonView jsonValue) : 
-    m_templateNameHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false)
+EmailTemplateMetadata::EmailTemplateMetadata(JsonView jsonValue)
+  : EmailTemplateMetadata()
 {
   *this = jsonValue;
 }

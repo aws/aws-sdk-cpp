@@ -24,9 +24,8 @@ InputDestinationVpc::InputDestinationVpc() :
 {
 }
 
-InputDestinationVpc::InputDestinationVpc(JsonView jsonValue) : 
-    m_availabilityZoneHasBeenSet(false),
-    m_networkInterfaceIdHasBeenSet(false)
+InputDestinationVpc::InputDestinationVpc(JsonView jsonValue)
+  : InputDestinationVpc()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ OperationSummary::OperationSummary() :
 {
 }
 
-OperationSummary::OperationSummary(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_status(OperationStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+OperationSummary::OperationSummary(JsonView jsonValue)
+  : OperationSummary()
 {
   *this = jsonValue;
 }

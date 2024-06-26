@@ -23,8 +23,8 @@ S3TableOutputOptions::S3TableOutputOptions() :
 {
 }
 
-S3TableOutputOptions::S3TableOutputOptions(JsonView jsonValue) : 
-    m_locationHasBeenSet(false)
+S3TableOutputOptions::S3TableOutputOptions(JsonView jsonValue)
+  : S3TableOutputOptions()
 {
   *this = jsonValue;
 }

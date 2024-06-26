@@ -25,10 +25,8 @@ WorkerConfiguration::WorkerConfiguration() :
 {
 }
 
-WorkerConfiguration::WorkerConfiguration(JsonView jsonValue) : 
-    m_revision(0),
-    m_revisionHasBeenSet(false),
-    m_workerConfigurationArnHasBeenSet(false)
+WorkerConfiguration::WorkerConfiguration(JsonView jsonValue)
+  : WorkerConfiguration()
 {
   *this = jsonValue;
 }

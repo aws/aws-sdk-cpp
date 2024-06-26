@@ -22,8 +22,8 @@ DeleteApplicationResult::DeleteApplicationResult() :
 {
 }
 
-DeleteApplicationResult::DeleteApplicationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_state(ApplicationState::NOT_SET)
+DeleteApplicationResult::DeleteApplicationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeleteApplicationResult()
 {
   *this = result;
 }

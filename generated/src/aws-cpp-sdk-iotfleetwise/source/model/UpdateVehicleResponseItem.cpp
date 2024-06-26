@@ -24,9 +24,8 @@ UpdateVehicleResponseItem::UpdateVehicleResponseItem() :
 {
 }
 
-UpdateVehicleResponseItem::UpdateVehicleResponseItem(JsonView jsonValue) : 
-    m_vehicleNameHasBeenSet(false),
-    m_arnHasBeenSet(false)
+UpdateVehicleResponseItem::UpdateVehicleResponseItem(JsonView jsonValue)
+  : UpdateVehicleResponseItem()
 {
   *this = jsonValue;
 }

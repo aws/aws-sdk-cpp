@@ -22,8 +22,8 @@ DeleteKeywordResult::DeleteKeywordResult() :
 {
 }
 
-DeleteKeywordResult::DeleteKeywordResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_keywordAction(KeywordAction::NOT_SET)
+DeleteKeywordResult::DeleteKeywordResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeleteKeywordResult()
 {
   *this = result;
 }

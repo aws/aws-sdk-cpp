@@ -25,10 +25,8 @@ AwsRedshiftClusterClusterNode::AwsRedshiftClusterClusterNode() :
 {
 }
 
-AwsRedshiftClusterClusterNode::AwsRedshiftClusterClusterNode(JsonView jsonValue) : 
-    m_nodeRoleHasBeenSet(false),
-    m_privateIpAddressHasBeenSet(false),
-    m_publicIpAddressHasBeenSet(false)
+AwsRedshiftClusterClusterNode::AwsRedshiftClusterClusterNode(JsonView jsonValue)
+  : AwsRedshiftClusterClusterNode()
 {
   *this = jsonValue;
 }

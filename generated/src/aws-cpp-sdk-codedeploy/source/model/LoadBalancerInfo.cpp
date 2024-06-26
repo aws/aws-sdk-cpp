@@ -25,10 +25,8 @@ LoadBalancerInfo::LoadBalancerInfo() :
 {
 }
 
-LoadBalancerInfo::LoadBalancerInfo(JsonView jsonValue) : 
-    m_elbInfoListHasBeenSet(false),
-    m_targetGroupInfoListHasBeenSet(false),
-    m_targetGroupPairInfoListHasBeenSet(false)
+LoadBalancerInfo::LoadBalancerInfo(JsonView jsonValue)
+  : LoadBalancerInfo()
 {
   *this = jsonValue;
 }

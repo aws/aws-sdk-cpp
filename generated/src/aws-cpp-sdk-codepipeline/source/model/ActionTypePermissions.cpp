@@ -23,8 +23,8 @@ ActionTypePermissions::ActionTypePermissions() :
 {
 }
 
-ActionTypePermissions::ActionTypePermissions(JsonView jsonValue) : 
-    m_allowedAccountsHasBeenSet(false)
+ActionTypePermissions::ActionTypePermissions(JsonView jsonValue)
+  : ActionTypePermissions()
 {
   *this = jsonValue;
 }

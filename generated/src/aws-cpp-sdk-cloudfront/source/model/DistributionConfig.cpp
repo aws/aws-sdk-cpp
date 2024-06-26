@@ -48,31 +48,8 @@ DistributionConfig::DistributionConfig() :
 {
 }
 
-DistributionConfig::DistributionConfig(const XmlNode& xmlNode) : 
-    m_callerReferenceHasBeenSet(false),
-    m_aliasesHasBeenSet(false),
-    m_defaultRootObjectHasBeenSet(false),
-    m_originsHasBeenSet(false),
-    m_originGroupsHasBeenSet(false),
-    m_defaultCacheBehaviorHasBeenSet(false),
-    m_cacheBehaviorsHasBeenSet(false),
-    m_customErrorResponsesHasBeenSet(false),
-    m_commentHasBeenSet(false),
-    m_loggingHasBeenSet(false),
-    m_priceClass(PriceClass::NOT_SET),
-    m_priceClassHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_viewerCertificateHasBeenSet(false),
-    m_restrictionsHasBeenSet(false),
-    m_webACLIdHasBeenSet(false),
-    m_httpVersion(HttpVersion::NOT_SET),
-    m_httpVersionHasBeenSet(false),
-    m_isIPV6Enabled(false),
-    m_isIPV6EnabledHasBeenSet(false),
-    m_continuousDeploymentPolicyIdHasBeenSet(false),
-    m_staging(false),
-    m_stagingHasBeenSet(false)
+DistributionConfig::DistributionConfig(const XmlNode& xmlNode)
+  : DistributionConfig()
 {
   *this = xmlNode;
 }

@@ -24,9 +24,8 @@ ServiceAdditionalInfo::ServiceAdditionalInfo() :
 {
 }
 
-ServiceAdditionalInfo::ServiceAdditionalInfo(JsonView jsonValue) : 
-    m_valueHasBeenSet(false),
-    m_typeHasBeenSet(false)
+ServiceAdditionalInfo::ServiceAdditionalInfo(JsonView jsonValue)
+  : ServiceAdditionalInfo()
 {
   *this = jsonValue;
 }

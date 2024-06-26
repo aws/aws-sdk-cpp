@@ -23,8 +23,8 @@ LambdaFunction::LambdaFunction() :
 {
 }
 
-LambdaFunction::LambdaFunction(JsonView jsonValue) : 
-    m_arnHasBeenSet(false)
+LambdaFunction::LambdaFunction(JsonView jsonValue)
+  : LambdaFunction()
 {
   *this = jsonValue;
 }

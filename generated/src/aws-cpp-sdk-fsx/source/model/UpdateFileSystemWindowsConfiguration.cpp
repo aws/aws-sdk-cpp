@@ -31,16 +31,8 @@ UpdateFileSystemWindowsConfiguration::UpdateFileSystemWindowsConfiguration() :
 {
 }
 
-UpdateFileSystemWindowsConfiguration::UpdateFileSystemWindowsConfiguration(JsonView jsonValue) : 
-    m_weeklyMaintenanceStartTimeHasBeenSet(false),
-    m_dailyAutomaticBackupStartTimeHasBeenSet(false),
-    m_automaticBackupRetentionDays(0),
-    m_automaticBackupRetentionDaysHasBeenSet(false),
-    m_throughputCapacity(0),
-    m_throughputCapacityHasBeenSet(false),
-    m_selfManagedActiveDirectoryConfigurationHasBeenSet(false),
-    m_auditLogConfigurationHasBeenSet(false),
-    m_diskIopsConfigurationHasBeenSet(false)
+UpdateFileSystemWindowsConfiguration::UpdateFileSystemWindowsConfiguration(JsonView jsonValue)
+  : UpdateFileSystemWindowsConfiguration()
 {
   *this = jsonValue;
 }

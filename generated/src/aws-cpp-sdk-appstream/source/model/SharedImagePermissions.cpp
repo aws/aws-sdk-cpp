@@ -24,9 +24,8 @@ SharedImagePermissions::SharedImagePermissions() :
 {
 }
 
-SharedImagePermissions::SharedImagePermissions(JsonView jsonValue) : 
-    m_sharedAccountIdHasBeenSet(false),
-    m_imagePermissionsHasBeenSet(false)
+SharedImagePermissions::SharedImagePermissions(JsonView jsonValue)
+  : SharedImagePermissions()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ ResourceProfileArtifact::ResourceProfileArtifact() :
 {
 }
 
-ResourceProfileArtifact::ResourceProfileArtifact(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_classificationResultStatusHasBeenSet(false),
-    m_sensitive(false),
-    m_sensitiveHasBeenSet(false)
+ResourceProfileArtifact::ResourceProfileArtifact(JsonView jsonValue)
+  : ResourceProfileArtifact()
 {
   *this = jsonValue;
 }

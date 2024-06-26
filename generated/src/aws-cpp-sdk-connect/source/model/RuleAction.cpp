@@ -32,17 +32,8 @@ RuleAction::RuleAction() :
 {
 }
 
-RuleAction::RuleAction(JsonView jsonValue) : 
-    m_actionType(ActionType::NOT_SET),
-    m_actionTypeHasBeenSet(false),
-    m_taskActionHasBeenSet(false),
-    m_eventBridgeActionHasBeenSet(false),
-    m_assignContactCategoryActionHasBeenSet(false),
-    m_sendNotificationActionHasBeenSet(false),
-    m_createCaseActionHasBeenSet(false),
-    m_updateCaseActionHasBeenSet(false),
-    m_endAssociatedTasksActionHasBeenSet(false),
-    m_submitAutoEvaluationActionHasBeenSet(false)
+RuleAction::RuleAction(JsonView jsonValue)
+  : RuleAction()
 {
   *this = jsonValue;
 }

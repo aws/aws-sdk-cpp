@@ -28,11 +28,8 @@ ClassicLinkInstance::ClassicLinkInstance() :
 {
 }
 
-ClassicLinkInstance::ClassicLinkInstance(const XmlNode& xmlNode) : 
-    m_groupsHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_vpcIdHasBeenSet(false)
+ClassicLinkInstance::ClassicLinkInstance(const XmlNode& xmlNode)
+  : ClassicLinkInstance()
 {
   *this = xmlNode;
 }

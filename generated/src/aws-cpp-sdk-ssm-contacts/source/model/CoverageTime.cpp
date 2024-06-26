@@ -24,9 +24,8 @@ CoverageTime::CoverageTime() :
 {
 }
 
-CoverageTime::CoverageTime(JsonView jsonValue) : 
-    m_startHasBeenSet(false),
-    m_endHasBeenSet(false)
+CoverageTime::CoverageTime(JsonView jsonValue)
+  : CoverageTime()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ GetParametersForImportResult::GetParametersForImportResult() :
 {
 }
 
-GetParametersForImportResult::GetParametersForImportResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_wrappingKeyAlgorithm(KeyAlgorithm::NOT_SET)
+GetParametersForImportResult::GetParametersForImportResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetParametersForImportResult()
 {
   *this = result;
 }

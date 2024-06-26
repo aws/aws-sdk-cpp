@@ -28,13 +28,8 @@ SuspendedState::SuspendedState() :
 {
 }
 
-SuspendedState::SuspendedState(JsonView jsonValue) : 
-    m_dynamicScalingInSuspended(false),
-    m_dynamicScalingInSuspendedHasBeenSet(false),
-    m_dynamicScalingOutSuspended(false),
-    m_dynamicScalingOutSuspendedHasBeenSet(false),
-    m_scheduledScalingSuspended(false),
-    m_scheduledScalingSuspendedHasBeenSet(false)
+SuspendedState::SuspendedState(JsonView jsonValue)
+  : SuspendedState()
 {
   *this = jsonValue;
 }

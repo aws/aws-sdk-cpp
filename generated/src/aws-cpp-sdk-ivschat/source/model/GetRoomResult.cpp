@@ -23,9 +23,8 @@ GetRoomResult::GetRoomResult() :
 {
 }
 
-GetRoomResult::GetRoomResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_maximumMessageLength(0),
-    m_maximumMessageRatePerSecond(0)
+GetRoomResult::GetRoomResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetRoomResult()
 {
   *this = result;
 }

@@ -31,14 +31,8 @@ InstanceStorageInfo::InstanceStorageInfo() :
 {
 }
 
-InstanceStorageInfo::InstanceStorageInfo(const XmlNode& xmlNode) : 
-    m_totalSizeInGB(0),
-    m_totalSizeInGBHasBeenSet(false),
-    m_disksHasBeenSet(false),
-    m_nvmeSupport(EphemeralNvmeSupport::NOT_SET),
-    m_nvmeSupportHasBeenSet(false),
-    m_encryptionSupport(InstanceStorageEncryptionSupport::NOT_SET),
-    m_encryptionSupportHasBeenSet(false)
+InstanceStorageInfo::InstanceStorageInfo(const XmlNode& xmlNode)
+  : InstanceStorageInfo()
 {
   *this = xmlNode;
 }

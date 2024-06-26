@@ -22,8 +22,8 @@ ListRoleTagsResult::ListRoleTagsResult() :
 {
 }
 
-ListRoleTagsResult::ListRoleTagsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_isTruncated(false)
+ListRoleTagsResult::ListRoleTagsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : ListRoleTagsResult()
 {
   *this = result;
 }

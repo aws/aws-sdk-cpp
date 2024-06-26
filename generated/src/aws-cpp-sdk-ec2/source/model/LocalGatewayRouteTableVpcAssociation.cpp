@@ -32,15 +32,8 @@ LocalGatewayRouteTableVpcAssociation::LocalGatewayRouteTableVpcAssociation() :
 {
 }
 
-LocalGatewayRouteTableVpcAssociation::LocalGatewayRouteTableVpcAssociation(const XmlNode& xmlNode) : 
-    m_localGatewayRouteTableVpcAssociationIdHasBeenSet(false),
-    m_localGatewayRouteTableIdHasBeenSet(false),
-    m_localGatewayRouteTableArnHasBeenSet(false),
-    m_localGatewayIdHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+LocalGatewayRouteTableVpcAssociation::LocalGatewayRouteTableVpcAssociation(const XmlNode& xmlNode)
+  : LocalGatewayRouteTableVpcAssociation()
 {
   *this = xmlNode;
 }

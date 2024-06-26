@@ -27,12 +27,8 @@ RDSDBStorageRecommendationOption::RDSDBStorageRecommendationOption() :
 {
 }
 
-RDSDBStorageRecommendationOption::RDSDBStorageRecommendationOption(JsonView jsonValue) : 
-    m_storageConfigurationHasBeenSet(false),
-    m_rank(0),
-    m_rankHasBeenSet(false),
-    m_savingsOpportunityHasBeenSet(false),
-    m_savingsOpportunityAfterDiscountsHasBeenSet(false)
+RDSDBStorageRecommendationOption::RDSDBStorageRecommendationOption(JsonView jsonValue)
+  : RDSDBStorageRecommendationOption()
 {
   *this = jsonValue;
 }

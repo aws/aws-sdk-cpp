@@ -27,12 +27,8 @@ ResponseBudgetAction::ResponseBudgetAction() :
 {
 }
 
-ResponseBudgetAction::ResponseBudgetAction(JsonView jsonValue) : 
-    m_descriptionHasBeenSet(false),
-    m_thresholdPercentage(0.0),
-    m_thresholdPercentageHasBeenSet(false),
-    m_type(BudgetActionType::NOT_SET),
-    m_typeHasBeenSet(false)
+ResponseBudgetAction::ResponseBudgetAction(JsonView jsonValue)
+  : ResponseBudgetAction()
 {
   *this = jsonValue;
 }

@@ -30,15 +30,8 @@ Radios::Radios() :
 {
 }
 
-Radios::Radios(JsonView jsonValue) : 
-    m_wifi(false),
-    m_wifiHasBeenSet(false),
-    m_bluetooth(false),
-    m_bluetoothHasBeenSet(false),
-    m_nfc(false),
-    m_nfcHasBeenSet(false),
-    m_gps(false),
-    m_gpsHasBeenSet(false)
+Radios::Radios(JsonView jsonValue)
+  : Radios()
 {
   *this = jsonValue;
 }

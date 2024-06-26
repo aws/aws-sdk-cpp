@@ -31,14 +31,8 @@ StackSetOperationResultSummary::StackSetOperationResultSummary() :
 {
 }
 
-StackSetOperationResultSummary::StackSetOperationResultSummary(const XmlNode& xmlNode) : 
-    m_accountHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_status(StackSetOperationResultStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusReasonHasBeenSet(false),
-    m_accountGateResultHasBeenSet(false),
-    m_organizationalUnitIdHasBeenSet(false)
+StackSetOperationResultSummary::StackSetOperationResultSummary(const XmlNode& xmlNode)
+  : StackSetOperationResultSummary()
 {
   *this = xmlNode;
 }

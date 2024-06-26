@@ -29,12 +29,8 @@ DeploymentTargets::DeploymentTargets() :
 {
 }
 
-DeploymentTargets::DeploymentTargets(const XmlNode& xmlNode) : 
-    m_accountsHasBeenSet(false),
-    m_accountsUrlHasBeenSet(false),
-    m_organizationalUnitIdsHasBeenSet(false),
-    m_accountFilterType(AccountFilterType::NOT_SET),
-    m_accountFilterTypeHasBeenSet(false)
+DeploymentTargets::DeploymentTargets(const XmlNode& xmlNode)
+  : DeploymentTargets()
 {
   *this = xmlNode;
 }

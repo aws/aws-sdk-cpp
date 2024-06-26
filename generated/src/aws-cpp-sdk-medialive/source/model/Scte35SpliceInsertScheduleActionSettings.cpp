@@ -26,11 +26,8 @@ Scte35SpliceInsertScheduleActionSettings::Scte35SpliceInsertScheduleActionSettin
 {
 }
 
-Scte35SpliceInsertScheduleActionSettings::Scte35SpliceInsertScheduleActionSettings(JsonView jsonValue) : 
-    m_duration(0),
-    m_durationHasBeenSet(false),
-    m_spliceEventId(0),
-    m_spliceEventIdHasBeenSet(false)
+Scte35SpliceInsertScheduleActionSettings::Scte35SpliceInsertScheduleActionSettings(JsonView jsonValue)
+  : Scte35SpliceInsertScheduleActionSettings()
 {
   *this = jsonValue;
 }

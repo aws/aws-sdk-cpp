@@ -24,9 +24,8 @@ ExecutionErrorDetails::ExecutionErrorDetails() :
 {
 }
 
-ExecutionErrorDetails::ExecutionErrorDetails(JsonView jsonValue) : 
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
+ExecutionErrorDetails::ExecutionErrorDetails(JsonView jsonValue)
+  : ExecutionErrorDetails()
 {
   *this = jsonValue;
 }

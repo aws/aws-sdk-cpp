@@ -24,9 +24,8 @@ EdgeDeploymentModelConfig::EdgeDeploymentModelConfig() :
 {
 }
 
-EdgeDeploymentModelConfig::EdgeDeploymentModelConfig(JsonView jsonValue) : 
-    m_modelHandleHasBeenSet(false),
-    m_edgePackagingJobNameHasBeenSet(false)
+EdgeDeploymentModelConfig::EdgeDeploymentModelConfig(JsonView jsonValue)
+  : EdgeDeploymentModelConfig()
 {
   *this = jsonValue;
 }

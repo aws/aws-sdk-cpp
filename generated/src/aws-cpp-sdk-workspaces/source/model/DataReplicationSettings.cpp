@@ -25,10 +25,8 @@ DataReplicationSettings::DataReplicationSettings() :
 {
 }
 
-DataReplicationSettings::DataReplicationSettings(JsonView jsonValue) : 
-    m_dataReplication(DataReplication::NOT_SET),
-    m_dataReplicationHasBeenSet(false),
-    m_recoverySnapshotTimeHasBeenSet(false)
+DataReplicationSettings::DataReplicationSettings(JsonView jsonValue)
+  : DataReplicationSettings()
 {
   *this = jsonValue;
 }

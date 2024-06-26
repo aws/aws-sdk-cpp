@@ -28,13 +28,8 @@ SendMessageBatchResultEntry::SendMessageBatchResultEntry() :
 {
 }
 
-SendMessageBatchResultEntry::SendMessageBatchResultEntry(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_messageIdHasBeenSet(false),
-    m_mD5OfMessageBodyHasBeenSet(false),
-    m_mD5OfMessageAttributesHasBeenSet(false),
-    m_mD5OfMessageSystemAttributesHasBeenSet(false),
-    m_sequenceNumberHasBeenSet(false)
+SendMessageBatchResultEntry::SendMessageBatchResultEntry(JsonView jsonValue)
+  : SendMessageBatchResultEntry()
 {
   *this = jsonValue;
 }

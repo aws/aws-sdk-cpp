@@ -24,9 +24,8 @@ OpsItemAlreadyExistsException::OpsItemAlreadyExistsException() :
 {
 }
 
-OpsItemAlreadyExistsException::OpsItemAlreadyExistsException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_opsItemIdHasBeenSet(false)
+OpsItemAlreadyExistsException::OpsItemAlreadyExistsException(JsonView jsonValue)
+  : OpsItemAlreadyExistsException()
 {
   *this = jsonValue;
 }

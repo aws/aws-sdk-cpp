@@ -22,8 +22,8 @@ SetPrincipalTagAttributeMapResult::SetPrincipalTagAttributeMapResult() :
 {
 }
 
-SetPrincipalTagAttributeMapResult::SetPrincipalTagAttributeMapResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_useDefaults(false)
+SetPrincipalTagAttributeMapResult::SetPrincipalTagAttributeMapResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : SetPrincipalTagAttributeMapResult()
 {
   *this = result;
 }

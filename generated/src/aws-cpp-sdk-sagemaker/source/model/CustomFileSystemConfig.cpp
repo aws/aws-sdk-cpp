@@ -23,8 +23,8 @@ CustomFileSystemConfig::CustomFileSystemConfig() :
 {
 }
 
-CustomFileSystemConfig::CustomFileSystemConfig(JsonView jsonValue) : 
-    m_eFSFileSystemConfigHasBeenSet(false)
+CustomFileSystemConfig::CustomFileSystemConfig(JsonView jsonValue)
+  : CustomFileSystemConfig()
 {
   *this = jsonValue;
 }

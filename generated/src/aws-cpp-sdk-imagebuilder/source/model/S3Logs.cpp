@@ -24,9 +24,8 @@ S3Logs::S3Logs() :
 {
 }
 
-S3Logs::S3Logs(JsonView jsonValue) : 
-    m_s3BucketNameHasBeenSet(false),
-    m_s3KeyPrefixHasBeenSet(false)
+S3Logs::S3Logs(JsonView jsonValue)
+  : S3Logs()
 {
   *this = jsonValue;
 }

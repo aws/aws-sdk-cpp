@@ -24,9 +24,8 @@ DynamicSsmParameterValue::DynamicSsmParameterValue() :
 {
 }
 
-DynamicSsmParameterValue::DynamicSsmParameterValue(JsonView jsonValue) : 
-    m_variable(VariableType::NOT_SET),
-    m_variableHasBeenSet(false)
+DynamicSsmParameterValue::DynamicSsmParameterValue(JsonView jsonValue)
+  : DynamicSsmParameterValue()
 {
   *this = jsonValue;
 }

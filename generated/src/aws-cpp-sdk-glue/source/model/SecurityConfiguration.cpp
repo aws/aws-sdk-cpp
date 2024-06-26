@@ -25,10 +25,8 @@ SecurityConfiguration::SecurityConfiguration() :
 {
 }
 
-SecurityConfiguration::SecurityConfiguration(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_createdTimeStampHasBeenSet(false),
-    m_encryptionConfigurationHasBeenSet(false)
+SecurityConfiguration::SecurityConfiguration(JsonView jsonValue)
+  : SecurityConfiguration()
 {
   *this = jsonValue;
 }

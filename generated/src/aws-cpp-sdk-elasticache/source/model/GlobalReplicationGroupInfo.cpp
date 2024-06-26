@@ -26,9 +26,8 @@ GlobalReplicationGroupInfo::GlobalReplicationGroupInfo() :
 {
 }
 
-GlobalReplicationGroupInfo::GlobalReplicationGroupInfo(const XmlNode& xmlNode) : 
-    m_globalReplicationGroupIdHasBeenSet(false),
-    m_globalReplicationGroupMemberRoleHasBeenSet(false)
+GlobalReplicationGroupInfo::GlobalReplicationGroupInfo(const XmlNode& xmlNode)
+  : GlobalReplicationGroupInfo()
 {
   *this = xmlNode;
 }

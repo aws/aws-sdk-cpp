@@ -24,9 +24,8 @@ ValidationWarning::ValidationWarning() :
 {
 }
 
-ValidationWarning::ValidationWarning(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_warningsHasBeenSet(false)
+ValidationWarning::ValidationWarning(JsonView jsonValue)
+  : ValidationWarning()
 {
   *this = jsonValue;
 }

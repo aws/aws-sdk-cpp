@@ -27,12 +27,8 @@ DocumentLabel::DocumentLabel() :
 {
 }
 
-DocumentLabel::DocumentLabel(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_score(0.0),
-    m_scoreHasBeenSet(false),
-    m_page(0),
-    m_pageHasBeenSet(false)
+DocumentLabel::DocumentLabel(JsonView jsonValue)
+  : DocumentLabel()
 {
   *this = jsonValue;
 }

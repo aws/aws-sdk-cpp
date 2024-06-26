@@ -24,9 +24,8 @@ MountTargetConflict::MountTargetConflict() :
 {
 }
 
-MountTargetConflict::MountTargetConflict(JsonView jsonValue) : 
-    m_errorCodeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+MountTargetConflict::MountTargetConflict(JsonView jsonValue)
+  : MountTargetConflict()
 {
   *this = jsonValue;
 }

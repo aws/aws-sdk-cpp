@@ -23,8 +23,8 @@ AttackVectorDescription::AttackVectorDescription() :
 {
 }
 
-AttackVectorDescription::AttackVectorDescription(JsonView jsonValue) : 
-    m_vectorTypeHasBeenSet(false)
+AttackVectorDescription::AttackVectorDescription(JsonView jsonValue)
+  : AttackVectorDescription()
 {
   *this = jsonValue;
 }

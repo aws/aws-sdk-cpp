@@ -31,16 +31,8 @@ ActionParameters::ActionParameters() :
 {
 }
 
-ActionParameters::ActionParameters(JsonView jsonValue) : 
-    m_typeHasBeenSet(false),
-    m_urlHasBeenSet(false),
-    m_anchorHasBeenSet(false),
-    m_targetHasBeenSet(false),
-    m_globalHasBeenSet(false),
-    m_modelHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_fieldsHasBeenSet(false),
-    m_stateHasBeenSet(false)
+ActionParameters::ActionParameters(JsonView jsonValue)
+  : ActionParameters()
 {
   *this = jsonValue;
 }

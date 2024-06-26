@@ -29,14 +29,8 @@ PredictorBacktestExportJobSummary::PredictorBacktestExportJobSummary() :
 {
 }
 
-PredictorBacktestExportJobSummary::PredictorBacktestExportJobSummary(JsonView jsonValue) : 
-    m_predictorBacktestExportJobArnHasBeenSet(false),
-    m_predictorBacktestExportJobNameHasBeenSet(false),
-    m_destinationHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastModificationTimeHasBeenSet(false)
+PredictorBacktestExportJobSummary::PredictorBacktestExportJobSummary(JsonView jsonValue)
+  : PredictorBacktestExportJobSummary()
 {
   *this = jsonValue;
 }

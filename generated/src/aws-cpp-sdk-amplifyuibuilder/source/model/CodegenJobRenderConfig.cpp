@@ -23,8 +23,8 @@ CodegenJobRenderConfig::CodegenJobRenderConfig() :
 {
 }
 
-CodegenJobRenderConfig::CodegenJobRenderConfig(JsonView jsonValue) : 
-    m_reactHasBeenSet(false)
+CodegenJobRenderConfig::CodegenJobRenderConfig(JsonView jsonValue)
+  : CodegenJobRenderConfig()
 {
   *this = jsonValue;
 }

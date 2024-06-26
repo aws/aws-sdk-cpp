@@ -33,16 +33,8 @@ ReceiptRule::ReceiptRule() :
 {
 }
 
-ReceiptRule::ReceiptRule(const XmlNode& xmlNode) : 
-    m_nameHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_tlsPolicy(TlsPolicy::NOT_SET),
-    m_tlsPolicyHasBeenSet(false),
-    m_recipientsHasBeenSet(false),
-    m_actionsHasBeenSet(false),
-    m_scanEnabled(false),
-    m_scanEnabledHasBeenSet(false)
+ReceiptRule::ReceiptRule(const XmlNode& xmlNode)
+  : ReceiptRule()
 {
   *this = xmlNode;
 }

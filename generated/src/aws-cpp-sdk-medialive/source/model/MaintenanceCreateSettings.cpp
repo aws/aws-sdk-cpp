@@ -25,10 +25,8 @@ MaintenanceCreateSettings::MaintenanceCreateSettings() :
 {
 }
 
-MaintenanceCreateSettings::MaintenanceCreateSettings(JsonView jsonValue) : 
-    m_maintenanceDay(MaintenanceDay::NOT_SET),
-    m_maintenanceDayHasBeenSet(false),
-    m_maintenanceStartTimeHasBeenSet(false)
+MaintenanceCreateSettings::MaintenanceCreateSettings(JsonView jsonValue)
+  : MaintenanceCreateSettings()
 {
   *this = jsonValue;
 }

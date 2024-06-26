@@ -32,17 +32,8 @@ TrainingSpecification::TrainingSpecification() :
 {
 }
 
-TrainingSpecification::TrainingSpecification(JsonView jsonValue) : 
-    m_trainingImageHasBeenSet(false),
-    m_trainingImageDigestHasBeenSet(false),
-    m_supportedHyperParametersHasBeenSet(false),
-    m_supportedTrainingInstanceTypesHasBeenSet(false),
-    m_supportsDistributedTraining(false),
-    m_supportsDistributedTrainingHasBeenSet(false),
-    m_metricDefinitionsHasBeenSet(false),
-    m_trainingChannelsHasBeenSet(false),
-    m_supportedTuningJobObjectiveMetricsHasBeenSet(false),
-    m_additionalS3DataSourceHasBeenSet(false)
+TrainingSpecification::TrainingSpecification(JsonView jsonValue)
+  : TrainingSpecification()
 {
   *this = jsonValue;
 }

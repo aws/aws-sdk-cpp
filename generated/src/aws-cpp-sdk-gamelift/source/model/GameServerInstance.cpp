@@ -27,12 +27,8 @@ GameServerInstance::GameServerInstance() :
 {
 }
 
-GameServerInstance::GameServerInstance(JsonView jsonValue) : 
-    m_gameServerGroupNameHasBeenSet(false),
-    m_gameServerGroupArnHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_instanceStatus(GameServerInstanceStatus::NOT_SET),
-    m_instanceStatusHasBeenSet(false)
+GameServerInstance::GameServerInstance(JsonView jsonValue)
+  : GameServerInstance()
 {
   *this = jsonValue;
 }

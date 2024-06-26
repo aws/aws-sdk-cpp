@@ -24,9 +24,8 @@ Graph::Graph() :
 {
 }
 
-Graph::Graph(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_createdTimeHasBeenSet(false)
+Graph::Graph(JsonView jsonValue)
+  : Graph()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ ReportOverrides::ReportOverrides() :
 {
 }
 
-ReportOverrides::ReportOverrides(JsonView jsonValue) : 
-    m_transferredHasBeenSet(false),
-    m_verifiedHasBeenSet(false),
-    m_deletedHasBeenSet(false),
-    m_skippedHasBeenSet(false)
+ReportOverrides::ReportOverrides(JsonView jsonValue)
+  : ReportOverrides()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ TLEData::TLEData() :
 {
 }
 
-TLEData::TLEData(JsonView jsonValue) : 
-    m_tleLine1HasBeenSet(false),
-    m_tleLine2HasBeenSet(false),
-    m_validTimeRangeHasBeenSet(false)
+TLEData::TLEData(JsonView jsonValue)
+  : TLEData()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ OrganizationEventDetails::OrganizationEventDetails() :
 {
 }
 
-OrganizationEventDetails::OrganizationEventDetails(JsonView jsonValue) : 
-    m_awsAccountIdHasBeenSet(false),
-    m_eventHasBeenSet(false),
-    m_eventDescriptionHasBeenSet(false),
-    m_eventMetadataHasBeenSet(false)
+OrganizationEventDetails::OrganizationEventDetails(JsonView jsonValue)
+  : OrganizationEventDetails()
 {
   *this = jsonValue;
 }

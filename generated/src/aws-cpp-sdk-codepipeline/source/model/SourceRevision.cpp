@@ -26,11 +26,8 @@ SourceRevision::SourceRevision() :
 {
 }
 
-SourceRevision::SourceRevision(JsonView jsonValue) : 
-    m_actionNameHasBeenSet(false),
-    m_revisionIdHasBeenSet(false),
-    m_revisionSummaryHasBeenSet(false),
-    m_revisionUrlHasBeenSet(false)
+SourceRevision::SourceRevision(JsonView jsonValue)
+  : SourceRevision()
 {
   *this = jsonValue;
 }

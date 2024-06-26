@@ -31,16 +31,8 @@ S3DestinationConfiguration::S3DestinationConfiguration() :
 {
 }
 
-S3DestinationConfiguration::S3DestinationConfiguration(JsonView jsonValue) : 
-    m_roleARNHasBeenSet(false),
-    m_bucketARNHasBeenSet(false),
-    m_prefixHasBeenSet(false),
-    m_errorOutputPrefixHasBeenSet(false),
-    m_bufferingHintsHasBeenSet(false),
-    m_compressionFormat(CompressionFormat::NOT_SET),
-    m_compressionFormatHasBeenSet(false),
-    m_encryptionConfigurationHasBeenSet(false),
-    m_cloudWatchLoggingOptionsHasBeenSet(false)
+S3DestinationConfiguration::S3DestinationConfiguration(JsonView jsonValue)
+  : S3DestinationConfiguration()
 {
   *this = jsonValue;
 }

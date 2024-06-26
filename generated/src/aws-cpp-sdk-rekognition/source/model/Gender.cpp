@@ -26,11 +26,8 @@ Gender::Gender() :
 {
 }
 
-Gender::Gender(JsonView jsonValue) : 
-    m_value(GenderType::NOT_SET),
-    m_valueHasBeenSet(false),
-    m_confidence(0.0),
-    m_confidenceHasBeenSet(false)
+Gender::Gender(JsonView jsonValue)
+  : Gender()
 {
   *this = jsonValue;
 }

@@ -27,11 +27,8 @@ PublicKey::PublicKey() :
 {
 }
 
-PublicKey::PublicKey(JsonView jsonValue) : 
-    m_valueHasBeenSet(false),
-    m_validityStartTimeHasBeenSet(false),
-    m_validityEndTimeHasBeenSet(false),
-    m_fingerprintHasBeenSet(false)
+PublicKey::PublicKey(JsonView jsonValue)
+  : PublicKey()
 {
   *this = jsonValue;
 }

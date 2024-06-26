@@ -35,18 +35,8 @@ Distribution::Distribution() :
 {
 }
 
-Distribution::Distribution(const XmlNode& xmlNode) : 
-    m_idHasBeenSet(false),
-    m_aRNHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_inProgressInvalidationBatches(0),
-    m_inProgressInvalidationBatchesHasBeenSet(false),
-    m_domainNameHasBeenSet(false),
-    m_activeTrustedSignersHasBeenSet(false),
-    m_activeTrustedKeyGroupsHasBeenSet(false),
-    m_distributionConfigHasBeenSet(false),
-    m_aliasICPRecordalsHasBeenSet(false)
+Distribution::Distribution(const XmlNode& xmlNode)
+  : Distribution()
 {
   *this = xmlNode;
 }

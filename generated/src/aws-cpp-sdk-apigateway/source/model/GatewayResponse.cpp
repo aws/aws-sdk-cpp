@@ -31,15 +31,8 @@ GatewayResponse::GatewayResponse() :
 {
 }
 
-GatewayResponse::GatewayResponse(JsonView jsonValue) : 
-    m_responseType(GatewayResponseType::NOT_SET),
-    m_responseTypeHasBeenSet(false),
-    m_statusCodeHasBeenSet(false),
-    m_responseParametersHasBeenSet(false),
-    m_responseTemplatesHasBeenSet(false),
-    m_defaultResponse(false),
-    m_defaultResponseHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
+GatewayResponse::GatewayResponse(JsonView jsonValue)
+  : GatewayResponse()
 {
   *this = jsonValue;
 }

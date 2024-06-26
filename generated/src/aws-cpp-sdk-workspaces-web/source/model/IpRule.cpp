@@ -24,9 +24,8 @@ IpRule::IpRule() :
 {
 }
 
-IpRule::IpRule(JsonView jsonValue) : 
-    m_descriptionHasBeenSet(false),
-    m_ipRangeHasBeenSet(false)
+IpRule::IpRule(JsonView jsonValue)
+  : IpRule()
 {
   *this = jsonValue;
 }

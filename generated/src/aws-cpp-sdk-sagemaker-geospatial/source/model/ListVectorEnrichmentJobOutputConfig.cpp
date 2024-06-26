@@ -32,17 +32,8 @@ ListVectorEnrichmentJobOutputConfig::ListVectorEnrichmentJobOutputConfig() :
 {
 }
 
-ListVectorEnrichmentJobOutputConfig::ListVectorEnrichmentJobOutputConfig(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_durationInSeconds(0),
-    m_durationInSecondsHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_status(VectorEnrichmentJobStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_type(VectorEnrichmentJobType::NOT_SET),
-    m_typeHasBeenSet(false)
+ListVectorEnrichmentJobOutputConfig::ListVectorEnrichmentJobOutputConfig(JsonView jsonValue)
+  : ListVectorEnrichmentJobOutputConfig()
 {
   *this = jsonValue;
 }

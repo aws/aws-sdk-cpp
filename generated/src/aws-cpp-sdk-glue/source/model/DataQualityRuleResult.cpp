@@ -28,13 +28,8 @@ DataQualityRuleResult::DataQualityRuleResult() :
 {
 }
 
-DataQualityRuleResult::DataQualityRuleResult(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_evaluationMessageHasBeenSet(false),
-    m_result(DataQualityRuleResultStatus::NOT_SET),
-    m_resultHasBeenSet(false),
-    m_evaluatedMetricsHasBeenSet(false)
+DataQualityRuleResult::DataQualityRuleResult(JsonView jsonValue)
+  : DataQualityRuleResult()
 {
   *this = jsonValue;
 }

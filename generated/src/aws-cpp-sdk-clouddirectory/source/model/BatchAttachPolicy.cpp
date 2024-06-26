@@ -24,9 +24,8 @@ BatchAttachPolicy::BatchAttachPolicy() :
 {
 }
 
-BatchAttachPolicy::BatchAttachPolicy(JsonView jsonValue) : 
-    m_policyReferenceHasBeenSet(false),
-    m_objectReferenceHasBeenSet(false)
+BatchAttachPolicy::BatchAttachPolicy(JsonView jsonValue)
+  : BatchAttachPolicy()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ InternetHealth::InternetHealth() :
 {
 }
 
-InternetHealth::InternetHealth(JsonView jsonValue) : 
-    m_availabilityHasBeenSet(false),
-    m_performanceHasBeenSet(false)
+InternetHealth::InternetHealth(JsonView jsonValue)
+  : InternetHealth()
 {
   *this = jsonValue;
 }

@@ -42,27 +42,8 @@ AwsCloudTrailTrailDetails::AwsCloudTrailTrailDetails() :
 {
 }
 
-AwsCloudTrailTrailDetails::AwsCloudTrailTrailDetails(JsonView jsonValue) : 
-    m_cloudWatchLogsLogGroupArnHasBeenSet(false),
-    m_cloudWatchLogsRoleArnHasBeenSet(false),
-    m_hasCustomEventSelectors(false),
-    m_hasCustomEventSelectorsHasBeenSet(false),
-    m_homeRegionHasBeenSet(false),
-    m_includeGlobalServiceEvents(false),
-    m_includeGlobalServiceEventsHasBeenSet(false),
-    m_isMultiRegionTrail(false),
-    m_isMultiRegionTrailHasBeenSet(false),
-    m_isOrganizationTrail(false),
-    m_isOrganizationTrailHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_logFileValidationEnabled(false),
-    m_logFileValidationEnabledHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_s3BucketNameHasBeenSet(false),
-    m_s3KeyPrefixHasBeenSet(false),
-    m_snsTopicArnHasBeenSet(false),
-    m_snsTopicNameHasBeenSet(false),
-    m_trailArnHasBeenSet(false)
+AwsCloudTrailTrailDetails::AwsCloudTrailTrailDetails(JsonView jsonValue)
+  : AwsCloudTrailTrailDetails()
 {
   *this = jsonValue;
 }

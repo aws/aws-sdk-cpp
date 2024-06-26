@@ -23,8 +23,8 @@ PipeTargetSageMakerPipelineParameters::PipeTargetSageMakerPipelineParameters() :
 {
 }
 
-PipeTargetSageMakerPipelineParameters::PipeTargetSageMakerPipelineParameters(JsonView jsonValue) : 
-    m_pipelineParameterListHasBeenSet(false)
+PipeTargetSageMakerPipelineParameters::PipeTargetSageMakerPipelineParameters(JsonView jsonValue)
+  : PipeTargetSageMakerPipelineParameters()
 {
   *this = jsonValue;
 }

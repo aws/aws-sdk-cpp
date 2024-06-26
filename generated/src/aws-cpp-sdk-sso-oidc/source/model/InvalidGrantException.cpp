@@ -24,9 +24,8 @@ InvalidGrantException::InvalidGrantException() :
 {
 }
 
-InvalidGrantException::InvalidGrantException(JsonView jsonValue) : 
-    m_errorHasBeenSet(false),
-    m_error_descriptionHasBeenSet(false)
+InvalidGrantException::InvalidGrantException(JsonView jsonValue)
+  : InvalidGrantException()
 {
   *this = jsonValue;
 }

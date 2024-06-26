@@ -28,13 +28,8 @@ OpenIDConnectConfig::OpenIDConnectConfig() :
 {
 }
 
-OpenIDConnectConfig::OpenIDConnectConfig(JsonView jsonValue) : 
-    m_issuerHasBeenSet(false),
-    m_clientIdHasBeenSet(false),
-    m_iatTTL(0),
-    m_iatTTLHasBeenSet(false),
-    m_authTTL(0),
-    m_authTTLHasBeenSet(false)
+OpenIDConnectConfig::OpenIDConnectConfig(JsonView jsonValue)
+  : OpenIDConnectConfig()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ ResourceType::ResourceType() :
 {
 }
 
-ResourceType::ResourceType(JsonView jsonValue) : 
-    m_cloudFormationHasBeenSet(false),
-    m_m2ManagedApplicationHasBeenSet(false),
-    m_m2NonManagedApplicationHasBeenSet(false)
+ResourceType::ResourceType(JsonView jsonValue)
+  : ResourceType()
 {
   *this = jsonValue;
 }

@@ -29,14 +29,8 @@ WorkerConfigurationSummary::WorkerConfigurationSummary() :
 {
 }
 
-WorkerConfigurationSummary::WorkerConfigurationSummary(JsonView jsonValue) : 
-    m_creationTimeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_latestRevisionHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_workerConfigurationArnHasBeenSet(false),
-    m_workerConfigurationState(WorkerConfigurationState::NOT_SET),
-    m_workerConfigurationStateHasBeenSet(false)
+WorkerConfigurationSummary::WorkerConfigurationSummary(JsonView jsonValue)
+  : WorkerConfigurationSummary()
 {
   *this = jsonValue;
 }

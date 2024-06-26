@@ -32,17 +32,8 @@ JobBookmarkEntry::JobBookmarkEntry() :
 {
 }
 
-JobBookmarkEntry::JobBookmarkEntry(JsonView jsonValue) : 
-    m_jobNameHasBeenSet(false),
-    m_version(0),
-    m_versionHasBeenSet(false),
-    m_run(0),
-    m_runHasBeenSet(false),
-    m_attempt(0),
-    m_attemptHasBeenSet(false),
-    m_previousRunIdHasBeenSet(false),
-    m_runIdHasBeenSet(false),
-    m_jobBookmarkHasBeenSet(false)
+JobBookmarkEntry::JobBookmarkEntry(JsonView jsonValue)
+  : JobBookmarkEntry()
 {
   *this = jsonValue;
 }

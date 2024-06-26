@@ -24,9 +24,8 @@ FleetConfiguration::FleetConfiguration() :
 {
 }
 
-FleetConfiguration::FleetConfiguration(JsonView jsonValue) : 
-    m_customerManagedHasBeenSet(false),
-    m_serviceManagedEc2HasBeenSet(false)
+FleetConfiguration::FleetConfiguration(JsonView jsonValue)
+  : FleetConfiguration()
 {
   *this = jsonValue;
 }

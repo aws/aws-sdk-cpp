@@ -42,27 +42,8 @@ MapRunItemCounts::MapRunItemCounts() :
 {
 }
 
-MapRunItemCounts::MapRunItemCounts(JsonView jsonValue) : 
-    m_pending(0),
-    m_pendingHasBeenSet(false),
-    m_running(0),
-    m_runningHasBeenSet(false),
-    m_succeeded(0),
-    m_succeededHasBeenSet(false),
-    m_failed(0),
-    m_failedHasBeenSet(false),
-    m_timedOut(0),
-    m_timedOutHasBeenSet(false),
-    m_aborted(0),
-    m_abortedHasBeenSet(false),
-    m_total(0),
-    m_totalHasBeenSet(false),
-    m_resultsWritten(0),
-    m_resultsWrittenHasBeenSet(false),
-    m_failuresNotRedrivable(0),
-    m_failuresNotRedrivableHasBeenSet(false),
-    m_pendingRedrive(0),
-    m_pendingRedriveHasBeenSet(false)
+MapRunItemCounts::MapRunItemCounts(JsonView jsonValue)
+  : MapRunItemCounts()
 {
   *this = jsonValue;
 }

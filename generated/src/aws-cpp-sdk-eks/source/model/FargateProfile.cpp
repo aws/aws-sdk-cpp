@@ -33,18 +33,8 @@ FargateProfile::FargateProfile() :
 {
 }
 
-FargateProfile::FargateProfile(JsonView jsonValue) : 
-    m_fargateProfileNameHasBeenSet(false),
-    m_fargateProfileArnHasBeenSet(false),
-    m_clusterNameHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_podExecutionRoleArnHasBeenSet(false),
-    m_subnetsHasBeenSet(false),
-    m_selectorsHasBeenSet(false),
-    m_status(FargateProfileStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_healthHasBeenSet(false)
+FargateProfile::FargateProfile(JsonView jsonValue)
+  : FargateProfile()
 {
   *this = jsonValue;
 }

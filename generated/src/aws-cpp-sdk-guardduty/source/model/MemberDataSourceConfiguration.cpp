@@ -24,9 +24,8 @@ MemberDataSourceConfiguration::MemberDataSourceConfiguration() :
 {
 }
 
-MemberDataSourceConfiguration::MemberDataSourceConfiguration(JsonView jsonValue) : 
-    m_accountIdHasBeenSet(false),
-    m_featuresHasBeenSet(false)
+MemberDataSourceConfiguration::MemberDataSourceConfiguration(JsonView jsonValue)
+  : MemberDataSourceConfiguration()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ AssetBundleImportJobAnalysisOverrideTags::AssetBundleImportJobAnalysisOverrideTa
 {
 }
 
-AssetBundleImportJobAnalysisOverrideTags::AssetBundleImportJobAnalysisOverrideTags(JsonView jsonValue) : 
-    m_analysisIdsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+AssetBundleImportJobAnalysisOverrideTags::AssetBundleImportJobAnalysisOverrideTags(JsonView jsonValue)
+  : AssetBundleImportJobAnalysisOverrideTags()
 {
   *this = jsonValue;
 }

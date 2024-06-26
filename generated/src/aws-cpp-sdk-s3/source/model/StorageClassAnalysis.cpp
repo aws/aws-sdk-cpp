@@ -25,8 +25,8 @@ StorageClassAnalysis::StorageClassAnalysis() :
 {
 }
 
-StorageClassAnalysis::StorageClassAnalysis(const XmlNode& xmlNode) : 
-    m_dataExportHasBeenSet(false)
+StorageClassAnalysis::StorageClassAnalysis(const XmlNode& xmlNode)
+  : StorageClassAnalysis()
 {
   *this = xmlNode;
 }

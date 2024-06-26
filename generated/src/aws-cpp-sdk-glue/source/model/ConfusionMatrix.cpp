@@ -30,15 +30,8 @@ ConfusionMatrix::ConfusionMatrix() :
 {
 }
 
-ConfusionMatrix::ConfusionMatrix(JsonView jsonValue) : 
-    m_numTruePositives(0),
-    m_numTruePositivesHasBeenSet(false),
-    m_numFalsePositives(0),
-    m_numFalsePositivesHasBeenSet(false),
-    m_numTrueNegatives(0),
-    m_numTrueNegativesHasBeenSet(false),
-    m_numFalseNegatives(0),
-    m_numFalseNegativesHasBeenSet(false)
+ConfusionMatrix::ConfusionMatrix(JsonView jsonValue)
+  : ConfusionMatrix()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ JoinEventConfiguration::JoinEventConfiguration() :
 {
 }
 
-JoinEventConfiguration::JoinEventConfiguration(JsonView jsonValue) : 
-    m_loRaWANHasBeenSet(false),
-    m_wirelessDeviceIdEventTopic(EventNotificationTopicStatus::NOT_SET),
-    m_wirelessDeviceIdEventTopicHasBeenSet(false)
+JoinEventConfiguration::JoinEventConfiguration(JsonView jsonValue)
+  : JoinEventConfiguration()
 {
   *this = jsonValue;
 }

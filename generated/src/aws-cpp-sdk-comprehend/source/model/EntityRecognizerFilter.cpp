@@ -27,12 +27,8 @@ EntityRecognizerFilter::EntityRecognizerFilter() :
 {
 }
 
-EntityRecognizerFilter::EntityRecognizerFilter(JsonView jsonValue) : 
-    m_status(ModelStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_recognizerNameHasBeenSet(false),
-    m_submitTimeBeforeHasBeenSet(false),
-    m_submitTimeAfterHasBeenSet(false)
+EntityRecognizerFilter::EntityRecognizerFilter(JsonView jsonValue)
+  : EntityRecognizerFilter()
 {
   *this = jsonValue;
 }

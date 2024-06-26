@@ -33,18 +33,8 @@ MonitorSummary::MonitorSummary() :
 {
 }
 
-MonitorSummary::MonitorSummary(JsonView jsonValue) : 
-    m_createdAtHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_identityCenterApplicationArnHasBeenSet(false),
-    m_identityCenterInstanceArnHasBeenSet(false),
-    m_monitorIdHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_subdomainHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_updatedByHasBeenSet(false),
-    m_urlHasBeenSet(false)
+MonitorSummary::MonitorSummary(JsonView jsonValue)
+  : MonitorSummary()
 {
   *this = jsonValue;
 }

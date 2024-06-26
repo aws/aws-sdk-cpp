@@ -23,8 +23,8 @@ GlueDataCatalogConfigurationDescription::GlueDataCatalogConfigurationDescription
 {
 }
 
-GlueDataCatalogConfigurationDescription::GlueDataCatalogConfigurationDescription(JsonView jsonValue) : 
-    m_databaseARNHasBeenSet(false)
+GlueDataCatalogConfigurationDescription::GlueDataCatalogConfigurationDescription(JsonView jsonValue)
+  : GlueDataCatalogConfigurationDescription()
 {
   *this = jsonValue;
 }

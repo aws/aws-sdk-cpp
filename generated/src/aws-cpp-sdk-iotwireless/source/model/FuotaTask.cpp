@@ -25,10 +25,8 @@ FuotaTask::FuotaTask() :
 {
 }
 
-FuotaTask::FuotaTask(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false)
+FuotaTask::FuotaTask(JsonView jsonValue)
+  : FuotaTask()
 {
   *this = jsonValue;
 }

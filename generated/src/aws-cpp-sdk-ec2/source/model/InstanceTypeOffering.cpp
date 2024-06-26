@@ -29,12 +29,8 @@ InstanceTypeOffering::InstanceTypeOffering() :
 {
 }
 
-InstanceTypeOffering::InstanceTypeOffering(const XmlNode& xmlNode) : 
-    m_instanceType(InstanceType::NOT_SET),
-    m_instanceTypeHasBeenSet(false),
-    m_locationType(LocationType::NOT_SET),
-    m_locationTypeHasBeenSet(false),
-    m_locationHasBeenSet(false)
+InstanceTypeOffering::InstanceTypeOffering(const XmlNode& xmlNode)
+  : InstanceTypeOffering()
 {
   *this = xmlNode;
 }

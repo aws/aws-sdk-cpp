@@ -25,10 +25,8 @@ PushNotificationPreferences::PushNotificationPreferences() :
 {
 }
 
-PushNotificationPreferences::PushNotificationPreferences(JsonView jsonValue) : 
-    m_allowNotifications(AllowNotifications::NOT_SET),
-    m_allowNotificationsHasBeenSet(false),
-    m_filterRuleHasBeenSet(false)
+PushNotificationPreferences::PushNotificationPreferences(JsonView jsonValue)
+  : PushNotificationPreferences()
 {
   *this = jsonValue;
 }

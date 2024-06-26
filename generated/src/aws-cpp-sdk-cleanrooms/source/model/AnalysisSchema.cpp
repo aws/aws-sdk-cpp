@@ -23,8 +23,8 @@ AnalysisSchema::AnalysisSchema() :
 {
 }
 
-AnalysisSchema::AnalysisSchema(JsonView jsonValue) : 
-    m_referencedTablesHasBeenSet(false)
+AnalysisSchema::AnalysisSchema(JsonView jsonValue)
+  : AnalysisSchema()
 {
   *this = jsonValue;
 }

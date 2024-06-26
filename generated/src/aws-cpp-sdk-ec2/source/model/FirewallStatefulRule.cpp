@@ -32,15 +32,8 @@ FirewallStatefulRule::FirewallStatefulRule() :
 {
 }
 
-FirewallStatefulRule::FirewallStatefulRule(const XmlNode& xmlNode) : 
-    m_ruleGroupArnHasBeenSet(false),
-    m_sourcesHasBeenSet(false),
-    m_destinationsHasBeenSet(false),
-    m_sourcePortsHasBeenSet(false),
-    m_destinationPortsHasBeenSet(false),
-    m_protocolHasBeenSet(false),
-    m_ruleActionHasBeenSet(false),
-    m_directionHasBeenSet(false)
+FirewallStatefulRule::FirewallStatefulRule(const XmlNode& xmlNode)
+  : FirewallStatefulRule()
 {
   *this = xmlNode;
 }

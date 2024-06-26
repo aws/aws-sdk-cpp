@@ -25,10 +25,8 @@ GeospatialMapAggregatedFieldWells::GeospatialMapAggregatedFieldWells() :
 {
 }
 
-GeospatialMapAggregatedFieldWells::GeospatialMapAggregatedFieldWells(JsonView jsonValue) : 
-    m_geospatialHasBeenSet(false),
-    m_valuesHasBeenSet(false),
-    m_colorsHasBeenSet(false)
+GeospatialMapAggregatedFieldWells::GeospatialMapAggregatedFieldWells(JsonView jsonValue)
+  : GeospatialMapAggregatedFieldWells()
 {
   *this = jsonValue;
 }

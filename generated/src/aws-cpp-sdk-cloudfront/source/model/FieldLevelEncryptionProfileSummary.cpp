@@ -29,12 +29,8 @@ FieldLevelEncryptionProfileSummary::FieldLevelEncryptionProfileSummary() :
 {
 }
 
-FieldLevelEncryptionProfileSummary::FieldLevelEncryptionProfileSummary(const XmlNode& xmlNode) : 
-    m_idHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_encryptionEntitiesHasBeenSet(false),
-    m_commentHasBeenSet(false)
+FieldLevelEncryptionProfileSummary::FieldLevelEncryptionProfileSummary(const XmlNode& xmlNode)
+  : FieldLevelEncryptionProfileSummary()
 {
   *this = xmlNode;
 }

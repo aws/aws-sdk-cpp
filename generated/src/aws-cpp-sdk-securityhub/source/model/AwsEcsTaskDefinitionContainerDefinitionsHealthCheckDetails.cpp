@@ -31,16 +31,8 @@ AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetails::AwsEcsTaskDefinition
 {
 }
 
-AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetails::AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetails(JsonView jsonValue) : 
-    m_commandHasBeenSet(false),
-    m_interval(0),
-    m_intervalHasBeenSet(false),
-    m_retries(0),
-    m_retriesHasBeenSet(false),
-    m_startPeriod(0),
-    m_startPeriodHasBeenSet(false),
-    m_timeout(0),
-    m_timeoutHasBeenSet(false)
+AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetails::AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetails(JsonView jsonValue)
+  : AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetails()
 {
   *this = jsonValue;
 }

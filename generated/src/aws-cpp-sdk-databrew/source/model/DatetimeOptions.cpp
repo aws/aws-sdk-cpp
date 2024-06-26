@@ -25,10 +25,8 @@ DatetimeOptions::DatetimeOptions() :
 {
 }
 
-DatetimeOptions::DatetimeOptions(JsonView jsonValue) : 
-    m_formatHasBeenSet(false),
-    m_timezoneOffsetHasBeenSet(false),
-    m_localeCodeHasBeenSet(false)
+DatetimeOptions::DatetimeOptions(JsonView jsonValue)
+  : DatetimeOptions()
 {
   *this = jsonValue;
 }

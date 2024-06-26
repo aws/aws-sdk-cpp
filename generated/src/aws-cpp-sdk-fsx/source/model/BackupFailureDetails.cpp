@@ -23,8 +23,8 @@ BackupFailureDetails::BackupFailureDetails() :
 {
 }
 
-BackupFailureDetails::BackupFailureDetails(JsonView jsonValue) : 
-    m_messageHasBeenSet(false)
+BackupFailureDetails::BackupFailureDetails(JsonView jsonValue)
+  : BackupFailureDetails()
 {
   *this = jsonValue;
 }

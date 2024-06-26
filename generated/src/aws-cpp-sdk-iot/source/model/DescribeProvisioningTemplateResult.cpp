@@ -24,10 +24,8 @@ DescribeProvisioningTemplateResult::DescribeProvisioningTemplateResult() :
 {
 }
 
-DescribeProvisioningTemplateResult::DescribeProvisioningTemplateResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_defaultVersionId(0),
-    m_enabled(false),
-    m_type(TemplateType::NOT_SET)
+DescribeProvisioningTemplateResult::DescribeProvisioningTemplateResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeProvisioningTemplateResult()
 {
   *this = result;
 }

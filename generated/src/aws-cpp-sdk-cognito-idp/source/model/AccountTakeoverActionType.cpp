@@ -26,11 +26,8 @@ AccountTakeoverActionType::AccountTakeoverActionType() :
 {
 }
 
-AccountTakeoverActionType::AccountTakeoverActionType(JsonView jsonValue) : 
-    m_notify(false),
-    m_notifyHasBeenSet(false),
-    m_eventAction(AccountTakeoverEventActionType::NOT_SET),
-    m_eventActionHasBeenSet(false)
+AccountTakeoverActionType::AccountTakeoverActionType(JsonView jsonValue)
+  : AccountTakeoverActionType()
 {
   *this = jsonValue;
 }

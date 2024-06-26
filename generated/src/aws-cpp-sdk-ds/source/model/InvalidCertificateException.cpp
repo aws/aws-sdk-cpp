@@ -24,9 +24,8 @@ InvalidCertificateException::InvalidCertificateException() :
 {
 }
 
-InvalidCertificateException::InvalidCertificateException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
+InvalidCertificateException::InvalidCertificateException(JsonView jsonValue)
+  : InvalidCertificateException()
 {
   *this = jsonValue;
 }

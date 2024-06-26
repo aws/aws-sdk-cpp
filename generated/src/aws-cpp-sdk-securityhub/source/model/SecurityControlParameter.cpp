@@ -24,9 +24,8 @@ SecurityControlParameter::SecurityControlParameter() :
 {
 }
 
-SecurityControlParameter::SecurityControlParameter(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
+SecurityControlParameter::SecurityControlParameter(JsonView jsonValue)
+  : SecurityControlParameter()
 {
   *this = jsonValue;
 }

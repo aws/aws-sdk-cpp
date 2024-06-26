@@ -25,10 +25,8 @@ CertificateBasedAuthProperties::CertificateBasedAuthProperties() :
 {
 }
 
-CertificateBasedAuthProperties::CertificateBasedAuthProperties(JsonView jsonValue) : 
-    m_status(CertificateBasedAuthStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_certificateAuthorityArnHasBeenSet(false)
+CertificateBasedAuthProperties::CertificateBasedAuthProperties(JsonView jsonValue)
+  : CertificateBasedAuthProperties()
 {
   *this = jsonValue;
 }

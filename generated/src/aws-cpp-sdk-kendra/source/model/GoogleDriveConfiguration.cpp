@@ -29,14 +29,8 @@ GoogleDriveConfiguration::GoogleDriveConfiguration() :
 {
 }
 
-GoogleDriveConfiguration::GoogleDriveConfiguration(JsonView jsonValue) : 
-    m_secretArnHasBeenSet(false),
-    m_inclusionPatternsHasBeenSet(false),
-    m_exclusionPatternsHasBeenSet(false),
-    m_fieldMappingsHasBeenSet(false),
-    m_excludeMimeTypesHasBeenSet(false),
-    m_excludeUserAccountsHasBeenSet(false),
-    m_excludeSharedDrivesHasBeenSet(false)
+GoogleDriveConfiguration::GoogleDriveConfiguration(JsonView jsonValue)
+  : GoogleDriveConfiguration()
 {
   *this = jsonValue;
 }

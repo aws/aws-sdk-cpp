@@ -29,14 +29,8 @@ ReplicaSettingsUpdate::ReplicaSettingsUpdate() :
 {
 }
 
-ReplicaSettingsUpdate::ReplicaSettingsUpdate(JsonView jsonValue) : 
-    m_regionNameHasBeenSet(false),
-    m_replicaProvisionedReadCapacityUnits(0),
-    m_replicaProvisionedReadCapacityUnitsHasBeenSet(false),
-    m_replicaProvisionedReadCapacityAutoScalingSettingsUpdateHasBeenSet(false),
-    m_replicaGlobalSecondaryIndexSettingsUpdateHasBeenSet(false),
-    m_replicaTableClass(TableClass::NOT_SET),
-    m_replicaTableClassHasBeenSet(false)
+ReplicaSettingsUpdate::ReplicaSettingsUpdate(JsonView jsonValue)
+  : ReplicaSettingsUpdate()
 {
   *this = jsonValue;
 }

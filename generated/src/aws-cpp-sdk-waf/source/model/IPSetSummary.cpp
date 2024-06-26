@@ -24,9 +24,8 @@ IPSetSummary::IPSetSummary() :
 {
 }
 
-IPSetSummary::IPSetSummary(JsonView jsonValue) : 
-    m_iPSetIdHasBeenSet(false),
-    m_nameHasBeenSet(false)
+IPSetSummary::IPSetSummary(JsonView jsonValue)
+  : IPSetSummary()
 {
   *this = jsonValue;
 }

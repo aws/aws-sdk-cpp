@@ -27,12 +27,8 @@ AwsEc2VpcPeeringConnectionDetails::AwsEc2VpcPeeringConnectionDetails() :
 {
 }
 
-AwsEc2VpcPeeringConnectionDetails::AwsEc2VpcPeeringConnectionDetails(JsonView jsonValue) : 
-    m_accepterVpcInfoHasBeenSet(false),
-    m_expirationTimeHasBeenSet(false),
-    m_requesterVpcInfoHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_vpcPeeringConnectionIdHasBeenSet(false)
+AwsEc2VpcPeeringConnectionDetails::AwsEc2VpcPeeringConnectionDetails(JsonView jsonValue)
+  : AwsEc2VpcPeeringConnectionDetails()
 {
   *this = jsonValue;
 }

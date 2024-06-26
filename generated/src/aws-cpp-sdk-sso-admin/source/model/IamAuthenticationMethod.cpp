@@ -23,8 +23,8 @@ IamAuthenticationMethod::IamAuthenticationMethod() :
 {
 }
 
-IamAuthenticationMethod::IamAuthenticationMethod(JsonView jsonValue) : 
-    m_actorPolicyHasBeenSet(false)
+IamAuthenticationMethod::IamAuthenticationMethod(JsonView jsonValue)
+  : IamAuthenticationMethod()
 {
   *this = jsonValue;
 }

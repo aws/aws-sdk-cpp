@@ -26,11 +26,8 @@ ShotSegment::ShotSegment() :
 {
 }
 
-ShotSegment::ShotSegment(JsonView jsonValue) : 
-    m_index(0),
-    m_indexHasBeenSet(false),
-    m_confidence(0.0),
-    m_confidenceHasBeenSet(false)
+ShotSegment::ShotSegment(JsonView jsonValue)
+  : ShotSegment()
 {
   *this = jsonValue;
 }

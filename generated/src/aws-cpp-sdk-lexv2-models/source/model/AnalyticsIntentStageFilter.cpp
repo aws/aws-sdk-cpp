@@ -27,12 +27,8 @@ AnalyticsIntentStageFilter::AnalyticsIntentStageFilter() :
 {
 }
 
-AnalyticsIntentStageFilter::AnalyticsIntentStageFilter(JsonView jsonValue) : 
-    m_name(AnalyticsIntentStageFilterName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_operator(AnalyticsFilterOperator::NOT_SET),
-    m_operatorHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+AnalyticsIntentStageFilter::AnalyticsIntentStageFilter(JsonView jsonValue)
+  : AnalyticsIntentStageFilter()
 {
   *this = jsonValue;
 }

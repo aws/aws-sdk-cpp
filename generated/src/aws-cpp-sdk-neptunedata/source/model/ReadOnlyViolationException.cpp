@@ -25,10 +25,8 @@ ReadOnlyViolationException::ReadOnlyViolationException() :
 {
 }
 
-ReadOnlyViolationException::ReadOnlyViolationException(JsonView jsonValue) : 
-    m_detailedMessageHasBeenSet(false),
-    m_requestIdHasBeenSet(false),
-    m_codeHasBeenSet(false)
+ReadOnlyViolationException::ReadOnlyViolationException(JsonView jsonValue)
+  : ReadOnlyViolationException()
 {
   *this = jsonValue;
 }

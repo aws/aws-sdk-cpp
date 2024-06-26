@@ -26,11 +26,8 @@ RollingInterval::RollingInterval() :
 {
 }
 
-RollingInterval::RollingInterval(JsonView jsonValue) : 
-    m_durationUnit(DurationUnit::NOT_SET),
-    m_durationUnitHasBeenSet(false),
-    m_duration(0),
-    m_durationHasBeenSet(false)
+RollingInterval::RollingInterval(JsonView jsonValue)
+  : RollingInterval()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ SingleMeasureMapping::SingleMeasureMapping() :
 {
 }
 
-SingleMeasureMapping::SingleMeasureMapping(JsonView jsonValue) : 
-    m_measureValueHasBeenSet(false),
-    m_measureValueType(MeasureValueType::NOT_SET),
-    m_measureValueTypeHasBeenSet(false),
-    m_measureNameHasBeenSet(false)
+SingleMeasureMapping::SingleMeasureMapping(JsonView jsonValue)
+  : SingleMeasureMapping()
 {
   *this = jsonValue;
 }

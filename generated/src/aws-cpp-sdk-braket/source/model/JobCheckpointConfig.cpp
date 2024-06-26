@@ -24,9 +24,8 @@ JobCheckpointConfig::JobCheckpointConfig() :
 {
 }
 
-JobCheckpointConfig::JobCheckpointConfig(JsonView jsonValue) : 
-    m_localPathHasBeenSet(false),
-    m_s3UriHasBeenSet(false)
+JobCheckpointConfig::JobCheckpointConfig(JsonView jsonValue)
+  : JobCheckpointConfig()
 {
   *this = jsonValue;
 }

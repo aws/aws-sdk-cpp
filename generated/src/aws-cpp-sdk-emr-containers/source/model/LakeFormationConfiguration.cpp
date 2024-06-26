@@ -25,10 +25,8 @@ LakeFormationConfiguration::LakeFormationConfiguration() :
 {
 }
 
-LakeFormationConfiguration::LakeFormationConfiguration(JsonView jsonValue) : 
-    m_authorizedSessionTagValueHasBeenSet(false),
-    m_secureNamespaceInfoHasBeenSet(false),
-    m_queryEngineRoleArnHasBeenSet(false)
+LakeFormationConfiguration::LakeFormationConfiguration(JsonView jsonValue)
+  : LakeFormationConfiguration()
 {
   *this = jsonValue;
 }

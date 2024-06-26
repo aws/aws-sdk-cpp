@@ -26,11 +26,8 @@ DeleteVpcEndpointDetail::DeleteVpcEndpointDetail() :
 {
 }
 
-DeleteVpcEndpointDetail::DeleteVpcEndpointDetail(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_status(VpcEndpointStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+DeleteVpcEndpointDetail::DeleteVpcEndpointDetail(JsonView jsonValue)
+  : DeleteVpcEndpointDetail()
 {
   *this = jsonValue;
 }

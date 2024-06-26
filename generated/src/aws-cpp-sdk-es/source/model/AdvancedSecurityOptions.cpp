@@ -30,15 +30,8 @@ AdvancedSecurityOptions::AdvancedSecurityOptions() :
 {
 }
 
-AdvancedSecurityOptions::AdvancedSecurityOptions(JsonView jsonValue) : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_internalUserDatabaseEnabled(false),
-    m_internalUserDatabaseEnabledHasBeenSet(false),
-    m_sAMLOptionsHasBeenSet(false),
-    m_anonymousAuthDisableDateHasBeenSet(false),
-    m_anonymousAuthEnabled(false),
-    m_anonymousAuthEnabledHasBeenSet(false)
+AdvancedSecurityOptions::AdvancedSecurityOptions(JsonView jsonValue)
+  : AdvancedSecurityOptions()
 {
   *this = jsonValue;
 }

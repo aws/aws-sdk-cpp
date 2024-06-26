@@ -27,12 +27,8 @@ SymbolicLink::SymbolicLink() :
 {
 }
 
-SymbolicLink::SymbolicLink(JsonView jsonValue) : 
-    m_blobIdHasBeenSet(false),
-    m_absolutePathHasBeenSet(false),
-    m_relativePathHasBeenSet(false),
-    m_fileMode(FileModeTypeEnum::NOT_SET),
-    m_fileModeHasBeenSet(false)
+SymbolicLink::SymbolicLink(JsonView jsonValue)
+  : SymbolicLink()
 {
   *this = jsonValue;
 }

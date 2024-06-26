@@ -34,19 +34,8 @@ BoxPlotChartConfiguration::BoxPlotChartConfiguration() :
 {
 }
 
-BoxPlotChartConfiguration::BoxPlotChartConfiguration(JsonView jsonValue) : 
-    m_fieldWellsHasBeenSet(false),
-    m_sortConfigurationHasBeenSet(false),
-    m_boxPlotOptionsHasBeenSet(false),
-    m_categoryAxisHasBeenSet(false),
-    m_categoryLabelOptionsHasBeenSet(false),
-    m_primaryYAxisDisplayOptionsHasBeenSet(false),
-    m_primaryYAxisLabelOptionsHasBeenSet(false),
-    m_legendHasBeenSet(false),
-    m_tooltipHasBeenSet(false),
-    m_referenceLinesHasBeenSet(false),
-    m_visualPaletteHasBeenSet(false),
-    m_interactionsHasBeenSet(false)
+BoxPlotChartConfiguration::BoxPlotChartConfiguration(JsonView jsonValue)
+  : BoxPlotChartConfiguration()
 {
   *this = jsonValue;
 }

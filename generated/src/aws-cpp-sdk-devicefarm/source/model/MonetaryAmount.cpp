@@ -26,11 +26,8 @@ MonetaryAmount::MonetaryAmount() :
 {
 }
 
-MonetaryAmount::MonetaryAmount(JsonView jsonValue) : 
-    m_amount(0.0),
-    m_amountHasBeenSet(false),
-    m_currencyCode(CurrencyCode::NOT_SET),
-    m_currencyCodeHasBeenSet(false)
+MonetaryAmount::MonetaryAmount(JsonView jsonValue)
+  : MonetaryAmount()
 {
   *this = jsonValue;
 }

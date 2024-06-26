@@ -27,12 +27,8 @@ ResourceDetail::ResourceDetail() :
 {
 }
 
-ResourceDetail::ResourceDetail(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_aRNHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_createdTimeHasBeenSet(false)
+ResourceDetail::ResourceDetail(JsonView jsonValue)
+  : ResourceDetail()
 {
   *this = jsonValue;
 }

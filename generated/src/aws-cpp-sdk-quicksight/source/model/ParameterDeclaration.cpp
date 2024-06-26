@@ -26,11 +26,8 @@ ParameterDeclaration::ParameterDeclaration() :
 {
 }
 
-ParameterDeclaration::ParameterDeclaration(JsonView jsonValue) : 
-    m_stringParameterDeclarationHasBeenSet(false),
-    m_decimalParameterDeclarationHasBeenSet(false),
-    m_integerParameterDeclarationHasBeenSet(false),
-    m_dateTimeParameterDeclarationHasBeenSet(false)
+ParameterDeclaration::ParameterDeclaration(JsonView jsonValue)
+  : ParameterDeclaration()
 {
   *this = jsonValue;
 }

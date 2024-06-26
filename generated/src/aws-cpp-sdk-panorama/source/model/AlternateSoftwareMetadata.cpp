@@ -23,8 +23,8 @@ AlternateSoftwareMetadata::AlternateSoftwareMetadata() :
 {
 }
 
-AlternateSoftwareMetadata::AlternateSoftwareMetadata(JsonView jsonValue) : 
-    m_versionHasBeenSet(false)
+AlternateSoftwareMetadata::AlternateSoftwareMetadata(JsonView jsonValue)
+  : AlternateSoftwareMetadata()
 {
   *this = jsonValue;
 }

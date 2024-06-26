@@ -23,8 +23,8 @@ ScheduledJobRollout::ScheduledJobRollout() :
 {
 }
 
-ScheduledJobRollout::ScheduledJobRollout(JsonView jsonValue) : 
-    m_startTimeHasBeenSet(false)
+ScheduledJobRollout::ScheduledJobRollout(JsonView jsonValue)
+  : ScheduledJobRollout()
 {
   *this = jsonValue;
 }

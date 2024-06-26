@@ -27,12 +27,8 @@ RuleGroupSummary::RuleGroupSummary() :
 {
 }
 
-RuleGroupSummary::RuleGroupSummary(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_lockTokenHasBeenSet(false),
-    m_aRNHasBeenSet(false)
+RuleGroupSummary::RuleGroupSummary(JsonView jsonValue)
+  : RuleGroupSummary()
 {
   *this = jsonValue;
 }

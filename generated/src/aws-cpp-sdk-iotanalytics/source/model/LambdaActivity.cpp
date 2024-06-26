@@ -27,12 +27,8 @@ LambdaActivity::LambdaActivity() :
 {
 }
 
-LambdaActivity::LambdaActivity(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_lambdaNameHasBeenSet(false),
-    m_batchSize(0),
-    m_batchSizeHasBeenSet(false),
-    m_nextHasBeenSet(false)
+LambdaActivity::LambdaActivity(JsonView jsonValue)
+  : LambdaActivity()
 {
   *this = jsonValue;
 }

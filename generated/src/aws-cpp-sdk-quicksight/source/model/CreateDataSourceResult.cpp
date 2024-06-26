@@ -23,9 +23,8 @@ CreateDataSourceResult::CreateDataSourceResult() :
 {
 }
 
-CreateDataSourceResult::CreateDataSourceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_creationStatus(ResourceStatus::NOT_SET),
-    m_status(0)
+CreateDataSourceResult::CreateDataSourceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateDataSourceResult()
 {
   *this = result;
 }

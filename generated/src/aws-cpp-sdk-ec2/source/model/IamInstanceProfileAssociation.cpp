@@ -30,13 +30,8 @@ IamInstanceProfileAssociation::IamInstanceProfileAssociation() :
 {
 }
 
-IamInstanceProfileAssociation::IamInstanceProfileAssociation(const XmlNode& xmlNode) : 
-    m_associationIdHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_iamInstanceProfileHasBeenSet(false),
-    m_state(IamInstanceProfileAssociationState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_timestampHasBeenSet(false)
+IamInstanceProfileAssociation::IamInstanceProfileAssociation(const XmlNode& xmlNode)
+  : IamInstanceProfileAssociation()
 {
   *this = xmlNode;
 }

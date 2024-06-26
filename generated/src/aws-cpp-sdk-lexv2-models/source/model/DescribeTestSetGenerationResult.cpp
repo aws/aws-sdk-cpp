@@ -22,8 +22,8 @@ DescribeTestSetGenerationResult::DescribeTestSetGenerationResult() :
 {
 }
 
-DescribeTestSetGenerationResult::DescribeTestSetGenerationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_testSetGenerationStatus(TestSetGenerationStatus::NOT_SET)
+DescribeTestSetGenerationResult::DescribeTestSetGenerationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeTestSetGenerationResult()
 {
   *this = result;
 }

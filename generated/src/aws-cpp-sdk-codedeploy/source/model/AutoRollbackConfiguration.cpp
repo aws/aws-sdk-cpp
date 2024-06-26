@@ -25,10 +25,8 @@ AutoRollbackConfiguration::AutoRollbackConfiguration() :
 {
 }
 
-AutoRollbackConfiguration::AutoRollbackConfiguration(JsonView jsonValue) : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_eventsHasBeenSet(false)
+AutoRollbackConfiguration::AutoRollbackConfiguration(JsonView jsonValue)
+  : AutoRollbackConfiguration()
 {
   *this = jsonValue;
 }

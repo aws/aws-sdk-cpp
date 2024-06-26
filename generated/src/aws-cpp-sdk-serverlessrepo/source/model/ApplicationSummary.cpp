@@ -30,15 +30,8 @@ ApplicationSummary::ApplicationSummary() :
 {
 }
 
-ApplicationSummary::ApplicationSummary(JsonView jsonValue) : 
-    m_applicationIdHasBeenSet(false),
-    m_authorHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_homePageUrlHasBeenSet(false),
-    m_labelsHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_spdxLicenseIdHasBeenSet(false)
+ApplicationSummary::ApplicationSummary(JsonView jsonValue)
+  : ApplicationSummary()
 {
   *this = jsonValue;
 }

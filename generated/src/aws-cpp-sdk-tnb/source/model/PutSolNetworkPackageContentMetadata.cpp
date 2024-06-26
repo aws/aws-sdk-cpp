@@ -23,8 +23,8 @@ PutSolNetworkPackageContentMetadata::PutSolNetworkPackageContentMetadata() :
 {
 }
 
-PutSolNetworkPackageContentMetadata::PutSolNetworkPackageContentMetadata(JsonView jsonValue) : 
-    m_nsdHasBeenSet(false)
+PutSolNetworkPackageContentMetadata::PutSolNetworkPackageContentMetadata(JsonView jsonValue)
+  : PutSolNetworkPackageContentMetadata()
 {
   *this = jsonValue;
 }

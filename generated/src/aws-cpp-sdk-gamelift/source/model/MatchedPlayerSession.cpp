@@ -24,9 +24,8 @@ MatchedPlayerSession::MatchedPlayerSession() :
 {
 }
 
-MatchedPlayerSession::MatchedPlayerSession(JsonView jsonValue) : 
-    m_playerIdHasBeenSet(false),
-    m_playerSessionIdHasBeenSet(false)
+MatchedPlayerSession::MatchedPlayerSession(JsonView jsonValue)
+  : MatchedPlayerSession()
 {
   *this = jsonValue;
 }

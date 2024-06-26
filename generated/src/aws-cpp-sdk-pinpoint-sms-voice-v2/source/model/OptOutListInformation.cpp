@@ -25,10 +25,8 @@ OptOutListInformation::OptOutListInformation() :
 {
 }
 
-OptOutListInformation::OptOutListInformation(JsonView jsonValue) : 
-    m_optOutListArnHasBeenSet(false),
-    m_optOutListNameHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false)
+OptOutListInformation::OptOutListInformation(JsonView jsonValue)
+  : OptOutListInformation()
 {
   *this = jsonValue;
 }

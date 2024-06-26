@@ -29,12 +29,8 @@ ImportInstanceTaskDetails::ImportInstanceTaskDetails() :
 {
 }
 
-ImportInstanceTaskDetails::ImportInstanceTaskDetails(const XmlNode& xmlNode) : 
-    m_descriptionHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_platform(PlatformValues::NOT_SET),
-    m_platformHasBeenSet(false),
-    m_volumesHasBeenSet(false)
+ImportInstanceTaskDetails::ImportInstanceTaskDetails(const XmlNode& xmlNode)
+  : ImportInstanceTaskDetails()
 {
   *this = xmlNode;
 }

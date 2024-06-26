@@ -24,9 +24,8 @@ NewDeviceMetadataType::NewDeviceMetadataType() :
 {
 }
 
-NewDeviceMetadataType::NewDeviceMetadataType(JsonView jsonValue) : 
-    m_deviceKeyHasBeenSet(false),
-    m_deviceGroupKeyHasBeenSet(false)
+NewDeviceMetadataType::NewDeviceMetadataType(JsonView jsonValue)
+  : NewDeviceMetadataType()
 {
   *this = jsonValue;
 }

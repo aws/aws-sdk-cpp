@@ -32,17 +32,8 @@ StreamingSessionStream::StreamingSessionStream() :
 {
 }
 
-StreamingSessionStream::StreamingSessionStream(JsonView jsonValue) : 
-    m_createdAtHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_expiresAtHasBeenSet(false),
-    m_ownedByHasBeenSet(false),
-    m_state(StreamingSessionStreamState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_statusCode(StreamingSessionStreamStatusCode::NOT_SET),
-    m_statusCodeHasBeenSet(false),
-    m_streamIdHasBeenSet(false),
-    m_urlHasBeenSet(false)
+StreamingSessionStream::StreamingSessionStream(JsonView jsonValue)
+  : StreamingSessionStream()
 {
   *this = jsonValue;
 }

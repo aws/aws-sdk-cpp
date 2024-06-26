@@ -29,14 +29,8 @@ InstanceStorageConfig::InstanceStorageConfig() :
 {
 }
 
-InstanceStorageConfig::InstanceStorageConfig(JsonView jsonValue) : 
-    m_associationIdHasBeenSet(false),
-    m_storageType(StorageType::NOT_SET),
-    m_storageTypeHasBeenSet(false),
-    m_s3ConfigHasBeenSet(false),
-    m_kinesisVideoStreamConfigHasBeenSet(false),
-    m_kinesisStreamConfigHasBeenSet(false),
-    m_kinesisFirehoseConfigHasBeenSet(false)
+InstanceStorageConfig::InstanceStorageConfig(JsonView jsonValue)
+  : InstanceStorageConfig()
 {
   *this = jsonValue;
 }

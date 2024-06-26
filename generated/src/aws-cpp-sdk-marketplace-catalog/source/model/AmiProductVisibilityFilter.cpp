@@ -23,8 +23,8 @@ AmiProductVisibilityFilter::AmiProductVisibilityFilter() :
 {
 }
 
-AmiProductVisibilityFilter::AmiProductVisibilityFilter(JsonView jsonValue) : 
-    m_valueListHasBeenSet(false)
+AmiProductVisibilityFilter::AmiProductVisibilityFilter(JsonView jsonValue)
+  : AmiProductVisibilityFilter()
 {
   *this = jsonValue;
 }

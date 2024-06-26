@@ -32,15 +32,8 @@ GlobalClusterMember::GlobalClusterMember() :
 {
 }
 
-GlobalClusterMember::GlobalClusterMember(const XmlNode& xmlNode) : 
-    m_dBClusterArnHasBeenSet(false),
-    m_readersHasBeenSet(false),
-    m_isWriter(false),
-    m_isWriterHasBeenSet(false),
-    m_globalWriteForwardingStatus(WriteForwardingStatus::NOT_SET),
-    m_globalWriteForwardingStatusHasBeenSet(false),
-    m_synchronizationStatus(GlobalClusterMemberSynchronizationStatus::NOT_SET),
-    m_synchronizationStatusHasBeenSet(false)
+GlobalClusterMember::GlobalClusterMember(const XmlNode& xmlNode)
+  : GlobalClusterMember()
 {
   *this = xmlNode;
 }

@@ -36,21 +36,8 @@ Stack::Stack() :
 {
 }
 
-Stack::Stack(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_storageConnectorsHasBeenSet(false),
-    m_redirectURLHasBeenSet(false),
-    m_feedbackURLHasBeenSet(false),
-    m_stackErrorsHasBeenSet(false),
-    m_userSettingsHasBeenSet(false),
-    m_applicationSettingsHasBeenSet(false),
-    m_accessEndpointsHasBeenSet(false),
-    m_embedHostDomainsHasBeenSet(false),
-    m_streamingExperienceSettingsHasBeenSet(false)
+Stack::Stack(JsonView jsonValue)
+  : Stack()
 {
   *this = jsonValue;
 }

@@ -35,20 +35,8 @@ ProvisionedRequest::ProvisionedRequest() :
 {
 }
 
-ProvisionedRequest::ProvisionedRequest(JsonView jsonValue) : 
-    m_brokerNodeGroupInfoHasBeenSet(false),
-    m_clientAuthenticationHasBeenSet(false),
-    m_configurationInfoHasBeenSet(false),
-    m_encryptionInfoHasBeenSet(false),
-    m_enhancedMonitoring(EnhancedMonitoring::NOT_SET),
-    m_enhancedMonitoringHasBeenSet(false),
-    m_openMonitoringHasBeenSet(false),
-    m_kafkaVersionHasBeenSet(false),
-    m_loggingInfoHasBeenSet(false),
-    m_numberOfBrokerNodes(0),
-    m_numberOfBrokerNodesHasBeenSet(false),
-    m_storageMode(StorageMode::NOT_SET),
-    m_storageModeHasBeenSet(false)
+ProvisionedRequest::ProvisionedRequest(JsonView jsonValue)
+  : ProvisionedRequest()
 {
   *this = jsonValue;
 }

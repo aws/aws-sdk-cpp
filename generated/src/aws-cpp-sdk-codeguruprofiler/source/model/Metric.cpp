@@ -26,11 +26,8 @@ Metric::Metric() :
 {
 }
 
-Metric::Metric(JsonView jsonValue) : 
-    m_frameNameHasBeenSet(false),
-    m_threadStatesHasBeenSet(false),
-    m_type(MetricType::NOT_SET),
-    m_typeHasBeenSet(false)
+Metric::Metric(JsonView jsonValue)
+  : Metric()
 {
   *this = jsonValue;
 }

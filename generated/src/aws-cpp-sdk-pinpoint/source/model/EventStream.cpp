@@ -28,13 +28,8 @@ EventStream::EventStream() :
 {
 }
 
-EventStream::EventStream(JsonView jsonValue) : 
-    m_applicationIdHasBeenSet(false),
-    m_destinationStreamArnHasBeenSet(false),
-    m_externalIdHasBeenSet(false),
-    m_lastModifiedDateHasBeenSet(false),
-    m_lastUpdatedByHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
+EventStream::EventStream(JsonView jsonValue)
+  : EventStream()
 {
   *this = jsonValue;
 }

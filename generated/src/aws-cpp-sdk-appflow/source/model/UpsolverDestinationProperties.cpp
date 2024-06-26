@@ -25,10 +25,8 @@ UpsolverDestinationProperties::UpsolverDestinationProperties() :
 {
 }
 
-UpsolverDestinationProperties::UpsolverDestinationProperties(JsonView jsonValue) : 
-    m_bucketNameHasBeenSet(false),
-    m_bucketPrefixHasBeenSet(false),
-    m_s3OutputFormatConfigHasBeenSet(false)
+UpsolverDestinationProperties::UpsolverDestinationProperties(JsonView jsonValue)
+  : UpsolverDestinationProperties()
 {
   *this = jsonValue;
 }

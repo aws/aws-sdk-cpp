@@ -24,9 +24,8 @@ InputStartingPositionConfiguration::InputStartingPositionConfiguration() :
 {
 }
 
-InputStartingPositionConfiguration::InputStartingPositionConfiguration(JsonView jsonValue) : 
-    m_inputStartingPosition(InputStartingPosition::NOT_SET),
-    m_inputStartingPositionHasBeenSet(false)
+InputStartingPositionConfiguration::InputStartingPositionConfiguration(JsonView jsonValue)
+  : InputStartingPositionConfiguration()
 {
   *this = jsonValue;
 }

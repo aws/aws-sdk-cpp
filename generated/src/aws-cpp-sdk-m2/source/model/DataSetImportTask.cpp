@@ -27,12 +27,8 @@ DataSetImportTask::DataSetImportTask() :
 {
 }
 
-DataSetImportTask::DataSetImportTask(JsonView jsonValue) : 
-    m_status(DataSetTaskLifecycle::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusReasonHasBeenSet(false),
-    m_summaryHasBeenSet(false),
-    m_taskIdHasBeenSet(false)
+DataSetImportTask::DataSetImportTask(JsonView jsonValue)
+  : DataSetImportTask()
 {
   *this = jsonValue;
 }

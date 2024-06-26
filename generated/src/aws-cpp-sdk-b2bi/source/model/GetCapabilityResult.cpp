@@ -22,8 +22,8 @@ GetCapabilityResult::GetCapabilityResult() :
 {
 }
 
-GetCapabilityResult::GetCapabilityResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_type(CapabilityType::NOT_SET)
+GetCapabilityResult::GetCapabilityResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetCapabilityResult()
 {
   *this = result;
 }

@@ -25,10 +25,8 @@ InboundConnectionStatus::InboundConnectionStatus() :
 {
 }
 
-InboundConnectionStatus::InboundConnectionStatus(JsonView jsonValue) : 
-    m_statusCode(InboundConnectionStatusCode::NOT_SET),
-    m_statusCodeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+InboundConnectionStatus::InboundConnectionStatus(JsonView jsonValue)
+  : InboundConnectionStatus()
 {
   *this = jsonValue;
 }

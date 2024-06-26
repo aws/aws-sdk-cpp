@@ -27,12 +27,8 @@ AccountEnrollmentStatus::AccountEnrollmentStatus() :
 {
 }
 
-AccountEnrollmentStatus::AccountEnrollmentStatus(JsonView jsonValue) : 
-    m_accountIdHasBeenSet(false),
-    m_status(EnrollmentStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_lastUpdatedTimestampHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false)
+AccountEnrollmentStatus::AccountEnrollmentStatus(JsonView jsonValue)
+  : AccountEnrollmentStatus()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ WebvttDestinationSettings::WebvttDestinationSettings() :
 {
 }
 
-WebvttDestinationSettings::WebvttDestinationSettings(JsonView jsonValue) : 
-    m_accessibility(WebvttAccessibilitySubs::NOT_SET),
-    m_accessibilityHasBeenSet(false),
-    m_stylePassthrough(WebvttStylePassthrough::NOT_SET),
-    m_stylePassthroughHasBeenSet(false)
+WebvttDestinationSettings::WebvttDestinationSettings(JsonView jsonValue)
+  : WebvttDestinationSettings()
 {
   *this = jsonValue;
 }

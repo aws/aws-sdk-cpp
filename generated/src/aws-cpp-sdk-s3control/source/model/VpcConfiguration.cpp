@@ -25,8 +25,8 @@ VpcConfiguration::VpcConfiguration() :
 {
 }
 
-VpcConfiguration::VpcConfiguration(const XmlNode& xmlNode) : 
-    m_vpcIdHasBeenSet(false)
+VpcConfiguration::VpcConfiguration(const XmlNode& xmlNode)
+  : VpcConfiguration()
 {
   *this = xmlNode;
 }

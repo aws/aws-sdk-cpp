@@ -26,11 +26,8 @@ RedactionConfig::RedactionConfig() :
 {
 }
 
-RedactionConfig::RedactionConfig(JsonView jsonValue) : 
-    m_piiEntityTypesHasBeenSet(false),
-    m_maskMode(PiiEntitiesDetectionMaskMode::NOT_SET),
-    m_maskModeHasBeenSet(false),
-    m_maskCharacterHasBeenSet(false)
+RedactionConfig::RedactionConfig(JsonView jsonValue)
+  : RedactionConfig()
 {
   *this = jsonValue;
 }

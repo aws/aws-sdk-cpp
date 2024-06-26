@@ -24,9 +24,8 @@ StreamProcessorDataSharingPreference::StreamProcessorDataSharingPreference() :
 {
 }
 
-StreamProcessorDataSharingPreference::StreamProcessorDataSharingPreference(JsonView jsonValue) : 
-    m_optIn(false),
-    m_optInHasBeenSet(false)
+StreamProcessorDataSharingPreference::StreamProcessorDataSharingPreference(JsonView jsonValue)
+  : StreamProcessorDataSharingPreference()
 {
   *this = jsonValue;
 }

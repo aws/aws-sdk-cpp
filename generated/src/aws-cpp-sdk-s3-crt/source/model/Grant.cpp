@@ -27,10 +27,8 @@ Grant::Grant() :
 {
 }
 
-Grant::Grant(const XmlNode& xmlNode) : 
-    m_granteeHasBeenSet(false),
-    m_permission(Permission::NOT_SET),
-    m_permissionHasBeenSet(false)
+Grant::Grant(const XmlNode& xmlNode)
+  : Grant()
 {
   *this = xmlNode;
 }

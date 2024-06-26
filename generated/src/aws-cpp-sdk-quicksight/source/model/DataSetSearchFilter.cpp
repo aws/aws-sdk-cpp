@@ -27,12 +27,8 @@ DataSetSearchFilter::DataSetSearchFilter() :
 {
 }
 
-DataSetSearchFilter::DataSetSearchFilter(JsonView jsonValue) : 
-    m_operator(FilterOperator::NOT_SET),
-    m_operatorHasBeenSet(false),
-    m_name(DataSetFilterAttribute::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
+DataSetSearchFilter::DataSetSearchFilter(JsonView jsonValue)
+  : DataSetSearchFilter()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ ProviderIntermediateDataAccessConfiguration::ProviderIntermediateDataAccessConfi
 {
 }
 
-ProviderIntermediateDataAccessConfiguration::ProviderIntermediateDataAccessConfiguration(JsonView jsonValue) : 
-    m_awsAccountIdsHasBeenSet(false),
-    m_requiredBucketActionsHasBeenSet(false)
+ProviderIntermediateDataAccessConfiguration::ProviderIntermediateDataAccessConfiguration(JsonView jsonValue)
+  : ProviderIntermediateDataAccessConfiguration()
 {
   *this = jsonValue;
 }

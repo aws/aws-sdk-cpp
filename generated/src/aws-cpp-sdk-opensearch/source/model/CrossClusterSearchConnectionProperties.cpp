@@ -24,9 +24,8 @@ CrossClusterSearchConnectionProperties::CrossClusterSearchConnectionProperties()
 {
 }
 
-CrossClusterSearchConnectionProperties::CrossClusterSearchConnectionProperties(JsonView jsonValue) : 
-    m_skipUnavailable(SkipUnavailableStatus::NOT_SET),
-    m_skipUnavailableHasBeenSet(false)
+CrossClusterSearchConnectionProperties::CrossClusterSearchConnectionProperties(JsonView jsonValue)
+  : CrossClusterSearchConnectionProperties()
 {
   *this = jsonValue;
 }

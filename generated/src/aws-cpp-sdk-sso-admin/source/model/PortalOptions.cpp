@@ -25,10 +25,8 @@ PortalOptions::PortalOptions() :
 {
 }
 
-PortalOptions::PortalOptions(JsonView jsonValue) : 
-    m_signInOptionsHasBeenSet(false),
-    m_visibility(ApplicationVisibility::NOT_SET),
-    m_visibilityHasBeenSet(false)
+PortalOptions::PortalOptions(JsonView jsonValue)
+  : PortalOptions()
 {
   *this = jsonValue;
 }

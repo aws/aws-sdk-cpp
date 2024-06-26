@@ -26,11 +26,8 @@ NaturalLanguageQueryGenerationOptionsOutput::NaturalLanguageQueryGenerationOptio
 {
 }
 
-NaturalLanguageQueryGenerationOptionsOutput::NaturalLanguageQueryGenerationOptionsOutput(JsonView jsonValue) : 
-    m_desiredState(NaturalLanguageQueryGenerationDesiredState::NOT_SET),
-    m_desiredStateHasBeenSet(false),
-    m_currentState(NaturalLanguageQueryGenerationCurrentState::NOT_SET),
-    m_currentStateHasBeenSet(false)
+NaturalLanguageQueryGenerationOptionsOutput::NaturalLanguageQueryGenerationOptionsOutput(JsonView jsonValue)
+  : NaturalLanguageQueryGenerationOptionsOutput()
 {
   *this = jsonValue;
 }

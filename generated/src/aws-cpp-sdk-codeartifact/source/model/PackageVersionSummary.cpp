@@ -27,12 +27,8 @@ PackageVersionSummary::PackageVersionSummary() :
 {
 }
 
-PackageVersionSummary::PackageVersionSummary(JsonView jsonValue) : 
-    m_versionHasBeenSet(false),
-    m_revisionHasBeenSet(false),
-    m_status(PackageVersionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_originHasBeenSet(false)
+PackageVersionSummary::PackageVersionSummary(JsonView jsonValue)
+  : PackageVersionSummary()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ Warning::Warning() :
 {
 }
 
-Warning::Warning(JsonView jsonValue) : 
-    m_errorCodeHasBeenSet(false),
-    m_pagesHasBeenSet(false)
+Warning::Warning(JsonView jsonValue)
+  : Warning()
 {
   *this = jsonValue;
 }

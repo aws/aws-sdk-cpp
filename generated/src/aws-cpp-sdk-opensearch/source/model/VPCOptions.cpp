@@ -24,9 +24,8 @@ VPCOptions::VPCOptions() :
 {
 }
 
-VPCOptions::VPCOptions(JsonView jsonValue) : 
-    m_subnetIdsHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false)
+VPCOptions::VPCOptions(JsonView jsonValue)
+  : VPCOptions()
 {
   *this = jsonValue;
 }

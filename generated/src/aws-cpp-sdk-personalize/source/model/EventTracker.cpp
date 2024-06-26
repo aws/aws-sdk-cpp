@@ -30,15 +30,8 @@ EventTracker::EventTracker() :
 {
 }
 
-EventTracker::EventTracker(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_eventTrackerArnHasBeenSet(false),
-    m_accountIdHasBeenSet(false),
-    m_trackingIdHasBeenSet(false),
-    m_datasetGroupArnHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_creationDateTimeHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false)
+EventTracker::EventTracker(JsonView jsonValue)
+  : EventTracker()
 {
   *this = jsonValue;
 }

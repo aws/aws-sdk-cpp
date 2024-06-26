@@ -26,11 +26,8 @@ BasicCatalogTarget::BasicCatalogTarget() :
 {
 }
 
-BasicCatalogTarget::BasicCatalogTarget(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_inputsHasBeenSet(false),
-    m_databaseHasBeenSet(false),
-    m_tableHasBeenSet(false)
+BasicCatalogTarget::BasicCatalogTarget(JsonView jsonValue)
+  : BasicCatalogTarget()
 {
   *this = jsonValue;
 }

@@ -30,15 +30,8 @@ TemplateVersionDefinition::TemplateVersionDefinition() :
 {
 }
 
-TemplateVersionDefinition::TemplateVersionDefinition(JsonView jsonValue) : 
-    m_dataSetConfigurationsHasBeenSet(false),
-    m_sheetsHasBeenSet(false),
-    m_calculatedFieldsHasBeenSet(false),
-    m_parameterDeclarationsHasBeenSet(false),
-    m_filterGroupsHasBeenSet(false),
-    m_columnConfigurationsHasBeenSet(false),
-    m_analysisDefaultsHasBeenSet(false),
-    m_optionsHasBeenSet(false)
+TemplateVersionDefinition::TemplateVersionDefinition(JsonView jsonValue)
+  : TemplateVersionDefinition()
 {
   *this = jsonValue;
 }

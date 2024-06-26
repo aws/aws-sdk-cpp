@@ -22,8 +22,8 @@ GetAnswerResult::GetAnswerResult() :
 {
 }
 
-GetAnswerResult::GetAnswerResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_milestoneNumber(0)
+GetAnswerResult::GetAnswerResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetAnswerResult()
 {
   *this = result;
 }

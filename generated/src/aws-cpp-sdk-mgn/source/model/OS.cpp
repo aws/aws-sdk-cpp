@@ -23,8 +23,8 @@ OS::OS() :
 {
 }
 
-OS::OS(JsonView jsonValue) : 
-    m_fullStringHasBeenSet(false)
+OS::OS(JsonView jsonValue)
+  : OS()
 {
   *this = jsonValue;
 }

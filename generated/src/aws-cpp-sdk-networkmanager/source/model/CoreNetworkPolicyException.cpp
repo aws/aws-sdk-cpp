@@ -24,9 +24,8 @@ CoreNetworkPolicyException::CoreNetworkPolicyException() :
 {
 }
 
-CoreNetworkPolicyException::CoreNetworkPolicyException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_errorsHasBeenSet(false)
+CoreNetworkPolicyException::CoreNetworkPolicyException(JsonView jsonValue)
+  : CoreNetworkPolicyException()
 {
   *this = jsonValue;
 }

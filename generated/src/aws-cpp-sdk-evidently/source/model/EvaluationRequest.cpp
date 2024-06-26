@@ -25,10 +25,8 @@ EvaluationRequest::EvaluationRequest() :
 {
 }
 
-EvaluationRequest::EvaluationRequest(JsonView jsonValue) : 
-    m_entityIdHasBeenSet(false),
-    m_evaluationContextHasBeenSet(false),
-    m_featureHasBeenSet(false)
+EvaluationRequest::EvaluationRequest(JsonView jsonValue)
+  : EvaluationRequest()
 {
   *this = jsonValue;
 }

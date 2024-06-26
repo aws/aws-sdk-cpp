@@ -26,11 +26,8 @@ VersioningConfiguration::VersioningConfiguration() :
 {
 }
 
-VersioningConfiguration::VersioningConfiguration(JsonView jsonValue) : 
-    m_unlimited(false),
-    m_unlimitedHasBeenSet(false),
-    m_maxVersions(0),
-    m_maxVersionsHasBeenSet(false)
+VersioningConfiguration::VersioningConfiguration(JsonView jsonValue)
+  : VersioningConfiguration()
 {
   *this = jsonValue;
 }

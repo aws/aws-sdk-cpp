@@ -24,9 +24,8 @@ ManagedStorageConfiguration::ManagedStorageConfiguration() :
 {
 }
 
-ManagedStorageConfiguration::ManagedStorageConfiguration(JsonView jsonValue) : 
-    m_kmsKeyIdHasBeenSet(false),
-    m_fargateEphemeralStorageKmsKeyIdHasBeenSet(false)
+ManagedStorageConfiguration::ManagedStorageConfiguration(JsonView jsonValue)
+  : ManagedStorageConfiguration()
 {
   *this = jsonValue;
 }

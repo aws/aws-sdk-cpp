@@ -23,8 +23,8 @@ AbortTransactionResult::AbortTransactionResult() :
 {
 }
 
-AbortTransactionResult::AbortTransactionResult(JsonView jsonValue) : 
-    m_timingInformationHasBeenSet(false)
+AbortTransactionResult::AbortTransactionResult(JsonView jsonValue)
+  : AbortTransactionResult()
 {
   *this = jsonValue;
 }

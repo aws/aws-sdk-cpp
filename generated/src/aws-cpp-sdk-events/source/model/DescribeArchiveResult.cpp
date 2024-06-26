@@ -25,11 +25,8 @@ DescribeArchiveResult::DescribeArchiveResult() :
 {
 }
 
-DescribeArchiveResult::DescribeArchiveResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_state(ArchiveState::NOT_SET),
-    m_retentionDays(0),
-    m_sizeBytes(0),
-    m_eventCount(0)
+DescribeArchiveResult::DescribeArchiveResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeArchiveResult()
 {
   *this = result;
 }

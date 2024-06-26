@@ -32,17 +32,8 @@ AssociationSummary::AssociationSummary() :
 {
 }
 
-AssociationSummary::AssociationSummary(JsonView jsonValue) : 
-    m_sourceArnHasBeenSet(false),
-    m_destinationArnHasBeenSet(false),
-    m_sourceTypeHasBeenSet(false),
-    m_destinationTypeHasBeenSet(false),
-    m_associationType(AssociationEdgeType::NOT_SET),
-    m_associationTypeHasBeenSet(false),
-    m_sourceNameHasBeenSet(false),
-    m_destinationNameHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_createdByHasBeenSet(false)
+AssociationSummary::AssociationSummary(JsonView jsonValue)
+  : AssociationSummary()
 {
   *this = jsonValue;
 }

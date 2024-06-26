@@ -26,9 +26,8 @@ ElasticGpuHealth::ElasticGpuHealth() :
 {
 }
 
-ElasticGpuHealth::ElasticGpuHealth(const XmlNode& xmlNode) : 
-    m_status(ElasticGpuStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+ElasticGpuHealth::ElasticGpuHealth(const XmlNode& xmlNode)
+  : ElasticGpuHealth()
 {
   *this = xmlNode;
 }

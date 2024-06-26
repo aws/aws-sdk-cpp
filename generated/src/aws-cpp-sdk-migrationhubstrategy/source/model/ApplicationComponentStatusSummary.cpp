@@ -26,11 +26,8 @@ ApplicationComponentStatusSummary::ApplicationComponentStatusSummary() :
 {
 }
 
-ApplicationComponentStatusSummary::ApplicationComponentStatusSummary(JsonView jsonValue) : 
-    m_count(0),
-    m_countHasBeenSet(false),
-    m_srcCodeOrDbAnalysisStatus(SrcCodeOrDbAnalysisStatus::NOT_SET),
-    m_srcCodeOrDbAnalysisStatusHasBeenSet(false)
+ApplicationComponentStatusSummary::ApplicationComponentStatusSummary(JsonView jsonValue)
+  : ApplicationComponentStatusSummary()
 {
   *this = jsonValue;
 }

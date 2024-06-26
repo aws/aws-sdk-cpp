@@ -25,10 +25,8 @@ R53HostedZoneDeletionState::R53HostedZoneDeletionState() :
 {
 }
 
-R53HostedZoneDeletionState::R53HostedZoneDeletionState(JsonView jsonValue) : 
-    m_code(R53HostedZoneDeletionStateCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+R53HostedZoneDeletionState::R53HostedZoneDeletionState(JsonView jsonValue)
+  : R53HostedZoneDeletionState()
 {
   *this = jsonValue;
 }

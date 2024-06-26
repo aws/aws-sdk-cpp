@@ -43,28 +43,8 @@ Transport::Transport() :
 {
 }
 
-Transport::Transport(JsonView jsonValue) : 
-    m_cidrAllowListHasBeenSet(false),
-    m_maxBitrate(0),
-    m_maxBitrateHasBeenSet(false),
-    m_maxLatency(0),
-    m_maxLatencyHasBeenSet(false),
-    m_maxSyncBuffer(0),
-    m_maxSyncBufferHasBeenSet(false),
-    m_minLatency(0),
-    m_minLatencyHasBeenSet(false),
-    m_protocol(Protocol::NOT_SET),
-    m_protocolHasBeenSet(false),
-    m_remoteIdHasBeenSet(false),
-    m_senderControlPort(0),
-    m_senderControlPortHasBeenSet(false),
-    m_senderIpAddressHasBeenSet(false),
-    m_smoothingLatency(0),
-    m_smoothingLatencyHasBeenSet(false),
-    m_sourceListenerAddressHasBeenSet(false),
-    m_sourceListenerPort(0),
-    m_sourceListenerPortHasBeenSet(false),
-    m_streamIdHasBeenSet(false)
+Transport::Transport(JsonView jsonValue)
+  : Transport()
 {
   *this = jsonValue;
 }

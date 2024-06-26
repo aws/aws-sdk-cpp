@@ -31,16 +31,8 @@ SAMLOptionsInput::SAMLOptionsInput() :
 {
 }
 
-SAMLOptionsInput::SAMLOptionsInput(JsonView jsonValue) : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_idpHasBeenSet(false),
-    m_masterUserNameHasBeenSet(false),
-    m_masterBackendRoleHasBeenSet(false),
-    m_subjectKeyHasBeenSet(false),
-    m_rolesKeyHasBeenSet(false),
-    m_sessionTimeoutMinutes(0),
-    m_sessionTimeoutMinutesHasBeenSet(false)
+SAMLOptionsInput::SAMLOptionsInput(JsonView jsonValue)
+  : SAMLOptionsInput()
 {
   *this = jsonValue;
 }

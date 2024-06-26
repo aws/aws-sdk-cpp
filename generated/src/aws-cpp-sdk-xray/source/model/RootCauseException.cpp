@@ -24,9 +24,8 @@ RootCauseException::RootCauseException() :
 {
 }
 
-RootCauseException::RootCauseException(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_messageHasBeenSet(false)
+RootCauseException::RootCauseException(JsonView jsonValue)
+  : RootCauseException()
 {
   *this = jsonValue;
 }

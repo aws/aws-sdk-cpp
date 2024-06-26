@@ -22,8 +22,8 @@ DescribeFolderPermissionsResult::DescribeFolderPermissionsResult() :
 {
 }
 
-DescribeFolderPermissionsResult::DescribeFolderPermissionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+DescribeFolderPermissionsResult::DescribeFolderPermissionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeFolderPermissionsResult()
 {
   *this = result;
 }

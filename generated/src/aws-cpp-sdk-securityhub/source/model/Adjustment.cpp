@@ -24,9 +24,8 @@ Adjustment::Adjustment() :
 {
 }
 
-Adjustment::Adjustment(JsonView jsonValue) : 
-    m_metricHasBeenSet(false),
-    m_reasonHasBeenSet(false)
+Adjustment::Adjustment(JsonView jsonValue)
+  : Adjustment()
 {
   *this = jsonValue;
 }

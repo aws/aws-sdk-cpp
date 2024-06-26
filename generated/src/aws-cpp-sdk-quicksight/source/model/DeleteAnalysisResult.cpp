@@ -22,8 +22,8 @@ DeleteAnalysisResult::DeleteAnalysisResult() :
 {
 }
 
-DeleteAnalysisResult::DeleteAnalysisResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+DeleteAnalysisResult::DeleteAnalysisResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeleteAnalysisResult()
 {
   *this = result;
 }

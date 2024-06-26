@@ -24,9 +24,8 @@ MessageTag::MessageTag() :
 {
 }
 
-MessageTag::MessageTag(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
+MessageTag::MessageTag(JsonView jsonValue)
+  : MessageTag()
 {
   *this = jsonValue;
 }

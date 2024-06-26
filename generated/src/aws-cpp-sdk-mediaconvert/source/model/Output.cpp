@@ -30,15 +30,8 @@ Output::Output() :
 {
 }
 
-Output::Output(JsonView jsonValue) : 
-    m_audioDescriptionsHasBeenSet(false),
-    m_captionDescriptionsHasBeenSet(false),
-    m_containerSettingsHasBeenSet(false),
-    m_extensionHasBeenSet(false),
-    m_nameModifierHasBeenSet(false),
-    m_outputSettingsHasBeenSet(false),
-    m_presetHasBeenSet(false),
-    m_videoDescriptionHasBeenSet(false)
+Output::Output(JsonView jsonValue)
+  : Output()
 {
   *this = jsonValue;
 }

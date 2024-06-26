@@ -25,9 +25,8 @@ DocumentContent::DocumentContent() :
 {
 }
 
-DocumentContent::DocumentContent(JsonView jsonValue) : 
-    m_blobHasBeenSet(false),
-    m_s3HasBeenSet(false)
+DocumentContent::DocumentContent(JsonView jsonValue)
+  : DocumentContent()
 {
   *this = jsonValue;
 }

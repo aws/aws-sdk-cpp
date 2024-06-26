@@ -25,8 +25,8 @@ RemovePrefixListEntry::RemovePrefixListEntry() :
 {
 }
 
-RemovePrefixListEntry::RemovePrefixListEntry(const XmlNode& xmlNode) : 
-    m_cidrHasBeenSet(false)
+RemovePrefixListEntry::RemovePrefixListEntry(const XmlNode& xmlNode)
+  : RemovePrefixListEntry()
 {
   *this = xmlNode;
 }

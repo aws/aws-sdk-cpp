@@ -22,8 +22,8 @@ CreateProvisioningArtifactResult::CreateProvisioningArtifactResult() :
 {
 }
 
-CreateProvisioningArtifactResult::CreateProvisioningArtifactResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(Status::NOT_SET)
+CreateProvisioningArtifactResult::CreateProvisioningArtifactResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateProvisioningArtifactResult()
 {
   *this = result;
 }

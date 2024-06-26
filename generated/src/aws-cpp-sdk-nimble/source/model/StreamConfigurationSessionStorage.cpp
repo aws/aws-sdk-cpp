@@ -24,9 +24,8 @@ StreamConfigurationSessionStorage::StreamConfigurationSessionStorage() :
 {
 }
 
-StreamConfigurationSessionStorage::StreamConfigurationSessionStorage(JsonView jsonValue) : 
-    m_modeHasBeenSet(false),
-    m_rootHasBeenSet(false)
+StreamConfigurationSessionStorage::StreamConfigurationSessionStorage(JsonView jsonValue)
+  : StreamConfigurationSessionStorage()
 {
   *this = jsonValue;
 }

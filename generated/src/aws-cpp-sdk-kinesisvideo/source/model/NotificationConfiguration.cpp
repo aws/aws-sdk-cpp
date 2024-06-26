@@ -25,10 +25,8 @@ NotificationConfiguration::NotificationConfiguration() :
 {
 }
 
-NotificationConfiguration::NotificationConfiguration(JsonView jsonValue) : 
-    m_status(ConfigurationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_destinationConfigHasBeenSet(false)
+NotificationConfiguration::NotificationConfiguration(JsonView jsonValue)
+  : NotificationConfiguration()
 {
   *this = jsonValue;
 }

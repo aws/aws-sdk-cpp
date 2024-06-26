@@ -22,8 +22,8 @@ ListThingRegistrationTaskReportsResult::ListThingRegistrationTaskReportsResult()
 {
 }
 
-ListThingRegistrationTaskReportsResult::ListThingRegistrationTaskReportsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_reportType(ReportType::NOT_SET)
+ListThingRegistrationTaskReportsResult::ListThingRegistrationTaskReportsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ListThingRegistrationTaskReportsResult()
 {
   *this = result;
 }

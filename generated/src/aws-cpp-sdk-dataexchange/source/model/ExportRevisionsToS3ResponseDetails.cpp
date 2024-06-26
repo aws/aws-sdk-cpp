@@ -26,11 +26,8 @@ ExportRevisionsToS3ResponseDetails::ExportRevisionsToS3ResponseDetails() :
 {
 }
 
-ExportRevisionsToS3ResponseDetails::ExportRevisionsToS3ResponseDetails(JsonView jsonValue) : 
-    m_dataSetIdHasBeenSet(false),
-    m_encryptionHasBeenSet(false),
-    m_revisionDestinationsHasBeenSet(false),
-    m_eventActionArnHasBeenSet(false)
+ExportRevisionsToS3ResponseDetails::ExportRevisionsToS3ResponseDetails(JsonView jsonValue)
+  : ExportRevisionsToS3ResponseDetails()
 {
   *this = jsonValue;
 }

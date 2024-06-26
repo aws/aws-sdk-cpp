@@ -24,9 +24,8 @@ AssetBundleImportJobDataSourceCredentialPair::AssetBundleImportJobDataSourceCred
 {
 }
 
-AssetBundleImportJobDataSourceCredentialPair::AssetBundleImportJobDataSourceCredentialPair(JsonView jsonValue) : 
-    m_usernameHasBeenSet(false),
-    m_passwordHasBeenSet(false)
+AssetBundleImportJobDataSourceCredentialPair::AssetBundleImportJobDataSourceCredentialPair(JsonView jsonValue)
+  : AssetBundleImportJobDataSourceCredentialPair()
 {
   *this = jsonValue;
 }

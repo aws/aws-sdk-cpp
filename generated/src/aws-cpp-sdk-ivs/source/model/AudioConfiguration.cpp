@@ -29,14 +29,8 @@ AudioConfiguration::AudioConfiguration() :
 {
 }
 
-AudioConfiguration::AudioConfiguration(JsonView jsonValue) : 
-    m_channels(0),
-    m_channelsHasBeenSet(false),
-    m_codecHasBeenSet(false),
-    m_sampleRate(0),
-    m_sampleRateHasBeenSet(false),
-    m_targetBitrate(0),
-    m_targetBitrateHasBeenSet(false)
+AudioConfiguration::AudioConfiguration(JsonView jsonValue)
+  : AudioConfiguration()
 {
   *this = jsonValue;
 }

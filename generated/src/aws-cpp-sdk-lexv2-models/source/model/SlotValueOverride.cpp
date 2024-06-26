@@ -26,11 +26,8 @@ SlotValueOverride::SlotValueOverride() :
 {
 }
 
-SlotValueOverride::SlotValueOverride(JsonView jsonValue) : 
-    m_shape(SlotShape::NOT_SET),
-    m_shapeHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+SlotValueOverride::SlotValueOverride(JsonView jsonValue)
+  : SlotValueOverride()
 {
   *this = jsonValue;
 }

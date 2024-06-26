@@ -30,15 +30,8 @@ EndpointDemographic::EndpointDemographic() :
 {
 }
 
-EndpointDemographic::EndpointDemographic(JsonView jsonValue) : 
-    m_appVersionHasBeenSet(false),
-    m_localeHasBeenSet(false),
-    m_makeHasBeenSet(false),
-    m_modelHasBeenSet(false),
-    m_modelVersionHasBeenSet(false),
-    m_platformHasBeenSet(false),
-    m_platformVersionHasBeenSet(false),
-    m_timezoneHasBeenSet(false)
+EndpointDemographic::EndpointDemographic(JsonView jsonValue)
+  : EndpointDemographic()
 {
   *this = jsonValue;
 }

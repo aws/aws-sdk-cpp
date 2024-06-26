@@ -22,8 +22,8 @@ DeleteTemplateResult::DeleteTemplateResult() :
 {
 }
 
-DeleteTemplateResult::DeleteTemplateResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+DeleteTemplateResult::DeleteTemplateResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeleteTemplateResult()
 {
   *this = result;
 }

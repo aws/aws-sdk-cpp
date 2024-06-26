@@ -31,14 +31,8 @@ PacketHeaderStatementRequest::PacketHeaderStatementRequest() :
 {
 }
 
-PacketHeaderStatementRequest::PacketHeaderStatementRequest(const XmlNode& xmlNode) : 
-    m_sourceAddressesHasBeenSet(false),
-    m_destinationAddressesHasBeenSet(false),
-    m_sourcePortsHasBeenSet(false),
-    m_destinationPortsHasBeenSet(false),
-    m_sourcePrefixListsHasBeenSet(false),
-    m_destinationPrefixListsHasBeenSet(false),
-    m_protocolsHasBeenSet(false)
+PacketHeaderStatementRequest::PacketHeaderStatementRequest(const XmlNode& xmlNode)
+  : PacketHeaderStatementRequest()
 {
   *this = xmlNode;
 }

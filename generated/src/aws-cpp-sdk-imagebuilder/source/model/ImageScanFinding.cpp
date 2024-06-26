@@ -37,22 +37,8 @@ ImageScanFinding::ImageScanFinding() :
 {
 }
 
-ImageScanFinding::ImageScanFinding(JsonView jsonValue) : 
-    m_awsAccountIdHasBeenSet(false),
-    m_imageBuildVersionArnHasBeenSet(false),
-    m_imagePipelineArnHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_remediationHasBeenSet(false),
-    m_severityHasBeenSet(false),
-    m_firstObservedAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_inspectorScore(0.0),
-    m_inspectorScoreHasBeenSet(false),
-    m_inspectorScoreDetailsHasBeenSet(false),
-    m_packageVulnerabilityDetailsHasBeenSet(false),
-    m_fixAvailableHasBeenSet(false)
+ImageScanFinding::ImageScanFinding(JsonView jsonValue)
+  : ImageScanFinding()
 {
   *this = jsonValue;
 }

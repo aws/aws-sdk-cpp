@@ -32,17 +32,8 @@ NoiseReducerTemporalFilterSettings::NoiseReducerTemporalFilterSettings() :
 {
 }
 
-NoiseReducerTemporalFilterSettings::NoiseReducerTemporalFilterSettings(JsonView jsonValue) : 
-    m_aggressiveMode(0),
-    m_aggressiveModeHasBeenSet(false),
-    m_postTemporalSharpening(NoiseFilterPostTemporalSharpening::NOT_SET),
-    m_postTemporalSharpeningHasBeenSet(false),
-    m_postTemporalSharpeningStrength(NoiseFilterPostTemporalSharpeningStrength::NOT_SET),
-    m_postTemporalSharpeningStrengthHasBeenSet(false),
-    m_speed(0),
-    m_speedHasBeenSet(false),
-    m_strength(0),
-    m_strengthHasBeenSet(false)
+NoiseReducerTemporalFilterSettings::NoiseReducerTemporalFilterSettings(JsonView jsonValue)
+  : NoiseReducerTemporalFilterSettings()
 {
   *this = jsonValue;
 }

@@ -28,13 +28,8 @@ BotVersionSummary::BotVersionSummary() :
 {
 }
 
-BotVersionSummary::BotVersionSummary(JsonView jsonValue) : 
-    m_botNameHasBeenSet(false),
-    m_botVersionHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_botStatus(BotStatus::NOT_SET),
-    m_botStatusHasBeenSet(false),
-    m_creationDateTimeHasBeenSet(false)
+BotVersionSummary::BotVersionSummary(JsonView jsonValue)
+  : BotVersionSummary()
 {
   *this = jsonValue;
 }

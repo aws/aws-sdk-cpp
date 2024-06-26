@@ -33,18 +33,8 @@ RuleDetail::RuleDetail() :
 {
 }
 
-RuleDetail::RuleDetail(JsonView jsonValue) : 
-    m_ruleIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_detectorIdHasBeenSet(false),
-    m_ruleVersionHasBeenSet(false),
-    m_expressionHasBeenSet(false),
-    m_language(Language::NOT_SET),
-    m_languageHasBeenSet(false),
-    m_outcomesHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_arnHasBeenSet(false)
+RuleDetail::RuleDetail(JsonView jsonValue)
+  : RuleDetail()
 {
   *this = jsonValue;
 }

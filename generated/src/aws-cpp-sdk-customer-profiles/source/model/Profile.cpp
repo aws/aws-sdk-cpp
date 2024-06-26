@@ -49,34 +49,8 @@ Profile::Profile() :
 {
 }
 
-Profile::Profile(JsonView jsonValue) : 
-    m_profileIdHasBeenSet(false),
-    m_accountNumberHasBeenSet(false),
-    m_additionalInformationHasBeenSet(false),
-    m_partyType(PartyType::NOT_SET),
-    m_partyTypeHasBeenSet(false),
-    m_businessNameHasBeenSet(false),
-    m_firstNameHasBeenSet(false),
-    m_middleNameHasBeenSet(false),
-    m_lastNameHasBeenSet(false),
-    m_birthDateHasBeenSet(false),
-    m_gender(Gender::NOT_SET),
-    m_genderHasBeenSet(false),
-    m_phoneNumberHasBeenSet(false),
-    m_mobilePhoneNumberHasBeenSet(false),
-    m_homePhoneNumberHasBeenSet(false),
-    m_businessPhoneNumberHasBeenSet(false),
-    m_emailAddressHasBeenSet(false),
-    m_personalEmailAddressHasBeenSet(false),
-    m_businessEmailAddressHasBeenSet(false),
-    m_addressHasBeenSet(false),
-    m_shippingAddressHasBeenSet(false),
-    m_mailingAddressHasBeenSet(false),
-    m_billingAddressHasBeenSet(false),
-    m_attributesHasBeenSet(false),
-    m_foundByItemsHasBeenSet(false),
-    m_partyTypeStringHasBeenSet(false),
-    m_genderStringHasBeenSet(false)
+Profile::Profile(JsonView jsonValue)
+  : Profile()
 {
   *this = jsonValue;
 }

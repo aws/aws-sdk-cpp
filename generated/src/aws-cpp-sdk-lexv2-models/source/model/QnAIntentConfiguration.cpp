@@ -24,9 +24,8 @@ QnAIntentConfiguration::QnAIntentConfiguration() :
 {
 }
 
-QnAIntentConfiguration::QnAIntentConfiguration(JsonView jsonValue) : 
-    m_dataSourceConfigurationHasBeenSet(false),
-    m_bedrockModelConfigurationHasBeenSet(false)
+QnAIntentConfiguration::QnAIntentConfiguration(JsonView jsonValue)
+  : QnAIntentConfiguration()
 {
   *this = jsonValue;
 }

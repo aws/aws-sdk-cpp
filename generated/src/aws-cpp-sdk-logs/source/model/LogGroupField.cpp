@@ -25,10 +25,8 @@ LogGroupField::LogGroupField() :
 {
 }
 
-LogGroupField::LogGroupField(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_percent(0),
-    m_percentHasBeenSet(false)
+LogGroupField::LogGroupField(JsonView jsonValue)
+  : LogGroupField()
 {
   *this = jsonValue;
 }

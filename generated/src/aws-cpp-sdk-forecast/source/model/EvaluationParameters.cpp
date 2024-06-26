@@ -26,11 +26,8 @@ EvaluationParameters::EvaluationParameters() :
 {
 }
 
-EvaluationParameters::EvaluationParameters(JsonView jsonValue) : 
-    m_numberOfBacktestWindows(0),
-    m_numberOfBacktestWindowsHasBeenSet(false),
-    m_backTestWindowOffset(0),
-    m_backTestWindowOffsetHasBeenSet(false)
+EvaluationParameters::EvaluationParameters(JsonView jsonValue)
+  : EvaluationParameters()
 {
   *this = jsonValue;
 }

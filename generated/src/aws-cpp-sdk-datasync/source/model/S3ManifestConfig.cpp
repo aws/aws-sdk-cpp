@@ -26,11 +26,8 @@ S3ManifestConfig::S3ManifestConfig() :
 {
 }
 
-S3ManifestConfig::S3ManifestConfig(JsonView jsonValue) : 
-    m_manifestObjectPathHasBeenSet(false),
-    m_bucketAccessRoleArnHasBeenSet(false),
-    m_s3BucketArnHasBeenSet(false),
-    m_manifestObjectVersionIdHasBeenSet(false)
+S3ManifestConfig::S3ManifestConfig(JsonView jsonValue)
+  : S3ManifestConfig()
 {
   *this = jsonValue;
 }

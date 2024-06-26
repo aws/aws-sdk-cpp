@@ -22,8 +22,8 @@ DeleteComponentTypeResult::DeleteComponentTypeResult() :
 {
 }
 
-DeleteComponentTypeResult::DeleteComponentTypeResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_state(State::NOT_SET)
+DeleteComponentTypeResult::DeleteComponentTypeResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeleteComponentTypeResult()
 {
   *this = result;
 }

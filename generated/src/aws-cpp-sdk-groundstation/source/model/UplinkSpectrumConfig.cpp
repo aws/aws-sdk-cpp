@@ -25,10 +25,8 @@ UplinkSpectrumConfig::UplinkSpectrumConfig() :
 {
 }
 
-UplinkSpectrumConfig::UplinkSpectrumConfig(JsonView jsonValue) : 
-    m_centerFrequencyHasBeenSet(false),
-    m_polarization(Polarization::NOT_SET),
-    m_polarizationHasBeenSet(false)
+UplinkSpectrumConfig::UplinkSpectrumConfig(JsonView jsonValue)
+  : UplinkSpectrumConfig()
 {
   *this = jsonValue;
 }

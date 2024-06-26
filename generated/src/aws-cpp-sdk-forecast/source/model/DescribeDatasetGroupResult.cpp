@@ -22,8 +22,8 @@ DescribeDatasetGroupResult::DescribeDatasetGroupResult() :
 {
 }
 
-DescribeDatasetGroupResult::DescribeDatasetGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_domain(Domain::NOT_SET)
+DescribeDatasetGroupResult::DescribeDatasetGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeDatasetGroupResult()
 {
   *this = result;
 }

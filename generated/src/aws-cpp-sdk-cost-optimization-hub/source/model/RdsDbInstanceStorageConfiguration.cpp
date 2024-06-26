@@ -29,14 +29,8 @@ RdsDbInstanceStorageConfiguration::RdsDbInstanceStorageConfiguration() :
 {
 }
 
-RdsDbInstanceStorageConfiguration::RdsDbInstanceStorageConfiguration(JsonView jsonValue) : 
-    m_storageTypeHasBeenSet(false),
-    m_allocatedStorageInGb(0.0),
-    m_allocatedStorageInGbHasBeenSet(false),
-    m_iops(0.0),
-    m_iopsHasBeenSet(false),
-    m_storageThroughput(0.0),
-    m_storageThroughputHasBeenSet(false)
+RdsDbInstanceStorageConfiguration::RdsDbInstanceStorageConfiguration(JsonView jsonValue)
+  : RdsDbInstanceStorageConfiguration()
 {
   *this = jsonValue;
 }

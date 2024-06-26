@@ -34,19 +34,8 @@ PropertyDefinitionRequest::PropertyDefinitionRequest() :
 {
 }
 
-PropertyDefinitionRequest::PropertyDefinitionRequest(JsonView jsonValue) : 
-    m_dataTypeHasBeenSet(false),
-    m_isRequiredInEntity(false),
-    m_isRequiredInEntityHasBeenSet(false),
-    m_isExternalId(false),
-    m_isExternalIdHasBeenSet(false),
-    m_isStoredExternally(false),
-    m_isStoredExternallyHasBeenSet(false),
-    m_isTimeSeries(false),
-    m_isTimeSeriesHasBeenSet(false),
-    m_defaultValueHasBeenSet(false),
-    m_configurationHasBeenSet(false),
-    m_displayNameHasBeenSet(false)
+PropertyDefinitionRequest::PropertyDefinitionRequest(JsonView jsonValue)
+  : PropertyDefinitionRequest()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ ElicitationCodeHookInvocationSetting::ElicitationCodeHookInvocationSetting() :
 {
 }
 
-ElicitationCodeHookInvocationSetting::ElicitationCodeHookInvocationSetting(JsonView jsonValue) : 
-    m_enableCodeHookInvocation(false),
-    m_enableCodeHookInvocationHasBeenSet(false),
-    m_invocationLabelHasBeenSet(false)
+ElicitationCodeHookInvocationSetting::ElicitationCodeHookInvocationSetting(JsonView jsonValue)
+  : ElicitationCodeHookInvocationSetting()
 {
   *this = jsonValue;
 }

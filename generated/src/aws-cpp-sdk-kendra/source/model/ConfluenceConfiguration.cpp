@@ -36,21 +36,8 @@ ConfluenceConfiguration::ConfluenceConfiguration() :
 {
 }
 
-ConfluenceConfiguration::ConfluenceConfiguration(JsonView jsonValue) : 
-    m_serverUrlHasBeenSet(false),
-    m_secretArnHasBeenSet(false),
-    m_version(ConfluenceVersion::NOT_SET),
-    m_versionHasBeenSet(false),
-    m_spaceConfigurationHasBeenSet(false),
-    m_pageConfigurationHasBeenSet(false),
-    m_blogConfigurationHasBeenSet(false),
-    m_attachmentConfigurationHasBeenSet(false),
-    m_vpcConfigurationHasBeenSet(false),
-    m_inclusionPatternsHasBeenSet(false),
-    m_exclusionPatternsHasBeenSet(false),
-    m_proxyConfigurationHasBeenSet(false),
-    m_authenticationType(ConfluenceAuthenticationType::NOT_SET),
-    m_authenticationTypeHasBeenSet(false)
+ConfluenceConfiguration::ConfluenceConfiguration(JsonView jsonValue)
+  : ConfluenceConfiguration()
 {
   *this = jsonValue;
 }

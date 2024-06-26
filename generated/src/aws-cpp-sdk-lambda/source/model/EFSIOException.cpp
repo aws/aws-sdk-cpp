@@ -24,9 +24,8 @@ EFSIOException::EFSIOException() :
 {
 }
 
-EFSIOException::EFSIOException(JsonView jsonValue) : 
-    m_typeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+EFSIOException::EFSIOException(JsonView jsonValue)
+  : EFSIOException()
 {
   *this = jsonValue;
 }

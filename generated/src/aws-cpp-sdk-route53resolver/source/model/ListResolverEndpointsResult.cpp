@@ -22,8 +22,8 @@ ListResolverEndpointsResult::ListResolverEndpointsResult() :
 {
 }
 
-ListResolverEndpointsResult::ListResolverEndpointsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_maxResults(0)
+ListResolverEndpointsResult::ListResolverEndpointsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ListResolverEndpointsResult()
 {
   *this = result;
 }

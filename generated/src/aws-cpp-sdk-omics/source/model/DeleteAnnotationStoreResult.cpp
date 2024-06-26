@@ -22,8 +22,8 @@ DeleteAnnotationStoreResult::DeleteAnnotationStoreResult() :
 {
 }
 
-DeleteAnnotationStoreResult::DeleteAnnotationStoreResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(StoreStatus::NOT_SET)
+DeleteAnnotationStoreResult::DeleteAnnotationStoreResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeleteAnnotationStoreResult()
 {
   *this = result;
 }

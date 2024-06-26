@@ -25,10 +25,8 @@ SessionKeyEmv2000::SessionKeyEmv2000() :
 {
 }
 
-SessionKeyEmv2000::SessionKeyEmv2000(JsonView jsonValue) : 
-    m_applicationTransactionCounterHasBeenSet(false),
-    m_panSequenceNumberHasBeenSet(false),
-    m_primaryAccountNumberHasBeenSet(false)
+SessionKeyEmv2000::SessionKeyEmv2000(JsonView jsonValue)
+  : SessionKeyEmv2000()
 {
   *this = jsonValue;
 }

@@ -28,13 +28,8 @@ QnAKendraConfiguration::QnAKendraConfiguration() :
 {
 }
 
-QnAKendraConfiguration::QnAKendraConfiguration(JsonView jsonValue) : 
-    m_kendraIndexHasBeenSet(false),
-    m_queryFilterStringEnabled(false),
-    m_queryFilterStringEnabledHasBeenSet(false),
-    m_queryFilterStringHasBeenSet(false),
-    m_exactResponse(false),
-    m_exactResponseHasBeenSet(false)
+QnAKendraConfiguration::QnAKendraConfiguration(JsonView jsonValue)
+  : QnAKendraConfiguration()
 {
   *this = jsonValue;
 }

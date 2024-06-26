@@ -26,11 +26,8 @@ ResourceConfiguration::ResourceConfiguration() :
 {
 }
 
-ResourceConfiguration::ResourceConfiguration(JsonView jsonValue) : 
-    m_computeType(ComputeType::NOT_SET),
-    m_computeTypeHasBeenSet(false),
-    m_volumeSizeInGB(0),
-    m_volumeSizeInGBHasBeenSet(false)
+ResourceConfiguration::ResourceConfiguration(JsonView jsonValue)
+  : ResourceConfiguration()
 {
   *this = jsonValue;
 }

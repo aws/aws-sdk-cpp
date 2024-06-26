@@ -23,8 +23,8 @@ AwsGuardDutyDetectorDataSourcesCloudTrailDetails::AwsGuardDutyDetectorDataSource
 {
 }
 
-AwsGuardDutyDetectorDataSourcesCloudTrailDetails::AwsGuardDutyDetectorDataSourcesCloudTrailDetails(JsonView jsonValue) : 
-    m_statusHasBeenSet(false)
+AwsGuardDutyDetectorDataSourcesCloudTrailDetails::AwsGuardDutyDetectorDataSourcesCloudTrailDetails(JsonView jsonValue)
+  : AwsGuardDutyDetectorDataSourcesCloudTrailDetails()
 {
   *this = jsonValue;
 }

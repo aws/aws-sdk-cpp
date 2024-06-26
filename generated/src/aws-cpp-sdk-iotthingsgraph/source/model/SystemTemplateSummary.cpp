@@ -27,12 +27,8 @@ SystemTemplateSummary::SystemTemplateSummary() :
 {
 }
 
-SystemTemplateSummary::SystemTemplateSummary(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_revisionNumber(0),
-    m_revisionNumberHasBeenSet(false),
-    m_createdAtHasBeenSet(false)
+SystemTemplateSummary::SystemTemplateSummary(JsonView jsonValue)
+  : SystemTemplateSummary()
 {
   *this = jsonValue;
 }

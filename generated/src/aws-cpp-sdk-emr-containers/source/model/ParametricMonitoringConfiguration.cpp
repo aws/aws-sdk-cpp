@@ -25,10 +25,8 @@ ParametricMonitoringConfiguration::ParametricMonitoringConfiguration() :
 {
 }
 
-ParametricMonitoringConfiguration::ParametricMonitoringConfiguration(JsonView jsonValue) : 
-    m_persistentAppUIHasBeenSet(false),
-    m_cloudWatchMonitoringConfigurationHasBeenSet(false),
-    m_s3MonitoringConfigurationHasBeenSet(false)
+ParametricMonitoringConfiguration::ParametricMonitoringConfiguration(JsonView jsonValue)
+  : ParametricMonitoringConfiguration()
 {
   *this = jsonValue;
 }

@@ -27,12 +27,8 @@ DeprecationDetail::DeprecationDetail() :
 {
 }
 
-DeprecationDetail::DeprecationDetail(JsonView jsonValue) : 
-    m_usageHasBeenSet(false),
-    m_replacedWithHasBeenSet(false),
-    m_stopServingVersionHasBeenSet(false),
-    m_startServingReplacementVersionHasBeenSet(false),
-    m_clientStatsHasBeenSet(false)
+DeprecationDetail::DeprecationDetail(JsonView jsonValue)
+  : DeprecationDetail()
 {
   *this = jsonValue;
 }

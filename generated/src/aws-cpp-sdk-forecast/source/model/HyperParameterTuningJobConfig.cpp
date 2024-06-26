@@ -23,8 +23,8 @@ HyperParameterTuningJobConfig::HyperParameterTuningJobConfig() :
 {
 }
 
-HyperParameterTuningJobConfig::HyperParameterTuningJobConfig(JsonView jsonValue) : 
-    m_parameterRangesHasBeenSet(false)
+HyperParameterTuningJobConfig::HyperParameterTuningJobConfig(JsonView jsonValue)
+  : HyperParameterTuningJobConfig()
 {
   *this = jsonValue;
 }

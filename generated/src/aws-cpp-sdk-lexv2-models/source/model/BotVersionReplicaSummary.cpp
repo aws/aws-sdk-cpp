@@ -27,12 +27,8 @@ BotVersionReplicaSummary::BotVersionReplicaSummary() :
 {
 }
 
-BotVersionReplicaSummary::BotVersionReplicaSummary(JsonView jsonValue) : 
-    m_botVersionHasBeenSet(false),
-    m_botVersionReplicationStatus(BotVersionReplicationStatus::NOT_SET),
-    m_botVersionReplicationStatusHasBeenSet(false),
-    m_creationDateTimeHasBeenSet(false),
-    m_failureReasonsHasBeenSet(false)
+BotVersionReplicaSummary::BotVersionReplicaSummary(JsonView jsonValue)
+  : BotVersionReplicaSummary()
 {
   *this = jsonValue;
 }

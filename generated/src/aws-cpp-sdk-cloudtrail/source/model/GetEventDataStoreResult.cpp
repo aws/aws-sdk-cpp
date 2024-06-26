@@ -28,14 +28,8 @@ GetEventDataStoreResult::GetEventDataStoreResult() :
 {
 }
 
-GetEventDataStoreResult::GetEventDataStoreResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(EventDataStoreStatus::NOT_SET),
-    m_multiRegionEnabled(false),
-    m_organizationEnabled(false),
-    m_retentionPeriod(0),
-    m_terminationProtectionEnabled(false),
-    m_billingMode(BillingMode::NOT_SET),
-    m_federationStatus(FederationStatus::NOT_SET)
+GetEventDataStoreResult::GetEventDataStoreResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetEventDataStoreResult()
 {
   *this = result;
 }

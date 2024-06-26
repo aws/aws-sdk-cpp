@@ -25,10 +25,8 @@ PolicyParameter::PolicyParameter() :
 {
 }
 
-PolicyParameter::PolicyParameter(JsonView jsonValue) : 
-    m_keyHasBeenSet(false),
-    m_valuesHasBeenSet(false),
-    m_mapEntriesHasBeenSet(false)
+PolicyParameter::PolicyParameter(JsonView jsonValue)
+  : PolicyParameter()
 {
   *this = jsonValue;
 }

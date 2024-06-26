@@ -43,28 +43,8 @@ AwsAutoScalingLaunchConfigurationDetails::AwsAutoScalingLaunchConfigurationDetai
 {
 }
 
-AwsAutoScalingLaunchConfigurationDetails::AwsAutoScalingLaunchConfigurationDetails(JsonView jsonValue) : 
-    m_associatePublicIpAddress(false),
-    m_associatePublicIpAddressHasBeenSet(false),
-    m_blockDeviceMappingsHasBeenSet(false),
-    m_classicLinkVpcIdHasBeenSet(false),
-    m_classicLinkVpcSecurityGroupsHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_ebsOptimized(false),
-    m_ebsOptimizedHasBeenSet(false),
-    m_iamInstanceProfileHasBeenSet(false),
-    m_imageIdHasBeenSet(false),
-    m_instanceMonitoringHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_kernelIdHasBeenSet(false),
-    m_keyNameHasBeenSet(false),
-    m_launchConfigurationNameHasBeenSet(false),
-    m_placementTenancyHasBeenSet(false),
-    m_ramdiskIdHasBeenSet(false),
-    m_securityGroupsHasBeenSet(false),
-    m_spotPriceHasBeenSet(false),
-    m_userDataHasBeenSet(false),
-    m_metadataOptionsHasBeenSet(false)
+AwsAutoScalingLaunchConfigurationDetails::AwsAutoScalingLaunchConfigurationDetails(JsonView jsonValue)
+  : AwsAutoScalingLaunchConfigurationDetails()
 {
   *this = jsonValue;
 }

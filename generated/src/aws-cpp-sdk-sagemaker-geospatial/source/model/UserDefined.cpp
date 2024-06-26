@@ -26,11 +26,8 @@ UserDefined::UserDefined() :
 {
 }
 
-UserDefined::UserDefined(JsonView jsonValue) : 
-    m_unit(Unit::NOT_SET),
-    m_unitHasBeenSet(false),
-    m_value(0.0),
-    m_valueHasBeenSet(false)
+UserDefined::UserDefined(JsonView jsonValue)
+  : UserDefined()
 {
   *this = jsonValue;
 }

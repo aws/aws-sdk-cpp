@@ -27,12 +27,8 @@ OutputLogEvent::OutputLogEvent() :
 {
 }
 
-OutputLogEvent::OutputLogEvent(JsonView jsonValue) : 
-    m_timestamp(0),
-    m_timestampHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_ingestionTime(0),
-    m_ingestionTimeHasBeenSet(false)
+OutputLogEvent::OutputLogEvent(JsonView jsonValue)
+  : OutputLogEvent()
 {
   *this = jsonValue;
 }

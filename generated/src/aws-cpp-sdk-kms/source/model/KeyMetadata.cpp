@@ -55,40 +55,8 @@ KeyMetadata::KeyMetadata() :
 {
 }
 
-KeyMetadata::KeyMetadata(JsonView jsonValue) : 
-    m_aWSAccountIdHasBeenSet(false),
-    m_keyIdHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_keyUsage(KeyUsageType::NOT_SET),
-    m_keyUsageHasBeenSet(false),
-    m_keyState(KeyState::NOT_SET),
-    m_keyStateHasBeenSet(false),
-    m_deletionDateHasBeenSet(false),
-    m_validToHasBeenSet(false),
-    m_origin(OriginType::NOT_SET),
-    m_originHasBeenSet(false),
-    m_customKeyStoreIdHasBeenSet(false),
-    m_cloudHsmClusterIdHasBeenSet(false),
-    m_expirationModel(ExpirationModelType::NOT_SET),
-    m_expirationModelHasBeenSet(false),
-    m_keyManager(KeyManagerType::NOT_SET),
-    m_keyManagerHasBeenSet(false),
-    m_keySpec(KeySpec::NOT_SET),
-    m_keySpecHasBeenSet(false),
-    m_encryptionAlgorithmsHasBeenSet(false),
-    m_signingAlgorithmsHasBeenSet(false),
-    m_keyAgreementAlgorithmsHasBeenSet(false),
-    m_multiRegion(false),
-    m_multiRegionHasBeenSet(false),
-    m_multiRegionConfigurationHasBeenSet(false),
-    m_pendingDeletionWindowInDays(0),
-    m_pendingDeletionWindowInDaysHasBeenSet(false),
-    m_macAlgorithmsHasBeenSet(false),
-    m_xksKeyConfigurationHasBeenSet(false)
+KeyMetadata::KeyMetadata(JsonView jsonValue)
+  : KeyMetadata()
 {
   *this = jsonValue;
 }

@@ -35,20 +35,8 @@ MaintenanceWindow::MaintenanceWindow() :
 {
 }
 
-MaintenanceWindow::MaintenanceWindow(JsonView jsonValue) : 
-    m_type(MaintenanceWindowType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_startTimeHour(0),
-    m_startTimeHourHasBeenSet(false),
-    m_startTimeMinute(0),
-    m_startTimeMinuteHasBeenSet(false),
-    m_endTimeHour(0),
-    m_endTimeHourHasBeenSet(false),
-    m_endTimeMinute(0),
-    m_endTimeMinuteHasBeenSet(false),
-    m_daysOfTheWeekHasBeenSet(false),
-    m_applyTimeOf(ApplyTimeOf::NOT_SET),
-    m_applyTimeOfHasBeenSet(false)
+MaintenanceWindow::MaintenanceWindow(JsonView jsonValue)
+  : MaintenanceWindow()
 {
   *this = jsonValue;
 }

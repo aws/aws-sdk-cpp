@@ -28,13 +28,8 @@ ExtensionSummary::ExtensionSummary() :
 {
 }
 
-ExtensionSummary::ExtensionSummary(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_versionNumber(0),
-    m_versionNumberHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+ExtensionSummary::ExtensionSummary(JsonView jsonValue)
+  : ExtensionSummary()
 {
   *this = jsonValue;
 }

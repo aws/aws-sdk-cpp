@@ -23,9 +23,8 @@ GetDataSourceRunResult::GetDataSourceRunResult() :
 {
 }
 
-GetDataSourceRunResult::GetDataSourceRunResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(DataSourceRunStatus::NOT_SET),
-    m_type(DataSourceRunType::NOT_SET)
+GetDataSourceRunResult::GetDataSourceRunResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetDataSourceRunResult()
 {
   *this = result;
 }

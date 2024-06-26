@@ -24,9 +24,8 @@ KMSInvalidStateException::KMSInvalidStateException() :
 {
 }
 
-KMSInvalidStateException::KMSInvalidStateException(JsonView jsonValue) : 
-    m_typeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+KMSInvalidStateException::KMSInvalidStateException(JsonView jsonValue)
+  : KMSInvalidStateException()
 {
   *this = jsonValue;
 }

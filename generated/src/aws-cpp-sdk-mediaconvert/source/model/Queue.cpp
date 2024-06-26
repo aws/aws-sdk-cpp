@@ -38,23 +38,8 @@ Queue::Queue() :
 {
 }
 
-Queue::Queue(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_lastUpdatedHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_pricingPlan(PricingPlan::NOT_SET),
-    m_pricingPlanHasBeenSet(false),
-    m_progressingJobsCount(0),
-    m_progressingJobsCountHasBeenSet(false),
-    m_reservationPlanHasBeenSet(false),
-    m_status(QueueStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_submittedJobsCount(0),
-    m_submittedJobsCountHasBeenSet(false),
-    m_type(Type::NOT_SET),
-    m_typeHasBeenSet(false)
+Queue::Queue(JsonView jsonValue)
+  : Queue()
 {
   *this = jsonValue;
 }

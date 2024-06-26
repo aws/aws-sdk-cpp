@@ -24,9 +24,8 @@ StatelessRulesAndCustomActions::StatelessRulesAndCustomActions() :
 {
 }
 
-StatelessRulesAndCustomActions::StatelessRulesAndCustomActions(JsonView jsonValue) : 
-    m_statelessRulesHasBeenSet(false),
-    m_customActionsHasBeenSet(false)
+StatelessRulesAndCustomActions::StatelessRulesAndCustomActions(JsonView jsonValue)
+  : StatelessRulesAndCustomActions()
 {
   *this = jsonValue;
 }

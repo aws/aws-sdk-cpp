@@ -32,15 +32,8 @@ EnvironmentResourceDescription::EnvironmentResourceDescription() :
 {
 }
 
-EnvironmentResourceDescription::EnvironmentResourceDescription(const XmlNode& xmlNode) : 
-    m_environmentNameHasBeenSet(false),
-    m_autoScalingGroupsHasBeenSet(false),
-    m_instancesHasBeenSet(false),
-    m_launchConfigurationsHasBeenSet(false),
-    m_launchTemplatesHasBeenSet(false),
-    m_loadBalancersHasBeenSet(false),
-    m_triggersHasBeenSet(false),
-    m_queuesHasBeenSet(false)
+EnvironmentResourceDescription::EnvironmentResourceDescription(const XmlNode& xmlNode)
+  : EnvironmentResourceDescription()
 {
   *this = xmlNode;
 }

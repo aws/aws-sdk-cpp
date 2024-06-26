@@ -23,8 +23,8 @@ CoverageCost::CoverageCost() :
 {
 }
 
-CoverageCost::CoverageCost(JsonView jsonValue) : 
-    m_onDemandCostHasBeenSet(false)
+CoverageCost::CoverageCost(JsonView jsonValue)
+  : CoverageCost()
 {
   *this = jsonValue;
 }

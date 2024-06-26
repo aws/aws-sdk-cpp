@@ -24,9 +24,8 @@ SAPODataPaginationConfig::SAPODataPaginationConfig() :
 {
 }
 
-SAPODataPaginationConfig::SAPODataPaginationConfig(JsonView jsonValue) : 
-    m_maxPageSize(0),
-    m_maxPageSizeHasBeenSet(false)
+SAPODataPaginationConfig::SAPODataPaginationConfig(JsonView jsonValue)
+  : SAPODataPaginationConfig()
 {
   *this = jsonValue;
 }

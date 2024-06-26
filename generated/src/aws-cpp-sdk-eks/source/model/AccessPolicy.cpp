@@ -24,9 +24,8 @@ AccessPolicy::AccessPolicy() :
 {
 }
 
-AccessPolicy::AccessPolicy(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false)
+AccessPolicy::AccessPolicy(JsonView jsonValue)
+  : AccessPolicy()
 {
   *this = jsonValue;
 }

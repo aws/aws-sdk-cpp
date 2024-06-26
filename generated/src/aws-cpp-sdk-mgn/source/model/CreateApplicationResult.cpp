@@ -22,8 +22,8 @@ CreateApplicationResult::CreateApplicationResult() :
 {
 }
 
-CreateApplicationResult::CreateApplicationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_isArchived(false)
+CreateApplicationResult::CreateApplicationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateApplicationResult()
 {
   *this = result;
 }

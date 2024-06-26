@@ -23,8 +23,8 @@ ChallengeConfig::ChallengeConfig() :
 {
 }
 
-ChallengeConfig::ChallengeConfig(JsonView jsonValue) : 
-    m_immunityTimePropertyHasBeenSet(false)
+ChallengeConfig::ChallengeConfig(JsonView jsonValue)
+  : ChallengeConfig()
 {
   *this = jsonValue;
 }

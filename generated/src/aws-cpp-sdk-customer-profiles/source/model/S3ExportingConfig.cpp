@@ -24,9 +24,8 @@ S3ExportingConfig::S3ExportingConfig() :
 {
 }
 
-S3ExportingConfig::S3ExportingConfig(JsonView jsonValue) : 
-    m_s3BucketNameHasBeenSet(false),
-    m_s3KeyNameHasBeenSet(false)
+S3ExportingConfig::S3ExportingConfig(JsonView jsonValue)
+  : S3ExportingConfig()
 {
   *this = jsonValue;
 }

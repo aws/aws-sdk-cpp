@@ -24,9 +24,8 @@ StorageSystemListEntry::StorageSystemListEntry() :
 {
 }
 
-StorageSystemListEntry::StorageSystemListEntry(JsonView jsonValue) : 
-    m_storageSystemArnHasBeenSet(false),
-    m_nameHasBeenSet(false)
+StorageSystemListEntry::StorageSystemListEntry(JsonView jsonValue)
+  : StorageSystemListEntry()
 {
   *this = jsonValue;
 }

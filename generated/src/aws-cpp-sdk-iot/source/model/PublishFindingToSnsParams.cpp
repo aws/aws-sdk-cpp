@@ -23,8 +23,8 @@ PublishFindingToSnsParams::PublishFindingToSnsParams() :
 {
 }
 
-PublishFindingToSnsParams::PublishFindingToSnsParams(JsonView jsonValue) : 
-    m_topicArnHasBeenSet(false)
+PublishFindingToSnsParams::PublishFindingToSnsParams(JsonView jsonValue)
+  : PublishFindingToSnsParams()
 {
   *this = jsonValue;
 }

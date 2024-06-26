@@ -22,8 +22,8 @@ SetUserPoolMfaConfigResult::SetUserPoolMfaConfigResult() :
 {
 }
 
-SetUserPoolMfaConfigResult::SetUserPoolMfaConfigResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_mfaConfiguration(UserPoolMfaType::NOT_SET)
+SetUserPoolMfaConfigResult::SetUserPoolMfaConfigResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : SetUserPoolMfaConfigResult()
 {
   *this = result;
 }

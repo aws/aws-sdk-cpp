@@ -25,10 +25,8 @@ FieldSortExpression::FieldSortExpression() :
 {
 }
 
-FieldSortExpression::FieldSortExpression(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_sortOrder(SortOrder::NOT_SET),
-    m_sortOrderHasBeenSet(false)
+FieldSortExpression::FieldSortExpression(JsonView jsonValue)
+  : FieldSortExpression()
 {
   *this = jsonValue;
 }

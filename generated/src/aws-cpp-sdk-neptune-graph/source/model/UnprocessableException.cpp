@@ -25,10 +25,8 @@ UnprocessableException::UnprocessableException() :
 {
 }
 
-UnprocessableException::UnprocessableException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_reason(UnprocessableExceptionReason::NOT_SET),
-    m_reasonHasBeenSet(false)
+UnprocessableException::UnprocessableException(JsonView jsonValue)
+  : UnprocessableException()
 {
   *this = jsonValue;
 }

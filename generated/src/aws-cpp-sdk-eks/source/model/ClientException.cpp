@@ -27,12 +27,8 @@ ClientException::ClientException() :
 {
 }
 
-ClientException::ClientException(JsonView jsonValue) : 
-    m_clusterNameHasBeenSet(false),
-    m_nodegroupNameHasBeenSet(false),
-    m_addonNameHasBeenSet(false),
-    m_subscriptionIdHasBeenSet(false),
-    m_messageHasBeenSet(false)
+ClientException::ClientException(JsonView jsonValue)
+  : ClientException()
 {
   *this = jsonValue;
 }

@@ -39,24 +39,8 @@ Component::Component() :
 {
 }
 
-Component::Component(JsonView jsonValue) : 
-    m_appIdHasBeenSet(false),
-    m_environmentNameHasBeenSet(false),
-    m_sourceIdHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_componentTypeHasBeenSet(false),
-    m_propertiesHasBeenSet(false),
-    m_childrenHasBeenSet(false),
-    m_variantsHasBeenSet(false),
-    m_overridesHasBeenSet(false),
-    m_bindingPropertiesHasBeenSet(false),
-    m_collectionPropertiesHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_modifiedAtHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_eventsHasBeenSet(false),
-    m_schemaVersionHasBeenSet(false)
+Component::Component(JsonView jsonValue)
+  : Component()
 {
   *this = jsonValue;
 }

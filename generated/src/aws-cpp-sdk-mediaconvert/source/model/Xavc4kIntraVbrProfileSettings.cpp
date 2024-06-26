@@ -24,9 +24,8 @@ Xavc4kIntraVbrProfileSettings::Xavc4kIntraVbrProfileSettings() :
 {
 }
 
-Xavc4kIntraVbrProfileSettings::Xavc4kIntraVbrProfileSettings(JsonView jsonValue) : 
-    m_xavcClass(Xavc4kIntraVbrProfileClass::NOT_SET),
-    m_xavcClassHasBeenSet(false)
+Xavc4kIntraVbrProfileSettings::Xavc4kIntraVbrProfileSettings(JsonView jsonValue)
+  : Xavc4kIntraVbrProfileSettings()
 {
   *this = jsonValue;
 }

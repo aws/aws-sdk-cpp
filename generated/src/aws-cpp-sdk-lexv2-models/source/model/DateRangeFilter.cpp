@@ -24,9 +24,8 @@ DateRangeFilter::DateRangeFilter() :
 {
 }
 
-DateRangeFilter::DateRangeFilter(JsonView jsonValue) : 
-    m_startDateTimeHasBeenSet(false),
-    m_endDateTimeHasBeenSet(false)
+DateRangeFilter::DateRangeFilter(JsonView jsonValue)
+  : DateRangeFilter()
 {
   *this = jsonValue;
 }

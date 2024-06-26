@@ -52,37 +52,8 @@ M3u8Settings::M3u8Settings() :
 {
 }
 
-M3u8Settings::M3u8Settings(JsonView jsonValue) : 
-    m_audioFramesPerPes(0),
-    m_audioFramesPerPesHasBeenSet(false),
-    m_audioPidsHasBeenSet(false),
-    m_ecmPidHasBeenSet(false),
-    m_nielsenId3Behavior(M3u8NielsenId3Behavior::NOT_SET),
-    m_nielsenId3BehaviorHasBeenSet(false),
-    m_patInterval(0),
-    m_patIntervalHasBeenSet(false),
-    m_pcrControl(M3u8PcrControl::NOT_SET),
-    m_pcrControlHasBeenSet(false),
-    m_pcrPeriod(0),
-    m_pcrPeriodHasBeenSet(false),
-    m_pcrPidHasBeenSet(false),
-    m_pmtInterval(0),
-    m_pmtIntervalHasBeenSet(false),
-    m_pmtPidHasBeenSet(false),
-    m_programNum(0),
-    m_programNumHasBeenSet(false),
-    m_scte35Behavior(M3u8Scte35Behavior::NOT_SET),
-    m_scte35BehaviorHasBeenSet(false),
-    m_scte35PidHasBeenSet(false),
-    m_timedMetadataBehavior(M3u8TimedMetadataBehavior::NOT_SET),
-    m_timedMetadataBehaviorHasBeenSet(false),
-    m_timedMetadataPidHasBeenSet(false),
-    m_transportStreamId(0),
-    m_transportStreamIdHasBeenSet(false),
-    m_videoPidHasBeenSet(false),
-    m_klvBehavior(M3u8KlvBehavior::NOT_SET),
-    m_klvBehaviorHasBeenSet(false),
-    m_klvDataPidsHasBeenSet(false)
+M3u8Settings::M3u8Settings(JsonView jsonValue)
+  : M3u8Settings()
 {
   *this = jsonValue;
 }

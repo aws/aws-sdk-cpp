@@ -23,8 +23,8 @@ ExecutionControls::ExecutionControls() :
 {
 }
 
-ExecutionControls::ExecutionControls(JsonView jsonValue) : 
-    m_ssmControlsHasBeenSet(false)
+ExecutionControls::ExecutionControls(JsonView jsonValue)
+  : ExecutionControls()
 {
   *this = jsonValue;
 }

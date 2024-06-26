@@ -27,12 +27,8 @@ LastActiveDefinition::LastActiveDefinition() :
 {
 }
 
-LastActiveDefinition::LastActiveDefinition(JsonView jsonValue) : 
-    m_descriptionHasBeenSet(false),
-    m_lastModifiedOnHasBeenSet(false),
-    m_parameterSpecHasBeenSet(false),
-    m_blueprintLocationHasBeenSet(false),
-    m_blueprintServiceLocationHasBeenSet(false)
+LastActiveDefinition::LastActiveDefinition(JsonView jsonValue)
+  : LastActiveDefinition()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ DescribeDefaultEncryptionConfigurationResult::DescribeDefaultEncryptionConfigura
 {
 }
 
-DescribeDefaultEncryptionConfigurationResult::DescribeDefaultEncryptionConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_encryptionType(EncryptionType::NOT_SET)
+DescribeDefaultEncryptionConfigurationResult::DescribeDefaultEncryptionConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeDefaultEncryptionConfigurationResult()
 {
   *this = result;
 }

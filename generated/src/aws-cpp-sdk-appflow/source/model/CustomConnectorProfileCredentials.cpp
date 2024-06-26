@@ -28,13 +28,8 @@ CustomConnectorProfileCredentials::CustomConnectorProfileCredentials() :
 {
 }
 
-CustomConnectorProfileCredentials::CustomConnectorProfileCredentials(JsonView jsonValue) : 
-    m_authenticationType(AuthenticationType::NOT_SET),
-    m_authenticationTypeHasBeenSet(false),
-    m_basicHasBeenSet(false),
-    m_oauth2HasBeenSet(false),
-    m_apiKeyHasBeenSet(false),
-    m_customHasBeenSet(false)
+CustomConnectorProfileCredentials::CustomConnectorProfileCredentials(JsonView jsonValue)
+  : CustomConnectorProfileCredentials()
 {
   *this = jsonValue;
 }

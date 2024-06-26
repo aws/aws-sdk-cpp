@@ -25,10 +25,8 @@ FieldToMatch::FieldToMatch() :
 {
 }
 
-FieldToMatch::FieldToMatch(JsonView jsonValue) : 
-    m_type(MatchFieldType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_dataHasBeenSet(false)
+FieldToMatch::FieldToMatch(JsonView jsonValue)
+  : FieldToMatch()
 {
   *this = jsonValue;
 }

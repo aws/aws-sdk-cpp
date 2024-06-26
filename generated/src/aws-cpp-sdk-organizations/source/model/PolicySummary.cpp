@@ -30,15 +30,8 @@ PolicySummary::PolicySummary() :
 {
 }
 
-PolicySummary::PolicySummary(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_type(PolicyType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_awsManaged(false),
-    m_awsManagedHasBeenSet(false)
+PolicySummary::PolicySummary(JsonView jsonValue)
+  : PolicySummary()
 {
   *this = jsonValue;
 }

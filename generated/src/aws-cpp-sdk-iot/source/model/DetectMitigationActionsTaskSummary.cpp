@@ -35,20 +35,8 @@ DetectMitigationActionsTaskSummary::DetectMitigationActionsTaskSummary() :
 {
 }
 
-DetectMitigationActionsTaskSummary::DetectMitigationActionsTaskSummary(JsonView jsonValue) : 
-    m_taskIdHasBeenSet(false),
-    m_taskStatus(DetectMitigationActionsTaskStatus::NOT_SET),
-    m_taskStatusHasBeenSet(false),
-    m_taskStartTimeHasBeenSet(false),
-    m_taskEndTimeHasBeenSet(false),
-    m_targetHasBeenSet(false),
-    m_violationEventOccurrenceRangeHasBeenSet(false),
-    m_onlyActiveViolationsIncluded(false),
-    m_onlyActiveViolationsIncludedHasBeenSet(false),
-    m_suppressedAlertsIncluded(false),
-    m_suppressedAlertsIncludedHasBeenSet(false),
-    m_actionsDefinitionHasBeenSet(false),
-    m_taskStatisticsHasBeenSet(false)
+DetectMitigationActionsTaskSummary::DetectMitigationActionsTaskSummary(JsonView jsonValue)
+  : DetectMitigationActionsTaskSummary()
 {
   *this = jsonValue;
 }

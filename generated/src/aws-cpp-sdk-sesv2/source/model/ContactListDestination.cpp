@@ -25,10 +25,8 @@ ContactListDestination::ContactListDestination() :
 {
 }
 
-ContactListDestination::ContactListDestination(JsonView jsonValue) : 
-    m_contactListNameHasBeenSet(false),
-    m_contactListImportAction(ContactListImportAction::NOT_SET),
-    m_contactListImportActionHasBeenSet(false)
+ContactListDestination::ContactListDestination(JsonView jsonValue)
+  : ContactListDestination()
 {
   *this = jsonValue;
 }

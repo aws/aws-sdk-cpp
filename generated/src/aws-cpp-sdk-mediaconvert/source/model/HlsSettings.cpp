@@ -33,18 +33,8 @@ HlsSettings::HlsSettings() :
 {
 }
 
-HlsSettings::HlsSettings(JsonView jsonValue) : 
-    m_audioGroupIdHasBeenSet(false),
-    m_audioOnlyContainer(HlsAudioOnlyContainer::NOT_SET),
-    m_audioOnlyContainerHasBeenSet(false),
-    m_audioRenditionSetsHasBeenSet(false),
-    m_audioTrackType(HlsAudioTrackType::NOT_SET),
-    m_audioTrackTypeHasBeenSet(false),
-    m_descriptiveVideoServiceFlag(HlsDescriptiveVideoServiceFlag::NOT_SET),
-    m_descriptiveVideoServiceFlagHasBeenSet(false),
-    m_iFrameOnlyManifest(HlsIFrameOnlyManifest::NOT_SET),
-    m_iFrameOnlyManifestHasBeenSet(false),
-    m_segmentModifierHasBeenSet(false)
+HlsSettings::HlsSettings(JsonView jsonValue)
+  : HlsSettings()
 {
   *this = jsonValue;
 }

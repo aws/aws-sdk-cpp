@@ -24,9 +24,8 @@ EpochLockingSettings::EpochLockingSettings() :
 {
 }
 
-EpochLockingSettings::EpochLockingSettings(JsonView jsonValue) : 
-    m_customEpochHasBeenSet(false),
-    m_jamSyncTimeHasBeenSet(false)
+EpochLockingSettings::EpochLockingSettings(JsonView jsonValue)
+  : EpochLockingSettings()
 {
   *this = jsonValue;
 }

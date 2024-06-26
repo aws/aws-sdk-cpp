@@ -29,14 +29,8 @@ PermissionSetProvisioningStatus::PermissionSetProvisioningStatus() :
 {
 }
 
-PermissionSetProvisioningStatus::PermissionSetProvisioningStatus(JsonView jsonValue) : 
-    m_accountIdHasBeenSet(false),
-    m_createdDateHasBeenSet(false),
-    m_failureReasonHasBeenSet(false),
-    m_permissionSetArnHasBeenSet(false),
-    m_requestIdHasBeenSet(false),
-    m_status(StatusValues::NOT_SET),
-    m_statusHasBeenSet(false)
+PermissionSetProvisioningStatus::PermissionSetProvisioningStatus(JsonView jsonValue)
+  : PermissionSetProvisioningStatus()
 {
   *this = jsonValue;
 }

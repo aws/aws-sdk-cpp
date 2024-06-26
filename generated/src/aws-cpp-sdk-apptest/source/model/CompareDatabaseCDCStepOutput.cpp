@@ -25,10 +25,8 @@ CompareDatabaseCDCStepOutput::CompareDatabaseCDCStepOutput() :
 {
 }
 
-CompareDatabaseCDCStepOutput::CompareDatabaseCDCStepOutput(JsonView jsonValue) : 
-    m_comparisonOutputLocationHasBeenSet(false),
-    m_comparisonStatus(ComparisonStatusEnum::NOT_SET),
-    m_comparisonStatusHasBeenSet(false)
+CompareDatabaseCDCStepOutput::CompareDatabaseCDCStepOutput(JsonView jsonValue)
+  : CompareDatabaseCDCStepOutput()
 {
   *this = jsonValue;
 }

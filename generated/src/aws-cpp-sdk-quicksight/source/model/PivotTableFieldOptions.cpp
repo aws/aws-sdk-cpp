@@ -25,10 +25,8 @@ PivotTableFieldOptions::PivotTableFieldOptions() :
 {
 }
 
-PivotTableFieldOptions::PivotTableFieldOptions(JsonView jsonValue) : 
-    m_selectedFieldOptionsHasBeenSet(false),
-    m_dataPathOptionsHasBeenSet(false),
-    m_collapseStateOptionsHasBeenSet(false)
+PivotTableFieldOptions::PivotTableFieldOptions(JsonView jsonValue)
+  : PivotTableFieldOptions()
 {
   *this = jsonValue;
 }

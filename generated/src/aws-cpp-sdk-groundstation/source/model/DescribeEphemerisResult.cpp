@@ -25,11 +25,8 @@ DescribeEphemerisResult::DescribeEphemerisResult() :
 {
 }
 
-DescribeEphemerisResult::DescribeEphemerisResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_enabled(false),
-    m_invalidReason(EphemerisInvalidReason::NOT_SET),
-    m_priority(0),
-    m_status(EphemerisStatus::NOT_SET)
+DescribeEphemerisResult::DescribeEphemerisResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeEphemerisResult()
 {
   *this = result;
 }

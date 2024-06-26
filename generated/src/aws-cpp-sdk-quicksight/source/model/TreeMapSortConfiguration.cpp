@@ -24,9 +24,8 @@ TreeMapSortConfiguration::TreeMapSortConfiguration() :
 {
 }
 
-TreeMapSortConfiguration::TreeMapSortConfiguration(JsonView jsonValue) : 
-    m_treeMapSortHasBeenSet(false),
-    m_treeMapGroupItemsLimitConfigurationHasBeenSet(false)
+TreeMapSortConfiguration::TreeMapSortConfiguration(JsonView jsonValue)
+  : TreeMapSortConfiguration()
 {
   *this = jsonValue;
 }

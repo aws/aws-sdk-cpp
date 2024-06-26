@@ -29,14 +29,8 @@ PrincipalResourcePermissions::PrincipalResourcePermissions() :
 {
 }
 
-PrincipalResourcePermissions::PrincipalResourcePermissions(JsonView jsonValue) : 
-    m_principalHasBeenSet(false),
-    m_resourceHasBeenSet(false),
-    m_permissionsHasBeenSet(false),
-    m_permissionsWithGrantOptionHasBeenSet(false),
-    m_additionalDetailsHasBeenSet(false),
-    m_lastUpdatedHasBeenSet(false),
-    m_lastUpdatedByHasBeenSet(false)
+PrincipalResourcePermissions::PrincipalResourcePermissions(JsonView jsonValue)
+  : PrincipalResourcePermissions()
 {
   *this = jsonValue;
 }

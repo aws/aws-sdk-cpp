@@ -23,8 +23,8 @@ SnsConfiguration::SnsConfiguration() :
 {
 }
 
-SnsConfiguration::SnsConfiguration(JsonView jsonValue) : 
-    m_topicArnHasBeenSet(false)
+SnsConfiguration::SnsConfiguration(JsonView jsonValue)
+  : SnsConfiguration()
 {
   *this = jsonValue;
 }

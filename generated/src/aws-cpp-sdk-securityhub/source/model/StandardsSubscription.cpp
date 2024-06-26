@@ -28,13 +28,8 @@ StandardsSubscription::StandardsSubscription() :
 {
 }
 
-StandardsSubscription::StandardsSubscription(JsonView jsonValue) : 
-    m_standardsSubscriptionArnHasBeenSet(false),
-    m_standardsArnHasBeenSet(false),
-    m_standardsInputHasBeenSet(false),
-    m_standardsStatus(StandardsStatus::NOT_SET),
-    m_standardsStatusHasBeenSet(false),
-    m_standardsStatusReasonHasBeenSet(false)
+StandardsSubscription::StandardsSubscription(JsonView jsonValue)
+  : StandardsSubscription()
 {
   *this = jsonValue;
 }

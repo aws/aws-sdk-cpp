@@ -26,11 +26,8 @@ ImageConfiguration::ImageConfiguration() :
 {
 }
 
-ImageConfiguration::ImageConfiguration(JsonView jsonValue) : 
-    m_runtimeEnvironmentVariablesHasBeenSet(false),
-    m_startCommandHasBeenSet(false),
-    m_portHasBeenSet(false),
-    m_runtimeEnvironmentSecretsHasBeenSet(false)
+ImageConfiguration::ImageConfiguration(JsonView jsonValue)
+  : ImageConfiguration()
 {
   *this = jsonValue;
 }

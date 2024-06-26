@@ -26,11 +26,8 @@ ResourceInUseException::ResourceInUseException() :
 {
 }
 
-ResourceInUseException::ResourceInUseException(JsonView jsonValue) : 
-    m_clusterNameHasBeenSet(false),
-    m_nodegroupNameHasBeenSet(false),
-    m_addonNameHasBeenSet(false),
-    m_messageHasBeenSet(false)
+ResourceInUseException::ResourceInUseException(JsonView jsonValue)
+  : ResourceInUseException()
 {
   *this = jsonValue;
 }

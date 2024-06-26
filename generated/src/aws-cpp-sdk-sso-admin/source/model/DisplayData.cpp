@@ -25,10 +25,8 @@ DisplayData::DisplayData() :
 {
 }
 
-DisplayData::DisplayData(JsonView jsonValue) : 
-    m_descriptionHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_iconUrlHasBeenSet(false)
+DisplayData::DisplayData(JsonView jsonValue)
+  : DisplayData()
 {
   *this = jsonValue;
 }

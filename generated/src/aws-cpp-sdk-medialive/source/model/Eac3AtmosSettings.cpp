@@ -36,21 +36,8 @@ Eac3AtmosSettings::Eac3AtmosSettings() :
 {
 }
 
-Eac3AtmosSettings::Eac3AtmosSettings(JsonView jsonValue) : 
-    m_bitrate(0.0),
-    m_bitrateHasBeenSet(false),
-    m_codingMode(Eac3AtmosCodingMode::NOT_SET),
-    m_codingModeHasBeenSet(false),
-    m_dialnorm(0),
-    m_dialnormHasBeenSet(false),
-    m_drcLine(Eac3AtmosDrcLine::NOT_SET),
-    m_drcLineHasBeenSet(false),
-    m_drcRf(Eac3AtmosDrcRf::NOT_SET),
-    m_drcRfHasBeenSet(false),
-    m_heightTrim(0.0),
-    m_heightTrimHasBeenSet(false),
-    m_surroundTrim(0.0),
-    m_surroundTrimHasBeenSet(false)
+Eac3AtmosSettings::Eac3AtmosSettings(JsonView jsonValue)
+  : Eac3AtmosSettings()
 {
   *this = jsonValue;
 }

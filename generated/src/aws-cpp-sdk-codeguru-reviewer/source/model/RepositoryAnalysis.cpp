@@ -24,9 +24,8 @@ RepositoryAnalysis::RepositoryAnalysis() :
 {
 }
 
-RepositoryAnalysis::RepositoryAnalysis(JsonView jsonValue) : 
-    m_repositoryHeadHasBeenSet(false),
-    m_sourceCodeTypeHasBeenSet(false)
+RepositoryAnalysis::RepositoryAnalysis(JsonView jsonValue)
+  : RepositoryAnalysis()
 {
   *this = jsonValue;
 }

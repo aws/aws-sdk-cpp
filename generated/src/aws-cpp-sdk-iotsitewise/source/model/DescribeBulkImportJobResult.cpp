@@ -24,10 +24,8 @@ DescribeBulkImportJobResult::DescribeBulkImportJobResult() :
 {
 }
 
-DescribeBulkImportJobResult::DescribeBulkImportJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_jobStatus(JobStatus::NOT_SET),
-    m_adaptiveIngestion(false),
-    m_deleteFilesAfterImport(false)
+DescribeBulkImportJobResult::DescribeBulkImportJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeBulkImportJobResult()
 {
   *this = result;
 }

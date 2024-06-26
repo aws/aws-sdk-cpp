@@ -25,8 +25,8 @@ InvalidS3ConfigurationException::InvalidS3ConfigurationException() :
 {
 }
 
-InvalidS3ConfigurationException::InvalidS3ConfigurationException(const XmlNode& xmlNode) : 
-    m_bucketHasBeenSet(false)
+InvalidS3ConfigurationException::InvalidS3ConfigurationException(const XmlNode& xmlNode)
+  : InvalidS3ConfigurationException()
 {
   *this = xmlNode;
 }

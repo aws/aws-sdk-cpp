@@ -22,8 +22,8 @@ UpdateProjectVisibilityResult::UpdateProjectVisibilityResult() :
 {
 }
 
-UpdateProjectVisibilityResult::UpdateProjectVisibilityResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_projectVisibility(ProjectVisibilityType::NOT_SET)
+UpdateProjectVisibilityResult::UpdateProjectVisibilityResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateProjectVisibilityResult()
 {
   *this = result;
 }

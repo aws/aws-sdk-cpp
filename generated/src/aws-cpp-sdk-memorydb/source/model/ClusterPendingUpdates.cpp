@@ -25,10 +25,8 @@ ClusterPendingUpdates::ClusterPendingUpdates() :
 {
 }
 
-ClusterPendingUpdates::ClusterPendingUpdates(JsonView jsonValue) : 
-    m_reshardingHasBeenSet(false),
-    m_aCLsHasBeenSet(false),
-    m_serviceUpdatesHasBeenSet(false)
+ClusterPendingUpdates::ClusterPendingUpdates(JsonView jsonValue)
+  : ClusterPendingUpdates()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ InferredWorkloadSaving::InferredWorkloadSaving() :
 {
 }
 
-InferredWorkloadSaving::InferredWorkloadSaving(JsonView jsonValue) : 
-    m_inferredWorkloadTypesHasBeenSet(false),
-    m_estimatedMonthlySavingsHasBeenSet(false)
+InferredWorkloadSaving::InferredWorkloadSaving(JsonView jsonValue)
+  : InferredWorkloadSaving()
 {
   *this = jsonValue;
 }

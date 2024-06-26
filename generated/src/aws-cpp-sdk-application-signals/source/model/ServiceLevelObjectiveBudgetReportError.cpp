@@ -26,11 +26,8 @@ ServiceLevelObjectiveBudgetReportError::ServiceLevelObjectiveBudgetReportError()
 {
 }
 
-ServiceLevelObjectiveBudgetReportError::ServiceLevelObjectiveBudgetReportError(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
+ServiceLevelObjectiveBudgetReportError::ServiceLevelObjectiveBudgetReportError(JsonView jsonValue)
+  : ServiceLevelObjectiveBudgetReportError()
 {
   *this = jsonValue;
 }

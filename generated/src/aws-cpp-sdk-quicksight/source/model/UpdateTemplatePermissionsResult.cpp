@@ -22,8 +22,8 @@ UpdateTemplatePermissionsResult::UpdateTemplatePermissionsResult() :
 {
 }
 
-UpdateTemplatePermissionsResult::UpdateTemplatePermissionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+UpdateTemplatePermissionsResult::UpdateTemplatePermissionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateTemplatePermissionsResult()
 {
   *this = result;
 }

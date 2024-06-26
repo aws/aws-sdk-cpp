@@ -25,10 +25,8 @@ DataQualityBaselineConfig::DataQualityBaselineConfig() :
 {
 }
 
-DataQualityBaselineConfig::DataQualityBaselineConfig(JsonView jsonValue) : 
-    m_baseliningJobNameHasBeenSet(false),
-    m_constraintsResourceHasBeenSet(false),
-    m_statisticsResourceHasBeenSet(false)
+DataQualityBaselineConfig::DataQualityBaselineConfig(JsonView jsonValue)
+  : DataQualityBaselineConfig()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ KinesisVideoStreamConfig::KinesisVideoStreamConfig() :
 {
 }
 
-KinesisVideoStreamConfig::KinesisVideoStreamConfig(JsonView jsonValue) : 
-    m_prefixHasBeenSet(false),
-    m_retentionPeriodHours(0),
-    m_retentionPeriodHoursHasBeenSet(false),
-    m_encryptionConfigHasBeenSet(false)
+KinesisVideoStreamConfig::KinesisVideoStreamConfig(JsonView jsonValue)
+  : KinesisVideoStreamConfig()
 {
   *this = jsonValue;
 }

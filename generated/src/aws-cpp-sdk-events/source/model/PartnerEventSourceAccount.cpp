@@ -27,12 +27,8 @@ PartnerEventSourceAccount::PartnerEventSourceAccount() :
 {
 }
 
-PartnerEventSourceAccount::PartnerEventSourceAccount(JsonView jsonValue) : 
-    m_accountHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_expirationTimeHasBeenSet(false),
-    m_state(EventSourceState::NOT_SET),
-    m_stateHasBeenSet(false)
+PartnerEventSourceAccount::PartnerEventSourceAccount(JsonView jsonValue)
+  : PartnerEventSourceAccount()
 {
   *this = jsonValue;
 }

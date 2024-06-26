@@ -29,14 +29,8 @@ RestoreTestingSelectionForList::RestoreTestingSelectionForList() :
 {
 }
 
-RestoreTestingSelectionForList::RestoreTestingSelectionForList(JsonView jsonValue) : 
-    m_creationTimeHasBeenSet(false),
-    m_iamRoleArnHasBeenSet(false),
-    m_protectedResourceTypeHasBeenSet(false),
-    m_restoreTestingPlanNameHasBeenSet(false),
-    m_restoreTestingSelectionNameHasBeenSet(false),
-    m_validationWindowHours(0),
-    m_validationWindowHoursHasBeenSet(false)
+RestoreTestingSelectionForList::RestoreTestingSelectionForList(JsonView jsonValue)
+  : RestoreTestingSelectionForList()
 {
   *this = jsonValue;
 }

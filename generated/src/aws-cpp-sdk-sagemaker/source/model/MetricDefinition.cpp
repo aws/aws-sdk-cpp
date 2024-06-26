@@ -24,9 +24,8 @@ MetricDefinition::MetricDefinition() :
 {
 }
 
-MetricDefinition::MetricDefinition(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_regexHasBeenSet(false)
+MetricDefinition::MetricDefinition(JsonView jsonValue)
+  : MetricDefinition()
 {
   *this = jsonValue;
 }

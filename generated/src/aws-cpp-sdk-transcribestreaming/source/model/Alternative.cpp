@@ -25,10 +25,8 @@ Alternative::Alternative() :
 {
 }
 
-Alternative::Alternative(JsonView jsonValue) : 
-    m_transcriptHasBeenSet(false),
-    m_itemsHasBeenSet(false),
-    m_entitiesHasBeenSet(false)
+Alternative::Alternative(JsonView jsonValue)
+  : Alternative()
 {
   *this = jsonValue;
 }

@@ -28,13 +28,8 @@ AwsS3ObjectDetails::AwsS3ObjectDetails() :
 {
 }
 
-AwsS3ObjectDetails::AwsS3ObjectDetails(JsonView jsonValue) : 
-    m_lastModifiedHasBeenSet(false),
-    m_eTagHasBeenSet(false),
-    m_versionIdHasBeenSet(false),
-    m_contentTypeHasBeenSet(false),
-    m_serverSideEncryptionHasBeenSet(false),
-    m_sSEKMSKeyIdHasBeenSet(false)
+AwsS3ObjectDetails::AwsS3ObjectDetails(JsonView jsonValue)
+  : AwsS3ObjectDetails()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ GetHostReservationPurchasePreviewResponse::GetHostReservationPurchasePreviewResp
 {
 }
 
-GetHostReservationPurchasePreviewResponse::GetHostReservationPurchasePreviewResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_currencyCode(CurrencyCodeValues::NOT_SET)
+GetHostReservationPurchasePreviewResponse::GetHostReservationPurchasePreviewResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : GetHostReservationPurchasePreviewResponse()
 {
   *this = result;
 }

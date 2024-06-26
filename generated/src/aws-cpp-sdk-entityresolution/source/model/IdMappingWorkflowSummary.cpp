@@ -26,11 +26,8 @@ IdMappingWorkflowSummary::IdMappingWorkflowSummary() :
 {
 }
 
-IdMappingWorkflowSummary::IdMappingWorkflowSummary(JsonView jsonValue) : 
-    m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_workflowArnHasBeenSet(false),
-    m_workflowNameHasBeenSet(false)
+IdMappingWorkflowSummary::IdMappingWorkflowSummary(JsonView jsonValue)
+  : IdMappingWorkflowSummary()
 {
   *this = jsonValue;
 }

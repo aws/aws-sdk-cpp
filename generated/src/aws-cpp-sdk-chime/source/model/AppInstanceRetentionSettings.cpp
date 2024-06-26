@@ -23,8 +23,8 @@ AppInstanceRetentionSettings::AppInstanceRetentionSettings() :
 {
 }
 
-AppInstanceRetentionSettings::AppInstanceRetentionSettings(JsonView jsonValue) : 
-    m_channelRetentionSettingsHasBeenSet(false)
+AppInstanceRetentionSettings::AppInstanceRetentionSettings(JsonView jsonValue)
+  : AppInstanceRetentionSettings()
 {
   *this = jsonValue;
 }

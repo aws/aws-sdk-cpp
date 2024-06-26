@@ -25,10 +25,8 @@ ForwardedIPConfig::ForwardedIPConfig() :
 {
 }
 
-ForwardedIPConfig::ForwardedIPConfig(JsonView jsonValue) : 
-    m_headerNameHasBeenSet(false),
-    m_fallbackBehavior(FallbackBehavior::NOT_SET),
-    m_fallbackBehaviorHasBeenSet(false)
+ForwardedIPConfig::ForwardedIPConfig(JsonView jsonValue)
+  : ForwardedIPConfig()
 {
   *this = jsonValue;
 }

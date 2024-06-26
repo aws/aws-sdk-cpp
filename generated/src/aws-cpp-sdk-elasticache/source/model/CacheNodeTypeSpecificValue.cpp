@@ -26,9 +26,8 @@ CacheNodeTypeSpecificValue::CacheNodeTypeSpecificValue() :
 {
 }
 
-CacheNodeTypeSpecificValue::CacheNodeTypeSpecificValue(const XmlNode& xmlNode) : 
-    m_cacheNodeTypeHasBeenSet(false),
-    m_valueHasBeenSet(false)
+CacheNodeTypeSpecificValue::CacheNodeTypeSpecificValue(const XmlNode& xmlNode)
+  : CacheNodeTypeSpecificValue()
 {
   *this = xmlNode;
 }

@@ -23,8 +23,8 @@ AwsWafv2ActionBlockDetails::AwsWafv2ActionBlockDetails() :
 {
 }
 
-AwsWafv2ActionBlockDetails::AwsWafv2ActionBlockDetails(JsonView jsonValue) : 
-    m_customResponseHasBeenSet(false)
+AwsWafv2ActionBlockDetails::AwsWafv2ActionBlockDetails(JsonView jsonValue)
+  : AwsWafv2ActionBlockDetails()
 {
   *this = jsonValue;
 }

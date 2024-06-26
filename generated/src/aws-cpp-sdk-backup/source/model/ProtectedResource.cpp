@@ -28,13 +28,8 @@ ProtectedResource::ProtectedResource() :
 {
 }
 
-ProtectedResource::ProtectedResource(JsonView jsonValue) : 
-    m_resourceArnHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
-    m_lastBackupTimeHasBeenSet(false),
-    m_resourceNameHasBeenSet(false),
-    m_lastBackupVaultArnHasBeenSet(false),
-    m_lastRecoveryPointArnHasBeenSet(false)
+ProtectedResource::ProtectedResource(JsonView jsonValue)
+  : ProtectedResource()
 {
   *this = jsonValue;
 }

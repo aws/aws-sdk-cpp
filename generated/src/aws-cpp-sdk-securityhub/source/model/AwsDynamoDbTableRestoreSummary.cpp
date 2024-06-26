@@ -27,12 +27,8 @@ AwsDynamoDbTableRestoreSummary::AwsDynamoDbTableRestoreSummary() :
 {
 }
 
-AwsDynamoDbTableRestoreSummary::AwsDynamoDbTableRestoreSummary(JsonView jsonValue) : 
-    m_sourceBackupArnHasBeenSet(false),
-    m_sourceTableArnHasBeenSet(false),
-    m_restoreDateTimeHasBeenSet(false),
-    m_restoreInProgress(false),
-    m_restoreInProgressHasBeenSet(false)
+AwsDynamoDbTableRestoreSummary::AwsDynamoDbTableRestoreSummary(JsonView jsonValue)
+  : AwsDynamoDbTableRestoreSummary()
 {
   *this = jsonValue;
 }

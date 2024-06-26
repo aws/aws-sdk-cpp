@@ -26,11 +26,8 @@ EncryptionContractConfiguration::EncryptionContractConfiguration() :
 {
 }
 
-EncryptionContractConfiguration::EncryptionContractConfiguration(JsonView jsonValue) : 
-    m_presetSpeke20Audio(PresetSpeke20Audio::NOT_SET),
-    m_presetSpeke20AudioHasBeenSet(false),
-    m_presetSpeke20Video(PresetSpeke20Video::NOT_SET),
-    m_presetSpeke20VideoHasBeenSet(false)
+EncryptionContractConfiguration::EncryptionContractConfiguration(JsonView jsonValue)
+  : EncryptionContractConfiguration()
 {
   *this = jsonValue;
 }

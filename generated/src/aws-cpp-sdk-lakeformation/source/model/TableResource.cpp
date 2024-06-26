@@ -26,11 +26,8 @@ TableResource::TableResource() :
 {
 }
 
-TableResource::TableResource(JsonView jsonValue) : 
-    m_catalogIdHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_tableWildcardHasBeenSet(false)
+TableResource::TableResource(JsonView jsonValue)
+  : TableResource()
 {
   *this = jsonValue;
 }

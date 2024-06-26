@@ -34,19 +34,8 @@ ImportJobSummary::ImportJobSummary() :
 {
 }
 
-ImportJobSummary::ImportJobSummary(JsonView jsonValue) : 
-    m_createdTimeHasBeenSet(false),
-    m_externalSourceConfigurationHasBeenSet(false),
-    m_importJobIdHasBeenSet(false),
-    m_importJobType(ImportJobType::NOT_SET),
-    m_importJobTypeHasBeenSet(false),
-    m_knowledgeBaseArnHasBeenSet(false),
-    m_knowledgeBaseIdHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_metadataHasBeenSet(false),
-    m_status(ImportJobStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_uploadIdHasBeenSet(false)
+ImportJobSummary::ImportJobSummary(JsonView jsonValue)
+  : ImportJobSummary()
 {
   *this = jsonValue;
 }

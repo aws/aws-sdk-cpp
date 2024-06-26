@@ -57,42 +57,8 @@ LoRaWANGetServiceProfileInfo::LoRaWANGetServiceProfileInfo() :
 {
 }
 
-LoRaWANGetServiceProfileInfo::LoRaWANGetServiceProfileInfo(JsonView jsonValue) : 
-    m_ulRate(0),
-    m_ulRateHasBeenSet(false),
-    m_ulBucketSize(0),
-    m_ulBucketSizeHasBeenSet(false),
-    m_ulRatePolicyHasBeenSet(false),
-    m_dlRate(0),
-    m_dlRateHasBeenSet(false),
-    m_dlBucketSize(0),
-    m_dlBucketSizeHasBeenSet(false),
-    m_dlRatePolicyHasBeenSet(false),
-    m_addGwMetadata(false),
-    m_addGwMetadataHasBeenSet(false),
-    m_devStatusReqFreq(0),
-    m_devStatusReqFreqHasBeenSet(false),
-    m_reportDevStatusBattery(false),
-    m_reportDevStatusBatteryHasBeenSet(false),
-    m_reportDevStatusMargin(false),
-    m_reportDevStatusMarginHasBeenSet(false),
-    m_drMin(0),
-    m_drMinHasBeenSet(false),
-    m_drMax(0),
-    m_drMaxHasBeenSet(false),
-    m_channelMaskHasBeenSet(false),
-    m_prAllowed(false),
-    m_prAllowedHasBeenSet(false),
-    m_hrAllowed(false),
-    m_hrAllowedHasBeenSet(false),
-    m_raAllowed(false),
-    m_raAllowedHasBeenSet(false),
-    m_nwkGeoLoc(false),
-    m_nwkGeoLocHasBeenSet(false),
-    m_targetPer(0),
-    m_targetPerHasBeenSet(false),
-    m_minGwDiversity(0),
-    m_minGwDiversityHasBeenSet(false)
+LoRaWANGetServiceProfileInfo::LoRaWANGetServiceProfileInfo(JsonView jsonValue)
+  : LoRaWANGetServiceProfileInfo()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ MongoDBTarget::MongoDBTarget() :
 {
 }
 
-MongoDBTarget::MongoDBTarget(JsonView jsonValue) : 
-    m_connectionNameHasBeenSet(false),
-    m_pathHasBeenSet(false),
-    m_scanAll(false),
-    m_scanAllHasBeenSet(false)
+MongoDBTarget::MongoDBTarget(JsonView jsonValue)
+  : MongoDBTarget()
 {
   *this = jsonValue;
 }

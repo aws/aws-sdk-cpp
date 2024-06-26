@@ -23,8 +23,8 @@ CampaignCustomMessage::CampaignCustomMessage() :
 {
 }
 
-CampaignCustomMessage::CampaignCustomMessage(JsonView jsonValue) : 
-    m_dataHasBeenSet(false)
+CampaignCustomMessage::CampaignCustomMessage(JsonView jsonValue)
+  : CampaignCustomMessage()
 {
   *this = jsonValue;
 }

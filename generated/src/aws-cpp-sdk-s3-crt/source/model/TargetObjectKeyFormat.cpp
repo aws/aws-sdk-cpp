@@ -26,9 +26,8 @@ TargetObjectKeyFormat::TargetObjectKeyFormat() :
 {
 }
 
-TargetObjectKeyFormat::TargetObjectKeyFormat(const XmlNode& xmlNode) : 
-    m_simplePrefixHasBeenSet(false),
-    m_partitionedPrefixHasBeenSet(false)
+TargetObjectKeyFormat::TargetObjectKeyFormat(const XmlNode& xmlNode)
+  : TargetObjectKeyFormat()
 {
   *this = xmlNode;
 }

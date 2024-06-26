@@ -23,8 +23,8 @@ LogDeliveryConfiguration::LogDeliveryConfiguration() :
 {
 }
 
-LogDeliveryConfiguration::LogDeliveryConfiguration(JsonView jsonValue) : 
-    m_s3ConfigurationHasBeenSet(false)
+LogDeliveryConfiguration::LogDeliveryConfiguration(JsonView jsonValue)
+  : LogDeliveryConfiguration()
 {
   *this = jsonValue;
 }

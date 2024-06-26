@@ -23,8 +23,8 @@ DatasetExportJobOutput::DatasetExportJobOutput() :
 {
 }
 
-DatasetExportJobOutput::DatasetExportJobOutput(JsonView jsonValue) : 
-    m_s3DataDestinationHasBeenSet(false)
+DatasetExportJobOutput::DatasetExportJobOutput(JsonView jsonValue)
+  : DatasetExportJobOutput()
 {
   *this = jsonValue;
 }

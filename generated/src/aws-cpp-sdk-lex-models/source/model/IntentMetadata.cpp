@@ -27,12 +27,8 @@ IntentMetadata::IntentMetadata() :
 {
 }
 
-IntentMetadata::IntentMetadata(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_lastUpdatedDateHasBeenSet(false),
-    m_createdDateHasBeenSet(false),
-    m_versionHasBeenSet(false)
+IntentMetadata::IntentMetadata(JsonView jsonValue)
+  : IntentMetadata()
 {
   *this = jsonValue;
 }

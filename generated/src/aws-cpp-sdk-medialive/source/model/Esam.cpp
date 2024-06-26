@@ -29,14 +29,8 @@ Esam::Esam() :
 {
 }
 
-Esam::Esam(JsonView jsonValue) : 
-    m_acquisitionPointIdHasBeenSet(false),
-    m_adAvailOffset(0),
-    m_adAvailOffsetHasBeenSet(false),
-    m_passwordParamHasBeenSet(false),
-    m_poisEndpointHasBeenSet(false),
-    m_usernameHasBeenSet(false),
-    m_zoneIdentityHasBeenSet(false)
+Esam::Esam(JsonView jsonValue)
+  : Esam()
 {
   *this = jsonValue;
 }

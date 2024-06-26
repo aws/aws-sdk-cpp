@@ -25,10 +25,8 @@ SelectFields::SelectFields() :
 {
 }
 
-SelectFields::SelectFields(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_inputsHasBeenSet(false),
-    m_pathsHasBeenSet(false)
+SelectFields::SelectFields(JsonView jsonValue)
+  : SelectFields()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ AnalyticsBinKey::AnalyticsBinKey() :
 {
 }
 
-AnalyticsBinKey::AnalyticsBinKey(JsonView jsonValue) : 
-    m_name(AnalyticsBinByName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_value(0),
-    m_valueHasBeenSet(false)
+AnalyticsBinKey::AnalyticsBinKey(JsonView jsonValue)
+  : AnalyticsBinKey()
 {
   *this = jsonValue;
 }

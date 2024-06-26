@@ -23,8 +23,8 @@ HttpUrlDestinationSummary::HttpUrlDestinationSummary() :
 {
 }
 
-HttpUrlDestinationSummary::HttpUrlDestinationSummary(JsonView jsonValue) : 
-    m_confirmationUrlHasBeenSet(false)
+HttpUrlDestinationSummary::HttpUrlDestinationSummary(JsonView jsonValue)
+  : HttpUrlDestinationSummary()
 {
   *this = jsonValue;
 }

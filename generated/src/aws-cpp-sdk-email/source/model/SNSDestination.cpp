@@ -25,8 +25,8 @@ SNSDestination::SNSDestination() :
 {
 }
 
-SNSDestination::SNSDestination(const XmlNode& xmlNode) : 
-    m_topicARNHasBeenSet(false)
+SNSDestination::SNSDestination(const XmlNode& xmlNode)
+  : SNSDestination()
 {
   *this = xmlNode;
 }

@@ -25,10 +25,8 @@ CopyCommand::CopyCommand() :
 {
 }
 
-CopyCommand::CopyCommand(JsonView jsonValue) : 
-    m_dataTableNameHasBeenSet(false),
-    m_dataTableColumnsHasBeenSet(false),
-    m_copyOptionsHasBeenSet(false)
+CopyCommand::CopyCommand(JsonView jsonValue)
+  : CopyCommand()
 {
   *this = jsonValue;
 }

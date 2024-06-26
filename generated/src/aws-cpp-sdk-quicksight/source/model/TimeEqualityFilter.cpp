@@ -30,15 +30,8 @@ TimeEqualityFilter::TimeEqualityFilter() :
 {
 }
 
-TimeEqualityFilter::TimeEqualityFilter(JsonView jsonValue) : 
-    m_filterIdHasBeenSet(false),
-    m_columnHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_parameterNameHasBeenSet(false),
-    m_timeGranularity(TimeGranularity::NOT_SET),
-    m_timeGranularityHasBeenSet(false),
-    m_rollingDateHasBeenSet(false),
-    m_defaultFilterControlConfigurationHasBeenSet(false)
+TimeEqualityFilter::TimeEqualityFilter(JsonView jsonValue)
+  : TimeEqualityFilter()
 {
   *this = jsonValue;
 }

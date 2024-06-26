@@ -26,11 +26,8 @@ AssetPropertyVariant::AssetPropertyVariant() :
 {
 }
 
-AssetPropertyVariant::AssetPropertyVariant(JsonView jsonValue) : 
-    m_stringValueHasBeenSet(false),
-    m_integerValueHasBeenSet(false),
-    m_doubleValueHasBeenSet(false),
-    m_booleanValueHasBeenSet(false)
+AssetPropertyVariant::AssetPropertyVariant(JsonView jsonValue)
+  : AssetPropertyVariant()
 {
   *this = jsonValue;
 }

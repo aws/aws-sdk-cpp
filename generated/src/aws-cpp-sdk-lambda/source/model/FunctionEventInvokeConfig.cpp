@@ -31,15 +31,8 @@ FunctionEventInvokeConfig::FunctionEventInvokeConfig() :
 {
 }
 
-FunctionEventInvokeConfig::FunctionEventInvokeConfig(JsonView jsonValue) : 
-    m_lastModifiedHasBeenSet(false),
-    m_functionArnHasBeenSet(false),
-    m_maximumRetryAttempts(0),
-    m_maximumRetryAttemptsHasBeenSet(false),
-    m_maximumEventAgeInSeconds(0),
-    m_maximumEventAgeInSecondsHasBeenSet(false),
-    m_destinationConfigHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
+FunctionEventInvokeConfig::FunctionEventInvokeConfig(JsonView jsonValue)
+  : FunctionEventInvokeConfig()
 {
   *this = jsonValue;
 }

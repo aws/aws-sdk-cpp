@@ -31,16 +31,8 @@ RobotDeployment::RobotDeployment() :
 {
 }
 
-RobotDeployment::RobotDeployment(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_deploymentStartTimeHasBeenSet(false),
-    m_deploymentFinishTimeHasBeenSet(false),
-    m_status(RobotStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_progressDetailHasBeenSet(false),
-    m_failureReasonHasBeenSet(false),
-    m_failureCode(DeploymentJobErrorCode::NOT_SET),
-    m_failureCodeHasBeenSet(false)
+RobotDeployment::RobotDeployment(JsonView jsonValue)
+  : RobotDeployment()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ NetworkAclIcmpTypeCode::NetworkAclIcmpTypeCode() :
 {
 }
 
-NetworkAclIcmpTypeCode::NetworkAclIcmpTypeCode(JsonView jsonValue) : 
-    m_code(0),
-    m_codeHasBeenSet(false),
-    m_type(0),
-    m_typeHasBeenSet(false)
+NetworkAclIcmpTypeCode::NetworkAclIcmpTypeCode(JsonView jsonValue)
+  : NetworkAclIcmpTypeCode()
 {
   *this = jsonValue;
 }

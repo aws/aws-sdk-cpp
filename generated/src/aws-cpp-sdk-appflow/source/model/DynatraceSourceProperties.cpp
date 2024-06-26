@@ -23,8 +23,8 @@ DynatraceSourceProperties::DynatraceSourceProperties() :
 {
 }
 
-DynatraceSourceProperties::DynatraceSourceProperties(JsonView jsonValue) : 
-    m_objectHasBeenSet(false)
+DynatraceSourceProperties::DynatraceSourceProperties(JsonView jsonValue)
+  : DynatraceSourceProperties()
 {
   *this = jsonValue;
 }

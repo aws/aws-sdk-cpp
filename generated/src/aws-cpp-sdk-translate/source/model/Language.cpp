@@ -24,9 +24,8 @@ Language::Language() :
 {
 }
 
-Language::Language(JsonView jsonValue) : 
-    m_languageNameHasBeenSet(false),
-    m_languageCodeHasBeenSet(false)
+Language::Language(JsonView jsonValue)
+  : Language()
 {
   *this = jsonValue;
 }

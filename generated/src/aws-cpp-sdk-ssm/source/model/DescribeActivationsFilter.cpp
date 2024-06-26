@@ -25,10 +25,8 @@ DescribeActivationsFilter::DescribeActivationsFilter() :
 {
 }
 
-DescribeActivationsFilter::DescribeActivationsFilter(JsonView jsonValue) : 
-    m_filterKey(DescribeActivationsFilterKeys::NOT_SET),
-    m_filterKeyHasBeenSet(false),
-    m_filterValuesHasBeenSet(false)
+DescribeActivationsFilter::DescribeActivationsFilter(JsonView jsonValue)
+  : DescribeActivationsFilter()
 {
   *this = jsonValue;
 }

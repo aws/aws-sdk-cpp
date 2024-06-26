@@ -58,41 +58,8 @@ CapacityReservation::CapacityReservation() :
 {
 }
 
-CapacityReservation::CapacityReservation(const XmlNode& xmlNode) : 
-    m_capacityReservationIdHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_capacityReservationArnHasBeenSet(false),
-    m_availabilityZoneIdHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_instancePlatform(CapacityReservationInstancePlatform::NOT_SET),
-    m_instancePlatformHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_tenancy(CapacityReservationTenancy::NOT_SET),
-    m_tenancyHasBeenSet(false),
-    m_totalInstanceCount(0),
-    m_totalInstanceCountHasBeenSet(false),
-    m_availableInstanceCount(0),
-    m_availableInstanceCountHasBeenSet(false),
-    m_ebsOptimized(false),
-    m_ebsOptimizedHasBeenSet(false),
-    m_ephemeralStorage(false),
-    m_ephemeralStorageHasBeenSet(false),
-    m_state(CapacityReservationState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_startDateHasBeenSet(false),
-    m_endDateHasBeenSet(false),
-    m_endDateType(EndDateType::NOT_SET),
-    m_endDateTypeHasBeenSet(false),
-    m_instanceMatchCriteria(InstanceMatchCriteria::NOT_SET),
-    m_instanceMatchCriteriaHasBeenSet(false),
-    m_createDateHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_outpostArnHasBeenSet(false),
-    m_capacityReservationFleetIdHasBeenSet(false),
-    m_placementGroupArnHasBeenSet(false),
-    m_capacityAllocationsHasBeenSet(false),
-    m_reservationType(CapacityReservationType::NOT_SET),
-    m_reservationTypeHasBeenSet(false)
+CapacityReservation::CapacityReservation(const XmlNode& xmlNode)
+  : CapacityReservation()
 {
   *this = xmlNode;
 }

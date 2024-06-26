@@ -63,46 +63,8 @@ MetricAlarm::MetricAlarm() :
 {
 }
 
-MetricAlarm::MetricAlarm(const XmlNode& xmlNode) : 
-    m_alarmNameHasBeenSet(false),
-    m_alarmArnHasBeenSet(false),
-    m_alarmDescriptionHasBeenSet(false),
-    m_alarmConfigurationUpdatedTimestampHasBeenSet(false),
-    m_actionsEnabled(false),
-    m_actionsEnabledHasBeenSet(false),
-    m_oKActionsHasBeenSet(false),
-    m_alarmActionsHasBeenSet(false),
-    m_insufficientDataActionsHasBeenSet(false),
-    m_stateValue(StateValue::NOT_SET),
-    m_stateValueHasBeenSet(false),
-    m_stateReasonHasBeenSet(false),
-    m_stateReasonDataHasBeenSet(false),
-    m_stateUpdatedTimestampHasBeenSet(false),
-    m_metricNameHasBeenSet(false),
-    m_namespaceHasBeenSet(false),
-    m_statistic(Statistic::NOT_SET),
-    m_statisticHasBeenSet(false),
-    m_extendedStatisticHasBeenSet(false),
-    m_dimensionsHasBeenSet(false),
-    m_period(0),
-    m_periodHasBeenSet(false),
-    m_unit(StandardUnit::NOT_SET),
-    m_unitHasBeenSet(false),
-    m_evaluationPeriods(0),
-    m_evaluationPeriodsHasBeenSet(false),
-    m_datapointsToAlarm(0),
-    m_datapointsToAlarmHasBeenSet(false),
-    m_threshold(0.0),
-    m_thresholdHasBeenSet(false),
-    m_comparisonOperator(ComparisonOperator::NOT_SET),
-    m_comparisonOperatorHasBeenSet(false),
-    m_treatMissingDataHasBeenSet(false),
-    m_evaluateLowSampleCountPercentileHasBeenSet(false),
-    m_metricsHasBeenSet(false),
-    m_thresholdMetricIdHasBeenSet(false),
-    m_evaluationState(EvaluationState::NOT_SET),
-    m_evaluationStateHasBeenSet(false),
-    m_stateTransitionedTimestampHasBeenSet(false)
+MetricAlarm::MetricAlarm(const XmlNode& xmlNode)
+  : MetricAlarm()
 {
   *this = xmlNode;
 }

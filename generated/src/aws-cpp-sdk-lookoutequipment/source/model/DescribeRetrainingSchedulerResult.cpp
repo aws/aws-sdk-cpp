@@ -23,9 +23,8 @@ DescribeRetrainingSchedulerResult::DescribeRetrainingSchedulerResult() :
 {
 }
 
-DescribeRetrainingSchedulerResult::DescribeRetrainingSchedulerResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(RetrainingSchedulerStatus::NOT_SET),
-    m_promoteMode(ModelPromoteMode::NOT_SET)
+DescribeRetrainingSchedulerResult::DescribeRetrainingSchedulerResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeRetrainingSchedulerResult()
 {
   *this = result;
 }

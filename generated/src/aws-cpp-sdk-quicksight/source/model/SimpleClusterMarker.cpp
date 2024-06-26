@@ -23,8 +23,8 @@ SimpleClusterMarker::SimpleClusterMarker() :
 {
 }
 
-SimpleClusterMarker::SimpleClusterMarker(JsonView jsonValue) : 
-    m_colorHasBeenSet(false)
+SimpleClusterMarker::SimpleClusterMarker(JsonView jsonValue)
+  : SimpleClusterMarker()
 {
   *this = jsonValue;
 }

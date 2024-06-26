@@ -24,9 +24,8 @@ AsyncInferenceConfig::AsyncInferenceConfig() :
 {
 }
 
-AsyncInferenceConfig::AsyncInferenceConfig(JsonView jsonValue) : 
-    m_clientConfigHasBeenSet(false),
-    m_outputConfigHasBeenSet(false)
+AsyncInferenceConfig::AsyncInferenceConfig(JsonView jsonValue)
+  : AsyncInferenceConfig()
 {
   *this = jsonValue;
 }

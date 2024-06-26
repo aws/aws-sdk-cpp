@@ -23,8 +23,8 @@ ControllerNodeInfo::ControllerNodeInfo() :
 {
 }
 
-ControllerNodeInfo::ControllerNodeInfo(JsonView jsonValue) : 
-    m_endpointsHasBeenSet(false)
+ControllerNodeInfo::ControllerNodeInfo(JsonView jsonValue)
+  : ControllerNodeInfo()
 {
   *this = jsonValue;
 }

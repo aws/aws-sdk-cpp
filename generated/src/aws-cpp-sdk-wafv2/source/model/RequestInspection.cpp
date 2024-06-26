@@ -26,11 +26,8 @@ RequestInspection::RequestInspection() :
 {
 }
 
-RequestInspection::RequestInspection(JsonView jsonValue) : 
-    m_payloadType(PayloadType::NOT_SET),
-    m_payloadTypeHasBeenSet(false),
-    m_usernameFieldHasBeenSet(false),
-    m_passwordFieldHasBeenSet(false)
+RequestInspection::RequestInspection(JsonView jsonValue)
+  : RequestInspection()
 {
   *this = jsonValue;
 }

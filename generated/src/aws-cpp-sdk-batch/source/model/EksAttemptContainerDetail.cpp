@@ -26,11 +26,8 @@ EksAttemptContainerDetail::EksAttemptContainerDetail() :
 {
 }
 
-EksAttemptContainerDetail::EksAttemptContainerDetail(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_exitCode(0),
-    m_exitCodeHasBeenSet(false),
-    m_reasonHasBeenSet(false)
+EksAttemptContainerDetail::EksAttemptContainerDetail(JsonView jsonValue)
+  : EksAttemptContainerDetail()
 {
   *this = jsonValue;
 }

@@ -39,24 +39,8 @@ ProactiveAnomalySummary::ProactiveAnomalySummary() :
 {
 }
 
-ProactiveAnomalySummary::ProactiveAnomalySummary(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_severity(AnomalySeverity::NOT_SET),
-    m_severityHasBeenSet(false),
-    m_status(AnomalyStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_updateTimeHasBeenSet(false),
-    m_anomalyTimeRangeHasBeenSet(false),
-    m_anomalyReportedTimeRangeHasBeenSet(false),
-    m_predictionTimeRangeHasBeenSet(false),
-    m_sourceDetailsHasBeenSet(false),
-    m_associatedInsightIdHasBeenSet(false),
-    m_resourceCollectionHasBeenSet(false),
-    m_limit(0.0),
-    m_limitHasBeenSet(false),
-    m_sourceMetadataHasBeenSet(false),
-    m_anomalyResourcesHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+ProactiveAnomalySummary::ProactiveAnomalySummary(JsonView jsonValue)
+  : ProactiveAnomalySummary()
 {
   *this = jsonValue;
 }

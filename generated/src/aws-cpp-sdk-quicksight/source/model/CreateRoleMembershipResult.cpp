@@ -22,8 +22,8 @@ CreateRoleMembershipResult::CreateRoleMembershipResult() :
 {
 }
 
-CreateRoleMembershipResult::CreateRoleMembershipResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+CreateRoleMembershipResult::CreateRoleMembershipResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateRoleMembershipResult()
 {
   *this = result;
 }

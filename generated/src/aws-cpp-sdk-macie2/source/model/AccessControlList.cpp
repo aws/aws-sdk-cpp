@@ -26,11 +26,8 @@ AccessControlList::AccessControlList() :
 {
 }
 
-AccessControlList::AccessControlList(JsonView jsonValue) : 
-    m_allowsPublicReadAccess(false),
-    m_allowsPublicReadAccessHasBeenSet(false),
-    m_allowsPublicWriteAccess(false),
-    m_allowsPublicWriteAccessHasBeenSet(false)
+AccessControlList::AccessControlList(JsonView jsonValue)
+  : AccessControlList()
 {
   *this = jsonValue;
 }

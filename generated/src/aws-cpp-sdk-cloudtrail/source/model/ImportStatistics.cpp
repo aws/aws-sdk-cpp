@@ -32,17 +32,8 @@ ImportStatistics::ImportStatistics() :
 {
 }
 
-ImportStatistics::ImportStatistics(JsonView jsonValue) : 
-    m_prefixesFound(0),
-    m_prefixesFoundHasBeenSet(false),
-    m_prefixesCompleted(0),
-    m_prefixesCompletedHasBeenSet(false),
-    m_filesCompleted(0),
-    m_filesCompletedHasBeenSet(false),
-    m_eventsCompleted(0),
-    m_eventsCompletedHasBeenSet(false),
-    m_failedEntries(0),
-    m_failedEntriesHasBeenSet(false)
+ImportStatistics::ImportStatistics(JsonView jsonValue)
+  : ImportStatistics()
 {
   *this = jsonValue;
 }

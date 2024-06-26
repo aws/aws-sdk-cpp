@@ -27,12 +27,8 @@ DocumentClassificationJobFilter::DocumentClassificationJobFilter() :
 {
 }
 
-DocumentClassificationJobFilter::DocumentClassificationJobFilter(JsonView jsonValue) : 
-    m_jobNameHasBeenSet(false),
-    m_jobStatus(JobStatus::NOT_SET),
-    m_jobStatusHasBeenSet(false),
-    m_submitTimeBeforeHasBeenSet(false),
-    m_submitTimeAfterHasBeenSet(false)
+DocumentClassificationJobFilter::DocumentClassificationJobFilter(JsonView jsonValue)
+  : DocumentClassificationJobFilter()
 {
   *this = jsonValue;
 }

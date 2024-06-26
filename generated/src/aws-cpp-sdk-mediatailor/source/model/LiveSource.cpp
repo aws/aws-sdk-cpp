@@ -29,14 +29,8 @@ LiveSource::LiveSource() :
 {
 }
 
-LiveSource::LiveSource(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_httpPackageConfigurationsHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_liveSourceNameHasBeenSet(false),
-    m_sourceLocationNameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+LiveSource::LiveSource(JsonView jsonValue)
+  : LiveSource()
 {
   *this = jsonValue;
 }

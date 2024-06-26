@@ -25,10 +25,8 @@ FilterClause::FilterClause() :
 {
 }
 
-FilterClause::FilterClause(JsonView jsonValue) : 
-    m_andHasBeenSet(false),
-    m_filterHasBeenSet(false),
-    m_orHasBeenSet(false)
+FilterClause::FilterClause(JsonView jsonValue)
+  : FilterClause()
 {
   *this = jsonValue;
 }

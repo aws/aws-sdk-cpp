@@ -24,9 +24,8 @@ StreamingSessionStorageRoot::StreamingSessionStorageRoot() :
 {
 }
 
-StreamingSessionStorageRoot::StreamingSessionStorageRoot(JsonView jsonValue) : 
-    m_linuxHasBeenSet(false),
-    m_windowsHasBeenSet(false)
+StreamingSessionStorageRoot::StreamingSessionStorageRoot(JsonView jsonValue)
+  : StreamingSessionStorageRoot()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ AssetRelationshipSummary::AssetRelationshipSummary() :
 {
 }
 
-AssetRelationshipSummary::AssetRelationshipSummary(JsonView jsonValue) : 
-    m_hierarchyInfoHasBeenSet(false),
-    m_relationshipType(AssetRelationshipType::NOT_SET),
-    m_relationshipTypeHasBeenSet(false)
+AssetRelationshipSummary::AssetRelationshipSummary(JsonView jsonValue)
+  : AssetRelationshipSummary()
 {
   *this = jsonValue;
 }

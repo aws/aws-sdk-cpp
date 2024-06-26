@@ -25,10 +25,8 @@ AwsBackupBackupPlanBackupPlanDetails::AwsBackupBackupPlanBackupPlanDetails() :
 {
 }
 
-AwsBackupBackupPlanBackupPlanDetails::AwsBackupBackupPlanBackupPlanDetails(JsonView jsonValue) : 
-    m_backupPlanNameHasBeenSet(false),
-    m_advancedBackupSettingsHasBeenSet(false),
-    m_backupPlanRuleHasBeenSet(false)
+AwsBackupBackupPlanBackupPlanDetails::AwsBackupBackupPlanBackupPlanDetails(JsonView jsonValue)
+  : AwsBackupBackupPlanBackupPlanDetails()
 {
   *this = jsonValue;
 }

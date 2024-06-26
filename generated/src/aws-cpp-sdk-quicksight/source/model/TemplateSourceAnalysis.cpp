@@ -24,9 +24,8 @@ TemplateSourceAnalysis::TemplateSourceAnalysis() :
 {
 }
 
-TemplateSourceAnalysis::TemplateSourceAnalysis(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_dataSetReferencesHasBeenSet(false)
+TemplateSourceAnalysis::TemplateSourceAnalysis(JsonView jsonValue)
+  : TemplateSourceAnalysis()
 {
   *this = jsonValue;
 }

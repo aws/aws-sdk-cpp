@@ -23,8 +23,8 @@ PortSet::PortSet() :
 {
 }
 
-PortSet::PortSet(JsonView jsonValue) : 
-    m_definitionHasBeenSet(false)
+PortSet::PortSet(JsonView jsonValue)
+  : PortSet()
 {
   *this = jsonValue;
 }

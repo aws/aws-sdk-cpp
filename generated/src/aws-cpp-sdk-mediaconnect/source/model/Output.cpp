@@ -39,24 +39,8 @@ Output::Output() :
 {
 }
 
-Output::Output(JsonView jsonValue) : 
-    m_dataTransferSubscriberFeePercent(0),
-    m_dataTransferSubscriberFeePercentHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_destinationHasBeenSet(false),
-    m_encryptionHasBeenSet(false),
-    m_entitlementArnHasBeenSet(false),
-    m_listenerAddressHasBeenSet(false),
-    m_mediaLiveInputArnHasBeenSet(false),
-    m_mediaStreamOutputConfigurationsHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_outputArnHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_transportHasBeenSet(false),
-    m_vpcInterfaceAttachmentHasBeenSet(false),
-    m_bridgeArnHasBeenSet(false),
-    m_bridgePortsHasBeenSet(false)
+Output::Output(JsonView jsonValue)
+  : Output()
 {
   *this = jsonValue;
 }

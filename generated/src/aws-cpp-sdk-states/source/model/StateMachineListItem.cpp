@@ -27,12 +27,8 @@ StateMachineListItem::StateMachineListItem() :
 {
 }
 
-StateMachineListItem::StateMachineListItem(JsonView jsonValue) : 
-    m_stateMachineArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_type(StateMachineType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_creationDateHasBeenSet(false)
+StateMachineListItem::StateMachineListItem(JsonView jsonValue)
+  : StateMachineListItem()
 {
   *this = jsonValue;
 }

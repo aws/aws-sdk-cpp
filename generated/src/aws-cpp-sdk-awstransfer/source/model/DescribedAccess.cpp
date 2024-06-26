@@ -30,15 +30,8 @@ DescribedAccess::DescribedAccess() :
 {
 }
 
-DescribedAccess::DescribedAccess(JsonView jsonValue) : 
-    m_homeDirectoryHasBeenSet(false),
-    m_homeDirectoryMappingsHasBeenSet(false),
-    m_homeDirectoryType(HomeDirectoryType::NOT_SET),
-    m_homeDirectoryTypeHasBeenSet(false),
-    m_policyHasBeenSet(false),
-    m_posixProfileHasBeenSet(false),
-    m_roleHasBeenSet(false),
-    m_externalIdHasBeenSet(false)
+DescribedAccess::DescribedAccess(JsonView jsonValue)
+  : DescribedAccess()
 {
   *this = jsonValue;
 }

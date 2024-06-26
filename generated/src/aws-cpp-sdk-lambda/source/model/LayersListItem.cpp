@@ -25,10 +25,8 @@ LayersListItem::LayersListItem() :
 {
 }
 
-LayersListItem::LayersListItem(JsonView jsonValue) : 
-    m_layerNameHasBeenSet(false),
-    m_layerArnHasBeenSet(false),
-    m_latestMatchingVersionHasBeenSet(false)
+LayersListItem::LayersListItem(JsonView jsonValue)
+  : LayersListItem()
 {
   *this = jsonValue;
 }

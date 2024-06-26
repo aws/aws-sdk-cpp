@@ -34,19 +34,8 @@ UpdateOpenZFSVolumeConfiguration::UpdateOpenZFSVolumeConfiguration() :
 {
 }
 
-UpdateOpenZFSVolumeConfiguration::UpdateOpenZFSVolumeConfiguration(JsonView jsonValue) : 
-    m_storageCapacityReservationGiB(0),
-    m_storageCapacityReservationGiBHasBeenSet(false),
-    m_storageCapacityQuotaGiB(0),
-    m_storageCapacityQuotaGiBHasBeenSet(false),
-    m_recordSizeKiB(0),
-    m_recordSizeKiBHasBeenSet(false),
-    m_dataCompressionType(OpenZFSDataCompressionType::NOT_SET),
-    m_dataCompressionTypeHasBeenSet(false),
-    m_nfsExportsHasBeenSet(false),
-    m_userAndGroupQuotasHasBeenSet(false),
-    m_readOnly(false),
-    m_readOnlyHasBeenSet(false)
+UpdateOpenZFSVolumeConfiguration::UpdateOpenZFSVolumeConfiguration(JsonView jsonValue)
+  : UpdateOpenZFSVolumeConfiguration()
 {
   *this = jsonValue;
 }

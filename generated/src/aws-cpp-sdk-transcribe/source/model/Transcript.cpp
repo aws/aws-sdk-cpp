@@ -24,9 +24,8 @@ Transcript::Transcript() :
 {
 }
 
-Transcript::Transcript(JsonView jsonValue) : 
-    m_transcriptFileUriHasBeenSet(false),
-    m_redactedTranscriptFileUriHasBeenSet(false)
+Transcript::Transcript(JsonView jsonValue)
+  : Transcript()
 {
   *this = jsonValue;
 }

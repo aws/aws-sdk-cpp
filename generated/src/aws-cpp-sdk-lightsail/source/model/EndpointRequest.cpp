@@ -26,11 +26,8 @@ EndpointRequest::EndpointRequest() :
 {
 }
 
-EndpointRequest::EndpointRequest(JsonView jsonValue) : 
-    m_containerNameHasBeenSet(false),
-    m_containerPort(0),
-    m_containerPortHasBeenSet(false),
-    m_healthCheckHasBeenSet(false)
+EndpointRequest::EndpointRequest(JsonView jsonValue)
+  : EndpointRequest()
 {
   *this = jsonValue;
 }

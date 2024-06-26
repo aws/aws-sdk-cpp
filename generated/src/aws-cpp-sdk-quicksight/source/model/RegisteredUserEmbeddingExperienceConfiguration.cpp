@@ -27,12 +27,8 @@ RegisteredUserEmbeddingExperienceConfiguration::RegisteredUserEmbeddingExperienc
 {
 }
 
-RegisteredUserEmbeddingExperienceConfiguration::RegisteredUserEmbeddingExperienceConfiguration(JsonView jsonValue) : 
-    m_dashboardHasBeenSet(false),
-    m_quickSightConsoleHasBeenSet(false),
-    m_qSearchBarHasBeenSet(false),
-    m_dashboardVisualHasBeenSet(false),
-    m_generativeQnAHasBeenSet(false)
+RegisteredUserEmbeddingExperienceConfiguration::RegisteredUserEmbeddingExperienceConfiguration(JsonView jsonValue)
+  : RegisteredUserEmbeddingExperienceConfiguration()
 {
   *this = jsonValue;
 }

@@ -27,12 +27,8 @@ MigrationTask::MigrationTask() :
 {
 }
 
-MigrationTask::MigrationTask(JsonView jsonValue) : 
-    m_progressUpdateStreamHasBeenSet(false),
-    m_migrationTaskNameHasBeenSet(false),
-    m_taskHasBeenSet(false),
-    m_updateDateTimeHasBeenSet(false),
-    m_resourceAttributeListHasBeenSet(false)
+MigrationTask::MigrationTask(JsonView jsonValue)
+  : MigrationTask()
 {
   *this = jsonValue;
 }

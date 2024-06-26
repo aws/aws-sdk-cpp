@@ -25,10 +25,8 @@ RemoteAccountDetails::RemoteAccountDetails() :
 {
 }
 
-RemoteAccountDetails::RemoteAccountDetails(JsonView jsonValue) : 
-    m_accountIdHasBeenSet(false),
-    m_affiliated(false),
-    m_affiliatedHasBeenSet(false)
+RemoteAccountDetails::RemoteAccountDetails(JsonView jsonValue)
+  : RemoteAccountDetails()
 {
   *this = jsonValue;
 }

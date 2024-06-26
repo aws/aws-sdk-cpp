@@ -27,10 +27,8 @@ DefaultClusterParameters::DefaultClusterParameters() :
 {
 }
 
-DefaultClusterParameters::DefaultClusterParameters(const XmlNode& xmlNode) : 
-    m_parameterGroupFamilyHasBeenSet(false),
-    m_markerHasBeenSet(false),
-    m_parametersHasBeenSet(false)
+DefaultClusterParameters::DefaultClusterParameters(const XmlNode& xmlNode)
+  : DefaultClusterParameters()
 {
   *this = xmlNode;
 }

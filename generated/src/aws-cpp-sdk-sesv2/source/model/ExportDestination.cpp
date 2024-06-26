@@ -25,10 +25,8 @@ ExportDestination::ExportDestination() :
 {
 }
 
-ExportDestination::ExportDestination(JsonView jsonValue) : 
-    m_dataFormat(DataFormat::NOT_SET),
-    m_dataFormatHasBeenSet(false),
-    m_s3UrlHasBeenSet(false)
+ExportDestination::ExportDestination(JsonView jsonValue)
+  : ExportDestination()
 {
   *this = jsonValue;
 }

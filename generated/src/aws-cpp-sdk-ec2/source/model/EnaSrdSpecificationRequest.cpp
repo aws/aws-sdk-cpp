@@ -27,10 +27,8 @@ EnaSrdSpecificationRequest::EnaSrdSpecificationRequest() :
 {
 }
 
-EnaSrdSpecificationRequest::EnaSrdSpecificationRequest(const XmlNode& xmlNode) : 
-    m_enaSrdEnabled(false),
-    m_enaSrdEnabledHasBeenSet(false),
-    m_enaSrdUdpSpecificationHasBeenSet(false)
+EnaSrdSpecificationRequest::EnaSrdSpecificationRequest(const XmlNode& xmlNode)
+  : EnaSrdSpecificationRequest()
 {
   *this = xmlNode;
 }

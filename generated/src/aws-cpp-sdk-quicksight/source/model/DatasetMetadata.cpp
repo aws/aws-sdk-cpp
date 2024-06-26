@@ -30,15 +30,8 @@ DatasetMetadata::DatasetMetadata() :
 {
 }
 
-DatasetMetadata::DatasetMetadata(JsonView jsonValue) : 
-    m_datasetArnHasBeenSet(false),
-    m_datasetNameHasBeenSet(false),
-    m_datasetDescriptionHasBeenSet(false),
-    m_dataAggregationHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_columnsHasBeenSet(false),
-    m_calculatedFieldsHasBeenSet(false),
-    m_namedEntitiesHasBeenSet(false)
+DatasetMetadata::DatasetMetadata(JsonView jsonValue)
+  : DatasetMetadata()
 {
   *this = jsonValue;
 }

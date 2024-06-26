@@ -28,11 +28,8 @@ VpcClassicLink::VpcClassicLink() :
 {
 }
 
-VpcClassicLink::VpcClassicLink(const XmlNode& xmlNode) : 
-    m_classicLinkEnabled(false),
-    m_classicLinkEnabledHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_vpcIdHasBeenSet(false)
+VpcClassicLink::VpcClassicLink(const XmlNode& xmlNode)
+  : VpcClassicLink()
 {
   *this = xmlNode;
 }

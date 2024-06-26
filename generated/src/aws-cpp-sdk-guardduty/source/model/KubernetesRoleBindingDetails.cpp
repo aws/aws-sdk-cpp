@@ -27,12 +27,8 @@ KubernetesRoleBindingDetails::KubernetesRoleBindingDetails() :
 {
 }
 
-KubernetesRoleBindingDetails::KubernetesRoleBindingDetails(JsonView jsonValue) : 
-    m_kindHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_uidHasBeenSet(false),
-    m_roleRefNameHasBeenSet(false),
-    m_roleRefKindHasBeenSet(false)
+KubernetesRoleBindingDetails::KubernetesRoleBindingDetails(JsonView jsonValue)
+  : KubernetesRoleBindingDetails()
 {
   *this = jsonValue;
 }

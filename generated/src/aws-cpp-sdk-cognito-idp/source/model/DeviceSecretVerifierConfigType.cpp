@@ -24,9 +24,8 @@ DeviceSecretVerifierConfigType::DeviceSecretVerifierConfigType() :
 {
 }
 
-DeviceSecretVerifierConfigType::DeviceSecretVerifierConfigType(JsonView jsonValue) : 
-    m_passwordVerifierHasBeenSet(false),
-    m_saltHasBeenSet(false)
+DeviceSecretVerifierConfigType::DeviceSecretVerifierConfigType(JsonView jsonValue)
+  : DeviceSecretVerifierConfigType()
 {
   *this = jsonValue;
 }

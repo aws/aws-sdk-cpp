@@ -25,10 +25,8 @@ ProductInformationFilter::ProductInformationFilter() :
 {
 }
 
-ProductInformationFilter::ProductInformationFilter(JsonView jsonValue) : 
-    m_productInformationFilterNameHasBeenSet(false),
-    m_productInformationFilterValueHasBeenSet(false),
-    m_productInformationFilterComparatorHasBeenSet(false)
+ProductInformationFilter::ProductInformationFilter(JsonView jsonValue)
+  : ProductInformationFilter()
 {
   *this = jsonValue;
 }

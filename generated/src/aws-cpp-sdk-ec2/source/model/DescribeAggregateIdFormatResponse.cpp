@@ -22,8 +22,8 @@ DescribeAggregateIdFormatResponse::DescribeAggregateIdFormatResponse() :
 {
 }
 
-DescribeAggregateIdFormatResponse::DescribeAggregateIdFormatResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_useLongIdsAggregated(false)
+DescribeAggregateIdFormatResponse::DescribeAggregateIdFormatResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : DescribeAggregateIdFormatResponse()
 {
   *this = result;
 }

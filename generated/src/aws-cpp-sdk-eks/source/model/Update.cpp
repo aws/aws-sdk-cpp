@@ -30,15 +30,8 @@ Update::Update() :
 {
 }
 
-Update::Update(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_status(UpdateStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_type(UpdateType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_paramsHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_errorsHasBeenSet(false)
+Update::Update(JsonView jsonValue)
+  : Update()
 {
   *this = jsonValue;
 }

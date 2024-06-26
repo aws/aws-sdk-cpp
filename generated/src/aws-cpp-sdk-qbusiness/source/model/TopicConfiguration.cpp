@@ -26,11 +26,8 @@ TopicConfiguration::TopicConfiguration() :
 {
 }
 
-TopicConfiguration::TopicConfiguration(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_exampleChatMessagesHasBeenSet(false),
-    m_rulesHasBeenSet(false)
+TopicConfiguration::TopicConfiguration(JsonView jsonValue)
+  : TopicConfiguration()
 {
   *this = jsonValue;
 }

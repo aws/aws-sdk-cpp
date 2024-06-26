@@ -36,21 +36,8 @@ TaskStatistics::TaskStatistics() :
 {
 }
 
-TaskStatistics::TaskStatistics(JsonView jsonValue) : 
-    m_totalChecks(0),
-    m_totalChecksHasBeenSet(false),
-    m_inProgressChecks(0),
-    m_inProgressChecksHasBeenSet(false),
-    m_waitingForDataCollectionChecks(0),
-    m_waitingForDataCollectionChecksHasBeenSet(false),
-    m_compliantChecks(0),
-    m_compliantChecksHasBeenSet(false),
-    m_nonCompliantChecks(0),
-    m_nonCompliantChecksHasBeenSet(false),
-    m_failedChecks(0),
-    m_failedChecksHasBeenSet(false),
-    m_canceledChecks(0),
-    m_canceledChecksHasBeenSet(false)
+TaskStatistics::TaskStatistics(JsonView jsonValue)
+  : TaskStatistics()
 {
   *this = jsonValue;
 }

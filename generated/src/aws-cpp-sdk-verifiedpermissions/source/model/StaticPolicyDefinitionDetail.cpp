@@ -24,9 +24,8 @@ StaticPolicyDefinitionDetail::StaticPolicyDefinitionDetail() :
 {
 }
 
-StaticPolicyDefinitionDetail::StaticPolicyDefinitionDetail(JsonView jsonValue) : 
-    m_descriptionHasBeenSet(false),
-    m_statementHasBeenSet(false)
+StaticPolicyDefinitionDetail::StaticPolicyDefinitionDetail(JsonView jsonValue)
+  : StaticPolicyDefinitionDetail()
 {
   *this = jsonValue;
 }

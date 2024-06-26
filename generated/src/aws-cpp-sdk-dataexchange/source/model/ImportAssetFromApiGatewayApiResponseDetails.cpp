@@ -34,19 +34,8 @@ ImportAssetFromApiGatewayApiResponseDetails::ImportAssetFromApiGatewayApiRespons
 {
 }
 
-ImportAssetFromApiGatewayApiResponseDetails::ImportAssetFromApiGatewayApiResponseDetails(JsonView jsonValue) : 
-    m_apiDescriptionHasBeenSet(false),
-    m_apiIdHasBeenSet(false),
-    m_apiKeyHasBeenSet(false),
-    m_apiNameHasBeenSet(false),
-    m_apiSpecificationMd5HashHasBeenSet(false),
-    m_apiSpecificationUploadUrlHasBeenSet(false),
-    m_apiSpecificationUploadUrlExpiresAtHasBeenSet(false),
-    m_dataSetIdHasBeenSet(false),
-    m_protocolType(ProtocolType::NOT_SET),
-    m_protocolTypeHasBeenSet(false),
-    m_revisionIdHasBeenSet(false),
-    m_stageHasBeenSet(false)
+ImportAssetFromApiGatewayApiResponseDetails::ImportAssetFromApiGatewayApiResponseDetails(JsonView jsonValue)
+  : ImportAssetFromApiGatewayApiResponseDetails()
 {
   *this = jsonValue;
 }

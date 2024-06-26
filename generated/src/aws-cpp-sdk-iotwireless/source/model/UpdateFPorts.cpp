@@ -24,9 +24,8 @@ UpdateFPorts::UpdateFPorts() :
 {
 }
 
-UpdateFPorts::UpdateFPorts(JsonView jsonValue) : 
-    m_positioningHasBeenSet(false),
-    m_applicationsHasBeenSet(false)
+UpdateFPorts::UpdateFPorts(JsonView jsonValue)
+  : UpdateFPorts()
 {
   *this = jsonValue;
 }

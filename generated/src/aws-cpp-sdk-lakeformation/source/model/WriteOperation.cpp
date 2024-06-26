@@ -24,9 +24,8 @@ WriteOperation::WriteOperation() :
 {
 }
 
-WriteOperation::WriteOperation(JsonView jsonValue) : 
-    m_addObjectHasBeenSet(false),
-    m_deleteObjectHasBeenSet(false)
+WriteOperation::WriteOperation(JsonView jsonValue)
+  : WriteOperation()
 {
   *this = jsonValue;
 }

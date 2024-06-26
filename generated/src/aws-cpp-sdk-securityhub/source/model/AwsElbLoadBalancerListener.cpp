@@ -29,14 +29,8 @@ AwsElbLoadBalancerListener::AwsElbLoadBalancerListener() :
 {
 }
 
-AwsElbLoadBalancerListener::AwsElbLoadBalancerListener(JsonView jsonValue) : 
-    m_instancePort(0),
-    m_instancePortHasBeenSet(false),
-    m_instanceProtocolHasBeenSet(false),
-    m_loadBalancerPort(0),
-    m_loadBalancerPortHasBeenSet(false),
-    m_protocolHasBeenSet(false),
-    m_sslCertificateIdHasBeenSet(false)
+AwsElbLoadBalancerListener::AwsElbLoadBalancerListener(JsonView jsonValue)
+  : AwsElbLoadBalancerListener()
 {
   *this = jsonValue;
 }

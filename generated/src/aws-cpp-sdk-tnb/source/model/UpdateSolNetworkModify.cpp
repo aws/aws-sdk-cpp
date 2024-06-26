@@ -24,9 +24,8 @@ UpdateSolNetworkModify::UpdateSolNetworkModify() :
 {
 }
 
-UpdateSolNetworkModify::UpdateSolNetworkModify(JsonView jsonValue) : 
-    m_vnfConfigurablePropertiesHasBeenSet(false),
-    m_vnfInstanceIdHasBeenSet(false)
+UpdateSolNetworkModify::UpdateSolNetworkModify(JsonView jsonValue)
+  : UpdateSolNetworkModify()
 {
   *this = jsonValue;
 }

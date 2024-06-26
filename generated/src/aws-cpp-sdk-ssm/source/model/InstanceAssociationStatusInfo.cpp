@@ -34,19 +34,8 @@ InstanceAssociationStatusInfo::InstanceAssociationStatusInfo() :
 {
 }
 
-InstanceAssociationStatusInfo::InstanceAssociationStatusInfo(JsonView jsonValue) : 
-    m_associationIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_documentVersionHasBeenSet(false),
-    m_associationVersionHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_executionDateHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_detailedStatusHasBeenSet(false),
-    m_executionSummaryHasBeenSet(false),
-    m_errorCodeHasBeenSet(false),
-    m_outputUrlHasBeenSet(false),
-    m_associationNameHasBeenSet(false)
+InstanceAssociationStatusInfo::InstanceAssociationStatusInfo(JsonView jsonValue)
+  : InstanceAssociationStatusInfo()
 {
   *this = jsonValue;
 }

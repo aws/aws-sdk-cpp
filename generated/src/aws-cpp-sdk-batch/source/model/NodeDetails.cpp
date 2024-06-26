@@ -26,11 +26,8 @@ NodeDetails::NodeDetails() :
 {
 }
 
-NodeDetails::NodeDetails(JsonView jsonValue) : 
-    m_nodeIndex(0),
-    m_nodeIndexHasBeenSet(false),
-    m_isMainNode(false),
-    m_isMainNodeHasBeenSet(false)
+NodeDetails::NodeDetails(JsonView jsonValue)
+  : NodeDetails()
 {
   *this = jsonValue;
 }

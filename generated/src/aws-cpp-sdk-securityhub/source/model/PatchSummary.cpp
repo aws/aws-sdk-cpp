@@ -39,24 +39,8 @@ PatchSummary::PatchSummary() :
 {
 }
 
-PatchSummary::PatchSummary(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_installedCount(0),
-    m_installedCountHasBeenSet(false),
-    m_missingCount(0),
-    m_missingCountHasBeenSet(false),
-    m_failedCount(0),
-    m_failedCountHasBeenSet(false),
-    m_installedOtherCount(0),
-    m_installedOtherCountHasBeenSet(false),
-    m_installedRejectedCount(0),
-    m_installedRejectedCountHasBeenSet(false),
-    m_installedPendingReboot(0),
-    m_installedPendingRebootHasBeenSet(false),
-    m_operationStartTimeHasBeenSet(false),
-    m_operationEndTimeHasBeenSet(false),
-    m_rebootOptionHasBeenSet(false),
-    m_operationHasBeenSet(false)
+PatchSummary::PatchSummary(JsonView jsonValue)
+  : PatchSummary()
 {
   *this = jsonValue;
 }

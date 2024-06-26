@@ -24,10 +24,8 @@ GetTaskResult::GetTaskResult() :
 {
 }
 
-GetTaskResult::GetTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_failureRetryCount(0),
-    m_runStatus(TaskRunStatus::NOT_SET),
-    m_targetRunStatus(TaskTargetRunStatus::NOT_SET)
+GetTaskResult::GetTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetTaskResult()
 {
   *this = result;
 }

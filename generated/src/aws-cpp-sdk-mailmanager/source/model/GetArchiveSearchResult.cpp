@@ -22,8 +22,8 @@ GetArchiveSearchResult::GetArchiveSearchResult() :
 {
 }
 
-GetArchiveSearchResult::GetArchiveSearchResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_maxResults(0)
+GetArchiveSearchResult::GetArchiveSearchResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetArchiveSearchResult()
 {
   *this = result;
 }

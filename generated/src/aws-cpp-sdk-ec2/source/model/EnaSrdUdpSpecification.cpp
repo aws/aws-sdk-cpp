@@ -26,9 +26,8 @@ EnaSrdUdpSpecification::EnaSrdUdpSpecification() :
 {
 }
 
-EnaSrdUdpSpecification::EnaSrdUdpSpecification(const XmlNode& xmlNode) : 
-    m_enaSrdUdpEnabled(false),
-    m_enaSrdUdpEnabledHasBeenSet(false)
+EnaSrdUdpSpecification::EnaSrdUdpSpecification(const XmlNode& xmlNode)
+  : EnaSrdUdpSpecification()
 {
   *this = xmlNode;
 }

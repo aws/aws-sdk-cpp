@@ -23,9 +23,8 @@ CancelSubscriptionResult::CancelSubscriptionResult() :
 {
 }
 
-CancelSubscriptionResult::CancelSubscriptionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_retainPermissions(false),
-    m_status(SubscriptionStatus::NOT_SET)
+CancelSubscriptionResult::CancelSubscriptionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CancelSubscriptionResult()
 {
   *this = result;
 }

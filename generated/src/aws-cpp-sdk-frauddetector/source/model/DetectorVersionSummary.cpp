@@ -27,12 +27,8 @@ DetectorVersionSummary::DetectorVersionSummary() :
 {
 }
 
-DetectorVersionSummary::DetectorVersionSummary(JsonView jsonValue) : 
-    m_detectorVersionIdHasBeenSet(false),
-    m_status(DetectorVersionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false)
+DetectorVersionSummary::DetectorVersionSummary(JsonView jsonValue)
+  : DetectorVersionSummary()
 {
   *this = jsonValue;
 }

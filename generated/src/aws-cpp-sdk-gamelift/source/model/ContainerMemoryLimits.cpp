@@ -26,11 +26,8 @@ ContainerMemoryLimits::ContainerMemoryLimits() :
 {
 }
 
-ContainerMemoryLimits::ContainerMemoryLimits(JsonView jsonValue) : 
-    m_softLimit(0),
-    m_softLimitHasBeenSet(false),
-    m_hardLimit(0),
-    m_hardLimitHasBeenSet(false)
+ContainerMemoryLimits::ContainerMemoryLimits(JsonView jsonValue)
+  : ContainerMemoryLimits()
 {
   *this = jsonValue;
 }

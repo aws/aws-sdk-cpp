@@ -23,9 +23,8 @@ CreateRouteResult::CreateRouteResult() :
 {
 }
 
-CreateRouteResult::CreateRouteResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_routeType(RouteType::NOT_SET),
-    m_state(RouteState::NOT_SET)
+CreateRouteResult::CreateRouteResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateRouteResult()
 {
   *this = result;
 }

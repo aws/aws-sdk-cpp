@@ -24,9 +24,8 @@ PsAttributes::PsAttributes() :
 {
 }
 
-PsAttributes::PsAttributes(JsonView jsonValue) : 
-    m_encodingHasBeenSet(false),
-    m_formatHasBeenSet(false)
+PsAttributes::PsAttributes(JsonView jsonValue)
+  : PsAttributes()
 {
   *this = jsonValue;
 }

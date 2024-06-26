@@ -35,20 +35,8 @@ AwsDmsReplicationTaskDetails::AwsDmsReplicationTaskDetails() :
 {
 }
 
-AwsDmsReplicationTaskDetails::AwsDmsReplicationTaskDetails(JsonView jsonValue) : 
-    m_cdcStartPositionHasBeenSet(false),
-    m_cdcStartTimeHasBeenSet(false),
-    m_cdcStopPositionHasBeenSet(false),
-    m_migrationTypeHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_resourceIdentifierHasBeenSet(false),
-    m_replicationInstanceArnHasBeenSet(false),
-    m_replicationTaskIdentifierHasBeenSet(false),
-    m_replicationTaskSettingsHasBeenSet(false),
-    m_sourceEndpointArnHasBeenSet(false),
-    m_tableMappingsHasBeenSet(false),
-    m_targetEndpointArnHasBeenSet(false),
-    m_taskDataHasBeenSet(false)
+AwsDmsReplicationTaskDetails::AwsDmsReplicationTaskDetails(JsonView jsonValue)
+  : AwsDmsReplicationTaskDetails()
 {
   *this = jsonValue;
 }

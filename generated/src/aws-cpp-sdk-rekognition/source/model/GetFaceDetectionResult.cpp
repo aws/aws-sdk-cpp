@@ -22,8 +22,8 @@ GetFaceDetectionResult::GetFaceDetectionResult() :
 {
 }
 
-GetFaceDetectionResult::GetFaceDetectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_jobStatus(VideoJobStatus::NOT_SET)
+GetFaceDetectionResult::GetFaceDetectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetFaceDetectionResult()
 {
   *this = result;
 }

@@ -22,8 +22,8 @@ CreateSequenceStoreResult::CreateSequenceStoreResult() :
 {
 }
 
-CreateSequenceStoreResult::CreateSequenceStoreResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_eTagAlgorithmFamily(ETagAlgorithmFamily::NOT_SET)
+CreateSequenceStoreResult::CreateSequenceStoreResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateSequenceStoreResult()
 {
   *this = result;
 }

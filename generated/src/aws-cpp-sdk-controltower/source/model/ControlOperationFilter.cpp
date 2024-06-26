@@ -27,12 +27,8 @@ ControlOperationFilter::ControlOperationFilter() :
 {
 }
 
-ControlOperationFilter::ControlOperationFilter(JsonView jsonValue) : 
-    m_controlIdentifiersHasBeenSet(false),
-    m_controlOperationTypesHasBeenSet(false),
-    m_enabledControlIdentifiersHasBeenSet(false),
-    m_statusesHasBeenSet(false),
-    m_targetIdentifiersHasBeenSet(false)
+ControlOperationFilter::ControlOperationFilter(JsonView jsonValue)
+  : ControlOperationFilter()
 {
   *this = jsonValue;
 }

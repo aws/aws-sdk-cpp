@@ -32,17 +32,8 @@ Event::Event() :
 {
 }
 
-Event::Event(JsonView jsonValue) : 
-    m_appPackageNameHasBeenSet(false),
-    m_appTitleHasBeenSet(false),
-    m_appVersionCodeHasBeenSet(false),
-    m_attributesHasBeenSet(false),
-    m_clientSdkVersionHasBeenSet(false),
-    m_eventTypeHasBeenSet(false),
-    m_metricsHasBeenSet(false),
-    m_sdkNameHasBeenSet(false),
-    m_sessionHasBeenSet(false),
-    m_timestampHasBeenSet(false)
+Event::Event(JsonView jsonValue)
+  : Event()
 {
   *this = jsonValue;
 }

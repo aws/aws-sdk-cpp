@@ -34,17 +34,8 @@ ScheduledAction::ScheduledAction() :
 {
 }
 
-ScheduledAction::ScheduledAction(const XmlNode& xmlNode) : 
-    m_scheduledActionNameHasBeenSet(false),
-    m_targetActionHasBeenSet(false),
-    m_scheduleHasBeenSet(false),
-    m_iamRoleHasBeenSet(false),
-    m_scheduledActionDescriptionHasBeenSet(false),
-    m_state(ScheduledActionState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_nextInvocationsHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
+ScheduledAction::ScheduledAction(const XmlNode& xmlNode)
+  : ScheduledAction()
 {
   *this = xmlNode;
 }

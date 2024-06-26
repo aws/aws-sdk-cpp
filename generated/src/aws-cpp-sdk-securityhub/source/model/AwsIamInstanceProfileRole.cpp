@@ -28,13 +28,8 @@ AwsIamInstanceProfileRole::AwsIamInstanceProfileRole() :
 {
 }
 
-AwsIamInstanceProfileRole::AwsIamInstanceProfileRole(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_assumeRolePolicyDocumentHasBeenSet(false),
-    m_createDateHasBeenSet(false),
-    m_pathHasBeenSet(false),
-    m_roleIdHasBeenSet(false),
-    m_roleNameHasBeenSet(false)
+AwsIamInstanceProfileRole::AwsIamInstanceProfileRole(JsonView jsonValue)
+  : AwsIamInstanceProfileRole()
 {
   *this = jsonValue;
 }

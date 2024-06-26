@@ -23,8 +23,8 @@ ConverseTrace::ConverseTrace() :
 {
 }
 
-ConverseTrace::ConverseTrace(JsonView jsonValue) : 
-    m_guardrailHasBeenSet(false)
+ConverseTrace::ConverseTrace(JsonView jsonValue)
+  : ConverseTrace()
 {
   *this = jsonValue;
 }

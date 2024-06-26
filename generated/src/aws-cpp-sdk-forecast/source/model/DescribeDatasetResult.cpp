@@ -23,9 +23,8 @@ DescribeDatasetResult::DescribeDatasetResult() :
 {
 }
 
-DescribeDatasetResult::DescribeDatasetResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_domain(Domain::NOT_SET),
-    m_datasetType(DatasetType::NOT_SET)
+DescribeDatasetResult::DescribeDatasetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeDatasetResult()
 {
   *this = result;
 }

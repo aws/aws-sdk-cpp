@@ -28,11 +28,8 @@ SpotPlacementScore::SpotPlacementScore() :
 {
 }
 
-SpotPlacementScore::SpotPlacementScore(const XmlNode& xmlNode) : 
-    m_regionHasBeenSet(false),
-    m_availabilityZoneIdHasBeenSet(false),
-    m_score(0),
-    m_scoreHasBeenSet(false)
+SpotPlacementScore::SpotPlacementScore(const XmlNode& xmlNode)
+  : SpotPlacementScore()
 {
   *this = xmlNode;
 }

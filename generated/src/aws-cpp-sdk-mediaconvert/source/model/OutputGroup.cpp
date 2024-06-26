@@ -27,12 +27,8 @@ OutputGroup::OutputGroup() :
 {
 }
 
-OutputGroup::OutputGroup(JsonView jsonValue) : 
-    m_automatedEncodingSettingsHasBeenSet(false),
-    m_customNameHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_outputGroupSettingsHasBeenSet(false),
-    m_outputsHasBeenSet(false)
+OutputGroup::OutputGroup(JsonView jsonValue)
+  : OutputGroup()
 {
   *this = jsonValue;
 }

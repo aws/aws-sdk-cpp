@@ -39,24 +39,8 @@ CreateFileSystemOpenZFSConfiguration::CreateFileSystemOpenZFSConfiguration() :
 {
 }
 
-CreateFileSystemOpenZFSConfiguration::CreateFileSystemOpenZFSConfiguration(JsonView jsonValue) : 
-    m_automaticBackupRetentionDays(0),
-    m_automaticBackupRetentionDaysHasBeenSet(false),
-    m_copyTagsToBackups(false),
-    m_copyTagsToBackupsHasBeenSet(false),
-    m_copyTagsToVolumes(false),
-    m_copyTagsToVolumesHasBeenSet(false),
-    m_dailyAutomaticBackupStartTimeHasBeenSet(false),
-    m_deploymentType(OpenZFSDeploymentType::NOT_SET),
-    m_deploymentTypeHasBeenSet(false),
-    m_throughputCapacity(0),
-    m_throughputCapacityHasBeenSet(false),
-    m_weeklyMaintenanceStartTimeHasBeenSet(false),
-    m_diskIopsConfigurationHasBeenSet(false),
-    m_rootVolumeConfigurationHasBeenSet(false),
-    m_preferredSubnetIdHasBeenSet(false),
-    m_endpointIpAddressRangeHasBeenSet(false),
-    m_routeTableIdsHasBeenSet(false)
+CreateFileSystemOpenZFSConfiguration::CreateFileSystemOpenZFSConfiguration(JsonView jsonValue)
+  : CreateFileSystemOpenZFSConfiguration()
 {
   *this = jsonValue;
 }

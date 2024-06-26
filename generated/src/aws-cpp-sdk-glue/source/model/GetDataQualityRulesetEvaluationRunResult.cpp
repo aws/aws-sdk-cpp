@@ -25,11 +25,8 @@ GetDataQualityRulesetEvaluationRunResult::GetDataQualityRulesetEvaluationRunResu
 {
 }
 
-GetDataQualityRulesetEvaluationRunResult::GetDataQualityRulesetEvaluationRunResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_numberOfWorkers(0),
-    m_timeout(0),
-    m_status(TaskStatusType::NOT_SET),
-    m_executionTime(0)
+GetDataQualityRulesetEvaluationRunResult::GetDataQualityRulesetEvaluationRunResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetDataQualityRulesetEvaluationRunResult()
 {
   *this = result;
 }

@@ -26,11 +26,8 @@ AddonSubscription::AddonSubscription() :
 {
 }
 
-AddonSubscription::AddonSubscription(JsonView jsonValue) : 
-    m_addonNameHasBeenSet(false),
-    m_addonSubscriptionArnHasBeenSet(false),
-    m_addonSubscriptionIdHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false)
+AddonSubscription::AddonSubscription(JsonView jsonValue)
+  : AddonSubscription()
 {
   *this = jsonValue;
 }

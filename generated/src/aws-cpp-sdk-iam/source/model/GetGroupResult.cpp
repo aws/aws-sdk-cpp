@@ -22,8 +22,8 @@ GetGroupResult::GetGroupResult() :
 {
 }
 
-GetGroupResult::GetGroupResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_isTruncated(false)
+GetGroupResult::GetGroupResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : GetGroupResult()
 {
   *this = result;
 }

@@ -32,17 +32,8 @@ MedicalItem::MedicalItem() :
 {
 }
 
-MedicalItem::MedicalItem(JsonView jsonValue) : 
-    m_startTime(0.0),
-    m_startTimeHasBeenSet(false),
-    m_endTime(0.0),
-    m_endTimeHasBeenSet(false),
-    m_type(ItemType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_contentHasBeenSet(false),
-    m_confidence(0.0),
-    m_confidenceHasBeenSet(false),
-    m_speakerHasBeenSet(false)
+MedicalItem::MedicalItem(JsonView jsonValue)
+  : MedicalItem()
 {
   *this = jsonValue;
 }

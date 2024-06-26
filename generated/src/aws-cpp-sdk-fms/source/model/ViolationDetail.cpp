@@ -29,14 +29,8 @@ ViolationDetail::ViolationDetail() :
 {
 }
 
-ViolationDetail::ViolationDetail(JsonView jsonValue) : 
-    m_policyIdHasBeenSet(false),
-    m_memberAccountHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
-    m_resourceViolationsHasBeenSet(false),
-    m_resourceTagsHasBeenSet(false),
-    m_resourceDescriptionHasBeenSet(false)
+ViolationDetail::ViolationDetail(JsonView jsonValue)
+  : ViolationDetail()
 {
   *this = jsonValue;
 }

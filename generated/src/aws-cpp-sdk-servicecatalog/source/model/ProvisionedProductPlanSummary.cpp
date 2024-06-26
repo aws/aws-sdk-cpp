@@ -29,14 +29,8 @@ ProvisionedProductPlanSummary::ProvisionedProductPlanSummary() :
 {
 }
 
-ProvisionedProductPlanSummary::ProvisionedProductPlanSummary(JsonView jsonValue) : 
-    m_planNameHasBeenSet(false),
-    m_planIdHasBeenSet(false),
-    m_provisionProductIdHasBeenSet(false),
-    m_provisionProductNameHasBeenSet(false),
-    m_planType(ProvisionedProductPlanType::NOT_SET),
-    m_planTypeHasBeenSet(false),
-    m_provisioningArtifactIdHasBeenSet(false)
+ProvisionedProductPlanSummary::ProvisionedProductPlanSummary(JsonView jsonValue)
+  : ProvisionedProductPlanSummary()
 {
   *this = jsonValue;
 }

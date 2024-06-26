@@ -32,17 +32,8 @@ Target::Target() :
 {
 }
 
-Target::Target(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_deadLetterConfigHasBeenSet(false),
-    m_ecsParametersHasBeenSet(false),
-    m_eventBridgeParametersHasBeenSet(false),
-    m_inputHasBeenSet(false),
-    m_kinesisParametersHasBeenSet(false),
-    m_retryPolicyHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_sageMakerPipelineParametersHasBeenSet(false),
-    m_sqsParametersHasBeenSet(false)
+Target::Target(JsonView jsonValue)
+  : Target()
 {
   *this = jsonValue;
 }

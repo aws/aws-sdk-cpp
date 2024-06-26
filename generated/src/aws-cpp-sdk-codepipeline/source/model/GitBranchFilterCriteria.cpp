@@ -24,9 +24,8 @@ GitBranchFilterCriteria::GitBranchFilterCriteria() :
 {
 }
 
-GitBranchFilterCriteria::GitBranchFilterCriteria(JsonView jsonValue) : 
-    m_includesHasBeenSet(false),
-    m_excludesHasBeenSet(false)
+GitBranchFilterCriteria::GitBranchFilterCriteria(JsonView jsonValue)
+  : GitBranchFilterCriteria()
 {
   *this = jsonValue;
 }

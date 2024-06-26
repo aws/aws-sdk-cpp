@@ -28,13 +28,8 @@ CaptchaResponse::CaptchaResponse() :
 {
 }
 
-CaptchaResponse::CaptchaResponse(JsonView jsonValue) : 
-    m_responseCode(0),
-    m_responseCodeHasBeenSet(false),
-    m_solveTimestamp(0),
-    m_solveTimestampHasBeenSet(false),
-    m_failureReason(FailureReason::NOT_SET),
-    m_failureReasonHasBeenSet(false)
+CaptchaResponse::CaptchaResponse(JsonView jsonValue)
+  : CaptchaResponse()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ RangeConstant::RangeConstant() :
 {
 }
 
-RangeConstant::RangeConstant(JsonView jsonValue) : 
-    m_minimumHasBeenSet(false),
-    m_maximumHasBeenSet(false)
+RangeConstant::RangeConstant(JsonView jsonValue)
+  : RangeConstant()
 {
   *this = jsonValue;
 }

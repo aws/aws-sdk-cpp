@@ -24,9 +24,8 @@ CertificateOptions::CertificateOptions() :
 {
 }
 
-CertificateOptions::CertificateOptions(JsonView jsonValue) : 
-    m_certificateTransparencyLoggingPreference(CertificateTransparencyLoggingPreference::NOT_SET),
-    m_certificateTransparencyLoggingPreferenceHasBeenSet(false)
+CertificateOptions::CertificateOptions(JsonView jsonValue)
+  : CertificateOptions()
 {
   *this = jsonValue;
 }

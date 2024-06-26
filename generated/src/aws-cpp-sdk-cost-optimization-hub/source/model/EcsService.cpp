@@ -24,9 +24,8 @@ EcsService::EcsService() :
 {
 }
 
-EcsService::EcsService(JsonView jsonValue) : 
-    m_configurationHasBeenSet(false),
-    m_costCalculationHasBeenSet(false)
+EcsService::EcsService(JsonView jsonValue)
+  : EcsService()
 {
   *this = jsonValue;
 }

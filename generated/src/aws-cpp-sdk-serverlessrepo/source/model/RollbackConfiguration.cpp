@@ -25,10 +25,8 @@ RollbackConfiguration::RollbackConfiguration() :
 {
 }
 
-RollbackConfiguration::RollbackConfiguration(JsonView jsonValue) : 
-    m_monitoringTimeInMinutes(0),
-    m_monitoringTimeInMinutesHasBeenSet(false),
-    m_rollbackTriggersHasBeenSet(false)
+RollbackConfiguration::RollbackConfiguration(JsonView jsonValue)
+  : RollbackConfiguration()
 {
   *this = jsonValue;
 }

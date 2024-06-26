@@ -26,11 +26,8 @@ S3DataSpec::S3DataSpec() :
 {
 }
 
-S3DataSpec::S3DataSpec(JsonView jsonValue) : 
-    m_dataLocationS3HasBeenSet(false),
-    m_dataRearrangementHasBeenSet(false),
-    m_dataSchemaHasBeenSet(false),
-    m_dataSchemaLocationS3HasBeenSet(false)
+S3DataSpec::S3DataSpec(JsonView jsonValue)
+  : S3DataSpec()
 {
   *this = jsonValue;
 }

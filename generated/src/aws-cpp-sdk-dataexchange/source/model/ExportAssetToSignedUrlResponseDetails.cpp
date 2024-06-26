@@ -27,12 +27,8 @@ ExportAssetToSignedUrlResponseDetails::ExportAssetToSignedUrlResponseDetails() :
 {
 }
 
-ExportAssetToSignedUrlResponseDetails::ExportAssetToSignedUrlResponseDetails(JsonView jsonValue) : 
-    m_assetIdHasBeenSet(false),
-    m_dataSetIdHasBeenSet(false),
-    m_revisionIdHasBeenSet(false),
-    m_signedUrlHasBeenSet(false),
-    m_signedUrlExpiresAtHasBeenSet(false)
+ExportAssetToSignedUrlResponseDetails::ExportAssetToSignedUrlResponseDetails(JsonView jsonValue)
+  : ExportAssetToSignedUrlResponseDetails()
 {
   *this = jsonValue;
 }

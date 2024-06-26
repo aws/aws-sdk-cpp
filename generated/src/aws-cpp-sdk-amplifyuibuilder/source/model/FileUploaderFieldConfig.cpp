@@ -33,18 +33,8 @@ FileUploaderFieldConfig::FileUploaderFieldConfig() :
 {
 }
 
-FileUploaderFieldConfig::FileUploaderFieldConfig(JsonView jsonValue) : 
-    m_accessLevel(StorageAccessLevel::NOT_SET),
-    m_accessLevelHasBeenSet(false),
-    m_acceptedFileTypesHasBeenSet(false),
-    m_showThumbnails(false),
-    m_showThumbnailsHasBeenSet(false),
-    m_isResumable(false),
-    m_isResumableHasBeenSet(false),
-    m_maxFileCount(0),
-    m_maxFileCountHasBeenSet(false),
-    m_maxSize(0),
-    m_maxSizeHasBeenSet(false)
+FileUploaderFieldConfig::FileUploaderFieldConfig(JsonView jsonValue)
+  : FileUploaderFieldConfig()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ HLSFragmentSelector::HLSFragmentSelector() :
 {
 }
 
-HLSFragmentSelector::HLSFragmentSelector(JsonView jsonValue) : 
-    m_fragmentSelectorType(HLSFragmentSelectorType::NOT_SET),
-    m_fragmentSelectorTypeHasBeenSet(false),
-    m_timestampRangeHasBeenSet(false)
+HLSFragmentSelector::HLSFragmentSelector(JsonView jsonValue)
+  : HLSFragmentSelector()
 {
   *this = jsonValue;
 }

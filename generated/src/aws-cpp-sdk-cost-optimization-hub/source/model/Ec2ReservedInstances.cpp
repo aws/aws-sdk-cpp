@@ -24,9 +24,8 @@ Ec2ReservedInstances::Ec2ReservedInstances() :
 {
 }
 
-Ec2ReservedInstances::Ec2ReservedInstances(JsonView jsonValue) : 
-    m_configurationHasBeenSet(false),
-    m_costCalculationHasBeenSet(false)
+Ec2ReservedInstances::Ec2ReservedInstances(JsonView jsonValue)
+  : Ec2ReservedInstances()
 {
   *this = jsonValue;
 }

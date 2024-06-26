@@ -25,10 +25,8 @@ BackfillError::BackfillError() :
 {
 }
 
-BackfillError::BackfillError(JsonView jsonValue) : 
-    m_code(BackfillErrorCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_partitionsHasBeenSet(false)
+BackfillError::BackfillError(JsonView jsonValue)
+  : BackfillError()
 {
   *this = jsonValue;
 }

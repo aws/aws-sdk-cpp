@@ -23,8 +23,8 @@ SuggestionValue::SuggestionValue() :
 {
 }
 
-SuggestionValue::SuggestionValue(JsonView jsonValue) : 
-    m_textHasBeenSet(false)
+SuggestionValue::SuggestionValue(JsonView jsonValue)
+  : SuggestionValue()
 {
   *this = jsonValue;
 }

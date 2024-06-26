@@ -24,9 +24,8 @@ UnsupportedPricingPlanException::UnsupportedPricingPlanException() :
 {
 }
 
-UnsupportedPricingPlanException::UnsupportedPricingPlanException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
+UnsupportedPricingPlanException::UnsupportedPricingPlanException(JsonView jsonValue)
+  : UnsupportedPricingPlanException()
 {
   *this = jsonValue;
 }

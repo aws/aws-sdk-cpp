@@ -22,8 +22,8 @@ DeleteWorkerConfigurationResult::DeleteWorkerConfigurationResult() :
 {
 }
 
-DeleteWorkerConfigurationResult::DeleteWorkerConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_workerConfigurationState(WorkerConfigurationState::NOT_SET)
+DeleteWorkerConfigurationResult::DeleteWorkerConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeleteWorkerConfigurationResult()
 {
   *this = result;
 }

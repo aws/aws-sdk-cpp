@@ -23,8 +23,8 @@ OutputConfigInput::OutputConfigInput() :
 {
 }
 
-OutputConfigInput::OutputConfigInput(JsonView jsonValue) : 
-    m_s3DataHasBeenSet(false)
+OutputConfigInput::OutputConfigInput(JsonView jsonValue)
+  : OutputConfigInput()
 {
   *this = jsonValue;
 }

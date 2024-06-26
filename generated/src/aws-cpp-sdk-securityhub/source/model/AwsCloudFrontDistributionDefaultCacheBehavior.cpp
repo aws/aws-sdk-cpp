@@ -23,8 +23,8 @@ AwsCloudFrontDistributionDefaultCacheBehavior::AwsCloudFrontDistributionDefaultC
 {
 }
 
-AwsCloudFrontDistributionDefaultCacheBehavior::AwsCloudFrontDistributionDefaultCacheBehavior(JsonView jsonValue) : 
-    m_viewerProtocolPolicyHasBeenSet(false)
+AwsCloudFrontDistributionDefaultCacheBehavior::AwsCloudFrontDistributionDefaultCacheBehavior(JsonView jsonValue)
+  : AwsCloudFrontDistributionDefaultCacheBehavior()
 {
   *this = jsonValue;
 }

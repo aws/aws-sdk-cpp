@@ -23,8 +23,8 @@ InputDataConfig::InputDataConfig() :
 {
 }
 
-InputDataConfig::InputDataConfig(JsonView jsonValue) : 
-    m_s3UriHasBeenSet(false)
+InputDataConfig::InputDataConfig(JsonView jsonValue)
+  : InputDataConfig()
 {
   *this = jsonValue;
 }

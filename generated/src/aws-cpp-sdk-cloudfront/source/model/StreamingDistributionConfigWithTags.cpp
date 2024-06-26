@@ -26,9 +26,8 @@ StreamingDistributionConfigWithTags::StreamingDistributionConfigWithTags() :
 {
 }
 
-StreamingDistributionConfigWithTags::StreamingDistributionConfigWithTags(const XmlNode& xmlNode) : 
-    m_streamingDistributionConfigHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+StreamingDistributionConfigWithTags::StreamingDistributionConfigWithTags(const XmlNode& xmlNode)
+  : StreamingDistributionConfigWithTags()
 {
   *this = xmlNode;
 }

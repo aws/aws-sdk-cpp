@@ -27,12 +27,8 @@ TemporaryCredential::TemporaryCredential() :
 {
 }
 
-TemporaryCredential::TemporaryCredential(JsonView jsonValue) : 
-    m_usernameHasBeenSet(false),
-    m_passwordHasBeenSet(false),
-    m_validForInMinutes(0),
-    m_validForInMinutesHasBeenSet(false),
-    m_instanceIdHasBeenSet(false)
+TemporaryCredential::TemporaryCredential(JsonView jsonValue)
+  : TemporaryCredential()
 {
   *this = jsonValue;
 }

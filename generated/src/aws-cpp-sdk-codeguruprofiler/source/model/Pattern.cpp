@@ -30,15 +30,8 @@ Pattern::Pattern() :
 {
 }
 
-Pattern::Pattern(JsonView jsonValue) : 
-    m_countersToAggregateHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_resolutionStepsHasBeenSet(false),
-    m_targetFramesHasBeenSet(false),
-    m_thresholdPercent(0.0),
-    m_thresholdPercentHasBeenSet(false)
+Pattern::Pattern(JsonView jsonValue)
+  : Pattern()
 {
   *this = jsonValue;
 }

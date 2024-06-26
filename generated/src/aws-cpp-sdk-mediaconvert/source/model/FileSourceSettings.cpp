@@ -32,17 +32,8 @@ FileSourceSettings::FileSourceSettings() :
 {
 }
 
-FileSourceSettings::FileSourceSettings(JsonView jsonValue) : 
-    m_convert608To708(FileSourceConvert608To708::NOT_SET),
-    m_convert608To708HasBeenSet(false),
-    m_convertPaintToPop(CaptionSourceConvertPaintOnToPopOn::NOT_SET),
-    m_convertPaintToPopHasBeenSet(false),
-    m_framerateHasBeenSet(false),
-    m_sourceFileHasBeenSet(false),
-    m_timeDelta(0),
-    m_timeDeltaHasBeenSet(false),
-    m_timeDeltaUnits(FileSourceTimeDeltaUnits::NOT_SET),
-    m_timeDeltaUnitsHasBeenSet(false)
+FileSourceSettings::FileSourceSettings(JsonView jsonValue)
+  : FileSourceSettings()
 {
   *this = jsonValue;
 }

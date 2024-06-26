@@ -26,11 +26,8 @@ RDSDatabaseRecommendedOptionProjectedMetric::RDSDatabaseRecommendedOptionProject
 {
 }
 
-RDSDatabaseRecommendedOptionProjectedMetric::RDSDatabaseRecommendedOptionProjectedMetric(JsonView jsonValue) : 
-    m_recommendedDBInstanceClassHasBeenSet(false),
-    m_rank(0),
-    m_rankHasBeenSet(false),
-    m_projectedMetricsHasBeenSet(false)
+RDSDatabaseRecommendedOptionProjectedMetric::RDSDatabaseRecommendedOptionProjectedMetric(JsonView jsonValue)
+  : RDSDatabaseRecommendedOptionProjectedMetric()
 {
   *this = jsonValue;
 }

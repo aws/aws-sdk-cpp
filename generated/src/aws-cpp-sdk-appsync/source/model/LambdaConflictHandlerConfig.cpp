@@ -23,8 +23,8 @@ LambdaConflictHandlerConfig::LambdaConflictHandlerConfig() :
 {
 }
 
-LambdaConflictHandlerConfig::LambdaConflictHandlerConfig(JsonView jsonValue) : 
-    m_lambdaConflictHandlerArnHasBeenSet(false)
+LambdaConflictHandlerConfig::LambdaConflictHandlerConfig(JsonView jsonValue)
+  : LambdaConflictHandlerConfig()
 {
   *this = jsonValue;
 }

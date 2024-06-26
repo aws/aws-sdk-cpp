@@ -36,21 +36,8 @@ PipelineExecutionSummary::PipelineExecutionSummary() :
 {
 }
 
-PipelineExecutionSummary::PipelineExecutionSummary(JsonView jsonValue) : 
-    m_pipelineExecutionIdHasBeenSet(false),
-    m_status(PipelineExecutionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusSummaryHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_lastUpdateTimeHasBeenSet(false),
-    m_sourceRevisionsHasBeenSet(false),
-    m_triggerHasBeenSet(false),
-    m_stopTriggerHasBeenSet(false),
-    m_executionMode(ExecutionMode::NOT_SET),
-    m_executionModeHasBeenSet(false),
-    m_executionType(ExecutionType::NOT_SET),
-    m_executionTypeHasBeenSet(false),
-    m_rollbackMetadataHasBeenSet(false)
+PipelineExecutionSummary::PipelineExecutionSummary(JsonView jsonValue)
+  : PipelineExecutionSummary()
 {
   *this = jsonValue;
 }

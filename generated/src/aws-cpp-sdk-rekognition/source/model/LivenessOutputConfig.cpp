@@ -24,9 +24,8 @@ LivenessOutputConfig::LivenessOutputConfig() :
 {
 }
 
-LivenessOutputConfig::LivenessOutputConfig(JsonView jsonValue) : 
-    m_s3BucketHasBeenSet(false),
-    m_s3KeyPrefixHasBeenSet(false)
+LivenessOutputConfig::LivenessOutputConfig(JsonView jsonValue)
+  : LivenessOutputConfig()
 {
   *this = jsonValue;
 }

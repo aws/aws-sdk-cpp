@@ -26,11 +26,8 @@ BatchAlarmActionErrorEntry::BatchAlarmActionErrorEntry() :
 {
 }
 
-BatchAlarmActionErrorEntry::BatchAlarmActionErrorEntry(JsonView jsonValue) : 
-    m_requestIdHasBeenSet(false),
-    m_errorCode(ErrorCode::NOT_SET),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
+BatchAlarmActionErrorEntry::BatchAlarmActionErrorEntry(JsonView jsonValue)
+  : BatchAlarmActionErrorEntry()
 {
   *this = jsonValue;
 }

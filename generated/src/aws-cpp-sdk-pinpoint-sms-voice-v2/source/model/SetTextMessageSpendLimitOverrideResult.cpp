@@ -22,8 +22,8 @@ SetTextMessageSpendLimitOverrideResult::SetTextMessageSpendLimitOverrideResult()
 {
 }
 
-SetTextMessageSpendLimitOverrideResult::SetTextMessageSpendLimitOverrideResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_monthlyLimit(0)
+SetTextMessageSpendLimitOverrideResult::SetTextMessageSpendLimitOverrideResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : SetTextMessageSpendLimitOverrideResult()
 {
   *this = result;
 }

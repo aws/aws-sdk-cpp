@@ -26,11 +26,8 @@ SourceConnectionDetail::SourceConnectionDetail() :
 {
 }
 
-SourceConnectionDetail::SourceConnectionDetail(JsonView jsonValue) : 
-    m_type(SourceType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_connectionParametersHasBeenSet(false),
-    m_lastSyncHasBeenSet(false)
+SourceConnectionDetail::SourceConnectionDetail(JsonView jsonValue)
+  : SourceConnectionDetail()
 {
   *this = jsonValue;
 }

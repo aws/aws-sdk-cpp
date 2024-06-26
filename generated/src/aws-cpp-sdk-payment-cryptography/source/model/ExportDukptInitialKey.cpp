@@ -23,8 +23,8 @@ ExportDukptInitialKey::ExportDukptInitialKey() :
 {
 }
 
-ExportDukptInitialKey::ExportDukptInitialKey(JsonView jsonValue) : 
-    m_keySerialNumberHasBeenSet(false)
+ExportDukptInitialKey::ExportDukptInitialKey(JsonView jsonValue)
+  : ExportDukptInitialKey()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ ContactFlowSearchFilter::ContactFlowSearchFilter() :
 {
 }
 
-ContactFlowSearchFilter::ContactFlowSearchFilter(JsonView jsonValue) : 
-    m_tagFilterHasBeenSet(false)
+ContactFlowSearchFilter::ContactFlowSearchFilter(JsonView jsonValue)
+  : ContactFlowSearchFilter()
 {
   *this = jsonValue;
 }

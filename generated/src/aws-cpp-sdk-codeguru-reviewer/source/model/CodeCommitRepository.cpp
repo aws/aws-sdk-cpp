@@ -23,8 +23,8 @@ CodeCommitRepository::CodeCommitRepository() :
 {
 }
 
-CodeCommitRepository::CodeCommitRepository(JsonView jsonValue) : 
-    m_nameHasBeenSet(false)
+CodeCommitRepository::CodeCommitRepository(JsonView jsonValue)
+  : CodeCommitRepository()
 {
   *this = jsonValue;
 }

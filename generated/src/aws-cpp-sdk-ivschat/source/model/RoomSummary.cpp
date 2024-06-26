@@ -30,15 +30,8 @@ RoomSummary::RoomSummary() :
 {
 }
 
-RoomSummary::RoomSummary(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_loggingConfigurationIdentifiersHasBeenSet(false),
-    m_messageReviewHandlerHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
+RoomSummary::RoomSummary(JsonView jsonValue)
+  : RoomSummary()
 {
   *this = jsonValue;
 }

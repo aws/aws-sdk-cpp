@@ -24,9 +24,8 @@ SuggestedFix::SuggestedFix() :
 {
 }
 
-SuggestedFix::SuggestedFix(JsonView jsonValue) : 
-    m_codeHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+SuggestedFix::SuggestedFix(JsonView jsonValue)
+  : SuggestedFix()
 {
   *this = jsonValue;
 }

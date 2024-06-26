@@ -22,8 +22,8 @@ CreateLogicallyAirGappedBackupVaultResult::CreateLogicallyAirGappedBackupVaultRe
 {
 }
 
-CreateLogicallyAirGappedBackupVaultResult::CreateLogicallyAirGappedBackupVaultResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_vaultState(VaultState::NOT_SET)
+CreateLogicallyAirGappedBackupVaultResult::CreateLogicallyAirGappedBackupVaultResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateLogicallyAirGappedBackupVaultResult()
 {
   *this = result;
 }

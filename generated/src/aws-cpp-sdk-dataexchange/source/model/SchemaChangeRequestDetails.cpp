@@ -24,9 +24,8 @@ SchemaChangeRequestDetails::SchemaChangeRequestDetails() :
 {
 }
 
-SchemaChangeRequestDetails::SchemaChangeRequestDetails(JsonView jsonValue) : 
-    m_changesHasBeenSet(false),
-    m_schemaChangeAtHasBeenSet(false)
+SchemaChangeRequestDetails::SchemaChangeRequestDetails(JsonView jsonValue)
+  : SchemaChangeRequestDetails()
 {
   *this = jsonValue;
 }

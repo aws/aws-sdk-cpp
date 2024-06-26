@@ -29,15 +29,8 @@ DescribeModelResult::DescribeModelResult() :
 {
 }
 
-DescribeModelResult::DescribeModelResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(ModelStatus::NOT_SET),
-    m_activeModelVersion(0),
-    m_previousActiveModelVersion(0),
-    m_latestScheduledRetrainingStatus(ModelVersionStatus::NOT_SET),
-    m_latestScheduledRetrainingModelVersion(0),
-    m_latestScheduledRetrainingAvailableDataInDays(0),
-    m_retrainingSchedulerStatus(RetrainingSchedulerStatus::NOT_SET),
-    m_modelQuality(ModelQuality::NOT_SET)
+DescribeModelResult::DescribeModelResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeModelResult()
 {
   *this = result;
 }

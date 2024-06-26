@@ -24,9 +24,8 @@ QAppsConfiguration::QAppsConfiguration() :
 {
 }
 
-QAppsConfiguration::QAppsConfiguration(JsonView jsonValue) : 
-    m_qAppsControlMode(QAppsControlMode::NOT_SET),
-    m_qAppsControlModeHasBeenSet(false)
+QAppsConfiguration::QAppsConfiguration(JsonView jsonValue)
+  : QAppsConfiguration()
 {
   *this = jsonValue;
 }

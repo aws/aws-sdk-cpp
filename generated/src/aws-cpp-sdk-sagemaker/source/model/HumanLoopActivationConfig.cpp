@@ -23,8 +23,8 @@ HumanLoopActivationConfig::HumanLoopActivationConfig() :
 {
 }
 
-HumanLoopActivationConfig::HumanLoopActivationConfig(JsonView jsonValue) : 
-    m_humanLoopActivationConditionsConfigHasBeenSet(false)
+HumanLoopActivationConfig::HumanLoopActivationConfig(JsonView jsonValue)
+  : HumanLoopActivationConfig()
 {
   *this = jsonValue;
 }

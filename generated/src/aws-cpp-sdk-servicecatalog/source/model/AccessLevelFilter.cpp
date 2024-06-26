@@ -25,10 +25,8 @@ AccessLevelFilter::AccessLevelFilter() :
 {
 }
 
-AccessLevelFilter::AccessLevelFilter(JsonView jsonValue) : 
-    m_key(AccessLevelFilterKey::NOT_SET),
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false)
+AccessLevelFilter::AccessLevelFilter(JsonView jsonValue)
+  : AccessLevelFilter()
 {
   *this = jsonValue;
 }

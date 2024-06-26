@@ -29,14 +29,8 @@ LineChartLineStyleSettings::LineChartLineStyleSettings() :
 {
 }
 
-LineChartLineStyleSettings::LineChartLineStyleSettings(JsonView jsonValue) : 
-    m_lineVisibility(Visibility::NOT_SET),
-    m_lineVisibilityHasBeenSet(false),
-    m_lineInterpolation(LineInterpolation::NOT_SET),
-    m_lineInterpolationHasBeenSet(false),
-    m_lineStyle(LineChartLineStyle::NOT_SET),
-    m_lineStyleHasBeenSet(false),
-    m_lineWidthHasBeenSet(false)
+LineChartLineStyleSettings::LineChartLineStyleSettings(JsonView jsonValue)
+  : LineChartLineStyleSettings()
 {
   *this = jsonValue;
 }

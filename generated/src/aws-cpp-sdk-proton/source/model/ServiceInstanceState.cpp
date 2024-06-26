@@ -29,14 +29,8 @@ ServiceInstanceState::ServiceInstanceState() :
 {
 }
 
-ServiceInstanceState::ServiceInstanceState(JsonView jsonValue) : 
-    m_lastSuccessfulComponentDeploymentIdsHasBeenSet(false),
-    m_lastSuccessfulEnvironmentDeploymentIdHasBeenSet(false),
-    m_lastSuccessfulServicePipelineDeploymentIdHasBeenSet(false),
-    m_specHasBeenSet(false),
-    m_templateMajorVersionHasBeenSet(false),
-    m_templateMinorVersionHasBeenSet(false),
-    m_templateNameHasBeenSet(false)
+ServiceInstanceState::ServiceInstanceState(JsonView jsonValue)
+  : ServiceInstanceState()
 {
   *this = jsonValue;
 }

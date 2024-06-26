@@ -24,9 +24,8 @@ UnsupportedSettingsException::UnsupportedSettingsException() :
 {
 }
 
-UnsupportedSettingsException::UnsupportedSettingsException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
+UnsupportedSettingsException::UnsupportedSettingsException(JsonView jsonValue)
+  : UnsupportedSettingsException()
 {
   *this = jsonValue;
 }

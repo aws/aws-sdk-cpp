@@ -30,15 +30,8 @@ RecommenderSummary::RecommenderSummary() :
 {
 }
 
-RecommenderSummary::RecommenderSummary(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_recommenderArnHasBeenSet(false),
-    m_datasetGroupArnHasBeenSet(false),
-    m_recipeArnHasBeenSet(false),
-    m_recommenderConfigHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_creationDateTimeHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false)
+RecommenderSummary::RecommenderSummary(JsonView jsonValue)
+  : RecommenderSummary()
 {
   *this = jsonValue;
 }

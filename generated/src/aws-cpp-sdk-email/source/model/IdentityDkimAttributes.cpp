@@ -29,12 +29,8 @@ IdentityDkimAttributes::IdentityDkimAttributes() :
 {
 }
 
-IdentityDkimAttributes::IdentityDkimAttributes(const XmlNode& xmlNode) : 
-    m_dkimEnabled(false),
-    m_dkimEnabledHasBeenSet(false),
-    m_dkimVerificationStatus(VerificationStatus::NOT_SET),
-    m_dkimVerificationStatusHasBeenSet(false),
-    m_dkimTokensHasBeenSet(false)
+IdentityDkimAttributes::IdentityDkimAttributes(const XmlNode& xmlNode)
+  : IdentityDkimAttributes()
 {
   *this = xmlNode;
 }

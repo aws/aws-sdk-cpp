@@ -24,9 +24,8 @@ SessionContext::SessionContext() :
 {
 }
 
-SessionContext::SessionContext(JsonView jsonValue) : 
-    m_attributesHasBeenSet(false),
-    m_sessionIssuerHasBeenSet(false)
+SessionContext::SessionContext(JsonView jsonValue)
+  : SessionContext()
 {
   *this = jsonValue;
 }

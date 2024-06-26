@@ -22,8 +22,8 @@ RejectVpcPeeringConnectionResponse::RejectVpcPeeringConnectionResponse() :
 {
 }
 
-RejectVpcPeeringConnectionResponse::RejectVpcPeeringConnectionResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_return(false)
+RejectVpcPeeringConnectionResponse::RejectVpcPeeringConnectionResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : RejectVpcPeeringConnectionResponse()
 {
   *this = result;
 }

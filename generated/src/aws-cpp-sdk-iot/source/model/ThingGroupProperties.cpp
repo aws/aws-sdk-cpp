@@ -24,9 +24,8 @@ ThingGroupProperties::ThingGroupProperties() :
 {
 }
 
-ThingGroupProperties::ThingGroupProperties(JsonView jsonValue) : 
-    m_thingGroupDescriptionHasBeenSet(false),
-    m_attributePayloadHasBeenSet(false)
+ThingGroupProperties::ThingGroupProperties(JsonView jsonValue)
+  : ThingGroupProperties()
 {
   *this = jsonValue;
 }

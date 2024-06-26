@@ -23,8 +23,8 @@ RedshiftDataShareAsset::RedshiftDataShareAsset() :
 {
 }
 
-RedshiftDataShareAsset::RedshiftDataShareAsset(JsonView jsonValue) : 
-    m_arnHasBeenSet(false)
+RedshiftDataShareAsset::RedshiftDataShareAsset(JsonView jsonValue)
+  : RedshiftDataShareAsset()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ SqsQueueConfiguration::SqsQueueConfiguration() :
 {
 }
 
-SqsQueueConfiguration::SqsQueueConfiguration(JsonView jsonValue) : 
-    m_queuePolicyHasBeenSet(false)
+SqsQueueConfiguration::SqsQueueConfiguration(JsonView jsonValue)
+  : SqsQueueConfiguration()
 {
   *this = jsonValue;
 }

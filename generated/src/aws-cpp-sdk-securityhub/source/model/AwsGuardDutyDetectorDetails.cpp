@@ -27,12 +27,8 @@ AwsGuardDutyDetectorDetails::AwsGuardDutyDetectorDetails() :
 {
 }
 
-AwsGuardDutyDetectorDetails::AwsGuardDutyDetectorDetails(JsonView jsonValue) : 
-    m_dataSourcesHasBeenSet(false),
-    m_featuresHasBeenSet(false),
-    m_findingPublishingFrequencyHasBeenSet(false),
-    m_serviceRoleHasBeenSet(false),
-    m_statusHasBeenSet(false)
+AwsGuardDutyDetectorDetails::AwsGuardDutyDetectorDetails(JsonView jsonValue)
+  : AwsGuardDutyDetectorDetails()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ CodeHookSpecification::CodeHookSpecification() :
 {
 }
 
-CodeHookSpecification::CodeHookSpecification(JsonView jsonValue) : 
-    m_lambdaCodeHookHasBeenSet(false)
+CodeHookSpecification::CodeHookSpecification(JsonView jsonValue)
+  : CodeHookSpecification()
 {
   *this = jsonValue;
 }

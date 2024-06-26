@@ -24,8 +24,8 @@ ImageSource::ImageSource() :
 {
 }
 
-ImageSource::ImageSource(JsonView jsonValue) : 
-    m_bytesHasBeenSet(false)
+ImageSource::ImageSource(JsonView jsonValue)
+  : ImageSource()
 {
   *this = jsonValue;
 }

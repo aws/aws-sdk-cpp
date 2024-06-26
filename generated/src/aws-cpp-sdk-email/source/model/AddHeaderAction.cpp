@@ -26,9 +26,8 @@ AddHeaderAction::AddHeaderAction() :
 {
 }
 
-AddHeaderAction::AddHeaderAction(const XmlNode& xmlNode) : 
-    m_headerNameHasBeenSet(false),
-    m_headerValueHasBeenSet(false)
+AddHeaderAction::AddHeaderAction(const XmlNode& xmlNode)
+  : AddHeaderAction()
 {
   *this = xmlNode;
 }

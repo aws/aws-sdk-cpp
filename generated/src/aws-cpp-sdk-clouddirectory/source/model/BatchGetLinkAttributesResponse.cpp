@@ -23,8 +23,8 @@ BatchGetLinkAttributesResponse::BatchGetLinkAttributesResponse() :
 {
 }
 
-BatchGetLinkAttributesResponse::BatchGetLinkAttributesResponse(JsonView jsonValue) : 
-    m_attributesHasBeenSet(false)
+BatchGetLinkAttributesResponse::BatchGetLinkAttributesResponse(JsonView jsonValue)
+  : BatchGetLinkAttributesResponse()
 {
   *this = jsonValue;
 }

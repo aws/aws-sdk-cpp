@@ -24,9 +24,8 @@ TraceConfiguration::TraceConfiguration() :
 {
 }
 
-TraceConfiguration::TraceConfiguration(JsonView jsonValue) : 
-    m_vendor(TracingVendor::NOT_SET),
-    m_vendorHasBeenSet(false)
+TraceConfiguration::TraceConfiguration(JsonView jsonValue)
+  : TraceConfiguration()
 {
   *this = jsonValue;
 }

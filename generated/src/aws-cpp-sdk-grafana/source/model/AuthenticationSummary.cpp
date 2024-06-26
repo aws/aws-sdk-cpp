@@ -25,10 +25,8 @@ AuthenticationSummary::AuthenticationSummary() :
 {
 }
 
-AuthenticationSummary::AuthenticationSummary(JsonView jsonValue) : 
-    m_providersHasBeenSet(false),
-    m_samlConfigurationStatus(SamlConfigurationStatus::NOT_SET),
-    m_samlConfigurationStatusHasBeenSet(false)
+AuthenticationSummary::AuthenticationSummary(JsonView jsonValue)
+  : AuthenticationSummary()
 {
   *this = jsonValue;
 }

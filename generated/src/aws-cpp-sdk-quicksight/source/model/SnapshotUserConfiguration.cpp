@@ -23,8 +23,8 @@ SnapshotUserConfiguration::SnapshotUserConfiguration() :
 {
 }
 
-SnapshotUserConfiguration::SnapshotUserConfiguration(JsonView jsonValue) : 
-    m_anonymousUsersHasBeenSet(false)
+SnapshotUserConfiguration::SnapshotUserConfiguration(JsonView jsonValue)
+  : SnapshotUserConfiguration()
 {
   *this = jsonValue;
 }

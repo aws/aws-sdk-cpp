@@ -22,8 +22,8 @@ CancelMessageMoveTaskResult::CancelMessageMoveTaskResult() :
 {
 }
 
-CancelMessageMoveTaskResult::CancelMessageMoveTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_approximateNumberOfMessagesMoved(0)
+CancelMessageMoveTaskResult::CancelMessageMoveTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CancelMessageMoveTaskResult()
 {
   *this = result;
 }

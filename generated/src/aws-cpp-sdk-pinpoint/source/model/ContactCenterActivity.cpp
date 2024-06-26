@@ -23,8 +23,8 @@ ContactCenterActivity::ContactCenterActivity() :
 {
 }
 
-ContactCenterActivity::ContactCenterActivity(JsonView jsonValue) : 
-    m_nextActivityHasBeenSet(false)
+ContactCenterActivity::ContactCenterActivity(JsonView jsonValue)
+  : ContactCenterActivity()
 {
   *this = jsonValue;
 }

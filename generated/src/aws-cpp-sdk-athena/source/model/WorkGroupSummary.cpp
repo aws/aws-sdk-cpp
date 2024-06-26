@@ -29,14 +29,8 @@ WorkGroupSummary::WorkGroupSummary() :
 {
 }
 
-WorkGroupSummary::WorkGroupSummary(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_state(WorkGroupState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_identityCenterApplicationArnHasBeenSet(false)
+WorkGroupSummary::WorkGroupSummary(JsonView jsonValue)
+  : WorkGroupSummary()
 {
   *this = jsonValue;
 }

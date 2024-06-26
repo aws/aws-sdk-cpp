@@ -27,10 +27,8 @@ RegisterInstanceTagAttributeRequest::RegisterInstanceTagAttributeRequest() :
 {
 }
 
-RegisterInstanceTagAttributeRequest::RegisterInstanceTagAttributeRequest(const XmlNode& xmlNode) : 
-    m_includeAllTagsOfInstance(false),
-    m_includeAllTagsOfInstanceHasBeenSet(false),
-    m_instanceTagKeysHasBeenSet(false)
+RegisterInstanceTagAttributeRequest::RegisterInstanceTagAttributeRequest(const XmlNode& xmlNode)
+  : RegisterInstanceTagAttributeRequest()
 {
   *this = xmlNode;
 }

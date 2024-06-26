@@ -33,18 +33,8 @@ SchemaSummary::SchemaSummary() :
 {
 }
 
-SchemaSummary::SchemaSummary(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_type(SchemaType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_creatorAccountIdHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false),
-    m_collaborationIdHasBeenSet(false),
-    m_collaborationArnHasBeenSet(false),
-    m_analysisRuleTypesHasBeenSet(false),
-    m_analysisMethod(AnalysisMethod::NOT_SET),
-    m_analysisMethodHasBeenSet(false)
+SchemaSummary::SchemaSummary(JsonView jsonValue)
+  : SchemaSummary()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ SSOIdentity::SSOIdentity() :
 {
 }
 
-SSOIdentity::SSOIdentity(JsonView jsonValue) : 
-    m_identityStoreIdHasBeenSet(false),
-    m_userIdHasBeenSet(false)
+SSOIdentity::SSOIdentity(JsonView jsonValue)
+  : SSOIdentity()
 {
   *this = jsonValue;
 }

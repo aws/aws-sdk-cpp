@@ -25,10 +25,8 @@ S3ClassificationScopeExclusionUpdate::S3ClassificationScopeExclusionUpdate() :
 {
 }
 
-S3ClassificationScopeExclusionUpdate::S3ClassificationScopeExclusionUpdate(JsonView jsonValue) : 
-    m_bucketNamesHasBeenSet(false),
-    m_operation(ClassificationScopeUpdateOperation::NOT_SET),
-    m_operationHasBeenSet(false)
+S3ClassificationScopeExclusionUpdate::S3ClassificationScopeExclusionUpdate(JsonView jsonValue)
+  : S3ClassificationScopeExclusionUpdate()
 {
   *this = jsonValue;
 }

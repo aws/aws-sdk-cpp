@@ -27,10 +27,8 @@ HsmStatus::HsmStatus() :
 {
 }
 
-HsmStatus::HsmStatus(const XmlNode& xmlNode) : 
-    m_hsmClientCertificateIdentifierHasBeenSet(false),
-    m_hsmConfigurationIdentifierHasBeenSet(false),
-    m_statusHasBeenSet(false)
+HsmStatus::HsmStatus(const XmlNode& xmlNode)
+  : HsmStatus()
 {
   *this = xmlNode;
 }

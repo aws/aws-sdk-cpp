@@ -36,21 +36,8 @@ AccessControlRule::AccessControlRule() :
 {
 }
 
-AccessControlRule::AccessControlRule(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_effect(AccessControlRuleEffect::NOT_SET),
-    m_effectHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_ipRangesHasBeenSet(false),
-    m_notIpRangesHasBeenSet(false),
-    m_actionsHasBeenSet(false),
-    m_notActionsHasBeenSet(false),
-    m_userIdsHasBeenSet(false),
-    m_notUserIdsHasBeenSet(false),
-    m_dateCreatedHasBeenSet(false),
-    m_dateModifiedHasBeenSet(false),
-    m_impersonationRoleIdsHasBeenSet(false),
-    m_notImpersonationRoleIdsHasBeenSet(false)
+AccessControlRule::AccessControlRule(JsonView jsonValue)
+  : AccessControlRule()
 {
   *this = jsonValue;
 }

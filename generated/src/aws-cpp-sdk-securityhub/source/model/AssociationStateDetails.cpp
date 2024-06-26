@@ -24,9 +24,8 @@ AssociationStateDetails::AssociationStateDetails() :
 {
 }
 
-AssociationStateDetails::AssociationStateDetails(JsonView jsonValue) : 
-    m_stateHasBeenSet(false),
-    m_statusMessageHasBeenSet(false)
+AssociationStateDetails::AssociationStateDetails(JsonView jsonValue)
+  : AssociationStateDetails()
 {
   *this = jsonValue;
 }

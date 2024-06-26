@@ -30,15 +30,8 @@ DatastoreProperties::DatastoreProperties() :
 {
 }
 
-DatastoreProperties::DatastoreProperties(JsonView jsonValue) : 
-    m_datastoreIdHasBeenSet(false),
-    m_datastoreNameHasBeenSet(false),
-    m_datastoreStatus(DatastoreStatus::NOT_SET),
-    m_datastoreStatusHasBeenSet(false),
-    m_kmsKeyArnHasBeenSet(false),
-    m_datastoreArnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+DatastoreProperties::DatastoreProperties(JsonView jsonValue)
+  : DatastoreProperties()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ TelemetryConfiguration::TelemetryConfiguration() :
 {
 }
 
-TelemetryConfiguration::TelemetryConfiguration(JsonView jsonValue) : 
-    m_configurationSyncStatus(ConfigurationSyncStatus::NOT_SET),
-    m_configurationSyncStatusHasBeenSet(false),
-    m_telemetry(Telemetry::NOT_SET),
-    m_telemetryHasBeenSet(false)
+TelemetryConfiguration::TelemetryConfiguration(JsonView jsonValue)
+  : TelemetryConfiguration()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ InstanceFleetResizingSpecifications::InstanceFleetResizingSpecifications() :
 {
 }
 
-InstanceFleetResizingSpecifications::InstanceFleetResizingSpecifications(JsonView jsonValue) : 
-    m_spotResizeSpecificationHasBeenSet(false),
-    m_onDemandResizeSpecificationHasBeenSet(false)
+InstanceFleetResizingSpecifications::InstanceFleetResizingSpecifications(JsonView jsonValue)
+  : InstanceFleetResizingSpecifications()
 {
   *this = jsonValue;
 }

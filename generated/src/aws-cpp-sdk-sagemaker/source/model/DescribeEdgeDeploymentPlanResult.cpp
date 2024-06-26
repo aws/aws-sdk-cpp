@@ -24,10 +24,8 @@ DescribeEdgeDeploymentPlanResult::DescribeEdgeDeploymentPlanResult() :
 {
 }
 
-DescribeEdgeDeploymentPlanResult::DescribeEdgeDeploymentPlanResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_edgeDeploymentSuccess(0),
-    m_edgeDeploymentPending(0),
-    m_edgeDeploymentFailed(0)
+DescribeEdgeDeploymentPlanResult::DescribeEdgeDeploymentPlanResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeEdgeDeploymentPlanResult()
 {
   *this = result;
 }

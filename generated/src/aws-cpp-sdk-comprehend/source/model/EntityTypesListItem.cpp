@@ -23,8 +23,8 @@ EntityTypesListItem::EntityTypesListItem() :
 {
 }
 
-EntityTypesListItem::EntityTypesListItem(JsonView jsonValue) : 
-    m_typeHasBeenSet(false)
+EntityTypesListItem::EntityTypesListItem(JsonView jsonValue)
+  : EntityTypesListItem()
 {
   *this = jsonValue;
 }

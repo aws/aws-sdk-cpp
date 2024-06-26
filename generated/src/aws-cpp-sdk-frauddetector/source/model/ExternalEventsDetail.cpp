@@ -24,9 +24,8 @@ ExternalEventsDetail::ExternalEventsDetail() :
 {
 }
 
-ExternalEventsDetail::ExternalEventsDetail(JsonView jsonValue) : 
-    m_dataLocationHasBeenSet(false),
-    m_dataAccessRoleArnHasBeenSet(false)
+ExternalEventsDetail::ExternalEventsDetail(JsonView jsonValue)
+  : ExternalEventsDetail()
 {
   *this = jsonValue;
 }

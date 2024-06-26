@@ -24,9 +24,8 @@ KnowledgeBaseLookupInput::KnowledgeBaseLookupInput() :
 {
 }
 
-KnowledgeBaseLookupInput::KnowledgeBaseLookupInput(JsonView jsonValue) : 
-    m_knowledgeBaseIdHasBeenSet(false),
-    m_textHasBeenSet(false)
+KnowledgeBaseLookupInput::KnowledgeBaseLookupInput(JsonView jsonValue)
+  : KnowledgeBaseLookupInput()
 {
   *this = jsonValue;
 }

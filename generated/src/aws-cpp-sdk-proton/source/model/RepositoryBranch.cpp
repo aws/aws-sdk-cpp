@@ -27,12 +27,8 @@ RepositoryBranch::RepositoryBranch() :
 {
 }
 
-RepositoryBranch::RepositoryBranch(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_branchHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_provider(RepositoryProvider::NOT_SET),
-    m_providerHasBeenSet(false)
+RepositoryBranch::RepositoryBranch(JsonView jsonValue)
+  : RepositoryBranch()
 {
   *this = jsonValue;
 }

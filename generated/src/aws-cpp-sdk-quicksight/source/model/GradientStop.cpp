@@ -27,12 +27,8 @@ GradientStop::GradientStop() :
 {
 }
 
-GradientStop::GradientStop(JsonView jsonValue) : 
-    m_gradientOffset(0.0),
-    m_gradientOffsetHasBeenSet(false),
-    m_dataValue(0.0),
-    m_dataValueHasBeenSet(false),
-    m_colorHasBeenSet(false)
+GradientStop::GradientStop(JsonView jsonValue)
+  : GradientStop()
 {
   *this = jsonValue;
 }

@@ -28,13 +28,8 @@ CertificateAuthorityConfiguration::CertificateAuthorityConfiguration() :
 {
 }
 
-CertificateAuthorityConfiguration::CertificateAuthorityConfiguration(JsonView jsonValue) : 
-    m_keyAlgorithm(KeyAlgorithm::NOT_SET),
-    m_keyAlgorithmHasBeenSet(false),
-    m_signingAlgorithm(SigningAlgorithm::NOT_SET),
-    m_signingAlgorithmHasBeenSet(false),
-    m_subjectHasBeenSet(false),
-    m_csrExtensionsHasBeenSet(false)
+CertificateAuthorityConfiguration::CertificateAuthorityConfiguration(JsonView jsonValue)
+  : CertificateAuthorityConfiguration()
 {
   *this = jsonValue;
 }

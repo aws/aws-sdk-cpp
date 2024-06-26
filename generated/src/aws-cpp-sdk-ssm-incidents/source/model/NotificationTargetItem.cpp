@@ -23,8 +23,8 @@ NotificationTargetItem::NotificationTargetItem() :
 {
 }
 
-NotificationTargetItem::NotificationTargetItem(JsonView jsonValue) : 
-    m_snsTopicArnHasBeenSet(false)
+NotificationTargetItem::NotificationTargetItem(JsonView jsonValue)
+  : NotificationTargetItem()
 {
   *this = jsonValue;
 }

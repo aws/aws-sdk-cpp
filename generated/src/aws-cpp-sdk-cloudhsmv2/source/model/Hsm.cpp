@@ -31,16 +31,8 @@ Hsm::Hsm() :
 {
 }
 
-Hsm::Hsm(JsonView jsonValue) : 
-    m_availabilityZoneHasBeenSet(false),
-    m_clusterIdHasBeenSet(false),
-    m_subnetIdHasBeenSet(false),
-    m_eniIdHasBeenSet(false),
-    m_eniIpHasBeenSet(false),
-    m_hsmIdHasBeenSet(false),
-    m_state(HsmState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_stateMessageHasBeenSet(false)
+Hsm::Hsm(JsonView jsonValue)
+  : Hsm()
 {
   *this = jsonValue;
 }

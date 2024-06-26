@@ -24,9 +24,8 @@ ArchiveFilters::ArchiveFilters() :
 {
 }
 
-ArchiveFilters::ArchiveFilters(JsonView jsonValue) : 
-    m_includeHasBeenSet(false),
-    m_unlessHasBeenSet(false)
+ArchiveFilters::ArchiveFilters(JsonView jsonValue)
+  : ArchiveFilters()
 {
   *this = jsonValue;
 }

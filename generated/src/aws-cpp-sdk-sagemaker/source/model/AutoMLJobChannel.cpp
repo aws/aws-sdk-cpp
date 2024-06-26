@@ -28,13 +28,8 @@ AutoMLJobChannel::AutoMLJobChannel() :
 {
 }
 
-AutoMLJobChannel::AutoMLJobChannel(JsonView jsonValue) : 
-    m_channelType(AutoMLChannelType::NOT_SET),
-    m_channelTypeHasBeenSet(false),
-    m_contentTypeHasBeenSet(false),
-    m_compressionType(CompressionType::NOT_SET),
-    m_compressionTypeHasBeenSet(false),
-    m_dataSourceHasBeenSet(false)
+AutoMLJobChannel::AutoMLJobChannel(JsonView jsonValue)
+  : AutoMLJobChannel()
 {
   *this = jsonValue;
 }

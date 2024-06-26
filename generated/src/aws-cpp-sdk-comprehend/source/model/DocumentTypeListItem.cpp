@@ -26,11 +26,8 @@ DocumentTypeListItem::DocumentTypeListItem() :
 {
 }
 
-DocumentTypeListItem::DocumentTypeListItem(JsonView jsonValue) : 
-    m_page(0),
-    m_pageHasBeenSet(false),
-    m_type(DocumentType::NOT_SET),
-    m_typeHasBeenSet(false)
+DocumentTypeListItem::DocumentTypeListItem(JsonView jsonValue)
+  : DocumentTypeListItem()
 {
   *this = jsonValue;
 }

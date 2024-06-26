@@ -23,8 +23,8 @@ ContentBlockStart::ContentBlockStart() :
 {
 }
 
-ContentBlockStart::ContentBlockStart(JsonView jsonValue) : 
-    m_toolUseHasBeenSet(false)
+ContentBlockStart::ContentBlockStart(JsonView jsonValue)
+  : ContentBlockStart()
 {
   *this = jsonValue;
 }

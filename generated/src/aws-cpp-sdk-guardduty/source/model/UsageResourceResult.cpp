@@ -24,9 +24,8 @@ UsageResourceResult::UsageResourceResult() :
 {
 }
 
-UsageResourceResult::UsageResourceResult(JsonView jsonValue) : 
-    m_resourceHasBeenSet(false),
-    m_totalHasBeenSet(false)
+UsageResourceResult::UsageResourceResult(JsonView jsonValue)
+  : UsageResourceResult()
 {
   *this = jsonValue;
 }

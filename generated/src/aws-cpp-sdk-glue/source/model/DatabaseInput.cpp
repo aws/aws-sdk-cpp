@@ -29,14 +29,8 @@ DatabaseInput::DatabaseInput() :
 {
 }
 
-DatabaseInput::DatabaseInput(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_locationUriHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_createTableDefaultPermissionsHasBeenSet(false),
-    m_targetDatabaseHasBeenSet(false),
-    m_federatedDatabaseHasBeenSet(false)
+DatabaseInput::DatabaseInput(JsonView jsonValue)
+  : DatabaseInput()
 {
   *this = jsonValue;
 }

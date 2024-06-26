@@ -25,10 +25,8 @@ InstanceSnapshotInfo::InstanceSnapshotInfo() :
 {
 }
 
-InstanceSnapshotInfo::InstanceSnapshotInfo(JsonView jsonValue) : 
-    m_fromBundleIdHasBeenSet(false),
-    m_fromBlueprintIdHasBeenSet(false),
-    m_fromDiskInfoHasBeenSet(false)
+InstanceSnapshotInfo::InstanceSnapshotInfo(JsonView jsonValue)
+  : InstanceSnapshotInfo()
 {
   *this = jsonValue;
 }

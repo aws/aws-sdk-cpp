@@ -22,8 +22,8 @@ GetLayerVersionByArnResult::GetLayerVersionByArnResult() :
 {
 }
 
-GetLayerVersionByArnResult::GetLayerVersionByArnResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_version(0)
+GetLayerVersionByArnResult::GetLayerVersionByArnResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetLayerVersionByArnResult()
 {
   *this = result;
 }

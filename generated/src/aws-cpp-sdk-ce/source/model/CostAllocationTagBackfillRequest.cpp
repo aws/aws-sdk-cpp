@@ -28,13 +28,8 @@ CostAllocationTagBackfillRequest::CostAllocationTagBackfillRequest() :
 {
 }
 
-CostAllocationTagBackfillRequest::CostAllocationTagBackfillRequest(JsonView jsonValue) : 
-    m_backfillFromHasBeenSet(false),
-    m_requestedAtHasBeenSet(false),
-    m_completedAtHasBeenSet(false),
-    m_backfillStatus(CostAllocationTagBackfillStatus::NOT_SET),
-    m_backfillStatusHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false)
+CostAllocationTagBackfillRequest::CostAllocationTagBackfillRequest(JsonView jsonValue)
+  : CostAllocationTagBackfillRequest()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ ModelBiasJobInput::ModelBiasJobInput() :
 {
 }
 
-ModelBiasJobInput::ModelBiasJobInput(JsonView jsonValue) : 
-    m_endpointInputHasBeenSet(false),
-    m_batchTransformInputHasBeenSet(false),
-    m_groundTruthS3InputHasBeenSet(false)
+ModelBiasJobInput::ModelBiasJobInput(JsonView jsonValue)
+  : ModelBiasJobInput()
 {
   *this = jsonValue;
 }

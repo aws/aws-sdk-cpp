@@ -26,11 +26,8 @@ WhatIfRangeScenario::WhatIfRangeScenario() :
 {
 }
 
-WhatIfRangeScenario::WhatIfRangeScenario(JsonView jsonValue) : 
-    m_startDateHasBeenSet(false),
-    m_endDateHasBeenSet(false),
-    m_value(0.0),
-    m_valueHasBeenSet(false)
+WhatIfRangeScenario::WhatIfRangeScenario(JsonView jsonValue)
+  : WhatIfRangeScenario()
 {
   *this = jsonValue;
 }

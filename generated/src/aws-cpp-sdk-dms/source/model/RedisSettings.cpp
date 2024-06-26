@@ -32,17 +32,8 @@ RedisSettings::RedisSettings() :
 {
 }
 
-RedisSettings::RedisSettings(JsonView jsonValue) : 
-    m_serverNameHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_sslSecurityProtocol(SslSecurityProtocolValue::NOT_SET),
-    m_sslSecurityProtocolHasBeenSet(false),
-    m_authType(RedisAuthTypeValue::NOT_SET),
-    m_authTypeHasBeenSet(false),
-    m_authUserNameHasBeenSet(false),
-    m_authPasswordHasBeenSet(false),
-    m_sslCaCertificateArnHasBeenSet(false)
+RedisSettings::RedisSettings(JsonView jsonValue)
+  : RedisSettings()
 {
   *this = jsonValue;
 }

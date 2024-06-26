@@ -23,8 +23,8 @@ InternetMeasurementsLogDelivery::InternetMeasurementsLogDelivery() :
 {
 }
 
-InternetMeasurementsLogDelivery::InternetMeasurementsLogDelivery(JsonView jsonValue) : 
-    m_s3ConfigHasBeenSet(false)
+InternetMeasurementsLogDelivery::InternetMeasurementsLogDelivery(JsonView jsonValue)
+  : InternetMeasurementsLogDelivery()
 {
   *this = jsonValue;
 }

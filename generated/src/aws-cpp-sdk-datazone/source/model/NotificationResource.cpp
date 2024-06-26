@@ -26,11 +26,8 @@ NotificationResource::NotificationResource() :
 {
 }
 
-NotificationResource::NotificationResource(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_type(NotificationResourceType::NOT_SET),
-    m_typeHasBeenSet(false)
+NotificationResource::NotificationResource(JsonView jsonValue)
+  : NotificationResource()
 {
   *this = jsonValue;
 }

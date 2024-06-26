@@ -38,23 +38,8 @@ CompilationJobSummary::CompilationJobSummary() :
 {
 }
 
-CompilationJobSummary::CompilationJobSummary(JsonView jsonValue) : 
-    m_compilationJobNameHasBeenSet(false),
-    m_compilationJobArnHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_compilationStartTimeHasBeenSet(false),
-    m_compilationEndTimeHasBeenSet(false),
-    m_compilationTargetDevice(TargetDevice::NOT_SET),
-    m_compilationTargetDeviceHasBeenSet(false),
-    m_compilationTargetPlatformOs(TargetPlatformOs::NOT_SET),
-    m_compilationTargetPlatformOsHasBeenSet(false),
-    m_compilationTargetPlatformArch(TargetPlatformArch::NOT_SET),
-    m_compilationTargetPlatformArchHasBeenSet(false),
-    m_compilationTargetPlatformAccelerator(TargetPlatformAccelerator::NOT_SET),
-    m_compilationTargetPlatformAcceleratorHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_compilationJobStatus(CompilationJobStatus::NOT_SET),
-    m_compilationJobStatusHasBeenSet(false)
+CompilationJobSummary::CompilationJobSummary(JsonView jsonValue)
+  : CompilationJobSummary()
 {
   *this = jsonValue;
 }

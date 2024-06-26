@@ -23,8 +23,8 @@ KMSKey::KMSKey() :
 {
 }
 
-KMSKey::KMSKey(JsonView jsonValue) : 
-    m_kmsEncryptionKeyArnHasBeenSet(false)
+KMSKey::KMSKey(JsonView jsonValue)
+  : KMSKey()
 {
   *this = jsonValue;
 }

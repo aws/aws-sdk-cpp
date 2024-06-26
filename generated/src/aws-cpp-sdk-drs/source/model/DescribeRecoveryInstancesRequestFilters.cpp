@@ -24,9 +24,8 @@ DescribeRecoveryInstancesRequestFilters::DescribeRecoveryInstancesRequestFilters
 {
 }
 
-DescribeRecoveryInstancesRequestFilters::DescribeRecoveryInstancesRequestFilters(JsonView jsonValue) : 
-    m_recoveryInstanceIDsHasBeenSet(false),
-    m_sourceServerIDsHasBeenSet(false)
+DescribeRecoveryInstancesRequestFilters::DescribeRecoveryInstancesRequestFilters(JsonView jsonValue)
+  : DescribeRecoveryInstancesRequestFilters()
 {
   *this = jsonValue;
 }

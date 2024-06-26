@@ -26,11 +26,8 @@ ProtocolsListDataSummary::ProtocolsListDataSummary() :
 {
 }
 
-ProtocolsListDataSummary::ProtocolsListDataSummary(JsonView jsonValue) : 
-    m_listArnHasBeenSet(false),
-    m_listIdHasBeenSet(false),
-    m_listNameHasBeenSet(false),
-    m_protocolsListHasBeenSet(false)
+ProtocolsListDataSummary::ProtocolsListDataSummary(JsonView jsonValue)
+  : ProtocolsListDataSummary()
 {
   *this = jsonValue;
 }

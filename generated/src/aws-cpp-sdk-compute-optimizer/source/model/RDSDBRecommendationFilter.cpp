@@ -25,10 +25,8 @@ RDSDBRecommendationFilter::RDSDBRecommendationFilter() :
 {
 }
 
-RDSDBRecommendationFilter::RDSDBRecommendationFilter(JsonView jsonValue) : 
-    m_name(RDSDBRecommendationFilterName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+RDSDBRecommendationFilter::RDSDBRecommendationFilter(JsonView jsonValue)
+  : RDSDBRecommendationFilter()
 {
   *this = jsonValue;
 }

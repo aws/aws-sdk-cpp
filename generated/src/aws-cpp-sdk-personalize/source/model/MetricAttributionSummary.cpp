@@ -28,13 +28,8 @@ MetricAttributionSummary::MetricAttributionSummary() :
 {
 }
 
-MetricAttributionSummary::MetricAttributionSummary(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_metricAttributionArnHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_creationDateTimeHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false),
-    m_failureReasonHasBeenSet(false)
+MetricAttributionSummary::MetricAttributionSummary(JsonView jsonValue)
+  : MetricAttributionSummary()
 {
   *this = jsonValue;
 }

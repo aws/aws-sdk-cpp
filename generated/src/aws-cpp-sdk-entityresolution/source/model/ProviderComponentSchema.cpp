@@ -24,9 +24,8 @@ ProviderComponentSchema::ProviderComponentSchema() :
 {
 }
 
-ProviderComponentSchema::ProviderComponentSchema(JsonView jsonValue) : 
-    m_providerSchemaAttributesHasBeenSet(false),
-    m_schemasHasBeenSet(false)
+ProviderComponentSchema::ProviderComponentSchema(JsonView jsonValue)
+  : ProviderComponentSchema()
 {
   *this = jsonValue;
 }

@@ -26,9 +26,8 @@ SecondaryClusterInfo::SecondaryClusterInfo() :
 {
 }
 
-SecondaryClusterInfo::SecondaryClusterInfo(const XmlNode& xmlNode) : 
-    m_availabilityZoneHasBeenSet(false),
-    m_clusterNodesHasBeenSet(false)
+SecondaryClusterInfo::SecondaryClusterInfo(const XmlNode& xmlNode)
+  : SecondaryClusterInfo()
 {
   *this = xmlNode;
 }

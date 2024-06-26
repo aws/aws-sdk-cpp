@@ -24,9 +24,8 @@ AmiProductLastModifiedDateFilterDateRange::AmiProductLastModifiedDateFilterDateR
 {
 }
 
-AmiProductLastModifiedDateFilterDateRange::AmiProductLastModifiedDateFilterDateRange(JsonView jsonValue) : 
-    m_afterValueHasBeenSet(false),
-    m_beforeValueHasBeenSet(false)
+AmiProductLastModifiedDateFilterDateRange::AmiProductLastModifiedDateFilterDateRange(JsonView jsonValue)
+  : AmiProductLastModifiedDateFilterDateRange()
 {
   *this = jsonValue;
 }

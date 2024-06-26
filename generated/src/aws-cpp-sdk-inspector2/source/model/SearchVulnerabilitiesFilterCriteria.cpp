@@ -23,8 +23,8 @@ SearchVulnerabilitiesFilterCriteria::SearchVulnerabilitiesFilterCriteria() :
 {
 }
 
-SearchVulnerabilitiesFilterCriteria::SearchVulnerabilitiesFilterCriteria(JsonView jsonValue) : 
-    m_vulnerabilityIdsHasBeenSet(false)
+SearchVulnerabilitiesFilterCriteria::SearchVulnerabilitiesFilterCriteria(JsonView jsonValue)
+  : SearchVulnerabilitiesFilterCriteria()
 {
   *this = jsonValue;
 }

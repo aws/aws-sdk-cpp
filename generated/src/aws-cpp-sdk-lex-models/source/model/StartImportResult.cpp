@@ -24,10 +24,8 @@ StartImportResult::StartImportResult() :
 {
 }
 
-StartImportResult::StartImportResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_resourceType(ResourceType::NOT_SET),
-    m_mergeStrategy(MergeStrategy::NOT_SET),
-    m_importStatus(ImportStatus::NOT_SET)
+StartImportResult::StartImportResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : StartImportResult()
 {
   *this = result;
 }

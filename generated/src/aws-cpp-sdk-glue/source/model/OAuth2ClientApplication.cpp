@@ -24,9 +24,8 @@ OAuth2ClientApplication::OAuth2ClientApplication() :
 {
 }
 
-OAuth2ClientApplication::OAuth2ClientApplication(JsonView jsonValue) : 
-    m_userManagedClientApplicationClientIdHasBeenSet(false),
-    m_aWSManagedClientApplicationReferenceHasBeenSet(false)
+OAuth2ClientApplication::OAuth2ClientApplication(JsonView jsonValue)
+  : OAuth2ClientApplication()
 {
   *this = jsonValue;
 }

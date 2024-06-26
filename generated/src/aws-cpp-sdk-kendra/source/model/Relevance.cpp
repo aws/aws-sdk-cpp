@@ -30,15 +30,8 @@ Relevance::Relevance() :
 {
 }
 
-Relevance::Relevance(JsonView jsonValue) : 
-    m_freshness(false),
-    m_freshnessHasBeenSet(false),
-    m_importance(0),
-    m_importanceHasBeenSet(false),
-    m_durationHasBeenSet(false),
-    m_rankOrder(Order::NOT_SET),
-    m_rankOrderHasBeenSet(false),
-    m_valueImportanceMapHasBeenSet(false)
+Relevance::Relevance(JsonView jsonValue)
+  : Relevance()
 {
   *this = jsonValue;
 }

@@ -27,12 +27,8 @@ Source::Source() :
 {
 }
 
-Source::Source(JsonView jsonValue) : 
-    m_owner(Owner::NOT_SET),
-    m_ownerHasBeenSet(false),
-    m_sourceIdentifierHasBeenSet(false),
-    m_sourceDetailsHasBeenSet(false),
-    m_customPolicyDetailsHasBeenSet(false)
+Source::Source(JsonView jsonValue)
+  : Source()
 {
   *this = jsonValue;
 }

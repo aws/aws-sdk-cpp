@@ -34,19 +34,8 @@ EntitySummary::EntitySummary() :
 {
 }
 
-EntitySummary::EntitySummary(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_entityTypeHasBeenSet(false),
-    m_entityIdHasBeenSet(false),
-    m_entityArnHasBeenSet(false),
-    m_lastModifiedDateHasBeenSet(false),
-    m_visibilityHasBeenSet(false),
-    m_amiProductSummaryHasBeenSet(false),
-    m_containerProductSummaryHasBeenSet(false),
-    m_dataProductSummaryHasBeenSet(false),
-    m_saaSProductSummaryHasBeenSet(false),
-    m_offerSummaryHasBeenSet(false),
-    m_resaleAuthorizationSummaryHasBeenSet(false)
+EntitySummary::EntitySummary(JsonView jsonValue)
+  : EntitySummary()
 {
   *this = jsonValue;
 }

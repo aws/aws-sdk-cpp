@@ -22,8 +22,8 @@ GetBulkPublishDetailsResult::GetBulkPublishDetailsResult() :
 {
 }
 
-GetBulkPublishDetailsResult::GetBulkPublishDetailsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_bulkPublishStatus(BulkPublishStatus::NOT_SET)
+GetBulkPublishDetailsResult::GetBulkPublishDetailsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetBulkPublishDetailsResult()
 {
   *this = result;
 }

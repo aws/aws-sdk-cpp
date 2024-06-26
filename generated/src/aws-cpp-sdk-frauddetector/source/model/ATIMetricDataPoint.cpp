@@ -30,15 +30,8 @@ ATIMetricDataPoint::ATIMetricDataPoint() :
 {
 }
 
-ATIMetricDataPoint::ATIMetricDataPoint(JsonView jsonValue) : 
-    m_cr(0.0),
-    m_crHasBeenSet(false),
-    m_adr(0.0),
-    m_adrHasBeenSet(false),
-    m_threshold(0.0),
-    m_thresholdHasBeenSet(false),
-    m_atodr(0.0),
-    m_atodrHasBeenSet(false)
+ATIMetricDataPoint::ATIMetricDataPoint(JsonView jsonValue)
+  : ATIMetricDataPoint()
 {
   *this = jsonValue;
 }

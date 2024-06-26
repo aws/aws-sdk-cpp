@@ -26,9 +26,8 @@ LaunchTemplateHibernationOptionsRequest::LaunchTemplateHibernationOptionsRequest
 {
 }
 
-LaunchTemplateHibernationOptionsRequest::LaunchTemplateHibernationOptionsRequest(const XmlNode& xmlNode) : 
-    m_configured(false),
-    m_configuredHasBeenSet(false)
+LaunchTemplateHibernationOptionsRequest::LaunchTemplateHibernationOptionsRequest(const XmlNode& xmlNode)
+  : LaunchTemplateHibernationOptionsRequest()
 {
   *this = xmlNode;
 }

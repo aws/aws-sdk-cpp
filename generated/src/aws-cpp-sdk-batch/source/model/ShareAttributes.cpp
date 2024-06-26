@@ -25,10 +25,8 @@ ShareAttributes::ShareAttributes() :
 {
 }
 
-ShareAttributes::ShareAttributes(JsonView jsonValue) : 
-    m_shareIdentifierHasBeenSet(false),
-    m_weightFactor(0.0),
-    m_weightFactorHasBeenSet(false)
+ShareAttributes::ShareAttributes(JsonView jsonValue)
+  : ShareAttributes()
 {
   *this = jsonValue;
 }

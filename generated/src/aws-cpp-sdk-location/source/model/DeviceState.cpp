@@ -29,14 +29,8 @@ DeviceState::DeviceState() :
 {
 }
 
-DeviceState::DeviceState(JsonView jsonValue) : 
-    m_deviceIdHasBeenSet(false),
-    m_sampleTimeHasBeenSet(false),
-    m_positionHasBeenSet(false),
-    m_accuracyHasBeenSet(false),
-    m_ipv4AddressHasBeenSet(false),
-    m_wiFiAccessPointsHasBeenSet(false),
-    m_cellSignalsHasBeenSet(false)
+DeviceState::DeviceState(JsonView jsonValue)
+  : DeviceState()
 {
   *this = jsonValue;
 }

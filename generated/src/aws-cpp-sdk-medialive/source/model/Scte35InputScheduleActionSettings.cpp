@@ -25,10 +25,8 @@ Scte35InputScheduleActionSettings::Scte35InputScheduleActionSettings() :
 {
 }
 
-Scte35InputScheduleActionSettings::Scte35InputScheduleActionSettings(JsonView jsonValue) : 
-    m_inputAttachmentNameReferenceHasBeenSet(false),
-    m_mode(Scte35InputMode::NOT_SET),
-    m_modeHasBeenSet(false)
+Scte35InputScheduleActionSettings::Scte35InputScheduleActionSettings(JsonView jsonValue)
+  : Scte35InputScheduleActionSettings()
 {
   *this = jsonValue;
 }

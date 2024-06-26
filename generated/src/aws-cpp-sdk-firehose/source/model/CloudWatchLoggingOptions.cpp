@@ -26,11 +26,8 @@ CloudWatchLoggingOptions::CloudWatchLoggingOptions() :
 {
 }
 
-CloudWatchLoggingOptions::CloudWatchLoggingOptions(JsonView jsonValue) : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_logGroupNameHasBeenSet(false),
-    m_logStreamNameHasBeenSet(false)
+CloudWatchLoggingOptions::CloudWatchLoggingOptions(JsonView jsonValue)
+  : CloudWatchLoggingOptions()
 {
   *this = jsonValue;
 }

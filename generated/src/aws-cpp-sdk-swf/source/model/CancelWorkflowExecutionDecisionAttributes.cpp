@@ -23,8 +23,8 @@ CancelWorkflowExecutionDecisionAttributes::CancelWorkflowExecutionDecisionAttrib
 {
 }
 
-CancelWorkflowExecutionDecisionAttributes::CancelWorkflowExecutionDecisionAttributes(JsonView jsonValue) : 
-    m_detailsHasBeenSet(false)
+CancelWorkflowExecutionDecisionAttributes::CancelWorkflowExecutionDecisionAttributes(JsonView jsonValue)
+  : CancelWorkflowExecutionDecisionAttributes()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ StudioEncryptionConfiguration::StudioEncryptionConfiguration() :
 {
 }
 
-StudioEncryptionConfiguration::StudioEncryptionConfiguration(JsonView jsonValue) : 
-    m_keyArnHasBeenSet(false),
-    m_keyType(StudioEncryptionConfigurationKeyType::NOT_SET),
-    m_keyTypeHasBeenSet(false)
+StudioEncryptionConfiguration::StudioEncryptionConfiguration(JsonView jsonValue)
+  : StudioEncryptionConfiguration()
 {
   *this = jsonValue;
 }

@@ -33,18 +33,8 @@ DomainController::DomainController() :
 {
 }
 
-DomainController::DomainController(JsonView jsonValue) : 
-    m_directoryIdHasBeenSet(false),
-    m_domainControllerIdHasBeenSet(false),
-    m_dnsIpAddrHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_subnetIdHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_status(DomainControllerStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusReasonHasBeenSet(false),
-    m_launchTimeHasBeenSet(false),
-    m_statusLastUpdatedDateTimeHasBeenSet(false)
+DomainController::DomainController(JsonView jsonValue)
+  : DomainController()
 {
   *this = jsonValue;
 }

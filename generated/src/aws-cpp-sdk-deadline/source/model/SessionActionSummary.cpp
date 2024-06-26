@@ -31,16 +31,8 @@ SessionActionSummary::SessionActionSummary() :
 {
 }
 
-SessionActionSummary::SessionActionSummary(JsonView jsonValue) : 
-    m_definitionHasBeenSet(false),
-    m_endedAtHasBeenSet(false),
-    m_progressPercent(0.0),
-    m_progressPercentHasBeenSet(false),
-    m_sessionActionIdHasBeenSet(false),
-    m_startedAtHasBeenSet(false),
-    m_status(SessionActionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_workerUpdatedAtHasBeenSet(false)
+SessionActionSummary::SessionActionSummary(JsonView jsonValue)
+  : SessionActionSummary()
 {
   *this = jsonValue;
 }

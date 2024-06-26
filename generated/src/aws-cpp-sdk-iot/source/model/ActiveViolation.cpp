@@ -33,18 +33,8 @@ ActiveViolation::ActiveViolation() :
 {
 }
 
-ActiveViolation::ActiveViolation(JsonView jsonValue) : 
-    m_violationIdHasBeenSet(false),
-    m_thingNameHasBeenSet(false),
-    m_securityProfileNameHasBeenSet(false),
-    m_behaviorHasBeenSet(false),
-    m_lastViolationValueHasBeenSet(false),
-    m_violationEventAdditionalInfoHasBeenSet(false),
-    m_verificationState(VerificationState::NOT_SET),
-    m_verificationStateHasBeenSet(false),
-    m_verificationStateDescriptionHasBeenSet(false),
-    m_lastViolationTimeHasBeenSet(false),
-    m_violationStartTimeHasBeenSet(false)
+ActiveViolation::ActiveViolation(JsonView jsonValue)
+  : ActiveViolation()
 {
   *this = jsonValue;
 }

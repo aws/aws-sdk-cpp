@@ -26,11 +26,8 @@ RecoveryPointMember::RecoveryPointMember() :
 {
 }
 
-RecoveryPointMember::RecoveryPointMember(JsonView jsonValue) : 
-    m_recoveryPointArnHasBeenSet(false),
-    m_resourceArnHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
-    m_backupVaultNameHasBeenSet(false)
+RecoveryPointMember::RecoveryPointMember(JsonView jsonValue)
+  : RecoveryPointMember()
 {
   *this = jsonValue;
 }

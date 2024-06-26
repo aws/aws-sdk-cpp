@@ -36,21 +36,8 @@ ChangeProgressStatusDetails::ChangeProgressStatusDetails() :
 {
 }
 
-ChangeProgressStatusDetails::ChangeProgressStatusDetails(JsonView jsonValue) : 
-    m_changeIdHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_status(OverallChangeStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_pendingPropertiesHasBeenSet(false),
-    m_completedPropertiesHasBeenSet(false),
-    m_totalNumberOfStages(0),
-    m_totalNumberOfStagesHasBeenSet(false),
-    m_changeProgressStagesHasBeenSet(false),
-    m_configChangeStatus(ConfigChangeStatus::NOT_SET),
-    m_configChangeStatusHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_initiatedBy(InitiatedBy::NOT_SET),
-    m_initiatedByHasBeenSet(false)
+ChangeProgressStatusDetails::ChangeProgressStatusDetails(JsonView jsonValue)
+  : ChangeProgressStatusDetails()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ JobScopeTerm::JobScopeTerm() :
 {
 }
 
-JobScopeTerm::JobScopeTerm(JsonView jsonValue) : 
-    m_simpleScopeTermHasBeenSet(false),
-    m_tagScopeTermHasBeenSet(false)
+JobScopeTerm::JobScopeTerm(JsonView jsonValue)
+  : JobScopeTerm()
 {
   *this = jsonValue;
 }

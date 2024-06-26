@@ -31,16 +31,8 @@ ProjectDetails::ProjectDetails() :
 {
 }
 
-ProjectDetails::ProjectDetails(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_projectIdHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_state(ProjectState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_createdDateHasBeenSet(false),
-    m_lastUpdatedDateHasBeenSet(false),
-    m_consoleUrlHasBeenSet(false),
-    m_resourcesHasBeenSet(false)
+ProjectDetails::ProjectDetails(JsonView jsonValue)
+  : ProjectDetails()
 {
   *this = jsonValue;
 }

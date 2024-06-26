@@ -24,9 +24,8 @@ ObjectTypeKey::ObjectTypeKey() :
 {
 }
 
-ObjectTypeKey::ObjectTypeKey(JsonView jsonValue) : 
-    m_standardIdentifiersHasBeenSet(false),
-    m_fieldNamesHasBeenSet(false)
+ObjectTypeKey::ObjectTypeKey(JsonView jsonValue)
+  : ObjectTypeKey()
 {
   *this = jsonValue;
 }

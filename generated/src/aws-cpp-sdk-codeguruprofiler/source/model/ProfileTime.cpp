@@ -23,8 +23,8 @@ ProfileTime::ProfileTime() :
 {
 }
 
-ProfileTime::ProfileTime(JsonView jsonValue) : 
-    m_startHasBeenSet(false)
+ProfileTime::ProfileTime(JsonView jsonValue)
+  : ProfileTime()
 {
   *this = jsonValue;
 }

@@ -34,19 +34,8 @@ FieldToMatch::FieldToMatch() :
 {
 }
 
-FieldToMatch::FieldToMatch(JsonView jsonValue) : 
-    m_singleHeaderHasBeenSet(false),
-    m_singleQueryArgumentHasBeenSet(false),
-    m_allQueryArgumentsHasBeenSet(false),
-    m_uriPathHasBeenSet(false),
-    m_queryStringHasBeenSet(false),
-    m_bodyHasBeenSet(false),
-    m_methodHasBeenSet(false),
-    m_jsonBodyHasBeenSet(false),
-    m_headersHasBeenSet(false),
-    m_cookiesHasBeenSet(false),
-    m_headerOrderHasBeenSet(false),
-    m_jA3FingerprintHasBeenSet(false)
+FieldToMatch::FieldToMatch(JsonView jsonValue)
+  : FieldToMatch()
 {
   *this = jsonValue;
 }

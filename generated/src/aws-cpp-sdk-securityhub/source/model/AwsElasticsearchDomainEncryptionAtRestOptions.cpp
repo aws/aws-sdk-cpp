@@ -25,10 +25,8 @@ AwsElasticsearchDomainEncryptionAtRestOptions::AwsElasticsearchDomainEncryptionA
 {
 }
 
-AwsElasticsearchDomainEncryptionAtRestOptions::AwsElasticsearchDomainEncryptionAtRestOptions(JsonView jsonValue) : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
+AwsElasticsearchDomainEncryptionAtRestOptions::AwsElasticsearchDomainEncryptionAtRestOptions(JsonView jsonValue)
+  : AwsElasticsearchDomainEncryptionAtRestOptions()
 {
   *this = jsonValue;
 }

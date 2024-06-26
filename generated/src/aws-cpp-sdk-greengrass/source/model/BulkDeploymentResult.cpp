@@ -31,16 +31,8 @@ BulkDeploymentResult::BulkDeploymentResult() :
 {
 }
 
-BulkDeploymentResult::BulkDeploymentResult(JsonView jsonValue) : 
-    m_createdAtHasBeenSet(false),
-    m_deploymentArnHasBeenSet(false),
-    m_deploymentIdHasBeenSet(false),
-    m_deploymentStatusHasBeenSet(false),
-    m_deploymentType(DeploymentType::NOT_SET),
-    m_deploymentTypeHasBeenSet(false),
-    m_errorDetailsHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_groupArnHasBeenSet(false)
+BulkDeploymentResult::BulkDeploymentResult(JsonView jsonValue)
+  : BulkDeploymentResult()
 {
   *this = jsonValue;
 }

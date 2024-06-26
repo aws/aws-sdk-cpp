@@ -29,14 +29,8 @@ CompletionReport::CompletionReport() :
 {
 }
 
-CompletionReport::CompletionReport(JsonView jsonValue) : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_pathHasBeenSet(false),
-    m_format(ReportFormat::NOT_SET),
-    m_formatHasBeenSet(false),
-    m_scope(ReportScope::NOT_SET),
-    m_scopeHasBeenSet(false)
+CompletionReport::CompletionReport(JsonView jsonValue)
+  : CompletionReport()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ AssociateResourceSharePermissionResult::AssociateResourceSharePermissionResult()
 {
 }
 
-AssociateResourceSharePermissionResult::AssociateResourceSharePermissionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_returnValue(false)
+AssociateResourceSharePermissionResult::AssociateResourceSharePermissionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : AssociateResourceSharePermissionResult()
 {
   *this = result;
 }

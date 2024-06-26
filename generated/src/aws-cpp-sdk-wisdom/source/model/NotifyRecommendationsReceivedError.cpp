@@ -24,9 +24,8 @@ NotifyRecommendationsReceivedError::NotifyRecommendationsReceivedError() :
 {
 }
 
-NotifyRecommendationsReceivedError::NotifyRecommendationsReceivedError(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_recommendationIdHasBeenSet(false)
+NotifyRecommendationsReceivedError::NotifyRecommendationsReceivedError(JsonView jsonValue)
+  : NotifyRecommendationsReceivedError()
 {
   *this = jsonValue;
 }

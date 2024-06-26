@@ -33,18 +33,8 @@ Segment::Segment() :
 {
 }
 
-Segment::Segment(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_experimentCount(0),
-    m_experimentCountHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_launchCount(0),
-    m_launchCountHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_patternHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+Segment::Segment(JsonView jsonValue)
+  : Segment()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ ClusterOperationV2Provisioned::ClusterOperationV2Provisioned() :
 {
 }
 
-ClusterOperationV2Provisioned::ClusterOperationV2Provisioned(JsonView jsonValue) : 
-    m_operationStepsHasBeenSet(false),
-    m_sourceClusterInfoHasBeenSet(false),
-    m_targetClusterInfoHasBeenSet(false),
-    m_vpcConnectionInfoHasBeenSet(false)
+ClusterOperationV2Provisioned::ClusterOperationV2Provisioned(JsonView jsonValue)
+  : ClusterOperationV2Provisioned()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ LambdaOutputUpdate::LambdaOutputUpdate() :
 {
 }
 
-LambdaOutputUpdate::LambdaOutputUpdate(JsonView jsonValue) : 
-    m_resourceARNUpdateHasBeenSet(false)
+LambdaOutputUpdate::LambdaOutputUpdate(JsonView jsonValue)
+  : LambdaOutputUpdate()
 {
   *this = jsonValue;
 }

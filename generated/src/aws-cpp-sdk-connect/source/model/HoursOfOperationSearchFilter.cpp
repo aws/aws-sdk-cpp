@@ -23,8 +23,8 @@ HoursOfOperationSearchFilter::HoursOfOperationSearchFilter() :
 {
 }
 
-HoursOfOperationSearchFilter::HoursOfOperationSearchFilter(JsonView jsonValue) : 
-    m_tagFilterHasBeenSet(false)
+HoursOfOperationSearchFilter::HoursOfOperationSearchFilter(JsonView jsonValue)
+  : HoursOfOperationSearchFilter()
 {
   *this = jsonValue;
 }

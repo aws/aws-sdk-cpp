@@ -31,16 +31,8 @@ DescribedExecution::DescribedExecution() :
 {
 }
 
-DescribedExecution::DescribedExecution(JsonView jsonValue) : 
-    m_executionIdHasBeenSet(false),
-    m_initialFileLocationHasBeenSet(false),
-    m_serviceMetadataHasBeenSet(false),
-    m_executionRoleHasBeenSet(false),
-    m_loggingConfigurationHasBeenSet(false),
-    m_posixProfileHasBeenSet(false),
-    m_status(ExecutionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_resultsHasBeenSet(false)
+DescribedExecution::DescribedExecution(JsonView jsonValue)
+  : DescribedExecution()
 {
   *this = jsonValue;
 }

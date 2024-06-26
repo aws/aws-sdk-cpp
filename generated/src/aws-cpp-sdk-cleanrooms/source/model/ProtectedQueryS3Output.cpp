@@ -23,8 +23,8 @@ ProtectedQueryS3Output::ProtectedQueryS3Output() :
 {
 }
 
-ProtectedQueryS3Output::ProtectedQueryS3Output(JsonView jsonValue) : 
-    m_locationHasBeenSet(false)
+ProtectedQueryS3Output::ProtectedQueryS3Output(JsonView jsonValue)
+  : ProtectedQueryS3Output()
 {
   *this = jsonValue;
 }

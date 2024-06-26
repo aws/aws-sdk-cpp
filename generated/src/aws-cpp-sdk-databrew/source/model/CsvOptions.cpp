@@ -25,10 +25,8 @@ CsvOptions::CsvOptions() :
 {
 }
 
-CsvOptions::CsvOptions(JsonView jsonValue) : 
-    m_delimiterHasBeenSet(false),
-    m_headerRow(false),
-    m_headerRowHasBeenSet(false)
+CsvOptions::CsvOptions(JsonView jsonValue)
+  : CsvOptions()
 {
   *this = jsonValue;
 }

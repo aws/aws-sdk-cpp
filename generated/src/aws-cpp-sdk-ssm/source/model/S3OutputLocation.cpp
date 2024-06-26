@@ -25,10 +25,8 @@ S3OutputLocation::S3OutputLocation() :
 {
 }
 
-S3OutputLocation::S3OutputLocation(JsonView jsonValue) : 
-    m_outputS3RegionHasBeenSet(false),
-    m_outputS3BucketNameHasBeenSet(false),
-    m_outputS3KeyPrefixHasBeenSet(false)
+S3OutputLocation::S3OutputLocation(JsonView jsonValue)
+  : S3OutputLocation()
 {
   *this = jsonValue;
 }

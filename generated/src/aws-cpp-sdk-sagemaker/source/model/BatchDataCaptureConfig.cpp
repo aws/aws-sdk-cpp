@@ -26,11 +26,8 @@ BatchDataCaptureConfig::BatchDataCaptureConfig() :
 {
 }
 
-BatchDataCaptureConfig::BatchDataCaptureConfig(JsonView jsonValue) : 
-    m_destinationS3UriHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_generateInferenceId(false),
-    m_generateInferenceIdHasBeenSet(false)
+BatchDataCaptureConfig::BatchDataCaptureConfig(JsonView jsonValue)
+  : BatchDataCaptureConfig()
 {
   *this = jsonValue;
 }

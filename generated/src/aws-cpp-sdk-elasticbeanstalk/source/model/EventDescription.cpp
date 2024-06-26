@@ -34,17 +34,8 @@ EventDescription::EventDescription() :
 {
 }
 
-EventDescription::EventDescription(const XmlNode& xmlNode) : 
-    m_eventDateHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_applicationNameHasBeenSet(false),
-    m_versionLabelHasBeenSet(false),
-    m_templateNameHasBeenSet(false),
-    m_environmentNameHasBeenSet(false),
-    m_platformArnHasBeenSet(false),
-    m_requestIdHasBeenSet(false),
-    m_severity(EventSeverity::NOT_SET),
-    m_severityHasBeenSet(false)
+EventDescription::EventDescription(const XmlNode& xmlNode)
+  : EventDescription()
 {
   *this = xmlNode;
 }

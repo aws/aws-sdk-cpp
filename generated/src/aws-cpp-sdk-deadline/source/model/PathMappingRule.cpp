@@ -26,11 +26,8 @@ PathMappingRule::PathMappingRule() :
 {
 }
 
-PathMappingRule::PathMappingRule(JsonView jsonValue) : 
-    m_destinationPathHasBeenSet(false),
-    m_sourcePathHasBeenSet(false),
-    m_sourcePathFormat(PathFormat::NOT_SET),
-    m_sourcePathFormatHasBeenSet(false)
+PathMappingRule::PathMappingRule(JsonView jsonValue)
+  : PathMappingRule()
 {
   *this = jsonValue;
 }

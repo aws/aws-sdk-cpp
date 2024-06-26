@@ -26,11 +26,8 @@ SessionKeyMastercard::SessionKeyMastercard() :
 {
 }
 
-SessionKeyMastercard::SessionKeyMastercard(JsonView jsonValue) : 
-    m_applicationTransactionCounterHasBeenSet(false),
-    m_panSequenceNumberHasBeenSet(false),
-    m_primaryAccountNumberHasBeenSet(false),
-    m_unpredictableNumberHasBeenSet(false)
+SessionKeyMastercard::SessionKeyMastercard(JsonView jsonValue)
+  : SessionKeyMastercard()
 {
   *this = jsonValue;
 }

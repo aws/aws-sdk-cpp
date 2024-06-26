@@ -25,10 +25,8 @@ AudioChannelTaggingSettings::AudioChannelTaggingSettings() :
 {
 }
 
-AudioChannelTaggingSettings::AudioChannelTaggingSettings(JsonView jsonValue) : 
-    m_channelTag(AudioChannelTag::NOT_SET),
-    m_channelTagHasBeenSet(false),
-    m_channelTagsHasBeenSet(false)
+AudioChannelTaggingSettings::AudioChannelTaggingSettings(JsonView jsonValue)
+  : AudioChannelTaggingSettings()
 {
   *this = jsonValue;
 }

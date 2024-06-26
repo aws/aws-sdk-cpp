@@ -34,17 +34,8 @@ LaunchTemplateVersion::LaunchTemplateVersion() :
 {
 }
 
-LaunchTemplateVersion::LaunchTemplateVersion(const XmlNode& xmlNode) : 
-    m_launchTemplateIdHasBeenSet(false),
-    m_launchTemplateNameHasBeenSet(false),
-    m_versionNumber(0),
-    m_versionNumberHasBeenSet(false),
-    m_versionDescriptionHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_defaultVersion(false),
-    m_defaultVersionHasBeenSet(false),
-    m_launchTemplateDataHasBeenSet(false)
+LaunchTemplateVersion::LaunchTemplateVersion(const XmlNode& xmlNode)
+  : LaunchTemplateVersion()
 {
   *this = xmlNode;
 }

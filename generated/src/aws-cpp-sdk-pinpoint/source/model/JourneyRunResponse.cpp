@@ -27,12 +27,8 @@ JourneyRunResponse::JourneyRunResponse() :
 {
 }
 
-JourneyRunResponse::JourneyRunResponse(JsonView jsonValue) : 
-    m_creationTimeHasBeenSet(false),
-    m_lastUpdateTimeHasBeenSet(false),
-    m_runIdHasBeenSet(false),
-    m_status(JourneyRunStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+JourneyRunResponse::JourneyRunResponse(JsonView jsonValue)
+  : JourneyRunResponse()
 {
   *this = jsonValue;
 }

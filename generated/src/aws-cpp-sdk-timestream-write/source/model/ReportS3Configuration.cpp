@@ -27,12 +27,8 @@ ReportS3Configuration::ReportS3Configuration() :
 {
 }
 
-ReportS3Configuration::ReportS3Configuration(JsonView jsonValue) : 
-    m_bucketNameHasBeenSet(false),
-    m_objectKeyPrefixHasBeenSet(false),
-    m_encryptionOption(S3EncryptionOption::NOT_SET),
-    m_encryptionOptionHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
+ReportS3Configuration::ReportS3Configuration(JsonView jsonValue)
+  : ReportS3Configuration()
 {
   *this = jsonValue;
 }

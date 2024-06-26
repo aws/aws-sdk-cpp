@@ -48,33 +48,8 @@ Table::Table() :
 {
 }
 
-Table::Table(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_ownerHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false),
-    m_lastAccessTimeHasBeenSet(false),
-    m_lastAnalyzedTimeHasBeenSet(false),
-    m_retention(0),
-    m_retentionHasBeenSet(false),
-    m_storageDescriptorHasBeenSet(false),
-    m_partitionKeysHasBeenSet(false),
-    m_viewOriginalTextHasBeenSet(false),
-    m_viewExpandedTextHasBeenSet(false),
-    m_tableTypeHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_isRegisteredWithLakeFormation(false),
-    m_isRegisteredWithLakeFormationHasBeenSet(false),
-    m_targetTableHasBeenSet(false),
-    m_catalogIdHasBeenSet(false),
-    m_versionIdHasBeenSet(false),
-    m_federatedTableHasBeenSet(false),
-    m_viewDefinitionHasBeenSet(false),
-    m_isMultiDialectView(false),
-    m_isMultiDialectViewHasBeenSet(false)
+Table::Table(JsonView jsonValue)
+  : Table()
 {
   *this = jsonValue;
 }

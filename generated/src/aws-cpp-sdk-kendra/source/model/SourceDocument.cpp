@@ -25,10 +25,8 @@ SourceDocument::SourceDocument() :
 {
 }
 
-SourceDocument::SourceDocument(JsonView jsonValue) : 
-    m_documentIdHasBeenSet(false),
-    m_suggestionAttributesHasBeenSet(false),
-    m_additionalAttributesHasBeenSet(false)
+SourceDocument::SourceDocument(JsonView jsonValue)
+  : SourceDocument()
 {
   *this = jsonValue;
 }

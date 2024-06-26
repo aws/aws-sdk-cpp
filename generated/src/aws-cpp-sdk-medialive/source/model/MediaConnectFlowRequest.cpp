@@ -23,8 +23,8 @@ MediaConnectFlowRequest::MediaConnectFlowRequest() :
 {
 }
 
-MediaConnectFlowRequest::MediaConnectFlowRequest(JsonView jsonValue) : 
-    m_flowArnHasBeenSet(false)
+MediaConnectFlowRequest::MediaConnectFlowRequest(JsonView jsonValue)
+  : MediaConnectFlowRequest()
 {
   *this = jsonValue;
 }

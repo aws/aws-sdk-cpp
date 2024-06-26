@@ -27,12 +27,8 @@ ListRouteCalculatorsResponseEntry::ListRouteCalculatorsResponseEntry() :
 {
 }
 
-ListRouteCalculatorsResponseEntry::ListRouteCalculatorsResponseEntry(JsonView jsonValue) : 
-    m_calculatorNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_dataSourceHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
+ListRouteCalculatorsResponseEntry::ListRouteCalculatorsResponseEntry(JsonView jsonValue)
+  : ListRouteCalculatorsResponseEntry()
 {
   *this = jsonValue;
 }

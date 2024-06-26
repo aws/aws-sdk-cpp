@@ -24,9 +24,8 @@ DirectDeploySettings::DirectDeploySettings() :
 {
 }
 
-DirectDeploySettings::DirectDeploySettings(JsonView jsonValue) : 
-    m_status(FeatureStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+DirectDeploySettings::DirectDeploySettings(JsonView jsonValue)
+  : DirectDeploySettings()
 {
   *this = jsonValue;
 }

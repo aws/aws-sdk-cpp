@@ -25,10 +25,8 @@ ParameterStringFilter::ParameterStringFilter() :
 {
 }
 
-ParameterStringFilter::ParameterStringFilter(JsonView jsonValue) : 
-    m_keyHasBeenSet(false),
-    m_optionHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+ParameterStringFilter::ParameterStringFilter(JsonView jsonValue)
+  : ParameterStringFilter()
 {
   *this = jsonValue;
 }

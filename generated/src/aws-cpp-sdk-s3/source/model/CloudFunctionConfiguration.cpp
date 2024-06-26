@@ -28,11 +28,8 @@ CloudFunctionConfiguration::CloudFunctionConfiguration() :
 {
 }
 
-CloudFunctionConfiguration::CloudFunctionConfiguration(const XmlNode& xmlNode) : 
-    m_idHasBeenSet(false),
-    m_eventsHasBeenSet(false),
-    m_cloudFunctionHasBeenSet(false),
-    m_invocationRoleHasBeenSet(false)
+CloudFunctionConfiguration::CloudFunctionConfiguration(const XmlNode& xmlNode)
+  : CloudFunctionConfiguration()
 {
   *this = xmlNode;
 }

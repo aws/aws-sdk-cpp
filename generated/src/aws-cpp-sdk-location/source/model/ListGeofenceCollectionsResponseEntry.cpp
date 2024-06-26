@@ -26,11 +26,8 @@ ListGeofenceCollectionsResponseEntry::ListGeofenceCollectionsResponseEntry() :
 {
 }
 
-ListGeofenceCollectionsResponseEntry::ListGeofenceCollectionsResponseEntry(JsonView jsonValue) : 
-    m_collectionNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
+ListGeofenceCollectionsResponseEntry::ListGeofenceCollectionsResponseEntry(JsonView jsonValue)
+  : ListGeofenceCollectionsResponseEntry()
 {
   *this = jsonValue;
 }

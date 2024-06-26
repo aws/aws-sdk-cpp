@@ -23,8 +23,8 @@ StaticPolicyDefinitionItem::StaticPolicyDefinitionItem() :
 {
 }
 
-StaticPolicyDefinitionItem::StaticPolicyDefinitionItem(JsonView jsonValue) : 
-    m_descriptionHasBeenSet(false)
+StaticPolicyDefinitionItem::StaticPolicyDefinitionItem(JsonView jsonValue)
+  : StaticPolicyDefinitionItem()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ InstanceStatusReason::InstanceStatusReason() :
 {
 }
 
-InstanceStatusReason::InstanceStatusReason(JsonView jsonValue) : 
-    m_messageHasBeenSet(false)
+InstanceStatusReason::InstanceStatusReason(JsonView jsonValue)
+  : InstanceStatusReason()
 {
   *this = jsonValue;
 }

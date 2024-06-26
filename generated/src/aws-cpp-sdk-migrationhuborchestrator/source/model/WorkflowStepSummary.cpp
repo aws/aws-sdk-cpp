@@ -41,26 +41,8 @@ WorkflowStepSummary::WorkflowStepSummary() :
 {
 }
 
-WorkflowStepSummary::WorkflowStepSummary(JsonView jsonValue) : 
-    m_stepIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_stepActionType(StepActionType::NOT_SET),
-    m_stepActionTypeHasBeenSet(false),
-    m_owner(Owner::NOT_SET),
-    m_ownerHasBeenSet(false),
-    m_previousHasBeenSet(false),
-    m_nextHasBeenSet(false),
-    m_status(StepStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_noOfSrvCompleted(0),
-    m_noOfSrvCompletedHasBeenSet(false),
-    m_noOfSrvFailed(0),
-    m_noOfSrvFailedHasBeenSet(false),
-    m_totalNoOfSrv(0),
-    m_totalNoOfSrvHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_scriptLocationHasBeenSet(false)
+WorkflowStepSummary::WorkflowStepSummary(JsonView jsonValue)
+  : WorkflowStepSummary()
 {
   *this = jsonValue;
 }

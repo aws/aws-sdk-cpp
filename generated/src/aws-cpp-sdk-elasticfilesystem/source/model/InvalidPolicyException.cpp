@@ -24,9 +24,8 @@ InvalidPolicyException::InvalidPolicyException() :
 {
 }
 
-InvalidPolicyException::InvalidPolicyException(JsonView jsonValue) : 
-    m_errorCodeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+InvalidPolicyException::InvalidPolicyException(JsonView jsonValue)
+  : InvalidPolicyException()
 {
   *this = jsonValue;
 }

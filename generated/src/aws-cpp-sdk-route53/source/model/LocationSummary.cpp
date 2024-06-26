@@ -25,8 +25,8 @@ LocationSummary::LocationSummary() :
 {
 }
 
-LocationSummary::LocationSummary(const XmlNode& xmlNode) : 
-    m_locationNameHasBeenSet(false)
+LocationSummary::LocationSummary(const XmlNode& xmlNode)
+  : LocationSummary()
 {
   *this = xmlNode;
 }

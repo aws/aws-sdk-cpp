@@ -23,8 +23,8 @@ JoinResourceTypeEventConfiguration::JoinResourceTypeEventConfiguration() :
 {
 }
 
-JoinResourceTypeEventConfiguration::JoinResourceTypeEventConfiguration(JsonView jsonValue) : 
-    m_loRaWANHasBeenSet(false)
+JoinResourceTypeEventConfiguration::JoinResourceTypeEventConfiguration(JsonView jsonValue)
+  : JoinResourceTypeEventConfiguration()
 {
   *this = jsonValue;
 }

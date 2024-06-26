@@ -51,36 +51,8 @@ HIT::HIT() :
 {
 }
 
-HIT::HIT(JsonView jsonValue) : 
-    m_hITIdHasBeenSet(false),
-    m_hITTypeIdHasBeenSet(false),
-    m_hITGroupIdHasBeenSet(false),
-    m_hITLayoutIdHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_questionHasBeenSet(false),
-    m_keywordsHasBeenSet(false),
-    m_hITStatus(HITStatus::NOT_SET),
-    m_hITStatusHasBeenSet(false),
-    m_maxAssignments(0),
-    m_maxAssignmentsHasBeenSet(false),
-    m_rewardHasBeenSet(false),
-    m_autoApprovalDelayInSeconds(0),
-    m_autoApprovalDelayInSecondsHasBeenSet(false),
-    m_expirationHasBeenSet(false),
-    m_assignmentDurationInSeconds(0),
-    m_assignmentDurationInSecondsHasBeenSet(false),
-    m_requesterAnnotationHasBeenSet(false),
-    m_qualificationRequirementsHasBeenSet(false),
-    m_hITReviewStatus(HITReviewStatus::NOT_SET),
-    m_hITReviewStatusHasBeenSet(false),
-    m_numberOfAssignmentsPending(0),
-    m_numberOfAssignmentsPendingHasBeenSet(false),
-    m_numberOfAssignmentsAvailable(0),
-    m_numberOfAssignmentsAvailableHasBeenSet(false),
-    m_numberOfAssignmentsCompleted(0),
-    m_numberOfAssignmentsCompletedHasBeenSet(false)
+HIT::HIT(JsonView jsonValue)
+  : HIT()
 {
   *this = jsonValue;
 }

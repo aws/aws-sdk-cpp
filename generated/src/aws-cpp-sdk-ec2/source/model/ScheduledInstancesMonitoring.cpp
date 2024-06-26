@@ -26,9 +26,8 @@ ScheduledInstancesMonitoring::ScheduledInstancesMonitoring() :
 {
 }
 
-ScheduledInstancesMonitoring::ScheduledInstancesMonitoring(const XmlNode& xmlNode) : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
+ScheduledInstancesMonitoring::ScheduledInstancesMonitoring(const XmlNode& xmlNode)
+  : ScheduledInstancesMonitoring()
 {
   *this = xmlNode;
 }

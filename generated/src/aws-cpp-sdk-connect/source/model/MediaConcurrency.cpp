@@ -27,12 +27,8 @@ MediaConcurrency::MediaConcurrency() :
 {
 }
 
-MediaConcurrency::MediaConcurrency(JsonView jsonValue) : 
-    m_channel(Channel::NOT_SET),
-    m_channelHasBeenSet(false),
-    m_concurrency(0),
-    m_concurrencyHasBeenSet(false),
-    m_crossChannelBehaviorHasBeenSet(false)
+MediaConcurrency::MediaConcurrency(JsonView jsonValue)
+  : MediaConcurrency()
 {
   *this = jsonValue;
 }

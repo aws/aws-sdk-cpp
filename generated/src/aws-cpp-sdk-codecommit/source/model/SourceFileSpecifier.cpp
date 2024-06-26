@@ -25,10 +25,8 @@ SourceFileSpecifier::SourceFileSpecifier() :
 {
 }
 
-SourceFileSpecifier::SourceFileSpecifier(JsonView jsonValue) : 
-    m_filePathHasBeenSet(false),
-    m_isMove(false),
-    m_isMoveHasBeenSet(false)
+SourceFileSpecifier::SourceFileSpecifier(JsonView jsonValue)
+  : SourceFileSpecifier()
 {
   *this = jsonValue;
 }

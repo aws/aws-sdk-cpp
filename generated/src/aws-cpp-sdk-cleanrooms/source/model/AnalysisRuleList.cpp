@@ -25,10 +25,8 @@ AnalysisRuleList::AnalysisRuleList() :
 {
 }
 
-AnalysisRuleList::AnalysisRuleList(JsonView jsonValue) : 
-    m_joinColumnsHasBeenSet(false),
-    m_allowedJoinOperatorsHasBeenSet(false),
-    m_listColumnsHasBeenSet(false)
+AnalysisRuleList::AnalysisRuleList(JsonView jsonValue)
+  : AnalysisRuleList()
 {
   *this = jsonValue;
 }

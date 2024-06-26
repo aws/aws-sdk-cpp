@@ -30,15 +30,8 @@ Entitlement::Entitlement() :
 {
 }
 
-Entitlement::Entitlement(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_stackNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_appVisibility(AppVisibility::NOT_SET),
-    m_appVisibilityHasBeenSet(false),
-    m_attributesHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false)
+Entitlement::Entitlement(JsonView jsonValue)
+  : Entitlement()
 {
   *this = jsonValue;
 }

@@ -27,12 +27,8 @@ LoadBalancer::LoadBalancer() :
 {
 }
 
-LoadBalancer::LoadBalancer(JsonView jsonValue) : 
-    m_targetGroupArnHasBeenSet(false),
-    m_loadBalancerNameHasBeenSet(false),
-    m_containerNameHasBeenSet(false),
-    m_containerPort(0),
-    m_containerPortHasBeenSet(false)
+LoadBalancer::LoadBalancer(JsonView jsonValue)
+  : LoadBalancer()
 {
   *this = jsonValue;
 }

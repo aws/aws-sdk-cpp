@@ -34,19 +34,8 @@ NewPublicVirtualInterfaceAllocation::NewPublicVirtualInterfaceAllocation() :
 {
 }
 
-NewPublicVirtualInterfaceAllocation::NewPublicVirtualInterfaceAllocation(JsonView jsonValue) : 
-    m_virtualInterfaceNameHasBeenSet(false),
-    m_vlan(0),
-    m_vlanHasBeenSet(false),
-    m_asn(0),
-    m_asnHasBeenSet(false),
-    m_authKeyHasBeenSet(false),
-    m_amazonAddressHasBeenSet(false),
-    m_customerAddressHasBeenSet(false),
-    m_addressFamily(AddressFamily::NOT_SET),
-    m_addressFamilyHasBeenSet(false),
-    m_routeFilterPrefixesHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+NewPublicVirtualInterfaceAllocation::NewPublicVirtualInterfaceAllocation(JsonView jsonValue)
+  : NewPublicVirtualInterfaceAllocation()
 {
   *this = jsonValue;
 }

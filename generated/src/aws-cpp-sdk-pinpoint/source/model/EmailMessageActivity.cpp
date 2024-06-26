@@ -26,11 +26,8 @@ EmailMessageActivity::EmailMessageActivity() :
 {
 }
 
-EmailMessageActivity::EmailMessageActivity(JsonView jsonValue) : 
-    m_messageConfigHasBeenSet(false),
-    m_nextActivityHasBeenSet(false),
-    m_templateNameHasBeenSet(false),
-    m_templateVersionHasBeenSet(false)
+EmailMessageActivity::EmailMessageActivity(JsonView jsonValue)
+  : EmailMessageActivity()
 {
   *this = jsonValue;
 }

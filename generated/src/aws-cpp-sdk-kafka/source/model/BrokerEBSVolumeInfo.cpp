@@ -26,11 +26,8 @@ BrokerEBSVolumeInfo::BrokerEBSVolumeInfo() :
 {
 }
 
-BrokerEBSVolumeInfo::BrokerEBSVolumeInfo(JsonView jsonValue) : 
-    m_kafkaBrokerNodeIdHasBeenSet(false),
-    m_provisionedThroughputHasBeenSet(false),
-    m_volumeSizeGB(0),
-    m_volumeSizeGBHasBeenSet(false)
+BrokerEBSVolumeInfo::BrokerEBSVolumeInfo(JsonView jsonValue)
+  : BrokerEBSVolumeInfo()
 {
   *this = jsonValue;
 }

@@ -25,8 +25,8 @@ LifecycleConfiguration::LifecycleConfiguration() :
 {
 }
 
-LifecycleConfiguration::LifecycleConfiguration(const XmlNode& xmlNode) : 
-    m_rulesHasBeenSet(false)
+LifecycleConfiguration::LifecycleConfiguration(const XmlNode& xmlNode)
+  : LifecycleConfiguration()
 {
   *this = xmlNode;
 }

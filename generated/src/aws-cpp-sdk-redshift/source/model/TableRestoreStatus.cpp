@@ -41,24 +41,8 @@ TableRestoreStatus::TableRestoreStatus() :
 {
 }
 
-TableRestoreStatus::TableRestoreStatus(const XmlNode& xmlNode) : 
-    m_tableRestoreRequestIdHasBeenSet(false),
-    m_status(TableRestoreStatusType::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_requestTimeHasBeenSet(false),
-    m_progressInMegaBytes(0),
-    m_progressInMegaBytesHasBeenSet(false),
-    m_totalDataInMegaBytes(0),
-    m_totalDataInMegaBytesHasBeenSet(false),
-    m_clusterIdentifierHasBeenSet(false),
-    m_snapshotIdentifierHasBeenSet(false),
-    m_sourceDatabaseNameHasBeenSet(false),
-    m_sourceSchemaNameHasBeenSet(false),
-    m_sourceTableNameHasBeenSet(false),
-    m_targetDatabaseNameHasBeenSet(false),
-    m_targetSchemaNameHasBeenSet(false),
-    m_newTableNameHasBeenSet(false)
+TableRestoreStatus::TableRestoreStatus(const XmlNode& xmlNode)
+  : TableRestoreStatus()
 {
   *this = xmlNode;
 }

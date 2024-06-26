@@ -29,14 +29,8 @@ UpgradeStepItem::UpgradeStepItem() :
 {
 }
 
-UpgradeStepItem::UpgradeStepItem(JsonView jsonValue) : 
-    m_upgradeStep(UpgradeStep::NOT_SET),
-    m_upgradeStepHasBeenSet(false),
-    m_upgradeStepStatus(UpgradeStatus::NOT_SET),
-    m_upgradeStepStatusHasBeenSet(false),
-    m_issuesHasBeenSet(false),
-    m_progressPercent(0.0),
-    m_progressPercentHasBeenSet(false)
+UpgradeStepItem::UpgradeStepItem(JsonView jsonValue)
+  : UpgradeStepItem()
 {
   *this = jsonValue;
 }

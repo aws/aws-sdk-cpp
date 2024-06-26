@@ -30,15 +30,8 @@ TrustedAdvisorResourcesSummary::TrustedAdvisorResourcesSummary() :
 {
 }
 
-TrustedAdvisorResourcesSummary::TrustedAdvisorResourcesSummary(JsonView jsonValue) : 
-    m_resourcesProcessed(0),
-    m_resourcesProcessedHasBeenSet(false),
-    m_resourcesFlagged(0),
-    m_resourcesFlaggedHasBeenSet(false),
-    m_resourcesIgnored(0),
-    m_resourcesIgnoredHasBeenSet(false),
-    m_resourcesSuppressed(0),
-    m_resourcesSuppressedHasBeenSet(false)
+TrustedAdvisorResourcesSummary::TrustedAdvisorResourcesSummary(JsonView jsonValue)
+  : TrustedAdvisorResourcesSummary()
 {
   *this = jsonValue;
 }

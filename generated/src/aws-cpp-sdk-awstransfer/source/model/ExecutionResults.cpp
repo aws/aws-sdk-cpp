@@ -24,9 +24,8 @@ ExecutionResults::ExecutionResults() :
 {
 }
 
-ExecutionResults::ExecutionResults(JsonView jsonValue) : 
-    m_stepsHasBeenSet(false),
-    m_onExceptionStepsHasBeenSet(false)
+ExecutionResults::ExecutionResults(JsonView jsonValue)
+  : ExecutionResults()
 {
   *this = jsonValue;
 }

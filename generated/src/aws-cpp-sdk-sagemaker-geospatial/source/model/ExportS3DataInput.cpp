@@ -24,9 +24,8 @@ ExportS3DataInput::ExportS3DataInput() :
 {
 }
 
-ExportS3DataInput::ExportS3DataInput(JsonView jsonValue) : 
-    m_kmsKeyIdHasBeenSet(false),
-    m_s3UriHasBeenSet(false)
+ExportS3DataInput::ExportS3DataInput(JsonView jsonValue)
+  : ExportS3DataInput()
 {
   *this = jsonValue;
 }

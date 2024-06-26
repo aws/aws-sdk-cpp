@@ -26,11 +26,8 @@ ChangeRequest::ChangeRequest() :
 {
 }
 
-ChangeRequest::ChangeRequest(JsonView jsonValue) : 
-    m_changeType(ChangeType::NOT_SET),
-    m_changeTypeHasBeenSet(false),
-    m_s3PathHasBeenSet(false),
-    m_dbPathHasBeenSet(false)
+ChangeRequest::ChangeRequest(JsonView jsonValue)
+  : ChangeRequest()
 {
   *this = jsonValue;
 }

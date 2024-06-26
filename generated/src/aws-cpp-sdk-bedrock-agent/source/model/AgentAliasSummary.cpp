@@ -30,15 +30,8 @@ AgentAliasSummary::AgentAliasSummary() :
 {
 }
 
-AgentAliasSummary::AgentAliasSummary(JsonView jsonValue) : 
-    m_agentAliasIdHasBeenSet(false),
-    m_agentAliasNameHasBeenSet(false),
-    m_agentAliasStatus(AgentAliasStatus::NOT_SET),
-    m_agentAliasStatusHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_routingConfigurationHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+AgentAliasSummary::AgentAliasSummary(JsonView jsonValue)
+  : AgentAliasSummary()
 {
   *this = jsonValue;
 }

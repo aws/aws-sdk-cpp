@@ -24,9 +24,8 @@ TableLFTagPolicyAndPermissions::TableLFTagPolicyAndPermissions() :
 {
 }
 
-TableLFTagPolicyAndPermissions::TableLFTagPolicyAndPermissions(JsonView jsonValue) : 
-    m_expressionHasBeenSet(false),
-    m_permissionsHasBeenSet(false)
+TableLFTagPolicyAndPermissions::TableLFTagPolicyAndPermissions(JsonView jsonValue)
+  : TableLFTagPolicyAndPermissions()
 {
   *this = jsonValue;
 }

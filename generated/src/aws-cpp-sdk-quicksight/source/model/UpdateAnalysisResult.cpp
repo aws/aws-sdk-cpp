@@ -23,9 +23,8 @@ UpdateAnalysisResult::UpdateAnalysisResult() :
 {
 }
 
-UpdateAnalysisResult::UpdateAnalysisResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_updateStatus(ResourceStatus::NOT_SET),
-    m_status(0)
+UpdateAnalysisResult::UpdateAnalysisResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateAnalysisResult()
 {
   *this = result;
 }

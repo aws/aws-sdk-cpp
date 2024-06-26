@@ -31,16 +31,8 @@ CampaignSummary::CampaignSummary() :
 {
 }
 
-CampaignSummary::CampaignSummary(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_signalCatalogArnHasBeenSet(false),
-    m_targetArnHasBeenSet(false),
-    m_status(CampaignStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastModificationTimeHasBeenSet(false)
+CampaignSummary::CampaignSummary(JsonView jsonValue)
+  : CampaignSummary()
 {
   *this = jsonValue;
 }

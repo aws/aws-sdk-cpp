@@ -29,14 +29,8 @@ RoutingControl::RoutingControl() :
 {
 }
 
-RoutingControl::RoutingControl(JsonView jsonValue) : 
-    m_controlPanelArnHasBeenSet(false),
-    m_controlPanelNameHasBeenSet(false),
-    m_routingControlArnHasBeenSet(false),
-    m_routingControlNameHasBeenSet(false),
-    m_routingControlState(RoutingControlState::NOT_SET),
-    m_routingControlStateHasBeenSet(false),
-    m_ownerHasBeenSet(false)
+RoutingControl::RoutingControl(JsonView jsonValue)
+  : RoutingControl()
 {
   *this = jsonValue;
 }

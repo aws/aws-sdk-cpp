@@ -22,8 +22,8 @@ DescribeCrossAccountAccessRoleResult::DescribeCrossAccountAccessRoleResult() :
 {
 }
 
-DescribeCrossAccountAccessRoleResult::DescribeCrossAccountAccessRoleResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_valid(false)
+DescribeCrossAccountAccessRoleResult::DescribeCrossAccountAccessRoleResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeCrossAccountAccessRoleResult()
 {
   *this = result;
 }

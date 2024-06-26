@@ -25,10 +25,8 @@ FailedItem::FailedItem() :
 {
 }
 
-FailedItem::FailedItem(JsonView jsonValue) : 
-    m_uRIHasBeenSet(false),
-    m_reason(FailedItemReason::NOT_SET),
-    m_reasonHasBeenSet(false)
+FailedItem::FailedItem(JsonView jsonValue)
+  : FailedItem()
 {
   *this = jsonValue;
 }

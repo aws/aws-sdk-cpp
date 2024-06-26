@@ -25,10 +25,8 @@ TimerFiredEventAttributes::TimerFiredEventAttributes() :
 {
 }
 
-TimerFiredEventAttributes::TimerFiredEventAttributes(JsonView jsonValue) : 
-    m_timerIdHasBeenSet(false),
-    m_startedEventId(0),
-    m_startedEventIdHasBeenSet(false)
+TimerFiredEventAttributes::TimerFiredEventAttributes(JsonView jsonValue)
+  : TimerFiredEventAttributes()
 {
   *this = jsonValue;
 }

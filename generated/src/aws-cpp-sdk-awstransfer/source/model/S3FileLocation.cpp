@@ -26,11 +26,8 @@ S3FileLocation::S3FileLocation() :
 {
 }
 
-S3FileLocation::S3FileLocation(JsonView jsonValue) : 
-    m_bucketHasBeenSet(false),
-    m_keyHasBeenSet(false),
-    m_versionIdHasBeenSet(false),
-    m_etagHasBeenSet(false)
+S3FileLocation::S3FileLocation(JsonView jsonValue)
+  : S3FileLocation()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ PublishLayerVersionResult::PublishLayerVersionResult() :
 {
 }
 
-PublishLayerVersionResult::PublishLayerVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_version(0)
+PublishLayerVersionResult::PublishLayerVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : PublishLayerVersionResult()
 {
   *this = result;
 }

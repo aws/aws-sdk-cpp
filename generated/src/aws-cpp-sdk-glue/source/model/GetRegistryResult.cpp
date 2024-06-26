@@ -22,8 +22,8 @@ GetRegistryResult::GetRegistryResult() :
 {
 }
 
-GetRegistryResult::GetRegistryResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(RegistryStatus::NOT_SET)
+GetRegistryResult::GetRegistryResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetRegistryResult()
 {
   *this = result;
 }

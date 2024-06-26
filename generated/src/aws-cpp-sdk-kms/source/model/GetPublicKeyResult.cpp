@@ -24,9 +24,8 @@ GetPublicKeyResult::GetPublicKeyResult() :
 {
 }
 
-GetPublicKeyResult::GetPublicKeyResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_keySpec(KeySpec::NOT_SET),
-    m_keyUsage(KeyUsageType::NOT_SET)
+GetPublicKeyResult::GetPublicKeyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetPublicKeyResult()
 {
   *this = result;
 }

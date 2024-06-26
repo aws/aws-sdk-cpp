@@ -37,22 +37,8 @@ AnswerSummary::AnswerSummary() :
 {
 }
 
-AnswerSummary::AnswerSummary(JsonView jsonValue) : 
-    m_questionIdHasBeenSet(false),
-    m_pillarIdHasBeenSet(false),
-    m_questionTitleHasBeenSet(false),
-    m_choicesHasBeenSet(false),
-    m_selectedChoicesHasBeenSet(false),
-    m_choiceAnswerSummariesHasBeenSet(false),
-    m_isApplicable(false),
-    m_isApplicableHasBeenSet(false),
-    m_risk(Risk::NOT_SET),
-    m_riskHasBeenSet(false),
-    m_reason(AnswerReason::NOT_SET),
-    m_reasonHasBeenSet(false),
-    m_questionType(QuestionType::NOT_SET),
-    m_questionTypeHasBeenSet(false),
-    m_jiraConfigurationHasBeenSet(false)
+AnswerSummary::AnswerSummary(JsonView jsonValue)
+  : AnswerSummary()
 {
   *this = jsonValue;
 }

@@ -36,21 +36,8 @@ AssetItem::AssetItem() :
 {
 }
 
-AssetItem::AssetItem(JsonView jsonValue) : 
-    m_additionalAttributesHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_domainIdHasBeenSet(false),
-    m_externalIdentifierHasBeenSet(false),
-    m_firstRevisionCreatedAtHasBeenSet(false),
-    m_firstRevisionCreatedByHasBeenSet(false),
-    m_glossaryTermsHasBeenSet(false),
-    m_identifierHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_owningProjectIdHasBeenSet(false),
-    m_typeIdentifierHasBeenSet(false),
-    m_typeRevisionHasBeenSet(false)
+AssetItem::AssetItem(JsonView jsonValue)
+  : AssetItem()
 {
   *this = jsonValue;
 }

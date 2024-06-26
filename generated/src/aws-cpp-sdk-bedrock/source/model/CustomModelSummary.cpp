@@ -29,14 +29,8 @@ CustomModelSummary::CustomModelSummary() :
 {
 }
 
-CustomModelSummary::CustomModelSummary(JsonView jsonValue) : 
-    m_modelArnHasBeenSet(false),
-    m_modelNameHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_baseModelArnHasBeenSet(false),
-    m_baseModelNameHasBeenSet(false),
-    m_customizationType(CustomizationType::NOT_SET),
-    m_customizationTypeHasBeenSet(false)
+CustomModelSummary::CustomModelSummary(JsonView jsonValue)
+  : CustomModelSummary()
 {
   *this = jsonValue;
 }

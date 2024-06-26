@@ -27,12 +27,8 @@ FlowExecutionMessage::FlowExecutionMessage() :
 {
 }
 
-FlowExecutionMessage::FlowExecutionMessage(JsonView jsonValue) : 
-    m_messageIdHasBeenSet(false),
-    m_eventType(FlowExecutionEventType::NOT_SET),
-    m_eventTypeHasBeenSet(false),
-    m_timestampHasBeenSet(false),
-    m_payloadHasBeenSet(false)
+FlowExecutionMessage::FlowExecutionMessage(JsonView jsonValue)
+  : FlowExecutionMessage()
 {
   *this = jsonValue;
 }

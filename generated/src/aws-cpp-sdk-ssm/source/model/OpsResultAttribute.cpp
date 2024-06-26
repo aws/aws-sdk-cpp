@@ -23,8 +23,8 @@ OpsResultAttribute::OpsResultAttribute() :
 {
 }
 
-OpsResultAttribute::OpsResultAttribute(JsonView jsonValue) : 
-    m_typeNameHasBeenSet(false)
+OpsResultAttribute::OpsResultAttribute(JsonView jsonValue)
+  : OpsResultAttribute()
 {
   *this = jsonValue;
 }

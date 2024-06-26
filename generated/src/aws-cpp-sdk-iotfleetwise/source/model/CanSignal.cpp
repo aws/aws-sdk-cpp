@@ -37,22 +37,8 @@ CanSignal::CanSignal() :
 {
 }
 
-CanSignal::CanSignal(JsonView jsonValue) : 
-    m_messageId(0),
-    m_messageIdHasBeenSet(false),
-    m_isBigEndian(false),
-    m_isBigEndianHasBeenSet(false),
-    m_isSigned(false),
-    m_isSignedHasBeenSet(false),
-    m_startBit(0),
-    m_startBitHasBeenSet(false),
-    m_offset(0.0),
-    m_offsetHasBeenSet(false),
-    m_factor(0.0),
-    m_factorHasBeenSet(false),
-    m_length(0),
-    m_lengthHasBeenSet(false),
-    m_nameHasBeenSet(false)
+CanSignal::CanSignal(JsonView jsonValue)
+  : CanSignal()
 {
   *this = jsonValue;
 }

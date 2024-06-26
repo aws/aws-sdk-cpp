@@ -24,9 +24,8 @@ InstanceIdentity::InstanceIdentity() :
 {
 }
 
-InstanceIdentity::InstanceIdentity(JsonView jsonValue) : 
-    m_documentHasBeenSet(false),
-    m_signatureHasBeenSet(false)
+InstanceIdentity::InstanceIdentity(JsonView jsonValue)
+  : InstanceIdentity()
 {
   *this = jsonValue;
 }

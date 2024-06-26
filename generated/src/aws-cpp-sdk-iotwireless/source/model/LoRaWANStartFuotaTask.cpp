@@ -23,8 +23,8 @@ LoRaWANStartFuotaTask::LoRaWANStartFuotaTask() :
 {
 }
 
-LoRaWANStartFuotaTask::LoRaWANStartFuotaTask(JsonView jsonValue) : 
-    m_startTimeHasBeenSet(false)
+LoRaWANStartFuotaTask::LoRaWANStartFuotaTask(JsonView jsonValue)
+  : LoRaWANStartFuotaTask()
 {
   *this = jsonValue;
 }

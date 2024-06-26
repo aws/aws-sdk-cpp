@@ -32,17 +32,8 @@ TextDetection::TextDetection() :
 {
 }
 
-TextDetection::TextDetection(JsonView jsonValue) : 
-    m_detectedTextHasBeenSet(false),
-    m_type(TextTypes::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_id(0),
-    m_idHasBeenSet(false),
-    m_parentId(0),
-    m_parentIdHasBeenSet(false),
-    m_confidence(0.0),
-    m_confidenceHasBeenSet(false),
-    m_geometryHasBeenSet(false)
+TextDetection::TextDetection(JsonView jsonValue)
+  : TextDetection()
 {
   *this = jsonValue;
 }

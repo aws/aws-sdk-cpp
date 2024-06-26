@@ -27,10 +27,8 @@ SMSSandboxPhoneNumber::SMSSandboxPhoneNumber() :
 {
 }
 
-SMSSandboxPhoneNumber::SMSSandboxPhoneNumber(const XmlNode& xmlNode) : 
-    m_phoneNumberHasBeenSet(false),
-    m_status(SMSSandboxPhoneNumberVerificationStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+SMSSandboxPhoneNumber::SMSSandboxPhoneNumber(const XmlNode& xmlNode)
+  : SMSSandboxPhoneNumber()
 {
   *this = xmlNode;
 }

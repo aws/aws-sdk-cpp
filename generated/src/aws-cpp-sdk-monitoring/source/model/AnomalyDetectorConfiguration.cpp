@@ -26,9 +26,8 @@ AnomalyDetectorConfiguration::AnomalyDetectorConfiguration() :
 {
 }
 
-AnomalyDetectorConfiguration::AnomalyDetectorConfiguration(const XmlNode& xmlNode) : 
-    m_excludedTimeRangesHasBeenSet(false),
-    m_metricTimezoneHasBeenSet(false)
+AnomalyDetectorConfiguration::AnomalyDetectorConfiguration(const XmlNode& xmlNode)
+  : AnomalyDetectorConfiguration()
 {
   *this = xmlNode;
 }

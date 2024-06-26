@@ -28,13 +28,8 @@ AnalyzerNameUnion::AnalyzerNameUnion() :
 {
 }
 
-AnalyzerNameUnion::AnalyzerNameUnion(JsonView jsonValue) : 
-    m_binaryAnalyzerName(BinaryAnalyzerName::NOT_SET),
-    m_binaryAnalyzerNameHasBeenSet(false),
-    m_runTimeAnalyzerName(RunTimeAnalyzerName::NOT_SET),
-    m_runTimeAnalyzerNameHasBeenSet(false),
-    m_sourceCodeAnalyzerName(SourceCodeAnalyzerName::NOT_SET),
-    m_sourceCodeAnalyzerNameHasBeenSet(false)
+AnalyzerNameUnion::AnalyzerNameUnion(JsonView jsonValue)
+  : AnalyzerNameUnion()
 {
   *this = jsonValue;
 }

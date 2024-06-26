@@ -36,19 +36,8 @@ InstanceMetadataOptionsResponse::InstanceMetadataOptionsResponse() :
 {
 }
 
-InstanceMetadataOptionsResponse::InstanceMetadataOptionsResponse(const XmlNode& xmlNode) : 
-    m_state(InstanceMetadataOptionsState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_httpTokens(HttpTokensState::NOT_SET),
-    m_httpTokensHasBeenSet(false),
-    m_httpPutResponseHopLimit(0),
-    m_httpPutResponseHopLimitHasBeenSet(false),
-    m_httpEndpoint(InstanceMetadataEndpointState::NOT_SET),
-    m_httpEndpointHasBeenSet(false),
-    m_httpProtocolIpv6(InstanceMetadataProtocolState::NOT_SET),
-    m_httpProtocolIpv6HasBeenSet(false),
-    m_instanceMetadataTags(InstanceMetadataTagsState::NOT_SET),
-    m_instanceMetadataTagsHasBeenSet(false)
+InstanceMetadataOptionsResponse::InstanceMetadataOptionsResponse(const XmlNode& xmlNode)
+  : InstanceMetadataOptionsResponse()
 {
   *this = xmlNode;
 }

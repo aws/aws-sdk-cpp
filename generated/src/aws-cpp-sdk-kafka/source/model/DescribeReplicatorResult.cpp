@@ -23,9 +23,8 @@ DescribeReplicatorResult::DescribeReplicatorResult() :
 {
 }
 
-DescribeReplicatorResult::DescribeReplicatorResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_isReplicatorReference(false),
-    m_replicatorState(ReplicatorState::NOT_SET)
+DescribeReplicatorResult::DescribeReplicatorResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeReplicatorResult()
 {
   *this = result;
 }

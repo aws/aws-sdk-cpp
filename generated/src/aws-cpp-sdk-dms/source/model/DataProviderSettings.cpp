@@ -30,15 +30,8 @@ DataProviderSettings::DataProviderSettings() :
 {
 }
 
-DataProviderSettings::DataProviderSettings(JsonView jsonValue) : 
-    m_redshiftSettingsHasBeenSet(false),
-    m_postgreSqlSettingsHasBeenSet(false),
-    m_mySqlSettingsHasBeenSet(false),
-    m_oracleSettingsHasBeenSet(false),
-    m_microsoftSqlServerSettingsHasBeenSet(false),
-    m_docDbSettingsHasBeenSet(false),
-    m_mariaDbSettingsHasBeenSet(false),
-    m_mongoDbSettingsHasBeenSet(false)
+DataProviderSettings::DataProviderSettings(JsonView jsonValue)
+  : DataProviderSettings()
 {
   *this = jsonValue;
 }

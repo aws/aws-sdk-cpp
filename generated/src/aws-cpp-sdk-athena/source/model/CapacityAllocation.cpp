@@ -27,12 +27,8 @@ CapacityAllocation::CapacityAllocation() :
 {
 }
 
-CapacityAllocation::CapacityAllocation(JsonView jsonValue) : 
-    m_status(CapacityAllocationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_requestTimeHasBeenSet(false),
-    m_requestCompletionTimeHasBeenSet(false)
+CapacityAllocation::CapacityAllocation(JsonView jsonValue)
+  : CapacityAllocation()
 {
   *this = jsonValue;
 }

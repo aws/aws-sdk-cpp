@@ -26,9 +26,8 @@ PolicyAttribute::PolicyAttribute() :
 {
 }
 
-PolicyAttribute::PolicyAttribute(const XmlNode& xmlNode) : 
-    m_attributeNameHasBeenSet(false),
-    m_attributeValueHasBeenSet(false)
+PolicyAttribute::PolicyAttribute(const XmlNode& xmlNode)
+  : PolicyAttribute()
 {
   *this = xmlNode;
 }

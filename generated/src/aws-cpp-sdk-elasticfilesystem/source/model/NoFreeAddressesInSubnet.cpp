@@ -24,9 +24,8 @@ NoFreeAddressesInSubnet::NoFreeAddressesInSubnet() :
 {
 }
 
-NoFreeAddressesInSubnet::NoFreeAddressesInSubnet(JsonView jsonValue) : 
-    m_errorCodeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+NoFreeAddressesInSubnet::NoFreeAddressesInSubnet(JsonView jsonValue)
+  : NoFreeAddressesInSubnet()
 {
   *this = jsonValue;
 }

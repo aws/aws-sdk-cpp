@@ -30,15 +30,8 @@ BaselineOperation::BaselineOperation() :
 {
 }
 
-BaselineOperation::BaselineOperation(JsonView jsonValue) : 
-    m_endTimeHasBeenSet(false),
-    m_operationIdentifierHasBeenSet(false),
-    m_operationType(BaselineOperationType::NOT_SET),
-    m_operationTypeHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_status(BaselineOperationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false)
+BaselineOperation::BaselineOperation(JsonView jsonValue)
+  : BaselineOperation()
 {
   *this = jsonValue;
 }

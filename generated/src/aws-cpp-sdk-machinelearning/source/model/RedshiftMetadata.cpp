@@ -25,10 +25,8 @@ RedshiftMetadata::RedshiftMetadata() :
 {
 }
 
-RedshiftMetadata::RedshiftMetadata(JsonView jsonValue) : 
-    m_redshiftDatabaseHasBeenSet(false),
-    m_databaseUserNameHasBeenSet(false),
-    m_selectSqlQueryHasBeenSet(false)
+RedshiftMetadata::RedshiftMetadata(JsonView jsonValue)
+  : RedshiftMetadata()
 {
   *this = jsonValue;
 }

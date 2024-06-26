@@ -25,10 +25,8 @@ VcenterBasedRemoteInfo::VcenterBasedRemoteInfo() :
 {
 }
 
-VcenterBasedRemoteInfo::VcenterBasedRemoteInfo(JsonView jsonValue) : 
-    m_osType(OSType::NOT_SET),
-    m_osTypeHasBeenSet(false),
-    m_vcenterConfigurationTimeStampHasBeenSet(false)
+VcenterBasedRemoteInfo::VcenterBasedRemoteInfo(JsonView jsonValue)
+  : VcenterBasedRemoteInfo()
 {
   *this = jsonValue;
 }

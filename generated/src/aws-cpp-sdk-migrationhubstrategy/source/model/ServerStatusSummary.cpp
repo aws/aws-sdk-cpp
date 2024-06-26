@@ -26,11 +26,8 @@ ServerStatusSummary::ServerStatusSummary() :
 {
 }
 
-ServerStatusSummary::ServerStatusSummary(JsonView jsonValue) : 
-    m_count(0),
-    m_countHasBeenSet(false),
-    m_runTimeAssessmentStatus(RunTimeAssessmentStatus::NOT_SET),
-    m_runTimeAssessmentStatusHasBeenSet(false)
+ServerStatusSummary::ServerStatusSummary(JsonView jsonValue)
+  : ServerStatusSummary()
 {
   *this = jsonValue;
 }

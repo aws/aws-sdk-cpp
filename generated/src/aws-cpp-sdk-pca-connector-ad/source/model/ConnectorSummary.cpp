@@ -33,18 +33,8 @@ ConnectorSummary::ConnectorSummary() :
 {
 }
 
-ConnectorSummary::ConnectorSummary(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_certificateAuthorityArnHasBeenSet(false),
-    m_certificateEnrollmentPolicyServerEndpointHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_directoryIdHasBeenSet(false),
-    m_status(ConnectorStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusReason(ConnectorStatusReason::NOT_SET),
-    m_statusReasonHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_vpcInformationHasBeenSet(false)
+ConnectorSummary::ConnectorSummary(JsonView jsonValue)
+  : ConnectorSummary()
 {
   *this = jsonValue;
 }

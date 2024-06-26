@@ -25,10 +25,8 @@ SyncBlockerSummary::SyncBlockerSummary() :
 {
 }
 
-SyncBlockerSummary::SyncBlockerSummary(JsonView jsonValue) : 
-    m_resourceNameHasBeenSet(false),
-    m_parentResourceNameHasBeenSet(false),
-    m_latestBlockersHasBeenSet(false)
+SyncBlockerSummary::SyncBlockerSummary(JsonView jsonValue)
+  : SyncBlockerSummary()
 {
   *this = jsonValue;
 }

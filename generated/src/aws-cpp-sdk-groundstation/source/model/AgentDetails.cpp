@@ -28,13 +28,8 @@ AgentDetails::AgentDetails() :
 {
 }
 
-AgentDetails::AgentDetails(JsonView jsonValue) : 
-    m_agentCpuCoresHasBeenSet(false),
-    m_agentVersionHasBeenSet(false),
-    m_componentVersionsHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_reservedCpuCoresHasBeenSet(false)
+AgentDetails::AgentDetails(JsonView jsonValue)
+  : AgentDetails()
 {
   *this = jsonValue;
 }

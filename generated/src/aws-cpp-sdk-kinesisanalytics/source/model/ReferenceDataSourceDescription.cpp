@@ -26,11 +26,8 @@ ReferenceDataSourceDescription::ReferenceDataSourceDescription() :
 {
 }
 
-ReferenceDataSourceDescription::ReferenceDataSourceDescription(JsonView jsonValue) : 
-    m_referenceIdHasBeenSet(false),
-    m_tableNameHasBeenSet(false),
-    m_s3ReferenceDataSourceDescriptionHasBeenSet(false),
-    m_referenceSchemaHasBeenSet(false)
+ReferenceDataSourceDescription::ReferenceDataSourceDescription(JsonView jsonValue)
+  : ReferenceDataSourceDescription()
 {
   *this = jsonValue;
 }

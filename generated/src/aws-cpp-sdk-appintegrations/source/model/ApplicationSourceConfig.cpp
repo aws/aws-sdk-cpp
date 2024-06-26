@@ -23,8 +23,8 @@ ApplicationSourceConfig::ApplicationSourceConfig() :
 {
 }
 
-ApplicationSourceConfig::ApplicationSourceConfig(JsonView jsonValue) : 
-    m_externalUrlConfigHasBeenSet(false)
+ApplicationSourceConfig::ApplicationSourceConfig(JsonView jsonValue)
+  : ApplicationSourceConfig()
 {
   *this = jsonValue;
 }

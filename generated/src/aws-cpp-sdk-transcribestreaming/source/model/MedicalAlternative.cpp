@@ -25,10 +25,8 @@ MedicalAlternative::MedicalAlternative() :
 {
 }
 
-MedicalAlternative::MedicalAlternative(JsonView jsonValue) : 
-    m_transcriptHasBeenSet(false),
-    m_itemsHasBeenSet(false),
-    m_entitiesHasBeenSet(false)
+MedicalAlternative::MedicalAlternative(JsonView jsonValue)
+  : MedicalAlternative()
 {
   *this = jsonValue;
 }

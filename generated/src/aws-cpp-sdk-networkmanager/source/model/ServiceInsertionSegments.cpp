@@ -24,9 +24,8 @@ ServiceInsertionSegments::ServiceInsertionSegments() :
 {
 }
 
-ServiceInsertionSegments::ServiceInsertionSegments(JsonView jsonValue) : 
-    m_sendViaHasBeenSet(false),
-    m_sendToHasBeenSet(false)
+ServiceInsertionSegments::ServiceInsertionSegments(JsonView jsonValue)
+  : ServiceInsertionSegments()
 {
   *this = jsonValue;
 }

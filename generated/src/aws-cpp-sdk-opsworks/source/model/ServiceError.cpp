@@ -28,13 +28,8 @@ ServiceError::ServiceError() :
 {
 }
 
-ServiceError::ServiceError(JsonView jsonValue) : 
-    m_serviceErrorIdHasBeenSet(false),
-    m_stackIdHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_createdAtHasBeenSet(false)
+ServiceError::ServiceError(JsonView jsonValue)
+  : ServiceError()
 {
   *this = jsonValue;
 }

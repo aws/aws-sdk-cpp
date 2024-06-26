@@ -24,9 +24,8 @@ SystemControl::SystemControl() :
 {
 }
 
-SystemControl::SystemControl(JsonView jsonValue) : 
-    m_namespaceHasBeenSet(false),
-    m_valueHasBeenSet(false)
+SystemControl::SystemControl(JsonView jsonValue)
+  : SystemControl()
 {
   *this = jsonValue;
 }

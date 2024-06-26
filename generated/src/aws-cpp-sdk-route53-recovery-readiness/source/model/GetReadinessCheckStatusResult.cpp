@@ -22,8 +22,8 @@ GetReadinessCheckStatusResult::GetReadinessCheckStatusResult() :
 {
 }
 
-GetReadinessCheckStatusResult::GetReadinessCheckStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_readiness(Readiness::NOT_SET)
+GetReadinessCheckStatusResult::GetReadinessCheckStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetReadinessCheckStatusResult()
 {
   *this = result;
 }

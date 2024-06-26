@@ -25,10 +25,8 @@ DataLakeSourceStatus::DataLakeSourceStatus() :
 {
 }
 
-DataLakeSourceStatus::DataLakeSourceStatus(JsonView jsonValue) : 
-    m_resourceHasBeenSet(false),
-    m_status(SourceCollectionStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+DataLakeSourceStatus::DataLakeSourceStatus(JsonView jsonValue)
+  : DataLakeSourceStatus()
 {
   *this = jsonValue;
 }

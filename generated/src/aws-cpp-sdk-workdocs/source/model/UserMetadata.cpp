@@ -27,12 +27,8 @@ UserMetadata::UserMetadata() :
 {
 }
 
-UserMetadata::UserMetadata(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_usernameHasBeenSet(false),
-    m_givenNameHasBeenSet(false),
-    m_surnameHasBeenSet(false),
-    m_emailAddressHasBeenSet(false)
+UserMetadata::UserMetadata(JsonView jsonValue)
+  : UserMetadata()
 {
   *this = jsonValue;
 }

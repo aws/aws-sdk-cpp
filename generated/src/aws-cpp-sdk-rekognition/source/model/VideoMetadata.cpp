@@ -34,19 +34,8 @@ VideoMetadata::VideoMetadata() :
 {
 }
 
-VideoMetadata::VideoMetadata(JsonView jsonValue) : 
-    m_codecHasBeenSet(false),
-    m_durationMillis(0),
-    m_durationMillisHasBeenSet(false),
-    m_formatHasBeenSet(false),
-    m_frameRate(0.0),
-    m_frameRateHasBeenSet(false),
-    m_frameHeight(0),
-    m_frameHeightHasBeenSet(false),
-    m_frameWidth(0),
-    m_frameWidthHasBeenSet(false),
-    m_colorRange(VideoColorRange::NOT_SET),
-    m_colorRangeHasBeenSet(false)
+VideoMetadata::VideoMetadata(JsonView jsonValue)
+  : VideoMetadata()
 {
   *this = jsonValue;
 }

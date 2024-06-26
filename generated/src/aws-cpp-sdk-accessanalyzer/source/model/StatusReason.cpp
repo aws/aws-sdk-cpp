@@ -24,9 +24,8 @@ StatusReason::StatusReason() :
 {
 }
 
-StatusReason::StatusReason(JsonView jsonValue) : 
-    m_code(ReasonCode::NOT_SET),
-    m_codeHasBeenSet(false)
+StatusReason::StatusReason(JsonView jsonValue)
+  : StatusReason()
 {
   *this = jsonValue;
 }

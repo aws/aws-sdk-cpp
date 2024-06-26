@@ -23,8 +23,8 @@ TrainingData::TrainingData() :
 {
 }
 
-TrainingData::TrainingData(JsonView jsonValue) : 
-    m_assetsHasBeenSet(false)
+TrainingData::TrainingData(JsonView jsonValue)
+  : TrainingData()
 {
   *this = jsonValue;
 }

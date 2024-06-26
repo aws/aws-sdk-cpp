@@ -23,8 +23,8 @@ AwsWafRegionalWebAclRulesListOverrideActionDetails::AwsWafRegionalWebAclRulesLis
 {
 }
 
-AwsWafRegionalWebAclRulesListOverrideActionDetails::AwsWafRegionalWebAclRulesListOverrideActionDetails(JsonView jsonValue) : 
-    m_typeHasBeenSet(false)
+AwsWafRegionalWebAclRulesListOverrideActionDetails::AwsWafRegionalWebAclRulesListOverrideActionDetails(JsonView jsonValue)
+  : AwsWafRegionalWebAclRulesListOverrideActionDetails()
 {
   *this = jsonValue;
 }

@@ -27,12 +27,8 @@ SubscribedAssetListing::SubscribedAssetListing() :
 {
 }
 
-SubscribedAssetListing::SubscribedAssetListing(JsonView jsonValue) : 
-    m_entityIdHasBeenSet(false),
-    m_entityRevisionHasBeenSet(false),
-    m_entityTypeHasBeenSet(false),
-    m_formsHasBeenSet(false),
-    m_glossaryTermsHasBeenSet(false)
+SubscribedAssetListing::SubscribedAssetListing(JsonView jsonValue)
+  : SubscribedAssetListing()
 {
   *this = jsonValue;
 }

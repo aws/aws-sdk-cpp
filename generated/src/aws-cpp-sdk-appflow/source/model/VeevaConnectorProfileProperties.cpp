@@ -23,8 +23,8 @@ VeevaConnectorProfileProperties::VeevaConnectorProfileProperties() :
 {
 }
 
-VeevaConnectorProfileProperties::VeevaConnectorProfileProperties(JsonView jsonValue) : 
-    m_instanceUrlHasBeenSet(false)
+VeevaConnectorProfileProperties::VeevaConnectorProfileProperties(JsonView jsonValue)
+  : VeevaConnectorProfileProperties()
 {
   *this = jsonValue;
 }

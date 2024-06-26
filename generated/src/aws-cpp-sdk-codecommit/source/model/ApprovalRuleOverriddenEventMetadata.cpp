@@ -25,10 +25,8 @@ ApprovalRuleOverriddenEventMetadata::ApprovalRuleOverriddenEventMetadata() :
 {
 }
 
-ApprovalRuleOverriddenEventMetadata::ApprovalRuleOverriddenEventMetadata(JsonView jsonValue) : 
-    m_revisionIdHasBeenSet(false),
-    m_overrideStatus(OverrideStatus::NOT_SET),
-    m_overrideStatusHasBeenSet(false)
+ApprovalRuleOverriddenEventMetadata::ApprovalRuleOverriddenEventMetadata(JsonView jsonValue)
+  : ApprovalRuleOverriddenEventMetadata()
 {
   *this = jsonValue;
 }

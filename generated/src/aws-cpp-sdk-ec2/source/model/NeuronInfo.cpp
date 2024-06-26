@@ -27,10 +27,8 @@ NeuronInfo::NeuronInfo() :
 {
 }
 
-NeuronInfo::NeuronInfo(const XmlNode& xmlNode) : 
-    m_neuronDevicesHasBeenSet(false),
-    m_totalNeuronDeviceMemoryInMiB(0),
-    m_totalNeuronDeviceMemoryInMiBHasBeenSet(false)
+NeuronInfo::NeuronInfo(const XmlNode& xmlNode)
+  : NeuronInfo()
 {
   *this = xmlNode;
 }

@@ -30,15 +30,8 @@ AttributeValue::AttributeValue() :
 {
 }
 
-AttributeValue::AttributeValue(JsonView jsonValue) : 
-    m_boolean(false),
-    m_booleanHasBeenSet(false),
-    m_entityIdentifierHasBeenSet(false),
-    m_long(0),
-    m_longHasBeenSet(false),
-    m_stringHasBeenSet(false),
-    m_setHasBeenSet(false),
-    m_recordHasBeenSet(false)
+AttributeValue::AttributeValue(JsonView jsonValue)
+  : AttributeValue()
 {
   *this = jsonValue;
 }

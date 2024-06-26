@@ -26,11 +26,8 @@ RedshiftDataProviderSettings::RedshiftDataProviderSettings() :
 {
 }
 
-RedshiftDataProviderSettings::RedshiftDataProviderSettings(JsonView jsonValue) : 
-    m_serverNameHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_databaseNameHasBeenSet(false)
+RedshiftDataProviderSettings::RedshiftDataProviderSettings(JsonView jsonValue)
+  : RedshiftDataProviderSettings()
 {
   *this = jsonValue;
 }

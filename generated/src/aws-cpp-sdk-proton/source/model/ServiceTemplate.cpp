@@ -32,17 +32,8 @@ ServiceTemplate::ServiceTemplate() :
 {
 }
 
-ServiceTemplate::ServiceTemplate(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_encryptionKeyHasBeenSet(false),
-    m_lastModifiedAtHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_pipelineProvisioning(Provisioning::NOT_SET),
-    m_pipelineProvisioningHasBeenSet(false),
-    m_recommendedVersionHasBeenSet(false)
+ServiceTemplate::ServiceTemplate(JsonView jsonValue)
+  : ServiceTemplate()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ PersistentChat::PersistentChat() :
 {
 }
 
-PersistentChat::PersistentChat(JsonView jsonValue) : 
-    m_rehydrationType(RehydrationType::NOT_SET),
-    m_rehydrationTypeHasBeenSet(false),
-    m_sourceContactIdHasBeenSet(false)
+PersistentChat::PersistentChat(JsonView jsonValue)
+  : PersistentChat()
 {
   *this = jsonValue;
 }

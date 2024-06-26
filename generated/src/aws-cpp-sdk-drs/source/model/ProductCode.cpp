@@ -25,10 +25,8 @@ ProductCode::ProductCode() :
 {
 }
 
-ProductCode::ProductCode(JsonView jsonValue) : 
-    m_productCodeIdHasBeenSet(false),
-    m_productCodeMode(ProductCodeMode::NOT_SET),
-    m_productCodeModeHasBeenSet(false)
+ProductCode::ProductCode(JsonView jsonValue)
+  : ProductCode()
 {
   *this = jsonValue;
 }

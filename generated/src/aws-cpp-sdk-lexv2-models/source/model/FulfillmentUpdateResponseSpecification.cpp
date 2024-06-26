@@ -27,12 +27,8 @@ FulfillmentUpdateResponseSpecification::FulfillmentUpdateResponseSpecification()
 {
 }
 
-FulfillmentUpdateResponseSpecification::FulfillmentUpdateResponseSpecification(JsonView jsonValue) : 
-    m_frequencyInSeconds(0),
-    m_frequencyInSecondsHasBeenSet(false),
-    m_messageGroupsHasBeenSet(false),
-    m_allowInterrupt(false),
-    m_allowInterruptHasBeenSet(false)
+FulfillmentUpdateResponseSpecification::FulfillmentUpdateResponseSpecification(JsonView jsonValue)
+  : FulfillmentUpdateResponseSpecification()
 {
   *this = jsonValue;
 }

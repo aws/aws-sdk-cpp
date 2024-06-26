@@ -34,17 +34,8 @@ Object::Object() :
 {
 }
 
-Object::Object(const XmlNode& xmlNode) : 
-    m_keyHasBeenSet(false),
-    m_lastModifiedHasBeenSet(false),
-    m_eTagHasBeenSet(false),
-    m_checksumAlgorithmHasBeenSet(false),
-    m_size(0),
-    m_sizeHasBeenSet(false),
-    m_storageClass(ObjectStorageClass::NOT_SET),
-    m_storageClassHasBeenSet(false),
-    m_ownerHasBeenSet(false),
-    m_restoreStatusHasBeenSet(false)
+Object::Object(const XmlNode& xmlNode)
+  : Object()
 {
   *this = xmlNode;
 }

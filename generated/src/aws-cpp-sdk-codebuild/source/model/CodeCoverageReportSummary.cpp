@@ -34,19 +34,8 @@ CodeCoverageReportSummary::CodeCoverageReportSummary() :
 {
 }
 
-CodeCoverageReportSummary::CodeCoverageReportSummary(JsonView jsonValue) : 
-    m_lineCoveragePercentage(0.0),
-    m_lineCoveragePercentageHasBeenSet(false),
-    m_linesCovered(0),
-    m_linesCoveredHasBeenSet(false),
-    m_linesMissed(0),
-    m_linesMissedHasBeenSet(false),
-    m_branchCoveragePercentage(0.0),
-    m_branchCoveragePercentageHasBeenSet(false),
-    m_branchesCovered(0),
-    m_branchesCoveredHasBeenSet(false),
-    m_branchesMissed(0),
-    m_branchesMissedHasBeenSet(false)
+CodeCoverageReportSummary::CodeCoverageReportSummary(JsonView jsonValue)
+  : CodeCoverageReportSummary()
 {
   *this = jsonValue;
 }

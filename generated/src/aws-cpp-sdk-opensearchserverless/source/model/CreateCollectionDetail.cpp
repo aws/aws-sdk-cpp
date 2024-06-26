@@ -37,22 +37,8 @@ CreateCollectionDetail::CreateCollectionDetail() :
 {
 }
 
-CreateCollectionDetail::CreateCollectionDetail(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_createdDate(0),
-    m_createdDateHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_kmsKeyArnHasBeenSet(false),
-    m_lastModifiedDate(0),
-    m_lastModifiedDateHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_standbyReplicas(StandbyReplicas::NOT_SET),
-    m_standbyReplicasHasBeenSet(false),
-    m_status(CollectionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_type(CollectionType::NOT_SET),
-    m_typeHasBeenSet(false)
+CreateCollectionDetail::CreateCollectionDetail(JsonView jsonValue)
+  : CreateCollectionDetail()
 {
   *this = jsonValue;
 }

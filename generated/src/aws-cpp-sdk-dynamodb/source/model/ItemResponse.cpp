@@ -23,8 +23,8 @@ ItemResponse::ItemResponse() :
 {
 }
 
-ItemResponse::ItemResponse(JsonView jsonValue) : 
-    m_itemHasBeenSet(false)
+ItemResponse::ItemResponse(JsonView jsonValue)
+  : ItemResponse()
 {
   *this = jsonValue;
 }

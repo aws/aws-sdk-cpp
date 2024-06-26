@@ -23,8 +23,8 @@ ActiveDirectoryIdentityProvider::ActiveDirectoryIdentityProvider() :
 {
 }
 
-ActiveDirectoryIdentityProvider::ActiveDirectoryIdentityProvider(JsonView jsonValue) : 
-    m_directoryIdHasBeenSet(false)
+ActiveDirectoryIdentityProvider::ActiveDirectoryIdentityProvider(JsonView jsonValue)
+  : ActiveDirectoryIdentityProvider()
 {
   *this = jsonValue;
 }

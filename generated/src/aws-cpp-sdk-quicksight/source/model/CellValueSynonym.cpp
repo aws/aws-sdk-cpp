@@ -24,9 +24,8 @@ CellValueSynonym::CellValueSynonym() :
 {
 }
 
-CellValueSynonym::CellValueSynonym(JsonView jsonValue) : 
-    m_cellValueHasBeenSet(false),
-    m_synonymsHasBeenSet(false)
+CellValueSynonym::CellValueSynonym(JsonView jsonValue)
+  : CellValueSynonym()
 {
   *this = jsonValue;
 }

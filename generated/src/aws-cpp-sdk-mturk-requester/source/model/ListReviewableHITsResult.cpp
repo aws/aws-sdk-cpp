@@ -22,8 +22,8 @@ ListReviewableHITsResult::ListReviewableHITsResult() :
 {
 }
 
-ListReviewableHITsResult::ListReviewableHITsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_numResults(0)
+ListReviewableHITsResult::ListReviewableHITsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ListReviewableHITsResult()
 {
   *this = result;
 }

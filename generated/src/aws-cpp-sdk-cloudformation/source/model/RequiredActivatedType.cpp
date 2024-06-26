@@ -28,11 +28,8 @@ RequiredActivatedType::RequiredActivatedType() :
 {
 }
 
-RequiredActivatedType::RequiredActivatedType(const XmlNode& xmlNode) : 
-    m_typeNameAliasHasBeenSet(false),
-    m_originalTypeNameHasBeenSet(false),
-    m_publisherIdHasBeenSet(false),
-    m_supportedMajorVersionsHasBeenSet(false)
+RequiredActivatedType::RequiredActivatedType(const XmlNode& xmlNode)
+  : RequiredActivatedType()
 {
   *this = xmlNode;
 }

@@ -41,26 +41,8 @@ TerminologyProperties::TerminologyProperties() :
 {
 }
 
-TerminologyProperties::TerminologyProperties(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_sourceLanguageCodeHasBeenSet(false),
-    m_targetLanguageCodesHasBeenSet(false),
-    m_encryptionKeyHasBeenSet(false),
-    m_sizeBytes(0),
-    m_sizeBytesHasBeenSet(false),
-    m_termCount(0),
-    m_termCountHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false),
-    m_directionality(Directionality::NOT_SET),
-    m_directionalityHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_skippedTermCount(0),
-    m_skippedTermCountHasBeenSet(false),
-    m_format(TerminologyDataFormat::NOT_SET),
-    m_formatHasBeenSet(false)
+TerminologyProperties::TerminologyProperties(JsonView jsonValue)
+  : TerminologyProperties()
 {
   *this = jsonValue;
 }

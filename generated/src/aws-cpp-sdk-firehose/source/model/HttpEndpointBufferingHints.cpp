@@ -26,11 +26,8 @@ HttpEndpointBufferingHints::HttpEndpointBufferingHints() :
 {
 }
 
-HttpEndpointBufferingHints::HttpEndpointBufferingHints(JsonView jsonValue) : 
-    m_sizeInMBs(0),
-    m_sizeInMBsHasBeenSet(false),
-    m_intervalInSeconds(0),
-    m_intervalInSecondsHasBeenSet(false)
+HttpEndpointBufferingHints::HttpEndpointBufferingHints(JsonView jsonValue)
+  : HttpEndpointBufferingHints()
 {
   *this = jsonValue;
 }

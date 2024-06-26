@@ -24,9 +24,8 @@ BinCountOptions::BinCountOptions() :
 {
 }
 
-BinCountOptions::BinCountOptions(JsonView jsonValue) : 
-    m_value(0),
-    m_valueHasBeenSet(false)
+BinCountOptions::BinCountOptions(JsonView jsonValue)
+  : BinCountOptions()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ AwsRdsDbSubnetGroupSubnetAvailabilityZone::AwsRdsDbSubnetGroupSubnetAvailability
 {
 }
 
-AwsRdsDbSubnetGroupSubnetAvailabilityZone::AwsRdsDbSubnetGroupSubnetAvailabilityZone(JsonView jsonValue) : 
-    m_nameHasBeenSet(false)
+AwsRdsDbSubnetGroupSubnetAvailabilityZone::AwsRdsDbSubnetGroupSubnetAvailabilityZone(JsonView jsonValue)
+  : AwsRdsDbSubnetGroupSubnetAvailabilityZone()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ FieldOption::FieldOption() :
 {
 }
 
-FieldOption::FieldOption(JsonView jsonValue) : 
-    m_active(false),
-    m_activeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
+FieldOption::FieldOption(JsonView jsonValue)
+  : FieldOption()
 {
   *this = jsonValue;
 }

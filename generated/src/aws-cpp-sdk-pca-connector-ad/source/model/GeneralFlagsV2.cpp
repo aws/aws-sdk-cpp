@@ -26,11 +26,8 @@ GeneralFlagsV2::GeneralFlagsV2() :
 {
 }
 
-GeneralFlagsV2::GeneralFlagsV2(JsonView jsonValue) : 
-    m_autoEnrollment(false),
-    m_autoEnrollmentHasBeenSet(false),
-    m_machineType(false),
-    m_machineTypeHasBeenSet(false)
+GeneralFlagsV2::GeneralFlagsV2(JsonView jsonValue)
+  : GeneralFlagsV2()
 {
   *this = jsonValue;
 }

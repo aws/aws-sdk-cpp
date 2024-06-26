@@ -26,11 +26,8 @@ ResourceSyncEvent::ResourceSyncEvent() :
 {
 }
 
-ResourceSyncEvent::ResourceSyncEvent(JsonView jsonValue) : 
-    m_eventHasBeenSet(false),
-    m_externalIdHasBeenSet(false),
-    m_timeHasBeenSet(false),
-    m_typeHasBeenSet(false)
+ResourceSyncEvent::ResourceSyncEvent(JsonView jsonValue)
+  : ResourceSyncEvent()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ EbsVolume::EbsVolume() :
 {
 }
 
-EbsVolume::EbsVolume(JsonView jsonValue) : 
-    m_deviceHasBeenSet(false),
-    m_volumeIdHasBeenSet(false)
+EbsVolume::EbsVolume(JsonView jsonValue)
+  : EbsVolume()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ DescribeKeyRegistrationResult::DescribeKeyRegistrationResult() :
 {
 }
 
-DescribeKeyRegistrationResult::DescribeKeyRegistrationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+DescribeKeyRegistrationResult::DescribeKeyRegistrationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeKeyRegistrationResult()
 {
   *this = result;
 }

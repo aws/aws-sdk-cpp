@@ -25,10 +25,8 @@ HandshakeConstraintViolationException::HandshakeConstraintViolationException() :
 {
 }
 
-HandshakeConstraintViolationException::HandshakeConstraintViolationException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_reason(HandshakeConstraintViolationExceptionReason::NOT_SET),
-    m_reasonHasBeenSet(false)
+HandshakeConstraintViolationException::HandshakeConstraintViolationException(JsonView jsonValue)
+  : HandshakeConstraintViolationException()
 {
   *this = jsonValue;
 }

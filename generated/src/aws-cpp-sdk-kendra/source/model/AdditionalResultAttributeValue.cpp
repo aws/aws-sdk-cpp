@@ -23,8 +23,8 @@ AdditionalResultAttributeValue::AdditionalResultAttributeValue() :
 {
 }
 
-AdditionalResultAttributeValue::AdditionalResultAttributeValue(JsonView jsonValue) : 
-    m_textWithHighlightsValueHasBeenSet(false)
+AdditionalResultAttributeValue::AdditionalResultAttributeValue(JsonView jsonValue)
+  : AdditionalResultAttributeValue()
 {
   *this = jsonValue;
 }

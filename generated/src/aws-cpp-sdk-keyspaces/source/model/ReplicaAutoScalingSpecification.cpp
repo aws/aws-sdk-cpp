@@ -24,9 +24,8 @@ ReplicaAutoScalingSpecification::ReplicaAutoScalingSpecification() :
 {
 }
 
-ReplicaAutoScalingSpecification::ReplicaAutoScalingSpecification(JsonView jsonValue) : 
-    m_regionHasBeenSet(false),
-    m_autoScalingSpecificationHasBeenSet(false)
+ReplicaAutoScalingSpecification::ReplicaAutoScalingSpecification(JsonView jsonValue)
+  : ReplicaAutoScalingSpecification()
 {
   *this = jsonValue;
 }

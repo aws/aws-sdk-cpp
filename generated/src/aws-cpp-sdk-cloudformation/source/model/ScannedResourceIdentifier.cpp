@@ -26,9 +26,8 @@ ScannedResourceIdentifier::ScannedResourceIdentifier() :
 {
 }
 
-ScannedResourceIdentifier::ScannedResourceIdentifier(const XmlNode& xmlNode) : 
-    m_resourceTypeHasBeenSet(false),
-    m_resourceIdentifierHasBeenSet(false)
+ScannedResourceIdentifier::ScannedResourceIdentifier(const XmlNode& xmlNode)
+  : ScannedResourceIdentifier()
 {
   *this = xmlNode;
 }

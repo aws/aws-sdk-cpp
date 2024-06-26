@@ -37,20 +37,8 @@ VpcEndpointConnection::VpcEndpointConnection() :
 {
 }
 
-VpcEndpointConnection::VpcEndpointConnection(const XmlNode& xmlNode) : 
-    m_serviceIdHasBeenSet(false),
-    m_vpcEndpointIdHasBeenSet(false),
-    m_vpcEndpointOwnerHasBeenSet(false),
-    m_vpcEndpointState(State::NOT_SET),
-    m_vpcEndpointStateHasBeenSet(false),
-    m_creationTimestampHasBeenSet(false),
-    m_dnsEntriesHasBeenSet(false),
-    m_networkLoadBalancerArnsHasBeenSet(false),
-    m_gatewayLoadBalancerArnsHasBeenSet(false),
-    m_ipAddressType(IpAddressType::NOT_SET),
-    m_ipAddressTypeHasBeenSet(false),
-    m_vpcEndpointConnectionIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+VpcEndpointConnection::VpcEndpointConnection(const XmlNode& xmlNode)
+  : VpcEndpointConnection()
 {
   *this = xmlNode;
 }

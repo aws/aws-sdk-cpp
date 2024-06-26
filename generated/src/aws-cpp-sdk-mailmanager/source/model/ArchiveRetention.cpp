@@ -24,9 +24,8 @@ ArchiveRetention::ArchiveRetention() :
 {
 }
 
-ArchiveRetention::ArchiveRetention(JsonView jsonValue) : 
-    m_retentionPeriod(RetentionPeriod::NOT_SET),
-    m_retentionPeriodHasBeenSet(false)
+ArchiveRetention::ArchiveRetention(JsonView jsonValue)
+  : ArchiveRetention()
 {
   *this = jsonValue;
 }

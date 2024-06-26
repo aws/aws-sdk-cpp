@@ -24,9 +24,8 @@ AssetBundleImportJobThemeOverrideParameters::AssetBundleImportJobThemeOverridePa
 {
 }
 
-AssetBundleImportJobThemeOverrideParameters::AssetBundleImportJobThemeOverrideParameters(JsonView jsonValue) : 
-    m_themeIdHasBeenSet(false),
-    m_nameHasBeenSet(false)
+AssetBundleImportJobThemeOverrideParameters::AssetBundleImportJobThemeOverrideParameters(JsonView jsonValue)
+  : AssetBundleImportJobThemeOverrideParameters()
 {
   *this = jsonValue;
 }

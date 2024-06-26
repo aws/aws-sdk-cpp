@@ -25,10 +25,8 @@ SubjectStructure::SubjectStructure() :
 {
 }
 
-SubjectStructure::SubjectStructure(JsonView jsonValue) : 
-    m_count(0),
-    m_countHasBeenSet(false),
-    m_predicatesHasBeenSet(false)
+SubjectStructure::SubjectStructure(JsonView jsonValue)
+  : SubjectStructure()
 {
   *this = jsonValue;
 }

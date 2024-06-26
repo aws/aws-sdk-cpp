@@ -26,11 +26,8 @@ SageMakerSavingsPlansConfiguration::SageMakerSavingsPlansConfiguration() :
 {
 }
 
-SageMakerSavingsPlansConfiguration::SageMakerSavingsPlansConfiguration(JsonView jsonValue) : 
-    m_accountScopeHasBeenSet(false),
-    m_termHasBeenSet(false),
-    m_paymentOptionHasBeenSet(false),
-    m_hourlyCommitmentHasBeenSet(false)
+SageMakerSavingsPlansConfiguration::SageMakerSavingsPlansConfiguration(JsonView jsonValue)
+  : SageMakerSavingsPlansConfiguration()
 {
   *this = jsonValue;
 }

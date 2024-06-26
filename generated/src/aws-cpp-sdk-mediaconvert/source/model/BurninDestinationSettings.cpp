@@ -67,52 +67,8 @@ BurninDestinationSettings::BurninDestinationSettings() :
 {
 }
 
-BurninDestinationSettings::BurninDestinationSettings(JsonView jsonValue) : 
-    m_alignment(BurninSubtitleAlignment::NOT_SET),
-    m_alignmentHasBeenSet(false),
-    m_applyFontColor(BurninSubtitleApplyFontColor::NOT_SET),
-    m_applyFontColorHasBeenSet(false),
-    m_backgroundColor(BurninSubtitleBackgroundColor::NOT_SET),
-    m_backgroundColorHasBeenSet(false),
-    m_backgroundOpacity(0),
-    m_backgroundOpacityHasBeenSet(false),
-    m_fallbackFont(BurninSubtitleFallbackFont::NOT_SET),
-    m_fallbackFontHasBeenSet(false),
-    m_fontColor(BurninSubtitleFontColor::NOT_SET),
-    m_fontColorHasBeenSet(false),
-    m_fontFileBoldHasBeenSet(false),
-    m_fontFileBoldItalicHasBeenSet(false),
-    m_fontFileItalicHasBeenSet(false),
-    m_fontFileRegularHasBeenSet(false),
-    m_fontOpacity(0),
-    m_fontOpacityHasBeenSet(false),
-    m_fontResolution(0),
-    m_fontResolutionHasBeenSet(false),
-    m_fontScript(FontScript::NOT_SET),
-    m_fontScriptHasBeenSet(false),
-    m_fontSize(0),
-    m_fontSizeHasBeenSet(false),
-    m_hexFontColorHasBeenSet(false),
-    m_outlineColor(BurninSubtitleOutlineColor::NOT_SET),
-    m_outlineColorHasBeenSet(false),
-    m_outlineSize(0),
-    m_outlineSizeHasBeenSet(false),
-    m_shadowColor(BurninSubtitleShadowColor::NOT_SET),
-    m_shadowColorHasBeenSet(false),
-    m_shadowOpacity(0),
-    m_shadowOpacityHasBeenSet(false),
-    m_shadowXOffset(0),
-    m_shadowXOffsetHasBeenSet(false),
-    m_shadowYOffset(0),
-    m_shadowYOffsetHasBeenSet(false),
-    m_stylePassthrough(BurnInSubtitleStylePassthrough::NOT_SET),
-    m_stylePassthroughHasBeenSet(false),
-    m_teletextSpacing(BurninSubtitleTeletextSpacing::NOT_SET),
-    m_teletextSpacingHasBeenSet(false),
-    m_xPosition(0),
-    m_xPositionHasBeenSet(false),
-    m_yPosition(0),
-    m_yPositionHasBeenSet(false)
+BurninDestinationSettings::BurninDestinationSettings(JsonView jsonValue)
+  : BurninDestinationSettings()
 {
   *this = jsonValue;
 }

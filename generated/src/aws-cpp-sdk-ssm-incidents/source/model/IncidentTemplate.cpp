@@ -29,14 +29,8 @@ IncidentTemplate::IncidentTemplate() :
 {
 }
 
-IncidentTemplate::IncidentTemplate(JsonView jsonValue) : 
-    m_dedupeStringHasBeenSet(false),
-    m_impact(0),
-    m_impactHasBeenSet(false),
-    m_incidentTagsHasBeenSet(false),
-    m_notificationTargetsHasBeenSet(false),
-    m_summaryHasBeenSet(false),
-    m_titleHasBeenSet(false)
+IncidentTemplate::IncidentTemplate(JsonView jsonValue)
+  : IncidentTemplate()
 {
   *this = jsonValue;
 }

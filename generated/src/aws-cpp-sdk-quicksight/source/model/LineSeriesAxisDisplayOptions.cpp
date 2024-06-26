@@ -24,9 +24,8 @@ LineSeriesAxisDisplayOptions::LineSeriesAxisDisplayOptions() :
 {
 }
 
-LineSeriesAxisDisplayOptions::LineSeriesAxisDisplayOptions(JsonView jsonValue) : 
-    m_axisOptionsHasBeenSet(false),
-    m_missingDataConfigurationsHasBeenSet(false)
+LineSeriesAxisDisplayOptions::LineSeriesAxisDisplayOptions(JsonView jsonValue)
+  : LineSeriesAxisDisplayOptions()
 {
   *this = jsonValue;
 }

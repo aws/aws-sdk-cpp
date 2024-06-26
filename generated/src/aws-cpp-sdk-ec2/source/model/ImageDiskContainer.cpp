@@ -30,13 +30,8 @@ ImageDiskContainer::ImageDiskContainer() :
 {
 }
 
-ImageDiskContainer::ImageDiskContainer(const XmlNode& xmlNode) : 
-    m_descriptionHasBeenSet(false),
-    m_deviceNameHasBeenSet(false),
-    m_formatHasBeenSet(false),
-    m_snapshotIdHasBeenSet(false),
-    m_urlHasBeenSet(false),
-    m_userBucketHasBeenSet(false)
+ImageDiskContainer::ImageDiskContainer(const XmlNode& xmlNode)
+  : ImageDiskContainer()
 {
   *this = xmlNode;
 }

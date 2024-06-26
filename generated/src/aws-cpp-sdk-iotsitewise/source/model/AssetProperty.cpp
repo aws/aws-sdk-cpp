@@ -32,17 +32,8 @@ AssetProperty::AssetProperty() :
 {
 }
 
-AssetProperty::AssetProperty(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_aliasHasBeenSet(false),
-    m_notificationHasBeenSet(false),
-    m_dataType(PropertyDataType::NOT_SET),
-    m_dataTypeHasBeenSet(false),
-    m_dataTypeSpecHasBeenSet(false),
-    m_unitHasBeenSet(false),
-    m_pathHasBeenSet(false),
-    m_externalIdHasBeenSet(false)
+AssetProperty::AssetProperty(JsonView jsonValue)
+  : AssetProperty()
 {
   *this = jsonValue;
 }

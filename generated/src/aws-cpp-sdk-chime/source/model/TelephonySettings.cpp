@@ -28,13 +28,8 @@ TelephonySettings::TelephonySettings() :
 {
 }
 
-TelephonySettings::TelephonySettings(JsonView jsonValue) : 
-    m_inboundCalling(false),
-    m_inboundCallingHasBeenSet(false),
-    m_outboundCalling(false),
-    m_outboundCallingHasBeenSet(false),
-    m_sMS(false),
-    m_sMSHasBeenSet(false)
+TelephonySettings::TelephonySettings(JsonView jsonValue)
+  : TelephonySettings()
 {
   *this = jsonValue;
 }

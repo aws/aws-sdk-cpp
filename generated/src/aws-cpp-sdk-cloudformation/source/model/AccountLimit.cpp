@@ -27,10 +27,8 @@ AccountLimit::AccountLimit() :
 {
 }
 
-AccountLimit::AccountLimit(const XmlNode& xmlNode) : 
-    m_nameHasBeenSet(false),
-    m_value(0),
-    m_valueHasBeenSet(false)
+AccountLimit::AccountLimit(const XmlNode& xmlNode)
+  : AccountLimit()
 {
   *this = xmlNode;
 }

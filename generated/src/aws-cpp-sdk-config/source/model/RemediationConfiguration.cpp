@@ -38,23 +38,8 @@ RemediationConfiguration::RemediationConfiguration() :
 {
 }
 
-RemediationConfiguration::RemediationConfiguration(JsonView jsonValue) : 
-    m_configRuleNameHasBeenSet(false),
-    m_targetType(RemediationTargetType::NOT_SET),
-    m_targetTypeHasBeenSet(false),
-    m_targetIdHasBeenSet(false),
-    m_targetVersionHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
-    m_automatic(false),
-    m_automaticHasBeenSet(false),
-    m_executionControlsHasBeenSet(false),
-    m_maximumAutomaticAttempts(0),
-    m_maximumAutomaticAttemptsHasBeenSet(false),
-    m_retryAttemptSeconds(0),
-    m_retryAttemptSecondsHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_createdByServiceHasBeenSet(false)
+RemediationConfiguration::RemediationConfiguration(JsonView jsonValue)
+  : RemediationConfiguration()
 {
   *this = jsonValue;
 }

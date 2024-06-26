@@ -40,23 +40,8 @@ NetworkInsightsPath::NetworkInsightsPath() :
 {
 }
 
-NetworkInsightsPath::NetworkInsightsPath(const XmlNode& xmlNode) : 
-    m_networkInsightsPathIdHasBeenSet(false),
-    m_networkInsightsPathArnHasBeenSet(false),
-    m_createdDateHasBeenSet(false),
-    m_sourceHasBeenSet(false),
-    m_destinationHasBeenSet(false),
-    m_sourceArnHasBeenSet(false),
-    m_destinationArnHasBeenSet(false),
-    m_sourceIpHasBeenSet(false),
-    m_destinationIpHasBeenSet(false),
-    m_protocol(Protocol::NOT_SET),
-    m_protocolHasBeenSet(false),
-    m_destinationPort(0),
-    m_destinationPortHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_filterAtSourceHasBeenSet(false),
-    m_filterAtDestinationHasBeenSet(false)
+NetworkInsightsPath::NetworkInsightsPath(const XmlNode& xmlNode)
+  : NetworkInsightsPath()
 {
   *this = xmlNode;
 }

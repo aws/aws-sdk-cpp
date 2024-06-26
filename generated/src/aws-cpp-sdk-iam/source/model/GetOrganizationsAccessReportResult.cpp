@@ -25,11 +25,8 @@ GetOrganizationsAccessReportResult::GetOrganizationsAccessReportResult() :
 {
 }
 
-GetOrganizationsAccessReportResult::GetOrganizationsAccessReportResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_jobStatus(JobStatusType::NOT_SET),
-    m_numberOfServicesAccessible(0),
-    m_numberOfServicesNotAccessed(0),
-    m_isTruncated(false)
+GetOrganizationsAccessReportResult::GetOrganizationsAccessReportResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : GetOrganizationsAccessReportResult()
 {
   *this = result;
 }

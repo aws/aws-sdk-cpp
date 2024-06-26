@@ -33,18 +33,8 @@ SystemInstanceSummary::SystemInstanceSummary() :
 {
 }
 
-SystemInstanceSummary::SystemInstanceSummary(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_status(SystemInstanceDeploymentStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_target(DeploymentTarget::NOT_SET),
-    m_targetHasBeenSet(false),
-    m_greengrassGroupNameHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_greengrassGroupIdHasBeenSet(false),
-    m_greengrassGroupVersionIdHasBeenSet(false)
+SystemInstanceSummary::SystemInstanceSummary(JsonView jsonValue)
+  : SystemInstanceSummary()
 {
   *this = jsonValue;
 }

@@ -26,9 +26,8 @@ Monitoring::Monitoring() :
 {
 }
 
-Monitoring::Monitoring(const XmlNode& xmlNode) : 
-    m_state(MonitoringState::NOT_SET),
-    m_stateHasBeenSet(false)
+Monitoring::Monitoring(const XmlNode& xmlNode)
+  : Monitoring()
 {
   *this = xmlNode;
 }

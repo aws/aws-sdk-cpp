@@ -23,8 +23,8 @@ Ec2ConfigurationState::Ec2ConfigurationState() :
 {
 }
 
-Ec2ConfigurationState::Ec2ConfigurationState(JsonView jsonValue) : 
-    m_scanModeStateHasBeenSet(false)
+Ec2ConfigurationState::Ec2ConfigurationState(JsonView jsonValue)
+  : Ec2ConfigurationState()
 {
   *this = jsonValue;
 }

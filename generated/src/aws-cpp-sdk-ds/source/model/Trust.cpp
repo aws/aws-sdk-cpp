@@ -37,22 +37,8 @@ Trust::Trust() :
 {
 }
 
-Trust::Trust(JsonView jsonValue) : 
-    m_directoryIdHasBeenSet(false),
-    m_trustIdHasBeenSet(false),
-    m_remoteDomainNameHasBeenSet(false),
-    m_trustType(TrustType::NOT_SET),
-    m_trustTypeHasBeenSet(false),
-    m_trustDirection(TrustDirection::NOT_SET),
-    m_trustDirectionHasBeenSet(false),
-    m_trustState(TrustState::NOT_SET),
-    m_trustStateHasBeenSet(false),
-    m_createdDateTimeHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false),
-    m_stateLastUpdatedDateTimeHasBeenSet(false),
-    m_trustStateReasonHasBeenSet(false),
-    m_selectiveAuth(SelectiveAuth::NOT_SET),
-    m_selectiveAuthHasBeenSet(false)
+Trust::Trust(JsonView jsonValue)
+  : Trust()
 {
   *this = jsonValue;
 }

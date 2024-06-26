@@ -26,11 +26,8 @@ ListControlDisplayOptions::ListControlDisplayOptions() :
 {
 }
 
-ListControlDisplayOptions::ListControlDisplayOptions(JsonView jsonValue) : 
-    m_searchOptionsHasBeenSet(false),
-    m_selectAllOptionsHasBeenSet(false),
-    m_titleOptionsHasBeenSet(false),
-    m_infoIconLabelOptionsHasBeenSet(false)
+ListControlDisplayOptions::ListControlDisplayOptions(JsonView jsonValue)
+  : ListControlDisplayOptions()
 {
   *this = jsonValue;
 }

@@ -24,10 +24,8 @@ CreateRuleResult::CreateRuleResult() :
 {
 }
 
-CreateRuleResult::CreateRuleResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_resourceType(ResourceType::NOT_SET),
-    m_status(RuleStatus::NOT_SET),
-    m_lockState(LockState::NOT_SET)
+CreateRuleResult::CreateRuleResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateRuleResult()
 {
   *this = result;
 }

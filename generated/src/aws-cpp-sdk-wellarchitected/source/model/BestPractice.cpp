@@ -24,9 +24,8 @@ BestPractice::BestPractice() :
 {
 }
 
-BestPractice::BestPractice(JsonView jsonValue) : 
-    m_choiceIdHasBeenSet(false),
-    m_choiceTitleHasBeenSet(false)
+BestPractice::BestPractice(JsonView jsonValue)
+  : BestPractice()
 {
   *this = jsonValue;
 }

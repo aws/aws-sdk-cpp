@@ -30,15 +30,8 @@ ReservedInstancesPricing::ReservedInstancesPricing() :
 {
 }
 
-ReservedInstancesPricing::ReservedInstancesPricing(JsonView jsonValue) : 
-    m_estimatedOnDemandCost(0.0),
-    m_estimatedOnDemandCostHasBeenSet(false),
-    m_monthlyReservationEligibleCost(0.0),
-    m_monthlyReservationEligibleCostHasBeenSet(false),
-    m_savingsPercentage(0.0),
-    m_savingsPercentageHasBeenSet(false),
-    m_estimatedMonthlyAmortizedReservationCost(0.0),
-    m_estimatedMonthlyAmortizedReservationCostHasBeenSet(false)
+ReservedInstancesPricing::ReservedInstancesPricing(JsonView jsonValue)
+  : ReservedInstancesPricing()
 {
   *this = jsonValue;
 }

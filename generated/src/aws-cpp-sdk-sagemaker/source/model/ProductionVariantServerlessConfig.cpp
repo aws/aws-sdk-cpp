@@ -28,13 +28,8 @@ ProductionVariantServerlessConfig::ProductionVariantServerlessConfig() :
 {
 }
 
-ProductionVariantServerlessConfig::ProductionVariantServerlessConfig(JsonView jsonValue) : 
-    m_memorySizeInMB(0),
-    m_memorySizeInMBHasBeenSet(false),
-    m_maxConcurrency(0),
-    m_maxConcurrencyHasBeenSet(false),
-    m_provisionedConcurrency(0),
-    m_provisionedConcurrencyHasBeenSet(false)
+ProductionVariantServerlessConfig::ProductionVariantServerlessConfig(JsonView jsonValue)
+  : ProductionVariantServerlessConfig()
 {
   *this = jsonValue;
 }

@@ -29,14 +29,8 @@ EmailChannelRequest::EmailChannelRequest() :
 {
 }
 
-EmailChannelRequest::EmailChannelRequest(JsonView jsonValue) : 
-    m_configurationSetHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_fromAddressHasBeenSet(false),
-    m_identityHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_orchestrationSendingRoleArnHasBeenSet(false)
+EmailChannelRequest::EmailChannelRequest(JsonView jsonValue)
+  : EmailChannelRequest()
 {
   *this = jsonValue;
 }

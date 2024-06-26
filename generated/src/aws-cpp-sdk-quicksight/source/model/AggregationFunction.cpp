@@ -28,13 +28,8 @@ AggregationFunction::AggregationFunction() :
 {
 }
 
-AggregationFunction::AggregationFunction(JsonView jsonValue) : 
-    m_numericalAggregationFunctionHasBeenSet(false),
-    m_categoricalAggregationFunction(CategoricalAggregationFunction::NOT_SET),
-    m_categoricalAggregationFunctionHasBeenSet(false),
-    m_dateAggregationFunction(DateAggregationFunction::NOT_SET),
-    m_dateAggregationFunctionHasBeenSet(false),
-    m_attributeAggregationFunctionHasBeenSet(false)
+AggregationFunction::AggregationFunction(JsonView jsonValue)
+  : AggregationFunction()
 {
   *this = jsonValue;
 }

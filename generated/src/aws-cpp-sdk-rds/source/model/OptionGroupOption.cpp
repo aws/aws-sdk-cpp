@@ -49,32 +49,8 @@ OptionGroupOption::OptionGroupOption() :
 {
 }
 
-OptionGroupOption::OptionGroupOption(const XmlNode& xmlNode) : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_engineNameHasBeenSet(false),
-    m_majorEngineVersionHasBeenSet(false),
-    m_minimumRequiredMinorEngineVersionHasBeenSet(false),
-    m_portRequired(false),
-    m_portRequiredHasBeenSet(false),
-    m_defaultPort(0),
-    m_defaultPortHasBeenSet(false),
-    m_optionsDependedOnHasBeenSet(false),
-    m_optionsConflictsWithHasBeenSet(false),
-    m_persistent(false),
-    m_persistentHasBeenSet(false),
-    m_permanent(false),
-    m_permanentHasBeenSet(false),
-    m_requiresAutoMinorEngineVersionUpgrade(false),
-    m_requiresAutoMinorEngineVersionUpgradeHasBeenSet(false),
-    m_vpcOnly(false),
-    m_vpcOnlyHasBeenSet(false),
-    m_supportsOptionVersionDowngrade(false),
-    m_supportsOptionVersionDowngradeHasBeenSet(false),
-    m_optionGroupOptionSettingsHasBeenSet(false),
-    m_optionGroupOptionVersionsHasBeenSet(false),
-    m_copyableCrossAccount(false),
-    m_copyableCrossAccountHasBeenSet(false)
+OptionGroupOption::OptionGroupOption(const XmlNode& xmlNode)
+  : OptionGroupOption()
 {
   *this = xmlNode;
 }

@@ -27,12 +27,8 @@ UsageReportSubscription::UsageReportSubscription() :
 {
 }
 
-UsageReportSubscription::UsageReportSubscription(JsonView jsonValue) : 
-    m_s3BucketNameHasBeenSet(false),
-    m_schedule(UsageReportSchedule::NOT_SET),
-    m_scheduleHasBeenSet(false),
-    m_lastGeneratedReportDateHasBeenSet(false),
-    m_subscriptionErrorsHasBeenSet(false)
+UsageReportSubscription::UsageReportSubscription(JsonView jsonValue)
+  : UsageReportSubscription()
 {
   *this = jsonValue;
 }

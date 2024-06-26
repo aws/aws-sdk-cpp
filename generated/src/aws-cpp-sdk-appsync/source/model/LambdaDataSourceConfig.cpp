@@ -23,8 +23,8 @@ LambdaDataSourceConfig::LambdaDataSourceConfig() :
 {
 }
 
-LambdaDataSourceConfig::LambdaDataSourceConfig(JsonView jsonValue) : 
-    m_lambdaFunctionArnHasBeenSet(false)
+LambdaDataSourceConfig::LambdaDataSourceConfig(JsonView jsonValue)
+  : LambdaDataSourceConfig()
 {
   *this = jsonValue;
 }

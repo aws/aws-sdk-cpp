@@ -25,10 +25,8 @@ Distribution::Distribution() :
 {
 }
 
-Distribution::Distribution(JsonView jsonValue) : 
-    m_regionHasBeenSet(false),
-    m_percentage(0),
-    m_percentageHasBeenSet(false)
+Distribution::Distribution(JsonView jsonValue)
+  : Distribution()
 {
   *this = jsonValue;
 }

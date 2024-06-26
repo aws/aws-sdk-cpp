@@ -25,10 +25,8 @@ DNISEmergencyCallingConfiguration::DNISEmergencyCallingConfiguration() :
 {
 }
 
-DNISEmergencyCallingConfiguration::DNISEmergencyCallingConfiguration(JsonView jsonValue) : 
-    m_emergencyPhoneNumberHasBeenSet(false),
-    m_testPhoneNumberHasBeenSet(false),
-    m_callingCountryHasBeenSet(false)
+DNISEmergencyCallingConfiguration::DNISEmergencyCallingConfiguration(JsonView jsonValue)
+  : DNISEmergencyCallingConfiguration()
 {
   *this = jsonValue;
 }

@@ -26,9 +26,8 @@ Region::Region() :
 {
 }
 
-Region::Region(const XmlNode& xmlNode) : 
-    m_bucketHasBeenSet(false),
-    m_bucketAccountIdHasBeenSet(false)
+Region::Region(const XmlNode& xmlNode)
+  : Region()
 {
   *this = xmlNode;
 }

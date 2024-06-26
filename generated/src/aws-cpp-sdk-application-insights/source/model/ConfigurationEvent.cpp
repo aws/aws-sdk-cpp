@@ -32,17 +32,8 @@ ConfigurationEvent::ConfigurationEvent() :
 {
 }
 
-ConfigurationEvent::ConfigurationEvent(JsonView jsonValue) : 
-    m_resourceGroupNameHasBeenSet(false),
-    m_accountIdHasBeenSet(false),
-    m_monitoredResourceARNHasBeenSet(false),
-    m_eventStatus(ConfigurationEventStatus::NOT_SET),
-    m_eventStatusHasBeenSet(false),
-    m_eventResourceType(ConfigurationEventResourceType::NOT_SET),
-    m_eventResourceTypeHasBeenSet(false),
-    m_eventTimeHasBeenSet(false),
-    m_eventDetailHasBeenSet(false),
-    m_eventResourceNameHasBeenSet(false)
+ConfigurationEvent::ConfigurationEvent(JsonView jsonValue)
+  : ConfigurationEvent()
 {
   *this = jsonValue;
 }

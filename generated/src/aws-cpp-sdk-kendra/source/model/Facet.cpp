@@ -26,11 +26,8 @@ Facet::Facet() :
 {
 }
 
-Facet::Facet(JsonView jsonValue) : 
-    m_documentAttributeKeyHasBeenSet(false),
-    m_facetsHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
+Facet::Facet(JsonView jsonValue)
+  : Facet()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ ServiceCatalogProvisioningUpdateDetails::ServiceCatalogProvisioningUpdateDetails
 {
 }
 
-ServiceCatalogProvisioningUpdateDetails::ServiceCatalogProvisioningUpdateDetails(JsonView jsonValue) : 
-    m_provisioningArtifactIdHasBeenSet(false),
-    m_provisioningParametersHasBeenSet(false)
+ServiceCatalogProvisioningUpdateDetails::ServiceCatalogProvisioningUpdateDetails(JsonView jsonValue)
+  : ServiceCatalogProvisioningUpdateDetails()
 {
   *this = jsonValue;
 }

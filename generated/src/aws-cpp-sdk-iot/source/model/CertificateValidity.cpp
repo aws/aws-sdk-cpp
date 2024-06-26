@@ -24,9 +24,8 @@ CertificateValidity::CertificateValidity() :
 {
 }
 
-CertificateValidity::CertificateValidity(JsonView jsonValue) : 
-    m_notBeforeHasBeenSet(false),
-    m_notAfterHasBeenSet(false)
+CertificateValidity::CertificateValidity(JsonView jsonValue)
+  : CertificateValidity()
 {
   *this = jsonValue;
 }

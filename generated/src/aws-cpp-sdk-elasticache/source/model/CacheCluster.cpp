@@ -67,50 +67,8 @@ CacheCluster::CacheCluster() :
 {
 }
 
-CacheCluster::CacheCluster(const XmlNode& xmlNode) : 
-    m_cacheClusterIdHasBeenSet(false),
-    m_configurationEndpointHasBeenSet(false),
-    m_clientDownloadLandingPageHasBeenSet(false),
-    m_cacheNodeTypeHasBeenSet(false),
-    m_engineHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_cacheClusterStatusHasBeenSet(false),
-    m_numCacheNodes(0),
-    m_numCacheNodesHasBeenSet(false),
-    m_preferredAvailabilityZoneHasBeenSet(false),
-    m_preferredOutpostArnHasBeenSet(false),
-    m_cacheClusterCreateTimeHasBeenSet(false),
-    m_preferredMaintenanceWindowHasBeenSet(false),
-    m_pendingModifiedValuesHasBeenSet(false),
-    m_notificationConfigurationHasBeenSet(false),
-    m_cacheSecurityGroupsHasBeenSet(false),
-    m_cacheParameterGroupHasBeenSet(false),
-    m_cacheSubnetGroupNameHasBeenSet(false),
-    m_cacheNodesHasBeenSet(false),
-    m_autoMinorVersionUpgrade(false),
-    m_autoMinorVersionUpgradeHasBeenSet(false),
-    m_securityGroupsHasBeenSet(false),
-    m_replicationGroupIdHasBeenSet(false),
-    m_snapshotRetentionLimit(0),
-    m_snapshotRetentionLimitHasBeenSet(false),
-    m_snapshotWindowHasBeenSet(false),
-    m_authTokenEnabled(false),
-    m_authTokenEnabledHasBeenSet(false),
-    m_authTokenLastModifiedDateHasBeenSet(false),
-    m_transitEncryptionEnabled(false),
-    m_transitEncryptionEnabledHasBeenSet(false),
-    m_atRestEncryptionEnabled(false),
-    m_atRestEncryptionEnabledHasBeenSet(false),
-    m_aRNHasBeenSet(false),
-    m_replicationGroupLogDeliveryEnabled(false),
-    m_replicationGroupLogDeliveryEnabledHasBeenSet(false),
-    m_logDeliveryConfigurationsHasBeenSet(false),
-    m_networkType(NetworkType::NOT_SET),
-    m_networkTypeHasBeenSet(false),
-    m_ipDiscovery(IpDiscovery::NOT_SET),
-    m_ipDiscoveryHasBeenSet(false),
-    m_transitEncryptionMode(TransitEncryptionMode::NOT_SET),
-    m_transitEncryptionModeHasBeenSet(false)
+CacheCluster::CacheCluster(const XmlNode& xmlNode)
+  : CacheCluster()
 {
   *this = xmlNode;
 }

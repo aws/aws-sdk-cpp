@@ -23,8 +23,8 @@ SuggestionQuery::SuggestionQuery() :
 {
 }
 
-SuggestionQuery::SuggestionQuery(JsonView jsonValue) : 
-    m_propertyNameQueryHasBeenSet(false)
+SuggestionQuery::SuggestionQuery(JsonView jsonValue)
+  : SuggestionQuery()
 {
   *this = jsonValue;
 }

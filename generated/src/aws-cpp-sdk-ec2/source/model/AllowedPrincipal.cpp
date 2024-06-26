@@ -30,13 +30,8 @@ AllowedPrincipal::AllowedPrincipal() :
 {
 }
 
-AllowedPrincipal::AllowedPrincipal(const XmlNode& xmlNode) : 
-    m_principalType(PrincipalType::NOT_SET),
-    m_principalTypeHasBeenSet(false),
-    m_principalHasBeenSet(false),
-    m_servicePermissionIdHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_serviceIdHasBeenSet(false)
+AllowedPrincipal::AllowedPrincipal(const XmlNode& xmlNode)
+  : AllowedPrincipal()
 {
   *this = xmlNode;
 }

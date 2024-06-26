@@ -25,10 +25,8 @@ AwsCertificateManagerCertificateResourceRecord::AwsCertificateManagerCertificate
 {
 }
 
-AwsCertificateManagerCertificateResourceRecord::AwsCertificateManagerCertificateResourceRecord(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_valueHasBeenSet(false)
+AwsCertificateManagerCertificateResourceRecord::AwsCertificateManagerCertificateResourceRecord(JsonView jsonValue)
+  : AwsCertificateManagerCertificateResourceRecord()
 {
   *this = jsonValue;
 }

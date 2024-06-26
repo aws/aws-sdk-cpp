@@ -24,9 +24,8 @@ CodeReviewType::CodeReviewType() :
 {
 }
 
-CodeReviewType::CodeReviewType(JsonView jsonValue) : 
-    m_repositoryAnalysisHasBeenSet(false),
-    m_analysisTypesHasBeenSet(false)
+CodeReviewType::CodeReviewType(JsonView jsonValue)
+  : CodeReviewType()
 {
   *this = jsonValue;
 }

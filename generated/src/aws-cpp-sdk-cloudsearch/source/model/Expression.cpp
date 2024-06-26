@@ -26,9 +26,8 @@ Expression::Expression() :
 {
 }
 
-Expression::Expression(const XmlNode& xmlNode) : 
-    m_expressionNameHasBeenSet(false),
-    m_expressionValueHasBeenSet(false)
+Expression::Expression(const XmlNode& xmlNode)
+  : Expression()
 {
   *this = xmlNode;
 }

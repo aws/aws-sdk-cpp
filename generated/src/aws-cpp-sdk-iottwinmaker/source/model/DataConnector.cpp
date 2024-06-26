@@ -25,10 +25,8 @@ DataConnector::DataConnector() :
 {
 }
 
-DataConnector::DataConnector(JsonView jsonValue) : 
-    m_lambdaHasBeenSet(false),
-    m_isNative(false),
-    m_isNativeHasBeenSet(false)
+DataConnector::DataConnector(JsonView jsonValue)
+  : DataConnector()
 {
   *this = jsonValue;
 }

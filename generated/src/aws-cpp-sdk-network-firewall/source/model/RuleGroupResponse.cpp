@@ -42,27 +42,8 @@ RuleGroupResponse::RuleGroupResponse() :
 {
 }
 
-RuleGroupResponse::RuleGroupResponse(JsonView jsonValue) : 
-    m_ruleGroupArnHasBeenSet(false),
-    m_ruleGroupNameHasBeenSet(false),
-    m_ruleGroupIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_type(RuleGroupType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_capacity(0),
-    m_capacityHasBeenSet(false),
-    m_ruleGroupStatus(ResourceStatus::NOT_SET),
-    m_ruleGroupStatusHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_consumedCapacity(0),
-    m_consumedCapacityHasBeenSet(false),
-    m_numberOfAssociations(0),
-    m_numberOfAssociationsHasBeenSet(false),
-    m_encryptionConfigurationHasBeenSet(false),
-    m_sourceMetadataHasBeenSet(false),
-    m_snsTopicHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_analysisResultsHasBeenSet(false)
+RuleGroupResponse::RuleGroupResponse(JsonView jsonValue)
+  : RuleGroupResponse()
 {
   *this = jsonValue;
 }

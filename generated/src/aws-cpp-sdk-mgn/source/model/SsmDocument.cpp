@@ -30,15 +30,8 @@ SsmDocument::SsmDocument() :
 {
 }
 
-SsmDocument::SsmDocument(JsonView jsonValue) : 
-    m_actionNameHasBeenSet(false),
-    m_externalParametersHasBeenSet(false),
-    m_mustSucceedForCutover(false),
-    m_mustSucceedForCutoverHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_ssmDocumentNameHasBeenSet(false),
-    m_timeoutSeconds(0),
-    m_timeoutSecondsHasBeenSet(false)
+SsmDocument::SsmDocument(JsonView jsonValue)
+  : SsmDocument()
 {
   *this = jsonValue;
 }

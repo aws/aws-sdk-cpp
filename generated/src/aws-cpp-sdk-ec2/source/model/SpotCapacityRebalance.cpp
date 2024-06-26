@@ -28,11 +28,8 @@ SpotCapacityRebalance::SpotCapacityRebalance() :
 {
 }
 
-SpotCapacityRebalance::SpotCapacityRebalance(const XmlNode& xmlNode) : 
-    m_replacementStrategy(ReplacementStrategy::NOT_SET),
-    m_replacementStrategyHasBeenSet(false),
-    m_terminationDelay(0),
-    m_terminationDelayHasBeenSet(false)
+SpotCapacityRebalance::SpotCapacityRebalance(const XmlNode& xmlNode)
+  : SpotCapacityRebalance()
 {
   *this = xmlNode;
 }

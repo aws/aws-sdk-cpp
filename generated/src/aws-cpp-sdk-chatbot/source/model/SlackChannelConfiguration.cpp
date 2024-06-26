@@ -35,20 +35,8 @@ SlackChannelConfiguration::SlackChannelConfiguration() :
 {
 }
 
-SlackChannelConfiguration::SlackChannelConfiguration(JsonView jsonValue) : 
-    m_slackTeamNameHasBeenSet(false),
-    m_slackTeamIdHasBeenSet(false),
-    m_slackChannelIdHasBeenSet(false),
-    m_slackChannelNameHasBeenSet(false),
-    m_chatConfigurationArnHasBeenSet(false),
-    m_iamRoleArnHasBeenSet(false),
-    m_snsTopicArnsHasBeenSet(false),
-    m_configurationNameHasBeenSet(false),
-    m_loggingLevelHasBeenSet(false),
-    m_guardrailPolicyArnsHasBeenSet(false),
-    m_userAuthorizationRequired(false),
-    m_userAuthorizationRequiredHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+SlackChannelConfiguration::SlackChannelConfiguration(JsonView jsonValue)
+  : SlackChannelConfiguration()
 {
   *this = jsonValue;
 }

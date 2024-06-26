@@ -27,12 +27,8 @@ AnalysisResult::AnalysisResult() :
 {
 }
 
-AnalysisResult::AnalysisResult(JsonView jsonValue) : 
-    m_typeHasBeenSet(false),
-    m_level(AnalysisResultLevel::NOT_SET),
-    m_levelHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_locationsHasBeenSet(false)
+AnalysisResult::AnalysisResult(JsonView jsonValue)
+  : AnalysisResult()
 {
   *this = jsonValue;
 }

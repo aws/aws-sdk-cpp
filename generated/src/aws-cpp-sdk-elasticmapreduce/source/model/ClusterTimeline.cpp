@@ -25,10 +25,8 @@ ClusterTimeline::ClusterTimeline() :
 {
 }
 
-ClusterTimeline::ClusterTimeline(JsonView jsonValue) : 
-    m_creationDateTimeHasBeenSet(false),
-    m_readyDateTimeHasBeenSet(false),
-    m_endDateTimeHasBeenSet(false)
+ClusterTimeline::ClusterTimeline(JsonView jsonValue)
+  : ClusterTimeline()
 {
   *this = jsonValue;
 }

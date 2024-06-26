@@ -24,9 +24,8 @@ WorkspaceStatus::WorkspaceStatus() :
 {
 }
 
-WorkspaceStatus::WorkspaceStatus(JsonView jsonValue) : 
-    m_statusCode(WorkspaceStatusCode::NOT_SET),
-    m_statusCodeHasBeenSet(false)
+WorkspaceStatus::WorkspaceStatus(JsonView jsonValue)
+  : WorkspaceStatus()
 {
   *this = jsonValue;
 }

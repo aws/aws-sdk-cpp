@@ -24,9 +24,8 @@ ChannelDestinationConfiguration::ChannelDestinationConfiguration() :
 {
 }
 
-ChannelDestinationConfiguration::ChannelDestinationConfiguration(JsonView jsonValue) : 
-    m_channelArnHasBeenSet(false),
-    m_encoderConfigurationArnHasBeenSet(false)
+ChannelDestinationConfiguration::ChannelDestinationConfiguration(JsonView jsonValue)
+  : ChannelDestinationConfiguration()
 {
   *this = jsonValue;
 }

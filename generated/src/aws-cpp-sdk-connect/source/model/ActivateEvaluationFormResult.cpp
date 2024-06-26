@@ -22,8 +22,8 @@ ActivateEvaluationFormResult::ActivateEvaluationFormResult() :
 {
 }
 
-ActivateEvaluationFormResult::ActivateEvaluationFormResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_evaluationFormVersion(0)
+ActivateEvaluationFormResult::ActivateEvaluationFormResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ActivateEvaluationFormResult()
 {
   *this = result;
 }

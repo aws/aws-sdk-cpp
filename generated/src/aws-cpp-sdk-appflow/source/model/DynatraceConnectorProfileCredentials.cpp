@@ -23,8 +23,8 @@ DynatraceConnectorProfileCredentials::DynatraceConnectorProfileCredentials() :
 {
 }
 
-DynatraceConnectorProfileCredentials::DynatraceConnectorProfileCredentials(JsonView jsonValue) : 
-    m_apiTokenHasBeenSet(false)
+DynatraceConnectorProfileCredentials::DynatraceConnectorProfileCredentials(JsonView jsonValue)
+  : DynatraceConnectorProfileCredentials()
 {
   *this = jsonValue;
 }

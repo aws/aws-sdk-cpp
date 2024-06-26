@@ -26,11 +26,8 @@ AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails::AwsS3BucketBucke
 {
 }
 
-AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails::AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails(JsonView jsonValue) : 
-    m_dateHasBeenSet(false),
-    m_days(0),
-    m_daysHasBeenSet(false),
-    m_storageClassHasBeenSet(false)
+AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails::AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails(JsonView jsonValue)
+  : AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails()
 {
   *this = jsonValue;
 }

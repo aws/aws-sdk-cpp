@@ -33,18 +33,8 @@ AwsOpenSearchServiceDomainServiceSoftwareOptionsDetails::AwsOpenSearchServiceDom
 {
 }
 
-AwsOpenSearchServiceDomainServiceSoftwareOptionsDetails::AwsOpenSearchServiceDomainServiceSoftwareOptionsDetails(JsonView jsonValue) : 
-    m_automatedUpdateDateHasBeenSet(false),
-    m_cancellable(false),
-    m_cancellableHasBeenSet(false),
-    m_currentVersionHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_newVersionHasBeenSet(false),
-    m_updateAvailable(false),
-    m_updateAvailableHasBeenSet(false),
-    m_updateStatusHasBeenSet(false),
-    m_optionalDeployment(false),
-    m_optionalDeploymentHasBeenSet(false)
+AwsOpenSearchServiceDomainServiceSoftwareOptionsDetails::AwsOpenSearchServiceDomainServiceSoftwareOptionsDetails(JsonView jsonValue)
+  : AwsOpenSearchServiceDomainServiceSoftwareOptionsDetails()
 {
   *this = jsonValue;
 }

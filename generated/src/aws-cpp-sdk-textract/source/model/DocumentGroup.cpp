@@ -26,11 +26,8 @@ DocumentGroup::DocumentGroup() :
 {
 }
 
-DocumentGroup::DocumentGroup(JsonView jsonValue) : 
-    m_typeHasBeenSet(false),
-    m_splitDocumentsHasBeenSet(false),
-    m_detectedSignaturesHasBeenSet(false),
-    m_undetectedSignaturesHasBeenSet(false)
+DocumentGroup::DocumentGroup(JsonView jsonValue)
+  : DocumentGroup()
 {
   *this = jsonValue;
 }

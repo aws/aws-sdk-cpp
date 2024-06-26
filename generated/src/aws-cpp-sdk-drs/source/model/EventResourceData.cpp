@@ -23,8 +23,8 @@ EventResourceData::EventResourceData() :
 {
 }
 
-EventResourceData::EventResourceData(JsonView jsonValue) : 
-    m_sourceNetworkDataHasBeenSet(false)
+EventResourceData::EventResourceData(JsonView jsonValue)
+  : EventResourceData()
 {
   *this = jsonValue;
 }

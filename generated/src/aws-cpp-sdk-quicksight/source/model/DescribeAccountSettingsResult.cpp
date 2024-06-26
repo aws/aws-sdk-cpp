@@ -22,8 +22,8 @@ DescribeAccountSettingsResult::DescribeAccountSettingsResult() :
 {
 }
 
-DescribeAccountSettingsResult::DescribeAccountSettingsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+DescribeAccountSettingsResult::DescribeAccountSettingsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeAccountSettingsResult()
 {
   *this = result;
 }

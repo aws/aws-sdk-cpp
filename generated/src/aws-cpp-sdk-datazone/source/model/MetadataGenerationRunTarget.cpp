@@ -26,11 +26,8 @@ MetadataGenerationRunTarget::MetadataGenerationRunTarget() :
 {
 }
 
-MetadataGenerationRunTarget::MetadataGenerationRunTarget(JsonView jsonValue) : 
-    m_identifierHasBeenSet(false),
-    m_revisionHasBeenSet(false),
-    m_type(MetadataGenerationTargetType::NOT_SET),
-    m_typeHasBeenSet(false)
+MetadataGenerationRunTarget::MetadataGenerationRunTarget(JsonView jsonValue)
+  : MetadataGenerationRunTarget()
 {
   *this = jsonValue;
 }

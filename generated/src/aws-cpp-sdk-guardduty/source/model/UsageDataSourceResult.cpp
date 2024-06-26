@@ -25,10 +25,8 @@ UsageDataSourceResult::UsageDataSourceResult() :
 {
 }
 
-UsageDataSourceResult::UsageDataSourceResult(JsonView jsonValue) : 
-    m_dataSource(DataSource::NOT_SET),
-    m_dataSourceHasBeenSet(false),
-    m_totalHasBeenSet(false)
+UsageDataSourceResult::UsageDataSourceResult(JsonView jsonValue)
+  : UsageDataSourceResult()
 {
   *this = jsonValue;
 }

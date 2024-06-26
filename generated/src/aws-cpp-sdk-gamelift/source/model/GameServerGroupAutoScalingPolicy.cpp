@@ -25,10 +25,8 @@ GameServerGroupAutoScalingPolicy::GameServerGroupAutoScalingPolicy() :
 {
 }
 
-GameServerGroupAutoScalingPolicy::GameServerGroupAutoScalingPolicy(JsonView jsonValue) : 
-    m_estimatedInstanceWarmup(0),
-    m_estimatedInstanceWarmupHasBeenSet(false),
-    m_targetTrackingConfigurationHasBeenSet(false)
+GameServerGroupAutoScalingPolicy::GameServerGroupAutoScalingPolicy(JsonView jsonValue)
+  : GameServerGroupAutoScalingPolicy()
 {
   *this = jsonValue;
 }

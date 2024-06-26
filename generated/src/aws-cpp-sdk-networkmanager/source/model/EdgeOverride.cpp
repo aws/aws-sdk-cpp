@@ -24,9 +24,8 @@ EdgeOverride::EdgeOverride() :
 {
 }
 
-EdgeOverride::EdgeOverride(JsonView jsonValue) : 
-    m_edgeSetsHasBeenSet(false),
-    m_useEdgeHasBeenSet(false)
+EdgeOverride::EdgeOverride(JsonView jsonValue)
+  : EdgeOverride()
 {
   *this = jsonValue;
 }

@@ -30,15 +30,8 @@ Dashboard::Dashboard() :
 {
 }
 
-Dashboard::Dashboard(JsonView jsonValue) : 
-    m_dashboardIdHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_lastPublishedTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_linkEntitiesHasBeenSet(false)
+Dashboard::Dashboard(JsonView jsonValue)
+  : Dashboard()
 {
   *this = jsonValue;
 }

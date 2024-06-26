@@ -24,9 +24,8 @@ StateDescription::StateDescription() :
 {
 }
 
-StateDescription::StateDescription(JsonView jsonValue) : 
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+StateDescription::StateDescription(JsonView jsonValue)
+  : StateDescription()
 {
   *this = jsonValue;
 }

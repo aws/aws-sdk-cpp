@@ -37,22 +37,8 @@ Evidence::Evidence() :
 {
 }
 
-Evidence::Evidence(JsonView jsonValue) : 
-    m_dataSourceHasBeenSet(false),
-    m_evidenceAwsAccountIdHasBeenSet(false),
-    m_timeHasBeenSet(false),
-    m_eventSourceHasBeenSet(false),
-    m_eventNameHasBeenSet(false),
-    m_evidenceByTypeHasBeenSet(false),
-    m_resourcesIncludedHasBeenSet(false),
-    m_attributesHasBeenSet(false),
-    m_iamIdHasBeenSet(false),
-    m_complianceCheckHasBeenSet(false),
-    m_awsOrganizationHasBeenSet(false),
-    m_awsAccountIdHasBeenSet(false),
-    m_evidenceFolderIdHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_assessmentReportSelectionHasBeenSet(false)
+Evidence::Evidence(JsonView jsonValue)
+  : Evidence()
 {
   *this = jsonValue;
 }

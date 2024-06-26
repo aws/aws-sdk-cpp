@@ -33,16 +33,8 @@ PublicIpv4Pool::PublicIpv4Pool() :
 {
 }
 
-PublicIpv4Pool::PublicIpv4Pool(const XmlNode& xmlNode) : 
-    m_poolIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_poolAddressRangesHasBeenSet(false),
-    m_totalAddressCount(0),
-    m_totalAddressCountHasBeenSet(false),
-    m_totalAvailableAddressCount(0),
-    m_totalAvailableAddressCountHasBeenSet(false),
-    m_networkBorderGroupHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+PublicIpv4Pool::PublicIpv4Pool(const XmlNode& xmlNode)
+  : PublicIpv4Pool()
 {
   *this = xmlNode;
 }

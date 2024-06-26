@@ -21,8 +21,8 @@ PutObjectAclResult::PutObjectAclResult() :
 {
 }
 
-PutObjectAclResult::PutObjectAclResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_requestCharged(RequestCharged::NOT_SET)
+PutObjectAclResult::PutObjectAclResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : PutObjectAclResult()
 {
   *this = result;
 }

@@ -23,9 +23,8 @@ GetDataflowEndpointGroupResult::GetDataflowEndpointGroupResult() :
 {
 }
 
-GetDataflowEndpointGroupResult::GetDataflowEndpointGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_contactPostPassDurationSeconds(0),
-    m_contactPrePassDurationSeconds(0)
+GetDataflowEndpointGroupResult::GetDataflowEndpointGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetDataflowEndpointGroupResult()
 {
   *this = result;
 }

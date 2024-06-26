@@ -23,8 +23,8 @@ FileContent::FileContent() :
 {
 }
 
-FileContent::FileContent(JsonView jsonValue) : 
-    m_fileArnHasBeenSet(false)
+FileContent::FileContent(JsonView jsonValue)
+  : FileContent()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ AwsGuardDutyDetectorFeaturesDetails::AwsGuardDutyDetectorFeaturesDetails() :
 {
 }
 
-AwsGuardDutyDetectorFeaturesDetails::AwsGuardDutyDetectorFeaturesDetails(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_statusHasBeenSet(false)
+AwsGuardDutyDetectorFeaturesDetails::AwsGuardDutyDetectorFeaturesDetails(JsonView jsonValue)
+  : AwsGuardDutyDetectorFeaturesDetails()
 {
   *this = jsonValue;
 }

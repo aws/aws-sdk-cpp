@@ -32,15 +32,8 @@ LaunchTemplateSpotMarketOptionsRequest::LaunchTemplateSpotMarketOptionsRequest()
 {
 }
 
-LaunchTemplateSpotMarketOptionsRequest::LaunchTemplateSpotMarketOptionsRequest(const XmlNode& xmlNode) : 
-    m_maxPriceHasBeenSet(false),
-    m_spotInstanceType(SpotInstanceType::NOT_SET),
-    m_spotInstanceTypeHasBeenSet(false),
-    m_blockDurationMinutes(0),
-    m_blockDurationMinutesHasBeenSet(false),
-    m_validUntilHasBeenSet(false),
-    m_instanceInterruptionBehavior(InstanceInterruptionBehavior::NOT_SET),
-    m_instanceInterruptionBehaviorHasBeenSet(false)
+LaunchTemplateSpotMarketOptionsRequest::LaunchTemplateSpotMarketOptionsRequest(const XmlNode& xmlNode)
+  : LaunchTemplateSpotMarketOptionsRequest()
 {
   *this = xmlNode;
 }

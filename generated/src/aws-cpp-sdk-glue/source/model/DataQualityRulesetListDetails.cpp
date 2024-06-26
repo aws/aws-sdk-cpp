@@ -30,15 +30,8 @@ DataQualityRulesetListDetails::DataQualityRulesetListDetails() :
 {
 }
 
-DataQualityRulesetListDetails::DataQualityRulesetListDetails(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_createdOnHasBeenSet(false),
-    m_lastModifiedOnHasBeenSet(false),
-    m_targetTableHasBeenSet(false),
-    m_recommendationRunIdHasBeenSet(false),
-    m_ruleCount(0),
-    m_ruleCountHasBeenSet(false)
+DataQualityRulesetListDetails::DataQualityRulesetListDetails(JsonView jsonValue)
+  : DataQualityRulesetListDetails()
 {
   *this = jsonValue;
 }

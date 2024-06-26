@@ -24,9 +24,8 @@ ReplicationAlreadyExists::ReplicationAlreadyExists() :
 {
 }
 
-ReplicationAlreadyExists::ReplicationAlreadyExists(JsonView jsonValue) : 
-    m_errorCodeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+ReplicationAlreadyExists::ReplicationAlreadyExists(JsonView jsonValue)
+  : ReplicationAlreadyExists()
 {
   *this = jsonValue;
 }

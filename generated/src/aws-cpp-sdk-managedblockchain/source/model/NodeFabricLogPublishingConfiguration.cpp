@@ -24,9 +24,8 @@ NodeFabricLogPublishingConfiguration::NodeFabricLogPublishingConfiguration() :
 {
 }
 
-NodeFabricLogPublishingConfiguration::NodeFabricLogPublishingConfiguration(JsonView jsonValue) : 
-    m_chaincodeLogsHasBeenSet(false),
-    m_peerLogsHasBeenSet(false)
+NodeFabricLogPublishingConfiguration::NodeFabricLogPublishingConfiguration(JsonView jsonValue)
+  : NodeFabricLogPublishingConfiguration()
 {
   *this = jsonValue;
 }

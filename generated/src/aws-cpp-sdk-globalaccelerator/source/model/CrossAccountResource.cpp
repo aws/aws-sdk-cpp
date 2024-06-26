@@ -25,10 +25,8 @@ CrossAccountResource::CrossAccountResource() :
 {
 }
 
-CrossAccountResource::CrossAccountResource(JsonView jsonValue) : 
-    m_endpointIdHasBeenSet(false),
-    m_cidrHasBeenSet(false),
-    m_attachmentArnHasBeenSet(false)
+CrossAccountResource::CrossAccountResource(JsonView jsonValue)
+  : CrossAccountResource()
 {
   *this = jsonValue;
 }

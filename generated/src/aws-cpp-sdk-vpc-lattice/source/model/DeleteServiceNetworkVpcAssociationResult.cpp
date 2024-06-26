@@ -22,8 +22,8 @@ DeleteServiceNetworkVpcAssociationResult::DeleteServiceNetworkVpcAssociationResu
 {
 }
 
-DeleteServiceNetworkVpcAssociationResult::DeleteServiceNetworkVpcAssociationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(ServiceNetworkVpcAssociationStatus::NOT_SET)
+DeleteServiceNetworkVpcAssociationResult::DeleteServiceNetworkVpcAssociationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeleteServiceNetworkVpcAssociationResult()
 {
   *this = result;
 }

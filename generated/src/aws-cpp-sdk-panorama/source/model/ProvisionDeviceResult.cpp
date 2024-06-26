@@ -23,8 +23,8 @@ ProvisionDeviceResult::ProvisionDeviceResult() :
 {
 }
 
-ProvisionDeviceResult::ProvisionDeviceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(DeviceStatus::NOT_SET)
+ProvisionDeviceResult::ProvisionDeviceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ProvisionDeviceResult()
 {
   *this = result;
 }

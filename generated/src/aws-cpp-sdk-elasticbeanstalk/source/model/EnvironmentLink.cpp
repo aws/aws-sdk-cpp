@@ -26,9 +26,8 @@ EnvironmentLink::EnvironmentLink() :
 {
 }
 
-EnvironmentLink::EnvironmentLink(const XmlNode& xmlNode) : 
-    m_linkNameHasBeenSet(false),
-    m_environmentNameHasBeenSet(false)
+EnvironmentLink::EnvironmentLink(const XmlNode& xmlNode)
+  : EnvironmentLink()
 {
   *this = xmlNode;
 }

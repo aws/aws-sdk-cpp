@@ -28,11 +28,8 @@ NoncurrentVersionExpiration::NoncurrentVersionExpiration() :
 {
 }
 
-NoncurrentVersionExpiration::NoncurrentVersionExpiration(const XmlNode& xmlNode) : 
-    m_noncurrentDays(0),
-    m_noncurrentDaysHasBeenSet(false),
-    m_newerNoncurrentVersions(0),
-    m_newerNoncurrentVersionsHasBeenSet(false)
+NoncurrentVersionExpiration::NoncurrentVersionExpiration(const XmlNode& xmlNode)
+  : NoncurrentVersionExpiration()
 {
   *this = xmlNode;
 }

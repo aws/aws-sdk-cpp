@@ -23,8 +23,8 @@ Primary::Primary() :
 {
 }
 
-Primary::Primary(JsonView jsonValue) : 
-    m_healthCheckHasBeenSet(false)
+Primary::Primary(JsonView jsonValue)
+  : Primary()
 {
   *this = jsonValue;
 }

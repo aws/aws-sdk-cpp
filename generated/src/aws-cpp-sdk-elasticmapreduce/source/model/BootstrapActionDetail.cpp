@@ -23,8 +23,8 @@ BootstrapActionDetail::BootstrapActionDetail() :
 {
 }
 
-BootstrapActionDetail::BootstrapActionDetail(JsonView jsonValue) : 
-    m_bootstrapActionConfigHasBeenSet(false)
+BootstrapActionDetail::BootstrapActionDetail(JsonView jsonValue)
+  : BootstrapActionDetail()
 {
   *this = jsonValue;
 }

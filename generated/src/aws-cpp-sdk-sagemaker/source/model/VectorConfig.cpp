@@ -24,9 +24,8 @@ VectorConfig::VectorConfig() :
 {
 }
 
-VectorConfig::VectorConfig(JsonView jsonValue) : 
-    m_dimension(0),
-    m_dimensionHasBeenSet(false)
+VectorConfig::VectorConfig(JsonView jsonValue)
+  : VectorConfig()
 {
   *this = jsonValue;
 }

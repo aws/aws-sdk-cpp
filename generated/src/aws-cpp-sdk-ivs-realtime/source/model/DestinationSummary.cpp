@@ -27,12 +27,8 @@ DestinationSummary::DestinationSummary() :
 {
 }
 
-DestinationSummary::DestinationSummary(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_state(DestinationState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
+DestinationSummary::DestinationSummary(JsonView jsonValue)
+  : DestinationSummary()
 {
   *this = jsonValue;
 }

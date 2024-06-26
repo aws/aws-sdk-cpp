@@ -22,8 +22,8 @@ GetGraphSnapshotResult::GetGraphSnapshotResult() :
 {
 }
 
-GetGraphSnapshotResult::GetGraphSnapshotResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(SnapshotStatus::NOT_SET)
+GetGraphSnapshotResult::GetGraphSnapshotResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetGraphSnapshotResult()
 {
   *this = result;
 }

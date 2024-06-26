@@ -35,20 +35,8 @@ AppAuthorization::AppAuthorization() :
 {
 }
 
-AppAuthorization::AppAuthorization(JsonView jsonValue) : 
-    m_appAuthorizationArnHasBeenSet(false),
-    m_appBundleArnHasBeenSet(false),
-    m_appHasBeenSet(false),
-    m_tenantHasBeenSet(false),
-    m_authType(AuthType::NOT_SET),
-    m_authTypeHasBeenSet(false),
-    m_status(AppAuthorizationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_persona(Persona::NOT_SET),
-    m_personaHasBeenSet(false),
-    m_authUrlHasBeenSet(false)
+AppAuthorization::AppAuthorization(JsonView jsonValue)
+  : AppAuthorization()
 {
   *this = jsonValue;
 }

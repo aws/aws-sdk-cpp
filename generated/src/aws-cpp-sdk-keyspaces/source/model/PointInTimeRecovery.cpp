@@ -24,9 +24,8 @@ PointInTimeRecovery::PointInTimeRecovery() :
 {
 }
 
-PointInTimeRecovery::PointInTimeRecovery(JsonView jsonValue) : 
-    m_status(PointInTimeRecoveryStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+PointInTimeRecovery::PointInTimeRecovery(JsonView jsonValue)
+  : PointInTimeRecovery()
 {
   *this = jsonValue;
 }

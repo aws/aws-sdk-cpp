@@ -25,11 +25,8 @@ PutProfileObjectTypeResult::PutProfileObjectTypeResult() :
 {
 }
 
-PutProfileObjectTypeResult::PutProfileObjectTypeResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_expirationDays(0),
-    m_allowProfileCreation(false),
-    m_maxProfileObjectCount(0),
-    m_maxAvailableProfileObjectCount(0)
+PutProfileObjectTypeResult::PutProfileObjectTypeResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : PutProfileObjectTypeResult()
 {
   *this = result;
 }

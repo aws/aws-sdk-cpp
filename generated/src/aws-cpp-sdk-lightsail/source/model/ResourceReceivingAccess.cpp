@@ -24,9 +24,8 @@ ResourceReceivingAccess::ResourceReceivingAccess() :
 {
 }
 
-ResourceReceivingAccess::ResourceReceivingAccess(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false)
+ResourceReceivingAccess::ResourceReceivingAccess(JsonView jsonValue)
+  : ResourceReceivingAccess()
 {
   *this = jsonValue;
 }

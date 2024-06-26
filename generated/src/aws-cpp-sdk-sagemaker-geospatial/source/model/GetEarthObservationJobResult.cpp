@@ -24,10 +24,8 @@ GetEarthObservationJobResult::GetEarthObservationJobResult() :
 {
 }
 
-GetEarthObservationJobResult::GetEarthObservationJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_durationInSeconds(0),
-    m_exportStatus(EarthObservationJobExportStatus::NOT_SET),
-    m_status(EarthObservationJobStatus::NOT_SET)
+GetEarthObservationJobResult::GetEarthObservationJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetEarthObservationJobResult()
 {
   *this = result;
 }

@@ -23,8 +23,8 @@ EmailRecipients::EmailRecipients() :
 {
 }
 
-EmailRecipients::EmailRecipients(JsonView jsonValue) : 
-    m_toHasBeenSet(false)
+EmailRecipients::EmailRecipients(JsonView jsonValue)
+  : EmailRecipients()
 {
   *this = jsonValue;
 }

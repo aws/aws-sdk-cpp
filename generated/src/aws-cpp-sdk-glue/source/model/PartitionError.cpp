@@ -24,9 +24,8 @@ PartitionError::PartitionError() :
 {
 }
 
-PartitionError::PartitionError(JsonView jsonValue) : 
-    m_partitionValuesHasBeenSet(false),
-    m_errorDetailHasBeenSet(false)
+PartitionError::PartitionError(JsonView jsonValue)
+  : PartitionError()
 {
   *this = jsonValue;
 }

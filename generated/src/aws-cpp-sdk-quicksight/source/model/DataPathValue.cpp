@@ -25,10 +25,8 @@ DataPathValue::DataPathValue() :
 {
 }
 
-DataPathValue::DataPathValue(JsonView jsonValue) : 
-    m_fieldIdHasBeenSet(false),
-    m_fieldValueHasBeenSet(false),
-    m_dataPathTypeHasBeenSet(false)
+DataPathValue::DataPathValue(JsonView jsonValue)
+  : DataPathValue()
 {
   *this = jsonValue;
 }

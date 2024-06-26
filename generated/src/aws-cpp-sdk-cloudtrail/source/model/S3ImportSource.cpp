@@ -25,10 +25,8 @@ S3ImportSource::S3ImportSource() :
 {
 }
 
-S3ImportSource::S3ImportSource(JsonView jsonValue) : 
-    m_s3LocationUriHasBeenSet(false),
-    m_s3BucketRegionHasBeenSet(false),
-    m_s3BucketAccessRoleArnHasBeenSet(false)
+S3ImportSource::S3ImportSource(JsonView jsonValue)
+  : S3ImportSource()
 {
   *this = jsonValue;
 }

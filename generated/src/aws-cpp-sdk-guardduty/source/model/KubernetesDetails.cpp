@@ -24,9 +24,8 @@ KubernetesDetails::KubernetesDetails() :
 {
 }
 
-KubernetesDetails::KubernetesDetails(JsonView jsonValue) : 
-    m_kubernetesUserDetailsHasBeenSet(false),
-    m_kubernetesWorkloadDetailsHasBeenSet(false)
+KubernetesDetails::KubernetesDetails(JsonView jsonValue)
+  : KubernetesDetails()
 {
   *this = jsonValue;
 }

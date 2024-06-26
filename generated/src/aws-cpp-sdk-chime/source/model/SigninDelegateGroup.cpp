@@ -23,8 +23,8 @@ SigninDelegateGroup::SigninDelegateGroup() :
 {
 }
 
-SigninDelegateGroup::SigninDelegateGroup(JsonView jsonValue) : 
-    m_groupNameHasBeenSet(false)
+SigninDelegateGroup::SigninDelegateGroup(JsonView jsonValue)
+  : SigninDelegateGroup()
 {
   *this = jsonValue;
 }

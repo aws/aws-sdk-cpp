@@ -33,18 +33,8 @@ InstalledComponent::InstalledComponent() :
 {
 }
 
-InstalledComponent::InstalledComponent(JsonView jsonValue) : 
-    m_componentNameHasBeenSet(false),
-    m_componentVersionHasBeenSet(false),
-    m_lifecycleState(InstalledComponentLifecycleState::NOT_SET),
-    m_lifecycleStateHasBeenSet(false),
-    m_lifecycleStateDetailsHasBeenSet(false),
-    m_isRoot(false),
-    m_isRootHasBeenSet(false),
-    m_lastStatusChangeTimestampHasBeenSet(false),
-    m_lastReportedTimestampHasBeenSet(false),
-    m_lastInstallationSourceHasBeenSet(false),
-    m_lifecycleStatusCodesHasBeenSet(false)
+InstalledComponent::InstalledComponent(JsonView jsonValue)
+  : InstalledComponent()
 {
   *this = jsonValue;
 }

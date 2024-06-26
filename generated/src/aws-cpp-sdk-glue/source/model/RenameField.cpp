@@ -26,11 +26,8 @@ RenameField::RenameField() :
 {
 }
 
-RenameField::RenameField(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_inputsHasBeenSet(false),
-    m_sourcePathHasBeenSet(false),
-    m_targetPathHasBeenSet(false)
+RenameField::RenameField(JsonView jsonValue)
+  : RenameField()
 {
   *this = jsonValue;
 }

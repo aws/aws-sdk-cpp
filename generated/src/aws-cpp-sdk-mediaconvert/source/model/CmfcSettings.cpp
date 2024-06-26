@@ -46,31 +46,8 @@ CmfcSettings::CmfcSettings() :
 {
 }
 
-CmfcSettings::CmfcSettings(JsonView jsonValue) : 
-    m_audioDuration(CmfcAudioDuration::NOT_SET),
-    m_audioDurationHasBeenSet(false),
-    m_audioGroupIdHasBeenSet(false),
-    m_audioRenditionSetsHasBeenSet(false),
-    m_audioTrackType(CmfcAudioTrackType::NOT_SET),
-    m_audioTrackTypeHasBeenSet(false),
-    m_descriptiveVideoServiceFlag(CmfcDescriptiveVideoServiceFlag::NOT_SET),
-    m_descriptiveVideoServiceFlagHasBeenSet(false),
-    m_iFrameOnlyManifest(CmfcIFrameOnlyManifest::NOT_SET),
-    m_iFrameOnlyManifestHasBeenSet(false),
-    m_klvMetadata(CmfcKlvMetadata::NOT_SET),
-    m_klvMetadataHasBeenSet(false),
-    m_manifestMetadataSignaling(CmfcManifestMetadataSignaling::NOT_SET),
-    m_manifestMetadataSignalingHasBeenSet(false),
-    m_scte35Esam(CmfcScte35Esam::NOT_SET),
-    m_scte35EsamHasBeenSet(false),
-    m_scte35Source(CmfcScte35Source::NOT_SET),
-    m_scte35SourceHasBeenSet(false),
-    m_timedMetadata(CmfcTimedMetadata::NOT_SET),
-    m_timedMetadataHasBeenSet(false),
-    m_timedMetadataBoxVersion(CmfcTimedMetadataBoxVersion::NOT_SET),
-    m_timedMetadataBoxVersionHasBeenSet(false),
-    m_timedMetadataSchemeIdUriHasBeenSet(false),
-    m_timedMetadataValueHasBeenSet(false)
+CmfcSettings::CmfcSettings(JsonView jsonValue)
+  : CmfcSettings()
 {
   *this = jsonValue;
 }

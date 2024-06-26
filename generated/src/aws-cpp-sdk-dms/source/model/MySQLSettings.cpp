@@ -44,29 +44,8 @@ MySQLSettings::MySQLSettings() :
 {
 }
 
-MySQLSettings::MySQLSettings(JsonView jsonValue) : 
-    m_afterConnectScriptHasBeenSet(false),
-    m_cleanSourceMetadataOnMismatch(false),
-    m_cleanSourceMetadataOnMismatchHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_eventsPollInterval(0),
-    m_eventsPollIntervalHasBeenSet(false),
-    m_targetDbType(TargetDbType::NOT_SET),
-    m_targetDbTypeHasBeenSet(false),
-    m_maxFileSize(0),
-    m_maxFileSizeHasBeenSet(false),
-    m_parallelLoadThreads(0),
-    m_parallelLoadThreadsHasBeenSet(false),
-    m_passwordHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_serverNameHasBeenSet(false),
-    m_serverTimezoneHasBeenSet(false),
-    m_usernameHasBeenSet(false),
-    m_secretsManagerAccessRoleArnHasBeenSet(false),
-    m_secretsManagerSecretIdHasBeenSet(false),
-    m_executeTimeout(0),
-    m_executeTimeoutHasBeenSet(false)
+MySQLSettings::MySQLSettings(JsonView jsonValue)
+  : MySQLSettings()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ TargetedSentimentEntity::TargetedSentimentEntity() :
 {
 }
 
-TargetedSentimentEntity::TargetedSentimentEntity(JsonView jsonValue) : 
-    m_descriptiveMentionIndexHasBeenSet(false),
-    m_mentionsHasBeenSet(false)
+TargetedSentimentEntity::TargetedSentimentEntity(JsonView jsonValue)
+  : TargetedSentimentEntity()
 {
   *this = jsonValue;
 }

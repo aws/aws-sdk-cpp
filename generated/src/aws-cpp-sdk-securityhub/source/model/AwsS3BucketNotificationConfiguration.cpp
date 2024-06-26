@@ -23,8 +23,8 @@ AwsS3BucketNotificationConfiguration::AwsS3BucketNotificationConfiguration() :
 {
 }
 
-AwsS3BucketNotificationConfiguration::AwsS3BucketNotificationConfiguration(JsonView jsonValue) : 
-    m_configurationsHasBeenSet(false)
+AwsS3BucketNotificationConfiguration::AwsS3BucketNotificationConfiguration(JsonView jsonValue)
+  : AwsS3BucketNotificationConfiguration()
 {
   *this = jsonValue;
 }

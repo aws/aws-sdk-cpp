@@ -44,29 +44,8 @@ RDSDBRecommendation::RDSDBRecommendation() :
 {
 }
 
-RDSDBRecommendation::RDSDBRecommendation(JsonView jsonValue) : 
-    m_resourceArnHasBeenSet(false),
-    m_accountIdHasBeenSet(false),
-    m_engineHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_currentDBInstanceClassHasBeenSet(false),
-    m_currentStorageConfigurationHasBeenSet(false),
-    m_idle(Idle::NOT_SET),
-    m_idleHasBeenSet(false),
-    m_instanceFinding(RDSInstanceFinding::NOT_SET),
-    m_instanceFindingHasBeenSet(false),
-    m_storageFinding(RDSStorageFinding::NOT_SET),
-    m_storageFindingHasBeenSet(false),
-    m_instanceFindingReasonCodesHasBeenSet(false),
-    m_storageFindingReasonCodesHasBeenSet(false),
-    m_instanceRecommendationOptionsHasBeenSet(false),
-    m_storageRecommendationOptionsHasBeenSet(false),
-    m_utilizationMetricsHasBeenSet(false),
-    m_effectiveRecommendationPreferencesHasBeenSet(false),
-    m_lookbackPeriodInDays(0.0),
-    m_lookbackPeriodInDaysHasBeenSet(false),
-    m_lastRefreshTimestampHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+RDSDBRecommendation::RDSDBRecommendation(JsonView jsonValue)
+  : RDSDBRecommendation()
 {
   *this = jsonValue;
 }

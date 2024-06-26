@@ -32,17 +32,8 @@ UpdatedSessionActionInfo::UpdatedSessionActionInfo() :
 {
 }
 
-UpdatedSessionActionInfo::UpdatedSessionActionInfo(JsonView jsonValue) : 
-    m_completedStatus(CompletedStatus::NOT_SET),
-    m_completedStatusHasBeenSet(false),
-    m_endedAtHasBeenSet(false),
-    m_processExitCode(0),
-    m_processExitCodeHasBeenSet(false),
-    m_progressMessageHasBeenSet(false),
-    m_progressPercent(0.0),
-    m_progressPercentHasBeenSet(false),
-    m_startedAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+UpdatedSessionActionInfo::UpdatedSessionActionInfo(JsonView jsonValue)
+  : UpdatedSessionActionInfo()
 {
   *this = jsonValue;
 }

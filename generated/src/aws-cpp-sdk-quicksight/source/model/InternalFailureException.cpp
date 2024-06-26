@@ -24,9 +24,8 @@ InternalFailureException::InternalFailureException() :
 {
 }
 
-InternalFailureException::InternalFailureException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
+InternalFailureException::InternalFailureException(JsonView jsonValue)
+  : InternalFailureException()
 {
   *this = jsonValue;
 }

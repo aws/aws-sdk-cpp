@@ -27,12 +27,8 @@ LastDeploymentInfo::LastDeploymentInfo() :
 {
 }
 
-LastDeploymentInfo::LastDeploymentInfo(JsonView jsonValue) : 
-    m_deploymentIdHasBeenSet(false),
-    m_status(DeploymentStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_createTimeHasBeenSet(false)
+LastDeploymentInfo::LastDeploymentInfo(JsonView jsonValue)
+  : LastDeploymentInfo()
 {
   *this = jsonValue;
 }

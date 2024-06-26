@@ -25,10 +25,8 @@ FilterCriterion::FilterCriterion() :
 {
 }
 
-FilterCriterion::FilterCriterion(JsonView jsonValue) : 
-    m_criterionKey(CriterionKey::NOT_SET),
-    m_criterionKeyHasBeenSet(false),
-    m_filterConditionHasBeenSet(false)
+FilterCriterion::FilterCriterion(JsonView jsonValue)
+  : FilterCriterion()
 {
   *this = jsonValue;
 }

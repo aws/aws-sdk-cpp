@@ -27,10 +27,8 @@ LaunchTemplateTagSpecificationRequest::LaunchTemplateTagSpecificationRequest() :
 {
 }
 
-LaunchTemplateTagSpecificationRequest::LaunchTemplateTagSpecificationRequest(const XmlNode& xmlNode) : 
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+LaunchTemplateTagSpecificationRequest::LaunchTemplateTagSpecificationRequest(const XmlNode& xmlNode)
+  : LaunchTemplateTagSpecificationRequest()
 {
   *this = xmlNode;
 }

@@ -24,9 +24,8 @@ TransactionCanceledException::TransactionCanceledException() :
 {
 }
 
-TransactionCanceledException::TransactionCanceledException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_cancellationReasonsHasBeenSet(false)
+TransactionCanceledException::TransactionCanceledException(JsonView jsonValue)
+  : TransactionCanceledException()
 {
   *this = jsonValue;
 }

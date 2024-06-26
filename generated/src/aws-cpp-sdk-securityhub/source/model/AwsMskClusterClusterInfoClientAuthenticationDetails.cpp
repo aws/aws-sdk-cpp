@@ -25,10 +25,8 @@ AwsMskClusterClusterInfoClientAuthenticationDetails::AwsMskClusterClusterInfoCli
 {
 }
 
-AwsMskClusterClusterInfoClientAuthenticationDetails::AwsMskClusterClusterInfoClientAuthenticationDetails(JsonView jsonValue) : 
-    m_saslHasBeenSet(false),
-    m_unauthenticatedHasBeenSet(false),
-    m_tlsHasBeenSet(false)
+AwsMskClusterClusterInfoClientAuthenticationDetails::AwsMskClusterClusterInfoClientAuthenticationDetails(JsonView jsonValue)
+  : AwsMskClusterClusterInfoClientAuthenticationDetails()
 {
   *this = jsonValue;
 }

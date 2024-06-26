@@ -28,13 +28,8 @@ AssetModelCompositeModelDefinition::AssetModelCompositeModelDefinition() :
 {
 }
 
-AssetModelCompositeModelDefinition::AssetModelCompositeModelDefinition(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_propertiesHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_externalIdHasBeenSet(false)
+AssetModelCompositeModelDefinition::AssetModelCompositeModelDefinition(JsonView jsonValue)
+  : AssetModelCompositeModelDefinition()
 {
   *this = jsonValue;
 }

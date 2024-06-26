@@ -24,9 +24,8 @@ MediaPipelineSummary::MediaPipelineSummary() :
 {
 }
 
-MediaPipelineSummary::MediaPipelineSummary(JsonView jsonValue) : 
-    m_mediaPipelineIdHasBeenSet(false),
-    m_mediaPipelineArnHasBeenSet(false)
+MediaPipelineSummary::MediaPipelineSummary(JsonView jsonValue)
+  : MediaPipelineSummary()
 {
   *this = jsonValue;
 }

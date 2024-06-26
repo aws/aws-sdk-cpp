@@ -26,11 +26,8 @@ RunMetrics::RunMetrics() :
 {
 }
 
-RunMetrics::RunMetrics(JsonView jsonValue) : 
-    m_numberOfBytesCompactedHasBeenSet(false),
-    m_numberOfFilesCompactedHasBeenSet(false),
-    m_numberOfDpusHasBeenSet(false),
-    m_jobDurationInHourHasBeenSet(false)
+RunMetrics::RunMetrics(JsonView jsonValue)
+  : RunMetrics()
 {
   *this = jsonValue;
 }

@@ -27,12 +27,8 @@ EnvironmentDetailsError::EnvironmentDetailsError() :
 {
 }
 
-EnvironmentDetailsError::EnvironmentDetailsError(JsonView jsonValue) : 
-    m_code(JobEntityErrorCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_environmentIdHasBeenSet(false),
-    m_jobIdHasBeenSet(false),
-    m_messageHasBeenSet(false)
+EnvironmentDetailsError::EnvironmentDetailsError(JsonView jsonValue)
+  : EnvironmentDetailsError()
 {
   *this = jsonValue;
 }

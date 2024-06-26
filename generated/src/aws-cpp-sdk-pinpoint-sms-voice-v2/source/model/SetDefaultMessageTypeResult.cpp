@@ -22,8 +22,8 @@ SetDefaultMessageTypeResult::SetDefaultMessageTypeResult() :
 {
 }
 
-SetDefaultMessageTypeResult::SetDefaultMessageTypeResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_messageType(MessageType::NOT_SET)
+SetDefaultMessageTypeResult::SetDefaultMessageTypeResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : SetDefaultMessageTypeResult()
 {
   *this = result;
 }

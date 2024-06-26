@@ -25,10 +25,8 @@ DataLakeLifecycleTransition::DataLakeLifecycleTransition() :
 {
 }
 
-DataLakeLifecycleTransition::DataLakeLifecycleTransition(JsonView jsonValue) : 
-    m_days(0),
-    m_daysHasBeenSet(false),
-    m_storageClassHasBeenSet(false)
+DataLakeLifecycleTransition::DataLakeLifecycleTransition(JsonView jsonValue)
+  : DataLakeLifecycleTransition()
 {
   *this = jsonValue;
 }

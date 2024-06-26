@@ -26,9 +26,8 @@ TransitGatewayConnectOptions::TransitGatewayConnectOptions() :
 {
 }
 
-TransitGatewayConnectOptions::TransitGatewayConnectOptions(const XmlNode& xmlNode) : 
-    m_protocol(ProtocolValue::NOT_SET),
-    m_protocolHasBeenSet(false)
+TransitGatewayConnectOptions::TransitGatewayConnectOptions(const XmlNode& xmlNode)
+  : TransitGatewayConnectOptions()
 {
   *this = xmlNode;
 }

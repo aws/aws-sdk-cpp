@@ -25,10 +25,8 @@ HumanLoopQuotaExceededException::HumanLoopQuotaExceededException() :
 {
 }
 
-HumanLoopQuotaExceededException::HumanLoopQuotaExceededException(JsonView jsonValue) : 
-    m_resourceTypeHasBeenSet(false),
-    m_quotaCodeHasBeenSet(false),
-    m_serviceCodeHasBeenSet(false)
+HumanLoopQuotaExceededException::HumanLoopQuotaExceededException(JsonView jsonValue)
+  : HumanLoopQuotaExceededException()
 {
   *this = jsonValue;
 }

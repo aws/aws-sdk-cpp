@@ -23,8 +23,8 @@ CreateProtectedResource::CreateProtectedResource() :
 {
 }
 
-CreateProtectedResource::CreateProtectedResource(JsonView jsonValue) : 
-    m_s3BucketHasBeenSet(false)
+CreateProtectedResource::CreateProtectedResource(JsonView jsonValue)
+  : CreateProtectedResource()
 {
   *this = jsonValue;
 }

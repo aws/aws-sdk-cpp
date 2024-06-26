@@ -24,9 +24,8 @@ SearchCriteria::SearchCriteria() :
 {
 }
 
-SearchCriteria::SearchCriteria(JsonView jsonValue) : 
-    m_filtersHasBeenSet(false),
-    m_sortHasBeenSet(false)
+SearchCriteria::SearchCriteria(JsonView jsonValue)
+  : SearchCriteria()
 {
   *this = jsonValue;
 }

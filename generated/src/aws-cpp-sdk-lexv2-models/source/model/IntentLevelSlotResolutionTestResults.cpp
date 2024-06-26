@@ -23,8 +23,8 @@ IntentLevelSlotResolutionTestResults::IntentLevelSlotResolutionTestResults() :
 {
 }
 
-IntentLevelSlotResolutionTestResults::IntentLevelSlotResolutionTestResults(JsonView jsonValue) : 
-    m_itemsHasBeenSet(false)
+IntentLevelSlotResolutionTestResults::IntentLevelSlotResolutionTestResults(JsonView jsonValue)
+  : IntentLevelSlotResolutionTestResults()
 {
   *this = jsonValue;
 }

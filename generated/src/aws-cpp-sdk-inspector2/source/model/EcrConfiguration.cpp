@@ -26,11 +26,8 @@ EcrConfiguration::EcrConfiguration() :
 {
 }
 
-EcrConfiguration::EcrConfiguration(JsonView jsonValue) : 
-    m_pullDateRescanDuration(EcrPullDateRescanDuration::NOT_SET),
-    m_pullDateRescanDurationHasBeenSet(false),
-    m_rescanDuration(EcrRescanDuration::NOT_SET),
-    m_rescanDurationHasBeenSet(false)
+EcrConfiguration::EcrConfiguration(JsonView jsonValue)
+  : EcrConfiguration()
 {
   *this = jsonValue;
 }

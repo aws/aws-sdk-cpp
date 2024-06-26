@@ -25,10 +25,8 @@ StatusDetailFilters::StatusDetailFilters() :
 {
 }
 
-StatusDetailFilters::StatusDetailFilters(JsonView jsonValue) : 
-    m_accountIdHasBeenSet(false),
-    m_memberAccountRuleStatus(MemberAccountRuleStatus::NOT_SET),
-    m_memberAccountRuleStatusHasBeenSet(false)
+StatusDetailFilters::StatusDetailFilters(JsonView jsonValue)
+  : StatusDetailFilters()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ ModifyVerifiedAccessGroupPolicyResponse::ModifyVerifiedAccessGroupPolicyResponse
 {
 }
 
-ModifyVerifiedAccessGroupPolicyResponse::ModifyVerifiedAccessGroupPolicyResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_policyEnabled(false)
+ModifyVerifiedAccessGroupPolicyResponse::ModifyVerifiedAccessGroupPolicyResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : ModifyVerifiedAccessGroupPolicyResponse()
 {
   *this = result;
 }

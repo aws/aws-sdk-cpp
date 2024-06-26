@@ -24,9 +24,8 @@ FrameMetricDatum::FrameMetricDatum() :
 {
 }
 
-FrameMetricDatum::FrameMetricDatum(JsonView jsonValue) : 
-    m_frameMetricHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+FrameMetricDatum::FrameMetricDatum(JsonView jsonValue)
+  : FrameMetricDatum()
 {
   *this = jsonValue;
 }

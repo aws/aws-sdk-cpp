@@ -30,15 +30,8 @@ Rectangle::Rectangle() :
 {
 }
 
-Rectangle::Rectangle(JsonView jsonValue) : 
-    m_height(0),
-    m_heightHasBeenSet(false),
-    m_width(0),
-    m_widthHasBeenSet(false),
-    m_x(0),
-    m_xHasBeenSet(false),
-    m_y(0),
-    m_yHasBeenSet(false)
+Rectangle::Rectangle(JsonView jsonValue)
+  : Rectangle()
 {
   *this = jsonValue;
 }

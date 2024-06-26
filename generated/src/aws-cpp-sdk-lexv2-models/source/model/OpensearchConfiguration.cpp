@@ -28,13 +28,8 @@ OpensearchConfiguration::OpensearchConfiguration() :
 {
 }
 
-OpensearchConfiguration::OpensearchConfiguration(JsonView jsonValue) : 
-    m_domainEndpointHasBeenSet(false),
-    m_indexNameHasBeenSet(false),
-    m_exactResponse(false),
-    m_exactResponseHasBeenSet(false),
-    m_exactResponseFieldsHasBeenSet(false),
-    m_includeFieldsHasBeenSet(false)
+OpensearchConfiguration::OpensearchConfiguration(JsonView jsonValue)
+  : OpensearchConfiguration()
 {
   *this = jsonValue;
 }

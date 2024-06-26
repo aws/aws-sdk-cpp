@@ -24,9 +24,8 @@ CaptureOption::CaptureOption() :
 {
 }
 
-CaptureOption::CaptureOption(JsonView jsonValue) : 
-    m_captureMode(CaptureMode::NOT_SET),
-    m_captureModeHasBeenSet(false)
+CaptureOption::CaptureOption(JsonView jsonValue)
+  : CaptureOption()
 {
   *this = jsonValue;
 }

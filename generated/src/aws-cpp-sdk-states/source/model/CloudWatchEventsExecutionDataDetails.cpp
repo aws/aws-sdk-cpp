@@ -24,9 +24,8 @@ CloudWatchEventsExecutionDataDetails::CloudWatchEventsExecutionDataDetails() :
 {
 }
 
-CloudWatchEventsExecutionDataDetails::CloudWatchEventsExecutionDataDetails(JsonView jsonValue) : 
-    m_included(false),
-    m_includedHasBeenSet(false)
+CloudWatchEventsExecutionDataDetails::CloudWatchEventsExecutionDataDetails(JsonView jsonValue)
+  : CloudWatchEventsExecutionDataDetails()
 {
   *this = jsonValue;
 }

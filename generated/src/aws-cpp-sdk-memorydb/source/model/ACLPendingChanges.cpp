@@ -24,9 +24,8 @@ ACLPendingChanges::ACLPendingChanges() :
 {
 }
 
-ACLPendingChanges::ACLPendingChanges(JsonView jsonValue) : 
-    m_userNamesToRemoveHasBeenSet(false),
-    m_userNamesToAddHasBeenSet(false)
+ACLPendingChanges::ACLPendingChanges(JsonView jsonValue)
+  : ACLPendingChanges()
 {
   *this = jsonValue;
 }

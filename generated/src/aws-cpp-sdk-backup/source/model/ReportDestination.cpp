@@ -24,9 +24,8 @@ ReportDestination::ReportDestination() :
 {
 }
 
-ReportDestination::ReportDestination(JsonView jsonValue) : 
-    m_s3BucketNameHasBeenSet(false),
-    m_s3KeysHasBeenSet(false)
+ReportDestination::ReportDestination(JsonView jsonValue)
+  : ReportDestination()
 {
   *this = jsonValue;
 }

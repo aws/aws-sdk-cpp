@@ -28,13 +28,8 @@ Timing::Timing() :
 {
 }
 
-Timing::Timing(JsonView jsonValue) : 
-    m_submitTimeMillis(0),
-    m_submitTimeMillisHasBeenSet(false),
-    m_startTimeMillis(0),
-    m_startTimeMillisHasBeenSet(false),
-    m_finishTimeMillis(0),
-    m_finishTimeMillisHasBeenSet(false)
+Timing::Timing(JsonView jsonValue)
+  : Timing()
 {
   *this = jsonValue;
 }

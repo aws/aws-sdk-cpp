@@ -27,12 +27,8 @@ MemberIndex::MemberIndex() :
 {
 }
 
-MemberIndex::MemberIndex(JsonView jsonValue) : 
-    m_accountIdHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_type(IndexType::NOT_SET),
-    m_typeHasBeenSet(false)
+MemberIndex::MemberIndex(JsonView jsonValue)
+  : MemberIndex()
 {
   *this = jsonValue;
 }

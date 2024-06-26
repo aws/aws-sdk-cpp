@@ -28,13 +28,8 @@ Layer::Layer() :
 {
 }
 
-Layer::Layer(JsonView jsonValue) : 
-    m_layerDigestHasBeenSet(false),
-    m_layerAvailability(LayerAvailability::NOT_SET),
-    m_layerAvailabilityHasBeenSet(false),
-    m_layerSize(0),
-    m_layerSizeHasBeenSet(false),
-    m_mediaTypeHasBeenSet(false)
+Layer::Layer(JsonView jsonValue)
+  : Layer()
 {
   *this = jsonValue;
 }

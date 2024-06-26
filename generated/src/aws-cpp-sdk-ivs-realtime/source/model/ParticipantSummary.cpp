@@ -31,16 +31,8 @@ ParticipantSummary::ParticipantSummary() :
 {
 }
 
-ParticipantSummary::ParticipantSummary(JsonView jsonValue) : 
-    m_participantIdHasBeenSet(false),
-    m_userIdHasBeenSet(false),
-    m_state(ParticipantState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_firstJoinTimeHasBeenSet(false),
-    m_published(false),
-    m_publishedHasBeenSet(false),
-    m_recordingState(ParticipantRecordingState::NOT_SET),
-    m_recordingStateHasBeenSet(false)
+ParticipantSummary::ParticipantSummary(JsonView jsonValue)
+  : ParticipantSummary()
 {
   *this = jsonValue;
 }

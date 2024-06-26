@@ -24,9 +24,8 @@ ListDashManifestConfiguration::ListDashManifestConfiguration() :
 {
 }
 
-ListDashManifestConfiguration::ListDashManifestConfiguration(JsonView jsonValue) : 
-    m_manifestNameHasBeenSet(false),
-    m_urlHasBeenSet(false)
+ListDashManifestConfiguration::ListDashManifestConfiguration(JsonView jsonValue)
+  : ListDashManifestConfiguration()
 {
   *this = jsonValue;
 }

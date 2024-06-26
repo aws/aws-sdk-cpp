@@ -27,12 +27,8 @@ CrawlsFilter::CrawlsFilter() :
 {
 }
 
-CrawlsFilter::CrawlsFilter(JsonView jsonValue) : 
-    m_fieldName(FieldName::NOT_SET),
-    m_fieldNameHasBeenSet(false),
-    m_filterOperator(FilterOperator::NOT_SET),
-    m_filterOperatorHasBeenSet(false),
-    m_fieldValueHasBeenSet(false)
+CrawlsFilter::CrawlsFilter(JsonView jsonValue)
+  : CrawlsFilter()
 {
   *this = jsonValue;
 }

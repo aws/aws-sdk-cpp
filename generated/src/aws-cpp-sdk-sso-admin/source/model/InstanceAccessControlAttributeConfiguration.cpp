@@ -23,8 +23,8 @@ InstanceAccessControlAttributeConfiguration::InstanceAccessControlAttributeConfi
 {
 }
 
-InstanceAccessControlAttributeConfiguration::InstanceAccessControlAttributeConfiguration(JsonView jsonValue) : 
-    m_accessControlAttributesHasBeenSet(false)
+InstanceAccessControlAttributeConfiguration::InstanceAccessControlAttributeConfiguration(JsonView jsonValue)
+  : InstanceAccessControlAttributeConfiguration()
 {
   *this = jsonValue;
 }

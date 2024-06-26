@@ -25,10 +25,8 @@ AudioQualityMetricsInfo::AudioQualityMetricsInfo() :
 {
 }
 
-AudioQualityMetricsInfo::AudioQualityMetricsInfo(JsonView jsonValue) : 
-    m_qualityScore(0.0),
-    m_qualityScoreHasBeenSet(false),
-    m_potentialQualityIssuesHasBeenSet(false)
+AudioQualityMetricsInfo::AudioQualityMetricsInfo(JsonView jsonValue)
+  : AudioQualityMetricsInfo()
 {
   *this = jsonValue;
 }

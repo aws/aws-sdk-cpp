@@ -23,9 +23,8 @@ GetTableResult::GetTableResult() :
 {
 }
 
-GetTableResult::GetTableResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(TableStatus::NOT_SET),
-    m_defaultTimeToLive(0)
+GetTableResult::GetTableResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetTableResult()
 {
   *this = result;
 }

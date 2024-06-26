@@ -28,13 +28,8 @@ CorsRule::CorsRule() :
 {
 }
 
-CorsRule::CorsRule(JsonView jsonValue) : 
-    m_allowedOriginsHasBeenSet(false),
-    m_allowedMethodsHasBeenSet(false),
-    m_allowedHeadersHasBeenSet(false),
-    m_maxAgeSeconds(0),
-    m_maxAgeSecondsHasBeenSet(false),
-    m_exposeHeadersHasBeenSet(false)
+CorsRule::CorsRule(JsonView jsonValue)
+  : CorsRule()
 {
   *this = jsonValue;
 }

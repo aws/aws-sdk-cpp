@@ -51,34 +51,8 @@ ClientVpnEndpoint::ClientVpnEndpoint() :
 {
 }
 
-ClientVpnEndpoint::ClientVpnEndpoint(const XmlNode& xmlNode) : 
-    m_clientVpnEndpointIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_deletionTimeHasBeenSet(false),
-    m_dnsNameHasBeenSet(false),
-    m_clientCidrBlockHasBeenSet(false),
-    m_dnsServersHasBeenSet(false),
-    m_splitTunnel(false),
-    m_splitTunnelHasBeenSet(false),
-    m_vpnProtocol(VpnProtocol::NOT_SET),
-    m_vpnProtocolHasBeenSet(false),
-    m_transportProtocol(TransportProtocol::NOT_SET),
-    m_transportProtocolHasBeenSet(false),
-    m_vpnPort(0),
-    m_vpnPortHasBeenSet(false),
-    m_serverCertificateArnHasBeenSet(false),
-    m_authenticationOptionsHasBeenSet(false),
-    m_connectionLogOptionsHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_selfServicePortalUrlHasBeenSet(false),
-    m_clientConnectOptionsHasBeenSet(false),
-    m_sessionTimeoutHours(0),
-    m_sessionTimeoutHoursHasBeenSet(false),
-    m_clientLoginBannerOptionsHasBeenSet(false)
+ClientVpnEndpoint::ClientVpnEndpoint(const XmlNode& xmlNode)
+  : ClientVpnEndpoint()
 {
   *this = xmlNode;
 }

@@ -26,11 +26,8 @@ WorkerConfigurationRevisionSummary::WorkerConfigurationRevisionSummary() :
 {
 }
 
-WorkerConfigurationRevisionSummary::WorkerConfigurationRevisionSummary(JsonView jsonValue) : 
-    m_creationTimeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_revision(0),
-    m_revisionHasBeenSet(false)
+WorkerConfigurationRevisionSummary::WorkerConfigurationRevisionSummary(JsonView jsonValue)
+  : WorkerConfigurationRevisionSummary()
 {
   *this = jsonValue;
 }

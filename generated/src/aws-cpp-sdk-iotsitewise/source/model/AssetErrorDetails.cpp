@@ -26,11 +26,8 @@ AssetErrorDetails::AssetErrorDetails() :
 {
 }
 
-AssetErrorDetails::AssetErrorDetails(JsonView jsonValue) : 
-    m_assetIdHasBeenSet(false),
-    m_code(AssetErrorCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+AssetErrorDetails::AssetErrorDetails(JsonView jsonValue)
+  : AssetErrorDetails()
 {
   *this = jsonValue;
 }

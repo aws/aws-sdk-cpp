@@ -32,17 +32,8 @@ IntegrationAssociationSummary::IntegrationAssociationSummary() :
 {
 }
 
-IntegrationAssociationSummary::IntegrationAssociationSummary(JsonView jsonValue) : 
-    m_integrationAssociationIdHasBeenSet(false),
-    m_integrationAssociationArnHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_integrationType(IntegrationType::NOT_SET),
-    m_integrationTypeHasBeenSet(false),
-    m_integrationArnHasBeenSet(false),
-    m_sourceApplicationUrlHasBeenSet(false),
-    m_sourceApplicationNameHasBeenSet(false),
-    m_sourceType(SourceType::NOT_SET),
-    m_sourceTypeHasBeenSet(false)
+IntegrationAssociationSummary::IntegrationAssociationSummary(JsonView jsonValue)
+  : IntegrationAssociationSummary()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ ProductInformation::ProductInformation() :
 {
 }
 
-ProductInformation::ProductInformation(JsonView jsonValue) : 
-    m_resourceTypeHasBeenSet(false),
-    m_productInformationFilterListHasBeenSet(false)
+ProductInformation::ProductInformation(JsonView jsonValue)
+  : ProductInformation()
 {
   *this = jsonValue;
 }

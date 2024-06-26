@@ -35,18 +35,8 @@ GlobalCluster::GlobalCluster() :
 {
 }
 
-GlobalCluster::GlobalCluster(const XmlNode& xmlNode) : 
-    m_globalClusterIdentifierHasBeenSet(false),
-    m_globalClusterResourceIdHasBeenSet(false),
-    m_globalClusterArnHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_engineHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_storageEncrypted(false),
-    m_storageEncryptedHasBeenSet(false),
-    m_deletionProtection(false),
-    m_deletionProtectionHasBeenSet(false),
-    m_globalClusterMembersHasBeenSet(false)
+GlobalCluster::GlobalCluster(const XmlNode& xmlNode)
+  : GlobalCluster()
 {
   *this = xmlNode;
 }

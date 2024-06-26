@@ -31,16 +31,8 @@ VirtualInterfaceTestHistory::VirtualInterfaceTestHistory() :
 {
 }
 
-VirtualInterfaceTestHistory::VirtualInterfaceTestHistory(JsonView jsonValue) : 
-    m_testIdHasBeenSet(false),
-    m_virtualInterfaceIdHasBeenSet(false),
-    m_bgpPeersHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_ownerAccountHasBeenSet(false),
-    m_testDurationInMinutes(0),
-    m_testDurationInMinutesHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
+VirtualInterfaceTestHistory::VirtualInterfaceTestHistory(JsonView jsonValue)
+  : VirtualInterfaceTestHistory()
 {
   *this = jsonValue;
 }

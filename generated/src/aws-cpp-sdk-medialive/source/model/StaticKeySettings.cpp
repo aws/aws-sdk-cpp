@@ -24,9 +24,8 @@ StaticKeySettings::StaticKeySettings() :
 {
 }
 
-StaticKeySettings::StaticKeySettings(JsonView jsonValue) : 
-    m_keyProviderServerHasBeenSet(false),
-    m_staticKeyValueHasBeenSet(false)
+StaticKeySettings::StaticKeySettings(JsonView jsonValue)
+  : StaticKeySettings()
 {
   *this = jsonValue;
 }

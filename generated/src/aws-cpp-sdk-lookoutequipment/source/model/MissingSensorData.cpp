@@ -26,11 +26,8 @@ MissingSensorData::MissingSensorData() :
 {
 }
 
-MissingSensorData::MissingSensorData(JsonView jsonValue) : 
-    m_affectedSensorCount(0),
-    m_affectedSensorCountHasBeenSet(false),
-    m_totalNumberOfMissingValues(0),
-    m_totalNumberOfMissingValuesHasBeenSet(false)
+MissingSensorData::MissingSensorData(JsonView jsonValue)
+  : MissingSensorData()
 {
   *this = jsonValue;
 }

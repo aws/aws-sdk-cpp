@@ -23,8 +23,8 @@ TimestampStructure::TimestampStructure() :
 {
 }
 
-TimestampStructure::TimestampStructure(JsonView jsonValue) : 
-    m_valueHasBeenSet(false)
+TimestampStructure::TimestampStructure(JsonView jsonValue)
+  : TimestampStructure()
 {
   *this = jsonValue;
 }

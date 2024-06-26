@@ -23,9 +23,8 @@ CreateDiscovererResult::CreateDiscovererResult() :
 {
 }
 
-CreateDiscovererResult::CreateDiscovererResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_state(DiscovererState::NOT_SET),
-    m_crossAccount(false)
+CreateDiscovererResult::CreateDiscovererResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateDiscovererResult()
 {
   *this = result;
 }

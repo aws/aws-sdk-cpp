@@ -31,16 +31,8 @@ ListProfileObjectTypeItem::ListProfileObjectTypeItem() :
 {
 }
 
-ListProfileObjectTypeItem::ListProfileObjectTypeItem(JsonView jsonValue) : 
-    m_objectTypeNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false),
-    m_maxProfileObjectCount(0),
-    m_maxProfileObjectCountHasBeenSet(false),
-    m_maxAvailableProfileObjectCount(0),
-    m_maxAvailableProfileObjectCountHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+ListProfileObjectTypeItem::ListProfileObjectTypeItem(JsonView jsonValue)
+  : ListProfileObjectTypeItem()
 {
   *this = jsonValue;
 }

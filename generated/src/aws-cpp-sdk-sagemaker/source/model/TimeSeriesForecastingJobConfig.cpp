@@ -32,17 +32,8 @@ TimeSeriesForecastingJobConfig::TimeSeriesForecastingJobConfig() :
 {
 }
 
-TimeSeriesForecastingJobConfig::TimeSeriesForecastingJobConfig(JsonView jsonValue) : 
-    m_featureSpecificationS3UriHasBeenSet(false),
-    m_completionCriteriaHasBeenSet(false),
-    m_forecastFrequencyHasBeenSet(false),
-    m_forecastHorizon(0),
-    m_forecastHorizonHasBeenSet(false),
-    m_forecastQuantilesHasBeenSet(false),
-    m_transformationsHasBeenSet(false),
-    m_timeSeriesConfigHasBeenSet(false),
-    m_holidayConfigHasBeenSet(false),
-    m_candidateGenerationConfigHasBeenSet(false)
+TimeSeriesForecastingJobConfig::TimeSeriesForecastingJobConfig(JsonView jsonValue)
+  : TimeSeriesForecastingJobConfig()
 {
   *this = jsonValue;
 }

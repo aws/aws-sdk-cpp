@@ -25,10 +25,8 @@ ObjectAttributeAction::ObjectAttributeAction() :
 {
 }
 
-ObjectAttributeAction::ObjectAttributeAction(JsonView jsonValue) : 
-    m_objectAttributeActionType(UpdateActionType::NOT_SET),
-    m_objectAttributeActionTypeHasBeenSet(false),
-    m_objectAttributeUpdateValueHasBeenSet(false)
+ObjectAttributeAction::ObjectAttributeAction(JsonView jsonValue)
+  : ObjectAttributeAction()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ MeetingEventsConcatenationConfiguration::MeetingEventsConcatenationConfiguration
 {
 }
 
-MeetingEventsConcatenationConfiguration::MeetingEventsConcatenationConfiguration(JsonView jsonValue) : 
-    m_state(ArtifactsConcatenationState::NOT_SET),
-    m_stateHasBeenSet(false)
+MeetingEventsConcatenationConfiguration::MeetingEventsConcatenationConfiguration(JsonView jsonValue)
+  : MeetingEventsConcatenationConfiguration()
 {
   *this = jsonValue;
 }

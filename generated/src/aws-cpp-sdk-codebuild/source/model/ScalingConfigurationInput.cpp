@@ -27,12 +27,8 @@ ScalingConfigurationInput::ScalingConfigurationInput() :
 {
 }
 
-ScalingConfigurationInput::ScalingConfigurationInput(JsonView jsonValue) : 
-    m_scalingType(FleetScalingType::NOT_SET),
-    m_scalingTypeHasBeenSet(false),
-    m_targetTrackingScalingConfigsHasBeenSet(false),
-    m_maxCapacity(0),
-    m_maxCapacityHasBeenSet(false)
+ScalingConfigurationInput::ScalingConfigurationInput(JsonView jsonValue)
+  : ScalingConfigurationInput()
 {
   *this = jsonValue;
 }

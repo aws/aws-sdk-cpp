@@ -25,10 +25,8 @@ RelatedItemContent::RelatedItemContent() :
 {
 }
 
-RelatedItemContent::RelatedItemContent(JsonView jsonValue) : 
-    m_commentHasBeenSet(false),
-    m_contactHasBeenSet(false),
-    m_fileHasBeenSet(false)
+RelatedItemContent::RelatedItemContent(JsonView jsonValue)
+  : RelatedItemContent()
 {
   *this = jsonValue;
 }

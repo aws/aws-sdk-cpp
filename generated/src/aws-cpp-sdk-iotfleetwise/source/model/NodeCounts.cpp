@@ -36,21 +36,8 @@ NodeCounts::NodeCounts() :
 {
 }
 
-NodeCounts::NodeCounts(JsonView jsonValue) : 
-    m_totalNodes(0),
-    m_totalNodesHasBeenSet(false),
-    m_totalBranches(0),
-    m_totalBranchesHasBeenSet(false),
-    m_totalSensors(0),
-    m_totalSensorsHasBeenSet(false),
-    m_totalAttributes(0),
-    m_totalAttributesHasBeenSet(false),
-    m_totalActuators(0),
-    m_totalActuatorsHasBeenSet(false),
-    m_totalStructs(0),
-    m_totalStructsHasBeenSet(false),
-    m_totalProperties(0),
-    m_totalPropertiesHasBeenSet(false)
+NodeCounts::NodeCounts(JsonView jsonValue)
+  : NodeCounts()
 {
   *this = jsonValue;
 }

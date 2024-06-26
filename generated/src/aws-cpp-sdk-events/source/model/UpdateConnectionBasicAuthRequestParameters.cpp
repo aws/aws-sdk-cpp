@@ -24,9 +24,8 @@ UpdateConnectionBasicAuthRequestParameters::UpdateConnectionBasicAuthRequestPara
 {
 }
 
-UpdateConnectionBasicAuthRequestParameters::UpdateConnectionBasicAuthRequestParameters(JsonView jsonValue) : 
-    m_usernameHasBeenSet(false),
-    m_passwordHasBeenSet(false)
+UpdateConnectionBasicAuthRequestParameters::UpdateConnectionBasicAuthRequestParameters(JsonView jsonValue)
+  : UpdateConnectionBasicAuthRequestParameters()
 {
   *this = jsonValue;
 }

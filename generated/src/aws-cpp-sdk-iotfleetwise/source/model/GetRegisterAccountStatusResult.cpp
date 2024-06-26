@@ -22,8 +22,8 @@ GetRegisterAccountStatusResult::GetRegisterAccountStatusResult() :
 {
 }
 
-GetRegisterAccountStatusResult::GetRegisterAccountStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_accountStatus(RegistrationStatus::NOT_SET)
+GetRegisterAccountStatusResult::GetRegisterAccountStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetRegisterAccountStatusResult()
 {
   *this = result;
 }

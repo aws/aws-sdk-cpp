@@ -27,12 +27,8 @@ TranscriptCriteria::TranscriptCriteria() :
 {
 }
 
-TranscriptCriteria::TranscriptCriteria(JsonView jsonValue) : 
-    m_participantRole(ParticipantRole::NOT_SET),
-    m_participantRoleHasBeenSet(false),
-    m_searchTextHasBeenSet(false),
-    m_matchType(SearchContactsMatchType::NOT_SET),
-    m_matchTypeHasBeenSet(false)
+TranscriptCriteria::TranscriptCriteria(JsonView jsonValue)
+  : TranscriptCriteria()
 {
   *this = jsonValue;
 }

@@ -28,13 +28,8 @@ HlsCaptionLanguageMapping::HlsCaptionLanguageMapping() :
 {
 }
 
-HlsCaptionLanguageMapping::HlsCaptionLanguageMapping(JsonView jsonValue) : 
-    m_captionChannel(0),
-    m_captionChannelHasBeenSet(false),
-    m_customLanguageCodeHasBeenSet(false),
-    m_languageCode(LanguageCode::NOT_SET),
-    m_languageCodeHasBeenSet(false),
-    m_languageDescriptionHasBeenSet(false)
+HlsCaptionLanguageMapping::HlsCaptionLanguageMapping(JsonView jsonValue)
+  : HlsCaptionLanguageMapping()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ RegisteredUserDashboardFeatureConfigurations::RegisteredUserDashboardFeatureConf
 {
 }
 
-RegisteredUserDashboardFeatureConfigurations::RegisteredUserDashboardFeatureConfigurations(JsonView jsonValue) : 
-    m_statePersistenceHasBeenSet(false),
-    m_bookmarksHasBeenSet(false)
+RegisteredUserDashboardFeatureConfigurations::RegisteredUserDashboardFeatureConfigurations(JsonView jsonValue)
+  : RegisteredUserDashboardFeatureConfigurations()
 {
   *this = jsonValue;
 }

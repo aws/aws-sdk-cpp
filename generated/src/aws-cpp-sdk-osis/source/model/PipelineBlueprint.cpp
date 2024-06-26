@@ -28,13 +28,8 @@ PipelineBlueprint::PipelineBlueprint() :
 {
 }
 
-PipelineBlueprint::PipelineBlueprint(JsonView jsonValue) : 
-    m_blueprintNameHasBeenSet(false),
-    m_pipelineConfigurationBodyHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_displayDescriptionHasBeenSet(false),
-    m_serviceHasBeenSet(false),
-    m_useCaseHasBeenSet(false)
+PipelineBlueprint::PipelineBlueprint(JsonView jsonValue)
+  : PipelineBlueprint()
 {
   *this = jsonValue;
 }

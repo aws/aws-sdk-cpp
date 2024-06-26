@@ -25,10 +25,8 @@ InstanceTimeline::InstanceTimeline() :
 {
 }
 
-InstanceTimeline::InstanceTimeline(JsonView jsonValue) : 
-    m_creationDateTimeHasBeenSet(false),
-    m_readyDateTimeHasBeenSet(false),
-    m_endDateTimeHasBeenSet(false)
+InstanceTimeline::InstanceTimeline(JsonView jsonValue)
+  : InstanceTimeline()
 {
   *this = jsonValue;
 }

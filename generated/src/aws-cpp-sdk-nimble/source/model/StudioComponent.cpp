@@ -46,31 +46,8 @@ StudioComponent::StudioComponent() :
 {
 }
 
-StudioComponent::StudioComponent(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_configurationHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_ec2SecurityGroupIdsHasBeenSet(false),
-    m_initializationScriptsHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_runtimeRoleArnHasBeenSet(false),
-    m_scriptParametersHasBeenSet(false),
-    m_secureInitializationRoleArnHasBeenSet(false),
-    m_state(StudioComponentState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_statusCode(StudioComponentStatusCode::NOT_SET),
-    m_statusCodeHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_studioComponentIdHasBeenSet(false),
-    m_subtype(StudioComponentSubtype::NOT_SET),
-    m_subtypeHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_type(StudioComponentType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_updatedByHasBeenSet(false)
+StudioComponent::StudioComponent(JsonView jsonValue)
+  : StudioComponent()
 {
   *this = jsonValue;
 }

@@ -27,12 +27,8 @@ GenerationSummary::GenerationSummary() :
 {
 }
 
-GenerationSummary::GenerationSummary(JsonView jsonValue) : 
-    m_generationIdHasBeenSet(false),
-    m_generationStatus(GenerationStatus::NOT_SET),
-    m_generationStatusHasBeenSet(false),
-    m_creationDateTimeHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false)
+GenerationSummary::GenerationSummary(JsonView jsonValue)
+  : GenerationSummary()
 {
   *this = jsonValue;
 }

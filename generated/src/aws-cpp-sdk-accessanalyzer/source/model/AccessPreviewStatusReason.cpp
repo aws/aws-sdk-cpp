@@ -24,9 +24,8 @@ AccessPreviewStatusReason::AccessPreviewStatusReason() :
 {
 }
 
-AccessPreviewStatusReason::AccessPreviewStatusReason(JsonView jsonValue) : 
-    m_code(AccessPreviewStatusReasonCode::NOT_SET),
-    m_codeHasBeenSet(false)
+AccessPreviewStatusReason::AccessPreviewStatusReason(JsonView jsonValue)
+  : AccessPreviewStatusReason()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ TextGenerationJobConfig::TextGenerationJobConfig() :
 {
 }
 
-TextGenerationJobConfig::TextGenerationJobConfig(JsonView jsonValue) : 
-    m_completionCriteriaHasBeenSet(false),
-    m_baseModelNameHasBeenSet(false),
-    m_textGenerationHyperParametersHasBeenSet(false),
-    m_modelAccessConfigHasBeenSet(false)
+TextGenerationJobConfig::TextGenerationJobConfig(JsonView jsonValue)
+  : TextGenerationJobConfig()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ ConnectionAliasPermission::ConnectionAliasPermission() :
 {
 }
 
-ConnectionAliasPermission::ConnectionAliasPermission(JsonView jsonValue) : 
-    m_sharedAccountIdHasBeenSet(false),
-    m_allowAssociation(false),
-    m_allowAssociationHasBeenSet(false)
+ConnectionAliasPermission::ConnectionAliasPermission(JsonView jsonValue)
+  : ConnectionAliasPermission()
 {
   *this = jsonValue;
 }

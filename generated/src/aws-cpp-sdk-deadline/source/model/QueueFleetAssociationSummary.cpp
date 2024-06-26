@@ -30,15 +30,8 @@ QueueFleetAssociationSummary::QueueFleetAssociationSummary() :
 {
 }
 
-QueueFleetAssociationSummary::QueueFleetAssociationSummary(JsonView jsonValue) : 
-    m_createdAtHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_fleetIdHasBeenSet(false),
-    m_queueIdHasBeenSet(false),
-    m_status(QueueFleetAssociationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_updatedByHasBeenSet(false)
+QueueFleetAssociationSummary::QueueFleetAssociationSummary(JsonView jsonValue)
+  : QueueFleetAssociationSummary()
 {
   *this = jsonValue;
 }

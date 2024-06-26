@@ -24,9 +24,8 @@ AdditionalSearchKey::AdditionalSearchKey() :
 {
 }
 
-AdditionalSearchKey::AdditionalSearchKey(JsonView jsonValue) : 
-    m_keyNameHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+AdditionalSearchKey::AdditionalSearchKey(JsonView jsonValue)
+  : AdditionalSearchKey()
 {
   *this = jsonValue;
 }

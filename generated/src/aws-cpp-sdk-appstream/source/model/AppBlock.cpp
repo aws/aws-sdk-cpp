@@ -35,20 +35,8 @@ AppBlock::AppBlock() :
 {
 }
 
-AppBlock::AppBlock(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_sourceS3LocationHasBeenSet(false),
-    m_setupScriptDetailsHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_postSetupScriptDetailsHasBeenSet(false),
-    m_packagingType(PackagingType::NOT_SET),
-    m_packagingTypeHasBeenSet(false),
-    m_state(AppBlockState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_appBlockErrorsHasBeenSet(false)
+AppBlock::AppBlock(JsonView jsonValue)
+  : AppBlock()
 {
   *this = jsonValue;
 }

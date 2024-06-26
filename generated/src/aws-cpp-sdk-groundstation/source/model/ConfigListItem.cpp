@@ -27,12 +27,8 @@ ConfigListItem::ConfigListItem() :
 {
 }
 
-ConfigListItem::ConfigListItem(JsonView jsonValue) : 
-    m_configArnHasBeenSet(false),
-    m_configIdHasBeenSet(false),
-    m_configType(ConfigCapabilityType::NOT_SET),
-    m_configTypeHasBeenSet(false),
-    m_nameHasBeenSet(false)
+ConfigListItem::ConfigListItem(JsonView jsonValue)
+  : ConfigListItem()
 {
   *this = jsonValue;
 }

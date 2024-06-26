@@ -23,8 +23,8 @@ ProcessingConfiguration::ProcessingConfiguration() :
 {
 }
 
-ProcessingConfiguration::ProcessingConfiguration(JsonView jsonValue) : 
-    m_auditLogHasBeenSet(false)
+ProcessingConfiguration::ProcessingConfiguration(JsonView jsonValue)
+  : ProcessingConfiguration()
 {
   *this = jsonValue;
 }

@@ -36,21 +36,8 @@ EC2InstanceCounts::EC2InstanceCounts() :
 {
 }
 
-EC2InstanceCounts::EC2InstanceCounts(JsonView jsonValue) : 
-    m_dESIRED(0),
-    m_dESIREDHasBeenSet(false),
-    m_mINIMUM(0),
-    m_mINIMUMHasBeenSet(false),
-    m_mAXIMUM(0),
-    m_mAXIMUMHasBeenSet(false),
-    m_pENDING(0),
-    m_pENDINGHasBeenSet(false),
-    m_aCTIVE(0),
-    m_aCTIVEHasBeenSet(false),
-    m_iDLE(0),
-    m_iDLEHasBeenSet(false),
-    m_tERMINATING(0),
-    m_tERMINATINGHasBeenSet(false)
+EC2InstanceCounts::EC2InstanceCounts(JsonView jsonValue)
+  : EC2InstanceCounts()
 {
   *this = jsonValue;
 }

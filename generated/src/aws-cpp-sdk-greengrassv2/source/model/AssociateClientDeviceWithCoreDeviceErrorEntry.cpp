@@ -25,10 +25,8 @@ AssociateClientDeviceWithCoreDeviceErrorEntry::AssociateClientDeviceWithCoreDevi
 {
 }
 
-AssociateClientDeviceWithCoreDeviceErrorEntry::AssociateClientDeviceWithCoreDeviceErrorEntry(JsonView jsonValue) : 
-    m_thingNameHasBeenSet(false),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+AssociateClientDeviceWithCoreDeviceErrorEntry::AssociateClientDeviceWithCoreDeviceErrorEntry(JsonView jsonValue)
+  : AssociateClientDeviceWithCoreDeviceErrorEntry()
 {
   *this = jsonValue;
 }

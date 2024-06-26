@@ -24,9 +24,8 @@ DocumentRelevanceConfiguration::DocumentRelevanceConfiguration() :
 {
 }
 
-DocumentRelevanceConfiguration::DocumentRelevanceConfiguration(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_relevanceHasBeenSet(false)
+DocumentRelevanceConfiguration::DocumentRelevanceConfiguration(JsonView jsonValue)
+  : DocumentRelevanceConfiguration()
 {
   *this = jsonValue;
 }

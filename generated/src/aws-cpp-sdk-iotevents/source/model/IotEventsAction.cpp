@@ -24,9 +24,8 @@ IotEventsAction::IotEventsAction() :
 {
 }
 
-IotEventsAction::IotEventsAction(JsonView jsonValue) : 
-    m_inputNameHasBeenSet(false),
-    m_payloadHasBeenSet(false)
+IotEventsAction::IotEventsAction(JsonView jsonValue)
+  : IotEventsAction()
 {
   *this = jsonValue;
 }

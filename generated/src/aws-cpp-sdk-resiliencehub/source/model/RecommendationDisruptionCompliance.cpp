@@ -30,15 +30,8 @@ RecommendationDisruptionCompliance::RecommendationDisruptionCompliance() :
 {
 }
 
-RecommendationDisruptionCompliance::RecommendationDisruptionCompliance(JsonView jsonValue) : 
-    m_expectedComplianceStatus(ComplianceStatus::NOT_SET),
-    m_expectedComplianceStatusHasBeenSet(false),
-    m_expectedRpoDescriptionHasBeenSet(false),
-    m_expectedRpoInSecs(0),
-    m_expectedRpoInSecsHasBeenSet(false),
-    m_expectedRtoDescriptionHasBeenSet(false),
-    m_expectedRtoInSecs(0),
-    m_expectedRtoInSecsHasBeenSet(false)
+RecommendationDisruptionCompliance::RecommendationDisruptionCompliance(JsonView jsonValue)
+  : RecommendationDisruptionCompliance()
 {
   *this = jsonValue;
 }

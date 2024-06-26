@@ -23,8 +23,8 @@ UiTemplate::UiTemplate() :
 {
 }
 
-UiTemplate::UiTemplate(JsonView jsonValue) : 
-    m_contentHasBeenSet(false)
+UiTemplate::UiTemplate(JsonView jsonValue)
+  : UiTemplate()
 {
   *this = jsonValue;
 }

@@ -31,16 +31,8 @@ AccessEntry::AccessEntry() :
 {
 }
 
-AccessEntry::AccessEntry(JsonView jsonValue) : 
-    m_clusterNameHasBeenSet(false),
-    m_principalArnHasBeenSet(false),
-    m_kubernetesGroupsHasBeenSet(false),
-    m_accessEntryArnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_modifiedAtHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_usernameHasBeenSet(false),
-    m_typeHasBeenSet(false)
+AccessEntry::AccessEntry(JsonView jsonValue)
+  : AccessEntry()
 {
   *this = jsonValue;
 }

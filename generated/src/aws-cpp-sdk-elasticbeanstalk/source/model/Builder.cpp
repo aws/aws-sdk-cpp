@@ -25,8 +25,8 @@ Builder::Builder() :
 {
 }
 
-Builder::Builder(const XmlNode& xmlNode) : 
-    m_aRNHasBeenSet(false)
+Builder::Builder(const XmlNode& xmlNode)
+  : Builder()
 {
   *this = xmlNode;
 }

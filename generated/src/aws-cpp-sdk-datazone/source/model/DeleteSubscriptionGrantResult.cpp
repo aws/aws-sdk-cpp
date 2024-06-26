@@ -22,8 +22,8 @@ DeleteSubscriptionGrantResult::DeleteSubscriptionGrantResult() :
 {
 }
 
-DeleteSubscriptionGrantResult::DeleteSubscriptionGrantResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(SubscriptionGrantOverallStatus::NOT_SET)
+DeleteSubscriptionGrantResult::DeleteSubscriptionGrantResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeleteSubscriptionGrantResult()
 {
   *this = result;
 }

@@ -22,8 +22,8 @@ PutDataProtectionPolicyResult::PutDataProtectionPolicyResult() :
 {
 }
 
-PutDataProtectionPolicyResult::PutDataProtectionPolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_lastUpdatedTime(0)
+PutDataProtectionPolicyResult::PutDataProtectionPolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : PutDataProtectionPolicyResult()
 {
   *this = result;
 }

@@ -26,11 +26,8 @@ Accuracy::Accuracy() :
 {
 }
 
-Accuracy::Accuracy(JsonView jsonValue) : 
-    m_horizontalAccuracy(0.0),
-    m_horizontalAccuracyHasBeenSet(false),
-    m_verticalAccuracy(0.0),
-    m_verticalAccuracyHasBeenSet(false)
+Accuracy::Accuracy(JsonView jsonValue)
+  : Accuracy()
 {
   *this = jsonValue;
 }

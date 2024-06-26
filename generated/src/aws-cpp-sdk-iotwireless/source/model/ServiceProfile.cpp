@@ -25,10 +25,8 @@ ServiceProfile::ServiceProfile() :
 {
 }
 
-ServiceProfile::ServiceProfile(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_idHasBeenSet(false)
+ServiceProfile::ServiceProfile(JsonView jsonValue)
+  : ServiceProfile()
 {
   *this = jsonValue;
 }

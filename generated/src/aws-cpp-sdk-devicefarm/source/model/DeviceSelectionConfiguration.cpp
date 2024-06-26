@@ -25,10 +25,8 @@ DeviceSelectionConfiguration::DeviceSelectionConfiguration() :
 {
 }
 
-DeviceSelectionConfiguration::DeviceSelectionConfiguration(JsonView jsonValue) : 
-    m_filtersHasBeenSet(false),
-    m_maxDevices(0),
-    m_maxDevicesHasBeenSet(false)
+DeviceSelectionConfiguration::DeviceSelectionConfiguration(JsonView jsonValue)
+  : DeviceSelectionConfiguration()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ PublicDnsNamespaceChange::PublicDnsNamespaceChange() :
 {
 }
 
-PublicDnsNamespaceChange::PublicDnsNamespaceChange(JsonView jsonValue) : 
-    m_descriptionHasBeenSet(false),
-    m_propertiesHasBeenSet(false)
+PublicDnsNamespaceChange::PublicDnsNamespaceChange(JsonView jsonValue)
+  : PublicDnsNamespaceChange()
 {
   *this = jsonValue;
 }

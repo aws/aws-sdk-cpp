@@ -26,11 +26,8 @@ EventSubscription::EventSubscription() :
 {
 }
 
-EventSubscription::EventSubscription(JsonView jsonValue) : 
-    m_eventType(EventType::NOT_SET),
-    m_eventTypeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_snsTopicArnHasBeenSet(false)
+EventSubscription::EventSubscription(JsonView jsonValue)
+  : EventSubscription()
 {
   *this = jsonValue;
 }

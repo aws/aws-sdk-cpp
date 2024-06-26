@@ -23,9 +23,8 @@ GetDeploymentResult::GetDeploymentResult() :
 {
 }
 
-GetDeploymentResult::GetDeploymentResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_deploymentStatus(DeploymentStatus::NOT_SET),
-    m_isLatestForTarget(false)
+GetDeploymentResult::GetDeploymentResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetDeploymentResult()
 {
   *this = result;
 }

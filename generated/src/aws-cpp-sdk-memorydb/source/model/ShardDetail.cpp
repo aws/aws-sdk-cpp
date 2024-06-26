@@ -26,11 +26,8 @@ ShardDetail::ShardDetail() :
 {
 }
 
-ShardDetail::ShardDetail(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_configurationHasBeenSet(false),
-    m_sizeHasBeenSet(false),
-    m_snapshotCreationTimeHasBeenSet(false)
+ShardDetail::ShardDetail(JsonView jsonValue)
+  : ShardDetail()
 {
   *this = jsonValue;
 }

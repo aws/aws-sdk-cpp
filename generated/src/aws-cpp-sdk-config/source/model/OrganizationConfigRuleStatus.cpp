@@ -28,13 +28,8 @@ OrganizationConfigRuleStatus::OrganizationConfigRuleStatus() :
 {
 }
 
-OrganizationConfigRuleStatus::OrganizationConfigRuleStatus(JsonView jsonValue) : 
-    m_organizationConfigRuleNameHasBeenSet(false),
-    m_organizationRuleStatus(OrganizationRuleStatus::NOT_SET),
-    m_organizationRuleStatusHasBeenSet(false),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_lastUpdateTimeHasBeenSet(false)
+OrganizationConfigRuleStatus::OrganizationConfigRuleStatus(JsonView jsonValue)
+  : OrganizationConfigRuleStatus()
 {
   *this = jsonValue;
 }

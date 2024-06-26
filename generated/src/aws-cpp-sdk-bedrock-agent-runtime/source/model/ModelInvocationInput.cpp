@@ -32,17 +32,8 @@ ModelInvocationInput::ModelInvocationInput() :
 {
 }
 
-ModelInvocationInput::ModelInvocationInput(JsonView jsonValue) : 
-    m_inferenceConfigurationHasBeenSet(false),
-    m_overrideLambdaHasBeenSet(false),
-    m_parserMode(CreationMode::NOT_SET),
-    m_parserModeHasBeenSet(false),
-    m_promptCreationMode(CreationMode::NOT_SET),
-    m_promptCreationModeHasBeenSet(false),
-    m_textHasBeenSet(false),
-    m_traceIdHasBeenSet(false),
-    m_type(PromptType::NOT_SET),
-    m_typeHasBeenSet(false)
+ModelInvocationInput::ModelInvocationInput(JsonView jsonValue)
+  : ModelInvocationInput()
 {
   *this = jsonValue;
 }

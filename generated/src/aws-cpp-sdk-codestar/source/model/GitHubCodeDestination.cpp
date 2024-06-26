@@ -31,16 +31,8 @@ GitHubCodeDestination::GitHubCodeDestination() :
 {
 }
 
-GitHubCodeDestination::GitHubCodeDestination(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_ownerHasBeenSet(false),
-    m_privateRepository(false),
-    m_privateRepositoryHasBeenSet(false),
-    m_issuesEnabled(false),
-    m_issuesEnabledHasBeenSet(false),
-    m_tokenHasBeenSet(false)
+GitHubCodeDestination::GitHubCodeDestination(JsonView jsonValue)
+  : GitHubCodeDestination()
 {
   *this = jsonValue;
 }

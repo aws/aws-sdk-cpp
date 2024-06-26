@@ -29,14 +29,8 @@ ImpersonationRule::ImpersonationRule() :
 {
 }
 
-ImpersonationRule::ImpersonationRule(JsonView jsonValue) : 
-    m_impersonationRuleIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_effect(AccessEffect::NOT_SET),
-    m_effectHasBeenSet(false),
-    m_targetUsersHasBeenSet(false),
-    m_notTargetUsersHasBeenSet(false)
+ImpersonationRule::ImpersonationRule(JsonView jsonValue)
+  : ImpersonationRule()
 {
   *this = jsonValue;
 }

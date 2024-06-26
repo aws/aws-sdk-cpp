@@ -27,10 +27,8 @@ InferenceAcceleratorInfo::InferenceAcceleratorInfo() :
 {
 }
 
-InferenceAcceleratorInfo::InferenceAcceleratorInfo(const XmlNode& xmlNode) : 
-    m_acceleratorsHasBeenSet(false),
-    m_totalInferenceMemoryInMiB(0),
-    m_totalInferenceMemoryInMiBHasBeenSet(false)
+InferenceAcceleratorInfo::InferenceAcceleratorInfo(const XmlNode& xmlNode)
+  : InferenceAcceleratorInfo()
 {
   *this = xmlNode;
 }

@@ -31,16 +31,8 @@ Site::Site() :
 {
 }
 
-Site::Site(JsonView jsonValue) : 
-    m_siteIdHasBeenSet(false),
-    m_siteArnHasBeenSet(false),
-    m_globalNetworkIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_locationHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_state(SiteState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+Site::Site(JsonView jsonValue)
+  : Site()
 {
   *this = jsonValue;
 }

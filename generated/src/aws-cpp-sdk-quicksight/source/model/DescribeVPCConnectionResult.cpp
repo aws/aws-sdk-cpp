@@ -22,8 +22,8 @@ DescribeVPCConnectionResult::DescribeVPCConnectionResult() :
 {
 }
 
-DescribeVPCConnectionResult::DescribeVPCConnectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+DescribeVPCConnectionResult::DescribeVPCConnectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeVPCConnectionResult()
 {
   *this = result;
 }

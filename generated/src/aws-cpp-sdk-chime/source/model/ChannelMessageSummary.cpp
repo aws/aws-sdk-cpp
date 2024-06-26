@@ -33,18 +33,8 @@ ChannelMessageSummary::ChannelMessageSummary() :
 {
 }
 
-ChannelMessageSummary::ChannelMessageSummary(JsonView jsonValue) : 
-    m_messageIdHasBeenSet(false),
-    m_contentHasBeenSet(false),
-    m_metadataHasBeenSet(false),
-    m_type(ChannelMessageType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false),
-    m_lastUpdatedTimestampHasBeenSet(false),
-    m_lastEditedTimestampHasBeenSet(false),
-    m_senderHasBeenSet(false),
-    m_redacted(false),
-    m_redactedHasBeenSet(false)
+ChannelMessageSummary::ChannelMessageSummary(JsonView jsonValue)
+  : ChannelMessageSummary()
 {
   *this = jsonValue;
 }

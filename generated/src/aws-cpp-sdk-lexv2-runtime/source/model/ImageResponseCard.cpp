@@ -26,11 +26,8 @@ ImageResponseCard::ImageResponseCard() :
 {
 }
 
-ImageResponseCard::ImageResponseCard(JsonView jsonValue) : 
-    m_titleHasBeenSet(false),
-    m_subtitleHasBeenSet(false),
-    m_imageUrlHasBeenSet(false),
-    m_buttonsHasBeenSet(false)
+ImageResponseCard::ImageResponseCard(JsonView jsonValue)
+  : ImageResponseCard()
 {
   *this = jsonValue;
 }

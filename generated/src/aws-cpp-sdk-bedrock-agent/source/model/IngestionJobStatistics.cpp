@@ -36,21 +36,8 @@ IngestionJobStatistics::IngestionJobStatistics() :
 {
 }
 
-IngestionJobStatistics::IngestionJobStatistics(JsonView jsonValue) : 
-    m_numberOfDocumentsDeleted(0),
-    m_numberOfDocumentsDeletedHasBeenSet(false),
-    m_numberOfDocumentsFailed(0),
-    m_numberOfDocumentsFailedHasBeenSet(false),
-    m_numberOfDocumentsScanned(0),
-    m_numberOfDocumentsScannedHasBeenSet(false),
-    m_numberOfMetadataDocumentsModified(0),
-    m_numberOfMetadataDocumentsModifiedHasBeenSet(false),
-    m_numberOfMetadataDocumentsScanned(0),
-    m_numberOfMetadataDocumentsScannedHasBeenSet(false),
-    m_numberOfModifiedDocumentsIndexed(0),
-    m_numberOfModifiedDocumentsIndexedHasBeenSet(false),
-    m_numberOfNewDocumentsIndexed(0),
-    m_numberOfNewDocumentsIndexedHasBeenSet(false)
+IngestionJobStatistics::IngestionJobStatistics(JsonView jsonValue)
+  : IngestionJobStatistics()
 {
   *this = jsonValue;
 }

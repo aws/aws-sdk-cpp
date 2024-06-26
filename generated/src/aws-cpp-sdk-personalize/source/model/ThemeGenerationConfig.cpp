@@ -23,8 +23,8 @@ ThemeGenerationConfig::ThemeGenerationConfig() :
 {
 }
 
-ThemeGenerationConfig::ThemeGenerationConfig(JsonView jsonValue) : 
-    m_fieldsForThemeGenerationHasBeenSet(false)
+ThemeGenerationConfig::ThemeGenerationConfig(JsonView jsonValue)
+  : ThemeGenerationConfig()
 {
   *this = jsonValue;
 }

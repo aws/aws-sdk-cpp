@@ -37,22 +37,8 @@ BaiduChannelResponse::BaiduChannelResponse() :
 {
 }
 
-BaiduChannelResponse::BaiduChannelResponse(JsonView jsonValue) : 
-    m_applicationIdHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_credentialHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_hasCredential(false),
-    m_hasCredentialHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_isArchived(false),
-    m_isArchivedHasBeenSet(false),
-    m_lastModifiedByHasBeenSet(false),
-    m_lastModifiedDateHasBeenSet(false),
-    m_platformHasBeenSet(false),
-    m_version(0),
-    m_versionHasBeenSet(false)
+BaiduChannelResponse::BaiduChannelResponse(JsonView jsonValue)
+  : BaiduChannelResponse()
 {
   *this = jsonValue;
 }

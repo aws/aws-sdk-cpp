@@ -24,9 +24,8 @@ OutputDataConfig::OutputDataConfig() :
 {
 }
 
-OutputDataConfig::OutputDataConfig(JsonView jsonValue) : 
-    m_kmsKeyIdHasBeenSet(false),
-    m_s3UriHasBeenSet(false)
+OutputDataConfig::OutputDataConfig(JsonView jsonValue)
+  : OutputDataConfig()
 {
   *this = jsonValue;
 }

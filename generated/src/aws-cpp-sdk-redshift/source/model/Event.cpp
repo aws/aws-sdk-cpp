@@ -32,15 +32,8 @@ Event::Event() :
 {
 }
 
-Event::Event(const XmlNode& xmlNode) : 
-    m_sourceIdentifierHasBeenSet(false),
-    m_sourceType(SourceType::NOT_SET),
-    m_sourceTypeHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_eventCategoriesHasBeenSet(false),
-    m_severityHasBeenSet(false),
-    m_dateHasBeenSet(false),
-    m_eventIdHasBeenSet(false)
+Event::Event(const XmlNode& xmlNode)
+  : Event()
 {
   *this = xmlNode;
 }

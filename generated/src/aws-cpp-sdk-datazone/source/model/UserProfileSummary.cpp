@@ -29,14 +29,8 @@ UserProfileSummary::UserProfileSummary() :
 {
 }
 
-UserProfileSummary::UserProfileSummary(JsonView jsonValue) : 
-    m_detailsHasBeenSet(false),
-    m_domainIdHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_status(UserProfileStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_type(UserProfileType::NOT_SET),
-    m_typeHasBeenSet(false)
+UserProfileSummary::UserProfileSummary(JsonView jsonValue)
+  : UserProfileSummary()
 {
   *this = jsonValue;
 }

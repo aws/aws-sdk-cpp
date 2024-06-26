@@ -26,11 +26,8 @@ AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails::AwsEcsServi
 {
 }
 
-AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails::AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails(JsonView jsonValue) : 
-    m_enable(false),
-    m_enableHasBeenSet(false),
-    m_rollback(false),
-    m_rollbackHasBeenSet(false)
+AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails::AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails(JsonView jsonValue)
+  : AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails()
 {
   *this = jsonValue;
 }

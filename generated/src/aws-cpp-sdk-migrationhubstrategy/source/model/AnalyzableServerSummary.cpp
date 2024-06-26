@@ -26,11 +26,8 @@ AnalyzableServerSummary::AnalyzableServerSummary() :
 {
 }
 
-AnalyzableServerSummary::AnalyzableServerSummary(JsonView jsonValue) : 
-    m_hostnameHasBeenSet(false),
-    m_ipAddressHasBeenSet(false),
-    m_sourceHasBeenSet(false),
-    m_vmIdHasBeenSet(false)
+AnalyzableServerSummary::AnalyzableServerSummary(JsonView jsonValue)
+  : AnalyzableServerSummary()
 {
   *this = jsonValue;
 }

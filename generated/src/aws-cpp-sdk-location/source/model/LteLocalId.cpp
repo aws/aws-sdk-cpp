@@ -26,11 +26,8 @@ LteLocalId::LteLocalId() :
 {
 }
 
-LteLocalId::LteLocalId(JsonView jsonValue) : 
-    m_earfcn(0),
-    m_earfcnHasBeenSet(false),
-    m_pci(0),
-    m_pciHasBeenSet(false)
+LteLocalId::LteLocalId(JsonView jsonValue)
+  : LteLocalId()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ TranscriptFilter::TranscriptFilter() :
 {
 }
 
-TranscriptFilter::TranscriptFilter(JsonView jsonValue) : 
-    m_lexTranscriptFilterHasBeenSet(false)
+TranscriptFilter::TranscriptFilter(JsonView jsonValue)
+  : TranscriptFilter()
 {
   *this = jsonValue;
 }

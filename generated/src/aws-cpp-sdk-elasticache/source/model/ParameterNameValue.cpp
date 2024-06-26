@@ -26,9 +26,8 @@ ParameterNameValue::ParameterNameValue() :
 {
 }
 
-ParameterNameValue::ParameterNameValue(const XmlNode& xmlNode) : 
-    m_parameterNameHasBeenSet(false),
-    m_parameterValueHasBeenSet(false)
+ParameterNameValue::ParameterNameValue(const XmlNode& xmlNode)
+  : ParameterNameValue()
 {
   *this = xmlNode;
 }

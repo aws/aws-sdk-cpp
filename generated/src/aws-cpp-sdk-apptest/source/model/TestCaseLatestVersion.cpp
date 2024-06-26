@@ -27,12 +27,8 @@ TestCaseLatestVersion::TestCaseLatestVersion() :
 {
 }
 
-TestCaseLatestVersion::TestCaseLatestVersion(JsonView jsonValue) : 
-    m_version(0),
-    m_versionHasBeenSet(false),
-    m_status(TestCaseLifecycle::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusReasonHasBeenSet(false)
+TestCaseLatestVersion::TestCaseLatestVersion(JsonView jsonValue)
+  : TestCaseLatestVersion()
 {
   *this = jsonValue;
 }

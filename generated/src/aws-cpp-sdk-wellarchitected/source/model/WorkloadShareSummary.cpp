@@ -29,14 +29,8 @@ WorkloadShareSummary::WorkloadShareSummary() :
 {
 }
 
-WorkloadShareSummary::WorkloadShareSummary(JsonView jsonValue) : 
-    m_shareIdHasBeenSet(false),
-    m_sharedWithHasBeenSet(false),
-    m_permissionType(PermissionType::NOT_SET),
-    m_permissionTypeHasBeenSet(false),
-    m_status(ShareStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false)
+WorkloadShareSummary::WorkloadShareSummary(JsonView jsonValue)
+  : WorkloadShareSummary()
 {
   *this = jsonValue;
 }

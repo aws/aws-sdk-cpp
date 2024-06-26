@@ -22,8 +22,8 @@ ListAccessKeysResult::ListAccessKeysResult() :
 {
 }
 
-ListAccessKeysResult::ListAccessKeysResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_isTruncated(false)
+ListAccessKeysResult::ListAccessKeysResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : ListAccessKeysResult()
 {
   *this = result;
 }

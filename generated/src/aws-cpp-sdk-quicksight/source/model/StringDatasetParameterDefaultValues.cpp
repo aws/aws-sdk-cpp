@@ -23,8 +23,8 @@ StringDatasetParameterDefaultValues::StringDatasetParameterDefaultValues() :
 {
 }
 
-StringDatasetParameterDefaultValues::StringDatasetParameterDefaultValues(JsonView jsonValue) : 
-    m_staticValuesHasBeenSet(false)
+StringDatasetParameterDefaultValues::StringDatasetParameterDefaultValues(JsonView jsonValue)
+  : StringDatasetParameterDefaultValues()
 {
   *this = jsonValue;
 }

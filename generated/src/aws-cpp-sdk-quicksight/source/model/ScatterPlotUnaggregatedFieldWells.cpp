@@ -27,12 +27,8 @@ ScatterPlotUnaggregatedFieldWells::ScatterPlotUnaggregatedFieldWells() :
 {
 }
 
-ScatterPlotUnaggregatedFieldWells::ScatterPlotUnaggregatedFieldWells(JsonView jsonValue) : 
-    m_xAxisHasBeenSet(false),
-    m_yAxisHasBeenSet(false),
-    m_sizeHasBeenSet(false),
-    m_categoryHasBeenSet(false),
-    m_labelHasBeenSet(false)
+ScatterPlotUnaggregatedFieldWells::ScatterPlotUnaggregatedFieldWells(JsonView jsonValue)
+  : ScatterPlotUnaggregatedFieldWells()
 {
   *this = jsonValue;
 }

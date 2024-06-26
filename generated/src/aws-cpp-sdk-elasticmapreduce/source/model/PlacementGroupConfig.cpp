@@ -26,11 +26,8 @@ PlacementGroupConfig::PlacementGroupConfig() :
 {
 }
 
-PlacementGroupConfig::PlacementGroupConfig(JsonView jsonValue) : 
-    m_instanceRole(InstanceRoleType::NOT_SET),
-    m_instanceRoleHasBeenSet(false),
-    m_placementStrategy(PlacementGroupStrategy::NOT_SET),
-    m_placementStrategyHasBeenSet(false)
+PlacementGroupConfig::PlacementGroupConfig(JsonView jsonValue)
+  : PlacementGroupConfig()
 {
   *this = jsonValue;
 }

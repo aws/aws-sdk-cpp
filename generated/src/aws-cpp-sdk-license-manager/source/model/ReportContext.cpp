@@ -23,8 +23,8 @@ ReportContext::ReportContext() :
 {
 }
 
-ReportContext::ReportContext(JsonView jsonValue) : 
-    m_licenseConfigurationArnsHasBeenSet(false)
+ReportContext::ReportContext(JsonView jsonValue)
+  : ReportContext()
 {
   *this = jsonValue;
 }

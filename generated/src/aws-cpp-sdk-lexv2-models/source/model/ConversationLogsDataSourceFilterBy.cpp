@@ -26,11 +26,8 @@ ConversationLogsDataSourceFilterBy::ConversationLogsDataSourceFilterBy() :
 {
 }
 
-ConversationLogsDataSourceFilterBy::ConversationLogsDataSourceFilterBy(JsonView jsonValue) : 
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_inputMode(ConversationLogsInputModeFilter::NOT_SET),
-    m_inputModeHasBeenSet(false)
+ConversationLogsDataSourceFilterBy::ConversationLogsDataSourceFilterBy(JsonView jsonValue)
+  : ConversationLogsDataSourceFilterBy()
 {
   *this = jsonValue;
 }

@@ -32,17 +32,8 @@ LicenseConversionTask::LicenseConversionTask() :
 {
 }
 
-LicenseConversionTask::LicenseConversionTask(JsonView jsonValue) : 
-    m_licenseConversionTaskIdHasBeenSet(false),
-    m_resourceArnHasBeenSet(false),
-    m_sourceLicenseContextHasBeenSet(false),
-    m_destinationLicenseContextHasBeenSet(false),
-    m_status(LicenseConversionTaskStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_licenseConversionTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
+LicenseConversionTask::LicenseConversionTask(JsonView jsonValue)
+  : LicenseConversionTask()
 {
   *this = jsonValue;
 }

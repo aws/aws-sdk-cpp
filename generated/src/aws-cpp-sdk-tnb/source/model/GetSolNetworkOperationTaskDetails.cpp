@@ -29,14 +29,8 @@ GetSolNetworkOperationTaskDetails::GetSolNetworkOperationTaskDetails() :
 {
 }
 
-GetSolNetworkOperationTaskDetails::GetSolNetworkOperationTaskDetails(JsonView jsonValue) : 
-    m_taskContextHasBeenSet(false),
-    m_taskEndTimeHasBeenSet(false),
-    m_taskErrorDetailsHasBeenSet(false),
-    m_taskNameHasBeenSet(false),
-    m_taskStartTimeHasBeenSet(false),
-    m_taskStatus(TaskStatus::NOT_SET),
-    m_taskStatusHasBeenSet(false)
+GetSolNetworkOperationTaskDetails::GetSolNetworkOperationTaskDetails(JsonView jsonValue)
+  : GetSolNetworkOperationTaskDetails()
 {
   *this = jsonValue;
 }

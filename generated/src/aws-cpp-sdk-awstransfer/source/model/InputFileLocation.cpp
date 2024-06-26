@@ -24,9 +24,8 @@ InputFileLocation::InputFileLocation() :
 {
 }
 
-InputFileLocation::InputFileLocation(JsonView jsonValue) : 
-    m_s3FileLocationHasBeenSet(false),
-    m_efsFileLocationHasBeenSet(false)
+InputFileLocation::InputFileLocation(JsonView jsonValue)
+  : InputFileLocation()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ SingularSourceProperties::SingularSourceProperties() :
 {
 }
 
-SingularSourceProperties::SingularSourceProperties(JsonView jsonValue) : 
-    m_objectHasBeenSet(false)
+SingularSourceProperties::SingularSourceProperties(JsonView jsonValue)
+  : SingularSourceProperties()
 {
   *this = jsonValue;
 }

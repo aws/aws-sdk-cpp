@@ -28,13 +28,8 @@ ImpossibleTravelDetail::ImpossibleTravelDetail() :
 {
 }
 
-ImpossibleTravelDetail::ImpossibleTravelDetail(JsonView jsonValue) : 
-    m_startingIpAddressHasBeenSet(false),
-    m_endingIpAddressHasBeenSet(false),
-    m_startingLocationHasBeenSet(false),
-    m_endingLocationHasBeenSet(false),
-    m_hourlyTimeDelta(0),
-    m_hourlyTimeDeltaHasBeenSet(false)
+ImpossibleTravelDetail::ImpossibleTravelDetail(JsonView jsonValue)
+  : ImpossibleTravelDetail()
 {
   *this = jsonValue;
 }

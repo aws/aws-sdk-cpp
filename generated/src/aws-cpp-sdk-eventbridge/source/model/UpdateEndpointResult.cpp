@@ -22,8 +22,8 @@ UpdateEndpointResult::UpdateEndpointResult() :
 {
 }
 
-UpdateEndpointResult::UpdateEndpointResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_state(EndpointState::NOT_SET)
+UpdateEndpointResult::UpdateEndpointResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateEndpointResult()
 {
   *this = result;
 }

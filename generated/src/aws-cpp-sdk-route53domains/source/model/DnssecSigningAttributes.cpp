@@ -27,12 +27,8 @@ DnssecSigningAttributes::DnssecSigningAttributes() :
 {
 }
 
-DnssecSigningAttributes::DnssecSigningAttributes(JsonView jsonValue) : 
-    m_algorithm(0),
-    m_algorithmHasBeenSet(false),
-    m_flags(0),
-    m_flagsHasBeenSet(false),
-    m_publicKeyHasBeenSet(false)
+DnssecSigningAttributes::DnssecSigningAttributes(JsonView jsonValue)
+  : DnssecSigningAttributes()
 {
   *this = jsonValue;
 }

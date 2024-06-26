@@ -25,10 +25,8 @@ LabelingJobAlgorithmsConfig::LabelingJobAlgorithmsConfig() :
 {
 }
 
-LabelingJobAlgorithmsConfig::LabelingJobAlgorithmsConfig(JsonView jsonValue) : 
-    m_labelingJobAlgorithmSpecificationArnHasBeenSet(false),
-    m_initialActiveLearningModelArnHasBeenSet(false),
-    m_labelingJobResourceConfigHasBeenSet(false)
+LabelingJobAlgorithmsConfig::LabelingJobAlgorithmsConfig(JsonView jsonValue)
+  : LabelingJobAlgorithmsConfig()
 {
   *this = jsonValue;
 }

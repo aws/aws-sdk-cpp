@@ -25,10 +25,8 @@ FargateDetails::FargateDetails() :
 {
 }
 
-FargateDetails::FargateDetails(JsonView jsonValue) : 
-    m_issuesHasBeenSet(false),
-    m_managementType(ManagementType::NOT_SET),
-    m_managementTypeHasBeenSet(false)
+FargateDetails::FargateDetails(JsonView jsonValue)
+  : FargateDetails()
 {
   *this = jsonValue;
 }

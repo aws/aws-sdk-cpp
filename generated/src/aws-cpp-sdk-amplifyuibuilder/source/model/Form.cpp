@@ -37,22 +37,8 @@ Form::Form() :
 {
 }
 
-Form::Form(JsonView jsonValue) : 
-    m_appIdHasBeenSet(false),
-    m_environmentNameHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_formActionType(FormActionType::NOT_SET),
-    m_formActionTypeHasBeenSet(false),
-    m_styleHasBeenSet(false),
-    m_dataTypeHasBeenSet(false),
-    m_fieldsHasBeenSet(false),
-    m_sectionalElementsHasBeenSet(false),
-    m_schemaVersionHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_ctaHasBeenSet(false),
-    m_labelDecorator(LabelDecorator::NOT_SET),
-    m_labelDecoratorHasBeenSet(false)
+Form::Form(JsonView jsonValue)
+  : Form()
 {
   *this = jsonValue;
 }

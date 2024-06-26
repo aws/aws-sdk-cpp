@@ -25,10 +25,8 @@ OverrideButtonConfiguration::OverrideButtonConfiguration() :
 {
 }
 
-OverrideButtonConfiguration::OverrideButtonConfiguration(JsonView jsonValue) : 
-    m_buttonAction(ButtonAction::NOT_SET),
-    m_buttonActionHasBeenSet(false),
-    m_linkHasBeenSet(false)
+OverrideButtonConfiguration::OverrideButtonConfiguration(JsonView jsonValue)
+  : OverrideButtonConfiguration()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ ResponseCard::ResponseCard() :
 {
 }
 
-ResponseCard::ResponseCard(JsonView jsonValue) : 
-    m_versionHasBeenSet(false),
-    m_contentType(ContentType::NOT_SET),
-    m_contentTypeHasBeenSet(false),
-    m_genericAttachmentsHasBeenSet(false)
+ResponseCard::ResponseCard(JsonView jsonValue)
+  : ResponseCard()
 {
   *this = jsonValue;
 }

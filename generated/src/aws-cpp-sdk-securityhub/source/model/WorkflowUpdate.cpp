@@ -24,9 +24,8 @@ WorkflowUpdate::WorkflowUpdate() :
 {
 }
 
-WorkflowUpdate::WorkflowUpdate(JsonView jsonValue) : 
-    m_status(WorkflowStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+WorkflowUpdate::WorkflowUpdate(JsonView jsonValue)
+  : WorkflowUpdate()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ EthernetStatus::EthernetStatus() :
 {
 }
 
-EthernetStatus::EthernetStatus(JsonView jsonValue) : 
-    m_connectionStatus(NetworkConnectionStatus::NOT_SET),
-    m_connectionStatusHasBeenSet(false),
-    m_hwAddressHasBeenSet(false),
-    m_ipAddressHasBeenSet(false)
+EthernetStatus::EthernetStatus(JsonView jsonValue)
+  : EthernetStatus()
 {
   *this = jsonValue;
 }

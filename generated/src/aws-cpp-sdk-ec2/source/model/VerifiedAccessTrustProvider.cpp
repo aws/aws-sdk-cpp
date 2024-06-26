@@ -39,22 +39,8 @@ VerifiedAccessTrustProvider::VerifiedAccessTrustProvider() :
 {
 }
 
-VerifiedAccessTrustProvider::VerifiedAccessTrustProvider(const XmlNode& xmlNode) : 
-    m_verifiedAccessTrustProviderIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_trustProviderType(TrustProviderType::NOT_SET),
-    m_trustProviderTypeHasBeenSet(false),
-    m_userTrustProviderType(UserTrustProviderType::NOT_SET),
-    m_userTrustProviderTypeHasBeenSet(false),
-    m_deviceTrustProviderType(DeviceTrustProviderType::NOT_SET),
-    m_deviceTrustProviderTypeHasBeenSet(false),
-    m_oidcOptionsHasBeenSet(false),
-    m_deviceOptionsHasBeenSet(false),
-    m_policyReferenceNameHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_sseSpecificationHasBeenSet(false)
+VerifiedAccessTrustProvider::VerifiedAccessTrustProvider(const XmlNode& xmlNode)
+  : VerifiedAccessTrustProvider()
 {
   *this = xmlNode;
 }

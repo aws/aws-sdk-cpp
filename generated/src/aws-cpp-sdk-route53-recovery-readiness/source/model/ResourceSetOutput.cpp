@@ -27,12 +27,8 @@ ResourceSetOutput::ResourceSetOutput() :
 {
 }
 
-ResourceSetOutput::ResourceSetOutput(JsonView jsonValue) : 
-    m_resourceSetArnHasBeenSet(false),
-    m_resourceSetNameHasBeenSet(false),
-    m_resourceSetTypeHasBeenSet(false),
-    m_resourcesHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+ResourceSetOutput::ResourceSetOutput(JsonView jsonValue)
+  : ResourceSetOutput()
 {
   *this = jsonValue;
 }

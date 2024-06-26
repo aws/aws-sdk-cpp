@@ -22,8 +22,8 @@ EnableImageResponse::EnableImageResponse() :
 {
 }
 
-EnableImageResponse::EnableImageResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_return(false)
+EnableImageResponse::EnableImageResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : EnableImageResponse()
 {
   *this = result;
 }

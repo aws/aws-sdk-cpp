@@ -24,9 +24,8 @@ DesiredPlayerSession::DesiredPlayerSession() :
 {
 }
 
-DesiredPlayerSession::DesiredPlayerSession(JsonView jsonValue) : 
-    m_playerIdHasBeenSet(false),
-    m_playerDataHasBeenSet(false)
+DesiredPlayerSession::DesiredPlayerSession(JsonView jsonValue)
+  : DesiredPlayerSession()
 {
   *this = jsonValue;
 }

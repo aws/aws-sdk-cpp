@@ -23,8 +23,8 @@ MonitorConfig::MonitorConfig() :
 {
 }
 
-MonitorConfig::MonitorConfig(JsonView jsonValue) : 
-    m_monitorNameHasBeenSet(false)
+MonitorConfig::MonitorConfig(JsonView jsonValue)
+  : MonitorConfig()
 {
   *this = jsonValue;
 }

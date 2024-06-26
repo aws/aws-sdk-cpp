@@ -27,10 +27,8 @@ VpcEndpoint::VpcEndpoint() :
 {
 }
 
-VpcEndpoint::VpcEndpoint(const XmlNode& xmlNode) : 
-    m_vpcEndpointIdHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_networkInterfacesHasBeenSet(false)
+VpcEndpoint::VpcEndpoint(const XmlNode& xmlNode)
+  : VpcEndpoint()
 {
   *this = xmlNode;
 }

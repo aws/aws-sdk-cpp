@@ -25,10 +25,8 @@ SearchSortExpression::SearchSortExpression() :
 {
 }
 
-SearchSortExpression::SearchSortExpression(JsonView jsonValue) : 
-    m_fieldSortHasBeenSet(false),
-    m_parameterSortHasBeenSet(false),
-    m_userJobsFirstHasBeenSet(false)
+SearchSortExpression::SearchSortExpression(JsonView jsonValue)
+  : SearchSortExpression()
 {
   *this = jsonValue;
 }

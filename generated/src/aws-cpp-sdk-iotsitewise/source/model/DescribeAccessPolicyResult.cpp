@@ -22,8 +22,8 @@ DescribeAccessPolicyResult::DescribeAccessPolicyResult() :
 {
 }
 
-DescribeAccessPolicyResult::DescribeAccessPolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_accessPolicyPermission(Permission::NOT_SET)
+DescribeAccessPolicyResult::DescribeAccessPolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeAccessPolicyResult()
 {
   *this = result;
 }

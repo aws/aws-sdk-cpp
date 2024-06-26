@@ -23,9 +23,8 @@ GetDomainNameResult::GetDomainNameResult() :
 {
 }
 
-GetDomainNameResult::GetDomainNameResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_domainNameStatus(DomainNameStatus::NOT_SET),
-    m_securityPolicy(SecurityPolicy::NOT_SET)
+GetDomainNameResult::GetDomainNameResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetDomainNameResult()
 {
   *this = result;
 }

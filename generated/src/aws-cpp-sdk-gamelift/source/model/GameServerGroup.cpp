@@ -37,22 +37,8 @@ GameServerGroup::GameServerGroup() :
 {
 }
 
-GameServerGroup::GameServerGroup(JsonView jsonValue) : 
-    m_gameServerGroupNameHasBeenSet(false),
-    m_gameServerGroupArnHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_instanceDefinitionsHasBeenSet(false),
-    m_balancingStrategy(BalancingStrategy::NOT_SET),
-    m_balancingStrategyHasBeenSet(false),
-    m_gameServerProtectionPolicy(GameServerProtectionPolicy::NOT_SET),
-    m_gameServerProtectionPolicyHasBeenSet(false),
-    m_autoScalingGroupArnHasBeenSet(false),
-    m_status(GameServerGroupStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusReasonHasBeenSet(false),
-    m_suspendedActionsHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false)
+GameServerGroup::GameServerGroup(JsonView jsonValue)
+  : GameServerGroup()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ AccountStatus::AccountStatus() :
 {
 }
 
-AccountStatus::AccountStatus(JsonView jsonValue) : 
-    m_accountIdHasBeenSet(false),
-    m_sLRDeploymentStatusHasBeenSet(false)
+AccountStatus::AccountStatus(JsonView jsonValue)
+  : AccountStatus()
 {
   *this = jsonValue;
 }

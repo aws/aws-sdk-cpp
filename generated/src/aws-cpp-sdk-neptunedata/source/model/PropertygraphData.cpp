@@ -28,13 +28,8 @@ PropertygraphData::PropertygraphData() :
 {
 }
 
-PropertygraphData::PropertygraphData(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_fromHasBeenSet(false),
-    m_toHasBeenSet(false)
+PropertygraphData::PropertygraphData(JsonView jsonValue)
+  : PropertygraphData()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ AwsMskClusterClusterInfoClientAuthenticationTlsDetails::AwsMskClusterClusterInfo
 {
 }
 
-AwsMskClusterClusterInfoClientAuthenticationTlsDetails::AwsMskClusterClusterInfoClientAuthenticationTlsDetails(JsonView jsonValue) : 
-    m_certificateAuthorityArnListHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
+AwsMskClusterClusterInfoClientAuthenticationTlsDetails::AwsMskClusterClusterInfoClientAuthenticationTlsDetails(JsonView jsonValue)
+  : AwsMskClusterClusterInfoClientAuthenticationTlsDetails()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ DockerSettings::DockerSettings() :
 {
 }
 
-DockerSettings::DockerSettings(JsonView jsonValue) : 
-    m_enableDockerAccess(FeatureStatus::NOT_SET),
-    m_enableDockerAccessHasBeenSet(false),
-    m_vpcOnlyTrustedAccountsHasBeenSet(false)
+DockerSettings::DockerSettings(JsonView jsonValue)
+  : DockerSettings()
 {
   *this = jsonValue;
 }

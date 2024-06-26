@@ -25,10 +25,8 @@ InputPrepareScheduleActionSettings::InputPrepareScheduleActionSettings() :
 {
 }
 
-InputPrepareScheduleActionSettings::InputPrepareScheduleActionSettings(JsonView jsonValue) : 
-    m_inputAttachmentNameReferenceHasBeenSet(false),
-    m_inputClippingSettingsHasBeenSet(false),
-    m_urlPathHasBeenSet(false)
+InputPrepareScheduleActionSettings::InputPrepareScheduleActionSettings(JsonView jsonValue)
+  : InputPrepareScheduleActionSettings()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ RecurringCharge::RecurringCharge() :
 {
 }
 
-RecurringCharge::RecurringCharge(JsonView jsonValue) : 
-    m_recurringChargeAmount(0.0),
-    m_recurringChargeAmountHasBeenSet(false),
-    m_recurringChargeFrequencyHasBeenSet(false)
+RecurringCharge::RecurringCharge(JsonView jsonValue)
+  : RecurringCharge()
 {
   *this = jsonValue;
 }

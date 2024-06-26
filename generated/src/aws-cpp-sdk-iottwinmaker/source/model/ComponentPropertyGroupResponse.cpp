@@ -27,12 +27,8 @@ ComponentPropertyGroupResponse::ComponentPropertyGroupResponse() :
 {
 }
 
-ComponentPropertyGroupResponse::ComponentPropertyGroupResponse(JsonView jsonValue) : 
-    m_groupType(GroupType::NOT_SET),
-    m_groupTypeHasBeenSet(false),
-    m_propertyNamesHasBeenSet(false),
-    m_isInherited(false),
-    m_isInheritedHasBeenSet(false)
+ComponentPropertyGroupResponse::ComponentPropertyGroupResponse(JsonView jsonValue)
+  : ComponentPropertyGroupResponse()
 {
   *this = jsonValue;
 }

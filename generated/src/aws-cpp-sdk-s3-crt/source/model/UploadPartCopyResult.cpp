@@ -23,10 +23,8 @@ UploadPartCopyResult::UploadPartCopyResult() :
 {
 }
 
-UploadPartCopyResult::UploadPartCopyResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_serverSideEncryption(ServerSideEncryption::NOT_SET),
-    m_bucketKeyEnabled(false),
-    m_requestCharged(RequestCharged::NOT_SET)
+UploadPartCopyResult::UploadPartCopyResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : UploadPartCopyResult()
 {
   *this = result;
 }

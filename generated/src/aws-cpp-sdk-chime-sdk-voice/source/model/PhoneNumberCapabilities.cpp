@@ -34,19 +34,8 @@ PhoneNumberCapabilities::PhoneNumberCapabilities() :
 {
 }
 
-PhoneNumberCapabilities::PhoneNumberCapabilities(JsonView jsonValue) : 
-    m_inboundCall(false),
-    m_inboundCallHasBeenSet(false),
-    m_outboundCall(false),
-    m_outboundCallHasBeenSet(false),
-    m_inboundSMS(false),
-    m_inboundSMSHasBeenSet(false),
-    m_outboundSMS(false),
-    m_outboundSMSHasBeenSet(false),
-    m_inboundMMS(false),
-    m_inboundMMSHasBeenSet(false),
-    m_outboundMMS(false),
-    m_outboundMMSHasBeenSet(false)
+PhoneNumberCapabilities::PhoneNumberCapabilities(JsonView jsonValue)
+  : PhoneNumberCapabilities()
 {
   *this = jsonValue;
 }

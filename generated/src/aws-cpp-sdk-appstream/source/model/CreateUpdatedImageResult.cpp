@@ -22,8 +22,8 @@ CreateUpdatedImageResult::CreateUpdatedImageResult() :
 {
 }
 
-CreateUpdatedImageResult::CreateUpdatedImageResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_canUpdateImage(false)
+CreateUpdatedImageResult::CreateUpdatedImageResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateUpdatedImageResult()
 {
   *this = result;
 }

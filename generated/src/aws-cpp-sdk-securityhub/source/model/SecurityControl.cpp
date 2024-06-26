@@ -35,20 +35,8 @@ SecurityControl::SecurityControl() :
 {
 }
 
-SecurityControl::SecurityControl(JsonView jsonValue) : 
-    m_securityControlIdHasBeenSet(false),
-    m_securityControlArnHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_remediationUrlHasBeenSet(false),
-    m_severityRating(SeverityRating::NOT_SET),
-    m_severityRatingHasBeenSet(false),
-    m_securityControlStatus(ControlStatus::NOT_SET),
-    m_securityControlStatusHasBeenSet(false),
-    m_updateStatus(UpdateStatus::NOT_SET),
-    m_updateStatusHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_lastUpdateReasonHasBeenSet(false)
+SecurityControl::SecurityControl(JsonView jsonValue)
+  : SecurityControl()
 {
   *this = jsonValue;
 }

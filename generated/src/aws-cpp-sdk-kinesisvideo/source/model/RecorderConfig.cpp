@@ -24,9 +24,8 @@ RecorderConfig::RecorderConfig() :
 {
 }
 
-RecorderConfig::RecorderConfig(JsonView jsonValue) : 
-    m_mediaSourceConfigHasBeenSet(false),
-    m_scheduleConfigHasBeenSet(false)
+RecorderConfig::RecorderConfig(JsonView jsonValue)
+  : RecorderConfig()
 {
   *this = jsonValue;
 }

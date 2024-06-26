@@ -24,9 +24,8 @@ TestSetImportInputLocation::TestSetImportInputLocation() :
 {
 }
 
-TestSetImportInputLocation::TestSetImportInputLocation(JsonView jsonValue) : 
-    m_s3BucketNameHasBeenSet(false),
-    m_s3PathHasBeenSet(false)
+TestSetImportInputLocation::TestSetImportInputLocation(JsonView jsonValue)
+  : TestSetImportInputLocation()
 {
   *this = jsonValue;
 }

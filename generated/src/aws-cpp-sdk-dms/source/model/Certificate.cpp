@@ -34,18 +34,8 @@ Certificate::Certificate() :
 {
 }
 
-Certificate::Certificate(JsonView jsonValue) : 
-    m_certificateIdentifierHasBeenSet(false),
-    m_certificateCreationDateHasBeenSet(false),
-    m_certificatePemHasBeenSet(false),
-    m_certificateWalletHasBeenSet(false),
-    m_certificateArnHasBeenSet(false),
-    m_certificateOwnerHasBeenSet(false),
-    m_validFromDateHasBeenSet(false),
-    m_validToDateHasBeenSet(false),
-    m_signingAlgorithmHasBeenSet(false),
-    m_keyLength(0),
-    m_keyLengthHasBeenSet(false)
+Certificate::Certificate(JsonView jsonValue)
+  : Certificate()
 {
   *this = jsonValue;
 }

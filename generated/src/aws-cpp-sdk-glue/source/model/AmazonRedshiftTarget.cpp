@@ -25,10 +25,8 @@ AmazonRedshiftTarget::AmazonRedshiftTarget() :
 {
 }
 
-AmazonRedshiftTarget::AmazonRedshiftTarget(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_dataHasBeenSet(false),
-    m_inputsHasBeenSet(false)
+AmazonRedshiftTarget::AmazonRedshiftTarget(JsonView jsonValue)
+  : AmazonRedshiftTarget()
 {
   *this = jsonValue;
 }
