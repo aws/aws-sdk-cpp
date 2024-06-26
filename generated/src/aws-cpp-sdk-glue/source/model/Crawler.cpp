@@ -45,30 +45,8 @@ Crawler::Crawler() :
 {
 }
 
-Crawler::Crawler(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_roleHasBeenSet(false),
-    m_targetsHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_classifiersHasBeenSet(false),
-    m_recrawlPolicyHasBeenSet(false),
-    m_schemaChangePolicyHasBeenSet(false),
-    m_lineageConfigurationHasBeenSet(false),
-    m_state(CrawlerState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_tablePrefixHasBeenSet(false),
-    m_scheduleHasBeenSet(false),
-    m_crawlElapsedTime(0),
-    m_crawlElapsedTimeHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastUpdatedHasBeenSet(false),
-    m_lastCrawlHasBeenSet(false),
-    m_version(0),
-    m_versionHasBeenSet(false),
-    m_configurationHasBeenSet(false),
-    m_crawlerSecurityConfigurationHasBeenSet(false),
-    m_lakeFormationConfigurationHasBeenSet(false)
+Crawler::Crawler(JsonView jsonValue)
+  : Crawler()
 {
   *this = jsonValue;
 }

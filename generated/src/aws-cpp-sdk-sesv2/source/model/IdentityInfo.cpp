@@ -29,14 +29,8 @@ IdentityInfo::IdentityInfo() :
 {
 }
 
-IdentityInfo::IdentityInfo(JsonView jsonValue) : 
-    m_identityType(IdentityType::NOT_SET),
-    m_identityTypeHasBeenSet(false),
-    m_identityNameHasBeenSet(false),
-    m_sendingEnabled(false),
-    m_sendingEnabledHasBeenSet(false),
-    m_verificationStatus(VerificationStatus::NOT_SET),
-    m_verificationStatusHasBeenSet(false)
+IdentityInfo::IdentityInfo(JsonView jsonValue)
+  : IdentityInfo()
 {
   *this = jsonValue;
 }

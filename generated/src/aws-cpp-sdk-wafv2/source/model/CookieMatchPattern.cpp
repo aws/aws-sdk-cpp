@@ -25,10 +25,8 @@ CookieMatchPattern::CookieMatchPattern() :
 {
 }
 
-CookieMatchPattern::CookieMatchPattern(JsonView jsonValue) : 
-    m_allHasBeenSet(false),
-    m_includedCookiesHasBeenSet(false),
-    m_excludedCookiesHasBeenSet(false)
+CookieMatchPattern::CookieMatchPattern(JsonView jsonValue)
+  : CookieMatchPattern()
 {
   *this = jsonValue;
 }

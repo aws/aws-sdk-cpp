@@ -30,15 +30,8 @@ AssetShallow::AssetShallow() :
 {
 }
 
-AssetShallow::AssetShallow(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_packagingGroupIdHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_sourceArnHasBeenSet(false),
-    m_sourceRoleArnHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+AssetShallow::AssetShallow(JsonView jsonValue)
+  : AssetShallow()
 {
   *this = jsonValue;
 }

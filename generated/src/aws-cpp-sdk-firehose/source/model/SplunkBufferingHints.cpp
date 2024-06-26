@@ -26,11 +26,8 @@ SplunkBufferingHints::SplunkBufferingHints() :
 {
 }
 
-SplunkBufferingHints::SplunkBufferingHints(JsonView jsonValue) : 
-    m_intervalInSeconds(0),
-    m_intervalInSecondsHasBeenSet(false),
-    m_sizeInMBs(0),
-    m_sizeInMBsHasBeenSet(false)
+SplunkBufferingHints::SplunkBufferingHints(JsonView jsonValue)
+  : SplunkBufferingHints()
 {
   *this = jsonValue;
 }

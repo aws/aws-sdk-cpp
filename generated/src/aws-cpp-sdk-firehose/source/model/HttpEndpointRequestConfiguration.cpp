@@ -25,10 +25,8 @@ HttpEndpointRequestConfiguration::HttpEndpointRequestConfiguration() :
 {
 }
 
-HttpEndpointRequestConfiguration::HttpEndpointRequestConfiguration(JsonView jsonValue) : 
-    m_contentEncoding(ContentEncoding::NOT_SET),
-    m_contentEncodingHasBeenSet(false),
-    m_commonAttributesHasBeenSet(false)
+HttpEndpointRequestConfiguration::HttpEndpointRequestConfiguration(JsonView jsonValue)
+  : HttpEndpointRequestConfiguration()
 {
   *this = jsonValue;
 }

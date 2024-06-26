@@ -48,33 +48,8 @@ ProresSettings::ProresSettings() :
 {
 }
 
-ProresSettings::ProresSettings(JsonView jsonValue) : 
-    m_chromaSampling(ProresChromaSampling::NOT_SET),
-    m_chromaSamplingHasBeenSet(false),
-    m_codecProfile(ProresCodecProfile::NOT_SET),
-    m_codecProfileHasBeenSet(false),
-    m_framerateControl(ProresFramerateControl::NOT_SET),
-    m_framerateControlHasBeenSet(false),
-    m_framerateConversionAlgorithm(ProresFramerateConversionAlgorithm::NOT_SET),
-    m_framerateConversionAlgorithmHasBeenSet(false),
-    m_framerateDenominator(0),
-    m_framerateDenominatorHasBeenSet(false),
-    m_framerateNumerator(0),
-    m_framerateNumeratorHasBeenSet(false),
-    m_interlaceMode(ProresInterlaceMode::NOT_SET),
-    m_interlaceModeHasBeenSet(false),
-    m_parControl(ProresParControl::NOT_SET),
-    m_parControlHasBeenSet(false),
-    m_parDenominator(0),
-    m_parDenominatorHasBeenSet(false),
-    m_parNumerator(0),
-    m_parNumeratorHasBeenSet(false),
-    m_scanTypeConversionMode(ProresScanTypeConversionMode::NOT_SET),
-    m_scanTypeConversionModeHasBeenSet(false),
-    m_slowPal(ProresSlowPal::NOT_SET),
-    m_slowPalHasBeenSet(false),
-    m_telecine(ProresTelecine::NOT_SET),
-    m_telecineHasBeenSet(false)
+ProresSettings::ProresSettings(JsonView jsonValue)
+  : ProresSettings()
 {
   *this = jsonValue;
 }

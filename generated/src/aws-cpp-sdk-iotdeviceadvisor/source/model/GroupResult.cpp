@@ -25,10 +25,8 @@ GroupResult::GroupResult() :
 {
 }
 
-GroupResult::GroupResult(JsonView jsonValue) : 
-    m_groupIdHasBeenSet(false),
-    m_groupNameHasBeenSet(false),
-    m_testsHasBeenSet(false)
+GroupResult::GroupResult(JsonView jsonValue)
+  : GroupResult()
 {
   *this = jsonValue;
 }

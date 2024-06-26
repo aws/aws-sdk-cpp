@@ -30,15 +30,8 @@ EmvEncryptionAttributes::EmvEncryptionAttributes() :
 {
 }
 
-EmvEncryptionAttributes::EmvEncryptionAttributes(JsonView jsonValue) : 
-    m_initializationVectorHasBeenSet(false),
-    m_majorKeyDerivationMode(EmvMajorKeyDerivationMode::NOT_SET),
-    m_majorKeyDerivationModeHasBeenSet(false),
-    m_mode(EmvEncryptionMode::NOT_SET),
-    m_modeHasBeenSet(false),
-    m_panSequenceNumberHasBeenSet(false),
-    m_primaryAccountNumberHasBeenSet(false),
-    m_sessionDerivationDataHasBeenSet(false)
+EmvEncryptionAttributes::EmvEncryptionAttributes(JsonView jsonValue)
+  : EmvEncryptionAttributes()
 {
   *this = jsonValue;
 }

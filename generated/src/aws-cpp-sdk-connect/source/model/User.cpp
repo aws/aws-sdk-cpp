@@ -34,19 +34,8 @@ User::User() :
 {
 }
 
-User::User(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_usernameHasBeenSet(false),
-    m_identityInfoHasBeenSet(false),
-    m_phoneConfigHasBeenSet(false),
-    m_directoryUserIdHasBeenSet(false),
-    m_securityProfileIdsHasBeenSet(false),
-    m_routingProfileIdHasBeenSet(false),
-    m_hierarchyGroupIdHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_lastModifiedRegionHasBeenSet(false)
+User::User(JsonView jsonValue)
+  : User()
 {
   *this = jsonValue;
 }

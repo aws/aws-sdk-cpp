@@ -22,8 +22,8 @@ DisassociateMergedGraphqlApiResult::DisassociateMergedGraphqlApiResult() :
 {
 }
 
-DisassociateMergedGraphqlApiResult::DisassociateMergedGraphqlApiResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_sourceApiAssociationStatus(SourceApiAssociationStatus::NOT_SET)
+DisassociateMergedGraphqlApiResult::DisassociateMergedGraphqlApiResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DisassociateMergedGraphqlApiResult()
 {
   *this = result;
 }

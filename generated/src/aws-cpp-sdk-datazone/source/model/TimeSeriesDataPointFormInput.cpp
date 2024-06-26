@@ -27,12 +27,8 @@ TimeSeriesDataPointFormInput::TimeSeriesDataPointFormInput() :
 {
 }
 
-TimeSeriesDataPointFormInput::TimeSeriesDataPointFormInput(JsonView jsonValue) : 
-    m_contentHasBeenSet(false),
-    m_formNameHasBeenSet(false),
-    m_timestampHasBeenSet(false),
-    m_typeIdentifierHasBeenSet(false),
-    m_typeRevisionHasBeenSet(false)
+TimeSeriesDataPointFormInput::TimeSeriesDataPointFormInput(JsonView jsonValue)
+  : TimeSeriesDataPointFormInput()
 {
   *this = jsonValue;
 }

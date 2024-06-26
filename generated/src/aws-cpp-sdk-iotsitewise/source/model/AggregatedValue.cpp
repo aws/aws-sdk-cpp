@@ -26,11 +26,8 @@ AggregatedValue::AggregatedValue() :
 {
 }
 
-AggregatedValue::AggregatedValue(JsonView jsonValue) : 
-    m_timestampHasBeenSet(false),
-    m_quality(Quality::NOT_SET),
-    m_qualityHasBeenSet(false),
-    m_valueHasBeenSet(false)
+AggregatedValue::AggregatedValue(JsonView jsonValue)
+  : AggregatedValue()
 {
   *this = jsonValue;
 }

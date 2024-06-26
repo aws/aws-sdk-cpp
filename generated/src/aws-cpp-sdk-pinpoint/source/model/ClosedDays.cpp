@@ -27,12 +27,8 @@ ClosedDays::ClosedDays() :
 {
 }
 
-ClosedDays::ClosedDays(JsonView jsonValue) : 
-    m_eMAILHasBeenSet(false),
-    m_sMSHasBeenSet(false),
-    m_pUSHHasBeenSet(false),
-    m_vOICEHasBeenSet(false),
-    m_cUSTOMHasBeenSet(false)
+ClosedDays::ClosedDays(JsonView jsonValue)
+  : ClosedDays()
 {
   *this = jsonValue;
 }

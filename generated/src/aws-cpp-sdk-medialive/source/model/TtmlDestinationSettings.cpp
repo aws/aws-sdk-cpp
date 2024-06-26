@@ -24,9 +24,8 @@ TtmlDestinationSettings::TtmlDestinationSettings() :
 {
 }
 
-TtmlDestinationSettings::TtmlDestinationSettings(JsonView jsonValue) : 
-    m_styleControl(TtmlDestinationStyleControl::NOT_SET),
-    m_styleControlHasBeenSet(false)
+TtmlDestinationSettings::TtmlDestinationSettings(JsonView jsonValue)
+  : TtmlDestinationSettings()
 {
   *this = jsonValue;
 }

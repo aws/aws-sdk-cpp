@@ -26,11 +26,8 @@ SystemInfo::SystemInfo() :
 {
 }
 
-SystemInfo::SystemInfo(JsonView jsonValue) : 
-    m_cpuArchitectureHasBeenSet(false),
-    m_fileSystemTypeHasBeenSet(false),
-    m_networkInfoListHasBeenSet(false),
-    m_osInfoHasBeenSet(false)
+SystemInfo::SystemInfo(JsonView jsonValue)
+  : SystemInfo()
 {
   *this = jsonValue;
 }

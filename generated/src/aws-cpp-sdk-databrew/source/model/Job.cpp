@@ -52,37 +52,8 @@ Job::Job() :
 {
 }
 
-Job::Job(JsonView jsonValue) : 
-    m_accountIdHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_createDateHasBeenSet(false),
-    m_datasetNameHasBeenSet(false),
-    m_encryptionKeyArnHasBeenSet(false),
-    m_encryptionMode(EncryptionMode::NOT_SET),
-    m_encryptionModeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_type(JobType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_lastModifiedByHasBeenSet(false),
-    m_lastModifiedDateHasBeenSet(false),
-    m_logSubscription(LogSubscription::NOT_SET),
-    m_logSubscriptionHasBeenSet(false),
-    m_maxCapacity(0),
-    m_maxCapacityHasBeenSet(false),
-    m_maxRetries(0),
-    m_maxRetriesHasBeenSet(false),
-    m_outputsHasBeenSet(false),
-    m_dataCatalogOutputsHasBeenSet(false),
-    m_databaseOutputsHasBeenSet(false),
-    m_projectNameHasBeenSet(false),
-    m_recipeReferenceHasBeenSet(false),
-    m_resourceArnHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_timeout(0),
-    m_timeoutHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_jobSampleHasBeenSet(false),
-    m_validationConfigurationsHasBeenSet(false)
+Job::Job(JsonView jsonValue)
+  : Job()
 {
   *this = jsonValue;
 }

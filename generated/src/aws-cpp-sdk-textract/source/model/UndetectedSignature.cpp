@@ -24,9 +24,8 @@ UndetectedSignature::UndetectedSignature() :
 {
 }
 
-UndetectedSignature::UndetectedSignature(JsonView jsonValue) : 
-    m_page(0),
-    m_pageHasBeenSet(false)
+UndetectedSignature::UndetectedSignature(JsonView jsonValue)
+  : UndetectedSignature()
 {
   *this = jsonValue;
 }

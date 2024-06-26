@@ -40,25 +40,8 @@ Blueprint::Blueprint() :
 {
 }
 
-Blueprint::Blueprint(JsonView jsonValue) : 
-    m_blueprintIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_groupHasBeenSet(false),
-    m_type(BlueprintType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_isActive(false),
-    m_isActiveHasBeenSet(false),
-    m_minPower(0),
-    m_minPowerHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_versionCodeHasBeenSet(false),
-    m_productUrlHasBeenSet(false),
-    m_licenseUrlHasBeenSet(false),
-    m_platform(InstancePlatform::NOT_SET),
-    m_platformHasBeenSet(false),
-    m_appCategory(AppCategory::NOT_SET),
-    m_appCategoryHasBeenSet(false)
+Blueprint::Blueprint(JsonView jsonValue)
+  : Blueprint()
 {
   *this = jsonValue;
 }

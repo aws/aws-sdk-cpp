@@ -22,8 +22,8 @@ CreateOTAUpdateResult::CreateOTAUpdateResult() :
 {
 }
 
-CreateOTAUpdateResult::CreateOTAUpdateResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_otaUpdateStatus(OTAUpdateStatus::NOT_SET)
+CreateOTAUpdateResult::CreateOTAUpdateResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateOTAUpdateResult()
 {
   *this = result;
 }

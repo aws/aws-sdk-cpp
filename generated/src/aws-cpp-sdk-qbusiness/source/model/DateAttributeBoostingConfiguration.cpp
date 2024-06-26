@@ -26,11 +26,8 @@ DateAttributeBoostingConfiguration::DateAttributeBoostingConfiguration() :
 {
 }
 
-DateAttributeBoostingConfiguration::DateAttributeBoostingConfiguration(JsonView jsonValue) : 
-    m_boostingLevel(DocumentAttributeBoostingLevel::NOT_SET),
-    m_boostingLevelHasBeenSet(false),
-    m_boostingDurationInSeconds(0),
-    m_boostingDurationInSecondsHasBeenSet(false)
+DateAttributeBoostingConfiguration::DateAttributeBoostingConfiguration(JsonView jsonValue)
+  : DateAttributeBoostingConfiguration()
 {
   *this = jsonValue;
 }

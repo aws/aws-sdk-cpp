@@ -23,8 +23,8 @@ IngestionDestinationSummary::IngestionDestinationSummary() :
 {
 }
 
-IngestionDestinationSummary::IngestionDestinationSummary(JsonView jsonValue) : 
-    m_arnHasBeenSet(false)
+IngestionDestinationSummary::IngestionDestinationSummary(JsonView jsonValue)
+  : IngestionDestinationSummary()
 {
   *this = jsonValue;
 }

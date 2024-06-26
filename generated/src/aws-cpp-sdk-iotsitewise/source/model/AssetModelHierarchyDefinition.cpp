@@ -26,11 +26,8 @@ AssetModelHierarchyDefinition::AssetModelHierarchyDefinition() :
 {
 }
 
-AssetModelHierarchyDefinition::AssetModelHierarchyDefinition(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_childAssetModelIdHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_externalIdHasBeenSet(false)
+AssetModelHierarchyDefinition::AssetModelHierarchyDefinition(JsonView jsonValue)
+  : AssetModelHierarchyDefinition()
 {
   *this = jsonValue;
 }

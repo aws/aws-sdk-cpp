@@ -32,15 +32,8 @@ ExportTask::ExportTask() :
 {
 }
 
-ExportTask::ExportTask(const XmlNode& xmlNode) : 
-    m_descriptionHasBeenSet(false),
-    m_exportTaskIdHasBeenSet(false),
-    m_exportToS3TaskHasBeenSet(false),
-    m_instanceExportDetailsHasBeenSet(false),
-    m_state(ExportTaskState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+ExportTask::ExportTask(const XmlNode& xmlNode)
+  : ExportTask()
 {
   *this = xmlNode;
 }

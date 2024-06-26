@@ -26,11 +26,8 @@ FailedConfiguration::FailedConfiguration() :
 {
 }
 
-FailedConfiguration::FailedConfiguration(JsonView jsonValue) : 
-    m_configurationIdHasBeenSet(false),
-    m_errorStatusCode(0),
-    m_errorStatusCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
+FailedConfiguration::FailedConfiguration(JsonView jsonValue)
+  : FailedConfiguration()
 {
   *this = jsonValue;
 }

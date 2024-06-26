@@ -25,10 +25,8 @@ ResourceError::ResourceError() :
 {
 }
 
-ResourceError::ResourceError(JsonView jsonValue) : 
-    m_logicalResourceIdHasBeenSet(false),
-    m_physicalResourceIdHasBeenSet(false),
-    m_reasonHasBeenSet(false)
+ResourceError::ResourceError(JsonView jsonValue)
+  : ResourceError()
 {
   *this = jsonValue;
 }

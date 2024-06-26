@@ -29,14 +29,8 @@ WrappedKey::WrappedKey() :
 {
 }
 
-WrappedKey::WrappedKey(JsonView jsonValue) : 
-    m_wrappingKeyArnHasBeenSet(false),
-    m_wrappedKeyMaterialFormat(WrappedKeyMaterialFormat::NOT_SET),
-    m_wrappedKeyMaterialFormatHasBeenSet(false),
-    m_keyMaterialHasBeenSet(false),
-    m_keyCheckValueHasBeenSet(false),
-    m_keyCheckValueAlgorithm(KeyCheckValueAlgorithm::NOT_SET),
-    m_keyCheckValueAlgorithmHasBeenSet(false)
+WrappedKey::WrappedKey(JsonView jsonValue)
+  : WrappedKey()
 {
   *this = jsonValue;
 }

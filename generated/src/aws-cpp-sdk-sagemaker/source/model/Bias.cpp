@@ -25,10 +25,8 @@ Bias::Bias() :
 {
 }
 
-Bias::Bias(JsonView jsonValue) : 
-    m_reportHasBeenSet(false),
-    m_preTrainingReportHasBeenSet(false),
-    m_postTrainingReportHasBeenSet(false)
+Bias::Bias(JsonView jsonValue)
+  : Bias()
 {
   *this = jsonValue;
 }

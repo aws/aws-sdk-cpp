@@ -27,12 +27,8 @@ EBSTagSpecification::EBSTagSpecification() :
 {
 }
 
-EBSTagSpecification::EBSTagSpecification(JsonView jsonValue) : 
-    m_resourceType(EBSResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_propagateTags(PropagateTags::NOT_SET),
-    m_propagateTagsHasBeenSet(false)
+EBSTagSpecification::EBSTagSpecification(JsonView jsonValue)
+  : EBSTagSpecification()
 {
   *this = jsonValue;
 }

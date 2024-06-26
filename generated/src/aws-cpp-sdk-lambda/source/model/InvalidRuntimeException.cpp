@@ -24,9 +24,8 @@ InvalidRuntimeException::InvalidRuntimeException() :
 {
 }
 
-InvalidRuntimeException::InvalidRuntimeException(JsonView jsonValue) : 
-    m_typeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+InvalidRuntimeException::InvalidRuntimeException(JsonView jsonValue)
+  : InvalidRuntimeException()
 {
   *this = jsonValue;
 }

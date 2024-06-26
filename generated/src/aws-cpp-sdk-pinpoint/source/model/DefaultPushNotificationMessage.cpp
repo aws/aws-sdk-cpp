@@ -31,16 +31,8 @@ DefaultPushNotificationMessage::DefaultPushNotificationMessage() :
 {
 }
 
-DefaultPushNotificationMessage::DefaultPushNotificationMessage(JsonView jsonValue) : 
-    m_action(Action::NOT_SET),
-    m_actionHasBeenSet(false),
-    m_bodyHasBeenSet(false),
-    m_dataHasBeenSet(false),
-    m_silentPush(false),
-    m_silentPushHasBeenSet(false),
-    m_substitutionsHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_urlHasBeenSet(false)
+DefaultPushNotificationMessage::DefaultPushNotificationMessage(JsonView jsonValue)
+  : DefaultPushNotificationMessage()
 {
   *this = jsonValue;
 }

@@ -27,12 +27,8 @@ BatchGetTokenBalanceOutputItem::BatchGetTokenBalanceOutputItem() :
 {
 }
 
-BatchGetTokenBalanceOutputItem::BatchGetTokenBalanceOutputItem(JsonView jsonValue) : 
-    m_ownerIdentifierHasBeenSet(false),
-    m_tokenIdentifierHasBeenSet(false),
-    m_balanceHasBeenSet(false),
-    m_atBlockchainInstantHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false)
+BatchGetTokenBalanceOutputItem::BatchGetTokenBalanceOutputItem(JsonView jsonValue)
+  : BatchGetTokenBalanceOutputItem()
 {
   *this = jsonValue;
 }

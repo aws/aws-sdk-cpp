@@ -25,10 +25,8 @@ OAuthProperties::OAuthProperties() :
 {
 }
 
-OAuthProperties::OAuthProperties(JsonView jsonValue) : 
-    m_tokenUrlHasBeenSet(false),
-    m_authCodeUrlHasBeenSet(false),
-    m_oAuthScopesHasBeenSet(false)
+OAuthProperties::OAuthProperties(JsonView jsonValue)
+  : OAuthProperties()
 {
   *this = jsonValue;
 }

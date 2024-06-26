@@ -29,14 +29,8 @@ BotLocaleSummary::BotLocaleSummary() :
 {
 }
 
-BotLocaleSummary::BotLocaleSummary(JsonView jsonValue) : 
-    m_localeIdHasBeenSet(false),
-    m_localeNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_botLocaleStatus(BotLocaleStatus::NOT_SET),
-    m_botLocaleStatusHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false),
-    m_lastBuildSubmittedDateTimeHasBeenSet(false)
+BotLocaleSummary::BotLocaleSummary(JsonView jsonValue)
+  : BotLocaleSummary()
 {
   *this = jsonValue;
 }

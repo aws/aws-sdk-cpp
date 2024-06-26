@@ -26,11 +26,8 @@ AutoStopConfig::AutoStopConfig() :
 {
 }
 
-AutoStopConfig::AutoStopConfig(JsonView jsonValue) : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_idleTimeoutMinutes(0),
-    m_idleTimeoutMinutesHasBeenSet(false)
+AutoStopConfig::AutoStopConfig(JsonView jsonValue)
+  : AutoStopConfig()
 {
   *this = jsonValue;
 }

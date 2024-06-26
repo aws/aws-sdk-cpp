@@ -26,11 +26,8 @@ TrafficPolicy::TrafficPolicy() :
 {
 }
 
-TrafficPolicy::TrafficPolicy(JsonView jsonValue) : 
-    m_defaultAction(AcceptAction::NOT_SET),
-    m_defaultActionHasBeenSet(false),
-    m_trafficPolicyIdHasBeenSet(false),
-    m_trafficPolicyNameHasBeenSet(false)
+TrafficPolicy::TrafficPolicy(JsonView jsonValue)
+  : TrafficPolicy()
 {
   *this = jsonValue;
 }

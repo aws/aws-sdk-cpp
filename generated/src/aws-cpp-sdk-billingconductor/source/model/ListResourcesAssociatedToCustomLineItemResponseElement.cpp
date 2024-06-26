@@ -26,11 +26,8 @@ ListResourcesAssociatedToCustomLineItemResponseElement::ListResourcesAssociatedT
 {
 }
 
-ListResourcesAssociatedToCustomLineItemResponseElement::ListResourcesAssociatedToCustomLineItemResponseElement(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_relationship(CustomLineItemRelationship::NOT_SET),
-    m_relationshipHasBeenSet(false),
-    m_endBillingPeriodHasBeenSet(false)
+ListResourcesAssociatedToCustomLineItemResponseElement::ListResourcesAssociatedToCustomLineItemResponseElement(JsonView jsonValue)
+  : ListResourcesAssociatedToCustomLineItemResponseElement()
 {
   *this = jsonValue;
 }

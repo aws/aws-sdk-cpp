@@ -26,11 +26,8 @@ OrganizationAggregationSource::OrganizationAggregationSource() :
 {
 }
 
-OrganizationAggregationSource::OrganizationAggregationSource(JsonView jsonValue) : 
-    m_roleArnHasBeenSet(false),
-    m_awsRegionsHasBeenSet(false),
-    m_allAwsRegions(false),
-    m_allAwsRegionsHasBeenSet(false)
+OrganizationAggregationSource::OrganizationAggregationSource(JsonView jsonValue)
+  : OrganizationAggregationSource()
 {
   *this = jsonValue;
 }

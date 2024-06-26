@@ -23,8 +23,8 @@ EmbeddingModelConfiguration::EmbeddingModelConfiguration() :
 {
 }
 
-EmbeddingModelConfiguration::EmbeddingModelConfiguration(JsonView jsonValue) : 
-    m_bedrockEmbeddingModelConfigurationHasBeenSet(false)
+EmbeddingModelConfiguration::EmbeddingModelConfiguration(JsonView jsonValue)
+  : EmbeddingModelConfiguration()
 {
   *this = jsonValue;
 }

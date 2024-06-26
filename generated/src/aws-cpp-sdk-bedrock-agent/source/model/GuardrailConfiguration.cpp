@@ -24,9 +24,8 @@ GuardrailConfiguration::GuardrailConfiguration() :
 {
 }
 
-GuardrailConfiguration::GuardrailConfiguration(JsonView jsonValue) : 
-    m_guardrailIdentifierHasBeenSet(false),
-    m_guardrailVersionHasBeenSet(false)
+GuardrailConfiguration::GuardrailConfiguration(JsonView jsonValue)
+  : GuardrailConfiguration()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ AutoTrainingConfig::AutoTrainingConfig() :
 {
 }
 
-AutoTrainingConfig::AutoTrainingConfig(JsonView jsonValue) : 
-    m_schedulingExpressionHasBeenSet(false)
+AutoTrainingConfig::AutoTrainingConfig(JsonView jsonValue)
+  : AutoTrainingConfig()
 {
   *this = jsonValue;
 }

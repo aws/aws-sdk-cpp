@@ -35,20 +35,8 @@ TestRunSummary::TestRunSummary() :
 {
 }
 
-TestRunSummary::TestRunSummary(JsonView jsonValue) : 
-    m_testRunIdHasBeenSet(false),
-    m_testRunArnHasBeenSet(false),
-    m_testSuiteIdHasBeenSet(false),
-    m_testSuiteVersion(0),
-    m_testSuiteVersionHasBeenSet(false),
-    m_testConfigurationIdHasBeenSet(false),
-    m_testConfigurationVersion(0),
-    m_testConfigurationVersionHasBeenSet(false),
-    m_status(TestRunStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusReasonHasBeenSet(false),
-    m_runStartTimeHasBeenSet(false),
-    m_runEndTimeHasBeenSet(false)
+TestRunSummary::TestRunSummary(JsonView jsonValue)
+  : TestRunSummary()
 {
   *this = jsonValue;
 }

@@ -31,16 +31,8 @@ ProfilerRuleConfiguration::ProfilerRuleConfiguration() :
 {
 }
 
-ProfilerRuleConfiguration::ProfilerRuleConfiguration(JsonView jsonValue) : 
-    m_ruleConfigurationNameHasBeenSet(false),
-    m_localPathHasBeenSet(false),
-    m_s3OutputPathHasBeenSet(false),
-    m_ruleEvaluatorImageHasBeenSet(false),
-    m_instanceType(ProcessingInstanceType::NOT_SET),
-    m_instanceTypeHasBeenSet(false),
-    m_volumeSizeInGB(0),
-    m_volumeSizeInGBHasBeenSet(false),
-    m_ruleParametersHasBeenSet(false)
+ProfilerRuleConfiguration::ProfilerRuleConfiguration(JsonView jsonValue)
+  : ProfilerRuleConfiguration()
 {
   *this = jsonValue;
 }

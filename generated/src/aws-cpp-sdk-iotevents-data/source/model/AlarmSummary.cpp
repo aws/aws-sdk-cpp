@@ -29,14 +29,8 @@ AlarmSummary::AlarmSummary() :
 {
 }
 
-AlarmSummary::AlarmSummary(JsonView jsonValue) : 
-    m_alarmModelNameHasBeenSet(false),
-    m_alarmModelVersionHasBeenSet(false),
-    m_keyValueHasBeenSet(false),
-    m_stateName(AlarmStateName::NOT_SET),
-    m_stateNameHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastUpdateTimeHasBeenSet(false)
+AlarmSummary::AlarmSummary(JsonView jsonValue)
+  : AlarmSummary()
 {
   *this = jsonValue;
 }

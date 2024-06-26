@@ -23,8 +23,8 @@ AwsMskClusterDetails::AwsMskClusterDetails() :
 {
 }
 
-AwsMskClusterDetails::AwsMskClusterDetails(JsonView jsonValue) : 
-    m_clusterInfoHasBeenSet(false)
+AwsMskClusterDetails::AwsMskClusterDetails(JsonView jsonValue)
+  : AwsMskClusterDetails()
 {
   *this = jsonValue;
 }

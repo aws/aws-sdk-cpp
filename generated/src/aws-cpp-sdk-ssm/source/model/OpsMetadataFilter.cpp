@@ -24,9 +24,8 @@ OpsMetadataFilter::OpsMetadataFilter() :
 {
 }
 
-OpsMetadataFilter::OpsMetadataFilter(JsonView jsonValue) : 
-    m_keyHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+OpsMetadataFilter::OpsMetadataFilter(JsonView jsonValue)
+  : OpsMetadataFilter()
 {
   *this = jsonValue;
 }

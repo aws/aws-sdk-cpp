@@ -24,9 +24,8 @@ ExternalUrlConfig::ExternalUrlConfig() :
 {
 }
 
-ExternalUrlConfig::ExternalUrlConfig(JsonView jsonValue) : 
-    m_accessUrlHasBeenSet(false),
-    m_approvedOriginsHasBeenSet(false)
+ExternalUrlConfig::ExternalUrlConfig(JsonView jsonValue)
+  : ExternalUrlConfig()
 {
   *this = jsonValue;
 }

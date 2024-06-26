@@ -30,15 +30,8 @@ Video::Video() :
 {
 }
 
-Video::Video(JsonView jsonValue) : 
-    m_width(0),
-    m_widthHasBeenSet(false),
-    m_height(0),
-    m_heightHasBeenSet(false),
-    m_framerate(0.0),
-    m_framerateHasBeenSet(false),
-    m_bitrate(0),
-    m_bitrateHasBeenSet(false)
+Video::Video(JsonView jsonValue)
+  : Video()
 {
   *this = jsonValue;
 }

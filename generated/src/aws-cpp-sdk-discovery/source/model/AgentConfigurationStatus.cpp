@@ -26,11 +26,8 @@ AgentConfigurationStatus::AgentConfigurationStatus() :
 {
 }
 
-AgentConfigurationStatus::AgentConfigurationStatus(JsonView jsonValue) : 
-    m_agentIdHasBeenSet(false),
-    m_operationSucceeded(false),
-    m_operationSucceededHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+AgentConfigurationStatus::AgentConfigurationStatus(JsonView jsonValue)
+  : AgentConfigurationStatus()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ ApplicationSnapshotConfigurationUpdate::ApplicationSnapshotConfigurationUpdate()
 {
 }
 
-ApplicationSnapshotConfigurationUpdate::ApplicationSnapshotConfigurationUpdate(JsonView jsonValue) : 
-    m_snapshotsEnabledUpdate(false),
-    m_snapshotsEnabledUpdateHasBeenSet(false)
+ApplicationSnapshotConfigurationUpdate::ApplicationSnapshotConfigurationUpdate(JsonView jsonValue)
+  : ApplicationSnapshotConfigurationUpdate()
 {
   *this = jsonValue;
 }

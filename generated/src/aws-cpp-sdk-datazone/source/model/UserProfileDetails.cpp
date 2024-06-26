@@ -24,9 +24,8 @@ UserProfileDetails::UserProfileDetails() :
 {
 }
 
-UserProfileDetails::UserProfileDetails(JsonView jsonValue) : 
-    m_iamHasBeenSet(false),
-    m_ssoHasBeenSet(false)
+UserProfileDetails::UserProfileDetails(JsonView jsonValue)
+  : UserProfileDetails()
 {
   *this = jsonValue;
 }

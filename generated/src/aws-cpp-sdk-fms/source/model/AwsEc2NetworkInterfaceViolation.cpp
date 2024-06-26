@@ -24,9 +24,8 @@ AwsEc2NetworkInterfaceViolation::AwsEc2NetworkInterfaceViolation() :
 {
 }
 
-AwsEc2NetworkInterfaceViolation::AwsEc2NetworkInterfaceViolation(JsonView jsonValue) : 
-    m_violationTargetHasBeenSet(false),
-    m_violatingSecurityGroupsHasBeenSet(false)
+AwsEc2NetworkInterfaceViolation::AwsEc2NetworkInterfaceViolation(JsonView jsonValue)
+  : AwsEc2NetworkInterfaceViolation()
 {
   *this = jsonValue;
 }

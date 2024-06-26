@@ -27,12 +27,8 @@ HudiTarget::HudiTarget() :
 {
 }
 
-HudiTarget::HudiTarget(JsonView jsonValue) : 
-    m_pathsHasBeenSet(false),
-    m_connectionNameHasBeenSet(false),
-    m_exclusionsHasBeenSet(false),
-    m_maximumTraversalDepth(0),
-    m_maximumTraversalDepthHasBeenSet(false)
+HudiTarget::HudiTarget(JsonView jsonValue)
+  : HudiTarget()
 {
   *this = jsonValue;
 }

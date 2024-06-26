@@ -27,12 +27,8 @@ MonitoringScheduleConfig::MonitoringScheduleConfig() :
 {
 }
 
-MonitoringScheduleConfig::MonitoringScheduleConfig(JsonView jsonValue) : 
-    m_scheduleConfigHasBeenSet(false),
-    m_monitoringJobDefinitionHasBeenSet(false),
-    m_monitoringJobDefinitionNameHasBeenSet(false),
-    m_monitoringType(MonitoringType::NOT_SET),
-    m_monitoringTypeHasBeenSet(false)
+MonitoringScheduleConfig::MonitoringScheduleConfig(JsonView jsonValue)
+  : MonitoringScheduleConfig()
 {
   *this = jsonValue;
 }

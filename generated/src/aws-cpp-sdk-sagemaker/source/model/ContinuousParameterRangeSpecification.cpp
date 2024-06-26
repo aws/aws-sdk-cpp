@@ -24,9 +24,8 @@ ContinuousParameterRangeSpecification::ContinuousParameterRangeSpecification() :
 {
 }
 
-ContinuousParameterRangeSpecification::ContinuousParameterRangeSpecification(JsonView jsonValue) : 
-    m_minValueHasBeenSet(false),
-    m_maxValueHasBeenSet(false)
+ContinuousParameterRangeSpecification::ContinuousParameterRangeSpecification(JsonView jsonValue)
+  : ContinuousParameterRangeSpecification()
 {
   *this = jsonValue;
 }

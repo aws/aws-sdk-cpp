@@ -22,8 +22,8 @@ DeleteKnowledgeBaseResult::DeleteKnowledgeBaseResult() :
 {
 }
 
-DeleteKnowledgeBaseResult::DeleteKnowledgeBaseResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(KnowledgeBaseStatus::NOT_SET)
+DeleteKnowledgeBaseResult::DeleteKnowledgeBaseResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeleteKnowledgeBaseResult()
 {
   *this = result;
 }

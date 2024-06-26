@@ -30,15 +30,8 @@ TimeAlignmentBoundary::TimeAlignmentBoundary() :
 {
 }
 
-TimeAlignmentBoundary::TimeAlignmentBoundary(JsonView jsonValue) : 
-    m_month(Month::NOT_SET),
-    m_monthHasBeenSet(false),
-    m_dayOfMonth(0),
-    m_dayOfMonthHasBeenSet(false),
-    m_dayOfWeek(DayOfWeek::NOT_SET),
-    m_dayOfWeekHasBeenSet(false),
-    m_hour(0),
-    m_hourHasBeenSet(false)
+TimeAlignmentBoundary::TimeAlignmentBoundary(JsonView jsonValue)
+  : TimeAlignmentBoundary()
 {
   *this = jsonValue;
 }

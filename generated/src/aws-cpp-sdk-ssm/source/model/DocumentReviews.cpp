@@ -25,10 +25,8 @@ DocumentReviews::DocumentReviews() :
 {
 }
 
-DocumentReviews::DocumentReviews(JsonView jsonValue) : 
-    m_action(DocumentReviewAction::NOT_SET),
-    m_actionHasBeenSet(false),
-    m_commentHasBeenSet(false)
+DocumentReviews::DocumentReviews(JsonView jsonValue)
+  : DocumentReviews()
 {
   *this = jsonValue;
 }

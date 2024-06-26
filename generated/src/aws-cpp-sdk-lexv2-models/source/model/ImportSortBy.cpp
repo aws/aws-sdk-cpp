@@ -26,11 +26,8 @@ ImportSortBy::ImportSortBy() :
 {
 }
 
-ImportSortBy::ImportSortBy(JsonView jsonValue) : 
-    m_attribute(ImportSortAttribute::NOT_SET),
-    m_attributeHasBeenSet(false),
-    m_order(SortOrder::NOT_SET),
-    m_orderHasBeenSet(false)
+ImportSortBy::ImportSortBy(JsonView jsonValue)
+  : ImportSortBy()
 {
   *this = jsonValue;
 }

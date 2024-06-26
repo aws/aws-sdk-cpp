@@ -33,18 +33,8 @@ AwsAutoScalingAutoScalingGroupDetails::AwsAutoScalingAutoScalingGroupDetails() :
 {
 }
 
-AwsAutoScalingAutoScalingGroupDetails::AwsAutoScalingAutoScalingGroupDetails(JsonView jsonValue) : 
-    m_launchConfigurationNameHasBeenSet(false),
-    m_loadBalancerNamesHasBeenSet(false),
-    m_healthCheckTypeHasBeenSet(false),
-    m_healthCheckGracePeriod(0),
-    m_healthCheckGracePeriodHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_mixedInstancesPolicyHasBeenSet(false),
-    m_availabilityZonesHasBeenSet(false),
-    m_launchTemplateHasBeenSet(false),
-    m_capacityRebalance(false),
-    m_capacityRebalanceHasBeenSet(false)
+AwsAutoScalingAutoScalingGroupDetails::AwsAutoScalingAutoScalingGroupDetails(JsonView jsonValue)
+  : AwsAutoScalingAutoScalingGroupDetails()
 {
   *this = jsonValue;
 }

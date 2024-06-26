@@ -45,30 +45,8 @@ ColumnMetadata::ColumnMetadata() :
 {
 }
 
-ColumnMetadata::ColumnMetadata(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_type(0),
-    m_typeHasBeenSet(false),
-    m_typeNameHasBeenSet(false),
-    m_labelHasBeenSet(false),
-    m_schemaNameHasBeenSet(false),
-    m_tableNameHasBeenSet(false),
-    m_isAutoIncrement(false),
-    m_isAutoIncrementHasBeenSet(false),
-    m_isSigned(false),
-    m_isSignedHasBeenSet(false),
-    m_isCurrency(false),
-    m_isCurrencyHasBeenSet(false),
-    m_isCaseSensitive(false),
-    m_isCaseSensitiveHasBeenSet(false),
-    m_nullable(0),
-    m_nullableHasBeenSet(false),
-    m_precision(0),
-    m_precisionHasBeenSet(false),
-    m_scale(0),
-    m_scaleHasBeenSet(false),
-    m_arrayBaseColumnType(0),
-    m_arrayBaseColumnTypeHasBeenSet(false)
+ColumnMetadata::ColumnMetadata(JsonView jsonValue)
+  : ColumnMetadata()
 {
   *this = jsonValue;
 }

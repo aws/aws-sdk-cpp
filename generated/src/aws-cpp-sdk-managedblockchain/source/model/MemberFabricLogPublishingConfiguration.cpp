@@ -23,8 +23,8 @@ MemberFabricLogPublishingConfiguration::MemberFabricLogPublishingConfiguration()
 {
 }
 
-MemberFabricLogPublishingConfiguration::MemberFabricLogPublishingConfiguration(JsonView jsonValue) : 
-    m_caLogsHasBeenSet(false)
+MemberFabricLogPublishingConfiguration::MemberFabricLogPublishingConfiguration(JsonView jsonValue)
+  : MemberFabricLogPublishingConfiguration()
 {
   *this = jsonValue;
 }

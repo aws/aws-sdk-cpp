@@ -27,12 +27,8 @@ ImageReplicationStatus::ImageReplicationStatus() :
 {
 }
 
-ImageReplicationStatus::ImageReplicationStatus(JsonView jsonValue) : 
-    m_regionHasBeenSet(false),
-    m_registryIdHasBeenSet(false),
-    m_status(ReplicationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_failureCodeHasBeenSet(false)
+ImageReplicationStatus::ImageReplicationStatus(JsonView jsonValue)
+  : ImageReplicationStatus()
 {
   *this = jsonValue;
 }

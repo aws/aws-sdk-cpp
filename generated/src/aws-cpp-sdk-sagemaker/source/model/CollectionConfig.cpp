@@ -23,8 +23,8 @@ CollectionConfig::CollectionConfig() :
 {
 }
 
-CollectionConfig::CollectionConfig(JsonView jsonValue) : 
-    m_vectorConfigHasBeenSet(false)
+CollectionConfig::CollectionConfig(JsonView jsonValue)
+  : CollectionConfig()
 {
   *this = jsonValue;
 }

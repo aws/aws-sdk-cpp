@@ -22,8 +22,8 @@ UpdateVariantStoreResult::UpdateVariantStoreResult() :
 {
 }
 
-UpdateVariantStoreResult::UpdateVariantStoreResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(StoreStatus::NOT_SET)
+UpdateVariantStoreResult::UpdateVariantStoreResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateVariantStoreResult()
 {
   *this = result;
 }

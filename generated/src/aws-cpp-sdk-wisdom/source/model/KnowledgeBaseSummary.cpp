@@ -34,19 +34,8 @@ KnowledgeBaseSummary::KnowledgeBaseSummary() :
 {
 }
 
-KnowledgeBaseSummary::KnowledgeBaseSummary(JsonView jsonValue) : 
-    m_descriptionHasBeenSet(false),
-    m_knowledgeBaseArnHasBeenSet(false),
-    m_knowledgeBaseIdHasBeenSet(false),
-    m_knowledgeBaseType(KnowledgeBaseType::NOT_SET),
-    m_knowledgeBaseTypeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_renderingConfigurationHasBeenSet(false),
-    m_serverSideEncryptionConfigurationHasBeenSet(false),
-    m_sourceConfigurationHasBeenSet(false),
-    m_status(KnowledgeBaseStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+KnowledgeBaseSummary::KnowledgeBaseSummary(JsonView jsonValue)
+  : KnowledgeBaseSummary()
 {
   *this = jsonValue;
 }

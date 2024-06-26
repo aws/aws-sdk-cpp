@@ -30,15 +30,8 @@ Alarm::Alarm() :
 {
 }
 
-Alarm::Alarm(JsonView jsonValue) : 
-    m_alarmModelNameHasBeenSet(false),
-    m_alarmModelVersionHasBeenSet(false),
-    m_keyValueHasBeenSet(false),
-    m_alarmStateHasBeenSet(false),
-    m_severity(0),
-    m_severityHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastUpdateTimeHasBeenSet(false)
+Alarm::Alarm(JsonView jsonValue)
+  : Alarm()
 {
   *this = jsonValue;
 }

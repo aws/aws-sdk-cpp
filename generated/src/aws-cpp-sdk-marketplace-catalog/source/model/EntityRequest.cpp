@@ -24,9 +24,8 @@ EntityRequest::EntityRequest() :
 {
 }
 
-EntityRequest::EntityRequest(JsonView jsonValue) : 
-    m_catalogHasBeenSet(false),
-    m_entityIdHasBeenSet(false)
+EntityRequest::EntityRequest(JsonView jsonValue)
+  : EntityRequest()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ MissionProfileListItem::MissionProfileListItem() :
 {
 }
 
-MissionProfileListItem::MissionProfileListItem(JsonView jsonValue) : 
-    m_missionProfileArnHasBeenSet(false),
-    m_missionProfileIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_regionHasBeenSet(false)
+MissionProfileListItem::MissionProfileListItem(JsonView jsonValue)
+  : MissionProfileListItem()
 {
   *this = jsonValue;
 }

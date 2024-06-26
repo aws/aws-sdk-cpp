@@ -32,17 +32,8 @@ AssociationExecution::AssociationExecution() :
 {
 }
 
-AssociationExecution::AssociationExecution(JsonView jsonValue) : 
-    m_associationIdHasBeenSet(false),
-    m_associationVersionHasBeenSet(false),
-    m_executionIdHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_detailedStatusHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_lastExecutionDateHasBeenSet(false),
-    m_resourceCountByStatusHasBeenSet(false),
-    m_alarmConfigurationHasBeenSet(false),
-    m_triggeredAlarmsHasBeenSet(false)
+AssociationExecution::AssociationExecution(JsonView jsonValue)
+  : AssociationExecution()
 {
   *this = jsonValue;
 }

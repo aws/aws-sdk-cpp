@@ -23,8 +23,8 @@ DefaultTextFieldControlOptions::DefaultTextFieldControlOptions() :
 {
 }
 
-DefaultTextFieldControlOptions::DefaultTextFieldControlOptions(JsonView jsonValue) : 
-    m_displayOptionsHasBeenSet(false)
+DefaultTextFieldControlOptions::DefaultTextFieldControlOptions(JsonView jsonValue)
+  : DefaultTextFieldControlOptions()
 {
   *this = jsonValue;
 }

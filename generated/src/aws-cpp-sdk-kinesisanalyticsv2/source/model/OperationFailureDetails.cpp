@@ -24,9 +24,8 @@ OperationFailureDetails::OperationFailureDetails() :
 {
 }
 
-OperationFailureDetails::OperationFailureDetails(JsonView jsonValue) : 
-    m_rollbackOperationIdHasBeenSet(false),
-    m_errorInfoHasBeenSet(false)
+OperationFailureDetails::OperationFailureDetails(JsonView jsonValue)
+  : OperationFailureDetails()
 {
   *this = jsonValue;
 }

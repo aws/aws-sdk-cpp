@@ -29,14 +29,8 @@ OTAUpdateFile::OTAUpdateFile() :
 {
 }
 
-OTAUpdateFile::OTAUpdateFile(JsonView jsonValue) : 
-    m_fileNameHasBeenSet(false),
-    m_fileType(0),
-    m_fileTypeHasBeenSet(false),
-    m_fileVersionHasBeenSet(false),
-    m_fileLocationHasBeenSet(false),
-    m_codeSigningHasBeenSet(false),
-    m_attributesHasBeenSet(false)
+OTAUpdateFile::OTAUpdateFile(JsonView jsonValue)
+  : OTAUpdateFile()
 {
   *this = jsonValue;
 }

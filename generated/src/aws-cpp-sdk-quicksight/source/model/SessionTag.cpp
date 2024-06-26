@@ -24,9 +24,8 @@ SessionTag::SessionTag() :
 {
 }
 
-SessionTag::SessionTag(JsonView jsonValue) : 
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false)
+SessionTag::SessionTag(JsonView jsonValue)
+  : SessionTag()
 {
   *this = jsonValue;
 }

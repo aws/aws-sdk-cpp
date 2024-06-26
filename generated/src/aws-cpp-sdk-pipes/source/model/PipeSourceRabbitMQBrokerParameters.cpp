@@ -29,14 +29,8 @@ PipeSourceRabbitMQBrokerParameters::PipeSourceRabbitMQBrokerParameters() :
 {
 }
 
-PipeSourceRabbitMQBrokerParameters::PipeSourceRabbitMQBrokerParameters(JsonView jsonValue) : 
-    m_credentialsHasBeenSet(false),
-    m_queueNameHasBeenSet(false),
-    m_virtualHostHasBeenSet(false),
-    m_batchSize(0),
-    m_batchSizeHasBeenSet(false),
-    m_maximumBatchingWindowInSeconds(0),
-    m_maximumBatchingWindowInSecondsHasBeenSet(false)
+PipeSourceRabbitMQBrokerParameters::PipeSourceRabbitMQBrokerParameters(JsonView jsonValue)
+  : PipeSourceRabbitMQBrokerParameters()
 {
   *this = jsonValue;
 }

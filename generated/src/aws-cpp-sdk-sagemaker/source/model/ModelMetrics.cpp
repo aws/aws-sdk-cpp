@@ -26,11 +26,8 @@ ModelMetrics::ModelMetrics() :
 {
 }
 
-ModelMetrics::ModelMetrics(JsonView jsonValue) : 
-    m_modelQualityHasBeenSet(false),
-    m_modelDataQualityHasBeenSet(false),
-    m_biasHasBeenSet(false),
-    m_explainabilityHasBeenSet(false)
+ModelMetrics::ModelMetrics(JsonView jsonValue)
+  : ModelMetrics()
 {
   *this = jsonValue;
 }

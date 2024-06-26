@@ -24,9 +24,8 @@ SecurityProfileIdentifier::SecurityProfileIdentifier() :
 {
 }
 
-SecurityProfileIdentifier::SecurityProfileIdentifier(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false)
+SecurityProfileIdentifier::SecurityProfileIdentifier(JsonView jsonValue)
+  : SecurityProfileIdentifier()
 {
   *this = jsonValue;
 }

@@ -30,15 +30,8 @@ ServiceConfiguration::ServiceConfiguration() :
 {
 }
 
-ServiceConfiguration::ServiceConfiguration(JsonView jsonValue) : 
-    m_memory(0),
-    m_memoryHasBeenSet(false),
-    m_cpu(0),
-    m_cpuHasBeenSet(false),
-    m_containerConfigurationsHasBeenSet(false),
-    m_autoScalingConfiguration(AutoScalingConfiguration::NOT_SET),
-    m_autoScalingConfigurationHasBeenSet(false),
-    m_taskDefinitionArnHasBeenSet(false)
+ServiceConfiguration::ServiceConfiguration(JsonView jsonValue)
+  : ServiceConfiguration()
 {
   *this = jsonValue;
 }

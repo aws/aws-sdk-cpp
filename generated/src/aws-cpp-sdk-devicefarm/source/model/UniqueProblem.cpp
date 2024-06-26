@@ -24,9 +24,8 @@ UniqueProblem::UniqueProblem() :
 {
 }
 
-UniqueProblem::UniqueProblem(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_problemsHasBeenSet(false)
+UniqueProblem::UniqueProblem(JsonView jsonValue)
+  : UniqueProblem()
 {
   *this = jsonValue;
 }

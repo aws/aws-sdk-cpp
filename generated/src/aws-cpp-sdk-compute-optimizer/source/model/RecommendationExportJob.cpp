@@ -31,16 +31,8 @@ RecommendationExportJob::RecommendationExportJob() :
 {
 }
 
-RecommendationExportJob::RecommendationExportJob(JsonView jsonValue) : 
-    m_jobIdHasBeenSet(false),
-    m_destinationHasBeenSet(false),
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_status(JobStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_creationTimestampHasBeenSet(false),
-    m_lastUpdatedTimestampHasBeenSet(false),
-    m_failureReasonHasBeenSet(false)
+RecommendationExportJob::RecommendationExportJob(JsonView jsonValue)
+  : RecommendationExportJob()
 {
   *this = jsonValue;
 }

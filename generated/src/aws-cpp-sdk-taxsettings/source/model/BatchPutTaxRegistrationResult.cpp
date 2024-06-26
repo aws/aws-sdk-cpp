@@ -22,8 +22,8 @@ BatchPutTaxRegistrationResult::BatchPutTaxRegistrationResult() :
 {
 }
 
-BatchPutTaxRegistrationResult::BatchPutTaxRegistrationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(TaxRegistrationStatus::NOT_SET)
+BatchPutTaxRegistrationResult::BatchPutTaxRegistrationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : BatchPutTaxRegistrationResult()
 {
   *this = result;
 }

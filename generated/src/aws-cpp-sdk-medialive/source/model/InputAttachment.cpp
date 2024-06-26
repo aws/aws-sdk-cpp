@@ -26,11 +26,8 @@ InputAttachment::InputAttachment() :
 {
 }
 
-InputAttachment::InputAttachment(JsonView jsonValue) : 
-    m_automaticInputFailoverSettingsHasBeenSet(false),
-    m_inputAttachmentNameHasBeenSet(false),
-    m_inputIdHasBeenSet(false),
-    m_inputSettingsHasBeenSet(false)
+InputAttachment::InputAttachment(JsonView jsonValue)
+  : InputAttachment()
 {
   *this = jsonValue;
 }

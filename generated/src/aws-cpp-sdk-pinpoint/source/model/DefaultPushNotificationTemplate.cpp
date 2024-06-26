@@ -28,13 +28,8 @@ DefaultPushNotificationTemplate::DefaultPushNotificationTemplate() :
 {
 }
 
-DefaultPushNotificationTemplate::DefaultPushNotificationTemplate(JsonView jsonValue) : 
-    m_action(Action::NOT_SET),
-    m_actionHasBeenSet(false),
-    m_bodyHasBeenSet(false),
-    m_soundHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_urlHasBeenSet(false)
+DefaultPushNotificationTemplate::DefaultPushNotificationTemplate(JsonView jsonValue)
+  : DefaultPushNotificationTemplate()
 {
   *this = jsonValue;
 }

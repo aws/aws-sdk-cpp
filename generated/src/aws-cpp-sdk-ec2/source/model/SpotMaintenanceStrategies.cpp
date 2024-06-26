@@ -25,8 +25,8 @@ SpotMaintenanceStrategies::SpotMaintenanceStrategies() :
 {
 }
 
-SpotMaintenanceStrategies::SpotMaintenanceStrategies(const XmlNode& xmlNode) : 
-    m_capacityRebalanceHasBeenSet(false)
+SpotMaintenanceStrategies::SpotMaintenanceStrategies(const XmlNode& xmlNode)
+  : SpotMaintenanceStrategies()
 {
   *this = xmlNode;
 }

@@ -26,9 +26,8 @@ EntityDetails::EntityDetails() :
 {
 }
 
-EntityDetails::EntityDetails(const XmlNode& xmlNode) : 
-    m_entityInfoHasBeenSet(false),
-    m_lastAuthenticatedHasBeenSet(false)
+EntityDetails::EntityDetails(const XmlNode& xmlNode)
+  : EntityDetails()
 {
   *this = xmlNode;
 }

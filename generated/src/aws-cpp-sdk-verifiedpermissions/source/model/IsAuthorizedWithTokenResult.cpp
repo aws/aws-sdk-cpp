@@ -22,8 +22,8 @@ IsAuthorizedWithTokenResult::IsAuthorizedWithTokenResult() :
 {
 }
 
-IsAuthorizedWithTokenResult::IsAuthorizedWithTokenResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_decision(Decision::NOT_SET)
+IsAuthorizedWithTokenResult::IsAuthorizedWithTokenResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : IsAuthorizedWithTokenResult()
 {
   *this = result;
 }

@@ -25,10 +25,8 @@ OutputAttribute::OutputAttribute() :
 {
 }
 
-OutputAttribute::OutputAttribute(JsonView jsonValue) : 
-    m_hashed(false),
-    m_hashedHasBeenSet(false),
-    m_nameHasBeenSet(false)
+OutputAttribute::OutputAttribute(JsonView jsonValue)
+  : OutputAttribute()
 {
   *this = jsonValue;
 }

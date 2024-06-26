@@ -24,9 +24,8 @@ AutoParticipantRecordingConfiguration::AutoParticipantRecordingConfiguration() :
 {
 }
 
-AutoParticipantRecordingConfiguration::AutoParticipantRecordingConfiguration(JsonView jsonValue) : 
-    m_storageConfigurationArnHasBeenSet(false),
-    m_mediaTypesHasBeenSet(false)
+AutoParticipantRecordingConfiguration::AutoParticipantRecordingConfiguration(JsonView jsonValue)
+  : AutoParticipantRecordingConfiguration()
 {
   *this = jsonValue;
 }

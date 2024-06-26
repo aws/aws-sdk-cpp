@@ -23,8 +23,8 @@ UserStorage::UserStorage() :
 {
 }
 
-UserStorage::UserStorage(JsonView jsonValue) : 
-    m_capacityHasBeenSet(false)
+UserStorage::UserStorage(JsonView jsonValue)
+  : UserStorage()
 {
   *this = jsonValue;
 }

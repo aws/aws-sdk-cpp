@@ -24,9 +24,8 @@ CollectionScheme::CollectionScheme() :
 {
 }
 
-CollectionScheme::CollectionScheme(JsonView jsonValue) : 
-    m_timeBasedCollectionSchemeHasBeenSet(false),
-    m_conditionBasedCollectionSchemeHasBeenSet(false)
+CollectionScheme::CollectionScheme(JsonView jsonValue)
+  : CollectionScheme()
 {
   *this = jsonValue;
 }

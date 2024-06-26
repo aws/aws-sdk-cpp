@@ -25,10 +25,8 @@ NumericEqualityDrillDownFilter::NumericEqualityDrillDownFilter() :
 {
 }
 
-NumericEqualityDrillDownFilter::NumericEqualityDrillDownFilter(JsonView jsonValue) : 
-    m_columnHasBeenSet(false),
-    m_value(0.0),
-    m_valueHasBeenSet(false)
+NumericEqualityDrillDownFilter::NumericEqualityDrillDownFilter(JsonView jsonValue)
+  : NumericEqualityDrillDownFilter()
 {
   *this = jsonValue;
 }

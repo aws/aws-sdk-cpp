@@ -22,8 +22,8 @@ PutAuthPolicyResult::PutAuthPolicyResult() :
 {
 }
 
-PutAuthPolicyResult::PutAuthPolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_state(AuthPolicyState::NOT_SET)
+PutAuthPolicyResult::PutAuthPolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : PutAuthPolicyResult()
 {
   *this = result;
 }

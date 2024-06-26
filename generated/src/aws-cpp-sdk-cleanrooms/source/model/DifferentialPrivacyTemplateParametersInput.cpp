@@ -26,11 +26,8 @@ DifferentialPrivacyTemplateParametersInput::DifferentialPrivacyTemplateParameter
 {
 }
 
-DifferentialPrivacyTemplateParametersInput::DifferentialPrivacyTemplateParametersInput(JsonView jsonValue) : 
-    m_epsilon(0),
-    m_epsilonHasBeenSet(false),
-    m_usersNoisePerQuery(0),
-    m_usersNoisePerQueryHasBeenSet(false)
+DifferentialPrivacyTemplateParametersInput::DifferentialPrivacyTemplateParametersInput(JsonView jsonValue)
+  : DifferentialPrivacyTemplateParametersInput()
 {
   *this = jsonValue;
 }

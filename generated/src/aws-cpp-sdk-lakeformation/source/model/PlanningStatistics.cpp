@@ -30,15 +30,8 @@ PlanningStatistics::PlanningStatistics() :
 {
 }
 
-PlanningStatistics::PlanningStatistics(JsonView jsonValue) : 
-    m_estimatedDataToScanBytes(0),
-    m_estimatedDataToScanBytesHasBeenSet(false),
-    m_planningTimeMillis(0),
-    m_planningTimeMillisHasBeenSet(false),
-    m_queueTimeMillis(0),
-    m_queueTimeMillisHasBeenSet(false),
-    m_workUnitsGeneratedCount(0),
-    m_workUnitsGeneratedCountHasBeenSet(false)
+PlanningStatistics::PlanningStatistics(JsonView jsonValue)
+  : PlanningStatistics()
 {
   *this = jsonValue;
 }

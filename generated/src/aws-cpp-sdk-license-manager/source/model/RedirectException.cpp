@@ -24,9 +24,8 @@ RedirectException::RedirectException() :
 {
 }
 
-RedirectException::RedirectException(JsonView jsonValue) : 
-    m_locationHasBeenSet(false),
-    m_messageHasBeenSet(false)
+RedirectException::RedirectException(JsonView jsonValue)
+  : RedirectException()
 {
   *this = jsonValue;
 }

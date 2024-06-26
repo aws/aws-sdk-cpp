@@ -22,9 +22,8 @@ HeadBucketResult::HeadBucketResult() :
 {
 }
 
-HeadBucketResult::HeadBucketResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_bucketLocationType(LocationType::NOT_SET),
-    m_accessPointAlias(false)
+HeadBucketResult::HeadBucketResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : HeadBucketResult()
 {
   *this = result;
 }

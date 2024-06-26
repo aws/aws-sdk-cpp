@@ -24,9 +24,8 @@ BackendAPIConflictResolution::BackendAPIConflictResolution() :
 {
 }
 
-BackendAPIConflictResolution::BackendAPIConflictResolution(JsonView jsonValue) : 
-    m_resolutionStrategy(ResolutionStrategy::NOT_SET),
-    m_resolutionStrategyHasBeenSet(false)
+BackendAPIConflictResolution::BackendAPIConflictResolution(JsonView jsonValue)
+  : BackendAPIConflictResolution()
 {
   *this = jsonValue;
 }

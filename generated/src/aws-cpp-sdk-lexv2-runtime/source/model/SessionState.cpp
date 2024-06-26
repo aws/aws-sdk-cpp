@@ -28,13 +28,8 @@ SessionState::SessionState() :
 {
 }
 
-SessionState::SessionState(JsonView jsonValue) : 
-    m_dialogActionHasBeenSet(false),
-    m_intentHasBeenSet(false),
-    m_activeContextsHasBeenSet(false),
-    m_sessionAttributesHasBeenSet(false),
-    m_originatingRequestIdHasBeenSet(false),
-    m_runtimeHintsHasBeenSet(false)
+SessionState::SessionState(JsonView jsonValue)
+  : SessionState()
 {
   *this = jsonValue;
 }

@@ -32,17 +32,8 @@ SuiteDefinitionConfiguration::SuiteDefinitionConfiguration() :
 {
 }
 
-SuiteDefinitionConfiguration::SuiteDefinitionConfiguration(JsonView jsonValue) : 
-    m_suiteDefinitionNameHasBeenSet(false),
-    m_devicesHasBeenSet(false),
-    m_intendedForQualification(false),
-    m_intendedForQualificationHasBeenSet(false),
-    m_isLongDurationTest(false),
-    m_isLongDurationTestHasBeenSet(false),
-    m_rootGroupHasBeenSet(false),
-    m_devicePermissionRoleArnHasBeenSet(false),
-    m_protocol(Protocol::NOT_SET),
-    m_protocolHasBeenSet(false)
+SuiteDefinitionConfiguration::SuiteDefinitionConfiguration(JsonView jsonValue)
+  : SuiteDefinitionConfiguration()
 {
   *this = jsonValue;
 }

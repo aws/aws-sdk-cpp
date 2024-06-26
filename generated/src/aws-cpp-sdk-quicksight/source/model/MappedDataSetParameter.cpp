@@ -24,9 +24,8 @@ MappedDataSetParameter::MappedDataSetParameter() :
 {
 }
 
-MappedDataSetParameter::MappedDataSetParameter(JsonView jsonValue) : 
-    m_dataSetIdentifierHasBeenSet(false),
-    m_dataSetParameterNameHasBeenSet(false)
+MappedDataSetParameter::MappedDataSetParameter(JsonView jsonValue)
+  : MappedDataSetParameter()
 {
   *this = jsonValue;
 }

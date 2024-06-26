@@ -22,8 +22,8 @@ CreateServiceNetworkVpcAssociationResult::CreateServiceNetworkVpcAssociationResu
 {
 }
 
-CreateServiceNetworkVpcAssociationResult::CreateServiceNetworkVpcAssociationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(ServiceNetworkVpcAssociationStatus::NOT_SET)
+CreateServiceNetworkVpcAssociationResult::CreateServiceNetworkVpcAssociationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateServiceNetworkVpcAssociationResult()
 {
   *this = result;
 }

@@ -25,10 +25,8 @@ DeleteFileSystemWindowsConfiguration::DeleteFileSystemWindowsConfiguration() :
 {
 }
 
-DeleteFileSystemWindowsConfiguration::DeleteFileSystemWindowsConfiguration(JsonView jsonValue) : 
-    m_skipFinalBackup(false),
-    m_skipFinalBackupHasBeenSet(false),
-    m_finalBackupTagsHasBeenSet(false)
+DeleteFileSystemWindowsConfiguration::DeleteFileSystemWindowsConfiguration(JsonView jsonValue)
+  : DeleteFileSystemWindowsConfiguration()
 {
   *this = jsonValue;
 }

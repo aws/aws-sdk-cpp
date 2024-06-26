@@ -27,12 +27,8 @@ ImageLayerAggregationResponse::ImageLayerAggregationResponse() :
 {
 }
 
-ImageLayerAggregationResponse::ImageLayerAggregationResponse(JsonView jsonValue) : 
-    m_accountIdHasBeenSet(false),
-    m_layerHashHasBeenSet(false),
-    m_repositoryHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_severityCountsHasBeenSet(false)
+ImageLayerAggregationResponse::ImageLayerAggregationResponse(JsonView jsonValue)
+  : ImageLayerAggregationResponse()
 {
   *this = jsonValue;
 }

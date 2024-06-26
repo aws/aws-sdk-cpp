@@ -66,51 +66,8 @@ Run::Run() :
 {
 }
 
-Run::Run(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_type(TestType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_platform(DevicePlatform::NOT_SET),
-    m_platformHasBeenSet(false),
-    m_createdHasBeenSet(false),
-    m_status(ExecutionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_result(ExecutionResult::NOT_SET),
-    m_resultHasBeenSet(false),
-    m_startedHasBeenSet(false),
-    m_stoppedHasBeenSet(false),
-    m_countersHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_totalJobs(0),
-    m_totalJobsHasBeenSet(false),
-    m_completedJobs(0),
-    m_completedJobsHasBeenSet(false),
-    m_billingMethod(BillingMethod::NOT_SET),
-    m_billingMethodHasBeenSet(false),
-    m_deviceMinutesHasBeenSet(false),
-    m_networkProfileHasBeenSet(false),
-    m_parsingResultUrlHasBeenSet(false),
-    m_resultCode(ExecutionResultCode::NOT_SET),
-    m_resultCodeHasBeenSet(false),
-    m_seed(0),
-    m_seedHasBeenSet(false),
-    m_appUploadHasBeenSet(false),
-    m_eventCount(0),
-    m_eventCountHasBeenSet(false),
-    m_jobTimeoutMinutes(0),
-    m_jobTimeoutMinutesHasBeenSet(false),
-    m_devicePoolArnHasBeenSet(false),
-    m_localeHasBeenSet(false),
-    m_radiosHasBeenSet(false),
-    m_locationHasBeenSet(false),
-    m_customerArtifactPathsHasBeenSet(false),
-    m_webUrlHasBeenSet(false),
-    m_skipAppResign(false),
-    m_skipAppResignHasBeenSet(false),
-    m_testSpecArnHasBeenSet(false),
-    m_deviceSelectionResultHasBeenSet(false),
-    m_vpcConfigHasBeenSet(false)
+Run::Run(JsonView jsonValue)
+  : Run()
 {
   *this = jsonValue;
 }

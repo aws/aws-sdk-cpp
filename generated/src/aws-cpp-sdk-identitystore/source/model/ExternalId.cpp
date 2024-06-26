@@ -24,9 +24,8 @@ ExternalId::ExternalId() :
 {
 }
 
-ExternalId::ExternalId(JsonView jsonValue) : 
-    m_issuerHasBeenSet(false),
-    m_idHasBeenSet(false)
+ExternalId::ExternalId(JsonView jsonValue)
+  : ExternalId()
 {
   *this = jsonValue;
 }

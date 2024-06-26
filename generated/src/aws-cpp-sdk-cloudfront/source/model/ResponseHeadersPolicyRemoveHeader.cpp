@@ -25,8 +25,8 @@ ResponseHeadersPolicyRemoveHeader::ResponseHeadersPolicyRemoveHeader() :
 {
 }
 
-ResponseHeadersPolicyRemoveHeader::ResponseHeadersPolicyRemoveHeader(const XmlNode& xmlNode) : 
-    m_headerHasBeenSet(false)
+ResponseHeadersPolicyRemoveHeader::ResponseHeadersPolicyRemoveHeader(const XmlNode& xmlNode)
+  : ResponseHeadersPolicyRemoveHeader()
 {
   *this = xmlNode;
 }

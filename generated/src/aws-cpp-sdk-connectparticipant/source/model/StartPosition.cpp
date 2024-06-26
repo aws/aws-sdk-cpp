@@ -26,11 +26,8 @@ StartPosition::StartPosition() :
 {
 }
 
-StartPosition::StartPosition(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_absoluteTimeHasBeenSet(false),
-    m_mostRecent(0),
-    m_mostRecentHasBeenSet(false)
+StartPosition::StartPosition(JsonView jsonValue)
+  : StartPosition()
 {
   *this = jsonValue;
 }

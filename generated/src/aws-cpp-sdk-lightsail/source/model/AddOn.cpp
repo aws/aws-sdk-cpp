@@ -28,13 +28,8 @@ AddOn::AddOn() :
 {
 }
 
-AddOn::AddOn(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_snapshotTimeOfDayHasBeenSet(false),
-    m_nextSnapshotTimeOfDayHasBeenSet(false),
-    m_thresholdHasBeenSet(false),
-    m_durationHasBeenSet(false)
+AddOn::AddOn(JsonView jsonValue)
+  : AddOn()
 {
   *this = jsonValue;
 }

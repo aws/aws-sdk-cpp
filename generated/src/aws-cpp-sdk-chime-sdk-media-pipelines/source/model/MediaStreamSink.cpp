@@ -29,14 +29,8 @@ MediaStreamSink::MediaStreamSink() :
 {
 }
 
-MediaStreamSink::MediaStreamSink(JsonView jsonValue) : 
-    m_sinkArnHasBeenSet(false),
-    m_sinkType(MediaStreamPipelineSinkType::NOT_SET),
-    m_sinkTypeHasBeenSet(false),
-    m_reservedStreamCapacity(0),
-    m_reservedStreamCapacityHasBeenSet(false),
-    m_mediaStreamType(MediaStreamType::NOT_SET),
-    m_mediaStreamTypeHasBeenSet(false)
+MediaStreamSink::MediaStreamSink(JsonView jsonValue)
+  : MediaStreamSink()
 {
   *this = jsonValue;
 }

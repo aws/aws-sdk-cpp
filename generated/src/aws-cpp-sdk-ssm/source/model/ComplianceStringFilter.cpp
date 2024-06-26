@@ -26,11 +26,8 @@ ComplianceStringFilter::ComplianceStringFilter() :
 {
 }
 
-ComplianceStringFilter::ComplianceStringFilter(JsonView jsonValue) : 
-    m_keyHasBeenSet(false),
-    m_valuesHasBeenSet(false),
-    m_type(ComplianceQueryOperatorType::NOT_SET),
-    m_typeHasBeenSet(false)
+ComplianceStringFilter::ComplianceStringFilter(JsonView jsonValue)
+  : ComplianceStringFilter()
 {
   *this = jsonValue;
 }

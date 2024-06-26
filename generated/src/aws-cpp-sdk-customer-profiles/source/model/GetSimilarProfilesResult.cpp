@@ -24,10 +24,8 @@ GetSimilarProfilesResult::GetSimilarProfilesResult() :
 {
 }
 
-GetSimilarProfilesResult::GetSimilarProfilesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_matchType(MatchType::NOT_SET),
-    m_ruleLevel(0),
-    m_confidenceScore(0.0)
+GetSimilarProfilesResult::GetSimilarProfilesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetSimilarProfilesResult()
 {
   *this = result;
 }

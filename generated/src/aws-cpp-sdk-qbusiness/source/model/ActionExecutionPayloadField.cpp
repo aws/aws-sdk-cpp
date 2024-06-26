@@ -23,8 +23,8 @@ ActionExecutionPayloadField::ActionExecutionPayloadField() :
 {
 }
 
-ActionExecutionPayloadField::ActionExecutionPayloadField(JsonView jsonValue) : 
-    m_valueHasBeenSet(false)
+ActionExecutionPayloadField::ActionExecutionPayloadField(JsonView jsonValue)
+  : ActionExecutionPayloadField()
 {
   *this = jsonValue;
 }

@@ -26,9 +26,8 @@ PolicyDetail::PolicyDetail() :
 {
 }
 
-PolicyDetail::PolicyDetail(const XmlNode& xmlNode) : 
-    m_policyNameHasBeenSet(false),
-    m_policyDocumentHasBeenSet(false)
+PolicyDetail::PolicyDetail(const XmlNode& xmlNode)
+  : PolicyDetail()
 {
   *this = xmlNode;
 }

@@ -24,8 +24,8 @@ DocumentSource::DocumentSource() :
 {
 }
 
-DocumentSource::DocumentSource(JsonView jsonValue) : 
-    m_bytesHasBeenSet(false)
+DocumentSource::DocumentSource(JsonView jsonValue)
+  : DocumentSource()
 {
   *this = jsonValue;
 }

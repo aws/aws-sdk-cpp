@@ -31,16 +31,8 @@ ServiceSummary::ServiceSummary() :
 {
 }
 
-ServiceSummary::ServiceSummary(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_customDomainNameHasBeenSet(false),
-    m_dnsEntryHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_status(ServiceStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+ServiceSummary::ServiceSummary(JsonView jsonValue)
+  : ServiceSummary()
 {
   *this = jsonValue;
 }

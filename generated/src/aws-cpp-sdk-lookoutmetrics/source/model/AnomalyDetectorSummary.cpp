@@ -30,15 +30,8 @@ AnomalyDetectorSummary::AnomalyDetectorSummary() :
 {
 }
 
-AnomalyDetectorSummary::AnomalyDetectorSummary(JsonView jsonValue) : 
-    m_anomalyDetectorArnHasBeenSet(false),
-    m_anomalyDetectorNameHasBeenSet(false),
-    m_anomalyDetectorDescriptionHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastModificationTimeHasBeenSet(false),
-    m_status(AnomalyDetectorStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+AnomalyDetectorSummary::AnomalyDetectorSummary(JsonView jsonValue)
+  : AnomalyDetectorSummary()
 {
   *this = jsonValue;
 }

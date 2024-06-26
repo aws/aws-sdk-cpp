@@ -28,14 +28,8 @@ DomainMetadataResult::DomainMetadataResult() :
 {
 }
 
-DomainMetadataResult::DomainMetadataResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_itemCount(0),
-    m_itemNamesSizeBytes(0),
-    m_attributeNameCount(0),
-    m_attributeNamesSizeBytes(0),
-    m_attributeValueCount(0),
-    m_attributeValuesSizeBytes(0),
-    m_timestamp(0)
+DomainMetadataResult::DomainMetadataResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : DomainMetadataResult()
 {
   *this = result;
 }

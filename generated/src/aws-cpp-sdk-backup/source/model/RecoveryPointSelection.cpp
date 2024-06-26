@@ -25,10 +25,8 @@ RecoveryPointSelection::RecoveryPointSelection() :
 {
 }
 
-RecoveryPointSelection::RecoveryPointSelection(JsonView jsonValue) : 
-    m_vaultNamesHasBeenSet(false),
-    m_resourceIdentifiersHasBeenSet(false),
-    m_dateRangeHasBeenSet(false)
+RecoveryPointSelection::RecoveryPointSelection(JsonView jsonValue)
+  : RecoveryPointSelection()
 {
   *this = jsonValue;
 }

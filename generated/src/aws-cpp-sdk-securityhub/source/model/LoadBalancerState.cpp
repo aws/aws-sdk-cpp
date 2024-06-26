@@ -24,9 +24,8 @@ LoadBalancerState::LoadBalancerState() :
 {
 }
 
-LoadBalancerState::LoadBalancerState(JsonView jsonValue) : 
-    m_codeHasBeenSet(false),
-    m_reasonHasBeenSet(false)
+LoadBalancerState::LoadBalancerState(JsonView jsonValue)
+  : LoadBalancerState()
 {
   *this = jsonValue;
 }

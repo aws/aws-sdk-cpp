@@ -22,8 +22,8 @@ TerminateSessionResult::TerminateSessionResult() :
 {
 }
 
-TerminateSessionResult::TerminateSessionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_state(SessionState::NOT_SET)
+TerminateSessionResult::TerminateSessionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : TerminateSessionResult()
 {
   *this = result;
 }

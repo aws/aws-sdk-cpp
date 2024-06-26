@@ -26,11 +26,8 @@ CalculationResult::CalculationResult() :
 {
 }
 
-CalculationResult::CalculationResult(JsonView jsonValue) : 
-    m_stdOutS3UriHasBeenSet(false),
-    m_stdErrorS3UriHasBeenSet(false),
-    m_resultS3UriHasBeenSet(false),
-    m_resultTypeHasBeenSet(false)
+CalculationResult::CalculationResult(JsonView jsonValue)
+  : CalculationResult()
 {
   *this = jsonValue;
 }

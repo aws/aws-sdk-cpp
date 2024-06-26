@@ -23,8 +23,8 @@ UpdateProtectedResource::UpdateProtectedResource() :
 {
 }
 
-UpdateProtectedResource::UpdateProtectedResource(JsonView jsonValue) : 
-    m_s3BucketHasBeenSet(false)
+UpdateProtectedResource::UpdateProtectedResource(JsonView jsonValue)
+  : UpdateProtectedResource()
 {
   *this = jsonValue;
 }

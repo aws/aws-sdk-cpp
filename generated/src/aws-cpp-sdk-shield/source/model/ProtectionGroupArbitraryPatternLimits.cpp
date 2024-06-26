@@ -24,9 +24,8 @@ ProtectionGroupArbitraryPatternLimits::ProtectionGroupArbitraryPatternLimits() :
 {
 }
 
-ProtectionGroupArbitraryPatternLimits::ProtectionGroupArbitraryPatternLimits(JsonView jsonValue) : 
-    m_maxMembers(0),
-    m_maxMembersHasBeenSet(false)
+ProtectionGroupArbitraryPatternLimits::ProtectionGroupArbitraryPatternLimits(JsonView jsonValue)
+  : ProtectionGroupArbitraryPatternLimits()
 {
   *this = jsonValue;
 }

@@ -45,30 +45,8 @@ Cluster::Cluster() :
 {
 }
 
-Cluster::Cluster(JsonView jsonValue) : 
-    m_adminUserNameHasBeenSet(false),
-    m_authType(Auth::NOT_SET),
-    m_authTypeHasBeenSet(false),
-    m_backupRetentionPeriod(0),
-    m_backupRetentionPeriodHasBeenSet(false),
-    m_clusterArnHasBeenSet(false),
-    m_clusterEndpointHasBeenSet(false),
-    m_clusterNameHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_preferredBackupWindowHasBeenSet(false),
-    m_preferredMaintenanceWindowHasBeenSet(false),
-    m_shardCapacity(0),
-    m_shardCapacityHasBeenSet(false),
-    m_shardCount(0),
-    m_shardCountHasBeenSet(false),
-    m_shardInstanceCount(0),
-    m_shardInstanceCountHasBeenSet(false),
-    m_shardsHasBeenSet(false),
-    m_status(Status::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_subnetIdsHasBeenSet(false),
-    m_vpcSecurityGroupIdsHasBeenSet(false)
+Cluster::Cluster(JsonView jsonValue)
+  : Cluster()
 {
   *this = jsonValue;
 }

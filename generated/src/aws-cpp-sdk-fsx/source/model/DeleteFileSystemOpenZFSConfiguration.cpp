@@ -26,11 +26,8 @@ DeleteFileSystemOpenZFSConfiguration::DeleteFileSystemOpenZFSConfiguration() :
 {
 }
 
-DeleteFileSystemOpenZFSConfiguration::DeleteFileSystemOpenZFSConfiguration(JsonView jsonValue) : 
-    m_skipFinalBackup(false),
-    m_skipFinalBackupHasBeenSet(false),
-    m_finalBackupTagsHasBeenSet(false),
-    m_optionsHasBeenSet(false)
+DeleteFileSystemOpenZFSConfiguration::DeleteFileSystemOpenZFSConfiguration(JsonView jsonValue)
+  : DeleteFileSystemOpenZFSConfiguration()
 {
   *this = jsonValue;
 }

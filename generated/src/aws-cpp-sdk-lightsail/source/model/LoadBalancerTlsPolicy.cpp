@@ -28,13 +28,8 @@ LoadBalancerTlsPolicy::LoadBalancerTlsPolicy() :
 {
 }
 
-LoadBalancerTlsPolicy::LoadBalancerTlsPolicy(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_isDefault(false),
-    m_isDefaultHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_protocolsHasBeenSet(false),
-    m_ciphersHasBeenSet(false)
+LoadBalancerTlsPolicy::LoadBalancerTlsPolicy(JsonView jsonValue)
+  : LoadBalancerTlsPolicy()
 {
   *this = jsonValue;
 }

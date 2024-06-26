@@ -25,10 +25,8 @@ PathMatch::PathMatch() :
 {
 }
 
-PathMatch::PathMatch(JsonView jsonValue) : 
-    m_caseSensitive(false),
-    m_caseSensitiveHasBeenSet(false),
-    m_matchHasBeenSet(false)
+PathMatch::PathMatch(JsonView jsonValue)
+  : PathMatch()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ InstanceDefinition::InstanceDefinition() :
 {
 }
 
-InstanceDefinition::InstanceDefinition(JsonView jsonValue) : 
-    m_instanceType(GameServerGroupInstanceType::NOT_SET),
-    m_instanceTypeHasBeenSet(false),
-    m_weightedCapacityHasBeenSet(false)
+InstanceDefinition::InstanceDefinition(JsonView jsonValue)
+  : InstanceDefinition()
 {
   *this = jsonValue;
 }

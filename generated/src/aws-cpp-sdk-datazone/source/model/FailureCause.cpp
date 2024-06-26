@@ -23,8 +23,8 @@ FailureCause::FailureCause() :
 {
 }
 
-FailureCause::FailureCause(JsonView jsonValue) : 
-    m_messageHasBeenSet(false)
+FailureCause::FailureCause(JsonView jsonValue)
+  : FailureCause()
 {
   *this = jsonValue;
 }

@@ -27,12 +27,8 @@ Challenge::Challenge() :
 {
 }
 
-Challenge::Challenge(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_connectorArnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_passwordHasBeenSet(false)
+Challenge::Challenge(JsonView jsonValue)
+  : Challenge()
 {
   *this = jsonValue;
 }

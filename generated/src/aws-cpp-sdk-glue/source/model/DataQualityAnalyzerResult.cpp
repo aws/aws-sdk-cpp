@@ -26,11 +26,8 @@ DataQualityAnalyzerResult::DataQualityAnalyzerResult() :
 {
 }
 
-DataQualityAnalyzerResult::DataQualityAnalyzerResult(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_evaluationMessageHasBeenSet(false),
-    m_evaluatedMetricsHasBeenSet(false)
+DataQualityAnalyzerResult::DataQualityAnalyzerResult(JsonView jsonValue)
+  : DataQualityAnalyzerResult()
 {
   *this = jsonValue;
 }

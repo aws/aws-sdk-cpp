@@ -24,9 +24,8 @@ Sheet::Sheet() :
 {
 }
 
-Sheet::Sheet(JsonView jsonValue) : 
-    m_sheetIdHasBeenSet(false),
-    m_nameHasBeenSet(false)
+Sheet::Sheet(JsonView jsonValue)
+  : Sheet()
 {
   *this = jsonValue;
 }

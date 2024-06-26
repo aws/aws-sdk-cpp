@@ -22,8 +22,8 @@ UpdateEnrollmentStatusResult::UpdateEnrollmentStatusResult() :
 {
 }
 
-UpdateEnrollmentStatusResult::UpdateEnrollmentStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(Status::NOT_SET)
+UpdateEnrollmentStatusResult::UpdateEnrollmentStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateEnrollmentStatusResult()
 {
   *this = result;
 }

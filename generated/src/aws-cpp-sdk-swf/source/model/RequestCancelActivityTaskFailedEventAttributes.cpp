@@ -27,12 +27,8 @@ RequestCancelActivityTaskFailedEventAttributes::RequestCancelActivityTaskFailedE
 {
 }
 
-RequestCancelActivityTaskFailedEventAttributes::RequestCancelActivityTaskFailedEventAttributes(JsonView jsonValue) : 
-    m_activityIdHasBeenSet(false),
-    m_cause(RequestCancelActivityTaskFailedCause::NOT_SET),
-    m_causeHasBeenSet(false),
-    m_decisionTaskCompletedEventId(0),
-    m_decisionTaskCompletedEventIdHasBeenSet(false)
+RequestCancelActivityTaskFailedEventAttributes::RequestCancelActivityTaskFailedEventAttributes(JsonView jsonValue)
+  : RequestCancelActivityTaskFailedEventAttributes()
 {
   *this = jsonValue;
 }

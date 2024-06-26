@@ -26,11 +26,8 @@ RecoveryOptionType::RecoveryOptionType() :
 {
 }
 
-RecoveryOptionType::RecoveryOptionType(JsonView jsonValue) : 
-    m_priority(0),
-    m_priorityHasBeenSet(false),
-    m_name(RecoveryOptionNameType::NOT_SET),
-    m_nameHasBeenSet(false)
+RecoveryOptionType::RecoveryOptionType(JsonView jsonValue)
+  : RecoveryOptionType()
 {
   *this = jsonValue;
 }

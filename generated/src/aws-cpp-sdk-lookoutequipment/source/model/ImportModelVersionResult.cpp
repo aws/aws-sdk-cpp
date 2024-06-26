@@ -23,9 +23,8 @@ ImportModelVersionResult::ImportModelVersionResult() :
 {
 }
 
-ImportModelVersionResult::ImportModelVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_modelVersion(0),
-    m_status(ModelVersionStatus::NOT_SET)
+ImportModelVersionResult::ImportModelVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ImportModelVersionResult()
 {
   *this = result;
 }

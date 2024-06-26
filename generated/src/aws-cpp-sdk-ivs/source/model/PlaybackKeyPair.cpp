@@ -26,11 +26,8 @@ PlaybackKeyPair::PlaybackKeyPair() :
 {
 }
 
-PlaybackKeyPair::PlaybackKeyPair(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_fingerprintHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+PlaybackKeyPair::PlaybackKeyPair(JsonView jsonValue)
+  : PlaybackKeyPair()
 {
   *this = jsonValue;
 }

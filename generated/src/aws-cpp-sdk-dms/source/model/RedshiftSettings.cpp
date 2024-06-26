@@ -69,54 +69,8 @@ RedshiftSettings::RedshiftSettings() :
 {
 }
 
-RedshiftSettings::RedshiftSettings(JsonView jsonValue) : 
-    m_acceptAnyDate(false),
-    m_acceptAnyDateHasBeenSet(false),
-    m_afterConnectScriptHasBeenSet(false),
-    m_bucketFolderHasBeenSet(false),
-    m_bucketNameHasBeenSet(false),
-    m_caseSensitiveNames(false),
-    m_caseSensitiveNamesHasBeenSet(false),
-    m_compUpdate(false),
-    m_compUpdateHasBeenSet(false),
-    m_connectionTimeout(0),
-    m_connectionTimeoutHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_dateFormatHasBeenSet(false),
-    m_emptyAsNull(false),
-    m_emptyAsNullHasBeenSet(false),
-    m_encryptionMode(EncryptionModeValue::NOT_SET),
-    m_encryptionModeHasBeenSet(false),
-    m_explicitIds(false),
-    m_explicitIdsHasBeenSet(false),
-    m_fileTransferUploadStreams(0),
-    m_fileTransferUploadStreamsHasBeenSet(false),
-    m_loadTimeout(0),
-    m_loadTimeoutHasBeenSet(false),
-    m_maxFileSize(0),
-    m_maxFileSizeHasBeenSet(false),
-    m_passwordHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_removeQuotes(false),
-    m_removeQuotesHasBeenSet(false),
-    m_replaceInvalidCharsHasBeenSet(false),
-    m_replaceCharsHasBeenSet(false),
-    m_serverNameHasBeenSet(false),
-    m_serviceAccessRoleArnHasBeenSet(false),
-    m_serverSideEncryptionKmsKeyIdHasBeenSet(false),
-    m_timeFormatHasBeenSet(false),
-    m_trimBlanks(false),
-    m_trimBlanksHasBeenSet(false),
-    m_truncateColumns(false),
-    m_truncateColumnsHasBeenSet(false),
-    m_usernameHasBeenSet(false),
-    m_writeBufferSize(0),
-    m_writeBufferSizeHasBeenSet(false),
-    m_secretsManagerAccessRoleArnHasBeenSet(false),
-    m_secretsManagerSecretIdHasBeenSet(false),
-    m_mapBooleanAsBoolean(false),
-    m_mapBooleanAsBooleanHasBeenSet(false)
+RedshiftSettings::RedshiftSettings(JsonView jsonValue)
+  : RedshiftSettings()
 {
   *this = jsonValue;
 }

@@ -26,9 +26,8 @@ Coordinates::Coordinates() :
 {
 }
 
-Coordinates::Coordinates(const XmlNode& xmlNode) : 
-    m_latitudeHasBeenSet(false),
-    m_longitudeHasBeenSet(false)
+Coordinates::Coordinates(const XmlNode& xmlNode)
+  : Coordinates()
 {
   *this = xmlNode;
 }

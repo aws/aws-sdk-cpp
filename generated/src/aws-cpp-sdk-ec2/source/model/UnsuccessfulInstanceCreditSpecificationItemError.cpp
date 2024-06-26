@@ -27,10 +27,8 @@ UnsuccessfulInstanceCreditSpecificationItemError::UnsuccessfulInstanceCreditSpec
 {
 }
 
-UnsuccessfulInstanceCreditSpecificationItemError::UnsuccessfulInstanceCreditSpecificationItemError(const XmlNode& xmlNode) : 
-    m_code(UnsuccessfulInstanceCreditSpecificationErrorCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+UnsuccessfulInstanceCreditSpecificationItemError::UnsuccessfulInstanceCreditSpecificationItemError(const XmlNode& xmlNode)
+  : UnsuccessfulInstanceCreditSpecificationItemError()
 {
   *this = xmlNode;
 }

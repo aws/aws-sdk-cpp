@@ -24,9 +24,8 @@ RuleGroupSummary::RuleGroupSummary() :
 {
 }
 
-RuleGroupSummary::RuleGroupSummary(JsonView jsonValue) : 
-    m_ruleGroupIdHasBeenSet(false),
-    m_nameHasBeenSet(false)
+RuleGroupSummary::RuleGroupSummary(JsonView jsonValue)
+  : RuleGroupSummary()
 {
   *this = jsonValue;
 }

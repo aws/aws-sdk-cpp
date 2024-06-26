@@ -23,9 +23,8 @@ CreateJobResult::CreateJobResult() :
 {
 }
 
-CreateJobResult::CreateJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_state(State::NOT_SET),
-    m_type(Type::NOT_SET)
+CreateJobResult::CreateJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateJobResult()
 {
   *this = result;
 }

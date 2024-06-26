@@ -26,11 +26,8 @@ CapacitySize::CapacitySize() :
 {
 }
 
-CapacitySize::CapacitySize(JsonView jsonValue) : 
-    m_type(CapacitySizeType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_value(0),
-    m_valueHasBeenSet(false)
+CapacitySize::CapacitySize(JsonView jsonValue)
+  : CapacitySize()
 {
   *this = jsonValue;
 }

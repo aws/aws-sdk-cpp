@@ -24,9 +24,8 @@ EksEmptyDir::EksEmptyDir() :
 {
 }
 
-EksEmptyDir::EksEmptyDir(JsonView jsonValue) : 
-    m_mediumHasBeenSet(false),
-    m_sizeLimitHasBeenSet(false)
+EksEmptyDir::EksEmptyDir(JsonView jsonValue)
+  : EksEmptyDir()
 {
   *this = jsonValue;
 }

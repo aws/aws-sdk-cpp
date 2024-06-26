@@ -23,8 +23,8 @@ FailoverCondition::FailoverCondition() :
 {
 }
 
-FailoverCondition::FailoverCondition(JsonView jsonValue) : 
-    m_failoverConditionSettingsHasBeenSet(false)
+FailoverCondition::FailoverCondition(JsonView jsonValue)
+  : FailoverCondition()
 {
   *this = jsonValue;
 }

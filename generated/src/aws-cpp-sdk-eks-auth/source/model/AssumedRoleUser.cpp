@@ -24,9 +24,8 @@ AssumedRoleUser::AssumedRoleUser() :
 {
 }
 
-AssumedRoleUser::AssumedRoleUser(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_assumeRoleIdHasBeenSet(false)
+AssumedRoleUser::AssumedRoleUser(JsonView jsonValue)
+  : AssumedRoleUser()
 {
   *this = jsonValue;
 }

@@ -27,12 +27,8 @@ Eula::Eula() :
 {
 }
 
-Eula::Eula(JsonView jsonValue) : 
-    m_contentHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_eulaIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+Eula::Eula(JsonView jsonValue)
+  : Eula()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ GetTemplateStepGroupResult::GetTemplateStepGroupResult() :
 {
 }
 
-GetTemplateStepGroupResult::GetTemplateStepGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(StepGroupStatus::NOT_SET)
+GetTemplateStepGroupResult::GetTemplateStepGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetTemplateStepGroupResult()
 {
   *this = result;
 }

@@ -34,17 +34,8 @@ ListAccessGrantEntry::ListAccessGrantEntry() :
 {
 }
 
-ListAccessGrantEntry::ListAccessGrantEntry(const XmlNode& xmlNode) : 
-    m_createdAtHasBeenSet(false),
-    m_accessGrantIdHasBeenSet(false),
-    m_accessGrantArnHasBeenSet(false),
-    m_granteeHasBeenSet(false),
-    m_permission(Permission::NOT_SET),
-    m_permissionHasBeenSet(false),
-    m_accessGrantsLocationIdHasBeenSet(false),
-    m_accessGrantsLocationConfigurationHasBeenSet(false),
-    m_grantScopeHasBeenSet(false),
-    m_applicationArnHasBeenSet(false)
+ListAccessGrantEntry::ListAccessGrantEntry(const XmlNode& xmlNode)
+  : ListAccessGrantEntry()
 {
   *this = xmlNode;
 }

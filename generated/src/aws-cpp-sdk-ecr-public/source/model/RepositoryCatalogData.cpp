@@ -30,15 +30,8 @@ RepositoryCatalogData::RepositoryCatalogData() :
 {
 }
 
-RepositoryCatalogData::RepositoryCatalogData(JsonView jsonValue) : 
-    m_descriptionHasBeenSet(false),
-    m_architecturesHasBeenSet(false),
-    m_operatingSystemsHasBeenSet(false),
-    m_logoUrlHasBeenSet(false),
-    m_aboutTextHasBeenSet(false),
-    m_usageTextHasBeenSet(false),
-    m_marketplaceCertified(false),
-    m_marketplaceCertifiedHasBeenSet(false)
+RepositoryCatalogData::RepositoryCatalogData(JsonView jsonValue)
+  : RepositoryCatalogData()
 {
   *this = jsonValue;
 }

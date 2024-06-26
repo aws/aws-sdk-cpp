@@ -22,8 +22,8 @@ PutRecordResult::PutRecordResult() :
 {
 }
 
-PutRecordResult::PutRecordResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_encryptionType(EncryptionType::NOT_SET)
+PutRecordResult::PutRecordResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : PutRecordResult()
 {
   *this = result;
 }

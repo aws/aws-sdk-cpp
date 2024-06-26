@@ -23,8 +23,8 @@ DomainInformationContainer::DomainInformationContainer() :
 {
 }
 
-DomainInformationContainer::DomainInformationContainer(JsonView jsonValue) : 
-    m_aWSDomainInformationHasBeenSet(false)
+DomainInformationContainer::DomainInformationContainer(JsonView jsonValue)
+  : DomainInformationContainer()
 {
   *this = jsonValue;
 }

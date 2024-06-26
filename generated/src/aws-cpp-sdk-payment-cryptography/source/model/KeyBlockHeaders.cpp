@@ -27,12 +27,8 @@ KeyBlockHeaders::KeyBlockHeaders() :
 {
 }
 
-KeyBlockHeaders::KeyBlockHeaders(JsonView jsonValue) : 
-    m_keyModesOfUseHasBeenSet(false),
-    m_keyExportability(KeyExportability::NOT_SET),
-    m_keyExportabilityHasBeenSet(false),
-    m_keyVersionHasBeenSet(false),
-    m_optionalBlocksHasBeenSet(false)
+KeyBlockHeaders::KeyBlockHeaders(JsonView jsonValue)
+  : KeyBlockHeaders()
 {
   *this = jsonValue;
 }

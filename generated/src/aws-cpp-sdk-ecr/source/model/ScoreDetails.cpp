@@ -23,8 +23,8 @@ ScoreDetails::ScoreDetails() :
 {
 }
 
-ScoreDetails::ScoreDetails(JsonView jsonValue) : 
-    m_cvssHasBeenSet(false)
+ScoreDetails::ScoreDetails(JsonView jsonValue)
+  : ScoreDetails()
 {
   *this = jsonValue;
 }

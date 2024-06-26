@@ -27,12 +27,8 @@ FindingDetails::FindingDetails() :
 {
 }
 
-FindingDetails::FindingDetails(JsonView jsonValue) : 
-    m_externalAccessDetailsHasBeenSet(false),
-    m_unusedPermissionDetailsHasBeenSet(false),
-    m_unusedIamUserAccessKeyDetailsHasBeenSet(false),
-    m_unusedIamRoleDetailsHasBeenSet(false),
-    m_unusedIamUserPasswordDetailsHasBeenSet(false)
+FindingDetails::FindingDetails(JsonView jsonValue)
+  : FindingDetails()
 {
   *this = jsonValue;
 }

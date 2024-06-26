@@ -24,9 +24,8 @@ DashAdditionalManifest::DashAdditionalManifest() :
 {
 }
 
-DashAdditionalManifest::DashAdditionalManifest(JsonView jsonValue) : 
-    m_manifestNameModifierHasBeenSet(false),
-    m_selectedOutputsHasBeenSet(false)
+DashAdditionalManifest::DashAdditionalManifest(JsonView jsonValue)
+  : DashAdditionalManifest()
 {
   *this = jsonValue;
 }

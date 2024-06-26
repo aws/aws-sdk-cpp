@@ -28,13 +28,8 @@ Scte35TimeSignalApos::Scte35TimeSignalApos() :
 {
 }
 
-Scte35TimeSignalApos::Scte35TimeSignalApos(JsonView jsonValue) : 
-    m_adAvailOffset(0),
-    m_adAvailOffsetHasBeenSet(false),
-    m_noRegionalBlackoutFlag(Scte35AposNoRegionalBlackoutBehavior::NOT_SET),
-    m_noRegionalBlackoutFlagHasBeenSet(false),
-    m_webDeliveryAllowedFlag(Scte35AposWebDeliveryAllowedBehavior::NOT_SET),
-    m_webDeliveryAllowedFlagHasBeenSet(false)
+Scte35TimeSignalApos::Scte35TimeSignalApos(JsonView jsonValue)
+  : Scte35TimeSignalApos()
 {
   *this = jsonValue;
 }

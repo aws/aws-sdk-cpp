@@ -25,10 +25,8 @@ ProjectAppConfigResource::ProjectAppConfigResource() :
 {
 }
 
-ProjectAppConfigResource::ProjectAppConfigResource(JsonView jsonValue) : 
-    m_applicationIdHasBeenSet(false),
-    m_configurationProfileIdHasBeenSet(false),
-    m_environmentIdHasBeenSet(false)
+ProjectAppConfigResource::ProjectAppConfigResource(JsonView jsonValue)
+  : ProjectAppConfigResource()
 {
   *this = jsonValue;
 }

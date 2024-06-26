@@ -25,10 +25,8 @@ SalesforceStandardKnowledgeArticleTypeConfiguration::SalesforceStandardKnowledge
 {
 }
 
-SalesforceStandardKnowledgeArticleTypeConfiguration::SalesforceStandardKnowledgeArticleTypeConfiguration(JsonView jsonValue) : 
-    m_documentDataFieldNameHasBeenSet(false),
-    m_documentTitleFieldNameHasBeenSet(false),
-    m_fieldMappingsHasBeenSet(false)
+SalesforceStandardKnowledgeArticleTypeConfiguration::SalesforceStandardKnowledgeArticleTypeConfiguration(JsonView jsonValue)
+  : SalesforceStandardKnowledgeArticleTypeConfiguration()
 {
   *this = jsonValue;
 }

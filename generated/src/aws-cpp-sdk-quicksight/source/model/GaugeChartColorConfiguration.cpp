@@ -24,9 +24,8 @@ GaugeChartColorConfiguration::GaugeChartColorConfiguration() :
 {
 }
 
-GaugeChartColorConfiguration::GaugeChartColorConfiguration(JsonView jsonValue) : 
-    m_foregroundColorHasBeenSet(false),
-    m_backgroundColorHasBeenSet(false)
+GaugeChartColorConfiguration::GaugeChartColorConfiguration(JsonView jsonValue)
+  : GaugeChartColorConfiguration()
 {
   *this = jsonValue;
 }

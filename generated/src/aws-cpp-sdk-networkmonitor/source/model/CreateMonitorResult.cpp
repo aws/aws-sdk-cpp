@@ -23,9 +23,8 @@ CreateMonitorResult::CreateMonitorResult() :
 {
 }
 
-CreateMonitorResult::CreateMonitorResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_state(MonitorState::NOT_SET),
-    m_aggregationPeriod(0)
+CreateMonitorResult::CreateMonitorResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateMonitorResult()
 {
   *this = result;
 }

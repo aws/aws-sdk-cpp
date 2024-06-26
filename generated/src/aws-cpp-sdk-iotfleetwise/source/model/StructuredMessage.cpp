@@ -26,10 +26,8 @@ StructuredMessage::StructuredMessage() :
 {
 }
 
-StructuredMessage::StructuredMessage(JsonView jsonValue) : 
-    m_primitiveMessageDefinitionHasBeenSet(false),
-    m_structuredMessageListDefinitionHasBeenSet(false),
-    m_structuredMessageDefinitionHasBeenSet(false)
+StructuredMessage::StructuredMessage(JsonView jsonValue)
+  : StructuredMessage()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ SubnetNotFound::SubnetNotFound() :
 {
 }
 
-SubnetNotFound::SubnetNotFound(JsonView jsonValue) : 
-    m_errorCodeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+SubnetNotFound::SubnetNotFound(JsonView jsonValue)
+  : SubnetNotFound()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ Credential::Credential() :
 {
 }
 
-Credential::Credential(JsonView jsonValue) : 
-    m_oauth2CredentialHasBeenSet(false),
-    m_apiKeyCredentialHasBeenSet(false)
+Credential::Credential(JsonView jsonValue)
+  : Credential()
 {
   *this = jsonValue;
 }

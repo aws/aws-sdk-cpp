@@ -24,9 +24,8 @@ TimeSeriesTransformations::TimeSeriesTransformations() :
 {
 }
 
-TimeSeriesTransformations::TimeSeriesTransformations(JsonView jsonValue) : 
-    m_fillingHasBeenSet(false),
-    m_aggregationHasBeenSet(false)
+TimeSeriesTransformations::TimeSeriesTransformations(JsonView jsonValue)
+  : TimeSeriesTransformations()
 {
   *this = jsonValue;
 }

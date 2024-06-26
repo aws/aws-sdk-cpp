@@ -24,9 +24,8 @@ ResponseAction::ResponseAction() :
 {
 }
 
-ResponseAction::ResponseAction(JsonView jsonValue) : 
-    m_blockHasBeenSet(false),
-    m_countHasBeenSet(false)
+ResponseAction::ResponseAction(JsonView jsonValue)
+  : ResponseAction()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ SingleAxisOptions::SingleAxisOptions() :
 {
 }
 
-SingleAxisOptions::SingleAxisOptions(JsonView jsonValue) : 
-    m_yAxisOptionsHasBeenSet(false)
+SingleAxisOptions::SingleAxisOptions(JsonView jsonValue)
+  : SingleAxisOptions()
 {
   *this = jsonValue;
 }

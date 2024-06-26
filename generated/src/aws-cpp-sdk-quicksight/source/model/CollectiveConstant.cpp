@@ -23,8 +23,8 @@ CollectiveConstant::CollectiveConstant() :
 {
 }
 
-CollectiveConstant::CollectiveConstant(JsonView jsonValue) : 
-    m_valueListHasBeenSet(false)
+CollectiveConstant::CollectiveConstant(JsonView jsonValue)
+  : CollectiveConstant()
 {
   *this = jsonValue;
 }

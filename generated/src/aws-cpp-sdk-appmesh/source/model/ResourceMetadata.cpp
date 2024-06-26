@@ -30,15 +30,8 @@ ResourceMetadata::ResourceMetadata() :
 {
 }
 
-ResourceMetadata::ResourceMetadata(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false),
-    m_meshOwnerHasBeenSet(false),
-    m_resourceOwnerHasBeenSet(false),
-    m_uidHasBeenSet(false),
-    m_version(0),
-    m_versionHasBeenSet(false)
+ResourceMetadata::ResourceMetadata(JsonView jsonValue)
+  : ResourceMetadata()
 {
   *this = jsonValue;
 }

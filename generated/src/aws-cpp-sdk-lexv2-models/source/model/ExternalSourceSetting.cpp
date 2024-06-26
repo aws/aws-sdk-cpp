@@ -23,8 +23,8 @@ ExternalSourceSetting::ExternalSourceSetting() :
 {
 }
 
-ExternalSourceSetting::ExternalSourceSetting(JsonView jsonValue) : 
-    m_grammarSlotTypeSettingHasBeenSet(false)
+ExternalSourceSetting::ExternalSourceSetting(JsonView jsonValue)
+  : ExternalSourceSetting()
 {
   *this = jsonValue;
 }

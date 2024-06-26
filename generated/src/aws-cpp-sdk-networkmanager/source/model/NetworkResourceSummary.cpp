@@ -29,14 +29,8 @@ NetworkResourceSummary::NetworkResourceSummary() :
 {
 }
 
-NetworkResourceSummary::NetworkResourceSummary(JsonView jsonValue) : 
-    m_registeredGatewayArnHasBeenSet(false),
-    m_resourceArnHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
-    m_definitionHasBeenSet(false),
-    m_nameTagHasBeenSet(false),
-    m_isMiddlebox(false),
-    m_isMiddleboxHasBeenSet(false)
+NetworkResourceSummary::NetworkResourceSummary(JsonView jsonValue)
+  : NetworkResourceSummary()
 {
   *this = jsonValue;
 }

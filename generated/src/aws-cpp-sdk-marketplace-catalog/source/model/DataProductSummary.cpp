@@ -25,10 +25,8 @@ DataProductSummary::DataProductSummary() :
 {
 }
 
-DataProductSummary::DataProductSummary(JsonView jsonValue) : 
-    m_productTitleHasBeenSet(false),
-    m_visibility(DataProductVisibilityString::NOT_SET),
-    m_visibilityHasBeenSet(false)
+DataProductSummary::DataProductSummary(JsonView jsonValue)
+  : DataProductSummary()
 {
   *this = jsonValue;
 }

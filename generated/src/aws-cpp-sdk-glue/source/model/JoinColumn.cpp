@@ -24,9 +24,8 @@ JoinColumn::JoinColumn() :
 {
 }
 
-JoinColumn::JoinColumn(JsonView jsonValue) : 
-    m_fromHasBeenSet(false),
-    m_keysHasBeenSet(false)
+JoinColumn::JoinColumn(JsonView jsonValue)
+  : JoinColumn()
 {
   *this = jsonValue;
 }

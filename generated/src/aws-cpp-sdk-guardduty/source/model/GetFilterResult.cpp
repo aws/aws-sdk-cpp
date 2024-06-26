@@ -23,9 +23,8 @@ GetFilterResult::GetFilterResult() :
 {
 }
 
-GetFilterResult::GetFilterResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_action(FilterAction::NOT_SET),
-    m_rank(0)
+GetFilterResult::GetFilterResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetFilterResult()
 {
   *this = result;
 }

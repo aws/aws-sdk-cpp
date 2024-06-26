@@ -27,12 +27,8 @@ FulfillmentStartResponseSpecification::FulfillmentStartResponseSpecification() :
 {
 }
 
-FulfillmentStartResponseSpecification::FulfillmentStartResponseSpecification(JsonView jsonValue) : 
-    m_delayInSeconds(0),
-    m_delayInSecondsHasBeenSet(false),
-    m_messageGroupsHasBeenSet(false),
-    m_allowInterrupt(false),
-    m_allowInterruptHasBeenSet(false)
+FulfillmentStartResponseSpecification::FulfillmentStartResponseSpecification(JsonView jsonValue)
+  : FulfillmentStartResponseSpecification()
 {
   *this = jsonValue;
 }

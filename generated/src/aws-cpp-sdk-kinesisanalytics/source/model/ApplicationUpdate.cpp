@@ -27,12 +27,8 @@ ApplicationUpdate::ApplicationUpdate() :
 {
 }
 
-ApplicationUpdate::ApplicationUpdate(JsonView jsonValue) : 
-    m_inputUpdatesHasBeenSet(false),
-    m_applicationCodeUpdateHasBeenSet(false),
-    m_outputUpdatesHasBeenSet(false),
-    m_referenceDataSourceUpdatesHasBeenSet(false),
-    m_cloudWatchLoggingOptionUpdatesHasBeenSet(false)
+ApplicationUpdate::ApplicationUpdate(JsonView jsonValue)
+  : ApplicationUpdate()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ EsamSignalProcessingNotification::EsamSignalProcessingNotification() :
 {
 }
 
-EsamSignalProcessingNotification::EsamSignalProcessingNotification(JsonView jsonValue) : 
-    m_sccXmlHasBeenSet(false)
+EsamSignalProcessingNotification::EsamSignalProcessingNotification(JsonView jsonValue)
+  : EsamSignalProcessingNotification()
 {
   *this = jsonValue;
 }

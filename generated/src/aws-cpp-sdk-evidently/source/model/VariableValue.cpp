@@ -29,14 +29,8 @@ VariableValue::VariableValue() :
 {
 }
 
-VariableValue::VariableValue(JsonView jsonValue) : 
-    m_boolValue(false),
-    m_boolValueHasBeenSet(false),
-    m_doubleValue(0.0),
-    m_doubleValueHasBeenSet(false),
-    m_longValue(0),
-    m_longValueHasBeenSet(false),
-    m_stringValueHasBeenSet(false)
+VariableValue::VariableValue(JsonView jsonValue)
+  : VariableValue()
 {
   *this = jsonValue;
 }

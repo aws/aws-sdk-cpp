@@ -24,9 +24,8 @@ Ide::Ide() :
 {
 }
 
-Ide::Ide(JsonView jsonValue) : 
-    m_runtimeHasBeenSet(false),
-    m_nameHasBeenSet(false)
+Ide::Ide(JsonView jsonValue)
+  : Ide()
 {
   *this = jsonValue;
 }

@@ -29,14 +29,8 @@ ContinuousParameterRange::ContinuousParameterRange() :
 {
 }
 
-ContinuousParameterRange::ContinuousParameterRange(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_maxValue(0.0),
-    m_maxValueHasBeenSet(false),
-    m_minValue(0.0),
-    m_minValueHasBeenSet(false),
-    m_scalingType(ScalingType::NOT_SET),
-    m_scalingTypeHasBeenSet(false)
+ContinuousParameterRange::ContinuousParameterRange(JsonView jsonValue)
+  : ContinuousParameterRange()
 {
   *this = jsonValue;
 }

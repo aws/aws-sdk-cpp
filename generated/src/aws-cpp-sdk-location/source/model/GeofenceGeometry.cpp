@@ -26,10 +26,8 @@ GeofenceGeometry::GeofenceGeometry() :
 {
 }
 
-GeofenceGeometry::GeofenceGeometry(JsonView jsonValue) : 
-    m_polygonHasBeenSet(false),
-    m_circleHasBeenSet(false),
-    m_geobufHasBeenSet(false)
+GeofenceGeometry::GeofenceGeometry(JsonView jsonValue)
+  : GeofenceGeometry()
 {
   *this = jsonValue;
 }

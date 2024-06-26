@@ -30,15 +30,8 @@ JobDetailsEntity::JobDetailsEntity() :
 {
 }
 
-JobDetailsEntity::JobDetailsEntity(JsonView jsonValue) : 
-    m_jobAttachmentSettingsHasBeenSet(false),
-    m_jobIdHasBeenSet(false),
-    m_jobRunAsUserHasBeenSet(false),
-    m_logGroupNameHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_pathMappingRulesHasBeenSet(false),
-    m_queueRoleArnHasBeenSet(false),
-    m_schemaVersionHasBeenSet(false)
+JobDetailsEntity::JobDetailsEntity(JsonView jsonValue)
+  : JobDetailsEntity()
 {
   *this = jsonValue;
 }

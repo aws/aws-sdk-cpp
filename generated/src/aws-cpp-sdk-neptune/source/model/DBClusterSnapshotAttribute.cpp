@@ -26,9 +26,8 @@ DBClusterSnapshotAttribute::DBClusterSnapshotAttribute() :
 {
 }
 
-DBClusterSnapshotAttribute::DBClusterSnapshotAttribute(const XmlNode& xmlNode) : 
-    m_attributeNameHasBeenSet(false),
-    m_attributeValuesHasBeenSet(false)
+DBClusterSnapshotAttribute::DBClusterSnapshotAttribute(const XmlNode& xmlNode)
+  : DBClusterSnapshotAttribute()
 {
   *this = xmlNode;
 }

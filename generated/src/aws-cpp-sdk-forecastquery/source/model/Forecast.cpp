@@ -23,8 +23,8 @@ Forecast::Forecast() :
 {
 }
 
-Forecast::Forecast(JsonView jsonValue) : 
-    m_predictionsHasBeenSet(false)
+Forecast::Forecast(JsonView jsonValue)
+  : Forecast()
 {
   *this = jsonValue;
 }

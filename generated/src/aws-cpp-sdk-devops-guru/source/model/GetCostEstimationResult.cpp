@@ -23,9 +23,8 @@ GetCostEstimationResult::GetCostEstimationResult() :
 {
 }
 
-GetCostEstimationResult::GetCostEstimationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(CostEstimationStatus::NOT_SET),
-    m_totalCost(0.0)
+GetCostEstimationResult::GetCostEstimationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetCostEstimationResult()
 {
   *this = result;
 }

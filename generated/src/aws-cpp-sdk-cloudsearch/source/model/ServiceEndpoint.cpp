@@ -25,8 +25,8 @@ ServiceEndpoint::ServiceEndpoint() :
 {
 }
 
-ServiceEndpoint::ServiceEndpoint(const XmlNode& xmlNode) : 
-    m_endpointHasBeenSet(false)
+ServiceEndpoint::ServiceEndpoint(const XmlNode& xmlNode)
+  : ServiceEndpoint()
 {
   *this = xmlNode;
 }

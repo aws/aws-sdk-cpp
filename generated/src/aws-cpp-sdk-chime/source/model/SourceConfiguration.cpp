@@ -23,8 +23,8 @@ SourceConfiguration::SourceConfiguration() :
 {
 }
 
-SourceConfiguration::SourceConfiguration(JsonView jsonValue) : 
-    m_selectedVideoStreamsHasBeenSet(false)
+SourceConfiguration::SourceConfiguration(JsonView jsonValue)
+  : SourceConfiguration()
 {
   *this = jsonValue;
 }

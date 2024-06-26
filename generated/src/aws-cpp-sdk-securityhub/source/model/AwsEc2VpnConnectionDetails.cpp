@@ -33,18 +33,8 @@ AwsEc2VpnConnectionDetails::AwsEc2VpnConnectionDetails() :
 {
 }
 
-AwsEc2VpnConnectionDetails::AwsEc2VpnConnectionDetails(JsonView jsonValue) : 
-    m_vpnConnectionIdHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_customerGatewayIdHasBeenSet(false),
-    m_customerGatewayConfigurationHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_vpnGatewayIdHasBeenSet(false),
-    m_categoryHasBeenSet(false),
-    m_vgwTelemetryHasBeenSet(false),
-    m_optionsHasBeenSet(false),
-    m_routesHasBeenSet(false),
-    m_transitGatewayIdHasBeenSet(false)
+AwsEc2VpnConnectionDetails::AwsEc2VpnConnectionDetails(JsonView jsonValue)
+  : AwsEc2VpnConnectionDetails()
 {
   *this = jsonValue;
 }

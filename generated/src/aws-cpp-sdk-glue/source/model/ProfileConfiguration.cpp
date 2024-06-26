@@ -24,9 +24,8 @@ ProfileConfiguration::ProfileConfiguration() :
 {
 }
 
-ProfileConfiguration::ProfileConfiguration(JsonView jsonValue) : 
-    m_sessionConfigurationHasBeenSet(false),
-    m_jobConfigurationHasBeenSet(false)
+ProfileConfiguration::ProfileConfiguration(JsonView jsonValue)
+  : ProfileConfiguration()
 {
   *this = jsonValue;
 }

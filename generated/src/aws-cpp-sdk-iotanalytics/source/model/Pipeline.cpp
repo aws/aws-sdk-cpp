@@ -28,13 +28,8 @@ Pipeline::Pipeline() :
 {
 }
 
-Pipeline::Pipeline(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_activitiesHasBeenSet(false),
-    m_reprocessingSummariesHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastUpdateTimeHasBeenSet(false)
+Pipeline::Pipeline(JsonView jsonValue)
+  : Pipeline()
 {
   *this = jsonValue;
 }

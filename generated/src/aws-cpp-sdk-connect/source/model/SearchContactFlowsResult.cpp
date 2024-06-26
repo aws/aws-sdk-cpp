@@ -22,8 +22,8 @@ SearchContactFlowsResult::SearchContactFlowsResult() :
 {
 }
 
-SearchContactFlowsResult::SearchContactFlowsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_approximateTotalCount(0)
+SearchContactFlowsResult::SearchContactFlowsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : SearchContactFlowsResult()
 {
   *this = result;
 }

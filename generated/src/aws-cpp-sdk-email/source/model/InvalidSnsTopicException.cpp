@@ -25,8 +25,8 @@ InvalidSnsTopicException::InvalidSnsTopicException() :
 {
 }
 
-InvalidSnsTopicException::InvalidSnsTopicException(const XmlNode& xmlNode) : 
-    m_topicHasBeenSet(false)
+InvalidSnsTopicException::InvalidSnsTopicException(const XmlNode& xmlNode)
+  : InvalidSnsTopicException()
 {
   *this = xmlNode;
 }

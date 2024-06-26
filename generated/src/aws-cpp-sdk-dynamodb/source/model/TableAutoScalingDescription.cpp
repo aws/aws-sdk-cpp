@@ -26,11 +26,8 @@ TableAutoScalingDescription::TableAutoScalingDescription() :
 {
 }
 
-TableAutoScalingDescription::TableAutoScalingDescription(JsonView jsonValue) : 
-    m_tableNameHasBeenSet(false),
-    m_tableStatus(TableStatus::NOT_SET),
-    m_tableStatusHasBeenSet(false),
-    m_replicasHasBeenSet(false)
+TableAutoScalingDescription::TableAutoScalingDescription(JsonView jsonValue)
+  : TableAutoScalingDescription()
 {
   *this = jsonValue;
 }

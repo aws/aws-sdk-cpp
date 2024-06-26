@@ -27,12 +27,8 @@ SimpleScopeTerm::SimpleScopeTerm() :
 {
 }
 
-SimpleScopeTerm::SimpleScopeTerm(JsonView jsonValue) : 
-    m_comparator(JobComparator::NOT_SET),
-    m_comparatorHasBeenSet(false),
-    m_key(ScopeFilterKey::NOT_SET),
-    m_keyHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+SimpleScopeTerm::SimpleScopeTerm(JsonView jsonValue)
+  : SimpleScopeTerm()
 {
   *this = jsonValue;
 }

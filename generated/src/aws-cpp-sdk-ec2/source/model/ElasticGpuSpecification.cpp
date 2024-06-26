@@ -25,8 +25,8 @@ ElasticGpuSpecification::ElasticGpuSpecification() :
 {
 }
 
-ElasticGpuSpecification::ElasticGpuSpecification(const XmlNode& xmlNode) : 
-    m_typeHasBeenSet(false)
+ElasticGpuSpecification::ElasticGpuSpecification(const XmlNode& xmlNode)
+  : ElasticGpuSpecification()
 {
   *this = xmlNode;
 }

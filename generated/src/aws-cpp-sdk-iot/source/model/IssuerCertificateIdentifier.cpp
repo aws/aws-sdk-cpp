@@ -25,10 +25,8 @@ IssuerCertificateIdentifier::IssuerCertificateIdentifier() :
 {
 }
 
-IssuerCertificateIdentifier::IssuerCertificateIdentifier(JsonView jsonValue) : 
-    m_issuerCertificateSubjectHasBeenSet(false),
-    m_issuerIdHasBeenSet(false),
-    m_issuerCertificateSerialNumberHasBeenSet(false)
+IssuerCertificateIdentifier::IssuerCertificateIdentifier(JsonView jsonValue)
+  : IssuerCertificateIdentifier()
 {
   *this = jsonValue;
 }

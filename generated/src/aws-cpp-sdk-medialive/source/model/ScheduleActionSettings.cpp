@@ -37,22 +37,8 @@ ScheduleActionSettings::ScheduleActionSettings() :
 {
 }
 
-ScheduleActionSettings::ScheduleActionSettings(JsonView jsonValue) : 
-    m_hlsId3SegmentTaggingSettingsHasBeenSet(false),
-    m_hlsTimedMetadataSettingsHasBeenSet(false),
-    m_inputPrepareSettingsHasBeenSet(false),
-    m_inputSwitchSettingsHasBeenSet(false),
-    m_motionGraphicsImageActivateSettingsHasBeenSet(false),
-    m_motionGraphicsImageDeactivateSettingsHasBeenSet(false),
-    m_pauseStateSettingsHasBeenSet(false),
-    m_scte35InputSettingsHasBeenSet(false),
-    m_scte35ReturnToNetworkSettingsHasBeenSet(false),
-    m_scte35SpliceInsertSettingsHasBeenSet(false),
-    m_scte35TimeSignalSettingsHasBeenSet(false),
-    m_staticImageActivateSettingsHasBeenSet(false),
-    m_staticImageDeactivateSettingsHasBeenSet(false),
-    m_staticImageOutputActivateSettingsHasBeenSet(false),
-    m_staticImageOutputDeactivateSettingsHasBeenSet(false)
+ScheduleActionSettings::ScheduleActionSettings(JsonView jsonValue)
+  : ScheduleActionSettings()
 {
   *this = jsonValue;
 }

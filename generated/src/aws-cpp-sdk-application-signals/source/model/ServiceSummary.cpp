@@ -25,10 +25,8 @@ ServiceSummary::ServiceSummary() :
 {
 }
 
-ServiceSummary::ServiceSummary(JsonView jsonValue) : 
-    m_keyAttributesHasBeenSet(false),
-    m_attributeMapsHasBeenSet(false),
-    m_metricReferencesHasBeenSet(false)
+ServiceSummary::ServiceSummary(JsonView jsonValue)
+  : ServiceSummary()
 {
   *this = jsonValue;
 }

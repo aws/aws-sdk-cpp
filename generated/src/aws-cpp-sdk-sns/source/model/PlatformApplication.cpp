@@ -26,9 +26,8 @@ PlatformApplication::PlatformApplication() :
 {
 }
 
-PlatformApplication::PlatformApplication(const XmlNode& xmlNode) : 
-    m_platformApplicationArnHasBeenSet(false),
-    m_attributesHasBeenSet(false)
+PlatformApplication::PlatformApplication(const XmlNode& xmlNode)
+  : PlatformApplication()
 {
   *this = xmlNode;
 }

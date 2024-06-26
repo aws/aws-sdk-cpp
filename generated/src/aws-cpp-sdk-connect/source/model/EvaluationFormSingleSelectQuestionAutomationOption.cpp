@@ -23,8 +23,8 @@ EvaluationFormSingleSelectQuestionAutomationOption::EvaluationFormSingleSelectQu
 {
 }
 
-EvaluationFormSingleSelectQuestionAutomationOption::EvaluationFormSingleSelectQuestionAutomationOption(JsonView jsonValue) : 
-    m_ruleCategoryHasBeenSet(false)
+EvaluationFormSingleSelectQuestionAutomationOption::EvaluationFormSingleSelectQuestionAutomationOption(JsonView jsonValue)
+  : EvaluationFormSingleSelectQuestionAutomationOption()
 {
   *this = jsonValue;
 }

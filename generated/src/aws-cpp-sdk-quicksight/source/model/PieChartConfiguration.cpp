@@ -34,19 +34,8 @@ PieChartConfiguration::PieChartConfiguration() :
 {
 }
 
-PieChartConfiguration::PieChartConfiguration(JsonView jsonValue) : 
-    m_fieldWellsHasBeenSet(false),
-    m_sortConfigurationHasBeenSet(false),
-    m_donutOptionsHasBeenSet(false),
-    m_smallMultiplesOptionsHasBeenSet(false),
-    m_categoryLabelOptionsHasBeenSet(false),
-    m_valueLabelOptionsHasBeenSet(false),
-    m_legendHasBeenSet(false),
-    m_dataLabelsHasBeenSet(false),
-    m_tooltipHasBeenSet(false),
-    m_visualPaletteHasBeenSet(false),
-    m_contributionAnalysisDefaultsHasBeenSet(false),
-    m_interactionsHasBeenSet(false)
+PieChartConfiguration::PieChartConfiguration(JsonView jsonValue)
+  : PieChartConfiguration()
 {
   *this = jsonValue;
 }

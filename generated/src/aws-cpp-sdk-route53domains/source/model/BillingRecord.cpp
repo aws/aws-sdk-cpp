@@ -29,14 +29,8 @@ BillingRecord::BillingRecord() :
 {
 }
 
-BillingRecord::BillingRecord(JsonView jsonValue) : 
-    m_domainNameHasBeenSet(false),
-    m_operation(OperationType::NOT_SET),
-    m_operationHasBeenSet(false),
-    m_invoiceIdHasBeenSet(false),
-    m_billDateHasBeenSet(false),
-    m_price(0.0),
-    m_priceHasBeenSet(false)
+BillingRecord::BillingRecord(JsonView jsonValue)
+  : BillingRecord()
 {
   *this = jsonValue;
 }

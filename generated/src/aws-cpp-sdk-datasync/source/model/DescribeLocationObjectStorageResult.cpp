@@ -24,9 +24,8 @@ DescribeLocationObjectStorageResult::DescribeLocationObjectStorageResult() :
 {
 }
 
-DescribeLocationObjectStorageResult::DescribeLocationObjectStorageResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_serverPort(0),
-    m_serverProtocol(ObjectStorageServerProtocol::NOT_SET)
+DescribeLocationObjectStorageResult::DescribeLocationObjectStorageResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeLocationObjectStorageResult()
 {
   *this = result;
 }

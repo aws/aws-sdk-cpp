@@ -24,9 +24,8 @@ PipeEnrichmentParameters::PipeEnrichmentParameters() :
 {
 }
 
-PipeEnrichmentParameters::PipeEnrichmentParameters(JsonView jsonValue) : 
-    m_inputTemplateHasBeenSet(false),
-    m_httpParametersHasBeenSet(false)
+PipeEnrichmentParameters::PipeEnrichmentParameters(JsonView jsonValue)
+  : PipeEnrichmentParameters()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ ListAttachedGroupPoliciesResult::ListAttachedGroupPoliciesResult() :
 {
 }
 
-ListAttachedGroupPoliciesResult::ListAttachedGroupPoliciesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_isTruncated(false)
+ListAttachedGroupPoliciesResult::ListAttachedGroupPoliciesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : ListAttachedGroupPoliciesResult()
 {
   *this = result;
 }

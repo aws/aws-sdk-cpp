@@ -29,14 +29,8 @@ ConversationLevelTestResultItem::ConversationLevelTestResultItem() :
 {
 }
 
-ConversationLevelTestResultItem::ConversationLevelTestResultItem(JsonView jsonValue) : 
-    m_conversationIdHasBeenSet(false),
-    m_endToEndResult(TestResultMatchStatus::NOT_SET),
-    m_endToEndResultHasBeenSet(false),
-    m_speechTranscriptionResult(TestResultMatchStatus::NOT_SET),
-    m_speechTranscriptionResultHasBeenSet(false),
-    m_intentClassificationResultsHasBeenSet(false),
-    m_slotResolutionResultsHasBeenSet(false)
+ConversationLevelTestResultItem::ConversationLevelTestResultItem(JsonView jsonValue)
+  : ConversationLevelTestResultItem()
 {
   *this = jsonValue;
 }

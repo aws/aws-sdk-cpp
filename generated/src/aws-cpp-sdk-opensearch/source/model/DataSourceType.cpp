@@ -23,8 +23,8 @@ DataSourceType::DataSourceType() :
 {
 }
 
-DataSourceType::DataSourceType(JsonView jsonValue) : 
-    m_s3GlueDataCatalogHasBeenSet(false)
+DataSourceType::DataSourceType(JsonView jsonValue)
+  : DataSourceType()
 {
   *this = jsonValue;
 }

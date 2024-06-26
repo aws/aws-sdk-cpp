@@ -23,8 +23,8 @@ FunctionSchema::FunctionSchema() :
 {
 }
 
-FunctionSchema::FunctionSchema(JsonView jsonValue) : 
-    m_functionsHasBeenSet(false)
+FunctionSchema::FunctionSchema(JsonView jsonValue)
+  : FunctionSchema()
 {
   *this = jsonValue;
 }

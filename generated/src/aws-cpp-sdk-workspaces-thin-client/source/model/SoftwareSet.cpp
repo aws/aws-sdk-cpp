@@ -31,16 +31,8 @@ SoftwareSet::SoftwareSet() :
 {
 }
 
-SoftwareSet::SoftwareSet(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_releasedAtHasBeenSet(false),
-    m_supportedUntilHasBeenSet(false),
-    m_validationStatus(SoftwareSetValidationStatus::NOT_SET),
-    m_validationStatusHasBeenSet(false),
-    m_softwareHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+SoftwareSet::SoftwareSet(JsonView jsonValue)
+  : SoftwareSet()
 {
   *this = jsonValue;
 }

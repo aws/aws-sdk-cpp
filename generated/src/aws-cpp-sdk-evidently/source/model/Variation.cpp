@@ -24,9 +24,8 @@ Variation::Variation() :
 {
 }
 
-Variation::Variation(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
+Variation::Variation(JsonView jsonValue)
+  : Variation()
 {
   *this = jsonValue;
 }

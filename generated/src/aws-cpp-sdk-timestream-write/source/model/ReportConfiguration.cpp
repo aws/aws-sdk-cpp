@@ -23,8 +23,8 @@ ReportConfiguration::ReportConfiguration() :
 {
 }
 
-ReportConfiguration::ReportConfiguration(JsonView jsonValue) : 
-    m_reportS3ConfigurationHasBeenSet(false)
+ReportConfiguration::ReportConfiguration(JsonView jsonValue)
+  : ReportConfiguration()
 {
   *this = jsonValue;
 }

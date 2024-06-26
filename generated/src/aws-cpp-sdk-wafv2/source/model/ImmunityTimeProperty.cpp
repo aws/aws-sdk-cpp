@@ -24,9 +24,8 @@ ImmunityTimeProperty::ImmunityTimeProperty() :
 {
 }
 
-ImmunityTimeProperty::ImmunityTimeProperty(JsonView jsonValue) : 
-    m_immunityTime(0),
-    m_immunityTimeHasBeenSet(false)
+ImmunityTimeProperty::ImmunityTimeProperty(JsonView jsonValue)
+  : ImmunityTimeProperty()
 {
   *this = jsonValue;
 }

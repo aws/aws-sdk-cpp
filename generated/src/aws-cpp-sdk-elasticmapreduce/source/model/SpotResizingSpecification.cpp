@@ -24,9 +24,8 @@ SpotResizingSpecification::SpotResizingSpecification() :
 {
 }
 
-SpotResizingSpecification::SpotResizingSpecification(JsonView jsonValue) : 
-    m_timeoutDurationMinutes(0),
-    m_timeoutDurationMinutesHasBeenSet(false)
+SpotResizingSpecification::SpotResizingSpecification(JsonView jsonValue)
+  : SpotResizingSpecification()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ AnalyticsUtteranceAttributeResult::AnalyticsUtteranceAttributeResult() :
 {
 }
 
-AnalyticsUtteranceAttributeResult::AnalyticsUtteranceAttributeResult(JsonView jsonValue) : 
-    m_lastUsedIntentHasBeenSet(false)
+AnalyticsUtteranceAttributeResult::AnalyticsUtteranceAttributeResult(JsonView jsonValue)
+  : AnalyticsUtteranceAttributeResult()
 {
   *this = jsonValue;
 }

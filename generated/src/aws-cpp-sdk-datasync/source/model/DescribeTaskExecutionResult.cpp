@@ -32,18 +32,8 @@ DescribeTaskExecutionResult::DescribeTaskExecutionResult() :
 {
 }
 
-DescribeTaskExecutionResult::DescribeTaskExecutionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(TaskExecutionStatus::NOT_SET),
-    m_estimatedFilesToTransfer(0),
-    m_estimatedBytesToTransfer(0),
-    m_filesTransferred(0),
-    m_bytesWritten(0),
-    m_bytesTransferred(0),
-    m_bytesCompressed(0),
-    m_filesDeleted(0),
-    m_filesSkipped(0),
-    m_filesVerified(0),
-    m_estimatedFilesToDelete(0)
+DescribeTaskExecutionResult::DescribeTaskExecutionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeTaskExecutionResult()
 {
   *this = result;
 }

@@ -24,9 +24,8 @@ Vpc::Vpc() :
 {
 }
 
-Vpc::Vpc(JsonView jsonValue) : 
-    m_securityGroupsHasBeenSet(false),
-    m_subnetsHasBeenSet(false)
+Vpc::Vpc(JsonView jsonValue)
+  : Vpc()
 {
   *this = jsonValue;
 }

@@ -28,13 +28,8 @@ Usage::Usage() :
 {
 }
 
-Usage::Usage(JsonView jsonValue) : 
-    m_usageTypeHasBeenSet(false),
-    m_usageAmount(0.0),
-    m_usageAmountHasBeenSet(false),
-    m_operationHasBeenSet(false),
-    m_productCodeHasBeenSet(false),
-    m_unitHasBeenSet(false)
+Usage::Usage(JsonView jsonValue)
+  : Usage()
 {
   *this = jsonValue;
 }

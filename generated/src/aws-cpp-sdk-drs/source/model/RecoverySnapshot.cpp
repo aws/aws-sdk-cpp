@@ -27,12 +27,8 @@ RecoverySnapshot::RecoverySnapshot() :
 {
 }
 
-RecoverySnapshot::RecoverySnapshot(JsonView jsonValue) : 
-    m_ebsSnapshotsHasBeenSet(false),
-    m_expectedTimestampHasBeenSet(false),
-    m_snapshotIDHasBeenSet(false),
-    m_sourceServerIDHasBeenSet(false),
-    m_timestampHasBeenSet(false)
+RecoverySnapshot::RecoverySnapshot(JsonView jsonValue)
+  : RecoverySnapshot()
 {
   *this = jsonValue;
 }

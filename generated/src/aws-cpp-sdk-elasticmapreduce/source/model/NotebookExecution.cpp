@@ -41,26 +41,8 @@ NotebookExecution::NotebookExecution() :
 {
 }
 
-NotebookExecution::NotebookExecution(JsonView jsonValue) : 
-    m_notebookExecutionIdHasBeenSet(false),
-    m_editorIdHasBeenSet(false),
-    m_executionEngineHasBeenSet(false),
-    m_notebookExecutionNameHasBeenSet(false),
-    m_notebookParamsHasBeenSet(false),
-    m_status(NotebookExecutionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_outputNotebookURIHasBeenSet(false),
-    m_lastStateChangeReasonHasBeenSet(false),
-    m_notebookInstanceSecurityGroupIdHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_notebookS3LocationHasBeenSet(false),
-    m_outputNotebookS3LocationHasBeenSet(false),
-    m_outputNotebookFormat(OutputNotebookFormat::NOT_SET),
-    m_outputNotebookFormatHasBeenSet(false),
-    m_environmentVariablesHasBeenSet(false)
+NotebookExecution::NotebookExecution(JsonView jsonValue)
+  : NotebookExecution()
 {
   *this = jsonValue;
 }

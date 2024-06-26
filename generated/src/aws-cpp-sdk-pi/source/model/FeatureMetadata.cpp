@@ -24,9 +24,8 @@ FeatureMetadata::FeatureMetadata() :
 {
 }
 
-FeatureMetadata::FeatureMetadata(JsonView jsonValue) : 
-    m_status(FeatureStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+FeatureMetadata::FeatureMetadata(JsonView jsonValue)
+  : FeatureMetadata()
 {
   *this = jsonValue;
 }

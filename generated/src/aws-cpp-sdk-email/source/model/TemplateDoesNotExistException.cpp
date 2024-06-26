@@ -25,8 +25,8 @@ TemplateDoesNotExistException::TemplateDoesNotExistException() :
 {
 }
 
-TemplateDoesNotExistException::TemplateDoesNotExistException(const XmlNode& xmlNode) : 
-    m_templateNameHasBeenSet(false)
+TemplateDoesNotExistException::TemplateDoesNotExistException(const XmlNode& xmlNode)
+  : TemplateDoesNotExistException()
 {
   *this = xmlNode;
 }

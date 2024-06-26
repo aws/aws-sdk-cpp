@@ -31,16 +31,8 @@ EvaluatedRule::EvaluatedRule() :
 {
 }
 
-EvaluatedRule::EvaluatedRule(JsonView jsonValue) : 
-    m_ruleIdHasBeenSet(false),
-    m_ruleVersionHasBeenSet(false),
-    m_expressionHasBeenSet(false),
-    m_expressionWithValuesHasBeenSet(false),
-    m_outcomesHasBeenSet(false),
-    m_evaluated(false),
-    m_evaluatedHasBeenSet(false),
-    m_matched(false),
-    m_matchedHasBeenSet(false)
+EvaluatedRule::EvaluatedRule(JsonView jsonValue)
+  : EvaluatedRule()
 {
   *this = jsonValue;
 }

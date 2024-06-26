@@ -24,9 +24,8 @@ RecrawlPolicy::RecrawlPolicy() :
 {
 }
 
-RecrawlPolicy::RecrawlPolicy(JsonView jsonValue) : 
-    m_recrawlBehavior(RecrawlBehavior::NOT_SET),
-    m_recrawlBehaviorHasBeenSet(false)
+RecrawlPolicy::RecrawlPolicy(JsonView jsonValue)
+  : RecrawlPolicy()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ PivotTableRowsLabelOptions::PivotTableRowsLabelOptions() :
 {
 }
 
-PivotTableRowsLabelOptions::PivotTableRowsLabelOptions(JsonView jsonValue) : 
-    m_visibility(Visibility::NOT_SET),
-    m_visibilityHasBeenSet(false),
-    m_customLabelHasBeenSet(false)
+PivotTableRowsLabelOptions::PivotTableRowsLabelOptions(JsonView jsonValue)
+  : PivotTableRowsLabelOptions()
 {
   *this = jsonValue;
 }

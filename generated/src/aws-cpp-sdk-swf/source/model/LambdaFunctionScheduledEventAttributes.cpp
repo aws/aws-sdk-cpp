@@ -29,14 +29,8 @@ LambdaFunctionScheduledEventAttributes::LambdaFunctionScheduledEventAttributes()
 {
 }
 
-LambdaFunctionScheduledEventAttributes::LambdaFunctionScheduledEventAttributes(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_controlHasBeenSet(false),
-    m_inputHasBeenSet(false),
-    m_startToCloseTimeoutHasBeenSet(false),
-    m_decisionTaskCompletedEventId(0),
-    m_decisionTaskCompletedEventIdHasBeenSet(false)
+LambdaFunctionScheduledEventAttributes::LambdaFunctionScheduledEventAttributes(JsonView jsonValue)
+  : LambdaFunctionScheduledEventAttributes()
 {
   *this = jsonValue;
 }

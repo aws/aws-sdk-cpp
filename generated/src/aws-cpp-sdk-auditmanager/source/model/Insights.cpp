@@ -35,20 +35,8 @@ Insights::Insights() :
 {
 }
 
-Insights::Insights(JsonView jsonValue) : 
-    m_activeAssessmentsCount(0),
-    m_activeAssessmentsCountHasBeenSet(false),
-    m_noncompliantEvidenceCount(0),
-    m_noncompliantEvidenceCountHasBeenSet(false),
-    m_compliantEvidenceCount(0),
-    m_compliantEvidenceCountHasBeenSet(false),
-    m_inconclusiveEvidenceCount(0),
-    m_inconclusiveEvidenceCountHasBeenSet(false),
-    m_assessmentControlsCountByNoncompliantEvidence(0),
-    m_assessmentControlsCountByNoncompliantEvidenceHasBeenSet(false),
-    m_totalAssessmentControlsCount(0),
-    m_totalAssessmentControlsCountHasBeenSet(false),
-    m_lastUpdatedHasBeenSet(false)
+Insights::Insights(JsonView jsonValue)
+  : Insights()
 {
   *this = jsonValue;
 }

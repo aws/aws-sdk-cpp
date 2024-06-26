@@ -23,8 +23,8 @@ DashboardSourceEntity::DashboardSourceEntity() :
 {
 }
 
-DashboardSourceEntity::DashboardSourceEntity(JsonView jsonValue) : 
-    m_sourceTemplateHasBeenSet(false)
+DashboardSourceEntity::DashboardSourceEntity(JsonView jsonValue)
+  : DashboardSourceEntity()
 {
   *this = jsonValue;
 }

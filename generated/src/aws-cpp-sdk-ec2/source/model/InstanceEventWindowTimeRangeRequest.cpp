@@ -32,15 +32,8 @@ InstanceEventWindowTimeRangeRequest::InstanceEventWindowTimeRangeRequest() :
 {
 }
 
-InstanceEventWindowTimeRangeRequest::InstanceEventWindowTimeRangeRequest(const XmlNode& xmlNode) : 
-    m_startWeekDay(WeekDay::NOT_SET),
-    m_startWeekDayHasBeenSet(false),
-    m_startHour(0),
-    m_startHourHasBeenSet(false),
-    m_endWeekDay(WeekDay::NOT_SET),
-    m_endWeekDayHasBeenSet(false),
-    m_endHour(0),
-    m_endHourHasBeenSet(false)
+InstanceEventWindowTimeRangeRequest::InstanceEventWindowTimeRangeRequest(const XmlNode& xmlNode)
+  : InstanceEventWindowTimeRangeRequest()
 {
   *this = xmlNode;
 }

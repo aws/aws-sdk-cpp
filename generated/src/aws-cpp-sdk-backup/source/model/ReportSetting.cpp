@@ -29,14 +29,8 @@ ReportSetting::ReportSetting() :
 {
 }
 
-ReportSetting::ReportSetting(JsonView jsonValue) : 
-    m_reportTemplateHasBeenSet(false),
-    m_frameworkArnsHasBeenSet(false),
-    m_numberOfFrameworks(0),
-    m_numberOfFrameworksHasBeenSet(false),
-    m_accountsHasBeenSet(false),
-    m_organizationUnitsHasBeenSet(false),
-    m_regionsHasBeenSet(false)
+ReportSetting::ReportSetting(JsonView jsonValue)
+  : ReportSetting()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ AttachmentInformation::AttachmentInformation() :
 {
 }
 
-AttachmentInformation::AttachmentInformation(JsonView jsonValue) : 
-    m_nameHasBeenSet(false)
+AttachmentInformation::AttachmentInformation(JsonView jsonValue)
+  : AttachmentInformation()
 {
   *this = jsonValue;
 }

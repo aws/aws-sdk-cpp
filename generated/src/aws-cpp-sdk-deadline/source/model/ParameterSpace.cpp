@@ -24,9 +24,8 @@ ParameterSpace::ParameterSpace() :
 {
 }
 
-ParameterSpace::ParameterSpace(JsonView jsonValue) : 
-    m_combinationHasBeenSet(false),
-    m_parametersHasBeenSet(false)
+ParameterSpace::ParameterSpace(JsonView jsonValue)
+  : ParameterSpace()
 {
   *this = jsonValue;
 }

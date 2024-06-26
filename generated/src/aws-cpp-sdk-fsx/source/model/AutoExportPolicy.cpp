@@ -23,8 +23,8 @@ AutoExportPolicy::AutoExportPolicy() :
 {
 }
 
-AutoExportPolicy::AutoExportPolicy(JsonView jsonValue) : 
-    m_eventsHasBeenSet(false)
+AutoExportPolicy::AutoExportPolicy(JsonView jsonValue)
+  : AutoExportPolicy()
 {
   *this = jsonValue;
 }

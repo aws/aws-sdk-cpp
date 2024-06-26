@@ -26,11 +26,8 @@ AuditMitigationActionsTaskMetadata::AuditMitigationActionsTaskMetadata() :
 {
 }
 
-AuditMitigationActionsTaskMetadata::AuditMitigationActionsTaskMetadata(JsonView jsonValue) : 
-    m_taskIdHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_taskStatus(AuditMitigationActionsTaskStatus::NOT_SET),
-    m_taskStatusHasBeenSet(false)
+AuditMitigationActionsTaskMetadata::AuditMitigationActionsTaskMetadata(JsonView jsonValue)
+  : AuditMitigationActionsTaskMetadata()
 {
   *this = jsonValue;
 }

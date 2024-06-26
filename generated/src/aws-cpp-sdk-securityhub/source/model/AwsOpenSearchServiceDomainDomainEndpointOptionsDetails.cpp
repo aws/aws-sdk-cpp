@@ -29,14 +29,8 @@ AwsOpenSearchServiceDomainDomainEndpointOptionsDetails::AwsOpenSearchServiceDoma
 {
 }
 
-AwsOpenSearchServiceDomainDomainEndpointOptionsDetails::AwsOpenSearchServiceDomainDomainEndpointOptionsDetails(JsonView jsonValue) : 
-    m_customEndpointCertificateArnHasBeenSet(false),
-    m_customEndpointEnabled(false),
-    m_customEndpointEnabledHasBeenSet(false),
-    m_enforceHTTPS(false),
-    m_enforceHTTPSHasBeenSet(false),
-    m_customEndpointHasBeenSet(false),
-    m_tLSSecurityPolicyHasBeenSet(false)
+AwsOpenSearchServiceDomainDomainEndpointOptionsDetails::AwsOpenSearchServiceDomainDomainEndpointOptionsDetails(JsonView jsonValue)
+  : AwsOpenSearchServiceDomainDomainEndpointOptionsDetails()
 {
   *this = jsonValue;
 }

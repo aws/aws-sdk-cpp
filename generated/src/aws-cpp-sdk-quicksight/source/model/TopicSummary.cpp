@@ -27,12 +27,8 @@ TopicSummary::TopicSummary() :
 {
 }
 
-TopicSummary::TopicSummary(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_topicIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_userExperienceVersion(TopicUserExperienceVersion::NOT_SET),
-    m_userExperienceVersionHasBeenSet(false)
+TopicSummary::TopicSummary(JsonView jsonValue)
+  : TopicSummary()
 {
   *this = jsonValue;
 }

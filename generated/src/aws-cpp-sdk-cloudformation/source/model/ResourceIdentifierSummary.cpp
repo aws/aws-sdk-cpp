@@ -27,10 +27,8 @@ ResourceIdentifierSummary::ResourceIdentifierSummary() :
 {
 }
 
-ResourceIdentifierSummary::ResourceIdentifierSummary(const XmlNode& xmlNode) : 
-    m_resourceTypeHasBeenSet(false),
-    m_logicalResourceIdsHasBeenSet(false),
-    m_resourceIdentifiersHasBeenSet(false)
+ResourceIdentifierSummary::ResourceIdentifierSummary(const XmlNode& xmlNode)
+  : ResourceIdentifierSummary()
 {
   *this = xmlNode;
 }

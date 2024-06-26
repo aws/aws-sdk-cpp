@@ -28,13 +28,8 @@ DvbSdtSettings::DvbSdtSettings() :
 {
 }
 
-DvbSdtSettings::DvbSdtSettings(JsonView jsonValue) : 
-    m_outputSdt(OutputSdt::NOT_SET),
-    m_outputSdtHasBeenSet(false),
-    m_sdtInterval(0),
-    m_sdtIntervalHasBeenSet(false),
-    m_serviceNameHasBeenSet(false),
-    m_serviceProviderNameHasBeenSet(false)
+DvbSdtSettings::DvbSdtSettings(JsonView jsonValue)
+  : DvbSdtSettings()
 {
   *this = jsonValue;
 }

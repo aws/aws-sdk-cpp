@@ -23,9 +23,8 @@ DescribeDiscoveryJobResult::DescribeDiscoveryJobResult() :
 {
 }
 
-DescribeDiscoveryJobResult::DescribeDiscoveryJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_collectionDurationMinutes(0),
-    m_status(DiscoveryJobStatus::NOT_SET)
+DescribeDiscoveryJobResult::DescribeDiscoveryJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeDiscoveryJobResult()
 {
   *this = result;
 }

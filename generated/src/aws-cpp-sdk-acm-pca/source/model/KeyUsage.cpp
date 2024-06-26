@@ -40,25 +40,8 @@ KeyUsage::KeyUsage() :
 {
 }
 
-KeyUsage::KeyUsage(JsonView jsonValue) : 
-    m_digitalSignature(false),
-    m_digitalSignatureHasBeenSet(false),
-    m_nonRepudiation(false),
-    m_nonRepudiationHasBeenSet(false),
-    m_keyEncipherment(false),
-    m_keyEnciphermentHasBeenSet(false),
-    m_dataEncipherment(false),
-    m_dataEnciphermentHasBeenSet(false),
-    m_keyAgreement(false),
-    m_keyAgreementHasBeenSet(false),
-    m_keyCertSign(false),
-    m_keyCertSignHasBeenSet(false),
-    m_cRLSign(false),
-    m_cRLSignHasBeenSet(false),
-    m_encipherOnly(false),
-    m_encipherOnlyHasBeenSet(false),
-    m_decipherOnly(false),
-    m_decipherOnlyHasBeenSet(false)
+KeyUsage::KeyUsage(JsonView jsonValue)
+  : KeyUsage()
 {
   *this = jsonValue;
 }

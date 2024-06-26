@@ -26,11 +26,8 @@ LendingResult::LendingResult() :
 {
 }
 
-LendingResult::LendingResult(JsonView jsonValue) : 
-    m_page(0),
-    m_pageHasBeenSet(false),
-    m_pageClassificationHasBeenSet(false),
-    m_extractionsHasBeenSet(false)
+LendingResult::LendingResult(JsonView jsonValue)
+  : LendingResult()
 {
   *this = jsonValue;
 }

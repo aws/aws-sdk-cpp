@@ -25,10 +25,8 @@ JobWatermark::JobWatermark() :
 {
 }
 
-JobWatermark::JobWatermark(JsonView jsonValue) : 
-    m_presetWatermarkIdHasBeenSet(false),
-    m_inputKeyHasBeenSet(false),
-    m_encryptionHasBeenSet(false)
+JobWatermark::JobWatermark(JsonView jsonValue)
+  : JobWatermark()
 {
   *this = jsonValue;
 }

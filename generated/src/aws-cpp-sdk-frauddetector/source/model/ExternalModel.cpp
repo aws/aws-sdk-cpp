@@ -33,18 +33,8 @@ ExternalModel::ExternalModel() :
 {
 }
 
-ExternalModel::ExternalModel(JsonView jsonValue) : 
-    m_modelEndpointHasBeenSet(false),
-    m_modelSource(ModelSource::NOT_SET),
-    m_modelSourceHasBeenSet(false),
-    m_invokeModelEndpointRoleArnHasBeenSet(false),
-    m_inputConfigurationHasBeenSet(false),
-    m_outputConfigurationHasBeenSet(false),
-    m_modelEndpointStatus(ModelEndpointStatus::NOT_SET),
-    m_modelEndpointStatusHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_arnHasBeenSet(false)
+ExternalModel::ExternalModel(JsonView jsonValue)
+  : ExternalModel()
 {
   *this = jsonValue;
 }

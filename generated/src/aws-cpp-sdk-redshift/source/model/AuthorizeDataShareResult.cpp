@@ -22,8 +22,8 @@ AuthorizeDataShareResult::AuthorizeDataShareResult() :
 {
 }
 
-AuthorizeDataShareResult::AuthorizeDataShareResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_allowPubliclyAccessibleConsumers(false)
+AuthorizeDataShareResult::AuthorizeDataShareResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : AuthorizeDataShareResult()
 {
   *this = result;
 }

@@ -32,17 +32,8 @@ AssociatedAssetsSummary::AssociatedAssetsSummary() :
 {
 }
 
-AssociatedAssetsSummary::AssociatedAssetsSummary(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_assetModelIdHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_lastUpdateDateHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_hierarchiesHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_externalIdHasBeenSet(false)
+AssociatedAssetsSummary::AssociatedAssetsSummary(JsonView jsonValue)
+  : AssociatedAssetsSummary()
 {
   *this = jsonValue;
 }

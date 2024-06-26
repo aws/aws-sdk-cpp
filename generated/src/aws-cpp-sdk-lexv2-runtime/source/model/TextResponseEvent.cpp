@@ -24,9 +24,8 @@ TextResponseEvent::TextResponseEvent() :
 {
 }
 
-TextResponseEvent::TextResponseEvent(JsonView jsonValue) : 
-    m_messagesHasBeenSet(false),
-    m_eventIdHasBeenSet(false)
+TextResponseEvent::TextResponseEvent(JsonView jsonValue)
+  : TextResponseEvent()
 {
   *this = jsonValue;
 }

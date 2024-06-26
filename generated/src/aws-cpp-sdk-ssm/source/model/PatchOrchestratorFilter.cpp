@@ -24,9 +24,8 @@ PatchOrchestratorFilter::PatchOrchestratorFilter() :
 {
 }
 
-PatchOrchestratorFilter::PatchOrchestratorFilter(JsonView jsonValue) : 
-    m_keyHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+PatchOrchestratorFilter::PatchOrchestratorFilter(JsonView jsonValue)
+  : PatchOrchestratorFilter()
 {
   *this = jsonValue;
 }

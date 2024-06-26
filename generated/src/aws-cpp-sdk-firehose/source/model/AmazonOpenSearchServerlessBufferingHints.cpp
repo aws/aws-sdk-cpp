@@ -26,11 +26,8 @@ AmazonOpenSearchServerlessBufferingHints::AmazonOpenSearchServerlessBufferingHin
 {
 }
 
-AmazonOpenSearchServerlessBufferingHints::AmazonOpenSearchServerlessBufferingHints(JsonView jsonValue) : 
-    m_intervalInSeconds(0),
-    m_intervalInSecondsHasBeenSet(false),
-    m_sizeInMBs(0),
-    m_sizeInMBsHasBeenSet(false)
+AmazonOpenSearchServerlessBufferingHints::AmazonOpenSearchServerlessBufferingHints(JsonView jsonValue)
+  : AmazonOpenSearchServerlessBufferingHints()
 {
   *this = jsonValue;
 }

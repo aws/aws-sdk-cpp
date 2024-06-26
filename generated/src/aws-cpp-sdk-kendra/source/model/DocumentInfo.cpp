@@ -24,9 +24,8 @@ DocumentInfo::DocumentInfo() :
 {
 }
 
-DocumentInfo::DocumentInfo(JsonView jsonValue) : 
-    m_documentIdHasBeenSet(false),
-    m_attributesHasBeenSet(false)
+DocumentInfo::DocumentInfo(JsonView jsonValue)
+  : DocumentInfo()
 {
   *this = jsonValue;
 }

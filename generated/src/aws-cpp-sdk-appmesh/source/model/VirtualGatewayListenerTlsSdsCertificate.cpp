@@ -23,8 +23,8 @@ VirtualGatewayListenerTlsSdsCertificate::VirtualGatewayListenerTlsSdsCertificate
 {
 }
 
-VirtualGatewayListenerTlsSdsCertificate::VirtualGatewayListenerTlsSdsCertificate(JsonView jsonValue) : 
-    m_secretNameHasBeenSet(false)
+VirtualGatewayListenerTlsSdsCertificate::VirtualGatewayListenerTlsSdsCertificate(JsonView jsonValue)
+  : VirtualGatewayListenerTlsSdsCertificate()
 {
   *this = jsonValue;
 }

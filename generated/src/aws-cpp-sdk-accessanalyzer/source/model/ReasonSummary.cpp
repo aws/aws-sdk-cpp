@@ -26,11 +26,8 @@ ReasonSummary::ReasonSummary() :
 {
 }
 
-ReasonSummary::ReasonSummary(JsonView jsonValue) : 
-    m_descriptionHasBeenSet(false),
-    m_statementIndex(0),
-    m_statementIndexHasBeenSet(false),
-    m_statementIdHasBeenSet(false)
+ReasonSummary::ReasonSummary(JsonView jsonValue)
+  : ReasonSummary()
 {
   *this = jsonValue;
 }

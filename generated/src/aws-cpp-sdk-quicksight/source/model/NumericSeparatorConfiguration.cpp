@@ -25,10 +25,8 @@ NumericSeparatorConfiguration::NumericSeparatorConfiguration() :
 {
 }
 
-NumericSeparatorConfiguration::NumericSeparatorConfiguration(JsonView jsonValue) : 
-    m_decimalSeparator(NumericSeparatorSymbol::NOT_SET),
-    m_decimalSeparatorHasBeenSet(false),
-    m_thousandsSeparatorHasBeenSet(false)
+NumericSeparatorConfiguration::NumericSeparatorConfiguration(JsonView jsonValue)
+  : NumericSeparatorConfiguration()
 {
   *this = jsonValue;
 }

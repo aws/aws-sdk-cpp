@@ -23,8 +23,8 @@ BedrockKnowledgeStoreConfiguration::BedrockKnowledgeStoreConfiguration() :
 {
 }
 
-BedrockKnowledgeStoreConfiguration::BedrockKnowledgeStoreConfiguration(JsonView jsonValue) : 
-    m_bedrockKnowledgeBaseArnHasBeenSet(false)
+BedrockKnowledgeStoreConfiguration::BedrockKnowledgeStoreConfiguration(JsonView jsonValue)
+  : BedrockKnowledgeStoreConfiguration()
 {
   *this = jsonValue;
 }

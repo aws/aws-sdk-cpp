@@ -26,9 +26,8 @@ AsyncResponseDetails::AsyncResponseDetails() :
 {
 }
 
-AsyncResponseDetails::AsyncResponseDetails(const XmlNode& xmlNode) : 
-    m_multiRegionAccessPointDetailsHasBeenSet(false),
-    m_errorDetailsHasBeenSet(false)
+AsyncResponseDetails::AsyncResponseDetails(const XmlNode& xmlNode)
+  : AsyncResponseDetails()
 {
   *this = xmlNode;
 }

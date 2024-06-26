@@ -26,11 +26,8 @@ CommitmentConfiguration::CommitmentConfiguration() :
 {
 }
 
-CommitmentConfiguration::CommitmentConfiguration(JsonView jsonValue) : 
-    m_automaticRenewal(false),
-    m_automaticRenewalHasBeenSet(false),
-    m_commitmentLength(CommitmentLength::NOT_SET),
-    m_commitmentLengthHasBeenSet(false)
+CommitmentConfiguration::CommitmentConfiguration(JsonView jsonValue)
+  : CommitmentConfiguration()
 {
   *this = jsonValue;
 }

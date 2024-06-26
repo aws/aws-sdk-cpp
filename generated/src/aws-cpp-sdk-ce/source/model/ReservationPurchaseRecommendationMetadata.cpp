@@ -25,10 +25,8 @@ ReservationPurchaseRecommendationMetadata::ReservationPurchaseRecommendationMeta
 {
 }
 
-ReservationPurchaseRecommendationMetadata::ReservationPurchaseRecommendationMetadata(JsonView jsonValue) : 
-    m_recommendationIdHasBeenSet(false),
-    m_generationTimestampHasBeenSet(false),
-    m_additionalMetadataHasBeenSet(false)
+ReservationPurchaseRecommendationMetadata::ReservationPurchaseRecommendationMetadata(JsonView jsonValue)
+  : ReservationPurchaseRecommendationMetadata()
 {
   *this = jsonValue;
 }

@@ -30,15 +30,8 @@ DatabaseInstanceSoftwareDetailsResponse::DatabaseInstanceSoftwareDetailsResponse
 {
 }
 
-DatabaseInstanceSoftwareDetailsResponse::DatabaseInstanceSoftwareDetailsResponse(JsonView jsonValue) : 
-    m_engineHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_engineEditionHasBeenSet(false),
-    m_servicePackHasBeenSet(false),
-    m_supportLevelHasBeenSet(false),
-    m_osArchitecture(0),
-    m_osArchitectureHasBeenSet(false),
-    m_tooltipHasBeenSet(false)
+DatabaseInstanceSoftwareDetailsResponse::DatabaseInstanceSoftwareDetailsResponse(JsonView jsonValue)
+  : DatabaseInstanceSoftwareDetailsResponse()
 {
   *this = jsonValue;
 }

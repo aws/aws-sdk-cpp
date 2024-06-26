@@ -26,9 +26,8 @@ EventCategoriesMap::EventCategoriesMap() :
 {
 }
 
-EventCategoriesMap::EventCategoriesMap(const XmlNode& xmlNode) : 
-    m_sourceTypeHasBeenSet(false),
-    m_eventsHasBeenSet(false)
+EventCategoriesMap::EventCategoriesMap(const XmlNode& xmlNode)
+  : EventCategoriesMap()
 {
   *this = xmlNode;
 }

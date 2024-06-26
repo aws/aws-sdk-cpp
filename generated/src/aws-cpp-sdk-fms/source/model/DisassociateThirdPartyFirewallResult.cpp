@@ -22,8 +22,8 @@ DisassociateThirdPartyFirewallResult::DisassociateThirdPartyFirewallResult() :
 {
 }
 
-DisassociateThirdPartyFirewallResult::DisassociateThirdPartyFirewallResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_thirdPartyFirewallStatus(ThirdPartyFirewallAssociationStatus::NOT_SET)
+DisassociateThirdPartyFirewallResult::DisassociateThirdPartyFirewallResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DisassociateThirdPartyFirewallResult()
 {
   *this = result;
 }

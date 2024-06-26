@@ -24,9 +24,8 @@ CaseSummary::CaseSummary() :
 {
 }
 
-CaseSummary::CaseSummary(JsonView jsonValue) : 
-    m_caseIdHasBeenSet(false),
-    m_templateIdHasBeenSet(false)
+CaseSummary::CaseSummary(JsonView jsonValue)
+  : CaseSummary()
 {
   *this = jsonValue;
 }

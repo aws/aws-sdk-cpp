@@ -35,20 +35,8 @@ Outpost::Outpost() :
 {
 }
 
-Outpost::Outpost(JsonView jsonValue) : 
-    m_outpostIdHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_outpostArnHasBeenSet(false),
-    m_siteIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_lifeCycleStatusHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_availabilityZoneIdHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_siteArnHasBeenSet(false),
-    m_supportedHardwareType(SupportedHardwareType::NOT_SET),
-    m_supportedHardwareTypeHasBeenSet(false)
+Outpost::Outpost(JsonView jsonValue)
+  : Outpost()
 {
   *this = jsonValue;
 }

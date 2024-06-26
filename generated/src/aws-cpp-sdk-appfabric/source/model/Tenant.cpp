@@ -24,9 +24,8 @@ Tenant::Tenant() :
 {
 }
 
-Tenant::Tenant(JsonView jsonValue) : 
-    m_tenantIdentifierHasBeenSet(false),
-    m_tenantDisplayNameHasBeenSet(false)
+Tenant::Tenant(JsonView jsonValue)
+  : Tenant()
 {
   *this = jsonValue;
 }

@@ -30,15 +30,8 @@ AutoScalingUpdate::AutoScalingUpdate() :
 {
 }
 
-AutoScalingUpdate::AutoScalingUpdate(JsonView jsonValue) : 
-    m_maxWorkerCount(0),
-    m_maxWorkerCountHasBeenSet(false),
-    m_mcuCount(0),
-    m_mcuCountHasBeenSet(false),
-    m_minWorkerCount(0),
-    m_minWorkerCountHasBeenSet(false),
-    m_scaleInPolicyHasBeenSet(false),
-    m_scaleOutPolicyHasBeenSet(false)
+AutoScalingUpdate::AutoScalingUpdate(JsonView jsonValue)
+  : AutoScalingUpdate()
 {
   *this = jsonValue;
 }

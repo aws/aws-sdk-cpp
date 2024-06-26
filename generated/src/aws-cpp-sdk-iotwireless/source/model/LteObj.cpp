@@ -40,25 +40,8 @@ LteObj::LteObj() :
 {
 }
 
-LteObj::LteObj(JsonView jsonValue) : 
-    m_mcc(0),
-    m_mccHasBeenSet(false),
-    m_mnc(0),
-    m_mncHasBeenSet(false),
-    m_eutranCid(0),
-    m_eutranCidHasBeenSet(false),
-    m_tac(0),
-    m_tacHasBeenSet(false),
-    m_lteLocalIdHasBeenSet(false),
-    m_lteTimingAdvance(0),
-    m_lteTimingAdvanceHasBeenSet(false),
-    m_rsrp(0),
-    m_rsrpHasBeenSet(false),
-    m_rsrq(0.0),
-    m_rsrqHasBeenSet(false),
-    m_nrCapable(false),
-    m_nrCapableHasBeenSet(false),
-    m_lteNmrHasBeenSet(false)
+LteObj::LteObj(JsonView jsonValue)
+  : LteObj()
 {
   *this = jsonValue;
 }

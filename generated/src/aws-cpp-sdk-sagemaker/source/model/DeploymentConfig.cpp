@@ -25,10 +25,8 @@ DeploymentConfig::DeploymentConfig() :
 {
 }
 
-DeploymentConfig::DeploymentConfig(JsonView jsonValue) : 
-    m_blueGreenUpdatePolicyHasBeenSet(false),
-    m_rollingUpdatePolicyHasBeenSet(false),
-    m_autoRollbackConfigurationHasBeenSet(false)
+DeploymentConfig::DeploymentConfig(JsonView jsonValue)
+  : DeploymentConfig()
 {
   *this = jsonValue;
 }

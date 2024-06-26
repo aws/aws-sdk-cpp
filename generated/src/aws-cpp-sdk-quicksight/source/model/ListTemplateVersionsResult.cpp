@@ -22,8 +22,8 @@ ListTemplateVersionsResult::ListTemplateVersionsResult() :
 {
 }
 
-ListTemplateVersionsResult::ListTemplateVersionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+ListTemplateVersionsResult::ListTemplateVersionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ListTemplateVersionsResult()
 {
   *this = result;
 }

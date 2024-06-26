@@ -24,9 +24,8 @@ EventAccountFilter::EventAccountFilter() :
 {
 }
 
-EventAccountFilter::EventAccountFilter(JsonView jsonValue) : 
-    m_eventArnHasBeenSet(false),
-    m_awsAccountIdHasBeenSet(false)
+EventAccountFilter::EventAccountFilter(JsonView jsonValue)
+  : EventAccountFilter()
 {
   *this = jsonValue;
 }

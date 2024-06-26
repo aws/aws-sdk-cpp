@@ -33,18 +33,8 @@ RecommendationJobContainerConfig::RecommendationJobContainerConfig() :
 {
 }
 
-RecommendationJobContainerConfig::RecommendationJobContainerConfig(JsonView jsonValue) : 
-    m_domainHasBeenSet(false),
-    m_taskHasBeenSet(false),
-    m_frameworkHasBeenSet(false),
-    m_frameworkVersionHasBeenSet(false),
-    m_payloadConfigHasBeenSet(false),
-    m_nearestModelNameHasBeenSet(false),
-    m_supportedInstanceTypesHasBeenSet(false),
-    m_supportedEndpointType(RecommendationJobSupportedEndpointType::NOT_SET),
-    m_supportedEndpointTypeHasBeenSet(false),
-    m_dataInputConfigHasBeenSet(false),
-    m_supportedResponseMIMETypesHasBeenSet(false)
+RecommendationJobContainerConfig::RecommendationJobContainerConfig(JsonView jsonValue)
+  : RecommendationJobContainerConfig()
 {
   *this = jsonValue;
 }

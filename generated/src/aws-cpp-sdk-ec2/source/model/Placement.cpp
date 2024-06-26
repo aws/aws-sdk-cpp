@@ -35,18 +35,8 @@ Placement::Placement() :
 {
 }
 
-Placement::Placement(const XmlNode& xmlNode) : 
-    m_availabilityZoneHasBeenSet(false),
-    m_affinityHasBeenSet(false),
-    m_groupNameHasBeenSet(false),
-    m_partitionNumber(0),
-    m_partitionNumberHasBeenSet(false),
-    m_hostIdHasBeenSet(false),
-    m_tenancy(Tenancy::NOT_SET),
-    m_tenancyHasBeenSet(false),
-    m_spreadDomainHasBeenSet(false),
-    m_hostResourceGroupArnHasBeenSet(false),
-    m_groupIdHasBeenSet(false)
+Placement::Placement(const XmlNode& xmlNode)
+  : Placement()
 {
   *this = xmlNode;
 }

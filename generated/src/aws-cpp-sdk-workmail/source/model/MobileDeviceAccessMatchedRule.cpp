@@ -24,9 +24,8 @@ MobileDeviceAccessMatchedRule::MobileDeviceAccessMatchedRule() :
 {
 }
 
-MobileDeviceAccessMatchedRule::MobileDeviceAccessMatchedRule(JsonView jsonValue) : 
-    m_mobileDeviceAccessRuleIdHasBeenSet(false),
-    m_nameHasBeenSet(false)
+MobileDeviceAccessMatchedRule::MobileDeviceAccessMatchedRule(JsonView jsonValue)
+  : MobileDeviceAccessMatchedRule()
 {
   *this = jsonValue;
 }

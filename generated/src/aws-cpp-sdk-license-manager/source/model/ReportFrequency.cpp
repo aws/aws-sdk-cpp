@@ -26,11 +26,8 @@ ReportFrequency::ReportFrequency() :
 {
 }
 
-ReportFrequency::ReportFrequency(JsonView jsonValue) : 
-    m_value(0),
-    m_valueHasBeenSet(false),
-    m_period(ReportFrequencyType::NOT_SET),
-    m_periodHasBeenSet(false)
+ReportFrequency::ReportFrequency(JsonView jsonValue)
+  : ReportFrequency()
 {
   *this = jsonValue;
 }

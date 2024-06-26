@@ -23,8 +23,8 @@ EntitiesDefinition::EntitiesDefinition() :
 {
 }
 
-EntitiesDefinition::EntitiesDefinition(JsonView jsonValue) : 
-    m_entityListHasBeenSet(false)
+EntitiesDefinition::EntitiesDefinition(JsonView jsonValue)
+  : EntitiesDefinition()
 {
   *this = jsonValue;
 }

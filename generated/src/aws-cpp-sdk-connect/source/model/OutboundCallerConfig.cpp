@@ -25,10 +25,8 @@ OutboundCallerConfig::OutboundCallerConfig() :
 {
 }
 
-OutboundCallerConfig::OutboundCallerConfig(JsonView jsonValue) : 
-    m_outboundCallerIdNameHasBeenSet(false),
-    m_outboundCallerIdNumberIdHasBeenSet(false),
-    m_outboundFlowIdHasBeenSet(false)
+OutboundCallerConfig::OutboundCallerConfig(JsonView jsonValue)
+  : OutboundCallerConfig()
 {
   *this = jsonValue;
 }

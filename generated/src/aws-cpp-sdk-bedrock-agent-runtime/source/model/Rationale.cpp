@@ -24,9 +24,8 @@ Rationale::Rationale() :
 {
 }
 
-Rationale::Rationale(JsonView jsonValue) : 
-    m_textHasBeenSet(false),
-    m_traceIdHasBeenSet(false)
+Rationale::Rationale(JsonView jsonValue)
+  : Rationale()
 {
   *this = jsonValue;
 }

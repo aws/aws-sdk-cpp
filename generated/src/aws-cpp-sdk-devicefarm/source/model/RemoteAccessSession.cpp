@@ -51,36 +51,8 @@ RemoteAccessSession::RemoteAccessSession() :
 {
 }
 
-RemoteAccessSession::RemoteAccessSession(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_createdHasBeenSet(false),
-    m_status(ExecutionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_result(ExecutionResult::NOT_SET),
-    m_resultHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_startedHasBeenSet(false),
-    m_stoppedHasBeenSet(false),
-    m_deviceHasBeenSet(false),
-    m_instanceArnHasBeenSet(false),
-    m_remoteDebugEnabled(false),
-    m_remoteDebugEnabledHasBeenSet(false),
-    m_remoteRecordEnabled(false),
-    m_remoteRecordEnabledHasBeenSet(false),
-    m_remoteRecordAppArnHasBeenSet(false),
-    m_hostAddressHasBeenSet(false),
-    m_clientIdHasBeenSet(false),
-    m_billingMethod(BillingMethod::NOT_SET),
-    m_billingMethodHasBeenSet(false),
-    m_deviceMinutesHasBeenSet(false),
-    m_endpointHasBeenSet(false),
-    m_deviceUdidHasBeenSet(false),
-    m_interactionMode(InteractionMode::NOT_SET),
-    m_interactionModeHasBeenSet(false),
-    m_skipAppResign(false),
-    m_skipAppResignHasBeenSet(false),
-    m_vpcConfigHasBeenSet(false)
+RemoteAccessSession::RemoteAccessSession(JsonView jsonValue)
+  : RemoteAccessSession()
 {
   *this = jsonValue;
 }

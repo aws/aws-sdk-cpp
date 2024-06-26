@@ -23,8 +23,8 @@ SourceAlgorithmSpecification::SourceAlgorithmSpecification() :
 {
 }
 
-SourceAlgorithmSpecification::SourceAlgorithmSpecification(JsonView jsonValue) : 
-    m_sourceAlgorithmsHasBeenSet(false)
+SourceAlgorithmSpecification::SourceAlgorithmSpecification(JsonView jsonValue)
+  : SourceAlgorithmSpecification()
 {
   *this = jsonValue;
 }

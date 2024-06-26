@@ -34,19 +34,8 @@ TargetGroupConfig::TargetGroupConfig() :
 {
 }
 
-TargetGroupConfig::TargetGroupConfig(JsonView jsonValue) : 
-    m_healthCheckHasBeenSet(false),
-    m_ipAddressType(IpAddressType::NOT_SET),
-    m_ipAddressTypeHasBeenSet(false),
-    m_lambdaEventStructureVersion(LambdaEventStructureVersion::NOT_SET),
-    m_lambdaEventStructureVersionHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_protocol(TargetGroupProtocol::NOT_SET),
-    m_protocolHasBeenSet(false),
-    m_protocolVersion(TargetGroupProtocolVersion::NOT_SET),
-    m_protocolVersionHasBeenSet(false),
-    m_vpcIdentifierHasBeenSet(false)
+TargetGroupConfig::TargetGroupConfig(JsonView jsonValue)
+  : TargetGroupConfig()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ UpdateCognitoGroupConfiguration::UpdateCognitoGroupConfiguration() :
 {
 }
 
-UpdateCognitoGroupConfiguration::UpdateCognitoGroupConfiguration(JsonView jsonValue) : 
-    m_groupEntityTypeHasBeenSet(false)
+UpdateCognitoGroupConfiguration::UpdateCognitoGroupConfiguration(JsonView jsonValue)
+  : UpdateCognitoGroupConfiguration()
 {
   *this = jsonValue;
 }

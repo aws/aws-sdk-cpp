@@ -25,10 +25,8 @@ ActiveDirectoryConfiguration::ActiveDirectoryConfiguration() :
 {
 }
 
-ActiveDirectoryConfiguration::ActiveDirectoryConfiguration(JsonView jsonValue) : 
-    m_computerAttributesHasBeenSet(false),
-    m_directoryIdHasBeenSet(false),
-    m_organizationalUnitDistinguishedNameHasBeenSet(false)
+ActiveDirectoryConfiguration::ActiveDirectoryConfiguration(JsonView jsonValue)
+  : ActiveDirectoryConfiguration()
 {
   *this = jsonValue;
 }

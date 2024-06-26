@@ -23,8 +23,8 @@ ExcludedRule::ExcludedRule() :
 {
 }
 
-ExcludedRule::ExcludedRule(JsonView jsonValue) : 
-    m_nameHasBeenSet(false)
+ExcludedRule::ExcludedRule(JsonView jsonValue)
+  : ExcludedRule()
 {
   *this = jsonValue;
 }

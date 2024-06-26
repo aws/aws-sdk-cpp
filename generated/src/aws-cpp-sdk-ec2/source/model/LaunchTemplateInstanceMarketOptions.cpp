@@ -27,10 +27,8 @@ LaunchTemplateInstanceMarketOptions::LaunchTemplateInstanceMarketOptions() :
 {
 }
 
-LaunchTemplateInstanceMarketOptions::LaunchTemplateInstanceMarketOptions(const XmlNode& xmlNode) : 
-    m_marketType(MarketType::NOT_SET),
-    m_marketTypeHasBeenSet(false),
-    m_spotOptionsHasBeenSet(false)
+LaunchTemplateInstanceMarketOptions::LaunchTemplateInstanceMarketOptions(const XmlNode& xmlNode)
+  : LaunchTemplateInstanceMarketOptions()
 {
   *this = xmlNode;
 }

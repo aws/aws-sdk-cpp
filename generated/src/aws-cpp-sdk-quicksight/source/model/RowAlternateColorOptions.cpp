@@ -27,12 +27,8 @@ RowAlternateColorOptions::RowAlternateColorOptions() :
 {
 }
 
-RowAlternateColorOptions::RowAlternateColorOptions(JsonView jsonValue) : 
-    m_status(WidgetStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_rowAlternateColorsHasBeenSet(false),
-    m_usePrimaryBackgroundColor(WidgetStatus::NOT_SET),
-    m_usePrimaryBackgroundColorHasBeenSet(false)
+RowAlternateColorOptions::RowAlternateColorOptions(JsonView jsonValue)
+  : RowAlternateColorOptions()
 {
   *this = jsonValue;
 }

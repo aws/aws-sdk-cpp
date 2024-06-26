@@ -27,12 +27,8 @@ DomainSettings::DomainSettings() :
 {
 }
 
-DomainSettings::DomainSettings(JsonView jsonValue) : 
-    m_securityGroupIdsHasBeenSet(false),
-    m_rStudioServerProDomainSettingsHasBeenSet(false),
-    m_executionRoleIdentityConfig(ExecutionRoleIdentityConfig::NOT_SET),
-    m_executionRoleIdentityConfigHasBeenSet(false),
-    m_dockerSettingsHasBeenSet(false)
+DomainSettings::DomainSettings(JsonView jsonValue)
+  : DomainSettings()
 {
   *this = jsonValue;
 }

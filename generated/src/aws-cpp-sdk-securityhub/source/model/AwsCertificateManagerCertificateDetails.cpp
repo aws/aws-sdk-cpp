@@ -45,30 +45,8 @@ AwsCertificateManagerCertificateDetails::AwsCertificateManagerCertificateDetails
 {
 }
 
-AwsCertificateManagerCertificateDetails::AwsCertificateManagerCertificateDetails(JsonView jsonValue) : 
-    m_certificateAuthorityArnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_domainNameHasBeenSet(false),
-    m_domainValidationOptionsHasBeenSet(false),
-    m_extendedKeyUsagesHasBeenSet(false),
-    m_failureReasonHasBeenSet(false),
-    m_importedAtHasBeenSet(false),
-    m_inUseByHasBeenSet(false),
-    m_issuedAtHasBeenSet(false),
-    m_issuerHasBeenSet(false),
-    m_keyAlgorithmHasBeenSet(false),
-    m_keyUsagesHasBeenSet(false),
-    m_notAfterHasBeenSet(false),
-    m_notBeforeHasBeenSet(false),
-    m_optionsHasBeenSet(false),
-    m_renewalEligibilityHasBeenSet(false),
-    m_renewalSummaryHasBeenSet(false),
-    m_serialHasBeenSet(false),
-    m_signatureAlgorithmHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_subjectHasBeenSet(false),
-    m_subjectAlternativeNamesHasBeenSet(false),
-    m_typeHasBeenSet(false)
+AwsCertificateManagerCertificateDetails::AwsCertificateManagerCertificateDetails(JsonView jsonValue)
+  : AwsCertificateManagerCertificateDetails()
 {
   *this = jsonValue;
 }

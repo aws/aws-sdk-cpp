@@ -27,12 +27,8 @@ InvocationInput::InvocationInput() :
 {
 }
 
-InvocationInput::InvocationInput(JsonView jsonValue) : 
-    m_actionGroupInvocationInputHasBeenSet(false),
-    m_invocationType(InvocationType::NOT_SET),
-    m_invocationTypeHasBeenSet(false),
-    m_knowledgeBaseLookupInputHasBeenSet(false),
-    m_traceIdHasBeenSet(false)
+InvocationInput::InvocationInput(JsonView jsonValue)
+  : InvocationInput()
 {
   *this = jsonValue;
 }

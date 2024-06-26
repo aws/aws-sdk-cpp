@@ -28,13 +28,8 @@ DevicePosition::DevicePosition() :
 {
 }
 
-DevicePosition::DevicePosition(JsonView jsonValue) : 
-    m_deviceIdHasBeenSet(false),
-    m_sampleTimeHasBeenSet(false),
-    m_receivedTimeHasBeenSet(false),
-    m_positionHasBeenSet(false),
-    m_accuracyHasBeenSet(false),
-    m_positionPropertiesHasBeenSet(false)
+DevicePosition::DevicePosition(JsonView jsonValue)
+  : DevicePosition()
 {
   *this = jsonValue;
 }

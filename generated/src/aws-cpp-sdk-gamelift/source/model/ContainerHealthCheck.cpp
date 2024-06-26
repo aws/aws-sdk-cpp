@@ -31,16 +31,8 @@ ContainerHealthCheck::ContainerHealthCheck() :
 {
 }
 
-ContainerHealthCheck::ContainerHealthCheck(JsonView jsonValue) : 
-    m_commandHasBeenSet(false),
-    m_interval(0),
-    m_intervalHasBeenSet(false),
-    m_timeout(0),
-    m_timeoutHasBeenSet(false),
-    m_retries(0),
-    m_retriesHasBeenSet(false),
-    m_startPeriod(0),
-    m_startPeriodHasBeenSet(false)
+ContainerHealthCheck::ContainerHealthCheck(JsonView jsonValue)
+  : ContainerHealthCheck()
 {
   *this = jsonValue;
 }

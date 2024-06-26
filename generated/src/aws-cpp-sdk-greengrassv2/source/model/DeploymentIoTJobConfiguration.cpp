@@ -25,10 +25,8 @@ DeploymentIoTJobConfiguration::DeploymentIoTJobConfiguration() :
 {
 }
 
-DeploymentIoTJobConfiguration::DeploymentIoTJobConfiguration(JsonView jsonValue) : 
-    m_jobExecutionsRolloutConfigHasBeenSet(false),
-    m_abortConfigHasBeenSet(false),
-    m_timeoutConfigHasBeenSet(false)
+DeploymentIoTJobConfiguration::DeploymentIoTJobConfiguration(JsonView jsonValue)
+  : DeploymentIoTJobConfiguration()
 {
   *this = jsonValue;
 }

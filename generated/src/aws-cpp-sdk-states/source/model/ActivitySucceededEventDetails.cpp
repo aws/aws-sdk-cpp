@@ -24,9 +24,8 @@ ActivitySucceededEventDetails::ActivitySucceededEventDetails() :
 {
 }
 
-ActivitySucceededEventDetails::ActivitySucceededEventDetails(JsonView jsonValue) : 
-    m_outputHasBeenSet(false),
-    m_outputDetailsHasBeenSet(false)
+ActivitySucceededEventDetails::ActivitySucceededEventDetails(JsonView jsonValue)
+  : ActivitySucceededEventDetails()
 {
   *this = jsonValue;
 }

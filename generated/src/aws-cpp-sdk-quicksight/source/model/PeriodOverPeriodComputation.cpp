@@ -26,11 +26,8 @@ PeriodOverPeriodComputation::PeriodOverPeriodComputation() :
 {
 }
 
-PeriodOverPeriodComputation::PeriodOverPeriodComputation(JsonView jsonValue) : 
-    m_computationIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_timeHasBeenSet(false),
-    m_valueHasBeenSet(false)
+PeriodOverPeriodComputation::PeriodOverPeriodComputation(JsonView jsonValue)
+  : PeriodOverPeriodComputation()
 {
   *this = jsonValue;
 }

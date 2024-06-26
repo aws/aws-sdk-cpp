@@ -23,9 +23,8 @@ GetTestSuiteResult::GetTestSuiteResult() :
 {
 }
 
-GetTestSuiteResult::GetTestSuiteResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_testSuiteVersion(0),
-    m_status(TestSuiteLifecycle::NOT_SET)
+GetTestSuiteResult::GetTestSuiteResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetTestSuiteResult()
 {
   *this = result;
 }

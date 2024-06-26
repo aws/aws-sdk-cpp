@@ -27,12 +27,8 @@ Type::Type() :
 {
 }
 
-Type::Type(JsonView jsonValue) : 
-    m_scalarType(ScalarType::NOT_SET),
-    m_scalarTypeHasBeenSet(false),
-    m_arrayColumnInfoHasBeenSet(false),
-    m_timeSeriesMeasureValueColumnInfoHasBeenSet(false),
-    m_rowColumnInfoHasBeenSet(false)
+Type::Type(JsonView jsonValue)
+  : Type()
 {
   *this = jsonValue;
 }

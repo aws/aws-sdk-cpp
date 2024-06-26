@@ -28,13 +28,8 @@ RegistrationVersionInformation::RegistrationVersionInformation() :
 {
 }
 
-RegistrationVersionInformation::RegistrationVersionInformation(JsonView jsonValue) : 
-    m_versionNumber(0),
-    m_versionNumberHasBeenSet(false),
-    m_registrationVersionStatus(RegistrationVersionStatus::NOT_SET),
-    m_registrationVersionStatusHasBeenSet(false),
-    m_registrationVersionStatusHistoryHasBeenSet(false),
-    m_deniedReasonsHasBeenSet(false)
+RegistrationVersionInformation::RegistrationVersionInformation(JsonView jsonValue)
+  : RegistrationVersionInformation()
 {
   *this = jsonValue;
 }

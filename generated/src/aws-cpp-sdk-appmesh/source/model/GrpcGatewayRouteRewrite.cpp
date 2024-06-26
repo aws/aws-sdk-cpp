@@ -23,8 +23,8 @@ GrpcGatewayRouteRewrite::GrpcGatewayRouteRewrite() :
 {
 }
 
-GrpcGatewayRouteRewrite::GrpcGatewayRouteRewrite(JsonView jsonValue) : 
-    m_hostnameHasBeenSet(false)
+GrpcGatewayRouteRewrite::GrpcGatewayRouteRewrite(JsonView jsonValue)
+  : GrpcGatewayRouteRewrite()
 {
   *this = jsonValue;
 }

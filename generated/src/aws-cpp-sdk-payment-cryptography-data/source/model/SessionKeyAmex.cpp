@@ -24,9 +24,8 @@ SessionKeyAmex::SessionKeyAmex() :
 {
 }
 
-SessionKeyAmex::SessionKeyAmex(JsonView jsonValue) : 
-    m_panSequenceNumberHasBeenSet(false),
-    m_primaryAccountNumberHasBeenSet(false)
+SessionKeyAmex::SessionKeyAmex(JsonView jsonValue)
+  : SessionKeyAmex()
 {
   *this = jsonValue;
 }

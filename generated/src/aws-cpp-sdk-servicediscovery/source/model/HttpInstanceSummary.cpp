@@ -28,13 +28,8 @@ HttpInstanceSummary::HttpInstanceSummary() :
 {
 }
 
-HttpInstanceSummary::HttpInstanceSummary(JsonView jsonValue) : 
-    m_instanceIdHasBeenSet(false),
-    m_namespaceNameHasBeenSet(false),
-    m_serviceNameHasBeenSet(false),
-    m_healthStatus(HealthStatus::NOT_SET),
-    m_healthStatusHasBeenSet(false),
-    m_attributesHasBeenSet(false)
+HttpInstanceSummary::HttpInstanceSummary(JsonView jsonValue)
+  : HttpInstanceSummary()
 {
   *this = jsonValue;
 }

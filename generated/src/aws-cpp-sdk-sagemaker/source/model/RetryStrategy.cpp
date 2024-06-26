@@ -24,9 +24,8 @@ RetryStrategy::RetryStrategy() :
 {
 }
 
-RetryStrategy::RetryStrategy(JsonView jsonValue) : 
-    m_maximumRetryAttempts(0),
-    m_maximumRetryAttemptsHasBeenSet(false)
+RetryStrategy::RetryStrategy(JsonView jsonValue)
+  : RetryStrategy()
 {
   *this = jsonValue;
 }

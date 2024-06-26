@@ -24,9 +24,8 @@ OperationNotSupportedException::OperationNotSupportedException() :
 {
 }
 
-OperationNotSupportedException::OperationNotSupportedException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_reasonHasBeenSet(false)
+OperationNotSupportedException::OperationNotSupportedException(JsonView jsonValue)
+  : OperationNotSupportedException()
 {
   *this = jsonValue;
 }

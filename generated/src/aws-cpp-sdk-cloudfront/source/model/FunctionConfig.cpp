@@ -28,11 +28,8 @@ FunctionConfig::FunctionConfig() :
 {
 }
 
-FunctionConfig::FunctionConfig(const XmlNode& xmlNode) : 
-    m_commentHasBeenSet(false),
-    m_runtime(FunctionRuntime::NOT_SET),
-    m_runtimeHasBeenSet(false),
-    m_keyValueStoreAssociationsHasBeenSet(false)
+FunctionConfig::FunctionConfig(const XmlNode& xmlNode)
+  : FunctionConfig()
 {
   *this = xmlNode;
 }

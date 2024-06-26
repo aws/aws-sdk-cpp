@@ -27,12 +27,8 @@ AnnotationValue::AnnotationValue() :
 {
 }
 
-AnnotationValue::AnnotationValue(JsonView jsonValue) : 
-    m_numberValue(0.0),
-    m_numberValueHasBeenSet(false),
-    m_booleanValue(false),
-    m_booleanValueHasBeenSet(false),
-    m_stringValueHasBeenSet(false)
+AnnotationValue::AnnotationValue(JsonView jsonValue)
+  : AnnotationValue()
 {
   *this = jsonValue;
 }

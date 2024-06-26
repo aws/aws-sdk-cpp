@@ -48,33 +48,8 @@ CopyJob::CopyJob() :
 {
 }
 
-CopyJob::CopyJob(JsonView jsonValue) : 
-    m_accountIdHasBeenSet(false),
-    m_copyJobIdHasBeenSet(false),
-    m_sourceBackupVaultArnHasBeenSet(false),
-    m_sourceRecoveryPointArnHasBeenSet(false),
-    m_destinationBackupVaultArnHasBeenSet(false),
-    m_destinationRecoveryPointArnHasBeenSet(false),
-    m_resourceArnHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_completionDateHasBeenSet(false),
-    m_state(CopyJobState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_backupSizeInBytes(0),
-    m_backupSizeInBytesHasBeenSet(false),
-    m_iamRoleArnHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
-    m_parentJobIdHasBeenSet(false),
-    m_isParent(false),
-    m_isParentHasBeenSet(false),
-    m_compositeMemberIdentifierHasBeenSet(false),
-    m_numberOfChildJobs(0),
-    m_numberOfChildJobsHasBeenSet(false),
-    m_childJobsInStateHasBeenSet(false),
-    m_resourceNameHasBeenSet(false),
-    m_messageCategoryHasBeenSet(false)
+CopyJob::CopyJob(JsonView jsonValue)
+  : CopyJob()
 {
   *this = jsonValue;
 }

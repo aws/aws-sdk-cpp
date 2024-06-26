@@ -27,12 +27,8 @@ ActionRemoteIpDetails::ActionRemoteIpDetails() :
 {
 }
 
-ActionRemoteIpDetails::ActionRemoteIpDetails(JsonView jsonValue) : 
-    m_ipAddressV4HasBeenSet(false),
-    m_organizationHasBeenSet(false),
-    m_countryHasBeenSet(false),
-    m_cityHasBeenSet(false),
-    m_geoLocationHasBeenSet(false)
+ActionRemoteIpDetails::ActionRemoteIpDetails(JsonView jsonValue)
+  : ActionRemoteIpDetails()
 {
   *this = jsonValue;
 }

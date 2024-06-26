@@ -23,8 +23,8 @@ GuardrailWord::GuardrailWord() :
 {
 }
 
-GuardrailWord::GuardrailWord(JsonView jsonValue) : 
-    m_textHasBeenSet(false)
+GuardrailWord::GuardrailWord(JsonView jsonValue)
+  : GuardrailWord()
 {
   *this = jsonValue;
 }

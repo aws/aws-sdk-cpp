@@ -24,9 +24,8 @@ Variable::Variable() :
 {
 }
 
-Variable::Variable(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
+Variable::Variable(JsonView jsonValue)
+  : Variable()
 {
   *this = jsonValue;
 }

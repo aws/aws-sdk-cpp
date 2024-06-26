@@ -48,33 +48,8 @@ AppSummary::AppSummary() :
 {
 }
 
-AppSummary::AppSummary(JsonView jsonValue) : 
-    m_appIdHasBeenSet(false),
-    m_importedAppIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_status(AppStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_replicationConfigurationStatus(AppReplicationConfigurationStatus::NOT_SET),
-    m_replicationConfigurationStatusHasBeenSet(false),
-    m_replicationStatus(AppReplicationStatus::NOT_SET),
-    m_replicationStatusHasBeenSet(false),
-    m_replicationStatusMessageHasBeenSet(false),
-    m_latestReplicationTimeHasBeenSet(false),
-    m_launchConfigurationStatus(AppLaunchConfigurationStatus::NOT_SET),
-    m_launchConfigurationStatusHasBeenSet(false),
-    m_launchStatus(AppLaunchStatus::NOT_SET),
-    m_launchStatusHasBeenSet(false),
-    m_launchStatusMessageHasBeenSet(false),
-    m_launchDetailsHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastModifiedHasBeenSet(false),
-    m_roleNameHasBeenSet(false),
-    m_totalServerGroups(0),
-    m_totalServerGroupsHasBeenSet(false),
-    m_totalServers(0),
-    m_totalServersHasBeenSet(false)
+AppSummary::AppSummary(JsonView jsonValue)
+  : AppSummary()
 {
   *this = jsonValue;
 }

@@ -29,12 +29,8 @@ LocalGatewayVirtualInterfaceGroup::LocalGatewayVirtualInterfaceGroup() :
 {
 }
 
-LocalGatewayVirtualInterfaceGroup::LocalGatewayVirtualInterfaceGroup(const XmlNode& xmlNode) : 
-    m_localGatewayVirtualInterfaceGroupIdHasBeenSet(false),
-    m_localGatewayVirtualInterfaceIdsHasBeenSet(false),
-    m_localGatewayIdHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+LocalGatewayVirtualInterfaceGroup::LocalGatewayVirtualInterfaceGroup(const XmlNode& xmlNode)
+  : LocalGatewayVirtualInterfaceGroup()
 {
   *this = xmlNode;
 }

@@ -31,14 +31,8 @@ ByoipCidr::ByoipCidr() :
 {
 }
 
-ByoipCidr::ByoipCidr(const XmlNode& xmlNode) : 
-    m_cidrHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_asnAssociationsHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_state(ByoipCidrState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_networkBorderGroupHasBeenSet(false)
+ByoipCidr::ByoipCidr(const XmlNode& xmlNode)
+  : ByoipCidr()
 {
   *this = xmlNode;
 }

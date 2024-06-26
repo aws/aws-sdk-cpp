@@ -22,8 +22,8 @@ DescribeNodeResult::DescribeNodeResult() :
 {
 }
 
-DescribeNodeResult::DescribeNodeResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_category(NodeCategory::NOT_SET)
+DescribeNodeResult::DescribeNodeResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeNodeResult()
 {
   *this = result;
 }

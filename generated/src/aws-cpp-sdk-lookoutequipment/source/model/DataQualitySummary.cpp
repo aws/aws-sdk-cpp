@@ -27,12 +27,8 @@ DataQualitySummary::DataQualitySummary() :
 {
 }
 
-DataQualitySummary::DataQualitySummary(JsonView jsonValue) : 
-    m_insufficientSensorDataHasBeenSet(false),
-    m_missingSensorDataHasBeenSet(false),
-    m_invalidSensorDataHasBeenSet(false),
-    m_unsupportedTimestampsHasBeenSet(false),
-    m_duplicateTimestampsHasBeenSet(false)
+DataQualitySummary::DataQualitySummary(JsonView jsonValue)
+  : DataQualitySummary()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ ConnectedHomeSettingsForUpdate::ConnectedHomeSettingsForUpdate() :
 {
 }
 
-ConnectedHomeSettingsForUpdate::ConnectedHomeSettingsForUpdate(JsonView jsonValue) : 
-    m_labelsHasBeenSet(false),
-    m_minConfidence(0.0),
-    m_minConfidenceHasBeenSet(false)
+ConnectedHomeSettingsForUpdate::ConnectedHomeSettingsForUpdate(JsonView jsonValue)
+  : ConnectedHomeSettingsForUpdate()
 {
   *this = jsonValue;
 }

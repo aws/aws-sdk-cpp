@@ -27,12 +27,8 @@ NodeProperties::NodeProperties() :
 {
 }
 
-NodeProperties::NodeProperties(JsonView jsonValue) : 
-    m_numNodes(0),
-    m_numNodesHasBeenSet(false),
-    m_mainNode(0),
-    m_mainNodeHasBeenSet(false),
-    m_nodeRangePropertiesHasBeenSet(false)
+NodeProperties::NodeProperties(JsonView jsonValue)
+  : NodeProperties()
 {
   *this = jsonValue;
 }

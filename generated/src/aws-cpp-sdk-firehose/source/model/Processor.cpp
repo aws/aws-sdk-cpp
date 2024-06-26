@@ -25,10 +25,8 @@ Processor::Processor() :
 {
 }
 
-Processor::Processor(JsonView jsonValue) : 
-    m_type(ProcessorType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_parametersHasBeenSet(false)
+Processor::Processor(JsonView jsonValue)
+  : Processor()
 {
   *this = jsonValue;
 }

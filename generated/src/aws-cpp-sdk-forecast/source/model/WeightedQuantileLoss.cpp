@@ -26,11 +26,8 @@ WeightedQuantileLoss::WeightedQuantileLoss() :
 {
 }
 
-WeightedQuantileLoss::WeightedQuantileLoss(JsonView jsonValue) : 
-    m_quantile(0.0),
-    m_quantileHasBeenSet(false),
-    m_lossValue(0.0),
-    m_lossValueHasBeenSet(false)
+WeightedQuantileLoss::WeightedQuantileLoss(JsonView jsonValue)
+  : WeightedQuantileLoss()
 {
   *this = jsonValue;
 }

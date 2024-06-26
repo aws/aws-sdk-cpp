@@ -25,10 +25,8 @@ ResourceKey::ResourceKey() :
 {
 }
 
-ResourceKey::ResourceKey(JsonView jsonValue) : 
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_resourceIdHasBeenSet(false)
+ResourceKey::ResourceKey(JsonView jsonValue)
+  : ResourceKey()
 {
   *this = jsonValue;
 }

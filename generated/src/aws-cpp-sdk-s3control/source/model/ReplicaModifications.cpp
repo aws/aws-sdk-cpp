@@ -26,9 +26,8 @@ ReplicaModifications::ReplicaModifications() :
 {
 }
 
-ReplicaModifications::ReplicaModifications(const XmlNode& xmlNode) : 
-    m_status(ReplicaModificationsStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+ReplicaModifications::ReplicaModifications(const XmlNode& xmlNode)
+  : ReplicaModifications()
 {
   *this = xmlNode;
 }

@@ -22,8 +22,8 @@ DisassociateDataShareConsumerResult::DisassociateDataShareConsumerResult() :
 {
 }
 
-DisassociateDataShareConsumerResult::DisassociateDataShareConsumerResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_allowPubliclyAccessibleConsumers(false)
+DisassociateDataShareConsumerResult::DisassociateDataShareConsumerResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : DisassociateDataShareConsumerResult()
 {
   *this = result;
 }

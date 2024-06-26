@@ -29,14 +29,8 @@ InputUpdate::InputUpdate() :
 {
 }
 
-InputUpdate::InputUpdate(JsonView jsonValue) : 
-    m_inputIdHasBeenSet(false),
-    m_namePrefixUpdateHasBeenSet(false),
-    m_inputProcessingConfigurationUpdateHasBeenSet(false),
-    m_kinesisStreamsInputUpdateHasBeenSet(false),
-    m_kinesisFirehoseInputUpdateHasBeenSet(false),
-    m_inputSchemaUpdateHasBeenSet(false),
-    m_inputParallelismUpdateHasBeenSet(false)
+InputUpdate::InputUpdate(JsonView jsonValue)
+  : InputUpdate()
 {
   *this = jsonValue;
 }

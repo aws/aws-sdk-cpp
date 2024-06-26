@@ -30,15 +30,8 @@ ApprovalRuleTemplate::ApprovalRuleTemplate() :
 {
 }
 
-ApprovalRuleTemplate::ApprovalRuleTemplate(JsonView jsonValue) : 
-    m_approvalRuleTemplateIdHasBeenSet(false),
-    m_approvalRuleTemplateNameHasBeenSet(false),
-    m_approvalRuleTemplateDescriptionHasBeenSet(false),
-    m_approvalRuleTemplateContentHasBeenSet(false),
-    m_ruleContentSha256HasBeenSet(false),
-    m_lastModifiedDateHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_lastModifiedUserHasBeenSet(false)
+ApprovalRuleTemplate::ApprovalRuleTemplate(JsonView jsonValue)
+  : ApprovalRuleTemplate()
 {
   *this = jsonValue;
 }

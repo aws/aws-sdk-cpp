@@ -35,20 +35,8 @@ Delegation::Delegation() :
 {
 }
 
-Delegation::Delegation(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_assessmentNameHasBeenSet(false),
-    m_assessmentIdHasBeenSet(false),
-    m_status(DelegationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_roleType(RoleType::NOT_SET),
-    m_roleTypeHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastUpdatedHasBeenSet(false),
-    m_controlSetIdHasBeenSet(false),
-    m_commentHasBeenSet(false),
-    m_createdByHasBeenSet(false)
+Delegation::Delegation(JsonView jsonValue)
+  : Delegation()
 {
   *this = jsonValue;
 }

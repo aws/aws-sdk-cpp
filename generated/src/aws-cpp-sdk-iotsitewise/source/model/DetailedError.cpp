@@ -25,10 +25,8 @@ DetailedError::DetailedError() :
 {
 }
 
-DetailedError::DetailedError(JsonView jsonValue) : 
-    m_code(DetailedErrorCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+DetailedError::DetailedError(JsonView jsonValue)
+  : DetailedError()
 {
   *this = jsonValue;
 }

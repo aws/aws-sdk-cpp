@@ -22,8 +22,8 @@ CheckNoPublicAccessSdkResult::CheckNoPublicAccessSdkResult() :
 {
 }
 
-CheckNoPublicAccessSdkResult::CheckNoPublicAccessSdkResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_result(CheckNoPublicAccessResult::NOT_SET)
+CheckNoPublicAccessSdkResult::CheckNoPublicAccessSdkResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CheckNoPublicAccessSdkResult()
 {
   *this = result;
 }

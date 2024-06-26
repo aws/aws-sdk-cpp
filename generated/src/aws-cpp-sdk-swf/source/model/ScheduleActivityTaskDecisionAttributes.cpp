@@ -32,17 +32,8 @@ ScheduleActivityTaskDecisionAttributes::ScheduleActivityTaskDecisionAttributes()
 {
 }
 
-ScheduleActivityTaskDecisionAttributes::ScheduleActivityTaskDecisionAttributes(JsonView jsonValue) : 
-    m_activityTypeHasBeenSet(false),
-    m_activityIdHasBeenSet(false),
-    m_controlHasBeenSet(false),
-    m_inputHasBeenSet(false),
-    m_scheduleToCloseTimeoutHasBeenSet(false),
-    m_taskListHasBeenSet(false),
-    m_taskPriorityHasBeenSet(false),
-    m_scheduleToStartTimeoutHasBeenSet(false),
-    m_startToCloseTimeoutHasBeenSet(false),
-    m_heartbeatTimeoutHasBeenSet(false)
+ScheduleActivityTaskDecisionAttributes::ScheduleActivityTaskDecisionAttributes(JsonView jsonValue)
+  : ScheduleActivityTaskDecisionAttributes()
 {
   *this = jsonValue;
 }

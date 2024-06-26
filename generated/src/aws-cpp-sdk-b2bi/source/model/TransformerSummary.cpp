@@ -33,18 +33,8 @@ TransformerSummary::TransformerSummary() :
 {
 }
 
-TransformerSummary::TransformerSummary(JsonView jsonValue) : 
-    m_transformerIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_fileFormat(FileFormat::NOT_SET),
-    m_fileFormatHasBeenSet(false),
-    m_mappingTemplateHasBeenSet(false),
-    m_status(TransformerStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_ediTypeHasBeenSet(false),
-    m_sampleDocumentHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_modifiedAtHasBeenSet(false)
+TransformerSummary::TransformerSummary(JsonView jsonValue)
+  : TransformerSummary()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ WeightedTargetGroup::WeightedTargetGroup() :
 {
 }
 
-WeightedTargetGroup::WeightedTargetGroup(JsonView jsonValue) : 
-    m_targetGroupIdentifierHasBeenSet(false),
-    m_weight(0),
-    m_weightHasBeenSet(false)
+WeightedTargetGroup::WeightedTargetGroup(JsonView jsonValue)
+  : WeightedTargetGroup()
 {
   *this = jsonValue;
 }

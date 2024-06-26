@@ -25,8 +25,8 @@ MissingRenderingAttributeException::MissingRenderingAttributeException() :
 {
 }
 
-MissingRenderingAttributeException::MissingRenderingAttributeException(const XmlNode& xmlNode) : 
-    m_templateNameHasBeenSet(false)
+MissingRenderingAttributeException::MissingRenderingAttributeException(const XmlNode& xmlNode)
+  : MissingRenderingAttributeException()
 {
   *this = xmlNode;
 }

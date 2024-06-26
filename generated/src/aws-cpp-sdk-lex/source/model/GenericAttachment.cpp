@@ -27,12 +27,8 @@ GenericAttachment::GenericAttachment() :
 {
 }
 
-GenericAttachment::GenericAttachment(JsonView jsonValue) : 
-    m_titleHasBeenSet(false),
-    m_subTitleHasBeenSet(false),
-    m_attachmentLinkUrlHasBeenSet(false),
-    m_imageUrlHasBeenSet(false),
-    m_buttonsHasBeenSet(false)
+GenericAttachment::GenericAttachment(JsonView jsonValue)
+  : GenericAttachment()
 {
   *this = jsonValue;
 }

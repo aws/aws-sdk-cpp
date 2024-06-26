@@ -23,8 +23,8 @@ AuthChallengeRequest::AuthChallengeRequest() :
 {
 }
 
-AuthChallengeRequest::AuthChallengeRequest(JsonView jsonValue) : 
-    m_authorizationUrlHasBeenSet(false)
+AuthChallengeRequest::AuthChallengeRequest(JsonView jsonValue)
+  : AuthChallengeRequest()
 {
   *this = jsonValue;
 }

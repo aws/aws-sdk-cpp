@@ -23,8 +23,8 @@ SubjectAlternativeNameMatchers::SubjectAlternativeNameMatchers() :
 {
 }
 
-SubjectAlternativeNameMatchers::SubjectAlternativeNameMatchers(JsonView jsonValue) : 
-    m_exactHasBeenSet(false)
+SubjectAlternativeNameMatchers::SubjectAlternativeNameMatchers(JsonView jsonValue)
+  : SubjectAlternativeNameMatchers()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ OnlineStoreConfigUpdate::OnlineStoreConfigUpdate() :
 {
 }
 
-OnlineStoreConfigUpdate::OnlineStoreConfigUpdate(JsonView jsonValue) : 
-    m_ttlDurationHasBeenSet(false)
+OnlineStoreConfigUpdate::OnlineStoreConfigUpdate(JsonView jsonValue)
+  : OnlineStoreConfigUpdate()
 {
   *this = jsonValue;
 }

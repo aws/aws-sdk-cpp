@@ -40,25 +40,8 @@ KeyModesOfUse::KeyModesOfUse() :
 {
 }
 
-KeyModesOfUse::KeyModesOfUse(JsonView jsonValue) : 
-    m_encrypt(false),
-    m_encryptHasBeenSet(false),
-    m_decrypt(false),
-    m_decryptHasBeenSet(false),
-    m_wrap(false),
-    m_wrapHasBeenSet(false),
-    m_unwrap(false),
-    m_unwrapHasBeenSet(false),
-    m_generate(false),
-    m_generateHasBeenSet(false),
-    m_sign(false),
-    m_signHasBeenSet(false),
-    m_verify(false),
-    m_verifyHasBeenSet(false),
-    m_deriveKey(false),
-    m_deriveKeyHasBeenSet(false),
-    m_noRestrictions(false),
-    m_noRestrictionsHasBeenSet(false)
+KeyModesOfUse::KeyModesOfUse(JsonView jsonValue)
+  : KeyModesOfUse()
 {
   *this = jsonValue;
 }

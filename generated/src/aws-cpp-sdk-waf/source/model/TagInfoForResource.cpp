@@ -24,9 +24,8 @@ TagInfoForResource::TagInfoForResource() :
 {
 }
 
-TagInfoForResource::TagInfoForResource(JsonView jsonValue) : 
-    m_resourceARNHasBeenSet(false),
-    m_tagListHasBeenSet(false)
+TagInfoForResource::TagInfoForResource(JsonView jsonValue)
+  : TagInfoForResource()
 {
   *this = jsonValue;
 }

@@ -32,17 +32,8 @@ VpcConnector::VpcConnector() :
 {
 }
 
-VpcConnector::VpcConnector(JsonView jsonValue) : 
-    m_vpcConnectorNameHasBeenSet(false),
-    m_vpcConnectorArnHasBeenSet(false),
-    m_vpcConnectorRevision(0),
-    m_vpcConnectorRevisionHasBeenSet(false),
-    m_subnetsHasBeenSet(false),
-    m_securityGroupsHasBeenSet(false),
-    m_status(VpcConnectorStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_deletedAtHasBeenSet(false)
+VpcConnector::VpcConnector(JsonView jsonValue)
+  : VpcConnector()
 {
   *this = jsonValue;
 }

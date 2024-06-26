@@ -24,9 +24,8 @@ AmiProductTitleFilter::AmiProductTitleFilter() :
 {
 }
 
-AmiProductTitleFilter::AmiProductTitleFilter(JsonView jsonValue) : 
-    m_valueListHasBeenSet(false),
-    m_wildCardValueHasBeenSet(false)
+AmiProductTitleFilter::AmiProductTitleFilter(JsonView jsonValue)
+  : AmiProductTitleFilter()
 {
   *this = jsonValue;
 }

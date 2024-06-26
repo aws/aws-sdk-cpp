@@ -27,12 +27,8 @@ MemberFeaturesConfiguration::MemberFeaturesConfiguration() :
 {
 }
 
-MemberFeaturesConfiguration::MemberFeaturesConfiguration(JsonView jsonValue) : 
-    m_name(OrgFeature::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_status(FeatureStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_additionalConfigurationHasBeenSet(false)
+MemberFeaturesConfiguration::MemberFeaturesConfiguration(JsonView jsonValue)
+  : MemberFeaturesConfiguration()
 {
   *this = jsonValue;
 }

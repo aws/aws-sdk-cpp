@@ -24,9 +24,8 @@ PartListElement::PartListElement() :
 {
 }
 
-PartListElement::PartListElement(JsonView jsonValue) : 
-    m_rangeInBytesHasBeenSet(false),
-    m_sHA256TreeHashHasBeenSet(false)
+PartListElement::PartListElement(JsonView jsonValue)
+  : PartListElement()
 {
   *this = jsonValue;
 }

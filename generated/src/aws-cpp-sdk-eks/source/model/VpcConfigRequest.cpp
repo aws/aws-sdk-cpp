@@ -29,14 +29,8 @@ VpcConfigRequest::VpcConfigRequest() :
 {
 }
 
-VpcConfigRequest::VpcConfigRequest(JsonView jsonValue) : 
-    m_subnetIdsHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false),
-    m_endpointPublicAccess(false),
-    m_endpointPublicAccessHasBeenSet(false),
-    m_endpointPrivateAccess(false),
-    m_endpointPrivateAccessHasBeenSet(false),
-    m_publicAccessCidrsHasBeenSet(false)
+VpcConfigRequest::VpcConfigRequest(JsonView jsonValue)
+  : VpcConfigRequest()
 {
   *this = jsonValue;
 }

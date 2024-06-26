@@ -24,9 +24,8 @@ DeploymentParameterInput::DeploymentParameterInput() :
 {
 }
 
-DeploymentParameterInput::DeploymentParameterInput(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_secretStringHasBeenSet(false)
+DeploymentParameterInput::DeploymentParameterInput(JsonView jsonValue)
+  : DeploymentParameterInput()
 {
   *this = jsonValue;
 }

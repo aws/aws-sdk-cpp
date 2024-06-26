@@ -24,9 +24,8 @@ ThumbnailConfiguration::ThumbnailConfiguration() :
 {
 }
 
-ThumbnailConfiguration::ThumbnailConfiguration(JsonView jsonValue) : 
-    m_state(ThumbnailState::NOT_SET),
-    m_stateHasBeenSet(false)
+ThumbnailConfiguration::ThumbnailConfiguration(JsonView jsonValue)
+  : ThumbnailConfiguration()
 {
   *this = jsonValue;
 }

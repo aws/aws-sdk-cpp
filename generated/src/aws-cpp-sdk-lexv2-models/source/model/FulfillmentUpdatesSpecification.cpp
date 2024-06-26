@@ -28,13 +28,8 @@ FulfillmentUpdatesSpecification::FulfillmentUpdatesSpecification() :
 {
 }
 
-FulfillmentUpdatesSpecification::FulfillmentUpdatesSpecification(JsonView jsonValue) : 
-    m_active(false),
-    m_activeHasBeenSet(false),
-    m_startResponseHasBeenSet(false),
-    m_updateResponseHasBeenSet(false),
-    m_timeoutInSeconds(0),
-    m_timeoutInSecondsHasBeenSet(false)
+FulfillmentUpdatesSpecification::FulfillmentUpdatesSpecification(JsonView jsonValue)
+  : FulfillmentUpdatesSpecification()
 {
   *this = jsonValue;
 }

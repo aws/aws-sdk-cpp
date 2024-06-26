@@ -28,13 +28,8 @@ PinGenerationAttributes::PinGenerationAttributes() :
 {
 }
 
-PinGenerationAttributes::PinGenerationAttributes(JsonView jsonValue) : 
-    m_ibm3624NaturalPinHasBeenSet(false),
-    m_ibm3624PinFromOffsetHasBeenSet(false),
-    m_ibm3624PinOffsetHasBeenSet(false),
-    m_ibm3624RandomPinHasBeenSet(false),
-    m_visaPinHasBeenSet(false),
-    m_visaPinVerificationValueHasBeenSet(false)
+PinGenerationAttributes::PinGenerationAttributes(JsonView jsonValue)
+  : PinGenerationAttributes()
 {
   *this = jsonValue;
 }

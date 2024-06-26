@@ -36,21 +36,8 @@ DataSource::DataSource() :
 {
 }
 
-DataSource::DataSource(JsonView jsonValue) : 
-    m_createdAtHasBeenSet(false),
-    m_dataDeletionPolicy(DataDeletionPolicy::NOT_SET),
-    m_dataDeletionPolicyHasBeenSet(false),
-    m_dataSourceConfigurationHasBeenSet(false),
-    m_dataSourceIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_failureReasonsHasBeenSet(false),
-    m_knowledgeBaseIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_serverSideEncryptionConfigurationHasBeenSet(false),
-    m_status(DataSourceStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_vectorIngestionConfigurationHasBeenSet(false)
+DataSource::DataSource(JsonView jsonValue)
+  : DataSource()
 {
   *this = jsonValue;
 }

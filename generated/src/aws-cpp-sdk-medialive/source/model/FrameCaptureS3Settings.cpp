@@ -24,9 +24,8 @@ FrameCaptureS3Settings::FrameCaptureS3Settings() :
 {
 }
 
-FrameCaptureS3Settings::FrameCaptureS3Settings(JsonView jsonValue) : 
-    m_cannedAcl(S3CannedAcl::NOT_SET),
-    m_cannedAclHasBeenSet(false)
+FrameCaptureS3Settings::FrameCaptureS3Settings(JsonView jsonValue)
+  : FrameCaptureS3Settings()
 {
   *this = jsonValue;
 }

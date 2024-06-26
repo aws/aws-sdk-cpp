@@ -25,10 +25,8 @@ ExportKeyMaterial::ExportKeyMaterial() :
 {
 }
 
-ExportKeyMaterial::ExportKeyMaterial(JsonView jsonValue) : 
-    m_tr31KeyBlockHasBeenSet(false),
-    m_tr34KeyBlockHasBeenSet(false),
-    m_keyCryptogramHasBeenSet(false)
+ExportKeyMaterial::ExportKeyMaterial(JsonView jsonValue)
+  : ExportKeyMaterial()
 {
   *this = jsonValue;
 }

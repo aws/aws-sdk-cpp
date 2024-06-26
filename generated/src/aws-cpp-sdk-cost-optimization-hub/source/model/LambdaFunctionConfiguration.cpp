@@ -23,8 +23,8 @@ LambdaFunctionConfiguration::LambdaFunctionConfiguration() :
 {
 }
 
-LambdaFunctionConfiguration::LambdaFunctionConfiguration(JsonView jsonValue) : 
-    m_computeHasBeenSet(false)
+LambdaFunctionConfiguration::LambdaFunctionConfiguration(JsonView jsonValue)
+  : LambdaFunctionConfiguration()
 {
   *this = jsonValue;
 }

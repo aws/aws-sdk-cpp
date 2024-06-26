@@ -42,27 +42,8 @@ Cluster::Cluster() :
 {
 }
 
-Cluster::Cluster(JsonView jsonValue) : 
-    m_clusterArnHasBeenSet(false),
-    m_clusterNameHasBeenSet(false),
-    m_configurationHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_registeredContainerInstancesCount(0),
-    m_registeredContainerInstancesCountHasBeenSet(false),
-    m_runningTasksCount(0),
-    m_runningTasksCountHasBeenSet(false),
-    m_pendingTasksCount(0),
-    m_pendingTasksCountHasBeenSet(false),
-    m_activeServicesCount(0),
-    m_activeServicesCountHasBeenSet(false),
-    m_statisticsHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_settingsHasBeenSet(false),
-    m_capacityProvidersHasBeenSet(false),
-    m_defaultCapacityProviderStrategyHasBeenSet(false),
-    m_attachmentsHasBeenSet(false),
-    m_attachmentsStatusHasBeenSet(false),
-    m_serviceConnectDefaultsHasBeenSet(false)
+Cluster::Cluster(JsonView jsonValue)
+  : Cluster()
 {
   *this = jsonValue;
 }

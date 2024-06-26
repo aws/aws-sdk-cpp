@@ -24,9 +24,8 @@ AdvancedSecurityOptionsStatus::AdvancedSecurityOptionsStatus() :
 {
 }
 
-AdvancedSecurityOptionsStatus::AdvancedSecurityOptionsStatus(JsonView jsonValue) : 
-    m_optionsHasBeenSet(false),
-    m_statusHasBeenSet(false)
+AdvancedSecurityOptionsStatus::AdvancedSecurityOptionsStatus(JsonView jsonValue)
+  : AdvancedSecurityOptionsStatus()
 {
   *this = jsonValue;
 }

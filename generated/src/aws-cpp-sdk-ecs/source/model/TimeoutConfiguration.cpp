@@ -26,11 +26,8 @@ TimeoutConfiguration::TimeoutConfiguration() :
 {
 }
 
-TimeoutConfiguration::TimeoutConfiguration(JsonView jsonValue) : 
-    m_idleTimeoutSeconds(0),
-    m_idleTimeoutSecondsHasBeenSet(false),
-    m_perRequestTimeoutSeconds(0),
-    m_perRequestTimeoutSecondsHasBeenSet(false)
+TimeoutConfiguration::TimeoutConfiguration(JsonView jsonValue)
+  : TimeoutConfiguration()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ BotLocaleHistoryEvent::BotLocaleHistoryEvent() :
 {
 }
 
-BotLocaleHistoryEvent::BotLocaleHistoryEvent(JsonView jsonValue) : 
-    m_eventHasBeenSet(false),
-    m_eventDateHasBeenSet(false)
+BotLocaleHistoryEvent::BotLocaleHistoryEvent(JsonView jsonValue)
+  : BotLocaleHistoryEvent()
 {
   *this = jsonValue;
 }

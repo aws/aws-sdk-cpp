@@ -32,17 +32,8 @@ ListIntegrationItem::ListIntegrationItem() :
 {
 }
 
-ListIntegrationItem::ListIntegrationItem(JsonView jsonValue) : 
-    m_domainNameHasBeenSet(false),
-    m_uriHasBeenSet(false),
-    m_objectTypeNameHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_objectTypeNamesHasBeenSet(false),
-    m_workflowIdHasBeenSet(false),
-    m_isUnstructured(false),
-    m_isUnstructuredHasBeenSet(false)
+ListIntegrationItem::ListIntegrationItem(JsonView jsonValue)
+  : ListIntegrationItem()
 {
   *this = jsonValue;
 }

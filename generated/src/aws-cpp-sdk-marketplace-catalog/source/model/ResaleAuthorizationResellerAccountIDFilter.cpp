@@ -24,9 +24,8 @@ ResaleAuthorizationResellerAccountIDFilter::ResaleAuthorizationResellerAccountID
 {
 }
 
-ResaleAuthorizationResellerAccountIDFilter::ResaleAuthorizationResellerAccountIDFilter(JsonView jsonValue) : 
-    m_valueListHasBeenSet(false),
-    m_wildCardValueHasBeenSet(false)
+ResaleAuthorizationResellerAccountIDFilter::ResaleAuthorizationResellerAccountIDFilter(JsonView jsonValue)
+  : ResaleAuthorizationResellerAccountIDFilter()
 {
   *this = jsonValue;
 }

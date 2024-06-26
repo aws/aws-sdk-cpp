@@ -26,11 +26,8 @@ StartingEventBatchCondition::StartingEventBatchCondition() :
 {
 }
 
-StartingEventBatchCondition::StartingEventBatchCondition(JsonView jsonValue) : 
-    m_batchSize(0),
-    m_batchSizeHasBeenSet(false),
-    m_batchWindow(0),
-    m_batchWindowHasBeenSet(false)
+StartingEventBatchCondition::StartingEventBatchCondition(JsonView jsonValue)
+  : StartingEventBatchCondition()
 {
   *this = jsonValue;
 }

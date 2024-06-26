@@ -27,12 +27,8 @@ GCMChannelRequest::GCMChannelRequest() :
 {
 }
 
-GCMChannelRequest::GCMChannelRequest(JsonView jsonValue) : 
-    m_apiKeyHasBeenSet(false),
-    m_defaultAuthenticationMethodHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_serviceJsonHasBeenSet(false)
+GCMChannelRequest::GCMChannelRequest(JsonView jsonValue)
+  : GCMChannelRequest()
 {
   *this = jsonValue;
 }

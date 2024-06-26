@@ -43,28 +43,8 @@ HyperParameterTrainingJobDefinition::HyperParameterTrainingJobDefinition() :
 {
 }
 
-HyperParameterTrainingJobDefinition::HyperParameterTrainingJobDefinition(JsonView jsonValue) : 
-    m_definitionNameHasBeenSet(false),
-    m_tuningObjectiveHasBeenSet(false),
-    m_hyperParameterRangesHasBeenSet(false),
-    m_staticHyperParametersHasBeenSet(false),
-    m_algorithmSpecificationHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_inputDataConfigHasBeenSet(false),
-    m_vpcConfigHasBeenSet(false),
-    m_outputDataConfigHasBeenSet(false),
-    m_resourceConfigHasBeenSet(false),
-    m_hyperParameterTuningResourceConfigHasBeenSet(false),
-    m_stoppingConditionHasBeenSet(false),
-    m_enableNetworkIsolation(false),
-    m_enableNetworkIsolationHasBeenSet(false),
-    m_enableInterContainerTrafficEncryption(false),
-    m_enableInterContainerTrafficEncryptionHasBeenSet(false),
-    m_enableManagedSpotTraining(false),
-    m_enableManagedSpotTrainingHasBeenSet(false),
-    m_checkpointConfigHasBeenSet(false),
-    m_retryStrategyHasBeenSet(false),
-    m_environmentHasBeenSet(false)
+HyperParameterTrainingJobDefinition::HyperParameterTrainingJobDefinition(JsonView jsonValue)
+  : HyperParameterTrainingJobDefinition()
 {
   *this = jsonValue;
 }

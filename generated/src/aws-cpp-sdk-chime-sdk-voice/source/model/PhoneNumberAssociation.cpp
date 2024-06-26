@@ -26,11 +26,8 @@ PhoneNumberAssociation::PhoneNumberAssociation() :
 {
 }
 
-PhoneNumberAssociation::PhoneNumberAssociation(JsonView jsonValue) : 
-    m_valueHasBeenSet(false),
-    m_name(PhoneNumberAssociationName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_associatedTimestampHasBeenSet(false)
+PhoneNumberAssociation::PhoneNumberAssociation(JsonView jsonValue)
+  : PhoneNumberAssociation()
 {
   *this = jsonValue;
 }

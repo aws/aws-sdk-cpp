@@ -22,8 +22,8 @@ UpdateProtectConfigurationCountryRuleSetResult::UpdateProtectConfigurationCountr
 {
 }
 
-UpdateProtectConfigurationCountryRuleSetResult::UpdateProtectConfigurationCountryRuleSetResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_numberCapability(NumberCapability::NOT_SET)
+UpdateProtectConfigurationCountryRuleSetResult::UpdateProtectConfigurationCountryRuleSetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateProtectConfigurationCountryRuleSetResult()
 {
   *this = result;
 }

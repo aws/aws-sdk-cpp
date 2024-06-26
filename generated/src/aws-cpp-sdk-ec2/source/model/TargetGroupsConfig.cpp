@@ -25,8 +25,8 @@ TargetGroupsConfig::TargetGroupsConfig() :
 {
 }
 
-TargetGroupsConfig::TargetGroupsConfig(const XmlNode& xmlNode) : 
-    m_targetGroupsHasBeenSet(false)
+TargetGroupsConfig::TargetGroupsConfig(const XmlNode& xmlNode)
+  : TargetGroupsConfig()
 {
   *this = xmlNode;
 }

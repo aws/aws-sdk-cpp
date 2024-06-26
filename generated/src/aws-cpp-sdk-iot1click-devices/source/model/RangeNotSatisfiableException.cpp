@@ -24,9 +24,8 @@ RangeNotSatisfiableException::RangeNotSatisfiableException() :
 {
 }
 
-RangeNotSatisfiableException::RangeNotSatisfiableException(JsonView jsonValue) : 
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+RangeNotSatisfiableException::RangeNotSatisfiableException(JsonView jsonValue)
+  : RangeNotSatisfiableException()
 {
   *this = jsonValue;
 }

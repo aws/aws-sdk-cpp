@@ -30,15 +30,8 @@ AnalysisRuleAggregation::AnalysisRuleAggregation() :
 {
 }
 
-AnalysisRuleAggregation::AnalysisRuleAggregation(JsonView jsonValue) : 
-    m_aggregateColumnsHasBeenSet(false),
-    m_joinColumnsHasBeenSet(false),
-    m_joinRequired(JoinRequiredOption::NOT_SET),
-    m_joinRequiredHasBeenSet(false),
-    m_allowedJoinOperatorsHasBeenSet(false),
-    m_dimensionColumnsHasBeenSet(false),
-    m_scalarFunctionsHasBeenSet(false),
-    m_outputConstraintsHasBeenSet(false)
+AnalysisRuleAggregation::AnalysisRuleAggregation(JsonView jsonValue)
+  : AnalysisRuleAggregation()
 {
   *this = jsonValue;
 }

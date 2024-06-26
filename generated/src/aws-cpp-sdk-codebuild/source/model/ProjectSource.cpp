@@ -36,21 +36,8 @@ ProjectSource::ProjectSource() :
 {
 }
 
-ProjectSource::ProjectSource(JsonView jsonValue) : 
-    m_type(SourceType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_locationHasBeenSet(false),
-    m_gitCloneDepth(0),
-    m_gitCloneDepthHasBeenSet(false),
-    m_gitSubmodulesConfigHasBeenSet(false),
-    m_buildspecHasBeenSet(false),
-    m_authHasBeenSet(false),
-    m_reportBuildStatus(false),
-    m_reportBuildStatusHasBeenSet(false),
-    m_buildStatusConfigHasBeenSet(false),
-    m_insecureSsl(false),
-    m_insecureSslHasBeenSet(false),
-    m_sourceIdentifierHasBeenSet(false)
+ProjectSource::ProjectSource(JsonView jsonValue)
+  : ProjectSource()
 {
   *this = jsonValue;
 }

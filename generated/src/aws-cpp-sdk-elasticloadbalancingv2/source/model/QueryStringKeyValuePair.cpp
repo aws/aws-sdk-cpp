@@ -26,9 +26,8 @@ QueryStringKeyValuePair::QueryStringKeyValuePair() :
 {
 }
 
-QueryStringKeyValuePair::QueryStringKeyValuePair(const XmlNode& xmlNode) : 
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false)
+QueryStringKeyValuePair::QueryStringKeyValuePair(const XmlNode& xmlNode)
+  : QueryStringKeyValuePair()
 {
   *this = xmlNode;
 }

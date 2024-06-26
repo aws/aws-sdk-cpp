@@ -22,8 +22,8 @@ GetLicenseConversionTaskResult::GetLicenseConversionTaskResult() :
 {
 }
 
-GetLicenseConversionTaskResult::GetLicenseConversionTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(LicenseConversionTaskStatus::NOT_SET)
+GetLicenseConversionTaskResult::GetLicenseConversionTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetLicenseConversionTaskResult()
 {
   *this = result;
 }

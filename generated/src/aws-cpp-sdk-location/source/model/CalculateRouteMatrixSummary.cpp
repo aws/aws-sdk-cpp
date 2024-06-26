@@ -29,14 +29,8 @@ CalculateRouteMatrixSummary::CalculateRouteMatrixSummary() :
 {
 }
 
-CalculateRouteMatrixSummary::CalculateRouteMatrixSummary(JsonView jsonValue) : 
-    m_dataSourceHasBeenSet(false),
-    m_routeCount(0),
-    m_routeCountHasBeenSet(false),
-    m_errorCount(0),
-    m_errorCountHasBeenSet(false),
-    m_distanceUnit(DistanceUnit::NOT_SET),
-    m_distanceUnitHasBeenSet(false)
+CalculateRouteMatrixSummary::CalculateRouteMatrixSummary(JsonView jsonValue)
+  : CalculateRouteMatrixSummary()
 {
   *this = jsonValue;
 }

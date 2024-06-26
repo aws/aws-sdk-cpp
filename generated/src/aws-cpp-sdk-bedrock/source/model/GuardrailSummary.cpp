@@ -31,16 +31,8 @@ GuardrailSummary::GuardrailSummary() :
 {
 }
 
-GuardrailSummary::GuardrailSummary(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_status(GuardrailStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+GuardrailSummary::GuardrailSummary(JsonView jsonValue)
+  : GuardrailSummary()
 {
   *this = jsonValue;
 }

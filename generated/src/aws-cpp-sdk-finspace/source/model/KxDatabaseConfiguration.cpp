@@ -27,12 +27,8 @@ KxDatabaseConfiguration::KxDatabaseConfiguration() :
 {
 }
 
-KxDatabaseConfiguration::KxDatabaseConfiguration(JsonView jsonValue) : 
-    m_databaseNameHasBeenSet(false),
-    m_cacheConfigurationsHasBeenSet(false),
-    m_changesetIdHasBeenSet(false),
-    m_dataviewNameHasBeenSet(false),
-    m_dataviewConfigurationHasBeenSet(false)
+KxDatabaseConfiguration::KxDatabaseConfiguration(JsonView jsonValue)
+  : KxDatabaseConfiguration()
 {
   *this = jsonValue;
 }

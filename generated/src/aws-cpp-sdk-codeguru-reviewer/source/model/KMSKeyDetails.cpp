@@ -25,10 +25,8 @@ KMSKeyDetails::KMSKeyDetails() :
 {
 }
 
-KMSKeyDetails::KMSKeyDetails(JsonView jsonValue) : 
-    m_kMSKeyIdHasBeenSet(false),
-    m_encryptionOption(EncryptionOption::NOT_SET),
-    m_encryptionOptionHasBeenSet(false)
+KMSKeyDetails::KMSKeyDetails(JsonView jsonValue)
+  : KMSKeyDetails()
 {
   *this = jsonValue;
 }

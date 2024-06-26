@@ -23,8 +23,8 @@ CsvOutputOptions::CsvOutputOptions() :
 {
 }
 
-CsvOutputOptions::CsvOutputOptions(JsonView jsonValue) : 
-    m_delimiterHasBeenSet(false)
+CsvOutputOptions::CsvOutputOptions(JsonView jsonValue)
+  : CsvOutputOptions()
 {
   *this = jsonValue;
 }

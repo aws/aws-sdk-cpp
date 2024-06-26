@@ -33,18 +33,8 @@ AutoScalingConfigurationSummary::AutoScalingConfigurationSummary() :
 {
 }
 
-AutoScalingConfigurationSummary::AutoScalingConfigurationSummary(JsonView jsonValue) : 
-    m_autoScalingConfigurationArnHasBeenSet(false),
-    m_autoScalingConfigurationNameHasBeenSet(false),
-    m_autoScalingConfigurationRevision(0),
-    m_autoScalingConfigurationRevisionHasBeenSet(false),
-    m_status(AutoScalingConfigurationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_hasAssociatedService(false),
-    m_hasAssociatedServiceHasBeenSet(false),
-    m_isDefault(false),
-    m_isDefaultHasBeenSet(false)
+AutoScalingConfigurationSummary::AutoScalingConfigurationSummary(JsonView jsonValue)
+  : AutoScalingConfigurationSummary()
 {
   *this = jsonValue;
 }

@@ -25,8 +25,8 @@ CidrBlock::CidrBlock() :
 {
 }
 
-CidrBlock::CidrBlock(const XmlNode& xmlNode) : 
-    m_cidrBlockHasBeenSet(false)
+CidrBlock::CidrBlock(const XmlNode& xmlNode)
+  : CidrBlock()
 {
   *this = xmlNode;
 }

@@ -24,9 +24,8 @@ SessionKeyDerivationValue::SessionKeyDerivationValue() :
 {
 }
 
-SessionKeyDerivationValue::SessionKeyDerivationValue(JsonView jsonValue) : 
-    m_applicationCryptogramHasBeenSet(false),
-    m_applicationTransactionCounterHasBeenSet(false)
+SessionKeyDerivationValue::SessionKeyDerivationValue(JsonView jsonValue)
+  : SessionKeyDerivationValue()
 {
   *this = jsonValue;
 }

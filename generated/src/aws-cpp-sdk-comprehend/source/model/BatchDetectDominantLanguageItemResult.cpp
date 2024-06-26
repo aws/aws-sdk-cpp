@@ -25,10 +25,8 @@ BatchDetectDominantLanguageItemResult::BatchDetectDominantLanguageItemResult() :
 {
 }
 
-BatchDetectDominantLanguageItemResult::BatchDetectDominantLanguageItemResult(JsonView jsonValue) : 
-    m_index(0),
-    m_indexHasBeenSet(false),
-    m_languagesHasBeenSet(false)
+BatchDetectDominantLanguageItemResult::BatchDetectDominantLanguageItemResult(JsonView jsonValue)
+  : BatchDetectDominantLanguageItemResult()
 {
   *this = jsonValue;
 }

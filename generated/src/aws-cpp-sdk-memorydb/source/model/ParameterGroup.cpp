@@ -26,11 +26,8 @@ ParameterGroup::ParameterGroup() :
 {
 }
 
-ParameterGroup::ParameterGroup(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_familyHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_aRNHasBeenSet(false)
+ParameterGroup::ParameterGroup(JsonView jsonValue)
+  : ParameterGroup()
 {
   *this = jsonValue;
 }

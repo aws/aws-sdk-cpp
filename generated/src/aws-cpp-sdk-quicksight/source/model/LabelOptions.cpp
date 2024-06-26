@@ -26,11 +26,8 @@ LabelOptions::LabelOptions() :
 {
 }
 
-LabelOptions::LabelOptions(JsonView jsonValue) : 
-    m_visibility(Visibility::NOT_SET),
-    m_visibilityHasBeenSet(false),
-    m_fontConfigurationHasBeenSet(false),
-    m_customLabelHasBeenSet(false)
+LabelOptions::LabelOptions(JsonView jsonValue)
+  : LabelOptions()
 {
   *this = jsonValue;
 }

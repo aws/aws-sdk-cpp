@@ -28,13 +28,8 @@ ClusterNodeSummary::ClusterNodeSummary() :
 {
 }
 
-ClusterNodeSummary::ClusterNodeSummary(JsonView jsonValue) : 
-    m_instanceGroupNameHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_instanceType(ClusterInstanceType::NOT_SET),
-    m_instanceTypeHasBeenSet(false),
-    m_launchTimeHasBeenSet(false),
-    m_instanceStatusHasBeenSet(false)
+ClusterNodeSummary::ClusterNodeSummary(JsonView jsonValue)
+  : ClusterNodeSummary()
 {
   *this = jsonValue;
 }

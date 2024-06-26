@@ -29,14 +29,8 @@ NewBGPPeer::NewBGPPeer() :
 {
 }
 
-NewBGPPeer::NewBGPPeer(JsonView jsonValue) : 
-    m_asn(0),
-    m_asnHasBeenSet(false),
-    m_authKeyHasBeenSet(false),
-    m_addressFamily(AddressFamily::NOT_SET),
-    m_addressFamilyHasBeenSet(false),
-    m_amazonAddressHasBeenSet(false),
-    m_customerAddressHasBeenSet(false)
+NewBGPPeer::NewBGPPeer(JsonView jsonValue)
+  : NewBGPPeer()
 {
   *this = jsonValue;
 }

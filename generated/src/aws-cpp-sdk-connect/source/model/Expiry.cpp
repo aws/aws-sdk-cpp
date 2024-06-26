@@ -25,10 +25,8 @@ Expiry::Expiry() :
 {
 }
 
-Expiry::Expiry(JsonView jsonValue) : 
-    m_durationInSeconds(0),
-    m_durationInSecondsHasBeenSet(false),
-    m_expiryTimestampHasBeenSet(false)
+Expiry::Expiry(JsonView jsonValue)
+  : Expiry()
 {
   *this = jsonValue;
 }

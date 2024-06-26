@@ -24,9 +24,8 @@ RdsParameters::RdsParameters() :
 {
 }
 
-RdsParameters::RdsParameters(JsonView jsonValue) : 
-    m_instanceIdHasBeenSet(false),
-    m_databaseHasBeenSet(false)
+RdsParameters::RdsParameters(JsonView jsonValue)
+  : RdsParameters()
 {
   *this = jsonValue;
 }

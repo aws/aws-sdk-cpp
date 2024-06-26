@@ -44,29 +44,8 @@ RouteSummary::RouteSummary() :
 {
 }
 
-RouteSummary::RouteSummary(JsonView jsonValue) : 
-    m_appendSourcePath(false),
-    m_appendSourcePathHasBeenSet(false),
-    m_applicationIdHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_createdByAccountIdHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_environmentIdHasBeenSet(false),
-    m_errorHasBeenSet(false),
-    m_includeChildPaths(false),
-    m_includeChildPathsHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_methodsHasBeenSet(false),
-    m_ownerAccountIdHasBeenSet(false),
-    m_pathResourceToIdHasBeenSet(false),
-    m_routeIdHasBeenSet(false),
-    m_routeType(RouteType::NOT_SET),
-    m_routeTypeHasBeenSet(false),
-    m_serviceIdHasBeenSet(false),
-    m_sourcePathHasBeenSet(false),
-    m_state(RouteState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+RouteSummary::RouteSummary(JsonView jsonValue)
+  : RouteSummary()
 {
   *this = jsonValue;
 }

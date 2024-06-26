@@ -24,9 +24,8 @@ LegalTerm::LegalTerm() :
 {
 }
 
-LegalTerm::LegalTerm(JsonView jsonValue) : 
-    m_documentsHasBeenSet(false),
-    m_typeHasBeenSet(false)
+LegalTerm::LegalTerm(JsonView jsonValue)
+  : LegalTerm()
 {
   *this = jsonValue;
 }

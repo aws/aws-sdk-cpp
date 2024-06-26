@@ -23,9 +23,8 @@ UpdateParallelDataResult::UpdateParallelDataResult() :
 {
 }
 
-UpdateParallelDataResult::UpdateParallelDataResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(ParallelDataStatus::NOT_SET),
-    m_latestUpdateAttemptStatus(ParallelDataStatus::NOT_SET)
+UpdateParallelDataResult::UpdateParallelDataResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateParallelDataResult()
 {
   *this = result;
 }

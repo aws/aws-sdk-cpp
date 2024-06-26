@@ -23,8 +23,8 @@ CompareActionSummary::CompareActionSummary() :
 {
 }
 
-CompareActionSummary::CompareActionSummary(JsonView jsonValue) : 
-    m_typeHasBeenSet(false)
+CompareActionSummary::CompareActionSummary(JsonView jsonValue)
+  : CompareActionSummary()
 {
   *this = jsonValue;
 }

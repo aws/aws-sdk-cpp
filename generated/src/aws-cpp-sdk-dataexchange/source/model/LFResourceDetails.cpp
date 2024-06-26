@@ -24,9 +24,8 @@ LFResourceDetails::LFResourceDetails() :
 {
 }
 
-LFResourceDetails::LFResourceDetails(JsonView jsonValue) : 
-    m_databaseHasBeenSet(false),
-    m_tableHasBeenSet(false)
+LFResourceDetails::LFResourceDetails(JsonView jsonValue)
+  : LFResourceDetails()
 {
   *this = jsonValue;
 }

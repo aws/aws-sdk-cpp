@@ -24,9 +24,8 @@ CoverageDateFilter::CoverageDateFilter() :
 {
 }
 
-CoverageDateFilter::CoverageDateFilter(JsonView jsonValue) : 
-    m_endInclusiveHasBeenSet(false),
-    m_startInclusiveHasBeenSet(false)
+CoverageDateFilter::CoverageDateFilter(JsonView jsonValue)
+  : CoverageDateFilter()
 {
   *this = jsonValue;
 }

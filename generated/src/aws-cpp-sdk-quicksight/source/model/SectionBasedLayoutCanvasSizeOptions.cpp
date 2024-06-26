@@ -23,8 +23,8 @@ SectionBasedLayoutCanvasSizeOptions::SectionBasedLayoutCanvasSizeOptions() :
 {
 }
 
-SectionBasedLayoutCanvasSizeOptions::SectionBasedLayoutCanvasSizeOptions(JsonView jsonValue) : 
-    m_paperCanvasSizeOptionsHasBeenSet(false)
+SectionBasedLayoutCanvasSizeOptions::SectionBasedLayoutCanvasSizeOptions(JsonView jsonValue)
+  : SectionBasedLayoutCanvasSizeOptions()
 {
   *this = jsonValue;
 }

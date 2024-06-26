@@ -23,8 +23,8 @@ DerivedInformation::DerivedInformation() :
 {
 }
 
-DerivedInformation::DerivedInformation(JsonView jsonValue) : 
-    m_derivedDataInputConfigHasBeenSet(false)
+DerivedInformation::DerivedInformation(JsonView jsonValue)
+  : DerivedInformation()
 {
   *this = jsonValue;
 }

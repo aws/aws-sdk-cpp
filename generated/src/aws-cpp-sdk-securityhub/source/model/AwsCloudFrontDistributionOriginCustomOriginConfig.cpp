@@ -32,17 +32,8 @@ AwsCloudFrontDistributionOriginCustomOriginConfig::AwsCloudFrontDistributionOrig
 {
 }
 
-AwsCloudFrontDistributionOriginCustomOriginConfig::AwsCloudFrontDistributionOriginCustomOriginConfig(JsonView jsonValue) : 
-    m_httpPort(0),
-    m_httpPortHasBeenSet(false),
-    m_httpsPort(0),
-    m_httpsPortHasBeenSet(false),
-    m_originKeepaliveTimeout(0),
-    m_originKeepaliveTimeoutHasBeenSet(false),
-    m_originProtocolPolicyHasBeenSet(false),
-    m_originReadTimeout(0),
-    m_originReadTimeoutHasBeenSet(false),
-    m_originSslProtocolsHasBeenSet(false)
+AwsCloudFrontDistributionOriginCustomOriginConfig::AwsCloudFrontDistributionOriginCustomOriginConfig(JsonView jsonValue)
+  : AwsCloudFrontDistributionOriginCustomOriginConfig()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ AwsAppSyncGraphQlApiLambdaAuthorizerConfigDetails::AwsAppSyncGraphQlApiLambdaAut
 {
 }
 
-AwsAppSyncGraphQlApiLambdaAuthorizerConfigDetails::AwsAppSyncGraphQlApiLambdaAuthorizerConfigDetails(JsonView jsonValue) : 
-    m_authorizerResultTtlInSeconds(0),
-    m_authorizerResultTtlInSecondsHasBeenSet(false),
-    m_authorizerUriHasBeenSet(false),
-    m_identityValidationExpressionHasBeenSet(false)
+AwsAppSyncGraphQlApiLambdaAuthorizerConfigDetails::AwsAppSyncGraphQlApiLambdaAuthorizerConfigDetails(JsonView jsonValue)
+  : AwsAppSyncGraphQlApiLambdaAuthorizerConfigDetails()
 {
   *this = jsonValue;
 }

@@ -30,15 +30,8 @@ BudgetPerformanceHistory::BudgetPerformanceHistory() :
 {
 }
 
-BudgetPerformanceHistory::BudgetPerformanceHistory(JsonView jsonValue) : 
-    m_budgetNameHasBeenSet(false),
-    m_budgetType(BudgetType::NOT_SET),
-    m_budgetTypeHasBeenSet(false),
-    m_costFiltersHasBeenSet(false),
-    m_costTypesHasBeenSet(false),
-    m_timeUnit(TimeUnit::NOT_SET),
-    m_timeUnitHasBeenSet(false),
-    m_budgetedAndActualAmountsListHasBeenSet(false)
+BudgetPerformanceHistory::BudgetPerformanceHistory(JsonView jsonValue)
+  : BudgetPerformanceHistory()
 {
   *this = jsonValue;
 }

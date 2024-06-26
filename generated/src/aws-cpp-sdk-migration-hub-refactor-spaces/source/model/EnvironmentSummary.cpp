@@ -36,21 +36,8 @@ EnvironmentSummary::EnvironmentSummary() :
 {
 }
 
-EnvironmentSummary::EnvironmentSummary(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_environmentIdHasBeenSet(false),
-    m_errorHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_networkFabricType(NetworkFabricType::NOT_SET),
-    m_networkFabricTypeHasBeenSet(false),
-    m_ownerAccountIdHasBeenSet(false),
-    m_state(EnvironmentState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_transitGatewayIdHasBeenSet(false)
+EnvironmentSummary::EnvironmentSummary(JsonView jsonValue)
+  : EnvironmentSummary()
 {
   *this = jsonValue;
 }

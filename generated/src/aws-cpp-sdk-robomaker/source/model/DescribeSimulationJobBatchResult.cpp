@@ -23,9 +23,8 @@ DescribeSimulationJobBatchResult::DescribeSimulationJobBatchResult() :
 {
 }
 
-DescribeSimulationJobBatchResult::DescribeSimulationJobBatchResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(SimulationJobBatchStatus::NOT_SET),
-    m_failureCode(SimulationJobBatchErrorCode::NOT_SET)
+DescribeSimulationJobBatchResult::DescribeSimulationJobBatchResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeSimulationJobBatchResult()
 {
   *this = result;
 }

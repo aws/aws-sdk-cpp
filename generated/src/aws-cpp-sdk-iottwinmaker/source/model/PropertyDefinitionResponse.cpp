@@ -40,25 +40,8 @@ PropertyDefinitionResponse::PropertyDefinitionResponse() :
 {
 }
 
-PropertyDefinitionResponse::PropertyDefinitionResponse(JsonView jsonValue) : 
-    m_dataTypeHasBeenSet(false),
-    m_isTimeSeries(false),
-    m_isTimeSeriesHasBeenSet(false),
-    m_isRequiredInEntity(false),
-    m_isRequiredInEntityHasBeenSet(false),
-    m_isExternalId(false),
-    m_isExternalIdHasBeenSet(false),
-    m_isStoredExternally(false),
-    m_isStoredExternallyHasBeenSet(false),
-    m_isImported(false),
-    m_isImportedHasBeenSet(false),
-    m_isFinal(false),
-    m_isFinalHasBeenSet(false),
-    m_isInherited(false),
-    m_isInheritedHasBeenSet(false),
-    m_defaultValueHasBeenSet(false),
-    m_configurationHasBeenSet(false),
-    m_displayNameHasBeenSet(false)
+PropertyDefinitionResponse::PropertyDefinitionResponse(JsonView jsonValue)
+  : PropertyDefinitionResponse()
 {
   *this = jsonValue;
 }

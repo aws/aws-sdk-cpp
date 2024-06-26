@@ -23,8 +23,8 @@ ScalingTrigger::ScalingTrigger() :
 {
 }
 
-ScalingTrigger::ScalingTrigger(JsonView jsonValue) : 
-    m_cloudWatchAlarmDefinitionHasBeenSet(false)
+ScalingTrigger::ScalingTrigger(JsonView jsonValue)
+  : ScalingTrigger()
 {
   *this = jsonValue;
 }

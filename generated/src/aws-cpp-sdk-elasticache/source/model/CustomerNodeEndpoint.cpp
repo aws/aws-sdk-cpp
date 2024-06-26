@@ -27,10 +27,8 @@ CustomerNodeEndpoint::CustomerNodeEndpoint() :
 {
 }
 
-CustomerNodeEndpoint::CustomerNodeEndpoint(const XmlNode& xmlNode) : 
-    m_addressHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false)
+CustomerNodeEndpoint::CustomerNodeEndpoint(const XmlNode& xmlNode)
+  : CustomerNodeEndpoint()
 {
   *this = xmlNode;
 }

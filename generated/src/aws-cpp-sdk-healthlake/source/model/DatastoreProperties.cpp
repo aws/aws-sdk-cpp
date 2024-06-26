@@ -35,20 +35,8 @@ DatastoreProperties::DatastoreProperties() :
 {
 }
 
-DatastoreProperties::DatastoreProperties(JsonView jsonValue) : 
-    m_datastoreIdHasBeenSet(false),
-    m_datastoreArnHasBeenSet(false),
-    m_datastoreNameHasBeenSet(false),
-    m_datastoreStatus(DatastoreStatus::NOT_SET),
-    m_datastoreStatusHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_datastoreTypeVersion(FHIRVersion::NOT_SET),
-    m_datastoreTypeVersionHasBeenSet(false),
-    m_datastoreEndpointHasBeenSet(false),
-    m_sseConfigurationHasBeenSet(false),
-    m_preloadDataConfigHasBeenSet(false),
-    m_identityProviderConfigurationHasBeenSet(false),
-    m_errorCauseHasBeenSet(false)
+DatastoreProperties::DatastoreProperties(JsonView jsonValue)
+  : DatastoreProperties()
 {
   *this = jsonValue;
 }

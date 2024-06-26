@@ -21,8 +21,8 @@ ListReusableDelegationSetsResult::ListReusableDelegationSetsResult() :
 {
 }
 
-ListReusableDelegationSetsResult::ListReusableDelegationSetsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_isTruncated(false)
+ListReusableDelegationSetsResult::ListReusableDelegationSetsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : ListReusableDelegationSetsResult()
 {
   *this = result;
 }

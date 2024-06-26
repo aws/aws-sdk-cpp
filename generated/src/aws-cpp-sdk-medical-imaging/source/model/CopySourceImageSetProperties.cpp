@@ -31,16 +31,8 @@ CopySourceImageSetProperties::CopySourceImageSetProperties() :
 {
 }
 
-CopySourceImageSetProperties::CopySourceImageSetProperties(JsonView jsonValue) : 
-    m_imageSetIdHasBeenSet(false),
-    m_latestVersionIdHasBeenSet(false),
-    m_imageSetState(ImageSetState::NOT_SET),
-    m_imageSetStateHasBeenSet(false),
-    m_imageSetWorkflowStatus(ImageSetWorkflowStatus::NOT_SET),
-    m_imageSetWorkflowStatusHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_imageSetArnHasBeenSet(false)
+CopySourceImageSetProperties::CopySourceImageSetProperties(JsonView jsonValue)
+  : CopySourceImageSetProperties()
 {
   *this = jsonValue;
 }

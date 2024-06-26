@@ -35,20 +35,8 @@ SubscriptionSummary::SubscriptionSummary() :
 {
 }
 
-SubscriptionSummary::SubscriptionSummary(JsonView jsonValue) : 
-    m_createdAtHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_domainIdHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_retainPermissions(false),
-    m_retainPermissionsHasBeenSet(false),
-    m_status(SubscriptionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_subscribedListingHasBeenSet(false),
-    m_subscribedPrincipalHasBeenSet(false),
-    m_subscriptionRequestIdHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_updatedByHasBeenSet(false)
+SubscriptionSummary::SubscriptionSummary(JsonView jsonValue)
+  : SubscriptionSummary()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ ExternalModelSummary::ExternalModelSummary() :
 {
 }
 
-ExternalModelSummary::ExternalModelSummary(JsonView jsonValue) : 
-    m_modelEndpointHasBeenSet(false),
-    m_modelSource(ModelSource::NOT_SET),
-    m_modelSourceHasBeenSet(false)
+ExternalModelSummary::ExternalModelSummary(JsonView jsonValue)
+  : ExternalModelSummary()
 {
   *this = jsonValue;
 }

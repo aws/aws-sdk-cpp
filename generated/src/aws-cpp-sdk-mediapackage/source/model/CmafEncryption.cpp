@@ -28,13 +28,8 @@ CmafEncryption::CmafEncryption() :
 {
 }
 
-CmafEncryption::CmafEncryption(JsonView jsonValue) : 
-    m_constantInitializationVectorHasBeenSet(false),
-    m_encryptionMethod(CmafEncryptionMethod::NOT_SET),
-    m_encryptionMethodHasBeenSet(false),
-    m_keyRotationIntervalSeconds(0),
-    m_keyRotationIntervalSecondsHasBeenSet(false),
-    m_spekeKeyProviderHasBeenSet(false)
+CmafEncryption::CmafEncryption(JsonView jsonValue)
+  : CmafEncryption()
 {
   *this = jsonValue;
 }

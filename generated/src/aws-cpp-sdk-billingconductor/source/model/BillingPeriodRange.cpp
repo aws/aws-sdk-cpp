@@ -24,9 +24,8 @@ BillingPeriodRange::BillingPeriodRange() :
 {
 }
 
-BillingPeriodRange::BillingPeriodRange(JsonView jsonValue) : 
-    m_inclusiveStartBillingPeriodHasBeenSet(false),
-    m_exclusiveEndBillingPeriodHasBeenSet(false)
+BillingPeriodRange::BillingPeriodRange(JsonView jsonValue)
+  : BillingPeriodRange()
 {
   *this = jsonValue;
 }

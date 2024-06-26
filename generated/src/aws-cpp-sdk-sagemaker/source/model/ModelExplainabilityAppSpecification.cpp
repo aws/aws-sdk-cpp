@@ -25,10 +25,8 @@ ModelExplainabilityAppSpecification::ModelExplainabilityAppSpecification() :
 {
 }
 
-ModelExplainabilityAppSpecification::ModelExplainabilityAppSpecification(JsonView jsonValue) : 
-    m_imageUriHasBeenSet(false),
-    m_configUriHasBeenSet(false),
-    m_environmentHasBeenSet(false)
+ModelExplainabilityAppSpecification::ModelExplainabilityAppSpecification(JsonView jsonValue)
+  : ModelExplainabilityAppSpecification()
 {
   *this = jsonValue;
 }

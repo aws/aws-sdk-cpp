@@ -24,9 +24,8 @@ AlertFilters::AlertFilters() :
 {
 }
 
-AlertFilters::AlertFilters(JsonView jsonValue) : 
-    m_metricListHasBeenSet(false),
-    m_dimensionFilterListHasBeenSet(false)
+AlertFilters::AlertFilters(JsonView jsonValue)
+  : AlertFilters()
 {
   *this = jsonValue;
 }

@@ -33,18 +33,8 @@ BandwidthRateLimitInterval::BandwidthRateLimitInterval() :
 {
 }
 
-BandwidthRateLimitInterval::BandwidthRateLimitInterval(JsonView jsonValue) : 
-    m_averageUploadRateLimitInBitsPerSec(0),
-    m_averageUploadRateLimitInBitsPerSecHasBeenSet(false),
-    m_daysOfWeekHasBeenSet(false),
-    m_endHourOfDay(0),
-    m_endHourOfDayHasBeenSet(false),
-    m_endMinuteOfHour(0),
-    m_endMinuteOfHourHasBeenSet(false),
-    m_startHourOfDay(0),
-    m_startHourOfDayHasBeenSet(false),
-    m_startMinuteOfHour(0),
-    m_startMinuteOfHourHasBeenSet(false)
+BandwidthRateLimitInterval::BandwidthRateLimitInterval(JsonView jsonValue)
+  : BandwidthRateLimitInterval()
 {
   *this = jsonValue;
 }

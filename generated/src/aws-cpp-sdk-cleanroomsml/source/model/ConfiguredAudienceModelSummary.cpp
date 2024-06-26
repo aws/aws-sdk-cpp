@@ -31,16 +31,8 @@ ConfiguredAudienceModelSummary::ConfiguredAudienceModelSummary() :
 {
 }
 
-ConfiguredAudienceModelSummary::ConfiguredAudienceModelSummary(JsonView jsonValue) : 
-    m_audienceModelArnHasBeenSet(false),
-    m_configuredAudienceModelArnHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_outputConfigHasBeenSet(false),
-    m_status(ConfiguredAudienceModelStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
+ConfiguredAudienceModelSummary::ConfiguredAudienceModelSummary(JsonView jsonValue)
+  : ConfiguredAudienceModelSummary()
 {
   *this = jsonValue;
 }

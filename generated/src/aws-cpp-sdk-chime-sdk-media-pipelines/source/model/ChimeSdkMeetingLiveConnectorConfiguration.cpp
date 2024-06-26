@@ -27,12 +27,8 @@ ChimeSdkMeetingLiveConnectorConfiguration::ChimeSdkMeetingLiveConnectorConfigura
 {
 }
 
-ChimeSdkMeetingLiveConnectorConfiguration::ChimeSdkMeetingLiveConnectorConfiguration(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_muxType(LiveConnectorMuxType::NOT_SET),
-    m_muxTypeHasBeenSet(false),
-    m_compositedVideoHasBeenSet(false),
-    m_sourceConfigurationHasBeenSet(false)
+ChimeSdkMeetingLiveConnectorConfiguration::ChimeSdkMeetingLiveConnectorConfiguration(JsonView jsonValue)
+  : ChimeSdkMeetingLiveConnectorConfiguration()
 {
   *this = jsonValue;
 }

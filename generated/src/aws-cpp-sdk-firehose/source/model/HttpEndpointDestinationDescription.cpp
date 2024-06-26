@@ -33,18 +33,8 @@ HttpEndpointDestinationDescription::HttpEndpointDestinationDescription() :
 {
 }
 
-HttpEndpointDestinationDescription::HttpEndpointDestinationDescription(JsonView jsonValue) : 
-    m_endpointConfigurationHasBeenSet(false),
-    m_bufferingHintsHasBeenSet(false),
-    m_cloudWatchLoggingOptionsHasBeenSet(false),
-    m_requestConfigurationHasBeenSet(false),
-    m_processingConfigurationHasBeenSet(false),
-    m_roleARNHasBeenSet(false),
-    m_retryOptionsHasBeenSet(false),
-    m_s3BackupMode(HttpEndpointS3BackupMode::NOT_SET),
-    m_s3BackupModeHasBeenSet(false),
-    m_s3DestinationDescriptionHasBeenSet(false),
-    m_secretsManagerConfigurationHasBeenSet(false)
+HttpEndpointDestinationDescription::HttpEndpointDestinationDescription(JsonView jsonValue)
+  : HttpEndpointDestinationDescription()
 {
   *this = jsonValue;
 }

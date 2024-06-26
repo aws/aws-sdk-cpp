@@ -28,13 +28,8 @@ DeviceSelectionConfig::DeviceSelectionConfig() :
 {
 }
 
-DeviceSelectionConfig::DeviceSelectionConfig(JsonView jsonValue) : 
-    m_deviceSubsetType(DeviceSubsetType::NOT_SET),
-    m_deviceSubsetTypeHasBeenSet(false),
-    m_percentage(0),
-    m_percentageHasBeenSet(false),
-    m_deviceNamesHasBeenSet(false),
-    m_deviceNameContainsHasBeenSet(false)
+DeviceSelectionConfig::DeviceSelectionConfig(JsonView jsonValue)
+  : DeviceSelectionConfig()
 {
   *this = jsonValue;
 }

@@ -23,9 +23,8 @@ DeleteKeyResult::DeleteKeyResult() :
 {
 }
 
-DeleteKeyResult::DeleteKeyResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_itemCount(0),
-    m_totalSizeInBytes(0)
+DeleteKeyResult::DeleteKeyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeleteKeyResult()
 {
   *this = result;
 }

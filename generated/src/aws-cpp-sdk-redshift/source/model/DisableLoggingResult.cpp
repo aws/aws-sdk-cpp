@@ -23,9 +23,8 @@ DisableLoggingResult::DisableLoggingResult() :
 {
 }
 
-DisableLoggingResult::DisableLoggingResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_loggingEnabled(false),
-    m_logDestinationType(LogDestinationType::NOT_SET)
+DisableLoggingResult::DisableLoggingResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : DisableLoggingResult()
 {
   *this = result;
 }

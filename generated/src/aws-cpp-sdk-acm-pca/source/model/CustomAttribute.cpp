@@ -24,9 +24,8 @@ CustomAttribute::CustomAttribute() :
 {
 }
 
-CustomAttribute::CustomAttribute(JsonView jsonValue) : 
-    m_objectIdentifierHasBeenSet(false),
-    m_valueHasBeenSet(false)
+CustomAttribute::CustomAttribute(JsonView jsonValue)
+  : CustomAttribute()
 {
   *this = jsonValue;
 }

@@ -32,17 +32,8 @@ AccountLimit::AccountLimit() :
 {
 }
 
-AccountLimit::AccountLimit(JsonView jsonValue) : 
-    m_totalCodeSize(0),
-    m_totalCodeSizeHasBeenSet(false),
-    m_codeSizeUnzipped(0),
-    m_codeSizeUnzippedHasBeenSet(false),
-    m_codeSizeZipped(0),
-    m_codeSizeZippedHasBeenSet(false),
-    m_concurrentExecutions(0),
-    m_concurrentExecutionsHasBeenSet(false),
-    m_unreservedConcurrentExecutions(0),
-    m_unreservedConcurrentExecutionsHasBeenSet(false)
+AccountLimit::AccountLimit(JsonView jsonValue)
+  : AccountLimit()
 {
   *this = jsonValue;
 }

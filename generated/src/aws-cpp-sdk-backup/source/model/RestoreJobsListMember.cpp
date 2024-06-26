@@ -46,31 +46,8 @@ RestoreJobsListMember::RestoreJobsListMember() :
 {
 }
 
-RestoreJobsListMember::RestoreJobsListMember(JsonView jsonValue) : 
-    m_accountIdHasBeenSet(false),
-    m_restoreJobIdHasBeenSet(false),
-    m_recoveryPointArnHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_completionDateHasBeenSet(false),
-    m_status(RestoreJobStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_percentDoneHasBeenSet(false),
-    m_backupSizeInBytes(0),
-    m_backupSizeInBytesHasBeenSet(false),
-    m_iamRoleArnHasBeenSet(false),
-    m_expectedCompletionTimeMinutes(0),
-    m_expectedCompletionTimeMinutesHasBeenSet(false),
-    m_createdResourceArnHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
-    m_recoveryPointCreationDateHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_validationStatus(RestoreValidationStatus::NOT_SET),
-    m_validationStatusHasBeenSet(false),
-    m_validationStatusMessageHasBeenSet(false),
-    m_deletionStatus(RestoreDeletionStatus::NOT_SET),
-    m_deletionStatusHasBeenSet(false),
-    m_deletionStatusMessageHasBeenSet(false)
+RestoreJobsListMember::RestoreJobsListMember(JsonView jsonValue)
+  : RestoreJobsListMember()
 {
   *this = jsonValue;
 }

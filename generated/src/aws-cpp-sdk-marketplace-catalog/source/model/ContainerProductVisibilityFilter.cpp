@@ -23,8 +23,8 @@ ContainerProductVisibilityFilter::ContainerProductVisibilityFilter() :
 {
 }
 
-ContainerProductVisibilityFilter::ContainerProductVisibilityFilter(JsonView jsonValue) : 
-    m_valueListHasBeenSet(false)
+ContainerProductVisibilityFilter::ContainerProductVisibilityFilter(JsonView jsonValue)
+  : ContainerProductVisibilityFilter()
 {
   *this = jsonValue;
 }

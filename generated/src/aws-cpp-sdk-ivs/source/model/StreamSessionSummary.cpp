@@ -27,12 +27,8 @@ StreamSessionSummary::StreamSessionSummary() :
 {
 }
 
-StreamSessionSummary::StreamSessionSummary(JsonView jsonValue) : 
-    m_endTimeHasBeenSet(false),
-    m_hasErrorEvent(false),
-    m_hasErrorEventHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_streamIdHasBeenSet(false)
+StreamSessionSummary::StreamSessionSummary(JsonView jsonValue)
+  : StreamSessionSummary()
 {
   *this = jsonValue;
 }

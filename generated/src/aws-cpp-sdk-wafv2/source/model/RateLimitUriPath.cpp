@@ -23,8 +23,8 @@ RateLimitUriPath::RateLimitUriPath() :
 {
 }
 
-RateLimitUriPath::RateLimitUriPath(JsonView jsonValue) : 
-    m_textTransformationsHasBeenSet(false)
+RateLimitUriPath::RateLimitUriPath(JsonView jsonValue)
+  : RateLimitUriPath()
 {
   *this = jsonValue;
 }

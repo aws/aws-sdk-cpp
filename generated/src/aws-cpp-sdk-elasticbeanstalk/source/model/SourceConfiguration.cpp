@@ -26,9 +26,8 @@ SourceConfiguration::SourceConfiguration() :
 {
 }
 
-SourceConfiguration::SourceConfiguration(const XmlNode& xmlNode) : 
-    m_applicationNameHasBeenSet(false),
-    m_templateNameHasBeenSet(false)
+SourceConfiguration::SourceConfiguration(const XmlNode& xmlNode)
+  : SourceConfiguration()
 {
   *this = xmlNode;
 }

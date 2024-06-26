@@ -23,8 +23,8 @@ BucketInfo::BucketInfo() :
 {
 }
 
-BucketInfo::BucketInfo(JsonView jsonValue) : 
-    m_bucketsHasBeenSet(false)
+BucketInfo::BucketInfo(JsonView jsonValue)
+  : BucketInfo()
 {
   *this = jsonValue;
 }

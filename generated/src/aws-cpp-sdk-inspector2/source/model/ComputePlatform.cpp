@@ -25,10 +25,8 @@ ComputePlatform::ComputePlatform() :
 {
 }
 
-ComputePlatform::ComputePlatform(JsonView jsonValue) : 
-    m_productHasBeenSet(false),
-    m_vendorHasBeenSet(false),
-    m_versionHasBeenSet(false)
+ComputePlatform::ComputePlatform(JsonView jsonValue)
+  : ComputePlatform()
 {
   *this = jsonValue;
 }

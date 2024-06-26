@@ -27,12 +27,8 @@ WorldFailure::WorldFailure() :
 {
 }
 
-WorldFailure::WorldFailure(JsonView jsonValue) : 
-    m_failureCode(WorldGenerationJobErrorCode::NOT_SET),
-    m_failureCodeHasBeenSet(false),
-    m_sampleFailureReasonHasBeenSet(false),
-    m_failureCount(0),
-    m_failureCountHasBeenSet(false)
+WorldFailure::WorldFailure(JsonView jsonValue)
+  : WorldFailure()
 {
   *this = jsonValue;
 }

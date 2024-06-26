@@ -24,9 +24,8 @@ Nameserver::Nameserver() :
 {
 }
 
-Nameserver::Nameserver(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_glueIpsHasBeenSet(false)
+Nameserver::Nameserver(JsonView jsonValue)
+  : Nameserver()
 {
   *this = jsonValue;
 }

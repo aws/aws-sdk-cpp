@@ -22,8 +22,8 @@ DescribeActionResult::DescribeActionResult() :
 {
 }
 
-DescribeActionResult::DescribeActionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(ActionStatus::NOT_SET)
+DescribeActionResult::DescribeActionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeActionResult()
 {
   *this = result;
 }

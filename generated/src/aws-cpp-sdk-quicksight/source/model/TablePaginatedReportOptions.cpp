@@ -26,11 +26,8 @@ TablePaginatedReportOptions::TablePaginatedReportOptions() :
 {
 }
 
-TablePaginatedReportOptions::TablePaginatedReportOptions(JsonView jsonValue) : 
-    m_verticalOverflowVisibility(Visibility::NOT_SET),
-    m_verticalOverflowVisibilityHasBeenSet(false),
-    m_overflowColumnHeaderVisibility(Visibility::NOT_SET),
-    m_overflowColumnHeaderVisibilityHasBeenSet(false)
+TablePaginatedReportOptions::TablePaginatedReportOptions(JsonView jsonValue)
+  : TablePaginatedReportOptions()
 {
   *this = jsonValue;
 }

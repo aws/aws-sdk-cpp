@@ -25,10 +25,8 @@ VirtualGatewayListenerTlsCertificate::VirtualGatewayListenerTlsCertificate() :
 {
 }
 
-VirtualGatewayListenerTlsCertificate::VirtualGatewayListenerTlsCertificate(JsonView jsonValue) : 
-    m_acmHasBeenSet(false),
-    m_fileHasBeenSet(false),
-    m_sdsHasBeenSet(false)
+VirtualGatewayListenerTlsCertificate::VirtualGatewayListenerTlsCertificate(JsonView jsonValue)
+  : VirtualGatewayListenerTlsCertificate()
 {
   *this = jsonValue;
 }

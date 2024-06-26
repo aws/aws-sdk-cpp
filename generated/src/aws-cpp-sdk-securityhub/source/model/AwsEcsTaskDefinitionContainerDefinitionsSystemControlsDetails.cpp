@@ -24,9 +24,8 @@ AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetails::AwsEcsTaskDefinit
 {
 }
 
-AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetails::AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetails(JsonView jsonValue) : 
-    m_namespaceHasBeenSet(false),
-    m_valueHasBeenSet(false)
+AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetails::AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetails(JsonView jsonValue)
+  : AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetails()
 {
   *this = jsonValue;
 }

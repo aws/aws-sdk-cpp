@@ -22,8 +22,8 @@ UpdateApiDestinationResult::UpdateApiDestinationResult() :
 {
 }
 
-UpdateApiDestinationResult::UpdateApiDestinationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_apiDestinationState(ApiDestinationState::NOT_SET)
+UpdateApiDestinationResult::UpdateApiDestinationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateApiDestinationResult()
 {
   *this = result;
 }

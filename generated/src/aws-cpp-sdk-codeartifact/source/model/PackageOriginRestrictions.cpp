@@ -26,11 +26,8 @@ PackageOriginRestrictions::PackageOriginRestrictions() :
 {
 }
 
-PackageOriginRestrictions::PackageOriginRestrictions(JsonView jsonValue) : 
-    m_publish(AllowPublish::NOT_SET),
-    m_publishHasBeenSet(false),
-    m_upstream(AllowUpstream::NOT_SET),
-    m_upstreamHasBeenSet(false)
+PackageOriginRestrictions::PackageOriginRestrictions(JsonView jsonValue)
+  : PackageOriginRestrictions()
 {
   *this = jsonValue;
 }

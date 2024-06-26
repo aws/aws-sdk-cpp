@@ -25,10 +25,8 @@ PolicyTypeScope::PolicyTypeScope() :
 {
 }
 
-PolicyTypeScope::PolicyTypeScope(JsonView jsonValue) : 
-    m_policyTypesHasBeenSet(false),
-    m_allPolicyTypesEnabled(false),
-    m_allPolicyTypesEnabledHasBeenSet(false)
+PolicyTypeScope::PolicyTypeScope(JsonView jsonValue)
+  : PolicyTypeScope()
 {
   *this = jsonValue;
 }

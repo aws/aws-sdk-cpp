@@ -23,8 +23,8 @@ AccessLog::AccessLog() :
 {
 }
 
-AccessLog::AccessLog(JsonView jsonValue) : 
-    m_fileHasBeenSet(false)
+AccessLog::AccessLog(JsonView jsonValue)
+  : AccessLog()
 {
   *this = jsonValue;
 }

@@ -28,13 +28,8 @@ OutlierDetection::OutlierDetection() :
 {
 }
 
-OutlierDetection::OutlierDetection(JsonView jsonValue) : 
-    m_baseEjectionDurationHasBeenSet(false),
-    m_intervalHasBeenSet(false),
-    m_maxEjectionPercent(0),
-    m_maxEjectionPercentHasBeenSet(false),
-    m_maxServerErrors(0),
-    m_maxServerErrorsHasBeenSet(false)
+OutlierDetection::OutlierDetection(JsonView jsonValue)
+  : OutlierDetection()
 {
   *this = jsonValue;
 }

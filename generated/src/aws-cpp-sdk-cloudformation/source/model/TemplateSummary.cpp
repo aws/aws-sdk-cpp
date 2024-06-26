@@ -33,16 +33,8 @@ TemplateSummary::TemplateSummary() :
 {
 }
 
-TemplateSummary::TemplateSummary(const XmlNode& xmlNode) : 
-    m_generatedTemplateIdHasBeenSet(false),
-    m_generatedTemplateNameHasBeenSet(false),
-    m_status(GeneratedTemplateStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusReasonHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_numberOfResources(0),
-    m_numberOfResourcesHasBeenSet(false)
+TemplateSummary::TemplateSummary(const XmlNode& xmlNode)
+  : TemplateSummary()
 {
   *this = xmlNode;
 }

@@ -43,28 +43,8 @@ JobDefinition::JobDefinition() :
 {
 }
 
-JobDefinition::JobDefinition(JsonView jsonValue) : 
-    m_jobDefinitionNameHasBeenSet(false),
-    m_jobDefinitionArnHasBeenSet(false),
-    m_revision(0),
-    m_revisionHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_schedulingPriority(0),
-    m_schedulingPriorityHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_retryStrategyHasBeenSet(false),
-    m_containerPropertiesHasBeenSet(false),
-    m_timeoutHasBeenSet(false),
-    m_nodePropertiesHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_propagateTags(false),
-    m_propagateTagsHasBeenSet(false),
-    m_platformCapabilitiesHasBeenSet(false),
-    m_ecsPropertiesHasBeenSet(false),
-    m_eksPropertiesHasBeenSet(false),
-    m_containerOrchestrationType(OrchestrationType::NOT_SET),
-    m_containerOrchestrationTypeHasBeenSet(false)
+JobDefinition::JobDefinition(JsonView jsonValue)
+  : JobDefinition()
 {
   *this = jsonValue;
 }

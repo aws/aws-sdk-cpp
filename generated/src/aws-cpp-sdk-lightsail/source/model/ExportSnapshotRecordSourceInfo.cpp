@@ -31,16 +31,8 @@ ExportSnapshotRecordSourceInfo::ExportSnapshotRecordSourceInfo() :
 {
 }
 
-ExportSnapshotRecordSourceInfo::ExportSnapshotRecordSourceInfo(JsonView jsonValue) : 
-    m_resourceType(ExportSnapshotRecordSourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_fromResourceNameHasBeenSet(false),
-    m_fromResourceArnHasBeenSet(false),
-    m_instanceSnapshotInfoHasBeenSet(false),
-    m_diskSnapshotInfoHasBeenSet(false)
+ExportSnapshotRecordSourceInfo::ExportSnapshotRecordSourceInfo(JsonView jsonValue)
+  : ExportSnapshotRecordSourceInfo()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ VpcConfiguration::VpcConfiguration() :
 {
 }
 
-VpcConfiguration::VpcConfiguration(JsonView jsonValue) : 
-    m_vpcIdHasBeenSet(false)
+VpcConfiguration::VpcConfiguration(JsonView jsonValue)
+  : VpcConfiguration()
 {
   *this = jsonValue;
 }

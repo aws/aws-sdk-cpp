@@ -23,8 +23,8 @@ IpCity::IpCity() :
 {
 }
 
-IpCity::IpCity(JsonView jsonValue) : 
-    m_nameHasBeenSet(false)
+IpCity::IpCity(JsonView jsonValue)
+  : IpCity()
 {
   *this = jsonValue;
 }

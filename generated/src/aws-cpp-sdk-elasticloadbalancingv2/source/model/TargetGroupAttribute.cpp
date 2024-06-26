@@ -26,9 +26,8 @@ TargetGroupAttribute::TargetGroupAttribute() :
 {
 }
 
-TargetGroupAttribute::TargetGroupAttribute(const XmlNode& xmlNode) : 
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false)
+TargetGroupAttribute::TargetGroupAttribute(const XmlNode& xmlNode)
+  : TargetGroupAttribute()
 {
   *this = xmlNode;
 }

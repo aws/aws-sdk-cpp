@@ -24,9 +24,8 @@ UserProficiencyDisassociate::UserProficiencyDisassociate() :
 {
 }
 
-UserProficiencyDisassociate::UserProficiencyDisassociate(JsonView jsonValue) : 
-    m_attributeNameHasBeenSet(false),
-    m_attributeValueHasBeenSet(false)
+UserProficiencyDisassociate::UserProficiencyDisassociate(JsonView jsonValue)
+  : UserProficiencyDisassociate()
 {
   *this = jsonValue;
 }

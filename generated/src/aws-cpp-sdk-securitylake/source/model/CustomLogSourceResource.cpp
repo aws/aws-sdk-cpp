@@ -26,11 +26,8 @@ CustomLogSourceResource::CustomLogSourceResource() :
 {
 }
 
-CustomLogSourceResource::CustomLogSourceResource(JsonView jsonValue) : 
-    m_attributesHasBeenSet(false),
-    m_providerHasBeenSet(false),
-    m_sourceNameHasBeenSet(false),
-    m_sourceVersionHasBeenSet(false)
+CustomLogSourceResource::CustomLogSourceResource(JsonView jsonValue)
+  : CustomLogSourceResource()
 {
   *this = jsonValue;
 }

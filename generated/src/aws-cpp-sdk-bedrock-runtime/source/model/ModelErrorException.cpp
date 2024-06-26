@@ -26,11 +26,8 @@ ModelErrorException::ModelErrorException() :
 {
 }
 
-ModelErrorException::ModelErrorException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_originalStatusCode(0),
-    m_originalStatusCodeHasBeenSet(false),
-    m_resourceNameHasBeenSet(false)
+ModelErrorException::ModelErrorException(JsonView jsonValue)
+  : ModelErrorException()
 {
   *this = jsonValue;
 }

@@ -27,12 +27,8 @@ PackageAggregation::PackageAggregation() :
 {
 }
 
-PackageAggregation::PackageAggregation(JsonView jsonValue) : 
-    m_packageNamesHasBeenSet(false),
-    m_sortBy(PackageSortBy::NOT_SET),
-    m_sortByHasBeenSet(false),
-    m_sortOrder(SortOrder::NOT_SET),
-    m_sortOrderHasBeenSet(false)
+PackageAggregation::PackageAggregation(JsonView jsonValue)
+  : PackageAggregation()
 {
   *this = jsonValue;
 }

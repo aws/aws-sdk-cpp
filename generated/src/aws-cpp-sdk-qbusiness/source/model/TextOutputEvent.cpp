@@ -26,11 +26,8 @@ TextOutputEvent::TextOutputEvent() :
 {
 }
 
-TextOutputEvent::TextOutputEvent(JsonView jsonValue) : 
-    m_conversationIdHasBeenSet(false),
-    m_userMessageIdHasBeenSet(false),
-    m_systemMessageIdHasBeenSet(false),
-    m_systemMessageHasBeenSet(false)
+TextOutputEvent::TextOutputEvent(JsonView jsonValue)
+  : TextOutputEvent()
 {
   *this = jsonValue;
 }

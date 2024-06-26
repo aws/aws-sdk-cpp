@@ -26,11 +26,8 @@ Exclusions::Exclusions() :
 {
 }
 
-Exclusions::Exclusions(JsonView jsonValue) : 
-    m_excludeBootVolumes(false),
-    m_excludeBootVolumesHasBeenSet(false),
-    m_excludeVolumeTypesHasBeenSet(false),
-    m_excludeTagsHasBeenSet(false)
+Exclusions::Exclusions(JsonView jsonValue)
+  : Exclusions()
 {
   *this = jsonValue;
 }

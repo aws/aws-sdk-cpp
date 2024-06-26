@@ -24,9 +24,8 @@ AmazonRedshiftAdvancedOption::AmazonRedshiftAdvancedOption() :
 {
 }
 
-AmazonRedshiftAdvancedOption::AmazonRedshiftAdvancedOption(JsonView jsonValue) : 
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false)
+AmazonRedshiftAdvancedOption::AmazonRedshiftAdvancedOption(JsonView jsonValue)
+  : AmazonRedshiftAdvancedOption()
 {
   *this = jsonValue;
 }

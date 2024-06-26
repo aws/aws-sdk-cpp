@@ -24,10 +24,8 @@ DescribeAccountOverviewResult::DescribeAccountOverviewResult() :
 {
 }
 
-DescribeAccountOverviewResult::DescribeAccountOverviewResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_reactiveInsights(0),
-    m_proactiveInsights(0),
-    m_meanTimeToRecoverInMilliseconds(0)
+DescribeAccountOverviewResult::DescribeAccountOverviewResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeAccountOverviewResult()
 {
   *this = result;
 }

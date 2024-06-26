@@ -31,16 +31,8 @@ ImageResourceAssociation::ImageResourceAssociation() :
 {
 }
 
-ImageResourceAssociation::ImageResourceAssociation(JsonView jsonValue) : 
-    m_associatedResourceIdHasBeenSet(false),
-    m_associatedResourceType(ImageAssociatedResourceType::NOT_SET),
-    m_associatedResourceTypeHasBeenSet(false),
-    m_createdHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_imageIdHasBeenSet(false),
-    m_state(AssociationState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_stateReasonHasBeenSet(false)
+ImageResourceAssociation::ImageResourceAssociation(JsonView jsonValue)
+  : ImageResourceAssociation()
 {
   *this = jsonValue;
 }

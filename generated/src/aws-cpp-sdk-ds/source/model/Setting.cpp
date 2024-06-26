@@ -24,9 +24,8 @@ Setting::Setting() :
 {
 }
 
-Setting::Setting(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
+Setting::Setting(JsonView jsonValue)
+  : Setting()
 {
   *this = jsonValue;
 }

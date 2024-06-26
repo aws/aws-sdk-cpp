@@ -33,18 +33,8 @@ Bridge::Bridge() :
 {
 }
 
-Bridge::Bridge(JsonView jsonValue) : 
-    m_bridgeArnHasBeenSet(false),
-    m_bridgeMessagesHasBeenSet(false),
-    m_bridgeState(BridgeState::NOT_SET),
-    m_bridgeStateHasBeenSet(false),
-    m_egressGatewayBridgeHasBeenSet(false),
-    m_ingressGatewayBridgeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_outputsHasBeenSet(false),
-    m_placementArnHasBeenSet(false),
-    m_sourceFailoverConfigHasBeenSet(false),
-    m_sourcesHasBeenSet(false)
+Bridge::Bridge(JsonView jsonValue)
+  : Bridge()
 {
   *this = jsonValue;
 }

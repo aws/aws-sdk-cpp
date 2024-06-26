@@ -41,26 +41,8 @@ LaunchProfile::LaunchProfile() :
 {
 }
 
-LaunchProfile::LaunchProfile(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_ec2SubnetIdsHasBeenSet(false),
-    m_launchProfileIdHasBeenSet(false),
-    m_launchProfileProtocolVersionsHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_state(LaunchProfileState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_statusCode(LaunchProfileStatusCode::NOT_SET),
-    m_statusCodeHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_streamConfigurationHasBeenSet(false),
-    m_studioComponentIdsHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_updatedByHasBeenSet(false),
-    m_validationResultsHasBeenSet(false)
+LaunchProfile::LaunchProfile(JsonView jsonValue)
+  : LaunchProfile()
 {
   *this = jsonValue;
 }

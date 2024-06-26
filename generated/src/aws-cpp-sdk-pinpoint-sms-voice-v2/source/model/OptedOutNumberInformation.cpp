@@ -26,11 +26,8 @@ OptedOutNumberInformation::OptedOutNumberInformation() :
 {
 }
 
-OptedOutNumberInformation::OptedOutNumberInformation(JsonView jsonValue) : 
-    m_optedOutNumberHasBeenSet(false),
-    m_optedOutTimestampHasBeenSet(false),
-    m_endUserOptedOut(false),
-    m_endUserOptedOutHasBeenSet(false)
+OptedOutNumberInformation::OptedOutNumberInformation(JsonView jsonValue)
+  : OptedOutNumberInformation()
 {
   *this = jsonValue;
 }

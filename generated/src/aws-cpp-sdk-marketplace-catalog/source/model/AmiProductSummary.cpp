@@ -25,10 +25,8 @@ AmiProductSummary::AmiProductSummary() :
 {
 }
 
-AmiProductSummary::AmiProductSummary(JsonView jsonValue) : 
-    m_productTitleHasBeenSet(false),
-    m_visibility(AmiProductVisibilityString::NOT_SET),
-    m_visibilityHasBeenSet(false)
+AmiProductSummary::AmiProductSummary(JsonView jsonValue)
+  : AmiProductSummary()
 {
   *this = jsonValue;
 }

@@ -27,12 +27,8 @@ DeploymentAlarms::DeploymentAlarms() :
 {
 }
 
-DeploymentAlarms::DeploymentAlarms(JsonView jsonValue) : 
-    m_alarmNamesHasBeenSet(false),
-    m_enable(false),
-    m_enableHasBeenSet(false),
-    m_rollback(false),
-    m_rollbackHasBeenSet(false)
+DeploymentAlarms::DeploymentAlarms(JsonView jsonValue)
+  : DeploymentAlarms()
 {
   *this = jsonValue;
 }

@@ -29,14 +29,8 @@ SnowflakeConnectorProfileProperties::SnowflakeConnectorProfileProperties() :
 {
 }
 
-SnowflakeConnectorProfileProperties::SnowflakeConnectorProfileProperties(JsonView jsonValue) : 
-    m_warehouseHasBeenSet(false),
-    m_stageHasBeenSet(false),
-    m_bucketNameHasBeenSet(false),
-    m_bucketPrefixHasBeenSet(false),
-    m_privateLinkServiceNameHasBeenSet(false),
-    m_accountNameHasBeenSet(false),
-    m_regionHasBeenSet(false)
+SnowflakeConnectorProfileProperties::SnowflakeConnectorProfileProperties(JsonView jsonValue)
+  : SnowflakeConnectorProfileProperties()
 {
   *this = jsonValue;
 }

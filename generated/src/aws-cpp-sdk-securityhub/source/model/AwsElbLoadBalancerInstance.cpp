@@ -23,8 +23,8 @@ AwsElbLoadBalancerInstance::AwsElbLoadBalancerInstance() :
 {
 }
 
-AwsElbLoadBalancerInstance::AwsElbLoadBalancerInstance(JsonView jsonValue) : 
-    m_instanceIdHasBeenSet(false)
+AwsElbLoadBalancerInstance::AwsElbLoadBalancerInstance(JsonView jsonValue)
+  : AwsElbLoadBalancerInstance()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ ActionParameter::ActionParameter() :
 {
 }
 
-ActionParameter::ActionParameter(JsonView jsonValue) : 
-    m_descriptionHasBeenSet(false),
-    m_required(false),
-    m_requiredHasBeenSet(false)
+ActionParameter::ActionParameter(JsonView jsonValue)
+  : ActionParameter()
 {
   *this = jsonValue;
 }

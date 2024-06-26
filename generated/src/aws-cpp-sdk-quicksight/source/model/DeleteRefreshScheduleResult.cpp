@@ -22,8 +22,8 @@ DeleteRefreshScheduleResult::DeleteRefreshScheduleResult() :
 {
 }
 
-DeleteRefreshScheduleResult::DeleteRefreshScheduleResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+DeleteRefreshScheduleResult::DeleteRefreshScheduleResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeleteRefreshScheduleResult()
 {
   *this = result;
 }

@@ -27,12 +27,8 @@ FilterCondition::FilterCondition() :
 {
 }
 
-FilterCondition::FilterCondition(JsonView jsonValue) : 
-    m_equalsValueHasBeenSet(false),
-    m_greaterThan(0),
-    m_greaterThanHasBeenSet(false),
-    m_lessThan(0),
-    m_lessThanHasBeenSet(false)
+FilterCondition::FilterCondition(JsonView jsonValue)
+  : FilterCondition()
 {
   *this = jsonValue;
 }

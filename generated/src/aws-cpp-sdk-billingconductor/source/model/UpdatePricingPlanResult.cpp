@@ -23,9 +23,8 @@ UpdatePricingPlanResult::UpdatePricingPlanResult() :
 {
 }
 
-UpdatePricingPlanResult::UpdatePricingPlanResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_size(0),
-    m_lastModifiedTime(0)
+UpdatePricingPlanResult::UpdatePricingPlanResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdatePricingPlanResult()
 {
   *this = result;
 }

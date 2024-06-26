@@ -27,12 +27,8 @@ StepDetailsEntity::StepDetailsEntity() :
 {
 }
 
-StepDetailsEntity::StepDetailsEntity(JsonView jsonValue) : 
-    m_dependenciesHasBeenSet(false),
-    m_jobIdHasBeenSet(false),
-    m_schemaVersionHasBeenSet(false),
-    m_stepIdHasBeenSet(false),
-    m_templateHasBeenSet(false)
+StepDetailsEntity::StepDetailsEntity(JsonView jsonValue)
+  : StepDetailsEntity()
 {
   *this = jsonValue;
 }

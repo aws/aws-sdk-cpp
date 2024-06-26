@@ -41,26 +41,8 @@ ReportSummary::ReportSummary() :
 {
 }
 
-ReportSummary::ReportSummary(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_state(PublishedState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_version(0),
-    m_versionHasBeenSet(false),
-    m_uploadState(UploadState::NOT_SET),
-    m_uploadStateHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_periodStartHasBeenSet(false),
-    m_periodEndHasBeenSet(false),
-    m_seriesHasBeenSet(false),
-    m_categoryHasBeenSet(false),
-    m_companyNameHasBeenSet(false),
-    m_productNameHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_acceptanceType(AcceptanceType::NOT_SET),
-    m_acceptanceTypeHasBeenSet(false)
+ReportSummary::ReportSummary(JsonView jsonValue)
+  : ReportSummary()
 {
   *this = jsonValue;
 }

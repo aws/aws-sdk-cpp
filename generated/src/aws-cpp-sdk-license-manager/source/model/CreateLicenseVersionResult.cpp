@@ -22,8 +22,8 @@ CreateLicenseVersionResult::CreateLicenseVersionResult() :
 {
 }
 
-CreateLicenseVersionResult::CreateLicenseVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(LicenseStatus::NOT_SET)
+CreateLicenseVersionResult::CreateLicenseVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateLicenseVersionResult()
 {
   *this = result;
 }

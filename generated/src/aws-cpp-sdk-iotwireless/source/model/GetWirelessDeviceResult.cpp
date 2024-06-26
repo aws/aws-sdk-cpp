@@ -23,9 +23,8 @@ GetWirelessDeviceResult::GetWirelessDeviceResult() :
 {
 }
 
-GetWirelessDeviceResult::GetWirelessDeviceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_type(WirelessDeviceType::NOT_SET),
-    m_positioning(PositioningConfigStatus::NOT_SET)
+GetWirelessDeviceResult::GetWirelessDeviceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetWirelessDeviceResult()
 {
   *this = result;
 }

@@ -25,10 +25,8 @@ ValidationException::ValidationException() :
 {
 }
 
-ValidationException::ValidationException(JsonView jsonValue) : 
-    m_codeHasBeenSet(false),
-    m_contextHasBeenSet(false),
-    m_messageHasBeenSet(false)
+ValidationException::ValidationException(JsonView jsonValue)
+  : ValidationException()
 {
   *this = jsonValue;
 }

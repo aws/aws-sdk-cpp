@@ -23,8 +23,8 @@ Account::Account() :
 {
 }
 
-Account::Account(JsonView jsonValue) : 
-    m_accountIDHasBeenSet(false)
+Account::Account(JsonView jsonValue)
+  : Account()
 {
   *this = jsonValue;
 }

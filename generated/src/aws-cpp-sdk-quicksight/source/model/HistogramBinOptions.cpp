@@ -28,13 +28,8 @@ HistogramBinOptions::HistogramBinOptions() :
 {
 }
 
-HistogramBinOptions::HistogramBinOptions(JsonView jsonValue) : 
-    m_selectedBinType(HistogramBinType::NOT_SET),
-    m_selectedBinTypeHasBeenSet(false),
-    m_binCountHasBeenSet(false),
-    m_binWidthHasBeenSet(false),
-    m_startValue(0.0),
-    m_startValueHasBeenSet(false)
+HistogramBinOptions::HistogramBinOptions(JsonView jsonValue)
+  : HistogramBinOptions()
 {
   *this = jsonValue;
 }

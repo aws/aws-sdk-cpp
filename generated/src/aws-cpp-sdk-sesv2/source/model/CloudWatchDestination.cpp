@@ -23,8 +23,8 @@ CloudWatchDestination::CloudWatchDestination() :
 {
 }
 
-CloudWatchDestination::CloudWatchDestination(JsonView jsonValue) : 
-    m_dimensionConfigurationsHasBeenSet(false)
+CloudWatchDestination::CloudWatchDestination(JsonView jsonValue)
+  : CloudWatchDestination()
 {
   *this = jsonValue;
 }

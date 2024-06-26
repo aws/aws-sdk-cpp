@@ -27,10 +27,8 @@ ClientVpnRouteStatus::ClientVpnRouteStatus() :
 {
 }
 
-ClientVpnRouteStatus::ClientVpnRouteStatus(const XmlNode& xmlNode) : 
-    m_code(ClientVpnRouteStatusCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+ClientVpnRouteStatus::ClientVpnRouteStatus(const XmlNode& xmlNode)
+  : ClientVpnRouteStatus()
 {
   *this = xmlNode;
 }

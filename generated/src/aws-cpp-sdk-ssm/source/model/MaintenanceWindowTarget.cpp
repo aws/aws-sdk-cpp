@@ -30,15 +30,8 @@ MaintenanceWindowTarget::MaintenanceWindowTarget() :
 {
 }
 
-MaintenanceWindowTarget::MaintenanceWindowTarget(JsonView jsonValue) : 
-    m_windowIdHasBeenSet(false),
-    m_windowTargetIdHasBeenSet(false),
-    m_resourceType(MaintenanceWindowResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_targetsHasBeenSet(false),
-    m_ownerInformationHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+MaintenanceWindowTarget::MaintenanceWindowTarget(JsonView jsonValue)
+  : MaintenanceWindowTarget()
 {
   *this = jsonValue;
 }

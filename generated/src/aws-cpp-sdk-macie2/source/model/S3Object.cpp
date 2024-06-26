@@ -37,22 +37,8 @@ S3Object::S3Object() :
 {
 }
 
-S3Object::S3Object(JsonView jsonValue) : 
-    m_bucketArnHasBeenSet(false),
-    m_eTagHasBeenSet(false),
-    m_extensionHasBeenSet(false),
-    m_keyHasBeenSet(false),
-    m_lastModifiedHasBeenSet(false),
-    m_pathHasBeenSet(false),
-    m_publicAccess(false),
-    m_publicAccessHasBeenSet(false),
-    m_serverSideEncryptionHasBeenSet(false),
-    m_size(0),
-    m_sizeHasBeenSet(false),
-    m_storageClass(StorageClass::NOT_SET),
-    m_storageClassHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_versionIdHasBeenSet(false)
+S3Object::S3Object(JsonView jsonValue)
+  : S3Object()
 {
   *this = jsonValue;
 }

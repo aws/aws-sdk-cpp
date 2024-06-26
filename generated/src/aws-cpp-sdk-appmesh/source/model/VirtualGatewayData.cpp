@@ -27,12 +27,8 @@ VirtualGatewayData::VirtualGatewayData() :
 {
 }
 
-VirtualGatewayData::VirtualGatewayData(JsonView jsonValue) : 
-    m_meshNameHasBeenSet(false),
-    m_metadataHasBeenSet(false),
-    m_specHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_virtualGatewayNameHasBeenSet(false)
+VirtualGatewayData::VirtualGatewayData(JsonView jsonValue)
+  : VirtualGatewayData()
 {
   *this = jsonValue;
 }

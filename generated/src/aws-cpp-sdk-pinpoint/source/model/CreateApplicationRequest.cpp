@@ -24,9 +24,8 @@ CreateApplicationRequest::CreateApplicationRequest() :
 {
 }
 
-CreateApplicationRequest::CreateApplicationRequest(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+CreateApplicationRequest::CreateApplicationRequest(JsonView jsonValue)
+  : CreateApplicationRequest()
 {
   *this = jsonValue;
 }

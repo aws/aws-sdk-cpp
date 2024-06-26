@@ -25,10 +25,8 @@ AggregateStatus::AggregateStatus() :
 {
 }
 
-AggregateStatus::AggregateStatus(JsonView jsonValue) : 
-    m_signatureMapHasBeenSet(false),
-    m_status(AgentStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+AggregateStatus::AggregateStatus(JsonView jsonValue)
+  : AggregateStatus()
 {
   *this = jsonValue;
 }

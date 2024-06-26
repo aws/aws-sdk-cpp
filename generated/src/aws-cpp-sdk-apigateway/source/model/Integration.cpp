@@ -43,27 +43,8 @@ Integration::Integration() :
 {
 }
 
-Integration::Integration(JsonView jsonValue) : 
-    m_type(IntegrationType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_httpMethodHasBeenSet(false),
-    m_uriHasBeenSet(false),
-    m_connectionType(ConnectionType::NOT_SET),
-    m_connectionTypeHasBeenSet(false),
-    m_connectionIdHasBeenSet(false),
-    m_credentialsHasBeenSet(false),
-    m_requestParametersHasBeenSet(false),
-    m_requestTemplatesHasBeenSet(false),
-    m_passthroughBehaviorHasBeenSet(false),
-    m_contentHandling(ContentHandlingStrategy::NOT_SET),
-    m_contentHandlingHasBeenSet(false),
-    m_timeoutInMillis(0),
-    m_timeoutInMillisHasBeenSet(false),
-    m_cacheNamespaceHasBeenSet(false),
-    m_cacheKeyParametersHasBeenSet(false),
-    m_integrationResponsesHasBeenSet(false),
-    m_tlsConfigHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
+Integration::Integration(JsonView jsonValue)
+  : Integration()
 {
   *this = jsonValue;
 }

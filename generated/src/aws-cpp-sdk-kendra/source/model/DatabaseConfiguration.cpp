@@ -29,14 +29,8 @@ DatabaseConfiguration::DatabaseConfiguration() :
 {
 }
 
-DatabaseConfiguration::DatabaseConfiguration(JsonView jsonValue) : 
-    m_databaseEngineType(DatabaseEngineType::NOT_SET),
-    m_databaseEngineTypeHasBeenSet(false),
-    m_connectionConfigurationHasBeenSet(false),
-    m_vpcConfigurationHasBeenSet(false),
-    m_columnConfigurationHasBeenSet(false),
-    m_aclConfigurationHasBeenSet(false),
-    m_sqlConfigurationHasBeenSet(false)
+DatabaseConfiguration::DatabaseConfiguration(JsonView jsonValue)
+  : DatabaseConfiguration()
 {
   *this = jsonValue;
 }

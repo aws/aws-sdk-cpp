@@ -38,23 +38,8 @@ Provisioned::Provisioned() :
 {
 }
 
-Provisioned::Provisioned(JsonView jsonValue) : 
-    m_brokerNodeGroupInfoHasBeenSet(false),
-    m_currentBrokerSoftwareInfoHasBeenSet(false),
-    m_clientAuthenticationHasBeenSet(false),
-    m_encryptionInfoHasBeenSet(false),
-    m_enhancedMonitoring(EnhancedMonitoring::NOT_SET),
-    m_enhancedMonitoringHasBeenSet(false),
-    m_openMonitoringHasBeenSet(false),
-    m_loggingInfoHasBeenSet(false),
-    m_numberOfBrokerNodes(0),
-    m_numberOfBrokerNodesHasBeenSet(false),
-    m_zookeeperConnectStringHasBeenSet(false),
-    m_zookeeperConnectStringTlsHasBeenSet(false),
-    m_storageMode(StorageMode::NOT_SET),
-    m_storageModeHasBeenSet(false),
-    m_customerActionStatus(CustomerActionStatus::NOT_SET),
-    m_customerActionStatusHasBeenSet(false)
+Provisioned::Provisioned(JsonView jsonValue)
+  : Provisioned()
 {
   *this = jsonValue;
 }

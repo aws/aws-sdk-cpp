@@ -27,12 +27,8 @@ VPCEConfiguration::VPCEConfiguration() :
 {
 }
 
-VPCEConfiguration::VPCEConfiguration(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_vpceConfigurationNameHasBeenSet(false),
-    m_vpceServiceNameHasBeenSet(false),
-    m_serviceDnsNameHasBeenSet(false),
-    m_vpceConfigurationDescriptionHasBeenSet(false)
+VPCEConfiguration::VPCEConfiguration(JsonView jsonValue)
+  : VPCEConfiguration()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ MetricSpecification::MetricSpecification() :
 {
 }
 
-MetricSpecification::MetricSpecification(JsonView jsonValue) : 
-    m_predefinedHasBeenSet(false),
-    m_customizedHasBeenSet(false)
+MetricSpecification::MetricSpecification(JsonView jsonValue)
+  : MetricSpecification()
 {
   *this = jsonValue;
 }

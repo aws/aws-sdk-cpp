@@ -35,20 +35,8 @@ PipeTargetParameters::PipeTargetParameters() :
 {
 }
 
-PipeTargetParameters::PipeTargetParameters(JsonView jsonValue) : 
-    m_inputTemplateHasBeenSet(false),
-    m_lambdaFunctionParametersHasBeenSet(false),
-    m_stepFunctionStateMachineParametersHasBeenSet(false),
-    m_kinesisStreamParametersHasBeenSet(false),
-    m_ecsTaskParametersHasBeenSet(false),
-    m_batchJobParametersHasBeenSet(false),
-    m_sqsQueueParametersHasBeenSet(false),
-    m_httpParametersHasBeenSet(false),
-    m_redshiftDataParametersHasBeenSet(false),
-    m_sageMakerPipelineParametersHasBeenSet(false),
-    m_eventBridgeEventBusParametersHasBeenSet(false),
-    m_cloudWatchLogsParametersHasBeenSet(false),
-    m_timestreamParametersHasBeenSet(false)
+PipeTargetParameters::PipeTargetParameters(JsonView jsonValue)
+  : PipeTargetParameters()
 {
   *this = jsonValue;
 }

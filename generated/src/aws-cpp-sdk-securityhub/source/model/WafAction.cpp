@@ -23,8 +23,8 @@ WafAction::WafAction() :
 {
 }
 
-WafAction::WafAction(JsonView jsonValue) : 
-    m_typeHasBeenSet(false)
+WafAction::WafAction(JsonView jsonValue)
+  : WafAction()
 {
   *this = jsonValue;
 }

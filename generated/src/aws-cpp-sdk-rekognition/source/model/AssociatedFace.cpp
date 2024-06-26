@@ -23,8 +23,8 @@ AssociatedFace::AssociatedFace() :
 {
 }
 
-AssociatedFace::AssociatedFace(JsonView jsonValue) : 
-    m_faceIdHasBeenSet(false)
+AssociatedFace::AssociatedFace(JsonView jsonValue)
+  : AssociatedFace()
 {
   *this = jsonValue;
 }

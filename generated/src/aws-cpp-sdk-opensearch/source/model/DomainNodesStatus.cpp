@@ -34,19 +34,8 @@ DomainNodesStatus::DomainNodesStatus() :
 {
 }
 
-DomainNodesStatus::DomainNodesStatus(JsonView jsonValue) : 
-    m_nodeIdHasBeenSet(false),
-    m_nodeType(NodeType::NOT_SET),
-    m_nodeTypeHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_instanceType(OpenSearchPartitionInstanceType::NOT_SET),
-    m_instanceTypeHasBeenSet(false),
-    m_nodeStatus(NodeStatus::NOT_SET),
-    m_nodeStatusHasBeenSet(false),
-    m_storageTypeHasBeenSet(false),
-    m_storageVolumeType(VolumeType::NOT_SET),
-    m_storageVolumeTypeHasBeenSet(false),
-    m_storageSizeHasBeenSet(false)
+DomainNodesStatus::DomainNodesStatus(JsonView jsonValue)
+  : DomainNodesStatus()
 {
   *this = jsonValue;
 }

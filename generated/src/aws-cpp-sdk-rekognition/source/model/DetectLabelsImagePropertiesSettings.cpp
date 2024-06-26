@@ -24,9 +24,8 @@ DetectLabelsImagePropertiesSettings::DetectLabelsImagePropertiesSettings() :
 {
 }
 
-DetectLabelsImagePropertiesSettings::DetectLabelsImagePropertiesSettings(JsonView jsonValue) : 
-    m_maxDominantColors(0),
-    m_maxDominantColorsHasBeenSet(false)
+DetectLabelsImagePropertiesSettings::DetectLabelsImagePropertiesSettings(JsonView jsonValue)
+  : DetectLabelsImagePropertiesSettings()
 {
   *this = jsonValue;
 }

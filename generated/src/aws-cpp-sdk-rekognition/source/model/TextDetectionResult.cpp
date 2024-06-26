@@ -25,10 +25,8 @@ TextDetectionResult::TextDetectionResult() :
 {
 }
 
-TextDetectionResult::TextDetectionResult(JsonView jsonValue) : 
-    m_timestamp(0),
-    m_timestampHasBeenSet(false),
-    m_textDetectionHasBeenSet(false)
+TextDetectionResult::TextDetectionResult(JsonView jsonValue)
+  : TextDetectionResult()
 {
   *this = jsonValue;
 }

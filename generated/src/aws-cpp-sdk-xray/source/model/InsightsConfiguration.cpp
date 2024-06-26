@@ -26,11 +26,8 @@ InsightsConfiguration::InsightsConfiguration() :
 {
 }
 
-InsightsConfiguration::InsightsConfiguration(JsonView jsonValue) : 
-    m_insightsEnabled(false),
-    m_insightsEnabledHasBeenSet(false),
-    m_notificationsEnabled(false),
-    m_notificationsEnabledHasBeenSet(false)
+InsightsConfiguration::InsightsConfiguration(JsonView jsonValue)
+  : InsightsConfiguration()
 {
   *this = jsonValue;
 }

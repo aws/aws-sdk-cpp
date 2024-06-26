@@ -22,8 +22,8 @@ GetPipelineStateResult::GetPipelineStateResult() :
 {
 }
 
-GetPipelineStateResult::GetPipelineStateResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_pipelineVersion(0)
+GetPipelineStateResult::GetPipelineStateResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetPipelineStateResult()
 {
   *this = result;
 }

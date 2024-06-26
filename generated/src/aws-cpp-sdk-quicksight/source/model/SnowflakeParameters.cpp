@@ -25,10 +25,8 @@ SnowflakeParameters::SnowflakeParameters() :
 {
 }
 
-SnowflakeParameters::SnowflakeParameters(JsonView jsonValue) : 
-    m_hostHasBeenSet(false),
-    m_databaseHasBeenSet(false),
-    m_warehouseHasBeenSet(false)
+SnowflakeParameters::SnowflakeParameters(JsonView jsonValue)
+  : SnowflakeParameters()
 {
   *this = jsonValue;
 }

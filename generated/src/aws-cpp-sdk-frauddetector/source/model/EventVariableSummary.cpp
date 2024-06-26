@@ -25,10 +25,8 @@ EventVariableSummary::EventVariableSummary() :
 {
 }
 
-EventVariableSummary::EventVariableSummary(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_sourceHasBeenSet(false)
+EventVariableSummary::EventVariableSummary(JsonView jsonValue)
+  : EventVariableSummary()
 {
   *this = jsonValue;
 }

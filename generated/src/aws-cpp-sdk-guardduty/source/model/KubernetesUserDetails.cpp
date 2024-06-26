@@ -27,12 +27,8 @@ KubernetesUserDetails::KubernetesUserDetails() :
 {
 }
 
-KubernetesUserDetails::KubernetesUserDetails(JsonView jsonValue) : 
-    m_usernameHasBeenSet(false),
-    m_uidHasBeenSet(false),
-    m_groupsHasBeenSet(false),
-    m_sessionNameHasBeenSet(false),
-    m_impersonatedUserHasBeenSet(false)
+KubernetesUserDetails::KubernetesUserDetails(JsonView jsonValue)
+  : KubernetesUserDetails()
 {
   *this = jsonValue;
 }

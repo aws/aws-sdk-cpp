@@ -25,10 +25,8 @@ DateTimePickerControlDisplayOptions::DateTimePickerControlDisplayOptions() :
 {
 }
 
-DateTimePickerControlDisplayOptions::DateTimePickerControlDisplayOptions(JsonView jsonValue) : 
-    m_titleOptionsHasBeenSet(false),
-    m_dateTimeFormatHasBeenSet(false),
-    m_infoIconLabelOptionsHasBeenSet(false)
+DateTimePickerControlDisplayOptions::DateTimePickerControlDisplayOptions(JsonView jsonValue)
+  : DateTimePickerControlDisplayOptions()
 {
   *this = jsonValue;
 }

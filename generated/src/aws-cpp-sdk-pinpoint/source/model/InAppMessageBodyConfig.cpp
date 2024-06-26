@@ -26,11 +26,8 @@ InAppMessageBodyConfig::InAppMessageBodyConfig() :
 {
 }
 
-InAppMessageBodyConfig::InAppMessageBodyConfig(JsonView jsonValue) : 
-    m_alignment(Alignment::NOT_SET),
-    m_alignmentHasBeenSet(false),
-    m_bodyHasBeenSet(false),
-    m_textColorHasBeenSet(false)
+InAppMessageBodyConfig::InAppMessageBodyConfig(JsonView jsonValue)
+  : InAppMessageBodyConfig()
 {
   *this = jsonValue;
 }

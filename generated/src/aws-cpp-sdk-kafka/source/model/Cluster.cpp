@@ -35,20 +35,8 @@ Cluster::Cluster() :
 {
 }
 
-Cluster::Cluster(JsonView jsonValue) : 
-    m_activeOperationArnHasBeenSet(false),
-    m_clusterType(ClusterType::NOT_SET),
-    m_clusterTypeHasBeenSet(false),
-    m_clusterArnHasBeenSet(false),
-    m_clusterNameHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_currentVersionHasBeenSet(false),
-    m_state(ClusterState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_stateInfoHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_provisionedHasBeenSet(false),
-    m_serverlessHasBeenSet(false)
+Cluster::Cluster(JsonView jsonValue)
+  : Cluster()
 {
   *this = jsonValue;
 }

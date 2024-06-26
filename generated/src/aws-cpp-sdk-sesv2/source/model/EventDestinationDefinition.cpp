@@ -30,15 +30,8 @@ EventDestinationDefinition::EventDestinationDefinition() :
 {
 }
 
-EventDestinationDefinition::EventDestinationDefinition(JsonView jsonValue) : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_matchingEventTypesHasBeenSet(false),
-    m_kinesisFirehoseDestinationHasBeenSet(false),
-    m_cloudWatchDestinationHasBeenSet(false),
-    m_snsDestinationHasBeenSet(false),
-    m_eventBridgeDestinationHasBeenSet(false),
-    m_pinpointDestinationHasBeenSet(false)
+EventDestinationDefinition::EventDestinationDefinition(JsonView jsonValue)
+  : EventDestinationDefinition()
 {
   *this = jsonValue;
 }

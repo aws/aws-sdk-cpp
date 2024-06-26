@@ -23,8 +23,8 @@ CreateColumnsOperation::CreateColumnsOperation() :
 {
 }
 
-CreateColumnsOperation::CreateColumnsOperation(JsonView jsonValue) : 
-    m_columnsHasBeenSet(false)
+CreateColumnsOperation::CreateColumnsOperation(JsonView jsonValue)
+  : CreateColumnsOperation()
 {
   *this = jsonValue;
 }

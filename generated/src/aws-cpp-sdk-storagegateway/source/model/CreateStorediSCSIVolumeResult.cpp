@@ -22,8 +22,8 @@ CreateStorediSCSIVolumeResult::CreateStorediSCSIVolumeResult() :
 {
 }
 
-CreateStorediSCSIVolumeResult::CreateStorediSCSIVolumeResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_volumeSizeInBytes(0)
+CreateStorediSCSIVolumeResult::CreateStorediSCSIVolumeResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateStorediSCSIVolumeResult()
 {
   *this = result;
 }

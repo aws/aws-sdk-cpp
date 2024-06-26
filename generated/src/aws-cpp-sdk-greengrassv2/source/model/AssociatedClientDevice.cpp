@@ -24,9 +24,8 @@ AssociatedClientDevice::AssociatedClientDevice() :
 {
 }
 
-AssociatedClientDevice::AssociatedClientDevice(JsonView jsonValue) : 
-    m_thingNameHasBeenSet(false),
-    m_associationTimestampHasBeenSet(false)
+AssociatedClientDevice::AssociatedClientDevice(JsonView jsonValue)
+  : AssociatedClientDevice()
 {
   *this = jsonValue;
 }

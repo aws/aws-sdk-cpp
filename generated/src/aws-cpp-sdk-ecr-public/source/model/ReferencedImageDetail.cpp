@@ -28,13 +28,8 @@ ReferencedImageDetail::ReferencedImageDetail() :
 {
 }
 
-ReferencedImageDetail::ReferencedImageDetail(JsonView jsonValue) : 
-    m_imageDigestHasBeenSet(false),
-    m_imageSizeInBytes(0),
-    m_imageSizeInBytesHasBeenSet(false),
-    m_imagePushedAtHasBeenSet(false),
-    m_imageManifestMediaTypeHasBeenSet(false),
-    m_artifactMediaTypeHasBeenSet(false)
+ReferencedImageDetail::ReferencedImageDetail(JsonView jsonValue)
+  : ReferencedImageDetail()
 {
   *this = jsonValue;
 }

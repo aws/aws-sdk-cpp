@@ -22,8 +22,8 @@ DescribeAgreementResult::DescribeAgreementResult() :
 {
 }
 
-DescribeAgreementResult::DescribeAgreementResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(AgreementStatus::NOT_SET)
+DescribeAgreementResult::DescribeAgreementResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeAgreementResult()
 {
   *this = result;
 }

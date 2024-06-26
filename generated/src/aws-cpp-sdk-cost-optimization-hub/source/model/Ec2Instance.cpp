@@ -24,9 +24,8 @@ Ec2Instance::Ec2Instance() :
 {
 }
 
-Ec2Instance::Ec2Instance(JsonView jsonValue) : 
-    m_configurationHasBeenSet(false),
-    m_costCalculationHasBeenSet(false)
+Ec2Instance::Ec2Instance(JsonView jsonValue)
+  : Ec2Instance()
 {
   *this = jsonValue;
 }

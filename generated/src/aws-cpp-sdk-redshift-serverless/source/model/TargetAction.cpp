@@ -23,8 +23,8 @@ TargetAction::TargetAction() :
 {
 }
 
-TargetAction::TargetAction(JsonView jsonValue) : 
-    m_createSnapshotHasBeenSet(false)
+TargetAction::TargetAction(JsonView jsonValue)
+  : TargetAction()
 {
   *this = jsonValue;
 }

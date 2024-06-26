@@ -25,10 +25,8 @@ DataCatalogConfig::DataCatalogConfig() :
 {
 }
 
-DataCatalogConfig::DataCatalogConfig(JsonView jsonValue) : 
-    m_tableNameHasBeenSet(false),
-    m_catalogHasBeenSet(false),
-    m_databaseHasBeenSet(false)
+DataCatalogConfig::DataCatalogConfig(JsonView jsonValue)
+  : DataCatalogConfig()
 {
   *this = jsonValue;
 }

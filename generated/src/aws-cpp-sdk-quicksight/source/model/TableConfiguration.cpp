@@ -30,15 +30,8 @@ TableConfiguration::TableConfiguration() :
 {
 }
 
-TableConfiguration::TableConfiguration(JsonView jsonValue) : 
-    m_fieldWellsHasBeenSet(false),
-    m_sortConfigurationHasBeenSet(false),
-    m_tableOptionsHasBeenSet(false),
-    m_totalOptionsHasBeenSet(false),
-    m_fieldOptionsHasBeenSet(false),
-    m_paginatedReportOptionsHasBeenSet(false),
-    m_tableInlineVisualizationsHasBeenSet(false),
-    m_interactionsHasBeenSet(false)
+TableConfiguration::TableConfiguration(JsonView jsonValue)
+  : TableConfiguration()
 {
   *this = jsonValue;
 }

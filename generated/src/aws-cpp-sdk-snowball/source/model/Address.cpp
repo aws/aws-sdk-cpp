@@ -39,24 +39,8 @@ Address::Address() :
 {
 }
 
-Address::Address(JsonView jsonValue) : 
-    m_addressIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_companyHasBeenSet(false),
-    m_street1HasBeenSet(false),
-    m_street2HasBeenSet(false),
-    m_street3HasBeenSet(false),
-    m_cityHasBeenSet(false),
-    m_stateOrProvinceHasBeenSet(false),
-    m_prefectureOrDistrictHasBeenSet(false),
-    m_landmarkHasBeenSet(false),
-    m_countryHasBeenSet(false),
-    m_postalCodeHasBeenSet(false),
-    m_phoneNumberHasBeenSet(false),
-    m_isRestricted(false),
-    m_isRestrictedHasBeenSet(false),
-    m_type(AddressType::NOT_SET),
-    m_typeHasBeenSet(false)
+Address::Address(JsonView jsonValue)
+  : Address()
 {
   *this = jsonValue;
 }

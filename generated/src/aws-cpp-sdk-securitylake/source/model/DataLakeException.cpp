@@ -26,11 +26,8 @@ DataLakeException::DataLakeException() :
 {
 }
 
-DataLakeException::DataLakeException(JsonView jsonValue) : 
-    m_exceptionHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_remediationHasBeenSet(false),
-    m_timestampHasBeenSet(false)
+DataLakeException::DataLakeException(JsonView jsonValue)
+  : DataLakeException()
 {
   *this = jsonValue;
 }

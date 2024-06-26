@@ -26,11 +26,8 @@ SavingsPlansCoverageData::SavingsPlansCoverageData() :
 {
 }
 
-SavingsPlansCoverageData::SavingsPlansCoverageData(JsonView jsonValue) : 
-    m_spendCoveredBySavingsPlansHasBeenSet(false),
-    m_onDemandCostHasBeenSet(false),
-    m_totalCostHasBeenSet(false),
-    m_coveragePercentageHasBeenSet(false)
+SavingsPlansCoverageData::SavingsPlansCoverageData(JsonView jsonValue)
+  : SavingsPlansCoverageData()
 {
   *this = jsonValue;
 }

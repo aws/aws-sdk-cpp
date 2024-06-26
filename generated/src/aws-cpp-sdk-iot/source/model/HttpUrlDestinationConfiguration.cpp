@@ -23,8 +23,8 @@ HttpUrlDestinationConfiguration::HttpUrlDestinationConfiguration() :
 {
 }
 
-HttpUrlDestinationConfiguration::HttpUrlDestinationConfiguration(JsonView jsonValue) : 
-    m_confirmationUrlHasBeenSet(false)
+HttpUrlDestinationConfiguration::HttpUrlDestinationConfiguration(JsonView jsonValue)
+  : HttpUrlDestinationConfiguration()
 {
   *this = jsonValue;
 }

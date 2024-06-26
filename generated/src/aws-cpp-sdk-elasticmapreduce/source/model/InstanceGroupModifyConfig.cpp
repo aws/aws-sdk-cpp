@@ -30,15 +30,8 @@ InstanceGroupModifyConfig::InstanceGroupModifyConfig() :
 {
 }
 
-InstanceGroupModifyConfig::InstanceGroupModifyConfig(JsonView jsonValue) : 
-    m_instanceGroupIdHasBeenSet(false),
-    m_instanceCount(0),
-    m_instanceCountHasBeenSet(false),
-    m_eC2InstanceIdsToTerminateHasBeenSet(false),
-    m_shrinkPolicyHasBeenSet(false),
-    m_reconfigurationType(ReconfigurationType::NOT_SET),
-    m_reconfigurationTypeHasBeenSet(false),
-    m_configurationsHasBeenSet(false)
+InstanceGroupModifyConfig::InstanceGroupModifyConfig(JsonView jsonValue)
+  : InstanceGroupModifyConfig()
 {
   *this = jsonValue;
 }

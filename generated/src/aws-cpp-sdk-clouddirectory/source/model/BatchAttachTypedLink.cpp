@@ -26,11 +26,8 @@ BatchAttachTypedLink::BatchAttachTypedLink() :
 {
 }
 
-BatchAttachTypedLink::BatchAttachTypedLink(JsonView jsonValue) : 
-    m_sourceObjectReferenceHasBeenSet(false),
-    m_targetObjectReferenceHasBeenSet(false),
-    m_typedLinkFacetHasBeenSet(false),
-    m_attributesHasBeenSet(false)
+BatchAttachTypedLink::BatchAttachTypedLink(JsonView jsonValue)
+  : BatchAttachTypedLink()
 {
   *this = jsonValue;
 }

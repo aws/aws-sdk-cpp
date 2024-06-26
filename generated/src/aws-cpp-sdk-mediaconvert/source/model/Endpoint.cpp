@@ -23,8 +23,8 @@ Endpoint::Endpoint() :
 {
 }
 
-Endpoint::Endpoint(JsonView jsonValue) : 
-    m_urlHasBeenSet(false)
+Endpoint::Endpoint(JsonView jsonValue)
+  : Endpoint()
 {
   *this = jsonValue;
 }

@@ -32,17 +32,8 @@ SipRule::SipRule() :
 {
 }
 
-SipRule::SipRule(JsonView jsonValue) : 
-    m_sipRuleIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_disabled(false),
-    m_disabledHasBeenSet(false),
-    m_triggerType(SipRuleTriggerType::NOT_SET),
-    m_triggerTypeHasBeenSet(false),
-    m_triggerValueHasBeenSet(false),
-    m_targetApplicationsHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false),
-    m_updatedTimestampHasBeenSet(false)
+SipRule::SipRule(JsonView jsonValue)
+  : SipRule()
 {
   *this = jsonValue;
 }

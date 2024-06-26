@@ -27,12 +27,8 @@ SpekeKeyProviderCmaf::SpekeKeyProviderCmaf() :
 {
 }
 
-SpekeKeyProviderCmaf::SpekeKeyProviderCmaf(JsonView jsonValue) : 
-    m_certificateArnHasBeenSet(false),
-    m_dashSignaledSystemIdsHasBeenSet(false),
-    m_hlsSignaledSystemIdsHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_urlHasBeenSet(false)
+SpekeKeyProviderCmaf::SpekeKeyProviderCmaf(JsonView jsonValue)
+  : SpekeKeyProviderCmaf()
 {
   *this = jsonValue;
 }

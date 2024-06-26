@@ -25,10 +25,8 @@ AwsDynamoDbTableStreamSpecification::AwsDynamoDbTableStreamSpecification() :
 {
 }
 
-AwsDynamoDbTableStreamSpecification::AwsDynamoDbTableStreamSpecification(JsonView jsonValue) : 
-    m_streamEnabled(false),
-    m_streamEnabledHasBeenSet(false),
-    m_streamViewTypeHasBeenSet(false)
+AwsDynamoDbTableStreamSpecification::AwsDynamoDbTableStreamSpecification(JsonView jsonValue)
+  : AwsDynamoDbTableStreamSpecification()
 {
   *this = jsonValue;
 }

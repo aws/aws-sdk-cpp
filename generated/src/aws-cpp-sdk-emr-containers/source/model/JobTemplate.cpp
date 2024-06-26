@@ -31,16 +31,8 @@ JobTemplate::JobTemplate() :
 {
 }
 
-JobTemplate::JobTemplate(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_jobTemplateDataHasBeenSet(false),
-    m_kmsKeyArnHasBeenSet(false),
-    m_decryptionErrorHasBeenSet(false)
+JobTemplate::JobTemplate(JsonView jsonValue)
+  : JobTemplate()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ IssuerDetails::IssuerDetails() :
 {
 }
 
-IssuerDetails::IssuerDetails(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_signKeyHasBeenSet(false),
-    m_keyFingerprintHasBeenSet(false)
+IssuerDetails::IssuerDetails(JsonView jsonValue)
+  : IssuerDetails()
 {
   *this = jsonValue;
 }

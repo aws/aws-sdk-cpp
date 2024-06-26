@@ -39,24 +39,8 @@ Tape::Tape() :
 {
 }
 
-Tape::Tape(JsonView jsonValue) : 
-    m_tapeARNHasBeenSet(false),
-    m_tapeBarcodeHasBeenSet(false),
-    m_tapeCreatedDateHasBeenSet(false),
-    m_tapeSizeInBytes(0),
-    m_tapeSizeInBytesHasBeenSet(false),
-    m_tapeStatusHasBeenSet(false),
-    m_vTLDeviceHasBeenSet(false),
-    m_progress(0.0),
-    m_progressHasBeenSet(false),
-    m_tapeUsedInBytes(0),
-    m_tapeUsedInBytesHasBeenSet(false),
-    m_kMSKeyHasBeenSet(false),
-    m_poolIdHasBeenSet(false),
-    m_worm(false),
-    m_wormHasBeenSet(false),
-    m_retentionStartDateHasBeenSet(false),
-    m_poolEntryDateHasBeenSet(false)
+Tape::Tape(JsonView jsonValue)
+  : Tape()
 {
   *this = jsonValue;
 }

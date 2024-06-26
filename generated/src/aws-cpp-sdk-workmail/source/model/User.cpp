@@ -32,17 +32,8 @@ User::User() :
 {
 }
 
-User::User(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_emailHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_state(EntityState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_userRole(UserRole::NOT_SET),
-    m_userRoleHasBeenSet(false),
-    m_enabledDateHasBeenSet(false),
-    m_disabledDateHasBeenSet(false)
+User::User(JsonView jsonValue)
+  : User()
 {
   *this = jsonValue;
 }

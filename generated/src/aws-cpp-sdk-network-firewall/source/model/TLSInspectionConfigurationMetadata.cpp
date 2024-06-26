@@ -24,9 +24,8 @@ TLSInspectionConfigurationMetadata::TLSInspectionConfigurationMetadata() :
 {
 }
 
-TLSInspectionConfigurationMetadata::TLSInspectionConfigurationMetadata(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false)
+TLSInspectionConfigurationMetadata::TLSInspectionConfigurationMetadata(JsonView jsonValue)
+  : TLSInspectionConfigurationMetadata()
 {
   *this = jsonValue;
 }

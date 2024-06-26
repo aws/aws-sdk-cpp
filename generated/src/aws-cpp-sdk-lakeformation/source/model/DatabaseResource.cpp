@@ -24,9 +24,8 @@ DatabaseResource::DatabaseResource() :
 {
 }
 
-DatabaseResource::DatabaseResource(JsonView jsonValue) : 
-    m_catalogIdHasBeenSet(false),
-    m_nameHasBeenSet(false)
+DatabaseResource::DatabaseResource(JsonView jsonValue)
+  : DatabaseResource()
 {
   *this = jsonValue;
 }

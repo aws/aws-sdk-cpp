@@ -23,8 +23,8 @@ ServerlessClientAuthentication::ServerlessClientAuthentication() :
 {
 }
 
-ServerlessClientAuthentication::ServerlessClientAuthentication(JsonView jsonValue) : 
-    m_saslHasBeenSet(false)
+ServerlessClientAuthentication::ServerlessClientAuthentication(JsonView jsonValue)
+  : ServerlessClientAuthentication()
 {
   *this = jsonValue;
 }

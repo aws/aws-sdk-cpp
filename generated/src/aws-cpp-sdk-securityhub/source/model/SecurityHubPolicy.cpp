@@ -26,11 +26,8 @@ SecurityHubPolicy::SecurityHubPolicy() :
 {
 }
 
-SecurityHubPolicy::SecurityHubPolicy(JsonView jsonValue) : 
-    m_serviceEnabled(false),
-    m_serviceEnabledHasBeenSet(false),
-    m_enabledStandardIdentifiersHasBeenSet(false),
-    m_securityControlsConfigurationHasBeenSet(false)
+SecurityHubPolicy::SecurityHubPolicy(JsonView jsonValue)
+  : SecurityHubPolicy()
 {
   *this = jsonValue;
 }

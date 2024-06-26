@@ -23,8 +23,8 @@ WorldConfig::WorldConfig() :
 {
 }
 
-WorldConfig::WorldConfig(JsonView jsonValue) : 
-    m_worldHasBeenSet(false)
+WorldConfig::WorldConfig(JsonView jsonValue)
+  : WorldConfig()
 {
   *this = jsonValue;
 }

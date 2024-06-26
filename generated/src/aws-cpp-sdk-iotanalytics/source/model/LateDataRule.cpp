@@ -24,9 +24,8 @@ LateDataRule::LateDataRule() :
 {
 }
 
-LateDataRule::LateDataRule(JsonView jsonValue) : 
-    m_ruleNameHasBeenSet(false),
-    m_ruleConfigurationHasBeenSet(false)
+LateDataRule::LateDataRule(JsonView jsonValue)
+  : LateDataRule()
 {
   *this = jsonValue;
 }

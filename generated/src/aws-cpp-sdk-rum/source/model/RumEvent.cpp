@@ -27,12 +27,8 @@ RumEvent::RumEvent() :
 {
 }
 
-RumEvent::RumEvent(JsonView jsonValue) : 
-    m_detailsHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_metadataHasBeenSet(false),
-    m_timestampHasBeenSet(false),
-    m_typeHasBeenSet(false)
+RumEvent::RumEvent(JsonView jsonValue)
+  : RumEvent()
 {
   *this = jsonValue;
 }

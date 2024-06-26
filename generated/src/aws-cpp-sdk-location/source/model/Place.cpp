@@ -40,25 +40,8 @@ Place::Place() :
 {
 }
 
-Place::Place(JsonView jsonValue) : 
-    m_labelHasBeenSet(false),
-    m_geometryHasBeenSet(false),
-    m_addressNumberHasBeenSet(false),
-    m_streetHasBeenSet(false),
-    m_neighborhoodHasBeenSet(false),
-    m_municipalityHasBeenSet(false),
-    m_subRegionHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_countryHasBeenSet(false),
-    m_postalCodeHasBeenSet(false),
-    m_interpolated(false),
-    m_interpolatedHasBeenSet(false),
-    m_timeZoneHasBeenSet(false),
-    m_unitTypeHasBeenSet(false),
-    m_unitNumberHasBeenSet(false),
-    m_categoriesHasBeenSet(false),
-    m_supplementalCategoriesHasBeenSet(false),
-    m_subMunicipalityHasBeenSet(false)
+Place::Place(JsonView jsonValue)
+  : Place()
 {
   *this = jsonValue;
 }

@@ -32,17 +32,8 @@ EC2InstanceDetails::EC2InstanceDetails() :
 {
 }
 
-EC2InstanceDetails::EC2InstanceDetails(JsonView jsonValue) : 
-    m_familyHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_platformHasBeenSet(false),
-    m_tenancyHasBeenSet(false),
-    m_currentGeneration(false),
-    m_currentGenerationHasBeenSet(false),
-    m_sizeFlexEligible(false),
-    m_sizeFlexEligibleHasBeenSet(false)
+EC2InstanceDetails::EC2InstanceDetails(JsonView jsonValue)
+  : EC2InstanceDetails()
 {
   *this = jsonValue;
 }

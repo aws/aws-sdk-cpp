@@ -25,10 +25,8 @@ Table::Table() :
 {
 }
 
-Table::Table(JsonView jsonValue) : 
-    m_descriptionHasBeenSet(false),
-    m_tableNameHasBeenSet(false),
-    m_tablePropertiesHasBeenSet(false)
+Table::Table(JsonView jsonValue)
+  : Table()
 {
   *this = jsonValue;
 }

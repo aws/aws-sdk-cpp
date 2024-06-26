@@ -28,11 +28,8 @@ CoipAddressUsage::CoipAddressUsage() :
 {
 }
 
-CoipAddressUsage::CoipAddressUsage(const XmlNode& xmlNode) : 
-    m_allocationIdHasBeenSet(false),
-    m_awsAccountIdHasBeenSet(false),
-    m_awsServiceHasBeenSet(false),
-    m_coIpHasBeenSet(false)
+CoipAddressUsage::CoipAddressUsage(const XmlNode& xmlNode)
+  : CoipAddressUsage()
 {
   *this = xmlNode;
 }

@@ -23,9 +23,8 @@ DescribeImportResult::DescribeImportResult() :
 {
 }
 
-DescribeImportResult::DescribeImportResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_mergeStrategy(MergeStrategy::NOT_SET),
-    m_importStatus(ImportStatus::NOT_SET)
+DescribeImportResult::DescribeImportResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeImportResult()
 {
   *this = result;
 }

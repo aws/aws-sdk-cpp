@@ -24,9 +24,8 @@ CSVMappingParameters::CSVMappingParameters() :
 {
 }
 
-CSVMappingParameters::CSVMappingParameters(JsonView jsonValue) : 
-    m_recordRowDelimiterHasBeenSet(false),
-    m_recordColumnDelimiterHasBeenSet(false)
+CSVMappingParameters::CSVMappingParameters(JsonView jsonValue)
+  : CSVMappingParameters()
 {
   *this = jsonValue;
 }

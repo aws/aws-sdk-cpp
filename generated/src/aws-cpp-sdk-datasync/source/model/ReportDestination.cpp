@@ -23,8 +23,8 @@ ReportDestination::ReportDestination() :
 {
 }
 
-ReportDestination::ReportDestination(JsonView jsonValue) : 
-    m_s3HasBeenSet(false)
+ReportDestination::ReportDestination(JsonView jsonValue)
+  : ReportDestination()
 {
   *this = jsonValue;
 }

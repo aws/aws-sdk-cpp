@@ -25,10 +25,8 @@ FailureSummary::FailureSummary() :
 {
 }
 
-FailureSummary::FailureSummary(JsonView jsonValue) : 
-    m_totalFailureCount(0),
-    m_totalFailureCountHasBeenSet(false),
-    m_failuresHasBeenSet(false)
+FailureSummary::FailureSummary(JsonView jsonValue)
+  : FailureSummary()
 {
   *this = jsonValue;
 }

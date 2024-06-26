@@ -23,8 +23,8 @@ TagFilter::TagFilter() :
 {
 }
 
-TagFilter::TagFilter(JsonView jsonValue) : 
-    m_tagHasBeenSet(false)
+TagFilter::TagFilter(JsonView jsonValue)
+  : TagFilter()
 {
   *this = jsonValue;
 }

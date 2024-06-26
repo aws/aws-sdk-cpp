@@ -24,9 +24,8 @@ ConnectorOAuthRequest::ConnectorOAuthRequest() :
 {
 }
 
-ConnectorOAuthRequest::ConnectorOAuthRequest(JsonView jsonValue) : 
-    m_authCodeHasBeenSet(false),
-    m_redirectUriHasBeenSet(false)
+ConnectorOAuthRequest::ConnectorOAuthRequest(JsonView jsonValue)
+  : ConnectorOAuthRequest()
 {
   *this = jsonValue;
 }

@@ -32,17 +32,8 @@ VpcIngressConnection::VpcIngressConnection() :
 {
 }
 
-VpcIngressConnection::VpcIngressConnection(JsonView jsonValue) : 
-    m_vpcIngressConnectionArnHasBeenSet(false),
-    m_vpcIngressConnectionNameHasBeenSet(false),
-    m_serviceArnHasBeenSet(false),
-    m_status(VpcIngressConnectionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_accountIdHasBeenSet(false),
-    m_domainNameHasBeenSet(false),
-    m_ingressVpcConfigurationHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_deletedAtHasBeenSet(false)
+VpcIngressConnection::VpcIngressConnection(JsonView jsonValue)
+  : VpcIngressConnection()
 {
   *this = jsonValue;
 }

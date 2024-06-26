@@ -34,19 +34,8 @@ TemplateSummary::TemplateSummary() :
 {
 }
 
-TemplateSummary::TemplateSummary(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_connectorArnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_definitionHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_objectIdentifierHasBeenSet(false),
-    m_policySchema(0),
-    m_policySchemaHasBeenSet(false),
-    m_revisionHasBeenSet(false),
-    m_status(TemplateStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+TemplateSummary::TemplateSummary(JsonView jsonValue)
+  : TemplateSummary()
 {
   *this = jsonValue;
 }

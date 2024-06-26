@@ -22,8 +22,8 @@ DescribeWhatIfAnalysisResult::DescribeWhatIfAnalysisResult() :
 {
 }
 
-DescribeWhatIfAnalysisResult::DescribeWhatIfAnalysisResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_estimatedTimeRemainingInMinutes(0)
+DescribeWhatIfAnalysisResult::DescribeWhatIfAnalysisResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeWhatIfAnalysisResult()
 {
   *this = result;
 }

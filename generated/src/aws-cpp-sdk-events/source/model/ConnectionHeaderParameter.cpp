@@ -26,11 +26,8 @@ ConnectionHeaderParameter::ConnectionHeaderParameter() :
 {
 }
 
-ConnectionHeaderParameter::ConnectionHeaderParameter(JsonView jsonValue) : 
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_isValueSecret(false),
-    m_isValueSecretHasBeenSet(false)
+ConnectionHeaderParameter::ConnectionHeaderParameter(JsonView jsonValue)
+  : ConnectionHeaderParameter()
 {
   *this = jsonValue;
 }

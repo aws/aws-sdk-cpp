@@ -30,15 +30,8 @@ TruckDimensions::TruckDimensions() :
 {
 }
 
-TruckDimensions::TruckDimensions(JsonView jsonValue) : 
-    m_length(0.0),
-    m_lengthHasBeenSet(false),
-    m_height(0.0),
-    m_heightHasBeenSet(false),
-    m_width(0.0),
-    m_widthHasBeenSet(false),
-    m_unit(DimensionUnit::NOT_SET),
-    m_unitHasBeenSet(false)
+TruckDimensions::TruckDimensions(JsonView jsonValue)
+  : TruckDimensions()
 {
   *this = jsonValue;
 }

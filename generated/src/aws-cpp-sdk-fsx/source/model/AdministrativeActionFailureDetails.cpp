@@ -23,8 +23,8 @@ AdministrativeActionFailureDetails::AdministrativeActionFailureDetails() :
 {
 }
 
-AdministrativeActionFailureDetails::AdministrativeActionFailureDetails(JsonView jsonValue) : 
-    m_messageHasBeenSet(false)
+AdministrativeActionFailureDetails::AdministrativeActionFailureDetails(JsonView jsonValue)
+  : AdministrativeActionFailureDetails()
 {
   *this = jsonValue;
 }

@@ -28,13 +28,8 @@ BookingOptions::BookingOptions() :
 {
 }
 
-BookingOptions::BookingOptions(JsonView jsonValue) : 
-    m_autoAcceptRequests(false),
-    m_autoAcceptRequestsHasBeenSet(false),
-    m_autoDeclineRecurringRequests(false),
-    m_autoDeclineRecurringRequestsHasBeenSet(false),
-    m_autoDeclineConflictingRequests(false),
-    m_autoDeclineConflictingRequestsHasBeenSet(false)
+BookingOptions::BookingOptions(JsonView jsonValue)
+  : BookingOptions()
 {
   *this = jsonValue;
 }

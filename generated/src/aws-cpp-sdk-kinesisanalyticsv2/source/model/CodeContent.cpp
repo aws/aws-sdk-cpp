@@ -26,10 +26,8 @@ CodeContent::CodeContent() :
 {
 }
 
-CodeContent::CodeContent(JsonView jsonValue) : 
-    m_textContentHasBeenSet(false),
-    m_zipFileContentHasBeenSet(false),
-    m_s3ContentLocationHasBeenSet(false)
+CodeContent::CodeContent(JsonView jsonValue)
+  : CodeContent()
 {
   *this = jsonValue;
 }

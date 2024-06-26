@@ -35,20 +35,8 @@ ConnectorSummary::ConnectorSummary() :
 {
 }
 
-ConnectorSummary::ConnectorSummary(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_certificateAuthorityArnHasBeenSet(false),
-    m_type(ConnectorType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_mobileDeviceManagementHasBeenSet(false),
-    m_openIdConfigurationHasBeenSet(false),
-    m_status(ConnectorStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusReason(ConnectorStatusReason::NOT_SET),
-    m_statusReasonHasBeenSet(false),
-    m_endpointHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+ConnectorSummary::ConnectorSummary(JsonView jsonValue)
+  : ConnectorSummary()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ Folder::Folder() :
 {
 }
 
-Folder::Folder(JsonView jsonValue) : 
-    m_treeIdHasBeenSet(false),
-    m_absolutePathHasBeenSet(false),
-    m_relativePathHasBeenSet(false)
+Folder::Folder(JsonView jsonValue)
+  : Folder()
 {
   *this = jsonValue;
 }

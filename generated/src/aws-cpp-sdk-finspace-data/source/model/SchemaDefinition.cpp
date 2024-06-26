@@ -24,9 +24,8 @@ SchemaDefinition::SchemaDefinition() :
 {
 }
 
-SchemaDefinition::SchemaDefinition(JsonView jsonValue) : 
-    m_columnsHasBeenSet(false),
-    m_primaryKeyColumnsHasBeenSet(false)
+SchemaDefinition::SchemaDefinition(JsonView jsonValue)
+  : SchemaDefinition()
 {
   *this = jsonValue;
 }

@@ -33,18 +33,8 @@ AwsElasticsearchDomainElasticsearchClusterConfigDetails::AwsElasticsearchDomainE
 {
 }
 
-AwsElasticsearchDomainElasticsearchClusterConfigDetails::AwsElasticsearchDomainElasticsearchClusterConfigDetails(JsonView jsonValue) : 
-    m_dedicatedMasterCount(0),
-    m_dedicatedMasterCountHasBeenSet(false),
-    m_dedicatedMasterEnabled(false),
-    m_dedicatedMasterEnabledHasBeenSet(false),
-    m_dedicatedMasterTypeHasBeenSet(false),
-    m_instanceCount(0),
-    m_instanceCountHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_zoneAwarenessConfigHasBeenSet(false),
-    m_zoneAwarenessEnabled(false),
-    m_zoneAwarenessEnabledHasBeenSet(false)
+AwsElasticsearchDomainElasticsearchClusterConfigDetails::AwsElasticsearchDomainElasticsearchClusterConfigDetails(JsonView jsonValue)
+  : AwsElasticsearchDomainElasticsearchClusterConfigDetails()
 {
   *this = jsonValue;
 }

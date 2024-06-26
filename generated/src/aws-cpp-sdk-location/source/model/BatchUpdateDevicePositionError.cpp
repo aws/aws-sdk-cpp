@@ -25,10 +25,8 @@ BatchUpdateDevicePositionError::BatchUpdateDevicePositionError() :
 {
 }
 
-BatchUpdateDevicePositionError::BatchUpdateDevicePositionError(JsonView jsonValue) : 
-    m_deviceIdHasBeenSet(false),
-    m_sampleTimeHasBeenSet(false),
-    m_errorHasBeenSet(false)
+BatchUpdateDevicePositionError::BatchUpdateDevicePositionError(JsonView jsonValue)
+  : BatchUpdateDevicePositionError()
 {
   *this = jsonValue;
 }

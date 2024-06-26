@@ -26,11 +26,8 @@ ZendeskConnectorProfileCredentials::ZendeskConnectorProfileCredentials() :
 {
 }
 
-ZendeskConnectorProfileCredentials::ZendeskConnectorProfileCredentials(JsonView jsonValue) : 
-    m_clientIdHasBeenSet(false),
-    m_clientSecretHasBeenSet(false),
-    m_accessTokenHasBeenSet(false),
-    m_oAuthRequestHasBeenSet(false)
+ZendeskConnectorProfileCredentials::ZendeskConnectorProfileCredentials(JsonView jsonValue)
+  : ZendeskConnectorProfileCredentials()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ FixedResponseAction::FixedResponseAction() :
 {
 }
 
-FixedResponseAction::FixedResponseAction(JsonView jsonValue) : 
-    m_statusCode(0),
-    m_statusCodeHasBeenSet(false)
+FixedResponseAction::FixedResponseAction(JsonView jsonValue)
+  : FixedResponseAction()
 {
   *this = jsonValue;
 }

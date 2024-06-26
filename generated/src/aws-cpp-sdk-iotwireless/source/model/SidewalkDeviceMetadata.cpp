@@ -30,15 +30,8 @@ SidewalkDeviceMetadata::SidewalkDeviceMetadata() :
 {
 }
 
-SidewalkDeviceMetadata::SidewalkDeviceMetadata(JsonView jsonValue) : 
-    m_rssi(0),
-    m_rssiHasBeenSet(false),
-    m_batteryLevel(BatteryLevel::NOT_SET),
-    m_batteryLevelHasBeenSet(false),
-    m_event(Event::NOT_SET),
-    m_eventHasBeenSet(false),
-    m_deviceState(DeviceState::NOT_SET),
-    m_deviceStateHasBeenSet(false)
+SidewalkDeviceMetadata::SidewalkDeviceMetadata(JsonView jsonValue)
+  : SidewalkDeviceMetadata()
 {
   *this = jsonValue;
 }

@@ -35,20 +35,8 @@ AwsEc2LaunchTemplateDataBlockDeviceMappingSetEbsDetails::AwsEc2LaunchTemplateDat
 {
 }
 
-AwsEc2LaunchTemplateDataBlockDeviceMappingSetEbsDetails::AwsEc2LaunchTemplateDataBlockDeviceMappingSetEbsDetails(JsonView jsonValue) : 
-    m_deleteOnTermination(false),
-    m_deleteOnTerminationHasBeenSet(false),
-    m_encrypted(false),
-    m_encryptedHasBeenSet(false),
-    m_iops(0),
-    m_iopsHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_snapshotIdHasBeenSet(false),
-    m_throughput(0),
-    m_throughputHasBeenSet(false),
-    m_volumeSize(0),
-    m_volumeSizeHasBeenSet(false),
-    m_volumeTypeHasBeenSet(false)
+AwsEc2LaunchTemplateDataBlockDeviceMappingSetEbsDetails::AwsEc2LaunchTemplateDataBlockDeviceMappingSetEbsDetails(JsonView jsonValue)
+  : AwsEc2LaunchTemplateDataBlockDeviceMappingSetEbsDetails()
 {
   *this = jsonValue;
 }

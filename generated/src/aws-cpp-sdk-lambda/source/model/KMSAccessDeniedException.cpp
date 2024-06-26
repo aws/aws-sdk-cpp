@@ -24,9 +24,8 @@ KMSAccessDeniedException::KMSAccessDeniedException() :
 {
 }
 
-KMSAccessDeniedException::KMSAccessDeniedException(JsonView jsonValue) : 
-    m_typeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+KMSAccessDeniedException::KMSAccessDeniedException(JsonView jsonValue)
+  : KMSAccessDeniedException()
 {
   *this = jsonValue;
 }

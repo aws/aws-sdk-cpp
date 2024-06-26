@@ -26,11 +26,8 @@ UpdateError::UpdateError() :
 {
 }
 
-UpdateError::UpdateError(JsonView jsonValue) : 
-    m_causedByHasBeenSet(false),
-    m_code(0),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+UpdateError::UpdateError(JsonView jsonValue)
+  : UpdateError()
 {
   *this = jsonValue;
 }

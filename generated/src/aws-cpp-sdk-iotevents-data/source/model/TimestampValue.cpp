@@ -24,9 +24,8 @@ TimestampValue::TimestampValue() :
 {
 }
 
-TimestampValue::TimestampValue(JsonView jsonValue) : 
-    m_timeInMillis(0),
-    m_timeInMillisHasBeenSet(false)
+TimestampValue::TimestampValue(JsonView jsonValue)
+  : TimestampValue()
 {
   *this = jsonValue;
 }

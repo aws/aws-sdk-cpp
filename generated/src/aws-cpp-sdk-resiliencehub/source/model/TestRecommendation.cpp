@@ -37,22 +37,8 @@ TestRecommendation::TestRecommendation() :
 {
 }
 
-TestRecommendation::TestRecommendation(JsonView jsonValue) : 
-    m_appComponentNameHasBeenSet(false),
-    m_dependsOnAlarmsHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_intentHasBeenSet(false),
-    m_itemsHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_prerequisiteHasBeenSet(false),
-    m_recommendationIdHasBeenSet(false),
-    m_recommendationStatus(RecommendationStatus::NOT_SET),
-    m_recommendationStatusHasBeenSet(false),
-    m_referenceIdHasBeenSet(false),
-    m_risk(TestRisk::NOT_SET),
-    m_riskHasBeenSet(false),
-    m_type(TestType::NOT_SET),
-    m_typeHasBeenSet(false)
+TestRecommendation::TestRecommendation(JsonView jsonValue)
+  : TestRecommendation()
 {
   *this = jsonValue;
 }

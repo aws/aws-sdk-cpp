@@ -31,16 +31,8 @@ HubInfo::HubInfo() :
 {
 }
 
-HubInfo::HubInfo(JsonView jsonValue) : 
-    m_hubNameHasBeenSet(false),
-    m_hubArnHasBeenSet(false),
-    m_hubDisplayNameHasBeenSet(false),
-    m_hubDescriptionHasBeenSet(false),
-    m_hubSearchKeywordsHasBeenSet(false),
-    m_hubStatus(HubStatus::NOT_SET),
-    m_hubStatusHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false)
+HubInfo::HubInfo(JsonView jsonValue)
+  : HubInfo()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ GetSiteAddressResult::GetSiteAddressResult() :
 {
 }
 
-GetSiteAddressResult::GetSiteAddressResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_addressType(AddressType::NOT_SET)
+GetSiteAddressResult::GetSiteAddressResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetSiteAddressResult()
 {
   *this = result;
 }

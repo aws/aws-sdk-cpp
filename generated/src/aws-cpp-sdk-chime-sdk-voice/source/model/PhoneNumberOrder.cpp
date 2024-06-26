@@ -32,17 +32,8 @@ PhoneNumberOrder::PhoneNumberOrder() :
 {
 }
 
-PhoneNumberOrder::PhoneNumberOrder(JsonView jsonValue) : 
-    m_phoneNumberOrderIdHasBeenSet(false),
-    m_productType(PhoneNumberProductType::NOT_SET),
-    m_productTypeHasBeenSet(false),
-    m_status(PhoneNumberOrderStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_orderType(PhoneNumberOrderType::NOT_SET),
-    m_orderTypeHasBeenSet(false),
-    m_orderedPhoneNumbersHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false),
-    m_updatedTimestampHasBeenSet(false)
+PhoneNumberOrder::PhoneNumberOrder(JsonView jsonValue)
+  : PhoneNumberOrder()
 {
   *this = jsonValue;
 }

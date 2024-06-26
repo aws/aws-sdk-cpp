@@ -26,11 +26,8 @@ ValidityPeriod::ValidityPeriod() :
 {
 }
 
-ValidityPeriod::ValidityPeriod(JsonView jsonValue) : 
-    m_period(0),
-    m_periodHasBeenSet(false),
-    m_periodType(ValidityPeriodType::NOT_SET),
-    m_periodTypeHasBeenSet(false)
+ValidityPeriod::ValidityPeriod(JsonView jsonValue)
+  : ValidityPeriod()
 {
   *this = jsonValue;
 }

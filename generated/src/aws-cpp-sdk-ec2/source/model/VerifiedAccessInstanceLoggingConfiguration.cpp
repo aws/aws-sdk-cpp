@@ -26,9 +26,8 @@ VerifiedAccessInstanceLoggingConfiguration::VerifiedAccessInstanceLoggingConfigu
 {
 }
 
-VerifiedAccessInstanceLoggingConfiguration::VerifiedAccessInstanceLoggingConfiguration(const XmlNode& xmlNode) : 
-    m_verifiedAccessInstanceIdHasBeenSet(false),
-    m_accessLogsHasBeenSet(false)
+VerifiedAccessInstanceLoggingConfiguration::VerifiedAccessInstanceLoggingConfiguration(const XmlNode& xmlNode)
+  : VerifiedAccessInstanceLoggingConfiguration()
 {
   *this = xmlNode;
 }

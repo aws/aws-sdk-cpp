@@ -26,11 +26,8 @@ WorldSummary::WorldSummary() :
 {
 }
 
-WorldSummary::WorldSummary(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_generationJobHasBeenSet(false),
-    m_templateHasBeenSet(false)
+WorldSummary::WorldSummary(JsonView jsonValue)
+  : WorldSummary()
 {
   *this = jsonValue;
 }

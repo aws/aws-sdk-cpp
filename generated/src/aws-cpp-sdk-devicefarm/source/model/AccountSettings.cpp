@@ -33,18 +33,8 @@ AccountSettings::AccountSettings() :
 {
 }
 
-AccountSettings::AccountSettings(JsonView jsonValue) : 
-    m_awsAccountNumberHasBeenSet(false),
-    m_unmeteredDevicesHasBeenSet(false),
-    m_unmeteredRemoteAccessDevicesHasBeenSet(false),
-    m_maxJobTimeoutMinutes(0),
-    m_maxJobTimeoutMinutesHasBeenSet(false),
-    m_trialMinutesHasBeenSet(false),
-    m_maxSlotsHasBeenSet(false),
-    m_defaultJobTimeoutMinutes(0),
-    m_defaultJobTimeoutMinutesHasBeenSet(false),
-    m_skipAppResign(false),
-    m_skipAppResignHasBeenSet(false)
+AccountSettings::AccountSettings(JsonView jsonValue)
+  : AccountSettings()
 {
   *this = jsonValue;
 }

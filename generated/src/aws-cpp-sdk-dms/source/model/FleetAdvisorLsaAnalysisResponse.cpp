@@ -24,9 +24,8 @@ FleetAdvisorLsaAnalysisResponse::FleetAdvisorLsaAnalysisResponse() :
 {
 }
 
-FleetAdvisorLsaAnalysisResponse::FleetAdvisorLsaAnalysisResponse(JsonView jsonValue) : 
-    m_lsaAnalysisIdHasBeenSet(false),
-    m_statusHasBeenSet(false)
+FleetAdvisorLsaAnalysisResponse::FleetAdvisorLsaAnalysisResponse(JsonView jsonValue)
+  : FleetAdvisorLsaAnalysisResponse()
 {
   *this = jsonValue;
 }

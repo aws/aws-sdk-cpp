@@ -22,8 +22,8 @@ StartTestSetGenerationResult::StartTestSetGenerationResult() :
 {
 }
 
-StartTestSetGenerationResult::StartTestSetGenerationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_testSetGenerationStatus(TestSetGenerationStatus::NOT_SET)
+StartTestSetGenerationResult::StartTestSetGenerationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : StartTestSetGenerationResult()
 {
   *this = result;
 }

@@ -23,8 +23,8 @@ ExportingConfig::ExportingConfig() :
 {
 }
 
-ExportingConfig::ExportingConfig(JsonView jsonValue) : 
-    m_s3ExportingHasBeenSet(false)
+ExportingConfig::ExportingConfig(JsonView jsonValue)
+  : ExportingConfig()
 {
   *this = jsonValue;
 }

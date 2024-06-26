@@ -26,11 +26,8 @@ Organization::Organization() :
 {
 }
 
-Organization::Organization(JsonView jsonValue) : 
-    m_asnHasBeenSet(false),
-    m_asnOrgHasBeenSet(false),
-    m_ispHasBeenSet(false),
-    m_orgHasBeenSet(false)
+Organization::Organization(JsonView jsonValue)
+  : Organization()
 {
   *this = jsonValue;
 }

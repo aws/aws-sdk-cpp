@@ -24,9 +24,8 @@ ContainerServiceDeploymentRequest::ContainerServiceDeploymentRequest() :
 {
 }
 
-ContainerServiceDeploymentRequest::ContainerServiceDeploymentRequest(JsonView jsonValue) : 
-    m_containersHasBeenSet(false),
-    m_publicEndpointHasBeenSet(false)
+ContainerServiceDeploymentRequest::ContainerServiceDeploymentRequest(JsonView jsonValue)
+  : ContainerServiceDeploymentRequest()
 {
   *this = jsonValue;
 }

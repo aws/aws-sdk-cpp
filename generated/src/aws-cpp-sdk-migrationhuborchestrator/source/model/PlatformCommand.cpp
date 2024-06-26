@@ -24,9 +24,8 @@ PlatformCommand::PlatformCommand() :
 {
 }
 
-PlatformCommand::PlatformCommand(JsonView jsonValue) : 
-    m_linuxHasBeenSet(false),
-    m_windowsHasBeenSet(false)
+PlatformCommand::PlatformCommand(JsonView jsonValue)
+  : PlatformCommand()
 {
   *this = jsonValue;
 }

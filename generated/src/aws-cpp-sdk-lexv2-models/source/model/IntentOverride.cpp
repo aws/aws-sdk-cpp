@@ -24,9 +24,8 @@ IntentOverride::IntentOverride() :
 {
 }
 
-IntentOverride::IntentOverride(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_slotsHasBeenSet(false)
+IntentOverride::IntentOverride(JsonView jsonValue)
+  : IntentOverride()
 {
   *this = jsonValue;
 }

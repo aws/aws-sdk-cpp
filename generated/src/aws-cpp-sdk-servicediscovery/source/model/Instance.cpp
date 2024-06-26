@@ -25,10 +25,8 @@ Instance::Instance() :
 {
 }
 
-Instance::Instance(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_creatorRequestIdHasBeenSet(false),
-    m_attributesHasBeenSet(false)
+Instance::Instance(JsonView jsonValue)
+  : Instance()
 {
   *this = jsonValue;
 }

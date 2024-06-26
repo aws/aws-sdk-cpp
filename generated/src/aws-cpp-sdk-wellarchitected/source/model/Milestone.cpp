@@ -27,12 +27,8 @@ Milestone::Milestone() :
 {
 }
 
-Milestone::Milestone(JsonView jsonValue) : 
-    m_milestoneNumber(0),
-    m_milestoneNumberHasBeenSet(false),
-    m_milestoneNameHasBeenSet(false),
-    m_recordedAtHasBeenSet(false),
-    m_workloadHasBeenSet(false)
+Milestone::Milestone(JsonView jsonValue)
+  : Milestone()
 {
   *this = jsonValue;
 }

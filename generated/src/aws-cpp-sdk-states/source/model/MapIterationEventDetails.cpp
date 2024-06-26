@@ -25,10 +25,8 @@ MapIterationEventDetails::MapIterationEventDetails() :
 {
 }
 
-MapIterationEventDetails::MapIterationEventDetails(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_index(0),
-    m_indexHasBeenSet(false)
+MapIterationEventDetails::MapIterationEventDetails(JsonView jsonValue)
+  : MapIterationEventDetails()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ RuleGroup::RuleGroup() :
 {
 }
 
-RuleGroup::RuleGroup(JsonView jsonValue) : 
-    m_ruleGroupIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_metricNameHasBeenSet(false)
+RuleGroup::RuleGroup(JsonView jsonValue)
+  : RuleGroup()
 {
   *this = jsonValue;
 }

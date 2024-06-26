@@ -26,11 +26,8 @@ InventoryRetrievalJobInput::InventoryRetrievalJobInput() :
 {
 }
 
-InventoryRetrievalJobInput::InventoryRetrievalJobInput(JsonView jsonValue) : 
-    m_startDateHasBeenSet(false),
-    m_endDateHasBeenSet(false),
-    m_limitHasBeenSet(false),
-    m_markerHasBeenSet(false)
+InventoryRetrievalJobInput::InventoryRetrievalJobInput(JsonView jsonValue)
+  : InventoryRetrievalJobInput()
 {
   *this = jsonValue;
 }

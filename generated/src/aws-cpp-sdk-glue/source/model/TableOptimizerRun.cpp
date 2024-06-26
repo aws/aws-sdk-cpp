@@ -28,13 +28,8 @@ TableOptimizerRun::TableOptimizerRun() :
 {
 }
 
-TableOptimizerRun::TableOptimizerRun(JsonView jsonValue) : 
-    m_eventType(TableOptimizerEventType::NOT_SET),
-    m_eventTypeHasBeenSet(false),
-    m_startTimestampHasBeenSet(false),
-    m_endTimestampHasBeenSet(false),
-    m_metricsHasBeenSet(false),
-    m_errorHasBeenSet(false)
+TableOptimizerRun::TableOptimizerRun(JsonView jsonValue)
+  : TableOptimizerRun()
 {
   *this = jsonValue;
 }

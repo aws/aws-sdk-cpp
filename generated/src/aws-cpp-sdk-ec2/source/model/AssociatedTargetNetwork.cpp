@@ -27,10 +27,8 @@ AssociatedTargetNetwork::AssociatedTargetNetwork() :
 {
 }
 
-AssociatedTargetNetwork::AssociatedTargetNetwork(const XmlNode& xmlNode) : 
-    m_networkIdHasBeenSet(false),
-    m_networkType(AssociatedNetworkType::NOT_SET),
-    m_networkTypeHasBeenSet(false)
+AssociatedTargetNetwork::AssociatedTargetNetwork(const XmlNode& xmlNode)
+  : AssociatedTargetNetwork()
 {
   *this = xmlNode;
 }

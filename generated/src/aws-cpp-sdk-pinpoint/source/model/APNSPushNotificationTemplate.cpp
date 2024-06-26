@@ -30,15 +30,8 @@ APNSPushNotificationTemplate::APNSPushNotificationTemplate() :
 {
 }
 
-APNSPushNotificationTemplate::APNSPushNotificationTemplate(JsonView jsonValue) : 
-    m_action(Action::NOT_SET),
-    m_actionHasBeenSet(false),
-    m_bodyHasBeenSet(false),
-    m_mediaUrlHasBeenSet(false),
-    m_rawContentHasBeenSet(false),
-    m_soundHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_urlHasBeenSet(false)
+APNSPushNotificationTemplate::APNSPushNotificationTemplate(JsonView jsonValue)
+  : APNSPushNotificationTemplate()
 {
   *this = jsonValue;
 }

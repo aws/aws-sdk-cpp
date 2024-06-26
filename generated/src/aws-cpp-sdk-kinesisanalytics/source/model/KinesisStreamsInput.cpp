@@ -24,9 +24,8 @@ KinesisStreamsInput::KinesisStreamsInput() :
 {
 }
 
-KinesisStreamsInput::KinesisStreamsInput(JsonView jsonValue) : 
-    m_resourceARNHasBeenSet(false),
-    m_roleARNHasBeenSet(false)
+KinesisStreamsInput::KinesisStreamsInput(JsonView jsonValue)
+  : KinesisStreamsInput()
 {
   *this = jsonValue;
 }

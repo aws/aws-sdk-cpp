@@ -24,9 +24,8 @@ ExecutionTimedOutEventDetails::ExecutionTimedOutEventDetails() :
 {
 }
 
-ExecutionTimedOutEventDetails::ExecutionTimedOutEventDetails(JsonView jsonValue) : 
-    m_errorHasBeenSet(false),
-    m_causeHasBeenSet(false)
+ExecutionTimedOutEventDetails::ExecutionTimedOutEventDetails(JsonView jsonValue)
+  : ExecutionTimedOutEventDetails()
 {
   *this = jsonValue;
 }

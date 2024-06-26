@@ -22,8 +22,8 @@ DescribeAffectedAccountsForOrganizationResult::DescribeAffectedAccountsForOrgani
 {
 }
 
-DescribeAffectedAccountsForOrganizationResult::DescribeAffectedAccountsForOrganizationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_eventScopeCode(EventScopeCode::NOT_SET)
+DescribeAffectedAccountsForOrganizationResult::DescribeAffectedAccountsForOrganizationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeAffectedAccountsForOrganizationResult()
 {
   *this = result;
 }

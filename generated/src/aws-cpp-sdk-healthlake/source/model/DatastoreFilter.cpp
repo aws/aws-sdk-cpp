@@ -27,12 +27,8 @@ DatastoreFilter::DatastoreFilter() :
 {
 }
 
-DatastoreFilter::DatastoreFilter(JsonView jsonValue) : 
-    m_datastoreNameHasBeenSet(false),
-    m_datastoreStatus(DatastoreStatus::NOT_SET),
-    m_datastoreStatusHasBeenSet(false),
-    m_createdBeforeHasBeenSet(false),
-    m_createdAfterHasBeenSet(false)
+DatastoreFilter::DatastoreFilter(JsonView jsonValue)
+  : DatastoreFilter()
 {
   *this = jsonValue;
 }

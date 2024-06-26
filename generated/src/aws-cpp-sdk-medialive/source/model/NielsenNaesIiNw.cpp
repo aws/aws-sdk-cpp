@@ -27,12 +27,8 @@ NielsenNaesIiNw::NielsenNaesIiNw() :
 {
 }
 
-NielsenNaesIiNw::NielsenNaesIiNw(JsonView jsonValue) : 
-    m_checkDigitStringHasBeenSet(false),
-    m_sid(0.0),
-    m_sidHasBeenSet(false),
-    m_timezone(NielsenWatermarkTimezones::NOT_SET),
-    m_timezoneHasBeenSet(false)
+NielsenNaesIiNw::NielsenNaesIiNw(JsonView jsonValue)
+  : NielsenNaesIiNw()
 {
   *this = jsonValue;
 }

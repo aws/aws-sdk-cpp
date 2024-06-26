@@ -25,10 +25,8 @@ ConfigurationInfo::ConfigurationInfo() :
 {
 }
 
-ConfigurationInfo::ConfigurationInfo(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_revision(0),
-    m_revisionHasBeenSet(false)
+ConfigurationInfo::ConfigurationInfo(JsonView jsonValue)
+  : ConfigurationInfo()
 {
   *this = jsonValue;
 }

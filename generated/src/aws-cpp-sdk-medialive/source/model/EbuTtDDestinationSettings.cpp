@@ -28,13 +28,8 @@ EbuTtDDestinationSettings::EbuTtDDestinationSettings() :
 {
 }
 
-EbuTtDDestinationSettings::EbuTtDDestinationSettings(JsonView jsonValue) : 
-    m_copyrightHolderHasBeenSet(false),
-    m_fillLineGap(EbuTtDFillLineGapControl::NOT_SET),
-    m_fillLineGapHasBeenSet(false),
-    m_fontFamilyHasBeenSet(false),
-    m_styleControl(EbuTtDDestinationStyleControl::NOT_SET),
-    m_styleControlHasBeenSet(false)
+EbuTtDDestinationSettings::EbuTtDDestinationSettings(JsonView jsonValue)
+  : EbuTtDDestinationSettings()
 {
   *this = jsonValue;
 }

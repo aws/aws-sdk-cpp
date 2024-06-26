@@ -26,11 +26,8 @@ MatchItem::MatchItem() :
 {
 }
 
-MatchItem::MatchItem(JsonView jsonValue) : 
-    m_matchIdHasBeenSet(false),
-    m_profileIdsHasBeenSet(false),
-    m_confidenceScore(0.0),
-    m_confidenceScoreHasBeenSet(false)
+MatchItem::MatchItem(JsonView jsonValue)
+  : MatchItem()
 {
   *this = jsonValue;
 }

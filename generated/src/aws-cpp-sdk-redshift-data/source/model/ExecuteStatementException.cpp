@@ -24,9 +24,8 @@ ExecuteStatementException::ExecuteStatementException() :
 {
 }
 
-ExecuteStatementException::ExecuteStatementException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_statementIdHasBeenSet(false)
+ExecuteStatementException::ExecuteStatementException(JsonView jsonValue)
+  : ExecuteStatementException()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ TimestampRange::TimestampRange() :
 {
 }
 
-TimestampRange::TimestampRange(JsonView jsonValue) : 
-    m_beginOffsetMillis(0),
-    m_beginOffsetMillisHasBeenSet(false),
-    m_endOffsetMillis(0),
-    m_endOffsetMillisHasBeenSet(false)
+TimestampRange::TimestampRange(JsonView jsonValue)
+  : TimestampRange()
 {
   *this = jsonValue;
 }

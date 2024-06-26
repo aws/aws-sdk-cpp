@@ -28,13 +28,8 @@ ReferenceSummary::ReferenceSummary() :
 {
 }
 
-ReferenceSummary::ReferenceSummary(JsonView jsonValue) : 
-    m_urlHasBeenSet(false),
-    m_attachmentHasBeenSet(false),
-    m_stringHasBeenSet(false),
-    m_numberHasBeenSet(false),
-    m_dateHasBeenSet(false),
-    m_emailHasBeenSet(false)
+ReferenceSummary::ReferenceSummary(JsonView jsonValue)
+  : ReferenceSummary()
 {
   *this = jsonValue;
 }

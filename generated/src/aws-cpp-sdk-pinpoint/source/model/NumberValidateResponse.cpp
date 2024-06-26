@@ -37,22 +37,8 @@ NumberValidateResponse::NumberValidateResponse() :
 {
 }
 
-NumberValidateResponse::NumberValidateResponse(JsonView jsonValue) : 
-    m_carrierHasBeenSet(false),
-    m_cityHasBeenSet(false),
-    m_cleansedPhoneNumberE164HasBeenSet(false),
-    m_cleansedPhoneNumberNationalHasBeenSet(false),
-    m_countryHasBeenSet(false),
-    m_countryCodeIso2HasBeenSet(false),
-    m_countryCodeNumericHasBeenSet(false),
-    m_countyHasBeenSet(false),
-    m_originalCountryCodeIso2HasBeenSet(false),
-    m_originalPhoneNumberHasBeenSet(false),
-    m_phoneTypeHasBeenSet(false),
-    m_phoneTypeCode(0),
-    m_phoneTypeCodeHasBeenSet(false),
-    m_timezoneHasBeenSet(false),
-    m_zipCodeHasBeenSet(false)
+NumberValidateResponse::NumberValidateResponse(JsonView jsonValue)
+  : NumberValidateResponse()
 {
   *this = jsonValue;
 }

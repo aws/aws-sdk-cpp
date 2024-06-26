@@ -26,11 +26,8 @@ SalesforceCustomKnowledgeArticleTypeConfiguration::SalesforceCustomKnowledgeArti
 {
 }
 
-SalesforceCustomKnowledgeArticleTypeConfiguration::SalesforceCustomKnowledgeArticleTypeConfiguration(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_documentDataFieldNameHasBeenSet(false),
-    m_documentTitleFieldNameHasBeenSet(false),
-    m_fieldMappingsHasBeenSet(false)
+SalesforceCustomKnowledgeArticleTypeConfiguration::SalesforceCustomKnowledgeArticleTypeConfiguration(JsonView jsonValue)
+  : SalesforceCustomKnowledgeArticleTypeConfiguration()
 {
   *this = jsonValue;
 }

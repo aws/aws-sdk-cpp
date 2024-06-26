@@ -25,10 +25,8 @@ AssetHierarchy::AssetHierarchy() :
 {
 }
 
-AssetHierarchy::AssetHierarchy(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_externalIdHasBeenSet(false)
+AssetHierarchy::AssetHierarchy(JsonView jsonValue)
+  : AssetHierarchy()
 {
   *this = jsonValue;
 }

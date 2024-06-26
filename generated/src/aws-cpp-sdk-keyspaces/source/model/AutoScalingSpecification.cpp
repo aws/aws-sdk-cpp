@@ -24,9 +24,8 @@ AutoScalingSpecification::AutoScalingSpecification() :
 {
 }
 
-AutoScalingSpecification::AutoScalingSpecification(JsonView jsonValue) : 
-    m_writeCapacityAutoScalingHasBeenSet(false),
-    m_readCapacityAutoScalingHasBeenSet(false)
+AutoScalingSpecification::AutoScalingSpecification(JsonView jsonValue)
+  : AutoScalingSpecification()
 {
   *this = jsonValue;
 }

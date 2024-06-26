@@ -25,10 +25,8 @@ ServiceAlreadyExists::ServiceAlreadyExists() :
 {
 }
 
-ServiceAlreadyExists::ServiceAlreadyExists(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_creatorRequestIdHasBeenSet(false),
-    m_serviceIdHasBeenSet(false)
+ServiceAlreadyExists::ServiceAlreadyExists(JsonView jsonValue)
+  : ServiceAlreadyExists()
 {
   *this = jsonValue;
 }

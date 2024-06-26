@@ -24,9 +24,8 @@ OpenIdConnectTokenSelectionDetail::OpenIdConnectTokenSelectionDetail() :
 {
 }
 
-OpenIdConnectTokenSelectionDetail::OpenIdConnectTokenSelectionDetail(JsonView jsonValue) : 
-    m_accessTokenOnlyHasBeenSet(false),
-    m_identityTokenOnlyHasBeenSet(false)
+OpenIdConnectTokenSelectionDetail::OpenIdConnectTokenSelectionDetail(JsonView jsonValue)
+  : OpenIdConnectTokenSelectionDetail()
 {
   *this = jsonValue;
 }

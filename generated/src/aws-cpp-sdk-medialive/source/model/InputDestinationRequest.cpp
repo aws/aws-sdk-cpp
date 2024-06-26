@@ -23,8 +23,8 @@ InputDestinationRequest::InputDestinationRequest() :
 {
 }
 
-InputDestinationRequest::InputDestinationRequest(JsonView jsonValue) : 
-    m_streamNameHasBeenSet(false)
+InputDestinationRequest::InputDestinationRequest(JsonView jsonValue)
+  : InputDestinationRequest()
 {
   *this = jsonValue;
 }

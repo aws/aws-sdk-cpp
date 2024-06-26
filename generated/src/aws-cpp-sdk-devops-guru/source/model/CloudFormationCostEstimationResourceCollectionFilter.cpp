@@ -23,8 +23,8 @@ CloudFormationCostEstimationResourceCollectionFilter::CloudFormationCostEstimati
 {
 }
 
-CloudFormationCostEstimationResourceCollectionFilter::CloudFormationCostEstimationResourceCollectionFilter(JsonView jsonValue) : 
-    m_stackNamesHasBeenSet(false)
+CloudFormationCostEstimationResourceCollectionFilter::CloudFormationCostEstimationResourceCollectionFilter(JsonView jsonValue)
+  : CloudFormationCostEstimationResourceCollectionFilter()
 {
   *this = jsonValue;
 }

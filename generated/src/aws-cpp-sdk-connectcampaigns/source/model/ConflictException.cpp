@@ -25,9 +25,8 @@ ConflictException::ConflictException() :
 {
 }
 
-ConflictException::ConflictException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_xAmzErrorTypeHasBeenSet(false)
+ConflictException::ConflictException(JsonView jsonValue)
+  : ConflictException()
 {
   *this = jsonValue;
 }

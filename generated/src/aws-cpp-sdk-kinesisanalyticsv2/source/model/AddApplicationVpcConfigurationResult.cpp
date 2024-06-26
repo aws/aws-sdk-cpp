@@ -22,8 +22,8 @@ AddApplicationVpcConfigurationResult::AddApplicationVpcConfigurationResult() :
 {
 }
 
-AddApplicationVpcConfigurationResult::AddApplicationVpcConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_applicationVersionId(0)
+AddApplicationVpcConfigurationResult::AddApplicationVpcConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : AddApplicationVpcConfigurationResult()
 {
   *this = result;
 }

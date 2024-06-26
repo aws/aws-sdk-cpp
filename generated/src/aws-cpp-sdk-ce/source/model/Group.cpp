@@ -24,9 +24,8 @@ Group::Group() :
 {
 }
 
-Group::Group(JsonView jsonValue) : 
-    m_keysHasBeenSet(false),
-    m_metricsHasBeenSet(false)
+Group::Group(JsonView jsonValue)
+  : Group()
 {
   *this = jsonValue;
 }

@@ -28,13 +28,8 @@ BackendEnvironment::BackendEnvironment() :
 {
 }
 
-BackendEnvironment::BackendEnvironment(JsonView jsonValue) : 
-    m_backendEnvironmentArnHasBeenSet(false),
-    m_environmentNameHasBeenSet(false),
-    m_stackNameHasBeenSet(false),
-    m_deploymentArtifactsHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
+BackendEnvironment::BackendEnvironment(JsonView jsonValue)
+  : BackendEnvironment()
 {
   *this = jsonValue;
 }

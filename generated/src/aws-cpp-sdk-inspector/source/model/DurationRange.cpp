@@ -26,11 +26,8 @@ DurationRange::DurationRange() :
 {
 }
 
-DurationRange::DurationRange(JsonView jsonValue) : 
-    m_minSeconds(0),
-    m_minSecondsHasBeenSet(false),
-    m_maxSeconds(0),
-    m_maxSecondsHasBeenSet(false)
+DurationRange::DurationRange(JsonView jsonValue)
+  : DurationRange()
 {
   *this = jsonValue;
 }

@@ -26,9 +26,8 @@ RecommendedActionParameter::RecommendedActionParameter() :
 {
 }
 
-RecommendedActionParameter::RecommendedActionParameter(const XmlNode& xmlNode) : 
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false)
+RecommendedActionParameter::RecommendedActionParameter(const XmlNode& xmlNode)
+  : RecommendedActionParameter()
 {
   *this = xmlNode;
 }

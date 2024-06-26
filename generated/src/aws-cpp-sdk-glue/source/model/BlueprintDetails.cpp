@@ -24,9 +24,8 @@ BlueprintDetails::BlueprintDetails() :
 {
 }
 
-BlueprintDetails::BlueprintDetails(JsonView jsonValue) : 
-    m_blueprintNameHasBeenSet(false),
-    m_runIdHasBeenSet(false)
+BlueprintDetails::BlueprintDetails(JsonView jsonValue)
+  : BlueprintDetails()
 {
   *this = jsonValue;
 }

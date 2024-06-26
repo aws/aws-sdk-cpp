@@ -24,9 +24,8 @@ FoundationModelLifecycle::FoundationModelLifecycle() :
 {
 }
 
-FoundationModelLifecycle::FoundationModelLifecycle(JsonView jsonValue) : 
-    m_status(FoundationModelLifecycleStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+FoundationModelLifecycle::FoundationModelLifecycle(JsonView jsonValue)
+  : FoundationModelLifecycle()
 {
   *this = jsonValue;
 }

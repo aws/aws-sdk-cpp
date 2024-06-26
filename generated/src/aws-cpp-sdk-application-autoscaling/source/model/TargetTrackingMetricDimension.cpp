@@ -24,9 +24,8 @@ TargetTrackingMetricDimension::TargetTrackingMetricDimension() :
 {
 }
 
-TargetTrackingMetricDimension::TargetTrackingMetricDimension(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
+TargetTrackingMetricDimension::TargetTrackingMetricDimension(JsonView jsonValue)
+  : TargetTrackingMetricDimension()
 {
   *this = jsonValue;
 }

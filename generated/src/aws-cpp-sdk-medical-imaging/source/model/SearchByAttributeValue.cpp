@@ -30,15 +30,8 @@ SearchByAttributeValue::SearchByAttributeValue() :
 {
 }
 
-SearchByAttributeValue::SearchByAttributeValue(JsonView jsonValue) : 
-    m_dICOMPatientIdHasBeenSet(false),
-    m_dICOMAccessionNumberHasBeenSet(false),
-    m_dICOMStudyIdHasBeenSet(false),
-    m_dICOMStudyInstanceUIDHasBeenSet(false),
-    m_dICOMSeriesInstanceUIDHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_dICOMStudyDateAndTimeHasBeenSet(false)
+SearchByAttributeValue::SearchByAttributeValue(JsonView jsonValue)
+  : SearchByAttributeValue()
 {
   *this = jsonValue;
 }

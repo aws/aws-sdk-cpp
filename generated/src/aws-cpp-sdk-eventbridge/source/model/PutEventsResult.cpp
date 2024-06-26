@@ -22,8 +22,8 @@ PutEventsResult::PutEventsResult() :
 {
 }
 
-PutEventsResult::PutEventsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_failedEntryCount(0)
+PutEventsResult::PutEventsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : PutEventsResult()
 {
   *this = result;
 }

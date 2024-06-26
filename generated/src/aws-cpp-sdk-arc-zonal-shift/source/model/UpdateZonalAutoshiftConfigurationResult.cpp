@@ -22,8 +22,8 @@ UpdateZonalAutoshiftConfigurationResult::UpdateZonalAutoshiftConfigurationResult
 {
 }
 
-UpdateZonalAutoshiftConfigurationResult::UpdateZonalAutoshiftConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_zonalAutoshiftStatus(ZonalAutoshiftStatus::NOT_SET)
+UpdateZonalAutoshiftConfigurationResult::UpdateZonalAutoshiftConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateZonalAutoshiftConfigurationResult()
 {
   *this = result;
 }

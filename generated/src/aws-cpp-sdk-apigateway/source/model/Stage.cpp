@@ -45,29 +45,8 @@ Stage::Stage() :
 {
 }
 
-Stage::Stage(JsonView jsonValue) : 
-    m_deploymentIdHasBeenSet(false),
-    m_clientCertificateIdHasBeenSet(false),
-    m_stageNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_cacheClusterEnabled(false),
-    m_cacheClusterEnabledHasBeenSet(false),
-    m_cacheClusterSize(CacheClusterSize::NOT_SET),
-    m_cacheClusterSizeHasBeenSet(false),
-    m_cacheClusterStatus(CacheClusterStatus::NOT_SET),
-    m_cacheClusterStatusHasBeenSet(false),
-    m_methodSettingsHasBeenSet(false),
-    m_variablesHasBeenSet(false),
-    m_documentationVersionHasBeenSet(false),
-    m_accessLogSettingsHasBeenSet(false),
-    m_canarySettingsHasBeenSet(false),
-    m_tracingEnabled(false),
-    m_tracingEnabledHasBeenSet(false),
-    m_webAclArnHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_createdDateHasBeenSet(false),
-    m_lastUpdatedDateHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
+Stage::Stage(JsonView jsonValue)
+  : Stage()
 {
   *this = jsonValue;
 }

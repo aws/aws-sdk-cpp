@@ -28,13 +28,8 @@ StepSummary::StepSummary() :
 {
 }
 
-StepSummary::StepSummary(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_configHasBeenSet(false),
-    m_actionOnFailure(ActionOnFailure::NOT_SET),
-    m_actionOnFailureHasBeenSet(false),
-    m_statusHasBeenSet(false)
+StepSummary::StepSummary(JsonView jsonValue)
+  : StepSummary()
 {
   *this = jsonValue;
 }

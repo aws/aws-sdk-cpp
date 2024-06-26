@@ -24,9 +24,8 @@ DatasetLabelDescription::DatasetLabelDescription() :
 {
 }
 
-DatasetLabelDescription::DatasetLabelDescription(JsonView jsonValue) : 
-    m_labelNameHasBeenSet(false),
-    m_labelStatsHasBeenSet(false)
+DatasetLabelDescription::DatasetLabelDescription(JsonView jsonValue)
+  : DatasetLabelDescription()
 {
   *this = jsonValue;
 }

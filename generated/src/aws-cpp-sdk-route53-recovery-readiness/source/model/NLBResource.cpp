@@ -23,8 +23,8 @@ NLBResource::NLBResource() :
 {
 }
 
-NLBResource::NLBResource(JsonView jsonValue) : 
-    m_arnHasBeenSet(false)
+NLBResource::NLBResource(JsonView jsonValue)
+  : NLBResource()
 {
   *this = jsonValue;
 }

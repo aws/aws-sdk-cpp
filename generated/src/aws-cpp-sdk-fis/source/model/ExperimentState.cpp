@@ -25,10 +25,8 @@ ExperimentState::ExperimentState() :
 {
 }
 
-ExperimentState::ExperimentState(JsonView jsonValue) : 
-    m_status(ExperimentStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_reasonHasBeenSet(false)
+ExperimentState::ExperimentState(JsonView jsonValue)
+  : ExperimentState()
 {
   *this = jsonValue;
 }

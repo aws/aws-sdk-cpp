@@ -31,16 +31,8 @@ IdentityResolutionJob::IdentityResolutionJob() :
 {
 }
 
-IdentityResolutionJob::IdentityResolutionJob(JsonView jsonValue) : 
-    m_domainNameHasBeenSet(false),
-    m_jobIdHasBeenSet(false),
-    m_status(IdentityResolutionJobStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_jobStartTimeHasBeenSet(false),
-    m_jobEndTimeHasBeenSet(false),
-    m_jobStatsHasBeenSet(false),
-    m_exportingLocationHasBeenSet(false),
-    m_messageHasBeenSet(false)
+IdentityResolutionJob::IdentityResolutionJob(JsonView jsonValue)
+  : IdentityResolutionJob()
 {
   *this = jsonValue;
 }

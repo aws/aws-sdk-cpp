@@ -33,16 +33,8 @@ DoubleArrayOptions::DoubleArrayOptions() :
 {
 }
 
-DoubleArrayOptions::DoubleArrayOptions(const XmlNode& xmlNode) : 
-    m_defaultValue(0.0),
-    m_defaultValueHasBeenSet(false),
-    m_sourceFieldsHasBeenSet(false),
-    m_facetEnabled(false),
-    m_facetEnabledHasBeenSet(false),
-    m_searchEnabled(false),
-    m_searchEnabledHasBeenSet(false),
-    m_returnEnabled(false),
-    m_returnEnabledHasBeenSet(false)
+DoubleArrayOptions::DoubleArrayOptions(const XmlNode& xmlNode)
+  : DoubleArrayOptions()
 {
   *this = xmlNode;
 }

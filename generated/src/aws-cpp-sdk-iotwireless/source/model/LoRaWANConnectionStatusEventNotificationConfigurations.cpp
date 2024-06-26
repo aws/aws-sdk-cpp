@@ -24,9 +24,8 @@ LoRaWANConnectionStatusEventNotificationConfigurations::LoRaWANConnectionStatusE
 {
 }
 
-LoRaWANConnectionStatusEventNotificationConfigurations::LoRaWANConnectionStatusEventNotificationConfigurations(JsonView jsonValue) : 
-    m_gatewayEuiEventTopic(EventNotificationTopicStatus::NOT_SET),
-    m_gatewayEuiEventTopicHasBeenSet(false)
+LoRaWANConnectionStatusEventNotificationConfigurations::LoRaWANConnectionStatusEventNotificationConfigurations(JsonView jsonValue)
+  : LoRaWANConnectionStatusEventNotificationConfigurations()
 {
   *this = jsonValue;
 }

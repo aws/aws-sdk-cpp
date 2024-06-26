@@ -25,10 +25,8 @@ PredictedIntent::PredictedIntent() :
 {
 }
 
-PredictedIntent::PredictedIntent(JsonView jsonValue) : 
-    m_intentNameHasBeenSet(false),
-    m_nluIntentConfidenceHasBeenSet(false),
-    m_slotsHasBeenSet(false)
+PredictedIntent::PredictedIntent(JsonView jsonValue)
+  : PredictedIntent()
 {
   *this = jsonValue;
 }

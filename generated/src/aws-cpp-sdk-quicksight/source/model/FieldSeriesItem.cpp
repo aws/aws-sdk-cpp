@@ -26,11 +26,8 @@ FieldSeriesItem::FieldSeriesItem() :
 {
 }
 
-FieldSeriesItem::FieldSeriesItem(JsonView jsonValue) : 
-    m_fieldIdHasBeenSet(false),
-    m_axisBinding(AxisBinding::NOT_SET),
-    m_axisBindingHasBeenSet(false),
-    m_settingsHasBeenSet(false)
+FieldSeriesItem::FieldSeriesItem(JsonView jsonValue)
+  : FieldSeriesItem()
 {
   *this = jsonValue;
 }

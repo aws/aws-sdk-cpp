@@ -26,11 +26,8 @@ Merge::Merge() :
 {
 }
 
-Merge::Merge(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_inputsHasBeenSet(false),
-    m_sourceHasBeenSet(false),
-    m_primaryKeysHasBeenSet(false)
+Merge::Merge(JsonView jsonValue)
+  : Merge()
 {
   *this = jsonValue;
 }

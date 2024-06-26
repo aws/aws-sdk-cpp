@@ -22,8 +22,8 @@ GetBucketMetricDataResult::GetBucketMetricDataResult() :
 {
 }
 
-GetBucketMetricDataResult::GetBucketMetricDataResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_metricName(BucketMetricName::NOT_SET)
+GetBucketMetricDataResult::GetBucketMetricDataResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetBucketMetricDataResult()
 {
   *this = result;
 }

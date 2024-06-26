@@ -22,8 +22,8 @@ GetRecordsResult::GetRecordsResult() :
 {
 }
 
-GetRecordsResult::GetRecordsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_millisBehindLatest(0)
+GetRecordsResult::GetRecordsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetRecordsResult()
 {
   *this = result;
 }

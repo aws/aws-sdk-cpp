@@ -26,11 +26,8 @@ FieldValidationConfiguration::FieldValidationConfiguration() :
 {
 }
 
-FieldValidationConfiguration::FieldValidationConfiguration(JsonView jsonValue) : 
-    m_typeHasBeenSet(false),
-    m_strValuesHasBeenSet(false),
-    m_numValuesHasBeenSet(false),
-    m_validationMessageHasBeenSet(false)
+FieldValidationConfiguration::FieldValidationConfiguration(JsonView jsonValue)
+  : FieldValidationConfiguration()
 {
   *this = jsonValue;
 }

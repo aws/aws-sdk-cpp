@@ -25,10 +25,8 @@ SessionKeyEmvCommon::SessionKeyEmvCommon() :
 {
 }
 
-SessionKeyEmvCommon::SessionKeyEmvCommon(JsonView jsonValue) : 
-    m_applicationTransactionCounterHasBeenSet(false),
-    m_panSequenceNumberHasBeenSet(false),
-    m_primaryAccountNumberHasBeenSet(false)
+SessionKeyEmvCommon::SessionKeyEmvCommon(JsonView jsonValue)
+  : SessionKeyEmvCommon()
 {
   *this = jsonValue;
 }

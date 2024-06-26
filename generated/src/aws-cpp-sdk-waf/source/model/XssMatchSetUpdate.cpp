@@ -25,10 +25,8 @@ XssMatchSetUpdate::XssMatchSetUpdate() :
 {
 }
 
-XssMatchSetUpdate::XssMatchSetUpdate(JsonView jsonValue) : 
-    m_action(ChangeAction::NOT_SET),
-    m_actionHasBeenSet(false),
-    m_xssMatchTupleHasBeenSet(false)
+XssMatchSetUpdate::XssMatchSetUpdate(JsonView jsonValue)
+  : XssMatchSetUpdate()
 {
   *this = jsonValue;
 }

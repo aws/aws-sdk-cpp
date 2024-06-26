@@ -22,8 +22,8 @@ StopDevEnvironmentResult::StopDevEnvironmentResult() :
 {
 }
 
-StopDevEnvironmentResult::StopDevEnvironmentResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(DevEnvironmentStatus::NOT_SET)
+StopDevEnvironmentResult::StopDevEnvironmentResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : StopDevEnvironmentResult()
 {
   *this = result;
 }

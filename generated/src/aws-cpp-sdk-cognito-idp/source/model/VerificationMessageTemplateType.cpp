@@ -29,14 +29,8 @@ VerificationMessageTemplateType::VerificationMessageTemplateType() :
 {
 }
 
-VerificationMessageTemplateType::VerificationMessageTemplateType(JsonView jsonValue) : 
-    m_smsMessageHasBeenSet(false),
-    m_emailMessageHasBeenSet(false),
-    m_emailSubjectHasBeenSet(false),
-    m_emailMessageByLinkHasBeenSet(false),
-    m_emailSubjectByLinkHasBeenSet(false),
-    m_defaultEmailOption(DefaultEmailOptionType::NOT_SET),
-    m_defaultEmailOptionHasBeenSet(false)
+VerificationMessageTemplateType::VerificationMessageTemplateType(JsonView jsonValue)
+  : VerificationMessageTemplateType()
 {
   *this = jsonValue;
 }

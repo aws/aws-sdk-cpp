@@ -25,8 +25,8 @@ AdjustmentType::AdjustmentType() :
 {
 }
 
-AdjustmentType::AdjustmentType(const XmlNode& xmlNode) : 
-    m_adjustmentTypeHasBeenSet(false)
+AdjustmentType::AdjustmentType(const XmlNode& xmlNode)
+  : AdjustmentType()
 {
   *this = xmlNode;
 }

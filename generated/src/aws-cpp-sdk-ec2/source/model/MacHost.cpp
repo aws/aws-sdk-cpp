@@ -26,9 +26,8 @@ MacHost::MacHost() :
 {
 }
 
-MacHost::MacHost(const XmlNode& xmlNode) : 
-    m_hostIdHasBeenSet(false),
-    m_macOSLatestSupportedVersionsHasBeenSet(false)
+MacHost::MacHost(const XmlNode& xmlNode)
+  : MacHost()
 {
   *this = xmlNode;
 }

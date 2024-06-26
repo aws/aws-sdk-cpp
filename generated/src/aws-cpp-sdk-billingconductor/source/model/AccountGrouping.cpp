@@ -25,10 +25,8 @@ AccountGrouping::AccountGrouping() :
 {
 }
 
-AccountGrouping::AccountGrouping(JsonView jsonValue) : 
-    m_linkedAccountIdsHasBeenSet(false),
-    m_autoAssociate(false),
-    m_autoAssociateHasBeenSet(false)
+AccountGrouping::AccountGrouping(JsonView jsonValue)
+  : AccountGrouping()
 {
   *this = jsonValue;
 }

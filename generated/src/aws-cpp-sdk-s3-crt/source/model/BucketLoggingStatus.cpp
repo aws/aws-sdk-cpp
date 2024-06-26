@@ -25,8 +25,8 @@ BucketLoggingStatus::BucketLoggingStatus() :
 {
 }
 
-BucketLoggingStatus::BucketLoggingStatus(const XmlNode& xmlNode) : 
-    m_loggingEnabledHasBeenSet(false)
+BucketLoggingStatus::BucketLoggingStatus(const XmlNode& xmlNode)
+  : BucketLoggingStatus()
 {
   *this = xmlNode;
 }

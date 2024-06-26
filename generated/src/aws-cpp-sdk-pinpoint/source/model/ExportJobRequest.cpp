@@ -27,12 +27,8 @@ ExportJobRequest::ExportJobRequest() :
 {
 }
 
-ExportJobRequest::ExportJobRequest(JsonView jsonValue) : 
-    m_roleArnHasBeenSet(false),
-    m_s3UrlPrefixHasBeenSet(false),
-    m_segmentIdHasBeenSet(false),
-    m_segmentVersion(0),
-    m_segmentVersionHasBeenSet(false)
+ExportJobRequest::ExportJobRequest(JsonView jsonValue)
+  : ExportJobRequest()
 {
   *this = jsonValue;
 }

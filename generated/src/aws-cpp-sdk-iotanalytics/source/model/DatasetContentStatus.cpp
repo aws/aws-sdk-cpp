@@ -25,10 +25,8 @@ DatasetContentStatus::DatasetContentStatus() :
 {
 }
 
-DatasetContentStatus::DatasetContentStatus(JsonView jsonValue) : 
-    m_state(DatasetContentState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_reasonHasBeenSet(false)
+DatasetContentStatus::DatasetContentStatus(JsonView jsonValue)
+  : DatasetContentStatus()
 {
   *this = jsonValue;
 }

@@ -33,18 +33,8 @@ UsageLimit::UsageLimit() :
 {
 }
 
-UsageLimit::UsageLimit(JsonView jsonValue) : 
-    m_amount(0),
-    m_amountHasBeenSet(false),
-    m_breachAction(UsageLimitBreachAction::NOT_SET),
-    m_breachActionHasBeenSet(false),
-    m_period(UsageLimitPeriod::NOT_SET),
-    m_periodHasBeenSet(false),
-    m_resourceArnHasBeenSet(false),
-    m_usageLimitArnHasBeenSet(false),
-    m_usageLimitIdHasBeenSet(false),
-    m_usageType(UsageLimitUsageType::NOT_SET),
-    m_usageTypeHasBeenSet(false)
+UsageLimit::UsageLimit(JsonView jsonValue)
+  : UsageLimit()
 {
   *this = jsonValue;
 }

@@ -32,17 +32,8 @@ DefaultWorkspaceCreationProperties::DefaultWorkspaceCreationProperties() :
 {
 }
 
-DefaultWorkspaceCreationProperties::DefaultWorkspaceCreationProperties(JsonView jsonValue) : 
-    m_enableWorkDocs(false),
-    m_enableWorkDocsHasBeenSet(false),
-    m_enableInternetAccess(false),
-    m_enableInternetAccessHasBeenSet(false),
-    m_defaultOuHasBeenSet(false),
-    m_customSecurityGroupIdHasBeenSet(false),
-    m_userEnabledAsLocalAdministrator(false),
-    m_userEnabledAsLocalAdministratorHasBeenSet(false),
-    m_enableMaintenanceMode(false),
-    m_enableMaintenanceModeHasBeenSet(false)
+DefaultWorkspaceCreationProperties::DefaultWorkspaceCreationProperties(JsonView jsonValue)
+  : DefaultWorkspaceCreationProperties()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ ContentArtifactsConfiguration::ContentArtifactsConfiguration() :
 {
 }
 
-ContentArtifactsConfiguration::ContentArtifactsConfiguration(JsonView jsonValue) : 
-    m_state(ArtifactsState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_muxType(ContentMuxType::NOT_SET),
-    m_muxTypeHasBeenSet(false)
+ContentArtifactsConfiguration::ContentArtifactsConfiguration(JsonView jsonValue)
+  : ContentArtifactsConfiguration()
 {
   *this = jsonValue;
 }

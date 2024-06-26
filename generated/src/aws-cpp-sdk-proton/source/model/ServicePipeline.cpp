@@ -35,20 +35,8 @@ ServicePipeline::ServicePipeline() :
 {
 }
 
-ServicePipeline::ServicePipeline(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_deploymentStatus(DeploymentStatus::NOT_SET),
-    m_deploymentStatusHasBeenSet(false),
-    m_deploymentStatusMessageHasBeenSet(false),
-    m_lastAttemptedDeploymentIdHasBeenSet(false),
-    m_lastDeploymentAttemptedAtHasBeenSet(false),
-    m_lastDeploymentSucceededAtHasBeenSet(false),
-    m_lastSucceededDeploymentIdHasBeenSet(false),
-    m_specHasBeenSet(false),
-    m_templateMajorVersionHasBeenSet(false),
-    m_templateMinorVersionHasBeenSet(false),
-    m_templateNameHasBeenSet(false)
+ServicePipeline::ServicePipeline(JsonView jsonValue)
+  : ServicePipeline()
 {
   *this = jsonValue;
 }

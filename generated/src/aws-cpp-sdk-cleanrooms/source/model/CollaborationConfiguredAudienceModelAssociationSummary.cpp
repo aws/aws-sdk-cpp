@@ -31,16 +31,8 @@ CollaborationConfiguredAudienceModelAssociationSummary::CollaborationConfiguredA
 {
 }
 
-CollaborationConfiguredAudienceModelAssociationSummary::CollaborationConfiguredAudienceModelAssociationSummary(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_updateTimeHasBeenSet(false),
-    m_collaborationArnHasBeenSet(false),
-    m_collaborationIdHasBeenSet(false),
-    m_creatorAccountIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+CollaborationConfiguredAudienceModelAssociationSummary::CollaborationConfiguredAudienceModelAssociationSummary(JsonView jsonValue)
+  : CollaborationConfiguredAudienceModelAssociationSummary()
 {
   *this = jsonValue;
 }

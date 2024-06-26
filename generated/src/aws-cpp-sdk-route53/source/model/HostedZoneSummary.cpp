@@ -27,10 +27,8 @@ HostedZoneSummary::HostedZoneSummary() :
 {
 }
 
-HostedZoneSummary::HostedZoneSummary(const XmlNode& xmlNode) : 
-    m_hostedZoneIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_ownerHasBeenSet(false)
+HostedZoneSummary::HostedZoneSummary(const XmlNode& xmlNode)
+  : HostedZoneSummary()
 {
   *this = xmlNode;
 }

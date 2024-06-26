@@ -27,12 +27,8 @@ CatalogHudiSource::CatalogHudiSource() :
 {
 }
 
-CatalogHudiSource::CatalogHudiSource(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_databaseHasBeenSet(false),
-    m_tableHasBeenSet(false),
-    m_additionalHudiOptionsHasBeenSet(false),
-    m_outputSchemasHasBeenSet(false)
+CatalogHudiSource::CatalogHudiSource(JsonView jsonValue)
+  : CatalogHudiSource()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ DomainDeliverabilityTrackingOption::DomainDeliverabilityTrackingOption() :
 {
 }
 
-DomainDeliverabilityTrackingOption::DomainDeliverabilityTrackingOption(JsonView jsonValue) : 
-    m_domainHasBeenSet(false),
-    m_subscriptionStartDateHasBeenSet(false),
-    m_inboxPlacementTrackingOptionHasBeenSet(false)
+DomainDeliverabilityTrackingOption::DomainDeliverabilityTrackingOption(JsonView jsonValue)
+  : DomainDeliverabilityTrackingOption()
 {
   *this = jsonValue;
 }

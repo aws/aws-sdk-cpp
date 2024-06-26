@@ -28,13 +28,8 @@ DataType::DataType() :
 {
 }
 
-DataType::DataType(JsonView jsonValue) : 
-    m_type(Type::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_nestedTypeHasBeenSet(false),
-    m_allowedValuesHasBeenSet(false),
-    m_unitOfMeasureHasBeenSet(false),
-    m_relationshipHasBeenSet(false)
+DataType::DataType(JsonView jsonValue)
+  : DataType()
 {
   *this = jsonValue;
 }

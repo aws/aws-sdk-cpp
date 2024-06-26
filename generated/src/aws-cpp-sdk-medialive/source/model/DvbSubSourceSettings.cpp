@@ -26,11 +26,8 @@ DvbSubSourceSettings::DvbSubSourceSettings() :
 {
 }
 
-DvbSubSourceSettings::DvbSubSourceSettings(JsonView jsonValue) : 
-    m_ocrLanguage(DvbSubOcrLanguage::NOT_SET),
-    m_ocrLanguageHasBeenSet(false),
-    m_pid(0),
-    m_pidHasBeenSet(false)
+DvbSubSourceSettings::DvbSubSourceSettings(JsonView jsonValue)
+  : DvbSubSourceSettings()
 {
   *this = jsonValue;
 }

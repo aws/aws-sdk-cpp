@@ -25,10 +25,8 @@ SidewalkAccountInfoWithFingerprint::SidewalkAccountInfoWithFingerprint() :
 {
 }
 
-SidewalkAccountInfoWithFingerprint::SidewalkAccountInfoWithFingerprint(JsonView jsonValue) : 
-    m_amazonIdHasBeenSet(false),
-    m_fingerprintHasBeenSet(false),
-    m_arnHasBeenSet(false)
+SidewalkAccountInfoWithFingerprint::SidewalkAccountInfoWithFingerprint(JsonView jsonValue)
+  : SidewalkAccountInfoWithFingerprint()
 {
   *this = jsonValue;
 }

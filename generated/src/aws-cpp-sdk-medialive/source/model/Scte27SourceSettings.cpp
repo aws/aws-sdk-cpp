@@ -26,11 +26,8 @@ Scte27SourceSettings::Scte27SourceSettings() :
 {
 }
 
-Scte27SourceSettings::Scte27SourceSettings(JsonView jsonValue) : 
-    m_ocrLanguage(Scte27OcrLanguage::NOT_SET),
-    m_ocrLanguageHasBeenSet(false),
-    m_pid(0),
-    m_pidHasBeenSet(false)
+Scte27SourceSettings::Scte27SourceSettings(JsonView jsonValue)
+  : Scte27SourceSettings()
 {
   *this = jsonValue;
 }

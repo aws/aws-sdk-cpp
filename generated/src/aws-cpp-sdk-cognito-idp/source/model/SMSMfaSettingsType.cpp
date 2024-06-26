@@ -26,11 +26,8 @@ SMSMfaSettingsType::SMSMfaSettingsType() :
 {
 }
 
-SMSMfaSettingsType::SMSMfaSettingsType(JsonView jsonValue) : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_preferredMfa(false),
-    m_preferredMfaHasBeenSet(false)
+SMSMfaSettingsType::SMSMfaSettingsType(JsonView jsonValue)
+  : SMSMfaSettingsType()
 {
   *this = jsonValue;
 }

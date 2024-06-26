@@ -26,11 +26,8 @@ ComponentState::ComponentState() :
 {
 }
 
-ComponentState::ComponentState(JsonView jsonValue) : 
-    m_serviceInstanceNameHasBeenSet(false),
-    m_serviceNameHasBeenSet(false),
-    m_serviceSpecHasBeenSet(false),
-    m_templateFileHasBeenSet(false)
+ComponentState::ComponentState(JsonView jsonValue)
+  : ComponentState()
 {
   *this = jsonValue;
 }

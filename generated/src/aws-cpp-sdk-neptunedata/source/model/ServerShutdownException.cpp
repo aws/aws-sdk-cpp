@@ -25,10 +25,8 @@ ServerShutdownException::ServerShutdownException() :
 {
 }
 
-ServerShutdownException::ServerShutdownException(JsonView jsonValue) : 
-    m_detailedMessageHasBeenSet(false),
-    m_requestIdHasBeenSet(false),
-    m_codeHasBeenSet(false)
+ServerShutdownException::ServerShutdownException(JsonView jsonValue)
+  : ServerShutdownException()
 {
   *this = jsonValue;
 }

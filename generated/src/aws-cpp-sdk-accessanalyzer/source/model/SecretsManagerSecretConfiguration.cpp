@@ -24,9 +24,8 @@ SecretsManagerSecretConfiguration::SecretsManagerSecretConfiguration() :
 {
 }
 
-SecretsManagerSecretConfiguration::SecretsManagerSecretConfiguration(JsonView jsonValue) : 
-    m_kmsKeyIdHasBeenSet(false),
-    m_secretPolicyHasBeenSet(false)
+SecretsManagerSecretConfiguration::SecretsManagerSecretConfiguration(JsonView jsonValue)
+  : SecretsManagerSecretConfiguration()
 {
   *this = jsonValue;
 }

@@ -31,16 +31,8 @@ DataLakeResource::DataLakeResource() :
 {
 }
 
-DataLakeResource::DataLakeResource(JsonView jsonValue) : 
-    m_createStatus(DataLakeStatus::NOT_SET),
-    m_createStatusHasBeenSet(false),
-    m_dataLakeArnHasBeenSet(false),
-    m_encryptionConfigurationHasBeenSet(false),
-    m_lifecycleConfigurationHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_replicationConfigurationHasBeenSet(false),
-    m_s3BucketArnHasBeenSet(false),
-    m_updateStatusHasBeenSet(false)
+DataLakeResource::DataLakeResource(JsonView jsonValue)
+  : DataLakeResource()
 {
   *this = jsonValue;
 }

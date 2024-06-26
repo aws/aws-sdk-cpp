@@ -25,10 +25,8 @@ IPSetDescriptor::IPSetDescriptor() :
 {
 }
 
-IPSetDescriptor::IPSetDescriptor(JsonView jsonValue) : 
-    m_type(IPSetDescriptorType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_valueHasBeenSet(false)
+IPSetDescriptor::IPSetDescriptor(JsonView jsonValue)
+  : IPSetDescriptor()
 {
   *this = jsonValue;
 }

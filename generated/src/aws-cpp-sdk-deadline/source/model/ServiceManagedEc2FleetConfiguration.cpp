@@ -24,9 +24,8 @@ ServiceManagedEc2FleetConfiguration::ServiceManagedEc2FleetConfiguration() :
 {
 }
 
-ServiceManagedEc2FleetConfiguration::ServiceManagedEc2FleetConfiguration(JsonView jsonValue) : 
-    m_instanceCapabilitiesHasBeenSet(false),
-    m_instanceMarketOptionsHasBeenSet(false)
+ServiceManagedEc2FleetConfiguration::ServiceManagedEc2FleetConfiguration(JsonView jsonValue)
+  : ServiceManagedEc2FleetConfiguration()
 {
   *this = jsonValue;
 }

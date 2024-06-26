@@ -25,9 +25,8 @@ CommitTransactionRequest::CommitTransactionRequest() :
 {
 }
 
-CommitTransactionRequest::CommitTransactionRequest(JsonView jsonValue) : 
-    m_transactionIdHasBeenSet(false),
-    m_commitDigestHasBeenSet(false)
+CommitTransactionRequest::CommitTransactionRequest(JsonView jsonValue)
+  : CommitTransactionRequest()
 {
   *this = jsonValue;
 }

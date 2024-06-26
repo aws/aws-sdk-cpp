@@ -24,9 +24,8 @@ CustomerVoiceActivity::CustomerVoiceActivity() :
 {
 }
 
-CustomerVoiceActivity::CustomerVoiceActivity(JsonView jsonValue) : 
-    m_greetingStartTimestampHasBeenSet(false),
-    m_greetingEndTimestampHasBeenSet(false)
+CustomerVoiceActivity::CustomerVoiceActivity(JsonView jsonValue)
+  : CustomerVoiceActivity()
 {
   *this = jsonValue;
 }

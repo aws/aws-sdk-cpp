@@ -25,10 +25,8 @@ RescoreResultItem::RescoreResultItem() :
 {
 }
 
-RescoreResultItem::RescoreResultItem(JsonView jsonValue) : 
-    m_documentIdHasBeenSet(false),
-    m_score(0.0),
-    m_scoreHasBeenSet(false)
+RescoreResultItem::RescoreResultItem(JsonView jsonValue)
+  : RescoreResultItem()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ SingleSignOn::SingleSignOn() :
 {
 }
 
-SingleSignOn::SingleSignOn(JsonView jsonValue) : 
-    m_type(AuthType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_userAssignment(UserAssignment::NOT_SET),
-    m_userAssignmentHasBeenSet(false)
+SingleSignOn::SingleSignOn(JsonView jsonValue)
+  : SingleSignOn()
 {
   *this = jsonValue;
 }

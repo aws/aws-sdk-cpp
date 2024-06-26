@@ -44,29 +44,8 @@ AwsLambdaFunctionDetails::AwsLambdaFunctionDetails() :
 {
 }
 
-AwsLambdaFunctionDetails::AwsLambdaFunctionDetails(JsonView jsonValue) : 
-    m_codeHasBeenSet(false),
-    m_codeSha256HasBeenSet(false),
-    m_deadLetterConfigHasBeenSet(false),
-    m_environmentHasBeenSet(false),
-    m_functionNameHasBeenSet(false),
-    m_handlerHasBeenSet(false),
-    m_kmsKeyArnHasBeenSet(false),
-    m_lastModifiedHasBeenSet(false),
-    m_layersHasBeenSet(false),
-    m_masterArnHasBeenSet(false),
-    m_memorySize(0),
-    m_memorySizeHasBeenSet(false),
-    m_revisionIdHasBeenSet(false),
-    m_roleHasBeenSet(false),
-    m_runtimeHasBeenSet(false),
-    m_timeout(0),
-    m_timeoutHasBeenSet(false),
-    m_tracingConfigHasBeenSet(false),
-    m_vpcConfigHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_architecturesHasBeenSet(false),
-    m_packageTypeHasBeenSet(false)
+AwsLambdaFunctionDetails::AwsLambdaFunctionDetails(JsonView jsonValue)
+  : AwsLambdaFunctionDetails()
 {
   *this = jsonValue;
 }

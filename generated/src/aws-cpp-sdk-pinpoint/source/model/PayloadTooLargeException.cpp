@@ -24,9 +24,8 @@ PayloadTooLargeException::PayloadTooLargeException() :
 {
 }
 
-PayloadTooLargeException::PayloadTooLargeException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_requestIDHasBeenSet(false)
+PayloadTooLargeException::PayloadTooLargeException(JsonView jsonValue)
+  : PayloadTooLargeException()
 {
   *this = jsonValue;
 }

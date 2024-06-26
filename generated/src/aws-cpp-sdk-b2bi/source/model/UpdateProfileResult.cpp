@@ -22,8 +22,8 @@ UpdateProfileResult::UpdateProfileResult() :
 {
 }
 
-UpdateProfileResult::UpdateProfileResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_logging(Logging::NOT_SET)
+UpdateProfileResult::UpdateProfileResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateProfileResult()
 {
   *this = result;
 }

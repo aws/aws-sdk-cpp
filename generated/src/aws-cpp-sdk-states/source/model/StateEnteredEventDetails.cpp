@@ -25,10 +25,8 @@ StateEnteredEventDetails::StateEnteredEventDetails() :
 {
 }
 
-StateEnteredEventDetails::StateEnteredEventDetails(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_inputHasBeenSet(false),
-    m_inputDetailsHasBeenSet(false)
+StateEnteredEventDetails::StateEnteredEventDetails(JsonView jsonValue)
+  : StateEnteredEventDetails()
 {
   *this = jsonValue;
 }

@@ -28,13 +28,8 @@ Registry::Registry() :
 {
 }
 
-Registry::Registry(JsonView jsonValue) : 
-    m_registryIdHasBeenSet(false),
-    m_registryArnHasBeenSet(false),
-    m_registryUriHasBeenSet(false),
-    m_verified(false),
-    m_verifiedHasBeenSet(false),
-    m_aliasesHasBeenSet(false)
+Registry::Registry(JsonView jsonValue)
+  : Registry()
 {
   *this = jsonValue;
 }

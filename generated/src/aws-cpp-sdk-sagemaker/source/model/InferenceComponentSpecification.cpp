@@ -26,11 +26,8 @@ InferenceComponentSpecification::InferenceComponentSpecification() :
 {
 }
 
-InferenceComponentSpecification::InferenceComponentSpecification(JsonView jsonValue) : 
-    m_modelNameHasBeenSet(false),
-    m_containerHasBeenSet(false),
-    m_startupParametersHasBeenSet(false),
-    m_computeResourceRequirementsHasBeenSet(false)
+InferenceComponentSpecification::InferenceComponentSpecification(JsonView jsonValue)
+  : InferenceComponentSpecification()
 {
   *this = jsonValue;
 }

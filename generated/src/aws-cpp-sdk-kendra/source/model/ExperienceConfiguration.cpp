@@ -24,9 +24,8 @@ ExperienceConfiguration::ExperienceConfiguration() :
 {
 }
 
-ExperienceConfiguration::ExperienceConfiguration(JsonView jsonValue) : 
-    m_contentSourceConfigurationHasBeenSet(false),
-    m_userIdentityConfigurationHasBeenSet(false)
+ExperienceConfiguration::ExperienceConfiguration(JsonView jsonValue)
+  : ExperienceConfiguration()
 {
   *this = jsonValue;
 }

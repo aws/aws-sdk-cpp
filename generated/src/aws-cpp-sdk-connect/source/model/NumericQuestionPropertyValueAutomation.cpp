@@ -24,9 +24,8 @@ NumericQuestionPropertyValueAutomation::NumericQuestionPropertyValueAutomation()
 {
 }
 
-NumericQuestionPropertyValueAutomation::NumericQuestionPropertyValueAutomation(JsonView jsonValue) : 
-    m_label(NumericQuestionPropertyAutomationLabel::NOT_SET),
-    m_labelHasBeenSet(false)
+NumericQuestionPropertyValueAutomation::NumericQuestionPropertyValueAutomation(JsonView jsonValue)
+  : NumericQuestionPropertyValueAutomation()
 {
   *this = jsonValue;
 }

@@ -27,12 +27,8 @@ ElasticInferenceAccelerator::ElasticInferenceAccelerator() :
 {
 }
 
-ElasticInferenceAccelerator::ElasticInferenceAccelerator(JsonView jsonValue) : 
-    m_acceleratorHealthHasBeenSet(false),
-    m_acceleratorTypeHasBeenSet(false),
-    m_acceleratorIdHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_attachedResourceHasBeenSet(false)
+ElasticInferenceAccelerator::ElasticInferenceAccelerator(JsonView jsonValue)
+  : ElasticInferenceAccelerator()
 {
   *this = jsonValue;
 }

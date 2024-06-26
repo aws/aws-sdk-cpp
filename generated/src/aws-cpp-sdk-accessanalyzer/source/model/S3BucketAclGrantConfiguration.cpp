@@ -25,10 +25,8 @@ S3BucketAclGrantConfiguration::S3BucketAclGrantConfiguration() :
 {
 }
 
-S3BucketAclGrantConfiguration::S3BucketAclGrantConfiguration(JsonView jsonValue) : 
-    m_permission(AclPermission::NOT_SET),
-    m_permissionHasBeenSet(false),
-    m_granteeHasBeenSet(false)
+S3BucketAclGrantConfiguration::S3BucketAclGrantConfiguration(JsonView jsonValue)
+  : S3BucketAclGrantConfiguration()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ InsightImpactGraphEdge::InsightImpactGraphEdge() :
 {
 }
 
-InsightImpactGraphEdge::InsightImpactGraphEdge(JsonView jsonValue) : 
-    m_referenceId(0),
-    m_referenceIdHasBeenSet(false)
+InsightImpactGraphEdge::InsightImpactGraphEdge(JsonView jsonValue)
+  : InsightImpactGraphEdge()
 {
   *this = jsonValue;
 }

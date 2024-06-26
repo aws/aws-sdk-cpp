@@ -30,14 +30,8 @@ AliasConfiguration::AliasConfiguration() :
 {
 }
 
-AliasConfiguration::AliasConfiguration(JsonView jsonValue) : 
-    m_aliasArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_functionVersionHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_routingConfigHasBeenSet(false),
-    m_revisionIdHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
+AliasConfiguration::AliasConfiguration(JsonView jsonValue)
+  : AliasConfiguration()
 {
   *this = jsonValue;
 }

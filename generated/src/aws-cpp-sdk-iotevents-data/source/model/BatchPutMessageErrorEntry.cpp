@@ -26,11 +26,8 @@ BatchPutMessageErrorEntry::BatchPutMessageErrorEntry() :
 {
 }
 
-BatchPutMessageErrorEntry::BatchPutMessageErrorEntry(JsonView jsonValue) : 
-    m_messageIdHasBeenSet(false),
-    m_errorCode(ErrorCode::NOT_SET),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
+BatchPutMessageErrorEntry::BatchPutMessageErrorEntry(JsonView jsonValue)
+  : BatchPutMessageErrorEntry()
 {
   *this = jsonValue;
 }

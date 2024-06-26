@@ -25,10 +25,8 @@ SuccessfulCampaignStateResponse::SuccessfulCampaignStateResponse() :
 {
 }
 
-SuccessfulCampaignStateResponse::SuccessfulCampaignStateResponse(JsonView jsonValue) : 
-    m_campaignIdHasBeenSet(false),
-    m_state(CampaignState::NOT_SET),
-    m_stateHasBeenSet(false)
+SuccessfulCampaignStateResponse::SuccessfulCampaignStateResponse(JsonView jsonValue)
+  : SuccessfulCampaignStateResponse()
 {
   *this = jsonValue;
 }

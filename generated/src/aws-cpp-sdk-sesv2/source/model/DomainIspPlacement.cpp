@@ -31,16 +31,8 @@ DomainIspPlacement::DomainIspPlacement() :
 {
 }
 
-DomainIspPlacement::DomainIspPlacement(JsonView jsonValue) : 
-    m_ispNameHasBeenSet(false),
-    m_inboxRawCount(0),
-    m_inboxRawCountHasBeenSet(false),
-    m_spamRawCount(0),
-    m_spamRawCountHasBeenSet(false),
-    m_inboxPercentage(0.0),
-    m_inboxPercentageHasBeenSet(false),
-    m_spamPercentage(0.0),
-    m_spamPercentageHasBeenSet(false)
+DomainIspPlacement::DomainIspPlacement(JsonView jsonValue)
+  : DomainIspPlacement()
 {
   *this = jsonValue;
 }

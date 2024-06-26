@@ -24,9 +24,8 @@ UtteranceInputSpecification::UtteranceInputSpecification() :
 {
 }
 
-UtteranceInputSpecification::UtteranceInputSpecification(JsonView jsonValue) : 
-    m_textInputHasBeenSet(false),
-    m_audioInputHasBeenSet(false)
+UtteranceInputSpecification::UtteranceInputSpecification(JsonView jsonValue)
+  : UtteranceInputSpecification()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ ContainerProductTitleFilter::ContainerProductTitleFilter() :
 {
 }
 
-ContainerProductTitleFilter::ContainerProductTitleFilter(JsonView jsonValue) : 
-    m_valueListHasBeenSet(false),
-    m_wildCardValueHasBeenSet(false)
+ContainerProductTitleFilter::ContainerProductTitleFilter(JsonView jsonValue)
+  : ContainerProductTitleFilter()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ RepromptResponse::RepromptResponse() :
 {
 }
 
-RepromptResponse::RepromptResponse(JsonView jsonValue) : 
-    m_source(Source::NOT_SET),
-    m_sourceHasBeenSet(false),
-    m_textHasBeenSet(false)
+RepromptResponse::RepromptResponse(JsonView jsonValue)
+  : RepromptResponse()
 {
   *this = jsonValue;
 }

@@ -24,10 +24,8 @@ DescribeFleetMetricResult::DescribeFleetMetricResult() :
 {
 }
 
-DescribeFleetMetricResult::DescribeFleetMetricResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_period(0),
-    m_unit(FleetMetricUnit::NOT_SET),
-    m_version(0)
+DescribeFleetMetricResult::DescribeFleetMetricResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeFleetMetricResult()
 {
   *this = result;
 }

@@ -23,8 +23,8 @@ FixedModeScheduleActionStartSettings::FixedModeScheduleActionStartSettings() :
 {
 }
 
-FixedModeScheduleActionStartSettings::FixedModeScheduleActionStartSettings(JsonView jsonValue) : 
-    m_timeHasBeenSet(false)
+FixedModeScheduleActionStartSettings::FixedModeScheduleActionStartSettings(JsonView jsonValue)
+  : FixedModeScheduleActionStartSettings()
 {
   *this = jsonValue;
 }

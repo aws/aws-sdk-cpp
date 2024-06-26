@@ -28,13 +28,8 @@ EventSummary::EventSummary() :
 {
 }
 
-EventSummary::EventSummary(JsonView jsonValue) : 
-    m_eventIdHasBeenSet(false),
-    m_eventReferencesHasBeenSet(false),
-    m_eventTimeHasBeenSet(false),
-    m_eventTypeHasBeenSet(false),
-    m_eventUpdatedTimeHasBeenSet(false),
-    m_incidentRecordArnHasBeenSet(false)
+EventSummary::EventSummary(JsonView jsonValue)
+  : EventSummary()
 {
   *this = jsonValue;
 }

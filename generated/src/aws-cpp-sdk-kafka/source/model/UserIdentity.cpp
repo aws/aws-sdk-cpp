@@ -25,10 +25,8 @@ UserIdentity::UserIdentity() :
 {
 }
 
-UserIdentity::UserIdentity(JsonView jsonValue) : 
-    m_type(UserIdentityType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_principalIdHasBeenSet(false)
+UserIdentity::UserIdentity(JsonView jsonValue)
+  : UserIdentity()
 {
   *this = jsonValue;
 }

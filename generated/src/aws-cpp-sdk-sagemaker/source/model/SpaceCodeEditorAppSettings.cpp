@@ -23,8 +23,8 @@ SpaceCodeEditorAppSettings::SpaceCodeEditorAppSettings() :
 {
 }
 
-SpaceCodeEditorAppSettings::SpaceCodeEditorAppSettings(JsonView jsonValue) : 
-    m_defaultResourceSpecHasBeenSet(false)
+SpaceCodeEditorAppSettings::SpaceCodeEditorAppSettings(JsonView jsonValue)
+  : SpaceCodeEditorAppSettings()
 {
   *this = jsonValue;
 }

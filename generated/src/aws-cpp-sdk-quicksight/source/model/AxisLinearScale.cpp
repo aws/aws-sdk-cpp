@@ -26,11 +26,8 @@ AxisLinearScale::AxisLinearScale() :
 {
 }
 
-AxisLinearScale::AxisLinearScale(JsonView jsonValue) : 
-    m_stepCount(0),
-    m_stepCountHasBeenSet(false),
-    m_stepSize(0.0),
-    m_stepSizeHasBeenSet(false)
+AxisLinearScale::AxisLinearScale(JsonView jsonValue)
+  : AxisLinearScale()
 {
   *this = jsonValue;
 }

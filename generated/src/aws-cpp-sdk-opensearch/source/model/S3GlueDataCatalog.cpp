@@ -23,8 +23,8 @@ S3GlueDataCatalog::S3GlueDataCatalog() :
 {
 }
 
-S3GlueDataCatalog::S3GlueDataCatalog(JsonView jsonValue) : 
-    m_roleArnHasBeenSet(false)
+S3GlueDataCatalog::S3GlueDataCatalog(JsonView jsonValue)
+  : S3GlueDataCatalog()
 {
   *this = jsonValue;
 }

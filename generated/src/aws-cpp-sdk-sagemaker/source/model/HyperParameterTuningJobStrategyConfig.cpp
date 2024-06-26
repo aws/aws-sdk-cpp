@@ -23,8 +23,8 @@ HyperParameterTuningJobStrategyConfig::HyperParameterTuningJobStrategyConfig() :
 {
 }
 
-HyperParameterTuningJobStrategyConfig::HyperParameterTuningJobStrategyConfig(JsonView jsonValue) : 
-    m_hyperbandStrategyConfigHasBeenSet(false)
+HyperParameterTuningJobStrategyConfig::HyperParameterTuningJobStrategyConfig(JsonView jsonValue)
+  : HyperParameterTuningJobStrategyConfig()
 {
   *this = jsonValue;
 }

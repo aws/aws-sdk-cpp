@@ -28,13 +28,8 @@ RoundTripTime::RoundTripTime() :
 {
 }
 
-RoundTripTime::RoundTripTime(JsonView jsonValue) : 
-    m_p50(0.0),
-    m_p50HasBeenSet(false),
-    m_p90(0.0),
-    m_p90HasBeenSet(false),
-    m_p95(0.0),
-    m_p95HasBeenSet(false)
+RoundTripTime::RoundTripTime(JsonView jsonValue)
+  : RoundTripTime()
 {
   *this = jsonValue;
 }

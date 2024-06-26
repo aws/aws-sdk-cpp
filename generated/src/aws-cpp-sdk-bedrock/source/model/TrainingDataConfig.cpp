@@ -23,8 +23,8 @@ TrainingDataConfig::TrainingDataConfig() :
 {
 }
 
-TrainingDataConfig::TrainingDataConfig(JsonView jsonValue) : 
-    m_s3UriHasBeenSet(false)
+TrainingDataConfig::TrainingDataConfig(JsonView jsonValue)
+  : TrainingDataConfig()
 {
   *this = jsonValue;
 }

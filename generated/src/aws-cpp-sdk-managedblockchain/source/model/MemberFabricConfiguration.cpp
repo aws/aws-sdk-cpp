@@ -24,9 +24,8 @@ MemberFabricConfiguration::MemberFabricConfiguration() :
 {
 }
 
-MemberFabricConfiguration::MemberFabricConfiguration(JsonView jsonValue) : 
-    m_adminUsernameHasBeenSet(false),
-    m_adminPasswordHasBeenSet(false)
+MemberFabricConfiguration::MemberFabricConfiguration(JsonView jsonValue)
+  : MemberFabricConfiguration()
 {
   *this = jsonValue;
 }

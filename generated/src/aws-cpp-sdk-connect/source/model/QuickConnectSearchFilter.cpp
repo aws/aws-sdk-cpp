@@ -23,8 +23,8 @@ QuickConnectSearchFilter::QuickConnectSearchFilter() :
 {
 }
 
-QuickConnectSearchFilter::QuickConnectSearchFilter(JsonView jsonValue) : 
-    m_tagFilterHasBeenSet(false)
+QuickConnectSearchFilter::QuickConnectSearchFilter(JsonView jsonValue)
+  : QuickConnectSearchFilter()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ SeverityLevel::SeverityLevel() :
 {
 }
 
-SeverityLevel::SeverityLevel(JsonView jsonValue) : 
-    m_occurrencesThreshold(0),
-    m_occurrencesThresholdHasBeenSet(false),
-    m_severity(DataIdentifierSeverity::NOT_SET),
-    m_severityHasBeenSet(false)
+SeverityLevel::SeverityLevel(JsonView jsonValue)
+  : SeverityLevel()
 {
   *this = jsonValue;
 }

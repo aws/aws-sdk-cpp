@@ -27,10 +27,8 @@ CreateMultiRegionAccessPointInput::CreateMultiRegionAccessPointInput() :
 {
 }
 
-CreateMultiRegionAccessPointInput::CreateMultiRegionAccessPointInput(const XmlNode& xmlNode) : 
-    m_nameHasBeenSet(false),
-    m_publicAccessBlockHasBeenSet(false),
-    m_regionsHasBeenSet(false)
+CreateMultiRegionAccessPointInput::CreateMultiRegionAccessPointInput(const XmlNode& xmlNode)
+  : CreateMultiRegionAccessPointInput()
 {
   *this = xmlNode;
 }

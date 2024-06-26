@@ -24,9 +24,8 @@ S3LogsConfiguration::S3LogsConfiguration() :
 {
 }
 
-S3LogsConfiguration::S3LogsConfiguration(JsonView jsonValue) : 
-    m_enable(false),
-    m_enableHasBeenSet(false)
+S3LogsConfiguration::S3LogsConfiguration(JsonView jsonValue)
+  : S3LogsConfiguration()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ AnalysisParameter::AnalysisParameter() :
 {
 }
 
-AnalysisParameter::AnalysisParameter(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_type(ParameterType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_defaultValueHasBeenSet(false)
+AnalysisParameter::AnalysisParameter(JsonView jsonValue)
+  : AnalysisParameter()
 {
   *this = jsonValue;
 }

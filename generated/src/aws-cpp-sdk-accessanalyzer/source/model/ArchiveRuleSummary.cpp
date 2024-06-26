@@ -26,11 +26,8 @@ ArchiveRuleSummary::ArchiveRuleSummary() :
 {
 }
 
-ArchiveRuleSummary::ArchiveRuleSummary(JsonView jsonValue) : 
-    m_ruleNameHasBeenSet(false),
-    m_filterHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+ArchiveRuleSummary::ArchiveRuleSummary(JsonView jsonValue)
+  : ArchiveRuleSummary()
 {
   *this = jsonValue;
 }

@@ -30,15 +30,8 @@ MedicalEntity::MedicalEntity() :
 {
 }
 
-MedicalEntity::MedicalEntity(JsonView jsonValue) : 
-    m_startTime(0.0),
-    m_startTimeHasBeenSet(false),
-    m_endTime(0.0),
-    m_endTimeHasBeenSet(false),
-    m_categoryHasBeenSet(false),
-    m_contentHasBeenSet(false),
-    m_confidence(0.0),
-    m_confidenceHasBeenSet(false)
+MedicalEntity::MedicalEntity(JsonView jsonValue)
+  : MedicalEntity()
 {
   *this = jsonValue;
 }

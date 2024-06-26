@@ -23,9 +23,8 @@ GetDeploymentResult::GetDeploymentResult() :
 {
 }
 
-GetDeploymentResult::GetDeploymentResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_applicationVersion(0),
-    m_status(DeploymentLifecycle::NOT_SET)
+GetDeploymentResult::GetDeploymentResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetDeploymentResult()
 {
   *this = result;
 }

@@ -38,21 +38,8 @@ ReservedDBInstancesOffering::ReservedDBInstancesOffering() :
 {
 }
 
-ReservedDBInstancesOffering::ReservedDBInstancesOffering(const XmlNode& xmlNode) : 
-    m_reservedDBInstancesOfferingIdHasBeenSet(false),
-    m_dBInstanceClassHasBeenSet(false),
-    m_duration(0),
-    m_durationHasBeenSet(false),
-    m_fixedPrice(0.0),
-    m_fixedPriceHasBeenSet(false),
-    m_usagePrice(0.0),
-    m_usagePriceHasBeenSet(false),
-    m_currencyCodeHasBeenSet(false),
-    m_productDescriptionHasBeenSet(false),
-    m_offeringTypeHasBeenSet(false),
-    m_multiAZ(false),
-    m_multiAZHasBeenSet(false),
-    m_recurringChargesHasBeenSet(false)
+ReservedDBInstancesOffering::ReservedDBInstancesOffering(const XmlNode& xmlNode)
+  : ReservedDBInstancesOffering()
 {
   *this = xmlNode;
 }

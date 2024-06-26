@@ -23,8 +23,8 @@ OIDC::OIDC() :
 {
 }
 
-OIDC::OIDC(JsonView jsonValue) : 
-    m_issuerHasBeenSet(false)
+OIDC::OIDC(JsonView jsonValue)
+  : OIDC()
 {
   *this = jsonValue;
 }

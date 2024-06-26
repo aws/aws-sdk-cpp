@@ -26,11 +26,8 @@ IdentityDocument::IdentityDocument() :
 {
 }
 
-IdentityDocument::IdentityDocument(JsonView jsonValue) : 
-    m_documentIndex(0),
-    m_documentIndexHasBeenSet(false),
-    m_identityDocumentFieldsHasBeenSet(false),
-    m_blocksHasBeenSet(false)
+IdentityDocument::IdentityDocument(JsonView jsonValue)
+  : IdentityDocument()
 {
   *this = jsonValue;
 }

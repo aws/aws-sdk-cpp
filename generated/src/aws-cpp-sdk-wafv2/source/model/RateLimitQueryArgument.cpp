@@ -24,9 +24,8 @@ RateLimitQueryArgument::RateLimitQueryArgument() :
 {
 }
 
-RateLimitQueryArgument::RateLimitQueryArgument(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_textTransformationsHasBeenSet(false)
+RateLimitQueryArgument::RateLimitQueryArgument(JsonView jsonValue)
+  : RateLimitQueryArgument()
 {
   *this = jsonValue;
 }

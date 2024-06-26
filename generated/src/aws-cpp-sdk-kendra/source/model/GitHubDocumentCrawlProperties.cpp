@@ -36,21 +36,8 @@ GitHubDocumentCrawlProperties::GitHubDocumentCrawlProperties() :
 {
 }
 
-GitHubDocumentCrawlProperties::GitHubDocumentCrawlProperties(JsonView jsonValue) : 
-    m_crawlRepositoryDocuments(false),
-    m_crawlRepositoryDocumentsHasBeenSet(false),
-    m_crawlIssue(false),
-    m_crawlIssueHasBeenSet(false),
-    m_crawlIssueComment(false),
-    m_crawlIssueCommentHasBeenSet(false),
-    m_crawlIssueCommentAttachment(false),
-    m_crawlIssueCommentAttachmentHasBeenSet(false),
-    m_crawlPullRequest(false),
-    m_crawlPullRequestHasBeenSet(false),
-    m_crawlPullRequestComment(false),
-    m_crawlPullRequestCommentHasBeenSet(false),
-    m_crawlPullRequestCommentAttachment(false),
-    m_crawlPullRequestCommentAttachmentHasBeenSet(false)
+GitHubDocumentCrawlProperties::GitHubDocumentCrawlProperties(JsonView jsonValue)
+  : GitHubDocumentCrawlProperties()
 {
   *this = jsonValue;
 }

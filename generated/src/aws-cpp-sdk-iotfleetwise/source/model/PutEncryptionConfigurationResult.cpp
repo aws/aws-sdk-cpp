@@ -23,9 +23,8 @@ PutEncryptionConfigurationResult::PutEncryptionConfigurationResult() :
 {
 }
 
-PutEncryptionConfigurationResult::PutEncryptionConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_encryptionStatus(EncryptionStatus::NOT_SET),
-    m_encryptionType(EncryptionType::NOT_SET)
+PutEncryptionConfigurationResult::PutEncryptionConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : PutEncryptionConfigurationResult()
 {
   *this = result;
 }

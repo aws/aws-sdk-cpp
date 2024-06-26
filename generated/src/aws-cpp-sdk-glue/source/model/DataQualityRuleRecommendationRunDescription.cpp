@@ -27,12 +27,8 @@ DataQualityRuleRecommendationRunDescription::DataQualityRuleRecommendationRunDes
 {
 }
 
-DataQualityRuleRecommendationRunDescription::DataQualityRuleRecommendationRunDescription(JsonView jsonValue) : 
-    m_runIdHasBeenSet(false),
-    m_status(TaskStatusType::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_startedOnHasBeenSet(false),
-    m_dataSourceHasBeenSet(false)
+DataQualityRuleRecommendationRunDescription::DataQualityRuleRecommendationRunDescription(JsonView jsonValue)
+  : DataQualityRuleRecommendationRunDescription()
 {
   *this = jsonValue;
 }

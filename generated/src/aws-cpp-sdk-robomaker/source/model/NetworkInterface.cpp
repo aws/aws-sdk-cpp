@@ -25,10 +25,8 @@ NetworkInterface::NetworkInterface() :
 {
 }
 
-NetworkInterface::NetworkInterface(JsonView jsonValue) : 
-    m_networkInterfaceIdHasBeenSet(false),
-    m_privateIpAddressHasBeenSet(false),
-    m_publicIpAddressHasBeenSet(false)
+NetworkInterface::NetworkInterface(JsonView jsonValue)
+  : NetworkInterface()
 {
   *this = jsonValue;
 }

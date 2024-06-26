@@ -27,10 +27,8 @@ FixedResponseActionConfig::FixedResponseActionConfig() :
 {
 }
 
-FixedResponseActionConfig::FixedResponseActionConfig(const XmlNode& xmlNode) : 
-    m_messageBodyHasBeenSet(false),
-    m_statusCodeHasBeenSet(false),
-    m_contentTypeHasBeenSet(false)
+FixedResponseActionConfig::FixedResponseActionConfig(const XmlNode& xmlNode)
+  : FixedResponseActionConfig()
 {
   *this = xmlNode;
 }

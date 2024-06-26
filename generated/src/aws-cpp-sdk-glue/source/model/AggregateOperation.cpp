@@ -25,10 +25,8 @@ AggregateOperation::AggregateOperation() :
 {
 }
 
-AggregateOperation::AggregateOperation(JsonView jsonValue) : 
-    m_columnHasBeenSet(false),
-    m_aggFunc(AggFunction::NOT_SET),
-    m_aggFuncHasBeenSet(false)
+AggregateOperation::AggregateOperation(JsonView jsonValue)
+  : AggregateOperation()
 {
   *this = jsonValue;
 }

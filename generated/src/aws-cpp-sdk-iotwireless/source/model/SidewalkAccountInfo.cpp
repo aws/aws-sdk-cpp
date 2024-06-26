@@ -24,9 +24,8 @@ SidewalkAccountInfo::SidewalkAccountInfo() :
 {
 }
 
-SidewalkAccountInfo::SidewalkAccountInfo(JsonView jsonValue) : 
-    m_amazonIdHasBeenSet(false),
-    m_appServerPrivateKeyHasBeenSet(false)
+SidewalkAccountInfo::SidewalkAccountInfo(JsonView jsonValue)
+  : SidewalkAccountInfo()
 {
   *this = jsonValue;
 }

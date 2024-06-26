@@ -26,11 +26,8 @@ FillMissingValues::FillMissingValues() :
 {
 }
 
-FillMissingValues::FillMissingValues(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_inputsHasBeenSet(false),
-    m_imputedPathHasBeenSet(false),
-    m_filledPathHasBeenSet(false)
+FillMissingValues::FillMissingValues(JsonView jsonValue)
+  : FillMissingValues()
 {
   *this = jsonValue;
 }

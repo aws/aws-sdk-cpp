@@ -25,10 +25,8 @@ TableClassSummary::TableClassSummary() :
 {
 }
 
-TableClassSummary::TableClassSummary(JsonView jsonValue) : 
-    m_tableClass(TableClass::NOT_SET),
-    m_tableClassHasBeenSet(false),
-    m_lastUpdateDateTimeHasBeenSet(false)
+TableClassSummary::TableClassSummary(JsonView jsonValue)
+  : TableClassSummary()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ Index::Index() :
 {
 }
 
-Index::Index(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_type(IndexType::NOT_SET),
-    m_typeHasBeenSet(false)
+Index::Index(JsonView jsonValue)
+  : Index()
 {
   *this = jsonValue;
 }

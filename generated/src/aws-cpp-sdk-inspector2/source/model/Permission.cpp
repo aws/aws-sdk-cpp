@@ -26,11 +26,8 @@ Permission::Permission() :
 {
 }
 
-Permission::Permission(JsonView jsonValue) : 
-    m_operation(Operation::NOT_SET),
-    m_operationHasBeenSet(false),
-    m_service(Service::NOT_SET),
-    m_serviceHasBeenSet(false)
+Permission::Permission(JsonView jsonValue)
+  : Permission()
 {
   *this = jsonValue;
 }

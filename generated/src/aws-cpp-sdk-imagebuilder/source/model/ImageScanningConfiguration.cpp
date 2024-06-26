@@ -25,10 +25,8 @@ ImageScanningConfiguration::ImageScanningConfiguration() :
 {
 }
 
-ImageScanningConfiguration::ImageScanningConfiguration(JsonView jsonValue) : 
-    m_imageScanningEnabled(false),
-    m_imageScanningEnabledHasBeenSet(false),
-    m_ecrConfigurationHasBeenSet(false)
+ImageScanningConfiguration::ImageScanningConfiguration(JsonView jsonValue)
+  : ImageScanningConfiguration()
 {
   *this = jsonValue;
 }

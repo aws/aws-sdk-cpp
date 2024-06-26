@@ -25,10 +25,8 @@ JsonFormatDescriptor::JsonFormatDescriptor() :
 {
 }
 
-JsonFormatDescriptor::JsonFormatDescriptor(JsonView jsonValue) : 
-    m_fileCompression(JsonFileCompression::NOT_SET),
-    m_fileCompressionHasBeenSet(false),
-    m_charsetHasBeenSet(false)
+JsonFormatDescriptor::JsonFormatDescriptor(JsonView jsonValue)
+  : JsonFormatDescriptor()
 {
   *this = jsonValue;
 }

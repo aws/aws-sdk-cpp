@@ -26,11 +26,8 @@ ArchiveGroupSettings::ArchiveGroupSettings() :
 {
 }
 
-ArchiveGroupSettings::ArchiveGroupSettings(JsonView jsonValue) : 
-    m_archiveCdnSettingsHasBeenSet(false),
-    m_destinationHasBeenSet(false),
-    m_rolloverInterval(0),
-    m_rolloverIntervalHasBeenSet(false)
+ArchiveGroupSettings::ArchiveGroupSettings(JsonView jsonValue)
+  : ArchiveGroupSettings()
 {
   *this = jsonValue;
 }

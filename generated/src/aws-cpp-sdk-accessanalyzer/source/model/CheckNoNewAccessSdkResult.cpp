@@ -22,8 +22,8 @@ CheckNoNewAccessSdkResult::CheckNoNewAccessSdkResult() :
 {
 }
 
-CheckNoNewAccessSdkResult::CheckNoNewAccessSdkResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_result(CheckNoNewAccessResult::NOT_SET)
+CheckNoNewAccessSdkResult::CheckNoNewAccessSdkResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CheckNoNewAccessSdkResult()
 {
   *this = result;
 }

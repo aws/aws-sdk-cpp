@@ -25,10 +25,8 @@ EncryptionOptions::EncryptionOptions() :
 {
 }
 
-EncryptionOptions::EncryptionOptions(JsonView jsonValue) : 
-    m_kmsKeyIdHasBeenSet(false),
-    m_useAwsOwnedKey(false),
-    m_useAwsOwnedKeyHasBeenSet(false)
+EncryptionOptions::EncryptionOptions(JsonView jsonValue)
+  : EncryptionOptions()
 {
   *this = jsonValue;
 }

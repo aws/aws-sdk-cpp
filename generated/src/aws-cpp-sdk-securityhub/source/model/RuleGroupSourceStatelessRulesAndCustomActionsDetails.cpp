@@ -24,9 +24,8 @@ RuleGroupSourceStatelessRulesAndCustomActionsDetails::RuleGroupSourceStatelessRu
 {
 }
 
-RuleGroupSourceStatelessRulesAndCustomActionsDetails::RuleGroupSourceStatelessRulesAndCustomActionsDetails(JsonView jsonValue) : 
-    m_customActionsHasBeenSet(false),
-    m_statelessRulesHasBeenSet(false)
+RuleGroupSourceStatelessRulesAndCustomActionsDetails::RuleGroupSourceStatelessRulesAndCustomActionsDetails(JsonView jsonValue)
+  : RuleGroupSourceStatelessRulesAndCustomActionsDetails()
 {
   *this = jsonValue;
 }

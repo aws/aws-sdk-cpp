@@ -22,8 +22,8 @@ UpdateEnvironmentResult::UpdateEnvironmentResult() :
 {
 }
 
-UpdateEnvironmentResult::UpdateEnvironmentResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(EnvironmentStatus::NOT_SET)
+UpdateEnvironmentResult::UpdateEnvironmentResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateEnvironmentResult()
 {
   *this = result;
 }

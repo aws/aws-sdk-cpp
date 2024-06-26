@@ -26,11 +26,8 @@ EnableAlarmActionRequest::EnableAlarmActionRequest() :
 {
 }
 
-EnableAlarmActionRequest::EnableAlarmActionRequest(JsonView jsonValue) : 
-    m_requestIdHasBeenSet(false),
-    m_alarmModelNameHasBeenSet(false),
-    m_keyValueHasBeenSet(false),
-    m_noteHasBeenSet(false)
+EnableAlarmActionRequest::EnableAlarmActionRequest(JsonView jsonValue)
+  : EnableAlarmActionRequest()
 {
   *this = jsonValue;
 }

@@ -40,23 +40,8 @@ InstanceHealthSummary::InstanceHealthSummary() :
 {
 }
 
-InstanceHealthSummary::InstanceHealthSummary(const XmlNode& xmlNode) : 
-    m_noData(0),
-    m_noDataHasBeenSet(false),
-    m_unknown(0),
-    m_unknownHasBeenSet(false),
-    m_pending(0),
-    m_pendingHasBeenSet(false),
-    m_ok(0),
-    m_okHasBeenSet(false),
-    m_info(0),
-    m_infoHasBeenSet(false),
-    m_warning(0),
-    m_warningHasBeenSet(false),
-    m_degraded(0),
-    m_degradedHasBeenSet(false),
-    m_severe(0),
-    m_severeHasBeenSet(false)
+InstanceHealthSummary::InstanceHealthSummary(const XmlNode& xmlNode)
+  : InstanceHealthSummary()
 {
   *this = xmlNode;
 }

@@ -25,10 +25,8 @@ ActionDefinition::ActionDefinition() :
 {
 }
 
-ActionDefinition::ActionDefinition(JsonView jsonValue) : 
-    m_actionDefinitionIdHasBeenSet(false),
-    m_actionNameHasBeenSet(false),
-    m_actionTypeHasBeenSet(false)
+ActionDefinition::ActionDefinition(JsonView jsonValue)
+  : ActionDefinition()
 {
   *this = jsonValue;
 }

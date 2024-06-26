@@ -30,15 +30,8 @@ DeploymentConfigInfo::DeploymentConfigInfo() :
 {
 }
 
-DeploymentConfigInfo::DeploymentConfigInfo(JsonView jsonValue) : 
-    m_deploymentConfigIdHasBeenSet(false),
-    m_deploymentConfigNameHasBeenSet(false),
-    m_minimumHealthyHostsHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_computePlatform(ComputePlatform::NOT_SET),
-    m_computePlatformHasBeenSet(false),
-    m_trafficRoutingConfigHasBeenSet(false),
-    m_zonalConfigHasBeenSet(false)
+DeploymentConfigInfo::DeploymentConfigInfo(JsonView jsonValue)
+  : DeploymentConfigInfo()
 {
   *this = jsonValue;
 }

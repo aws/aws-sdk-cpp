@@ -31,16 +31,8 @@ ResourceMapping::ResourceMapping() :
 {
 }
 
-ResourceMapping::ResourceMapping(JsonView jsonValue) : 
-    m_appRegistryAppNameHasBeenSet(false),
-    m_eksSourceNameHasBeenSet(false),
-    m_logicalStackNameHasBeenSet(false),
-    m_mappingType(ResourceMappingType::NOT_SET),
-    m_mappingTypeHasBeenSet(false),
-    m_physicalResourceIdHasBeenSet(false),
-    m_resourceGroupNameHasBeenSet(false),
-    m_resourceNameHasBeenSet(false),
-    m_terraformSourceNameHasBeenSet(false)
+ResourceMapping::ResourceMapping(JsonView jsonValue)
+  : ResourceMapping()
 {
   *this = jsonValue;
 }

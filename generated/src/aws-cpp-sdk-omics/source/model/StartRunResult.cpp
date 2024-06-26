@@ -22,8 +22,8 @@ StartRunResult::StartRunResult() :
 {
 }
 
-StartRunResult::StartRunResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(RunStatus::NOT_SET)
+StartRunResult::StartRunResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : StartRunResult()
 {
   *this = result;
 }

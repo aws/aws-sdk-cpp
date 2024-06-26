@@ -25,10 +25,8 @@ ContainerImage::ContainerImage() :
 {
 }
 
-ContainerImage::ContainerImage(JsonView jsonValue) : 
-    m_imageHasBeenSet(false),
-    m_digestHasBeenSet(false),
-    m_createdAtHasBeenSet(false)
+ContainerImage::ContainerImage(JsonView jsonValue)
+  : ContainerImage()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ DescribeDashboardResult::DescribeDashboardResult() :
 {
 }
 
-DescribeDashboardResult::DescribeDashboardResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+DescribeDashboardResult::DescribeDashboardResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeDashboardResult()
 {
   *this = result;
 }

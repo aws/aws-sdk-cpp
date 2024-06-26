@@ -24,9 +24,8 @@ NetworkAnalyzerConfigurations::NetworkAnalyzerConfigurations() :
 {
 }
 
-NetworkAnalyzerConfigurations::NetworkAnalyzerConfigurations(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false)
+NetworkAnalyzerConfigurations::NetworkAnalyzerConfigurations(JsonView jsonValue)
+  : NetworkAnalyzerConfigurations()
 {
   *this = jsonValue;
 }

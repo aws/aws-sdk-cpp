@@ -24,9 +24,8 @@ CisTargets::CisTargets() :
 {
 }
 
-CisTargets::CisTargets(JsonView jsonValue) : 
-    m_accountIdsHasBeenSet(false),
-    m_targetResourceTagsHasBeenSet(false)
+CisTargets::CisTargets(JsonView jsonValue)
+  : CisTargets()
 {
   *this = jsonValue;
 }

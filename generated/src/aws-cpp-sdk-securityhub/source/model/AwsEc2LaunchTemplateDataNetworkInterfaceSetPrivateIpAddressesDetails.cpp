@@ -25,10 +25,8 @@ AwsEc2LaunchTemplateDataNetworkInterfaceSetPrivateIpAddressesDetails::AwsEc2Laun
 {
 }
 
-AwsEc2LaunchTemplateDataNetworkInterfaceSetPrivateIpAddressesDetails::AwsEc2LaunchTemplateDataNetworkInterfaceSetPrivateIpAddressesDetails(JsonView jsonValue) : 
-    m_primary(false),
-    m_primaryHasBeenSet(false),
-    m_privateIpAddressHasBeenSet(false)
+AwsEc2LaunchTemplateDataNetworkInterfaceSetPrivateIpAddressesDetails::AwsEc2LaunchTemplateDataNetworkInterfaceSetPrivateIpAddressesDetails(JsonView jsonValue)
+  : AwsEc2LaunchTemplateDataNetworkInterfaceSetPrivateIpAddressesDetails()
 {
   *this = jsonValue;
 }

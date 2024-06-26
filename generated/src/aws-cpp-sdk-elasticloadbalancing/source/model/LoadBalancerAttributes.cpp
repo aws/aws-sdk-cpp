@@ -29,12 +29,8 @@ LoadBalancerAttributes::LoadBalancerAttributes() :
 {
 }
 
-LoadBalancerAttributes::LoadBalancerAttributes(const XmlNode& xmlNode) : 
-    m_crossZoneLoadBalancingHasBeenSet(false),
-    m_accessLogHasBeenSet(false),
-    m_connectionDrainingHasBeenSet(false),
-    m_connectionSettingsHasBeenSet(false),
-    m_additionalAttributesHasBeenSet(false)
+LoadBalancerAttributes::LoadBalancerAttributes(const XmlNode& xmlNode)
+  : LoadBalancerAttributes()
 {
   *this = xmlNode;
 }

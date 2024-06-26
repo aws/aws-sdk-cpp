@@ -28,13 +28,8 @@ SendQuota::SendQuota() :
 {
 }
 
-SendQuota::SendQuota(JsonView jsonValue) : 
-    m_max24HourSend(0.0),
-    m_max24HourSendHasBeenSet(false),
-    m_maxSendRate(0.0),
-    m_maxSendRateHasBeenSet(false),
-    m_sentLast24Hours(0.0),
-    m_sentLast24HoursHasBeenSet(false)
+SendQuota::SendQuota(JsonView jsonValue)
+  : SendQuota()
 {
   *this = jsonValue;
 }

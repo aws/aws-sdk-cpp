@@ -26,11 +26,8 @@ RepositorySyncEvent::RepositorySyncEvent() :
 {
 }
 
-RepositorySyncEvent::RepositorySyncEvent(JsonView jsonValue) : 
-    m_eventHasBeenSet(false),
-    m_externalIdHasBeenSet(false),
-    m_timeHasBeenSet(false),
-    m_typeHasBeenSet(false)
+RepositorySyncEvent::RepositorySyncEvent(JsonView jsonValue)
+  : RepositorySyncEvent()
 {
   *this = jsonValue;
 }

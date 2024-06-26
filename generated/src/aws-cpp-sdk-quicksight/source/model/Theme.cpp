@@ -30,15 +30,8 @@ Theme::Theme() :
 {
 }
 
-Theme::Theme(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_themeIdHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_type(ThemeType::NOT_SET),
-    m_typeHasBeenSet(false)
+Theme::Theme(JsonView jsonValue)
+  : Theme()
 {
   *this = jsonValue;
 }

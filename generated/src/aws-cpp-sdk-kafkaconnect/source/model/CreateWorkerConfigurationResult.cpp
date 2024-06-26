@@ -22,8 +22,8 @@ CreateWorkerConfigurationResult::CreateWorkerConfigurationResult() :
 {
 }
 
-CreateWorkerConfigurationResult::CreateWorkerConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_workerConfigurationState(WorkerConfigurationState::NOT_SET)
+CreateWorkerConfigurationResult::CreateWorkerConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateWorkerConfigurationResult()
 {
   *this = result;
 }

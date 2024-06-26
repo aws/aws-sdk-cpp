@@ -25,10 +25,8 @@ QueryStringObject::QueryStringObject() :
 {
 }
 
-QueryStringObject::QueryStringObject(JsonView jsonValue) : 
-    m_option(false),
-    m_optionHasBeenSet(false),
-    m_queryStringsAllowListHasBeenSet(false)
+QueryStringObject::QueryStringObject(JsonView jsonValue)
+  : QueryStringObject()
 {
   *this = jsonValue;
 }

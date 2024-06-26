@@ -24,9 +24,8 @@ PublicAccess::PublicAccess() :
 {
 }
 
-PublicAccess::PublicAccess(JsonView jsonValue) : 
-    m_permissionConfigurationHasBeenSet(false),
-    m_effectivePermissionHasBeenSet(false)
+PublicAccess::PublicAccess(JsonView jsonValue)
+  : PublicAccess()
 {
   *this = jsonValue;
 }

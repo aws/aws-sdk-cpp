@@ -26,11 +26,8 @@ SecurityServicePolicyData::SecurityServicePolicyData() :
 {
 }
 
-SecurityServicePolicyData::SecurityServicePolicyData(JsonView jsonValue) : 
-    m_type(SecurityServiceType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_managedServiceDataHasBeenSet(false),
-    m_policyOptionHasBeenSet(false)
+SecurityServicePolicyData::SecurityServicePolicyData(JsonView jsonValue)
+  : SecurityServicePolicyData()
 {
   *this = jsonValue;
 }

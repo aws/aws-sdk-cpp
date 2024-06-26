@@ -28,13 +28,8 @@ DataflowEndpoint::DataflowEndpoint() :
 {
 }
 
-DataflowEndpoint::DataflowEndpoint(JsonView jsonValue) : 
-    m_addressHasBeenSet(false),
-    m_mtu(0),
-    m_mtuHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_status(EndpointStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+DataflowEndpoint::DataflowEndpoint(JsonView jsonValue)
+  : DataflowEndpoint()
 {
   *this = jsonValue;
 }

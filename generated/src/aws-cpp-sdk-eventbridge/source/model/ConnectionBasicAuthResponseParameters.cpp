@@ -23,8 +23,8 @@ ConnectionBasicAuthResponseParameters::ConnectionBasicAuthResponseParameters() :
 {
 }
 
-ConnectionBasicAuthResponseParameters::ConnectionBasicAuthResponseParameters(JsonView jsonValue) : 
-    m_usernameHasBeenSet(false)
+ConnectionBasicAuthResponseParameters::ConnectionBasicAuthResponseParameters(JsonView jsonValue)
+  : ConnectionBasicAuthResponseParameters()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ ListNotificationRulesFilter::ListNotificationRulesFilter() :
 {
 }
 
-ListNotificationRulesFilter::ListNotificationRulesFilter(JsonView jsonValue) : 
-    m_name(ListNotificationRulesFilterName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
+ListNotificationRulesFilter::ListNotificationRulesFilter(JsonView jsonValue)
+  : ListNotificationRulesFilter()
 {
   *this = jsonValue;
 }

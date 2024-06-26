@@ -26,11 +26,8 @@ Insight::Insight() :
 {
 }
 
-Insight::Insight(JsonView jsonValue) : 
-    m_insightArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_groupByAttributeHasBeenSet(false)
+Insight::Insight(JsonView jsonValue)
+  : Insight()
 {
   *this = jsonValue;
 }

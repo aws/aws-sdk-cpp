@@ -23,8 +23,8 @@ ReplaceRecipientAction::ReplaceRecipientAction() :
 {
 }
 
-ReplaceRecipientAction::ReplaceRecipientAction(JsonView jsonValue) : 
-    m_replaceWithHasBeenSet(false)
+ReplaceRecipientAction::ReplaceRecipientAction(JsonView jsonValue)
+  : ReplaceRecipientAction()
 {
   *this = jsonValue;
 }

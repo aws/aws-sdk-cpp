@@ -22,8 +22,8 @@ CreateDomainResult::CreateDomainResult() :
 {
 }
 
-CreateDomainResult::CreateDomainResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(DomainStatus::NOT_SET)
+CreateDomainResult::CreateDomainResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateDomainResult()
 {
   *this = result;
 }

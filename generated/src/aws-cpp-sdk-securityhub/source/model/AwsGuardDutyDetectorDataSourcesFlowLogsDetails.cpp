@@ -23,8 +23,8 @@ AwsGuardDutyDetectorDataSourcesFlowLogsDetails::AwsGuardDutyDetectorDataSourcesF
 {
 }
 
-AwsGuardDutyDetectorDataSourcesFlowLogsDetails::AwsGuardDutyDetectorDataSourcesFlowLogsDetails(JsonView jsonValue) : 
-    m_statusHasBeenSet(false)
+AwsGuardDutyDetectorDataSourcesFlowLogsDetails::AwsGuardDutyDetectorDataSourcesFlowLogsDetails(JsonView jsonValue)
+  : AwsGuardDutyDetectorDataSourcesFlowLogsDetails()
 {
   *this = jsonValue;
 }

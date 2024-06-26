@@ -24,9 +24,8 @@ AutoMLDataSplitConfig::AutoMLDataSplitConfig() :
 {
 }
 
-AutoMLDataSplitConfig::AutoMLDataSplitConfig(JsonView jsonValue) : 
-    m_validationFraction(0.0),
-    m_validationFractionHasBeenSet(false)
+AutoMLDataSplitConfig::AutoMLDataSplitConfig(JsonView jsonValue)
+  : AutoMLDataSplitConfig()
 {
   *this = jsonValue;
 }

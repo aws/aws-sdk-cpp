@@ -23,8 +23,8 @@ RetrievalResultContent::RetrievalResultContent() :
 {
 }
 
-RetrievalResultContent::RetrievalResultContent(JsonView jsonValue) : 
-    m_textHasBeenSet(false)
+RetrievalResultContent::RetrievalResultContent(JsonView jsonValue)
+  : RetrievalResultContent()
 {
   *this = jsonValue;
 }

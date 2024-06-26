@@ -23,8 +23,8 @@ TestSetExportSpecification::TestSetExportSpecification() :
 {
 }
 
-TestSetExportSpecification::TestSetExportSpecification(JsonView jsonValue) : 
-    m_testSetIdHasBeenSet(false)
+TestSetExportSpecification::TestSetExportSpecification(JsonView jsonValue)
+  : TestSetExportSpecification()
 {
   *this = jsonValue;
 }

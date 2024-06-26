@@ -31,16 +31,8 @@ Database::Database() :
 {
 }
 
-Database::Database(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_locationUriHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_createTableDefaultPermissionsHasBeenSet(false),
-    m_targetDatabaseHasBeenSet(false),
-    m_catalogIdHasBeenSet(false),
-    m_federatedDatabaseHasBeenSet(false)
+Database::Database(JsonView jsonValue)
+  : Database()
 {
   *this = jsonValue;
 }

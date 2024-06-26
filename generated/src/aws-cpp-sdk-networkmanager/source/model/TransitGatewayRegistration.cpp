@@ -25,10 +25,8 @@ TransitGatewayRegistration::TransitGatewayRegistration() :
 {
 }
 
-TransitGatewayRegistration::TransitGatewayRegistration(JsonView jsonValue) : 
-    m_globalNetworkIdHasBeenSet(false),
-    m_transitGatewayArnHasBeenSet(false),
-    m_stateHasBeenSet(false)
+TransitGatewayRegistration::TransitGatewayRegistration(JsonView jsonValue)
+  : TransitGatewayRegistration()
 {
   *this = jsonValue;
 }

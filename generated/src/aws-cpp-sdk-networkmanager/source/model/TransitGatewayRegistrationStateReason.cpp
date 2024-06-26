@@ -25,10 +25,8 @@ TransitGatewayRegistrationStateReason::TransitGatewayRegistrationStateReason() :
 {
 }
 
-TransitGatewayRegistrationStateReason::TransitGatewayRegistrationStateReason(JsonView jsonValue) : 
-    m_code(TransitGatewayRegistrationState::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+TransitGatewayRegistrationStateReason::TransitGatewayRegistrationStateReason(JsonView jsonValue)
+  : TransitGatewayRegistrationStateReason()
 {
   *this = jsonValue;
 }

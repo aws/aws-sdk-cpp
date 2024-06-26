@@ -24,9 +24,8 @@ GuardrailWordPolicyConfig::GuardrailWordPolicyConfig() :
 {
 }
 
-GuardrailWordPolicyConfig::GuardrailWordPolicyConfig(JsonView jsonValue) : 
-    m_wordsConfigHasBeenSet(false),
-    m_managedWordListsConfigHasBeenSet(false)
+GuardrailWordPolicyConfig::GuardrailWordPolicyConfig(JsonView jsonValue)
+  : GuardrailWordPolicyConfig()
 {
   *this = jsonValue;
 }

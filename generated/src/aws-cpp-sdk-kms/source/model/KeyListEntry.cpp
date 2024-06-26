@@ -24,9 +24,8 @@ KeyListEntry::KeyListEntry() :
 {
 }
 
-KeyListEntry::KeyListEntry(JsonView jsonValue) : 
-    m_keyIdHasBeenSet(false),
-    m_keyArnHasBeenSet(false)
+KeyListEntry::KeyListEntry(JsonView jsonValue)
+  : KeyListEntry()
 {
   *this = jsonValue;
 }

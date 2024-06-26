@@ -24,9 +24,8 @@ SnapStartTimeoutException::SnapStartTimeoutException() :
 {
 }
 
-SnapStartTimeoutException::SnapStartTimeoutException(JsonView jsonValue) : 
-    m_typeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+SnapStartTimeoutException::SnapStartTimeoutException(JsonView jsonValue)
+  : SnapStartTimeoutException()
 {
   *this = jsonValue;
 }

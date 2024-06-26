@@ -26,11 +26,8 @@ DeleteCollectionDetail::DeleteCollectionDetail() :
 {
 }
 
-DeleteCollectionDetail::DeleteCollectionDetail(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_status(CollectionStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+DeleteCollectionDetail::DeleteCollectionDetail(JsonView jsonValue)
+  : DeleteCollectionDetail()
 {
   *this = jsonValue;
 }

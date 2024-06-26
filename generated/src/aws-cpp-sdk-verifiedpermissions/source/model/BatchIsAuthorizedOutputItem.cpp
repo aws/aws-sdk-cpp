@@ -27,12 +27,8 @@ BatchIsAuthorizedOutputItem::BatchIsAuthorizedOutputItem() :
 {
 }
 
-BatchIsAuthorizedOutputItem::BatchIsAuthorizedOutputItem(JsonView jsonValue) : 
-    m_requestHasBeenSet(false),
-    m_decision(Decision::NOT_SET),
-    m_decisionHasBeenSet(false),
-    m_determiningPoliciesHasBeenSet(false),
-    m_errorsHasBeenSet(false)
+BatchIsAuthorizedOutputItem::BatchIsAuthorizedOutputItem(JsonView jsonValue)
+  : BatchIsAuthorizedOutputItem()
 {
   *this = jsonValue;
 }

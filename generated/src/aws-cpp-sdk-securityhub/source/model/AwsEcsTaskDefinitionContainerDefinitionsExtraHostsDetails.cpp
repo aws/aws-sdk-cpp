@@ -24,9 +24,8 @@ AwsEcsTaskDefinitionContainerDefinitionsExtraHostsDetails::AwsEcsTaskDefinitionC
 {
 }
 
-AwsEcsTaskDefinitionContainerDefinitionsExtraHostsDetails::AwsEcsTaskDefinitionContainerDefinitionsExtraHostsDetails(JsonView jsonValue) : 
-    m_hostnameHasBeenSet(false),
-    m_ipAddressHasBeenSet(false)
+AwsEcsTaskDefinitionContainerDefinitionsExtraHostsDetails::AwsEcsTaskDefinitionContainerDefinitionsExtraHostsDetails(JsonView jsonValue)
+  : AwsEcsTaskDefinitionContainerDefinitionsExtraHostsDetails()
 {
   *this = jsonValue;
 }

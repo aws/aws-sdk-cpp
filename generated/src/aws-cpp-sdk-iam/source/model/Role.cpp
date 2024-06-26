@@ -36,19 +36,8 @@ Role::Role() :
 {
 }
 
-Role::Role(const XmlNode& xmlNode) : 
-    m_pathHasBeenSet(false),
-    m_roleNameHasBeenSet(false),
-    m_roleIdHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_createDateHasBeenSet(false),
-    m_assumeRolePolicyDocumentHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_maxSessionDuration(0),
-    m_maxSessionDurationHasBeenSet(false),
-    m_permissionsBoundaryHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_roleLastUsedHasBeenSet(false)
+Role::Role(const XmlNode& xmlNode)
+  : Role()
 {
   *this = xmlNode;
 }

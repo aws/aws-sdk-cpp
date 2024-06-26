@@ -29,14 +29,8 @@ AdvancedFieldSelector::AdvancedFieldSelector() :
 {
 }
 
-AdvancedFieldSelector::AdvancedFieldSelector(JsonView jsonValue) : 
-    m_fieldHasBeenSet(false),
-    m_equalsHasBeenSet(false),
-    m_startsWithHasBeenSet(false),
-    m_endsWithHasBeenSet(false),
-    m_notEqualsHasBeenSet(false),
-    m_notStartsWithHasBeenSet(false),
-    m_notEndsWithHasBeenSet(false)
+AdvancedFieldSelector::AdvancedFieldSelector(JsonView jsonValue)
+  : AdvancedFieldSelector()
 {
   *this = jsonValue;
 }

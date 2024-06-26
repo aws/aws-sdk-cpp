@@ -27,10 +27,8 @@ LaunchTemplateSpecification::LaunchTemplateSpecification() :
 {
 }
 
-LaunchTemplateSpecification::LaunchTemplateSpecification(const XmlNode& xmlNode) : 
-    m_launchTemplateIdHasBeenSet(false),
-    m_launchTemplateNameHasBeenSet(false),
-    m_versionHasBeenSet(false)
+LaunchTemplateSpecification::LaunchTemplateSpecification(const XmlNode& xmlNode)
+  : LaunchTemplateSpecification()
 {
   *this = xmlNode;
 }

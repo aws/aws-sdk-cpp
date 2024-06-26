@@ -27,12 +27,8 @@ AnalysisTemplateValidationStatusDetail::AnalysisTemplateValidationStatusDetail()
 {
 }
 
-AnalysisTemplateValidationStatusDetail::AnalysisTemplateValidationStatusDetail(JsonView jsonValue) : 
-    m_type(AnalysisTemplateValidationType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_status(AnalysisTemplateValidationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_reasonsHasBeenSet(false)
+AnalysisTemplateValidationStatusDetail::AnalysisTemplateValidationStatusDetail(JsonView jsonValue)
+  : AnalysisTemplateValidationStatusDetail()
 {
   *this = jsonValue;
 }

@@ -31,16 +31,8 @@ AwsApiCallAction::AwsApiCallAction() :
 {
 }
 
-AwsApiCallAction::AwsApiCallAction(JsonView jsonValue) : 
-    m_apiHasBeenSet(false),
-    m_callerTypeHasBeenSet(false),
-    m_domainDetailsHasBeenSet(false),
-    m_errorCodeHasBeenSet(false),
-    m_userAgentHasBeenSet(false),
-    m_remoteIpDetailsHasBeenSet(false),
-    m_serviceNameHasBeenSet(false),
-    m_remoteAccountDetailsHasBeenSet(false),
-    m_affectedResourcesHasBeenSet(false)
+AwsApiCallAction::AwsApiCallAction(JsonView jsonValue)
+  : AwsApiCallAction()
 {
   *this = jsonValue;
 }

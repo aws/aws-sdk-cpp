@@ -24,9 +24,8 @@ EvaluationConfig::EvaluationConfig() :
 {
 }
 
-EvaluationConfig::EvaluationConfig(JsonView jsonValue) : 
-    m_automatedHasBeenSet(false),
-    m_humanHasBeenSet(false)
+EvaluationConfig::EvaluationConfig(JsonView jsonValue)
+  : EvaluationConfig()
 {
   *this = jsonValue;
 }

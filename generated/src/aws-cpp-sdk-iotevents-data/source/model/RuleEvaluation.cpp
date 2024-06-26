@@ -23,8 +23,8 @@ RuleEvaluation::RuleEvaluation() :
 {
 }
 
-RuleEvaluation::RuleEvaluation(JsonView jsonValue) : 
-    m_simpleRuleEvaluationHasBeenSet(false)
+RuleEvaluation::RuleEvaluation(JsonView jsonValue)
+  : RuleEvaluation()
 {
   *this = jsonValue;
 }

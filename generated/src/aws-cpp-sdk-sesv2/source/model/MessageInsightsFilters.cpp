@@ -28,13 +28,8 @@ MessageInsightsFilters::MessageInsightsFilters() :
 {
 }
 
-MessageInsightsFilters::MessageInsightsFilters(JsonView jsonValue) : 
-    m_fromEmailAddressHasBeenSet(false),
-    m_destinationHasBeenSet(false),
-    m_subjectHasBeenSet(false),
-    m_ispHasBeenSet(false),
-    m_lastDeliveryEventHasBeenSet(false),
-    m_lastEngagementEventHasBeenSet(false)
+MessageInsightsFilters::MessageInsightsFilters(JsonView jsonValue)
+  : MessageInsightsFilters()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ AwsS3BucketNotificationConfigurationS3KeyFilterRule::AwsS3BucketNotificationConf
 {
 }
 
-AwsS3BucketNotificationConfigurationS3KeyFilterRule::AwsS3BucketNotificationConfigurationS3KeyFilterRule(JsonView jsonValue) : 
-    m_name(AwsS3BucketNotificationConfigurationS3KeyFilterRuleName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
+AwsS3BucketNotificationConfigurationS3KeyFilterRule::AwsS3BucketNotificationConfigurationS3KeyFilterRule(JsonView jsonValue)
+  : AwsS3BucketNotificationConfigurationS3KeyFilterRule()
 {
   *this = jsonValue;
 }

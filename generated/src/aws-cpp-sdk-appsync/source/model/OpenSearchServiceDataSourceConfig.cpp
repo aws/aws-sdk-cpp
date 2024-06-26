@@ -24,9 +24,8 @@ OpenSearchServiceDataSourceConfig::OpenSearchServiceDataSourceConfig() :
 {
 }
 
-OpenSearchServiceDataSourceConfig::OpenSearchServiceDataSourceConfig(JsonView jsonValue) : 
-    m_endpointHasBeenSet(false),
-    m_awsRegionHasBeenSet(false)
+OpenSearchServiceDataSourceConfig::OpenSearchServiceDataSourceConfig(JsonView jsonValue)
+  : OpenSearchServiceDataSourceConfig()
 {
   *this = jsonValue;
 }

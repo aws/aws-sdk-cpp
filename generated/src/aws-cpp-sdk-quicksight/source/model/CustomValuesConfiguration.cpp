@@ -25,10 +25,8 @@ CustomValuesConfiguration::CustomValuesConfiguration() :
 {
 }
 
-CustomValuesConfiguration::CustomValuesConfiguration(JsonView jsonValue) : 
-    m_includeNullValue(false),
-    m_includeNullValueHasBeenSet(false),
-    m_customValuesHasBeenSet(false)
+CustomValuesConfiguration::CustomValuesConfiguration(JsonView jsonValue)
+  : CustomValuesConfiguration()
 {
   *this = jsonValue;
 }

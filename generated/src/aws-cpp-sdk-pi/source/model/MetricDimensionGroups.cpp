@@ -24,9 +24,8 @@ MetricDimensionGroups::MetricDimensionGroups() :
 {
 }
 
-MetricDimensionGroups::MetricDimensionGroups(JsonView jsonValue) : 
-    m_metricHasBeenSet(false),
-    m_groupsHasBeenSet(false)
+MetricDimensionGroups::MetricDimensionGroups(JsonView jsonValue)
+  : MetricDimensionGroups()
 {
   *this = jsonValue;
 }

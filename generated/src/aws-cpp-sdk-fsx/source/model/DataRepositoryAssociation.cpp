@@ -41,26 +41,8 @@ DataRepositoryAssociation::DataRepositoryAssociation() :
 {
 }
 
-DataRepositoryAssociation::DataRepositoryAssociation(JsonView jsonValue) : 
-    m_associationIdHasBeenSet(false),
-    m_resourceARNHasBeenSet(false),
-    m_fileSystemIdHasBeenSet(false),
-    m_lifecycle(DataRepositoryLifecycle::NOT_SET),
-    m_lifecycleHasBeenSet(false),
-    m_failureDetailsHasBeenSet(false),
-    m_fileSystemPathHasBeenSet(false),
-    m_dataRepositoryPathHasBeenSet(false),
-    m_batchImportMetaDataOnCreate(false),
-    m_batchImportMetaDataOnCreateHasBeenSet(false),
-    m_importedFileChunkSize(0),
-    m_importedFileChunkSizeHasBeenSet(false),
-    m_s3HasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_fileCacheIdHasBeenSet(false),
-    m_fileCachePathHasBeenSet(false),
-    m_dataRepositorySubdirectoriesHasBeenSet(false),
-    m_nFSHasBeenSet(false)
+DataRepositoryAssociation::DataRepositoryAssociation(JsonView jsonValue)
+  : DataRepositoryAssociation()
 {
   *this = jsonValue;
 }

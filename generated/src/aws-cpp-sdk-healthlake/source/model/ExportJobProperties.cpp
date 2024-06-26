@@ -32,17 +32,8 @@ ExportJobProperties::ExportJobProperties() :
 {
 }
 
-ExportJobProperties::ExportJobProperties(JsonView jsonValue) : 
-    m_jobIdHasBeenSet(false),
-    m_jobNameHasBeenSet(false),
-    m_jobStatus(JobStatus::NOT_SET),
-    m_jobStatusHasBeenSet(false),
-    m_submitTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_datastoreIdHasBeenSet(false),
-    m_outputDataConfigHasBeenSet(false),
-    m_dataAccessRoleArnHasBeenSet(false),
-    m_messageHasBeenSet(false)
+ExportJobProperties::ExportJobProperties(JsonView jsonValue)
+  : ExportJobProperties()
 {
   *this = jsonValue;
 }

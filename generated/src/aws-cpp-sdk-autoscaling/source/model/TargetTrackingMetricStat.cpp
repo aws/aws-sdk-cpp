@@ -27,10 +27,8 @@ TargetTrackingMetricStat::TargetTrackingMetricStat() :
 {
 }
 
-TargetTrackingMetricStat::TargetTrackingMetricStat(const XmlNode& xmlNode) : 
-    m_metricHasBeenSet(false),
-    m_statHasBeenSet(false),
-    m_unitHasBeenSet(false)
+TargetTrackingMetricStat::TargetTrackingMetricStat(const XmlNode& xmlNode)
+  : TargetTrackingMetricStat()
 {
   *this = xmlNode;
 }

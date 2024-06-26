@@ -24,8 +24,8 @@ InvokeModelWithResponseStreamInitialResponse::InvokeModelWithResponseStreamIniti
 {
 }
 
-InvokeModelWithResponseStreamInitialResponse::InvokeModelWithResponseStreamInitialResponse(JsonView jsonValue) : 
-    m_contentTypeHasBeenSet(false)
+InvokeModelWithResponseStreamInitialResponse::InvokeModelWithResponseStreamInitialResponse(JsonView jsonValue)
+  : InvokeModelWithResponseStreamInitialResponse()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ EksProperties::EksProperties() :
 {
 }
 
-EksProperties::EksProperties(JsonView jsonValue) : 
-    m_podPropertiesHasBeenSet(false)
+EksProperties::EksProperties(JsonView jsonValue)
+  : EksProperties()
 {
   *this = jsonValue;
 }

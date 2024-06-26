@@ -25,10 +25,8 @@ LabelSchema::LabelSchema() :
 {
 }
 
-LabelSchema::LabelSchema(JsonView jsonValue) : 
-    m_labelMapperHasBeenSet(false),
-    m_unlabeledEventsTreatment(UnlabeledEventsTreatment::NOT_SET),
-    m_unlabeledEventsTreatmentHasBeenSet(false)
+LabelSchema::LabelSchema(JsonView jsonValue)
+  : LabelSchema()
 {
   *this = jsonValue;
 }

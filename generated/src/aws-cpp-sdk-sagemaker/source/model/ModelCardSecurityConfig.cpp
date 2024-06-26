@@ -23,8 +23,8 @@ ModelCardSecurityConfig::ModelCardSecurityConfig() :
 {
 }
 
-ModelCardSecurityConfig::ModelCardSecurityConfig(JsonView jsonValue) : 
-    m_kmsKeyIdHasBeenSet(false)
+ModelCardSecurityConfig::ModelCardSecurityConfig(JsonView jsonValue)
+  : ModelCardSecurityConfig()
 {
   *this = jsonValue;
 }

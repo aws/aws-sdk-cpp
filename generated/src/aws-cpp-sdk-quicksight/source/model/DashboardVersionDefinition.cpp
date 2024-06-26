@@ -30,15 +30,8 @@ DashboardVersionDefinition::DashboardVersionDefinition() :
 {
 }
 
-DashboardVersionDefinition::DashboardVersionDefinition(JsonView jsonValue) : 
-    m_dataSetIdentifierDeclarationsHasBeenSet(false),
-    m_sheetsHasBeenSet(false),
-    m_calculatedFieldsHasBeenSet(false),
-    m_parameterDeclarationsHasBeenSet(false),
-    m_filterGroupsHasBeenSet(false),
-    m_columnConfigurationsHasBeenSet(false),
-    m_analysisDefaultsHasBeenSet(false),
-    m_optionsHasBeenSet(false)
+DashboardVersionDefinition::DashboardVersionDefinition(JsonView jsonValue)
+  : DashboardVersionDefinition()
 {
   *this = jsonValue;
 }

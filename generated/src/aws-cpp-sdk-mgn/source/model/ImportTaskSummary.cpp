@@ -25,10 +25,8 @@ ImportTaskSummary::ImportTaskSummary() :
 {
 }
 
-ImportTaskSummary::ImportTaskSummary(JsonView jsonValue) : 
-    m_applicationsHasBeenSet(false),
-    m_serversHasBeenSet(false),
-    m_wavesHasBeenSet(false)
+ImportTaskSummary::ImportTaskSummary(JsonView jsonValue)
+  : ImportTaskSummary()
 {
   *this = jsonValue;
 }

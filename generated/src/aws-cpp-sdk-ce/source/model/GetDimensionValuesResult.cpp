@@ -23,9 +23,8 @@ GetDimensionValuesResult::GetDimensionValuesResult() :
 {
 }
 
-GetDimensionValuesResult::GetDimensionValuesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_returnSize(0),
-    m_totalSize(0)
+GetDimensionValuesResult::GetDimensionValuesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetDimensionValuesResult()
 {
   *this = result;
 }

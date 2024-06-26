@@ -23,8 +23,8 @@ EvaluationDatasetLocation::EvaluationDatasetLocation() :
 {
 }
 
-EvaluationDatasetLocation::EvaluationDatasetLocation(JsonView jsonValue) : 
-    m_s3UriHasBeenSet(false)
+EvaluationDatasetLocation::EvaluationDatasetLocation(JsonView jsonValue)
+  : EvaluationDatasetLocation()
 {
   *this = jsonValue;
 }

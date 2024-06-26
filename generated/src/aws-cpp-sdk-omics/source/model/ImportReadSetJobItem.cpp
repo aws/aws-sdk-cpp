@@ -29,14 +29,8 @@ ImportReadSetJobItem::ImportReadSetJobItem() :
 {
 }
 
-ImportReadSetJobItem::ImportReadSetJobItem(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_sequenceStoreIdHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_status(ReadSetImportJobStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_completionTimeHasBeenSet(false)
+ImportReadSetJobItem::ImportReadSetJobItem(JsonView jsonValue)
+  : ImportReadSetJobItem()
 {
   *this = jsonValue;
 }

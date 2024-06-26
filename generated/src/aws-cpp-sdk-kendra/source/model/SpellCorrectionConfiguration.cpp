@@ -24,9 +24,8 @@ SpellCorrectionConfiguration::SpellCorrectionConfiguration() :
 {
 }
 
-SpellCorrectionConfiguration::SpellCorrectionConfiguration(JsonView jsonValue) : 
-    m_includeQuerySpellCheckSuggestions(false),
-    m_includeQuerySpellCheckSuggestionsHasBeenSet(false)
+SpellCorrectionConfiguration::SpellCorrectionConfiguration(JsonView jsonValue)
+  : SpellCorrectionConfiguration()
 {
   *this = jsonValue;
 }

@@ -27,12 +27,8 @@ CertificateSummary::CertificateSummary() :
 {
 }
 
-CertificateSummary::CertificateSummary(JsonView jsonValue) : 
-    m_issuerHasBeenSet(false),
-    m_notValidAfterHasBeenSet(false),
-    m_notValidBeforeHasBeenSet(false),
-    m_subjectHasBeenSet(false),
-    m_thumbprintHasBeenSet(false)
+CertificateSummary::CertificateSummary(JsonView jsonValue)
+  : CertificateSummary()
 {
   *this = jsonValue;
 }

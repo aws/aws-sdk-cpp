@@ -26,11 +26,8 @@ CurrentMetric::CurrentMetric() :
 {
 }
 
-CurrentMetric::CurrentMetric(JsonView jsonValue) : 
-    m_name(CurrentMetricName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_unit(Unit::NOT_SET),
-    m_unitHasBeenSet(false)
+CurrentMetric::CurrentMetric(JsonView jsonValue)
+  : CurrentMetric()
 {
   *this = jsonValue;
 }

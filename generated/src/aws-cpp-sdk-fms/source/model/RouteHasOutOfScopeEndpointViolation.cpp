@@ -34,19 +34,8 @@ RouteHasOutOfScopeEndpointViolation::RouteHasOutOfScopeEndpointViolation() :
 {
 }
 
-RouteHasOutOfScopeEndpointViolation::RouteHasOutOfScopeEndpointViolation(JsonView jsonValue) : 
-    m_subnetIdHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_routeTableIdHasBeenSet(false),
-    m_violatingRoutesHasBeenSet(false),
-    m_subnetAvailabilityZoneHasBeenSet(false),
-    m_subnetAvailabilityZoneIdHasBeenSet(false),
-    m_currentFirewallSubnetRouteTableHasBeenSet(false),
-    m_firewallSubnetIdHasBeenSet(false),
-    m_firewallSubnetRoutesHasBeenSet(false),
-    m_internetGatewayIdHasBeenSet(false),
-    m_currentInternetGatewayRouteTableHasBeenSet(false),
-    m_internetGatewayRoutesHasBeenSet(false)
+RouteHasOutOfScopeEndpointViolation::RouteHasOutOfScopeEndpointViolation(JsonView jsonValue)
+  : RouteHasOutOfScopeEndpointViolation()
 {
   *this = jsonValue;
 }

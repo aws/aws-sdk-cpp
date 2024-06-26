@@ -25,10 +25,8 @@ StatisticsNotAvailableException::StatisticsNotAvailableException() :
 {
 }
 
-StatisticsNotAvailableException::StatisticsNotAvailableException(JsonView jsonValue) : 
-    m_detailedMessageHasBeenSet(false),
-    m_requestIdHasBeenSet(false),
-    m_codeHasBeenSet(false)
+StatisticsNotAvailableException::StatisticsNotAvailableException(JsonView jsonValue)
+  : StatisticsNotAvailableException()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ MsSmoothAdditionalManifest::MsSmoothAdditionalManifest() :
 {
 }
 
-MsSmoothAdditionalManifest::MsSmoothAdditionalManifest(JsonView jsonValue) : 
-    m_manifestNameModifierHasBeenSet(false),
-    m_selectedOutputsHasBeenSet(false)
+MsSmoothAdditionalManifest::MsSmoothAdditionalManifest(JsonView jsonValue)
+  : MsSmoothAdditionalManifest()
 {
   *this = jsonValue;
 }

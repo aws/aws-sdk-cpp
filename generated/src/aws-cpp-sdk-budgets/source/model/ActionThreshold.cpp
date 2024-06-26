@@ -26,11 +26,8 @@ ActionThreshold::ActionThreshold() :
 {
 }
 
-ActionThreshold::ActionThreshold(JsonView jsonValue) : 
-    m_actionThresholdValue(0.0),
-    m_actionThresholdValueHasBeenSet(false),
-    m_actionThresholdType(ThresholdType::NOT_SET),
-    m_actionThresholdTypeHasBeenSet(false)
+ActionThreshold::ActionThreshold(JsonView jsonValue)
+  : ActionThreshold()
 {
   *this = jsonValue;
 }

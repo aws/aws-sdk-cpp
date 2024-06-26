@@ -26,11 +26,8 @@ ComputeAttributes::ComputeAttributes() :
 {
 }
 
-ComputeAttributes::ComputeAttributes(JsonView jsonValue) : 
-    m_hostIdHasBeenSet(false),
-    m_state(ComputeAssetState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_instanceFamiliesHasBeenSet(false)
+ComputeAttributes::ComputeAttributes(JsonView jsonValue)
+  : ComputeAttributes()
 {
   *this = jsonValue;
 }

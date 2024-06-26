@@ -25,10 +25,8 @@ ShareError::ShareError() :
 {
 }
 
-ShareError::ShareError(JsonView jsonValue) : 
-    m_accountsHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_errorHasBeenSet(false)
+ShareError::ShareError(JsonView jsonValue)
+  : ShareError()
 {
   *this = jsonValue;
 }

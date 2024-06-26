@@ -51,36 +51,8 @@ JobRun::JobRun() :
 {
 }
 
-JobRun::JobRun(JsonView jsonValue) : 
-    m_applicationIdHasBeenSet(false),
-    m_jobRunIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_executionRoleHasBeenSet(false),
-    m_state(JobRunState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_stateDetailsHasBeenSet(false),
-    m_releaseLabelHasBeenSet(false),
-    m_configurationOverridesHasBeenSet(false),
-    m_jobDriverHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_totalResourceUtilizationHasBeenSet(false),
-    m_networkConfigurationHasBeenSet(false),
-    m_totalExecutionDurationSeconds(0),
-    m_totalExecutionDurationSecondsHasBeenSet(false),
-    m_executionTimeoutMinutes(0),
-    m_executionTimeoutMinutesHasBeenSet(false),
-    m_billedResourceUtilizationHasBeenSet(false),
-    m_mode(JobRunMode::NOT_SET),
-    m_modeHasBeenSet(false),
-    m_retryPolicyHasBeenSet(false),
-    m_attempt(0),
-    m_attemptHasBeenSet(false),
-    m_attemptCreatedAtHasBeenSet(false),
-    m_attemptUpdatedAtHasBeenSet(false)
+JobRun::JobRun(JsonView jsonValue)
+  : JobRun()
 {
   *this = jsonValue;
 }

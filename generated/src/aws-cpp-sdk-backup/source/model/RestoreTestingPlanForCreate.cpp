@@ -28,13 +28,8 @@ RestoreTestingPlanForCreate::RestoreTestingPlanForCreate() :
 {
 }
 
-RestoreTestingPlanForCreate::RestoreTestingPlanForCreate(JsonView jsonValue) : 
-    m_recoveryPointSelectionHasBeenSet(false),
-    m_restoreTestingPlanNameHasBeenSet(false),
-    m_scheduleExpressionHasBeenSet(false),
-    m_scheduleExpressionTimezoneHasBeenSet(false),
-    m_startWindowHours(0),
-    m_startWindowHoursHasBeenSet(false)
+RestoreTestingPlanForCreate::RestoreTestingPlanForCreate(JsonView jsonValue)
+  : RestoreTestingPlanForCreate()
 {
   *this = jsonValue;
 }

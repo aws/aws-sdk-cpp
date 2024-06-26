@@ -25,10 +25,8 @@ ResourcePolicy::ResourcePolicy() :
 {
 }
 
-ResourcePolicy::ResourcePolicy(JsonView jsonValue) : 
-    m_policyDocumentHasBeenSet(false),
-    m_policyIdHasBeenSet(false),
-    m_ramResourceShareRegionHasBeenSet(false)
+ResourcePolicy::ResourcePolicy(JsonView jsonValue)
+  : ResourcePolicy()
 {
   *this = jsonValue;
 }

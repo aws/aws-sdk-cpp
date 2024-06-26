@@ -25,10 +25,8 @@ ActionSource::ActionSource() :
 {
 }
 
-ActionSource::ActionSource(JsonView jsonValue) : 
-    m_sourceUriHasBeenSet(false),
-    m_sourceTypeHasBeenSet(false),
-    m_sourceIdHasBeenSet(false)
+ActionSource::ActionSource(JsonView jsonValue)
+  : ActionSource()
 {
   *this = jsonValue;
 }

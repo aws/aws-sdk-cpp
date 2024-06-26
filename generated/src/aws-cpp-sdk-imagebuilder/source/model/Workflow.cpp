@@ -36,21 +36,8 @@ Workflow::Workflow() :
 {
 }
 
-Workflow::Workflow(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_changeDescriptionHasBeenSet(false),
-    m_type(WorkflowType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_ownerHasBeenSet(false),
-    m_dataHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_dateCreatedHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_parametersHasBeenSet(false)
+Workflow::Workflow(JsonView jsonValue)
+  : Workflow()
 {
   *this = jsonValue;
 }

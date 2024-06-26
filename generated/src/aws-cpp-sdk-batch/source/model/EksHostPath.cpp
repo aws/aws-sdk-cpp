@@ -23,8 +23,8 @@ EksHostPath::EksHostPath() :
 {
 }
 
-EksHostPath::EksHostPath(JsonView jsonValue) : 
-    m_pathHasBeenSet(false)
+EksHostPath::EksHostPath(JsonView jsonValue)
+  : EksHostPath()
 {
   *this = jsonValue;
 }

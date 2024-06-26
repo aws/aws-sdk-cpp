@@ -27,10 +27,8 @@ CacheBehaviors::CacheBehaviors() :
 {
 }
 
-CacheBehaviors::CacheBehaviors(const XmlNode& xmlNode) : 
-    m_quantity(0),
-    m_quantityHasBeenSet(false),
-    m_itemsHasBeenSet(false)
+CacheBehaviors::CacheBehaviors(const XmlNode& xmlNode)
+  : CacheBehaviors()
 {
   *this = xmlNode;
 }

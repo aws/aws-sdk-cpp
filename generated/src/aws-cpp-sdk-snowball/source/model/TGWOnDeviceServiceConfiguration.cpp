@@ -26,11 +26,8 @@ TGWOnDeviceServiceConfiguration::TGWOnDeviceServiceConfiguration() :
 {
 }
 
-TGWOnDeviceServiceConfiguration::TGWOnDeviceServiceConfiguration(JsonView jsonValue) : 
-    m_storageLimit(0),
-    m_storageLimitHasBeenSet(false),
-    m_storageUnit(StorageUnit::NOT_SET),
-    m_storageUnitHasBeenSet(false)
+TGWOnDeviceServiceConfiguration::TGWOnDeviceServiceConfiguration(JsonView jsonValue)
+  : TGWOnDeviceServiceConfiguration()
 {
   *this = jsonValue;
 }

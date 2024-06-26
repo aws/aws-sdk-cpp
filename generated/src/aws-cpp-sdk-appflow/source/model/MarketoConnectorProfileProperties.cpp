@@ -23,8 +23,8 @@ MarketoConnectorProfileProperties::MarketoConnectorProfileProperties() :
 {
 }
 
-MarketoConnectorProfileProperties::MarketoConnectorProfileProperties(JsonView jsonValue) : 
-    m_instanceUrlHasBeenSet(false)
+MarketoConnectorProfileProperties::MarketoConnectorProfileProperties(JsonView jsonValue)
+  : MarketoConnectorProfileProperties()
 {
   *this = jsonValue;
 }

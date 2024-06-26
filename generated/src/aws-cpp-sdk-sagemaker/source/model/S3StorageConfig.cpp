@@ -25,10 +25,8 @@ S3StorageConfig::S3StorageConfig() :
 {
 }
 
-S3StorageConfig::S3StorageConfig(JsonView jsonValue) : 
-    m_s3UriHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_resolvedOutputS3UriHasBeenSet(false)
+S3StorageConfig::S3StorageConfig(JsonView jsonValue)
+  : S3StorageConfig()
 {
   *this = jsonValue;
 }

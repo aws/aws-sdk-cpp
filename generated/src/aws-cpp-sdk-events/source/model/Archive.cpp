@@ -34,19 +34,8 @@ Archive::Archive() :
 {
 }
 
-Archive::Archive(JsonView jsonValue) : 
-    m_archiveNameHasBeenSet(false),
-    m_eventSourceArnHasBeenSet(false),
-    m_state(ArchiveState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_stateReasonHasBeenSet(false),
-    m_retentionDays(0),
-    m_retentionDaysHasBeenSet(false),
-    m_sizeBytes(0),
-    m_sizeBytesHasBeenSet(false),
-    m_eventCount(0),
-    m_eventCountHasBeenSet(false),
-    m_creationTimeHasBeenSet(false)
+Archive::Archive(JsonView jsonValue)
+  : Archive()
 {
   *this = jsonValue;
 }

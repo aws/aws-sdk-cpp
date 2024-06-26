@@ -29,14 +29,8 @@ ThreatDetectedByName::ThreatDetectedByName() :
 {
 }
 
-ThreatDetectedByName::ThreatDetectedByName(JsonView jsonValue) : 
-    m_itemCount(0),
-    m_itemCountHasBeenSet(false),
-    m_uniqueThreatNameCount(0),
-    m_uniqueThreatNameCountHasBeenSet(false),
-    m_shortened(false),
-    m_shortenedHasBeenSet(false),
-    m_threatNamesHasBeenSet(false)
+ThreatDetectedByName::ThreatDetectedByName(JsonView jsonValue)
+  : ThreatDetectedByName()
 {
   *this = jsonValue;
 }

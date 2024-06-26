@@ -26,11 +26,8 @@ GatingRuleUpdate::GatingRuleUpdate() :
 {
 }
 
-GatingRuleUpdate::GatingRuleUpdate(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_safetyRuleArnHasBeenSet(false),
-    m_waitPeriodMs(0),
-    m_waitPeriodMsHasBeenSet(false)
+GatingRuleUpdate::GatingRuleUpdate(JsonView jsonValue)
+  : GatingRuleUpdate()
 {
   *this = jsonValue;
 }

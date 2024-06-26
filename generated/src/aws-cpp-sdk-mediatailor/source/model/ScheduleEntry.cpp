@@ -35,20 +35,8 @@ ScheduleEntry::ScheduleEntry() :
 {
 }
 
-ScheduleEntry::ScheduleEntry(JsonView jsonValue) : 
-    m_approximateDurationSeconds(0),
-    m_approximateDurationSecondsHasBeenSet(false),
-    m_approximateStartTimeHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_audiencesHasBeenSet(false),
-    m_channelNameHasBeenSet(false),
-    m_liveSourceNameHasBeenSet(false),
-    m_programNameHasBeenSet(false),
-    m_scheduleAdBreaksHasBeenSet(false),
-    m_scheduleEntryType(ScheduleEntryType::NOT_SET),
-    m_scheduleEntryTypeHasBeenSet(false),
-    m_sourceLocationNameHasBeenSet(false),
-    m_vodSourceNameHasBeenSet(false)
+ScheduleEntry::ScheduleEntry(JsonView jsonValue)
+  : ScheduleEntry()
 {
   *this = jsonValue;
 }

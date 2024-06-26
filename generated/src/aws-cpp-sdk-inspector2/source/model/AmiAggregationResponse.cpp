@@ -27,12 +27,8 @@ AmiAggregationResponse::AmiAggregationResponse() :
 {
 }
 
-AmiAggregationResponse::AmiAggregationResponse(JsonView jsonValue) : 
-    m_accountIdHasBeenSet(false),
-    m_affectedInstances(0),
-    m_affectedInstancesHasBeenSet(false),
-    m_amiHasBeenSet(false),
-    m_severityCountsHasBeenSet(false)
+AmiAggregationResponse::AmiAggregationResponse(JsonView jsonValue)
+  : AmiAggregationResponse()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ AwsRedshiftClusterVpcSecurityGroup::AwsRedshiftClusterVpcSecurityGroup() :
 {
 }
 
-AwsRedshiftClusterVpcSecurityGroup::AwsRedshiftClusterVpcSecurityGroup(JsonView jsonValue) : 
-    m_statusHasBeenSet(false),
-    m_vpcSecurityGroupIdHasBeenSet(false)
+AwsRedshiftClusterVpcSecurityGroup::AwsRedshiftClusterVpcSecurityGroup(JsonView jsonValue)
+  : AwsRedshiftClusterVpcSecurityGroup()
 {
   *this = jsonValue;
 }

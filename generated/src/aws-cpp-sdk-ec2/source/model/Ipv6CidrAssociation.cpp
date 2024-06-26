@@ -26,9 +26,8 @@ Ipv6CidrAssociation::Ipv6CidrAssociation() :
 {
 }
 
-Ipv6CidrAssociation::Ipv6CidrAssociation(const XmlNode& xmlNode) : 
-    m_ipv6CidrHasBeenSet(false),
-    m_associatedResourceHasBeenSet(false)
+Ipv6CidrAssociation::Ipv6CidrAssociation(const XmlNode& xmlNode)
+  : Ipv6CidrAssociation()
 {
   *this = xmlNode;
 }

@@ -25,10 +25,8 @@ ResultErrorEntry::ResultErrorEntry() :
 {
 }
 
-ResultErrorEntry::ResultErrorEntry(JsonView jsonValue) : 
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_idHasBeenSet(false)
+ResultErrorEntry::ResultErrorEntry(JsonView jsonValue)
+  : ResultErrorEntry()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ AwsCertificateManagerCertificateExtendedKeyUsage::AwsCertificateManagerCertifica
 {
 }
 
-AwsCertificateManagerCertificateExtendedKeyUsage::AwsCertificateManagerCertificateExtendedKeyUsage(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_oIdHasBeenSet(false)
+AwsCertificateManagerCertificateExtendedKeyUsage::AwsCertificateManagerCertificateExtendedKeyUsage(JsonView jsonValue)
+  : AwsCertificateManagerCertificateExtendedKeyUsage()
 {
   *this = jsonValue;
 }

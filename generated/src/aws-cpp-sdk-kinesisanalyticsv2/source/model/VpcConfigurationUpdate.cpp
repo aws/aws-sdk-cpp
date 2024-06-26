@@ -25,10 +25,8 @@ VpcConfigurationUpdate::VpcConfigurationUpdate() :
 {
 }
 
-VpcConfigurationUpdate::VpcConfigurationUpdate(JsonView jsonValue) : 
-    m_vpcConfigurationIdHasBeenSet(false),
-    m_subnetIdUpdatesHasBeenSet(false),
-    m_securityGroupIdUpdatesHasBeenSet(false)
+VpcConfigurationUpdate::VpcConfigurationUpdate(JsonView jsonValue)
+  : VpcConfigurationUpdate()
 {
   *this = jsonValue;
 }

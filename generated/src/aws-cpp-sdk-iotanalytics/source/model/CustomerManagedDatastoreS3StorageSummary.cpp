@@ -25,10 +25,8 @@ CustomerManagedDatastoreS3StorageSummary::CustomerManagedDatastoreS3StorageSumma
 {
 }
 
-CustomerManagedDatastoreS3StorageSummary::CustomerManagedDatastoreS3StorageSummary(JsonView jsonValue) : 
-    m_bucketHasBeenSet(false),
-    m_keyPrefixHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
+CustomerManagedDatastoreS3StorageSummary::CustomerManagedDatastoreS3StorageSummary(JsonView jsonValue)
+  : CustomerManagedDatastoreS3StorageSummary()
 {
   *this = jsonValue;
 }

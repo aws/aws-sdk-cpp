@@ -26,11 +26,8 @@ ArchiveStringExpression::ArchiveStringExpression() :
 {
 }
 
-ArchiveStringExpression::ArchiveStringExpression(JsonView jsonValue) : 
-    m_evaluateHasBeenSet(false),
-    m_operator(ArchiveStringOperator::NOT_SET),
-    m_operatorHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+ArchiveStringExpression::ArchiveStringExpression(JsonView jsonValue)
+  : ArchiveStringExpression()
 {
   *this = jsonValue;
 }

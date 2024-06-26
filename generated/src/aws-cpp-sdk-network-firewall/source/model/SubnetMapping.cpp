@@ -25,10 +25,8 @@ SubnetMapping::SubnetMapping() :
 {
 }
 
-SubnetMapping::SubnetMapping(JsonView jsonValue) : 
-    m_subnetIdHasBeenSet(false),
-    m_iPAddressType(IPAddressType::NOT_SET),
-    m_iPAddressTypeHasBeenSet(false)
+SubnetMapping::SubnetMapping(JsonView jsonValue)
+  : SubnetMapping()
 {
   *this = jsonValue;
 }

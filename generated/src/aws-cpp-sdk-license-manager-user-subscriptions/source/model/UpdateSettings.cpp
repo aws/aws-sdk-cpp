@@ -25,10 +25,8 @@ UpdateSettings::UpdateSettings() :
 {
 }
 
-UpdateSettings::UpdateSettings(JsonView jsonValue) : 
-    m_addSubnetsHasBeenSet(false),
-    m_removeSubnetsHasBeenSet(false),
-    m_securityGroupIdHasBeenSet(false)
+UpdateSettings::UpdateSettings(JsonView jsonValue)
+  : UpdateSettings()
 {
   *this = jsonValue;
 }

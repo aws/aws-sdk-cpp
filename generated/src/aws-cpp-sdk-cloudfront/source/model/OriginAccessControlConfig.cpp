@@ -32,15 +32,8 @@ OriginAccessControlConfig::OriginAccessControlConfig() :
 {
 }
 
-OriginAccessControlConfig::OriginAccessControlConfig(const XmlNode& xmlNode) : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_signingProtocol(OriginAccessControlSigningProtocols::NOT_SET),
-    m_signingProtocolHasBeenSet(false),
-    m_signingBehavior(OriginAccessControlSigningBehaviors::NOT_SET),
-    m_signingBehaviorHasBeenSet(false),
-    m_originAccessControlOriginType(OriginAccessControlOriginTypes::NOT_SET),
-    m_originAccessControlOriginTypeHasBeenSet(false)
+OriginAccessControlConfig::OriginAccessControlConfig(const XmlNode& xmlNode)
+  : OriginAccessControlConfig()
 {
   *this = xmlNode;
 }

@@ -36,19 +36,8 @@ StackSummary::StackSummary() :
 {
 }
 
-StackSummary::StackSummary(const XmlNode& xmlNode) : 
-    m_stackIdHasBeenSet(false),
-    m_stackNameHasBeenSet(false),
-    m_templateDescriptionHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_deletionTimeHasBeenSet(false),
-    m_stackStatus(StackStatus::NOT_SET),
-    m_stackStatusHasBeenSet(false),
-    m_stackStatusReasonHasBeenSet(false),
-    m_parentIdHasBeenSet(false),
-    m_rootIdHasBeenSet(false),
-    m_driftInformationHasBeenSet(false)
+StackSummary::StackSummary(const XmlNode& xmlNode)
+  : StackSummary()
 {
   *this = xmlNode;
 }

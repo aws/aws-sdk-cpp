@@ -24,9 +24,8 @@ AwsKinesisStreamStreamEncryptionDetails::AwsKinesisStreamStreamEncryptionDetails
 {
 }
 
-AwsKinesisStreamStreamEncryptionDetails::AwsKinesisStreamStreamEncryptionDetails(JsonView jsonValue) : 
-    m_encryptionTypeHasBeenSet(false),
-    m_keyIdHasBeenSet(false)
+AwsKinesisStreamStreamEncryptionDetails::AwsKinesisStreamStreamEncryptionDetails(JsonView jsonValue)
+  : AwsKinesisStreamStreamEncryptionDetails()
 {
   *this = jsonValue;
 }

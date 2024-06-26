@@ -24,9 +24,8 @@ ParameterConstraints::ParameterConstraints() :
 {
 }
 
-ParameterConstraints::ParameterConstraints(JsonView jsonValue) : 
-    m_required(false),
-    m_requiredHasBeenSet(false)
+ParameterConstraints::ParameterConstraints(JsonView jsonValue)
+  : ParameterConstraints()
 {
   *this = jsonValue;
 }

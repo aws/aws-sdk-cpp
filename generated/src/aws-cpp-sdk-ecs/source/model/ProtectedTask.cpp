@@ -26,11 +26,8 @@ ProtectedTask::ProtectedTask() :
 {
 }
 
-ProtectedTask::ProtectedTask(JsonView jsonValue) : 
-    m_taskArnHasBeenSet(false),
-    m_protectionEnabled(false),
-    m_protectionEnabledHasBeenSet(false),
-    m_expirationDateHasBeenSet(false)
+ProtectedTask::ProtectedTask(JsonView jsonValue)
+  : ProtectedTask()
 {
   *this = jsonValue;
 }

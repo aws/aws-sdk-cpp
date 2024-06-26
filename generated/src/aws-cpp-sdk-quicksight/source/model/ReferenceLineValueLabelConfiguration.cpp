@@ -25,10 +25,8 @@ ReferenceLineValueLabelConfiguration::ReferenceLineValueLabelConfiguration() :
 {
 }
 
-ReferenceLineValueLabelConfiguration::ReferenceLineValueLabelConfiguration(JsonView jsonValue) : 
-    m_relativePosition(ReferenceLineValueLabelRelativePosition::NOT_SET),
-    m_relativePositionHasBeenSet(false),
-    m_formatConfigurationHasBeenSet(false)
+ReferenceLineValueLabelConfiguration::ReferenceLineValueLabelConfiguration(JsonView jsonValue)
+  : ReferenceLineValueLabelConfiguration()
 {
   *this = jsonValue;
 }

@@ -28,11 +28,8 @@ ReservedInstanceLimitPrice::ReservedInstanceLimitPrice() :
 {
 }
 
-ReservedInstanceLimitPrice::ReservedInstanceLimitPrice(const XmlNode& xmlNode) : 
-    m_amount(0.0),
-    m_amountHasBeenSet(false),
-    m_currencyCode(CurrencyCodeValues::NOT_SET),
-    m_currencyCodeHasBeenSet(false)
+ReservedInstanceLimitPrice::ReservedInstanceLimitPrice(const XmlNode& xmlNode)
+  : ReservedInstanceLimitPrice()
 {
   *this = xmlNode;
 }

@@ -34,19 +34,8 @@ ActionConfigurationProperty::ActionConfigurationProperty() :
 {
 }
 
-ActionConfigurationProperty::ActionConfigurationProperty(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_required(false),
-    m_requiredHasBeenSet(false),
-    m_key(false),
-    m_keyHasBeenSet(false),
-    m_secret(false),
-    m_secretHasBeenSet(false),
-    m_queryable(false),
-    m_queryableHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_type(ActionConfigurationPropertyType::NOT_SET),
-    m_typeHasBeenSet(false)
+ActionConfigurationProperty::ActionConfigurationProperty(JsonView jsonValue)
+  : ActionConfigurationProperty()
 {
   *this = jsonValue;
 }

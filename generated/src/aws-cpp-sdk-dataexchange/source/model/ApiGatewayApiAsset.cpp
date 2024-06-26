@@ -32,17 +32,8 @@ ApiGatewayApiAsset::ApiGatewayApiAsset() :
 {
 }
 
-ApiGatewayApiAsset::ApiGatewayApiAsset(JsonView jsonValue) : 
-    m_apiDescriptionHasBeenSet(false),
-    m_apiEndpointHasBeenSet(false),
-    m_apiIdHasBeenSet(false),
-    m_apiKeyHasBeenSet(false),
-    m_apiNameHasBeenSet(false),
-    m_apiSpecificationDownloadUrlHasBeenSet(false),
-    m_apiSpecificationDownloadUrlExpiresAtHasBeenSet(false),
-    m_protocolType(ProtocolType::NOT_SET),
-    m_protocolTypeHasBeenSet(false),
-    m_stageHasBeenSet(false)
+ApiGatewayApiAsset::ApiGatewayApiAsset(JsonView jsonValue)
+  : ApiGatewayApiAsset()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ GeospatialMapFieldWells::GeospatialMapFieldWells() :
 {
 }
 
-GeospatialMapFieldWells::GeospatialMapFieldWells(JsonView jsonValue) : 
-    m_geospatialMapAggregatedFieldWellsHasBeenSet(false)
+GeospatialMapFieldWells::GeospatialMapFieldWells(JsonView jsonValue)
+  : GeospatialMapFieldWells()
 {
   *this = jsonValue;
 }

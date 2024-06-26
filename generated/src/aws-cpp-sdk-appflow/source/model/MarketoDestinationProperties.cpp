@@ -24,9 +24,8 @@ MarketoDestinationProperties::MarketoDestinationProperties() :
 {
 }
 
-MarketoDestinationProperties::MarketoDestinationProperties(JsonView jsonValue) : 
-    m_objectHasBeenSet(false),
-    m_errorHandlingConfigHasBeenSet(false)
+MarketoDestinationProperties::MarketoDestinationProperties(JsonView jsonValue)
+  : MarketoDestinationProperties()
 {
   *this = jsonValue;
 }

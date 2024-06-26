@@ -22,8 +22,8 @@ JoinDomainResult::JoinDomainResult() :
 {
 }
 
-JoinDomainResult::JoinDomainResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_activeDirectoryStatus(ActiveDirectoryStatus::NOT_SET)
+JoinDomainResult::JoinDomainResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : JoinDomainResult()
 {
   *this = result;
 }

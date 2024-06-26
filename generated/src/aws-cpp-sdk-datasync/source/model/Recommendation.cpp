@@ -25,10 +25,8 @@ Recommendation::Recommendation() :
 {
 }
 
-Recommendation::Recommendation(JsonView jsonValue) : 
-    m_storageTypeHasBeenSet(false),
-    m_storageConfigurationHasBeenSet(false),
-    m_estimatedMonthlyStorageCostHasBeenSet(false)
+Recommendation::Recommendation(JsonView jsonValue)
+  : Recommendation()
 {
   *this = jsonValue;
 }

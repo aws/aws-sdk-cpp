@@ -22,8 +22,8 @@ AcknowledgeJobResult::AcknowledgeJobResult() :
 {
 }
 
-AcknowledgeJobResult::AcknowledgeJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(JobStatus::NOT_SET)
+AcknowledgeJobResult::AcknowledgeJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : AcknowledgeJobResult()
 {
   *this = result;
 }

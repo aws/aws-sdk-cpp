@@ -26,11 +26,8 @@ TimeInNanos::TimeInNanos() :
 {
 }
 
-TimeInNanos::TimeInNanos(JsonView jsonValue) : 
-    m_timeInSeconds(0),
-    m_timeInSecondsHasBeenSet(false),
-    m_offsetInNanos(0),
-    m_offsetInNanosHasBeenSet(false)
+TimeInNanos::TimeInNanos(JsonView jsonValue)
+  : TimeInNanos()
 {
   *this = jsonValue;
 }

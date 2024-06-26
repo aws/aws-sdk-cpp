@@ -25,10 +25,8 @@ SavingsPlansPurchaseRecommendationMetadata::SavingsPlansPurchaseRecommendationMe
 {
 }
 
-SavingsPlansPurchaseRecommendationMetadata::SavingsPlansPurchaseRecommendationMetadata(JsonView jsonValue) : 
-    m_recommendationIdHasBeenSet(false),
-    m_generationTimestampHasBeenSet(false),
-    m_additionalMetadataHasBeenSet(false)
+SavingsPlansPurchaseRecommendationMetadata::SavingsPlansPurchaseRecommendationMetadata(JsonView jsonValue)
+  : SavingsPlansPurchaseRecommendationMetadata()
 {
   *this = jsonValue;
 }

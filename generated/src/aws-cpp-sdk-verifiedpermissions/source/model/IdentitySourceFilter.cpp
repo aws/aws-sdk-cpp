@@ -23,8 +23,8 @@ IdentitySourceFilter::IdentitySourceFilter() :
 {
 }
 
-IdentitySourceFilter::IdentitySourceFilter(JsonView jsonValue) : 
-    m_principalEntityTypeHasBeenSet(false)
+IdentitySourceFilter::IdentitySourceFilter(JsonView jsonValue)
+  : IdentitySourceFilter()
 {
   *this = jsonValue;
 }

@@ -39,24 +39,8 @@ DataViewSummary::DataViewSummary() :
 {
 }
 
-DataViewSummary::DataViewSummary(JsonView jsonValue) : 
-    m_dataViewIdHasBeenSet(false),
-    m_dataViewArnHasBeenSet(false),
-    m_datasetIdHasBeenSet(false),
-    m_asOfTimestamp(0),
-    m_asOfTimestampHasBeenSet(false),
-    m_partitionColumnsHasBeenSet(false),
-    m_sortColumnsHasBeenSet(false),
-    m_status(DataViewStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_errorInfoHasBeenSet(false),
-    m_destinationTypePropertiesHasBeenSet(false),
-    m_autoUpdate(false),
-    m_autoUpdateHasBeenSet(false),
-    m_createTime(0),
-    m_createTimeHasBeenSet(false),
-    m_lastModifiedTime(0),
-    m_lastModifiedTimeHasBeenSet(false)
+DataViewSummary::DataViewSummary(JsonView jsonValue)
+  : DataViewSummary()
 {
   *this = jsonValue;
 }

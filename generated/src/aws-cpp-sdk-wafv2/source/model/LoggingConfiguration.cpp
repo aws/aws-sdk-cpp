@@ -32,17 +32,8 @@ LoggingConfiguration::LoggingConfiguration() :
 {
 }
 
-LoggingConfiguration::LoggingConfiguration(JsonView jsonValue) : 
-    m_resourceArnHasBeenSet(false),
-    m_logDestinationConfigsHasBeenSet(false),
-    m_redactedFieldsHasBeenSet(false),
-    m_managedByFirewallManager(false),
-    m_managedByFirewallManagerHasBeenSet(false),
-    m_loggingFilterHasBeenSet(false),
-    m_logType(LogType::NOT_SET),
-    m_logTypeHasBeenSet(false),
-    m_logScope(LogScope::NOT_SET),
-    m_logScopeHasBeenSet(false)
+LoggingConfiguration::LoggingConfiguration(JsonView jsonValue)
+  : LoggingConfiguration()
 {
   *this = jsonValue;
 }

@@ -26,12 +26,8 @@ GetDataSourceResult::GetDataSourceResult() :
 {
 }
 
-GetDataSourceResult::GetDataSourceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_dataSizeInBytes(0),
-    m_numberOfFiles(0),
-    m_status(EntityStatus::NOT_SET),
-    m_computeStatistics(false),
-    m_computeTime(0)
+GetDataSourceResult::GetDataSourceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetDataSourceResult()
 {
   *this = result;
 }

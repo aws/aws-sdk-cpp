@@ -22,8 +22,8 @@ GetSolNetworkInstanceResult::GetSolNetworkInstanceResult() :
 {
 }
 
-GetSolNetworkInstanceResult::GetSolNetworkInstanceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_nsState(NsState::NOT_SET)
+GetSolNetworkInstanceResult::GetSolNetworkInstanceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetSolNetworkInstanceResult()
 {
   *this = result;
 }

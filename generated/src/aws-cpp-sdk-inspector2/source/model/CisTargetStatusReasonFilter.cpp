@@ -26,11 +26,8 @@ CisTargetStatusReasonFilter::CisTargetStatusReasonFilter() :
 {
 }
 
-CisTargetStatusReasonFilter::CisTargetStatusReasonFilter(JsonView jsonValue) : 
-    m_comparison(CisTargetStatusComparison::NOT_SET),
-    m_comparisonHasBeenSet(false),
-    m_value(CisTargetStatusReason::NOT_SET),
-    m_valueHasBeenSet(false)
+CisTargetStatusReasonFilter::CisTargetStatusReasonFilter(JsonView jsonValue)
+  : CisTargetStatusReasonFilter()
 {
   *this = jsonValue;
 }

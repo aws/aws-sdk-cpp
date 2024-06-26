@@ -29,14 +29,8 @@ DeviceInstance::DeviceInstance() :
 {
 }
 
-DeviceInstance::DeviceInstance(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_deviceArnHasBeenSet(false),
-    m_labelsHasBeenSet(false),
-    m_status(InstanceStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_udidHasBeenSet(false),
-    m_instanceProfileHasBeenSet(false)
+DeviceInstance::DeviceInstance(JsonView jsonValue)
+  : DeviceInstance()
 {
   *this = jsonValue;
 }

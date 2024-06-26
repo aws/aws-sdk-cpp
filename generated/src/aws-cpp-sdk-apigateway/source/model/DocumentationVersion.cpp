@@ -27,11 +27,8 @@ DocumentationVersion::DocumentationVersion() :
 {
 }
 
-DocumentationVersion::DocumentationVersion(JsonView jsonValue) : 
-    m_versionHasBeenSet(false),
-    m_createdDateHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
+DocumentationVersion::DocumentationVersion(JsonView jsonValue)
+  : DocumentationVersion()
 {
   *this = jsonValue;
 }

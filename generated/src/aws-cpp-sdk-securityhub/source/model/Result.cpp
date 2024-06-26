@@ -24,9 +24,8 @@ Result::Result() :
 {
 }
 
-Result::Result(JsonView jsonValue) : 
-    m_accountIdHasBeenSet(false),
-    m_processingResultHasBeenSet(false)
+Result::Result(JsonView jsonValue)
+  : Result()
 {
   *this = jsonValue;
 }

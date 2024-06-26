@@ -24,9 +24,8 @@ DataReplicationCounterpart::DataReplicationCounterpart() :
 {
 }
 
-DataReplicationCounterpart::DataReplicationCounterpart(JsonView jsonValue) : 
-    m_brokerIdHasBeenSet(false),
-    m_regionHasBeenSet(false)
+DataReplicationCounterpart::DataReplicationCounterpart(JsonView jsonValue)
+  : DataReplicationCounterpart()
 {
   *this = jsonValue;
 }

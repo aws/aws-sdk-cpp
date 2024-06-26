@@ -25,10 +25,8 @@ ContentBlockStartEvent::ContentBlockStartEvent() :
 {
 }
 
-ContentBlockStartEvent::ContentBlockStartEvent(JsonView jsonValue) : 
-    m_startHasBeenSet(false),
-    m_contentBlockIndex(0),
-    m_contentBlockIndexHasBeenSet(false)
+ContentBlockStartEvent::ContentBlockStartEvent(JsonView jsonValue)
+  : ContentBlockStartEvent()
 {
   *this = jsonValue;
 }

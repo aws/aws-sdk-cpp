@@ -26,11 +26,8 @@ SearchInventoryResultItem::SearchInventoryResultItem() :
 {
 }
 
-SearchInventoryResultItem::SearchInventoryResultItem(JsonView jsonValue) : 
-    m_assetItemHasBeenSet(false),
-    m_dataProductItemHasBeenSet(false),
-    m_glossaryItemHasBeenSet(false),
-    m_glossaryTermItemHasBeenSet(false)
+SearchInventoryResultItem::SearchInventoryResultItem(JsonView jsonValue)
+  : SearchInventoryResultItem()
 {
   *this = jsonValue;
 }

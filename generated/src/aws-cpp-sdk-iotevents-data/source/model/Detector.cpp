@@ -28,13 +28,8 @@ Detector::Detector() :
 {
 }
 
-Detector::Detector(JsonView jsonValue) : 
-    m_detectorModelNameHasBeenSet(false),
-    m_keyValueHasBeenSet(false),
-    m_detectorModelVersionHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastUpdateTimeHasBeenSet(false)
+Detector::Detector(JsonView jsonValue)
+  : Detector()
 {
   *this = jsonValue;
 }

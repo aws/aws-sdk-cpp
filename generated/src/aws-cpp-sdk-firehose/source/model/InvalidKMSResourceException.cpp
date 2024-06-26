@@ -24,9 +24,8 @@ InvalidKMSResourceException::InvalidKMSResourceException() :
 {
 }
 
-InvalidKMSResourceException::InvalidKMSResourceException(JsonView jsonValue) : 
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+InvalidKMSResourceException::InvalidKMSResourceException(JsonView jsonValue)
+  : InvalidKMSResourceException()
 {
   *this = jsonValue;
 }

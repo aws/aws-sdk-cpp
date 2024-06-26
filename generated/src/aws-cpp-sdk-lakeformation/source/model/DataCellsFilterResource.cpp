@@ -26,11 +26,8 @@ DataCellsFilterResource::DataCellsFilterResource() :
 {
 }
 
-DataCellsFilterResource::DataCellsFilterResource(JsonView jsonValue) : 
-    m_tableCatalogIdHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_tableNameHasBeenSet(false),
-    m_nameHasBeenSet(false)
+DataCellsFilterResource::DataCellsFilterResource(JsonView jsonValue)
+  : DataCellsFilterResource()
 {
   *this = jsonValue;
 }

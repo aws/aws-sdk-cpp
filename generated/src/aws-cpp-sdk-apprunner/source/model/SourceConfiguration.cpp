@@ -27,12 +27,8 @@ SourceConfiguration::SourceConfiguration() :
 {
 }
 
-SourceConfiguration::SourceConfiguration(JsonView jsonValue) : 
-    m_codeRepositoryHasBeenSet(false),
-    m_imageRepositoryHasBeenSet(false),
-    m_autoDeploymentsEnabled(false),
-    m_autoDeploymentsEnabledHasBeenSet(false),
-    m_authenticationConfigurationHasBeenSet(false)
+SourceConfiguration::SourceConfiguration(JsonView jsonValue)
+  : SourceConfiguration()
 {
   *this = jsonValue;
 }

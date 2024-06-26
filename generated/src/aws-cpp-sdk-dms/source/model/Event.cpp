@@ -28,13 +28,8 @@ Event::Event() :
 {
 }
 
-Event::Event(JsonView jsonValue) : 
-    m_sourceIdentifierHasBeenSet(false),
-    m_sourceType(SourceType::NOT_SET),
-    m_sourceTypeHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_eventCategoriesHasBeenSet(false),
-    m_dateHasBeenSet(false)
+Event::Event(JsonView jsonValue)
+  : Event()
 {
   *this = jsonValue;
 }

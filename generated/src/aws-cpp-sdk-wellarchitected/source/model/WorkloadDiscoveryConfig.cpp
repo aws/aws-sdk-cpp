@@ -25,10 +25,8 @@ WorkloadDiscoveryConfig::WorkloadDiscoveryConfig() :
 {
 }
 
-WorkloadDiscoveryConfig::WorkloadDiscoveryConfig(JsonView jsonValue) : 
-    m_trustedAdvisorIntegrationStatus(TrustedAdvisorIntegrationStatus::NOT_SET),
-    m_trustedAdvisorIntegrationStatusHasBeenSet(false),
-    m_workloadResourceDefinitionHasBeenSet(false)
+WorkloadDiscoveryConfig::WorkloadDiscoveryConfig(JsonView jsonValue)
+  : WorkloadDiscoveryConfig()
 {
   *this = jsonValue;
 }

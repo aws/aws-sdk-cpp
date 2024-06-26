@@ -24,10 +24,8 @@ RebootDBShardGroupResult::RebootDBShardGroupResult() :
 {
 }
 
-RebootDBShardGroupResult::RebootDBShardGroupResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_maxACU(0.0),
-    m_computeRedundancy(0),
-    m_publiclyAccessible(false)
+RebootDBShardGroupResult::RebootDBShardGroupResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : RebootDBShardGroupResult()
 {
   *this = result;
 }

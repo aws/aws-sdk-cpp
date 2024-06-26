@@ -22,8 +22,8 @@ GetDomainResult::GetDomainResult() :
 {
 }
 
-GetDomainResult::GetDomainResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_defaultExpirationDays(0)
+GetDomainResult::GetDomainResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetDomainResult()
 {
   *this = result;
 }

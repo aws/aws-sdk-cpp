@@ -26,11 +26,8 @@ AwsBackupRecoveryPointLifecycleDetails::AwsBackupRecoveryPointLifecycleDetails()
 {
 }
 
-AwsBackupRecoveryPointLifecycleDetails::AwsBackupRecoveryPointLifecycleDetails(JsonView jsonValue) : 
-    m_deleteAfterDays(0),
-    m_deleteAfterDaysHasBeenSet(false),
-    m_moveToColdStorageAfterDays(0),
-    m_moveToColdStorageAfterDaysHasBeenSet(false)
+AwsBackupRecoveryPointLifecycleDetails::AwsBackupRecoveryPointLifecycleDetails(JsonView jsonValue)
+  : AwsBackupRecoveryPointLifecycleDetails()
 {
   *this = jsonValue;
 }

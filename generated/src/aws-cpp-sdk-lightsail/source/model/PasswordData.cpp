@@ -24,9 +24,8 @@ PasswordData::PasswordData() :
 {
 }
 
-PasswordData::PasswordData(JsonView jsonValue) : 
-    m_ciphertextHasBeenSet(false),
-    m_keyPairNameHasBeenSet(false)
+PasswordData::PasswordData(JsonView jsonValue)
+  : PasswordData()
 {
   *this = jsonValue;
 }

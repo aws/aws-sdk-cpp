@@ -34,19 +34,8 @@ MaintenanceWindowExecutionTaskIdentity::MaintenanceWindowExecutionTaskIdentity()
 {
 }
 
-MaintenanceWindowExecutionTaskIdentity::MaintenanceWindowExecutionTaskIdentity(JsonView jsonValue) : 
-    m_windowExecutionIdHasBeenSet(false),
-    m_taskExecutionIdHasBeenSet(false),
-    m_status(MaintenanceWindowExecutionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusDetailsHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_taskArnHasBeenSet(false),
-    m_taskType(MaintenanceWindowTaskType::NOT_SET),
-    m_taskTypeHasBeenSet(false),
-    m_alarmConfigurationHasBeenSet(false),
-    m_triggeredAlarmsHasBeenSet(false)
+MaintenanceWindowExecutionTaskIdentity::MaintenanceWindowExecutionTaskIdentity(JsonView jsonValue)
+  : MaintenanceWindowExecutionTaskIdentity()
 {
   *this = jsonValue;
 }

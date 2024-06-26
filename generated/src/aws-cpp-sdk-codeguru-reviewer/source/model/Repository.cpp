@@ -26,11 +26,8 @@ Repository::Repository() :
 {
 }
 
-Repository::Repository(JsonView jsonValue) : 
-    m_codeCommitHasBeenSet(false),
-    m_bitbucketHasBeenSet(false),
-    m_gitHubEnterpriseServerHasBeenSet(false),
-    m_s3BucketHasBeenSet(false)
+Repository::Repository(JsonView jsonValue)
+  : Repository()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ CompleteSnapshotResult::CompleteSnapshotResult() :
 {
 }
 
-CompleteSnapshotResult::CompleteSnapshotResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(Status::NOT_SET)
+CompleteSnapshotResult::CompleteSnapshotResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CompleteSnapshotResult()
 {
   *this = result;
 }

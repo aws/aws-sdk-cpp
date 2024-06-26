@@ -33,18 +33,8 @@ ServiceNetworkVpcAssociationSummary::ServiceNetworkVpcAssociationSummary() :
 {
 }
 
-ServiceNetworkVpcAssociationSummary::ServiceNetworkVpcAssociationSummary(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false),
-    m_serviceNetworkArnHasBeenSet(false),
-    m_serviceNetworkIdHasBeenSet(false),
-    m_serviceNetworkNameHasBeenSet(false),
-    m_status(ServiceNetworkVpcAssociationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_vpcIdHasBeenSet(false)
+ServiceNetworkVpcAssociationSummary::ServiceNetworkVpcAssociationSummary(JsonView jsonValue)
+  : ServiceNetworkVpcAssociationSummary()
 {
   *this = jsonValue;
 }

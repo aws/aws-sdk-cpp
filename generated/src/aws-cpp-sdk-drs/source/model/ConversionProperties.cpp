@@ -29,14 +29,8 @@ ConversionProperties::ConversionProperties() :
 {
 }
 
-ConversionProperties::ConversionProperties(JsonView jsonValue) : 
-    m_dataTimestampHasBeenSet(false),
-    m_forceUefi(false),
-    m_forceUefiHasBeenSet(false),
-    m_rootVolumeNameHasBeenSet(false),
-    m_volumeToConversionMapHasBeenSet(false),
-    m_volumeToProductCodesHasBeenSet(false),
-    m_volumeToVolumeSizeHasBeenSet(false)
+ConversionProperties::ConversionProperties(JsonView jsonValue)
+  : ConversionProperties()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ AggregatedVariablesImpactExplanation::AggregatedVariablesImpactExplanation() :
 {
 }
 
-AggregatedVariablesImpactExplanation::AggregatedVariablesImpactExplanation(JsonView jsonValue) : 
-    m_eventVariableNamesHasBeenSet(false),
-    m_relativeImpactHasBeenSet(false),
-    m_logOddsImpact(0.0),
-    m_logOddsImpactHasBeenSet(false)
+AggregatedVariablesImpactExplanation::AggregatedVariablesImpactExplanation(JsonView jsonValue)
+  : AggregatedVariablesImpactExplanation()
 {
   *this = jsonValue;
 }

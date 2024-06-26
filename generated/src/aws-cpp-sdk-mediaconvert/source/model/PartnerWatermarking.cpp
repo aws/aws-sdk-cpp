@@ -23,8 +23,8 @@ PartnerWatermarking::PartnerWatermarking() :
 {
 }
 
-PartnerWatermarking::PartnerWatermarking(JsonView jsonValue) : 
-    m_nexguardFileMarkerSettingsHasBeenSet(false)
+PartnerWatermarking::PartnerWatermarking(JsonView jsonValue)
+  : PartnerWatermarking()
 {
   *this = jsonValue;
 }

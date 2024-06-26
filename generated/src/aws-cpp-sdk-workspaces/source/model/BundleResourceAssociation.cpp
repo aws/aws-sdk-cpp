@@ -31,16 +31,8 @@ BundleResourceAssociation::BundleResourceAssociation() :
 {
 }
 
-BundleResourceAssociation::BundleResourceAssociation(JsonView jsonValue) : 
-    m_associatedResourceIdHasBeenSet(false),
-    m_associatedResourceType(BundleAssociatedResourceType::NOT_SET),
-    m_associatedResourceTypeHasBeenSet(false),
-    m_bundleIdHasBeenSet(false),
-    m_createdHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_state(AssociationState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_stateReasonHasBeenSet(false)
+BundleResourceAssociation::BundleResourceAssociation(JsonView jsonValue)
+  : BundleResourceAssociation()
 {
   *this = jsonValue;
 }

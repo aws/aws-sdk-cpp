@@ -24,9 +24,8 @@ S3Destination::S3Destination() :
 {
 }
 
-S3Destination::S3Destination(JsonView jsonValue) : 
-    m_bucketNameHasBeenSet(false),
-    m_objectKeyPrefixHasBeenSet(false)
+S3Destination::S3Destination(JsonView jsonValue)
+  : S3Destination()
 {
   *this = jsonValue;
 }

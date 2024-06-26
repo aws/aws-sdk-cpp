@@ -22,8 +22,8 @@ PutTaxRegistrationResult::PutTaxRegistrationResult() :
 {
 }
 
-PutTaxRegistrationResult::PutTaxRegistrationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(TaxRegistrationStatus::NOT_SET)
+PutTaxRegistrationResult::PutTaxRegistrationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : PutTaxRegistrationResult()
 {
   *this = result;
 }

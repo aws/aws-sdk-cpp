@@ -32,17 +32,8 @@ RouteSettings::RouteSettings() :
 {
 }
 
-RouteSettings::RouteSettings(JsonView jsonValue) : 
-    m_dataTraceEnabled(false),
-    m_dataTraceEnabledHasBeenSet(false),
-    m_detailedMetricsEnabled(false),
-    m_detailedMetricsEnabledHasBeenSet(false),
-    m_loggingLevel(LoggingLevel::NOT_SET),
-    m_loggingLevelHasBeenSet(false),
-    m_throttlingBurstLimit(0),
-    m_throttlingBurstLimitHasBeenSet(false),
-    m_throttlingRateLimit(0.0),
-    m_throttlingRateLimitHasBeenSet(false)
+RouteSettings::RouteSettings(JsonView jsonValue)
+  : RouteSettings()
 {
   *this = jsonValue;
 }

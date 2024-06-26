@@ -27,12 +27,8 @@ KeyspaceSummary::KeyspaceSummary() :
 {
 }
 
-KeyspaceSummary::KeyspaceSummary(JsonView jsonValue) : 
-    m_keyspaceNameHasBeenSet(false),
-    m_resourceArnHasBeenSet(false),
-    m_replicationStrategy(Rs::NOT_SET),
-    m_replicationStrategyHasBeenSet(false),
-    m_replicationRegionsHasBeenSet(false)
+KeyspaceSummary::KeyspaceSummary(JsonView jsonValue)
+  : KeyspaceSummary()
 {
   *this = jsonValue;
 }

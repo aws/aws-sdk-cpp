@@ -25,10 +25,8 @@ ImportAssetsFromRedshiftDataSharesResponseDetails::ImportAssetsFromRedshiftDataS
 {
 }
 
-ImportAssetsFromRedshiftDataSharesResponseDetails::ImportAssetsFromRedshiftDataSharesResponseDetails(JsonView jsonValue) : 
-    m_assetSourcesHasBeenSet(false),
-    m_dataSetIdHasBeenSet(false),
-    m_revisionIdHasBeenSet(false)
+ImportAssetsFromRedshiftDataSharesResponseDetails::ImportAssetsFromRedshiftDataSharesResponseDetails(JsonView jsonValue)
+  : ImportAssetsFromRedshiftDataSharesResponseDetails()
 {
   *this = jsonValue;
 }

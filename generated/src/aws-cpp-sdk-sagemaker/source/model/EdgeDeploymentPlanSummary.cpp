@@ -33,18 +33,8 @@ EdgeDeploymentPlanSummary::EdgeDeploymentPlanSummary() :
 {
 }
 
-EdgeDeploymentPlanSummary::EdgeDeploymentPlanSummary(JsonView jsonValue) : 
-    m_edgeDeploymentPlanArnHasBeenSet(false),
-    m_edgeDeploymentPlanNameHasBeenSet(false),
-    m_deviceFleetNameHasBeenSet(false),
-    m_edgeDeploymentSuccess(0),
-    m_edgeDeploymentSuccessHasBeenSet(false),
-    m_edgeDeploymentPending(0),
-    m_edgeDeploymentPendingHasBeenSet(false),
-    m_edgeDeploymentFailed(0),
-    m_edgeDeploymentFailedHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false)
+EdgeDeploymentPlanSummary::EdgeDeploymentPlanSummary(JsonView jsonValue)
+  : EdgeDeploymentPlanSummary()
 {
   *this = jsonValue;
 }

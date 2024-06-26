@@ -25,10 +25,8 @@ MSKSourceConfiguration::MSKSourceConfiguration() :
 {
 }
 
-MSKSourceConfiguration::MSKSourceConfiguration(JsonView jsonValue) : 
-    m_mSKClusterARNHasBeenSet(false),
-    m_topicNameHasBeenSet(false),
-    m_authenticationConfigurationHasBeenSet(false)
+MSKSourceConfiguration::MSKSourceConfiguration(JsonView jsonValue)
+  : MSKSourceConfiguration()
 {
   *this = jsonValue;
 }

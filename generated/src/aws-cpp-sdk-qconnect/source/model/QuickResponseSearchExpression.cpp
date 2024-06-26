@@ -25,10 +25,8 @@ QuickResponseSearchExpression::QuickResponseSearchExpression() :
 {
 }
 
-QuickResponseSearchExpression::QuickResponseSearchExpression(JsonView jsonValue) : 
-    m_filtersHasBeenSet(false),
-    m_orderOnFieldHasBeenSet(false),
-    m_queriesHasBeenSet(false)
+QuickResponseSearchExpression::QuickResponseSearchExpression(JsonView jsonValue)
+  : QuickResponseSearchExpression()
 {
   *this = jsonValue;
 }

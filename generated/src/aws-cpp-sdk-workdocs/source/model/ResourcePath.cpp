@@ -23,8 +23,8 @@ ResourcePath::ResourcePath() :
 {
 }
 
-ResourcePath::ResourcePath(JsonView jsonValue) : 
-    m_componentsHasBeenSet(false)
+ResourcePath::ResourcePath(JsonView jsonValue)
+  : ResourcePath()
 {
   *this = jsonValue;
 }

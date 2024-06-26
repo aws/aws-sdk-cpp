@@ -36,21 +36,8 @@ CisScan::CisScan() :
 {
 }
 
-CisScan::CisScan(JsonView jsonValue) : 
-    m_failedChecks(0),
-    m_failedChecksHasBeenSet(false),
-    m_scanArnHasBeenSet(false),
-    m_scanConfigurationArnHasBeenSet(false),
-    m_scanDateHasBeenSet(false),
-    m_scanNameHasBeenSet(false),
-    m_scheduledByHasBeenSet(false),
-    m_securityLevel(CisSecurityLevel::NOT_SET),
-    m_securityLevelHasBeenSet(false),
-    m_status(CisScanStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_targetsHasBeenSet(false),
-    m_totalChecks(0),
-    m_totalChecksHasBeenSet(false)
+CisScan::CisScan(JsonView jsonValue)
+  : CisScan()
 {
   *this = jsonValue;
 }

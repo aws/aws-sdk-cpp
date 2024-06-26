@@ -24,9 +24,8 @@ CodeSigningCertificateChain::CodeSigningCertificateChain() :
 {
 }
 
-CodeSigningCertificateChain::CodeSigningCertificateChain(JsonView jsonValue) : 
-    m_certificateNameHasBeenSet(false),
-    m_inlineDocumentHasBeenSet(false)
+CodeSigningCertificateChain::CodeSigningCertificateChain(JsonView jsonValue)
+  : CodeSigningCertificateChain()
 {
   *this = jsonValue;
 }

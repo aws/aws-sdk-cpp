@@ -22,8 +22,8 @@ UpdateSubnetChangeProtectionResult::UpdateSubnetChangeProtectionResult() :
 {
 }
 
-UpdateSubnetChangeProtectionResult::UpdateSubnetChangeProtectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_subnetChangeProtection(false)
+UpdateSubnetChangeProtectionResult::UpdateSubnetChangeProtectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateSubnetChangeProtectionResult()
 {
   *this = result;
 }

@@ -47,32 +47,8 @@ ClusterInfo::ClusterInfo() :
 {
 }
 
-ClusterInfo::ClusterInfo(JsonView jsonValue) : 
-    m_activeOperationArnHasBeenSet(false),
-    m_brokerNodeGroupInfoHasBeenSet(false),
-    m_clientAuthenticationHasBeenSet(false),
-    m_clusterArnHasBeenSet(false),
-    m_clusterNameHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_currentBrokerSoftwareInfoHasBeenSet(false),
-    m_currentVersionHasBeenSet(false),
-    m_encryptionInfoHasBeenSet(false),
-    m_enhancedMonitoring(EnhancedMonitoring::NOT_SET),
-    m_enhancedMonitoringHasBeenSet(false),
-    m_openMonitoringHasBeenSet(false),
-    m_loggingInfoHasBeenSet(false),
-    m_numberOfBrokerNodes(0),
-    m_numberOfBrokerNodesHasBeenSet(false),
-    m_state(ClusterState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_stateInfoHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_zookeeperConnectStringHasBeenSet(false),
-    m_zookeeperConnectStringTlsHasBeenSet(false),
-    m_storageMode(StorageMode::NOT_SET),
-    m_storageModeHasBeenSet(false),
-    m_customerActionStatus(CustomerActionStatus::NOT_SET),
-    m_customerActionStatusHasBeenSet(false)
+ClusterInfo::ClusterInfo(JsonView jsonValue)
+  : ClusterInfo()
 {
   *this = jsonValue;
 }

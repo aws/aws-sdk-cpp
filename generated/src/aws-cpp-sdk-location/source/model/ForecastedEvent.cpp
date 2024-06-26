@@ -32,17 +32,8 @@ ForecastedEvent::ForecastedEvent() :
 {
 }
 
-ForecastedEvent::ForecastedEvent(JsonView jsonValue) : 
-    m_eventIdHasBeenSet(false),
-    m_geofenceIdHasBeenSet(false),
-    m_isDeviceInGeofence(false),
-    m_isDeviceInGeofenceHasBeenSet(false),
-    m_nearestDistance(0.0),
-    m_nearestDistanceHasBeenSet(false),
-    m_eventType(ForecastedGeofenceEventType::NOT_SET),
-    m_eventTypeHasBeenSet(false),
-    m_forecastedBreachTimeHasBeenSet(false),
-    m_geofencePropertiesHasBeenSet(false)
+ForecastedEvent::ForecastedEvent(JsonView jsonValue)
+  : ForecastedEvent()
 {
   *this = jsonValue;
 }

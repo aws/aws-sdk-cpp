@@ -25,9 +25,8 @@ LimitExceededException::LimitExceededException() :
 {
 }
 
-LimitExceededException::LimitExceededException(JsonView jsonValue) : 
-    m_retryAfterSecondsHasBeenSet(false),
-    m_messageHasBeenSet(false)
+LimitExceededException::LimitExceededException(JsonView jsonValue)
+  : LimitExceededException()
 {
   *this = jsonValue;
 }

@@ -28,13 +28,8 @@ PivotTableVisual::PivotTableVisual() :
 {
 }
 
-PivotTableVisual::PivotTableVisual(JsonView jsonValue) : 
-    m_visualIdHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_subtitleHasBeenSet(false),
-    m_chartConfigurationHasBeenSet(false),
-    m_conditionalFormattingHasBeenSet(false),
-    m_actionsHasBeenSet(false)
+PivotTableVisual::PivotTableVisual(JsonView jsonValue)
+  : PivotTableVisual()
 {
   *this = jsonValue;
 }

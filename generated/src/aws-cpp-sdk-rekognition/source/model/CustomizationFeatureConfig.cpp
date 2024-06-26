@@ -23,8 +23,8 @@ CustomizationFeatureConfig::CustomizationFeatureConfig() :
 {
 }
 
-CustomizationFeatureConfig::CustomizationFeatureConfig(JsonView jsonValue) : 
-    m_contentModerationHasBeenSet(false)
+CustomizationFeatureConfig::CustomizationFeatureConfig(JsonView jsonValue)
+  : CustomizationFeatureConfig()
 {
   *this = jsonValue;
 }

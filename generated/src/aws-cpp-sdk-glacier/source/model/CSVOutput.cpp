@@ -28,13 +28,8 @@ CSVOutput::CSVOutput() :
 {
 }
 
-CSVOutput::CSVOutput(JsonView jsonValue) : 
-    m_quoteFields(QuoteFields::NOT_SET),
-    m_quoteFieldsHasBeenSet(false),
-    m_quoteEscapeCharacterHasBeenSet(false),
-    m_recordDelimiterHasBeenSet(false),
-    m_fieldDelimiterHasBeenSet(false),
-    m_quoteCharacterHasBeenSet(false)
+CSVOutput::CSVOutput(JsonView jsonValue)
+  : CSVOutput()
 {
   *this = jsonValue;
 }

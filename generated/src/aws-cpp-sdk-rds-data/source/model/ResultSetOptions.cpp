@@ -26,11 +26,8 @@ ResultSetOptions::ResultSetOptions() :
 {
 }
 
-ResultSetOptions::ResultSetOptions(JsonView jsonValue) : 
-    m_decimalReturnType(DecimalReturnType::NOT_SET),
-    m_decimalReturnTypeHasBeenSet(false),
-    m_longReturnType(LongReturnType::NOT_SET),
-    m_longReturnTypeHasBeenSet(false)
+ResultSetOptions::ResultSetOptions(JsonView jsonValue)
+  : ResultSetOptions()
 {
   *this = jsonValue;
 }

@@ -25,11 +25,8 @@ GetRunTaskResult::GetRunTaskResult() :
 {
 }
 
-GetRunTaskResult::GetRunTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(TaskStatus::NOT_SET),
-    m_cpus(0),
-    m_memory(0),
-    m_gpus(0)
+GetRunTaskResult::GetRunTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetRunTaskResult()
 {
   *this = result;
 }

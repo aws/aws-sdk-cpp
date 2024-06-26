@@ -24,9 +24,8 @@ ResultField::ResultField() :
 {
 }
 
-ResultField::ResultField(JsonView jsonValue) : 
-    m_fieldHasBeenSet(false),
-    m_valueHasBeenSet(false)
+ResultField::ResultField(JsonView jsonValue)
+  : ResultField()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ JobLog::JobLog() :
 {
 }
 
-JobLog::JobLog(JsonView jsonValue) : 
-    m_event(JobLogEvent::NOT_SET),
-    m_eventHasBeenSet(false),
-    m_eventDataHasBeenSet(false),
-    m_logDateTimeHasBeenSet(false)
+JobLog::JobLog(JsonView jsonValue)
+  : JobLog()
 {
   *this = jsonValue;
 }

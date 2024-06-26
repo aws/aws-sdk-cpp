@@ -29,14 +29,8 @@ NeighborConnectionDetail::NeighborConnectionDetail() :
 {
 }
 
-NeighborConnectionDetail::NeighborConnectionDetail(JsonView jsonValue) : 
-    m_sourceServerIdHasBeenSet(false),
-    m_destinationServerIdHasBeenSet(false),
-    m_destinationPort(0),
-    m_destinationPortHasBeenSet(false),
-    m_transportProtocolHasBeenSet(false),
-    m_connectionsCount(0),
-    m_connectionsCountHasBeenSet(false)
+NeighborConnectionDetail::NeighborConnectionDetail(JsonView jsonValue)
+  : NeighborConnectionDetail()
 {
   *this = jsonValue;
 }

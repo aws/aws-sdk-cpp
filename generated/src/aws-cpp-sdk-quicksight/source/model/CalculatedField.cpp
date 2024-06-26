@@ -25,10 +25,8 @@ CalculatedField::CalculatedField() :
 {
 }
 
-CalculatedField::CalculatedField(JsonView jsonValue) : 
-    m_dataSetIdentifierHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_expressionHasBeenSet(false)
+CalculatedField::CalculatedField(JsonView jsonValue)
+  : CalculatedField()
 {
   *this = jsonValue;
 }

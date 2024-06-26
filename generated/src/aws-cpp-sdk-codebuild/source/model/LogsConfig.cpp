@@ -24,9 +24,8 @@ LogsConfig::LogsConfig() :
 {
 }
 
-LogsConfig::LogsConfig(JsonView jsonValue) : 
-    m_cloudWatchLogsHasBeenSet(false),
-    m_s3LogsHasBeenSet(false)
+LogsConfig::LogsConfig(JsonView jsonValue)
+  : LogsConfig()
 {
   *this = jsonValue;
 }

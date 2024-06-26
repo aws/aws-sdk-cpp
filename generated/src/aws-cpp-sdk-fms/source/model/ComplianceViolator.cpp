@@ -27,12 +27,8 @@ ComplianceViolator::ComplianceViolator() :
 {
 }
 
-ComplianceViolator::ComplianceViolator(JsonView jsonValue) : 
-    m_resourceIdHasBeenSet(false),
-    m_violationReason(ViolationReason::NOT_SET),
-    m_violationReasonHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
-    m_metadataHasBeenSet(false)
+ComplianceViolator::ComplianceViolator(JsonView jsonValue)
+  : ComplianceViolator()
 {
   *this = jsonValue;
 }

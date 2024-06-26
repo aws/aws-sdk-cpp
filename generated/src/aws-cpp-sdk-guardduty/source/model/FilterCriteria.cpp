@@ -23,8 +23,8 @@ FilterCriteria::FilterCriteria() :
 {
 }
 
-FilterCriteria::FilterCriteria(JsonView jsonValue) : 
-    m_filterCriterionHasBeenSet(false)
+FilterCriteria::FilterCriteria(JsonView jsonValue)
+  : FilterCriteria()
 {
   *this = jsonValue;
 }

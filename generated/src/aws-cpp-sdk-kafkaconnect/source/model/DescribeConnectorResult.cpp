@@ -22,8 +22,8 @@ DescribeConnectorResult::DescribeConnectorResult() :
 {
 }
 
-DescribeConnectorResult::DescribeConnectorResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_connectorState(ConnectorState::NOT_SET)
+DescribeConnectorResult::DescribeConnectorResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeConnectorResult()
 {
   *this = result;
 }

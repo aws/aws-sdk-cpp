@@ -29,14 +29,8 @@ PackageFilter::PackageFilter() :
 {
 }
 
-PackageFilter::PackageFilter(JsonView jsonValue) : 
-    m_architectureHasBeenSet(false),
-    m_epochHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_releaseHasBeenSet(false),
-    m_sourceLambdaLayerArnHasBeenSet(false),
-    m_sourceLayerHashHasBeenSet(false),
-    m_versionHasBeenSet(false)
+PackageFilter::PackageFilter(JsonView jsonValue)
+  : PackageFilter()
 {
   *this = jsonValue;
 }

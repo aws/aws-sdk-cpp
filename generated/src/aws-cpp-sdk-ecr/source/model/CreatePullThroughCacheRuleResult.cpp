@@ -22,8 +22,8 @@ CreatePullThroughCacheRuleResult::CreatePullThroughCacheRuleResult() :
 {
 }
 
-CreatePullThroughCacheRuleResult::CreatePullThroughCacheRuleResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_upstreamRegistry(UpstreamRegistry::NOT_SET)
+CreatePullThroughCacheRuleResult::CreatePullThroughCacheRuleResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreatePullThroughCacheRuleResult()
 {
   *this = result;
 }

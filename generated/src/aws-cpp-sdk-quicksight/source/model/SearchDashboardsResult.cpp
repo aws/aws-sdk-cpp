@@ -22,8 +22,8 @@ SearchDashboardsResult::SearchDashboardsResult() :
 {
 }
 
-SearchDashboardsResult::SearchDashboardsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+SearchDashboardsResult::SearchDashboardsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : SearchDashboardsResult()
 {
   *this = result;
 }

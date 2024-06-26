@@ -23,9 +23,8 @@ CreateGUISessionAccessDetailsResult::CreateGUISessionAccessDetailsResult() :
 {
 }
 
-CreateGUISessionAccessDetailsResult::CreateGUISessionAccessDetailsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(Status::NOT_SET),
-    m_percentageComplete(0)
+CreateGUISessionAccessDetailsResult::CreateGUISessionAccessDetailsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateGUISessionAccessDetailsResult()
 {
   *this = result;
 }

@@ -27,12 +27,8 @@ PackageListItem::PackageListItem() :
 {
 }
 
-PackageListItem::PackageListItem(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_packageIdHasBeenSet(false),
-    m_packageNameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+PackageListItem::PackageListItem(JsonView jsonValue)
+  : PackageListItem()
 {
   *this = jsonValue;
 }

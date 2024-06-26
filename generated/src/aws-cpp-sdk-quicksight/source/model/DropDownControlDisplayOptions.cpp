@@ -25,10 +25,8 @@ DropDownControlDisplayOptions::DropDownControlDisplayOptions() :
 {
 }
 
-DropDownControlDisplayOptions::DropDownControlDisplayOptions(JsonView jsonValue) : 
-    m_selectAllOptionsHasBeenSet(false),
-    m_titleOptionsHasBeenSet(false),
-    m_infoIconLabelOptionsHasBeenSet(false)
+DropDownControlDisplayOptions::DropDownControlDisplayOptions(JsonView jsonValue)
+  : DropDownControlDisplayOptions()
 {
   *this = jsonValue;
 }

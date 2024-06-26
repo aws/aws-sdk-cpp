@@ -27,10 +27,8 @@ Policies::Policies() :
 {
 }
 
-Policies::Policies(const XmlNode& xmlNode) : 
-    m_appCookieStickinessPoliciesHasBeenSet(false),
-    m_lBCookieStickinessPoliciesHasBeenSet(false),
-    m_otherPoliciesHasBeenSet(false)
+Policies::Policies(const XmlNode& xmlNode)
+  : Policies()
 {
   *this = xmlNode;
 }

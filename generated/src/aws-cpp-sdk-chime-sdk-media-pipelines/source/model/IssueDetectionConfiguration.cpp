@@ -23,8 +23,8 @@ IssueDetectionConfiguration::IssueDetectionConfiguration() :
 {
 }
 
-IssueDetectionConfiguration::IssueDetectionConfiguration(JsonView jsonValue) : 
-    m_ruleNameHasBeenSet(false)
+IssueDetectionConfiguration::IssueDetectionConfiguration(JsonView jsonValue)
+  : IssueDetectionConfiguration()
 {
   *this = jsonValue;
 }

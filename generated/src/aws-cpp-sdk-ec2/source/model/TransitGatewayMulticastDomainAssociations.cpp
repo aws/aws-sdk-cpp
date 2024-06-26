@@ -31,14 +31,8 @@ TransitGatewayMulticastDomainAssociations::TransitGatewayMulticastDomainAssociat
 {
 }
 
-TransitGatewayMulticastDomainAssociations::TransitGatewayMulticastDomainAssociations(const XmlNode& xmlNode) : 
-    m_transitGatewayMulticastDomainIdHasBeenSet(false),
-    m_transitGatewayAttachmentIdHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_resourceType(TransitGatewayAttachmentResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_resourceOwnerIdHasBeenSet(false),
-    m_subnetsHasBeenSet(false)
+TransitGatewayMulticastDomainAssociations::TransitGatewayMulticastDomainAssociations(const XmlNode& xmlNode)
+  : TransitGatewayMulticastDomainAssociations()
 {
   *this = xmlNode;
 }

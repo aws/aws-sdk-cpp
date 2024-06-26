@@ -24,9 +24,8 @@ PodIdentityAssociation::PodIdentityAssociation() :
 {
 }
 
-PodIdentityAssociation::PodIdentityAssociation(JsonView jsonValue) : 
-    m_associationArnHasBeenSet(false),
-    m_associationIdHasBeenSet(false)
+PodIdentityAssociation::PodIdentityAssociation(JsonView jsonValue)
+  : PodIdentityAssociation()
 {
   *this = jsonValue;
 }

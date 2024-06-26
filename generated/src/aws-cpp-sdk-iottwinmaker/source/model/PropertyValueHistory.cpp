@@ -24,9 +24,8 @@ PropertyValueHistory::PropertyValueHistory() :
 {
 }
 
-PropertyValueHistory::PropertyValueHistory(JsonView jsonValue) : 
-    m_entityPropertyReferenceHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+PropertyValueHistory::PropertyValueHistory(JsonView jsonValue)
+  : PropertyValueHistory()
 {
   *this = jsonValue;
 }

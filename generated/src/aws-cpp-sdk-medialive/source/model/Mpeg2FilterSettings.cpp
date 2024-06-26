@@ -23,8 +23,8 @@ Mpeg2FilterSettings::Mpeg2FilterSettings() :
 {
 }
 
-Mpeg2FilterSettings::Mpeg2FilterSettings(JsonView jsonValue) : 
-    m_temporalFilterSettingsHasBeenSet(false)
+Mpeg2FilterSettings::Mpeg2FilterSettings(JsonView jsonValue)
+  : Mpeg2FilterSettings()
 {
   *this = jsonValue;
 }

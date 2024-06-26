@@ -23,8 +23,8 @@ DisconnectDetails::DisconnectDetails() :
 {
 }
 
-DisconnectDetails::DisconnectDetails(JsonView jsonValue) : 
-    m_potentialDisconnectIssueHasBeenSet(false)
+DisconnectDetails::DisconnectDetails(JsonView jsonValue)
+  : DisconnectDetails()
 {
   *this = jsonValue;
 }

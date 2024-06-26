@@ -25,10 +25,8 @@ CodeLine::CodeLine() :
 {
 }
 
-CodeLine::CodeLine(JsonView jsonValue) : 
-    m_contentHasBeenSet(false),
-    m_lineNumber(0),
-    m_lineNumberHasBeenSet(false)
+CodeLine::CodeLine(JsonView jsonValue)
+  : CodeLine()
 {
   *this = jsonValue;
 }

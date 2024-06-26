@@ -26,11 +26,8 @@ ImageScanFindingAggregation::ImageScanFindingAggregation() :
 {
 }
 
-ImageScanFindingAggregation::ImageScanFindingAggregation(JsonView jsonValue) : 
-    m_accountAggregationHasBeenSet(false),
-    m_imageAggregationHasBeenSet(false),
-    m_imagePipelineAggregationHasBeenSet(false),
-    m_vulnerabilityIdAggregationHasBeenSet(false)
+ImageScanFindingAggregation::ImageScanFindingAggregation(JsonView jsonValue)
+  : ImageScanFindingAggregation()
 {
   *this = jsonValue;
 }

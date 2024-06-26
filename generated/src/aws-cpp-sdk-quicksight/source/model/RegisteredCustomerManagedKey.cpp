@@ -25,10 +25,8 @@ RegisteredCustomerManagedKey::RegisteredCustomerManagedKey() :
 {
 }
 
-RegisteredCustomerManagedKey::RegisteredCustomerManagedKey(JsonView jsonValue) : 
-    m_keyArnHasBeenSet(false),
-    m_defaultKey(false),
-    m_defaultKeyHasBeenSet(false)
+RegisteredCustomerManagedKey::RegisteredCustomerManagedKey(JsonView jsonValue)
+  : RegisteredCustomerManagedKey()
 {
   *this = jsonValue;
 }

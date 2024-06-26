@@ -25,10 +25,8 @@ SouthKoreaAdditionalInfo::SouthKoreaAdditionalInfo() :
 {
 }
 
-SouthKoreaAdditionalInfo::SouthKoreaAdditionalInfo(JsonView jsonValue) : 
-    m_businessRepresentativeNameHasBeenSet(false),
-    m_itemOfBusinessHasBeenSet(false),
-    m_lineOfBusinessHasBeenSet(false)
+SouthKoreaAdditionalInfo::SouthKoreaAdditionalInfo(JsonView jsonValue)
+  : SouthKoreaAdditionalInfo()
 {
   *this = jsonValue;
 }

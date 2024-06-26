@@ -25,10 +25,8 @@ DeleteFileSystemLustreConfiguration::DeleteFileSystemLustreConfiguration() :
 {
 }
 
-DeleteFileSystemLustreConfiguration::DeleteFileSystemLustreConfiguration(JsonView jsonValue) : 
-    m_skipFinalBackup(false),
-    m_skipFinalBackupHasBeenSet(false),
-    m_finalBackupTagsHasBeenSet(false)
+DeleteFileSystemLustreConfiguration::DeleteFileSystemLustreConfiguration(JsonView jsonValue)
+  : DeleteFileSystemLustreConfiguration()
 {
   *this = jsonValue;
 }

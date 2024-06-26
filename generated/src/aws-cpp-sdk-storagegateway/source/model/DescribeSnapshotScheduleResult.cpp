@@ -23,9 +23,8 @@ DescribeSnapshotScheduleResult::DescribeSnapshotScheduleResult() :
 {
 }
 
-DescribeSnapshotScheduleResult::DescribeSnapshotScheduleResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_startAt(0),
-    m_recurrenceInHours(0)
+DescribeSnapshotScheduleResult::DescribeSnapshotScheduleResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeSnapshotScheduleResult()
 {
   *this = result;
 }

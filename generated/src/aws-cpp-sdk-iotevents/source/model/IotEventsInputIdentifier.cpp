@@ -23,8 +23,8 @@ IotEventsInputIdentifier::IotEventsInputIdentifier() :
 {
 }
 
-IotEventsInputIdentifier::IotEventsInputIdentifier(JsonView jsonValue) : 
-    m_inputNameHasBeenSet(false)
+IotEventsInputIdentifier::IotEventsInputIdentifier(JsonView jsonValue)
+  : IotEventsInputIdentifier()
 {
   *this = jsonValue;
 }

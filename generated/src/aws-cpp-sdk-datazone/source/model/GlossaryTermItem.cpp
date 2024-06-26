@@ -35,20 +35,8 @@ GlossaryTermItem::GlossaryTermItem() :
 {
 }
 
-GlossaryTermItem::GlossaryTermItem(JsonView jsonValue) : 
-    m_createdAtHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_domainIdHasBeenSet(false),
-    m_glossaryIdHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_longDescriptionHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_shortDescriptionHasBeenSet(false),
-    m_status(GlossaryTermStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_termRelationsHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_updatedByHasBeenSet(false)
+GlossaryTermItem::GlossaryTermItem(JsonView jsonValue)
+  : GlossaryTermItem()
 {
   *this = jsonValue;
 }

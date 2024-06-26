@@ -26,9 +26,8 @@ PerformanceInsightsMetricQuery::PerformanceInsightsMetricQuery() :
 {
 }
 
-PerformanceInsightsMetricQuery::PerformanceInsightsMetricQuery(const XmlNode& xmlNode) : 
-    m_groupByHasBeenSet(false),
-    m_metricHasBeenSet(false)
+PerformanceInsightsMetricQuery::PerformanceInsightsMetricQuery(const XmlNode& xmlNode)
+  : PerformanceInsightsMetricQuery()
 {
   *this = xmlNode;
 }

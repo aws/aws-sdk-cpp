@@ -32,17 +32,8 @@ SecurityControlDefinition::SecurityControlDefinition() :
 {
 }
 
-SecurityControlDefinition::SecurityControlDefinition(JsonView jsonValue) : 
-    m_securityControlIdHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_remediationUrlHasBeenSet(false),
-    m_severityRating(SeverityRating::NOT_SET),
-    m_severityRatingHasBeenSet(false),
-    m_currentRegionAvailability(RegionAvailabilityStatus::NOT_SET),
-    m_currentRegionAvailabilityHasBeenSet(false),
-    m_customizablePropertiesHasBeenSet(false),
-    m_parameterDefinitionsHasBeenSet(false)
+SecurityControlDefinition::SecurityControlDefinition(JsonView jsonValue)
+  : SecurityControlDefinition()
 {
   *this = jsonValue;
 }

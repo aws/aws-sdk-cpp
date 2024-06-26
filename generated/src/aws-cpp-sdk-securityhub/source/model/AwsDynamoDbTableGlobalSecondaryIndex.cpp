@@ -34,19 +34,8 @@ AwsDynamoDbTableGlobalSecondaryIndex::AwsDynamoDbTableGlobalSecondaryIndex() :
 {
 }
 
-AwsDynamoDbTableGlobalSecondaryIndex::AwsDynamoDbTableGlobalSecondaryIndex(JsonView jsonValue) : 
-    m_backfilling(false),
-    m_backfillingHasBeenSet(false),
-    m_indexArnHasBeenSet(false),
-    m_indexNameHasBeenSet(false),
-    m_indexSizeBytes(0),
-    m_indexSizeBytesHasBeenSet(false),
-    m_indexStatusHasBeenSet(false),
-    m_itemCount(0),
-    m_itemCountHasBeenSet(false),
-    m_keySchemaHasBeenSet(false),
-    m_projectionHasBeenSet(false),
-    m_provisionedThroughputHasBeenSet(false)
+AwsDynamoDbTableGlobalSecondaryIndex::AwsDynamoDbTableGlobalSecondaryIndex(JsonView jsonValue)
+  : AwsDynamoDbTableGlobalSecondaryIndex()
 {
   *this = jsonValue;
 }

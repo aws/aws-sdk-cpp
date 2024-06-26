@@ -26,11 +26,8 @@ TrailProperties::TrailProperties() :
 {
 }
 
-TrailProperties::TrailProperties(JsonView jsonValue) : 
-    m_cloudTrailArnHasBeenSet(false),
-    m_regionsHasBeenSet(false),
-    m_allRegions(false),
-    m_allRegionsHasBeenSet(false)
+TrailProperties::TrailProperties(JsonView jsonValue)
+  : TrailProperties()
 {
   *this = jsonValue;
 }

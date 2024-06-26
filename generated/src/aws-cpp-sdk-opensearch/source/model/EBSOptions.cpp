@@ -32,17 +32,8 @@ EBSOptions::EBSOptions() :
 {
 }
 
-EBSOptions::EBSOptions(JsonView jsonValue) : 
-    m_eBSEnabled(false),
-    m_eBSEnabledHasBeenSet(false),
-    m_volumeType(VolumeType::NOT_SET),
-    m_volumeTypeHasBeenSet(false),
-    m_volumeSize(0),
-    m_volumeSizeHasBeenSet(false),
-    m_iops(0),
-    m_iopsHasBeenSet(false),
-    m_throughput(0),
-    m_throughputHasBeenSet(false)
+EBSOptions::EBSOptions(JsonView jsonValue)
+  : EBSOptions()
 {
   *this = jsonValue;
 }

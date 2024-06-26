@@ -23,8 +23,8 @@ KinesisStreamConfig::KinesisStreamConfig() :
 {
 }
 
-KinesisStreamConfig::KinesisStreamConfig(JsonView jsonValue) : 
-    m_streamArnHasBeenSet(false)
+KinesisStreamConfig::KinesisStreamConfig(JsonView jsonValue)
+  : KinesisStreamConfig()
 {
   *this = jsonValue;
 }

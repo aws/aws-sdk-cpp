@@ -31,16 +31,8 @@ AssessmentRunAgent::AssessmentRunAgent() :
 {
 }
 
-AssessmentRunAgent::AssessmentRunAgent(JsonView jsonValue) : 
-    m_agentIdHasBeenSet(false),
-    m_assessmentRunArnHasBeenSet(false),
-    m_agentHealth(AgentHealth::NOT_SET),
-    m_agentHealthHasBeenSet(false),
-    m_agentHealthCode(AgentHealthCode::NOT_SET),
-    m_agentHealthCodeHasBeenSet(false),
-    m_agentHealthDetailsHasBeenSet(false),
-    m_autoScalingGroupHasBeenSet(false),
-    m_telemetryMetadataHasBeenSet(false)
+AssessmentRunAgent::AssessmentRunAgent(JsonView jsonValue)
+  : AssessmentRunAgent()
 {
   *this = jsonValue;
 }

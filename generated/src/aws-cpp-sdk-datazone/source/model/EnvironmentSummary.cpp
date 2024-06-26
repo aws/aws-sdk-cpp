@@ -36,21 +36,8 @@ EnvironmentSummary::EnvironmentSummary() :
 {
 }
 
-EnvironmentSummary::EnvironmentSummary(JsonView jsonValue) : 
-    m_awsAccountIdHasBeenSet(false),
-    m_awsAccountRegionHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_domainIdHasBeenSet(false),
-    m_environmentProfileIdHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_projectIdHasBeenSet(false),
-    m_providerHasBeenSet(false),
-    m_status(EnvironmentStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+EnvironmentSummary::EnvironmentSummary(JsonView jsonValue)
+  : EnvironmentSummary()
 {
   *this = jsonValue;
 }

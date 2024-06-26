@@ -28,13 +28,8 @@ MacAttributes::MacAttributes() :
 {
 }
 
-MacAttributes::MacAttributes(JsonView jsonValue) : 
-    m_algorithm(MacAlgorithm::NOT_SET),
-    m_algorithmHasBeenSet(false),
-    m_dukptCmacHasBeenSet(false),
-    m_dukptIso9797Algorithm1HasBeenSet(false),
-    m_dukptIso9797Algorithm3HasBeenSet(false),
-    m_emvMacHasBeenSet(false)
+MacAttributes::MacAttributes(JsonView jsonValue)
+  : MacAttributes()
 {
   *this = jsonValue;
 }

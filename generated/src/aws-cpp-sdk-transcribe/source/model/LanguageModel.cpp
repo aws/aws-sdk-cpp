@@ -35,20 +35,8 @@ LanguageModel::LanguageModel() :
 {
 }
 
-LanguageModel::LanguageModel(JsonView jsonValue) : 
-    m_modelNameHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_languageCode(CLMLanguageCode::NOT_SET),
-    m_languageCodeHasBeenSet(false),
-    m_baseModelName(BaseModelName::NOT_SET),
-    m_baseModelNameHasBeenSet(false),
-    m_modelStatus(ModelStatus::NOT_SET),
-    m_modelStatusHasBeenSet(false),
-    m_upgradeAvailability(false),
-    m_upgradeAvailabilityHasBeenSet(false),
-    m_failureReasonHasBeenSet(false),
-    m_inputDataConfigHasBeenSet(false)
+LanguageModel::LanguageModel(JsonView jsonValue)
+  : LanguageModel()
 {
   *this = jsonValue;
 }

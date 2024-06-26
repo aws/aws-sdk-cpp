@@ -33,18 +33,8 @@ CaptionDestinationSettings::CaptionDestinationSettings() :
 {
 }
 
-CaptionDestinationSettings::CaptionDestinationSettings(JsonView jsonValue) : 
-    m_burninDestinationSettingsHasBeenSet(false),
-    m_destinationType(CaptionDestinationType::NOT_SET),
-    m_destinationTypeHasBeenSet(false),
-    m_dvbSubDestinationSettingsHasBeenSet(false),
-    m_embeddedDestinationSettingsHasBeenSet(false),
-    m_imscDestinationSettingsHasBeenSet(false),
-    m_sccDestinationSettingsHasBeenSet(false),
-    m_srtDestinationSettingsHasBeenSet(false),
-    m_teletextDestinationSettingsHasBeenSet(false),
-    m_ttmlDestinationSettingsHasBeenSet(false),
-    m_webvttDestinationSettingsHasBeenSet(false)
+CaptionDestinationSettings::CaptionDestinationSettings(JsonView jsonValue)
+  : CaptionDestinationSettings()
 {
   *this = jsonValue;
 }

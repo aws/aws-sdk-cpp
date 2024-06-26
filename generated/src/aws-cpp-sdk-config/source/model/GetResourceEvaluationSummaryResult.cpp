@@ -23,9 +23,8 @@ GetResourceEvaluationSummaryResult::GetResourceEvaluationSummaryResult() :
 {
 }
 
-GetResourceEvaluationSummaryResult::GetResourceEvaluationSummaryResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_evaluationMode(EvaluationMode::NOT_SET),
-    m_compliance(ComplianceType::NOT_SET)
+GetResourceEvaluationSummaryResult::GetResourceEvaluationSummaryResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetResourceEvaluationSummaryResult()
 {
   *this = result;
 }

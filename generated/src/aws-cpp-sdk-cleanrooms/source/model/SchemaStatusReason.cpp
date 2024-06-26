@@ -25,10 +25,8 @@ SchemaStatusReason::SchemaStatusReason() :
 {
 }
 
-SchemaStatusReason::SchemaStatusReason(JsonView jsonValue) : 
-    m_code(SchemaStatusReasonCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+SchemaStatusReason::SchemaStatusReason(JsonView jsonValue)
+  : SchemaStatusReason()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ LakeFormationOptInsInfo::LakeFormationOptInsInfo() :
 {
 }
 
-LakeFormationOptInsInfo::LakeFormationOptInsInfo(JsonView jsonValue) : 
-    m_resourceHasBeenSet(false),
-    m_principalHasBeenSet(false),
-    m_lastModifiedHasBeenSet(false),
-    m_lastUpdatedByHasBeenSet(false)
+LakeFormationOptInsInfo::LakeFormationOptInsInfo(JsonView jsonValue)
+  : LakeFormationOptInsInfo()
 {
   *this = jsonValue;
 }

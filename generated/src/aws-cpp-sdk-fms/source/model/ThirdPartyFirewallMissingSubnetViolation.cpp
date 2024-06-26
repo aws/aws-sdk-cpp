@@ -26,11 +26,8 @@ ThirdPartyFirewallMissingSubnetViolation::ThirdPartyFirewallMissingSubnetViolati
 {
 }
 
-ThirdPartyFirewallMissingSubnetViolation::ThirdPartyFirewallMissingSubnetViolation(JsonView jsonValue) : 
-    m_violationTargetHasBeenSet(false),
-    m_vPCHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_targetViolationReasonHasBeenSet(false)
+ThirdPartyFirewallMissingSubnetViolation::ThirdPartyFirewallMissingSubnetViolation(JsonView jsonValue)
+  : ThirdPartyFirewallMissingSubnetViolation()
 {
   *this = jsonValue;
 }

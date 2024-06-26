@@ -23,8 +23,8 @@ VotingPolicy::VotingPolicy() :
 {
 }
 
-VotingPolicy::VotingPolicy(JsonView jsonValue) : 
-    m_approvalThresholdPolicyHasBeenSet(false)
+VotingPolicy::VotingPolicy(JsonView jsonValue)
+  : VotingPolicy()
 {
   *this = jsonValue;
 }

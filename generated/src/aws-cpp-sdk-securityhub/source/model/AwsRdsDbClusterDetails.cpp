@@ -71,56 +71,8 @@ AwsRdsDbClusterDetails::AwsRdsDbClusterDetails() :
 {
 }
 
-AwsRdsDbClusterDetails::AwsRdsDbClusterDetails(JsonView jsonValue) : 
-    m_allocatedStorage(0),
-    m_allocatedStorageHasBeenSet(false),
-    m_availabilityZonesHasBeenSet(false),
-    m_backupRetentionPeriod(0),
-    m_backupRetentionPeriodHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_endpointHasBeenSet(false),
-    m_readerEndpointHasBeenSet(false),
-    m_customEndpointsHasBeenSet(false),
-    m_multiAz(false),
-    m_multiAzHasBeenSet(false),
-    m_engineHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_masterUsernameHasBeenSet(false),
-    m_preferredBackupWindowHasBeenSet(false),
-    m_preferredMaintenanceWindowHasBeenSet(false),
-    m_readReplicaIdentifiersHasBeenSet(false),
-    m_vpcSecurityGroupsHasBeenSet(false),
-    m_hostedZoneIdHasBeenSet(false),
-    m_storageEncrypted(false),
-    m_storageEncryptedHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_dbClusterResourceIdHasBeenSet(false),
-    m_associatedRolesHasBeenSet(false),
-    m_clusterCreateTimeHasBeenSet(false),
-    m_enabledCloudWatchLogsExportsHasBeenSet(false),
-    m_engineModeHasBeenSet(false),
-    m_deletionProtection(false),
-    m_deletionProtectionHasBeenSet(false),
-    m_httpEndpointEnabled(false),
-    m_httpEndpointEnabledHasBeenSet(false),
-    m_activityStreamStatusHasBeenSet(false),
-    m_copyTagsToSnapshot(false),
-    m_copyTagsToSnapshotHasBeenSet(false),
-    m_crossAccountClone(false),
-    m_crossAccountCloneHasBeenSet(false),
-    m_domainMembershipsHasBeenSet(false),
-    m_dbClusterParameterGroupHasBeenSet(false),
-    m_dbSubnetGroupHasBeenSet(false),
-    m_dbClusterOptionGroupMembershipsHasBeenSet(false),
-    m_dbClusterIdentifierHasBeenSet(false),
-    m_dbClusterMembersHasBeenSet(false),
-    m_iamDatabaseAuthenticationEnabled(false),
-    m_iamDatabaseAuthenticationEnabledHasBeenSet(false),
-    m_autoMinorVersionUpgrade(false),
-    m_autoMinorVersionUpgradeHasBeenSet(false)
+AwsRdsDbClusterDetails::AwsRdsDbClusterDetails(JsonView jsonValue)
+  : AwsRdsDbClusterDetails()
 {
   *this = jsonValue;
 }

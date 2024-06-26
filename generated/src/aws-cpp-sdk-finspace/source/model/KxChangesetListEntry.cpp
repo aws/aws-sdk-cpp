@@ -28,13 +28,8 @@ KxChangesetListEntry::KxChangesetListEntry() :
 {
 }
 
-KxChangesetListEntry::KxChangesetListEntry(JsonView jsonValue) : 
-    m_changesetIdHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false),
-    m_activeFromTimestampHasBeenSet(false),
-    m_lastModifiedTimestampHasBeenSet(false),
-    m_status(ChangesetStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+KxChangesetListEntry::KxChangesetListEntry(JsonView jsonValue)
+  : KxChangesetListEntry()
 {
   *this = jsonValue;
 }

@@ -35,18 +35,8 @@ Purchase::Purchase() :
 {
 }
 
-Purchase::Purchase(const XmlNode& xmlNode) : 
-    m_currencyCode(CurrencyCodeValues::NOT_SET),
-    m_currencyCodeHasBeenSet(false),
-    m_duration(0),
-    m_durationHasBeenSet(false),
-    m_hostIdSetHasBeenSet(false),
-    m_hostReservationIdHasBeenSet(false),
-    m_hourlyPriceHasBeenSet(false),
-    m_instanceFamilyHasBeenSet(false),
-    m_paymentOption(PaymentOption::NOT_SET),
-    m_paymentOptionHasBeenSet(false),
-    m_upfrontPriceHasBeenSet(false)
+Purchase::Purchase(const XmlNode& xmlNode)
+  : Purchase()
 {
   *this = xmlNode;
 }

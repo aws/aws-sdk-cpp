@@ -41,26 +41,8 @@ Endpoint::Endpoint() :
 {
 }
 
-Endpoint::Endpoint(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_virtualClusterIdHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_state(EndpointState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_releaseLabelHasBeenSet(false),
-    m_executionRoleArnHasBeenSet(false),
-    m_certificateAuthorityHasBeenSet(false),
-    m_configurationOverridesHasBeenSet(false),
-    m_serverUrlHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_securityGroupHasBeenSet(false),
-    m_subnetIdsHasBeenSet(false),
-    m_stateDetailsHasBeenSet(false),
-    m_failureReason(FailureReason::NOT_SET),
-    m_failureReasonHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+Endpoint::Endpoint(JsonView jsonValue)
+  : Endpoint()
 {
   *this = jsonValue;
 }

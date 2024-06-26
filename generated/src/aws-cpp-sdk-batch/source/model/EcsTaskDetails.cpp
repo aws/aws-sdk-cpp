@@ -34,19 +34,8 @@ EcsTaskDetails::EcsTaskDetails() :
 {
 }
 
-EcsTaskDetails::EcsTaskDetails(JsonView jsonValue) : 
-    m_containersHasBeenSet(false),
-    m_containerInstanceArnHasBeenSet(false),
-    m_taskArnHasBeenSet(false),
-    m_ephemeralStorageHasBeenSet(false),
-    m_executionRoleArnHasBeenSet(false),
-    m_platformVersionHasBeenSet(false),
-    m_ipcModeHasBeenSet(false),
-    m_taskRoleArnHasBeenSet(false),
-    m_pidModeHasBeenSet(false),
-    m_networkConfigurationHasBeenSet(false),
-    m_runtimePlatformHasBeenSet(false),
-    m_volumesHasBeenSet(false)
+EcsTaskDetails::EcsTaskDetails(JsonView jsonValue)
+  : EcsTaskDetails()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ ActionExecutionOutput::ActionExecutionOutput() :
 {
 }
 
-ActionExecutionOutput::ActionExecutionOutput(JsonView jsonValue) : 
-    m_outputArtifactsHasBeenSet(false),
-    m_executionResultHasBeenSet(false),
-    m_outputVariablesHasBeenSet(false)
+ActionExecutionOutput::ActionExecutionOutput(JsonView jsonValue)
+  : ActionExecutionOutput()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ PlaybackInterruptionEvent::PlaybackInterruptionEvent() :
 {
 }
 
-PlaybackInterruptionEvent::PlaybackInterruptionEvent(JsonView jsonValue) : 
-    m_eventReason(PlaybackInterruptionReason::NOT_SET),
-    m_eventReasonHasBeenSet(false),
-    m_causedByEventIdHasBeenSet(false),
-    m_eventIdHasBeenSet(false)
+PlaybackInterruptionEvent::PlaybackInterruptionEvent(JsonView jsonValue)
+  : PlaybackInterruptionEvent()
 {
   *this = jsonValue;
 }

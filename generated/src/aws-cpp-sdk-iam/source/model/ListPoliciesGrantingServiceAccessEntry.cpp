@@ -26,9 +26,8 @@ ListPoliciesGrantingServiceAccessEntry::ListPoliciesGrantingServiceAccessEntry()
 {
 }
 
-ListPoliciesGrantingServiceAccessEntry::ListPoliciesGrantingServiceAccessEntry(const XmlNode& xmlNode) : 
-    m_serviceNamespaceHasBeenSet(false),
-    m_policiesHasBeenSet(false)
+ListPoliciesGrantingServiceAccessEntry::ListPoliciesGrantingServiceAccessEntry(const XmlNode& xmlNode)
+  : ListPoliciesGrantingServiceAccessEntry()
 {
   *this = xmlNode;
 }

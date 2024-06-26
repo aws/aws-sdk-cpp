@@ -24,9 +24,8 @@ MediaAnalysisOutputConfig::MediaAnalysisOutputConfig() :
 {
 }
 
-MediaAnalysisOutputConfig::MediaAnalysisOutputConfig(JsonView jsonValue) : 
-    m_s3BucketHasBeenSet(false),
-    m_s3KeyPrefixHasBeenSet(false)
+MediaAnalysisOutputConfig::MediaAnalysisOutputConfig(JsonView jsonValue)
+  : MediaAnalysisOutputConfig()
 {
   *this = jsonValue;
 }

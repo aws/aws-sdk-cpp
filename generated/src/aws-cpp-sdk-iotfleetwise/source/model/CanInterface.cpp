@@ -25,10 +25,8 @@ CanInterface::CanInterface() :
 {
 }
 
-CanInterface::CanInterface(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_protocolNameHasBeenSet(false),
-    m_protocolVersionHasBeenSet(false)
+CanInterface::CanInterface(JsonView jsonValue)
+  : CanInterface()
 {
   *this = jsonValue;
 }

@@ -24,10 +24,8 @@ GetImportFileTaskResult::GetImportFileTaskResult() :
 {
 }
 
-GetImportFileTaskResult::GetImportFileTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_numberOfRecordsFailed(0),
-    m_numberOfRecordsSuccess(0),
-    m_status(ImportFileTaskStatus::NOT_SET)
+GetImportFileTaskResult::GetImportFileTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetImportFileTaskResult()
 {
   *this = result;
 }

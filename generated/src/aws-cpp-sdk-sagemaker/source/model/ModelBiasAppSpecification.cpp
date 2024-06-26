@@ -25,10 +25,8 @@ ModelBiasAppSpecification::ModelBiasAppSpecification() :
 {
 }
 
-ModelBiasAppSpecification::ModelBiasAppSpecification(JsonView jsonValue) : 
-    m_imageUriHasBeenSet(false),
-    m_configUriHasBeenSet(false),
-    m_environmentHasBeenSet(false)
+ModelBiasAppSpecification::ModelBiasAppSpecification(JsonView jsonValue)
+  : ModelBiasAppSpecification()
 {
   *this = jsonValue;
 }

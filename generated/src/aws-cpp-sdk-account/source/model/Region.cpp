@@ -25,10 +25,8 @@ Region::Region() :
 {
 }
 
-Region::Region(JsonView jsonValue) : 
-    m_regionNameHasBeenSet(false),
-    m_regionOptStatus(RegionOptStatus::NOT_SET),
-    m_regionOptStatusHasBeenSet(false)
+Region::Region(JsonView jsonValue)
+  : Region()
 {
   *this = jsonValue;
 }

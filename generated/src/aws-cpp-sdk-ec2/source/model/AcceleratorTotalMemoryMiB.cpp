@@ -28,11 +28,8 @@ AcceleratorTotalMemoryMiB::AcceleratorTotalMemoryMiB() :
 {
 }
 
-AcceleratorTotalMemoryMiB::AcceleratorTotalMemoryMiB(const XmlNode& xmlNode) : 
-    m_min(0),
-    m_minHasBeenSet(false),
-    m_max(0),
-    m_maxHasBeenSet(false)
+AcceleratorTotalMemoryMiB::AcceleratorTotalMemoryMiB(const XmlNode& xmlNode)
+  : AcceleratorTotalMemoryMiB()
 {
   *this = xmlNode;
 }

@@ -24,9 +24,8 @@ AddonDetails::AddonDetails() :
 {
 }
 
-AddonDetails::AddonDetails(JsonView jsonValue) : 
-    m_addonVersionHasBeenSet(false),
-    m_addonStatusHasBeenSet(false)
+AddonDetails::AddonDetails(JsonView jsonValue)
+  : AddonDetails()
 {
   *this = jsonValue;
 }

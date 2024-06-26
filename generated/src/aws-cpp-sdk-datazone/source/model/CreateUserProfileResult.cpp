@@ -23,9 +23,8 @@ CreateUserProfileResult::CreateUserProfileResult() :
 {
 }
 
-CreateUserProfileResult::CreateUserProfileResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(UserProfileStatus::NOT_SET),
-    m_type(UserProfileType::NOT_SET)
+CreateUserProfileResult::CreateUserProfileResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateUserProfileResult()
 {
   *this = result;
 }

@@ -31,16 +31,8 @@ CisScanResultsAggregatedByTargetResourceFilterCriteria::CisScanResultsAggregated
 {
 }
 
-CisScanResultsAggregatedByTargetResourceFilterCriteria::CisScanResultsAggregatedByTargetResourceFilterCriteria(JsonView jsonValue) : 
-    m_accountIdFiltersHasBeenSet(false),
-    m_checkIdFiltersHasBeenSet(false),
-    m_failedChecksFiltersHasBeenSet(false),
-    m_platformFiltersHasBeenSet(false),
-    m_statusFiltersHasBeenSet(false),
-    m_targetResourceIdFiltersHasBeenSet(false),
-    m_targetResourceTagFiltersHasBeenSet(false),
-    m_targetStatusFiltersHasBeenSet(false),
-    m_targetStatusReasonFiltersHasBeenSet(false)
+CisScanResultsAggregatedByTargetResourceFilterCriteria::CisScanResultsAggregatedByTargetResourceFilterCriteria(JsonView jsonValue)
+  : CisScanResultsAggregatedByTargetResourceFilterCriteria()
 {
   *this = jsonValue;
 }

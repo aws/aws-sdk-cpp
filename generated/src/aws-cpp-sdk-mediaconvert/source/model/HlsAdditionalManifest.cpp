@@ -24,9 +24,8 @@ HlsAdditionalManifest::HlsAdditionalManifest() :
 {
 }
 
-HlsAdditionalManifest::HlsAdditionalManifest(JsonView jsonValue) : 
-    m_manifestNameModifierHasBeenSet(false),
-    m_selectedOutputsHasBeenSet(false)
+HlsAdditionalManifest::HlsAdditionalManifest(JsonView jsonValue)
+  : HlsAdditionalManifest()
 {
   *this = jsonValue;
 }

@@ -26,12 +26,8 @@ GetLicenseConfigurationResult::GetLicenseConfigurationResult() :
 {
 }
 
-GetLicenseConfigurationResult::GetLicenseConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_licenseCountingType(LicenseCountingType::NOT_SET),
-    m_licenseCount(0),
-    m_licenseCountHardLimit(false),
-    m_consumedLicenses(0),
-    m_disassociateWhenNotFound(false)
+GetLicenseConfigurationResult::GetLicenseConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetLicenseConfigurationResult()
 {
   *this = result;
 }

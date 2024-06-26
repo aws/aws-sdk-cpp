@@ -26,11 +26,8 @@ DeviceFleetSummary::DeviceFleetSummary() :
 {
 }
 
-DeviceFleetSummary::DeviceFleetSummary(JsonView jsonValue) : 
-    m_deviceFleetArnHasBeenSet(false),
-    m_deviceFleetNameHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false)
+DeviceFleetSummary::DeviceFleetSummary(JsonView jsonValue)
+  : DeviceFleetSummary()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ ContainerProductLastModifiedDateFilter::ContainerProductLastModifiedDateFilter()
 {
 }
 
-ContainerProductLastModifiedDateFilter::ContainerProductLastModifiedDateFilter(JsonView jsonValue) : 
-    m_dateRangeHasBeenSet(false)
+ContainerProductLastModifiedDateFilter::ContainerProductLastModifiedDateFilter(JsonView jsonValue)
+  : ContainerProductLastModifiedDateFilter()
 {
   *this = jsonValue;
 }

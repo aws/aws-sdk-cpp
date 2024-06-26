@@ -24,9 +24,8 @@ ColumnStatisticsConfiguration::ColumnStatisticsConfiguration() :
 {
 }
 
-ColumnStatisticsConfiguration::ColumnStatisticsConfiguration(JsonView jsonValue) : 
-    m_selectorsHasBeenSet(false),
-    m_statisticsHasBeenSet(false)
+ColumnStatisticsConfiguration::ColumnStatisticsConfiguration(JsonView jsonValue)
+  : ColumnStatisticsConfiguration()
 {
   *this = jsonValue;
 }

@@ -27,12 +27,8 @@ EndpointDetails::EndpointDetails() :
 {
 }
 
-EndpointDetails::EndpointDetails(JsonView jsonValue) : 
-    m_addressAllocationIdsHasBeenSet(false),
-    m_subnetIdsHasBeenSet(false),
-    m_vpcEndpointIdHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false)
+EndpointDetails::EndpointDetails(JsonView jsonValue)
+  : EndpointDetails()
 {
   *this = jsonValue;
 }

@@ -45,30 +45,8 @@ ContainerProperties::ContainerProperties() :
 {
 }
 
-ContainerProperties::ContainerProperties(JsonView jsonValue) : 
-    m_imageHasBeenSet(false),
-    m_commandHasBeenSet(false),
-    m_jobRoleArnHasBeenSet(false),
-    m_executionRoleArnHasBeenSet(false),
-    m_volumesHasBeenSet(false),
-    m_environmentHasBeenSet(false),
-    m_mountPointsHasBeenSet(false),
-    m_readonlyRootFilesystem(false),
-    m_readonlyRootFilesystemHasBeenSet(false),
-    m_privileged(false),
-    m_privilegedHasBeenSet(false),
-    m_ulimitsHasBeenSet(false),
-    m_userHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_resourceRequirementsHasBeenSet(false),
-    m_linuxParametersHasBeenSet(false),
-    m_logConfigurationHasBeenSet(false),
-    m_secretsHasBeenSet(false),
-    m_networkConfigurationHasBeenSet(false),
-    m_fargatePlatformConfigurationHasBeenSet(false),
-    m_ephemeralStorageHasBeenSet(false),
-    m_runtimePlatformHasBeenSet(false),
-    m_repositoryCredentialsHasBeenSet(false)
+ContainerProperties::ContainerProperties(JsonView jsonValue)
+  : ContainerProperties()
 {
   *this = jsonValue;
 }

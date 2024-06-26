@@ -23,8 +23,8 @@ ExportLabelsTaskRunProperties::ExportLabelsTaskRunProperties() :
 {
 }
 
-ExportLabelsTaskRunProperties::ExportLabelsTaskRunProperties(JsonView jsonValue) : 
-    m_outputS3PathHasBeenSet(false)
+ExportLabelsTaskRunProperties::ExportLabelsTaskRunProperties(JsonView jsonValue)
+  : ExportLabelsTaskRunProperties()
 {
   *this = jsonValue;
 }

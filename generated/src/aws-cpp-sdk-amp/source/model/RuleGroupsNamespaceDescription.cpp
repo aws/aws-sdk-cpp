@@ -30,14 +30,8 @@ RuleGroupsNamespaceDescription::RuleGroupsNamespaceDescription() :
 {
 }
 
-RuleGroupsNamespaceDescription::RuleGroupsNamespaceDescription(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_dataHasBeenSet(false),
-    m_modifiedAtHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+RuleGroupsNamespaceDescription::RuleGroupsNamespaceDescription(JsonView jsonValue)
+  : RuleGroupsNamespaceDescription()
 {
   *this = jsonValue;
 }

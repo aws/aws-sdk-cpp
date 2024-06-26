@@ -25,10 +25,8 @@ ComponentDependencyRequirement::ComponentDependencyRequirement() :
 {
 }
 
-ComponentDependencyRequirement::ComponentDependencyRequirement(JsonView jsonValue) : 
-    m_versionRequirementHasBeenSet(false),
-    m_dependencyType(ComponentDependencyType::NOT_SET),
-    m_dependencyTypeHasBeenSet(false)
+ComponentDependencyRequirement::ComponentDependencyRequirement(JsonView jsonValue)
+  : ComponentDependencyRequirement()
 {
   *this = jsonValue;
 }

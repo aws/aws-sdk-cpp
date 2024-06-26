@@ -28,13 +28,8 @@ StepExecutionStatusDetail::StepExecutionStatusDetail() :
 {
 }
 
-StepExecutionStatusDetail::StepExecutionStatusDetail(JsonView jsonValue) : 
-    m_state(StepExecutionState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_creationDateTimeHasBeenSet(false),
-    m_startDateTimeHasBeenSet(false),
-    m_endDateTimeHasBeenSet(false),
-    m_lastStateChangeReasonHasBeenSet(false)
+StepExecutionStatusDetail::StepExecutionStatusDetail(JsonView jsonValue)
+  : StepExecutionStatusDetail()
 {
   *this = jsonValue;
 }

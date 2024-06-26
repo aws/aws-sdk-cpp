@@ -25,10 +25,8 @@ EndpointConfigSummary::EndpointConfigSummary() :
 {
 }
 
-EndpointConfigSummary::EndpointConfigSummary(JsonView jsonValue) : 
-    m_endpointConfigNameHasBeenSet(false),
-    m_endpointConfigArnHasBeenSet(false),
-    m_creationTimeHasBeenSet(false)
+EndpointConfigSummary::EndpointConfigSummary(JsonView jsonValue)
+  : EndpointConfigSummary()
 {
   *this = jsonValue;
 }

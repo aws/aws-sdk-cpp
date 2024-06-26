@@ -23,8 +23,8 @@ WorkflowExecutionFilter::WorkflowExecutionFilter() :
 {
 }
 
-WorkflowExecutionFilter::WorkflowExecutionFilter(JsonView jsonValue) : 
-    m_workflowIdHasBeenSet(false)
+WorkflowExecutionFilter::WorkflowExecutionFilter(JsonView jsonValue)
+  : WorkflowExecutionFilter()
 {
   *this = jsonValue;
 }

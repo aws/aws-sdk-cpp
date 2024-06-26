@@ -25,10 +25,8 @@ ConnectionPasswordEncryption::ConnectionPasswordEncryption() :
 {
 }
 
-ConnectionPasswordEncryption::ConnectionPasswordEncryption(JsonView jsonValue) : 
-    m_returnConnectionPasswordEncrypted(false),
-    m_returnConnectionPasswordEncryptedHasBeenSet(false),
-    m_awsKmsKeyIdHasBeenSet(false)
+ConnectionPasswordEncryption::ConnectionPasswordEncryption(JsonView jsonValue)
+  : ConnectionPasswordEncryption()
 {
   *this = jsonValue;
 }

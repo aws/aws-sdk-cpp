@@ -25,10 +25,8 @@ DashUtcTiming::DashUtcTiming() :
 {
 }
 
-DashUtcTiming::DashUtcTiming(JsonView jsonValue) : 
-    m_timingMode(DashUtcTimingMode::NOT_SET),
-    m_timingModeHasBeenSet(false),
-    m_timingSourceHasBeenSet(false)
+DashUtcTiming::DashUtcTiming(JsonView jsonValue)
+  : DashUtcTiming()
 {
   *this = jsonValue;
 }

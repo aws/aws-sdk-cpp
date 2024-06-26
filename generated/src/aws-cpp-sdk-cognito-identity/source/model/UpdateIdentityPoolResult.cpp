@@ -23,9 +23,8 @@ UpdateIdentityPoolResult::UpdateIdentityPoolResult() :
 {
 }
 
-UpdateIdentityPoolResult::UpdateIdentityPoolResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_allowUnauthenticatedIdentities(false),
-    m_allowClassicFlow(false)
+UpdateIdentityPoolResult::UpdateIdentityPoolResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateIdentityPoolResult()
 {
   *this = result;
 }

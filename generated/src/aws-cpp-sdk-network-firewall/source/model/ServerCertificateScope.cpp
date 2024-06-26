@@ -27,12 +27,8 @@ ServerCertificateScope::ServerCertificateScope() :
 {
 }
 
-ServerCertificateScope::ServerCertificateScope(JsonView jsonValue) : 
-    m_sourcesHasBeenSet(false),
-    m_destinationsHasBeenSet(false),
-    m_sourcePortsHasBeenSet(false),
-    m_destinationPortsHasBeenSet(false),
-    m_protocolsHasBeenSet(false)
+ServerCertificateScope::ServerCertificateScope(JsonView jsonValue)
+  : ServerCertificateScope()
 {
   *this = jsonValue;
 }

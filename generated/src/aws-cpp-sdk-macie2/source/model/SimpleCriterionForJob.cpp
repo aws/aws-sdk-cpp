@@ -27,12 +27,8 @@ SimpleCriterionForJob::SimpleCriterionForJob() :
 {
 }
 
-SimpleCriterionForJob::SimpleCriterionForJob(JsonView jsonValue) : 
-    m_comparator(JobComparator::NOT_SET),
-    m_comparatorHasBeenSet(false),
-    m_key(SimpleCriterionKeyForJob::NOT_SET),
-    m_keyHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+SimpleCriterionForJob::SimpleCriterionForJob(JsonView jsonValue)
+  : SimpleCriterionForJob()
 {
   *this = jsonValue;
 }

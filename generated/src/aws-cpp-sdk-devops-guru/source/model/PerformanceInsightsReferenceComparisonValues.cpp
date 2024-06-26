@@ -24,9 +24,8 @@ PerformanceInsightsReferenceComparisonValues::PerformanceInsightsReferenceCompar
 {
 }
 
-PerformanceInsightsReferenceComparisonValues::PerformanceInsightsReferenceComparisonValues(JsonView jsonValue) : 
-    m_referenceScalarHasBeenSet(false),
-    m_referenceMetricHasBeenSet(false)
+PerformanceInsightsReferenceComparisonValues::PerformanceInsightsReferenceComparisonValues(JsonView jsonValue)
+  : PerformanceInsightsReferenceComparisonValues()
 {
   *this = jsonValue;
 }

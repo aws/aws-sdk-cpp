@@ -25,10 +25,8 @@ CampaignEventFilter::CampaignEventFilter() :
 {
 }
 
-CampaignEventFilter::CampaignEventFilter(JsonView jsonValue) : 
-    m_dimensionsHasBeenSet(false),
-    m_filterType(FilterType::NOT_SET),
-    m_filterTypeHasBeenSet(false)
+CampaignEventFilter::CampaignEventFilter(JsonView jsonValue)
+  : CampaignEventFilter()
 {
   *this = jsonValue;
 }

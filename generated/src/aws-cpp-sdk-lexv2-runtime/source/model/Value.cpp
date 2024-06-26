@@ -25,10 +25,8 @@ Value::Value() :
 {
 }
 
-Value::Value(JsonView jsonValue) : 
-    m_originalValueHasBeenSet(false),
-    m_interpretedValueHasBeenSet(false),
-    m_resolvedValuesHasBeenSet(false)
+Value::Value(JsonView jsonValue)
+  : Value()
 {
   *this = jsonValue;
 }

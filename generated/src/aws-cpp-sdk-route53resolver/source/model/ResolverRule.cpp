@@ -39,24 +39,8 @@ ResolverRule::ResolverRule() :
 {
 }
 
-ResolverRule::ResolverRule(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_creatorRequestIdHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_domainNameHasBeenSet(false),
-    m_status(ResolverRuleStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_ruleType(RuleTypeOption::NOT_SET),
-    m_ruleTypeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_targetIpsHasBeenSet(false),
-    m_resolverEndpointIdHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_shareStatus(ShareStatus::NOT_SET),
-    m_shareStatusHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_modificationTimeHasBeenSet(false)
+ResolverRule::ResolverRule(JsonView jsonValue)
+  : ResolverRule()
 {
   *this = jsonValue;
 }

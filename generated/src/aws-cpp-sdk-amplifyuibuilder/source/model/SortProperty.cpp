@@ -25,10 +25,8 @@ SortProperty::SortProperty() :
 {
 }
 
-SortProperty::SortProperty(JsonView jsonValue) : 
-    m_fieldHasBeenSet(false),
-    m_direction(SortDirection::NOT_SET),
-    m_directionHasBeenSet(false)
+SortProperty::SortProperty(JsonView jsonValue)
+  : SortProperty()
 {
   *this = jsonValue;
 }

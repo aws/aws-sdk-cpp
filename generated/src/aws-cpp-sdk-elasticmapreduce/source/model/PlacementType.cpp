@@ -24,9 +24,8 @@ PlacementType::PlacementType() :
 {
 }
 
-PlacementType::PlacementType(JsonView jsonValue) : 
-    m_availabilityZoneHasBeenSet(false),
-    m_availabilityZonesHasBeenSet(false)
+PlacementType::PlacementType(JsonView jsonValue)
+  : PlacementType()
 {
   *this = jsonValue;
 }

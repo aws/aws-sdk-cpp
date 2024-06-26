@@ -25,10 +25,8 @@ StorageConfiguration::StorageConfiguration() :
 {
 }
 
-StorageConfiguration::StorageConfiguration(JsonView jsonValue) : 
-    m_typeHasBeenSet(false),
-    m_sizeInGb(0.0),
-    m_sizeInGbHasBeenSet(false)
+StorageConfiguration::StorageConfiguration(JsonView jsonValue)
+  : StorageConfiguration()
 {
   *this = jsonValue;
 }

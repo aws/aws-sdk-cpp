@@ -25,10 +25,8 @@ Bucket::Bucket() :
 {
 }
 
-Bucket::Bucket(JsonView jsonValue) : 
-    m_keyValueHasBeenSet(false),
-    m_count(0),
-    m_countHasBeenSet(false)
+Bucket::Bucket(JsonView jsonValue)
+  : Bucket()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ JobEntityIdentifiersUnion::JobEntityIdentifiersUnion() :
 {
 }
 
-JobEntityIdentifiersUnion::JobEntityIdentifiersUnion(JsonView jsonValue) : 
-    m_environmentDetailsHasBeenSet(false),
-    m_jobAttachmentDetailsHasBeenSet(false),
-    m_jobDetailsHasBeenSet(false),
-    m_stepDetailsHasBeenSet(false)
+JobEntityIdentifiersUnion::JobEntityIdentifiersUnion(JsonView jsonValue)
+  : JobEntityIdentifiersUnion()
 {
   *this = jsonValue;
 }

@@ -32,17 +32,8 @@ Action::Action() :
 {
 }
 
-Action::Action(JsonView jsonValue) : 
-    m_actionTypeHasBeenSet(false),
-    m_awsApiCallActionHasBeenSet(false),
-    m_dnsRequestActionHasBeenSet(false),
-    m_networkConnectionActionHasBeenSet(false),
-    m_portProbeActionHasBeenSet(false),
-    m_kubernetesApiCallActionHasBeenSet(false),
-    m_rdsLoginAttemptActionHasBeenSet(false),
-    m_kubernetesPermissionCheckedDetailsHasBeenSet(false),
-    m_kubernetesRoleBindingDetailsHasBeenSet(false),
-    m_kubernetesRoleDetailsHasBeenSet(false)
+Action::Action(JsonView jsonValue)
+  : Action()
 {
   *this = jsonValue;
 }

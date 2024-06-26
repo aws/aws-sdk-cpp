@@ -24,9 +24,8 @@ TaxDocumentMetadata::TaxDocumentMetadata() :
 {
 }
 
-TaxDocumentMetadata::TaxDocumentMetadata(JsonView jsonValue) : 
-    m_taxDocumentAccessTokenHasBeenSet(false),
-    m_taxDocumentNameHasBeenSet(false)
+TaxDocumentMetadata::TaxDocumentMetadata(JsonView jsonValue)
+  : TaxDocumentMetadata()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ IllegalArgumentException::IllegalArgumentException() :
 {
 }
 
-IllegalArgumentException::IllegalArgumentException(JsonView jsonValue) : 
-    m_detailedMessageHasBeenSet(false),
-    m_requestIdHasBeenSet(false),
-    m_codeHasBeenSet(false)
+IllegalArgumentException::IllegalArgumentException(JsonView jsonValue)
+  : IllegalArgumentException()
 {
   *this = jsonValue;
 }

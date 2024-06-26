@@ -24,9 +24,8 @@ EnabledBaselineFilter::EnabledBaselineFilter() :
 {
 }
 
-EnabledBaselineFilter::EnabledBaselineFilter(JsonView jsonValue) : 
-    m_baselineIdentifiersHasBeenSet(false),
-    m_targetIdentifiersHasBeenSet(false)
+EnabledBaselineFilter::EnabledBaselineFilter(JsonView jsonValue)
+  : EnabledBaselineFilter()
 {
   *this = jsonValue;
 }

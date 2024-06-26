@@ -23,8 +23,8 @@ S3BucketSinkConfiguration::S3BucketSinkConfiguration() :
 {
 }
 
-S3BucketSinkConfiguration::S3BucketSinkConfiguration(JsonView jsonValue) : 
-    m_destinationHasBeenSet(false)
+S3BucketSinkConfiguration::S3BucketSinkConfiguration(JsonView jsonValue)
+  : S3BucketSinkConfiguration()
 {
   *this = jsonValue;
 }

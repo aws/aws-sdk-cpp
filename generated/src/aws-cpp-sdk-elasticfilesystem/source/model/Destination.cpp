@@ -27,12 +27,8 @@ Destination::Destination() :
 {
 }
 
-Destination::Destination(JsonView jsonValue) : 
-    m_status(ReplicationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_fileSystemIdHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_lastReplicatedTimestampHasBeenSet(false)
+Destination::Destination(JsonView jsonValue)
+  : Destination()
 {
   *this = jsonValue;
 }

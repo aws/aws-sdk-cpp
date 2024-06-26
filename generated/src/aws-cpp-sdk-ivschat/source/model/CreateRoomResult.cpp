@@ -23,9 +23,8 @@ CreateRoomResult::CreateRoomResult() :
 {
 }
 
-CreateRoomResult::CreateRoomResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_maximumMessageLength(0),
-    m_maximumMessageRatePerSecond(0)
+CreateRoomResult::CreateRoomResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateRoomResult()
 {
   *this = result;
 }

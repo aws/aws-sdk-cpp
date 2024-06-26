@@ -23,9 +23,8 @@ GetSignalMapResult::GetSignalMapResult() :
 {
 }
 
-GetSignalMapResult::GetSignalMapResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_monitorChangesPendingDeployment(false),
-    m_status(SignalMapStatus::NOT_SET)
+GetSignalMapResult::GetSignalMapResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetSignalMapResult()
 {
   *this = result;
 }

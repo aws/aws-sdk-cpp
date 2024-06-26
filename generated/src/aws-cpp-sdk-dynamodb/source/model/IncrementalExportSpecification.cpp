@@ -26,11 +26,8 @@ IncrementalExportSpecification::IncrementalExportSpecification() :
 {
 }
 
-IncrementalExportSpecification::IncrementalExportSpecification(JsonView jsonValue) : 
-    m_exportFromTimeHasBeenSet(false),
-    m_exportToTimeHasBeenSet(false),
-    m_exportViewType(ExportViewType::NOT_SET),
-    m_exportViewTypeHasBeenSet(false)
+IncrementalExportSpecification::IncrementalExportSpecification(JsonView jsonValue)
+  : IncrementalExportSpecification()
 {
   *this = jsonValue;
 }

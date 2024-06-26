@@ -27,10 +27,8 @@ TagSpecification::TagSpecification() :
 {
 }
 
-TagSpecification::TagSpecification(const XmlNode& xmlNode) : 
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+TagSpecification::TagSpecification(const XmlNode& xmlNode)
+  : TagSpecification()
 {
   *this = xmlNode;
 }

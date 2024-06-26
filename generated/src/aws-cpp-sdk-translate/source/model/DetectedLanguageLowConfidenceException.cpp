@@ -24,9 +24,8 @@ DetectedLanguageLowConfidenceException::DetectedLanguageLowConfidenceException()
 {
 }
 
-DetectedLanguageLowConfidenceException::DetectedLanguageLowConfidenceException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_detectedLanguageCodeHasBeenSet(false)
+DetectedLanguageLowConfidenceException::DetectedLanguageLowConfidenceException(JsonView jsonValue)
+  : DetectedLanguageLowConfidenceException()
 {
   *this = jsonValue;
 }

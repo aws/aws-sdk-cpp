@@ -33,18 +33,8 @@ InstancePortState::InstancePortState() :
 {
 }
 
-InstancePortState::InstancePortState(JsonView jsonValue) : 
-    m_fromPort(0),
-    m_fromPortHasBeenSet(false),
-    m_toPort(0),
-    m_toPortHasBeenSet(false),
-    m_protocol(NetworkProtocol::NOT_SET),
-    m_protocolHasBeenSet(false),
-    m_state(PortState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_cidrsHasBeenSet(false),
-    m_ipv6CidrsHasBeenSet(false),
-    m_cidrListAliasesHasBeenSet(false)
+InstancePortState::InstancePortState(JsonView jsonValue)
+  : InstancePortState()
 {
   *this = jsonValue;
 }

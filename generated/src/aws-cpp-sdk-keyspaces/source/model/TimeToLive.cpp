@@ -24,9 +24,8 @@ TimeToLive::TimeToLive() :
 {
 }
 
-TimeToLive::TimeToLive(JsonView jsonValue) : 
-    m_status(TimeToLiveStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+TimeToLive::TimeToLive(JsonView jsonValue)
+  : TimeToLive()
 {
   *this = jsonValue;
 }

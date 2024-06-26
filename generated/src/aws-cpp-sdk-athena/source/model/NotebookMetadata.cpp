@@ -29,14 +29,8 @@ NotebookMetadata::NotebookMetadata() :
 {
 }
 
-NotebookMetadata::NotebookMetadata(JsonView jsonValue) : 
-    m_notebookIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_workGroupHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_type(NotebookType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false)
+NotebookMetadata::NotebookMetadata(JsonView jsonValue)
+  : NotebookMetadata()
 {
   *this = jsonValue;
 }

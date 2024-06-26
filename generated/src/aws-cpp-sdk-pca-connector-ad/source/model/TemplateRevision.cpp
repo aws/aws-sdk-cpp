@@ -26,11 +26,8 @@ TemplateRevision::TemplateRevision() :
 {
 }
 
-TemplateRevision::TemplateRevision(JsonView jsonValue) : 
-    m_majorRevision(0),
-    m_majorRevisionHasBeenSet(false),
-    m_minorRevision(0),
-    m_minorRevisionHasBeenSet(false)
+TemplateRevision::TemplateRevision(JsonView jsonValue)
+  : TemplateRevision()
 {
   *this = jsonValue;
 }

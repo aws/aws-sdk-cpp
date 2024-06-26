@@ -28,13 +28,8 @@ EntityFilter::EntityFilter() :
 {
 }
 
-EntityFilter::EntityFilter(JsonView jsonValue) : 
-    m_eventArnsHasBeenSet(false),
-    m_entityArnsHasBeenSet(false),
-    m_entityValuesHasBeenSet(false),
-    m_lastUpdatedTimesHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_statusCodesHasBeenSet(false)
+EntityFilter::EntityFilter(JsonView jsonValue)
+  : EntityFilter()
 {
   *this = jsonValue;
 }

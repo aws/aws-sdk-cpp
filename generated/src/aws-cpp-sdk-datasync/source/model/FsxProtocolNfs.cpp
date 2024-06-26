@@ -23,8 +23,8 @@ FsxProtocolNfs::FsxProtocolNfs() :
 {
 }
 
-FsxProtocolNfs::FsxProtocolNfs(JsonView jsonValue) : 
-    m_mountOptionsHasBeenSet(false)
+FsxProtocolNfs::FsxProtocolNfs(JsonView jsonValue)
+  : FsxProtocolNfs()
 {
   *this = jsonValue;
 }

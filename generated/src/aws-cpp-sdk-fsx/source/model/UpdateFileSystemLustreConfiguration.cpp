@@ -35,20 +35,8 @@ UpdateFileSystemLustreConfiguration::UpdateFileSystemLustreConfiguration() :
 {
 }
 
-UpdateFileSystemLustreConfiguration::UpdateFileSystemLustreConfiguration(JsonView jsonValue) : 
-    m_weeklyMaintenanceStartTimeHasBeenSet(false),
-    m_dailyAutomaticBackupStartTimeHasBeenSet(false),
-    m_automaticBackupRetentionDays(0),
-    m_automaticBackupRetentionDaysHasBeenSet(false),
-    m_autoImportPolicy(AutoImportPolicyType::NOT_SET),
-    m_autoImportPolicyHasBeenSet(false),
-    m_dataCompressionType(DataCompressionType::NOT_SET),
-    m_dataCompressionTypeHasBeenSet(false),
-    m_logConfigurationHasBeenSet(false),
-    m_rootSquashConfigurationHasBeenSet(false),
-    m_perUnitStorageThroughput(0),
-    m_perUnitStorageThroughputHasBeenSet(false),
-    m_metadataConfigurationHasBeenSet(false)
+UpdateFileSystemLustreConfiguration::UpdateFileSystemLustreConfiguration(JsonView jsonValue)
+  : UpdateFileSystemLustreConfiguration()
 {
   *this = jsonValue;
 }

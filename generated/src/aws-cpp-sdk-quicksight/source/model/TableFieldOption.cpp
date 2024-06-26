@@ -28,13 +28,8 @@ TableFieldOption::TableFieldOption() :
 {
 }
 
-TableFieldOption::TableFieldOption(JsonView jsonValue) : 
-    m_fieldIdHasBeenSet(false),
-    m_widthHasBeenSet(false),
-    m_customLabelHasBeenSet(false),
-    m_visibility(Visibility::NOT_SET),
-    m_visibilityHasBeenSet(false),
-    m_uRLStylingHasBeenSet(false)
+TableFieldOption::TableFieldOption(JsonView jsonValue)
+  : TableFieldOption()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ MappingParameters::MappingParameters() :
 {
 }
 
-MappingParameters::MappingParameters(JsonView jsonValue) : 
-    m_jSONMappingParametersHasBeenSet(false),
-    m_cSVMappingParametersHasBeenSet(false)
+MappingParameters::MappingParameters(JsonView jsonValue)
+  : MappingParameters()
 {
   *this = jsonValue;
 }

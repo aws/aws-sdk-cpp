@@ -26,11 +26,8 @@ RepositorySyncDefinition::RepositorySyncDefinition() :
 {
 }
 
-RepositorySyncDefinition::RepositorySyncDefinition(JsonView jsonValue) : 
-    m_branchHasBeenSet(false),
-    m_directoryHasBeenSet(false),
-    m_parentHasBeenSet(false),
-    m_targetHasBeenSet(false)
+RepositorySyncDefinition::RepositorySyncDefinition(JsonView jsonValue)
+  : RepositorySyncDefinition()
 {
   *this = jsonValue;
 }

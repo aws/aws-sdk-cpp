@@ -26,11 +26,8 @@ Union::Union() :
 {
 }
 
-Union::Union(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_inputsHasBeenSet(false),
-    m_unionType(UnionType::NOT_SET),
-    m_unionTypeHasBeenSet(false)
+Union::Union(JsonView jsonValue)
+  : Union()
 {
   *this = jsonValue;
 }

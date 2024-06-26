@@ -28,13 +28,8 @@ S3OutputFormatConfig::S3OutputFormatConfig() :
 {
 }
 
-S3OutputFormatConfig::S3OutputFormatConfig(JsonView jsonValue) : 
-    m_fileType(FileType::NOT_SET),
-    m_fileTypeHasBeenSet(false),
-    m_prefixConfigHasBeenSet(false),
-    m_aggregationConfigHasBeenSet(false),
-    m_preserveSourceDataTyping(false),
-    m_preserveSourceDataTypingHasBeenSet(false)
+S3OutputFormatConfig::S3OutputFormatConfig(JsonView jsonValue)
+  : S3OutputFormatConfig()
 {
   *this = jsonValue;
 }

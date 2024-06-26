@@ -26,11 +26,8 @@ VpcOutputSettingsDescription::VpcOutputSettingsDescription() :
 {
 }
 
-VpcOutputSettingsDescription::VpcOutputSettingsDescription(JsonView jsonValue) : 
-    m_availabilityZonesHasBeenSet(false),
-    m_networkInterfaceIdsHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false),
-    m_subnetIdsHasBeenSet(false)
+VpcOutputSettingsDescription::VpcOutputSettingsDescription(JsonView jsonValue)
+  : VpcOutputSettingsDescription()
 {
   *this = jsonValue;
 }

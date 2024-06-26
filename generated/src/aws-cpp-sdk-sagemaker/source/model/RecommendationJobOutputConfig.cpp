@@ -24,9 +24,8 @@ RecommendationJobOutputConfig::RecommendationJobOutputConfig() :
 {
 }
 
-RecommendationJobOutputConfig::RecommendationJobOutputConfig(JsonView jsonValue) : 
-    m_kmsKeyIdHasBeenSet(false),
-    m_compiledOutputConfigHasBeenSet(false)
+RecommendationJobOutputConfig::RecommendationJobOutputConfig(JsonView jsonValue)
+  : RecommendationJobOutputConfig()
 {
   *this = jsonValue;
 }

@@ -38,23 +38,8 @@ ResourceSharePermissionSummary::ResourceSharePermissionSummary() :
 {
 }
 
-ResourceSharePermissionSummary::ResourceSharePermissionSummary(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_defaultVersion(false),
-    m_defaultVersionHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_isResourceTypeDefault(false),
-    m_isResourceTypeDefaultHasBeenSet(false),
-    m_permissionType(PermissionType::NOT_SET),
-    m_permissionTypeHasBeenSet(false),
-    m_featureSet(PermissionFeatureSet::NOT_SET),
-    m_featureSetHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+ResourceSharePermissionSummary::ResourceSharePermissionSummary(JsonView jsonValue)
+  : ResourceSharePermissionSummary()
 {
   *this = jsonValue;
 }

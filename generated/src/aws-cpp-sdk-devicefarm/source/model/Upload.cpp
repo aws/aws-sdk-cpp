@@ -35,20 +35,8 @@ Upload::Upload() :
 {
 }
 
-Upload::Upload(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_createdHasBeenSet(false),
-    m_type(UploadType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_status(UploadStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_urlHasBeenSet(false),
-    m_metadataHasBeenSet(false),
-    m_contentTypeHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_category(UploadCategory::NOT_SET),
-    m_categoryHasBeenSet(false)
+Upload::Upload(JsonView jsonValue)
+  : Upload()
 {
   *this = jsonValue;
 }

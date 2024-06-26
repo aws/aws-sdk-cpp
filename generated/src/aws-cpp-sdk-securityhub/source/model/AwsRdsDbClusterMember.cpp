@@ -28,13 +28,8 @@ AwsRdsDbClusterMember::AwsRdsDbClusterMember() :
 {
 }
 
-AwsRdsDbClusterMember::AwsRdsDbClusterMember(JsonView jsonValue) : 
-    m_isClusterWriter(false),
-    m_isClusterWriterHasBeenSet(false),
-    m_promotionTier(0),
-    m_promotionTierHasBeenSet(false),
-    m_dbInstanceIdentifierHasBeenSet(false),
-    m_dbClusterParameterGroupStatusHasBeenSet(false)
+AwsRdsDbClusterMember::AwsRdsDbClusterMember(JsonView jsonValue)
+  : AwsRdsDbClusterMember()
 {
   *this = jsonValue;
 }

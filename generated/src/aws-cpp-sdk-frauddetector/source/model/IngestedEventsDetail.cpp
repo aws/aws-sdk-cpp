@@ -23,8 +23,8 @@ IngestedEventsDetail::IngestedEventsDetail() :
 {
 }
 
-IngestedEventsDetail::IngestedEventsDetail(JsonView jsonValue) : 
-    m_ingestedEventsTimeWindowHasBeenSet(false)
+IngestedEventsDetail::IngestedEventsDetail(JsonView jsonValue)
+  : IngestedEventsDetail()
 {
   *this = jsonValue;
 }

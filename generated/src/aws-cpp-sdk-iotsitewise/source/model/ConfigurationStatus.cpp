@@ -25,10 +25,8 @@ ConfigurationStatus::ConfigurationStatus() :
 {
 }
 
-ConfigurationStatus::ConfigurationStatus(JsonView jsonValue) : 
-    m_state(ConfigurationState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_errorHasBeenSet(false)
+ConfigurationStatus::ConfigurationStatus(JsonView jsonValue)
+  : ConfigurationStatus()
 {
   *this = jsonValue;
 }

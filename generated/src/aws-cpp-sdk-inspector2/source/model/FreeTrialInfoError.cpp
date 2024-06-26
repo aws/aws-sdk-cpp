@@ -26,11 +26,8 @@ FreeTrialInfoError::FreeTrialInfoError() :
 {
 }
 
-FreeTrialInfoError::FreeTrialInfoError(JsonView jsonValue) : 
-    m_accountIdHasBeenSet(false),
-    m_code(FreeTrialInfoErrorCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+FreeTrialInfoError::FreeTrialInfoError(JsonView jsonValue)
+  : FreeTrialInfoError()
 {
   *this = jsonValue;
 }

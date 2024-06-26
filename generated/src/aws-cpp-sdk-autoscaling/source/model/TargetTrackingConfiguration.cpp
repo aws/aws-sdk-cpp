@@ -30,13 +30,8 @@ TargetTrackingConfiguration::TargetTrackingConfiguration() :
 {
 }
 
-TargetTrackingConfiguration::TargetTrackingConfiguration(const XmlNode& xmlNode) : 
-    m_predefinedMetricSpecificationHasBeenSet(false),
-    m_customizedMetricSpecificationHasBeenSet(false),
-    m_targetValue(0.0),
-    m_targetValueHasBeenSet(false),
-    m_disableScaleIn(false),
-    m_disableScaleInHasBeenSet(false)
+TargetTrackingConfiguration::TargetTrackingConfiguration(const XmlNode& xmlNode)
+  : TargetTrackingConfiguration()
 {
   *this = xmlNode;
 }

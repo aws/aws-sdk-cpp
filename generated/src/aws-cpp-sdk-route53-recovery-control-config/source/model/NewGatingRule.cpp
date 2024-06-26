@@ -29,14 +29,8 @@ NewGatingRule::NewGatingRule() :
 {
 }
 
-NewGatingRule::NewGatingRule(JsonView jsonValue) : 
-    m_controlPanelArnHasBeenSet(false),
-    m_gatingControlsHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_ruleConfigHasBeenSet(false),
-    m_targetControlsHasBeenSet(false),
-    m_waitPeriodMs(0),
-    m_waitPeriodMsHasBeenSet(false)
+NewGatingRule::NewGatingRule(JsonView jsonValue)
+  : NewGatingRule()
 {
   *this = jsonValue;
 }

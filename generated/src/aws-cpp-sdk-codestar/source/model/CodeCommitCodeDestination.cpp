@@ -23,8 +23,8 @@ CodeCommitCodeDestination::CodeCommitCodeDestination() :
 {
 }
 
-CodeCommitCodeDestination::CodeCommitCodeDestination(JsonView jsonValue) : 
-    m_nameHasBeenSet(false)
+CodeCommitCodeDestination::CodeCommitCodeDestination(JsonView jsonValue)
+  : CodeCommitCodeDestination()
 {
   *this = jsonValue;
 }

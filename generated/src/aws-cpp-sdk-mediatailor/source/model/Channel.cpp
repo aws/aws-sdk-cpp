@@ -34,19 +34,8 @@ Channel::Channel() :
 {
 }
 
-Channel::Channel(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_audiencesHasBeenSet(false),
-    m_channelNameHasBeenSet(false),
-    m_channelStateHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_fillerSlateHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_logConfigurationHasBeenSet(false),
-    m_outputsHasBeenSet(false),
-    m_playbackModeHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_tierHasBeenSet(false)
+Channel::Channel(JsonView jsonValue)
+  : Channel()
 {
   *this = jsonValue;
 }

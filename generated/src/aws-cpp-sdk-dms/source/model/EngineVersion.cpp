@@ -31,16 +31,8 @@ EngineVersion::EngineVersion() :
 {
 }
 
-EngineVersion::EngineVersion(JsonView jsonValue) : 
-    m_versionHasBeenSet(false),
-    m_lifecycleHasBeenSet(false),
-    m_releaseStatus(ReleaseStatusValues::NOT_SET),
-    m_releaseStatusHasBeenSet(false),
-    m_launchDateHasBeenSet(false),
-    m_autoUpgradeDateHasBeenSet(false),
-    m_deprecationDateHasBeenSet(false),
-    m_forceUpgradeDateHasBeenSet(false),
-    m_availableUpgradesHasBeenSet(false)
+EngineVersion::EngineVersion(JsonView jsonValue)
+  : EngineVersion()
 {
   *this = jsonValue;
 }

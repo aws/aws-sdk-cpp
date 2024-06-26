@@ -27,12 +27,8 @@ RecommendationSummary::RecommendationSummary() :
 {
 }
 
-RecommendationSummary::RecommendationSummary(JsonView jsonValue) : 
-    m_groupHasBeenSet(false),
-    m_estimatedMonthlySavings(0.0),
-    m_estimatedMonthlySavingsHasBeenSet(false),
-    m_recommendationCount(0),
-    m_recommendationCountHasBeenSet(false)
+RecommendationSummary::RecommendationSummary(JsonView jsonValue)
+  : RecommendationSummary()
 {
   *this = jsonValue;
 }

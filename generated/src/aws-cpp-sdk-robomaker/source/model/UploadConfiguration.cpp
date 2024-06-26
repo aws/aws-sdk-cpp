@@ -26,11 +26,8 @@ UploadConfiguration::UploadConfiguration() :
 {
 }
 
-UploadConfiguration::UploadConfiguration(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_pathHasBeenSet(false),
-    m_uploadBehavior(UploadBehavior::NOT_SET),
-    m_uploadBehaviorHasBeenSet(false)
+UploadConfiguration::UploadConfiguration(JsonView jsonValue)
+  : UploadConfiguration()
 {
   *this = jsonValue;
 }

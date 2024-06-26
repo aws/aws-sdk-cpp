@@ -23,8 +23,8 @@ StageContext::StageContext() :
 {
 }
 
-StageContext::StageContext(JsonView jsonValue) : 
-    m_nameHasBeenSet(false)
+StageContext::StageContext(JsonView jsonValue)
+  : StageContext()
 {
   *this = jsonValue;
 }

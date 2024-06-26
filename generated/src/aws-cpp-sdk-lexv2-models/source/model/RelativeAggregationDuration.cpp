@@ -26,11 +26,8 @@ RelativeAggregationDuration::RelativeAggregationDuration() :
 {
 }
 
-RelativeAggregationDuration::RelativeAggregationDuration(JsonView jsonValue) : 
-    m_timeDimension(TimeDimension::NOT_SET),
-    m_timeDimensionHasBeenSet(false),
-    m_timeValue(0),
-    m_timeValueHasBeenSet(false)
+RelativeAggregationDuration::RelativeAggregationDuration(JsonView jsonValue)
+  : RelativeAggregationDuration()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ SheetTextBox::SheetTextBox() :
 {
 }
 
-SheetTextBox::SheetTextBox(JsonView jsonValue) : 
-    m_sheetTextBoxIdHasBeenSet(false),
-    m_contentHasBeenSet(false)
+SheetTextBox::SheetTextBox(JsonView jsonValue)
+  : SheetTextBox()
 {
   *this = jsonValue;
 }

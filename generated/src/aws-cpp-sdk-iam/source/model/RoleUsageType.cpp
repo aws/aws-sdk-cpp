@@ -26,9 +26,8 @@ RoleUsageType::RoleUsageType() :
 {
 }
 
-RoleUsageType::RoleUsageType(const XmlNode& xmlNode) : 
-    m_regionHasBeenSet(false),
-    m_resourcesHasBeenSet(false)
+RoleUsageType::RoleUsageType(const XmlNode& xmlNode)
+  : RoleUsageType()
 {
   *this = xmlNode;
 }

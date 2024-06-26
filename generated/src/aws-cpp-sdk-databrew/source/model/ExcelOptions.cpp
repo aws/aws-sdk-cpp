@@ -26,11 +26,8 @@ ExcelOptions::ExcelOptions() :
 {
 }
 
-ExcelOptions::ExcelOptions(JsonView jsonValue) : 
-    m_sheetNamesHasBeenSet(false),
-    m_sheetIndexesHasBeenSet(false),
-    m_headerRow(false),
-    m_headerRowHasBeenSet(false)
+ExcelOptions::ExcelOptions(JsonView jsonValue)
+  : ExcelOptions()
 {
   *this = jsonValue;
 }

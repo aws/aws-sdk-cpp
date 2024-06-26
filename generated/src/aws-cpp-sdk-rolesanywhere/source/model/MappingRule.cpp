@@ -23,8 +23,8 @@ MappingRule::MappingRule() :
 {
 }
 
-MappingRule::MappingRule(JsonView jsonValue) : 
-    m_specifierHasBeenSet(false)
+MappingRule::MappingRule(JsonView jsonValue)
+  : MappingRule()
 {
   *this = jsonValue;
 }

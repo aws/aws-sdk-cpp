@@ -24,9 +24,8 @@ DescribeRecoverySnapshotsRequestFilters::DescribeRecoverySnapshotsRequestFilters
 {
 }
 
-DescribeRecoverySnapshotsRequestFilters::DescribeRecoverySnapshotsRequestFilters(JsonView jsonValue) : 
-    m_fromDateTimeHasBeenSet(false),
-    m_toDateTimeHasBeenSet(false)
+DescribeRecoverySnapshotsRequestFilters::DescribeRecoverySnapshotsRequestFilters(JsonView jsonValue)
+  : DescribeRecoverySnapshotsRequestFilters()
 {
   *this = jsonValue;
 }

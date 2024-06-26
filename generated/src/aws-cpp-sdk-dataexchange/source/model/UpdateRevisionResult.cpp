@@ -23,9 +23,8 @@ UpdateRevisionResult::UpdateRevisionResult() :
 {
 }
 
-UpdateRevisionResult::UpdateRevisionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_finalized(false),
-    m_revoked(false)
+UpdateRevisionResult::UpdateRevisionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateRevisionResult()
 {
   *this = result;
 }

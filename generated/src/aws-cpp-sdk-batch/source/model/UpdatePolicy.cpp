@@ -26,11 +26,8 @@ UpdatePolicy::UpdatePolicy() :
 {
 }
 
-UpdatePolicy::UpdatePolicy(JsonView jsonValue) : 
-    m_terminateJobsOnUpdate(false),
-    m_terminateJobsOnUpdateHasBeenSet(false),
-    m_jobExecutionTimeoutMinutes(0),
-    m_jobExecutionTimeoutMinutesHasBeenSet(false)
+UpdatePolicy::UpdatePolicy(JsonView jsonValue)
+  : UpdatePolicy()
 {
   *this = jsonValue;
 }

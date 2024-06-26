@@ -26,11 +26,8 @@ DiscoveredResource::DiscoveredResource() :
 {
 }
 
-DiscoveredResource::DiscoveredResource(JsonView jsonValue) : 
-    m_uRIHasBeenSet(false),
-    m_accountIdHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_nameHasBeenSet(false)
+DiscoveredResource::DiscoveredResource(JsonView jsonValue)
+  : DiscoveredResource()
 {
   *this = jsonValue;
 }

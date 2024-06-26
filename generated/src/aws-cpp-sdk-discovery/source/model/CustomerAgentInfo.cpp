@@ -36,21 +36,8 @@ CustomerAgentInfo::CustomerAgentInfo() :
 {
 }
 
-CustomerAgentInfo::CustomerAgentInfo(JsonView jsonValue) : 
-    m_activeAgents(0),
-    m_activeAgentsHasBeenSet(false),
-    m_healthyAgents(0),
-    m_healthyAgentsHasBeenSet(false),
-    m_blackListedAgents(0),
-    m_blackListedAgentsHasBeenSet(false),
-    m_shutdownAgents(0),
-    m_shutdownAgentsHasBeenSet(false),
-    m_unhealthyAgents(0),
-    m_unhealthyAgentsHasBeenSet(false),
-    m_totalAgents(0),
-    m_totalAgentsHasBeenSet(false),
-    m_unknownAgents(0),
-    m_unknownAgentsHasBeenSet(false)
+CustomerAgentInfo::CustomerAgentInfo(JsonView jsonValue)
+  : CustomerAgentInfo()
 {
   *this = jsonValue;
 }

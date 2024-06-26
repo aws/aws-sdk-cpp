@@ -31,14 +31,8 @@ VolumeStatusItem::VolumeStatusItem() :
 {
 }
 
-VolumeStatusItem::VolumeStatusItem(const XmlNode& xmlNode) : 
-    m_actionsHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_outpostArnHasBeenSet(false),
-    m_eventsHasBeenSet(false),
-    m_volumeIdHasBeenSet(false),
-    m_volumeStatusHasBeenSet(false),
-    m_attachmentStatusesHasBeenSet(false)
+VolumeStatusItem::VolumeStatusItem(const XmlNode& xmlNode)
+  : VolumeStatusItem()
 {
   *this = xmlNode;
 }

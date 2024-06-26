@@ -23,8 +23,8 @@ SqsQueueSinkConfiguration::SqsQueueSinkConfiguration() :
 {
 }
 
-SqsQueueSinkConfiguration::SqsQueueSinkConfiguration(JsonView jsonValue) : 
-    m_insightsTargetHasBeenSet(false)
+SqsQueueSinkConfiguration::SqsQueueSinkConfiguration(JsonView jsonValue)
+  : SqsQueueSinkConfiguration()
 {
   *this = jsonValue;
 }

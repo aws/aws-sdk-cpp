@@ -23,8 +23,8 @@ ImagePullSecret::ImagePullSecret() :
 {
 }
 
-ImagePullSecret::ImagePullSecret(JsonView jsonValue) : 
-    m_nameHasBeenSet(false)
+ImagePullSecret::ImagePullSecret(JsonView jsonValue)
+  : ImagePullSecret()
 {
   *this = jsonValue;
 }

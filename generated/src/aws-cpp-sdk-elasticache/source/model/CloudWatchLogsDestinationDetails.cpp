@@ -25,8 +25,8 @@ CloudWatchLogsDestinationDetails::CloudWatchLogsDestinationDetails() :
 {
 }
 
-CloudWatchLogsDestinationDetails::CloudWatchLogsDestinationDetails(const XmlNode& xmlNode) : 
-    m_logGroupHasBeenSet(false)
+CloudWatchLogsDestinationDetails::CloudWatchLogsDestinationDetails(const XmlNode& xmlNode)
+  : CloudWatchLogsDestinationDetails()
 {
   *this = xmlNode;
 }

@@ -31,16 +31,8 @@ LifecyclePolicySummary::LifecyclePolicySummary() :
 {
 }
 
-LifecyclePolicySummary::LifecyclePolicySummary(JsonView jsonValue) : 
-    m_createdDate(0),
-    m_createdDateHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_lastModifiedDate(0),
-    m_lastModifiedDateHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_policyVersionHasBeenSet(false),
-    m_type(LifecyclePolicyType::NOT_SET),
-    m_typeHasBeenSet(false)
+LifecyclePolicySummary::LifecyclePolicySummary(JsonView jsonValue)
+  : LifecyclePolicySummary()
 {
   *this = jsonValue;
 }

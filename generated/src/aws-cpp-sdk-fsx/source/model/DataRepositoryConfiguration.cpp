@@ -31,16 +31,8 @@ DataRepositoryConfiguration::DataRepositoryConfiguration() :
 {
 }
 
-DataRepositoryConfiguration::DataRepositoryConfiguration(JsonView jsonValue) : 
-    m_lifecycle(DataRepositoryLifecycle::NOT_SET),
-    m_lifecycleHasBeenSet(false),
-    m_importPathHasBeenSet(false),
-    m_exportPathHasBeenSet(false),
-    m_importedFileChunkSize(0),
-    m_importedFileChunkSizeHasBeenSet(false),
-    m_autoImportPolicy(AutoImportPolicyType::NOT_SET),
-    m_autoImportPolicyHasBeenSet(false),
-    m_failureDetailsHasBeenSet(false)
+DataRepositoryConfiguration::DataRepositoryConfiguration(JsonView jsonValue)
+  : DataRepositoryConfiguration()
 {
   *this = jsonValue;
 }

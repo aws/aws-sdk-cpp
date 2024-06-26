@@ -28,13 +28,8 @@ ProductionVariantManagedInstanceScaling::ProductionVariantManagedInstanceScaling
 {
 }
 
-ProductionVariantManagedInstanceScaling::ProductionVariantManagedInstanceScaling(JsonView jsonValue) : 
-    m_status(ManagedInstanceScalingStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_minInstanceCount(0),
-    m_minInstanceCountHasBeenSet(false),
-    m_maxInstanceCount(0),
-    m_maxInstanceCountHasBeenSet(false)
+ProductionVariantManagedInstanceScaling::ProductionVariantManagedInstanceScaling(JsonView jsonValue)
+  : ProductionVariantManagedInstanceScaling()
 {
   *this = jsonValue;
 }

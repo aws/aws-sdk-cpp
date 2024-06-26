@@ -36,21 +36,8 @@ ImportFileTaskInformation::ImportFileTaskInformation() :
 {
 }
 
-ImportFileTaskInformation::ImportFileTaskInformation(JsonView jsonValue) : 
-    m_completionTimeHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_importNameHasBeenSet(false),
-    m_inputS3BucketHasBeenSet(false),
-    m_inputS3KeyHasBeenSet(false),
-    m_numberOfRecordsFailed(0),
-    m_numberOfRecordsFailedHasBeenSet(false),
-    m_numberOfRecordsSuccess(0),
-    m_numberOfRecordsSuccessHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_status(ImportFileTaskStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusReportS3BucketHasBeenSet(false),
-    m_statusReportS3KeyHasBeenSet(false)
+ImportFileTaskInformation::ImportFileTaskInformation(JsonView jsonValue)
+  : ImportFileTaskInformation()
 {
   *this = jsonValue;
 }

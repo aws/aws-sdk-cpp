@@ -33,18 +33,8 @@ InvestigationDetail::InvestigationDetail() :
 {
 }
 
-InvestigationDetail::InvestigationDetail(JsonView jsonValue) : 
-    m_investigationIdHasBeenSet(false),
-    m_severity(Severity::NOT_SET),
-    m_severityHasBeenSet(false),
-    m_status(Status::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_state(State::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_entityArnHasBeenSet(false),
-    m_entityType(EntityType::NOT_SET),
-    m_entityTypeHasBeenSet(false)
+InvestigationDetail::InvestigationDetail(JsonView jsonValue)
+  : InvestigationDetail()
 {
   *this = jsonValue;
 }

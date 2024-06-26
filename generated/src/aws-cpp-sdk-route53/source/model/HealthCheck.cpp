@@ -31,14 +31,8 @@ HealthCheck::HealthCheck() :
 {
 }
 
-HealthCheck::HealthCheck(const XmlNode& xmlNode) : 
-    m_idHasBeenSet(false),
-    m_callerReferenceHasBeenSet(false),
-    m_linkedServiceHasBeenSet(false),
-    m_healthCheckConfigHasBeenSet(false),
-    m_healthCheckVersion(0),
-    m_healthCheckVersionHasBeenSet(false),
-    m_cloudWatchAlarmConfigurationHasBeenSet(false)
+HealthCheck::HealthCheck(const XmlNode& xmlNode)
+  : HealthCheck()
 {
   *this = xmlNode;
 }

@@ -23,8 +23,8 @@ SecurityProfileTarget::SecurityProfileTarget() :
 {
 }
 
-SecurityProfileTarget::SecurityProfileTarget(JsonView jsonValue) : 
-    m_arnHasBeenSet(false)
+SecurityProfileTarget::SecurityProfileTarget(JsonView jsonValue)
+  : SecurityProfileTarget()
 {
   *this = jsonValue;
 }

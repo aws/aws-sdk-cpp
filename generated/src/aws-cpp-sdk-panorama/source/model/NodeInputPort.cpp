@@ -29,14 +29,8 @@ NodeInputPort::NodeInputPort() :
 {
 }
 
-NodeInputPort::NodeInputPort(JsonView jsonValue) : 
-    m_defaultValueHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_maxConnections(0),
-    m_maxConnectionsHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_type(PortType::NOT_SET),
-    m_typeHasBeenSet(false)
+NodeInputPort::NodeInputPort(JsonView jsonValue)
+  : NodeInputPort()
 {
   *this = jsonValue;
 }

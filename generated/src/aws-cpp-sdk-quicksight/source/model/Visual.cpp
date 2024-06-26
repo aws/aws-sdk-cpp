@@ -45,30 +45,8 @@ Visual::Visual() :
 {
 }
 
-Visual::Visual(JsonView jsonValue) : 
-    m_tableVisualHasBeenSet(false),
-    m_pivotTableVisualHasBeenSet(false),
-    m_barChartVisualHasBeenSet(false),
-    m_kPIVisualHasBeenSet(false),
-    m_pieChartVisualHasBeenSet(false),
-    m_gaugeChartVisualHasBeenSet(false),
-    m_lineChartVisualHasBeenSet(false),
-    m_heatMapVisualHasBeenSet(false),
-    m_treeMapVisualHasBeenSet(false),
-    m_geospatialMapVisualHasBeenSet(false),
-    m_filledMapVisualHasBeenSet(false),
-    m_funnelChartVisualHasBeenSet(false),
-    m_scatterPlotVisualHasBeenSet(false),
-    m_comboChartVisualHasBeenSet(false),
-    m_boxPlotVisualHasBeenSet(false),
-    m_waterfallVisualHasBeenSet(false),
-    m_histogramVisualHasBeenSet(false),
-    m_wordCloudVisualHasBeenSet(false),
-    m_insightVisualHasBeenSet(false),
-    m_sankeyDiagramVisualHasBeenSet(false),
-    m_customContentVisualHasBeenSet(false),
-    m_emptyVisualHasBeenSet(false),
-    m_radarChartVisualHasBeenSet(false)
+Visual::Visual(JsonView jsonValue)
+  : Visual()
 {
   *this = jsonValue;
 }

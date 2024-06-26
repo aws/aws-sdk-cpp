@@ -31,16 +31,8 @@ AwsEc2NetworkInterfaceDetails::AwsEc2NetworkInterfaceDetails() :
 {
 }
 
-AwsEc2NetworkInterfaceDetails::AwsEc2NetworkInterfaceDetails(JsonView jsonValue) : 
-    m_attachmentHasBeenSet(false),
-    m_networkInterfaceIdHasBeenSet(false),
-    m_securityGroupsHasBeenSet(false),
-    m_sourceDestCheck(false),
-    m_sourceDestCheckHasBeenSet(false),
-    m_ipV6AddressesHasBeenSet(false),
-    m_privateIpAddressesHasBeenSet(false),
-    m_publicDnsNameHasBeenSet(false),
-    m_publicIpHasBeenSet(false)
+AwsEc2NetworkInterfaceDetails::AwsEc2NetworkInterfaceDetails(JsonView jsonValue)
+  : AwsEc2NetworkInterfaceDetails()
 {
   *this = jsonValue;
 }

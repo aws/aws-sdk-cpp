@@ -23,8 +23,8 @@ AssociatedStandard::AssociatedStandard() :
 {
 }
 
-AssociatedStandard::AssociatedStandard(JsonView jsonValue) : 
-    m_standardsIdHasBeenSet(false)
+AssociatedStandard::AssociatedStandard(JsonView jsonValue)
+  : AssociatedStandard()
 {
   *this = jsonValue;
 }

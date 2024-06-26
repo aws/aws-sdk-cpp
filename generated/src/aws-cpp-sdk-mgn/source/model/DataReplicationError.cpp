@@ -25,10 +25,8 @@ DataReplicationError::DataReplicationError() :
 {
 }
 
-DataReplicationError::DataReplicationError(JsonView jsonValue) : 
-    m_error(DataReplicationErrorString::NOT_SET),
-    m_errorHasBeenSet(false),
-    m_rawErrorHasBeenSet(false)
+DataReplicationError::DataReplicationError(JsonView jsonValue)
+  : DataReplicationError()
 {
   *this = jsonValue;
 }

@@ -44,29 +44,8 @@ AwsEc2VpnConnectionOptionsTunnelOptionsDetails::AwsEc2VpnConnectionOptionsTunnel
 {
 }
 
-AwsEc2VpnConnectionOptionsTunnelOptionsDetails::AwsEc2VpnConnectionOptionsTunnelOptionsDetails(JsonView jsonValue) : 
-    m_dpdTimeoutSeconds(0),
-    m_dpdTimeoutSecondsHasBeenSet(false),
-    m_ikeVersionsHasBeenSet(false),
-    m_outsideIpAddressHasBeenSet(false),
-    m_phase1DhGroupNumbersHasBeenSet(false),
-    m_phase1EncryptionAlgorithmsHasBeenSet(false),
-    m_phase1IntegrityAlgorithmsHasBeenSet(false),
-    m_phase1LifetimeSeconds(0),
-    m_phase1LifetimeSecondsHasBeenSet(false),
-    m_phase2DhGroupNumbersHasBeenSet(false),
-    m_phase2EncryptionAlgorithmsHasBeenSet(false),
-    m_phase2IntegrityAlgorithmsHasBeenSet(false),
-    m_phase2LifetimeSeconds(0),
-    m_phase2LifetimeSecondsHasBeenSet(false),
-    m_preSharedKeyHasBeenSet(false),
-    m_rekeyFuzzPercentage(0),
-    m_rekeyFuzzPercentageHasBeenSet(false),
-    m_rekeyMarginTimeSeconds(0),
-    m_rekeyMarginTimeSecondsHasBeenSet(false),
-    m_replayWindowSize(0),
-    m_replayWindowSizeHasBeenSet(false),
-    m_tunnelInsideCidrHasBeenSet(false)
+AwsEc2VpnConnectionOptionsTunnelOptionsDetails::AwsEc2VpnConnectionOptionsTunnelOptionsDetails(JsonView jsonValue)
+  : AwsEc2VpnConnectionOptionsTunnelOptionsDetails()
 {
   *this = jsonValue;
 }

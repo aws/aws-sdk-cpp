@@ -27,12 +27,8 @@ DimensionKeyDescription::DimensionKeyDescription() :
 {
 }
 
-DimensionKeyDescription::DimensionKeyDescription(JsonView jsonValue) : 
-    m_dimensionsHasBeenSet(false),
-    m_total(0.0),
-    m_totalHasBeenSet(false),
-    m_additionalMetricsHasBeenSet(false),
-    m_partitionsHasBeenSet(false)
+DimensionKeyDescription::DimensionKeyDescription(JsonView jsonValue)
+  : DimensionKeyDescription()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ ChannelNameCondition::ChannelNameCondition() :
 {
 }
 
-ChannelNameCondition::ChannelNameCondition(JsonView jsonValue) : 
-    m_comparisonOperator(ComparisonOperator::NOT_SET),
-    m_comparisonOperatorHasBeenSet(false),
-    m_comparisonValueHasBeenSet(false)
+ChannelNameCondition::ChannelNameCondition(JsonView jsonValue)
+  : ChannelNameCondition()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ RuleBasedProperties::RuleBasedProperties() :
 {
 }
 
-RuleBasedProperties::RuleBasedProperties(JsonView jsonValue) : 
-    m_attributeMatchingModel(AttributeMatchingModel::NOT_SET),
-    m_attributeMatchingModelHasBeenSet(false),
-    m_rulesHasBeenSet(false)
+RuleBasedProperties::RuleBasedProperties(JsonView jsonValue)
+  : RuleBasedProperties()
 {
   *this = jsonValue;
 }

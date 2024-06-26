@@ -28,13 +28,8 @@ AnalyticsUtteranceMetricResult::AnalyticsUtteranceMetricResult() :
 {
 }
 
-AnalyticsUtteranceMetricResult::AnalyticsUtteranceMetricResult(JsonView jsonValue) : 
-    m_name(AnalyticsUtteranceMetricName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_statistic(AnalyticsMetricStatistic::NOT_SET),
-    m_statisticHasBeenSet(false),
-    m_value(0.0),
-    m_valueHasBeenSet(false)
+AnalyticsUtteranceMetricResult::AnalyticsUtteranceMetricResult(JsonView jsonValue)
+  : AnalyticsUtteranceMetricResult()
 {
   *this = jsonValue;
 }

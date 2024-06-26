@@ -29,14 +29,8 @@ AthenaSourceConfig::AthenaSourceConfig() :
 {
 }
 
-AthenaSourceConfig::AthenaSourceConfig(JsonView jsonValue) : 
-    m_roleArnHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_dataCatalogHasBeenSet(false),
-    m_tableNameHasBeenSet(false),
-    m_workGroupNameHasBeenSet(false),
-    m_s3ResultsPathHasBeenSet(false),
-    m_backTestConfigurationHasBeenSet(false)
+AthenaSourceConfig::AthenaSourceConfig(JsonView jsonValue)
+  : AthenaSourceConfig()
 {
   *this = jsonValue;
 }

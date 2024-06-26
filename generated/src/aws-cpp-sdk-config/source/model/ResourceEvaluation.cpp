@@ -26,11 +26,8 @@ ResourceEvaluation::ResourceEvaluation() :
 {
 }
 
-ResourceEvaluation::ResourceEvaluation(JsonView jsonValue) : 
-    m_resourceEvaluationIdHasBeenSet(false),
-    m_evaluationMode(EvaluationMode::NOT_SET),
-    m_evaluationModeHasBeenSet(false),
-    m_evaluationStartTimestampHasBeenSet(false)
+ResourceEvaluation::ResourceEvaluation(JsonView jsonValue)
+  : ResourceEvaluation()
 {
   *this = jsonValue;
 }

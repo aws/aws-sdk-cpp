@@ -25,10 +25,8 @@ SchemaId::SchemaId() :
 {
 }
 
-SchemaId::SchemaId(JsonView jsonValue) : 
-    m_schemaArnHasBeenSet(false),
-    m_schemaNameHasBeenSet(false),
-    m_registryNameHasBeenSet(false)
+SchemaId::SchemaId(JsonView jsonValue)
+  : SchemaId()
 {
   *this = jsonValue;
 }

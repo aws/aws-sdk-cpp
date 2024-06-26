@@ -25,10 +25,8 @@ ReadinessCheckSummary::ReadinessCheckSummary() :
 {
 }
 
-ReadinessCheckSummary::ReadinessCheckSummary(JsonView jsonValue) : 
-    m_readiness(Readiness::NOT_SET),
-    m_readinessHasBeenSet(false),
-    m_readinessCheckNameHasBeenSet(false)
+ReadinessCheckSummary::ReadinessCheckSummary(JsonView jsonValue)
+  : ReadinessCheckSummary()
 {
   *this = jsonValue;
 }

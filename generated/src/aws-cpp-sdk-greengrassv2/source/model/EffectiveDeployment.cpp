@@ -34,19 +34,8 @@ EffectiveDeployment::EffectiveDeployment() :
 {
 }
 
-EffectiveDeployment::EffectiveDeployment(JsonView jsonValue) : 
-    m_deploymentIdHasBeenSet(false),
-    m_deploymentNameHasBeenSet(false),
-    m_iotJobIdHasBeenSet(false),
-    m_iotJobArnHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_targetArnHasBeenSet(false),
-    m_coreDeviceExecutionStatus(EffectiveDeploymentExecutionStatus::NOT_SET),
-    m_coreDeviceExecutionStatusHasBeenSet(false),
-    m_reasonHasBeenSet(false),
-    m_creationTimestampHasBeenSet(false),
-    m_modifiedTimestampHasBeenSet(false),
-    m_statusDetailsHasBeenSet(false)
+EffectiveDeployment::EffectiveDeployment(JsonView jsonValue)
+  : EffectiveDeployment()
 {
   *this = jsonValue;
 }

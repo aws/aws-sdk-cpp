@@ -25,10 +25,8 @@ Consent::Consent() :
 {
 }
 
-Consent::Consent(JsonView jsonValue) : 
-    m_maxPrice(0.0),
-    m_maxPriceHasBeenSet(false),
-    m_currencyHasBeenSet(false)
+Consent::Consent(JsonView jsonValue)
+  : Consent()
 {
   *this = jsonValue;
 }

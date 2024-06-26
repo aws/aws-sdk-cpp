@@ -26,9 +26,8 @@ InvalidNumberPredicates::InvalidNumberPredicates() :
 {
 }
 
-InvalidNumberPredicates::InvalidNumberPredicates(const XmlNode& xmlNode) : 
-    m_boxUsage(0.0),
-    m_boxUsageHasBeenSet(false)
+InvalidNumberPredicates::InvalidNumberPredicates(const XmlNode& xmlNode)
+  : InvalidNumberPredicates()
 {
   *this = xmlNode;
 }

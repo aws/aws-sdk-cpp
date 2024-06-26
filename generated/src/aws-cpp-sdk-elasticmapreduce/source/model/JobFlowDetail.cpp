@@ -39,24 +39,8 @@ JobFlowDetail::JobFlowDetail() :
 {
 }
 
-JobFlowDetail::JobFlowDetail(JsonView jsonValue) : 
-    m_jobFlowIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_logUriHasBeenSet(false),
-    m_logEncryptionKmsKeyIdHasBeenSet(false),
-    m_amiVersionHasBeenSet(false),
-    m_executionStatusDetailHasBeenSet(false),
-    m_instancesHasBeenSet(false),
-    m_stepsHasBeenSet(false),
-    m_bootstrapActionsHasBeenSet(false),
-    m_supportedProductsHasBeenSet(false),
-    m_visibleToAllUsers(false),
-    m_visibleToAllUsersHasBeenSet(false),
-    m_jobFlowRoleHasBeenSet(false),
-    m_serviceRoleHasBeenSet(false),
-    m_autoScalingRoleHasBeenSet(false),
-    m_scaleDownBehavior(ScaleDownBehavior::NOT_SET),
-    m_scaleDownBehaviorHasBeenSet(false)
+JobFlowDetail::JobFlowDetail(JsonView jsonValue)
+  : JobFlowDetail()
 {
   *this = jsonValue;
 }

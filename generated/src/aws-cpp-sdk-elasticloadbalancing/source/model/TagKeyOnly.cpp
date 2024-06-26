@@ -25,8 +25,8 @@ TagKeyOnly::TagKeyOnly() :
 {
 }
 
-TagKeyOnly::TagKeyOnly(const XmlNode& xmlNode) : 
-    m_keyHasBeenSet(false)
+TagKeyOnly::TagKeyOnly(const XmlNode& xmlNode)
+  : TagKeyOnly()
 {
   *this = xmlNode;
 }

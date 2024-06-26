@@ -39,22 +39,8 @@ IpamScope::IpamScope() :
 {
 }
 
-IpamScope::IpamScope(const XmlNode& xmlNode) : 
-    m_ownerIdHasBeenSet(false),
-    m_ipamScopeIdHasBeenSet(false),
-    m_ipamScopeArnHasBeenSet(false),
-    m_ipamArnHasBeenSet(false),
-    m_ipamRegionHasBeenSet(false),
-    m_ipamScopeType(IpamScopeType::NOT_SET),
-    m_ipamScopeTypeHasBeenSet(false),
-    m_isDefault(false),
-    m_isDefaultHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_poolCount(0),
-    m_poolCountHasBeenSet(false),
-    m_state(IpamScopeState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+IpamScope::IpamScope(const XmlNode& xmlNode)
+  : IpamScope()
 {
   *this = xmlNode;
 }

@@ -25,10 +25,8 @@ BucketLevelPermissions::BucketLevelPermissions() :
 {
 }
 
-BucketLevelPermissions::BucketLevelPermissions(JsonView jsonValue) : 
-    m_accessControlListHasBeenSet(false),
-    m_blockPublicAccessHasBeenSet(false),
-    m_bucketPolicyHasBeenSet(false)
+BucketLevelPermissions::BucketLevelPermissions(JsonView jsonValue)
+  : BucketLevelPermissions()
 {
   *this = jsonValue;
 }

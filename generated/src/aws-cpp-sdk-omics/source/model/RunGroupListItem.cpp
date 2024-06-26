@@ -34,19 +34,8 @@ RunGroupListItem::RunGroupListItem() :
 {
 }
 
-RunGroupListItem::RunGroupListItem(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_maxCpus(0),
-    m_maxCpusHasBeenSet(false),
-    m_maxRuns(0),
-    m_maxRunsHasBeenSet(false),
-    m_maxDuration(0),
-    m_maxDurationHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_maxGpus(0),
-    m_maxGpusHasBeenSet(false)
+RunGroupListItem::RunGroupListItem(JsonView jsonValue)
+  : RunGroupListItem()
 {
   *this = jsonValue;
 }

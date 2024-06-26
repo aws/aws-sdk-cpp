@@ -26,11 +26,8 @@ ComputeSavingsPlansConfiguration::ComputeSavingsPlansConfiguration() :
 {
 }
 
-ComputeSavingsPlansConfiguration::ComputeSavingsPlansConfiguration(JsonView jsonValue) : 
-    m_accountScopeHasBeenSet(false),
-    m_termHasBeenSet(false),
-    m_paymentOptionHasBeenSet(false),
-    m_hourlyCommitmentHasBeenSet(false)
+ComputeSavingsPlansConfiguration::ComputeSavingsPlansConfiguration(JsonView jsonValue)
+  : ComputeSavingsPlansConfiguration()
 {
   *this = jsonValue;
 }

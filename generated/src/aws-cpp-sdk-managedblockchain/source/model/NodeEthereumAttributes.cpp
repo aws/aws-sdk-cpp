@@ -24,9 +24,8 @@ NodeEthereumAttributes::NodeEthereumAttributes() :
 {
 }
 
-NodeEthereumAttributes::NodeEthereumAttributes(JsonView jsonValue) : 
-    m_httpEndpointHasBeenSet(false),
-    m_webSocketEndpointHasBeenSet(false)
+NodeEthereumAttributes::NodeEthereumAttributes(JsonView jsonValue)
+  : NodeEthereumAttributes()
 {
   *this = jsonValue;
 }

@@ -49,34 +49,8 @@ DescribedServer::DescribedServer() :
 {
 }
 
-DescribedServer::DescribedServer(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_certificateHasBeenSet(false),
-    m_protocolDetailsHasBeenSet(false),
-    m_domain(Domain::NOT_SET),
-    m_domainHasBeenSet(false),
-    m_endpointDetailsHasBeenSet(false),
-    m_endpointType(EndpointType::NOT_SET),
-    m_endpointTypeHasBeenSet(false),
-    m_hostKeyFingerprintHasBeenSet(false),
-    m_identityProviderDetailsHasBeenSet(false),
-    m_identityProviderType(IdentityProviderType::NOT_SET),
-    m_identityProviderTypeHasBeenSet(false),
-    m_loggingRoleHasBeenSet(false),
-    m_postAuthenticationLoginBannerHasBeenSet(false),
-    m_preAuthenticationLoginBannerHasBeenSet(false),
-    m_protocolsHasBeenSet(false),
-    m_securityPolicyNameHasBeenSet(false),
-    m_serverIdHasBeenSet(false),
-    m_state(State::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_userCount(0),
-    m_userCountHasBeenSet(false),
-    m_workflowDetailsHasBeenSet(false),
-    m_structuredLogDestinationsHasBeenSet(false),
-    m_s3StorageOptionsHasBeenSet(false),
-    m_as2ServiceManagedEgressIpAddressesHasBeenSet(false)
+DescribedServer::DescribedServer(JsonView jsonValue)
+  : DescribedServer()
 {
   *this = jsonValue;
 }

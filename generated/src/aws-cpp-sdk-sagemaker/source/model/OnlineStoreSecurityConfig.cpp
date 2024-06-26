@@ -23,8 +23,8 @@ OnlineStoreSecurityConfig::OnlineStoreSecurityConfig() :
 {
 }
 
-OnlineStoreSecurityConfig::OnlineStoreSecurityConfig(JsonView jsonValue) : 
-    m_kmsKeyIdHasBeenSet(false)
+OnlineStoreSecurityConfig::OnlineStoreSecurityConfig(JsonView jsonValue)
+  : OnlineStoreSecurityConfig()
 {
   *this = jsonValue;
 }

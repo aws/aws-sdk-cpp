@@ -24,9 +24,8 @@ SaudiArabiaAdditionalInfo::SaudiArabiaAdditionalInfo() :
 {
 }
 
-SaudiArabiaAdditionalInfo::SaudiArabiaAdditionalInfo(JsonView jsonValue) : 
-    m_taxRegistrationNumberType(SaudiArabiaTaxRegistrationNumberType::NOT_SET),
-    m_taxRegistrationNumberTypeHasBeenSet(false)
+SaudiArabiaAdditionalInfo::SaudiArabiaAdditionalInfo(JsonView jsonValue)
+  : SaudiArabiaAdditionalInfo()
 {
   *this = jsonValue;
 }

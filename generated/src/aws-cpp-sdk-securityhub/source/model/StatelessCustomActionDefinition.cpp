@@ -23,8 +23,8 @@ StatelessCustomActionDefinition::StatelessCustomActionDefinition() :
 {
 }
 
-StatelessCustomActionDefinition::StatelessCustomActionDefinition(JsonView jsonValue) : 
-    m_publishMetricActionHasBeenSet(false)
+StatelessCustomActionDefinition::StatelessCustomActionDefinition(JsonView jsonValue)
+  : StatelessCustomActionDefinition()
 {
   *this = jsonValue;
 }

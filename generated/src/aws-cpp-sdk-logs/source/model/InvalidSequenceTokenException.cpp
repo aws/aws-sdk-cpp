@@ -23,8 +23,8 @@ InvalidSequenceTokenException::InvalidSequenceTokenException() :
 {
 }
 
-InvalidSequenceTokenException::InvalidSequenceTokenException(JsonView jsonValue) : 
-    m_expectedSequenceTokenHasBeenSet(false)
+InvalidSequenceTokenException::InvalidSequenceTokenException(JsonView jsonValue)
+  : InvalidSequenceTokenException()
 {
   *this = jsonValue;
 }

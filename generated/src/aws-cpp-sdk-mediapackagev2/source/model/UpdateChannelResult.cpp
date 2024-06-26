@@ -22,8 +22,8 @@ UpdateChannelResult::UpdateChannelResult() :
 {
 }
 
-UpdateChannelResult::UpdateChannelResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_inputType(InputType::NOT_SET)
+UpdateChannelResult::UpdateChannelResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateChannelResult()
 {
   *this = result;
 }

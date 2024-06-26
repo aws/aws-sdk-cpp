@@ -26,9 +26,8 @@ InvalidNumberValueTests::InvalidNumberValueTests() :
 {
 }
 
-InvalidNumberValueTests::InvalidNumberValueTests(const XmlNode& xmlNode) : 
-    m_boxUsage(0.0),
-    m_boxUsageHasBeenSet(false)
+InvalidNumberValueTests::InvalidNumberValueTests(const XmlNode& xmlNode)
+  : InvalidNumberValueTests()
 {
   *this = xmlNode;
 }

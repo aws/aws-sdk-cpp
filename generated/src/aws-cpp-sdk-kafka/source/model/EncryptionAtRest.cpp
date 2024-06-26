@@ -23,8 +23,8 @@ EncryptionAtRest::EncryptionAtRest() :
 {
 }
 
-EncryptionAtRest::EncryptionAtRest(JsonView jsonValue) : 
-    m_dataVolumeKMSKeyIdHasBeenSet(false)
+EncryptionAtRest::EncryptionAtRest(JsonView jsonValue)
+  : EncryptionAtRest()
 {
   *this = jsonValue;
 }

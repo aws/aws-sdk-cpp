@@ -25,10 +25,8 @@ DiscoverDynamicCardVerificationCode::DiscoverDynamicCardVerificationCode() :
 {
 }
 
-DiscoverDynamicCardVerificationCode::DiscoverDynamicCardVerificationCode(JsonView jsonValue) : 
-    m_applicationTransactionCounterHasBeenSet(false),
-    m_cardExpiryDateHasBeenSet(false),
-    m_unpredictableNumberHasBeenSet(false)
+DiscoverDynamicCardVerificationCode::DiscoverDynamicCardVerificationCode(JsonView jsonValue)
+  : DiscoverDynamicCardVerificationCode()
 {
   *this = jsonValue;
 }

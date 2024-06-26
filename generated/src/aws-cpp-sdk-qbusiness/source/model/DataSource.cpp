@@ -29,14 +29,8 @@ DataSource::DataSource() :
 {
 }
 
-DataSource::DataSource(JsonView jsonValue) : 
-    m_displayNameHasBeenSet(false),
-    m_dataSourceIdHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_status(DataSourceStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+DataSource::DataSource(JsonView jsonValue)
+  : DataSource()
 {
   *this = jsonValue;
 }

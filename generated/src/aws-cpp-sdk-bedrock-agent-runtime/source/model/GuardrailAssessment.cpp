@@ -26,11 +26,8 @@ GuardrailAssessment::GuardrailAssessment() :
 {
 }
 
-GuardrailAssessment::GuardrailAssessment(JsonView jsonValue) : 
-    m_contentPolicyHasBeenSet(false),
-    m_sensitiveInformationPolicyHasBeenSet(false),
-    m_topicPolicyHasBeenSet(false),
-    m_wordPolicyHasBeenSet(false)
+GuardrailAssessment::GuardrailAssessment(JsonView jsonValue)
+  : GuardrailAssessment()
 {
   *this = jsonValue;
 }

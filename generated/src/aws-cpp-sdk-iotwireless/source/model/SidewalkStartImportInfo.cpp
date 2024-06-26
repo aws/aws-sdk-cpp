@@ -24,9 +24,8 @@ SidewalkStartImportInfo::SidewalkStartImportInfo() :
 {
 }
 
-SidewalkStartImportInfo::SidewalkStartImportInfo(JsonView jsonValue) : 
-    m_deviceCreationFileHasBeenSet(false),
-    m_roleHasBeenSet(false)
+SidewalkStartImportInfo::SidewalkStartImportInfo(JsonView jsonValue)
+  : SidewalkStartImportInfo()
 {
   *this = jsonValue;
 }

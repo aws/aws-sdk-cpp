@@ -25,10 +25,8 @@ ChannelFlowSummary::ChannelFlowSummary() :
 {
 }
 
-ChannelFlowSummary::ChannelFlowSummary(JsonView jsonValue) : 
-    m_channelFlowArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_processorsHasBeenSet(false)
+ChannelFlowSummary::ChannelFlowSummary(JsonView jsonValue)
+  : ChannelFlowSummary()
 {
   *this = jsonValue;
 }

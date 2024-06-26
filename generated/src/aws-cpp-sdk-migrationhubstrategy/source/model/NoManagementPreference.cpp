@@ -23,8 +23,8 @@ NoManagementPreference::NoManagementPreference() :
 {
 }
 
-NoManagementPreference::NoManagementPreference(JsonView jsonValue) : 
-    m_targetDestinationHasBeenSet(false)
+NoManagementPreference::NoManagementPreference(JsonView jsonValue)
+  : NoManagementPreference()
 {
   *this = jsonValue;
 }

@@ -53,38 +53,8 @@ Workload::Workload() :
 {
 }
 
-Workload::Workload(JsonView jsonValue) : 
-    m_workloadIdHasBeenSet(false),
-    m_workloadArnHasBeenSet(false),
-    m_workloadNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_environment(WorkloadEnvironment::NOT_SET),
-    m_environmentHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_accountIdsHasBeenSet(false),
-    m_awsRegionsHasBeenSet(false),
-    m_nonAwsRegionsHasBeenSet(false),
-    m_architecturalDesignHasBeenSet(false),
-    m_reviewOwnerHasBeenSet(false),
-    m_reviewRestrictionDateHasBeenSet(false),
-    m_isReviewOwnerUpdateAcknowledged(false),
-    m_isReviewOwnerUpdateAcknowledgedHasBeenSet(false),
-    m_industryTypeHasBeenSet(false),
-    m_industryHasBeenSet(false),
-    m_notesHasBeenSet(false),
-    m_improvementStatus(WorkloadImprovementStatus::NOT_SET),
-    m_improvementStatusHasBeenSet(false),
-    m_riskCountsHasBeenSet(false),
-    m_pillarPrioritiesHasBeenSet(false),
-    m_lensesHasBeenSet(false),
-    m_ownerHasBeenSet(false),
-    m_shareInvitationIdHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_discoveryConfigHasBeenSet(false),
-    m_applicationsHasBeenSet(false),
-    m_profilesHasBeenSet(false),
-    m_prioritizedRiskCountsHasBeenSet(false),
-    m_jiraConfigurationHasBeenSet(false)
+Workload::Workload(JsonView jsonValue)
+  : Workload()
 {
   *this = jsonValue;
 }

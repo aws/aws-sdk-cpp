@@ -28,13 +28,8 @@ RDSMetadata::RDSMetadata() :
 {
 }
 
-RDSMetadata::RDSMetadata(JsonView jsonValue) : 
-    m_databaseHasBeenSet(false),
-    m_databaseUserNameHasBeenSet(false),
-    m_selectSqlQueryHasBeenSet(false),
-    m_resourceRoleHasBeenSet(false),
-    m_serviceRoleHasBeenSet(false),
-    m_dataPipelineIdHasBeenSet(false)
+RDSMetadata::RDSMetadata(JsonView jsonValue)
+  : RDSMetadata()
 {
   *this = jsonValue;
 }

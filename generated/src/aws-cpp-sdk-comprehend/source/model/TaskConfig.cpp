@@ -26,11 +26,8 @@ TaskConfig::TaskConfig() :
 {
 }
 
-TaskConfig::TaskConfig(JsonView jsonValue) : 
-    m_languageCode(LanguageCode::NOT_SET),
-    m_languageCodeHasBeenSet(false),
-    m_documentClassificationConfigHasBeenSet(false),
-    m_entityRecognitionConfigHasBeenSet(false)
+TaskConfig::TaskConfig(JsonView jsonValue)
+  : TaskConfig()
 {
   *this = jsonValue;
 }

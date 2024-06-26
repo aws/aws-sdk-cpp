@@ -25,10 +25,8 @@ WeeklySetting::WeeklySetting() :
 {
 }
 
-WeeklySetting::WeeklySetting(JsonView jsonValue) : 
-    m_dayOfWeek(DayOfWeek::NOT_SET),
-    m_dayOfWeekHasBeenSet(false),
-    m_handOffTimeHasBeenSet(false)
+WeeklySetting::WeeklySetting(JsonView jsonValue)
+  : WeeklySetting()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ AWSSessionCredentials::AWSSessionCredentials() :
 {
 }
 
-AWSSessionCredentials::AWSSessionCredentials(JsonView jsonValue) : 
-    m_accessKeyIdHasBeenSet(false),
-    m_secretAccessKeyHasBeenSet(false),
-    m_sessionTokenHasBeenSet(false)
+AWSSessionCredentials::AWSSessionCredentials(JsonView jsonValue)
+  : AWSSessionCredentials()
 {
   *this = jsonValue;
 }

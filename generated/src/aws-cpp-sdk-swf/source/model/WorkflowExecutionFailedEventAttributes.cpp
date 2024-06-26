@@ -26,11 +26,8 @@ WorkflowExecutionFailedEventAttributes::WorkflowExecutionFailedEventAttributes()
 {
 }
 
-WorkflowExecutionFailedEventAttributes::WorkflowExecutionFailedEventAttributes(JsonView jsonValue) : 
-    m_reasonHasBeenSet(false),
-    m_detailsHasBeenSet(false),
-    m_decisionTaskCompletedEventId(0),
-    m_decisionTaskCompletedEventIdHasBeenSet(false)
+WorkflowExecutionFailedEventAttributes::WorkflowExecutionFailedEventAttributes(JsonView jsonValue)
+  : WorkflowExecutionFailedEventAttributes()
 {
   *this = jsonValue;
 }

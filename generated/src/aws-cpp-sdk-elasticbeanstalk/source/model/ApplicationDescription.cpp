@@ -32,15 +32,8 @@ ApplicationDescription::ApplicationDescription() :
 {
 }
 
-ApplicationDescription::ApplicationDescription(const XmlNode& xmlNode) : 
-    m_applicationArnHasBeenSet(false),
-    m_applicationNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_dateCreatedHasBeenSet(false),
-    m_dateUpdatedHasBeenSet(false),
-    m_versionsHasBeenSet(false),
-    m_configurationTemplatesHasBeenSet(false),
-    m_resourceLifecycleConfigHasBeenSet(false)
+ApplicationDescription::ApplicationDescription(const XmlNode& xmlNode)
+  : ApplicationDescription()
 {
   *this = xmlNode;
 }

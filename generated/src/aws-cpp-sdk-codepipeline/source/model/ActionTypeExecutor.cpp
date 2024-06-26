@@ -28,13 +28,8 @@ ActionTypeExecutor::ActionTypeExecutor() :
 {
 }
 
-ActionTypeExecutor::ActionTypeExecutor(JsonView jsonValue) : 
-    m_configurationHasBeenSet(false),
-    m_type(ExecutorType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_policyStatementsTemplateHasBeenSet(false),
-    m_jobTimeout(0),
-    m_jobTimeoutHasBeenSet(false)
+ActionTypeExecutor::ActionTypeExecutor(JsonView jsonValue)
+  : ActionTypeExecutor()
 {
   *this = jsonValue;
 }

@@ -23,9 +23,8 @@ GetServiceSettingsResult::GetServiceSettingsResult() :
 {
 }
 
-GetServiceSettingsResult::GetServiceSettingsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_linuxSubscriptionsDiscovery(LinuxSubscriptionsDiscovery::NOT_SET),
-    m_status(Status::NOT_SET)
+GetServiceSettingsResult::GetServiceSettingsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetServiceSettingsResult()
 {
   *this = result;
 }

@@ -26,11 +26,8 @@ Compatibility::Compatibility() :
 {
 }
 
-Compatibility::Compatibility(JsonView jsonValue) : 
-    m_clusterVersionHasBeenSet(false),
-    m_platformVersionsHasBeenSet(false),
-    m_defaultVersion(false),
-    m_defaultVersionHasBeenSet(false)
+Compatibility::Compatibility(JsonView jsonValue)
+  : Compatibility()
 {
   *this = jsonValue;
 }

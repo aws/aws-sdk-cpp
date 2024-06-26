@@ -23,8 +23,8 @@ ParquetConfiguration::ParquetConfiguration() :
 {
 }
 
-ParquetConfiguration::ParquetConfiguration(JsonView jsonValue) : 
-    m_schemaDefinitionHasBeenSet(false)
+ParquetConfiguration::ParquetConfiguration(JsonView jsonValue)
+  : ParquetConfiguration()
 {
   *this = jsonValue;
 }

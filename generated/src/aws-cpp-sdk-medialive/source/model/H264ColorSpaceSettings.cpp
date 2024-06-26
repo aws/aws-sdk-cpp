@@ -25,10 +25,8 @@ H264ColorSpaceSettings::H264ColorSpaceSettings() :
 {
 }
 
-H264ColorSpaceSettings::H264ColorSpaceSettings(JsonView jsonValue) : 
-    m_colorSpacePassthroughSettingsHasBeenSet(false),
-    m_rec601SettingsHasBeenSet(false),
-    m_rec709SettingsHasBeenSet(false)
+H264ColorSpaceSettings::H264ColorSpaceSettings(JsonView jsonValue)
+  : H264ColorSpaceSettings()
 {
   *this = jsonValue;
 }

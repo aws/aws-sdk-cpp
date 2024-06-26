@@ -25,10 +25,8 @@ EvaluationStatus::EvaluationStatus() :
 {
 }
 
-EvaluationStatus::EvaluationStatus(JsonView jsonValue) : 
-    m_status(ResourceEvaluationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_failureReasonHasBeenSet(false)
+EvaluationStatus::EvaluationStatus(JsonView jsonValue)
+  : EvaluationStatus()
 {
   *this = jsonValue;
 }

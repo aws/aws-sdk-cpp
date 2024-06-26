@@ -28,13 +28,8 @@ DecisionTaskTimedOutEventAttributes::DecisionTaskTimedOutEventAttributes() :
 {
 }
 
-DecisionTaskTimedOutEventAttributes::DecisionTaskTimedOutEventAttributes(JsonView jsonValue) : 
-    m_timeoutType(DecisionTaskTimeoutType::NOT_SET),
-    m_timeoutTypeHasBeenSet(false),
-    m_scheduledEventId(0),
-    m_scheduledEventIdHasBeenSet(false),
-    m_startedEventId(0),
-    m_startedEventIdHasBeenSet(false)
+DecisionTaskTimedOutEventAttributes::DecisionTaskTimedOutEventAttributes(JsonView jsonValue)
+  : DecisionTaskTimedOutEventAttributes()
 {
   *this = jsonValue;
 }

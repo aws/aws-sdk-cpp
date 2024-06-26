@@ -25,8 +25,8 @@ PredictiveScalingCustomizedLoadMetric::PredictiveScalingCustomizedLoadMetric() :
 {
 }
 
-PredictiveScalingCustomizedLoadMetric::PredictiveScalingCustomizedLoadMetric(const XmlNode& xmlNode) : 
-    m_metricDataQueriesHasBeenSet(false)
+PredictiveScalingCustomizedLoadMetric::PredictiveScalingCustomizedLoadMetric(const XmlNode& xmlNode)
+  : PredictiveScalingCustomizedLoadMetric()
 {
   *this = xmlNode;
 }

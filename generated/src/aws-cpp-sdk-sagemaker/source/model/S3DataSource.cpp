@@ -29,14 +29,8 @@ S3DataSource::S3DataSource() :
 {
 }
 
-S3DataSource::S3DataSource(JsonView jsonValue) : 
-    m_s3DataType(S3DataType::NOT_SET),
-    m_s3DataTypeHasBeenSet(false),
-    m_s3UriHasBeenSet(false),
-    m_s3DataDistributionType(S3DataDistribution::NOT_SET),
-    m_s3DataDistributionTypeHasBeenSet(false),
-    m_attributeNamesHasBeenSet(false),
-    m_instanceGroupNamesHasBeenSet(false)
+S3DataSource::S3DataSource(JsonView jsonValue)
+  : S3DataSource()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ PrefetchConsumption::PrefetchConsumption() :
 {
 }
 
-PrefetchConsumption::PrefetchConsumption(JsonView jsonValue) : 
-    m_availMatchingCriteriaHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_startTimeHasBeenSet(false)
+PrefetchConsumption::PrefetchConsumption(JsonView jsonValue)
+  : PrefetchConsumption()
 {
   *this = jsonValue;
 }

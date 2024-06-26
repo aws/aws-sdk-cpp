@@ -24,9 +24,8 @@ BackupPlanTemplatesListMember::BackupPlanTemplatesListMember() :
 {
 }
 
-BackupPlanTemplatesListMember::BackupPlanTemplatesListMember(JsonView jsonValue) : 
-    m_backupPlanTemplateIdHasBeenSet(false),
-    m_backupPlanTemplateNameHasBeenSet(false)
+BackupPlanTemplatesListMember::BackupPlanTemplatesListMember(JsonView jsonValue)
+  : BackupPlanTemplatesListMember()
 {
   *this = jsonValue;
 }

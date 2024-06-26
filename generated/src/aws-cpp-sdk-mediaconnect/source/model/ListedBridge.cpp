@@ -28,13 +28,8 @@ ListedBridge::ListedBridge() :
 {
 }
 
-ListedBridge::ListedBridge(JsonView jsonValue) : 
-    m_bridgeArnHasBeenSet(false),
-    m_bridgeState(BridgeState::NOT_SET),
-    m_bridgeStateHasBeenSet(false),
-    m_bridgeTypeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_placementArnHasBeenSet(false)
+ListedBridge::ListedBridge(JsonView jsonValue)
+  : ListedBridge()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ PatchRuleGroup::PatchRuleGroup() :
 {
 }
 
-PatchRuleGroup::PatchRuleGroup(JsonView jsonValue) : 
-    m_patchRulesHasBeenSet(false)
+PatchRuleGroup::PatchRuleGroup(JsonView jsonValue)
+  : PatchRuleGroup()
 {
   *this = jsonValue;
 }

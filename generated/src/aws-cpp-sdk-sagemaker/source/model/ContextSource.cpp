@@ -25,10 +25,8 @@ ContextSource::ContextSource() :
 {
 }
 
-ContextSource::ContextSource(JsonView jsonValue) : 
-    m_sourceUriHasBeenSet(false),
-    m_sourceTypeHasBeenSet(false),
-    m_sourceIdHasBeenSet(false)
+ContextSource::ContextSource(JsonView jsonValue)
+  : ContextSource()
 {
   *this = jsonValue;
 }

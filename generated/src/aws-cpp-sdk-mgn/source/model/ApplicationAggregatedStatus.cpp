@@ -29,14 +29,8 @@ ApplicationAggregatedStatus::ApplicationAggregatedStatus() :
 {
 }
 
-ApplicationAggregatedStatus::ApplicationAggregatedStatus(JsonView jsonValue) : 
-    m_healthStatus(ApplicationHealthStatus::NOT_SET),
-    m_healthStatusHasBeenSet(false),
-    m_lastUpdateDateTimeHasBeenSet(false),
-    m_progressStatus(ApplicationProgressStatus::NOT_SET),
-    m_progressStatusHasBeenSet(false),
-    m_totalSourceServers(0),
-    m_totalSourceServersHasBeenSet(false)
+ApplicationAggregatedStatus::ApplicationAggregatedStatus(JsonView jsonValue)
+  : ApplicationAggregatedStatus()
 {
   *this = jsonValue;
 }

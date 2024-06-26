@@ -23,9 +23,8 @@ GetListenerResult::GetListenerResult() :
 {
 }
 
-GetListenerResult::GetListenerResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_port(0),
-    m_protocol(ListenerProtocol::NOT_SET)
+GetListenerResult::GetListenerResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetListenerResult()
 {
   *this = result;
 }

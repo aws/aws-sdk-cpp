@@ -32,17 +32,8 @@ HyperParameterTuningResourceConfig::HyperParameterTuningResourceConfig() :
 {
 }
 
-HyperParameterTuningResourceConfig::HyperParameterTuningResourceConfig(JsonView jsonValue) : 
-    m_instanceType(TrainingInstanceType::NOT_SET),
-    m_instanceTypeHasBeenSet(false),
-    m_instanceCount(0),
-    m_instanceCountHasBeenSet(false),
-    m_volumeSizeInGB(0),
-    m_volumeSizeInGBHasBeenSet(false),
-    m_volumeKmsKeyIdHasBeenSet(false),
-    m_allocationStrategy(HyperParameterTuningAllocationStrategy::NOT_SET),
-    m_allocationStrategyHasBeenSet(false),
-    m_instanceConfigsHasBeenSet(false)
+HyperParameterTuningResourceConfig::HyperParameterTuningResourceConfig(JsonView jsonValue)
+  : HyperParameterTuningResourceConfig()
 {
   *this = jsonValue;
 }

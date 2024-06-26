@@ -25,8 +25,8 @@ PolicyDescriptorType::PolicyDescriptorType() :
 {
 }
 
-PolicyDescriptorType::PolicyDescriptorType(const XmlNode& xmlNode) : 
-    m_arnHasBeenSet(false)
+PolicyDescriptorType::PolicyDescriptorType(const XmlNode& xmlNode)
+  : PolicyDescriptorType()
 {
   *this = xmlNode;
 }

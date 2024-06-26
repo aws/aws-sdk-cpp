@@ -27,12 +27,8 @@ ActivityTaskCompletedEventAttributes::ActivityTaskCompletedEventAttributes() :
 {
 }
 
-ActivityTaskCompletedEventAttributes::ActivityTaskCompletedEventAttributes(JsonView jsonValue) : 
-    m_resultHasBeenSet(false),
-    m_scheduledEventId(0),
-    m_scheduledEventIdHasBeenSet(false),
-    m_startedEventId(0),
-    m_startedEventIdHasBeenSet(false)
+ActivityTaskCompletedEventAttributes::ActivityTaskCompletedEventAttributes(JsonView jsonValue)
+  : ActivityTaskCompletedEventAttributes()
 {
   *this = jsonValue;
 }

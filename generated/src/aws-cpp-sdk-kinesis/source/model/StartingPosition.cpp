@@ -26,11 +26,8 @@ StartingPosition::StartingPosition() :
 {
 }
 
-StartingPosition::StartingPosition(JsonView jsonValue) : 
-    m_type(ShardIteratorType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_sequenceNumberHasBeenSet(false),
-    m_timestampHasBeenSet(false)
+StartingPosition::StartingPosition(JsonView jsonValue)
+  : StartingPosition()
 {
   *this = jsonValue;
 }

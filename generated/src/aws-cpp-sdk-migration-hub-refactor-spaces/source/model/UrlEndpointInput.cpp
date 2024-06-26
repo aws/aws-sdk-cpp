@@ -24,9 +24,8 @@ UrlEndpointInput::UrlEndpointInput() :
 {
 }
 
-UrlEndpointInput::UrlEndpointInput(JsonView jsonValue) : 
-    m_healthUrlHasBeenSet(false),
-    m_urlHasBeenSet(false)
+UrlEndpointInput::UrlEndpointInput(JsonView jsonValue)
+  : UrlEndpointInput()
 {
   *this = jsonValue;
 }

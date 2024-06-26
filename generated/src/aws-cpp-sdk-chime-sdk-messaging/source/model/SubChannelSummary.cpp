@@ -25,10 +25,8 @@ SubChannelSummary::SubChannelSummary() :
 {
 }
 
-SubChannelSummary::SubChannelSummary(JsonView jsonValue) : 
-    m_subChannelIdHasBeenSet(false),
-    m_membershipCount(0),
-    m_membershipCountHasBeenSet(false)
+SubChannelSummary::SubChannelSummary(JsonView jsonValue)
+  : SubChannelSummary()
 {
   *this = jsonValue;
 }

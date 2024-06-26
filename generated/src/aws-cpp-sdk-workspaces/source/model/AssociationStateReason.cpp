@@ -25,10 +25,8 @@ AssociationStateReason::AssociationStateReason() :
 {
 }
 
-AssociationStateReason::AssociationStateReason(JsonView jsonValue) : 
-    m_errorCode(AssociationErrorCode::NOT_SET),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
+AssociationStateReason::AssociationStateReason(JsonView jsonValue)
+  : AssociationStateReason()
 {
   *this = jsonValue;
 }

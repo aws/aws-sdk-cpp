@@ -24,9 +24,8 @@ EventStartCondition::EventStartCondition() :
 {
 }
 
-EventStartCondition::EventStartCondition(JsonView jsonValue) : 
-    m_eventFilterHasBeenSet(false),
-    m_segmentIdHasBeenSet(false)
+EventStartCondition::EventStartCondition(JsonView jsonValue)
+  : EventStartCondition()
 {
   *this = jsonValue;
 }

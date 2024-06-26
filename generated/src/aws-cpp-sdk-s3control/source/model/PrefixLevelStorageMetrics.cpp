@@ -27,10 +27,8 @@ PrefixLevelStorageMetrics::PrefixLevelStorageMetrics() :
 {
 }
 
-PrefixLevelStorageMetrics::PrefixLevelStorageMetrics(const XmlNode& xmlNode) : 
-    m_isEnabled(false),
-    m_isEnabledHasBeenSet(false),
-    m_selectionCriteriaHasBeenSet(false)
+PrefixLevelStorageMetrics::PrefixLevelStorageMetrics(const XmlNode& xmlNode)
+  : PrefixLevelStorageMetrics()
 {
   *this = xmlNode;
 }

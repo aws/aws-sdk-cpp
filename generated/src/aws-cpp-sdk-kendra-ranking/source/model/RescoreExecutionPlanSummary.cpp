@@ -28,13 +28,8 @@ RescoreExecutionPlanSummary::RescoreExecutionPlanSummary() :
 {
 }
 
-RescoreExecutionPlanSummary::RescoreExecutionPlanSummary(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_status(RescoreExecutionPlanStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+RescoreExecutionPlanSummary::RescoreExecutionPlanSummary(JsonView jsonValue)
+  : RescoreExecutionPlanSummary()
 {
   *this = jsonValue;
 }

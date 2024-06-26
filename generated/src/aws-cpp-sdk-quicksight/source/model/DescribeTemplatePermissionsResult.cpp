@@ -22,8 +22,8 @@ DescribeTemplatePermissionsResult::DescribeTemplatePermissionsResult() :
 {
 }
 
-DescribeTemplatePermissionsResult::DescribeTemplatePermissionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+DescribeTemplatePermissionsResult::DescribeTemplatePermissionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeTemplatePermissionsResult()
 {
   *this = result;
 }

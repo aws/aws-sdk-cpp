@@ -24,9 +24,8 @@ AnomalyReportedTimeRange::AnomalyReportedTimeRange() :
 {
 }
 
-AnomalyReportedTimeRange::AnomalyReportedTimeRange(JsonView jsonValue) : 
-    m_openTimeHasBeenSet(false),
-    m_closeTimeHasBeenSet(false)
+AnomalyReportedTimeRange::AnomalyReportedTimeRange(JsonView jsonValue)
+  : AnomalyReportedTimeRange()
 {
   *this = jsonValue;
 }

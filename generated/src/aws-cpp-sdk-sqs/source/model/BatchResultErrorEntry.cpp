@@ -27,12 +27,8 @@ BatchResultErrorEntry::BatchResultErrorEntry() :
 {
 }
 
-BatchResultErrorEntry::BatchResultErrorEntry(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_senderFault(false),
-    m_senderFaultHasBeenSet(false),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+BatchResultErrorEntry::BatchResultErrorEntry(JsonView jsonValue)
+  : BatchResultErrorEntry()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ UpdateConfigResult::UpdateConfigResult() :
 {
 }
 
-UpdateConfigResult::UpdateConfigResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_configType(ConfigCapabilityType::NOT_SET)
+UpdateConfigResult::UpdateConfigResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateConfigResult()
 {
   *this = result;
 }

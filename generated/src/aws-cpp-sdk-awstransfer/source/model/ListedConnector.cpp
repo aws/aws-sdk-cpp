@@ -25,10 +25,8 @@ ListedConnector::ListedConnector() :
 {
 }
 
-ListedConnector::ListedConnector(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_connectorIdHasBeenSet(false),
-    m_urlHasBeenSet(false)
+ListedConnector::ListedConnector(JsonView jsonValue)
+  : ListedConnector()
 {
   *this = jsonValue;
 }

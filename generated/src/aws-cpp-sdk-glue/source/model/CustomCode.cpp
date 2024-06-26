@@ -27,12 +27,8 @@ CustomCode::CustomCode() :
 {
 }
 
-CustomCode::CustomCode(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_inputsHasBeenSet(false),
-    m_codeHasBeenSet(false),
-    m_classNameHasBeenSet(false),
-    m_outputSchemasHasBeenSet(false)
+CustomCode::CustomCode(JsonView jsonValue)
+  : CustomCode()
 {
   *this = jsonValue;
 }

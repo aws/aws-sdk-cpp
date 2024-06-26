@@ -24,9 +24,8 @@ FileLocation::FileLocation() :
 {
 }
 
-FileLocation::FileLocation(JsonView jsonValue) : 
-    m_streamHasBeenSet(false),
-    m_s3LocationHasBeenSet(false)
+FileLocation::FileLocation(JsonView jsonValue)
+  : FileLocation()
 {
   *this = jsonValue;
 }

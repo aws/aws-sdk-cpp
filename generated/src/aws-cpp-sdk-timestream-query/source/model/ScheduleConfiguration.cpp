@@ -23,8 +23,8 @@ ScheduleConfiguration::ScheduleConfiguration() :
 {
 }
 
-ScheduleConfiguration::ScheduleConfiguration(JsonView jsonValue) : 
-    m_scheduleExpressionHasBeenSet(false)
+ScheduleConfiguration::ScheduleConfiguration(JsonView jsonValue)
+  : ScheduleConfiguration()
 {
   *this = jsonValue;
 }

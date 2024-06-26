@@ -31,16 +31,8 @@ Schedule::Schedule() :
 {
 }
 
-Schedule::Schedule(JsonView jsonValue) : 
-    m_endTimeHasBeenSet(false),
-    m_eventFilterHasBeenSet(false),
-    m_frequency(Frequency::NOT_SET),
-    m_frequencyHasBeenSet(false),
-    m_isLocalTime(false),
-    m_isLocalTimeHasBeenSet(false),
-    m_quietTimeHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_timezoneHasBeenSet(false)
+Schedule::Schedule(JsonView jsonValue)
+  : Schedule()
 {
   *this = jsonValue;
 }

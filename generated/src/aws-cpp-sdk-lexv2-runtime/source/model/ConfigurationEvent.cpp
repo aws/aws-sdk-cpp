@@ -31,16 +31,8 @@ ConfigurationEvent::ConfigurationEvent() :
 {
 }
 
-ConfigurationEvent::ConfigurationEvent(JsonView jsonValue) : 
-    m_requestAttributesHasBeenSet(false),
-    m_responseContentTypeHasBeenSet(false),
-    m_sessionStateHasBeenSet(false),
-    m_welcomeMessagesHasBeenSet(false),
-    m_disablePlayback(false),
-    m_disablePlaybackHasBeenSet(false),
-    m_eventIdHasBeenSet(false),
-    m_clientTimestampMillis(0),
-    m_clientTimestampMillisHasBeenSet(false)
+ConfigurationEvent::ConfigurationEvent(JsonView jsonValue)
+  : ConfigurationEvent()
 {
   *this = jsonValue;
 }

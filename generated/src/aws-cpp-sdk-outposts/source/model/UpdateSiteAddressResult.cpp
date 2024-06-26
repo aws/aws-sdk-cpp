@@ -22,8 +22,8 @@ UpdateSiteAddressResult::UpdateSiteAddressResult() :
 {
 }
 
-UpdateSiteAddressResult::UpdateSiteAddressResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_addressType(AddressType::NOT_SET)
+UpdateSiteAddressResult::UpdateSiteAddressResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateSiteAddressResult()
 {
   *this = result;
 }

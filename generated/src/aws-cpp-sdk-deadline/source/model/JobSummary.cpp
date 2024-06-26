@@ -44,29 +44,8 @@ JobSummary::JobSummary() :
 {
 }
 
-JobSummary::JobSummary(JsonView jsonValue) : 
-    m_createdAtHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_endedAtHasBeenSet(false),
-    m_jobIdHasBeenSet(false),
-    m_lifecycleStatus(JobLifecycleStatus::NOT_SET),
-    m_lifecycleStatusHasBeenSet(false),
-    m_lifecycleStatusMessageHasBeenSet(false),
-    m_maxFailedTasksCount(0),
-    m_maxFailedTasksCountHasBeenSet(false),
-    m_maxRetriesPerTask(0),
-    m_maxRetriesPerTaskHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_priority(0),
-    m_priorityHasBeenSet(false),
-    m_startedAtHasBeenSet(false),
-    m_targetTaskRunStatus(JobTargetTaskRunStatus::NOT_SET),
-    m_targetTaskRunStatusHasBeenSet(false),
-    m_taskRunStatus(TaskRunStatus::NOT_SET),
-    m_taskRunStatusHasBeenSet(false),
-    m_taskRunStatusCountsHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_updatedByHasBeenSet(false)
+JobSummary::JobSummary(JsonView jsonValue)
+  : JobSummary()
 {
   *this = jsonValue;
 }

@@ -25,11 +25,8 @@ GetVectorEnrichmentJobResult::GetVectorEnrichmentJobResult() :
 {
 }
 
-GetVectorEnrichmentJobResult::GetVectorEnrichmentJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_durationInSeconds(0),
-    m_exportStatus(VectorEnrichmentJobExportStatus::NOT_SET),
-    m_status(VectorEnrichmentJobStatus::NOT_SET),
-    m_type(VectorEnrichmentJobType::NOT_SET)
+GetVectorEnrichmentJobResult::GetVectorEnrichmentJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetVectorEnrichmentJobResult()
 {
   *this = result;
 }

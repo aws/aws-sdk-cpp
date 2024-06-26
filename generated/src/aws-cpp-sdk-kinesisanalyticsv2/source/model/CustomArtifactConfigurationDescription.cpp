@@ -26,11 +26,8 @@ CustomArtifactConfigurationDescription::CustomArtifactConfigurationDescription()
 {
 }
 
-CustomArtifactConfigurationDescription::CustomArtifactConfigurationDescription(JsonView jsonValue) : 
-    m_artifactType(ArtifactType::NOT_SET),
-    m_artifactTypeHasBeenSet(false),
-    m_s3ContentLocationDescriptionHasBeenSet(false),
-    m_mavenReferenceDescriptionHasBeenSet(false)
+CustomArtifactConfigurationDescription::CustomArtifactConfigurationDescription(JsonView jsonValue)
+  : CustomArtifactConfigurationDescription()
 {
   *this = jsonValue;
 }

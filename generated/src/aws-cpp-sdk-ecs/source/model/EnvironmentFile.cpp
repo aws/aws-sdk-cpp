@@ -25,10 +25,8 @@ EnvironmentFile::EnvironmentFile() :
 {
 }
 
-EnvironmentFile::EnvironmentFile(JsonView jsonValue) : 
-    m_valueHasBeenSet(false),
-    m_type(EnvironmentFileType::NOT_SET),
-    m_typeHasBeenSet(false)
+EnvironmentFile::EnvironmentFile(JsonView jsonValue)
+  : EnvironmentFile()
 {
   *this = jsonValue;
 }

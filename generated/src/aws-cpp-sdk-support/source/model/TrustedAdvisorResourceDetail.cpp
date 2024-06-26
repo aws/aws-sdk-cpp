@@ -28,13 +28,8 @@ TrustedAdvisorResourceDetail::TrustedAdvisorResourceDetail() :
 {
 }
 
-TrustedAdvisorResourceDetail::TrustedAdvisorResourceDetail(JsonView jsonValue) : 
-    m_statusHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_isSuppressed(false),
-    m_isSuppressedHasBeenSet(false),
-    m_metadataHasBeenSet(false)
+TrustedAdvisorResourceDetail::TrustedAdvisorResourceDetail(JsonView jsonValue)
+  : TrustedAdvisorResourceDetail()
 {
   *this = jsonValue;
 }

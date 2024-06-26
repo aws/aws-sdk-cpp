@@ -23,8 +23,8 @@ AmiProductEntityIdFilter::AmiProductEntityIdFilter() :
 {
 }
 
-AmiProductEntityIdFilter::AmiProductEntityIdFilter(JsonView jsonValue) : 
-    m_valueListHasBeenSet(false)
+AmiProductEntityIdFilter::AmiProductEntityIdFilter(JsonView jsonValue)
+  : AmiProductEntityIdFilter()
 {
   *this = jsonValue;
 }

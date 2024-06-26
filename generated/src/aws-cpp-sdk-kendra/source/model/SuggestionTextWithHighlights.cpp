@@ -24,9 +24,8 @@ SuggestionTextWithHighlights::SuggestionTextWithHighlights() :
 {
 }
 
-SuggestionTextWithHighlights::SuggestionTextWithHighlights(JsonView jsonValue) : 
-    m_textHasBeenSet(false),
-    m_highlightsHasBeenSet(false)
+SuggestionTextWithHighlights::SuggestionTextWithHighlights(JsonView jsonValue)
+  : SuggestionTextWithHighlights()
 {
   *this = jsonValue;
 }

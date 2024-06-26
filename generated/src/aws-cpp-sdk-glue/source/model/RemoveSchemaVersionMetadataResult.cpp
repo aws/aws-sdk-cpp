@@ -23,9 +23,8 @@ RemoveSchemaVersionMetadataResult::RemoveSchemaVersionMetadataResult() :
 {
 }
 
-RemoveSchemaVersionMetadataResult::RemoveSchemaVersionMetadataResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_latestVersion(false),
-    m_versionNumber(0)
+RemoveSchemaVersionMetadataResult::RemoveSchemaVersionMetadataResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : RemoveSchemaVersionMetadataResult()
 {
   *this = result;
 }

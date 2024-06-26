@@ -34,19 +34,8 @@ SigningProfile::SigningProfile() :
 {
 }
 
-SigningProfile::SigningProfile(JsonView jsonValue) : 
-    m_profileNameHasBeenSet(false),
-    m_profileVersionHasBeenSet(false),
-    m_profileVersionArnHasBeenSet(false),
-    m_signingMaterialHasBeenSet(false),
-    m_signatureValidityPeriodHasBeenSet(false),
-    m_platformIdHasBeenSet(false),
-    m_platformDisplayNameHasBeenSet(false),
-    m_signingParametersHasBeenSet(false),
-    m_status(SigningProfileStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+SigningProfile::SigningProfile(JsonView jsonValue)
+  : SigningProfile()
 {
   *this = jsonValue;
 }

@@ -32,17 +32,8 @@ Notification::Notification() :
 {
 }
 
-Notification::Notification(JsonView jsonValue) : 
-    m_notificationType(NotificationType::NOT_SET),
-    m_notificationTypeHasBeenSet(false),
-    m_comparisonOperator(ComparisonOperator::NOT_SET),
-    m_comparisonOperatorHasBeenSet(false),
-    m_threshold(0.0),
-    m_thresholdHasBeenSet(false),
-    m_thresholdType(ThresholdType::NOT_SET),
-    m_thresholdTypeHasBeenSet(false),
-    m_notificationState(NotificationState::NOT_SET),
-    m_notificationStateHasBeenSet(false)
+Notification::Notification(JsonView jsonValue)
+  : Notification()
 {
   *this = jsonValue;
 }

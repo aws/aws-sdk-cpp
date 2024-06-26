@@ -25,10 +25,8 @@ DimensionValueContribution::DimensionValueContribution() :
 {
 }
 
-DimensionValueContribution::DimensionValueContribution(JsonView jsonValue) : 
-    m_dimensionValueHasBeenSet(false),
-    m_contributionScore(0.0),
-    m_contributionScoreHasBeenSet(false)
+DimensionValueContribution::DimensionValueContribution(JsonView jsonValue)
+  : DimensionValueContribution()
 {
   *this = jsonValue;
 }

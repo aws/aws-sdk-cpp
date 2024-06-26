@@ -26,11 +26,8 @@ PropertyResponse::PropertyResponse() :
 {
 }
 
-PropertyResponse::PropertyResponse(JsonView jsonValue) : 
-    m_definitionHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_areAllPropertyValuesReturned(false),
-    m_areAllPropertyValuesReturnedHasBeenSet(false)
+PropertyResponse::PropertyResponse(JsonView jsonValue)
+  : PropertyResponse()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ AnonymousUserDashboardVisualEmbeddingConfiguration::AnonymousUserDashboardVisual
 {
 }
 
-AnonymousUserDashboardVisualEmbeddingConfiguration::AnonymousUserDashboardVisualEmbeddingConfiguration(JsonView jsonValue) : 
-    m_initialDashboardVisualIdHasBeenSet(false)
+AnonymousUserDashboardVisualEmbeddingConfiguration::AnonymousUserDashboardVisualEmbeddingConfiguration(JsonView jsonValue)
+  : AnonymousUserDashboardVisualEmbeddingConfiguration()
 {
   *this = jsonValue;
 }

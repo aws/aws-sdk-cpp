@@ -26,11 +26,8 @@ TaskListEntry::TaskListEntry() :
 {
 }
 
-TaskListEntry::TaskListEntry(JsonView jsonValue) : 
-    m_taskArnHasBeenSet(false),
-    m_status(TaskStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_nameHasBeenSet(false)
+TaskListEntry::TaskListEntry(JsonView jsonValue)
+  : TaskListEntry()
 {
   *this = jsonValue;
 }

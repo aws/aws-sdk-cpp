@@ -30,15 +30,8 @@ RegistrationFieldDisplayHints::RegistrationFieldDisplayHints() :
 {
 }
 
-RegistrationFieldDisplayHints::RegistrationFieldDisplayHints(JsonView jsonValue) : 
-    m_titleHasBeenSet(false),
-    m_shortDescriptionHasBeenSet(false),
-    m_longDescriptionHasBeenSet(false),
-    m_documentationTitleHasBeenSet(false),
-    m_documentationLinkHasBeenSet(false),
-    m_selectOptionDescriptionsHasBeenSet(false),
-    m_textValidationDescriptionHasBeenSet(false),
-    m_exampleTextValueHasBeenSet(false)
+RegistrationFieldDisplayHints::RegistrationFieldDisplayHints(JsonView jsonValue)
+  : RegistrationFieldDisplayHints()
 {
   *this = jsonValue;
 }

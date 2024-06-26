@@ -24,9 +24,8 @@ LambdaFunctionTimedOutEventDetails::LambdaFunctionTimedOutEventDetails() :
 {
 }
 
-LambdaFunctionTimedOutEventDetails::LambdaFunctionTimedOutEventDetails(JsonView jsonValue) : 
-    m_errorHasBeenSet(false),
-    m_causeHasBeenSet(false)
+LambdaFunctionTimedOutEventDetails::LambdaFunctionTimedOutEventDetails(JsonView jsonValue)
+  : LambdaFunctionTimedOutEventDetails()
 {
   *this = jsonValue;
 }

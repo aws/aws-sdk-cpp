@@ -25,10 +25,8 @@ TrainingMetricsV2::TrainingMetricsV2() :
 {
 }
 
-TrainingMetricsV2::TrainingMetricsV2(JsonView jsonValue) : 
-    m_ofiHasBeenSet(false),
-    m_tfiHasBeenSet(false),
-    m_atiHasBeenSet(false)
+TrainingMetricsV2::TrainingMetricsV2(JsonView jsonValue)
+  : TrainingMetricsV2()
 {
   *this = jsonValue;
 }

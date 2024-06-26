@@ -24,10 +24,8 @@ GetUnfilteredTableMetadataResult::GetUnfilteredTableMetadataResult() :
 {
 }
 
-GetUnfilteredTableMetadataResult::GetUnfilteredTableMetadataResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_isRegisteredWithLakeFormation(false),
-    m_isMultiDialectView(false),
-    m_isProtected(false)
+GetUnfilteredTableMetadataResult::GetUnfilteredTableMetadataResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetUnfilteredTableMetadataResult()
 {
   *this = result;
 }

@@ -25,10 +25,8 @@ ResourceSummary::ResourceSummary() :
 {
 }
 
-ResourceSummary::ResourceSummary(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false)
+ResourceSummary::ResourceSummary(JsonView jsonValue)
+  : ResourceSummary()
 {
   *this = jsonValue;
 }

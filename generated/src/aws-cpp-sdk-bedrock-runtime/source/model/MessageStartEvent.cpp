@@ -24,9 +24,8 @@ MessageStartEvent::MessageStartEvent() :
 {
 }
 
-MessageStartEvent::MessageStartEvent(JsonView jsonValue) : 
-    m_role(ConversationRole::NOT_SET),
-    m_roleHasBeenSet(false)
+MessageStartEvent::MessageStartEvent(JsonView jsonValue)
+  : MessageStartEvent()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ PackageSource::PackageSource() :
 {
 }
 
-PackageSource::PackageSource(JsonView jsonValue) : 
-    m_s3BucketNameHasBeenSet(false),
-    m_s3KeyHasBeenSet(false)
+PackageSource::PackageSource(JsonView jsonValue)
+  : PackageSource()
 {
   *this = jsonValue;
 }

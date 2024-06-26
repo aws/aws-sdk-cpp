@@ -27,12 +27,8 @@ PrivateConnectionProvisioningState::PrivateConnectionProvisioningState() :
 {
 }
 
-PrivateConnectionProvisioningState::PrivateConnectionProvisioningState(JsonView jsonValue) : 
-    m_status(PrivateConnectionProvisioningStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_failureMessageHasBeenSet(false),
-    m_failureCause(PrivateConnectionProvisioningFailureCause::NOT_SET),
-    m_failureCauseHasBeenSet(false)
+PrivateConnectionProvisioningState::PrivateConnectionProvisioningState(JsonView jsonValue)
+  : PrivateConnectionProvisioningState()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ BedrockEmbeddingModelConfiguration::BedrockEmbeddingModelConfiguration() :
 {
 }
 
-BedrockEmbeddingModelConfiguration::BedrockEmbeddingModelConfiguration(JsonView jsonValue) : 
-    m_dimensions(0),
-    m_dimensionsHasBeenSet(false)
+BedrockEmbeddingModelConfiguration::BedrockEmbeddingModelConfiguration(JsonView jsonValue)
+  : BedrockEmbeddingModelConfiguration()
 {
   *this = jsonValue;
 }

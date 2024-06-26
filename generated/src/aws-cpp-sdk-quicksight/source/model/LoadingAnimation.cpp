@@ -24,9 +24,8 @@ LoadingAnimation::LoadingAnimation() :
 {
 }
 
-LoadingAnimation::LoadingAnimation(JsonView jsonValue) : 
-    m_visibility(Visibility::NOT_SET),
-    m_visibilityHasBeenSet(false)
+LoadingAnimation::LoadingAnimation(JsonView jsonValue)
+  : LoadingAnimation()
 {
   *this = jsonValue;
 }

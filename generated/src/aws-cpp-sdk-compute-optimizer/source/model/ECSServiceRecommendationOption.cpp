@@ -30,15 +30,8 @@ ECSServiceRecommendationOption::ECSServiceRecommendationOption() :
 {
 }
 
-ECSServiceRecommendationOption::ECSServiceRecommendationOption(JsonView jsonValue) : 
-    m_memory(0),
-    m_memoryHasBeenSet(false),
-    m_cpu(0),
-    m_cpuHasBeenSet(false),
-    m_savingsOpportunityHasBeenSet(false),
-    m_savingsOpportunityAfterDiscountsHasBeenSet(false),
-    m_projectedUtilizationMetricsHasBeenSet(false),
-    m_containerRecommendationsHasBeenSet(false)
+ECSServiceRecommendationOption::ECSServiceRecommendationOption(JsonView jsonValue)
+  : ECSServiceRecommendationOption()
 {
   *this = jsonValue;
 }

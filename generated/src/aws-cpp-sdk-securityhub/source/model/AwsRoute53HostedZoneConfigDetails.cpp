@@ -23,8 +23,8 @@ AwsRoute53HostedZoneConfigDetails::AwsRoute53HostedZoneConfigDetails() :
 {
 }
 
-AwsRoute53HostedZoneConfigDetails::AwsRoute53HostedZoneConfigDetails(JsonView jsonValue) : 
-    m_commentHasBeenSet(false)
+AwsRoute53HostedZoneConfigDetails::AwsRoute53HostedZoneConfigDetails(JsonView jsonValue)
+  : AwsRoute53HostedZoneConfigDetails()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ DisassociateTrunkInterfaceResponse::DisassociateTrunkInterfaceResponse() :
 {
 }
 
-DisassociateTrunkInterfaceResponse::DisassociateTrunkInterfaceResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_return(false)
+DisassociateTrunkInterfaceResponse::DisassociateTrunkInterfaceResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : DisassociateTrunkInterfaceResponse()
 {
   *this = result;
 }

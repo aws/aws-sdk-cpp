@@ -23,8 +23,8 @@ Query::Query() :
 {
 }
 
-Query::Query(JsonView jsonValue) : 
-    m_selectorsHasBeenSet(false)
+Query::Query(JsonView jsonValue)
+  : Query()
 {
   *this = jsonValue;
 }

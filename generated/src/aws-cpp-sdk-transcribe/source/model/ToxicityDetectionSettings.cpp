@@ -23,8 +23,8 @@ ToxicityDetectionSettings::ToxicityDetectionSettings() :
 {
 }
 
-ToxicityDetectionSettings::ToxicityDetectionSettings(JsonView jsonValue) : 
-    m_toxicityCategoriesHasBeenSet(false)
+ToxicityDetectionSettings::ToxicityDetectionSettings(JsonView jsonValue)
+  : ToxicityDetectionSettings()
 {
   *this = jsonValue;
 }

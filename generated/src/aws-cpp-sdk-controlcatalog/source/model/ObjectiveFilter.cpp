@@ -23,8 +23,8 @@ ObjectiveFilter::ObjectiveFilter() :
 {
 }
 
-ObjectiveFilter::ObjectiveFilter(JsonView jsonValue) : 
-    m_domainsHasBeenSet(false)
+ObjectiveFilter::ObjectiveFilter(JsonView jsonValue)
+  : ObjectiveFilter()
 {
   *this = jsonValue;
 }

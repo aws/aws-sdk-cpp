@@ -23,8 +23,8 @@ AwsSsmPatchComplianceDetails::AwsSsmPatchComplianceDetails() :
 {
 }
 
-AwsSsmPatchComplianceDetails::AwsSsmPatchComplianceDetails(JsonView jsonValue) : 
-    m_patchHasBeenSet(false)
+AwsSsmPatchComplianceDetails::AwsSsmPatchComplianceDetails(JsonView jsonValue)
+  : AwsSsmPatchComplianceDetails()
 {
   *this = jsonValue;
 }

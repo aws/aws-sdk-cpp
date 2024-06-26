@@ -25,10 +25,8 @@ RuleUpdateFailure::RuleUpdateFailure() :
 {
 }
 
-RuleUpdateFailure::RuleUpdateFailure(JsonView jsonValue) : 
-    m_failureCodeHasBeenSet(false),
-    m_failureMessageHasBeenSet(false),
-    m_ruleIdentifierHasBeenSet(false)
+RuleUpdateFailure::RuleUpdateFailure(JsonView jsonValue)
+  : RuleUpdateFailure()
 {
   *this = jsonValue;
 }

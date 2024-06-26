@@ -22,8 +22,8 @@ GetDataQualityResultResult::GetDataQualityResultResult() :
 {
 }
 
-GetDataQualityResultResult::GetDataQualityResultResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_score(0.0)
+GetDataQualityResultResult::GetDataQualityResultResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetDataQualityResultResult()
 {
   *this = result;
 }

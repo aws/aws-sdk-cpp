@@ -28,13 +28,8 @@ ExpandedResultItem::ExpandedResultItem() :
 {
 }
 
-ExpandedResultItem::ExpandedResultItem(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_documentIdHasBeenSet(false),
-    m_documentTitleHasBeenSet(false),
-    m_documentExcerptHasBeenSet(false),
-    m_documentURIHasBeenSet(false),
-    m_documentAttributesHasBeenSet(false)
+ExpandedResultItem::ExpandedResultItem(JsonView jsonValue)
+  : ExpandedResultItem()
 {
   *this = jsonValue;
 }

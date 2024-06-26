@@ -25,10 +25,8 @@ GroupCount::GroupCount() :
 {
 }
 
-GroupCount::GroupCount(JsonView jsonValue) : 
-    m_count(0),
-    m_countHasBeenSet(false),
-    m_groupKeyHasBeenSet(false)
+GroupCount::GroupCount(JsonView jsonValue)
+  : GroupCount()
 {
   *this = jsonValue;
 }

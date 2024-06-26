@@ -24,9 +24,8 @@ AccountAggregation::AccountAggregation() :
 {
 }
 
-AccountAggregation::AccountAggregation(JsonView jsonValue) : 
-    m_accountIdHasBeenSet(false),
-    m_severityCountsHasBeenSet(false)
+AccountAggregation::AccountAggregation(JsonView jsonValue)
+  : AccountAggregation()
 {
   *this = jsonValue;
 }

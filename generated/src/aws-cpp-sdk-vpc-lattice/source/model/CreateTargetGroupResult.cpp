@@ -23,9 +23,8 @@ CreateTargetGroupResult::CreateTargetGroupResult() :
 {
 }
 
-CreateTargetGroupResult::CreateTargetGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(TargetGroupStatus::NOT_SET),
-    m_type(TargetGroupType::NOT_SET)
+CreateTargetGroupResult::CreateTargetGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateTargetGroupResult()
 {
   *this = result;
 }

@@ -27,12 +27,8 @@ RoleMapping::RoleMapping() :
 {
 }
 
-RoleMapping::RoleMapping(JsonView jsonValue) : 
-    m_type(RoleMappingType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_ambiguousRoleResolution(AmbiguousRoleResolutionType::NOT_SET),
-    m_ambiguousRoleResolutionHasBeenSet(false),
-    m_rulesConfigurationHasBeenSet(false)
+RoleMapping::RoleMapping(JsonView jsonValue)
+  : RoleMapping()
 {
   *this = jsonValue;
 }

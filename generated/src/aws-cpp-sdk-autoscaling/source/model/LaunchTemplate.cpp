@@ -26,9 +26,8 @@ LaunchTemplate::LaunchTemplate() :
 {
 }
 
-LaunchTemplate::LaunchTemplate(const XmlNode& xmlNode) : 
-    m_launchTemplateSpecificationHasBeenSet(false),
-    m_overridesHasBeenSet(false)
+LaunchTemplate::LaunchTemplate(const XmlNode& xmlNode)
+  : LaunchTemplate()
 {
   *this = xmlNode;
 }

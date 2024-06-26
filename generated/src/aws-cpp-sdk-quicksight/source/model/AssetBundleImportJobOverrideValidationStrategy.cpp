@@ -24,9 +24,8 @@ AssetBundleImportJobOverrideValidationStrategy::AssetBundleImportJobOverrideVali
 {
 }
 
-AssetBundleImportJobOverrideValidationStrategy::AssetBundleImportJobOverrideValidationStrategy(JsonView jsonValue) : 
-    m_strictModeForAllResources(false),
-    m_strictModeForAllResourcesHasBeenSet(false)
+AssetBundleImportJobOverrideValidationStrategy::AssetBundleImportJobOverrideValidationStrategy(JsonView jsonValue)
+  : AssetBundleImportJobOverrideValidationStrategy()
 {
   *this = jsonValue;
 }

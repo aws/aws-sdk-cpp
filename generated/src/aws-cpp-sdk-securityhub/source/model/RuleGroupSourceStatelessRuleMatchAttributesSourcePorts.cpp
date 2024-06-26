@@ -26,11 +26,8 @@ RuleGroupSourceStatelessRuleMatchAttributesSourcePorts::RuleGroupSourceStateless
 {
 }
 
-RuleGroupSourceStatelessRuleMatchAttributesSourcePorts::RuleGroupSourceStatelessRuleMatchAttributesSourcePorts(JsonView jsonValue) : 
-    m_fromPort(0),
-    m_fromPortHasBeenSet(false),
-    m_toPort(0),
-    m_toPortHasBeenSet(false)
+RuleGroupSourceStatelessRuleMatchAttributesSourcePorts::RuleGroupSourceStatelessRuleMatchAttributesSourcePorts(JsonView jsonValue)
+  : RuleGroupSourceStatelessRuleMatchAttributesSourcePorts()
 {
   *this = jsonValue;
 }

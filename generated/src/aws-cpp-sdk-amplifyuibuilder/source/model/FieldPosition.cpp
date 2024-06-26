@@ -26,11 +26,8 @@ FieldPosition::FieldPosition() :
 {
 }
 
-FieldPosition::FieldPosition(JsonView jsonValue) : 
-    m_fixed(FixedPosition::NOT_SET),
-    m_fixedHasBeenSet(false),
-    m_rightOfHasBeenSet(false),
-    m_belowHasBeenSet(false)
+FieldPosition::FieldPosition(JsonView jsonValue)
+  : FieldPosition()
 {
   *this = jsonValue;
 }

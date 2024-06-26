@@ -24,9 +24,8 @@ DateRangeType::DateRangeType() :
 {
 }
 
-DateRangeType::DateRangeType(JsonView jsonValue) : 
-    m_startValueHasBeenSet(false),
-    m_endValueHasBeenSet(false)
+DateRangeType::DateRangeType(JsonView jsonValue)
+  : DateRangeType()
 {
   *this = jsonValue;
 }

@@ -33,16 +33,8 @@ FirewallStatelessRule::FirewallStatelessRule() :
 {
 }
 
-FirewallStatelessRule::FirewallStatelessRule(const XmlNode& xmlNode) : 
-    m_ruleGroupArnHasBeenSet(false),
-    m_sourcesHasBeenSet(false),
-    m_destinationsHasBeenSet(false),
-    m_sourcePortsHasBeenSet(false),
-    m_destinationPortsHasBeenSet(false),
-    m_protocolsHasBeenSet(false),
-    m_ruleActionHasBeenSet(false),
-    m_priority(0),
-    m_priorityHasBeenSet(false)
+FirewallStatelessRule::FirewallStatelessRule(const XmlNode& xmlNode)
+  : FirewallStatelessRule()
 {
   *this = xmlNode;
 }

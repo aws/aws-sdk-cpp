@@ -26,11 +26,8 @@ TargetTrackingScalingConfiguration::TargetTrackingScalingConfiguration() :
 {
 }
 
-TargetTrackingScalingConfiguration::TargetTrackingScalingConfiguration(JsonView jsonValue) : 
-    m_metricType(FleetScalingMetricType::NOT_SET),
-    m_metricTypeHasBeenSet(false),
-    m_targetValue(0.0),
-    m_targetValueHasBeenSet(false)
+TargetTrackingScalingConfiguration::TargetTrackingScalingConfiguration(JsonView jsonValue)
+  : TargetTrackingScalingConfiguration()
 {
   *this = jsonValue;
 }

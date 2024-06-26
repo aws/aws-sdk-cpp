@@ -27,11 +27,8 @@ AlertManagerDefinitionDescription::AlertManagerDefinitionDescription() :
 {
 }
 
-AlertManagerDefinitionDescription::AlertManagerDefinitionDescription(JsonView jsonValue) : 
-    m_createdAtHasBeenSet(false),
-    m_dataHasBeenSet(false),
-    m_modifiedAtHasBeenSet(false),
-    m_statusHasBeenSet(false)
+AlertManagerDefinitionDescription::AlertManagerDefinitionDescription(JsonView jsonValue)
+  : AlertManagerDefinitionDescription()
 {
   *this = jsonValue;
 }

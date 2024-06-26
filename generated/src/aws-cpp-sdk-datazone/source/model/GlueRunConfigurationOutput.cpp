@@ -28,13 +28,8 @@ GlueRunConfigurationOutput::GlueRunConfigurationOutput() :
 {
 }
 
-GlueRunConfigurationOutput::GlueRunConfigurationOutput(JsonView jsonValue) : 
-    m_accountIdHasBeenSet(false),
-    m_autoImportDataQualityResult(false),
-    m_autoImportDataQualityResultHasBeenSet(false),
-    m_dataAccessRoleHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_relationalFilterConfigurationsHasBeenSet(false)
+GlueRunConfigurationOutput::GlueRunConfigurationOutput(JsonView jsonValue)
+  : GlueRunConfigurationOutput()
 {
   *this = jsonValue;
 }

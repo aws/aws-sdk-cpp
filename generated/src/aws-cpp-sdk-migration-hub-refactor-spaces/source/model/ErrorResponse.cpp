@@ -30,15 +30,8 @@ ErrorResponse::ErrorResponse() :
 {
 }
 
-ErrorResponse::ErrorResponse(JsonView jsonValue) : 
-    m_accountIdHasBeenSet(false),
-    m_additionalDetailsHasBeenSet(false),
-    m_code(ErrorCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_resourceIdentifierHasBeenSet(false),
-    m_resourceType(ErrorResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false)
+ErrorResponse::ErrorResponse(JsonView jsonValue)
+  : ErrorResponse()
 {
   *this = jsonValue;
 }

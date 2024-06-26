@@ -24,9 +24,8 @@ ByoipCidrEvent::ByoipCidrEvent() :
 {
 }
 
-ByoipCidrEvent::ByoipCidrEvent(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_timestampHasBeenSet(false)
+ByoipCidrEvent::ByoipCidrEvent(JsonView jsonValue)
+  : ByoipCidrEvent()
 {
   *this = jsonValue;
 }

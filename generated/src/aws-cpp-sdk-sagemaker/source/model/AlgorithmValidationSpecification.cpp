@@ -24,9 +24,8 @@ AlgorithmValidationSpecification::AlgorithmValidationSpecification() :
 {
 }
 
-AlgorithmValidationSpecification::AlgorithmValidationSpecification(JsonView jsonValue) : 
-    m_validationRoleHasBeenSet(false),
-    m_validationProfilesHasBeenSet(false)
+AlgorithmValidationSpecification::AlgorithmValidationSpecification(JsonView jsonValue)
+  : AlgorithmValidationSpecification()
 {
   *this = jsonValue;
 }

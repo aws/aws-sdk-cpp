@@ -22,8 +22,8 @@ StartFlowResult::StartFlowResult() :
 {
 }
 
-StartFlowResult::StartFlowResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_flowStatus(FlowStatus::NOT_SET)
+StartFlowResult::StartFlowResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : StartFlowResult()
 {
   *this = result;
 }

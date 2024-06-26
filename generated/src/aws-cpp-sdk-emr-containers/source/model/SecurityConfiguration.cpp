@@ -29,14 +29,8 @@ SecurityConfiguration::SecurityConfiguration() :
 {
 }
 
-SecurityConfiguration::SecurityConfiguration(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_securityConfigurationDataHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+SecurityConfiguration::SecurityConfiguration(JsonView jsonValue)
+  : SecurityConfiguration()
 {
   *this = jsonValue;
 }

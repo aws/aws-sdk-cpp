@@ -38,23 +38,8 @@ ContactData::ContactData() :
 {
 }
 
-ContactData::ContactData(JsonView jsonValue) : 
-    m_contactIdHasBeenSet(false),
-    m_contactStatus(ContactStatus::NOT_SET),
-    m_contactStatusHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_groundStationHasBeenSet(false),
-    m_maximumElevationHasBeenSet(false),
-    m_missionProfileArnHasBeenSet(false),
-    m_postPassEndTimeHasBeenSet(false),
-    m_prePassStartTimeHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_satelliteArnHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_visibilityEndTimeHasBeenSet(false),
-    m_visibilityStartTimeHasBeenSet(false)
+ContactData::ContactData(JsonView jsonValue)
+  : ContactData()
 {
   *this = jsonValue;
 }

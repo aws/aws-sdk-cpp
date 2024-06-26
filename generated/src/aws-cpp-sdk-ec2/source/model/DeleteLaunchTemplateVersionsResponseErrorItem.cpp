@@ -29,12 +29,8 @@ DeleteLaunchTemplateVersionsResponseErrorItem::DeleteLaunchTemplateVersionsRespo
 {
 }
 
-DeleteLaunchTemplateVersionsResponseErrorItem::DeleteLaunchTemplateVersionsResponseErrorItem(const XmlNode& xmlNode) : 
-    m_launchTemplateIdHasBeenSet(false),
-    m_launchTemplateNameHasBeenSet(false),
-    m_versionNumber(0),
-    m_versionNumberHasBeenSet(false),
-    m_responseErrorHasBeenSet(false)
+DeleteLaunchTemplateVersionsResponseErrorItem::DeleteLaunchTemplateVersionsResponseErrorItem(const XmlNode& xmlNode)
+  : DeleteLaunchTemplateVersionsResponseErrorItem()
 {
   *this = xmlNode;
 }

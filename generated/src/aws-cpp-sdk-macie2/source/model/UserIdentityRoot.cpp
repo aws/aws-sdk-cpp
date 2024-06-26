@@ -25,10 +25,8 @@ UserIdentityRoot::UserIdentityRoot() :
 {
 }
 
-UserIdentityRoot::UserIdentityRoot(JsonView jsonValue) : 
-    m_accountIdHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_principalIdHasBeenSet(false)
+UserIdentityRoot::UserIdentityRoot(JsonView jsonValue)
+  : UserIdentityRoot()
 {
   *this = jsonValue;
 }

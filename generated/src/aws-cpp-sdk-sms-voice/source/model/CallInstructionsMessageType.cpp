@@ -23,8 +23,8 @@ CallInstructionsMessageType::CallInstructionsMessageType() :
 {
 }
 
-CallInstructionsMessageType::CallInstructionsMessageType(JsonView jsonValue) : 
-    m_textHasBeenSet(false)
+CallInstructionsMessageType::CallInstructionsMessageType(JsonView jsonValue)
+  : CallInstructionsMessageType()
 {
   *this = jsonValue;
 }

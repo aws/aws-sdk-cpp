@@ -26,11 +26,8 @@ MemberSpecification::MemberSpecification() :
 {
 }
 
-MemberSpecification::MemberSpecification(JsonView jsonValue) : 
-    m_accountIdHasBeenSet(false),
-    m_memberAbilitiesHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_paymentConfigurationHasBeenSet(false)
+MemberSpecification::MemberSpecification(JsonView jsonValue)
+  : MemberSpecification()
 {
   *this = jsonValue;
 }

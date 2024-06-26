@@ -25,10 +25,8 @@ StepStateChangeReason::StepStateChangeReason() :
 {
 }
 
-StepStateChangeReason::StepStateChangeReason(JsonView jsonValue) : 
-    m_code(StepStateChangeReasonCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+StepStateChangeReason::StepStateChangeReason(JsonView jsonValue)
+  : StepStateChangeReason()
 {
   *this = jsonValue;
 }

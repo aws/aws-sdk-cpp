@@ -24,9 +24,8 @@ Websocket::Websocket() :
 {
 }
 
-Websocket::Websocket(JsonView jsonValue) : 
-    m_urlHasBeenSet(false),
-    m_connectionExpiryHasBeenSet(false)
+Websocket::Websocket(JsonView jsonValue)
+  : Websocket()
 {
   *this = jsonValue;
 }

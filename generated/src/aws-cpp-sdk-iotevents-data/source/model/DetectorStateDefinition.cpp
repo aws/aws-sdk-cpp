@@ -25,10 +25,8 @@ DetectorStateDefinition::DetectorStateDefinition() :
 {
 }
 
-DetectorStateDefinition::DetectorStateDefinition(JsonView jsonValue) : 
-    m_stateNameHasBeenSet(false),
-    m_variablesHasBeenSet(false),
-    m_timersHasBeenSet(false)
+DetectorStateDefinition::DetectorStateDefinition(JsonView jsonValue)
+  : DetectorStateDefinition()
 {
   *this = jsonValue;
 }

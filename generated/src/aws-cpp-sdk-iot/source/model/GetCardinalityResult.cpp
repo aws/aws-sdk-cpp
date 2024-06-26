@@ -22,8 +22,8 @@ GetCardinalityResult::GetCardinalityResult() :
 {
 }
 
-GetCardinalityResult::GetCardinalityResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_cardinality(0)
+GetCardinalityResult::GetCardinalityResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetCardinalityResult()
 {
   *this = result;
 }

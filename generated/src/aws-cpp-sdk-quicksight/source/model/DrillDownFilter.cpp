@@ -25,10 +25,8 @@ DrillDownFilter::DrillDownFilter() :
 {
 }
 
-DrillDownFilter::DrillDownFilter(JsonView jsonValue) : 
-    m_numericEqualityFilterHasBeenSet(false),
-    m_categoryFilterHasBeenSet(false),
-    m_timeRangeFilterHasBeenSet(false)
+DrillDownFilter::DrillDownFilter(JsonView jsonValue)
+  : DrillDownFilter()
 {
   *this = jsonValue;
 }

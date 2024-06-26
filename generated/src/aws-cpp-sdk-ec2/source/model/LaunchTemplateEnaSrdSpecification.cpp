@@ -27,10 +27,8 @@ LaunchTemplateEnaSrdSpecification::LaunchTemplateEnaSrdSpecification() :
 {
 }
 
-LaunchTemplateEnaSrdSpecification::LaunchTemplateEnaSrdSpecification(const XmlNode& xmlNode) : 
-    m_enaSrdEnabled(false),
-    m_enaSrdEnabledHasBeenSet(false),
-    m_enaSrdUdpSpecificationHasBeenSet(false)
+LaunchTemplateEnaSrdSpecification::LaunchTemplateEnaSrdSpecification(const XmlNode& xmlNode)
+  : LaunchTemplateEnaSrdSpecification()
 {
   *this = xmlNode;
 }

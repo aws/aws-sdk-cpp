@@ -24,9 +24,8 @@ LoggingOptions::LoggingOptions() :
 {
 }
 
-LoggingOptions::LoggingOptions(JsonView jsonValue) : 
-    m_level(LoggingLevel::NOT_SET),
-    m_levelHasBeenSet(false)
+LoggingOptions::LoggingOptions(JsonView jsonValue)
+  : LoggingOptions()
 {
   *this = jsonValue;
 }

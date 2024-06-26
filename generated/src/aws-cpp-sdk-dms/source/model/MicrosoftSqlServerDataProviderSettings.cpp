@@ -29,14 +29,8 @@ MicrosoftSqlServerDataProviderSettings::MicrosoftSqlServerDataProviderSettings()
 {
 }
 
-MicrosoftSqlServerDataProviderSettings::MicrosoftSqlServerDataProviderSettings(JsonView jsonValue) : 
-    m_serverNameHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_sslMode(DmsSslModeValue::NOT_SET),
-    m_sslModeHasBeenSet(false),
-    m_certificateArnHasBeenSet(false)
+MicrosoftSqlServerDataProviderSettings::MicrosoftSqlServerDataProviderSettings(JsonView jsonValue)
+  : MicrosoftSqlServerDataProviderSettings()
 {
   *this = jsonValue;
 }

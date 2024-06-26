@@ -33,18 +33,8 @@ Blueprint::Blueprint() :
 {
 }
 
-Blueprint::Blueprint(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_createdOnHasBeenSet(false),
-    m_lastModifiedOnHasBeenSet(false),
-    m_parameterSpecHasBeenSet(false),
-    m_blueprintLocationHasBeenSet(false),
-    m_blueprintServiceLocationHasBeenSet(false),
-    m_status(BlueprintStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_lastActiveDefinitionHasBeenSet(false)
+Blueprint::Blueprint(JsonView jsonValue)
+  : Blueprint()
 {
   *this = jsonValue;
 }

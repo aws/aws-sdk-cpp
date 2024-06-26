@@ -26,9 +26,8 @@ PrefixListEntry::PrefixListEntry() :
 {
 }
 
-PrefixListEntry::PrefixListEntry(const XmlNode& xmlNode) : 
-    m_cidrHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+PrefixListEntry::PrefixListEntry(const XmlNode& xmlNode)
+  : PrefixListEntry()
 {
   *this = xmlNode;
 }

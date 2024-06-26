@@ -26,11 +26,8 @@ ResponseInspection::ResponseInspection() :
 {
 }
 
-ResponseInspection::ResponseInspection(JsonView jsonValue) : 
-    m_statusCodeHasBeenSet(false),
-    m_headerHasBeenSet(false),
-    m_bodyContainsHasBeenSet(false),
-    m_jsonHasBeenSet(false)
+ResponseInspection::ResponseInspection(JsonView jsonValue)
+  : ResponseInspection()
 {
   *this = jsonValue;
 }

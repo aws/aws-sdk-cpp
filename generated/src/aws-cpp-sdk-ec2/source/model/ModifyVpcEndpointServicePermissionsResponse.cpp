@@ -22,8 +22,8 @@ ModifyVpcEndpointServicePermissionsResponse::ModifyVpcEndpointServicePermissions
 {
 }
 
-ModifyVpcEndpointServicePermissionsResponse::ModifyVpcEndpointServicePermissionsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_returnValue(false)
+ModifyVpcEndpointServicePermissionsResponse::ModifyVpcEndpointServicePermissionsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : ModifyVpcEndpointServicePermissionsResponse()
 {
   *this = result;
 }

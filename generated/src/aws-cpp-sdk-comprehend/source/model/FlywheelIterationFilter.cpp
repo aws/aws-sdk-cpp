@@ -24,9 +24,8 @@ FlywheelIterationFilter::FlywheelIterationFilter() :
 {
 }
 
-FlywheelIterationFilter::FlywheelIterationFilter(JsonView jsonValue) : 
-    m_creationTimeAfterHasBeenSet(false),
-    m_creationTimeBeforeHasBeenSet(false)
+FlywheelIterationFilter::FlywheelIterationFilter(JsonView jsonValue)
+  : FlywheelIterationFilter()
 {
   *this = jsonValue;
 }

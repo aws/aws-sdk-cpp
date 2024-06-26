@@ -23,8 +23,8 @@ DeployAsApplicationConfigurationUpdate::DeployAsApplicationConfigurationUpdate()
 {
 }
 
-DeployAsApplicationConfigurationUpdate::DeployAsApplicationConfigurationUpdate(JsonView jsonValue) : 
-    m_s3ContentLocationUpdateHasBeenSet(false)
+DeployAsApplicationConfigurationUpdate::DeployAsApplicationConfigurationUpdate(JsonView jsonValue)
+  : DeployAsApplicationConfigurationUpdate()
 {
   *this = jsonValue;
 }

@@ -28,13 +28,8 @@ GeospatialMapVisual::GeospatialMapVisual() :
 {
 }
 
-GeospatialMapVisual::GeospatialMapVisual(JsonView jsonValue) : 
-    m_visualIdHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_subtitleHasBeenSet(false),
-    m_chartConfigurationHasBeenSet(false),
-    m_columnHierarchiesHasBeenSet(false),
-    m_actionsHasBeenSet(false)
+GeospatialMapVisual::GeospatialMapVisual(JsonView jsonValue)
+  : GeospatialMapVisual()
 {
   *this = jsonValue;
 }

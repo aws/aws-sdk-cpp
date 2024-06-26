@@ -23,8 +23,8 @@ AwsWafv2RulesActionCountDetails::AwsWafv2RulesActionCountDetails() :
 {
 }
 
-AwsWafv2RulesActionCountDetails::AwsWafv2RulesActionCountDetails(JsonView jsonValue) : 
-    m_customRequestHandlingHasBeenSet(false)
+AwsWafv2RulesActionCountDetails::AwsWafv2RulesActionCountDetails(JsonView jsonValue)
+  : AwsWafv2RulesActionCountDetails()
 {
   *this = jsonValue;
 }

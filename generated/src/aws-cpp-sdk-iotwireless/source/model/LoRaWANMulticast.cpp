@@ -26,11 +26,8 @@ LoRaWANMulticast::LoRaWANMulticast() :
 {
 }
 
-LoRaWANMulticast::LoRaWANMulticast(JsonView jsonValue) : 
-    m_rfRegion(SupportedRfRegion::NOT_SET),
-    m_rfRegionHasBeenSet(false),
-    m_dlClass(DlClass::NOT_SET),
-    m_dlClassHasBeenSet(false)
+LoRaWANMulticast::LoRaWANMulticast(JsonView jsonValue)
+  : LoRaWANMulticast()
 {
   *this = jsonValue;
 }

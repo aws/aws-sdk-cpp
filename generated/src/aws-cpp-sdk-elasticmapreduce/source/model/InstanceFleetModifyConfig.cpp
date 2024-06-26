@@ -28,13 +28,8 @@ InstanceFleetModifyConfig::InstanceFleetModifyConfig() :
 {
 }
 
-InstanceFleetModifyConfig::InstanceFleetModifyConfig(JsonView jsonValue) : 
-    m_instanceFleetIdHasBeenSet(false),
-    m_targetOnDemandCapacity(0),
-    m_targetOnDemandCapacityHasBeenSet(false),
-    m_targetSpotCapacity(0),
-    m_targetSpotCapacityHasBeenSet(false),
-    m_resizeSpecificationsHasBeenSet(false)
+InstanceFleetModifyConfig::InstanceFleetModifyConfig(JsonView jsonValue)
+  : InstanceFleetModifyConfig()
 {
   *this = jsonValue;
 }

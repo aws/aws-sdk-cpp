@@ -24,9 +24,8 @@ FontWeight::FontWeight() :
 {
 }
 
-FontWeight::FontWeight(JsonView jsonValue) : 
-    m_name(FontWeightName::NOT_SET),
-    m_nameHasBeenSet(false)
+FontWeight::FontWeight(JsonView jsonValue)
+  : FontWeight()
 {
   *this = jsonValue;
 }

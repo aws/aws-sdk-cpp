@@ -29,14 +29,8 @@ TrainingJobDefinition::TrainingJobDefinition() :
 {
 }
 
-TrainingJobDefinition::TrainingJobDefinition(JsonView jsonValue) : 
-    m_trainingInputMode(TrainingInputMode::NOT_SET),
-    m_trainingInputModeHasBeenSet(false),
-    m_hyperParametersHasBeenSet(false),
-    m_inputDataConfigHasBeenSet(false),
-    m_outputDataConfigHasBeenSet(false),
-    m_resourceConfigHasBeenSet(false),
-    m_stoppingConditionHasBeenSet(false)
+TrainingJobDefinition::TrainingJobDefinition(JsonView jsonValue)
+  : TrainingJobDefinition()
 {
   *this = jsonValue;
 }

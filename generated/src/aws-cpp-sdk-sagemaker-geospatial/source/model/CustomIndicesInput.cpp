@@ -23,8 +23,8 @@ CustomIndicesInput::CustomIndicesInput() :
 {
 }
 
-CustomIndicesInput::CustomIndicesInput(JsonView jsonValue) : 
-    m_operationsHasBeenSet(false)
+CustomIndicesInput::CustomIndicesInput(JsonView jsonValue)
+  : CustomIndicesInput()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ StreamChannelDefinition::StreamChannelDefinition() :
 {
 }
 
-StreamChannelDefinition::StreamChannelDefinition(JsonView jsonValue) : 
-    m_numberOfChannels(0),
-    m_numberOfChannelsHasBeenSet(false),
-    m_channelDefinitionsHasBeenSet(false)
+StreamChannelDefinition::StreamChannelDefinition(JsonView jsonValue)
+  : StreamChannelDefinition()
 {
   *this = jsonValue;
 }

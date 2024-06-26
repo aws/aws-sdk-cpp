@@ -30,15 +30,8 @@ SlotSummary::SlotSummary() :
 {
 }
 
-SlotSummary::SlotSummary(JsonView jsonValue) : 
-    m_slotIdHasBeenSet(false),
-    m_slotNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_slotConstraint(SlotConstraint::NOT_SET),
-    m_slotConstraintHasBeenSet(false),
-    m_slotTypeIdHasBeenSet(false),
-    m_valueElicitationPromptSpecificationHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false)
+SlotSummary::SlotSummary(JsonView jsonValue)
+  : SlotSummary()
 {
   *this = jsonValue;
 }

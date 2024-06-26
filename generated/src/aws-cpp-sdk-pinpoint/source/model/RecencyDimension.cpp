@@ -26,11 +26,8 @@ RecencyDimension::RecencyDimension() :
 {
 }
 
-RecencyDimension::RecencyDimension(JsonView jsonValue) : 
-    m_duration(Duration::NOT_SET),
-    m_durationHasBeenSet(false),
-    m_recencyType(RecencyType::NOT_SET),
-    m_recencyTypeHasBeenSet(false)
+RecencyDimension::RecencyDimension(JsonView jsonValue)
+  : RecencyDimension()
 {
   *this = jsonValue;
 }

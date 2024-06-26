@@ -28,13 +28,8 @@ FieldFilter::FieldFilter() :
 {
 }
 
-FieldFilter::FieldFilter(JsonView jsonValue) : 
-    m_containsHasBeenSet(false),
-    m_equalToHasBeenSet(false),
-    m_greaterThanHasBeenSet(false),
-    m_greaterThanOrEqualToHasBeenSet(false),
-    m_lessThanHasBeenSet(false),
-    m_lessThanOrEqualToHasBeenSet(false)
+FieldFilter::FieldFilter(JsonView jsonValue)
+  : FieldFilter()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ MsSmoothEncryptionSettings::MsSmoothEncryptionSettings() :
 {
 }
 
-MsSmoothEncryptionSettings::MsSmoothEncryptionSettings(JsonView jsonValue) : 
-    m_spekeKeyProviderHasBeenSet(false)
+MsSmoothEncryptionSettings::MsSmoothEncryptionSettings(JsonView jsonValue)
+  : MsSmoothEncryptionSettings()
 {
   *this = jsonValue;
 }

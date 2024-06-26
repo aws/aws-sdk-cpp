@@ -30,15 +30,8 @@ ContainerStateChange::ContainerStateChange() :
 {
 }
 
-ContainerStateChange::ContainerStateChange(JsonView jsonValue) : 
-    m_containerNameHasBeenSet(false),
-    m_imageDigestHasBeenSet(false),
-    m_runtimeIdHasBeenSet(false),
-    m_exitCode(0),
-    m_exitCodeHasBeenSet(false),
-    m_networkBindingsHasBeenSet(false),
-    m_reasonHasBeenSet(false),
-    m_statusHasBeenSet(false)
+ContainerStateChange::ContainerStateChange(JsonView jsonValue)
+  : ContainerStateChange()
 {
   *this = jsonValue;
 }

@@ -27,10 +27,8 @@ InstanceFamilyCreditSpecification::InstanceFamilyCreditSpecification() :
 {
 }
 
-InstanceFamilyCreditSpecification::InstanceFamilyCreditSpecification(const XmlNode& xmlNode) : 
-    m_instanceFamily(UnlimitedSupportedInstanceFamily::NOT_SET),
-    m_instanceFamilyHasBeenSet(false),
-    m_cpuCreditsHasBeenSet(false)
+InstanceFamilyCreditSpecification::InstanceFamilyCreditSpecification(const XmlNode& xmlNode)
+  : InstanceFamilyCreditSpecification()
 {
   *this = xmlNode;
 }

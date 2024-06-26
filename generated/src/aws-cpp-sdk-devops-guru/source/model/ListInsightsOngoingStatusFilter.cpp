@@ -24,9 +24,8 @@ ListInsightsOngoingStatusFilter::ListInsightsOngoingStatusFilter() :
 {
 }
 
-ListInsightsOngoingStatusFilter::ListInsightsOngoingStatusFilter(JsonView jsonValue) : 
-    m_type(InsightType::NOT_SET),
-    m_typeHasBeenSet(false)
+ListInsightsOngoingStatusFilter::ListInsightsOngoingStatusFilter(JsonView jsonValue)
+  : ListInsightsOngoingStatusFilter()
 {
   *this = jsonValue;
 }

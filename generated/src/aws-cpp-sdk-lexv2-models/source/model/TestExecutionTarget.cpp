@@ -23,8 +23,8 @@ TestExecutionTarget::TestExecutionTarget() :
 {
 }
 
-TestExecutionTarget::TestExecutionTarget(JsonView jsonValue) : 
-    m_botAliasTargetHasBeenSet(false)
+TestExecutionTarget::TestExecutionTarget(JsonView jsonValue)
+  : TestExecutionTarget()
 {
   *this = jsonValue;
 }

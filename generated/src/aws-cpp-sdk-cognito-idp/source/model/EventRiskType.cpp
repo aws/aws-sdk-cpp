@@ -28,13 +28,8 @@ EventRiskType::EventRiskType() :
 {
 }
 
-EventRiskType::EventRiskType(JsonView jsonValue) : 
-    m_riskDecision(RiskDecisionType::NOT_SET),
-    m_riskDecisionHasBeenSet(false),
-    m_riskLevel(RiskLevelType::NOT_SET),
-    m_riskLevelHasBeenSet(false),
-    m_compromisedCredentialsDetected(false),
-    m_compromisedCredentialsDetectedHasBeenSet(false)
+EventRiskType::EventRiskType(JsonView jsonValue)
+  : EventRiskType()
 {
   *this = jsonValue;
 }

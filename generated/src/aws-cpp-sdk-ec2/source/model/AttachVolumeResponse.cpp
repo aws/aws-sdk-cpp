@@ -23,9 +23,8 @@ AttachVolumeResponse::AttachVolumeResponse() :
 {
 }
 
-AttachVolumeResponse::AttachVolumeResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_state(VolumeAttachmentState::NOT_SET),
-    m_deleteOnTermination(false)
+AttachVolumeResponse::AttachVolumeResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : AttachVolumeResponse()
 {
   *this = result;
 }

@@ -27,10 +27,8 @@ OptionVersion::OptionVersion() :
 {
 }
 
-OptionVersion::OptionVersion(const XmlNode& xmlNode) : 
-    m_versionHasBeenSet(false),
-    m_isDefault(false),
-    m_isDefaultHasBeenSet(false)
+OptionVersion::OptionVersion(const XmlNode& xmlNode)
+  : OptionVersion()
 {
   *this = xmlNode;
 }

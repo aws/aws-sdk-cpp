@@ -27,12 +27,8 @@ FolderSearchFilter::FolderSearchFilter() :
 {
 }
 
-FolderSearchFilter::FolderSearchFilter(JsonView jsonValue) : 
-    m_operator(FilterOperator::NOT_SET),
-    m_operatorHasBeenSet(false),
-    m_name(FolderFilterAttribute::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
+FolderSearchFilter::FolderSearchFilter(JsonView jsonValue)
+  : FolderSearchFilter()
 {
   *this = jsonValue;
 }

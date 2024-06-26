@@ -34,19 +34,8 @@ OrganizationRecommendationResourceSummary::OrganizationRecommendationResourceSum
 {
 }
 
-OrganizationRecommendationResourceSummary::OrganizationRecommendationResourceSummary(JsonView jsonValue) : 
-    m_accountIdHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_awsResourceIdHasBeenSet(false),
-    m_exclusionStatus(ExclusionStatus::NOT_SET),
-    m_exclusionStatusHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false),
-    m_metadataHasBeenSet(false),
-    m_recommendationArnHasBeenSet(false),
-    m_regionCodeHasBeenSet(false),
-    m_status(ResourceStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+OrganizationRecommendationResourceSummary::OrganizationRecommendationResourceSummary(JsonView jsonValue)
+  : OrganizationRecommendationResourceSummary()
 {
   *this = jsonValue;
 }

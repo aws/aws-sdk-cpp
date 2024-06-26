@@ -31,14 +31,8 @@ ClusterSubnetGroup::ClusterSubnetGroup() :
 {
 }
 
-ClusterSubnetGroup::ClusterSubnetGroup(const XmlNode& xmlNode) : 
-    m_clusterSubnetGroupNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_subnetGroupStatusHasBeenSet(false),
-    m_subnetsHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_supportedClusterIpAddressTypesHasBeenSet(false)
+ClusterSubnetGroup::ClusterSubnetGroup(const XmlNode& xmlNode)
+  : ClusterSubnetGroup()
 {
   *this = xmlNode;
 }

@@ -25,10 +25,8 @@ ServerShortInfoResponse::ServerShortInfoResponse() :
 {
 }
 
-ServerShortInfoResponse::ServerShortInfoResponse(JsonView jsonValue) : 
-    m_serverIdHasBeenSet(false),
-    m_ipAddressHasBeenSet(false),
-    m_serverNameHasBeenSet(false)
+ServerShortInfoResponse::ServerShortInfoResponse(JsonView jsonValue)
+  : ServerShortInfoResponse()
 {
   *this = jsonValue;
 }

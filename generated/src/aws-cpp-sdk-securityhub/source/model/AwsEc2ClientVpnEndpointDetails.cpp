@@ -41,26 +41,8 @@ AwsEc2ClientVpnEndpointDetails::AwsEc2ClientVpnEndpointDetails() :
 {
 }
 
-AwsEc2ClientVpnEndpointDetails::AwsEc2ClientVpnEndpointDetails(JsonView jsonValue) : 
-    m_clientVpnEndpointIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_clientCidrBlockHasBeenSet(false),
-    m_dnsServerHasBeenSet(false),
-    m_splitTunnel(false),
-    m_splitTunnelHasBeenSet(false),
-    m_transportProtocolHasBeenSet(false),
-    m_vpnPort(0),
-    m_vpnPortHasBeenSet(false),
-    m_serverCertificateArnHasBeenSet(false),
-    m_authenticationOptionsHasBeenSet(false),
-    m_connectionLogOptionsHasBeenSet(false),
-    m_securityGroupIdSetHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_selfServicePortalUrlHasBeenSet(false),
-    m_clientConnectOptionsHasBeenSet(false),
-    m_sessionTimeoutHours(0),
-    m_sessionTimeoutHoursHasBeenSet(false),
-    m_clientLoginBannerOptionsHasBeenSet(false)
+AwsEc2ClientVpnEndpointDetails::AwsEc2ClientVpnEndpointDetails(JsonView jsonValue)
+  : AwsEc2ClientVpnEndpointDetails()
 {
   *this = jsonValue;
 }

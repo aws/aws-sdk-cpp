@@ -23,8 +23,8 @@ TargetSummary::TargetSummary() :
 {
 }
 
-TargetSummary::TargetSummary(JsonView jsonValue) : 
-    m_arnHasBeenSet(false)
+TargetSummary::TargetSummary(JsonView jsonValue)
+  : TargetSummary()
 {
   *this = jsonValue;
 }

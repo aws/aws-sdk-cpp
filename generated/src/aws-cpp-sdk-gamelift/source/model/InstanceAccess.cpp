@@ -28,13 +28,8 @@ InstanceAccess::InstanceAccess() :
 {
 }
 
-InstanceAccess::InstanceAccess(JsonView jsonValue) : 
-    m_fleetIdHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_ipAddressHasBeenSet(false),
-    m_operatingSystem(OperatingSystem::NOT_SET),
-    m_operatingSystemHasBeenSet(false),
-    m_credentialsHasBeenSet(false)
+InstanceAccess::InstanceAccess(JsonView jsonValue)
+  : InstanceAccess()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ ListVPCConnectionsResult::ListVPCConnectionsResult() :
 {
 }
 
-ListVPCConnectionsResult::ListVPCConnectionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+ListVPCConnectionsResult::ListVPCConnectionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ListVPCConnectionsResult()
 {
   *this = result;
 }

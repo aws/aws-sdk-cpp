@@ -22,8 +22,8 @@ CreateCalculatedAttributeDefinitionResult::CreateCalculatedAttributeDefinitionRe
 {
 }
 
-CreateCalculatedAttributeDefinitionResult::CreateCalculatedAttributeDefinitionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_statistic(Statistic::NOT_SET)
+CreateCalculatedAttributeDefinitionResult::CreateCalculatedAttributeDefinitionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateCalculatedAttributeDefinitionResult()
 {
   *this = result;
 }

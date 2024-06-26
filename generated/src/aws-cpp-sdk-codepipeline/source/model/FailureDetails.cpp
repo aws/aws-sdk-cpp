@@ -26,11 +26,8 @@ FailureDetails::FailureDetails() :
 {
 }
 
-FailureDetails::FailureDetails(JsonView jsonValue) : 
-    m_type(FailureType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_externalExecutionIdHasBeenSet(false)
+FailureDetails::FailureDetails(JsonView jsonValue)
+  : FailureDetails()
 {
   *this = jsonValue;
 }

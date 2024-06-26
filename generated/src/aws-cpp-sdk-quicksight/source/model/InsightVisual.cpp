@@ -28,13 +28,8 @@ InsightVisual::InsightVisual() :
 {
 }
 
-InsightVisual::InsightVisual(JsonView jsonValue) : 
-    m_visualIdHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_subtitleHasBeenSet(false),
-    m_insightConfigurationHasBeenSet(false),
-    m_actionsHasBeenSet(false),
-    m_dataSetIdentifierHasBeenSet(false)
+InsightVisual::InsightVisual(JsonView jsonValue)
+  : InsightVisual()
 {
   *this = jsonValue;
 }

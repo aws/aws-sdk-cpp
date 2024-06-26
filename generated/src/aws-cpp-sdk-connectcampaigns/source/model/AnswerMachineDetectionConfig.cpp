@@ -26,11 +26,8 @@ AnswerMachineDetectionConfig::AnswerMachineDetectionConfig() :
 {
 }
 
-AnswerMachineDetectionConfig::AnswerMachineDetectionConfig(JsonView jsonValue) : 
-    m_enableAnswerMachineDetection(false),
-    m_enableAnswerMachineDetectionHasBeenSet(false),
-    m_awaitAnswerMachinePrompt(false),
-    m_awaitAnswerMachinePromptHasBeenSet(false)
+AnswerMachineDetectionConfig::AnswerMachineDetectionConfig(JsonView jsonValue)
+  : AnswerMachineDetectionConfig()
 {
   *this = jsonValue;
 }

@@ -41,24 +41,8 @@ ChangeSetSummary::ChangeSetSummary() :
 {
 }
 
-ChangeSetSummary::ChangeSetSummary(const XmlNode& xmlNode) : 
-    m_stackIdHasBeenSet(false),
-    m_stackNameHasBeenSet(false),
-    m_changeSetIdHasBeenSet(false),
-    m_changeSetNameHasBeenSet(false),
-    m_executionStatus(ExecutionStatus::NOT_SET),
-    m_executionStatusHasBeenSet(false),
-    m_status(ChangeSetStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusReasonHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_includeNestedStacks(false),
-    m_includeNestedStacksHasBeenSet(false),
-    m_parentChangeSetIdHasBeenSet(false),
-    m_rootChangeSetIdHasBeenSet(false),
-    m_importExistingResources(false),
-    m_importExistingResourcesHasBeenSet(false)
+ChangeSetSummary::ChangeSetSummary(const XmlNode& xmlNode)
+  : ChangeSetSummary()
 {
   *this = xmlNode;
 }

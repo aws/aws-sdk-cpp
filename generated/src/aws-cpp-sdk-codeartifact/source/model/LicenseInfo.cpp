@@ -24,9 +24,8 @@ LicenseInfo::LicenseInfo() :
 {
 }
 
-LicenseInfo::LicenseInfo(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_urlHasBeenSet(false)
+LicenseInfo::LicenseInfo(JsonView jsonValue)
+  : LicenseInfo()
 {
   *this = jsonValue;
 }

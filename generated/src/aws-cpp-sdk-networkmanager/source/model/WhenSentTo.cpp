@@ -23,8 +23,8 @@ WhenSentTo::WhenSentTo() :
 {
 }
 
-WhenSentTo::WhenSentTo(JsonView jsonValue) : 
-    m_whenSentToSegmentsListHasBeenSet(false)
+WhenSentTo::WhenSentTo(JsonView jsonValue)
+  : WhenSentTo()
 {
   *this = jsonValue;
 }

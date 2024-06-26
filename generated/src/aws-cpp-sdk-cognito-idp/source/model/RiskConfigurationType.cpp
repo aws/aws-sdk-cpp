@@ -28,13 +28,8 @@ RiskConfigurationType::RiskConfigurationType() :
 {
 }
 
-RiskConfigurationType::RiskConfigurationType(JsonView jsonValue) : 
-    m_userPoolIdHasBeenSet(false),
-    m_clientIdHasBeenSet(false),
-    m_compromisedCredentialsRiskConfigurationHasBeenSet(false),
-    m_accountTakeoverRiskConfigurationHasBeenSet(false),
-    m_riskExceptionConfigurationHasBeenSet(false),
-    m_lastModifiedDateHasBeenSet(false)
+RiskConfigurationType::RiskConfigurationType(JsonView jsonValue)
+  : RiskConfigurationType()
 {
   *this = jsonValue;
 }

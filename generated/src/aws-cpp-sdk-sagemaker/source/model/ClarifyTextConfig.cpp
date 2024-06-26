@@ -26,11 +26,8 @@ ClarifyTextConfig::ClarifyTextConfig() :
 {
 }
 
-ClarifyTextConfig::ClarifyTextConfig(JsonView jsonValue) : 
-    m_language(ClarifyTextLanguage::NOT_SET),
-    m_languageHasBeenSet(false),
-    m_granularity(ClarifyTextGranularity::NOT_SET),
-    m_granularityHasBeenSet(false)
+ClarifyTextConfig::ClarifyTextConfig(JsonView jsonValue)
+  : ClarifyTextConfig()
 {
   *this = jsonValue;
 }

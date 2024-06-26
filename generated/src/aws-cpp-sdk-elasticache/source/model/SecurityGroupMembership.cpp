@@ -26,9 +26,8 @@ SecurityGroupMembership::SecurityGroupMembership() :
 {
 }
 
-SecurityGroupMembership::SecurityGroupMembership(const XmlNode& xmlNode) : 
-    m_securityGroupIdHasBeenSet(false),
-    m_statusHasBeenSet(false)
+SecurityGroupMembership::SecurityGroupMembership(const XmlNode& xmlNode)
+  : SecurityGroupMembership()
 {
   *this = xmlNode;
 }

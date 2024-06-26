@@ -30,15 +30,8 @@ VideoPreprocessor::VideoPreprocessor() :
 {
 }
 
-VideoPreprocessor::VideoPreprocessor(JsonView jsonValue) : 
-    m_colorCorrectorHasBeenSet(false),
-    m_deinterlacerHasBeenSet(false),
-    m_dolbyVisionHasBeenSet(false),
-    m_hdr10PlusHasBeenSet(false),
-    m_imageInserterHasBeenSet(false),
-    m_noiseReducerHasBeenSet(false),
-    m_partnerWatermarkingHasBeenSet(false),
-    m_timecodeBurninHasBeenSet(false)
+VideoPreprocessor::VideoPreprocessor(JsonView jsonValue)
+  : VideoPreprocessor()
 {
   *this = jsonValue;
 }

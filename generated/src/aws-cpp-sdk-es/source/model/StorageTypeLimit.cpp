@@ -24,9 +24,8 @@ StorageTypeLimit::StorageTypeLimit() :
 {
 }
 
-StorageTypeLimit::StorageTypeLimit(JsonView jsonValue) : 
-    m_limitNameHasBeenSet(false),
-    m_limitValuesHasBeenSet(false)
+StorageTypeLimit::StorageTypeLimit(JsonView jsonValue)
+  : StorageTypeLimit()
 {
   *this = jsonValue;
 }

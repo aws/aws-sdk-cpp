@@ -25,10 +25,8 @@ OcspConfiguration::OcspConfiguration() :
 {
 }
 
-OcspConfiguration::OcspConfiguration(JsonView jsonValue) : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_ocspCustomCnameHasBeenSet(false)
+OcspConfiguration::OcspConfiguration(JsonView jsonValue)
+  : OcspConfiguration()
 {
   *this = jsonValue;
 }

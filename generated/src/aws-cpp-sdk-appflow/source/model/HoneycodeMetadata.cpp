@@ -23,8 +23,8 @@ HoneycodeMetadata::HoneycodeMetadata() :
 {
 }
 
-HoneycodeMetadata::HoneycodeMetadata(JsonView jsonValue) : 
-    m_oAuthScopesHasBeenSet(false)
+HoneycodeMetadata::HoneycodeMetadata(JsonView jsonValue)
+  : HoneycodeMetadata()
 {
   *this = jsonValue;
 }

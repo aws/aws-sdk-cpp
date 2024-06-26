@@ -22,8 +22,8 @@ UpdateLoggingConfigurationResult::UpdateLoggingConfigurationResult() :
 {
 }
 
-UpdateLoggingConfigurationResult::UpdateLoggingConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_state(UpdateLoggingConfigurationState::NOT_SET)
+UpdateLoggingConfigurationResult::UpdateLoggingConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateLoggingConfigurationResult()
 {
   *this = result;
 }

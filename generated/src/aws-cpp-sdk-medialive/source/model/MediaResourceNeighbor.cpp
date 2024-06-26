@@ -24,9 +24,8 @@ MediaResourceNeighbor::MediaResourceNeighbor() :
 {
 }
 
-MediaResourceNeighbor::MediaResourceNeighbor(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false)
+MediaResourceNeighbor::MediaResourceNeighbor(JsonView jsonValue)
+  : MediaResourceNeighbor()
 {
   *this = jsonValue;
 }

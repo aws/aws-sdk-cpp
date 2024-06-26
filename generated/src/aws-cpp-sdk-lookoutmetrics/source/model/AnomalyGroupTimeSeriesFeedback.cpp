@@ -26,11 +26,8 @@ AnomalyGroupTimeSeriesFeedback::AnomalyGroupTimeSeriesFeedback() :
 {
 }
 
-AnomalyGroupTimeSeriesFeedback::AnomalyGroupTimeSeriesFeedback(JsonView jsonValue) : 
-    m_anomalyGroupIdHasBeenSet(false),
-    m_timeSeriesIdHasBeenSet(false),
-    m_isAnomaly(false),
-    m_isAnomalyHasBeenSet(false)
+AnomalyGroupTimeSeriesFeedback::AnomalyGroupTimeSeriesFeedback(JsonView jsonValue)
+  : AnomalyGroupTimeSeriesFeedback()
 {
   *this = jsonValue;
 }

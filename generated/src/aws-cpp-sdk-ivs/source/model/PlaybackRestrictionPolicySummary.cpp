@@ -29,14 +29,8 @@ PlaybackRestrictionPolicySummary::PlaybackRestrictionPolicySummary() :
 {
 }
 
-PlaybackRestrictionPolicySummary::PlaybackRestrictionPolicySummary(JsonView jsonValue) : 
-    m_allowedCountriesHasBeenSet(false),
-    m_allowedOriginsHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_enableStrictOriginEnforcement(false),
-    m_enableStrictOriginEnforcementHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+PlaybackRestrictionPolicySummary::PlaybackRestrictionPolicySummary(JsonView jsonValue)
+  : PlaybackRestrictionPolicySummary()
 {
   *this = jsonValue;
 }

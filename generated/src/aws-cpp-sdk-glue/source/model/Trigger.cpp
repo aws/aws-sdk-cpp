@@ -34,19 +34,8 @@ Trigger::Trigger() :
 {
 }
 
-Trigger::Trigger(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_workflowNameHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_type(TriggerType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_state(TriggerState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_scheduleHasBeenSet(false),
-    m_actionsHasBeenSet(false),
-    m_predicateHasBeenSet(false),
-    m_eventBatchingConditionHasBeenSet(false)
+Trigger::Trigger(JsonView jsonValue)
+  : Trigger()
 {
   *this = jsonValue;
 }

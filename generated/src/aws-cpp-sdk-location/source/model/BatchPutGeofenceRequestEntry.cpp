@@ -25,10 +25,8 @@ BatchPutGeofenceRequestEntry::BatchPutGeofenceRequestEntry() :
 {
 }
 
-BatchPutGeofenceRequestEntry::BatchPutGeofenceRequestEntry(JsonView jsonValue) : 
-    m_geofenceIdHasBeenSet(false),
-    m_geometryHasBeenSet(false),
-    m_geofencePropertiesHasBeenSet(false)
+BatchPutGeofenceRequestEntry::BatchPutGeofenceRequestEntry(JsonView jsonValue)
+  : BatchPutGeofenceRequestEntry()
 {
   *this = jsonValue;
 }

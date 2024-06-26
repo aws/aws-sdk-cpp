@@ -24,9 +24,8 @@ CognitoOptionsStatus::CognitoOptionsStatus() :
 {
 }
 
-CognitoOptionsStatus::CognitoOptionsStatus(JsonView jsonValue) : 
-    m_optionsHasBeenSet(false),
-    m_statusHasBeenSet(false)
+CognitoOptionsStatus::CognitoOptionsStatus(JsonView jsonValue)
+  : CognitoOptionsStatus()
 {
   *this = jsonValue;
 }

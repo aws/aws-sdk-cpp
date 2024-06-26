@@ -26,11 +26,8 @@ GPSCoordinates::GPSCoordinates() :
 {
 }
 
-GPSCoordinates::GPSCoordinates(JsonView jsonValue) : 
-    m_latitude(0.0),
-    m_latitudeHasBeenSet(false),
-    m_longitude(0.0),
-    m_longitudeHasBeenSet(false)
+GPSCoordinates::GPSCoordinates(JsonView jsonValue)
+  : GPSCoordinates()
 {
   *this = jsonValue;
 }

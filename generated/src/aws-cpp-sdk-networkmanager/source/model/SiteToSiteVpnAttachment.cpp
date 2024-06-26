@@ -24,9 +24,8 @@ SiteToSiteVpnAttachment::SiteToSiteVpnAttachment() :
 {
 }
 
-SiteToSiteVpnAttachment::SiteToSiteVpnAttachment(JsonView jsonValue) : 
-    m_attachmentHasBeenSet(false),
-    m_vpnConnectionArnHasBeenSet(false)
+SiteToSiteVpnAttachment::SiteToSiteVpnAttachment(JsonView jsonValue)
+  : SiteToSiteVpnAttachment()
 {
   *this = jsonValue;
 }

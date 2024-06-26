@@ -22,8 +22,8 @@ GetServiceGraphResult::GetServiceGraphResult() :
 {
 }
 
-GetServiceGraphResult::GetServiceGraphResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_containsOldGroupVersions(false)
+GetServiceGraphResult::GetServiceGraphResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetServiceGraphResult()
 {
   *this = result;
 }

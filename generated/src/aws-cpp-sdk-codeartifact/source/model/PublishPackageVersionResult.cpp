@@ -23,9 +23,8 @@ PublishPackageVersionResult::PublishPackageVersionResult() :
 {
 }
 
-PublishPackageVersionResult::PublishPackageVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_format(PackageFormat::NOT_SET),
-    m_status(PackageVersionStatus::NOT_SET)
+PublishPackageVersionResult::PublishPackageVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : PublishPackageVersionResult()
 {
   *this = result;
 }

@@ -25,10 +25,8 @@ ImageInserter::ImageInserter() :
 {
 }
 
-ImageInserter::ImageInserter(JsonView jsonValue) : 
-    m_insertableImagesHasBeenSet(false),
-    m_sdrReferenceWhiteLevel(0),
-    m_sdrReferenceWhiteLevelHasBeenSet(false)
+ImageInserter::ImageInserter(JsonView jsonValue)
+  : ImageInserter()
 {
   *this = jsonValue;
 }

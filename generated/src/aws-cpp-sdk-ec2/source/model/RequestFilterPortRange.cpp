@@ -28,11 +28,8 @@ RequestFilterPortRange::RequestFilterPortRange() :
 {
 }
 
-RequestFilterPortRange::RequestFilterPortRange(const XmlNode& xmlNode) : 
-    m_fromPort(0),
-    m_fromPortHasBeenSet(false),
-    m_toPort(0),
-    m_toPortHasBeenSet(false)
+RequestFilterPortRange::RequestFilterPortRange(const XmlNode& xmlNode)
+  : RequestFilterPortRange()
 {
   *this = xmlNode;
 }

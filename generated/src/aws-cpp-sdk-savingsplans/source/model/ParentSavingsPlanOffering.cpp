@@ -32,17 +32,8 @@ ParentSavingsPlanOffering::ParentSavingsPlanOffering() :
 {
 }
 
-ParentSavingsPlanOffering::ParentSavingsPlanOffering(JsonView jsonValue) : 
-    m_offeringIdHasBeenSet(false),
-    m_paymentOption(SavingsPlanPaymentOption::NOT_SET),
-    m_paymentOptionHasBeenSet(false),
-    m_planType(SavingsPlanType::NOT_SET),
-    m_planTypeHasBeenSet(false),
-    m_durationSeconds(0),
-    m_durationSecondsHasBeenSet(false),
-    m_currency(CurrencyCode::NOT_SET),
-    m_currencyHasBeenSet(false),
-    m_planDescriptionHasBeenSet(false)
+ParentSavingsPlanOffering::ParentSavingsPlanOffering(JsonView jsonValue)
+  : ParentSavingsPlanOffering()
 {
   *this = jsonValue;
 }

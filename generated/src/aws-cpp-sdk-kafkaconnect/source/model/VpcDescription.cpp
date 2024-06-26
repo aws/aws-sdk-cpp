@@ -24,9 +24,8 @@ VpcDescription::VpcDescription() :
 {
 }
 
-VpcDescription::VpcDescription(JsonView jsonValue) : 
-    m_securityGroupsHasBeenSet(false),
-    m_subnetsHasBeenSet(false)
+VpcDescription::VpcDescription(JsonView jsonValue)
+  : VpcDescription()
 {
   *this = jsonValue;
 }

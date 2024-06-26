@@ -26,11 +26,8 @@ InteractiveConfiguration::InteractiveConfiguration() :
 {
 }
 
-InteractiveConfiguration::InteractiveConfiguration(JsonView jsonValue) : 
-    m_studioEnabled(false),
-    m_studioEnabledHasBeenSet(false),
-    m_livyEndpointEnabled(false),
-    m_livyEndpointEnabledHasBeenSet(false)
+InteractiveConfiguration::InteractiveConfiguration(JsonView jsonValue)
+  : InteractiveConfiguration()
 {
   *this = jsonValue;
 }

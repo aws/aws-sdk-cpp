@@ -30,15 +30,8 @@ ListedUser::ListedUser() :
 {
 }
 
-ListedUser::ListedUser(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_homeDirectoryHasBeenSet(false),
-    m_homeDirectoryType(HomeDirectoryType::NOT_SET),
-    m_homeDirectoryTypeHasBeenSet(false),
-    m_roleHasBeenSet(false),
-    m_sshPublicKeyCount(0),
-    m_sshPublicKeyCountHasBeenSet(false),
-    m_userNameHasBeenSet(false)
+ListedUser::ListedUser(JsonView jsonValue)
+  : ListedUser()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ MeshStatus::MeshStatus() :
 {
 }
 
-MeshStatus::MeshStatus(JsonView jsonValue) : 
-    m_status(MeshStatusCode::NOT_SET),
-    m_statusHasBeenSet(false)
+MeshStatus::MeshStatus(JsonView jsonValue)
+  : MeshStatus()
 {
   *this = jsonValue;
 }

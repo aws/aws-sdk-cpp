@@ -34,19 +34,8 @@ AssessmentMetadata::AssessmentMetadata() :
 {
 }
 
-AssessmentMetadata::AssessmentMetadata(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_complianceTypeHasBeenSet(false),
-    m_status(AssessmentStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_assessmentReportsDestinationHasBeenSet(false),
-    m_scopeHasBeenSet(false),
-    m_rolesHasBeenSet(false),
-    m_delegationsHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastUpdatedHasBeenSet(false)
+AssessmentMetadata::AssessmentMetadata(JsonView jsonValue)
+  : AssessmentMetadata()
 {
   *this = jsonValue;
 }

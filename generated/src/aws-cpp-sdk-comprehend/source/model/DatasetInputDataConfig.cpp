@@ -27,12 +27,8 @@ DatasetInputDataConfig::DatasetInputDataConfig() :
 {
 }
 
-DatasetInputDataConfig::DatasetInputDataConfig(JsonView jsonValue) : 
-    m_augmentedManifestsHasBeenSet(false),
-    m_dataFormat(DatasetDataFormat::NOT_SET),
-    m_dataFormatHasBeenSet(false),
-    m_documentClassifierInputDataConfigHasBeenSet(false),
-    m_entityRecognizerInputDataConfigHasBeenSet(false)
+DatasetInputDataConfig::DatasetInputDataConfig(JsonView jsonValue)
+  : DatasetInputDataConfig()
 {
   *this = jsonValue;
 }

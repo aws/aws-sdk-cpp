@@ -30,15 +30,8 @@ ImportTaskSummary::ImportTaskSummary() :
 {
 }
 
-ImportTaskSummary::ImportTaskSummary(JsonView jsonValue) : 
-    m_graphIdHasBeenSet(false),
-    m_taskIdHasBeenSet(false),
-    m_sourceHasBeenSet(false),
-    m_format(Format::NOT_SET),
-    m_formatHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_status(ImportTaskStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+ImportTaskSummary::ImportTaskSummary(JsonView jsonValue)
+  : ImportTaskSummary()
 {
   *this = jsonValue;
 }

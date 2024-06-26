@@ -23,8 +23,8 @@ DataSetRefreshProperties::DataSetRefreshProperties() :
 {
 }
 
-DataSetRefreshProperties::DataSetRefreshProperties(JsonView jsonValue) : 
-    m_refreshConfigurationHasBeenSet(false)
+DataSetRefreshProperties::DataSetRefreshProperties(JsonView jsonValue)
+  : DataSetRefreshProperties()
 {
   *this = jsonValue;
 }

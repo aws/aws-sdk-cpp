@@ -28,12 +28,8 @@ DefaultImportClientBrandingAttributes::DefaultImportClientBrandingAttributes() :
 {
 }
 
-DefaultImportClientBrandingAttributes::DefaultImportClientBrandingAttributes(JsonView jsonValue) : 
-    m_logoHasBeenSet(false),
-    m_supportEmailHasBeenSet(false),
-    m_supportLinkHasBeenSet(false),
-    m_forgotPasswordLinkHasBeenSet(false),
-    m_loginMessageHasBeenSet(false)
+DefaultImportClientBrandingAttributes::DefaultImportClientBrandingAttributes(JsonView jsonValue)
+  : DefaultImportClientBrandingAttributes()
 {
   *this = jsonValue;
 }

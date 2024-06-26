@@ -23,8 +23,8 @@ AIMLOptionsOutput::AIMLOptionsOutput() :
 {
 }
 
-AIMLOptionsOutput::AIMLOptionsOutput(JsonView jsonValue) : 
-    m_naturalLanguageQueryGenerationOptionsHasBeenSet(false)
+AIMLOptionsOutput::AIMLOptionsOutput(JsonView jsonValue)
+  : AIMLOptionsOutput()
 {
   *this = jsonValue;
 }

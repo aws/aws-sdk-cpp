@@ -23,8 +23,8 @@ SourcePriority::SourcePriority() :
 {
 }
 
-SourcePriority::SourcePriority(JsonView jsonValue) : 
-    m_primarySourceHasBeenSet(false)
+SourcePriority::SourcePriority(JsonView jsonValue)
+  : SourcePriority()
 {
   *this = jsonValue;
 }

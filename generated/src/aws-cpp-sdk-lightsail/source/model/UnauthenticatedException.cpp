@@ -26,11 +26,8 @@ UnauthenticatedException::UnauthenticatedException() :
 {
 }
 
-UnauthenticatedException::UnauthenticatedException(JsonView jsonValue) : 
-    m_codeHasBeenSet(false),
-    m_docsHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_tipHasBeenSet(false)
+UnauthenticatedException::UnauthenticatedException(JsonView jsonValue)
+  : UnauthenticatedException()
 {
   *this = jsonValue;
 }

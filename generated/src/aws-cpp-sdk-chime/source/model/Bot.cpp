@@ -33,18 +33,8 @@ Bot::Bot() :
 {
 }
 
-Bot::Bot(JsonView jsonValue) : 
-    m_botIdHasBeenSet(false),
-    m_userIdHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_botType(BotType::NOT_SET),
-    m_botTypeHasBeenSet(false),
-    m_disabled(false),
-    m_disabledHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false),
-    m_updatedTimestampHasBeenSet(false),
-    m_botEmailHasBeenSet(false),
-    m_securityTokenHasBeenSet(false)
+Bot::Bot(JsonView jsonValue)
+  : Bot()
 {
   *this = jsonValue;
 }

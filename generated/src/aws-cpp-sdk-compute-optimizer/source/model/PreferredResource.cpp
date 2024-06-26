@@ -26,11 +26,8 @@ PreferredResource::PreferredResource() :
 {
 }
 
-PreferredResource::PreferredResource(JsonView jsonValue) : 
-    m_name(PreferredResourceName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_includeListHasBeenSet(false),
-    m_excludeListHasBeenSet(false)
+PreferredResource::PreferredResource(JsonView jsonValue)
+  : PreferredResource()
 {
   *this = jsonValue;
 }

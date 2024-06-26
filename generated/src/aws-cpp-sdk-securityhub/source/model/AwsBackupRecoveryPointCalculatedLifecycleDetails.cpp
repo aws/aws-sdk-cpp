@@ -24,9 +24,8 @@ AwsBackupRecoveryPointCalculatedLifecycleDetails::AwsBackupRecoveryPointCalculat
 {
 }
 
-AwsBackupRecoveryPointCalculatedLifecycleDetails::AwsBackupRecoveryPointCalculatedLifecycleDetails(JsonView jsonValue) : 
-    m_deleteAtHasBeenSet(false),
-    m_moveToColdStorageAtHasBeenSet(false)
+AwsBackupRecoveryPointCalculatedLifecycleDetails::AwsBackupRecoveryPointCalculatedLifecycleDetails(JsonView jsonValue)
+  : AwsBackupRecoveryPointCalculatedLifecycleDetails()
 {
   *this = jsonValue;
 }

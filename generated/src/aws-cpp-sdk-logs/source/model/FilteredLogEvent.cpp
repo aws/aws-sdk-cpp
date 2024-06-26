@@ -29,14 +29,8 @@ FilteredLogEvent::FilteredLogEvent() :
 {
 }
 
-FilteredLogEvent::FilteredLogEvent(JsonView jsonValue) : 
-    m_logStreamNameHasBeenSet(false),
-    m_timestamp(0),
-    m_timestampHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_ingestionTime(0),
-    m_ingestionTimeHasBeenSet(false),
-    m_eventIdHasBeenSet(false)
+FilteredLogEvent::FilteredLogEvent(JsonView jsonValue)
+  : FilteredLogEvent()
 {
   *this = jsonValue;
 }

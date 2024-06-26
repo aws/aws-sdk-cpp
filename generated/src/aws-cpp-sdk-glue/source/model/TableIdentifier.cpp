@@ -26,11 +26,8 @@ TableIdentifier::TableIdentifier() :
 {
 }
 
-TableIdentifier::TableIdentifier(JsonView jsonValue) : 
-    m_catalogIdHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_regionHasBeenSet(false)
+TableIdentifier::TableIdentifier(JsonView jsonValue)
+  : TableIdentifier()
 {
   *this = jsonValue;
 }

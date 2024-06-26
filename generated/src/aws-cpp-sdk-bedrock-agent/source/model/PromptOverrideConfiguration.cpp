@@ -24,9 +24,8 @@ PromptOverrideConfiguration::PromptOverrideConfiguration() :
 {
 }
 
-PromptOverrideConfiguration::PromptOverrideConfiguration(JsonView jsonValue) : 
-    m_overrideLambdaHasBeenSet(false),
-    m_promptConfigurationsHasBeenSet(false)
+PromptOverrideConfiguration::PromptOverrideConfiguration(JsonView jsonValue)
+  : PromptOverrideConfiguration()
 {
   *this = jsonValue;
 }

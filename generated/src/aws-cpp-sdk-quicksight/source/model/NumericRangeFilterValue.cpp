@@ -25,10 +25,8 @@ NumericRangeFilterValue::NumericRangeFilterValue() :
 {
 }
 
-NumericRangeFilterValue::NumericRangeFilterValue(JsonView jsonValue) : 
-    m_staticValue(0.0),
-    m_staticValueHasBeenSet(false),
-    m_parameterHasBeenSet(false)
+NumericRangeFilterValue::NumericRangeFilterValue(JsonView jsonValue)
+  : NumericRangeFilterValue()
 {
   *this = jsonValue;
 }

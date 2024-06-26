@@ -30,15 +30,8 @@ Recommendation::Recommendation() :
 {
 }
 
-Recommendation::Recommendation(JsonView jsonValue) : 
-    m_allMatchesCount(0),
-    m_allMatchesCountHasBeenSet(false),
-    m_allMatchesSum(0.0),
-    m_allMatchesSumHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_patternHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_topMatchesHasBeenSet(false)
+Recommendation::Recommendation(JsonView jsonValue)
+  : Recommendation()
 {
   *this = jsonValue;
 }

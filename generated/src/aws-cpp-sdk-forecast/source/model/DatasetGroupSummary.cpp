@@ -26,11 +26,8 @@ DatasetGroupSummary::DatasetGroupSummary() :
 {
 }
 
-DatasetGroupSummary::DatasetGroupSummary(JsonView jsonValue) : 
-    m_datasetGroupArnHasBeenSet(false),
-    m_datasetGroupNameHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastModificationTimeHasBeenSet(false)
+DatasetGroupSummary::DatasetGroupSummary(JsonView jsonValue)
+  : DatasetGroupSummary()
 {
   *this = jsonValue;
 }

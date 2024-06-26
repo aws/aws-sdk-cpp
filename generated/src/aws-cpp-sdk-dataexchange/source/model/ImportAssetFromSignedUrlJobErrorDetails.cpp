@@ -23,8 +23,8 @@ ImportAssetFromSignedUrlJobErrorDetails::ImportAssetFromSignedUrlJobErrorDetails
 {
 }
 
-ImportAssetFromSignedUrlJobErrorDetails::ImportAssetFromSignedUrlJobErrorDetails(JsonView jsonValue) : 
-    m_assetNameHasBeenSet(false)
+ImportAssetFromSignedUrlJobErrorDetails::ImportAssetFromSignedUrlJobErrorDetails(JsonView jsonValue)
+  : ImportAssetFromSignedUrlJobErrorDetails()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ LatestInPipelineExecutionFilter::LatestInPipelineExecutionFilter() :
 {
 }
 
-LatestInPipelineExecutionFilter::LatestInPipelineExecutionFilter(JsonView jsonValue) : 
-    m_pipelineExecutionIdHasBeenSet(false),
-    m_startTimeRange(StartTimeRange::NOT_SET),
-    m_startTimeRangeHasBeenSet(false)
+LatestInPipelineExecutionFilter::LatestInPipelineExecutionFilter(JsonView jsonValue)
+  : LatestInPipelineExecutionFilter()
 {
   *this = jsonValue;
 }

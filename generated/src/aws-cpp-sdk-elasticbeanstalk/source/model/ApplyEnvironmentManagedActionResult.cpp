@@ -22,8 +22,8 @@ ApplyEnvironmentManagedActionResult::ApplyEnvironmentManagedActionResult() :
 {
 }
 
-ApplyEnvironmentManagedActionResult::ApplyEnvironmentManagedActionResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_actionType(ActionType::NOT_SET)
+ApplyEnvironmentManagedActionResult::ApplyEnvironmentManagedActionResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : ApplyEnvironmentManagedActionResult()
 {
   *this = result;
 }

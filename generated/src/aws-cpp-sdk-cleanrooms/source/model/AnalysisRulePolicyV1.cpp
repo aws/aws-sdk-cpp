@@ -25,10 +25,8 @@ AnalysisRulePolicyV1::AnalysisRulePolicyV1() :
 {
 }
 
-AnalysisRulePolicyV1::AnalysisRulePolicyV1(JsonView jsonValue) : 
-    m_listHasBeenSet(false),
-    m_aggregationHasBeenSet(false),
-    m_customHasBeenSet(false)
+AnalysisRulePolicyV1::AnalysisRulePolicyV1(JsonView jsonValue)
+  : AnalysisRulePolicyV1()
 {
   *this = jsonValue;
 }

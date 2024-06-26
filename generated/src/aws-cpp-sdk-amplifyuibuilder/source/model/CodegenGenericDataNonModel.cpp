@@ -23,8 +23,8 @@ CodegenGenericDataNonModel::CodegenGenericDataNonModel() :
 {
 }
 
-CodegenGenericDataNonModel::CodegenGenericDataNonModel(JsonView jsonValue) : 
-    m_fieldsHasBeenSet(false)
+CodegenGenericDataNonModel::CodegenGenericDataNonModel(JsonView jsonValue)
+  : CodegenGenericDataNonModel()
 {
   *this = jsonValue;
 }

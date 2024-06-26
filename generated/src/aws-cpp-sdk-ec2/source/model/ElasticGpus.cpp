@@ -32,15 +32,8 @@ ElasticGpus::ElasticGpus() :
 {
 }
 
-ElasticGpus::ElasticGpus(const XmlNode& xmlNode) : 
-    m_elasticGpuIdHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_elasticGpuTypeHasBeenSet(false),
-    m_elasticGpuHealthHasBeenSet(false),
-    m_elasticGpuState(ElasticGpuState::NOT_SET),
-    m_elasticGpuStateHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+ElasticGpus::ElasticGpus(const XmlNode& xmlNode)
+  : ElasticGpus()
 {
   *this = xmlNode;
 }

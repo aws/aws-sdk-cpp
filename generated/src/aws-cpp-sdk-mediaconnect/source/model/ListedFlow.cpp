@@ -31,16 +31,8 @@ ListedFlow::ListedFlow() :
 {
 }
 
-ListedFlow::ListedFlow(JsonView jsonValue) : 
-    m_availabilityZoneHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_flowArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_sourceType(SourceType::NOT_SET),
-    m_sourceTypeHasBeenSet(false),
-    m_status(Status::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_maintenanceHasBeenSet(false)
+ListedFlow::ListedFlow(JsonView jsonValue)
+  : ListedFlow()
 {
   *this = jsonValue;
 }

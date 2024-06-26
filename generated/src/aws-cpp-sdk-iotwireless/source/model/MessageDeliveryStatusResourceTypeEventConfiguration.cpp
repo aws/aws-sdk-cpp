@@ -23,8 +23,8 @@ MessageDeliveryStatusResourceTypeEventConfiguration::MessageDeliveryStatusResour
 {
 }
 
-MessageDeliveryStatusResourceTypeEventConfiguration::MessageDeliveryStatusResourceTypeEventConfiguration(JsonView jsonValue) : 
-    m_sidewalkHasBeenSet(false)
+MessageDeliveryStatusResourceTypeEventConfiguration::MessageDeliveryStatusResourceTypeEventConfiguration(JsonView jsonValue)
+  : MessageDeliveryStatusResourceTypeEventConfiguration()
 {
   *this = jsonValue;
 }

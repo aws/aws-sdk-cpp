@@ -28,13 +28,8 @@ RecordsIngested::RecordsIngested() :
 {
 }
 
-RecordsIngested::RecordsIngested(JsonView jsonValue) : 
-    m_total(0),
-    m_totalHasBeenSet(false),
-    m_memoryStore(0),
-    m_memoryStoreHasBeenSet(false),
-    m_magneticStore(0),
-    m_magneticStoreHasBeenSet(false)
+RecordsIngested::RecordsIngested(JsonView jsonValue)
+  : RecordsIngested()
 {
   *this = jsonValue;
 }

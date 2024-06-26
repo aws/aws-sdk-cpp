@@ -34,19 +34,8 @@ EvaluationFormVersionSummary::EvaluationFormVersionSummary() :
 {
 }
 
-EvaluationFormVersionSummary::EvaluationFormVersionSummary(JsonView jsonValue) : 
-    m_evaluationFormArnHasBeenSet(false),
-    m_evaluationFormIdHasBeenSet(false),
-    m_evaluationFormVersion(0),
-    m_evaluationFormVersionHasBeenSet(false),
-    m_locked(false),
-    m_lockedHasBeenSet(false),
-    m_status(EvaluationFormVersionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_lastModifiedByHasBeenSet(false)
+EvaluationFormVersionSummary::EvaluationFormVersionSummary(JsonView jsonValue)
+  : EvaluationFormVersionSummary()
 {
   *this = jsonValue;
 }

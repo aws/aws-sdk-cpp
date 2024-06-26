@@ -26,11 +26,8 @@ CheckCertificateRevocationStatusActions::CheckCertificateRevocationStatusActions
 {
 }
 
-CheckCertificateRevocationStatusActions::CheckCertificateRevocationStatusActions(JsonView jsonValue) : 
-    m_revokedStatusAction(RevocationCheckAction::NOT_SET),
-    m_revokedStatusActionHasBeenSet(false),
-    m_unknownStatusAction(RevocationCheckAction::NOT_SET),
-    m_unknownStatusActionHasBeenSet(false)
+CheckCertificateRevocationStatusActions::CheckCertificateRevocationStatusActions(JsonView jsonValue)
+  : CheckCertificateRevocationStatusActions()
 {
   *this = jsonValue;
 }

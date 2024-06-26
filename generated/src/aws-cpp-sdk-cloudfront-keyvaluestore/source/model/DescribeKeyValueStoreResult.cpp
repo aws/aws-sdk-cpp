@@ -23,9 +23,8 @@ DescribeKeyValueStoreResult::DescribeKeyValueStoreResult() :
 {
 }
 
-DescribeKeyValueStoreResult::DescribeKeyValueStoreResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_itemCount(0),
-    m_totalSizeInBytes(0)
+DescribeKeyValueStoreResult::DescribeKeyValueStoreResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeKeyValueStoreResult()
 {
   *this = result;
 }

@@ -22,8 +22,8 @@ AddApplicationCloudWatchLoggingOptionResult::AddApplicationCloudWatchLoggingOpti
 {
 }
 
-AddApplicationCloudWatchLoggingOptionResult::AddApplicationCloudWatchLoggingOptionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_applicationVersionId(0)
+AddApplicationCloudWatchLoggingOptionResult::AddApplicationCloudWatchLoggingOptionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : AddApplicationCloudWatchLoggingOptionResult()
 {
   *this = result;
 }

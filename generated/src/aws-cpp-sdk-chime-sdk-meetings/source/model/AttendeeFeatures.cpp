@@ -24,9 +24,8 @@ AttendeeFeatures::AttendeeFeatures() :
 {
 }
 
-AttendeeFeatures::AttendeeFeatures(JsonView jsonValue) : 
-    m_maxCount(0),
-    m_maxCountHasBeenSet(false)
+AttendeeFeatures::AttendeeFeatures(JsonView jsonValue)
+  : AttendeeFeatures()
 {
   *this = jsonValue;
 }

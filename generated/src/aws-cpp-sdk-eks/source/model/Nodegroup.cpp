@@ -49,34 +49,8 @@ Nodegroup::Nodegroup() :
 {
 }
 
-Nodegroup::Nodegroup(JsonView jsonValue) : 
-    m_nodegroupNameHasBeenSet(false),
-    m_nodegroupArnHasBeenSet(false),
-    m_clusterNameHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_releaseVersionHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_modifiedAtHasBeenSet(false),
-    m_status(NodegroupStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_capacityType(CapacityTypes::NOT_SET),
-    m_capacityTypeHasBeenSet(false),
-    m_scalingConfigHasBeenSet(false),
-    m_instanceTypesHasBeenSet(false),
-    m_subnetsHasBeenSet(false),
-    m_remoteAccessHasBeenSet(false),
-    m_amiType(AMITypes::NOT_SET),
-    m_amiTypeHasBeenSet(false),
-    m_nodeRoleHasBeenSet(false),
-    m_labelsHasBeenSet(false),
-    m_taintsHasBeenSet(false),
-    m_resourcesHasBeenSet(false),
-    m_diskSize(0),
-    m_diskSizeHasBeenSet(false),
-    m_healthHasBeenSet(false),
-    m_updateConfigHasBeenSet(false),
-    m_launchTemplateHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+Nodegroup::Nodegroup(JsonView jsonValue)
+  : Nodegroup()
 {
   *this = jsonValue;
 }

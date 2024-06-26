@@ -29,14 +29,8 @@ ServiceLevelObjective::ServiceLevelObjective() :
 {
 }
 
-ServiceLevelObjective::ServiceLevelObjective(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_sliHasBeenSet(false),
-    m_goalHasBeenSet(false)
+ServiceLevelObjective::ServiceLevelObjective(JsonView jsonValue)
+  : ServiceLevelObjective()
 {
   *this = jsonValue;
 }

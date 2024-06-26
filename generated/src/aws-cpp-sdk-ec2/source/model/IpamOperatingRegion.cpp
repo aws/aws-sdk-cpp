@@ -25,8 +25,8 @@ IpamOperatingRegion::IpamOperatingRegion() :
 {
 }
 
-IpamOperatingRegion::IpamOperatingRegion(const XmlNode& xmlNode) : 
-    m_regionNameHasBeenSet(false)
+IpamOperatingRegion::IpamOperatingRegion(const XmlNode& xmlNode)
+  : IpamOperatingRegion()
 {
   *this = xmlNode;
 }

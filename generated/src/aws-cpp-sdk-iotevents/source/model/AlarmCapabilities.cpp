@@ -24,9 +24,8 @@ AlarmCapabilities::AlarmCapabilities() :
 {
 }
 
-AlarmCapabilities::AlarmCapabilities(JsonView jsonValue) : 
-    m_initializationConfigurationHasBeenSet(false),
-    m_acknowledgeFlowHasBeenSet(false)
+AlarmCapabilities::AlarmCapabilities(JsonView jsonValue)
+  : AlarmCapabilities()
 {
   *this = jsonValue;
 }

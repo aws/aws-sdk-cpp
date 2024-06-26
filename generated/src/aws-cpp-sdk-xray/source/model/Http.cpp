@@ -28,13 +28,8 @@ Http::Http() :
 {
 }
 
-Http::Http(JsonView jsonValue) : 
-    m_httpURLHasBeenSet(false),
-    m_httpStatus(0),
-    m_httpStatusHasBeenSet(false),
-    m_httpMethodHasBeenSet(false),
-    m_userAgentHasBeenSet(false),
-    m_clientIpHasBeenSet(false)
+Http::Http(JsonView jsonValue)
+  : Http()
 {
   *this = jsonValue;
 }

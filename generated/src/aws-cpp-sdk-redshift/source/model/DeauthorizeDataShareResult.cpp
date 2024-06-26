@@ -22,8 +22,8 @@ DeauthorizeDataShareResult::DeauthorizeDataShareResult() :
 {
 }
 
-DeauthorizeDataShareResult::DeauthorizeDataShareResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_allowPubliclyAccessibleConsumers(false)
+DeauthorizeDataShareResult::DeauthorizeDataShareResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : DeauthorizeDataShareResult()
 {
   *this = result;
 }

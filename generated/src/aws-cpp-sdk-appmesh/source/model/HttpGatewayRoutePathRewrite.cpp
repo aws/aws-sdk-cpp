@@ -23,8 +23,8 @@ HttpGatewayRoutePathRewrite::HttpGatewayRoutePathRewrite() :
 {
 }
 
-HttpGatewayRoutePathRewrite::HttpGatewayRoutePathRewrite(JsonView jsonValue) : 
-    m_exactHasBeenSet(false)
+HttpGatewayRoutePathRewrite::HttpGatewayRoutePathRewrite(JsonView jsonValue)
+  : HttpGatewayRoutePathRewrite()
 {
   *this = jsonValue;
 }

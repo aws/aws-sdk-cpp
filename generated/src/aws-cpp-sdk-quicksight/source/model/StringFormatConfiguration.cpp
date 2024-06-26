@@ -24,9 +24,8 @@ StringFormatConfiguration::StringFormatConfiguration() :
 {
 }
 
-StringFormatConfiguration::StringFormatConfiguration(JsonView jsonValue) : 
-    m_nullValueFormatConfigurationHasBeenSet(false),
-    m_numericFormatConfigurationHasBeenSet(false)
+StringFormatConfiguration::StringFormatConfiguration(JsonView jsonValue)
+  : StringFormatConfiguration()
 {
   *this = jsonValue;
 }

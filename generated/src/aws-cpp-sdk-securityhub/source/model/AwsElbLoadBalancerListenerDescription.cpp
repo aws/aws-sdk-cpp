@@ -24,9 +24,8 @@ AwsElbLoadBalancerListenerDescription::AwsElbLoadBalancerListenerDescription() :
 {
 }
 
-AwsElbLoadBalancerListenerDescription::AwsElbLoadBalancerListenerDescription(JsonView jsonValue) : 
-    m_listenerHasBeenSet(false),
-    m_policyNamesHasBeenSet(false)
+AwsElbLoadBalancerListenerDescription::AwsElbLoadBalancerListenerDescription(JsonView jsonValue)
+  : AwsElbLoadBalancerListenerDescription()
 {
   *this = jsonValue;
 }

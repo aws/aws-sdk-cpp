@@ -23,9 +23,8 @@ GetMacieSessionResult::GetMacieSessionResult() :
 {
 }
 
-GetMacieSessionResult::GetMacieSessionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_findingPublishingFrequency(FindingPublishingFrequency::NOT_SET),
-    m_status(MacieStatus::NOT_SET)
+GetMacieSessionResult::GetMacieSessionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetMacieSessionResult()
 {
   *this = result;
 }

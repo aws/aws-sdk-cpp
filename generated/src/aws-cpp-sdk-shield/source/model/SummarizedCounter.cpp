@@ -32,17 +32,8 @@ SummarizedCounter::SummarizedCounter() :
 {
 }
 
-SummarizedCounter::SummarizedCounter(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_max(0.0),
-    m_maxHasBeenSet(false),
-    m_average(0.0),
-    m_averageHasBeenSet(false),
-    m_sum(0.0),
-    m_sumHasBeenSet(false),
-    m_n(0),
-    m_nHasBeenSet(false),
-    m_unitHasBeenSet(false)
+SummarizedCounter::SummarizedCounter(JsonView jsonValue)
+  : SummarizedCounter()
 {
   *this = jsonValue;
 }

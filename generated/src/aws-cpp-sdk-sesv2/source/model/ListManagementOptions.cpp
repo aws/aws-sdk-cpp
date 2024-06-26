@@ -24,9 +24,8 @@ ListManagementOptions::ListManagementOptions() :
 {
 }
 
-ListManagementOptions::ListManagementOptions(JsonView jsonValue) : 
-    m_contactListNameHasBeenSet(false),
-    m_topicNameHasBeenSet(false)
+ListManagementOptions::ListManagementOptions(JsonView jsonValue)
+  : ListManagementOptions()
 {
   *this = jsonValue;
 }

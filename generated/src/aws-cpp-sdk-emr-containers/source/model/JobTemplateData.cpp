@@ -28,13 +28,8 @@ JobTemplateData::JobTemplateData() :
 {
 }
 
-JobTemplateData::JobTemplateData(JsonView jsonValue) : 
-    m_executionRoleArnHasBeenSet(false),
-    m_releaseLabelHasBeenSet(false),
-    m_configurationOverridesHasBeenSet(false),
-    m_jobDriverHasBeenSet(false),
-    m_parameterConfigurationHasBeenSet(false),
-    m_jobTagsHasBeenSet(false)
+JobTemplateData::JobTemplateData(JsonView jsonValue)
+  : JobTemplateData()
 {
   *this = jsonValue;
 }

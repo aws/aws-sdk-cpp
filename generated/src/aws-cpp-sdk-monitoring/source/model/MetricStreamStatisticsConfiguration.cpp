@@ -26,9 +26,8 @@ MetricStreamStatisticsConfiguration::MetricStreamStatisticsConfiguration() :
 {
 }
 
-MetricStreamStatisticsConfiguration::MetricStreamStatisticsConfiguration(const XmlNode& xmlNode) : 
-    m_includeMetricsHasBeenSet(false),
-    m_additionalStatisticsHasBeenSet(false)
+MetricStreamStatisticsConfiguration::MetricStreamStatisticsConfiguration(const XmlNode& xmlNode)
+  : MetricStreamStatisticsConfiguration()
 {
   *this = xmlNode;
 }

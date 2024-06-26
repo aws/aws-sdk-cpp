@@ -32,17 +32,8 @@ DestinationDescription::DestinationDescription() :
 {
 }
 
-DestinationDescription::DestinationDescription(JsonView jsonValue) : 
-    m_destinationIdHasBeenSet(false),
-    m_s3DestinationDescriptionHasBeenSet(false),
-    m_extendedS3DestinationDescriptionHasBeenSet(false),
-    m_redshiftDestinationDescriptionHasBeenSet(false),
-    m_elasticsearchDestinationDescriptionHasBeenSet(false),
-    m_amazonopensearchserviceDestinationDescriptionHasBeenSet(false),
-    m_splunkDestinationDescriptionHasBeenSet(false),
-    m_httpEndpointDestinationDescriptionHasBeenSet(false),
-    m_snowflakeDestinationDescriptionHasBeenSet(false),
-    m_amazonOpenSearchServerlessDestinationDescriptionHasBeenSet(false)
+DestinationDescription::DestinationDescription(JsonView jsonValue)
+  : DestinationDescription()
 {
   *this = jsonValue;
 }

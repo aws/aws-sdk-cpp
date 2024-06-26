@@ -30,13 +30,8 @@ InstanceTopology::InstanceTopology() :
 {
 }
 
-InstanceTopology::InstanceTopology(const XmlNode& xmlNode) : 
-    m_instanceIdHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_groupNameHasBeenSet(false),
-    m_networkNodesHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_zoneIdHasBeenSet(false)
+InstanceTopology::InstanceTopology(const XmlNode& xmlNode)
+  : InstanceTopology()
 {
   *this = xmlNode;
 }

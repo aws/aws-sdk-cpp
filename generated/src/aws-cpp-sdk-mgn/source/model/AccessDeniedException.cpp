@@ -24,9 +24,8 @@ AccessDeniedException::AccessDeniedException() :
 {
 }
 
-AccessDeniedException::AccessDeniedException(JsonView jsonValue) : 
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+AccessDeniedException::AccessDeniedException(JsonView jsonValue)
+  : AccessDeniedException()
 {
   *this = jsonValue;
 }

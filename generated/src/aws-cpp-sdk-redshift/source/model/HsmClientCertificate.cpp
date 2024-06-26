@@ -27,10 +27,8 @@ HsmClientCertificate::HsmClientCertificate() :
 {
 }
 
-HsmClientCertificate::HsmClientCertificate(const XmlNode& xmlNode) : 
-    m_hsmClientCertificateIdentifierHasBeenSet(false),
-    m_hsmClientCertificatePublicKeyHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+HsmClientCertificate::HsmClientCertificate(const XmlNode& xmlNode)
+  : HsmClientCertificate()
 {
   *this = xmlNode;
 }

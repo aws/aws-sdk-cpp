@@ -25,10 +25,8 @@ DiscoveryJobListEntry::DiscoveryJobListEntry() :
 {
 }
 
-DiscoveryJobListEntry::DiscoveryJobListEntry(JsonView jsonValue) : 
-    m_discoveryJobArnHasBeenSet(false),
-    m_status(DiscoveryJobStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+DiscoveryJobListEntry::DiscoveryJobListEntry(JsonView jsonValue)
+  : DiscoveryJobListEntry()
 {
   *this = jsonValue;
 }

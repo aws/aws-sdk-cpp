@@ -26,12 +26,8 @@ ReleasePhoneNumberResult::ReleasePhoneNumberResult() :
 {
 }
 
-ReleasePhoneNumberResult::ReleasePhoneNumberResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(NumberStatus::NOT_SET),
-    m_messageType(MessageType::NOT_SET),
-    m_numberType(NumberType::NOT_SET),
-    m_twoWayEnabled(false),
-    m_selfManagedOptOutsEnabled(false)
+ReleasePhoneNumberResult::ReleasePhoneNumberResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ReleasePhoneNumberResult()
 {
   *this = result;
 }

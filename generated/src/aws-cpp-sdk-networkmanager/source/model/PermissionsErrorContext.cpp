@@ -23,8 +23,8 @@ PermissionsErrorContext::PermissionsErrorContext() :
 {
 }
 
-PermissionsErrorContext::PermissionsErrorContext(JsonView jsonValue) : 
-    m_missingPermissionHasBeenSet(false)
+PermissionsErrorContext::PermissionsErrorContext(JsonView jsonValue)
+  : PermissionsErrorContext()
 {
   *this = jsonValue;
 }

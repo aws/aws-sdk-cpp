@@ -25,10 +25,8 @@ TableFieldOptions::TableFieldOptions() :
 {
 }
 
-TableFieldOptions::TableFieldOptions(JsonView jsonValue) : 
-    m_selectedFieldOptionsHasBeenSet(false),
-    m_orderHasBeenSet(false),
-    m_pinnedFieldOptionsHasBeenSet(false)
+TableFieldOptions::TableFieldOptions(JsonView jsonValue)
+  : TableFieldOptions()
 {
   *this = jsonValue;
 }

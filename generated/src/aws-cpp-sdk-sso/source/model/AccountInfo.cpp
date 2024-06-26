@@ -25,10 +25,8 @@ AccountInfo::AccountInfo() :
 {
 }
 
-AccountInfo::AccountInfo(JsonView jsonValue) : 
-    m_accountIdHasBeenSet(false),
-    m_accountNameHasBeenSet(false),
-    m_emailAddressHasBeenSet(false)
+AccountInfo::AccountInfo(JsonView jsonValue)
+  : AccountInfo()
 {
   *this = jsonValue;
 }

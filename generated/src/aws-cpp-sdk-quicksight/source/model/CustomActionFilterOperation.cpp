@@ -24,9 +24,8 @@ CustomActionFilterOperation::CustomActionFilterOperation() :
 {
 }
 
-CustomActionFilterOperation::CustomActionFilterOperation(JsonView jsonValue) : 
-    m_selectedFieldsConfigurationHasBeenSet(false),
-    m_targetVisualsConfigurationHasBeenSet(false)
+CustomActionFilterOperation::CustomActionFilterOperation(JsonView jsonValue)
+  : CustomActionFilterOperation()
 {
   *this = jsonValue;
 }

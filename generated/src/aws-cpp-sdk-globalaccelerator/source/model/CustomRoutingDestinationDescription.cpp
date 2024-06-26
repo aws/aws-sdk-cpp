@@ -27,12 +27,8 @@ CustomRoutingDestinationDescription::CustomRoutingDestinationDescription() :
 {
 }
 
-CustomRoutingDestinationDescription::CustomRoutingDestinationDescription(JsonView jsonValue) : 
-    m_fromPort(0),
-    m_fromPortHasBeenSet(false),
-    m_toPort(0),
-    m_toPortHasBeenSet(false),
-    m_protocolsHasBeenSet(false)
+CustomRoutingDestinationDescription::CustomRoutingDestinationDescription(JsonView jsonValue)
+  : CustomRoutingDestinationDescription()
 {
   *this = jsonValue;
 }

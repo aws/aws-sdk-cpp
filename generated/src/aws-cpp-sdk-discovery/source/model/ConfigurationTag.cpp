@@ -28,13 +28,8 @@ ConfigurationTag::ConfigurationTag() :
 {
 }
 
-ConfigurationTag::ConfigurationTag(JsonView jsonValue) : 
-    m_configurationType(ConfigurationItemType::NOT_SET),
-    m_configurationTypeHasBeenSet(false),
-    m_configurationIdHasBeenSet(false),
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_timeOfCreationHasBeenSet(false)
+ConfigurationTag::ConfigurationTag(JsonView jsonValue)
+  : ConfigurationTag()
 {
   *this = jsonValue;
 }

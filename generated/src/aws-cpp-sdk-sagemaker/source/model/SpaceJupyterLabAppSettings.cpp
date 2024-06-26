@@ -24,9 +24,8 @@ SpaceJupyterLabAppSettings::SpaceJupyterLabAppSettings() :
 {
 }
 
-SpaceJupyterLabAppSettings::SpaceJupyterLabAppSettings(JsonView jsonValue) : 
-    m_defaultResourceSpecHasBeenSet(false),
-    m_codeRepositoriesHasBeenSet(false)
+SpaceJupyterLabAppSettings::SpaceJupyterLabAppSettings(JsonView jsonValue)
+  : SpaceJupyterLabAppSettings()
 {
   *this = jsonValue;
 }

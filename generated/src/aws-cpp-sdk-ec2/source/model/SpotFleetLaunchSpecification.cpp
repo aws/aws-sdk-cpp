@@ -46,29 +46,8 @@ SpotFleetLaunchSpecification::SpotFleetLaunchSpecification() :
 {
 }
 
-SpotFleetLaunchSpecification::SpotFleetLaunchSpecification(const XmlNode& xmlNode) : 
-    m_securityGroupsHasBeenSet(false),
-    m_addressingTypeHasBeenSet(false),
-    m_blockDeviceMappingsHasBeenSet(false),
-    m_ebsOptimized(false),
-    m_ebsOptimizedHasBeenSet(false),
-    m_iamInstanceProfileHasBeenSet(false),
-    m_imageIdHasBeenSet(false),
-    m_instanceType(InstanceType::NOT_SET),
-    m_instanceTypeHasBeenSet(false),
-    m_kernelIdHasBeenSet(false),
-    m_keyNameHasBeenSet(false),
-    m_monitoringHasBeenSet(false),
-    m_networkInterfacesHasBeenSet(false),
-    m_placementHasBeenSet(false),
-    m_ramdiskIdHasBeenSet(false),
-    m_spotPriceHasBeenSet(false),
-    m_subnetIdHasBeenSet(false),
-    m_userDataHasBeenSet(false),
-    m_weightedCapacity(0.0),
-    m_weightedCapacityHasBeenSet(false),
-    m_tagSpecificationsHasBeenSet(false),
-    m_instanceRequirementsHasBeenSet(false)
+SpotFleetLaunchSpecification::SpotFleetLaunchSpecification(const XmlNode& xmlNode)
+  : SpotFleetLaunchSpecification()
 {
   *this = xmlNode;
 }

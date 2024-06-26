@@ -27,12 +27,8 @@ Criterion::Criterion() :
 {
 }
 
-Criterion::Criterion(JsonView jsonValue) : 
-    m_eqHasBeenSet(false),
-    m_neqHasBeenSet(false),
-    m_containsHasBeenSet(false),
-    m_exists(false),
-    m_existsHasBeenSet(false)
+Criterion::Criterion(JsonView jsonValue)
+  : Criterion()
 {
   *this = jsonValue;
 }

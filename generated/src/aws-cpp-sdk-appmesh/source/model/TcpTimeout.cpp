@@ -23,8 +23,8 @@ TcpTimeout::TcpTimeout() :
 {
 }
 
-TcpTimeout::TcpTimeout(JsonView jsonValue) : 
-    m_idleHasBeenSet(false)
+TcpTimeout::TcpTimeout(JsonView jsonValue)
+  : TcpTimeout()
 {
   *this = jsonValue;
 }

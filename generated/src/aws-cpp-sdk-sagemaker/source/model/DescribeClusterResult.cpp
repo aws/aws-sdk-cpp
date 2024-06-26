@@ -22,8 +22,8 @@ DescribeClusterResult::DescribeClusterResult() :
 {
 }
 
-DescribeClusterResult::DescribeClusterResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_clusterStatus(ClusterStatus::NOT_SET)
+DescribeClusterResult::DescribeClusterResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeClusterResult()
 {
   *this = result;
 }

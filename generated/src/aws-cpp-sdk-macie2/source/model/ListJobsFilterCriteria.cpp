@@ -24,9 +24,8 @@ ListJobsFilterCriteria::ListJobsFilterCriteria() :
 {
 }
 
-ListJobsFilterCriteria::ListJobsFilterCriteria(JsonView jsonValue) : 
-    m_excludesHasBeenSet(false),
-    m_includesHasBeenSet(false)
+ListJobsFilterCriteria::ListJobsFilterCriteria(JsonView jsonValue)
+  : ListJobsFilterCriteria()
 {
   *this = jsonValue;
 }

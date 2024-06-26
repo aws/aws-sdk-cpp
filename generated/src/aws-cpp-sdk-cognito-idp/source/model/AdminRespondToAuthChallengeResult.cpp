@@ -22,8 +22,8 @@ AdminRespondToAuthChallengeResult::AdminRespondToAuthChallengeResult() :
 {
 }
 
-AdminRespondToAuthChallengeResult::AdminRespondToAuthChallengeResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_challengeName(ChallengeNameType::NOT_SET)
+AdminRespondToAuthChallengeResult::AdminRespondToAuthChallengeResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : AdminRespondToAuthChallengeResult()
 {
   *this = result;
 }

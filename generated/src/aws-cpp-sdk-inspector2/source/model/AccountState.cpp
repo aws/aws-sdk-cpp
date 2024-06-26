@@ -25,10 +25,8 @@ AccountState::AccountState() :
 {
 }
 
-AccountState::AccountState(JsonView jsonValue) : 
-    m_accountIdHasBeenSet(false),
-    m_resourceStateHasBeenSet(false),
-    m_stateHasBeenSet(false)
+AccountState::AccountState(JsonView jsonValue)
+  : AccountState()
 {
   *this = jsonValue;
 }

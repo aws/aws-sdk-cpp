@@ -25,10 +25,8 @@ UnsupportedLanguagePairException::UnsupportedLanguagePairException() :
 {
 }
 
-UnsupportedLanguagePairException::UnsupportedLanguagePairException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_sourceLanguageCodeHasBeenSet(false),
-    m_targetLanguageCodeHasBeenSet(false)
+UnsupportedLanguagePairException::UnsupportedLanguagePairException(JsonView jsonValue)
+  : UnsupportedLanguagePairException()
 {
   *this = jsonValue;
 }

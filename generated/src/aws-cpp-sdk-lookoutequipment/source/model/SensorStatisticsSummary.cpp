@@ -36,21 +36,8 @@ SensorStatisticsSummary::SensorStatisticsSummary() :
 {
 }
 
-SensorStatisticsSummary::SensorStatisticsSummary(JsonView jsonValue) : 
-    m_componentNameHasBeenSet(false),
-    m_sensorNameHasBeenSet(false),
-    m_dataExists(false),
-    m_dataExistsHasBeenSet(false),
-    m_missingValuesHasBeenSet(false),
-    m_invalidValuesHasBeenSet(false),
-    m_invalidDateEntriesHasBeenSet(false),
-    m_duplicateTimestampsHasBeenSet(false),
-    m_categoricalValuesHasBeenSet(false),
-    m_multipleOperatingModesHasBeenSet(false),
-    m_largeTimestampGapsHasBeenSet(false),
-    m_monotonicValuesHasBeenSet(false),
-    m_dataStartTimeHasBeenSet(false),
-    m_dataEndTimeHasBeenSet(false)
+SensorStatisticsSummary::SensorStatisticsSummary(JsonView jsonValue)
+  : SensorStatisticsSummary()
 {
   *this = jsonValue;
 }

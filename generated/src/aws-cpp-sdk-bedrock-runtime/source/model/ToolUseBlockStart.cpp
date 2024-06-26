@@ -24,9 +24,8 @@ ToolUseBlockStart::ToolUseBlockStart() :
 {
 }
 
-ToolUseBlockStart::ToolUseBlockStart(JsonView jsonValue) : 
-    m_toolUseIdHasBeenSet(false),
-    m_nameHasBeenSet(false)
+ToolUseBlockStart::ToolUseBlockStart(JsonView jsonValue)
+  : ToolUseBlockStart()
 {
   *this = jsonValue;
 }

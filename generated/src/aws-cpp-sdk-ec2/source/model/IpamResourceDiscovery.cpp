@@ -35,18 +35,8 @@ IpamResourceDiscovery::IpamResourceDiscovery() :
 {
 }
 
-IpamResourceDiscovery::IpamResourceDiscovery(const XmlNode& xmlNode) : 
-    m_ownerIdHasBeenSet(false),
-    m_ipamResourceDiscoveryIdHasBeenSet(false),
-    m_ipamResourceDiscoveryArnHasBeenSet(false),
-    m_ipamResourceDiscoveryRegionHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_operatingRegionsHasBeenSet(false),
-    m_isDefault(false),
-    m_isDefaultHasBeenSet(false),
-    m_state(IpamResourceDiscoveryState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+IpamResourceDiscovery::IpamResourceDiscovery(const XmlNode& xmlNode)
+  : IpamResourceDiscovery()
 {
   *this = xmlNode;
 }

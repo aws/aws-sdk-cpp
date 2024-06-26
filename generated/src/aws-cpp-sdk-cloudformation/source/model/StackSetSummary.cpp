@@ -36,19 +36,8 @@ StackSetSummary::StackSetSummary() :
 {
 }
 
-StackSetSummary::StackSetSummary(const XmlNode& xmlNode) : 
-    m_stackSetNameHasBeenSet(false),
-    m_stackSetIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_status(StackSetStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_autoDeploymentHasBeenSet(false),
-    m_permissionModel(PermissionModels::NOT_SET),
-    m_permissionModelHasBeenSet(false),
-    m_driftStatus(StackDriftStatus::NOT_SET),
-    m_driftStatusHasBeenSet(false),
-    m_lastDriftCheckTimestampHasBeenSet(false),
-    m_managedExecutionHasBeenSet(false)
+StackSetSummary::StackSetSummary(const XmlNode& xmlNode)
+  : StackSetSummary()
 {
   *this = xmlNode;
 }

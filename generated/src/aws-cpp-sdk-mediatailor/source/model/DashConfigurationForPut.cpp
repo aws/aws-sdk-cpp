@@ -25,10 +25,8 @@ DashConfigurationForPut::DashConfigurationForPut() :
 {
 }
 
-DashConfigurationForPut::DashConfigurationForPut(JsonView jsonValue) : 
-    m_mpdLocationHasBeenSet(false),
-    m_originManifestType(OriginManifestType::NOT_SET),
-    m_originManifestTypeHasBeenSet(false)
+DashConfigurationForPut::DashConfigurationForPut(JsonView jsonValue)
+  : DashConfigurationForPut()
 {
   *this = jsonValue;
 }

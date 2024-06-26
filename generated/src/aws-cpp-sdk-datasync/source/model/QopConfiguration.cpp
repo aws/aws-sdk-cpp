@@ -26,11 +26,8 @@ QopConfiguration::QopConfiguration() :
 {
 }
 
-QopConfiguration::QopConfiguration(JsonView jsonValue) : 
-    m_rpcProtection(HdfsRpcProtection::NOT_SET),
-    m_rpcProtectionHasBeenSet(false),
-    m_dataTransferProtection(HdfsDataTransferProtection::NOT_SET),
-    m_dataTransferProtectionHasBeenSet(false)
+QopConfiguration::QopConfiguration(JsonView jsonValue)
+  : QopConfiguration()
 {
   *this = jsonValue;
 }

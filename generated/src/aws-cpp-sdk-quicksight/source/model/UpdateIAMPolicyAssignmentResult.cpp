@@ -23,9 +23,8 @@ UpdateIAMPolicyAssignmentResult::UpdateIAMPolicyAssignmentResult() :
 {
 }
 
-UpdateIAMPolicyAssignmentResult::UpdateIAMPolicyAssignmentResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_assignmentStatus(AssignmentStatus::NOT_SET),
-    m_status(0)
+UpdateIAMPolicyAssignmentResult::UpdateIAMPolicyAssignmentResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateIAMPolicyAssignmentResult()
 {
   *this = result;
 }

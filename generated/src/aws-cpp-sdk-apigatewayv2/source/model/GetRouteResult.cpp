@@ -24,10 +24,8 @@ GetRouteResult::GetRouteResult() :
 {
 }
 
-GetRouteResult::GetRouteResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_apiGatewayManaged(false),
-    m_apiKeyRequired(false),
-    m_authorizationType(AuthorizationType::NOT_SET)
+GetRouteResult::GetRouteResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetRouteResult()
 {
   *this = result;
 }

@@ -22,8 +22,8 @@ CreateScalingPlanResult::CreateScalingPlanResult() :
 {
 }
 
-CreateScalingPlanResult::CreateScalingPlanResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_scalingPlanVersion(0)
+CreateScalingPlanResult::CreateScalingPlanResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateScalingPlanResult()
 {
   *this = result;
 }

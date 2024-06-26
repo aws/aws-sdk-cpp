@@ -41,26 +41,8 @@ ConnectorProfileProperties::ConnectorProfileProperties() :
 {
 }
 
-ConnectorProfileProperties::ConnectorProfileProperties(JsonView jsonValue) : 
-    m_amplitudeHasBeenSet(false),
-    m_datadogHasBeenSet(false),
-    m_dynatraceHasBeenSet(false),
-    m_googleAnalyticsHasBeenSet(false),
-    m_honeycodeHasBeenSet(false),
-    m_inforNexusHasBeenSet(false),
-    m_marketoHasBeenSet(false),
-    m_redshiftHasBeenSet(false),
-    m_salesforceHasBeenSet(false),
-    m_serviceNowHasBeenSet(false),
-    m_singularHasBeenSet(false),
-    m_slackHasBeenSet(false),
-    m_snowflakeHasBeenSet(false),
-    m_trendmicroHasBeenSet(false),
-    m_veevaHasBeenSet(false),
-    m_zendeskHasBeenSet(false),
-    m_sAPODataHasBeenSet(false),
-    m_customConnectorHasBeenSet(false),
-    m_pardotHasBeenSet(false)
+ConnectorProfileProperties::ConnectorProfileProperties(JsonView jsonValue)
+  : ConnectorProfileProperties()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ HyperParameterTuningJobCompletionDetails::HyperParameterTuningJobCompletionDetai
 {
 }
 
-HyperParameterTuningJobCompletionDetails::HyperParameterTuningJobCompletionDetails(JsonView jsonValue) : 
-    m_numberOfTrainingJobsObjectiveNotImproving(0),
-    m_numberOfTrainingJobsObjectiveNotImprovingHasBeenSet(false),
-    m_convergenceDetectedTimeHasBeenSet(false)
+HyperParameterTuningJobCompletionDetails::HyperParameterTuningJobCompletionDetails(JsonView jsonValue)
+  : HyperParameterTuningJobCompletionDetails()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ ExasolParameters::ExasolParameters() :
 {
 }
 
-ExasolParameters::ExasolParameters(JsonView jsonValue) : 
-    m_hostHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false)
+ExasolParameters::ExasolParameters(JsonView jsonValue)
+  : ExasolParameters()
 {
   *this = jsonValue;
 }

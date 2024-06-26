@@ -25,10 +25,8 @@ ManagedRuleGroupConfig::ManagedRuleGroupConfig() :
 {
 }
 
-ManagedRuleGroupConfig::ManagedRuleGroupConfig(JsonView jsonValue) : 
-    m_aWSManagedRulesBotControlRuleSetHasBeenSet(false),
-    m_aWSManagedRulesATPRuleSetHasBeenSet(false),
-    m_aWSManagedRulesACFPRuleSetHasBeenSet(false)
+ManagedRuleGroupConfig::ManagedRuleGroupConfig(JsonView jsonValue)
+  : ManagedRuleGroupConfig()
 {
   *this = jsonValue;
 }

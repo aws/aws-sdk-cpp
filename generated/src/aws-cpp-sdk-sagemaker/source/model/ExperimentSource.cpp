@@ -24,9 +24,8 @@ ExperimentSource::ExperimentSource() :
 {
 }
 
-ExperimentSource::ExperimentSource(JsonView jsonValue) : 
-    m_sourceArnHasBeenSet(false),
-    m_sourceTypeHasBeenSet(false)
+ExperimentSource::ExperimentSource(JsonView jsonValue)
+  : ExperimentSource()
 {
   *this = jsonValue;
 }

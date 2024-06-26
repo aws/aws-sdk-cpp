@@ -26,11 +26,8 @@ EC2TagFilter::EC2TagFilter() :
 {
 }
 
-EC2TagFilter::EC2TagFilter(JsonView jsonValue) : 
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_type(EC2TagFilterType::NOT_SET),
-    m_typeHasBeenSet(false)
+EC2TagFilter::EC2TagFilter(JsonView jsonValue)
+  : EC2TagFilter()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ S3Detail::S3Detail() :
 {
 }
 
-S3Detail::S3Detail(JsonView jsonValue) : 
-    m_recordingPrefixHasBeenSet(false)
+S3Detail::S3Detail(JsonView jsonValue)
+  : S3Detail()
 {
   *this = jsonValue;
 }

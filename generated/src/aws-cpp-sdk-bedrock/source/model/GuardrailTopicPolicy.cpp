@@ -23,8 +23,8 @@ GuardrailTopicPolicy::GuardrailTopicPolicy() :
 {
 }
 
-GuardrailTopicPolicy::GuardrailTopicPolicy(JsonView jsonValue) : 
-    m_topicsHasBeenSet(false)
+GuardrailTopicPolicy::GuardrailTopicPolicy(JsonView jsonValue)
+  : GuardrailTopicPolicy()
 {
   *this = jsonValue;
 }

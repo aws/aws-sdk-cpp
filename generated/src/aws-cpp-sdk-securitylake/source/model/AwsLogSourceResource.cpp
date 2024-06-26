@@ -25,10 +25,8 @@ AwsLogSourceResource::AwsLogSourceResource() :
 {
 }
 
-AwsLogSourceResource::AwsLogSourceResource(JsonView jsonValue) : 
-    m_sourceName(AwsLogSourceName::NOT_SET),
-    m_sourceNameHasBeenSet(false),
-    m_sourceVersionHasBeenSet(false)
+AwsLogSourceResource::AwsLogSourceResource(JsonView jsonValue)
+  : AwsLogSourceResource()
 {
   *this = jsonValue;
 }

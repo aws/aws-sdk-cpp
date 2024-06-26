@@ -25,10 +25,8 @@ AutoScalingGroup::AutoScalingGroup() :
 {
 }
 
-AutoScalingGroup::AutoScalingGroup(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_hookHasBeenSet(false),
-    m_terminationHookHasBeenSet(false)
+AutoScalingGroup::AutoScalingGroup(JsonView jsonValue)
+  : AutoScalingGroup()
 {
   *this = jsonValue;
 }

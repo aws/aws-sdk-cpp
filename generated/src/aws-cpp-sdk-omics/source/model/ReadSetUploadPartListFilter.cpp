@@ -24,9 +24,8 @@ ReadSetUploadPartListFilter::ReadSetUploadPartListFilter() :
 {
 }
 
-ReadSetUploadPartListFilter::ReadSetUploadPartListFilter(JsonView jsonValue) : 
-    m_createdAfterHasBeenSet(false),
-    m_createdBeforeHasBeenSet(false)
+ReadSetUploadPartListFilter::ReadSetUploadPartListFilter(JsonView jsonValue)
+  : ReadSetUploadPartListFilter()
 {
   *this = jsonValue;
 }

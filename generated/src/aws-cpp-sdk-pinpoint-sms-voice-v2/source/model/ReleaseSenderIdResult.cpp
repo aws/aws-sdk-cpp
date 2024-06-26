@@ -22,8 +22,8 @@ ReleaseSenderIdResult::ReleaseSenderIdResult() :
 {
 }
 
-ReleaseSenderIdResult::ReleaseSenderIdResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_registered(false)
+ReleaseSenderIdResult::ReleaseSenderIdResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ReleaseSenderIdResult()
 {
   *this = result;
 }

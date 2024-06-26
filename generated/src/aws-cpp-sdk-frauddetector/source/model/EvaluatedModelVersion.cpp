@@ -26,11 +26,8 @@ EvaluatedModelVersion::EvaluatedModelVersion() :
 {
 }
 
-EvaluatedModelVersion::EvaluatedModelVersion(JsonView jsonValue) : 
-    m_modelIdHasBeenSet(false),
-    m_modelVersionHasBeenSet(false),
-    m_modelTypeHasBeenSet(false),
-    m_evaluationsHasBeenSet(false)
+EvaluatedModelVersion::EvaluatedModelVersion(JsonView jsonValue)
+  : EvaluatedModelVersion()
 {
   *this = jsonValue;
 }

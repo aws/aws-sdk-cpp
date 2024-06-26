@@ -22,8 +22,8 @@ ListAnswersResult::ListAnswersResult() :
 {
 }
 
-ListAnswersResult::ListAnswersResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_milestoneNumber(0)
+ListAnswersResult::ListAnswersResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ListAnswersResult()
 {
   *this = result;
 }

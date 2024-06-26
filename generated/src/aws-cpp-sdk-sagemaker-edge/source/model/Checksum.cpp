@@ -25,10 +25,8 @@ Checksum::Checksum() :
 {
 }
 
-Checksum::Checksum(JsonView jsonValue) : 
-    m_type(ChecksumType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_sumHasBeenSet(false)
+Checksum::Checksum(JsonView jsonValue)
+  : Checksum()
 {
   *this = jsonValue;
 }

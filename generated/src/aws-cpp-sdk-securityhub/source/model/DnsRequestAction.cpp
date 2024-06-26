@@ -26,11 +26,8 @@ DnsRequestAction::DnsRequestAction() :
 {
 }
 
-DnsRequestAction::DnsRequestAction(JsonView jsonValue) : 
-    m_domainHasBeenSet(false),
-    m_protocolHasBeenSet(false),
-    m_blocked(false),
-    m_blockedHasBeenSet(false)
+DnsRequestAction::DnsRequestAction(JsonView jsonValue)
+  : DnsRequestAction()
 {
   *this = jsonValue;
 }

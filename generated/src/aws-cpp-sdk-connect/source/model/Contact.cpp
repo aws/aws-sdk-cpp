@@ -61,46 +61,8 @@ Contact::Contact() :
 {
 }
 
-Contact::Contact(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_initialContactIdHasBeenSet(false),
-    m_previousContactIdHasBeenSet(false),
-    m_initiationMethod(ContactInitiationMethod::NOT_SET),
-    m_initiationMethodHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_channel(Channel::NOT_SET),
-    m_channelHasBeenSet(false),
-    m_queueInfoHasBeenSet(false),
-    m_agentInfoHasBeenSet(false),
-    m_initiationTimestampHasBeenSet(false),
-    m_disconnectTimestampHasBeenSet(false),
-    m_lastUpdateTimestampHasBeenSet(false),
-    m_lastPausedTimestampHasBeenSet(false),
-    m_lastResumedTimestampHasBeenSet(false),
-    m_totalPauseCount(0),
-    m_totalPauseCountHasBeenSet(false),
-    m_totalPauseDurationInSeconds(0),
-    m_totalPauseDurationInSecondsHasBeenSet(false),
-    m_scheduledTimestampHasBeenSet(false),
-    m_relatedContactIdHasBeenSet(false),
-    m_wisdomInfoHasBeenSet(false),
-    m_queueTimeAdjustmentSeconds(0),
-    m_queueTimeAdjustmentSecondsHasBeenSet(false),
-    m_queuePriority(0),
-    m_queuePriorityHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_connectedToSystemTimestampHasBeenSet(false),
-    m_routingCriteriaHasBeenSet(false),
-    m_customerHasBeenSet(false),
-    m_campaignHasBeenSet(false),
-    m_answeringMachineDetectionStatus(AnsweringMachineDetectionStatus::NOT_SET),
-    m_answeringMachineDetectionStatusHasBeenSet(false),
-    m_customerVoiceActivityHasBeenSet(false),
-    m_qualityMetricsHasBeenSet(false),
-    m_disconnectDetailsHasBeenSet(false),
-    m_segmentAttributesHasBeenSet(false)
+Contact::Contact(JsonView jsonValue)
+  : Contact()
 {
   *this = jsonValue;
 }

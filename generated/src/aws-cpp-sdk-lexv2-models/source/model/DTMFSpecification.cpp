@@ -28,13 +28,8 @@ DTMFSpecification::DTMFSpecification() :
 {
 }
 
-DTMFSpecification::DTMFSpecification(JsonView jsonValue) : 
-    m_maxLength(0),
-    m_maxLengthHasBeenSet(false),
-    m_endTimeoutMs(0),
-    m_endTimeoutMsHasBeenSet(false),
-    m_deletionCharacterHasBeenSet(false),
-    m_endCharacterHasBeenSet(false)
+DTMFSpecification::DTMFSpecification(JsonView jsonValue)
+  : DTMFSpecification()
 {
   *this = jsonValue;
 }

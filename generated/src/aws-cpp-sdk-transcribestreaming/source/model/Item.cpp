@@ -36,21 +36,8 @@ Item::Item() :
 {
 }
 
-Item::Item(JsonView jsonValue) : 
-    m_startTime(0.0),
-    m_startTimeHasBeenSet(false),
-    m_endTime(0.0),
-    m_endTimeHasBeenSet(false),
-    m_type(ItemType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_contentHasBeenSet(false),
-    m_vocabularyFilterMatch(false),
-    m_vocabularyFilterMatchHasBeenSet(false),
-    m_speakerHasBeenSet(false),
-    m_confidence(0.0),
-    m_confidenceHasBeenSet(false),
-    m_stable(false),
-    m_stableHasBeenSet(false)
+Item::Item(JsonView jsonValue)
+  : Item()
 {
   *this = jsonValue;
 }

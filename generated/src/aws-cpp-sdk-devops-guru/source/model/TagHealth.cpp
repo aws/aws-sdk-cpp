@@ -27,12 +27,8 @@ TagHealth::TagHealth() :
 {
 }
 
-TagHealth::TagHealth(JsonView jsonValue) : 
-    m_appBoundaryKeyHasBeenSet(false),
-    m_tagValueHasBeenSet(false),
-    m_insightHasBeenSet(false),
-    m_analyzedResourceCount(0),
-    m_analyzedResourceCountHasBeenSet(false)
+TagHealth::TagHealth(JsonView jsonValue)
+  : TagHealth()
 {
   *this = jsonValue;
 }

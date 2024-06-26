@@ -25,10 +25,8 @@ S3ReferenceDataSource::S3ReferenceDataSource() :
 {
 }
 
-S3ReferenceDataSource::S3ReferenceDataSource(JsonView jsonValue) : 
-    m_bucketARNHasBeenSet(false),
-    m_fileKeyHasBeenSet(false),
-    m_referenceRoleARNHasBeenSet(false)
+S3ReferenceDataSource::S3ReferenceDataSource(JsonView jsonValue)
+  : S3ReferenceDataSource()
 {
   *this = jsonValue;
 }

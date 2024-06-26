@@ -23,8 +23,8 @@ RedshiftSelfGrantStatusOutput::RedshiftSelfGrantStatusOutput() :
 {
 }
 
-RedshiftSelfGrantStatusOutput::RedshiftSelfGrantStatusOutput(JsonView jsonValue) : 
-    m_selfGrantStatusDetailsHasBeenSet(false)
+RedshiftSelfGrantStatusOutput::RedshiftSelfGrantStatusOutput(JsonView jsonValue)
+  : RedshiftSelfGrantStatusOutput()
 {
   *this = jsonValue;
 }

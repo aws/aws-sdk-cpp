@@ -27,10 +27,8 @@ TaggedResource::TaggedResource() :
 {
 }
 
-TaggedResource::TaggedResource(const XmlNode& xmlNode) : 
-    m_tagHasBeenSet(false),
-    m_resourceNameHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false)
+TaggedResource::TaggedResource(const XmlNode& xmlNode)
+  : TaggedResource()
 {
   *this = xmlNode;
 }

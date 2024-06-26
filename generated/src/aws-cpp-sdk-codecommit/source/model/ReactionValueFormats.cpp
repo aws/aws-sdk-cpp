@@ -25,10 +25,8 @@ ReactionValueFormats::ReactionValueFormats() :
 {
 }
 
-ReactionValueFormats::ReactionValueFormats(JsonView jsonValue) : 
-    m_emojiHasBeenSet(false),
-    m_shortCodeHasBeenSet(false),
-    m_unicodeHasBeenSet(false)
+ReactionValueFormats::ReactionValueFormats(JsonView jsonValue)
+  : ReactionValueFormats()
 {
   *this = jsonValue;
 }

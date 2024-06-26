@@ -32,17 +32,8 @@ ContainerSettings::ContainerSettings() :
 {
 }
 
-ContainerSettings::ContainerSettings(JsonView jsonValue) : 
-    m_cmfcSettingsHasBeenSet(false),
-    m_container(ContainerType::NOT_SET),
-    m_containerHasBeenSet(false),
-    m_f4vSettingsHasBeenSet(false),
-    m_m2tsSettingsHasBeenSet(false),
-    m_m3u8SettingsHasBeenSet(false),
-    m_movSettingsHasBeenSet(false),
-    m_mp4SettingsHasBeenSet(false),
-    m_mpdSettingsHasBeenSet(false),
-    m_mxfSettingsHasBeenSet(false)
+ContainerSettings::ContainerSettings(JsonView jsonValue)
+  : ContainerSettings()
 {
   *this = jsonValue;
 }

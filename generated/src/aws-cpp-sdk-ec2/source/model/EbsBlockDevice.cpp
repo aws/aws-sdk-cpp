@@ -39,22 +39,8 @@ EbsBlockDevice::EbsBlockDevice() :
 {
 }
 
-EbsBlockDevice::EbsBlockDevice(const XmlNode& xmlNode) : 
-    m_deleteOnTermination(false),
-    m_deleteOnTerminationHasBeenSet(false),
-    m_iops(0),
-    m_iopsHasBeenSet(false),
-    m_snapshotIdHasBeenSet(false),
-    m_volumeSize(0),
-    m_volumeSizeHasBeenSet(false),
-    m_volumeType(VolumeType::NOT_SET),
-    m_volumeTypeHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_throughput(0),
-    m_throughputHasBeenSet(false),
-    m_outpostArnHasBeenSet(false),
-    m_encrypted(false),
-    m_encryptedHasBeenSet(false)
+EbsBlockDevice::EbsBlockDevice(const XmlNode& xmlNode)
+  : EbsBlockDevice()
 {
   *this = xmlNode;
 }

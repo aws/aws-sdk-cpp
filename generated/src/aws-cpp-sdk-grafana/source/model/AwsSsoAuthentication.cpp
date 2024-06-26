@@ -23,8 +23,8 @@ AwsSsoAuthentication::AwsSsoAuthentication() :
 {
 }
 
-AwsSsoAuthentication::AwsSsoAuthentication(JsonView jsonValue) : 
-    m_ssoClientIdHasBeenSet(false)
+AwsSsoAuthentication::AwsSsoAuthentication(JsonView jsonValue)
+  : AwsSsoAuthentication()
 {
   *this = jsonValue;
 }

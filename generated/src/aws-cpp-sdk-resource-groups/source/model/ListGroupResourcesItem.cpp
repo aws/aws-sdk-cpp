@@ -24,9 +24,8 @@ ListGroupResourcesItem::ListGroupResourcesItem() :
 {
 }
 
-ListGroupResourcesItem::ListGroupResourcesItem(JsonView jsonValue) : 
-    m_identifierHasBeenSet(false),
-    m_statusHasBeenSet(false)
+ListGroupResourcesItem::ListGroupResourcesItem(JsonView jsonValue)
+  : ListGroupResourcesItem()
 {
   *this = jsonValue;
 }

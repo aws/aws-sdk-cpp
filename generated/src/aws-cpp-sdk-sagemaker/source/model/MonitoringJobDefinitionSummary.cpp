@@ -26,11 +26,8 @@ MonitoringJobDefinitionSummary::MonitoringJobDefinitionSummary() :
 {
 }
 
-MonitoringJobDefinitionSummary::MonitoringJobDefinitionSummary(JsonView jsonValue) : 
-    m_monitoringJobDefinitionNameHasBeenSet(false),
-    m_monitoringJobDefinitionArnHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_endpointNameHasBeenSet(false)
+MonitoringJobDefinitionSummary::MonitoringJobDefinitionSummary(JsonView jsonValue)
+  : MonitoringJobDefinitionSummary()
 {
   *this = jsonValue;
 }

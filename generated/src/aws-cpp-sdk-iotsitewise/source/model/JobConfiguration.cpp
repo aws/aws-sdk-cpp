@@ -23,8 +23,8 @@ JobConfiguration::JobConfiguration() :
 {
 }
 
-JobConfiguration::JobConfiguration(JsonView jsonValue) : 
-    m_fileFormatHasBeenSet(false)
+JobConfiguration::JobConfiguration(JsonView jsonValue)
+  : JobConfiguration()
 {
   *this = jsonValue;
 }

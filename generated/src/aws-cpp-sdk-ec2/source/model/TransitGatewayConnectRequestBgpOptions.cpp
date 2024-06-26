@@ -26,9 +26,8 @@ TransitGatewayConnectRequestBgpOptions::TransitGatewayConnectRequestBgpOptions()
 {
 }
 
-TransitGatewayConnectRequestBgpOptions::TransitGatewayConnectRequestBgpOptions(const XmlNode& xmlNode) : 
-    m_peerAsn(0),
-    m_peerAsnHasBeenSet(false)
+TransitGatewayConnectRequestBgpOptions::TransitGatewayConnectRequestBgpOptions(const XmlNode& xmlNode)
+  : TransitGatewayConnectRequestBgpOptions()
 {
   *this = xmlNode;
 }

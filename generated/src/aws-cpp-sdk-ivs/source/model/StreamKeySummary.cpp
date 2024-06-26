@@ -25,10 +25,8 @@ StreamKeySummary::StreamKeySummary() :
 {
 }
 
-StreamKeySummary::StreamKeySummary(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_channelArnHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+StreamKeySummary::StreamKeySummary(JsonView jsonValue)
+  : StreamKeySummary()
 {
   *this = jsonValue;
 }

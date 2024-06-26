@@ -22,8 +22,8 @@ DescribeForecastResult::DescribeForecastResult() :
 {
 }
 
-DescribeForecastResult::DescribeForecastResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_estimatedTimeRemainingInMinutes(0)
+DescribeForecastResult::DescribeForecastResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeForecastResult()
 {
   *this = result;
 }

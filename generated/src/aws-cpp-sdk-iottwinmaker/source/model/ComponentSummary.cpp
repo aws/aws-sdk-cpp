@@ -30,15 +30,8 @@ ComponentSummary::ComponentSummary() :
 {
 }
 
-ComponentSummary::ComponentSummary(JsonView jsonValue) : 
-    m_componentNameHasBeenSet(false),
-    m_componentTypeIdHasBeenSet(false),
-    m_definedInHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_propertyGroupsHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_syncSourceHasBeenSet(false),
-    m_componentPathHasBeenSet(false)
+ComponentSummary::ComponentSummary(JsonView jsonValue)
+  : ComponentSummary()
 {
   *this = jsonValue;
 }

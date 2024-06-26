@@ -24,9 +24,8 @@ BatchListObjectChildrenResponse::BatchListObjectChildrenResponse() :
 {
 }
 
-BatchListObjectChildrenResponse::BatchListObjectChildrenResponse(JsonView jsonValue) : 
-    m_childrenHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
+BatchListObjectChildrenResponse::BatchListObjectChildrenResponse(JsonView jsonValue)
+  : BatchListObjectChildrenResponse()
 {
   *this = jsonValue;
 }

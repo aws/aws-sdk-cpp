@@ -24,9 +24,8 @@ TableRowConditionalFormatting::TableRowConditionalFormatting() :
 {
 }
 
-TableRowConditionalFormatting::TableRowConditionalFormatting(JsonView jsonValue) : 
-    m_backgroundColorHasBeenSet(false),
-    m_textColorHasBeenSet(false)
+TableRowConditionalFormatting::TableRowConditionalFormatting(JsonView jsonValue)
+  : TableRowConditionalFormatting()
 {
   *this = jsonValue;
 }

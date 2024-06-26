@@ -27,12 +27,8 @@ ECSServiceRecommendedOptionProjectedMetric::ECSServiceRecommendedOptionProjected
 {
 }
 
-ECSServiceRecommendedOptionProjectedMetric::ECSServiceRecommendedOptionProjectedMetric(JsonView jsonValue) : 
-    m_recommendedCpuUnits(0),
-    m_recommendedCpuUnitsHasBeenSet(false),
-    m_recommendedMemorySize(0),
-    m_recommendedMemorySizeHasBeenSet(false),
-    m_projectedMetricsHasBeenSet(false)
+ECSServiceRecommendedOptionProjectedMetric::ECSServiceRecommendedOptionProjectedMetric(JsonView jsonValue)
+  : ECSServiceRecommendedOptionProjectedMetric()
 {
   *this = jsonValue;
 }

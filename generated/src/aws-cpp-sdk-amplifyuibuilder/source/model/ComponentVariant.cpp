@@ -24,9 +24,8 @@ ComponentVariant::ComponentVariant() :
 {
 }
 
-ComponentVariant::ComponentVariant(JsonView jsonValue) : 
-    m_variantValuesHasBeenSet(false),
-    m_overridesHasBeenSet(false)
+ComponentVariant::ComponentVariant(JsonView jsonValue)
+  : ComponentVariant()
 {
   *this = jsonValue;
 }

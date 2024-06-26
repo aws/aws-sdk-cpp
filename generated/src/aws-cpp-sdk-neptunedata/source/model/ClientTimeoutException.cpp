@@ -25,10 +25,8 @@ ClientTimeoutException::ClientTimeoutException() :
 {
 }
 
-ClientTimeoutException::ClientTimeoutException(JsonView jsonValue) : 
-    m_detailedMessageHasBeenSet(false),
-    m_requestIdHasBeenSet(false),
-    m_codeHasBeenSet(false)
+ClientTimeoutException::ClientTimeoutException(JsonView jsonValue)
+  : ClientTimeoutException()
 {
   *this = jsonValue;
 }

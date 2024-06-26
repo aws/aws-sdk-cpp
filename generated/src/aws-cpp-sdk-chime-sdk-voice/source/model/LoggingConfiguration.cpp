@@ -26,11 +26,8 @@ LoggingConfiguration::LoggingConfiguration() :
 {
 }
 
-LoggingConfiguration::LoggingConfiguration(JsonView jsonValue) : 
-    m_enableSIPLogs(false),
-    m_enableSIPLogsHasBeenSet(false),
-    m_enableMediaMetricLogs(false),
-    m_enableMediaMetricLogsHasBeenSet(false)
+LoggingConfiguration::LoggingConfiguration(JsonView jsonValue)
+  : LoggingConfiguration()
 {
   *this = jsonValue;
 }

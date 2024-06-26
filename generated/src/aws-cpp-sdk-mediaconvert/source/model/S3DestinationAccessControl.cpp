@@ -24,9 +24,8 @@ S3DestinationAccessControl::S3DestinationAccessControl() :
 {
 }
 
-S3DestinationAccessControl::S3DestinationAccessControl(JsonView jsonValue) : 
-    m_cannedAcl(S3ObjectCannedAcl::NOT_SET),
-    m_cannedAclHasBeenSet(false)
+S3DestinationAccessControl::S3DestinationAccessControl(JsonView jsonValue)
+  : S3DestinationAccessControl()
 {
   *this = jsonValue;
 }

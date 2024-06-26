@@ -23,8 +23,8 @@ IamUserProfileDetails::IamUserProfileDetails() :
 {
 }
 
-IamUserProfileDetails::IamUserProfileDetails(JsonView jsonValue) : 
-    m_arnHasBeenSet(false)
+IamUserProfileDetails::IamUserProfileDetails(JsonView jsonValue)
+  : IamUserProfileDetails()
 {
   *this = jsonValue;
 }

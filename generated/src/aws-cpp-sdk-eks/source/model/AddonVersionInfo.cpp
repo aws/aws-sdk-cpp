@@ -29,14 +29,8 @@ AddonVersionInfo::AddonVersionInfo() :
 {
 }
 
-AddonVersionInfo::AddonVersionInfo(JsonView jsonValue) : 
-    m_addonVersionHasBeenSet(false),
-    m_architectureHasBeenSet(false),
-    m_compatibilitiesHasBeenSet(false),
-    m_requiresConfiguration(false),
-    m_requiresConfigurationHasBeenSet(false),
-    m_requiresIamPermissions(false),
-    m_requiresIamPermissionsHasBeenSet(false)
+AddonVersionInfo::AddonVersionInfo(JsonView jsonValue)
+  : AddonVersionInfo()
 {
   *this = jsonValue;
 }

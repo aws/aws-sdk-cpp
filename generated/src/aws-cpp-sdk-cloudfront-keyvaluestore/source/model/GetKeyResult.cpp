@@ -23,9 +23,8 @@ GetKeyResult::GetKeyResult() :
 {
 }
 
-GetKeyResult::GetKeyResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_itemCount(0),
-    m_totalSizeInBytes(0)
+GetKeyResult::GetKeyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetKeyResult()
 {
   *this = result;
 }

@@ -24,9 +24,8 @@ MetricProcessingConfig::MetricProcessingConfig() :
 {
 }
 
-MetricProcessingConfig::MetricProcessingConfig(JsonView jsonValue) : 
-    m_computeLocation(ComputeLocation::NOT_SET),
-    m_computeLocationHasBeenSet(false)
+MetricProcessingConfig::MetricProcessingConfig(JsonView jsonValue)
+  : MetricProcessingConfig()
 {
   *this = jsonValue;
 }

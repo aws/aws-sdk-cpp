@@ -24,9 +24,8 @@ LambdaFunctionScheduleFailedEventDetails::LambdaFunctionScheduleFailedEventDetai
 {
 }
 
-LambdaFunctionScheduleFailedEventDetails::LambdaFunctionScheduleFailedEventDetails(JsonView jsonValue) : 
-    m_errorHasBeenSet(false),
-    m_causeHasBeenSet(false)
+LambdaFunctionScheduleFailedEventDetails::LambdaFunctionScheduleFailedEventDetails(JsonView jsonValue)
+  : LambdaFunctionScheduleFailedEventDetails()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ DatastorePartitions::DatastorePartitions() :
 {
 }
 
-DatastorePartitions::DatastorePartitions(JsonView jsonValue) : 
-    m_partitionsHasBeenSet(false)
+DatastorePartitions::DatastorePartitions(JsonView jsonValue)
+  : DatastorePartitions()
 {
   *this = jsonValue;
 }

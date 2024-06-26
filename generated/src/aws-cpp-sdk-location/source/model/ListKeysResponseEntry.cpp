@@ -28,13 +28,8 @@ ListKeysResponseEntry::ListKeysResponseEntry() :
 {
 }
 
-ListKeysResponseEntry::ListKeysResponseEntry(JsonView jsonValue) : 
-    m_keyNameHasBeenSet(false),
-    m_expireTimeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_restrictionsHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
+ListKeysResponseEntry::ListKeysResponseEntry(JsonView jsonValue)
+  : ListKeysResponseEntry()
 {
   *this = jsonValue;
 }

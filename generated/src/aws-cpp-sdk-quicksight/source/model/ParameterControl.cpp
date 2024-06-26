@@ -28,13 +28,8 @@ ParameterControl::ParameterControl() :
 {
 }
 
-ParameterControl::ParameterControl(JsonView jsonValue) : 
-    m_dateTimePickerHasBeenSet(false),
-    m_listHasBeenSet(false),
-    m_dropdownHasBeenSet(false),
-    m_textFieldHasBeenSet(false),
-    m_textAreaHasBeenSet(false),
-    m_sliderHasBeenSet(false)
+ParameterControl::ParameterControl(JsonView jsonValue)
+  : ParameterControl()
 {
   *this = jsonValue;
 }

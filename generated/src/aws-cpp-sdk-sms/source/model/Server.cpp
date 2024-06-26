@@ -29,14 +29,8 @@ Server::Server() :
 {
 }
 
-Server::Server(JsonView jsonValue) : 
-    m_serverIdHasBeenSet(false),
-    m_serverType(ServerType::NOT_SET),
-    m_serverTypeHasBeenSet(false),
-    m_vmServerHasBeenSet(false),
-    m_replicationJobIdHasBeenSet(false),
-    m_replicationJobTerminated(false),
-    m_replicationJobTerminatedHasBeenSet(false)
+Server::Server(JsonView jsonValue)
+  : Server()
 {
   *this = jsonValue;
 }

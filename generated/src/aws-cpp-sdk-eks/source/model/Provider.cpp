@@ -23,8 +23,8 @@ Provider::Provider() :
 {
 }
 
-Provider::Provider(JsonView jsonValue) : 
-    m_keyArnHasBeenSet(false)
+Provider::Provider(JsonView jsonValue)
+  : Provider()
 {
   *this = jsonValue;
 }

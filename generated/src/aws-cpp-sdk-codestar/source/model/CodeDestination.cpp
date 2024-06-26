@@ -24,9 +24,8 @@ CodeDestination::CodeDestination() :
 {
 }
 
-CodeDestination::CodeDestination(JsonView jsonValue) : 
-    m_codeCommitHasBeenSet(false),
-    m_gitHubHasBeenSet(false)
+CodeDestination::CodeDestination(JsonView jsonValue)
+  : CodeDestination()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ ServiceConnectClientAlias::ServiceConnectClientAlias() :
 {
 }
 
-ServiceConnectClientAlias::ServiceConnectClientAlias(JsonView jsonValue) : 
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_dnsNameHasBeenSet(false)
+ServiceConnectClientAlias::ServiceConnectClientAlias(JsonView jsonValue)
+  : ServiceConnectClientAlias()
 {
   *this = jsonValue;
 }

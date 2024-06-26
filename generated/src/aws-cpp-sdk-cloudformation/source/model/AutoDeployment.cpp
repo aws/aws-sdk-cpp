@@ -28,11 +28,8 @@ AutoDeployment::AutoDeployment() :
 {
 }
 
-AutoDeployment::AutoDeployment(const XmlNode& xmlNode) : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_retainStacksOnAccountRemoval(false),
-    m_retainStacksOnAccountRemovalHasBeenSet(false)
+AutoDeployment::AutoDeployment(const XmlNode& xmlNode)
+  : AutoDeployment()
 {
   *this = xmlNode;
 }

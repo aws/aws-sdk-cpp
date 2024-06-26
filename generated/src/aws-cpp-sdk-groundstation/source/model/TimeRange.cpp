@@ -24,9 +24,8 @@ TimeRange::TimeRange() :
 {
 }
 
-TimeRange::TimeRange(JsonView jsonValue) : 
-    m_endTimeHasBeenSet(false),
-    m_startTimeHasBeenSet(false)
+TimeRange::TimeRange(JsonView jsonValue)
+  : TimeRange()
 {
   *this = jsonValue;
 }

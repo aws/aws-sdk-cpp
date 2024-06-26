@@ -27,12 +27,8 @@ WirelessDeviceLogOption::WirelessDeviceLogOption() :
 {
 }
 
-WirelessDeviceLogOption::WirelessDeviceLogOption(JsonView jsonValue) : 
-    m_type(WirelessDeviceType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_logLevel(LogLevel::NOT_SET),
-    m_logLevelHasBeenSet(false),
-    m_eventsHasBeenSet(false)
+WirelessDeviceLogOption::WirelessDeviceLogOption(JsonView jsonValue)
+  : WirelessDeviceLogOption()
 {
   *this = jsonValue;
 }

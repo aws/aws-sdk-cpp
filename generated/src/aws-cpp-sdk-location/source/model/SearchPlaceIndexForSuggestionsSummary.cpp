@@ -31,16 +31,8 @@ SearchPlaceIndexForSuggestionsSummary::SearchPlaceIndexForSuggestionsSummary() :
 {
 }
 
-SearchPlaceIndexForSuggestionsSummary::SearchPlaceIndexForSuggestionsSummary(JsonView jsonValue) : 
-    m_textHasBeenSet(false),
-    m_biasPositionHasBeenSet(false),
-    m_filterBBoxHasBeenSet(false),
-    m_filterCountriesHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_dataSourceHasBeenSet(false),
-    m_languageHasBeenSet(false),
-    m_filterCategoriesHasBeenSet(false)
+SearchPlaceIndexForSuggestionsSummary::SearchPlaceIndexForSuggestionsSummary(JsonView jsonValue)
+  : SearchPlaceIndexForSuggestionsSummary()
 {
   *this = jsonValue;
 }

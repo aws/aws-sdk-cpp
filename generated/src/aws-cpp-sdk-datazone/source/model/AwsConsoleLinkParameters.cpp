@@ -23,8 +23,8 @@ AwsConsoleLinkParameters::AwsConsoleLinkParameters() :
 {
 }
 
-AwsConsoleLinkParameters::AwsConsoleLinkParameters(JsonView jsonValue) : 
-    m_uriHasBeenSet(false)
+AwsConsoleLinkParameters::AwsConsoleLinkParameters(JsonView jsonValue)
+  : AwsConsoleLinkParameters()
 {
   *this = jsonValue;
 }

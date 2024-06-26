@@ -28,13 +28,8 @@ RouterType::RouterType() :
 {
 }
 
-RouterType::RouterType(JsonView jsonValue) : 
-    m_vendorHasBeenSet(false),
-    m_platformHasBeenSet(false),
-    m_softwareHasBeenSet(false),
-    m_xsltTemplateNameHasBeenSet(false),
-    m_xsltTemplateNameForMacSecHasBeenSet(false),
-    m_routerTypeIdentifierHasBeenSet(false)
+RouterType::RouterType(JsonView jsonValue)
+  : RouterType()
 {
   *this = jsonValue;
 }

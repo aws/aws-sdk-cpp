@@ -23,8 +23,8 @@ IntentClassificationTestResults::IntentClassificationTestResults() :
 {
 }
 
-IntentClassificationTestResults::IntentClassificationTestResults(JsonView jsonValue) : 
-    m_itemsHasBeenSet(false)
+IntentClassificationTestResults::IntentClassificationTestResults(JsonView jsonValue)
+  : IntentClassificationTestResults()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ AnomalyScore::AnomalyScore() :
 {
 }
 
-AnomalyScore::AnomalyScore(JsonView jsonValue) : 
-    m_maxScore(0.0),
-    m_maxScoreHasBeenSet(false),
-    m_currentScore(0.0),
-    m_currentScoreHasBeenSet(false)
+AnomalyScore::AnomalyScore(JsonView jsonValue)
+  : AnomalyScore()
 {
   *this = jsonValue;
 }

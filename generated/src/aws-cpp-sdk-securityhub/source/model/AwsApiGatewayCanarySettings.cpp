@@ -28,13 +28,8 @@ AwsApiGatewayCanarySettings::AwsApiGatewayCanarySettings() :
 {
 }
 
-AwsApiGatewayCanarySettings::AwsApiGatewayCanarySettings(JsonView jsonValue) : 
-    m_percentTraffic(0.0),
-    m_percentTrafficHasBeenSet(false),
-    m_deploymentIdHasBeenSet(false),
-    m_stageVariableOverridesHasBeenSet(false),
-    m_useStageCache(false),
-    m_useStageCacheHasBeenSet(false)
+AwsApiGatewayCanarySettings::AwsApiGatewayCanarySettings(JsonView jsonValue)
+  : AwsApiGatewayCanarySettings()
 {
   *this = jsonValue;
 }

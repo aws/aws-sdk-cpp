@@ -28,13 +28,8 @@ Attachment::Attachment() :
 {
 }
 
-Attachment::Attachment(JsonView jsonValue) : 
-    m_attachmentArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_principalsHasBeenSet(false),
-    m_resourcesHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_createdTimeHasBeenSet(false)
+Attachment::Attachment(JsonView jsonValue)
+  : Attachment()
 {
   *this = jsonValue;
 }

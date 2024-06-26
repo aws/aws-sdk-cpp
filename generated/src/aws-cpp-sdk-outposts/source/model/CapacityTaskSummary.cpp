@@ -30,15 +30,8 @@ CapacityTaskSummary::CapacityTaskSummary() :
 {
 }
 
-CapacityTaskSummary::CapacityTaskSummary(JsonView jsonValue) : 
-    m_capacityTaskIdHasBeenSet(false),
-    m_outpostIdHasBeenSet(false),
-    m_orderIdHasBeenSet(false),
-    m_capacityTaskStatus(CapacityTaskStatus::NOT_SET),
-    m_capacityTaskStatusHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_completionDateHasBeenSet(false),
-    m_lastModifiedDateHasBeenSet(false)
+CapacityTaskSummary::CapacityTaskSummary(JsonView jsonValue)
+  : CapacityTaskSummary()
 {
   *this = jsonValue;
 }

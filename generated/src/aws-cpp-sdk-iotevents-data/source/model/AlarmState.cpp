@@ -27,12 +27,8 @@ AlarmState::AlarmState() :
 {
 }
 
-AlarmState::AlarmState(JsonView jsonValue) : 
-    m_stateName(AlarmStateName::NOT_SET),
-    m_stateNameHasBeenSet(false),
-    m_ruleEvaluationHasBeenSet(false),
-    m_customerActionHasBeenSet(false),
-    m_systemEventHasBeenSet(false)
+AlarmState::AlarmState(JsonView jsonValue)
+  : AlarmState()
 {
   *this = jsonValue;
 }

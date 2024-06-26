@@ -26,11 +26,8 @@ RuleStringExpression::RuleStringExpression() :
 {
 }
 
-RuleStringExpression::RuleStringExpression(JsonView jsonValue) : 
-    m_evaluateHasBeenSet(false),
-    m_operator(RuleStringOperator::NOT_SET),
-    m_operatorHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+RuleStringExpression::RuleStringExpression(JsonView jsonValue)
+  : RuleStringExpression()
 {
   *this = jsonValue;
 }

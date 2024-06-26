@@ -26,11 +26,8 @@ QueueEnvironmentSummary::QueueEnvironmentSummary() :
 {
 }
 
-QueueEnvironmentSummary::QueueEnvironmentSummary(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_priority(0),
-    m_priorityHasBeenSet(false),
-    m_queueEnvironmentIdHasBeenSet(false)
+QueueEnvironmentSummary::QueueEnvironmentSummary(JsonView jsonValue)
+  : QueueEnvironmentSummary()
 {
   *this = jsonValue;
 }

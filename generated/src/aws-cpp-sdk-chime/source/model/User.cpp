@@ -39,24 +39,8 @@ User::User() :
 {
 }
 
-User::User(JsonView jsonValue) : 
-    m_userIdHasBeenSet(false),
-    m_accountIdHasBeenSet(false),
-    m_primaryEmailHasBeenSet(false),
-    m_primaryProvisionedNumberHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_licenseType(License::NOT_SET),
-    m_licenseTypeHasBeenSet(false),
-    m_userType(UserType::NOT_SET),
-    m_userTypeHasBeenSet(false),
-    m_userRegistrationStatus(RegistrationStatus::NOT_SET),
-    m_userRegistrationStatusHasBeenSet(false),
-    m_userInvitationStatus(InviteStatus::NOT_SET),
-    m_userInvitationStatusHasBeenSet(false),
-    m_registeredOnHasBeenSet(false),
-    m_invitedOnHasBeenSet(false),
-    m_alexaForBusinessMetadataHasBeenSet(false),
-    m_personalPINHasBeenSet(false)
+User::User(JsonView jsonValue)
+  : User()
 {
   *this = jsonValue;
 }

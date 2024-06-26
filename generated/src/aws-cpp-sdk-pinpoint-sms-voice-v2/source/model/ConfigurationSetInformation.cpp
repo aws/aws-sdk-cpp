@@ -30,15 +30,8 @@ ConfigurationSetInformation::ConfigurationSetInformation() :
 {
 }
 
-ConfigurationSetInformation::ConfigurationSetInformation(JsonView jsonValue) : 
-    m_configurationSetArnHasBeenSet(false),
-    m_configurationSetNameHasBeenSet(false),
-    m_eventDestinationsHasBeenSet(false),
-    m_defaultMessageType(MessageType::NOT_SET),
-    m_defaultMessageTypeHasBeenSet(false),
-    m_defaultSenderIdHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false),
-    m_protectConfigurationIdHasBeenSet(false)
+ConfigurationSetInformation::ConfigurationSetInformation(JsonView jsonValue)
+  : ConfigurationSetInformation()
 {
   *this = jsonValue;
 }

@@ -27,12 +27,8 @@ Core::Core() :
 {
 }
 
-Core::Core(JsonView jsonValue) : 
-    m_certificateArnHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_syncShadow(false),
-    m_syncShadowHasBeenSet(false),
-    m_thingArnHasBeenSet(false)
+Core::Core(JsonView jsonValue)
+  : Core()
 {
   *this = jsonValue;
 }

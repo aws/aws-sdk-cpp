@@ -24,9 +24,8 @@ AttachedManagedPolicy::AttachedManagedPolicy() :
 {
 }
 
-AttachedManagedPolicy::AttachedManagedPolicy(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false)
+AttachedManagedPolicy::AttachedManagedPolicy(JsonView jsonValue)
+  : AttachedManagedPolicy()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ RetrieveAndGenerateInput::RetrieveAndGenerateInput() :
 {
 }
 
-RetrieveAndGenerateInput::RetrieveAndGenerateInput(JsonView jsonValue) : 
-    m_textHasBeenSet(false)
+RetrieveAndGenerateInput::RetrieveAndGenerateInput(JsonView jsonValue)
+  : RetrieveAndGenerateInput()
 {
   *this = jsonValue;
 }

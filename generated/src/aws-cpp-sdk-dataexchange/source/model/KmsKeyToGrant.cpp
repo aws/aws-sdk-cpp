@@ -23,8 +23,8 @@ KmsKeyToGrant::KmsKeyToGrant() :
 {
 }
 
-KmsKeyToGrant::KmsKeyToGrant(JsonView jsonValue) : 
-    m_kmsKeyArnHasBeenSet(false)
+KmsKeyToGrant::KmsKeyToGrant(JsonView jsonValue)
+  : KmsKeyToGrant()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ PutMethodResult::PutMethodResult() :
 {
 }
 
-PutMethodResult::PutMethodResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_apiKeyRequired(false)
+PutMethodResult::PutMethodResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : PutMethodResult()
 {
   *this = result;
 }

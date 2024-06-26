@@ -24,9 +24,8 @@ EntityIdentifier::EntityIdentifier() :
 {
 }
 
-EntityIdentifier::EntityIdentifier(JsonView jsonValue) : 
-    m_entityTypeHasBeenSet(false),
-    m_entityIdHasBeenSet(false)
+EntityIdentifier::EntityIdentifier(JsonView jsonValue)
+  : EntityIdentifier()
 {
   *this = jsonValue;
 }

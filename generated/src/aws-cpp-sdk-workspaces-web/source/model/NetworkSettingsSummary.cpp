@@ -24,9 +24,8 @@ NetworkSettingsSummary::NetworkSettingsSummary() :
 {
 }
 
-NetworkSettingsSummary::NetworkSettingsSummary(JsonView jsonValue) : 
-    m_networkSettingsArnHasBeenSet(false),
-    m_vpcIdHasBeenSet(false)
+NetworkSettingsSummary::NetworkSettingsSummary(JsonView jsonValue)
+  : NetworkSettingsSummary()
 {
   *this = jsonValue;
 }

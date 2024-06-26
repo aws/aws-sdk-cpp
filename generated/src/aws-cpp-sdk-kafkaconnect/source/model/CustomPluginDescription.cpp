@@ -25,10 +25,8 @@ CustomPluginDescription::CustomPluginDescription() :
 {
 }
 
-CustomPluginDescription::CustomPluginDescription(JsonView jsonValue) : 
-    m_customPluginArnHasBeenSet(false),
-    m_revision(0),
-    m_revisionHasBeenSet(false)
+CustomPluginDescription::CustomPluginDescription(JsonView jsonValue)
+  : CustomPluginDescription()
 {
   *this = jsonValue;
 }

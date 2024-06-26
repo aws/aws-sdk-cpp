@@ -28,13 +28,8 @@ LocalHealthEventsConfig::LocalHealthEventsConfig() :
 {
 }
 
-LocalHealthEventsConfig::LocalHealthEventsConfig(JsonView jsonValue) : 
-    m_status(LocalHealthEventsConfigStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_healthScoreThreshold(0.0),
-    m_healthScoreThresholdHasBeenSet(false),
-    m_minTrafficImpact(0.0),
-    m_minTrafficImpactHasBeenSet(false)
+LocalHealthEventsConfig::LocalHealthEventsConfig(JsonView jsonValue)
+  : LocalHealthEventsConfig()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ LoggingConfigurationStatus::LoggingConfigurationStatus() :
 {
 }
 
-LoggingConfigurationStatus::LoggingConfigurationStatus(JsonView jsonValue) : 
-    m_statusCode(LoggingConfigurationStatusCode::NOT_SET),
-    m_statusCodeHasBeenSet(false),
-    m_statusReasonHasBeenSet(false)
+LoggingConfigurationStatus::LoggingConfigurationStatus(JsonView jsonValue)
+  : LoggingConfigurationStatus()
 {
   *this = jsonValue;
 }

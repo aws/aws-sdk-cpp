@@ -24,9 +24,8 @@ GatewayRouteStatus::GatewayRouteStatus() :
 {
 }
 
-GatewayRouteStatus::GatewayRouteStatus(JsonView jsonValue) : 
-    m_status(GatewayRouteStatusCode::NOT_SET),
-    m_statusHasBeenSet(false)
+GatewayRouteStatus::GatewayRouteStatus(JsonView jsonValue)
+  : GatewayRouteStatus()
 {
   *this = jsonValue;
 }

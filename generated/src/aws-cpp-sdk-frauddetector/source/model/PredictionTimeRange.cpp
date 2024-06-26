@@ -24,9 +24,8 @@ PredictionTimeRange::PredictionTimeRange() :
 {
 }
 
-PredictionTimeRange::PredictionTimeRange(JsonView jsonValue) : 
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
+PredictionTimeRange::PredictionTimeRange(JsonView jsonValue)
+  : PredictionTimeRange()
 {
   *this = jsonValue;
 }

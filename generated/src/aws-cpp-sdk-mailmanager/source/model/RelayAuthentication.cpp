@@ -24,9 +24,8 @@ RelayAuthentication::RelayAuthentication() :
 {
 }
 
-RelayAuthentication::RelayAuthentication(JsonView jsonValue) : 
-    m_noAuthenticationHasBeenSet(false),
-    m_secretArnHasBeenSet(false)
+RelayAuthentication::RelayAuthentication(JsonView jsonValue)
+  : RelayAuthentication()
 {
   *this = jsonValue;
 }

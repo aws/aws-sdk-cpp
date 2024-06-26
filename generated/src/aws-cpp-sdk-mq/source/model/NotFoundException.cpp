@@ -24,9 +24,8 @@ NotFoundException::NotFoundException() :
 {
 }
 
-NotFoundException::NotFoundException(JsonView jsonValue) : 
-    m_errorAttributeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+NotFoundException::NotFoundException(JsonView jsonValue)
+  : NotFoundException()
 {
   *this = jsonValue;
 }

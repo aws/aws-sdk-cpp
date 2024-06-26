@@ -23,8 +23,8 @@ UpdateS3BucketResource::UpdateS3BucketResource() :
 {
 }
 
-UpdateS3BucketResource::UpdateS3BucketResource(JsonView jsonValue) : 
-    m_objectPrefixesHasBeenSet(false)
+UpdateS3BucketResource::UpdateS3BucketResource(JsonView jsonValue)
+  : UpdateS3BucketResource()
 {
   *this = jsonValue;
 }

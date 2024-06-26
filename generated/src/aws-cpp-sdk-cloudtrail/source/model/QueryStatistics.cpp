@@ -28,13 +28,8 @@ QueryStatistics::QueryStatistics() :
 {
 }
 
-QueryStatistics::QueryStatistics(JsonView jsonValue) : 
-    m_resultsCount(0),
-    m_resultsCountHasBeenSet(false),
-    m_totalResultsCount(0),
-    m_totalResultsCountHasBeenSet(false),
-    m_bytesScanned(0),
-    m_bytesScannedHasBeenSet(false)
+QueryStatistics::QueryStatistics(JsonView jsonValue)
+  : QueryStatistics()
 {
   *this = jsonValue;
 }

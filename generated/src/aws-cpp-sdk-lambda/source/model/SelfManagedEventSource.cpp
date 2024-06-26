@@ -23,8 +23,8 @@ SelfManagedEventSource::SelfManagedEventSource() :
 {
 }
 
-SelfManagedEventSource::SelfManagedEventSource(JsonView jsonValue) : 
-    m_endpointsHasBeenSet(false)
+SelfManagedEventSource::SelfManagedEventSource(JsonView jsonValue)
+  : SelfManagedEventSource()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ UserPoolAddOnsType::UserPoolAddOnsType() :
 {
 }
 
-UserPoolAddOnsType::UserPoolAddOnsType(JsonView jsonValue) : 
-    m_advancedSecurityMode(AdvancedSecurityModeType::NOT_SET),
-    m_advancedSecurityModeHasBeenSet(false)
+UserPoolAddOnsType::UserPoolAddOnsType(JsonView jsonValue)
+  : UserPoolAddOnsType()
 {
   *this = jsonValue;
 }

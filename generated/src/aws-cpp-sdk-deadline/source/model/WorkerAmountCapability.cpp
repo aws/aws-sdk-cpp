@@ -25,10 +25,8 @@ WorkerAmountCapability::WorkerAmountCapability() :
 {
 }
 
-WorkerAmountCapability::WorkerAmountCapability(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_value(0.0),
-    m_valueHasBeenSet(false)
+WorkerAmountCapability::WorkerAmountCapability(JsonView jsonValue)
+  : WorkerAmountCapability()
 {
   *this = jsonValue;
 }

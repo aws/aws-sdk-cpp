@@ -23,8 +23,8 @@ TemplateActiveVersionRequest::TemplateActiveVersionRequest() :
 {
 }
 
-TemplateActiveVersionRequest::TemplateActiveVersionRequest(JsonView jsonValue) : 
-    m_versionHasBeenSet(false)
+TemplateActiveVersionRequest::TemplateActiveVersionRequest(JsonView jsonValue)
+  : TemplateActiveVersionRequest()
 {
   *this = jsonValue;
 }

@@ -34,19 +34,8 @@ HlsAkamaiSettings::HlsAkamaiSettings() :
 {
 }
 
-HlsAkamaiSettings::HlsAkamaiSettings(JsonView jsonValue) : 
-    m_connectionRetryInterval(0),
-    m_connectionRetryIntervalHasBeenSet(false),
-    m_filecacheDuration(0),
-    m_filecacheDurationHasBeenSet(false),
-    m_httpTransferMode(HlsAkamaiHttpTransferMode::NOT_SET),
-    m_httpTransferModeHasBeenSet(false),
-    m_numRetries(0),
-    m_numRetriesHasBeenSet(false),
-    m_restartDelay(0),
-    m_restartDelayHasBeenSet(false),
-    m_saltHasBeenSet(false),
-    m_tokenHasBeenSet(false)
+HlsAkamaiSettings::HlsAkamaiSettings(JsonView jsonValue)
+  : HlsAkamaiSettings()
 {
   *this = jsonValue;
 }

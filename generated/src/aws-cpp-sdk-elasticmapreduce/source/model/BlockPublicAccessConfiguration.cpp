@@ -25,10 +25,8 @@ BlockPublicAccessConfiguration::BlockPublicAccessConfiguration() :
 {
 }
 
-BlockPublicAccessConfiguration::BlockPublicAccessConfiguration(JsonView jsonValue) : 
-    m_blockPublicSecurityGroupRules(false),
-    m_blockPublicSecurityGroupRulesHasBeenSet(false),
-    m_permittedPublicSecurityGroupRuleRangesHasBeenSet(false)
+BlockPublicAccessConfiguration::BlockPublicAccessConfiguration(JsonView jsonValue)
+  : BlockPublicAccessConfiguration()
 {
   *this = jsonValue;
 }

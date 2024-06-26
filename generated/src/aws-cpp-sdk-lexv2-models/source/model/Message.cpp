@@ -26,11 +26,8 @@ Message::Message() :
 {
 }
 
-Message::Message(JsonView jsonValue) : 
-    m_plainTextMessageHasBeenSet(false),
-    m_customPayloadHasBeenSet(false),
-    m_ssmlMessageHasBeenSet(false),
-    m_imageResponseCardHasBeenSet(false)
+Message::Message(JsonView jsonValue)
+  : Message()
 {
   *this = jsonValue;
 }

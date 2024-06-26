@@ -23,8 +23,8 @@ Schema::Schema() :
 {
 }
 
-Schema::Schema(JsonView jsonValue) : 
-    m_attributesHasBeenSet(false)
+Schema::Schema(JsonView jsonValue)
+  : Schema()
 {
   *this = jsonValue;
 }

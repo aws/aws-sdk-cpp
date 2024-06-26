@@ -25,10 +25,8 @@ UnprocessableEntityException::UnprocessableEntityException() :
 {
 }
 
-UnprocessableEntityException::UnprocessableEntityException(JsonView jsonValue) : 
-    m_code(ErrorCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+UnprocessableEntityException::UnprocessableEntityException(JsonView jsonValue)
+  : UnprocessableEntityException()
 {
   *this = jsonValue;
 }

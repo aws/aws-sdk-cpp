@@ -25,10 +25,8 @@ MessageReviewHandler::MessageReviewHandler() :
 {
 }
 
-MessageReviewHandler::MessageReviewHandler(JsonView jsonValue) : 
-    m_fallbackResult(FallbackResult::NOT_SET),
-    m_fallbackResultHasBeenSet(false),
-    m_uriHasBeenSet(false)
+MessageReviewHandler::MessageReviewHandler(JsonView jsonValue)
+  : MessageReviewHandler()
 {
   *this = jsonValue;
 }

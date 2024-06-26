@@ -27,12 +27,8 @@ PersonasSummary::PersonasSummary() :
 {
 }
 
-PersonasSummary::PersonasSummary(JsonView jsonValue) : 
-    m_entityIdHasBeenSet(false),
-    m_persona(Persona::NOT_SET),
-    m_personaHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+PersonasSummary::PersonasSummary(JsonView jsonValue)
+  : PersonasSummary()
 {
   *this = jsonValue;
 }

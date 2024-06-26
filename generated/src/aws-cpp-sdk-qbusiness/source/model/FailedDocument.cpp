@@ -25,10 +25,8 @@ FailedDocument::FailedDocument() :
 {
 }
 
-FailedDocument::FailedDocument(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_errorHasBeenSet(false),
-    m_dataSourceIdHasBeenSet(false)
+FailedDocument::FailedDocument(JsonView jsonValue)
+  : FailedDocument()
 {
   *this = jsonValue;
 }

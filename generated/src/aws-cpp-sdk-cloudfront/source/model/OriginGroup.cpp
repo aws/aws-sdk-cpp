@@ -27,10 +27,8 @@ OriginGroup::OriginGroup() :
 {
 }
 
-OriginGroup::OriginGroup(const XmlNode& xmlNode) : 
-    m_idHasBeenSet(false),
-    m_failoverCriteriaHasBeenSet(false),
-    m_membersHasBeenSet(false)
+OriginGroup::OriginGroup(const XmlNode& xmlNode)
+  : OriginGroup()
 {
   *this = xmlNode;
 }

@@ -35,20 +35,8 @@ ConnectorEntityField::ConnectorEntityField() :
 {
 }
 
-ConnectorEntityField::ConnectorEntityField(JsonView jsonValue) : 
-    m_identifierHasBeenSet(false),
-    m_parentIdentifierHasBeenSet(false),
-    m_labelHasBeenSet(false),
-    m_isPrimaryKey(false),
-    m_isPrimaryKeyHasBeenSet(false),
-    m_defaultValueHasBeenSet(false),
-    m_isDeprecated(false),
-    m_isDeprecatedHasBeenSet(false),
-    m_supportedFieldTypeDetailsHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_sourcePropertiesHasBeenSet(false),
-    m_destinationPropertiesHasBeenSet(false),
-    m_customPropertiesHasBeenSet(false)
+ConnectorEntityField::ConnectorEntityField(JsonView jsonValue)
+  : ConnectorEntityField()
 {
   *this = jsonValue;
 }

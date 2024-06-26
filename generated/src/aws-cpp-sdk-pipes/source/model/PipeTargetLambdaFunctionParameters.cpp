@@ -24,9 +24,8 @@ PipeTargetLambdaFunctionParameters::PipeTargetLambdaFunctionParameters() :
 {
 }
 
-PipeTargetLambdaFunctionParameters::PipeTargetLambdaFunctionParameters(JsonView jsonValue) : 
-    m_invocationType(PipeTargetInvocationType::NOT_SET),
-    m_invocationTypeHasBeenSet(false)
+PipeTargetLambdaFunctionParameters::PipeTargetLambdaFunctionParameters(JsonView jsonValue)
+  : PipeTargetLambdaFunctionParameters()
 {
   *this = jsonValue;
 }

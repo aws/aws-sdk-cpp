@@ -23,8 +23,8 @@ AutoSnapshotAddOnRequest::AutoSnapshotAddOnRequest() :
 {
 }
 
-AutoSnapshotAddOnRequest::AutoSnapshotAddOnRequest(JsonView jsonValue) : 
-    m_snapshotTimeOfDayHasBeenSet(false)
+AutoSnapshotAddOnRequest::AutoSnapshotAddOnRequest(JsonView jsonValue)
+  : AutoSnapshotAddOnRequest()
 {
   *this = jsonValue;
 }

@@ -26,9 +26,8 @@ MetricsConfiguration::MetricsConfiguration() :
 {
 }
 
-MetricsConfiguration::MetricsConfiguration(const XmlNode& xmlNode) : 
-    m_idHasBeenSet(false),
-    m_filterHasBeenSet(false)
+MetricsConfiguration::MetricsConfiguration(const XmlNode& xmlNode)
+  : MetricsConfiguration()
 {
   *this = xmlNode;
 }

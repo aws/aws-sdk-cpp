@@ -26,11 +26,8 @@ CustomParameterValues::CustomParameterValues() :
 {
 }
 
-CustomParameterValues::CustomParameterValues(JsonView jsonValue) : 
-    m_stringValuesHasBeenSet(false),
-    m_integerValuesHasBeenSet(false),
-    m_decimalValuesHasBeenSet(false),
-    m_dateTimeValuesHasBeenSet(false)
+CustomParameterValues::CustomParameterValues(JsonView jsonValue)
+  : CustomParameterValues()
 {
   *this = jsonValue;
 }

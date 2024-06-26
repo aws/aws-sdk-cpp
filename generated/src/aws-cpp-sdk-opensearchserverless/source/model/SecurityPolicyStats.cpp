@@ -26,11 +26,8 @@ SecurityPolicyStats::SecurityPolicyStats() :
 {
 }
 
-SecurityPolicyStats::SecurityPolicyStats(JsonView jsonValue) : 
-    m_encryptionPolicyCount(0),
-    m_encryptionPolicyCountHasBeenSet(false),
-    m_networkPolicyCount(0),
-    m_networkPolicyCountHasBeenSet(false)
+SecurityPolicyStats::SecurityPolicyStats(JsonView jsonValue)
+  : SecurityPolicyStats()
 {
   *this = jsonValue;
 }

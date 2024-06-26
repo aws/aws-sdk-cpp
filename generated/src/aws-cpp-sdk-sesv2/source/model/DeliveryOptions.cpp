@@ -25,10 +25,8 @@ DeliveryOptions::DeliveryOptions() :
 {
 }
 
-DeliveryOptions::DeliveryOptions(JsonView jsonValue) : 
-    m_tlsPolicy(TlsPolicy::NOT_SET),
-    m_tlsPolicyHasBeenSet(false),
-    m_sendingPoolNameHasBeenSet(false)
+DeliveryOptions::DeliveryOptions(JsonView jsonValue)
+  : DeliveryOptions()
 {
   *this = jsonValue;
 }

@@ -28,13 +28,8 @@ SchemaMappingSummary::SchemaMappingSummary() :
 {
 }
 
-SchemaMappingSummary::SchemaMappingSummary(JsonView jsonValue) : 
-    m_createdAtHasBeenSet(false),
-    m_hasWorkflows(false),
-    m_hasWorkflowsHasBeenSet(false),
-    m_schemaArnHasBeenSet(false),
-    m_schemaNameHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+SchemaMappingSummary::SchemaMappingSummary(JsonView jsonValue)
+  : SchemaMappingSummary()
 {
   *this = jsonValue;
 }

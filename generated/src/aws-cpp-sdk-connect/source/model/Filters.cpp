@@ -26,11 +26,8 @@ Filters::Filters() :
 {
 }
 
-Filters::Filters(JsonView jsonValue) : 
-    m_queuesHasBeenSet(false),
-    m_channelsHasBeenSet(false),
-    m_routingProfilesHasBeenSet(false),
-    m_routingStepExpressionsHasBeenSet(false)
+Filters::Filters(JsonView jsonValue)
+  : Filters()
 {
   *this = jsonValue;
 }

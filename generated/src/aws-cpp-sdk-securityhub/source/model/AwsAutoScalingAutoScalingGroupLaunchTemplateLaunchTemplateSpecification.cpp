@@ -25,10 +25,8 @@ AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification::AwsAuto
 {
 }
 
-AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification::AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification(JsonView jsonValue) : 
-    m_launchTemplateIdHasBeenSet(false),
-    m_launchTemplateNameHasBeenSet(false),
-    m_versionHasBeenSet(false)
+AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification::AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification(JsonView jsonValue)
+  : AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification()
 {
   *this = jsonValue;
 }

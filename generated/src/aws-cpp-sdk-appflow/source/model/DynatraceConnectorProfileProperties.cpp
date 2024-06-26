@@ -23,8 +23,8 @@ DynatraceConnectorProfileProperties::DynatraceConnectorProfileProperties() :
 {
 }
 
-DynatraceConnectorProfileProperties::DynatraceConnectorProfileProperties(JsonView jsonValue) : 
-    m_instanceUrlHasBeenSet(false)
+DynatraceConnectorProfileProperties::DynatraceConnectorProfileProperties(JsonView jsonValue)
+  : DynatraceConnectorProfileProperties()
 {
   *this = jsonValue;
 }

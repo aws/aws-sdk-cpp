@@ -24,10 +24,8 @@ DescribeTrackerResult::DescribeTrackerResult() :
 {
 }
 
-DescribeTrackerResult::DescribeTrackerResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_positionFiltering(PositionFiltering::NOT_SET),
-    m_eventBridgeEnabled(false),
-    m_kmsKeyEnableGeospatialQueries(false)
+DescribeTrackerResult::DescribeTrackerResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeTrackerResult()
 {
   *this = result;
 }

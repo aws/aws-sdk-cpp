@@ -22,8 +22,8 @@ UpdateCustomMetricResult::UpdateCustomMetricResult() :
 {
 }
 
-UpdateCustomMetricResult::UpdateCustomMetricResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_metricType(CustomMetricType::NOT_SET)
+UpdateCustomMetricResult::UpdateCustomMetricResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateCustomMetricResult()
 {
   *this = result;
 }

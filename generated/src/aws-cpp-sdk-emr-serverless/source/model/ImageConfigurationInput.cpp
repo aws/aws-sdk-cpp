@@ -23,8 +23,8 @@ ImageConfigurationInput::ImageConfigurationInput() :
 {
 }
 
-ImageConfigurationInput::ImageConfigurationInput(JsonView jsonValue) : 
-    m_imageUriHasBeenSet(false)
+ImageConfigurationInput::ImageConfigurationInput(JsonView jsonValue)
+  : ImageConfigurationInput()
 {
   *this = jsonValue;
 }

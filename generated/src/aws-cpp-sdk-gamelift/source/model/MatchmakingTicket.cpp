@@ -35,20 +35,8 @@ MatchmakingTicket::MatchmakingTicket() :
 {
 }
 
-MatchmakingTicket::MatchmakingTicket(JsonView jsonValue) : 
-    m_ticketIdHasBeenSet(false),
-    m_configurationNameHasBeenSet(false),
-    m_configurationArnHasBeenSet(false),
-    m_status(MatchmakingConfigurationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusReasonHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_playersHasBeenSet(false),
-    m_gameSessionConnectionInfoHasBeenSet(false),
-    m_estimatedWaitTime(0),
-    m_estimatedWaitTimeHasBeenSet(false)
+MatchmakingTicket::MatchmakingTicket(JsonView jsonValue)
+  : MatchmakingTicket()
 {
   *this = jsonValue;
 }

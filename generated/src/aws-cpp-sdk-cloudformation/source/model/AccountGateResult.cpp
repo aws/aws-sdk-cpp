@@ -27,10 +27,8 @@ AccountGateResult::AccountGateResult() :
 {
 }
 
-AccountGateResult::AccountGateResult(const XmlNode& xmlNode) : 
-    m_status(AccountGateStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusReasonHasBeenSet(false)
+AccountGateResult::AccountGateResult(const XmlNode& xmlNode)
+  : AccountGateResult()
 {
   *this = xmlNode;
 }

@@ -28,13 +28,8 @@ ProtectiveEquipmentPerson::ProtectiveEquipmentPerson() :
 {
 }
 
-ProtectiveEquipmentPerson::ProtectiveEquipmentPerson(JsonView jsonValue) : 
-    m_bodyPartsHasBeenSet(false),
-    m_boundingBoxHasBeenSet(false),
-    m_confidence(0.0),
-    m_confidenceHasBeenSet(false),
-    m_id(0),
-    m_idHasBeenSet(false)
+ProtectiveEquipmentPerson::ProtectiveEquipmentPerson(JsonView jsonValue)
+  : ProtectiveEquipmentPerson()
 {
   *this = jsonValue;
 }

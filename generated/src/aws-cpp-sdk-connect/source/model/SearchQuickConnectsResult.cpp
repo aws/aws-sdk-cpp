@@ -22,8 +22,8 @@ SearchQuickConnectsResult::SearchQuickConnectsResult() :
 {
 }
 
-SearchQuickConnectsResult::SearchQuickConnectsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_approximateTotalCount(0)
+SearchQuickConnectsResult::SearchQuickConnectsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : SearchQuickConnectsResult()
 {
   *this = result;
 }

@@ -25,10 +25,8 @@ BatchPutTaxRegistrationError::BatchPutTaxRegistrationError() :
 {
 }
 
-BatchPutTaxRegistrationError::BatchPutTaxRegistrationError(JsonView jsonValue) : 
-    m_accountIdHasBeenSet(false),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+BatchPutTaxRegistrationError::BatchPutTaxRegistrationError(JsonView jsonValue)
+  : BatchPutTaxRegistrationError()
 {
   *this = jsonValue;
 }

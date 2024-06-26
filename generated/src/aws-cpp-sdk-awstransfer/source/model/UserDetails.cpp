@@ -25,10 +25,8 @@ UserDetails::UserDetails() :
 {
 }
 
-UserDetails::UserDetails(JsonView jsonValue) : 
-    m_userNameHasBeenSet(false),
-    m_serverIdHasBeenSet(false),
-    m_sessionIdHasBeenSet(false)
+UserDetails::UserDetails(JsonView jsonValue)
+  : UserDetails()
 {
   *this = jsonValue;
 }

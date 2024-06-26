@@ -22,8 +22,8 @@ ListRetirableGrantsResult::ListRetirableGrantsResult() :
 {
 }
 
-ListRetirableGrantsResult::ListRetirableGrantsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_truncated(false)
+ListRetirableGrantsResult::ListRetirableGrantsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ListRetirableGrantsResult()
 {
   *this = result;
 }

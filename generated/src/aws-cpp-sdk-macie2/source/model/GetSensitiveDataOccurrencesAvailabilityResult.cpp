@@ -22,8 +22,8 @@ GetSensitiveDataOccurrencesAvailabilityResult::GetSensitiveDataOccurrencesAvaila
 {
 }
 
-GetSensitiveDataOccurrencesAvailabilityResult::GetSensitiveDataOccurrencesAvailabilityResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_code(AvailabilityCode::NOT_SET)
+GetSensitiveDataOccurrencesAvailabilityResult::GetSensitiveDataOccurrencesAvailabilityResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetSensitiveDataOccurrencesAvailabilityResult()
 {
   *this = result;
 }

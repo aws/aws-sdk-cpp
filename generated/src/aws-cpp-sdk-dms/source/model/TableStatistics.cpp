@@ -60,45 +60,8 @@ TableStatistics::TableStatistics() :
 {
 }
 
-TableStatistics::TableStatistics(JsonView jsonValue) : 
-    m_schemaNameHasBeenSet(false),
-    m_tableNameHasBeenSet(false),
-    m_inserts(0),
-    m_insertsHasBeenSet(false),
-    m_deletes(0),
-    m_deletesHasBeenSet(false),
-    m_updates(0),
-    m_updatesHasBeenSet(false),
-    m_ddls(0),
-    m_ddlsHasBeenSet(false),
-    m_appliedInserts(0),
-    m_appliedInsertsHasBeenSet(false),
-    m_appliedDeletes(0),
-    m_appliedDeletesHasBeenSet(false),
-    m_appliedUpdates(0),
-    m_appliedUpdatesHasBeenSet(false),
-    m_appliedDdls(0),
-    m_appliedDdlsHasBeenSet(false),
-    m_fullLoadRows(0),
-    m_fullLoadRowsHasBeenSet(false),
-    m_fullLoadCondtnlChkFailedRows(0),
-    m_fullLoadCondtnlChkFailedRowsHasBeenSet(false),
-    m_fullLoadErrorRows(0),
-    m_fullLoadErrorRowsHasBeenSet(false),
-    m_fullLoadStartTimeHasBeenSet(false),
-    m_fullLoadEndTimeHasBeenSet(false),
-    m_fullLoadReloaded(false),
-    m_fullLoadReloadedHasBeenSet(false),
-    m_lastUpdateTimeHasBeenSet(false),
-    m_tableStateHasBeenSet(false),
-    m_validationPendingRecords(0),
-    m_validationPendingRecordsHasBeenSet(false),
-    m_validationFailedRecords(0),
-    m_validationFailedRecordsHasBeenSet(false),
-    m_validationSuspendedRecords(0),
-    m_validationSuspendedRecordsHasBeenSet(false),
-    m_validationStateHasBeenSet(false),
-    m_validationStateDetailsHasBeenSet(false)
+TableStatistics::TableStatistics(JsonView jsonValue)
+  : TableStatistics()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorCountDetails::AwsEc2Launc
 {
 }
 
-AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorCountDetails::AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorCountDetails(JsonView jsonValue) : 
-    m_max(0),
-    m_maxHasBeenSet(false),
-    m_min(0),
-    m_minHasBeenSet(false)
+AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorCountDetails::AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorCountDetails(JsonView jsonValue)
+  : AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorCountDetails()
 {
   *this = jsonValue;
 }

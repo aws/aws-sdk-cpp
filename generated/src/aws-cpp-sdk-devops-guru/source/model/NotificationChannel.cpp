@@ -24,9 +24,8 @@ NotificationChannel::NotificationChannel() :
 {
 }
 
-NotificationChannel::NotificationChannel(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_configHasBeenSet(false)
+NotificationChannel::NotificationChannel(JsonView jsonValue)
+  : NotificationChannel()
 {
   *this = jsonValue;
 }

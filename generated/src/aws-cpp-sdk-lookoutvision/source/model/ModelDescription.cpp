@@ -39,24 +39,8 @@ ModelDescription::ModelDescription() :
 {
 }
 
-ModelDescription::ModelDescription(JsonView jsonValue) : 
-    m_modelVersionHasBeenSet(false),
-    m_modelArnHasBeenSet(false),
-    m_creationTimestampHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_status(ModelStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_performanceHasBeenSet(false),
-    m_outputConfigHasBeenSet(false),
-    m_evaluationManifestHasBeenSet(false),
-    m_evaluationResultHasBeenSet(false),
-    m_evaluationEndTimestampHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_minInferenceUnits(0),
-    m_minInferenceUnitsHasBeenSet(false),
-    m_maxInferenceUnits(0),
-    m_maxInferenceUnitsHasBeenSet(false)
+ModelDescription::ModelDescription(JsonView jsonValue)
+  : ModelDescription()
 {
   *this = jsonValue;
 }

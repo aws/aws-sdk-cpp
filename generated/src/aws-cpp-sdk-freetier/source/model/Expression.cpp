@@ -26,11 +26,8 @@ Expression::Expression() :
 {
 }
 
-Expression::Expression(JsonView jsonValue) : 
-    m_andHasBeenSet(false),
-    m_dimensionsHasBeenSet(false),
-    m_notHasBeenSet(false),
-    m_orHasBeenSet(false)
+Expression::Expression(JsonView jsonValue)
+  : Expression()
 {
   *this = jsonValue;
 }

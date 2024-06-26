@@ -26,11 +26,8 @@ ActiveDirectoryError::ActiveDirectoryError() :
 {
 }
 
-ActiveDirectoryError::ActiveDirectoryError(JsonView jsonValue) : 
-    m_activeDirectoryIdHasBeenSet(false),
-    m_type(ActiveDirectoryErrorType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+ActiveDirectoryError::ActiveDirectoryError(JsonView jsonValue)
+  : ActiveDirectoryError()
 {
   *this = jsonValue;
 }

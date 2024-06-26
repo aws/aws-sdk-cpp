@@ -24,9 +24,8 @@ GenerativeContentFeedbackData::GenerativeContentFeedbackData() :
 {
 }
 
-GenerativeContentFeedbackData::GenerativeContentFeedbackData(JsonView jsonValue) : 
-    m_relevance(Relevance::NOT_SET),
-    m_relevanceHasBeenSet(false)
+GenerativeContentFeedbackData::GenerativeContentFeedbackData(JsonView jsonValue)
+  : GenerativeContentFeedbackData()
 {
   *this = jsonValue;
 }

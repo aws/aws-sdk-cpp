@@ -24,9 +24,8 @@ ImageLocation::ImageLocation() :
 {
 }
 
-ImageLocation::ImageLocation(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_urlHasBeenSet(false)
+ImageLocation::ImageLocation(JsonView jsonValue)
+  : ImageLocation()
 {
   *this = jsonValue;
 }

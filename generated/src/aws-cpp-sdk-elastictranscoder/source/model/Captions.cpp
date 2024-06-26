@@ -23,8 +23,8 @@ Captions::Captions() :
 {
 }
 
-Captions::Captions(JsonView jsonValue) : 
-    m_captionFormatsHasBeenSet(false)
+Captions::Captions(JsonView jsonValue)
+  : Captions()
 {
   *this = jsonValue;
 }

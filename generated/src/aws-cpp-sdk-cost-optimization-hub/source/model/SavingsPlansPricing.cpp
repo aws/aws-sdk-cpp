@@ -30,15 +30,8 @@ SavingsPlansPricing::SavingsPlansPricing() :
 {
 }
 
-SavingsPlansPricing::SavingsPlansPricing(JsonView jsonValue) : 
-    m_monthlySavingsPlansEligibleCost(0.0),
-    m_monthlySavingsPlansEligibleCostHasBeenSet(false),
-    m_estimatedMonthlyCommitment(0.0),
-    m_estimatedMonthlyCommitmentHasBeenSet(false),
-    m_savingsPercentage(0.0),
-    m_savingsPercentageHasBeenSet(false),
-    m_estimatedOnDemandCost(0.0),
-    m_estimatedOnDemandCostHasBeenSet(false)
+SavingsPlansPricing::SavingsPlansPricing(JsonView jsonValue)
+  : SavingsPlansPricing()
 {
   *this = jsonValue;
 }

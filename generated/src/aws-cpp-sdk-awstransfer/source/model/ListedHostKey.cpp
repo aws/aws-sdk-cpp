@@ -28,13 +28,8 @@ ListedHostKey::ListedHostKey() :
 {
 }
 
-ListedHostKey::ListedHostKey(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_hostKeyIdHasBeenSet(false),
-    m_fingerprintHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_dateImportedHasBeenSet(false)
+ListedHostKey::ListedHostKey(JsonView jsonValue)
+  : ListedHostKey()
 {
   *this = jsonValue;
 }

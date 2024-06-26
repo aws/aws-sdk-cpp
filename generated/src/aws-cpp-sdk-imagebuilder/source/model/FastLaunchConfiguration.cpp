@@ -29,14 +29,8 @@ FastLaunchConfiguration::FastLaunchConfiguration() :
 {
 }
 
-FastLaunchConfiguration::FastLaunchConfiguration(JsonView jsonValue) : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_snapshotConfigurationHasBeenSet(false),
-    m_maxParallelLaunches(0),
-    m_maxParallelLaunchesHasBeenSet(false),
-    m_launchTemplateHasBeenSet(false),
-    m_accountIdHasBeenSet(false)
+FastLaunchConfiguration::FastLaunchConfiguration(JsonView jsonValue)
+  : FastLaunchConfiguration()
 {
   *this = jsonValue;
 }

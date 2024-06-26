@@ -23,8 +23,8 @@ AudioSelectorGroup::AudioSelectorGroup() :
 {
 }
 
-AudioSelectorGroup::AudioSelectorGroup(JsonView jsonValue) : 
-    m_audioSelectorNamesHasBeenSet(false)
+AudioSelectorGroup::AudioSelectorGroup(JsonView jsonValue)
+  : AudioSelectorGroup()
 {
   *this = jsonValue;
 }

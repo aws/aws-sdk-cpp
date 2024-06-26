@@ -27,12 +27,8 @@ OrganizationSummary::OrganizationSummary() :
 {
 }
 
-OrganizationSummary::OrganizationSummary(JsonView jsonValue) : 
-    m_organizationIdHasBeenSet(false),
-    m_aliasHasBeenSet(false),
-    m_defaultMailDomainHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_stateHasBeenSet(false)
+OrganizationSummary::OrganizationSummary(JsonView jsonValue)
+  : OrganizationSummary()
 {
   *this = jsonValue;
 }

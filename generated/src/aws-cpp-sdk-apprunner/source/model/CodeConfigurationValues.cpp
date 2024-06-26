@@ -29,14 +29,8 @@ CodeConfigurationValues::CodeConfigurationValues() :
 {
 }
 
-CodeConfigurationValues::CodeConfigurationValues(JsonView jsonValue) : 
-    m_runtime(Runtime::NOT_SET),
-    m_runtimeHasBeenSet(false),
-    m_buildCommandHasBeenSet(false),
-    m_startCommandHasBeenSet(false),
-    m_portHasBeenSet(false),
-    m_runtimeEnvironmentVariablesHasBeenSet(false),
-    m_runtimeEnvironmentSecretsHasBeenSet(false)
+CodeConfigurationValues::CodeConfigurationValues(JsonView jsonValue)
+  : CodeConfigurationValues()
 {
   *this = jsonValue;
 }

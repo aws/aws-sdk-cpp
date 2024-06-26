@@ -27,12 +27,8 @@ PreparedStatement::PreparedStatement() :
 {
 }
 
-PreparedStatement::PreparedStatement(JsonView jsonValue) : 
-    m_statementNameHasBeenSet(false),
-    m_queryStatementHasBeenSet(false),
-    m_workGroupNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false)
+PreparedStatement::PreparedStatement(JsonView jsonValue)
+  : PreparedStatement()
 {
   *this = jsonValue;
 }

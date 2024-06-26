@@ -25,10 +25,8 @@ PublicKeySummary::PublicKeySummary() :
 {
 }
 
-PublicKeySummary::PublicKeySummary(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+PublicKeySummary::PublicKeySummary(JsonView jsonValue)
+  : PublicKeySummary()
 {
   *this = jsonValue;
 }

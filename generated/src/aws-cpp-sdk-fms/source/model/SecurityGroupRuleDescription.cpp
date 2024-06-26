@@ -30,15 +30,8 @@ SecurityGroupRuleDescription::SecurityGroupRuleDescription() :
 {
 }
 
-SecurityGroupRuleDescription::SecurityGroupRuleDescription(JsonView jsonValue) : 
-    m_iPV4RangeHasBeenSet(false),
-    m_iPV6RangeHasBeenSet(false),
-    m_prefixListIdHasBeenSet(false),
-    m_protocolHasBeenSet(false),
-    m_fromPort(0),
-    m_fromPortHasBeenSet(false),
-    m_toPort(0),
-    m_toPortHasBeenSet(false)
+SecurityGroupRuleDescription::SecurityGroupRuleDescription(JsonView jsonValue)
+  : SecurityGroupRuleDescription()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ SpainAdditionalInfo::SpainAdditionalInfo() :
 {
 }
 
-SpainAdditionalInfo::SpainAdditionalInfo(JsonView jsonValue) : 
-    m_registrationType(RegistrationType::NOT_SET),
-    m_registrationTypeHasBeenSet(false)
+SpainAdditionalInfo::SpainAdditionalInfo(JsonView jsonValue)
+  : SpainAdditionalInfo()
 {
   *this = jsonValue;
 }

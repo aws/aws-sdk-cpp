@@ -23,8 +23,8 @@ IssueDetected::IssueDetected() :
 {
 }
 
-IssueDetected::IssueDetected(JsonView jsonValue) : 
-    m_characterOffsetsHasBeenSet(false)
+IssueDetected::IssueDetected(JsonView jsonValue)
+  : IssueDetected()
 {
   *this = jsonValue;
 }

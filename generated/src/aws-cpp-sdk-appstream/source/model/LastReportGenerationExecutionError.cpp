@@ -25,10 +25,8 @@ LastReportGenerationExecutionError::LastReportGenerationExecutionError() :
 {
 }
 
-LastReportGenerationExecutionError::LastReportGenerationExecutionError(JsonView jsonValue) : 
-    m_errorCode(UsageReportExecutionErrorCode::NOT_SET),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
+LastReportGenerationExecutionError::LastReportGenerationExecutionError(JsonView jsonValue)
+  : LastReportGenerationExecutionError()
 {
   *this = jsonValue;
 }

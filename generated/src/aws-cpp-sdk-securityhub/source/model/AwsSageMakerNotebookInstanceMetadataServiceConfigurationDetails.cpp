@@ -23,8 +23,8 @@ AwsSageMakerNotebookInstanceMetadataServiceConfigurationDetails::AwsSageMakerNot
 {
 }
 
-AwsSageMakerNotebookInstanceMetadataServiceConfigurationDetails::AwsSageMakerNotebookInstanceMetadataServiceConfigurationDetails(JsonView jsonValue) : 
-    m_minimumInstanceMetadataServiceVersionHasBeenSet(false)
+AwsSageMakerNotebookInstanceMetadataServiceConfigurationDetails::AwsSageMakerNotebookInstanceMetadataServiceConfigurationDetails(JsonView jsonValue)
+  : AwsSageMakerNotebookInstanceMetadataServiceConfigurationDetails()
 {
   *this = jsonValue;
 }

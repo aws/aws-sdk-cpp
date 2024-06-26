@@ -25,10 +25,8 @@ Block::Block() :
 {
 }
 
-Block::Block(JsonView jsonValue) : 
-    m_blockIndex(0),
-    m_blockIndexHasBeenSet(false),
-    m_blockTokenHasBeenSet(false)
+Block::Block(JsonView jsonValue)
+  : Block()
 {
   *this = jsonValue;
 }

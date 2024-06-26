@@ -23,8 +23,8 @@ StreamProcessorInput::StreamProcessorInput() :
 {
 }
 
-StreamProcessorInput::StreamProcessorInput(JsonView jsonValue) : 
-    m_kinesisVideoStreamHasBeenSet(false)
+StreamProcessorInput::StreamProcessorInput(JsonView jsonValue)
+  : StreamProcessorInput()
 {
   *this = jsonValue;
 }

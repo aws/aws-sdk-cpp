@@ -34,19 +34,8 @@ InferenceSchedulerSummary::InferenceSchedulerSummary() :
 {
 }
 
-InferenceSchedulerSummary::InferenceSchedulerSummary(JsonView jsonValue) : 
-    m_modelNameHasBeenSet(false),
-    m_modelArnHasBeenSet(false),
-    m_inferenceSchedulerNameHasBeenSet(false),
-    m_inferenceSchedulerArnHasBeenSet(false),
-    m_status(InferenceSchedulerStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_dataDelayOffsetInMinutes(0),
-    m_dataDelayOffsetInMinutesHasBeenSet(false),
-    m_dataUploadFrequency(DataUploadFrequency::NOT_SET),
-    m_dataUploadFrequencyHasBeenSet(false),
-    m_latestInferenceResult(LatestInferenceResult::NOT_SET),
-    m_latestInferenceResultHasBeenSet(false)
+InferenceSchedulerSummary::InferenceSchedulerSummary(JsonView jsonValue)
+  : InferenceSchedulerSummary()
 {
   *this = jsonValue;
 }

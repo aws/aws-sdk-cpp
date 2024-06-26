@@ -26,11 +26,8 @@ ReprocessingSummary::ReprocessingSummary() :
 {
 }
 
-ReprocessingSummary::ReprocessingSummary(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_status(ReprocessingStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_creationTimeHasBeenSet(false)
+ReprocessingSummary::ReprocessingSummary(JsonView jsonValue)
+  : ReprocessingSummary()
 {
   *this = jsonValue;
 }

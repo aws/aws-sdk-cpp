@@ -23,8 +23,8 @@ Data::Data() :
 {
 }
 
-Data::Data(JsonView jsonValue) : 
-    m_performanceInsightsMetricHasBeenSet(false)
+Data::Data(JsonView jsonValue)
+  : Data()
 {
   *this = jsonValue;
 }

@@ -23,9 +23,8 @@ StartDeviceAuthorizationResult::StartDeviceAuthorizationResult() :
 {
 }
 
-StartDeviceAuthorizationResult::StartDeviceAuthorizationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_expiresIn(0),
-    m_interval(0)
+StartDeviceAuthorizationResult::StartDeviceAuthorizationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : StartDeviceAuthorizationResult()
 {
   *this = result;
 }

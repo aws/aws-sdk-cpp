@@ -24,9 +24,8 @@ MultiModelConfig::MultiModelConfig() :
 {
 }
 
-MultiModelConfig::MultiModelConfig(JsonView jsonValue) : 
-    m_modelCacheSetting(ModelCacheSetting::NOT_SET),
-    m_modelCacheSettingHasBeenSet(false)
+MultiModelConfig::MultiModelConfig(JsonView jsonValue)
+  : MultiModelConfig()
 {
   *this = jsonValue;
 }

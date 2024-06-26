@@ -31,16 +31,8 @@ ImageVersion::ImageVersion() :
 {
 }
 
-ImageVersion::ImageVersion(JsonView jsonValue) : 
-    m_creationTimeHasBeenSet(false),
-    m_failureReasonHasBeenSet(false),
-    m_imageArnHasBeenSet(false),
-    m_imageVersionArnHasBeenSet(false),
-    m_imageVersionStatus(ImageVersionStatus::NOT_SET),
-    m_imageVersionStatusHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_version(0),
-    m_versionHasBeenSet(false)
+ImageVersion::ImageVersion(JsonView jsonValue)
+  : ImageVersion()
 {
   *this = jsonValue;
 }

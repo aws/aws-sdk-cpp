@@ -35,20 +35,8 @@ ImportReadSetSourceItem::ImportReadSetSourceItem() :
 {
 }
 
-ImportReadSetSourceItem::ImportReadSetSourceItem(JsonView jsonValue) : 
-    m_sourceFilesHasBeenSet(false),
-    m_sourceFileType(FileType::NOT_SET),
-    m_sourceFileTypeHasBeenSet(false),
-    m_status(ReadSetImportJobItemStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_subjectIdHasBeenSet(false),
-    m_sampleIdHasBeenSet(false),
-    m_generatedFromHasBeenSet(false),
-    m_referenceArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+ImportReadSetSourceItem::ImportReadSetSourceItem(JsonView jsonValue)
+  : ImportReadSetSourceItem()
 {
   *this = jsonValue;
 }

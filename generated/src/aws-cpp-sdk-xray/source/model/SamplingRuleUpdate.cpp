@@ -37,22 +37,8 @@ SamplingRuleUpdate::SamplingRuleUpdate() :
 {
 }
 
-SamplingRuleUpdate::SamplingRuleUpdate(JsonView jsonValue) : 
-    m_ruleNameHasBeenSet(false),
-    m_ruleARNHasBeenSet(false),
-    m_resourceARNHasBeenSet(false),
-    m_priority(0),
-    m_priorityHasBeenSet(false),
-    m_fixedRate(0.0),
-    m_fixedRateHasBeenSet(false),
-    m_reservoirSize(0),
-    m_reservoirSizeHasBeenSet(false),
-    m_hostHasBeenSet(false),
-    m_serviceNameHasBeenSet(false),
-    m_serviceTypeHasBeenSet(false),
-    m_hTTPMethodHasBeenSet(false),
-    m_uRLPathHasBeenSet(false),
-    m_attributesHasBeenSet(false)
+SamplingRuleUpdate::SamplingRuleUpdate(JsonView jsonValue)
+  : SamplingRuleUpdate()
 {
   *this = jsonValue;
 }

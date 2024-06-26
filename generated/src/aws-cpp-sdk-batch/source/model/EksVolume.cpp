@@ -26,11 +26,8 @@ EksVolume::EksVolume() :
 {
 }
 
-EksVolume::EksVolume(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_hostPathHasBeenSet(false),
-    m_emptyDirHasBeenSet(false),
-    m_secretHasBeenSet(false)
+EksVolume::EksVolume(JsonView jsonValue)
+  : EksVolume()
 {
   *this = jsonValue;
 }

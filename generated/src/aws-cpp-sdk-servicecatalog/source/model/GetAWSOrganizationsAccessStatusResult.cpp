@@ -22,8 +22,8 @@ GetAWSOrganizationsAccessStatusResult::GetAWSOrganizationsAccessStatusResult() :
 {
 }
 
-GetAWSOrganizationsAccessStatusResult::GetAWSOrganizationsAccessStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_accessStatus(AccessStatus::NOT_SET)
+GetAWSOrganizationsAccessStatusResult::GetAWSOrganizationsAccessStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetAWSOrganizationsAccessStatusResult()
 {
   *this = result;
 }

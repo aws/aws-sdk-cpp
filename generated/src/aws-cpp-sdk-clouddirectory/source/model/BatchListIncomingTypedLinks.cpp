@@ -28,13 +28,8 @@ BatchListIncomingTypedLinks::BatchListIncomingTypedLinks() :
 {
 }
 
-BatchListIncomingTypedLinks::BatchListIncomingTypedLinks(JsonView jsonValue) : 
-    m_objectReferenceHasBeenSet(false),
-    m_filterAttributeRangesHasBeenSet(false),
-    m_filterTypedLinkHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
+BatchListIncomingTypedLinks::BatchListIncomingTypedLinks(JsonView jsonValue)
+  : BatchListIncomingTypedLinks()
 {
   *this = jsonValue;
 }

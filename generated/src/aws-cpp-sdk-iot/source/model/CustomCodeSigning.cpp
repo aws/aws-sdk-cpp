@@ -26,11 +26,8 @@ CustomCodeSigning::CustomCodeSigning() :
 {
 }
 
-CustomCodeSigning::CustomCodeSigning(JsonView jsonValue) : 
-    m_signatureHasBeenSet(false),
-    m_certificateChainHasBeenSet(false),
-    m_hashAlgorithmHasBeenSet(false),
-    m_signatureAlgorithmHasBeenSet(false)
+CustomCodeSigning::CustomCodeSigning(JsonView jsonValue)
+  : CustomCodeSigning()
 {
   *this = jsonValue;
 }

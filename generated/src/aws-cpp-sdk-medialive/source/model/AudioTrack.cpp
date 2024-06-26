@@ -24,9 +24,8 @@ AudioTrack::AudioTrack() :
 {
 }
 
-AudioTrack::AudioTrack(JsonView jsonValue) : 
-    m_track(0),
-    m_trackHasBeenSet(false)
+AudioTrack::AudioTrack(JsonView jsonValue)
+  : AudioTrack()
 {
   *this = jsonValue;
 }

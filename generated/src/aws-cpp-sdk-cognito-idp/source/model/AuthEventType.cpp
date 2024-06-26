@@ -32,17 +32,8 @@ AuthEventType::AuthEventType() :
 {
 }
 
-AuthEventType::AuthEventType(JsonView jsonValue) : 
-    m_eventIdHasBeenSet(false),
-    m_eventType(EventType::NOT_SET),
-    m_eventTypeHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_eventResponse(EventResponseType::NOT_SET),
-    m_eventResponseHasBeenSet(false),
-    m_eventRiskHasBeenSet(false),
-    m_challengeResponsesHasBeenSet(false),
-    m_eventContextDataHasBeenSet(false),
-    m_eventFeedbackHasBeenSet(false)
+AuthEventType::AuthEventType(JsonView jsonValue)
+  : AuthEventType()
 {
   *this = jsonValue;
 }

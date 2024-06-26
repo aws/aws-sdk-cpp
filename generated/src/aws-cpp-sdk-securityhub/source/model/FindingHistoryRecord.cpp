@@ -29,14 +29,8 @@ FindingHistoryRecord::FindingHistoryRecord() :
 {
 }
 
-FindingHistoryRecord::FindingHistoryRecord(JsonView jsonValue) : 
-    m_findingIdentifierHasBeenSet(false),
-    m_updateTimeHasBeenSet(false),
-    m_findingCreated(false),
-    m_findingCreatedHasBeenSet(false),
-    m_updateSourceHasBeenSet(false),
-    m_updatesHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
+FindingHistoryRecord::FindingHistoryRecord(JsonView jsonValue)
+  : FindingHistoryRecord()
 {
   *this = jsonValue;
 }

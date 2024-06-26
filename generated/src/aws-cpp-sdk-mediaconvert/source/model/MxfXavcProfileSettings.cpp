@@ -26,11 +26,8 @@ MxfXavcProfileSettings::MxfXavcProfileSettings() :
 {
 }
 
-MxfXavcProfileSettings::MxfXavcProfileSettings(JsonView jsonValue) : 
-    m_durationMode(MxfXavcDurationMode::NOT_SET),
-    m_durationModeHasBeenSet(false),
-    m_maxAncDataSize(0),
-    m_maxAncDataSizeHasBeenSet(false)
+MxfXavcProfileSettings::MxfXavcProfileSettings(JsonView jsonValue)
+  : MxfXavcProfileSettings()
 {
   *this = jsonValue;
 }

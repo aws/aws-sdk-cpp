@@ -25,10 +25,8 @@ TargetResourceTypeParameter::TargetResourceTypeParameter() :
 {
 }
 
-TargetResourceTypeParameter::TargetResourceTypeParameter(JsonView jsonValue) : 
-    m_descriptionHasBeenSet(false),
-    m_required(false),
-    m_requiredHasBeenSet(false)
+TargetResourceTypeParameter::TargetResourceTypeParameter(JsonView jsonValue)
+  : TargetResourceTypeParameter()
 {
   *this = jsonValue;
 }

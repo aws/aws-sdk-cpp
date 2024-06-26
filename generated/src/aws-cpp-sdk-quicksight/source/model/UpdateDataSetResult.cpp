@@ -22,8 +22,8 @@ UpdateDataSetResult::UpdateDataSetResult() :
 {
 }
 
-UpdateDataSetResult::UpdateDataSetResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+UpdateDataSetResult::UpdateDataSetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateDataSetResult()
 {
   *this = result;
 }

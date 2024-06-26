@@ -24,9 +24,8 @@ AddBridgeSourceRequest::AddBridgeSourceRequest() :
 {
 }
 
-AddBridgeSourceRequest::AddBridgeSourceRequest(JsonView jsonValue) : 
-    m_flowSourceHasBeenSet(false),
-    m_networkSourceHasBeenSet(false)
+AddBridgeSourceRequest::AddBridgeSourceRequest(JsonView jsonValue)
+  : AddBridgeSourceRequest()
 {
   *this = jsonValue;
 }

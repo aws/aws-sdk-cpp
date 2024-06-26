@@ -26,11 +26,8 @@ RotationRulesType::RotationRulesType() :
 {
 }
 
-RotationRulesType::RotationRulesType(JsonView jsonValue) : 
-    m_automaticallyAfterDays(0),
-    m_automaticallyAfterDaysHasBeenSet(false),
-    m_durationHasBeenSet(false),
-    m_scheduleExpressionHasBeenSet(false)
+RotationRulesType::RotationRulesType(JsonView jsonValue)
+  : RotationRulesType()
 {
   *this = jsonValue;
 }

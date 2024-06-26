@@ -31,14 +31,8 @@ EbsInfo::EbsInfo() :
 {
 }
 
-EbsInfo::EbsInfo(const XmlNode& xmlNode) : 
-    m_ebsOptimizedSupport(EbsOptimizedSupport::NOT_SET),
-    m_ebsOptimizedSupportHasBeenSet(false),
-    m_encryptionSupport(EbsEncryptionSupport::NOT_SET),
-    m_encryptionSupportHasBeenSet(false),
-    m_ebsOptimizedInfoHasBeenSet(false),
-    m_nvmeSupport(EbsNvmeSupport::NOT_SET),
-    m_nvmeSupportHasBeenSet(false)
+EbsInfo::EbsInfo(const XmlNode& xmlNode)
+  : EbsInfo()
 {
   *this = xmlNode;
 }

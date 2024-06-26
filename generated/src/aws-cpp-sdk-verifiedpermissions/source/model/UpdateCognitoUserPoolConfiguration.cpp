@@ -25,10 +25,8 @@ UpdateCognitoUserPoolConfiguration::UpdateCognitoUserPoolConfiguration() :
 {
 }
 
-UpdateCognitoUserPoolConfiguration::UpdateCognitoUserPoolConfiguration(JsonView jsonValue) : 
-    m_userPoolArnHasBeenSet(false),
-    m_clientIdsHasBeenSet(false),
-    m_groupConfigurationHasBeenSet(false)
+UpdateCognitoUserPoolConfiguration::UpdateCognitoUserPoolConfiguration(JsonView jsonValue)
+  : UpdateCognitoUserPoolConfiguration()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ UnsupportedMediaTypeException::UnsupportedMediaTypeException() :
 {
 }
 
-UnsupportedMediaTypeException::UnsupportedMediaTypeException(JsonView jsonValue) : 
-    m_typeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+UnsupportedMediaTypeException::UnsupportedMediaTypeException(JsonView jsonValue)
+  : UnsupportedMediaTypeException()
 {
   *this = jsonValue;
 }

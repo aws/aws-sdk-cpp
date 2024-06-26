@@ -24,9 +24,8 @@ GroupConfigurationItem::GroupConfigurationItem() :
 {
 }
 
-GroupConfigurationItem::GroupConfigurationItem(JsonView jsonValue) : 
-    m_typeHasBeenSet(false),
-    m_parametersHasBeenSet(false)
+GroupConfigurationItem::GroupConfigurationItem(JsonView jsonValue)
+  : GroupConfigurationItem()
 {
   *this = jsonValue;
 }

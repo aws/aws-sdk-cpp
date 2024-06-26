@@ -26,11 +26,8 @@ RelatedResource::RelatedResource() :
 {
 }
 
-RelatedResource::RelatedResource(JsonView jsonValue) : 
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_resourceIdentifierHasBeenSet(false),
-    m_additionalInfoHasBeenSet(false)
+RelatedResource::RelatedResource(JsonView jsonValue)
+  : RelatedResource()
 {
   *this = jsonValue;
 }

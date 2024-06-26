@@ -24,9 +24,8 @@ DataSetImportConfig::DataSetImportConfig() :
 {
 }
 
-DataSetImportConfig::DataSetImportConfig(JsonView jsonValue) : 
-    m_dataSetsHasBeenSet(false),
-    m_s3LocationHasBeenSet(false)
+DataSetImportConfig::DataSetImportConfig(JsonView jsonValue)
+  : DataSetImportConfig()
 {
   *this = jsonValue;
 }

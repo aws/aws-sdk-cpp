@@ -28,13 +28,8 @@ UserSetting::UserSetting() :
 {
 }
 
-UserSetting::UserSetting(JsonView jsonValue) : 
-    m_action(Action::NOT_SET),
-    m_actionHasBeenSet(false),
-    m_permission(Permission::NOT_SET),
-    m_permissionHasBeenSet(false),
-    m_maximumLength(0),
-    m_maximumLengthHasBeenSet(false)
+UserSetting::UserSetting(JsonView jsonValue)
+  : UserSetting()
 {
   *this = jsonValue;
 }

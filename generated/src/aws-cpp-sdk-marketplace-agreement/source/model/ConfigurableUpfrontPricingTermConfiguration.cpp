@@ -24,9 +24,8 @@ ConfigurableUpfrontPricingTermConfiguration::ConfigurableUpfrontPricingTermConfi
 {
 }
 
-ConfigurableUpfrontPricingTermConfiguration::ConfigurableUpfrontPricingTermConfiguration(JsonView jsonValue) : 
-    m_dimensionsHasBeenSet(false),
-    m_selectorValueHasBeenSet(false)
+ConfigurableUpfrontPricingTermConfiguration::ConfigurableUpfrontPricingTermConfiguration(JsonView jsonValue)
+  : ConfigurableUpfrontPricingTermConfiguration()
 {
   *this = jsonValue;
 }

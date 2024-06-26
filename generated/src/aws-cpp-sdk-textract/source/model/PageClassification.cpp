@@ -24,9 +24,8 @@ PageClassification::PageClassification() :
 {
 }
 
-PageClassification::PageClassification(JsonView jsonValue) : 
-    m_pageTypeHasBeenSet(false),
-    m_pageNumberHasBeenSet(false)
+PageClassification::PageClassification(JsonView jsonValue)
+  : PageClassification()
 {
   *this = jsonValue;
 }

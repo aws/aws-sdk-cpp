@@ -24,9 +24,8 @@ ChannelMembershipForAppInstanceUserSummary::ChannelMembershipForAppInstanceUserS
 {
 }
 
-ChannelMembershipForAppInstanceUserSummary::ChannelMembershipForAppInstanceUserSummary(JsonView jsonValue) : 
-    m_channelSummaryHasBeenSet(false),
-    m_appInstanceUserMembershipSummaryHasBeenSet(false)
+ChannelMembershipForAppInstanceUserSummary::ChannelMembershipForAppInstanceUserSummary(JsonView jsonValue)
+  : ChannelMembershipForAppInstanceUserSummary()
 {
   *this = jsonValue;
 }

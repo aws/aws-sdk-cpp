@@ -55,38 +55,8 @@ InstanceRequirements::InstanceRequirements() :
 {
 }
 
-InstanceRequirements::InstanceRequirements(const XmlNode& xmlNode) : 
-    m_vCpuCountHasBeenSet(false),
-    m_memoryMiBHasBeenSet(false),
-    m_cpuManufacturersHasBeenSet(false),
-    m_memoryGiBPerVCpuHasBeenSet(false),
-    m_excludedInstanceTypesHasBeenSet(false),
-    m_instanceGenerationsHasBeenSet(false),
-    m_spotMaxPricePercentageOverLowestPrice(0),
-    m_spotMaxPricePercentageOverLowestPriceHasBeenSet(false),
-    m_onDemandMaxPricePercentageOverLowestPrice(0),
-    m_onDemandMaxPricePercentageOverLowestPriceHasBeenSet(false),
-    m_bareMetal(BareMetal::NOT_SET),
-    m_bareMetalHasBeenSet(false),
-    m_burstablePerformance(BurstablePerformance::NOT_SET),
-    m_burstablePerformanceHasBeenSet(false),
-    m_requireHibernateSupport(false),
-    m_requireHibernateSupportHasBeenSet(false),
-    m_networkInterfaceCountHasBeenSet(false),
-    m_localStorage(LocalStorage::NOT_SET),
-    m_localStorageHasBeenSet(false),
-    m_localStorageTypesHasBeenSet(false),
-    m_totalLocalStorageGBHasBeenSet(false),
-    m_baselineEbsBandwidthMbpsHasBeenSet(false),
-    m_acceleratorTypesHasBeenSet(false),
-    m_acceleratorCountHasBeenSet(false),
-    m_acceleratorManufacturersHasBeenSet(false),
-    m_acceleratorNamesHasBeenSet(false),
-    m_acceleratorTotalMemoryMiBHasBeenSet(false),
-    m_networkBandwidthGbpsHasBeenSet(false),
-    m_allowedInstanceTypesHasBeenSet(false),
-    m_maxSpotPriceAsPercentageOfOptimalOnDemandPrice(0),
-    m_maxSpotPriceAsPercentageOfOptimalOnDemandPriceHasBeenSet(false)
+InstanceRequirements::InstanceRequirements(const XmlNode& xmlNode)
+  : InstanceRequirements()
 {
   *this = xmlNode;
 }

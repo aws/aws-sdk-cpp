@@ -33,18 +33,8 @@ ImportSummary::ImportSummary() :
 {
 }
 
-ImportSummary::ImportSummary(JsonView jsonValue) : 
-    m_importIdHasBeenSet(false),
-    m_importedResourceIdHasBeenSet(false),
-    m_importedResourceNameHasBeenSet(false),
-    m_importStatus(ImportStatus::NOT_SET),
-    m_importStatusHasBeenSet(false),
-    m_mergeStrategy(MergeStrategy::NOT_SET),
-    m_mergeStrategyHasBeenSet(false),
-    m_creationDateTimeHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false),
-    m_importedResourceType(ImportResourceType::NOT_SET),
-    m_importedResourceTypeHasBeenSet(false)
+ImportSummary::ImportSummary(JsonView jsonValue)
+  : ImportSummary()
 {
   *this = jsonValue;
 }

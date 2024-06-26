@@ -24,9 +24,8 @@ SearchTypesResultItem::SearchTypesResultItem() :
 {
 }
 
-SearchTypesResultItem::SearchTypesResultItem(JsonView jsonValue) : 
-    m_assetTypeItemHasBeenSet(false),
-    m_formTypeItemHasBeenSet(false)
+SearchTypesResultItem::SearchTypesResultItem(JsonView jsonValue)
+  : SearchTypesResultItem()
 {
   *this = jsonValue;
 }

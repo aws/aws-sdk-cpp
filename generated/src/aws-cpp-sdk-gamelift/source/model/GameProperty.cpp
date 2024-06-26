@@ -24,9 +24,8 @@ GameProperty::GameProperty() :
 {
 }
 
-GameProperty::GameProperty(JsonView jsonValue) : 
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false)
+GameProperty::GameProperty(JsonView jsonValue)
+  : GameProperty()
 {
   *this = jsonValue;
 }

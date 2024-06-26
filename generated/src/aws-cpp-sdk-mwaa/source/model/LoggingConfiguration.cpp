@@ -27,12 +27,8 @@ LoggingConfiguration::LoggingConfiguration() :
 {
 }
 
-LoggingConfiguration::LoggingConfiguration(JsonView jsonValue) : 
-    m_dagProcessingLogsHasBeenSet(false),
-    m_schedulerLogsHasBeenSet(false),
-    m_webserverLogsHasBeenSet(false),
-    m_workerLogsHasBeenSet(false),
-    m_taskLogsHasBeenSet(false)
+LoggingConfiguration::LoggingConfiguration(JsonView jsonValue)
+  : LoggingConfiguration()
 {
   *this = jsonValue;
 }

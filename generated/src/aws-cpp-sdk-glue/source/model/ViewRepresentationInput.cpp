@@ -28,13 +28,8 @@ ViewRepresentationInput::ViewRepresentationInput() :
 {
 }
 
-ViewRepresentationInput::ViewRepresentationInput(JsonView jsonValue) : 
-    m_dialect(ViewDialect::NOT_SET),
-    m_dialectHasBeenSet(false),
-    m_dialectVersionHasBeenSet(false),
-    m_viewOriginalTextHasBeenSet(false),
-    m_validationConnectionHasBeenSet(false),
-    m_viewExpandedTextHasBeenSet(false)
+ViewRepresentationInput::ViewRepresentationInput(JsonView jsonValue)
+  : ViewRepresentationInput()
 {
   *this = jsonValue;
 }

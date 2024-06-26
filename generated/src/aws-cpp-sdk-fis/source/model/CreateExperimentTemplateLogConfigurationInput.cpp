@@ -26,11 +26,8 @@ CreateExperimentTemplateLogConfigurationInput::CreateExperimentTemplateLogConfig
 {
 }
 
-CreateExperimentTemplateLogConfigurationInput::CreateExperimentTemplateLogConfigurationInput(JsonView jsonValue) : 
-    m_cloudWatchLogsConfigurationHasBeenSet(false),
-    m_s3ConfigurationHasBeenSet(false),
-    m_logSchemaVersion(0),
-    m_logSchemaVersionHasBeenSet(false)
+CreateExperimentTemplateLogConfigurationInput::CreateExperimentTemplateLogConfigurationInput(JsonView jsonValue)
+  : CreateExperimentTemplateLogConfigurationInput()
 {
   *this = jsonValue;
 }

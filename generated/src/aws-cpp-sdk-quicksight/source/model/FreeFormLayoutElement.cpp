@@ -36,21 +36,8 @@ FreeFormLayoutElement::FreeFormLayoutElement() :
 {
 }
 
-FreeFormLayoutElement::FreeFormLayoutElement(JsonView jsonValue) : 
-    m_elementIdHasBeenSet(false),
-    m_elementType(LayoutElementType::NOT_SET),
-    m_elementTypeHasBeenSet(false),
-    m_xAxisLocationHasBeenSet(false),
-    m_yAxisLocationHasBeenSet(false),
-    m_widthHasBeenSet(false),
-    m_heightHasBeenSet(false),
-    m_visibility(Visibility::NOT_SET),
-    m_visibilityHasBeenSet(false),
-    m_renderingRulesHasBeenSet(false),
-    m_borderStyleHasBeenSet(false),
-    m_selectedBorderStyleHasBeenSet(false),
-    m_backgroundStyleHasBeenSet(false),
-    m_loadingAnimationHasBeenSet(false)
+FreeFormLayoutElement::FreeFormLayoutElement(JsonView jsonValue)
+  : FreeFormLayoutElement()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ Location::Location() :
 {
 }
 
-Location::Location(JsonView jsonValue) : 
-    m_latitude(0.0),
-    m_latitudeHasBeenSet(false),
-    m_longitude(0.0),
-    m_longitudeHasBeenSet(false)
+Location::Location(JsonView jsonValue)
+  : Location()
 {
   *this = jsonValue;
 }

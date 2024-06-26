@@ -22,8 +22,8 @@ ListInsightsMetricDataResult::ListInsightsMetricDataResult() :
 {
 }
 
-ListInsightsMetricDataResult::ListInsightsMetricDataResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_insightType(InsightType::NOT_SET)
+ListInsightsMetricDataResult::ListInsightsMetricDataResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ListInsightsMetricDataResult()
 {
   *this = result;
 }

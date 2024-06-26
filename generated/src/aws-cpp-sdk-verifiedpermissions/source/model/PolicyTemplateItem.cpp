@@ -27,12 +27,8 @@ PolicyTemplateItem::PolicyTemplateItem() :
 {
 }
 
-PolicyTemplateItem::PolicyTemplateItem(JsonView jsonValue) : 
-    m_policyStoreIdHasBeenSet(false),
-    m_policyTemplateIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_createdDateHasBeenSet(false),
-    m_lastUpdatedDateHasBeenSet(false)
+PolicyTemplateItem::PolicyTemplateItem(JsonView jsonValue)
+  : PolicyTemplateItem()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ Volume::Volume() :
 {
 }
 
-Volume::Volume(JsonView jsonValue) : 
-    m_hostHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_efsVolumeConfigurationHasBeenSet(false)
+Volume::Volume(JsonView jsonValue)
+  : Volume()
 {
   *this = jsonValue;
 }

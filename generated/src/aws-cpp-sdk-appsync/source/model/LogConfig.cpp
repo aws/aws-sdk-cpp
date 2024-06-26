@@ -27,12 +27,8 @@ LogConfig::LogConfig() :
 {
 }
 
-LogConfig::LogConfig(JsonView jsonValue) : 
-    m_fieldLogLevel(FieldLogLevel::NOT_SET),
-    m_fieldLogLevelHasBeenSet(false),
-    m_cloudWatchLogsRoleArnHasBeenSet(false),
-    m_excludeVerboseContent(false),
-    m_excludeVerboseContentHasBeenSet(false)
+LogConfig::LogConfig(JsonView jsonValue)
+  : LogConfig()
 {
   *this = jsonValue;
 }

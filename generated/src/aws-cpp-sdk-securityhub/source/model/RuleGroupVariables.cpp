@@ -24,9 +24,8 @@ RuleGroupVariables::RuleGroupVariables() :
 {
 }
 
-RuleGroupVariables::RuleGroupVariables(JsonView jsonValue) : 
-    m_ipSetsHasBeenSet(false),
-    m_portSetsHasBeenSet(false)
+RuleGroupVariables::RuleGroupVariables(JsonView jsonValue)
+  : RuleGroupVariables()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ ResaleAuthorizationSort::ResaleAuthorizationSort() :
 {
 }
 
-ResaleAuthorizationSort::ResaleAuthorizationSort(JsonView jsonValue) : 
-    m_sortBy(ResaleAuthorizationSortBy::NOT_SET),
-    m_sortByHasBeenSet(false),
-    m_sortOrder(SortOrder::NOT_SET),
-    m_sortOrderHasBeenSet(false)
+ResaleAuthorizationSort::ResaleAuthorizationSort(JsonView jsonValue)
+  : ResaleAuthorizationSort()
 {
   *this = jsonValue;
 }

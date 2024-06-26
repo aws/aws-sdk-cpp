@@ -24,9 +24,8 @@ WafOverrideAction::WafOverrideAction() :
 {
 }
 
-WafOverrideAction::WafOverrideAction(JsonView jsonValue) : 
-    m_type(WafOverrideActionType::NOT_SET),
-    m_typeHasBeenSet(false)
+WafOverrideAction::WafOverrideAction(JsonView jsonValue)
+  : WafOverrideAction()
 {
   *this = jsonValue;
 }

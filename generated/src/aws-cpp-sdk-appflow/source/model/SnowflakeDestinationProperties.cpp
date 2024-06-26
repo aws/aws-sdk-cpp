@@ -26,11 +26,8 @@ SnowflakeDestinationProperties::SnowflakeDestinationProperties() :
 {
 }
 
-SnowflakeDestinationProperties::SnowflakeDestinationProperties(JsonView jsonValue) : 
-    m_objectHasBeenSet(false),
-    m_intermediateBucketNameHasBeenSet(false),
-    m_bucketPrefixHasBeenSet(false),
-    m_errorHandlingConfigHasBeenSet(false)
+SnowflakeDestinationProperties::SnowflakeDestinationProperties(JsonView jsonValue)
+  : SnowflakeDestinationProperties()
 {
   *this = jsonValue;
 }

@@ -28,12 +28,8 @@ FunctionCode::FunctionCode() :
 {
 }
 
-FunctionCode::FunctionCode(JsonView jsonValue) : 
-    m_zipFileHasBeenSet(false),
-    m_s3BucketHasBeenSet(false),
-    m_s3KeyHasBeenSet(false),
-    m_s3ObjectVersionHasBeenSet(false),
-    m_imageUriHasBeenSet(false)
+FunctionCode::FunctionCode(JsonView jsonValue)
+  : FunctionCode()
 {
   *this = jsonValue;
 }

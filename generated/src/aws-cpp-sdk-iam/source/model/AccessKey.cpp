@@ -30,13 +30,8 @@ AccessKey::AccessKey() :
 {
 }
 
-AccessKey::AccessKey(const XmlNode& xmlNode) : 
-    m_userNameHasBeenSet(false),
-    m_accessKeyIdHasBeenSet(false),
-    m_status(StatusType::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_secretAccessKeyHasBeenSet(false),
-    m_createDateHasBeenSet(false)
+AccessKey::AccessKey(const XmlNode& xmlNode)
+  : AccessKey()
 {
   *this = xmlNode;
 }

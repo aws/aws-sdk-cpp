@@ -28,13 +28,8 @@ Landmark::Landmark() :
 {
 }
 
-Landmark::Landmark(JsonView jsonValue) : 
-    m_type(LandmarkType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_x(0.0),
-    m_xHasBeenSet(false),
-    m_y(0.0),
-    m_yHasBeenSet(false)
+Landmark::Landmark(JsonView jsonValue)
+  : Landmark()
 {
   *this = jsonValue;
 }

@@ -27,12 +27,8 @@ IPAddressBasedRemoteInfo::IPAddressBasedRemoteInfo() :
 {
 }
 
-IPAddressBasedRemoteInfo::IPAddressBasedRemoteInfo(JsonView jsonValue) : 
-    m_authType(AuthType::NOT_SET),
-    m_authTypeHasBeenSet(false),
-    m_ipAddressConfigurationTimeStampHasBeenSet(false),
-    m_osType(OSType::NOT_SET),
-    m_osTypeHasBeenSet(false)
+IPAddressBasedRemoteInfo::IPAddressBasedRemoteInfo(JsonView jsonValue)
+  : IPAddressBasedRemoteInfo()
 {
   *this = jsonValue;
 }

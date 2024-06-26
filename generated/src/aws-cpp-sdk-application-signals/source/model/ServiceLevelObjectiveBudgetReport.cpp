@@ -34,19 +34,8 @@ ServiceLevelObjectiveBudgetReport::ServiceLevelObjectiveBudgetReport() :
 {
 }
 
-ServiceLevelObjectiveBudgetReport::ServiceLevelObjectiveBudgetReport(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_budgetStatus(ServiceLevelObjectiveBudgetStatus::NOT_SET),
-    m_budgetStatusHasBeenSet(false),
-    m_attainment(0.0),
-    m_attainmentHasBeenSet(false),
-    m_totalBudgetSeconds(0),
-    m_totalBudgetSecondsHasBeenSet(false),
-    m_budgetSecondsRemaining(0),
-    m_budgetSecondsRemainingHasBeenSet(false),
-    m_sliHasBeenSet(false),
-    m_goalHasBeenSet(false)
+ServiceLevelObjectiveBudgetReport::ServiceLevelObjectiveBudgetReport(JsonView jsonValue)
+  : ServiceLevelObjectiveBudgetReport()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ MainframeActionProperties::MainframeActionProperties() :
 {
 }
 
-MainframeActionProperties::MainframeActionProperties(JsonView jsonValue) : 
-    m_dmsTaskArnHasBeenSet(false)
+MainframeActionProperties::MainframeActionProperties(JsonView jsonValue)
+  : MainframeActionProperties()
 {
   *this = jsonValue;
 }

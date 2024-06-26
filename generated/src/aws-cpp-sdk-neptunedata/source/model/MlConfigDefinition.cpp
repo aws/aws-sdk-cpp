@@ -24,9 +24,8 @@ MlConfigDefinition::MlConfigDefinition() :
 {
 }
 
-MlConfigDefinition::MlConfigDefinition(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false)
+MlConfigDefinition::MlConfigDefinition(JsonView jsonValue)
+  : MlConfigDefinition()
 {
   *this = jsonValue;
 }

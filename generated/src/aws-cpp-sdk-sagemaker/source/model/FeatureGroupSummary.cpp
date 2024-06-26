@@ -28,13 +28,8 @@ FeatureGroupSummary::FeatureGroupSummary() :
 {
 }
 
-FeatureGroupSummary::FeatureGroupSummary(JsonView jsonValue) : 
-    m_featureGroupNameHasBeenSet(false),
-    m_featureGroupArnHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_featureGroupStatus(FeatureGroupStatus::NOT_SET),
-    m_featureGroupStatusHasBeenSet(false),
-    m_offlineStoreStatusHasBeenSet(false)
+FeatureGroupSummary::FeatureGroupSummary(JsonView jsonValue)
+  : FeatureGroupSummary()
 {
   *this = jsonValue;
 }

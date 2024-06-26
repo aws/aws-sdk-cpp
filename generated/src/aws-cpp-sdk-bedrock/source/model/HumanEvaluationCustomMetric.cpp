@@ -25,10 +25,8 @@ HumanEvaluationCustomMetric::HumanEvaluationCustomMetric() :
 {
 }
 
-HumanEvaluationCustomMetric::HumanEvaluationCustomMetric(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_ratingMethodHasBeenSet(false)
+HumanEvaluationCustomMetric::HumanEvaluationCustomMetric(JsonView jsonValue)
+  : HumanEvaluationCustomMetric()
 {
   *this = jsonValue;
 }

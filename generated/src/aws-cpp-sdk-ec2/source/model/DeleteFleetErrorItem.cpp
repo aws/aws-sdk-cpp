@@ -26,9 +26,8 @@ DeleteFleetErrorItem::DeleteFleetErrorItem() :
 {
 }
 
-DeleteFleetErrorItem::DeleteFleetErrorItem(const XmlNode& xmlNode) : 
-    m_errorHasBeenSet(false),
-    m_fleetIdHasBeenSet(false)
+DeleteFleetErrorItem::DeleteFleetErrorItem(const XmlNode& xmlNode)
+  : DeleteFleetErrorItem()
 {
   *this = xmlNode;
 }

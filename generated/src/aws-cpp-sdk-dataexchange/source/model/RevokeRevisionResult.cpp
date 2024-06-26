@@ -23,9 +23,8 @@ RevokeRevisionResult::RevokeRevisionResult() :
 {
 }
 
-RevokeRevisionResult::RevokeRevisionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_finalized(false),
-    m_revoked(false)
+RevokeRevisionResult::RevokeRevisionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : RevokeRevisionResult()
 {
   *this = result;
 }

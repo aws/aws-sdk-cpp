@@ -28,13 +28,8 @@ TestSetTurnRecord::TestSetTurnRecord() :
 {
 }
 
-TestSetTurnRecord::TestSetTurnRecord(JsonView jsonValue) : 
-    m_recordNumber(0),
-    m_recordNumberHasBeenSet(false),
-    m_conversationIdHasBeenSet(false),
-    m_turnNumber(0),
-    m_turnNumberHasBeenSet(false),
-    m_turnSpecificationHasBeenSet(false)
+TestSetTurnRecord::TestSetTurnRecord(JsonView jsonValue)
+  : TestSetTurnRecord()
 {
   *this = jsonValue;
 }

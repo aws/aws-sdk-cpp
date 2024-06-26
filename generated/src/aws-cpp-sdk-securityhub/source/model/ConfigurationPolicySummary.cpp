@@ -29,14 +29,8 @@ ConfigurationPolicySummary::ConfigurationPolicySummary() :
 {
 }
 
-ConfigurationPolicySummary::ConfigurationPolicySummary(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_serviceEnabled(false),
-    m_serviceEnabledHasBeenSet(false)
+ConfigurationPolicySummary::ConfigurationPolicySummary(JsonView jsonValue)
+  : ConfigurationPolicySummary()
 {
   *this = jsonValue;
 }

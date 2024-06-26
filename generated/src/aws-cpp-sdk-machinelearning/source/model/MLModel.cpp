@@ -47,32 +47,8 @@ MLModel::MLModel() :
 {
 }
 
-MLModel::MLModel(JsonView jsonValue) : 
-    m_mLModelIdHasBeenSet(false),
-    m_trainingDataSourceIdHasBeenSet(false),
-    m_createdByIamUserHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_status(EntityStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_sizeInBytes(0),
-    m_sizeInBytesHasBeenSet(false),
-    m_endpointInfoHasBeenSet(false),
-    m_trainingParametersHasBeenSet(false),
-    m_inputDataLocationS3HasBeenSet(false),
-    m_algorithm(Algorithm::NOT_SET),
-    m_algorithmHasBeenSet(false),
-    m_mLModelType(MLModelType::NOT_SET),
-    m_mLModelTypeHasBeenSet(false),
-    m_scoreThreshold(0.0),
-    m_scoreThresholdHasBeenSet(false),
-    m_scoreThresholdLastUpdatedAtHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_computeTime(0),
-    m_computeTimeHasBeenSet(false),
-    m_finishedAtHasBeenSet(false),
-    m_startedAtHasBeenSet(false)
+MLModel::MLModel(JsonView jsonValue)
+  : MLModel()
 {
   *this = jsonValue;
 }

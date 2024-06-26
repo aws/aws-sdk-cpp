@@ -22,8 +22,8 @@ ModifyVpcTenancyResponse::ModifyVpcTenancyResponse() :
 {
 }
 
-ModifyVpcTenancyResponse::ModifyVpcTenancyResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_returnValue(false)
+ModifyVpcTenancyResponse::ModifyVpcTenancyResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : ModifyVpcTenancyResponse()
 {
   *this = result;
 }

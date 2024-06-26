@@ -26,11 +26,8 @@ FailedCreateAssociation::FailedCreateAssociation() :
 {
 }
 
-FailedCreateAssociation::FailedCreateAssociation(JsonView jsonValue) : 
-    m_entryHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_fault(Fault::NOT_SET),
-    m_faultHasBeenSet(false)
+FailedCreateAssociation::FailedCreateAssociation(JsonView jsonValue)
+  : FailedCreateAssociation()
 {
   *this = jsonValue;
 }

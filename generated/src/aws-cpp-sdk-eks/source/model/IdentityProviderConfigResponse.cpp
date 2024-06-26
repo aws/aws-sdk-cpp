@@ -23,8 +23,8 @@ IdentityProviderConfigResponse::IdentityProviderConfigResponse() :
 {
 }
 
-IdentityProviderConfigResponse::IdentityProviderConfigResponse(JsonView jsonValue) : 
-    m_oidcHasBeenSet(false)
+IdentityProviderConfigResponse::IdentityProviderConfigResponse(JsonView jsonValue)
+  : IdentityProviderConfigResponse()
 {
   *this = jsonValue;
 }

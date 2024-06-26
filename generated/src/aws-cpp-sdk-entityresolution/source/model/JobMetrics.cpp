@@ -30,15 +30,8 @@ JobMetrics::JobMetrics() :
 {
 }
 
-JobMetrics::JobMetrics(JsonView jsonValue) : 
-    m_inputRecords(0),
-    m_inputRecordsHasBeenSet(false),
-    m_matchIDs(0),
-    m_matchIDsHasBeenSet(false),
-    m_recordsNotProcessed(0),
-    m_recordsNotProcessedHasBeenSet(false),
-    m_totalRecordsProcessed(0),
-    m_totalRecordsProcessedHasBeenSet(false)
+JobMetrics::JobMetrics(JsonView jsonValue)
+  : JobMetrics()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ VirtualGatewayClientPolicy::VirtualGatewayClientPolicy() :
 {
 }
 
-VirtualGatewayClientPolicy::VirtualGatewayClientPolicy(JsonView jsonValue) : 
-    m_tlsHasBeenSet(false)
+VirtualGatewayClientPolicy::VirtualGatewayClientPolicy(JsonView jsonValue)
+  : VirtualGatewayClientPolicy()
 {
   *this = jsonValue;
 }

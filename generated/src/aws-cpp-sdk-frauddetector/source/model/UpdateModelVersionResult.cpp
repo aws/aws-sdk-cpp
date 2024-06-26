@@ -22,8 +22,8 @@ UpdateModelVersionResult::UpdateModelVersionResult() :
 {
 }
 
-UpdateModelVersionResult::UpdateModelVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_modelType(ModelTypeEnum::NOT_SET)
+UpdateModelVersionResult::UpdateModelVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateModelVersionResult()
 {
   *this = result;
 }

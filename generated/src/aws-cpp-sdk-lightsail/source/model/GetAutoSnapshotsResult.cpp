@@ -22,8 +22,8 @@ GetAutoSnapshotsResult::GetAutoSnapshotsResult() :
 {
 }
 
-GetAutoSnapshotsResult::GetAutoSnapshotsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_resourceType(ResourceType::NOT_SET)
+GetAutoSnapshotsResult::GetAutoSnapshotsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetAutoSnapshotsResult()
 {
   *this = result;
 }

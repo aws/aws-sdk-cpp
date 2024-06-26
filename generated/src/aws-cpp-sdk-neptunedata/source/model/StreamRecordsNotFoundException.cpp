@@ -25,10 +25,8 @@ StreamRecordsNotFoundException::StreamRecordsNotFoundException() :
 {
 }
 
-StreamRecordsNotFoundException::StreamRecordsNotFoundException(JsonView jsonValue) : 
-    m_detailedMessageHasBeenSet(false),
-    m_requestIdHasBeenSet(false),
-    m_codeHasBeenSet(false)
+StreamRecordsNotFoundException::StreamRecordsNotFoundException(JsonView jsonValue)
+  : StreamRecordsNotFoundException()
 {
   *this = jsonValue;
 }

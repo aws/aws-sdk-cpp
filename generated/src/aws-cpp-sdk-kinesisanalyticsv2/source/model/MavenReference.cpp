@@ -25,10 +25,8 @@ MavenReference::MavenReference() :
 {
 }
 
-MavenReference::MavenReference(JsonView jsonValue) : 
-    m_groupIdHasBeenSet(false),
-    m_artifactIdHasBeenSet(false),
-    m_versionHasBeenSet(false)
+MavenReference::MavenReference(JsonView jsonValue)
+  : MavenReference()
 {
   *this = jsonValue;
 }

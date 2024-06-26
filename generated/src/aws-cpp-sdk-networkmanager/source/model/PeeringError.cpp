@@ -28,13 +28,8 @@ PeeringError::PeeringError() :
 {
 }
 
-PeeringError::PeeringError(JsonView jsonValue) : 
-    m_code(PeeringErrorCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_resourceArnHasBeenSet(false),
-    m_requestIdHasBeenSet(false),
-    m_missingPermissionsContextHasBeenSet(false)
+PeeringError::PeeringError(JsonView jsonValue)
+  : PeeringError()
 {
   *this = jsonValue;
 }

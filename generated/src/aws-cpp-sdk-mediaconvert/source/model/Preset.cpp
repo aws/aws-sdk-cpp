@@ -31,16 +31,8 @@ Preset::Preset() :
 {
 }
 
-Preset::Preset(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_categoryHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_lastUpdatedHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_settingsHasBeenSet(false),
-    m_type(Type::NOT_SET),
-    m_typeHasBeenSet(false)
+Preset::Preset(JsonView jsonValue)
+  : Preset()
 {
   *this = jsonValue;
 }

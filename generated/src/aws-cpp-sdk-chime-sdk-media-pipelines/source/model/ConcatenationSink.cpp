@@ -25,10 +25,8 @@ ConcatenationSink::ConcatenationSink() :
 {
 }
 
-ConcatenationSink::ConcatenationSink(JsonView jsonValue) : 
-    m_type(ConcatenationSinkType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_s3BucketSinkConfigurationHasBeenSet(false)
+ConcatenationSink::ConcatenationSink(JsonView jsonValue)
+  : ConcatenationSink()
 {
   *this = jsonValue;
 }

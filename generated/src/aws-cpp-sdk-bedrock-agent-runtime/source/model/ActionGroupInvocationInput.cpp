@@ -28,13 +28,8 @@ ActionGroupInvocationInput::ActionGroupInvocationInput() :
 {
 }
 
-ActionGroupInvocationInput::ActionGroupInvocationInput(JsonView jsonValue) : 
-    m_actionGroupNameHasBeenSet(false),
-    m_apiPathHasBeenSet(false),
-    m_functionHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_requestBodyHasBeenSet(false),
-    m_verbHasBeenSet(false)
+ActionGroupInvocationInput::ActionGroupInvocationInput(JsonView jsonValue)
+  : ActionGroupInvocationInput()
 {
   *this = jsonValue;
 }

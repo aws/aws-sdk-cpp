@@ -26,11 +26,8 @@ ConnectorDataTarget::ConnectorDataTarget() :
 {
 }
 
-ConnectorDataTarget::ConnectorDataTarget(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_connectionTypeHasBeenSet(false),
-    m_dataHasBeenSet(false),
-    m_inputsHasBeenSet(false)
+ConnectorDataTarget::ConnectorDataTarget(JsonView jsonValue)
+  : ConnectorDataTarget()
 {
   *this = jsonValue;
 }

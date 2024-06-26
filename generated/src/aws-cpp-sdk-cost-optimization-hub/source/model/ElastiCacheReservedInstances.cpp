@@ -24,9 +24,8 @@ ElastiCacheReservedInstances::ElastiCacheReservedInstances() :
 {
 }
 
-ElastiCacheReservedInstances::ElastiCacheReservedInstances(JsonView jsonValue) : 
-    m_configurationHasBeenSet(false),
-    m_costCalculationHasBeenSet(false)
+ElastiCacheReservedInstances::ElastiCacheReservedInstances(JsonView jsonValue)
+  : ElastiCacheReservedInstances()
 {
   *this = jsonValue;
 }

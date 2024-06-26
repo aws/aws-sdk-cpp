@@ -28,13 +28,8 @@ LifecycleExecution::LifecycleExecution() :
 {
 }
 
-LifecycleExecution::LifecycleExecution(JsonView jsonValue) : 
-    m_lifecycleExecutionIdHasBeenSet(false),
-    m_lifecyclePolicyArnHasBeenSet(false),
-    m_resourcesImpactedSummaryHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
+LifecycleExecution::LifecycleExecution(JsonView jsonValue)
+  : LifecycleExecution()
 {
   *this = jsonValue;
 }

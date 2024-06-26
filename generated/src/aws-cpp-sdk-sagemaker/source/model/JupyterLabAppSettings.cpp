@@ -26,11 +26,8 @@ JupyterLabAppSettings::JupyterLabAppSettings() :
 {
 }
 
-JupyterLabAppSettings::JupyterLabAppSettings(JsonView jsonValue) : 
-    m_defaultResourceSpecHasBeenSet(false),
-    m_customImagesHasBeenSet(false),
-    m_lifecycleConfigArnsHasBeenSet(false),
-    m_codeRepositoriesHasBeenSet(false)
+JupyterLabAppSettings::JupyterLabAppSettings(JsonView jsonValue)
+  : JupyterLabAppSettings()
 {
   *this = jsonValue;
 }

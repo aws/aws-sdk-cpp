@@ -36,21 +36,8 @@ ConflictMetadata::ConflictMetadata() :
 {
 }
 
-ConflictMetadata::ConflictMetadata(JsonView jsonValue) : 
-    m_filePathHasBeenSet(false),
-    m_fileSizesHasBeenSet(false),
-    m_fileModesHasBeenSet(false),
-    m_objectTypesHasBeenSet(false),
-    m_numberOfConflicts(0),
-    m_numberOfConflictsHasBeenSet(false),
-    m_isBinaryFileHasBeenSet(false),
-    m_contentConflict(false),
-    m_contentConflictHasBeenSet(false),
-    m_fileModeConflict(false),
-    m_fileModeConflictHasBeenSet(false),
-    m_objectTypeConflict(false),
-    m_objectTypeConflictHasBeenSet(false),
-    m_mergeOperationsHasBeenSet(false)
+ConflictMetadata::ConflictMetadata(JsonView jsonValue)
+  : ConflictMetadata()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ ContainerGroupDefinitionProperty::ContainerGroupDefinitionProperty() :
 {
 }
 
-ContainerGroupDefinitionProperty::ContainerGroupDefinitionProperty(JsonView jsonValue) : 
-    m_schedulingStrategy(ContainerSchedulingStrategy::NOT_SET),
-    m_schedulingStrategyHasBeenSet(false),
-    m_containerGroupDefinitionNameHasBeenSet(false)
+ContainerGroupDefinitionProperty::ContainerGroupDefinitionProperty(JsonView jsonValue)
+  : ContainerGroupDefinitionProperty()
 {
   *this = jsonValue;
 }

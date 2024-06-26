@@ -29,14 +29,8 @@ AttributeGroupSummary::AttributeGroupSummary() :
 {
 }
 
-AttributeGroupSummary::AttributeGroupSummary(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastUpdateTimeHasBeenSet(false),
-    m_createdByHasBeenSet(false)
+AttributeGroupSummary::AttributeGroupSummary(JsonView jsonValue)
+  : AttributeGroupSummary()
 {
   *this = jsonValue;
 }

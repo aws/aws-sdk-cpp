@@ -23,8 +23,8 @@ RateLimitLabelNamespace::RateLimitLabelNamespace() :
 {
 }
 
-RateLimitLabelNamespace::RateLimitLabelNamespace(JsonView jsonValue) : 
-    m_namespaceHasBeenSet(false)
+RateLimitLabelNamespace::RateLimitLabelNamespace(JsonView jsonValue)
+  : RateLimitLabelNamespace()
 {
   *this = jsonValue;
 }

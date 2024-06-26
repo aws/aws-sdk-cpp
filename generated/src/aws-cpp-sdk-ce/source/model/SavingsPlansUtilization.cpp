@@ -26,11 +26,8 @@ SavingsPlansUtilization::SavingsPlansUtilization() :
 {
 }
 
-SavingsPlansUtilization::SavingsPlansUtilization(JsonView jsonValue) : 
-    m_totalCommitmentHasBeenSet(false),
-    m_usedCommitmentHasBeenSet(false),
-    m_unusedCommitmentHasBeenSet(false),
-    m_utilizationPercentageHasBeenSet(false)
+SavingsPlansUtilization::SavingsPlansUtilization(JsonView jsonValue)
+  : SavingsPlansUtilization()
 {
   *this = jsonValue;
 }

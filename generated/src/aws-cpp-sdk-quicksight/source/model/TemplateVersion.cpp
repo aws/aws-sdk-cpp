@@ -33,18 +33,8 @@ TemplateVersion::TemplateVersion() :
 {
 }
 
-TemplateVersion::TemplateVersion(JsonView jsonValue) : 
-    m_createdTimeHasBeenSet(false),
-    m_errorsHasBeenSet(false),
-    m_versionNumber(0),
-    m_versionNumberHasBeenSet(false),
-    m_status(ResourceStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_dataSetConfigurationsHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_sourceEntityArnHasBeenSet(false),
-    m_themeArnHasBeenSet(false),
-    m_sheetsHasBeenSet(false)
+TemplateVersion::TemplateVersion(JsonView jsonValue)
+  : TemplateVersion()
 {
   *this = jsonValue;
 }

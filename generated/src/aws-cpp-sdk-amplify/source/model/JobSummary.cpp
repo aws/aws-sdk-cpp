@@ -33,18 +33,8 @@ JobSummary::JobSummary() :
 {
 }
 
-JobSummary::JobSummary(JsonView jsonValue) : 
-    m_jobArnHasBeenSet(false),
-    m_jobIdHasBeenSet(false),
-    m_commitIdHasBeenSet(false),
-    m_commitMessageHasBeenSet(false),
-    m_commitTimeHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_status(JobStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_jobType(JobType::NOT_SET),
-    m_jobTypeHasBeenSet(false)
+JobSummary::JobSummary(JsonView jsonValue)
+  : JobSummary()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ ExportReadSetFilter::ExportReadSetFilter() :
 {
 }
 
-ExportReadSetFilter::ExportReadSetFilter(JsonView jsonValue) : 
-    m_status(ReadSetExportJobStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_createdAfterHasBeenSet(false),
-    m_createdBeforeHasBeenSet(false)
+ExportReadSetFilter::ExportReadSetFilter(JsonView jsonValue)
+  : ExportReadSetFilter()
 {
   *this = jsonValue;
 }

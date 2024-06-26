@@ -25,10 +25,8 @@ CaptionSelector::CaptionSelector() :
 {
 }
 
-CaptionSelector::CaptionSelector(JsonView jsonValue) : 
-    m_languageCodeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_selectorSettingsHasBeenSet(false)
+CaptionSelector::CaptionSelector(JsonView jsonValue)
+  : CaptionSelector()
 {
   *this = jsonValue;
 }

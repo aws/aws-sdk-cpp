@@ -32,17 +32,8 @@ StandardsControlAssociationSummary::StandardsControlAssociationSummary() :
 {
 }
 
-StandardsControlAssociationSummary::StandardsControlAssociationSummary(JsonView jsonValue) : 
-    m_standardsArnHasBeenSet(false),
-    m_securityControlIdHasBeenSet(false),
-    m_securityControlArnHasBeenSet(false),
-    m_associationStatus(AssociationStatus::NOT_SET),
-    m_associationStatusHasBeenSet(false),
-    m_relatedRequirementsHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_updatedReasonHasBeenSet(false),
-    m_standardsControlTitleHasBeenSet(false),
-    m_standardsControlDescriptionHasBeenSet(false)
+StandardsControlAssociationSummary::StandardsControlAssociationSummary(JsonView jsonValue)
+  : StandardsControlAssociationSummary()
 {
   *this = jsonValue;
 }

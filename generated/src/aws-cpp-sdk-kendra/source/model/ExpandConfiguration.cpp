@@ -26,11 +26,8 @@ ExpandConfiguration::ExpandConfiguration() :
 {
 }
 
-ExpandConfiguration::ExpandConfiguration(JsonView jsonValue) : 
-    m_maxResultItemsToExpand(0),
-    m_maxResultItemsToExpandHasBeenSet(false),
-    m_maxExpandedResultsPerItem(0),
-    m_maxExpandedResultsPerItemHasBeenSet(false)
+ExpandConfiguration::ExpandConfiguration(JsonView jsonValue)
+  : ExpandConfiguration()
 {
   *this = jsonValue;
 }

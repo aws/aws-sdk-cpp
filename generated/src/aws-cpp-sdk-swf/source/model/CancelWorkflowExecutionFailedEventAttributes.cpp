@@ -26,11 +26,8 @@ CancelWorkflowExecutionFailedEventAttributes::CancelWorkflowExecutionFailedEvent
 {
 }
 
-CancelWorkflowExecutionFailedEventAttributes::CancelWorkflowExecutionFailedEventAttributes(JsonView jsonValue) : 
-    m_cause(CancelWorkflowExecutionFailedCause::NOT_SET),
-    m_causeHasBeenSet(false),
-    m_decisionTaskCompletedEventId(0),
-    m_decisionTaskCompletedEventIdHasBeenSet(false)
+CancelWorkflowExecutionFailedEventAttributes::CancelWorkflowExecutionFailedEventAttributes(JsonView jsonValue)
+  : CancelWorkflowExecutionFailedEventAttributes()
 {
   *this = jsonValue;
 }

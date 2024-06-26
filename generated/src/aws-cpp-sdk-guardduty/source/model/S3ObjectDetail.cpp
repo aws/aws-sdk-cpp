@@ -27,12 +27,8 @@ S3ObjectDetail::S3ObjectDetail() :
 {
 }
 
-S3ObjectDetail::S3ObjectDetail(JsonView jsonValue) : 
-    m_objectArnHasBeenSet(false),
-    m_keyHasBeenSet(false),
-    m_eTagHasBeenSet(false),
-    m_hashHasBeenSet(false),
-    m_versionIdHasBeenSet(false)
+S3ObjectDetail::S3ObjectDetail(JsonView jsonValue)
+  : S3ObjectDetail()
 {
   *this = jsonValue;
 }

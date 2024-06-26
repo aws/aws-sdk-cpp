@@ -23,8 +23,8 @@ TensorBoardAppSettings::TensorBoardAppSettings() :
 {
 }
 
-TensorBoardAppSettings::TensorBoardAppSettings(JsonView jsonValue) : 
-    m_defaultResourceSpecHasBeenSet(false)
+TensorBoardAppSettings::TensorBoardAppSettings(JsonView jsonValue)
+  : TensorBoardAppSettings()
 {
   *this = jsonValue;
 }

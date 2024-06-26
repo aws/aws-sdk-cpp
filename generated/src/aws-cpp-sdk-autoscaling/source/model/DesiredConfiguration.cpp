@@ -26,9 +26,8 @@ DesiredConfiguration::DesiredConfiguration() :
 {
 }
 
-DesiredConfiguration::DesiredConfiguration(const XmlNode& xmlNode) : 
-    m_launchTemplateHasBeenSet(false),
-    m_mixedInstancesPolicyHasBeenSet(false)
+DesiredConfiguration::DesiredConfiguration(const XmlNode& xmlNode)
+  : DesiredConfiguration()
 {
   *this = xmlNode;
 }

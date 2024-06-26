@@ -25,10 +25,8 @@ SqlInjectionMatchSetUpdate::SqlInjectionMatchSetUpdate() :
 {
 }
 
-SqlInjectionMatchSetUpdate::SqlInjectionMatchSetUpdate(JsonView jsonValue) : 
-    m_action(ChangeAction::NOT_SET),
-    m_actionHasBeenSet(false),
-    m_sqlInjectionMatchTupleHasBeenSet(false)
+SqlInjectionMatchSetUpdate::SqlInjectionMatchSetUpdate(JsonView jsonValue)
+  : SqlInjectionMatchSetUpdate()
 {
   *this = jsonValue;
 }

@@ -27,12 +27,8 @@ HealthCheckConfig::HealthCheckConfig() :
 {
 }
 
-HealthCheckConfig::HealthCheckConfig(JsonView jsonValue) : 
-    m_type(HealthCheckType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_resourcePathHasBeenSet(false),
-    m_failureThreshold(0),
-    m_failureThresholdHasBeenSet(false)
+HealthCheckConfig::HealthCheckConfig(JsonView jsonValue)
+  : HealthCheckConfig()
 {
   *this = jsonValue;
 }

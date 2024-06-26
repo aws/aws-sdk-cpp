@@ -22,8 +22,8 @@ DeleteRegistrationFieldValueResult::DeleteRegistrationFieldValueResult() :
 {
 }
 
-DeleteRegistrationFieldValueResult::DeleteRegistrationFieldValueResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_versionNumber(0)
+DeleteRegistrationFieldValueResult::DeleteRegistrationFieldValueResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeleteRegistrationFieldValueResult()
 {
   *this = result;
 }

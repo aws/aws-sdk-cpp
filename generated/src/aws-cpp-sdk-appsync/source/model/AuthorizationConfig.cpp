@@ -25,10 +25,8 @@ AuthorizationConfig::AuthorizationConfig() :
 {
 }
 
-AuthorizationConfig::AuthorizationConfig(JsonView jsonValue) : 
-    m_authorizationType(AuthorizationType::NOT_SET),
-    m_authorizationTypeHasBeenSet(false),
-    m_awsIamConfigHasBeenSet(false)
+AuthorizationConfig::AuthorizationConfig(JsonView jsonValue)
+  : AuthorizationConfig()
 {
   *this = jsonValue;
 }

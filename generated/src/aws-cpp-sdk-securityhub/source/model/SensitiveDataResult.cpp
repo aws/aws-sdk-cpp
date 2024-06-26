@@ -26,11 +26,8 @@ SensitiveDataResult::SensitiveDataResult() :
 {
 }
 
-SensitiveDataResult::SensitiveDataResult(JsonView jsonValue) : 
-    m_categoryHasBeenSet(false),
-    m_detectionsHasBeenSet(false),
-    m_totalCount(0),
-    m_totalCountHasBeenSet(false)
+SensitiveDataResult::SensitiveDataResult(JsonView jsonValue)
+  : SensitiveDataResult()
 {
   *this = jsonValue;
 }

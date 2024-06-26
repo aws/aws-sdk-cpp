@@ -25,10 +25,8 @@ PropertygraphSummaryValueMap::PropertygraphSummaryValueMap() :
 {
 }
 
-PropertygraphSummaryValueMap::PropertygraphSummaryValueMap(JsonView jsonValue) : 
-    m_versionHasBeenSet(false),
-    m_lastStatisticsComputationTimeHasBeenSet(false),
-    m_graphSummaryHasBeenSet(false)
+PropertygraphSummaryValueMap::PropertygraphSummaryValueMap(JsonView jsonValue)
+  : PropertygraphSummaryValueMap()
 {
   *this = jsonValue;
 }

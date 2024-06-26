@@ -23,8 +23,8 @@ NetworkConfiguration::NetworkConfiguration() :
 {
 }
 
-NetworkConfiguration::NetworkConfiguration(JsonView jsonValue) : 
-    m_awsvpcConfigurationHasBeenSet(false)
+NetworkConfiguration::NetworkConfiguration(JsonView jsonValue)
+  : NetworkConfiguration()
 {
   *this = jsonValue;
 }

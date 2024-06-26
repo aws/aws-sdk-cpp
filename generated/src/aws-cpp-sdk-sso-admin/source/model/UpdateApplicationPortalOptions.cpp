@@ -23,8 +23,8 @@ UpdateApplicationPortalOptions::UpdateApplicationPortalOptions() :
 {
 }
 
-UpdateApplicationPortalOptions::UpdateApplicationPortalOptions(JsonView jsonValue) : 
-    m_signInOptionsHasBeenSet(false)
+UpdateApplicationPortalOptions::UpdateApplicationPortalOptions(JsonView jsonValue)
+  : UpdateApplicationPortalOptions()
 {
   *this = jsonValue;
 }

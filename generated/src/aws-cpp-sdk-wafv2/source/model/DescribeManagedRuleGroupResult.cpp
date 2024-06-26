@@ -22,8 +22,8 @@ DescribeManagedRuleGroupResult::DescribeManagedRuleGroupResult() :
 {
 }
 
-DescribeManagedRuleGroupResult::DescribeManagedRuleGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_capacity(0)
+DescribeManagedRuleGroupResult::DescribeManagedRuleGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeManagedRuleGroupResult()
 {
   *this = result;
 }

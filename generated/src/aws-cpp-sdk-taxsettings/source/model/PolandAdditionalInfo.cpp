@@ -25,10 +25,8 @@ PolandAdditionalInfo::PolandAdditionalInfo() :
 {
 }
 
-PolandAdditionalInfo::PolandAdditionalInfo(JsonView jsonValue) : 
-    m_individualRegistrationNumberHasBeenSet(false),
-    m_isGroupVatEnabled(false),
-    m_isGroupVatEnabledHasBeenSet(false)
+PolandAdditionalInfo::PolandAdditionalInfo(JsonView jsonValue)
+  : PolandAdditionalInfo()
 {
   *this = jsonValue;
 }

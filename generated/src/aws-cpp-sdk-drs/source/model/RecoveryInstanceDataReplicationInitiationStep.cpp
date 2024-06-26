@@ -26,11 +26,8 @@ RecoveryInstanceDataReplicationInitiationStep::RecoveryInstanceDataReplicationIn
 {
 }
 
-RecoveryInstanceDataReplicationInitiationStep::RecoveryInstanceDataReplicationInitiationStep(JsonView jsonValue) : 
-    m_name(RecoveryInstanceDataReplicationInitiationStepName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_status(RecoveryInstanceDataReplicationInitiationStepStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+RecoveryInstanceDataReplicationInitiationStep::RecoveryInstanceDataReplicationInitiationStep(JsonView jsonValue)
+  : RecoveryInstanceDataReplicationInitiationStep()
 {
   *this = jsonValue;
 }

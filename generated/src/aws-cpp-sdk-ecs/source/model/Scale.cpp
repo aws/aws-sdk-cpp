@@ -26,11 +26,8 @@ Scale::Scale() :
 {
 }
 
-Scale::Scale(JsonView jsonValue) : 
-    m_value(0.0),
-    m_valueHasBeenSet(false),
-    m_unit(ScaleUnit::NOT_SET),
-    m_unitHasBeenSet(false)
+Scale::Scale(JsonView jsonValue)
+  : Scale()
 {
   *this = jsonValue;
 }

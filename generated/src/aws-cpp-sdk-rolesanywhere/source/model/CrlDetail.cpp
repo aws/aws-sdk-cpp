@@ -32,16 +32,8 @@ CrlDetail::CrlDetail() :
 {
 }
 
-CrlDetail::CrlDetail(JsonView jsonValue) : 
-    m_createdAtHasBeenSet(false),
-    m_crlArnHasBeenSet(false),
-    m_crlDataHasBeenSet(false),
-    m_crlIdHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_trustAnchorArnHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+CrlDetail::CrlDetail(JsonView jsonValue)
+  : CrlDetail()
 {
   *this = jsonValue;
 }

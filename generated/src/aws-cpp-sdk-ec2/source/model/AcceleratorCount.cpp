@@ -28,11 +28,8 @@ AcceleratorCount::AcceleratorCount() :
 {
 }
 
-AcceleratorCount::AcceleratorCount(const XmlNode& xmlNode) : 
-    m_min(0),
-    m_minHasBeenSet(false),
-    m_max(0),
-    m_maxHasBeenSet(false)
+AcceleratorCount::AcceleratorCount(const XmlNode& xmlNode)
+  : AcceleratorCount()
 {
   *this = xmlNode;
 }

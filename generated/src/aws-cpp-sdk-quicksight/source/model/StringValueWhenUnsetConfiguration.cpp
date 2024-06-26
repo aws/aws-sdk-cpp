@@ -25,10 +25,8 @@ StringValueWhenUnsetConfiguration::StringValueWhenUnsetConfiguration() :
 {
 }
 
-StringValueWhenUnsetConfiguration::StringValueWhenUnsetConfiguration(JsonView jsonValue) : 
-    m_valueWhenUnsetOption(ValueWhenUnsetOption::NOT_SET),
-    m_valueWhenUnsetOptionHasBeenSet(false),
-    m_customValueHasBeenSet(false)
+StringValueWhenUnsetConfiguration::StringValueWhenUnsetConfiguration(JsonView jsonValue)
+  : StringValueWhenUnsetConfiguration()
 {
   *this = jsonValue;
 }

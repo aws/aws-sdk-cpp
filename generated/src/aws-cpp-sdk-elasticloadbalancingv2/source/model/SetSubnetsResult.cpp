@@ -22,8 +22,8 @@ SetSubnetsResult::SetSubnetsResult() :
 {
 }
 
-SetSubnetsResult::SetSubnetsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_ipAddressType(IpAddressType::NOT_SET)
+SetSubnetsResult::SetSubnetsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : SetSubnetsResult()
 {
   *this = result;
 }

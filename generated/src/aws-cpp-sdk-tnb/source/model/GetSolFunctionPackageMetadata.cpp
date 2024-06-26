@@ -25,10 +25,8 @@ GetSolFunctionPackageMetadata::GetSolFunctionPackageMetadata() :
 {
 }
 
-GetSolFunctionPackageMetadata::GetSolFunctionPackageMetadata(JsonView jsonValue) : 
-    m_createdAtHasBeenSet(false),
-    m_lastModifiedHasBeenSet(false),
-    m_vnfdHasBeenSet(false)
+GetSolFunctionPackageMetadata::GetSolFunctionPackageMetadata(JsonView jsonValue)
+  : GetSolFunctionPackageMetadata()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ ClusteringKey::ClusteringKey() :
 {
 }
 
-ClusteringKey::ClusteringKey(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_orderBy(SortOrder::NOT_SET),
-    m_orderByHasBeenSet(false)
+ClusteringKey::ClusteringKey(JsonView jsonValue)
+  : ClusteringKey()
 {
   *this = jsonValue;
 }

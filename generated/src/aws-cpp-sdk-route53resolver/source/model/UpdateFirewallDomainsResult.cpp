@@ -22,8 +22,8 @@ UpdateFirewallDomainsResult::UpdateFirewallDomainsResult() :
 {
 }
 
-UpdateFirewallDomainsResult::UpdateFirewallDomainsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(FirewallDomainListStatus::NOT_SET)
+UpdateFirewallDomainsResult::UpdateFirewallDomainsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateFirewallDomainsResult()
 {
   *this = result;
 }

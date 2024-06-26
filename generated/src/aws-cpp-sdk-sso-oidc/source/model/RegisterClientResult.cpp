@@ -23,9 +23,8 @@ RegisterClientResult::RegisterClientResult() :
 {
 }
 
-RegisterClientResult::RegisterClientResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_clientIdIssuedAt(0),
-    m_clientSecretExpiresAt(0)
+RegisterClientResult::RegisterClientResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : RegisterClientResult()
 {
   *this = result;
 }

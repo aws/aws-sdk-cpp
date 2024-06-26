@@ -23,8 +23,8 @@ ServerlessSasl::ServerlessSasl() :
 {
 }
 
-ServerlessSasl::ServerlessSasl(JsonView jsonValue) : 
-    m_iamHasBeenSet(false)
+ServerlessSasl::ServerlessSasl(JsonView jsonValue)
+  : ServerlessSasl()
 {
   *this = jsonValue;
 }

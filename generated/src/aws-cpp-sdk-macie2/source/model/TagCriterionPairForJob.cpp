@@ -24,9 +24,8 @@ TagCriterionPairForJob::TagCriterionPairForJob() :
 {
 }
 
-TagCriterionPairForJob::TagCriterionPairForJob(JsonView jsonValue) : 
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false)
+TagCriterionPairForJob::TagCriterionPairForJob(JsonView jsonValue)
+  : TagCriterionPairForJob()
 {
   *this = jsonValue;
 }

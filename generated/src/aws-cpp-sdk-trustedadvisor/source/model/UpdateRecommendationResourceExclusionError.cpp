@@ -25,10 +25,8 @@ UpdateRecommendationResourceExclusionError::UpdateRecommendationResourceExclusio
 {
 }
 
-UpdateRecommendationResourceExclusionError::UpdateRecommendationResourceExclusionError(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
+UpdateRecommendationResourceExclusionError::UpdateRecommendationResourceExclusionError(JsonView jsonValue)
+  : UpdateRecommendationResourceExclusionError()
 {
   *this = jsonValue;
 }

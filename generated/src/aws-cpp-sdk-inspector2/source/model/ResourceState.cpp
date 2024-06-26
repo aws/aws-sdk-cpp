@@ -26,11 +26,8 @@ ResourceState::ResourceState() :
 {
 }
 
-ResourceState::ResourceState(JsonView jsonValue) : 
-    m_ec2HasBeenSet(false),
-    m_ecrHasBeenSet(false),
-    m_lambdaHasBeenSet(false),
-    m_lambdaCodeHasBeenSet(false)
+ResourceState::ResourceState(JsonView jsonValue)
+  : ResourceState()
 {
   *this = jsonValue;
 }

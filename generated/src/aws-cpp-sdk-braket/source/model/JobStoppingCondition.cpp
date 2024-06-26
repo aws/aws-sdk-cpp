@@ -24,9 +24,8 @@ JobStoppingCondition::JobStoppingCondition() :
 {
 }
 
-JobStoppingCondition::JobStoppingCondition(JsonView jsonValue) : 
-    m_maxRuntimeInSeconds(0),
-    m_maxRuntimeInSecondsHasBeenSet(false)
+JobStoppingCondition::JobStoppingCondition(JsonView jsonValue)
+  : JobStoppingCondition()
 {
   *this = jsonValue;
 }

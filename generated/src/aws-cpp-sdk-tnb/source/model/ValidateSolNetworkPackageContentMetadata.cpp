@@ -23,8 +23,8 @@ ValidateSolNetworkPackageContentMetadata::ValidateSolNetworkPackageContentMetada
 {
 }
 
-ValidateSolNetworkPackageContentMetadata::ValidateSolNetworkPackageContentMetadata(JsonView jsonValue) : 
-    m_nsdHasBeenSet(false)
+ValidateSolNetworkPackageContentMetadata::ValidateSolNetworkPackageContentMetadata(JsonView jsonValue)
+  : ValidateSolNetworkPackageContentMetadata()
 {
   *this = jsonValue;
 }

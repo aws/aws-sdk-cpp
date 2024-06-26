@@ -26,11 +26,8 @@ RedshiftRunConfigurationInput::RedshiftRunConfigurationInput() :
 {
 }
 
-RedshiftRunConfigurationInput::RedshiftRunConfigurationInput(JsonView jsonValue) : 
-    m_dataAccessRoleHasBeenSet(false),
-    m_redshiftCredentialConfigurationHasBeenSet(false),
-    m_redshiftStorageHasBeenSet(false),
-    m_relationalFilterConfigurationsHasBeenSet(false)
+RedshiftRunConfigurationInput::RedshiftRunConfigurationInput(JsonView jsonValue)
+  : RedshiftRunConfigurationInput()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ AuditMitigationActionsTaskTarget::AuditMitigationActionsTaskTarget() :
 {
 }
 
-AuditMitigationActionsTaskTarget::AuditMitigationActionsTaskTarget(JsonView jsonValue) : 
-    m_auditTaskIdHasBeenSet(false),
-    m_findingIdsHasBeenSet(false),
-    m_auditCheckToReasonCodeFilterHasBeenSet(false)
+AuditMitigationActionsTaskTarget::AuditMitigationActionsTaskTarget(JsonView jsonValue)
+  : AuditMitigationActionsTaskTarget()
 {
   *this = jsonValue;
 }

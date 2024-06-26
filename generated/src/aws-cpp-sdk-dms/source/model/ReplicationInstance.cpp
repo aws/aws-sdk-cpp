@@ -49,34 +49,8 @@ ReplicationInstance::ReplicationInstance() :
 {
 }
 
-ReplicationInstance::ReplicationInstance(JsonView jsonValue) : 
-    m_replicationInstanceIdentifierHasBeenSet(false),
-    m_replicationInstanceClassHasBeenSet(false),
-    m_replicationInstanceStatusHasBeenSet(false),
-    m_allocatedStorage(0),
-    m_allocatedStorageHasBeenSet(false),
-    m_instanceCreateTimeHasBeenSet(false),
-    m_vpcSecurityGroupsHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_replicationSubnetGroupHasBeenSet(false),
-    m_preferredMaintenanceWindowHasBeenSet(false),
-    m_pendingModifiedValuesHasBeenSet(false),
-    m_multiAZ(false),
-    m_multiAZHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_autoMinorVersionUpgrade(false),
-    m_autoMinorVersionUpgradeHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_replicationInstanceArnHasBeenSet(false),
-    m_replicationInstancePublicIpAddressesHasBeenSet(false),
-    m_replicationInstancePrivateIpAddressesHasBeenSet(false),
-    m_replicationInstanceIpv6AddressesHasBeenSet(false),
-    m_publiclyAccessible(false),
-    m_publiclyAccessibleHasBeenSet(false),
-    m_secondaryAvailabilityZoneHasBeenSet(false),
-    m_freeUntilHasBeenSet(false),
-    m_dnsNameServersHasBeenSet(false),
-    m_networkTypeHasBeenSet(false)
+ReplicationInstance::ReplicationInstance(JsonView jsonValue)
+  : ReplicationInstance()
 {
   *this = jsonValue;
 }

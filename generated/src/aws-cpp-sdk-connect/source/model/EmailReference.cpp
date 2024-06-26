@@ -24,9 +24,8 @@ EmailReference::EmailReference() :
 {
 }
 
-EmailReference::EmailReference(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
+EmailReference::EmailReference(JsonView jsonValue)
+  : EmailReference()
 {
   *this = jsonValue;
 }

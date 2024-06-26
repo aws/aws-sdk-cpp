@@ -23,8 +23,8 @@ RealTimeContactAnalysisSegmentCategories::RealTimeContactAnalysisSegmentCategori
 {
 }
 
-RealTimeContactAnalysisSegmentCategories::RealTimeContactAnalysisSegmentCategories(JsonView jsonValue) : 
-    m_matchedDetailsHasBeenSet(false)
+RealTimeContactAnalysisSegmentCategories::RealTimeContactAnalysisSegmentCategories(JsonView jsonValue)
+  : RealTimeContactAnalysisSegmentCategories()
 {
   *this = jsonValue;
 }

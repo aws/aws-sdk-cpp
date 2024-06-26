@@ -28,11 +28,8 @@ ResponseHeadersPolicyFrameOptions::ResponseHeadersPolicyFrameOptions() :
 {
 }
 
-ResponseHeadersPolicyFrameOptions::ResponseHeadersPolicyFrameOptions(const XmlNode& xmlNode) : 
-    m_override(false),
-    m_overrideHasBeenSet(false),
-    m_frameOption(FrameOptionsList::NOT_SET),
-    m_frameOptionHasBeenSet(false)
+ResponseHeadersPolicyFrameOptions::ResponseHeadersPolicyFrameOptions(const XmlNode& xmlNode)
+  : ResponseHeadersPolicyFrameOptions()
 {
   *this = xmlNode;
 }

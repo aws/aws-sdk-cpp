@@ -25,10 +25,8 @@ VectorEnrichmentJobInputConfig::VectorEnrichmentJobInputConfig() :
 {
 }
 
-VectorEnrichmentJobInputConfig::VectorEnrichmentJobInputConfig(JsonView jsonValue) : 
-    m_dataSourceConfigHasBeenSet(false),
-    m_documentType(VectorEnrichmentJobDocumentType::NOT_SET),
-    m_documentTypeHasBeenSet(false)
+VectorEnrichmentJobInputConfig::VectorEnrichmentJobInputConfig(JsonView jsonValue)
+  : VectorEnrichmentJobInputConfig()
 {
   *this = jsonValue;
 }

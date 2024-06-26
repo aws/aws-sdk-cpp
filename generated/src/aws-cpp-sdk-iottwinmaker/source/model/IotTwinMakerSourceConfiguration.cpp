@@ -24,9 +24,8 @@ IotTwinMakerSourceConfiguration::IotTwinMakerSourceConfiguration() :
 {
 }
 
-IotTwinMakerSourceConfiguration::IotTwinMakerSourceConfiguration(JsonView jsonValue) : 
-    m_workspaceHasBeenSet(false),
-    m_filtersHasBeenSet(false)
+IotTwinMakerSourceConfiguration::IotTwinMakerSourceConfiguration(JsonView jsonValue)
+  : IotTwinMakerSourceConfiguration()
 {
   *this = jsonValue;
 }

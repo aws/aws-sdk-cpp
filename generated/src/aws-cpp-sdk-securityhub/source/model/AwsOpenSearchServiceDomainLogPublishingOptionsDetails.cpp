@@ -25,10 +25,8 @@ AwsOpenSearchServiceDomainLogPublishingOptionsDetails::AwsOpenSearchServiceDomai
 {
 }
 
-AwsOpenSearchServiceDomainLogPublishingOptionsDetails::AwsOpenSearchServiceDomainLogPublishingOptionsDetails(JsonView jsonValue) : 
-    m_indexSlowLogsHasBeenSet(false),
-    m_searchSlowLogsHasBeenSet(false),
-    m_auditLogsHasBeenSet(false)
+AwsOpenSearchServiceDomainLogPublishingOptionsDetails::AwsOpenSearchServiceDomainLogPublishingOptionsDetails(JsonView jsonValue)
+  : AwsOpenSearchServiceDomainLogPublishingOptionsDetails()
 {
   *this = jsonValue;
 }

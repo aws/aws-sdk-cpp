@@ -24,9 +24,8 @@ AddonPodIdentityAssociations::AddonPodIdentityAssociations() :
 {
 }
 
-AddonPodIdentityAssociations::AddonPodIdentityAssociations(JsonView jsonValue) : 
-    m_serviceAccountHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
+AddonPodIdentityAssociations::AddonPodIdentityAssociations(JsonView jsonValue)
+  : AddonPodIdentityAssociations()
 {
   *this = jsonValue;
 }

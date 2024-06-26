@@ -34,19 +34,8 @@ WorkflowRun::WorkflowRun() :
 {
 }
 
-WorkflowRun::WorkflowRun(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_workflowRunIdHasBeenSet(false),
-    m_previousRunIdHasBeenSet(false),
-    m_workflowRunPropertiesHasBeenSet(false),
-    m_startedOnHasBeenSet(false),
-    m_completedOnHasBeenSet(false),
-    m_status(WorkflowRunStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_statisticsHasBeenSet(false),
-    m_graphHasBeenSet(false),
-    m_startingEventBatchConditionHasBeenSet(false)
+WorkflowRun::WorkflowRun(JsonView jsonValue)
+  : WorkflowRun()
 {
   *this = jsonValue;
 }

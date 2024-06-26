@@ -26,11 +26,8 @@ RxNormTrait::RxNormTrait() :
 {
 }
 
-RxNormTrait::RxNormTrait(JsonView jsonValue) : 
-    m_name(RxNormTraitName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_score(0.0),
-    m_scoreHasBeenSet(false)
+RxNormTrait::RxNormTrait(JsonView jsonValue)
+  : RxNormTrait()
 {
   *this = jsonValue;
 }

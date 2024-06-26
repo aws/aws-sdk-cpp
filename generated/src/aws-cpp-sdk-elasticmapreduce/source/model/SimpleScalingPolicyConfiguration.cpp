@@ -28,13 +28,8 @@ SimpleScalingPolicyConfiguration::SimpleScalingPolicyConfiguration() :
 {
 }
 
-SimpleScalingPolicyConfiguration::SimpleScalingPolicyConfiguration(JsonView jsonValue) : 
-    m_adjustmentType(AdjustmentType::NOT_SET),
-    m_adjustmentTypeHasBeenSet(false),
-    m_scalingAdjustment(0),
-    m_scalingAdjustmentHasBeenSet(false),
-    m_coolDown(0),
-    m_coolDownHasBeenSet(false)
+SimpleScalingPolicyConfiguration::SimpleScalingPolicyConfiguration(JsonView jsonValue)
+  : SimpleScalingPolicyConfiguration()
 {
   *this = jsonValue;
 }

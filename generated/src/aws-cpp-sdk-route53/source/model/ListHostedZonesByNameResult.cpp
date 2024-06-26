@@ -21,8 +21,8 @@ ListHostedZonesByNameResult::ListHostedZonesByNameResult() :
 {
 }
 
-ListHostedZonesByNameResult::ListHostedZonesByNameResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_isTruncated(false)
+ListHostedZonesByNameResult::ListHostedZonesByNameResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : ListHostedZonesByNameResult()
 {
   *this = result;
 }

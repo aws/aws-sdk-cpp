@@ -29,14 +29,8 @@ RecordingGroup::RecordingGroup() :
 {
 }
 
-RecordingGroup::RecordingGroup(JsonView jsonValue) : 
-    m_allSupported(false),
-    m_allSupportedHasBeenSet(false),
-    m_includeGlobalResourceTypes(false),
-    m_includeGlobalResourceTypesHasBeenSet(false),
-    m_resourceTypesHasBeenSet(false),
-    m_exclusionByResourceTypesHasBeenSet(false),
-    m_recordingStrategyHasBeenSet(false)
+RecordingGroup::RecordingGroup(JsonView jsonValue)
+  : RecordingGroup()
 {
   *this = jsonValue;
 }

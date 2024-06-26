@@ -46,29 +46,8 @@ UpdateAction::UpdateAction() :
 {
 }
 
-UpdateAction::UpdateAction(const XmlNode& xmlNode) : 
-    m_replicationGroupIdHasBeenSet(false),
-    m_cacheClusterIdHasBeenSet(false),
-    m_serviceUpdateNameHasBeenSet(false),
-    m_serviceUpdateReleaseDateHasBeenSet(false),
-    m_serviceUpdateSeverity(ServiceUpdateSeverity::NOT_SET),
-    m_serviceUpdateSeverityHasBeenSet(false),
-    m_serviceUpdateStatus(ServiceUpdateStatus::NOT_SET),
-    m_serviceUpdateStatusHasBeenSet(false),
-    m_serviceUpdateRecommendedApplyByDateHasBeenSet(false),
-    m_serviceUpdateType(ServiceUpdateType::NOT_SET),
-    m_serviceUpdateTypeHasBeenSet(false),
-    m_updateActionAvailableDateHasBeenSet(false),
-    m_updateActionStatus(UpdateActionStatus::NOT_SET),
-    m_updateActionStatusHasBeenSet(false),
-    m_nodesUpdatedHasBeenSet(false),
-    m_updateActionStatusModifiedDateHasBeenSet(false),
-    m_slaMet(SlaMet::NOT_SET),
-    m_slaMetHasBeenSet(false),
-    m_nodeGroupUpdateStatusHasBeenSet(false),
-    m_cacheNodeUpdateStatusHasBeenSet(false),
-    m_estimatedUpdateTimeHasBeenSet(false),
-    m_engineHasBeenSet(false)
+UpdateAction::UpdateAction(const XmlNode& xmlNode)
+  : UpdateAction()
 {
   *this = xmlNode;
 }

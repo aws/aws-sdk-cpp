@@ -26,11 +26,8 @@ JobDetailsError::JobDetailsError() :
 {
 }
 
-JobDetailsError::JobDetailsError(JsonView jsonValue) : 
-    m_code(JobEntityErrorCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_jobIdHasBeenSet(false),
-    m_messageHasBeenSet(false)
+JobDetailsError::JobDetailsError(JsonView jsonValue)
+  : JobDetailsError()
 {
   *this = jsonValue;
 }

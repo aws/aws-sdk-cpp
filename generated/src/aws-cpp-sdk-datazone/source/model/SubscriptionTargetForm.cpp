@@ -24,9 +24,8 @@ SubscriptionTargetForm::SubscriptionTargetForm() :
 {
 }
 
-SubscriptionTargetForm::SubscriptionTargetForm(JsonView jsonValue) : 
-    m_contentHasBeenSet(false),
-    m_formNameHasBeenSet(false)
+SubscriptionTargetForm::SubscriptionTargetForm(JsonView jsonValue)
+  : SubscriptionTargetForm()
 {
   *this = jsonValue;
 }

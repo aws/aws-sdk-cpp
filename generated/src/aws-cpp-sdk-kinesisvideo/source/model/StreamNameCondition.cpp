@@ -25,10 +25,8 @@ StreamNameCondition::StreamNameCondition() :
 {
 }
 
-StreamNameCondition::StreamNameCondition(JsonView jsonValue) : 
-    m_comparisonOperator(ComparisonOperator::NOT_SET),
-    m_comparisonOperatorHasBeenSet(false),
-    m_comparisonValueHasBeenSet(false)
+StreamNameCondition::StreamNameCondition(JsonView jsonValue)
+  : StreamNameCondition()
 {
   *this = jsonValue;
 }

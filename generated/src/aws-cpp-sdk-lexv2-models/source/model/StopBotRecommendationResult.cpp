@@ -22,8 +22,8 @@ StopBotRecommendationResult::StopBotRecommendationResult() :
 {
 }
 
-StopBotRecommendationResult::StopBotRecommendationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_botRecommendationStatus(BotRecommendationStatus::NOT_SET)
+StopBotRecommendationResult::StopBotRecommendationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : StopBotRecommendationResult()
 {
   *this = result;
 }

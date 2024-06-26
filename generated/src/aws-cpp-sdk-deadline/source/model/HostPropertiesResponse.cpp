@@ -26,11 +26,8 @@ HostPropertiesResponse::HostPropertiesResponse() :
 {
 }
 
-HostPropertiesResponse::HostPropertiesResponse(JsonView jsonValue) : 
-    m_ec2InstanceArnHasBeenSet(false),
-    m_ec2InstanceTypeHasBeenSet(false),
-    m_hostNameHasBeenSet(false),
-    m_ipAddressesHasBeenSet(false)
+HostPropertiesResponse::HostPropertiesResponse(JsonView jsonValue)
+  : HostPropertiesResponse()
 {
   *this = jsonValue;
 }

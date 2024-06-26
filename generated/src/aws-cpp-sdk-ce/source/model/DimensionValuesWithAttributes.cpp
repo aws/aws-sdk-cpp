@@ -24,9 +24,8 @@ DimensionValuesWithAttributes::DimensionValuesWithAttributes() :
 {
 }
 
-DimensionValuesWithAttributes::DimensionValuesWithAttributes(JsonView jsonValue) : 
-    m_valueHasBeenSet(false),
-    m_attributesHasBeenSet(false)
+DimensionValuesWithAttributes::DimensionValuesWithAttributes(JsonView jsonValue)
+  : DimensionValuesWithAttributes()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ UsernamePassword::UsernamePassword() :
 {
 }
 
-UsernamePassword::UsernamePassword(JsonView jsonValue) : 
-    m_usernameHasBeenSet(false),
-    m_passwordHasBeenSet(false)
+UsernamePassword::UsernamePassword(JsonView jsonValue)
+  : UsernamePassword()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ CreateJobResult::CreateJobResult() :
 {
 }
 
-CreateJobResult::CreateJobResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_jobType(JobType::NOT_SET)
+CreateJobResult::CreateJobResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : CreateJobResult()
 {
   *this = result;
 }

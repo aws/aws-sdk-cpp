@@ -26,11 +26,8 @@ BucketAccessLogConfig::BucketAccessLogConfig() :
 {
 }
 
-BucketAccessLogConfig::BucketAccessLogConfig(JsonView jsonValue) : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_destinationHasBeenSet(false),
-    m_prefixHasBeenSet(false)
+BucketAccessLogConfig::BucketAccessLogConfig(JsonView jsonValue)
+  : BucketAccessLogConfig()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ TextResponsePart::TextResponsePart() :
 {
 }
 
-TextResponsePart::TextResponsePart(JsonView jsonValue) : 
-    m_spanHasBeenSet(false),
-    m_textHasBeenSet(false)
+TextResponsePart::TextResponsePart(JsonView jsonValue)
+  : TextResponsePart()
 {
   *this = jsonValue;
 }

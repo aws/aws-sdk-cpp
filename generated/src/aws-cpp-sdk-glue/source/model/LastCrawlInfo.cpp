@@ -29,14 +29,8 @@ LastCrawlInfo::LastCrawlInfo() :
 {
 }
 
-LastCrawlInfo::LastCrawlInfo(JsonView jsonValue) : 
-    m_status(LastCrawlStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_logGroupHasBeenSet(false),
-    m_logStreamHasBeenSet(false),
-    m_messagePrefixHasBeenSet(false),
-    m_startTimeHasBeenSet(false)
+LastCrawlInfo::LastCrawlInfo(JsonView jsonValue)
+  : LastCrawlInfo()
 {
   *this = jsonValue;
 }

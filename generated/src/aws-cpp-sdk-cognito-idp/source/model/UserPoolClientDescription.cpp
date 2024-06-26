@@ -25,10 +25,8 @@ UserPoolClientDescription::UserPoolClientDescription() :
 {
 }
 
-UserPoolClientDescription::UserPoolClientDescription(JsonView jsonValue) : 
-    m_clientIdHasBeenSet(false),
-    m_userPoolIdHasBeenSet(false),
-    m_clientNameHasBeenSet(false)
+UserPoolClientDescription::UserPoolClientDescription(JsonView jsonValue)
+  : UserPoolClientDescription()
 {
   *this = jsonValue;
 }

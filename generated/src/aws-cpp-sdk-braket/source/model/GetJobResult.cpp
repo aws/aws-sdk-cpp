@@ -23,9 +23,8 @@ GetJobResult::GetJobResult() :
 {
 }
 
-GetJobResult::GetJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_billableDuration(0),
-    m_status(JobPrimaryStatus::NOT_SET)
+GetJobResult::GetJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetJobResult()
 {
   *this = result;
 }

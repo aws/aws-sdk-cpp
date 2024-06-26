@@ -22,8 +22,8 @@ StartPiiEntitiesDetectionJobResult::StartPiiEntitiesDetectionJobResult() :
 {
 }
 
-StartPiiEntitiesDetectionJobResult::StartPiiEntitiesDetectionJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_jobStatus(JobStatus::NOT_SET)
+StartPiiEntitiesDetectionJobResult::StartPiiEntitiesDetectionJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : StartPiiEntitiesDetectionJobResult()
 {
   *this = result;
 }

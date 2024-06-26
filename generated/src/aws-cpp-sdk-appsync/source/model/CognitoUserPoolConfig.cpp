@@ -25,10 +25,8 @@ CognitoUserPoolConfig::CognitoUserPoolConfig() :
 {
 }
 
-CognitoUserPoolConfig::CognitoUserPoolConfig(JsonView jsonValue) : 
-    m_userPoolIdHasBeenSet(false),
-    m_awsRegionHasBeenSet(false),
-    m_appIdClientRegexHasBeenSet(false)
+CognitoUserPoolConfig::CognitoUserPoolConfig(JsonView jsonValue)
+  : CognitoUserPoolConfig()
 {
   *this = jsonValue;
 }

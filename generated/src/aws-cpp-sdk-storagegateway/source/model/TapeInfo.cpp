@@ -31,16 +31,8 @@ TapeInfo::TapeInfo() :
 {
 }
 
-TapeInfo::TapeInfo(JsonView jsonValue) : 
-    m_tapeARNHasBeenSet(false),
-    m_tapeBarcodeHasBeenSet(false),
-    m_tapeSizeInBytes(0),
-    m_tapeSizeInBytesHasBeenSet(false),
-    m_tapeStatusHasBeenSet(false),
-    m_gatewayARNHasBeenSet(false),
-    m_poolIdHasBeenSet(false),
-    m_retentionStartDateHasBeenSet(false),
-    m_poolEntryDateHasBeenSet(false)
+TapeInfo::TapeInfo(JsonView jsonValue)
+  : TapeInfo()
 {
   *this = jsonValue;
 }

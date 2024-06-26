@@ -26,11 +26,8 @@ BuiltInSlotTypeSortBy::BuiltInSlotTypeSortBy() :
 {
 }
 
-BuiltInSlotTypeSortBy::BuiltInSlotTypeSortBy(JsonView jsonValue) : 
-    m_attribute(BuiltInSlotTypeSortAttribute::NOT_SET),
-    m_attributeHasBeenSet(false),
-    m_order(SortOrder::NOT_SET),
-    m_orderHasBeenSet(false)
+BuiltInSlotTypeSortBy::BuiltInSlotTypeSortBy(JsonView jsonValue)
+  : BuiltInSlotTypeSortBy()
 {
   *this = jsonValue;
 }

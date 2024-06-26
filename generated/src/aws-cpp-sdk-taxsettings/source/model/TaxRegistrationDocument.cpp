@@ -23,8 +23,8 @@ TaxRegistrationDocument::TaxRegistrationDocument() :
 {
 }
 
-TaxRegistrationDocument::TaxRegistrationDocument(JsonView jsonValue) : 
-    m_s3LocationHasBeenSet(false)
+TaxRegistrationDocument::TaxRegistrationDocument(JsonView jsonValue)
+  : TaxRegistrationDocument()
 {
   *this = jsonValue;
 }

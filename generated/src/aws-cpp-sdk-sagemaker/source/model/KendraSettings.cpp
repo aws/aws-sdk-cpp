@@ -24,9 +24,8 @@ KendraSettings::KendraSettings() :
 {
 }
 
-KendraSettings::KendraSettings(JsonView jsonValue) : 
-    m_status(FeatureStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+KendraSettings::KendraSettings(JsonView jsonValue)
+  : KendraSettings()
 {
   *this = jsonValue;
 }

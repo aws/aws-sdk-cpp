@@ -24,9 +24,8 @@ RoutingProfileReference::RoutingProfileReference() :
 {
 }
 
-RoutingProfileReference::RoutingProfileReference(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false)
+RoutingProfileReference::RoutingProfileReference(JsonView jsonValue)
+  : RoutingProfileReference()
 {
   *this = jsonValue;
 }

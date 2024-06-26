@@ -23,9 +23,8 @@ PutParameterResult::PutParameterResult() :
 {
 }
 
-PutParameterResult::PutParameterResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_version(0),
-    m_tier(ParameterTier::NOT_SET)
+PutParameterResult::PutParameterResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : PutParameterResult()
 {
   *this = result;
 }

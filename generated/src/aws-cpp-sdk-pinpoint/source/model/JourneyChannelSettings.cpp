@@ -24,9 +24,8 @@ JourneyChannelSettings::JourneyChannelSettings() :
 {
 }
 
-JourneyChannelSettings::JourneyChannelSettings(JsonView jsonValue) : 
-    m_connectCampaignArnHasBeenSet(false),
-    m_connectCampaignExecutionRoleArnHasBeenSet(false)
+JourneyChannelSettings::JourneyChannelSettings(JsonView jsonValue)
+  : JourneyChannelSettings()
 {
   *this = jsonValue;
 }

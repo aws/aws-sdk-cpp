@@ -24,9 +24,8 @@ VirtualNodeHttp2ConnectionPool::VirtualNodeHttp2ConnectionPool() :
 {
 }
 
-VirtualNodeHttp2ConnectionPool::VirtualNodeHttp2ConnectionPool(JsonView jsonValue) : 
-    m_maxRequests(0),
-    m_maxRequestsHasBeenSet(false)
+VirtualNodeHttp2ConnectionPool::VirtualNodeHttp2ConnectionPool(JsonView jsonValue)
+  : VirtualNodeHttp2ConnectionPool()
 {
   *this = jsonValue;
 }

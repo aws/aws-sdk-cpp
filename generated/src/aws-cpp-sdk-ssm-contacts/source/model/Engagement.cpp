@@ -28,13 +28,8 @@ Engagement::Engagement() :
 {
 }
 
-Engagement::Engagement(JsonView jsonValue) : 
-    m_engagementArnHasBeenSet(false),
-    m_contactArnHasBeenSet(false),
-    m_senderHasBeenSet(false),
-    m_incidentIdHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_stopTimeHasBeenSet(false)
+Engagement::Engagement(JsonView jsonValue)
+  : Engagement()
 {
   *this = jsonValue;
 }

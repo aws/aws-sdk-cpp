@@ -32,17 +32,8 @@ ApplicationSummary::ApplicationSummary() :
 {
 }
 
-ApplicationSummary::ApplicationSummary(JsonView jsonValue) : 
-    m_applicationIdHasBeenSet(false),
-    m_applicationNameHasBeenSet(false),
-    m_applicationDescriptionHasBeenSet(false),
-    m_applicationUrlHasBeenSet(false),
-    m_applicationCreationDate(0),
-    m_applicationCreationDateHasBeenSet(false),
-    m_applicationLastUpdateDate(0),
-    m_applicationLastUpdateDateHasBeenSet(false),
-    m_applicationState(ApplicationState::NOT_SET),
-    m_applicationStateHasBeenSet(false)
+ApplicationSummary::ApplicationSummary(JsonView jsonValue)
+  : ApplicationSummary()
 {
   *this = jsonValue;
 }

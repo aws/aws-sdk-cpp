@@ -25,8 +25,8 @@ AccessGrantsLocationConfiguration::AccessGrantsLocationConfiguration() :
 {
 }
 
-AccessGrantsLocationConfiguration::AccessGrantsLocationConfiguration(const XmlNode& xmlNode) : 
-    m_s3SubPrefixHasBeenSet(false)
+AccessGrantsLocationConfiguration::AccessGrantsLocationConfiguration(const XmlNode& xmlNode)
+  : AccessGrantsLocationConfiguration()
 {
   *this = xmlNode;
 }

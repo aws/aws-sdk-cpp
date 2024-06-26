@@ -32,17 +32,8 @@ DashManifest::DashManifest() :
 {
 }
 
-DashManifest::DashManifest(JsonView jsonValue) : 
-    m_manifestLayout(ManifestLayout::NOT_SET),
-    m_manifestLayoutHasBeenSet(false),
-    m_manifestNameHasBeenSet(false),
-    m_minBufferTimeSeconds(0),
-    m_minBufferTimeSecondsHasBeenSet(false),
-    m_profile(Profile::NOT_SET),
-    m_profileHasBeenSet(false),
-    m_scteMarkersSource(ScteMarkersSource::NOT_SET),
-    m_scteMarkersSourceHasBeenSet(false),
-    m_streamSelectionHasBeenSet(false)
+DashManifest::DashManifest(JsonView jsonValue)
+  : DashManifest()
 {
   *this = jsonValue;
 }

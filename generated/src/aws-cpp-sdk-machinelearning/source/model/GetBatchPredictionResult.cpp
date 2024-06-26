@@ -25,11 +25,8 @@ GetBatchPredictionResult::GetBatchPredictionResult() :
 {
 }
 
-GetBatchPredictionResult::GetBatchPredictionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(EntityStatus::NOT_SET),
-    m_computeTime(0),
-    m_totalRecordCount(0),
-    m_invalidRecordCount(0)
+GetBatchPredictionResult::GetBatchPredictionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetBatchPredictionResult()
 {
   *this = result;
 }

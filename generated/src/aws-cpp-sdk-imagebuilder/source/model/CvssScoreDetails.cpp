@@ -29,14 +29,8 @@ CvssScoreDetails::CvssScoreDetails() :
 {
 }
 
-CvssScoreDetails::CvssScoreDetails(JsonView jsonValue) : 
-    m_scoreSourceHasBeenSet(false),
-    m_cvssSourceHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_score(0.0),
-    m_scoreHasBeenSet(false),
-    m_scoringVectorHasBeenSet(false),
-    m_adjustmentsHasBeenSet(false)
+CvssScoreDetails::CvssScoreDetails(JsonView jsonValue)
+  : CvssScoreDetails()
 {
   *this = jsonValue;
 }

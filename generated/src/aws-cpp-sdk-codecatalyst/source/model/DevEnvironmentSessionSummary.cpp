@@ -27,12 +27,8 @@ DevEnvironmentSessionSummary::DevEnvironmentSessionSummary() :
 {
 }
 
-DevEnvironmentSessionSummary::DevEnvironmentSessionSummary(JsonView jsonValue) : 
-    m_spaceNameHasBeenSet(false),
-    m_projectNameHasBeenSet(false),
-    m_devEnvironmentIdHasBeenSet(false),
-    m_startedTimeHasBeenSet(false),
-    m_idHasBeenSet(false)
+DevEnvironmentSessionSummary::DevEnvironmentSessionSummary(JsonView jsonValue)
+  : DevEnvironmentSessionSummary()
 {
   *this = jsonValue;
 }

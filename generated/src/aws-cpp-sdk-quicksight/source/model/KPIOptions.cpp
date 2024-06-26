@@ -32,17 +32,8 @@ KPIOptions::KPIOptions() :
 {
 }
 
-KPIOptions::KPIOptions(JsonView jsonValue) : 
-    m_progressBarHasBeenSet(false),
-    m_trendArrowsHasBeenSet(false),
-    m_secondaryValueHasBeenSet(false),
-    m_comparisonHasBeenSet(false),
-    m_primaryValueDisplayType(PrimaryValueDisplayType::NOT_SET),
-    m_primaryValueDisplayTypeHasBeenSet(false),
-    m_primaryValueFontConfigurationHasBeenSet(false),
-    m_secondaryValueFontConfigurationHasBeenSet(false),
-    m_sparklineHasBeenSet(false),
-    m_visualLayoutOptionsHasBeenSet(false)
+KPIOptions::KPIOptions(JsonView jsonValue)
+  : KPIOptions()
 {
   *this = jsonValue;
 }

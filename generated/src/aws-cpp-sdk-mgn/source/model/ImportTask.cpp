@@ -31,16 +31,8 @@ ImportTask::ImportTask() :
 {
 }
 
-ImportTask::ImportTask(JsonView jsonValue) : 
-    m_creationDateTimeHasBeenSet(false),
-    m_endDateTimeHasBeenSet(false),
-    m_importIDHasBeenSet(false),
-    m_progressPercentage(0.0),
-    m_progressPercentageHasBeenSet(false),
-    m_s3BucketSourceHasBeenSet(false),
-    m_status(ImportStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_summaryHasBeenSet(false)
+ImportTask::ImportTask(JsonView jsonValue)
+  : ImportTask()
 {
   *this = jsonValue;
 }

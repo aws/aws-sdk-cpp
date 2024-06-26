@@ -27,12 +27,8 @@ Receipt::Receipt() :
 {
 }
 
-Receipt::Receipt(JsonView jsonValue) : 
-    m_contactChannelArnHasBeenSet(false),
-    m_receiptType(ReceiptType::NOT_SET),
-    m_receiptTypeHasBeenSet(false),
-    m_receiptInfoHasBeenSet(false),
-    m_receiptTimeHasBeenSet(false)
+Receipt::Receipt(JsonView jsonValue)
+  : Receipt()
 {
   *this = jsonValue;
 }

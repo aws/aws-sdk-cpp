@@ -23,8 +23,8 @@ IPSetReference::IPSetReference() :
 {
 }
 
-IPSetReference::IPSetReference(JsonView jsonValue) : 
-    m_referenceArnHasBeenSet(false)
+IPSetReference::IPSetReference(JsonView jsonValue)
+  : IPSetReference()
 {
   *this = jsonValue;
 }

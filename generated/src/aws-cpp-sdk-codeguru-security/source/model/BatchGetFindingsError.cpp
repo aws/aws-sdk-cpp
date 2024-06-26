@@ -27,12 +27,8 @@ BatchGetFindingsError::BatchGetFindingsError() :
 {
 }
 
-BatchGetFindingsError::BatchGetFindingsError(JsonView jsonValue) : 
-    m_errorCode(ErrorCode::NOT_SET),
-    m_errorCodeHasBeenSet(false),
-    m_findingIdHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_scanNameHasBeenSet(false)
+BatchGetFindingsError::BatchGetFindingsError(JsonView jsonValue)
+  : BatchGetFindingsError()
 {
   *this = jsonValue;
 }

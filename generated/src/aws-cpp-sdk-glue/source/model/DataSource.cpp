@@ -23,8 +23,8 @@ DataSource::DataSource() :
 {
 }
 
-DataSource::DataSource(JsonView jsonValue) : 
-    m_glueTableHasBeenSet(false)
+DataSource::DataSource(JsonView jsonValue)
+  : DataSource()
 {
   *this = jsonValue;
 }

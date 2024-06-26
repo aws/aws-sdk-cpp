@@ -24,9 +24,8 @@ TaskManagedEBSVolumeTerminationPolicy::TaskManagedEBSVolumeTerminationPolicy() :
 {
 }
 
-TaskManagedEBSVolumeTerminationPolicy::TaskManagedEBSVolumeTerminationPolicy(JsonView jsonValue) : 
-    m_deleteOnTermination(false),
-    m_deleteOnTerminationHasBeenSet(false)
+TaskManagedEBSVolumeTerminationPolicy::TaskManagedEBSVolumeTerminationPolicy(JsonView jsonValue)
+  : TaskManagedEBSVolumeTerminationPolicy()
 {
   *this = jsonValue;
 }

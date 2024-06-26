@@ -26,11 +26,8 @@ AnalyticsUtteranceResult::AnalyticsUtteranceResult() :
 {
 }
 
-AnalyticsUtteranceResult::AnalyticsUtteranceResult(JsonView jsonValue) : 
-    m_binKeysHasBeenSet(false),
-    m_groupByKeysHasBeenSet(false),
-    m_metricsResultsHasBeenSet(false),
-    m_attributeResultsHasBeenSet(false)
+AnalyticsUtteranceResult::AnalyticsUtteranceResult(JsonView jsonValue)
+  : AnalyticsUtteranceResult()
 {
   *this = jsonValue;
 }

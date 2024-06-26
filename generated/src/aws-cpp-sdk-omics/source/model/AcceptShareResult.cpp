@@ -22,8 +22,8 @@ AcceptShareResult::AcceptShareResult() :
 {
 }
 
-AcceptShareResult::AcceptShareResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(ShareStatus::NOT_SET)
+AcceptShareResult::AcceptShareResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : AcceptShareResult()
 {
   *this = result;
 }

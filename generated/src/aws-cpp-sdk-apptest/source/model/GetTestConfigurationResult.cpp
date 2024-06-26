@@ -23,9 +23,8 @@ GetTestConfigurationResult::GetTestConfigurationResult() :
 {
 }
 
-GetTestConfigurationResult::GetTestConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_testConfigurationVersion(0),
-    m_status(TestConfigurationLifecycle::NOT_SET)
+GetTestConfigurationResult::GetTestConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetTestConfigurationResult()
 {
   *this = result;
 }

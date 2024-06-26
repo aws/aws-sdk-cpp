@@ -24,9 +24,8 @@ SchemaColumn::SchemaColumn() :
 {
 }
 
-SchemaColumn::SchemaColumn(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_dataTypeHasBeenSet(false)
+SchemaColumn::SchemaColumn(JsonView jsonValue)
+  : SchemaColumn()
 {
   *this = jsonValue;
 }

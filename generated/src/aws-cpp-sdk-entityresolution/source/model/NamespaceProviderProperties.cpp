@@ -24,9 +24,8 @@ NamespaceProviderProperties::NamespaceProviderProperties() :
 {
 }
 
-NamespaceProviderProperties::NamespaceProviderProperties(JsonView jsonValue) : 
-    m_providerConfigurationHasBeenSet(false),
-    m_providerServiceArnHasBeenSet(false)
+NamespaceProviderProperties::NamespaceProviderProperties(JsonView jsonValue)
+  : NamespaceProviderProperties()
 {
   *this = jsonValue;
 }

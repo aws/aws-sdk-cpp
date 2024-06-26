@@ -25,8 +25,8 @@ ConfigurationSetSendingPausedException::ConfigurationSetSendingPausedException()
 {
 }
 
-ConfigurationSetSendingPausedException::ConfigurationSetSendingPausedException(const XmlNode& xmlNode) : 
-    m_configurationSetNameHasBeenSet(false)
+ConfigurationSetSendingPausedException::ConfigurationSetSendingPausedException(const XmlNode& xmlNode)
+  : ConfigurationSetSendingPausedException()
 {
   *this = xmlNode;
 }

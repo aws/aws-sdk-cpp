@@ -23,8 +23,8 @@ EventFilter::EventFilter() :
 {
 }
 
-EventFilter::EventFilter(JsonView jsonValue) : 
-    m_sourceHasBeenSet(false)
+EventFilter::EventFilter(JsonView jsonValue)
+  : EventFilter()
 {
   *this = jsonValue;
 }

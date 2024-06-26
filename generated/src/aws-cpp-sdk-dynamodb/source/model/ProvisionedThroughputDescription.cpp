@@ -30,15 +30,8 @@ ProvisionedThroughputDescription::ProvisionedThroughputDescription() :
 {
 }
 
-ProvisionedThroughputDescription::ProvisionedThroughputDescription(JsonView jsonValue) : 
-    m_lastIncreaseDateTimeHasBeenSet(false),
-    m_lastDecreaseDateTimeHasBeenSet(false),
-    m_numberOfDecreasesToday(0),
-    m_numberOfDecreasesTodayHasBeenSet(false),
-    m_readCapacityUnits(0),
-    m_readCapacityUnitsHasBeenSet(false),
-    m_writeCapacityUnits(0),
-    m_writeCapacityUnitsHasBeenSet(false)
+ProvisionedThroughputDescription::ProvisionedThroughputDescription(JsonView jsonValue)
+  : ProvisionedThroughputDescription()
 {
   *this = jsonValue;
 }

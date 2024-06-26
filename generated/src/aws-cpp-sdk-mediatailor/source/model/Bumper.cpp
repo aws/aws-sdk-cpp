@@ -24,9 +24,8 @@ Bumper::Bumper() :
 {
 }
 
-Bumper::Bumper(JsonView jsonValue) : 
-    m_endUrlHasBeenSet(false),
-    m_startUrlHasBeenSet(false)
+Bumper::Bumper(JsonView jsonValue)
+  : Bumper()
 {
   *this = jsonValue;
 }

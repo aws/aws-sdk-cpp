@@ -51,36 +51,8 @@ TaskDefinition::TaskDefinition() :
 {
 }
 
-TaskDefinition::TaskDefinition(JsonView jsonValue) : 
-    m_taskDefinitionArnHasBeenSet(false),
-    m_containerDefinitionsHasBeenSet(false),
-    m_familyHasBeenSet(false),
-    m_taskRoleArnHasBeenSet(false),
-    m_executionRoleArnHasBeenSet(false),
-    m_networkMode(NetworkMode::NOT_SET),
-    m_networkModeHasBeenSet(false),
-    m_revision(0),
-    m_revisionHasBeenSet(false),
-    m_volumesHasBeenSet(false),
-    m_status(TaskDefinitionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_requiresAttributesHasBeenSet(false),
-    m_placementConstraintsHasBeenSet(false),
-    m_compatibilitiesHasBeenSet(false),
-    m_runtimePlatformHasBeenSet(false),
-    m_requiresCompatibilitiesHasBeenSet(false),
-    m_cpuHasBeenSet(false),
-    m_memoryHasBeenSet(false),
-    m_inferenceAcceleratorsHasBeenSet(false),
-    m_pidMode(PidMode::NOT_SET),
-    m_pidModeHasBeenSet(false),
-    m_ipcMode(IpcMode::NOT_SET),
-    m_ipcModeHasBeenSet(false),
-    m_proxyConfigurationHasBeenSet(false),
-    m_registeredAtHasBeenSet(false),
-    m_deregisteredAtHasBeenSet(false),
-    m_registeredByHasBeenSet(false),
-    m_ephemeralStorageHasBeenSet(false)
+TaskDefinition::TaskDefinition(JsonView jsonValue)
+  : TaskDefinition()
 {
   *this = jsonValue;
 }

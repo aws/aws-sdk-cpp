@@ -22,8 +22,8 @@ ListJobsResult::ListJobsResult() :
 {
 }
 
-ListJobsResult::ListJobsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_isTruncated(false)
+ListJobsResult::ListJobsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : ListJobsResult()
 {
   *this = result;
 }

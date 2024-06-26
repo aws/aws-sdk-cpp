@@ -27,12 +27,8 @@ CreateDelegationRequest::CreateDelegationRequest() :
 {
 }
 
-CreateDelegationRequest::CreateDelegationRequest(JsonView jsonValue) : 
-    m_commentHasBeenSet(false),
-    m_controlSetIdHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_roleType(RoleType::NOT_SET),
-    m_roleTypeHasBeenSet(false)
+CreateDelegationRequest::CreateDelegationRequest(JsonView jsonValue)
+  : CreateDelegationRequest()
 {
   *this = jsonValue;
 }

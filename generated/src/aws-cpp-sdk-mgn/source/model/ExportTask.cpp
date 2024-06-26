@@ -33,18 +33,8 @@ ExportTask::ExportTask() :
 {
 }
 
-ExportTask::ExportTask(JsonView jsonValue) : 
-    m_creationDateTimeHasBeenSet(false),
-    m_endDateTimeHasBeenSet(false),
-    m_exportIDHasBeenSet(false),
-    m_progressPercentage(0.0),
-    m_progressPercentageHasBeenSet(false),
-    m_s3BucketHasBeenSet(false),
-    m_s3BucketOwnerHasBeenSet(false),
-    m_s3KeyHasBeenSet(false),
-    m_status(ExportStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_summaryHasBeenSet(false)
+ExportTask::ExportTask(JsonView jsonValue)
+  : ExportTask()
 {
   *this = jsonValue;
 }

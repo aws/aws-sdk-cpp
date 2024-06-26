@@ -24,9 +24,8 @@ ModelDiagnosticsS3OutputConfiguration::ModelDiagnosticsS3OutputConfiguration() :
 {
 }
 
-ModelDiagnosticsS3OutputConfiguration::ModelDiagnosticsS3OutputConfiguration(JsonView jsonValue) : 
-    m_bucketHasBeenSet(false),
-    m_prefixHasBeenSet(false)
+ModelDiagnosticsS3OutputConfiguration::ModelDiagnosticsS3OutputConfiguration(JsonView jsonValue)
+  : ModelDiagnosticsS3OutputConfiguration()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ LFTagKeyResource::LFTagKeyResource() :
 {
 }
 
-LFTagKeyResource::LFTagKeyResource(JsonView jsonValue) : 
-    m_catalogIdHasBeenSet(false),
-    m_tagKeyHasBeenSet(false),
-    m_tagValuesHasBeenSet(false)
+LFTagKeyResource::LFTagKeyResource(JsonView jsonValue)
+  : LFTagKeyResource()
 {
   *this = jsonValue;
 }

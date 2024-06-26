@@ -27,12 +27,8 @@ ServiceAccountTokenSummary::ServiceAccountTokenSummary() :
 {
 }
 
-ServiceAccountTokenSummary::ServiceAccountTokenSummary(JsonView jsonValue) : 
-    m_createdAtHasBeenSet(false),
-    m_expiresAtHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_lastUsedAtHasBeenSet(false),
-    m_nameHasBeenSet(false)
+ServiceAccountTokenSummary::ServiceAccountTokenSummary(JsonView jsonValue)
+  : ServiceAccountTokenSummary()
 {
   *this = jsonValue;
 }

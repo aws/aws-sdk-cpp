@@ -25,10 +25,8 @@ LifeCycleLastTest::LifeCycleLastTest() :
 {
 }
 
-LifeCycleLastTest::LifeCycleLastTest(JsonView jsonValue) : 
-    m_finalizedHasBeenSet(false),
-    m_initiatedHasBeenSet(false),
-    m_revertedHasBeenSet(false)
+LifeCycleLastTest::LifeCycleLastTest(JsonView jsonValue)
+  : LifeCycleLastTest()
 {
   *this = jsonValue;
 }

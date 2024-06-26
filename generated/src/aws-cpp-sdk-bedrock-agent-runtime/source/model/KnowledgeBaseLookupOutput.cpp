@@ -23,8 +23,8 @@ KnowledgeBaseLookupOutput::KnowledgeBaseLookupOutput() :
 {
 }
 
-KnowledgeBaseLookupOutput::KnowledgeBaseLookupOutput(JsonView jsonValue) : 
-    m_retrievedReferencesHasBeenSet(false)
+KnowledgeBaseLookupOutput::KnowledgeBaseLookupOutput(JsonView jsonValue)
+  : KnowledgeBaseLookupOutput()
 {
   *this = jsonValue;
 }

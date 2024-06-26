@@ -23,8 +23,8 @@ AutomatedDiscoveryInformation::AutomatedDiscoveryInformation() :
 {
 }
 
-AutomatedDiscoveryInformation::AutomatedDiscoveryInformation(JsonView jsonValue) : 
-    m_lastRunTimeHasBeenSet(false)
+AutomatedDiscoveryInformation::AutomatedDiscoveryInformation(JsonView jsonValue)
+  : AutomatedDiscoveryInformation()
 {
   *this = jsonValue;
 }

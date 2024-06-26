@@ -25,10 +25,8 @@ VariableValue::VariableValue() :
 {
 }
 
-VariableValue::VariableValue(JsonView jsonValue) : 
-    m_propertyIdHasBeenSet(false),
-    m_hierarchyIdHasBeenSet(false),
-    m_propertyPathHasBeenSet(false)
+VariableValue::VariableValue(JsonView jsonValue)
+  : VariableValue()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ GetSessionEmbedUrlResult::GetSessionEmbedUrlResult() :
 {
 }
 
-GetSessionEmbedUrlResult::GetSessionEmbedUrlResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+GetSessionEmbedUrlResult::GetSessionEmbedUrlResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetSessionEmbedUrlResult()
 {
   *this = result;
 }

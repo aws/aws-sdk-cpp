@@ -25,10 +25,8 @@ SqlInjectionMatchTuple::SqlInjectionMatchTuple() :
 {
 }
 
-SqlInjectionMatchTuple::SqlInjectionMatchTuple(JsonView jsonValue) : 
-    m_fieldToMatchHasBeenSet(false),
-    m_textTransformation(TextTransformation::NOT_SET),
-    m_textTransformationHasBeenSet(false)
+SqlInjectionMatchTuple::SqlInjectionMatchTuple(JsonView jsonValue)
+  : SqlInjectionMatchTuple()
 {
   *this = jsonValue;
 }

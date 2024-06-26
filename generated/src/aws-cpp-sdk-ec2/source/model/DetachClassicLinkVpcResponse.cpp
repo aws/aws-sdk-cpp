@@ -22,8 +22,8 @@ DetachClassicLinkVpcResponse::DetachClassicLinkVpcResponse() :
 {
 }
 
-DetachClassicLinkVpcResponse::DetachClassicLinkVpcResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_return(false)
+DetachClassicLinkVpcResponse::DetachClassicLinkVpcResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : DetachClassicLinkVpcResponse()
 {
   *this = result;
 }

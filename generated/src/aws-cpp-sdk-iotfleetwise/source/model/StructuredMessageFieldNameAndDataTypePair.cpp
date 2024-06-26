@@ -25,9 +25,8 @@ StructuredMessageFieldNameAndDataTypePair::StructuredMessageFieldNameAndDataType
 {
 }
 
-StructuredMessageFieldNameAndDataTypePair::StructuredMessageFieldNameAndDataTypePair(JsonView jsonValue) : 
-    m_fieldNameHasBeenSet(false),
-    m_dataTypeHasBeenSet(false)
+StructuredMessageFieldNameAndDataTypePair::StructuredMessageFieldNameAndDataTypePair(JsonView jsonValue)
+  : StructuredMessageFieldNameAndDataTypePair()
 {
   *this = jsonValue;
 }

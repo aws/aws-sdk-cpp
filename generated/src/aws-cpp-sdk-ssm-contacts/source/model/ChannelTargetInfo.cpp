@@ -25,10 +25,8 @@ ChannelTargetInfo::ChannelTargetInfo() :
 {
 }
 
-ChannelTargetInfo::ChannelTargetInfo(JsonView jsonValue) : 
-    m_contactChannelIdHasBeenSet(false),
-    m_retryIntervalInMinutes(0),
-    m_retryIntervalInMinutesHasBeenSet(false)
+ChannelTargetInfo::ChannelTargetInfo(JsonView jsonValue)
+  : ChannelTargetInfo()
 {
   *this = jsonValue;
 }

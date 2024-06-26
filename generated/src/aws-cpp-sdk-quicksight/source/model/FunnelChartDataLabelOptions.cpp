@@ -34,19 +34,8 @@ FunnelChartDataLabelOptions::FunnelChartDataLabelOptions() :
 {
 }
 
-FunnelChartDataLabelOptions::FunnelChartDataLabelOptions(JsonView jsonValue) : 
-    m_visibility(Visibility::NOT_SET),
-    m_visibilityHasBeenSet(false),
-    m_categoryLabelVisibility(Visibility::NOT_SET),
-    m_categoryLabelVisibilityHasBeenSet(false),
-    m_measureLabelVisibility(Visibility::NOT_SET),
-    m_measureLabelVisibilityHasBeenSet(false),
-    m_position(DataLabelPosition::NOT_SET),
-    m_positionHasBeenSet(false),
-    m_labelFontConfigurationHasBeenSet(false),
-    m_labelColorHasBeenSet(false),
-    m_measureDataLabelStyle(FunnelChartMeasureDataLabelStyle::NOT_SET),
-    m_measureDataLabelStyleHasBeenSet(false)
+FunnelChartDataLabelOptions::FunnelChartDataLabelOptions(JsonView jsonValue)
+  : FunnelChartDataLabelOptions()
 {
   *this = jsonValue;
 }

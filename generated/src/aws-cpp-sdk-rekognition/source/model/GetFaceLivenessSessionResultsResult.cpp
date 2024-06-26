@@ -23,9 +23,8 @@ GetFaceLivenessSessionResultsResult::GetFaceLivenessSessionResultsResult() :
 {
 }
 
-GetFaceLivenessSessionResultsResult::GetFaceLivenessSessionResultsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(LivenessSessionStatus::NOT_SET),
-    m_confidence(0.0)
+GetFaceLivenessSessionResultsResult::GetFaceLivenessSessionResultsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetFaceLivenessSessionResultsResult()
 {
   *this = result;
 }

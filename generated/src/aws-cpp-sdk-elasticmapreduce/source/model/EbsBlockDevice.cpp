@@ -24,9 +24,8 @@ EbsBlockDevice::EbsBlockDevice() :
 {
 }
 
-EbsBlockDevice::EbsBlockDevice(JsonView jsonValue) : 
-    m_volumeSpecificationHasBeenSet(false),
-    m_deviceHasBeenSet(false)
+EbsBlockDevice::EbsBlockDevice(JsonView jsonValue)
+  : EbsBlockDevice()
 {
   *this = jsonValue;
 }

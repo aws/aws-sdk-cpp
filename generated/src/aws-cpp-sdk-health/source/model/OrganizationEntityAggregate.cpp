@@ -27,12 +27,8 @@ OrganizationEntityAggregate::OrganizationEntityAggregate() :
 {
 }
 
-OrganizationEntityAggregate::OrganizationEntityAggregate(JsonView jsonValue) : 
-    m_eventArnHasBeenSet(false),
-    m_count(0),
-    m_countHasBeenSet(false),
-    m_statusesHasBeenSet(false),
-    m_accountsHasBeenSet(false)
+OrganizationEntityAggregate::OrganizationEntityAggregate(JsonView jsonValue)
+  : OrganizationEntityAggregate()
 {
   *this = jsonValue;
 }

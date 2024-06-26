@@ -29,14 +29,8 @@ EmailMessage::EmailMessage() :
 {
 }
 
-EmailMessage::EmailMessage(JsonView jsonValue) : 
-    m_bodyHasBeenSet(false),
-    m_feedbackForwardingAddressHasBeenSet(false),
-    m_fromAddressHasBeenSet(false),
-    m_rawEmailHasBeenSet(false),
-    m_replyToAddressesHasBeenSet(false),
-    m_simpleEmailHasBeenSet(false),
-    m_substitutionsHasBeenSet(false)
+EmailMessage::EmailMessage(JsonView jsonValue)
+  : EmailMessage()
 {
   *this = jsonValue;
 }

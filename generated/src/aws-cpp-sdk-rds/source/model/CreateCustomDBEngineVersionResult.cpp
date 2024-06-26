@@ -30,16 +30,8 @@ CreateCustomDBEngineVersionResult::CreateCustomDBEngineVersionResult() :
 {
 }
 
-CreateCustomDBEngineVersionResult::CreateCustomDBEngineVersionResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_supportsLogExportsToCloudwatchLogs(false),
-    m_supportsReadReplica(false),
-    m_supportsParallelQuery(false),
-    m_supportsGlobalDatabases(false),
-    m_supportsBabelfish(false),
-    m_supportsLimitlessDatabase(false),
-    m_supportsCertificateRotationWithoutRestart(false),
-    m_supportsLocalWriteForwarding(false),
-    m_supportsIntegrations(false)
+CreateCustomDBEngineVersionResult::CreateCustomDBEngineVersionResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : CreateCustomDBEngineVersionResult()
 {
   *this = result;
 }

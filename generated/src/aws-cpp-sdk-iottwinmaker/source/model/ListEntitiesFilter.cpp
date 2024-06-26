@@ -25,10 +25,8 @@ ListEntitiesFilter::ListEntitiesFilter() :
 {
 }
 
-ListEntitiesFilter::ListEntitiesFilter(JsonView jsonValue) : 
-    m_parentEntityIdHasBeenSet(false),
-    m_componentTypeIdHasBeenSet(false),
-    m_externalIdHasBeenSet(false)
+ListEntitiesFilter::ListEntitiesFilter(JsonView jsonValue)
+  : ListEntitiesFilter()
 {
   *this = jsonValue;
 }

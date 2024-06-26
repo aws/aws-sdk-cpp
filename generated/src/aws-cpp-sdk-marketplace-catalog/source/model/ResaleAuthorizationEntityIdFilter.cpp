@@ -23,8 +23,8 @@ ResaleAuthorizationEntityIdFilter::ResaleAuthorizationEntityIdFilter() :
 {
 }
 
-ResaleAuthorizationEntityIdFilter::ResaleAuthorizationEntityIdFilter(JsonView jsonValue) : 
-    m_valueListHasBeenSet(false)
+ResaleAuthorizationEntityIdFilter::ResaleAuthorizationEntityIdFilter(JsonView jsonValue)
+  : ResaleAuthorizationEntityIdFilter()
 {
   *this = jsonValue;
 }

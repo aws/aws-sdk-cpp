@@ -23,8 +23,8 @@ AgentHierarchyGroup::AgentHierarchyGroup() :
 {
 }
 
-AgentHierarchyGroup::AgentHierarchyGroup(JsonView jsonValue) : 
-    m_arnHasBeenSet(false)
+AgentHierarchyGroup::AgentHierarchyGroup(JsonView jsonValue)
+  : AgentHierarchyGroup()
 {
   *this = jsonValue;
 }

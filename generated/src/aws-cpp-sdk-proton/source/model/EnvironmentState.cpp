@@ -26,11 +26,8 @@ EnvironmentState::EnvironmentState() :
 {
 }
 
-EnvironmentState::EnvironmentState(JsonView jsonValue) : 
-    m_specHasBeenSet(false),
-    m_templateMajorVersionHasBeenSet(false),
-    m_templateMinorVersionHasBeenSet(false),
-    m_templateNameHasBeenSet(false)
+EnvironmentState::EnvironmentState(JsonView jsonValue)
+  : EnvironmentState()
 {
   *this = jsonValue;
 }

@@ -27,12 +27,8 @@ CaptionSource::CaptionSource() :
 {
 }
 
-CaptionSource::CaptionSource(JsonView jsonValue) : 
-    m_keyHasBeenSet(false),
-    m_languageHasBeenSet(false),
-    m_timeOffsetHasBeenSet(false),
-    m_labelHasBeenSet(false),
-    m_encryptionHasBeenSet(false)
+CaptionSource::CaptionSource(JsonView jsonValue)
+  : CaptionSource()
 {
   *this = jsonValue;
 }

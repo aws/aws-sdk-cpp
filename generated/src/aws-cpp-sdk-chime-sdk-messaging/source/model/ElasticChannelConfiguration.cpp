@@ -28,13 +28,8 @@ ElasticChannelConfiguration::ElasticChannelConfiguration() :
 {
 }
 
-ElasticChannelConfiguration::ElasticChannelConfiguration(JsonView jsonValue) : 
-    m_maximumSubChannels(0),
-    m_maximumSubChannelsHasBeenSet(false),
-    m_targetMembershipsPerSubChannel(0),
-    m_targetMembershipsPerSubChannelHasBeenSet(false),
-    m_minimumMembershipPercentage(0),
-    m_minimumMembershipPercentageHasBeenSet(false)
+ElasticChannelConfiguration::ElasticChannelConfiguration(JsonView jsonValue)
+  : ElasticChannelConfiguration()
 {
   *this = jsonValue;
 }

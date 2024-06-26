@@ -23,8 +23,8 @@ InTransitEncryptionConfiguration::InTransitEncryptionConfiguration() :
 {
 }
 
-InTransitEncryptionConfiguration::InTransitEncryptionConfiguration(JsonView jsonValue) : 
-    m_tlsCertificateConfigurationHasBeenSet(false)
+InTransitEncryptionConfiguration::InTransitEncryptionConfiguration(JsonView jsonValue)
+  : InTransitEncryptionConfiguration()
 {
   *this = jsonValue;
 }

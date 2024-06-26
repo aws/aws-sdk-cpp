@@ -28,13 +28,8 @@ DomainEntry::DomainEntry() :
 {
 }
 
-DomainEntry::DomainEntry(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_targetHasBeenSet(false),
-    m_isAlias(false),
-    m_isAliasHasBeenSet(false),
-    m_typeHasBeenSet(false)
+DomainEntry::DomainEntry(JsonView jsonValue)
+  : DomainEntry()
 {
   *this = jsonValue;
 }

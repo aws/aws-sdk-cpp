@@ -23,8 +23,8 @@ ResaleAuthorizationOfferExtendedStatusFilter::ResaleAuthorizationOfferExtendedSt
 {
 }
 
-ResaleAuthorizationOfferExtendedStatusFilter::ResaleAuthorizationOfferExtendedStatusFilter(JsonView jsonValue) : 
-    m_valueListHasBeenSet(false)
+ResaleAuthorizationOfferExtendedStatusFilter::ResaleAuthorizationOfferExtendedStatusFilter(JsonView jsonValue)
+  : ResaleAuthorizationOfferExtendedStatusFilter()
 {
   *this = jsonValue;
 }

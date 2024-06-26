@@ -26,9 +26,8 @@ LoadBalancersConfig::LoadBalancersConfig() :
 {
 }
 
-LoadBalancersConfig::LoadBalancersConfig(const XmlNode& xmlNode) : 
-    m_classicLoadBalancersConfigHasBeenSet(false),
-    m_targetGroupsConfigHasBeenSet(false)
+LoadBalancersConfig::LoadBalancersConfig(const XmlNode& xmlNode)
+  : LoadBalancersConfig()
 {
   *this = xmlNode;
 }

@@ -22,8 +22,8 @@ GetRelayResult::GetRelayResult() :
 {
 }
 
-GetRelayResult::GetRelayResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_serverPort(0)
+GetRelayResult::GetRelayResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetRelayResult()
 {
   *this = result;
 }

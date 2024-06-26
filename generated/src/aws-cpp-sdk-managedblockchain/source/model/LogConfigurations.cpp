@@ -23,8 +23,8 @@ LogConfigurations::LogConfigurations() :
 {
 }
 
-LogConfigurations::LogConfigurations(JsonView jsonValue) : 
-    m_cloudwatchHasBeenSet(false)
+LogConfigurations::LogConfigurations(JsonView jsonValue)
+  : LogConfigurations()
 {
   *this = jsonValue;
 }

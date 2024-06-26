@@ -26,11 +26,8 @@ NetworkInterface::NetworkInterface() :
 {
 }
 
-NetworkInterface::NetworkInterface(JsonView jsonValue) : 
-    m_availabilityZoneHasBeenSet(false),
-    m_networkInterfaceIdHasBeenSet(false),
-    m_privateIpAddressHasBeenSet(false),
-    m_subnetIdHasBeenSet(false)
+NetworkInterface::NetworkInterface(JsonView jsonValue)
+  : NetworkInterface()
 {
   *this = jsonValue;
 }

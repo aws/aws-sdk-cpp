@@ -25,8 +25,8 @@ PlacementGroupInfo::PlacementGroupInfo() :
 {
 }
 
-PlacementGroupInfo::PlacementGroupInfo(const XmlNode& xmlNode) : 
-    m_supportedStrategiesHasBeenSet(false)
+PlacementGroupInfo::PlacementGroupInfo(const XmlNode& xmlNode)
+  : PlacementGroupInfo()
 {
   *this = xmlNode;
 }

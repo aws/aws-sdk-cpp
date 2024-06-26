@@ -25,9 +25,8 @@ AccessDeniedException::AccessDeniedException() :
 {
 }
 
-AccessDeniedException::AccessDeniedException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_xAmzErrorTypeHasBeenSet(false)
+AccessDeniedException::AccessDeniedException(JsonView jsonValue)
+  : AccessDeniedException()
 {
   *this = jsonValue;
 }

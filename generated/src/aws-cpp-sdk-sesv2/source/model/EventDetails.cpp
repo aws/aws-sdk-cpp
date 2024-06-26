@@ -24,9 +24,8 @@ EventDetails::EventDetails() :
 {
 }
 
-EventDetails::EventDetails(JsonView jsonValue) : 
-    m_bounceHasBeenSet(false),
-    m_complaintHasBeenSet(false)
+EventDetails::EventDetails(JsonView jsonValue)
+  : EventDetails()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ FileVersion::FileVersion() :
 {
 }
 
-FileVersion::FileVersion(JsonView jsonValue) : 
-    m_commitHasBeenSet(false),
-    m_blobIdHasBeenSet(false),
-    m_pathHasBeenSet(false),
-    m_revisionChildrenHasBeenSet(false)
+FileVersion::FileVersion(JsonView jsonValue)
+  : FileVersion()
 {
   *this = jsonValue;
 }

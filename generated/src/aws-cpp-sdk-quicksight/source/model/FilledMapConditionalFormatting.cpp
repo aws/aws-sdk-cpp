@@ -23,8 +23,8 @@ FilledMapConditionalFormatting::FilledMapConditionalFormatting() :
 {
 }
 
-FilledMapConditionalFormatting::FilledMapConditionalFormatting(JsonView jsonValue) : 
-    m_conditionalFormattingOptionsHasBeenSet(false)
+FilledMapConditionalFormatting::FilledMapConditionalFormatting(JsonView jsonValue)
+  : FilledMapConditionalFormatting()
 {
   *this = jsonValue;
 }

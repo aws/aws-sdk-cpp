@@ -54,39 +54,8 @@ Alarm::Alarm() :
 {
 }
 
-Alarm::Alarm(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_locationHasBeenSet(false),
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_supportCodeHasBeenSet(false),
-    m_monitoredResourceInfoHasBeenSet(false),
-    m_comparisonOperator(ComparisonOperator::NOT_SET),
-    m_comparisonOperatorHasBeenSet(false),
-    m_evaluationPeriods(0),
-    m_evaluationPeriodsHasBeenSet(false),
-    m_period(0),
-    m_periodHasBeenSet(false),
-    m_threshold(0.0),
-    m_thresholdHasBeenSet(false),
-    m_datapointsToAlarm(0),
-    m_datapointsToAlarmHasBeenSet(false),
-    m_treatMissingData(TreatMissingData::NOT_SET),
-    m_treatMissingDataHasBeenSet(false),
-    m_statistic(MetricStatistic::NOT_SET),
-    m_statisticHasBeenSet(false),
-    m_metricName(MetricName::NOT_SET),
-    m_metricNameHasBeenSet(false),
-    m_state(AlarmState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_unit(MetricUnit::NOT_SET),
-    m_unitHasBeenSet(false),
-    m_contactProtocolsHasBeenSet(false),
-    m_notificationTriggersHasBeenSet(false),
-    m_notificationEnabled(false),
-    m_notificationEnabledHasBeenSet(false)
+Alarm::Alarm(JsonView jsonValue)
+  : Alarm()
 {
   *this = jsonValue;
 }

@@ -30,13 +30,8 @@ InstanceMetadataOptions::InstanceMetadataOptions() :
 {
 }
 
-InstanceMetadataOptions::InstanceMetadataOptions(const XmlNode& xmlNode) : 
-    m_httpTokens(InstanceMetadataHttpTokensState::NOT_SET),
-    m_httpTokensHasBeenSet(false),
-    m_httpPutResponseHopLimit(0),
-    m_httpPutResponseHopLimitHasBeenSet(false),
-    m_httpEndpoint(InstanceMetadataEndpointState::NOT_SET),
-    m_httpEndpointHasBeenSet(false)
+InstanceMetadataOptions::InstanceMetadataOptions(const XmlNode& xmlNode)
+  : InstanceMetadataOptions()
 {
   *this = xmlNode;
 }

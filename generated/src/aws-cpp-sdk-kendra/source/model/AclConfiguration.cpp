@@ -23,8 +23,8 @@ AclConfiguration::AclConfiguration() :
 {
 }
 
-AclConfiguration::AclConfiguration(JsonView jsonValue) : 
-    m_allowedGroupsColumnNameHasBeenSet(false)
+AclConfiguration::AclConfiguration(JsonView jsonValue)
+  : AclConfiguration()
 {
   *this = jsonValue;
 }

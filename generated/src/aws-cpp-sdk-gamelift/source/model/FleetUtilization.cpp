@@ -33,18 +33,8 @@ FleetUtilization::FleetUtilization() :
 {
 }
 
-FleetUtilization::FleetUtilization(JsonView jsonValue) : 
-    m_fleetIdHasBeenSet(false),
-    m_fleetArnHasBeenSet(false),
-    m_activeServerProcessCount(0),
-    m_activeServerProcessCountHasBeenSet(false),
-    m_activeGameSessionCount(0),
-    m_activeGameSessionCountHasBeenSet(false),
-    m_currentPlayerSessionCount(0),
-    m_currentPlayerSessionCountHasBeenSet(false),
-    m_maximumPlayerSessionCount(0),
-    m_maximumPlayerSessionCountHasBeenSet(false),
-    m_locationHasBeenSet(false)
+FleetUtilization::FleetUtilization(JsonView jsonValue)
+  : FleetUtilization()
 {
   *this = jsonValue;
 }

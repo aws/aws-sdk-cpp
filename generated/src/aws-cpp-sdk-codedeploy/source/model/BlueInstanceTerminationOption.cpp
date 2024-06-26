@@ -26,11 +26,8 @@ BlueInstanceTerminationOption::BlueInstanceTerminationOption() :
 {
 }
 
-BlueInstanceTerminationOption::BlueInstanceTerminationOption(JsonView jsonValue) : 
-    m_action(InstanceAction::NOT_SET),
-    m_actionHasBeenSet(false),
-    m_terminationWaitTimeInMinutes(0),
-    m_terminationWaitTimeInMinutesHasBeenSet(false)
+BlueInstanceTerminationOption::BlueInstanceTerminationOption(JsonView jsonValue)
+  : BlueInstanceTerminationOption()
 {
   *this = jsonValue;
 }

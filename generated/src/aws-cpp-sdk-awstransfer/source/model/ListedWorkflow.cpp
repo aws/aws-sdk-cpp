@@ -25,10 +25,8 @@ ListedWorkflow::ListedWorkflow() :
 {
 }
 
-ListedWorkflow::ListedWorkflow(JsonView jsonValue) : 
-    m_workflowIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_arnHasBeenSet(false)
+ListedWorkflow::ListedWorkflow(JsonView jsonValue)
+  : ListedWorkflow()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ StartProjectVersionResult::StartProjectVersionResult() :
 {
 }
 
-StartProjectVersionResult::StartProjectVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(ProjectVersionStatus::NOT_SET)
+StartProjectVersionResult::StartProjectVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : StartProjectVersionResult()
 {
   *this = result;
 }

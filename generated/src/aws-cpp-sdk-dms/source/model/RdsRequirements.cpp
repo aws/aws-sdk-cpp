@@ -33,18 +33,8 @@ RdsRequirements::RdsRequirements() :
 {
 }
 
-RdsRequirements::RdsRequirements(JsonView jsonValue) : 
-    m_engineEditionHasBeenSet(false),
-    m_instanceVcpu(0.0),
-    m_instanceVcpuHasBeenSet(false),
-    m_instanceMemory(0.0),
-    m_instanceMemoryHasBeenSet(false),
-    m_storageSize(0),
-    m_storageSizeHasBeenSet(false),
-    m_storageIops(0),
-    m_storageIopsHasBeenSet(false),
-    m_deploymentOptionHasBeenSet(false),
-    m_engineVersionHasBeenSet(false)
+RdsRequirements::RdsRequirements(JsonView jsonValue)
+  : RdsRequirements()
 {
   *this = jsonValue;
 }

@@ -27,12 +27,8 @@ TimeRangeDrillDownFilter::TimeRangeDrillDownFilter() :
 {
 }
 
-TimeRangeDrillDownFilter::TimeRangeDrillDownFilter(JsonView jsonValue) : 
-    m_columnHasBeenSet(false),
-    m_rangeMinimumHasBeenSet(false),
-    m_rangeMaximumHasBeenSet(false),
-    m_timeGranularity(TimeGranularity::NOT_SET),
-    m_timeGranularityHasBeenSet(false)
+TimeRangeDrillDownFilter::TimeRangeDrillDownFilter(JsonView jsonValue)
+  : TimeRangeDrillDownFilter()
 {
   *this = jsonValue;
 }

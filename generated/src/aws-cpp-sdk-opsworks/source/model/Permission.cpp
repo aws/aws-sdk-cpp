@@ -29,14 +29,8 @@ Permission::Permission() :
 {
 }
 
-Permission::Permission(JsonView jsonValue) : 
-    m_stackIdHasBeenSet(false),
-    m_iamUserArnHasBeenSet(false),
-    m_allowSsh(false),
-    m_allowSshHasBeenSet(false),
-    m_allowSudo(false),
-    m_allowSudoHasBeenSet(false),
-    m_levelHasBeenSet(false)
+Permission::Permission(JsonView jsonValue)
+  : Permission()
 {
   *this = jsonValue;
 }

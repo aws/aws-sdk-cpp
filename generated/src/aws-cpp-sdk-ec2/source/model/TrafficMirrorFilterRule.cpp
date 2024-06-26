@@ -40,23 +40,8 @@ TrafficMirrorFilterRule::TrafficMirrorFilterRule() :
 {
 }
 
-TrafficMirrorFilterRule::TrafficMirrorFilterRule(const XmlNode& xmlNode) : 
-    m_trafficMirrorFilterRuleIdHasBeenSet(false),
-    m_trafficMirrorFilterIdHasBeenSet(false),
-    m_trafficDirection(TrafficDirection::NOT_SET),
-    m_trafficDirectionHasBeenSet(false),
-    m_ruleNumber(0),
-    m_ruleNumberHasBeenSet(false),
-    m_ruleAction(TrafficMirrorRuleAction::NOT_SET),
-    m_ruleActionHasBeenSet(false),
-    m_protocol(0),
-    m_protocolHasBeenSet(false),
-    m_destinationPortRangeHasBeenSet(false),
-    m_sourcePortRangeHasBeenSet(false),
-    m_destinationCidrBlockHasBeenSet(false),
-    m_sourceCidrBlockHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+TrafficMirrorFilterRule::TrafficMirrorFilterRule(const XmlNode& xmlNode)
+  : TrafficMirrorFilterRule()
 {
   *this = xmlNode;
 }

@@ -32,17 +32,8 @@ Gnss::Gnss() :
 {
 }
 
-Gnss::Gnss(JsonView jsonValue) : 
-    m_payloadHasBeenSet(false),
-    m_captureTime(0.0),
-    m_captureTimeHasBeenSet(false),
-    m_captureTimeAccuracy(0.0),
-    m_captureTimeAccuracyHasBeenSet(false),
-    m_assistPositionHasBeenSet(false),
-    m_assistAltitude(0.0),
-    m_assistAltitudeHasBeenSet(false),
-    m_use2DSolver(false),
-    m_use2DSolverHasBeenSet(false)
+Gnss::Gnss(JsonView jsonValue)
+  : Gnss()
 {
   *this = jsonValue;
 }

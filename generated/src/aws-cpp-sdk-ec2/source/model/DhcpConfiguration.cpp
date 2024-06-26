@@ -26,9 +26,8 @@ DhcpConfiguration::DhcpConfiguration() :
 {
 }
 
-DhcpConfiguration::DhcpConfiguration(const XmlNode& xmlNode) : 
-    m_keyHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+DhcpConfiguration::DhcpConfiguration(const XmlNode& xmlNode)
+  : DhcpConfiguration()
 {
   *this = xmlNode;
 }

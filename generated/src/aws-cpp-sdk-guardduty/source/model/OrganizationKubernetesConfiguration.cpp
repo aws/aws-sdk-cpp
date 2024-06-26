@@ -23,8 +23,8 @@ OrganizationKubernetesConfiguration::OrganizationKubernetesConfiguration() :
 {
 }
 
-OrganizationKubernetesConfiguration::OrganizationKubernetesConfiguration(JsonView jsonValue) : 
-    m_auditLogsHasBeenSet(false)
+OrganizationKubernetesConfiguration::OrganizationKubernetesConfiguration(JsonView jsonValue)
+  : OrganizationKubernetesConfiguration()
 {
   *this = jsonValue;
 }

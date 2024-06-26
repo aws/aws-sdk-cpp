@@ -27,12 +27,8 @@ DeployedVersionSummary::DeployedVersionSummary() :
 {
 }
 
-DeployedVersionSummary::DeployedVersionSummary(JsonView jsonValue) : 
-    m_applicationVersion(0),
-    m_applicationVersionHasBeenSet(false),
-    m_status(DeploymentLifecycle::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusReasonHasBeenSet(false)
+DeployedVersionSummary::DeployedVersionSummary(JsonView jsonValue)
+  : DeployedVersionSummary()
 {
   *this = jsonValue;
 }

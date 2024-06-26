@@ -24,9 +24,8 @@ NotificationProperty::NotificationProperty() :
 {
 }
 
-NotificationProperty::NotificationProperty(JsonView jsonValue) : 
-    m_notifyDelayAfter(0),
-    m_notifyDelayAfterHasBeenSet(false)
+NotificationProperty::NotificationProperty(JsonView jsonValue)
+  : NotificationProperty()
 {
   *this = jsonValue;
 }

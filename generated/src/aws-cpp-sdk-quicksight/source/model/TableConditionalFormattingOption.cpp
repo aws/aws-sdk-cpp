@@ -24,9 +24,8 @@ TableConditionalFormattingOption::TableConditionalFormattingOption() :
 {
 }
 
-TableConditionalFormattingOption::TableConditionalFormattingOption(JsonView jsonValue) : 
-    m_cellHasBeenSet(false),
-    m_rowHasBeenSet(false)
+TableConditionalFormattingOption::TableConditionalFormattingOption(JsonView jsonValue)
+  : TableConditionalFormattingOption()
 {
   *this = jsonValue;
 }

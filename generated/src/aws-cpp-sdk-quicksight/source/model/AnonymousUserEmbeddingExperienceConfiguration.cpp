@@ -26,11 +26,8 @@ AnonymousUserEmbeddingExperienceConfiguration::AnonymousUserEmbeddingExperienceC
 {
 }
 
-AnonymousUserEmbeddingExperienceConfiguration::AnonymousUserEmbeddingExperienceConfiguration(JsonView jsonValue) : 
-    m_dashboardHasBeenSet(false),
-    m_dashboardVisualHasBeenSet(false),
-    m_qSearchBarHasBeenSet(false),
-    m_generativeQnAHasBeenSet(false)
+AnonymousUserEmbeddingExperienceConfiguration::AnonymousUserEmbeddingExperienceConfiguration(JsonView jsonValue)
+  : AnonymousUserEmbeddingExperienceConfiguration()
 {
   *this = jsonValue;
 }

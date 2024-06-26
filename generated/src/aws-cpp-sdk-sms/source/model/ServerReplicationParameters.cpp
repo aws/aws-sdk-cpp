@@ -34,19 +34,8 @@ ServerReplicationParameters::ServerReplicationParameters() :
 {
 }
 
-ServerReplicationParameters::ServerReplicationParameters(JsonView jsonValue) : 
-    m_seedTimeHasBeenSet(false),
-    m_frequency(0),
-    m_frequencyHasBeenSet(false),
-    m_runOnce(false),
-    m_runOnceHasBeenSet(false),
-    m_licenseType(LicenseType::NOT_SET),
-    m_licenseTypeHasBeenSet(false),
-    m_numberOfRecentAmisToKeep(0),
-    m_numberOfRecentAmisToKeepHasBeenSet(false),
-    m_encrypted(false),
-    m_encryptedHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
+ServerReplicationParameters::ServerReplicationParameters(JsonView jsonValue)
+  : ServerReplicationParameters()
 {
   *this = jsonValue;
 }

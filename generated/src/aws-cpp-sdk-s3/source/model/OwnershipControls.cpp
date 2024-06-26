@@ -25,8 +25,8 @@ OwnershipControls::OwnershipControls() :
 {
 }
 
-OwnershipControls::OwnershipControls(const XmlNode& xmlNode) : 
-    m_rulesHasBeenSet(false)
+OwnershipControls::OwnershipControls(const XmlNode& xmlNode)
+  : OwnershipControls()
 {
   *this = xmlNode;
 }

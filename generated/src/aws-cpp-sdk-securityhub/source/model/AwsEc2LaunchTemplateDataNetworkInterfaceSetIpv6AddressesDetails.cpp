@@ -23,8 +23,8 @@ AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6AddressesDetails::AwsEc2LaunchTem
 {
 }
 
-AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6AddressesDetails::AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6AddressesDetails(JsonView jsonValue) : 
-    m_ipv6AddressHasBeenSet(false)
+AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6AddressesDetails::AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6AddressesDetails(JsonView jsonValue)
+  : AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6AddressesDetails()
 {
   *this = jsonValue;
 }

@@ -27,12 +27,8 @@ DocumentAttributeConfiguration::DocumentAttributeConfiguration() :
 {
 }
 
-DocumentAttributeConfiguration::DocumentAttributeConfiguration(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_type(AttributeType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_search(Status::NOT_SET),
-    m_searchHasBeenSet(false)
+DocumentAttributeConfiguration::DocumentAttributeConfiguration(JsonView jsonValue)
+  : DocumentAttributeConfiguration()
 {
   *this = jsonValue;
 }

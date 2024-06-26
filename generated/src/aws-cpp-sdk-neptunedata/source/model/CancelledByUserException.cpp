@@ -25,10 +25,8 @@ CancelledByUserException::CancelledByUserException() :
 {
 }
 
-CancelledByUserException::CancelledByUserException(JsonView jsonValue) : 
-    m_detailedMessageHasBeenSet(false),
-    m_requestIdHasBeenSet(false),
-    m_codeHasBeenSet(false)
+CancelledByUserException::CancelledByUserException(JsonView jsonValue)
+  : CancelledByUserException()
 {
   *this = jsonValue;
 }

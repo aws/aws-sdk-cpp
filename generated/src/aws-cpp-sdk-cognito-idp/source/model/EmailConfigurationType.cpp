@@ -28,13 +28,8 @@ EmailConfigurationType::EmailConfigurationType() :
 {
 }
 
-EmailConfigurationType::EmailConfigurationType(JsonView jsonValue) : 
-    m_sourceArnHasBeenSet(false),
-    m_replyToEmailAddressHasBeenSet(false),
-    m_emailSendingAccount(EmailSendingAccountType::NOT_SET),
-    m_emailSendingAccountHasBeenSet(false),
-    m_fromHasBeenSet(false),
-    m_configurationSetHasBeenSet(false)
+EmailConfigurationType::EmailConfigurationType(JsonView jsonValue)
+  : EmailConfigurationType()
 {
   *this = jsonValue;
 }

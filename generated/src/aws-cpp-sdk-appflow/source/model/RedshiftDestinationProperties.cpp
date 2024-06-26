@@ -26,11 +26,8 @@ RedshiftDestinationProperties::RedshiftDestinationProperties() :
 {
 }
 
-RedshiftDestinationProperties::RedshiftDestinationProperties(JsonView jsonValue) : 
-    m_objectHasBeenSet(false),
-    m_intermediateBucketNameHasBeenSet(false),
-    m_bucketPrefixHasBeenSet(false),
-    m_errorHandlingConfigHasBeenSet(false)
+RedshiftDestinationProperties::RedshiftDestinationProperties(JsonView jsonValue)
+  : RedshiftDestinationProperties()
 {
   *this = jsonValue;
 }

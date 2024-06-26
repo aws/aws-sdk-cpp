@@ -25,10 +25,8 @@ RemotePortDetails::RemotePortDetails() :
 {
 }
 
-RemotePortDetails::RemotePortDetails(JsonView jsonValue) : 
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_portNameHasBeenSet(false)
+RemotePortDetails::RemotePortDetails(JsonView jsonValue)
+  : RemotePortDetails()
 {
   *this = jsonValue;
 }

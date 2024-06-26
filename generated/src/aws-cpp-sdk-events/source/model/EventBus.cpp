@@ -25,10 +25,8 @@ EventBus::EventBus() :
 {
 }
 
-EventBus::EventBus(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_policyHasBeenSet(false)
+EventBus::EventBus(JsonView jsonValue)
+  : EventBus()
 {
   *this = jsonValue;
 }

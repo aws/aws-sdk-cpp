@@ -32,17 +32,8 @@ NamespaceSummary::NamespaceSummary() :
 {
 }
 
-NamespaceSummary::NamespaceSummary(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_type(NamespaceType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_serviceCount(0),
-    m_serviceCountHasBeenSet(false),
-    m_propertiesHasBeenSet(false),
-    m_createDateHasBeenSet(false)
+NamespaceSummary::NamespaceSummary(JsonView jsonValue)
+  : NamespaceSummary()
 {
   *this = jsonValue;
 }

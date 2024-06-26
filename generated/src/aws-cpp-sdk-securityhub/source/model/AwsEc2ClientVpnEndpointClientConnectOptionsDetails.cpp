@@ -26,11 +26,8 @@ AwsEc2ClientVpnEndpointClientConnectOptionsDetails::AwsEc2ClientVpnEndpointClien
 {
 }
 
-AwsEc2ClientVpnEndpointClientConnectOptionsDetails::AwsEc2ClientVpnEndpointClientConnectOptionsDetails(JsonView jsonValue) : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_lambdaFunctionArnHasBeenSet(false),
-    m_statusHasBeenSet(false)
+AwsEc2ClientVpnEndpointClientConnectOptionsDetails::AwsEc2ClientVpnEndpointClientConnectOptionsDetails(JsonView jsonValue)
+  : AwsEc2ClientVpnEndpointClientConnectOptionsDetails()
 {
   *this = jsonValue;
 }

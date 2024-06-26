@@ -37,22 +37,8 @@ Node::Node() :
 {
 }
 
-Node::Node(JsonView jsonValue) : 
-    m_networkIdHasBeenSet(false),
-    m_memberIdHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_frameworkAttributesHasBeenSet(false),
-    m_logPublishingConfigurationHasBeenSet(false),
-    m_stateDB(StateDBType::NOT_SET),
-    m_stateDBHasBeenSet(false),
-    m_status(NodeStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_kmsKeyArnHasBeenSet(false)
+Node::Node(JsonView jsonValue)
+  : Node()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ PreProcessingParsedResponse::PreProcessingParsedResponse() :
 {
 }
 
-PreProcessingParsedResponse::PreProcessingParsedResponse(JsonView jsonValue) : 
-    m_isValid(false),
-    m_isValidHasBeenSet(false),
-    m_rationaleHasBeenSet(false)
+PreProcessingParsedResponse::PreProcessingParsedResponse(JsonView jsonValue)
+  : PreProcessingParsedResponse()
 {
   *this = jsonValue;
 }

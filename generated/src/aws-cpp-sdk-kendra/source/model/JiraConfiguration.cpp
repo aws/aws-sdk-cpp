@@ -38,23 +38,8 @@ JiraConfiguration::JiraConfiguration() :
 {
 }
 
-JiraConfiguration::JiraConfiguration(JsonView jsonValue) : 
-    m_jiraAccountUrlHasBeenSet(false),
-    m_secretArnHasBeenSet(false),
-    m_useChangeLog(false),
-    m_useChangeLogHasBeenSet(false),
-    m_projectHasBeenSet(false),
-    m_issueTypeHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_issueSubEntityFilterHasBeenSet(false),
-    m_attachmentFieldMappingsHasBeenSet(false),
-    m_commentFieldMappingsHasBeenSet(false),
-    m_issueFieldMappingsHasBeenSet(false),
-    m_projectFieldMappingsHasBeenSet(false),
-    m_workLogFieldMappingsHasBeenSet(false),
-    m_inclusionPatternsHasBeenSet(false),
-    m_exclusionPatternsHasBeenSet(false),
-    m_vpcConfigurationHasBeenSet(false)
+JiraConfiguration::JiraConfiguration(JsonView jsonValue)
+  : JiraConfiguration()
 {
   *this = jsonValue;
 }

@@ -29,12 +29,8 @@ SSHPublicKeyMetadata::SSHPublicKeyMetadata() :
 {
 }
 
-SSHPublicKeyMetadata::SSHPublicKeyMetadata(const XmlNode& xmlNode) : 
-    m_userNameHasBeenSet(false),
-    m_sSHPublicKeyIdHasBeenSet(false),
-    m_status(StatusType::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_uploadDateHasBeenSet(false)
+SSHPublicKeyMetadata::SSHPublicKeyMetadata(const XmlNode& xmlNode)
+  : SSHPublicKeyMetadata()
 {
   *this = xmlNode;
 }

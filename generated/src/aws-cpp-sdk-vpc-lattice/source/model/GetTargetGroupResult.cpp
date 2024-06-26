@@ -23,9 +23,8 @@ GetTargetGroupResult::GetTargetGroupResult() :
 {
 }
 
-GetTargetGroupResult::GetTargetGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(TargetGroupStatus::NOT_SET),
-    m_type(TargetGroupType::NOT_SET)
+GetTargetGroupResult::GetTargetGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetTargetGroupResult()
 {
   *this = result;
 }

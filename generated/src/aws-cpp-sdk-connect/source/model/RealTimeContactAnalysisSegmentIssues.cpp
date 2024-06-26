@@ -23,8 +23,8 @@ RealTimeContactAnalysisSegmentIssues::RealTimeContactAnalysisSegmentIssues() :
 {
 }
 
-RealTimeContactAnalysisSegmentIssues::RealTimeContactAnalysisSegmentIssues(JsonView jsonValue) : 
-    m_issuesDetectedHasBeenSet(false)
+RealTimeContactAnalysisSegmentIssues::RealTimeContactAnalysisSegmentIssues(JsonView jsonValue)
+  : RealTimeContactAnalysisSegmentIssues()
 {
   *this = jsonValue;
 }

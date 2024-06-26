@@ -24,9 +24,8 @@ PropertyValue::PropertyValue() :
 {
 }
 
-PropertyValue::PropertyValue(JsonView jsonValue) : 
-    m_valueHasBeenSet(false),
-    m_timeHasBeenSet(false)
+PropertyValue::PropertyValue(JsonView jsonValue)
+  : PropertyValue()
 {
   *this = jsonValue;
 }

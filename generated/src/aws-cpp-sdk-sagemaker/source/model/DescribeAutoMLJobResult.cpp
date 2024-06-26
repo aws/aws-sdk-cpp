@@ -25,11 +25,8 @@ DescribeAutoMLJobResult::DescribeAutoMLJobResult() :
 {
 }
 
-DescribeAutoMLJobResult::DescribeAutoMLJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_problemType(ProblemType::NOT_SET),
-    m_autoMLJobStatus(AutoMLJobStatus::NOT_SET),
-    m_autoMLJobSecondaryStatus(AutoMLJobSecondaryStatus::NOT_SET),
-    m_generateCandidateDefinitionsOnly(false)
+DescribeAutoMLJobResult::DescribeAutoMLJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeAutoMLJobResult()
 {
   *this = result;
 }

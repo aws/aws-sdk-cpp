@@ -27,12 +27,8 @@ SourceTableFeatureDetails::SourceTableFeatureDetails() :
 {
 }
 
-SourceTableFeatureDetails::SourceTableFeatureDetails(JsonView jsonValue) : 
-    m_localSecondaryIndexesHasBeenSet(false),
-    m_globalSecondaryIndexesHasBeenSet(false),
-    m_streamDescriptionHasBeenSet(false),
-    m_timeToLiveDescriptionHasBeenSet(false),
-    m_sSEDescriptionHasBeenSet(false)
+SourceTableFeatureDetails::SourceTableFeatureDetails(JsonView jsonValue)
+  : SourceTableFeatureDetails()
 {
   *this = jsonValue;
 }

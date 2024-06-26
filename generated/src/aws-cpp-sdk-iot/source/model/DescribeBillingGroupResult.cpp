@@ -22,8 +22,8 @@ DescribeBillingGroupResult::DescribeBillingGroupResult() :
 {
 }
 
-DescribeBillingGroupResult::DescribeBillingGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_version(0)
+DescribeBillingGroupResult::DescribeBillingGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeBillingGroupResult()
 {
   *this = result;
 }

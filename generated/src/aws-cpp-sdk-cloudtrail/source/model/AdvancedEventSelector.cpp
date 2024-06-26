@@ -24,9 +24,8 @@ AdvancedEventSelector::AdvancedEventSelector() :
 {
 }
 
-AdvancedEventSelector::AdvancedEventSelector(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_fieldSelectorsHasBeenSet(false)
+AdvancedEventSelector::AdvancedEventSelector(JsonView jsonValue)
+  : AdvancedEventSelector()
 {
   *this = jsonValue;
 }

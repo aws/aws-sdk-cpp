@@ -31,14 +31,8 @@ DescribeTrustStoreRevocation::DescribeTrustStoreRevocation() :
 {
 }
 
-DescribeTrustStoreRevocation::DescribeTrustStoreRevocation(const XmlNode& xmlNode) : 
-    m_trustStoreArnHasBeenSet(false),
-    m_revocationId(0),
-    m_revocationIdHasBeenSet(false),
-    m_revocationType(RevocationType::NOT_SET),
-    m_revocationTypeHasBeenSet(false),
-    m_numberOfRevokedEntries(0),
-    m_numberOfRevokedEntriesHasBeenSet(false)
+DescribeTrustStoreRevocation::DescribeTrustStoreRevocation(const XmlNode& xmlNode)
+  : DescribeTrustStoreRevocation()
 {
   *this = xmlNode;
 }

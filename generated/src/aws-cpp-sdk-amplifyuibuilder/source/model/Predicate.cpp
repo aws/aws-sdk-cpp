@@ -28,13 +28,8 @@ Predicate::Predicate() :
 {
 }
 
-Predicate::Predicate(JsonView jsonValue) : 
-    m_orHasBeenSet(false),
-    m_andHasBeenSet(false),
-    m_fieldHasBeenSet(false),
-    m_operatorHasBeenSet(false),
-    m_operandHasBeenSet(false),
-    m_operandTypeHasBeenSet(false)
+Predicate::Predicate(JsonView jsonValue)
+  : Predicate()
 {
   *this = jsonValue;
 }

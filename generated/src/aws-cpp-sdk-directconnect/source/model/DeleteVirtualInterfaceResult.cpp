@@ -22,8 +22,8 @@ DeleteVirtualInterfaceResult::DeleteVirtualInterfaceResult() :
 {
 }
 
-DeleteVirtualInterfaceResult::DeleteVirtualInterfaceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_virtualInterfaceState(VirtualInterfaceState::NOT_SET)
+DeleteVirtualInterfaceResult::DeleteVirtualInterfaceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeleteVirtualInterfaceResult()
 {
   *this = result;
 }

@@ -28,13 +28,8 @@ ContactDataRequest::ContactDataRequest() :
 {
 }
 
-ContactDataRequest::ContactDataRequest(JsonView jsonValue) : 
-    m_systemEndpointHasBeenSet(false),
-    m_customerEndpointHasBeenSet(false),
-    m_requestIdentifierHasBeenSet(false),
-    m_queueIdHasBeenSet(false),
-    m_attributesHasBeenSet(false),
-    m_campaignHasBeenSet(false)
+ContactDataRequest::ContactDataRequest(JsonView jsonValue)
+  : ContactDataRequest()
 {
   *this = jsonValue;
 }

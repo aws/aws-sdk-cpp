@@ -28,13 +28,8 @@ TableVisual::TableVisual() :
 {
 }
 
-TableVisual::TableVisual(JsonView jsonValue) : 
-    m_visualIdHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_subtitleHasBeenSet(false),
-    m_chartConfigurationHasBeenSet(false),
-    m_conditionalFormattingHasBeenSet(false),
-    m_actionsHasBeenSet(false)
+TableVisual::TableVisual(JsonView jsonValue)
+  : TableVisual()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ SourceRevisionOverride::SourceRevisionOverride() :
 {
 }
 
-SourceRevisionOverride::SourceRevisionOverride(JsonView jsonValue) : 
-    m_actionNameHasBeenSet(false),
-    m_revisionType(SourceRevisionType::NOT_SET),
-    m_revisionTypeHasBeenSet(false),
-    m_revisionValueHasBeenSet(false)
+SourceRevisionOverride::SourceRevisionOverride(JsonView jsonValue)
+  : SourceRevisionOverride()
 {
   *this = jsonValue;
 }

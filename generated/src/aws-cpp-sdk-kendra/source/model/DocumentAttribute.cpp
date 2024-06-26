@@ -24,9 +24,8 @@ DocumentAttribute::DocumentAttribute() :
 {
 }
 
-DocumentAttribute::DocumentAttribute(JsonView jsonValue) : 
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false)
+DocumentAttribute::DocumentAttribute(JsonView jsonValue)
+  : DocumentAttribute()
 {
   *this = jsonValue;
 }

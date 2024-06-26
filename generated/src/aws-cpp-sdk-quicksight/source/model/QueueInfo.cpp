@@ -24,9 +24,8 @@ QueueInfo::QueueInfo() :
 {
 }
 
-QueueInfo::QueueInfo(JsonView jsonValue) : 
-    m_waitingOnIngestionHasBeenSet(false),
-    m_queuedIngestionHasBeenSet(false)
+QueueInfo::QueueInfo(JsonView jsonValue)
+  : QueueInfo()
 {
   *this = jsonValue;
 }

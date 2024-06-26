@@ -25,10 +25,8 @@ DependentService::DependentService() :
 {
 }
 
-DependentService::DependentService(JsonView jsonValue) : 
-    m_serviceName(ServiceName::NOT_SET),
-    m_serviceNameHasBeenSet(false),
-    m_serviceVersionHasBeenSet(false)
+DependentService::DependentService(JsonView jsonValue)
+  : DependentService()
 {
   *this = jsonValue;
 }

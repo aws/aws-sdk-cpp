@@ -24,9 +24,8 @@ Total::Total() :
 {
 }
 
-Total::Total(JsonView jsonValue) : 
-    m_amountHasBeenSet(false),
-    m_unitHasBeenSet(false)
+Total::Total(JsonView jsonValue)
+  : Total()
 {
   *this = jsonValue;
 }

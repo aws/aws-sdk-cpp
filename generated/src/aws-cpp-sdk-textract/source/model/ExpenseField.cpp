@@ -29,14 +29,8 @@ ExpenseField::ExpenseField() :
 {
 }
 
-ExpenseField::ExpenseField(JsonView jsonValue) : 
-    m_typeHasBeenSet(false),
-    m_labelDetectionHasBeenSet(false),
-    m_valueDetectionHasBeenSet(false),
-    m_pageNumber(0),
-    m_pageNumberHasBeenSet(false),
-    m_currencyHasBeenSet(false),
-    m_groupPropertiesHasBeenSet(false)
+ExpenseField::ExpenseField(JsonView jsonValue)
+  : ExpenseField()
 {
   *this = jsonValue;
 }

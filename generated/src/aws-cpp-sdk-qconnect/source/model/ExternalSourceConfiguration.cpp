@@ -25,10 +25,8 @@ ExternalSourceConfiguration::ExternalSourceConfiguration() :
 {
 }
 
-ExternalSourceConfiguration::ExternalSourceConfiguration(JsonView jsonValue) : 
-    m_configurationHasBeenSet(false),
-    m_source(ExternalSource::NOT_SET),
-    m_sourceHasBeenSet(false)
+ExternalSourceConfiguration::ExternalSourceConfiguration(JsonView jsonValue)
+  : ExternalSourceConfiguration()
 {
   *this = jsonValue;
 }

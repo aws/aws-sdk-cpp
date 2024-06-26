@@ -26,10 +26,8 @@ DecimalNumber::DecimalNumber() :
 {
 }
 
-DecimalNumber::DecimalNumber(JsonView jsonValue) : 
-    m_unscaledValueHasBeenSet(false),
-    m_scale(0),
-    m_scaleHasBeenSet(false)
+DecimalNumber::DecimalNumber(JsonView jsonValue)
+  : DecimalNumber()
 {
   *this = jsonValue;
 }

@@ -26,10 +26,8 @@ ImageFile::ImageFile() :
 {
 }
 
-ImageFile::ImageFile(JsonView jsonValue) : 
-    m_dataHasBeenSet(false),
-    m_type(ImageFileType::NOT_SET),
-    m_typeHasBeenSet(false)
+ImageFile::ImageFile(JsonView jsonValue)
+  : ImageFile()
 {
   *this = jsonValue;
 }

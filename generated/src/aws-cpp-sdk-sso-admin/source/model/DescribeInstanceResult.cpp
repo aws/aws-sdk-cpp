@@ -22,8 +22,8 @@ DescribeInstanceResult::DescribeInstanceResult() :
 {
 }
 
-DescribeInstanceResult::DescribeInstanceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(InstanceStatus::NOT_SET)
+DescribeInstanceResult::DescribeInstanceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeInstanceResult()
 {
   *this = result;
 }

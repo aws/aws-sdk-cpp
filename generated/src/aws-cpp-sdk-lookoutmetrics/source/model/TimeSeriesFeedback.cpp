@@ -25,10 +25,8 @@ TimeSeriesFeedback::TimeSeriesFeedback() :
 {
 }
 
-TimeSeriesFeedback::TimeSeriesFeedback(JsonView jsonValue) : 
-    m_timeSeriesIdHasBeenSet(false),
-    m_isAnomaly(false),
-    m_isAnomalyHasBeenSet(false)
+TimeSeriesFeedback::TimeSeriesFeedback(JsonView jsonValue)
+  : TimeSeriesFeedback()
 {
   *this = jsonValue;
 }

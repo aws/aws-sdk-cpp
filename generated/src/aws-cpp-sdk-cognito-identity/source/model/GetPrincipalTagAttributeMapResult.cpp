@@ -22,8 +22,8 @@ GetPrincipalTagAttributeMapResult::GetPrincipalTagAttributeMapResult() :
 {
 }
 
-GetPrincipalTagAttributeMapResult::GetPrincipalTagAttributeMapResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_useDefaults(false)
+GetPrincipalTagAttributeMapResult::GetPrincipalTagAttributeMapResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetPrincipalTagAttributeMapResult()
 {
   *this = result;
 }

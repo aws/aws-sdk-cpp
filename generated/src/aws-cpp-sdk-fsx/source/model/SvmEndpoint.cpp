@@ -24,9 +24,8 @@ SvmEndpoint::SvmEndpoint() :
 {
 }
 
-SvmEndpoint::SvmEndpoint(JsonView jsonValue) : 
-    m_dNSNameHasBeenSet(false),
-    m_ipAddressesHasBeenSet(false)
+SvmEndpoint::SvmEndpoint(JsonView jsonValue)
+  : SvmEndpoint()
 {
   *this = jsonValue;
 }

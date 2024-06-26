@@ -32,17 +32,8 @@ TrainingJobStatusCounters::TrainingJobStatusCounters() :
 {
 }
 
-TrainingJobStatusCounters::TrainingJobStatusCounters(JsonView jsonValue) : 
-    m_completed(0),
-    m_completedHasBeenSet(false),
-    m_inProgress(0),
-    m_inProgressHasBeenSet(false),
-    m_retryableError(0),
-    m_retryableErrorHasBeenSet(false),
-    m_nonRetryableError(0),
-    m_nonRetryableErrorHasBeenSet(false),
-    m_stopped(0),
-    m_stoppedHasBeenSet(false)
+TrainingJobStatusCounters::TrainingJobStatusCounters(JsonView jsonValue)
+  : TrainingJobStatusCounters()
 {
   *this = jsonValue;
 }

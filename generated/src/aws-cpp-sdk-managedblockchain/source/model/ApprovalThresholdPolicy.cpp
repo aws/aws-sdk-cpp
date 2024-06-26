@@ -28,13 +28,8 @@ ApprovalThresholdPolicy::ApprovalThresholdPolicy() :
 {
 }
 
-ApprovalThresholdPolicy::ApprovalThresholdPolicy(JsonView jsonValue) : 
-    m_thresholdPercentage(0),
-    m_thresholdPercentageHasBeenSet(false),
-    m_proposalDurationInHours(0),
-    m_proposalDurationInHoursHasBeenSet(false),
-    m_thresholdComparator(ThresholdComparator::NOT_SET),
-    m_thresholdComparatorHasBeenSet(false)
+ApprovalThresholdPolicy::ApprovalThresholdPolicy(JsonView jsonValue)
+  : ApprovalThresholdPolicy()
 {
   *this = jsonValue;
 }

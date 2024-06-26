@@ -25,10 +25,8 @@ AssetBundleExportJobError::AssetBundleExportJobError() :
 {
 }
 
-AssetBundleExportJobError::AssetBundleExportJobError(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+AssetBundleExportJobError::AssetBundleExportJobError(JsonView jsonValue)
+  : AssetBundleExportJobError()
 {
   *this = jsonValue;
 }

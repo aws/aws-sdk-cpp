@@ -24,9 +24,8 @@ ImpersonatedUser::ImpersonatedUser() :
 {
 }
 
-ImpersonatedUser::ImpersonatedUser(JsonView jsonValue) : 
-    m_usernameHasBeenSet(false),
-    m_groupsHasBeenSet(false)
+ImpersonatedUser::ImpersonatedUser(JsonView jsonValue)
+  : ImpersonatedUser()
 {
   *this = jsonValue;
 }

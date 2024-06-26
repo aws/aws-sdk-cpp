@@ -26,11 +26,8 @@ DeploymentPolicies::DeploymentPolicies() :
 {
 }
 
-DeploymentPolicies::DeploymentPolicies(JsonView jsonValue) : 
-    m_failureHandlingPolicy(DeploymentFailureHandlingPolicy::NOT_SET),
-    m_failureHandlingPolicyHasBeenSet(false),
-    m_componentUpdatePolicyHasBeenSet(false),
-    m_configurationValidationPolicyHasBeenSet(false)
+DeploymentPolicies::DeploymentPolicies(JsonView jsonValue)
+  : DeploymentPolicies()
 {
   *this = jsonValue;
 }

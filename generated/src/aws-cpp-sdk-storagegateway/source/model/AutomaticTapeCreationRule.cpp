@@ -30,15 +30,8 @@ AutomaticTapeCreationRule::AutomaticTapeCreationRule() :
 {
 }
 
-AutomaticTapeCreationRule::AutomaticTapeCreationRule(JsonView jsonValue) : 
-    m_tapeBarcodePrefixHasBeenSet(false),
-    m_poolIdHasBeenSet(false),
-    m_tapeSizeInBytes(0),
-    m_tapeSizeInBytesHasBeenSet(false),
-    m_minimumNumTapes(0),
-    m_minimumNumTapesHasBeenSet(false),
-    m_worm(false),
-    m_wormHasBeenSet(false)
+AutomaticTapeCreationRule::AutomaticTapeCreationRule(JsonView jsonValue)
+  : AutomaticTapeCreationRule()
 {
   *this = jsonValue;
 }

@@ -29,14 +29,8 @@ KeyAttributes::KeyAttributes() :
 {
 }
 
-KeyAttributes::KeyAttributes(JsonView jsonValue) : 
-    m_keyUsage(KeyUsage::NOT_SET),
-    m_keyUsageHasBeenSet(false),
-    m_keyClass(KeyClass::NOT_SET),
-    m_keyClassHasBeenSet(false),
-    m_keyAlgorithm(KeyAlgorithm::NOT_SET),
-    m_keyAlgorithmHasBeenSet(false),
-    m_keyModesOfUseHasBeenSet(false)
+KeyAttributes::KeyAttributes(JsonView jsonValue)
+  : KeyAttributes()
 {
   *this = jsonValue;
 }

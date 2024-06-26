@@ -28,13 +28,8 @@ ClassificationDetails::ClassificationDetails() :
 {
 }
 
-ClassificationDetails::ClassificationDetails(JsonView jsonValue) : 
-    m_detailedResultsLocationHasBeenSet(false),
-    m_jobArnHasBeenSet(false),
-    m_jobIdHasBeenSet(false),
-    m_originType(OriginType::NOT_SET),
-    m_originTypeHasBeenSet(false),
-    m_resultHasBeenSet(false)
+ClassificationDetails::ClassificationDetails(JsonView jsonValue)
+  : ClassificationDetails()
 {
   *this = jsonValue;
 }

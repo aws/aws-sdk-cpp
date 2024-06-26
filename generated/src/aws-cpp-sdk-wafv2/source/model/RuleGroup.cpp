@@ -34,19 +34,8 @@ RuleGroup::RuleGroup() :
 {
 }
 
-RuleGroup::RuleGroup(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_capacity(0),
-    m_capacityHasBeenSet(false),
-    m_aRNHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_rulesHasBeenSet(false),
-    m_visibilityConfigHasBeenSet(false),
-    m_labelNamespaceHasBeenSet(false),
-    m_customResponseBodiesHasBeenSet(false),
-    m_availableLabelsHasBeenSet(false),
-    m_consumedLabelsHasBeenSet(false)
+RuleGroup::RuleGroup(JsonView jsonValue)
+  : RuleGroup()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ DescribeIndexResult::DescribeIndexResult() :
 {
 }
 
-DescribeIndexResult::DescribeIndexResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_indexStatus(IndexStatus::NOT_SET)
+DescribeIndexResult::DescribeIndexResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeIndexResult()
 {
   *this = result;
 }

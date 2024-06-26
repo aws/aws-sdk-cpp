@@ -29,14 +29,8 @@ AppImageConfigDetails::AppImageConfigDetails() :
 {
 }
 
-AppImageConfigDetails::AppImageConfigDetails(JsonView jsonValue) : 
-    m_appImageConfigArnHasBeenSet(false),
-    m_appImageConfigNameHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_kernelGatewayImageConfigHasBeenSet(false),
-    m_jupyterLabAppImageConfigHasBeenSet(false),
-    m_codeEditorAppImageConfigHasBeenSet(false)
+AppImageConfigDetails::AppImageConfigDetails(JsonView jsonValue)
+  : AppImageConfigDetails()
 {
   *this = jsonValue;
 }

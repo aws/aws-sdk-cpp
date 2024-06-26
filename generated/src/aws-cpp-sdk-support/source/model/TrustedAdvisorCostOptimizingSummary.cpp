@@ -26,11 +26,8 @@ TrustedAdvisorCostOptimizingSummary::TrustedAdvisorCostOptimizingSummary() :
 {
 }
 
-TrustedAdvisorCostOptimizingSummary::TrustedAdvisorCostOptimizingSummary(JsonView jsonValue) : 
-    m_estimatedMonthlySavings(0.0),
-    m_estimatedMonthlySavingsHasBeenSet(false),
-    m_estimatedPercentMonthlySavings(0.0),
-    m_estimatedPercentMonthlySavingsHasBeenSet(false)
+TrustedAdvisorCostOptimizingSummary::TrustedAdvisorCostOptimizingSummary(JsonView jsonValue)
+  : TrustedAdvisorCostOptimizingSummary()
 {
   *this = jsonValue;
 }

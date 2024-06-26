@@ -33,18 +33,8 @@ CurrentInstance::CurrentInstance() :
 {
 }
 
-CurrentInstance::CurrentInstance(JsonView jsonValue) : 
-    m_resourceIdHasBeenSet(false),
-    m_instanceNameHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_resourceDetailsHasBeenSet(false),
-    m_resourceUtilizationHasBeenSet(false),
-    m_reservationCoveredHoursInLookbackPeriodHasBeenSet(false),
-    m_savingsPlansCoveredHoursInLookbackPeriodHasBeenSet(false),
-    m_onDemandHoursInLookbackPeriodHasBeenSet(false),
-    m_totalRunningHoursInLookbackPeriodHasBeenSet(false),
-    m_monthlyCostHasBeenSet(false),
-    m_currencyCodeHasBeenSet(false)
+CurrentInstance::CurrentInstance(JsonView jsonValue)
+  : CurrentInstance()
 {
   *this = jsonValue;
 }

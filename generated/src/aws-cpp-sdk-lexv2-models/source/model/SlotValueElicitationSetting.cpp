@@ -30,15 +30,8 @@ SlotValueElicitationSetting::SlotValueElicitationSetting() :
 {
 }
 
-SlotValueElicitationSetting::SlotValueElicitationSetting(JsonView jsonValue) : 
-    m_defaultValueSpecificationHasBeenSet(false),
-    m_slotConstraint(SlotConstraint::NOT_SET),
-    m_slotConstraintHasBeenSet(false),
-    m_promptSpecificationHasBeenSet(false),
-    m_sampleUtterancesHasBeenSet(false),
-    m_waitAndContinueSpecificationHasBeenSet(false),
-    m_slotCaptureSettingHasBeenSet(false),
-    m_slotResolutionSettingHasBeenSet(false)
+SlotValueElicitationSetting::SlotValueElicitationSetting(JsonView jsonValue)
+  : SlotValueElicitationSetting()
 {
   *this = jsonValue;
 }

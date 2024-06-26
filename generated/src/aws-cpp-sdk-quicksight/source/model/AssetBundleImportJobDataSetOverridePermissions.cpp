@@ -24,9 +24,8 @@ AssetBundleImportJobDataSetOverridePermissions::AssetBundleImportJobDataSetOverr
 {
 }
 
-AssetBundleImportJobDataSetOverridePermissions::AssetBundleImportJobDataSetOverridePermissions(JsonView jsonValue) : 
-    m_dataSetIdsHasBeenSet(false),
-    m_permissionsHasBeenSet(false)
+AssetBundleImportJobDataSetOverridePermissions::AssetBundleImportJobDataSetOverridePermissions(JsonView jsonValue)
+  : AssetBundleImportJobDataSetOverridePermissions()
 {
   *this = jsonValue;
 }

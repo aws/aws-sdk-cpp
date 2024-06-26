@@ -24,9 +24,8 @@ LexBot::LexBot() :
 {
 }
 
-LexBot::LexBot(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_lexRegionHasBeenSet(false)
+LexBot::LexBot(JsonView jsonValue)
+  : LexBot()
 {
   *this = jsonValue;
 }

@@ -30,15 +30,8 @@ ProjectBuildBatchConfig::ProjectBuildBatchConfig() :
 {
 }
 
-ProjectBuildBatchConfig::ProjectBuildBatchConfig(JsonView jsonValue) : 
-    m_serviceRoleHasBeenSet(false),
-    m_combineArtifacts(false),
-    m_combineArtifactsHasBeenSet(false),
-    m_restrictionsHasBeenSet(false),
-    m_timeoutInMins(0),
-    m_timeoutInMinsHasBeenSet(false),
-    m_batchReportMode(BatchReportModeType::NOT_SET),
-    m_batchReportModeHasBeenSet(false)
+ProjectBuildBatchConfig::ProjectBuildBatchConfig(JsonView jsonValue)
+  : ProjectBuildBatchConfig()
 {
   *this = jsonValue;
 }

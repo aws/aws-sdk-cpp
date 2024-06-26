@@ -34,19 +34,8 @@ RuleBasedMatchingResponse::RuleBasedMatchingResponse() :
 {
 }
 
-RuleBasedMatchingResponse::RuleBasedMatchingResponse(JsonView jsonValue) : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_matchingRulesHasBeenSet(false),
-    m_status(RuleBasedMatchingStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_maxAllowedRuleLevelForMerging(0),
-    m_maxAllowedRuleLevelForMergingHasBeenSet(false),
-    m_maxAllowedRuleLevelForMatching(0),
-    m_maxAllowedRuleLevelForMatchingHasBeenSet(false),
-    m_attributeTypesSelectorHasBeenSet(false),
-    m_conflictResolutionHasBeenSet(false),
-    m_exportingConfigHasBeenSet(false)
+RuleBasedMatchingResponse::RuleBasedMatchingResponse(JsonView jsonValue)
+  : RuleBasedMatchingResponse()
 {
   *this = jsonValue;
 }

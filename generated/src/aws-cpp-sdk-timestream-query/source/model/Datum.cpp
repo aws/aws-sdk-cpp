@@ -29,13 +29,8 @@ Datum::Datum() :
 {
 }
 
-Datum::Datum(JsonView jsonValue) : 
-    m_scalarValueHasBeenSet(false),
-    m_timeSeriesValueHasBeenSet(false),
-    m_arrayValueHasBeenSet(false),
-    m_rowValueHasBeenSet(false),
-    m_nullValue(false),
-    m_nullValueHasBeenSet(false)
+Datum::Datum(JsonView jsonValue)
+  : Datum()
 {
   *this = jsonValue;
 }

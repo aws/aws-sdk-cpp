@@ -24,9 +24,8 @@ ScheduleItem::ScheduleItem() :
 {
 }
 
-ScheduleItem::ScheduleItem(JsonView jsonValue) : 
-    m_chargeAmountHasBeenSet(false),
-    m_chargeDateHasBeenSet(false)
+ScheduleItem::ScheduleItem(JsonView jsonValue)
+  : ScheduleItem()
 {
   *this = jsonValue;
 }

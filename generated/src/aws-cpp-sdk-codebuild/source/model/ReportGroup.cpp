@@ -32,17 +32,8 @@ ReportGroup::ReportGroup() :
 {
 }
 
-ReportGroup::ReportGroup(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_type(ReportType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_exportConfigHasBeenSet(false),
-    m_createdHasBeenSet(false),
-    m_lastModifiedHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_status(ReportGroupStatusType::NOT_SET),
-    m_statusHasBeenSet(false)
+ReportGroup::ReportGroup(JsonView jsonValue)
+  : ReportGroup()
 {
   *this = jsonValue;
 }

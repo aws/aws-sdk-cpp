@@ -27,10 +27,8 @@ PolicyDescription::PolicyDescription() :
 {
 }
 
-PolicyDescription::PolicyDescription(const XmlNode& xmlNode) : 
-    m_policyNameHasBeenSet(false),
-    m_policyTypeNameHasBeenSet(false),
-    m_policyAttributeDescriptionsHasBeenSet(false)
+PolicyDescription::PolicyDescription(const XmlNode& xmlNode)
+  : PolicyDescription()
 {
   *this = xmlNode;
 }

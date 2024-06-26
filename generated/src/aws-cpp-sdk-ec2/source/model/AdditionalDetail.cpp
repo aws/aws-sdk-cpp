@@ -32,15 +32,8 @@ AdditionalDetail::AdditionalDetail() :
 {
 }
 
-AdditionalDetail::AdditionalDetail(const XmlNode& xmlNode) : 
-    m_additionalDetailTypeHasBeenSet(false),
-    m_componentHasBeenSet(false),
-    m_vpcEndpointServiceHasBeenSet(false),
-    m_ruleOptionsHasBeenSet(false),
-    m_ruleGroupTypePairsHasBeenSet(false),
-    m_ruleGroupRuleOptionsPairsHasBeenSet(false),
-    m_serviceNameHasBeenSet(false),
-    m_loadBalancersHasBeenSet(false)
+AdditionalDetail::AdditionalDetail(const XmlNode& xmlNode)
+  : AdditionalDetail()
 {
   *this = xmlNode;
 }

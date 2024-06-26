@@ -38,23 +38,8 @@ AutoScalingGroupRecommendation::AutoScalingGroupRecommendation() :
 {
 }
 
-AutoScalingGroupRecommendation::AutoScalingGroupRecommendation(JsonView jsonValue) : 
-    m_accountIdHasBeenSet(false),
-    m_autoScalingGroupArnHasBeenSet(false),
-    m_autoScalingGroupNameHasBeenSet(false),
-    m_finding(Finding::NOT_SET),
-    m_findingHasBeenSet(false),
-    m_utilizationMetricsHasBeenSet(false),
-    m_lookBackPeriodInDays(0.0),
-    m_lookBackPeriodInDaysHasBeenSet(false),
-    m_currentConfigurationHasBeenSet(false),
-    m_currentInstanceGpuInfoHasBeenSet(false),
-    m_recommendationOptionsHasBeenSet(false),
-    m_lastRefreshTimestampHasBeenSet(false),
-    m_currentPerformanceRisk(CurrentPerformanceRisk::NOT_SET),
-    m_currentPerformanceRiskHasBeenSet(false),
-    m_effectiveRecommendationPreferencesHasBeenSet(false),
-    m_inferredWorkloadTypesHasBeenSet(false)
+AutoScalingGroupRecommendation::AutoScalingGroupRecommendation(JsonView jsonValue)
+  : AutoScalingGroupRecommendation()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ TimeFilter::TimeFilter() :
 {
 }
 
-TimeFilter::TimeFilter(JsonView jsonValue) : 
-    m_fromHasBeenSet(false),
-    m_toHasBeenSet(false)
+TimeFilter::TimeFilter(JsonView jsonValue)
+  : TimeFilter()
 {
   *this = jsonValue;
 }

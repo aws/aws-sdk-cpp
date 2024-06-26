@@ -25,10 +25,8 @@ CreateAttendeeError::CreateAttendeeError() :
 {
 }
 
-CreateAttendeeError::CreateAttendeeError(JsonView jsonValue) : 
-    m_externalUserIdHasBeenSet(false),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
+CreateAttendeeError::CreateAttendeeError(JsonView jsonValue)
+  : CreateAttendeeError()
 {
   *this = jsonValue;
 }

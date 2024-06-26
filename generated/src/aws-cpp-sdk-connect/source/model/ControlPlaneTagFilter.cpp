@@ -25,10 +25,8 @@ ControlPlaneTagFilter::ControlPlaneTagFilter() :
 {
 }
 
-ControlPlaneTagFilter::ControlPlaneTagFilter(JsonView jsonValue) : 
-    m_orConditionsHasBeenSet(false),
-    m_andConditionsHasBeenSet(false),
-    m_tagConditionHasBeenSet(false)
+ControlPlaneTagFilter::ControlPlaneTagFilter(JsonView jsonValue)
+  : ControlPlaneTagFilter()
 {
   *this = jsonValue;
 }

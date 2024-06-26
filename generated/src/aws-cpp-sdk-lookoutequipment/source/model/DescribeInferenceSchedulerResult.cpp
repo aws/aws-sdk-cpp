@@ -25,11 +25,8 @@ DescribeInferenceSchedulerResult::DescribeInferenceSchedulerResult() :
 {
 }
 
-DescribeInferenceSchedulerResult::DescribeInferenceSchedulerResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(InferenceSchedulerStatus::NOT_SET),
-    m_dataDelayOffsetInMinutes(0),
-    m_dataUploadFrequency(DataUploadFrequency::NOT_SET),
-    m_latestInferenceResult(LatestInferenceResult::NOT_SET)
+DescribeInferenceSchedulerResult::DescribeInferenceSchedulerResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeInferenceSchedulerResult()
 {
   *this = result;
 }

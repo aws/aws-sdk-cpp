@@ -25,10 +25,8 @@ DocumentDefaultVersionDescription::DocumentDefaultVersionDescription() :
 {
 }
 
-DocumentDefaultVersionDescription::DocumentDefaultVersionDescription(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_defaultVersionHasBeenSet(false),
-    m_defaultVersionNameHasBeenSet(false)
+DocumentDefaultVersionDescription::DocumentDefaultVersionDescription(JsonView jsonValue)
+  : DocumentDefaultVersionDescription()
 {
   *this = jsonValue;
 }

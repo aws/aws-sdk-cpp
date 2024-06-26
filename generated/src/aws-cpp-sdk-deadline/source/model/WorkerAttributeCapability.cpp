@@ -24,9 +24,8 @@ WorkerAttributeCapability::WorkerAttributeCapability() :
 {
 }
 
-WorkerAttributeCapability::WorkerAttributeCapability(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+WorkerAttributeCapability::WorkerAttributeCapability(JsonView jsonValue)
+  : WorkerAttributeCapability()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ CustomPayload::CustomPayload() :
 {
 }
 
-CustomPayload::CustomPayload(JsonView jsonValue) : 
-    m_valueHasBeenSet(false)
+CustomPayload::CustomPayload(JsonView jsonValue)
+  : CustomPayload()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ MulticastGroupByFuotaTask::MulticastGroupByFuotaTask() :
 {
 }
 
-MulticastGroupByFuotaTask::MulticastGroupByFuotaTask(JsonView jsonValue) : 
-    m_idHasBeenSet(false)
+MulticastGroupByFuotaTask::MulticastGroupByFuotaTask(JsonView jsonValue)
+  : MulticastGroupByFuotaTask()
 {
   *this = jsonValue;
 }

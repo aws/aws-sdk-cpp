@@ -29,14 +29,8 @@ HostKeyAttributes::HostKeyAttributes() :
 {
 }
 
-HostKeyAttributes::HostKeyAttributes(JsonView jsonValue) : 
-    m_algorithmHasBeenSet(false),
-    m_publicKeyHasBeenSet(false),
-    m_witnessedAtHasBeenSet(false),
-    m_fingerprintSHA1HasBeenSet(false),
-    m_fingerprintSHA256HasBeenSet(false),
-    m_notValidBeforeHasBeenSet(false),
-    m_notValidAfterHasBeenSet(false)
+HostKeyAttributes::HostKeyAttributes(JsonView jsonValue)
+  : HostKeyAttributes()
 {
   *this = jsonValue;
 }

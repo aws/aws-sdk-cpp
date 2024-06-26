@@ -24,9 +24,8 @@ LoRaWANFuotaTask::LoRaWANFuotaTask() :
 {
 }
 
-LoRaWANFuotaTask::LoRaWANFuotaTask(JsonView jsonValue) : 
-    m_rfRegion(SupportedRfRegion::NOT_SET),
-    m_rfRegionHasBeenSet(false)
+LoRaWANFuotaTask::LoRaWANFuotaTask(JsonView jsonValue)
+  : LoRaWANFuotaTask()
 {
   *this = jsonValue;
 }

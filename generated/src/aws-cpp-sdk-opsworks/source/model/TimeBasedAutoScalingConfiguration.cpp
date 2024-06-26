@@ -24,9 +24,8 @@ TimeBasedAutoScalingConfiguration::TimeBasedAutoScalingConfiguration() :
 {
 }
 
-TimeBasedAutoScalingConfiguration::TimeBasedAutoScalingConfiguration(JsonView jsonValue) : 
-    m_instanceIdHasBeenSet(false),
-    m_autoScalingScheduleHasBeenSet(false)
+TimeBasedAutoScalingConfiguration::TimeBasedAutoScalingConfiguration(JsonView jsonValue)
+  : TimeBasedAutoScalingConfiguration()
 {
   *this = jsonValue;
 }

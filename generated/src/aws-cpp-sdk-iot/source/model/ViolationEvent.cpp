@@ -34,19 +34,8 @@ ViolationEvent::ViolationEvent() :
 {
 }
 
-ViolationEvent::ViolationEvent(JsonView jsonValue) : 
-    m_violationIdHasBeenSet(false),
-    m_thingNameHasBeenSet(false),
-    m_securityProfileNameHasBeenSet(false),
-    m_behaviorHasBeenSet(false),
-    m_metricValueHasBeenSet(false),
-    m_violationEventAdditionalInfoHasBeenSet(false),
-    m_violationEventType(ViolationEventType::NOT_SET),
-    m_violationEventTypeHasBeenSet(false),
-    m_verificationState(VerificationState::NOT_SET),
-    m_verificationStateHasBeenSet(false),
-    m_verificationStateDescriptionHasBeenSet(false),
-    m_violationEventTimeHasBeenSet(false)
+ViolationEvent::ViolationEvent(JsonView jsonValue)
+  : ViolationEvent()
 {
   *this = jsonValue;
 }

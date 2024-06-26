@@ -32,17 +32,8 @@ Schedule::Schedule() :
 {
 }
 
-Schedule::Schedule(JsonView jsonValue) : 
-    m_accountIdHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_createDateHasBeenSet(false),
-    m_jobNamesHasBeenSet(false),
-    m_lastModifiedByHasBeenSet(false),
-    m_lastModifiedDateHasBeenSet(false),
-    m_resourceArnHasBeenSet(false),
-    m_cronExpressionHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_nameHasBeenSet(false)
+Schedule::Schedule(JsonView jsonValue)
+  : Schedule()
 {
   *this = jsonValue;
 }

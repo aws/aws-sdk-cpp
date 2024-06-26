@@ -24,9 +24,8 @@ AwsEcsServicePlacementStrategiesDetails::AwsEcsServicePlacementStrategiesDetails
 {
 }
 
-AwsEcsServicePlacementStrategiesDetails::AwsEcsServicePlacementStrategiesDetails(JsonView jsonValue) : 
-    m_fieldHasBeenSet(false),
-    m_typeHasBeenSet(false)
+AwsEcsServicePlacementStrategiesDetails::AwsEcsServicePlacementStrategiesDetails(JsonView jsonValue)
+  : AwsEcsServicePlacementStrategiesDetails()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ ParallelDataConfig::ParallelDataConfig() :
 {
 }
 
-ParallelDataConfig::ParallelDataConfig(JsonView jsonValue) : 
-    m_s3UriHasBeenSet(false),
-    m_format(ParallelDataFormat::NOT_SET),
-    m_formatHasBeenSet(false)
+ParallelDataConfig::ParallelDataConfig(JsonView jsonValue)
+  : ParallelDataConfig()
 {
   *this = jsonValue;
 }

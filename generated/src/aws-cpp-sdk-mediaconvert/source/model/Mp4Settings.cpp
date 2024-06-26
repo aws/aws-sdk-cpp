@@ -33,18 +33,8 @@ Mp4Settings::Mp4Settings() :
 {
 }
 
-Mp4Settings::Mp4Settings(JsonView jsonValue) : 
-    m_audioDuration(CmfcAudioDuration::NOT_SET),
-    m_audioDurationHasBeenSet(false),
-    m_cslgAtom(Mp4CslgAtom::NOT_SET),
-    m_cslgAtomHasBeenSet(false),
-    m_cttsVersion(0),
-    m_cttsVersionHasBeenSet(false),
-    m_freeSpaceBox(Mp4FreeSpaceBox::NOT_SET),
-    m_freeSpaceBoxHasBeenSet(false),
-    m_moovPlacement(Mp4MoovPlacement::NOT_SET),
-    m_moovPlacementHasBeenSet(false),
-    m_mp4MajorBrandHasBeenSet(false)
+Mp4Settings::Mp4Settings(JsonView jsonValue)
+  : Mp4Settings()
 {
   *this = jsonValue;
 }

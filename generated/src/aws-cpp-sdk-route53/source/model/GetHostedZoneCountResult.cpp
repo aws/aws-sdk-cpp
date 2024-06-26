@@ -21,8 +21,8 @@ GetHostedZoneCountResult::GetHostedZoneCountResult() :
 {
 }
 
-GetHostedZoneCountResult::GetHostedZoneCountResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_hostedZoneCount(0)
+GetHostedZoneCountResult::GetHostedZoneCountResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : GetHostedZoneCountResult()
 {
   *this = result;
 }

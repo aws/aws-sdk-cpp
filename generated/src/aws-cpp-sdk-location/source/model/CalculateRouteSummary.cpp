@@ -30,15 +30,8 @@ CalculateRouteSummary::CalculateRouteSummary() :
 {
 }
 
-CalculateRouteSummary::CalculateRouteSummary(JsonView jsonValue) : 
-    m_routeBBoxHasBeenSet(false),
-    m_dataSourceHasBeenSet(false),
-    m_distance(0.0),
-    m_distanceHasBeenSet(false),
-    m_durationSeconds(0.0),
-    m_durationSecondsHasBeenSet(false),
-    m_distanceUnit(DistanceUnit::NOT_SET),
-    m_distanceUnitHasBeenSet(false)
+CalculateRouteSummary::CalculateRouteSummary(JsonView jsonValue)
+  : CalculateRouteSummary()
 {
   *this = jsonValue;
 }

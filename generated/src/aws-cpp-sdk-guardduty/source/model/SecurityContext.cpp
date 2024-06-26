@@ -26,11 +26,8 @@ SecurityContext::SecurityContext() :
 {
 }
 
-SecurityContext::SecurityContext(JsonView jsonValue) : 
-    m_privileged(false),
-    m_privilegedHasBeenSet(false),
-    m_allowPrivilegeEscalation(false),
-    m_allowPrivilegeEscalationHasBeenSet(false)
+SecurityContext::SecurityContext(JsonView jsonValue)
+  : SecurityContext()
 {
   *this = jsonValue;
 }

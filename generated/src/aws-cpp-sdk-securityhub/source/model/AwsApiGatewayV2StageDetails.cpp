@@ -37,22 +37,8 @@ AwsApiGatewayV2StageDetails::AwsApiGatewayV2StageDetails() :
 {
 }
 
-AwsApiGatewayV2StageDetails::AwsApiGatewayV2StageDetails(JsonView jsonValue) : 
-    m_clientCertificateIdHasBeenSet(false),
-    m_createdDateHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_defaultRouteSettingsHasBeenSet(false),
-    m_deploymentIdHasBeenSet(false),
-    m_lastUpdatedDateHasBeenSet(false),
-    m_routeSettingsHasBeenSet(false),
-    m_stageNameHasBeenSet(false),
-    m_stageVariablesHasBeenSet(false),
-    m_accessLogSettingsHasBeenSet(false),
-    m_autoDeploy(false),
-    m_autoDeployHasBeenSet(false),
-    m_lastDeploymentStatusMessageHasBeenSet(false),
-    m_apiGatewayManaged(false),
-    m_apiGatewayManagedHasBeenSet(false)
+AwsApiGatewayV2StageDetails::AwsApiGatewayV2StageDetails(JsonView jsonValue)
+  : AwsApiGatewayV2StageDetails()
 {
   *this = jsonValue;
 }

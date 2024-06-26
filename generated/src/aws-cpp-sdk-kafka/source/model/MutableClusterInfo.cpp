@@ -38,23 +38,8 @@ MutableClusterInfo::MutableClusterInfo() :
 {
 }
 
-MutableClusterInfo::MutableClusterInfo(JsonView jsonValue) : 
-    m_brokerEBSVolumeInfoHasBeenSet(false),
-    m_configurationInfoHasBeenSet(false),
-    m_numberOfBrokerNodes(0),
-    m_numberOfBrokerNodesHasBeenSet(false),
-    m_enhancedMonitoring(EnhancedMonitoring::NOT_SET),
-    m_enhancedMonitoringHasBeenSet(false),
-    m_openMonitoringHasBeenSet(false),
-    m_kafkaVersionHasBeenSet(false),
-    m_loggingInfoHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_clientAuthenticationHasBeenSet(false),
-    m_encryptionInfoHasBeenSet(false),
-    m_connectivityInfoHasBeenSet(false),
-    m_storageMode(StorageMode::NOT_SET),
-    m_storageModeHasBeenSet(false),
-    m_brokerCountUpdateInfoHasBeenSet(false)
+MutableClusterInfo::MutableClusterInfo(JsonView jsonValue)
+  : MutableClusterInfo()
 {
   *this = jsonValue;
 }

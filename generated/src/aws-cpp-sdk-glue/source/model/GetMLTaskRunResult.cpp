@@ -23,9 +23,8 @@ GetMLTaskRunResult::GetMLTaskRunResult() :
 {
 }
 
-GetMLTaskRunResult::GetMLTaskRunResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(TaskStatusType::NOT_SET),
-    m_executionTime(0)
+GetMLTaskRunResult::GetMLTaskRunResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetMLTaskRunResult()
 {
   *this = result;
 }

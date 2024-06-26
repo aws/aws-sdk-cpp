@@ -23,8 +23,8 @@ DeleteCloudFormationStepInput::DeleteCloudFormationStepInput() :
 {
 }
 
-DeleteCloudFormationStepInput::DeleteCloudFormationStepInput(JsonView jsonValue) : 
-    m_stackIdHasBeenSet(false)
+DeleteCloudFormationStepInput::DeleteCloudFormationStepInput(JsonView jsonValue)
+  : DeleteCloudFormationStepInput()
 {
   *this = jsonValue;
 }

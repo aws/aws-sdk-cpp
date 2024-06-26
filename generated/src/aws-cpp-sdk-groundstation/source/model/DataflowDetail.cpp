@@ -25,10 +25,8 @@ DataflowDetail::DataflowDetail() :
 {
 }
 
-DataflowDetail::DataflowDetail(JsonView jsonValue) : 
-    m_destinationHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_sourceHasBeenSet(false)
+DataflowDetail::DataflowDetail(JsonView jsonValue)
+  : DataflowDetail()
 {
   *this = jsonValue;
 }

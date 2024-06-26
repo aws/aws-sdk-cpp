@@ -33,16 +33,8 @@ MultipartUpload::MultipartUpload() :
 {
 }
 
-MultipartUpload::MultipartUpload(const XmlNode& xmlNode) : 
-    m_uploadIdHasBeenSet(false),
-    m_keyHasBeenSet(false),
-    m_initiatedHasBeenSet(false),
-    m_storageClass(StorageClass::NOT_SET),
-    m_storageClassHasBeenSet(false),
-    m_ownerHasBeenSet(false),
-    m_initiatorHasBeenSet(false),
-    m_checksumAlgorithm(ChecksumAlgorithm::NOT_SET),
-    m_checksumAlgorithmHasBeenSet(false)
+MultipartUpload::MultipartUpload(const XmlNode& xmlNode)
+  : MultipartUpload()
 {
   *this = xmlNode;
 }

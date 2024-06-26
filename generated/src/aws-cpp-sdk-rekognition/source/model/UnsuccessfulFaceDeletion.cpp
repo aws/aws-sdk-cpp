@@ -25,10 +25,8 @@ UnsuccessfulFaceDeletion::UnsuccessfulFaceDeletion() :
 {
 }
 
-UnsuccessfulFaceDeletion::UnsuccessfulFaceDeletion(JsonView jsonValue) : 
-    m_faceIdHasBeenSet(false),
-    m_userIdHasBeenSet(false),
-    m_reasonsHasBeenSet(false)
+UnsuccessfulFaceDeletion::UnsuccessfulFaceDeletion(JsonView jsonValue)
+  : UnsuccessfulFaceDeletion()
 {
   *this = jsonValue;
 }

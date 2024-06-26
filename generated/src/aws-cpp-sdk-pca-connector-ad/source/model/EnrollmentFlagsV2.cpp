@@ -32,17 +32,8 @@ EnrollmentFlagsV2::EnrollmentFlagsV2() :
 {
 }
 
-EnrollmentFlagsV2::EnrollmentFlagsV2(JsonView jsonValue) : 
-    m_enableKeyReuseOnNtTokenKeysetStorageFull(false),
-    m_enableKeyReuseOnNtTokenKeysetStorageFullHasBeenSet(false),
-    m_includeSymmetricAlgorithms(false),
-    m_includeSymmetricAlgorithmsHasBeenSet(false),
-    m_noSecurityExtension(false),
-    m_noSecurityExtensionHasBeenSet(false),
-    m_removeInvalidCertificateFromPersonalStore(false),
-    m_removeInvalidCertificateFromPersonalStoreHasBeenSet(false),
-    m_userInteractionRequired(false),
-    m_userInteractionRequiredHasBeenSet(false)
+EnrollmentFlagsV2::EnrollmentFlagsV2(JsonView jsonValue)
+  : EnrollmentFlagsV2()
 {
   *this = jsonValue;
 }

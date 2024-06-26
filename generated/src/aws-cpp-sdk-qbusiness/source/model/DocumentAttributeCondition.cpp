@@ -26,11 +26,8 @@ DocumentAttributeCondition::DocumentAttributeCondition() :
 {
 }
 
-DocumentAttributeCondition::DocumentAttributeCondition(JsonView jsonValue) : 
-    m_keyHasBeenSet(false),
-    m_operator(DocumentEnrichmentConditionOperator::NOT_SET),
-    m_operatorHasBeenSet(false),
-    m_valueHasBeenSet(false)
+DocumentAttributeCondition::DocumentAttributeCondition(JsonView jsonValue)
+  : DocumentAttributeCondition()
 {
   *this = jsonValue;
 }

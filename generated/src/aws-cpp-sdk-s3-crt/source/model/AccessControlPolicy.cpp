@@ -26,9 +26,8 @@ AccessControlPolicy::AccessControlPolicy() :
 {
 }
 
-AccessControlPolicy::AccessControlPolicy(const XmlNode& xmlNode) : 
-    m_grantsHasBeenSet(false),
-    m_ownerHasBeenSet(false)
+AccessControlPolicy::AccessControlPolicy(const XmlNode& xmlNode)
+  : AccessControlPolicy()
 {
   *this = xmlNode;
 }

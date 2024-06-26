@@ -27,10 +27,8 @@ ResizeInfo::ResizeInfo() :
 {
 }
 
-ResizeInfo::ResizeInfo(const XmlNode& xmlNode) : 
-    m_resizeTypeHasBeenSet(false),
-    m_allowCancelResize(false),
-    m_allowCancelResizeHasBeenSet(false)
+ResizeInfo::ResizeInfo(const XmlNode& xmlNode)
+  : ResizeInfo()
 {
   *this = xmlNode;
 }

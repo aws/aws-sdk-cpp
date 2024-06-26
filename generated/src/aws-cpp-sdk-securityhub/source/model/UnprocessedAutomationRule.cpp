@@ -26,11 +26,8 @@ UnprocessedAutomationRule::UnprocessedAutomationRule() :
 {
 }
 
-UnprocessedAutomationRule::UnprocessedAutomationRule(JsonView jsonValue) : 
-    m_ruleArnHasBeenSet(false),
-    m_errorCode(0),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
+UnprocessedAutomationRule::UnprocessedAutomationRule(JsonView jsonValue)
+  : UnprocessedAutomationRule()
 {
   *this = jsonValue;
 }

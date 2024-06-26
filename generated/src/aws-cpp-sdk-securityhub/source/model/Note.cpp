@@ -25,10 +25,8 @@ Note::Note() :
 {
 }
 
-Note::Note(JsonView jsonValue) : 
-    m_textHasBeenSet(false),
-    m_updatedByHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+Note::Note(JsonView jsonValue)
+  : Note()
 {
   *this = jsonValue;
 }

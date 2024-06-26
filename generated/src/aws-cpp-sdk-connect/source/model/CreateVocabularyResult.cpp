@@ -22,8 +22,8 @@ CreateVocabularyResult::CreateVocabularyResult() :
 {
 }
 
-CreateVocabularyResult::CreateVocabularyResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_state(VocabularyState::NOT_SET)
+CreateVocabularyResult::CreateVocabularyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateVocabularyResult()
 {
   *this = result;
 }

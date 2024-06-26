@@ -23,8 +23,8 @@ OnPremisesTagSet::OnPremisesTagSet() :
 {
 }
 
-OnPremisesTagSet::OnPremisesTagSet(JsonView jsonValue) : 
-    m_onPremisesTagSetListHasBeenSet(false)
+OnPremisesTagSet::OnPremisesTagSet(JsonView jsonValue)
+  : OnPremisesTagSet()
 {
   *this = jsonValue;
 }

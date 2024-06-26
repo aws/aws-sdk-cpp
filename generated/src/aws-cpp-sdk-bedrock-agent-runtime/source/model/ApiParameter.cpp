@@ -25,10 +25,8 @@ ApiParameter::ApiParameter() :
 {
 }
 
-ApiParameter::ApiParameter(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_valueHasBeenSet(false)
+ApiParameter::ApiParameter(JsonView jsonValue)
+  : ApiParameter()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ AccessDeniedForDependencyException::AccessDeniedForDependencyException() :
 {
 }
 
-AccessDeniedForDependencyException::AccessDeniedForDependencyException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_reason(AccessDeniedForDependencyExceptionReason::NOT_SET),
-    m_reasonHasBeenSet(false)
+AccessDeniedForDependencyException::AccessDeniedForDependencyException(JsonView jsonValue)
+  : AccessDeniedForDependencyException()
 {
   *this = jsonValue;
 }

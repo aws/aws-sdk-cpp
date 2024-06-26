@@ -23,8 +23,8 @@ AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails::AwsEcsTask
 {
 }
 
-AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails::AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails(JsonView jsonValue) : 
-    m_credentialsParameterHasBeenSet(false)
+AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails::AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails(JsonView jsonValue)
+  : AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails()
 {
   *this = jsonValue;
 }

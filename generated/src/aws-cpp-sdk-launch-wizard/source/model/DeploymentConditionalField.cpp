@@ -25,10 +25,8 @@ DeploymentConditionalField::DeploymentConditionalField() :
 {
 }
 
-DeploymentConditionalField::DeploymentConditionalField(JsonView jsonValue) : 
-    m_comparatorHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
+DeploymentConditionalField::DeploymentConditionalField(JsonView jsonValue)
+  : DeploymentConditionalField()
 {
   *this = jsonValue;
 }

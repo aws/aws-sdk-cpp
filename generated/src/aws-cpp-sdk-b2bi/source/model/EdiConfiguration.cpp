@@ -26,11 +26,8 @@ EdiConfiguration::EdiConfiguration() :
 {
 }
 
-EdiConfiguration::EdiConfiguration(JsonView jsonValue) : 
-    m_typeHasBeenSet(false),
-    m_inputLocationHasBeenSet(false),
-    m_outputLocationHasBeenSet(false),
-    m_transformerIdHasBeenSet(false)
+EdiConfiguration::EdiConfiguration(JsonView jsonValue)
+  : EdiConfiguration()
 {
   *this = jsonValue;
 }

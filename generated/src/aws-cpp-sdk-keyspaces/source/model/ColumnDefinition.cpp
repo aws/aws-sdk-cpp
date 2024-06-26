@@ -24,9 +24,8 @@ ColumnDefinition::ColumnDefinition() :
 {
 }
 
-ColumnDefinition::ColumnDefinition(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_typeHasBeenSet(false)
+ColumnDefinition::ColumnDefinition(JsonView jsonValue)
+  : ColumnDefinition()
 {
   *this = jsonValue;
 }

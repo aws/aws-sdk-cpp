@@ -24,9 +24,8 @@ InventoryResultEntity::InventoryResultEntity() :
 {
 }
 
-InventoryResultEntity::InventoryResultEntity(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_dataHasBeenSet(false)
+InventoryResultEntity::InventoryResultEntity(JsonView jsonValue)
+  : InventoryResultEntity()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ GlueSchema::GlueSchema() :
 {
 }
 
-GlueSchema::GlueSchema(JsonView jsonValue) : 
-    m_columnsHasBeenSet(false)
+GlueSchema::GlueSchema(JsonView jsonValue)
+  : GlueSchema()
 {
   *this = jsonValue;
 }

@@ -33,18 +33,8 @@ ThingIndexingConfiguration::ThingIndexingConfiguration() :
 {
 }
 
-ThingIndexingConfiguration::ThingIndexingConfiguration(JsonView jsonValue) : 
-    m_thingIndexingMode(ThingIndexingMode::NOT_SET),
-    m_thingIndexingModeHasBeenSet(false),
-    m_thingConnectivityIndexingMode(ThingConnectivityIndexingMode::NOT_SET),
-    m_thingConnectivityIndexingModeHasBeenSet(false),
-    m_deviceDefenderIndexingMode(DeviceDefenderIndexingMode::NOT_SET),
-    m_deviceDefenderIndexingModeHasBeenSet(false),
-    m_namedShadowIndexingMode(NamedShadowIndexingMode::NOT_SET),
-    m_namedShadowIndexingModeHasBeenSet(false),
-    m_managedFieldsHasBeenSet(false),
-    m_customFieldsHasBeenSet(false),
-    m_filterHasBeenSet(false)
+ThingIndexingConfiguration::ThingIndexingConfiguration(JsonView jsonValue)
+  : ThingIndexingConfiguration()
 {
   *this = jsonValue;
 }

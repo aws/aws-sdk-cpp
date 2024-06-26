@@ -22,8 +22,8 @@ GetSubscriptionStateResult::GetSubscriptionStateResult() :
 {
 }
 
-GetSubscriptionStateResult::GetSubscriptionStateResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_subscriptionState(SubscriptionState::NOT_SET)
+GetSubscriptionStateResult::GetSubscriptionStateResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetSubscriptionStateResult()
 {
   *this = result;
 }

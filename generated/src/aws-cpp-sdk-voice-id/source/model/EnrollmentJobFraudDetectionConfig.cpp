@@ -27,12 +27,8 @@ EnrollmentJobFraudDetectionConfig::EnrollmentJobFraudDetectionConfig() :
 {
 }
 
-EnrollmentJobFraudDetectionConfig::EnrollmentJobFraudDetectionConfig(JsonView jsonValue) : 
-    m_fraudDetectionAction(FraudDetectionAction::NOT_SET),
-    m_fraudDetectionActionHasBeenSet(false),
-    m_riskThreshold(0),
-    m_riskThresholdHasBeenSet(false),
-    m_watchlistIdsHasBeenSet(false)
+EnrollmentJobFraudDetectionConfig::EnrollmentJobFraudDetectionConfig(JsonView jsonValue)
+  : EnrollmentJobFraudDetectionConfig()
 {
   *this = jsonValue;
 }

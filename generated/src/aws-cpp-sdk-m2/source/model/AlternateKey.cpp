@@ -29,14 +29,8 @@ AlternateKey::AlternateKey() :
 {
 }
 
-AlternateKey::AlternateKey(JsonView jsonValue) : 
-    m_allowDuplicates(false),
-    m_allowDuplicatesHasBeenSet(false),
-    m_length(0),
-    m_lengthHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_offset(0),
-    m_offsetHasBeenSet(false)
+AlternateKey::AlternateKey(JsonView jsonValue)
+  : AlternateKey()
 {
   *this = jsonValue;
 }

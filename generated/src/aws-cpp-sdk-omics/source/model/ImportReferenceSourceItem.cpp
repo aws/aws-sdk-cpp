@@ -29,14 +29,8 @@ ImportReferenceSourceItem::ImportReferenceSourceItem() :
 {
 }
 
-ImportReferenceSourceItem::ImportReferenceSourceItem(JsonView jsonValue) : 
-    m_sourceFileHasBeenSet(false),
-    m_status(ReferenceImportJobItemStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+ImportReferenceSourceItem::ImportReferenceSourceItem(JsonView jsonValue)
+  : ImportReferenceSourceItem()
 {
   *this = jsonValue;
 }

@@ -36,21 +36,8 @@ FirewallRuleGroup::FirewallRuleGroup() :
 {
 }
 
-FirewallRuleGroup::FirewallRuleGroup(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_ruleCount(0),
-    m_ruleCountHasBeenSet(false),
-    m_status(FirewallRuleGroupStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_creatorRequestIdHasBeenSet(false),
-    m_shareStatus(ShareStatus::NOT_SET),
-    m_shareStatusHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_modificationTimeHasBeenSet(false)
+FirewallRuleGroup::FirewallRuleGroup(JsonView jsonValue)
+  : FirewallRuleGroup()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ SortDefinition::SortDefinition() :
 {
 }
 
-SortDefinition::SortDefinition(JsonView jsonValue) : 
-    m_keyHasBeenSet(false),
-    m_sortOrder(SortOrder::NOT_SET),
-    m_sortOrderHasBeenSet(false)
+SortDefinition::SortDefinition(JsonView jsonValue)
+  : SortDefinition()
 {
   *this = jsonValue;
 }

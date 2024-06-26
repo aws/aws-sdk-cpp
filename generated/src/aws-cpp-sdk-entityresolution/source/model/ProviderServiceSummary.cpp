@@ -28,13 +28,8 @@ ProviderServiceSummary::ProviderServiceSummary() :
 {
 }
 
-ProviderServiceSummary::ProviderServiceSummary(JsonView jsonValue) : 
-    m_providerNameHasBeenSet(false),
-    m_providerServiceArnHasBeenSet(false),
-    m_providerServiceDisplayNameHasBeenSet(false),
-    m_providerServiceNameHasBeenSet(false),
-    m_providerServiceType(ServiceType::NOT_SET),
-    m_providerServiceTypeHasBeenSet(false)
+ProviderServiceSummary::ProviderServiceSummary(JsonView jsonValue)
+  : ProviderServiceSummary()
 {
   *this = jsonValue;
 }

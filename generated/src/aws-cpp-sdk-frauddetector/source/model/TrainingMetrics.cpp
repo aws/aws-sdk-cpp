@@ -25,10 +25,8 @@ TrainingMetrics::TrainingMetrics() :
 {
 }
 
-TrainingMetrics::TrainingMetrics(JsonView jsonValue) : 
-    m_auc(0.0),
-    m_aucHasBeenSet(false),
-    m_metricDataPointsHasBeenSet(false)
+TrainingMetrics::TrainingMetrics(JsonView jsonValue)
+  : TrainingMetrics()
 {
   *this = jsonValue;
 }

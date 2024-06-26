@@ -32,15 +32,8 @@ TemplateProgress::TemplateProgress() :
 {
 }
 
-TemplateProgress::TemplateProgress(const XmlNode& xmlNode) : 
-    m_resourcesSucceeded(0),
-    m_resourcesSucceededHasBeenSet(false),
-    m_resourcesFailed(0),
-    m_resourcesFailedHasBeenSet(false),
-    m_resourcesProcessing(0),
-    m_resourcesProcessingHasBeenSet(false),
-    m_resourcesPending(0),
-    m_resourcesPendingHasBeenSet(false)
+TemplateProgress::TemplateProgress(const XmlNode& xmlNode)
+  : TemplateProgress()
 {
   *this = xmlNode;
 }

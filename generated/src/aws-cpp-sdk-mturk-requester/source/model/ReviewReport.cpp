@@ -24,9 +24,8 @@ ReviewReport::ReviewReport() :
 {
 }
 
-ReviewReport::ReviewReport(JsonView jsonValue) : 
-    m_reviewResultsHasBeenSet(false),
-    m_reviewActionsHasBeenSet(false)
+ReviewReport::ReviewReport(JsonView jsonValue)
+  : ReviewReport()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ RegexMatchSet::RegexMatchSet() :
 {
 }
 
-RegexMatchSet::RegexMatchSet(JsonView jsonValue) : 
-    m_regexMatchSetIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_regexMatchTuplesHasBeenSet(false)
+RegexMatchSet::RegexMatchSet(JsonView jsonValue)
+  : RegexMatchSet()
 {
   *this = jsonValue;
 }

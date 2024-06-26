@@ -22,8 +22,8 @@ UpdateChannelResult::UpdateChannelResult() :
 {
 }
 
-UpdateChannelResult::UpdateChannelResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_channelState(ChannelState::NOT_SET)
+UpdateChannelResult::UpdateChannelResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateChannelResult()
 {
   *this = result;
 }

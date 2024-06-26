@@ -24,9 +24,8 @@ DestinationConfig::DestinationConfig() :
 {
 }
 
-DestinationConfig::DestinationConfig(JsonView jsonValue) : 
-    m_thingNameHasBeenSet(false),
-    m_servicesHasBeenSet(false)
+DestinationConfig::DestinationConfig(JsonView jsonValue)
+  : DestinationConfig()
 {
   *this = jsonValue;
 }

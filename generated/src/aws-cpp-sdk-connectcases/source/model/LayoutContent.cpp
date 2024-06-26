@@ -23,8 +23,8 @@ LayoutContent::LayoutContent() :
 {
 }
 
-LayoutContent::LayoutContent(JsonView jsonValue) : 
-    m_basicHasBeenSet(false)
+LayoutContent::LayoutContent(JsonView jsonValue)
+  : LayoutContent()
 {
   *this = jsonValue;
 }

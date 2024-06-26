@@ -24,9 +24,8 @@ CategoricalParameter::CategoricalParameter() :
 {
 }
 
-CategoricalParameter::CategoricalParameter(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
+CategoricalParameter::CategoricalParameter(JsonView jsonValue)
+  : CategoricalParameter()
 {
   *this = jsonValue;
 }

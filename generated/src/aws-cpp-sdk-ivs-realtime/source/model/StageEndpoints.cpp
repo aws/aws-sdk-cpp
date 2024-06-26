@@ -24,9 +24,8 @@ StageEndpoints::StageEndpoints() :
 {
 }
 
-StageEndpoints::StageEndpoints(JsonView jsonValue) : 
-    m_eventsHasBeenSet(false),
-    m_whipHasBeenSet(false)
+StageEndpoints::StageEndpoints(JsonView jsonValue)
+  : StageEndpoints()
 {
   *this = jsonValue;
 }

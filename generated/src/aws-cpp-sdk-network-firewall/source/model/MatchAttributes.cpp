@@ -28,13 +28,8 @@ MatchAttributes::MatchAttributes() :
 {
 }
 
-MatchAttributes::MatchAttributes(JsonView jsonValue) : 
-    m_sourcesHasBeenSet(false),
-    m_destinationsHasBeenSet(false),
-    m_sourcePortsHasBeenSet(false),
-    m_destinationPortsHasBeenSet(false),
-    m_protocolsHasBeenSet(false),
-    m_tCPFlagsHasBeenSet(false)
+MatchAttributes::MatchAttributes(JsonView jsonValue)
+  : MatchAttributes()
 {
   *this = jsonValue;
 }

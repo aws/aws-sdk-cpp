@@ -40,25 +40,8 @@ AwsApiGatewayStageDetails::AwsApiGatewayStageDetails() :
 {
 }
 
-AwsApiGatewayStageDetails::AwsApiGatewayStageDetails(JsonView jsonValue) : 
-    m_deploymentIdHasBeenSet(false),
-    m_clientCertificateIdHasBeenSet(false),
-    m_stageNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_cacheClusterEnabled(false),
-    m_cacheClusterEnabledHasBeenSet(false),
-    m_cacheClusterSizeHasBeenSet(false),
-    m_cacheClusterStatusHasBeenSet(false),
-    m_methodSettingsHasBeenSet(false),
-    m_variablesHasBeenSet(false),
-    m_documentationVersionHasBeenSet(false),
-    m_accessLogSettingsHasBeenSet(false),
-    m_canarySettingsHasBeenSet(false),
-    m_tracingEnabled(false),
-    m_tracingEnabledHasBeenSet(false),
-    m_createdDateHasBeenSet(false),
-    m_lastUpdatedDateHasBeenSet(false),
-    m_webAclArnHasBeenSet(false)
+AwsApiGatewayStageDetails::AwsApiGatewayStageDetails(JsonView jsonValue)
+  : AwsApiGatewayStageDetails()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ HumanEvaluationConfig::HumanEvaluationConfig() :
 {
 }
 
-HumanEvaluationConfig::HumanEvaluationConfig(JsonView jsonValue) : 
-    m_humanWorkflowConfigHasBeenSet(false),
-    m_customMetricsHasBeenSet(false),
-    m_datasetMetricConfigsHasBeenSet(false)
+HumanEvaluationConfig::HumanEvaluationConfig(JsonView jsonValue)
+  : HumanEvaluationConfig()
 {
   *this = jsonValue;
 }

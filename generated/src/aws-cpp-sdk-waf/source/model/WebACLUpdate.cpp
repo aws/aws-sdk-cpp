@@ -25,10 +25,8 @@ WebACLUpdate::WebACLUpdate() :
 {
 }
 
-WebACLUpdate::WebACLUpdate(JsonView jsonValue) : 
-    m_action(ChangeAction::NOT_SET),
-    m_actionHasBeenSet(false),
-    m_activatedRuleHasBeenSet(false)
+WebACLUpdate::WebACLUpdate(JsonView jsonValue)
+  : WebACLUpdate()
 {
   *this = jsonValue;
 }

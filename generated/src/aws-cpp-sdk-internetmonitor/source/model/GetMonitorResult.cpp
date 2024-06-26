@@ -25,11 +25,8 @@ GetMonitorResult::GetMonitorResult() :
 {
 }
 
-GetMonitorResult::GetMonitorResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(MonitorConfigState::NOT_SET),
-    m_processingStatus(MonitorProcessingStatusCode::NOT_SET),
-    m_maxCityNetworksToMonitor(0),
-    m_trafficPercentageToMonitor(0)
+GetMonitorResult::GetMonitorResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetMonitorResult()
 {
   *this = result;
 }

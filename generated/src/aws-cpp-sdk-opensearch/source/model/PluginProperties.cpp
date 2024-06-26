@@ -28,13 +28,8 @@ PluginProperties::PluginProperties() :
 {
 }
 
-PluginProperties::PluginProperties(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_classNameHasBeenSet(false),
-    m_uncompressedSizeInBytes(0),
-    m_uncompressedSizeInBytesHasBeenSet(false)
+PluginProperties::PluginProperties(JsonView jsonValue)
+  : PluginProperties()
 {
   *this = jsonValue;
 }

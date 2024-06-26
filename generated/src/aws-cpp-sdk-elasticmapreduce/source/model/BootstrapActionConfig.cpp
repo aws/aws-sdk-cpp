@@ -24,9 +24,8 @@ BootstrapActionConfig::BootstrapActionConfig() :
 {
 }
 
-BootstrapActionConfig::BootstrapActionConfig(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_scriptBootstrapActionHasBeenSet(false)
+BootstrapActionConfig::BootstrapActionConfig(JsonView jsonValue)
+  : BootstrapActionConfig()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ GetRDFGraphSummaryResult::GetRDFGraphSummaryResult() :
 {
 }
 
-GetRDFGraphSummaryResult::GetRDFGraphSummaryResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_statusCode(0)
+GetRDFGraphSummaryResult::GetRDFGraphSummaryResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetRDFGraphSummaryResult()
 {
   *this = result;
 }

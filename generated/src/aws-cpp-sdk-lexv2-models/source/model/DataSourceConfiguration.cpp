@@ -25,10 +25,8 @@ DataSourceConfiguration::DataSourceConfiguration() :
 {
 }
 
-DataSourceConfiguration::DataSourceConfiguration(JsonView jsonValue) : 
-    m_opensearchConfigurationHasBeenSet(false),
-    m_kendraConfigurationHasBeenSet(false),
-    m_bedrockKnowledgeStoreConfigurationHasBeenSet(false)
+DataSourceConfiguration::DataSourceConfiguration(JsonView jsonValue)
+  : DataSourceConfiguration()
 {
   *this = jsonValue;
 }

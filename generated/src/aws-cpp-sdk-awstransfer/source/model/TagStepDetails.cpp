@@ -25,10 +25,8 @@ TagStepDetails::TagStepDetails() :
 {
 }
 
-TagStepDetails::TagStepDetails(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_sourceFileLocationHasBeenSet(false)
+TagStepDetails::TagStepDetails(JsonView jsonValue)
+  : TagStepDetails()
 {
   *this = jsonValue;
 }

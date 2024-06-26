@@ -30,15 +30,8 @@ SpliceInsertMessage::SpliceInsertMessage() :
 {
 }
 
-SpliceInsertMessage::SpliceInsertMessage(JsonView jsonValue) : 
-    m_availNum(0),
-    m_availNumHasBeenSet(false),
-    m_availsExpected(0),
-    m_availsExpectedHasBeenSet(false),
-    m_spliceEventId(0),
-    m_spliceEventIdHasBeenSet(false),
-    m_uniqueProgramId(0),
-    m_uniqueProgramIdHasBeenSet(false)
+SpliceInsertMessage::SpliceInsertMessage(JsonView jsonValue)
+  : SpliceInsertMessage()
 {
   *this = jsonValue;
 }

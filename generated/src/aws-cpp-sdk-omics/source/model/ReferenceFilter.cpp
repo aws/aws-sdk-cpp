@@ -26,11 +26,8 @@ ReferenceFilter::ReferenceFilter() :
 {
 }
 
-ReferenceFilter::ReferenceFilter(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_md5HasBeenSet(false),
-    m_createdAfterHasBeenSet(false),
-    m_createdBeforeHasBeenSet(false)
+ReferenceFilter::ReferenceFilter(JsonView jsonValue)
+  : ReferenceFilter()
 {
   *this = jsonValue;
 }

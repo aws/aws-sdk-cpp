@@ -23,8 +23,8 @@ AwsAthenaWorkGroupConfigurationDetails::AwsAthenaWorkGroupConfigurationDetails()
 {
 }
 
-AwsAthenaWorkGroupConfigurationDetails::AwsAthenaWorkGroupConfigurationDetails(JsonView jsonValue) : 
-    m_resultConfigurationHasBeenSet(false)
+AwsAthenaWorkGroupConfigurationDetails::AwsAthenaWorkGroupConfigurationDetails(JsonView jsonValue)
+  : AwsAthenaWorkGroupConfigurationDetails()
 {
   *this = jsonValue;
 }

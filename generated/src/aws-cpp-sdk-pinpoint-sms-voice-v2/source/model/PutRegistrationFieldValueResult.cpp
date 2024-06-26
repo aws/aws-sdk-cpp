@@ -22,8 +22,8 @@ PutRegistrationFieldValueResult::PutRegistrationFieldValueResult() :
 {
 }
 
-PutRegistrationFieldValueResult::PutRegistrationFieldValueResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_versionNumber(0)
+PutRegistrationFieldValueResult::PutRegistrationFieldValueResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : PutRegistrationFieldValueResult()
 {
   *this = result;
 }

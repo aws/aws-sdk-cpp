@@ -23,8 +23,8 @@ ContactAnalysis::ContactAnalysis() :
 {
 }
 
-ContactAnalysis::ContactAnalysis(JsonView jsonValue) : 
-    m_transcriptHasBeenSet(false)
+ContactAnalysis::ContactAnalysis(JsonView jsonValue)
+  : ContactAnalysis()
 {
   *this = jsonValue;
 }

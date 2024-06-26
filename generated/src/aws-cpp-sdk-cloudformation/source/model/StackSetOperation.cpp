@@ -41,24 +41,8 @@ StackSetOperation::StackSetOperation() :
 {
 }
 
-StackSetOperation::StackSetOperation(const XmlNode& xmlNode) : 
-    m_operationIdHasBeenSet(false),
-    m_stackSetIdHasBeenSet(false),
-    m_action(StackSetOperationAction::NOT_SET),
-    m_actionHasBeenSet(false),
-    m_status(StackSetOperationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_operationPreferencesHasBeenSet(false),
-    m_retainStacks(false),
-    m_retainStacksHasBeenSet(false),
-    m_administrationRoleARNHasBeenSet(false),
-    m_executionRoleNameHasBeenSet(false),
-    m_creationTimestampHasBeenSet(false),
-    m_endTimestampHasBeenSet(false),
-    m_deploymentTargetsHasBeenSet(false),
-    m_stackSetDriftDetectionDetailsHasBeenSet(false),
-    m_statusReasonHasBeenSet(false),
-    m_statusDetailsHasBeenSet(false)
+StackSetOperation::StackSetOperation(const XmlNode& xmlNode)
+  : StackSetOperation()
 {
   *this = xmlNode;
 }

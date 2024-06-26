@@ -36,21 +36,8 @@ TaskListItem::TaskListItem() :
 {
 }
 
-TaskListItem::TaskListItem(JsonView jsonValue) : 
-    m_taskIdHasBeenSet(false),
-    m_status(TaskStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_cpus(0),
-    m_cpusHasBeenSet(false),
-    m_memory(0),
-    m_memoryHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_stopTimeHasBeenSet(false),
-    m_gpus(0),
-    m_gpusHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false)
+TaskListItem::TaskListItem(JsonView jsonValue)
+  : TaskListItem()
 {
   *this = jsonValue;
 }

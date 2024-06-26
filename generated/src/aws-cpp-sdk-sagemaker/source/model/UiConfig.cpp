@@ -24,9 +24,8 @@ UiConfig::UiConfig() :
 {
 }
 
-UiConfig::UiConfig(JsonView jsonValue) : 
-    m_uiTemplateS3UriHasBeenSet(false),
-    m_humanTaskUiArnHasBeenSet(false)
+UiConfig::UiConfig(JsonView jsonValue)
+  : UiConfig()
 {
   *this = jsonValue;
 }

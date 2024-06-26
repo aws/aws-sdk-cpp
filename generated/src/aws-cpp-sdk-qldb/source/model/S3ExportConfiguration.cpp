@@ -25,10 +25,8 @@ S3ExportConfiguration::S3ExportConfiguration() :
 {
 }
 
-S3ExportConfiguration::S3ExportConfiguration(JsonView jsonValue) : 
-    m_bucketHasBeenSet(false),
-    m_prefixHasBeenSet(false),
-    m_encryptionConfigurationHasBeenSet(false)
+S3ExportConfiguration::S3ExportConfiguration(JsonView jsonValue)
+  : S3ExportConfiguration()
 {
   *this = jsonValue;
 }

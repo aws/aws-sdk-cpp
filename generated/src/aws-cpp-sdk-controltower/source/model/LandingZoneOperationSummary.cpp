@@ -27,12 +27,8 @@ LandingZoneOperationSummary::LandingZoneOperationSummary() :
 {
 }
 
-LandingZoneOperationSummary::LandingZoneOperationSummary(JsonView jsonValue) : 
-    m_operationIdentifierHasBeenSet(false),
-    m_operationType(LandingZoneOperationType::NOT_SET),
-    m_operationTypeHasBeenSet(false),
-    m_status(LandingZoneOperationStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+LandingZoneOperationSummary::LandingZoneOperationSummary(JsonView jsonValue)
+  : LandingZoneOperationSummary()
 {
   *this = jsonValue;
 }

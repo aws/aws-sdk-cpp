@@ -24,9 +24,8 @@ ActivityScheduleFailedEventDetails::ActivityScheduleFailedEventDetails() :
 {
 }
 
-ActivityScheduleFailedEventDetails::ActivityScheduleFailedEventDetails(JsonView jsonValue) : 
-    m_errorHasBeenSet(false),
-    m_causeHasBeenSet(false)
+ActivityScheduleFailedEventDetails::ActivityScheduleFailedEventDetails(JsonView jsonValue)
+  : ActivityScheduleFailedEventDetails()
 {
   *this = jsonValue;
 }

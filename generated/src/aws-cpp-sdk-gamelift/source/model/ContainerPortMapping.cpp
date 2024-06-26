@@ -28,13 +28,8 @@ ContainerPortMapping::ContainerPortMapping() :
 {
 }
 
-ContainerPortMapping::ContainerPortMapping(JsonView jsonValue) : 
-    m_containerPort(0),
-    m_containerPortHasBeenSet(false),
-    m_connectionPort(0),
-    m_connectionPortHasBeenSet(false),
-    m_protocol(IpProtocol::NOT_SET),
-    m_protocolHasBeenSet(false)
+ContainerPortMapping::ContainerPortMapping(JsonView jsonValue)
+  : ContainerPortMapping()
 {
   *this = jsonValue;
 }

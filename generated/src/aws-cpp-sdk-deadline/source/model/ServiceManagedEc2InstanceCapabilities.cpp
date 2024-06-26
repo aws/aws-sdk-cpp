@@ -33,18 +33,8 @@ ServiceManagedEc2InstanceCapabilities::ServiceManagedEc2InstanceCapabilities() :
 {
 }
 
-ServiceManagedEc2InstanceCapabilities::ServiceManagedEc2InstanceCapabilities(JsonView jsonValue) : 
-    m_allowedInstanceTypesHasBeenSet(false),
-    m_cpuArchitectureType(CpuArchitectureType::NOT_SET),
-    m_cpuArchitectureTypeHasBeenSet(false),
-    m_customAmountsHasBeenSet(false),
-    m_customAttributesHasBeenSet(false),
-    m_excludedInstanceTypesHasBeenSet(false),
-    m_memoryMiBHasBeenSet(false),
-    m_osFamily(ServiceManagedFleetOperatingSystemFamily::NOT_SET),
-    m_osFamilyHasBeenSet(false),
-    m_rootEbsVolumeHasBeenSet(false),
-    m_vCpuCountHasBeenSet(false)
+ServiceManagedEc2InstanceCapabilities::ServiceManagedEc2InstanceCapabilities(JsonView jsonValue)
+  : ServiceManagedEc2InstanceCapabilities()
 {
   *this = jsonValue;
 }

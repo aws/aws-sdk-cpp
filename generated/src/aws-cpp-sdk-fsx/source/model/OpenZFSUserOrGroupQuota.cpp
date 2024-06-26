@@ -28,13 +28,8 @@ OpenZFSUserOrGroupQuota::OpenZFSUserOrGroupQuota() :
 {
 }
 
-OpenZFSUserOrGroupQuota::OpenZFSUserOrGroupQuota(JsonView jsonValue) : 
-    m_type(OpenZFSQuotaType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_id(0),
-    m_idHasBeenSet(false),
-    m_storageCapacityQuotaGiB(0),
-    m_storageCapacityQuotaGiBHasBeenSet(false)
+OpenZFSUserOrGroupQuota::OpenZFSUserOrGroupQuota(JsonView jsonValue)
+  : OpenZFSUserOrGroupQuota()
 {
   *this = jsonValue;
 }

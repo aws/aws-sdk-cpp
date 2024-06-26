@@ -24,9 +24,8 @@ ArtifactDetail::ArtifactDetail() :
 {
 }
 
-ArtifactDetail::ArtifactDetail(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_s3locationHasBeenSet(false)
+ArtifactDetail::ArtifactDetail(JsonView jsonValue)
+  : ArtifactDetail()
 {
   *this = jsonValue;
 }

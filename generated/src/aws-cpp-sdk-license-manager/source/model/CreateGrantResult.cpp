@@ -22,8 +22,8 @@ CreateGrantResult::CreateGrantResult() :
 {
 }
 
-CreateGrantResult::CreateGrantResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(GrantStatus::NOT_SET)
+CreateGrantResult::CreateGrantResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateGrantResult()
 {
   *this = result;
 }

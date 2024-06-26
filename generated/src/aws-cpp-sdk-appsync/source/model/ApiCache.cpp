@@ -36,21 +36,8 @@ ApiCache::ApiCache() :
 {
 }
 
-ApiCache::ApiCache(JsonView jsonValue) : 
-    m_ttl(0),
-    m_ttlHasBeenSet(false),
-    m_apiCachingBehavior(ApiCachingBehavior::NOT_SET),
-    m_apiCachingBehaviorHasBeenSet(false),
-    m_transitEncryptionEnabled(false),
-    m_transitEncryptionEnabledHasBeenSet(false),
-    m_atRestEncryptionEnabled(false),
-    m_atRestEncryptionEnabledHasBeenSet(false),
-    m_type(ApiCacheType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_status(ApiCacheStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_healthMetricsConfig(CacheHealthMetricsConfig::NOT_SET),
-    m_healthMetricsConfigHasBeenSet(false)
+ApiCache::ApiCache(JsonView jsonValue)
+  : ApiCache()
 {
   *this = jsonValue;
 }

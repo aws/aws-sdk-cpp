@@ -27,10 +27,8 @@ RollbackConfiguration::RollbackConfiguration() :
 {
 }
 
-RollbackConfiguration::RollbackConfiguration(const XmlNode& xmlNode) : 
-    m_rollbackTriggersHasBeenSet(false),
-    m_monitoringTimeInMinutes(0),
-    m_monitoringTimeInMinutesHasBeenSet(false)
+RollbackConfiguration::RollbackConfiguration(const XmlNode& xmlNode)
+  : RollbackConfiguration()
 {
   *this = xmlNode;
 }

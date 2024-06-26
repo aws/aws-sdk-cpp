@@ -24,9 +24,8 @@ RegisteredUserQuickSightConsoleEmbeddingConfiguration::RegisteredUserQuickSightC
 {
 }
 
-RegisteredUserQuickSightConsoleEmbeddingConfiguration::RegisteredUserQuickSightConsoleEmbeddingConfiguration(JsonView jsonValue) : 
-    m_initialPathHasBeenSet(false),
-    m_featureConfigurationsHasBeenSet(false)
+RegisteredUserQuickSightConsoleEmbeddingConfiguration::RegisteredUserQuickSightConsoleEmbeddingConfiguration(JsonView jsonValue)
+  : RegisteredUserQuickSightConsoleEmbeddingConfiguration()
 {
   *this = jsonValue;
 }

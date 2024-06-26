@@ -34,17 +34,8 @@ OptionGroupOptionSetting::OptionGroupOptionSetting() :
 {
 }
 
-OptionGroupOptionSetting::OptionGroupOptionSetting(const XmlNode& xmlNode) : 
-    m_settingNameHasBeenSet(false),
-    m_settingDescriptionHasBeenSet(false),
-    m_defaultValueHasBeenSet(false),
-    m_applyTypeHasBeenSet(false),
-    m_allowedValuesHasBeenSet(false),
-    m_isModifiable(false),
-    m_isModifiableHasBeenSet(false),
-    m_isRequired(false),
-    m_isRequiredHasBeenSet(false),
-    m_minimumEngineVersionPerAllowedValueHasBeenSet(false)
+OptionGroupOptionSetting::OptionGroupOptionSetting(const XmlNode& xmlNode)
+  : OptionGroupOptionSetting()
 {
   *this = xmlNode;
 }

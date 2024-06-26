@@ -26,11 +26,8 @@ SimpleRule::SimpleRule() :
 {
 }
 
-SimpleRule::SimpleRule(JsonView jsonValue) : 
-    m_inputPropertyHasBeenSet(false),
-    m_comparisonOperator(ComparisonOperator::NOT_SET),
-    m_comparisonOperatorHasBeenSet(false),
-    m_thresholdHasBeenSet(false)
+SimpleRule::SimpleRule(JsonView jsonValue)
+  : SimpleRule()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ CloudwatchAlarmAction::CloudwatchAlarmAction() :
 {
 }
 
-CloudwatchAlarmAction::CloudwatchAlarmAction(JsonView jsonValue) : 
-    m_roleArnHasBeenSet(false),
-    m_alarmNameHasBeenSet(false),
-    m_stateReasonHasBeenSet(false),
-    m_stateValueHasBeenSet(false)
+CloudwatchAlarmAction::CloudwatchAlarmAction(JsonView jsonValue)
+  : CloudwatchAlarmAction()
 {
   *this = jsonValue;
 }

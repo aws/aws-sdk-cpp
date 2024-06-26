@@ -25,10 +25,8 @@ DataIntegrationSummary::DataIntegrationSummary() :
 {
 }
 
-DataIntegrationSummary::DataIntegrationSummary(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_sourceURIHasBeenSet(false)
+DataIntegrationSummary::DataIntegrationSummary(JsonView jsonValue)
+  : DataIntegrationSummary()
 {
   *this = jsonValue;
 }

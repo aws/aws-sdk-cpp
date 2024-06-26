@@ -24,9 +24,8 @@ FMSPolicyUpdateFirewallCreationConfigAction::FMSPolicyUpdateFirewallCreationConf
 {
 }
 
-FMSPolicyUpdateFirewallCreationConfigAction::FMSPolicyUpdateFirewallCreationConfigAction(JsonView jsonValue) : 
-    m_descriptionHasBeenSet(false),
-    m_firewallCreationConfigHasBeenSet(false)
+FMSPolicyUpdateFirewallCreationConfigAction::FMSPolicyUpdateFirewallCreationConfigAction(JsonView jsonValue)
+  : FMSPolicyUpdateFirewallCreationConfigAction()
 {
   *this = jsonValue;
 }

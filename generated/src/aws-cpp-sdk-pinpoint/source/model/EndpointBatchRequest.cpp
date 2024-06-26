@@ -23,8 +23,8 @@ EndpointBatchRequest::EndpointBatchRequest() :
 {
 }
 
-EndpointBatchRequest::EndpointBatchRequest(JsonView jsonValue) : 
-    m_itemHasBeenSet(false)
+EndpointBatchRequest::EndpointBatchRequest(JsonView jsonValue)
+  : EndpointBatchRequest()
 {
   *this = jsonValue;
 }

@@ -31,16 +31,8 @@ HeatMapConfiguration::HeatMapConfiguration() :
 {
 }
 
-HeatMapConfiguration::HeatMapConfiguration(JsonView jsonValue) : 
-    m_fieldWellsHasBeenSet(false),
-    m_sortConfigurationHasBeenSet(false),
-    m_rowLabelOptionsHasBeenSet(false),
-    m_columnLabelOptionsHasBeenSet(false),
-    m_colorScaleHasBeenSet(false),
-    m_legendHasBeenSet(false),
-    m_dataLabelsHasBeenSet(false),
-    m_tooltipHasBeenSet(false),
-    m_interactionsHasBeenSet(false)
+HeatMapConfiguration::HeatMapConfiguration(JsonView jsonValue)
+  : HeatMapConfiguration()
 {
   *this = jsonValue;
 }

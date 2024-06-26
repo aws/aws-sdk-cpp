@@ -24,9 +24,8 @@ ReplayDestination::ReplayDestination() :
 {
 }
 
-ReplayDestination::ReplayDestination(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_filterArnsHasBeenSet(false)
+ReplayDestination::ReplayDestination(JsonView jsonValue)
+  : ReplayDestination()
 {
   *this = jsonValue;
 }

@@ -27,12 +27,8 @@ AnalysisSearchFilter::AnalysisSearchFilter() :
 {
 }
 
-AnalysisSearchFilter::AnalysisSearchFilter(JsonView jsonValue) : 
-    m_operator(FilterOperator::NOT_SET),
-    m_operatorHasBeenSet(false),
-    m_name(AnalysisFilterAttribute::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
+AnalysisSearchFilter::AnalysisSearchFilter(JsonView jsonValue)
+  : AnalysisSearchFilter()
 {
   *this = jsonValue;
 }

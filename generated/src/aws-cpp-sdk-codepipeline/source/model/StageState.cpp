@@ -28,13 +28,8 @@ StageState::StageState() :
 {
 }
 
-StageState::StageState(JsonView jsonValue) : 
-    m_stageNameHasBeenSet(false),
-    m_inboundExecutionHasBeenSet(false),
-    m_inboundExecutionsHasBeenSet(false),
-    m_inboundTransitionStateHasBeenSet(false),
-    m_actionStatesHasBeenSet(false),
-    m_latestExecutionHasBeenSet(false)
+StageState::StageState(JsonView jsonValue)
+  : StageState()
 {
   *this = jsonValue;
 }

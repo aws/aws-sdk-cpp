@@ -25,10 +25,8 @@ CalculatedColumn::CalculatedColumn() :
 {
 }
 
-CalculatedColumn::CalculatedColumn(JsonView jsonValue) : 
-    m_columnNameHasBeenSet(false),
-    m_columnIdHasBeenSet(false),
-    m_expressionHasBeenSet(false)
+CalculatedColumn::CalculatedColumn(JsonView jsonValue)
+  : CalculatedColumn()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ DateTimeHierarchy::DateTimeHierarchy() :
 {
 }
 
-DateTimeHierarchy::DateTimeHierarchy(JsonView jsonValue) : 
-    m_hierarchyIdHasBeenSet(false),
-    m_drillDownFiltersHasBeenSet(false)
+DateTimeHierarchy::DateTimeHierarchy(JsonView jsonValue)
+  : DateTimeHierarchy()
 {
   *this = jsonValue;
 }

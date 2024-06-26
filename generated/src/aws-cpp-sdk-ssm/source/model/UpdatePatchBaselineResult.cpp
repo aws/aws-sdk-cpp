@@ -25,11 +25,8 @@ UpdatePatchBaselineResult::UpdatePatchBaselineResult() :
 {
 }
 
-UpdatePatchBaselineResult::UpdatePatchBaselineResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_operatingSystem(OperatingSystem::NOT_SET),
-    m_approvedPatchesComplianceLevel(PatchComplianceLevel::NOT_SET),
-    m_approvedPatchesEnableNonSecurity(false),
-    m_rejectedPatchesAction(PatchAction::NOT_SET)
+UpdatePatchBaselineResult::UpdatePatchBaselineResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdatePatchBaselineResult()
 {
   *this = result;
 }

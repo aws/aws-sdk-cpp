@@ -23,8 +23,8 @@ AgentDetails::AgentDetails() :
 {
 }
 
-AgentDetails::AgentDetails(JsonView jsonValue) : 
-    m_versionHasBeenSet(false)
+AgentDetails::AgentDetails(JsonView jsonValue)
+  : AgentDetails()
 {
   *this = jsonValue;
 }

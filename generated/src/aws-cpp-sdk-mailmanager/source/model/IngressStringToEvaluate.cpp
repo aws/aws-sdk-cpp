@@ -24,9 +24,8 @@ IngressStringToEvaluate::IngressStringToEvaluate() :
 {
 }
 
-IngressStringToEvaluate::IngressStringToEvaluate(JsonView jsonValue) : 
-    m_attribute(IngressStringEmailAttribute::NOT_SET),
-    m_attributeHasBeenSet(false)
+IngressStringToEvaluate::IngressStringToEvaluate(JsonView jsonValue)
+  : IngressStringToEvaluate()
 {
   *this = jsonValue;
 }

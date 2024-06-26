@@ -26,11 +26,8 @@ ChatEvent::ChatEvent() :
 {
 }
 
-ChatEvent::ChatEvent(JsonView jsonValue) : 
-    m_type(ChatEventType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_contentTypeHasBeenSet(false),
-    m_contentHasBeenSet(false)
+ChatEvent::ChatEvent(JsonView jsonValue)
+  : ChatEvent()
 {
   *this = jsonValue;
 }

@@ -27,10 +27,8 @@ AccessScopePath::AccessScopePath() :
 {
 }
 
-AccessScopePath::AccessScopePath(const XmlNode& xmlNode) : 
-    m_sourceHasBeenSet(false),
-    m_destinationHasBeenSet(false),
-    m_throughResourcesHasBeenSet(false)
+AccessScopePath::AccessScopePath(const XmlNode& xmlNode)
+  : AccessScopePath()
 {
   *this = xmlNode;
 }

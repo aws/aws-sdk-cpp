@@ -22,8 +22,8 @@ ModifyVpcEndpointServiceConfigurationResponse::ModifyVpcEndpointServiceConfigura
 {
 }
 
-ModifyVpcEndpointServiceConfigurationResponse::ModifyVpcEndpointServiceConfigurationResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_return(false)
+ModifyVpcEndpointServiceConfigurationResponse::ModifyVpcEndpointServiceConfigurationResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : ModifyVpcEndpointServiceConfigurationResponse()
 {
   *this = result;
 }

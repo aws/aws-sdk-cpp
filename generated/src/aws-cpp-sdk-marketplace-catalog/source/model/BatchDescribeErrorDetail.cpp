@@ -24,9 +24,8 @@ BatchDescribeErrorDetail::BatchDescribeErrorDetail() :
 {
 }
 
-BatchDescribeErrorDetail::BatchDescribeErrorDetail(JsonView jsonValue) : 
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
+BatchDescribeErrorDetail::BatchDescribeErrorDetail(JsonView jsonValue)
+  : BatchDescribeErrorDetail()
 {
   *this = jsonValue;
 }

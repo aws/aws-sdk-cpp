@@ -22,8 +22,8 @@ DescribeInferenceComponentResult::DescribeInferenceComponentResult() :
 {
 }
 
-DescribeInferenceComponentResult::DescribeInferenceComponentResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_inferenceComponentStatus(InferenceComponentStatus::NOT_SET)
+DescribeInferenceComponentResult::DescribeInferenceComponentResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeInferenceComponentResult()
 {
   *this = result;
 }

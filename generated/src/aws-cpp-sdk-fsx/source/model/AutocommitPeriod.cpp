@@ -26,11 +26,8 @@ AutocommitPeriod::AutocommitPeriod() :
 {
 }
 
-AutocommitPeriod::AutocommitPeriod(JsonView jsonValue) : 
-    m_type(AutocommitPeriodType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_value(0),
-    m_valueHasBeenSet(false)
+AutocommitPeriod::AutocommitPeriod(JsonView jsonValue)
+  : AutocommitPeriod()
 {
   *this = jsonValue;
 }

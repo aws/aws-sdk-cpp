@@ -23,8 +23,8 @@ ScatterPlotSortConfiguration::ScatterPlotSortConfiguration() :
 {
 }
 
-ScatterPlotSortConfiguration::ScatterPlotSortConfiguration(JsonView jsonValue) : 
-    m_scatterPlotLimitConfigurationHasBeenSet(false)
+ScatterPlotSortConfiguration::ScatterPlotSortConfiguration(JsonView jsonValue)
+  : ScatterPlotSortConfiguration()
 {
   *this = jsonValue;
 }

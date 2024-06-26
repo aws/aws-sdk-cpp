@@ -24,9 +24,8 @@ LifecyclePolicyDetailExclusionRules::LifecyclePolicyDetailExclusionRules() :
 {
 }
 
-LifecyclePolicyDetailExclusionRules::LifecyclePolicyDetailExclusionRules(JsonView jsonValue) : 
-    m_tagMapHasBeenSet(false),
-    m_amisHasBeenSet(false)
+LifecyclePolicyDetailExclusionRules::LifecyclePolicyDetailExclusionRules(JsonView jsonValue)
+  : LifecyclePolicyDetailExclusionRules()
 {
   *this = jsonValue;
 }

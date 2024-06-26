@@ -27,12 +27,8 @@ TelemetryMetadata::TelemetryMetadata() :
 {
 }
 
-TelemetryMetadata::TelemetryMetadata(JsonView jsonValue) : 
-    m_messageTypeHasBeenSet(false),
-    m_count(0),
-    m_countHasBeenSet(false),
-    m_dataSize(0),
-    m_dataSizeHasBeenSet(false)
+TelemetryMetadata::TelemetryMetadata(JsonView jsonValue)
+  : TelemetryMetadata()
 {
   *this = jsonValue;
 }

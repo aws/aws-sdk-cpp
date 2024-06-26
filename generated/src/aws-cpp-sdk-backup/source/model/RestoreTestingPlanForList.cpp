@@ -31,16 +31,8 @@ RestoreTestingPlanForList::RestoreTestingPlanForList() :
 {
 }
 
-RestoreTestingPlanForList::RestoreTestingPlanForList(JsonView jsonValue) : 
-    m_creationTimeHasBeenSet(false),
-    m_lastExecutionTimeHasBeenSet(false),
-    m_lastUpdateTimeHasBeenSet(false),
-    m_restoreTestingPlanArnHasBeenSet(false),
-    m_restoreTestingPlanNameHasBeenSet(false),
-    m_scheduleExpressionHasBeenSet(false),
-    m_scheduleExpressionTimezoneHasBeenSet(false),
-    m_startWindowHours(0),
-    m_startWindowHoursHasBeenSet(false)
+RestoreTestingPlanForList::RestoreTestingPlanForList(JsonView jsonValue)
+  : RestoreTestingPlanForList()
 {
   *this = jsonValue;
 }

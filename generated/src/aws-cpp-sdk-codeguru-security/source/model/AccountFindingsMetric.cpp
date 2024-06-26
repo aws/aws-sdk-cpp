@@ -27,12 +27,8 @@ AccountFindingsMetric::AccountFindingsMetric() :
 {
 }
 
-AccountFindingsMetric::AccountFindingsMetric(JsonView jsonValue) : 
-    m_closedFindingsHasBeenSet(false),
-    m_dateHasBeenSet(false),
-    m_meanTimeToCloseHasBeenSet(false),
-    m_newFindingsHasBeenSet(false),
-    m_openFindingsHasBeenSet(false)
+AccountFindingsMetric::AccountFindingsMetric(JsonView jsonValue)
+  : AccountFindingsMetric()
 {
   *this = jsonValue;
 }

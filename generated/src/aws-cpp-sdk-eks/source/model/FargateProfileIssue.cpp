@@ -26,11 +26,8 @@ FargateProfileIssue::FargateProfileIssue() :
 {
 }
 
-FargateProfileIssue::FargateProfileIssue(JsonView jsonValue) : 
-    m_code(FargateProfileIssueCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_resourceIdsHasBeenSet(false)
+FargateProfileIssue::FargateProfileIssue(JsonView jsonValue)
+  : FargateProfileIssue()
 {
   *this = jsonValue;
 }

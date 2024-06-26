@@ -27,12 +27,8 @@ ParticipantTokenConfiguration::ParticipantTokenConfiguration() :
 {
 }
 
-ParticipantTokenConfiguration::ParticipantTokenConfiguration(JsonView jsonValue) : 
-    m_duration(0),
-    m_durationHasBeenSet(false),
-    m_userIdHasBeenSet(false),
-    m_attributesHasBeenSet(false),
-    m_capabilitiesHasBeenSet(false)
+ParticipantTokenConfiguration::ParticipantTokenConfiguration(JsonView jsonValue)
+  : ParticipantTokenConfiguration()
 {
   *this = jsonValue;
 }

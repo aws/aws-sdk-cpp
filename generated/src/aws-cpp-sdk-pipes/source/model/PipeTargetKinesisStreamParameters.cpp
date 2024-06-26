@@ -23,8 +23,8 @@ PipeTargetKinesisStreamParameters::PipeTargetKinesisStreamParameters() :
 {
 }
 
-PipeTargetKinesisStreamParameters::PipeTargetKinesisStreamParameters(JsonView jsonValue) : 
-    m_partitionKeyHasBeenSet(false)
+PipeTargetKinesisStreamParameters::PipeTargetKinesisStreamParameters(JsonView jsonValue)
+  : PipeTargetKinesisStreamParameters()
 {
   *this = jsonValue;
 }

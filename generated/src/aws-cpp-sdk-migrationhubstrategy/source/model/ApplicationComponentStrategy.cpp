@@ -27,12 +27,8 @@ ApplicationComponentStrategy::ApplicationComponentStrategy() :
 {
 }
 
-ApplicationComponentStrategy::ApplicationComponentStrategy(JsonView jsonValue) : 
-    m_isPreferred(false),
-    m_isPreferredHasBeenSet(false),
-    m_recommendationHasBeenSet(false),
-    m_status(StrategyRecommendation::NOT_SET),
-    m_statusHasBeenSet(false)
+ApplicationComponentStrategy::ApplicationComponentStrategy(JsonView jsonValue)
+  : ApplicationComponentStrategy()
 {
   *this = jsonValue;
 }

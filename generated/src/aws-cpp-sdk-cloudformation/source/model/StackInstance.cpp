@@ -38,21 +38,8 @@ StackInstance::StackInstance() :
 {
 }
 
-StackInstance::StackInstance(const XmlNode& xmlNode) : 
-    m_stackSetIdHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_accountHasBeenSet(false),
-    m_stackIdHasBeenSet(false),
-    m_parameterOverridesHasBeenSet(false),
-    m_status(StackInstanceStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_stackInstanceStatusHasBeenSet(false),
-    m_statusReasonHasBeenSet(false),
-    m_organizationalUnitIdHasBeenSet(false),
-    m_driftStatus(StackDriftStatus::NOT_SET),
-    m_driftStatusHasBeenSet(false),
-    m_lastDriftCheckTimestampHasBeenSet(false),
-    m_lastOperationIdHasBeenSet(false)
+StackInstance::StackInstance(const XmlNode& xmlNode)
+  : StackInstance()
 {
   *this = xmlNode;
 }

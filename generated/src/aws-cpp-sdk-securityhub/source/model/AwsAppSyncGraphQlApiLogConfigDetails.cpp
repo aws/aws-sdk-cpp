@@ -26,11 +26,8 @@ AwsAppSyncGraphQlApiLogConfigDetails::AwsAppSyncGraphQlApiLogConfigDetails() :
 {
 }
 
-AwsAppSyncGraphQlApiLogConfigDetails::AwsAppSyncGraphQlApiLogConfigDetails(JsonView jsonValue) : 
-    m_cloudWatchLogsRoleArnHasBeenSet(false),
-    m_excludeVerboseContent(false),
-    m_excludeVerboseContentHasBeenSet(false),
-    m_fieldLogLevelHasBeenSet(false)
+AwsAppSyncGraphQlApiLogConfigDetails::AwsAppSyncGraphQlApiLogConfigDetails(JsonView jsonValue)
+  : AwsAppSyncGraphQlApiLogConfigDetails()
 {
   *this = jsonValue;
 }

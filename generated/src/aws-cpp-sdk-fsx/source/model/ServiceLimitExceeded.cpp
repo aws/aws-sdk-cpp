@@ -25,10 +25,8 @@ ServiceLimitExceeded::ServiceLimitExceeded() :
 {
 }
 
-ServiceLimitExceeded::ServiceLimitExceeded(JsonView jsonValue) : 
-    m_limit(ServiceLimit::NOT_SET),
-    m_limitHasBeenSet(false),
-    m_messageHasBeenSet(false)
+ServiceLimitExceeded::ServiceLimitExceeded(JsonView jsonValue)
+  : ServiceLimitExceeded()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ Edge::Edge() :
 {
 }
 
-Edge::Edge(JsonView jsonValue) : 
-    m_sourceIdHasBeenSet(false),
-    m_destinationIdHasBeenSet(false)
+Edge::Edge(JsonView jsonValue)
+  : Edge()
 {
   *this = jsonValue;
 }

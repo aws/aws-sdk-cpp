@@ -27,12 +27,8 @@ ModifyingProperties::ModifyingProperties() :
 {
 }
 
-ModifyingProperties::ModifyingProperties(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_activeValueHasBeenSet(false),
-    m_pendingValueHasBeenSet(false),
-    m_valueType(PropertyValueType::NOT_SET),
-    m_valueTypeHasBeenSet(false)
+ModifyingProperties::ModifyingProperties(JsonView jsonValue)
+  : ModifyingProperties()
 {
   *this = jsonValue;
 }

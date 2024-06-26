@@ -24,9 +24,8 @@ Filter::Filter() :
 {
 }
 
-Filter::Filter(JsonView jsonValue) : 
-    m_attributeHasBeenSet(false),
-    m_valueHasBeenSet(false)
+Filter::Filter(JsonView jsonValue)
+  : Filter()
 {
   *this = jsonValue;
 }

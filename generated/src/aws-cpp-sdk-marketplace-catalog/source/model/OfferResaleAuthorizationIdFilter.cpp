@@ -23,8 +23,8 @@ OfferResaleAuthorizationIdFilter::OfferResaleAuthorizationIdFilter() :
 {
 }
 
-OfferResaleAuthorizationIdFilter::OfferResaleAuthorizationIdFilter(JsonView jsonValue) : 
-    m_valueListHasBeenSet(false)
+OfferResaleAuthorizationIdFilter::OfferResaleAuthorizationIdFilter(JsonView jsonValue)
+  : OfferResaleAuthorizationIdFilter()
 {
   *this = jsonValue;
 }

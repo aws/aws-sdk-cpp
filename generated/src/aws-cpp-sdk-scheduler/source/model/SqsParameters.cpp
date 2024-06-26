@@ -23,8 +23,8 @@ SqsParameters::SqsParameters() :
 {
 }
 
-SqsParameters::SqsParameters(JsonView jsonValue) : 
-    m_messageGroupIdHasBeenSet(false)
+SqsParameters::SqsParameters(JsonView jsonValue)
+  : SqsParameters()
 {
   *this = jsonValue;
 }

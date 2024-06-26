@@ -26,11 +26,8 @@ AmiProductSort::AmiProductSort() :
 {
 }
 
-AmiProductSort::AmiProductSort(JsonView jsonValue) : 
-    m_sortBy(AmiProductSortBy::NOT_SET),
-    m_sortByHasBeenSet(false),
-    m_sortOrder(SortOrder::NOT_SET),
-    m_sortOrderHasBeenSet(false)
+AmiProductSort::AmiProductSort(JsonView jsonValue)
+  : AmiProductSort()
 {
   *this = jsonValue;
 }

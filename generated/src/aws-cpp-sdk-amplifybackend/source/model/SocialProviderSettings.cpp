@@ -26,11 +26,8 @@ SocialProviderSettings::SocialProviderSettings() :
 {
 }
 
-SocialProviderSettings::SocialProviderSettings(JsonView jsonValue) : 
-    m_facebookHasBeenSet(false),
-    m_googleHasBeenSet(false),
-    m_loginWithAmazonHasBeenSet(false),
-    m_signInWithAppleHasBeenSet(false)
+SocialProviderSettings::SocialProviderSettings(JsonView jsonValue)
+  : SocialProviderSettings()
 {
   *this = jsonValue;
 }

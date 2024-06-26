@@ -32,17 +32,8 @@ Script::Script() :
 {
 }
 
-Script::Script(JsonView jsonValue) : 
-    m_stagesHasBeenSet(false),
-    m_executionHandlerService(ExecutionHandlerServiceValues::NOT_SET),
-    m_executionHandlerServiceHasBeenSet(false),
-    m_executionHandlerHasBeenSet(false),
-    m_executeOperationOnScriptFailure(false),
-    m_executeOperationOnScriptFailureHasBeenSet(false),
-    m_executionTimeout(0),
-    m_executionTimeoutHasBeenSet(false),
-    m_maximumRetryCount(0),
-    m_maximumRetryCountHasBeenSet(false)
+Script::Script(JsonView jsonValue)
+  : Script()
 {
   *this = jsonValue;
 }

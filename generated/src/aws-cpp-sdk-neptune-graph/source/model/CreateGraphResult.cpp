@@ -26,12 +26,8 @@ CreateGraphResult::CreateGraphResult() :
 {
 }
 
-CreateGraphResult::CreateGraphResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(GraphStatus::NOT_SET),
-    m_provisionedMemory(0),
-    m_publicConnectivity(false),
-    m_replicaCount(0),
-    m_deletionProtection(false)
+CreateGraphResult::CreateGraphResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateGraphResult()
 {
   *this = result;
 }

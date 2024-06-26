@@ -35,20 +35,8 @@ FraudsterRegistrationJob::FraudsterRegistrationJob() :
 {
 }
 
-FraudsterRegistrationJob::FraudsterRegistrationJob(JsonView jsonValue) : 
-    m_createdAtHasBeenSet(false),
-    m_dataAccessRoleArnHasBeenSet(false),
-    m_domainIdHasBeenSet(false),
-    m_endedAtHasBeenSet(false),
-    m_failureDetailsHasBeenSet(false),
-    m_inputDataConfigHasBeenSet(false),
-    m_jobIdHasBeenSet(false),
-    m_jobNameHasBeenSet(false),
-    m_jobProgressHasBeenSet(false),
-    m_jobStatus(FraudsterRegistrationJobStatus::NOT_SET),
-    m_jobStatusHasBeenSet(false),
-    m_outputDataConfigHasBeenSet(false),
-    m_registrationConfigHasBeenSet(false)
+FraudsterRegistrationJob::FraudsterRegistrationJob(JsonView jsonValue)
+  : FraudsterRegistrationJob()
 {
   *this = jsonValue;
 }

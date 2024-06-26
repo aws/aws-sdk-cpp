@@ -28,13 +28,8 @@ InvalidLayerPartException::InvalidLayerPartException() :
 {
 }
 
-InvalidLayerPartException::InvalidLayerPartException(JsonView jsonValue) : 
-    m_registryIdHasBeenSet(false),
-    m_repositoryNameHasBeenSet(false),
-    m_uploadIdHasBeenSet(false),
-    m_lastValidByteReceived(0),
-    m_lastValidByteReceivedHasBeenSet(false),
-    m_messageHasBeenSet(false)
+InvalidLayerPartException::InvalidLayerPartException(JsonView jsonValue)
+  : InvalidLayerPartException()
 {
   *this = jsonValue;
 }

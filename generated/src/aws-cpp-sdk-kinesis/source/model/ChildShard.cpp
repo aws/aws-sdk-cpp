@@ -25,10 +25,8 @@ ChildShard::ChildShard() :
 {
 }
 
-ChildShard::ChildShard(JsonView jsonValue) : 
-    m_shardIdHasBeenSet(false),
-    m_parentShardsHasBeenSet(false),
-    m_hashKeyRangeHasBeenSet(false)
+ChildShard::ChildShard(JsonView jsonValue)
+  : ChildShard()
 {
   *this = jsonValue;
 }

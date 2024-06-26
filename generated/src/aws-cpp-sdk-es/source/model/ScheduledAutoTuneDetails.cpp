@@ -28,13 +28,8 @@ ScheduledAutoTuneDetails::ScheduledAutoTuneDetails() :
 {
 }
 
-ScheduledAutoTuneDetails::ScheduledAutoTuneDetails(JsonView jsonValue) : 
-    m_dateHasBeenSet(false),
-    m_actionType(ScheduledAutoTuneActionType::NOT_SET),
-    m_actionTypeHasBeenSet(false),
-    m_actionHasBeenSet(false),
-    m_severity(ScheduledAutoTuneSeverityType::NOT_SET),
-    m_severityHasBeenSet(false)
+ScheduledAutoTuneDetails::ScheduledAutoTuneDetails(JsonView jsonValue)
+  : ScheduledAutoTuneDetails()
 {
   *this = jsonValue;
 }

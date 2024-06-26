@@ -27,12 +27,8 @@ EdgeOutputConfig::EdgeOutputConfig() :
 {
 }
 
-EdgeOutputConfig::EdgeOutputConfig(JsonView jsonValue) : 
-    m_s3OutputLocationHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_presetDeploymentType(EdgePresetDeploymentType::NOT_SET),
-    m_presetDeploymentTypeHasBeenSet(false),
-    m_presetDeploymentConfigHasBeenSet(false)
+EdgeOutputConfig::EdgeOutputConfig(JsonView jsonValue)
+  : EdgeOutputConfig()
 {
   *this = jsonValue;
 }

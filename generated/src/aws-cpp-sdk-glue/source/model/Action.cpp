@@ -29,14 +29,8 @@ Action::Action() :
 {
 }
 
-Action::Action(JsonView jsonValue) : 
-    m_jobNameHasBeenSet(false),
-    m_argumentsHasBeenSet(false),
-    m_timeout(0),
-    m_timeoutHasBeenSet(false),
-    m_securityConfigurationHasBeenSet(false),
-    m_notificationPropertyHasBeenSet(false),
-    m_crawlerNameHasBeenSet(false)
+Action::Action(JsonView jsonValue)
+  : Action()
 {
   *this = jsonValue;
 }

@@ -36,21 +36,8 @@ Session::Session() :
 {
 }
 
-Session::Session(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_userIdHasBeenSet(false),
-    m_stackNameHasBeenSet(false),
-    m_fleetNameHasBeenSet(false),
-    m_state(SessionState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_connectionState(SessionConnectionState::NOT_SET),
-    m_connectionStateHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_maxExpirationTimeHasBeenSet(false),
-    m_authenticationType(AuthenticationType::NOT_SET),
-    m_authenticationTypeHasBeenSet(false),
-    m_networkAccessConfigurationHasBeenSet(false),
-    m_instanceIdHasBeenSet(false)
+Session::Session(JsonView jsonValue)
+  : Session()
 {
   *this = jsonValue;
 }

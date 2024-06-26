@@ -26,11 +26,8 @@ SmallMultiplesAxisProperties::SmallMultiplesAxisProperties() :
 {
 }
 
-SmallMultiplesAxisProperties::SmallMultiplesAxisProperties(JsonView jsonValue) : 
-    m_scale(SmallMultiplesAxisScale::NOT_SET),
-    m_scaleHasBeenSet(false),
-    m_placement(SmallMultiplesAxisPlacement::NOT_SET),
-    m_placementHasBeenSet(false)
+SmallMultiplesAxisProperties::SmallMultiplesAxisProperties(JsonView jsonValue)
+  : SmallMultiplesAxisProperties()
 {
   *this = jsonValue;
 }

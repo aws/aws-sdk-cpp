@@ -28,13 +28,8 @@ LifecyclePolicyPreviewResult::LifecyclePolicyPreviewResult() :
 {
 }
 
-LifecyclePolicyPreviewResult::LifecyclePolicyPreviewResult(JsonView jsonValue) : 
-    m_imageTagsHasBeenSet(false),
-    m_imageDigestHasBeenSet(false),
-    m_imagePushedAtHasBeenSet(false),
-    m_actionHasBeenSet(false),
-    m_appliedRulePriority(0),
-    m_appliedRulePriorityHasBeenSet(false)
+LifecyclePolicyPreviewResult::LifecyclePolicyPreviewResult(JsonView jsonValue)
+  : LifecyclePolicyPreviewResult()
 {
   *this = jsonValue;
 }

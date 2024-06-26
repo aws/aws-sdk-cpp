@@ -29,12 +29,8 @@ SourceBuildInformation::SourceBuildInformation() :
 {
 }
 
-SourceBuildInformation::SourceBuildInformation(const XmlNode& xmlNode) : 
-    m_sourceType(SourceType::NOT_SET),
-    m_sourceTypeHasBeenSet(false),
-    m_sourceRepository(SourceRepository::NOT_SET),
-    m_sourceRepositoryHasBeenSet(false),
-    m_sourceLocationHasBeenSet(false)
+SourceBuildInformation::SourceBuildInformation(const XmlNode& xmlNode)
+  : SourceBuildInformation()
 {
   *this = xmlNode;
 }

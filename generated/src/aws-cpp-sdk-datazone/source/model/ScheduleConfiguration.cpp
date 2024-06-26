@@ -25,10 +25,8 @@ ScheduleConfiguration::ScheduleConfiguration() :
 {
 }
 
-ScheduleConfiguration::ScheduleConfiguration(JsonView jsonValue) : 
-    m_scheduleHasBeenSet(false),
-    m_timezone(Timezone::NOT_SET),
-    m_timezoneHasBeenSet(false)
+ScheduleConfiguration::ScheduleConfiguration(JsonView jsonValue)
+  : ScheduleConfiguration()
 {
   *this = jsonValue;
 }

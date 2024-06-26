@@ -23,9 +23,8 @@ GetFindingsFilterResult::GetFindingsFilterResult() :
 {
 }
 
-GetFindingsFilterResult::GetFindingsFilterResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_action(FindingsFilterAction::NOT_SET),
-    m_position(0)
+GetFindingsFilterResult::GetFindingsFilterResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetFindingsFilterResult()
 {
   *this = result;
 }

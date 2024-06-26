@@ -36,21 +36,8 @@ LensReview::LensReview() :
 {
 }
 
-LensReview::LensReview(JsonView jsonValue) : 
-    m_lensAliasHasBeenSet(false),
-    m_lensArnHasBeenSet(false),
-    m_lensVersionHasBeenSet(false),
-    m_lensNameHasBeenSet(false),
-    m_lensStatus(LensStatus::NOT_SET),
-    m_lensStatusHasBeenSet(false),
-    m_pillarReviewSummariesHasBeenSet(false),
-    m_jiraConfigurationHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_notesHasBeenSet(false),
-    m_riskCountsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_profilesHasBeenSet(false),
-    m_prioritizedRiskCountsHasBeenSet(false)
+LensReview::LensReview(JsonView jsonValue)
+  : LensReview()
 {
   *this = jsonValue;
 }

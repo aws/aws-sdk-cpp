@@ -24,9 +24,8 @@ ForbiddenException::ForbiddenException() :
 {
 }
 
-ForbiddenException::ForbiddenException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_requestIDHasBeenSet(false)
+ForbiddenException::ForbiddenException(JsonView jsonValue)
+  : ForbiddenException()
 {
   *this = jsonValue;
 }

@@ -37,22 +37,8 @@ RtmpGroupSettings::RtmpGroupSettings() :
 {
 }
 
-RtmpGroupSettings::RtmpGroupSettings(JsonView jsonValue) : 
-    m_adMarkersHasBeenSet(false),
-    m_authenticationScheme(AuthenticationScheme::NOT_SET),
-    m_authenticationSchemeHasBeenSet(false),
-    m_cacheFullBehavior(RtmpCacheFullBehavior::NOT_SET),
-    m_cacheFullBehaviorHasBeenSet(false),
-    m_cacheLength(0),
-    m_cacheLengthHasBeenSet(false),
-    m_captionData(RtmpCaptionData::NOT_SET),
-    m_captionDataHasBeenSet(false),
-    m_inputLossAction(InputLossActionForRtmpOut::NOT_SET),
-    m_inputLossActionHasBeenSet(false),
-    m_restartDelay(0),
-    m_restartDelayHasBeenSet(false),
-    m_includeFillerNalUnits(IncludeFillerNalUnits::NOT_SET),
-    m_includeFillerNalUnitsHasBeenSet(false)
+RtmpGroupSettings::RtmpGroupSettings(JsonView jsonValue)
+  : RtmpGroupSettings()
 {
   *this = jsonValue;
 }

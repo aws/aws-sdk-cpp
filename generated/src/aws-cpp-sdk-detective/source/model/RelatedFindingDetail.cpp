@@ -25,10 +25,8 @@ RelatedFindingDetail::RelatedFindingDetail() :
 {
 }
 
-RelatedFindingDetail::RelatedFindingDetail(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_ipAddressHasBeenSet(false)
+RelatedFindingDetail::RelatedFindingDetail(JsonView jsonValue)
+  : RelatedFindingDetail()
 {
   *this = jsonValue;
 }

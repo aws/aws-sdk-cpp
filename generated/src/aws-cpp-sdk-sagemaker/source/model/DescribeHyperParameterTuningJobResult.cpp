@@ -22,8 +22,8 @@ DescribeHyperParameterTuningJobResult::DescribeHyperParameterTuningJobResult() :
 {
 }
 
-DescribeHyperParameterTuningJobResult::DescribeHyperParameterTuningJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_hyperParameterTuningJobStatus(HyperParameterTuningJobStatus::NOT_SET)
+DescribeHyperParameterTuningJobResult::DescribeHyperParameterTuningJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeHyperParameterTuningJobResult()
 {
   *this = result;
 }

@@ -25,8 +25,8 @@ SupportedPlatform::SupportedPlatform() :
 {
 }
 
-SupportedPlatform::SupportedPlatform(const XmlNode& xmlNode) : 
-    m_nameHasBeenSet(false)
+SupportedPlatform::SupportedPlatform(const XmlNode& xmlNode)
+  : SupportedPlatform()
 {
   *this = xmlNode;
 }

@@ -37,20 +37,8 @@ LocalGatewayRoute::LocalGatewayRoute() :
 {
 }
 
-LocalGatewayRoute::LocalGatewayRoute(const XmlNode& xmlNode) : 
-    m_destinationCidrBlockHasBeenSet(false),
-    m_localGatewayVirtualInterfaceGroupIdHasBeenSet(false),
-    m_type(LocalGatewayRouteType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_state(LocalGatewayRouteState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_localGatewayRouteTableIdHasBeenSet(false),
-    m_localGatewayRouteTableArnHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_subnetIdHasBeenSet(false),
-    m_coipPoolIdHasBeenSet(false),
-    m_networkInterfaceIdHasBeenSet(false),
-    m_destinationPrefixListIdHasBeenSet(false)
+LocalGatewayRoute::LocalGatewayRoute(const XmlNode& xmlNode)
+  : LocalGatewayRoute()
 {
   *this = xmlNode;
 }

@@ -25,10 +25,8 @@ DatastoreStorage::DatastoreStorage() :
 {
 }
 
-DatastoreStorage::DatastoreStorage(JsonView jsonValue) : 
-    m_serviceManagedS3HasBeenSet(false),
-    m_customerManagedS3HasBeenSet(false),
-    m_iotSiteWiseMultiLayerStorageHasBeenSet(false)
+DatastoreStorage::DatastoreStorage(JsonView jsonValue)
+  : DatastoreStorage()
 {
   *this = jsonValue;
 }

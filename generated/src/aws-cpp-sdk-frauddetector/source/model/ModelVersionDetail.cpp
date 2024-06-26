@@ -37,22 +37,8 @@ ModelVersionDetail::ModelVersionDetail() :
 {
 }
 
-ModelVersionDetail::ModelVersionDetail(JsonView jsonValue) : 
-    m_modelIdHasBeenSet(false),
-    m_modelType(ModelTypeEnum::NOT_SET),
-    m_modelTypeHasBeenSet(false),
-    m_modelVersionNumberHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_trainingDataSource(TrainingDataSourceEnum::NOT_SET),
-    m_trainingDataSourceHasBeenSet(false),
-    m_trainingDataSchemaHasBeenSet(false),
-    m_externalEventsDetailHasBeenSet(false),
-    m_ingestedEventsDetailHasBeenSet(false),
-    m_trainingResultHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_trainingResultV2HasBeenSet(false)
+ModelVersionDetail::ModelVersionDetail(JsonView jsonValue)
+  : ModelVersionDetail()
 {
   *this = jsonValue;
 }

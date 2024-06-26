@@ -25,10 +25,8 @@ ExecutionError::ExecutionError() :
 {
 }
 
-ExecutionError::ExecutionError(JsonView jsonValue) : 
-    m_type(ExecutionErrorType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+ExecutionError::ExecutionError(JsonView jsonValue)
+  : ExecutionError()
 {
   *this = jsonValue;
 }

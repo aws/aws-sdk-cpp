@@ -25,11 +25,8 @@ DescribeLimitsResult::DescribeLimitsResult() :
 {
 }
 
-DescribeLimitsResult::DescribeLimitsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_accountMaxReadCapacityUnits(0),
-    m_accountMaxWriteCapacityUnits(0),
-    m_tableMaxReadCapacityUnits(0),
-    m_tableMaxWriteCapacityUnits(0)
+DescribeLimitsResult::DescribeLimitsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeLimitsResult()
 {
   *this = result;
 }

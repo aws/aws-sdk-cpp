@@ -25,10 +25,8 @@ Indicator::Indicator() :
 {
 }
 
-Indicator::Indicator(JsonView jsonValue) : 
-    m_indicatorType(IndicatorType::NOT_SET),
-    m_indicatorTypeHasBeenSet(false),
-    m_indicatorDetailHasBeenSet(false)
+Indicator::Indicator(JsonView jsonValue)
+  : Indicator()
 {
   *this = jsonValue;
 }

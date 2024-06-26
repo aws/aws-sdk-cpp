@@ -24,9 +24,8 @@ EventsBatch::EventsBatch() :
 {
 }
 
-EventsBatch::EventsBatch(JsonView jsonValue) : 
-    m_endpointHasBeenSet(false),
-    m_eventsHasBeenSet(false)
+EventsBatch::EventsBatch(JsonView jsonValue)
+  : EventsBatch()
 {
   *this = jsonValue;
 }

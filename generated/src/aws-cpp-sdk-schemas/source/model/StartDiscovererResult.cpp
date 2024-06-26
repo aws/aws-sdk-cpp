@@ -22,8 +22,8 @@ StartDiscovererResult::StartDiscovererResult() :
 {
 }
 
-StartDiscovererResult::StartDiscovererResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_state(DiscovererState::NOT_SET)
+StartDiscovererResult::StartDiscovererResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : StartDiscovererResult()
 {
   *this = result;
 }

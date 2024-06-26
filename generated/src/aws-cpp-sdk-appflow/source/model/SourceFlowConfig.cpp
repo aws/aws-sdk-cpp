@@ -28,13 +28,8 @@ SourceFlowConfig::SourceFlowConfig() :
 {
 }
 
-SourceFlowConfig::SourceFlowConfig(JsonView jsonValue) : 
-    m_connectorType(ConnectorType::NOT_SET),
-    m_connectorTypeHasBeenSet(false),
-    m_apiVersionHasBeenSet(false),
-    m_connectorProfileNameHasBeenSet(false),
-    m_sourceConnectorPropertiesHasBeenSet(false),
-    m_incrementalPullConfigHasBeenSet(false)
+SourceFlowConfig::SourceFlowConfig(JsonView jsonValue)
+  : SourceFlowConfig()
 {
   *this = jsonValue;
 }

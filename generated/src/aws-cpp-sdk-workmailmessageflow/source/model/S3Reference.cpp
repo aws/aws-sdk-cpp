@@ -25,10 +25,8 @@ S3Reference::S3Reference() :
 {
 }
 
-S3Reference::S3Reference(JsonView jsonValue) : 
-    m_bucketHasBeenSet(false),
-    m_keyHasBeenSet(false),
-    m_objectVersionHasBeenSet(false)
+S3Reference::S3Reference(JsonView jsonValue)
+  : S3Reference()
 {
   *this = jsonValue;
 }

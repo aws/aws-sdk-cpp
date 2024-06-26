@@ -25,11 +25,8 @@ DescribeMlflowTrackingServerResult::DescribeMlflowTrackingServerResult() :
 {
 }
 
-DescribeMlflowTrackingServerResult::DescribeMlflowTrackingServerResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_trackingServerSize(TrackingServerSize::NOT_SET),
-    m_trackingServerStatus(TrackingServerStatus::NOT_SET),
-    m_isActive(IsTrackingServerActive::NOT_SET),
-    m_automaticModelRegistration(false)
+DescribeMlflowTrackingServerResult::DescribeMlflowTrackingServerResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeMlflowTrackingServerResult()
 {
   *this = result;
 }

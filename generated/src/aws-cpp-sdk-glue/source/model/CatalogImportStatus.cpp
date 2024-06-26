@@ -26,11 +26,8 @@ CatalogImportStatus::CatalogImportStatus() :
 {
 }
 
-CatalogImportStatus::CatalogImportStatus(JsonView jsonValue) : 
-    m_importCompleted(false),
-    m_importCompletedHasBeenSet(false),
-    m_importTimeHasBeenSet(false),
-    m_importedByHasBeenSet(false)
+CatalogImportStatus::CatalogImportStatus(JsonView jsonValue)
+  : CatalogImportStatus()
 {
   *this = jsonValue;
 }

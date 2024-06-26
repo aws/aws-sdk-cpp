@@ -26,11 +26,8 @@ SidewalkGetDeviceProfile::SidewalkGetDeviceProfile() :
 {
 }
 
-SidewalkGetDeviceProfile::SidewalkGetDeviceProfile(JsonView jsonValue) : 
-    m_applicationServerPublicKeyHasBeenSet(false),
-    m_qualificationStatus(false),
-    m_qualificationStatusHasBeenSet(false),
-    m_dakCertificateMetadataHasBeenSet(false)
+SidewalkGetDeviceProfile::SidewalkGetDeviceProfile(JsonView jsonValue)
+  : SidewalkGetDeviceProfile()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ GetSensitiveDataOccurrencesResult::GetSensitiveDataOccurrencesResult() :
 {
 }
 
-GetSensitiveDataOccurrencesResult::GetSensitiveDataOccurrencesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(RevealRequestStatus::NOT_SET)
+GetSensitiveDataOccurrencesResult::GetSensitiveDataOccurrencesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetSensitiveDataOccurrencesResult()
 {
   *this = result;
 }

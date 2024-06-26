@@ -32,15 +32,8 @@ ExportImageTask::ExportImageTask() :
 {
 }
 
-ExportImageTask::ExportImageTask(const XmlNode& xmlNode) : 
-    m_descriptionHasBeenSet(false),
-    m_exportImageTaskIdHasBeenSet(false),
-    m_imageIdHasBeenSet(false),
-    m_progressHasBeenSet(false),
-    m_s3ExportLocationHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+ExportImageTask::ExportImageTask(const XmlNode& xmlNode)
+  : ExportImageTask()
 {
   *this = xmlNode;
 }

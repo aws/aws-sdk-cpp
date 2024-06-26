@@ -24,9 +24,8 @@ AppBundle::AppBundle() :
 {
 }
 
-AppBundle::AppBundle(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_customerManagedKeyArnHasBeenSet(false)
+AppBundle::AppBundle(JsonView jsonValue)
+  : AppBundle()
 {
   *this = jsonValue;
 }

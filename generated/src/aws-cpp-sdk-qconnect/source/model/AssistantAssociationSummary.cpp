@@ -30,15 +30,8 @@ AssistantAssociationSummary::AssistantAssociationSummary() :
 {
 }
 
-AssistantAssociationSummary::AssistantAssociationSummary(JsonView jsonValue) : 
-    m_assistantArnHasBeenSet(false),
-    m_assistantAssociationArnHasBeenSet(false),
-    m_assistantAssociationIdHasBeenSet(false),
-    m_assistantIdHasBeenSet(false),
-    m_associationDataHasBeenSet(false),
-    m_associationType(AssociationType::NOT_SET),
-    m_associationTypeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+AssistantAssociationSummary::AssistantAssociationSummary(JsonView jsonValue)
+  : AssistantAssociationSummary()
 {
   *this = jsonValue;
 }

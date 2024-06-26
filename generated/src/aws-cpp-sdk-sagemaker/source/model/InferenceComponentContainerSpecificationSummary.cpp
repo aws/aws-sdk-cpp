@@ -25,10 +25,8 @@ InferenceComponentContainerSpecificationSummary::InferenceComponentContainerSpec
 {
 }
 
-InferenceComponentContainerSpecificationSummary::InferenceComponentContainerSpecificationSummary(JsonView jsonValue) : 
-    m_deployedImageHasBeenSet(false),
-    m_artifactUrlHasBeenSet(false),
-    m_environmentHasBeenSet(false)
+InferenceComponentContainerSpecificationSummary::InferenceComponentContainerSpecificationSummary(JsonView jsonValue)
+  : InferenceComponentContainerSpecificationSummary()
 {
   *this = jsonValue;
 }

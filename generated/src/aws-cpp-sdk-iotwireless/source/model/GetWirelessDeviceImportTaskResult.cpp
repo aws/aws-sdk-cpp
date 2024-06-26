@@ -26,12 +26,8 @@ GetWirelessDeviceImportTaskResult::GetWirelessDeviceImportTaskResult() :
 {
 }
 
-GetWirelessDeviceImportTaskResult::GetWirelessDeviceImportTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(ImportTaskStatus::NOT_SET),
-    m_initializedImportedDeviceCount(0),
-    m_pendingImportedDeviceCount(0),
-    m_onboardedImportedDeviceCount(0),
-    m_failedImportedDeviceCount(0)
+GetWirelessDeviceImportTaskResult::GetWirelessDeviceImportTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetWirelessDeviceImportTaskResult()
 {
   *this = result;
 }

@@ -23,8 +23,8 @@ RegisteredUserDashboardVisualEmbeddingConfiguration::RegisteredUserDashboardVisu
 {
 }
 
-RegisteredUserDashboardVisualEmbeddingConfiguration::RegisteredUserDashboardVisualEmbeddingConfiguration(JsonView jsonValue) : 
-    m_initialDashboardVisualIdHasBeenSet(false)
+RegisteredUserDashboardVisualEmbeddingConfiguration::RegisteredUserDashboardVisualEmbeddingConfiguration(JsonView jsonValue)
+  : RegisteredUserDashboardVisualEmbeddingConfiguration()
 {
   *this = jsonValue;
 }

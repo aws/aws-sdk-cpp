@@ -26,11 +26,8 @@ CapacityLimits::CapacityLimits() :
 {
 }
 
-CapacityLimits::CapacityLimits(JsonView jsonValue) : 
-    m_maxIndexingCapacityInOCU(0),
-    m_maxIndexingCapacityInOCUHasBeenSet(false),
-    m_maxSearchCapacityInOCU(0),
-    m_maxSearchCapacityInOCUHasBeenSet(false)
+CapacityLimits::CapacityLimits(JsonView jsonValue)
+  : CapacityLimits()
 {
   *this = jsonValue;
 }

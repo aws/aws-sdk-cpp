@@ -24,9 +24,8 @@ Relationship::Relationship() :
 {
 }
 
-Relationship::Relationship(JsonView jsonValue) : 
-    m_fromHasBeenSet(false),
-    m_toHasBeenSet(false)
+Relationship::Relationship(JsonView jsonValue)
+  : Relationship()
 {
   *this = jsonValue;
 }

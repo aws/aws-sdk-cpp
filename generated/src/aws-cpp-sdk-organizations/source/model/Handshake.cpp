@@ -32,17 +32,8 @@ Handshake::Handshake() :
 {
 }
 
-Handshake::Handshake(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_partiesHasBeenSet(false),
-    m_state(HandshakeState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_requestedTimestampHasBeenSet(false),
-    m_expirationTimestampHasBeenSet(false),
-    m_action(ActionType::NOT_SET),
-    m_actionHasBeenSet(false),
-    m_resourcesHasBeenSet(false)
+Handshake::Handshake(JsonView jsonValue)
+  : Handshake()
 {
   *this = jsonValue;
 }

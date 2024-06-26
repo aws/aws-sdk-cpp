@@ -25,10 +25,8 @@ SendAction::SendAction() :
 {
 }
 
-SendAction::SendAction(JsonView jsonValue) : 
-    m_actionFailurePolicy(ActionFailurePolicy::NOT_SET),
-    m_actionFailurePolicyHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
+SendAction::SendAction(JsonView jsonValue)
+  : SendAction()
 {
   *this = jsonValue;
 }

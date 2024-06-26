@@ -27,12 +27,8 @@ UpdatePipeSourceActiveMQBrokerParameters::UpdatePipeSourceActiveMQBrokerParamete
 {
 }
 
-UpdatePipeSourceActiveMQBrokerParameters::UpdatePipeSourceActiveMQBrokerParameters(JsonView jsonValue) : 
-    m_credentialsHasBeenSet(false),
-    m_batchSize(0),
-    m_batchSizeHasBeenSet(false),
-    m_maximumBatchingWindowInSeconds(0),
-    m_maximumBatchingWindowInSecondsHasBeenSet(false)
+UpdatePipeSourceActiveMQBrokerParameters::UpdatePipeSourceActiveMQBrokerParameters(JsonView jsonValue)
+  : UpdatePipeSourceActiveMQBrokerParameters()
 {
   *this = jsonValue;
 }

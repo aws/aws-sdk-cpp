@@ -23,9 +23,8 @@ DeletePipeResult::DeletePipeResult() :
 {
 }
 
-DeletePipeResult::DeletePipeResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_desiredState(RequestedPipeStateDescribeResponse::NOT_SET),
-    m_currentState(PipeState::NOT_SET)
+DeletePipeResult::DeletePipeResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeletePipeResult()
 {
   *this = result;
 }

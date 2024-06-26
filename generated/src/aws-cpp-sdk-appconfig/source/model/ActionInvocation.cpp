@@ -29,14 +29,8 @@ ActionInvocation::ActionInvocation() :
 {
 }
 
-ActionInvocation::ActionInvocation(JsonView jsonValue) : 
-    m_extensionIdentifierHasBeenSet(false),
-    m_actionNameHasBeenSet(false),
-    m_uriHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_errorCodeHasBeenSet(false),
-    m_invocationIdHasBeenSet(false)
+ActionInvocation::ActionInvocation(JsonView jsonValue)
+  : ActionInvocation()
 {
   *this = jsonValue;
 }

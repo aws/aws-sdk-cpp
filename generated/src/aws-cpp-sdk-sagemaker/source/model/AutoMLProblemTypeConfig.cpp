@@ -27,12 +27,8 @@ AutoMLProblemTypeConfig::AutoMLProblemTypeConfig() :
 {
 }
 
-AutoMLProblemTypeConfig::AutoMLProblemTypeConfig(JsonView jsonValue) : 
-    m_imageClassificationJobConfigHasBeenSet(false),
-    m_textClassificationJobConfigHasBeenSet(false),
-    m_timeSeriesForecastingJobConfigHasBeenSet(false),
-    m_tabularJobConfigHasBeenSet(false),
-    m_textGenerationJobConfigHasBeenSet(false)
+AutoMLProblemTypeConfig::AutoMLProblemTypeConfig(JsonView jsonValue)
+  : AutoMLProblemTypeConfig()
 {
   *this = jsonValue;
 }

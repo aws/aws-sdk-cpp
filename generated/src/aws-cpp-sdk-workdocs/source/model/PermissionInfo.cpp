@@ -26,11 +26,8 @@ PermissionInfo::PermissionInfo() :
 {
 }
 
-PermissionInfo::PermissionInfo(JsonView jsonValue) : 
-    m_role(RoleType::NOT_SET),
-    m_roleHasBeenSet(false),
-    m_type(RolePermissionType::NOT_SET),
-    m_typeHasBeenSet(false)
+PermissionInfo::PermissionInfo(JsonView jsonValue)
+  : PermissionInfo()
 {
   *this = jsonValue;
 }

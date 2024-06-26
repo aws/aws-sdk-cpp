@@ -26,11 +26,8 @@ DestinationBackup::DestinationBackup() :
 {
 }
 
-DestinationBackup::DestinationBackup(JsonView jsonValue) : 
-    m_createTimestampHasBeenSet(false),
-    m_sourceRegionHasBeenSet(false),
-    m_sourceBackupHasBeenSet(false),
-    m_sourceClusterHasBeenSet(false)
+DestinationBackup::DestinationBackup(JsonView jsonValue)
+  : DestinationBackup()
 {
   *this = jsonValue;
 }

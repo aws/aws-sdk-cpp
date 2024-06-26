@@ -26,11 +26,8 @@ SearchSchemaSummary::SearchSchemaSummary() :
 {
 }
 
-SearchSchemaSummary::SearchSchemaSummary(JsonView jsonValue) : 
-    m_registryNameHasBeenSet(false),
-    m_schemaArnHasBeenSet(false),
-    m_schemaNameHasBeenSet(false),
-    m_schemaVersionsHasBeenSet(false)
+SearchSchemaSummary::SearchSchemaSummary(JsonView jsonValue)
+  : SearchSchemaSummary()
 {
   *this = jsonValue;
 }

@@ -30,15 +30,8 @@ VideoAttribute::VideoAttribute() :
 {
 }
 
-VideoAttribute::VideoAttribute(JsonView jsonValue) : 
-    m_cornerRadius(0),
-    m_cornerRadiusHasBeenSet(false),
-    m_borderColor(BorderColor::NOT_SET),
-    m_borderColorHasBeenSet(false),
-    m_highlightColor(HighlightColor::NOT_SET),
-    m_highlightColorHasBeenSet(false),
-    m_borderThickness(0),
-    m_borderThicknessHasBeenSet(false)
+VideoAttribute::VideoAttribute(JsonView jsonValue)
+  : VideoAttribute()
 {
   *this = jsonValue;
 }

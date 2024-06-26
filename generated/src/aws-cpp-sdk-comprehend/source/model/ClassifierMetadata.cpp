@@ -29,14 +29,8 @@ ClassifierMetadata::ClassifierMetadata() :
 {
 }
 
-ClassifierMetadata::ClassifierMetadata(JsonView jsonValue) : 
-    m_numberOfLabels(0),
-    m_numberOfLabelsHasBeenSet(false),
-    m_numberOfTrainedDocuments(0),
-    m_numberOfTrainedDocumentsHasBeenSet(false),
-    m_numberOfTestDocuments(0),
-    m_numberOfTestDocumentsHasBeenSet(false),
-    m_evaluationMetricsHasBeenSet(false)
+ClassifierMetadata::ClassifierMetadata(JsonView jsonValue)
+  : ClassifierMetadata()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ GetTraceSummariesResult::GetTraceSummariesResult() :
 {
 }
 
-GetTraceSummariesResult::GetTraceSummariesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_tracesProcessedCount(0)
+GetTraceSummariesResult::GetTraceSummariesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetTraceSummariesResult()
 {
   *this = result;
 }

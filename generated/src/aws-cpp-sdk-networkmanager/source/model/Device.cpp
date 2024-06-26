@@ -37,22 +37,8 @@ Device::Device() :
 {
 }
 
-Device::Device(JsonView jsonValue) : 
-    m_deviceIdHasBeenSet(false),
-    m_deviceArnHasBeenSet(false),
-    m_globalNetworkIdHasBeenSet(false),
-    m_aWSLocationHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_vendorHasBeenSet(false),
-    m_modelHasBeenSet(false),
-    m_serialNumberHasBeenSet(false),
-    m_locationHasBeenSet(false),
-    m_siteIdHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_state(DeviceState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+Device::Device(JsonView jsonValue)
+  : Device()
 {
   *this = jsonValue;
 }

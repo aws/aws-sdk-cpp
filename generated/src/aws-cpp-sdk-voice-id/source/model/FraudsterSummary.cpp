@@ -26,11 +26,8 @@ FraudsterSummary::FraudsterSummary() :
 {
 }
 
-FraudsterSummary::FraudsterSummary(JsonView jsonValue) : 
-    m_createdAtHasBeenSet(false),
-    m_domainIdHasBeenSet(false),
-    m_generatedFraudsterIdHasBeenSet(false),
-    m_watchlistIdsHasBeenSet(false)
+FraudsterSummary::FraudsterSummary(JsonView jsonValue)
+  : FraudsterSummary()
 {
   *this = jsonValue;
 }

@@ -27,12 +27,8 @@ DownlinkQueueMessage::DownlinkQueueMessage() :
 {
 }
 
-DownlinkQueueMessage::DownlinkQueueMessage(JsonView jsonValue) : 
-    m_messageIdHasBeenSet(false),
-    m_transmitMode(0),
-    m_transmitModeHasBeenSet(false),
-    m_receivedAtHasBeenSet(false),
-    m_loRaWANHasBeenSet(false)
+DownlinkQueueMessage::DownlinkQueueMessage(JsonView jsonValue)
+  : DownlinkQueueMessage()
 {
   *this = jsonValue;
 }

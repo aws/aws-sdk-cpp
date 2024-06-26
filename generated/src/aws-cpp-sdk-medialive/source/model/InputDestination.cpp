@@ -26,11 +26,8 @@ InputDestination::InputDestination() :
 {
 }
 
-InputDestination::InputDestination(JsonView jsonValue) : 
-    m_ipHasBeenSet(false),
-    m_portHasBeenSet(false),
-    m_urlHasBeenSet(false),
-    m_vpcHasBeenSet(false)
+InputDestination::InputDestination(JsonView jsonValue)
+  : InputDestination()
 {
   *this = jsonValue;
 }

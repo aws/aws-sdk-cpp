@@ -24,9 +24,8 @@ ResourceCollection::ResourceCollection() :
 {
 }
 
-ResourceCollection::ResourceCollection(JsonView jsonValue) : 
-    m_cloudFormationHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+ResourceCollection::ResourceCollection(JsonView jsonValue)
+  : ResourceCollection()
 {
   *this = jsonValue;
 }

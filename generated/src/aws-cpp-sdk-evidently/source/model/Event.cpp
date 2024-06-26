@@ -26,11 +26,8 @@ Event::Event() :
 {
 }
 
-Event::Event(JsonView jsonValue) : 
-    m_dataHasBeenSet(false),
-    m_timestampHasBeenSet(false),
-    m_type(EventType::NOT_SET),
-    m_typeHasBeenSet(false)
+Event::Event(JsonView jsonValue)
+  : Event()
 {
   *this = jsonValue;
 }

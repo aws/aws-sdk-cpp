@@ -25,10 +25,8 @@ ApplicationCodeConfigurationUpdate::ApplicationCodeConfigurationUpdate() :
 {
 }
 
-ApplicationCodeConfigurationUpdate::ApplicationCodeConfigurationUpdate(JsonView jsonValue) : 
-    m_codeContentTypeUpdate(CodeContentType::NOT_SET),
-    m_codeContentTypeUpdateHasBeenSet(false),
-    m_codeContentUpdateHasBeenSet(false)
+ApplicationCodeConfigurationUpdate::ApplicationCodeConfigurationUpdate(JsonView jsonValue)
+  : ApplicationCodeConfigurationUpdate()
 {
   *this = jsonValue;
 }

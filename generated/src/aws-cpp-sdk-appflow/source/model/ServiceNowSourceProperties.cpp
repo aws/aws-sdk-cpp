@@ -23,8 +23,8 @@ ServiceNowSourceProperties::ServiceNowSourceProperties() :
 {
 }
 
-ServiceNowSourceProperties::ServiceNowSourceProperties(JsonView jsonValue) : 
-    m_objectHasBeenSet(false)
+ServiceNowSourceProperties::ServiceNowSourceProperties(JsonView jsonValue)
+  : ServiceNowSourceProperties()
 {
   *this = jsonValue;
 }

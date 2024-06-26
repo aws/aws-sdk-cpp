@@ -29,12 +29,8 @@ InstanceCapacity::InstanceCapacity() :
 {
 }
 
-InstanceCapacity::InstanceCapacity(const XmlNode& xmlNode) : 
-    m_availableCapacity(0),
-    m_availableCapacityHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_totalCapacity(0),
-    m_totalCapacityHasBeenSet(false)
+InstanceCapacity::InstanceCapacity(const XmlNode& xmlNode)
+  : InstanceCapacity()
 {
   *this = xmlNode;
 }

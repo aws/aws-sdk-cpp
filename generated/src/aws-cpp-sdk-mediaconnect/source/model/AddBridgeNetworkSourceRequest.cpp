@@ -29,14 +29,8 @@ AddBridgeNetworkSourceRequest::AddBridgeNetworkSourceRequest() :
 {
 }
 
-AddBridgeNetworkSourceRequest::AddBridgeNetworkSourceRequest(JsonView jsonValue) : 
-    m_multicastIpHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_networkNameHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_protocol(Protocol::NOT_SET),
-    m_protocolHasBeenSet(false)
+AddBridgeNetworkSourceRequest::AddBridgeNetworkSourceRequest(JsonView jsonValue)
+  : AddBridgeNetworkSourceRequest()
 {
   *this = jsonValue;
 }

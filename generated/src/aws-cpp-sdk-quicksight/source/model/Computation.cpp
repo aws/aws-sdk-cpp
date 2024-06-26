@@ -32,17 +32,8 @@ Computation::Computation() :
 {
 }
 
-Computation::Computation(JsonView jsonValue) : 
-    m_topBottomRankedHasBeenSet(false),
-    m_topBottomMoversHasBeenSet(false),
-    m_totalAggregationHasBeenSet(false),
-    m_maximumMinimumHasBeenSet(false),
-    m_metricComparisonHasBeenSet(false),
-    m_periodOverPeriodHasBeenSet(false),
-    m_periodToDateHasBeenSet(false),
-    m_growthRateHasBeenSet(false),
-    m_uniqueValuesHasBeenSet(false),
-    m_forecastHasBeenSet(false)
+Computation::Computation(JsonView jsonValue)
+  : Computation()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ SecurityControlCustomParameter::SecurityControlCustomParameter() :
 {
 }
 
-SecurityControlCustomParameter::SecurityControlCustomParameter(JsonView jsonValue) : 
-    m_securityControlIdHasBeenSet(false),
-    m_parametersHasBeenSet(false)
+SecurityControlCustomParameter::SecurityControlCustomParameter(JsonView jsonValue)
+  : SecurityControlCustomParameter()
 {
   *this = jsonValue;
 }

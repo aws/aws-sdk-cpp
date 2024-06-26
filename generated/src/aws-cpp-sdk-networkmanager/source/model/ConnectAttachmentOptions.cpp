@@ -24,9 +24,8 @@ ConnectAttachmentOptions::ConnectAttachmentOptions() :
 {
 }
 
-ConnectAttachmentOptions::ConnectAttachmentOptions(JsonView jsonValue) : 
-    m_protocol(TunnelProtocol::NOT_SET),
-    m_protocolHasBeenSet(false)
+ConnectAttachmentOptions::ConnectAttachmentOptions(JsonView jsonValue)
+  : ConnectAttachmentOptions()
 {
   *this = jsonValue;
 }

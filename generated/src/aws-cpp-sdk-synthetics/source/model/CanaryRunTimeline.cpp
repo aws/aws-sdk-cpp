@@ -24,9 +24,8 @@ CanaryRunTimeline::CanaryRunTimeline() :
 {
 }
 
-CanaryRunTimeline::CanaryRunTimeline(JsonView jsonValue) : 
-    m_startedHasBeenSet(false),
-    m_completedHasBeenSet(false)
+CanaryRunTimeline::CanaryRunTimeline(JsonView jsonValue)
+  : CanaryRunTimeline()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ ArtifactConfigOutput::ArtifactConfigOutput() :
 {
 }
 
-ArtifactConfigOutput::ArtifactConfigOutput(JsonView jsonValue) : 
-    m_s3EncryptionHasBeenSet(false)
+ArtifactConfigOutput::ArtifactConfigOutput(JsonView jsonValue)
+  : ArtifactConfigOutput()
 {
   *this = jsonValue;
 }

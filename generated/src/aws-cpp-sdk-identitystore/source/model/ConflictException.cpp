@@ -26,11 +26,8 @@ ConflictException::ConflictException() :
 {
 }
 
-ConflictException::ConflictException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_requestIdHasBeenSet(false),
-    m_reason(ConflictExceptionReason::NOT_SET),
-    m_reasonHasBeenSet(false)
+ConflictException::ConflictException(JsonView jsonValue)
+  : ConflictException()
 {
   *this = jsonValue;
 }

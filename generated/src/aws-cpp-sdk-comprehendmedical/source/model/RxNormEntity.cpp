@@ -38,23 +38,8 @@ RxNormEntity::RxNormEntity() :
 {
 }
 
-RxNormEntity::RxNormEntity(JsonView jsonValue) : 
-    m_id(0),
-    m_idHasBeenSet(false),
-    m_textHasBeenSet(false),
-    m_category(RxNormEntityCategory::NOT_SET),
-    m_categoryHasBeenSet(false),
-    m_type(RxNormEntityType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_score(0.0),
-    m_scoreHasBeenSet(false),
-    m_beginOffset(0),
-    m_beginOffsetHasBeenSet(false),
-    m_endOffset(0),
-    m_endOffsetHasBeenSet(false),
-    m_attributesHasBeenSet(false),
-    m_traitsHasBeenSet(false),
-    m_rxNormConceptsHasBeenSet(false)
+RxNormEntity::RxNormEntity(JsonView jsonValue)
+  : RxNormEntity()
 {
   *this = jsonValue;
 }

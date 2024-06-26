@@ -25,10 +25,8 @@ ResourceRecord::ResourceRecord() :
 {
 }
 
-ResourceRecord::ResourceRecord(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_valueHasBeenSet(false)
+ResourceRecord::ResourceRecord(JsonView jsonValue)
+  : ResourceRecord()
 {
   *this = jsonValue;
 }

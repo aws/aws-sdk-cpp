@@ -26,11 +26,8 @@ AnalyzeIDDetections::AnalyzeIDDetections() :
 {
 }
 
-AnalyzeIDDetections::AnalyzeIDDetections(JsonView jsonValue) : 
-    m_textHasBeenSet(false),
-    m_normalizedValueHasBeenSet(false),
-    m_confidence(0.0),
-    m_confidenceHasBeenSet(false)
+AnalyzeIDDetections::AnalyzeIDDetections(JsonView jsonValue)
+  : AnalyzeIDDetections()
 {
   *this = jsonValue;
 }

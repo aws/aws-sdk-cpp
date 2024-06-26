@@ -29,14 +29,8 @@ QuickConnectSummary::QuickConnectSummary() :
 {
 }
 
-QuickConnectSummary::QuickConnectSummary(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_quickConnectType(QuickConnectType::NOT_SET),
-    m_quickConnectTypeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_lastModifiedRegionHasBeenSet(false)
+QuickConnectSummary::QuickConnectSummary(JsonView jsonValue)
+  : QuickConnectSummary()
 {
   *this = jsonValue;
 }

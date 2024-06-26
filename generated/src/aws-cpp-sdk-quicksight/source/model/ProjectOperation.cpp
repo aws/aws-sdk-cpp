@@ -23,8 +23,8 @@ ProjectOperation::ProjectOperation() :
 {
 }
 
-ProjectOperation::ProjectOperation(JsonView jsonValue) : 
-    m_projectedColumnsHasBeenSet(false)
+ProjectOperation::ProjectOperation(JsonView jsonValue)
+  : ProjectOperation()
 {
   *this = jsonValue;
 }

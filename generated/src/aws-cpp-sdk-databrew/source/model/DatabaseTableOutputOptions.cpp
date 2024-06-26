@@ -24,9 +24,8 @@ DatabaseTableOutputOptions::DatabaseTableOutputOptions() :
 {
 }
 
-DatabaseTableOutputOptions::DatabaseTableOutputOptions(JsonView jsonValue) : 
-    m_tempDirectoryHasBeenSet(false),
-    m_tableNameHasBeenSet(false)
+DatabaseTableOutputOptions::DatabaseTableOutputOptions(JsonView jsonValue)
+  : DatabaseTableOutputOptions()
 {
   *this = jsonValue;
 }

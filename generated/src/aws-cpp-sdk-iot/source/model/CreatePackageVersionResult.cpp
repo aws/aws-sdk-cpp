@@ -22,8 +22,8 @@ CreatePackageVersionResult::CreatePackageVersionResult() :
 {
 }
 
-CreatePackageVersionResult::CreatePackageVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(PackageVersionStatus::NOT_SET)
+CreatePackageVersionResult::CreatePackageVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreatePackageVersionResult()
 {
   *this = result;
 }

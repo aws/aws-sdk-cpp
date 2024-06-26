@@ -27,12 +27,8 @@ AmiAggregation::AmiAggregation() :
 {
 }
 
-AmiAggregation::AmiAggregation(JsonView jsonValue) : 
-    m_amisHasBeenSet(false),
-    m_sortBy(AmiSortBy::NOT_SET),
-    m_sortByHasBeenSet(false),
-    m_sortOrder(SortOrder::NOT_SET),
-    m_sortOrderHasBeenSet(false)
+AmiAggregation::AmiAggregation(JsonView jsonValue)
+  : AmiAggregation()
 {
   *this = jsonValue;
 }

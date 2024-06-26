@@ -24,9 +24,8 @@ ResourceCostCalculation::ResourceCostCalculation() :
 {
 }
 
-ResourceCostCalculation::ResourceCostCalculation(JsonView jsonValue) : 
-    m_usagesHasBeenSet(false),
-    m_pricingHasBeenSet(false)
+ResourceCostCalculation::ResourceCostCalculation(JsonView jsonValue)
+  : ResourceCostCalculation()
 {
   *this = jsonValue;
 }

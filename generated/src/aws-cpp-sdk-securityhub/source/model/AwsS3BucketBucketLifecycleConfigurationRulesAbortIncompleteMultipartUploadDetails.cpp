@@ -24,9 +24,8 @@ AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetail
 {
 }
 
-AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetails::AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetails(JsonView jsonValue) : 
-    m_daysAfterInitiation(0),
-    m_daysAfterInitiationHasBeenSet(false)
+AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetails::AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetails(JsonView jsonValue)
+  : AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetails()
 {
   *this = jsonValue;
 }

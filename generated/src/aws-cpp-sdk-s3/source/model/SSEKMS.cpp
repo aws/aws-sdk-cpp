@@ -25,8 +25,8 @@ SSEKMS::SSEKMS() :
 {
 }
 
-SSEKMS::SSEKMS(const XmlNode& xmlNode) : 
-    m_keyIdHasBeenSet(false)
+SSEKMS::SSEKMS(const XmlNode& xmlNode)
+  : SSEKMS()
 {
   *this = xmlNode;
 }

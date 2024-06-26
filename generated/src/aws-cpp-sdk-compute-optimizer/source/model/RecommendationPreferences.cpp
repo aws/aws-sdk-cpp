@@ -23,8 +23,8 @@ RecommendationPreferences::RecommendationPreferences() :
 {
 }
 
-RecommendationPreferences::RecommendationPreferences(JsonView jsonValue) : 
-    m_cpuVendorArchitecturesHasBeenSet(false)
+RecommendationPreferences::RecommendationPreferences(JsonView jsonValue)
+  : RecommendationPreferences()
 {
   *this = jsonValue;
 }

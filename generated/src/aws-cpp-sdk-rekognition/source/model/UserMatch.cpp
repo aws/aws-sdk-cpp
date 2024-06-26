@@ -25,10 +25,8 @@ UserMatch::UserMatch() :
 {
 }
 
-UserMatch::UserMatch(JsonView jsonValue) : 
-    m_similarity(0.0),
-    m_similarityHasBeenSet(false),
-    m_userHasBeenSet(false)
+UserMatch::UserMatch(JsonView jsonValue)
+  : UserMatch()
 {
   *this = jsonValue;
 }

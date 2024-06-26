@@ -27,11 +27,8 @@ InvalidCampaignStateException::InvalidCampaignStateException() :
 {
 }
 
-InvalidCampaignStateException::InvalidCampaignStateException(JsonView jsonValue) : 
-    m_state(CampaignState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_xAmzErrorTypeHasBeenSet(false)
+InvalidCampaignStateException::InvalidCampaignStateException(JsonView jsonValue)
+  : InvalidCampaignStateException()
 {
   *this = jsonValue;
 }

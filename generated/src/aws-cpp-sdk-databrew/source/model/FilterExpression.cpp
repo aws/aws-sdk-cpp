@@ -24,9 +24,8 @@ FilterExpression::FilterExpression() :
 {
 }
 
-FilterExpression::FilterExpression(JsonView jsonValue) : 
-    m_expressionHasBeenSet(false),
-    m_valuesMapHasBeenSet(false)
+FilterExpression::FilterExpression(JsonView jsonValue)
+  : FilterExpression()
 {
   *this = jsonValue;
 }

@@ -32,17 +32,8 @@ JobParameters::JobParameters() :
 {
 }
 
-JobParameters::JobParameters(JsonView jsonValue) : 
-    m_formatHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_archiveIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_sNSTopicHasBeenSet(false),
-    m_retrievalByteRangeHasBeenSet(false),
-    m_tierHasBeenSet(false),
-    m_inventoryRetrievalParametersHasBeenSet(false),
-    m_selectParametersHasBeenSet(false),
-    m_outputLocationHasBeenSet(false)
+JobParameters::JobParameters(JsonView jsonValue)
+  : JobParameters()
 {
   *this = jsonValue;
 }

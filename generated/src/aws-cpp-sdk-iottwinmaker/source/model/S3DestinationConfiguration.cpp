@@ -23,8 +23,8 @@ S3DestinationConfiguration::S3DestinationConfiguration() :
 {
 }
 
-S3DestinationConfiguration::S3DestinationConfiguration(JsonView jsonValue) : 
-    m_locationHasBeenSet(false)
+S3DestinationConfiguration::S3DestinationConfiguration(JsonView jsonValue)
+  : S3DestinationConfiguration()
 {
   *this = jsonValue;
 }

@@ -27,11 +27,8 @@ BasePathMapping::BasePathMapping() :
 {
 }
 
-BasePathMapping::BasePathMapping(JsonView jsonValue) : 
-    m_basePathHasBeenSet(false),
-    m_restApiIdHasBeenSet(false),
-    m_stageHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
+BasePathMapping::BasePathMapping(JsonView jsonValue)
+  : BasePathMapping()
 {
   *this = jsonValue;
 }

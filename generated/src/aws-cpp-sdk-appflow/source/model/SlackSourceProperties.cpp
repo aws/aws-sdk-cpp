@@ -23,8 +23,8 @@ SlackSourceProperties::SlackSourceProperties() :
 {
 }
 
-SlackSourceProperties::SlackSourceProperties(JsonView jsonValue) : 
-    m_objectHasBeenSet(false)
+SlackSourceProperties::SlackSourceProperties(JsonView jsonValue)
+  : SlackSourceProperties()
 {
   *this = jsonValue;
 }

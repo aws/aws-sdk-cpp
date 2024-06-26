@@ -35,20 +35,8 @@ DataCollectionDetails::DataCollectionDetails() :
 {
 }
 
-DataCollectionDetails::DataCollectionDetails(JsonView jsonValue) : 
-    m_completionTimeHasBeenSet(false),
-    m_failed(0),
-    m_failedHasBeenSet(false),
-    m_inProgress(0),
-    m_inProgressHasBeenSet(false),
-    m_servers(0),
-    m_serversHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_status(AssessmentStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_success(0),
-    m_successHasBeenSet(false)
+DataCollectionDetails::DataCollectionDetails(JsonView jsonValue)
+  : DataCollectionDetails()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ ReservationCoverageGroup::ReservationCoverageGroup() :
 {
 }
 
-ReservationCoverageGroup::ReservationCoverageGroup(JsonView jsonValue) : 
-    m_attributesHasBeenSet(false),
-    m_coverageHasBeenSet(false)
+ReservationCoverageGroup::ReservationCoverageGroup(JsonView jsonValue)
+  : ReservationCoverageGroup()
 {
   *this = jsonValue;
 }

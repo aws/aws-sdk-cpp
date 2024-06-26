@@ -23,8 +23,8 @@ MagneticStoreRejectedDataLocation::MagneticStoreRejectedDataLocation() :
 {
 }
 
-MagneticStoreRejectedDataLocation::MagneticStoreRejectedDataLocation(JsonView jsonValue) : 
-    m_s3ConfigurationHasBeenSet(false)
+MagneticStoreRejectedDataLocation::MagneticStoreRejectedDataLocation(JsonView jsonValue)
+  : MagneticStoreRejectedDataLocation()
 {
   *this = jsonValue;
 }

@@ -27,12 +27,8 @@ SourceConnectorProperties::SourceConnectorProperties() :
 {
 }
 
-SourceConnectorProperties::SourceConnectorProperties(JsonView jsonValue) : 
-    m_marketoHasBeenSet(false),
-    m_s3HasBeenSet(false),
-    m_salesforceHasBeenSet(false),
-    m_serviceNowHasBeenSet(false),
-    m_zendeskHasBeenSet(false)
+SourceConnectorProperties::SourceConnectorProperties(JsonView jsonValue)
+  : SourceConnectorProperties()
 {
   *this = jsonValue;
 }

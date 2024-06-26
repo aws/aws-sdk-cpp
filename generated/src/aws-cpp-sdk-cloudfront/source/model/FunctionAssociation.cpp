@@ -27,10 +27,8 @@ FunctionAssociation::FunctionAssociation() :
 {
 }
 
-FunctionAssociation::FunctionAssociation(const XmlNode& xmlNode) : 
-    m_functionARNHasBeenSet(false),
-    m_eventType(EventType::NOT_SET),
-    m_eventTypeHasBeenSet(false)
+FunctionAssociation::FunctionAssociation(const XmlNode& xmlNode)
+  : FunctionAssociation()
 {
   *this = xmlNode;
 }

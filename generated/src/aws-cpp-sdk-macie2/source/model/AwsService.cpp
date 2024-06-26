@@ -23,8 +23,8 @@ AwsService::AwsService() :
 {
 }
 
-AwsService::AwsService(JsonView jsonValue) : 
-    m_invokedByHasBeenSet(false)
+AwsService::AwsService(JsonView jsonValue)
+  : AwsService()
 {
   *this = jsonValue;
 }

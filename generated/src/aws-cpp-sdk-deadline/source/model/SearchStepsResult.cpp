@@ -23,9 +23,8 @@ SearchStepsResult::SearchStepsResult() :
 {
 }
 
-SearchStepsResult::SearchStepsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_nextItemOffset(0),
-    m_totalResults(0)
+SearchStepsResult::SearchStepsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : SearchStepsResult()
 {
   *this = result;
 }

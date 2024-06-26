@@ -24,9 +24,8 @@ ProjectStatus::ProjectStatus() :
 {
 }
 
-ProjectStatus::ProjectStatus(JsonView jsonValue) : 
-    m_stateHasBeenSet(false),
-    m_reasonHasBeenSet(false)
+ProjectStatus::ProjectStatus(JsonView jsonValue)
+  : ProjectStatus()
 {
   *this = jsonValue;
 }

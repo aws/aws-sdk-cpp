@@ -23,8 +23,8 @@ KinesisVideoStream::KinesisVideoStream() :
 {
 }
 
-KinesisVideoStream::KinesisVideoStream(JsonView jsonValue) : 
-    m_arnHasBeenSet(false)
+KinesisVideoStream::KinesisVideoStream(JsonView jsonValue)
+  : KinesisVideoStream()
 {
   *this = jsonValue;
 }

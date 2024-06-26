@@ -26,11 +26,8 @@ ImportReadSetFilter::ImportReadSetFilter() :
 {
 }
 
-ImportReadSetFilter::ImportReadSetFilter(JsonView jsonValue) : 
-    m_status(ReadSetImportJobStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_createdAfterHasBeenSet(false),
-    m_createdBeforeHasBeenSet(false)
+ImportReadSetFilter::ImportReadSetFilter(JsonView jsonValue)
+  : ImportReadSetFilter()
 {
   *this = jsonValue;
 }

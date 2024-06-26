@@ -26,11 +26,8 @@ EndpointState::EndpointState() :
 {
 }
 
-EndpointState::EndpointState(JsonView jsonValue) : 
-    m_status(EndpointStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusReason(EndpointStatusReason::NOT_SET),
-    m_statusReasonHasBeenSet(false)
+EndpointState::EndpointState(JsonView jsonValue)
+  : EndpointState()
 {
   *this = jsonValue;
 }

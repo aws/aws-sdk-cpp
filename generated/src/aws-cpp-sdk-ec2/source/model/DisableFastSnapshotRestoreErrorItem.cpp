@@ -26,9 +26,8 @@ DisableFastSnapshotRestoreErrorItem::DisableFastSnapshotRestoreErrorItem() :
 {
 }
 
-DisableFastSnapshotRestoreErrorItem::DisableFastSnapshotRestoreErrorItem(const XmlNode& xmlNode) : 
-    m_snapshotIdHasBeenSet(false),
-    m_fastSnapshotRestoreStateErrorsHasBeenSet(false)
+DisableFastSnapshotRestoreErrorItem::DisableFastSnapshotRestoreErrorItem(const XmlNode& xmlNode)
+  : DisableFastSnapshotRestoreErrorItem()
 {
   *this = xmlNode;
 }

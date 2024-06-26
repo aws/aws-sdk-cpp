@@ -23,8 +23,8 @@ IngressBooleanToEvaluate::IngressBooleanToEvaluate() :
 {
 }
 
-IngressBooleanToEvaluate::IngressBooleanToEvaluate(JsonView jsonValue) : 
-    m_analysisHasBeenSet(false)
+IngressBooleanToEvaluate::IngressBooleanToEvaluate(JsonView jsonValue)
+  : IngressBooleanToEvaluate()
 {
   *this = jsonValue;
 }

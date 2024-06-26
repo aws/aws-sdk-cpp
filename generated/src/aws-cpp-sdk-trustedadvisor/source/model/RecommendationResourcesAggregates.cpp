@@ -28,13 +28,8 @@ RecommendationResourcesAggregates::RecommendationResourcesAggregates() :
 {
 }
 
-RecommendationResourcesAggregates::RecommendationResourcesAggregates(JsonView jsonValue) : 
-    m_errorCount(0),
-    m_errorCountHasBeenSet(false),
-    m_okCount(0),
-    m_okCountHasBeenSet(false),
-    m_warningCount(0),
-    m_warningCountHasBeenSet(false)
+RecommendationResourcesAggregates::RecommendationResourcesAggregates(JsonView jsonValue)
+  : RecommendationResourcesAggregates()
 {
   *this = jsonValue;
 }

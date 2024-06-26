@@ -37,22 +37,8 @@ Network::Network() :
 {
 }
 
-Network::Network(JsonView jsonValue) : 
-    m_direction(NetworkDirection::NOT_SET),
-    m_directionHasBeenSet(false),
-    m_protocolHasBeenSet(false),
-    m_openPortRangeHasBeenSet(false),
-    m_sourceIpV4HasBeenSet(false),
-    m_sourceIpV6HasBeenSet(false),
-    m_sourcePort(0),
-    m_sourcePortHasBeenSet(false),
-    m_sourceDomainHasBeenSet(false),
-    m_sourceMacHasBeenSet(false),
-    m_destinationIpV4HasBeenSet(false),
-    m_destinationIpV6HasBeenSet(false),
-    m_destinationPort(0),
-    m_destinationPortHasBeenSet(false),
-    m_destinationDomainHasBeenSet(false)
+Network::Network(JsonView jsonValue)
+  : Network()
 {
   *this = jsonValue;
 }

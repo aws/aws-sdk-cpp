@@ -28,11 +28,8 @@ S3Action::S3Action() :
 {
 }
 
-S3Action::S3Action(const XmlNode& xmlNode) : 
-    m_topicArnHasBeenSet(false),
-    m_bucketNameHasBeenSet(false),
-    m_objectKeyPrefixHasBeenSet(false),
-    m_kmsKeyArnHasBeenSet(false)
+S3Action::S3Action(const XmlNode& xmlNode)
+  : S3Action()
 {
   *this = xmlNode;
 }

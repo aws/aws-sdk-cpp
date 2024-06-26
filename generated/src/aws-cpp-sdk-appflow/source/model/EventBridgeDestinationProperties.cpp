@@ -24,9 +24,8 @@ EventBridgeDestinationProperties::EventBridgeDestinationProperties() :
 {
 }
 
-EventBridgeDestinationProperties::EventBridgeDestinationProperties(JsonView jsonValue) : 
-    m_objectHasBeenSet(false),
-    m_errorHandlingConfigHasBeenSet(false)
+EventBridgeDestinationProperties::EventBridgeDestinationProperties(JsonView jsonValue)
+  : EventBridgeDestinationProperties()
 {
   *this = jsonValue;
 }

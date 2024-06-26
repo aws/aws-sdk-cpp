@@ -25,11 +25,8 @@ CreateApiResult::CreateApiResult() :
 {
 }
 
-CreateApiResult::CreateApiResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_apiGatewayManaged(false),
-    m_disableSchemaValidation(false),
-    m_disableExecuteApiEndpoint(false),
-    m_protocolType(ProtocolType::NOT_SET)
+CreateApiResult::CreateApiResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateApiResult()
 {
   *this = result;
 }

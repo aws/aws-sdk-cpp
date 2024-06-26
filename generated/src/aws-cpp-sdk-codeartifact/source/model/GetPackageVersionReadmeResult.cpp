@@ -22,8 +22,8 @@ GetPackageVersionReadmeResult::GetPackageVersionReadmeResult() :
 {
 }
 
-GetPackageVersionReadmeResult::GetPackageVersionReadmeResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_format(PackageFormat::NOT_SET)
+GetPackageVersionReadmeResult::GetPackageVersionReadmeResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetPackageVersionReadmeResult()
 {
   *this = result;
 }

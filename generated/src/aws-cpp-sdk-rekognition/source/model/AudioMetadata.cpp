@@ -29,14 +29,8 @@ AudioMetadata::AudioMetadata() :
 {
 }
 
-AudioMetadata::AudioMetadata(JsonView jsonValue) : 
-    m_codecHasBeenSet(false),
-    m_durationMillis(0),
-    m_durationMillisHasBeenSet(false),
-    m_sampleRate(0),
-    m_sampleRateHasBeenSet(false),
-    m_numberOfChannels(0),
-    m_numberOfChannelsHasBeenSet(false)
+AudioMetadata::AudioMetadata(JsonView jsonValue)
+  : AudioMetadata()
 {
   *this = jsonValue;
 }

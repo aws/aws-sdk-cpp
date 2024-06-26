@@ -33,18 +33,8 @@ RestoreTestingPlanForGet::RestoreTestingPlanForGet() :
 {
 }
 
-RestoreTestingPlanForGet::RestoreTestingPlanForGet(JsonView jsonValue) : 
-    m_creationTimeHasBeenSet(false),
-    m_creatorRequestIdHasBeenSet(false),
-    m_lastExecutionTimeHasBeenSet(false),
-    m_lastUpdateTimeHasBeenSet(false),
-    m_recoveryPointSelectionHasBeenSet(false),
-    m_restoreTestingPlanArnHasBeenSet(false),
-    m_restoreTestingPlanNameHasBeenSet(false),
-    m_scheduleExpressionHasBeenSet(false),
-    m_scheduleExpressionTimezoneHasBeenSet(false),
-    m_startWindowHours(0),
-    m_startWindowHoursHasBeenSet(false)
+RestoreTestingPlanForGet::RestoreTestingPlanForGet(JsonView jsonValue)
+  : RestoreTestingPlanForGet()
 {
   *this = jsonValue;
 }

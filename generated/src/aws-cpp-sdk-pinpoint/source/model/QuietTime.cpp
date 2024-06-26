@@ -24,9 +24,8 @@ QuietTime::QuietTime() :
 {
 }
 
-QuietTime::QuietTime(JsonView jsonValue) : 
-    m_endHasBeenSet(false),
-    m_startHasBeenSet(false)
+QuietTime::QuietTime(JsonView jsonValue)
+  : QuietTime()
 {
   *this = jsonValue;
 }

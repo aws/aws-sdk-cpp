@@ -24,9 +24,8 @@ UpdateEgressGatewayBridgeRequest::UpdateEgressGatewayBridgeRequest() :
 {
 }
 
-UpdateEgressGatewayBridgeRequest::UpdateEgressGatewayBridgeRequest(JsonView jsonValue) : 
-    m_maxBitrate(0),
-    m_maxBitrateHasBeenSet(false)
+UpdateEgressGatewayBridgeRequest::UpdateEgressGatewayBridgeRequest(JsonView jsonValue)
+  : UpdateEgressGatewayBridgeRequest()
 {
   *this = jsonValue;
 }

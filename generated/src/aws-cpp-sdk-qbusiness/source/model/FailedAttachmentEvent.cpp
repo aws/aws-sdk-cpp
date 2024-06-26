@@ -26,11 +26,8 @@ FailedAttachmentEvent::FailedAttachmentEvent() :
 {
 }
 
-FailedAttachmentEvent::FailedAttachmentEvent(JsonView jsonValue) : 
-    m_conversationIdHasBeenSet(false),
-    m_userMessageIdHasBeenSet(false),
-    m_systemMessageIdHasBeenSet(false),
-    m_attachmentHasBeenSet(false)
+FailedAttachmentEvent::FailedAttachmentEvent(JsonView jsonValue)
+  : FailedAttachmentEvent()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ S3ClassificationScopeExclusion::S3ClassificationScopeExclusion() :
 {
 }
 
-S3ClassificationScopeExclusion::S3ClassificationScopeExclusion(JsonView jsonValue) : 
-    m_bucketNamesHasBeenSet(false)
+S3ClassificationScopeExclusion::S3ClassificationScopeExclusion(JsonView jsonValue)
+  : S3ClassificationScopeExclusion()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ RoomRetentionSettings::RoomRetentionSettings() :
 {
 }
 
-RoomRetentionSettings::RoomRetentionSettings(JsonView jsonValue) : 
-    m_retentionDays(0),
-    m_retentionDaysHasBeenSet(false)
+RoomRetentionSettings::RoomRetentionSettings(JsonView jsonValue)
+  : RoomRetentionSettings()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ ToxicContent::ToxicContent() :
 {
 }
 
-ToxicContent::ToxicContent(JsonView jsonValue) : 
-    m_name(ToxicContentType::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_score(0.0),
-    m_scoreHasBeenSet(false)
+ToxicContent::ToxicContent(JsonView jsonValue)
+  : ToxicContent()
 {
   *this = jsonValue;
 }

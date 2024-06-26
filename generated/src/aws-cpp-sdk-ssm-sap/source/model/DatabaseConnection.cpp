@@ -26,11 +26,8 @@ DatabaseConnection::DatabaseConnection() :
 {
 }
 
-DatabaseConnection::DatabaseConnection(JsonView jsonValue) : 
-    m_databaseConnectionMethod(DatabaseConnectionMethod::NOT_SET),
-    m_databaseConnectionMethodHasBeenSet(false),
-    m_databaseArnHasBeenSet(false),
-    m_connectionIpHasBeenSet(false)
+DatabaseConnection::DatabaseConnection(JsonView jsonValue)
+  : DatabaseConnection()
 {
   *this = jsonValue;
 }

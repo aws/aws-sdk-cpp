@@ -31,16 +31,8 @@ Detection::Detection() :
 {
 }
 
-Detection::Detection(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_count(0),
-    m_countHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_suppressed(false),
-    m_suppressedHasBeenSet(false),
-    m_type(DataIdentifierType::NOT_SET),
-    m_typeHasBeenSet(false)
+Detection::Detection(JsonView jsonValue)
+  : Detection()
 {
   *this = jsonValue;
 }

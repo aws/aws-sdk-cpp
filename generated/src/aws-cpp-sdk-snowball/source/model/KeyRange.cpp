@@ -24,9 +24,8 @@ KeyRange::KeyRange() :
 {
 }
 
-KeyRange::KeyRange(JsonView jsonValue) : 
-    m_beginMarkerHasBeenSet(false),
-    m_endMarkerHasBeenSet(false)
+KeyRange::KeyRange(JsonView jsonValue)
+  : KeyRange()
 {
   *this = jsonValue;
 }

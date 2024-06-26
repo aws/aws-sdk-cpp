@@ -25,10 +25,8 @@ AgentStatusReference::AgentStatusReference() :
 {
 }
 
-AgentStatusReference::AgentStatusReference(JsonView jsonValue) : 
-    m_statusStartTimestampHasBeenSet(false),
-    m_statusArnHasBeenSet(false),
-    m_statusNameHasBeenSet(false)
+AgentStatusReference::AgentStatusReference(JsonView jsonValue)
+  : AgentStatusReference()
 {
   *this = jsonValue;
 }

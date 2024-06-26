@@ -30,15 +30,8 @@ LandingZoneOperationDetail::LandingZoneOperationDetail() :
 {
 }
 
-LandingZoneOperationDetail::LandingZoneOperationDetail(JsonView jsonValue) : 
-    m_endTimeHasBeenSet(false),
-    m_operationIdentifierHasBeenSet(false),
-    m_operationType(LandingZoneOperationType::NOT_SET),
-    m_operationTypeHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_status(LandingZoneOperationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false)
+LandingZoneOperationDetail::LandingZoneOperationDetail(JsonView jsonValue)
+  : LandingZoneOperationDetail()
 {
   *this = jsonValue;
 }

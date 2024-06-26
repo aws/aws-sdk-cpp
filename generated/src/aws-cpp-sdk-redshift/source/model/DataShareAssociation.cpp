@@ -34,17 +34,8 @@ DataShareAssociation::DataShareAssociation() :
 {
 }
 
-DataShareAssociation::DataShareAssociation(const XmlNode& xmlNode) : 
-    m_consumerIdentifierHasBeenSet(false),
-    m_status(DataShareStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_consumerRegionHasBeenSet(false),
-    m_createdDateHasBeenSet(false),
-    m_statusChangeDateHasBeenSet(false),
-    m_producerAllowedWrites(false),
-    m_producerAllowedWritesHasBeenSet(false),
-    m_consumerAcceptedWrites(false),
-    m_consumerAcceptedWritesHasBeenSet(false)
+DataShareAssociation::DataShareAssociation(const XmlNode& xmlNode)
+  : DataShareAssociation()
 {
   *this = xmlNode;
 }

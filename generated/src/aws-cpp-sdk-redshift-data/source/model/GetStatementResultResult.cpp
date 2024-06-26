@@ -22,8 +22,8 @@ GetStatementResultResult::GetStatementResultResult() :
 {
 }
 
-GetStatementResultResult::GetStatementResultResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_totalNumRows(0)
+GetStatementResultResult::GetStatementResultResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetStatementResultResult()
 {
   *this = result;
 }

@@ -25,10 +25,8 @@ TargetTrackingScalingPolicyConfiguration::TargetTrackingScalingPolicyConfigurati
 {
 }
 
-TargetTrackingScalingPolicyConfiguration::TargetTrackingScalingPolicyConfiguration(JsonView jsonValue) : 
-    m_metricSpecificationHasBeenSet(false),
-    m_targetValue(0.0),
-    m_targetValueHasBeenSet(false)
+TargetTrackingScalingPolicyConfiguration::TargetTrackingScalingPolicyConfiguration(JsonView jsonValue)
+  : TargetTrackingScalingPolicyConfiguration()
 {
   *this = jsonValue;
 }

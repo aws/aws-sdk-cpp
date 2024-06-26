@@ -32,17 +32,8 @@ Entitlement::Entitlement() :
 {
 }
 
-Entitlement::Entitlement(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_maxCount(0),
-    m_maxCountHasBeenSet(false),
-    m_overage(false),
-    m_overageHasBeenSet(false),
-    m_unit(EntitlementUnit::NOT_SET),
-    m_unitHasBeenSet(false),
-    m_allowCheckIn(false),
-    m_allowCheckInHasBeenSet(false)
+Entitlement::Entitlement(JsonView jsonValue)
+  : Entitlement()
 {
   *this = jsonValue;
 }

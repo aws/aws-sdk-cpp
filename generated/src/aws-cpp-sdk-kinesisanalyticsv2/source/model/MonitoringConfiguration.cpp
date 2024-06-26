@@ -28,13 +28,8 @@ MonitoringConfiguration::MonitoringConfiguration() :
 {
 }
 
-MonitoringConfiguration::MonitoringConfiguration(JsonView jsonValue) : 
-    m_configurationType(ConfigurationType::NOT_SET),
-    m_configurationTypeHasBeenSet(false),
-    m_metricsLevel(MetricsLevel::NOT_SET),
-    m_metricsLevelHasBeenSet(false),
-    m_logLevel(LogLevel::NOT_SET),
-    m_logLevelHasBeenSet(false)
+MonitoringConfiguration::MonitoringConfiguration(JsonView jsonValue)
+  : MonitoringConfiguration()
 {
   *this = jsonValue;
 }

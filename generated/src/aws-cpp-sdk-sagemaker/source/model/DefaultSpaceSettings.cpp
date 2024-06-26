@@ -30,15 +30,8 @@ DefaultSpaceSettings::DefaultSpaceSettings() :
 {
 }
 
-DefaultSpaceSettings::DefaultSpaceSettings(JsonView jsonValue) : 
-    m_executionRoleHasBeenSet(false),
-    m_securityGroupsHasBeenSet(false),
-    m_jupyterServerAppSettingsHasBeenSet(false),
-    m_kernelGatewayAppSettingsHasBeenSet(false),
-    m_jupyterLabAppSettingsHasBeenSet(false),
-    m_spaceStorageSettingsHasBeenSet(false),
-    m_customPosixUserConfigHasBeenSet(false),
-    m_customFileSystemConfigsHasBeenSet(false)
+DefaultSpaceSettings::DefaultSpaceSettings(JsonView jsonValue)
+  : DefaultSpaceSettings()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ AudioArtifactsConfiguration::AudioArtifactsConfiguration() :
 {
 }
 
-AudioArtifactsConfiguration::AudioArtifactsConfiguration(JsonView jsonValue) : 
-    m_muxType(AudioMuxType::NOT_SET),
-    m_muxTypeHasBeenSet(false)
+AudioArtifactsConfiguration::AudioArtifactsConfiguration(JsonView jsonValue)
+  : AudioArtifactsConfiguration()
 {
   *this = jsonValue;
 }

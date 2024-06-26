@@ -23,8 +23,8 @@ ControlPlanePlacementRequest::ControlPlanePlacementRequest() :
 {
 }
 
-ControlPlanePlacementRequest::ControlPlanePlacementRequest(JsonView jsonValue) : 
-    m_groupNameHasBeenSet(false)
+ControlPlanePlacementRequest::ControlPlanePlacementRequest(JsonView jsonValue)
+  : ControlPlanePlacementRequest()
 {
   *this = jsonValue;
 }

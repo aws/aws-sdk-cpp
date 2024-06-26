@@ -26,11 +26,8 @@ AwsEc2LaunchTemplateDataBlockDeviceMappingSetDetails::AwsEc2LaunchTemplateDataBl
 {
 }
 
-AwsEc2LaunchTemplateDataBlockDeviceMappingSetDetails::AwsEc2LaunchTemplateDataBlockDeviceMappingSetDetails(JsonView jsonValue) : 
-    m_deviceNameHasBeenSet(false),
-    m_ebsHasBeenSet(false),
-    m_noDeviceHasBeenSet(false),
-    m_virtualNameHasBeenSet(false)
+AwsEc2LaunchTemplateDataBlockDeviceMappingSetDetails::AwsEc2LaunchTemplateDataBlockDeviceMappingSetDetails(JsonView jsonValue)
+  : AwsEc2LaunchTemplateDataBlockDeviceMappingSetDetails()
 {
   *this = jsonValue;
 }

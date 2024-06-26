@@ -21,8 +21,8 @@ PutObjectLockConfigurationResult::PutObjectLockConfigurationResult() :
 {
 }
 
-PutObjectLockConfigurationResult::PutObjectLockConfigurationResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_requestCharged(RequestCharged::NOT_SET)
+PutObjectLockConfigurationResult::PutObjectLockConfigurationResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : PutObjectLockConfigurationResult()
 {
   *this = result;
 }

@@ -26,11 +26,8 @@ NonCompliantResource::NonCompliantResource() :
 {
 }
 
-NonCompliantResource::NonCompliantResource(JsonView jsonValue) : 
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_resourceIdentifierHasBeenSet(false),
-    m_additionalInfoHasBeenSet(false)
+NonCompliantResource::NonCompliantResource(JsonView jsonValue)
+  : NonCompliantResource()
 {
   *this = jsonValue;
 }

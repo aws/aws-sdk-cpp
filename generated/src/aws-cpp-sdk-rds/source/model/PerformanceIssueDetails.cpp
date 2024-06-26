@@ -28,11 +28,8 @@ PerformanceIssueDetails::PerformanceIssueDetails() :
 {
 }
 
-PerformanceIssueDetails::PerformanceIssueDetails(const XmlNode& xmlNode) : 
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_metricsHasBeenSet(false),
-    m_analysisHasBeenSet(false)
+PerformanceIssueDetails::PerformanceIssueDetails(const XmlNode& xmlNode)
+  : PerformanceIssueDetails()
 {
   *this = xmlNode;
 }

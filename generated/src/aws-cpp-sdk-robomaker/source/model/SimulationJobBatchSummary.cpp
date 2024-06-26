@@ -33,18 +33,8 @@ SimulationJobBatchSummary::SimulationJobBatchSummary() :
 {
 }
 
-SimulationJobBatchSummary::SimulationJobBatchSummary(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_status(SimulationJobBatchStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_failedRequestCount(0),
-    m_failedRequestCountHasBeenSet(false),
-    m_pendingRequestCount(0),
-    m_pendingRequestCountHasBeenSet(false),
-    m_createdRequestCount(0),
-    m_createdRequestCountHasBeenSet(false)
+SimulationJobBatchSummary::SimulationJobBatchSummary(JsonView jsonValue)
+  : SimulationJobBatchSummary()
 {
   *this = jsonValue;
 }

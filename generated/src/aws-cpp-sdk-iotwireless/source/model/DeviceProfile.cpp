@@ -25,10 +25,8 @@ DeviceProfile::DeviceProfile() :
 {
 }
 
-DeviceProfile::DeviceProfile(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_idHasBeenSet(false)
+DeviceProfile::DeviceProfile(JsonView jsonValue)
+  : DeviceProfile()
 {
   *this = jsonValue;
 }

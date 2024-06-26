@@ -26,11 +26,8 @@ CdmaLocalId::CdmaLocalId() :
 {
 }
 
-CdmaLocalId::CdmaLocalId(JsonView jsonValue) : 
-    m_pnOffset(0),
-    m_pnOffsetHasBeenSet(false),
-    m_cdmaChannel(0),
-    m_cdmaChannelHasBeenSet(false)
+CdmaLocalId::CdmaLocalId(JsonView jsonValue)
+  : CdmaLocalId()
 {
   *this = jsonValue;
 }

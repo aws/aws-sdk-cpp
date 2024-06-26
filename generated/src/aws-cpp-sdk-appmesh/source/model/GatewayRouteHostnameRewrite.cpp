@@ -24,9 +24,8 @@ GatewayRouteHostnameRewrite::GatewayRouteHostnameRewrite() :
 {
 }
 
-GatewayRouteHostnameRewrite::GatewayRouteHostnameRewrite(JsonView jsonValue) : 
-    m_defaultTargetHostname(DefaultGatewayRouteRewrite::NOT_SET),
-    m_defaultTargetHostnameHasBeenSet(false)
+GatewayRouteHostnameRewrite::GatewayRouteHostnameRewrite(JsonView jsonValue)
+  : GatewayRouteHostnameRewrite()
 {
   *this = jsonValue;
 }

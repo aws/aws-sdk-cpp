@@ -23,9 +23,8 @@ StopReplicationResult::StopReplicationResult() :
 {
 }
 
-StopReplicationResult::StopReplicationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_isArchived(false),
-    m_replicationType(ReplicationType::NOT_SET)
+StopReplicationResult::StopReplicationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : StopReplicationResult()
 {
   *this = result;
 }

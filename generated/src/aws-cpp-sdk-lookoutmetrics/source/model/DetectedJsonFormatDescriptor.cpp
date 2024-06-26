@@ -24,9 +24,8 @@ DetectedJsonFormatDescriptor::DetectedJsonFormatDescriptor() :
 {
 }
 
-DetectedJsonFormatDescriptor::DetectedJsonFormatDescriptor(JsonView jsonValue) : 
-    m_fileCompressionHasBeenSet(false),
-    m_charsetHasBeenSet(false)
+DetectedJsonFormatDescriptor::DetectedJsonFormatDescriptor(JsonView jsonValue)
+  : DetectedJsonFormatDescriptor()
 {
   *this = jsonValue;
 }

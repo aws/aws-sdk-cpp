@@ -25,10 +25,8 @@ PillarMetric::PillarMetric() :
 {
 }
 
-PillarMetric::PillarMetric(JsonView jsonValue) : 
-    m_pillarIdHasBeenSet(false),
-    m_riskCountsHasBeenSet(false),
-    m_questionsHasBeenSet(false)
+PillarMetric::PillarMetric(JsonView jsonValue)
+  : PillarMetric()
 {
   *this = jsonValue;
 }

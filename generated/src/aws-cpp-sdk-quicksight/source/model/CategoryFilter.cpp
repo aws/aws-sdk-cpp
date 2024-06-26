@@ -26,11 +26,8 @@ CategoryFilter::CategoryFilter() :
 {
 }
 
-CategoryFilter::CategoryFilter(JsonView jsonValue) : 
-    m_filterIdHasBeenSet(false),
-    m_columnHasBeenSet(false),
-    m_configurationHasBeenSet(false),
-    m_defaultFilterControlConfigurationHasBeenSet(false)
+CategoryFilter::CategoryFilter(JsonView jsonValue)
+  : CategoryFilter()
 {
   *this = jsonValue;
 }

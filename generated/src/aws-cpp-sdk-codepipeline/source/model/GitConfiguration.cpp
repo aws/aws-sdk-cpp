@@ -25,10 +25,8 @@ GitConfiguration::GitConfiguration() :
 {
 }
 
-GitConfiguration::GitConfiguration(JsonView jsonValue) : 
-    m_sourceActionNameHasBeenSet(false),
-    m_pushHasBeenSet(false),
-    m_pullRequestHasBeenSet(false)
+GitConfiguration::GitConfiguration(JsonView jsonValue)
+  : GitConfiguration()
 {
   *this = jsonValue;
 }

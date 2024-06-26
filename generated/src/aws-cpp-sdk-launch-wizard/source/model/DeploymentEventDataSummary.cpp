@@ -28,13 +28,8 @@ DeploymentEventDataSummary::DeploymentEventDataSummary() :
 {
 }
 
-DeploymentEventDataSummary::DeploymentEventDataSummary(JsonView jsonValue) : 
-    m_descriptionHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_status(EventStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusReasonHasBeenSet(false),
-    m_timestampHasBeenSet(false)
+DeploymentEventDataSummary::DeploymentEventDataSummary(JsonView jsonValue)
+  : DeploymentEventDataSummary()
 {
   *this = jsonValue;
 }

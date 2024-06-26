@@ -25,10 +25,8 @@ EksPodPropertiesOverride::EksPodPropertiesOverride() :
 {
 }
 
-EksPodPropertiesOverride::EksPodPropertiesOverride(JsonView jsonValue) : 
-    m_containersHasBeenSet(false),
-    m_initContainersHasBeenSet(false),
-    m_metadataHasBeenSet(false)
+EksPodPropertiesOverride::EksPodPropertiesOverride(JsonView jsonValue)
+  : EksPodPropertiesOverride()
 {
   *this = jsonValue;
 }

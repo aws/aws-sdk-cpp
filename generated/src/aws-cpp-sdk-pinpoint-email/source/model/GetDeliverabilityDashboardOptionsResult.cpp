@@ -23,9 +23,8 @@ GetDeliverabilityDashboardOptionsResult::GetDeliverabilityDashboardOptionsResult
 {
 }
 
-GetDeliverabilityDashboardOptionsResult::GetDeliverabilityDashboardOptionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_dashboardEnabled(false),
-    m_accountStatus(DeliverabilityDashboardAccountStatus::NOT_SET)
+GetDeliverabilityDashboardOptionsResult::GetDeliverabilityDashboardOptionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetDeliverabilityDashboardOptionsResult()
 {
   *this = result;
 }

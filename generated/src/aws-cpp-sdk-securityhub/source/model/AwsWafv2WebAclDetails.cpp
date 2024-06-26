@@ -34,19 +34,8 @@ AwsWafv2WebAclDetails::AwsWafv2WebAclDetails() :
 {
 }
 
-AwsWafv2WebAclDetails::AwsWafv2WebAclDetails(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_managedbyFirewallManager(false),
-    m_managedbyFirewallManagerHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_capacity(0),
-    m_capacityHasBeenSet(false),
-    m_captchaConfigHasBeenSet(false),
-    m_defaultActionHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_rulesHasBeenSet(false),
-    m_visibilityConfigHasBeenSet(false)
+AwsWafv2WebAclDetails::AwsWafv2WebAclDetails(JsonView jsonValue)
+  : AwsWafv2WebAclDetails()
 {
   *this = jsonValue;
 }

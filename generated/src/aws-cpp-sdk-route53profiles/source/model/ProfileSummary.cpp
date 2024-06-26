@@ -27,12 +27,8 @@ ProfileSummary::ProfileSummary() :
 {
 }
 
-ProfileSummary::ProfileSummary(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_shareStatus(ShareStatus::NOT_SET),
-    m_shareStatusHasBeenSet(false)
+ProfileSummary::ProfileSummary(JsonView jsonValue)
+  : ProfileSummary()
 {
   *this = jsonValue;
 }

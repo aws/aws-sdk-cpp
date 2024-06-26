@@ -27,12 +27,8 @@ Directory::Directory() :
 {
 }
 
-Directory::Directory(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_directoryArnHasBeenSet(false),
-    m_state(DirectoryState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_creationDateTimeHasBeenSet(false)
+Directory::Directory(JsonView jsonValue)
+  : Directory()
 {
   *this = jsonValue;
 }

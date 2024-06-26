@@ -26,11 +26,8 @@ CompareDataSetsStepInput::CompareDataSetsStepInput() :
 {
 }
 
-CompareDataSetsStepInput::CompareDataSetsStepInput(JsonView jsonValue) : 
-    m_sourceLocationHasBeenSet(false),
-    m_targetLocationHasBeenSet(false),
-    m_sourceDataSetsHasBeenSet(false),
-    m_targetDataSetsHasBeenSet(false)
+CompareDataSetsStepInput::CompareDataSetsStepInput(JsonView jsonValue)
+  : CompareDataSetsStepInput()
 {
   *this = jsonValue;
 }

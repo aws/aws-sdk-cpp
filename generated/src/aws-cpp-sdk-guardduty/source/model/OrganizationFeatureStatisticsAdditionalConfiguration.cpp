@@ -26,11 +26,8 @@ OrganizationFeatureStatisticsAdditionalConfiguration::OrganizationFeatureStatist
 {
 }
 
-OrganizationFeatureStatisticsAdditionalConfiguration::OrganizationFeatureStatisticsAdditionalConfiguration(JsonView jsonValue) : 
-    m_name(OrgFeatureAdditionalConfiguration::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_enabledAccountsCount(0),
-    m_enabledAccountsCountHasBeenSet(false)
+OrganizationFeatureStatisticsAdditionalConfiguration::OrganizationFeatureStatisticsAdditionalConfiguration(JsonView jsonValue)
+  : OrganizationFeatureStatisticsAdditionalConfiguration()
 {
   *this = jsonValue;
 }

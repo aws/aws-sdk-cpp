@@ -27,12 +27,8 @@ TableWithColumnsResource::TableWithColumnsResource() :
 {
 }
 
-TableWithColumnsResource::TableWithColumnsResource(JsonView jsonValue) : 
-    m_catalogIdHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_columnNamesHasBeenSet(false),
-    m_columnWildcardHasBeenSet(false)
+TableWithColumnsResource::TableWithColumnsResource(JsonView jsonValue)
+  : TableWithColumnsResource()
 {
   *this = jsonValue;
 }

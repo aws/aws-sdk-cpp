@@ -29,12 +29,8 @@ TestResult::TestResult() :
 {
 }
 
-TestResult::TestResult(const XmlNode& xmlNode) : 
-    m_functionSummaryHasBeenSet(false),
-    m_computeUtilizationHasBeenSet(false),
-    m_functionExecutionLogsHasBeenSet(false),
-    m_functionErrorMessageHasBeenSet(false),
-    m_functionOutputHasBeenSet(false)
+TestResult::TestResult(const XmlNode& xmlNode)
+  : TestResult()
 {
   *this = xmlNode;
 }

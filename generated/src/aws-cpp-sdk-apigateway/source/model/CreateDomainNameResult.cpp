@@ -23,9 +23,8 @@ CreateDomainNameResult::CreateDomainNameResult() :
 {
 }
 
-CreateDomainNameResult::CreateDomainNameResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_domainNameStatus(DomainNameStatus::NOT_SET),
-    m_securityPolicy(SecurityPolicy::NOT_SET)
+CreateDomainNameResult::CreateDomainNameResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateDomainNameResult()
 {
   *this = result;
 }

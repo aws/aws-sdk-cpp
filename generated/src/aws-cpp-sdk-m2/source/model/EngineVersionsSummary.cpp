@@ -24,9 +24,8 @@ EngineVersionsSummary::EngineVersionsSummary() :
 {
 }
 
-EngineVersionsSummary::EngineVersionsSummary(JsonView jsonValue) : 
-    m_engineTypeHasBeenSet(false),
-    m_engineVersionHasBeenSet(false)
+EngineVersionsSummary::EngineVersionsSummary(JsonView jsonValue)
+  : EngineVersionsSummary()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ RdsRecommendation::RdsRecommendation() :
 {
 }
 
-RdsRecommendation::RdsRecommendation(JsonView jsonValue) : 
-    m_requirementsToTargetHasBeenSet(false),
-    m_targetConfigurationHasBeenSet(false)
+RdsRecommendation::RdsRecommendation(JsonView jsonValue)
+  : RdsRecommendation()
 {
   *this = jsonValue;
 }

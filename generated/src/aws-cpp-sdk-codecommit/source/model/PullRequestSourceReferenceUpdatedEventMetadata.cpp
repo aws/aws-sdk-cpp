@@ -26,11 +26,8 @@ PullRequestSourceReferenceUpdatedEventMetadata::PullRequestSourceReferenceUpdate
 {
 }
 
-PullRequestSourceReferenceUpdatedEventMetadata::PullRequestSourceReferenceUpdatedEventMetadata(JsonView jsonValue) : 
-    m_repositoryNameHasBeenSet(false),
-    m_beforeCommitIdHasBeenSet(false),
-    m_afterCommitIdHasBeenSet(false),
-    m_mergeBaseHasBeenSet(false)
+PullRequestSourceReferenceUpdatedEventMetadata::PullRequestSourceReferenceUpdatedEventMetadata(JsonView jsonValue)
+  : PullRequestSourceReferenceUpdatedEventMetadata()
 {
   *this = jsonValue;
 }

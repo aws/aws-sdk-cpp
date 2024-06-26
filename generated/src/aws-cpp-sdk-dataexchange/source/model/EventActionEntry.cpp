@@ -28,13 +28,8 @@ EventActionEntry::EventActionEntry() :
 {
 }
 
-EventActionEntry::EventActionEntry(JsonView jsonValue) : 
-    m_actionHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_eventHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+EventActionEntry::EventActionEntry(JsonView jsonValue)
+  : EventActionEntry()
 {
   *this = jsonValue;
 }

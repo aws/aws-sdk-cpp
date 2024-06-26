@@ -25,10 +25,8 @@ DefaultDateTimePickerControlOptions::DefaultDateTimePickerControlOptions() :
 {
 }
 
-DefaultDateTimePickerControlOptions::DefaultDateTimePickerControlOptions(JsonView jsonValue) : 
-    m_type(SheetControlDateTimePickerType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_displayOptionsHasBeenSet(false)
+DefaultDateTimePickerControlOptions::DefaultDateTimePickerControlOptions(JsonView jsonValue)
+  : DefaultDateTimePickerControlOptions()
 {
   *this = jsonValue;
 }

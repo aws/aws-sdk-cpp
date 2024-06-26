@@ -24,9 +24,8 @@ ArrayProperties::ArrayProperties() :
 {
 }
 
-ArrayProperties::ArrayProperties(JsonView jsonValue) : 
-    m_size(0),
-    m_sizeHasBeenSet(false)
+ArrayProperties::ArrayProperties(JsonView jsonValue)
+  : ArrayProperties()
 {
   *this = jsonValue;
 }

@@ -31,16 +31,8 @@ OrderSummary::OrderSummary() :
 {
 }
 
-OrderSummary::OrderSummary(JsonView jsonValue) : 
-    m_outpostIdHasBeenSet(false),
-    m_orderIdHasBeenSet(false),
-    m_orderType(OrderType::NOT_SET),
-    m_orderTypeHasBeenSet(false),
-    m_status(OrderStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_lineItemCountsByStatusHasBeenSet(false),
-    m_orderSubmissionDateHasBeenSet(false),
-    m_orderFulfilledDateHasBeenSet(false)
+OrderSummary::OrderSummary(JsonView jsonValue)
+  : OrderSummary()
 {
   *this = jsonValue;
 }

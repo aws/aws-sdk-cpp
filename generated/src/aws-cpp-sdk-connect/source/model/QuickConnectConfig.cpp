@@ -27,12 +27,8 @@ QuickConnectConfig::QuickConnectConfig() :
 {
 }
 
-QuickConnectConfig::QuickConnectConfig(JsonView jsonValue) : 
-    m_quickConnectType(QuickConnectType::NOT_SET),
-    m_quickConnectTypeHasBeenSet(false),
-    m_userConfigHasBeenSet(false),
-    m_queueConfigHasBeenSet(false),
-    m_phoneConfigHasBeenSet(false)
+QuickConnectConfig::QuickConnectConfig(JsonView jsonValue)
+  : QuickConnectConfig()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ VirtualGatewayClientTlsCertificate::VirtualGatewayClientTlsCertificate() :
 {
 }
 
-VirtualGatewayClientTlsCertificate::VirtualGatewayClientTlsCertificate(JsonView jsonValue) : 
-    m_fileHasBeenSet(false),
-    m_sdsHasBeenSet(false)
+VirtualGatewayClientTlsCertificate::VirtualGatewayClientTlsCertificate(JsonView jsonValue)
+  : VirtualGatewayClientTlsCertificate()
 {
   *this = jsonValue;
 }

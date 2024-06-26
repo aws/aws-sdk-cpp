@@ -26,11 +26,8 @@ ReplicationInstanceTaskLog::ReplicationInstanceTaskLog() :
 {
 }
 
-ReplicationInstanceTaskLog::ReplicationInstanceTaskLog(JsonView jsonValue) : 
-    m_replicationTaskNameHasBeenSet(false),
-    m_replicationTaskArnHasBeenSet(false),
-    m_replicationInstanceTaskLogSize(0),
-    m_replicationInstanceTaskLogSizeHasBeenSet(false)
+ReplicationInstanceTaskLog::ReplicationInstanceTaskLog(JsonView jsonValue)
+  : ReplicationInstanceTaskLog()
 {
   *this = jsonValue;
 }

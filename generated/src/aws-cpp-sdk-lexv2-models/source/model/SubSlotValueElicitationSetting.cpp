@@ -26,11 +26,8 @@ SubSlotValueElicitationSetting::SubSlotValueElicitationSetting() :
 {
 }
 
-SubSlotValueElicitationSetting::SubSlotValueElicitationSetting(JsonView jsonValue) : 
-    m_defaultValueSpecificationHasBeenSet(false),
-    m_promptSpecificationHasBeenSet(false),
-    m_sampleUtterancesHasBeenSet(false),
-    m_waitAndContinueSpecificationHasBeenSet(false)
+SubSlotValueElicitationSetting::SubSlotValueElicitationSetting(JsonView jsonValue)
+  : SubSlotValueElicitationSetting()
 {
   *this = jsonValue;
 }

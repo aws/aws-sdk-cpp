@@ -25,8 +25,8 @@ Warnings::Warnings() :
 {
 }
 
-Warnings::Warnings(const XmlNode& xmlNode) : 
-    m_unrecognizedResourceTypesHasBeenSet(false)
+Warnings::Warnings(const XmlNode& xmlNode)
+  : Warnings()
 {
   *this = xmlNode;
 }

@@ -24,9 +24,8 @@ EvaluationModeConfiguration::EvaluationModeConfiguration() :
 {
 }
 
-EvaluationModeConfiguration::EvaluationModeConfiguration(JsonView jsonValue) : 
-    m_mode(EvaluationMode::NOT_SET),
-    m_modeHasBeenSet(false)
+EvaluationModeConfiguration::EvaluationModeConfiguration(JsonView jsonValue)
+  : EvaluationModeConfiguration()
 {
   *this = jsonValue;
 }

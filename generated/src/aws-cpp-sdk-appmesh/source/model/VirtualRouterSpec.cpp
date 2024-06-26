@@ -23,8 +23,8 @@ VirtualRouterSpec::VirtualRouterSpec() :
 {
 }
 
-VirtualRouterSpec::VirtualRouterSpec(JsonView jsonValue) : 
-    m_listenersHasBeenSet(false)
+VirtualRouterSpec::VirtualRouterSpec(JsonView jsonValue)
+  : VirtualRouterSpec()
 {
   *this = jsonValue;
 }

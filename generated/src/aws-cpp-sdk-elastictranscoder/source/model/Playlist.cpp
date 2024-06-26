@@ -29,14 +29,8 @@ Playlist::Playlist() :
 {
 }
 
-Playlist::Playlist(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_formatHasBeenSet(false),
-    m_outputKeysHasBeenSet(false),
-    m_hlsContentProtectionHasBeenSet(false),
-    m_playReadyDrmHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_statusDetailHasBeenSet(false)
+Playlist::Playlist(JsonView jsonValue)
+  : Playlist()
 {
   *this = jsonValue;
 }

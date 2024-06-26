@@ -26,11 +26,8 @@ TaskSubmittedEventDetails::TaskSubmittedEventDetails() :
 {
 }
 
-TaskSubmittedEventDetails::TaskSubmittedEventDetails(JsonView jsonValue) : 
-    m_resourceTypeHasBeenSet(false),
-    m_resourceHasBeenSet(false),
-    m_outputHasBeenSet(false),
-    m_outputDetailsHasBeenSet(false)
+TaskSubmittedEventDetails::TaskSubmittedEventDetails(JsonView jsonValue)
+  : TaskSubmittedEventDetails()
 {
   *this = jsonValue;
 }

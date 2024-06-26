@@ -26,11 +26,8 @@ PortOverride::PortOverride() :
 {
 }
 
-PortOverride::PortOverride(JsonView jsonValue) : 
-    m_listenerPort(0),
-    m_listenerPortHasBeenSet(false),
-    m_endpointPort(0),
-    m_endpointPortHasBeenSet(false)
+PortOverride::PortOverride(JsonView jsonValue)
+  : PortOverride()
 {
   *this = jsonValue;
 }

@@ -27,12 +27,8 @@ RepositorySummary::RepositorySummary() :
 {
 }
 
-RepositorySummary::RepositorySummary(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_connectionArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_provider(RepositoryProvider::NOT_SET),
-    m_providerHasBeenSet(false)
+RepositorySummary::RepositorySummary(JsonView jsonValue)
+  : RepositorySummary()
 {
   *this = jsonValue;
 }

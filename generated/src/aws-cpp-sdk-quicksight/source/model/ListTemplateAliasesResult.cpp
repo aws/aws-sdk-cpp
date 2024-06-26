@@ -22,8 +22,8 @@ ListTemplateAliasesResult::ListTemplateAliasesResult() :
 {
 }
 
-ListTemplateAliasesResult::ListTemplateAliasesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+ListTemplateAliasesResult::ListTemplateAliasesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ListTemplateAliasesResult()
 {
   *this = result;
 }

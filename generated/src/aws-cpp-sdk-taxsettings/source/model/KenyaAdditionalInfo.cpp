@@ -24,9 +24,8 @@ KenyaAdditionalInfo::KenyaAdditionalInfo() :
 {
 }
 
-KenyaAdditionalInfo::KenyaAdditionalInfo(JsonView jsonValue) : 
-    m_personType(PersonType::NOT_SET),
-    m_personTypeHasBeenSet(false)
+KenyaAdditionalInfo::KenyaAdditionalInfo(JsonView jsonValue)
+  : KenyaAdditionalInfo()
 {
   *this = jsonValue;
 }

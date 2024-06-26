@@ -22,8 +22,8 @@ UpdateIpRestrictionResult::UpdateIpRestrictionResult() :
 {
 }
 
-UpdateIpRestrictionResult::UpdateIpRestrictionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+UpdateIpRestrictionResult::UpdateIpRestrictionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateIpRestrictionResult()
 {
   *this = result;
 }

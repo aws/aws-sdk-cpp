@@ -26,11 +26,8 @@ ForceIncludeRenditionSize::ForceIncludeRenditionSize() :
 {
 }
 
-ForceIncludeRenditionSize::ForceIncludeRenditionSize(JsonView jsonValue) : 
-    m_height(0),
-    m_heightHasBeenSet(false),
-    m_width(0),
-    m_widthHasBeenSet(false)
+ForceIncludeRenditionSize::ForceIncludeRenditionSize(JsonView jsonValue)
+  : ForceIncludeRenditionSize()
 {
   *this = jsonValue;
 }

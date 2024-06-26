@@ -26,9 +26,8 @@ TrafficSourceIdentifier::TrafficSourceIdentifier() :
 {
 }
 
-TrafficSourceIdentifier::TrafficSourceIdentifier(const XmlNode& xmlNode) : 
-    m_identifierHasBeenSet(false),
-    m_typeHasBeenSet(false)
+TrafficSourceIdentifier::TrafficSourceIdentifier(const XmlNode& xmlNode)
+  : TrafficSourceIdentifier()
 {
   *this = xmlNode;
 }

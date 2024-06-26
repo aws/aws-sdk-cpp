@@ -23,8 +23,8 @@ Alarm::Alarm() :
 {
 }
 
-Alarm::Alarm(JsonView jsonValue) : 
-    m_nameHasBeenSet(false)
+Alarm::Alarm(JsonView jsonValue)
+  : Alarm()
 {
   *this = jsonValue;
 }

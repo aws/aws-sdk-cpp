@@ -25,10 +25,8 @@ FrontOfQueueDetail::FrontOfQueueDetail() :
 {
 }
 
-FrontOfQueueDetail::FrontOfQueueDetail(JsonView jsonValue) : 
-    m_jobsHasBeenSet(false),
-    m_lastUpdatedAt(0),
-    m_lastUpdatedAtHasBeenSet(false)
+FrontOfQueueDetail::FrontOfQueueDetail(JsonView jsonValue)
+  : FrontOfQueueDetail()
 {
   *this = jsonValue;
 }

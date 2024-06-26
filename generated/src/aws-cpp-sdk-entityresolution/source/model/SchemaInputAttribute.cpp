@@ -28,13 +28,8 @@ SchemaInputAttribute::SchemaInputAttribute() :
 {
 }
 
-SchemaInputAttribute::SchemaInputAttribute(JsonView jsonValue) : 
-    m_fieldNameHasBeenSet(false),
-    m_groupNameHasBeenSet(false),
-    m_matchKeyHasBeenSet(false),
-    m_subTypeHasBeenSet(false),
-    m_type(SchemaAttributeType::NOT_SET),
-    m_typeHasBeenSet(false)
+SchemaInputAttribute::SchemaInputAttribute(JsonView jsonValue)
+  : SchemaInputAttribute()
 {
   *this = jsonValue;
 }

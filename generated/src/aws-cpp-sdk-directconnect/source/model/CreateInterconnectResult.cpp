@@ -24,10 +24,8 @@ CreateInterconnectResult::CreateInterconnectResult() :
 {
 }
 
-CreateInterconnectResult::CreateInterconnectResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_interconnectState(InterconnectState::NOT_SET),
-    m_jumboFrameCapable(false),
-    m_hasLogicalRedundancy(HasLogicalRedundancy::NOT_SET)
+CreateInterconnectResult::CreateInterconnectResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateInterconnectResult()
 {
   *this = result;
 }

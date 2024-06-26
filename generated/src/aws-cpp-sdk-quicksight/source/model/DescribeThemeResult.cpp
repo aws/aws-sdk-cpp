@@ -22,8 +22,8 @@ DescribeThemeResult::DescribeThemeResult() :
 {
 }
 
-DescribeThemeResult::DescribeThemeResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+DescribeThemeResult::DescribeThemeResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeThemeResult()
 {
   *this = result;
 }

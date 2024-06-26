@@ -35,20 +35,8 @@ Endpoint::Endpoint() :
 {
 }
 
-Endpoint::Endpoint(JsonView jsonValue) : 
-    m_endpointNameHasBeenSet(false),
-    m_endpointArnHasBeenSet(false),
-    m_endpointConfigNameHasBeenSet(false),
-    m_productionVariantsHasBeenSet(false),
-    m_dataCaptureConfigHasBeenSet(false),
-    m_endpointStatus(EndpointStatus::NOT_SET),
-    m_endpointStatusHasBeenSet(false),
-    m_failureReasonHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_monitoringSchedulesHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_shadowProductionVariantsHasBeenSet(false)
+Endpoint::Endpoint(JsonView jsonValue)
+  : Endpoint()
 {
   *this = jsonValue;
 }

@@ -27,12 +27,8 @@ ListedAccess::ListedAccess() :
 {
 }
 
-ListedAccess::ListedAccess(JsonView jsonValue) : 
-    m_homeDirectoryHasBeenSet(false),
-    m_homeDirectoryType(HomeDirectoryType::NOT_SET),
-    m_homeDirectoryTypeHasBeenSet(false),
-    m_roleHasBeenSet(false),
-    m_externalIdHasBeenSet(false)
+ListedAccess::ListedAccess(JsonView jsonValue)
+  : ListedAccess()
 {
   *this = jsonValue;
 }

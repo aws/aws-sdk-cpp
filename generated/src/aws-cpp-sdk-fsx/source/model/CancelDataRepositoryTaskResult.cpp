@@ -22,8 +22,8 @@ CancelDataRepositoryTaskResult::CancelDataRepositoryTaskResult() :
 {
 }
 
-CancelDataRepositoryTaskResult::CancelDataRepositoryTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_lifecycle(DataRepositoryTaskLifecycle::NOT_SET)
+CancelDataRepositoryTaskResult::CancelDataRepositoryTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CancelDataRepositoryTaskResult()
 {
   *this = result;
 }

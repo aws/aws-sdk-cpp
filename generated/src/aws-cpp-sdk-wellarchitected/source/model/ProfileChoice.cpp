@@ -25,10 +25,8 @@ ProfileChoice::ProfileChoice() :
 {
 }
 
-ProfileChoice::ProfileChoice(JsonView jsonValue) : 
-    m_choiceIdHasBeenSet(false),
-    m_choiceTitleHasBeenSet(false),
-    m_choiceDescriptionHasBeenSet(false)
+ProfileChoice::ProfileChoice(JsonView jsonValue)
+  : ProfileChoice()
 {
   *this = jsonValue;
 }

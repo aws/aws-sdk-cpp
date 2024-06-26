@@ -24,9 +24,8 @@ ByteMatchSetSummary::ByteMatchSetSummary() :
 {
 }
 
-ByteMatchSetSummary::ByteMatchSetSummary(JsonView jsonValue) : 
-    m_byteMatchSetIdHasBeenSet(false),
-    m_nameHasBeenSet(false)
+ByteMatchSetSummary::ByteMatchSetSummary(JsonView jsonValue)
+  : ByteMatchSetSummary()
 {
   *this = jsonValue;
 }

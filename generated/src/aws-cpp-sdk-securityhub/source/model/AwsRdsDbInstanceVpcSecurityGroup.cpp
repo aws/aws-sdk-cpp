@@ -24,9 +24,8 @@ AwsRdsDbInstanceVpcSecurityGroup::AwsRdsDbInstanceVpcSecurityGroup() :
 {
 }
 
-AwsRdsDbInstanceVpcSecurityGroup::AwsRdsDbInstanceVpcSecurityGroup(JsonView jsonValue) : 
-    m_vpcSecurityGroupIdHasBeenSet(false),
-    m_statusHasBeenSet(false)
+AwsRdsDbInstanceVpcSecurityGroup::AwsRdsDbInstanceVpcSecurityGroup(JsonView jsonValue)
+  : AwsRdsDbInstanceVpcSecurityGroup()
 {
   *this = jsonValue;
 }

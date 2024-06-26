@@ -24,9 +24,8 @@ IncompatibleSettingsException::IncompatibleSettingsException() :
 {
 }
 
-IncompatibleSettingsException::IncompatibleSettingsException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
+IncompatibleSettingsException::IncompatibleSettingsException(JsonView jsonValue)
+  : IncompatibleSettingsException()
 {
   *this = jsonValue;
 }

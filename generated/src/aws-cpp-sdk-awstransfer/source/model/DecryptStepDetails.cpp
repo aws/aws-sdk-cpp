@@ -29,14 +29,8 @@ DecryptStepDetails::DecryptStepDetails() :
 {
 }
 
-DecryptStepDetails::DecryptStepDetails(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_type(EncryptionType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_sourceFileLocationHasBeenSet(false),
-    m_overwriteExisting(OverwriteExisting::NOT_SET),
-    m_overwriteExistingHasBeenSet(false),
-    m_destinationFileLocationHasBeenSet(false)
+DecryptStepDetails::DecryptStepDetails(JsonView jsonValue)
+  : DecryptStepDetails()
 {
   *this = jsonValue;
 }

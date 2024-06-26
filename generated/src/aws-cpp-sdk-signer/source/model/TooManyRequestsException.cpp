@@ -24,9 +24,8 @@ TooManyRequestsException::TooManyRequestsException() :
 {
 }
 
-TooManyRequestsException::TooManyRequestsException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_codeHasBeenSet(false)
+TooManyRequestsException::TooManyRequestsException(JsonView jsonValue)
+  : TooManyRequestsException()
 {
   *this = jsonValue;
 }

@@ -29,14 +29,8 @@ Commit::Commit() :
 {
 }
 
-Commit::Commit(JsonView jsonValue) : 
-    m_commitIdHasBeenSet(false),
-    m_treeIdHasBeenSet(false),
-    m_parentsHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_authorHasBeenSet(false),
-    m_committerHasBeenSet(false),
-    m_additionalDataHasBeenSet(false)
+Commit::Commit(JsonView jsonValue)
+  : Commit()
 {
   *this = jsonValue;
 }

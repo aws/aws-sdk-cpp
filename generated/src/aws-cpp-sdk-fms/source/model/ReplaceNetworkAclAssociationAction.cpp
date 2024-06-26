@@ -27,12 +27,8 @@ ReplaceNetworkAclAssociationAction::ReplaceNetworkAclAssociationAction() :
 {
 }
 
-ReplaceNetworkAclAssociationAction::ReplaceNetworkAclAssociationAction(JsonView jsonValue) : 
-    m_descriptionHasBeenSet(false),
-    m_associationIdHasBeenSet(false),
-    m_networkAclIdHasBeenSet(false),
-    m_fMSCanRemediate(false),
-    m_fMSCanRemediateHasBeenSet(false)
+ReplaceNetworkAclAssociationAction::ReplaceNetworkAclAssociationAction(JsonView jsonValue)
+  : ReplaceNetworkAclAssociationAction()
 {
   *this = jsonValue;
 }

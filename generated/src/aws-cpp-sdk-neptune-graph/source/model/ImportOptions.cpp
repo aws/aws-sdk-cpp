@@ -23,8 +23,8 @@ ImportOptions::ImportOptions() :
 {
 }
 
-ImportOptions::ImportOptions(JsonView jsonValue) : 
-    m_neptuneHasBeenSet(false)
+ImportOptions::ImportOptions(JsonView jsonValue)
+  : ImportOptions()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ IPSetMetadata::IPSetMetadata() :
 {
 }
 
-IPSetMetadata::IPSetMetadata(JsonView jsonValue) : 
-    m_resolvedCIDRCount(0),
-    m_resolvedCIDRCountHasBeenSet(false)
+IPSetMetadata::IPSetMetadata(JsonView jsonValue)
+  : IPSetMetadata()
 {
   *this = jsonValue;
 }

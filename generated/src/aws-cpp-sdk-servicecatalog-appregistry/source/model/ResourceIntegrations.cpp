@@ -23,8 +23,8 @@ ResourceIntegrations::ResourceIntegrations() :
 {
 }
 
-ResourceIntegrations::ResourceIntegrations(JsonView jsonValue) : 
-    m_resourceGroupHasBeenSet(false)
+ResourceIntegrations::ResourceIntegrations(JsonView jsonValue)
+  : ResourceIntegrations()
 {
   *this = jsonValue;
 }

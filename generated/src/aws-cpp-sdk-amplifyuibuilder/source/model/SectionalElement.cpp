@@ -30,15 +30,8 @@ SectionalElement::SectionalElement() :
 {
 }
 
-SectionalElement::SectionalElement(JsonView jsonValue) : 
-    m_typeHasBeenSet(false),
-    m_positionHasBeenSet(false),
-    m_textHasBeenSet(false),
-    m_level(0),
-    m_levelHasBeenSet(false),
-    m_orientationHasBeenSet(false),
-    m_excluded(false),
-    m_excludedHasBeenSet(false)
+SectionalElement::SectionalElement(JsonView jsonValue)
+  : SectionalElement()
 {
   *this = jsonValue;
 }

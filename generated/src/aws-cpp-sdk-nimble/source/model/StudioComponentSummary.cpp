@@ -33,18 +33,8 @@ StudioComponentSummary::StudioComponentSummary() :
 {
 }
 
-StudioComponentSummary::StudioComponentSummary(JsonView jsonValue) : 
-    m_createdAtHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_studioComponentIdHasBeenSet(false),
-    m_subtype(StudioComponentSubtype::NOT_SET),
-    m_subtypeHasBeenSet(false),
-    m_type(StudioComponentType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_updatedByHasBeenSet(false)
+StudioComponentSummary::StudioComponentSummary(JsonView jsonValue)
+  : StudioComponentSummary()
 {
   *this = jsonValue;
 }

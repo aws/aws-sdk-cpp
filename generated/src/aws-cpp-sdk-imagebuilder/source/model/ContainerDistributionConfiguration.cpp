@@ -25,10 +25,8 @@ ContainerDistributionConfiguration::ContainerDistributionConfiguration() :
 {
 }
 
-ContainerDistributionConfiguration::ContainerDistributionConfiguration(JsonView jsonValue) : 
-    m_descriptionHasBeenSet(false),
-    m_containerTagsHasBeenSet(false),
-    m_targetRepositoryHasBeenSet(false)
+ContainerDistributionConfiguration::ContainerDistributionConfiguration(JsonView jsonValue)
+  : ContainerDistributionConfiguration()
 {
   *this = jsonValue;
 }

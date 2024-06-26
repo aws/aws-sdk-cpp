@@ -23,8 +23,8 @@ Typography::Typography() :
 {
 }
 
-Typography::Typography(JsonView jsonValue) : 
-    m_fontFamiliesHasBeenSet(false)
+Typography::Typography(JsonView jsonValue)
+  : Typography()
 {
   *this = jsonValue;
 }

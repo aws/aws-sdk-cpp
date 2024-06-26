@@ -31,14 +31,8 @@ IpamPoolCidr::IpamPoolCidr() :
 {
 }
 
-IpamPoolCidr::IpamPoolCidr(const XmlNode& xmlNode) : 
-    m_cidrHasBeenSet(false),
-    m_state(IpamPoolCidrState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_failureReasonHasBeenSet(false),
-    m_ipamPoolCidrIdHasBeenSet(false),
-    m_netmaskLength(0),
-    m_netmaskLengthHasBeenSet(false)
+IpamPoolCidr::IpamPoolCidr(const XmlNode& xmlNode)
+  : IpamPoolCidr()
 {
   *this = xmlNode;
 }

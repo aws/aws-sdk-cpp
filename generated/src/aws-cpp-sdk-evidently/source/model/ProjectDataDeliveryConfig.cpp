@@ -24,9 +24,8 @@ ProjectDataDeliveryConfig::ProjectDataDeliveryConfig() :
 {
 }
 
-ProjectDataDeliveryConfig::ProjectDataDeliveryConfig(JsonView jsonValue) : 
-    m_cloudWatchLogsHasBeenSet(false),
-    m_s3DestinationHasBeenSet(false)
+ProjectDataDeliveryConfig::ProjectDataDeliveryConfig(JsonView jsonValue)
+  : ProjectDataDeliveryConfig()
 {
   *this = jsonValue;
 }

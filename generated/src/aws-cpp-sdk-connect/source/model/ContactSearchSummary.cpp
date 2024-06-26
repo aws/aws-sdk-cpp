@@ -35,20 +35,8 @@ ContactSearchSummary::ContactSearchSummary() :
 {
 }
 
-ContactSearchSummary::ContactSearchSummary(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_initialContactIdHasBeenSet(false),
-    m_previousContactIdHasBeenSet(false),
-    m_initiationMethod(ContactInitiationMethod::NOT_SET),
-    m_initiationMethodHasBeenSet(false),
-    m_channel(Channel::NOT_SET),
-    m_channelHasBeenSet(false),
-    m_queueInfoHasBeenSet(false),
-    m_agentInfoHasBeenSet(false),
-    m_initiationTimestampHasBeenSet(false),
-    m_disconnectTimestampHasBeenSet(false),
-    m_scheduledTimestampHasBeenSet(false)
+ContactSearchSummary::ContactSearchSummary(JsonView jsonValue)
+  : ContactSearchSummary()
 {
   *this = jsonValue;
 }

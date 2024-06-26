@@ -28,13 +28,8 @@ ActionTypeId::ActionTypeId() :
 {
 }
 
-ActionTypeId::ActionTypeId(JsonView jsonValue) : 
-    m_category(ActionCategory::NOT_SET),
-    m_categoryHasBeenSet(false),
-    m_owner(ActionOwner::NOT_SET),
-    m_ownerHasBeenSet(false),
-    m_providerHasBeenSet(false),
-    m_versionHasBeenSet(false)
+ActionTypeId::ActionTypeId(JsonView jsonValue)
+  : ActionTypeId()
 {
   *this = jsonValue;
 }

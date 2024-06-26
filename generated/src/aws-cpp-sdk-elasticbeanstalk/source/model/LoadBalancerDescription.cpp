@@ -27,10 +27,8 @@ LoadBalancerDescription::LoadBalancerDescription() :
 {
 }
 
-LoadBalancerDescription::LoadBalancerDescription(const XmlNode& xmlNode) : 
-    m_loadBalancerNameHasBeenSet(false),
-    m_domainHasBeenSet(false),
-    m_listenersHasBeenSet(false)
+LoadBalancerDescription::LoadBalancerDescription(const XmlNode& xmlNode)
+  : LoadBalancerDescription()
 {
   *this = xmlNode;
 }

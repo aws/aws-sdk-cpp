@@ -28,13 +28,8 @@ SceneSummary::SceneSummary() :
 {
 }
 
-SceneSummary::SceneSummary(JsonView jsonValue) : 
-    m_sceneIdHasBeenSet(false),
-    m_contentLocationHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_creationDateTimeHasBeenSet(false),
-    m_updateDateTimeHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+SceneSummary::SceneSummary(JsonView jsonValue)
+  : SceneSummary()
 {
   *this = jsonValue;
 }

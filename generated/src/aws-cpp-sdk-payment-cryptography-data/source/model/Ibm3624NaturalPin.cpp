@@ -25,10 +25,8 @@ Ibm3624NaturalPin::Ibm3624NaturalPin() :
 {
 }
 
-Ibm3624NaturalPin::Ibm3624NaturalPin(JsonView jsonValue) : 
-    m_decimalizationTableHasBeenSet(false),
-    m_pinValidationDataHasBeenSet(false),
-    m_pinValidationDataPadCharacterHasBeenSet(false)
+Ibm3624NaturalPin::Ibm3624NaturalPin(JsonView jsonValue)
+  : Ibm3624NaturalPin()
 {
   *this = jsonValue;
 }

@@ -40,23 +40,8 @@ DBEngineVersion::DBEngineVersion() :
 {
 }
 
-DBEngineVersion::DBEngineVersion(const XmlNode& xmlNode) : 
-    m_engineHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_dBParameterGroupFamilyHasBeenSet(false),
-    m_dBEngineDescriptionHasBeenSet(false),
-    m_dBEngineVersionDescriptionHasBeenSet(false),
-    m_defaultCharacterSetHasBeenSet(false),
-    m_supportedCharacterSetsHasBeenSet(false),
-    m_validUpgradeTargetHasBeenSet(false),
-    m_supportedTimezonesHasBeenSet(false),
-    m_exportableLogTypesHasBeenSet(false),
-    m_supportsLogExportsToCloudwatchLogs(false),
-    m_supportsLogExportsToCloudwatchLogsHasBeenSet(false),
-    m_supportsReadReplica(false),
-    m_supportsReadReplicaHasBeenSet(false),
-    m_supportsGlobalDatabases(false),
-    m_supportsGlobalDatabasesHasBeenSet(false)
+DBEngineVersion::DBEngineVersion(const XmlNode& xmlNode)
+  : DBEngineVersion()
 {
   *this = xmlNode;
 }

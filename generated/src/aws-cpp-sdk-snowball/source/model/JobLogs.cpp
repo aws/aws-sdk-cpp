@@ -25,10 +25,8 @@ JobLogs::JobLogs() :
 {
 }
 
-JobLogs::JobLogs(JsonView jsonValue) : 
-    m_jobCompletionReportURIHasBeenSet(false),
-    m_jobSuccessLogURIHasBeenSet(false),
-    m_jobFailureLogURIHasBeenSet(false)
+JobLogs::JobLogs(JsonView jsonValue)
+  : JobLogs()
 {
   *this = jsonValue;
 }

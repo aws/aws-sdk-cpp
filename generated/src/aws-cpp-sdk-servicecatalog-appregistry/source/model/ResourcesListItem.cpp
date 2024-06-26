@@ -26,11 +26,8 @@ ResourcesListItem::ResourcesListItem() :
 {
 }
 
-ResourcesListItem::ResourcesListItem(JsonView jsonValue) : 
-    m_resourceArnHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false)
+ResourcesListItem::ResourcesListItem(JsonView jsonValue)
+  : ResourcesListItem()
 {
   *this = jsonValue;
 }

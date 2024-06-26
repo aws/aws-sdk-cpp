@@ -24,9 +24,8 @@ AwsS3BucketLoggingConfiguration::AwsS3BucketLoggingConfiguration() :
 {
 }
 
-AwsS3BucketLoggingConfiguration::AwsS3BucketLoggingConfiguration(JsonView jsonValue) : 
-    m_destinationBucketNameHasBeenSet(false),
-    m_logFilePrefixHasBeenSet(false)
+AwsS3BucketLoggingConfiguration::AwsS3BucketLoggingConfiguration(JsonView jsonValue)
+  : AwsS3BucketLoggingConfiguration()
 {
   *this = jsonValue;
 }

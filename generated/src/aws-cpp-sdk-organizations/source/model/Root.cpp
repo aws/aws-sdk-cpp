@@ -26,11 +26,8 @@ Root::Root() :
 {
 }
 
-Root::Root(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_policyTypesHasBeenSet(false)
+Root::Root(JsonView jsonValue)
+  : Root()
 {
   *this = jsonValue;
 }

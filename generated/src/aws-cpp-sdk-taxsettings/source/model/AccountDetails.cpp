@@ -26,11 +26,8 @@ AccountDetails::AccountDetails() :
 {
 }
 
-AccountDetails::AccountDetails(JsonView jsonValue) : 
-    m_accountIdHasBeenSet(false),
-    m_accountMetaDataHasBeenSet(false),
-    m_taxInheritanceDetailsHasBeenSet(false),
-    m_taxRegistrationHasBeenSet(false)
+AccountDetails::AccountDetails(JsonView jsonValue)
+  : AccountDetails()
 {
   *this = jsonValue;
 }

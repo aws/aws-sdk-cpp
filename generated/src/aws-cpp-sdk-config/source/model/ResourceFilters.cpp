@@ -26,11 +26,8 @@ ResourceFilters::ResourceFilters() :
 {
 }
 
-ResourceFilters::ResourceFilters(JsonView jsonValue) : 
-    m_accountIdHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_resourceNameHasBeenSet(false),
-    m_regionHasBeenSet(false)
+ResourceFilters::ResourceFilters(JsonView jsonValue)
+  : ResourceFilters()
 {
   *this = jsonValue;
 }

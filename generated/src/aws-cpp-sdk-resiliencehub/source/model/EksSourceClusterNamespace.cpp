@@ -24,9 +24,8 @@ EksSourceClusterNamespace::EksSourceClusterNamespace() :
 {
 }
 
-EksSourceClusterNamespace::EksSourceClusterNamespace(JsonView jsonValue) : 
-    m_eksClusterArnHasBeenSet(false),
-    m_namespaceHasBeenSet(false)
+EksSourceClusterNamespace::EksSourceClusterNamespace(JsonView jsonValue)
+  : EksSourceClusterNamespace()
 {
   *this = jsonValue;
 }

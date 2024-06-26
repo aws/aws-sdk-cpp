@@ -23,9 +23,8 @@ GetJobResult::GetJobResult() :
 {
 }
 
-GetJobResult::GetJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_state(State::NOT_SET),
-    m_type(Type::NOT_SET)
+GetJobResult::GetJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetJobResult()
 {
   *this = result;
 }

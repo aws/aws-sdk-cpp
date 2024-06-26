@@ -22,8 +22,8 @@ UpdateConfigurationTemplateResult::UpdateConfigurationTemplateResult() :
 {
 }
 
-UpdateConfigurationTemplateResult::UpdateConfigurationTemplateResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_deploymentStatus(ConfigurationDeploymentStatus::NOT_SET)
+UpdateConfigurationTemplateResult::UpdateConfigurationTemplateResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : UpdateConfigurationTemplateResult()
 {
   *this = result;
 }

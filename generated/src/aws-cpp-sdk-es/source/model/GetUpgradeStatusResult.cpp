@@ -23,9 +23,8 @@ GetUpgradeStatusResult::GetUpgradeStatusResult() :
 {
 }
 
-GetUpgradeStatusResult::GetUpgradeStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_upgradeStep(UpgradeStep::NOT_SET),
-    m_stepStatus(UpgradeStatus::NOT_SET)
+GetUpgradeStatusResult::GetUpgradeStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetUpgradeStatusResult()
 {
   *this = result;
 }

@@ -26,11 +26,8 @@ JobCommand::JobCommand() :
 {
 }
 
-JobCommand::JobCommand(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_scriptLocationHasBeenSet(false),
-    m_pythonVersionHasBeenSet(false),
-    m_runtimeHasBeenSet(false)
+JobCommand::JobCommand(JsonView jsonValue)
+  : JobCommand()
 {
   *this = jsonValue;
 }

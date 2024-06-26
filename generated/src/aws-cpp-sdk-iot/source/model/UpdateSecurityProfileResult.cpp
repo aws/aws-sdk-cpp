@@ -22,8 +22,8 @@ UpdateSecurityProfileResult::UpdateSecurityProfileResult() :
 {
 }
 
-UpdateSecurityProfileResult::UpdateSecurityProfileResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_version(0)
+UpdateSecurityProfileResult::UpdateSecurityProfileResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateSecurityProfileResult()
 {
   *this = result;
 }

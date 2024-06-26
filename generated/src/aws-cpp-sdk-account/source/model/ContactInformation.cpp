@@ -34,19 +34,8 @@ ContactInformation::ContactInformation() :
 {
 }
 
-ContactInformation::ContactInformation(JsonView jsonValue) : 
-    m_addressLine1HasBeenSet(false),
-    m_addressLine2HasBeenSet(false),
-    m_addressLine3HasBeenSet(false),
-    m_cityHasBeenSet(false),
-    m_companyNameHasBeenSet(false),
-    m_countryCodeHasBeenSet(false),
-    m_districtOrCountyHasBeenSet(false),
-    m_fullNameHasBeenSet(false),
-    m_phoneNumberHasBeenSet(false),
-    m_postalCodeHasBeenSet(false),
-    m_stateOrRegionHasBeenSet(false),
-    m_websiteUrlHasBeenSet(false)
+ContactInformation::ContactInformation(JsonView jsonValue)
+  : ContactInformation()
 {
   *this = jsonValue;
 }

@@ -28,13 +28,8 @@ DeviceiSCSIAttributes::DeviceiSCSIAttributes() :
 {
 }
 
-DeviceiSCSIAttributes::DeviceiSCSIAttributes(JsonView jsonValue) : 
-    m_targetARNHasBeenSet(false),
-    m_networkInterfaceIdHasBeenSet(false),
-    m_networkInterfacePort(0),
-    m_networkInterfacePortHasBeenSet(false),
-    m_chapEnabled(false),
-    m_chapEnabledHasBeenSet(false)
+DeviceiSCSIAttributes::DeviceiSCSIAttributes(JsonView jsonValue)
+  : DeviceiSCSIAttributes()
 {
   *this = jsonValue;
 }

@@ -26,9 +26,8 @@ ResourceStatementRequest::ResourceStatementRequest() :
 {
 }
 
-ResourceStatementRequest::ResourceStatementRequest(const XmlNode& xmlNode) : 
-    m_resourcesHasBeenSet(false),
-    m_resourceTypesHasBeenSet(false)
+ResourceStatementRequest::ResourceStatementRequest(const XmlNode& xmlNode)
+  : ResourceStatementRequest()
 {
   *this = xmlNode;
 }

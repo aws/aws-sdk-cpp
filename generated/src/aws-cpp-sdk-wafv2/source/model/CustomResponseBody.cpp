@@ -25,10 +25,8 @@ CustomResponseBody::CustomResponseBody() :
 {
 }
 
-CustomResponseBody::CustomResponseBody(JsonView jsonValue) : 
-    m_contentType(ResponseContentType::NOT_SET),
-    m_contentTypeHasBeenSet(false),
-    m_contentHasBeenSet(false)
+CustomResponseBody::CustomResponseBody(JsonView jsonValue)
+  : CustomResponseBody()
 {
   *this = jsonValue;
 }

@@ -28,13 +28,8 @@ Change::Change() :
 {
 }
 
-Change::Change(JsonView jsonValue) : 
-    m_changeTypeHasBeenSet(false),
-    m_entityHasBeenSet(false),
-    m_entityTagsHasBeenSet(false),
-    m_detailsHasBeenSet(false),
-    m_detailsDocumentHasBeenSet(false),
-    m_changeNameHasBeenSet(false)
+Change::Change(JsonView jsonValue)
+  : Change()
 {
   *this = jsonValue;
 }

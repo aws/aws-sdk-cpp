@@ -29,14 +29,8 @@ S3HudiCatalogTarget::S3HudiCatalogTarget() :
 {
 }
 
-S3HudiCatalogTarget::S3HudiCatalogTarget(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_inputsHasBeenSet(false),
-    m_partitionKeysHasBeenSet(false),
-    m_tableHasBeenSet(false),
-    m_databaseHasBeenSet(false),
-    m_additionalOptionsHasBeenSet(false),
-    m_schemaChangePolicyHasBeenSet(false)
+S3HudiCatalogTarget::S3HudiCatalogTarget(JsonView jsonValue)
+  : S3HudiCatalogTarget()
 {
   *this = jsonValue;
 }

@@ -27,12 +27,8 @@ AgentKnowledgeBaseSummary::AgentKnowledgeBaseSummary() :
 {
 }
 
-AgentKnowledgeBaseSummary::AgentKnowledgeBaseSummary(JsonView jsonValue) : 
-    m_descriptionHasBeenSet(false),
-    m_knowledgeBaseIdHasBeenSet(false),
-    m_knowledgeBaseState(KnowledgeBaseState::NOT_SET),
-    m_knowledgeBaseStateHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+AgentKnowledgeBaseSummary::AgentKnowledgeBaseSummary(JsonView jsonValue)
+  : AgentKnowledgeBaseSummary()
 {
   *this = jsonValue;
 }

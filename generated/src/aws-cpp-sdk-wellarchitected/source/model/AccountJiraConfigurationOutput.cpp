@@ -31,16 +31,8 @@ AccountJiraConfigurationOutput::AccountJiraConfigurationOutput() :
 {
 }
 
-AccountJiraConfigurationOutput::AccountJiraConfigurationOutput(JsonView jsonValue) : 
-    m_integrationStatus(IntegrationStatus::NOT_SET),
-    m_integrationStatusHasBeenSet(false),
-    m_issueManagementStatus(AccountJiraIssueManagementStatus::NOT_SET),
-    m_issueManagementStatusHasBeenSet(false),
-    m_issueManagementType(IssueManagementType::NOT_SET),
-    m_issueManagementTypeHasBeenSet(false),
-    m_subdomainHasBeenSet(false),
-    m_jiraProjectKeyHasBeenSet(false),
-    m_statusMessageHasBeenSet(false)
+AccountJiraConfigurationOutput::AccountJiraConfigurationOutput(JsonView jsonValue)
+  : AccountJiraConfigurationOutput()
 {
   *this = jsonValue;
 }

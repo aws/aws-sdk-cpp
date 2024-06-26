@@ -27,12 +27,8 @@ PipelineDescription::PipelineDescription() :
 {
 }
 
-PipelineDescription::PipelineDescription(JsonView jsonValue) : 
-    m_pipelineIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_fieldsHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+PipelineDescription::PipelineDescription(JsonView jsonValue)
+  : PipelineDescription()
 {
   *this = jsonValue;
 }

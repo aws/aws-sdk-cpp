@@ -25,10 +25,8 @@ ThresholdV2::ThresholdV2() :
 {
 }
 
-ThresholdV2::ThresholdV2(JsonView jsonValue) : 
-    m_comparisonHasBeenSet(false),
-    m_thresholdValue(0.0),
-    m_thresholdValueHasBeenSet(false)
+ThresholdV2::ThresholdV2(JsonView jsonValue)
+  : ThresholdV2()
 {
   *this = jsonValue;
 }

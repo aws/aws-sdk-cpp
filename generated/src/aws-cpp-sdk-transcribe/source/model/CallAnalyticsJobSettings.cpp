@@ -31,16 +31,8 @@ CallAnalyticsJobSettings::CallAnalyticsJobSettings() :
 {
 }
 
-CallAnalyticsJobSettings::CallAnalyticsJobSettings(JsonView jsonValue) : 
-    m_vocabularyNameHasBeenSet(false),
-    m_vocabularyFilterNameHasBeenSet(false),
-    m_vocabularyFilterMethod(VocabularyFilterMethod::NOT_SET),
-    m_vocabularyFilterMethodHasBeenSet(false),
-    m_languageModelNameHasBeenSet(false),
-    m_contentRedactionHasBeenSet(false),
-    m_languageOptionsHasBeenSet(false),
-    m_languageIdSettingsHasBeenSet(false),
-    m_summarizationHasBeenSet(false)
+CallAnalyticsJobSettings::CallAnalyticsJobSettings(JsonView jsonValue)
+  : CallAnalyticsJobSettings()
 {
   *this = jsonValue;
 }

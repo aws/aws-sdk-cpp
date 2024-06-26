@@ -24,9 +24,8 @@ RowFilter::RowFilter() :
 {
 }
 
-RowFilter::RowFilter(JsonView jsonValue) : 
-    m_filterExpressionHasBeenSet(false),
-    m_allRowsWildcardHasBeenSet(false)
+RowFilter::RowFilter(JsonView jsonValue)
+  : RowFilter()
 {
   *this = jsonValue;
 }

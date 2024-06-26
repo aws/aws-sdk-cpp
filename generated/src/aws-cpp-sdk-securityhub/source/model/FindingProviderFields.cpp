@@ -29,14 +29,8 @@ FindingProviderFields::FindingProviderFields() :
 {
 }
 
-FindingProviderFields::FindingProviderFields(JsonView jsonValue) : 
-    m_confidence(0),
-    m_confidenceHasBeenSet(false),
-    m_criticality(0),
-    m_criticalityHasBeenSet(false),
-    m_relatedFindingsHasBeenSet(false),
-    m_severityHasBeenSet(false),
-    m_typesHasBeenSet(false)
+FindingProviderFields::FindingProviderFields(JsonView jsonValue)
+  : FindingProviderFields()
 {
   *this = jsonValue;
 }

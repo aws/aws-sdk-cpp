@@ -29,14 +29,8 @@ AppComponentCompliance::AppComponentCompliance() :
 {
 }
 
-AppComponentCompliance::AppComponentCompliance(JsonView jsonValue) : 
-    m_appComponentNameHasBeenSet(false),
-    m_complianceHasBeenSet(false),
-    m_costHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_resiliencyScoreHasBeenSet(false),
-    m_status(ComplianceStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+AppComponentCompliance::AppComponentCompliance(JsonView jsonValue)
+  : AppComponentCompliance()
 {
   *this = jsonValue;
 }

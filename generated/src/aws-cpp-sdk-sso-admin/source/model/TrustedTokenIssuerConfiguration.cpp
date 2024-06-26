@@ -23,8 +23,8 @@ TrustedTokenIssuerConfiguration::TrustedTokenIssuerConfiguration() :
 {
 }
 
-TrustedTokenIssuerConfiguration::TrustedTokenIssuerConfiguration(JsonView jsonValue) : 
-    m_oidcJwtConfigurationHasBeenSet(false)
+TrustedTokenIssuerConfiguration::TrustedTokenIssuerConfiguration(JsonView jsonValue)
+  : TrustedTokenIssuerConfiguration()
 {
   *this = jsonValue;
 }

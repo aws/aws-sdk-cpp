@@ -45,30 +45,8 @@ ConfigurationItem::ConfigurationItem() :
 {
 }
 
-ConfigurationItem::ConfigurationItem(JsonView jsonValue) : 
-    m_versionHasBeenSet(false),
-    m_accountIdHasBeenSet(false),
-    m_configurationItemCaptureTimeHasBeenSet(false),
-    m_configurationItemStatus(ConfigurationItemStatus::NOT_SET),
-    m_configurationItemStatusHasBeenSet(false),
-    m_configurationStateIdHasBeenSet(false),
-    m_configurationItemMD5HashHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_resourceNameHasBeenSet(false),
-    m_awsRegionHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_resourceCreationTimeHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_relatedEventsHasBeenSet(false),
-    m_relationshipsHasBeenSet(false),
-    m_configurationHasBeenSet(false),
-    m_supplementaryConfigurationHasBeenSet(false),
-    m_recordingFrequency(RecordingFrequency::NOT_SET),
-    m_recordingFrequencyHasBeenSet(false),
-    m_configurationItemDeliveryTimeHasBeenSet(false)
+ConfigurationItem::ConfigurationItem(JsonView jsonValue)
+  : ConfigurationItem()
 {
   *this = jsonValue;
 }

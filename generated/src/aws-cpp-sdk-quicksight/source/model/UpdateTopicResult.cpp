@@ -22,8 +22,8 @@ UpdateTopicResult::UpdateTopicResult() :
 {
 }
 
-UpdateTopicResult::UpdateTopicResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+UpdateTopicResult::UpdateTopicResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateTopicResult()
 {
   *this = result;
 }

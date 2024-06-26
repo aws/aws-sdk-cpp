@@ -24,9 +24,8 @@ ServiceOperation::ServiceOperation() :
 {
 }
 
-ServiceOperation::ServiceOperation(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_metricReferencesHasBeenSet(false)
+ServiceOperation::ServiceOperation(JsonView jsonValue)
+  : ServiceOperation()
 {
   *this = jsonValue;
 }

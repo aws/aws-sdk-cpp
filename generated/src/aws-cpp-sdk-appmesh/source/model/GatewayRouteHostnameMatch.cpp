@@ -24,9 +24,8 @@ GatewayRouteHostnameMatch::GatewayRouteHostnameMatch() :
 {
 }
 
-GatewayRouteHostnameMatch::GatewayRouteHostnameMatch(JsonView jsonValue) : 
-    m_exactHasBeenSet(false),
-    m_suffixHasBeenSet(false)
+GatewayRouteHostnameMatch::GatewayRouteHostnameMatch(JsonView jsonValue)
+  : GatewayRouteHostnameMatch()
 {
   *this = jsonValue;
 }

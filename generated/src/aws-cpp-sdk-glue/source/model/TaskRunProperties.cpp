@@ -28,13 +28,8 @@ TaskRunProperties::TaskRunProperties() :
 {
 }
 
-TaskRunProperties::TaskRunProperties(JsonView jsonValue) : 
-    m_taskType(TaskType::NOT_SET),
-    m_taskTypeHasBeenSet(false),
-    m_importLabelsTaskRunPropertiesHasBeenSet(false),
-    m_exportLabelsTaskRunPropertiesHasBeenSet(false),
-    m_labelingSetGenerationTaskRunPropertiesHasBeenSet(false),
-    m_findMatchesTaskRunPropertiesHasBeenSet(false)
+TaskRunProperties::TaskRunProperties(JsonView jsonValue)
+  : TaskRunProperties()
 {
   *this = jsonValue;
 }

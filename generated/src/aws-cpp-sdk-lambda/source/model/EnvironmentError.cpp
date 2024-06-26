@@ -24,9 +24,8 @@ EnvironmentError::EnvironmentError() :
 {
 }
 
-EnvironmentError::EnvironmentError(JsonView jsonValue) : 
-    m_errorCodeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+EnvironmentError::EnvironmentError(JsonView jsonValue)
+  : EnvironmentError()
 {
   *this = jsonValue;
 }

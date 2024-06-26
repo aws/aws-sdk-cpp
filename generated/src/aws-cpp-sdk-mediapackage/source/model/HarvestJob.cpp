@@ -32,17 +32,8 @@ HarvestJob::HarvestJob() :
 {
 }
 
-HarvestJob::HarvestJob(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_channelIdHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_originEndpointIdHasBeenSet(false),
-    m_s3DestinationHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_status(Status::NOT_SET),
-    m_statusHasBeenSet(false)
+HarvestJob::HarvestJob(JsonView jsonValue)
+  : HarvestJob()
 {
   *this = jsonValue;
 }

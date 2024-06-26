@@ -32,17 +32,8 @@ Anomaly::Anomaly() :
 {
 }
 
-Anomaly::Anomaly(JsonView jsonValue) : 
-    m_anomalyIdHasBeenSet(false),
-    m_anomalyStartDateHasBeenSet(false),
-    m_anomalyEndDateHasBeenSet(false),
-    m_dimensionValueHasBeenSet(false),
-    m_rootCausesHasBeenSet(false),
-    m_anomalyScoreHasBeenSet(false),
-    m_impactHasBeenSet(false),
-    m_monitorArnHasBeenSet(false),
-    m_feedback(AnomalyFeedbackType::NOT_SET),
-    m_feedbackHasBeenSet(false)
+Anomaly::Anomaly(JsonView jsonValue)
+  : Anomaly()
 {
   *this = jsonValue;
 }

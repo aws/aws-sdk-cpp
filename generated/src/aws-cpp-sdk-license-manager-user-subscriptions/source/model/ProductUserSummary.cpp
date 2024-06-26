@@ -30,15 +30,8 @@ ProductUserSummary::ProductUserSummary() :
 {
 }
 
-ProductUserSummary::ProductUserSummary(JsonView jsonValue) : 
-    m_domainHasBeenSet(false),
-    m_identityProviderHasBeenSet(false),
-    m_productHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_subscriptionEndDateHasBeenSet(false),
-    m_subscriptionStartDateHasBeenSet(false),
-    m_usernameHasBeenSet(false)
+ProductUserSummary::ProductUserSummary(JsonView jsonValue)
+  : ProductUserSummary()
 {
   *this = jsonValue;
 }

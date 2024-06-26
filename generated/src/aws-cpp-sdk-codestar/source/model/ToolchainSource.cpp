@@ -23,8 +23,8 @@ ToolchainSource::ToolchainSource() :
 {
 }
 
-ToolchainSource::ToolchainSource(JsonView jsonValue) : 
-    m_s3HasBeenSet(false)
+ToolchainSource::ToolchainSource(JsonView jsonValue)
+  : ToolchainSource()
 {
   *this = jsonValue;
 }

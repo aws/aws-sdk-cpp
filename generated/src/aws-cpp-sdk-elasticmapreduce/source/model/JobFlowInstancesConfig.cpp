@@ -44,29 +44,8 @@ JobFlowInstancesConfig::JobFlowInstancesConfig() :
 {
 }
 
-JobFlowInstancesConfig::JobFlowInstancesConfig(JsonView jsonValue) : 
-    m_masterInstanceTypeHasBeenSet(false),
-    m_slaveInstanceTypeHasBeenSet(false),
-    m_instanceCount(0),
-    m_instanceCountHasBeenSet(false),
-    m_instanceGroupsHasBeenSet(false),
-    m_instanceFleetsHasBeenSet(false),
-    m_ec2KeyNameHasBeenSet(false),
-    m_placementHasBeenSet(false),
-    m_keepJobFlowAliveWhenNoSteps(false),
-    m_keepJobFlowAliveWhenNoStepsHasBeenSet(false),
-    m_terminationProtected(false),
-    m_terminationProtectedHasBeenSet(false),
-    m_unhealthyNodeReplacement(false),
-    m_unhealthyNodeReplacementHasBeenSet(false),
-    m_hadoopVersionHasBeenSet(false),
-    m_ec2SubnetIdHasBeenSet(false),
-    m_ec2SubnetIdsHasBeenSet(false),
-    m_emrManagedMasterSecurityGroupHasBeenSet(false),
-    m_emrManagedSlaveSecurityGroupHasBeenSet(false),
-    m_serviceAccessSecurityGroupHasBeenSet(false),
-    m_additionalMasterSecurityGroupsHasBeenSet(false),
-    m_additionalSlaveSecurityGroupsHasBeenSet(false)
+JobFlowInstancesConfig::JobFlowInstancesConfig(JsonView jsonValue)
+  : JobFlowInstancesConfig()
 {
   *this = jsonValue;
 }

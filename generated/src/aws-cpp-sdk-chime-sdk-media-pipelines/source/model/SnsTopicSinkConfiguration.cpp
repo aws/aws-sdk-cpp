@@ -23,8 +23,8 @@ SnsTopicSinkConfiguration::SnsTopicSinkConfiguration() :
 {
 }
 
-SnsTopicSinkConfiguration::SnsTopicSinkConfiguration(JsonView jsonValue) : 
-    m_insightsTargetHasBeenSet(false)
+SnsTopicSinkConfiguration::SnsTopicSinkConfiguration(JsonView jsonValue)
+  : SnsTopicSinkConfiguration()
 {
   *this = jsonValue;
 }

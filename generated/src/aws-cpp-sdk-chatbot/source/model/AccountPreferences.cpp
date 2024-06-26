@@ -26,11 +26,8 @@ AccountPreferences::AccountPreferences() :
 {
 }
 
-AccountPreferences::AccountPreferences(JsonView jsonValue) : 
-    m_userAuthorizationRequired(false),
-    m_userAuthorizationRequiredHasBeenSet(false),
-    m_trainingDataCollectionEnabled(false),
-    m_trainingDataCollectionEnabledHasBeenSet(false)
+AccountPreferences::AccountPreferences(JsonView jsonValue)
+  : AccountPreferences()
 {
   *this = jsonValue;
 }

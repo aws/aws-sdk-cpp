@@ -26,11 +26,8 @@ IamUser::IamUser() :
 {
 }
 
-IamUser::IamUser(JsonView jsonValue) : 
-    m_accountIdHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_principalIdHasBeenSet(false),
-    m_userNameHasBeenSet(false)
+IamUser::IamUser(JsonView jsonValue)
+  : IamUser()
 {
   *this = jsonValue;
 }

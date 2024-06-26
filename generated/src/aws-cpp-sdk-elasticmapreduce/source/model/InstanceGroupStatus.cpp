@@ -26,11 +26,8 @@ InstanceGroupStatus::InstanceGroupStatus() :
 {
 }
 
-InstanceGroupStatus::InstanceGroupStatus(JsonView jsonValue) : 
-    m_state(InstanceGroupState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_stateChangeReasonHasBeenSet(false),
-    m_timelineHasBeenSet(false)
+InstanceGroupStatus::InstanceGroupStatus(JsonView jsonValue)
+  : InstanceGroupStatus()
 {
   *this = jsonValue;
 }

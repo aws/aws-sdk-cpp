@@ -24,9 +24,8 @@ TerminologyDataLocation::TerminologyDataLocation() :
 {
 }
 
-TerminologyDataLocation::TerminologyDataLocation(JsonView jsonValue) : 
-    m_repositoryTypeHasBeenSet(false),
-    m_locationHasBeenSet(false)
+TerminologyDataLocation::TerminologyDataLocation(JsonView jsonValue)
+  : TerminologyDataLocation()
 {
   *this = jsonValue;
 }

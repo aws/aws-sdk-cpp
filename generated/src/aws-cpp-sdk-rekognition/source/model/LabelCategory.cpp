@@ -23,8 +23,8 @@ LabelCategory::LabelCategory() :
 {
 }
 
-LabelCategory::LabelCategory(JsonView jsonValue) : 
-    m_nameHasBeenSet(false)
+LabelCategory::LabelCategory(JsonView jsonValue)
+  : LabelCategory()
 {
   *this = jsonValue;
 }

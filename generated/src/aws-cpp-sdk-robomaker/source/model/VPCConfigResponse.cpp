@@ -27,12 +27,8 @@ VPCConfigResponse::VPCConfigResponse() :
 {
 }
 
-VPCConfigResponse::VPCConfigResponse(JsonView jsonValue) : 
-    m_subnetsHasBeenSet(false),
-    m_securityGroupsHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_assignPublicIp(false),
-    m_assignPublicIpHasBeenSet(false)
+VPCConfigResponse::VPCConfigResponse(JsonView jsonValue)
+  : VPCConfigResponse()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ RulesConfigurationType::RulesConfigurationType() :
 {
 }
 
-RulesConfigurationType::RulesConfigurationType(JsonView jsonValue) : 
-    m_rulesHasBeenSet(false)
+RulesConfigurationType::RulesConfigurationType(JsonView jsonValue)
+  : RulesConfigurationType()
 {
   *this = jsonValue;
 }

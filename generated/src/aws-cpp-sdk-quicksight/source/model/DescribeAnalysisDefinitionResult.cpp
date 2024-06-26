@@ -23,9 +23,8 @@ DescribeAnalysisDefinitionResult::DescribeAnalysisDefinitionResult() :
 {
 }
 
-DescribeAnalysisDefinitionResult::DescribeAnalysisDefinitionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_resourceStatus(ResourceStatus::NOT_SET),
-    m_status(0)
+DescribeAnalysisDefinitionResult::DescribeAnalysisDefinitionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeAnalysisDefinitionResult()
 {
   *this = result;
 }

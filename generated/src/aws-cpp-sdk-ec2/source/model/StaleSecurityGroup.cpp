@@ -30,13 +30,8 @@ StaleSecurityGroup::StaleSecurityGroup() :
 {
 }
 
-StaleSecurityGroup::StaleSecurityGroup(const XmlNode& xmlNode) : 
-    m_descriptionHasBeenSet(false),
-    m_groupIdHasBeenSet(false),
-    m_groupNameHasBeenSet(false),
-    m_staleIpPermissionsHasBeenSet(false),
-    m_staleIpPermissionsEgressHasBeenSet(false),
-    m_vpcIdHasBeenSet(false)
+StaleSecurityGroup::StaleSecurityGroup(const XmlNode& xmlNode)
+  : StaleSecurityGroup()
 {
   *this = xmlNode;
 }

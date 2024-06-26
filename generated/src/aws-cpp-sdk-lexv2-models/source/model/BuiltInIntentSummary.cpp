@@ -24,9 +24,8 @@ BuiltInIntentSummary::BuiltInIntentSummary() :
 {
 }
 
-BuiltInIntentSummary::BuiltInIntentSummary(JsonView jsonValue) : 
-    m_intentSignatureHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+BuiltInIntentSummary::BuiltInIntentSummary(JsonView jsonValue)
+  : BuiltInIntentSummary()
 {
   *this = jsonValue;
 }

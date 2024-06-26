@@ -26,9 +26,8 @@ AnalyticsAndOperator::AnalyticsAndOperator() :
 {
 }
 
-AnalyticsAndOperator::AnalyticsAndOperator(const XmlNode& xmlNode) : 
-    m_prefixHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+AnalyticsAndOperator::AnalyticsAndOperator(const XmlNode& xmlNode)
+  : AnalyticsAndOperator()
 {
   *this = xmlNode;
 }

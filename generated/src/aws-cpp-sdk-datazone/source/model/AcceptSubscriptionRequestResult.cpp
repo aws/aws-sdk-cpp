@@ -22,8 +22,8 @@ AcceptSubscriptionRequestResult::AcceptSubscriptionRequestResult() :
 {
 }
 
-AcceptSubscriptionRequestResult::AcceptSubscriptionRequestResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(SubscriptionRequestStatus::NOT_SET)
+AcceptSubscriptionRequestResult::AcceptSubscriptionRequestResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : AcceptSubscriptionRequestResult()
 {
   *this = result;
 }

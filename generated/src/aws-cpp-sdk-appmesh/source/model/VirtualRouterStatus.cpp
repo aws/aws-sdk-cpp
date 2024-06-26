@@ -24,9 +24,8 @@ VirtualRouterStatus::VirtualRouterStatus() :
 {
 }
 
-VirtualRouterStatus::VirtualRouterStatus(JsonView jsonValue) : 
-    m_status(VirtualRouterStatusCode::NOT_SET),
-    m_statusHasBeenSet(false)
+VirtualRouterStatus::VirtualRouterStatus(JsonView jsonValue)
+  : VirtualRouterStatus()
 {
   *this = jsonValue;
 }

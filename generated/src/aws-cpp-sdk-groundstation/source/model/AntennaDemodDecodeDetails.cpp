@@ -23,8 +23,8 @@ AntennaDemodDecodeDetails::AntennaDemodDecodeDetails() :
 {
 }
 
-AntennaDemodDecodeDetails::AntennaDemodDecodeDetails(JsonView jsonValue) : 
-    m_outputNodeHasBeenSet(false)
+AntennaDemodDecodeDetails::AntennaDemodDecodeDetails(JsonView jsonValue)
+  : AntennaDemodDecodeDetails()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ ClientSideTimestamps::ClientSideTimestamps() :
 {
 }
 
-ClientSideTimestamps::ClientSideTimestamps(JsonView jsonValue) : 
-    m_status(ClientSideTimestampsStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+ClientSideTimestamps::ClientSideTimestamps(JsonView jsonValue)
+  : ClientSideTimestamps()
 {
   *this = jsonValue;
 }

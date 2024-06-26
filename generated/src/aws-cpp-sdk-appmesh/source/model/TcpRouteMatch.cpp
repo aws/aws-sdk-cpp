@@ -24,9 +24,8 @@ TcpRouteMatch::TcpRouteMatch() :
 {
 }
 
-TcpRouteMatch::TcpRouteMatch(JsonView jsonValue) : 
-    m_port(0),
-    m_portHasBeenSet(false)
+TcpRouteMatch::TcpRouteMatch(JsonView jsonValue)
+  : TcpRouteMatch()
 {
   *this = jsonValue;
 }

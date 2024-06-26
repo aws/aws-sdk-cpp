@@ -25,10 +25,8 @@ CustomSMSLambdaVersionConfigType::CustomSMSLambdaVersionConfigType() :
 {
 }
 
-CustomSMSLambdaVersionConfigType::CustomSMSLambdaVersionConfigType(JsonView jsonValue) : 
-    m_lambdaVersion(CustomSMSSenderLambdaVersionType::NOT_SET),
-    m_lambdaVersionHasBeenSet(false),
-    m_lambdaArnHasBeenSet(false)
+CustomSMSLambdaVersionConfigType::CustomSMSLambdaVersionConfigType(JsonView jsonValue)
+  : CustomSMSLambdaVersionConfigType()
 {
   *this = jsonValue;
 }

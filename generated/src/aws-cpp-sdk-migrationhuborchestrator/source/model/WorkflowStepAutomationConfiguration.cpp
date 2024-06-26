@@ -29,14 +29,8 @@ WorkflowStepAutomationConfiguration::WorkflowStepAutomationConfiguration() :
 {
 }
 
-WorkflowStepAutomationConfiguration::WorkflowStepAutomationConfiguration(JsonView jsonValue) : 
-    m_scriptLocationS3BucketHasBeenSet(false),
-    m_scriptLocationS3KeyHasBeenSet(false),
-    m_commandHasBeenSet(false),
-    m_runEnvironment(RunEnvironment::NOT_SET),
-    m_runEnvironmentHasBeenSet(false),
-    m_targetType(TargetType::NOT_SET),
-    m_targetTypeHasBeenSet(false)
+WorkflowStepAutomationConfiguration::WorkflowStepAutomationConfiguration(JsonView jsonValue)
+  : WorkflowStepAutomationConfiguration()
 {
   *this = jsonValue;
 }

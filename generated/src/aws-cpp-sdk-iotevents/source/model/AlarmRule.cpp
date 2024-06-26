@@ -23,8 +23,8 @@ AlarmRule::AlarmRule() :
 {
 }
 
-AlarmRule::AlarmRule(JsonView jsonValue) : 
-    m_simpleRuleHasBeenSet(false)
+AlarmRule::AlarmRule(JsonView jsonValue)
+  : AlarmRule()
 {
   *this = jsonValue;
 }

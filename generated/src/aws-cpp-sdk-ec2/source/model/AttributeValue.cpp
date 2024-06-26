@@ -25,8 +25,8 @@ AttributeValue::AttributeValue() :
 {
 }
 
-AttributeValue::AttributeValue(const XmlNode& xmlNode) : 
-    m_valueHasBeenSet(false)
+AttributeValue::AttributeValue(const XmlNode& xmlNode)
+  : AttributeValue()
 {
   *this = xmlNode;
 }

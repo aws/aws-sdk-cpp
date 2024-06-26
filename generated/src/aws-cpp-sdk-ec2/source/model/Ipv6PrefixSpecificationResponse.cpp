@@ -25,8 +25,8 @@ Ipv6PrefixSpecificationResponse::Ipv6PrefixSpecificationResponse() :
 {
 }
 
-Ipv6PrefixSpecificationResponse::Ipv6PrefixSpecificationResponse(const XmlNode& xmlNode) : 
-    m_ipv6PrefixHasBeenSet(false)
+Ipv6PrefixSpecificationResponse::Ipv6PrefixSpecificationResponse(const XmlNode& xmlNode)
+  : Ipv6PrefixSpecificationResponse()
 {
   *this = xmlNode;
 }

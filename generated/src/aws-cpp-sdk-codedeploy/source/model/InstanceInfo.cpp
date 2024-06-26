@@ -29,14 +29,8 @@ InstanceInfo::InstanceInfo() :
 {
 }
 
-InstanceInfo::InstanceInfo(JsonView jsonValue) : 
-    m_instanceNameHasBeenSet(false),
-    m_iamSessionArnHasBeenSet(false),
-    m_iamUserArnHasBeenSet(false),
-    m_instanceArnHasBeenSet(false),
-    m_registerTimeHasBeenSet(false),
-    m_deregisterTimeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+InstanceInfo::InstanceInfo(JsonView jsonValue)
+  : InstanceInfo()
 {
   *this = jsonValue;
 }

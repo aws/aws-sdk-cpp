@@ -42,27 +42,8 @@ MpdSettings::MpdSettings() :
 {
 }
 
-MpdSettings::MpdSettings(JsonView jsonValue) : 
-    m_accessibilityCaptionHints(MpdAccessibilityCaptionHints::NOT_SET),
-    m_accessibilityCaptionHintsHasBeenSet(false),
-    m_audioDuration(MpdAudioDuration::NOT_SET),
-    m_audioDurationHasBeenSet(false),
-    m_captionContainerType(MpdCaptionContainerType::NOT_SET),
-    m_captionContainerTypeHasBeenSet(false),
-    m_klvMetadata(MpdKlvMetadata::NOT_SET),
-    m_klvMetadataHasBeenSet(false),
-    m_manifestMetadataSignaling(MpdManifestMetadataSignaling::NOT_SET),
-    m_manifestMetadataSignalingHasBeenSet(false),
-    m_scte35Esam(MpdScte35Esam::NOT_SET),
-    m_scte35EsamHasBeenSet(false),
-    m_scte35Source(MpdScte35Source::NOT_SET),
-    m_scte35SourceHasBeenSet(false),
-    m_timedMetadata(MpdTimedMetadata::NOT_SET),
-    m_timedMetadataHasBeenSet(false),
-    m_timedMetadataBoxVersion(MpdTimedMetadataBoxVersion::NOT_SET),
-    m_timedMetadataBoxVersionHasBeenSet(false),
-    m_timedMetadataSchemeIdUriHasBeenSet(false),
-    m_timedMetadataValueHasBeenSet(false)
+MpdSettings::MpdSettings(JsonView jsonValue)
+  : MpdSettings()
 {
   *this = jsonValue;
 }

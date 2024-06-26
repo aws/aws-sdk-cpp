@@ -25,10 +25,8 @@ AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails::AwsEcsTaskDefinition
 {
 }
 
-AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails::AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails(JsonView jsonValue) : 
-    m_readOnly(false),
-    m_readOnlyHasBeenSet(false),
-    m_sourceContainerHasBeenSet(false)
+AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails::AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails(JsonView jsonValue)
+  : AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails()
 {
   *this = jsonValue;
 }

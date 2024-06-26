@@ -34,19 +34,8 @@ CodegenGenericDataRelationshipType::CodegenGenericDataRelationshipType() :
 {
 }
 
-CodegenGenericDataRelationshipType::CodegenGenericDataRelationshipType(JsonView jsonValue) : 
-    m_type(GenericDataRelationshipType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_relatedModelNameHasBeenSet(false),
-    m_relatedModelFieldsHasBeenSet(false),
-    m_canUnlinkAssociatedModel(false),
-    m_canUnlinkAssociatedModelHasBeenSet(false),
-    m_relatedJoinFieldNameHasBeenSet(false),
-    m_relatedJoinTableNameHasBeenSet(false),
-    m_belongsToFieldOnRelatedModelHasBeenSet(false),
-    m_associatedFieldsHasBeenSet(false),
-    m_isHasManyIndex(false),
-    m_isHasManyIndexHasBeenSet(false)
+CodegenGenericDataRelationshipType::CodegenGenericDataRelationshipType(JsonView jsonValue)
+  : CodegenGenericDataRelationshipType()
 {
   *this = jsonValue;
 }

@@ -25,8 +25,8 @@ AttributeValueTarget::AttributeValueTarget() :
 {
 }
 
-AttributeValueTarget::AttributeValueTarget(const XmlNode& xmlNode) : 
-    m_attributeValueHasBeenSet(false)
+AttributeValueTarget::AttributeValueTarget(const XmlNode& xmlNode)
+  : AttributeValueTarget()
 {
   *this = xmlNode;
 }

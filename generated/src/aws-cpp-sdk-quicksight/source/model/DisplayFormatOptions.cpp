@@ -39,24 +39,8 @@ DisplayFormatOptions::DisplayFormatOptions() :
 {
 }
 
-DisplayFormatOptions::DisplayFormatOptions(JsonView jsonValue) : 
-    m_useBlankCellFormat(false),
-    m_useBlankCellFormatHasBeenSet(false),
-    m_blankCellFormatHasBeenSet(false),
-    m_dateFormatHasBeenSet(false),
-    m_decimalSeparator(TopicNumericSeparatorSymbol::NOT_SET),
-    m_decimalSeparatorHasBeenSet(false),
-    m_groupingSeparatorHasBeenSet(false),
-    m_useGrouping(false),
-    m_useGroupingHasBeenSet(false),
-    m_fractionDigits(0),
-    m_fractionDigitsHasBeenSet(false),
-    m_prefixHasBeenSet(false),
-    m_suffixHasBeenSet(false),
-    m_unitScaler(NumberScale::NOT_SET),
-    m_unitScalerHasBeenSet(false),
-    m_negativeFormatHasBeenSet(false),
-    m_currencySymbolHasBeenSet(false)
+DisplayFormatOptions::DisplayFormatOptions(JsonView jsonValue)
+  : DisplayFormatOptions()
 {
   *this = jsonValue;
 }

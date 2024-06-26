@@ -25,10 +25,8 @@ StepFunctionsAction::StepFunctionsAction() :
 {
 }
 
-StepFunctionsAction::StepFunctionsAction(JsonView jsonValue) : 
-    m_executionNamePrefixHasBeenSet(false),
-    m_stateMachineNameHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
+StepFunctionsAction::StepFunctionsAction(JsonView jsonValue)
+  : StepFunctionsAction()
 {
   *this = jsonValue;
 }

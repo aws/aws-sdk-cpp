@@ -24,9 +24,8 @@ InvalidRequestExceptionReason::InvalidRequestExceptionReason() :
 {
 }
 
-InvalidRequestExceptionReason::InvalidRequestExceptionReason(JsonView jsonValue) : 
-    m_attachedFileInvalidRequestExceptionReason(AttachedFileInvalidRequestExceptionReason::NOT_SET),
-    m_attachedFileInvalidRequestExceptionReasonHasBeenSet(false)
+InvalidRequestExceptionReason::InvalidRequestExceptionReason(JsonView jsonValue)
+  : InvalidRequestExceptionReason()
 {
   *this = jsonValue;
 }

@@ -28,13 +28,8 @@ Index::Index() :
 {
 }
 
-Index::Index(JsonView jsonValue) : 
-    m_displayNameHasBeenSet(false),
-    m_indexIdHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_status(IndexStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+Index::Index(JsonView jsonValue)
+  : Index()
 {
   *this = jsonValue;
 }

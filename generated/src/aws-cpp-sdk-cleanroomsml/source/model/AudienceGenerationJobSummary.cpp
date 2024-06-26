@@ -32,17 +32,8 @@ AudienceGenerationJobSummary::AudienceGenerationJobSummary() :
 {
 }
 
-AudienceGenerationJobSummary::AudienceGenerationJobSummary(JsonView jsonValue) : 
-    m_audienceGenerationJobArnHasBeenSet(false),
-    m_collaborationIdHasBeenSet(false),
-    m_configuredAudienceModelArnHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_startedByHasBeenSet(false),
-    m_status(AudienceGenerationJobStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
+AudienceGenerationJobSummary::AudienceGenerationJobSummary(JsonView jsonValue)
+  : AudienceGenerationJobSummary()
 {
   *this = jsonValue;
 }

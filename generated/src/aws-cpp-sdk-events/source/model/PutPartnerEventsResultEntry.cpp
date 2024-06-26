@@ -25,10 +25,8 @@ PutPartnerEventsResultEntry::PutPartnerEventsResultEntry() :
 {
 }
 
-PutPartnerEventsResultEntry::PutPartnerEventsResultEntry(JsonView jsonValue) : 
-    m_eventIdHasBeenSet(false),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
+PutPartnerEventsResultEntry::PutPartnerEventsResultEntry(JsonView jsonValue)
+  : PutPartnerEventsResultEntry()
 {
   *this = jsonValue;
 }

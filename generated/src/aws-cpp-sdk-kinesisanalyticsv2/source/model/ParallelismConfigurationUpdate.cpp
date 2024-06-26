@@ -30,15 +30,8 @@ ParallelismConfigurationUpdate::ParallelismConfigurationUpdate() :
 {
 }
 
-ParallelismConfigurationUpdate::ParallelismConfigurationUpdate(JsonView jsonValue) : 
-    m_configurationTypeUpdate(ConfigurationType::NOT_SET),
-    m_configurationTypeUpdateHasBeenSet(false),
-    m_parallelismUpdate(0),
-    m_parallelismUpdateHasBeenSet(false),
-    m_parallelismPerKPUUpdate(0),
-    m_parallelismPerKPUUpdateHasBeenSet(false),
-    m_autoScalingEnabledUpdate(false),
-    m_autoScalingEnabledUpdateHasBeenSet(false)
+ParallelismConfigurationUpdate::ParallelismConfigurationUpdate(JsonView jsonValue)
+  : ParallelismConfigurationUpdate()
 {
   *this = jsonValue;
 }

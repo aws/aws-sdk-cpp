@@ -29,12 +29,8 @@ CoipPool::CoipPool() :
 {
 }
 
-CoipPool::CoipPool(const XmlNode& xmlNode) : 
-    m_poolIdHasBeenSet(false),
-    m_poolCidrsHasBeenSet(false),
-    m_localGatewayRouteTableIdHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_poolArnHasBeenSet(false)
+CoipPool::CoipPool(const XmlNode& xmlNode)
+  : CoipPool()
 {
   *this = xmlNode;
 }

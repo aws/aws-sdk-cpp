@@ -27,12 +27,8 @@ LicenseEndpointSummary::LicenseEndpointSummary() :
 {
 }
 
-LicenseEndpointSummary::LicenseEndpointSummary(JsonView jsonValue) : 
-    m_licenseEndpointIdHasBeenSet(false),
-    m_status(LicenseEndpointStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_vpcIdHasBeenSet(false)
+LicenseEndpointSummary::LicenseEndpointSummary(JsonView jsonValue)
+  : LicenseEndpointSummary()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ KPIProgressBarConditionalFormatting::KPIProgressBarConditionalFormatting() :
 {
 }
 
-KPIProgressBarConditionalFormatting::KPIProgressBarConditionalFormatting(JsonView jsonValue) : 
-    m_foregroundColorHasBeenSet(false)
+KPIProgressBarConditionalFormatting::KPIProgressBarConditionalFormatting(JsonView jsonValue)
+  : KPIProgressBarConditionalFormatting()
 {
   *this = jsonValue;
 }

@@ -33,18 +33,8 @@ RDSInstanceDetails::RDSInstanceDetails() :
 {
 }
 
-RDSInstanceDetails::RDSInstanceDetails(JsonView jsonValue) : 
-    m_familyHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_databaseEngineHasBeenSet(false),
-    m_databaseEditionHasBeenSet(false),
-    m_deploymentOptionHasBeenSet(false),
-    m_licenseModelHasBeenSet(false),
-    m_currentGeneration(false),
-    m_currentGenerationHasBeenSet(false),
-    m_sizeFlexEligible(false),
-    m_sizeFlexEligibleHasBeenSet(false)
+RDSInstanceDetails::RDSInstanceDetails(JsonView jsonValue)
+  : RDSInstanceDetails()
 {
   *this = jsonValue;
 }

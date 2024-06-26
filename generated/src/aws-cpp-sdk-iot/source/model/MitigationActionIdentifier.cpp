@@ -25,10 +25,8 @@ MitigationActionIdentifier::MitigationActionIdentifier() :
 {
 }
 
-MitigationActionIdentifier::MitigationActionIdentifier(JsonView jsonValue) : 
-    m_actionNameHasBeenSet(false),
-    m_actionArnHasBeenSet(false),
-    m_creationDateHasBeenSet(false)
+MitigationActionIdentifier::MitigationActionIdentifier(JsonView jsonValue)
+  : MitigationActionIdentifier()
 {
   *this = jsonValue;
 }

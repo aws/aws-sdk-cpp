@@ -25,10 +25,8 @@ Event::Event() :
 {
 }
 
-Event::Event(JsonView jsonValue) : 
-    m_eventNameHasBeenSet(false),
-    m_conditionHasBeenSet(false),
-    m_actionsHasBeenSet(false)
+Event::Event(JsonView jsonValue)
+  : Event()
 {
   *this = jsonValue;
 }

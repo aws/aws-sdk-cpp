@@ -24,9 +24,8 @@ RiskExceptionConfigurationType::RiskExceptionConfigurationType() :
 {
 }
 
-RiskExceptionConfigurationType::RiskExceptionConfigurationType(JsonView jsonValue) : 
-    m_blockedIPRangeListHasBeenSet(false),
-    m_skippedIPRangeListHasBeenSet(false)
+RiskExceptionConfigurationType::RiskExceptionConfigurationType(JsonView jsonValue)
+  : RiskExceptionConfigurationType()
 {
   *this = jsonValue;
 }

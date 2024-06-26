@@ -27,12 +27,8 @@ RdsDbUserDetails::RdsDbUserDetails() :
 {
 }
 
-RdsDbUserDetails::RdsDbUserDetails(JsonView jsonValue) : 
-    m_userHasBeenSet(false),
-    m_applicationHasBeenSet(false),
-    m_databaseHasBeenSet(false),
-    m_sslHasBeenSet(false),
-    m_authMethodHasBeenSet(false)
+RdsDbUserDetails::RdsDbUserDetails(JsonView jsonValue)
+  : RdsDbUserDetails()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ TimeSpan::TimeSpan() :
 {
 }
 
-TimeSpan::TimeSpan(JsonView jsonValue) : 
-    m_startTimeHasBeenSet(false),
-    m_durationHasBeenSet(false)
+TimeSpan::TimeSpan(JsonView jsonValue)
+  : TimeSpan()
 {
   *this = jsonValue;
 }

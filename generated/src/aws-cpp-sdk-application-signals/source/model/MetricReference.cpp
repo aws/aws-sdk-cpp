@@ -26,11 +26,8 @@ MetricReference::MetricReference() :
 {
 }
 
-MetricReference::MetricReference(JsonView jsonValue) : 
-    m_namespaceHasBeenSet(false),
-    m_metricTypeHasBeenSet(false),
-    m_dimensionsHasBeenSet(false),
-    m_metricNameHasBeenSet(false)
+MetricReference::MetricReference(JsonView jsonValue)
+  : MetricReference()
 {
   *this = jsonValue;
 }

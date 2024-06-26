@@ -27,12 +27,8 @@ MultiplexProgram::MultiplexProgram() :
 {
 }
 
-MultiplexProgram::MultiplexProgram(JsonView jsonValue) : 
-    m_channelIdHasBeenSet(false),
-    m_multiplexProgramSettingsHasBeenSet(false),
-    m_packetIdentifiersMapHasBeenSet(false),
-    m_pipelineDetailsHasBeenSet(false),
-    m_programNameHasBeenSet(false)
+MultiplexProgram::MultiplexProgram(JsonView jsonValue)
+  : MultiplexProgram()
 {
   *this = jsonValue;
 }

@@ -31,16 +31,8 @@ LoRaWANMulticastSession::LoRaWANMulticastSession() :
 {
 }
 
-LoRaWANMulticastSession::LoRaWANMulticastSession(JsonView jsonValue) : 
-    m_dlDr(0),
-    m_dlDrHasBeenSet(false),
-    m_dlFreq(0),
-    m_dlFreqHasBeenSet(false),
-    m_sessionStartTimeHasBeenSet(false),
-    m_sessionTimeout(0),
-    m_sessionTimeoutHasBeenSet(false),
-    m_pingSlotPeriod(0),
-    m_pingSlotPeriodHasBeenSet(false)
+LoRaWANMulticastSession::LoRaWANMulticastSession(JsonView jsonValue)
+  : LoRaWANMulticastSession()
 {
   *this = jsonValue;
 }

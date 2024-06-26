@@ -25,10 +25,8 @@ GatewayListItem::GatewayListItem() :
 {
 }
 
-GatewayListItem::GatewayListItem(JsonView jsonValue) : 
-    m_gatewayIdHasBeenSet(false),
-    m_downlinkFrequency(0),
-    m_downlinkFrequencyHasBeenSet(false)
+GatewayListItem::GatewayListItem(JsonView jsonValue)
+  : GatewayListItem()
 {
   *this = jsonValue;
 }

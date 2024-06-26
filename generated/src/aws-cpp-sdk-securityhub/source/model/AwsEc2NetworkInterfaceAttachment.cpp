@@ -31,16 +31,8 @@ AwsEc2NetworkInterfaceAttachment::AwsEc2NetworkInterfaceAttachment() :
 {
 }
 
-AwsEc2NetworkInterfaceAttachment::AwsEc2NetworkInterfaceAttachment(JsonView jsonValue) : 
-    m_attachTimeHasBeenSet(false),
-    m_attachmentIdHasBeenSet(false),
-    m_deleteOnTermination(false),
-    m_deleteOnTerminationHasBeenSet(false),
-    m_deviceIndex(0),
-    m_deviceIndexHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_instanceOwnerIdHasBeenSet(false),
-    m_statusHasBeenSet(false)
+AwsEc2NetworkInterfaceAttachment::AwsEc2NetworkInterfaceAttachment(JsonView jsonValue)
+  : AwsEc2NetworkInterfaceAttachment()
 {
   *this = jsonValue;
 }

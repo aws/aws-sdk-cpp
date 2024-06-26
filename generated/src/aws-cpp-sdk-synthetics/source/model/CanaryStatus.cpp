@@ -27,12 +27,8 @@ CanaryStatus::CanaryStatus() :
 {
 }
 
-CanaryStatus::CanaryStatus(JsonView jsonValue) : 
-    m_state(CanaryState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_stateReasonHasBeenSet(false),
-    m_stateReasonCode(CanaryStateReasonCode::NOT_SET),
-    m_stateReasonCodeHasBeenSet(false)
+CanaryStatus::CanaryStatus(JsonView jsonValue)
+  : CanaryStatus()
 {
   *this = jsonValue;
 }

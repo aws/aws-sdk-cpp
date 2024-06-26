@@ -26,11 +26,8 @@ EnvironmentLifecycle::EnvironmentLifecycle() :
 {
 }
 
-EnvironmentLifecycle::EnvironmentLifecycle(JsonView jsonValue) : 
-    m_status(EnvironmentLifecycleStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_reasonHasBeenSet(false),
-    m_failureResourceHasBeenSet(false)
+EnvironmentLifecycle::EnvironmentLifecycle(JsonView jsonValue)
+  : EnvironmentLifecycle()
 {
   *this = jsonValue;
 }

@@ -24,8 +24,8 @@ ScrapeConfiguration::ScrapeConfiguration() :
 {
 }
 
-ScrapeConfiguration::ScrapeConfiguration(JsonView jsonValue) : 
-    m_configurationBlobHasBeenSet(false)
+ScrapeConfiguration::ScrapeConfiguration(JsonView jsonValue)
+  : ScrapeConfiguration()
 {
   *this = jsonValue;
 }

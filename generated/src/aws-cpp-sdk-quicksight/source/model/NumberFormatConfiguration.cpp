@@ -23,8 +23,8 @@ NumberFormatConfiguration::NumberFormatConfiguration() :
 {
 }
 
-NumberFormatConfiguration::NumberFormatConfiguration(JsonView jsonValue) : 
-    m_formatConfigurationHasBeenSet(false)
+NumberFormatConfiguration::NumberFormatConfiguration(JsonView jsonValue)
+  : NumberFormatConfiguration()
 {
   *this = jsonValue;
 }

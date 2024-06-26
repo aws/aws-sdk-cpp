@@ -30,15 +30,8 @@ AwsEcrContainerImageDetails::AwsEcrContainerImageDetails() :
 {
 }
 
-AwsEcrContainerImageDetails::AwsEcrContainerImageDetails(JsonView jsonValue) : 
-    m_architectureHasBeenSet(false),
-    m_authorHasBeenSet(false),
-    m_imageHashHasBeenSet(false),
-    m_imageTagsHasBeenSet(false),
-    m_platformHasBeenSet(false),
-    m_pushedAtHasBeenSet(false),
-    m_registryHasBeenSet(false),
-    m_repositoryNameHasBeenSet(false)
+AwsEcrContainerImageDetails::AwsEcrContainerImageDetails(JsonView jsonValue)
+  : AwsEcrContainerImageDetails()
 {
   *this = jsonValue;
 }

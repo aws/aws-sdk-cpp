@@ -24,9 +24,8 @@ PolicyDetails::PolicyDetails() :
 {
 }
 
-PolicyDetails::PolicyDetails(JsonView jsonValue) : 
-    m_actionHasBeenSet(false),
-    m_actorHasBeenSet(false)
+PolicyDetails::PolicyDetails(JsonView jsonValue)
+  : PolicyDetails()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ ResultReuseByAgeConfiguration::ResultReuseByAgeConfiguration() :
 {
 }
 
-ResultReuseByAgeConfiguration::ResultReuseByAgeConfiguration(JsonView jsonValue) : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_maxAgeInMinutes(0),
-    m_maxAgeInMinutesHasBeenSet(false)
+ResultReuseByAgeConfiguration::ResultReuseByAgeConfiguration(JsonView jsonValue)
+  : ResultReuseByAgeConfiguration()
 {
   *this = jsonValue;
 }

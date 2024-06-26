@@ -24,9 +24,8 @@ AvailabilityZone::AvailabilityZone() :
 {
 }
 
-AvailabilityZone::AvailabilityZone(JsonView jsonValue) : 
-    m_zoneNameHasBeenSet(false),
-    m_subnetIdHasBeenSet(false)
+AvailabilityZone::AvailabilityZone(JsonView jsonValue)
+  : AvailabilityZone()
 {
   *this = jsonValue;
 }

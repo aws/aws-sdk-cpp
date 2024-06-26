@@ -31,16 +31,8 @@ WorkerSearchSummary::WorkerSearchSummary() :
 {
 }
 
-WorkerSearchSummary::WorkerSearchSummary(JsonView jsonValue) : 
-    m_createdAtHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_fleetIdHasBeenSet(false),
-    m_hostPropertiesHasBeenSet(false),
-    m_status(WorkerStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_updatedByHasBeenSet(false),
-    m_workerIdHasBeenSet(false)
+WorkerSearchSummary::WorkerSearchSummary(JsonView jsonValue)
+  : WorkerSearchSummary()
 {
   *this = jsonValue;
 }

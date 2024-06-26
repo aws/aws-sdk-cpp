@@ -25,10 +25,8 @@ Command::Command() :
 {
 }
 
-Command::Command(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_scriptPathHasBeenSet(false),
-    m_argsHasBeenSet(false)
+Command::Command(JsonView jsonValue)
+  : Command()
 {
   *this = jsonValue;
 }

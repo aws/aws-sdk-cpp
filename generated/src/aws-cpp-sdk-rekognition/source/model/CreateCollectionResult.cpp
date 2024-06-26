@@ -22,8 +22,8 @@ CreateCollectionResult::CreateCollectionResult() :
 {
 }
 
-CreateCollectionResult::CreateCollectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_statusCode(0)
+CreateCollectionResult::CreateCollectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateCollectionResult()
 {
   *this = result;
 }

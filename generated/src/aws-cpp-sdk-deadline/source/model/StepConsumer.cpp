@@ -25,10 +25,8 @@ StepConsumer::StepConsumer() :
 {
 }
 
-StepConsumer::StepConsumer(JsonView jsonValue) : 
-    m_status(DependencyConsumerResolutionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_stepIdHasBeenSet(false)
+StepConsumer::StepConsumer(JsonView jsonValue)
+  : StepConsumer()
 {
   *this = jsonValue;
 }

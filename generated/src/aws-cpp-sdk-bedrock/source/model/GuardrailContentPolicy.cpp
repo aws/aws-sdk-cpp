@@ -23,8 +23,8 @@ GuardrailContentPolicy::GuardrailContentPolicy() :
 {
 }
 
-GuardrailContentPolicy::GuardrailContentPolicy(JsonView jsonValue) : 
-    m_filtersHasBeenSet(false)
+GuardrailContentPolicy::GuardrailContentPolicy(JsonView jsonValue)
+  : GuardrailContentPolicy()
 {
   *this = jsonValue;
 }

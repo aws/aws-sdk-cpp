@@ -32,15 +32,8 @@ ChangeSetHook::ChangeSetHook() :
 {
 }
 
-ChangeSetHook::ChangeSetHook(const XmlNode& xmlNode) : 
-    m_invocationPoint(HookInvocationPoint::NOT_SET),
-    m_invocationPointHasBeenSet(false),
-    m_failureMode(HookFailureMode::NOT_SET),
-    m_failureModeHasBeenSet(false),
-    m_typeNameHasBeenSet(false),
-    m_typeVersionIdHasBeenSet(false),
-    m_typeConfigurationVersionIdHasBeenSet(false),
-    m_targetDetailsHasBeenSet(false)
+ChangeSetHook::ChangeSetHook(const XmlNode& xmlNode)
+  : ChangeSetHook()
 {
   *this = xmlNode;
 }

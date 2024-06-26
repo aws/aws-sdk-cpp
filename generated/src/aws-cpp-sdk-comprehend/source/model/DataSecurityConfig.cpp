@@ -26,11 +26,8 @@ DataSecurityConfig::DataSecurityConfig() :
 {
 }
 
-DataSecurityConfig::DataSecurityConfig(JsonView jsonValue) : 
-    m_modelKmsKeyIdHasBeenSet(false),
-    m_volumeKmsKeyIdHasBeenSet(false),
-    m_dataLakeKmsKeyIdHasBeenSet(false),
-    m_vpcConfigHasBeenSet(false)
+DataSecurityConfig::DataSecurityConfig(JsonView jsonValue)
+  : DataSecurityConfig()
 {
   *this = jsonValue;
 }

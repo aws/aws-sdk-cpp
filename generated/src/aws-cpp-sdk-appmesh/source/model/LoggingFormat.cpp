@@ -24,9 +24,8 @@ LoggingFormat::LoggingFormat() :
 {
 }
 
-LoggingFormat::LoggingFormat(JsonView jsonValue) : 
-    m_jsonHasBeenSet(false),
-    m_textHasBeenSet(false)
+LoggingFormat::LoggingFormat(JsonView jsonValue)
+  : LoggingFormat()
 {
   *this = jsonValue;
 }

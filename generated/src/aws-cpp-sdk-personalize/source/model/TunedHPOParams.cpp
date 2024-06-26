@@ -23,8 +23,8 @@ TunedHPOParams::TunedHPOParams() :
 {
 }
 
-TunedHPOParams::TunedHPOParams(JsonView jsonValue) : 
-    m_algorithmHyperParametersHasBeenSet(false)
+TunedHPOParams::TunedHPOParams(JsonView jsonValue)
+  : TunedHPOParams()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ RenditionConfiguration::RenditionConfiguration() :
 {
 }
 
-RenditionConfiguration::RenditionConfiguration(JsonView jsonValue) : 
-    m_renditionSelection(RenditionConfigurationRenditionSelection::NOT_SET),
-    m_renditionSelectionHasBeenSet(false),
-    m_renditionsHasBeenSet(false)
+RenditionConfiguration::RenditionConfiguration(JsonView jsonValue)
+  : RenditionConfiguration()
 {
   *this = jsonValue;
 }

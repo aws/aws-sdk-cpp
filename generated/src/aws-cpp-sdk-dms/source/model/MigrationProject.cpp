@@ -32,17 +32,8 @@ MigrationProject::MigrationProject() :
 {
 }
 
-MigrationProject::MigrationProject(JsonView jsonValue) : 
-    m_migrationProjectNameHasBeenSet(false),
-    m_migrationProjectArnHasBeenSet(false),
-    m_migrationProjectCreationTimeHasBeenSet(false),
-    m_sourceDataProviderDescriptorsHasBeenSet(false),
-    m_targetDataProviderDescriptorsHasBeenSet(false),
-    m_instanceProfileArnHasBeenSet(false),
-    m_instanceProfileNameHasBeenSet(false),
-    m_transformationRulesHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_schemaConversionApplicationAttributesHasBeenSet(false)
+MigrationProject::MigrationProject(JsonView jsonValue)
+  : MigrationProject()
 {
   *this = jsonValue;
 }

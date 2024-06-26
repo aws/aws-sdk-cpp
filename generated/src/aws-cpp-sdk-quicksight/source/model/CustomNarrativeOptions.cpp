@@ -23,8 +23,8 @@ CustomNarrativeOptions::CustomNarrativeOptions() :
 {
 }
 
-CustomNarrativeOptions::CustomNarrativeOptions(JsonView jsonValue) : 
-    m_narrativeHasBeenSet(false)
+CustomNarrativeOptions::CustomNarrativeOptions(JsonView jsonValue)
+  : CustomNarrativeOptions()
 {
   *this = jsonValue;
 }

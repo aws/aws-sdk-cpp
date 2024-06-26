@@ -25,8 +25,8 @@ InstanceTypeInfoFromInstanceRequirements::InstanceTypeInfoFromInstanceRequiremen
 {
 }
 
-InstanceTypeInfoFromInstanceRequirements::InstanceTypeInfoFromInstanceRequirements(const XmlNode& xmlNode) : 
-    m_instanceTypeHasBeenSet(false)
+InstanceTypeInfoFromInstanceRequirements::InstanceTypeInfoFromInstanceRequirements(const XmlNode& xmlNode)
+  : InstanceTypeInfoFromInstanceRequirements()
 {
   *this = xmlNode;
 }

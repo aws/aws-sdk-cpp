@@ -24,9 +24,8 @@ MetricKeyDataPoints::MetricKeyDataPoints() :
 {
 }
 
-MetricKeyDataPoints::MetricKeyDataPoints(JsonView jsonValue) : 
-    m_keyHasBeenSet(false),
-    m_dataPointsHasBeenSet(false)
+MetricKeyDataPoints::MetricKeyDataPoints(JsonView jsonValue)
+  : MetricKeyDataPoints()
 {
   *this = jsonValue;
 }

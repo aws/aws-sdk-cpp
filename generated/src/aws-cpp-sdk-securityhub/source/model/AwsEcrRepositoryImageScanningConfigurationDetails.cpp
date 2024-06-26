@@ -24,9 +24,8 @@ AwsEcrRepositoryImageScanningConfigurationDetails::AwsEcrRepositoryImageScanning
 {
 }
 
-AwsEcrRepositoryImageScanningConfigurationDetails::AwsEcrRepositoryImageScanningConfigurationDetails(JsonView jsonValue) : 
-    m_scanOnPush(false),
-    m_scanOnPushHasBeenSet(false)
+AwsEcrRepositoryImageScanningConfigurationDetails::AwsEcrRepositoryImageScanningConfigurationDetails(JsonView jsonValue)
+  : AwsEcrRepositoryImageScanningConfigurationDetails()
 {
   *this = jsonValue;
 }

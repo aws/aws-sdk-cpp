@@ -26,11 +26,8 @@ SuggestionHighlight::SuggestionHighlight() :
 {
 }
 
-SuggestionHighlight::SuggestionHighlight(JsonView jsonValue) : 
-    m_beginOffset(0),
-    m_beginOffsetHasBeenSet(false),
-    m_endOffset(0),
-    m_endOffsetHasBeenSet(false)
+SuggestionHighlight::SuggestionHighlight(JsonView jsonValue)
+  : SuggestionHighlight()
 {
   *this = jsonValue;
 }

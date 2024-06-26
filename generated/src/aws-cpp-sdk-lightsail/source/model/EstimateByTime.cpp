@@ -31,16 +31,8 @@ EstimateByTime::EstimateByTime() :
 {
 }
 
-EstimateByTime::EstimateByTime(JsonView jsonValue) : 
-    m_usageCost(0.0),
-    m_usageCostHasBeenSet(false),
-    m_pricingUnit(PricingUnit::NOT_SET),
-    m_pricingUnitHasBeenSet(false),
-    m_unit(0.0),
-    m_unitHasBeenSet(false),
-    m_currency(Currency::NOT_SET),
-    m_currencyHasBeenSet(false),
-    m_timePeriodHasBeenSet(false)
+EstimateByTime::EstimateByTime(JsonView jsonValue)
+  : EstimateByTime()
 {
   *this = jsonValue;
 }

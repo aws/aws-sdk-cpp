@@ -24,9 +24,8 @@ GroupingConfiguration::GroupingConfiguration() :
 {
 }
 
-GroupingConfiguration::GroupingConfiguration(JsonView jsonValue) : 
-    m_criteriaHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+GroupingConfiguration::GroupingConfiguration(JsonView jsonValue)
+  : GroupingConfiguration()
 {
   *this = jsonValue;
 }

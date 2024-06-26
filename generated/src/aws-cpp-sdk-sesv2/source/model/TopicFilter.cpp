@@ -25,10 +25,8 @@ TopicFilter::TopicFilter() :
 {
 }
 
-TopicFilter::TopicFilter(JsonView jsonValue) : 
-    m_topicNameHasBeenSet(false),
-    m_useDefaultIfPreferenceUnavailable(false),
-    m_useDefaultIfPreferenceUnavailableHasBeenSet(false)
+TopicFilter::TopicFilter(JsonView jsonValue)
+  : TopicFilter()
 {
   *this = jsonValue;
 }

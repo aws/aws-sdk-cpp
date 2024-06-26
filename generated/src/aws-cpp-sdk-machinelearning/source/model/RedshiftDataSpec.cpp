@@ -29,14 +29,8 @@ RedshiftDataSpec::RedshiftDataSpec() :
 {
 }
 
-RedshiftDataSpec::RedshiftDataSpec(JsonView jsonValue) : 
-    m_databaseInformationHasBeenSet(false),
-    m_selectSqlQueryHasBeenSet(false),
-    m_databaseCredentialsHasBeenSet(false),
-    m_s3StagingLocationHasBeenSet(false),
-    m_dataRearrangementHasBeenSet(false),
-    m_dataSchemaHasBeenSet(false),
-    m_dataSchemaUriHasBeenSet(false)
+RedshiftDataSpec::RedshiftDataSpec(JsonView jsonValue)
+  : RedshiftDataSpec()
 {
   *this = jsonValue;
 }

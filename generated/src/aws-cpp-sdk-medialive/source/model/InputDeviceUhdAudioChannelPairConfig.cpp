@@ -26,11 +26,8 @@ InputDeviceUhdAudioChannelPairConfig::InputDeviceUhdAudioChannelPairConfig() :
 {
 }
 
-InputDeviceUhdAudioChannelPairConfig::InputDeviceUhdAudioChannelPairConfig(JsonView jsonValue) : 
-    m_id(0),
-    m_idHasBeenSet(false),
-    m_profile(InputDeviceUhdAudioChannelPairProfile::NOT_SET),
-    m_profileHasBeenSet(false)
+InputDeviceUhdAudioChannelPairConfig::InputDeviceUhdAudioChannelPairConfig(JsonView jsonValue)
+  : InputDeviceUhdAudioChannelPairConfig()
 {
   *this = jsonValue;
 }

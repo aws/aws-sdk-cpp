@@ -27,12 +27,8 @@ PathElement::PathElement() :
 {
 }
 
-PathElement::PathElement(JsonView jsonValue) : 
-    m_index(0),
-    m_indexHasBeenSet(false),
-    m_keyHasBeenSet(false),
-    m_substringHasBeenSet(false),
-    m_valueHasBeenSet(false)
+PathElement::PathElement(JsonView jsonValue)
+  : PathElement()
 {
   *this = jsonValue;
 }

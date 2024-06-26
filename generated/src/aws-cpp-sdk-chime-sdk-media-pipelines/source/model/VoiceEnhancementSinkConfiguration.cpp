@@ -24,9 +24,8 @@ VoiceEnhancementSinkConfiguration::VoiceEnhancementSinkConfiguration() :
 {
 }
 
-VoiceEnhancementSinkConfiguration::VoiceEnhancementSinkConfiguration(JsonView jsonValue) : 
-    m_disabled(false),
-    m_disabledHasBeenSet(false)
+VoiceEnhancementSinkConfiguration::VoiceEnhancementSinkConfiguration(JsonView jsonValue)
+  : VoiceEnhancementSinkConfiguration()
 {
   *this = jsonValue;
 }

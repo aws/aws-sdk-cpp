@@ -24,9 +24,8 @@ ConcurrentUpdatingException::ConcurrentUpdatingException() :
 {
 }
 
-ConcurrentUpdatingException::ConcurrentUpdatingException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
+ConcurrentUpdatingException::ConcurrentUpdatingException(JsonView jsonValue)
+  : ConcurrentUpdatingException()
 {
   *this = jsonValue;
 }

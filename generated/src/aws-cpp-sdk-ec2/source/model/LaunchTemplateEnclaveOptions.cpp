@@ -26,9 +26,8 @@ LaunchTemplateEnclaveOptions::LaunchTemplateEnclaveOptions() :
 {
 }
 
-LaunchTemplateEnclaveOptions::LaunchTemplateEnclaveOptions(const XmlNode& xmlNode) : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
+LaunchTemplateEnclaveOptions::LaunchTemplateEnclaveOptions(const XmlNode& xmlNode)
+  : LaunchTemplateEnclaveOptions()
 {
   *this = xmlNode;
 }

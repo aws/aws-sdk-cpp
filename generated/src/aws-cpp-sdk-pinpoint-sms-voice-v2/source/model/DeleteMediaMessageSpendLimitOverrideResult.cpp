@@ -22,8 +22,8 @@ DeleteMediaMessageSpendLimitOverrideResult::DeleteMediaMessageSpendLimitOverride
 {
 }
 
-DeleteMediaMessageSpendLimitOverrideResult::DeleteMediaMessageSpendLimitOverrideResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_monthlyLimit(0)
+DeleteMediaMessageSpendLimitOverrideResult::DeleteMediaMessageSpendLimitOverrideResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeleteMediaMessageSpendLimitOverrideResult()
 {
   *this = result;
 }

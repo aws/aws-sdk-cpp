@@ -23,8 +23,8 @@ RecommendationJobCompiledOutputConfig::RecommendationJobCompiledOutputConfig() :
 {
 }
 
-RecommendationJobCompiledOutputConfig::RecommendationJobCompiledOutputConfig(JsonView jsonValue) : 
-    m_s3OutputUriHasBeenSet(false)
+RecommendationJobCompiledOutputConfig::RecommendationJobCompiledOutputConfig(JsonView jsonValue)
+  : RecommendationJobCompiledOutputConfig()
 {
   *this = jsonValue;
 }

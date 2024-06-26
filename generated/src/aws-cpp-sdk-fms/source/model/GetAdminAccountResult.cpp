@@ -22,8 +22,8 @@ GetAdminAccountResult::GetAdminAccountResult() :
 {
 }
 
-GetAdminAccountResult::GetAdminAccountResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_roleStatus(AccountRoleStatus::NOT_SET)
+GetAdminAccountResult::GetAdminAccountResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetAdminAccountResult()
 {
   *this = result;
 }

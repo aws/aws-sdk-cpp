@@ -23,8 +23,8 @@ EstoniaAdditionalInfo::EstoniaAdditionalInfo() :
 {
 }
 
-EstoniaAdditionalInfo::EstoniaAdditionalInfo(JsonView jsonValue) : 
-    m_registryCommercialCodeHasBeenSet(false)
+EstoniaAdditionalInfo::EstoniaAdditionalInfo(JsonView jsonValue)
+  : EstoniaAdditionalInfo()
 {
   *this = jsonValue;
 }

@@ -28,13 +28,8 @@ Monitor::Monitor() :
 {
 }
 
-Monitor::Monitor(JsonView jsonValue) : 
-    m_monitorNameHasBeenSet(false),
-    m_monitorArnHasBeenSet(false),
-    m_status(MonitorConfigState::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_processingStatus(MonitorProcessingStatusCode::NOT_SET),
-    m_processingStatusHasBeenSet(false)
+Monitor::Monitor(JsonView jsonValue)
+  : Monitor()
 {
   *this = jsonValue;
 }

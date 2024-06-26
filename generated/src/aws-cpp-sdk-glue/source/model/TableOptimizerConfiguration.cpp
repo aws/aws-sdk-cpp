@@ -25,10 +25,8 @@ TableOptimizerConfiguration::TableOptimizerConfiguration() :
 {
 }
 
-TableOptimizerConfiguration::TableOptimizerConfiguration(JsonView jsonValue) : 
-    m_roleArnHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
+TableOptimizerConfiguration::TableOptimizerConfiguration(JsonView jsonValue)
+  : TableOptimizerConfiguration()
 {
   *this = jsonValue;
 }

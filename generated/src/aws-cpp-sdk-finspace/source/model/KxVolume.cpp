@@ -34,19 +34,8 @@ KxVolume::KxVolume() :
 {
 }
 
-KxVolume::KxVolume(JsonView jsonValue) : 
-    m_volumeNameHasBeenSet(false),
-    m_volumeType(KxVolumeType::NOT_SET),
-    m_volumeTypeHasBeenSet(false),
-    m_status(KxVolumeStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_statusReasonHasBeenSet(false),
-    m_azMode(KxAzMode::NOT_SET),
-    m_azModeHasBeenSet(false),
-    m_availabilityZoneIdsHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false),
-    m_lastModifiedTimestampHasBeenSet(false)
+KxVolume::KxVolume(JsonView jsonValue)
+  : KxVolume()
 {
   *this = jsonValue;
 }

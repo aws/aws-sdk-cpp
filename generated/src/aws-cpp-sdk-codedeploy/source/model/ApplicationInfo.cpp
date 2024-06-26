@@ -30,15 +30,8 @@ ApplicationInfo::ApplicationInfo() :
 {
 }
 
-ApplicationInfo::ApplicationInfo(JsonView jsonValue) : 
-    m_applicationIdHasBeenSet(false),
-    m_applicationNameHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_linkedToGitHub(false),
-    m_linkedToGitHubHasBeenSet(false),
-    m_gitHubAccountNameHasBeenSet(false),
-    m_computePlatform(ComputePlatform::NOT_SET),
-    m_computePlatformHasBeenSet(false)
+ApplicationInfo::ApplicationInfo(JsonView jsonValue)
+  : ApplicationInfo()
 {
   *this = jsonValue;
 }

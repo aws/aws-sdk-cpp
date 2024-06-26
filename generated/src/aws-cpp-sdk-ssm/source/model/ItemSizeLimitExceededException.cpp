@@ -24,9 +24,8 @@ ItemSizeLimitExceededException::ItemSizeLimitExceededException() :
 {
 }
 
-ItemSizeLimitExceededException::ItemSizeLimitExceededException(JsonView jsonValue) : 
-    m_typeNameHasBeenSet(false),
-    m_messageHasBeenSet(false)
+ItemSizeLimitExceededException::ItemSizeLimitExceededException(JsonView jsonValue)
+  : ItemSizeLimitExceededException()
 {
   *this = jsonValue;
 }

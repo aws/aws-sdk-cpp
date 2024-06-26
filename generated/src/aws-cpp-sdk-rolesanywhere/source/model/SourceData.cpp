@@ -24,9 +24,8 @@ SourceData::SourceData() :
 {
 }
 
-SourceData::SourceData(JsonView jsonValue) : 
-    m_acmPcaArnHasBeenSet(false),
-    m_x509CertificateDataHasBeenSet(false)
+SourceData::SourceData(JsonView jsonValue)
+  : SourceData()
 {
   *this = jsonValue;
 }

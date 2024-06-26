@@ -27,12 +27,8 @@ CallAnalyticsSkippedFeature::CallAnalyticsSkippedFeature() :
 {
 }
 
-CallAnalyticsSkippedFeature::CallAnalyticsSkippedFeature(JsonView jsonValue) : 
-    m_feature(CallAnalyticsFeature::NOT_SET),
-    m_featureHasBeenSet(false),
-    m_reasonCode(CallAnalyticsSkippedReasonCode::NOT_SET),
-    m_reasonCodeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+CallAnalyticsSkippedFeature::CallAnalyticsSkippedFeature(JsonView jsonValue)
+  : CallAnalyticsSkippedFeature()
 {
   *this = jsonValue;
 }

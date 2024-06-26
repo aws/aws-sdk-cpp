@@ -24,9 +24,8 @@ AutoParameter::AutoParameter() :
 {
 }
 
-AutoParameter::AutoParameter(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_valueHintHasBeenSet(false)
+AutoParameter::AutoParameter(JsonView jsonValue)
+  : AutoParameter()
 {
   *this = jsonValue;
 }

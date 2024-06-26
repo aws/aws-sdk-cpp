@@ -24,9 +24,8 @@ Participant::Participant() :
 {
 }
 
-Participant::Participant(JsonView jsonValue) : 
-    m_phoneNumberHasBeenSet(false),
-    m_proxyPhoneNumberHasBeenSet(false)
+Participant::Participant(JsonView jsonValue)
+  : Participant()
 {
   *this = jsonValue;
 }

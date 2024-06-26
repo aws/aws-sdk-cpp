@@ -25,10 +25,8 @@ Status::Status() :
 {
 }
 
-Status::Status(JsonView jsonValue) : 
-    m_state(State::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_errorHasBeenSet(false)
+Status::Status(JsonView jsonValue)
+  : Status()
 {
   *this = jsonValue;
 }

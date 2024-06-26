@@ -25,10 +25,8 @@ TopicDateRangeFilter::TopicDateRangeFilter() :
 {
 }
 
-TopicDateRangeFilter::TopicDateRangeFilter(JsonView jsonValue) : 
-    m_inclusive(false),
-    m_inclusiveHasBeenSet(false),
-    m_constantHasBeenSet(false)
+TopicDateRangeFilter::TopicDateRangeFilter(JsonView jsonValue)
+  : TopicDateRangeFilter()
 {
   *this = jsonValue;
 }

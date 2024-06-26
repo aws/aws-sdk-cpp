@@ -25,11 +25,8 @@ DescribeTransformJobResult::DescribeTransformJobResult() :
 {
 }
 
-DescribeTransformJobResult::DescribeTransformJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_transformJobStatus(TransformJobStatus::NOT_SET),
-    m_maxConcurrentTransforms(0),
-    m_maxPayloadInMB(0),
-    m_batchStrategy(BatchStrategy::NOT_SET)
+DescribeTransformJobResult::DescribeTransformJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeTransformJobResult()
 {
   *this = result;
 }

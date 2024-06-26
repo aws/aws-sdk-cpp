@@ -29,14 +29,8 @@ WhatIfForecastSummary::WhatIfForecastSummary() :
 {
 }
 
-WhatIfForecastSummary::WhatIfForecastSummary(JsonView jsonValue) : 
-    m_whatIfForecastArnHasBeenSet(false),
-    m_whatIfForecastNameHasBeenSet(false),
-    m_whatIfAnalysisArnHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastModificationTimeHasBeenSet(false)
+WhatIfForecastSummary::WhatIfForecastSummary(JsonView jsonValue)
+  : WhatIfForecastSummary()
 {
   *this = jsonValue;
 }

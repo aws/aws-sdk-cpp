@@ -23,9 +23,8 @@ GetReportDefinitionResult::GetReportDefinitionResult() :
 {
 }
 
-GetReportDefinitionResult::GetReportDefinitionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_reportFrequency(ReportFrequency::NOT_SET),
-    m_format(Format::NOT_SET)
+GetReportDefinitionResult::GetReportDefinitionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetReportDefinitionResult()
 {
   *this = result;
 }

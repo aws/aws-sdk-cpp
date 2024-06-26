@@ -30,13 +30,8 @@ RealtimeLogConfig::RealtimeLogConfig() :
 {
 }
 
-RealtimeLogConfig::RealtimeLogConfig(const XmlNode& xmlNode) : 
-    m_aRNHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_samplingRate(0),
-    m_samplingRateHasBeenSet(false),
-    m_endPointsHasBeenSet(false),
-    m_fieldsHasBeenSet(false)
+RealtimeLogConfig::RealtimeLogConfig(const XmlNode& xmlNode)
+  : RealtimeLogConfig()
 {
   *this = xmlNode;
 }

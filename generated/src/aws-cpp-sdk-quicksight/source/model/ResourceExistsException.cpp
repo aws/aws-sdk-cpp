@@ -26,11 +26,8 @@ ResourceExistsException::ResourceExistsException() :
 {
 }
 
-ResourceExistsException::ResourceExistsException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_resourceType(ExceptionResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
+ResourceExistsException::ResourceExistsException(JsonView jsonValue)
+  : ResourceExistsException()
 {
   *this = jsonValue;
 }

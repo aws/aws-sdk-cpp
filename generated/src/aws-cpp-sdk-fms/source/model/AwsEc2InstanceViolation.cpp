@@ -24,9 +24,8 @@ AwsEc2InstanceViolation::AwsEc2InstanceViolation() :
 {
 }
 
-AwsEc2InstanceViolation::AwsEc2InstanceViolation(JsonView jsonValue) : 
-    m_violationTargetHasBeenSet(false),
-    m_awsEc2NetworkInterfaceViolationsHasBeenSet(false)
+AwsEc2InstanceViolation::AwsEc2InstanceViolation(JsonView jsonValue)
+  : AwsEc2InstanceViolation()
 {
   *this = jsonValue;
 }

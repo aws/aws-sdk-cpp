@@ -31,14 +31,8 @@ SpotPrice::SpotPrice() :
 {
 }
 
-SpotPrice::SpotPrice(const XmlNode& xmlNode) : 
-    m_availabilityZoneHasBeenSet(false),
-    m_instanceType(InstanceType::NOT_SET),
-    m_instanceTypeHasBeenSet(false),
-    m_productDescription(RIProductDescription::NOT_SET),
-    m_productDescriptionHasBeenSet(false),
-    m_spotPriceHasBeenSet(false),
-    m_timestampHasBeenSet(false)
+SpotPrice::SpotPrice(const XmlNode& xmlNode)
+  : SpotPrice()
 {
   *this = xmlNode;
 }

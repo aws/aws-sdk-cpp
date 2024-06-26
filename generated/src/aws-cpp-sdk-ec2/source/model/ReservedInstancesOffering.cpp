@@ -50,33 +50,8 @@ ReservedInstancesOffering::ReservedInstancesOffering() :
 {
 }
 
-ReservedInstancesOffering::ReservedInstancesOffering(const XmlNode& xmlNode) : 
-    m_availabilityZoneHasBeenSet(false),
-    m_duration(0),
-    m_durationHasBeenSet(false),
-    m_fixedPrice(0.0),
-    m_fixedPriceHasBeenSet(false),
-    m_instanceType(InstanceType::NOT_SET),
-    m_instanceTypeHasBeenSet(false),
-    m_productDescription(RIProductDescription::NOT_SET),
-    m_productDescriptionHasBeenSet(false),
-    m_reservedInstancesOfferingIdHasBeenSet(false),
-    m_usagePrice(0.0),
-    m_usagePriceHasBeenSet(false),
-    m_currencyCode(CurrencyCodeValues::NOT_SET),
-    m_currencyCodeHasBeenSet(false),
-    m_instanceTenancy(Tenancy::NOT_SET),
-    m_instanceTenancyHasBeenSet(false),
-    m_marketplace(false),
-    m_marketplaceHasBeenSet(false),
-    m_offeringClass(OfferingClassType::NOT_SET),
-    m_offeringClassHasBeenSet(false),
-    m_offeringType(OfferingTypeValues::NOT_SET),
-    m_offeringTypeHasBeenSet(false),
-    m_pricingDetailsHasBeenSet(false),
-    m_recurringChargesHasBeenSet(false),
-    m_scope(Scope::NOT_SET),
-    m_scopeHasBeenSet(false)
+ReservedInstancesOffering::ReservedInstancesOffering(const XmlNode& xmlNode)
+  : ReservedInstancesOffering()
 {
   *this = xmlNode;
 }

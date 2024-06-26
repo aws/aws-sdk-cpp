@@ -25,10 +25,8 @@ CoverageStringFilter::CoverageStringFilter() :
 {
 }
 
-CoverageStringFilter::CoverageStringFilter(JsonView jsonValue) : 
-    m_comparison(CoverageStringComparison::NOT_SET),
-    m_comparisonHasBeenSet(false),
-    m_valueHasBeenSet(false)
+CoverageStringFilter::CoverageStringFilter(JsonView jsonValue)
+  : CoverageStringFilter()
 {
   *this = jsonValue;
 }

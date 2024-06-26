@@ -27,12 +27,8 @@ SpeakerSearchTask::SpeakerSearchTask() :
 {
 }
 
-SpeakerSearchTask::SpeakerSearchTask(JsonView jsonValue) : 
-    m_speakerSearchTaskIdHasBeenSet(false),
-    m_speakerSearchTaskStatus(MediaPipelineTaskStatus::NOT_SET),
-    m_speakerSearchTaskStatusHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false),
-    m_updatedTimestampHasBeenSet(false)
+SpeakerSearchTask::SpeakerSearchTask(JsonView jsonValue)
+  : SpeakerSearchTask()
 {
   *this = jsonValue;
 }

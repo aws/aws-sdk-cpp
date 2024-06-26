@@ -25,10 +25,8 @@ FormatConfiguration::FormatConfiguration() :
 {
 }
 
-FormatConfiguration::FormatConfiguration(JsonView jsonValue) : 
-    m_stringFormatConfigurationHasBeenSet(false),
-    m_numberFormatConfigurationHasBeenSet(false),
-    m_dateTimeFormatConfigurationHasBeenSet(false)
+FormatConfiguration::FormatConfiguration(JsonView jsonValue)
+  : FormatConfiguration()
 {
   *this = jsonValue;
 }

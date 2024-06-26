@@ -26,9 +26,8 @@ BundleTaskError::BundleTaskError() :
 {
 }
 
-BundleTaskError::BundleTaskError(const XmlNode& xmlNode) : 
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+BundleTaskError::BundleTaskError(const XmlNode& xmlNode)
+  : BundleTaskError()
 {
   *this = xmlNode;
 }

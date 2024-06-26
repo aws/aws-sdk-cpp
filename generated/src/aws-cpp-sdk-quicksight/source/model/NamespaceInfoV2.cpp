@@ -30,15 +30,8 @@ NamespaceInfoV2::NamespaceInfoV2() :
 {
 }
 
-NamespaceInfoV2::NamespaceInfoV2(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_capacityRegionHasBeenSet(false),
-    m_creationStatus(NamespaceStatus::NOT_SET),
-    m_creationStatusHasBeenSet(false),
-    m_identityStore(IdentityStore::NOT_SET),
-    m_identityStoreHasBeenSet(false),
-    m_namespaceErrorHasBeenSet(false)
+NamespaceInfoV2::NamespaceInfoV2(JsonView jsonValue)
+  : NamespaceInfoV2()
 {
   *this = jsonValue;
 }

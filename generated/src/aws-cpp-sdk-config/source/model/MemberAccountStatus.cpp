@@ -29,14 +29,8 @@ MemberAccountStatus::MemberAccountStatus() :
 {
 }
 
-MemberAccountStatus::MemberAccountStatus(JsonView jsonValue) : 
-    m_accountIdHasBeenSet(false),
-    m_configRuleNameHasBeenSet(false),
-    m_memberAccountRuleStatus(MemberAccountRuleStatus::NOT_SET),
-    m_memberAccountRuleStatusHasBeenSet(false),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_lastUpdateTimeHasBeenSet(false)
+MemberAccountStatus::MemberAccountStatus(JsonView jsonValue)
+  : MemberAccountStatus()
 {
   *this = jsonValue;
 }

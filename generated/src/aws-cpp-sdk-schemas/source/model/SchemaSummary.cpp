@@ -28,13 +28,8 @@ SchemaSummary::SchemaSummary() :
 {
 }
 
-SchemaSummary::SchemaSummary(JsonView jsonValue) : 
-    m_lastModifiedHasBeenSet(false),
-    m_schemaArnHasBeenSet(false),
-    m_schemaNameHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_versionCount(0),
-    m_versionCountHasBeenSet(false)
+SchemaSummary::SchemaSummary(JsonView jsonValue)
+  : SchemaSummary()
 {
   *this = jsonValue;
 }

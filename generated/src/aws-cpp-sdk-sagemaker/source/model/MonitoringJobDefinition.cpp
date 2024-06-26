@@ -31,16 +31,8 @@ MonitoringJobDefinition::MonitoringJobDefinition() :
 {
 }
 
-MonitoringJobDefinition::MonitoringJobDefinition(JsonView jsonValue) : 
-    m_baselineConfigHasBeenSet(false),
-    m_monitoringInputsHasBeenSet(false),
-    m_monitoringOutputConfigHasBeenSet(false),
-    m_monitoringResourcesHasBeenSet(false),
-    m_monitoringAppSpecificationHasBeenSet(false),
-    m_stoppingConditionHasBeenSet(false),
-    m_environmentHasBeenSet(false),
-    m_networkConfigHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
+MonitoringJobDefinition::MonitoringJobDefinition(JsonView jsonValue)
+  : MonitoringJobDefinition()
 {
   *this = jsonValue;
 }

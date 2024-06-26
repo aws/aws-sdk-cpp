@@ -31,16 +31,8 @@ PostFulfillmentStatusSpecification::PostFulfillmentStatusSpecification() :
 {
 }
 
-PostFulfillmentStatusSpecification::PostFulfillmentStatusSpecification(JsonView jsonValue) : 
-    m_successResponseHasBeenSet(false),
-    m_failureResponseHasBeenSet(false),
-    m_timeoutResponseHasBeenSet(false),
-    m_successNextStepHasBeenSet(false),
-    m_successConditionalHasBeenSet(false),
-    m_failureNextStepHasBeenSet(false),
-    m_failureConditionalHasBeenSet(false),
-    m_timeoutNextStepHasBeenSet(false),
-    m_timeoutConditionalHasBeenSet(false)
+PostFulfillmentStatusSpecification::PostFulfillmentStatusSpecification(JsonView jsonValue)
+  : PostFulfillmentStatusSpecification()
 {
   *this = jsonValue;
 }

@@ -26,9 +26,8 @@ EnableFastSnapshotRestoreStateError::EnableFastSnapshotRestoreStateError() :
 {
 }
 
-EnableFastSnapshotRestoreStateError::EnableFastSnapshotRestoreStateError(const XmlNode& xmlNode) : 
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+EnableFastSnapshotRestoreStateError::EnableFastSnapshotRestoreStateError(const XmlNode& xmlNode)
+  : EnableFastSnapshotRestoreStateError()
 {
   *this = xmlNode;
 }

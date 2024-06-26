@@ -27,12 +27,8 @@ WarningsListItem::WarningsListItem() :
 {
 }
 
-WarningsListItem::WarningsListItem(JsonView jsonValue) : 
-    m_page(0),
-    m_pageHasBeenSet(false),
-    m_warnCode(PageBasedWarningCode::NOT_SET),
-    m_warnCodeHasBeenSet(false),
-    m_warnMessageHasBeenSet(false)
+WarningsListItem::WarningsListItem(JsonView jsonValue)
+  : WarningsListItem()
 {
   *this = jsonValue;
 }

@@ -27,10 +27,8 @@ Destination::Destination() :
 {
 }
 
-Destination::Destination(const XmlNode& xmlNode) : 
-    m_toAddressesHasBeenSet(false),
-    m_ccAddressesHasBeenSet(false),
-    m_bccAddressesHasBeenSet(false)
+Destination::Destination(const XmlNode& xmlNode)
+  : Destination()
 {
   *this = xmlNode;
 }

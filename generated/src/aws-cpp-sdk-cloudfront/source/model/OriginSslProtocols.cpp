@@ -27,10 +27,8 @@ OriginSslProtocols::OriginSslProtocols() :
 {
 }
 
-OriginSslProtocols::OriginSslProtocols(const XmlNode& xmlNode) : 
-    m_quantity(0),
-    m_quantityHasBeenSet(false),
-    m_itemsHasBeenSet(false)
+OriginSslProtocols::OriginSslProtocols(const XmlNode& xmlNode)
+  : OriginSslProtocols()
 {
   *this = xmlNode;
 }

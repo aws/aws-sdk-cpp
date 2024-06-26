@@ -24,9 +24,8 @@ BadGatewayException::BadGatewayException() :
 {
 }
 
-BadGatewayException::BadGatewayException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_resourceNameHasBeenSet(false)
+BadGatewayException::BadGatewayException(JsonView jsonValue)
+  : BadGatewayException()
 {
   *this = jsonValue;
 }

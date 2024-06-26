@@ -26,11 +26,8 @@ PortRangeFilter::PortRangeFilter() :
 {
 }
 
-PortRangeFilter::PortRangeFilter(JsonView jsonValue) : 
-    m_beginInclusive(0),
-    m_beginInclusiveHasBeenSet(false),
-    m_endInclusive(0),
-    m_endInclusiveHasBeenSet(false)
+PortRangeFilter::PortRangeFilter(JsonView jsonValue)
+  : PortRangeFilter()
 {
   *this = jsonValue;
 }

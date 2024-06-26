@@ -36,19 +36,8 @@ EndpointAuthorization::EndpointAuthorization() :
 {
 }
 
-EndpointAuthorization::EndpointAuthorization(const XmlNode& xmlNode) : 
-    m_grantorHasBeenSet(false),
-    m_granteeHasBeenSet(false),
-    m_clusterIdentifierHasBeenSet(false),
-    m_authorizeTimeHasBeenSet(false),
-    m_clusterStatusHasBeenSet(false),
-    m_status(AuthorizationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_allowedAllVPCs(false),
-    m_allowedAllVPCsHasBeenSet(false),
-    m_allowedVPCsHasBeenSet(false),
-    m_endpointCount(0),
-    m_endpointCountHasBeenSet(false)
+EndpointAuthorization::EndpointAuthorization(const XmlNode& xmlNode)
+  : EndpointAuthorization()
 {
   *this = xmlNode;
 }

@@ -24,9 +24,8 @@ EKSOnDeviceServiceConfiguration::EKSOnDeviceServiceConfiguration() :
 {
 }
 
-EKSOnDeviceServiceConfiguration::EKSOnDeviceServiceConfiguration(JsonView jsonValue) : 
-    m_kubernetesVersionHasBeenSet(false),
-    m_eKSAnywhereVersionHasBeenSet(false)
+EKSOnDeviceServiceConfiguration::EKSOnDeviceServiceConfiguration(JsonView jsonValue)
+  : EKSOnDeviceServiceConfiguration()
 {
   *this = jsonValue;
 }

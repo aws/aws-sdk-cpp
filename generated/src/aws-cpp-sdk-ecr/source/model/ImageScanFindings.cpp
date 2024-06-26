@@ -27,12 +27,8 @@ ImageScanFindings::ImageScanFindings() :
 {
 }
 
-ImageScanFindings::ImageScanFindings(JsonView jsonValue) : 
-    m_imageScanCompletedAtHasBeenSet(false),
-    m_vulnerabilitySourceUpdatedAtHasBeenSet(false),
-    m_findingSeverityCountsHasBeenSet(false),
-    m_findingsHasBeenSet(false),
-    m_enhancedFindingsHasBeenSet(false)
+ImageScanFindings::ImageScanFindings(JsonView jsonValue)
+  : ImageScanFindings()
 {
   *this = jsonValue;
 }

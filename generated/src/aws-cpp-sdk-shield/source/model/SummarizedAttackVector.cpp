@@ -24,9 +24,8 @@ SummarizedAttackVector::SummarizedAttackVector() :
 {
 }
 
-SummarizedAttackVector::SummarizedAttackVector(JsonView jsonValue) : 
-    m_vectorTypeHasBeenSet(false),
-    m_vectorCountersHasBeenSet(false)
+SummarizedAttackVector::SummarizedAttackVector(JsonView jsonValue)
+  : SummarizedAttackVector()
 {
   *this = jsonValue;
 }

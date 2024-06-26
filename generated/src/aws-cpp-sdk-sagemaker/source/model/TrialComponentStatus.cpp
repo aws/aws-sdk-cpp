@@ -25,10 +25,8 @@ TrialComponentStatus::TrialComponentStatus() :
 {
 }
 
-TrialComponentStatus::TrialComponentStatus(JsonView jsonValue) : 
-    m_primaryStatus(TrialComponentPrimaryStatus::NOT_SET),
-    m_primaryStatusHasBeenSet(false),
-    m_messageHasBeenSet(false)
+TrialComponentStatus::TrialComponentStatus(JsonView jsonValue)
+  : TrialComponentStatus()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ AlarmNotification::AlarmNotification() :
 {
 }
 
-AlarmNotification::AlarmNotification(JsonView jsonValue) : 
-    m_notificationActionsHasBeenSet(false)
+AlarmNotification::AlarmNotification(JsonView jsonValue)
+  : AlarmNotification()
 {
   *this = jsonValue;
 }

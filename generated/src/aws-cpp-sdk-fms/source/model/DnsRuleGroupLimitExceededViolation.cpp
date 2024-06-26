@@ -26,11 +26,8 @@ DnsRuleGroupLimitExceededViolation::DnsRuleGroupLimitExceededViolation() :
 {
 }
 
-DnsRuleGroupLimitExceededViolation::DnsRuleGroupLimitExceededViolation(JsonView jsonValue) : 
-    m_violationTargetHasBeenSet(false),
-    m_violationTargetDescriptionHasBeenSet(false),
-    m_numberOfRuleGroupsAlreadyAssociated(0),
-    m_numberOfRuleGroupsAlreadyAssociatedHasBeenSet(false)
+DnsRuleGroupLimitExceededViolation::DnsRuleGroupLimitExceededViolation(JsonView jsonValue)
+  : DnsRuleGroupLimitExceededViolation()
 {
   *this = jsonValue;
 }

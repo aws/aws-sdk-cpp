@@ -24,9 +24,8 @@ VoiceSpoofingRisk::VoiceSpoofingRisk() :
 {
 }
 
-VoiceSpoofingRisk::VoiceSpoofingRisk(JsonView jsonValue) : 
-    m_riskScore(0),
-    m_riskScoreHasBeenSet(false)
+VoiceSpoofingRisk::VoiceSpoofingRisk(JsonView jsonValue)
+  : VoiceSpoofingRisk()
 {
   *this = jsonValue;
 }

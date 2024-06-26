@@ -26,11 +26,8 @@ SaaSProductSort::SaaSProductSort() :
 {
 }
 
-SaaSProductSort::SaaSProductSort(JsonView jsonValue) : 
-    m_sortBy(SaaSProductSortBy::NOT_SET),
-    m_sortByHasBeenSet(false),
-    m_sortOrder(SortOrder::NOT_SET),
-    m_sortOrderHasBeenSet(false)
+SaaSProductSort::SaaSProductSort(JsonView jsonValue)
+  : SaaSProductSort()
 {
   *this = jsonValue;
 }

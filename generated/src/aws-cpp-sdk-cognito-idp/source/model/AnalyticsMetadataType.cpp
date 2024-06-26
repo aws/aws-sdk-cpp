@@ -23,8 +23,8 @@ AnalyticsMetadataType::AnalyticsMetadataType() :
 {
 }
 
-AnalyticsMetadataType::AnalyticsMetadataType(JsonView jsonValue) : 
-    m_analyticsEndpointIdHasBeenSet(false)
+AnalyticsMetadataType::AnalyticsMetadataType(JsonView jsonValue)
+  : AnalyticsMetadataType()
 {
   *this = jsonValue;
 }

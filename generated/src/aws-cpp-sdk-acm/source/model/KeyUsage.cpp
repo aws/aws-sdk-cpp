@@ -24,9 +24,8 @@ KeyUsage::KeyUsage() :
 {
 }
 
-KeyUsage::KeyUsage(JsonView jsonValue) : 
-    m_name(KeyUsageName::NOT_SET),
-    m_nameHasBeenSet(false)
+KeyUsage::KeyUsage(JsonView jsonValue)
+  : KeyUsage()
 {
   *this = jsonValue;
 }

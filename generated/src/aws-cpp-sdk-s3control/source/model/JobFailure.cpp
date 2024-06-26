@@ -26,9 +26,8 @@ JobFailure::JobFailure() :
 {
 }
 
-JobFailure::JobFailure(const XmlNode& xmlNode) : 
-    m_failureCodeHasBeenSet(false),
-    m_failureReasonHasBeenSet(false)
+JobFailure::JobFailure(const XmlNode& xmlNode)
+  : JobFailure()
 {
   *this = xmlNode;
 }

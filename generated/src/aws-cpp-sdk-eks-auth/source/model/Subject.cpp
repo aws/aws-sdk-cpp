@@ -24,9 +24,8 @@ Subject::Subject() :
 {
 }
 
-Subject::Subject(JsonView jsonValue) : 
-    m_namespaceHasBeenSet(false),
-    m_serviceAccountHasBeenSet(false)
+Subject::Subject(JsonView jsonValue)
+  : Subject()
 {
   *this = jsonValue;
 }

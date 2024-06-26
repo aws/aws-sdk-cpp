@@ -26,9 +26,8 @@ S3ObjectLockLegalHold::S3ObjectLockLegalHold() :
 {
 }
 
-S3ObjectLockLegalHold::S3ObjectLockLegalHold(const XmlNode& xmlNode) : 
-    m_status(S3ObjectLockLegalHoldStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+S3ObjectLockLegalHold::S3ObjectLockLegalHold(const XmlNode& xmlNode)
+  : S3ObjectLockLegalHold()
 {
   *this = xmlNode;
 }

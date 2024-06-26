@@ -27,12 +27,8 @@ ParameterDetail::ParameterDetail() :
 {
 }
 
-ParameterDetail::ParameterDetail(JsonView jsonValue) : 
-    m_descriptionHasBeenSet(false),
-    m_required(false),
-    m_requiredHasBeenSet(false),
-    m_type(Type::NOT_SET),
-    m_typeHasBeenSet(false)
+ParameterDetail::ParameterDetail(JsonView jsonValue)
+  : ParameterDetail()
 {
   *this = jsonValue;
 }

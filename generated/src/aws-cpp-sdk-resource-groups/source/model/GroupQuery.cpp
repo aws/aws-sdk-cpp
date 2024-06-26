@@ -24,9 +24,8 @@ GroupQuery::GroupQuery() :
 {
 }
 
-GroupQuery::GroupQuery(JsonView jsonValue) : 
-    m_groupNameHasBeenSet(false),
-    m_resourceQueryHasBeenSet(false)
+GroupQuery::GroupQuery(JsonView jsonValue)
+  : GroupQuery()
 {
   *this = jsonValue;
 }

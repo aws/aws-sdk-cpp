@@ -26,11 +26,8 @@ CustomPluginConfiguration::CustomPluginConfiguration() :
 {
 }
 
-CustomPluginConfiguration::CustomPluginConfiguration(JsonView jsonValue) : 
-    m_descriptionHasBeenSet(false),
-    m_apiSchemaType(APISchemaType::NOT_SET),
-    m_apiSchemaTypeHasBeenSet(false),
-    m_apiSchemaHasBeenSet(false)
+CustomPluginConfiguration::CustomPluginConfiguration(JsonView jsonValue)
+  : CustomPluginConfiguration()
 {
   *this = jsonValue;
 }

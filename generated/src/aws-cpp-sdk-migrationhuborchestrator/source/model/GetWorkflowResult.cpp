@@ -24,10 +24,8 @@ GetWorkflowResult::GetWorkflowResult() :
 {
 }
 
-GetWorkflowResult::GetWorkflowResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(MigrationWorkflowStatusEnum::NOT_SET),
-    m_totalSteps(0),
-    m_completedSteps(0)
+GetWorkflowResult::GetWorkflowResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetWorkflowResult()
 {
   *this = result;
 }

@@ -23,8 +23,8 @@ AmplitudeSourceProperties::AmplitudeSourceProperties() :
 {
 }
 
-AmplitudeSourceProperties::AmplitudeSourceProperties(JsonView jsonValue) : 
-    m_objectHasBeenSet(false)
+AmplitudeSourceProperties::AmplitudeSourceProperties(JsonView jsonValue)
+  : AmplitudeSourceProperties()
 {
   *this = jsonValue;
 }

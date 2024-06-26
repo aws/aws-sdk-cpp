@@ -22,8 +22,8 @@ GetParametersForExportResult::GetParametersForExportResult() :
 {
 }
 
-GetParametersForExportResult::GetParametersForExportResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_signingKeyAlgorithm(KeyAlgorithm::NOT_SET)
+GetParametersForExportResult::GetParametersForExportResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetParametersForExportResult()
 {
   *this = result;
 }

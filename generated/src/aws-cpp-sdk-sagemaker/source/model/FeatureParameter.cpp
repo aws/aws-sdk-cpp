@@ -24,9 +24,8 @@ FeatureParameter::FeatureParameter() :
 {
 }
 
-FeatureParameter::FeatureParameter(JsonView jsonValue) : 
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false)
+FeatureParameter::FeatureParameter(JsonView jsonValue)
+  : FeatureParameter()
 {
   *this = jsonValue;
 }

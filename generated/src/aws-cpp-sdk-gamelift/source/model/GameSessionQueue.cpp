@@ -32,17 +32,8 @@ GameSessionQueue::GameSessionQueue() :
 {
 }
 
-GameSessionQueue::GameSessionQueue(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_gameSessionQueueArnHasBeenSet(false),
-    m_timeoutInSeconds(0),
-    m_timeoutInSecondsHasBeenSet(false),
-    m_playerLatencyPoliciesHasBeenSet(false),
-    m_destinationsHasBeenSet(false),
-    m_filterConfigurationHasBeenSet(false),
-    m_priorityConfigurationHasBeenSet(false),
-    m_customEventDataHasBeenSet(false),
-    m_notificationTargetHasBeenSet(false)
+GameSessionQueue::GameSessionQueue(JsonView jsonValue)
+  : GameSessionQueue()
 {
   *this = jsonValue;
 }

@@ -27,12 +27,8 @@ FailedCreateSimulationJobRequest::FailedCreateSimulationJobRequest() :
 {
 }
 
-FailedCreateSimulationJobRequest::FailedCreateSimulationJobRequest(JsonView jsonValue) : 
-    m_requestHasBeenSet(false),
-    m_failureReasonHasBeenSet(false),
-    m_failureCode(SimulationJobErrorCode::NOT_SET),
-    m_failureCodeHasBeenSet(false),
-    m_failedAtHasBeenSet(false)
+FailedCreateSimulationJobRequest::FailedCreateSimulationJobRequest(JsonView jsonValue)
+  : FailedCreateSimulationJobRequest()
 {
   *this = jsonValue;
 }

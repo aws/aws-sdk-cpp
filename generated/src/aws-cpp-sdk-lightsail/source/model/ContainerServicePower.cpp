@@ -32,17 +32,8 @@ ContainerServicePower::ContainerServicePower() :
 {
 }
 
-ContainerServicePower::ContainerServicePower(JsonView jsonValue) : 
-    m_powerIdHasBeenSet(false),
-    m_price(0.0),
-    m_priceHasBeenSet(false),
-    m_cpuCount(0.0),
-    m_cpuCountHasBeenSet(false),
-    m_ramSizeInGb(0.0),
-    m_ramSizeInGbHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_isActive(false),
-    m_isActiveHasBeenSet(false)
+ContainerServicePower::ContainerServicePower(JsonView jsonValue)
+  : ContainerServicePower()
 {
   *this = jsonValue;
 }

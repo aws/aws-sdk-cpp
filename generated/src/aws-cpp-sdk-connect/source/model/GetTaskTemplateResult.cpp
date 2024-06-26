@@ -22,8 +22,8 @@ GetTaskTemplateResult::GetTaskTemplateResult() :
 {
 }
 
-GetTaskTemplateResult::GetTaskTemplateResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(TaskTemplateStatus::NOT_SET)
+GetTaskTemplateResult::GetTaskTemplateResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetTaskTemplateResult()
 {
   *this = result;
 }

@@ -28,13 +28,8 @@ Trace::Trace() :
 {
 }
 
-Trace::Trace(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_duration(0.0),
-    m_durationHasBeenSet(false),
-    m_limitExceeded(false),
-    m_limitExceededHasBeenSet(false),
-    m_segmentsHasBeenSet(false)
+Trace::Trace(JsonView jsonValue)
+  : Trace()
 {
   *this = jsonValue;
 }

@@ -35,20 +35,8 @@ Attribute::Attribute() :
 {
 }
 
-Attribute::Attribute(JsonView jsonValue) : 
-    m_fullyQualifiedNameHasBeenSet(false),
-    m_dataType(NodeDataType::NOT_SET),
-    m_dataTypeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_unitHasBeenSet(false),
-    m_allowedValuesHasBeenSet(false),
-    m_min(0.0),
-    m_minHasBeenSet(false),
-    m_max(0.0),
-    m_maxHasBeenSet(false),
-    m_defaultValueHasBeenSet(false),
-    m_deprecationMessageHasBeenSet(false),
-    m_commentHasBeenSet(false)
+Attribute::Attribute(JsonView jsonValue)
+  : Attribute()
 {
   *this = jsonValue;
 }

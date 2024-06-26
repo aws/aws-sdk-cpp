@@ -25,10 +25,8 @@ SheetControlInfoIconLabelOptions::SheetControlInfoIconLabelOptions() :
 {
 }
 
-SheetControlInfoIconLabelOptions::SheetControlInfoIconLabelOptions(JsonView jsonValue) : 
-    m_visibility(Visibility::NOT_SET),
-    m_visibilityHasBeenSet(false),
-    m_infoIconTextHasBeenSet(false)
+SheetControlInfoIconLabelOptions::SheetControlInfoIconLabelOptions(JsonView jsonValue)
+  : SheetControlInfoIconLabelOptions()
 {
   *this = jsonValue;
 }

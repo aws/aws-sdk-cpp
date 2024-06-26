@@ -33,18 +33,8 @@ CollaborationSummary::CollaborationSummary() :
 {
 }
 
-CollaborationSummary::CollaborationSummary(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_creatorAccountIdHasBeenSet(false),
-    m_creatorDisplayNameHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false),
-    m_memberStatus(MemberStatus::NOT_SET),
-    m_memberStatusHasBeenSet(false),
-    m_membershipIdHasBeenSet(false),
-    m_membershipArnHasBeenSet(false)
+CollaborationSummary::CollaborationSummary(JsonView jsonValue)
+  : CollaborationSummary()
 {
   *this = jsonValue;
 }

@@ -23,9 +23,8 @@ UpdateDeploymentResult::UpdateDeploymentResult() :
 {
 }
 
-UpdateDeploymentResult::UpdateDeploymentResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_autoDeployed(false),
-    m_deploymentStatus(DeploymentStatus::NOT_SET)
+UpdateDeploymentResult::UpdateDeploymentResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateDeploymentResult()
 {
   *this = result;
 }

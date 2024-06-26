@@ -24,9 +24,8 @@ StartExperimentExperimentOptionsInput::StartExperimentExperimentOptionsInput() :
 {
 }
 
-StartExperimentExperimentOptionsInput::StartExperimentExperimentOptionsInput(JsonView jsonValue) : 
-    m_actionsMode(ActionsMode::NOT_SET),
-    m_actionsModeHasBeenSet(false)
+StartExperimentExperimentOptionsInput::StartExperimentExperimentOptionsInput(JsonView jsonValue)
+  : StartExperimentExperimentOptionsInput()
 {
   *this = jsonValue;
 }

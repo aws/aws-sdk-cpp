@@ -22,8 +22,8 @@ ExecuteStatementResult::ExecuteStatementResult() :
 {
 }
 
-ExecuteStatementResult::ExecuteStatementResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_numberOfRecordsUpdated(0)
+ExecuteStatementResult::ExecuteStatementResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ExecuteStatementResult()
 {
   *this = result;
 }

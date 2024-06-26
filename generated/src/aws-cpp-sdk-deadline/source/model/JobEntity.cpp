@@ -26,11 +26,8 @@ JobEntity::JobEntity() :
 {
 }
 
-JobEntity::JobEntity(JsonView jsonValue) : 
-    m_environmentDetailsHasBeenSet(false),
-    m_jobAttachmentDetailsHasBeenSet(false),
-    m_jobDetailsHasBeenSet(false),
-    m_stepDetailsHasBeenSet(false)
+JobEntity::JobEntity(JsonView jsonValue)
+  : JobEntity()
 {
   *this = jsonValue;
 }

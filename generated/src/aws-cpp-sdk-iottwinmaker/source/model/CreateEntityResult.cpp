@@ -22,8 +22,8 @@ CreateEntityResult::CreateEntityResult() :
 {
 }
 
-CreateEntityResult::CreateEntityResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_state(State::NOT_SET)
+CreateEntityResult::CreateEntityResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateEntityResult()
 {
   *this = result;
 }

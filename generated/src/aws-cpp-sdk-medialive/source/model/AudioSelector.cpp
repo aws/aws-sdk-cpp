@@ -24,9 +24,8 @@ AudioSelector::AudioSelector() :
 {
 }
 
-AudioSelector::AudioSelector(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_selectorSettingsHasBeenSet(false)
+AudioSelector::AudioSelector(JsonView jsonValue)
+  : AudioSelector()
 {
   *this = jsonValue;
 }

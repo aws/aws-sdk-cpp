@@ -25,10 +25,8 @@ RemediationActionWithOrder::RemediationActionWithOrder() :
 {
 }
 
-RemediationActionWithOrder::RemediationActionWithOrder(JsonView jsonValue) : 
-    m_remediationActionHasBeenSet(false),
-    m_order(0),
-    m_orderHasBeenSet(false)
+RemediationActionWithOrder::RemediationActionWithOrder(JsonView jsonValue)
+  : RemediationActionWithOrder()
 {
   *this = jsonValue;
 }

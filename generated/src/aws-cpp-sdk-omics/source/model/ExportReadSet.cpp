@@ -23,8 +23,8 @@ ExportReadSet::ExportReadSet() :
 {
 }
 
-ExportReadSet::ExportReadSet(JsonView jsonValue) : 
-    m_readSetIdHasBeenSet(false)
+ExportReadSet::ExportReadSet(JsonView jsonValue)
+  : ExportReadSet()
 {
   *this = jsonValue;
 }

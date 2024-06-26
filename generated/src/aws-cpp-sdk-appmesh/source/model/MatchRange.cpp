@@ -26,11 +26,8 @@ MatchRange::MatchRange() :
 {
 }
 
-MatchRange::MatchRange(JsonView jsonValue) : 
-    m_end(0),
-    m_endHasBeenSet(false),
-    m_start(0),
-    m_startHasBeenSet(false)
+MatchRange::MatchRange(JsonView jsonValue)
+  : MatchRange()
 {
   *this = jsonValue;
 }

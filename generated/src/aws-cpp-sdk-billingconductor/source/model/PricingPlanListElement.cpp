@@ -31,16 +31,8 @@ PricingPlanListElement::PricingPlanListElement() :
 {
 }
 
-PricingPlanListElement::PricingPlanListElement(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_size(0),
-    m_sizeHasBeenSet(false),
-    m_creationTime(0),
-    m_creationTimeHasBeenSet(false),
-    m_lastModifiedTime(0),
-    m_lastModifiedTimeHasBeenSet(false)
+PricingPlanListElement::PricingPlanListElement(JsonView jsonValue)
+  : PricingPlanListElement()
 {
   *this = jsonValue;
 }

@@ -28,13 +28,8 @@ RawMetricData::RawMetricData() :
 {
 }
 
-RawMetricData::RawMetricData(JsonView jsonValue) : 
-    m_metricNameHasBeenSet(false),
-    m_timestampHasBeenSet(false),
-    m_step(0),
-    m_stepHasBeenSet(false),
-    m_value(0.0),
-    m_valueHasBeenSet(false)
+RawMetricData::RawMetricData(JsonView jsonValue)
+  : RawMetricData()
 {
   *this = jsonValue;
 }

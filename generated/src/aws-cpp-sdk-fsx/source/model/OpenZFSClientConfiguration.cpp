@@ -24,9 +24,8 @@ OpenZFSClientConfiguration::OpenZFSClientConfiguration() :
 {
 }
 
-OpenZFSClientConfiguration::OpenZFSClientConfiguration(JsonView jsonValue) : 
-    m_clientsHasBeenSet(false),
-    m_optionsHasBeenSet(false)
+OpenZFSClientConfiguration::OpenZFSClientConfiguration(JsonView jsonValue)
+  : OpenZFSClientConfiguration()
 {
   *this = jsonValue;
 }

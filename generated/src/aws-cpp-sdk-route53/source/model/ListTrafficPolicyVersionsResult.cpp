@@ -21,8 +21,8 @@ ListTrafficPolicyVersionsResult::ListTrafficPolicyVersionsResult() :
 {
 }
 
-ListTrafficPolicyVersionsResult::ListTrafficPolicyVersionsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_isTruncated(false)
+ListTrafficPolicyVersionsResult::ListTrafficPolicyVersionsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : ListTrafficPolicyVersionsResult()
 {
   *this = result;
 }

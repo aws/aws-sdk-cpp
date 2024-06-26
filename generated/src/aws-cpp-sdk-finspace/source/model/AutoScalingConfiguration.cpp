@@ -34,19 +34,8 @@ AutoScalingConfiguration::AutoScalingConfiguration() :
 {
 }
 
-AutoScalingConfiguration::AutoScalingConfiguration(JsonView jsonValue) : 
-    m_minNodeCount(0),
-    m_minNodeCountHasBeenSet(false),
-    m_maxNodeCount(0),
-    m_maxNodeCountHasBeenSet(false),
-    m_autoScalingMetric(AutoScalingMetric::NOT_SET),
-    m_autoScalingMetricHasBeenSet(false),
-    m_metricTarget(0.0),
-    m_metricTargetHasBeenSet(false),
-    m_scaleInCooldownSeconds(0.0),
-    m_scaleInCooldownSecondsHasBeenSet(false),
-    m_scaleOutCooldownSeconds(0.0),
-    m_scaleOutCooldownSecondsHasBeenSet(false)
+AutoScalingConfiguration::AutoScalingConfiguration(JsonView jsonValue)
+  : AutoScalingConfiguration()
 {
   *this = jsonValue;
 }

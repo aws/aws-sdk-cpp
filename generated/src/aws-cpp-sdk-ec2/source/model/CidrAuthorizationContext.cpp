@@ -26,9 +26,8 @@ CidrAuthorizationContext::CidrAuthorizationContext() :
 {
 }
 
-CidrAuthorizationContext::CidrAuthorizationContext(const XmlNode& xmlNode) : 
-    m_messageHasBeenSet(false),
-    m_signatureHasBeenSet(false)
+CidrAuthorizationContext::CidrAuthorizationContext(const XmlNode& xmlNode)
+  : CidrAuthorizationContext()
 {
   *this = xmlNode;
 }

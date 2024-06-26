@@ -27,12 +27,8 @@ QueryPlanningContext::QueryPlanningContext() :
 {
 }
 
-QueryPlanningContext::QueryPlanningContext(JsonView jsonValue) : 
-    m_catalogIdHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_queryAsOfTimeHasBeenSet(false),
-    m_queryParametersHasBeenSet(false),
-    m_transactionIdHasBeenSet(false)
+QueryPlanningContext::QueryPlanningContext(JsonView jsonValue)
+  : QueryPlanningContext()
 {
   *this = jsonValue;
 }

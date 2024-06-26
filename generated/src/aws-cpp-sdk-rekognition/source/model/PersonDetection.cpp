@@ -25,10 +25,8 @@ PersonDetection::PersonDetection() :
 {
 }
 
-PersonDetection::PersonDetection(JsonView jsonValue) : 
-    m_timestamp(0),
-    m_timestampHasBeenSet(false),
-    m_personHasBeenSet(false)
+PersonDetection::PersonDetection(JsonView jsonValue)
+  : PersonDetection()
 {
   *this = jsonValue;
 }

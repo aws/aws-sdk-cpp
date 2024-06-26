@@ -23,9 +23,8 @@ CreateWorkspaceImageResult::CreateWorkspaceImageResult() :
 {
 }
 
-CreateWorkspaceImageResult::CreateWorkspaceImageResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_state(WorkspaceImageState::NOT_SET),
-    m_requiredTenancy(WorkspaceImageRequiredTenancy::NOT_SET)
+CreateWorkspaceImageResult::CreateWorkspaceImageResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateWorkspaceImageResult()
 {
   *this = result;
 }

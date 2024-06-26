@@ -31,16 +31,8 @@ RegistrationFieldDefinition::RegistrationFieldDefinition() :
 {
 }
 
-RegistrationFieldDefinition::RegistrationFieldDefinition(JsonView jsonValue) : 
-    m_sectionPathHasBeenSet(false),
-    m_fieldPathHasBeenSet(false),
-    m_fieldType(FieldType::NOT_SET),
-    m_fieldTypeHasBeenSet(false),
-    m_fieldRequirement(FieldRequirement::NOT_SET),
-    m_fieldRequirementHasBeenSet(false),
-    m_selectValidationHasBeenSet(false),
-    m_textValidationHasBeenSet(false),
-    m_displayHintsHasBeenSet(false)
+RegistrationFieldDefinition::RegistrationFieldDefinition(JsonView jsonValue)
+  : RegistrationFieldDefinition()
 {
   *this = jsonValue;
 }

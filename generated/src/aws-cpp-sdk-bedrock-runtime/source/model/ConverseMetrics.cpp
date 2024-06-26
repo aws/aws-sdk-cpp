@@ -24,9 +24,8 @@ ConverseMetrics::ConverseMetrics() :
 {
 }
 
-ConverseMetrics::ConverseMetrics(JsonView jsonValue) : 
-    m_latencyMs(0),
-    m_latencyMsHasBeenSet(false)
+ConverseMetrics::ConverseMetrics(JsonView jsonValue)
+  : ConverseMetrics()
 {
   *this = jsonValue;
 }

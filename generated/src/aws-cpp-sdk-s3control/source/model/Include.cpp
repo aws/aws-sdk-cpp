@@ -26,9 +26,8 @@ Include::Include() :
 {
 }
 
-Include::Include(const XmlNode& xmlNode) : 
-    m_bucketsHasBeenSet(false),
-    m_regionsHasBeenSet(false)
+Include::Include(const XmlNode& xmlNode)
+  : Include()
 {
   *this = xmlNode;
 }

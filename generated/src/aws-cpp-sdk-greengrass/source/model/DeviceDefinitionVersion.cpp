@@ -23,8 +23,8 @@ DeviceDefinitionVersion::DeviceDefinitionVersion() :
 {
 }
 
-DeviceDefinitionVersion::DeviceDefinitionVersion(JsonView jsonValue) : 
-    m_devicesHasBeenSet(false)
+DeviceDefinitionVersion::DeviceDefinitionVersion(JsonView jsonValue)
+  : DeviceDefinitionVersion()
 {
   *this = jsonValue;
 }

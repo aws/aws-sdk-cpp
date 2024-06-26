@@ -33,18 +33,8 @@ DescribedUser::DescribedUser() :
 {
 }
 
-DescribedUser::DescribedUser(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_homeDirectoryHasBeenSet(false),
-    m_homeDirectoryMappingsHasBeenSet(false),
-    m_homeDirectoryType(HomeDirectoryType::NOT_SET),
-    m_homeDirectoryTypeHasBeenSet(false),
-    m_policyHasBeenSet(false),
-    m_posixProfileHasBeenSet(false),
-    m_roleHasBeenSet(false),
-    m_sshPublicKeysHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_userNameHasBeenSet(false)
+DescribedUser::DescribedUser(JsonView jsonValue)
+  : DescribedUser()
 {
   *this = jsonValue;
 }

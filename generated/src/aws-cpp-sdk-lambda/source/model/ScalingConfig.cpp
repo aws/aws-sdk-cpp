@@ -24,9 +24,8 @@ ScalingConfig::ScalingConfig() :
 {
 }
 
-ScalingConfig::ScalingConfig(JsonView jsonValue) : 
-    m_maximumConcurrency(0),
-    m_maximumConcurrencyHasBeenSet(false)
+ScalingConfig::ScalingConfig(JsonView jsonValue)
+  : ScalingConfig()
 {
   *this = jsonValue;
 }

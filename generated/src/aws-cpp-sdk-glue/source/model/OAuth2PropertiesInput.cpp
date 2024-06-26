@@ -28,13 +28,8 @@ OAuth2PropertiesInput::OAuth2PropertiesInput() :
 {
 }
 
-OAuth2PropertiesInput::OAuth2PropertiesInput(JsonView jsonValue) : 
-    m_oAuth2GrantType(OAuth2GrantType::NOT_SET),
-    m_oAuth2GrantTypeHasBeenSet(false),
-    m_oAuth2ClientApplicationHasBeenSet(false),
-    m_tokenUrlHasBeenSet(false),
-    m_tokenUrlParametersMapHasBeenSet(false),
-    m_authorizationCodePropertiesHasBeenSet(false)
+OAuth2PropertiesInput::OAuth2PropertiesInput(JsonView jsonValue)
+  : OAuth2PropertiesInput()
 {
   *this = jsonValue;
 }

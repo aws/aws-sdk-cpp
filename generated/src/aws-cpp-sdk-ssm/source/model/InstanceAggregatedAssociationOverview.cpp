@@ -24,9 +24,8 @@ InstanceAggregatedAssociationOverview::InstanceAggregatedAssociationOverview() :
 {
 }
 
-InstanceAggregatedAssociationOverview::InstanceAggregatedAssociationOverview(JsonView jsonValue) : 
-    m_detailedStatusHasBeenSet(false),
-    m_instanceAssociationStatusAggregatedCountHasBeenSet(false)
+InstanceAggregatedAssociationOverview::InstanceAggregatedAssociationOverview(JsonView jsonValue)
+  : InstanceAggregatedAssociationOverview()
 {
   *this = jsonValue;
 }

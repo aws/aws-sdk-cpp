@@ -23,8 +23,8 @@ NetworkAclCommonPolicy::NetworkAclCommonPolicy() :
 {
 }
 
-NetworkAclCommonPolicy::NetworkAclCommonPolicy(JsonView jsonValue) : 
-    m_networkAclEntrySetHasBeenSet(false)
+NetworkAclCommonPolicy::NetworkAclCommonPolicy(JsonView jsonValue)
+  : NetworkAclCommonPolicy()
 {
   *this = jsonValue;
 }

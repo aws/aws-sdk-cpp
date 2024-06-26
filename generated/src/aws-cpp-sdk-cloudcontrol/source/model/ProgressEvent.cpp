@@ -35,20 +35,8 @@ ProgressEvent::ProgressEvent() :
 {
 }
 
-ProgressEvent::ProgressEvent(JsonView jsonValue) : 
-    m_typeNameHasBeenSet(false),
-    m_identifierHasBeenSet(false),
-    m_requestTokenHasBeenSet(false),
-    m_operation(Operation::NOT_SET),
-    m_operationHasBeenSet(false),
-    m_operationStatus(OperationStatus::NOT_SET),
-    m_operationStatusHasBeenSet(false),
-    m_eventTimeHasBeenSet(false),
-    m_resourceModelHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_errorCode(HandlerErrorCode::NOT_SET),
-    m_errorCodeHasBeenSet(false),
-    m_retryAfterHasBeenSet(false)
+ProgressEvent::ProgressEvent(JsonView jsonValue)
+  : ProgressEvent()
 {
   *this = jsonValue;
 }

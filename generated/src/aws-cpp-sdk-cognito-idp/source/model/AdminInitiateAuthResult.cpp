@@ -22,8 +22,8 @@ AdminInitiateAuthResult::AdminInitiateAuthResult() :
 {
 }
 
-AdminInitiateAuthResult::AdminInitiateAuthResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_challengeName(ChallengeNameType::NOT_SET)
+AdminInitiateAuthResult::AdminInitiateAuthResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : AdminInitiateAuthResult()
 {
   *this = result;
 }

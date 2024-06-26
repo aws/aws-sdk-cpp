@@ -25,10 +25,8 @@ CloudWatchLoggingOptionDescription::CloudWatchLoggingOptionDescription() :
 {
 }
 
-CloudWatchLoggingOptionDescription::CloudWatchLoggingOptionDescription(JsonView jsonValue) : 
-    m_cloudWatchLoggingOptionIdHasBeenSet(false),
-    m_logStreamARNHasBeenSet(false),
-    m_roleARNHasBeenSet(false)
+CloudWatchLoggingOptionDescription::CloudWatchLoggingOptionDescription(JsonView jsonValue)
+  : CloudWatchLoggingOptionDescription()
 {
   *this = jsonValue;
 }

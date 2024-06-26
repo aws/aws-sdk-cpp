@@ -26,11 +26,8 @@ InitialResponseSetting::InitialResponseSetting() :
 {
 }
 
-InitialResponseSetting::InitialResponseSetting(JsonView jsonValue) : 
-    m_initialResponseHasBeenSet(false),
-    m_nextStepHasBeenSet(false),
-    m_conditionalHasBeenSet(false),
-    m_codeHookHasBeenSet(false)
+InitialResponseSetting::InitialResponseSetting(JsonView jsonValue)
+  : InitialResponseSetting()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ TN3270::TN3270() :
 {
 }
 
-TN3270::TN3270(JsonView jsonValue) : 
-    m_scriptHasBeenSet(false),
-    m_exportDataSetNamesHasBeenSet(false)
+TN3270::TN3270(JsonView jsonValue)
+  : TN3270()
 {
   *this = jsonValue;
 }

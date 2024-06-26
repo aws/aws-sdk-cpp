@@ -25,10 +25,8 @@ AnchorDateConfiguration::AnchorDateConfiguration() :
 {
 }
 
-AnchorDateConfiguration::AnchorDateConfiguration(JsonView jsonValue) : 
-    m_anchorOption(AnchorOption::NOT_SET),
-    m_anchorOptionHasBeenSet(false),
-    m_parameterNameHasBeenSet(false)
+AnchorDateConfiguration::AnchorDateConfiguration(JsonView jsonValue)
+  : AnchorDateConfiguration()
 {
   *this = jsonValue;
 }

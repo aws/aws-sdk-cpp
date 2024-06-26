@@ -23,8 +23,8 @@ AnalysisDefaults::AnalysisDefaults() :
 {
 }
 
-AnalysisDefaults::AnalysisDefaults(JsonView jsonValue) : 
-    m_defaultNewSheetConfigurationHasBeenSet(false)
+AnalysisDefaults::AnalysisDefaults(JsonView jsonValue)
+  : AnalysisDefaults()
 {
   *this = jsonValue;
 }

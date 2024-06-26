@@ -44,29 +44,8 @@ JobRun::JobRun() :
 {
 }
 
-JobRun::JobRun(JsonView jsonValue) : 
-    m_attempt(0),
-    m_attemptHasBeenSet(false),
-    m_completedOnHasBeenSet(false),
-    m_datasetNameHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_executionTime(0),
-    m_executionTimeHasBeenSet(false),
-    m_jobNameHasBeenSet(false),
-    m_runIdHasBeenSet(false),
-    m_state(JobRunState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_logSubscription(LogSubscription::NOT_SET),
-    m_logSubscriptionHasBeenSet(false),
-    m_logGroupNameHasBeenSet(false),
-    m_outputsHasBeenSet(false),
-    m_dataCatalogOutputsHasBeenSet(false),
-    m_databaseOutputsHasBeenSet(false),
-    m_recipeReferenceHasBeenSet(false),
-    m_startedByHasBeenSet(false),
-    m_startedOnHasBeenSet(false),
-    m_jobSampleHasBeenSet(false),
-    m_validationConfigurationsHasBeenSet(false)
+JobRun::JobRun(JsonView jsonValue)
+  : JobRun()
 {
   *this = jsonValue;
 }

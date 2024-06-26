@@ -26,11 +26,8 @@ ConnectionBodyParameter::ConnectionBodyParameter() :
 {
 }
 
-ConnectionBodyParameter::ConnectionBodyParameter(JsonView jsonValue) : 
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_isValueSecret(false),
-    m_isValueSecretHasBeenSet(false)
+ConnectionBodyParameter::ConnectionBodyParameter(JsonView jsonValue)
+  : ConnectionBodyParameter()
 {
   *this = jsonValue;
 }

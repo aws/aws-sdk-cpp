@@ -31,16 +31,8 @@ PipeSourceManagedStreamingKafkaParameters::PipeSourceManagedStreamingKafkaParame
 {
 }
 
-PipeSourceManagedStreamingKafkaParameters::PipeSourceManagedStreamingKafkaParameters(JsonView jsonValue) : 
-    m_topicNameHasBeenSet(false),
-    m_startingPosition(MSKStartPosition::NOT_SET),
-    m_startingPositionHasBeenSet(false),
-    m_batchSize(0),
-    m_batchSizeHasBeenSet(false),
-    m_maximumBatchingWindowInSeconds(0),
-    m_maximumBatchingWindowInSecondsHasBeenSet(false),
-    m_consumerGroupIDHasBeenSet(false),
-    m_credentialsHasBeenSet(false)
+PipeSourceManagedStreamingKafkaParameters::PipeSourceManagedStreamingKafkaParameters(JsonView jsonValue)
+  : PipeSourceManagedStreamingKafkaParameters()
 {
   *this = jsonValue;
 }

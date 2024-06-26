@@ -25,10 +25,8 @@ ExplicitHierarchy::ExplicitHierarchy() :
 {
 }
 
-ExplicitHierarchy::ExplicitHierarchy(JsonView jsonValue) : 
-    m_hierarchyIdHasBeenSet(false),
-    m_columnsHasBeenSet(false),
-    m_drillDownFiltersHasBeenSet(false)
+ExplicitHierarchy::ExplicitHierarchy(JsonView jsonValue)
+  : ExplicitHierarchy()
 {
   *this = jsonValue;
 }

@@ -29,14 +29,8 @@ ManagedRuleSet::ManagedRuleSet() :
 {
 }
 
-ManagedRuleSet::ManagedRuleSet(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_aRNHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_publishedVersionsHasBeenSet(false),
-    m_recommendedVersionHasBeenSet(false),
-    m_labelNamespaceHasBeenSet(false)
+ManagedRuleSet::ManagedRuleSet(JsonView jsonValue)
+  : ManagedRuleSet()
 {
   *this = jsonValue;
 }

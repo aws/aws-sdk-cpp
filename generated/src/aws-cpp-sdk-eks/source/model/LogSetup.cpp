@@ -25,10 +25,8 @@ LogSetup::LogSetup() :
 {
 }
 
-LogSetup::LogSetup(JsonView jsonValue) : 
-    m_typesHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
+LogSetup::LogSetup(JsonView jsonValue)
+  : LogSetup()
 {
   *this = jsonValue;
 }

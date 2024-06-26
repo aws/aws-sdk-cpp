@@ -27,10 +27,8 @@ QueryStringCacheKeys::QueryStringCacheKeys() :
 {
 }
 
-QueryStringCacheKeys::QueryStringCacheKeys(const XmlNode& xmlNode) : 
-    m_quantity(0),
-    m_quantityHasBeenSet(false),
-    m_itemsHasBeenSet(false)
+QueryStringCacheKeys::QueryStringCacheKeys(const XmlNode& xmlNode)
+  : QueryStringCacheKeys()
 {
   *this = xmlNode;
 }

@@ -26,9 +26,8 @@ CancelCapacityReservationFleetError::CancelCapacityReservationFleetError() :
 {
 }
 
-CancelCapacityReservationFleetError::CancelCapacityReservationFleetError(const XmlNode& xmlNode) : 
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+CancelCapacityReservationFleetError::CancelCapacityReservationFleetError(const XmlNode& xmlNode)
+  : CancelCapacityReservationFleetError()
 {
   *this = xmlNode;
 }

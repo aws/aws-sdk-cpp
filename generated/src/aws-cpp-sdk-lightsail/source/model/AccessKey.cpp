@@ -28,13 +28,8 @@ AccessKey::AccessKey() :
 {
 }
 
-AccessKey::AccessKey(JsonView jsonValue) : 
-    m_accessKeyIdHasBeenSet(false),
-    m_secretAccessKeyHasBeenSet(false),
-    m_status(StatusType::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_lastUsedHasBeenSet(false)
+AccessKey::AccessKey(JsonView jsonValue)
+  : AccessKey()
 {
   *this = jsonValue;
 }

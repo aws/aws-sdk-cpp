@@ -34,19 +34,8 @@ LifecyclePolicySummary::LifecyclePolicySummary() :
 {
 }
 
-LifecyclePolicySummary::LifecyclePolicySummary(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_status(LifecyclePolicyStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_executionRoleHasBeenSet(false),
-    m_resourceType(LifecyclePolicyResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_dateCreatedHasBeenSet(false),
-    m_dateUpdatedHasBeenSet(false),
-    m_dateLastRunHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+LifecyclePolicySummary::LifecyclePolicySummary(JsonView jsonValue)
+  : LifecyclePolicySummary()
 {
   *this = jsonValue;
 }

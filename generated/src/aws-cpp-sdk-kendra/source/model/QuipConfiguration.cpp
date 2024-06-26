@@ -37,22 +37,8 @@ QuipConfiguration::QuipConfiguration() :
 {
 }
 
-QuipConfiguration::QuipConfiguration(JsonView jsonValue) : 
-    m_domainHasBeenSet(false),
-    m_secretArnHasBeenSet(false),
-    m_crawlFileComments(false),
-    m_crawlFileCommentsHasBeenSet(false),
-    m_crawlChatRooms(false),
-    m_crawlChatRoomsHasBeenSet(false),
-    m_crawlAttachments(false),
-    m_crawlAttachmentsHasBeenSet(false),
-    m_folderIdsHasBeenSet(false),
-    m_threadFieldMappingsHasBeenSet(false),
-    m_messageFieldMappingsHasBeenSet(false),
-    m_attachmentFieldMappingsHasBeenSet(false),
-    m_inclusionPatternsHasBeenSet(false),
-    m_exclusionPatternsHasBeenSet(false),
-    m_vpcConfigurationHasBeenSet(false)
+QuipConfiguration::QuipConfiguration(JsonView jsonValue)
+  : QuipConfiguration()
 {
   *this = jsonValue;
 }

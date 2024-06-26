@@ -22,8 +22,8 @@ UpdateMethodResult::UpdateMethodResult() :
 {
 }
 
-UpdateMethodResult::UpdateMethodResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_apiKeyRequired(false)
+UpdateMethodResult::UpdateMethodResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateMethodResult()
 {
   *this = result;
 }

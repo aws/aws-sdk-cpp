@@ -24,9 +24,8 @@ DnsEntry::DnsEntry() :
 {
 }
 
-DnsEntry::DnsEntry(JsonView jsonValue) : 
-    m_domainNameHasBeenSet(false),
-    m_hostedZoneIdHasBeenSet(false)
+DnsEntry::DnsEntry(JsonView jsonValue)
+  : DnsEntry()
 {
   *this = jsonValue;
 }

@@ -31,16 +31,8 @@ APNSVoipChannelRequest::APNSVoipChannelRequest() :
 {
 }
 
-APNSVoipChannelRequest::APNSVoipChannelRequest(JsonView jsonValue) : 
-    m_bundleIdHasBeenSet(false),
-    m_certificateHasBeenSet(false),
-    m_defaultAuthenticationMethodHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_privateKeyHasBeenSet(false),
-    m_teamIdHasBeenSet(false),
-    m_tokenKeyHasBeenSet(false),
-    m_tokenKeyIdHasBeenSet(false)
+APNSVoipChannelRequest::APNSVoipChannelRequest(JsonView jsonValue)
+  : APNSVoipChannelRequest()
 {
   *this = jsonValue;
 }

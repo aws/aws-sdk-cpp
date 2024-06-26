@@ -30,15 +30,8 @@ SummaryMetricQuery::SummaryMetricQuery() :
 {
 }
 
-SummaryMetricQuery::SummaryMetricQuery(JsonView jsonValue) : 
-    m_queryIdHasBeenSet(false),
-    m_metricName(MetricName::NOT_SET),
-    m_metricNameHasBeenSet(false),
-    m_dimensionsHasBeenSet(false),
-    m_aggregationPeriod(AggregationPeriod::NOT_SET),
-    m_aggregationPeriodHasBeenSet(false),
-    m_startTimestampHasBeenSet(false),
-    m_endTimestampHasBeenSet(false)
+SummaryMetricQuery::SummaryMetricQuery(JsonView jsonValue)
+  : SummaryMetricQuery()
 {
   *this = jsonValue;
 }

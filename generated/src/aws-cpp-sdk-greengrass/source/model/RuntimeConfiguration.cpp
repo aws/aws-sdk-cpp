@@ -23,8 +23,8 @@ RuntimeConfiguration::RuntimeConfiguration() :
 {
 }
 
-RuntimeConfiguration::RuntimeConfiguration(JsonView jsonValue) : 
-    m_telemetryConfigurationHasBeenSet(false)
+RuntimeConfiguration::RuntimeConfiguration(JsonView jsonValue)
+  : RuntimeConfiguration()
 {
   *this = jsonValue;
 }

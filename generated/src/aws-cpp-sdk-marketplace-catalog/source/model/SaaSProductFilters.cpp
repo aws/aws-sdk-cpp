@@ -26,11 +26,8 @@ SaaSProductFilters::SaaSProductFilters() :
 {
 }
 
-SaaSProductFilters::SaaSProductFilters(JsonView jsonValue) : 
-    m_entityIdHasBeenSet(false),
-    m_productTitleHasBeenSet(false),
-    m_visibilityHasBeenSet(false),
-    m_lastModifiedDateHasBeenSet(false)
+SaaSProductFilters::SaaSProductFilters(JsonView jsonValue)
+  : SaaSProductFilters()
 {
   *this = jsonValue;
 }

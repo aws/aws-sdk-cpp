@@ -28,13 +28,8 @@ TargetLocation::TargetLocation() :
 {
 }
 
-TargetLocation::TargetLocation(JsonView jsonValue) : 
-    m_accountsHasBeenSet(false),
-    m_regionsHasBeenSet(false),
-    m_targetLocationMaxConcurrencyHasBeenSet(false),
-    m_targetLocationMaxErrorsHasBeenSet(false),
-    m_executionRoleNameHasBeenSet(false),
-    m_targetLocationAlarmConfigurationHasBeenSet(false)
+TargetLocation::TargetLocation(JsonView jsonValue)
+  : TargetLocation()
 {
   *this = jsonValue;
 }

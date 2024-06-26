@@ -25,10 +25,8 @@ ReadSetFiles::ReadSetFiles() :
 {
 }
 
-ReadSetFiles::ReadSetFiles(JsonView jsonValue) : 
-    m_source1HasBeenSet(false),
-    m_source2HasBeenSet(false),
-    m_indexHasBeenSet(false)
+ReadSetFiles::ReadSetFiles(JsonView jsonValue)
+  : ReadSetFiles()
 {
   *this = jsonValue;
 }

@@ -30,15 +30,8 @@ TemplateV2::TemplateV2() :
 {
 }
 
-TemplateV2::TemplateV2(JsonView jsonValue) : 
-    m_certificateValidityHasBeenSet(false),
-    m_enrollmentFlagsHasBeenSet(false),
-    m_extensionsHasBeenSet(false),
-    m_generalFlagsHasBeenSet(false),
-    m_privateKeyAttributesHasBeenSet(false),
-    m_privateKeyFlagsHasBeenSet(false),
-    m_subjectNameFlagsHasBeenSet(false),
-    m_supersededTemplatesHasBeenSet(false)
+TemplateV2::TemplateV2(JsonView jsonValue)
+  : TemplateV2()
 {
   *this = jsonValue;
 }

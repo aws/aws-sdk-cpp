@@ -23,8 +23,8 @@ ModelPackagingConfiguration::ModelPackagingConfiguration() :
 {
 }
 
-ModelPackagingConfiguration::ModelPackagingConfiguration(JsonView jsonValue) : 
-    m_greengrassHasBeenSet(false)
+ModelPackagingConfiguration::ModelPackagingConfiguration(JsonView jsonValue)
+  : ModelPackagingConfiguration()
 {
   *this = jsonValue;
 }

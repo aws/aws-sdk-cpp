@@ -24,10 +24,8 @@ DescribeLocationHdfsResult::DescribeLocationHdfsResult() :
 {
 }
 
-DescribeLocationHdfsResult::DescribeLocationHdfsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_blockSize(0),
-    m_replicationFactor(0),
-    m_authenticationType(HdfsAuthenticationType::NOT_SET)
+DescribeLocationHdfsResult::DescribeLocationHdfsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeLocationHdfsResult()
 {
   *this = result;
 }

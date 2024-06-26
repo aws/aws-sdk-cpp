@@ -22,8 +22,8 @@ ExportImageResponse::ExportImageResponse() :
 {
 }
 
-ExportImageResponse::ExportImageResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_diskImageFormat(DiskImageFormat::NOT_SET)
+ExportImageResponse::ExportImageResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : ExportImageResponse()
 {
   *this = result;
 }

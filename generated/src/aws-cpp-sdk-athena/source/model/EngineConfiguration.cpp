@@ -30,15 +30,8 @@ EngineConfiguration::EngineConfiguration() :
 {
 }
 
-EngineConfiguration::EngineConfiguration(JsonView jsonValue) : 
-    m_coordinatorDpuSize(0),
-    m_coordinatorDpuSizeHasBeenSet(false),
-    m_maxConcurrentDpus(0),
-    m_maxConcurrentDpusHasBeenSet(false),
-    m_defaultExecutorDpuSize(0),
-    m_defaultExecutorDpuSizeHasBeenSet(false),
-    m_additionalConfigsHasBeenSet(false),
-    m_sparkPropertiesHasBeenSet(false)
+EngineConfiguration::EngineConfiguration(JsonView jsonValue)
+  : EngineConfiguration()
 {
   *this = jsonValue;
 }

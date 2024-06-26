@@ -28,13 +28,8 @@ PortfolioDetail::PortfolioDetail() :
 {
 }
 
-PortfolioDetail::PortfolioDetail(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_aRNHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_providerNameHasBeenSet(false)
+PortfolioDetail::PortfolioDetail(JsonView jsonValue)
+  : PortfolioDetail()
 {
   *this = jsonValue;
 }

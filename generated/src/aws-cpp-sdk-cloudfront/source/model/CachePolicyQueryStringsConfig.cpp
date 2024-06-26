@@ -27,10 +27,8 @@ CachePolicyQueryStringsConfig::CachePolicyQueryStringsConfig() :
 {
 }
 
-CachePolicyQueryStringsConfig::CachePolicyQueryStringsConfig(const XmlNode& xmlNode) : 
-    m_queryStringBehavior(CachePolicyQueryStringBehavior::NOT_SET),
-    m_queryStringBehaviorHasBeenSet(false),
-    m_queryStringsHasBeenSet(false)
+CachePolicyQueryStringsConfig::CachePolicyQueryStringsConfig(const XmlNode& xmlNode)
+  : CachePolicyQueryStringsConfig()
 {
   *this = xmlNode;
 }

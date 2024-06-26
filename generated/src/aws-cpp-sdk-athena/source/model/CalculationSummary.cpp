@@ -25,10 +25,8 @@ CalculationSummary::CalculationSummary() :
 {
 }
 
-CalculationSummary::CalculationSummary(JsonView jsonValue) : 
-    m_calculationExecutionIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_statusHasBeenSet(false)
+CalculationSummary::CalculationSummary(JsonView jsonValue)
+  : CalculationSummary()
 {
   *this = jsonValue;
 }

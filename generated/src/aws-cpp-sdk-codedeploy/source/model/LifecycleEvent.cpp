@@ -28,13 +28,8 @@ LifecycleEvent::LifecycleEvent() :
 {
 }
 
-LifecycleEvent::LifecycleEvent(JsonView jsonValue) : 
-    m_lifecycleEventNameHasBeenSet(false),
-    m_diagnosticsHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_status(LifecycleEventStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+LifecycleEvent::LifecycleEvent(JsonView jsonValue)
+  : LifecycleEvent()
 {
   *this = jsonValue;
 }

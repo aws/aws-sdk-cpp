@@ -24,9 +24,8 @@ DevEndpointCustomLibraries::DevEndpointCustomLibraries() :
 {
 }
 
-DevEndpointCustomLibraries::DevEndpointCustomLibraries(JsonView jsonValue) : 
-    m_extraPythonLibsS3PathHasBeenSet(false),
-    m_extraJarsS3PathHasBeenSet(false)
+DevEndpointCustomLibraries::DevEndpointCustomLibraries(JsonView jsonValue)
+  : DevEndpointCustomLibraries()
 {
   *this = jsonValue;
 }

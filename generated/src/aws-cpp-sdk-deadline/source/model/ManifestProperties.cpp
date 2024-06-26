@@ -29,14 +29,8 @@ ManifestProperties::ManifestProperties() :
 {
 }
 
-ManifestProperties::ManifestProperties(JsonView jsonValue) : 
-    m_fileSystemLocationNameHasBeenSet(false),
-    m_inputManifestHashHasBeenSet(false),
-    m_inputManifestPathHasBeenSet(false),
-    m_outputRelativeDirectoriesHasBeenSet(false),
-    m_rootPathHasBeenSet(false),
-    m_rootPathFormat(PathFormat::NOT_SET),
-    m_rootPathFormatHasBeenSet(false)
+ManifestProperties::ManifestProperties(JsonView jsonValue)
+  : ManifestProperties()
 {
   *this = jsonValue;
 }

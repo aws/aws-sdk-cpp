@@ -26,9 +26,8 @@ PermissionsBoundaryDecisionDetail::PermissionsBoundaryDecisionDetail() :
 {
 }
 
-PermissionsBoundaryDecisionDetail::PermissionsBoundaryDecisionDetail(const XmlNode& xmlNode) : 
-    m_allowedByPermissionsBoundary(false),
-    m_allowedByPermissionsBoundaryHasBeenSet(false)
+PermissionsBoundaryDecisionDetail::PermissionsBoundaryDecisionDetail(const XmlNode& xmlNode)
+  : PermissionsBoundaryDecisionDetail()
 {
   *this = xmlNode;
 }

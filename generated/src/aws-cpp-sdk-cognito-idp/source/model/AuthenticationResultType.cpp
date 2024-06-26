@@ -29,14 +29,8 @@ AuthenticationResultType::AuthenticationResultType() :
 {
 }
 
-AuthenticationResultType::AuthenticationResultType(JsonView jsonValue) : 
-    m_accessTokenHasBeenSet(false),
-    m_expiresIn(0),
-    m_expiresInHasBeenSet(false),
-    m_tokenTypeHasBeenSet(false),
-    m_refreshTokenHasBeenSet(false),
-    m_idTokenHasBeenSet(false),
-    m_newDeviceMetadataHasBeenSet(false)
+AuthenticationResultType::AuthenticationResultType(JsonView jsonValue)
+  : AuthenticationResultType()
 {
   *this = jsonValue;
 }

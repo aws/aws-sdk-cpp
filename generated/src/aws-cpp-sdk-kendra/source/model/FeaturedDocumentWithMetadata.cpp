@@ -25,10 +25,8 @@ FeaturedDocumentWithMetadata::FeaturedDocumentWithMetadata() :
 {
 }
 
-FeaturedDocumentWithMetadata::FeaturedDocumentWithMetadata(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_uRIHasBeenSet(false)
+FeaturedDocumentWithMetadata::FeaturedDocumentWithMetadata(JsonView jsonValue)
+  : FeaturedDocumentWithMetadata()
 {
   *this = jsonValue;
 }

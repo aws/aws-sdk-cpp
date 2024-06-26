@@ -28,13 +28,8 @@ InferenceRecommendationsJobStep::InferenceRecommendationsJobStep() :
 {
 }
 
-InferenceRecommendationsJobStep::InferenceRecommendationsJobStep(JsonView jsonValue) : 
-    m_stepType(RecommendationStepType::NOT_SET),
-    m_stepTypeHasBeenSet(false),
-    m_jobNameHasBeenSet(false),
-    m_status(RecommendationJobStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_inferenceBenchmarkHasBeenSet(false)
+InferenceRecommendationsJobStep::InferenceRecommendationsJobStep(JsonView jsonValue)
+  : InferenceRecommendationsJobStep()
 {
   *this = jsonValue;
 }

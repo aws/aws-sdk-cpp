@@ -26,11 +26,8 @@ AppInstanceUserMembershipSummary::AppInstanceUserMembershipSummary() :
 {
 }
 
-AppInstanceUserMembershipSummary::AppInstanceUserMembershipSummary(JsonView jsonValue) : 
-    m_type(ChannelMembershipType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_readMarkerTimestampHasBeenSet(false),
-    m_subChannelIdHasBeenSet(false)
+AppInstanceUserMembershipSummary::AppInstanceUserMembershipSummary(JsonView jsonValue)
+  : AppInstanceUserMembershipSummary()
 {
   *this = jsonValue;
 }

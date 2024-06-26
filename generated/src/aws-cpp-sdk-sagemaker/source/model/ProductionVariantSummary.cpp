@@ -37,22 +37,8 @@ ProductionVariantSummary::ProductionVariantSummary() :
 {
 }
 
-ProductionVariantSummary::ProductionVariantSummary(JsonView jsonValue) : 
-    m_variantNameHasBeenSet(false),
-    m_deployedImagesHasBeenSet(false),
-    m_currentWeight(0.0),
-    m_currentWeightHasBeenSet(false),
-    m_desiredWeight(0.0),
-    m_desiredWeightHasBeenSet(false),
-    m_currentInstanceCount(0),
-    m_currentInstanceCountHasBeenSet(false),
-    m_desiredInstanceCount(0),
-    m_desiredInstanceCountHasBeenSet(false),
-    m_variantStatusHasBeenSet(false),
-    m_currentServerlessConfigHasBeenSet(false),
-    m_desiredServerlessConfigHasBeenSet(false),
-    m_managedInstanceScalingHasBeenSet(false),
-    m_routingConfigHasBeenSet(false)
+ProductionVariantSummary::ProductionVariantSummary(JsonView jsonValue)
+  : ProductionVariantSummary()
 {
   *this = jsonValue;
 }

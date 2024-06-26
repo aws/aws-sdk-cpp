@@ -24,10 +24,8 @@ GetAccountResult::GetAccountResult() :
 {
 }
 
-GetAccountResult::GetAccountResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_dedicatedIpAutoWarmupEnabled(false),
-    m_productionAccessEnabled(false),
-    m_sendingEnabled(false)
+GetAccountResult::GetAccountResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetAccountResult()
 {
   *this = result;
 }

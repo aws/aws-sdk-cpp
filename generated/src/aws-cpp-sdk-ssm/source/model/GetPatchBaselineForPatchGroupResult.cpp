@@ -22,8 +22,8 @@ GetPatchBaselineForPatchGroupResult::GetPatchBaselineForPatchGroupResult() :
 {
 }
 
-GetPatchBaselineForPatchGroupResult::GetPatchBaselineForPatchGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_operatingSystem(OperatingSystem::NOT_SET)
+GetPatchBaselineForPatchGroupResult::GetPatchBaselineForPatchGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetPatchBaselineForPatchGroupResult()
 {
   *this = result;
 }

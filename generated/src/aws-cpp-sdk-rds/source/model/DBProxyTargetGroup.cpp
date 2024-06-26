@@ -33,16 +33,8 @@ DBProxyTargetGroup::DBProxyTargetGroup() :
 {
 }
 
-DBProxyTargetGroup::DBProxyTargetGroup(const XmlNode& xmlNode) : 
-    m_dBProxyNameHasBeenSet(false),
-    m_targetGroupNameHasBeenSet(false),
-    m_targetGroupArnHasBeenSet(false),
-    m_isDefault(false),
-    m_isDefaultHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_connectionPoolConfigHasBeenSet(false),
-    m_createdDateHasBeenSet(false),
-    m_updatedDateHasBeenSet(false)
+DBProxyTargetGroup::DBProxyTargetGroup(const XmlNode& xmlNode)
+  : DBProxyTargetGroup()
 {
   *this = xmlNode;
 }

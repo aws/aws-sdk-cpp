@@ -27,12 +27,8 @@ AgentTurnResult::AgentTurnResult() :
 {
 }
 
-AgentTurnResult::AgentTurnResult(JsonView jsonValue) : 
-    m_expectedAgentPromptHasBeenSet(false),
-    m_actualAgentPromptHasBeenSet(false),
-    m_errorDetailsHasBeenSet(false),
-    m_actualElicitedSlotHasBeenSet(false),
-    m_actualIntentHasBeenSet(false)
+AgentTurnResult::AgentTurnResult(JsonView jsonValue)
+  : AgentTurnResult()
 {
   *this = jsonValue;
 }

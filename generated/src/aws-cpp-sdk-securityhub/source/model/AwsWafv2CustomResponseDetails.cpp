@@ -26,11 +26,8 @@ AwsWafv2CustomResponseDetails::AwsWafv2CustomResponseDetails() :
 {
 }
 
-AwsWafv2CustomResponseDetails::AwsWafv2CustomResponseDetails(JsonView jsonValue) : 
-    m_customResponseBodyKeyHasBeenSet(false),
-    m_responseCode(0),
-    m_responseCodeHasBeenSet(false),
-    m_responseHeadersHasBeenSet(false)
+AwsWafv2CustomResponseDetails::AwsWafv2CustomResponseDetails(JsonView jsonValue)
+  : AwsWafv2CustomResponseDetails()
 {
   *this = jsonValue;
 }

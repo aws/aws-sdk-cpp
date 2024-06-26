@@ -26,11 +26,8 @@ PivotTableCellConditionalFormatting::PivotTableCellConditionalFormatting() :
 {
 }
 
-PivotTableCellConditionalFormatting::PivotTableCellConditionalFormatting(JsonView jsonValue) : 
-    m_fieldIdHasBeenSet(false),
-    m_textFormatHasBeenSet(false),
-    m_scopeHasBeenSet(false),
-    m_scopesHasBeenSet(false)
+PivotTableCellConditionalFormatting::PivotTableCellConditionalFormatting(JsonView jsonValue)
+  : PivotTableCellConditionalFormatting()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ TopicRefreshDetails::TopicRefreshDetails() :
 {
 }
 
-TopicRefreshDetails::TopicRefreshDetails(JsonView jsonValue) : 
-    m_refreshArnHasBeenSet(false),
-    m_refreshIdHasBeenSet(false),
-    m_refreshStatus(TopicRefreshStatus::NOT_SET),
-    m_refreshStatusHasBeenSet(false)
+TopicRefreshDetails::TopicRefreshDetails(JsonView jsonValue)
+  : TopicRefreshDetails()
 {
   *this = jsonValue;
 }

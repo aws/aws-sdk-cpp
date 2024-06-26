@@ -34,20 +34,8 @@ GetRecommendationResult::GetRecommendationResult() :
 {
 }
 
-GetRecommendationResult::GetRecommendationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_recommendationLookbackPeriodInDays(0),
-    m_costCalculationLookbackPeriodInDays(0),
-    m_estimatedSavingsPercentage(0.0),
-    m_estimatedSavingsOverCostCalculationLookbackPeriod(0.0),
-    m_currentResourceType(ResourceType::NOT_SET),
-    m_recommendedResourceType(ResourceType::NOT_SET),
-    m_source(Source::NOT_SET),
-    m_estimatedMonthlySavings(0.0),
-    m_estimatedMonthlyCost(0.0),
-    m_implementationEffort(ImplementationEffort::NOT_SET),
-    m_restartNeeded(false),
-    m_actionType(ActionType::NOT_SET),
-    m_rollbackPossible(false)
+GetRecommendationResult::GetRecommendationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetRecommendationResult()
 {
   *this = result;
 }

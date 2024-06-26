@@ -24,9 +24,8 @@ ScheduledActionAssociation::ScheduledActionAssociation() :
 {
 }
 
-ScheduledActionAssociation::ScheduledActionAssociation(JsonView jsonValue) : 
-    m_namespaceNameHasBeenSet(false),
-    m_scheduledActionNameHasBeenSet(false)
+ScheduledActionAssociation::ScheduledActionAssociation(JsonView jsonValue)
+  : ScheduledActionAssociation()
 {
   *this = jsonValue;
 }

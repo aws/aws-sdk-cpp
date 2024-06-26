@@ -27,12 +27,8 @@ VirtualNodeSpec::VirtualNodeSpec() :
 {
 }
 
-VirtualNodeSpec::VirtualNodeSpec(JsonView jsonValue) : 
-    m_backendDefaultsHasBeenSet(false),
-    m_backendsHasBeenSet(false),
-    m_listenersHasBeenSet(false),
-    m_loggingHasBeenSet(false),
-    m_serviceDiscoveryHasBeenSet(false)
+VirtualNodeSpec::VirtualNodeSpec(JsonView jsonValue)
+  : VirtualNodeSpec()
 {
   *this = jsonValue;
 }

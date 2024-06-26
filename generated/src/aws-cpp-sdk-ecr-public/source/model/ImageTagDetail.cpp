@@ -25,10 +25,8 @@ ImageTagDetail::ImageTagDetail() :
 {
 }
 
-ImageTagDetail::ImageTagDetail(JsonView jsonValue) : 
-    m_imageTagHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_imageDetailHasBeenSet(false)
+ImageTagDetail::ImageTagDetail(JsonView jsonValue)
+  : ImageTagDetail()
 {
   *this = jsonValue;
 }

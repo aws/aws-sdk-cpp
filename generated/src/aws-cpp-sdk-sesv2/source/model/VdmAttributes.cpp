@@ -26,11 +26,8 @@ VdmAttributes::VdmAttributes() :
 {
 }
 
-VdmAttributes::VdmAttributes(JsonView jsonValue) : 
-    m_vdmEnabled(FeatureStatus::NOT_SET),
-    m_vdmEnabledHasBeenSet(false),
-    m_dashboardAttributesHasBeenSet(false),
-    m_guardianAttributesHasBeenSet(false)
+VdmAttributes::VdmAttributes(JsonView jsonValue)
+  : VdmAttributes()
 {
   *this = jsonValue;
 }

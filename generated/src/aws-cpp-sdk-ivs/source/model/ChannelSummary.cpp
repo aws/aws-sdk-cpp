@@ -37,22 +37,8 @@ ChannelSummary::ChannelSummary() :
 {
 }
 
-ChannelSummary::ChannelSummary(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_authorized(false),
-    m_authorizedHasBeenSet(false),
-    m_insecureIngest(false),
-    m_insecureIngestHasBeenSet(false),
-    m_latencyMode(ChannelLatencyMode::NOT_SET),
-    m_latencyModeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_playbackRestrictionPolicyArnHasBeenSet(false),
-    m_preset(TranscodePreset::NOT_SET),
-    m_presetHasBeenSet(false),
-    m_recordingConfigurationArnHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_type(ChannelType::NOT_SET),
-    m_typeHasBeenSet(false)
+ChannelSummary::ChannelSummary(JsonView jsonValue)
+  : ChannelSummary()
 {
   *this = jsonValue;
 }

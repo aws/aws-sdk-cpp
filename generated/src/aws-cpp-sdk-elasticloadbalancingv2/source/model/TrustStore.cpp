@@ -32,15 +32,8 @@ TrustStore::TrustStore() :
 {
 }
 
-TrustStore::TrustStore(const XmlNode& xmlNode) : 
-    m_nameHasBeenSet(false),
-    m_trustStoreArnHasBeenSet(false),
-    m_status(TrustStoreStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_numberOfCaCertificates(0),
-    m_numberOfCaCertificatesHasBeenSet(false),
-    m_totalRevokedEntries(0),
-    m_totalRevokedEntriesHasBeenSet(false)
+TrustStore::TrustStore(const XmlNode& xmlNode)
+  : TrustStore()
 {
   *this = xmlNode;
 }

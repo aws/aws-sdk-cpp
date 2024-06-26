@@ -27,12 +27,8 @@ FilterConfiguration::FilterConfiguration() :
 {
 }
 
-FilterConfiguration::FilterConfiguration(JsonView jsonValue) : 
-    m_manifestFilterHasBeenSet(false),
-    m_startHasBeenSet(false),
-    m_endHasBeenSet(false),
-    m_timeDelaySeconds(0),
-    m_timeDelaySecondsHasBeenSet(false)
+FilterConfiguration::FilterConfiguration(JsonView jsonValue)
+  : FilterConfiguration()
 {
   *this = jsonValue;
 }

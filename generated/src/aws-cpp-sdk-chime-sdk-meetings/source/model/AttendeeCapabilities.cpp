@@ -28,13 +28,8 @@ AttendeeCapabilities::AttendeeCapabilities() :
 {
 }
 
-AttendeeCapabilities::AttendeeCapabilities(JsonView jsonValue) : 
-    m_audio(MediaCapabilities::NOT_SET),
-    m_audioHasBeenSet(false),
-    m_video(MediaCapabilities::NOT_SET),
-    m_videoHasBeenSet(false),
-    m_content(MediaCapabilities::NOT_SET),
-    m_contentHasBeenSet(false)
+AttendeeCapabilities::AttendeeCapabilities(JsonView jsonValue)
+  : AttendeeCapabilities()
 {
   *this = jsonValue;
 }

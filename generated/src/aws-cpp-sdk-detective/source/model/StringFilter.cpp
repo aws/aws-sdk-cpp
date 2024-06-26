@@ -23,8 +23,8 @@ StringFilter::StringFilter() :
 {
 }
 
-StringFilter::StringFilter(JsonView jsonValue) : 
-    m_valueHasBeenSet(false)
+StringFilter::StringFilter(JsonView jsonValue)
+  : StringFilter()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ SendUsersMessageResponse::SendUsersMessageResponse() :
 {
 }
 
-SendUsersMessageResponse::SendUsersMessageResponse(JsonView jsonValue) : 
-    m_applicationIdHasBeenSet(false),
-    m_requestIdHasBeenSet(false),
-    m_resultHasBeenSet(false)
+SendUsersMessageResponse::SendUsersMessageResponse(JsonView jsonValue)
+  : SendUsersMessageResponse()
 {
   *this = jsonValue;
 }

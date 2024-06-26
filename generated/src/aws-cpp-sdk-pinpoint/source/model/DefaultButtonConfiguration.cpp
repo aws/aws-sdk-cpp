@@ -30,15 +30,8 @@ DefaultButtonConfiguration::DefaultButtonConfiguration() :
 {
 }
 
-DefaultButtonConfiguration::DefaultButtonConfiguration(JsonView jsonValue) : 
-    m_backgroundColorHasBeenSet(false),
-    m_borderRadius(0),
-    m_borderRadiusHasBeenSet(false),
-    m_buttonAction(ButtonAction::NOT_SET),
-    m_buttonActionHasBeenSet(false),
-    m_linkHasBeenSet(false),
-    m_textHasBeenSet(false),
-    m_textColorHasBeenSet(false)
+DefaultButtonConfiguration::DefaultButtonConfiguration(JsonView jsonValue)
+  : DefaultButtonConfiguration()
 {
   *this = jsonValue;
 }

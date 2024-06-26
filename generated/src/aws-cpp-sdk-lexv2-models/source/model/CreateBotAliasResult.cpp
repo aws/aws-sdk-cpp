@@ -22,8 +22,8 @@ CreateBotAliasResult::CreateBotAliasResult() :
 {
 }
 
-CreateBotAliasResult::CreateBotAliasResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_botAliasStatus(BotAliasStatus::NOT_SET)
+CreateBotAliasResult::CreateBotAliasResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateBotAliasResult()
 {
   *this = result;
 }

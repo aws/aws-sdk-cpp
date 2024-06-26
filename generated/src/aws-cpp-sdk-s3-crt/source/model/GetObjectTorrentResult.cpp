@@ -42,8 +42,8 @@ GetObjectTorrentResult& GetObjectTorrentResult::operator=(GetObjectTorrentResult
    return *this;
 }
 
-GetObjectTorrentResult::GetObjectTorrentResult(Aws::AmazonWebServiceResult<ResponseStream>&& result) : 
-    m_requestCharged(RequestCharged::NOT_SET)
+GetObjectTorrentResult::GetObjectTorrentResult(Aws::AmazonWebServiceResult<ResponseStream>&& result)
+  : GetObjectTorrentResult()
 {
   *this = std::move(result);
 }

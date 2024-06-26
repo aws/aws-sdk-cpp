@@ -24,9 +24,8 @@ DomainJoinInfo::DomainJoinInfo() :
 {
 }
 
-DomainJoinInfo::DomainJoinInfo(JsonView jsonValue) : 
-    m_directoryNameHasBeenSet(false),
-    m_organizationalUnitDistinguishedNameHasBeenSet(false)
+DomainJoinInfo::DomainJoinInfo(JsonView jsonValue)
+  : DomainJoinInfo()
 {
   *this = jsonValue;
 }

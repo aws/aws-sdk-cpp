@@ -26,11 +26,8 @@ GlobalTableGlobalSecondaryIndexSettingsUpdate::GlobalTableGlobalSecondaryIndexSe
 {
 }
 
-GlobalTableGlobalSecondaryIndexSettingsUpdate::GlobalTableGlobalSecondaryIndexSettingsUpdate(JsonView jsonValue) : 
-    m_indexNameHasBeenSet(false),
-    m_provisionedWriteCapacityUnits(0),
-    m_provisionedWriteCapacityUnitsHasBeenSet(false),
-    m_provisionedWriteCapacityAutoScalingSettingsUpdateHasBeenSet(false)
+GlobalTableGlobalSecondaryIndexSettingsUpdate::GlobalTableGlobalSecondaryIndexSettingsUpdate(JsonView jsonValue)
+  : GlobalTableGlobalSecondaryIndexSettingsUpdate()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ InterfaceRequest::InterfaceRequest() :
 {
 }
 
-InterfaceRequest::InterfaceRequest(JsonView jsonValue) : 
-    m_nameHasBeenSet(false)
+InterfaceRequest::InterfaceRequest(JsonView jsonValue)
+  : InterfaceRequest()
 {
   *this = jsonValue;
 }

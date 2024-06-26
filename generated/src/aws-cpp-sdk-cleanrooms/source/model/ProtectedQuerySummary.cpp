@@ -28,13 +28,8 @@ ProtectedQuerySummary::ProtectedQuerySummary() :
 {
 }
 
-ProtectedQuerySummary::ProtectedQuerySummary(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_membershipIdHasBeenSet(false),
-    m_membershipArnHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_status(ProtectedQueryStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+ProtectedQuerySummary::ProtectedQuerySummary(JsonView jsonValue)
+  : ProtectedQuerySummary()
 {
   *this = jsonValue;
 }

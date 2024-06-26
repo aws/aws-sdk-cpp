@@ -26,11 +26,8 @@ ModelStreamErrorException::ModelStreamErrorException() :
 {
 }
 
-ModelStreamErrorException::ModelStreamErrorException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_originalStatusCode(0),
-    m_originalStatusCodeHasBeenSet(false),
-    m_originalMessageHasBeenSet(false)
+ModelStreamErrorException::ModelStreamErrorException(JsonView jsonValue)
+  : ModelStreamErrorException()
 {
   *this = jsonValue;
 }

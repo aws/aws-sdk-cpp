@@ -24,9 +24,8 @@ OutputParameter::OutputParameter() :
 {
 }
 
-OutputParameter::OutputParameter(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
+OutputParameter::OutputParameter(JsonView jsonValue)
+  : OutputParameter()
 {
   *this = jsonValue;
 }

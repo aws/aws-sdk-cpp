@@ -23,8 +23,8 @@ AmazonOpenSearchParameters::AmazonOpenSearchParameters() :
 {
 }
 
-AmazonOpenSearchParameters::AmazonOpenSearchParameters(JsonView jsonValue) : 
-    m_domainHasBeenSet(false)
+AmazonOpenSearchParameters::AmazonOpenSearchParameters(JsonView jsonValue)
+  : AmazonOpenSearchParameters()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ GetTrainingDatasetResult::GetTrainingDatasetResult() :
 {
 }
 
-GetTrainingDatasetResult::GetTrainingDatasetResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(TrainingDatasetStatus::NOT_SET)
+GetTrainingDatasetResult::GetTrainingDatasetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetTrainingDatasetResult()
 {
   *this = result;
 }

@@ -43,28 +43,8 @@ Trail::Trail() :
 {
 }
 
-Trail::Trail(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_s3BucketNameHasBeenSet(false),
-    m_s3KeyPrefixHasBeenSet(false),
-    m_snsTopicARNHasBeenSet(false),
-    m_includeGlobalServiceEvents(false),
-    m_includeGlobalServiceEventsHasBeenSet(false),
-    m_isMultiRegionTrail(false),
-    m_isMultiRegionTrailHasBeenSet(false),
-    m_homeRegionHasBeenSet(false),
-    m_trailARNHasBeenSet(false),
-    m_logFileValidationEnabled(false),
-    m_logFileValidationEnabledHasBeenSet(false),
-    m_cloudWatchLogsLogGroupArnHasBeenSet(false),
-    m_cloudWatchLogsRoleArnHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_hasCustomEventSelectors(false),
-    m_hasCustomEventSelectorsHasBeenSet(false),
-    m_hasInsightSelectors(false),
-    m_hasInsightSelectorsHasBeenSet(false),
-    m_isOrganizationTrail(false),
-    m_isOrganizationTrailHasBeenSet(false)
+Trail::Trail(JsonView jsonValue)
+  : Trail()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ CustomModelTransformParameters::CustomModelTransformParameters() :
 {
 }
 
-CustomModelTransformParameters::CustomModelTransformParameters(JsonView jsonValue) : 
-    m_sourceS3DirectoryPathHasBeenSet(false),
-    m_transformEntryPointScriptHasBeenSet(false)
+CustomModelTransformParameters::CustomModelTransformParameters(JsonView jsonValue)
+  : CustomModelTransformParameters()
 {
   *this = jsonValue;
 }

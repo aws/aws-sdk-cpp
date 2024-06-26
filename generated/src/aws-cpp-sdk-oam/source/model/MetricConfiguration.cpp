@@ -23,8 +23,8 @@ MetricConfiguration::MetricConfiguration() :
 {
 }
 
-MetricConfiguration::MetricConfiguration(JsonView jsonValue) : 
-    m_filterHasBeenSet(false)
+MetricConfiguration::MetricConfiguration(JsonView jsonValue)
+  : MetricConfiguration()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ JobAttachmentSettings::JobAttachmentSettings() :
 {
 }
 
-JobAttachmentSettings::JobAttachmentSettings(JsonView jsonValue) : 
-    m_rootPrefixHasBeenSet(false),
-    m_s3BucketNameHasBeenSet(false)
+JobAttachmentSettings::JobAttachmentSettings(JsonView jsonValue)
+  : JobAttachmentSettings()
 {
   *this = jsonValue;
 }

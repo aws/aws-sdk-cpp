@@ -27,11 +27,8 @@ CisSessionMessage::CisSessionMessage() :
 {
 }
 
-CisSessionMessage::CisSessionMessage(JsonView jsonValue) : 
-    m_cisRuleDetailsHasBeenSet(false),
-    m_ruleIdHasBeenSet(false),
-    m_status(CisRuleStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+CisSessionMessage::CisSessionMessage(JsonView jsonValue)
+  : CisSessionMessage()
 {
   *this = jsonValue;
 }

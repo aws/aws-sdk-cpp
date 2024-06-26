@@ -29,14 +29,8 @@ ComplianceItemEntry::ComplianceItemEntry() :
 {
 }
 
-ComplianceItemEntry::ComplianceItemEntry(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_severity(ComplianceSeverity::NOT_SET),
-    m_severityHasBeenSet(false),
-    m_status(ComplianceStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_detailsHasBeenSet(false)
+ComplianceItemEntry::ComplianceItemEntry(JsonView jsonValue)
+  : ComplianceItemEntry()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ DeleteStepDetails::DeleteStepDetails() :
 {
 }
 
-DeleteStepDetails::DeleteStepDetails(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_sourceFileLocationHasBeenSet(false)
+DeleteStepDetails::DeleteStepDetails(JsonView jsonValue)
+  : DeleteStepDetails()
 {
   *this = jsonValue;
 }

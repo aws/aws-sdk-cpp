@@ -24,9 +24,8 @@ AppIntegrationsConfiguration::AppIntegrationsConfiguration() :
 {
 }
 
-AppIntegrationsConfiguration::AppIntegrationsConfiguration(JsonView jsonValue) : 
-    m_appIntegrationArnHasBeenSet(false),
-    m_objectFieldsHasBeenSet(false)
+AppIntegrationsConfiguration::AppIntegrationsConfiguration(JsonView jsonValue)
+  : AppIntegrationsConfiguration()
 {
   *this = jsonValue;
 }

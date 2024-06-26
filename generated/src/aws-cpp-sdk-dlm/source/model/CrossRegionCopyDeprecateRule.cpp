@@ -26,11 +26,8 @@ CrossRegionCopyDeprecateRule::CrossRegionCopyDeprecateRule() :
 {
 }
 
-CrossRegionCopyDeprecateRule::CrossRegionCopyDeprecateRule(JsonView jsonValue) : 
-    m_interval(0),
-    m_intervalHasBeenSet(false),
-    m_intervalUnit(RetentionIntervalUnitValues::NOT_SET),
-    m_intervalUnitHasBeenSet(false)
+CrossRegionCopyDeprecateRule::CrossRegionCopyDeprecateRule(JsonView jsonValue)
+  : CrossRegionCopyDeprecateRule()
 {
   *this = jsonValue;
 }

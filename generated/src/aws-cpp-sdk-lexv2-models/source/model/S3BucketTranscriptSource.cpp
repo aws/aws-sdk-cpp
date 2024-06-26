@@ -28,13 +28,8 @@ S3BucketTranscriptSource::S3BucketTranscriptSource() :
 {
 }
 
-S3BucketTranscriptSource::S3BucketTranscriptSource(JsonView jsonValue) : 
-    m_s3BucketNameHasBeenSet(false),
-    m_pathFormatHasBeenSet(false),
-    m_transcriptFormat(TranscriptFormat::NOT_SET),
-    m_transcriptFormatHasBeenSet(false),
-    m_transcriptFilterHasBeenSet(false),
-    m_kmsKeyArnHasBeenSet(false)
+S3BucketTranscriptSource::S3BucketTranscriptSource(JsonView jsonValue)
+  : S3BucketTranscriptSource()
 {
   *this = jsonValue;
 }

@@ -28,13 +28,8 @@ VirtualMachine::VirtualMachine() :
 {
 }
 
-VirtualMachine::VirtualMachine(JsonView jsonValue) : 
-    m_hostNameHasBeenSet(false),
-    m_hypervisorIdHasBeenSet(false),
-    m_lastBackupDateHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_pathHasBeenSet(false),
-    m_resourceArnHasBeenSet(false)
+VirtualMachine::VirtualMachine(JsonView jsonValue)
+  : VirtualMachine()
 {
   *this = jsonValue;
 }

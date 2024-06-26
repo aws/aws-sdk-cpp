@@ -45,28 +45,8 @@ VerifiedAccessEndpoint::VerifiedAccessEndpoint() :
 {
 }
 
-VerifiedAccessEndpoint::VerifiedAccessEndpoint(const XmlNode& xmlNode) : 
-    m_verifiedAccessInstanceIdHasBeenSet(false),
-    m_verifiedAccessGroupIdHasBeenSet(false),
-    m_verifiedAccessEndpointIdHasBeenSet(false),
-    m_applicationDomainHasBeenSet(false),
-    m_endpointType(VerifiedAccessEndpointType::NOT_SET),
-    m_endpointTypeHasBeenSet(false),
-    m_attachmentType(VerifiedAccessEndpointAttachmentType::NOT_SET),
-    m_attachmentTypeHasBeenSet(false),
-    m_domainCertificateArnHasBeenSet(false),
-    m_endpointDomainHasBeenSet(false),
-    m_deviceValidationDomainHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false),
-    m_loadBalancerOptionsHasBeenSet(false),
-    m_networkInterfaceOptionsHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_deletionTimeHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_sseSpecificationHasBeenSet(false)
+VerifiedAccessEndpoint::VerifiedAccessEndpoint(const XmlNode& xmlNode)
+  : VerifiedAccessEndpoint()
 {
   *this = xmlNode;
 }

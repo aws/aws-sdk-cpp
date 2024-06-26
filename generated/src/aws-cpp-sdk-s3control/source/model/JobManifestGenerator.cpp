@@ -25,8 +25,8 @@ JobManifestGenerator::JobManifestGenerator() :
 {
 }
 
-JobManifestGenerator::JobManifestGenerator(const XmlNode& xmlNode) : 
-    m_s3JobManifestGeneratorHasBeenSet(false)
+JobManifestGenerator::JobManifestGenerator(const XmlNode& xmlNode)
+  : JobManifestGenerator()
 {
   *this = xmlNode;
 }

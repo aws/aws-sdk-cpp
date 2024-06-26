@@ -35,18 +35,8 @@ NodeGroupMemberUpdateStatus::NodeGroupMemberUpdateStatus() :
 {
 }
 
-NodeGroupMemberUpdateStatus::NodeGroupMemberUpdateStatus(const XmlNode& xmlNode) : 
-    m_cacheClusterIdHasBeenSet(false),
-    m_cacheNodeIdHasBeenSet(false),
-    m_nodeUpdateStatus(NodeUpdateStatus::NOT_SET),
-    m_nodeUpdateStatusHasBeenSet(false),
-    m_nodeDeletionDateHasBeenSet(false),
-    m_nodeUpdateStartDateHasBeenSet(false),
-    m_nodeUpdateEndDateHasBeenSet(false),
-    m_nodeUpdateInitiatedBy(NodeUpdateInitiatedBy::NOT_SET),
-    m_nodeUpdateInitiatedByHasBeenSet(false),
-    m_nodeUpdateInitiatedDateHasBeenSet(false),
-    m_nodeUpdateStatusModifiedDateHasBeenSet(false)
+NodeGroupMemberUpdateStatus::NodeGroupMemberUpdateStatus(const XmlNode& xmlNode)
+  : NodeGroupMemberUpdateStatus()
 {
   *this = xmlNode;
 }

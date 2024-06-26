@@ -30,15 +30,8 @@ Speaker::Speaker() :
 {
 }
 
-Speaker::Speaker(JsonView jsonValue) : 
-    m_createdAtHasBeenSet(false),
-    m_customerSpeakerIdHasBeenSet(false),
-    m_domainIdHasBeenSet(false),
-    m_generatedSpeakerIdHasBeenSet(false),
-    m_lastAccessedAtHasBeenSet(false),
-    m_status(SpeakerStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+Speaker::Speaker(JsonView jsonValue)
+  : Speaker()
 {
   *this = jsonValue;
 }

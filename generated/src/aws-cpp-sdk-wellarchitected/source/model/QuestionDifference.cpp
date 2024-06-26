@@ -26,11 +26,8 @@ QuestionDifference::QuestionDifference() :
 {
 }
 
-QuestionDifference::QuestionDifference(JsonView jsonValue) : 
-    m_questionIdHasBeenSet(false),
-    m_questionTitleHasBeenSet(false),
-    m_differenceStatus(DifferenceStatus::NOT_SET),
-    m_differenceStatusHasBeenSet(false)
+QuestionDifference::QuestionDifference(JsonView jsonValue)
+  : QuestionDifference()
 {
   *this = jsonValue;
 }

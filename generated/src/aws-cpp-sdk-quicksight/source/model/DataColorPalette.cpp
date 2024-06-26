@@ -25,10 +25,8 @@ DataColorPalette::DataColorPalette() :
 {
 }
 
-DataColorPalette::DataColorPalette(JsonView jsonValue) : 
-    m_colorsHasBeenSet(false),
-    m_minMaxGradientHasBeenSet(false),
-    m_emptyFillColorHasBeenSet(false)
+DataColorPalette::DataColorPalette(JsonView jsonValue)
+  : DataColorPalette()
 {
   *this = jsonValue;
 }

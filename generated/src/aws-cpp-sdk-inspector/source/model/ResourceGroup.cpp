@@ -25,10 +25,8 @@ ResourceGroup::ResourceGroup() :
 {
 }
 
-ResourceGroup::ResourceGroup(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_createdAtHasBeenSet(false)
+ResourceGroup::ResourceGroup(JsonView jsonValue)
+  : ResourceGroup()
 {
   *this = jsonValue;
 }

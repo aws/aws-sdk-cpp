@@ -23,8 +23,8 @@ VirtualRouterServiceProvider::VirtualRouterServiceProvider() :
 {
 }
 
-VirtualRouterServiceProvider::VirtualRouterServiceProvider(JsonView jsonValue) : 
-    m_virtualRouterNameHasBeenSet(false)
+VirtualRouterServiceProvider::VirtualRouterServiceProvider(JsonView jsonValue)
+  : VirtualRouterServiceProvider()
 {
   *this = jsonValue;
 }

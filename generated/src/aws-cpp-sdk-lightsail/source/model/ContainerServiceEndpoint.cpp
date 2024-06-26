@@ -26,11 +26,8 @@ ContainerServiceEndpoint::ContainerServiceEndpoint() :
 {
 }
 
-ContainerServiceEndpoint::ContainerServiceEndpoint(JsonView jsonValue) : 
-    m_containerNameHasBeenSet(false),
-    m_containerPort(0),
-    m_containerPortHasBeenSet(false),
-    m_healthCheckHasBeenSet(false)
+ContainerServiceEndpoint::ContainerServiceEndpoint(JsonView jsonValue)
+  : ContainerServiceEndpoint()
 {
   *this = jsonValue;
 }

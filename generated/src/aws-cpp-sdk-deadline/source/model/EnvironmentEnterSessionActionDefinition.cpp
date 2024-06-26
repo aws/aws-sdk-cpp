@@ -23,8 +23,8 @@ EnvironmentEnterSessionActionDefinition::EnvironmentEnterSessionActionDefinition
 {
 }
 
-EnvironmentEnterSessionActionDefinition::EnvironmentEnterSessionActionDefinition(JsonView jsonValue) : 
-    m_environmentIdHasBeenSet(false)
+EnvironmentEnterSessionActionDefinition::EnvironmentEnterSessionActionDefinition(JsonView jsonValue)
+  : EnvironmentEnterSessionActionDefinition()
 {
   *this = jsonValue;
 }

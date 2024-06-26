@@ -37,20 +37,8 @@ StackSetOperationPreferences::StackSetOperationPreferences() :
 {
 }
 
-StackSetOperationPreferences::StackSetOperationPreferences(const XmlNode& xmlNode) : 
-    m_regionConcurrencyType(RegionConcurrencyType::NOT_SET),
-    m_regionConcurrencyTypeHasBeenSet(false),
-    m_regionOrderHasBeenSet(false),
-    m_failureToleranceCount(0),
-    m_failureToleranceCountHasBeenSet(false),
-    m_failureTolerancePercentage(0),
-    m_failureTolerancePercentageHasBeenSet(false),
-    m_maxConcurrentCount(0),
-    m_maxConcurrentCountHasBeenSet(false),
-    m_maxConcurrentPercentage(0),
-    m_maxConcurrentPercentageHasBeenSet(false),
-    m_concurrencyMode(ConcurrencyMode::NOT_SET),
-    m_concurrencyModeHasBeenSet(false)
+StackSetOperationPreferences::StackSetOperationPreferences(const XmlNode& xmlNode)
+  : StackSetOperationPreferences()
 {
   *this = xmlNode;
 }

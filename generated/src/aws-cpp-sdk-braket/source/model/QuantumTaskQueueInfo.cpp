@@ -28,13 +28,8 @@ QuantumTaskQueueInfo::QuantumTaskQueueInfo() :
 {
 }
 
-QuantumTaskQueueInfo::QuantumTaskQueueInfo(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_positionHasBeenSet(false),
-    m_queue(QueueName::NOT_SET),
-    m_queueHasBeenSet(false),
-    m_queuePriority(QueuePriority::NOT_SET),
-    m_queuePriorityHasBeenSet(false)
+QuantumTaskQueueInfo::QuantumTaskQueueInfo(JsonView jsonValue)
+  : QuantumTaskQueueInfo()
 {
   *this = jsonValue;
 }

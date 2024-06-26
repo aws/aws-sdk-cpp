@@ -23,8 +23,8 @@ WordCloudFieldWells::WordCloudFieldWells() :
 {
 }
 
-WordCloudFieldWells::WordCloudFieldWells(JsonView jsonValue) : 
-    m_wordCloudAggregatedFieldWellsHasBeenSet(false)
+WordCloudFieldWells::WordCloudFieldWells(JsonView jsonValue)
+  : WordCloudFieldWells()
 {
   *this = jsonValue;
 }

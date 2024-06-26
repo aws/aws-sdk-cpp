@@ -29,12 +29,8 @@ ClientVpnAuthenticationRequest::ClientVpnAuthenticationRequest() :
 {
 }
 
-ClientVpnAuthenticationRequest::ClientVpnAuthenticationRequest(const XmlNode& xmlNode) : 
-    m_type(ClientVpnAuthenticationType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_activeDirectoryHasBeenSet(false),
-    m_mutualAuthenticationHasBeenSet(false),
-    m_federatedAuthenticationHasBeenSet(false)
+ClientVpnAuthenticationRequest::ClientVpnAuthenticationRequest(const XmlNode& xmlNode)
+  : ClientVpnAuthenticationRequest()
 {
   *this = xmlNode;
 }

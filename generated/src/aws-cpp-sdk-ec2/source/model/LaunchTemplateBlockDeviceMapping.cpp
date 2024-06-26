@@ -28,11 +28,8 @@ LaunchTemplateBlockDeviceMapping::LaunchTemplateBlockDeviceMapping() :
 {
 }
 
-LaunchTemplateBlockDeviceMapping::LaunchTemplateBlockDeviceMapping(const XmlNode& xmlNode) : 
-    m_deviceNameHasBeenSet(false),
-    m_virtualNameHasBeenSet(false),
-    m_ebsHasBeenSet(false),
-    m_noDeviceHasBeenSet(false)
+LaunchTemplateBlockDeviceMapping::LaunchTemplateBlockDeviceMapping(const XmlNode& xmlNode)
+  : LaunchTemplateBlockDeviceMapping()
 {
   *this = xmlNode;
 }

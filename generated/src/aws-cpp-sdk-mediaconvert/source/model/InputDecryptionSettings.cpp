@@ -27,12 +27,8 @@ InputDecryptionSettings::InputDecryptionSettings() :
 {
 }
 
-InputDecryptionSettings::InputDecryptionSettings(JsonView jsonValue) : 
-    m_decryptionMode(DecryptionMode::NOT_SET),
-    m_decryptionModeHasBeenSet(false),
-    m_encryptedDecryptionKeyHasBeenSet(false),
-    m_initializationVectorHasBeenSet(false),
-    m_kmsKeyRegionHasBeenSet(false)
+InputDecryptionSettings::InputDecryptionSettings(JsonView jsonValue)
+  : InputDecryptionSettings()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ KinesisVideoStreamConfigurationUpdate::KinesisVideoStreamConfigurationUpdate() :
 {
 }
 
-KinesisVideoStreamConfigurationUpdate::KinesisVideoStreamConfigurationUpdate(JsonView jsonValue) : 
-    m_dataRetentionInHours(0),
-    m_dataRetentionInHoursHasBeenSet(false)
+KinesisVideoStreamConfigurationUpdate::KinesisVideoStreamConfigurationUpdate(JsonView jsonValue)
+  : KinesisVideoStreamConfigurationUpdate()
 {
   *this = jsonValue;
 }

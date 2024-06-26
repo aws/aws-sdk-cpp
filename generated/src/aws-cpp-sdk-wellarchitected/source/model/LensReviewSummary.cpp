@@ -32,17 +32,8 @@ LensReviewSummary::LensReviewSummary() :
 {
 }
 
-LensReviewSummary::LensReviewSummary(JsonView jsonValue) : 
-    m_lensAliasHasBeenSet(false),
-    m_lensArnHasBeenSet(false),
-    m_lensVersionHasBeenSet(false),
-    m_lensNameHasBeenSet(false),
-    m_lensStatus(LensStatus::NOT_SET),
-    m_lensStatusHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_riskCountsHasBeenSet(false),
-    m_profilesHasBeenSet(false),
-    m_prioritizedRiskCountsHasBeenSet(false)
+LensReviewSummary::LensReviewSummary(JsonView jsonValue)
+  : LensReviewSummary()
 {
   *this = jsonValue;
 }

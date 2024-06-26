@@ -24,9 +24,8 @@ AcceleratorEvent::AcceleratorEvent() :
 {
 }
 
-AcceleratorEvent::AcceleratorEvent(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_timestampHasBeenSet(false)
+AcceleratorEvent::AcceleratorEvent(JsonView jsonValue)
+  : AcceleratorEvent()
 {
   *this = jsonValue;
 }

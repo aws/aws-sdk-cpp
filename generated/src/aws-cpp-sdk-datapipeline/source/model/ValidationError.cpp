@@ -24,9 +24,8 @@ ValidationError::ValidationError() :
 {
 }
 
-ValidationError::ValidationError(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_errorsHasBeenSet(false)
+ValidationError::ValidationError(JsonView jsonValue)
+  : ValidationError()
 {
   *this = jsonValue;
 }

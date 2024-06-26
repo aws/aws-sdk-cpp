@@ -23,8 +23,8 @@ RuntimeHints::RuntimeHints() :
 {
 }
 
-RuntimeHints::RuntimeHints(JsonView jsonValue) : 
-    m_slotHintsHasBeenSet(false)
+RuntimeHints::RuntimeHints(JsonView jsonValue)
+  : RuntimeHints()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ OffPeakWindow::OffPeakWindow() :
 {
 }
 
-OffPeakWindow::OffPeakWindow(JsonView jsonValue) : 
-    m_windowStartTimeHasBeenSet(false)
+OffPeakWindow::OffPeakWindow(JsonView jsonValue)
+  : OffPeakWindow()
 {
   *this = jsonValue;
 }

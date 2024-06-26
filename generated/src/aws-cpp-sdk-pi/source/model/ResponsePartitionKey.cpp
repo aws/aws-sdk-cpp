@@ -23,8 +23,8 @@ ResponsePartitionKey::ResponsePartitionKey() :
 {
 }
 
-ResponsePartitionKey::ResponsePartitionKey(JsonView jsonValue) : 
-    m_dimensionsHasBeenSet(false)
+ResponsePartitionKey::ResponsePartitionKey(JsonView jsonValue)
+  : ResponsePartitionKey()
 {
   *this = jsonValue;
 }

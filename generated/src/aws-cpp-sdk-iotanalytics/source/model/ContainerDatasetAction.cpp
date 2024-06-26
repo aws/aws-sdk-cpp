@@ -26,11 +26,8 @@ ContainerDatasetAction::ContainerDatasetAction() :
 {
 }
 
-ContainerDatasetAction::ContainerDatasetAction(JsonView jsonValue) : 
-    m_imageHasBeenSet(false),
-    m_executionRoleArnHasBeenSet(false),
-    m_resourceConfigurationHasBeenSet(false),
-    m_variablesHasBeenSet(false)
+ContainerDatasetAction::ContainerDatasetAction(JsonView jsonValue)
+  : ContainerDatasetAction()
 {
   *this = jsonValue;
 }

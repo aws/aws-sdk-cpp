@@ -24,9 +24,8 @@ ReviewPolicy::ReviewPolicy() :
 {
 }
 
-ReviewPolicy::ReviewPolicy(JsonView jsonValue) : 
-    m_policyNameHasBeenSet(false),
-    m_parametersHasBeenSet(false)
+ReviewPolicy::ReviewPolicy(JsonView jsonValue)
+  : ReviewPolicy()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ AwsEcsTaskDefinitionVolumesHostDetails::AwsEcsTaskDefinitionVolumesHostDetails()
 {
 }
 
-AwsEcsTaskDefinitionVolumesHostDetails::AwsEcsTaskDefinitionVolumesHostDetails(JsonView jsonValue) : 
-    m_sourcePathHasBeenSet(false)
+AwsEcsTaskDefinitionVolumesHostDetails::AwsEcsTaskDefinitionVolumesHostDetails(JsonView jsonValue)
+  : AwsEcsTaskDefinitionVolumesHostDetails()
 {
   *this = jsonValue;
 }

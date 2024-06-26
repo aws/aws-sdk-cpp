@@ -23,8 +23,8 @@ UtteranceLevelTestResults::UtteranceLevelTestResults() :
 {
 }
 
-UtteranceLevelTestResults::UtteranceLevelTestResults(JsonView jsonValue) : 
-    m_itemsHasBeenSet(false)
+UtteranceLevelTestResults::UtteranceLevelTestResults(JsonView jsonValue)
+  : UtteranceLevelTestResults()
 {
   *this = jsonValue;
 }

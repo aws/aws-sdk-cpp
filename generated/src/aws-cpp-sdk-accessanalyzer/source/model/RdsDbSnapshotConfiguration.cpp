@@ -24,9 +24,8 @@ RdsDbSnapshotConfiguration::RdsDbSnapshotConfiguration() :
 {
 }
 
-RdsDbSnapshotConfiguration::RdsDbSnapshotConfiguration(JsonView jsonValue) : 
-    m_attributesHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
+RdsDbSnapshotConfiguration::RdsDbSnapshotConfiguration(JsonView jsonValue)
+  : RdsDbSnapshotConfiguration()
 {
   *this = jsonValue;
 }

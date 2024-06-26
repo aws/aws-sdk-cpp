@@ -22,8 +22,8 @@ UpdateProjectResult::UpdateProjectResult() :
 {
 }
 
-UpdateProjectResult::UpdateProjectResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_projectStatus(ProjectStatus::NOT_SET)
+UpdateProjectResult::UpdateProjectResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateProjectResult()
 {
   *this = result;
 }

@@ -23,8 +23,8 @@ DefaultRelativeDateTimeControlOptions::DefaultRelativeDateTimeControlOptions() :
 {
 }
 
-DefaultRelativeDateTimeControlOptions::DefaultRelativeDateTimeControlOptions(JsonView jsonValue) : 
-    m_displayOptionsHasBeenSet(false)
+DefaultRelativeDateTimeControlOptions::DefaultRelativeDateTimeControlOptions(JsonView jsonValue)
+  : DefaultRelativeDateTimeControlOptions()
 {
   *this = jsonValue;
 }

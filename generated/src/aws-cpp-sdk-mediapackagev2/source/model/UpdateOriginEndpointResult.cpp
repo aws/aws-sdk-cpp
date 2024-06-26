@@ -23,9 +23,8 @@ UpdateOriginEndpointResult::UpdateOriginEndpointResult() :
 {
 }
 
-UpdateOriginEndpointResult::UpdateOriginEndpointResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_containerType(ContainerType::NOT_SET),
-    m_startoverWindowSeconds(0)
+UpdateOriginEndpointResult::UpdateOriginEndpointResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateOriginEndpointResult()
 {
   *this = result;
 }

@@ -27,12 +27,8 @@ AssumedRole::AssumedRole() :
 {
 }
 
-AssumedRole::AssumedRole(JsonView jsonValue) : 
-    m_accessKeyIdHasBeenSet(false),
-    m_accountIdHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_principalIdHasBeenSet(false),
-    m_sessionContextHasBeenSet(false)
+AssumedRole::AssumedRole(JsonView jsonValue)
+  : AssumedRole()
 {
   *this = jsonValue;
 }

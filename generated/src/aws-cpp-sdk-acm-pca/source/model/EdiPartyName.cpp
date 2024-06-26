@@ -24,9 +24,8 @@ EdiPartyName::EdiPartyName() :
 {
 }
 
-EdiPartyName::EdiPartyName(JsonView jsonValue) : 
-    m_partyNameHasBeenSet(false),
-    m_nameAssignerHasBeenSet(false)
+EdiPartyName::EdiPartyName(JsonView jsonValue)
+  : EdiPartyName()
 {
   *this = jsonValue;
 }

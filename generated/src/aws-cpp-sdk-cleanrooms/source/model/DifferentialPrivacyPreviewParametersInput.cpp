@@ -26,11 +26,8 @@ DifferentialPrivacyPreviewParametersInput::DifferentialPrivacyPreviewParametersI
 {
 }
 
-DifferentialPrivacyPreviewParametersInput::DifferentialPrivacyPreviewParametersInput(JsonView jsonValue) : 
-    m_epsilon(0),
-    m_epsilonHasBeenSet(false),
-    m_usersNoisePerQuery(0),
-    m_usersNoisePerQueryHasBeenSet(false)
+DifferentialPrivacyPreviewParametersInput::DifferentialPrivacyPreviewParametersInput(JsonView jsonValue)
+  : DifferentialPrivacyPreviewParametersInput()
 {
   *this = jsonValue;
 }

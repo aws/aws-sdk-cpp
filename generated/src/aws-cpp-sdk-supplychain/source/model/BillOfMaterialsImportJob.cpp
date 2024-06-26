@@ -28,13 +28,8 @@ BillOfMaterialsImportJob::BillOfMaterialsImportJob() :
 {
 }
 
-BillOfMaterialsImportJob::BillOfMaterialsImportJob(JsonView jsonValue) : 
-    m_instanceIdHasBeenSet(false),
-    m_jobIdHasBeenSet(false),
-    m_status(ConfigurationJobStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_s3uriHasBeenSet(false),
-    m_messageHasBeenSet(false)
+BillOfMaterialsImportJob::BillOfMaterialsImportJob(JsonView jsonValue)
+  : BillOfMaterialsImportJob()
 {
   *this = jsonValue;
 }

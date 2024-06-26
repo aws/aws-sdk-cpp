@@ -23,8 +23,8 @@ SSMLMessage::SSMLMessage() :
 {
 }
 
-SSMLMessage::SSMLMessage(JsonView jsonValue) : 
-    m_valueHasBeenSet(false)
+SSMLMessage::SSMLMessage(JsonView jsonValue)
+  : SSMLMessage()
 {
   *this = jsonValue;
 }

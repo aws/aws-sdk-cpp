@@ -40,25 +40,8 @@ Service::Service() :
 {
 }
 
-Service::Service(JsonView jsonValue) : 
-    m_actionHasBeenSet(false),
-    m_evidenceHasBeenSet(false),
-    m_archived(false),
-    m_archivedHasBeenSet(false),
-    m_count(0),
-    m_countHasBeenSet(false),
-    m_detectorIdHasBeenSet(false),
-    m_eventFirstSeenHasBeenSet(false),
-    m_eventLastSeenHasBeenSet(false),
-    m_resourceRoleHasBeenSet(false),
-    m_serviceNameHasBeenSet(false),
-    m_userFeedbackHasBeenSet(false),
-    m_additionalInfoHasBeenSet(false),
-    m_featureNameHasBeenSet(false),
-    m_ebsVolumeScanDetailsHasBeenSet(false),
-    m_runtimeDetailsHasBeenSet(false),
-    m_detectionHasBeenSet(false),
-    m_malwareScanDetailsHasBeenSet(false)
+Service::Service(JsonView jsonValue)
+  : Service()
 {
   *this = jsonValue;
 }

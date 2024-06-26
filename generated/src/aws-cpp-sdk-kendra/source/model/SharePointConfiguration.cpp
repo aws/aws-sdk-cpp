@@ -41,26 +41,8 @@ SharePointConfiguration::SharePointConfiguration() :
 {
 }
 
-SharePointConfiguration::SharePointConfiguration(JsonView jsonValue) : 
-    m_sharePointVersion(SharePointVersion::NOT_SET),
-    m_sharePointVersionHasBeenSet(false),
-    m_urlsHasBeenSet(false),
-    m_secretArnHasBeenSet(false),
-    m_crawlAttachments(false),
-    m_crawlAttachmentsHasBeenSet(false),
-    m_useChangeLog(false),
-    m_useChangeLogHasBeenSet(false),
-    m_inclusionPatternsHasBeenSet(false),
-    m_exclusionPatternsHasBeenSet(false),
-    m_vpcConfigurationHasBeenSet(false),
-    m_fieldMappingsHasBeenSet(false),
-    m_documentTitleFieldNameHasBeenSet(false),
-    m_disableLocalGroups(false),
-    m_disableLocalGroupsHasBeenSet(false),
-    m_sslCertificateS3PathHasBeenSet(false),
-    m_authenticationType(SharePointOnlineAuthenticationType::NOT_SET),
-    m_authenticationTypeHasBeenSet(false),
-    m_proxyConfigurationHasBeenSet(false)
+SharePointConfiguration::SharePointConfiguration(JsonView jsonValue)
+  : SharePointConfiguration()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ CreateS3DataAccessFromS3BucketRequestDetails::CreateS3DataAccessFromS3BucketRequ
 {
 }
 
-CreateS3DataAccessFromS3BucketRequestDetails::CreateS3DataAccessFromS3BucketRequestDetails(JsonView jsonValue) : 
-    m_assetSourceHasBeenSet(false),
-    m_dataSetIdHasBeenSet(false),
-    m_revisionIdHasBeenSet(false)
+CreateS3DataAccessFromS3BucketRequestDetails::CreateS3DataAccessFromS3BucketRequestDetails(JsonView jsonValue)
+  : CreateS3DataAccessFromS3BucketRequestDetails()
 {
   *this = jsonValue;
 }

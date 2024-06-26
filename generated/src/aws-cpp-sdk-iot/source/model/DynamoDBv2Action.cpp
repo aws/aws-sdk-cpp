@@ -24,9 +24,8 @@ DynamoDBv2Action::DynamoDBv2Action() :
 {
 }
 
-DynamoDBv2Action::DynamoDBv2Action(JsonView jsonValue) : 
-    m_roleArnHasBeenSet(false),
-    m_putItemHasBeenSet(false)
+DynamoDBv2Action::DynamoDBv2Action(JsonView jsonValue)
+  : DynamoDBv2Action()
 {
   *this = jsonValue;
 }

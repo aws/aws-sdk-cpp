@@ -27,12 +27,8 @@ ImportKeyMaterial::ImportKeyMaterial() :
 {
 }
 
-ImportKeyMaterial::ImportKeyMaterial(JsonView jsonValue) : 
-    m_rootCertificatePublicKeyHasBeenSet(false),
-    m_trustedCertificatePublicKeyHasBeenSet(false),
-    m_tr31KeyBlockHasBeenSet(false),
-    m_tr34KeyBlockHasBeenSet(false),
-    m_keyCryptogramHasBeenSet(false)
+ImportKeyMaterial::ImportKeyMaterial(JsonView jsonValue)
+  : ImportKeyMaterial()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ ContentBlockDeltaEvent::ContentBlockDeltaEvent() :
 {
 }
 
-ContentBlockDeltaEvent::ContentBlockDeltaEvent(JsonView jsonValue) : 
-    m_deltaHasBeenSet(false),
-    m_contentBlockIndex(0),
-    m_contentBlockIndexHasBeenSet(false)
+ContentBlockDeltaEvent::ContentBlockDeltaEvent(JsonView jsonValue)
+  : ContentBlockDeltaEvent()
 {
   *this = jsonValue;
 }

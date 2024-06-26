@@ -28,13 +28,8 @@ ConfigurationProfileSummary::ConfigurationProfileSummary() :
 {
 }
 
-ConfigurationProfileSummary::ConfigurationProfileSummary(JsonView jsonValue) : 
-    m_applicationIdHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_locationUriHasBeenSet(false),
-    m_validatorTypesHasBeenSet(false),
-    m_typeHasBeenSet(false)
+ConfigurationProfileSummary::ConfigurationProfileSummary(JsonView jsonValue)
+  : ConfigurationProfileSummary()
 {
   *this = jsonValue;
 }

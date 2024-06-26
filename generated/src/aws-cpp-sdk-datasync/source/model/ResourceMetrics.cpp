@@ -28,13 +28,8 @@ ResourceMetrics::ResourceMetrics() :
 {
 }
 
-ResourceMetrics::ResourceMetrics(JsonView jsonValue) : 
-    m_timestampHasBeenSet(false),
-    m_p95MetricsHasBeenSet(false),
-    m_capacityHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_resourceType(DiscoveryResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false)
+ResourceMetrics::ResourceMetrics(JsonView jsonValue)
+  : ResourceMetrics()
 {
   *this = jsonValue;
 }

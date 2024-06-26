@@ -23,8 +23,8 @@ PackageImportJobInputConfig::PackageImportJobInputConfig() :
 {
 }
 
-PackageImportJobInputConfig::PackageImportJobInputConfig(JsonView jsonValue) : 
-    m_packageVersionInputConfigHasBeenSet(false)
+PackageImportJobInputConfig::PackageImportJobInputConfig(JsonView jsonValue)
+  : PackageImportJobInputConfig()
 {
   *this = jsonValue;
 }

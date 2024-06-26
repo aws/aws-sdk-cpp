@@ -23,8 +23,8 @@ AwsCloudFrontDistributionOriginGroups::AwsCloudFrontDistributionOriginGroups() :
 {
 }
 
-AwsCloudFrontDistributionOriginGroups::AwsCloudFrontDistributionOriginGroups(JsonView jsonValue) : 
-    m_itemsHasBeenSet(false)
+AwsCloudFrontDistributionOriginGroups::AwsCloudFrontDistributionOriginGroups(JsonView jsonValue)
+  : AwsCloudFrontDistributionOriginGroups()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ GlueDataSource::GlueDataSource() :
 {
 }
 
-GlueDataSource::GlueDataSource(JsonView jsonValue) : 
-    m_catalogIdHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_tableNameHasBeenSet(false)
+GlueDataSource::GlueDataSource(JsonView jsonValue)
+  : GlueDataSource()
 {
   *this = jsonValue;
 }

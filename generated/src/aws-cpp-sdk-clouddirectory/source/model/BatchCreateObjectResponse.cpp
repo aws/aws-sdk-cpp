@@ -23,8 +23,8 @@ BatchCreateObjectResponse::BatchCreateObjectResponse() :
 {
 }
 
-BatchCreateObjectResponse::BatchCreateObjectResponse(JsonView jsonValue) : 
-    m_objectIdentifierHasBeenSet(false)
+BatchCreateObjectResponse::BatchCreateObjectResponse(JsonView jsonValue)
+  : BatchCreateObjectResponse()
 {
   *this = jsonValue;
 }

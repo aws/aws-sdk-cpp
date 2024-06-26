@@ -27,12 +27,8 @@ PipelineDetail::PipelineDetail() :
 {
 }
 
-PipelineDetail::PipelineDetail(JsonView jsonValue) : 
-    m_activeInputAttachmentNameHasBeenSet(false),
-    m_activeInputSwitchActionNameHasBeenSet(false),
-    m_activeMotionGraphicsActionNameHasBeenSet(false),
-    m_activeMotionGraphicsUriHasBeenSet(false),
-    m_pipelineIdHasBeenSet(false)
+PipelineDetail::PipelineDetail(JsonView jsonValue)
+  : PipelineDetail()
 {
   *this = jsonValue;
 }

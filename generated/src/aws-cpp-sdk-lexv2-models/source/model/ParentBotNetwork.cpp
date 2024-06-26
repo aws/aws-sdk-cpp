@@ -24,9 +24,8 @@ ParentBotNetwork::ParentBotNetwork() :
 {
 }
 
-ParentBotNetwork::ParentBotNetwork(JsonView jsonValue) : 
-    m_botIdHasBeenSet(false),
-    m_botVersionHasBeenSet(false)
+ParentBotNetwork::ParentBotNetwork(JsonView jsonValue)
+  : ParentBotNetwork()
 {
   *this = jsonValue;
 }

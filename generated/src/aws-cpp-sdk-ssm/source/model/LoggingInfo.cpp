@@ -25,10 +25,8 @@ LoggingInfo::LoggingInfo() :
 {
 }
 
-LoggingInfo::LoggingInfo(JsonView jsonValue) : 
-    m_s3BucketNameHasBeenSet(false),
-    m_s3KeyPrefixHasBeenSet(false),
-    m_s3RegionHasBeenSet(false)
+LoggingInfo::LoggingInfo(JsonView jsonValue)
+  : LoggingInfo()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ TestResult::TestResult() :
 {
 }
 
-TestResult::TestResult(JsonView jsonValue) : 
-    m_groupsHasBeenSet(false)
+TestResult::TestResult(JsonView jsonValue)
+  : TestResult()
 {
   *this = jsonValue;
 }

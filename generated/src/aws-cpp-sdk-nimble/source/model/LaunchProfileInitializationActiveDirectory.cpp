@@ -29,14 +29,8 @@ LaunchProfileInitializationActiveDirectory::LaunchProfileInitializationActiveDir
 {
 }
 
-LaunchProfileInitializationActiveDirectory::LaunchProfileInitializationActiveDirectory(JsonView jsonValue) : 
-    m_computerAttributesHasBeenSet(false),
-    m_directoryIdHasBeenSet(false),
-    m_directoryNameHasBeenSet(false),
-    m_dnsIpAddressesHasBeenSet(false),
-    m_organizationalUnitDistinguishedNameHasBeenSet(false),
-    m_studioComponentIdHasBeenSet(false),
-    m_studioComponentNameHasBeenSet(false)
+LaunchProfileInitializationActiveDirectory::LaunchProfileInitializationActiveDirectory(JsonView jsonValue)
+  : LaunchProfileInitializationActiveDirectory()
 {
   *this = jsonValue;
 }

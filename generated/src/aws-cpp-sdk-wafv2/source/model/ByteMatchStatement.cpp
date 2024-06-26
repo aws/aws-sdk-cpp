@@ -28,12 +28,8 @@ ByteMatchStatement::ByteMatchStatement() :
 {
 }
 
-ByteMatchStatement::ByteMatchStatement(JsonView jsonValue) : 
-    m_searchStringHasBeenSet(false),
-    m_fieldToMatchHasBeenSet(false),
-    m_textTransformationsHasBeenSet(false),
-    m_positionalConstraint(PositionalConstraint::NOT_SET),
-    m_positionalConstraintHasBeenSet(false)
+ByteMatchStatement::ByteMatchStatement(JsonView jsonValue)
+  : ByteMatchStatement()
 {
   *this = jsonValue;
 }

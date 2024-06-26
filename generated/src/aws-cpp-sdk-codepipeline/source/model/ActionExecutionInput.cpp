@@ -29,14 +29,8 @@ ActionExecutionInput::ActionExecutionInput() :
 {
 }
 
-ActionExecutionInput::ActionExecutionInput(JsonView jsonValue) : 
-    m_actionTypeIdHasBeenSet(false),
-    m_configurationHasBeenSet(false),
-    m_resolvedConfigurationHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_inputArtifactsHasBeenSet(false),
-    m_namespaceHasBeenSet(false)
+ActionExecutionInput::ActionExecutionInput(JsonView jsonValue)
+  : ActionExecutionInput()
 {
   *this = jsonValue;
 }

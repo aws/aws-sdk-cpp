@@ -26,11 +26,8 @@ AwsEksClusterResourcesVpcConfigDetails::AwsEksClusterResourcesVpcConfigDetails()
 {
 }
 
-AwsEksClusterResourcesVpcConfigDetails::AwsEksClusterResourcesVpcConfigDetails(JsonView jsonValue) : 
-    m_securityGroupIdsHasBeenSet(false),
-    m_subnetIdsHasBeenSet(false),
-    m_endpointPublicAccess(false),
-    m_endpointPublicAccessHasBeenSet(false)
+AwsEksClusterResourcesVpcConfigDetails::AwsEksClusterResourcesVpcConfigDetails(JsonView jsonValue)
+  : AwsEksClusterResourcesVpcConfigDetails()
 {
   *this = jsonValue;
 }

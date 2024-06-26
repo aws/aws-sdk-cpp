@@ -28,13 +28,8 @@ EksContainerOverride::EksContainerOverride() :
 {
 }
 
-EksContainerOverride::EksContainerOverride(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_imageHasBeenSet(false),
-    m_commandHasBeenSet(false),
-    m_argsHasBeenSet(false),
-    m_envHasBeenSet(false),
-    m_resourcesHasBeenSet(false)
+EksContainerOverride::EksContainerOverride(JsonView jsonValue)
+  : EksContainerOverride()
 {
   *this = jsonValue;
 }

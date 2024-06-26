@@ -32,17 +32,8 @@ OpenZFSCreateRootVolumeConfiguration::OpenZFSCreateRootVolumeConfiguration() :
 {
 }
 
-OpenZFSCreateRootVolumeConfiguration::OpenZFSCreateRootVolumeConfiguration(JsonView jsonValue) : 
-    m_recordSizeKiB(0),
-    m_recordSizeKiBHasBeenSet(false),
-    m_dataCompressionType(OpenZFSDataCompressionType::NOT_SET),
-    m_dataCompressionTypeHasBeenSet(false),
-    m_nfsExportsHasBeenSet(false),
-    m_userAndGroupQuotasHasBeenSet(false),
-    m_copyTagsToSnapshots(false),
-    m_copyTagsToSnapshotsHasBeenSet(false),
-    m_readOnly(false),
-    m_readOnlyHasBeenSet(false)
+OpenZFSCreateRootVolumeConfiguration::OpenZFSCreateRootVolumeConfiguration(JsonView jsonValue)
+  : OpenZFSCreateRootVolumeConfiguration()
 {
   *this = jsonValue;
 }

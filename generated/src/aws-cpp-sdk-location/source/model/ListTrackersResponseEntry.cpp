@@ -26,11 +26,8 @@ ListTrackersResponseEntry::ListTrackersResponseEntry() :
 {
 }
 
-ListTrackersResponseEntry::ListTrackersResponseEntry(JsonView jsonValue) : 
-    m_trackerNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
+ListTrackersResponseEntry::ListTrackersResponseEntry(JsonView jsonValue)
+  : ListTrackersResponseEntry()
 {
   *this = jsonValue;
 }

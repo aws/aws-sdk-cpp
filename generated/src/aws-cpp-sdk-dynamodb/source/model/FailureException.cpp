@@ -24,9 +24,8 @@ FailureException::FailureException() :
 {
 }
 
-FailureException::FailureException(JsonView jsonValue) : 
-    m_exceptionNameHasBeenSet(false),
-    m_exceptionDescriptionHasBeenSet(false)
+FailureException::FailureException(JsonView jsonValue)
+  : FailureException()
 {
   *this = jsonValue;
 }

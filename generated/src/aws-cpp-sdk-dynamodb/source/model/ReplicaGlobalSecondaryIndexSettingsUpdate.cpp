@@ -26,11 +26,8 @@ ReplicaGlobalSecondaryIndexSettingsUpdate::ReplicaGlobalSecondaryIndexSettingsUp
 {
 }
 
-ReplicaGlobalSecondaryIndexSettingsUpdate::ReplicaGlobalSecondaryIndexSettingsUpdate(JsonView jsonValue) : 
-    m_indexNameHasBeenSet(false),
-    m_provisionedReadCapacityUnits(0),
-    m_provisionedReadCapacityUnitsHasBeenSet(false),
-    m_provisionedReadCapacityAutoScalingSettingsUpdateHasBeenSet(false)
+ReplicaGlobalSecondaryIndexSettingsUpdate::ReplicaGlobalSecondaryIndexSettingsUpdate(JsonView jsonValue)
+  : ReplicaGlobalSecondaryIndexSettingsUpdate()
 {
   *this = jsonValue;
 }

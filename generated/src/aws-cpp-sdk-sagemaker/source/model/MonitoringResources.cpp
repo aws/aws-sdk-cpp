@@ -23,8 +23,8 @@ MonitoringResources::MonitoringResources() :
 {
 }
 
-MonitoringResources::MonitoringResources(JsonView jsonValue) : 
-    m_clusterConfigHasBeenSet(false)
+MonitoringResources::MonitoringResources(JsonView jsonValue)
+  : MonitoringResources()
 {
   *this = jsonValue;
 }

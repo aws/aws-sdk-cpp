@@ -42,27 +42,8 @@ DomainDeliverabilityCampaign::DomainDeliverabilityCampaign() :
 {
 }
 
-DomainDeliverabilityCampaign::DomainDeliverabilityCampaign(JsonView jsonValue) : 
-    m_campaignIdHasBeenSet(false),
-    m_imageUrlHasBeenSet(false),
-    m_subjectHasBeenSet(false),
-    m_fromAddressHasBeenSet(false),
-    m_sendingIpsHasBeenSet(false),
-    m_firstSeenDateTimeHasBeenSet(false),
-    m_lastSeenDateTimeHasBeenSet(false),
-    m_inboxCount(0),
-    m_inboxCountHasBeenSet(false),
-    m_spamCount(0),
-    m_spamCountHasBeenSet(false),
-    m_readRate(0.0),
-    m_readRateHasBeenSet(false),
-    m_deleteRate(0.0),
-    m_deleteRateHasBeenSet(false),
-    m_readDeleteRate(0.0),
-    m_readDeleteRateHasBeenSet(false),
-    m_projectedVolume(0),
-    m_projectedVolumeHasBeenSet(false),
-    m_espsHasBeenSet(false)
+DomainDeliverabilityCampaign::DomainDeliverabilityCampaign(JsonView jsonValue)
+  : DomainDeliverabilityCampaign()
 {
   *this = jsonValue;
 }

@@ -28,11 +28,8 @@ MutualAuthenticationAttributes::MutualAuthenticationAttributes() :
 {
 }
 
-MutualAuthenticationAttributes::MutualAuthenticationAttributes(const XmlNode& xmlNode) : 
-    m_modeHasBeenSet(false),
-    m_trustStoreArnHasBeenSet(false),
-    m_ignoreClientCertificateExpiry(false),
-    m_ignoreClientCertificateExpiryHasBeenSet(false)
+MutualAuthenticationAttributes::MutualAuthenticationAttributes(const XmlNode& xmlNode)
+  : MutualAuthenticationAttributes()
 {
   *this = xmlNode;
 }

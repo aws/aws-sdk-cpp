@@ -26,11 +26,8 @@ ForecastResult::ForecastResult() :
 {
 }
 
-ForecastResult::ForecastResult(JsonView jsonValue) : 
-    m_timePeriodHasBeenSet(false),
-    m_meanValueHasBeenSet(false),
-    m_predictionIntervalLowerBoundHasBeenSet(false),
-    m_predictionIntervalUpperBoundHasBeenSet(false)
+ForecastResult::ForecastResult(JsonView jsonValue)
+  : ForecastResult()
 {
   *this = jsonValue;
 }

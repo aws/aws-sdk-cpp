@@ -26,9 +26,8 @@ S3ObjectOwner::S3ObjectOwner() :
 {
 }
 
-S3ObjectOwner::S3ObjectOwner(const XmlNode& xmlNode) : 
-    m_iDHasBeenSet(false),
-    m_displayNameHasBeenSet(false)
+S3ObjectOwner::S3ObjectOwner(const XmlNode& xmlNode)
+  : S3ObjectOwner()
 {
   *this = xmlNode;
 }

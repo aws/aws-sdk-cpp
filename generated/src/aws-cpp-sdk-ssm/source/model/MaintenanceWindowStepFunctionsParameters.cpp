@@ -24,9 +24,8 @@ MaintenanceWindowStepFunctionsParameters::MaintenanceWindowStepFunctionsParamete
 {
 }
 
-MaintenanceWindowStepFunctionsParameters::MaintenanceWindowStepFunctionsParameters(JsonView jsonValue) : 
-    m_inputHasBeenSet(false),
-    m_nameHasBeenSet(false)
+MaintenanceWindowStepFunctionsParameters::MaintenanceWindowStepFunctionsParameters(JsonView jsonValue)
+  : MaintenanceWindowStepFunctionsParameters()
 {
   *this = jsonValue;
 }

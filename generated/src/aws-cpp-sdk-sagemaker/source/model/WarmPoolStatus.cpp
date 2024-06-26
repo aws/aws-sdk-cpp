@@ -27,12 +27,8 @@ WarmPoolStatus::WarmPoolStatus() :
 {
 }
 
-WarmPoolStatus::WarmPoolStatus(JsonView jsonValue) : 
-    m_status(WarmPoolResourceStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_resourceRetainedBillableTimeInSeconds(0),
-    m_resourceRetainedBillableTimeInSecondsHasBeenSet(false),
-    m_reusedByJobHasBeenSet(false)
+WarmPoolStatus::WarmPoolStatus(JsonView jsonValue)
+  : WarmPoolStatus()
 {
   *this = jsonValue;
 }

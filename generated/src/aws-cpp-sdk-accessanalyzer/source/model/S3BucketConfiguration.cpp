@@ -26,11 +26,8 @@ S3BucketConfiguration::S3BucketConfiguration() :
 {
 }
 
-S3BucketConfiguration::S3BucketConfiguration(JsonView jsonValue) : 
-    m_bucketPolicyHasBeenSet(false),
-    m_bucketAclGrantsHasBeenSet(false),
-    m_bucketPublicAccessBlockHasBeenSet(false),
-    m_accessPointsHasBeenSet(false)
+S3BucketConfiguration::S3BucketConfiguration(JsonView jsonValue)
+  : S3BucketConfiguration()
 {
   *this = jsonValue;
 }

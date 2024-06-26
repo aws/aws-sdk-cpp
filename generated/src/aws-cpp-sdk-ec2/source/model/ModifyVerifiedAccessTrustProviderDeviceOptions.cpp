@@ -25,8 +25,8 @@ ModifyVerifiedAccessTrustProviderDeviceOptions::ModifyVerifiedAccessTrustProvide
 {
 }
 
-ModifyVerifiedAccessTrustProviderDeviceOptions::ModifyVerifiedAccessTrustProviderDeviceOptions(const XmlNode& xmlNode) : 
-    m_publicSigningKeyUrlHasBeenSet(false)
+ModifyVerifiedAccessTrustProviderDeviceOptions::ModifyVerifiedAccessTrustProviderDeviceOptions(const XmlNode& xmlNode)
+  : ModifyVerifiedAccessTrustProviderDeviceOptions()
 {
   *this = xmlNode;
 }

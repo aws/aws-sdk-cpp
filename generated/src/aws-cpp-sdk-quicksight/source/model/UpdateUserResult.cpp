@@ -22,8 +22,8 @@ UpdateUserResult::UpdateUserResult() :
 {
 }
 
-UpdateUserResult::UpdateUserResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+UpdateUserResult::UpdateUserResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateUserResult()
 {
   *this = result;
 }

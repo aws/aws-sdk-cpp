@@ -22,8 +22,8 @@ SetVoiceMessageSpendLimitOverrideResult::SetVoiceMessageSpendLimitOverrideResult
 {
 }
 
-SetVoiceMessageSpendLimitOverrideResult::SetVoiceMessageSpendLimitOverrideResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_monthlyLimit(0)
+SetVoiceMessageSpendLimitOverrideResult::SetVoiceMessageSpendLimitOverrideResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : SetVoiceMessageSpendLimitOverrideResult()
 {
   *this = result;
 }

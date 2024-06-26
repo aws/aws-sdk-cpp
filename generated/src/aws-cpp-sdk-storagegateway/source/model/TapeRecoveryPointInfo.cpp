@@ -27,12 +27,8 @@ TapeRecoveryPointInfo::TapeRecoveryPointInfo() :
 {
 }
 
-TapeRecoveryPointInfo::TapeRecoveryPointInfo(JsonView jsonValue) : 
-    m_tapeARNHasBeenSet(false),
-    m_tapeRecoveryPointTimeHasBeenSet(false),
-    m_tapeSizeInBytes(0),
-    m_tapeSizeInBytesHasBeenSet(false),
-    m_tapeStatusHasBeenSet(false)
+TapeRecoveryPointInfo::TapeRecoveryPointInfo(JsonView jsonValue)
+  : TapeRecoveryPointInfo()
 {
   *this = jsonValue;
 }

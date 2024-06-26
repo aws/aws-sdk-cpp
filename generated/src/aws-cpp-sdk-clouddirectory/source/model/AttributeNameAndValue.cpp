@@ -24,9 +24,8 @@ AttributeNameAndValue::AttributeNameAndValue() :
 {
 }
 
-AttributeNameAndValue::AttributeNameAndValue(JsonView jsonValue) : 
-    m_attributeNameHasBeenSet(false),
-    m_valueHasBeenSet(false)
+AttributeNameAndValue::AttributeNameAndValue(JsonView jsonValue)
+  : AttributeNameAndValue()
 {
   *this = jsonValue;
 }

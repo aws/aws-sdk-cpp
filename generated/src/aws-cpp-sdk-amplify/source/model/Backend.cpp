@@ -23,8 +23,8 @@ Backend::Backend() :
 {
 }
 
-Backend::Backend(JsonView jsonValue) : 
-    m_stackArnHasBeenSet(false)
+Backend::Backend(JsonView jsonValue)
+  : Backend()
 {
   *this = jsonValue;
 }

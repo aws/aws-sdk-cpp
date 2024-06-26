@@ -26,9 +26,8 @@ VolumeStatusAttachmentStatus::VolumeStatusAttachmentStatus() :
 {
 }
 
-VolumeStatusAttachmentStatus::VolumeStatusAttachmentStatus(const XmlNode& xmlNode) : 
-    m_ioPerformanceHasBeenSet(false),
-    m_instanceIdHasBeenSet(false)
+VolumeStatusAttachmentStatus::VolumeStatusAttachmentStatus(const XmlNode& xmlNode)
+  : VolumeStatusAttachmentStatus()
 {
   *this = xmlNode;
 }

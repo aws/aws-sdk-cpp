@@ -22,8 +22,8 @@ CreatePracticeRunConfigurationResult::CreatePracticeRunConfigurationResult() :
 {
 }
 
-CreatePracticeRunConfigurationResult::CreatePracticeRunConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_zonalAutoshiftStatus(ZonalAutoshiftStatus::NOT_SET)
+CreatePracticeRunConfigurationResult::CreatePracticeRunConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreatePracticeRunConfigurationResult()
 {
   *this = result;
 }

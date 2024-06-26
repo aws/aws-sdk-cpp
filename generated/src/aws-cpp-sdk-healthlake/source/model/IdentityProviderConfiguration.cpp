@@ -28,13 +28,8 @@ IdentityProviderConfiguration::IdentityProviderConfiguration() :
 {
 }
 
-IdentityProviderConfiguration::IdentityProviderConfiguration(JsonView jsonValue) : 
-    m_authorizationStrategy(AuthorizationStrategy::NOT_SET),
-    m_authorizationStrategyHasBeenSet(false),
-    m_fineGrainedAuthorizationEnabled(false),
-    m_fineGrainedAuthorizationEnabledHasBeenSet(false),
-    m_metadataHasBeenSet(false),
-    m_idpLambdaArnHasBeenSet(false)
+IdentityProviderConfiguration::IdentityProviderConfiguration(JsonView jsonValue)
+  : IdentityProviderConfiguration()
 {
   *this = jsonValue;
 }

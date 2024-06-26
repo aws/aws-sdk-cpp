@@ -22,8 +22,8 @@ CancelMLTaskRunResult::CancelMLTaskRunResult() :
 {
 }
 
-CancelMLTaskRunResult::CancelMLTaskRunResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(TaskStatusType::NOT_SET)
+CancelMLTaskRunResult::CancelMLTaskRunResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CancelMLTaskRunResult()
 {
   *this = result;
 }

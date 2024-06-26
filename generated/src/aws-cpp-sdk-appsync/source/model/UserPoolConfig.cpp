@@ -27,12 +27,8 @@ UserPoolConfig::UserPoolConfig() :
 {
 }
 
-UserPoolConfig::UserPoolConfig(JsonView jsonValue) : 
-    m_userPoolIdHasBeenSet(false),
-    m_awsRegionHasBeenSet(false),
-    m_defaultAction(DefaultAction::NOT_SET),
-    m_defaultActionHasBeenSet(false),
-    m_appIdClientRegexHasBeenSet(false)
+UserPoolConfig::UserPoolConfig(JsonView jsonValue)
+  : UserPoolConfig()
 {
   *this = jsonValue;
 }

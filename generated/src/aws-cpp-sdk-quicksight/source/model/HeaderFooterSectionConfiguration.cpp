@@ -25,10 +25,8 @@ HeaderFooterSectionConfiguration::HeaderFooterSectionConfiguration() :
 {
 }
 
-HeaderFooterSectionConfiguration::HeaderFooterSectionConfiguration(JsonView jsonValue) : 
-    m_sectionIdHasBeenSet(false),
-    m_layoutHasBeenSet(false),
-    m_styleHasBeenSet(false)
+HeaderFooterSectionConfiguration::HeaderFooterSectionConfiguration(JsonView jsonValue)
+  : HeaderFooterSectionConfiguration()
 {
   *this = jsonValue;
 }

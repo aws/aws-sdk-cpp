@@ -24,9 +24,8 @@ MessageBody::MessageBody() :
 {
 }
 
-MessageBody::MessageBody(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_requestIDHasBeenSet(false)
+MessageBody::MessageBody(JsonView jsonValue)
+  : MessageBody()
 {
   *this = jsonValue;
 }

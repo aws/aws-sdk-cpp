@@ -30,15 +30,8 @@ ServiceLevelIndicatorMetricConfig::ServiceLevelIndicatorMetricConfig() :
 {
 }
 
-ServiceLevelIndicatorMetricConfig::ServiceLevelIndicatorMetricConfig(JsonView jsonValue) : 
-    m_keyAttributesHasBeenSet(false),
-    m_operationNameHasBeenSet(false),
-    m_metricType(ServiceLevelIndicatorMetricType::NOT_SET),
-    m_metricTypeHasBeenSet(false),
-    m_statisticHasBeenSet(false),
-    m_periodSeconds(0),
-    m_periodSecondsHasBeenSet(false),
-    m_metricDataQueriesHasBeenSet(false)
+ServiceLevelIndicatorMetricConfig::ServiceLevelIndicatorMetricConfig(JsonView jsonValue)
+  : ServiceLevelIndicatorMetricConfig()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ SparkSqlJobDriver::SparkSqlJobDriver() :
 {
 }
 
-SparkSqlJobDriver::SparkSqlJobDriver(JsonView jsonValue) : 
-    m_entryPointHasBeenSet(false),
-    m_sparkSqlParametersHasBeenSet(false)
+SparkSqlJobDriver::SparkSqlJobDriver(JsonView jsonValue)
+  : SparkSqlJobDriver()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ DetectSentimentResult::DetectSentimentResult() :
 {
 }
 
-DetectSentimentResult::DetectSentimentResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_sentiment(SentimentType::NOT_SET)
+DetectSentimentResult::DetectSentimentResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DetectSentimentResult()
 {
   *this = result;
 }

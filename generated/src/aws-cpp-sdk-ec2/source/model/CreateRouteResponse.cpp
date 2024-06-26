@@ -22,8 +22,8 @@ CreateRouteResponse::CreateRouteResponse() :
 {
 }
 
-CreateRouteResponse::CreateRouteResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_return(false)
+CreateRouteResponse::CreateRouteResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : CreateRouteResponse()
 {
   *this = result;
 }

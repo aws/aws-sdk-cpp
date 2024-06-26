@@ -39,24 +39,8 @@ SessionSpecification::SessionSpecification() :
 {
 }
 
-SessionSpecification::SessionSpecification(JsonView jsonValue) : 
-    m_botAliasIdHasBeenSet(false),
-    m_botVersionHasBeenSet(false),
-    m_localeIdHasBeenSet(false),
-    m_channelHasBeenSet(false),
-    m_sessionIdHasBeenSet(false),
-    m_conversationStartTimeHasBeenSet(false),
-    m_conversationEndTimeHasBeenSet(false),
-    m_conversationDurationSeconds(0),
-    m_conversationDurationSecondsHasBeenSet(false),
-    m_conversationEndState(ConversationEndState::NOT_SET),
-    m_conversationEndStateHasBeenSet(false),
-    m_mode(AnalyticsModality::NOT_SET),
-    m_modeHasBeenSet(false),
-    m_numberOfTurns(0),
-    m_numberOfTurnsHasBeenSet(false),
-    m_invokedIntentSamplesHasBeenSet(false),
-    m_originatingRequestIdHasBeenSet(false)
+SessionSpecification::SessionSpecification(JsonView jsonValue)
+  : SessionSpecification()
 {
   *this = jsonValue;
 }

@@ -28,13 +28,8 @@ ExpectedRoute::ExpectedRoute() :
 {
 }
 
-ExpectedRoute::ExpectedRoute(JsonView jsonValue) : 
-    m_ipV4CidrHasBeenSet(false),
-    m_prefixListIdHasBeenSet(false),
-    m_ipV6CidrHasBeenSet(false),
-    m_contributingSubnetsHasBeenSet(false),
-    m_allowedTargetsHasBeenSet(false),
-    m_routeTableIdHasBeenSet(false)
+ExpectedRoute::ExpectedRoute(JsonView jsonValue)
+  : ExpectedRoute()
 {
   *this = jsonValue;
 }

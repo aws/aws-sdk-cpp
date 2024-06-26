@@ -24,9 +24,8 @@ ColumnIdentifier::ColumnIdentifier() :
 {
 }
 
-ColumnIdentifier::ColumnIdentifier(JsonView jsonValue) : 
-    m_dataSetIdentifierHasBeenSet(false),
-    m_columnNameHasBeenSet(false)
+ColumnIdentifier::ColumnIdentifier(JsonView jsonValue)
+  : ColumnIdentifier()
 {
   *this = jsonValue;
 }

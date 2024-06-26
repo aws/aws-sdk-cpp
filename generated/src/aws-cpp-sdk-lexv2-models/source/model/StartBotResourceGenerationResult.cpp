@@ -22,8 +22,8 @@ StartBotResourceGenerationResult::StartBotResourceGenerationResult() :
 {
 }
 
-StartBotResourceGenerationResult::StartBotResourceGenerationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_generationStatus(GenerationStatus::NOT_SET)
+StartBotResourceGenerationResult::StartBotResourceGenerationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : StartBotResourceGenerationResult()
 {
   *this = result;
 }

@@ -23,8 +23,8 @@ ListenerTlsSdsCertificate::ListenerTlsSdsCertificate() :
 {
 }
 
-ListenerTlsSdsCertificate::ListenerTlsSdsCertificate(JsonView jsonValue) : 
-    m_secretNameHasBeenSet(false)
+ListenerTlsSdsCertificate::ListenerTlsSdsCertificate(JsonView jsonValue)
+  : ListenerTlsSdsCertificate()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ DefaultConditionalBranch::DefaultConditionalBranch() :
 {
 }
 
-DefaultConditionalBranch::DefaultConditionalBranch(JsonView jsonValue) : 
-    m_nextStepHasBeenSet(false),
-    m_responseHasBeenSet(false)
+DefaultConditionalBranch::DefaultConditionalBranch(JsonView jsonValue)
+  : DefaultConditionalBranch()
 {
   *this = jsonValue;
 }

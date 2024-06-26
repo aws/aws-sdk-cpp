@@ -25,10 +25,8 @@ ComplianceSummary::ComplianceSummary() :
 {
 }
 
-ComplianceSummary::ComplianceSummary(JsonView jsonValue) : 
-    m_compliantResourceCountHasBeenSet(false),
-    m_nonCompliantResourceCountHasBeenSet(false),
-    m_complianceSummaryTimestampHasBeenSet(false)
+ComplianceSummary::ComplianceSummary(JsonView jsonValue)
+  : ComplianceSummary()
 {
   *this = jsonValue;
 }

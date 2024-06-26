@@ -24,9 +24,8 @@ RuntimeDetails::RuntimeDetails() :
 {
 }
 
-RuntimeDetails::RuntimeDetails(JsonView jsonValue) : 
-    m_processHasBeenSet(false),
-    m_contextHasBeenSet(false)
+RuntimeDetails::RuntimeDetails(JsonView jsonValue)
+  : RuntimeDetails()
 {
   *this = jsonValue;
 }

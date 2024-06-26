@@ -22,8 +22,8 @@ GetPortfolioPreferencesResult::GetPortfolioPreferencesResult() :
 {
 }
 
-GetPortfolioPreferencesResult::GetPortfolioPreferencesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_applicationMode(ApplicationMode::NOT_SET)
+GetPortfolioPreferencesResult::GetPortfolioPreferencesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetPortfolioPreferencesResult()
 {
   *this = result;
 }

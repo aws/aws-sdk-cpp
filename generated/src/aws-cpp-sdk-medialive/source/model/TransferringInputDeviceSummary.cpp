@@ -27,12 +27,8 @@ TransferringInputDeviceSummary::TransferringInputDeviceSummary() :
 {
 }
 
-TransferringInputDeviceSummary::TransferringInputDeviceSummary(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_targetCustomerIdHasBeenSet(false),
-    m_transferType(InputDeviceTransferType::NOT_SET),
-    m_transferTypeHasBeenSet(false)
+TransferringInputDeviceSummary::TransferringInputDeviceSummary(JsonView jsonValue)
+  : TransferringInputDeviceSummary()
 {
   *this = jsonValue;
 }

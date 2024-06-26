@@ -26,11 +26,8 @@ CurrentRevision::CurrentRevision() :
 {
 }
 
-CurrentRevision::CurrentRevision(JsonView jsonValue) : 
-    m_revisionHasBeenSet(false),
-    m_changeIdentifierHasBeenSet(false),
-    m_createdHasBeenSet(false),
-    m_revisionSummaryHasBeenSet(false)
+CurrentRevision::CurrentRevision(JsonView jsonValue)
+  : CurrentRevision()
 {
   *this = jsonValue;
 }

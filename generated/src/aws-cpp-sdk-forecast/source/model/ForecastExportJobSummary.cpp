@@ -29,14 +29,8 @@ ForecastExportJobSummary::ForecastExportJobSummary() :
 {
 }
 
-ForecastExportJobSummary::ForecastExportJobSummary(JsonView jsonValue) : 
-    m_forecastExportJobArnHasBeenSet(false),
-    m_forecastExportJobNameHasBeenSet(false),
-    m_destinationHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastModificationTimeHasBeenSet(false)
+ForecastExportJobSummary::ForecastExportJobSummary(JsonView jsonValue)
+  : ForecastExportJobSummary()
 {
   *this = jsonValue;
 }

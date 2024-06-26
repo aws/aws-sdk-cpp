@@ -51,34 +51,8 @@ VpnTunnelOptionsSpecification::VpnTunnelOptionsSpecification() :
 {
 }
 
-VpnTunnelOptionsSpecification::VpnTunnelOptionsSpecification(const XmlNode& xmlNode) : 
-    m_tunnelInsideCidrHasBeenSet(false),
-    m_tunnelInsideIpv6CidrHasBeenSet(false),
-    m_preSharedKeyHasBeenSet(false),
-    m_phase1LifetimeSeconds(0),
-    m_phase1LifetimeSecondsHasBeenSet(false),
-    m_phase2LifetimeSeconds(0),
-    m_phase2LifetimeSecondsHasBeenSet(false),
-    m_rekeyMarginTimeSeconds(0),
-    m_rekeyMarginTimeSecondsHasBeenSet(false),
-    m_rekeyFuzzPercentage(0),
-    m_rekeyFuzzPercentageHasBeenSet(false),
-    m_replayWindowSize(0),
-    m_replayWindowSizeHasBeenSet(false),
-    m_dPDTimeoutSeconds(0),
-    m_dPDTimeoutSecondsHasBeenSet(false),
-    m_dPDTimeoutActionHasBeenSet(false),
-    m_phase1EncryptionAlgorithmsHasBeenSet(false),
-    m_phase2EncryptionAlgorithmsHasBeenSet(false),
-    m_phase1IntegrityAlgorithmsHasBeenSet(false),
-    m_phase2IntegrityAlgorithmsHasBeenSet(false),
-    m_phase1DHGroupNumbersHasBeenSet(false),
-    m_phase2DHGroupNumbersHasBeenSet(false),
-    m_iKEVersionsHasBeenSet(false),
-    m_startupActionHasBeenSet(false),
-    m_logOptionsHasBeenSet(false),
-    m_enableTunnelLifecycleControl(false),
-    m_enableTunnelLifecycleControlHasBeenSet(false)
+VpnTunnelOptionsSpecification::VpnTunnelOptionsSpecification(const XmlNode& xmlNode)
+  : VpnTunnelOptionsSpecification()
 {
   *this = xmlNode;
 }

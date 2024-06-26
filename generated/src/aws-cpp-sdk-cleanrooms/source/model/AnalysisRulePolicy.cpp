@@ -23,8 +23,8 @@ AnalysisRulePolicy::AnalysisRulePolicy() :
 {
 }
 
-AnalysisRulePolicy::AnalysisRulePolicy(JsonView jsonValue) : 
-    m_v1HasBeenSet(false)
+AnalysisRulePolicy::AnalysisRulePolicy(JsonView jsonValue)
+  : AnalysisRulePolicy()
 {
   *this = jsonValue;
 }

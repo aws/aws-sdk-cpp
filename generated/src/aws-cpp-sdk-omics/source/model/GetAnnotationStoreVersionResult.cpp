@@ -23,9 +23,8 @@ GetAnnotationStoreVersionResult::GetAnnotationStoreVersionResult() :
 {
 }
 
-GetAnnotationStoreVersionResult::GetAnnotationStoreVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(VersionStatus::NOT_SET),
-    m_versionSizeBytes(0)
+GetAnnotationStoreVersionResult::GetAnnotationStoreVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetAnnotationStoreVersionResult()
 {
   *this = result;
 }

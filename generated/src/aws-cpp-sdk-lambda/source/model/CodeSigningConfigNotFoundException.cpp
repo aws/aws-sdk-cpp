@@ -24,9 +24,8 @@ CodeSigningConfigNotFoundException::CodeSigningConfigNotFoundException() :
 {
 }
 
-CodeSigningConfigNotFoundException::CodeSigningConfigNotFoundException(JsonView jsonValue) : 
-    m_typeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+CodeSigningConfigNotFoundException::CodeSigningConfigNotFoundException(JsonView jsonValue)
+  : CodeSigningConfigNotFoundException()
 {
   *this = jsonValue;
 }

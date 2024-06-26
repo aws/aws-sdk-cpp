@@ -24,9 +24,8 @@ DataSource::DataSource() :
 {
 }
 
-DataSource::DataSource(JsonView jsonValue) : 
-    m_s3DataSourceHasBeenSet(false),
-    m_fileSystemDataSourceHasBeenSet(false)
+DataSource::DataSource(JsonView jsonValue)
+  : DataSource()
 {
   *this = jsonValue;
 }

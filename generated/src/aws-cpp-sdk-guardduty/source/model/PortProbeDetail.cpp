@@ -25,10 +25,8 @@ PortProbeDetail::PortProbeDetail() :
 {
 }
 
-PortProbeDetail::PortProbeDetail(JsonView jsonValue) : 
-    m_localPortDetailsHasBeenSet(false),
-    m_localIpDetailsHasBeenSet(false),
-    m_remoteIpDetailsHasBeenSet(false)
+PortProbeDetail::PortProbeDetail(JsonView jsonValue)
+  : PortProbeDetail()
 {
   *this = jsonValue;
 }

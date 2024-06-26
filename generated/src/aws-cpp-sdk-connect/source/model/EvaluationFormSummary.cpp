@@ -35,20 +35,8 @@ EvaluationFormSummary::EvaluationFormSummary() :
 {
 }
 
-EvaluationFormSummary::EvaluationFormSummary(JsonView jsonValue) : 
-    m_evaluationFormIdHasBeenSet(false),
-    m_evaluationFormArnHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_lastModifiedByHasBeenSet(false),
-    m_lastActivatedTimeHasBeenSet(false),
-    m_lastActivatedByHasBeenSet(false),
-    m_latestVersion(0),
-    m_latestVersionHasBeenSet(false),
-    m_activeVersion(0),
-    m_activeVersionHasBeenSet(false)
+EvaluationFormSummary::EvaluationFormSummary(JsonView jsonValue)
+  : EvaluationFormSummary()
 {
   *this = jsonValue;
 }

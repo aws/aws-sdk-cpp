@@ -26,11 +26,8 @@ ResiliencyScore::ResiliencyScore() :
 {
 }
 
-ResiliencyScore::ResiliencyScore(JsonView jsonValue) : 
-    m_componentScoreHasBeenSet(false),
-    m_disruptionScoreHasBeenSet(false),
-    m_score(0.0),
-    m_scoreHasBeenSet(false)
+ResiliencyScore::ResiliencyScore(JsonView jsonValue)
+  : ResiliencyScore()
 {
   *this = jsonValue;
 }

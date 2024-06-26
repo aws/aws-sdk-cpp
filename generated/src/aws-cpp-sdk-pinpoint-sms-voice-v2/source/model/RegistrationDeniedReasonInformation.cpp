@@ -27,12 +27,8 @@ RegistrationDeniedReasonInformation::RegistrationDeniedReasonInformation() :
 {
 }
 
-RegistrationDeniedReasonInformation::RegistrationDeniedReasonInformation(JsonView jsonValue) : 
-    m_reasonHasBeenSet(false),
-    m_shortDescriptionHasBeenSet(false),
-    m_longDescriptionHasBeenSet(false),
-    m_documentationTitleHasBeenSet(false),
-    m_documentationLinkHasBeenSet(false)
+RegistrationDeniedReasonInformation::RegistrationDeniedReasonInformation(JsonView jsonValue)
+  : RegistrationDeniedReasonInformation()
 {
   *this = jsonValue;
 }

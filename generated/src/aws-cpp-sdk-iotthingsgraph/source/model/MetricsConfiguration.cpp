@@ -25,10 +25,8 @@ MetricsConfiguration::MetricsConfiguration() :
 {
 }
 
-MetricsConfiguration::MetricsConfiguration(JsonView jsonValue) : 
-    m_cloudMetricEnabled(false),
-    m_cloudMetricEnabledHasBeenSet(false),
-    m_metricRuleRoleArnHasBeenSet(false)
+MetricsConfiguration::MetricsConfiguration(JsonView jsonValue)
+  : MetricsConfiguration()
 {
   *this = jsonValue;
 }

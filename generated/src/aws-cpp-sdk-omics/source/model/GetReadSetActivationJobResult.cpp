@@ -22,8 +22,8 @@ GetReadSetActivationJobResult::GetReadSetActivationJobResult() :
 {
 }
 
-GetReadSetActivationJobResult::GetReadSetActivationJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(ReadSetActivationJobStatus::NOT_SET)
+GetReadSetActivationJobResult::GetReadSetActivationJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetReadSetActivationJobResult()
 {
   *this = result;
 }

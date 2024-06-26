@@ -25,10 +25,8 @@ ResourceNotFoundException::ResourceNotFoundException() :
 {
 }
 
-ResourceNotFoundException::ResourceNotFoundException(JsonView jsonValue) : 
-    m_resourceTypeHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_messageHasBeenSet(false)
+ResourceNotFoundException::ResourceNotFoundException(JsonView jsonValue)
+  : ResourceNotFoundException()
 {
   *this = jsonValue;
 }

@@ -32,17 +32,8 @@ CoreNetworkChangeValues::CoreNetworkChangeValues() :
 {
 }
 
-CoreNetworkChangeValues::CoreNetworkChangeValues(JsonView jsonValue) : 
-    m_segmentNameHasBeenSet(false),
-    m_networkFunctionGroupNameHasBeenSet(false),
-    m_edgeLocationsHasBeenSet(false),
-    m_asn(0),
-    m_asnHasBeenSet(false),
-    m_cidrHasBeenSet(false),
-    m_destinationIdentifierHasBeenSet(false),
-    m_insideCidrBlocksHasBeenSet(false),
-    m_sharedSegmentsHasBeenSet(false),
-    m_serviceInsertionActionsHasBeenSet(false)
+CoreNetworkChangeValues::CoreNetworkChangeValues(JsonView jsonValue)
+  : CoreNetworkChangeValues()
 {
   *this = jsonValue;
 }

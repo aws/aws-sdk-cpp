@@ -28,13 +28,8 @@ PlayReadyDrm::PlayReadyDrm() :
 {
 }
 
-PlayReadyDrm::PlayReadyDrm(JsonView jsonValue) : 
-    m_formatHasBeenSet(false),
-    m_keyHasBeenSet(false),
-    m_keyMd5HasBeenSet(false),
-    m_keyIdHasBeenSet(false),
-    m_initializationVectorHasBeenSet(false),
-    m_licenseAcquisitionUrlHasBeenSet(false)
+PlayReadyDrm::PlayReadyDrm(JsonView jsonValue)
+  : PlayReadyDrm()
 {
   *this = jsonValue;
 }

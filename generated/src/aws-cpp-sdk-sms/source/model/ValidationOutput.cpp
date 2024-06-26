@@ -30,15 +30,8 @@ ValidationOutput::ValidationOutput() :
 {
 }
 
-ValidationOutput::ValidationOutput(JsonView jsonValue) : 
-    m_validationIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_status(ValidationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_latestValidationTimeHasBeenSet(false),
-    m_appValidationOutputHasBeenSet(false),
-    m_serverValidationOutputHasBeenSet(false)
+ValidationOutput::ValidationOutput(JsonView jsonValue)
+  : ValidationOutput()
 {
   *this = jsonValue;
 }

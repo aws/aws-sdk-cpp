@@ -23,8 +23,8 @@ OutputGroupDetail::OutputGroupDetail() :
 {
 }
 
-OutputGroupDetail::OutputGroupDetail(JsonView jsonValue) : 
-    m_outputDetailsHasBeenSet(false)
+OutputGroupDetail::OutputGroupDetail(JsonView jsonValue)
+  : OutputGroupDetail()
 {
   *this = jsonValue;
 }

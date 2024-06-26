@@ -24,9 +24,8 @@ ConnectorProfileConfig::ConnectorProfileConfig() :
 {
 }
 
-ConnectorProfileConfig::ConnectorProfileConfig(JsonView jsonValue) : 
-    m_connectorProfilePropertiesHasBeenSet(false),
-    m_connectorProfileCredentialsHasBeenSet(false)
+ConnectorProfileConfig::ConnectorProfileConfig(JsonView jsonValue)
+  : ConnectorProfileConfig()
 {
   *this = jsonValue;
 }

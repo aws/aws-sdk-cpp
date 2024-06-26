@@ -24,9 +24,8 @@ OfferAvailabilityEndDateFilterDateRange::OfferAvailabilityEndDateFilterDateRange
 {
 }
 
-OfferAvailabilityEndDateFilterDateRange::OfferAvailabilityEndDateFilterDateRange(JsonView jsonValue) : 
-    m_afterValueHasBeenSet(false),
-    m_beforeValueHasBeenSet(false)
+OfferAvailabilityEndDateFilterDateRange::OfferAvailabilityEndDateFilterDateRange(JsonView jsonValue)
+  : OfferAvailabilityEndDateFilterDateRange()
 {
   *this = jsonValue;
 }

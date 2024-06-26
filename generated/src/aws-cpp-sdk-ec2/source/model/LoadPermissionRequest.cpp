@@ -27,10 +27,8 @@ LoadPermissionRequest::LoadPermissionRequest() :
 {
 }
 
-LoadPermissionRequest::LoadPermissionRequest(const XmlNode& xmlNode) : 
-    m_group(PermissionGroup::NOT_SET),
-    m_groupHasBeenSet(false),
-    m_userIdHasBeenSet(false)
+LoadPermissionRequest::LoadPermissionRequest(const XmlNode& xmlNode)
+  : LoadPermissionRequest()
 {
   *this = xmlNode;
 }

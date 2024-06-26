@@ -40,25 +40,8 @@ DirectoryLimits::DirectoryLimits() :
 {
 }
 
-DirectoryLimits::DirectoryLimits(JsonView jsonValue) : 
-    m_cloudOnlyDirectoriesLimit(0),
-    m_cloudOnlyDirectoriesLimitHasBeenSet(false),
-    m_cloudOnlyDirectoriesCurrentCount(0),
-    m_cloudOnlyDirectoriesCurrentCountHasBeenSet(false),
-    m_cloudOnlyDirectoriesLimitReached(false),
-    m_cloudOnlyDirectoriesLimitReachedHasBeenSet(false),
-    m_cloudOnlyMicrosoftADLimit(0),
-    m_cloudOnlyMicrosoftADLimitHasBeenSet(false),
-    m_cloudOnlyMicrosoftADCurrentCount(0),
-    m_cloudOnlyMicrosoftADCurrentCountHasBeenSet(false),
-    m_cloudOnlyMicrosoftADLimitReached(false),
-    m_cloudOnlyMicrosoftADLimitReachedHasBeenSet(false),
-    m_connectedDirectoriesLimit(0),
-    m_connectedDirectoriesLimitHasBeenSet(false),
-    m_connectedDirectoriesCurrentCount(0),
-    m_connectedDirectoriesCurrentCountHasBeenSet(false),
-    m_connectedDirectoriesLimitReached(false),
-    m_connectedDirectoriesLimitReachedHasBeenSet(false)
+DirectoryLimits::DirectoryLimits(JsonView jsonValue)
+  : DirectoryLimits()
 {
   *this = jsonValue;
 }

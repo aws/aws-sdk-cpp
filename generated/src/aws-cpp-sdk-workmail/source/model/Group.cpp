@@ -29,14 +29,8 @@ Group::Group() :
 {
 }
 
-Group::Group(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_emailHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_state(EntityState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_enabledDateHasBeenSet(false),
-    m_disabledDateHasBeenSet(false)
+Group::Group(JsonView jsonValue)
+  : Group()
 {
   *this = jsonValue;
 }

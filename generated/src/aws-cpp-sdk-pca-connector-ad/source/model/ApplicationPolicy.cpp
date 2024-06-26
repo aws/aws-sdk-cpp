@@ -25,10 +25,8 @@ ApplicationPolicy::ApplicationPolicy() :
 {
 }
 
-ApplicationPolicy::ApplicationPolicy(JsonView jsonValue) : 
-    m_policyObjectIdentifierHasBeenSet(false),
-    m_policyType(ApplicationPolicyType::NOT_SET),
-    m_policyTypeHasBeenSet(false)
+ApplicationPolicy::ApplicationPolicy(JsonView jsonValue)
+  : ApplicationPolicy()
 {
   *this = jsonValue;
 }

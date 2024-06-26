@@ -31,16 +31,8 @@ ExecutionRecord::ExecutionRecord() :
 {
 }
 
-ExecutionRecord::ExecutionRecord(JsonView jsonValue) : 
-    m_executionIdHasBeenSet(false),
-    m_executionStatus(ExecutionStatus::NOT_SET),
-    m_executionStatusHasBeenSet(false),
-    m_executionResultHasBeenSet(false),
-    m_startedAtHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false),
-    m_dataPullStartTimeHasBeenSet(false),
-    m_dataPullEndTimeHasBeenSet(false),
-    m_metadataCatalogDetailsHasBeenSet(false)
+ExecutionRecord::ExecutionRecord(JsonView jsonValue)
+  : ExecutionRecord()
 {
   *this = jsonValue;
 }

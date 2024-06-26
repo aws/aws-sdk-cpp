@@ -22,8 +22,8 @@ GetMobileDeviceAccessEffectResult::GetMobileDeviceAccessEffectResult() :
 {
 }
 
-GetMobileDeviceAccessEffectResult::GetMobileDeviceAccessEffectResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_effect(MobileDeviceAccessRuleEffect::NOT_SET)
+GetMobileDeviceAccessEffectResult::GetMobileDeviceAccessEffectResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetMobileDeviceAccessEffectResult()
 {
   *this = result;
 }

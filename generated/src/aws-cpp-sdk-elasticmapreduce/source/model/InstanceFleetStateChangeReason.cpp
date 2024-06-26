@@ -25,10 +25,8 @@ InstanceFleetStateChangeReason::InstanceFleetStateChangeReason() :
 {
 }
 
-InstanceFleetStateChangeReason::InstanceFleetStateChangeReason(JsonView jsonValue) : 
-    m_code(InstanceFleetStateChangeReasonCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+InstanceFleetStateChangeReason::InstanceFleetStateChangeReason(JsonView jsonValue)
+  : InstanceFleetStateChangeReason()
 {
   *this = jsonValue;
 }

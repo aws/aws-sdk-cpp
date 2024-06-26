@@ -25,10 +25,8 @@ DataSourceCredentials::DataSourceCredentials() :
 {
 }
 
-DataSourceCredentials::DataSourceCredentials(JsonView jsonValue) : 
-    m_credentialPairHasBeenSet(false),
-    m_copySourceArnHasBeenSet(false),
-    m_secretArnHasBeenSet(false)
+DataSourceCredentials::DataSourceCredentials(JsonView jsonValue)
+  : DataSourceCredentials()
 {
   *this = jsonValue;
 }

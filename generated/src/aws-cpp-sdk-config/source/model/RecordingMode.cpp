@@ -25,10 +25,8 @@ RecordingMode::RecordingMode() :
 {
 }
 
-RecordingMode::RecordingMode(JsonView jsonValue) : 
-    m_recordingFrequency(RecordingFrequency::NOT_SET),
-    m_recordingFrequencyHasBeenSet(false),
-    m_recordingModeOverridesHasBeenSet(false)
+RecordingMode::RecordingMode(JsonView jsonValue)
+  : RecordingMode()
 {
   *this = jsonValue;
 }

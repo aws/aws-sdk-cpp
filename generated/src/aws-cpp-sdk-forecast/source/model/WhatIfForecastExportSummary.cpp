@@ -30,15 +30,8 @@ WhatIfForecastExportSummary::WhatIfForecastExportSummary() :
 {
 }
 
-WhatIfForecastExportSummary::WhatIfForecastExportSummary(JsonView jsonValue) : 
-    m_whatIfForecastExportArnHasBeenSet(false),
-    m_whatIfForecastArnsHasBeenSet(false),
-    m_whatIfForecastExportNameHasBeenSet(false),
-    m_destinationHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastModificationTimeHasBeenSet(false)
+WhatIfForecastExportSummary::WhatIfForecastExportSummary(JsonView jsonValue)
+  : WhatIfForecastExportSummary()
 {
   *this = jsonValue;
 }

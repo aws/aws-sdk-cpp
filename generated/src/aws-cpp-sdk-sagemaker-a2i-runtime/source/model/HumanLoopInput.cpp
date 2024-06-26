@@ -23,8 +23,8 @@ HumanLoopInput::HumanLoopInput() :
 {
 }
 
-HumanLoopInput::HumanLoopInput(JsonView jsonValue) : 
-    m_inputContentHasBeenSet(false)
+HumanLoopInput::HumanLoopInput(JsonView jsonValue)
+  : HumanLoopInput()
 {
   *this = jsonValue;
 }

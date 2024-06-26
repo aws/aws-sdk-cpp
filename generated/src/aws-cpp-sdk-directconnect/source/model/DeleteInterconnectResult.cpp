@@ -22,8 +22,8 @@ DeleteInterconnectResult::DeleteInterconnectResult() :
 {
 }
 
-DeleteInterconnectResult::DeleteInterconnectResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_interconnectState(InterconnectState::NOT_SET)
+DeleteInterconnectResult::DeleteInterconnectResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeleteInterconnectResult()
 {
   *this = result;
 }

@@ -23,8 +23,8 @@ ChannelModeratorSummary::ChannelModeratorSummary() :
 {
 }
 
-ChannelModeratorSummary::ChannelModeratorSummary(JsonView jsonValue) : 
-    m_moderatorHasBeenSet(false)
+ChannelModeratorSummary::ChannelModeratorSummary(JsonView jsonValue)
+  : ChannelModeratorSummary()
 {
   *this = jsonValue;
 }

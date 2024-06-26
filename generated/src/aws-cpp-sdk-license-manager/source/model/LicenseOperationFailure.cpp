@@ -31,16 +31,8 @@ LicenseOperationFailure::LicenseOperationFailure() :
 {
 }
 
-LicenseOperationFailure::LicenseOperationFailure(JsonView jsonValue) : 
-    m_resourceArnHasBeenSet(false),
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_failureTimeHasBeenSet(false),
-    m_operationNameHasBeenSet(false),
-    m_resourceOwnerIdHasBeenSet(false),
-    m_operationRequestedByHasBeenSet(false),
-    m_metadataListHasBeenSet(false)
+LicenseOperationFailure::LicenseOperationFailure(JsonView jsonValue)
+  : LicenseOperationFailure()
 {
   *this = jsonValue;
 }

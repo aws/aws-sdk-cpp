@@ -24,9 +24,8 @@ ContainerServiceLogEvent::ContainerServiceLogEvent() :
 {
 }
 
-ContainerServiceLogEvent::ContainerServiceLogEvent(JsonView jsonValue) : 
-    m_createdAtHasBeenSet(false),
-    m_messageHasBeenSet(false)
+ContainerServiceLogEvent::ContainerServiceLogEvent(JsonView jsonValue)
+  : ContainerServiceLogEvent()
 {
   *this = jsonValue;
 }

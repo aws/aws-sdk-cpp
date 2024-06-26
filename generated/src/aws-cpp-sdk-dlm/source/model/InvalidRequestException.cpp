@@ -26,11 +26,8 @@ InvalidRequestException::InvalidRequestException() :
 {
 }
 
-InvalidRequestException::InvalidRequestException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_codeHasBeenSet(false),
-    m_requiredParametersHasBeenSet(false),
-    m_mutuallyExclusiveParametersHasBeenSet(false)
+InvalidRequestException::InvalidRequestException(JsonView jsonValue)
+  : InvalidRequestException()
 {
   *this = jsonValue;
 }

@@ -29,14 +29,8 @@ ReplicationPendingModifiedValues::ReplicationPendingModifiedValues() :
 {
 }
 
-ReplicationPendingModifiedValues::ReplicationPendingModifiedValues(JsonView jsonValue) : 
-    m_replicationInstanceClassHasBeenSet(false),
-    m_allocatedStorage(0),
-    m_allocatedStorageHasBeenSet(false),
-    m_multiAZ(false),
-    m_multiAZHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_networkTypeHasBeenSet(false)
+ReplicationPendingModifiedValues::ReplicationPendingModifiedValues(JsonView jsonValue)
+  : ReplicationPendingModifiedValues()
 {
   *this = jsonValue;
 }

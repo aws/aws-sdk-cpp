@@ -23,9 +23,8 @@ SearchAssociatedTranscriptsResult::SearchAssociatedTranscriptsResult() :
 {
 }
 
-SearchAssociatedTranscriptsResult::SearchAssociatedTranscriptsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_nextIndex(0),
-    m_totalResults(0)
+SearchAssociatedTranscriptsResult::SearchAssociatedTranscriptsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : SearchAssociatedTranscriptsResult()
 {
   *this = result;
 }

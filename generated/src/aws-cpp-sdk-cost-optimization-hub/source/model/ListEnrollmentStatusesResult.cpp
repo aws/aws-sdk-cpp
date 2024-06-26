@@ -22,8 +22,8 @@ ListEnrollmentStatusesResult::ListEnrollmentStatusesResult() :
 {
 }
 
-ListEnrollmentStatusesResult::ListEnrollmentStatusesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_includeMemberAccounts(false)
+ListEnrollmentStatusesResult::ListEnrollmentStatusesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ListEnrollmentStatusesResult()
 {
   *this = result;
 }

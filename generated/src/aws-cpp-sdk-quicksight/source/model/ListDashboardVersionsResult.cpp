@@ -22,8 +22,8 @@ ListDashboardVersionsResult::ListDashboardVersionsResult() :
 {
 }
 
-ListDashboardVersionsResult::ListDashboardVersionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+ListDashboardVersionsResult::ListDashboardVersionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ListDashboardVersionsResult()
 {
   *this = result;
 }

@@ -24,9 +24,8 @@ SqlAlias::SqlAlias() :
 {
 }
 
-SqlAlias::SqlAlias(JsonView jsonValue) : 
-    m_fromHasBeenSet(false),
-    m_aliasHasBeenSet(false)
+SqlAlias::SqlAlias(JsonView jsonValue)
+  : SqlAlias()
 {
   *this = jsonValue;
 }

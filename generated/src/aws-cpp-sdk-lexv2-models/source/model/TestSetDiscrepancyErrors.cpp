@@ -24,9 +24,8 @@ TestSetDiscrepancyErrors::TestSetDiscrepancyErrors() :
 {
 }
 
-TestSetDiscrepancyErrors::TestSetDiscrepancyErrors(JsonView jsonValue) : 
-    m_intentDiscrepanciesHasBeenSet(false),
-    m_slotDiscrepanciesHasBeenSet(false)
+TestSetDiscrepancyErrors::TestSetDiscrepancyErrors(JsonView jsonValue)
+  : TestSetDiscrepancyErrors()
 {
   *this = jsonValue;
 }

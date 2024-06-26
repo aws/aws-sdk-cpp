@@ -23,8 +23,8 @@ EcsPropertiesOverride::EcsPropertiesOverride() :
 {
 }
 
-EcsPropertiesOverride::EcsPropertiesOverride(JsonView jsonValue) : 
-    m_taskPropertiesHasBeenSet(false)
+EcsPropertiesOverride::EcsPropertiesOverride(JsonView jsonValue)
+  : EcsPropertiesOverride()
 {
   *this = jsonValue;
 }

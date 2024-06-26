@@ -25,10 +25,8 @@ FindMatchesTaskRunProperties::FindMatchesTaskRunProperties() :
 {
 }
 
-FindMatchesTaskRunProperties::FindMatchesTaskRunProperties(JsonView jsonValue) : 
-    m_jobIdHasBeenSet(false),
-    m_jobNameHasBeenSet(false),
-    m_jobRunIdHasBeenSet(false)
+FindMatchesTaskRunProperties::FindMatchesTaskRunProperties(JsonView jsonValue)
+  : FindMatchesTaskRunProperties()
 {
   *this = jsonValue;
 }

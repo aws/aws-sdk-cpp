@@ -48,33 +48,8 @@ Vp9Settings::Vp9Settings() :
 {
 }
 
-Vp9Settings::Vp9Settings(JsonView jsonValue) : 
-    m_bitrate(0),
-    m_bitrateHasBeenSet(false),
-    m_framerateControl(Vp9FramerateControl::NOT_SET),
-    m_framerateControlHasBeenSet(false),
-    m_framerateConversionAlgorithm(Vp9FramerateConversionAlgorithm::NOT_SET),
-    m_framerateConversionAlgorithmHasBeenSet(false),
-    m_framerateDenominator(0),
-    m_framerateDenominatorHasBeenSet(false),
-    m_framerateNumerator(0),
-    m_framerateNumeratorHasBeenSet(false),
-    m_gopSize(0.0),
-    m_gopSizeHasBeenSet(false),
-    m_hrdBufferSize(0),
-    m_hrdBufferSizeHasBeenSet(false),
-    m_maxBitrate(0),
-    m_maxBitrateHasBeenSet(false),
-    m_parControl(Vp9ParControl::NOT_SET),
-    m_parControlHasBeenSet(false),
-    m_parDenominator(0),
-    m_parDenominatorHasBeenSet(false),
-    m_parNumerator(0),
-    m_parNumeratorHasBeenSet(false),
-    m_qualityTuningLevel(Vp9QualityTuningLevel::NOT_SET),
-    m_qualityTuningLevelHasBeenSet(false),
-    m_rateControlMode(Vp9RateControlMode::NOT_SET),
-    m_rateControlModeHasBeenSet(false)
+Vp9Settings::Vp9Settings(JsonView jsonValue)
+  : Vp9Settings()
 {
   *this = jsonValue;
 }

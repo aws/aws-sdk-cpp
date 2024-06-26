@@ -23,8 +23,8 @@ InputFormatConfiguration::InputFormatConfiguration() :
 {
 }
 
-InputFormatConfiguration::InputFormatConfiguration(JsonView jsonValue) : 
-    m_deserializerHasBeenSet(false)
+InputFormatConfiguration::InputFormatConfiguration(JsonView jsonValue)
+  : InputFormatConfiguration()
 {
   *this = jsonValue;
 }

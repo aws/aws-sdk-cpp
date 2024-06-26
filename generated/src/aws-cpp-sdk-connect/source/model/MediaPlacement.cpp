@@ -27,12 +27,8 @@ MediaPlacement::MediaPlacement() :
 {
 }
 
-MediaPlacement::MediaPlacement(JsonView jsonValue) : 
-    m_audioHostUrlHasBeenSet(false),
-    m_audioFallbackUrlHasBeenSet(false),
-    m_signalingUrlHasBeenSet(false),
-    m_turnControlUrlHasBeenSet(false),
-    m_eventIngestionUrlHasBeenSet(false)
+MediaPlacement::MediaPlacement(JsonView jsonValue)
+  : MediaPlacement()
 {
   *this = jsonValue;
 }

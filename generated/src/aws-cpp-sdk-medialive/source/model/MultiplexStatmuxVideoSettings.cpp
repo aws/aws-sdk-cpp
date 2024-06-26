@@ -28,13 +28,8 @@ MultiplexStatmuxVideoSettings::MultiplexStatmuxVideoSettings() :
 {
 }
 
-MultiplexStatmuxVideoSettings::MultiplexStatmuxVideoSettings(JsonView jsonValue) : 
-    m_maximumBitrate(0),
-    m_maximumBitrateHasBeenSet(false),
-    m_minimumBitrate(0),
-    m_minimumBitrateHasBeenSet(false),
-    m_priority(0),
-    m_priorityHasBeenSet(false)
+MultiplexStatmuxVideoSettings::MultiplexStatmuxVideoSettings(JsonView jsonValue)
+  : MultiplexStatmuxVideoSettings()
 {
   *this = jsonValue;
 }

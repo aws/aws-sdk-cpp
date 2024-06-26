@@ -28,13 +28,8 @@ BatchGetTableOptimizerError::BatchGetTableOptimizerError() :
 {
 }
 
-BatchGetTableOptimizerError::BatchGetTableOptimizerError(JsonView jsonValue) : 
-    m_errorHasBeenSet(false),
-    m_catalogIdHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_tableNameHasBeenSet(false),
-    m_type(TableOptimizerType::NOT_SET),
-    m_typeHasBeenSet(false)
+BatchGetTableOptimizerError::BatchGetTableOptimizerError(JsonView jsonValue)
+  : BatchGetTableOptimizerError()
 {
   *this = jsonValue;
 }

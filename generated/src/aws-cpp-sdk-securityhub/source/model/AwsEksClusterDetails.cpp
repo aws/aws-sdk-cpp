@@ -31,16 +31,8 @@ AwsEksClusterDetails::AwsEksClusterDetails() :
 {
 }
 
-AwsEksClusterDetails::AwsEksClusterDetails(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_certificateAuthorityDataHasBeenSet(false),
-    m_clusterStatusHasBeenSet(false),
-    m_endpointHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_resourcesVpcConfigHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_loggingHasBeenSet(false)
+AwsEksClusterDetails::AwsEksClusterDetails(JsonView jsonValue)
+  : AwsEksClusterDetails()
 {
   *this = jsonValue;
 }

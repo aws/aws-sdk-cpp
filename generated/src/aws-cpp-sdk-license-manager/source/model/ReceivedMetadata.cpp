@@ -26,11 +26,8 @@ ReceivedMetadata::ReceivedMetadata() :
 {
 }
 
-ReceivedMetadata::ReceivedMetadata(JsonView jsonValue) : 
-    m_receivedStatus(ReceivedStatus::NOT_SET),
-    m_receivedStatusHasBeenSet(false),
-    m_receivedStatusReasonHasBeenSet(false),
-    m_allowedOperationsHasBeenSet(false)
+ReceivedMetadata::ReceivedMetadata(JsonView jsonValue)
+  : ReceivedMetadata()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ NetworkImpairment::NetworkImpairment() :
 {
 }
 
-NetworkImpairment::NetworkImpairment(JsonView jsonValue) : 
-    m_networksHasBeenSet(false),
-    m_asPathHasBeenSet(false),
-    m_networkEventType(TriangulationEventType::NOT_SET),
-    m_networkEventTypeHasBeenSet(false)
+NetworkImpairment::NetworkImpairment(JsonView jsonValue)
+  : NetworkImpairment()
 {
   *this = jsonValue;
 }

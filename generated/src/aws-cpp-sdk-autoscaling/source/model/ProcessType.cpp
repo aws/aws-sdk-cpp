@@ -25,8 +25,8 @@ ProcessType::ProcessType() :
 {
 }
 
-ProcessType::ProcessType(const XmlNode& xmlNode) : 
-    m_processNameHasBeenSet(false)
+ProcessType::ProcessType(const XmlNode& xmlNode)
+  : ProcessType()
 {
   *this = xmlNode;
 }

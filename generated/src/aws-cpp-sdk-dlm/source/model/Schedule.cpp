@@ -34,19 +34,8 @@ Schedule::Schedule() :
 {
 }
 
-Schedule::Schedule(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_copyTags(false),
-    m_copyTagsHasBeenSet(false),
-    m_tagsToAddHasBeenSet(false),
-    m_variableTagsHasBeenSet(false),
-    m_createRuleHasBeenSet(false),
-    m_retainRuleHasBeenSet(false),
-    m_fastRestoreRuleHasBeenSet(false),
-    m_crossRegionCopyRulesHasBeenSet(false),
-    m_shareRulesHasBeenSet(false),
-    m_deprecateRuleHasBeenSet(false),
-    m_archiveRuleHasBeenSet(false)
+Schedule::Schedule(JsonView jsonValue)
+  : Schedule()
 {
   *this = jsonValue;
 }

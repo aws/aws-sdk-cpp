@@ -40,25 +40,8 @@ Finding::Finding() :
 {
 }
 
-Finding::Finding(JsonView jsonValue) : 
-    m_createdAtHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_detectorIdHasBeenSet(false),
-    m_detectorNameHasBeenSet(false),
-    m_detectorTagsHasBeenSet(false),
-    m_generatorIdHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_remediationHasBeenSet(false),
-    m_resourceHasBeenSet(false),
-    m_ruleIdHasBeenSet(false),
-    m_severity(Severity::NOT_SET),
-    m_severityHasBeenSet(false),
-    m_status(Status::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_vulnerabilityHasBeenSet(false)
+Finding::Finding(JsonView jsonValue)
+  : Finding()
 {
   *this = jsonValue;
 }

@@ -29,14 +29,8 @@ Retriever::Retriever() :
 {
 }
 
-Retriever::Retriever(JsonView jsonValue) : 
-    m_applicationIdHasBeenSet(false),
-    m_retrieverIdHasBeenSet(false),
-    m_type(RetrieverType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_status(RetrieverStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_displayNameHasBeenSet(false)
+Retriever::Retriever(JsonView jsonValue)
+  : Retriever()
 {
   *this = jsonValue;
 }

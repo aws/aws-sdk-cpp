@@ -31,16 +31,8 @@ Dataset::Dataset() :
 {
 }
 
-Dataset::Dataset(JsonView jsonValue) : 
-    m_identityIdHasBeenSet(false),
-    m_datasetNameHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_lastModifiedDateHasBeenSet(false),
-    m_lastModifiedByHasBeenSet(false),
-    m_dataStorage(0),
-    m_dataStorageHasBeenSet(false),
-    m_numRecords(0),
-    m_numRecordsHasBeenSet(false)
+Dataset::Dataset(JsonView jsonValue)
+  : Dataset()
 {
   *this = jsonValue;
 }

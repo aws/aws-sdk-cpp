@@ -43,26 +43,8 @@ ServiceConfiguration::ServiceConfiguration() :
 {
 }
 
-ServiceConfiguration::ServiceConfiguration(const XmlNode& xmlNode) : 
-    m_serviceTypeHasBeenSet(false),
-    m_serviceIdHasBeenSet(false),
-    m_serviceNameHasBeenSet(false),
-    m_serviceState(ServiceState::NOT_SET),
-    m_serviceStateHasBeenSet(false),
-    m_availabilityZonesHasBeenSet(false),
-    m_acceptanceRequired(false),
-    m_acceptanceRequiredHasBeenSet(false),
-    m_managesVpcEndpoints(false),
-    m_managesVpcEndpointsHasBeenSet(false),
-    m_networkLoadBalancerArnsHasBeenSet(false),
-    m_gatewayLoadBalancerArnsHasBeenSet(false),
-    m_supportedIpAddressTypesHasBeenSet(false),
-    m_baseEndpointDnsNamesHasBeenSet(false),
-    m_privateDnsNameHasBeenSet(false),
-    m_privateDnsNameConfigurationHasBeenSet(false),
-    m_payerResponsibility(PayerResponsibility::NOT_SET),
-    m_payerResponsibilityHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+ServiceConfiguration::ServiceConfiguration(const XmlNode& xmlNode)
+  : ServiceConfiguration()
 {
   *this = xmlNode;
 }

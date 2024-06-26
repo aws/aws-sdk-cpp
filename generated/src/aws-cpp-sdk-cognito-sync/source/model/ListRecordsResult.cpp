@@ -25,11 +25,8 @@ ListRecordsResult::ListRecordsResult() :
 {
 }
 
-ListRecordsResult::ListRecordsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_count(0),
-    m_datasetSyncCount(0),
-    m_datasetExists(false),
-    m_datasetDeletedAfterRequestedSyncCount(false)
+ListRecordsResult::ListRecordsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ListRecordsResult()
 {
   *this = result;
 }

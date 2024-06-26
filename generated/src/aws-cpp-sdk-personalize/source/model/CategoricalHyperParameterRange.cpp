@@ -24,9 +24,8 @@ CategoricalHyperParameterRange::CategoricalHyperParameterRange() :
 {
 }
 
-CategoricalHyperParameterRange::CategoricalHyperParameterRange(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+CategoricalHyperParameterRange::CategoricalHyperParameterRange(JsonView jsonValue)
+  : CategoricalHyperParameterRange()
 {
   *this = jsonValue;
 }

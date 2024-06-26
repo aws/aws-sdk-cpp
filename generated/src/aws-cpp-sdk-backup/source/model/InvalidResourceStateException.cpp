@@ -26,11 +26,8 @@ InvalidResourceStateException::InvalidResourceStateException() :
 {
 }
 
-InvalidResourceStateException::InvalidResourceStateException(JsonView jsonValue) : 
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_contextHasBeenSet(false)
+InvalidResourceStateException::InvalidResourceStateException(JsonView jsonValue)
+  : InvalidResourceStateException()
 {
   *this = jsonValue;
 }

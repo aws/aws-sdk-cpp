@@ -29,14 +29,8 @@ Container::Container() :
 {
 }
 
-Container::Container(JsonView jsonValue) : 
-    m_containerRuntimeHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_imageHasBeenSet(false),
-    m_imagePrefixHasBeenSet(false),
-    m_volumeMountsHasBeenSet(false),
-    m_securityContextHasBeenSet(false)
+Container::Container(JsonView jsonValue)
+  : Container()
 {
   *this = jsonValue;
 }

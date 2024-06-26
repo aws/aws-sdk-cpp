@@ -24,9 +24,8 @@ ATIModelPerformance::ATIModelPerformance() :
 {
 }
 
-ATIModelPerformance::ATIModelPerformance(JsonView jsonValue) : 
-    m_asi(0.0),
-    m_asiHasBeenSet(false)
+ATIModelPerformance::ATIModelPerformance(JsonView jsonValue)
+  : ATIModelPerformance()
 {
   *this = jsonValue;
 }

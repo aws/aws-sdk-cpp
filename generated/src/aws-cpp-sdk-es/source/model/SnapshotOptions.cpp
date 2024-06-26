@@ -24,9 +24,8 @@ SnapshotOptions::SnapshotOptions() :
 {
 }
 
-SnapshotOptions::SnapshotOptions(JsonView jsonValue) : 
-    m_automatedSnapshotStartHour(0),
-    m_automatedSnapshotStartHourHasBeenSet(false)
+SnapshotOptions::SnapshotOptions(JsonView jsonValue)
+  : SnapshotOptions()
 {
   *this = jsonValue;
 }

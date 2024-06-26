@@ -26,11 +26,8 @@ Action::Action() :
 {
 }
 
-Action::Action(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_uriHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
+Action::Action(JsonView jsonValue)
+  : Action()
 {
   *this = jsonValue;
 }

@@ -27,12 +27,8 @@ OutputSource::OutputSource() :
 {
 }
 
-OutputSource::OutputSource(JsonView jsonValue) : 
-    m_kMSArnHasBeenSet(false),
-    m_applyNormalization(false),
-    m_applyNormalizationHasBeenSet(false),
-    m_outputHasBeenSet(false),
-    m_outputS3PathHasBeenSet(false)
+OutputSource::OutputSource(JsonView jsonValue)
+  : OutputSource()
 {
   *this = jsonValue;
 }

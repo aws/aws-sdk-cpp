@@ -24,10 +24,8 @@ GetServiceLastAccessedDetailsResult::GetServiceLastAccessedDetailsResult() :
 {
 }
 
-GetServiceLastAccessedDetailsResult::GetServiceLastAccessedDetailsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_jobStatus(JobStatusType::NOT_SET),
-    m_jobType(AccessAdvisorUsageGranularityType::NOT_SET),
-    m_isTruncated(false)
+GetServiceLastAccessedDetailsResult::GetServiceLastAccessedDetailsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : GetServiceLastAccessedDetailsResult()
 {
   *this = result;
 }

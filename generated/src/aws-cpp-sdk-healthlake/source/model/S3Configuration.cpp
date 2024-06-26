@@ -24,9 +24,8 @@ S3Configuration::S3Configuration() :
 {
 }
 
-S3Configuration::S3Configuration(JsonView jsonValue) : 
-    m_s3UriHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
+S3Configuration::S3Configuration(JsonView jsonValue)
+  : S3Configuration()
 {
   *this = jsonValue;
 }

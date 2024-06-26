@@ -23,8 +23,8 @@ SmsSettings::SmsSettings() :
 {
 }
 
-SmsSettings::SmsSettings(JsonView jsonValue) : 
-    m_smsMessageHasBeenSet(false)
+SmsSettings::SmsSettings(JsonView jsonValue)
+  : SmsSettings()
 {
   *this = jsonValue;
 }

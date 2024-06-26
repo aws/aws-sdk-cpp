@@ -23,9 +23,8 @@ DescribeAccountSettingsResult::DescribeAccountSettingsResult() :
 {
 }
 
-DescribeAccountSettingsResult::DescribeAccountSettingsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_maxQueryTCU(0),
-    m_queryPricingModel(QueryPricingModel::NOT_SET)
+DescribeAccountSettingsResult::DescribeAccountSettingsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeAccountSettingsResult()
 {
   *this = result;
 }

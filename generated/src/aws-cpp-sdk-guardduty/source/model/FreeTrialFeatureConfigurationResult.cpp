@@ -26,11 +26,8 @@ FreeTrialFeatureConfigurationResult::FreeTrialFeatureConfigurationResult() :
 {
 }
 
-FreeTrialFeatureConfigurationResult::FreeTrialFeatureConfigurationResult(JsonView jsonValue) : 
-    m_name(FreeTrialFeatureResult::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_freeTrialDaysRemaining(0),
-    m_freeTrialDaysRemainingHasBeenSet(false)
+FreeTrialFeatureConfigurationResult::FreeTrialFeatureConfigurationResult(JsonView jsonValue)
+  : FreeTrialFeatureConfigurationResult()
 {
   *this = jsonValue;
 }

@@ -31,14 +31,8 @@ StreamingDistribution::StreamingDistribution() :
 {
 }
 
-StreamingDistribution::StreamingDistribution(const XmlNode& xmlNode) : 
-    m_idHasBeenSet(false),
-    m_aRNHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_domainNameHasBeenSet(false),
-    m_activeTrustedSignersHasBeenSet(false),
-    m_streamingDistributionConfigHasBeenSet(false)
+StreamingDistribution::StreamingDistribution(const XmlNode& xmlNode)
+  : StreamingDistribution()
 {
   *this = xmlNode;
 }

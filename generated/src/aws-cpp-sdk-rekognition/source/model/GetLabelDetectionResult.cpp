@@ -22,8 +22,8 @@ GetLabelDetectionResult::GetLabelDetectionResult() :
 {
 }
 
-GetLabelDetectionResult::GetLabelDetectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_jobStatus(VideoJobStatus::NOT_SET)
+GetLabelDetectionResult::GetLabelDetectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetLabelDetectionResult()
 {
   *this = result;
 }

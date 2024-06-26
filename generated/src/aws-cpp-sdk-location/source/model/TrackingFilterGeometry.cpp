@@ -23,8 +23,8 @@ TrackingFilterGeometry::TrackingFilterGeometry() :
 {
 }
 
-TrackingFilterGeometry::TrackingFilterGeometry(JsonView jsonValue) : 
-    m_polygonHasBeenSet(false)
+TrackingFilterGeometry::TrackingFilterGeometry(JsonView jsonValue)
+  : TrackingFilterGeometry()
 {
   *this = jsonValue;
 }

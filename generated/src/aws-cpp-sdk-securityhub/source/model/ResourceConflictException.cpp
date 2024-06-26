@@ -24,9 +24,8 @@ ResourceConflictException::ResourceConflictException() :
 {
 }
 
-ResourceConflictException::ResourceConflictException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_codeHasBeenSet(false)
+ResourceConflictException::ResourceConflictException(JsonView jsonValue)
+  : ResourceConflictException()
 {
   *this = jsonValue;
 }

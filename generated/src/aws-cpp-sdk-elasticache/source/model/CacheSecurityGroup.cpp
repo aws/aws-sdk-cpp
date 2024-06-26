@@ -29,12 +29,8 @@ CacheSecurityGroup::CacheSecurityGroup() :
 {
 }
 
-CacheSecurityGroup::CacheSecurityGroup(const XmlNode& xmlNode) : 
-    m_ownerIdHasBeenSet(false),
-    m_cacheSecurityGroupNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_eC2SecurityGroupsHasBeenSet(false),
-    m_aRNHasBeenSet(false)
+CacheSecurityGroup::CacheSecurityGroup(const XmlNode& xmlNode)
+  : CacheSecurityGroup()
 {
   *this = xmlNode;
 }

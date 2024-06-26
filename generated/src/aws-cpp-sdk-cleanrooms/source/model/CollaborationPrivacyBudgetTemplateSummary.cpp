@@ -31,16 +31,8 @@ CollaborationPrivacyBudgetTemplateSummary::CollaborationPrivacyBudgetTemplateSum
 {
 }
 
-CollaborationPrivacyBudgetTemplateSummary::CollaborationPrivacyBudgetTemplateSummary(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_collaborationIdHasBeenSet(false),
-    m_collaborationArnHasBeenSet(false),
-    m_creatorAccountIdHasBeenSet(false),
-    m_privacyBudgetType(PrivacyBudgetType::NOT_SET),
-    m_privacyBudgetTypeHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
+CollaborationPrivacyBudgetTemplateSummary::CollaborationPrivacyBudgetTemplateSummary(JsonView jsonValue)
+  : CollaborationPrivacyBudgetTemplateSummary()
 {
   *this = jsonValue;
 }

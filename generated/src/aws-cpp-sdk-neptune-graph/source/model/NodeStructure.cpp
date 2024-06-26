@@ -26,11 +26,8 @@ NodeStructure::NodeStructure() :
 {
 }
 
-NodeStructure::NodeStructure(JsonView jsonValue) : 
-    m_count(0),
-    m_countHasBeenSet(false),
-    m_nodePropertiesHasBeenSet(false),
-    m_distinctOutgoingEdgeLabelsHasBeenSet(false)
+NodeStructure::NodeStructure(JsonView jsonValue)
+  : NodeStructure()
 {
   *this = jsonValue;
 }

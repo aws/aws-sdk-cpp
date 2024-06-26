@@ -23,9 +23,8 @@ UpdateProtectConfigurationResult::UpdateProtectConfigurationResult() :
 {
 }
 
-UpdateProtectConfigurationResult::UpdateProtectConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_accountDefault(false),
-    m_deletionProtectionEnabled(false)
+UpdateProtectConfigurationResult::UpdateProtectConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateProtectConfigurationResult()
 {
   *this = result;
 }

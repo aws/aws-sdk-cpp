@@ -29,14 +29,8 @@ WorkflowTypeConfiguration::WorkflowTypeConfiguration() :
 {
 }
 
-WorkflowTypeConfiguration::WorkflowTypeConfiguration(JsonView jsonValue) : 
-    m_defaultTaskStartToCloseTimeoutHasBeenSet(false),
-    m_defaultExecutionStartToCloseTimeoutHasBeenSet(false),
-    m_defaultTaskListHasBeenSet(false),
-    m_defaultTaskPriorityHasBeenSet(false),
-    m_defaultChildPolicy(ChildPolicy::NOT_SET),
-    m_defaultChildPolicyHasBeenSet(false),
-    m_defaultLambdaRoleHasBeenSet(false)
+WorkflowTypeConfiguration::WorkflowTypeConfiguration(JsonView jsonValue)
+  : WorkflowTypeConfiguration()
 {
   *this = jsonValue;
 }

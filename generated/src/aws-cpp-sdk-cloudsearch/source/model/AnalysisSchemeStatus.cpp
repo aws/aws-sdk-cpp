@@ -26,9 +26,8 @@ AnalysisSchemeStatus::AnalysisSchemeStatus() :
 {
 }
 
-AnalysisSchemeStatus::AnalysisSchemeStatus(const XmlNode& xmlNode) : 
-    m_optionsHasBeenSet(false),
-    m_statusHasBeenSet(false)
+AnalysisSchemeStatus::AnalysisSchemeStatus(const XmlNode& xmlNode)
+  : AnalysisSchemeStatus()
 {
   *this = xmlNode;
 }

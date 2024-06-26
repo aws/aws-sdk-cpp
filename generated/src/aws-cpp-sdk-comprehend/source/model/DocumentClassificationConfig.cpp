@@ -25,10 +25,8 @@ DocumentClassificationConfig::DocumentClassificationConfig() :
 {
 }
 
-DocumentClassificationConfig::DocumentClassificationConfig(JsonView jsonValue) : 
-    m_mode(DocumentClassifierMode::NOT_SET),
-    m_modeHasBeenSet(false),
-    m_labelsHasBeenSet(false)
+DocumentClassificationConfig::DocumentClassificationConfig(JsonView jsonValue)
+  : DocumentClassificationConfig()
 {
   *this = jsonValue;
 }

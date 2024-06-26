@@ -26,11 +26,8 @@ Schedule::Schedule() :
 {
 }
 
-Schedule::Schedule(JsonView jsonValue) : 
-    m_scheduleExpressionHasBeenSet(false),
-    m_timezoneHasBeenSet(false),
-    m_pipelineExecutionStartCondition(PipelineExecutionStartCondition::NOT_SET),
-    m_pipelineExecutionStartConditionHasBeenSet(false)
+Schedule::Schedule(JsonView jsonValue)
+  : Schedule()
 {
   *this = jsonValue;
 }

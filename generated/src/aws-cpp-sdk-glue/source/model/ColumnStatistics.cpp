@@ -26,11 +26,8 @@ ColumnStatistics::ColumnStatistics() :
 {
 }
 
-ColumnStatistics::ColumnStatistics(JsonView jsonValue) : 
-    m_columnNameHasBeenSet(false),
-    m_columnTypeHasBeenSet(false),
-    m_analyzedTimeHasBeenSet(false),
-    m_statisticsDataHasBeenSet(false)
+ColumnStatistics::ColumnStatistics(JsonView jsonValue)
+  : ColumnStatistics()
 {
   *this = jsonValue;
 }

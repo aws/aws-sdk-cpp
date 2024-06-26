@@ -29,15 +29,8 @@ CreatePrivateVirtualInterfaceResult::CreatePrivateVirtualInterfaceResult() :
 {
 }
 
-CreatePrivateVirtualInterfaceResult::CreatePrivateVirtualInterfaceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_vlan(0),
-    m_asn(0),
-    m_amazonSideAsn(0),
-    m_addressFamily(AddressFamily::NOT_SET),
-    m_virtualInterfaceState(VirtualInterfaceState::NOT_SET),
-    m_mtu(0),
-    m_jumboFrameCapable(false),
-    m_siteLinkEnabled(false)
+CreatePrivateVirtualInterfaceResult::CreatePrivateVirtualInterfaceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreatePrivateVirtualInterfaceResult()
 {
   *this = result;
 }

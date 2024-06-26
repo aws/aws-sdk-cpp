@@ -25,10 +25,8 @@ ScanNameWithFindingNum::ScanNameWithFindingNum() :
 {
 }
 
-ScanNameWithFindingNum::ScanNameWithFindingNum(JsonView jsonValue) : 
-    m_findingNumber(0),
-    m_findingNumberHasBeenSet(false),
-    m_scanNameHasBeenSet(false)
+ScanNameWithFindingNum::ScanNameWithFindingNum(JsonView jsonValue)
+  : ScanNameWithFindingNum()
 {
   *this = jsonValue;
 }

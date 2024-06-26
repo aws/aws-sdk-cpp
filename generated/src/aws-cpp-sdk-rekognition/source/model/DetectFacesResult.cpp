@@ -22,8 +22,8 @@ DetectFacesResult::DetectFacesResult() :
 {
 }
 
-DetectFacesResult::DetectFacesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_orientationCorrection(OrientationCorrection::NOT_SET)
+DetectFacesResult::DetectFacesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DetectFacesResult()
 {
   *this = result;
 }

@@ -26,11 +26,8 @@ ADMChannelRequest::ADMChannelRequest() :
 {
 }
 
-ADMChannelRequest::ADMChannelRequest(JsonView jsonValue) : 
-    m_clientIdHasBeenSet(false),
-    m_clientSecretHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
+ADMChannelRequest::ADMChannelRequest(JsonView jsonValue)
+  : ADMChannelRequest()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ ModifyIntegrationResult::ModifyIntegrationResult() :
 {
 }
 
-ModifyIntegrationResult::ModifyIntegrationResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_status(IntegrationStatus::NOT_SET)
+ModifyIntegrationResult::ModifyIntegrationResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : ModifyIntegrationResult()
 {
   *this = result;
 }

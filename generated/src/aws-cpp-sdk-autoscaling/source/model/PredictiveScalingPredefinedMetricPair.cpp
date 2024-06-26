@@ -27,10 +27,8 @@ PredictiveScalingPredefinedMetricPair::PredictiveScalingPredefinedMetricPair() :
 {
 }
 
-PredictiveScalingPredefinedMetricPair::PredictiveScalingPredefinedMetricPair(const XmlNode& xmlNode) : 
-    m_predefinedMetricType(PredefinedMetricPairType::NOT_SET),
-    m_predefinedMetricTypeHasBeenSet(false),
-    m_resourceLabelHasBeenSet(false)
+PredictiveScalingPredefinedMetricPair::PredictiveScalingPredefinedMetricPair(const XmlNode& xmlNode)
+  : PredictiveScalingPredefinedMetricPair()
 {
   *this = xmlNode;
 }

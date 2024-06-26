@@ -26,11 +26,8 @@ TextDocumentStatistics::TextDocumentStatistics() :
 {
 }
 
-TextDocumentStatistics::TextDocumentStatistics(JsonView jsonValue) : 
-    m_indexedTextBytes(0),
-    m_indexedTextBytesHasBeenSet(false),
-    m_indexedTextDocumentCount(0),
-    m_indexedTextDocumentCountHasBeenSet(false)
+TextDocumentStatistics::TextDocumentStatistics(JsonView jsonValue)
+  : TextDocumentStatistics()
 {
   *this = jsonValue;
 }

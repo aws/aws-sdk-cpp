@@ -37,22 +37,8 @@ RecordDetail::RecordDetail() :
 {
 }
 
-RecordDetail::RecordDetail(JsonView jsonValue) : 
-    m_recordIdHasBeenSet(false),
-    m_provisionedProductNameHasBeenSet(false),
-    m_status(RecordStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_updatedTimeHasBeenSet(false),
-    m_provisionedProductTypeHasBeenSet(false),
-    m_recordTypeHasBeenSet(false),
-    m_provisionedProductIdHasBeenSet(false),
-    m_productIdHasBeenSet(false),
-    m_provisioningArtifactIdHasBeenSet(false),
-    m_pathIdHasBeenSet(false),
-    m_recordErrorsHasBeenSet(false),
-    m_recordTagsHasBeenSet(false),
-    m_launchRoleArnHasBeenSet(false)
+RecordDetail::RecordDetail(JsonView jsonValue)
+  : RecordDetail()
 {
   *this = jsonValue;
 }

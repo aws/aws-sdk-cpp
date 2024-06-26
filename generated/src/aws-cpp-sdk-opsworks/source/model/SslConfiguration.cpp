@@ -25,10 +25,8 @@ SslConfiguration::SslConfiguration() :
 {
 }
 
-SslConfiguration::SslConfiguration(JsonView jsonValue) : 
-    m_certificateHasBeenSet(false),
-    m_privateKeyHasBeenSet(false),
-    m_chainHasBeenSet(false)
+SslConfiguration::SslConfiguration(JsonView jsonValue)
+  : SslConfiguration()
 {
   *this = jsonValue;
 }

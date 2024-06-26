@@ -25,9 +25,8 @@ AttachmentInput::AttachmentInput() :
 {
 }
 
-AttachmentInput::AttachmentInput(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_dataHasBeenSet(false)
+AttachmentInput::AttachmentInput(JsonView jsonValue)
+  : AttachmentInput()
 {
   *this = jsonValue;
 }

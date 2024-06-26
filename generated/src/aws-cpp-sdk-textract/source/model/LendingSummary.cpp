@@ -24,9 +24,8 @@ LendingSummary::LendingSummary() :
 {
 }
 
-LendingSummary::LendingSummary(JsonView jsonValue) : 
-    m_documentGroupsHasBeenSet(false),
-    m_undetectedDocumentTypesHasBeenSet(false)
+LendingSummary::LendingSummary(JsonView jsonValue)
+  : LendingSummary()
 {
   *this = jsonValue;
 }

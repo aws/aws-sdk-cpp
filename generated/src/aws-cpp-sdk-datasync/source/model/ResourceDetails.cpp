@@ -25,10 +25,8 @@ ResourceDetails::ResourceDetails() :
 {
 }
 
-ResourceDetails::ResourceDetails(JsonView jsonValue) : 
-    m_netAppONTAPSVMsHasBeenSet(false),
-    m_netAppONTAPVolumesHasBeenSet(false),
-    m_netAppONTAPClustersHasBeenSet(false)
+ResourceDetails::ResourceDetails(JsonView jsonValue)
+  : ResourceDetails()
 {
   *this = jsonValue;
 }

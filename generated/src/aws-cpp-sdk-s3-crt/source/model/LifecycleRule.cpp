@@ -33,16 +33,8 @@ LifecycleRule::LifecycleRule() :
 {
 }
 
-LifecycleRule::LifecycleRule(const XmlNode& xmlNode) : 
-    m_expirationHasBeenSet(false),
-    m_iDHasBeenSet(false),
-    m_filterHasBeenSet(false),
-    m_status(ExpirationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_transitionsHasBeenSet(false),
-    m_noncurrentVersionTransitionsHasBeenSet(false),
-    m_noncurrentVersionExpirationHasBeenSet(false),
-    m_abortIncompleteMultipartUploadHasBeenSet(false)
+LifecycleRule::LifecycleRule(const XmlNode& xmlNode)
+  : LifecycleRule()
 {
   *this = xmlNode;
 }

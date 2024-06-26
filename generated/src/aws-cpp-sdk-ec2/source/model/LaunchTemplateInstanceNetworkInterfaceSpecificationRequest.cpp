@@ -56,39 +56,8 @@ LaunchTemplateInstanceNetworkInterfaceSpecificationRequest::LaunchTemplateInstan
 {
 }
 
-LaunchTemplateInstanceNetworkInterfaceSpecificationRequest::LaunchTemplateInstanceNetworkInterfaceSpecificationRequest(const XmlNode& xmlNode) : 
-    m_associateCarrierIpAddress(false),
-    m_associateCarrierIpAddressHasBeenSet(false),
-    m_associatePublicIpAddress(false),
-    m_associatePublicIpAddressHasBeenSet(false),
-    m_deleteOnTermination(false),
-    m_deleteOnTerminationHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_deviceIndex(0),
-    m_deviceIndexHasBeenSet(false),
-    m_groupsHasBeenSet(false),
-    m_interfaceTypeHasBeenSet(false),
-    m_ipv6AddressCount(0),
-    m_ipv6AddressCountHasBeenSet(false),
-    m_ipv6AddressesHasBeenSet(false),
-    m_networkInterfaceIdHasBeenSet(false),
-    m_privateIpAddressHasBeenSet(false),
-    m_privateIpAddressesHasBeenSet(false),
-    m_secondaryPrivateIpAddressCount(0),
-    m_secondaryPrivateIpAddressCountHasBeenSet(false),
-    m_subnetIdHasBeenSet(false),
-    m_networkCardIndex(0),
-    m_networkCardIndexHasBeenSet(false),
-    m_ipv4PrefixesHasBeenSet(false),
-    m_ipv4PrefixCount(0),
-    m_ipv4PrefixCountHasBeenSet(false),
-    m_ipv6PrefixesHasBeenSet(false),
-    m_ipv6PrefixCount(0),
-    m_ipv6PrefixCountHasBeenSet(false),
-    m_primaryIpv6(false),
-    m_primaryIpv6HasBeenSet(false),
-    m_enaSrdSpecificationHasBeenSet(false),
-    m_connectionTrackingSpecificationHasBeenSet(false)
+LaunchTemplateInstanceNetworkInterfaceSpecificationRequest::LaunchTemplateInstanceNetworkInterfaceSpecificationRequest(const XmlNode& xmlNode)
+  : LaunchTemplateInstanceNetworkInterfaceSpecificationRequest()
 {
   *this = xmlNode;
 }

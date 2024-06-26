@@ -22,8 +22,8 @@ RestoreAnalysisResult::RestoreAnalysisResult() :
 {
 }
 
-RestoreAnalysisResult::RestoreAnalysisResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+RestoreAnalysisResult::RestoreAnalysisResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : RestoreAnalysisResult()
 {
   *this = result;
 }

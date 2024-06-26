@@ -26,11 +26,8 @@ FormButton::FormButton() :
 {
 }
 
-FormButton::FormButton(JsonView jsonValue) : 
-    m_excluded(false),
-    m_excludedHasBeenSet(false),
-    m_childrenHasBeenSet(false),
-    m_positionHasBeenSet(false)
+FormButton::FormButton(JsonView jsonValue)
+  : FormButton()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ EFSMountFailureException::EFSMountFailureException() :
 {
 }
 
-EFSMountFailureException::EFSMountFailureException(JsonView jsonValue) : 
-    m_typeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+EFSMountFailureException::EFSMountFailureException(JsonView jsonValue)
+  : EFSMountFailureException()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ GlueSelfGrantStatusOutput::GlueSelfGrantStatusOutput() :
 {
 }
 
-GlueSelfGrantStatusOutput::GlueSelfGrantStatusOutput(JsonView jsonValue) : 
-    m_selfGrantStatusDetailsHasBeenSet(false)
+GlueSelfGrantStatusOutput::GlueSelfGrantStatusOutput(JsonView jsonValue)
+  : GlueSelfGrantStatusOutput()
 {
   *this = jsonValue;
 }

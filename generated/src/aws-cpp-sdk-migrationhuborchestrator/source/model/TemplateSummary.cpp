@@ -26,11 +26,8 @@ TemplateSummary::TemplateSummary() :
 {
 }
 
-TemplateSummary::TemplateSummary(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+TemplateSummary::TemplateSummary(JsonView jsonValue)
+  : TemplateSummary()
 {
   *this = jsonValue;
 }

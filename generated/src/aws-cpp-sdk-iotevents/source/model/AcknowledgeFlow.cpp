@@ -24,9 +24,8 @@ AcknowledgeFlow::AcknowledgeFlow() :
 {
 }
 
-AcknowledgeFlow::AcknowledgeFlow(JsonView jsonValue) : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
+AcknowledgeFlow::AcknowledgeFlow(JsonView jsonValue)
+  : AcknowledgeFlow()
 {
   *this = jsonValue;
 }

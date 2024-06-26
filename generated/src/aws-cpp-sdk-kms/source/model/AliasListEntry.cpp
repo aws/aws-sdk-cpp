@@ -27,12 +27,8 @@ AliasListEntry::AliasListEntry() :
 {
 }
 
-AliasListEntry::AliasListEntry(JsonView jsonValue) : 
-    m_aliasNameHasBeenSet(false),
-    m_aliasArnHasBeenSet(false),
-    m_targetKeyIdHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_lastUpdatedDateHasBeenSet(false)
+AliasListEntry::AliasListEntry(JsonView jsonValue)
+  : AliasListEntry()
 {
   *this = jsonValue;
 }

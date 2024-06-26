@@ -25,10 +25,8 @@ FreeTrialPricingTerm::FreeTrialPricingTerm() :
 {
 }
 
-FreeTrialPricingTerm::FreeTrialPricingTerm(JsonView jsonValue) : 
-    m_durationHasBeenSet(false),
-    m_grantsHasBeenSet(false),
-    m_typeHasBeenSet(false)
+FreeTrialPricingTerm::FreeTrialPricingTerm(JsonView jsonValue)
+  : FreeTrialPricingTerm()
 {
   *this = jsonValue;
 }

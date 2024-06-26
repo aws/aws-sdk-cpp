@@ -24,9 +24,8 @@ AppUnitError::AppUnitError() :
 {
 }
 
-AppUnitError::AppUnitError(JsonView jsonValue) : 
-    m_appUnitErrorCategory(AppUnitErrorCategory::NOT_SET),
-    m_appUnitErrorCategoryHasBeenSet(false)
+AppUnitError::AppUnitError(JsonView jsonValue)
+  : AppUnitError()
 {
   *this = jsonValue;
 }

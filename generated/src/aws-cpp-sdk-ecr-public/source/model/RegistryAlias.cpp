@@ -29,14 +29,8 @@ RegistryAlias::RegistryAlias() :
 {
 }
 
-RegistryAlias::RegistryAlias(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_status(RegistryAliasStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_primaryRegistryAlias(false),
-    m_primaryRegistryAliasHasBeenSet(false),
-    m_defaultRegistryAlias(false),
-    m_defaultRegistryAliasHasBeenSet(false)
+RegistryAlias::RegistryAlias(JsonView jsonValue)
+  : RegistryAlias()
 {
   *this = jsonValue;
 }

@@ -27,12 +27,8 @@ JobExecutionState::JobExecutionState() :
 {
 }
 
-JobExecutionState::JobExecutionState(JsonView jsonValue) : 
-    m_status(JobExecutionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusDetailsHasBeenSet(false),
-    m_versionNumber(0),
-    m_versionNumberHasBeenSet(false)
+JobExecutionState::JobExecutionState(JsonView jsonValue)
+  : JobExecutionState()
 {
   *this = jsonValue;
 }

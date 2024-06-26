@@ -25,10 +25,8 @@ EBSStorageInfo::EBSStorageInfo() :
 {
 }
 
-EBSStorageInfo::EBSStorageInfo(JsonView jsonValue) : 
-    m_provisionedThroughputHasBeenSet(false),
-    m_volumeSize(0),
-    m_volumeSizeHasBeenSet(false)
+EBSStorageInfo::EBSStorageInfo(JsonView jsonValue)
+  : EBSStorageInfo()
 {
   *this = jsonValue;
 }

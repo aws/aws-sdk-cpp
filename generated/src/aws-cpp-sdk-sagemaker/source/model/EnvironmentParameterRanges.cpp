@@ -23,8 +23,8 @@ EnvironmentParameterRanges::EnvironmentParameterRanges() :
 {
 }
 
-EnvironmentParameterRanges::EnvironmentParameterRanges(JsonView jsonValue) : 
-    m_categoricalParameterRangesHasBeenSet(false)
+EnvironmentParameterRanges::EnvironmentParameterRanges(JsonView jsonValue)
+  : EnvironmentParameterRanges()
 {
   *this = jsonValue;
 }

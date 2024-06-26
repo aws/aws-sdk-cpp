@@ -24,9 +24,8 @@ AssetBundleImportJobThemeOverrideTags::AssetBundleImportJobThemeOverrideTags() :
 {
 }
 
-AssetBundleImportJobThemeOverrideTags::AssetBundleImportJobThemeOverrideTags(JsonView jsonValue) : 
-    m_themeIdsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+AssetBundleImportJobThemeOverrideTags::AssetBundleImportJobThemeOverrideTags(JsonView jsonValue)
+  : AssetBundleImportJobThemeOverrideTags()
 {
   *this = jsonValue;
 }

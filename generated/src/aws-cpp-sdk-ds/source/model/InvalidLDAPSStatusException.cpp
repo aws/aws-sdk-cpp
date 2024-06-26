@@ -24,9 +24,8 @@ InvalidLDAPSStatusException::InvalidLDAPSStatusException() :
 {
 }
 
-InvalidLDAPSStatusException::InvalidLDAPSStatusException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
+InvalidLDAPSStatusException::InvalidLDAPSStatusException(JsonView jsonValue)
+  : InvalidLDAPSStatusException()
 {
   *this = jsonValue;
 }

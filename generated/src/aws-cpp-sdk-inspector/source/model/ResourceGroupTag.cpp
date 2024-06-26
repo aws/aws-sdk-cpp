@@ -24,9 +24,8 @@ ResourceGroupTag::ResourceGroupTag() :
 {
 }
 
-ResourceGroupTag::ResourceGroupTag(JsonView jsonValue) : 
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false)
+ResourceGroupTag::ResourceGroupTag(JsonView jsonValue)
+  : ResourceGroupTag()
 {
   *this = jsonValue;
 }

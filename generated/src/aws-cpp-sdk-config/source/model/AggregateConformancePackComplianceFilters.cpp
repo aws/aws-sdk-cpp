@@ -27,12 +27,8 @@ AggregateConformancePackComplianceFilters::AggregateConformancePackComplianceFil
 {
 }
 
-AggregateConformancePackComplianceFilters::AggregateConformancePackComplianceFilters(JsonView jsonValue) : 
-    m_conformancePackNameHasBeenSet(false),
-    m_complianceType(ConformancePackComplianceType::NOT_SET),
-    m_complianceTypeHasBeenSet(false),
-    m_accountIdHasBeenSet(false),
-    m_awsRegionHasBeenSet(false)
+AggregateConformancePackComplianceFilters::AggregateConformancePackComplianceFilters(JsonView jsonValue)
+  : AggregateConformancePackComplianceFilters()
 {
   *this = jsonValue;
 }

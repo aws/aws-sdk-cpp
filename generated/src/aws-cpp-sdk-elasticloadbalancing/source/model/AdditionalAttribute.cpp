@@ -26,9 +26,8 @@ AdditionalAttribute::AdditionalAttribute() :
 {
 }
 
-AdditionalAttribute::AdditionalAttribute(const XmlNode& xmlNode) : 
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false)
+AdditionalAttribute::AdditionalAttribute(const XmlNode& xmlNode)
+  : AdditionalAttribute()
 {
   *this = xmlNode;
 }

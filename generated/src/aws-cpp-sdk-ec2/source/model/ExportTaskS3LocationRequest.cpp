@@ -26,9 +26,8 @@ ExportTaskS3LocationRequest::ExportTaskS3LocationRequest() :
 {
 }
 
-ExportTaskS3LocationRequest::ExportTaskS3LocationRequest(const XmlNode& xmlNode) : 
-    m_s3BucketHasBeenSet(false),
-    m_s3PrefixHasBeenSet(false)
+ExportTaskS3LocationRequest::ExportTaskS3LocationRequest(const XmlNode& xmlNode)
+  : ExportTaskS3LocationRequest()
 {
   *this = xmlNode;
 }

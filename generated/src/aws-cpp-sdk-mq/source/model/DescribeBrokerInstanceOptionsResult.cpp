@@ -22,8 +22,8 @@ DescribeBrokerInstanceOptionsResult::DescribeBrokerInstanceOptionsResult() :
 {
 }
 
-DescribeBrokerInstanceOptionsResult::DescribeBrokerInstanceOptionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_maxResults(0)
+DescribeBrokerInstanceOptionsResult::DescribeBrokerInstanceOptionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeBrokerInstanceOptionsResult()
 {
   *this = result;
 }

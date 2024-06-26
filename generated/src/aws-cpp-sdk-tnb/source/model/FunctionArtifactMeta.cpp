@@ -23,8 +23,8 @@ FunctionArtifactMeta::FunctionArtifactMeta() :
 {
 }
 
-FunctionArtifactMeta::FunctionArtifactMeta(JsonView jsonValue) : 
-    m_overridesHasBeenSet(false)
+FunctionArtifactMeta::FunctionArtifactMeta(JsonView jsonValue)
+  : FunctionArtifactMeta()
 {
   *this = jsonValue;
 }

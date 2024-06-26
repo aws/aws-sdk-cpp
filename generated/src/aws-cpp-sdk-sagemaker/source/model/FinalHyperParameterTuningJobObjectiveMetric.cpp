@@ -27,12 +27,8 @@ FinalHyperParameterTuningJobObjectiveMetric::FinalHyperParameterTuningJobObjecti
 {
 }
 
-FinalHyperParameterTuningJobObjectiveMetric::FinalHyperParameterTuningJobObjectiveMetric(JsonView jsonValue) : 
-    m_type(HyperParameterTuningJobObjectiveType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_metricNameHasBeenSet(false),
-    m_value(0.0),
-    m_valueHasBeenSet(false)
+FinalHyperParameterTuningJobObjectiveMetric::FinalHyperParameterTuningJobObjectiveMetric(JsonView jsonValue)
+  : FinalHyperParameterTuningJobObjectiveMetric()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ NotServiceResourceError::NotServiceResourceError() :
 {
 }
 
-NotServiceResourceError::NotServiceResourceError(JsonView jsonValue) : 
-    m_resourceARNHasBeenSet(false),
-    m_messageHasBeenSet(false)
+NotServiceResourceError::NotServiceResourceError(JsonView jsonValue)
+  : NotServiceResourceError()
 {
   *this = jsonValue;
 }

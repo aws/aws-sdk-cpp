@@ -22,8 +22,8 @@ PostTimeSeriesDataPointsResult::PostTimeSeriesDataPointsResult() :
 {
 }
 
-PostTimeSeriesDataPointsResult::PostTimeSeriesDataPointsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_entityType(TimeSeriesEntityType::NOT_SET)
+PostTimeSeriesDataPointsResult::PostTimeSeriesDataPointsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : PostTimeSeriesDataPointsResult()
 {
   *this = result;
 }

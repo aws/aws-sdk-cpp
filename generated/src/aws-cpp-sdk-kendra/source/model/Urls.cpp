@@ -24,9 +24,8 @@ Urls::Urls() :
 {
 }
 
-Urls::Urls(JsonView jsonValue) : 
-    m_seedUrlConfigurationHasBeenSet(false),
-    m_siteMapsConfigurationHasBeenSet(false)
+Urls::Urls(JsonView jsonValue)
+  : Urls()
 {
   *this = jsonValue;
 }

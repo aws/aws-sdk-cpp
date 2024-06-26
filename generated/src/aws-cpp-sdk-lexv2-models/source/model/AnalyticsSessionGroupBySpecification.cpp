@@ -24,9 +24,8 @@ AnalyticsSessionGroupBySpecification::AnalyticsSessionGroupBySpecification() :
 {
 }
 
-AnalyticsSessionGroupBySpecification::AnalyticsSessionGroupBySpecification(JsonView jsonValue) : 
-    m_name(AnalyticsSessionField::NOT_SET),
-    m_nameHasBeenSet(false)
+AnalyticsSessionGroupBySpecification::AnalyticsSessionGroupBySpecification(JsonView jsonValue)
+  : AnalyticsSessionGroupBySpecification()
 {
   *this = jsonValue;
 }

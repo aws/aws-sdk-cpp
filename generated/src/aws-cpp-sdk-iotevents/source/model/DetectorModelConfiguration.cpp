@@ -34,19 +34,8 @@ DetectorModelConfiguration::DetectorModelConfiguration() :
 {
 }
 
-DetectorModelConfiguration::DetectorModelConfiguration(JsonView jsonValue) : 
-    m_detectorModelNameHasBeenSet(false),
-    m_detectorModelVersionHasBeenSet(false),
-    m_detectorModelDescriptionHasBeenSet(false),
-    m_detectorModelArnHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastUpdateTimeHasBeenSet(false),
-    m_status(DetectorModelVersionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_keyHasBeenSet(false),
-    m_evaluationMethod(EvaluationMethod::NOT_SET),
-    m_evaluationMethodHasBeenSet(false)
+DetectorModelConfiguration::DetectorModelConfiguration(JsonView jsonValue)
+  : DetectorModelConfiguration()
 {
   *this = jsonValue;
 }

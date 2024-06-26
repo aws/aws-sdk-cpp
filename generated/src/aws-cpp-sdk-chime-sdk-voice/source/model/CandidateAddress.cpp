@@ -29,14 +29,8 @@ CandidateAddress::CandidateAddress() :
 {
 }
 
-CandidateAddress::CandidateAddress(JsonView jsonValue) : 
-    m_streetInfoHasBeenSet(false),
-    m_streetNumberHasBeenSet(false),
-    m_cityHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_postalCodeHasBeenSet(false),
-    m_postalCodePlus4HasBeenSet(false),
-    m_countryHasBeenSet(false)
+CandidateAddress::CandidateAddress(JsonView jsonValue)
+  : CandidateAddress()
 {
   *this = jsonValue;
 }

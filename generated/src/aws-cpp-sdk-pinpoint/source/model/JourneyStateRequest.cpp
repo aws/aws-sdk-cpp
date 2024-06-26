@@ -24,9 +24,8 @@ JourneyStateRequest::JourneyStateRequest() :
 {
 }
 
-JourneyStateRequest::JourneyStateRequest(JsonView jsonValue) : 
-    m_state(State::NOT_SET),
-    m_stateHasBeenSet(false)
+JourneyStateRequest::JourneyStateRequest(JsonView jsonValue)
+  : JourneyStateRequest()
 {
   *this = jsonValue;
 }

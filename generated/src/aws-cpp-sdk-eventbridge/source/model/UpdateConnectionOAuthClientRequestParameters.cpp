@@ -24,9 +24,8 @@ UpdateConnectionOAuthClientRequestParameters::UpdateConnectionOAuthClientRequest
 {
 }
 
-UpdateConnectionOAuthClientRequestParameters::UpdateConnectionOAuthClientRequestParameters(JsonView jsonValue) : 
-    m_clientIDHasBeenSet(false),
-    m_clientSecretHasBeenSet(false)
+UpdateConnectionOAuthClientRequestParameters::UpdateConnectionOAuthClientRequestParameters(JsonView jsonValue)
+  : UpdateConnectionOAuthClientRequestParameters()
 {
   *this = jsonValue;
 }

@@ -23,9 +23,8 @@ ListChangedBlocksResult::ListChangedBlocksResult() :
 {
 }
 
-ListChangedBlocksResult::ListChangedBlocksResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_volumeSize(0),
-    m_blockSize(0)
+ListChangedBlocksResult::ListChangedBlocksResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ListChangedBlocksResult()
 {
   *this = result;
 }

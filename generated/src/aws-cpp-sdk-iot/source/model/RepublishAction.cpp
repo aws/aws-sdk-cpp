@@ -27,12 +27,8 @@ RepublishAction::RepublishAction() :
 {
 }
 
-RepublishAction::RepublishAction(JsonView jsonValue) : 
-    m_roleArnHasBeenSet(false),
-    m_topicHasBeenSet(false),
-    m_qos(0),
-    m_qosHasBeenSet(false),
-    m_headersHasBeenSet(false)
+RepublishAction::RepublishAction(JsonView jsonValue)
+  : RepublishAction()
 {
   *this = jsonValue;
 }

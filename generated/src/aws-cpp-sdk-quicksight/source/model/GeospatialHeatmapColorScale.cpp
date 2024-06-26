@@ -23,8 +23,8 @@ GeospatialHeatmapColorScale::GeospatialHeatmapColorScale() :
 {
 }
 
-GeospatialHeatmapColorScale::GeospatialHeatmapColorScale(JsonView jsonValue) : 
-    m_colorsHasBeenSet(false)
+GeospatialHeatmapColorScale::GeospatialHeatmapColorScale(JsonView jsonValue)
+  : GeospatialHeatmapColorScale()
 {
   *this = jsonValue;
 }

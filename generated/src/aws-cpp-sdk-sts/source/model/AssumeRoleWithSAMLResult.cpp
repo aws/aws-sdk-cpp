@@ -22,8 +22,8 @@ AssumeRoleWithSAMLResult::AssumeRoleWithSAMLResult() :
 {
 }
 
-AssumeRoleWithSAMLResult::AssumeRoleWithSAMLResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_packedPolicySize(0)
+AssumeRoleWithSAMLResult::AssumeRoleWithSAMLResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : AssumeRoleWithSAMLResult()
 {
   *this = result;
 }

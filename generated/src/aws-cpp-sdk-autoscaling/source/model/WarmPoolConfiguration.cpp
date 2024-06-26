@@ -33,16 +33,8 @@ WarmPoolConfiguration::WarmPoolConfiguration() :
 {
 }
 
-WarmPoolConfiguration::WarmPoolConfiguration(const XmlNode& xmlNode) : 
-    m_maxGroupPreparedCapacity(0),
-    m_maxGroupPreparedCapacityHasBeenSet(false),
-    m_minSize(0),
-    m_minSizeHasBeenSet(false),
-    m_poolState(WarmPoolState::NOT_SET),
-    m_poolStateHasBeenSet(false),
-    m_status(WarmPoolStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_instanceReusePolicyHasBeenSet(false)
+WarmPoolConfiguration::WarmPoolConfiguration(const XmlNode& xmlNode)
+  : WarmPoolConfiguration()
 {
   *this = xmlNode;
 }

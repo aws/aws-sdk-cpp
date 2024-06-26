@@ -23,8 +23,8 @@ SearchTermFilterExpression::SearchTermFilterExpression() :
 {
 }
 
-SearchTermFilterExpression::SearchTermFilterExpression(JsonView jsonValue) : 
-    m_searchTermHasBeenSet(false)
+SearchTermFilterExpression::SearchTermFilterExpression(JsonView jsonValue)
+  : SearchTermFilterExpression()
 {
   *this = jsonValue;
 }

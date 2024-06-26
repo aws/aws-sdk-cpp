@@ -22,8 +22,8 @@ EnableReachabilityAnalyzerOrganizationSharingResponse::EnableReachabilityAnalyze
 {
 }
 
-EnableReachabilityAnalyzerOrganizationSharingResponse::EnableReachabilityAnalyzerOrganizationSharingResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_returnValue(false)
+EnableReachabilityAnalyzerOrganizationSharingResponse::EnableReachabilityAnalyzerOrganizationSharingResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : EnableReachabilityAnalyzerOrganizationSharingResponse()
 {
   *this = result;
 }

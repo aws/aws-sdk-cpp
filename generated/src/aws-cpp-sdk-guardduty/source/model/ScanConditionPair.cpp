@@ -24,9 +24,8 @@ ScanConditionPair::ScanConditionPair() :
 {
 }
 
-ScanConditionPair::ScanConditionPair(JsonView jsonValue) : 
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false)
+ScanConditionPair::ScanConditionPair(JsonView jsonValue)
+  : ScanConditionPair()
 {
   *this = jsonValue;
 }

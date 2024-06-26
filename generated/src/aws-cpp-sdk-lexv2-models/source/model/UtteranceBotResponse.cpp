@@ -26,11 +26,8 @@ UtteranceBotResponse::UtteranceBotResponse() :
 {
 }
 
-UtteranceBotResponse::UtteranceBotResponse(JsonView jsonValue) : 
-    m_contentHasBeenSet(false),
-    m_contentType(UtteranceContentType::NOT_SET),
-    m_contentTypeHasBeenSet(false),
-    m_imageResponseCardHasBeenSet(false)
+UtteranceBotResponse::UtteranceBotResponse(JsonView jsonValue)
+  : UtteranceBotResponse()
 {
   *this = jsonValue;
 }

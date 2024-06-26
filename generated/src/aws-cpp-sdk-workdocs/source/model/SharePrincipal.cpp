@@ -27,12 +27,8 @@ SharePrincipal::SharePrincipal() :
 {
 }
 
-SharePrincipal::SharePrincipal(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_type(PrincipalType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_role(RoleType::NOT_SET),
-    m_roleHasBeenSet(false)
+SharePrincipal::SharePrincipal(JsonView jsonValue)
+  : SharePrincipal()
 {
   *this = jsonValue;
 }

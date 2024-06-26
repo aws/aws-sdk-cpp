@@ -25,10 +25,8 @@ BatchJobDependency::BatchJobDependency() :
 {
 }
 
-BatchJobDependency::BatchJobDependency(JsonView jsonValue) : 
-    m_jobIdHasBeenSet(false),
-    m_type(BatchJobDependencyType::NOT_SET),
-    m_typeHasBeenSet(false)
+BatchJobDependency::BatchJobDependency(JsonView jsonValue)
+  : BatchJobDependency()
 {
   *this = jsonValue;
 }

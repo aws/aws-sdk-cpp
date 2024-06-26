@@ -24,9 +24,8 @@ TimePeriod::TimePeriod() :
 {
 }
 
-TimePeriod::TimePeriod(JsonView jsonValue) : 
-    m_startHasBeenSet(false),
-    m_endHasBeenSet(false)
+TimePeriod::TimePeriod(JsonView jsonValue)
+  : TimePeriod()
 {
   *this = jsonValue;
 }

@@ -36,19 +36,8 @@ IpamDiscoveredResourceCidr::IpamDiscoveredResourceCidr() :
 {
 }
 
-IpamDiscoveredResourceCidr::IpamDiscoveredResourceCidr(const XmlNode& xmlNode) : 
-    m_ipamResourceDiscoveryIdHasBeenSet(false),
-    m_resourceRegionHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_resourceOwnerIdHasBeenSet(false),
-    m_resourceCidrHasBeenSet(false),
-    m_resourceType(IpamResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_resourceTagsHasBeenSet(false),
-    m_ipUsage(0.0),
-    m_ipUsageHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_sampleTimeHasBeenSet(false)
+IpamDiscoveredResourceCidr::IpamDiscoveredResourceCidr(const XmlNode& xmlNode)
+  : IpamDiscoveredResourceCidr()
 {
   *this = xmlNode;
 }

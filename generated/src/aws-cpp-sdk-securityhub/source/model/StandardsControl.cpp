@@ -34,19 +34,8 @@ StandardsControl::StandardsControl() :
 {
 }
 
-StandardsControl::StandardsControl(JsonView jsonValue) : 
-    m_standardsControlArnHasBeenSet(false),
-    m_controlStatus(ControlStatus::NOT_SET),
-    m_controlStatusHasBeenSet(false),
-    m_disabledReasonHasBeenSet(false),
-    m_controlStatusUpdatedAtHasBeenSet(false),
-    m_controlIdHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_remediationUrlHasBeenSet(false),
-    m_severityRating(SeverityRating::NOT_SET),
-    m_severityRatingHasBeenSet(false),
-    m_relatedRequirementsHasBeenSet(false)
+StandardsControl::StandardsControl(JsonView jsonValue)
+  : StandardsControl()
 {
   *this = jsonValue;
 }

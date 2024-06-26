@@ -24,9 +24,8 @@ IdeConfiguration::IdeConfiguration() :
 {
 }
 
-IdeConfiguration::IdeConfiguration(JsonView jsonValue) : 
-    m_runtimeHasBeenSet(false),
-    m_nameHasBeenSet(false)
+IdeConfiguration::IdeConfiguration(JsonView jsonValue)
+  : IdeConfiguration()
 {
   *this = jsonValue;
 }

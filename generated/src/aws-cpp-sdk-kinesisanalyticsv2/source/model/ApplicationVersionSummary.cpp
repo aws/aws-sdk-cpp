@@ -26,11 +26,8 @@ ApplicationVersionSummary::ApplicationVersionSummary() :
 {
 }
 
-ApplicationVersionSummary::ApplicationVersionSummary(JsonView jsonValue) : 
-    m_applicationVersionId(0),
-    m_applicationVersionIdHasBeenSet(false),
-    m_applicationStatus(ApplicationStatus::NOT_SET),
-    m_applicationStatusHasBeenSet(false)
+ApplicationVersionSummary::ApplicationVersionSummary(JsonView jsonValue)
+  : ApplicationVersionSummary()
 {
   *this = jsonValue;
 }

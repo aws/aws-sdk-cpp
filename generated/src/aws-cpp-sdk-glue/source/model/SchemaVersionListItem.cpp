@@ -29,14 +29,8 @@ SchemaVersionListItem::SchemaVersionListItem() :
 {
 }
 
-SchemaVersionListItem::SchemaVersionListItem(JsonView jsonValue) : 
-    m_schemaArnHasBeenSet(false),
-    m_schemaVersionIdHasBeenSet(false),
-    m_versionNumber(0),
-    m_versionNumberHasBeenSet(false),
-    m_status(SchemaVersionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_createdTimeHasBeenSet(false)
+SchemaVersionListItem::SchemaVersionListItem(JsonView jsonValue)
+  : SchemaVersionListItem()
 {
   *this = jsonValue;
 }

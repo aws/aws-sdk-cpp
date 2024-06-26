@@ -30,15 +30,8 @@ BucketCountByEncryptionType::BucketCountByEncryptionType() :
 {
 }
 
-BucketCountByEncryptionType::BucketCountByEncryptionType(JsonView jsonValue) : 
-    m_kmsManaged(0),
-    m_kmsManagedHasBeenSet(false),
-    m_s3Managed(0),
-    m_s3ManagedHasBeenSet(false),
-    m_unencrypted(0),
-    m_unencryptedHasBeenSet(false),
-    m_unknown(0),
-    m_unknownHasBeenSet(false)
+BucketCountByEncryptionType::BucketCountByEncryptionType(JsonView jsonValue)
+  : BucketCountByEncryptionType()
 {
   *this = jsonValue;
 }

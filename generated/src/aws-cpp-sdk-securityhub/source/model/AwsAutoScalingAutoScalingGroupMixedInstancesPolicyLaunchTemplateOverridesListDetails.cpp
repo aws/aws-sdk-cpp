@@ -24,9 +24,8 @@ AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateOverridesListDet
 {
 }
 
-AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateOverridesListDetails::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateOverridesListDetails(JsonView jsonValue) : 
-    m_instanceTypeHasBeenSet(false),
-    m_weightedCapacityHasBeenSet(false)
+AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateOverridesListDetails::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateOverridesListDetails(JsonView jsonValue)
+  : AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateOverridesListDetails()
 {
   *this = jsonValue;
 }

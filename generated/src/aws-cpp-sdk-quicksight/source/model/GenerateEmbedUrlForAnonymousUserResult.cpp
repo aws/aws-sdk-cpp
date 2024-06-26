@@ -22,8 +22,8 @@ GenerateEmbedUrlForAnonymousUserResult::GenerateEmbedUrlForAnonymousUserResult()
 {
 }
 
-GenerateEmbedUrlForAnonymousUserResult::GenerateEmbedUrlForAnonymousUserResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+GenerateEmbedUrlForAnonymousUserResult::GenerateEmbedUrlForAnonymousUserResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GenerateEmbedUrlForAnonymousUserResult()
 {
   *this = result;
 }

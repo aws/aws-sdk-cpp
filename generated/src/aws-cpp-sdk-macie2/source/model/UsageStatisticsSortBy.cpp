@@ -26,11 +26,8 @@ UsageStatisticsSortBy::UsageStatisticsSortBy() :
 {
 }
 
-UsageStatisticsSortBy::UsageStatisticsSortBy(JsonView jsonValue) : 
-    m_key(UsageStatisticsSortKey::NOT_SET),
-    m_keyHasBeenSet(false),
-    m_orderBy(OrderBy::NOT_SET),
-    m_orderByHasBeenSet(false)
+UsageStatisticsSortBy::UsageStatisticsSortBy(JsonView jsonValue)
+  : UsageStatisticsSortBy()
 {
   *this = jsonValue;
 }

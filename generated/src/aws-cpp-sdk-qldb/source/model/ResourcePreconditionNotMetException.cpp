@@ -25,10 +25,8 @@ ResourcePreconditionNotMetException::ResourcePreconditionNotMetException() :
 {
 }
 
-ResourcePreconditionNotMetException::ResourcePreconditionNotMetException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
-    m_resourceNameHasBeenSet(false)
+ResourcePreconditionNotMetException::ResourcePreconditionNotMetException(JsonView jsonValue)
+  : ResourcePreconditionNotMetException()
 {
   *this = jsonValue;
 }

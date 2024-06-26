@@ -24,9 +24,8 @@ LongFormatText::LongFormatText() :
 {
 }
 
-LongFormatText::LongFormatText(JsonView jsonValue) : 
-    m_plainTextHasBeenSet(false),
-    m_richTextHasBeenSet(false)
+LongFormatText::LongFormatText(JsonView jsonValue)
+  : LongFormatText()
 {
   *this = jsonValue;
 }

@@ -27,12 +27,8 @@ SessionKeyDerivation::SessionKeyDerivation() :
 {
 }
 
-SessionKeyDerivation::SessionKeyDerivation(JsonView jsonValue) : 
-    m_amexHasBeenSet(false),
-    m_emv2000HasBeenSet(false),
-    m_emvCommonHasBeenSet(false),
-    m_mastercardHasBeenSet(false),
-    m_visaHasBeenSet(false)
+SessionKeyDerivation::SessionKeyDerivation(JsonView jsonValue)
+  : SessionKeyDerivation()
 {
   *this = jsonValue;
 }

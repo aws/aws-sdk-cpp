@@ -27,12 +27,8 @@ KMSServerSideEncryptionIntegration::KMSServerSideEncryptionIntegration() :
 {
 }
 
-KMSServerSideEncryptionIntegration::KMSServerSideEncryptionIntegration(JsonView jsonValue) : 
-    m_kMSKeyIdHasBeenSet(false),
-    m_optInStatus(OptInStatus::NOT_SET),
-    m_optInStatusHasBeenSet(false),
-    m_type(ServerSideEncryptionType::NOT_SET),
-    m_typeHasBeenSet(false)
+KMSServerSideEncryptionIntegration::KMSServerSideEncryptionIntegration(JsonView jsonValue)
+  : KMSServerSideEncryptionIntegration()
 {
   *this = jsonValue;
 }

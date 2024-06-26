@@ -25,10 +25,8 @@ AuthenticationMode::AuthenticationMode() :
 {
 }
 
-AuthenticationMode::AuthenticationMode(JsonView jsonValue) : 
-    m_type(InputAuthenticationType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_passwordsHasBeenSet(false)
+AuthenticationMode::AuthenticationMode(JsonView jsonValue)
+  : AuthenticationMode()
 {
   *this = jsonValue;
 }

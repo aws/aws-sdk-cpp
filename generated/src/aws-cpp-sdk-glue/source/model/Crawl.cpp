@@ -29,14 +29,8 @@ Crawl::Crawl() :
 {
 }
 
-Crawl::Crawl(JsonView jsonValue) : 
-    m_state(CrawlState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_startedOnHasBeenSet(false),
-    m_completedOnHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_logGroupHasBeenSet(false),
-    m_logStreamHasBeenSet(false)
+Crawl::Crawl(JsonView jsonValue)
+  : Crawl()
 {
   *this = jsonValue;
 }

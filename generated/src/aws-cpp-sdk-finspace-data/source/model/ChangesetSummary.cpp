@@ -40,25 +40,8 @@ ChangesetSummary::ChangesetSummary() :
 {
 }
 
-ChangesetSummary::ChangesetSummary(JsonView jsonValue) : 
-    m_changesetIdHasBeenSet(false),
-    m_changesetArnHasBeenSet(false),
-    m_datasetIdHasBeenSet(false),
-    m_changeType(ChangeType::NOT_SET),
-    m_changeTypeHasBeenSet(false),
-    m_sourceParamsHasBeenSet(false),
-    m_formatParamsHasBeenSet(false),
-    m_createTime(0),
-    m_createTimeHasBeenSet(false),
-    m_status(IngestionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_errorInfoHasBeenSet(false),
-    m_activeUntilTimestamp(0),
-    m_activeUntilTimestampHasBeenSet(false),
-    m_activeFromTimestamp(0),
-    m_activeFromTimestampHasBeenSet(false),
-    m_updatesChangesetIdHasBeenSet(false),
-    m_updatedByChangesetIdHasBeenSet(false)
+ChangesetSummary::ChangesetSummary(JsonView jsonValue)
+  : ChangesetSummary()
 {
   *this = jsonValue;
 }

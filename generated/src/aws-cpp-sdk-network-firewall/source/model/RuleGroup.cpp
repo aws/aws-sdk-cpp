@@ -26,11 +26,8 @@ RuleGroup::RuleGroup() :
 {
 }
 
-RuleGroup::RuleGroup(JsonView jsonValue) : 
-    m_ruleVariablesHasBeenSet(false),
-    m_referenceSetsHasBeenSet(false),
-    m_rulesSourceHasBeenSet(false),
-    m_statefulRuleOptionsHasBeenSet(false)
+RuleGroup::RuleGroup(JsonView jsonValue)
+  : RuleGroup()
 {
   *this = jsonValue;
 }

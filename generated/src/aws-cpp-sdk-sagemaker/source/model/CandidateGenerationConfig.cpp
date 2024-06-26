@@ -23,8 +23,8 @@ CandidateGenerationConfig::CandidateGenerationConfig() :
 {
 }
 
-CandidateGenerationConfig::CandidateGenerationConfig(JsonView jsonValue) : 
-    m_algorithmsConfigHasBeenSet(false)
+CandidateGenerationConfig::CandidateGenerationConfig(JsonView jsonValue)
+  : CandidateGenerationConfig()
 {
   *this = jsonValue;
 }

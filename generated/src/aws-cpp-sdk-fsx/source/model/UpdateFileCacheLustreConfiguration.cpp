@@ -23,8 +23,8 @@ UpdateFileCacheLustreConfiguration::UpdateFileCacheLustreConfiguration() :
 {
 }
 
-UpdateFileCacheLustreConfiguration::UpdateFileCacheLustreConfiguration(JsonView jsonValue) : 
-    m_weeklyMaintenanceStartTimeHasBeenSet(false)
+UpdateFileCacheLustreConfiguration::UpdateFileCacheLustreConfiguration(JsonView jsonValue)
+  : UpdateFileCacheLustreConfiguration()
 {
   *this = jsonValue;
 }

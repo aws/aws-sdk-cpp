@@ -23,9 +23,8 @@ GetInternetEventResult::GetInternetEventResult() :
 {
 }
 
-GetInternetEventResult::GetInternetEventResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_eventType(InternetEventType::NOT_SET),
-    m_eventStatus(InternetEventStatus::NOT_SET)
+GetInternetEventResult::GetInternetEventResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetInternetEventResult()
 {
   *this = result;
 }

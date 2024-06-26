@@ -30,15 +30,8 @@ Block::Block() :
 {
 }
 
-Block::Block(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_blockType(BlockType::NOT_SET),
-    m_blockTypeHasBeenSet(false),
-    m_textHasBeenSet(false),
-    m_page(0),
-    m_pageHasBeenSet(false),
-    m_geometryHasBeenSet(false),
-    m_relationshipsHasBeenSet(false)
+Block::Block(JsonView jsonValue)
+  : Block()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ ChannelBan::ChannelBan() :
 {
 }
 
-ChannelBan::ChannelBan(JsonView jsonValue) : 
-    m_memberHasBeenSet(false),
-    m_channelArnHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false),
-    m_createdByHasBeenSet(false)
+ChannelBan::ChannelBan(JsonView jsonValue)
+  : ChannelBan()
 {
   *this = jsonValue;
 }

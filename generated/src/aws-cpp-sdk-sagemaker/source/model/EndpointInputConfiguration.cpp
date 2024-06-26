@@ -27,12 +27,8 @@ EndpointInputConfiguration::EndpointInputConfiguration() :
 {
 }
 
-EndpointInputConfiguration::EndpointInputConfiguration(JsonView jsonValue) : 
-    m_instanceType(ProductionVariantInstanceType::NOT_SET),
-    m_instanceTypeHasBeenSet(false),
-    m_serverlessConfigHasBeenSet(false),
-    m_inferenceSpecificationNameHasBeenSet(false),
-    m_environmentParameterRangesHasBeenSet(false)
+EndpointInputConfiguration::EndpointInputConfiguration(JsonView jsonValue)
+  : EndpointInputConfiguration()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ InferenceOutputConfiguration::InferenceOutputConfiguration() :
 {
 }
 
-InferenceOutputConfiguration::InferenceOutputConfiguration(JsonView jsonValue) : 
-    m_s3OutputConfigurationHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
+InferenceOutputConfiguration::InferenceOutputConfiguration(JsonView jsonValue)
+  : InferenceOutputConfiguration()
 {
   *this = jsonValue;
 }

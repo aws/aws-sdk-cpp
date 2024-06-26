@@ -25,10 +25,8 @@ MonitorErrorDetails::MonitorErrorDetails() :
 {
 }
 
-MonitorErrorDetails::MonitorErrorDetails(JsonView jsonValue) : 
-    m_code(MonitorErrorCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+MonitorErrorDetails::MonitorErrorDetails(JsonView jsonValue)
+  : MonitorErrorDetails()
 {
   *this = jsonValue;
 }

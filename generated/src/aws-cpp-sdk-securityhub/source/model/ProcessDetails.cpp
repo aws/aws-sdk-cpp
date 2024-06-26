@@ -30,15 +30,8 @@ ProcessDetails::ProcessDetails() :
 {
 }
 
-ProcessDetails::ProcessDetails(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_pathHasBeenSet(false),
-    m_pid(0),
-    m_pidHasBeenSet(false),
-    m_parentPid(0),
-    m_parentPidHasBeenSet(false),
-    m_launchedAtHasBeenSet(false),
-    m_terminatedAtHasBeenSet(false)
+ProcessDetails::ProcessDetails(JsonView jsonValue)
+  : ProcessDetails()
 {
   *this = jsonValue;
 }

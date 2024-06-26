@@ -24,9 +24,8 @@ FileFormat::FileFormat() :
 {
 }
 
-FileFormat::FileFormat(JsonView jsonValue) : 
-    m_csvHasBeenSet(false),
-    m_parquetHasBeenSet(false)
+FileFormat::FileFormat(JsonView jsonValue)
+  : FileFormat()
 {
   *this = jsonValue;
 }

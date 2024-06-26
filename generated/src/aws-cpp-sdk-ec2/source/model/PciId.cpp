@@ -28,11 +28,8 @@ PciId::PciId() :
 {
 }
 
-PciId::PciId(const XmlNode& xmlNode) : 
-    m_deviceIdHasBeenSet(false),
-    m_vendorIdHasBeenSet(false),
-    m_subsystemIdHasBeenSet(false),
-    m_subsystemVendorIdHasBeenSet(false)
+PciId::PciId(const XmlNode& xmlNode)
+  : PciId()
 {
   *this = xmlNode;
 }

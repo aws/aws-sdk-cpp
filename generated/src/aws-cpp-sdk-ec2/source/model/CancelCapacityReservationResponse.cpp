@@ -22,8 +22,8 @@ CancelCapacityReservationResponse::CancelCapacityReservationResponse() :
 {
 }
 
-CancelCapacityReservationResponse::CancelCapacityReservationResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_return(false)
+CancelCapacityReservationResponse::CancelCapacityReservationResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : CancelCapacityReservationResponse()
 {
   *this = result;
 }

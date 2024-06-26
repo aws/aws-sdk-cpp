@@ -27,12 +27,8 @@ RegexPatternSet::RegexPatternSet() :
 {
 }
 
-RegexPatternSet::RegexPatternSet(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_aRNHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_regularExpressionListHasBeenSet(false)
+RegexPatternSet::RegexPatternSet(JsonView jsonValue)
+  : RegexPatternSet()
 {
   *this = jsonValue;
 }

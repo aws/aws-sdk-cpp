@@ -22,8 +22,8 @@ ReportTaskRunnerHeartbeatResult::ReportTaskRunnerHeartbeatResult() :
 {
 }
 
-ReportTaskRunnerHeartbeatResult::ReportTaskRunnerHeartbeatResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_terminate(false)
+ReportTaskRunnerHeartbeatResult::ReportTaskRunnerHeartbeatResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ReportTaskRunnerHeartbeatResult()
 {
   *this = result;
 }

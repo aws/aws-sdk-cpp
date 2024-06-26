@@ -29,14 +29,8 @@ BotMetadata::BotMetadata() :
 {
 }
 
-BotMetadata::BotMetadata(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_status(Status::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_lastUpdatedDateHasBeenSet(false),
-    m_createdDateHasBeenSet(false),
-    m_versionHasBeenSet(false)
+BotMetadata::BotMetadata(JsonView jsonValue)
+  : BotMetadata()
 {
   *this = jsonValue;
 }

@@ -30,15 +30,8 @@ PackageImportJob::PackageImportJob() :
 {
 }
 
-PackageImportJob::PackageImportJob(JsonView jsonValue) : 
-    m_createdTimeHasBeenSet(false),
-    m_jobIdHasBeenSet(false),
-    m_jobType(PackageImportJobType::NOT_SET),
-    m_jobTypeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_status(PackageImportJobStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false)
+PackageImportJob::PackageImportJob(JsonView jsonValue)
+  : PackageImportJob()
 {
   *this = jsonValue;
 }

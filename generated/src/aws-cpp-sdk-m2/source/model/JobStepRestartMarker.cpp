@@ -26,11 +26,8 @@ JobStepRestartMarker::JobStepRestartMarker() :
 {
 }
 
-JobStepRestartMarker::JobStepRestartMarker(JsonView jsonValue) : 
-    m_fromProcStepHasBeenSet(false),
-    m_fromStepHasBeenSet(false),
-    m_toProcStepHasBeenSet(false),
-    m_toStepHasBeenSet(false)
+JobStepRestartMarker::JobStepRestartMarker(JsonView jsonValue)
+  : JobStepRestartMarker()
 {
   *this = jsonValue;
 }

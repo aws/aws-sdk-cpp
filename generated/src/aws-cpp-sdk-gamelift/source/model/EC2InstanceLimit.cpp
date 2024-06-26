@@ -29,14 +29,8 @@ EC2InstanceLimit::EC2InstanceLimit() :
 {
 }
 
-EC2InstanceLimit::EC2InstanceLimit(JsonView jsonValue) : 
-    m_eC2InstanceType(EC2InstanceType::NOT_SET),
-    m_eC2InstanceTypeHasBeenSet(false),
-    m_currentInstances(0),
-    m_currentInstancesHasBeenSet(false),
-    m_instanceLimit(0),
-    m_instanceLimitHasBeenSet(false),
-    m_locationHasBeenSet(false)
+EC2InstanceLimit::EC2InstanceLimit(JsonView jsonValue)
+  : EC2InstanceLimit()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ UnauthorizedException::UnauthorizedException() :
 {
 }
 
-UnauthorizedException::UnauthorizedException(JsonView jsonValue) : 
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
+UnauthorizedException::UnauthorizedException(JsonView jsonValue)
+  : UnauthorizedException()
 {
   *this = jsonValue;
 }

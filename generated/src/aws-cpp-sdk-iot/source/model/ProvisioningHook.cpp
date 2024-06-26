@@ -24,9 +24,8 @@ ProvisioningHook::ProvisioningHook() :
 {
 }
 
-ProvisioningHook::ProvisioningHook(JsonView jsonValue) : 
-    m_payloadVersionHasBeenSet(false),
-    m_targetArnHasBeenSet(false)
+ProvisioningHook::ProvisioningHook(JsonView jsonValue)
+  : ProvisioningHook()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ Scope::Scope() :
 {
 }
 
-Scope::Scope(JsonView jsonValue) : 
-    m_complianceResourceTypesHasBeenSet(false),
-    m_tagKeyHasBeenSet(false),
-    m_tagValueHasBeenSet(false),
-    m_complianceResourceIdHasBeenSet(false)
+Scope::Scope(JsonView jsonValue)
+  : Scope()
 {
   *this = jsonValue;
 }

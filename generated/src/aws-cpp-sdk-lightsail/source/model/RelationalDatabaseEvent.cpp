@@ -26,11 +26,8 @@ RelationalDatabaseEvent::RelationalDatabaseEvent() :
 {
 }
 
-RelationalDatabaseEvent::RelationalDatabaseEvent(JsonView jsonValue) : 
-    m_resourceHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_eventCategoriesHasBeenSet(false)
+RelationalDatabaseEvent::RelationalDatabaseEvent(JsonView jsonValue)
+  : RelationalDatabaseEvent()
 {
   *this = jsonValue;
 }

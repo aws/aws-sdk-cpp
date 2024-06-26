@@ -22,8 +22,8 @@ GetVerifiedAccessEndpointPolicyResponse::GetVerifiedAccessEndpointPolicyResponse
 {
 }
 
-GetVerifiedAccessEndpointPolicyResponse::GetVerifiedAccessEndpointPolicyResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_policyEnabled(false)
+GetVerifiedAccessEndpointPolicyResponse::GetVerifiedAccessEndpointPolicyResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : GetVerifiedAccessEndpointPolicyResponse()
 {
   *this = result;
 }

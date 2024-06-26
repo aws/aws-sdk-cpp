@@ -26,11 +26,8 @@ CrossRegionCopyRetainRule::CrossRegionCopyRetainRule() :
 {
 }
 
-CrossRegionCopyRetainRule::CrossRegionCopyRetainRule(JsonView jsonValue) : 
-    m_interval(0),
-    m_intervalHasBeenSet(false),
-    m_intervalUnit(RetentionIntervalUnitValues::NOT_SET),
-    m_intervalUnitHasBeenSet(false)
+CrossRegionCopyRetainRule::CrossRegionCopyRetainRule(JsonView jsonValue)
+  : CrossRegionCopyRetainRule()
 {
   *this = jsonValue;
 }

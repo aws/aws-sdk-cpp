@@ -24,9 +24,8 @@ LifeCycleLastCutoverInitiated::LifeCycleLastCutoverInitiated() :
 {
 }
 
-LifeCycleLastCutoverInitiated::LifeCycleLastCutoverInitiated(JsonView jsonValue) : 
-    m_apiCallDateTimeHasBeenSet(false),
-    m_jobIDHasBeenSet(false)
+LifeCycleLastCutoverInitiated::LifeCycleLastCutoverInitiated(JsonView jsonValue)
+  : LifeCycleLastCutoverInitiated()
 {
   *this = jsonValue;
 }

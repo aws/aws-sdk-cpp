@@ -35,18 +35,8 @@ ConfigurationSettingsDescription::ConfigurationSettingsDescription() :
 {
 }
 
-ConfigurationSettingsDescription::ConfigurationSettingsDescription(const XmlNode& xmlNode) : 
-    m_solutionStackNameHasBeenSet(false),
-    m_platformArnHasBeenSet(false),
-    m_applicationNameHasBeenSet(false),
-    m_templateNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_environmentNameHasBeenSet(false),
-    m_deploymentStatus(ConfigurationDeploymentStatus::NOT_SET),
-    m_deploymentStatusHasBeenSet(false),
-    m_dateCreatedHasBeenSet(false),
-    m_dateUpdatedHasBeenSet(false),
-    m_optionSettingsHasBeenSet(false)
+ConfigurationSettingsDescription::ConfigurationSettingsDescription(const XmlNode& xmlNode)
+  : ConfigurationSettingsDescription()
 {
   *this = xmlNode;
 }

@@ -28,13 +28,8 @@ Grantee::Grantee() :
 {
 }
 
-Grantee::Grantee(JsonView jsonValue) : 
-    m_type(Type::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_uRIHasBeenSet(false),
-    m_iDHasBeenSet(false),
-    m_emailAddressHasBeenSet(false)
+Grantee::Grantee(JsonView jsonValue)
+  : Grantee()
 {
   *this = jsonValue;
 }

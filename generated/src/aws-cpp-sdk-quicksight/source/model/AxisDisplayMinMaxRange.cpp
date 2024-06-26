@@ -26,11 +26,8 @@ AxisDisplayMinMaxRange::AxisDisplayMinMaxRange() :
 {
 }
 
-AxisDisplayMinMaxRange::AxisDisplayMinMaxRange(JsonView jsonValue) : 
-    m_minimum(0.0),
-    m_minimumHasBeenSet(false),
-    m_maximum(0.0),
-    m_maximumHasBeenSet(false)
+AxisDisplayMinMaxRange::AxisDisplayMinMaxRange(JsonView jsonValue)
+  : AxisDisplayMinMaxRange()
 {
   *this = jsonValue;
 }

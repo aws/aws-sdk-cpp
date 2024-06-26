@@ -25,10 +25,8 @@ EC2ReplaceRouteTableAssociationAction::EC2ReplaceRouteTableAssociationAction() :
 {
 }
 
-EC2ReplaceRouteTableAssociationAction::EC2ReplaceRouteTableAssociationAction(JsonView jsonValue) : 
-    m_descriptionHasBeenSet(false),
-    m_associationIdHasBeenSet(false),
-    m_routeTableIdHasBeenSet(false)
+EC2ReplaceRouteTableAssociationAction::EC2ReplaceRouteTableAssociationAction(JsonView jsonValue)
+  : EC2ReplaceRouteTableAssociationAction()
 {
   *this = jsonValue;
 }

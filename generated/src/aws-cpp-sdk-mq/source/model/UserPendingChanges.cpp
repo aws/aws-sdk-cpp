@@ -27,12 +27,8 @@ UserPendingChanges::UserPendingChanges() :
 {
 }
 
-UserPendingChanges::UserPendingChanges(JsonView jsonValue) : 
-    m_consoleAccess(false),
-    m_consoleAccessHasBeenSet(false),
-    m_groupsHasBeenSet(false),
-    m_pendingChange(ChangeType::NOT_SET),
-    m_pendingChangeHasBeenSet(false)
+UserPendingChanges::UserPendingChanges(JsonView jsonValue)
+  : UserPendingChanges()
 {
   *this = jsonValue;
 }

@@ -27,12 +27,8 @@ BatchStepInput::BatchStepInput() :
 {
 }
 
-BatchStepInput::BatchStepInput(JsonView jsonValue) : 
-    m_resourceHasBeenSet(false),
-    m_batchJobNameHasBeenSet(false),
-    m_batchJobParametersHasBeenSet(false),
-    m_exportDataSetNamesHasBeenSet(false),
-    m_propertiesHasBeenSet(false)
+BatchStepInput::BatchStepInput(JsonView jsonValue)
+  : BatchStepInput()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ NotificationRecipientType::NotificationRecipientType() :
 {
 }
 
-NotificationRecipientType::NotificationRecipientType(JsonView jsonValue) : 
-    m_userTagsHasBeenSet(false),
-    m_userIdsHasBeenSet(false)
+NotificationRecipientType::NotificationRecipientType(JsonView jsonValue)
+  : NotificationRecipientType()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ UnusedPermissionDetails::UnusedPermissionDetails() :
 {
 }
 
-UnusedPermissionDetails::UnusedPermissionDetails(JsonView jsonValue) : 
-    m_actionsHasBeenSet(false),
-    m_serviceNamespaceHasBeenSet(false),
-    m_lastAccessedHasBeenSet(false)
+UnusedPermissionDetails::UnusedPermissionDetails(JsonView jsonValue)
+  : UnusedPermissionDetails()
 {
   *this = jsonValue;
 }

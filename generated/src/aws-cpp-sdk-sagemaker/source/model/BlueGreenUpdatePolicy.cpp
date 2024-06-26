@@ -27,12 +27,8 @@ BlueGreenUpdatePolicy::BlueGreenUpdatePolicy() :
 {
 }
 
-BlueGreenUpdatePolicy::BlueGreenUpdatePolicy(JsonView jsonValue) : 
-    m_trafficRoutingConfigurationHasBeenSet(false),
-    m_terminationWaitInSeconds(0),
-    m_terminationWaitInSecondsHasBeenSet(false),
-    m_maximumExecutionTimeoutInSeconds(0),
-    m_maximumExecutionTimeoutInSecondsHasBeenSet(false)
+BlueGreenUpdatePolicy::BlueGreenUpdatePolicy(JsonView jsonValue)
+  : BlueGreenUpdatePolicy()
 {
   *this = jsonValue;
 }

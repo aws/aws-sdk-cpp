@@ -25,10 +25,8 @@ ToolUseBlock::ToolUseBlock() :
 {
 }
 
-ToolUseBlock::ToolUseBlock(JsonView jsonValue) : 
-    m_toolUseIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_inputHasBeenSet(false)
+ToolUseBlock::ToolUseBlock(JsonView jsonValue)
+  : ToolUseBlock()
 {
   *this = jsonValue;
 }

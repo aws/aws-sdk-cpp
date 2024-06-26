@@ -24,9 +24,8 @@ EdgeDeploymentConfig::EdgeDeploymentConfig() :
 {
 }
 
-EdgeDeploymentConfig::EdgeDeploymentConfig(JsonView jsonValue) : 
-    m_failureHandlingPolicy(FailureHandlingPolicy::NOT_SET),
-    m_failureHandlingPolicyHasBeenSet(false)
+EdgeDeploymentConfig::EdgeDeploymentConfig(JsonView jsonValue)
+  : EdgeDeploymentConfig()
 {
   *this = jsonValue;
 }

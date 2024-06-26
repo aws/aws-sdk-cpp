@@ -23,9 +23,8 @@ CreateServiceResult::CreateServiceResult() :
 {
 }
 
-CreateServiceResult::CreateServiceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_endpointType(ServiceEndpointType::NOT_SET),
-    m_state(ServiceState::NOT_SET)
+CreateServiceResult::CreateServiceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateServiceResult()
 {
   *this = result;
 }

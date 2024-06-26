@@ -25,10 +25,8 @@ ContainerGroupsAttributes::ContainerGroupsAttributes() :
 {
 }
 
-ContainerGroupsAttributes::ContainerGroupsAttributes(JsonView jsonValue) : 
-    m_containerGroupDefinitionPropertiesHasBeenSet(false),
-    m_connectionPortRangeHasBeenSet(false),
-    m_containerGroupsPerInstanceHasBeenSet(false)
+ContainerGroupsAttributes::ContainerGroupsAttributes(JsonView jsonValue)
+  : ContainerGroupsAttributes()
 {
   *this = jsonValue;
 }

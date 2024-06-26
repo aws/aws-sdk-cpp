@@ -22,8 +22,8 @@ DeleteFHIRDatastoreResult::DeleteFHIRDatastoreResult() :
 {
 }
 
-DeleteFHIRDatastoreResult::DeleteFHIRDatastoreResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_datastoreStatus(DatastoreStatus::NOT_SET)
+DeleteFHIRDatastoreResult::DeleteFHIRDatastoreResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeleteFHIRDatastoreResult()
 {
   *this = result;
 }

@@ -38,23 +38,8 @@ Route::Route() :
 {
 }
 
-Route::Route(JsonView jsonValue) : 
-    m_apiGatewayManaged(false),
-    m_apiGatewayManagedHasBeenSet(false),
-    m_apiKeyRequired(false),
-    m_apiKeyRequiredHasBeenSet(false),
-    m_authorizationScopesHasBeenSet(false),
-    m_authorizationType(AuthorizationType::NOT_SET),
-    m_authorizationTypeHasBeenSet(false),
-    m_authorizerIdHasBeenSet(false),
-    m_modelSelectionExpressionHasBeenSet(false),
-    m_operationNameHasBeenSet(false),
-    m_requestModelsHasBeenSet(false),
-    m_requestParametersHasBeenSet(false),
-    m_routeIdHasBeenSet(false),
-    m_routeKeyHasBeenSet(false),
-    m_routeResponseSelectionExpressionHasBeenSet(false),
-    m_targetHasBeenSet(false)
+Route::Route(JsonView jsonValue)
+  : Route()
 {
   *this = jsonValue;
 }

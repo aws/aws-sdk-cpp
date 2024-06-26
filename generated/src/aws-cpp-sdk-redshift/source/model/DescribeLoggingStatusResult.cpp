@@ -23,9 +23,8 @@ DescribeLoggingStatusResult::DescribeLoggingStatusResult() :
 {
 }
 
-DescribeLoggingStatusResult::DescribeLoggingStatusResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_loggingEnabled(false),
-    m_logDestinationType(LogDestinationType::NOT_SET)
+DescribeLoggingStatusResult::DescribeLoggingStatusResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : DescribeLoggingStatusResult()
 {
   *this = result;
 }

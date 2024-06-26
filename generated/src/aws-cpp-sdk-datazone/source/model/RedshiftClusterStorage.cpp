@@ -23,8 +23,8 @@ RedshiftClusterStorage::RedshiftClusterStorage() :
 {
 }
 
-RedshiftClusterStorage::RedshiftClusterStorage(JsonView jsonValue) : 
-    m_clusterNameHasBeenSet(false)
+RedshiftClusterStorage::RedshiftClusterStorage(JsonView jsonValue)
+  : RedshiftClusterStorage()
 {
   *this = jsonValue;
 }

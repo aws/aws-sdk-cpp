@@ -26,11 +26,8 @@ Ibm3624PinVerification::Ibm3624PinVerification() :
 {
 }
 
-Ibm3624PinVerification::Ibm3624PinVerification(JsonView jsonValue) : 
-    m_decimalizationTableHasBeenSet(false),
-    m_pinOffsetHasBeenSet(false),
-    m_pinValidationDataHasBeenSet(false),
-    m_pinValidationDataPadCharacterHasBeenSet(false)
+Ibm3624PinVerification::Ibm3624PinVerification(JsonView jsonValue)
+  : Ibm3624PinVerification()
 {
   *this = jsonValue;
 }

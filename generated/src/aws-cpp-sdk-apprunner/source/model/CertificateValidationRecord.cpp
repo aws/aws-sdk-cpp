@@ -27,12 +27,8 @@ CertificateValidationRecord::CertificateValidationRecord() :
 {
 }
 
-CertificateValidationRecord::CertificateValidationRecord(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_status(CertificateValidationRecordStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+CertificateValidationRecord::CertificateValidationRecord(JsonView jsonValue)
+  : CertificateValidationRecord()
 {
   *this = jsonValue;
 }

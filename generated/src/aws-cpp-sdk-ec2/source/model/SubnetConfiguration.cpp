@@ -27,10 +27,8 @@ SubnetConfiguration::SubnetConfiguration() :
 {
 }
 
-SubnetConfiguration::SubnetConfiguration(const XmlNode& xmlNode) : 
-    m_subnetIdHasBeenSet(false),
-    m_ipv4HasBeenSet(false),
-    m_ipv6HasBeenSet(false)
+SubnetConfiguration::SubnetConfiguration(const XmlNode& xmlNode)
+  : SubnetConfiguration()
 {
   *this = xmlNode;
 }

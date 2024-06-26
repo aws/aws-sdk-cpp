@@ -23,8 +23,8 @@ PublishMetricAction::PublishMetricAction() :
 {
 }
 
-PublishMetricAction::PublishMetricAction(JsonView jsonValue) : 
-    m_dimensionsHasBeenSet(false)
+PublishMetricAction::PublishMetricAction(JsonView jsonValue)
+  : PublishMetricAction()
 {
   *this = jsonValue;
 }

@@ -28,13 +28,8 @@ ActionGroupSummary::ActionGroupSummary() :
 {
 }
 
-ActionGroupSummary::ActionGroupSummary(JsonView jsonValue) : 
-    m_actionGroupIdHasBeenSet(false),
-    m_actionGroupNameHasBeenSet(false),
-    m_actionGroupState(ActionGroupState::NOT_SET),
-    m_actionGroupStateHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+ActionGroupSummary::ActionGroupSummary(JsonView jsonValue)
+  : ActionGroupSummary()
 {
   *this = jsonValue;
 }

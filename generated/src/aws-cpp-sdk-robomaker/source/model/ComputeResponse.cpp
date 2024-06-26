@@ -28,13 +28,8 @@ ComputeResponse::ComputeResponse() :
 {
 }
 
-ComputeResponse::ComputeResponse(JsonView jsonValue) : 
-    m_simulationUnitLimit(0),
-    m_simulationUnitLimitHasBeenSet(false),
-    m_computeType(ComputeType::NOT_SET),
-    m_computeTypeHasBeenSet(false),
-    m_gpuUnitLimit(0),
-    m_gpuUnitLimitHasBeenSet(false)
+ComputeResponse::ComputeResponse(JsonView jsonValue)
+  : ComputeResponse()
 {
   *this = jsonValue;
 }

@@ -30,13 +30,8 @@ ExportToS3Task::ExportToS3Task() :
 {
 }
 
-ExportToS3Task::ExportToS3Task(const XmlNode& xmlNode) : 
-    m_containerFormat(ContainerFormat::NOT_SET),
-    m_containerFormatHasBeenSet(false),
-    m_diskImageFormat(DiskImageFormat::NOT_SET),
-    m_diskImageFormatHasBeenSet(false),
-    m_s3BucketHasBeenSet(false),
-    m_s3KeyHasBeenSet(false)
+ExportToS3Task::ExportToS3Task(const XmlNode& xmlNode)
+  : ExportToS3Task()
 {
   *this = xmlNode;
 }

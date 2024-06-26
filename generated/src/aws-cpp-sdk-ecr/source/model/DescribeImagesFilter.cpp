@@ -24,9 +24,8 @@ DescribeImagesFilter::DescribeImagesFilter() :
 {
 }
 
-DescribeImagesFilter::DescribeImagesFilter(JsonView jsonValue) : 
-    m_tagStatus(TagStatus::NOT_SET),
-    m_tagStatusHasBeenSet(false)
+DescribeImagesFilter::DescribeImagesFilter(JsonView jsonValue)
+  : DescribeImagesFilter()
 {
   *this = jsonValue;
 }

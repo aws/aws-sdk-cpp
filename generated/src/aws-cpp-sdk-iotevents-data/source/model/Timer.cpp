@@ -24,9 +24,8 @@ Timer::Timer() :
 {
 }
 
-Timer::Timer(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_timestampHasBeenSet(false)
+Timer::Timer(JsonView jsonValue)
+  : Timer()
 {
   *this = jsonValue;
 }

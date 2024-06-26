@@ -27,10 +27,8 @@ StackDriftInformation::StackDriftInformation() :
 {
 }
 
-StackDriftInformation::StackDriftInformation(const XmlNode& xmlNode) : 
-    m_stackDriftStatus(StackDriftStatus::NOT_SET),
-    m_stackDriftStatusHasBeenSet(false),
-    m_lastCheckTimestampHasBeenSet(false)
+StackDriftInformation::StackDriftInformation(const XmlNode& xmlNode)
+  : StackDriftInformation()
 {
   *this = xmlNode;
 }

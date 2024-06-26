@@ -34,19 +34,8 @@ Model::Model() :
 {
 }
 
-Model::Model(JsonView jsonValue) : 
-    m_modelNameHasBeenSet(false),
-    m_primaryContainerHasBeenSet(false),
-    m_containersHasBeenSet(false),
-    m_inferenceExecutionConfigHasBeenSet(false),
-    m_executionRoleArnHasBeenSet(false),
-    m_vpcConfigHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_modelArnHasBeenSet(false),
-    m_enableNetworkIsolation(false),
-    m_enableNetworkIsolationHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_deploymentRecommendationHasBeenSet(false)
+Model::Model(JsonView jsonValue)
+  : Model()
 {
   *this = jsonValue;
 }

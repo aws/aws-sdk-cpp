@@ -23,9 +23,8 @@ CountOpenWorkflowExecutionsResult::CountOpenWorkflowExecutionsResult() :
 {
 }
 
-CountOpenWorkflowExecutionsResult::CountOpenWorkflowExecutionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_count(0),
-    m_truncated(false)
+CountOpenWorkflowExecutionsResult::CountOpenWorkflowExecutionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CountOpenWorkflowExecutionsResult()
 {
   *this = result;
 }

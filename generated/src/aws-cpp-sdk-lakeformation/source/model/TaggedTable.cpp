@@ -26,11 +26,8 @@ TaggedTable::TaggedTable() :
 {
 }
 
-TaggedTable::TaggedTable(JsonView jsonValue) : 
-    m_tableHasBeenSet(false),
-    m_lFTagOnDatabaseHasBeenSet(false),
-    m_lFTagsOnTableHasBeenSet(false),
-    m_lFTagsOnColumnsHasBeenSet(false)
+TaggedTable::TaggedTable(JsonView jsonValue)
+  : TaggedTable()
 {
   *this = jsonValue;
 }

@@ -34,19 +34,8 @@ Connector::Connector() :
 {
 }
 
-Connector::Connector(JsonView jsonValue) : 
-    m_connectorIdHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_status(ConnectorStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_capabilityListHasBeenSet(false),
-    m_vmManagerNameHasBeenSet(false),
-    m_vmManagerType(VmManagerType::NOT_SET),
-    m_vmManagerTypeHasBeenSet(false),
-    m_vmManagerIdHasBeenSet(false),
-    m_ipAddressHasBeenSet(false),
-    m_macAddressHasBeenSet(false),
-    m_associatedOnHasBeenSet(false)
+Connector::Connector(JsonView jsonValue)
+  : Connector()
 {
   *this = jsonValue;
 }

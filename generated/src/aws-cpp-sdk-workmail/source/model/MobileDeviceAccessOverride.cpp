@@ -29,14 +29,8 @@ MobileDeviceAccessOverride::MobileDeviceAccessOverride() :
 {
 }
 
-MobileDeviceAccessOverride::MobileDeviceAccessOverride(JsonView jsonValue) : 
-    m_userIdHasBeenSet(false),
-    m_deviceIdHasBeenSet(false),
-    m_effect(MobileDeviceAccessRuleEffect::NOT_SET),
-    m_effectHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_dateCreatedHasBeenSet(false),
-    m_dateModifiedHasBeenSet(false)
+MobileDeviceAccessOverride::MobileDeviceAccessOverride(JsonView jsonValue)
+  : MobileDeviceAccessOverride()
 {
   *this = jsonValue;
 }

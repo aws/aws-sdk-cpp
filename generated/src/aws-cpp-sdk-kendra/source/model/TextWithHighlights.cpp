@@ -24,9 +24,8 @@ TextWithHighlights::TextWithHighlights() :
 {
 }
 
-TextWithHighlights::TextWithHighlights(JsonView jsonValue) : 
-    m_textHasBeenSet(false),
-    m_highlightsHasBeenSet(false)
+TextWithHighlights::TextWithHighlights(JsonView jsonValue)
+  : TextWithHighlights()
 {
   *this = jsonValue;
 }

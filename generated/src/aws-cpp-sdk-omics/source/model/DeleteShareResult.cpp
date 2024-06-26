@@ -22,8 +22,8 @@ DeleteShareResult::DeleteShareResult() :
 {
 }
 
-DeleteShareResult::DeleteShareResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(ShareStatus::NOT_SET)
+DeleteShareResult::DeleteShareResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeleteShareResult()
 {
   *this = result;
 }

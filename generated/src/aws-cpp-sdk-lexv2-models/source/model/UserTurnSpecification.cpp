@@ -24,9 +24,8 @@ UserTurnSpecification::UserTurnSpecification() :
 {
 }
 
-UserTurnSpecification::UserTurnSpecification(JsonView jsonValue) : 
-    m_inputHasBeenSet(false),
-    m_expectedHasBeenSet(false)
+UserTurnSpecification::UserTurnSpecification(JsonView jsonValue)
+  : UserTurnSpecification()
 {
   *this = jsonValue;
 }

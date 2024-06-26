@@ -25,10 +25,8 @@ DnsConfig::DnsConfig() :
 {
 }
 
-DnsConfig::DnsConfig(JsonView jsonValue) : 
-    m_routingPolicy(RoutingPolicy::NOT_SET),
-    m_routingPolicyHasBeenSet(false),
-    m_dnsRecordsHasBeenSet(false)
+DnsConfig::DnsConfig(JsonView jsonValue)
+  : DnsConfig()
 {
   *this = jsonValue;
 }

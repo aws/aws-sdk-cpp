@@ -22,8 +22,8 @@ ListKeyRotationsResult::ListKeyRotationsResult() :
 {
 }
 
-ListKeyRotationsResult::ListKeyRotationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_truncated(false)
+ListKeyRotationsResult::ListKeyRotationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ListKeyRotationsResult()
 {
   *this = result;
 }

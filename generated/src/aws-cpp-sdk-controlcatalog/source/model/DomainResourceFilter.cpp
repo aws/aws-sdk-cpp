@@ -23,8 +23,8 @@ DomainResourceFilter::DomainResourceFilter() :
 {
 }
 
-DomainResourceFilter::DomainResourceFilter(JsonView jsonValue) : 
-    m_arnHasBeenSet(false)
+DomainResourceFilter::DomainResourceFilter(JsonView jsonValue)
+  : DomainResourceFilter()
 {
   *this = jsonValue;
 }

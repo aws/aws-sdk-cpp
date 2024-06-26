@@ -46,29 +46,8 @@ StackEvent::StackEvent() :
 {
 }
 
-StackEvent::StackEvent(const XmlNode& xmlNode) : 
-    m_stackIdHasBeenSet(false),
-    m_eventIdHasBeenSet(false),
-    m_stackNameHasBeenSet(false),
-    m_logicalResourceIdHasBeenSet(false),
-    m_physicalResourceIdHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
-    m_timestampHasBeenSet(false),
-    m_resourceStatus(ResourceStatus::NOT_SET),
-    m_resourceStatusHasBeenSet(false),
-    m_resourceStatusReasonHasBeenSet(false),
-    m_resourcePropertiesHasBeenSet(false),
-    m_clientRequestTokenHasBeenSet(false),
-    m_hookTypeHasBeenSet(false),
-    m_hookStatus(HookStatus::NOT_SET),
-    m_hookStatusHasBeenSet(false),
-    m_hookStatusReasonHasBeenSet(false),
-    m_hookInvocationPoint(HookInvocationPoint::NOT_SET),
-    m_hookInvocationPointHasBeenSet(false),
-    m_hookFailureMode(HookFailureMode::NOT_SET),
-    m_hookFailureModeHasBeenSet(false),
-    m_detailedStatus(DetailedStatus::NOT_SET),
-    m_detailedStatusHasBeenSet(false)
+StackEvent::StackEvent(const XmlNode& xmlNode)
+  : StackEvent()
 {
   *this = xmlNode;
 }

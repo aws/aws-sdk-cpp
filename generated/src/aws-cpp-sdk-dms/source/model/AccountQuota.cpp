@@ -27,12 +27,8 @@ AccountQuota::AccountQuota() :
 {
 }
 
-AccountQuota::AccountQuota(JsonView jsonValue) : 
-    m_accountQuotaNameHasBeenSet(false),
-    m_used(0),
-    m_usedHasBeenSet(false),
-    m_max(0),
-    m_maxHasBeenSet(false)
+AccountQuota::AccountQuota(JsonView jsonValue)
+  : AccountQuota()
 {
   *this = jsonValue;
 }

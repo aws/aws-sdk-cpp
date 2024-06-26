@@ -23,8 +23,8 @@ InforNexusSourceProperties::InforNexusSourceProperties() :
 {
 }
 
-InforNexusSourceProperties::InforNexusSourceProperties(JsonView jsonValue) : 
-    m_objectHasBeenSet(false)
+InforNexusSourceProperties::InforNexusSourceProperties(JsonView jsonValue)
+  : InforNexusSourceProperties()
 {
   *this = jsonValue;
 }

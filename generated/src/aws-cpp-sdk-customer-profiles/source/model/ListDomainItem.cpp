@@ -26,11 +26,8 @@ ListDomainItem::ListDomainItem() :
 {
 }
 
-ListDomainItem::ListDomainItem(JsonView jsonValue) : 
-    m_domainNameHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+ListDomainItem::ListDomainItem(JsonView jsonValue)
+  : ListDomainItem()
 {
   *this = jsonValue;
 }

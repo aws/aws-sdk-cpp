@@ -27,12 +27,8 @@ EffectiveLifecyclePolicyErrorDetail::EffectiveLifecyclePolicyErrorDetail() :
 {
 }
 
-EffectiveLifecyclePolicyErrorDetail::EffectiveLifecyclePolicyErrorDetail(JsonView jsonValue) : 
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_resourceHasBeenSet(false),
-    m_type(LifecyclePolicyType::NOT_SET),
-    m_typeHasBeenSet(false)
+EffectiveLifecyclePolicyErrorDetail::EffectiveLifecyclePolicyErrorDetail(JsonView jsonValue)
+  : EffectiveLifecyclePolicyErrorDetail()
 {
   *this = jsonValue;
 }

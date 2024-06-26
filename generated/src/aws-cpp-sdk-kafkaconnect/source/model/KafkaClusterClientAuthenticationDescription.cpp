@@ -24,9 +24,8 @@ KafkaClusterClientAuthenticationDescription::KafkaClusterClientAuthenticationDes
 {
 }
 
-KafkaClusterClientAuthenticationDescription::KafkaClusterClientAuthenticationDescription(JsonView jsonValue) : 
-    m_authenticationType(KafkaClusterClientAuthenticationType::NOT_SET),
-    m_authenticationTypeHasBeenSet(false)
+KafkaClusterClientAuthenticationDescription::KafkaClusterClientAuthenticationDescription(JsonView jsonValue)
+  : KafkaClusterClientAuthenticationDescription()
 {
   *this = jsonValue;
 }

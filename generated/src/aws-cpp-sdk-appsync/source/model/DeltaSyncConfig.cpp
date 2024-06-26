@@ -27,12 +27,8 @@ DeltaSyncConfig::DeltaSyncConfig() :
 {
 }
 
-DeltaSyncConfig::DeltaSyncConfig(JsonView jsonValue) : 
-    m_baseTableTTL(0),
-    m_baseTableTTLHasBeenSet(false),
-    m_deltaSyncTableNameHasBeenSet(false),
-    m_deltaSyncTableTTL(0),
-    m_deltaSyncTableTTLHasBeenSet(false)
+DeltaSyncConfig::DeltaSyncConfig(JsonView jsonValue)
+  : DeltaSyncConfig()
 {
   *this = jsonValue;
 }

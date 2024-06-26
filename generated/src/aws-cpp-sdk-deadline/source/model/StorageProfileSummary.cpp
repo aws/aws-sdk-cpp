@@ -26,11 +26,8 @@ StorageProfileSummary::StorageProfileSummary() :
 {
 }
 
-StorageProfileSummary::StorageProfileSummary(JsonView jsonValue) : 
-    m_displayNameHasBeenSet(false),
-    m_osFamily(StorageProfileOperatingSystemFamily::NOT_SET),
-    m_osFamilyHasBeenSet(false),
-    m_storageProfileIdHasBeenSet(false)
+StorageProfileSummary::StorageProfileSummary(JsonView jsonValue)
+  : StorageProfileSummary()
 {
   *this = jsonValue;
 }

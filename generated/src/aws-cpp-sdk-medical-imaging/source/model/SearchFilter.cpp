@@ -25,10 +25,8 @@ SearchFilter::SearchFilter() :
 {
 }
 
-SearchFilter::SearchFilter(JsonView jsonValue) : 
-    m_valuesHasBeenSet(false),
-    m_operator(Operator::NOT_SET),
-    m_operatorHasBeenSet(false)
+SearchFilter::SearchFilter(JsonView jsonValue)
+  : SearchFilter()
 {
   *this = jsonValue;
 }

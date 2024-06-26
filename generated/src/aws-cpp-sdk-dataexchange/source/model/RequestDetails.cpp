@@ -31,16 +31,8 @@ RequestDetails::RequestDetails() :
 {
 }
 
-RequestDetails::RequestDetails(JsonView jsonValue) : 
-    m_exportAssetToSignedUrlHasBeenSet(false),
-    m_exportAssetsToS3HasBeenSet(false),
-    m_exportRevisionsToS3HasBeenSet(false),
-    m_importAssetFromSignedUrlHasBeenSet(false),
-    m_importAssetsFromS3HasBeenSet(false),
-    m_importAssetsFromRedshiftDataSharesHasBeenSet(false),
-    m_importAssetFromApiGatewayApiHasBeenSet(false),
-    m_createS3DataAccessFromS3BucketHasBeenSet(false),
-    m_importAssetsFromLakeFormationTagPolicyHasBeenSet(false)
+RequestDetails::RequestDetails(JsonView jsonValue)
+  : RequestDetails()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ AnalyticsDataAssociationResult::AnalyticsDataAssociationResult() :
 {
 }
 
-AnalyticsDataAssociationResult::AnalyticsDataAssociationResult(JsonView jsonValue) : 
-    m_dataSetIdHasBeenSet(false),
-    m_targetAccountIdHasBeenSet(false),
-    m_resourceShareIdHasBeenSet(false),
-    m_resourceShareArnHasBeenSet(false)
+AnalyticsDataAssociationResult::AnalyticsDataAssociationResult(JsonView jsonValue)
+  : AnalyticsDataAssociationResult()
 {
   *this = jsonValue;
 }

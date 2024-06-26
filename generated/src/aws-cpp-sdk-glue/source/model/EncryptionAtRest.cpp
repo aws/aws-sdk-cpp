@@ -26,11 +26,8 @@ EncryptionAtRest::EncryptionAtRest() :
 {
 }
 
-EncryptionAtRest::EncryptionAtRest(JsonView jsonValue) : 
-    m_catalogEncryptionMode(CatalogEncryptionMode::NOT_SET),
-    m_catalogEncryptionModeHasBeenSet(false),
-    m_sseAwsKmsKeyIdHasBeenSet(false),
-    m_catalogEncryptionServiceRoleHasBeenSet(false)
+EncryptionAtRest::EncryptionAtRest(JsonView jsonValue)
+  : EncryptionAtRest()
 {
   *this = jsonValue;
 }

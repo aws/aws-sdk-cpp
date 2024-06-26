@@ -30,15 +30,8 @@ ScheduleSummary::ScheduleSummary() :
 {
 }
 
-ScheduleSummary::ScheduleSummary(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_groupNameHasBeenSet(false),
-    m_lastModificationDateHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_state(ScheduleState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_targetHasBeenSet(false)
+ScheduleSummary::ScheduleSummary(JsonView jsonValue)
+  : ScheduleSummary()
 {
   *this = jsonValue;
 }

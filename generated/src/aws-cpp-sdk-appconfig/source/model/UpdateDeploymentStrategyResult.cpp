@@ -26,12 +26,8 @@ UpdateDeploymentStrategyResult::UpdateDeploymentStrategyResult() :
 {
 }
 
-UpdateDeploymentStrategyResult::UpdateDeploymentStrategyResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_deploymentDurationInMinutes(0),
-    m_growthType(GrowthType::NOT_SET),
-    m_growthFactor(0.0),
-    m_finalBakeTimeInMinutes(0),
-    m_replicateTo(ReplicateTo::NOT_SET)
+UpdateDeploymentStrategyResult::UpdateDeploymentStrategyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateDeploymentStrategyResult()
 {
   *this = result;
 }

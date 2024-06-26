@@ -23,8 +23,8 @@ ProblemDetail::ProblemDetail() :
 {
 }
 
-ProblemDetail::ProblemDetail(JsonView jsonValue) : 
-    m_messageHasBeenSet(false)
+ProblemDetail::ProblemDetail(JsonView jsonValue)
+  : ProblemDetail()
 {
   *this = jsonValue;
 }

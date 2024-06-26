@@ -35,20 +35,8 @@ LabelingJobSummary::LabelingJobSummary() :
 {
 }
 
-LabelingJobSummary::LabelingJobSummary(JsonView jsonValue) : 
-    m_labelingJobNameHasBeenSet(false),
-    m_labelingJobArnHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_labelingJobStatus(LabelingJobStatus::NOT_SET),
-    m_labelingJobStatusHasBeenSet(false),
-    m_labelCountersHasBeenSet(false),
-    m_workteamArnHasBeenSet(false),
-    m_preHumanTaskLambdaArnHasBeenSet(false),
-    m_annotationConsolidationLambdaArnHasBeenSet(false),
-    m_failureReasonHasBeenSet(false),
-    m_labelingJobOutputHasBeenSet(false),
-    m_inputConfigHasBeenSet(false)
+LabelingJobSummary::LabelingJobSummary(JsonView jsonValue)
+  : LabelingJobSummary()
 {
   *this = jsonValue;
 }

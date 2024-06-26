@@ -23,8 +23,8 @@ EndSessionResult::EndSessionResult() :
 {
 }
 
-EndSessionResult::EndSessionResult(JsonView jsonValue) : 
-    m_timingInformationHasBeenSet(false)
+EndSessionResult::EndSessionResult(JsonView jsonValue)
+  : EndSessionResult()
 {
   *this = jsonValue;
 }

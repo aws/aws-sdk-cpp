@@ -27,10 +27,8 @@ FpgaImageState::FpgaImageState() :
 {
 }
 
-FpgaImageState::FpgaImageState(const XmlNode& xmlNode) : 
-    m_code(FpgaImageStateCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+FpgaImageState::FpgaImageState(const XmlNode& xmlNode)
+  : FpgaImageState()
 {
   *this = xmlNode;
 }

@@ -24,9 +24,8 @@ RetrieverConfiguration::RetrieverConfiguration() :
 {
 }
 
-RetrieverConfiguration::RetrieverConfiguration(JsonView jsonValue) : 
-    m_nativeIndexConfigurationHasBeenSet(false),
-    m_kendraIndexConfigurationHasBeenSet(false)
+RetrieverConfiguration::RetrieverConfiguration(JsonView jsonValue)
+  : RetrieverConfiguration()
 {
   *this = jsonValue;
 }

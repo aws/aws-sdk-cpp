@@ -26,11 +26,8 @@ StaticIpConnectionInfo::StaticIpConnectionInfo() :
 {
 }
 
-StaticIpConnectionInfo::StaticIpConnectionInfo(JsonView jsonValue) : 
-    m_defaultGatewayHasBeenSet(false),
-    m_dnsHasBeenSet(false),
-    m_ipAddressHasBeenSet(false),
-    m_maskHasBeenSet(false)
+StaticIpConnectionInfo::StaticIpConnectionInfo(JsonView jsonValue)
+  : StaticIpConnectionInfo()
 {
   *this = jsonValue;
 }

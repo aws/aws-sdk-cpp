@@ -30,15 +30,8 @@ ShareInvitation::ShareInvitation() :
 {
 }
 
-ShareInvitation::ShareInvitation(JsonView jsonValue) : 
-    m_shareInvitationIdHasBeenSet(false),
-    m_shareResourceType(ShareResourceType::NOT_SET),
-    m_shareResourceTypeHasBeenSet(false),
-    m_workloadIdHasBeenSet(false),
-    m_lensAliasHasBeenSet(false),
-    m_lensArnHasBeenSet(false),
-    m_profileArnHasBeenSet(false),
-    m_templateArnHasBeenSet(false)
+ShareInvitation::ShareInvitation(JsonView jsonValue)
+  : ShareInvitation()
 {
   *this = jsonValue;
 }

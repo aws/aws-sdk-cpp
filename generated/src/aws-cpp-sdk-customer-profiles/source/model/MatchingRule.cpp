@@ -23,8 +23,8 @@ MatchingRule::MatchingRule() :
 {
 }
 
-MatchingRule::MatchingRule(JsonView jsonValue) : 
-    m_ruleHasBeenSet(false)
+MatchingRule::MatchingRule(JsonView jsonValue)
+  : MatchingRule()
 {
   *this = jsonValue;
 }

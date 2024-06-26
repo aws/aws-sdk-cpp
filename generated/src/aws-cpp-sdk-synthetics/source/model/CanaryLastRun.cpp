@@ -24,9 +24,8 @@ CanaryLastRun::CanaryLastRun() :
 {
 }
 
-CanaryLastRun::CanaryLastRun(JsonView jsonValue) : 
-    m_canaryNameHasBeenSet(false),
-    m_lastRunHasBeenSet(false)
+CanaryLastRun::CanaryLastRun(JsonView jsonValue)
+  : CanaryLastRun()
 {
   *this = jsonValue;
 }

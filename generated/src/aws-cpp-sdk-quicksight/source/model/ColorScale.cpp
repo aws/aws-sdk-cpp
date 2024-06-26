@@ -26,11 +26,8 @@ ColorScale::ColorScale() :
 {
 }
 
-ColorScale::ColorScale(JsonView jsonValue) : 
-    m_colorsHasBeenSet(false),
-    m_colorFillType(ColorFillType::NOT_SET),
-    m_colorFillTypeHasBeenSet(false),
-    m_nullValueColorHasBeenSet(false)
+ColorScale::ColorScale(JsonView jsonValue)
+  : ColorScale()
 {
   *this = jsonValue;
 }

@@ -49,34 +49,8 @@ Anomaly::Anomaly() :
 {
 }
 
-Anomaly::Anomaly(JsonView jsonValue) : 
-    m_anomalyIdHasBeenSet(false),
-    m_patternIdHasBeenSet(false),
-    m_anomalyDetectorArnHasBeenSet(false),
-    m_patternStringHasBeenSet(false),
-    m_patternRegexHasBeenSet(false),
-    m_priorityHasBeenSet(false),
-    m_firstSeen(0),
-    m_firstSeenHasBeenSet(false),
-    m_lastSeen(0),
-    m_lastSeenHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_active(false),
-    m_activeHasBeenSet(false),
-    m_state(State::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_histogramHasBeenSet(false),
-    m_logSamplesHasBeenSet(false),
-    m_patternTokensHasBeenSet(false),
-    m_logGroupArnListHasBeenSet(false),
-    m_suppressed(false),
-    m_suppressedHasBeenSet(false),
-    m_suppressedDate(0),
-    m_suppressedDateHasBeenSet(false),
-    m_suppressedUntil(0),
-    m_suppressedUntilHasBeenSet(false),
-    m_isPatternLevelSuppression(false),
-    m_isPatternLevelSuppressionHasBeenSet(false)
+Anomaly::Anomaly(JsonView jsonValue)
+  : Anomaly()
 {
   *this = jsonValue;
 }

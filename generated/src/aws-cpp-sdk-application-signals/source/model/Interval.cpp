@@ -24,9 +24,8 @@ Interval::Interval() :
 {
 }
 
-Interval::Interval(JsonView jsonValue) : 
-    m_rollingIntervalHasBeenSet(false),
-    m_calendarIntervalHasBeenSet(false)
+Interval::Interval(JsonView jsonValue)
+  : Interval()
 {
   *this = jsonValue;
 }

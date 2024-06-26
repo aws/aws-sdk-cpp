@@ -29,14 +29,8 @@ SlotTypeSummary::SlotTypeSummary() :
 {
 }
 
-SlotTypeSummary::SlotTypeSummary(JsonView jsonValue) : 
-    m_slotTypeIdHasBeenSet(false),
-    m_slotTypeNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_parentSlotTypeSignatureHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false),
-    m_slotTypeCategory(SlotTypeCategory::NOT_SET),
-    m_slotTypeCategoryHasBeenSet(false)
+SlotTypeSummary::SlotTypeSummary(JsonView jsonValue)
+  : SlotTypeSummary()
 {
   *this = jsonValue;
 }

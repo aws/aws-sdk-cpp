@@ -24,9 +24,8 @@ SourceS3Location::SourceS3Location() :
 {
 }
 
-SourceS3Location::SourceS3Location(JsonView jsonValue) : 
-    m_bucketHasBeenSet(false),
-    m_keyHasBeenSet(false)
+SourceS3Location::SourceS3Location(JsonView jsonValue)
+  : SourceS3Location()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ UrlEndpointSummary::UrlEndpointSummary() :
 {
 }
 
-UrlEndpointSummary::UrlEndpointSummary(JsonView jsonValue) : 
-    m_healthUrlHasBeenSet(false),
-    m_urlHasBeenSet(false)
+UrlEndpointSummary::UrlEndpointSummary(JsonView jsonValue)
+  : UrlEndpointSummary()
 {
   *this = jsonValue;
 }

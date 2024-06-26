@@ -25,10 +25,8 @@ AwsCodeBuildProjectVpcConfig::AwsCodeBuildProjectVpcConfig() :
 {
 }
 
-AwsCodeBuildProjectVpcConfig::AwsCodeBuildProjectVpcConfig(JsonView jsonValue) : 
-    m_vpcIdHasBeenSet(false),
-    m_subnetsHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false)
+AwsCodeBuildProjectVpcConfig::AwsCodeBuildProjectVpcConfig(JsonView jsonValue)
+  : AwsCodeBuildProjectVpcConfig()
 {
   *this = jsonValue;
 }

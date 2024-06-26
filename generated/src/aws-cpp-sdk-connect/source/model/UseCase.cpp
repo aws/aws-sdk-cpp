@@ -26,11 +26,8 @@ UseCase::UseCase() :
 {
 }
 
-UseCase::UseCase(JsonView jsonValue) : 
-    m_useCaseIdHasBeenSet(false),
-    m_useCaseArnHasBeenSet(false),
-    m_useCaseType(UseCaseType::NOT_SET),
-    m_useCaseTypeHasBeenSet(false)
+UseCase::UseCase(JsonView jsonValue)
+  : UseCase()
 {
   *this = jsonValue;
 }

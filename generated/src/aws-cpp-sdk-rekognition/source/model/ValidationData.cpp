@@ -23,8 +23,8 @@ ValidationData::ValidationData() :
 {
 }
 
-ValidationData::ValidationData(JsonView jsonValue) : 
-    m_assetsHasBeenSet(false)
+ValidationData::ValidationData(JsonView jsonValue)
+  : ValidationData()
 {
   *this = jsonValue;
 }

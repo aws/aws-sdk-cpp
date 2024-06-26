@@ -23,8 +23,8 @@ ActivityStartedEventDetails::ActivityStartedEventDetails() :
 {
 }
 
-ActivityStartedEventDetails::ActivityStartedEventDetails(JsonView jsonValue) : 
-    m_workerNameHasBeenSet(false)
+ActivityStartedEventDetails::ActivityStartedEventDetails(JsonView jsonValue)
+  : ActivityStartedEventDetails()
 {
   *this = jsonValue;
 }

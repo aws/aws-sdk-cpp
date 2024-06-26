@@ -25,10 +25,8 @@ DescribeSourceServersRequestFilters::DescribeSourceServersRequestFilters() :
 {
 }
 
-DescribeSourceServersRequestFilters::DescribeSourceServersRequestFilters(JsonView jsonValue) : 
-    m_hardwareIdHasBeenSet(false),
-    m_sourceServerIDsHasBeenSet(false),
-    m_stagingAccountIDsHasBeenSet(false)
+DescribeSourceServersRequestFilters::DescribeSourceServersRequestFilters(JsonView jsonValue)
+  : DescribeSourceServersRequestFilters()
 {
   *this = jsonValue;
 }

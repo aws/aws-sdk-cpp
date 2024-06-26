@@ -29,12 +29,8 @@ GeoRestriction::GeoRestriction() :
 {
 }
 
-GeoRestriction::GeoRestriction(const XmlNode& xmlNode) : 
-    m_restrictionType(GeoRestrictionType::NOT_SET),
-    m_restrictionTypeHasBeenSet(false),
-    m_quantity(0),
-    m_quantityHasBeenSet(false),
-    m_itemsHasBeenSet(false)
+GeoRestriction::GeoRestriction(const XmlNode& xmlNode)
+  : GeoRestriction()
 {
   *this = xmlNode;
 }

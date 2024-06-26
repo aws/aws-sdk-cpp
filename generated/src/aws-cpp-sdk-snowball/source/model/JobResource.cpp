@@ -25,10 +25,8 @@ JobResource::JobResource() :
 {
 }
 
-JobResource::JobResource(JsonView jsonValue) : 
-    m_s3ResourcesHasBeenSet(false),
-    m_lambdaResourcesHasBeenSet(false),
-    m_ec2AmiResourcesHasBeenSet(false)
+JobResource::JobResource(JsonView jsonValue)
+  : JobResource()
 {
   *this = jsonValue;
 }

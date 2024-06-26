@@ -24,9 +24,8 @@ TopicRuleDestinationConfiguration::TopicRuleDestinationConfiguration() :
 {
 }
 
-TopicRuleDestinationConfiguration::TopicRuleDestinationConfiguration(JsonView jsonValue) : 
-    m_httpUrlConfigurationHasBeenSet(false),
-    m_vpcConfigurationHasBeenSet(false)
+TopicRuleDestinationConfiguration::TopicRuleDestinationConfiguration(JsonView jsonValue)
+  : TopicRuleDestinationConfiguration()
 {
   *this = jsonValue;
 }

@@ -35,20 +35,8 @@ AwsEc2VolumeDetails::AwsEc2VolumeDetails() :
 {
 }
 
-AwsEc2VolumeDetails::AwsEc2VolumeDetails(JsonView jsonValue) : 
-    m_createTimeHasBeenSet(false),
-    m_deviceNameHasBeenSet(false),
-    m_encrypted(false),
-    m_encryptedHasBeenSet(false),
-    m_size(0),
-    m_sizeHasBeenSet(false),
-    m_snapshotIdHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_attachmentsHasBeenSet(false),
-    m_volumeIdHasBeenSet(false),
-    m_volumeTypeHasBeenSet(false),
-    m_volumeScanStatusHasBeenSet(false)
+AwsEc2VolumeDetails::AwsEc2VolumeDetails(JsonView jsonValue)
+  : AwsEc2VolumeDetails()
 {
   *this = jsonValue;
 }

@@ -23,9 +23,8 @@ GetContactChannelResult::GetContactChannelResult() :
 {
 }
 
-GetContactChannelResult::GetContactChannelResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_type(ChannelType::NOT_SET),
-    m_activationStatus(ActivationStatus::NOT_SET)
+GetContactChannelResult::GetContactChannelResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetContactChannelResult()
 {
   *this = result;
 }

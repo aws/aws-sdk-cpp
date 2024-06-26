@@ -69,54 +69,8 @@ Instance::Instance() :
 {
 }
 
-Instance::Instance(JsonView jsonValue) : 
-    m_agentVersionHasBeenSet(false),
-    m_amiIdHasBeenSet(false),
-    m_architecture(Architecture::NOT_SET),
-    m_architectureHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_autoScalingType(AutoScalingType::NOT_SET),
-    m_autoScalingTypeHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_blockDeviceMappingsHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_ebsOptimized(false),
-    m_ebsOptimizedHasBeenSet(false),
-    m_ec2InstanceIdHasBeenSet(false),
-    m_ecsClusterArnHasBeenSet(false),
-    m_ecsContainerInstanceArnHasBeenSet(false),
-    m_elasticIpHasBeenSet(false),
-    m_hostnameHasBeenSet(false),
-    m_infrastructureClassHasBeenSet(false),
-    m_installUpdatesOnBoot(false),
-    m_installUpdatesOnBootHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_instanceProfileArnHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_lastServiceErrorIdHasBeenSet(false),
-    m_layerIdsHasBeenSet(false),
-    m_osHasBeenSet(false),
-    m_platformHasBeenSet(false),
-    m_privateDnsHasBeenSet(false),
-    m_privateIpHasBeenSet(false),
-    m_publicDnsHasBeenSet(false),
-    m_publicIpHasBeenSet(false),
-    m_registeredByHasBeenSet(false),
-    m_reportedAgentVersionHasBeenSet(false),
-    m_reportedOsHasBeenSet(false),
-    m_rootDeviceType(RootDeviceType::NOT_SET),
-    m_rootDeviceTypeHasBeenSet(false),
-    m_rootDeviceVolumeIdHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false),
-    m_sshHostDsaKeyFingerprintHasBeenSet(false),
-    m_sshHostRsaKeyFingerprintHasBeenSet(false),
-    m_sshKeyNameHasBeenSet(false),
-    m_stackIdHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_subnetIdHasBeenSet(false),
-    m_tenancyHasBeenSet(false),
-    m_virtualizationType(VirtualizationType::NOT_SET),
-    m_virtualizationTypeHasBeenSet(false)
+Instance::Instance(JsonView jsonValue)
+  : Instance()
 {
   *this = jsonValue;
 }

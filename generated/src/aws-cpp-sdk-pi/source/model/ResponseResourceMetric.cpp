@@ -25,10 +25,8 @@ ResponseResourceMetric::ResponseResourceMetric() :
 {
 }
 
-ResponseResourceMetric::ResponseResourceMetric(JsonView jsonValue) : 
-    m_metricHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_unitHasBeenSet(false)
+ResponseResourceMetric::ResponseResourceMetric(JsonView jsonValue)
+  : ResponseResourceMetric()
 {
   *this = jsonValue;
 }

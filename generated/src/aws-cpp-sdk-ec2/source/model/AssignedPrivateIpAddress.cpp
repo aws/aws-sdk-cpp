@@ -25,8 +25,8 @@ AssignedPrivateIpAddress::AssignedPrivateIpAddress() :
 {
 }
 
-AssignedPrivateIpAddress::AssignedPrivateIpAddress(const XmlNode& xmlNode) : 
-    m_privateIpAddressHasBeenSet(false)
+AssignedPrivateIpAddress::AssignedPrivateIpAddress(const XmlNode& xmlNode)
+  : AssignedPrivateIpAddress()
 {
   *this = xmlNode;
 }

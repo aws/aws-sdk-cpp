@@ -26,11 +26,8 @@ MetricDataError::MetricDataError() :
 {
 }
 
-MetricDataError::MetricDataError(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_code(QueryErrorCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+MetricDataError::MetricDataError(JsonView jsonValue)
+  : MetricDataError()
 {
   *this = jsonValue;
 }

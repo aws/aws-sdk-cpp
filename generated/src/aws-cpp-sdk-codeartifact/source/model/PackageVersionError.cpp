@@ -25,10 +25,8 @@ PackageVersionError::PackageVersionError() :
 {
 }
 
-PackageVersionError::PackageVersionError(JsonView jsonValue) : 
-    m_errorCode(PackageVersionErrorCode::NOT_SET),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
+PackageVersionError::PackageVersionError(JsonView jsonValue)
+  : PackageVersionError()
 {
   *this = jsonValue;
 }

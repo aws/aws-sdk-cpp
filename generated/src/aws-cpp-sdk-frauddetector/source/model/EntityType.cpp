@@ -27,12 +27,8 @@ EntityType::EntityType() :
 {
 }
 
-EntityType::EntityType(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_arnHasBeenSet(false)
+EntityType::EntityType(JsonView jsonValue)
+  : EntityType()
 {
   *this = jsonValue;
 }

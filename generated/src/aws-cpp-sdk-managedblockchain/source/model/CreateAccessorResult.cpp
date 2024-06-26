@@ -22,8 +22,8 @@ CreateAccessorResult::CreateAccessorResult() :
 {
 }
 
-CreateAccessorResult::CreateAccessorResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_networkType(AccessorNetworkType::NOT_SET)
+CreateAccessorResult::CreateAccessorResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateAccessorResult()
 {
   *this = result;
 }

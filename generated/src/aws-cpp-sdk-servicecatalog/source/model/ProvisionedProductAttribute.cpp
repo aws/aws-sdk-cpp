@@ -42,27 +42,8 @@ ProvisionedProductAttribute::ProvisionedProductAttribute() :
 {
 }
 
-ProvisionedProductAttribute::ProvisionedProductAttribute(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_status(ProvisionedProductStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_idempotencyTokenHasBeenSet(false),
-    m_lastRecordIdHasBeenSet(false),
-    m_lastProvisioningRecordIdHasBeenSet(false),
-    m_lastSuccessfulProvisioningRecordIdHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_physicalIdHasBeenSet(false),
-    m_productIdHasBeenSet(false),
-    m_productNameHasBeenSet(false),
-    m_provisioningArtifactIdHasBeenSet(false),
-    m_provisioningArtifactNameHasBeenSet(false),
-    m_userArnHasBeenSet(false),
-    m_userArnSessionHasBeenSet(false)
+ProvisionedProductAttribute::ProvisionedProductAttribute(JsonView jsonValue)
+  : ProvisionedProductAttribute()
 {
   *this = jsonValue;
 }

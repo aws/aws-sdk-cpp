@@ -23,8 +23,8 @@ RepositoryHeadSourceCodeType::RepositoryHeadSourceCodeType() :
 {
 }
 
-RepositoryHeadSourceCodeType::RepositoryHeadSourceCodeType(JsonView jsonValue) : 
-    m_branchNameHasBeenSet(false)
+RepositoryHeadSourceCodeType::RepositoryHeadSourceCodeType(JsonView jsonValue)
+  : RepositoryHeadSourceCodeType()
 {
   *this = jsonValue;
 }

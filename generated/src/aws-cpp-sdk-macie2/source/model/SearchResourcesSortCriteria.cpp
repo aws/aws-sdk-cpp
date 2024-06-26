@@ -26,11 +26,8 @@ SearchResourcesSortCriteria::SearchResourcesSortCriteria() :
 {
 }
 
-SearchResourcesSortCriteria::SearchResourcesSortCriteria(JsonView jsonValue) : 
-    m_attributeName(SearchResourcesSortAttributeName::NOT_SET),
-    m_attributeNameHasBeenSet(false),
-    m_orderBy(OrderBy::NOT_SET),
-    m_orderByHasBeenSet(false)
+SearchResourcesSortCriteria::SearchResourcesSortCriteria(JsonView jsonValue)
+  : SearchResourcesSortCriteria()
 {
   *this = jsonValue;
 }

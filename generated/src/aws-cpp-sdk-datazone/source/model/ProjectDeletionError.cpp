@@ -24,9 +24,8 @@ ProjectDeletionError::ProjectDeletionError() :
 {
 }
 
-ProjectDeletionError::ProjectDeletionError(JsonView jsonValue) : 
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+ProjectDeletionError::ProjectDeletionError(JsonView jsonValue)
+  : ProjectDeletionError()
 {
   *this = jsonValue;
 }

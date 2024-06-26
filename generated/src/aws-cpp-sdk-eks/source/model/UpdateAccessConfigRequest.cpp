@@ -24,9 +24,8 @@ UpdateAccessConfigRequest::UpdateAccessConfigRequest() :
 {
 }
 
-UpdateAccessConfigRequest::UpdateAccessConfigRequest(JsonView jsonValue) : 
-    m_authenticationMode(AuthenticationMode::NOT_SET),
-    m_authenticationModeHasBeenSet(false)
+UpdateAccessConfigRequest::UpdateAccessConfigRequest(JsonView jsonValue)
+  : UpdateAccessConfigRequest()
 {
   *this = jsonValue;
 }

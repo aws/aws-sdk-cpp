@@ -25,10 +25,8 @@ FindingSource::FindingSource() :
 {
 }
 
-FindingSource::FindingSource(JsonView jsonValue) : 
-    m_type(FindingSourceType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_detailHasBeenSet(false)
+FindingSource::FindingSource(JsonView jsonValue)
+  : FindingSource()
 {
   *this = jsonValue;
 }

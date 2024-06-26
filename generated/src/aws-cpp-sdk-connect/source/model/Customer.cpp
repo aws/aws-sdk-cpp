@@ -24,9 +24,8 @@ Customer::Customer() :
 {
 }
 
-Customer::Customer(JsonView jsonValue) : 
-    m_deviceInfoHasBeenSet(false),
-    m_capabilitiesHasBeenSet(false)
+Customer::Customer(JsonView jsonValue)
+  : Customer()
 {
   *this = jsonValue;
 }

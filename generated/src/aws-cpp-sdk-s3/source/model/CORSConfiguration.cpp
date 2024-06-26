@@ -25,8 +25,8 @@ CORSConfiguration::CORSConfiguration() :
 {
 }
 
-CORSConfiguration::CORSConfiguration(const XmlNode& xmlNode) : 
-    m_cORSRulesHasBeenSet(false)
+CORSConfiguration::CORSConfiguration(const XmlNode& xmlNode)
+  : CORSConfiguration()
 {
   *this = xmlNode;
 }

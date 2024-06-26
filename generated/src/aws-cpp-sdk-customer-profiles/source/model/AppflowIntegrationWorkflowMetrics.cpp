@@ -28,13 +28,8 @@ AppflowIntegrationWorkflowMetrics::AppflowIntegrationWorkflowMetrics() :
 {
 }
 
-AppflowIntegrationWorkflowMetrics::AppflowIntegrationWorkflowMetrics(JsonView jsonValue) : 
-    m_recordsProcessed(0),
-    m_recordsProcessedHasBeenSet(false),
-    m_stepsCompleted(0),
-    m_stepsCompletedHasBeenSet(false),
-    m_totalSteps(0),
-    m_totalStepsHasBeenSet(false)
+AppflowIntegrationWorkflowMetrics::AppflowIntegrationWorkflowMetrics(JsonView jsonValue)
+  : AppflowIntegrationWorkflowMetrics()
 {
   *this = jsonValue;
 }

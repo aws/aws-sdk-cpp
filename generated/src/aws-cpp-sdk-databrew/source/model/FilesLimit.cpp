@@ -28,13 +28,8 @@ FilesLimit::FilesLimit() :
 {
 }
 
-FilesLimit::FilesLimit(JsonView jsonValue) : 
-    m_maxFiles(0),
-    m_maxFilesHasBeenSet(false),
-    m_orderedBy(OrderedBy::NOT_SET),
-    m_orderedByHasBeenSet(false),
-    m_order(Order::NOT_SET),
-    m_orderHasBeenSet(false)
+FilesLimit::FilesLimit(JsonView jsonValue)
+  : FilesLimit()
 {
   *this = jsonValue;
 }

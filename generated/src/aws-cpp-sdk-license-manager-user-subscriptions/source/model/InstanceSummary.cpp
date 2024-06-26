@@ -27,12 +27,8 @@ InstanceSummary::InstanceSummary() :
 {
 }
 
-InstanceSummary::InstanceSummary(JsonView jsonValue) : 
-    m_instanceIdHasBeenSet(false),
-    m_lastStatusCheckDateHasBeenSet(false),
-    m_productsHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false)
+InstanceSummary::InstanceSummary(JsonView jsonValue)
+  : InstanceSummary()
 {
   *this = jsonValue;
 }

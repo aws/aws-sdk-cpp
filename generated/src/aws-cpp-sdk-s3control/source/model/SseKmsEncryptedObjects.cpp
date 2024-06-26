@@ -26,9 +26,8 @@ SseKmsEncryptedObjects::SseKmsEncryptedObjects() :
 {
 }
 
-SseKmsEncryptedObjects::SseKmsEncryptedObjects(const XmlNode& xmlNode) : 
-    m_status(SseKmsEncryptedObjectsStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+SseKmsEncryptedObjects::SseKmsEncryptedObjects(const XmlNode& xmlNode)
+  : SseKmsEncryptedObjects()
 {
   *this = xmlNode;
 }

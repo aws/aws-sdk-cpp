@@ -27,12 +27,8 @@ AwsCloudMapServiceDiscovery::AwsCloudMapServiceDiscovery() :
 {
 }
 
-AwsCloudMapServiceDiscovery::AwsCloudMapServiceDiscovery(JsonView jsonValue) : 
-    m_attributesHasBeenSet(false),
-    m_ipPreference(IpPreference::NOT_SET),
-    m_ipPreferenceHasBeenSet(false),
-    m_namespaceNameHasBeenSet(false),
-    m_serviceNameHasBeenSet(false)
+AwsCloudMapServiceDiscovery::AwsCloudMapServiceDiscovery(JsonView jsonValue)
+  : AwsCloudMapServiceDiscovery()
 {
   *this = jsonValue;
 }

@@ -46,29 +46,8 @@ JobDescriptor::JobDescriptor() :
 {
 }
 
-JobDescriptor::JobDescriptor(const XmlNode& xmlNode) : 
-    m_jobIdHasBeenSet(false),
-    m_confirmationRequired(false),
-    m_confirmationRequiredHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_jobArnHasBeenSet(false),
-    m_status(JobStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_manifestHasBeenSet(false),
-    m_operationHasBeenSet(false),
-    m_priority(0),
-    m_priorityHasBeenSet(false),
-    m_progressSummaryHasBeenSet(false),
-    m_statusUpdateReasonHasBeenSet(false),
-    m_failureReasonsHasBeenSet(false),
-    m_reportHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_terminationDateHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_suspendedDateHasBeenSet(false),
-    m_suspendedCauseHasBeenSet(false),
-    m_manifestGeneratorHasBeenSet(false),
-    m_generatedManifestDescriptorHasBeenSet(false)
+JobDescriptor::JobDescriptor(const XmlNode& xmlNode)
+  : JobDescriptor()
 {
   *this = xmlNode;
 }

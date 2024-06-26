@@ -23,8 +23,8 @@ HlsConfiguration::HlsConfiguration() :
 {
 }
 
-HlsConfiguration::HlsConfiguration(JsonView jsonValue) : 
-    m_manifestEndpointPrefixHasBeenSet(false)
+HlsConfiguration::HlsConfiguration(JsonView jsonValue)
+  : HlsConfiguration()
 {
   *this = jsonValue;
 }

@@ -27,12 +27,8 @@ ChangeProgressStage::ChangeProgressStage() :
 {
 }
 
-ChangeProgressStage::ChangeProgressStage(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_status(ChangeProgressStageStatuses::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false)
+ChangeProgressStage::ChangeProgressStage(JsonView jsonValue)
+  : ChangeProgressStage()
 {
   *this = jsonValue;
 }

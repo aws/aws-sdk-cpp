@@ -25,10 +25,8 @@ PriceWithCurrency::PriceWithCurrency() :
 {
 }
 
-PriceWithCurrency::PriceWithCurrency(JsonView jsonValue) : 
-    m_price(0.0),
-    m_priceHasBeenSet(false),
-    m_currencyHasBeenSet(false)
+PriceWithCurrency::PriceWithCurrency(JsonView jsonValue)
+  : PriceWithCurrency()
 {
   *this = jsonValue;
 }

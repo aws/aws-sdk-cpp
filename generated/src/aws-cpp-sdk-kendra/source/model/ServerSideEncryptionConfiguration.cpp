@@ -23,8 +23,8 @@ ServerSideEncryptionConfiguration::ServerSideEncryptionConfiguration() :
 {
 }
 
-ServerSideEncryptionConfiguration::ServerSideEncryptionConfiguration(JsonView jsonValue) : 
-    m_kmsKeyIdHasBeenSet(false)
+ServerSideEncryptionConfiguration::ServerSideEncryptionConfiguration(JsonView jsonValue)
+  : ServerSideEncryptionConfiguration()
 {
   *this = jsonValue;
 }

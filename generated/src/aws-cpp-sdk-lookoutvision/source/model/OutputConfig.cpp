@@ -23,8 +23,8 @@ OutputConfig::OutputConfig() :
 {
 }
 
-OutputConfig::OutputConfig(JsonView jsonValue) : 
-    m_s3LocationHasBeenSet(false)
+OutputConfig::OutputConfig(JsonView jsonValue)
+  : OutputConfig()
 {
   *this = jsonValue;
 }

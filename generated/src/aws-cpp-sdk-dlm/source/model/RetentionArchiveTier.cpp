@@ -28,13 +28,8 @@ RetentionArchiveTier::RetentionArchiveTier() :
 {
 }
 
-RetentionArchiveTier::RetentionArchiveTier(JsonView jsonValue) : 
-    m_count(0),
-    m_countHasBeenSet(false),
-    m_interval(0),
-    m_intervalHasBeenSet(false),
-    m_intervalUnit(RetentionIntervalUnitValues::NOT_SET),
-    m_intervalUnitHasBeenSet(false)
+RetentionArchiveTier::RetentionArchiveTier(JsonView jsonValue)
+  : RetentionArchiveTier()
 {
   *this = jsonValue;
 }

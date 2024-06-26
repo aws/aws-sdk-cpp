@@ -40,25 +40,8 @@ InputSettings::InputSettings() :
 {
 }
 
-InputSettings::InputSettings(JsonView jsonValue) : 
-    m_audioSelectorsHasBeenSet(false),
-    m_captionSelectorsHasBeenSet(false),
-    m_deblockFilter(InputDeblockFilter::NOT_SET),
-    m_deblockFilterHasBeenSet(false),
-    m_denoiseFilter(InputDenoiseFilter::NOT_SET),
-    m_denoiseFilterHasBeenSet(false),
-    m_filterStrength(0),
-    m_filterStrengthHasBeenSet(false),
-    m_inputFilter(InputFilter::NOT_SET),
-    m_inputFilterHasBeenSet(false),
-    m_networkInputSettingsHasBeenSet(false),
-    m_scte35Pid(0),
-    m_scte35PidHasBeenSet(false),
-    m_smpte2038DataPreference(Smpte2038DataPreference::NOT_SET),
-    m_smpte2038DataPreferenceHasBeenSet(false),
-    m_sourceEndBehavior(InputSourceEndBehavior::NOT_SET),
-    m_sourceEndBehaviorHasBeenSet(false),
-    m_videoSelectorHasBeenSet(false)
+InputSettings::InputSettings(JsonView jsonValue)
+  : InputSettings()
 {
   *this = jsonValue;
 }

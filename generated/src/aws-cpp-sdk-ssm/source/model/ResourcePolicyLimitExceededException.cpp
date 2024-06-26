@@ -26,11 +26,8 @@ ResourcePolicyLimitExceededException::ResourcePolicyLimitExceededException() :
 {
 }
 
-ResourcePolicyLimitExceededException::ResourcePolicyLimitExceededException(JsonView jsonValue) : 
-    m_limit(0),
-    m_limitHasBeenSet(false),
-    m_limitTypeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+ResourcePolicyLimitExceededException::ResourcePolicyLimitExceededException(JsonView jsonValue)
+  : ResourcePolicyLimitExceededException()
 {
   *this = jsonValue;
 }

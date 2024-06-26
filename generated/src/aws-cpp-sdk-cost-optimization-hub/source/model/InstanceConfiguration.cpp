@@ -23,8 +23,8 @@ InstanceConfiguration::InstanceConfiguration() :
 {
 }
 
-InstanceConfiguration::InstanceConfiguration(JsonView jsonValue) : 
-    m_typeHasBeenSet(false)
+InstanceConfiguration::InstanceConfiguration(JsonView jsonValue)
+  : InstanceConfiguration()
 {
   *this = jsonValue;
 }

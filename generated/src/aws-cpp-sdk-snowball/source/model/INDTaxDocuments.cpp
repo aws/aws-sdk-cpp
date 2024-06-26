@@ -23,8 +23,8 @@ INDTaxDocuments::INDTaxDocuments() :
 {
 }
 
-INDTaxDocuments::INDTaxDocuments(JsonView jsonValue) : 
-    m_gSTINHasBeenSet(false)
+INDTaxDocuments::INDTaxDocuments(JsonView jsonValue)
+  : INDTaxDocuments()
 {
   *this = jsonValue;
 }

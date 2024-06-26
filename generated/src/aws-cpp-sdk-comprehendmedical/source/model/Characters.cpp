@@ -24,9 +24,8 @@ Characters::Characters() :
 {
 }
 
-Characters::Characters(JsonView jsonValue) : 
-    m_originalTextCharacters(0),
-    m_originalTextCharactersHasBeenSet(false)
+Characters::Characters(JsonView jsonValue)
+  : Characters()
 {
   *this = jsonValue;
 }

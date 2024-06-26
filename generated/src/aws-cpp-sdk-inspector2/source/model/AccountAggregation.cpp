@@ -30,15 +30,8 @@ AccountAggregation::AccountAggregation() :
 {
 }
 
-AccountAggregation::AccountAggregation(JsonView jsonValue) : 
-    m_findingType(AggregationFindingType::NOT_SET),
-    m_findingTypeHasBeenSet(false),
-    m_resourceType(AggregationResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_sortBy(AccountSortBy::NOT_SET),
-    m_sortByHasBeenSet(false),
-    m_sortOrder(SortOrder::NOT_SET),
-    m_sortOrderHasBeenSet(false)
+AccountAggregation::AccountAggregation(JsonView jsonValue)
+  : AccountAggregation()
 {
   *this = jsonValue;
 }

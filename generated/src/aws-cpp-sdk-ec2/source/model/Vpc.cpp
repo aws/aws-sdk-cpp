@@ -37,20 +37,8 @@ Vpc::Vpc() :
 {
 }
 
-Vpc::Vpc(const XmlNode& xmlNode) : 
-    m_cidrBlockHasBeenSet(false),
-    m_dhcpOptionsIdHasBeenSet(false),
-    m_state(VpcState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_instanceTenancy(Tenancy::NOT_SET),
-    m_instanceTenancyHasBeenSet(false),
-    m_ipv6CidrBlockAssociationSetHasBeenSet(false),
-    m_cidrBlockAssociationSetHasBeenSet(false),
-    m_isDefault(false),
-    m_isDefaultHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+Vpc::Vpc(const XmlNode& xmlNode)
+  : Vpc()
 {
   *this = xmlNode;
 }

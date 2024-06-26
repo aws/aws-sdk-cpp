@@ -38,23 +38,8 @@ TdscdmaObj::TdscdmaObj() :
 {
 }
 
-TdscdmaObj::TdscdmaObj(JsonView jsonValue) : 
-    m_mcc(0),
-    m_mccHasBeenSet(false),
-    m_mnc(0),
-    m_mncHasBeenSet(false),
-    m_lac(0),
-    m_lacHasBeenSet(false),
-    m_utranCid(0),
-    m_utranCidHasBeenSet(false),
-    m_tdscdmaLocalIdHasBeenSet(false),
-    m_tdscdmaTimingAdvance(0),
-    m_tdscdmaTimingAdvanceHasBeenSet(false),
-    m_rscp(0),
-    m_rscpHasBeenSet(false),
-    m_pathLoss(0),
-    m_pathLossHasBeenSet(false),
-    m_tdscdmaNmrHasBeenSet(false)
+TdscdmaObj::TdscdmaObj(JsonView jsonValue)
+  : TdscdmaObj()
 {
   *this = jsonValue;
 }

@@ -30,15 +30,8 @@ RasterDataCollectionMetadata::RasterDataCollectionMetadata() :
 {
 }
 
-RasterDataCollectionMetadata::RasterDataCollectionMetadata(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_descriptionPageUrlHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_supportedFiltersHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_type(DataCollectionType::NOT_SET),
-    m_typeHasBeenSet(false)
+RasterDataCollectionMetadata::RasterDataCollectionMetadata(JsonView jsonValue)
+  : RasterDataCollectionMetadata()
 {
   *this = jsonValue;
 }

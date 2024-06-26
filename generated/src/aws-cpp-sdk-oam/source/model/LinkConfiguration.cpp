@@ -24,9 +24,8 @@ LinkConfiguration::LinkConfiguration() :
 {
 }
 
-LinkConfiguration::LinkConfiguration(JsonView jsonValue) : 
-    m_logGroupConfigurationHasBeenSet(false),
-    m_metricConfigurationHasBeenSet(false)
+LinkConfiguration::LinkConfiguration(JsonView jsonValue)
+  : LinkConfiguration()
 {
   *this = jsonValue;
 }

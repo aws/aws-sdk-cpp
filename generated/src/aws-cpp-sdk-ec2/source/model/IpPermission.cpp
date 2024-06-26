@@ -33,16 +33,8 @@ IpPermission::IpPermission() :
 {
 }
 
-IpPermission::IpPermission(const XmlNode& xmlNode) : 
-    m_fromPort(0),
-    m_fromPortHasBeenSet(false),
-    m_ipProtocolHasBeenSet(false),
-    m_ipRangesHasBeenSet(false),
-    m_ipv6RangesHasBeenSet(false),
-    m_prefixListIdsHasBeenSet(false),
-    m_toPort(0),
-    m_toPortHasBeenSet(false),
-    m_userIdGroupPairsHasBeenSet(false)
+IpPermission::IpPermission(const XmlNode& xmlNode)
+  : IpPermission()
 {
   *this = xmlNode;
 }

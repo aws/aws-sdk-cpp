@@ -23,8 +23,8 @@ JSONMappingParameters::JSONMappingParameters() :
 {
 }
 
-JSONMappingParameters::JSONMappingParameters(JsonView jsonValue) : 
-    m_recordRowPathHasBeenSet(false)
+JSONMappingParameters::JSONMappingParameters(JsonView jsonValue)
+  : JSONMappingParameters()
 {
   *this = jsonValue;
 }

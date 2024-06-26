@@ -24,9 +24,8 @@ AutoScalingPolicy::AutoScalingPolicy() :
 {
 }
 
-AutoScalingPolicy::AutoScalingPolicy(JsonView jsonValue) : 
-    m_constraintsHasBeenSet(false),
-    m_rulesHasBeenSet(false)
+AutoScalingPolicy::AutoScalingPolicy(JsonView jsonValue)
+  : AutoScalingPolicy()
 {
   *this = jsonValue;
 }

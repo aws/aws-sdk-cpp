@@ -26,11 +26,8 @@ VersionInformation::VersionInformation() :
 {
 }
 
-VersionInformation::VersionInformation(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_creationTimestampHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_versionHasBeenSet(false)
+VersionInformation::VersionInformation(JsonView jsonValue)
+  : VersionInformation()
 {
   *this = jsonValue;
 }

@@ -30,14 +30,8 @@ SecretValueEntry::SecretValueEntry() :
 {
 }
 
-SecretValueEntry::SecretValueEntry(JsonView jsonValue) : 
-    m_aRNHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_versionIdHasBeenSet(false),
-    m_secretBinaryHasBeenSet(false),
-    m_secretStringHasBeenSet(false),
-    m_versionStagesHasBeenSet(false),
-    m_createdDateHasBeenSet(false)
+SecretValueEntry::SecretValueEntry(JsonView jsonValue)
+  : SecretValueEntry()
 {
   *this = jsonValue;
 }

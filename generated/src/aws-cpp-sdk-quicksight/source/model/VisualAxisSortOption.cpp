@@ -24,9 +24,8 @@ VisualAxisSortOption::VisualAxisSortOption() :
 {
 }
 
-VisualAxisSortOption::VisualAxisSortOption(JsonView jsonValue) : 
-    m_availabilityStatus(DashboardBehavior::NOT_SET),
-    m_availabilityStatusHasBeenSet(false)
+VisualAxisSortOption::VisualAxisSortOption(JsonView jsonValue)
+  : VisualAxisSortOption()
 {
   *this = jsonValue;
 }

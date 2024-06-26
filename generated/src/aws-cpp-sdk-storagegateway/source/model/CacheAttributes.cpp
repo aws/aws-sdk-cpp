@@ -24,9 +24,8 @@ CacheAttributes::CacheAttributes() :
 {
 }
 
-CacheAttributes::CacheAttributes(JsonView jsonValue) : 
-    m_cacheStaleTimeoutInSeconds(0),
-    m_cacheStaleTimeoutInSecondsHasBeenSet(false)
+CacheAttributes::CacheAttributes(JsonView jsonValue)
+  : CacheAttributes()
 {
   *this = jsonValue;
 }

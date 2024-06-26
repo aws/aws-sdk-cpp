@@ -25,10 +25,8 @@ ReportStatus::ReportStatus() :
 {
 }
 
-ReportStatus::ReportStatus(JsonView jsonValue) : 
-    m_lastDeliveryHasBeenSet(false),
-    m_lastStatus(LastStatus::NOT_SET),
-    m_lastStatusHasBeenSet(false)
+ReportStatus::ReportStatus(JsonView jsonValue)
+  : ReportStatus()
 {
   *this = jsonValue;
 }

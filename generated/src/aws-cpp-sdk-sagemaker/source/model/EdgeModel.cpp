@@ -26,11 +26,8 @@ EdgeModel::EdgeModel() :
 {
 }
 
-EdgeModel::EdgeModel(JsonView jsonValue) : 
-    m_modelNameHasBeenSet(false),
-    m_modelVersionHasBeenSet(false),
-    m_latestSampleTimeHasBeenSet(false),
-    m_latestInferenceHasBeenSet(false)
+EdgeModel::EdgeModel(JsonView jsonValue)
+  : EdgeModel()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ ListSolFunctionInstanceMetadata::ListSolFunctionInstanceMetadata() :
 {
 }
 
-ListSolFunctionInstanceMetadata::ListSolFunctionInstanceMetadata(JsonView jsonValue) : 
-    m_createdAtHasBeenSet(false),
-    m_lastModifiedHasBeenSet(false)
+ListSolFunctionInstanceMetadata::ListSolFunctionInstanceMetadata(JsonView jsonValue)
+  : ListSolFunctionInstanceMetadata()
 {
   *this = jsonValue;
 }

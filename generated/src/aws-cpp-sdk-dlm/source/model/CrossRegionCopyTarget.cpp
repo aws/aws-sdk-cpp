@@ -23,8 +23,8 @@ CrossRegionCopyTarget::CrossRegionCopyTarget() :
 {
 }
 
-CrossRegionCopyTarget::CrossRegionCopyTarget(JsonView jsonValue) : 
-    m_targetRegionHasBeenSet(false)
+CrossRegionCopyTarget::CrossRegionCopyTarget(JsonView jsonValue)
+  : CrossRegionCopyTarget()
 {
   *this = jsonValue;
 }

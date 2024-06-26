@@ -32,17 +32,8 @@ ApplicationComponent::ApplicationComponent() :
 {
 }
 
-ApplicationComponent::ApplicationComponent(JsonView jsonValue) : 
-    m_componentNameHasBeenSet(false),
-    m_componentRemarksHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
-    m_osType(OsType::NOT_SET),
-    m_osTypeHasBeenSet(false),
-    m_tier(Tier::NOT_SET),
-    m_tierHasBeenSet(false),
-    m_monitor(false),
-    m_monitorHasBeenSet(false),
-    m_detectedWorkloadHasBeenSet(false)
+ApplicationComponent::ApplicationComponent(JsonView jsonValue)
+  : ApplicationComponent()
 {
   *this = jsonValue;
 }

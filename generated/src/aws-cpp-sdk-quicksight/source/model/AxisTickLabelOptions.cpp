@@ -25,10 +25,8 @@ AxisTickLabelOptions::AxisTickLabelOptions() :
 {
 }
 
-AxisTickLabelOptions::AxisTickLabelOptions(JsonView jsonValue) : 
-    m_labelOptionsHasBeenSet(false),
-    m_rotationAngle(0.0),
-    m_rotationAngleHasBeenSet(false)
+AxisTickLabelOptions::AxisTickLabelOptions(JsonView jsonValue)
+  : AxisTickLabelOptions()
 {
   *this = jsonValue;
 }

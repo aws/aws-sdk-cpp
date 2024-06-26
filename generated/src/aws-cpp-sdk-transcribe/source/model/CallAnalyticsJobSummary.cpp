@@ -32,17 +32,8 @@ CallAnalyticsJobSummary::CallAnalyticsJobSummary() :
 {
 }
 
-CallAnalyticsJobSummary::CallAnalyticsJobSummary(JsonView jsonValue) : 
-    m_callAnalyticsJobNameHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_completionTimeHasBeenSet(false),
-    m_languageCode(LanguageCode::NOT_SET),
-    m_languageCodeHasBeenSet(false),
-    m_callAnalyticsJobStatus(CallAnalyticsJobStatus::NOT_SET),
-    m_callAnalyticsJobStatusHasBeenSet(false),
-    m_callAnalyticsJobDetailsHasBeenSet(false),
-    m_failureReasonHasBeenSet(false)
+CallAnalyticsJobSummary::CallAnalyticsJobSummary(JsonView jsonValue)
+  : CallAnalyticsJobSummary()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ S3Configuration::S3Configuration() :
 {
 }
 
-S3Configuration::S3Configuration(JsonView jsonValue) : 
-    m_bucketNameHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
+S3Configuration::S3Configuration(JsonView jsonValue)
+  : S3Configuration()
 {
   *this = jsonValue;
 }

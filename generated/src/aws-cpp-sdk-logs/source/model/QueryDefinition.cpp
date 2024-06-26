@@ -28,13 +28,8 @@ QueryDefinition::QueryDefinition() :
 {
 }
 
-QueryDefinition::QueryDefinition(JsonView jsonValue) : 
-    m_queryDefinitionIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_queryStringHasBeenSet(false),
-    m_lastModified(0),
-    m_lastModifiedHasBeenSet(false),
-    m_logGroupNamesHasBeenSet(false)
+QueryDefinition::QueryDefinition(JsonView jsonValue)
+  : QueryDefinition()
 {
   *this = jsonValue;
 }

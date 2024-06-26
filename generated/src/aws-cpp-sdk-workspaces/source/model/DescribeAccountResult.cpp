@@ -23,9 +23,8 @@ DescribeAccountResult::DescribeAccountResult() :
 {
 }
 
-DescribeAccountResult::DescribeAccountResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_dedicatedTenancySupport(DedicatedTenancySupportResultEnum::NOT_SET),
-    m_dedicatedTenancyAccountType(DedicatedTenancyAccountType::NOT_SET)
+DescribeAccountResult::DescribeAccountResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeAccountResult()
 {
   *this = result;
 }

@@ -23,8 +23,8 @@ ProximityResourceTypeEventConfiguration::ProximityResourceTypeEventConfiguration
 {
 }
 
-ProximityResourceTypeEventConfiguration::ProximityResourceTypeEventConfiguration(JsonView jsonValue) : 
-    m_sidewalkHasBeenSet(false)
+ProximityResourceTypeEventConfiguration::ProximityResourceTypeEventConfiguration(JsonView jsonValue)
+  : ProximityResourceTypeEventConfiguration()
 {
   *this = jsonValue;
 }

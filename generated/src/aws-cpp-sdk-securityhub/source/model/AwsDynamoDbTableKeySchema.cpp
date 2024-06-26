@@ -24,9 +24,8 @@ AwsDynamoDbTableKeySchema::AwsDynamoDbTableKeySchema() :
 {
 }
 
-AwsDynamoDbTableKeySchema::AwsDynamoDbTableKeySchema(JsonView jsonValue) : 
-    m_attributeNameHasBeenSet(false),
-    m_keyTypeHasBeenSet(false)
+AwsDynamoDbTableKeySchema::AwsDynamoDbTableKeySchema(JsonView jsonValue)
+  : AwsDynamoDbTableKeySchema()
 {
   *this = jsonValue;
 }

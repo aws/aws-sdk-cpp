@@ -26,11 +26,8 @@ RotationsListEntry::RotationsListEntry() :
 {
 }
 
-RotationsListEntry::RotationsListEntry(JsonView jsonValue) : 
-    m_keyIdHasBeenSet(false),
-    m_rotationDateHasBeenSet(false),
-    m_rotationType(RotationType::NOT_SET),
-    m_rotationTypeHasBeenSet(false)
+RotationsListEntry::RotationsListEntry(JsonView jsonValue)
+  : RotationsListEntry()
 {
   *this = jsonValue;
 }

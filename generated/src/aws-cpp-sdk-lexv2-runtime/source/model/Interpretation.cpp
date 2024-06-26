@@ -27,12 +27,8 @@ Interpretation::Interpretation() :
 {
 }
 
-Interpretation::Interpretation(JsonView jsonValue) : 
-    m_nluConfidenceHasBeenSet(false),
-    m_sentimentResponseHasBeenSet(false),
-    m_intentHasBeenSet(false),
-    m_interpretationSource(InterpretationSource::NOT_SET),
-    m_interpretationSourceHasBeenSet(false)
+Interpretation::Interpretation(JsonView jsonValue)
+  : Interpretation()
 {
   *this = jsonValue;
 }

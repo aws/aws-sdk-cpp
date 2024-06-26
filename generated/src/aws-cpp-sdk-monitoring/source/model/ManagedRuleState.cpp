@@ -26,9 +26,8 @@ ManagedRuleState::ManagedRuleState() :
 {
 }
 
-ManagedRuleState::ManagedRuleState(const XmlNode& xmlNode) : 
-    m_ruleNameHasBeenSet(false),
-    m_stateHasBeenSet(false)
+ManagedRuleState::ManagedRuleState(const XmlNode& xmlNode)
+  : ManagedRuleState()
 {
   *this = xmlNode;
 }

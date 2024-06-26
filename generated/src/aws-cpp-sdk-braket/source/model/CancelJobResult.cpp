@@ -22,8 +22,8 @@ CancelJobResult::CancelJobResult() :
 {
 }
 
-CancelJobResult::CancelJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_cancellationStatus(CancellationStatus::NOT_SET)
+CancelJobResult::CancelJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CancelJobResult()
 {
   *this = result;
 }

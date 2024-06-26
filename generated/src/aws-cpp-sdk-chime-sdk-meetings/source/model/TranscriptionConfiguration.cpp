@@ -24,9 +24,8 @@ TranscriptionConfiguration::TranscriptionConfiguration() :
 {
 }
 
-TranscriptionConfiguration::TranscriptionConfiguration(JsonView jsonValue) : 
-    m_engineTranscribeSettingsHasBeenSet(false),
-    m_engineTranscribeMedicalSettingsHasBeenSet(false)
+TranscriptionConfiguration::TranscriptionConfiguration(JsonView jsonValue)
+  : TranscriptionConfiguration()
 {
   *this = jsonValue;
 }

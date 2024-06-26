@@ -27,12 +27,8 @@ PrincipalUser::PrincipalUser() :
 {
 }
 
-PrincipalUser::PrincipalUser(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_access(ReadAccessType::NOT_SET),
-    m_accessHasBeenSet(false),
-    m_membershipType(MembershipType::NOT_SET),
-    m_membershipTypeHasBeenSet(false)
+PrincipalUser::PrincipalUser(JsonView jsonValue)
+  : PrincipalUser()
 {
   *this = jsonValue;
 }

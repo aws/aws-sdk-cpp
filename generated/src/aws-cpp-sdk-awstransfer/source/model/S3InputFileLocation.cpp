@@ -24,9 +24,8 @@ S3InputFileLocation::S3InputFileLocation() :
 {
 }
 
-S3InputFileLocation::S3InputFileLocation(JsonView jsonValue) : 
-    m_bucketHasBeenSet(false),
-    m_keyHasBeenSet(false)
+S3InputFileLocation::S3InputFileLocation(JsonView jsonValue)
+  : S3InputFileLocation()
 {
   *this = jsonValue;
 }

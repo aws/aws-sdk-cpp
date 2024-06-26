@@ -28,13 +28,8 @@ DoubleConfigurationOptions::DoubleConfigurationOptions() :
 {
 }
 
-DoubleConfigurationOptions::DoubleConfigurationOptions(JsonView jsonValue) : 
-    m_defaultValue(0.0),
-    m_defaultValueHasBeenSet(false),
-    m_min(0.0),
-    m_minHasBeenSet(false),
-    m_max(0.0),
-    m_maxHasBeenSet(false)
+DoubleConfigurationOptions::DoubleConfigurationOptions(JsonView jsonValue)
+  : DoubleConfigurationOptions()
 {
   *this = jsonValue;
 }

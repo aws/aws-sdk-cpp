@@ -27,12 +27,8 @@ Layer::Layer() :
 {
 }
 
-Layer::Layer(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_codeSize(0),
-    m_codeSizeHasBeenSet(false),
-    m_signingProfileVersionArnHasBeenSet(false),
-    m_signingJobArnHasBeenSet(false)
+Layer::Layer(JsonView jsonValue)
+  : Layer()
 {
   *this = jsonValue;
 }

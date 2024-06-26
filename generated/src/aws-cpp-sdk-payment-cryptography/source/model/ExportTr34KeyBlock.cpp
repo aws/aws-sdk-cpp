@@ -29,14 +29,8 @@ ExportTr34KeyBlock::ExportTr34KeyBlock() :
 {
 }
 
-ExportTr34KeyBlock::ExportTr34KeyBlock(JsonView jsonValue) : 
-    m_certificateAuthorityPublicKeyIdentifierHasBeenSet(false),
-    m_wrappingKeyCertificateHasBeenSet(false),
-    m_exportTokenHasBeenSet(false),
-    m_keyBlockFormat(Tr34KeyBlockFormat::NOT_SET),
-    m_keyBlockFormatHasBeenSet(false),
-    m_randomNonceHasBeenSet(false),
-    m_keyBlockHeadersHasBeenSet(false)
+ExportTr34KeyBlock::ExportTr34KeyBlock(JsonView jsonValue)
+  : ExportTr34KeyBlock()
 {
   *this = jsonValue;
 }

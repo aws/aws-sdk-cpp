@@ -25,10 +25,8 @@ EbsSnapshotConfiguration::EbsSnapshotConfiguration() :
 {
 }
 
-EbsSnapshotConfiguration::EbsSnapshotConfiguration(JsonView jsonValue) : 
-    m_userIdsHasBeenSet(false),
-    m_groupsHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
+EbsSnapshotConfiguration::EbsSnapshotConfiguration(JsonView jsonValue)
+  : EbsSnapshotConfiguration()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ LambdaVpcConfig::LambdaVpcConfig() :
 {
 }
 
-LambdaVpcConfig::LambdaVpcConfig(JsonView jsonValue) : 
-    m_securityGroupIdsHasBeenSet(false),
-    m_subnetIdsHasBeenSet(false),
-    m_vpcIdHasBeenSet(false)
+LambdaVpcConfig::LambdaVpcConfig(JsonView jsonValue)
+  : LambdaVpcConfig()
 {
   *this = jsonValue;
 }

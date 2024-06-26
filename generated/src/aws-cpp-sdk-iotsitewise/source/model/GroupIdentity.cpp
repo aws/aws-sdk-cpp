@@ -23,8 +23,8 @@ GroupIdentity::GroupIdentity() :
 {
 }
 
-GroupIdentity::GroupIdentity(JsonView jsonValue) : 
-    m_idHasBeenSet(false)
+GroupIdentity::GroupIdentity(JsonView jsonValue)
+  : GroupIdentity()
 {
   *this = jsonValue;
 }

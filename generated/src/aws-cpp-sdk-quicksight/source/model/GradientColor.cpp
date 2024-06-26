@@ -23,8 +23,8 @@ GradientColor::GradientColor() :
 {
 }
 
-GradientColor::GradientColor(JsonView jsonValue) : 
-    m_stopsHasBeenSet(false)
+GradientColor::GradientColor(JsonView jsonValue)
+  : GradientColor()
 {
   *this = jsonValue;
 }

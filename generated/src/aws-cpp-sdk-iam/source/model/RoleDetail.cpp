@@ -36,19 +36,8 @@ RoleDetail::RoleDetail() :
 {
 }
 
-RoleDetail::RoleDetail(const XmlNode& xmlNode) : 
-    m_pathHasBeenSet(false),
-    m_roleNameHasBeenSet(false),
-    m_roleIdHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_createDateHasBeenSet(false),
-    m_assumeRolePolicyDocumentHasBeenSet(false),
-    m_instanceProfileListHasBeenSet(false),
-    m_rolePolicyListHasBeenSet(false),
-    m_attachedManagedPoliciesHasBeenSet(false),
-    m_permissionsBoundaryHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_roleLastUsedHasBeenSet(false)
+RoleDetail::RoleDetail(const XmlNode& xmlNode)
+  : RoleDetail()
 {
   *this = xmlNode;
 }

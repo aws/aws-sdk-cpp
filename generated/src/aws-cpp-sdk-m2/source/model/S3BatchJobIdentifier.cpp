@@ -25,10 +25,8 @@ S3BatchJobIdentifier::S3BatchJobIdentifier() :
 {
 }
 
-S3BatchJobIdentifier::S3BatchJobIdentifier(JsonView jsonValue) : 
-    m_bucketHasBeenSet(false),
-    m_identifierHasBeenSet(false),
-    m_keyPrefixHasBeenSet(false)
+S3BatchJobIdentifier::S3BatchJobIdentifier(JsonView jsonValue)
+  : S3BatchJobIdentifier()
 {
   *this = jsonValue;
 }

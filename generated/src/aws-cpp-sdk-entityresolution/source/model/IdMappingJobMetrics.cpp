@@ -28,13 +28,8 @@ IdMappingJobMetrics::IdMappingJobMetrics() :
 {
 }
 
-IdMappingJobMetrics::IdMappingJobMetrics(JsonView jsonValue) : 
-    m_inputRecords(0),
-    m_inputRecordsHasBeenSet(false),
-    m_recordsNotProcessed(0),
-    m_recordsNotProcessedHasBeenSet(false),
-    m_totalRecordsProcessed(0),
-    m_totalRecordsProcessedHasBeenSet(false)
+IdMappingJobMetrics::IdMappingJobMetrics(JsonView jsonValue)
+  : IdMappingJobMetrics()
 {
   *this = jsonValue;
 }

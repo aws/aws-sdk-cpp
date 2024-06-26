@@ -29,14 +29,8 @@ SourceApiAssociationSummary::SourceApiAssociationSummary() :
 {
 }
 
-SourceApiAssociationSummary::SourceApiAssociationSummary(JsonView jsonValue) : 
-    m_associationIdHasBeenSet(false),
-    m_associationArnHasBeenSet(false),
-    m_sourceApiIdHasBeenSet(false),
-    m_sourceApiArnHasBeenSet(false),
-    m_mergedApiIdHasBeenSet(false),
-    m_mergedApiArnHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+SourceApiAssociationSummary::SourceApiAssociationSummary(JsonView jsonValue)
+  : SourceApiAssociationSummary()
 {
   *this = jsonValue;
 }

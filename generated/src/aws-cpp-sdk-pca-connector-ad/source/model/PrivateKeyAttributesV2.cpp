@@ -27,12 +27,8 @@ PrivateKeyAttributesV2::PrivateKeyAttributesV2() :
 {
 }
 
-PrivateKeyAttributesV2::PrivateKeyAttributesV2(JsonView jsonValue) : 
-    m_cryptoProvidersHasBeenSet(false),
-    m_keySpec(KeySpec::NOT_SET),
-    m_keySpecHasBeenSet(false),
-    m_minimalKeyLength(0),
-    m_minimalKeyLengthHasBeenSet(false)
+PrivateKeyAttributesV2::PrivateKeyAttributesV2(JsonView jsonValue)
+  : PrivateKeyAttributesV2()
 {
   *this = jsonValue;
 }

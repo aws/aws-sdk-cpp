@@ -22,8 +22,8 @@ StartEdgeConfigurationUpdateResult::StartEdgeConfigurationUpdateResult() :
 {
 }
 
-StartEdgeConfigurationUpdateResult::StartEdgeConfigurationUpdateResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_syncStatus(SyncStatus::NOT_SET)
+StartEdgeConfigurationUpdateResult::StartEdgeConfigurationUpdateResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : StartEdgeConfigurationUpdateResult()
 {
   *this = result;
 }

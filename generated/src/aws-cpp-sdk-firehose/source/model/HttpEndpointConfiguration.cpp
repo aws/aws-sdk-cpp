@@ -25,10 +25,8 @@ HttpEndpointConfiguration::HttpEndpointConfiguration() :
 {
 }
 
-HttpEndpointConfiguration::HttpEndpointConfiguration(JsonView jsonValue) : 
-    m_urlHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_accessKeyHasBeenSet(false)
+HttpEndpointConfiguration::HttpEndpointConfiguration(JsonView jsonValue)
+  : HttpEndpointConfiguration()
 {
   *this = jsonValue;
 }

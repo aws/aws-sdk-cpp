@@ -25,11 +25,8 @@ UpdateKxDataviewResult::UpdateKxDataviewResult() :
 {
 }
 
-UpdateKxDataviewResult::UpdateKxDataviewResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_azMode(KxAzMode::NOT_SET),
-    m_status(KxDataviewStatus::NOT_SET),
-    m_autoUpdate(false),
-    m_readWrite(false)
+UpdateKxDataviewResult::UpdateKxDataviewResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateKxDataviewResult()
 {
   *this = result;
 }

@@ -22,8 +22,8 @@ GetReservedInstancesExchangeQuoteResponse::GetReservedInstancesExchangeQuoteResp
 {
 }
 
-GetReservedInstancesExchangeQuoteResponse::GetReservedInstancesExchangeQuoteResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_isValidExchange(false)
+GetReservedInstancesExchangeQuoteResponse::GetReservedInstancesExchangeQuoteResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : GetReservedInstancesExchangeQuoteResponse()
 {
   *this = result;
 }

@@ -24,9 +24,8 @@ WeeklySchedule::WeeklySchedule() :
 {
 }
 
-WeeklySchedule::WeeklySchedule(JsonView jsonValue) : 
-    m_daysHasBeenSet(false),
-    m_startTimeHasBeenSet(false)
+WeeklySchedule::WeeklySchedule(JsonView jsonValue)
+  : WeeklySchedule()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ JupyterLabAppImageConfig::JupyterLabAppImageConfig() :
 {
 }
 
-JupyterLabAppImageConfig::JupyterLabAppImageConfig(JsonView jsonValue) : 
-    m_fileSystemConfigHasBeenSet(false),
-    m_containerConfigHasBeenSet(false)
+JupyterLabAppImageConfig::JupyterLabAppImageConfig(JsonView jsonValue)
+  : JupyterLabAppImageConfig()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ AwsDynamoDbTableAttributeDefinition::AwsDynamoDbTableAttributeDefinition() :
 {
 }
 
-AwsDynamoDbTableAttributeDefinition::AwsDynamoDbTableAttributeDefinition(JsonView jsonValue) : 
-    m_attributeNameHasBeenSet(false),
-    m_attributeTypeHasBeenSet(false)
+AwsDynamoDbTableAttributeDefinition::AwsDynamoDbTableAttributeDefinition(JsonView jsonValue)
+  : AwsDynamoDbTableAttributeDefinition()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ AnomalyGroupStatistics::AnomalyGroupStatistics() :
 {
 }
 
-AnomalyGroupStatistics::AnomalyGroupStatistics(JsonView jsonValue) : 
-    m_evaluationStartDateHasBeenSet(false),
-    m_totalCount(0),
-    m_totalCountHasBeenSet(false),
-    m_itemizedMetricStatsListHasBeenSet(false)
+AnomalyGroupStatistics::AnomalyGroupStatistics(JsonView jsonValue)
+  : AnomalyGroupStatistics()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ PutCodeBindingResult::PutCodeBindingResult() :
 {
 }
 
-PutCodeBindingResult::PutCodeBindingResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(CodeGenerationStatus::NOT_SET)
+PutCodeBindingResult::PutCodeBindingResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : PutCodeBindingResult()
 {
   *this = result;
 }

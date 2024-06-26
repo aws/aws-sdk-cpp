@@ -24,10 +24,8 @@ GetMissionProfileResult::GetMissionProfileResult() :
 {
 }
 
-GetMissionProfileResult::GetMissionProfileResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_contactPostPassDurationSeconds(0),
-    m_contactPrePassDurationSeconds(0),
-    m_minimumViableContactDurationSeconds(0)
+GetMissionProfileResult::GetMissionProfileResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetMissionProfileResult()
 {
   *this = result;
 }

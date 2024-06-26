@@ -27,12 +27,8 @@ OrderedResourceDefinition::OrderedResourceDefinition() :
 {
 }
 
-OrderedResourceDefinition::OrderedResourceDefinition(JsonView jsonValue) : 
-    m_commitmentConfigurationHasBeenSet(false),
-    m_count(0),
-    m_countHasBeenSet(false),
-    m_type(NetworkResourceDefinitionType::NOT_SET),
-    m_typeHasBeenSet(false)
+OrderedResourceDefinition::OrderedResourceDefinition(JsonView jsonValue)
+  : OrderedResourceDefinition()
 {
   *this = jsonValue;
 }

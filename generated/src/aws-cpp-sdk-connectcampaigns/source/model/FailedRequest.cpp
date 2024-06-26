@@ -26,11 +26,8 @@ FailedRequest::FailedRequest() :
 {
 }
 
-FailedRequest::FailedRequest(JsonView jsonValue) : 
-    m_clientTokenHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_failureCode(FailureCode::NOT_SET),
-    m_failureCodeHasBeenSet(false)
+FailedRequest::FailedRequest(JsonView jsonValue)
+  : FailedRequest()
 {
   *this = jsonValue;
 }

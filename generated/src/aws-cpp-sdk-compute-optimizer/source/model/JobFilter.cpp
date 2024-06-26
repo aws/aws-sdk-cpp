@@ -25,10 +25,8 @@ JobFilter::JobFilter() :
 {
 }
 
-JobFilter::JobFilter(JsonView jsonValue) : 
-    m_name(JobFilterName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+JobFilter::JobFilter(JsonView jsonValue)
+  : JobFilter()
 {
   *this = jsonValue;
 }

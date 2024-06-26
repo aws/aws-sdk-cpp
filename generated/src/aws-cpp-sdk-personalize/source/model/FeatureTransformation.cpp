@@ -28,13 +28,8 @@ FeatureTransformation::FeatureTransformation() :
 {
 }
 
-FeatureTransformation::FeatureTransformation(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_featureTransformationArnHasBeenSet(false),
-    m_defaultParametersHasBeenSet(false),
-    m_creationDateTimeHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false),
-    m_statusHasBeenSet(false)
+FeatureTransformation::FeatureTransformation(JsonView jsonValue)
+  : FeatureTransformation()
 {
   *this = jsonValue;
 }

@@ -27,12 +27,8 @@ LaunchProfileInitializationScript::LaunchProfileInitializationScript() :
 {
 }
 
-LaunchProfileInitializationScript::LaunchProfileInitializationScript(JsonView jsonValue) : 
-    m_runtimeRoleArnHasBeenSet(false),
-    m_scriptHasBeenSet(false),
-    m_secureInitializationRoleArnHasBeenSet(false),
-    m_studioComponentIdHasBeenSet(false),
-    m_studioComponentNameHasBeenSet(false)
+LaunchProfileInitializationScript::LaunchProfileInitializationScript(JsonView jsonValue)
+  : LaunchProfileInitializationScript()
 {
   *this = jsonValue;
 }

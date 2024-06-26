@@ -32,17 +32,8 @@ TelemetryRecord::TelemetryRecord() :
 {
 }
 
-TelemetryRecord::TelemetryRecord(JsonView jsonValue) : 
-    m_timestampHasBeenSet(false),
-    m_segmentsReceivedCount(0),
-    m_segmentsReceivedCountHasBeenSet(false),
-    m_segmentsSentCount(0),
-    m_segmentsSentCountHasBeenSet(false),
-    m_segmentsSpilloverCount(0),
-    m_segmentsSpilloverCountHasBeenSet(false),
-    m_segmentsRejectedCount(0),
-    m_segmentsRejectedCountHasBeenSet(false),
-    m_backendConnectionErrorsHasBeenSet(false)
+TelemetryRecord::TelemetryRecord(JsonView jsonValue)
+  : TelemetryRecord()
 {
   *this = jsonValue;
 }

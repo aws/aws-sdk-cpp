@@ -34,17 +34,8 @@ S3Location::S3Location() :
 {
 }
 
-S3Location::S3Location(const XmlNode& xmlNode) : 
-    m_bucketNameHasBeenSet(false),
-    m_prefixHasBeenSet(false),
-    m_encryptionHasBeenSet(false),
-    m_cannedACL(ObjectCannedACL::NOT_SET),
-    m_cannedACLHasBeenSet(false),
-    m_accessControlListHasBeenSet(false),
-    m_taggingHasBeenSet(false),
-    m_userMetadataHasBeenSet(false),
-    m_storageClass(StorageClass::NOT_SET),
-    m_storageClassHasBeenSet(false)
+S3Location::S3Location(const XmlNode& xmlNode)
+  : S3Location()
 {
   *this = xmlNode;
 }

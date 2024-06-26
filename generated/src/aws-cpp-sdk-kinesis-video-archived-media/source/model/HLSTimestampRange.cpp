@@ -24,9 +24,8 @@ HLSTimestampRange::HLSTimestampRange() :
 {
 }
 
-HLSTimestampRange::HLSTimestampRange(JsonView jsonValue) : 
-    m_startTimestampHasBeenSet(false),
-    m_endTimestampHasBeenSet(false)
+HLSTimestampRange::HLSTimestampRange(JsonView jsonValue)
+  : HLSTimestampRange()
 {
   *this = jsonValue;
 }

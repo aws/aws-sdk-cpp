@@ -26,11 +26,8 @@ GroupStatusDetail::GroupStatusDetail() :
 {
 }
 
-GroupStatusDetail::GroupStatusDetail(JsonView jsonValue) : 
-    m_status(GroupStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false),
-    m_errorDetailHasBeenSet(false)
+GroupStatusDetail::GroupStatusDetail(JsonView jsonValue)
+  : GroupStatusDetail()
 {
   *this = jsonValue;
 }

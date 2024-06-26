@@ -34,19 +34,8 @@ FilterSliderControl::FilterSliderControl() :
 {
 }
 
-FilterSliderControl::FilterSliderControl(JsonView jsonValue) : 
-    m_filterControlIdHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_sourceFilterIdHasBeenSet(false),
-    m_displayOptionsHasBeenSet(false),
-    m_type(SheetControlSliderType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_maximumValue(0.0),
-    m_maximumValueHasBeenSet(false),
-    m_minimumValue(0.0),
-    m_minimumValueHasBeenSet(false),
-    m_stepSize(0.0),
-    m_stepSizeHasBeenSet(false)
+FilterSliderControl::FilterSliderControl(JsonView jsonValue)
+  : FilterSliderControl()
 {
   *this = jsonValue;
 }

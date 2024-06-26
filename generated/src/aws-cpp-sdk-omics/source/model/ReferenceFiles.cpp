@@ -24,9 +24,8 @@ ReferenceFiles::ReferenceFiles() :
 {
 }
 
-ReferenceFiles::ReferenceFiles(JsonView jsonValue) : 
-    m_sourceHasBeenSet(false),
-    m_indexHasBeenSet(false)
+ReferenceFiles::ReferenceFiles(JsonView jsonValue)
+  : ReferenceFiles()
 {
   *this = jsonValue;
 }

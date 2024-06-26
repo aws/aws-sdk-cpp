@@ -25,10 +25,8 @@ VoiceSettings::VoiceSettings() :
 {
 }
 
-VoiceSettings::VoiceSettings(JsonView jsonValue) : 
-    m_voiceIdHasBeenSet(false),
-    m_engine(VoiceEngine::NOT_SET),
-    m_engineHasBeenSet(false)
+VoiceSettings::VoiceSettings(JsonView jsonValue)
+  : VoiceSettings()
 {
   *this = jsonValue;
 }

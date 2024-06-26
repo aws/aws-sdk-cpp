@@ -33,18 +33,8 @@ SourceProperties::SourceProperties() :
 {
 }
 
-SourceProperties::SourceProperties(JsonView jsonValue) : 
-    m_cpusHasBeenSet(false),
-    m_disksHasBeenSet(false),
-    m_identificationHintsHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false),
-    m_networkInterfacesHasBeenSet(false),
-    m_osHasBeenSet(false),
-    m_ramBytes(0),
-    m_ramBytesHasBeenSet(false),
-    m_recommendedInstanceTypeHasBeenSet(false),
-    m_supportsNitroInstances(false),
-    m_supportsNitroInstancesHasBeenSet(false)
+SourceProperties::SourceProperties(JsonView jsonValue)
+  : SourceProperties()
 {
   *this = jsonValue;
 }

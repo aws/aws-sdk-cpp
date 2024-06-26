@@ -26,11 +26,8 @@ Operation::Operation() :
 {
 }
 
-Operation::Operation(JsonView jsonValue) : 
-    m_equationHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_outputType(OutputType::NOT_SET),
-    m_outputTypeHasBeenSet(false)
+Operation::Operation(JsonView jsonValue)
+  : Operation()
 {
   *this = jsonValue;
 }

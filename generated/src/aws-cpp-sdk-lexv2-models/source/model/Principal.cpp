@@ -24,9 +24,8 @@ Principal::Principal() :
 {
 }
 
-Principal::Principal(JsonView jsonValue) : 
-    m_serviceHasBeenSet(false),
-    m_arnHasBeenSet(false)
+Principal::Principal(JsonView jsonValue)
+  : Principal()
 {
   *this = jsonValue;
 }

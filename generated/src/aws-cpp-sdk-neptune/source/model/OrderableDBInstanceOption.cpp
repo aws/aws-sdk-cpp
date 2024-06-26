@@ -60,43 +60,8 @@ OrderableDBInstanceOption::OrderableDBInstanceOption() :
 {
 }
 
-OrderableDBInstanceOption::OrderableDBInstanceOption(const XmlNode& xmlNode) : 
-    m_engineHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_dBInstanceClassHasBeenSet(false),
-    m_licenseModelHasBeenSet(false),
-    m_availabilityZonesHasBeenSet(false),
-    m_multiAZCapable(false),
-    m_multiAZCapableHasBeenSet(false),
-    m_readReplicaCapable(false),
-    m_readReplicaCapableHasBeenSet(false),
-    m_vpc(false),
-    m_vpcHasBeenSet(false),
-    m_supportsStorageEncryption(false),
-    m_supportsStorageEncryptionHasBeenSet(false),
-    m_storageTypeHasBeenSet(false),
-    m_supportsIops(false),
-    m_supportsIopsHasBeenSet(false),
-    m_supportsEnhancedMonitoring(false),
-    m_supportsEnhancedMonitoringHasBeenSet(false),
-    m_supportsIAMDatabaseAuthentication(false),
-    m_supportsIAMDatabaseAuthenticationHasBeenSet(false),
-    m_supportsPerformanceInsights(false),
-    m_supportsPerformanceInsightsHasBeenSet(false),
-    m_minStorageSize(0),
-    m_minStorageSizeHasBeenSet(false),
-    m_maxStorageSize(0),
-    m_maxStorageSizeHasBeenSet(false),
-    m_minIopsPerDbInstance(0),
-    m_minIopsPerDbInstanceHasBeenSet(false),
-    m_maxIopsPerDbInstance(0),
-    m_maxIopsPerDbInstanceHasBeenSet(false),
-    m_minIopsPerGib(0.0),
-    m_minIopsPerGibHasBeenSet(false),
-    m_maxIopsPerGib(0.0),
-    m_maxIopsPerGibHasBeenSet(false),
-    m_supportsGlobalDatabases(false),
-    m_supportsGlobalDatabasesHasBeenSet(false)
+OrderableDBInstanceOption::OrderableDBInstanceOption(const XmlNode& xmlNode)
+  : OrderableDBInstanceOption()
 {
   *this = xmlNode;
 }

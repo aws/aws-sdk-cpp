@@ -28,13 +28,8 @@ SourceCredentialsInfo::SourceCredentialsInfo() :
 {
 }
 
-SourceCredentialsInfo::SourceCredentialsInfo(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_serverType(ServerType::NOT_SET),
-    m_serverTypeHasBeenSet(false),
-    m_authType(AuthType::NOT_SET),
-    m_authTypeHasBeenSet(false),
-    m_resourceHasBeenSet(false)
+SourceCredentialsInfo::SourceCredentialsInfo(JsonView jsonValue)
+  : SourceCredentialsInfo()
 {
   *this = jsonValue;
 }

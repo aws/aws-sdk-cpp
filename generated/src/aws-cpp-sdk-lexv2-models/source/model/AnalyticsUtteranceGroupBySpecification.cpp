@@ -24,9 +24,8 @@ AnalyticsUtteranceGroupBySpecification::AnalyticsUtteranceGroupBySpecification()
 {
 }
 
-AnalyticsUtteranceGroupBySpecification::AnalyticsUtteranceGroupBySpecification(JsonView jsonValue) : 
-    m_name(AnalyticsUtteranceField::NOT_SET),
-    m_nameHasBeenSet(false)
+AnalyticsUtteranceGroupBySpecification::AnalyticsUtteranceGroupBySpecification(JsonView jsonValue)
+  : AnalyticsUtteranceGroupBySpecification()
 {
   *this = jsonValue;
 }

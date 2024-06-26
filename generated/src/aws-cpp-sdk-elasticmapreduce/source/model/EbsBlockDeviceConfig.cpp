@@ -25,10 +25,8 @@ EbsBlockDeviceConfig::EbsBlockDeviceConfig() :
 {
 }
 
-EbsBlockDeviceConfig::EbsBlockDeviceConfig(JsonView jsonValue) : 
-    m_volumeSpecificationHasBeenSet(false),
-    m_volumesPerInstance(0),
-    m_volumesPerInstanceHasBeenSet(false)
+EbsBlockDeviceConfig::EbsBlockDeviceConfig(JsonView jsonValue)
+  : EbsBlockDeviceConfig()
 {
   *this = jsonValue;
 }

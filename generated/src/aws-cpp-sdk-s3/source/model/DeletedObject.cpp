@@ -29,12 +29,8 @@ DeletedObject::DeletedObject() :
 {
 }
 
-DeletedObject::DeletedObject(const XmlNode& xmlNode) : 
-    m_keyHasBeenSet(false),
-    m_versionIdHasBeenSet(false),
-    m_deleteMarker(false),
-    m_deleteMarkerHasBeenSet(false),
-    m_deleteMarkerVersionIdHasBeenSet(false)
+DeletedObject::DeletedObject(const XmlNode& xmlNode)
+  : DeletedObject()
 {
   *this = xmlNode;
 }

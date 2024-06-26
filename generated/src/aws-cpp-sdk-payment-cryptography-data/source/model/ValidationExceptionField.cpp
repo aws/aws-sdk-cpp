@@ -24,9 +24,8 @@ ValidationExceptionField::ValidationExceptionField() :
 {
 }
 
-ValidationExceptionField::ValidationExceptionField(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_pathHasBeenSet(false)
+ValidationExceptionField::ValidationExceptionField(JsonView jsonValue)
+  : ValidationExceptionField()
 {
   *this = jsonValue;
 }

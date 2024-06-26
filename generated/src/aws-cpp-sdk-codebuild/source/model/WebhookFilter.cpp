@@ -27,12 +27,8 @@ WebhookFilter::WebhookFilter() :
 {
 }
 
-WebhookFilter::WebhookFilter(JsonView jsonValue) : 
-    m_type(WebhookFilterType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_patternHasBeenSet(false),
-    m_excludeMatchedPattern(false),
-    m_excludeMatchedPatternHasBeenSet(false)
+WebhookFilter::WebhookFilter(JsonView jsonValue)
+  : WebhookFilter()
 {
   *this = jsonValue;
 }

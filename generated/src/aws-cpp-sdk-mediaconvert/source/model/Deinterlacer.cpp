@@ -28,13 +28,8 @@ Deinterlacer::Deinterlacer() :
 {
 }
 
-Deinterlacer::Deinterlacer(JsonView jsonValue) : 
-    m_algorithm(DeinterlaceAlgorithm::NOT_SET),
-    m_algorithmHasBeenSet(false),
-    m_control(DeinterlacerControl::NOT_SET),
-    m_controlHasBeenSet(false),
-    m_mode(DeinterlacerMode::NOT_SET),
-    m_modeHasBeenSet(false)
+Deinterlacer::Deinterlacer(JsonView jsonValue)
+  : Deinterlacer()
 {
   *this = jsonValue;
 }

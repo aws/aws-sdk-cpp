@@ -29,14 +29,8 @@ EventSource::EventSource() :
 {
 }
 
-EventSource::EventSource(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_expirationTimeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_state(EventSourceState::NOT_SET),
-    m_stateHasBeenSet(false)
+EventSource::EventSource(JsonView jsonValue)
+  : EventSource()
 {
   *this = jsonValue;
 }

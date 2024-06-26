@@ -25,10 +25,8 @@ AnalyticsIntentStageGroupByKey::AnalyticsIntentStageGroupByKey() :
 {
 }
 
-AnalyticsIntentStageGroupByKey::AnalyticsIntentStageGroupByKey(JsonView jsonValue) : 
-    m_name(AnalyticsIntentStageField::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
+AnalyticsIntentStageGroupByKey::AnalyticsIntentStageGroupByKey(JsonView jsonValue)
+  : AnalyticsIntentStageGroupByKey()
 {
   *this = jsonValue;
 }

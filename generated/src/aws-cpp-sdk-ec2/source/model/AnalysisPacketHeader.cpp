@@ -29,12 +29,8 @@ AnalysisPacketHeader::AnalysisPacketHeader() :
 {
 }
 
-AnalysisPacketHeader::AnalysisPacketHeader(const XmlNode& xmlNode) : 
-    m_destinationAddressesHasBeenSet(false),
-    m_destinationPortRangesHasBeenSet(false),
-    m_protocolHasBeenSet(false),
-    m_sourceAddressesHasBeenSet(false),
-    m_sourcePortRangesHasBeenSet(false)
+AnalysisPacketHeader::AnalysisPacketHeader(const XmlNode& xmlNode)
+  : AnalysisPacketHeader()
 {
   *this = xmlNode;
 }

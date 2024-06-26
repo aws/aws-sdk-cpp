@@ -38,23 +38,8 @@ CodeCoverage::CodeCoverage() :
 {
 }
 
-CodeCoverage::CodeCoverage(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_reportARNHasBeenSet(false),
-    m_filePathHasBeenSet(false),
-    m_lineCoveragePercentage(0.0),
-    m_lineCoveragePercentageHasBeenSet(false),
-    m_linesCovered(0),
-    m_linesCoveredHasBeenSet(false),
-    m_linesMissed(0),
-    m_linesMissedHasBeenSet(false),
-    m_branchCoveragePercentage(0.0),
-    m_branchCoveragePercentageHasBeenSet(false),
-    m_branchesCovered(0),
-    m_branchesCoveredHasBeenSet(false),
-    m_branchesMissed(0),
-    m_branchesMissedHasBeenSet(false),
-    m_expiredHasBeenSet(false)
+CodeCoverage::CodeCoverage(JsonView jsonValue)
+  : CodeCoverage()
 {
   *this = jsonValue;
 }

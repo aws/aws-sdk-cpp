@@ -27,12 +27,8 @@ StringDatasetParameter::StringDatasetParameter() :
 {
 }
 
-StringDatasetParameter::StringDatasetParameter(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_valueType(DatasetParameterValueType::NOT_SET),
-    m_valueTypeHasBeenSet(false),
-    m_defaultValuesHasBeenSet(false)
+StringDatasetParameter::StringDatasetParameter(JsonView jsonValue)
+  : StringDatasetParameter()
 {
   *this = jsonValue;
 }

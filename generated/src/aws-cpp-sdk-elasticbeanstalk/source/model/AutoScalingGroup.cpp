@@ -25,8 +25,8 @@ AutoScalingGroup::AutoScalingGroup() :
 {
 }
 
-AutoScalingGroup::AutoScalingGroup(const XmlNode& xmlNode) : 
-    m_nameHasBeenSet(false)
+AutoScalingGroup::AutoScalingGroup(const XmlNode& xmlNode)
+  : AutoScalingGroup()
 {
   *this = xmlNode;
 }

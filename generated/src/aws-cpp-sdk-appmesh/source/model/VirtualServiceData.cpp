@@ -27,12 +27,8 @@ VirtualServiceData::VirtualServiceData() :
 {
 }
 
-VirtualServiceData::VirtualServiceData(JsonView jsonValue) : 
-    m_meshNameHasBeenSet(false),
-    m_metadataHasBeenSet(false),
-    m_specHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_virtualServiceNameHasBeenSet(false)
+VirtualServiceData::VirtualServiceData(JsonView jsonValue)
+  : VirtualServiceData()
 {
   *this = jsonValue;
 }

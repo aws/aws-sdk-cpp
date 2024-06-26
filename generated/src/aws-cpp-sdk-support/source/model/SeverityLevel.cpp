@@ -24,9 +24,8 @@ SeverityLevel::SeverityLevel() :
 {
 }
 
-SeverityLevel::SeverityLevel(JsonView jsonValue) : 
-    m_codeHasBeenSet(false),
-    m_nameHasBeenSet(false)
+SeverityLevel::SeverityLevel(JsonView jsonValue)
+  : SeverityLevel()
 {
   *this = jsonValue;
 }

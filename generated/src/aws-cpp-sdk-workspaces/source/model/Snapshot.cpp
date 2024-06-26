@@ -23,8 +23,8 @@ Snapshot::Snapshot() :
 {
 }
 
-Snapshot::Snapshot(JsonView jsonValue) : 
-    m_snapshotTimeHasBeenSet(false)
+Snapshot::Snapshot(JsonView jsonValue)
+  : Snapshot()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ FargateProfileSelector::FargateProfileSelector() :
 {
 }
 
-FargateProfileSelector::FargateProfileSelector(JsonView jsonValue) : 
-    m_namespaceHasBeenSet(false),
-    m_labelsHasBeenSet(false)
+FargateProfileSelector::FargateProfileSelector(JsonView jsonValue)
+  : FargateProfileSelector()
 {
   *this = jsonValue;
 }

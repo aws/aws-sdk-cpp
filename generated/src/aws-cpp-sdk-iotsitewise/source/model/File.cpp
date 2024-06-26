@@ -25,10 +25,8 @@ File::File() :
 {
 }
 
-File::File(JsonView jsonValue) : 
-    m_bucketHasBeenSet(false),
-    m_keyHasBeenSet(false),
-    m_versionIdHasBeenSet(false)
+File::File(JsonView jsonValue)
+  : File()
 {
   *this = jsonValue;
 }

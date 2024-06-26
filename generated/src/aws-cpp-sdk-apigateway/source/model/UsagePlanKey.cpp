@@ -28,12 +28,8 @@ UsagePlanKey::UsagePlanKey() :
 {
 }
 
-UsagePlanKey::UsagePlanKey(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
+UsagePlanKey::UsagePlanKey(JsonView jsonValue)
+  : UsagePlanKey()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ CodeConfiguration::CodeConfiguration() :
 {
 }
 
-CodeConfiguration::CodeConfiguration(JsonView jsonValue) : 
-    m_s3BucketHasBeenSet(false),
-    m_s3KeyHasBeenSet(false),
-    m_s3ObjectVersionHasBeenSet(false)
+CodeConfiguration::CodeConfiguration(JsonView jsonValue)
+  : CodeConfiguration()
 {
   *this = jsonValue;
 }

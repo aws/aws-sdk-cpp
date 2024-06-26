@@ -24,9 +24,8 @@ AssetBundleImportJobDashboardOverrideParameters::AssetBundleImportJobDashboardOv
 {
 }
 
-AssetBundleImportJobDashboardOverrideParameters::AssetBundleImportJobDashboardOverrideParameters(JsonView jsonValue) : 
-    m_dashboardIdHasBeenSet(false),
-    m_nameHasBeenSet(false)
+AssetBundleImportJobDashboardOverrideParameters::AssetBundleImportJobDashboardOverrideParameters(JsonView jsonValue)
+  : AssetBundleImportJobDashboardOverrideParameters()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ AutoScalingPolicyDescription::AutoScalingPolicyDescription() :
 {
 }
 
-AutoScalingPolicyDescription::AutoScalingPolicyDescription(JsonView jsonValue) : 
-    m_policyNameHasBeenSet(false),
-    m_targetTrackingScalingPolicyConfigurationHasBeenSet(false)
+AutoScalingPolicyDescription::AutoScalingPolicyDescription(JsonView jsonValue)
+  : AutoScalingPolicyDescription()
 {
   *this = jsonValue;
 }

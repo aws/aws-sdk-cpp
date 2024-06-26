@@ -27,12 +27,8 @@ VisibilityConfig::VisibilityConfig() :
 {
 }
 
-VisibilityConfig::VisibilityConfig(JsonView jsonValue) : 
-    m_sampledRequestsEnabled(false),
-    m_sampledRequestsEnabledHasBeenSet(false),
-    m_cloudWatchMetricsEnabled(false),
-    m_cloudWatchMetricsEnabledHasBeenSet(false),
-    m_metricNameHasBeenSet(false)
+VisibilityConfig::VisibilityConfig(JsonView jsonValue)
+  : VisibilityConfig()
 {
   *this = jsonValue;
 }

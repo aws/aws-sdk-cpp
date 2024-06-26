@@ -37,22 +37,8 @@ FirewallPolicyResponse::FirewallPolicyResponse() :
 {
 }
 
-FirewallPolicyResponse::FirewallPolicyResponse(JsonView jsonValue) : 
-    m_firewallPolicyNameHasBeenSet(false),
-    m_firewallPolicyArnHasBeenSet(false),
-    m_firewallPolicyIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_firewallPolicyStatus(ResourceStatus::NOT_SET),
-    m_firewallPolicyStatusHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_consumedStatelessRuleCapacity(0),
-    m_consumedStatelessRuleCapacityHasBeenSet(false),
-    m_consumedStatefulRuleCapacity(0),
-    m_consumedStatefulRuleCapacityHasBeenSet(false),
-    m_numberOfAssociations(0),
-    m_numberOfAssociationsHasBeenSet(false),
-    m_encryptionConfigurationHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false)
+FirewallPolicyResponse::FirewallPolicyResponse(JsonView jsonValue)
+  : FirewallPolicyResponse()
 {
   *this = jsonValue;
 }

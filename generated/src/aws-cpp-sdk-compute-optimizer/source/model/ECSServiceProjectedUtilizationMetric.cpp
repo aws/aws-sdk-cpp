@@ -30,15 +30,8 @@ ECSServiceProjectedUtilizationMetric::ECSServiceProjectedUtilizationMetric() :
 {
 }
 
-ECSServiceProjectedUtilizationMetric::ECSServiceProjectedUtilizationMetric(JsonView jsonValue) : 
-    m_name(ECSServiceMetricName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_statistic(ECSServiceMetricStatistic::NOT_SET),
-    m_statisticHasBeenSet(false),
-    m_lowerBoundValue(0.0),
-    m_lowerBoundValueHasBeenSet(false),
-    m_upperBoundValue(0.0),
-    m_upperBoundValueHasBeenSet(false)
+ECSServiceProjectedUtilizationMetric::ECSServiceProjectedUtilizationMetric(JsonView jsonValue)
+  : ECSServiceProjectedUtilizationMetric()
 {
   *this = jsonValue;
 }

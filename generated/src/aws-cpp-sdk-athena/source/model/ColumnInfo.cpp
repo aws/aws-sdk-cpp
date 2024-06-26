@@ -36,21 +36,8 @@ ColumnInfo::ColumnInfo() :
 {
 }
 
-ColumnInfo::ColumnInfo(JsonView jsonValue) : 
-    m_catalogNameHasBeenSet(false),
-    m_schemaNameHasBeenSet(false),
-    m_tableNameHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_labelHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_precision(0),
-    m_precisionHasBeenSet(false),
-    m_scale(0),
-    m_scaleHasBeenSet(false),
-    m_nullable(ColumnNullable::NOT_SET),
-    m_nullableHasBeenSet(false),
-    m_caseSensitive(false),
-    m_caseSensitiveHasBeenSet(false)
+ColumnInfo::ColumnInfo(JsonView jsonValue)
+  : ColumnInfo()
 {
   *this = jsonValue;
 }

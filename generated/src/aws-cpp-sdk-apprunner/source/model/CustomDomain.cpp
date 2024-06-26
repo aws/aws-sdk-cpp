@@ -28,13 +28,8 @@ CustomDomain::CustomDomain() :
 {
 }
 
-CustomDomain::CustomDomain(JsonView jsonValue) : 
-    m_domainNameHasBeenSet(false),
-    m_enableWWWSubdomain(false),
-    m_enableWWWSubdomainHasBeenSet(false),
-    m_certificateValidationRecordsHasBeenSet(false),
-    m_status(CustomDomainAssociationStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+CustomDomain::CustomDomain(JsonView jsonValue)
+  : CustomDomain()
 {
   *this = jsonValue;
 }

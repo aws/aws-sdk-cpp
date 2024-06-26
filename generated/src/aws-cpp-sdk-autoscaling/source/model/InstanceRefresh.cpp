@@ -39,22 +39,8 @@ InstanceRefresh::InstanceRefresh() :
 {
 }
 
-InstanceRefresh::InstanceRefresh(const XmlNode& xmlNode) : 
-    m_instanceRefreshIdHasBeenSet(false),
-    m_autoScalingGroupNameHasBeenSet(false),
-    m_status(InstanceRefreshStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusReasonHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_percentageComplete(0),
-    m_percentageCompleteHasBeenSet(false),
-    m_instancesToUpdate(0),
-    m_instancesToUpdateHasBeenSet(false),
-    m_progressDetailsHasBeenSet(false),
-    m_preferencesHasBeenSet(false),
-    m_desiredConfigurationHasBeenSet(false),
-    m_rollbackDetailsHasBeenSet(false)
+InstanceRefresh::InstanceRefresh(const XmlNode& xmlNode)
+  : InstanceRefresh()
 {
   *this = xmlNode;
 }

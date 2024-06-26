@@ -27,12 +27,8 @@ DevicePositionUpdate::DevicePositionUpdate() :
 {
 }
 
-DevicePositionUpdate::DevicePositionUpdate(JsonView jsonValue) : 
-    m_deviceIdHasBeenSet(false),
-    m_sampleTimeHasBeenSet(false),
-    m_positionHasBeenSet(false),
-    m_accuracyHasBeenSet(false),
-    m_positionPropertiesHasBeenSet(false)
+DevicePositionUpdate::DevicePositionUpdate(JsonView jsonValue)
+  : DevicePositionUpdate()
 {
   *this = jsonValue;
 }

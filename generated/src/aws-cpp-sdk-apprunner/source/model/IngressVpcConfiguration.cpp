@@ -24,9 +24,8 @@ IngressVpcConfiguration::IngressVpcConfiguration() :
 {
 }
 
-IngressVpcConfiguration::IngressVpcConfiguration(JsonView jsonValue) : 
-    m_vpcIdHasBeenSet(false),
-    m_vpcEndpointIdHasBeenSet(false)
+IngressVpcConfiguration::IngressVpcConfiguration(JsonView jsonValue)
+  : IngressVpcConfiguration()
 {
   *this = jsonValue;
 }

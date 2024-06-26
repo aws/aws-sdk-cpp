@@ -42,8 +42,8 @@ GetSolFunctionPackageContentResult& GetSolFunctionPackageContentResult::operator
    return *this;
 }
 
-GetSolFunctionPackageContentResult::GetSolFunctionPackageContentResult(Aws::AmazonWebServiceResult<ResponseStream>&& result) : 
-    m_contentType(PackageContentType::NOT_SET)
+GetSolFunctionPackageContentResult::GetSolFunctionPackageContentResult(Aws::AmazonWebServiceResult<ResponseStream>&& result)
+  : GetSolFunctionPackageContentResult()
 {
   *this = std::move(result);
 }

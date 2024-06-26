@@ -24,9 +24,8 @@ FileAccessLog::FileAccessLog() :
 {
 }
 
-FileAccessLog::FileAccessLog(JsonView jsonValue) : 
-    m_formatHasBeenSet(false),
-    m_pathHasBeenSet(false)
+FileAccessLog::FileAccessLog(JsonView jsonValue)
+  : FileAccessLog()
 {
   *this = jsonValue;
 }

@@ -28,11 +28,8 @@ Template::Template() :
 {
 }
 
-Template::Template(const XmlNode& xmlNode) : 
-    m_templateNameHasBeenSet(false),
-    m_subjectPartHasBeenSet(false),
-    m_textPartHasBeenSet(false),
-    m_htmlPartHasBeenSet(false)
+Template::Template(const XmlNode& xmlNode)
+  : Template()
 {
   *this = xmlNode;
 }

@@ -25,10 +25,8 @@ PolicyOption::PolicyOption() :
 {
 }
 
-PolicyOption::PolicyOption(JsonView jsonValue) : 
-    m_networkFirewallPolicyHasBeenSet(false),
-    m_thirdPartyFirewallPolicyHasBeenSet(false),
-    m_networkAclCommonPolicyHasBeenSet(false)
+PolicyOption::PolicyOption(JsonView jsonValue)
+  : PolicyOption()
 {
   *this = jsonValue;
 }

@@ -28,13 +28,8 @@ FreeTrialInfo::FreeTrialInfo() :
 {
 }
 
-FreeTrialInfo::FreeTrialInfo(JsonView jsonValue) : 
-    m_endHasBeenSet(false),
-    m_startHasBeenSet(false),
-    m_status(FreeTrialStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_type(FreeTrialType::NOT_SET),
-    m_typeHasBeenSet(false)
+FreeTrialInfo::FreeTrialInfo(JsonView jsonValue)
+  : FreeTrialInfo()
 {
   *this = jsonValue;
 }

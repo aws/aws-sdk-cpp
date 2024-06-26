@@ -26,11 +26,8 @@ TaskSubmitFailedEventDetails::TaskSubmitFailedEventDetails() :
 {
 }
 
-TaskSubmitFailedEventDetails::TaskSubmitFailedEventDetails(JsonView jsonValue) : 
-    m_resourceTypeHasBeenSet(false),
-    m_resourceHasBeenSet(false),
-    m_errorHasBeenSet(false),
-    m_causeHasBeenSet(false)
+TaskSubmitFailedEventDetails::TaskSubmitFailedEventDetails(JsonView jsonValue)
+  : TaskSubmitFailedEventDetails()
 {
   *this = jsonValue;
 }

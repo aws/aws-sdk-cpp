@@ -22,8 +22,8 @@ DescribeContributorInsightsResult::DescribeContributorInsightsResult() :
 {
 }
 
-DescribeContributorInsightsResult::DescribeContributorInsightsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_contributorInsightsStatus(ContributorInsightsStatus::NOT_SET)
+DescribeContributorInsightsResult::DescribeContributorInsightsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeContributorInsightsResult()
 {
   *this = result;
 }

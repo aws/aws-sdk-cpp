@@ -26,11 +26,8 @@ DataLakeConfiguration::DataLakeConfiguration() :
 {
 }
 
-DataLakeConfiguration::DataLakeConfiguration(JsonView jsonValue) : 
-    m_encryptionConfigurationHasBeenSet(false),
-    m_lifecycleConfigurationHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_replicationConfigurationHasBeenSet(false)
+DataLakeConfiguration::DataLakeConfiguration(JsonView jsonValue)
+  : DataLakeConfiguration()
 {
   *this = jsonValue;
 }

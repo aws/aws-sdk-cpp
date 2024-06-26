@@ -28,13 +28,8 @@ PolicyGeneration::PolicyGeneration() :
 {
 }
 
-PolicyGeneration::PolicyGeneration(JsonView jsonValue) : 
-    m_jobIdHasBeenSet(false),
-    m_principalArnHasBeenSet(false),
-    m_status(JobStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_startedOnHasBeenSet(false),
-    m_completedOnHasBeenSet(false)
+PolicyGeneration::PolicyGeneration(JsonView jsonValue)
+  : PolicyGeneration()
 {
   *this = jsonValue;
 }

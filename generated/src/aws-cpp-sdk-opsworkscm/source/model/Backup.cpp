@@ -46,31 +46,8 @@ Backup::Backup() :
 {
 }
 
-Backup::Backup(JsonView jsonValue) : 
-    m_backupArnHasBeenSet(false),
-    m_backupIdHasBeenSet(false),
-    m_backupType(BackupType::NOT_SET),
-    m_backupTypeHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_engineHasBeenSet(false),
-    m_engineModelHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_instanceProfileArnHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_keyPairHasBeenSet(false),
-    m_preferredBackupWindowHasBeenSet(false),
-    m_preferredMaintenanceWindowHasBeenSet(false),
-    m_s3LogUrlHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false),
-    m_serverNameHasBeenSet(false),
-    m_serviceRoleArnHasBeenSet(false),
-    m_status(BackupStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusDescriptionHasBeenSet(false),
-    m_subnetIdsHasBeenSet(false),
-    m_toolsVersionHasBeenSet(false),
-    m_userArnHasBeenSet(false)
+Backup::Backup(JsonView jsonValue)
+  : Backup()
 {
   *this = jsonValue;
 }

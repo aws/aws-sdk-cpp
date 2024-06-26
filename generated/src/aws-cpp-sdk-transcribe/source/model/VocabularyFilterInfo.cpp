@@ -26,11 +26,8 @@ VocabularyFilterInfo::VocabularyFilterInfo() :
 {
 }
 
-VocabularyFilterInfo::VocabularyFilterInfo(JsonView jsonValue) : 
-    m_vocabularyFilterNameHasBeenSet(false),
-    m_languageCode(LanguageCode::NOT_SET),
-    m_languageCodeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false)
+VocabularyFilterInfo::VocabularyFilterInfo(JsonView jsonValue)
+  : VocabularyFilterInfo()
 {
   *this = jsonValue;
 }

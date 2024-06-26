@@ -30,14 +30,8 @@ Connector::Connector() :
 {
 }
 
-Connector::Connector(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_connectorIDHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_ssmCommandConfigHasBeenSet(false),
-    m_ssmInstanceIDHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
+Connector::Connector(JsonView jsonValue)
+  : Connector()
 {
   *this = jsonValue;
 }

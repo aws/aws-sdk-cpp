@@ -34,19 +34,8 @@ TaxRegistrationWithJurisdiction::TaxRegistrationWithJurisdiction() :
 {
 }
 
-TaxRegistrationWithJurisdiction::TaxRegistrationWithJurisdiction(JsonView jsonValue) : 
-    m_additionalTaxInformationHasBeenSet(false),
-    m_certifiedEmailIdHasBeenSet(false),
-    m_jurisdictionHasBeenSet(false),
-    m_legalNameHasBeenSet(false),
-    m_registrationIdHasBeenSet(false),
-    m_registrationType(TaxRegistrationType::NOT_SET),
-    m_registrationTypeHasBeenSet(false),
-    m_sector(Sector::NOT_SET),
-    m_sectorHasBeenSet(false),
-    m_status(TaxRegistrationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_taxDocumentMetadatasHasBeenSet(false)
+TaxRegistrationWithJurisdiction::TaxRegistrationWithJurisdiction(JsonView jsonValue)
+  : TaxRegistrationWithJurisdiction()
 {
   *this = jsonValue;
 }

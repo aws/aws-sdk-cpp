@@ -30,15 +30,8 @@ TargetInstance::TargetInstance() :
 {
 }
 
-TargetInstance::TargetInstance(JsonView jsonValue) : 
-    m_estimatedMonthlyCostHasBeenSet(false),
-    m_estimatedMonthlySavingsHasBeenSet(false),
-    m_currencyCodeHasBeenSet(false),
-    m_defaultTargetInstance(false),
-    m_defaultTargetInstanceHasBeenSet(false),
-    m_resourceDetailsHasBeenSet(false),
-    m_expectedResourceUtilizationHasBeenSet(false),
-    m_platformDifferencesHasBeenSet(false)
+TargetInstance::TargetInstance(JsonView jsonValue)
+  : TargetInstance()
 {
   *this = jsonValue;
 }

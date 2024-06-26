@@ -30,15 +30,8 @@ ProfileNotificationSummary::ProfileNotificationSummary() :
 {
 }
 
-ProfileNotificationSummary::ProfileNotificationSummary(JsonView jsonValue) : 
-    m_currentProfileVersionHasBeenSet(false),
-    m_latestProfileVersionHasBeenSet(false),
-    m_type(ProfileNotificationType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_profileArnHasBeenSet(false),
-    m_profileNameHasBeenSet(false),
-    m_workloadIdHasBeenSet(false),
-    m_workloadNameHasBeenSet(false)
+ProfileNotificationSummary::ProfileNotificationSummary(JsonView jsonValue)
+  : ProfileNotificationSummary()
 {
   *this = jsonValue;
 }

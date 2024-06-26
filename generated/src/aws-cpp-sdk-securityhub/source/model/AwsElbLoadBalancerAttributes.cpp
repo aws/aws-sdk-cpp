@@ -27,12 +27,8 @@ AwsElbLoadBalancerAttributes::AwsElbLoadBalancerAttributes() :
 {
 }
 
-AwsElbLoadBalancerAttributes::AwsElbLoadBalancerAttributes(JsonView jsonValue) : 
-    m_accessLogHasBeenSet(false),
-    m_connectionDrainingHasBeenSet(false),
-    m_connectionSettingsHasBeenSet(false),
-    m_crossZoneLoadBalancingHasBeenSet(false),
-    m_additionalAttributesHasBeenSet(false)
+AwsElbLoadBalancerAttributes::AwsElbLoadBalancerAttributes(JsonView jsonValue)
+  : AwsElbLoadBalancerAttributes()
 {
   *this = jsonValue;
 }

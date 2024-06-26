@@ -28,11 +28,8 @@ Loa::Loa() :
 {
 }
 
-Loa::Loa(JsonView jsonValue) : 
-    m_loaContentHasBeenSet(false),
-    m_loaContentType(LoaContentType::NOT_SET),
-    m_loaContentTypeHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
+Loa::Loa(JsonView jsonValue)
+  : Loa()
 {
   *this = jsonValue;
 }

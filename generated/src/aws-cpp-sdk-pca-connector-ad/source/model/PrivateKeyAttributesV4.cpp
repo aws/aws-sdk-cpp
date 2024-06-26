@@ -30,15 +30,8 @@ PrivateKeyAttributesV4::PrivateKeyAttributesV4() :
 {
 }
 
-PrivateKeyAttributesV4::PrivateKeyAttributesV4(JsonView jsonValue) : 
-    m_algorithm(PrivateKeyAlgorithm::NOT_SET),
-    m_algorithmHasBeenSet(false),
-    m_cryptoProvidersHasBeenSet(false),
-    m_keySpec(KeySpec::NOT_SET),
-    m_keySpecHasBeenSet(false),
-    m_keyUsagePropertyHasBeenSet(false),
-    m_minimalKeyLength(0),
-    m_minimalKeyLengthHasBeenSet(false)
+PrivateKeyAttributesV4::PrivateKeyAttributesV4(JsonView jsonValue)
+  : PrivateKeyAttributesV4()
 {
   *this = jsonValue;
 }

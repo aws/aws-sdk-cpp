@@ -42,8 +42,8 @@ GetSolNetworkPackageContentResult& GetSolNetworkPackageContentResult::operator=(
    return *this;
 }
 
-GetSolNetworkPackageContentResult::GetSolNetworkPackageContentResult(Aws::AmazonWebServiceResult<ResponseStream>&& result) : 
-    m_contentType(PackageContentType::NOT_SET)
+GetSolNetworkPackageContentResult::GetSolNetworkPackageContentResult(Aws::AmazonWebServiceResult<ResponseStream>&& result)
+  : GetSolNetworkPackageContentResult()
 {
   *this = std::move(result);
 }

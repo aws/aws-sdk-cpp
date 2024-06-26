@@ -28,13 +28,8 @@ AggregateResourceIdentifier::AggregateResourceIdentifier() :
 {
 }
 
-AggregateResourceIdentifier::AggregateResourceIdentifier(JsonView jsonValue) : 
-    m_sourceAccountIdHasBeenSet(false),
-    m_sourceRegionHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_resourceNameHasBeenSet(false)
+AggregateResourceIdentifier::AggregateResourceIdentifier(JsonView jsonValue)
+  : AggregateResourceIdentifier()
 {
   *this = jsonValue;
 }

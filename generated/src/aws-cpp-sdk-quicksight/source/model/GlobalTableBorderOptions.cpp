@@ -24,9 +24,8 @@ GlobalTableBorderOptions::GlobalTableBorderOptions() :
 {
 }
 
-GlobalTableBorderOptions::GlobalTableBorderOptions(JsonView jsonValue) : 
-    m_uniformBorderHasBeenSet(false),
-    m_sideSpecificBorderHasBeenSet(false)
+GlobalTableBorderOptions::GlobalTableBorderOptions(JsonView jsonValue)
+  : GlobalTableBorderOptions()
 {
   *this = jsonValue;
 }

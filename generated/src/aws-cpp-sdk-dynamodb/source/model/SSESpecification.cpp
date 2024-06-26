@@ -27,12 +27,8 @@ SSESpecification::SSESpecification() :
 {
 }
 
-SSESpecification::SSESpecification(JsonView jsonValue) : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_sSEType(SSEType::NOT_SET),
-    m_sSETypeHasBeenSet(false),
-    m_kMSMasterKeyIdHasBeenSet(false)
+SSESpecification::SSESpecification(JsonView jsonValue)
+  : SSESpecification()
 {
   *this = jsonValue;
 }

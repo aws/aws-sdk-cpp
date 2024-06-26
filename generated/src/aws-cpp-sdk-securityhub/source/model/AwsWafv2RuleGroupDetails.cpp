@@ -31,16 +31,8 @@ AwsWafv2RuleGroupDetails::AwsWafv2RuleGroupDetails() :
 {
 }
 
-AwsWafv2RuleGroupDetails::AwsWafv2RuleGroupDetails(JsonView jsonValue) : 
-    m_capacity(0),
-    m_capacityHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_rulesHasBeenSet(false),
-    m_scopeHasBeenSet(false),
-    m_visibilityConfigHasBeenSet(false)
+AwsWafv2RuleGroupDetails::AwsWafv2RuleGroupDetails(JsonView jsonValue)
+  : AwsWafv2RuleGroupDetails()
 {
   *this = jsonValue;
 }

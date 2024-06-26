@@ -24,9 +24,8 @@ FieldFolder::FieldFolder() :
 {
 }
 
-FieldFolder::FieldFolder(JsonView jsonValue) : 
-    m_descriptionHasBeenSet(false),
-    m_columnsHasBeenSet(false)
+FieldFolder::FieldFolder(JsonView jsonValue)
+  : FieldFolder()
 {
   *this = jsonValue;
 }

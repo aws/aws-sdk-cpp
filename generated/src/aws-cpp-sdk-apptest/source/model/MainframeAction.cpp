@@ -25,10 +25,8 @@ MainframeAction::MainframeAction() :
 {
 }
 
-MainframeAction::MainframeAction(JsonView jsonValue) : 
-    m_resourceHasBeenSet(false),
-    m_actionTypeHasBeenSet(false),
-    m_propertiesHasBeenSet(false)
+MainframeAction::MainframeAction(JsonView jsonValue)
+  : MainframeAction()
 {
   *this = jsonValue;
 }

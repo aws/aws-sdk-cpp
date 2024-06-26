@@ -22,8 +22,8 @@ GetIdNamespaceResult::GetIdNamespaceResult() :
 {
 }
 
-GetIdNamespaceResult::GetIdNamespaceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_type(IdNamespaceType::NOT_SET)
+GetIdNamespaceResult::GetIdNamespaceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetIdNamespaceResult()
 {
   *this = result;
 }

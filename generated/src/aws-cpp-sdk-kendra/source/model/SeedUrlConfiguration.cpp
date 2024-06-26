@@ -25,10 +25,8 @@ SeedUrlConfiguration::SeedUrlConfiguration() :
 {
 }
 
-SeedUrlConfiguration::SeedUrlConfiguration(JsonView jsonValue) : 
-    m_seedUrlsHasBeenSet(false),
-    m_webCrawlerMode(WebCrawlerMode::NOT_SET),
-    m_webCrawlerModeHasBeenSet(false)
+SeedUrlConfiguration::SeedUrlConfiguration(JsonView jsonValue)
+  : SeedUrlConfiguration()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ EvaluationFormSingleSelectQuestionProperties::EvaluationFormSingleSelectQuestion
 {
 }
 
-EvaluationFormSingleSelectQuestionProperties::EvaluationFormSingleSelectQuestionProperties(JsonView jsonValue) : 
-    m_optionsHasBeenSet(false),
-    m_displayAs(EvaluationFormSingleSelectQuestionDisplayMode::NOT_SET),
-    m_displayAsHasBeenSet(false),
-    m_automationHasBeenSet(false)
+EvaluationFormSingleSelectQuestionProperties::EvaluationFormSingleSelectQuestionProperties(JsonView jsonValue)
+  : EvaluationFormSingleSelectQuestionProperties()
 {
   *this = jsonValue;
 }

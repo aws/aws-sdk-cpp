@@ -25,10 +25,8 @@ AutoTune::AutoTune() :
 {
 }
 
-AutoTune::AutoTune(JsonView jsonValue) : 
-    m_autoTuneType(AutoTuneType::NOT_SET),
-    m_autoTuneTypeHasBeenSet(false),
-    m_autoTuneDetailsHasBeenSet(false)
+AutoTune::AutoTune(JsonView jsonValue)
+  : AutoTune()
 {
   *this = jsonValue;
 }

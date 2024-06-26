@@ -29,12 +29,8 @@ InputSerialization::InputSerialization() :
 {
 }
 
-InputSerialization::InputSerialization(const XmlNode& xmlNode) : 
-    m_cSVHasBeenSet(false),
-    m_compressionType(CompressionType::NOT_SET),
-    m_compressionTypeHasBeenSet(false),
-    m_jSONHasBeenSet(false),
-    m_parquetHasBeenSet(false)
+InputSerialization::InputSerialization(const XmlNode& xmlNode)
+  : InputSerialization()
 {
   *this = xmlNode;
 }

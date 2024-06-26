@@ -40,25 +40,8 @@ Probe::Probe() :
 {
 }
 
-Probe::Probe(JsonView jsonValue) : 
-    m_probeIdHasBeenSet(false),
-    m_probeArnHasBeenSet(false),
-    m_sourceArnHasBeenSet(false),
-    m_destinationHasBeenSet(false),
-    m_destinationPort(0),
-    m_destinationPortHasBeenSet(false),
-    m_protocol(Protocol::NOT_SET),
-    m_protocolHasBeenSet(false),
-    m_packetSize(0),
-    m_packetSizeHasBeenSet(false),
-    m_addressFamily(AddressFamily::NOT_SET),
-    m_addressFamilyHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_state(ProbeState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_modifiedAtHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+Probe::Probe(JsonView jsonValue)
+  : Probe()
 {
   *this = jsonValue;
 }

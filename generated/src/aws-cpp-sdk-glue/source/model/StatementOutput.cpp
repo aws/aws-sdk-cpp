@@ -30,15 +30,8 @@ StatementOutput::StatementOutput() :
 {
 }
 
-StatementOutput::StatementOutput(JsonView jsonValue) : 
-    m_dataHasBeenSet(false),
-    m_executionCount(0),
-    m_executionCountHasBeenSet(false),
-    m_status(StatementState::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_errorNameHasBeenSet(false),
-    m_errorValueHasBeenSet(false),
-    m_tracebackHasBeenSet(false)
+StatementOutput::StatementOutput(JsonView jsonValue)
+  : StatementOutput()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ CsrExtensions::CsrExtensions() :
 {
 }
 
-CsrExtensions::CsrExtensions(JsonView jsonValue) : 
-    m_keyUsageHasBeenSet(false),
-    m_subjectInformationAccessHasBeenSet(false)
+CsrExtensions::CsrExtensions(JsonView jsonValue)
+  : CsrExtensions()
 {
   *this = jsonValue;
 }

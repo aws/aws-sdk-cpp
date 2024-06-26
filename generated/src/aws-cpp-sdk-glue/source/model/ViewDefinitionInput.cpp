@@ -27,12 +27,8 @@ ViewDefinitionInput::ViewDefinitionInput() :
 {
 }
 
-ViewDefinitionInput::ViewDefinitionInput(JsonView jsonValue) : 
-    m_isProtected(false),
-    m_isProtectedHasBeenSet(false),
-    m_definerHasBeenSet(false),
-    m_representationsHasBeenSet(false),
-    m_subObjectsHasBeenSet(false)
+ViewDefinitionInput::ViewDefinitionInput(JsonView jsonValue)
+  : ViewDefinitionInput()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ Body::Body() :
 {
 }
 
-Body::Body(JsonView jsonValue) : 
-    m_textHasBeenSet(false),
-    m_htmlHasBeenSet(false)
+Body::Body(JsonView jsonValue)
+  : Body()
 {
   *this = jsonValue;
 }

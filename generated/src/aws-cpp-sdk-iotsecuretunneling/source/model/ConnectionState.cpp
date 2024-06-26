@@ -25,10 +25,8 @@ ConnectionState::ConnectionState() :
 {
 }
 
-ConnectionState::ConnectionState(JsonView jsonValue) : 
-    m_status(ConnectionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false)
+ConnectionState::ConnectionState(JsonView jsonValue)
+  : ConnectionState()
 {
   *this = jsonValue;
 }

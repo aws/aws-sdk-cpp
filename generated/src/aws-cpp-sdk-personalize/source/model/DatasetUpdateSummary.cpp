@@ -27,12 +27,8 @@ DatasetUpdateSummary::DatasetUpdateSummary() :
 {
 }
 
-DatasetUpdateSummary::DatasetUpdateSummary(JsonView jsonValue) : 
-    m_schemaArnHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_failureReasonHasBeenSet(false),
-    m_creationDateTimeHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false)
+DatasetUpdateSummary::DatasetUpdateSummary(JsonView jsonValue)
+  : DatasetUpdateSummary()
 {
   *this = jsonValue;
 }

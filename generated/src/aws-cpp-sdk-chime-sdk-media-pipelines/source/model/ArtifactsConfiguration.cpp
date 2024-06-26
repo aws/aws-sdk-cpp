@@ -26,11 +26,8 @@ ArtifactsConfiguration::ArtifactsConfiguration() :
 {
 }
 
-ArtifactsConfiguration::ArtifactsConfiguration(JsonView jsonValue) : 
-    m_audioHasBeenSet(false),
-    m_videoHasBeenSet(false),
-    m_contentHasBeenSet(false),
-    m_compositedVideoHasBeenSet(false)
+ArtifactsConfiguration::ArtifactsConfiguration(JsonView jsonValue)
+  : ArtifactsConfiguration()
 {
   *this = jsonValue;
 }

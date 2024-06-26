@@ -35,20 +35,8 @@ DatasetImportJob::DatasetImportJob() :
 {
 }
 
-DatasetImportJob::DatasetImportJob(JsonView jsonValue) : 
-    m_jobNameHasBeenSet(false),
-    m_datasetImportJobArnHasBeenSet(false),
-    m_datasetArnHasBeenSet(false),
-    m_dataSourceHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_creationDateTimeHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false),
-    m_failureReasonHasBeenSet(false),
-    m_importMode(ImportMode::NOT_SET),
-    m_importModeHasBeenSet(false),
-    m_publishAttributionMetricsToS3(false),
-    m_publishAttributionMetricsToS3HasBeenSet(false)
+DatasetImportJob::DatasetImportJob(JsonView jsonValue)
+  : DatasetImportJob()
 {
   *this = jsonValue;
 }

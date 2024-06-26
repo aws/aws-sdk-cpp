@@ -31,16 +31,8 @@ SolutionVersionSummary::SolutionVersionSummary() :
 {
 }
 
-SolutionVersionSummary::SolutionVersionSummary(JsonView jsonValue) : 
-    m_solutionVersionArnHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_trainingMode(TrainingMode::NOT_SET),
-    m_trainingModeHasBeenSet(false),
-    m_trainingType(TrainingType::NOT_SET),
-    m_trainingTypeHasBeenSet(false),
-    m_creationDateTimeHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false),
-    m_failureReasonHasBeenSet(false)
+SolutionVersionSummary::SolutionVersionSummary(JsonView jsonValue)
+  : SolutionVersionSummary()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ UpdateXMLClassifierRequest::UpdateXMLClassifierRequest() :
 {
 }
 
-UpdateXMLClassifierRequest::UpdateXMLClassifierRequest(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_classificationHasBeenSet(false),
-    m_rowTagHasBeenSet(false)
+UpdateXMLClassifierRequest::UpdateXMLClassifierRequest(JsonView jsonValue)
+  : UpdateXMLClassifierRequest()
 {
   *this = jsonValue;
 }

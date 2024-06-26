@@ -23,8 +23,8 @@ ProcessingJobStepMetadata::ProcessingJobStepMetadata() :
 {
 }
 
-ProcessingJobStepMetadata::ProcessingJobStepMetadata(JsonView jsonValue) : 
-    m_arnHasBeenSet(false)
+ProcessingJobStepMetadata::ProcessingJobStepMetadata(JsonView jsonValue)
+  : ProcessingJobStepMetadata()
 {
   *this = jsonValue;
 }

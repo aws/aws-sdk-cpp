@@ -24,9 +24,8 @@ Button::Button() :
 {
 }
 
-Button::Button(JsonView jsonValue) : 
-    m_textHasBeenSet(false),
-    m_valueHasBeenSet(false)
+Button::Button(JsonView jsonValue)
+  : Button()
 {
   *this = jsonValue;
 }

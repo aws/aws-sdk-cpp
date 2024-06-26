@@ -26,11 +26,8 @@ ConsumptionConfiguration::ConsumptionConfiguration() :
 {
 }
 
-ConsumptionConfiguration::ConsumptionConfiguration(JsonView jsonValue) : 
-    m_renewType(RenewType::NOT_SET),
-    m_renewTypeHasBeenSet(false),
-    m_provisionalConfigurationHasBeenSet(false),
-    m_borrowConfigurationHasBeenSet(false)
+ConsumptionConfiguration::ConsumptionConfiguration(JsonView jsonValue)
+  : ConsumptionConfiguration()
 {
   *this = jsonValue;
 }

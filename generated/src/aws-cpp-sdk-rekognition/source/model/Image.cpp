@@ -25,9 +25,8 @@ Image::Image() :
 {
 }
 
-Image::Image(JsonView jsonValue) : 
-    m_bytesHasBeenSet(false),
-    m_s3ObjectHasBeenSet(false)
+Image::Image(JsonView jsonValue)
+  : Image()
 {
   *this = jsonValue;
 }

@@ -32,17 +32,8 @@ AndroidPushNotificationTemplate::AndroidPushNotificationTemplate() :
 {
 }
 
-AndroidPushNotificationTemplate::AndroidPushNotificationTemplate(JsonView jsonValue) : 
-    m_action(Action::NOT_SET),
-    m_actionHasBeenSet(false),
-    m_bodyHasBeenSet(false),
-    m_imageIconUrlHasBeenSet(false),
-    m_imageUrlHasBeenSet(false),
-    m_rawContentHasBeenSet(false),
-    m_smallImageIconUrlHasBeenSet(false),
-    m_soundHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_urlHasBeenSet(false)
+AndroidPushNotificationTemplate::AndroidPushNotificationTemplate(JsonView jsonValue)
+  : AndroidPushNotificationTemplate()
 {
   *this = jsonValue;
 }

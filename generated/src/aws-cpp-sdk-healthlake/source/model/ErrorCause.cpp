@@ -25,10 +25,8 @@ ErrorCause::ErrorCause() :
 {
 }
 
-ErrorCause::ErrorCause(JsonView jsonValue) : 
-    m_errorMessageHasBeenSet(false),
-    m_errorCategory(ErrorCategory::NOT_SET),
-    m_errorCategoryHasBeenSet(false)
+ErrorCause::ErrorCause(JsonView jsonValue)
+  : ErrorCause()
 {
   *this = jsonValue;
 }

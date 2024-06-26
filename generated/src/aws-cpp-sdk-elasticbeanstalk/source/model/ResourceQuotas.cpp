@@ -29,12 +29,8 @@ ResourceQuotas::ResourceQuotas() :
 {
 }
 
-ResourceQuotas::ResourceQuotas(const XmlNode& xmlNode) : 
-    m_applicationQuotaHasBeenSet(false),
-    m_applicationVersionQuotaHasBeenSet(false),
-    m_environmentQuotaHasBeenSet(false),
-    m_configurationTemplateQuotaHasBeenSet(false),
-    m_customPlatformQuotaHasBeenSet(false)
+ResourceQuotas::ResourceQuotas(const XmlNode& xmlNode)
+  : ResourceQuotas()
 {
   *this = xmlNode;
 }

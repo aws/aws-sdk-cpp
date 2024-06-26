@@ -24,9 +24,8 @@ TaxInheritanceDetails::TaxInheritanceDetails() :
 {
 }
 
-TaxInheritanceDetails::TaxInheritanceDetails(JsonView jsonValue) : 
-    m_inheritanceObtainedReasonHasBeenSet(false),
-    m_parentEntityIdHasBeenSet(false)
+TaxInheritanceDetails::TaxInheritanceDetails(JsonView jsonValue)
+  : TaxInheritanceDetails()
 {
   *this = jsonValue;
 }

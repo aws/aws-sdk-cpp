@@ -25,10 +25,8 @@ CredentialPair::CredentialPair() :
 {
 }
 
-CredentialPair::CredentialPair(JsonView jsonValue) : 
-    m_usernameHasBeenSet(false),
-    m_passwordHasBeenSet(false),
-    m_alternateDataSourceParametersHasBeenSet(false)
+CredentialPair::CredentialPair(JsonView jsonValue)
+  : CredentialPair()
 {
   *this = jsonValue;
 }

@@ -31,16 +31,8 @@ ResourceShareInvitation::ResourceShareInvitation() :
 {
 }
 
-ResourceShareInvitation::ResourceShareInvitation(JsonView jsonValue) : 
-    m_resourceShareInvitationArnHasBeenSet(false),
-    m_resourceShareNameHasBeenSet(false),
-    m_resourceShareArnHasBeenSet(false),
-    m_senderAccountIdHasBeenSet(false),
-    m_receiverAccountIdHasBeenSet(false),
-    m_invitationTimestampHasBeenSet(false),
-    m_status(ResourceShareInvitationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_receiverArnHasBeenSet(false)
+ResourceShareInvitation::ResourceShareInvitation(JsonView jsonValue)
+  : ResourceShareInvitation()
 {
   *this = jsonValue;
 }

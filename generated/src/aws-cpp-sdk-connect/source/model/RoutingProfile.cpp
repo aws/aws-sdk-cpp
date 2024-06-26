@@ -41,26 +41,8 @@ RoutingProfile::RoutingProfile() :
 {
 }
 
-RoutingProfile::RoutingProfile(JsonView jsonValue) : 
-    m_instanceIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_routingProfileArnHasBeenSet(false),
-    m_routingProfileIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_mediaConcurrenciesHasBeenSet(false),
-    m_defaultOutboundQueueIdHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_numberOfAssociatedQueues(0),
-    m_numberOfAssociatedQueuesHasBeenSet(false),
-    m_numberOfAssociatedUsers(0),
-    m_numberOfAssociatedUsersHasBeenSet(false),
-    m_agentAvailabilityTimer(AgentAvailabilityTimer::NOT_SET),
-    m_agentAvailabilityTimerHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_lastModifiedRegionHasBeenSet(false),
-    m_isDefault(false),
-    m_isDefaultHasBeenSet(false),
-    m_associatedQueueIdsHasBeenSet(false)
+RoutingProfile::RoutingProfile(JsonView jsonValue)
+  : RoutingProfile()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ S3ReferenceDataSourceUpdate::S3ReferenceDataSourceUpdate() :
 {
 }
 
-S3ReferenceDataSourceUpdate::S3ReferenceDataSourceUpdate(JsonView jsonValue) : 
-    m_bucketARNUpdateHasBeenSet(false),
-    m_fileKeyUpdateHasBeenSet(false),
-    m_referenceRoleARNUpdateHasBeenSet(false)
+S3ReferenceDataSourceUpdate::S3ReferenceDataSourceUpdate(JsonView jsonValue)
+  : S3ReferenceDataSourceUpdate()
 {
   *this = jsonValue;
 }

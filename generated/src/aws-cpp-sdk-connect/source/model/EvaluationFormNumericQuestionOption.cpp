@@ -30,15 +30,8 @@ EvaluationFormNumericQuestionOption::EvaluationFormNumericQuestionOption() :
 {
 }
 
-EvaluationFormNumericQuestionOption::EvaluationFormNumericQuestionOption(JsonView jsonValue) : 
-    m_minValue(0),
-    m_minValueHasBeenSet(false),
-    m_maxValue(0),
-    m_maxValueHasBeenSet(false),
-    m_score(0),
-    m_scoreHasBeenSet(false),
-    m_automaticFail(false),
-    m_automaticFailHasBeenSet(false)
+EvaluationFormNumericQuestionOption::EvaluationFormNumericQuestionOption(JsonView jsonValue)
+  : EvaluationFormNumericQuestionOption()
 {
   *this = jsonValue;
 }

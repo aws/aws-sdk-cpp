@@ -25,10 +25,8 @@ FraudDetectionConfiguration::FraudDetectionConfiguration() :
 {
 }
 
-FraudDetectionConfiguration::FraudDetectionConfiguration(JsonView jsonValue) : 
-    m_riskThreshold(0),
-    m_riskThresholdHasBeenSet(false),
-    m_watchlistIdHasBeenSet(false)
+FraudDetectionConfiguration::FraudDetectionConfiguration(JsonView jsonValue)
+  : FraudDetectionConfiguration()
 {
   *this = jsonValue;
 }

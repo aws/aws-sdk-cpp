@@ -23,8 +23,8 @@ AmazonElasticsearchParameters::AmazonElasticsearchParameters() :
 {
 }
 
-AmazonElasticsearchParameters::AmazonElasticsearchParameters(JsonView jsonValue) : 
-    m_domainHasBeenSet(false)
+AmazonElasticsearchParameters::AmazonElasticsearchParameters(JsonView jsonValue)
+  : AmazonElasticsearchParameters()
 {
   *this = jsonValue;
 }

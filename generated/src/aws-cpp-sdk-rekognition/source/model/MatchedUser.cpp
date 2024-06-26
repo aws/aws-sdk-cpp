@@ -25,10 +25,8 @@ MatchedUser::MatchedUser() :
 {
 }
 
-MatchedUser::MatchedUser(JsonView jsonValue) : 
-    m_userIdHasBeenSet(false),
-    m_userStatus(UserStatus::NOT_SET),
-    m_userStatusHasBeenSet(false)
+MatchedUser::MatchedUser(JsonView jsonValue)
+  : MatchedUser()
 {
   *this = jsonValue;
 }

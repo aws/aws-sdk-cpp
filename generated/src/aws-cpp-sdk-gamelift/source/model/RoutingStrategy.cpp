@@ -26,11 +26,8 @@ RoutingStrategy::RoutingStrategy() :
 {
 }
 
-RoutingStrategy::RoutingStrategy(JsonView jsonValue) : 
-    m_type(RoutingStrategyType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_fleetIdHasBeenSet(false),
-    m_messageHasBeenSet(false)
+RoutingStrategy::RoutingStrategy(JsonView jsonValue)
+  : RoutingStrategy()
 {
   *this = jsonValue;
 }

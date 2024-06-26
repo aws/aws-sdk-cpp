@@ -25,10 +25,8 @@ PolicyStatement::PolicyStatement() :
 {
 }
 
-PolicyStatement::PolicyStatement(JsonView jsonValue) : 
-    m_action(AcceptAction::NOT_SET),
-    m_actionHasBeenSet(false),
-    m_conditionsHasBeenSet(false)
+PolicyStatement::PolicyStatement(JsonView jsonValue)
+  : PolicyStatement()
 {
   *this = jsonValue;
 }

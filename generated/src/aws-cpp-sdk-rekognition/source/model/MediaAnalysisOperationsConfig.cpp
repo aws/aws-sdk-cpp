@@ -23,8 +23,8 @@ MediaAnalysisOperationsConfig::MediaAnalysisOperationsConfig() :
 {
 }
 
-MediaAnalysisOperationsConfig::MediaAnalysisOperationsConfig(JsonView jsonValue) : 
-    m_detectModerationLabelsHasBeenSet(false)
+MediaAnalysisOperationsConfig::MediaAnalysisOperationsConfig(JsonView jsonValue)
+  : MediaAnalysisOperationsConfig()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ StartDevEnvironmentResult::StartDevEnvironmentResult() :
 {
 }
 
-StartDevEnvironmentResult::StartDevEnvironmentResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(DevEnvironmentStatus::NOT_SET)
+StartDevEnvironmentResult::StartDevEnvironmentResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : StartDevEnvironmentResult()
 {
   *this = result;
 }

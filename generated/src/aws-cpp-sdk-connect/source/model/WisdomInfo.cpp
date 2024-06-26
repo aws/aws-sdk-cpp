@@ -23,8 +23,8 @@ WisdomInfo::WisdomInfo() :
 {
 }
 
-WisdomInfo::WisdomInfo(JsonView jsonValue) : 
-    m_sessionArnHasBeenSet(false)
+WisdomInfo::WisdomInfo(JsonView jsonValue)
+  : WisdomInfo()
 {
   *this = jsonValue;
 }

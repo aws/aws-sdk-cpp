@@ -32,17 +32,8 @@ AssociatedPermission::AssociatedPermission() :
 {
 }
 
-AssociatedPermission::AssociatedPermission(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_permissionVersionHasBeenSet(false),
-    m_defaultVersion(false),
-    m_defaultVersionHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_featureSet(PermissionFeatureSet::NOT_SET),
-    m_featureSetHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_resourceShareArnHasBeenSet(false)
+AssociatedPermission::AssociatedPermission(JsonView jsonValue)
+  : AssociatedPermission()
 {
   *this = jsonValue;
 }

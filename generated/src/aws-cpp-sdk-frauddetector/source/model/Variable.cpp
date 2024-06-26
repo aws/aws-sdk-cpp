@@ -33,18 +33,8 @@ Variable::Variable() :
 {
 }
 
-Variable::Variable(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_dataType(DataType::NOT_SET),
-    m_dataTypeHasBeenSet(false),
-    m_dataSource(DataSource::NOT_SET),
-    m_dataSourceHasBeenSet(false),
-    m_defaultValueHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_variableTypeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_arnHasBeenSet(false)
+Variable::Variable(JsonView jsonValue)
+  : Variable()
 {
   *this = jsonValue;
 }

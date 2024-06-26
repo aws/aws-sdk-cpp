@@ -27,10 +27,8 @@ EnvironmentTier::EnvironmentTier() :
 {
 }
 
-EnvironmentTier::EnvironmentTier(const XmlNode& xmlNode) : 
-    m_nameHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_versionHasBeenSet(false)
+EnvironmentTier::EnvironmentTier(const XmlNode& xmlNode)
+  : EnvironmentTier()
 {
   *this = xmlNode;
 }

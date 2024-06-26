@@ -59,43 +59,8 @@ EventSourceMappingConfiguration::EventSourceMappingConfiguration() :
 {
 }
 
-EventSourceMappingConfiguration::EventSourceMappingConfiguration(JsonView jsonValue) : 
-    m_uUIDHasBeenSet(false),
-    m_startingPosition(EventSourcePosition::NOT_SET),
-    m_startingPositionHasBeenSet(false),
-    m_startingPositionTimestampHasBeenSet(false),
-    m_batchSize(0),
-    m_batchSizeHasBeenSet(false),
-    m_maximumBatchingWindowInSeconds(0),
-    m_maximumBatchingWindowInSecondsHasBeenSet(false),
-    m_parallelizationFactor(0),
-    m_parallelizationFactorHasBeenSet(false),
-    m_eventSourceArnHasBeenSet(false),
-    m_filterCriteriaHasBeenSet(false),
-    m_functionArnHasBeenSet(false),
-    m_lastModifiedHasBeenSet(false),
-    m_lastProcessingResultHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_stateTransitionReasonHasBeenSet(false),
-    m_destinationConfigHasBeenSet(false),
-    m_topicsHasBeenSet(false),
-    m_queuesHasBeenSet(false),
-    m_sourceAccessConfigurationsHasBeenSet(false),
-    m_selfManagedEventSourceHasBeenSet(false),
-    m_maximumRecordAgeInSeconds(0),
-    m_maximumRecordAgeInSecondsHasBeenSet(false),
-    m_bisectBatchOnFunctionError(false),
-    m_bisectBatchOnFunctionErrorHasBeenSet(false),
-    m_maximumRetryAttempts(0),
-    m_maximumRetryAttemptsHasBeenSet(false),
-    m_tumblingWindowInSeconds(0),
-    m_tumblingWindowInSecondsHasBeenSet(false),
-    m_functionResponseTypesHasBeenSet(false),
-    m_amazonManagedKafkaEventSourceConfigHasBeenSet(false),
-    m_selfManagedKafkaEventSourceConfigHasBeenSet(false),
-    m_scalingConfigHasBeenSet(false),
-    m_documentDBEventSourceConfigHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
+EventSourceMappingConfiguration::EventSourceMappingConfiguration(JsonView jsonValue)
+  : EventSourceMappingConfiguration()
 {
   *this = jsonValue;
 }

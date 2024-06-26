@@ -24,9 +24,8 @@ Serializer::Serializer() :
 {
 }
 
-Serializer::Serializer(JsonView jsonValue) : 
-    m_parquetSerDeHasBeenSet(false),
-    m_orcSerDeHasBeenSet(false)
+Serializer::Serializer(JsonView jsonValue)
+  : Serializer()
 {
   *this = jsonValue;
 }

@@ -27,12 +27,8 @@ ProvisioningArtifactSummary::ProvisioningArtifactSummary() :
 {
 }
 
-ProvisioningArtifactSummary::ProvisioningArtifactSummary(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_provisioningArtifactMetadataHasBeenSet(false)
+ProvisioningArtifactSummary::ProvisioningArtifactSummary(JsonView jsonValue)
+  : ProvisioningArtifactSummary()
 {
   *this = jsonValue;
 }

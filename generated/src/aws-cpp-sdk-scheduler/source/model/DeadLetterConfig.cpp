@@ -23,8 +23,8 @@ DeadLetterConfig::DeadLetterConfig() :
 {
 }
 
-DeadLetterConfig::DeadLetterConfig(JsonView jsonValue) : 
-    m_arnHasBeenSet(false)
+DeadLetterConfig::DeadLetterConfig(JsonView jsonValue)
+  : DeadLetterConfig()
 {
   *this = jsonValue;
 }

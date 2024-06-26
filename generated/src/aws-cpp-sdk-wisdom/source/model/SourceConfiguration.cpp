@@ -23,8 +23,8 @@ SourceConfiguration::SourceConfiguration() :
 {
 }
 
-SourceConfiguration::SourceConfiguration(JsonView jsonValue) : 
-    m_appIntegrationsHasBeenSet(false)
+SourceConfiguration::SourceConfiguration(JsonView jsonValue)
+  : SourceConfiguration()
 {
   *this = jsonValue;
 }

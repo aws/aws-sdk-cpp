@@ -24,9 +24,8 @@ ErrorInfo::ErrorInfo() :
 {
 }
 
-ErrorInfo::ErrorInfo(JsonView jsonValue) : 
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+ErrorInfo::ErrorInfo(JsonView jsonValue)
+  : ErrorInfo()
 {
   *this = jsonValue;
 }

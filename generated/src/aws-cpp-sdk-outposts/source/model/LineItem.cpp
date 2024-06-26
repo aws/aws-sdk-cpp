@@ -32,17 +32,8 @@ LineItem::LineItem() :
 {
 }
 
-LineItem::LineItem(JsonView jsonValue) : 
-    m_catalogItemIdHasBeenSet(false),
-    m_lineItemIdHasBeenSet(false),
-    m_quantity(0),
-    m_quantityHasBeenSet(false),
-    m_status(LineItemStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_shipmentInformationHasBeenSet(false),
-    m_assetInformationListHasBeenSet(false),
-    m_previousLineItemIdHasBeenSet(false),
-    m_previousOrderIdHasBeenSet(false)
+LineItem::LineItem(JsonView jsonValue)
+  : LineItem()
 {
   *this = jsonValue;
 }

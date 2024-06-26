@@ -26,11 +26,8 @@ TypedLinkSpecifier::TypedLinkSpecifier() :
 {
 }
 
-TypedLinkSpecifier::TypedLinkSpecifier(JsonView jsonValue) : 
-    m_typedLinkFacetHasBeenSet(false),
-    m_sourceObjectReferenceHasBeenSet(false),
-    m_targetObjectReferenceHasBeenSet(false),
-    m_identityAttributeValuesHasBeenSet(false)
+TypedLinkSpecifier::TypedLinkSpecifier(JsonView jsonValue)
+  : TypedLinkSpecifier()
 {
   *this = jsonValue;
 }

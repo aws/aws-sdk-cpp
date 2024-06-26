@@ -25,10 +25,8 @@ EcsEnvironmentFile::EcsEnvironmentFile() :
 {
 }
 
-EcsEnvironmentFile::EcsEnvironmentFile(JsonView jsonValue) : 
-    m_type(EcsEnvironmentFileType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_valueHasBeenSet(false)
+EcsEnvironmentFile::EcsEnvironmentFile(JsonView jsonValue)
+  : EcsEnvironmentFile()
 {
   *this = jsonValue;
 }

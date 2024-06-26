@@ -24,9 +24,8 @@ IncorrectFileSystemLifeCycleState::IncorrectFileSystemLifeCycleState() :
 {
 }
 
-IncorrectFileSystemLifeCycleState::IncorrectFileSystemLifeCycleState(JsonView jsonValue) : 
-    m_errorCodeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+IncorrectFileSystemLifeCycleState::IncorrectFileSystemLifeCycleState(JsonView jsonValue)
+  : IncorrectFileSystemLifeCycleState()
 {
   *this = jsonValue;
 }

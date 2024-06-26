@@ -24,9 +24,8 @@ MemoryInfo::MemoryInfo() :
 {
 }
 
-MemoryInfo::MemoryInfo(JsonView jsonValue) : 
-    m_sizeInMiB(0),
-    m_sizeInMiBHasBeenSet(false)
+MemoryInfo::MemoryInfo(JsonView jsonValue)
+  : MemoryInfo()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ HumanLoopOutput::HumanLoopOutput() :
 {
 }
 
-HumanLoopOutput::HumanLoopOutput(JsonView jsonValue) : 
-    m_outputS3UriHasBeenSet(false)
+HumanLoopOutput::HumanLoopOutput(JsonView jsonValue)
+  : HumanLoopOutput()
 {
   *this = jsonValue;
 }

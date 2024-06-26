@@ -35,18 +35,8 @@ SnapshotDetail::SnapshotDetail() :
 {
 }
 
-SnapshotDetail::SnapshotDetail(const XmlNode& xmlNode) : 
-    m_descriptionHasBeenSet(false),
-    m_deviceNameHasBeenSet(false),
-    m_diskImageSize(0.0),
-    m_diskImageSizeHasBeenSet(false),
-    m_formatHasBeenSet(false),
-    m_progressHasBeenSet(false),
-    m_snapshotIdHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_urlHasBeenSet(false),
-    m_userBucketHasBeenSet(false)
+SnapshotDetail::SnapshotDetail(const XmlNode& xmlNode)
+  : SnapshotDetail()
 {
   *this = xmlNode;
 }

@@ -28,13 +28,8 @@ InvalidParameterException::InvalidParameterException() :
 {
 }
 
-InvalidParameterException::InvalidParameterException(JsonView jsonValue) : 
-    m_clusterNameHasBeenSet(false),
-    m_nodegroupNameHasBeenSet(false),
-    m_fargateProfileNameHasBeenSet(false),
-    m_addonNameHasBeenSet(false),
-    m_subscriptionIdHasBeenSet(false),
-    m_messageHasBeenSet(false)
+InvalidParameterException::InvalidParameterException(JsonView jsonValue)
+  : InvalidParameterException()
 {
   *this = jsonValue;
 }

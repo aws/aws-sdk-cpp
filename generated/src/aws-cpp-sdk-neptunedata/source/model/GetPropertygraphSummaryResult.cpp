@@ -22,8 +22,8 @@ GetPropertygraphSummaryResult::GetPropertygraphSummaryResult() :
 {
 }
 
-GetPropertygraphSummaryResult::GetPropertygraphSummaryResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_statusCode(0)
+GetPropertygraphSummaryResult::GetPropertygraphSummaryResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetPropertygraphSummaryResult()
 {
   *this = result;
 }

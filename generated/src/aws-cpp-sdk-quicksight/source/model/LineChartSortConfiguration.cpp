@@ -27,12 +27,8 @@ LineChartSortConfiguration::LineChartSortConfiguration() :
 {
 }
 
-LineChartSortConfiguration::LineChartSortConfiguration(JsonView jsonValue) : 
-    m_categorySortHasBeenSet(false),
-    m_categoryItemsLimitConfigurationHasBeenSet(false),
-    m_colorItemsLimitConfigurationHasBeenSet(false),
-    m_smallMultiplesSortHasBeenSet(false),
-    m_smallMultiplesLimitConfigurationHasBeenSet(false)
+LineChartSortConfiguration::LineChartSortConfiguration(JsonView jsonValue)
+  : LineChartSortConfiguration()
 {
   *this = jsonValue;
 }

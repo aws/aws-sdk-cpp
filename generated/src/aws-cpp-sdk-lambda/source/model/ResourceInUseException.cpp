@@ -24,9 +24,8 @@ ResourceInUseException::ResourceInUseException() :
 {
 }
 
-ResourceInUseException::ResourceInUseException(JsonView jsonValue) : 
-    m_typeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+ResourceInUseException::ResourceInUseException(JsonView jsonValue)
+  : ResourceInUseException()
 {
   *this = jsonValue;
 }

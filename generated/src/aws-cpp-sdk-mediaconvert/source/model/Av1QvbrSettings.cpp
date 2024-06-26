@@ -26,11 +26,8 @@ Av1QvbrSettings::Av1QvbrSettings() :
 {
 }
 
-Av1QvbrSettings::Av1QvbrSettings(JsonView jsonValue) : 
-    m_qvbrQualityLevel(0),
-    m_qvbrQualityLevelHasBeenSet(false),
-    m_qvbrQualityLevelFineTune(0.0),
-    m_qvbrQualityLevelFineTuneHasBeenSet(false)
+Av1QvbrSettings::Av1QvbrSettings(JsonView jsonValue)
+  : Av1QvbrSettings()
 {
   *this = jsonValue;
 }

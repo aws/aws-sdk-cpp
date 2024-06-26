@@ -32,17 +32,8 @@ SelfservicePermissions::SelfservicePermissions() :
 {
 }
 
-SelfservicePermissions::SelfservicePermissions(JsonView jsonValue) : 
-    m_restartWorkspace(ReconnectEnum::NOT_SET),
-    m_restartWorkspaceHasBeenSet(false),
-    m_increaseVolumeSize(ReconnectEnum::NOT_SET),
-    m_increaseVolumeSizeHasBeenSet(false),
-    m_changeComputeType(ReconnectEnum::NOT_SET),
-    m_changeComputeTypeHasBeenSet(false),
-    m_switchRunningMode(ReconnectEnum::NOT_SET),
-    m_switchRunningModeHasBeenSet(false),
-    m_rebuildWorkspace(ReconnectEnum::NOT_SET),
-    m_rebuildWorkspaceHasBeenSet(false)
+SelfservicePermissions::SelfservicePermissions(JsonView jsonValue)
+  : SelfservicePermissions()
 {
   *this = jsonValue;
 }

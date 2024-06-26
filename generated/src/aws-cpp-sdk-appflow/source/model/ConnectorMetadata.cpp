@@ -44,29 +44,8 @@ ConnectorMetadata::ConnectorMetadata() :
 {
 }
 
-ConnectorMetadata::ConnectorMetadata(JsonView jsonValue) : 
-    m_amplitudeHasBeenSet(false),
-    m_datadogHasBeenSet(false),
-    m_dynatraceHasBeenSet(false),
-    m_googleAnalyticsHasBeenSet(false),
-    m_inforNexusHasBeenSet(false),
-    m_marketoHasBeenSet(false),
-    m_redshiftHasBeenSet(false),
-    m_s3HasBeenSet(false),
-    m_salesforceHasBeenSet(false),
-    m_serviceNowHasBeenSet(false),
-    m_singularHasBeenSet(false),
-    m_slackHasBeenSet(false),
-    m_snowflakeHasBeenSet(false),
-    m_trendmicroHasBeenSet(false),
-    m_veevaHasBeenSet(false),
-    m_zendeskHasBeenSet(false),
-    m_eventBridgeHasBeenSet(false),
-    m_upsolverHasBeenSet(false),
-    m_customerProfilesHasBeenSet(false),
-    m_honeycodeHasBeenSet(false),
-    m_sAPODataHasBeenSet(false),
-    m_pardotHasBeenSet(false)
+ConnectorMetadata::ConnectorMetadata(JsonView jsonValue)
+  : ConnectorMetadata()
 {
   *this = jsonValue;
 }

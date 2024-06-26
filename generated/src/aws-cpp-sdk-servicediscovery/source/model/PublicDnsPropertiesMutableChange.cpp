@@ -23,8 +23,8 @@ PublicDnsPropertiesMutableChange::PublicDnsPropertiesMutableChange() :
 {
 }
 
-PublicDnsPropertiesMutableChange::PublicDnsPropertiesMutableChange(JsonView jsonValue) : 
-    m_sOAHasBeenSet(false)
+PublicDnsPropertiesMutableChange::PublicDnsPropertiesMutableChange(JsonView jsonValue)
+  : PublicDnsPropertiesMutableChange()
 {
   *this = jsonValue;
 }

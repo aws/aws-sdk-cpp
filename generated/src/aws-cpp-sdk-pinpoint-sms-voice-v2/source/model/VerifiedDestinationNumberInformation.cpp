@@ -28,13 +28,8 @@ VerifiedDestinationNumberInformation::VerifiedDestinationNumberInformation() :
 {
 }
 
-VerifiedDestinationNumberInformation::VerifiedDestinationNumberInformation(JsonView jsonValue) : 
-    m_verifiedDestinationNumberArnHasBeenSet(false),
-    m_verifiedDestinationNumberIdHasBeenSet(false),
-    m_destinationPhoneNumberHasBeenSet(false),
-    m_status(VerificationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false)
+VerifiedDestinationNumberInformation::VerifiedDestinationNumberInformation(JsonView jsonValue)
+  : VerifiedDestinationNumberInformation()
 {
   *this = jsonValue;
 }

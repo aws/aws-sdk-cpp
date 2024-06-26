@@ -27,12 +27,8 @@ ChannelGroupListConfiguration::ChannelGroupListConfiguration() :
 {
 }
 
-ChannelGroupListConfiguration::ChannelGroupListConfiguration(JsonView jsonValue) : 
-    m_channelGroupNameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_modifiedAtHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+ChannelGroupListConfiguration::ChannelGroupListConfiguration(JsonView jsonValue)
+  : ChannelGroupListConfiguration()
 {
   *this = jsonValue;
 }

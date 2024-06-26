@@ -25,10 +25,8 @@ FormStyle::FormStyle() :
 {
 }
 
-FormStyle::FormStyle(JsonView jsonValue) : 
-    m_horizontalGapHasBeenSet(false),
-    m_verticalGapHasBeenSet(false),
-    m_outerPaddingHasBeenSet(false)
+FormStyle::FormStyle(JsonView jsonValue)
+  : FormStyle()
 {
   *this = jsonValue;
 }

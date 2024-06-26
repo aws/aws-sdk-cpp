@@ -26,11 +26,8 @@ TaskActionDefinition::TaskActionDefinition() :
 {
 }
 
-TaskActionDefinition::TaskActionDefinition(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_contactFlowIdHasBeenSet(false),
-    m_referencesHasBeenSet(false)
+TaskActionDefinition::TaskActionDefinition(JsonView jsonValue)
+  : TaskActionDefinition()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ S3JobDefinition::S3JobDefinition() :
 {
 }
 
-S3JobDefinition::S3JobDefinition(JsonView jsonValue) : 
-    m_bucketCriteriaHasBeenSet(false),
-    m_bucketDefinitionsHasBeenSet(false),
-    m_scopingHasBeenSet(false)
+S3JobDefinition::S3JobDefinition(JsonView jsonValue)
+  : S3JobDefinition()
 {
   *this = jsonValue;
 }

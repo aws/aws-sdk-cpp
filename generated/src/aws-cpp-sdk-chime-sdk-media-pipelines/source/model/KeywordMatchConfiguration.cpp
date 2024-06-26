@@ -26,11 +26,8 @@ KeywordMatchConfiguration::KeywordMatchConfiguration() :
 {
 }
 
-KeywordMatchConfiguration::KeywordMatchConfiguration(JsonView jsonValue) : 
-    m_ruleNameHasBeenSet(false),
-    m_keywordsHasBeenSet(false),
-    m_negate(false),
-    m_negateHasBeenSet(false)
+KeywordMatchConfiguration::KeywordMatchConfiguration(JsonView jsonValue)
+  : KeywordMatchConfiguration()
 {
   *this = jsonValue;
 }

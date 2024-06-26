@@ -36,21 +36,8 @@ EventsDetectionJobProperties::EventsDetectionJobProperties() :
 {
 }
 
-EventsDetectionJobProperties::EventsDetectionJobProperties(JsonView jsonValue) : 
-    m_jobIdHasBeenSet(false),
-    m_jobArnHasBeenSet(false),
-    m_jobNameHasBeenSet(false),
-    m_jobStatus(JobStatus::NOT_SET),
-    m_jobStatusHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_submitTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_inputDataConfigHasBeenSet(false),
-    m_outputDataConfigHasBeenSet(false),
-    m_languageCode(LanguageCode::NOT_SET),
-    m_languageCodeHasBeenSet(false),
-    m_dataAccessRoleArnHasBeenSet(false),
-    m_targetEventTypesHasBeenSet(false)
+EventsDetectionJobProperties::EventsDetectionJobProperties(JsonView jsonValue)
+  : EventsDetectionJobProperties()
 {
   *this = jsonValue;
 }

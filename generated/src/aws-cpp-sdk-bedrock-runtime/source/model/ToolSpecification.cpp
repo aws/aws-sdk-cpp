@@ -25,10 +25,8 @@ ToolSpecification::ToolSpecification() :
 {
 }
 
-ToolSpecification::ToolSpecification(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_inputSchemaHasBeenSet(false)
+ToolSpecification::ToolSpecification(JsonView jsonValue)
+  : ToolSpecification()
 {
   *this = jsonValue;
 }

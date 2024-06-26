@@ -33,18 +33,8 @@ LicenseRecommendation::LicenseRecommendation() :
 {
 }
 
-LicenseRecommendation::LicenseRecommendation(JsonView jsonValue) : 
-    m_resourceArnHasBeenSet(false),
-    m_accountIdHasBeenSet(false),
-    m_currentLicenseConfigurationHasBeenSet(false),
-    m_lookbackPeriodInDays(0.0),
-    m_lookbackPeriodInDaysHasBeenSet(false),
-    m_lastRefreshTimestampHasBeenSet(false),
-    m_finding(LicenseFinding::NOT_SET),
-    m_findingHasBeenSet(false),
-    m_findingReasonCodesHasBeenSet(false),
-    m_licenseRecommendationOptionsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+LicenseRecommendation::LicenseRecommendation(JsonView jsonValue)
+  : LicenseRecommendation()
 {
   *this = jsonValue;
 }

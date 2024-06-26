@@ -25,10 +25,8 @@ SalesforceMetadata::SalesforceMetadata() :
 {
 }
 
-SalesforceMetadata::SalesforceMetadata(JsonView jsonValue) : 
-    m_oAuthScopesHasBeenSet(false),
-    m_dataTransferApisHasBeenSet(false),
-    m_oauth2GrantTypesSupportedHasBeenSet(false)
+SalesforceMetadata::SalesforceMetadata(JsonView jsonValue)
+  : SalesforceMetadata()
 {
   *this = jsonValue;
 }

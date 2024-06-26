@@ -23,8 +23,8 @@ PivotTableConditionalFormattingOption::PivotTableConditionalFormattingOption() :
 {
 }
 
-PivotTableConditionalFormattingOption::PivotTableConditionalFormattingOption(JsonView jsonValue) : 
-    m_cellHasBeenSet(false)
+PivotTableConditionalFormattingOption::PivotTableConditionalFormattingOption(JsonView jsonValue)
+  : PivotTableConditionalFormattingOption()
 {
   *this = jsonValue;
 }

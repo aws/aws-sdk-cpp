@@ -25,10 +25,8 @@ AttributeMapping::AttributeMapping() :
 {
 }
 
-AttributeMapping::AttributeMapping(JsonView jsonValue) : 
-    m_certificateField(CertificateField::NOT_SET),
-    m_certificateFieldHasBeenSet(false),
-    m_mappingRulesHasBeenSet(false)
+AttributeMapping::AttributeMapping(JsonView jsonValue)
+  : AttributeMapping()
 {
   *this = jsonValue;
 }

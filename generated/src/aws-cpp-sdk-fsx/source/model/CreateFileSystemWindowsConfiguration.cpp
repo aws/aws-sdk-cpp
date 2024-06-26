@@ -38,23 +38,8 @@ CreateFileSystemWindowsConfiguration::CreateFileSystemWindowsConfiguration() :
 {
 }
 
-CreateFileSystemWindowsConfiguration::CreateFileSystemWindowsConfiguration(JsonView jsonValue) : 
-    m_activeDirectoryIdHasBeenSet(false),
-    m_selfManagedActiveDirectoryConfigurationHasBeenSet(false),
-    m_deploymentType(WindowsDeploymentType::NOT_SET),
-    m_deploymentTypeHasBeenSet(false),
-    m_preferredSubnetIdHasBeenSet(false),
-    m_throughputCapacity(0),
-    m_throughputCapacityHasBeenSet(false),
-    m_weeklyMaintenanceStartTimeHasBeenSet(false),
-    m_dailyAutomaticBackupStartTimeHasBeenSet(false),
-    m_automaticBackupRetentionDays(0),
-    m_automaticBackupRetentionDaysHasBeenSet(false),
-    m_copyTagsToBackups(false),
-    m_copyTagsToBackupsHasBeenSet(false),
-    m_aliasesHasBeenSet(false),
-    m_auditLogConfigurationHasBeenSet(false),
-    m_diskIopsConfigurationHasBeenSet(false)
+CreateFileSystemWindowsConfiguration::CreateFileSystemWindowsConfiguration(JsonView jsonValue)
+  : CreateFileSystemWindowsConfiguration()
 {
   *this = jsonValue;
 }

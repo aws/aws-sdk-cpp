@@ -27,10 +27,8 @@ S3SetObjectRetentionOperation::S3SetObjectRetentionOperation() :
 {
 }
 
-S3SetObjectRetentionOperation::S3SetObjectRetentionOperation(const XmlNode& xmlNode) : 
-    m_bypassGovernanceRetention(false),
-    m_bypassGovernanceRetentionHasBeenSet(false),
-    m_retentionHasBeenSet(false)
+S3SetObjectRetentionOperation::S3SetObjectRetentionOperation(const XmlNode& xmlNode)
+  : S3SetObjectRetentionOperation()
 {
   *this = xmlNode;
 }

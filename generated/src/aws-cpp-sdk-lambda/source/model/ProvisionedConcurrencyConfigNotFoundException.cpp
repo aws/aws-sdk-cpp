@@ -24,9 +24,8 @@ ProvisionedConcurrencyConfigNotFoundException::ProvisionedConcurrencyConfigNotFo
 {
 }
 
-ProvisionedConcurrencyConfigNotFoundException::ProvisionedConcurrencyConfigNotFoundException(JsonView jsonValue) : 
-    m_typeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+ProvisionedConcurrencyConfigNotFoundException::ProvisionedConcurrencyConfigNotFoundException(JsonView jsonValue)
+  : ProvisionedConcurrencyConfigNotFoundException()
 {
   *this = jsonValue;
 }

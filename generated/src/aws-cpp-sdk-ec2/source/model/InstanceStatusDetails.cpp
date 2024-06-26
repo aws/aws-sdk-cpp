@@ -29,12 +29,8 @@ InstanceStatusDetails::InstanceStatusDetails() :
 {
 }
 
-InstanceStatusDetails::InstanceStatusDetails(const XmlNode& xmlNode) : 
-    m_impairedSinceHasBeenSet(false),
-    m_name(StatusName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_status(StatusType::NOT_SET),
-    m_statusHasBeenSet(false)
+InstanceStatusDetails::InstanceStatusDetails(const XmlNode& xmlNode)
+  : InstanceStatusDetails()
 {
   *this = xmlNode;
 }

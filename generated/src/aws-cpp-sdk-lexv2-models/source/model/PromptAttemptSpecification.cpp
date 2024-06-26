@@ -27,12 +27,8 @@ PromptAttemptSpecification::PromptAttemptSpecification() :
 {
 }
 
-PromptAttemptSpecification::PromptAttemptSpecification(JsonView jsonValue) : 
-    m_allowInterrupt(false),
-    m_allowInterruptHasBeenSet(false),
-    m_allowedInputTypesHasBeenSet(false),
-    m_audioAndDTMFInputSpecificationHasBeenSet(false),
-    m_textInputSpecificationHasBeenSet(false)
+PromptAttemptSpecification::PromptAttemptSpecification(JsonView jsonValue)
+  : PromptAttemptSpecification()
 {
   *this = jsonValue;
 }

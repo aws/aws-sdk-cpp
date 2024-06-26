@@ -24,9 +24,8 @@ StreamProcessorOutput::StreamProcessorOutput() :
 {
 }
 
-StreamProcessorOutput::StreamProcessorOutput(JsonView jsonValue) : 
-    m_kinesisDataStreamHasBeenSet(false),
-    m_s3DestinationHasBeenSet(false)
+StreamProcessorOutput::StreamProcessorOutput(JsonView jsonValue)
+  : StreamProcessorOutput()
 {
   *this = jsonValue;
 }

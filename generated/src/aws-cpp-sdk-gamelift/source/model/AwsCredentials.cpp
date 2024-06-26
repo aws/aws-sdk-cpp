@@ -25,10 +25,8 @@ AwsCredentials::AwsCredentials() :
 {
 }
 
-AwsCredentials::AwsCredentials(JsonView jsonValue) : 
-    m_accessKeyIdHasBeenSet(false),
-    m_secretAccessKeyHasBeenSet(false),
-    m_sessionTokenHasBeenSet(false)
+AwsCredentials::AwsCredentials(JsonView jsonValue)
+  : AwsCredentials()
 {
   *this = jsonValue;
 }

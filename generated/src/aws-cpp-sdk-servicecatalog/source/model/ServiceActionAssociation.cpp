@@ -25,10 +25,8 @@ ServiceActionAssociation::ServiceActionAssociation() :
 {
 }
 
-ServiceActionAssociation::ServiceActionAssociation(JsonView jsonValue) : 
-    m_serviceActionIdHasBeenSet(false),
-    m_productIdHasBeenSet(false),
-    m_provisioningArtifactIdHasBeenSet(false)
+ServiceActionAssociation::ServiceActionAssociation(JsonView jsonValue)
+  : ServiceActionAssociation()
 {
   *this = jsonValue;
 }

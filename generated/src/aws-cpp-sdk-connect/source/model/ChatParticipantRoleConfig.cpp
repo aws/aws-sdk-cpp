@@ -23,8 +23,8 @@ ChatParticipantRoleConfig::ChatParticipantRoleConfig() :
 {
 }
 
-ChatParticipantRoleConfig::ChatParticipantRoleConfig(JsonView jsonValue) : 
-    m_participantTimerConfigListHasBeenSet(false)
+ChatParticipantRoleConfig::ChatParticipantRoleConfig(JsonView jsonValue)
+  : ChatParticipantRoleConfig()
 {
   *this = jsonValue;
 }

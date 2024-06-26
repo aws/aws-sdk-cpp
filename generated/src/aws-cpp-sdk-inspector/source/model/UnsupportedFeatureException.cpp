@@ -25,10 +25,8 @@ UnsupportedFeatureException::UnsupportedFeatureException() :
 {
 }
 
-UnsupportedFeatureException::UnsupportedFeatureException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_canRetry(false),
-    m_canRetryHasBeenSet(false)
+UnsupportedFeatureException::UnsupportedFeatureException(JsonView jsonValue)
+  : UnsupportedFeatureException()
 {
   *this = jsonValue;
 }

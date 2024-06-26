@@ -24,9 +24,8 @@ EstimatedCharges::EstimatedCharges() :
 {
 }
 
-EstimatedCharges::EstimatedCharges(JsonView jsonValue) : 
-    m_agreementValueHasBeenSet(false),
-    m_currencyCodeHasBeenSet(false)
+EstimatedCharges::EstimatedCharges(JsonView jsonValue)
+  : EstimatedCharges()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ UpdatePhoneNumberRequestItem::UpdatePhoneNumberRequestItem() :
 {
 }
 
-UpdatePhoneNumberRequestItem::UpdatePhoneNumberRequestItem(JsonView jsonValue) : 
-    m_phoneNumberIdHasBeenSet(false),
-    m_productType(PhoneNumberProductType::NOT_SET),
-    m_productTypeHasBeenSet(false),
-    m_callingNameHasBeenSet(false)
+UpdatePhoneNumberRequestItem::UpdatePhoneNumberRequestItem(JsonView jsonValue)
+  : UpdatePhoneNumberRequestItem()
 {
   *this = jsonValue;
 }

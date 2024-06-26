@@ -24,9 +24,8 @@ RelatedItemEventIncludedData::RelatedItemEventIncludedData() :
 {
 }
 
-RelatedItemEventIncludedData::RelatedItemEventIncludedData(JsonView jsonValue) : 
-    m_includeContent(false),
-    m_includeContentHasBeenSet(false)
+RelatedItemEventIncludedData::RelatedItemEventIncludedData(JsonView jsonValue)
+  : RelatedItemEventIncludedData()
 {
   *this = jsonValue;
 }

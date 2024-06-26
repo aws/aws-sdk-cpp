@@ -29,14 +29,8 @@ IAMPolicyAssignment::IAMPolicyAssignment() :
 {
 }
 
-IAMPolicyAssignment::IAMPolicyAssignment(JsonView jsonValue) : 
-    m_awsAccountIdHasBeenSet(false),
-    m_assignmentIdHasBeenSet(false),
-    m_assignmentNameHasBeenSet(false),
-    m_policyArnHasBeenSet(false),
-    m_identitiesHasBeenSet(false),
-    m_assignmentStatus(AssignmentStatus::NOT_SET),
-    m_assignmentStatusHasBeenSet(false)
+IAMPolicyAssignment::IAMPolicyAssignment(JsonView jsonValue)
+  : IAMPolicyAssignment()
 {
   *this = jsonValue;
 }

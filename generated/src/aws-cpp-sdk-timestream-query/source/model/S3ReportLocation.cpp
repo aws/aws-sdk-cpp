@@ -24,9 +24,8 @@ S3ReportLocation::S3ReportLocation() :
 {
 }
 
-S3ReportLocation::S3ReportLocation(JsonView jsonValue) : 
-    m_bucketNameHasBeenSet(false),
-    m_objectKeyHasBeenSet(false)
+S3ReportLocation::S3ReportLocation(JsonView jsonValue)
+  : S3ReportLocation()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ UpdatePortfolioShareResult::UpdatePortfolioShareResult() :
 {
 }
 
-UpdatePortfolioShareResult::UpdatePortfolioShareResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(ShareStatus::NOT_SET)
+UpdatePortfolioShareResult::UpdatePortfolioShareResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdatePortfolioShareResult()
 {
   *this = result;
 }

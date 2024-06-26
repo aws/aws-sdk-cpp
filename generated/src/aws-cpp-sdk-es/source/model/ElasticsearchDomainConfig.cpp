@@ -38,23 +38,8 @@ ElasticsearchDomainConfig::ElasticsearchDomainConfig() :
 {
 }
 
-ElasticsearchDomainConfig::ElasticsearchDomainConfig(JsonView jsonValue) : 
-    m_elasticsearchVersionHasBeenSet(false),
-    m_elasticsearchClusterConfigHasBeenSet(false),
-    m_eBSOptionsHasBeenSet(false),
-    m_accessPoliciesHasBeenSet(false),
-    m_snapshotOptionsHasBeenSet(false),
-    m_vPCOptionsHasBeenSet(false),
-    m_cognitoOptionsHasBeenSet(false),
-    m_encryptionAtRestOptionsHasBeenSet(false),
-    m_nodeToNodeEncryptionOptionsHasBeenSet(false),
-    m_advancedOptionsHasBeenSet(false),
-    m_logPublishingOptionsHasBeenSet(false),
-    m_domainEndpointOptionsHasBeenSet(false),
-    m_advancedSecurityOptionsHasBeenSet(false),
-    m_autoTuneOptionsHasBeenSet(false),
-    m_changeProgressDetailsHasBeenSet(false),
-    m_modifyingPropertiesHasBeenSet(false)
+ElasticsearchDomainConfig::ElasticsearchDomainConfig(JsonView jsonValue)
+  : ElasticsearchDomainConfig()
 {
   *this = jsonValue;
 }

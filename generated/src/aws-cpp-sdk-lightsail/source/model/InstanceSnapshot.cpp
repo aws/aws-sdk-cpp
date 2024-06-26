@@ -42,27 +42,8 @@ InstanceSnapshot::InstanceSnapshot() :
 {
 }
 
-InstanceSnapshot::InstanceSnapshot(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_supportCodeHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_locationHasBeenSet(false),
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_state(InstanceSnapshotState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_progressHasBeenSet(false),
-    m_fromAttachedDisksHasBeenSet(false),
-    m_fromInstanceNameHasBeenSet(false),
-    m_fromInstanceArnHasBeenSet(false),
-    m_fromBlueprintIdHasBeenSet(false),
-    m_fromBundleIdHasBeenSet(false),
-    m_isFromAutoSnapshot(false),
-    m_isFromAutoSnapshotHasBeenSet(false),
-    m_sizeInGb(0),
-    m_sizeInGbHasBeenSet(false)
+InstanceSnapshot::InstanceSnapshot(JsonView jsonValue)
+  : InstanceSnapshot()
 {
   *this = jsonValue;
 }

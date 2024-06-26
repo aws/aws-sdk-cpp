@@ -27,10 +27,8 @@ DeleteFleetError::DeleteFleetError() :
 {
 }
 
-DeleteFleetError::DeleteFleetError(const XmlNode& xmlNode) : 
-    m_code(DeleteFleetErrorCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+DeleteFleetError::DeleteFleetError(const XmlNode& xmlNode)
+  : DeleteFleetError()
 {
   *this = xmlNode;
 }

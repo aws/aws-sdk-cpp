@@ -26,11 +26,8 @@ FileSystemAssociationSummary::FileSystemAssociationSummary() :
 {
 }
 
-FileSystemAssociationSummary::FileSystemAssociationSummary(JsonView jsonValue) : 
-    m_fileSystemAssociationIdHasBeenSet(false),
-    m_fileSystemAssociationARNHasBeenSet(false),
-    m_fileSystemAssociationStatusHasBeenSet(false),
-    m_gatewayARNHasBeenSet(false)
+FileSystemAssociationSummary::FileSystemAssociationSummary(JsonView jsonValue)
+  : FileSystemAssociationSummary()
 {
   *this = jsonValue;
 }

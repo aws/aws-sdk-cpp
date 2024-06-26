@@ -31,17 +31,8 @@ DescribeBrokerResult::DescribeBrokerResult() :
 {
 }
 
-DescribeBrokerResult::DescribeBrokerResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_authenticationStrategy(AuthenticationStrategy::NOT_SET),
-    m_autoMinorVersionUpgrade(false),
-    m_brokerState(BrokerState::NOT_SET),
-    m_deploymentMode(DeploymentMode::NOT_SET),
-    m_engineType(EngineType::NOT_SET),
-    m_pendingAuthenticationStrategy(AuthenticationStrategy::NOT_SET),
-    m_publiclyAccessible(false),
-    m_storageType(BrokerStorageType::NOT_SET),
-    m_dataReplicationMode(DataReplicationMode::NOT_SET),
-    m_pendingDataReplicationMode(DataReplicationMode::NOT_SET)
+DescribeBrokerResult::DescribeBrokerResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeBrokerResult()
 {
   *this = result;
 }

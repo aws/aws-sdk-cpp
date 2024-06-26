@@ -24,9 +24,8 @@ DocumentClassifierDocuments::DocumentClassifierDocuments() :
 {
 }
 
-DocumentClassifierDocuments::DocumentClassifierDocuments(JsonView jsonValue) : 
-    m_s3UriHasBeenSet(false),
-    m_testS3UriHasBeenSet(false)
+DocumentClassifierDocuments::DocumentClassifierDocuments(JsonView jsonValue)
+  : DocumentClassifierDocuments()
 {
   *this = jsonValue;
 }

@@ -26,10 +26,8 @@ InvokeEndpointWithResponseStreamInitialResponse::InvokeEndpointWithResponseStrea
 {
 }
 
-InvokeEndpointWithResponseStreamInitialResponse::InvokeEndpointWithResponseStreamInitialResponse(JsonView jsonValue) : 
-    m_customAttributesHasBeenSet(false),
-    m_contentTypeHasBeenSet(false),
-    m_invokedProductionVariantHasBeenSet(false)
+InvokeEndpointWithResponseStreamInitialResponse::InvokeEndpointWithResponseStreamInitialResponse(JsonView jsonValue)
+  : InvokeEndpointWithResponseStreamInitialResponse()
 {
   *this = jsonValue;
 }

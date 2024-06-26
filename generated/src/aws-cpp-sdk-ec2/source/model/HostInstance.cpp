@@ -27,10 +27,8 @@ HostInstance::HostInstance() :
 {
 }
 
-HostInstance::HostInstance(const XmlNode& xmlNode) : 
-    m_instanceIdHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_ownerIdHasBeenSet(false)
+HostInstance::HostInstance(const XmlNode& xmlNode)
+  : HostInstance()
 {
   *this = xmlNode;
 }

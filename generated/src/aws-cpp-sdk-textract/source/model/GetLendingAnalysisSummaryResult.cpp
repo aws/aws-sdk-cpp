@@ -22,8 +22,8 @@ GetLendingAnalysisSummaryResult::GetLendingAnalysisSummaryResult() :
 {
 }
 
-GetLendingAnalysisSummaryResult::GetLendingAnalysisSummaryResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_jobStatus(JobStatus::NOT_SET)
+GetLendingAnalysisSummaryResult::GetLendingAnalysisSummaryResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetLendingAnalysisSummaryResult()
 {
   *this = result;
 }

@@ -24,9 +24,8 @@ ElasticsearchClusterConfigStatus::ElasticsearchClusterConfigStatus() :
 {
 }
 
-ElasticsearchClusterConfigStatus::ElasticsearchClusterConfigStatus(JsonView jsonValue) : 
-    m_optionsHasBeenSet(false),
-    m_statusHasBeenSet(false)
+ElasticsearchClusterConfigStatus::ElasticsearchClusterConfigStatus(JsonView jsonValue)
+  : ElasticsearchClusterConfigStatus()
 {
   *this = jsonValue;
 }

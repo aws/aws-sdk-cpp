@@ -22,8 +22,8 @@ DescribeOrganizationConfigurationResult::DescribeOrganizationConfigurationResult
 {
 }
 
-DescribeOrganizationConfigurationResult::DescribeOrganizationConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_autoEnable(false)
+DescribeOrganizationConfigurationResult::DescribeOrganizationConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeOrganizationConfigurationResult()
 {
   *this = result;
 }

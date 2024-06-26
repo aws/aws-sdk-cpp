@@ -23,8 +23,8 @@ CapacityAssignment::CapacityAssignment() :
 {
 }
 
-CapacityAssignment::CapacityAssignment(JsonView jsonValue) : 
-    m_workGroupNamesHasBeenSet(false)
+CapacityAssignment::CapacityAssignment(JsonView jsonValue)
+  : CapacityAssignment()
 {
   *this = jsonValue;
 }

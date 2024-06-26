@@ -26,11 +26,8 @@ DataSetUsageConfiguration::DataSetUsageConfiguration() :
 {
 }
 
-DataSetUsageConfiguration::DataSetUsageConfiguration(JsonView jsonValue) : 
-    m_disableUseAsDirectQuerySource(false),
-    m_disableUseAsDirectQuerySourceHasBeenSet(false),
-    m_disableUseAsImportedSource(false),
-    m_disableUseAsImportedSourceHasBeenSet(false)
+DataSetUsageConfiguration::DataSetUsageConfiguration(JsonView jsonValue)
+  : DataSetUsageConfiguration()
 {
   *this = jsonValue;
 }

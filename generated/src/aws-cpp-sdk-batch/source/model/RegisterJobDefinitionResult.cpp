@@ -22,8 +22,8 @@ RegisterJobDefinitionResult::RegisterJobDefinitionResult() :
 {
 }
 
-RegisterJobDefinitionResult::RegisterJobDefinitionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_revision(0)
+RegisterJobDefinitionResult::RegisterJobDefinitionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : RegisterJobDefinitionResult()
 {
   *this = result;
 }

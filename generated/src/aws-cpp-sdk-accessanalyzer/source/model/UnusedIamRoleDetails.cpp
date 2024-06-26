@@ -23,8 +23,8 @@ UnusedIamRoleDetails::UnusedIamRoleDetails() :
 {
 }
 
-UnusedIamRoleDetails::UnusedIamRoleDetails(JsonView jsonValue) : 
-    m_lastAccessedHasBeenSet(false)
+UnusedIamRoleDetails::UnusedIamRoleDetails(JsonView jsonValue)
+  : UnusedIamRoleDetails()
 {
   *this = jsonValue;
 }

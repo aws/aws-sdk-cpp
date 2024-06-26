@@ -31,16 +31,8 @@ ListSolNetworkOperationsInfo::ListSolNetworkOperationsInfo() :
 {
 }
 
-ListSolNetworkOperationsInfo::ListSolNetworkOperationsInfo(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_errorHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_lcmOperationType(LcmOperationType::NOT_SET),
-    m_lcmOperationTypeHasBeenSet(false),
-    m_metadataHasBeenSet(false),
-    m_nsInstanceIdHasBeenSet(false),
-    m_operationState(NsLcmOperationState::NOT_SET),
-    m_operationStateHasBeenSet(false)
+ListSolNetworkOperationsInfo::ListSolNetworkOperationsInfo(JsonView jsonValue)
+  : ListSolNetworkOperationsInfo()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ PendingLogs::PendingLogs() :
 {
 }
 
-PendingLogs::PendingLogs(JsonView jsonValue) : 
-    m_audit(false),
-    m_auditHasBeenSet(false),
-    m_general(false),
-    m_generalHasBeenSet(false)
+PendingLogs::PendingLogs(JsonView jsonValue)
+  : PendingLogs()
 {
   *this = jsonValue;
 }

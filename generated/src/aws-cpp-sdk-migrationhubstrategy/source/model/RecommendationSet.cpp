@@ -27,12 +27,8 @@ RecommendationSet::RecommendationSet() :
 {
 }
 
-RecommendationSet::RecommendationSet(JsonView jsonValue) : 
-    m_strategy(Strategy::NOT_SET),
-    m_strategyHasBeenSet(false),
-    m_targetDestination(TargetDestination::NOT_SET),
-    m_targetDestinationHasBeenSet(false),
-    m_transformationToolHasBeenSet(false)
+RecommendationSet::RecommendationSet(JsonView jsonValue)
+  : RecommendationSet()
 {
   *this = jsonValue;
 }

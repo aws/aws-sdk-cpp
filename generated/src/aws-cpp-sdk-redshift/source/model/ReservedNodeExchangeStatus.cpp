@@ -36,19 +36,8 @@ ReservedNodeExchangeStatus::ReservedNodeExchangeStatus() :
 {
 }
 
-ReservedNodeExchangeStatus::ReservedNodeExchangeStatus(const XmlNode& xmlNode) : 
-    m_reservedNodeExchangeRequestIdHasBeenSet(false),
-    m_status(ReservedNodeExchangeStatusType::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_requestTimeHasBeenSet(false),
-    m_sourceReservedNodeIdHasBeenSet(false),
-    m_sourceReservedNodeTypeHasBeenSet(false),
-    m_sourceReservedNodeCount(0),
-    m_sourceReservedNodeCountHasBeenSet(false),
-    m_targetReservedNodeOfferingIdHasBeenSet(false),
-    m_targetReservedNodeTypeHasBeenSet(false),
-    m_targetReservedNodeCount(0),
-    m_targetReservedNodeCountHasBeenSet(false)
+ReservedNodeExchangeStatus::ReservedNodeExchangeStatus(const XmlNode& xmlNode)
+  : ReservedNodeExchangeStatus()
 {
   *this = xmlNode;
 }

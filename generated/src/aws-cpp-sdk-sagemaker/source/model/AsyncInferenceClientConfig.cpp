@@ -24,9 +24,8 @@ AsyncInferenceClientConfig::AsyncInferenceClientConfig() :
 {
 }
 
-AsyncInferenceClientConfig::AsyncInferenceClientConfig(JsonView jsonValue) : 
-    m_maxConcurrentInvocationsPerInstance(0),
-    m_maxConcurrentInvocationsPerInstanceHasBeenSet(false)
+AsyncInferenceClientConfig::AsyncInferenceClientConfig(JsonView jsonValue)
+  : AsyncInferenceClientConfig()
 {
   *this = jsonValue;
 }

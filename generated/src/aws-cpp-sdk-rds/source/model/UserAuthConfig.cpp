@@ -33,16 +33,8 @@ UserAuthConfig::UserAuthConfig() :
 {
 }
 
-UserAuthConfig::UserAuthConfig(const XmlNode& xmlNode) : 
-    m_descriptionHasBeenSet(false),
-    m_userNameHasBeenSet(false),
-    m_authScheme(AuthScheme::NOT_SET),
-    m_authSchemeHasBeenSet(false),
-    m_secretArnHasBeenSet(false),
-    m_iAMAuth(IAMAuthMode::NOT_SET),
-    m_iAMAuthHasBeenSet(false),
-    m_clientPasswordAuthType(ClientPasswordAuthType::NOT_SET),
-    m_clientPasswordAuthTypeHasBeenSet(false)
+UserAuthConfig::UserAuthConfig(const XmlNode& xmlNode)
+  : UserAuthConfig()
 {
   *this = xmlNode;
 }

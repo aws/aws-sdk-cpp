@@ -22,8 +22,8 @@ PromoteResourceShareCreatedFromPolicyResult::PromoteResourceShareCreatedFromPoli
 {
 }
 
-PromoteResourceShareCreatedFromPolicyResult::PromoteResourceShareCreatedFromPolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_returnValue(false)
+PromoteResourceShareCreatedFromPolicyResult::PromoteResourceShareCreatedFromPolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : PromoteResourceShareCreatedFromPolicyResult()
 {
   *this = result;
 }

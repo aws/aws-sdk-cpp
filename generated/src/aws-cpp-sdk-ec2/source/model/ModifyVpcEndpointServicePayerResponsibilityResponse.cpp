@@ -22,8 +22,8 @@ ModifyVpcEndpointServicePayerResponsibilityResponse::ModifyVpcEndpointServicePay
 {
 }
 
-ModifyVpcEndpointServicePayerResponsibilityResponse::ModifyVpcEndpointServicePayerResponsibilityResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_returnValue(false)
+ModifyVpcEndpointServicePayerResponsibilityResponse::ModifyVpcEndpointServicePayerResponsibilityResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : ModifyVpcEndpointServicePayerResponsibilityResponse()
 {
   *this = result;
 }

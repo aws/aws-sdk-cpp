@@ -52,35 +52,8 @@ TargetGroup::TargetGroup() :
 {
 }
 
-TargetGroup::TargetGroup(const XmlNode& xmlNode) : 
-    m_targetGroupArnHasBeenSet(false),
-    m_targetGroupNameHasBeenSet(false),
-    m_protocol(ProtocolEnum::NOT_SET),
-    m_protocolHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_healthCheckProtocol(ProtocolEnum::NOT_SET),
-    m_healthCheckProtocolHasBeenSet(false),
-    m_healthCheckPortHasBeenSet(false),
-    m_healthCheckEnabled(false),
-    m_healthCheckEnabledHasBeenSet(false),
-    m_healthCheckIntervalSeconds(0),
-    m_healthCheckIntervalSecondsHasBeenSet(false),
-    m_healthCheckTimeoutSeconds(0),
-    m_healthCheckTimeoutSecondsHasBeenSet(false),
-    m_healthyThresholdCount(0),
-    m_healthyThresholdCountHasBeenSet(false),
-    m_unhealthyThresholdCount(0),
-    m_unhealthyThresholdCountHasBeenSet(false),
-    m_healthCheckPathHasBeenSet(false),
-    m_matcherHasBeenSet(false),
-    m_loadBalancerArnsHasBeenSet(false),
-    m_targetType(TargetTypeEnum::NOT_SET),
-    m_targetTypeHasBeenSet(false),
-    m_protocolVersionHasBeenSet(false),
-    m_ipAddressType(TargetGroupIpAddressTypeEnum::NOT_SET),
-    m_ipAddressTypeHasBeenSet(false)
+TargetGroup::TargetGroup(const XmlNode& xmlNode)
+  : TargetGroup()
 {
   *this = xmlNode;
 }

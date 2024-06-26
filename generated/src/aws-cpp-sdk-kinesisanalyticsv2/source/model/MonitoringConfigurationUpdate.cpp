@@ -28,13 +28,8 @@ MonitoringConfigurationUpdate::MonitoringConfigurationUpdate() :
 {
 }
 
-MonitoringConfigurationUpdate::MonitoringConfigurationUpdate(JsonView jsonValue) : 
-    m_configurationTypeUpdate(ConfigurationType::NOT_SET),
-    m_configurationTypeUpdateHasBeenSet(false),
-    m_metricsLevelUpdate(MetricsLevel::NOT_SET),
-    m_metricsLevelUpdateHasBeenSet(false),
-    m_logLevelUpdate(LogLevel::NOT_SET),
-    m_logLevelUpdateHasBeenSet(false)
+MonitoringConfigurationUpdate::MonitoringConfigurationUpdate(JsonView jsonValue)
+  : MonitoringConfigurationUpdate()
 {
   *this = jsonValue;
 }

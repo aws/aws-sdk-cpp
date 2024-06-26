@@ -24,9 +24,8 @@ AxisDisplayRange::AxisDisplayRange() :
 {
 }
 
-AxisDisplayRange::AxisDisplayRange(JsonView jsonValue) : 
-    m_minMaxHasBeenSet(false),
-    m_dataDrivenHasBeenSet(false)
+AxisDisplayRange::AxisDisplayRange(JsonView jsonValue)
+  : AxisDisplayRange()
 {
   *this = jsonValue;
 }

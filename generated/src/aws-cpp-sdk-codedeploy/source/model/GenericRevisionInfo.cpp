@@ -27,12 +27,8 @@ GenericRevisionInfo::GenericRevisionInfo() :
 {
 }
 
-GenericRevisionInfo::GenericRevisionInfo(JsonView jsonValue) : 
-    m_descriptionHasBeenSet(false),
-    m_deploymentGroupsHasBeenSet(false),
-    m_firstUsedTimeHasBeenSet(false),
-    m_lastUsedTimeHasBeenSet(false),
-    m_registerTimeHasBeenSet(false)
+GenericRevisionInfo::GenericRevisionInfo(JsonView jsonValue)
+  : GenericRevisionInfo()
 {
   *this = jsonValue;
 }

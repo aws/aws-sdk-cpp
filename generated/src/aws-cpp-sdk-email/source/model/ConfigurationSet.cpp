@@ -25,8 +25,8 @@ ConfigurationSet::ConfigurationSet() :
 {
 }
 
-ConfigurationSet::ConfigurationSet(const XmlNode& xmlNode) : 
-    m_nameHasBeenSet(false)
+ConfigurationSet::ConfigurationSet(const XmlNode& xmlNode)
+  : ConfigurationSet()
 {
   *this = xmlNode;
 }

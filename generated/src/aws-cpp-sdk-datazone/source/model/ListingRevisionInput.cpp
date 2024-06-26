@@ -24,9 +24,8 @@ ListingRevisionInput::ListingRevisionInput() :
 {
 }
 
-ListingRevisionInput::ListingRevisionInput(JsonView jsonValue) : 
-    m_identifierHasBeenSet(false),
-    m_revisionHasBeenSet(false)
+ListingRevisionInput::ListingRevisionInput(JsonView jsonValue)
+  : ListingRevisionInput()
 {
   *this = jsonValue;
 }

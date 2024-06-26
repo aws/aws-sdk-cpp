@@ -22,8 +22,8 @@ RecognizeCelebritiesResult::RecognizeCelebritiesResult() :
 {
 }
 
-RecognizeCelebritiesResult::RecognizeCelebritiesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_orientationCorrection(OrientationCorrection::NOT_SET)
+RecognizeCelebritiesResult::RecognizeCelebritiesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : RecognizeCelebritiesResult()
 {
   *this = result;
 }

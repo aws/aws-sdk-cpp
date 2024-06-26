@@ -32,17 +32,8 @@ LabelCounters::LabelCounters() :
 {
 }
 
-LabelCounters::LabelCounters(JsonView jsonValue) : 
-    m_totalLabeled(0),
-    m_totalLabeledHasBeenSet(false),
-    m_humanLabeled(0),
-    m_humanLabeledHasBeenSet(false),
-    m_machineLabeled(0),
-    m_machineLabeledHasBeenSet(false),
-    m_failedNonRetryableError(0),
-    m_failedNonRetryableErrorHasBeenSet(false),
-    m_unlabeled(0),
-    m_unlabeledHasBeenSet(false)
+LabelCounters::LabelCounters(JsonView jsonValue)
+  : LabelCounters()
 {
   *this = jsonValue;
 }

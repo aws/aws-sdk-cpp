@@ -46,31 +46,8 @@ Patch::Patch() :
 {
 }
 
-Patch::Patch(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_releaseDateHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_contentUrlHasBeenSet(false),
-    m_vendorHasBeenSet(false),
-    m_productFamilyHasBeenSet(false),
-    m_productHasBeenSet(false),
-    m_classificationHasBeenSet(false),
-    m_msrcSeverityHasBeenSet(false),
-    m_kbNumberHasBeenSet(false),
-    m_msrcNumberHasBeenSet(false),
-    m_languageHasBeenSet(false),
-    m_advisoryIdsHasBeenSet(false),
-    m_bugzillaIdsHasBeenSet(false),
-    m_cVEIdsHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_epoch(0),
-    m_epochHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_releaseHasBeenSet(false),
-    m_archHasBeenSet(false),
-    m_severityHasBeenSet(false),
-    m_repositoryHasBeenSet(false)
+Patch::Patch(JsonView jsonValue)
+  : Patch()
 {
   *this = jsonValue;
 }

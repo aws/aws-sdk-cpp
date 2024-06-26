@@ -28,13 +28,8 @@ ProfilerConfigForUpdate::ProfilerConfigForUpdate() :
 {
 }
 
-ProfilerConfigForUpdate::ProfilerConfigForUpdate(JsonView jsonValue) : 
-    m_s3OutputPathHasBeenSet(false),
-    m_profilingIntervalInMilliseconds(0),
-    m_profilingIntervalInMillisecondsHasBeenSet(false),
-    m_profilingParametersHasBeenSet(false),
-    m_disableProfiler(false),
-    m_disableProfilerHasBeenSet(false)
+ProfilerConfigForUpdate::ProfilerConfigForUpdate(JsonView jsonValue)
+  : ProfilerConfigForUpdate()
 {
   *this = jsonValue;
 }

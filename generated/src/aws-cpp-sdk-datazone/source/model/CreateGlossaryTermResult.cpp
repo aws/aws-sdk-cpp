@@ -22,8 +22,8 @@ CreateGlossaryTermResult::CreateGlossaryTermResult() :
 {
 }
 
-CreateGlossaryTermResult::CreateGlossaryTermResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(GlossaryTermStatus::NOT_SET)
+CreateGlossaryTermResult::CreateGlossaryTermResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateGlossaryTermResult()
 {
   *this = result;
 }

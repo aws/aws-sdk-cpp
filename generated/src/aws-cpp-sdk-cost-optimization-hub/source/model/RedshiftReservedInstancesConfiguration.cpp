@@ -36,21 +36,8 @@ RedshiftReservedInstancesConfiguration::RedshiftReservedInstancesConfiguration()
 {
 }
 
-RedshiftReservedInstancesConfiguration::RedshiftReservedInstancesConfiguration(JsonView jsonValue) : 
-    m_accountScopeHasBeenSet(false),
-    m_serviceHasBeenSet(false),
-    m_normalizedUnitsToPurchaseHasBeenSet(false),
-    m_termHasBeenSet(false),
-    m_paymentOptionHasBeenSet(false),
-    m_numberOfInstancesToPurchaseHasBeenSet(false),
-    m_instanceFamilyHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_reservedInstancesRegionHasBeenSet(false),
-    m_sizeFlexEligible(false),
-    m_sizeFlexEligibleHasBeenSet(false),
-    m_currentGenerationHasBeenSet(false),
-    m_upfrontCostHasBeenSet(false),
-    m_monthlyRecurringCostHasBeenSet(false)
+RedshiftReservedInstancesConfiguration::RedshiftReservedInstancesConfiguration(JsonView jsonValue)
+  : RedshiftReservedInstancesConfiguration()
 {
   *this = jsonValue;
 }

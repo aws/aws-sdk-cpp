@@ -23,8 +23,8 @@ SecurityConfigurationData::SecurityConfigurationData() :
 {
 }
 
-SecurityConfigurationData::SecurityConfigurationData(JsonView jsonValue) : 
-    m_authorizationConfigurationHasBeenSet(false)
+SecurityConfigurationData::SecurityConfigurationData(JsonView jsonValue)
+  : SecurityConfigurationData()
 {
   *this = jsonValue;
 }

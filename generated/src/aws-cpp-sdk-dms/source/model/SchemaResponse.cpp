@@ -34,19 +34,8 @@ SchemaResponse::SchemaResponse() :
 {
 }
 
-SchemaResponse::SchemaResponse(JsonView jsonValue) : 
-    m_codeLineCount(0),
-    m_codeLineCountHasBeenSet(false),
-    m_codeSize(0),
-    m_codeSizeHasBeenSet(false),
-    m_complexityHasBeenSet(false),
-    m_serverHasBeenSet(false),
-    m_databaseInstanceHasBeenSet(false),
-    m_schemaIdHasBeenSet(false),
-    m_schemaNameHasBeenSet(false),
-    m_originalSchemaHasBeenSet(false),
-    m_similarity(0.0),
-    m_similarityHasBeenSet(false)
+SchemaResponse::SchemaResponse(JsonView jsonValue)
+  : SchemaResponse()
 {
   *this = jsonValue;
 }

@@ -33,18 +33,8 @@ TestCaseRun::TestCaseRun() :
 {
 }
 
-TestCaseRun::TestCaseRun(JsonView jsonValue) : 
-    m_testCaseRunIdHasBeenSet(false),
-    m_testCaseDefinitionIdHasBeenSet(false),
-    m_testCaseDefinitionNameHasBeenSet(false),
-    m_status(Status::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_logUrlHasBeenSet(false),
-    m_warningsHasBeenSet(false),
-    m_failureHasBeenSet(false),
-    m_testScenariosHasBeenSet(false)
+TestCaseRun::TestCaseRun(JsonView jsonValue)
+  : TestCaseRun()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ SigningProfileParameter::SigningProfileParameter() :
 {
 }
 
-SigningProfileParameter::SigningProfileParameter(JsonView jsonValue) : 
-    m_certificateArnHasBeenSet(false),
-    m_platformHasBeenSet(false),
-    m_certificatePathOnDeviceHasBeenSet(false)
+SigningProfileParameter::SigningProfileParameter(JsonView jsonValue)
+  : SigningProfileParameter()
 {
   *this = jsonValue;
 }

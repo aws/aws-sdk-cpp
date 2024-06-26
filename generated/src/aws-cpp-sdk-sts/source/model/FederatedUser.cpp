@@ -26,9 +26,8 @@ FederatedUser::FederatedUser() :
 {
 }
 
-FederatedUser::FederatedUser(const XmlNode& xmlNode) : 
-    m_federatedUserIdHasBeenSet(false),
-    m_arnHasBeenSet(false)
+FederatedUser::FederatedUser(const XmlNode& xmlNode)
+  : FederatedUser()
 {
   *this = xmlNode;
 }

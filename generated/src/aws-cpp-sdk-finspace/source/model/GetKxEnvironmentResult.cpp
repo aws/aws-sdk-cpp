@@ -24,10 +24,8 @@ GetKxEnvironmentResult::GetKxEnvironmentResult() :
 {
 }
 
-GetKxEnvironmentResult::GetKxEnvironmentResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(EnvironmentStatus::NOT_SET),
-    m_tgwStatus(TgwStatus::NOT_SET),
-    m_dnsStatus(DnsStatus::NOT_SET)
+GetKxEnvironmentResult::GetKxEnvironmentResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetKxEnvironmentResult()
 {
   *this = result;
 }

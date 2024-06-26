@@ -25,10 +25,8 @@ Ec2Configuration::Ec2Configuration() :
 {
 }
 
-Ec2Configuration::Ec2Configuration(JsonView jsonValue) : 
-    m_imageTypeHasBeenSet(false),
-    m_imageIdOverrideHasBeenSet(false),
-    m_imageKubernetesVersionHasBeenSet(false)
+Ec2Configuration::Ec2Configuration(JsonView jsonValue)
+  : Ec2Configuration()
 {
   *this = jsonValue;
 }

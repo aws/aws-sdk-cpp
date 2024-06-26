@@ -26,11 +26,8 @@ VirtualGatewayHttpConnectionPool::VirtualGatewayHttpConnectionPool() :
 {
 }
 
-VirtualGatewayHttpConnectionPool::VirtualGatewayHttpConnectionPool(JsonView jsonValue) : 
-    m_maxConnections(0),
-    m_maxConnectionsHasBeenSet(false),
-    m_maxPendingRequests(0),
-    m_maxPendingRequestsHasBeenSet(false)
+VirtualGatewayHttpConnectionPool::VirtualGatewayHttpConnectionPool(JsonView jsonValue)
+  : VirtualGatewayHttpConnectionPool()
 {
   *this = jsonValue;
 }

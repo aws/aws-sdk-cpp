@@ -22,8 +22,8 @@ DeleteQueryDefinitionResult::DeleteQueryDefinitionResult() :
 {
 }
 
-DeleteQueryDefinitionResult::DeleteQueryDefinitionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_success(false)
+DeleteQueryDefinitionResult::DeleteQueryDefinitionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeleteQueryDefinitionResult()
 {
   *this = result;
 }

@@ -23,8 +23,8 @@ TrafficRoute::TrafficRoute() :
 {
 }
 
-TrafficRoute::TrafficRoute(JsonView jsonValue) : 
-    m_listenerArnsHasBeenSet(false)
+TrafficRoute::TrafficRoute(JsonView jsonValue)
+  : TrafficRoute()
 {
   *this = jsonValue;
 }

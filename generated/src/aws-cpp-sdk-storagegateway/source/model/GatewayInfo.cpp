@@ -34,19 +34,8 @@ GatewayInfo::GatewayInfo() :
 {
 }
 
-GatewayInfo::GatewayInfo(JsonView jsonValue) : 
-    m_gatewayIdHasBeenSet(false),
-    m_gatewayARNHasBeenSet(false),
-    m_gatewayTypeHasBeenSet(false),
-    m_gatewayOperationalStateHasBeenSet(false),
-    m_gatewayNameHasBeenSet(false),
-    m_ec2InstanceIdHasBeenSet(false),
-    m_ec2InstanceRegionHasBeenSet(false),
-    m_hostEnvironment(HostEnvironment::NOT_SET),
-    m_hostEnvironmentHasBeenSet(false),
-    m_hostEnvironmentIdHasBeenSet(false),
-    m_deprecationDateHasBeenSet(false),
-    m_softwareVersionHasBeenSet(false)
+GatewayInfo::GatewayInfo(JsonView jsonValue)
+  : GatewayInfo()
 {
   *this = jsonValue;
 }

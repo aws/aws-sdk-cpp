@@ -24,9 +24,8 @@ ConnectivityInfo::ConnectivityInfo() :
 {
 }
 
-ConnectivityInfo::ConnectivityInfo(JsonView jsonValue) : 
-    m_publicAccessHasBeenSet(false),
-    m_vpcConnectivityHasBeenSet(false)
+ConnectivityInfo::ConnectivityInfo(JsonView jsonValue)
+  : ConnectivityInfo()
 {
   *this = jsonValue;
 }

@@ -27,12 +27,8 @@ PositionConfigurationItem::PositionConfigurationItem() :
 {
 }
 
-PositionConfigurationItem::PositionConfigurationItem(JsonView jsonValue) : 
-    m_resourceIdentifierHasBeenSet(false),
-    m_resourceType(PositionResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_solversHasBeenSet(false),
-    m_destinationHasBeenSet(false)
+PositionConfigurationItem::PositionConfigurationItem(JsonView jsonValue)
+  : PositionConfigurationItem()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ DeleteEnvironmentResult::DeleteEnvironmentResult() :
 {
 }
 
-DeleteEnvironmentResult::DeleteEnvironmentResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_state(EnvironmentState::NOT_SET)
+DeleteEnvironmentResult::DeleteEnvironmentResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeleteEnvironmentResult()
 {
   *this = result;
 }

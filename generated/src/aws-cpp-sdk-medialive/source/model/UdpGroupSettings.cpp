@@ -28,13 +28,8 @@ UdpGroupSettings::UdpGroupSettings() :
 {
 }
 
-UdpGroupSettings::UdpGroupSettings(JsonView jsonValue) : 
-    m_inputLossAction(InputLossActionForUdpOut::NOT_SET),
-    m_inputLossActionHasBeenSet(false),
-    m_timedMetadataId3Frame(UdpTimedMetadataId3Frame::NOT_SET),
-    m_timedMetadataId3FrameHasBeenSet(false),
-    m_timedMetadataId3Period(0),
-    m_timedMetadataId3PeriodHasBeenSet(false)
+UdpGroupSettings::UdpGroupSettings(JsonView jsonValue)
+  : UdpGroupSettings()
 {
   *this = jsonValue;
 }

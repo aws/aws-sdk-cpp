@@ -26,11 +26,8 @@ ThingTypeDefinition::ThingTypeDefinition() :
 {
 }
 
-ThingTypeDefinition::ThingTypeDefinition(JsonView jsonValue) : 
-    m_thingTypeNameHasBeenSet(false),
-    m_thingTypeArnHasBeenSet(false),
-    m_thingTypePropertiesHasBeenSet(false),
-    m_thingTypeMetadataHasBeenSet(false)
+ThingTypeDefinition::ThingTypeDefinition(JsonView jsonValue)
+  : ThingTypeDefinition()
 {
   *this = jsonValue;
 }

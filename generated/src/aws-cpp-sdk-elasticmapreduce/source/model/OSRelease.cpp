@@ -23,8 +23,8 @@ OSRelease::OSRelease() :
 {
 }
 
-OSRelease::OSRelease(JsonView jsonValue) : 
-    m_labelHasBeenSet(false)
+OSRelease::OSRelease(JsonView jsonValue)
+  : OSRelease()
 {
   *this = jsonValue;
 }

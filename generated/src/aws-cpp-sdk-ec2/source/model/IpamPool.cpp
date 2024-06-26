@@ -59,42 +59,8 @@ IpamPool::IpamPool() :
 {
 }
 
-IpamPool::IpamPool(const XmlNode& xmlNode) : 
-    m_ownerIdHasBeenSet(false),
-    m_ipamPoolIdHasBeenSet(false),
-    m_sourceIpamPoolIdHasBeenSet(false),
-    m_ipamPoolArnHasBeenSet(false),
-    m_ipamScopeArnHasBeenSet(false),
-    m_ipamScopeType(IpamScopeType::NOT_SET),
-    m_ipamScopeTypeHasBeenSet(false),
-    m_ipamArnHasBeenSet(false),
-    m_ipamRegionHasBeenSet(false),
-    m_localeHasBeenSet(false),
-    m_poolDepth(0),
-    m_poolDepthHasBeenSet(false),
-    m_state(IpamPoolState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_stateMessageHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_autoImport(false),
-    m_autoImportHasBeenSet(false),
-    m_publiclyAdvertisable(false),
-    m_publiclyAdvertisableHasBeenSet(false),
-    m_addressFamily(AddressFamily::NOT_SET),
-    m_addressFamilyHasBeenSet(false),
-    m_allocationMinNetmaskLength(0),
-    m_allocationMinNetmaskLengthHasBeenSet(false),
-    m_allocationMaxNetmaskLength(0),
-    m_allocationMaxNetmaskLengthHasBeenSet(false),
-    m_allocationDefaultNetmaskLength(0),
-    m_allocationDefaultNetmaskLengthHasBeenSet(false),
-    m_allocationResourceTagsHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_awsService(IpamPoolAwsService::NOT_SET),
-    m_awsServiceHasBeenSet(false),
-    m_publicIpSource(IpamPoolPublicIpSource::NOT_SET),
-    m_publicIpSourceHasBeenSet(false),
-    m_sourceResourceHasBeenSet(false)
+IpamPool::IpamPool(const XmlNode& xmlNode)
+  : IpamPool()
 {
   *this = xmlNode;
 }

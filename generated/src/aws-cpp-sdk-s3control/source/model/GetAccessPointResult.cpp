@@ -21,8 +21,8 @@ GetAccessPointResult::GetAccessPointResult() :
 {
 }
 
-GetAccessPointResult::GetAccessPointResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_networkOrigin(NetworkOrigin::NOT_SET)
+GetAccessPointResult::GetAccessPointResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : GetAccessPointResult()
 {
   *this = result;
 }

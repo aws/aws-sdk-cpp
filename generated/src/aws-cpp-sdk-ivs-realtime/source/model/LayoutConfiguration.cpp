@@ -24,9 +24,8 @@ LayoutConfiguration::LayoutConfiguration() :
 {
 }
 
-LayoutConfiguration::LayoutConfiguration(JsonView jsonValue) : 
-    m_gridHasBeenSet(false),
-    m_pipHasBeenSet(false)
+LayoutConfiguration::LayoutConfiguration(JsonView jsonValue)
+  : LayoutConfiguration()
 {
   *this = jsonValue;
 }

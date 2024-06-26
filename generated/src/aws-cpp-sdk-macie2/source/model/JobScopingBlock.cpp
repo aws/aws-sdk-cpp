@@ -23,8 +23,8 @@ JobScopingBlock::JobScopingBlock() :
 {
 }
 
-JobScopingBlock::JobScopingBlock(JsonView jsonValue) : 
-    m_andHasBeenSet(false)
+JobScopingBlock::JobScopingBlock(JsonView jsonValue)
+  : JobScopingBlock()
 {
   *this = jsonValue;
 }

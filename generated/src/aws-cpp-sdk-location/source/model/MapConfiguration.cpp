@@ -25,10 +25,8 @@ MapConfiguration::MapConfiguration() :
 {
 }
 
-MapConfiguration::MapConfiguration(JsonView jsonValue) : 
-    m_styleHasBeenSet(false),
-    m_politicalViewHasBeenSet(false),
-    m_customLayersHasBeenSet(false)
+MapConfiguration::MapConfiguration(JsonView jsonValue)
+  : MapConfiguration()
 {
   *this = jsonValue;
 }

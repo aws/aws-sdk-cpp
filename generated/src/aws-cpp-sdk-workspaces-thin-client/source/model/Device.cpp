@@ -47,32 +47,8 @@ Device::Device() :
 {
 }
 
-Device::Device(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_serialNumberHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_modelHasBeenSet(false),
-    m_environmentIdHasBeenSet(false),
-    m_status(DeviceStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_currentSoftwareSetIdHasBeenSet(false),
-    m_currentSoftwareSetVersionHasBeenSet(false),
-    m_desiredSoftwareSetIdHasBeenSet(false),
-    m_pendingSoftwareSetIdHasBeenSet(false),
-    m_pendingSoftwareSetVersionHasBeenSet(false),
-    m_softwareSetUpdateSchedule(SoftwareSetUpdateSchedule::NOT_SET),
-    m_softwareSetUpdateScheduleHasBeenSet(false),
-    m_softwareSetComplianceStatus(DeviceSoftwareSetComplianceStatus::NOT_SET),
-    m_softwareSetComplianceStatusHasBeenSet(false),
-    m_softwareSetUpdateStatus(SoftwareSetUpdateStatus::NOT_SET),
-    m_softwareSetUpdateStatusHasBeenSet(false),
-    m_lastConnectedAtHasBeenSet(false),
-    m_lastPostureAtHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_kmsKeyArnHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+Device::Device(JsonView jsonValue)
+  : Device()
 {
   *this = jsonValue;
 }

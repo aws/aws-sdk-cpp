@@ -26,11 +26,8 @@ LiveConnectorRTMPConfiguration::LiveConnectorRTMPConfiguration() :
 {
 }
 
-LiveConnectorRTMPConfiguration::LiveConnectorRTMPConfiguration(JsonView jsonValue) : 
-    m_urlHasBeenSet(false),
-    m_audioChannels(AudioChannelsOption::NOT_SET),
-    m_audioChannelsHasBeenSet(false),
-    m_audioSampleRateHasBeenSet(false)
+LiveConnectorRTMPConfiguration::LiveConnectorRTMPConfiguration(JsonView jsonValue)
+  : LiveConnectorRTMPConfiguration()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ ElasticInferenceAcceleratorHealth::ElasticInferenceAcceleratorHealth() :
 {
 }
 
-ElasticInferenceAcceleratorHealth::ElasticInferenceAcceleratorHealth(JsonView jsonValue) : 
-    m_statusHasBeenSet(false)
+ElasticInferenceAcceleratorHealth::ElasticInferenceAcceleratorHealth(JsonView jsonValue)
+  : ElasticInferenceAcceleratorHealth()
 {
   *this = jsonValue;
 }

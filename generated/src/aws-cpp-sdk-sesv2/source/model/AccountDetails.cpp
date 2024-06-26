@@ -30,15 +30,8 @@ AccountDetails::AccountDetails() :
 {
 }
 
-AccountDetails::AccountDetails(JsonView jsonValue) : 
-    m_mailType(MailType::NOT_SET),
-    m_mailTypeHasBeenSet(false),
-    m_websiteURLHasBeenSet(false),
-    m_contactLanguage(ContactLanguage::NOT_SET),
-    m_contactLanguageHasBeenSet(false),
-    m_useCaseDescriptionHasBeenSet(false),
-    m_additionalContactEmailAddressesHasBeenSet(false),
-    m_reviewDetailsHasBeenSet(false)
+AccountDetails::AccountDetails(JsonView jsonValue)
+  : AccountDetails()
 {
   *this = jsonValue;
 }

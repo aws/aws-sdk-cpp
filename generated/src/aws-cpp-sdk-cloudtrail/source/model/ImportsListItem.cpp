@@ -28,13 +28,8 @@ ImportsListItem::ImportsListItem() :
 {
 }
 
-ImportsListItem::ImportsListItem(JsonView jsonValue) : 
-    m_importIdHasBeenSet(false),
-    m_importStatus(ImportStatus::NOT_SET),
-    m_importStatusHasBeenSet(false),
-    m_destinationsHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false),
-    m_updatedTimestampHasBeenSet(false)
+ImportsListItem::ImportsListItem(JsonView jsonValue)
+  : ImportsListItem()
 {
   *this = jsonValue;
 }

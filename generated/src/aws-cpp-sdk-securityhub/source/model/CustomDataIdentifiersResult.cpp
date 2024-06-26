@@ -25,10 +25,8 @@ CustomDataIdentifiersResult::CustomDataIdentifiersResult() :
 {
 }
 
-CustomDataIdentifiersResult::CustomDataIdentifiersResult(JsonView jsonValue) : 
-    m_detectionsHasBeenSet(false),
-    m_totalCount(0),
-    m_totalCountHasBeenSet(false)
+CustomDataIdentifiersResult::CustomDataIdentifiersResult(JsonView jsonValue)
+  : CustomDataIdentifiersResult()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ ConfigurationEvent::ConfigurationEvent() :
 {
 }
 
-ConfigurationEvent::ConfigurationEvent(JsonView jsonValue) : 
-    m_channelDefinitionsHasBeenSet(false),
-    m_postCallAnalyticsSettingsHasBeenSet(false)
+ConfigurationEvent::ConfigurationEvent(JsonView jsonValue)
+  : ConfigurationEvent()
 {
   *this = jsonValue;
 }

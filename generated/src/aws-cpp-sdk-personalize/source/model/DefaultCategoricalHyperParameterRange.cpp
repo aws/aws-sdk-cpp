@@ -26,11 +26,8 @@ DefaultCategoricalHyperParameterRange::DefaultCategoricalHyperParameterRange() :
 {
 }
 
-DefaultCategoricalHyperParameterRange::DefaultCategoricalHyperParameterRange(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_valuesHasBeenSet(false),
-    m_isTunable(false),
-    m_isTunableHasBeenSet(false)
+DefaultCategoricalHyperParameterRange::DefaultCategoricalHyperParameterRange(JsonView jsonValue)
+  : DefaultCategoricalHyperParameterRange()
 {
   *this = jsonValue;
 }

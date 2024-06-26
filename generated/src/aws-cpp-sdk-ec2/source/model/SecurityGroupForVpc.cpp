@@ -30,13 +30,8 @@ SecurityGroupForVpc::SecurityGroupForVpc() :
 {
 }
 
-SecurityGroupForVpc::SecurityGroupForVpc(const XmlNode& xmlNode) : 
-    m_descriptionHasBeenSet(false),
-    m_groupNameHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_groupIdHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_primaryVpcIdHasBeenSet(false)
+SecurityGroupForVpc::SecurityGroupForVpc(const XmlNode& xmlNode)
+  : SecurityGroupForVpc()
 {
   *this = xmlNode;
 }

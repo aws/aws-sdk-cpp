@@ -27,12 +27,8 @@ ThingConnectivity::ThingConnectivity() :
 {
 }
 
-ThingConnectivity::ThingConnectivity(JsonView jsonValue) : 
-    m_connected(false),
-    m_connectedHasBeenSet(false),
-    m_timestamp(0),
-    m_timestampHasBeenSet(false),
-    m_disconnectReasonHasBeenSet(false)
+ThingConnectivity::ThingConnectivity(JsonView jsonValue)
+  : ThingConnectivity()
 {
   *this = jsonValue;
 }

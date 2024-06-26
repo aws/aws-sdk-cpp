@@ -24,9 +24,8 @@ CreateSvmActiveDirectoryConfiguration::CreateSvmActiveDirectoryConfiguration() :
 {
 }
 
-CreateSvmActiveDirectoryConfiguration::CreateSvmActiveDirectoryConfiguration(JsonView jsonValue) : 
-    m_netBiosNameHasBeenSet(false),
-    m_selfManagedActiveDirectoryConfigurationHasBeenSet(false)
+CreateSvmActiveDirectoryConfiguration::CreateSvmActiveDirectoryConfiguration(JsonView jsonValue)
+  : CreateSvmActiveDirectoryConfiguration()
 {
   *this = jsonValue;
 }

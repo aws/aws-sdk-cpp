@@ -23,8 +23,8 @@ AudienceDestination::AudienceDestination() :
 {
 }
 
-AudienceDestination::AudienceDestination(JsonView jsonValue) : 
-    m_s3DestinationHasBeenSet(false)
+AudienceDestination::AudienceDestination(JsonView jsonValue)
+  : AudienceDestination()
 {
   *this = jsonValue;
 }

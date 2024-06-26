@@ -36,21 +36,8 @@ BackupVaultListMember::BackupVaultListMember() :
 {
 }
 
-BackupVaultListMember::BackupVaultListMember(JsonView jsonValue) : 
-    m_backupVaultNameHasBeenSet(false),
-    m_backupVaultArnHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_encryptionKeyArnHasBeenSet(false),
-    m_creatorRequestIdHasBeenSet(false),
-    m_numberOfRecoveryPoints(0),
-    m_numberOfRecoveryPointsHasBeenSet(false),
-    m_locked(false),
-    m_lockedHasBeenSet(false),
-    m_minRetentionDays(0),
-    m_minRetentionDaysHasBeenSet(false),
-    m_maxRetentionDays(0),
-    m_maxRetentionDaysHasBeenSet(false),
-    m_lockDateHasBeenSet(false)
+BackupVaultListMember::BackupVaultListMember(JsonView jsonValue)
+  : BackupVaultListMember()
 {
   *this = jsonValue;
 }

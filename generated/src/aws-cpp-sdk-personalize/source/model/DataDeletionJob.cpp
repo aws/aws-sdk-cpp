@@ -33,18 +33,8 @@ DataDeletionJob::DataDeletionJob() :
 {
 }
 
-DataDeletionJob::DataDeletionJob(JsonView jsonValue) : 
-    m_jobNameHasBeenSet(false),
-    m_dataDeletionJobArnHasBeenSet(false),
-    m_datasetGroupArnHasBeenSet(false),
-    m_dataSourceHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_numDeleted(0),
-    m_numDeletedHasBeenSet(false),
-    m_creationDateTimeHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false),
-    m_failureReasonHasBeenSet(false)
+DataDeletionJob::DataDeletionJob(JsonView jsonValue)
+  : DataDeletionJob()
 {
   *this = jsonValue;
 }

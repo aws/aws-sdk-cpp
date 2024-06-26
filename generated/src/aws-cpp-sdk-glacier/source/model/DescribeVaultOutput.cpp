@@ -32,16 +32,8 @@ DescribeVaultOutput::DescribeVaultOutput() :
 {
 }
 
-DescribeVaultOutput::DescribeVaultOutput(JsonView jsonValue) : 
-    m_vaultARNHasBeenSet(false),
-    m_vaultNameHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_lastInventoryDateHasBeenSet(false),
-    m_numberOfArchives(0),
-    m_numberOfArchivesHasBeenSet(false),
-    m_sizeInBytes(0),
-    m_sizeInBytesHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
+DescribeVaultOutput::DescribeVaultOutput(JsonView jsonValue)
+  : DescribeVaultOutput()
 {
   *this = jsonValue;
 }

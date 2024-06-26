@@ -24,9 +24,8 @@ AccountTakeoverRiskConfigurationType::AccountTakeoverRiskConfigurationType() :
 {
 }
 
-AccountTakeoverRiskConfigurationType::AccountTakeoverRiskConfigurationType(JsonView jsonValue) : 
-    m_notifyConfigurationHasBeenSet(false),
-    m_actionsHasBeenSet(false)
+AccountTakeoverRiskConfigurationType::AccountTakeoverRiskConfigurationType(JsonView jsonValue)
+  : AccountTakeoverRiskConfigurationType()
 {
   *this = jsonValue;
 }

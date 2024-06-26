@@ -33,18 +33,8 @@ CoveredResource::CoveredResource() :
 {
 }
 
-CoveredResource::CoveredResource(JsonView jsonValue) : 
-    m_accountIdHasBeenSet(false),
-    m_lastScannedAtHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_resourceMetadataHasBeenSet(false),
-    m_resourceType(CoverageResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_scanMode(ScanMode::NOT_SET),
-    m_scanModeHasBeenSet(false),
-    m_scanStatusHasBeenSet(false),
-    m_scanType(ScanType::NOT_SET),
-    m_scanTypeHasBeenSet(false)
+CoveredResource::CoveredResource(JsonView jsonValue)
+  : CoveredResource()
 {
   *this = jsonValue;
 }

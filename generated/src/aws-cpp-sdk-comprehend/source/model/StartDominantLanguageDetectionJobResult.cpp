@@ -22,8 +22,8 @@ StartDominantLanguageDetectionJobResult::StartDominantLanguageDetectionJobResult
 {
 }
 
-StartDominantLanguageDetectionJobResult::StartDominantLanguageDetectionJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_jobStatus(JobStatus::NOT_SET)
+StartDominantLanguageDetectionJobResult::StartDominantLanguageDetectionJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : StartDominantLanguageDetectionJobResult()
 {
   *this = result;
 }

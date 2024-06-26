@@ -22,8 +22,8 @@ DescribeRefreshScheduleResult::DescribeRefreshScheduleResult() :
 {
 }
 
-DescribeRefreshScheduleResult::DescribeRefreshScheduleResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+DescribeRefreshScheduleResult::DescribeRefreshScheduleResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeRefreshScheduleResult()
 {
   *this = result;
 }

@@ -25,10 +25,8 @@ SankeyDiagramSortConfiguration::SankeyDiagramSortConfiguration() :
 {
 }
 
-SankeyDiagramSortConfiguration::SankeyDiagramSortConfiguration(JsonView jsonValue) : 
-    m_weightSortHasBeenSet(false),
-    m_sourceItemsLimitHasBeenSet(false),
-    m_destinationItemsLimitHasBeenSet(false)
+SankeyDiagramSortConfiguration::SankeyDiagramSortConfiguration(JsonView jsonValue)
+  : SankeyDiagramSortConfiguration()
 {
   *this = jsonValue;
 }

@@ -32,17 +32,8 @@ InputVideoGenerator::InputVideoGenerator() :
 {
 }
 
-InputVideoGenerator::InputVideoGenerator(JsonView jsonValue) : 
-    m_channels(0),
-    m_channelsHasBeenSet(false),
-    m_duration(0),
-    m_durationHasBeenSet(false),
-    m_framerateDenominator(0),
-    m_framerateDenominatorHasBeenSet(false),
-    m_framerateNumerator(0),
-    m_framerateNumeratorHasBeenSet(false),
-    m_sampleRate(0),
-    m_sampleRateHasBeenSet(false)
+InputVideoGenerator::InputVideoGenerator(JsonView jsonValue)
+  : InputVideoGenerator()
 {
   *this = jsonValue;
 }

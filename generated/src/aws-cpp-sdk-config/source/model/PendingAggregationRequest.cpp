@@ -24,9 +24,8 @@ PendingAggregationRequest::PendingAggregationRequest() :
 {
 }
 
-PendingAggregationRequest::PendingAggregationRequest(JsonView jsonValue) : 
-    m_requesterAccountIdHasBeenSet(false),
-    m_requesterAwsRegionHasBeenSet(false)
+PendingAggregationRequest::PendingAggregationRequest(JsonView jsonValue)
+  : PendingAggregationRequest()
 {
   *this = jsonValue;
 }

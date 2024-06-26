@@ -24,9 +24,8 @@ PossibleRemediationActions::PossibleRemediationActions() :
 {
 }
 
-PossibleRemediationActions::PossibleRemediationActions(JsonView jsonValue) : 
-    m_descriptionHasBeenSet(false),
-    m_actionsHasBeenSet(false)
+PossibleRemediationActions::PossibleRemediationActions(JsonView jsonValue)
+  : PossibleRemediationActions()
 {
   *this = jsonValue;
 }

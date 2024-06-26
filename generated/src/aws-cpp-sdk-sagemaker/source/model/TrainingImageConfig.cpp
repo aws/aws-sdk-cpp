@@ -25,10 +25,8 @@ TrainingImageConfig::TrainingImageConfig() :
 {
 }
 
-TrainingImageConfig::TrainingImageConfig(JsonView jsonValue) : 
-    m_trainingRepositoryAccessMode(TrainingRepositoryAccessMode::NOT_SET),
-    m_trainingRepositoryAccessModeHasBeenSet(false),
-    m_trainingRepositoryAuthConfigHasBeenSet(false)
+TrainingImageConfig::TrainingImageConfig(JsonView jsonValue)
+  : TrainingImageConfig()
 {
   *this = jsonValue;
 }

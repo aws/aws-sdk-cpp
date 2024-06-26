@@ -23,8 +23,8 @@ Action::Action() :
 {
 }
 
-Action::Action(JsonView jsonValue) : 
-    m_exportRevisionToS3HasBeenSet(false)
+Action::Action(JsonView jsonValue)
+  : Action()
 {
   *this = jsonValue;
 }

@@ -28,13 +28,8 @@ PendingMaintenanceAction::PendingMaintenanceAction() :
 {
 }
 
-PendingMaintenanceAction::PendingMaintenanceAction(JsonView jsonValue) : 
-    m_actionHasBeenSet(false),
-    m_autoAppliedAfterDateHasBeenSet(false),
-    m_forcedApplyDateHasBeenSet(false),
-    m_optInStatusHasBeenSet(false),
-    m_currentApplyDateHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+PendingMaintenanceAction::PendingMaintenanceAction(JsonView jsonValue)
+  : PendingMaintenanceAction()
 {
   *this = jsonValue;
 }

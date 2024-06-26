@@ -32,17 +32,8 @@ SubtotalOptions::SubtotalOptions() :
 {
 }
 
-SubtotalOptions::SubtotalOptions(JsonView jsonValue) : 
-    m_totalsVisibility(Visibility::NOT_SET),
-    m_totalsVisibilityHasBeenSet(false),
-    m_customLabelHasBeenSet(false),
-    m_fieldLevel(PivotTableSubtotalLevel::NOT_SET),
-    m_fieldLevelHasBeenSet(false),
-    m_fieldLevelOptionsHasBeenSet(false),
-    m_totalCellStyleHasBeenSet(false),
-    m_valueCellStyleHasBeenSet(false),
-    m_metricHeaderCellStyleHasBeenSet(false),
-    m_styleTargetsHasBeenSet(false)
+SubtotalOptions::SubtotalOptions(JsonView jsonValue)
+  : SubtotalOptions()
 {
   *this = jsonValue;
 }

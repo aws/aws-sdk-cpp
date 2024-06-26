@@ -33,18 +33,8 @@ AlarmRecommendation::AlarmRecommendation() :
 {
 }
 
-AlarmRecommendation::AlarmRecommendation(JsonView jsonValue) : 
-    m_appComponentNamesHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_itemsHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_prerequisiteHasBeenSet(false),
-    m_recommendationIdHasBeenSet(false),
-    m_recommendationStatus(RecommendationStatus::NOT_SET),
-    m_recommendationStatusHasBeenSet(false),
-    m_referenceIdHasBeenSet(false),
-    m_type(AlarmType::NOT_SET),
-    m_typeHasBeenSet(false)
+AlarmRecommendation::AlarmRecommendation(JsonView jsonValue)
+  : AlarmRecommendation()
 {
   *this = jsonValue;
 }

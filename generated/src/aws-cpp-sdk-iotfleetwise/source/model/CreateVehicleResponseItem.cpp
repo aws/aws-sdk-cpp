@@ -25,10 +25,8 @@ CreateVehicleResponseItem::CreateVehicleResponseItem() :
 {
 }
 
-CreateVehicleResponseItem::CreateVehicleResponseItem(JsonView jsonValue) : 
-    m_vehicleNameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_thingArnHasBeenSet(false)
+CreateVehicleResponseItem::CreateVehicleResponseItem(JsonView jsonValue)
+  : CreateVehicleResponseItem()
 {
   *this = jsonValue;
 }

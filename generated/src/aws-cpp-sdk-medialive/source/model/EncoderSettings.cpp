@@ -36,21 +36,8 @@ EncoderSettings::EncoderSettings() :
 {
 }
 
-EncoderSettings::EncoderSettings(JsonView jsonValue) : 
-    m_audioDescriptionsHasBeenSet(false),
-    m_availBlankingHasBeenSet(false),
-    m_availConfigurationHasBeenSet(false),
-    m_blackoutSlateHasBeenSet(false),
-    m_captionDescriptionsHasBeenSet(false),
-    m_featureActivationsHasBeenSet(false),
-    m_globalConfigurationHasBeenSet(false),
-    m_motionGraphicsConfigurationHasBeenSet(false),
-    m_nielsenConfigurationHasBeenSet(false),
-    m_outputGroupsHasBeenSet(false),
-    m_timecodeConfigHasBeenSet(false),
-    m_videoDescriptionsHasBeenSet(false),
-    m_thumbnailConfigurationHasBeenSet(false),
-    m_colorCorrectionSettingsHasBeenSet(false)
+EncoderSettings::EncoderSettings(JsonView jsonValue)
+  : EncoderSettings()
 {
   *this = jsonValue;
 }

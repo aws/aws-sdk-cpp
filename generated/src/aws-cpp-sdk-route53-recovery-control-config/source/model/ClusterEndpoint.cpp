@@ -24,9 +24,8 @@ ClusterEndpoint::ClusterEndpoint() :
 {
 }
 
-ClusterEndpoint::ClusterEndpoint(JsonView jsonValue) : 
-    m_endpointHasBeenSet(false),
-    m_regionHasBeenSet(false)
+ClusterEndpoint::ClusterEndpoint(JsonView jsonValue)
+  : ClusterEndpoint()
 {
   *this = jsonValue;
 }

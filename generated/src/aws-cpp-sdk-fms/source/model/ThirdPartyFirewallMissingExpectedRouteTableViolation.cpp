@@ -27,12 +27,8 @@ ThirdPartyFirewallMissingExpectedRouteTableViolation::ThirdPartyFirewallMissingE
 {
 }
 
-ThirdPartyFirewallMissingExpectedRouteTableViolation::ThirdPartyFirewallMissingExpectedRouteTableViolation(JsonView jsonValue) : 
-    m_violationTargetHasBeenSet(false),
-    m_vPCHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_currentRouteTableHasBeenSet(false),
-    m_expectedRouteTableHasBeenSet(false)
+ThirdPartyFirewallMissingExpectedRouteTableViolation::ThirdPartyFirewallMissingExpectedRouteTableViolation(JsonView jsonValue)
+  : ThirdPartyFirewallMissingExpectedRouteTableViolation()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ FilterCrossSheetControl::FilterCrossSheetControl() :
 {
 }
 
-FilterCrossSheetControl::FilterCrossSheetControl(JsonView jsonValue) : 
-    m_filterControlIdHasBeenSet(false),
-    m_sourceFilterIdHasBeenSet(false),
-    m_cascadingControlConfigurationHasBeenSet(false)
+FilterCrossSheetControl::FilterCrossSheetControl(JsonView jsonValue)
+  : FilterCrossSheetControl()
 {
   *this = jsonValue;
 }

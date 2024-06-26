@@ -25,10 +25,8 @@ ScanningRepositoryFilter::ScanningRepositoryFilter() :
 {
 }
 
-ScanningRepositoryFilter::ScanningRepositoryFilter(JsonView jsonValue) : 
-    m_filterHasBeenSet(false),
-    m_filterType(ScanningRepositoryFilterType::NOT_SET),
-    m_filterTypeHasBeenSet(false)
+ScanningRepositoryFilter::ScanningRepositoryFilter(JsonView jsonValue)
+  : ScanningRepositoryFilter()
 {
   *this = jsonValue;
 }

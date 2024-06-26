@@ -30,15 +30,8 @@ ViewSummary::ViewSummary() :
 {
 }
 
-ViewSummary::ViewSummary(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_type(ViewType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_status(ViewStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+ViewSummary::ViewSummary(JsonView jsonValue)
+  : ViewSummary()
 {
   *this = jsonValue;
 }

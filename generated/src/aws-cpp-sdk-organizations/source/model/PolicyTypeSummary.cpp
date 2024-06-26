@@ -26,11 +26,8 @@ PolicyTypeSummary::PolicyTypeSummary() :
 {
 }
 
-PolicyTypeSummary::PolicyTypeSummary(JsonView jsonValue) : 
-    m_type(PolicyType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_status(PolicyTypeStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+PolicyTypeSummary::PolicyTypeSummary(JsonView jsonValue)
+  : PolicyTypeSummary()
 {
   *this = jsonValue;
 }

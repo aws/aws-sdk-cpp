@@ -29,14 +29,8 @@ ApplicationSummary::ApplicationSummary() :
 {
 }
 
-ApplicationSummary::ApplicationSummary(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_discoveryStatus(ApplicationDiscoveryStatus::NOT_SET),
-    m_discoveryStatusHasBeenSet(false),
-    m_type(ApplicationType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+ApplicationSummary::ApplicationSummary(JsonView jsonValue)
+  : ApplicationSummary()
 {
   *this = jsonValue;
 }

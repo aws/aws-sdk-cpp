@@ -25,10 +25,8 @@ HandshakeParty::HandshakeParty() :
 {
 }
 
-HandshakeParty::HandshakeParty(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_type(HandshakePartyType::NOT_SET),
-    m_typeHasBeenSet(false)
+HandshakeParty::HandshakeParty(JsonView jsonValue)
+  : HandshakeParty()
 {
   *this = jsonValue;
 }

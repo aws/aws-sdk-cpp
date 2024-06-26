@@ -26,11 +26,8 @@ NetworkInterface::NetworkInterface() :
 {
 }
 
-NetworkInterface::NetworkInterface(JsonView jsonValue) : 
-    m_ipsHasBeenSet(false),
-    m_isPrimary(false),
-    m_isPrimaryHasBeenSet(false),
-    m_macAddressHasBeenSet(false)
+NetworkInterface::NetworkInterface(JsonView jsonValue)
+  : NetworkInterface()
 {
   *this = jsonValue;
 }

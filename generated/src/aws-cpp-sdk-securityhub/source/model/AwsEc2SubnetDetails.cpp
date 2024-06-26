@@ -39,24 +39,8 @@ AwsEc2SubnetDetails::AwsEc2SubnetDetails() :
 {
 }
 
-AwsEc2SubnetDetails::AwsEc2SubnetDetails(JsonView jsonValue) : 
-    m_assignIpv6AddressOnCreation(false),
-    m_assignIpv6AddressOnCreationHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_availabilityZoneIdHasBeenSet(false),
-    m_availableIpAddressCount(0),
-    m_availableIpAddressCountHasBeenSet(false),
-    m_cidrBlockHasBeenSet(false),
-    m_defaultForAz(false),
-    m_defaultForAzHasBeenSet(false),
-    m_mapPublicIpOnLaunch(false),
-    m_mapPublicIpOnLaunchHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_subnetArnHasBeenSet(false),
-    m_subnetIdHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_ipv6CidrBlockAssociationSetHasBeenSet(false)
+AwsEc2SubnetDetails::AwsEc2SubnetDetails(JsonView jsonValue)
+  : AwsEc2SubnetDetails()
 {
   *this = jsonValue;
 }

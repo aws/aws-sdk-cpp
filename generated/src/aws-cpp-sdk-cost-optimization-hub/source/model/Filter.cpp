@@ -35,20 +35,8 @@ Filter::Filter() :
 {
 }
 
-Filter::Filter(JsonView jsonValue) : 
-    m_restartNeeded(false),
-    m_restartNeededHasBeenSet(false),
-    m_rollbackPossible(false),
-    m_rollbackPossibleHasBeenSet(false),
-    m_implementationEffortsHasBeenSet(false),
-    m_accountIdsHasBeenSet(false),
-    m_regionsHasBeenSet(false),
-    m_resourceTypesHasBeenSet(false),
-    m_actionTypesHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_resourceIdsHasBeenSet(false),
-    m_resourceArnsHasBeenSet(false),
-    m_recommendationIdsHasBeenSet(false)
+Filter::Filter(JsonView jsonValue)
+  : Filter()
 {
   *this = jsonValue;
 }

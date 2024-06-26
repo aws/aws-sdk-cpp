@@ -23,8 +23,8 @@ LicenseConversionContext::LicenseConversionContext() :
 {
 }
 
-LicenseConversionContext::LicenseConversionContext(JsonView jsonValue) : 
-    m_usageOperationHasBeenSet(false)
+LicenseConversionContext::LicenseConversionContext(JsonView jsonValue)
+  : LicenseConversionContext()
 {
   *this = jsonValue;
 }

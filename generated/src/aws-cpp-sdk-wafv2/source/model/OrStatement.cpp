@@ -23,8 +23,8 @@ OrStatement::OrStatement() :
 {
 }
 
-OrStatement::OrStatement(JsonView jsonValue) : 
-    m_statementsHasBeenSet(false)
+OrStatement::OrStatement(JsonView jsonValue)
+  : OrStatement()
 {
   *this = jsonValue;
 }

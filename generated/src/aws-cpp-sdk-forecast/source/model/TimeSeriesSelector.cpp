@@ -23,8 +23,8 @@ TimeSeriesSelector::TimeSeriesSelector() :
 {
 }
 
-TimeSeriesSelector::TimeSeriesSelector(JsonView jsonValue) : 
-    m_timeSeriesIdentifiersHasBeenSet(false)
+TimeSeriesSelector::TimeSeriesSelector(JsonView jsonValue)
+  : TimeSeriesSelector()
 {
   *this = jsonValue;
 }

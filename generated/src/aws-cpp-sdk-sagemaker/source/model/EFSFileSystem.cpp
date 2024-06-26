@@ -23,8 +23,8 @@ EFSFileSystem::EFSFileSystem() :
 {
 }
 
-EFSFileSystem::EFSFileSystem(JsonView jsonValue) : 
-    m_fileSystemIdHasBeenSet(false)
+EFSFileSystem::EFSFileSystem(JsonView jsonValue)
+  : EFSFileSystem()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ RSessionAppSettings::RSessionAppSettings() :
 {
 }
 
-RSessionAppSettings::RSessionAppSettings(JsonView jsonValue) : 
-    m_defaultResourceSpecHasBeenSet(false),
-    m_customImagesHasBeenSet(false)
+RSessionAppSettings::RSessionAppSettings(JsonView jsonValue)
+  : RSessionAppSettings()
 {
   *this = jsonValue;
 }

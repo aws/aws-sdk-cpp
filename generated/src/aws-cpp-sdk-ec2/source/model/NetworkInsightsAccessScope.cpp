@@ -29,12 +29,8 @@ NetworkInsightsAccessScope::NetworkInsightsAccessScope() :
 {
 }
 
-NetworkInsightsAccessScope::NetworkInsightsAccessScope(const XmlNode& xmlNode) : 
-    m_networkInsightsAccessScopeIdHasBeenSet(false),
-    m_networkInsightsAccessScopeArnHasBeenSet(false),
-    m_createdDateHasBeenSet(false),
-    m_updatedDateHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+NetworkInsightsAccessScope::NetworkInsightsAccessScope(const XmlNode& xmlNode)
+  : NetworkInsightsAccessScope()
 {
   *this = xmlNode;
 }

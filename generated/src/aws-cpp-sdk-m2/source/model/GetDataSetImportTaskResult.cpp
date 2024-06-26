@@ -22,8 +22,8 @@ GetDataSetImportTaskResult::GetDataSetImportTaskResult() :
 {
 }
 
-GetDataSetImportTaskResult::GetDataSetImportTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(DataSetTaskLifecycle::NOT_SET)
+GetDataSetImportTaskResult::GetDataSetImportTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetDataSetImportTaskResult()
 {
   *this = result;
 }

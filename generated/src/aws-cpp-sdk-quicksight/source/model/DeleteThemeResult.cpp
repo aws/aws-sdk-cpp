@@ -22,8 +22,8 @@ DeleteThemeResult::DeleteThemeResult() :
 {
 }
 
-DeleteThemeResult::DeleteThemeResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+DeleteThemeResult::DeleteThemeResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeleteThemeResult()
 {
   *this = result;
 }

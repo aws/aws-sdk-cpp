@@ -23,8 +23,8 @@ ComputationPreference::ComputationPreference() :
 {
 }
 
-ComputationPreference::ComputationPreference(JsonView jsonValue) : 
-    m_pricingPlanArnHasBeenSet(false)
+ComputationPreference::ComputationPreference(JsonView jsonValue)
+  : ComputationPreference()
 {
   *this = jsonValue;
 }

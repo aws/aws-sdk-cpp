@@ -25,10 +25,8 @@ CwLog::CwLog() :
 {
 }
 
-CwLog::CwLog(JsonView jsonValue) : 
-    m_cwLogEnabled(false),
-    m_cwLogEnabledHasBeenSet(false),
-    m_cwLogGroupHasBeenSet(false)
+CwLog::CwLog(JsonView jsonValue)
+  : CwLog()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ UnprocessedDataSourcesResult::UnprocessedDataSourcesResult() :
 {
 }
 
-UnprocessedDataSourcesResult::UnprocessedDataSourcesResult(JsonView jsonValue) : 
-    m_malwareProtectionHasBeenSet(false)
+UnprocessedDataSourcesResult::UnprocessedDataSourcesResult(JsonView jsonValue)
+  : UnprocessedDataSourcesResult()
 {
   *this = jsonValue;
 }

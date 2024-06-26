@@ -28,11 +28,8 @@ CloudWatchDimensionConfiguration::CloudWatchDimensionConfiguration() :
 {
 }
 
-CloudWatchDimensionConfiguration::CloudWatchDimensionConfiguration(const XmlNode& xmlNode) : 
-    m_dimensionNameHasBeenSet(false),
-    m_dimensionValueSource(DimensionValueSource::NOT_SET),
-    m_dimensionValueSourceHasBeenSet(false),
-    m_defaultDimensionValueHasBeenSet(false)
+CloudWatchDimensionConfiguration::CloudWatchDimensionConfiguration(const XmlNode& xmlNode)
+  : CloudWatchDimensionConfiguration()
 {
   *this = xmlNode;
 }

@@ -29,14 +29,8 @@ PivotTableConfiguration::PivotTableConfiguration() :
 {
 }
 
-PivotTableConfiguration::PivotTableConfiguration(JsonView jsonValue) : 
-    m_fieldWellsHasBeenSet(false),
-    m_sortConfigurationHasBeenSet(false),
-    m_tableOptionsHasBeenSet(false),
-    m_totalOptionsHasBeenSet(false),
-    m_fieldOptionsHasBeenSet(false),
-    m_paginatedReportOptionsHasBeenSet(false),
-    m_interactionsHasBeenSet(false)
+PivotTableConfiguration::PivotTableConfiguration(JsonView jsonValue)
+  : PivotTableConfiguration()
 {
   *this = jsonValue;
 }

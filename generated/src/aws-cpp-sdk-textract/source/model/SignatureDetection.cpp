@@ -25,10 +25,8 @@ SignatureDetection::SignatureDetection() :
 {
 }
 
-SignatureDetection::SignatureDetection(JsonView jsonValue) : 
-    m_confidence(0.0),
-    m_confidenceHasBeenSet(false),
-    m_geometryHasBeenSet(false)
+SignatureDetection::SignatureDetection(JsonView jsonValue)
+  : SignatureDetection()
 {
   *this = jsonValue;
 }

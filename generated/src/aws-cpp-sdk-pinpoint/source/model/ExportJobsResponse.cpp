@@ -24,9 +24,8 @@ ExportJobsResponse::ExportJobsResponse() :
 {
 }
 
-ExportJobsResponse::ExportJobsResponse(JsonView jsonValue) : 
-    m_itemHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
+ExportJobsResponse::ExportJobsResponse(JsonView jsonValue)
+  : ExportJobsResponse()
 {
   *this = jsonValue;
 }

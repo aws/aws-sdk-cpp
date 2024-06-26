@@ -30,15 +30,8 @@ UpdatePipeSourceParameters::UpdatePipeSourceParameters() :
 {
 }
 
-UpdatePipeSourceParameters::UpdatePipeSourceParameters(JsonView jsonValue) : 
-    m_filterCriteriaHasBeenSet(false),
-    m_kinesisStreamParametersHasBeenSet(false),
-    m_dynamoDBStreamParametersHasBeenSet(false),
-    m_sqsQueueParametersHasBeenSet(false),
-    m_activeMQBrokerParametersHasBeenSet(false),
-    m_rabbitMQBrokerParametersHasBeenSet(false),
-    m_managedStreamingKafkaParametersHasBeenSet(false),
-    m_selfManagedKafkaParametersHasBeenSet(false)
+UpdatePipeSourceParameters::UpdatePipeSourceParameters(JsonView jsonValue)
+  : UpdatePipeSourceParameters()
 {
   *this = jsonValue;
 }

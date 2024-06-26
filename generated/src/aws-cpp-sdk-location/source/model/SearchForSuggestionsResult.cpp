@@ -26,11 +26,8 @@ SearchForSuggestionsResult::SearchForSuggestionsResult() :
 {
 }
 
-SearchForSuggestionsResult::SearchForSuggestionsResult(JsonView jsonValue) : 
-    m_textHasBeenSet(false),
-    m_placeIdHasBeenSet(false),
-    m_categoriesHasBeenSet(false),
-    m_supplementalCategoriesHasBeenSet(false)
+SearchForSuggestionsResult::SearchForSuggestionsResult(JsonView jsonValue)
+  : SearchForSuggestionsResult()
 {
   *this = jsonValue;
 }

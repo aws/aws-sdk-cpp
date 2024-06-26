@@ -30,13 +30,8 @@ VerifiedAccessLogS3Destination::VerifiedAccessLogS3Destination() :
 {
 }
 
-VerifiedAccessLogS3Destination::VerifiedAccessLogS3Destination(const XmlNode& xmlNode) : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_deliveryStatusHasBeenSet(false),
-    m_bucketNameHasBeenSet(false),
-    m_prefixHasBeenSet(false),
-    m_bucketOwnerHasBeenSet(false)
+VerifiedAccessLogS3Destination::VerifiedAccessLogS3Destination(const XmlNode& xmlNode)
+  : VerifiedAccessLogS3Destination()
 {
   *this = xmlNode;
 }

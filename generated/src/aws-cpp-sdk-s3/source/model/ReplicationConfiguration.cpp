@@ -26,9 +26,8 @@ ReplicationConfiguration::ReplicationConfiguration() :
 {
 }
 
-ReplicationConfiguration::ReplicationConfiguration(const XmlNode& xmlNode) : 
-    m_roleHasBeenSet(false),
-    m_rulesHasBeenSet(false)
+ReplicationConfiguration::ReplicationConfiguration(const XmlNode& xmlNode)
+  : ReplicationConfiguration()
 {
   *this = xmlNode;
 }

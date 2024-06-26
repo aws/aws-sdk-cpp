@@ -26,11 +26,8 @@ AwsEc2LaunchTemplateDataInstanceRequirementsNetworkInterfaceCountDetails::AwsEc2
 {
 }
 
-AwsEc2LaunchTemplateDataInstanceRequirementsNetworkInterfaceCountDetails::AwsEc2LaunchTemplateDataInstanceRequirementsNetworkInterfaceCountDetails(JsonView jsonValue) : 
-    m_max(0),
-    m_maxHasBeenSet(false),
-    m_min(0),
-    m_minHasBeenSet(false)
+AwsEc2LaunchTemplateDataInstanceRequirementsNetworkInterfaceCountDetails::AwsEc2LaunchTemplateDataInstanceRequirementsNetworkInterfaceCountDetails(JsonView jsonValue)
+  : AwsEc2LaunchTemplateDataInstanceRequirementsNetworkInterfaceCountDetails()
 {
   *this = jsonValue;
 }

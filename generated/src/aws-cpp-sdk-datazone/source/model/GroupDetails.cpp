@@ -23,8 +23,8 @@ GroupDetails::GroupDetails() :
 {
 }
 
-GroupDetails::GroupDetails(JsonView jsonValue) : 
-    m_groupIdHasBeenSet(false)
+GroupDetails::GroupDetails(JsonView jsonValue)
+  : GroupDetails()
 {
   *this = jsonValue;
 }

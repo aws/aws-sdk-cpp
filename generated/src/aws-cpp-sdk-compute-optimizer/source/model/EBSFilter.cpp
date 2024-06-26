@@ -25,10 +25,8 @@ EBSFilter::EBSFilter() :
 {
 }
 
-EBSFilter::EBSFilter(JsonView jsonValue) : 
-    m_name(EBSFilterName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+EBSFilter::EBSFilter(JsonView jsonValue)
+  : EBSFilter()
 {
   *this = jsonValue;
 }

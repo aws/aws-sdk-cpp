@@ -22,8 +22,8 @@ ModifyScheduledActionResult::ModifyScheduledActionResult() :
 {
 }
 
-ModifyScheduledActionResult::ModifyScheduledActionResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_state(ScheduledActionState::NOT_SET)
+ModifyScheduledActionResult::ModifyScheduledActionResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : ModifyScheduledActionResult()
 {
   *this = result;
 }

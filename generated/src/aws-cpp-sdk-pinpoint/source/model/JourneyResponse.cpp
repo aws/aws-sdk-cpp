@@ -49,34 +49,8 @@ JourneyResponse::JourneyResponse() :
 {
 }
 
-JourneyResponse::JourneyResponse(JsonView jsonValue) : 
-    m_activitiesHasBeenSet(false),
-    m_applicationIdHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_lastModifiedDateHasBeenSet(false),
-    m_limitsHasBeenSet(false),
-    m_localTime(false),
-    m_localTimeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_quietTimeHasBeenSet(false),
-    m_refreshFrequencyHasBeenSet(false),
-    m_scheduleHasBeenSet(false),
-    m_startActivityHasBeenSet(false),
-    m_startConditionHasBeenSet(false),
-    m_state(State::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_waitForQuietTime(false),
-    m_waitForQuietTimeHasBeenSet(false),
-    m_refreshOnSegmentUpdate(false),
-    m_refreshOnSegmentUpdateHasBeenSet(false),
-    m_journeyChannelSettingsHasBeenSet(false),
-    m_sendingSchedule(false),
-    m_sendingScheduleHasBeenSet(false),
-    m_openHoursHasBeenSet(false),
-    m_closedDaysHasBeenSet(false),
-    m_timezoneEstimationMethodsHasBeenSet(false)
+JourneyResponse::JourneyResponse(JsonView jsonValue)
+  : JourneyResponse()
 {
   *this = jsonValue;
 }

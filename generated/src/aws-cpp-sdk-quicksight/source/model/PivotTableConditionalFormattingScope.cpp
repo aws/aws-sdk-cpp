@@ -24,9 +24,8 @@ PivotTableConditionalFormattingScope::PivotTableConditionalFormattingScope() :
 {
 }
 
-PivotTableConditionalFormattingScope::PivotTableConditionalFormattingScope(JsonView jsonValue) : 
-    m_role(PivotTableConditionalFormattingScopeRole::NOT_SET),
-    m_roleHasBeenSet(false)
+PivotTableConditionalFormattingScope::PivotTableConditionalFormattingScope(JsonView jsonValue)
+  : PivotTableConditionalFormattingScope()
 {
   *this = jsonValue;
 }

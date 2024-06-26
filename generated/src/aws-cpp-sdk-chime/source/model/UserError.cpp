@@ -26,11 +26,8 @@ UserError::UserError() :
 {
 }
 
-UserError::UserError(JsonView jsonValue) : 
-    m_userIdHasBeenSet(false),
-    m_errorCode(ErrorCode::NOT_SET),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
+UserError::UserError(JsonView jsonValue)
+  : UserError()
 {
   *this = jsonValue;
 }

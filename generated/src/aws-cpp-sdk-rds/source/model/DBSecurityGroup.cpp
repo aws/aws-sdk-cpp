@@ -31,14 +31,8 @@ DBSecurityGroup::DBSecurityGroup() :
 {
 }
 
-DBSecurityGroup::DBSecurityGroup(const XmlNode& xmlNode) : 
-    m_ownerIdHasBeenSet(false),
-    m_dBSecurityGroupNameHasBeenSet(false),
-    m_dBSecurityGroupDescriptionHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_eC2SecurityGroupsHasBeenSet(false),
-    m_iPRangesHasBeenSet(false),
-    m_dBSecurityGroupArnHasBeenSet(false)
+DBSecurityGroup::DBSecurityGroup(const XmlNode& xmlNode)
+  : DBSecurityGroup()
 {
   *this = xmlNode;
 }

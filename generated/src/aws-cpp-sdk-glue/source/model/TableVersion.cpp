@@ -24,9 +24,8 @@ TableVersion::TableVersion() :
 {
 }
 
-TableVersion::TableVersion(JsonView jsonValue) : 
-    m_tableHasBeenSet(false),
-    m_versionIdHasBeenSet(false)
+TableVersion::TableVersion(JsonView jsonValue)
+  : TableVersion()
 {
   *this = jsonValue;
 }

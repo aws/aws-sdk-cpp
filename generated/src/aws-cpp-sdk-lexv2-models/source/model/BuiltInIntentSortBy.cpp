@@ -26,11 +26,8 @@ BuiltInIntentSortBy::BuiltInIntentSortBy() :
 {
 }
 
-BuiltInIntentSortBy::BuiltInIntentSortBy(JsonView jsonValue) : 
-    m_attribute(BuiltInIntentSortAttribute::NOT_SET),
-    m_attributeHasBeenSet(false),
-    m_order(SortOrder::NOT_SET),
-    m_orderHasBeenSet(false)
+BuiltInIntentSortBy::BuiltInIntentSortBy(JsonView jsonValue)
+  : BuiltInIntentSortBy()
 {
   *this = jsonValue;
 }

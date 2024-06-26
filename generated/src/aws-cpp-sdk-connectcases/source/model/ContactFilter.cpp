@@ -24,9 +24,8 @@ ContactFilter::ContactFilter() :
 {
 }
 
-ContactFilter::ContactFilter(JsonView jsonValue) : 
-    m_channelHasBeenSet(false),
-    m_contactArnHasBeenSet(false)
+ContactFilter::ContactFilter(JsonView jsonValue)
+  : ContactFilter()
 {
   *this = jsonValue;
 }

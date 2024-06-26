@@ -25,10 +25,8 @@ AwsEfsAccessPointPosixUserDetails::AwsEfsAccessPointPosixUserDetails() :
 {
 }
 
-AwsEfsAccessPointPosixUserDetails::AwsEfsAccessPointPosixUserDetails(JsonView jsonValue) : 
-    m_gidHasBeenSet(false),
-    m_secondaryGidsHasBeenSet(false),
-    m_uidHasBeenSet(false)
+AwsEfsAccessPointPosixUserDetails::AwsEfsAccessPointPosixUserDetails(JsonView jsonValue)
+  : AwsEfsAccessPointPosixUserDetails()
 {
   *this = jsonValue;
 }

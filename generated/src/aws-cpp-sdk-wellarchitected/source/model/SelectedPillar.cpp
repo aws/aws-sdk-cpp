@@ -24,9 +24,8 @@ SelectedPillar::SelectedPillar() :
 {
 }
 
-SelectedPillar::SelectedPillar(JsonView jsonValue) : 
-    m_pillarIdHasBeenSet(false),
-    m_selectedQuestionIdsHasBeenSet(false)
+SelectedPillar::SelectedPillar(JsonView jsonValue)
+  : SelectedPillar()
 {
   *this = jsonValue;
 }

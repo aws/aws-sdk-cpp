@@ -27,12 +27,8 @@ PartitionKey::PartitionKey() :
 {
 }
 
-PartitionKey::PartitionKey(JsonView jsonValue) : 
-    m_type(PartitionKeyType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_enforcementInRecord(PartitionKeyEnforcementLevel::NOT_SET),
-    m_enforcementInRecordHasBeenSet(false)
+PartitionKey::PartitionKey(JsonView jsonValue)
+  : PartitionKey()
 {
   *this = jsonValue;
 }

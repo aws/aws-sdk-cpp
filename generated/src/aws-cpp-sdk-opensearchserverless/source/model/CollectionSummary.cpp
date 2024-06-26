@@ -27,12 +27,8 @@ CollectionSummary::CollectionSummary() :
 {
 }
 
-CollectionSummary::CollectionSummary(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_status(CollectionStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+CollectionSummary::CollectionSummary(JsonView jsonValue)
+  : CollectionSummary()
 {
   *this = jsonValue;
 }

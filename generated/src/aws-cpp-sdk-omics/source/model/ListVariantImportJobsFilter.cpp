@@ -25,10 +25,8 @@ ListVariantImportJobsFilter::ListVariantImportJobsFilter() :
 {
 }
 
-ListVariantImportJobsFilter::ListVariantImportJobsFilter(JsonView jsonValue) : 
-    m_status(JobStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_storeNameHasBeenSet(false)
+ListVariantImportJobsFilter::ListVariantImportJobsFilter(JsonView jsonValue)
+  : ListVariantImportJobsFilter()
 {
   *this = jsonValue;
 }

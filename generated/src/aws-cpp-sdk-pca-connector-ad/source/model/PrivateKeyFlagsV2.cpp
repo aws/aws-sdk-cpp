@@ -28,13 +28,8 @@ PrivateKeyFlagsV2::PrivateKeyFlagsV2() :
 {
 }
 
-PrivateKeyFlagsV2::PrivateKeyFlagsV2(JsonView jsonValue) : 
-    m_clientVersion(ClientCompatibilityV2::NOT_SET),
-    m_clientVersionHasBeenSet(false),
-    m_exportableKey(false),
-    m_exportableKeyHasBeenSet(false),
-    m_strongKeyProtectionRequired(false),
-    m_strongKeyProtectionRequiredHasBeenSet(false)
+PrivateKeyFlagsV2::PrivateKeyFlagsV2(JsonView jsonValue)
+  : PrivateKeyFlagsV2()
 {
   *this = jsonValue;
 }

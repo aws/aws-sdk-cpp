@@ -23,8 +23,8 @@ ModelStepMetadata::ModelStepMetadata() :
 {
 }
 
-ModelStepMetadata::ModelStepMetadata(JsonView jsonValue) : 
-    m_arnHasBeenSet(false)
+ModelStepMetadata::ModelStepMetadata(JsonView jsonValue)
+  : ModelStepMetadata()
 {
   *this = jsonValue;
 }

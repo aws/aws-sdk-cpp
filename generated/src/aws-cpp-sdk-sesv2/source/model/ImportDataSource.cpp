@@ -25,10 +25,8 @@ ImportDataSource::ImportDataSource() :
 {
 }
 
-ImportDataSource::ImportDataSource(JsonView jsonValue) : 
-    m_s3UrlHasBeenSet(false),
-    m_dataFormat(DataFormat::NOT_SET),
-    m_dataFormatHasBeenSet(false)
+ImportDataSource::ImportDataSource(JsonView jsonValue)
+  : ImportDataSource()
 {
   *this = jsonValue;
 }

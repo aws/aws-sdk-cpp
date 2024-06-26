@@ -33,18 +33,8 @@ OrganizationEventFilter::OrganizationEventFilter() :
 {
 }
 
-OrganizationEventFilter::OrganizationEventFilter(JsonView jsonValue) : 
-    m_eventTypeCodesHasBeenSet(false),
-    m_awsAccountIdsHasBeenSet(false),
-    m_servicesHasBeenSet(false),
-    m_regionsHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_entityArnsHasBeenSet(false),
-    m_entityValuesHasBeenSet(false),
-    m_eventTypeCategoriesHasBeenSet(false),
-    m_eventStatusCodesHasBeenSet(false)
+OrganizationEventFilter::OrganizationEventFilter(JsonView jsonValue)
+  : OrganizationEventFilter()
 {
   *this = jsonValue;
 }

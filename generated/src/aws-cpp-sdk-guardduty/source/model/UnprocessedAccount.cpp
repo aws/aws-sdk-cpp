@@ -24,9 +24,8 @@ UnprocessedAccount::UnprocessedAccount() :
 {
 }
 
-UnprocessedAccount::UnprocessedAccount(JsonView jsonValue) : 
-    m_accountIdHasBeenSet(false),
-    m_resultHasBeenSet(false)
+UnprocessedAccount::UnprocessedAccount(JsonView jsonValue)
+  : UnprocessedAccount()
 {
   *this = jsonValue;
 }

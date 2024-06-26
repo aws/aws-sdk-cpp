@@ -28,13 +28,8 @@ TagSearchCondition::TagSearchCondition() :
 {
 }
 
-TagSearchCondition::TagSearchCondition(JsonView jsonValue) : 
-    m_tagKeyHasBeenSet(false),
-    m_tagValueHasBeenSet(false),
-    m_tagKeyComparisonType(StringComparisonType::NOT_SET),
-    m_tagKeyComparisonTypeHasBeenSet(false),
-    m_tagValueComparisonType(StringComparisonType::NOT_SET),
-    m_tagValueComparisonTypeHasBeenSet(false)
+TagSearchCondition::TagSearchCondition(JsonView jsonValue)
+  : TagSearchCondition()
 {
   *this = jsonValue;
 }

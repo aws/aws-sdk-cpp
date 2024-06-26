@@ -23,8 +23,8 @@ ColumnGroupColumnSchema::ColumnGroupColumnSchema() :
 {
 }
 
-ColumnGroupColumnSchema::ColumnGroupColumnSchema(JsonView jsonValue) : 
-    m_nameHasBeenSet(false)
+ColumnGroupColumnSchema::ColumnGroupColumnSchema(JsonView jsonValue)
+  : ColumnGroupColumnSchema()
 {
   *this = jsonValue;
 }

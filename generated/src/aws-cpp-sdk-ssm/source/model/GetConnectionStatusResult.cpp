@@ -22,8 +22,8 @@ GetConnectionStatusResult::GetConnectionStatusResult() :
 {
 }
 
-GetConnectionStatusResult::GetConnectionStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(ConnectionStatus::NOT_SET)
+GetConnectionStatusResult::GetConnectionStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetConnectionStatusResult()
 {
   *this = result;
 }

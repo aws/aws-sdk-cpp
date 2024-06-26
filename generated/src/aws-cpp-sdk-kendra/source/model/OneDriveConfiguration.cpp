@@ -30,15 +30,8 @@ OneDriveConfiguration::OneDriveConfiguration() :
 {
 }
 
-OneDriveConfiguration::OneDriveConfiguration(JsonView jsonValue) : 
-    m_tenantDomainHasBeenSet(false),
-    m_secretArnHasBeenSet(false),
-    m_oneDriveUsersHasBeenSet(false),
-    m_inclusionPatternsHasBeenSet(false),
-    m_exclusionPatternsHasBeenSet(false),
-    m_fieldMappingsHasBeenSet(false),
-    m_disableLocalGroups(false),
-    m_disableLocalGroupsHasBeenSet(false)
+OneDriveConfiguration::OneDriveConfiguration(JsonView jsonValue)
+  : OneDriveConfiguration()
 {
   *this = jsonValue;
 }

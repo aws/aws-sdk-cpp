@@ -26,11 +26,8 @@ SpaceSummary::SpaceSummary() :
 {
 }
 
-SpaceSummary::SpaceSummary(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_regionNameHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+SpaceSummary::SpaceSummary(JsonView jsonValue)
+  : SpaceSummary()
 {
   *this = jsonValue;
 }

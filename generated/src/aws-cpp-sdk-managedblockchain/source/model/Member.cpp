@@ -34,19 +34,8 @@ Member::Member() :
 {
 }
 
-Member::Member(JsonView jsonValue) : 
-    m_networkIdHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_frameworkAttributesHasBeenSet(false),
-    m_logPublishingConfigurationHasBeenSet(false),
-    m_status(MemberStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_kmsKeyArnHasBeenSet(false)
+Member::Member(JsonView jsonValue)
+  : Member()
 {
   *this = jsonValue;
 }

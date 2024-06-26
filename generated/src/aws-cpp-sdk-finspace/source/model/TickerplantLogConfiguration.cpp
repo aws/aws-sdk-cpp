@@ -23,8 +23,8 @@ TickerplantLogConfiguration::TickerplantLogConfiguration() :
 {
 }
 
-TickerplantLogConfiguration::TickerplantLogConfiguration(JsonView jsonValue) : 
-    m_tickerplantLogVolumesHasBeenSet(false)
+TickerplantLogConfiguration::TickerplantLogConfiguration(JsonView jsonValue)
+  : TickerplantLogConfiguration()
 {
   *this = jsonValue;
 }

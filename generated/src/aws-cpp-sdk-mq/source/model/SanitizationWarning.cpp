@@ -26,11 +26,8 @@ SanitizationWarning::SanitizationWarning() :
 {
 }
 
-SanitizationWarning::SanitizationWarning(JsonView jsonValue) : 
-    m_attributeNameHasBeenSet(false),
-    m_elementNameHasBeenSet(false),
-    m_reason(SanitizationWarningReason::NOT_SET),
-    m_reasonHasBeenSet(false)
+SanitizationWarning::SanitizationWarning(JsonView jsonValue)
+  : SanitizationWarning()
 {
   *this = jsonValue;
 }

@@ -28,13 +28,8 @@ ReferenceLineDataConfiguration::ReferenceLineDataConfiguration() :
 {
 }
 
-ReferenceLineDataConfiguration::ReferenceLineDataConfiguration(JsonView jsonValue) : 
-    m_staticConfigurationHasBeenSet(false),
-    m_dynamicConfigurationHasBeenSet(false),
-    m_axisBinding(AxisBinding::NOT_SET),
-    m_axisBindingHasBeenSet(false),
-    m_seriesType(ReferenceLineSeriesType::NOT_SET),
-    m_seriesTypeHasBeenSet(false)
+ReferenceLineDataConfiguration::ReferenceLineDataConfiguration(JsonView jsonValue)
+  : ReferenceLineDataConfiguration()
 {
   *this = jsonValue;
 }

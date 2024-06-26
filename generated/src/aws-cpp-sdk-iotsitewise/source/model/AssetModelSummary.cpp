@@ -32,17 +32,8 @@ AssetModelSummary::AssetModelSummary() :
 {
 }
 
-AssetModelSummary::AssetModelSummary(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_lastUpdateDateHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_assetModelType(AssetModelType::NOT_SET),
-    m_assetModelTypeHasBeenSet(false),
-    m_externalIdHasBeenSet(false)
+AssetModelSummary::AssetModelSummary(JsonView jsonValue)
+  : AssetModelSummary()
 {
   *this = jsonValue;
 }

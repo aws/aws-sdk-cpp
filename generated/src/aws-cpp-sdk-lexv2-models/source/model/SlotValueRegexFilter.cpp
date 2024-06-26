@@ -23,8 +23,8 @@ SlotValueRegexFilter::SlotValueRegexFilter() :
 {
 }
 
-SlotValueRegexFilter::SlotValueRegexFilter(JsonView jsonValue) : 
-    m_patternHasBeenSet(false)
+SlotValueRegexFilter::SlotValueRegexFilter(JsonView jsonValue)
+  : SlotValueRegexFilter()
 {
   *this = jsonValue;
 }

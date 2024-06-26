@@ -37,22 +37,8 @@ EmailTemplateResponse::EmailTemplateResponse() :
 {
 }
 
-EmailTemplateResponse::EmailTemplateResponse(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_defaultSubstitutionsHasBeenSet(false),
-    m_htmlPartHasBeenSet(false),
-    m_lastModifiedDateHasBeenSet(false),
-    m_recommenderIdHasBeenSet(false),
-    m_subjectHasBeenSet(false),
-    m_headersHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_templateDescriptionHasBeenSet(false),
-    m_templateNameHasBeenSet(false),
-    m_templateType(TemplateType::NOT_SET),
-    m_templateTypeHasBeenSet(false),
-    m_textPartHasBeenSet(false),
-    m_versionHasBeenSet(false)
+EmailTemplateResponse::EmailTemplateResponse(JsonView jsonValue)
+  : EmailTemplateResponse()
 {
   *this = jsonValue;
 }

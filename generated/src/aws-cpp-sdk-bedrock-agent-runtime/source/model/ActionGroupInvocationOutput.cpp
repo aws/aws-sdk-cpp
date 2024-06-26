@@ -23,8 +23,8 @@ ActionGroupInvocationOutput::ActionGroupInvocationOutput() :
 {
 }
 
-ActionGroupInvocationOutput::ActionGroupInvocationOutput(JsonView jsonValue) : 
-    m_textHasBeenSet(false)
+ActionGroupInvocationOutput::ActionGroupInvocationOutput(JsonView jsonValue)
+  : ActionGroupInvocationOutput()
 {
   *this = jsonValue;
 }

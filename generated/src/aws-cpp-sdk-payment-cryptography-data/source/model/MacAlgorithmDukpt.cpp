@@ -27,12 +27,8 @@ MacAlgorithmDukpt::MacAlgorithmDukpt() :
 {
 }
 
-MacAlgorithmDukpt::MacAlgorithmDukpt(JsonView jsonValue) : 
-    m_dukptDerivationType(DukptDerivationType::NOT_SET),
-    m_dukptDerivationTypeHasBeenSet(false),
-    m_dukptKeyVariant(DukptKeyVariant::NOT_SET),
-    m_dukptKeyVariantHasBeenSet(false),
-    m_keySerialNumberHasBeenSet(false)
+MacAlgorithmDukpt::MacAlgorithmDukpt(JsonView jsonValue)
+  : MacAlgorithmDukpt()
 {
   *this = jsonValue;
 }

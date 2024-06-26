@@ -25,10 +25,8 @@ ComponentCandidate::ComponentCandidate() :
 {
 }
 
-ComponentCandidate::ComponentCandidate(JsonView jsonValue) : 
-    m_componentNameHasBeenSet(false),
-    m_componentVersionHasBeenSet(false),
-    m_versionRequirementsHasBeenSet(false)
+ComponentCandidate::ComponentCandidate(JsonView jsonValue)
+  : ComponentCandidate()
 {
   *this = jsonValue;
 }

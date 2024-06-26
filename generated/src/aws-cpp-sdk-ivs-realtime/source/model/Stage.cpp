@@ -28,13 +28,8 @@ Stage::Stage() :
 {
 }
 
-Stage::Stage(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_activeSessionIdHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_autoParticipantRecordingConfigurationHasBeenSet(false),
-    m_endpointsHasBeenSet(false)
+Stage::Stage(JsonView jsonValue)
+  : Stage()
 {
   *this = jsonValue;
 }

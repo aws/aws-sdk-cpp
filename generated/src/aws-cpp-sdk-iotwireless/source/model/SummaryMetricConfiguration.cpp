@@ -24,9 +24,8 @@ SummaryMetricConfiguration::SummaryMetricConfiguration() :
 {
 }
 
-SummaryMetricConfiguration::SummaryMetricConfiguration(JsonView jsonValue) : 
-    m_status(SummaryMetricConfigurationStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+SummaryMetricConfiguration::SummaryMetricConfiguration(JsonView jsonValue)
+  : SummaryMetricConfiguration()
 {
   *this = jsonValue;
 }

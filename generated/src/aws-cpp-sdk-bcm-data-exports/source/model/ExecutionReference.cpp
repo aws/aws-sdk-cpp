@@ -24,9 +24,8 @@ ExecutionReference::ExecutionReference() :
 {
 }
 
-ExecutionReference::ExecutionReference(JsonView jsonValue) : 
-    m_executionIdHasBeenSet(false),
-    m_executionStatusHasBeenSet(false)
+ExecutionReference::ExecutionReference(JsonView jsonValue)
+  : ExecutionReference()
 {
   *this = jsonValue;
 }

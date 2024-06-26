@@ -26,9 +26,8 @@ TransitGatewayPolicyRuleMetaData::TransitGatewayPolicyRuleMetaData() :
 {
 }
 
-TransitGatewayPolicyRuleMetaData::TransitGatewayPolicyRuleMetaData(const XmlNode& xmlNode) : 
-    m_metaDataKeyHasBeenSet(false),
-    m_metaDataValueHasBeenSet(false)
+TransitGatewayPolicyRuleMetaData::TransitGatewayPolicyRuleMetaData(const XmlNode& xmlNode)
+  : TransitGatewayPolicyRuleMetaData()
 {
   *this = xmlNode;
 }

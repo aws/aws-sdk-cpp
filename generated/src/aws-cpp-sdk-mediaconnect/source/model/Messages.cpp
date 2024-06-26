@@ -23,8 +23,8 @@ Messages::Messages() :
 {
 }
 
-Messages::Messages(JsonView jsonValue) : 
-    m_errorsHasBeenSet(false)
+Messages::Messages(JsonView jsonValue)
+  : Messages()
 {
   *this = jsonValue;
 }

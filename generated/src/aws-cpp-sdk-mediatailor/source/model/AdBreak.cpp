@@ -30,15 +30,8 @@ AdBreak::AdBreak() :
 {
 }
 
-AdBreak::AdBreak(JsonView jsonValue) : 
-    m_adBreakMetadataHasBeenSet(false),
-    m_messageType(MessageType::NOT_SET),
-    m_messageTypeHasBeenSet(false),
-    m_offsetMillis(0),
-    m_offsetMillisHasBeenSet(false),
-    m_slateHasBeenSet(false),
-    m_spliceInsertMessageHasBeenSet(false),
-    m_timeSignalMessageHasBeenSet(false)
+AdBreak::AdBreak(JsonView jsonValue)
+  : AdBreak()
 {
   *this = jsonValue;
 }

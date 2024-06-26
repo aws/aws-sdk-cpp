@@ -28,13 +28,8 @@ TokenValidityUnitsType::TokenValidityUnitsType() :
 {
 }
 
-TokenValidityUnitsType::TokenValidityUnitsType(JsonView jsonValue) : 
-    m_accessToken(TimeUnitsType::NOT_SET),
-    m_accessTokenHasBeenSet(false),
-    m_idToken(TimeUnitsType::NOT_SET),
-    m_idTokenHasBeenSet(false),
-    m_refreshToken(TimeUnitsType::NOT_SET),
-    m_refreshTokenHasBeenSet(false)
+TokenValidityUnitsType::TokenValidityUnitsType(JsonView jsonValue)
+  : TokenValidityUnitsType()
 {
   *this = jsonValue;
 }

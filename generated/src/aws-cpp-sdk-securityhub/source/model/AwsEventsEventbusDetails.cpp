@@ -25,10 +25,8 @@ AwsEventsEventbusDetails::AwsEventsEventbusDetails() :
 {
 }
 
-AwsEventsEventbusDetails::AwsEventsEventbusDetails(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_policyHasBeenSet(false)
+AwsEventsEventbusDetails::AwsEventsEventbusDetails(JsonView jsonValue)
+  : AwsEventsEventbusDetails()
 {
   *this = jsonValue;
 }

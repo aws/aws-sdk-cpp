@@ -35,20 +35,8 @@ QueueSummary::QueueSummary() :
 {
 }
 
-QueueSummary::QueueSummary(JsonView jsonValue) : 
-    m_blockedReason(QueueBlockedReason::NOT_SET),
-    m_blockedReasonHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_defaultBudgetAction(DefaultQueueBudgetAction::NOT_SET),
-    m_defaultBudgetActionHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_farmIdHasBeenSet(false),
-    m_queueIdHasBeenSet(false),
-    m_status(QueueStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_updatedByHasBeenSet(false)
+QueueSummary::QueueSummary(JsonView jsonValue)
+  : QueueSummary()
 {
   *this = jsonValue;
 }

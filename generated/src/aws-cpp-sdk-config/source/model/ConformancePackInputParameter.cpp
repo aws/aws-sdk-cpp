@@ -24,9 +24,8 @@ ConformancePackInputParameter::ConformancePackInputParameter() :
 {
 }
 
-ConformancePackInputParameter::ConformancePackInputParameter(JsonView jsonValue) : 
-    m_parameterNameHasBeenSet(false),
-    m_parameterValueHasBeenSet(false)
+ConformancePackInputParameter::ConformancePackInputParameter(JsonView jsonValue)
+  : ConformancePackInputParameter()
 {
   *this = jsonValue;
 }

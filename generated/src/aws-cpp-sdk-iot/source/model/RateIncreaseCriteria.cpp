@@ -26,11 +26,8 @@ RateIncreaseCriteria::RateIncreaseCriteria() :
 {
 }
 
-RateIncreaseCriteria::RateIncreaseCriteria(JsonView jsonValue) : 
-    m_numberOfNotifiedThings(0),
-    m_numberOfNotifiedThingsHasBeenSet(false),
-    m_numberOfSucceededThings(0),
-    m_numberOfSucceededThingsHasBeenSet(false)
+RateIncreaseCriteria::RateIncreaseCriteria(JsonView jsonValue)
+  : RateIncreaseCriteria()
 {
   *this = jsonValue;
 }

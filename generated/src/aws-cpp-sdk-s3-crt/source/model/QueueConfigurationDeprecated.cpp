@@ -27,10 +27,8 @@ QueueConfigurationDeprecated::QueueConfigurationDeprecated() :
 {
 }
 
-QueueConfigurationDeprecated::QueueConfigurationDeprecated(const XmlNode& xmlNode) : 
-    m_idHasBeenSet(false),
-    m_eventsHasBeenSet(false),
-    m_queueHasBeenSet(false)
+QueueConfigurationDeprecated::QueueConfigurationDeprecated(const XmlNode& xmlNode)
+  : QueueConfigurationDeprecated()
 {
   *this = xmlNode;
 }

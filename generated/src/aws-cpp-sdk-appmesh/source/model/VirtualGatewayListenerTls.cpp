@@ -26,11 +26,8 @@ VirtualGatewayListenerTls::VirtualGatewayListenerTls() :
 {
 }
 
-VirtualGatewayListenerTls::VirtualGatewayListenerTls(JsonView jsonValue) : 
-    m_certificateHasBeenSet(false),
-    m_mode(VirtualGatewayListenerTlsMode::NOT_SET),
-    m_modeHasBeenSet(false),
-    m_validationHasBeenSet(false)
+VirtualGatewayListenerTls::VirtualGatewayListenerTls(JsonView jsonValue)
+  : VirtualGatewayListenerTls()
 {
   *this = jsonValue;
 }

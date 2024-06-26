@@ -29,14 +29,8 @@ TimelineEvent::TimelineEvent() :
 {
 }
 
-TimelineEvent::TimelineEvent(JsonView jsonValue) : 
-    m_eventDataHasBeenSet(false),
-    m_eventIdHasBeenSet(false),
-    m_eventReferencesHasBeenSet(false),
-    m_eventTimeHasBeenSet(false),
-    m_eventTypeHasBeenSet(false),
-    m_eventUpdatedTimeHasBeenSet(false),
-    m_incidentRecordArnHasBeenSet(false)
+TimelineEvent::TimelineEvent(JsonView jsonValue)
+  : TimelineEvent()
 {
   *this = jsonValue;
 }

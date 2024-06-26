@@ -22,8 +22,8 @@ ListAnalysesResult::ListAnalysesResult() :
 {
 }
 
-ListAnalysesResult::ListAnalysesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+ListAnalysesResult::ListAnalysesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ListAnalysesResult()
 {
   *this = result;
 }

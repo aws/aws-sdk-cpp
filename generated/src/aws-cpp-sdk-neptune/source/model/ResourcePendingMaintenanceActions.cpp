@@ -26,9 +26,8 @@ ResourcePendingMaintenanceActions::ResourcePendingMaintenanceActions() :
 {
 }
 
-ResourcePendingMaintenanceActions::ResourcePendingMaintenanceActions(const XmlNode& xmlNode) : 
-    m_resourceIdentifierHasBeenSet(false),
-    m_pendingMaintenanceActionDetailsHasBeenSet(false)
+ResourcePendingMaintenanceActions::ResourcePendingMaintenanceActions(const XmlNode& xmlNode)
+  : ResourcePendingMaintenanceActions()
 {
   *this = xmlNode;
 }

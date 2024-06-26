@@ -25,10 +25,8 @@ ImageConfig::ImageConfig() :
 {
 }
 
-ImageConfig::ImageConfig(JsonView jsonValue) : 
-    m_entryPointHasBeenSet(false),
-    m_commandHasBeenSet(false),
-    m_workingDirectoryHasBeenSet(false)
+ImageConfig::ImageConfig(JsonView jsonValue)
+  : ImageConfig()
 {
   *this = jsonValue;
 }

@@ -37,22 +37,8 @@ UpdateCsvClassifierRequest::UpdateCsvClassifierRequest() :
 {
 }
 
-UpdateCsvClassifierRequest::UpdateCsvClassifierRequest(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_delimiterHasBeenSet(false),
-    m_quoteSymbolHasBeenSet(false),
-    m_containsHeader(CsvHeaderOption::NOT_SET),
-    m_containsHeaderHasBeenSet(false),
-    m_headerHasBeenSet(false),
-    m_disableValueTrimming(false),
-    m_disableValueTrimmingHasBeenSet(false),
-    m_allowSingleColumn(false),
-    m_allowSingleColumnHasBeenSet(false),
-    m_customDatatypeConfigured(false),
-    m_customDatatypeConfiguredHasBeenSet(false),
-    m_customDatatypesHasBeenSet(false),
-    m_serde(CsvSerdeOption::NOT_SET),
-    m_serdeHasBeenSet(false)
+UpdateCsvClassifierRequest::UpdateCsvClassifierRequest(JsonView jsonValue)
+  : UpdateCsvClassifierRequest()
 {
   *this = jsonValue;
 }

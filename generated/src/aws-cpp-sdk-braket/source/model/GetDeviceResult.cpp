@@ -23,9 +23,8 @@ GetDeviceResult::GetDeviceResult() :
 {
 }
 
-GetDeviceResult::GetDeviceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_deviceStatus(DeviceStatus::NOT_SET),
-    m_deviceType(DeviceType::NOT_SET)
+GetDeviceResult::GetDeviceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetDeviceResult()
 {
   *this = result;
 }

@@ -25,10 +25,8 @@ ComponentState::ComponentState() :
 {
 }
 
-ComponentState::ComponentState(JsonView jsonValue) : 
-    m_status(ComponentStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_reasonHasBeenSet(false)
+ComponentState::ComponentState(JsonView jsonValue)
+  : ComponentState()
 {
   *this = jsonValue;
 }

@@ -29,12 +29,8 @@ CapacityReservationFleetCancellationState::CapacityReservationFleetCancellationS
 {
 }
 
-CapacityReservationFleetCancellationState::CapacityReservationFleetCancellationState(const XmlNode& xmlNode) : 
-    m_currentFleetState(CapacityReservationFleetState::NOT_SET),
-    m_currentFleetStateHasBeenSet(false),
-    m_previousFleetState(CapacityReservationFleetState::NOT_SET),
-    m_previousFleetStateHasBeenSet(false),
-    m_capacityReservationFleetIdHasBeenSet(false)
+CapacityReservationFleetCancellationState::CapacityReservationFleetCancellationState(const XmlNode& xmlNode)
+  : CapacityReservationFleetCancellationState()
 {
   *this = xmlNode;
 }

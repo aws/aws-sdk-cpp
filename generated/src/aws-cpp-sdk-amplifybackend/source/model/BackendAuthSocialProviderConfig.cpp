@@ -24,9 +24,8 @@ BackendAuthSocialProviderConfig::BackendAuthSocialProviderConfig() :
 {
 }
 
-BackendAuthSocialProviderConfig::BackendAuthSocialProviderConfig(JsonView jsonValue) : 
-    m_clientIdHasBeenSet(false),
-    m_clientSecretHasBeenSet(false)
+BackendAuthSocialProviderConfig::BackendAuthSocialProviderConfig(JsonView jsonValue)
+  : BackendAuthSocialProviderConfig()
 {
   *this = jsonValue;
 }

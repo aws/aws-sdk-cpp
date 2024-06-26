@@ -22,8 +22,8 @@ DisableVpcClassicLinkDnsSupportResponse::DisableVpcClassicLinkDnsSupportResponse
 {
 }
 
-DisableVpcClassicLinkDnsSupportResponse::DisableVpcClassicLinkDnsSupportResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_return(false)
+DisableVpcClassicLinkDnsSupportResponse::DisableVpcClassicLinkDnsSupportResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : DisableVpcClassicLinkDnsSupportResponse()
 {
   *this = result;
 }

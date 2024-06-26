@@ -22,8 +22,8 @@ CreateVocabularyFilterResult::CreateVocabularyFilterResult() :
 {
 }
 
-CreateVocabularyFilterResult::CreateVocabularyFilterResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_languageCode(LanguageCode::NOT_SET)
+CreateVocabularyFilterResult::CreateVocabularyFilterResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateVocabularyFilterResult()
 {
   *this = result;
 }

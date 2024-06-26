@@ -36,21 +36,8 @@ Instance::Instance() :
 {
 }
 
-Instance::Instance(JsonView jsonValue) : 
-    m_amiLaunchIndex(0),
-    m_amiLaunchIndexHasBeenSet(false),
-    m_blockDeviceMappingsHasBeenSet(false),
-    m_cpuOptionsHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_imageIdHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_privateIpAddressHasBeenSet(false),
-    m_publicIpAddressHasBeenSet(false),
-    m_rootDeviceNameHasBeenSet(false),
-    m_securityGroupsHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+Instance::Instance(JsonView jsonValue)
+  : Instance()
 {
   *this = jsonValue;
 }

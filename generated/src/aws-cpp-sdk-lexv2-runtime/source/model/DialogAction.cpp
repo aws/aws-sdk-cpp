@@ -28,13 +28,8 @@ DialogAction::DialogAction() :
 {
 }
 
-DialogAction::DialogAction(JsonView jsonValue) : 
-    m_type(DialogActionType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_slotToElicitHasBeenSet(false),
-    m_slotElicitationStyle(StyleType::NOT_SET),
-    m_slotElicitationStyleHasBeenSet(false),
-    m_subSlotToElicitHasBeenSet(false)
+DialogAction::DialogAction(JsonView jsonValue)
+  : DialogAction()
 {
   *this = jsonValue;
 }

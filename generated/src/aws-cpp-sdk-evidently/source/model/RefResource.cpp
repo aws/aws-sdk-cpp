@@ -29,14 +29,8 @@ RefResource::RefResource() :
 {
 }
 
-RefResource::RefResource(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_lastUpdatedOnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_typeHasBeenSet(false)
+RefResource::RefResource(JsonView jsonValue)
+  : RefResource()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ ModelAccessConfig::ModelAccessConfig() :
 {
 }
 
-ModelAccessConfig::ModelAccessConfig(JsonView jsonValue) : 
-    m_acceptEula(false),
-    m_acceptEulaHasBeenSet(false)
+ModelAccessConfig::ModelAccessConfig(JsonView jsonValue)
+  : ModelAccessConfig()
 {
   *this = jsonValue;
 }

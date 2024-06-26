@@ -25,10 +25,8 @@ ControlCondition::ControlCondition() :
 {
 }
 
-ControlCondition::ControlCondition(JsonView jsonValue) : 
-    m_alarmIdentifierHasBeenSet(false),
-    m_type(ControlConditionType::NOT_SET),
-    m_typeHasBeenSet(false)
+ControlCondition::ControlCondition(JsonView jsonValue)
+  : ControlCondition()
 {
   *this = jsonValue;
 }

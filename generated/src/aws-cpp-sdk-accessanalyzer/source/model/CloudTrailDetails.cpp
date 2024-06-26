@@ -26,11 +26,8 @@ CloudTrailDetails::CloudTrailDetails() :
 {
 }
 
-CloudTrailDetails::CloudTrailDetails(JsonView jsonValue) : 
-    m_trailsHasBeenSet(false),
-    m_accessRoleHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
+CloudTrailDetails::CloudTrailDetails(JsonView jsonValue)
+  : CloudTrailDetails()
 {
   *this = jsonValue;
 }

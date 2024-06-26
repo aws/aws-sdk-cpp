@@ -24,9 +24,8 @@ MonitoringJsonDatasetFormat::MonitoringJsonDatasetFormat() :
 {
 }
 
-MonitoringJsonDatasetFormat::MonitoringJsonDatasetFormat(JsonView jsonValue) : 
-    m_line(false),
-    m_lineHasBeenSet(false)
+MonitoringJsonDatasetFormat::MonitoringJsonDatasetFormat(JsonView jsonValue)
+  : MonitoringJsonDatasetFormat()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ City::City() :
 {
 }
 
-City::City(JsonView jsonValue) : 
-    m_cityNameHasBeenSet(false)
+City::City(JsonView jsonValue)
+  : City()
 {
   *this = jsonValue;
 }

@@ -34,19 +34,8 @@ MsSmoothGroupSettings::MsSmoothGroupSettings() :
 {
 }
 
-MsSmoothGroupSettings::MsSmoothGroupSettings(JsonView jsonValue) : 
-    m_additionalManifestsHasBeenSet(false),
-    m_audioDeduplication(MsSmoothAudioDeduplication::NOT_SET),
-    m_audioDeduplicationHasBeenSet(false),
-    m_destinationHasBeenSet(false),
-    m_destinationSettingsHasBeenSet(false),
-    m_encryptionHasBeenSet(false),
-    m_fragmentLength(0),
-    m_fragmentLengthHasBeenSet(false),
-    m_fragmentLengthControl(MsSmoothFragmentLengthControl::NOT_SET),
-    m_fragmentLengthControlHasBeenSet(false),
-    m_manifestEncoding(MsSmoothManifestEncoding::NOT_SET),
-    m_manifestEncodingHasBeenSet(false)
+MsSmoothGroupSettings::MsSmoothGroupSettings(JsonView jsonValue)
+  : MsSmoothGroupSettings()
 {
   *this = jsonValue;
 }

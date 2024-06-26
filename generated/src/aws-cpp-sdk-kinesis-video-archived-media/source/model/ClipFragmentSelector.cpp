@@ -25,10 +25,8 @@ ClipFragmentSelector::ClipFragmentSelector() :
 {
 }
 
-ClipFragmentSelector::ClipFragmentSelector(JsonView jsonValue) : 
-    m_fragmentSelectorType(ClipFragmentSelectorType::NOT_SET),
-    m_fragmentSelectorTypeHasBeenSet(false),
-    m_timestampRangeHasBeenSet(false)
+ClipFragmentSelector::ClipFragmentSelector(JsonView jsonValue)
+  : ClipFragmentSelector()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ DnsDuplicateRuleGroupViolation::DnsDuplicateRuleGroupViolation() :
 {
 }
 
-DnsDuplicateRuleGroupViolation::DnsDuplicateRuleGroupViolation(JsonView jsonValue) : 
-    m_violationTargetHasBeenSet(false),
-    m_violationTargetDescriptionHasBeenSet(false)
+DnsDuplicateRuleGroupViolation::DnsDuplicateRuleGroupViolation(JsonView jsonValue)
+  : DnsDuplicateRuleGroupViolation()
 {
   *this = jsonValue;
 }

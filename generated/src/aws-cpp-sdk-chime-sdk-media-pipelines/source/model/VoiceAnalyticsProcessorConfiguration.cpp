@@ -26,11 +26,8 @@ VoiceAnalyticsProcessorConfiguration::VoiceAnalyticsProcessorConfiguration() :
 {
 }
 
-VoiceAnalyticsProcessorConfiguration::VoiceAnalyticsProcessorConfiguration(JsonView jsonValue) : 
-    m_speakerSearchStatus(VoiceAnalyticsConfigurationStatus::NOT_SET),
-    m_speakerSearchStatusHasBeenSet(false),
-    m_voiceToneAnalysisStatus(VoiceAnalyticsConfigurationStatus::NOT_SET),
-    m_voiceToneAnalysisStatusHasBeenSet(false)
+VoiceAnalyticsProcessorConfiguration::VoiceAnalyticsProcessorConfiguration(JsonView jsonValue)
+  : VoiceAnalyticsProcessorConfiguration()
 {
   *this = jsonValue;
 }

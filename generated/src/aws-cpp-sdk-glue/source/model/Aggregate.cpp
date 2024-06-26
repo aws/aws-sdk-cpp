@@ -26,11 +26,8 @@ Aggregate::Aggregate() :
 {
 }
 
-Aggregate::Aggregate(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_inputsHasBeenSet(false),
-    m_groupsHasBeenSet(false),
-    m_aggsHasBeenSet(false)
+Aggregate::Aggregate(JsonView jsonValue)
+  : Aggregate()
 {
   *this = jsonValue;
 }

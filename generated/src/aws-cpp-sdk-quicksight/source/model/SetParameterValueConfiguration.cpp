@@ -24,9 +24,8 @@ SetParameterValueConfiguration::SetParameterValueConfiguration() :
 {
 }
 
-SetParameterValueConfiguration::SetParameterValueConfiguration(JsonView jsonValue) : 
-    m_destinationParameterNameHasBeenSet(false),
-    m_valueHasBeenSet(false)
+SetParameterValueConfiguration::SetParameterValueConfiguration(JsonView jsonValue)
+  : SetParameterValueConfiguration()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ SoftwareInformation::SoftwareInformation() :
 {
 }
 
-SoftwareInformation::SoftwareInformation(JsonView jsonValue) : 
-    m_installStateHasBeenSet(false),
-    m_installedVersionHasBeenSet(false),
-    m_installingVersionHasBeenSet(false)
+SoftwareInformation::SoftwareInformation(JsonView jsonValue)
+  : SoftwareInformation()
 {
   *this = jsonValue;
 }

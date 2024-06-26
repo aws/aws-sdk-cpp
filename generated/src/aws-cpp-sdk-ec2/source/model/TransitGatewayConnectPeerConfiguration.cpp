@@ -30,13 +30,8 @@ TransitGatewayConnectPeerConfiguration::TransitGatewayConnectPeerConfiguration()
 {
 }
 
-TransitGatewayConnectPeerConfiguration::TransitGatewayConnectPeerConfiguration(const XmlNode& xmlNode) : 
-    m_transitGatewayAddressHasBeenSet(false),
-    m_peerAddressHasBeenSet(false),
-    m_insideCidrBlocksHasBeenSet(false),
-    m_protocol(ProtocolValue::NOT_SET),
-    m_protocolHasBeenSet(false),
-    m_bgpConfigurationsHasBeenSet(false)
+TransitGatewayConnectPeerConfiguration::TransitGatewayConnectPeerConfiguration(const XmlNode& xmlNode)
+  : TransitGatewayConnectPeerConfiguration()
 {
   *this = xmlNode;
 }

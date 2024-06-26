@@ -24,9 +24,8 @@ VpcEndpointFilters::VpcEndpointFilters() :
 {
 }
 
-VpcEndpointFilters::VpcEndpointFilters(JsonView jsonValue) : 
-    m_status(VpcEndpointStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+VpcEndpointFilters::VpcEndpointFilters(JsonView jsonValue)
+  : VpcEndpointFilters()
 {
   *this = jsonValue;
 }

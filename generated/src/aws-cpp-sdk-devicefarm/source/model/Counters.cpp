@@ -36,21 +36,8 @@ Counters::Counters() :
 {
 }
 
-Counters::Counters(JsonView jsonValue) : 
-    m_total(0),
-    m_totalHasBeenSet(false),
-    m_passed(0),
-    m_passedHasBeenSet(false),
-    m_failed(0),
-    m_failedHasBeenSet(false),
-    m_warned(0),
-    m_warnedHasBeenSet(false),
-    m_errored(0),
-    m_erroredHasBeenSet(false),
-    m_stopped(0),
-    m_stoppedHasBeenSet(false),
-    m_skipped(0),
-    m_skippedHasBeenSet(false)
+Counters::Counters(JsonView jsonValue)
+  : Counters()
 {
   *this = jsonValue;
 }

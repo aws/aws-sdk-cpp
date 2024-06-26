@@ -27,12 +27,8 @@ NetworkSettings::NetworkSettings() :
 {
 }
 
-NetworkSettings::NetworkSettings(JsonView jsonValue) : 
-    m_associatedPortalArnsHasBeenSet(false),
-    m_networkSettingsArnHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false),
-    m_subnetIdsHasBeenSet(false),
-    m_vpcIdHasBeenSet(false)
+NetworkSettings::NetworkSettings(JsonView jsonValue)
+  : NetworkSettings()
 {
   *this = jsonValue;
 }

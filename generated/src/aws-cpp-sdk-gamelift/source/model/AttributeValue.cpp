@@ -27,12 +27,8 @@ AttributeValue::AttributeValue() :
 {
 }
 
-AttributeValue::AttributeValue(JsonView jsonValue) : 
-    m_sHasBeenSet(false),
-    m_n(0.0),
-    m_nHasBeenSet(false),
-    m_sLHasBeenSet(false),
-    m_sDMHasBeenSet(false)
+AttributeValue::AttributeValue(JsonView jsonValue)
+  : AttributeValue()
 {
   *this = jsonValue;
 }

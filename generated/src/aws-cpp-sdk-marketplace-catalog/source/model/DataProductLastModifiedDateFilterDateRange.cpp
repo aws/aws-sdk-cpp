@@ -24,9 +24,8 @@ DataProductLastModifiedDateFilterDateRange::DataProductLastModifiedDateFilterDat
 {
 }
 
-DataProductLastModifiedDateFilterDateRange::DataProductLastModifiedDateFilterDateRange(JsonView jsonValue) : 
-    m_afterValueHasBeenSet(false),
-    m_beforeValueHasBeenSet(false)
+DataProductLastModifiedDateFilterDateRange::DataProductLastModifiedDateFilterDateRange(JsonView jsonValue)
+  : DataProductLastModifiedDateFilterDateRange()
 {
   *this = jsonValue;
 }

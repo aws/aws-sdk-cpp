@@ -26,11 +26,8 @@ BotLocaleSortBy::BotLocaleSortBy() :
 {
 }
 
-BotLocaleSortBy::BotLocaleSortBy(JsonView jsonValue) : 
-    m_attribute(BotLocaleSortAttribute::NOT_SET),
-    m_attributeHasBeenSet(false),
-    m_order(SortOrder::NOT_SET),
-    m_orderHasBeenSet(false)
+BotLocaleSortBy::BotLocaleSortBy(JsonView jsonValue)
+  : BotLocaleSortBy()
 {
   *this = jsonValue;
 }

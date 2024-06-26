@@ -25,10 +25,8 @@ StreamConfiguration::StreamConfiguration() :
 {
 }
 
-StreamConfiguration::StreamConfiguration(JsonView jsonValue) : 
-    m_streamArnHasBeenSet(false),
-    m_fragmentNumberHasBeenSet(false),
-    m_streamChannelDefinitionHasBeenSet(false)
+StreamConfiguration::StreamConfiguration(JsonView jsonValue)
+  : StreamConfiguration()
 {
   *this = jsonValue;
 }

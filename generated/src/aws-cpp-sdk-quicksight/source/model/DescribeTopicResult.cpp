@@ -22,8 +22,8 @@ DescribeTopicResult::DescribeTopicResult() :
 {
 }
 
-DescribeTopicResult::DescribeTopicResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+DescribeTopicResult::DescribeTopicResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeTopicResult()
 {
   *this = result;
 }

@@ -28,11 +28,8 @@ LoadBalancerAddress::LoadBalancerAddress() :
 {
 }
 
-LoadBalancerAddress::LoadBalancerAddress(const XmlNode& xmlNode) : 
-    m_ipAddressHasBeenSet(false),
-    m_allocationIdHasBeenSet(false),
-    m_privateIPv4AddressHasBeenSet(false),
-    m_iPv6AddressHasBeenSet(false)
+LoadBalancerAddress::LoadBalancerAddress(const XmlNode& xmlNode)
+  : LoadBalancerAddress()
 {
   *this = xmlNode;
 }

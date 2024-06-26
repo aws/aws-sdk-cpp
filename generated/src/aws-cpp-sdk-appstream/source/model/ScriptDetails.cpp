@@ -27,12 +27,8 @@ ScriptDetails::ScriptDetails() :
 {
 }
 
-ScriptDetails::ScriptDetails(JsonView jsonValue) : 
-    m_scriptS3LocationHasBeenSet(false),
-    m_executablePathHasBeenSet(false),
-    m_executableParametersHasBeenSet(false),
-    m_timeoutInSeconds(0),
-    m_timeoutInSecondsHasBeenSet(false)
+ScriptDetails::ScriptDetails(JsonView jsonValue)
+  : ScriptDetails()
 {
   *this = jsonValue;
 }

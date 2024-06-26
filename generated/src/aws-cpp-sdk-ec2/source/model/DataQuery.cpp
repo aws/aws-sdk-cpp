@@ -33,16 +33,8 @@ DataQuery::DataQuery() :
 {
 }
 
-DataQuery::DataQuery(const XmlNode& xmlNode) : 
-    m_idHasBeenSet(false),
-    m_sourceHasBeenSet(false),
-    m_destinationHasBeenSet(false),
-    m_metric(MetricType::NOT_SET),
-    m_metricHasBeenSet(false),
-    m_statistic(StatisticType::NOT_SET),
-    m_statisticHasBeenSet(false),
-    m_period(PeriodType::NOT_SET),
-    m_periodHasBeenSet(false)
+DataQuery::DataQuery(const XmlNode& xmlNode)
+  : DataQuery()
 {
   *this = xmlNode;
 }

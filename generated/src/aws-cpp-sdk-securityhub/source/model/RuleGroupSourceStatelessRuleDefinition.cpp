@@ -24,9 +24,8 @@ RuleGroupSourceStatelessRuleDefinition::RuleGroupSourceStatelessRuleDefinition()
 {
 }
 
-RuleGroupSourceStatelessRuleDefinition::RuleGroupSourceStatelessRuleDefinition(JsonView jsonValue) : 
-    m_actionsHasBeenSet(false),
-    m_matchAttributesHasBeenSet(false)
+RuleGroupSourceStatelessRuleDefinition::RuleGroupSourceStatelessRuleDefinition(JsonView jsonValue)
+  : RuleGroupSourceStatelessRuleDefinition()
 {
   *this = jsonValue;
 }

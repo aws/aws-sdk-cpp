@@ -27,10 +27,8 @@ TransitGatewayPolicyTableEntry::TransitGatewayPolicyTableEntry() :
 {
 }
 
-TransitGatewayPolicyTableEntry::TransitGatewayPolicyTableEntry(const XmlNode& xmlNode) : 
-    m_policyRuleNumberHasBeenSet(false),
-    m_policyRuleHasBeenSet(false),
-    m_targetRouteTableIdHasBeenSet(false)
+TransitGatewayPolicyTableEntry::TransitGatewayPolicyTableEntry(const XmlNode& xmlNode)
+  : TransitGatewayPolicyTableEntry()
 {
   *this = xmlNode;
 }

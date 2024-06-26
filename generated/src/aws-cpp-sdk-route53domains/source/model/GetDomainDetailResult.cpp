@@ -26,12 +26,8 @@ GetDomainDetailResult::GetDomainDetailResult() :
 {
 }
 
-GetDomainDetailResult::GetDomainDetailResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_autoRenew(false),
-    m_adminPrivacy(false),
-    m_registrantPrivacy(false),
-    m_techPrivacy(false),
-    m_billingPrivacy(false)
+GetDomainDetailResult::GetDomainDetailResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetDomainDetailResult()
 {
   *this = result;
 }

@@ -22,8 +22,8 @@ CancelImageLaunchPermissionResponse::CancelImageLaunchPermissionResponse() :
 {
 }
 
-CancelImageLaunchPermissionResponse::CancelImageLaunchPermissionResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_return(false)
+CancelImageLaunchPermissionResponse::CancelImageLaunchPermissionResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : CancelImageLaunchPermissionResponse()
 {
   *this = result;
 }

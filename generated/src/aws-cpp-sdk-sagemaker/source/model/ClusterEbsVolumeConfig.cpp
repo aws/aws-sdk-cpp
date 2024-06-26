@@ -24,9 +24,8 @@ ClusterEbsVolumeConfig::ClusterEbsVolumeConfig() :
 {
 }
 
-ClusterEbsVolumeConfig::ClusterEbsVolumeConfig(JsonView jsonValue) : 
-    m_volumeSizeInGB(0),
-    m_volumeSizeInGBHasBeenSet(false)
+ClusterEbsVolumeConfig::ClusterEbsVolumeConfig(JsonView jsonValue)
+  : ClusterEbsVolumeConfig()
 {
   *this = jsonValue;
 }

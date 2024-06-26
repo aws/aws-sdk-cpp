@@ -22,8 +22,8 @@ EnableVpcClassicLinkDnsSupportResponse::EnableVpcClassicLinkDnsSupportResponse()
 {
 }
 
-EnableVpcClassicLinkDnsSupportResponse::EnableVpcClassicLinkDnsSupportResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_return(false)
+EnableVpcClassicLinkDnsSupportResponse::EnableVpcClassicLinkDnsSupportResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : EnableVpcClassicLinkDnsSupportResponse()
 {
   *this = result;
 }

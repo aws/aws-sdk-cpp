@@ -23,8 +23,8 @@ LabelingJobSnsDataSource::LabelingJobSnsDataSource() :
 {
 }
 
-LabelingJobSnsDataSource::LabelingJobSnsDataSource(JsonView jsonValue) : 
-    m_snsTopicArnHasBeenSet(false)
+LabelingJobSnsDataSource::LabelingJobSnsDataSource(JsonView jsonValue)
+  : LabelingJobSnsDataSource()
 {
   *this = jsonValue;
 }

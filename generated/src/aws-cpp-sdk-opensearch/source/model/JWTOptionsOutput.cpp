@@ -27,12 +27,8 @@ JWTOptionsOutput::JWTOptionsOutput() :
 {
 }
 
-JWTOptionsOutput::JWTOptionsOutput(JsonView jsonValue) : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_subjectKeyHasBeenSet(false),
-    m_rolesKeyHasBeenSet(false),
-    m_publicKeyHasBeenSet(false)
+JWTOptionsOutput::JWTOptionsOutput(JsonView jsonValue)
+  : JWTOptionsOutput()
 {
   *this = jsonValue;
 }

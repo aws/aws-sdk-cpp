@@ -27,12 +27,8 @@ PolicyTargetSummary::PolicyTargetSummary() :
 {
 }
 
-PolicyTargetSummary::PolicyTargetSummary(JsonView jsonValue) : 
-    m_targetIdHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_type(TargetType::NOT_SET),
-    m_typeHasBeenSet(false)
+PolicyTargetSummary::PolicyTargetSummary(JsonView jsonValue)
+  : PolicyTargetSummary()
 {
   *this = jsonValue;
 }

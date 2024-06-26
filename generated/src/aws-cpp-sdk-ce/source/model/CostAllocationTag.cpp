@@ -29,14 +29,8 @@ CostAllocationTag::CostAllocationTag() :
 {
 }
 
-CostAllocationTag::CostAllocationTag(JsonView jsonValue) : 
-    m_tagKeyHasBeenSet(false),
-    m_type(CostAllocationTagType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_status(CostAllocationTagStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_lastUpdatedDateHasBeenSet(false),
-    m_lastUsedDateHasBeenSet(false)
+CostAllocationTag::CostAllocationTag(JsonView jsonValue)
+  : CostAllocationTag()
 {
   *this = jsonValue;
 }

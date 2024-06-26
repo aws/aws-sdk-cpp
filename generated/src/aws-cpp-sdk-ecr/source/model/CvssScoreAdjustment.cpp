@@ -24,9 +24,8 @@ CvssScoreAdjustment::CvssScoreAdjustment() :
 {
 }
 
-CvssScoreAdjustment::CvssScoreAdjustment(JsonView jsonValue) : 
-    m_metricHasBeenSet(false),
-    m_reasonHasBeenSet(false)
+CvssScoreAdjustment::CvssScoreAdjustment(JsonView jsonValue)
+  : CvssScoreAdjustment()
 {
   *this = jsonValue;
 }

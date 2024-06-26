@@ -27,12 +27,8 @@ RuleMetadata::RuleMetadata() :
 {
 }
 
-RuleMetadata::RuleMetadata(JsonView jsonValue) : 
-    m_ruleIdHasBeenSet(false),
-    m_ruleNameHasBeenSet(false),
-    m_shortDescriptionHasBeenSet(false),
-    m_longDescriptionHasBeenSet(false),
-    m_ruleTagsHasBeenSet(false)
+RuleMetadata::RuleMetadata(JsonView jsonValue)
+  : RuleMetadata()
 {
   *this = jsonValue;
 }

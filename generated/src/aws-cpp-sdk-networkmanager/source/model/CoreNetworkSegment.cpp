@@ -25,10 +25,8 @@ CoreNetworkSegment::CoreNetworkSegment() :
 {
 }
 
-CoreNetworkSegment::CoreNetworkSegment(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_edgeLocationsHasBeenSet(false),
-    m_sharedSegmentsHasBeenSet(false)
+CoreNetworkSegment::CoreNetworkSegment(JsonView jsonValue)
+  : CoreNetworkSegment()
 {
   *this = jsonValue;
 }

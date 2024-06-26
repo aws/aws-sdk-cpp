@@ -24,9 +24,8 @@ SensitivityInspectionTemplatesEntry::SensitivityInspectionTemplatesEntry() :
 {
 }
 
-SensitivityInspectionTemplatesEntry::SensitivityInspectionTemplatesEntry(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false)
+SensitivityInspectionTemplatesEntry::SensitivityInspectionTemplatesEntry(JsonView jsonValue)
+  : SensitivityInspectionTemplatesEntry()
 {
   *this = jsonValue;
 }

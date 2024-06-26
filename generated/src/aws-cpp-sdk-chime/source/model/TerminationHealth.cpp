@@ -24,9 +24,8 @@ TerminationHealth::TerminationHealth() :
 {
 }
 
-TerminationHealth::TerminationHealth(JsonView jsonValue) : 
-    m_timestampHasBeenSet(false),
-    m_sourceHasBeenSet(false)
+TerminationHealth::TerminationHealth(JsonView jsonValue)
+  : TerminationHealth()
 {
   *this = jsonValue;
 }

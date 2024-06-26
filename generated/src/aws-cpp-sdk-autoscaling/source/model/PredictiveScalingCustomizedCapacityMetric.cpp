@@ -25,8 +25,8 @@ PredictiveScalingCustomizedCapacityMetric::PredictiveScalingCustomizedCapacityMe
 {
 }
 
-PredictiveScalingCustomizedCapacityMetric::PredictiveScalingCustomizedCapacityMetric(const XmlNode& xmlNode) : 
-    m_metricDataQueriesHasBeenSet(false)
+PredictiveScalingCustomizedCapacityMetric::PredictiveScalingCustomizedCapacityMetric(const XmlNode& xmlNode)
+  : PredictiveScalingCustomizedCapacityMetric()
 {
   *this = xmlNode;
 }

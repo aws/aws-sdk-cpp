@@ -27,12 +27,8 @@ CodegenDependency::CodegenDependency() :
 {
 }
 
-CodegenDependency::CodegenDependency(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_supportedVersionHasBeenSet(false),
-    m_isSemVer(false),
-    m_isSemVerHasBeenSet(false),
-    m_reasonHasBeenSet(false)
+CodegenDependency::CodegenDependency(JsonView jsonValue)
+  : CodegenDependency()
 {
   *this = jsonValue;
 }

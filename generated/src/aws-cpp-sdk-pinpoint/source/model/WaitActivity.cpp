@@ -24,9 +24,8 @@ WaitActivity::WaitActivity() :
 {
 }
 
-WaitActivity::WaitActivity(JsonView jsonValue) : 
-    m_nextActivityHasBeenSet(false),
-    m_waitTimeHasBeenSet(false)
+WaitActivity::WaitActivity(JsonView jsonValue)
+  : WaitActivity()
 {
   *this = jsonValue;
 }

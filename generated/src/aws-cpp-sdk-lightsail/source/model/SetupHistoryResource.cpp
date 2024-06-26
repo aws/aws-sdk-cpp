@@ -28,13 +28,8 @@ SetupHistoryResource::SetupHistoryResource() :
 {
 }
 
-SetupHistoryResource::SetupHistoryResource(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_locationHasBeenSet(false),
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false)
+SetupHistoryResource::SetupHistoryResource(JsonView jsonValue)
+  : SetupHistoryResource()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ FlowTemplateDescription::FlowTemplateDescription() :
 {
 }
 
-FlowTemplateDescription::FlowTemplateDescription(JsonView jsonValue) : 
-    m_summaryHasBeenSet(false),
-    m_definitionHasBeenSet(false),
-    m_validatedNamespaceVersion(0),
-    m_validatedNamespaceVersionHasBeenSet(false)
+FlowTemplateDescription::FlowTemplateDescription(JsonView jsonValue)
+  : FlowTemplateDescription()
 {
   *this = jsonValue;
 }

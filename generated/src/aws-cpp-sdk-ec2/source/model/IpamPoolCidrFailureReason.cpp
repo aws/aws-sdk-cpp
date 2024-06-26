@@ -27,10 +27,8 @@ IpamPoolCidrFailureReason::IpamPoolCidrFailureReason() :
 {
 }
 
-IpamPoolCidrFailureReason::IpamPoolCidrFailureReason(const XmlNode& xmlNode) : 
-    m_code(IpamPoolCidrFailureCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+IpamPoolCidrFailureReason::IpamPoolCidrFailureReason(const XmlNode& xmlNode)
+  : IpamPoolCidrFailureReason()
 {
   *this = xmlNode;
 }

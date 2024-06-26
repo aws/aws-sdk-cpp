@@ -22,8 +22,8 @@ CreateModelVersionResult::CreateModelVersionResult() :
 {
 }
 
-CreateModelVersionResult::CreateModelVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_modelType(ModelTypeEnum::NOT_SET)
+CreateModelVersionResult::CreateModelVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateModelVersionResult()
 {
   *this = result;
 }

@@ -24,9 +24,8 @@ KafkaClusterClientVpcConfig::KafkaClusterClientVpcConfig() :
 {
 }
 
-KafkaClusterClientVpcConfig::KafkaClusterClientVpcConfig(JsonView jsonValue) : 
-    m_securityGroupIdsHasBeenSet(false),
-    m_subnetIdsHasBeenSet(false)
+KafkaClusterClientVpcConfig::KafkaClusterClientVpcConfig(JsonView jsonValue)
+  : KafkaClusterClientVpcConfig()
 {
   *this = jsonValue;
 }

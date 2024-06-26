@@ -24,9 +24,8 @@ SuccessResponseHandlingConfig::SuccessResponseHandlingConfig() :
 {
 }
 
-SuccessResponseHandlingConfig::SuccessResponseHandlingConfig(JsonView jsonValue) : 
-    m_bucketPrefixHasBeenSet(false),
-    m_bucketNameHasBeenSet(false)
+SuccessResponseHandlingConfig::SuccessResponseHandlingConfig(JsonView jsonValue)
+  : SuccessResponseHandlingConfig()
 {
   *this = jsonValue;
 }

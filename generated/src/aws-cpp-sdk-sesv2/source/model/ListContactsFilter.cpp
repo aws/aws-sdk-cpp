@@ -25,10 +25,8 @@ ListContactsFilter::ListContactsFilter() :
 {
 }
 
-ListContactsFilter::ListContactsFilter(JsonView jsonValue) : 
-    m_filteredStatus(SubscriptionStatus::NOT_SET),
-    m_filteredStatusHasBeenSet(false),
-    m_topicFilterHasBeenSet(false)
+ListContactsFilter::ListContactsFilter(JsonView jsonValue)
+  : ListContactsFilter()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ InferenceHubAccessConfig::InferenceHubAccessConfig() :
 {
 }
 
-InferenceHubAccessConfig::InferenceHubAccessConfig(JsonView jsonValue) : 
-    m_hubContentArnHasBeenSet(false)
+InferenceHubAccessConfig::InferenceHubAccessConfig(JsonView jsonValue)
+  : InferenceHubAccessConfig()
 {
   *this = jsonValue;
 }

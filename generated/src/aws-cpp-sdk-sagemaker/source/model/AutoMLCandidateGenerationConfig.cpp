@@ -24,9 +24,8 @@ AutoMLCandidateGenerationConfig::AutoMLCandidateGenerationConfig() :
 {
 }
 
-AutoMLCandidateGenerationConfig::AutoMLCandidateGenerationConfig(JsonView jsonValue) : 
-    m_featureSpecificationS3UriHasBeenSet(false),
-    m_algorithmsConfigHasBeenSet(false)
+AutoMLCandidateGenerationConfig::AutoMLCandidateGenerationConfig(JsonView jsonValue)
+  : AutoMLCandidateGenerationConfig()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ MediaResource::MediaResource() :
 {
 }
 
-MediaResource::MediaResource(JsonView jsonValue) : 
-    m_destinationsHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_sourcesHasBeenSet(false)
+MediaResource::MediaResource(JsonView jsonValue)
+  : MediaResource()
 {
   *this = jsonValue;
 }

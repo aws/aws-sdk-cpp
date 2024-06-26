@@ -28,13 +28,8 @@ ComponentUpdateRequest::ComponentUpdateRequest() :
 {
 }
 
-ComponentUpdateRequest::ComponentUpdateRequest(JsonView jsonValue) : 
-    m_updateType(ComponentUpdateType::NOT_SET),
-    m_updateTypeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_componentTypeIdHasBeenSet(false),
-    m_propertyUpdatesHasBeenSet(false),
-    m_propertyGroupUpdatesHasBeenSet(false)
+ComponentUpdateRequest::ComponentUpdateRequest(JsonView jsonValue)
+  : ComponentUpdateRequest()
 {
   *this = jsonValue;
 }

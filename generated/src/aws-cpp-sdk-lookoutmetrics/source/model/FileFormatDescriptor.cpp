@@ -24,9 +24,8 @@ FileFormatDescriptor::FileFormatDescriptor() :
 {
 }
 
-FileFormatDescriptor::FileFormatDescriptor(JsonView jsonValue) : 
-    m_csvFormatDescriptorHasBeenSet(false),
-    m_jsonFormatDescriptorHasBeenSet(false)
+FileFormatDescriptor::FileFormatDescriptor(JsonView jsonValue)
+  : FileFormatDescriptor()
 {
   *this = jsonValue;
 }

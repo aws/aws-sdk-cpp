@@ -24,9 +24,8 @@ UtteranceList::UtteranceList() :
 {
 }
 
-UtteranceList::UtteranceList(JsonView jsonValue) : 
-    m_botVersionHasBeenSet(false),
-    m_utterancesHasBeenSet(false)
+UtteranceList::UtteranceList(JsonView jsonValue)
+  : UtteranceList()
 {
   *this = jsonValue;
 }

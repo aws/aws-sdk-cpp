@@ -28,13 +28,8 @@ StreamSummary::StreamSummary() :
 {
 }
 
-StreamSummary::StreamSummary(JsonView jsonValue) : 
-    m_streamNameHasBeenSet(false),
-    m_streamARNHasBeenSet(false),
-    m_streamStatus(StreamStatus::NOT_SET),
-    m_streamStatusHasBeenSet(false),
-    m_streamModeDetailsHasBeenSet(false),
-    m_streamCreationTimestampHasBeenSet(false)
+StreamSummary::StreamSummary(JsonView jsonValue)
+  : StreamSummary()
 {
   *this = jsonValue;
 }

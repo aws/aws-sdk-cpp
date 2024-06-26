@@ -25,10 +25,8 @@ Beaconing::Beaconing() :
 {
 }
 
-Beaconing::Beaconing(JsonView jsonValue) : 
-    m_dataRate(0),
-    m_dataRateHasBeenSet(false),
-    m_frequenciesHasBeenSet(false)
+Beaconing::Beaconing(JsonView jsonValue)
+  : Beaconing()
 {
   *this = jsonValue;
 }

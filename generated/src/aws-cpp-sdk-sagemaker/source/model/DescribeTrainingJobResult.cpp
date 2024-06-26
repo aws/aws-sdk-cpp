@@ -29,15 +29,8 @@ DescribeTrainingJobResult::DescribeTrainingJobResult() :
 {
 }
 
-DescribeTrainingJobResult::DescribeTrainingJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_trainingJobStatus(TrainingJobStatus::NOT_SET),
-    m_secondaryStatus(SecondaryStatus::NOT_SET),
-    m_enableNetworkIsolation(false),
-    m_enableInterContainerTrafficEncryption(false),
-    m_enableManagedSpotTraining(false),
-    m_trainingTimeInSeconds(0),
-    m_billableTimeInSeconds(0),
-    m_profilingStatus(ProfilingStatus::NOT_SET)
+DescribeTrainingJobResult::DescribeTrainingJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeTrainingJobResult()
 {
   *this = result;
 }

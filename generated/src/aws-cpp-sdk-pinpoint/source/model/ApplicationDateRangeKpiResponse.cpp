@@ -28,13 +28,8 @@ ApplicationDateRangeKpiResponse::ApplicationDateRangeKpiResponse() :
 {
 }
 
-ApplicationDateRangeKpiResponse::ApplicationDateRangeKpiResponse(JsonView jsonValue) : 
-    m_applicationIdHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_kpiNameHasBeenSet(false),
-    m_kpiResultHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_startTimeHasBeenSet(false)
+ApplicationDateRangeKpiResponse::ApplicationDateRangeKpiResponse(JsonView jsonValue)
+  : ApplicationDateRangeKpiResponse()
 {
   *this = jsonValue;
 }

@@ -28,11 +28,8 @@ ClusterParameterGroup::ClusterParameterGroup() :
 {
 }
 
-ClusterParameterGroup::ClusterParameterGroup(const XmlNode& xmlNode) : 
-    m_parameterGroupNameHasBeenSet(false),
-    m_parameterGroupFamilyHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+ClusterParameterGroup::ClusterParameterGroup(const XmlNode& xmlNode)
+  : ClusterParameterGroup()
 {
   *this = xmlNode;
 }

@@ -25,10 +25,8 @@ ConfiguredTeam::ConfiguredTeam() :
 {
 }
 
-ConfiguredTeam::ConfiguredTeam(JsonView jsonValue) : 
-    m_tenantIdHasBeenSet(false),
-    m_teamIdHasBeenSet(false),
-    m_teamNameHasBeenSet(false)
+ConfiguredTeam::ConfiguredTeam(JsonView jsonValue)
+  : ConfiguredTeam()
 {
   *this = jsonValue;
 }

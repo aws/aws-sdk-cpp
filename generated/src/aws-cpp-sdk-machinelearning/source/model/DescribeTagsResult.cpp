@@ -22,8 +22,8 @@ DescribeTagsResult::DescribeTagsResult() :
 {
 }
 
-DescribeTagsResult::DescribeTagsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_resourceType(TaggableResourceType::NOT_SET)
+DescribeTagsResult::DescribeTagsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeTagsResult()
 {
   *this = result;
 }

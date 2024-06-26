@@ -22,8 +22,8 @@ DeleteSyncJobResult::DeleteSyncJobResult() :
 {
 }
 
-DeleteSyncJobResult::DeleteSyncJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_state(SyncJobState::NOT_SET)
+DeleteSyncJobResult::DeleteSyncJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeleteSyncJobResult()
 {
   *this = result;
 }

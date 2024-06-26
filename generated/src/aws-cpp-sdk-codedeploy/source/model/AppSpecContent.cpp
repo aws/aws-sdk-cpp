@@ -24,9 +24,8 @@ AppSpecContent::AppSpecContent() :
 {
 }
 
-AppSpecContent::AppSpecContent(JsonView jsonValue) : 
-    m_contentHasBeenSet(false),
-    m_sha256HasBeenSet(false)
+AppSpecContent::AppSpecContent(JsonView jsonValue)
+  : AppSpecContent()
 {
   *this = jsonValue;
 }

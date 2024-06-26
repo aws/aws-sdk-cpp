@@ -26,9 +26,8 @@ EventDestinationDoesNotExistException::EventDestinationDoesNotExistException() :
 {
 }
 
-EventDestinationDoesNotExistException::EventDestinationDoesNotExistException(const XmlNode& xmlNode) : 
-    m_configurationSetNameHasBeenSet(false),
-    m_eventDestinationNameHasBeenSet(false)
+EventDestinationDoesNotExistException::EventDestinationDoesNotExistException(const XmlNode& xmlNode)
+  : EventDestinationDoesNotExistException()
 {
   *this = xmlNode;
 }

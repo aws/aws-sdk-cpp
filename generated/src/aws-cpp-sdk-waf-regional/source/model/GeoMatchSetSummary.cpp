@@ -24,9 +24,8 @@ GeoMatchSetSummary::GeoMatchSetSummary() :
 {
 }
 
-GeoMatchSetSummary::GeoMatchSetSummary(JsonView jsonValue) : 
-    m_geoMatchSetIdHasBeenSet(false),
-    m_nameHasBeenSet(false)
+GeoMatchSetSummary::GeoMatchSetSummary(JsonView jsonValue)
+  : GeoMatchSetSummary()
 {
   *this = jsonValue;
 }

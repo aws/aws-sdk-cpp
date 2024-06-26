@@ -24,9 +24,8 @@ EksSource::EksSource() :
 {
 }
 
-EksSource::EksSource(JsonView jsonValue) : 
-    m_eksClusterArnHasBeenSet(false),
-    m_namespacesHasBeenSet(false)
+EksSource::EksSource(JsonView jsonValue)
+  : EksSource()
 {
   *this = jsonValue;
 }

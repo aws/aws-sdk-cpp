@@ -28,13 +28,8 @@ UpdateUserRequestItem::UpdateUserRequestItem() :
 {
 }
 
-UpdateUserRequestItem::UpdateUserRequestItem(JsonView jsonValue) : 
-    m_userIdHasBeenSet(false),
-    m_licenseType(License::NOT_SET),
-    m_licenseTypeHasBeenSet(false),
-    m_userType(UserType::NOT_SET),
-    m_userTypeHasBeenSet(false),
-    m_alexaForBusinessMetadataHasBeenSet(false)
+UpdateUserRequestItem::UpdateUserRequestItem(JsonView jsonValue)
+  : UpdateUserRequestItem()
 {
   *this = jsonValue;
 }

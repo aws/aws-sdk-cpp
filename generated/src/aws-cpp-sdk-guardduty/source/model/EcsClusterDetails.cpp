@@ -33,18 +33,8 @@ EcsClusterDetails::EcsClusterDetails() :
 {
 }
 
-EcsClusterDetails::EcsClusterDetails(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_activeServicesCount(0),
-    m_activeServicesCountHasBeenSet(false),
-    m_registeredContainerInstancesCount(0),
-    m_registeredContainerInstancesCountHasBeenSet(false),
-    m_runningTasksCount(0),
-    m_runningTasksCountHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_taskDetailsHasBeenSet(false)
+EcsClusterDetails::EcsClusterDetails(JsonView jsonValue)
+  : EcsClusterDetails()
 {
   *this = jsonValue;
 }

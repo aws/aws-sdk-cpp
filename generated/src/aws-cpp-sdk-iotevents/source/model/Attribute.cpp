@@ -23,8 +23,8 @@ Attribute::Attribute() :
 {
 }
 
-Attribute::Attribute(JsonView jsonValue) : 
-    m_jsonPathHasBeenSet(false)
+Attribute::Attribute(JsonView jsonValue)
+  : Attribute()
 {
   *this = jsonValue;
 }

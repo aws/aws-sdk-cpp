@@ -33,18 +33,8 @@ ObservabilityConfiguration::ObservabilityConfiguration() :
 {
 }
 
-ObservabilityConfiguration::ObservabilityConfiguration(JsonView jsonValue) : 
-    m_observabilityConfigurationArnHasBeenSet(false),
-    m_observabilityConfigurationNameHasBeenSet(false),
-    m_traceConfigurationHasBeenSet(false),
-    m_observabilityConfigurationRevision(0),
-    m_observabilityConfigurationRevisionHasBeenSet(false),
-    m_latest(false),
-    m_latestHasBeenSet(false),
-    m_status(ObservabilityConfigurationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_deletedAtHasBeenSet(false)
+ObservabilityConfiguration::ObservabilityConfiguration(JsonView jsonValue)
+  : ObservabilityConfiguration()
 {
   *this = jsonValue;
 }

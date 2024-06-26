@@ -24,9 +24,8 @@ FailedDependencyException::FailedDependencyException() :
 {
 }
 
-FailedDependencyException::FailedDependencyException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_errorCodeHasBeenSet(false)
+FailedDependencyException::FailedDependencyException(JsonView jsonValue)
+  : FailedDependencyException()
 {
   *this = jsonValue;
 }

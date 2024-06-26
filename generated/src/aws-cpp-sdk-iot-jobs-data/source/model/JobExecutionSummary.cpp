@@ -33,18 +33,8 @@ JobExecutionSummary::JobExecutionSummary() :
 {
 }
 
-JobExecutionSummary::JobExecutionSummary(JsonView jsonValue) : 
-    m_jobIdHasBeenSet(false),
-    m_queuedAt(0),
-    m_queuedAtHasBeenSet(false),
-    m_startedAt(0),
-    m_startedAtHasBeenSet(false),
-    m_lastUpdatedAt(0),
-    m_lastUpdatedAtHasBeenSet(false),
-    m_versionNumber(0),
-    m_versionNumberHasBeenSet(false),
-    m_executionNumber(0),
-    m_executionNumberHasBeenSet(false)
+JobExecutionSummary::JobExecutionSummary(JsonView jsonValue)
+  : JobExecutionSummary()
 {
   *this = jsonValue;
 }

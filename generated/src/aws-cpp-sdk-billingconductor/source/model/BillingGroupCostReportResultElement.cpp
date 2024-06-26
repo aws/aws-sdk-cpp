@@ -29,14 +29,8 @@ BillingGroupCostReportResultElement::BillingGroupCostReportResultElement() :
 {
 }
 
-BillingGroupCostReportResultElement::BillingGroupCostReportResultElement(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_aWSCostHasBeenSet(false),
-    m_proformaCostHasBeenSet(false),
-    m_marginHasBeenSet(false),
-    m_marginPercentageHasBeenSet(false),
-    m_currencyHasBeenSet(false),
-    m_attributesHasBeenSet(false)
+BillingGroupCostReportResultElement::BillingGroupCostReportResultElement(JsonView jsonValue)
+  : BillingGroupCostReportResultElement()
 {
   *this = jsonValue;
 }

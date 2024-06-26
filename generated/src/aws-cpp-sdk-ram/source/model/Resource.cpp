@@ -33,18 +33,8 @@ Resource::Resource() :
 {
 }
 
-Resource::Resource(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_resourceShareArnHasBeenSet(false),
-    m_resourceGroupArnHasBeenSet(false),
-    m_status(ResourceStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_resourceRegionScope(ResourceRegionScope::NOT_SET),
-    m_resourceRegionScopeHasBeenSet(false)
+Resource::Resource(JsonView jsonValue)
+  : Resource()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ PropertyNotification::PropertyNotification() :
 {
 }
 
-PropertyNotification::PropertyNotification(JsonView jsonValue) : 
-    m_topicHasBeenSet(false),
-    m_state(PropertyNotificationState::NOT_SET),
-    m_stateHasBeenSet(false)
+PropertyNotification::PropertyNotification(JsonView jsonValue)
+  : PropertyNotification()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ BucketSortCriteria::BucketSortCriteria() :
 {
 }
 
-BucketSortCriteria::BucketSortCriteria(JsonView jsonValue) : 
-    m_attributeNameHasBeenSet(false),
-    m_orderBy(OrderBy::NOT_SET),
-    m_orderByHasBeenSet(false)
+BucketSortCriteria::BucketSortCriteria(JsonView jsonValue)
+  : BucketSortCriteria()
 {
   *this = jsonValue;
 }

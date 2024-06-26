@@ -27,10 +27,8 @@ S3Grant::S3Grant() :
 {
 }
 
-S3Grant::S3Grant(const XmlNode& xmlNode) : 
-    m_granteeHasBeenSet(false),
-    m_permission(S3Permission::NOT_SET),
-    m_permissionHasBeenSet(false)
+S3Grant::S3Grant(const XmlNode& xmlNode)
+  : S3Grant()
 {
   *this = xmlNode;
 }

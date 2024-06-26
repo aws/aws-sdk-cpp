@@ -22,8 +22,8 @@ UpdateConstraintResult::UpdateConstraintResult() :
 {
 }
 
-UpdateConstraintResult::UpdateConstraintResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(Status::NOT_SET)
+UpdateConstraintResult::UpdateConstraintResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateConstraintResult()
 {
   *this = result;
 }

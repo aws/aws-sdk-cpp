@@ -22,8 +22,8 @@ AddTagsResult::AddTagsResult() :
 {
 }
 
-AddTagsResult::AddTagsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_resourceType(TaggableResourceType::NOT_SET)
+AddTagsResult::AddTagsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : AddTagsResult()
 {
   *this = result;
 }

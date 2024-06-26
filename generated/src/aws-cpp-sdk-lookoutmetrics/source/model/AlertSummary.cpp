@@ -34,19 +34,8 @@ AlertSummary::AlertSummary() :
 {
 }
 
-AlertSummary::AlertSummary(JsonView jsonValue) : 
-    m_alertArnHasBeenSet(false),
-    m_anomalyDetectorArnHasBeenSet(false),
-    m_alertNameHasBeenSet(false),
-    m_alertSensitivityThreshold(0),
-    m_alertSensitivityThresholdHasBeenSet(false),
-    m_alertType(AlertType::NOT_SET),
-    m_alertTypeHasBeenSet(false),
-    m_alertStatus(AlertStatus::NOT_SET),
-    m_alertStatusHasBeenSet(false),
-    m_lastModificationTimeHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+AlertSummary::AlertSummary(JsonView jsonValue)
+  : AlertSummary()
 {
   *this = jsonValue;
 }

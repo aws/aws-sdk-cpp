@@ -31,16 +31,8 @@ DataReplicationInfoReplicatedDisk::DataReplicationInfoReplicatedDisk() :
 {
 }
 
-DataReplicationInfoReplicatedDisk::DataReplicationInfoReplicatedDisk(JsonView jsonValue) : 
-    m_backloggedStorageBytes(0),
-    m_backloggedStorageBytesHasBeenSet(false),
-    m_deviceNameHasBeenSet(false),
-    m_replicatedStorageBytes(0),
-    m_replicatedStorageBytesHasBeenSet(false),
-    m_rescannedStorageBytes(0),
-    m_rescannedStorageBytesHasBeenSet(false),
-    m_totalStorageBytes(0),
-    m_totalStorageBytesHasBeenSet(false)
+DataReplicationInfoReplicatedDisk::DataReplicationInfoReplicatedDisk(JsonView jsonValue)
+  : DataReplicationInfoReplicatedDisk()
 {
   *this = jsonValue;
 }

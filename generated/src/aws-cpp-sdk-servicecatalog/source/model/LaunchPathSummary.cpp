@@ -26,11 +26,8 @@ LaunchPathSummary::LaunchPathSummary() :
 {
 }
 
-LaunchPathSummary::LaunchPathSummary(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_constraintSummariesHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_nameHasBeenSet(false)
+LaunchPathSummary::LaunchPathSummary(JsonView jsonValue)
+  : LaunchPathSummary()
 {
   *this = jsonValue;
 }

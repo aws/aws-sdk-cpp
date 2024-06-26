@@ -23,8 +23,8 @@ ListPricingRulesFilter::ListPricingRulesFilter() :
 {
 }
 
-ListPricingRulesFilter::ListPricingRulesFilter(JsonView jsonValue) : 
-    m_arnsHasBeenSet(false)
+ListPricingRulesFilter::ListPricingRulesFilter(JsonView jsonValue)
+  : ListPricingRulesFilter()
 {
   *this = jsonValue;
 }

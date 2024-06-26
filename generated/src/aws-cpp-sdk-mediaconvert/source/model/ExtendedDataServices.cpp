@@ -26,11 +26,8 @@ ExtendedDataServices::ExtendedDataServices() :
 {
 }
 
-ExtendedDataServices::ExtendedDataServices(JsonView jsonValue) : 
-    m_copyProtectionAction(CopyProtectionAction::NOT_SET),
-    m_copyProtectionActionHasBeenSet(false),
-    m_vchipAction(VchipAction::NOT_SET),
-    m_vchipActionHasBeenSet(false)
+ExtendedDataServices::ExtendedDataServices(JsonView jsonValue)
+  : ExtendedDataServices()
 {
   *this = jsonValue;
 }

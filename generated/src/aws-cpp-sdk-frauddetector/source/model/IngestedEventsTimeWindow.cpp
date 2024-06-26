@@ -24,9 +24,8 @@ IngestedEventsTimeWindow::IngestedEventsTimeWindow() :
 {
 }
 
-IngestedEventsTimeWindow::IngestedEventsTimeWindow(JsonView jsonValue) : 
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
+IngestedEventsTimeWindow::IngestedEventsTimeWindow(JsonView jsonValue)
+  : IngestedEventsTimeWindow()
 {
   *this = jsonValue;
 }

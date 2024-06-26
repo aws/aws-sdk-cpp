@@ -27,12 +27,8 @@ PatchOperation::PatchOperation() :
 {
 }
 
-PatchOperation::PatchOperation(JsonView jsonValue) : 
-    m_op(Op::NOT_SET),
-    m_opHasBeenSet(false),
-    m_pathHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_fromHasBeenSet(false)
+PatchOperation::PatchOperation(JsonView jsonValue)
+  : PatchOperation()
 {
   *this = jsonValue;
 }

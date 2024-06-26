@@ -26,11 +26,8 @@ TtlDuration::TtlDuration() :
 {
 }
 
-TtlDuration::TtlDuration(JsonView jsonValue) : 
-    m_unit(TtlDurationUnit::NOT_SET),
-    m_unitHasBeenSet(false),
-    m_value(0),
-    m_valueHasBeenSet(false)
+TtlDuration::TtlDuration(JsonView jsonValue)
+  : TtlDuration()
 {
   *this = jsonValue;
 }

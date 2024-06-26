@@ -23,8 +23,8 @@ PropertyNameSuggestion::PropertyNameSuggestion() :
 {
 }
 
-PropertyNameSuggestion::PropertyNameSuggestion(JsonView jsonValue) : 
-    m_propertyNameHasBeenSet(false)
+PropertyNameSuggestion::PropertyNameSuggestion(JsonView jsonValue)
+  : PropertyNameSuggestion()
 {
   *this = jsonValue;
 }

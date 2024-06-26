@@ -32,17 +32,8 @@ AwsEc2NetworkAclEntry::AwsEc2NetworkAclEntry() :
 {
 }
 
-AwsEc2NetworkAclEntry::AwsEc2NetworkAclEntry(JsonView jsonValue) : 
-    m_cidrBlockHasBeenSet(false),
-    m_egress(false),
-    m_egressHasBeenSet(false),
-    m_icmpTypeCodeHasBeenSet(false),
-    m_ipv6CidrBlockHasBeenSet(false),
-    m_portRangeHasBeenSet(false),
-    m_protocolHasBeenSet(false),
-    m_ruleActionHasBeenSet(false),
-    m_ruleNumber(0),
-    m_ruleNumberHasBeenSet(false)
+AwsEc2NetworkAclEntry::AwsEc2NetworkAclEntry(JsonView jsonValue)
+  : AwsEc2NetworkAclEntry()
 {
   *this = jsonValue;
 }

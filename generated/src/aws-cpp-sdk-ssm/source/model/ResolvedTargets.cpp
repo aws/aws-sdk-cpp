@@ -25,10 +25,8 @@ ResolvedTargets::ResolvedTargets() :
 {
 }
 
-ResolvedTargets::ResolvedTargets(JsonView jsonValue) : 
-    m_parameterValuesHasBeenSet(false),
-    m_truncated(false),
-    m_truncatedHasBeenSet(false)
+ResolvedTargets::ResolvedTargets(JsonView jsonValue)
+  : ResolvedTargets()
 {
   *this = jsonValue;
 }

@@ -29,12 +29,8 @@ ObjectLambdaConfiguration::ObjectLambdaConfiguration() :
 {
 }
 
-ObjectLambdaConfiguration::ObjectLambdaConfiguration(const XmlNode& xmlNode) : 
-    m_supportingAccessPointHasBeenSet(false),
-    m_cloudWatchMetricsEnabled(false),
-    m_cloudWatchMetricsEnabledHasBeenSet(false),
-    m_allowedFeaturesHasBeenSet(false),
-    m_transformationConfigurationsHasBeenSet(false)
+ObjectLambdaConfiguration::ObjectLambdaConfiguration(const XmlNode& xmlNode)
+  : ObjectLambdaConfiguration()
 {
   *this = xmlNode;
 }

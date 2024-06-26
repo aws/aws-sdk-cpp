@@ -24,9 +24,8 @@ SOA::SOA() :
 {
 }
 
-SOA::SOA(JsonView jsonValue) : 
-    m_tTL(0),
-    m_tTLHasBeenSet(false)
+SOA::SOA(JsonView jsonValue)
+  : SOA()
 {
   *this = jsonValue;
 }

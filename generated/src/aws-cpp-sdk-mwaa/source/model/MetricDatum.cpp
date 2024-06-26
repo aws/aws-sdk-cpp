@@ -30,15 +30,8 @@ MetricDatum::MetricDatum() :
 {
 }
 
-MetricDatum::MetricDatum(JsonView jsonValue) : 
-    m_metricNameHasBeenSet(false),
-    m_timestampHasBeenSet(false),
-    m_dimensionsHasBeenSet(false),
-    m_value(0.0),
-    m_valueHasBeenSet(false),
-    m_unit(Unit::NOT_SET),
-    m_unitHasBeenSet(false),
-    m_statisticValuesHasBeenSet(false)
+MetricDatum::MetricDatum(JsonView jsonValue)
+  : MetricDatum()
 {
   *this = jsonValue;
 }

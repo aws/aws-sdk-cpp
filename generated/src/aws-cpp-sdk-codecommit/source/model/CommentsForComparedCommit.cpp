@@ -29,14 +29,8 @@ CommentsForComparedCommit::CommentsForComparedCommit() :
 {
 }
 
-CommentsForComparedCommit::CommentsForComparedCommit(JsonView jsonValue) : 
-    m_repositoryNameHasBeenSet(false),
-    m_beforeCommitIdHasBeenSet(false),
-    m_afterCommitIdHasBeenSet(false),
-    m_beforeBlobIdHasBeenSet(false),
-    m_afterBlobIdHasBeenSet(false),
-    m_locationHasBeenSet(false),
-    m_commentsHasBeenSet(false)
+CommentsForComparedCommit::CommentsForComparedCommit(JsonView jsonValue)
+  : CommentsForComparedCommit()
 {
   *this = jsonValue;
 }

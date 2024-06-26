@@ -23,9 +23,8 @@ StartMetadataGenerationRunResult::StartMetadataGenerationRunResult() :
 {
 }
 
-StartMetadataGenerationRunResult::StartMetadataGenerationRunResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(MetadataGenerationRunStatus::NOT_SET),
-    m_type(MetadataGenerationRunType::NOT_SET)
+StartMetadataGenerationRunResult::StartMetadataGenerationRunResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : StartMetadataGenerationRunResult()
 {
   *this = result;
 }

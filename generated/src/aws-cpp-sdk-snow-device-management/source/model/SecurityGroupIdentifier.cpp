@@ -24,9 +24,8 @@ SecurityGroupIdentifier::SecurityGroupIdentifier() :
 {
 }
 
-SecurityGroupIdentifier::SecurityGroupIdentifier(JsonView jsonValue) : 
-    m_groupIdHasBeenSet(false),
-    m_groupNameHasBeenSet(false)
+SecurityGroupIdentifier::SecurityGroupIdentifier(JsonView jsonValue)
+  : SecurityGroupIdentifier()
 {
   *this = jsonValue;
 }

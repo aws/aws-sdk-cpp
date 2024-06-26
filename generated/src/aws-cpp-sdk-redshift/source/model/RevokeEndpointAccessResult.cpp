@@ -24,10 +24,8 @@ RevokeEndpointAccessResult::RevokeEndpointAccessResult() :
 {
 }
 
-RevokeEndpointAccessResult::RevokeEndpointAccessResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_status(AuthorizationStatus::NOT_SET),
-    m_allowedAllVPCs(false),
-    m_endpointCount(0)
+RevokeEndpointAccessResult::RevokeEndpointAccessResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : RevokeEndpointAccessResult()
 {
   *this = result;
 }

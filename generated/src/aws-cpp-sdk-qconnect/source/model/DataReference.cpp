@@ -24,9 +24,8 @@ DataReference::DataReference() :
 {
 }
 
-DataReference::DataReference(JsonView jsonValue) : 
-    m_contentReferenceHasBeenSet(false),
-    m_generativeReferenceHasBeenSet(false)
+DataReference::DataReference(JsonView jsonValue)
+  : DataReference()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ MonthlySetting::MonthlySetting() :
 {
 }
 
-MonthlySetting::MonthlySetting(JsonView jsonValue) : 
-    m_dayOfMonth(0),
-    m_dayOfMonthHasBeenSet(false),
-    m_handOffTimeHasBeenSet(false)
+MonthlySetting::MonthlySetting(JsonView jsonValue)
+  : MonthlySetting()
 {
   *this = jsonValue;
 }

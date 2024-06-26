@@ -23,8 +23,8 @@ TagQueryConfiguration::TagQueryConfiguration() :
 {
 }
 
-TagQueryConfiguration::TagQueryConfiguration(JsonView jsonValue) : 
-    m_tagKeyHasBeenSet(false)
+TagQueryConfiguration::TagQueryConfiguration(JsonView jsonValue)
+  : TagQueryConfiguration()
 {
   *this = jsonValue;
 }

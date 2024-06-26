@@ -26,11 +26,8 @@ ArcConfiguration::ArcConfiguration() :
 {
 }
 
-ArcConfiguration::ArcConfiguration(JsonView jsonValue) : 
-    m_arcAngle(0.0),
-    m_arcAngleHasBeenSet(false),
-    m_arcThickness(ArcThicknessOptions::NOT_SET),
-    m_arcThicknessHasBeenSet(false)
+ArcConfiguration::ArcConfiguration(JsonView jsonValue)
+  : ArcConfiguration()
 {
   *this = jsonValue;
 }

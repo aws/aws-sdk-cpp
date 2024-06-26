@@ -28,11 +28,8 @@ DeleteLaunchTemplateVersionsResponseSuccessItem::DeleteLaunchTemplateVersionsRes
 {
 }
 
-DeleteLaunchTemplateVersionsResponseSuccessItem::DeleteLaunchTemplateVersionsResponseSuccessItem(const XmlNode& xmlNode) : 
-    m_launchTemplateIdHasBeenSet(false),
-    m_launchTemplateNameHasBeenSet(false),
-    m_versionNumber(0),
-    m_versionNumberHasBeenSet(false)
+DeleteLaunchTemplateVersionsResponseSuccessItem::DeleteLaunchTemplateVersionsResponseSuccessItem(const XmlNode& xmlNode)
+  : DeleteLaunchTemplateVersionsResponseSuccessItem()
 {
   *this = xmlNode;
 }

@@ -24,9 +24,8 @@ AuditCheckConfiguration::AuditCheckConfiguration() :
 {
 }
 
-AuditCheckConfiguration::AuditCheckConfiguration(JsonView jsonValue) : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
+AuditCheckConfiguration::AuditCheckConfiguration(JsonView jsonValue)
+  : AuditCheckConfiguration()
 {
   *this = jsonValue;
 }

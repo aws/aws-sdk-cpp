@@ -24,9 +24,8 @@ AwsWafv2WebAclActionDetails::AwsWafv2WebAclActionDetails() :
 {
 }
 
-AwsWafv2WebAclActionDetails::AwsWafv2WebAclActionDetails(JsonView jsonValue) : 
-    m_allowHasBeenSet(false),
-    m_blockHasBeenSet(false)
+AwsWafv2WebAclActionDetails::AwsWafv2WebAclActionDetails(JsonView jsonValue)
+  : AwsWafv2WebAclActionDetails()
 {
   *this = jsonValue;
 }

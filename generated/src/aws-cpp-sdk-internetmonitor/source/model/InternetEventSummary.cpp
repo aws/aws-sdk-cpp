@@ -31,16 +31,8 @@ InternetEventSummary::InternetEventSummary() :
 {
 }
 
-InternetEventSummary::InternetEventSummary(JsonView jsonValue) : 
-    m_eventIdHasBeenSet(false),
-    m_eventArnHasBeenSet(false),
-    m_startedAtHasBeenSet(false),
-    m_endedAtHasBeenSet(false),
-    m_clientLocationHasBeenSet(false),
-    m_eventType(InternetEventType::NOT_SET),
-    m_eventTypeHasBeenSet(false),
-    m_eventStatus(InternetEventStatus::NOT_SET),
-    m_eventStatusHasBeenSet(false)
+InternetEventSummary::InternetEventSummary(JsonView jsonValue)
+  : InternetEventSummary()
 {
   *this = jsonValue;
 }

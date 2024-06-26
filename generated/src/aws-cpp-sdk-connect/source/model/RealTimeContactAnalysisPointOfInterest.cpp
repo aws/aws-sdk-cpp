@@ -23,8 +23,8 @@ RealTimeContactAnalysisPointOfInterest::RealTimeContactAnalysisPointOfInterest()
 {
 }
 
-RealTimeContactAnalysisPointOfInterest::RealTimeContactAnalysisPointOfInterest(JsonView jsonValue) : 
-    m_transcriptItemsHasBeenSet(false)
+RealTimeContactAnalysisPointOfInterest::RealTimeContactAnalysisPointOfInterest(JsonView jsonValue)
+  : RealTimeContactAnalysisPointOfInterest()
 {
   *this = jsonValue;
 }

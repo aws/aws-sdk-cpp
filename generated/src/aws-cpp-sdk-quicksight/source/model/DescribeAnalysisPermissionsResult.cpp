@@ -22,8 +22,8 @@ DescribeAnalysisPermissionsResult::DescribeAnalysisPermissionsResult() :
 {
 }
 
-DescribeAnalysisPermissionsResult::DescribeAnalysisPermissionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+DescribeAnalysisPermissionsResult::DescribeAnalysisPermissionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeAnalysisPermissionsResult()
 {
   *this = result;
 }

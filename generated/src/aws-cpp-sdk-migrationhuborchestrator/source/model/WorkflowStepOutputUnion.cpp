@@ -26,11 +26,8 @@ WorkflowStepOutputUnion::WorkflowStepOutputUnion() :
 {
 }
 
-WorkflowStepOutputUnion::WorkflowStepOutputUnion(JsonView jsonValue) : 
-    m_integerValue(0),
-    m_integerValueHasBeenSet(false),
-    m_stringValueHasBeenSet(false),
-    m_listOfStringValueHasBeenSet(false)
+WorkflowStepOutputUnion::WorkflowStepOutputUnion(JsonView jsonValue)
+  : WorkflowStepOutputUnion()
 {
   *this = jsonValue;
 }

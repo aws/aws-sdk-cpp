@@ -23,8 +23,8 @@ ColumnDescription::ColumnDescription() :
 {
 }
 
-ColumnDescription::ColumnDescription(JsonView jsonValue) : 
-    m_textHasBeenSet(false)
+ColumnDescription::ColumnDescription(JsonView jsonValue)
+  : ColumnDescription()
 {
   *this = jsonValue;
 }

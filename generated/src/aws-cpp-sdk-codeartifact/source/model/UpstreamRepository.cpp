@@ -23,8 +23,8 @@ UpstreamRepository::UpstreamRepository() :
 {
 }
 
-UpstreamRepository::UpstreamRepository(JsonView jsonValue) : 
-    m_repositoryNameHasBeenSet(false)
+UpstreamRepository::UpstreamRepository(JsonView jsonValue)
+  : UpstreamRepository()
 {
   *this = jsonValue;
 }

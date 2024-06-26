@@ -28,13 +28,8 @@ ConflictException::ConflictException() :
 {
 }
 
-ConflictException::ConflictException(JsonView jsonValue) : 
-    m_contextHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_reason(ConflictExceptionReason::NOT_SET),
-    m_reasonHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false)
+ConflictException::ConflictException(JsonView jsonValue)
+  : ConflictException()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ S3DataSourceConfiguration::S3DataSourceConfiguration() :
 {
 }
 
-S3DataSourceConfiguration::S3DataSourceConfiguration(JsonView jsonValue) : 
-    m_bucketArnHasBeenSet(false),
-    m_bucketOwnerAccountIdHasBeenSet(false),
-    m_inclusionPrefixesHasBeenSet(false)
+S3DataSourceConfiguration::S3DataSourceConfiguration(JsonView jsonValue)
+  : S3DataSourceConfiguration()
 {
   *this = jsonValue;
 }

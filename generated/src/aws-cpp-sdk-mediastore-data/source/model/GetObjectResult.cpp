@@ -55,9 +55,8 @@ GetObjectResult& GetObjectResult::operator=(GetObjectResult&& toMove)
    return *this;
 }
 
-GetObjectResult::GetObjectResult(Aws::AmazonWebServiceResult<ResponseStream>&& result) : 
-    m_contentLength(0),
-    m_statusCode(0)
+GetObjectResult::GetObjectResult(Aws::AmazonWebServiceResult<ResponseStream>&& result)
+  : GetObjectResult()
 {
   *this = std::move(result);
 }

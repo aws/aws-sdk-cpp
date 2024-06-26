@@ -24,9 +24,8 @@ EndpointConfiguration::EndpointConfiguration() :
 {
 }
 
-EndpointConfiguration::EndpointConfiguration(JsonView jsonValue) : 
-    m_typesHasBeenSet(false),
-    m_vpcEndpointIdsHasBeenSet(false)
+EndpointConfiguration::EndpointConfiguration(JsonView jsonValue)
+  : EndpointConfiguration()
 {
   *this = jsonValue;
 }

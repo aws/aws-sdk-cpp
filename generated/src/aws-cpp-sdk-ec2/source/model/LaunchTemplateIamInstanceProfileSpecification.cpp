@@ -26,9 +26,8 @@ LaunchTemplateIamInstanceProfileSpecification::LaunchTemplateIamInstanceProfileS
 {
 }
 
-LaunchTemplateIamInstanceProfileSpecification::LaunchTemplateIamInstanceProfileSpecification(const XmlNode& xmlNode) : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false)
+LaunchTemplateIamInstanceProfileSpecification::LaunchTemplateIamInstanceProfileSpecification(const XmlNode& xmlNode)
+  : LaunchTemplateIamInstanceProfileSpecification()
 {
   *this = xmlNode;
 }

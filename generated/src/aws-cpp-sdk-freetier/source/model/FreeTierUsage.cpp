@@ -35,20 +35,8 @@ FreeTierUsage::FreeTierUsage() :
 {
 }
 
-FreeTierUsage::FreeTierUsage(JsonView jsonValue) : 
-    m_actualUsageAmount(0.0),
-    m_actualUsageAmountHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_forecastedUsageAmount(0.0),
-    m_forecastedUsageAmountHasBeenSet(false),
-    m_freeTierTypeHasBeenSet(false),
-    m_limit(0.0),
-    m_limitHasBeenSet(false),
-    m_operationHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_serviceHasBeenSet(false),
-    m_unitHasBeenSet(false),
-    m_usageTypeHasBeenSet(false)
+FreeTierUsage::FreeTierUsage(JsonView jsonValue)
+  : FreeTierUsage()
 {
   *this = jsonValue;
 }

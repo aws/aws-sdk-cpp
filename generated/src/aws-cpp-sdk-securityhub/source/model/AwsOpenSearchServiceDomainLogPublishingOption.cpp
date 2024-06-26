@@ -25,10 +25,8 @@ AwsOpenSearchServiceDomainLogPublishingOption::AwsOpenSearchServiceDomainLogPubl
 {
 }
 
-AwsOpenSearchServiceDomainLogPublishingOption::AwsOpenSearchServiceDomainLogPublishingOption(JsonView jsonValue) : 
-    m_cloudWatchLogsLogGroupArnHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
+AwsOpenSearchServiceDomainLogPublishingOption::AwsOpenSearchServiceDomainLogPublishingOption(JsonView jsonValue)
+  : AwsOpenSearchServiceDomainLogPublishingOption()
 {
   *this = jsonValue;
 }

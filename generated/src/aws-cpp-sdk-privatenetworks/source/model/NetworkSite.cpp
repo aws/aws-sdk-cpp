@@ -34,19 +34,8 @@ NetworkSite::NetworkSite() :
 {
 }
 
-NetworkSite::NetworkSite(JsonView jsonValue) : 
-    m_availabilityZoneHasBeenSet(false),
-    m_availabilityZoneIdHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_currentPlanHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_networkArnHasBeenSet(false),
-    m_networkSiteArnHasBeenSet(false),
-    m_networkSiteNameHasBeenSet(false),
-    m_pendingPlanHasBeenSet(false),
-    m_status(NetworkSiteStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusReasonHasBeenSet(false)
+NetworkSite::NetworkSite(JsonView jsonValue)
+  : NetworkSite()
 {
   *this = jsonValue;
 }

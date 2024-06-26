@@ -27,12 +27,8 @@ TimeSeriesServiceStatistics::TimeSeriesServiceStatistics() :
 {
 }
 
-TimeSeriesServiceStatistics::TimeSeriesServiceStatistics(JsonView jsonValue) : 
-    m_timestampHasBeenSet(false),
-    m_edgeSummaryStatisticsHasBeenSet(false),
-    m_serviceSummaryStatisticsHasBeenSet(false),
-    m_serviceForecastStatisticsHasBeenSet(false),
-    m_responseTimeHistogramHasBeenSet(false)
+TimeSeriesServiceStatistics::TimeSeriesServiceStatistics(JsonView jsonValue)
+  : TimeSeriesServiceStatistics()
 {
   *this = jsonValue;
 }

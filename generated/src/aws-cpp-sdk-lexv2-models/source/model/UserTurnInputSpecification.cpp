@@ -25,10 +25,8 @@ UserTurnInputSpecification::UserTurnInputSpecification() :
 {
 }
 
-UserTurnInputSpecification::UserTurnInputSpecification(JsonView jsonValue) : 
-    m_utteranceInputHasBeenSet(false),
-    m_requestAttributesHasBeenSet(false),
-    m_sessionStateHasBeenSet(false)
+UserTurnInputSpecification::UserTurnInputSpecification(JsonView jsonValue)
+  : UserTurnInputSpecification()
 {
   *this = jsonValue;
 }

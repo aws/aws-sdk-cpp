@@ -27,12 +27,8 @@ VTLDevice::VTLDevice() :
 {
 }
 
-VTLDevice::VTLDevice(JsonView jsonValue) : 
-    m_vTLDeviceARNHasBeenSet(false),
-    m_vTLDeviceTypeHasBeenSet(false),
-    m_vTLDeviceVendorHasBeenSet(false),
-    m_vTLDeviceProductIdentifierHasBeenSet(false),
-    m_deviceiSCSIAttributesHasBeenSet(false)
+VTLDevice::VTLDevice(JsonView jsonValue)
+  : VTLDevice()
 {
   *this = jsonValue;
 }

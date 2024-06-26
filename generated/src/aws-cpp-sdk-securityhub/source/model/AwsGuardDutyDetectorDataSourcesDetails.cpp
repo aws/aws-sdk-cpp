@@ -28,13 +28,8 @@ AwsGuardDutyDetectorDataSourcesDetails::AwsGuardDutyDetectorDataSourcesDetails()
 {
 }
 
-AwsGuardDutyDetectorDataSourcesDetails::AwsGuardDutyDetectorDataSourcesDetails(JsonView jsonValue) : 
-    m_cloudTrailHasBeenSet(false),
-    m_dnsLogsHasBeenSet(false),
-    m_flowLogsHasBeenSet(false),
-    m_kubernetesHasBeenSet(false),
-    m_malwareProtectionHasBeenSet(false),
-    m_s3LogsHasBeenSet(false)
+AwsGuardDutyDetectorDataSourcesDetails::AwsGuardDutyDetectorDataSourcesDetails(JsonView jsonValue)
+  : AwsGuardDutyDetectorDataSourcesDetails()
 {
   *this = jsonValue;
 }

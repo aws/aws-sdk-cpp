@@ -45,30 +45,8 @@ ImagePipeline::ImagePipeline() :
 {
 }
 
-ImagePipeline::ImagePipeline(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_platform(Platform::NOT_SET),
-    m_platformHasBeenSet(false),
-    m_enhancedImageMetadataEnabled(false),
-    m_enhancedImageMetadataEnabledHasBeenSet(false),
-    m_imageRecipeArnHasBeenSet(false),
-    m_containerRecipeArnHasBeenSet(false),
-    m_infrastructureConfigurationArnHasBeenSet(false),
-    m_distributionConfigurationArnHasBeenSet(false),
-    m_imageTestsConfigurationHasBeenSet(false),
-    m_scheduleHasBeenSet(false),
-    m_status(PipelineStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_dateCreatedHasBeenSet(false),
-    m_dateUpdatedHasBeenSet(false),
-    m_dateLastRunHasBeenSet(false),
-    m_dateNextRunHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_imageScanningConfigurationHasBeenSet(false),
-    m_executionRoleHasBeenSet(false),
-    m_workflowsHasBeenSet(false)
+ImagePipeline::ImagePipeline(JsonView jsonValue)
+  : ImagePipeline()
 {
   *this = jsonValue;
 }

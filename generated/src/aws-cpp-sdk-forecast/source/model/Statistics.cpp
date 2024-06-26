@@ -44,29 +44,8 @@ Statistics::Statistics() :
 {
 }
 
-Statistics::Statistics(JsonView jsonValue) : 
-    m_count(0),
-    m_countHasBeenSet(false),
-    m_countDistinct(0),
-    m_countDistinctHasBeenSet(false),
-    m_countNull(0),
-    m_countNullHasBeenSet(false),
-    m_countNan(0),
-    m_countNanHasBeenSet(false),
-    m_minHasBeenSet(false),
-    m_maxHasBeenSet(false),
-    m_avg(0.0),
-    m_avgHasBeenSet(false),
-    m_stddev(0.0),
-    m_stddevHasBeenSet(false),
-    m_countLong(0),
-    m_countLongHasBeenSet(false),
-    m_countDistinctLong(0),
-    m_countDistinctLongHasBeenSet(false),
-    m_countNullLong(0),
-    m_countNullLongHasBeenSet(false),
-    m_countNanLong(0),
-    m_countNanLongHasBeenSet(false)
+Statistics::Statistics(JsonView jsonValue)
+  : Statistics()
 {
   *this = jsonValue;
 }

@@ -27,12 +27,8 @@ UpgradeHistory::UpgradeHistory() :
 {
 }
 
-UpgradeHistory::UpgradeHistory(JsonView jsonValue) : 
-    m_upgradeNameHasBeenSet(false),
-    m_startTimestampHasBeenSet(false),
-    m_upgradeStatus(UpgradeStatus::NOT_SET),
-    m_upgradeStatusHasBeenSet(false),
-    m_stepsListHasBeenSet(false)
+UpgradeHistory::UpgradeHistory(JsonView jsonValue)
+  : UpgradeHistory()
 {
   *this = jsonValue;
 }

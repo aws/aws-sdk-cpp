@@ -24,9 +24,8 @@ ContainerEnvironment::ContainerEnvironment() :
 {
 }
 
-ContainerEnvironment::ContainerEnvironment(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
+ContainerEnvironment::ContainerEnvironment(JsonView jsonValue)
+  : ContainerEnvironment()
 {
   *this = jsonValue;
 }

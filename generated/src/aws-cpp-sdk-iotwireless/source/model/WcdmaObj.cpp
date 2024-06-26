@@ -36,21 +36,8 @@ WcdmaObj::WcdmaObj() :
 {
 }
 
-WcdmaObj::WcdmaObj(JsonView jsonValue) : 
-    m_mcc(0),
-    m_mccHasBeenSet(false),
-    m_mnc(0),
-    m_mncHasBeenSet(false),
-    m_lac(0),
-    m_lacHasBeenSet(false),
-    m_utranCid(0),
-    m_utranCidHasBeenSet(false),
-    m_wcdmaLocalIdHasBeenSet(false),
-    m_rscp(0),
-    m_rscpHasBeenSet(false),
-    m_pathLoss(0),
-    m_pathLossHasBeenSet(false),
-    m_wcdmaNmrHasBeenSet(false)
+WcdmaObj::WcdmaObj(JsonView jsonValue)
+  : WcdmaObj()
 {
   *this = jsonValue;
 }

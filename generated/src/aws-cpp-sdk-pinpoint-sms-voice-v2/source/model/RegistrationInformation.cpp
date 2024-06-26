@@ -35,20 +35,8 @@ RegistrationInformation::RegistrationInformation() :
 {
 }
 
-RegistrationInformation::RegistrationInformation(JsonView jsonValue) : 
-    m_registrationArnHasBeenSet(false),
-    m_registrationIdHasBeenSet(false),
-    m_registrationTypeHasBeenSet(false),
-    m_registrationStatus(RegistrationStatus::NOT_SET),
-    m_registrationStatusHasBeenSet(false),
-    m_currentVersionNumber(0),
-    m_currentVersionNumberHasBeenSet(false),
-    m_approvedVersionNumber(0),
-    m_approvedVersionNumberHasBeenSet(false),
-    m_latestDeniedVersionNumber(0),
-    m_latestDeniedVersionNumberHasBeenSet(false),
-    m_additionalAttributesHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false)
+RegistrationInformation::RegistrationInformation(JsonView jsonValue)
+  : RegistrationInformation()
 {
   *this = jsonValue;
 }

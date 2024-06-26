@@ -24,9 +24,8 @@ IntentConfidence::IntentConfidence() :
 {
 }
 
-IntentConfidence::IntentConfidence(JsonView jsonValue) : 
-    m_score(0.0),
-    m_scoreHasBeenSet(false)
+IntentConfidence::IntentConfidence(JsonView jsonValue)
+  : IntentConfidence()
 {
   *this = jsonValue;
 }

@@ -26,9 +26,8 @@ Matcher::Matcher() :
 {
 }
 
-Matcher::Matcher(const XmlNode& xmlNode) : 
-    m_httpCodeHasBeenSet(false),
-    m_grpcCodeHasBeenSet(false)
+Matcher::Matcher(const XmlNode& xmlNode)
+  : Matcher()
 {
   *this = xmlNode;
 }

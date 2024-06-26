@@ -25,8 +25,8 @@ LakeFormationScopeUnion::LakeFormationScopeUnion() :
 {
 }
 
-LakeFormationScopeUnion::LakeFormationScopeUnion(const XmlNode& xmlNode) : 
-    m_lakeFormationQueryHasBeenSet(false)
+LakeFormationScopeUnion::LakeFormationScopeUnion(const XmlNode& xmlNode)
+  : LakeFormationScopeUnion()
 {
   *this = xmlNode;
 }

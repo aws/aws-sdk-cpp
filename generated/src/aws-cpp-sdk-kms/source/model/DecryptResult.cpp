@@ -23,8 +23,8 @@ DecryptResult::DecryptResult() :
 {
 }
 
-DecryptResult::DecryptResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_encryptionAlgorithm(EncryptionAlgorithmSpec::NOT_SET)
+DecryptResult::DecryptResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DecryptResult()
 {
   *this = result;
 }

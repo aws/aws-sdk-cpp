@@ -25,10 +25,8 @@ AwsRdsDbInstanceAssociatedRole::AwsRdsDbInstanceAssociatedRole() :
 {
 }
 
-AwsRdsDbInstanceAssociatedRole::AwsRdsDbInstanceAssociatedRole(JsonView jsonValue) : 
-    m_roleArnHasBeenSet(false),
-    m_featureNameHasBeenSet(false),
-    m_statusHasBeenSet(false)
+AwsRdsDbInstanceAssociatedRole::AwsRdsDbInstanceAssociatedRole(JsonView jsonValue)
+  : AwsRdsDbInstanceAssociatedRole()
 {
   *this = jsonValue;
 }

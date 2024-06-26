@@ -24,9 +24,8 @@ AgentOrchestrationConfig::AgentOrchestrationConfig() :
 {
 }
 
-AgentOrchestrationConfig::AgentOrchestrationConfig(JsonView jsonValue) : 
-    m_profilingEnabled(false),
-    m_profilingEnabledHasBeenSet(false)
+AgentOrchestrationConfig::AgentOrchestrationConfig(JsonView jsonValue)
+  : AgentOrchestrationConfig()
 {
   *this = jsonValue;
 }

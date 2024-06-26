@@ -22,8 +22,8 @@ CreateThemeAliasResult::CreateThemeAliasResult() :
 {
 }
 
-CreateThemeAliasResult::CreateThemeAliasResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+CreateThemeAliasResult::CreateThemeAliasResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateThemeAliasResult()
 {
   *this = result;
 }

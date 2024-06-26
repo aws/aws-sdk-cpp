@@ -25,10 +25,8 @@ AwsCloudFormationStackOutputsDetails::AwsCloudFormationStackOutputsDetails() :
 {
 }
 
-AwsCloudFormationStackOutputsDetails::AwsCloudFormationStackOutputsDetails(JsonView jsonValue) : 
-    m_descriptionHasBeenSet(false),
-    m_outputKeyHasBeenSet(false),
-    m_outputValueHasBeenSet(false)
+AwsCloudFormationStackOutputsDetails::AwsCloudFormationStackOutputsDetails(JsonView jsonValue)
+  : AwsCloudFormationStackOutputsDetails()
 {
   *this = jsonValue;
 }

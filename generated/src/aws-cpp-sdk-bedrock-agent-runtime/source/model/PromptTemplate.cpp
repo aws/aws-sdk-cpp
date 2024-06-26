@@ -23,8 +23,8 @@ PromptTemplate::PromptTemplate() :
 {
 }
 
-PromptTemplate::PromptTemplate(JsonView jsonValue) : 
-    m_textPromptTemplateHasBeenSet(false)
+PromptTemplate::PromptTemplate(JsonView jsonValue)
+  : PromptTemplate()
 {
   *this = jsonValue;
 }

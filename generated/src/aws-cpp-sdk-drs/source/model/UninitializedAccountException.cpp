@@ -24,9 +24,8 @@ UninitializedAccountException::UninitializedAccountException() :
 {
 }
 
-UninitializedAccountException::UninitializedAccountException(JsonView jsonValue) : 
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+UninitializedAccountException::UninitializedAccountException(JsonView jsonValue)
+  : UninitializedAccountException()
 {
   *this = jsonValue;
 }

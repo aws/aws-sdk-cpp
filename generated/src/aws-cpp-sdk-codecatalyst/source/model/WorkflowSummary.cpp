@@ -33,18 +33,8 @@ WorkflowSummary::WorkflowSummary() :
 {
 }
 
-WorkflowSummary::WorkflowSummary(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_sourceRepositoryNameHasBeenSet(false),
-    m_sourceBranchNameHasBeenSet(false),
-    m_definitionHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_runMode(WorkflowRunMode::NOT_SET),
-    m_runModeHasBeenSet(false),
-    m_status(WorkflowStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+WorkflowSummary::WorkflowSummary(JsonView jsonValue)
+  : WorkflowSummary()
 {
   *this = jsonValue;
 }

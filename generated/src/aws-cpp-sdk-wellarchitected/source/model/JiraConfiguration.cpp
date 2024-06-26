@@ -24,9 +24,8 @@ JiraConfiguration::JiraConfiguration() :
 {
 }
 
-JiraConfiguration::JiraConfiguration(JsonView jsonValue) : 
-    m_jiraIssueUrlHasBeenSet(false),
-    m_lastSyncedTimeHasBeenSet(false)
+JiraConfiguration::JiraConfiguration(JsonView jsonValue)
+  : JiraConfiguration()
 {
   *this = jsonValue;
 }

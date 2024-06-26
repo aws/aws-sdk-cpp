@@ -23,9 +23,8 @@ DescribeNotificationRuleResult::DescribeNotificationRuleResult() :
 {
 }
 
-DescribeNotificationRuleResult::DescribeNotificationRuleResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_detailType(DetailType::NOT_SET),
-    m_status(NotificationRuleStatus::NOT_SET)
+DescribeNotificationRuleResult::DescribeNotificationRuleResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeNotificationRuleResult()
 {
   *this = result;
 }

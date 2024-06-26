@@ -26,9 +26,8 @@ GeneratedManifestEncryption::GeneratedManifestEncryption() :
 {
 }
 
-GeneratedManifestEncryption::GeneratedManifestEncryption(const XmlNode& xmlNode) : 
-    m_sSES3HasBeenSet(false),
-    m_sSEKMSHasBeenSet(false)
+GeneratedManifestEncryption::GeneratedManifestEncryption(const XmlNode& xmlNode)
+  : GeneratedManifestEncryption()
 {
   *this = xmlNode;
 }

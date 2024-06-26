@@ -31,16 +31,8 @@ FileSystemAssociationInfo::FileSystemAssociationInfo() :
 {
 }
 
-FileSystemAssociationInfo::FileSystemAssociationInfo(JsonView jsonValue) : 
-    m_fileSystemAssociationARNHasBeenSet(false),
-    m_locationARNHasBeenSet(false),
-    m_fileSystemAssociationStatusHasBeenSet(false),
-    m_auditDestinationARNHasBeenSet(false),
-    m_gatewayARNHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_cacheAttributesHasBeenSet(false),
-    m_endpointNetworkConfigurationHasBeenSet(false),
-    m_fileSystemAssociationStatusDetailsHasBeenSet(false)
+FileSystemAssociationInfo::FileSystemAssociationInfo(JsonView jsonValue)
+  : FileSystemAssociationInfo()
 {
   *this = jsonValue;
 }

@@ -33,18 +33,8 @@ Workteam::Workteam() :
 {
 }
 
-Workteam::Workteam(JsonView jsonValue) : 
-    m_workteamNameHasBeenSet(false),
-    m_memberDefinitionsHasBeenSet(false),
-    m_workteamArnHasBeenSet(false),
-    m_workforceArnHasBeenSet(false),
-    m_productListingIdsHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_subDomainHasBeenSet(false),
-    m_createDateHasBeenSet(false),
-    m_lastUpdatedDateHasBeenSet(false),
-    m_notificationConfigurationHasBeenSet(false),
-    m_workerAccessConfigurationHasBeenSet(false)
+Workteam::Workteam(JsonView jsonValue)
+  : Workteam()
 {
   *this = jsonValue;
 }

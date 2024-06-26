@@ -35,20 +35,8 @@ Insight::Insight() :
 {
 }
 
-Insight::Insight(JsonView jsonValue) : 
-    m_insightIdHasBeenSet(false),
-    m_insightTypeHasBeenSet(false),
-    m_context(ContextType::NOT_SET),
-    m_contextHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_severity(Severity::NOT_SET),
-    m_severityHasBeenSet(false),
-    m_supportingInsightsHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_recommendationsHasBeenSet(false),
-    m_insightDataHasBeenSet(false),
-    m_baselineDataHasBeenSet(false)
+Insight::Insight(JsonView jsonValue)
+  : Insight()
 {
   *this = jsonValue;
 }

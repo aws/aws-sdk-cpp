@@ -31,16 +31,8 @@ Origin::Origin() :
 {
 }
 
-Origin::Origin(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_regionName(RegionName::NOT_SET),
-    m_regionNameHasBeenSet(false),
-    m_protocolPolicy(OriginProtocolPolicyEnum::NOT_SET),
-    m_protocolPolicyHasBeenSet(false),
-    m_responseTimeout(0),
-    m_responseTimeoutHasBeenSet(false)
+Origin::Origin(JsonView jsonValue)
+  : Origin()
 {
   *this = jsonValue;
 }

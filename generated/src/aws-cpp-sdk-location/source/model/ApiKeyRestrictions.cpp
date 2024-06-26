@@ -25,10 +25,8 @@ ApiKeyRestrictions::ApiKeyRestrictions() :
 {
 }
 
-ApiKeyRestrictions::ApiKeyRestrictions(JsonView jsonValue) : 
-    m_allowActionsHasBeenSet(false),
-    m_allowResourcesHasBeenSet(false),
-    m_allowReferersHasBeenSet(false)
+ApiKeyRestrictions::ApiKeyRestrictions(JsonView jsonValue)
+  : ApiKeyRestrictions()
 {
   *this = jsonValue;
 }

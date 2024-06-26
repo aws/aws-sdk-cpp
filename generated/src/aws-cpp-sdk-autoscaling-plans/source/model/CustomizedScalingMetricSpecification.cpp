@@ -28,13 +28,8 @@ CustomizedScalingMetricSpecification::CustomizedScalingMetricSpecification() :
 {
 }
 
-CustomizedScalingMetricSpecification::CustomizedScalingMetricSpecification(JsonView jsonValue) : 
-    m_metricNameHasBeenSet(false),
-    m_namespaceHasBeenSet(false),
-    m_dimensionsHasBeenSet(false),
-    m_statistic(MetricStatistic::NOT_SET),
-    m_statisticHasBeenSet(false),
-    m_unitHasBeenSet(false)
+CustomizedScalingMetricSpecification::CustomizedScalingMetricSpecification(JsonView jsonValue)
+  : CustomizedScalingMetricSpecification()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ PullRequestCreatedEventMetadata::PullRequestCreatedEventMetadata() :
 {
 }
 
-PullRequestCreatedEventMetadata::PullRequestCreatedEventMetadata(JsonView jsonValue) : 
-    m_repositoryNameHasBeenSet(false),
-    m_sourceCommitIdHasBeenSet(false),
-    m_destinationCommitIdHasBeenSet(false),
-    m_mergeBaseHasBeenSet(false)
+PullRequestCreatedEventMetadata::PullRequestCreatedEventMetadata(JsonView jsonValue)
+  : PullRequestCreatedEventMetadata()
 {
   *this = jsonValue;
 }

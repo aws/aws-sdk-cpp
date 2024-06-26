@@ -25,10 +25,8 @@ RegexMatchSetUpdate::RegexMatchSetUpdate() :
 {
 }
 
-RegexMatchSetUpdate::RegexMatchSetUpdate(JsonView jsonValue) : 
-    m_action(ChangeAction::NOT_SET),
-    m_actionHasBeenSet(false),
-    m_regexMatchTupleHasBeenSet(false)
+RegexMatchSetUpdate::RegexMatchSetUpdate(JsonView jsonValue)
+  : RegexMatchSetUpdate()
 {
   *this = jsonValue;
 }

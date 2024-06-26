@@ -27,12 +27,8 @@ Result::Result() :
 {
 }
 
-Result::Result(JsonView jsonValue) : 
-    m_analysisStatusHasBeenSet(false),
-    m_analysisType(AnalysisType::NOT_SET),
-    m_analysisTypeHasBeenSet(false),
-    m_antipatternReportResultListHasBeenSet(false),
-    m_statusMessageHasBeenSet(false)
+Result::Result(JsonView jsonValue)
+  : Result()
 {
   *this = jsonValue;
 }

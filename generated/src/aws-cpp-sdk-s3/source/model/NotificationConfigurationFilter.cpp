@@ -25,8 +25,8 @@ NotificationConfigurationFilter::NotificationConfigurationFilter() :
 {
 }
 
-NotificationConfigurationFilter::NotificationConfigurationFilter(const XmlNode& xmlNode) : 
-    m_keyHasBeenSet(false)
+NotificationConfigurationFilter::NotificationConfigurationFilter(const XmlNode& xmlNode)
+  : NotificationConfigurationFilter()
 {
   *this = xmlNode;
 }

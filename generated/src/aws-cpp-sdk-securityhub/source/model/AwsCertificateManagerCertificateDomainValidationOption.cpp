@@ -28,13 +28,8 @@ AwsCertificateManagerCertificateDomainValidationOption::AwsCertificateManagerCer
 {
 }
 
-AwsCertificateManagerCertificateDomainValidationOption::AwsCertificateManagerCertificateDomainValidationOption(JsonView jsonValue) : 
-    m_domainNameHasBeenSet(false),
-    m_resourceRecordHasBeenSet(false),
-    m_validationDomainHasBeenSet(false),
-    m_validationEmailsHasBeenSet(false),
-    m_validationMethodHasBeenSet(false),
-    m_validationStatusHasBeenSet(false)
+AwsCertificateManagerCertificateDomainValidationOption::AwsCertificateManagerCertificateDomainValidationOption(JsonView jsonValue)
+  : AwsCertificateManagerCertificateDomainValidationOption()
 {
   *this = jsonValue;
 }

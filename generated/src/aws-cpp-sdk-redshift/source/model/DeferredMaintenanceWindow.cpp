@@ -27,10 +27,8 @@ DeferredMaintenanceWindow::DeferredMaintenanceWindow() :
 {
 }
 
-DeferredMaintenanceWindow::DeferredMaintenanceWindow(const XmlNode& xmlNode) : 
-    m_deferMaintenanceIdentifierHasBeenSet(false),
-    m_deferMaintenanceStartTimeHasBeenSet(false),
-    m_deferMaintenanceEndTimeHasBeenSet(false)
+DeferredMaintenanceWindow::DeferredMaintenanceWindow(const XmlNode& xmlNode)
+  : DeferredMaintenanceWindow()
 {
   *this = xmlNode;
 }

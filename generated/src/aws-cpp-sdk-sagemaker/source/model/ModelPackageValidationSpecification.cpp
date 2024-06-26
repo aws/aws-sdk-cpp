@@ -24,9 +24,8 @@ ModelPackageValidationSpecification::ModelPackageValidationSpecification() :
 {
 }
 
-ModelPackageValidationSpecification::ModelPackageValidationSpecification(JsonView jsonValue) : 
-    m_validationRoleHasBeenSet(false),
-    m_validationProfilesHasBeenSet(false)
+ModelPackageValidationSpecification::ModelPackageValidationSpecification(JsonView jsonValue)
+  : ModelPackageValidationSpecification()
 {
   *this = jsonValue;
 }

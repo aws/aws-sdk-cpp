@@ -24,9 +24,8 @@ LogPublishingOptionsStatus::LogPublishingOptionsStatus() :
 {
 }
 
-LogPublishingOptionsStatus::LogPublishingOptionsStatus(JsonView jsonValue) : 
-    m_optionsHasBeenSet(false),
-    m_statusHasBeenSet(false)
+LogPublishingOptionsStatus::LogPublishingOptionsStatus(JsonView jsonValue)
+  : LogPublishingOptionsStatus()
 {
   *this = jsonValue;
 }

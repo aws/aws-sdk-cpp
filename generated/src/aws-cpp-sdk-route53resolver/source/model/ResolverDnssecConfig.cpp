@@ -27,12 +27,8 @@ ResolverDnssecConfig::ResolverDnssecConfig() :
 {
 }
 
-ResolverDnssecConfig::ResolverDnssecConfig(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_validationStatus(ResolverDNSSECValidationStatus::NOT_SET),
-    m_validationStatusHasBeenSet(false)
+ResolverDnssecConfig::ResolverDnssecConfig(JsonView jsonValue)
+  : ResolverDnssecConfig()
 {
   *this = jsonValue;
 }

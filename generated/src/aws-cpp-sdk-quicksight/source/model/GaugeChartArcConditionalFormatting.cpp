@@ -23,8 +23,8 @@ GaugeChartArcConditionalFormatting::GaugeChartArcConditionalFormatting() :
 {
 }
 
-GaugeChartArcConditionalFormatting::GaugeChartArcConditionalFormatting(JsonView jsonValue) : 
-    m_foregroundColorHasBeenSet(false)
+GaugeChartArcConditionalFormatting::GaugeChartArcConditionalFormatting(JsonView jsonValue)
+  : GaugeChartArcConditionalFormatting()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ GetPolicyVersionResult::GetPolicyVersionResult() :
 {
 }
 
-GetPolicyVersionResult::GetPolicyVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_isDefaultVersion(false)
+GetPolicyVersionResult::GetPolicyVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetPolicyVersionResult()
 {
   *this = result;
 }

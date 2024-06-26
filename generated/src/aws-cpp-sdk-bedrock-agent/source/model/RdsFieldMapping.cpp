@@ -26,11 +26,8 @@ RdsFieldMapping::RdsFieldMapping() :
 {
 }
 
-RdsFieldMapping::RdsFieldMapping(JsonView jsonValue) : 
-    m_metadataFieldHasBeenSet(false),
-    m_primaryKeyFieldHasBeenSet(false),
-    m_textFieldHasBeenSet(false),
-    m_vectorFieldHasBeenSet(false)
+RdsFieldMapping::RdsFieldMapping(JsonView jsonValue)
+  : RdsFieldMapping()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ Tls::Tls() :
 {
 }
 
-Tls::Tls(JsonView jsonValue) : 
-    m_certificateAuthorityArnListHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
+Tls::Tls(JsonView jsonValue)
+  : Tls()
 {
   *this = jsonValue;
 }

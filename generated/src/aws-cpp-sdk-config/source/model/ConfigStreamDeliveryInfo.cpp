@@ -27,12 +27,8 @@ ConfigStreamDeliveryInfo::ConfigStreamDeliveryInfo() :
 {
 }
 
-ConfigStreamDeliveryInfo::ConfigStreamDeliveryInfo(JsonView jsonValue) : 
-    m_lastStatus(DeliveryStatus::NOT_SET),
-    m_lastStatusHasBeenSet(false),
-    m_lastErrorCodeHasBeenSet(false),
-    m_lastErrorMessageHasBeenSet(false),
-    m_lastStatusChangeTimeHasBeenSet(false)
+ConfigStreamDeliveryInfo::ConfigStreamDeliveryInfo(JsonView jsonValue)
+  : ConfigStreamDeliveryInfo()
 {
   *this = jsonValue;
 }

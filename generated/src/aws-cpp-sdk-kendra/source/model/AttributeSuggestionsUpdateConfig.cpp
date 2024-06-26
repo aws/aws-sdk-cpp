@@ -25,10 +25,8 @@ AttributeSuggestionsUpdateConfig::AttributeSuggestionsUpdateConfig() :
 {
 }
 
-AttributeSuggestionsUpdateConfig::AttributeSuggestionsUpdateConfig(JsonView jsonValue) : 
-    m_suggestableConfigListHasBeenSet(false),
-    m_attributeSuggestionsMode(AttributeSuggestionsMode::NOT_SET),
-    m_attributeSuggestionsModeHasBeenSet(false)
+AttributeSuggestionsUpdateConfig::AttributeSuggestionsUpdateConfig(JsonView jsonValue)
+  : AttributeSuggestionsUpdateConfig()
 {
   *this = jsonValue;
 }

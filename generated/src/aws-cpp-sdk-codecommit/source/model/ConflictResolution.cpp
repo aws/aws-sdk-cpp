@@ -25,10 +25,8 @@ ConflictResolution::ConflictResolution() :
 {
 }
 
-ConflictResolution::ConflictResolution(JsonView jsonValue) : 
-    m_replaceContentsHasBeenSet(false),
-    m_deleteFilesHasBeenSet(false),
-    m_setFileModesHasBeenSet(false)
+ConflictResolution::ConflictResolution(JsonView jsonValue)
+  : ConflictResolution()
 {
   *this = jsonValue;
 }

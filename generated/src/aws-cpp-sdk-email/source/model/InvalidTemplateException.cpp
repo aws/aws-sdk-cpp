@@ -25,8 +25,8 @@ InvalidTemplateException::InvalidTemplateException() :
 {
 }
 
-InvalidTemplateException::InvalidTemplateException(const XmlNode& xmlNode) : 
-    m_templateNameHasBeenSet(false)
+InvalidTemplateException::InvalidTemplateException(const XmlNode& xmlNode)
+  : InvalidTemplateException()
 {
   *this = xmlNode;
 }

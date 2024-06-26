@@ -27,10 +27,8 @@ OriginRequestPolicyHeadersConfig::OriginRequestPolicyHeadersConfig() :
 {
 }
 
-OriginRequestPolicyHeadersConfig::OriginRequestPolicyHeadersConfig(const XmlNode& xmlNode) : 
-    m_headerBehavior(OriginRequestPolicyHeaderBehavior::NOT_SET),
-    m_headerBehaviorHasBeenSet(false),
-    m_headersHasBeenSet(false)
+OriginRequestPolicyHeadersConfig::OriginRequestPolicyHeadersConfig(const XmlNode& xmlNode)
+  : OriginRequestPolicyHeadersConfig()
 {
   *this = xmlNode;
 }

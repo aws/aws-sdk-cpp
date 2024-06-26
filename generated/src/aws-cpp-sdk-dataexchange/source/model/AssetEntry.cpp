@@ -33,18 +33,8 @@ AssetEntry::AssetEntry() :
 {
 }
 
-AssetEntry::AssetEntry(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_assetDetailsHasBeenSet(false),
-    m_assetType(AssetType::NOT_SET),
-    m_assetTypeHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_dataSetIdHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_revisionIdHasBeenSet(false),
-    m_sourceIdHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+AssetEntry::AssetEntry(JsonView jsonValue)
+  : AssetEntry()
 {
   *this = jsonValue;
 }

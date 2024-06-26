@@ -24,9 +24,8 @@ AnomalySourceDetails::AnomalySourceDetails() :
 {
 }
 
-AnomalySourceDetails::AnomalySourceDetails(JsonView jsonValue) : 
-    m_cloudWatchMetricsHasBeenSet(false),
-    m_performanceInsightsMetricsHasBeenSet(false)
+AnomalySourceDetails::AnomalySourceDetails(JsonView jsonValue)
+  : AnomalySourceDetails()
 {
   *this = jsonValue;
 }

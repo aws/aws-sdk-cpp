@@ -25,8 +25,8 @@ Phase1EncryptionAlgorithmsRequestListValue::Phase1EncryptionAlgorithmsRequestLis
 {
 }
 
-Phase1EncryptionAlgorithmsRequestListValue::Phase1EncryptionAlgorithmsRequestListValue(const XmlNode& xmlNode) : 
-    m_valueHasBeenSet(false)
+Phase1EncryptionAlgorithmsRequestListValue::Phase1EncryptionAlgorithmsRequestListValue(const XmlNode& xmlNode)
+  : Phase1EncryptionAlgorithmsRequestListValue()
 {
   *this = xmlNode;
 }

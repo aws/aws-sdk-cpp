@@ -22,8 +22,8 @@ UpdateWaveResult::UpdateWaveResult() :
 {
 }
 
-UpdateWaveResult::UpdateWaveResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_isArchived(false)
+UpdateWaveResult::UpdateWaveResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateWaveResult()
 {
   *this = result;
 }

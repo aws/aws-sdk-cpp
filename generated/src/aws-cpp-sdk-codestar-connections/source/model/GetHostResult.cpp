@@ -22,8 +22,8 @@ GetHostResult::GetHostResult() :
 {
 }
 
-GetHostResult::GetHostResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_providerType(ProviderType::NOT_SET)
+GetHostResult::GetHostResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetHostResult()
 {
   *this = result;
 }

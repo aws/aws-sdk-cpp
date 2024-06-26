@@ -24,9 +24,8 @@ VideoSelectorSettings::VideoSelectorSettings() :
 {
 }
 
-VideoSelectorSettings::VideoSelectorSettings(JsonView jsonValue) : 
-    m_videoSelectorPidHasBeenSet(false),
-    m_videoSelectorProgramIdHasBeenSet(false)
+VideoSelectorSettings::VideoSelectorSettings(JsonView jsonValue)
+  : VideoSelectorSettings()
 {
   *this = jsonValue;
 }

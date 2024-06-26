@@ -28,13 +28,8 @@ LendingDetection::LendingDetection() :
 {
 }
 
-LendingDetection::LendingDetection(JsonView jsonValue) : 
-    m_textHasBeenSet(false),
-    m_selectionStatus(SelectionStatus::NOT_SET),
-    m_selectionStatusHasBeenSet(false),
-    m_geometryHasBeenSet(false),
-    m_confidence(0.0),
-    m_confidenceHasBeenSet(false)
+LendingDetection::LendingDetection(JsonView jsonValue)
+  : LendingDetection()
 {
   *this = jsonValue;
 }

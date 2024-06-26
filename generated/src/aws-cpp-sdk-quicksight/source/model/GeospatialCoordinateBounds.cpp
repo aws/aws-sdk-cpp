@@ -30,15 +30,8 @@ GeospatialCoordinateBounds::GeospatialCoordinateBounds() :
 {
 }
 
-GeospatialCoordinateBounds::GeospatialCoordinateBounds(JsonView jsonValue) : 
-    m_north(0.0),
-    m_northHasBeenSet(false),
-    m_south(0.0),
-    m_southHasBeenSet(false),
-    m_west(0.0),
-    m_westHasBeenSet(false),
-    m_east(0.0),
-    m_eastHasBeenSet(false)
+GeospatialCoordinateBounds::GeospatialCoordinateBounds(JsonView jsonValue)
+  : GeospatialCoordinateBounds()
 {
   *this = jsonValue;
 }

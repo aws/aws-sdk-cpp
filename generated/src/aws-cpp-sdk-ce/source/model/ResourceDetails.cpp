@@ -23,8 +23,8 @@ ResourceDetails::ResourceDetails() :
 {
 }
 
-ResourceDetails::ResourceDetails(JsonView jsonValue) : 
-    m_eC2ResourceDetailsHasBeenSet(false)
+ResourceDetails::ResourceDetails(JsonView jsonValue)
+  : ResourceDetails()
 {
   *this = jsonValue;
 }

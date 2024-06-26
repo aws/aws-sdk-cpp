@@ -22,8 +22,8 @@ CopyJobTemplateResult::CopyJobTemplateResult() :
 {
 }
 
-CopyJobTemplateResult::CopyJobTemplateResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_templateType(JobTemplateType::NOT_SET)
+CopyJobTemplateResult::CopyJobTemplateResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CopyJobTemplateResult()
 {
   *this = result;
 }

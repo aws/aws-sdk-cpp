@@ -23,8 +23,8 @@ LifecycleEventConfiguration::LifecycleEventConfiguration() :
 {
 }
 
-LifecycleEventConfiguration::LifecycleEventConfiguration(JsonView jsonValue) : 
-    m_shutdownHasBeenSet(false)
+LifecycleEventConfiguration::LifecycleEventConfiguration(JsonView jsonValue)
+  : LifecycleEventConfiguration()
 {
   *this = jsonValue;
 }

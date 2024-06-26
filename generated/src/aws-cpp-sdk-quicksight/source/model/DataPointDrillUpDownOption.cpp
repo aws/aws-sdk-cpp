@@ -24,9 +24,8 @@ DataPointDrillUpDownOption::DataPointDrillUpDownOption() :
 {
 }
 
-DataPointDrillUpDownOption::DataPointDrillUpDownOption(JsonView jsonValue) : 
-    m_availabilityStatus(DashboardBehavior::NOT_SET),
-    m_availabilityStatusHasBeenSet(false)
+DataPointDrillUpDownOption::DataPointDrillUpDownOption(JsonView jsonValue)
+  : DataPointDrillUpDownOption()
 {
   *this = jsonValue;
 }

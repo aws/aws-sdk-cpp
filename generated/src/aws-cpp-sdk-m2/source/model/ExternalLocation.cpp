@@ -23,8 +23,8 @@ ExternalLocation::ExternalLocation() :
 {
 }
 
-ExternalLocation::ExternalLocation(JsonView jsonValue) : 
-    m_s3LocationHasBeenSet(false)
+ExternalLocation::ExternalLocation(JsonView jsonValue)
+  : ExternalLocation()
 {
   *this = jsonValue;
 }

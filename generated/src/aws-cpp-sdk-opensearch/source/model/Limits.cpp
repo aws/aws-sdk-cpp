@@ -25,10 +25,8 @@ Limits::Limits() :
 {
 }
 
-Limits::Limits(JsonView jsonValue) : 
-    m_storageTypesHasBeenSet(false),
-    m_instanceLimitsHasBeenSet(false),
-    m_additionalLimitsHasBeenSet(false)
+Limits::Limits(JsonView jsonValue)
+  : Limits()
 {
   *this = jsonValue;
 }

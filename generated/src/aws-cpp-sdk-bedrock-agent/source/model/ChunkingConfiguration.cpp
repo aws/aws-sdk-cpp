@@ -25,10 +25,8 @@ ChunkingConfiguration::ChunkingConfiguration() :
 {
 }
 
-ChunkingConfiguration::ChunkingConfiguration(JsonView jsonValue) : 
-    m_chunkingStrategy(ChunkingStrategy::NOT_SET),
-    m_chunkingStrategyHasBeenSet(false),
-    m_fixedSizeChunkingConfigurationHasBeenSet(false)
+ChunkingConfiguration::ChunkingConfiguration(JsonView jsonValue)
+  : ChunkingConfiguration()
 {
   *this = jsonValue;
 }

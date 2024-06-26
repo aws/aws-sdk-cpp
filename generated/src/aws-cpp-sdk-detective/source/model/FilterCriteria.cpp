@@ -27,12 +27,8 @@ FilterCriteria::FilterCriteria() :
 {
 }
 
-FilterCriteria::FilterCriteria(JsonView jsonValue) : 
-    m_severityHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_entityArnHasBeenSet(false),
-    m_createdTimeHasBeenSet(false)
+FilterCriteria::FilterCriteria(JsonView jsonValue)
+  : FilterCriteria()
 {
   *this = jsonValue;
 }

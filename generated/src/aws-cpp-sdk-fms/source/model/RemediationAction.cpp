@@ -35,20 +35,8 @@ RemediationAction::RemediationAction() :
 {
 }
 
-RemediationAction::RemediationAction(JsonView jsonValue) : 
-    m_descriptionHasBeenSet(false),
-    m_eC2CreateRouteActionHasBeenSet(false),
-    m_eC2ReplaceRouteActionHasBeenSet(false),
-    m_eC2DeleteRouteActionHasBeenSet(false),
-    m_eC2CopyRouteTableActionHasBeenSet(false),
-    m_eC2ReplaceRouteTableAssociationActionHasBeenSet(false),
-    m_eC2AssociateRouteTableActionHasBeenSet(false),
-    m_eC2CreateRouteTableActionHasBeenSet(false),
-    m_fMSPolicyUpdateFirewallCreationConfigActionHasBeenSet(false),
-    m_createNetworkAclActionHasBeenSet(false),
-    m_replaceNetworkAclAssociationActionHasBeenSet(false),
-    m_createNetworkAclEntriesActionHasBeenSet(false),
-    m_deleteNetworkAclEntriesActionHasBeenSet(false)
+RemediationAction::RemediationAction(JsonView jsonValue)
+  : RemediationAction()
 {
   *this = jsonValue;
 }

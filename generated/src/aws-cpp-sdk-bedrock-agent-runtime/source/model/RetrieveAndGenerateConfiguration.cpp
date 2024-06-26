@@ -26,11 +26,8 @@ RetrieveAndGenerateConfiguration::RetrieveAndGenerateConfiguration() :
 {
 }
 
-RetrieveAndGenerateConfiguration::RetrieveAndGenerateConfiguration(JsonView jsonValue) : 
-    m_externalSourcesConfigurationHasBeenSet(false),
-    m_knowledgeBaseConfigurationHasBeenSet(false),
-    m_type(RetrieveAndGenerateType::NOT_SET),
-    m_typeHasBeenSet(false)
+RetrieveAndGenerateConfiguration::RetrieveAndGenerateConfiguration(JsonView jsonValue)
+  : RetrieveAndGenerateConfiguration()
 {
   *this = jsonValue;
 }

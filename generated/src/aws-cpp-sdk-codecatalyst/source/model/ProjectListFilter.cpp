@@ -27,12 +27,8 @@ ProjectListFilter::ProjectListFilter() :
 {
 }
 
-ProjectListFilter::ProjectListFilter(JsonView jsonValue) : 
-    m_key(FilterKey::NOT_SET),
-    m_keyHasBeenSet(false),
-    m_valuesHasBeenSet(false),
-    m_comparisonOperator(ComparisonOperator::NOT_SET),
-    m_comparisonOperatorHasBeenSet(false)
+ProjectListFilter::ProjectListFilter(JsonView jsonValue)
+  : ProjectListFilter()
 {
   *this = jsonValue;
 }

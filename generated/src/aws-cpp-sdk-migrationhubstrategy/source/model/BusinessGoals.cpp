@@ -30,15 +30,8 @@ BusinessGoals::BusinessGoals() :
 {
 }
 
-BusinessGoals::BusinessGoals(JsonView jsonValue) : 
-    m_licenseCostReduction(0),
-    m_licenseCostReductionHasBeenSet(false),
-    m_modernizeInfrastructureWithCloudNativeTechnologies(0),
-    m_modernizeInfrastructureWithCloudNativeTechnologiesHasBeenSet(false),
-    m_reduceOperationalOverheadWithManagedServices(0),
-    m_reduceOperationalOverheadWithManagedServicesHasBeenSet(false),
-    m_speedOfMigration(0),
-    m_speedOfMigrationHasBeenSet(false)
+BusinessGoals::BusinessGoals(JsonView jsonValue)
+  : BusinessGoals()
 {
   *this = jsonValue;
 }

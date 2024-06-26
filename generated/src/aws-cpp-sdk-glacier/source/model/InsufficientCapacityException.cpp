@@ -25,10 +25,8 @@ InsufficientCapacityException::InsufficientCapacityException() :
 {
 }
 
-InsufficientCapacityException::InsufficientCapacityException(JsonView jsonValue) : 
-    m_typeHasBeenSet(false),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+InsufficientCapacityException::InsufficientCapacityException(JsonView jsonValue)
+  : InsufficientCapacityException()
 {
   *this = jsonValue;
 }

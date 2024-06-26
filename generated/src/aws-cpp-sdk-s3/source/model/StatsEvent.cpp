@@ -25,8 +25,8 @@ StatsEvent::StatsEvent() :
 {
 }
 
-StatsEvent::StatsEvent(const XmlNode& xmlNode) : 
-    m_detailsHasBeenSet(false)
+StatsEvent::StatsEvent(const XmlNode& xmlNode)
+  : StatsEvent()
 {
   *this = xmlNode;
 }

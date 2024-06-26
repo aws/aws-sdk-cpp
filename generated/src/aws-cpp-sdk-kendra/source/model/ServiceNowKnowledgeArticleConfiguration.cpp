@@ -30,15 +30,8 @@ ServiceNowKnowledgeArticleConfiguration::ServiceNowKnowledgeArticleConfiguration
 {
 }
 
-ServiceNowKnowledgeArticleConfiguration::ServiceNowKnowledgeArticleConfiguration(JsonView jsonValue) : 
-    m_crawlAttachments(false),
-    m_crawlAttachmentsHasBeenSet(false),
-    m_includeAttachmentFilePatternsHasBeenSet(false),
-    m_excludeAttachmentFilePatternsHasBeenSet(false),
-    m_documentDataFieldNameHasBeenSet(false),
-    m_documentTitleFieldNameHasBeenSet(false),
-    m_fieldMappingsHasBeenSet(false),
-    m_filterQueryHasBeenSet(false)
+ServiceNowKnowledgeArticleConfiguration::ServiceNowKnowledgeArticleConfiguration(JsonView jsonValue)
+  : ServiceNowKnowledgeArticleConfiguration()
 {
   *this = jsonValue;
 }

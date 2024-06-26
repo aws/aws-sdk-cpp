@@ -24,9 +24,8 @@ Analysis::Analysis() :
 {
 }
 
-Analysis::Analysis(JsonView jsonValue) : 
-    m_analyzerHasBeenSet(false),
-    m_resultFieldHasBeenSet(false)
+Analysis::Analysis(JsonView jsonValue)
+  : Analysis()
 {
   *this = jsonValue;
 }

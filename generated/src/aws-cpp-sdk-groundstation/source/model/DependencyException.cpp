@@ -24,9 +24,8 @@ DependencyException::DependencyException() :
 {
 }
 
-DependencyException::DependencyException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_parameterNameHasBeenSet(false)
+DependencyException::DependencyException(JsonView jsonValue)
+  : DependencyException()
 {
   *this = jsonValue;
 }

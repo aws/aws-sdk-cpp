@@ -26,11 +26,8 @@ UserContext::UserContext() :
 {
 }
 
-UserContext::UserContext(JsonView jsonValue) : 
-    m_userProfileArnHasBeenSet(false),
-    m_userProfileNameHasBeenSet(false),
-    m_domainIdHasBeenSet(false),
-    m_iamIdentityHasBeenSet(false)
+UserContext::UserContext(JsonView jsonValue)
+  : UserContext()
 {
   *this = jsonValue;
 }

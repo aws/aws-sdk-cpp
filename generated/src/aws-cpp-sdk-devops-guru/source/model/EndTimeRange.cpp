@@ -24,9 +24,8 @@ EndTimeRange::EndTimeRange() :
 {
 }
 
-EndTimeRange::EndTimeRange(JsonView jsonValue) : 
-    m_fromTimeHasBeenSet(false),
-    m_toTimeHasBeenSet(false)
+EndTimeRange::EndTimeRange(JsonView jsonValue)
+  : EndTimeRange()
 {
   *this = jsonValue;
 }

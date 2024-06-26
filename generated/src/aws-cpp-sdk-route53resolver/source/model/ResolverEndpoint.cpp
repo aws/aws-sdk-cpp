@@ -42,27 +42,8 @@ ResolverEndpoint::ResolverEndpoint() :
 {
 }
 
-ResolverEndpoint::ResolverEndpoint(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_creatorRequestIdHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false),
-    m_direction(ResolverEndpointDirection::NOT_SET),
-    m_directionHasBeenSet(false),
-    m_ipAddressCount(0),
-    m_ipAddressCountHasBeenSet(false),
-    m_hostVPCIdHasBeenSet(false),
-    m_status(ResolverEndpointStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_modificationTimeHasBeenSet(false),
-    m_outpostArnHasBeenSet(false),
-    m_preferredInstanceTypeHasBeenSet(false),
-    m_resolverEndpointType(ResolverEndpointType::NOT_SET),
-    m_resolverEndpointTypeHasBeenSet(false),
-    m_protocolsHasBeenSet(false)
+ResolverEndpoint::ResolverEndpoint(JsonView jsonValue)
+  : ResolverEndpoint()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ UpdateProgramScheduleConfiguration::UpdateProgramScheduleConfiguration() :
 {
 }
 
-UpdateProgramScheduleConfiguration::UpdateProgramScheduleConfiguration(JsonView jsonValue) : 
-    m_clipRangeHasBeenSet(false),
-    m_transitionHasBeenSet(false)
+UpdateProgramScheduleConfiguration::UpdateProgramScheduleConfiguration(JsonView jsonValue)
+  : UpdateProgramScheduleConfiguration()
 {
   *this = jsonValue;
 }

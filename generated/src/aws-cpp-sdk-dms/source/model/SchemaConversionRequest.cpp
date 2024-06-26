@@ -27,12 +27,8 @@ SchemaConversionRequest::SchemaConversionRequest() :
 {
 }
 
-SchemaConversionRequest::SchemaConversionRequest(JsonView jsonValue) : 
-    m_statusHasBeenSet(false),
-    m_requestIdentifierHasBeenSet(false),
-    m_migrationProjectArnHasBeenSet(false),
-    m_errorHasBeenSet(false),
-    m_exportSqlDetailsHasBeenSet(false)
+SchemaConversionRequest::SchemaConversionRequest(JsonView jsonValue)
+  : SchemaConversionRequest()
 {
   *this = jsonValue;
 }

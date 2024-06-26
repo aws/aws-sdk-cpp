@@ -23,8 +23,8 @@ MonitoringAlertActions::MonitoringAlertActions() :
 {
 }
 
-MonitoringAlertActions::MonitoringAlertActions(JsonView jsonValue) : 
-    m_modelDashboardIndicatorHasBeenSet(false)
+MonitoringAlertActions::MonitoringAlertActions(JsonView jsonValue)
+  : MonitoringAlertActions()
 {
   *this = jsonValue;
 }

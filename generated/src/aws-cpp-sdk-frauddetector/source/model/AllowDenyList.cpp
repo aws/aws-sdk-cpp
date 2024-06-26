@@ -28,13 +28,8 @@ AllowDenyList::AllowDenyList() :
 {
 }
 
-AllowDenyList::AllowDenyList(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_variableTypeHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_updatedTimeHasBeenSet(false),
-    m_arnHasBeenSet(false)
+AllowDenyList::AllowDenyList(JsonView jsonValue)
+  : AllowDenyList()
 {
   *this = jsonValue;
 }

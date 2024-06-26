@@ -22,8 +22,8 @@ DeleteIdentityPropagationConfigResult::DeleteIdentityPropagationConfigResult() :
 {
 }
 
-DeleteIdentityPropagationConfigResult::DeleteIdentityPropagationConfigResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+DeleteIdentityPropagationConfigResult::DeleteIdentityPropagationConfigResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeleteIdentityPropagationConfigResult()
 {
   *this = result;
 }

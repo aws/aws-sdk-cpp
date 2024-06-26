@@ -24,9 +24,8 @@ DependencyTimeout::DependencyTimeout() :
 {
 }
 
-DependencyTimeout::DependencyTimeout(JsonView jsonValue) : 
-    m_errorCodeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+DependencyTimeout::DependencyTimeout(JsonView jsonValue)
+  : DependencyTimeout()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ PipelineDestination::PipelineDestination() :
 {
 }
 
-PipelineDestination::PipelineDestination(JsonView jsonValue) : 
-    m_serviceNameHasBeenSet(false),
-    m_endpointHasBeenSet(false)
+PipelineDestination::PipelineDestination(JsonView jsonValue)
+  : PipelineDestination()
 {
   *this = jsonValue;
 }

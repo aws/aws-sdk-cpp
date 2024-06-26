@@ -25,10 +25,8 @@ AutoMLResolvedAttributes::AutoMLResolvedAttributes() :
 {
 }
 
-AutoMLResolvedAttributes::AutoMLResolvedAttributes(JsonView jsonValue) : 
-    m_autoMLJobObjectiveHasBeenSet(false),
-    m_completionCriteriaHasBeenSet(false),
-    m_autoMLProblemTypeResolvedAttributesHasBeenSet(false)
+AutoMLResolvedAttributes::AutoMLResolvedAttributes(JsonView jsonValue)
+  : AutoMLResolvedAttributes()
 {
   *this = jsonValue;
 }

@@ -27,12 +27,8 @@ Output::Output() :
 {
 }
 
-Output::Output(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_kinesisStreamsOutputHasBeenSet(false),
-    m_kinesisFirehoseOutputHasBeenSet(false),
-    m_lambdaOutputHasBeenSet(false),
-    m_destinationSchemaHasBeenSet(false)
+Output::Output(JsonView jsonValue)
+  : Output()
 {
   *this = jsonValue;
 }

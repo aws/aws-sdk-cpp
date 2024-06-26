@@ -24,9 +24,8 @@ GeospatialMapStyleOptions::GeospatialMapStyleOptions() :
 {
 }
 
-GeospatialMapStyleOptions::GeospatialMapStyleOptions(JsonView jsonValue) : 
-    m_baseMapStyle(BaseMapStyleType::NOT_SET),
-    m_baseMapStyleHasBeenSet(false)
+GeospatialMapStyleOptions::GeospatialMapStyleOptions(JsonView jsonValue)
+  : GeospatialMapStyleOptions()
 {
   *this = jsonValue;
 }

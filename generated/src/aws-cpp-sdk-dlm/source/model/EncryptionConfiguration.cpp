@@ -25,10 +25,8 @@ EncryptionConfiguration::EncryptionConfiguration() :
 {
 }
 
-EncryptionConfiguration::EncryptionConfiguration(JsonView jsonValue) : 
-    m_encrypted(false),
-    m_encryptedHasBeenSet(false),
-    m_cmkArnHasBeenSet(false)
+EncryptionConfiguration::EncryptionConfiguration(JsonView jsonValue)
+  : EncryptionConfiguration()
 {
   *this = jsonValue;
 }

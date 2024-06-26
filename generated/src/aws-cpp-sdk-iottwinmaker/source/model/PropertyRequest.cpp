@@ -26,11 +26,8 @@ PropertyRequest::PropertyRequest() :
 {
 }
 
-PropertyRequest::PropertyRequest(JsonView jsonValue) : 
-    m_definitionHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_updateType(PropertyUpdateType::NOT_SET),
-    m_updateTypeHasBeenSet(false)
+PropertyRequest::PropertyRequest(JsonView jsonValue)
+  : PropertyRequest()
 {
   *this = jsonValue;
 }

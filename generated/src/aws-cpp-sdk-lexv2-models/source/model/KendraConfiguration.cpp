@@ -26,11 +26,8 @@ KendraConfiguration::KendraConfiguration() :
 {
 }
 
-KendraConfiguration::KendraConfiguration(JsonView jsonValue) : 
-    m_kendraIndexHasBeenSet(false),
-    m_queryFilterStringEnabled(false),
-    m_queryFilterStringEnabledHasBeenSet(false),
-    m_queryFilterStringHasBeenSet(false)
+KendraConfiguration::KendraConfiguration(JsonView jsonValue)
+  : KendraConfiguration()
 {
   *this = jsonValue;
 }

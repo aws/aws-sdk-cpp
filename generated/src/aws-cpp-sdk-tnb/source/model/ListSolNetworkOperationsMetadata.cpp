@@ -24,9 +24,8 @@ ListSolNetworkOperationsMetadata::ListSolNetworkOperationsMetadata() :
 {
 }
 
-ListSolNetworkOperationsMetadata::ListSolNetworkOperationsMetadata(JsonView jsonValue) : 
-    m_createdAtHasBeenSet(false),
-    m_lastModifiedHasBeenSet(false)
+ListSolNetworkOperationsMetadata::ListSolNetworkOperationsMetadata(JsonView jsonValue)
+  : ListSolNetworkOperationsMetadata()
 {
   *this = jsonValue;
 }

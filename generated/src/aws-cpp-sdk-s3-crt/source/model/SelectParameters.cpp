@@ -29,12 +29,8 @@ SelectParameters::SelectParameters() :
 {
 }
 
-SelectParameters::SelectParameters(const XmlNode& xmlNode) : 
-    m_inputSerializationHasBeenSet(false),
-    m_expressionType(ExpressionType::NOT_SET),
-    m_expressionTypeHasBeenSet(false),
-    m_expressionHasBeenSet(false),
-    m_outputSerializationHasBeenSet(false)
+SelectParameters::SelectParameters(const XmlNode& xmlNode)
+  : SelectParameters()
 {
   *this = xmlNode;
 }

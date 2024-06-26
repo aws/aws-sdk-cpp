@@ -26,11 +26,8 @@ DomainConfigurationSummary::DomainConfigurationSummary() :
 {
 }
 
-DomainConfigurationSummary::DomainConfigurationSummary(JsonView jsonValue) : 
-    m_domainConfigurationNameHasBeenSet(false),
-    m_domainConfigurationArnHasBeenSet(false),
-    m_serviceType(ServiceType::NOT_SET),
-    m_serviceTypeHasBeenSet(false)
+DomainConfigurationSummary::DomainConfigurationSummary(JsonView jsonValue)
+  : DomainConfigurationSummary()
 {
   *this = jsonValue;
 }

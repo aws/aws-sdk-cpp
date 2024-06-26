@@ -31,14 +31,8 @@ InstanceProfile::InstanceProfile() :
 {
 }
 
-InstanceProfile::InstanceProfile(const XmlNode& xmlNode) : 
-    m_pathHasBeenSet(false),
-    m_instanceProfileNameHasBeenSet(false),
-    m_instanceProfileIdHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_createDateHasBeenSet(false),
-    m_rolesHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+InstanceProfile::InstanceProfile(const XmlNode& xmlNode)
+  : InstanceProfile()
 {
   *this = xmlNode;
 }

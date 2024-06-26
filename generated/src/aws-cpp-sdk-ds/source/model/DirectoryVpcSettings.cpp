@@ -24,9 +24,8 @@ DirectoryVpcSettings::DirectoryVpcSettings() :
 {
 }
 
-DirectoryVpcSettings::DirectoryVpcSettings(JsonView jsonValue) : 
-    m_vpcIdHasBeenSet(false),
-    m_subnetIdsHasBeenSet(false)
+DirectoryVpcSettings::DirectoryVpcSettings(JsonView jsonValue)
+  : DirectoryVpcSettings()
 {
   *this = jsonValue;
 }

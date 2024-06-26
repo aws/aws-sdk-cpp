@@ -28,13 +28,8 @@ AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails::AwsEc2LaunchTem
 {
 }
 
-AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails::AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails(JsonView jsonValue) : 
-    m_blockDurationMinutes(0),
-    m_blockDurationMinutesHasBeenSet(false),
-    m_instanceInterruptionBehaviorHasBeenSet(false),
-    m_maxPriceHasBeenSet(false),
-    m_spotInstanceTypeHasBeenSet(false),
-    m_validUntilHasBeenSet(false)
+AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails::AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails(JsonView jsonValue)
+  : AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails()
 {
   *this = jsonValue;
 }

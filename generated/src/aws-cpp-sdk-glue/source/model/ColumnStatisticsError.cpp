@@ -24,9 +24,8 @@ ColumnStatisticsError::ColumnStatisticsError() :
 {
 }
 
-ColumnStatisticsError::ColumnStatisticsError(JsonView jsonValue) : 
-    m_columnStatisticsHasBeenSet(false),
-    m_errorHasBeenSet(false)
+ColumnStatisticsError::ColumnStatisticsError(JsonView jsonValue)
+  : ColumnStatisticsError()
 {
   *this = jsonValue;
 }

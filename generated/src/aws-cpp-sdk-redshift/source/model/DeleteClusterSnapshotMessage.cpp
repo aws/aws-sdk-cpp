@@ -26,9 +26,8 @@ DeleteClusterSnapshotMessage::DeleteClusterSnapshotMessage() :
 {
 }
 
-DeleteClusterSnapshotMessage::DeleteClusterSnapshotMessage(const XmlNode& xmlNode) : 
-    m_snapshotIdentifierHasBeenSet(false),
-    m_snapshotClusterIdentifierHasBeenSet(false)
+DeleteClusterSnapshotMessage::DeleteClusterSnapshotMessage(const XmlNode& xmlNode)
+  : DeleteClusterSnapshotMessage()
 {
   *this = xmlNode;
 }

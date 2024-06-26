@@ -22,8 +22,8 @@ ListResourceTagsResult::ListResourceTagsResult() :
 {
 }
 
-ListResourceTagsResult::ListResourceTagsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_truncated(false)
+ListResourceTagsResult::ListResourceTagsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ListResourceTagsResult()
 {
   *this = result;
 }

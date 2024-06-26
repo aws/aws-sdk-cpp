@@ -27,10 +27,8 @@ SubnetIpv6CidrBlockAssociation::SubnetIpv6CidrBlockAssociation() :
 {
 }
 
-SubnetIpv6CidrBlockAssociation::SubnetIpv6CidrBlockAssociation(const XmlNode& xmlNode) : 
-    m_associationIdHasBeenSet(false),
-    m_ipv6CidrBlockHasBeenSet(false),
-    m_ipv6CidrBlockStateHasBeenSet(false)
+SubnetIpv6CidrBlockAssociation::SubnetIpv6CidrBlockAssociation(const XmlNode& xmlNode)
+  : SubnetIpv6CidrBlockAssociation()
 {
   *this = xmlNode;
 }

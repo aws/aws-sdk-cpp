@@ -23,9 +23,8 @@ GetAutomatedDiscoveryConfigurationResult::GetAutomatedDiscoveryConfigurationResu
 {
 }
 
-GetAutomatedDiscoveryConfigurationResult::GetAutomatedDiscoveryConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_autoEnableOrganizationMembers(AutoEnableMode::NOT_SET),
-    m_status(AutomatedDiscoveryStatus::NOT_SET)
+GetAutomatedDiscoveryConfigurationResult::GetAutomatedDiscoveryConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetAutomatedDiscoveryConfigurationResult()
 {
   *this = result;
 }

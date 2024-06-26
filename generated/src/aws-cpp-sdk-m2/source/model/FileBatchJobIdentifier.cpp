@@ -24,9 +24,8 @@ FileBatchJobIdentifier::FileBatchJobIdentifier() :
 {
 }
 
-FileBatchJobIdentifier::FileBatchJobIdentifier(JsonView jsonValue) : 
-    m_fileNameHasBeenSet(false),
-    m_folderPathHasBeenSet(false)
+FileBatchJobIdentifier::FileBatchJobIdentifier(JsonView jsonValue)
+  : FileBatchJobIdentifier()
 {
   *this = jsonValue;
 }

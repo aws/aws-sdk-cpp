@@ -24,9 +24,8 @@ BatchLookupPolicyResponse::BatchLookupPolicyResponse() :
 {
 }
 
-BatchLookupPolicyResponse::BatchLookupPolicyResponse(JsonView jsonValue) : 
-    m_policyToPathListHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
+BatchLookupPolicyResponse::BatchLookupPolicyResponse(JsonView jsonValue)
+  : BatchLookupPolicyResponse()
 {
   *this = jsonValue;
 }

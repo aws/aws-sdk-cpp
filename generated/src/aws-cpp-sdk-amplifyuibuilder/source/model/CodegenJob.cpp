@@ -38,23 +38,8 @@ CodegenJob::CodegenJob() :
 {
 }
 
-CodegenJob::CodegenJob(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_appIdHasBeenSet(false),
-    m_environmentNameHasBeenSet(false),
-    m_renderConfigHasBeenSet(false),
-    m_genericDataSchemaHasBeenSet(false),
-    m_autoGenerateForms(false),
-    m_autoGenerateFormsHasBeenSet(false),
-    m_featuresHasBeenSet(false),
-    m_status(CodegenJobStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_assetHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_modifiedAtHasBeenSet(false),
-    m_dependenciesHasBeenSet(false)
+CodegenJob::CodegenJob(JsonView jsonValue)
+  : CodegenJob()
 {
   *this = jsonValue;
 }

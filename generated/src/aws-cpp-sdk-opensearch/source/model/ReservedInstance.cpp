@@ -43,28 +43,8 @@ ReservedInstance::ReservedInstance() :
 {
 }
 
-ReservedInstance::ReservedInstance(JsonView jsonValue) : 
-    m_reservationNameHasBeenSet(false),
-    m_reservedInstanceIdHasBeenSet(false),
-    m_billingSubscriptionId(0),
-    m_billingSubscriptionIdHasBeenSet(false),
-    m_reservedInstanceOfferingIdHasBeenSet(false),
-    m_instanceType(OpenSearchPartitionInstanceType::NOT_SET),
-    m_instanceTypeHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_duration(0),
-    m_durationHasBeenSet(false),
-    m_fixedPrice(0.0),
-    m_fixedPriceHasBeenSet(false),
-    m_usagePrice(0.0),
-    m_usagePriceHasBeenSet(false),
-    m_currencyCodeHasBeenSet(false),
-    m_instanceCount(0),
-    m_instanceCountHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_paymentOption(ReservedInstancePaymentOption::NOT_SET),
-    m_paymentOptionHasBeenSet(false),
-    m_recurringChargesHasBeenSet(false)
+ReservedInstance::ReservedInstance(JsonView jsonValue)
+  : ReservedInstance()
 {
   *this = jsonValue;
 }

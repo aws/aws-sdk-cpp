@@ -27,12 +27,8 @@ TimerCanceledEventAttributes::TimerCanceledEventAttributes() :
 {
 }
 
-TimerCanceledEventAttributes::TimerCanceledEventAttributes(JsonView jsonValue) : 
-    m_timerIdHasBeenSet(false),
-    m_startedEventId(0),
-    m_startedEventIdHasBeenSet(false),
-    m_decisionTaskCompletedEventId(0),
-    m_decisionTaskCompletedEventIdHasBeenSet(false)
+TimerCanceledEventAttributes::TimerCanceledEventAttributes(JsonView jsonValue)
+  : TimerCanceledEventAttributes()
 {
   *this = jsonValue;
 }

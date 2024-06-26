@@ -23,8 +23,8 @@ AddBridgeOutputRequest::AddBridgeOutputRequest() :
 {
 }
 
-AddBridgeOutputRequest::AddBridgeOutputRequest(JsonView jsonValue) : 
-    m_networkOutputHasBeenSet(false)
+AddBridgeOutputRequest::AddBridgeOutputRequest(JsonView jsonValue)
+  : AddBridgeOutputRequest()
 {
   *this = jsonValue;
 }

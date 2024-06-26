@@ -27,12 +27,8 @@ File::File() :
 {
 }
 
-File::File(JsonView jsonValue) : 
-    m_blobIdHasBeenSet(false),
-    m_absolutePathHasBeenSet(false),
-    m_relativePathHasBeenSet(false),
-    m_fileMode(FileModeTypeEnum::NOT_SET),
-    m_fileModeHasBeenSet(false)
+File::File(JsonView jsonValue)
+  : File()
 {
   *this = jsonValue;
 }

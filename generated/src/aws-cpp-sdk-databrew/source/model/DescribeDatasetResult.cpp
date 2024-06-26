@@ -23,9 +23,8 @@ DescribeDatasetResult::DescribeDatasetResult() :
 {
 }
 
-DescribeDatasetResult::DescribeDatasetResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_format(InputFormat::NOT_SET),
-    m_source(Source::NOT_SET)
+DescribeDatasetResult::DescribeDatasetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeDatasetResult()
 {
   *this = result;
 }

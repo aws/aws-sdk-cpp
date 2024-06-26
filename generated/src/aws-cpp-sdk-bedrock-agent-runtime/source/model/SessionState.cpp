@@ -26,11 +26,8 @@ SessionState::SessionState() :
 {
 }
 
-SessionState::SessionState(JsonView jsonValue) : 
-    m_invocationIdHasBeenSet(false),
-    m_promptSessionAttributesHasBeenSet(false),
-    m_returnControlInvocationResultsHasBeenSet(false),
-    m_sessionAttributesHasBeenSet(false)
+SessionState::SessionState(JsonView jsonValue)
+  : SessionState()
 {
   *this = jsonValue;
 }

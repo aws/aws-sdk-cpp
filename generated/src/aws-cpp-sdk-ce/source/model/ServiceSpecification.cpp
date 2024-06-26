@@ -23,8 +23,8 @@ ServiceSpecification::ServiceSpecification() :
 {
 }
 
-ServiceSpecification::ServiceSpecification(JsonView jsonValue) : 
-    m_eC2SpecificationHasBeenSet(false)
+ServiceSpecification::ServiceSpecification(JsonView jsonValue)
+  : ServiceSpecification()
 {
   *this = jsonValue;
 }

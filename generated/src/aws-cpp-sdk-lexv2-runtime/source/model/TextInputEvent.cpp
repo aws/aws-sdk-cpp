@@ -26,11 +26,8 @@ TextInputEvent::TextInputEvent() :
 {
 }
 
-TextInputEvent::TextInputEvent(JsonView jsonValue) : 
-    m_textHasBeenSet(false),
-    m_eventIdHasBeenSet(false),
-    m_clientTimestampMillis(0),
-    m_clientTimestampMillisHasBeenSet(false)
+TextInputEvent::TextInputEvent(JsonView jsonValue)
+  : TextInputEvent()
 {
   *this = jsonValue;
 }

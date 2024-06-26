@@ -23,8 +23,8 @@ PrivateRegistryAccessRequest::PrivateRegistryAccessRequest() :
 {
 }
 
-PrivateRegistryAccessRequest::PrivateRegistryAccessRequest(JsonView jsonValue) : 
-    m_ecrImagePullerRoleHasBeenSet(false)
+PrivateRegistryAccessRequest::PrivateRegistryAccessRequest(JsonView jsonValue)
+  : PrivateRegistryAccessRequest()
 {
   *this = jsonValue;
 }

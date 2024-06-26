@@ -25,10 +25,8 @@ RelationalDatabaseDataSourceConfig::RelationalDatabaseDataSourceConfig() :
 {
 }
 
-RelationalDatabaseDataSourceConfig::RelationalDatabaseDataSourceConfig(JsonView jsonValue) : 
-    m_relationalDatabaseSourceType(RelationalDatabaseSourceType::NOT_SET),
-    m_relationalDatabaseSourceTypeHasBeenSet(false),
-    m_rdsHttpEndpointConfigHasBeenSet(false)
+RelationalDatabaseDataSourceConfig::RelationalDatabaseDataSourceConfig(JsonView jsonValue)
+  : RelationalDatabaseDataSourceConfig()
 {
   *this = jsonValue;
 }

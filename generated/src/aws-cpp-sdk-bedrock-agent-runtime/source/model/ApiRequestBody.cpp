@@ -23,8 +23,8 @@ ApiRequestBody::ApiRequestBody() :
 {
 }
 
-ApiRequestBody::ApiRequestBody(JsonView jsonValue) : 
-    m_contentHasBeenSet(false)
+ApiRequestBody::ApiRequestBody(JsonView jsonValue)
+  : ApiRequestBody()
 {
   *this = jsonValue;
 }

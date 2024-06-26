@@ -26,11 +26,8 @@ StaticImageDeactivateScheduleActionSettings::StaticImageDeactivateScheduleAction
 {
 }
 
-StaticImageDeactivateScheduleActionSettings::StaticImageDeactivateScheduleActionSettings(JsonView jsonValue) : 
-    m_fadeOut(0),
-    m_fadeOutHasBeenSet(false),
-    m_layer(0),
-    m_layerHasBeenSet(false)
+StaticImageDeactivateScheduleActionSettings::StaticImageDeactivateScheduleActionSettings(JsonView jsonValue)
+  : StaticImageDeactivateScheduleActionSettings()
 {
   *this = jsonValue;
 }

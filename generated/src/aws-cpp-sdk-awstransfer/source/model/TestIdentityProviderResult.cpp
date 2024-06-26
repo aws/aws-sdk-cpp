@@ -22,8 +22,8 @@ TestIdentityProviderResult::TestIdentityProviderResult() :
 {
 }
 
-TestIdentityProviderResult::TestIdentityProviderResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_statusCode(0)
+TestIdentityProviderResult::TestIdentityProviderResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : TestIdentityProviderResult()
 {
   *this = result;
 }

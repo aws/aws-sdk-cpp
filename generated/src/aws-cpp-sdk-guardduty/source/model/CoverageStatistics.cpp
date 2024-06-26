@@ -24,9 +24,8 @@ CoverageStatistics::CoverageStatistics() :
 {
 }
 
-CoverageStatistics::CoverageStatistics(JsonView jsonValue) : 
-    m_countByResourceTypeHasBeenSet(false),
-    m_countByCoverageStatusHasBeenSet(false)
+CoverageStatistics::CoverageStatistics(JsonView jsonValue)
+  : CoverageStatistics()
 {
   *this = jsonValue;
 }

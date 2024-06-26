@@ -23,8 +23,8 @@ EcrConfigurationState::EcrConfigurationState() :
 {
 }
 
-EcrConfigurationState::EcrConfigurationState(JsonView jsonValue) : 
-    m_rescanDurationStateHasBeenSet(false)
+EcrConfigurationState::EcrConfigurationState(JsonView jsonValue)
+  : EcrConfigurationState()
 {
   *this = jsonValue;
 }

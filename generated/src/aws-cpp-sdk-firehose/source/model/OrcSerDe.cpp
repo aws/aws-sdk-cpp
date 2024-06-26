@@ -41,26 +41,8 @@ OrcSerDe::OrcSerDe() :
 {
 }
 
-OrcSerDe::OrcSerDe(JsonView jsonValue) : 
-    m_stripeSizeBytes(0),
-    m_stripeSizeBytesHasBeenSet(false),
-    m_blockSizeBytes(0),
-    m_blockSizeBytesHasBeenSet(false),
-    m_rowIndexStride(0),
-    m_rowIndexStrideHasBeenSet(false),
-    m_enablePadding(false),
-    m_enablePaddingHasBeenSet(false),
-    m_paddingTolerance(0.0),
-    m_paddingToleranceHasBeenSet(false),
-    m_compression(OrcCompression::NOT_SET),
-    m_compressionHasBeenSet(false),
-    m_bloomFilterColumnsHasBeenSet(false),
-    m_bloomFilterFalsePositiveProbability(0.0),
-    m_bloomFilterFalsePositiveProbabilityHasBeenSet(false),
-    m_dictionaryKeyThreshold(0.0),
-    m_dictionaryKeyThresholdHasBeenSet(false),
-    m_formatVersion(OrcFormatVersion::NOT_SET),
-    m_formatVersionHasBeenSet(false)
+OrcSerDe::OrcSerDe(JsonView jsonValue)
+  : OrcSerDe()
 {
   *this = jsonValue;
 }

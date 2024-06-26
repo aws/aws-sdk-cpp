@@ -26,11 +26,8 @@ HlsRenditionGroupSettings::HlsRenditionGroupSettings() :
 {
 }
 
-HlsRenditionGroupSettings::HlsRenditionGroupSettings(JsonView jsonValue) : 
-    m_renditionGroupIdHasBeenSet(false),
-    m_renditionLanguageCode(LanguageCode::NOT_SET),
-    m_renditionLanguageCodeHasBeenSet(false),
-    m_renditionNameHasBeenSet(false)
+HlsRenditionGroupSettings::HlsRenditionGroupSettings(JsonView jsonValue)
+  : HlsRenditionGroupSettings()
 {
   *this = jsonValue;
 }

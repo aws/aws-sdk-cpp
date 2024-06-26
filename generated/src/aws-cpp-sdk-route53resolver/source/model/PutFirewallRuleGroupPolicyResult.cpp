@@ -22,8 +22,8 @@ PutFirewallRuleGroupPolicyResult::PutFirewallRuleGroupPolicyResult() :
 {
 }
 
-PutFirewallRuleGroupPolicyResult::PutFirewallRuleGroupPolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_returnValue(false)
+PutFirewallRuleGroupPolicyResult::PutFirewallRuleGroupPolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : PutFirewallRuleGroupPolicyResult()
 {
   *this = result;
 }

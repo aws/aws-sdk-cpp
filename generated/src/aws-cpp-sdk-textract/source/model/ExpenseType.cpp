@@ -25,10 +25,8 @@ ExpenseType::ExpenseType() :
 {
 }
 
-ExpenseType::ExpenseType(JsonView jsonValue) : 
-    m_textHasBeenSet(false),
-    m_confidence(0.0),
-    m_confidenceHasBeenSet(false)
+ExpenseType::ExpenseType(JsonView jsonValue)
+  : ExpenseType()
 {
   *this = jsonValue;
 }

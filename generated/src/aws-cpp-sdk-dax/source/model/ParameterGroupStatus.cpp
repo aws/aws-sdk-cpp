@@ -25,10 +25,8 @@ ParameterGroupStatus::ParameterGroupStatus() :
 {
 }
 
-ParameterGroupStatus::ParameterGroupStatus(JsonView jsonValue) : 
-    m_parameterGroupNameHasBeenSet(false),
-    m_parameterApplyStatusHasBeenSet(false),
-    m_nodeIdsToRebootHasBeenSet(false)
+ParameterGroupStatus::ParameterGroupStatus(JsonView jsonValue)
+  : ParameterGroupStatus()
 {
   *this = jsonValue;
 }

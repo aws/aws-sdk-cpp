@@ -23,9 +23,8 @@ UpdateRuleResult::UpdateRuleResult() :
 {
 }
 
-UpdateRuleResult::UpdateRuleResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_isDefault(false),
-    m_priority(0)
+UpdateRuleResult::UpdateRuleResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateRuleResult()
 {
   *this = result;
 }

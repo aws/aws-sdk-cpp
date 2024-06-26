@@ -24,9 +24,8 @@ OpenHoursRule::OpenHoursRule() :
 {
 }
 
-OpenHoursRule::OpenHoursRule(JsonView jsonValue) : 
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
+OpenHoursRule::OpenHoursRule(JsonView jsonValue)
+  : OpenHoursRule()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ LocalDeviceResourceData::LocalDeviceResourceData() :
 {
 }
 
-LocalDeviceResourceData::LocalDeviceResourceData(JsonView jsonValue) : 
-    m_groupOwnerSettingHasBeenSet(false),
-    m_sourcePathHasBeenSet(false)
+LocalDeviceResourceData::LocalDeviceResourceData(JsonView jsonValue)
+  : LocalDeviceResourceData()
 {
   *this = jsonValue;
 }

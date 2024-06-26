@@ -23,8 +23,8 @@ AutoImportPolicy::AutoImportPolicy() :
 {
 }
 
-AutoImportPolicy::AutoImportPolicy(JsonView jsonValue) : 
-    m_eventsHasBeenSet(false)
+AutoImportPolicy::AutoImportPolicy(JsonView jsonValue)
+  : AutoImportPolicy()
 {
   *this = jsonValue;
 }

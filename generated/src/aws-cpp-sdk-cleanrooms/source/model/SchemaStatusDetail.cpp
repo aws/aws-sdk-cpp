@@ -28,13 +28,8 @@ SchemaStatusDetail::SchemaStatusDetail() :
 {
 }
 
-SchemaStatusDetail::SchemaStatusDetail(JsonView jsonValue) : 
-    m_status(SchemaStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_reasonsHasBeenSet(false),
-    m_analysisRuleType(AnalysisRuleType::NOT_SET),
-    m_analysisRuleTypeHasBeenSet(false),
-    m_configurationsHasBeenSet(false)
+SchemaStatusDetail::SchemaStatusDetail(JsonView jsonValue)
+  : SchemaStatusDetail()
 {
   *this = jsonValue;
 }

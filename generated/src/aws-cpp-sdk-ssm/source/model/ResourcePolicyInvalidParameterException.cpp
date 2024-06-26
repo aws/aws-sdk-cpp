@@ -24,9 +24,8 @@ ResourcePolicyInvalidParameterException::ResourcePolicyInvalidParameterException
 {
 }
 
-ResourcePolicyInvalidParameterException::ResourcePolicyInvalidParameterException(JsonView jsonValue) : 
-    m_parameterNamesHasBeenSet(false),
-    m_messageHasBeenSet(false)
+ResourcePolicyInvalidParameterException::ResourcePolicyInvalidParameterException(JsonView jsonValue)
+  : ResourcePolicyInvalidParameterException()
 {
   *this = jsonValue;
 }

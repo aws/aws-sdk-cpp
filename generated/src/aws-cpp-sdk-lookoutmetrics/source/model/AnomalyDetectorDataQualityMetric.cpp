@@ -24,9 +24,8 @@ AnomalyDetectorDataQualityMetric::AnomalyDetectorDataQualityMetric() :
 {
 }
 
-AnomalyDetectorDataQualityMetric::AnomalyDetectorDataQualityMetric(JsonView jsonValue) : 
-    m_startTimestampHasBeenSet(false),
-    m_metricSetDataQualityMetricListHasBeenSet(false)
+AnomalyDetectorDataQualityMetric::AnomalyDetectorDataQualityMetric(JsonView jsonValue)
+  : AnomalyDetectorDataQualityMetric()
 {
   *this = jsonValue;
 }

@@ -26,9 +26,8 @@ ReservedInstancesModificationResponse::ReservedInstancesModificationResponse() :
 {
 }
 
-ReservedInstancesModificationResponse::ReservedInstancesModificationResponse(const XmlNode& xmlNode) : 
-    m_reservedInstancesIdHasBeenSet(false),
-    m_targetConfigurationHasBeenSet(false)
+ReservedInstancesModificationResponse::ReservedInstancesModificationResponse(const XmlNode& xmlNode)
+  : ReservedInstancesModificationResponse()
 {
   *this = xmlNode;
 }

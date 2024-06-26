@@ -26,11 +26,8 @@ AwsElasticsearchDomainVPCOptions::AwsElasticsearchDomainVPCOptions() :
 {
 }
 
-AwsElasticsearchDomainVPCOptions::AwsElasticsearchDomainVPCOptions(JsonView jsonValue) : 
-    m_availabilityZonesHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false),
-    m_subnetIdsHasBeenSet(false),
-    m_vPCIdHasBeenSet(false)
+AwsElasticsearchDomainVPCOptions::AwsElasticsearchDomainVPCOptions(JsonView jsonValue)
+  : AwsElasticsearchDomainVPCOptions()
 {
   *this = jsonValue;
 }

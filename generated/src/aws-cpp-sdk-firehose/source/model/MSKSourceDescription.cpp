@@ -26,11 +26,8 @@ MSKSourceDescription::MSKSourceDescription() :
 {
 }
 
-MSKSourceDescription::MSKSourceDescription(JsonView jsonValue) : 
-    m_mSKClusterARNHasBeenSet(false),
-    m_topicNameHasBeenSet(false),
-    m_authenticationConfigurationHasBeenSet(false),
-    m_deliveryStartTimestampHasBeenSet(false)
+MSKSourceDescription::MSKSourceDescription(JsonView jsonValue)
+  : MSKSourceDescription()
 {
   *this = jsonValue;
 }

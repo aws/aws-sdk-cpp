@@ -31,16 +31,8 @@ WorkspaceResourceAssociation::WorkspaceResourceAssociation() :
 {
 }
 
-WorkspaceResourceAssociation::WorkspaceResourceAssociation(JsonView jsonValue) : 
-    m_associatedResourceIdHasBeenSet(false),
-    m_associatedResourceType(WorkSpaceAssociatedResourceType::NOT_SET),
-    m_associatedResourceTypeHasBeenSet(false),
-    m_createdHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_state(AssociationState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_stateReasonHasBeenSet(false),
-    m_workspaceIdHasBeenSet(false)
+WorkspaceResourceAssociation::WorkspaceResourceAssociation(JsonView jsonValue)
+  : WorkspaceResourceAssociation()
 {
   *this = jsonValue;
 }

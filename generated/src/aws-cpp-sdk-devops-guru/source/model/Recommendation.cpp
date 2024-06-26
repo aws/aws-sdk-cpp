@@ -29,14 +29,8 @@ Recommendation::Recommendation() :
 {
 }
 
-Recommendation::Recommendation(JsonView jsonValue) : 
-    m_descriptionHasBeenSet(false),
-    m_linkHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_reasonHasBeenSet(false),
-    m_relatedEventsHasBeenSet(false),
-    m_relatedAnomaliesHasBeenSet(false),
-    m_categoryHasBeenSet(false)
+Recommendation::Recommendation(JsonView jsonValue)
+  : Recommendation()
 {
   *this = jsonValue;
 }

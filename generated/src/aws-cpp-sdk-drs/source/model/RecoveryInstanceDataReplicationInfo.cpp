@@ -31,16 +31,8 @@ RecoveryInstanceDataReplicationInfo::RecoveryInstanceDataReplicationInfo() :
 {
 }
 
-RecoveryInstanceDataReplicationInfo::RecoveryInstanceDataReplicationInfo(JsonView jsonValue) : 
-    m_dataReplicationErrorHasBeenSet(false),
-    m_dataReplicationInitiationHasBeenSet(false),
-    m_dataReplicationState(RecoveryInstanceDataReplicationState::NOT_SET),
-    m_dataReplicationStateHasBeenSet(false),
-    m_etaDateTimeHasBeenSet(false),
-    m_lagDurationHasBeenSet(false),
-    m_replicatedDisksHasBeenSet(false),
-    m_stagingAvailabilityZoneHasBeenSet(false),
-    m_stagingOutpostArnHasBeenSet(false)
+RecoveryInstanceDataReplicationInfo::RecoveryInstanceDataReplicationInfo(JsonView jsonValue)
+  : RecoveryInstanceDataReplicationInfo()
 {
   *this = jsonValue;
 }

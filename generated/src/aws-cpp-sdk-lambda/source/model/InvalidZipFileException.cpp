@@ -24,9 +24,8 @@ InvalidZipFileException::InvalidZipFileException() :
 {
 }
 
-InvalidZipFileException::InvalidZipFileException(JsonView jsonValue) : 
-    m_typeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+InvalidZipFileException::InvalidZipFileException(JsonView jsonValue)
+  : InvalidZipFileException()
 {
   *this = jsonValue;
 }

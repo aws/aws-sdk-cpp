@@ -29,14 +29,8 @@ ThemeSummary::ThemeSummary() :
 {
 }
 
-ThemeSummary::ThemeSummary(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_themeIdHasBeenSet(false),
-    m_latestVersionNumber(0),
-    m_latestVersionNumberHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false)
+ThemeSummary::ThemeSummary(JsonView jsonValue)
+  : ThemeSummary()
 {
   *this = jsonValue;
 }

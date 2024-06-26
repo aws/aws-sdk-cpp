@@ -28,13 +28,8 @@ AppInstanceBot::AppInstanceBot() :
 {
 }
 
-AppInstanceBot::AppInstanceBot(JsonView jsonValue) : 
-    m_appInstanceBotArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_configurationHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false),
-    m_lastUpdatedTimestampHasBeenSet(false),
-    m_metadataHasBeenSet(false)
+AppInstanceBot::AppInstanceBot(JsonView jsonValue)
+  : AppInstanceBot()
 {
   *this = jsonValue;
 }

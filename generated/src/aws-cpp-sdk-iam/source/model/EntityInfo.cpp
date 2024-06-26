@@ -30,13 +30,8 @@ EntityInfo::EntityInfo() :
 {
 }
 
-EntityInfo::EntityInfo(const XmlNode& xmlNode) : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_type(PolicyOwnerEntityType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_pathHasBeenSet(false)
+EntityInfo::EntityInfo(const XmlNode& xmlNode)
+  : EntityInfo()
 {
   *this = xmlNode;
 }

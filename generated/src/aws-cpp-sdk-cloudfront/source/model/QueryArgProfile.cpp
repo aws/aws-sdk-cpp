@@ -26,9 +26,8 @@ QueryArgProfile::QueryArgProfile() :
 {
 }
 
-QueryArgProfile::QueryArgProfile(const XmlNode& xmlNode) : 
-    m_queryArgHasBeenSet(false),
-    m_profileIdHasBeenSet(false)
+QueryArgProfile::QueryArgProfile(const XmlNode& xmlNode)
+  : QueryArgProfile()
 {
   *this = xmlNode;
 }

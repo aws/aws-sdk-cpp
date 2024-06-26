@@ -26,11 +26,8 @@ StringCondition::StringCondition() :
 {
 }
 
-StringCondition::StringCondition(JsonView jsonValue) : 
-    m_fieldNameHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_comparisonType(StringComparisonType::NOT_SET),
-    m_comparisonTypeHasBeenSet(false)
+StringCondition::StringCondition(JsonView jsonValue)
+  : StringCondition()
 {
   *this = jsonValue;
 }

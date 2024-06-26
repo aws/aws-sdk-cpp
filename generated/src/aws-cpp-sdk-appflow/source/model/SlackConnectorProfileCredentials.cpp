@@ -26,11 +26,8 @@ SlackConnectorProfileCredentials::SlackConnectorProfileCredentials() :
 {
 }
 
-SlackConnectorProfileCredentials::SlackConnectorProfileCredentials(JsonView jsonValue) : 
-    m_clientIdHasBeenSet(false),
-    m_clientSecretHasBeenSet(false),
-    m_accessTokenHasBeenSet(false),
-    m_oAuthRequestHasBeenSet(false)
+SlackConnectorProfileCredentials::SlackConnectorProfileCredentials(JsonView jsonValue)
+  : SlackConnectorProfileCredentials()
 {
   *this = jsonValue;
 }

@@ -32,17 +32,8 @@ Impact::Impact() :
 {
 }
 
-Impact::Impact(JsonView jsonValue) : 
-    m_maxImpact(0.0),
-    m_maxImpactHasBeenSet(false),
-    m_totalImpact(0.0),
-    m_totalImpactHasBeenSet(false),
-    m_totalActualSpend(0.0),
-    m_totalActualSpendHasBeenSet(false),
-    m_totalExpectedSpend(0.0),
-    m_totalExpectedSpendHasBeenSet(false),
-    m_totalImpactPercentage(0.0),
-    m_totalImpactPercentageHasBeenSet(false)
+Impact::Impact(JsonView jsonValue)
+  : Impact()
 {
   *this = jsonValue;
 }

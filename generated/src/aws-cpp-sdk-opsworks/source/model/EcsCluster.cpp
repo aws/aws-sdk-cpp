@@ -26,11 +26,8 @@ EcsCluster::EcsCluster() :
 {
 }
 
-EcsCluster::EcsCluster(JsonView jsonValue) : 
-    m_ecsClusterArnHasBeenSet(false),
-    m_ecsClusterNameHasBeenSet(false),
-    m_stackIdHasBeenSet(false),
-    m_registeredAtHasBeenSet(false)
+EcsCluster::EcsCluster(JsonView jsonValue)
+  : EcsCluster()
 {
   *this = jsonValue;
 }

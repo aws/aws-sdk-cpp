@@ -28,13 +28,8 @@ S3Location::S3Location() :
 {
 }
 
-S3Location::S3Location(JsonView jsonValue) : 
-    m_bucketHasBeenSet(false),
-    m_keyHasBeenSet(false),
-    m_bundleType(BundleType::NOT_SET),
-    m_bundleTypeHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_eTagHasBeenSet(false)
+S3Location::S3Location(JsonView jsonValue)
+  : S3Location()
 {
   *this = jsonValue;
 }

@@ -37,22 +37,8 @@ AudioDescription::AudioDescription() :
 {
 }
 
-AudioDescription::AudioDescription(JsonView jsonValue) : 
-    m_audioChannelTaggingSettingsHasBeenSet(false),
-    m_audioNormalizationSettingsHasBeenSet(false),
-    m_audioSourceNameHasBeenSet(false),
-    m_audioType(0),
-    m_audioTypeHasBeenSet(false),
-    m_audioTypeControl(AudioTypeControl::NOT_SET),
-    m_audioTypeControlHasBeenSet(false),
-    m_codecSettingsHasBeenSet(false),
-    m_customLanguageCodeHasBeenSet(false),
-    m_languageCode(LanguageCode::NOT_SET),
-    m_languageCodeHasBeenSet(false),
-    m_languageCodeControl(AudioLanguageCodeControl::NOT_SET),
-    m_languageCodeControlHasBeenSet(false),
-    m_remixSettingsHasBeenSet(false),
-    m_streamNameHasBeenSet(false)
+AudioDescription::AudioDescription(JsonView jsonValue)
+  : AudioDescription()
 {
   *this = jsonValue;
 }

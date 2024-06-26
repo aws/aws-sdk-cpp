@@ -23,9 +23,8 @@ StartUpdateSignalMapResult::StartUpdateSignalMapResult() :
 {
 }
 
-StartUpdateSignalMapResult::StartUpdateSignalMapResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_monitorChangesPendingDeployment(false),
-    m_status(SignalMapStatus::NOT_SET)
+StartUpdateSignalMapResult::StartUpdateSignalMapResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : StartUpdateSignalMapResult()
 {
   *this = result;
 }

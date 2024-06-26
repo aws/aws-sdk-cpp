@@ -28,10 +28,8 @@ MessageAttributeValue::MessageAttributeValue() :
 {
 }
 
-MessageAttributeValue::MessageAttributeValue(const XmlNode& xmlNode) : 
-    m_dataTypeHasBeenSet(false),
-    m_stringValueHasBeenSet(false),
-    m_binaryValueHasBeenSet(false)
+MessageAttributeValue::MessageAttributeValue(const XmlNode& xmlNode)
+  : MessageAttributeValue()
 {
   *this = xmlNode;
 }

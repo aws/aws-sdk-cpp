@@ -28,11 +28,8 @@ ElasticGpuAssociation::ElasticGpuAssociation() :
 {
 }
 
-ElasticGpuAssociation::ElasticGpuAssociation(const XmlNode& xmlNode) : 
-    m_elasticGpuIdHasBeenSet(false),
-    m_elasticGpuAssociationIdHasBeenSet(false),
-    m_elasticGpuAssociationStateHasBeenSet(false),
-    m_elasticGpuAssociationTimeHasBeenSet(false)
+ElasticGpuAssociation::ElasticGpuAssociation(const XmlNode& xmlNode)
+  : ElasticGpuAssociation()
 {
   *this = xmlNode;
 }

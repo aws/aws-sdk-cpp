@@ -26,11 +26,8 @@ StageDeclaration::StageDeclaration() :
 {
 }
 
-StageDeclaration::StageDeclaration(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_blockersHasBeenSet(false),
-    m_actionsHasBeenSet(false),
-    m_onFailureHasBeenSet(false)
+StageDeclaration::StageDeclaration(JsonView jsonValue)
+  : StageDeclaration()
 {
   *this = jsonValue;
 }

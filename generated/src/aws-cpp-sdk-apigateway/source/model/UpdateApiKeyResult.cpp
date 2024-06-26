@@ -22,8 +22,8 @@ UpdateApiKeyResult::UpdateApiKeyResult() :
 {
 }
 
-UpdateApiKeyResult::UpdateApiKeyResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_enabled(false)
+UpdateApiKeyResult::UpdateApiKeyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateApiKeyResult()
 {
   *this = result;
 }

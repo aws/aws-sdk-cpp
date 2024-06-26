@@ -28,12 +28,8 @@ SdkType::SdkType() :
 {
 }
 
-SdkType::SdkType(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_friendlyNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_configurationPropertiesHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
+SdkType::SdkType(JsonView jsonValue)
+  : SdkType()
 {
   *this = jsonValue;
 }

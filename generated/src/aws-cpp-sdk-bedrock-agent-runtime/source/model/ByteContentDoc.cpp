@@ -26,10 +26,8 @@ ByteContentDoc::ByteContentDoc() :
 {
 }
 
-ByteContentDoc::ByteContentDoc(JsonView jsonValue) : 
-    m_contentTypeHasBeenSet(false),
-    m_dataHasBeenSet(false),
-    m_identifierHasBeenSet(false)
+ByteContentDoc::ByteContentDoc(JsonView jsonValue)
+  : ByteContentDoc()
 {
   *this = jsonValue;
 }

@@ -29,14 +29,8 @@ KeyPhrase::KeyPhrase() :
 {
 }
 
-KeyPhrase::KeyPhrase(JsonView jsonValue) : 
-    m_score(0.0),
-    m_scoreHasBeenSet(false),
-    m_textHasBeenSet(false),
-    m_beginOffset(0),
-    m_beginOffsetHasBeenSet(false),
-    m_endOffset(0),
-    m_endOffsetHasBeenSet(false)
+KeyPhrase::KeyPhrase(JsonView jsonValue)
+  : KeyPhrase()
 {
   *this = jsonValue;
 }

@@ -27,12 +27,8 @@ ComprehendMedicalAsyncJobFilter::ComprehendMedicalAsyncJobFilter() :
 {
 }
 
-ComprehendMedicalAsyncJobFilter::ComprehendMedicalAsyncJobFilter(JsonView jsonValue) : 
-    m_jobNameHasBeenSet(false),
-    m_jobStatus(JobStatus::NOT_SET),
-    m_jobStatusHasBeenSet(false),
-    m_submitTimeBeforeHasBeenSet(false),
-    m_submitTimeAfterHasBeenSet(false)
+ComprehendMedicalAsyncJobFilter::ComprehendMedicalAsyncJobFilter(JsonView jsonValue)
+  : ComprehendMedicalAsyncJobFilter()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ FilledMapAggregatedFieldWells::FilledMapAggregatedFieldWells() :
 {
 }
 
-FilledMapAggregatedFieldWells::FilledMapAggregatedFieldWells(JsonView jsonValue) : 
-    m_geospatialHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+FilledMapAggregatedFieldWells::FilledMapAggregatedFieldWells(JsonView jsonValue)
+  : FilledMapAggregatedFieldWells()
 {
   *this = jsonValue;
 }

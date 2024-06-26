@@ -24,9 +24,8 @@ DataProductItem::DataProductItem() :
 {
 }
 
-DataProductItem::DataProductItem(JsonView jsonValue) : 
-    m_domainIdHasBeenSet(false),
-    m_itemIdHasBeenSet(false)
+DataProductItem::DataProductItem(JsonView jsonValue)
+  : DataProductItem()
 {
   *this = jsonValue;
 }

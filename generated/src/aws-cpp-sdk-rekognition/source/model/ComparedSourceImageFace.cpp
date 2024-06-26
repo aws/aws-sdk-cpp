@@ -25,10 +25,8 @@ ComparedSourceImageFace::ComparedSourceImageFace() :
 {
 }
 
-ComparedSourceImageFace::ComparedSourceImageFace(JsonView jsonValue) : 
-    m_boundingBoxHasBeenSet(false),
-    m_confidence(0.0),
-    m_confidenceHasBeenSet(false)
+ComparedSourceImageFace::ComparedSourceImageFace(JsonView jsonValue)
+  : ComparedSourceImageFace()
 {
   *this = jsonValue;
 }

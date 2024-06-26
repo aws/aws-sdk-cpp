@@ -24,9 +24,8 @@ ExplainabilityInfo::ExplainabilityInfo() :
 {
 }
 
-ExplainabilityInfo::ExplainabilityInfo(JsonView jsonValue) : 
-    m_explainabilityArnHasBeenSet(false),
-    m_statusHasBeenSet(false)
+ExplainabilityInfo::ExplainabilityInfo(JsonView jsonValue)
+  : ExplainabilityInfo()
 {
   *this = jsonValue;
 }

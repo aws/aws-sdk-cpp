@@ -24,9 +24,8 @@ Image::Image() :
 {
 }
 
-Image::Image(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_fileHasBeenSet(false)
+Image::Image(JsonView jsonValue)
+  : Image()
 {
   *this = jsonValue;
 }

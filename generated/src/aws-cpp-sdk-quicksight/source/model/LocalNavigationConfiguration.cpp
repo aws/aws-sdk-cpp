@@ -23,8 +23,8 @@ LocalNavigationConfiguration::LocalNavigationConfiguration() :
 {
 }
 
-LocalNavigationConfiguration::LocalNavigationConfiguration(JsonView jsonValue) : 
-    m_targetSheetIdHasBeenSet(false)
+LocalNavigationConfiguration::LocalNavigationConfiguration(JsonView jsonValue)
+  : LocalNavigationConfiguration()
 {
   *this = jsonValue;
 }

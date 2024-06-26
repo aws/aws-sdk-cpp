@@ -24,9 +24,8 @@ EventBridgeParameters::EventBridgeParameters() :
 {
 }
 
-EventBridgeParameters::EventBridgeParameters(JsonView jsonValue) : 
-    m_detailTypeHasBeenSet(false),
-    m_sourceHasBeenSet(false)
+EventBridgeParameters::EventBridgeParameters(JsonView jsonValue)
+  : EventBridgeParameters()
 {
   *this = jsonValue;
 }

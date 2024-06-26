@@ -24,9 +24,8 @@ PipelineVariable::PipelineVariable() :
 {
 }
 
-PipelineVariable::PipelineVariable(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
+PipelineVariable::PipelineVariable(JsonView jsonValue)
+  : PipelineVariable()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ SubscribedListingItem::SubscribedListingItem() :
 {
 }
 
-SubscribedListingItem::SubscribedListingItem(JsonView jsonValue) : 
-    m_assetListingHasBeenSet(false)
+SubscribedListingItem::SubscribedListingItem(JsonView jsonValue)
+  : SubscribedListingItem()
 {
   *this = jsonValue;
 }

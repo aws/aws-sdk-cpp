@@ -25,10 +25,8 @@ GPSPointDimension::GPSPointDimension() :
 {
 }
 
-GPSPointDimension::GPSPointDimension(JsonView jsonValue) : 
-    m_coordinatesHasBeenSet(false),
-    m_rangeInKilometers(0.0),
-    m_rangeInKilometersHasBeenSet(false)
+GPSPointDimension::GPSPointDimension(JsonView jsonValue)
+  : GPSPointDimension()
 {
   *this = jsonValue;
 }

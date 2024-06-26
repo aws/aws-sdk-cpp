@@ -23,8 +23,8 @@ S3Presign::S3Presign() :
 {
 }
 
-S3Presign::S3Presign(JsonView jsonValue) : 
-    m_iamPolicyConstraintsHasBeenSet(false)
+S3Presign::S3Presign(JsonView jsonValue)
+  : S3Presign()
 {
   *this = jsonValue;
 }

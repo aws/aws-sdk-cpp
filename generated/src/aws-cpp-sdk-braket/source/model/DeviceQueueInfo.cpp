@@ -27,12 +27,8 @@ DeviceQueueInfo::DeviceQueueInfo() :
 {
 }
 
-DeviceQueueInfo::DeviceQueueInfo(JsonView jsonValue) : 
-    m_queue(QueueName::NOT_SET),
-    m_queueHasBeenSet(false),
-    m_queuePriority(QueuePriority::NOT_SET),
-    m_queuePriorityHasBeenSet(false),
-    m_queueSizeHasBeenSet(false)
+DeviceQueueInfo::DeviceQueueInfo(JsonView jsonValue)
+  : DeviceQueueInfo()
 {
   *this = jsonValue;
 }

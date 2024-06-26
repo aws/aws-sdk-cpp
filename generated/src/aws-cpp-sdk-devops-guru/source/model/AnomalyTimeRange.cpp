@@ -24,9 +24,8 @@ AnomalyTimeRange::AnomalyTimeRange() :
 {
 }
 
-AnomalyTimeRange::AnomalyTimeRange(JsonView jsonValue) : 
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
+AnomalyTimeRange::AnomalyTimeRange(JsonView jsonValue)
+  : AnomalyTimeRange()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ ServiceConnectServiceResource::ServiceConnectServiceResource() :
 {
 }
 
-ServiceConnectServiceResource::ServiceConnectServiceResource(JsonView jsonValue) : 
-    m_discoveryNameHasBeenSet(false),
-    m_discoveryArnHasBeenSet(false)
+ServiceConnectServiceResource::ServiceConnectServiceResource(JsonView jsonValue)
+  : ServiceConnectServiceResource()
 {
   *this = jsonValue;
 }

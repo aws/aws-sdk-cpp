@@ -24,9 +24,8 @@ ForecastConfiguration::ForecastConfiguration() :
 {
 }
 
-ForecastConfiguration::ForecastConfiguration(JsonView jsonValue) : 
-    m_forecastPropertiesHasBeenSet(false),
-    m_scenarioHasBeenSet(false)
+ForecastConfiguration::ForecastConfiguration(JsonView jsonValue)
+  : ForecastConfiguration()
 {
   *this = jsonValue;
 }

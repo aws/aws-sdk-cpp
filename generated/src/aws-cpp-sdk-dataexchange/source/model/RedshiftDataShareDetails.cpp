@@ -28,13 +28,8 @@ RedshiftDataShareDetails::RedshiftDataShareDetails() :
 {
 }
 
-RedshiftDataShareDetails::RedshiftDataShareDetails(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_databaseHasBeenSet(false),
-    m_functionHasBeenSet(false),
-    m_tableHasBeenSet(false),
-    m_schemaHasBeenSet(false),
-    m_viewHasBeenSet(false)
+RedshiftDataShareDetails::RedshiftDataShareDetails(JsonView jsonValue)
+  : RedshiftDataShareDetails()
 {
   *this = jsonValue;
 }

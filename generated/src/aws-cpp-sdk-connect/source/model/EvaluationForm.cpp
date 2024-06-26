@@ -39,24 +39,8 @@ EvaluationForm::EvaluationForm() :
 {
 }
 
-EvaluationForm::EvaluationForm(JsonView jsonValue) : 
-    m_evaluationFormIdHasBeenSet(false),
-    m_evaluationFormVersion(0),
-    m_evaluationFormVersionHasBeenSet(false),
-    m_locked(false),
-    m_lockedHasBeenSet(false),
-    m_evaluationFormArnHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_status(EvaluationFormVersionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_itemsHasBeenSet(false),
-    m_scoringStrategyHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_lastModifiedByHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+EvaluationForm::EvaluationForm(JsonView jsonValue)
+  : EvaluationForm()
 {
   *this = jsonValue;
 }

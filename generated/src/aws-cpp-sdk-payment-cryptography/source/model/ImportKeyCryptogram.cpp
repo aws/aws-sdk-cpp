@@ -29,14 +29,8 @@ ImportKeyCryptogram::ImportKeyCryptogram() :
 {
 }
 
-ImportKeyCryptogram::ImportKeyCryptogram(JsonView jsonValue) : 
-    m_keyAttributesHasBeenSet(false),
-    m_exportable(false),
-    m_exportableHasBeenSet(false),
-    m_wrappedKeyCryptogramHasBeenSet(false),
-    m_importTokenHasBeenSet(false),
-    m_wrappingSpec(WrappingKeySpec::NOT_SET),
-    m_wrappingSpecHasBeenSet(false)
+ImportKeyCryptogram::ImportKeyCryptogram(JsonView jsonValue)
+  : ImportKeyCryptogram()
 {
   *this = jsonValue;
 }

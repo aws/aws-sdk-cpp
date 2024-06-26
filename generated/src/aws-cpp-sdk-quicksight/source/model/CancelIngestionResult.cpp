@@ -22,8 +22,8 @@ CancelIngestionResult::CancelIngestionResult() :
 {
 }
 
-CancelIngestionResult::CancelIngestionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+CancelIngestionResult::CancelIngestionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CancelIngestionResult()
 {
   *this = result;
 }

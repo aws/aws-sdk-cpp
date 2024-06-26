@@ -28,13 +28,8 @@ EdgeDeployment::EdgeDeployment() :
 {
 }
 
-EdgeDeployment::EdgeDeployment(JsonView jsonValue) : 
-    m_deploymentNameHasBeenSet(false),
-    m_type(DeploymentType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_failureHandlingPolicy(FailureHandlingPolicy::NOT_SET),
-    m_failureHandlingPolicyHasBeenSet(false),
-    m_definitionsHasBeenSet(false)
+EdgeDeployment::EdgeDeployment(JsonView jsonValue)
+  : EdgeDeployment()
 {
   *this = jsonValue;
 }

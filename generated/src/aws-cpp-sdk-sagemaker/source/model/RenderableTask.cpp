@@ -23,8 +23,8 @@ RenderableTask::RenderableTask() :
 {
 }
 
-RenderableTask::RenderableTask(JsonView jsonValue) : 
-    m_inputHasBeenSet(false)
+RenderableTask::RenderableTask(JsonView jsonValue)
+  : RenderableTask()
 {
   *this = jsonValue;
 }

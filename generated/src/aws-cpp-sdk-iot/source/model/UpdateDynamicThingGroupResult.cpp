@@ -22,8 +22,8 @@ UpdateDynamicThingGroupResult::UpdateDynamicThingGroupResult() :
 {
 }
 
-UpdateDynamicThingGroupResult::UpdateDynamicThingGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_version(0)
+UpdateDynamicThingGroupResult::UpdateDynamicThingGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateDynamicThingGroupResult()
 {
   *this = result;
 }

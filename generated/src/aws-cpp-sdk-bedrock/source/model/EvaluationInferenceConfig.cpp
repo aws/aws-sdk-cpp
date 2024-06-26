@@ -23,8 +23,8 @@ EvaluationInferenceConfig::EvaluationInferenceConfig() :
 {
 }
 
-EvaluationInferenceConfig::EvaluationInferenceConfig(JsonView jsonValue) : 
-    m_modelsHasBeenSet(false)
+EvaluationInferenceConfig::EvaluationInferenceConfig(JsonView jsonValue)
+  : EvaluationInferenceConfig()
 {
   *this = jsonValue;
 }

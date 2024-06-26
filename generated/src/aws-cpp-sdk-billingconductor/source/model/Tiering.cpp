@@ -23,8 +23,8 @@ Tiering::Tiering() :
 {
 }
 
-Tiering::Tiering(JsonView jsonValue) : 
-    m_freeTierHasBeenSet(false)
+Tiering::Tiering(JsonView jsonValue)
+  : Tiering()
 {
   *this = jsonValue;
 }

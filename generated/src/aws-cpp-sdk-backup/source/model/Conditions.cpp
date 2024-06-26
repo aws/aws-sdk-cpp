@@ -26,11 +26,8 @@ Conditions::Conditions() :
 {
 }
 
-Conditions::Conditions(JsonView jsonValue) : 
-    m_stringEqualsHasBeenSet(false),
-    m_stringNotEqualsHasBeenSet(false),
-    m_stringLikeHasBeenSet(false),
-    m_stringNotLikeHasBeenSet(false)
+Conditions::Conditions(JsonView jsonValue)
+  : Conditions()
 {
   *this = jsonValue;
 }

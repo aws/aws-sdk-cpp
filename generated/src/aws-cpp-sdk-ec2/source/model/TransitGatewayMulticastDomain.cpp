@@ -33,16 +33,8 @@ TransitGatewayMulticastDomain::TransitGatewayMulticastDomain() :
 {
 }
 
-TransitGatewayMulticastDomain::TransitGatewayMulticastDomain(const XmlNode& xmlNode) : 
-    m_transitGatewayMulticastDomainIdHasBeenSet(false),
-    m_transitGatewayIdHasBeenSet(false),
-    m_transitGatewayMulticastDomainArnHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_optionsHasBeenSet(false),
-    m_state(TransitGatewayMulticastDomainState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+TransitGatewayMulticastDomain::TransitGatewayMulticastDomain(const XmlNode& xmlNode)
+  : TransitGatewayMulticastDomain()
 {
   *this = xmlNode;
 }

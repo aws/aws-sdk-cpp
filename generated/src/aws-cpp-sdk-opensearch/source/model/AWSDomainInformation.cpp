@@ -25,10 +25,8 @@ AWSDomainInformation::AWSDomainInformation() :
 {
 }
 
-AWSDomainInformation::AWSDomainInformation(JsonView jsonValue) : 
-    m_ownerIdHasBeenSet(false),
-    m_domainNameHasBeenSet(false),
-    m_regionHasBeenSet(false)
+AWSDomainInformation::AWSDomainInformation(JsonView jsonValue)
+  : AWSDomainInformation()
 {
   *this = jsonValue;
 }

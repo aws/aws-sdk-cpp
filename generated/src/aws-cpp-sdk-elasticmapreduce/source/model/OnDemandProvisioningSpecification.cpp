@@ -25,10 +25,8 @@ OnDemandProvisioningSpecification::OnDemandProvisioningSpecification() :
 {
 }
 
-OnDemandProvisioningSpecification::OnDemandProvisioningSpecification(JsonView jsonValue) : 
-    m_allocationStrategy(OnDemandProvisioningAllocationStrategy::NOT_SET),
-    m_allocationStrategyHasBeenSet(false),
-    m_capacityReservationOptionsHasBeenSet(false)
+OnDemandProvisioningSpecification::OnDemandProvisioningSpecification(JsonView jsonValue)
+  : OnDemandProvisioningSpecification()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ CreateCaseActionDefinition::CreateCaseActionDefinition() :
 {
 }
 
-CreateCaseActionDefinition::CreateCaseActionDefinition(JsonView jsonValue) : 
-    m_fieldsHasBeenSet(false),
-    m_templateIdHasBeenSet(false)
+CreateCaseActionDefinition::CreateCaseActionDefinition(JsonView jsonValue)
+  : CreateCaseActionDefinition()
 {
   *this = jsonValue;
 }

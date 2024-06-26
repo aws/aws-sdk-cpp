@@ -23,8 +23,8 @@ ModelCardExportOutputConfig::ModelCardExportOutputConfig() :
 {
 }
 
-ModelCardExportOutputConfig::ModelCardExportOutputConfig(JsonView jsonValue) : 
-    m_s3OutputPathHasBeenSet(false)
+ModelCardExportOutputConfig::ModelCardExportOutputConfig(JsonView jsonValue)
+  : ModelCardExportOutputConfig()
 {
   *this = jsonValue;
 }

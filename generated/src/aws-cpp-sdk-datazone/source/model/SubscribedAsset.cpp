@@ -30,15 +30,8 @@ SubscribedAsset::SubscribedAsset() :
 {
 }
 
-SubscribedAsset::SubscribedAsset(JsonView jsonValue) : 
-    m_assetIdHasBeenSet(false),
-    m_assetRevisionHasBeenSet(false),
-    m_failureCauseHasBeenSet(false),
-    m_failureTimestampHasBeenSet(false),
-    m_grantedTimestampHasBeenSet(false),
-    m_status(SubscriptionGrantStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_targetNameHasBeenSet(false)
+SubscribedAsset::SubscribedAsset(JsonView jsonValue)
+  : SubscribedAsset()
 {
   *this = jsonValue;
 }

@@ -27,10 +27,8 @@ LoadForecast::LoadForecast() :
 {
 }
 
-LoadForecast::LoadForecast(const XmlNode& xmlNode) : 
-    m_timestampsHasBeenSet(false),
-    m_valuesHasBeenSet(false),
-    m_metricSpecificationHasBeenSet(false)
+LoadForecast::LoadForecast(const XmlNode& xmlNode)
+  : LoadForecast()
 {
   *this = xmlNode;
 }

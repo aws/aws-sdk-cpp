@@ -26,11 +26,8 @@ ListSourceRepositoryBranchesItem::ListSourceRepositoryBranchesItem() :
 {
 }
 
-ListSourceRepositoryBranchesItem::ListSourceRepositoryBranchesItem(JsonView jsonValue) : 
-    m_refHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_headCommitIdHasBeenSet(false)
+ListSourceRepositoryBranchesItem::ListSourceRepositoryBranchesItem(JsonView jsonValue)
+  : ListSourceRepositoryBranchesItem()
 {
   *this = jsonValue;
 }

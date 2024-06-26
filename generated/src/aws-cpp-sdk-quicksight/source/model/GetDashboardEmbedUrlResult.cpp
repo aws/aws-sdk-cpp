@@ -22,8 +22,8 @@ GetDashboardEmbedUrlResult::GetDashboardEmbedUrlResult() :
 {
 }
 
-GetDashboardEmbedUrlResult::GetDashboardEmbedUrlResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+GetDashboardEmbedUrlResult::GetDashboardEmbedUrlResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetDashboardEmbedUrlResult()
 {
   *this = result;
 }

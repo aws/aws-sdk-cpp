@@ -25,10 +25,8 @@ DataQualityRuleRecommendationRunFilter::DataQualityRuleRecommendationRunFilter()
 {
 }
 
-DataQualityRuleRecommendationRunFilter::DataQualityRuleRecommendationRunFilter(JsonView jsonValue) : 
-    m_dataSourceHasBeenSet(false),
-    m_startedBeforeHasBeenSet(false),
-    m_startedAfterHasBeenSet(false)
+DataQualityRuleRecommendationRunFilter::DataQualityRuleRecommendationRunFilter(JsonView jsonValue)
+  : DataQualityRuleRecommendationRunFilter()
 {
   *this = jsonValue;
 }

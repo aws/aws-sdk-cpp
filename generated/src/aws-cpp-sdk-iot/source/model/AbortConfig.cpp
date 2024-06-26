@@ -23,8 +23,8 @@ AbortConfig::AbortConfig() :
 {
 }
 
-AbortConfig::AbortConfig(JsonView jsonValue) : 
-    m_criteriaListHasBeenSet(false)
+AbortConfig::AbortConfig(JsonView jsonValue)
+  : AbortConfig()
 {
   *this = jsonValue;
 }

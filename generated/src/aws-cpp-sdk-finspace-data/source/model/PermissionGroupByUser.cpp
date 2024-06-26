@@ -26,11 +26,8 @@ PermissionGroupByUser::PermissionGroupByUser() :
 {
 }
 
-PermissionGroupByUser::PermissionGroupByUser(JsonView jsonValue) : 
-    m_permissionGroupIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_membershipStatus(PermissionGroupMembershipStatus::NOT_SET),
-    m_membershipStatusHasBeenSet(false)
+PermissionGroupByUser::PermissionGroupByUser(JsonView jsonValue)
+  : PermissionGroupByUser()
 {
   *this = jsonValue;
 }

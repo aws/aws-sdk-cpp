@@ -26,11 +26,8 @@ AllowedInputTypes::AllowedInputTypes() :
 {
 }
 
-AllowedInputTypes::AllowedInputTypes(JsonView jsonValue) : 
-    m_allowAudioInput(false),
-    m_allowAudioInputHasBeenSet(false),
-    m_allowDTMFInput(false),
-    m_allowDTMFInputHasBeenSet(false)
+AllowedInputTypes::AllowedInputTypes(JsonView jsonValue)
+  : AllowedInputTypes()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ SnsChannelConfig::SnsChannelConfig() :
 {
 }
 
-SnsChannelConfig::SnsChannelConfig(JsonView jsonValue) : 
-    m_topicArnHasBeenSet(false)
+SnsChannelConfig::SnsChannelConfig(JsonView jsonValue)
+  : SnsChannelConfig()
 {
   *this = jsonValue;
 }

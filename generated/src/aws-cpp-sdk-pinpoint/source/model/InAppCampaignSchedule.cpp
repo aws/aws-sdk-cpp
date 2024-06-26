@@ -25,10 +25,8 @@ InAppCampaignSchedule::InAppCampaignSchedule() :
 {
 }
 
-InAppCampaignSchedule::InAppCampaignSchedule(JsonView jsonValue) : 
-    m_endDateHasBeenSet(false),
-    m_eventFilterHasBeenSet(false),
-    m_quietTimeHasBeenSet(false)
+InAppCampaignSchedule::InAppCampaignSchedule(JsonView jsonValue)
+  : InAppCampaignSchedule()
 {
   *this = jsonValue;
 }

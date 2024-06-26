@@ -25,10 +25,8 @@ ReplicaAutoScalingUpdate::ReplicaAutoScalingUpdate() :
 {
 }
 
-ReplicaAutoScalingUpdate::ReplicaAutoScalingUpdate(JsonView jsonValue) : 
-    m_regionNameHasBeenSet(false),
-    m_replicaGlobalSecondaryIndexUpdatesHasBeenSet(false),
-    m_replicaProvisionedReadCapacityAutoScalingUpdateHasBeenSet(false)
+ReplicaAutoScalingUpdate::ReplicaAutoScalingUpdate(JsonView jsonValue)
+  : ReplicaAutoScalingUpdate()
 {
   *this = jsonValue;
 }

@@ -40,25 +40,8 @@ AwsCloudFormationStackDetails::AwsCloudFormationStackDetails() :
 {
 }
 
-AwsCloudFormationStackDetails::AwsCloudFormationStackDetails(JsonView jsonValue) : 
-    m_capabilitiesHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_disableRollback(false),
-    m_disableRollbackHasBeenSet(false),
-    m_driftInformationHasBeenSet(false),
-    m_enableTerminationProtection(false),
-    m_enableTerminationProtectionHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_notificationArnsHasBeenSet(false),
-    m_outputsHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_stackIdHasBeenSet(false),
-    m_stackNameHasBeenSet(false),
-    m_stackStatusHasBeenSet(false),
-    m_stackStatusReasonHasBeenSet(false),
-    m_timeoutInMinutes(0),
-    m_timeoutInMinutesHasBeenSet(false)
+AwsCloudFormationStackDetails::AwsCloudFormationStackDetails(JsonView jsonValue)
+  : AwsCloudFormationStackDetails()
 {
   *this = jsonValue;
 }

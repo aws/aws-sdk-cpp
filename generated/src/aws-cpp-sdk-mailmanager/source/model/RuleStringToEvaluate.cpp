@@ -24,9 +24,8 @@ RuleStringToEvaluate::RuleStringToEvaluate() :
 {
 }
 
-RuleStringToEvaluate::RuleStringToEvaluate(JsonView jsonValue) : 
-    m_attribute(RuleStringEmailAttribute::NOT_SET),
-    m_attributeHasBeenSet(false)
+RuleStringToEvaluate::RuleStringToEvaluate(JsonView jsonValue)
+  : RuleStringToEvaluate()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ InAppMessageButton::InAppMessageButton() :
 {
 }
 
-InAppMessageButton::InAppMessageButton(JsonView jsonValue) : 
-    m_androidHasBeenSet(false),
-    m_defaultConfigHasBeenSet(false),
-    m_iOSHasBeenSet(false),
-    m_webHasBeenSet(false)
+InAppMessageButton::InAppMessageButton(JsonView jsonValue)
+  : InAppMessageButton()
 {
   *this = jsonValue;
 }

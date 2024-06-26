@@ -29,14 +29,8 @@ AppAuthorizationSummary::AppAuthorizationSummary() :
 {
 }
 
-AppAuthorizationSummary::AppAuthorizationSummary(JsonView jsonValue) : 
-    m_appAuthorizationArnHasBeenSet(false),
-    m_appBundleArnHasBeenSet(false),
-    m_appHasBeenSet(false),
-    m_tenantHasBeenSet(false),
-    m_status(AppAuthorizationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+AppAuthorizationSummary::AppAuthorizationSummary(JsonView jsonValue)
+  : AppAuthorizationSummary()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ CodegenGenericDataModel::CodegenGenericDataModel() :
 {
 }
 
-CodegenGenericDataModel::CodegenGenericDataModel(JsonView jsonValue) : 
-    m_fieldsHasBeenSet(false),
-    m_isJoinTable(false),
-    m_isJoinTableHasBeenSet(false),
-    m_primaryKeysHasBeenSet(false)
+CodegenGenericDataModel::CodegenGenericDataModel(JsonView jsonValue)
+  : CodegenGenericDataModel()
 {
   *this = jsonValue;
 }

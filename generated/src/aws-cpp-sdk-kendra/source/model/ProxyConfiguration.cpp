@@ -26,11 +26,8 @@ ProxyConfiguration::ProxyConfiguration() :
 {
 }
 
-ProxyConfiguration::ProxyConfiguration(JsonView jsonValue) : 
-    m_hostHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_credentialsHasBeenSet(false)
+ProxyConfiguration::ProxyConfiguration(JsonView jsonValue)
+  : ProxyConfiguration()
 {
   *this = jsonValue;
 }

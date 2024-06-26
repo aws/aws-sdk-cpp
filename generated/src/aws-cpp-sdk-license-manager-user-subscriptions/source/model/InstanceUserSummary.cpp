@@ -30,15 +30,8 @@ InstanceUserSummary::InstanceUserSummary() :
 {
 }
 
-InstanceUserSummary::InstanceUserSummary(JsonView jsonValue) : 
-    m_associationDateHasBeenSet(false),
-    m_disassociationDateHasBeenSet(false),
-    m_domainHasBeenSet(false),
-    m_identityProviderHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_usernameHasBeenSet(false)
+InstanceUserSummary::InstanceUserSummary(JsonView jsonValue)
+  : InstanceUserSummary()
 {
   *this = jsonValue;
 }

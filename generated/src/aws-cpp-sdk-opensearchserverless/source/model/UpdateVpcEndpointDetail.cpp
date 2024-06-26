@@ -30,15 +30,8 @@ UpdateVpcEndpointDetail::UpdateVpcEndpointDetail() :
 {
 }
 
-UpdateVpcEndpointDetail::UpdateVpcEndpointDetail(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_lastModifiedDate(0),
-    m_lastModifiedDateHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false),
-    m_status(VpcEndpointStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_subnetIdsHasBeenSet(false)
+UpdateVpcEndpointDetail::UpdateVpcEndpointDetail(JsonView jsonValue)
+  : UpdateVpcEndpointDetail()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ ModifyInstancePlacementResponse::ModifyInstancePlacementResponse() :
 {
 }
 
-ModifyInstancePlacementResponse::ModifyInstancePlacementResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_return(false)
+ModifyInstancePlacementResponse::ModifyInstancePlacementResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : ModifyInstancePlacementResponse()
 {
   *this = result;
 }

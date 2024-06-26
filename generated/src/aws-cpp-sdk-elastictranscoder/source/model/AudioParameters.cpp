@@ -28,13 +28,8 @@ AudioParameters::AudioParameters() :
 {
 }
 
-AudioParameters::AudioParameters(JsonView jsonValue) : 
-    m_codecHasBeenSet(false),
-    m_sampleRateHasBeenSet(false),
-    m_bitRateHasBeenSet(false),
-    m_channelsHasBeenSet(false),
-    m_audioPackingModeHasBeenSet(false),
-    m_codecOptionsHasBeenSet(false)
+AudioParameters::AudioParameters(JsonView jsonValue)
+  : AudioParameters()
 {
   *this = jsonValue;
 }

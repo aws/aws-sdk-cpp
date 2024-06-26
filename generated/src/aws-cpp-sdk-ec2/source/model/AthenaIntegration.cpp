@@ -29,12 +29,8 @@ AthenaIntegration::AthenaIntegration() :
 {
 }
 
-AthenaIntegration::AthenaIntegration(const XmlNode& xmlNode) : 
-    m_integrationResultS3DestinationArnHasBeenSet(false),
-    m_partitionLoadFrequency(PartitionLoadFrequency::NOT_SET),
-    m_partitionLoadFrequencyHasBeenSet(false),
-    m_partitionStartDateHasBeenSet(false),
-    m_partitionEndDateHasBeenSet(false)
+AthenaIntegration::AthenaIntegration(const XmlNode& xmlNode)
+  : AthenaIntegration()
 {
   *this = xmlNode;
 }

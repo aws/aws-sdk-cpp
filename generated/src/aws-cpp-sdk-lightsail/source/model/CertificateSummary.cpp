@@ -27,12 +27,8 @@ CertificateSummary::CertificateSummary() :
 {
 }
 
-CertificateSummary::CertificateSummary(JsonView jsonValue) : 
-    m_certificateArnHasBeenSet(false),
-    m_certificateNameHasBeenSet(false),
-    m_domainNameHasBeenSet(false),
-    m_certificateDetailHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+CertificateSummary::CertificateSummary(JsonView jsonValue)
+  : CertificateSummary()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ InputDataConfig::InputDataConfig() :
 {
 }
 
-InputDataConfig::InputDataConfig(JsonView jsonValue) : 
-    m_datasetGroupArnHasBeenSet(false),
-    m_supplementaryFeaturesHasBeenSet(false)
+InputDataConfig::InputDataConfig(JsonView jsonValue)
+  : InputDataConfig()
 {
   *this = jsonValue;
 }

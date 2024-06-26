@@ -23,8 +23,8 @@ ContainerProductEntityIdFilter::ContainerProductEntityIdFilter() :
 {
 }
 
-ContainerProductEntityIdFilter::ContainerProductEntityIdFilter(JsonView jsonValue) : 
-    m_valueListHasBeenSet(false)
+ContainerProductEntityIdFilter::ContainerProductEntityIdFilter(JsonView jsonValue)
+  : ContainerProductEntityIdFilter()
 {
   *this = jsonValue;
 }

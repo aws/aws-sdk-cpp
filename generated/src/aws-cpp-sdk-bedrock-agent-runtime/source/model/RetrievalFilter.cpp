@@ -35,20 +35,8 @@ RetrievalFilter::RetrievalFilter() :
 {
 }
 
-RetrievalFilter::RetrievalFilter(JsonView jsonValue) : 
-    m_andAllHasBeenSet(false),
-    m_equalsHasBeenSet(false),
-    m_greaterThanHasBeenSet(false),
-    m_greaterThanOrEqualsHasBeenSet(false),
-    m_inHasBeenSet(false),
-    m_lessThanHasBeenSet(false),
-    m_lessThanOrEqualsHasBeenSet(false),
-    m_listContainsHasBeenSet(false),
-    m_notEqualsHasBeenSet(false),
-    m_notInHasBeenSet(false),
-    m_orAllHasBeenSet(false),
-    m_startsWithHasBeenSet(false),
-    m_stringContainsHasBeenSet(false)
+RetrievalFilter::RetrievalFilter(JsonView jsonValue)
+  : RetrievalFilter()
 {
   *this = jsonValue;
 }

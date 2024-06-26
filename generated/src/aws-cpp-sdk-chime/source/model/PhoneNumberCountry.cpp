@@ -24,9 +24,8 @@ PhoneNumberCountry::PhoneNumberCountry() :
 {
 }
 
-PhoneNumberCountry::PhoneNumberCountry(JsonView jsonValue) : 
-    m_countryCodeHasBeenSet(false),
-    m_supportedPhoneNumberTypesHasBeenSet(false)
+PhoneNumberCountry::PhoneNumberCountry(JsonView jsonValue)
+  : PhoneNumberCountry()
 {
   *this = jsonValue;
 }

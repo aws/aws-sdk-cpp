@@ -23,8 +23,8 @@ UsageBasedRateCardItem::UsageBasedRateCardItem() :
 {
 }
 
-UsageBasedRateCardItem::UsageBasedRateCardItem(JsonView jsonValue) : 
-    m_rateCardHasBeenSet(false)
+UsageBasedRateCardItem::UsageBasedRateCardItem(JsonView jsonValue)
+  : UsageBasedRateCardItem()
 {
   *this = jsonValue;
 }

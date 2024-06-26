@@ -29,14 +29,8 @@ InputOrigin::InputOrigin() :
 {
 }
 
-InputOrigin::InputOrigin(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_regionName(RegionName::NOT_SET),
-    m_regionNameHasBeenSet(false),
-    m_protocolPolicy(OriginProtocolPolicyEnum::NOT_SET),
-    m_protocolPolicyHasBeenSet(false),
-    m_responseTimeout(0),
-    m_responseTimeoutHasBeenSet(false)
+InputOrigin::InputOrigin(JsonView jsonValue)
+  : InputOrigin()
 {
   *this = jsonValue;
 }

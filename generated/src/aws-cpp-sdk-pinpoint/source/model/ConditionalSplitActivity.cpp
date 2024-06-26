@@ -26,11 +26,8 @@ ConditionalSplitActivity::ConditionalSplitActivity() :
 {
 }
 
-ConditionalSplitActivity::ConditionalSplitActivity(JsonView jsonValue) : 
-    m_conditionHasBeenSet(false),
-    m_evaluationWaitTimeHasBeenSet(false),
-    m_falseActivityHasBeenSet(false),
-    m_trueActivityHasBeenSet(false)
+ConditionalSplitActivity::ConditionalSplitActivity(JsonView jsonValue)
+  : ConditionalSplitActivity()
 {
   *this = jsonValue;
 }

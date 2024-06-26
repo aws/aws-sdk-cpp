@@ -24,9 +24,8 @@ UpdateSvmActiveDirectoryConfiguration::UpdateSvmActiveDirectoryConfiguration() :
 {
 }
 
-UpdateSvmActiveDirectoryConfiguration::UpdateSvmActiveDirectoryConfiguration(JsonView jsonValue) : 
-    m_selfManagedActiveDirectoryConfigurationHasBeenSet(false),
-    m_netBiosNameHasBeenSet(false)
+UpdateSvmActiveDirectoryConfiguration::UpdateSvmActiveDirectoryConfiguration(JsonView jsonValue)
+  : UpdateSvmActiveDirectoryConfiguration()
 {
   *this = jsonValue;
 }

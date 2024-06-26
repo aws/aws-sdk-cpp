@@ -24,9 +24,8 @@ AwsAmazonMqBrokerUsersDetails::AwsAmazonMqBrokerUsersDetails() :
 {
 }
 
-AwsAmazonMqBrokerUsersDetails::AwsAmazonMqBrokerUsersDetails(JsonView jsonValue) : 
-    m_pendingChangeHasBeenSet(false),
-    m_usernameHasBeenSet(false)
+AwsAmazonMqBrokerUsersDetails::AwsAmazonMqBrokerUsersDetails(JsonView jsonValue)
+  : AwsAmazonMqBrokerUsersDetails()
 {
   *this = jsonValue;
 }

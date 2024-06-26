@@ -28,13 +28,8 @@ Rotation::Rotation() :
 {
 }
 
-Rotation::Rotation(JsonView jsonValue) : 
-    m_rotationArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_contactIdsHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_timeZoneIdHasBeenSet(false),
-    m_recurrenceHasBeenSet(false)
+Rotation::Rotation(JsonView jsonValue)
+  : Rotation()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ MediaStreamSource::MediaStreamSource() :
 {
 }
 
-MediaStreamSource::MediaStreamSource(JsonView jsonValue) : 
-    m_sourceType(MediaPipelineSourceType::NOT_SET),
-    m_sourceTypeHasBeenSet(false),
-    m_sourceArnHasBeenSet(false)
+MediaStreamSource::MediaStreamSource(JsonView jsonValue)
+  : MediaStreamSource()
 {
   *this = jsonValue;
 }

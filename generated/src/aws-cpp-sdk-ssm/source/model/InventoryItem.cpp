@@ -28,13 +28,8 @@ InventoryItem::InventoryItem() :
 {
 }
 
-InventoryItem::InventoryItem(JsonView jsonValue) : 
-    m_typeNameHasBeenSet(false),
-    m_schemaVersionHasBeenSet(false),
-    m_captureTimeHasBeenSet(false),
-    m_contentHashHasBeenSet(false),
-    m_contentHasBeenSet(false),
-    m_contextHasBeenSet(false)
+InventoryItem::InventoryItem(JsonView jsonValue)
+  : InventoryItem()
 {
   *this = jsonValue;
 }

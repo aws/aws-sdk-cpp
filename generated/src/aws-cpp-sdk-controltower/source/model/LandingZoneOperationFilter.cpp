@@ -24,9 +24,8 @@ LandingZoneOperationFilter::LandingZoneOperationFilter() :
 {
 }
 
-LandingZoneOperationFilter::LandingZoneOperationFilter(JsonView jsonValue) : 
-    m_statusesHasBeenSet(false),
-    m_typesHasBeenSet(false)
+LandingZoneOperationFilter::LandingZoneOperationFilter(JsonView jsonValue)
+  : LandingZoneOperationFilter()
 {
   *this = jsonValue;
 }

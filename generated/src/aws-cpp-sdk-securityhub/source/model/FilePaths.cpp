@@ -26,11 +26,8 @@ FilePaths::FilePaths() :
 {
 }
 
-FilePaths::FilePaths(JsonView jsonValue) : 
-    m_filePathHasBeenSet(false),
-    m_fileNameHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_hashHasBeenSet(false)
+FilePaths::FilePaths(JsonView jsonValue)
+  : FilePaths()
 {
   *this = jsonValue;
 }

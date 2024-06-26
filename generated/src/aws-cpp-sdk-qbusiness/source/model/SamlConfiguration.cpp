@@ -26,11 +26,8 @@ SamlConfiguration::SamlConfiguration() :
 {
 }
 
-SamlConfiguration::SamlConfiguration(JsonView jsonValue) : 
-    m_metadataXMLHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_userIdAttributeHasBeenSet(false),
-    m_userGroupAttributeHasBeenSet(false)
+SamlConfiguration::SamlConfiguration(JsonView jsonValue)
+  : SamlConfiguration()
 {
   *this = jsonValue;
 }

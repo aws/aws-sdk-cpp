@@ -27,12 +27,8 @@ EntryDescription::EntryDescription() :
 {
 }
 
-EntryDescription::EntryDescription(JsonView jsonValue) : 
-    m_entryDetailHasBeenSet(false),
-    m_entryRuleNumber(0),
-    m_entryRuleNumberHasBeenSet(false),
-    m_entryType(EntryType::NOT_SET),
-    m_entryTypeHasBeenSet(false)
+EntryDescription::EntryDescription(JsonView jsonValue)
+  : EntryDescription()
 {
   *this = jsonValue;
 }

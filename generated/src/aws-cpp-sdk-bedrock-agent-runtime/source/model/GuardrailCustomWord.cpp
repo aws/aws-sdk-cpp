@@ -25,10 +25,8 @@ GuardrailCustomWord::GuardrailCustomWord() :
 {
 }
 
-GuardrailCustomWord::GuardrailCustomWord(JsonView jsonValue) : 
-    m_action(GuardrailWordPolicyAction::NOT_SET),
-    m_actionHasBeenSet(false),
-    m_matchHasBeenSet(false)
+GuardrailCustomWord::GuardrailCustomWord(JsonView jsonValue)
+  : GuardrailCustomWord()
 {
   *this = jsonValue;
 }

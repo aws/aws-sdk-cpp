@@ -22,8 +22,8 @@ GetSMSSandboxAccountStatusResult::GetSMSSandboxAccountStatusResult() :
 {
 }
 
-GetSMSSandboxAccountStatusResult::GetSMSSandboxAccountStatusResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_isInSandbox(false)
+GetSMSSandboxAccountStatusResult::GetSMSSandboxAccountStatusResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : GetSMSSandboxAccountStatusResult()
 {
   *this = result;
 }

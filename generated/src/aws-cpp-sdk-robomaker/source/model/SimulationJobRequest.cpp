@@ -37,22 +37,8 @@ SimulationJobRequest::SimulationJobRequest() :
 {
 }
 
-SimulationJobRequest::SimulationJobRequest(JsonView jsonValue) : 
-    m_outputLocationHasBeenSet(false),
-    m_loggingConfigHasBeenSet(false),
-    m_maxJobDurationInSeconds(0),
-    m_maxJobDurationInSecondsHasBeenSet(false),
-    m_iamRoleHasBeenSet(false),
-    m_failureBehavior(FailureBehavior::NOT_SET),
-    m_failureBehaviorHasBeenSet(false),
-    m_useDefaultApplications(false),
-    m_useDefaultApplicationsHasBeenSet(false),
-    m_robotApplicationsHasBeenSet(false),
-    m_simulationApplicationsHasBeenSet(false),
-    m_dataSourcesHasBeenSet(false),
-    m_vpcConfigHasBeenSet(false),
-    m_computeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+SimulationJobRequest::SimulationJobRequest(JsonView jsonValue)
+  : SimulationJobRequest()
 {
   *this = jsonValue;
 }

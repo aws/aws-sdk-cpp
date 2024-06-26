@@ -24,9 +24,8 @@ EventPayload::EventPayload() :
 {
 }
 
-EventPayload::EventPayload(JsonView jsonValue) : 
-    m_contentTypeHasBeenSet(false),
-    m_dataHasBeenSet(false)
+EventPayload::EventPayload(JsonView jsonValue)
+  : EventPayload()
 {
   *this = jsonValue;
 }

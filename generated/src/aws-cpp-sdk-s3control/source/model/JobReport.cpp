@@ -32,15 +32,8 @@ JobReport::JobReport() :
 {
 }
 
-JobReport::JobReport(const XmlNode& xmlNode) : 
-    m_bucketHasBeenSet(false),
-    m_format(JobReportFormat::NOT_SET),
-    m_formatHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_prefixHasBeenSet(false),
-    m_reportScope(JobReportScope::NOT_SET),
-    m_reportScopeHasBeenSet(false)
+JobReport::JobReport(const XmlNode& xmlNode)
+  : JobReport()
 {
   *this = xmlNode;
 }

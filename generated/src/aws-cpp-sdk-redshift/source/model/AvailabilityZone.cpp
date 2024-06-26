@@ -26,9 +26,8 @@ AvailabilityZone::AvailabilityZone() :
 {
 }
 
-AvailabilityZone::AvailabilityZone(const XmlNode& xmlNode) : 
-    m_nameHasBeenSet(false),
-    m_supportedPlatformsHasBeenSet(false)
+AvailabilityZone::AvailabilityZone(const XmlNode& xmlNode)
+  : AvailabilityZone()
 {
   *this = xmlNode;
 }

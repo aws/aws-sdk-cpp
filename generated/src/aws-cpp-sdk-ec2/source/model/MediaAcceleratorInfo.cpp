@@ -27,10 +27,8 @@ MediaAcceleratorInfo::MediaAcceleratorInfo() :
 {
 }
 
-MediaAcceleratorInfo::MediaAcceleratorInfo(const XmlNode& xmlNode) : 
-    m_acceleratorsHasBeenSet(false),
-    m_totalMediaMemoryInMiB(0),
-    m_totalMediaMemoryInMiBHasBeenSet(false)
+MediaAcceleratorInfo::MediaAcceleratorInfo(const XmlNode& xmlNode)
+  : MediaAcceleratorInfo()
 {
   *this = xmlNode;
 }

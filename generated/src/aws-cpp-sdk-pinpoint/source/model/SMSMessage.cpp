@@ -32,17 +32,8 @@ SMSMessage::SMSMessage() :
 {
 }
 
-SMSMessage::SMSMessage(JsonView jsonValue) : 
-    m_bodyHasBeenSet(false),
-    m_keywordHasBeenSet(false),
-    m_mediaUrlHasBeenSet(false),
-    m_messageType(MessageType::NOT_SET),
-    m_messageTypeHasBeenSet(false),
-    m_originationNumberHasBeenSet(false),
-    m_senderIdHasBeenSet(false),
-    m_substitutionsHasBeenSet(false),
-    m_entityIdHasBeenSet(false),
-    m_templateIdHasBeenSet(false)
+SMSMessage::SMSMessage(JsonView jsonValue)
+  : SMSMessage()
 {
   *this = jsonValue;
 }

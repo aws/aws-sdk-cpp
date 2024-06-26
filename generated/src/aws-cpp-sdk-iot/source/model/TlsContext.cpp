@@ -23,8 +23,8 @@ TlsContext::TlsContext() :
 {
 }
 
-TlsContext::TlsContext(JsonView jsonValue) : 
-    m_serverNameHasBeenSet(false)
+TlsContext::TlsContext(JsonView jsonValue)
+  : TlsContext()
 {
   *this = jsonValue;
 }

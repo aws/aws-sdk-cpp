@@ -37,22 +37,8 @@ InferenceRecommendationsJob::InferenceRecommendationsJob() :
 {
 }
 
-InferenceRecommendationsJob::InferenceRecommendationsJob(JsonView jsonValue) : 
-    m_jobNameHasBeenSet(false),
-    m_jobDescriptionHasBeenSet(false),
-    m_jobType(RecommendationJobType::NOT_SET),
-    m_jobTypeHasBeenSet(false),
-    m_jobArnHasBeenSet(false),
-    m_status(RecommendationJobStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_completionTimeHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_failureReasonHasBeenSet(false),
-    m_modelNameHasBeenSet(false),
-    m_samplePayloadUrlHasBeenSet(false),
-    m_modelPackageVersionArnHasBeenSet(false)
+InferenceRecommendationsJob::InferenceRecommendationsJob(JsonView jsonValue)
+  : InferenceRecommendationsJob()
 {
   *this = jsonValue;
 }

@@ -28,13 +28,8 @@ KafkaAction::KafkaAction() :
 {
 }
 
-KafkaAction::KafkaAction(JsonView jsonValue) : 
-    m_destinationArnHasBeenSet(false),
-    m_topicHasBeenSet(false),
-    m_keyHasBeenSet(false),
-    m_partitionHasBeenSet(false),
-    m_clientPropertiesHasBeenSet(false),
-    m_headersHasBeenSet(false)
+KafkaAction::KafkaAction(JsonView jsonValue)
+  : KafkaAction()
 {
   *this = jsonValue;
 }

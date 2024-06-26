@@ -24,9 +24,8 @@ BranchInfo::BranchInfo() :
 {
 }
 
-BranchInfo::BranchInfo(JsonView jsonValue) : 
-    m_branchNameHasBeenSet(false),
-    m_commitIdHasBeenSet(false)
+BranchInfo::BranchInfo(JsonView jsonValue)
+  : BranchInfo()
 {
   *this = jsonValue;
 }

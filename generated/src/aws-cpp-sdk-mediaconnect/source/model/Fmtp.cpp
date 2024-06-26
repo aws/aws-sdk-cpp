@@ -33,18 +33,8 @@ Fmtp::Fmtp() :
 {
 }
 
-Fmtp::Fmtp(JsonView jsonValue) : 
-    m_channelOrderHasBeenSet(false),
-    m_colorimetry(Colorimetry::NOT_SET),
-    m_colorimetryHasBeenSet(false),
-    m_exactFramerateHasBeenSet(false),
-    m_parHasBeenSet(false),
-    m_range(Range::NOT_SET),
-    m_rangeHasBeenSet(false),
-    m_scanMode(ScanMode::NOT_SET),
-    m_scanModeHasBeenSet(false),
-    m_tcs(Tcs::NOT_SET),
-    m_tcsHasBeenSet(false)
+Fmtp::Fmtp(JsonView jsonValue)
+  : Fmtp()
 {
   *this = jsonValue;
 }

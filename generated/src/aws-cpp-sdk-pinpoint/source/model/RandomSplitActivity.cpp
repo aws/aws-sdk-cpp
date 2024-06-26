@@ -23,8 +23,8 @@ RandomSplitActivity::RandomSplitActivity() :
 {
 }
 
-RandomSplitActivity::RandomSplitActivity(JsonView jsonValue) : 
-    m_branchesHasBeenSet(false)
+RandomSplitActivity::RandomSplitActivity(JsonView jsonValue)
+  : RandomSplitActivity()
 {
   *this = jsonValue;
 }

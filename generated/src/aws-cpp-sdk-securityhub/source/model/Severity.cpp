@@ -29,14 +29,8 @@ Severity::Severity() :
 {
 }
 
-Severity::Severity(JsonView jsonValue) : 
-    m_product(0.0),
-    m_productHasBeenSet(false),
-    m_label(SeverityLabel::NOT_SET),
-    m_labelHasBeenSet(false),
-    m_normalized(0),
-    m_normalizedHasBeenSet(false),
-    m_originalHasBeenSet(false)
+Severity::Severity(JsonView jsonValue)
+  : Severity()
 {
   *this = jsonValue;
 }

@@ -29,14 +29,8 @@ IntentSummary::IntentSummary() :
 {
 }
 
-IntentSummary::IntentSummary(JsonView jsonValue) : 
-    m_intentIdHasBeenSet(false),
-    m_intentNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_parentIntentSignatureHasBeenSet(false),
-    m_inputContextsHasBeenSet(false),
-    m_outputContextsHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false)
+IntentSummary::IntentSummary(JsonView jsonValue)
+  : IntentSummary()
 {
   *this = jsonValue;
 }

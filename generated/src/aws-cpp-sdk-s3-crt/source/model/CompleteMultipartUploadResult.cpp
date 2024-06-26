@@ -23,10 +23,8 @@ CompleteMultipartUploadResult::CompleteMultipartUploadResult() :
 {
 }
 
-CompleteMultipartUploadResult::CompleteMultipartUploadResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_serverSideEncryption(ServerSideEncryption::NOT_SET),
-    m_bucketKeyEnabled(false),
-    m_requestCharged(RequestCharged::NOT_SET)
+CompleteMultipartUploadResult::CompleteMultipartUploadResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : CompleteMultipartUploadResult()
 {
   *this = result;
 }

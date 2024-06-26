@@ -22,9 +22,8 @@ ListTrafficPolicyInstancesByHostedZoneResult::ListTrafficPolicyInstancesByHosted
 {
 }
 
-ListTrafficPolicyInstancesByHostedZoneResult::ListTrafficPolicyInstancesByHostedZoneResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_trafficPolicyInstanceTypeMarker(RRType::NOT_SET),
-    m_isTruncated(false)
+ListTrafficPolicyInstancesByHostedZoneResult::ListTrafficPolicyInstancesByHostedZoneResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : ListTrafficPolicyInstancesByHostedZoneResult()
 {
   *this = result;
 }

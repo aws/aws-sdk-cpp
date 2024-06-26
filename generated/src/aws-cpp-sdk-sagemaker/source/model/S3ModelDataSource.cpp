@@ -29,14 +29,8 @@ S3ModelDataSource::S3ModelDataSource() :
 {
 }
 
-S3ModelDataSource::S3ModelDataSource(JsonView jsonValue) : 
-    m_s3UriHasBeenSet(false),
-    m_s3DataType(S3ModelDataType::NOT_SET),
-    m_s3DataTypeHasBeenSet(false),
-    m_compressionType(ModelCompressionType::NOT_SET),
-    m_compressionTypeHasBeenSet(false),
-    m_modelAccessConfigHasBeenSet(false),
-    m_hubAccessConfigHasBeenSet(false)
+S3ModelDataSource::S3ModelDataSource(JsonView jsonValue)
+  : S3ModelDataSource()
 {
   *this = jsonValue;
 }

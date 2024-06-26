@@ -25,10 +25,8 @@ Service::Service() :
 {
 }
 
-Service::Service(JsonView jsonValue) : 
-    m_keyAttributesHasBeenSet(false),
-    m_attributeMapsHasBeenSet(false),
-    m_metricReferencesHasBeenSet(false)
+Service::Service(JsonView jsonValue)
+  : Service()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ SnapshotAnonymousUser::SnapshotAnonymousUser() :
 {
 }
 
-SnapshotAnonymousUser::SnapshotAnonymousUser(JsonView jsonValue) : 
-    m_rowLevelPermissionTagsHasBeenSet(false)
+SnapshotAnonymousUser::SnapshotAnonymousUser(JsonView jsonValue)
+  : SnapshotAnonymousUser()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ DatasetSource::DatasetSource() :
 {
 }
 
-DatasetSource::DatasetSource(JsonView jsonValue) : 
-    m_groundTruthManifestHasBeenSet(false),
-    m_datasetArnHasBeenSet(false)
+DatasetSource::DatasetSource(JsonView jsonValue)
+  : DatasetSource()
 {
   *this = jsonValue;
 }

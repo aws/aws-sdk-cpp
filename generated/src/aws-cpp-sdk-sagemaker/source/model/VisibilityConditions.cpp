@@ -24,9 +24,8 @@ VisibilityConditions::VisibilityConditions() :
 {
 }
 
-VisibilityConditions::VisibilityConditions(JsonView jsonValue) : 
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false)
+VisibilityConditions::VisibilityConditions(JsonView jsonValue)
+  : VisibilityConditions()
 {
   *this = jsonValue;
 }

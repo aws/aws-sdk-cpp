@@ -24,9 +24,8 @@ FieldGroup::FieldGroup() :
 {
 }
 
-FieldGroup::FieldGroup(JsonView jsonValue) : 
-    m_fieldsHasBeenSet(false),
-    m_nameHasBeenSet(false)
+FieldGroup::FieldGroup(JsonView jsonValue)
+  : FieldGroup()
 {
   *this = jsonValue;
 }

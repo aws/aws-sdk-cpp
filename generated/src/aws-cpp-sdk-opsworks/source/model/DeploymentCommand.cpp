@@ -25,10 +25,8 @@ DeploymentCommand::DeploymentCommand() :
 {
 }
 
-DeploymentCommand::DeploymentCommand(JsonView jsonValue) : 
-    m_name(DeploymentCommandName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_argsHasBeenSet(false)
+DeploymentCommand::DeploymentCommand(JsonView jsonValue)
+  : DeploymentCommand()
 {
   *this = jsonValue;
 }

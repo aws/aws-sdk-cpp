@@ -23,8 +23,8 @@ Source::Source() :
 {
 }
 
-Source::Source(JsonView jsonValue) : 
-    m_s3LocationHasBeenSet(false)
+Source::Source(JsonView jsonValue)
+  : Source()
 {
   *this = jsonValue;
 }

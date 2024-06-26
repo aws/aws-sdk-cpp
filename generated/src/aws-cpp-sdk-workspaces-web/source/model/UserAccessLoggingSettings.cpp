@@ -25,10 +25,8 @@ UserAccessLoggingSettings::UserAccessLoggingSettings() :
 {
 }
 
-UserAccessLoggingSettings::UserAccessLoggingSettings(JsonView jsonValue) : 
-    m_associatedPortalArnsHasBeenSet(false),
-    m_kinesisStreamArnHasBeenSet(false),
-    m_userAccessLoggingSettingsArnHasBeenSet(false)
+UserAccessLoggingSettings::UserAccessLoggingSettings(JsonView jsonValue)
+  : UserAccessLoggingSettings()
 {
   *this = jsonValue;
 }

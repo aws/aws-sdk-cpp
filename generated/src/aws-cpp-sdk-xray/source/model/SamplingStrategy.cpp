@@ -26,11 +26,8 @@ SamplingStrategy::SamplingStrategy() :
 {
 }
 
-SamplingStrategy::SamplingStrategy(JsonView jsonValue) : 
-    m_name(SamplingStrategyName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_value(0.0),
-    m_valueHasBeenSet(false)
+SamplingStrategy::SamplingStrategy(JsonView jsonValue)
+  : SamplingStrategy()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ CustomerManagedDatastoreS3Storage::CustomerManagedDatastoreS3Storage() :
 {
 }
 
-CustomerManagedDatastoreS3Storage::CustomerManagedDatastoreS3Storage(JsonView jsonValue) : 
-    m_bucketHasBeenSet(false),
-    m_keyPrefixHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
+CustomerManagedDatastoreS3Storage::CustomerManagedDatastoreS3Storage(JsonView jsonValue)
+  : CustomerManagedDatastoreS3Storage()
 {
   *this = jsonValue;
 }

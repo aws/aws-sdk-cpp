@@ -25,10 +25,8 @@ PipeEnrichmentHttpParameters::PipeEnrichmentHttpParameters() :
 {
 }
 
-PipeEnrichmentHttpParameters::PipeEnrichmentHttpParameters(JsonView jsonValue) : 
-    m_pathParameterValuesHasBeenSet(false),
-    m_headerParametersHasBeenSet(false),
-    m_queryStringParametersHasBeenSet(false)
+PipeEnrichmentHttpParameters::PipeEnrichmentHttpParameters(JsonView jsonValue)
+  : PipeEnrichmentHttpParameters()
 {
   *this = jsonValue;
 }

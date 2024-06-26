@@ -24,9 +24,8 @@ AwsMountPoint::AwsMountPoint() :
 {
 }
 
-AwsMountPoint::AwsMountPoint(JsonView jsonValue) : 
-    m_sourceVolumeHasBeenSet(false),
-    m_containerPathHasBeenSet(false)
+AwsMountPoint::AwsMountPoint(JsonView jsonValue)
+  : AwsMountPoint()
 {
   *this = jsonValue;
 }

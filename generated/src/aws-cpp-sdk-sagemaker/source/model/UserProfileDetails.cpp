@@ -28,13 +28,8 @@ UserProfileDetails::UserProfileDetails() :
 {
 }
 
-UserProfileDetails::UserProfileDetails(JsonView jsonValue) : 
-    m_domainIdHasBeenSet(false),
-    m_userProfileNameHasBeenSet(false),
-    m_status(UserProfileStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false)
+UserProfileDetails::UserProfileDetails(JsonView jsonValue)
+  : UserProfileDetails()
 {
   *this = jsonValue;
 }

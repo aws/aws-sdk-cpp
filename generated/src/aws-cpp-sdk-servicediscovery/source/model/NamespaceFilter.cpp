@@ -27,12 +27,8 @@ NamespaceFilter::NamespaceFilter() :
 {
 }
 
-NamespaceFilter::NamespaceFilter(JsonView jsonValue) : 
-    m_name(NamespaceFilterName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_valuesHasBeenSet(false),
-    m_condition(FilterCondition::NOT_SET),
-    m_conditionHasBeenSet(false)
+NamespaceFilter::NamespaceFilter(JsonView jsonValue)
+  : NamespaceFilter()
 {
   *this = jsonValue;
 }

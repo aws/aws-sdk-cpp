@@ -27,12 +27,8 @@ AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails::AwsAutoScalingLaunc
 {
 }
 
-AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails(JsonView jsonValue) : 
-    m_deviceNameHasBeenSet(false),
-    m_ebsHasBeenSet(false),
-    m_noDevice(false),
-    m_noDeviceHasBeenSet(false),
-    m_virtualNameHasBeenSet(false)
+AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails(JsonView jsonValue)
+  : AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails()
 {
   *this = jsonValue;
 }

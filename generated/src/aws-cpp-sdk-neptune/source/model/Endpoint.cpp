@@ -28,11 +28,8 @@ Endpoint::Endpoint() :
 {
 }
 
-Endpoint::Endpoint(const XmlNode& xmlNode) : 
-    m_addressHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_hostedZoneIdHasBeenSet(false)
+Endpoint::Endpoint(const XmlNode& xmlNode)
+  : Endpoint()
 {
   *this = xmlNode;
 }

@@ -25,10 +25,8 @@ AuthInfo::AuthInfo() :
 {
 }
 
-AuthInfo::AuthInfo(JsonView jsonValue) : 
-    m_actionType(ActionType::NOT_SET),
-    m_actionTypeHasBeenSet(false),
-    m_resourcesHasBeenSet(false)
+AuthInfo::AuthInfo(JsonView jsonValue)
+  : AuthInfo()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ RenderingConfiguration::RenderingConfiguration() :
 {
 }
 
-RenderingConfiguration::RenderingConfiguration(JsonView jsonValue) : 
-    m_templateUriHasBeenSet(false)
+RenderingConfiguration::RenderingConfiguration(JsonView jsonValue)
+  : RenderingConfiguration()
 {
   *this = jsonValue;
 }

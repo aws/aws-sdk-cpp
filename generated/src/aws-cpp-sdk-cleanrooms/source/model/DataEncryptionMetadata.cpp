@@ -30,15 +30,8 @@ DataEncryptionMetadata::DataEncryptionMetadata() :
 {
 }
 
-DataEncryptionMetadata::DataEncryptionMetadata(JsonView jsonValue) : 
-    m_allowCleartext(false),
-    m_allowCleartextHasBeenSet(false),
-    m_allowDuplicates(false),
-    m_allowDuplicatesHasBeenSet(false),
-    m_allowJoinsOnColumnsWithDifferentNames(false),
-    m_allowJoinsOnColumnsWithDifferentNamesHasBeenSet(false),
-    m_preserveNulls(false),
-    m_preserveNullsHasBeenSet(false)
+DataEncryptionMetadata::DataEncryptionMetadata(JsonView jsonValue)
+  : DataEncryptionMetadata()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ DeleteVariantStoreResult::DeleteVariantStoreResult() :
 {
 }
 
-DeleteVariantStoreResult::DeleteVariantStoreResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(StoreStatus::NOT_SET)
+DeleteVariantStoreResult::DeleteVariantStoreResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeleteVariantStoreResult()
 {
   *this = result;
 }

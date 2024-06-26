@@ -23,8 +23,8 @@ InspectorScoreDetails::InspectorScoreDetails() :
 {
 }
 
-InspectorScoreDetails::InspectorScoreDetails(JsonView jsonValue) : 
-    m_adjustedCvssHasBeenSet(false)
+InspectorScoreDetails::InspectorScoreDetails(JsonView jsonValue)
+  : InspectorScoreDetails()
 {
   *this = jsonValue;
 }

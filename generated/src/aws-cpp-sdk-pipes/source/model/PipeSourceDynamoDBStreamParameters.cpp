@@ -37,22 +37,8 @@ PipeSourceDynamoDBStreamParameters::PipeSourceDynamoDBStreamParameters() :
 {
 }
 
-PipeSourceDynamoDBStreamParameters::PipeSourceDynamoDBStreamParameters(JsonView jsonValue) : 
-    m_batchSize(0),
-    m_batchSizeHasBeenSet(false),
-    m_deadLetterConfigHasBeenSet(false),
-    m_onPartialBatchItemFailure(OnPartialBatchItemFailureStreams::NOT_SET),
-    m_onPartialBatchItemFailureHasBeenSet(false),
-    m_maximumBatchingWindowInSeconds(0),
-    m_maximumBatchingWindowInSecondsHasBeenSet(false),
-    m_maximumRecordAgeInSeconds(0),
-    m_maximumRecordAgeInSecondsHasBeenSet(false),
-    m_maximumRetryAttempts(0),
-    m_maximumRetryAttemptsHasBeenSet(false),
-    m_parallelizationFactor(0),
-    m_parallelizationFactorHasBeenSet(false),
-    m_startingPosition(DynamoDBStreamStartPosition::NOT_SET),
-    m_startingPositionHasBeenSet(false)
+PipeSourceDynamoDBStreamParameters::PipeSourceDynamoDBStreamParameters(JsonView jsonValue)
+  : PipeSourceDynamoDBStreamParameters()
 {
   *this = jsonValue;
 }

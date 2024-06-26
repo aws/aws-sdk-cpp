@@ -32,17 +32,8 @@ ClarifyCheckStepMetadata::ClarifyCheckStepMetadata() :
 {
 }
 
-ClarifyCheckStepMetadata::ClarifyCheckStepMetadata(JsonView jsonValue) : 
-    m_checkTypeHasBeenSet(false),
-    m_baselineUsedForDriftCheckConstraintsHasBeenSet(false),
-    m_calculatedBaselineConstraintsHasBeenSet(false),
-    m_modelPackageGroupNameHasBeenSet(false),
-    m_violationReportHasBeenSet(false),
-    m_checkJobArnHasBeenSet(false),
-    m_skipCheck(false),
-    m_skipCheckHasBeenSet(false),
-    m_registerNewBaseline(false),
-    m_registerNewBaselineHasBeenSet(false)
+ClarifyCheckStepMetadata::ClarifyCheckStepMetadata(JsonView jsonValue)
+  : ClarifyCheckStepMetadata()
 {
   *this = jsonValue;
 }

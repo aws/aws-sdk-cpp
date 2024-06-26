@@ -25,10 +25,8 @@ ModelInfrastructureConfig::ModelInfrastructureConfig() :
 {
 }
 
-ModelInfrastructureConfig::ModelInfrastructureConfig(JsonView jsonValue) : 
-    m_infrastructureType(ModelInfrastructureType::NOT_SET),
-    m_infrastructureTypeHasBeenSet(false),
-    m_realTimeInferenceConfigHasBeenSet(false)
+ModelInfrastructureConfig::ModelInfrastructureConfig(JsonView jsonValue)
+  : ModelInfrastructureConfig()
 {
   *this = jsonValue;
 }

@@ -28,13 +28,8 @@ BackupSelection::BackupSelection() :
 {
 }
 
-BackupSelection::BackupSelection(JsonView jsonValue) : 
-    m_selectionNameHasBeenSet(false),
-    m_iamRoleArnHasBeenSet(false),
-    m_resourcesHasBeenSet(false),
-    m_listOfTagsHasBeenSet(false),
-    m_notResourcesHasBeenSet(false),
-    m_conditionsHasBeenSet(false)
+BackupSelection::BackupSelection(JsonView jsonValue)
+  : BackupSelection()
 {
   *this = jsonValue;
 }

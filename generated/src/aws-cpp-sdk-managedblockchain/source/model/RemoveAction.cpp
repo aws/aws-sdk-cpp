@@ -23,8 +23,8 @@ RemoveAction::RemoveAction() :
 {
 }
 
-RemoveAction::RemoveAction(JsonView jsonValue) : 
-    m_memberIdHasBeenSet(false)
+RemoveAction::RemoveAction(JsonView jsonValue)
+  : RemoveAction()
 {
   *this = jsonValue;
 }

@@ -30,15 +30,8 @@ SybaseSettings::SybaseSettings() :
 {
 }
 
-SybaseSettings::SybaseSettings(JsonView jsonValue) : 
-    m_databaseNameHasBeenSet(false),
-    m_passwordHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_serverNameHasBeenSet(false),
-    m_usernameHasBeenSet(false),
-    m_secretsManagerAccessRoleArnHasBeenSet(false),
-    m_secretsManagerSecretIdHasBeenSet(false)
+SybaseSettings::SybaseSettings(JsonView jsonValue)
+  : SybaseSettings()
 {
   *this = jsonValue;
 }

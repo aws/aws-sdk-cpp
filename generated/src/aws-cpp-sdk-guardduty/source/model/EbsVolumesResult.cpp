@@ -25,10 +25,8 @@ EbsVolumesResult::EbsVolumesResult() :
 {
 }
 
-EbsVolumesResult::EbsVolumesResult(JsonView jsonValue) : 
-    m_status(DataSourceStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_reasonHasBeenSet(false)
+EbsVolumesResult::EbsVolumesResult(JsonView jsonValue)
+  : EbsVolumesResult()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ MaximumLabelType::MaximumLabelType() :
 {
 }
 
-MaximumLabelType::MaximumLabelType(JsonView jsonValue) : 
-    m_visibility(Visibility::NOT_SET),
-    m_visibilityHasBeenSet(false)
+MaximumLabelType::MaximumLabelType(JsonView jsonValue)
+  : MaximumLabelType()
 {
   *this = jsonValue;
 }

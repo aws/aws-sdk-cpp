@@ -41,26 +41,8 @@ HyperParameterTuningJobSearchEntity::HyperParameterTuningJobSearchEntity() :
 {
 }
 
-HyperParameterTuningJobSearchEntity::HyperParameterTuningJobSearchEntity(JsonView jsonValue) : 
-    m_hyperParameterTuningJobNameHasBeenSet(false),
-    m_hyperParameterTuningJobArnHasBeenSet(false),
-    m_hyperParameterTuningJobConfigHasBeenSet(false),
-    m_trainingJobDefinitionHasBeenSet(false),
-    m_trainingJobDefinitionsHasBeenSet(false),
-    m_hyperParameterTuningJobStatus(HyperParameterTuningJobStatus::NOT_SET),
-    m_hyperParameterTuningJobStatusHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_hyperParameterTuningEndTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_trainingJobStatusCountersHasBeenSet(false),
-    m_objectiveStatusCountersHasBeenSet(false),
-    m_bestTrainingJobHasBeenSet(false),
-    m_overallBestTrainingJobHasBeenSet(false),
-    m_warmStartConfigHasBeenSet(false),
-    m_failureReasonHasBeenSet(false),
-    m_tuningJobCompletionDetailsHasBeenSet(false),
-    m_consumedResourcesHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+HyperParameterTuningJobSearchEntity::HyperParameterTuningJobSearchEntity(JsonView jsonValue)
+  : HyperParameterTuningJobSearchEntity()
 {
   *this = jsonValue;
 }

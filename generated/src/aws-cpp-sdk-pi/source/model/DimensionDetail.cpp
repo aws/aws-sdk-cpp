@@ -23,8 +23,8 @@ DimensionDetail::DimensionDetail() :
 {
 }
 
-DimensionDetail::DimensionDetail(JsonView jsonValue) : 
-    m_identifierHasBeenSet(false)
+DimensionDetail::DimensionDetail(JsonView jsonValue)
+  : DimensionDetail()
 {
   *this = jsonValue;
 }

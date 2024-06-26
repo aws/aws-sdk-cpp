@@ -25,11 +25,8 @@ UpdateBrokerResult::UpdateBrokerResult() :
 {
 }
 
-UpdateBrokerResult::UpdateBrokerResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_authenticationStrategy(AuthenticationStrategy::NOT_SET),
-    m_autoMinorVersionUpgrade(false),
-    m_dataReplicationMode(DataReplicationMode::NOT_SET),
-    m_pendingDataReplicationMode(DataReplicationMode::NOT_SET)
+UpdateBrokerResult::UpdateBrokerResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateBrokerResult()
 {
   *this = result;
 }

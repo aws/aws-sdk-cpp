@@ -25,10 +25,8 @@ LambdaSavingsOpportunityAfterDiscounts::LambdaSavingsOpportunityAfterDiscounts()
 {
 }
 
-LambdaSavingsOpportunityAfterDiscounts::LambdaSavingsOpportunityAfterDiscounts(JsonView jsonValue) : 
-    m_savingsOpportunityPercentage(0.0),
-    m_savingsOpportunityPercentageHasBeenSet(false),
-    m_estimatedMonthlySavingsHasBeenSet(false)
+LambdaSavingsOpportunityAfterDiscounts::LambdaSavingsOpportunityAfterDiscounts(JsonView jsonValue)
+  : LambdaSavingsOpportunityAfterDiscounts()
 {
   *this = jsonValue;
 }

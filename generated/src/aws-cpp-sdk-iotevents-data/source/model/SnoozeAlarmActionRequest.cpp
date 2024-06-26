@@ -28,13 +28,8 @@ SnoozeAlarmActionRequest::SnoozeAlarmActionRequest() :
 {
 }
 
-SnoozeAlarmActionRequest::SnoozeAlarmActionRequest(JsonView jsonValue) : 
-    m_requestIdHasBeenSet(false),
-    m_alarmModelNameHasBeenSet(false),
-    m_keyValueHasBeenSet(false),
-    m_noteHasBeenSet(false),
-    m_snoozeDuration(0),
-    m_snoozeDurationHasBeenSet(false)
+SnoozeAlarmActionRequest::SnoozeAlarmActionRequest(JsonView jsonValue)
+  : SnoozeAlarmActionRequest()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ ECSSavingsEstimationMode::ECSSavingsEstimationMode() :
 {
 }
 
-ECSSavingsEstimationMode::ECSSavingsEstimationMode(JsonView jsonValue) : 
-    m_source(ECSSavingsEstimationModeSource::NOT_SET),
-    m_sourceHasBeenSet(false)
+ECSSavingsEstimationMode::ECSSavingsEstimationMode(JsonView jsonValue)
+  : ECSSavingsEstimationMode()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ AutoMLJobStepMetadata::AutoMLJobStepMetadata() :
 {
 }
 
-AutoMLJobStepMetadata::AutoMLJobStepMetadata(JsonView jsonValue) : 
-    m_arnHasBeenSet(false)
+AutoMLJobStepMetadata::AutoMLJobStepMetadata(JsonView jsonValue)
+  : AutoMLJobStepMetadata()
 {
   *this = jsonValue;
 }

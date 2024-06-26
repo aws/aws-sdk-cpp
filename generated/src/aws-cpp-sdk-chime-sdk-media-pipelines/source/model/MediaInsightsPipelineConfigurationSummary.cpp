@@ -25,10 +25,8 @@ MediaInsightsPipelineConfigurationSummary::MediaInsightsPipelineConfigurationSum
 {
 }
 
-MediaInsightsPipelineConfigurationSummary::MediaInsightsPipelineConfigurationSummary(JsonView jsonValue) : 
-    m_mediaInsightsPipelineConfigurationNameHasBeenSet(false),
-    m_mediaInsightsPipelineConfigurationIdHasBeenSet(false),
-    m_mediaInsightsPipelineConfigurationArnHasBeenSet(false)
+MediaInsightsPipelineConfigurationSummary::MediaInsightsPipelineConfigurationSummary(JsonView jsonValue)
+  : MediaInsightsPipelineConfigurationSummary()
 {
   *this = jsonValue;
 }

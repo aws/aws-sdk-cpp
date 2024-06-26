@@ -30,15 +30,8 @@ CommentsForPullRequest::CommentsForPullRequest() :
 {
 }
 
-CommentsForPullRequest::CommentsForPullRequest(JsonView jsonValue) : 
-    m_pullRequestIdHasBeenSet(false),
-    m_repositoryNameHasBeenSet(false),
-    m_beforeCommitIdHasBeenSet(false),
-    m_afterCommitIdHasBeenSet(false),
-    m_beforeBlobIdHasBeenSet(false),
-    m_afterBlobIdHasBeenSet(false),
-    m_locationHasBeenSet(false),
-    m_commentsHasBeenSet(false)
+CommentsForPullRequest::CommentsForPullRequest(JsonView jsonValue)
+  : CommentsForPullRequest()
 {
   *this = jsonValue;
 }

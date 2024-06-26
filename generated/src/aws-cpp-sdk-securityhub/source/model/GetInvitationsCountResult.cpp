@@ -22,8 +22,8 @@ GetInvitationsCountResult::GetInvitationsCountResult() :
 {
 }
 
-GetInvitationsCountResult::GetInvitationsCountResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_invitationsCount(0)
+GetInvitationsCountResult::GetInvitationsCountResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetInvitationsCountResult()
 {
   *this = result;
 }

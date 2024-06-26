@@ -27,12 +27,8 @@ ThingGroupDocument::ThingGroupDocument() :
 {
 }
 
-ThingGroupDocument::ThingGroupDocument(JsonView jsonValue) : 
-    m_thingGroupNameHasBeenSet(false),
-    m_thingGroupIdHasBeenSet(false),
-    m_thingGroupDescriptionHasBeenSet(false),
-    m_attributesHasBeenSet(false),
-    m_parentGroupNamesHasBeenSet(false)
+ThingGroupDocument::ThingGroupDocument(JsonView jsonValue)
+  : ThingGroupDocument()
 {
   *this = jsonValue;
 }

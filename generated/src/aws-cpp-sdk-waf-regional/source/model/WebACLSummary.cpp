@@ -24,9 +24,8 @@ WebACLSummary::WebACLSummary() :
 {
 }
 
-WebACLSummary::WebACLSummary(JsonView jsonValue) : 
-    m_webACLIdHasBeenSet(false),
-    m_nameHasBeenSet(false)
+WebACLSummary::WebACLSummary(JsonView jsonValue)
+  : WebACLSummary()
 {
   *this = jsonValue;
 }

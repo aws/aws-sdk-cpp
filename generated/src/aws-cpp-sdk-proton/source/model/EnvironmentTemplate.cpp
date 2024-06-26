@@ -32,17 +32,8 @@ EnvironmentTemplate::EnvironmentTemplate() :
 {
 }
 
-EnvironmentTemplate::EnvironmentTemplate(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_encryptionKeyHasBeenSet(false),
-    m_lastModifiedAtHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_provisioning(Provisioning::NOT_SET),
-    m_provisioningHasBeenSet(false),
-    m_recommendedVersionHasBeenSet(false)
+EnvironmentTemplate::EnvironmentTemplate(JsonView jsonValue)
+  : EnvironmentTemplate()
 {
   *this = jsonValue;
 }

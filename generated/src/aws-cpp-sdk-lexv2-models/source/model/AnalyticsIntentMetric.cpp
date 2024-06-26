@@ -28,13 +28,8 @@ AnalyticsIntentMetric::AnalyticsIntentMetric() :
 {
 }
 
-AnalyticsIntentMetric::AnalyticsIntentMetric(JsonView jsonValue) : 
-    m_name(AnalyticsIntentMetricName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_statistic(AnalyticsMetricStatistic::NOT_SET),
-    m_statisticHasBeenSet(false),
-    m_order(AnalyticsSortOrder::NOT_SET),
-    m_orderHasBeenSet(false)
+AnalyticsIntentMetric::AnalyticsIntentMetric(JsonView jsonValue)
+  : AnalyticsIntentMetric()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ TextInputEvent::TextInputEvent() :
 {
 }
 
-TextInputEvent::TextInputEvent(JsonView jsonValue) : 
-    m_userMessageHasBeenSet(false)
+TextInputEvent::TextInputEvent(JsonView jsonValue)
+  : TextInputEvent()
 {
   *this = jsonValue;
 }

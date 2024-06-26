@@ -24,9 +24,8 @@ TimeBasedCollectionScheme::TimeBasedCollectionScheme() :
 {
 }
 
-TimeBasedCollectionScheme::TimeBasedCollectionScheme(JsonView jsonValue) : 
-    m_periodMs(0),
-    m_periodMsHasBeenSet(false)
+TimeBasedCollectionScheme::TimeBasedCollectionScheme(JsonView jsonValue)
+  : TimeBasedCollectionScheme()
 {
   *this = jsonValue;
 }

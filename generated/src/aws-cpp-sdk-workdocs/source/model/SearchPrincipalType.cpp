@@ -24,9 +24,8 @@ SearchPrincipalType::SearchPrincipalType() :
 {
 }
 
-SearchPrincipalType::SearchPrincipalType(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_rolesHasBeenSet(false)
+SearchPrincipalType::SearchPrincipalType(JsonView jsonValue)
+  : SearchPrincipalType()
 {
   *this = jsonValue;
 }

@@ -27,12 +27,8 @@ EffectivePolicy::EffectivePolicy() :
 {
 }
 
-EffectivePolicy::EffectivePolicy(JsonView jsonValue) : 
-    m_policyContentHasBeenSet(false),
-    m_lastUpdatedTimestampHasBeenSet(false),
-    m_targetIdHasBeenSet(false),
-    m_policyType(EffectivePolicyType::NOT_SET),
-    m_policyTypeHasBeenSet(false)
+EffectivePolicy::EffectivePolicy(JsonView jsonValue)
+  : EffectivePolicy()
 {
   *this = jsonValue;
 }

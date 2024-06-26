@@ -34,19 +34,8 @@ KnowledgeBase::KnowledgeBase() :
 {
 }
 
-KnowledgeBase::KnowledgeBase(JsonView jsonValue) : 
-    m_createdAtHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_failureReasonsHasBeenSet(false),
-    m_knowledgeBaseArnHasBeenSet(false),
-    m_knowledgeBaseConfigurationHasBeenSet(false),
-    m_knowledgeBaseIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_status(KnowledgeBaseStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_storageConfigurationHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+KnowledgeBase::KnowledgeBase(JsonView jsonValue)
+  : KnowledgeBase()
 {
   *this = jsonValue;
 }

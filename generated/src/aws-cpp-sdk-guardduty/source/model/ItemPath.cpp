@@ -24,9 +24,8 @@ ItemPath::ItemPath() :
 {
 }
 
-ItemPath::ItemPath(JsonView jsonValue) : 
-    m_nestedItemPathHasBeenSet(false),
-    m_hashHasBeenSet(false)
+ItemPath::ItemPath(JsonView jsonValue)
+  : ItemPath()
 {
   *this = jsonValue;
 }

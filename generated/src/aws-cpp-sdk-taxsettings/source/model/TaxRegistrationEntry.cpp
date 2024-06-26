@@ -32,17 +32,8 @@ TaxRegistrationEntry::TaxRegistrationEntry() :
 {
 }
 
-TaxRegistrationEntry::TaxRegistrationEntry(JsonView jsonValue) : 
-    m_additionalTaxInformationHasBeenSet(false),
-    m_certifiedEmailIdHasBeenSet(false),
-    m_legalAddressHasBeenSet(false),
-    m_legalNameHasBeenSet(false),
-    m_registrationIdHasBeenSet(false),
-    m_registrationType(TaxRegistrationType::NOT_SET),
-    m_registrationTypeHasBeenSet(false),
-    m_sector(Sector::NOT_SET),
-    m_sectorHasBeenSet(false),
-    m_verificationDetailsHasBeenSet(false)
+TaxRegistrationEntry::TaxRegistrationEntry(JsonView jsonValue)
+  : TaxRegistrationEntry()
 {
   *this = jsonValue;
 }

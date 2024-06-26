@@ -32,17 +32,8 @@ SpaceDetails::SpaceDetails() :
 {
 }
 
-SpaceDetails::SpaceDetails(JsonView jsonValue) : 
-    m_domainIdHasBeenSet(false),
-    m_spaceNameHasBeenSet(false),
-    m_status(SpaceStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_spaceSettingsSummaryHasBeenSet(false),
-    m_spaceSharingSettingsSummaryHasBeenSet(false),
-    m_ownershipSettingsSummaryHasBeenSet(false),
-    m_spaceDisplayNameHasBeenSet(false)
+SpaceDetails::SpaceDetails(JsonView jsonValue)
+  : SpaceDetails()
 {
   *this = jsonValue;
 }

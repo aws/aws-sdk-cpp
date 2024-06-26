@@ -25,10 +25,8 @@ GlobalSecondaryIndexUpdate::GlobalSecondaryIndexUpdate() :
 {
 }
 
-GlobalSecondaryIndexUpdate::GlobalSecondaryIndexUpdate(JsonView jsonValue) : 
-    m_updateHasBeenSet(false),
-    m_createHasBeenSet(false),
-    m_deleteHasBeenSet(false)
+GlobalSecondaryIndexUpdate::GlobalSecondaryIndexUpdate(JsonView jsonValue)
+  : GlobalSecondaryIndexUpdate()
 {
   *this = jsonValue;
 }

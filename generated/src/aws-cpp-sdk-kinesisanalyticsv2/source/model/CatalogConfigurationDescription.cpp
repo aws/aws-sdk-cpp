@@ -23,8 +23,8 @@ CatalogConfigurationDescription::CatalogConfigurationDescription() :
 {
 }
 
-CatalogConfigurationDescription::CatalogConfigurationDescription(JsonView jsonValue) : 
-    m_glueDataCatalogConfigurationDescriptionHasBeenSet(false)
+CatalogConfigurationDescription::CatalogConfigurationDescription(JsonView jsonValue)
+  : CatalogConfigurationDescription()
 {
   *this = jsonValue;
 }

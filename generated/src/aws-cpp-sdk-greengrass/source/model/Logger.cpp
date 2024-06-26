@@ -31,16 +31,8 @@ Logger::Logger() :
 {
 }
 
-Logger::Logger(JsonView jsonValue) : 
-    m_component(LoggerComponent::NOT_SET),
-    m_componentHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_level(LoggerLevel::NOT_SET),
-    m_levelHasBeenSet(false),
-    m_space(0),
-    m_spaceHasBeenSet(false),
-    m_type(LoggerType::NOT_SET),
-    m_typeHasBeenSet(false)
+Logger::Logger(JsonView jsonValue)
+  : Logger()
 {
   *this = jsonValue;
 }

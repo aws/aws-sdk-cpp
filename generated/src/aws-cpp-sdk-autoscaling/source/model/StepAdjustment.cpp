@@ -30,13 +30,8 @@ StepAdjustment::StepAdjustment() :
 {
 }
 
-StepAdjustment::StepAdjustment(const XmlNode& xmlNode) : 
-    m_metricIntervalLowerBound(0.0),
-    m_metricIntervalLowerBoundHasBeenSet(false),
-    m_metricIntervalUpperBound(0.0),
-    m_metricIntervalUpperBoundHasBeenSet(false),
-    m_scalingAdjustment(0),
-    m_scalingAdjustmentHasBeenSet(false)
+StepAdjustment::StepAdjustment(const XmlNode& xmlNode)
+  : StepAdjustment()
 {
   *this = xmlNode;
 }

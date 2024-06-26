@@ -24,9 +24,8 @@ EcrConfiguration::EcrConfiguration() :
 {
 }
 
-EcrConfiguration::EcrConfiguration(JsonView jsonValue) : 
-    m_repositoryNameHasBeenSet(false),
-    m_containerTagsHasBeenSet(false)
+EcrConfiguration::EcrConfiguration(JsonView jsonValue)
+  : EcrConfiguration()
 {
   *this = jsonValue;
 }

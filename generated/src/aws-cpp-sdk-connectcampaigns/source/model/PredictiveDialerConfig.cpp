@@ -26,11 +26,8 @@ PredictiveDialerConfig::PredictiveDialerConfig() :
 {
 }
 
-PredictiveDialerConfig::PredictiveDialerConfig(JsonView jsonValue) : 
-    m_bandwidthAllocation(0.0),
-    m_bandwidthAllocationHasBeenSet(false),
-    m_dialingCapacity(0.0),
-    m_dialingCapacityHasBeenSet(false)
+PredictiveDialerConfig::PredictiveDialerConfig(JsonView jsonValue)
+  : PredictiveDialerConfig()
 {
   *this = jsonValue;
 }

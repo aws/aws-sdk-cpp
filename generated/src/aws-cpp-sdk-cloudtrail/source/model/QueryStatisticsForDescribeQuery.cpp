@@ -31,16 +31,8 @@ QueryStatisticsForDescribeQuery::QueryStatisticsForDescribeQuery() :
 {
 }
 
-QueryStatisticsForDescribeQuery::QueryStatisticsForDescribeQuery(JsonView jsonValue) : 
-    m_eventsMatched(0),
-    m_eventsMatchedHasBeenSet(false),
-    m_eventsScanned(0),
-    m_eventsScannedHasBeenSet(false),
-    m_bytesScanned(0),
-    m_bytesScannedHasBeenSet(false),
-    m_executionTimeInMillis(0),
-    m_executionTimeInMillisHasBeenSet(false),
-    m_creationTimeHasBeenSet(false)
+QueryStatisticsForDescribeQuery::QueryStatisticsForDescribeQuery(JsonView jsonValue)
+  : QueryStatisticsForDescribeQuery()
 {
   *this = jsonValue;
 }

@@ -31,16 +31,8 @@ TypedLinkAttributeDefinition::TypedLinkAttributeDefinition() :
 {
 }
 
-TypedLinkAttributeDefinition::TypedLinkAttributeDefinition(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_type(FacetAttributeType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_defaultValueHasBeenSet(false),
-    m_isImmutable(false),
-    m_isImmutableHasBeenSet(false),
-    m_rulesHasBeenSet(false),
-    m_requiredBehavior(RequiredAttributeBehavior::NOT_SET),
-    m_requiredBehaviorHasBeenSet(false)
+TypedLinkAttributeDefinition::TypedLinkAttributeDefinition(JsonView jsonValue)
+  : TypedLinkAttributeDefinition()
 {
   *this = jsonValue;
 }

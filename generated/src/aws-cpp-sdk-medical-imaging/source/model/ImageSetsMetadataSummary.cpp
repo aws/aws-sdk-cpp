@@ -28,13 +28,8 @@ ImageSetsMetadataSummary::ImageSetsMetadataSummary() :
 {
 }
 
-ImageSetsMetadataSummary::ImageSetsMetadataSummary(JsonView jsonValue) : 
-    m_imageSetIdHasBeenSet(false),
-    m_version(0),
-    m_versionHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_dICOMTagsHasBeenSet(false)
+ImageSetsMetadataSummary::ImageSetsMetadataSummary(JsonView jsonValue)
+  : ImageSetsMetadataSummary()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ BorderStyle::BorderStyle() :
 {
 }
 
-BorderStyle::BorderStyle(JsonView jsonValue) : 
-    m_show(false),
-    m_showHasBeenSet(false)
+BorderStyle::BorderStyle(JsonView jsonValue)
+  : BorderStyle()
 {
   *this = jsonValue;
 }

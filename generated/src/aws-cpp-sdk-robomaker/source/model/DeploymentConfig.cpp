@@ -29,14 +29,8 @@ DeploymentConfig::DeploymentConfig() :
 {
 }
 
-DeploymentConfig::DeploymentConfig(JsonView jsonValue) : 
-    m_concurrentDeploymentPercentage(0),
-    m_concurrentDeploymentPercentageHasBeenSet(false),
-    m_failureThresholdPercentage(0),
-    m_failureThresholdPercentageHasBeenSet(false),
-    m_robotDeploymentTimeoutInSeconds(0),
-    m_robotDeploymentTimeoutInSecondsHasBeenSet(false),
-    m_downloadConditionFileHasBeenSet(false)
+DeploymentConfig::DeploymentConfig(JsonView jsonValue)
+  : DeploymentConfig()
 {
   *this = jsonValue;
 }

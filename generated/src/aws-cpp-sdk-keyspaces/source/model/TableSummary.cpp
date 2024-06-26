@@ -25,10 +25,8 @@ TableSummary::TableSummary() :
 {
 }
 
-TableSummary::TableSummary(JsonView jsonValue) : 
-    m_keyspaceNameHasBeenSet(false),
-    m_tableNameHasBeenSet(false),
-    m_resourceArnHasBeenSet(false)
+TableSummary::TableSummary(JsonView jsonValue)
+  : TableSummary()
 {
   *this = jsonValue;
 }

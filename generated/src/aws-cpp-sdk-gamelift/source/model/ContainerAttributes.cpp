@@ -23,8 +23,8 @@ ContainerAttributes::ContainerAttributes() :
 {
 }
 
-ContainerAttributes::ContainerAttributes(JsonView jsonValue) : 
-    m_containerPortMappingsHasBeenSet(false)
+ContainerAttributes::ContainerAttributes(JsonView jsonValue)
+  : ContainerAttributes()
 {
   *this = jsonValue;
 }

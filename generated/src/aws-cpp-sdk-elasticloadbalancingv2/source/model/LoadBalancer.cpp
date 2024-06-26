@@ -41,24 +41,8 @@ LoadBalancer::LoadBalancer() :
 {
 }
 
-LoadBalancer::LoadBalancer(const XmlNode& xmlNode) : 
-    m_loadBalancerArnHasBeenSet(false),
-    m_dNSNameHasBeenSet(false),
-    m_canonicalHostedZoneIdHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_loadBalancerNameHasBeenSet(false),
-    m_scheme(LoadBalancerSchemeEnum::NOT_SET),
-    m_schemeHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_type(LoadBalancerTypeEnum::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_availabilityZonesHasBeenSet(false),
-    m_securityGroupsHasBeenSet(false),
-    m_ipAddressType(IpAddressType::NOT_SET),
-    m_ipAddressTypeHasBeenSet(false),
-    m_customerOwnedIpv4PoolHasBeenSet(false),
-    m_enforceSecurityGroupInboundRulesOnPrivateLinkTrafficHasBeenSet(false)
+LoadBalancer::LoadBalancer(const XmlNode& xmlNode)
+  : LoadBalancer()
 {
   *this = xmlNode;
 }

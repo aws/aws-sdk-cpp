@@ -27,12 +27,8 @@ TransactionDescription::TransactionDescription() :
 {
 }
 
-TransactionDescription::TransactionDescription(JsonView jsonValue) : 
-    m_transactionIdHasBeenSet(false),
-    m_transactionStatus(TransactionStatus::NOT_SET),
-    m_transactionStatusHasBeenSet(false),
-    m_transactionStartTimeHasBeenSet(false),
-    m_transactionEndTimeHasBeenSet(false)
+TransactionDescription::TransactionDescription(JsonView jsonValue)
+  : TransactionDescription()
 {
   *this = jsonValue;
 }

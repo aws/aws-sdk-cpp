@@ -25,10 +25,8 @@ TypedLinkFacetAttributeUpdate::TypedLinkFacetAttributeUpdate() :
 {
 }
 
-TypedLinkFacetAttributeUpdate::TypedLinkFacetAttributeUpdate(JsonView jsonValue) : 
-    m_attributeHasBeenSet(false),
-    m_action(UpdateActionType::NOT_SET),
-    m_actionHasBeenSet(false)
+TypedLinkFacetAttributeUpdate::TypedLinkFacetAttributeUpdate(JsonView jsonValue)
+  : TypedLinkFacetAttributeUpdate()
 {
   *this = jsonValue;
 }

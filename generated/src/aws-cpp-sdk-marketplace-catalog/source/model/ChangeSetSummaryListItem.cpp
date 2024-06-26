@@ -32,17 +32,8 @@ ChangeSetSummaryListItem::ChangeSetSummaryListItem() :
 {
 }
 
-ChangeSetSummaryListItem::ChangeSetSummaryListItem(JsonView jsonValue) : 
-    m_changeSetIdHasBeenSet(false),
-    m_changeSetArnHasBeenSet(false),
-    m_changeSetNameHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_status(ChangeStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_entityIdListHasBeenSet(false),
-    m_failureCode(FailureCode::NOT_SET),
-    m_failureCodeHasBeenSet(false)
+ChangeSetSummaryListItem::ChangeSetSummaryListItem(JsonView jsonValue)
+  : ChangeSetSummaryListItem()
 {
   *this = jsonValue;
 }

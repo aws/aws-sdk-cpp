@@ -23,8 +23,8 @@ AwsAthenaWorkGroupConfigurationResultConfigurationDetails::AwsAthenaWorkGroupCon
 {
 }
 
-AwsAthenaWorkGroupConfigurationResultConfigurationDetails::AwsAthenaWorkGroupConfigurationResultConfigurationDetails(JsonView jsonValue) : 
-    m_encryptionConfigurationHasBeenSet(false)
+AwsAthenaWorkGroupConfigurationResultConfigurationDetails::AwsAthenaWorkGroupConfigurationResultConfigurationDetails(JsonView jsonValue)
+  : AwsAthenaWorkGroupConfigurationResultConfigurationDetails()
 {
   *this = jsonValue;
 }

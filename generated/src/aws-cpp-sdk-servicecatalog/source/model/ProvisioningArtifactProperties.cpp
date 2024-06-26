@@ -29,14 +29,8 @@ ProvisioningArtifactProperties::ProvisioningArtifactProperties() :
 {
 }
 
-ProvisioningArtifactProperties::ProvisioningArtifactProperties(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_infoHasBeenSet(false),
-    m_type(ProvisioningArtifactType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_disableTemplateValidation(false),
-    m_disableTemplateValidationHasBeenSet(false)
+ProvisioningArtifactProperties::ProvisioningArtifactProperties(JsonView jsonValue)
+  : ProvisioningArtifactProperties()
 {
   *this = jsonValue;
 }

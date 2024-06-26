@@ -24,9 +24,8 @@ M2ManagedApplicationStepSummary::M2ManagedApplicationStepSummary() :
 {
 }
 
-M2ManagedApplicationStepSummary::M2ManagedApplicationStepSummary(JsonView jsonValue) : 
-    m_stepInputHasBeenSet(false),
-    m_stepOutputHasBeenSet(false)
+M2ManagedApplicationStepSummary::M2ManagedApplicationStepSummary(JsonView jsonValue)
+  : M2ManagedApplicationStepSummary()
 {
   *this = jsonValue;
 }

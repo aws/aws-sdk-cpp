@@ -25,10 +25,8 @@ Stream::Stream() :
 {
 }
 
-Stream::Stream(JsonView jsonValue) : 
-    m_streamIdHasBeenSet(false),
-    m_fileId(0),
-    m_fileIdHasBeenSet(false)
+Stream::Stream(JsonView jsonValue)
+  : Stream()
 {
   *this = jsonValue;
 }

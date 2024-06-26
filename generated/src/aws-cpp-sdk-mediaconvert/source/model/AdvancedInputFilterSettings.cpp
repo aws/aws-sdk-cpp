@@ -26,11 +26,8 @@ AdvancedInputFilterSettings::AdvancedInputFilterSettings() :
 {
 }
 
-AdvancedInputFilterSettings::AdvancedInputFilterSettings(JsonView jsonValue) : 
-    m_addTexture(AdvancedInputFilterAddTexture::NOT_SET),
-    m_addTextureHasBeenSet(false),
-    m_sharpening(AdvancedInputFilterSharpen::NOT_SET),
-    m_sharpeningHasBeenSet(false)
+AdvancedInputFilterSettings::AdvancedInputFilterSettings(JsonView jsonValue)
+  : AdvancedInputFilterSettings()
 {
   *this = jsonValue;
 }

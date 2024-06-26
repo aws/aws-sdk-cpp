@@ -26,11 +26,8 @@ ScopeConfiguration::ScopeConfiguration() :
 {
 }
 
-ScopeConfiguration::ScopeConfiguration(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_domainHasBeenSet(false),
-    m_scope(WebhookScopeType::NOT_SET),
-    m_scopeHasBeenSet(false)
+ScopeConfiguration::ScopeConfiguration(JsonView jsonValue)
+  : ScopeConfiguration()
 {
   *this = jsonValue;
 }

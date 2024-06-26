@@ -29,14 +29,8 @@ SparqlRecord::SparqlRecord() :
 {
 }
 
-SparqlRecord::SparqlRecord(JsonView jsonValue) : 
-    m_commitTimestampInMillis(0),
-    m_commitTimestampInMillisHasBeenSet(false),
-    m_eventIdHasBeenSet(false),
-    m_dataHasBeenSet(false),
-    m_opHasBeenSet(false),
-    m_isLastOp(false),
-    m_isLastOpHasBeenSet(false)
+SparqlRecord::SparqlRecord(JsonView jsonValue)
+  : SparqlRecord()
 {
   *this = jsonValue;
 }

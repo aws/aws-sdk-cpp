@@ -31,16 +31,8 @@ UserDefinedFunction::UserDefinedFunction() :
 {
 }
 
-UserDefinedFunction::UserDefinedFunction(JsonView jsonValue) : 
-    m_functionNameHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_classNameHasBeenSet(false),
-    m_ownerNameHasBeenSet(false),
-    m_ownerType(PrincipalType::NOT_SET),
-    m_ownerTypeHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_resourceUrisHasBeenSet(false),
-    m_catalogIdHasBeenSet(false)
+UserDefinedFunction::UserDefinedFunction(JsonView jsonValue)
+  : UserDefinedFunction()
 {
   *this = jsonValue;
 }

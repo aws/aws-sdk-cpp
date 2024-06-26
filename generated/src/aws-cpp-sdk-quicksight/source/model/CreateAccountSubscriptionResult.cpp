@@ -22,8 +22,8 @@ CreateAccountSubscriptionResult::CreateAccountSubscriptionResult() :
 {
 }
 
-CreateAccountSubscriptionResult::CreateAccountSubscriptionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+CreateAccountSubscriptionResult::CreateAccountSubscriptionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateAccountSubscriptionResult()
 {
   *this = result;
 }

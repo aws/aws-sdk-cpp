@@ -28,13 +28,8 @@ Repository::Repository() :
 {
 }
 
-Repository::Repository(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_connectionArnHasBeenSet(false),
-    m_encryptionKeyHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_provider(RepositoryProvider::NOT_SET),
-    m_providerHasBeenSet(false)
+Repository::Repository(JsonView jsonValue)
+  : Repository()
 {
   *this = jsonValue;
 }

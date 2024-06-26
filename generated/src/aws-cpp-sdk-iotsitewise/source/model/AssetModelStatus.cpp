@@ -25,10 +25,8 @@ AssetModelStatus::AssetModelStatus() :
 {
 }
 
-AssetModelStatus::AssetModelStatus(JsonView jsonValue) : 
-    m_state(AssetModelState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_errorHasBeenSet(false)
+AssetModelStatus::AssetModelStatus(JsonView jsonValue)
+  : AssetModelStatus()
 {
   *this = jsonValue;
 }

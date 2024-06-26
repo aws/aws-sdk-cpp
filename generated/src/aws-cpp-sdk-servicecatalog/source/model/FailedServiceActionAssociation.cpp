@@ -28,13 +28,8 @@ FailedServiceActionAssociation::FailedServiceActionAssociation() :
 {
 }
 
-FailedServiceActionAssociation::FailedServiceActionAssociation(JsonView jsonValue) : 
-    m_serviceActionIdHasBeenSet(false),
-    m_productIdHasBeenSet(false),
-    m_provisioningArtifactIdHasBeenSet(false),
-    m_errorCode(ServiceActionAssociationErrorCode::NOT_SET),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
+FailedServiceActionAssociation::FailedServiceActionAssociation(JsonView jsonValue)
+  : FailedServiceActionAssociation()
 {
   *this = jsonValue;
 }

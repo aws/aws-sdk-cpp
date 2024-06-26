@@ -24,9 +24,8 @@ SnapshotJobResultFileGroup::SnapshotJobResultFileGroup() :
 {
 }
 
-SnapshotJobResultFileGroup::SnapshotJobResultFileGroup(JsonView jsonValue) : 
-    m_filesHasBeenSet(false),
-    m_s3ResultsHasBeenSet(false)
+SnapshotJobResultFileGroup::SnapshotJobResultFileGroup(JsonView jsonValue)
+  : SnapshotJobResultFileGroup()
 {
   *this = jsonValue;
 }

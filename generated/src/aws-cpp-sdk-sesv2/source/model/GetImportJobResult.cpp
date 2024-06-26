@@ -24,10 +24,8 @@ GetImportJobResult::GetImportJobResult() :
 {
 }
 
-GetImportJobResult::GetImportJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_jobStatus(JobStatus::NOT_SET),
-    m_processedRecordsCount(0),
-    m_failedRecordsCount(0)
+GetImportJobResult::GetImportJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetImportJobResult()
 {
   *this = result;
 }

@@ -26,11 +26,8 @@ HistogramEntry::HistogramEntry() :
 {
 }
 
-HistogramEntry::HistogramEntry(JsonView jsonValue) : 
-    m_value(0.0),
-    m_valueHasBeenSet(false),
-    m_count(0),
-    m_countHasBeenSet(false)
+HistogramEntry::HistogramEntry(JsonView jsonValue)
+  : HistogramEntry()
 {
   *this = jsonValue;
 }

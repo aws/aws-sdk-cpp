@@ -33,18 +33,8 @@ Activity::Activity() :
 {
 }
 
-Activity::Activity(JsonView jsonValue) : 
-    m_type(ActivityType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_timeStampHasBeenSet(false),
-    m_isIndirectActivity(false),
-    m_isIndirectActivityHasBeenSet(false),
-    m_organizationIdHasBeenSet(false),
-    m_initiatorHasBeenSet(false),
-    m_participantsHasBeenSet(false),
-    m_resourceMetadataHasBeenSet(false),
-    m_originalParentHasBeenSet(false),
-    m_commentMetadataHasBeenSet(false)
+Activity::Activity(JsonView jsonValue)
+  : Activity()
 {
   *this = jsonValue;
 }

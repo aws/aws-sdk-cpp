@@ -25,10 +25,8 @@ LicenseRecommendationFilter::LicenseRecommendationFilter() :
 {
 }
 
-LicenseRecommendationFilter::LicenseRecommendationFilter(JsonView jsonValue) : 
-    m_name(LicenseRecommendationFilterName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+LicenseRecommendationFilter::LicenseRecommendationFilter(JsonView jsonValue)
+  : LicenseRecommendationFilter()
 {
   *this = jsonValue;
 }

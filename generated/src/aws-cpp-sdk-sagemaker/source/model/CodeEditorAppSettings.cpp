@@ -25,10 +25,8 @@ CodeEditorAppSettings::CodeEditorAppSettings() :
 {
 }
 
-CodeEditorAppSettings::CodeEditorAppSettings(JsonView jsonValue) : 
-    m_defaultResourceSpecHasBeenSet(false),
-    m_customImagesHasBeenSet(false),
-    m_lifecycleConfigArnsHasBeenSet(false)
+CodeEditorAppSettings::CodeEditorAppSettings(JsonView jsonValue)
+  : CodeEditorAppSettings()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ DatasetInputConfig::DatasetInputConfig() :
 {
 }
 
-DatasetInputConfig::DatasetInputConfig(JsonView jsonValue) : 
-    m_dataSourceHasBeenSet(false),
-    m_schemaHasBeenSet(false)
+DatasetInputConfig::DatasetInputConfig(JsonView jsonValue)
+  : DatasetInputConfig()
 {
   *this = jsonValue;
 }

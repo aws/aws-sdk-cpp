@@ -26,11 +26,8 @@ IngestionJobSortBy::IngestionJobSortBy() :
 {
 }
 
-IngestionJobSortBy::IngestionJobSortBy(JsonView jsonValue) : 
-    m_attribute(IngestionJobSortByAttribute::NOT_SET),
-    m_attributeHasBeenSet(false),
-    m_order(SortOrder::NOT_SET),
-    m_orderHasBeenSet(false)
+IngestionJobSortBy::IngestionJobSortBy(JsonView jsonValue)
+  : IngestionJobSortBy()
 {
   *this = jsonValue;
 }

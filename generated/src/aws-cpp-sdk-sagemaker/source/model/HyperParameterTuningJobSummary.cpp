@@ -34,19 +34,8 @@ HyperParameterTuningJobSummary::HyperParameterTuningJobSummary() :
 {
 }
 
-HyperParameterTuningJobSummary::HyperParameterTuningJobSummary(JsonView jsonValue) : 
-    m_hyperParameterTuningJobNameHasBeenSet(false),
-    m_hyperParameterTuningJobArnHasBeenSet(false),
-    m_hyperParameterTuningJobStatus(HyperParameterTuningJobStatus::NOT_SET),
-    m_hyperParameterTuningJobStatusHasBeenSet(false),
-    m_strategy(HyperParameterTuningJobStrategyType::NOT_SET),
-    m_strategyHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_hyperParameterTuningEndTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_trainingJobStatusCountersHasBeenSet(false),
-    m_objectiveStatusCountersHasBeenSet(false),
-    m_resourceLimitsHasBeenSet(false)
+HyperParameterTuningJobSummary::HyperParameterTuningJobSummary(JsonView jsonValue)
+  : HyperParameterTuningJobSummary()
 {
   *this = jsonValue;
 }

@@ -28,11 +28,8 @@ SubnetMapping::SubnetMapping() :
 {
 }
 
-SubnetMapping::SubnetMapping(const XmlNode& xmlNode) : 
-    m_subnetIdHasBeenSet(false),
-    m_allocationIdHasBeenSet(false),
-    m_privateIPv4AddressHasBeenSet(false),
-    m_iPv6AddressHasBeenSet(false)
+SubnetMapping::SubnetMapping(const XmlNode& xmlNode)
+  : SubnetMapping()
 {
   *this = xmlNode;
 }

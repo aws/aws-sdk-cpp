@@ -25,10 +25,8 @@ FormatOptions::FormatOptions() :
 {
 }
 
-FormatOptions::FormatOptions(JsonView jsonValue) : 
-    m_jsonHasBeenSet(false),
-    m_excelHasBeenSet(false),
-    m_csvHasBeenSet(false)
+FormatOptions::FormatOptions(JsonView jsonValue)
+  : FormatOptions()
 {
   *this = jsonValue;
 }

@@ -28,11 +28,8 @@ ReusableDelegationSetLimit::ReusableDelegationSetLimit() :
 {
 }
 
-ReusableDelegationSetLimit::ReusableDelegationSetLimit(const XmlNode& xmlNode) : 
-    m_type(ReusableDelegationSetLimitType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_value(0),
-    m_valueHasBeenSet(false)
+ReusableDelegationSetLimit::ReusableDelegationSetLimit(const XmlNode& xmlNode)
+  : ReusableDelegationSetLimit()
 {
   *this = xmlNode;
 }

@@ -26,11 +26,8 @@ PersonMatch::PersonMatch() :
 {
 }
 
-PersonMatch::PersonMatch(JsonView jsonValue) : 
-    m_timestamp(0),
-    m_timestampHasBeenSet(false),
-    m_personHasBeenSet(false),
-    m_faceMatchesHasBeenSet(false)
+PersonMatch::PersonMatch(JsonView jsonValue)
+  : PersonMatch()
 {
   *this = jsonValue;
 }

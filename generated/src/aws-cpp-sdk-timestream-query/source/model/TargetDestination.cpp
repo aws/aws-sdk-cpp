@@ -23,8 +23,8 @@ TargetDestination::TargetDestination() :
 {
 }
 
-TargetDestination::TargetDestination(JsonView jsonValue) : 
-    m_timestreamDestinationHasBeenSet(false)
+TargetDestination::TargetDestination(JsonView jsonValue)
+  : TargetDestination()
 {
   *this = jsonValue;
 }

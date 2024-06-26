@@ -30,15 +30,8 @@ NodeFromTemplateJob::NodeFromTemplateJob() :
 {
 }
 
-NodeFromTemplateJob::NodeFromTemplateJob(JsonView jsonValue) : 
-    m_createdTimeHasBeenSet(false),
-    m_jobIdHasBeenSet(false),
-    m_nodeNameHasBeenSet(false),
-    m_status(NodeFromTemplateJobStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_templateType(TemplateType::NOT_SET),
-    m_templateTypeHasBeenSet(false)
+NodeFromTemplateJob::NodeFromTemplateJob(JsonView jsonValue)
+  : NodeFromTemplateJob()
 {
   *this = jsonValue;
 }

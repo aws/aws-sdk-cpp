@@ -23,8 +23,8 @@ LaunchActionsRequestFilters::LaunchActionsRequestFilters() :
 {
 }
 
-LaunchActionsRequestFilters::LaunchActionsRequestFilters(JsonView jsonValue) : 
-    m_actionIdsHasBeenSet(false)
+LaunchActionsRequestFilters::LaunchActionsRequestFilters(JsonView jsonValue)
+  : LaunchActionsRequestFilters()
 {
   *this = jsonValue;
 }

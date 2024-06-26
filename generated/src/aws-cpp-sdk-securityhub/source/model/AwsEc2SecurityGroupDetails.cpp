@@ -28,13 +28,8 @@ AwsEc2SecurityGroupDetails::AwsEc2SecurityGroupDetails() :
 {
 }
 
-AwsEc2SecurityGroupDetails::AwsEc2SecurityGroupDetails(JsonView jsonValue) : 
-    m_groupNameHasBeenSet(false),
-    m_groupIdHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_ipPermissionsHasBeenSet(false),
-    m_ipPermissionsEgressHasBeenSet(false)
+AwsEc2SecurityGroupDetails::AwsEc2SecurityGroupDetails(JsonView jsonValue)
+  : AwsEc2SecurityGroupDetails()
 {
   *this = jsonValue;
 }

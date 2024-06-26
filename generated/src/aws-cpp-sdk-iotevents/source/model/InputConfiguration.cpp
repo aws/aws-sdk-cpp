@@ -29,14 +29,8 @@ InputConfiguration::InputConfiguration() :
 {
 }
 
-InputConfiguration::InputConfiguration(JsonView jsonValue) : 
-    m_inputNameHasBeenSet(false),
-    m_inputDescriptionHasBeenSet(false),
-    m_inputArnHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastUpdateTimeHasBeenSet(false),
-    m_status(InputStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+InputConfiguration::InputConfiguration(JsonView jsonValue)
+  : InputConfiguration()
 {
   *this = jsonValue;
 }

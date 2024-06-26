@@ -27,12 +27,8 @@ Relationship::Relationship() :
 {
 }
 
-Relationship::Relationship(JsonView jsonValue) : 
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_resourceNameHasBeenSet(false),
-    m_relationshipNameHasBeenSet(false)
+Relationship::Relationship(JsonView jsonValue)
+  : Relationship()
 {
   *this = jsonValue;
 }

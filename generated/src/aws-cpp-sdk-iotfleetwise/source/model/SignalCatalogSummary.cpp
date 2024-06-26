@@ -26,11 +26,8 @@ SignalCatalogSummary::SignalCatalogSummary() :
 {
 }
 
-SignalCatalogSummary::SignalCatalogSummary(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastModificationTimeHasBeenSet(false)
+SignalCatalogSummary::SignalCatalogSummary(JsonView jsonValue)
+  : SignalCatalogSummary()
 {
   *this = jsonValue;
 }

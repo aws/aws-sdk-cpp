@@ -25,10 +25,8 @@ AnalyticsSessionGroupByKey::AnalyticsSessionGroupByKey() :
 {
 }
 
-AnalyticsSessionGroupByKey::AnalyticsSessionGroupByKey(JsonView jsonValue) : 
-    m_name(AnalyticsSessionField::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
+AnalyticsSessionGroupByKey::AnalyticsSessionGroupByKey(JsonView jsonValue)
+  : AnalyticsSessionGroupByKey()
 {
   *this = jsonValue;
 }

@@ -27,12 +27,8 @@ DataSourceSearchFilter::DataSourceSearchFilter() :
 {
 }
 
-DataSourceSearchFilter::DataSourceSearchFilter(JsonView jsonValue) : 
-    m_operator(FilterOperator::NOT_SET),
-    m_operatorHasBeenSet(false),
-    m_name(DataSourceFilterAttribute::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
+DataSourceSearchFilter::DataSourceSearchFilter(JsonView jsonValue)
+  : DataSourceSearchFilter()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ TextControlPlaceholderOptions::TextControlPlaceholderOptions() :
 {
 }
 
-TextControlPlaceholderOptions::TextControlPlaceholderOptions(JsonView jsonValue) : 
-    m_visibility(Visibility::NOT_SET),
-    m_visibilityHasBeenSet(false)
+TextControlPlaceholderOptions::TextControlPlaceholderOptions(JsonView jsonValue)
+  : TextControlPlaceholderOptions()
 {
   *this = jsonValue;
 }

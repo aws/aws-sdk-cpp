@@ -27,10 +27,8 @@ InternetGatewayAttachment::InternetGatewayAttachment() :
 {
 }
 
-InternetGatewayAttachment::InternetGatewayAttachment(const XmlNode& xmlNode) : 
-    m_state(AttachmentStatus::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_vpcIdHasBeenSet(false)
+InternetGatewayAttachment::InternetGatewayAttachment(const XmlNode& xmlNode)
+  : InternetGatewayAttachment()
 {
   *this = xmlNode;
 }

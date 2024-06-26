@@ -24,9 +24,8 @@ IotTopicPublishAction::IotTopicPublishAction() :
 {
 }
 
-IotTopicPublishAction::IotTopicPublishAction(JsonView jsonValue) : 
-    m_mqttTopicHasBeenSet(false),
-    m_payloadHasBeenSet(false)
+IotTopicPublishAction::IotTopicPublishAction(JsonView jsonValue)
+  : IotTopicPublishAction()
 {
   *this = jsonValue;
 }

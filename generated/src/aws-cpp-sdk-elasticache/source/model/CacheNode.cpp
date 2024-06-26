@@ -32,15 +32,8 @@ CacheNode::CacheNode() :
 {
 }
 
-CacheNode::CacheNode(const XmlNode& xmlNode) : 
-    m_cacheNodeIdHasBeenSet(false),
-    m_cacheNodeStatusHasBeenSet(false),
-    m_cacheNodeCreateTimeHasBeenSet(false),
-    m_endpointHasBeenSet(false),
-    m_parameterGroupStatusHasBeenSet(false),
-    m_sourceCacheNodeIdHasBeenSet(false),
-    m_customerAvailabilityZoneHasBeenSet(false),
-    m_customerOutpostArnHasBeenSet(false)
+CacheNode::CacheNode(const XmlNode& xmlNode)
+  : CacheNode()
 {
   *this = xmlNode;
 }

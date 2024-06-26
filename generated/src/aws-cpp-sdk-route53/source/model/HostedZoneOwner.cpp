@@ -26,9 +26,8 @@ HostedZoneOwner::HostedZoneOwner() :
 {
 }
 
-HostedZoneOwner::HostedZoneOwner(const XmlNode& xmlNode) : 
-    m_owningAccountHasBeenSet(false),
-    m_owningServiceHasBeenSet(false)
+HostedZoneOwner::HostedZoneOwner(const XmlNode& xmlNode)
+  : HostedZoneOwner()
 {
   *this = xmlNode;
 }

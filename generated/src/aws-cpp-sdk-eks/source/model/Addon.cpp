@@ -38,23 +38,8 @@ Addon::Addon() :
 {
 }
 
-Addon::Addon(JsonView jsonValue) : 
-    m_addonNameHasBeenSet(false),
-    m_clusterNameHasBeenSet(false),
-    m_status(AddonStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_addonVersionHasBeenSet(false),
-    m_healthHasBeenSet(false),
-    m_addonArnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_modifiedAtHasBeenSet(false),
-    m_serviceAccountRoleArnHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_publisherHasBeenSet(false),
-    m_ownerHasBeenSet(false),
-    m_marketplaceInformationHasBeenSet(false),
-    m_configurationValuesHasBeenSet(false),
-    m_podIdentityAssociationsHasBeenSet(false)
+Addon::Addon(JsonView jsonValue)
+  : Addon()
 {
   *this = jsonValue;
 }

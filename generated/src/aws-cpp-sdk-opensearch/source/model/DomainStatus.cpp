@@ -61,46 +61,8 @@ DomainStatus::DomainStatus() :
 {
 }
 
-DomainStatus::DomainStatus(JsonView jsonValue) : 
-    m_domainIdHasBeenSet(false),
-    m_domainNameHasBeenSet(false),
-    m_aRNHasBeenSet(false),
-    m_created(false),
-    m_createdHasBeenSet(false),
-    m_deleted(false),
-    m_deletedHasBeenSet(false),
-    m_endpointHasBeenSet(false),
-    m_endpointV2HasBeenSet(false),
-    m_endpointsHasBeenSet(false),
-    m_domainEndpointV2HostedZoneIdHasBeenSet(false),
-    m_processing(false),
-    m_processingHasBeenSet(false),
-    m_upgradeProcessing(false),
-    m_upgradeProcessingHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_clusterConfigHasBeenSet(false),
-    m_eBSOptionsHasBeenSet(false),
-    m_accessPoliciesHasBeenSet(false),
-    m_iPAddressType(IPAddressType::NOT_SET),
-    m_iPAddressTypeHasBeenSet(false),
-    m_snapshotOptionsHasBeenSet(false),
-    m_vPCOptionsHasBeenSet(false),
-    m_cognitoOptionsHasBeenSet(false),
-    m_encryptionAtRestOptionsHasBeenSet(false),
-    m_nodeToNodeEncryptionOptionsHasBeenSet(false),
-    m_advancedOptionsHasBeenSet(false),
-    m_logPublishingOptionsHasBeenSet(false),
-    m_serviceSoftwareOptionsHasBeenSet(false),
-    m_domainEndpointOptionsHasBeenSet(false),
-    m_advancedSecurityOptionsHasBeenSet(false),
-    m_autoTuneOptionsHasBeenSet(false),
-    m_changeProgressDetailsHasBeenSet(false),
-    m_offPeakWindowOptionsHasBeenSet(false),
-    m_softwareUpdateOptionsHasBeenSet(false),
-    m_domainProcessingStatus(DomainProcessingStatusType::NOT_SET),
-    m_domainProcessingStatusHasBeenSet(false),
-    m_modifyingPropertiesHasBeenSet(false),
-    m_aIMLOptionsHasBeenSet(false)
+DomainStatus::DomainStatus(JsonView jsonValue)
+  : DomainStatus()
 {
   *this = jsonValue;
 }

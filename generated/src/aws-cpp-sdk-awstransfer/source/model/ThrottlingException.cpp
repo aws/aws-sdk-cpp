@@ -23,8 +23,8 @@ ThrottlingException::ThrottlingException() :
 {
 }
 
-ThrottlingException::ThrottlingException(JsonView jsonValue) : 
-    m_retryAfterSecondsHasBeenSet(false)
+ThrottlingException::ThrottlingException(JsonView jsonValue)
+  : ThrottlingException()
 {
   *this = jsonValue;
 }

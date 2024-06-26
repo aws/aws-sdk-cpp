@@ -26,11 +26,8 @@ SignatureValidityPeriod::SignatureValidityPeriod() :
 {
 }
 
-SignatureValidityPeriod::SignatureValidityPeriod(JsonView jsonValue) : 
-    m_value(0),
-    m_valueHasBeenSet(false),
-    m_type(ValidityType::NOT_SET),
-    m_typeHasBeenSet(false)
+SignatureValidityPeriod::SignatureValidityPeriod(JsonView jsonValue)
+  : SignatureValidityPeriod()
 {
   *this = jsonValue;
 }

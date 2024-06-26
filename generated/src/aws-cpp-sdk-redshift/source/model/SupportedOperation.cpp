@@ -25,8 +25,8 @@ SupportedOperation::SupportedOperation() :
 {
 }
 
-SupportedOperation::SupportedOperation(const XmlNode& xmlNode) : 
-    m_operationNameHasBeenSet(false)
+SupportedOperation::SupportedOperation(const XmlNode& xmlNode)
+  : SupportedOperation()
 {
   *this = xmlNode;
 }

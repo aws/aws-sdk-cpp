@@ -31,16 +31,8 @@ StreamInfo::StreamInfo() :
 {
 }
 
-StreamInfo::StreamInfo(JsonView jsonValue) : 
-    m_streamIdHasBeenSet(false),
-    m_streamArnHasBeenSet(false),
-    m_streamVersion(0),
-    m_streamVersionHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_filesHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
+StreamInfo::StreamInfo(JsonView jsonValue)
+  : StreamInfo()
 {
   *this = jsonValue;
 }

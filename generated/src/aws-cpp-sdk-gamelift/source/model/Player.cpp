@@ -26,11 +26,8 @@ Player::Player() :
 {
 }
 
-Player::Player(JsonView jsonValue) : 
-    m_playerIdHasBeenSet(false),
-    m_playerAttributesHasBeenSet(false),
-    m_teamHasBeenSet(false),
-    m_latencyInMsHasBeenSet(false)
+Player::Player(JsonView jsonValue)
+  : Player()
 {
   *this = jsonValue;
 }

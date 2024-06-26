@@ -25,10 +25,8 @@ TableVersionError::TableVersionError() :
 {
 }
 
-TableVersionError::TableVersionError(JsonView jsonValue) : 
-    m_tableNameHasBeenSet(false),
-    m_versionIdHasBeenSet(false),
-    m_errorDetailHasBeenSet(false)
+TableVersionError::TableVersionError(JsonView jsonValue)
+  : TableVersionError()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ IpRouteLimitExceededException::IpRouteLimitExceededException() :
 {
 }
 
-IpRouteLimitExceededException::IpRouteLimitExceededException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
+IpRouteLimitExceededException::IpRouteLimitExceededException(JsonView jsonValue)
+  : IpRouteLimitExceededException()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ CompareDatabaseCDCSummary::CompareDatabaseCDCSummary() :
 {
 }
 
-CompareDatabaseCDCSummary::CompareDatabaseCDCSummary(JsonView jsonValue) : 
-    m_stepInputHasBeenSet(false),
-    m_stepOutputHasBeenSet(false)
+CompareDatabaseCDCSummary::CompareDatabaseCDCSummary(JsonView jsonValue)
+  : CompareDatabaseCDCSummary()
 {
   *this = jsonValue;
 }

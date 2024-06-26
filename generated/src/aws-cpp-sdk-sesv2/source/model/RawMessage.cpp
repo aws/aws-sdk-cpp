@@ -24,8 +24,8 @@ RawMessage::RawMessage() :
 {
 }
 
-RawMessage::RawMessage(JsonView jsonValue) : 
-    m_dataHasBeenSet(false)
+RawMessage::RawMessage(JsonView jsonValue)
+  : RawMessage()
 {
   *this = jsonValue;
 }

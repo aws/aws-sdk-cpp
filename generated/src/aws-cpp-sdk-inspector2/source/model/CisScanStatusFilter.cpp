@@ -26,11 +26,8 @@ CisScanStatusFilter::CisScanStatusFilter() :
 {
 }
 
-CisScanStatusFilter::CisScanStatusFilter(JsonView jsonValue) : 
-    m_comparison(CisScanStatusComparison::NOT_SET),
-    m_comparisonHasBeenSet(false),
-    m_value(CisScanStatus::NOT_SET),
-    m_valueHasBeenSet(false)
+CisScanStatusFilter::CisScanStatusFilter(JsonView jsonValue)
+  : CisScanStatusFilter()
 {
   *this = jsonValue;
 }

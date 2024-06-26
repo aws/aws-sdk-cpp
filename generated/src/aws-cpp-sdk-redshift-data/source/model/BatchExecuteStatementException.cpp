@@ -24,9 +24,8 @@ BatchExecuteStatementException::BatchExecuteStatementException() :
 {
 }
 
-BatchExecuteStatementException::BatchExecuteStatementException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_statementIdHasBeenSet(false)
+BatchExecuteStatementException::BatchExecuteStatementException(JsonView jsonValue)
+  : BatchExecuteStatementException()
 {
   *this = jsonValue;
 }

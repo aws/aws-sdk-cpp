@@ -26,11 +26,8 @@ GeospatialPointStyleOptions::GeospatialPointStyleOptions() :
 {
 }
 
-GeospatialPointStyleOptions::GeospatialPointStyleOptions(JsonView jsonValue) : 
-    m_selectedPointStyle(GeospatialSelectedPointStyle::NOT_SET),
-    m_selectedPointStyleHasBeenSet(false),
-    m_clusterMarkerConfigurationHasBeenSet(false),
-    m_heatmapConfigurationHasBeenSet(false)
+GeospatialPointStyleOptions::GeospatialPointStyleOptions(JsonView jsonValue)
+  : GeospatialPointStyleOptions()
 {
   *this = jsonValue;
 }

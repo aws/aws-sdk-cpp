@@ -25,10 +25,8 @@ ExternalSourcesRetrieveAndGenerateConfiguration::ExternalSourcesRetrieveAndGener
 {
 }
 
-ExternalSourcesRetrieveAndGenerateConfiguration::ExternalSourcesRetrieveAndGenerateConfiguration(JsonView jsonValue) : 
-    m_generationConfigurationHasBeenSet(false),
-    m_modelArnHasBeenSet(false),
-    m_sourcesHasBeenSet(false)
+ExternalSourcesRetrieveAndGenerateConfiguration::ExternalSourcesRetrieveAndGenerateConfiguration(JsonView jsonValue)
+  : ExternalSourcesRetrieveAndGenerateConfiguration()
 {
   *this = jsonValue;
 }

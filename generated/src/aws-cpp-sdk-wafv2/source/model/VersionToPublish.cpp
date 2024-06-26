@@ -25,10 +25,8 @@ VersionToPublish::VersionToPublish() :
 {
 }
 
-VersionToPublish::VersionToPublish(JsonView jsonValue) : 
-    m_associatedRuleGroupArnHasBeenSet(false),
-    m_forecastedLifetime(0),
-    m_forecastedLifetimeHasBeenSet(false)
+VersionToPublish::VersionToPublish(JsonView jsonValue)
+  : VersionToPublish()
 {
   *this = jsonValue;
 }

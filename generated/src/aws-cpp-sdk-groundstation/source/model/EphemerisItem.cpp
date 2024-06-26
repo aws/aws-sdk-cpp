@@ -32,17 +32,8 @@ EphemerisItem::EphemerisItem() :
 {
 }
 
-EphemerisItem::EphemerisItem(JsonView jsonValue) : 
-    m_creationTimeHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_ephemerisIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_priority(0),
-    m_priorityHasBeenSet(false),
-    m_sourceS3ObjectHasBeenSet(false),
-    m_status(EphemerisStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+EphemerisItem::EphemerisItem(JsonView jsonValue)
+  : EphemerisItem()
 {
   *this = jsonValue;
 }

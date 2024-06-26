@@ -22,8 +22,8 @@ GetExclusionsPreviewResult::GetExclusionsPreviewResult() :
 {
 }
 
-GetExclusionsPreviewResult::GetExclusionsPreviewResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_previewStatus(PreviewStatus::NOT_SET)
+GetExclusionsPreviewResult::GetExclusionsPreviewResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetExclusionsPreviewResult()
 {
   *this = result;
 }

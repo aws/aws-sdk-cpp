@@ -28,13 +28,8 @@ FunctionResponse::FunctionResponse() :
 {
 }
 
-FunctionResponse::FunctionResponse(JsonView jsonValue) : 
-    m_requiredPropertiesHasBeenSet(false),
-    m_scope(Scope::NOT_SET),
-    m_scopeHasBeenSet(false),
-    m_implementedByHasBeenSet(false),
-    m_isInherited(false),
-    m_isInheritedHasBeenSet(false)
+FunctionResponse::FunctionResponse(JsonView jsonValue)
+  : FunctionResponse()
 {
   *this = jsonValue;
 }

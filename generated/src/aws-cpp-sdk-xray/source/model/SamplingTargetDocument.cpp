@@ -30,15 +30,8 @@ SamplingTargetDocument::SamplingTargetDocument() :
 {
 }
 
-SamplingTargetDocument::SamplingTargetDocument(JsonView jsonValue) : 
-    m_ruleNameHasBeenSet(false),
-    m_fixedRate(0.0),
-    m_fixedRateHasBeenSet(false),
-    m_reservoirQuota(0),
-    m_reservoirQuotaHasBeenSet(false),
-    m_reservoirQuotaTTLHasBeenSet(false),
-    m_interval(0),
-    m_intervalHasBeenSet(false)
+SamplingTargetDocument::SamplingTargetDocument(JsonView jsonValue)
+  : SamplingTargetDocument()
 {
   *this = jsonValue;
 }

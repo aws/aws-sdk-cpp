@@ -24,9 +24,8 @@ ScanResultDetails::ScanResultDetails() :
 {
 }
 
-ScanResultDetails::ScanResultDetails(JsonView jsonValue) : 
-    m_scanResult(ScanResult::NOT_SET),
-    m_scanResultHasBeenSet(false)
+ScanResultDetails::ScanResultDetails(JsonView jsonValue)
+  : ScanResultDetails()
 {
   *this = jsonValue;
 }

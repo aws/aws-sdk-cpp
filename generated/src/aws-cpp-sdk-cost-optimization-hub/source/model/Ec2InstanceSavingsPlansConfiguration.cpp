@@ -28,13 +28,8 @@ Ec2InstanceSavingsPlansConfiguration::Ec2InstanceSavingsPlansConfiguration() :
 {
 }
 
-Ec2InstanceSavingsPlansConfiguration::Ec2InstanceSavingsPlansConfiguration(JsonView jsonValue) : 
-    m_accountScopeHasBeenSet(false),
-    m_termHasBeenSet(false),
-    m_paymentOptionHasBeenSet(false),
-    m_hourlyCommitmentHasBeenSet(false),
-    m_instanceFamilyHasBeenSet(false),
-    m_savingsPlansRegionHasBeenSet(false)
+Ec2InstanceSavingsPlansConfiguration::Ec2InstanceSavingsPlansConfiguration(JsonView jsonValue)
+  : Ec2InstanceSavingsPlansConfiguration()
 {
   *this = jsonValue;
 }

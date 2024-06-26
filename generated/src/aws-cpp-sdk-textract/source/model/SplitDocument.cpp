@@ -25,10 +25,8 @@ SplitDocument::SplitDocument() :
 {
 }
 
-SplitDocument::SplitDocument(JsonView jsonValue) : 
-    m_index(0),
-    m_indexHasBeenSet(false),
-    m_pagesHasBeenSet(false)
+SplitDocument::SplitDocument(JsonView jsonValue)
+  : SplitDocument()
 {
   *this = jsonValue;
 }

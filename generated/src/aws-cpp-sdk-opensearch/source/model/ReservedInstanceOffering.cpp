@@ -35,20 +35,8 @@ ReservedInstanceOffering::ReservedInstanceOffering() :
 {
 }
 
-ReservedInstanceOffering::ReservedInstanceOffering(JsonView jsonValue) : 
-    m_reservedInstanceOfferingIdHasBeenSet(false),
-    m_instanceType(OpenSearchPartitionInstanceType::NOT_SET),
-    m_instanceTypeHasBeenSet(false),
-    m_duration(0),
-    m_durationHasBeenSet(false),
-    m_fixedPrice(0.0),
-    m_fixedPriceHasBeenSet(false),
-    m_usagePrice(0.0),
-    m_usagePriceHasBeenSet(false),
-    m_currencyCodeHasBeenSet(false),
-    m_paymentOption(ReservedInstancePaymentOption::NOT_SET),
-    m_paymentOptionHasBeenSet(false),
-    m_recurringChargesHasBeenSet(false)
+ReservedInstanceOffering::ReservedInstanceOffering(JsonView jsonValue)
+  : ReservedInstanceOffering()
 {
   *this = jsonValue;
 }

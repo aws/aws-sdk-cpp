@@ -25,10 +25,8 @@ EventsConfiguration::EventsConfiguration() :
 {
 }
 
-EventsConfiguration::EventsConfiguration(JsonView jsonValue) : 
-    m_botIdHasBeenSet(false),
-    m_outboundEventsHTTPSEndpointHasBeenSet(false),
-    m_lambdaFunctionArnHasBeenSet(false)
+EventsConfiguration::EventsConfiguration(JsonView jsonValue)
+  : EventsConfiguration()
 {
   *this = jsonValue;
 }

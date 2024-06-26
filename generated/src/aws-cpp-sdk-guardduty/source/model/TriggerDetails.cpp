@@ -24,9 +24,8 @@ TriggerDetails::TriggerDetails() :
 {
 }
 
-TriggerDetails::TriggerDetails(JsonView jsonValue) : 
-    m_guardDutyFindingIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+TriggerDetails::TriggerDetails(JsonView jsonValue)
+  : TriggerDetails()
 {
   *this = jsonValue;
 }

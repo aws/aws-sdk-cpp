@@ -24,9 +24,8 @@ AssociatedObjectiveSummary::AssociatedObjectiveSummary() :
 {
 }
 
-AssociatedObjectiveSummary::AssociatedObjectiveSummary(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false)
+AssociatedObjectiveSummary::AssociatedObjectiveSummary(JsonView jsonValue)
+  : AssociatedObjectiveSummary()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ DisconnectionEvent::DisconnectionEvent() :
 {
 }
 
-DisconnectionEvent::DisconnectionEvent(JsonView jsonValue) : 
-    m_eventIdHasBeenSet(false),
-    m_clientTimestampMillis(0),
-    m_clientTimestampMillisHasBeenSet(false)
+DisconnectionEvent::DisconnectionEvent(JsonView jsonValue)
+  : DisconnectionEvent()
 {
   *this = jsonValue;
 }

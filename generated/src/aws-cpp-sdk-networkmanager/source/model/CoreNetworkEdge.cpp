@@ -26,11 +26,8 @@ CoreNetworkEdge::CoreNetworkEdge() :
 {
 }
 
-CoreNetworkEdge::CoreNetworkEdge(JsonView jsonValue) : 
-    m_edgeLocationHasBeenSet(false),
-    m_asn(0),
-    m_asnHasBeenSet(false),
-    m_insideCidrBlocksHasBeenSet(false)
+CoreNetworkEdge::CoreNetworkEdge(JsonView jsonValue)
+  : CoreNetworkEdge()
 {
   *this = jsonValue;
 }

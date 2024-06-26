@@ -26,11 +26,8 @@ Issue::Issue() :
 {
 }
 
-Issue::Issue(JsonView jsonValue) : 
-    m_code(NodegroupIssueCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_resourceIdsHasBeenSet(false)
+Issue::Issue(JsonView jsonValue)
+  : Issue()
 {
   *this = jsonValue;
 }

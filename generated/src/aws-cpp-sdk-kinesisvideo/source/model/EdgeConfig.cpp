@@ -26,11 +26,8 @@ EdgeConfig::EdgeConfig() :
 {
 }
 
-EdgeConfig::EdgeConfig(JsonView jsonValue) : 
-    m_hubDeviceArnHasBeenSet(false),
-    m_recorderConfigHasBeenSet(false),
-    m_uploaderConfigHasBeenSet(false),
-    m_deletionConfigHasBeenSet(false)
+EdgeConfig::EdgeConfig(JsonView jsonValue)
+  : EdgeConfig()
 {
   *this = jsonValue;
 }

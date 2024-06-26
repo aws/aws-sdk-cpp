@@ -24,9 +24,8 @@ LifecyclePolicyResourceSelectionRecipe::LifecyclePolicyResourceSelectionRecipe()
 {
 }
 
-LifecyclePolicyResourceSelectionRecipe::LifecyclePolicyResourceSelectionRecipe(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_semanticVersionHasBeenSet(false)
+LifecyclePolicyResourceSelectionRecipe::LifecyclePolicyResourceSelectionRecipe(JsonView jsonValue)
+  : LifecyclePolicyResourceSelectionRecipe()
 {
   *this = jsonValue;
 }

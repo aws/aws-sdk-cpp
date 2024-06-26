@@ -26,11 +26,8 @@ ECSEstimatedMonthlySavings::ECSEstimatedMonthlySavings() :
 {
 }
 
-ECSEstimatedMonthlySavings::ECSEstimatedMonthlySavings(JsonView jsonValue) : 
-    m_currency(Currency::NOT_SET),
-    m_currencyHasBeenSet(false),
-    m_value(0.0),
-    m_valueHasBeenSet(false)
+ECSEstimatedMonthlySavings::ECSEstimatedMonthlySavings(JsonView jsonValue)
+  : ECSEstimatedMonthlySavings()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ EventItemResponse::EventItemResponse() :
 {
 }
 
-EventItemResponse::EventItemResponse(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_statusCode(0),
-    m_statusCodeHasBeenSet(false)
+EventItemResponse::EventItemResponse(JsonView jsonValue)
+  : EventItemResponse()
 {
   *this = jsonValue;
 }

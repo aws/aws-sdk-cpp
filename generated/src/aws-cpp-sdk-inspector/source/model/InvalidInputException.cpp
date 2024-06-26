@@ -27,12 +27,8 @@ InvalidInputException::InvalidInputException() :
 {
 }
 
-InvalidInputException::InvalidInputException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_errorCode(InvalidInputErrorCode::NOT_SET),
-    m_errorCodeHasBeenSet(false),
-    m_canRetry(false),
-    m_canRetryHasBeenSet(false)
+InvalidInputException::InvalidInputException(JsonView jsonValue)
+  : InvalidInputException()
 {
   *this = jsonValue;
 }

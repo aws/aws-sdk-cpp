@@ -23,8 +23,8 @@ ModelDeployResult::ModelDeployResult() :
 {
 }
 
-ModelDeployResult::ModelDeployResult(JsonView jsonValue) : 
-    m_endpointNameHasBeenSet(false)
+ModelDeployResult::ModelDeployResult(JsonView jsonValue)
+  : ModelDeployResult()
 {
   *this = jsonValue;
 }

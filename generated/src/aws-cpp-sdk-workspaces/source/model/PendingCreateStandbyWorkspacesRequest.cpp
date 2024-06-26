@@ -27,12 +27,8 @@ PendingCreateStandbyWorkspacesRequest::PendingCreateStandbyWorkspacesRequest() :
 {
 }
 
-PendingCreateStandbyWorkspacesRequest::PendingCreateStandbyWorkspacesRequest(JsonView jsonValue) : 
-    m_userNameHasBeenSet(false),
-    m_directoryIdHasBeenSet(false),
-    m_state(WorkspaceState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_workspaceIdHasBeenSet(false)
+PendingCreateStandbyWorkspacesRequest::PendingCreateStandbyWorkspacesRequest(JsonView jsonValue)
+  : PendingCreateStandbyWorkspacesRequest()
 {
   *this = jsonValue;
 }

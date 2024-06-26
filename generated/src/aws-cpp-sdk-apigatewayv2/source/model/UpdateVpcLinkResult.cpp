@@ -23,9 +23,8 @@ UpdateVpcLinkResult::UpdateVpcLinkResult() :
 {
 }
 
-UpdateVpcLinkResult::UpdateVpcLinkResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_vpcLinkStatus(VpcLinkStatus::NOT_SET),
-    m_vpcLinkVersion(VpcLinkVersion::NOT_SET)
+UpdateVpcLinkResult::UpdateVpcLinkResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateVpcLinkResult()
 {
   *this = result;
 }

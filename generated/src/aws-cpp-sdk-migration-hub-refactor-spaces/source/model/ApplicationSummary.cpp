@@ -38,23 +38,8 @@ ApplicationSummary::ApplicationSummary() :
 {
 }
 
-ApplicationSummary::ApplicationSummary(JsonView jsonValue) : 
-    m_apiGatewayProxyHasBeenSet(false),
-    m_applicationIdHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_createdByAccountIdHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_environmentIdHasBeenSet(false),
-    m_errorHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_ownerAccountIdHasBeenSet(false),
-    m_proxyType(ProxyType::NOT_SET),
-    m_proxyTypeHasBeenSet(false),
-    m_state(ApplicationState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_vpcIdHasBeenSet(false)
+ApplicationSummary::ApplicationSummary(JsonView jsonValue)
+  : ApplicationSummary()
 {
   *this = jsonValue;
 }

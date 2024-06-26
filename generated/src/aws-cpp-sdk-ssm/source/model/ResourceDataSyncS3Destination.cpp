@@ -29,14 +29,8 @@ ResourceDataSyncS3Destination::ResourceDataSyncS3Destination() :
 {
 }
 
-ResourceDataSyncS3Destination::ResourceDataSyncS3Destination(JsonView jsonValue) : 
-    m_bucketNameHasBeenSet(false),
-    m_prefixHasBeenSet(false),
-    m_syncFormat(ResourceDataSyncS3Format::NOT_SET),
-    m_syncFormatHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_aWSKMSKeyARNHasBeenSet(false),
-    m_destinationDataSharingHasBeenSet(false)
+ResourceDataSyncS3Destination::ResourceDataSyncS3Destination(JsonView jsonValue)
+  : ResourceDataSyncS3Destination()
 {
   *this = jsonValue;
 }

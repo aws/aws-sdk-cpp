@@ -31,16 +31,8 @@ UserData::UserData() :
 {
 }
 
-UserData::UserData(JsonView jsonValue) : 
-    m_userHasBeenSet(false),
-    m_routingProfileHasBeenSet(false),
-    m_hierarchyPathHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_availableSlotsByChannelHasBeenSet(false),
-    m_maxSlotsByChannelHasBeenSet(false),
-    m_activeSlotsByChannelHasBeenSet(false),
-    m_contactsHasBeenSet(false),
-    m_nextStatusHasBeenSet(false)
+UserData::UserData(JsonView jsonValue)
+  : UserData()
 {
   *this = jsonValue;
 }

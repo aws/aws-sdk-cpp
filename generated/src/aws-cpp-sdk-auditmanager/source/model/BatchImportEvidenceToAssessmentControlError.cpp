@@ -25,10 +25,8 @@ BatchImportEvidenceToAssessmentControlError::BatchImportEvidenceToAssessmentCont
 {
 }
 
-BatchImportEvidenceToAssessmentControlError::BatchImportEvidenceToAssessmentControlError(JsonView jsonValue) : 
-    m_manualEvidenceHasBeenSet(false),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
+BatchImportEvidenceToAssessmentControlError::BatchImportEvidenceToAssessmentControlError(JsonView jsonValue)
+  : BatchImportEvidenceToAssessmentControlError()
 {
   *this = jsonValue;
 }

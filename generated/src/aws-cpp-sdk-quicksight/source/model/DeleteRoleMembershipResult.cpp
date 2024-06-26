@@ -22,8 +22,8 @@ DeleteRoleMembershipResult::DeleteRoleMembershipResult() :
 {
 }
 
-DeleteRoleMembershipResult::DeleteRoleMembershipResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+DeleteRoleMembershipResult::DeleteRoleMembershipResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeleteRoleMembershipResult()
 {
   *this = result;
 }

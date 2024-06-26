@@ -28,11 +28,8 @@ ContentTypeProfile::ContentTypeProfile() :
 {
 }
 
-ContentTypeProfile::ContentTypeProfile(const XmlNode& xmlNode) : 
-    m_format(Format::NOT_SET),
-    m_formatHasBeenSet(false),
-    m_profileIdHasBeenSet(false),
-    m_contentTypeHasBeenSet(false)
+ContentTypeProfile::ContentTypeProfile(const XmlNode& xmlNode)
+  : ContentTypeProfile()
 {
   *this = xmlNode;
 }

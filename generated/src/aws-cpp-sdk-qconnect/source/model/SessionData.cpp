@@ -29,14 +29,8 @@ SessionData::SessionData() :
 {
 }
 
-SessionData::SessionData(JsonView jsonValue) : 
-    m_descriptionHasBeenSet(false),
-    m_integrationConfigurationHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_sessionArnHasBeenSet(false),
-    m_sessionIdHasBeenSet(false),
-    m_tagFilterHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+SessionData::SessionData(JsonView jsonValue)
+  : SessionData()
 {
   *this = jsonValue;
 }

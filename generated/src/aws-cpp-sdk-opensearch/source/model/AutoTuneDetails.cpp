@@ -23,8 +23,8 @@ AutoTuneDetails::AutoTuneDetails() :
 {
 }
 
-AutoTuneDetails::AutoTuneDetails(JsonView jsonValue) : 
-    m_scheduledAutoTuneDetailsHasBeenSet(false)
+AutoTuneDetails::AutoTuneDetails(JsonView jsonValue)
+  : AutoTuneDetails()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ ScriptParameterKeyValue::ScriptParameterKeyValue() :
 {
 }
 
-ScriptParameterKeyValue::ScriptParameterKeyValue(JsonView jsonValue) : 
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false)
+ScriptParameterKeyValue::ScriptParameterKeyValue(JsonView jsonValue)
+  : ScriptParameterKeyValue()
 {
   *this = jsonValue;
 }

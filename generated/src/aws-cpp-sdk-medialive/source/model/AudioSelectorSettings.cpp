@@ -26,11 +26,8 @@ AudioSelectorSettings::AudioSelectorSettings() :
 {
 }
 
-AudioSelectorSettings::AudioSelectorSettings(JsonView jsonValue) : 
-    m_audioHlsRenditionSelectionHasBeenSet(false),
-    m_audioLanguageSelectionHasBeenSet(false),
-    m_audioPidSelectionHasBeenSet(false),
-    m_audioTrackSelectionHasBeenSet(false)
+AudioSelectorSettings::AudioSelectorSettings(JsonView jsonValue)
+  : AudioSelectorSettings()
 {
   *this = jsonValue;
 }

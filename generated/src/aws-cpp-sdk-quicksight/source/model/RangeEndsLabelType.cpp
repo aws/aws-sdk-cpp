@@ -24,9 +24,8 @@ RangeEndsLabelType::RangeEndsLabelType() :
 {
 }
 
-RangeEndsLabelType::RangeEndsLabelType(JsonView jsonValue) : 
-    m_visibility(Visibility::NOT_SET),
-    m_visibilityHasBeenSet(false)
+RangeEndsLabelType::RangeEndsLabelType(JsonView jsonValue)
+  : RangeEndsLabelType()
 {
   *this = jsonValue;
 }

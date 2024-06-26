@@ -25,10 +25,8 @@ KnowledgeBaseConfiguration::KnowledgeBaseConfiguration() :
 {
 }
 
-KnowledgeBaseConfiguration::KnowledgeBaseConfiguration(JsonView jsonValue) : 
-    m_type(KnowledgeBaseType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_vectorKnowledgeBaseConfigurationHasBeenSet(false)
+KnowledgeBaseConfiguration::KnowledgeBaseConfiguration(JsonView jsonValue)
+  : KnowledgeBaseConfiguration()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ SegmentGroupList::SegmentGroupList() :
 {
 }
 
-SegmentGroupList::SegmentGroupList(JsonView jsonValue) : 
-    m_groupsHasBeenSet(false),
-    m_include(Include::NOT_SET),
-    m_includeHasBeenSet(false)
+SegmentGroupList::SegmentGroupList(JsonView jsonValue)
+  : SegmentGroupList()
 {
   *this = jsonValue;
 }

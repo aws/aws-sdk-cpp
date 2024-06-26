@@ -30,15 +30,8 @@ ParticipantToken::ParticipantToken() :
 {
 }
 
-ParticipantToken::ParticipantToken(JsonView jsonValue) : 
-    m_participantIdHasBeenSet(false),
-    m_tokenHasBeenSet(false),
-    m_userIdHasBeenSet(false),
-    m_attributesHasBeenSet(false),
-    m_duration(0),
-    m_durationHasBeenSet(false),
-    m_capabilitiesHasBeenSet(false),
-    m_expirationTimeHasBeenSet(false)
+ParticipantToken::ParticipantToken(JsonView jsonValue)
+  : ParticipantToken()
 {
   *this = jsonValue;
 }

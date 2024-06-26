@@ -44,29 +44,8 @@ MultiplexProgramPacketIdentifiersMap::MultiplexProgramPacketIdentifiersMap() :
 {
 }
 
-MultiplexProgramPacketIdentifiersMap::MultiplexProgramPacketIdentifiersMap(JsonView jsonValue) : 
-    m_audioPidsHasBeenSet(false),
-    m_dvbSubPidsHasBeenSet(false),
-    m_dvbTeletextPid(0),
-    m_dvbTeletextPidHasBeenSet(false),
-    m_etvPlatformPid(0),
-    m_etvPlatformPidHasBeenSet(false),
-    m_etvSignalPid(0),
-    m_etvSignalPidHasBeenSet(false),
-    m_klvDataPidsHasBeenSet(false),
-    m_pcrPid(0),
-    m_pcrPidHasBeenSet(false),
-    m_pmtPid(0),
-    m_pmtPidHasBeenSet(false),
-    m_privateMetadataPid(0),
-    m_privateMetadataPidHasBeenSet(false),
-    m_scte27PidsHasBeenSet(false),
-    m_scte35Pid(0),
-    m_scte35PidHasBeenSet(false),
-    m_timedMetadataPid(0),
-    m_timedMetadataPidHasBeenSet(false),
-    m_videoPid(0),
-    m_videoPidHasBeenSet(false)
+MultiplexProgramPacketIdentifiersMap::MultiplexProgramPacketIdentifiersMap(JsonView jsonValue)
+  : MultiplexProgramPacketIdentifiersMap()
 {
   *this = jsonValue;
 }

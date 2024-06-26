@@ -24,9 +24,8 @@ RenewalTerm::RenewalTerm() :
 {
 }
 
-RenewalTerm::RenewalTerm(JsonView jsonValue) : 
-    m_configurationHasBeenSet(false),
-    m_typeHasBeenSet(false)
+RenewalTerm::RenewalTerm(JsonView jsonValue)
+  : RenewalTerm()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ CompositeComponentTypeResponse::CompositeComponentTypeResponse() :
 {
 }
 
-CompositeComponentTypeResponse::CompositeComponentTypeResponse(JsonView jsonValue) : 
-    m_componentTypeIdHasBeenSet(false),
-    m_isInherited(false),
-    m_isInheritedHasBeenSet(false)
+CompositeComponentTypeResponse::CompositeComponentTypeResponse(JsonView jsonValue)
+  : CompositeComponentTypeResponse()
 {
   *this = jsonValue;
 }

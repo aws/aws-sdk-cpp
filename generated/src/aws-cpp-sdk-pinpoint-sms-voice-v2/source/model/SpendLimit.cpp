@@ -30,15 +30,8 @@ SpendLimit::SpendLimit() :
 {
 }
 
-SpendLimit::SpendLimit(JsonView jsonValue) : 
-    m_name(SpendLimitName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_enforcedLimit(0),
-    m_enforcedLimitHasBeenSet(false),
-    m_maxLimit(0),
-    m_maxLimitHasBeenSet(false),
-    m_overridden(false),
-    m_overriddenHasBeenSet(false)
+SpendLimit::SpendLimit(JsonView jsonValue)
+  : SpendLimit()
 {
   *this = jsonValue;
 }

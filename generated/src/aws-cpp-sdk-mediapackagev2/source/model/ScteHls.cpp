@@ -24,9 +24,8 @@ ScteHls::ScteHls() :
 {
 }
 
-ScteHls::ScteHls(JsonView jsonValue) : 
-    m_adMarkerHls(AdMarkerHls::NOT_SET),
-    m_adMarkerHlsHasBeenSet(false)
+ScteHls::ScteHls(JsonView jsonValue)
+  : ScteHls()
 {
   *this = jsonValue;
 }

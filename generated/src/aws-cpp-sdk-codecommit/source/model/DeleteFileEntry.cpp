@@ -23,8 +23,8 @@ DeleteFileEntry::DeleteFileEntry() :
 {
 }
 
-DeleteFileEntry::DeleteFileEntry(JsonView jsonValue) : 
-    m_filePathHasBeenSet(false)
+DeleteFileEntry::DeleteFileEntry(JsonView jsonValue)
+  : DeleteFileEntry()
 {
   *this = jsonValue;
 }

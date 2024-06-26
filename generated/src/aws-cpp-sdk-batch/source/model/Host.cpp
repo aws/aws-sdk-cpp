@@ -23,8 +23,8 @@ Host::Host() :
 {
 }
 
-Host::Host(JsonView jsonValue) : 
-    m_sourcePathHasBeenSet(false)
+Host::Host(JsonView jsonValue)
+  : Host()
 {
   *this = jsonValue;
 }

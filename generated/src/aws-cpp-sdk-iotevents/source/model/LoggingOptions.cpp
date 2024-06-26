@@ -28,13 +28,8 @@ LoggingOptions::LoggingOptions() :
 {
 }
 
-LoggingOptions::LoggingOptions(JsonView jsonValue) : 
-    m_roleArnHasBeenSet(false),
-    m_level(LoggingLevel::NOT_SET),
-    m_levelHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_detectorDebugOptionsHasBeenSet(false)
+LoggingOptions::LoggingOptions(JsonView jsonValue)
+  : LoggingOptions()
 {
   *this = jsonValue;
 }

@@ -29,12 +29,8 @@ LifecycleExpiration::LifecycleExpiration() :
 {
 }
 
-LifecycleExpiration::LifecycleExpiration(const XmlNode& xmlNode) : 
-    m_dateHasBeenSet(false),
-    m_days(0),
-    m_daysHasBeenSet(false),
-    m_expiredObjectDeleteMarker(false),
-    m_expiredObjectDeleteMarkerHasBeenSet(false)
+LifecycleExpiration::LifecycleExpiration(const XmlNode& xmlNode)
+  : LifecycleExpiration()
 {
   *this = xmlNode;
 }

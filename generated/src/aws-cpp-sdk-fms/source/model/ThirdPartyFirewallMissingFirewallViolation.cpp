@@ -26,11 +26,8 @@ ThirdPartyFirewallMissingFirewallViolation::ThirdPartyFirewallMissingFirewallVio
 {
 }
 
-ThirdPartyFirewallMissingFirewallViolation::ThirdPartyFirewallMissingFirewallViolation(JsonView jsonValue) : 
-    m_violationTargetHasBeenSet(false),
-    m_vPCHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_targetViolationReasonHasBeenSet(false)
+ThirdPartyFirewallMissingFirewallViolation::ThirdPartyFirewallMissingFirewallViolation(JsonView jsonValue)
+  : ThirdPartyFirewallMissingFirewallViolation()
 {
   *this = jsonValue;
 }

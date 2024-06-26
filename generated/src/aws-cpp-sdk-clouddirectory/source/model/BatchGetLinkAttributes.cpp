@@ -24,9 +24,8 @@ BatchGetLinkAttributes::BatchGetLinkAttributes() :
 {
 }
 
-BatchGetLinkAttributes::BatchGetLinkAttributes(JsonView jsonValue) : 
-    m_typedLinkSpecifierHasBeenSet(false),
-    m_attributeNamesHasBeenSet(false)
+BatchGetLinkAttributes::BatchGetLinkAttributes(JsonView jsonValue)
+  : BatchGetLinkAttributes()
 {
   *this = jsonValue;
 }

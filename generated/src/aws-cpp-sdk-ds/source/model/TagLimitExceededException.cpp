@@ -24,9 +24,8 @@ TagLimitExceededException::TagLimitExceededException() :
 {
 }
 
-TagLimitExceededException::TagLimitExceededException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
+TagLimitExceededException::TagLimitExceededException(JsonView jsonValue)
+  : TagLimitExceededException()
 {
   *this = jsonValue;
 }

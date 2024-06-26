@@ -24,9 +24,8 @@ RemediationExceptionResourceKey::RemediationExceptionResourceKey() :
 {
 }
 
-RemediationExceptionResourceKey::RemediationExceptionResourceKey(JsonView jsonValue) : 
-    m_resourceTypeHasBeenSet(false),
-    m_resourceIdHasBeenSet(false)
+RemediationExceptionResourceKey::RemediationExceptionResourceKey(JsonView jsonValue)
+  : RemediationExceptionResourceKey()
 {
   *this = jsonValue;
 }

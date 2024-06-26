@@ -28,13 +28,8 @@ TrialSummary::TrialSummary() :
 {
 }
 
-TrialSummary::TrialSummary(JsonView jsonValue) : 
-    m_trialArnHasBeenSet(false),
-    m_trialNameHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_trialSourceHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false)
+TrialSummary::TrialSummary(JsonView jsonValue)
+  : TrialSummary()
 {
   *this = jsonValue;
 }

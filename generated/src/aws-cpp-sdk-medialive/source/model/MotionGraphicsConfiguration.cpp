@@ -25,10 +25,8 @@ MotionGraphicsConfiguration::MotionGraphicsConfiguration() :
 {
 }
 
-MotionGraphicsConfiguration::MotionGraphicsConfiguration(JsonView jsonValue) : 
-    m_motionGraphicsInsertion(MotionGraphicsInsertion::NOT_SET),
-    m_motionGraphicsInsertionHasBeenSet(false),
-    m_motionGraphicsSettingsHasBeenSet(false)
+MotionGraphicsConfiguration::MotionGraphicsConfiguration(JsonView jsonValue)
+  : MotionGraphicsConfiguration()
 {
   *this = jsonValue;
 }

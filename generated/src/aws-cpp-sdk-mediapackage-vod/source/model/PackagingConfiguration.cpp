@@ -31,16 +31,8 @@ PackagingConfiguration::PackagingConfiguration() :
 {
 }
 
-PackagingConfiguration::PackagingConfiguration(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_cmafPackageHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_dashPackageHasBeenSet(false),
-    m_hlsPackageHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_mssPackageHasBeenSet(false),
-    m_packagingGroupIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+PackagingConfiguration::PackagingConfiguration(JsonView jsonValue)
+  : PackagingConfiguration()
 {
   *this = jsonValue;
 }

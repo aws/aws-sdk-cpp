@@ -28,13 +28,8 @@ DataProvider::DataProvider() :
 {
 }
 
-DataProvider::DataProvider(JsonView jsonValue) : 
-    m_dataProviderNameHasBeenSet(false),
-    m_dataProviderArnHasBeenSet(false),
-    m_dataProviderCreationTimeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_engineHasBeenSet(false),
-    m_settingsHasBeenSet(false)
+DataProvider::DataProvider(JsonView jsonValue)
+  : DataProvider()
 {
   *this = jsonValue;
 }

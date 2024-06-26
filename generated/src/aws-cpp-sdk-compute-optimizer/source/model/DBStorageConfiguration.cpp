@@ -31,16 +31,8 @@ DBStorageConfiguration::DBStorageConfiguration() :
 {
 }
 
-DBStorageConfiguration::DBStorageConfiguration(JsonView jsonValue) : 
-    m_storageTypeHasBeenSet(false),
-    m_allocatedStorage(0),
-    m_allocatedStorageHasBeenSet(false),
-    m_iops(0),
-    m_iopsHasBeenSet(false),
-    m_maxAllocatedStorage(0),
-    m_maxAllocatedStorageHasBeenSet(false),
-    m_storageThroughput(0),
-    m_storageThroughputHasBeenSet(false)
+DBStorageConfiguration::DBStorageConfiguration(JsonView jsonValue)
+  : DBStorageConfiguration()
 {
   *this = jsonValue;
 }

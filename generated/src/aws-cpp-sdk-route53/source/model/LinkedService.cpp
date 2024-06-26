@@ -26,9 +26,8 @@ LinkedService::LinkedService() :
 {
 }
 
-LinkedService::LinkedService(const XmlNode& xmlNode) : 
-    m_servicePrincipalHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+LinkedService::LinkedService(const XmlNode& xmlNode)
+  : LinkedService()
 {
   *this = xmlNode;
 }

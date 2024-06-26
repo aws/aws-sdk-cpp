@@ -30,15 +30,8 @@ SubjectSummary::SubjectSummary() :
 {
 }
 
-SubjectSummary::SubjectSummary(JsonView jsonValue) : 
-    m_createdAtHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_lastSeenAtHasBeenSet(false),
-    m_subjectArnHasBeenSet(false),
-    m_subjectIdHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_x509SubjectHasBeenSet(false)
+SubjectSummary::SubjectSummary(JsonView jsonValue)
+  : SubjectSummary()
 {
   *this = jsonValue;
 }

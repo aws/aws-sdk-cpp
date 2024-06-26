@@ -24,9 +24,8 @@ ActionReviewPayloadFieldAllowedValue::ActionReviewPayloadFieldAllowedValue() :
 {
 }
 
-ActionReviewPayloadFieldAllowedValue::ActionReviewPayloadFieldAllowedValue(JsonView jsonValue) : 
-    m_valueHasBeenSet(false),
-    m_displayValueHasBeenSet(false)
+ActionReviewPayloadFieldAllowedValue::ActionReviewPayloadFieldAllowedValue(JsonView jsonValue)
+  : ActionReviewPayloadFieldAllowedValue()
 {
   *this = jsonValue;
 }

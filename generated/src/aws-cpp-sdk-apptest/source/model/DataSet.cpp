@@ -30,15 +30,8 @@ DataSet::DataSet() :
 {
 }
 
-DataSet::DataSet(JsonView jsonValue) : 
-    m_type(DataSetType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_ccsidHasBeenSet(false),
-    m_format(Format::NOT_SET),
-    m_formatHasBeenSet(false),
-    m_length(0),
-    m_lengthHasBeenSet(false)
+DataSet::DataSet(JsonView jsonValue)
+  : DataSet()
 {
   *this = jsonValue;
 }

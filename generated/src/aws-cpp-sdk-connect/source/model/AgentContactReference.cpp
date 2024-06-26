@@ -32,17 +32,8 @@ AgentContactReference::AgentContactReference() :
 {
 }
 
-AgentContactReference::AgentContactReference(JsonView jsonValue) : 
-    m_contactIdHasBeenSet(false),
-    m_channel(Channel::NOT_SET),
-    m_channelHasBeenSet(false),
-    m_initiationMethod(ContactInitiationMethod::NOT_SET),
-    m_initiationMethodHasBeenSet(false),
-    m_agentContactState(ContactState::NOT_SET),
-    m_agentContactStateHasBeenSet(false),
-    m_stateStartTimestampHasBeenSet(false),
-    m_connectedToAgentTimestampHasBeenSet(false),
-    m_queueHasBeenSet(false)
+AgentContactReference::AgentContactReference(JsonView jsonValue)
+  : AgentContactReference()
 {
   *this = jsonValue;
 }

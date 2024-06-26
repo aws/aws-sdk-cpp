@@ -39,24 +39,8 @@ MedicalTranscriptionJobSummary::MedicalTranscriptionJobSummary() :
 {
 }
 
-MedicalTranscriptionJobSummary::MedicalTranscriptionJobSummary(JsonView jsonValue) : 
-    m_medicalTranscriptionJobNameHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_completionTimeHasBeenSet(false),
-    m_languageCode(LanguageCode::NOT_SET),
-    m_languageCodeHasBeenSet(false),
-    m_transcriptionJobStatus(TranscriptionJobStatus::NOT_SET),
-    m_transcriptionJobStatusHasBeenSet(false),
-    m_failureReasonHasBeenSet(false),
-    m_outputLocationType(OutputLocationType::NOT_SET),
-    m_outputLocationTypeHasBeenSet(false),
-    m_specialty(Specialty::NOT_SET),
-    m_specialtyHasBeenSet(false),
-    m_contentIdentificationType(MedicalContentIdentificationType::NOT_SET),
-    m_contentIdentificationTypeHasBeenSet(false),
-    m_type(Type::NOT_SET),
-    m_typeHasBeenSet(false)
+MedicalTranscriptionJobSummary::MedicalTranscriptionJobSummary(JsonView jsonValue)
+  : MedicalTranscriptionJobSummary()
 {
   *this = jsonValue;
 }

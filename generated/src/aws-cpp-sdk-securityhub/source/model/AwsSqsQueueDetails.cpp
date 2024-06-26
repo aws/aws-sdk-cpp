@@ -27,12 +27,8 @@ AwsSqsQueueDetails::AwsSqsQueueDetails() :
 {
 }
 
-AwsSqsQueueDetails::AwsSqsQueueDetails(JsonView jsonValue) : 
-    m_kmsDataKeyReusePeriodSeconds(0),
-    m_kmsDataKeyReusePeriodSecondsHasBeenSet(false),
-    m_kmsMasterKeyIdHasBeenSet(false),
-    m_queueNameHasBeenSet(false),
-    m_deadLetterTargetArnHasBeenSet(false)
+AwsSqsQueueDetails::AwsSqsQueueDetails(JsonView jsonValue)
+  : AwsSqsQueueDetails()
 {
   *this = jsonValue;
 }

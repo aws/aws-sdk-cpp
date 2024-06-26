@@ -25,10 +25,8 @@ InstanceSavingsOpportunityAfterDiscounts::InstanceSavingsOpportunityAfterDiscoun
 {
 }
 
-InstanceSavingsOpportunityAfterDiscounts::InstanceSavingsOpportunityAfterDiscounts(JsonView jsonValue) : 
-    m_savingsOpportunityPercentage(0.0),
-    m_savingsOpportunityPercentageHasBeenSet(false),
-    m_estimatedMonthlySavingsHasBeenSet(false)
+InstanceSavingsOpportunityAfterDiscounts::InstanceSavingsOpportunityAfterDiscounts(JsonView jsonValue)
+  : InstanceSavingsOpportunityAfterDiscounts()
 {
   *this = jsonValue;
 }

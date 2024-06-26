@@ -29,14 +29,8 @@ ConfigExportDeliveryInfo::ConfigExportDeliveryInfo() :
 {
 }
 
-ConfigExportDeliveryInfo::ConfigExportDeliveryInfo(JsonView jsonValue) : 
-    m_lastStatus(DeliveryStatus::NOT_SET),
-    m_lastStatusHasBeenSet(false),
-    m_lastErrorCodeHasBeenSet(false),
-    m_lastErrorMessageHasBeenSet(false),
-    m_lastAttemptTimeHasBeenSet(false),
-    m_lastSuccessfulTimeHasBeenSet(false),
-    m_nextDeliveryTimeHasBeenSet(false)
+ConfigExportDeliveryInfo::ConfigExportDeliveryInfo(JsonView jsonValue)
+  : ConfigExportDeliveryInfo()
 {
   *this = jsonValue;
 }

@@ -26,9 +26,8 @@ PlatformProgrammingLanguage::PlatformProgrammingLanguage() :
 {
 }
 
-PlatformProgrammingLanguage::PlatformProgrammingLanguage(const XmlNode& xmlNode) : 
-    m_nameHasBeenSet(false),
-    m_versionHasBeenSet(false)
+PlatformProgrammingLanguage::PlatformProgrammingLanguage(const XmlNode& xmlNode)
+  : PlatformProgrammingLanguage()
 {
   *this = xmlNode;
 }

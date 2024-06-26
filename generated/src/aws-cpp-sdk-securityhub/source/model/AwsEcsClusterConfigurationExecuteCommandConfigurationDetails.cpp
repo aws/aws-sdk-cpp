@@ -25,10 +25,8 @@ AwsEcsClusterConfigurationExecuteCommandConfigurationDetails::AwsEcsClusterConfi
 {
 }
 
-AwsEcsClusterConfigurationExecuteCommandConfigurationDetails::AwsEcsClusterConfigurationExecuteCommandConfigurationDetails(JsonView jsonValue) : 
-    m_kmsKeyIdHasBeenSet(false),
-    m_logConfigurationHasBeenSet(false),
-    m_loggingHasBeenSet(false)
+AwsEcsClusterConfigurationExecuteCommandConfigurationDetails::AwsEcsClusterConfigurationExecuteCommandConfigurationDetails(JsonView jsonValue)
+  : AwsEcsClusterConfigurationExecuteCommandConfigurationDetails()
 {
   *this = jsonValue;
 }

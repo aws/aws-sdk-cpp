@@ -29,14 +29,8 @@ SemanticType::SemanticType() :
 {
 }
 
-SemanticType::SemanticType(JsonView jsonValue) : 
-    m_typeNameHasBeenSet(false),
-    m_subTypeNameHasBeenSet(false),
-    m_typeParametersHasBeenSet(false),
-    m_truthyCellValueHasBeenSet(false),
-    m_truthyCellValueSynonymsHasBeenSet(false),
-    m_falseyCellValueHasBeenSet(false),
-    m_falseyCellValueSynonymsHasBeenSet(false)
+SemanticType::SemanticType(JsonView jsonValue)
+  : SemanticType()
 {
   *this = jsonValue;
 }

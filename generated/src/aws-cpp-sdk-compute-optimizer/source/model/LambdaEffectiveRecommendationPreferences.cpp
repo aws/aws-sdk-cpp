@@ -23,8 +23,8 @@ LambdaEffectiveRecommendationPreferences::LambdaEffectiveRecommendationPreferenc
 {
 }
 
-LambdaEffectiveRecommendationPreferences::LambdaEffectiveRecommendationPreferences(JsonView jsonValue) : 
-    m_savingsEstimationModeHasBeenSet(false)
+LambdaEffectiveRecommendationPreferences::LambdaEffectiveRecommendationPreferences(JsonView jsonValue)
+  : LambdaEffectiveRecommendationPreferences()
 {
   *this = jsonValue;
 }

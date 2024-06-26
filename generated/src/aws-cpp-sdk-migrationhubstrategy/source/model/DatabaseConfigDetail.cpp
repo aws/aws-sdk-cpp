@@ -23,8 +23,8 @@ DatabaseConfigDetail::DatabaseConfigDetail() :
 {
 }
 
-DatabaseConfigDetail::DatabaseConfigDetail(JsonView jsonValue) : 
-    m_secretNameHasBeenSet(false)
+DatabaseConfigDetail::DatabaseConfigDetail(JsonView jsonValue)
+  : DatabaseConfigDetail()
 {
   *this = jsonValue;
 }

@@ -27,12 +27,8 @@ FrameCaptureSettings::FrameCaptureSettings() :
 {
 }
 
-FrameCaptureSettings::FrameCaptureSettings(JsonView jsonValue) : 
-    m_captureInterval(0),
-    m_captureIntervalHasBeenSet(false),
-    m_captureIntervalUnits(FrameCaptureIntervalUnit::NOT_SET),
-    m_captureIntervalUnitsHasBeenSet(false),
-    m_timecodeBurninSettingsHasBeenSet(false)
+FrameCaptureSettings::FrameCaptureSettings(JsonView jsonValue)
+  : FrameCaptureSettings()
 {
   *this = jsonValue;
 }

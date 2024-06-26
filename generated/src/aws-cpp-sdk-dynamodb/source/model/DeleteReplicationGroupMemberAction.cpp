@@ -23,8 +23,8 @@ DeleteReplicationGroupMemberAction::DeleteReplicationGroupMemberAction() :
 {
 }
 
-DeleteReplicationGroupMemberAction::DeleteReplicationGroupMemberAction(JsonView jsonValue) : 
-    m_regionNameHasBeenSet(false)
+DeleteReplicationGroupMemberAction::DeleteReplicationGroupMemberAction(JsonView jsonValue)
+  : DeleteReplicationGroupMemberAction()
 {
   *this = jsonValue;
 }

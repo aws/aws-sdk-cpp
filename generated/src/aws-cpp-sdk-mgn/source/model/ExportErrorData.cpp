@@ -23,8 +23,8 @@ ExportErrorData::ExportErrorData() :
 {
 }
 
-ExportErrorData::ExportErrorData(JsonView jsonValue) : 
-    m_rawErrorHasBeenSet(false)
+ExportErrorData::ExportErrorData(JsonView jsonValue)
+  : ExportErrorData()
 {
   *this = jsonValue;
 }

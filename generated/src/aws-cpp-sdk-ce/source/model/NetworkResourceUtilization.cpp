@@ -26,11 +26,8 @@ NetworkResourceUtilization::NetworkResourceUtilization() :
 {
 }
 
-NetworkResourceUtilization::NetworkResourceUtilization(JsonView jsonValue) : 
-    m_networkInBytesPerSecondHasBeenSet(false),
-    m_networkOutBytesPerSecondHasBeenSet(false),
-    m_networkPacketsInPerSecondHasBeenSet(false),
-    m_networkPacketsOutPerSecondHasBeenSet(false)
+NetworkResourceUtilization::NetworkResourceUtilization(JsonView jsonValue)
+  : NetworkResourceUtilization()
 {
   *this = jsonValue;
 }

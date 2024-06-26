@@ -24,9 +24,8 @@ FailWorkflowExecutionDecisionAttributes::FailWorkflowExecutionDecisionAttributes
 {
 }
 
-FailWorkflowExecutionDecisionAttributes::FailWorkflowExecutionDecisionAttributes(JsonView jsonValue) : 
-    m_reasonHasBeenSet(false),
-    m_detailsHasBeenSet(false)
+FailWorkflowExecutionDecisionAttributes::FailWorkflowExecutionDecisionAttributes(JsonView jsonValue)
+  : FailWorkflowExecutionDecisionAttributes()
 {
   *this = jsonValue;
 }

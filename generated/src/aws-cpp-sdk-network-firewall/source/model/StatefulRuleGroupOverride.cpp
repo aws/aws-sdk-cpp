@@ -24,9 +24,8 @@ StatefulRuleGroupOverride::StatefulRuleGroupOverride() :
 {
 }
 
-StatefulRuleGroupOverride::StatefulRuleGroupOverride(JsonView jsonValue) : 
-    m_action(OverrideAction::NOT_SET),
-    m_actionHasBeenSet(false)
+StatefulRuleGroupOverride::StatefulRuleGroupOverride(JsonView jsonValue)
+  : StatefulRuleGroupOverride()
 {
   *this = jsonValue;
 }

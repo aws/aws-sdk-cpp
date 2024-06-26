@@ -31,16 +31,8 @@ Event::Event() :
 {
 }
 
-Event::Event(JsonView jsonValue) : 
-    m_eventIdHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_eventCode(EventCode::NOT_SET),
-    m_eventCodeHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_eventTimeHasBeenSet(false),
-    m_preSignedLogUrlHasBeenSet(false),
-    m_count(0),
-    m_countHasBeenSet(false)
+Event::Event(JsonView jsonValue)
+  : Event()
 {
   *this = jsonValue;
 }

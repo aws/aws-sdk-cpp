@@ -23,8 +23,8 @@ BillingGroupMetadata::BillingGroupMetadata() :
 {
 }
 
-BillingGroupMetadata::BillingGroupMetadata(JsonView jsonValue) : 
-    m_creationDateHasBeenSet(false)
+BillingGroupMetadata::BillingGroupMetadata(JsonView jsonValue)
+  : BillingGroupMetadata()
 {
   *this = jsonValue;
 }

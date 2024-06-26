@@ -29,14 +29,8 @@ BatchGetTokenBalanceErrorItem::BatchGetTokenBalanceErrorItem() :
 {
 }
 
-BatchGetTokenBalanceErrorItem::BatchGetTokenBalanceErrorItem(JsonView jsonValue) : 
-    m_tokenIdentifierHasBeenSet(false),
-    m_ownerIdentifierHasBeenSet(false),
-    m_atBlockchainInstantHasBeenSet(false),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_errorType(ErrorType::NOT_SET),
-    m_errorTypeHasBeenSet(false)
+BatchGetTokenBalanceErrorItem::BatchGetTokenBalanceErrorItem(JsonView jsonValue)
+  : BatchGetTokenBalanceErrorItem()
 {
   *this = jsonValue;
 }

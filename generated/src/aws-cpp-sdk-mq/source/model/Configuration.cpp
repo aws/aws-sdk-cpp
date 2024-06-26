@@ -34,19 +34,8 @@ Configuration::Configuration() :
 {
 }
 
-Configuration::Configuration(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_authenticationStrategy(AuthenticationStrategy::NOT_SET),
-    m_authenticationStrategyHasBeenSet(false),
-    m_createdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_engineType(EngineType::NOT_SET),
-    m_engineTypeHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_latestRevisionHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+Configuration::Configuration(JsonView jsonValue)
+  : Configuration()
 {
   *this = jsonValue;
 }

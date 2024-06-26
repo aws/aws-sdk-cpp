@@ -31,16 +31,8 @@ NetworkAclEntry::NetworkAclEntry() :
 {
 }
 
-NetworkAclEntry::NetworkAclEntry(JsonView jsonValue) : 
-    m_icmpTypeCodeHasBeenSet(false),
-    m_protocolHasBeenSet(false),
-    m_portRangeHasBeenSet(false),
-    m_cidrBlockHasBeenSet(false),
-    m_ipv6CidrBlockHasBeenSet(false),
-    m_ruleAction(NetworkAclRuleAction::NOT_SET),
-    m_ruleActionHasBeenSet(false),
-    m_egress(false),
-    m_egressHasBeenSet(false)
+NetworkAclEntry::NetworkAclEntry(JsonView jsonValue)
+  : NetworkAclEntry()
 {
   *this = jsonValue;
 }

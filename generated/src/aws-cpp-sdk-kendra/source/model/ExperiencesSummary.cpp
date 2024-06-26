@@ -28,13 +28,8 @@ ExperiencesSummary::ExperiencesSummary() :
 {
 }
 
-ExperiencesSummary::ExperiencesSummary(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_status(ExperienceStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_endpointsHasBeenSet(false)
+ExperiencesSummary::ExperiencesSummary(JsonView jsonValue)
+  : ExperiencesSummary()
 {
   *this = jsonValue;
 }

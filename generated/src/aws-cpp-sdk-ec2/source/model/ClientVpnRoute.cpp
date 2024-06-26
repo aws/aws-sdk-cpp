@@ -31,14 +31,8 @@ ClientVpnRoute::ClientVpnRoute() :
 {
 }
 
-ClientVpnRoute::ClientVpnRoute(const XmlNode& xmlNode) : 
-    m_clientVpnEndpointIdHasBeenSet(false),
-    m_destinationCidrHasBeenSet(false),
-    m_targetSubnetHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_originHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+ClientVpnRoute::ClientVpnRoute(const XmlNode& xmlNode)
+  : ClientVpnRoute()
 {
   *this = xmlNode;
 }

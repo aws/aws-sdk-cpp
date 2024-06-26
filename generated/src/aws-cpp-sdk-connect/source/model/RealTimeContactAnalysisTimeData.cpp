@@ -23,8 +23,8 @@ RealTimeContactAnalysisTimeData::RealTimeContactAnalysisTimeData() :
 {
 }
 
-RealTimeContactAnalysisTimeData::RealTimeContactAnalysisTimeData(JsonView jsonValue) : 
-    m_absoluteTimeHasBeenSet(false)
+RealTimeContactAnalysisTimeData::RealTimeContactAnalysisTimeData(JsonView jsonValue)
+  : RealTimeContactAnalysisTimeData()
 {
   *this = jsonValue;
 }

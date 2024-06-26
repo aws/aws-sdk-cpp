@@ -22,8 +22,8 @@ UpdateKinesisStreamingDestinationResult::UpdateKinesisStreamingDestinationResult
 {
 }
 
-UpdateKinesisStreamingDestinationResult::UpdateKinesisStreamingDestinationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_destinationStatus(DestinationStatus::NOT_SET)
+UpdateKinesisStreamingDestinationResult::UpdateKinesisStreamingDestinationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateKinesisStreamingDestinationResult()
 {
   *this = result;
 }

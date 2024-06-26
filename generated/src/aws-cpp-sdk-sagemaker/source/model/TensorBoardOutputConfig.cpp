@@ -24,9 +24,8 @@ TensorBoardOutputConfig::TensorBoardOutputConfig() :
 {
 }
 
-TensorBoardOutputConfig::TensorBoardOutputConfig(JsonView jsonValue) : 
-    m_localPathHasBeenSet(false),
-    m_s3OutputPathHasBeenSet(false)
+TensorBoardOutputConfig::TensorBoardOutputConfig(JsonView jsonValue)
+  : TensorBoardOutputConfig()
 {
   *this = jsonValue;
 }

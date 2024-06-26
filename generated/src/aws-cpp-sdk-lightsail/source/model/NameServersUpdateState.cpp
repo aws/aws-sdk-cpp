@@ -25,10 +25,8 @@ NameServersUpdateState::NameServersUpdateState() :
 {
 }
 
-NameServersUpdateState::NameServersUpdateState(JsonView jsonValue) : 
-    m_code(NameServersUpdateStateCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+NameServersUpdateState::NameServersUpdateState(JsonView jsonValue)
+  : NameServersUpdateState()
 {
   *this = jsonValue;
 }

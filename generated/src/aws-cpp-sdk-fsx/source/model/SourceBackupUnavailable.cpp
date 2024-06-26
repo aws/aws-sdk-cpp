@@ -24,9 +24,8 @@ SourceBackupUnavailable::SourceBackupUnavailable() :
 {
 }
 
-SourceBackupUnavailable::SourceBackupUnavailable(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_backupIdHasBeenSet(false)
+SourceBackupUnavailable::SourceBackupUnavailable(JsonView jsonValue)
+  : SourceBackupUnavailable()
 {
   *this = jsonValue;
 }

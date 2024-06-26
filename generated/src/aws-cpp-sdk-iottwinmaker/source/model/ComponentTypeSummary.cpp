@@ -29,14 +29,8 @@ ComponentTypeSummary::ComponentTypeSummary() :
 {
 }
 
-ComponentTypeSummary::ComponentTypeSummary(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_componentTypeIdHasBeenSet(false),
-    m_creationDateTimeHasBeenSet(false),
-    m_updateDateTimeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_componentTypeNameHasBeenSet(false)
+ComponentTypeSummary::ComponentTypeSummary(JsonView jsonValue)
+  : ComponentTypeSummary()
 {
   *this = jsonValue;
 }

@@ -32,15 +32,8 @@ MetricStreamEntry::MetricStreamEntry() :
 {
 }
 
-MetricStreamEntry::MetricStreamEntry(const XmlNode& xmlNode) : 
-    m_arnHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_lastUpdateDateHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_firehoseArnHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_outputFormat(MetricStreamOutputFormat::NOT_SET),
-    m_outputFormatHasBeenSet(false)
+MetricStreamEntry::MetricStreamEntry(const XmlNode& xmlNode)
+  : MetricStreamEntry()
 {
   *this = xmlNode;
 }

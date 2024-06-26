@@ -24,9 +24,8 @@ PineconeFieldMapping::PineconeFieldMapping() :
 {
 }
 
-PineconeFieldMapping::PineconeFieldMapping(JsonView jsonValue) : 
-    m_metadataFieldHasBeenSet(false),
-    m_textFieldHasBeenSet(false)
+PineconeFieldMapping::PineconeFieldMapping(JsonView jsonValue)
+  : PineconeFieldMapping()
 {
   *this = jsonValue;
 }

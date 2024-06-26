@@ -23,8 +23,8 @@ AmazonManagedKafkaEventSourceConfig::AmazonManagedKafkaEventSourceConfig() :
 {
 }
 
-AmazonManagedKafkaEventSourceConfig::AmazonManagedKafkaEventSourceConfig(JsonView jsonValue) : 
-    m_consumerGroupIdHasBeenSet(false)
+AmazonManagedKafkaEventSourceConfig::AmazonManagedKafkaEventSourceConfig(JsonView jsonValue)
+  : AmazonManagedKafkaEventSourceConfig()
 {
   *this = jsonValue;
 }

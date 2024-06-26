@@ -34,19 +34,8 @@ SettingEntry::SettingEntry() :
 {
 }
 
-SettingEntry::SettingEntry(JsonView jsonValue) : 
-    m_typeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_allowedValuesHasBeenSet(false),
-    m_appliedValueHasBeenSet(false),
-    m_requestedValueHasBeenSet(false),
-    m_requestStatus(DirectoryConfigurationStatus::NOT_SET),
-    m_requestStatusHasBeenSet(false),
-    m_requestDetailedStatusHasBeenSet(false),
-    m_requestStatusMessageHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false),
-    m_lastRequestedDateTimeHasBeenSet(false),
-    m_dataTypeHasBeenSet(false)
+SettingEntry::SettingEntry(JsonView jsonValue)
+  : SettingEntry()
 {
   *this = jsonValue;
 }

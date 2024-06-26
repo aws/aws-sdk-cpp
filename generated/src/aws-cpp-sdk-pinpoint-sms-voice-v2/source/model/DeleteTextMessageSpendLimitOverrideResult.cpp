@@ -22,8 +22,8 @@ DeleteTextMessageSpendLimitOverrideResult::DeleteTextMessageSpendLimitOverrideRe
 {
 }
 
-DeleteTextMessageSpendLimitOverrideResult::DeleteTextMessageSpendLimitOverrideResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_monthlyLimit(0)
+DeleteTextMessageSpendLimitOverrideResult::DeleteTextMessageSpendLimitOverrideResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeleteTextMessageSpendLimitOverrideResult()
 {
   *this = result;
 }

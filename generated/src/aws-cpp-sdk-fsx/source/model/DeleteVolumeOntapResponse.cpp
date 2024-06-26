@@ -24,9 +24,8 @@ DeleteVolumeOntapResponse::DeleteVolumeOntapResponse() :
 {
 }
 
-DeleteVolumeOntapResponse::DeleteVolumeOntapResponse(JsonView jsonValue) : 
-    m_finalBackupIdHasBeenSet(false),
-    m_finalBackupTagsHasBeenSet(false)
+DeleteVolumeOntapResponse::DeleteVolumeOntapResponse(JsonView jsonValue)
+  : DeleteVolumeOntapResponse()
 {
   *this = jsonValue;
 }

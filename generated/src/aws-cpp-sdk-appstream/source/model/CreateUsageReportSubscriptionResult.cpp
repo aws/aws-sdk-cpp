@@ -22,8 +22,8 @@ CreateUsageReportSubscriptionResult::CreateUsageReportSubscriptionResult() :
 {
 }
 
-CreateUsageReportSubscriptionResult::CreateUsageReportSubscriptionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_schedule(UsageReportSchedule::NOT_SET)
+CreateUsageReportSubscriptionResult::CreateUsageReportSubscriptionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateUsageReportSubscriptionResult()
 {
   *this = result;
 }

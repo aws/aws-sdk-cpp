@@ -23,9 +23,8 @@ GetMetricStreamResult::GetMetricStreamResult() :
 {
 }
 
-GetMetricStreamResult::GetMetricStreamResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_outputFormat(MetricStreamOutputFormat::NOT_SET),
-    m_includeLinkedAccountsMetrics(false)
+GetMetricStreamResult::GetMetricStreamResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : GetMetricStreamResult()
 {
   *this = result;
 }

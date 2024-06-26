@@ -25,10 +25,8 @@ InsightConfiguration::InsightConfiguration() :
 {
 }
 
-InsightConfiguration::InsightConfiguration(JsonView jsonValue) : 
-    m_computationsHasBeenSet(false),
-    m_customNarrativeHasBeenSet(false),
-    m_interactionsHasBeenSet(false)
+InsightConfiguration::InsightConfiguration(JsonView jsonValue)
+  : InsightConfiguration()
 {
   *this = jsonValue;
 }

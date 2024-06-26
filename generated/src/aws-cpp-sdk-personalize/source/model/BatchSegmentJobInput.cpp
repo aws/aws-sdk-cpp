@@ -23,8 +23,8 @@ BatchSegmentJobInput::BatchSegmentJobInput() :
 {
 }
 
-BatchSegmentJobInput::BatchSegmentJobInput(JsonView jsonValue) : 
-    m_s3DataSourceHasBeenSet(false)
+BatchSegmentJobInput::BatchSegmentJobInput(JsonView jsonValue)
+  : BatchSegmentJobInput()
 {
   *this = jsonValue;
 }

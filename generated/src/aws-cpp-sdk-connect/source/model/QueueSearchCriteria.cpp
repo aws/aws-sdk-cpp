@@ -27,12 +27,8 @@ QueueSearchCriteria::QueueSearchCriteria() :
 {
 }
 
-QueueSearchCriteria::QueueSearchCriteria(JsonView jsonValue) : 
-    m_orConditionsHasBeenSet(false),
-    m_andConditionsHasBeenSet(false),
-    m_stringConditionHasBeenSet(false),
-    m_queueTypeCondition(SearchableQueueType::NOT_SET),
-    m_queueTypeConditionHasBeenSet(false)
+QueueSearchCriteria::QueueSearchCriteria(JsonView jsonValue)
+  : QueueSearchCriteria()
 {
   *this = jsonValue;
 }

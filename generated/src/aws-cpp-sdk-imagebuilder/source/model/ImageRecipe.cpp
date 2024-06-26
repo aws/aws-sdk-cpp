@@ -38,23 +38,8 @@ ImageRecipe::ImageRecipe() :
 {
 }
 
-ImageRecipe::ImageRecipe(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_type(ImageType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_platform(Platform::NOT_SET),
-    m_platformHasBeenSet(false),
-    m_ownerHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_componentsHasBeenSet(false),
-    m_parentImageHasBeenSet(false),
-    m_blockDeviceMappingsHasBeenSet(false),
-    m_dateCreatedHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_workingDirectoryHasBeenSet(false),
-    m_additionalInstanceConfigurationHasBeenSet(false)
+ImageRecipe::ImageRecipe(JsonView jsonValue)
+  : ImageRecipe()
 {
   *this = jsonValue;
 }

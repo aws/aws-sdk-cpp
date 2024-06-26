@@ -25,8 +25,8 @@ MultiRegionAccessPointsAsyncResponse::MultiRegionAccessPointsAsyncResponse() :
 {
 }
 
-MultiRegionAccessPointsAsyncResponse::MultiRegionAccessPointsAsyncResponse(const XmlNode& xmlNode) : 
-    m_regionsHasBeenSet(false)
+MultiRegionAccessPointsAsyncResponse::MultiRegionAccessPointsAsyncResponse(const XmlNode& xmlNode)
+  : MultiRegionAccessPointsAsyncResponse()
 {
   *this = xmlNode;
 }

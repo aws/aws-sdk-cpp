@@ -24,9 +24,8 @@ DatasetEntry::DatasetEntry() :
 {
 }
 
-DatasetEntry::DatasetEntry(JsonView jsonValue) : 
-    m_entryNameHasBeenSet(false),
-    m_dataURIHasBeenSet(false)
+DatasetEntry::DatasetEntry(JsonView jsonValue)
+  : DatasetEntry()
 {
   *this = jsonValue;
 }

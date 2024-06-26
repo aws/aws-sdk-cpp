@@ -28,13 +28,8 @@ ConnectorSsmCommandConfig::ConnectorSsmCommandConfig() :
 {
 }
 
-ConnectorSsmCommandConfig::ConnectorSsmCommandConfig(JsonView jsonValue) : 
-    m_cloudWatchLogGroupNameHasBeenSet(false),
-    m_cloudWatchOutputEnabled(false),
-    m_cloudWatchOutputEnabledHasBeenSet(false),
-    m_outputS3BucketNameHasBeenSet(false),
-    m_s3OutputEnabled(false),
-    m_s3OutputEnabledHasBeenSet(false)
+ConnectorSsmCommandConfig::ConnectorSsmCommandConfig(JsonView jsonValue)
+  : ConnectorSsmCommandConfig()
 {
   *this = jsonValue;
 }

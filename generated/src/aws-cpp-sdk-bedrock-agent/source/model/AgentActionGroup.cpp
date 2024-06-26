@@ -37,22 +37,8 @@ AgentActionGroup::AgentActionGroup() :
 {
 }
 
-AgentActionGroup::AgentActionGroup(JsonView jsonValue) : 
-    m_actionGroupExecutorHasBeenSet(false),
-    m_actionGroupIdHasBeenSet(false),
-    m_actionGroupNameHasBeenSet(false),
-    m_actionGroupState(ActionGroupState::NOT_SET),
-    m_actionGroupStateHasBeenSet(false),
-    m_agentIdHasBeenSet(false),
-    m_agentVersionHasBeenSet(false),
-    m_apiSchemaHasBeenSet(false),
-    m_clientTokenHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_functionSchemaHasBeenSet(false),
-    m_parentActionSignature(ActionGroupSignature::NOT_SET),
-    m_parentActionSignatureHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+AgentActionGroup::AgentActionGroup(JsonView jsonValue)
+  : AgentActionGroup()
 {
   *this = jsonValue;
 }

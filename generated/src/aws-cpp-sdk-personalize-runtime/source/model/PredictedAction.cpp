@@ -25,10 +25,8 @@ PredictedAction::PredictedAction() :
 {
 }
 
-PredictedAction::PredictedAction(JsonView jsonValue) : 
-    m_actionIdHasBeenSet(false),
-    m_score(0.0),
-    m_scoreHasBeenSet(false)
+PredictedAction::PredictedAction(JsonView jsonValue)
+  : PredictedAction()
 {
   *this = jsonValue;
 }

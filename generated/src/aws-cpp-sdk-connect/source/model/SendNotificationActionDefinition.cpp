@@ -29,14 +29,8 @@ SendNotificationActionDefinition::SendNotificationActionDefinition() :
 {
 }
 
-SendNotificationActionDefinition::SendNotificationActionDefinition(JsonView jsonValue) : 
-    m_deliveryMethod(NotificationDeliveryType::NOT_SET),
-    m_deliveryMethodHasBeenSet(false),
-    m_subjectHasBeenSet(false),
-    m_contentHasBeenSet(false),
-    m_contentType(NotificationContentType::NOT_SET),
-    m_contentTypeHasBeenSet(false),
-    m_recipientHasBeenSet(false)
+SendNotificationActionDefinition::SendNotificationActionDefinition(JsonView jsonValue)
+  : SendNotificationActionDefinition()
 {
   *this = jsonValue;
 }

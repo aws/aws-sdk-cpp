@@ -30,15 +30,8 @@ MetricTransformation::MetricTransformation() :
 {
 }
 
-MetricTransformation::MetricTransformation(JsonView jsonValue) : 
-    m_metricNameHasBeenSet(false),
-    m_metricNamespaceHasBeenSet(false),
-    m_metricValueHasBeenSet(false),
-    m_defaultValue(0.0),
-    m_defaultValueHasBeenSet(false),
-    m_dimensionsHasBeenSet(false),
-    m_unit(StandardUnit::NOT_SET),
-    m_unitHasBeenSet(false)
+MetricTransformation::MetricTransformation(JsonView jsonValue)
+  : MetricTransformation()
 {
   *this = jsonValue;
 }

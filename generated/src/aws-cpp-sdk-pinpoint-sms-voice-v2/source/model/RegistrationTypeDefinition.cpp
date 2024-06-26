@@ -25,10 +25,8 @@ RegistrationTypeDefinition::RegistrationTypeDefinition() :
 {
 }
 
-RegistrationTypeDefinition::RegistrationTypeDefinition(JsonView jsonValue) : 
-    m_registrationTypeHasBeenSet(false),
-    m_supportedAssociationsHasBeenSet(false),
-    m_displayHintsHasBeenSet(false)
+RegistrationTypeDefinition::RegistrationTypeDefinition(JsonView jsonValue)
+  : RegistrationTypeDefinition()
 {
   *this = jsonValue;
 }

@@ -27,12 +27,8 @@ TransitionState::TransitionState() :
 {
 }
 
-TransitionState::TransitionState(JsonView jsonValue) : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_lastChangedByHasBeenSet(false),
-    m_lastChangedAtHasBeenSet(false),
-    m_disabledReasonHasBeenSet(false)
+TransitionState::TransitionState(JsonView jsonValue)
+  : TransitionState()
 {
   *this = jsonValue;
 }

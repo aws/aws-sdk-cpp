@@ -28,13 +28,8 @@ EnabledBaselineDetails::EnabledBaselineDetails() :
 {
 }
 
-EnabledBaselineDetails::EnabledBaselineDetails(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_baselineIdentifierHasBeenSet(false),
-    m_baselineVersionHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_statusSummaryHasBeenSet(false),
-    m_targetIdentifierHasBeenSet(false)
+EnabledBaselineDetails::EnabledBaselineDetails(JsonView jsonValue)
+  : EnabledBaselineDetails()
 {
   *this = jsonValue;
 }

@@ -31,16 +31,8 @@ ReportPlan::ReportPlan() :
 {
 }
 
-ReportPlan::ReportPlan(JsonView jsonValue) : 
-    m_reportPlanArnHasBeenSet(false),
-    m_reportPlanNameHasBeenSet(false),
-    m_reportPlanDescriptionHasBeenSet(false),
-    m_reportSettingHasBeenSet(false),
-    m_reportDeliveryChannelHasBeenSet(false),
-    m_deploymentStatusHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastAttemptedExecutionTimeHasBeenSet(false),
-    m_lastSuccessfulExecutionTimeHasBeenSet(false)
+ReportPlan::ReportPlan(JsonView jsonValue)
+  : ReportPlan()
 {
   *this = jsonValue;
 }

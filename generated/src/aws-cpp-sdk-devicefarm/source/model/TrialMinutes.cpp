@@ -26,11 +26,8 @@ TrialMinutes::TrialMinutes() :
 {
 }
 
-TrialMinutes::TrialMinutes(JsonView jsonValue) : 
-    m_total(0.0),
-    m_totalHasBeenSet(false),
-    m_remaining(0.0),
-    m_remainingHasBeenSet(false)
+TrialMinutes::TrialMinutes(JsonView jsonValue)
+  : TrialMinutes()
 {
   *this = jsonValue;
 }

@@ -28,13 +28,8 @@ VariableEntry::VariableEntry() :
 {
 }
 
-VariableEntry::VariableEntry(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_dataTypeHasBeenSet(false),
-    m_dataSourceHasBeenSet(false),
-    m_defaultValueHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_variableTypeHasBeenSet(false)
+VariableEntry::VariableEntry(JsonView jsonValue)
+  : VariableEntry()
 {
   *this = jsonValue;
 }

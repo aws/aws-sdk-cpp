@@ -24,9 +24,8 @@ AccountSharingInfo::AccountSharingInfo() :
 {
 }
 
-AccountSharingInfo::AccountSharingInfo(JsonView jsonValue) : 
-    m_accountIdHasBeenSet(false),
-    m_sharedDocumentVersionHasBeenSet(false)
+AccountSharingInfo::AccountSharingInfo(JsonView jsonValue)
+  : AccountSharingInfo()
 {
   *this = jsonValue;
 }

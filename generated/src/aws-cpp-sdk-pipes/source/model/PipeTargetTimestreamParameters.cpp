@@ -32,17 +32,8 @@ PipeTargetTimestreamParameters::PipeTargetTimestreamParameters() :
 {
 }
 
-PipeTargetTimestreamParameters::PipeTargetTimestreamParameters(JsonView jsonValue) : 
-    m_timeValueHasBeenSet(false),
-    m_epochTimeUnit(EpochTimeUnit::NOT_SET),
-    m_epochTimeUnitHasBeenSet(false),
-    m_timeFieldType(TimeFieldType::NOT_SET),
-    m_timeFieldTypeHasBeenSet(false),
-    m_timestampFormatHasBeenSet(false),
-    m_versionValueHasBeenSet(false),
-    m_dimensionMappingsHasBeenSet(false),
-    m_singleMeasureMappingsHasBeenSet(false),
-    m_multiMeasureMappingsHasBeenSet(false)
+PipeTargetTimestreamParameters::PipeTargetTimestreamParameters(JsonView jsonValue)
+  : PipeTargetTimestreamParameters()
 {
   *this = jsonValue;
 }

@@ -28,13 +28,8 @@ AssessmentRunInProgressException::AssessmentRunInProgressException() :
 {
 }
 
-AssessmentRunInProgressException::AssessmentRunInProgressException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_assessmentRunArnsHasBeenSet(false),
-    m_assessmentRunArnsTruncated(false),
-    m_assessmentRunArnsTruncatedHasBeenSet(false),
-    m_canRetry(false),
-    m_canRetryHasBeenSet(false)
+AssessmentRunInProgressException::AssessmentRunInProgressException(JsonView jsonValue)
+  : AssessmentRunInProgressException()
 {
   *this = jsonValue;
 }

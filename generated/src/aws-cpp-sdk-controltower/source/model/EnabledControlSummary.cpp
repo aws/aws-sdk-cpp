@@ -27,12 +27,8 @@ EnabledControlSummary::EnabledControlSummary() :
 {
 }
 
-EnabledControlSummary::EnabledControlSummary(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_controlIdentifierHasBeenSet(false),
-    m_driftStatusSummaryHasBeenSet(false),
-    m_statusSummaryHasBeenSet(false),
-    m_targetIdentifierHasBeenSet(false)
+EnabledControlSummary::EnabledControlSummary(JsonView jsonValue)
+  : EnabledControlSummary()
 {
   *this = jsonValue;
 }

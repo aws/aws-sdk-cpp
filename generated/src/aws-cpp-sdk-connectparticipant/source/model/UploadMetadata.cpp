@@ -25,10 +25,8 @@ UploadMetadata::UploadMetadata() :
 {
 }
 
-UploadMetadata::UploadMetadata(JsonView jsonValue) : 
-    m_urlHasBeenSet(false),
-    m_urlExpiryHasBeenSet(false),
-    m_headersToIncludeHasBeenSet(false)
+UploadMetadata::UploadMetadata(JsonView jsonValue)
+  : UploadMetadata()
 {
   *this = jsonValue;
 }

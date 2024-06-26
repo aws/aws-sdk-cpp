@@ -23,9 +23,8 @@ DescribeApplicationInstanceResult::DescribeApplicationInstanceResult() :
 {
 }
 
-DescribeApplicationInstanceResult::DescribeApplicationInstanceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_healthStatus(ApplicationInstanceHealthStatus::NOT_SET),
-    m_status(ApplicationInstanceStatus::NOT_SET)
+DescribeApplicationInstanceResult::DescribeApplicationInstanceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeApplicationInstanceResult()
 {
   *this = result;
 }

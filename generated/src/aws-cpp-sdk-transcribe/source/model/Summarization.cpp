@@ -24,9 +24,8 @@ Summarization::Summarization() :
 {
 }
 
-Summarization::Summarization(JsonView jsonValue) : 
-    m_generateAbstractiveSummary(false),
-    m_generateAbstractiveSummaryHasBeenSet(false)
+Summarization::Summarization(JsonView jsonValue)
+  : Summarization()
 {
   *this = jsonValue;
 }

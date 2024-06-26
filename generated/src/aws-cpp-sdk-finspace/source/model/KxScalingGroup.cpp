@@ -31,16 +31,8 @@ KxScalingGroup::KxScalingGroup() :
 {
 }
 
-KxScalingGroup::KxScalingGroup(JsonView jsonValue) : 
-    m_scalingGroupNameHasBeenSet(false),
-    m_hostTypeHasBeenSet(false),
-    m_clustersHasBeenSet(false),
-    m_availabilityZoneIdHasBeenSet(false),
-    m_status(KxScalingGroupStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusReasonHasBeenSet(false),
-    m_lastModifiedTimestampHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false)
+KxScalingGroup::KxScalingGroup(JsonView jsonValue)
+  : KxScalingGroup()
 {
   *this = jsonValue;
 }

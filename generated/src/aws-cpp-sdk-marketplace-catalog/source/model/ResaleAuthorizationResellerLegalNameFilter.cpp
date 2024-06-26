@@ -24,9 +24,8 @@ ResaleAuthorizationResellerLegalNameFilter::ResaleAuthorizationResellerLegalName
 {
 }
 
-ResaleAuthorizationResellerLegalNameFilter::ResaleAuthorizationResellerLegalNameFilter(JsonView jsonValue) : 
-    m_valueListHasBeenSet(false),
-    m_wildCardValueHasBeenSet(false)
+ResaleAuthorizationResellerLegalNameFilter::ResaleAuthorizationResellerLegalNameFilter(JsonView jsonValue)
+  : ResaleAuthorizationResellerLegalNameFilter()
 {
   *this = jsonValue;
 }

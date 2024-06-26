@@ -26,11 +26,8 @@ Rule::Rule() :
 {
 }
 
-Rule::Rule(JsonView jsonValue) : 
-    m_nonTalkTimeFilterHasBeenSet(false),
-    m_interruptionFilterHasBeenSet(false),
-    m_transcriptFilterHasBeenSet(false),
-    m_sentimentFilterHasBeenSet(false)
+Rule::Rule(JsonView jsonValue)
+  : Rule()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ FaceRecord::FaceRecord() :
 {
 }
 
-FaceRecord::FaceRecord(JsonView jsonValue) : 
-    m_faceHasBeenSet(false),
-    m_faceDetailHasBeenSet(false)
+FaceRecord::FaceRecord(JsonView jsonValue)
+  : FaceRecord()
 {
   *this = jsonValue;
 }

@@ -28,11 +28,8 @@ ChangeSetHookResourceTargetDetails::ChangeSetHookResourceTargetDetails() :
 {
 }
 
-ChangeSetHookResourceTargetDetails::ChangeSetHookResourceTargetDetails(const XmlNode& xmlNode) : 
-    m_logicalResourceIdHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
-    m_resourceAction(ChangeAction::NOT_SET),
-    m_resourceActionHasBeenSet(false)
+ChangeSetHookResourceTargetDetails::ChangeSetHookResourceTargetDetails(const XmlNode& xmlNode)
+  : ChangeSetHookResourceTargetDetails()
 {
   *this = xmlNode;
 }

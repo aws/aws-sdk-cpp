@@ -24,9 +24,8 @@ EndpointAttributes::EndpointAttributes() :
 {
 }
 
-EndpointAttributes::EndpointAttributes(JsonView jsonValue) : 
-    m_deviceTokenHasBeenSet(false),
-    m_voipDeviceTokenHasBeenSet(false)
+EndpointAttributes::EndpointAttributes(JsonView jsonValue)
+  : EndpointAttributes()
 {
   *this = jsonValue;
 }

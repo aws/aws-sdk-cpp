@@ -33,18 +33,8 @@ Activity::Activity() :
 {
 }
 
-Activity::Activity(JsonView jsonValue) : 
-    m_cUSTOMHasBeenSet(false),
-    m_conditionalSplitHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_eMAILHasBeenSet(false),
-    m_holdoutHasBeenSet(false),
-    m_multiConditionHasBeenSet(false),
-    m_pUSHHasBeenSet(false),
-    m_randomSplitHasBeenSet(false),
-    m_sMSHasBeenSet(false),
-    m_waitHasBeenSet(false),
-    m_contactCenterHasBeenSet(false)
+Activity::Activity(JsonView jsonValue)
+  : Activity()
 {
   *this = jsonValue;
 }

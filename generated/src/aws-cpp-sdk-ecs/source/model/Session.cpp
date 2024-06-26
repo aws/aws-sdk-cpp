@@ -25,10 +25,8 @@ Session::Session() :
 {
 }
 
-Session::Session(JsonView jsonValue) : 
-    m_sessionIdHasBeenSet(false),
-    m_streamUrlHasBeenSet(false),
-    m_tokenValueHasBeenSet(false)
+Session::Session(JsonView jsonValue)
+  : Session()
 {
   *this = jsonValue;
 }

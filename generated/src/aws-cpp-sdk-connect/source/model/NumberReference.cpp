@@ -24,9 +24,8 @@ NumberReference::NumberReference() :
 {
 }
 
-NumberReference::NumberReference(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
+NumberReference::NumberReference(JsonView jsonValue)
+  : NumberReference()
 {
   *this = jsonValue;
 }

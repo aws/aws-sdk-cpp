@@ -25,10 +25,8 @@ SqlApplicationConfiguration::SqlApplicationConfiguration() :
 {
 }
 
-SqlApplicationConfiguration::SqlApplicationConfiguration(JsonView jsonValue) : 
-    m_inputsHasBeenSet(false),
-    m_outputsHasBeenSet(false),
-    m_referenceDataSourcesHasBeenSet(false)
+SqlApplicationConfiguration::SqlApplicationConfiguration(JsonView jsonValue)
+  : SqlApplicationConfiguration()
 {
   *this = jsonValue;
 }

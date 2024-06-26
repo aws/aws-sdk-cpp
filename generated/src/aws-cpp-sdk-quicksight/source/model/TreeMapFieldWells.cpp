@@ -23,8 +23,8 @@ TreeMapFieldWells::TreeMapFieldWells() :
 {
 }
 
-TreeMapFieldWells::TreeMapFieldWells(JsonView jsonValue) : 
-    m_treeMapAggregatedFieldWellsHasBeenSet(false)
+TreeMapFieldWells::TreeMapFieldWells(JsonView jsonValue)
+  : TreeMapFieldWells()
 {
   *this = jsonValue;
 }

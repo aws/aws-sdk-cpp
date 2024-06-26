@@ -24,9 +24,8 @@ RefreshTokenRequestBody::RefreshTokenRequestBody() :
 {
 }
 
-RefreshTokenRequestBody::RefreshTokenRequestBody(JsonView jsonValue) : 
-    m_tokenHasBeenSet(false),
-    m_clientIdHasBeenSet(false)
+RefreshTokenRequestBody::RefreshTokenRequestBody(JsonView jsonValue)
+  : RefreshTokenRequestBody()
 {
   *this = jsonValue;
 }

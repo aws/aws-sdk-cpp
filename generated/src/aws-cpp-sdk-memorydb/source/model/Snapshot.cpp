@@ -30,15 +30,8 @@ Snapshot::Snapshot() :
 {
 }
 
-Snapshot::Snapshot(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_sourceHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_aRNHasBeenSet(false),
-    m_clusterConfigurationHasBeenSet(false),
-    m_dataTiering(DataTieringStatus::NOT_SET),
-    m_dataTieringHasBeenSet(false)
+Snapshot::Snapshot(JsonView jsonValue)
+  : Snapshot()
 {
   *this = jsonValue;
 }

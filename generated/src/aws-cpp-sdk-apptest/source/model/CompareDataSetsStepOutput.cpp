@@ -25,10 +25,8 @@ CompareDataSetsStepOutput::CompareDataSetsStepOutput() :
 {
 }
 
-CompareDataSetsStepOutput::CompareDataSetsStepOutput(JsonView jsonValue) : 
-    m_comparisonOutputLocationHasBeenSet(false),
-    m_comparisonStatus(ComparisonStatusEnum::NOT_SET),
-    m_comparisonStatusHasBeenSet(false)
+CompareDataSetsStepOutput::CompareDataSetsStepOutput(JsonView jsonValue)
+  : CompareDataSetsStepOutput()
 {
   *this = jsonValue;
 }

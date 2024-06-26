@@ -25,10 +25,8 @@ CisaData::CisaData() :
 {
 }
 
-CisaData::CisaData(JsonView jsonValue) : 
-    m_actionHasBeenSet(false),
-    m_dateAddedHasBeenSet(false),
-    m_dateDueHasBeenSet(false)
+CisaData::CisaData(JsonView jsonValue)
+  : CisaData()
 {
   *this = jsonValue;
 }

@@ -24,10 +24,8 @@ CreateLanguageModelResult::CreateLanguageModelResult() :
 {
 }
 
-CreateLanguageModelResult::CreateLanguageModelResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_languageCode(CLMLanguageCode::NOT_SET),
-    m_baseModelName(BaseModelName::NOT_SET),
-    m_modelStatus(ModelStatus::NOT_SET)
+CreateLanguageModelResult::CreateLanguageModelResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateLanguageModelResult()
 {
   *this = result;
 }

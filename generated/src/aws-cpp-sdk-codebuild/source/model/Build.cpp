@@ -59,44 +59,8 @@ Build::Build() :
 {
 }
 
-Build::Build(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_buildNumber(0),
-    m_buildNumberHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_currentPhaseHasBeenSet(false),
-    m_buildStatus(StatusType::NOT_SET),
-    m_buildStatusHasBeenSet(false),
-    m_sourceVersionHasBeenSet(false),
-    m_resolvedSourceVersionHasBeenSet(false),
-    m_projectNameHasBeenSet(false),
-    m_phasesHasBeenSet(false),
-    m_sourceHasBeenSet(false),
-    m_secondarySourcesHasBeenSet(false),
-    m_secondarySourceVersionsHasBeenSet(false),
-    m_artifactsHasBeenSet(false),
-    m_secondaryArtifactsHasBeenSet(false),
-    m_cacheHasBeenSet(false),
-    m_environmentHasBeenSet(false),
-    m_serviceRoleHasBeenSet(false),
-    m_logsHasBeenSet(false),
-    m_timeoutInMinutes(0),
-    m_timeoutInMinutesHasBeenSet(false),
-    m_queuedTimeoutInMinutes(0),
-    m_queuedTimeoutInMinutesHasBeenSet(false),
-    m_buildComplete(false),
-    m_buildCompleteHasBeenSet(false),
-    m_initiatorHasBeenSet(false),
-    m_vpcConfigHasBeenSet(false),
-    m_networkInterfaceHasBeenSet(false),
-    m_encryptionKeyHasBeenSet(false),
-    m_exportedEnvironmentVariablesHasBeenSet(false),
-    m_reportArnsHasBeenSet(false),
-    m_fileSystemLocationsHasBeenSet(false),
-    m_debugSessionHasBeenSet(false),
-    m_buildBatchArnHasBeenSet(false)
+Build::Build(JsonView jsonValue)
+  : Build()
 {
   *this = jsonValue;
 }

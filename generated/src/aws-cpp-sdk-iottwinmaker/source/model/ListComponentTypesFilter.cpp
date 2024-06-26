@@ -26,11 +26,8 @@ ListComponentTypesFilter::ListComponentTypesFilter() :
 {
 }
 
-ListComponentTypesFilter::ListComponentTypesFilter(JsonView jsonValue) : 
-    m_extendsFromHasBeenSet(false),
-    m_namespaceHasBeenSet(false),
-    m_isAbstract(false),
-    m_isAbstractHasBeenSet(false)
+ListComponentTypesFilter::ListComponentTypesFilter(JsonView jsonValue)
+  : ListComponentTypesFilter()
 {
   *this = jsonValue;
 }

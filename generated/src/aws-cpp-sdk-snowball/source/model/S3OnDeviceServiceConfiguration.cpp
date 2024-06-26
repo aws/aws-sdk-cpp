@@ -30,15 +30,8 @@ S3OnDeviceServiceConfiguration::S3OnDeviceServiceConfiguration() :
 {
 }
 
-S3OnDeviceServiceConfiguration::S3OnDeviceServiceConfiguration(JsonView jsonValue) : 
-    m_storageLimit(0.0),
-    m_storageLimitHasBeenSet(false),
-    m_storageUnit(StorageUnit::NOT_SET),
-    m_storageUnitHasBeenSet(false),
-    m_serviceSize(0),
-    m_serviceSizeHasBeenSet(false),
-    m_faultTolerance(0),
-    m_faultToleranceHasBeenSet(false)
+S3OnDeviceServiceConfiguration::S3OnDeviceServiceConfiguration(JsonView jsonValue)
+  : S3OnDeviceServiceConfiguration()
 {
   *this = jsonValue;
 }

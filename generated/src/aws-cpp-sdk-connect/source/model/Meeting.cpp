@@ -26,11 +26,8 @@ Meeting::Meeting() :
 {
 }
 
-Meeting::Meeting(JsonView jsonValue) : 
-    m_mediaRegionHasBeenSet(false),
-    m_mediaPlacementHasBeenSet(false),
-    m_meetingFeaturesHasBeenSet(false),
-    m_meetingIdHasBeenSet(false)
+Meeting::Meeting(JsonView jsonValue)
+  : Meeting()
 {
   *this = jsonValue;
 }

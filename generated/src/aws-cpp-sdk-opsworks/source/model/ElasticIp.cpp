@@ -27,12 +27,8 @@ ElasticIp::ElasticIp() :
 {
 }
 
-ElasticIp::ElasticIp(JsonView jsonValue) : 
-    m_ipHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_domainHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_instanceIdHasBeenSet(false)
+ElasticIp::ElasticIp(JsonView jsonValue)
+  : ElasticIp()
 {
   *this = jsonValue;
 }

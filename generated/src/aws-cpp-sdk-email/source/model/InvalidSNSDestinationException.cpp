@@ -26,9 +26,8 @@ InvalidSNSDestinationException::InvalidSNSDestinationException() :
 {
 }
 
-InvalidSNSDestinationException::InvalidSNSDestinationException(const XmlNode& xmlNode) : 
-    m_configurationSetNameHasBeenSet(false),
-    m_eventDestinationNameHasBeenSet(false)
+InvalidSNSDestinationException::InvalidSNSDestinationException(const XmlNode& xmlNode)
+  : InvalidSNSDestinationException()
 {
   *this = xmlNode;
 }

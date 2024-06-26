@@ -22,8 +22,8 @@ GetModelManifestResult::GetModelManifestResult() :
 {
 }
 
-GetModelManifestResult::GetModelManifestResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(ManifestStatus::NOT_SET)
+GetModelManifestResult::GetModelManifestResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetModelManifestResult()
 {
   *this = result;
 }

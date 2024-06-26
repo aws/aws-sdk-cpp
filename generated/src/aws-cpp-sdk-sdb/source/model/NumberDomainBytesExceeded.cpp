@@ -26,9 +26,8 @@ NumberDomainBytesExceeded::NumberDomainBytesExceeded() :
 {
 }
 
-NumberDomainBytesExceeded::NumberDomainBytesExceeded(const XmlNode& xmlNode) : 
-    m_boxUsage(0.0),
-    m_boxUsageHasBeenSet(false)
+NumberDomainBytesExceeded::NumberDomainBytesExceeded(const XmlNode& xmlNode)
+  : NumberDomainBytesExceeded()
 {
   *this = xmlNode;
 }

@@ -24,9 +24,8 @@ AwsBackupBackupVaultNotificationsDetails::AwsBackupBackupVaultNotificationsDetai
 {
 }
 
-AwsBackupBackupVaultNotificationsDetails::AwsBackupBackupVaultNotificationsDetails(JsonView jsonValue) : 
-    m_backupVaultEventsHasBeenSet(false),
-    m_snsTopicArnHasBeenSet(false)
+AwsBackupBackupVaultNotificationsDetails::AwsBackupBackupVaultNotificationsDetails(JsonView jsonValue)
+  : AwsBackupBackupVaultNotificationsDetails()
 {
   *this = jsonValue;
 }

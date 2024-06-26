@@ -27,12 +27,8 @@ LogicalResourceId::LogicalResourceId() :
 {
 }
 
-LogicalResourceId::LogicalResourceId(JsonView jsonValue) : 
-    m_eksSourceNameHasBeenSet(false),
-    m_identifierHasBeenSet(false),
-    m_logicalStackNameHasBeenSet(false),
-    m_resourceGroupNameHasBeenSet(false),
-    m_terraformSourceNameHasBeenSet(false)
+LogicalResourceId::LogicalResourceId(JsonView jsonValue)
+  : LogicalResourceId()
 {
   *this = jsonValue;
 }

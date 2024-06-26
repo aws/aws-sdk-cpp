@@ -23,8 +23,8 @@ ReservedInstancesCostCalculation::ReservedInstancesCostCalculation() :
 {
 }
 
-ReservedInstancesCostCalculation::ReservedInstancesCostCalculation(JsonView jsonValue) : 
-    m_pricingHasBeenSet(false)
+ReservedInstancesCostCalculation::ReservedInstancesCostCalculation(JsonView jsonValue)
+  : ReservedInstancesCostCalculation()
 {
   *this = jsonValue;
 }

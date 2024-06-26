@@ -26,9 +26,8 @@ Filter::Filter() :
 {
 }
 
-Filter::Filter(const XmlNode& xmlNode) : 
-    m_nameHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+Filter::Filter(const XmlNode& xmlNode)
+  : Filter()
 {
   *this = xmlNode;
 }

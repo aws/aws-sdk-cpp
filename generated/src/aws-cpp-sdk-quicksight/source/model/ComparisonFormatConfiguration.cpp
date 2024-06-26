@@ -24,9 +24,8 @@ ComparisonFormatConfiguration::ComparisonFormatConfiguration() :
 {
 }
 
-ComparisonFormatConfiguration::ComparisonFormatConfiguration(JsonView jsonValue) : 
-    m_numberDisplayFormatConfigurationHasBeenSet(false),
-    m_percentageDisplayFormatConfigurationHasBeenSet(false)
+ComparisonFormatConfiguration::ComparisonFormatConfiguration(JsonView jsonValue)
+  : ComparisonFormatConfiguration()
 {
   *this = jsonValue;
 }

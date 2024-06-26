@@ -24,9 +24,8 @@ TabularResolvedAttributes::TabularResolvedAttributes() :
 {
 }
 
-TabularResolvedAttributes::TabularResolvedAttributes(JsonView jsonValue) : 
-    m_problemType(ProblemType::NOT_SET),
-    m_problemTypeHasBeenSet(false)
+TabularResolvedAttributes::TabularResolvedAttributes(JsonView jsonValue)
+  : TabularResolvedAttributes()
 {
   *this = jsonValue;
 }

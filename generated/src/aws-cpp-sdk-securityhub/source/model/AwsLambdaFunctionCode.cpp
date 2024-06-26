@@ -26,11 +26,8 @@ AwsLambdaFunctionCode::AwsLambdaFunctionCode() :
 {
 }
 
-AwsLambdaFunctionCode::AwsLambdaFunctionCode(JsonView jsonValue) : 
-    m_s3BucketHasBeenSet(false),
-    m_s3KeyHasBeenSet(false),
-    m_s3ObjectVersionHasBeenSet(false),
-    m_zipFileHasBeenSet(false)
+AwsLambdaFunctionCode::AwsLambdaFunctionCode(JsonView jsonValue)
+  : AwsLambdaFunctionCode()
 {
   *this = jsonValue;
 }

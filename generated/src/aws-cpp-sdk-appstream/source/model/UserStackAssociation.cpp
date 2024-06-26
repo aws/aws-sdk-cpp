@@ -28,13 +28,8 @@ UserStackAssociation::UserStackAssociation() :
 {
 }
 
-UserStackAssociation::UserStackAssociation(JsonView jsonValue) : 
-    m_stackNameHasBeenSet(false),
-    m_userNameHasBeenSet(false),
-    m_authenticationType(AuthenticationType::NOT_SET),
-    m_authenticationTypeHasBeenSet(false),
-    m_sendEmailNotification(false),
-    m_sendEmailNotificationHasBeenSet(false)
+UserStackAssociation::UserStackAssociation(JsonView jsonValue)
+  : UserStackAssociation()
 {
   *this = jsonValue;
 }

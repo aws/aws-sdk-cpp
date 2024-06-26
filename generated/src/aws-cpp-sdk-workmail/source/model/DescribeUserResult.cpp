@@ -24,10 +24,8 @@ DescribeUserResult::DescribeUserResult() :
 {
 }
 
-DescribeUserResult::DescribeUserResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_state(EntityState::NOT_SET),
-    m_userRole(UserRole::NOT_SET),
-    m_hiddenFromGlobalAddressList(false)
+DescribeUserResult::DescribeUserResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeUserResult()
 {
   *this = result;
 }

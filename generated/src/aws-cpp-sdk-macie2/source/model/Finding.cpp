@@ -45,30 +45,8 @@ Finding::Finding() :
 {
 }
 
-Finding::Finding(JsonView jsonValue) : 
-    m_accountIdHasBeenSet(false),
-    m_archived(false),
-    m_archivedHasBeenSet(false),
-    m_category(FindingCategory::NOT_SET),
-    m_categoryHasBeenSet(false),
-    m_classificationDetailsHasBeenSet(false),
-    m_count(0),
-    m_countHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_partitionHasBeenSet(false),
-    m_policyDetailsHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_resourcesAffectedHasBeenSet(false),
-    m_sample(false),
-    m_sampleHasBeenSet(false),
-    m_schemaVersionHasBeenSet(false),
-    m_severityHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_type(FindingType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+Finding::Finding(JsonView jsonValue)
+  : Finding()
 {
   *this = jsonValue;
 }

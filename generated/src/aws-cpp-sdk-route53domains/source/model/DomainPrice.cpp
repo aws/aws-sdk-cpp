@@ -28,13 +28,8 @@ DomainPrice::DomainPrice() :
 {
 }
 
-DomainPrice::DomainPrice(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_registrationPriceHasBeenSet(false),
-    m_transferPriceHasBeenSet(false),
-    m_renewalPriceHasBeenSet(false),
-    m_changeOwnershipPriceHasBeenSet(false),
-    m_restorationPriceHasBeenSet(false)
+DomainPrice::DomainPrice(JsonView jsonValue)
+  : DomainPrice()
 {
   *this = jsonValue;
 }

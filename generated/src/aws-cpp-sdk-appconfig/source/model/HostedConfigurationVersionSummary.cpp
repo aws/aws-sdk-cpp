@@ -30,15 +30,8 @@ HostedConfigurationVersionSummary::HostedConfigurationVersionSummary() :
 {
 }
 
-HostedConfigurationVersionSummary::HostedConfigurationVersionSummary(JsonView jsonValue) : 
-    m_applicationIdHasBeenSet(false),
-    m_configurationProfileIdHasBeenSet(false),
-    m_versionNumber(0),
-    m_versionNumberHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_contentTypeHasBeenSet(false),
-    m_versionLabelHasBeenSet(false),
-    m_kmsKeyArnHasBeenSet(false)
+HostedConfigurationVersionSummary::HostedConfigurationVersionSummary(JsonView jsonValue)
+  : HostedConfigurationVersionSummary()
 {
   *this = jsonValue;
 }

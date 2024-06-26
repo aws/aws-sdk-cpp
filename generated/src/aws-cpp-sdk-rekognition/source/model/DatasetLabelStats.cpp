@@ -26,11 +26,8 @@ DatasetLabelStats::DatasetLabelStats() :
 {
 }
 
-DatasetLabelStats::DatasetLabelStats(JsonView jsonValue) : 
-    m_entryCount(0),
-    m_entryCountHasBeenSet(false),
-    m_boundingBoxCount(0),
-    m_boundingBoxCountHasBeenSet(false)
+DatasetLabelStats::DatasetLabelStats(JsonView jsonValue)
+  : DatasetLabelStats()
 {
   *this = jsonValue;
 }

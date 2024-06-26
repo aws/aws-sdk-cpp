@@ -56,41 +56,8 @@ FleetAttributes::FleetAttributes() :
 {
 }
 
-FleetAttributes::FleetAttributes(JsonView jsonValue) : 
-    m_fleetIdHasBeenSet(false),
-    m_fleetArnHasBeenSet(false),
-    m_fleetType(FleetType::NOT_SET),
-    m_fleetTypeHasBeenSet(false),
-    m_instanceType(EC2InstanceType::NOT_SET),
-    m_instanceTypeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_terminationTimeHasBeenSet(false),
-    m_status(FleetStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_buildIdHasBeenSet(false),
-    m_buildArnHasBeenSet(false),
-    m_scriptIdHasBeenSet(false),
-    m_scriptArnHasBeenSet(false),
-    m_serverLaunchPathHasBeenSet(false),
-    m_serverLaunchParametersHasBeenSet(false),
-    m_logPathsHasBeenSet(false),
-    m_newGameSessionProtectionPolicy(ProtectionPolicy::NOT_SET),
-    m_newGameSessionProtectionPolicyHasBeenSet(false),
-    m_operatingSystem(OperatingSystem::NOT_SET),
-    m_operatingSystemHasBeenSet(false),
-    m_resourceCreationLimitPolicyHasBeenSet(false),
-    m_metricGroupsHasBeenSet(false),
-    m_stoppedActionsHasBeenSet(false),
-    m_instanceRoleArnHasBeenSet(false),
-    m_certificateConfigurationHasBeenSet(false),
-    m_computeType(ComputeType::NOT_SET),
-    m_computeTypeHasBeenSet(false),
-    m_anywhereConfigurationHasBeenSet(false),
-    m_instanceRoleCredentialsProvider(InstanceRoleCredentialsProvider::NOT_SET),
-    m_instanceRoleCredentialsProviderHasBeenSet(false),
-    m_containerGroupsAttributesHasBeenSet(false)
+FleetAttributes::FleetAttributes(JsonView jsonValue)
+  : FleetAttributes()
 {
   *this = jsonValue;
 }

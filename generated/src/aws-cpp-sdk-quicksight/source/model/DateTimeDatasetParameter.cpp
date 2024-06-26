@@ -29,14 +29,8 @@ DateTimeDatasetParameter::DateTimeDatasetParameter() :
 {
 }
 
-DateTimeDatasetParameter::DateTimeDatasetParameter(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_valueType(DatasetParameterValueType::NOT_SET),
-    m_valueTypeHasBeenSet(false),
-    m_timeGranularity(TimeGranularity::NOT_SET),
-    m_timeGranularityHasBeenSet(false),
-    m_defaultValuesHasBeenSet(false)
+DateTimeDatasetParameter::DateTimeDatasetParameter(JsonView jsonValue)
+  : DateTimeDatasetParameter()
 {
   *this = jsonValue;
 }

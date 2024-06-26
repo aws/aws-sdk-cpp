@@ -28,13 +28,8 @@ RequestImpactStatistics::RequestImpactStatistics() :
 {
 }
 
-RequestImpactStatistics::RequestImpactStatistics(JsonView jsonValue) : 
-    m_faultCount(0),
-    m_faultCountHasBeenSet(false),
-    m_okCount(0),
-    m_okCountHasBeenSet(false),
-    m_totalCount(0),
-    m_totalCountHasBeenSet(false)
+RequestImpactStatistics::RequestImpactStatistics(JsonView jsonValue)
+  : RequestImpactStatistics()
 {
   *this = jsonValue;
 }

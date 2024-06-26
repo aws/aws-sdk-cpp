@@ -26,9 +26,8 @@ StackSetAutoDeploymentTargetSummary::StackSetAutoDeploymentTargetSummary() :
 {
 }
 
-StackSetAutoDeploymentTargetSummary::StackSetAutoDeploymentTargetSummary(const XmlNode& xmlNode) : 
-    m_organizationalUnitIdHasBeenSet(false),
-    m_regionsHasBeenSet(false)
+StackSetAutoDeploymentTargetSummary::StackSetAutoDeploymentTargetSummary(const XmlNode& xmlNode)
+  : StackSetAutoDeploymentTargetSummary()
 {
   *this = xmlNode;
 }

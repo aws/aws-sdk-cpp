@@ -41,26 +41,8 @@ Scan::Scan() :
 {
 }
 
-Scan::Scan(JsonView jsonValue) : 
-    m_detectorIdHasBeenSet(false),
-    m_adminDetectorIdHasBeenSet(false),
-    m_scanIdHasBeenSet(false),
-    m_scanStatus(ScanStatus::NOT_SET),
-    m_scanStatusHasBeenSet(false),
-    m_failureReasonHasBeenSet(false),
-    m_scanStartTimeHasBeenSet(false),
-    m_scanEndTimeHasBeenSet(false),
-    m_triggerDetailsHasBeenSet(false),
-    m_resourceDetailsHasBeenSet(false),
-    m_scanResultDetailsHasBeenSet(false),
-    m_accountIdHasBeenSet(false),
-    m_totalBytes(0),
-    m_totalBytesHasBeenSet(false),
-    m_fileCount(0),
-    m_fileCountHasBeenSet(false),
-    m_attachedVolumesHasBeenSet(false),
-    m_scanType(ScanType::NOT_SET),
-    m_scanTypeHasBeenSet(false)
+Scan::Scan(JsonView jsonValue)
+  : Scan()
 {
   *this = jsonValue;
 }

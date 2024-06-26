@@ -31,16 +31,8 @@ PortInfo::PortInfo() :
 {
 }
 
-PortInfo::PortInfo(JsonView jsonValue) : 
-    m_fromPort(0),
-    m_fromPortHasBeenSet(false),
-    m_toPort(0),
-    m_toPortHasBeenSet(false),
-    m_protocol(NetworkProtocol::NOT_SET),
-    m_protocolHasBeenSet(false),
-    m_cidrsHasBeenSet(false),
-    m_ipv6CidrsHasBeenSet(false),
-    m_cidrListAliasesHasBeenSet(false)
+PortInfo::PortInfo(JsonView jsonValue)
+  : PortInfo()
 {
   *this = jsonValue;
 }

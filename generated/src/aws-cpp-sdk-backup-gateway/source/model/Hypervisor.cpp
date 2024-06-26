@@ -28,13 +28,8 @@ Hypervisor::Hypervisor() :
 {
 }
 
-Hypervisor::Hypervisor(JsonView jsonValue) : 
-    m_hostHasBeenSet(false),
-    m_hypervisorArnHasBeenSet(false),
-    m_kmsKeyArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_state(HypervisorState::NOT_SET),
-    m_stateHasBeenSet(false)
+Hypervisor::Hypervisor(JsonView jsonValue)
+  : Hypervisor()
 {
   *this = jsonValue;
 }

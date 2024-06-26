@@ -24,9 +24,8 @@ FileBatchJobDefinition::FileBatchJobDefinition() :
 {
 }
 
-FileBatchJobDefinition::FileBatchJobDefinition(JsonView jsonValue) : 
-    m_fileNameHasBeenSet(false),
-    m_folderPathHasBeenSet(false)
+FileBatchJobDefinition::FileBatchJobDefinition(JsonView jsonValue)
+  : FileBatchJobDefinition()
 {
   *this = jsonValue;
 }

@@ -27,12 +27,8 @@ DataQualityResultFilterCriteria::DataQualityResultFilterCriteria() :
 {
 }
 
-DataQualityResultFilterCriteria::DataQualityResultFilterCriteria(JsonView jsonValue) : 
-    m_dataSourceHasBeenSet(false),
-    m_jobNameHasBeenSet(false),
-    m_jobRunIdHasBeenSet(false),
-    m_startedAfterHasBeenSet(false),
-    m_startedBeforeHasBeenSet(false)
+DataQualityResultFilterCriteria::DataQualityResultFilterCriteria(JsonView jsonValue)
+  : DataQualityResultFilterCriteria()
 {
   *this = jsonValue;
 }

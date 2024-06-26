@@ -25,10 +25,8 @@ Credentials::Credentials() :
 {
 }
 
-Credentials::Credentials(JsonView jsonValue) : 
-    m_accessKeyIdHasBeenSet(false),
-    m_secretAccessKeyHasBeenSet(false),
-    m_sessionTokenHasBeenSet(false)
+Credentials::Credentials(JsonView jsonValue)
+  : Credentials()
 {
   *this = jsonValue;
 }

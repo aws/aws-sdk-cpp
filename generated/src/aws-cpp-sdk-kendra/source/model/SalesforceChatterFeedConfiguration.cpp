@@ -26,11 +26,8 @@ SalesforceChatterFeedConfiguration::SalesforceChatterFeedConfiguration() :
 {
 }
 
-SalesforceChatterFeedConfiguration::SalesforceChatterFeedConfiguration(JsonView jsonValue) : 
-    m_documentDataFieldNameHasBeenSet(false),
-    m_documentTitleFieldNameHasBeenSet(false),
-    m_fieldMappingsHasBeenSet(false),
-    m_includeFilterTypesHasBeenSet(false)
+SalesforceChatterFeedConfiguration::SalesforceChatterFeedConfiguration(JsonView jsonValue)
+  : SalesforceChatterFeedConfiguration()
 {
   *this = jsonValue;
 }

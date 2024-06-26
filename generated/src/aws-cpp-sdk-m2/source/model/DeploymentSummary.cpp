@@ -31,16 +31,8 @@ DeploymentSummary::DeploymentSummary() :
 {
 }
 
-DeploymentSummary::DeploymentSummary(JsonView jsonValue) : 
-    m_applicationIdHasBeenSet(false),
-    m_applicationVersion(0),
-    m_applicationVersionHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_deploymentIdHasBeenSet(false),
-    m_environmentIdHasBeenSet(false),
-    m_status(DeploymentLifecycle::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusReasonHasBeenSet(false)
+DeploymentSummary::DeploymentSummary(JsonView jsonValue)
+  : DeploymentSummary()
 {
   *this = jsonValue;
 }

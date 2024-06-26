@@ -26,11 +26,8 @@ Segment::Segment() :
 {
 }
 
-Segment::Segment(JsonView jsonValue) : 
-    m_segmentNumber(0),
-    m_segmentNumberHasBeenSet(false),
-    m_totalSegments(0),
-    m_totalSegmentsHasBeenSet(false)
+Segment::Segment(JsonView jsonValue)
+  : Segment()
 {
   *this = jsonValue;
 }

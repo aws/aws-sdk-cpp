@@ -28,11 +28,8 @@ ConnectionDraining::ConnectionDraining() :
 {
 }
 
-ConnectionDraining::ConnectionDraining(const XmlNode& xmlNode) : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_timeout(0),
-    m_timeoutHasBeenSet(false)
+ConnectionDraining::ConnectionDraining(const XmlNode& xmlNode)
+  : ConnectionDraining()
 {
   *this = xmlNode;
 }

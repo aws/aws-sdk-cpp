@@ -27,10 +27,8 @@ SpotFleetTagSpecification::SpotFleetTagSpecification() :
 {
 }
 
-SpotFleetTagSpecification::SpotFleetTagSpecification(const XmlNode& xmlNode) : 
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+SpotFleetTagSpecification::SpotFleetTagSpecification(const XmlNode& xmlNode)
+  : SpotFleetTagSpecification()
 {
   *this = xmlNode;
 }

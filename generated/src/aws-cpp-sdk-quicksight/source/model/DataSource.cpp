@@ -37,22 +37,8 @@ DataSource::DataSource() :
 {
 }
 
-DataSource::DataSource(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_dataSourceIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_type(DataSourceType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_status(ResourceStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_dataSourceParametersHasBeenSet(false),
-    m_alternateDataSourceParametersHasBeenSet(false),
-    m_vpcConnectionPropertiesHasBeenSet(false),
-    m_sslPropertiesHasBeenSet(false),
-    m_errorInfoHasBeenSet(false),
-    m_secretArnHasBeenSet(false)
+DataSource::DataSource(JsonView jsonValue)
+  : DataSource()
 {
   *this = jsonValue;
 }

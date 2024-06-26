@@ -24,9 +24,8 @@ ResponseInspectionStatusCode::ResponseInspectionStatusCode() :
 {
 }
 
-ResponseInspectionStatusCode::ResponseInspectionStatusCode(JsonView jsonValue) : 
-    m_successCodesHasBeenSet(false),
-    m_failureCodesHasBeenSet(false)
+ResponseInspectionStatusCode::ResponseInspectionStatusCode(JsonView jsonValue)
+  : ResponseInspectionStatusCode()
 {
   *this = jsonValue;
 }

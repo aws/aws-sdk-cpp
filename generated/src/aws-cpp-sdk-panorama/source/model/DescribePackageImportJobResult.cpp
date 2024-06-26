@@ -23,9 +23,8 @@ DescribePackageImportJobResult::DescribePackageImportJobResult() :
 {
 }
 
-DescribePackageImportJobResult::DescribePackageImportJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_jobType(PackageImportJobType::NOT_SET),
-    m_status(PackageImportJobStatus::NOT_SET)
+DescribePackageImportJobResult::DescribePackageImportJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribePackageImportJobResult()
 {
   *this = result;
 }

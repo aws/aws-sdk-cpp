@@ -25,10 +25,8 @@ SerDeInfo::SerDeInfo() :
 {
 }
 
-SerDeInfo::SerDeInfo(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_serializationLibraryHasBeenSet(false),
-    m_parametersHasBeenSet(false)
+SerDeInfo::SerDeInfo(JsonView jsonValue)
+  : SerDeInfo()
 {
   *this = jsonValue;
 }

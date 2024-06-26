@@ -25,10 +25,8 @@ PoolOriginationIdentitiesFilter::PoolOriginationIdentitiesFilter() :
 {
 }
 
-PoolOriginationIdentitiesFilter::PoolOriginationIdentitiesFilter(JsonView jsonValue) : 
-    m_name(PoolOriginationIdentitiesFilterName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+PoolOriginationIdentitiesFilter::PoolOriginationIdentitiesFilter(JsonView jsonValue)
+  : PoolOriginationIdentitiesFilter()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ AwsEventSchemasRegistryDetails::AwsEventSchemasRegistryDetails() :
 {
 }
 
-AwsEventSchemasRegistryDetails::AwsEventSchemasRegistryDetails(JsonView jsonValue) : 
-    m_descriptionHasBeenSet(false),
-    m_registryArnHasBeenSet(false),
-    m_registryNameHasBeenSet(false)
+AwsEventSchemasRegistryDetails::AwsEventSchemasRegistryDetails(JsonView jsonValue)
+  : AwsEventSchemasRegistryDetails()
 {
   *this = jsonValue;
 }

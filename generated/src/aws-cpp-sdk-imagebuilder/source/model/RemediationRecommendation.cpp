@@ -24,9 +24,8 @@ RemediationRecommendation::RemediationRecommendation() :
 {
 }
 
-RemediationRecommendation::RemediationRecommendation(JsonView jsonValue) : 
-    m_textHasBeenSet(false),
-    m_urlHasBeenSet(false)
+RemediationRecommendation::RemediationRecommendation(JsonView jsonValue)
+  : RemediationRecommendation()
 {
   *this = jsonValue;
 }

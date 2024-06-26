@@ -39,24 +39,8 @@ InfrastructureConfiguration::InfrastructureConfiguration() :
 {
 }
 
-InfrastructureConfiguration::InfrastructureConfiguration(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_instanceTypesHasBeenSet(false),
-    m_instanceProfileNameHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false),
-    m_subnetIdHasBeenSet(false),
-    m_loggingHasBeenSet(false),
-    m_keyPairHasBeenSet(false),
-    m_terminateInstanceOnFailure(false),
-    m_terminateInstanceOnFailureHasBeenSet(false),
-    m_snsTopicArnHasBeenSet(false),
-    m_dateCreatedHasBeenSet(false),
-    m_dateUpdatedHasBeenSet(false),
-    m_resourceTagsHasBeenSet(false),
-    m_instanceMetadataOptionsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+InfrastructureConfiguration::InfrastructureConfiguration(JsonView jsonValue)
+  : InfrastructureConfiguration()
 {
   *this = jsonValue;
 }

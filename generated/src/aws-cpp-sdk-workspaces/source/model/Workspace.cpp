@@ -44,29 +44,8 @@ Workspace::Workspace() :
 {
 }
 
-Workspace::Workspace(JsonView jsonValue) : 
-    m_workspaceIdHasBeenSet(false),
-    m_directoryIdHasBeenSet(false),
-    m_userNameHasBeenSet(false),
-    m_ipAddressHasBeenSet(false),
-    m_state(WorkspaceState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_bundleIdHasBeenSet(false),
-    m_subnetIdHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_errorCodeHasBeenSet(false),
-    m_computerNameHasBeenSet(false),
-    m_volumeEncryptionKeyHasBeenSet(false),
-    m_userVolumeEncryptionEnabled(false),
-    m_userVolumeEncryptionEnabledHasBeenSet(false),
-    m_rootVolumeEncryptionEnabled(false),
-    m_rootVolumeEncryptionEnabledHasBeenSet(false),
-    m_workspaceNameHasBeenSet(false),
-    m_workspacePropertiesHasBeenSet(false),
-    m_modificationStatesHasBeenSet(false),
-    m_relatedWorkspacesHasBeenSet(false),
-    m_dataReplicationSettingsHasBeenSet(false),
-    m_standbyWorkspacesPropertiesHasBeenSet(false)
+Workspace::Workspace(JsonView jsonValue)
+  : Workspace()
 {
   *this = jsonValue;
 }

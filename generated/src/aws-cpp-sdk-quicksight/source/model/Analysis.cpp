@@ -33,18 +33,8 @@ Analysis::Analysis() :
 {
 }
 
-Analysis::Analysis(JsonView jsonValue) : 
-    m_analysisIdHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_status(ResourceStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_errorsHasBeenSet(false),
-    m_dataSetArnsHasBeenSet(false),
-    m_themeArnHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_sheetsHasBeenSet(false)
+Analysis::Analysis(JsonView jsonValue)
+  : Analysis()
 {
   *this = jsonValue;
 }

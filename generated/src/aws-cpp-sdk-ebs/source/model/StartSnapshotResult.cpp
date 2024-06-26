@@ -25,11 +25,8 @@ StartSnapshotResult::StartSnapshotResult() :
 {
 }
 
-StartSnapshotResult::StartSnapshotResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(Status::NOT_SET),
-    m_volumeSize(0),
-    m_blockSize(0),
-    m_sseType(SSEType::NOT_SET)
+StartSnapshotResult::StartSnapshotResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : StartSnapshotResult()
 {
   *this = result;
 }

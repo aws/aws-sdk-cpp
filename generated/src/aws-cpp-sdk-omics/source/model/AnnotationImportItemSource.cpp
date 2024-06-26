@@ -23,8 +23,8 @@ AnnotationImportItemSource::AnnotationImportItemSource() :
 {
 }
 
-AnnotationImportItemSource::AnnotationImportItemSource(JsonView jsonValue) : 
-    m_sourceHasBeenSet(false)
+AnnotationImportItemSource::AnnotationImportItemSource(JsonView jsonValue)
+  : AnnotationImportItemSource()
 {
   *this = jsonValue;
 }

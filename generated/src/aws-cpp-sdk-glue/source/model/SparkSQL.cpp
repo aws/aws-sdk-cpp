@@ -27,12 +27,8 @@ SparkSQL::SparkSQL() :
 {
 }
 
-SparkSQL::SparkSQL(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_inputsHasBeenSet(false),
-    m_sqlQueryHasBeenSet(false),
-    m_sqlAliasesHasBeenSet(false),
-    m_outputSchemasHasBeenSet(false)
+SparkSQL::SparkSQL(JsonView jsonValue)
+  : SparkSQL()
 {
   *this = jsonValue;
 }

@@ -29,14 +29,8 @@ AccessPolicySummary::AccessPolicySummary() :
 {
 }
 
-AccessPolicySummary::AccessPolicySummary(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_identityHasBeenSet(false),
-    m_resourceHasBeenSet(false),
-    m_permission(Permission::NOT_SET),
-    m_permissionHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_lastUpdateDateHasBeenSet(false)
+AccessPolicySummary::AccessPolicySummary(JsonView jsonValue)
+  : AccessPolicySummary()
 {
   *this = jsonValue;
 }

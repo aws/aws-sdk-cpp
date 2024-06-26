@@ -39,24 +39,8 @@ ProvisionedProductPlanDetails::ProvisionedProductPlanDetails() :
 {
 }
 
-ProvisionedProductPlanDetails::ProvisionedProductPlanDetails(JsonView jsonValue) : 
-    m_createdTimeHasBeenSet(false),
-    m_pathIdHasBeenSet(false),
-    m_productIdHasBeenSet(false),
-    m_planNameHasBeenSet(false),
-    m_planIdHasBeenSet(false),
-    m_provisionProductIdHasBeenSet(false),
-    m_provisionProductNameHasBeenSet(false),
-    m_planType(ProvisionedProductPlanType::NOT_SET),
-    m_planTypeHasBeenSet(false),
-    m_provisioningArtifactIdHasBeenSet(false),
-    m_status(ProvisionedProductPlanStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_updatedTimeHasBeenSet(false),
-    m_notificationArnsHasBeenSet(false),
-    m_provisioningParametersHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_statusMessageHasBeenSet(false)
+ProvisionedProductPlanDetails::ProvisionedProductPlanDetails(JsonView jsonValue)
+  : ProvisionedProductPlanDetails()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ NetworkFileDefinition::NetworkFileDefinition() :
 {
 }
 
-NetworkFileDefinition::NetworkFileDefinition(JsonView jsonValue) : 
-    m_canDbcHasBeenSet(false)
+NetworkFileDefinition::NetworkFileDefinition(JsonView jsonValue)
+  : NetworkFileDefinition()
 {
   *this = jsonValue;
 }

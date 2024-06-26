@@ -32,17 +32,8 @@ ContentModerationDetection::ContentModerationDetection() :
 {
 }
 
-ContentModerationDetection::ContentModerationDetection(JsonView jsonValue) : 
-    m_timestamp(0),
-    m_timestampHasBeenSet(false),
-    m_moderationLabelHasBeenSet(false),
-    m_startTimestampMillis(0),
-    m_startTimestampMillisHasBeenSet(false),
-    m_endTimestampMillis(0),
-    m_endTimestampMillisHasBeenSet(false),
-    m_durationMillis(0),
-    m_durationMillisHasBeenSet(false),
-    m_contentTypesHasBeenSet(false)
+ContentModerationDetection::ContentModerationDetection(JsonView jsonValue)
+  : ContentModerationDetection()
 {
   *this = jsonValue;
 }

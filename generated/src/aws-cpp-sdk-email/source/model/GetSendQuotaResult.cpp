@@ -24,10 +24,8 @@ GetSendQuotaResult::GetSendQuotaResult() :
 {
 }
 
-GetSendQuotaResult::GetSendQuotaResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_max24HourSend(0.0),
-    m_maxSendRate(0.0),
-    m_sentLast24Hours(0.0)
+GetSendQuotaResult::GetSendQuotaResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : GetSendQuotaResult()
 {
   *this = result;
 }

@@ -26,11 +26,8 @@ BatchListObjectPolicies::BatchListObjectPolicies() :
 {
 }
 
-BatchListObjectPolicies::BatchListObjectPolicies(JsonView jsonValue) : 
-    m_objectReferenceHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
+BatchListObjectPolicies::BatchListObjectPolicies(JsonView jsonValue)
+  : BatchListObjectPolicies()
 {
   *this = jsonValue;
 }

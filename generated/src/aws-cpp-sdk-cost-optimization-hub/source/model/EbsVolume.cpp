@@ -24,9 +24,8 @@ EbsVolume::EbsVolume() :
 {
 }
 
-EbsVolume::EbsVolume(JsonView jsonValue) : 
-    m_configurationHasBeenSet(false),
-    m_costCalculationHasBeenSet(false)
+EbsVolume::EbsVolume(JsonView jsonValue)
+  : EbsVolume()
 {
   *this = jsonValue;
 }

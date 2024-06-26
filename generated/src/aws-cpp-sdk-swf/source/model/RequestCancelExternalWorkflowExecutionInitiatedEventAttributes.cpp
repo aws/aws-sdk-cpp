@@ -27,12 +27,8 @@ RequestCancelExternalWorkflowExecutionInitiatedEventAttributes::RequestCancelExt
 {
 }
 
-RequestCancelExternalWorkflowExecutionInitiatedEventAttributes::RequestCancelExternalWorkflowExecutionInitiatedEventAttributes(JsonView jsonValue) : 
-    m_workflowIdHasBeenSet(false),
-    m_runIdHasBeenSet(false),
-    m_decisionTaskCompletedEventId(0),
-    m_decisionTaskCompletedEventIdHasBeenSet(false),
-    m_controlHasBeenSet(false)
+RequestCancelExternalWorkflowExecutionInitiatedEventAttributes::RequestCancelExternalWorkflowExecutionInitiatedEventAttributes(JsonView jsonValue)
+  : RequestCancelExternalWorkflowExecutionInitiatedEventAttributes()
 {
   *this = jsonValue;
 }

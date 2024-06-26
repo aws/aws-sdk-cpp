@@ -23,8 +23,8 @@ Scte35DescriptorSettings::Scte35DescriptorSettings() :
 {
 }
 
-Scte35DescriptorSettings::Scte35DescriptorSettings(JsonView jsonValue) : 
-    m_segmentationDescriptorScte35DescriptorSettingsHasBeenSet(false)
+Scte35DescriptorSettings::Scte35DescriptorSettings(JsonView jsonValue)
+  : Scte35DescriptorSettings()
 {
   *this = jsonValue;
 }

@@ -34,17 +34,8 @@ ResourceTargetDefinition::ResourceTargetDefinition() :
 {
 }
 
-ResourceTargetDefinition::ResourceTargetDefinition(const XmlNode& xmlNode) : 
-    m_attribute(ResourceAttribute::NOT_SET),
-    m_attributeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_requiresRecreation(RequiresRecreation::NOT_SET),
-    m_requiresRecreationHasBeenSet(false),
-    m_pathHasBeenSet(false),
-    m_beforeValueHasBeenSet(false),
-    m_afterValueHasBeenSet(false),
-    m_attributeChangeType(AttributeChangeType::NOT_SET),
-    m_attributeChangeTypeHasBeenSet(false)
+ResourceTargetDefinition::ResourceTargetDefinition(const XmlNode& xmlNode)
+  : ResourceTargetDefinition()
 {
   *this = xmlNode;
 }

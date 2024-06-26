@@ -26,11 +26,8 @@ SessionDataSortBy::SessionDataSortBy() :
 {
 }
 
-SessionDataSortBy::SessionDataSortBy(JsonView jsonValue) : 
-    m_name(AnalyticsSessionSortByName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_order(AnalyticsSortOrder::NOT_SET),
-    m_orderHasBeenSet(false)
+SessionDataSortBy::SessionDataSortBy(JsonView jsonValue)
+  : SessionDataSortBy()
 {
   *this = jsonValue;
 }

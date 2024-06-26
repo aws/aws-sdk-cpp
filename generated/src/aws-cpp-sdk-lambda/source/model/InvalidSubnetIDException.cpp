@@ -24,9 +24,8 @@ InvalidSubnetIDException::InvalidSubnetIDException() :
 {
 }
 
-InvalidSubnetIDException::InvalidSubnetIDException(JsonView jsonValue) : 
-    m_typeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+InvalidSubnetIDException::InvalidSubnetIDException(JsonView jsonValue)
+  : InvalidSubnetIDException()
 {
   *this = jsonValue;
 }

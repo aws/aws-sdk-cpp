@@ -24,9 +24,8 @@ IpAddressInUse::IpAddressInUse() :
 {
 }
 
-IpAddressInUse::IpAddressInUse(JsonView jsonValue) : 
-    m_errorCodeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+IpAddressInUse::IpAddressInUse(JsonView jsonValue)
+  : IpAddressInUse()
 {
   *this = jsonValue;
 }

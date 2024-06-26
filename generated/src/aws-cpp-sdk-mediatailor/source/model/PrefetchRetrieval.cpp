@@ -25,10 +25,8 @@ PrefetchRetrieval::PrefetchRetrieval() :
 {
 }
 
-PrefetchRetrieval::PrefetchRetrieval(JsonView jsonValue) : 
-    m_dynamicVariablesHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_startTimeHasBeenSet(false)
+PrefetchRetrieval::PrefetchRetrieval(JsonView jsonValue)
+  : PrefetchRetrieval()
 {
   *this = jsonValue;
 }

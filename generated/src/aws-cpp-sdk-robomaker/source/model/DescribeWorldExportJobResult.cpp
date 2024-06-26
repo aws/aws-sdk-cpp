@@ -23,9 +23,8 @@ DescribeWorldExportJobResult::DescribeWorldExportJobResult() :
 {
 }
 
-DescribeWorldExportJobResult::DescribeWorldExportJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(WorldExportJobStatus::NOT_SET),
-    m_failureCode(WorldExportJobErrorCode::NOT_SET)
+DescribeWorldExportJobResult::DescribeWorldExportJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeWorldExportJobResult()
 {
   *this = result;
 }

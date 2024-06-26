@@ -27,10 +27,8 @@ StorageClassAnalysisDataExport::StorageClassAnalysisDataExport() :
 {
 }
 
-StorageClassAnalysisDataExport::StorageClassAnalysisDataExport(const XmlNode& xmlNode) : 
-    m_outputSchemaVersion(StorageClassAnalysisSchemaVersion::NOT_SET),
-    m_outputSchemaVersionHasBeenSet(false),
-    m_destinationHasBeenSet(false)
+StorageClassAnalysisDataExport::StorageClassAnalysisDataExport(const XmlNode& xmlNode)
+  : StorageClassAnalysisDataExport()
 {
   *this = xmlNode;
 }

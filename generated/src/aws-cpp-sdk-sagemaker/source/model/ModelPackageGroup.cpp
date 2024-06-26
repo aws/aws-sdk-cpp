@@ -30,15 +30,8 @@ ModelPackageGroup::ModelPackageGroup() :
 {
 }
 
-ModelPackageGroup::ModelPackageGroup(JsonView jsonValue) : 
-    m_modelPackageGroupNameHasBeenSet(false),
-    m_modelPackageGroupArnHasBeenSet(false),
-    m_modelPackageGroupDescriptionHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_modelPackageGroupStatus(ModelPackageGroupStatus::NOT_SET),
-    m_modelPackageGroupStatusHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+ModelPackageGroup::ModelPackageGroup(JsonView jsonValue)
+  : ModelPackageGroup()
 {
   *this = jsonValue;
 }

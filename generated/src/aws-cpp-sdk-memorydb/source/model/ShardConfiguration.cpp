@@ -25,10 +25,8 @@ ShardConfiguration::ShardConfiguration() :
 {
 }
 
-ShardConfiguration::ShardConfiguration(JsonView jsonValue) : 
-    m_slotsHasBeenSet(false),
-    m_replicaCount(0),
-    m_replicaCountHasBeenSet(false)
+ShardConfiguration::ShardConfiguration(JsonView jsonValue)
+  : ShardConfiguration()
 {
   *this = jsonValue;
 }

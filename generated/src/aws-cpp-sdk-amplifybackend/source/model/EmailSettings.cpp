@@ -24,9 +24,8 @@ EmailSettings::EmailSettings() :
 {
 }
 
-EmailSettings::EmailSettings(JsonView jsonValue) : 
-    m_emailMessageHasBeenSet(false),
-    m_emailSubjectHasBeenSet(false)
+EmailSettings::EmailSettings(JsonView jsonValue)
+  : EmailSettings()
 {
   *this = jsonValue;
 }

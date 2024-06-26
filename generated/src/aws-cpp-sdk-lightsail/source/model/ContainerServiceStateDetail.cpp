@@ -25,10 +25,8 @@ ContainerServiceStateDetail::ContainerServiceStateDetail() :
 {
 }
 
-ContainerServiceStateDetail::ContainerServiceStateDetail(JsonView jsonValue) : 
-    m_code(ContainerServiceStateDetailCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+ContainerServiceStateDetail::ContainerServiceStateDetail(JsonView jsonValue)
+  : ContainerServiceStateDetail()
 {
   *this = jsonValue;
 }

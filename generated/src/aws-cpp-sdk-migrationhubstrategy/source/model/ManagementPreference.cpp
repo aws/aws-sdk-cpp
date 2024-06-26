@@ -25,10 +25,8 @@ ManagementPreference::ManagementPreference() :
 {
 }
 
-ManagementPreference::ManagementPreference(JsonView jsonValue) : 
-    m_awsManagedResourcesHasBeenSet(false),
-    m_noPreferenceHasBeenSet(false),
-    m_selfManageResourcesHasBeenSet(false)
+ManagementPreference::ManagementPreference(JsonView jsonValue)
+  : ManagementPreference()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ SingleQueryArgument::SingleQueryArgument() :
 {
 }
 
-SingleQueryArgument::SingleQueryArgument(JsonView jsonValue) : 
-    m_nameHasBeenSet(false)
+SingleQueryArgument::SingleQueryArgument(JsonView jsonValue)
+  : SingleQueryArgument()
 {
   *this = jsonValue;
 }

@@ -30,13 +30,8 @@ NodeGroup::NodeGroup() :
 {
 }
 
-NodeGroup::NodeGroup(const XmlNode& xmlNode) : 
-    m_nodeGroupIdHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_primaryEndpointHasBeenSet(false),
-    m_readerEndpointHasBeenSet(false),
-    m_slotsHasBeenSet(false),
-    m_nodeGroupMembersHasBeenSet(false)
+NodeGroup::NodeGroup(const XmlNode& xmlNode)
+  : NodeGroup()
 {
   *this = xmlNode;
 }

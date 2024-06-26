@@ -26,11 +26,8 @@ PortMapping::PortMapping() :
 {
 }
 
-PortMapping::PortMapping(JsonView jsonValue) : 
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_protocol(PortProtocol::NOT_SET),
-    m_protocolHasBeenSet(false)
+PortMapping::PortMapping(JsonView jsonValue)
+  : PortMapping()
 {
   *this = jsonValue;
 }

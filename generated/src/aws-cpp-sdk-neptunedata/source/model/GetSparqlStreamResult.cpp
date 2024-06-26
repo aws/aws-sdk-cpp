@@ -23,9 +23,8 @@ GetSparqlStreamResult::GetSparqlStreamResult() :
 {
 }
 
-GetSparqlStreamResult::GetSparqlStreamResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_lastTrxTimestampInMillis(0),
-    m_totalRecords(0)
+GetSparqlStreamResult::GetSparqlStreamResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetSparqlStreamResult()
 {
   *this = result;
 }

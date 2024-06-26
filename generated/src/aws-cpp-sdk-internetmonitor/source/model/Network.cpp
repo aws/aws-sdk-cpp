@@ -25,10 +25,8 @@ Network::Network() :
 {
 }
 
-Network::Network(JsonView jsonValue) : 
-    m_aSNameHasBeenSet(false),
-    m_aSNumber(0),
-    m_aSNumberHasBeenSet(false)
+Network::Network(JsonView jsonValue)
+  : Network()
 {
   *this = jsonValue;
 }

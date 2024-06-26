@@ -23,9 +23,8 @@ DescribeOrganizationConfigurationResult::DescribeOrganizationConfigurationResult
 {
 }
 
-DescribeOrganizationConfigurationResult::DescribeOrganizationConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_memberAccountLimitReached(false),
-    m_autoEnableOrganizationMembers(AutoEnableMembers::NOT_SET)
+DescribeOrganizationConfigurationResult::DescribeOrganizationConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeOrganizationConfigurationResult()
 {
   *this = result;
 }

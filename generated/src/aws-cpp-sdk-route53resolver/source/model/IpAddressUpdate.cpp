@@ -26,11 +26,8 @@ IpAddressUpdate::IpAddressUpdate() :
 {
 }
 
-IpAddressUpdate::IpAddressUpdate(JsonView jsonValue) : 
-    m_ipIdHasBeenSet(false),
-    m_subnetIdHasBeenSet(false),
-    m_ipHasBeenSet(false),
-    m_ipv6HasBeenSet(false)
+IpAddressUpdate::IpAddressUpdate(JsonView jsonValue)
+  : IpAddressUpdate()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ SourceAlgorithm::SourceAlgorithm() :
 {
 }
 
-SourceAlgorithm::SourceAlgorithm(JsonView jsonValue) : 
-    m_modelDataUrlHasBeenSet(false),
-    m_modelDataSourceHasBeenSet(false),
-    m_algorithmNameHasBeenSet(false)
+SourceAlgorithm::SourceAlgorithm(JsonView jsonValue)
+  : SourceAlgorithm()
 {
   *this = jsonValue;
 }

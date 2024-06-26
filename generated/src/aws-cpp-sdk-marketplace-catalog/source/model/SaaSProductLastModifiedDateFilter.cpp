@@ -23,8 +23,8 @@ SaaSProductLastModifiedDateFilter::SaaSProductLastModifiedDateFilter() :
 {
 }
 
-SaaSProductLastModifiedDateFilter::SaaSProductLastModifiedDateFilter(JsonView jsonValue) : 
-    m_dateRangeHasBeenSet(false)
+SaaSProductLastModifiedDateFilter::SaaSProductLastModifiedDateFilter(JsonView jsonValue)
+  : SaaSProductLastModifiedDateFilter()
 {
   *this = jsonValue;
 }

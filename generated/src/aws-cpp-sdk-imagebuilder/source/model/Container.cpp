@@ -24,9 +24,8 @@ Container::Container() :
 {
 }
 
-Container::Container(JsonView jsonValue) : 
-    m_regionHasBeenSet(false),
-    m_imageUrisHasBeenSet(false)
+Container::Container(JsonView jsonValue)
+  : Container()
 {
   *this = jsonValue;
 }

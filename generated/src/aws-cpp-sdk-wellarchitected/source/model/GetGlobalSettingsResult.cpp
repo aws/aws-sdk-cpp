@@ -23,9 +23,8 @@ GetGlobalSettingsResult::GetGlobalSettingsResult() :
 {
 }
 
-GetGlobalSettingsResult::GetGlobalSettingsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_organizationSharingStatus(OrganizationSharingStatus::NOT_SET),
-    m_discoveryIntegrationStatus(DiscoveryIntegrationStatus::NOT_SET)
+GetGlobalSettingsResult::GetGlobalSettingsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetGlobalSettingsResult()
 {
   *this = result;
 }

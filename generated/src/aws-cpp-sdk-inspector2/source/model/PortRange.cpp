@@ -26,11 +26,8 @@ PortRange::PortRange() :
 {
 }
 
-PortRange::PortRange(JsonView jsonValue) : 
-    m_begin(0),
-    m_beginHasBeenSet(false),
-    m_end(0),
-    m_endHasBeenSet(false)
+PortRange::PortRange(JsonView jsonValue)
+  : PortRange()
 {
   *this = jsonValue;
 }

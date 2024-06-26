@@ -24,9 +24,8 @@ AxisDataOptions::AxisDataOptions() :
 {
 }
 
-AxisDataOptions::AxisDataOptions(JsonView jsonValue) : 
-    m_numericAxisOptionsHasBeenSet(false),
-    m_dateAxisOptionsHasBeenSet(false)
+AxisDataOptions::AxisDataOptions(JsonView jsonValue)
+  : AxisDataOptions()
 {
   *this = jsonValue;
 }

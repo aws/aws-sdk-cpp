@@ -23,8 +23,8 @@ IoTJobAbortConfig::IoTJobAbortConfig() :
 {
 }
 
-IoTJobAbortConfig::IoTJobAbortConfig(JsonView jsonValue) : 
-    m_criteriaListHasBeenSet(false)
+IoTJobAbortConfig::IoTJobAbortConfig(JsonView jsonValue)
+  : IoTJobAbortConfig()
 {
   *this = jsonValue;
 }

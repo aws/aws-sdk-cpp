@@ -25,10 +25,8 @@ SessionFilter::SessionFilter() :
 {
 }
 
-SessionFilter::SessionFilter(JsonView jsonValue) : 
-    m_key(SessionFilterKey::NOT_SET),
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false)
+SessionFilter::SessionFilter(JsonView jsonValue)
+  : SessionFilter()
 {
   *this = jsonValue;
 }

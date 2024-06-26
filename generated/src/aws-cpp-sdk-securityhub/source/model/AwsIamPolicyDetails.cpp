@@ -36,21 +36,8 @@ AwsIamPolicyDetails::AwsIamPolicyDetails() :
 {
 }
 
-AwsIamPolicyDetails::AwsIamPolicyDetails(JsonView jsonValue) : 
-    m_attachmentCount(0),
-    m_attachmentCountHasBeenSet(false),
-    m_createDateHasBeenSet(false),
-    m_defaultVersionIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_isAttachable(false),
-    m_isAttachableHasBeenSet(false),
-    m_pathHasBeenSet(false),
-    m_permissionsBoundaryUsageCount(0),
-    m_permissionsBoundaryUsageCountHasBeenSet(false),
-    m_policyIdHasBeenSet(false),
-    m_policyNameHasBeenSet(false),
-    m_policyVersionListHasBeenSet(false),
-    m_updateDateHasBeenSet(false)
+AwsIamPolicyDetails::AwsIamPolicyDetails(JsonView jsonValue)
+  : AwsIamPolicyDetails()
 {
   *this = jsonValue;
 }

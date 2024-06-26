@@ -27,12 +27,8 @@ SamlConfigOptions::SamlConfigOptions() :
 {
 }
 
-SamlConfigOptions::SamlConfigOptions(JsonView jsonValue) : 
-    m_groupAttributeHasBeenSet(false),
-    m_metadataHasBeenSet(false),
-    m_sessionTimeout(0),
-    m_sessionTimeoutHasBeenSet(false),
-    m_userAttributeHasBeenSet(false)
+SamlConfigOptions::SamlConfigOptions(JsonView jsonValue)
+  : SamlConfigOptions()
 {
   *this = jsonValue;
 }

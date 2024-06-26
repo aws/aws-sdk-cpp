@@ -22,8 +22,8 @@ DeleteFolderMembershipResult::DeleteFolderMembershipResult() :
 {
 }
 
-DeleteFolderMembershipResult::DeleteFolderMembershipResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+DeleteFolderMembershipResult::DeleteFolderMembershipResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeleteFolderMembershipResult()
 {
   *this = result;
 }

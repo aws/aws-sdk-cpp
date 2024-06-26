@@ -25,10 +25,8 @@ ProjectMetadata::ProjectMetadata() :
 {
 }
 
-ProjectMetadata::ProjectMetadata(JsonView jsonValue) : 
-    m_projectArnHasBeenSet(false),
-    m_projectNameHasBeenSet(false),
-    m_creationTimestampHasBeenSet(false)
+ProjectMetadata::ProjectMetadata(JsonView jsonValue)
+  : ProjectMetadata()
 {
   *this = jsonValue;
 }

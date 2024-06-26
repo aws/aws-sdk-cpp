@@ -26,11 +26,8 @@ ComponentRequest::ComponentRequest() :
 {
 }
 
-ComponentRequest::ComponentRequest(JsonView jsonValue) : 
-    m_descriptionHasBeenSet(false),
-    m_componentTypeIdHasBeenSet(false),
-    m_propertiesHasBeenSet(false),
-    m_propertyGroupsHasBeenSet(false)
+ComponentRequest::ComponentRequest(JsonView jsonValue)
+  : ComponentRequest()
 {
   *this = jsonValue;
 }

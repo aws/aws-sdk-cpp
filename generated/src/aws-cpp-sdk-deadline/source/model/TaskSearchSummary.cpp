@@ -35,20 +35,8 @@ TaskSearchSummary::TaskSearchSummary() :
 {
 }
 
-TaskSearchSummary::TaskSearchSummary(JsonView jsonValue) : 
-    m_endedAtHasBeenSet(false),
-    m_failureRetryCount(0),
-    m_failureRetryCountHasBeenSet(false),
-    m_jobIdHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_queueIdHasBeenSet(false),
-    m_runStatus(TaskRunStatus::NOT_SET),
-    m_runStatusHasBeenSet(false),
-    m_startedAtHasBeenSet(false),
-    m_stepIdHasBeenSet(false),
-    m_targetRunStatus(TaskTargetRunStatus::NOT_SET),
-    m_targetRunStatusHasBeenSet(false),
-    m_taskIdHasBeenSet(false)
+TaskSearchSummary::TaskSearchSummary(JsonView jsonValue)
+  : TaskSearchSummary()
 {
   *this = jsonValue;
 }

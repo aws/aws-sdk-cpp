@@ -28,13 +28,8 @@ CodeErrorLocation::CodeErrorLocation() :
 {
 }
 
-CodeErrorLocation::CodeErrorLocation(JsonView jsonValue) : 
-    m_line(0),
-    m_lineHasBeenSet(false),
-    m_column(0),
-    m_columnHasBeenSet(false),
-    m_span(0),
-    m_spanHasBeenSet(false)
+CodeErrorLocation::CodeErrorLocation(JsonView jsonValue)
+  : CodeErrorLocation()
 {
   *this = jsonValue;
 }

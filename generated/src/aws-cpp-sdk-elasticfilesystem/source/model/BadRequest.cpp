@@ -24,9 +24,8 @@ BadRequest::BadRequest() :
 {
 }
 
-BadRequest::BadRequest(JsonView jsonValue) : 
-    m_errorCodeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+BadRequest::BadRequest(JsonView jsonValue)
+  : BadRequest()
 {
   *this = jsonValue;
 }

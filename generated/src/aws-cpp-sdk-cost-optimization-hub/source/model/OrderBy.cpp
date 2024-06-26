@@ -25,10 +25,8 @@ OrderBy::OrderBy() :
 {
 }
 
-OrderBy::OrderBy(JsonView jsonValue) : 
-    m_dimensionHasBeenSet(false),
-    m_order(Order::NOT_SET),
-    m_orderHasBeenSet(false)
+OrderBy::OrderBy(JsonView jsonValue)
+  : OrderBy()
 {
   *this = jsonValue;
 }

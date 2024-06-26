@@ -24,9 +24,8 @@ ToolConfiguration::ToolConfiguration() :
 {
 }
 
-ToolConfiguration::ToolConfiguration(JsonView jsonValue) : 
-    m_toolsHasBeenSet(false),
-    m_toolChoiceHasBeenSet(false)
+ToolConfiguration::ToolConfiguration(JsonView jsonValue)
+  : ToolConfiguration()
 {
   *this = jsonValue;
 }

@@ -35,20 +35,8 @@ ProjectEnvironment::ProjectEnvironment() :
 {
 }
 
-ProjectEnvironment::ProjectEnvironment(JsonView jsonValue) : 
-    m_type(EnvironmentType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_imageHasBeenSet(false),
-    m_computeType(ComputeType::NOT_SET),
-    m_computeTypeHasBeenSet(false),
-    m_fleetHasBeenSet(false),
-    m_environmentVariablesHasBeenSet(false),
-    m_privilegedMode(false),
-    m_privilegedModeHasBeenSet(false),
-    m_certificateHasBeenSet(false),
-    m_registryCredentialHasBeenSet(false),
-    m_imagePullCredentialsType(ImagePullCredentialsType::NOT_SET),
-    m_imagePullCredentialsTypeHasBeenSet(false)
+ProjectEnvironment::ProjectEnvironment(JsonView jsonValue)
+  : ProjectEnvironment()
 {
   *this = jsonValue;
 }

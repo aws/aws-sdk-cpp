@@ -26,9 +26,8 @@ LaunchTemplatesMonitoring::LaunchTemplatesMonitoring() :
 {
 }
 
-LaunchTemplatesMonitoring::LaunchTemplatesMonitoring(const XmlNode& xmlNode) : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
+LaunchTemplatesMonitoring::LaunchTemplatesMonitoring(const XmlNode& xmlNode)
+  : LaunchTemplatesMonitoring()
 {
   *this = xmlNode;
 }

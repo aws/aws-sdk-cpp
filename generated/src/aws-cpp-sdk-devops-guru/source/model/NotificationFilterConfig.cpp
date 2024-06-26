@@ -24,9 +24,8 @@ NotificationFilterConfig::NotificationFilterConfig() :
 {
 }
 
-NotificationFilterConfig::NotificationFilterConfig(JsonView jsonValue) : 
-    m_severitiesHasBeenSet(false),
-    m_messageTypesHasBeenSet(false)
+NotificationFilterConfig::NotificationFilterConfig(JsonView jsonValue)
+  : NotificationFilterConfig()
 {
   *this = jsonValue;
 }

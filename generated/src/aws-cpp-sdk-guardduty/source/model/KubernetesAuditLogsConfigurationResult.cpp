@@ -24,9 +24,8 @@ KubernetesAuditLogsConfigurationResult::KubernetesAuditLogsConfigurationResult()
 {
 }
 
-KubernetesAuditLogsConfigurationResult::KubernetesAuditLogsConfigurationResult(JsonView jsonValue) : 
-    m_status(DataSourceStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+KubernetesAuditLogsConfigurationResult::KubernetesAuditLogsConfigurationResult(JsonView jsonValue)
+  : KubernetesAuditLogsConfigurationResult()
 {
   *this = jsonValue;
 }

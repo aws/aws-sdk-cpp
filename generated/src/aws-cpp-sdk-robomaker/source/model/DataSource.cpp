@@ -28,13 +28,8 @@ DataSource::DataSource() :
 {
 }
 
-DataSource::DataSource(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_s3BucketHasBeenSet(false),
-    m_s3KeysHasBeenSet(false),
-    m_type(DataSourceType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_destinationHasBeenSet(false)
+DataSource::DataSource(JsonView jsonValue)
+  : DataSource()
 {
   *this = jsonValue;
 }

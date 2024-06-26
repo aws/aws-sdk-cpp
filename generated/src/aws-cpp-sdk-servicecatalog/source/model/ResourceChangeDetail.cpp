@@ -26,11 +26,8 @@ ResourceChangeDetail::ResourceChangeDetail() :
 {
 }
 
-ResourceChangeDetail::ResourceChangeDetail(JsonView jsonValue) : 
-    m_targetHasBeenSet(false),
-    m_evaluation(EvaluationType::NOT_SET),
-    m_evaluationHasBeenSet(false),
-    m_causingEntityHasBeenSet(false)
+ResourceChangeDetail::ResourceChangeDetail(JsonView jsonValue)
+  : ResourceChangeDetail()
 {
   *this = jsonValue;
 }

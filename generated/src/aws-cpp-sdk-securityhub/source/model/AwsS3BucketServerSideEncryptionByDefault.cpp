@@ -24,9 +24,8 @@ AwsS3BucketServerSideEncryptionByDefault::AwsS3BucketServerSideEncryptionByDefau
 {
 }
 
-AwsS3BucketServerSideEncryptionByDefault::AwsS3BucketServerSideEncryptionByDefault(JsonView jsonValue) : 
-    m_sSEAlgorithmHasBeenSet(false),
-    m_kMSMasterKeyIDHasBeenSet(false)
+AwsS3BucketServerSideEncryptionByDefault::AwsS3BucketServerSideEncryptionByDefault(JsonView jsonValue)
+  : AwsS3BucketServerSideEncryptionByDefault()
 {
   *this = jsonValue;
 }

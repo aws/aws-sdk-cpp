@@ -35,20 +35,8 @@ AwsEc2TransitGatewayDetails::AwsEc2TransitGatewayDetails() :
 {
 }
 
-AwsEc2TransitGatewayDetails::AwsEc2TransitGatewayDetails(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_defaultRouteTablePropagationHasBeenSet(false),
-    m_autoAcceptSharedAttachmentsHasBeenSet(false),
-    m_defaultRouteTableAssociationHasBeenSet(false),
-    m_transitGatewayCidrBlocksHasBeenSet(false),
-    m_associationDefaultRouteTableIdHasBeenSet(false),
-    m_propagationDefaultRouteTableIdHasBeenSet(false),
-    m_vpnEcmpSupportHasBeenSet(false),
-    m_dnsSupportHasBeenSet(false),
-    m_multicastSupportHasBeenSet(false),
-    m_amazonSideAsn(0),
-    m_amazonSideAsnHasBeenSet(false)
+AwsEc2TransitGatewayDetails::AwsEc2TransitGatewayDetails(JsonView jsonValue)
+  : AwsEc2TransitGatewayDetails()
 {
   *this = jsonValue;
 }

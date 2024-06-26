@@ -45,30 +45,8 @@ ProcessingJob::ProcessingJob() :
 {
 }
 
-ProcessingJob::ProcessingJob(JsonView jsonValue) : 
-    m_processingInputsHasBeenSet(false),
-    m_processingOutputConfigHasBeenSet(false),
-    m_processingJobNameHasBeenSet(false),
-    m_processingResourcesHasBeenSet(false),
-    m_stoppingConditionHasBeenSet(false),
-    m_appSpecificationHasBeenSet(false),
-    m_environmentHasBeenSet(false),
-    m_networkConfigHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_experimentConfigHasBeenSet(false),
-    m_processingJobArnHasBeenSet(false),
-    m_processingJobStatus(ProcessingJobStatus::NOT_SET),
-    m_processingJobStatusHasBeenSet(false),
-    m_exitMessageHasBeenSet(false),
-    m_failureReasonHasBeenSet(false),
-    m_processingEndTimeHasBeenSet(false),
-    m_processingStartTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_monitoringScheduleArnHasBeenSet(false),
-    m_autoMLJobArnHasBeenSet(false),
-    m_trainingJobArnHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+ProcessingJob::ProcessingJob(JsonView jsonValue)
+  : ProcessingJob()
 {
   *this = jsonValue;
 }

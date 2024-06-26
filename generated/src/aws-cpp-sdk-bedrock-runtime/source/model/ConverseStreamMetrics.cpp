@@ -24,9 +24,8 @@ ConverseStreamMetrics::ConverseStreamMetrics() :
 {
 }
 
-ConverseStreamMetrics::ConverseStreamMetrics(JsonView jsonValue) : 
-    m_latencyMs(0),
-    m_latencyMsHasBeenSet(false)
+ConverseStreamMetrics::ConverseStreamMetrics(JsonView jsonValue)
+  : ConverseStreamMetrics()
 {
   *this = jsonValue;
 }

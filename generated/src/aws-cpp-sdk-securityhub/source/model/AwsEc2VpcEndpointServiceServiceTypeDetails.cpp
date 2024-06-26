@@ -23,8 +23,8 @@ AwsEc2VpcEndpointServiceServiceTypeDetails::AwsEc2VpcEndpointServiceServiceTypeD
 {
 }
 
-AwsEc2VpcEndpointServiceServiceTypeDetails::AwsEc2VpcEndpointServiceServiceTypeDetails(JsonView jsonValue) : 
-    m_serviceTypeHasBeenSet(false)
+AwsEc2VpcEndpointServiceServiceTypeDetails::AwsEc2VpcEndpointServiceServiceTypeDetails(JsonView jsonValue)
+  : AwsEc2VpcEndpointServiceServiceTypeDetails()
 {
   *this = jsonValue;
 }

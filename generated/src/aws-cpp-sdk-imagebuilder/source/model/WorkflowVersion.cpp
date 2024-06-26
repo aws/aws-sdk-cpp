@@ -30,15 +30,8 @@ WorkflowVersion::WorkflowVersion() :
 {
 }
 
-WorkflowVersion::WorkflowVersion(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_type(WorkflowType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_ownerHasBeenSet(false),
-    m_dateCreatedHasBeenSet(false)
+WorkflowVersion::WorkflowVersion(JsonView jsonValue)
+  : WorkflowVersion()
 {
   *this = jsonValue;
 }

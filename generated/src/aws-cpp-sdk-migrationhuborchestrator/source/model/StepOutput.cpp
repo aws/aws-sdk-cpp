@@ -27,12 +27,8 @@ StepOutput::StepOutput() :
 {
 }
 
-StepOutput::StepOutput(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_dataType(DataType::NOT_SET),
-    m_dataTypeHasBeenSet(false),
-    m_required(false),
-    m_requiredHasBeenSet(false)
+StepOutput::StepOutput(JsonView jsonValue)
+  : StepOutput()
 {
   *this = jsonValue;
 }

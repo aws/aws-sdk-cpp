@@ -26,11 +26,8 @@ ReadinessCheckOutput::ReadinessCheckOutput() :
 {
 }
 
-ReadinessCheckOutput::ReadinessCheckOutput(JsonView jsonValue) : 
-    m_readinessCheckArnHasBeenSet(false),
-    m_readinessCheckNameHasBeenSet(false),
-    m_resourceSetHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+ReadinessCheckOutput::ReadinessCheckOutput(JsonView jsonValue)
+  : ReadinessCheckOutput()
 {
   *this = jsonValue;
 }

@@ -29,14 +29,8 @@ DecisionTaskCompletedEventAttributes::DecisionTaskCompletedEventAttributes() :
 {
 }
 
-DecisionTaskCompletedEventAttributes::DecisionTaskCompletedEventAttributes(JsonView jsonValue) : 
-    m_executionContextHasBeenSet(false),
-    m_scheduledEventId(0),
-    m_scheduledEventIdHasBeenSet(false),
-    m_startedEventId(0),
-    m_startedEventIdHasBeenSet(false),
-    m_taskListHasBeenSet(false),
-    m_taskListScheduleToStartTimeoutHasBeenSet(false)
+DecisionTaskCompletedEventAttributes::DecisionTaskCompletedEventAttributes(JsonView jsonValue)
+  : DecisionTaskCompletedEventAttributes()
 {
   *this = jsonValue;
 }

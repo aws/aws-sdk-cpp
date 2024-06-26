@@ -24,9 +24,8 @@ OrCondition::OrCondition() :
 {
 }
 
-OrCondition::OrCondition(JsonView jsonValue) : 
-    m_andConditionsHasBeenSet(false),
-    m_tagConditionHasBeenSet(false)
+OrCondition::OrCondition(JsonView jsonValue)
+  : OrCondition()
 {
   *this = jsonValue;
 }

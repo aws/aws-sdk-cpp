@@ -23,9 +23,8 @@ MarkAsArchivedResult::MarkAsArchivedResult() :
 {
 }
 
-MarkAsArchivedResult::MarkAsArchivedResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_isArchived(false),
-    m_replicationType(ReplicationType::NOT_SET)
+MarkAsArchivedResult::MarkAsArchivedResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : MarkAsArchivedResult()
 {
   *this = result;
 }

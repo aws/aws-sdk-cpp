@@ -25,10 +25,8 @@ ModelConfiguration::ModelConfiguration() :
 {
 }
 
-ModelConfiguration::ModelConfiguration(JsonView jsonValue) : 
-    m_inferenceSpecificationNameHasBeenSet(false),
-    m_environmentParametersHasBeenSet(false),
-    m_compilationJobNameHasBeenSet(false)
+ModelConfiguration::ModelConfiguration(JsonView jsonValue)
+  : ModelConfiguration()
 {
   *this = jsonValue;
 }

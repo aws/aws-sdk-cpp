@@ -27,12 +27,8 @@ EffectivePreferredResource::EffectivePreferredResource() :
 {
 }
 
-EffectivePreferredResource::EffectivePreferredResource(JsonView jsonValue) : 
-    m_name(PreferredResourceName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_includeListHasBeenSet(false),
-    m_effectiveIncludeListHasBeenSet(false),
-    m_excludeListHasBeenSet(false)
+EffectivePreferredResource::EffectivePreferredResource(JsonView jsonValue)
+  : EffectivePreferredResource()
 {
   *this = jsonValue;
 }

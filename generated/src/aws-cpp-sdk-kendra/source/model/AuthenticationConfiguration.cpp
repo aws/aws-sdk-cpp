@@ -23,8 +23,8 @@ AuthenticationConfiguration::AuthenticationConfiguration() :
 {
 }
 
-AuthenticationConfiguration::AuthenticationConfiguration(JsonView jsonValue) : 
-    m_basicAuthenticationHasBeenSet(false)
+AuthenticationConfiguration::AuthenticationConfiguration(JsonView jsonValue)
+  : AuthenticationConfiguration()
 {
   *this = jsonValue;
 }

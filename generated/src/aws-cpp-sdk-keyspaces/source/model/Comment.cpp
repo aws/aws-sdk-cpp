@@ -23,8 +23,8 @@ Comment::Comment() :
 {
 }
 
-Comment::Comment(JsonView jsonValue) : 
-    m_messageHasBeenSet(false)
+Comment::Comment(JsonView jsonValue)
+  : Comment()
 {
   *this = jsonValue;
 }

@@ -28,13 +28,8 @@ Task::Task() :
 {
 }
 
-Task::Task(JsonView jsonValue) : 
-    m_sourceFieldsHasBeenSet(false),
-    m_connectorOperatorHasBeenSet(false),
-    m_destinationFieldHasBeenSet(false),
-    m_taskType(TaskType::NOT_SET),
-    m_taskTypeHasBeenSet(false),
-    m_taskPropertiesHasBeenSet(false)
+Task::Task(JsonView jsonValue)
+  : Task()
 {
   *this = jsonValue;
 }

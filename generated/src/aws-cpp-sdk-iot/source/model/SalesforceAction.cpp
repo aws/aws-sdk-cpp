@@ -24,9 +24,8 @@ SalesforceAction::SalesforceAction() :
 {
 }
 
-SalesforceAction::SalesforceAction(JsonView jsonValue) : 
-    m_tokenHasBeenSet(false),
-    m_urlHasBeenSet(false)
+SalesforceAction::SalesforceAction(JsonView jsonValue)
+  : SalesforceAction()
 {
   *this = jsonValue;
 }

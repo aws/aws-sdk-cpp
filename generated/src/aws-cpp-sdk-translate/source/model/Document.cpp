@@ -25,9 +25,8 @@ Document::Document() :
 {
 }
 
-Document::Document(JsonView jsonValue) : 
-    m_contentHasBeenSet(false),
-    m_contentTypeHasBeenSet(false)
+Document::Document(JsonView jsonValue)
+  : Document()
 {
   *this = jsonValue;
 }

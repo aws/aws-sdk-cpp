@@ -25,8 +25,8 @@ SSEKMSEncryption::SSEKMSEncryption() :
 {
 }
 
-SSEKMSEncryption::SSEKMSEncryption(const XmlNode& xmlNode) : 
-    m_keyIdHasBeenSet(false)
+SSEKMSEncryption::SSEKMSEncryption(const XmlNode& xmlNode)
+  : SSEKMSEncryption()
 {
   *this = xmlNode;
 }

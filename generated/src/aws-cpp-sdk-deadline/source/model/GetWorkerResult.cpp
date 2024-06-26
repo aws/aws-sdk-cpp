@@ -22,8 +22,8 @@ GetWorkerResult::GetWorkerResult() :
 {
 }
 
-GetWorkerResult::GetWorkerResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(WorkerStatus::NOT_SET)
+GetWorkerResult::GetWorkerResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetWorkerResult()
 {
   *this = result;
 }

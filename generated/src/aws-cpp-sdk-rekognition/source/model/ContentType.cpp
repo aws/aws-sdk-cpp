@@ -25,10 +25,8 @@ ContentType::ContentType() :
 {
 }
 
-ContentType::ContentType(JsonView jsonValue) : 
-    m_confidence(0.0),
-    m_confidenceHasBeenSet(false),
-    m_nameHasBeenSet(false)
+ContentType::ContentType(JsonView jsonValue)
+  : ContentType()
 {
   *this = jsonValue;
 }

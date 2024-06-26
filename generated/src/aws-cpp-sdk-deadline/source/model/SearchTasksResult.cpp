@@ -23,9 +23,8 @@ SearchTasksResult::SearchTasksResult() :
 {
 }
 
-SearchTasksResult::SearchTasksResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_nextItemOffset(0),
-    m_totalResults(0)
+SearchTasksResult::SearchTasksResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : SearchTasksResult()
 {
   *this = result;
 }

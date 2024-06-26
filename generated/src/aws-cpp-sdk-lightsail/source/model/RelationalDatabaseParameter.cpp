@@ -31,16 +31,8 @@ RelationalDatabaseParameter::RelationalDatabaseParameter() :
 {
 }
 
-RelationalDatabaseParameter::RelationalDatabaseParameter(JsonView jsonValue) : 
-    m_allowedValuesHasBeenSet(false),
-    m_applyMethodHasBeenSet(false),
-    m_applyTypeHasBeenSet(false),
-    m_dataTypeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_isModifiable(false),
-    m_isModifiableHasBeenSet(false),
-    m_parameterNameHasBeenSet(false),
-    m_parameterValueHasBeenSet(false)
+RelationalDatabaseParameter::RelationalDatabaseParameter(JsonView jsonValue)
+  : RelationalDatabaseParameter()
 {
   *this = jsonValue;
 }

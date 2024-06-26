@@ -30,15 +30,8 @@ TopBottomRankedComputation::TopBottomRankedComputation() :
 {
 }
 
-TopBottomRankedComputation::TopBottomRankedComputation(JsonView jsonValue) : 
-    m_computationIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_categoryHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_resultSize(0),
-    m_resultSizeHasBeenSet(false),
-    m_type(TopBottomComputationType::NOT_SET),
-    m_typeHasBeenSet(false)
+TopBottomRankedComputation::TopBottomRankedComputation(JsonView jsonValue)
+  : TopBottomRankedComputation()
 {
   *this = jsonValue;
 }

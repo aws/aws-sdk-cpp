@@ -31,16 +31,8 @@ JobExecutionSummary::JobExecutionSummary() :
 {
 }
 
-JobExecutionSummary::JobExecutionSummary(JsonView jsonValue) : 
-    m_status(JobExecutionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_queuedAtHasBeenSet(false),
-    m_startedAtHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false),
-    m_executionNumber(0),
-    m_executionNumberHasBeenSet(false),
-    m_retryAttempt(0),
-    m_retryAttemptHasBeenSet(false)
+JobExecutionSummary::JobExecutionSummary(JsonView jsonValue)
+  : JobExecutionSummary()
 {
   *this = jsonValue;
 }

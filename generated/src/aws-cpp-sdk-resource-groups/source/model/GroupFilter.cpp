@@ -25,10 +25,8 @@ GroupFilter::GroupFilter() :
 {
 }
 
-GroupFilter::GroupFilter(JsonView jsonValue) : 
-    m_name(GroupFilterName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+GroupFilter::GroupFilter(JsonView jsonValue)
+  : GroupFilter()
 {
   *this = jsonValue;
 }

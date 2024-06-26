@@ -46,31 +46,8 @@ AwsRdsDbClusterSnapshotDetails::AwsRdsDbClusterSnapshotDetails() :
 {
 }
 
-AwsRdsDbClusterSnapshotDetails::AwsRdsDbClusterSnapshotDetails(JsonView jsonValue) : 
-    m_availabilityZonesHasBeenSet(false),
-    m_snapshotCreateTimeHasBeenSet(false),
-    m_engineHasBeenSet(false),
-    m_allocatedStorage(0),
-    m_allocatedStorageHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_clusterCreateTimeHasBeenSet(false),
-    m_masterUsernameHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_licenseModelHasBeenSet(false),
-    m_snapshotTypeHasBeenSet(false),
-    m_percentProgress(0),
-    m_percentProgressHasBeenSet(false),
-    m_storageEncrypted(false),
-    m_storageEncryptedHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_dbClusterIdentifierHasBeenSet(false),
-    m_dbClusterSnapshotIdentifierHasBeenSet(false),
-    m_iamDatabaseAuthenticationEnabled(false),
-    m_iamDatabaseAuthenticationEnabledHasBeenSet(false),
-    m_dbClusterSnapshotAttributesHasBeenSet(false)
+AwsRdsDbClusterSnapshotDetails::AwsRdsDbClusterSnapshotDetails(JsonView jsonValue)
+  : AwsRdsDbClusterSnapshotDetails()
 {
   *this = jsonValue;
 }

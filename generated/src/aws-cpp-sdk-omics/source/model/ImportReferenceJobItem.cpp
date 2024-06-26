@@ -29,14 +29,8 @@ ImportReferenceJobItem::ImportReferenceJobItem() :
 {
 }
 
-ImportReferenceJobItem::ImportReferenceJobItem(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_referenceStoreIdHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_status(ReferenceImportJobStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_completionTimeHasBeenSet(false)
+ImportReferenceJobItem::ImportReferenceJobItem(JsonView jsonValue)
+  : ImportReferenceJobItem()
 {
   *this = jsonValue;
 }

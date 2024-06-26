@@ -24,9 +24,8 @@ LocationTimestamp::LocationTimestamp() :
 {
 }
 
-LocationTimestamp::LocationTimestamp(JsonView jsonValue) : 
-    m_valueHasBeenSet(false),
-    m_unitHasBeenSet(false)
+LocationTimestamp::LocationTimestamp(JsonView jsonValue)
+  : LocationTimestamp()
 {
   *this = jsonValue;
 }

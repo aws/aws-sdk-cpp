@@ -26,11 +26,8 @@ IsraelAdditionalInfo::IsraelAdditionalInfo() :
 {
 }
 
-IsraelAdditionalInfo::IsraelAdditionalInfo(JsonView jsonValue) : 
-    m_customerType(IsraelCustomerType::NOT_SET),
-    m_customerTypeHasBeenSet(false),
-    m_dealerType(IsraelDealerType::NOT_SET),
-    m_dealerTypeHasBeenSet(false)
+IsraelAdditionalInfo::IsraelAdditionalInfo(JsonView jsonValue)
+  : IsraelAdditionalInfo()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ VPCDerivedInfo::VPCDerivedInfo() :
 {
 }
 
-VPCDerivedInfo::VPCDerivedInfo(JsonView jsonValue) : 
-    m_vPCIdHasBeenSet(false),
-    m_subnetIdsHasBeenSet(false),
-    m_availabilityZonesHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false)
+VPCDerivedInfo::VPCDerivedInfo(JsonView jsonValue)
+  : VPCDerivedInfo()
 {
   *this = jsonValue;
 }

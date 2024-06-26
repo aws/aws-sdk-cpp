@@ -22,8 +22,8 @@ GetScalingConfigurationRecommendationResult::GetScalingConfigurationRecommendati
 {
 }
 
-GetScalingConfigurationRecommendationResult::GetScalingConfigurationRecommendationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_targetCpuUtilizationPerCore(0)
+GetScalingConfigurationRecommendationResult::GetScalingConfigurationRecommendationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetScalingConfigurationRecommendationResult()
 {
   *this = result;
 }

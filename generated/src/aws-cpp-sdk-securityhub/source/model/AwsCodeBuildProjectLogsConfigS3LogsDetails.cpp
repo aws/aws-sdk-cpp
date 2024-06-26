@@ -26,11 +26,8 @@ AwsCodeBuildProjectLogsConfigS3LogsDetails::AwsCodeBuildProjectLogsConfigS3LogsD
 {
 }
 
-AwsCodeBuildProjectLogsConfigS3LogsDetails::AwsCodeBuildProjectLogsConfigS3LogsDetails(JsonView jsonValue) : 
-    m_encryptionDisabled(false),
-    m_encryptionDisabledHasBeenSet(false),
-    m_locationHasBeenSet(false),
-    m_statusHasBeenSet(false)
+AwsCodeBuildProjectLogsConfigS3LogsDetails::AwsCodeBuildProjectLogsConfigS3LogsDetails(JsonView jsonValue)
+  : AwsCodeBuildProjectLogsConfigS3LogsDetails()
 {
   *this = jsonValue;
 }

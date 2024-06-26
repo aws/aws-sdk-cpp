@@ -24,9 +24,8 @@ RecordMarkerDecisionAttributes::RecordMarkerDecisionAttributes() :
 {
 }
 
-RecordMarkerDecisionAttributes::RecordMarkerDecisionAttributes(JsonView jsonValue) : 
-    m_markerNameHasBeenSet(false),
-    m_detailsHasBeenSet(false)
+RecordMarkerDecisionAttributes::RecordMarkerDecisionAttributes(JsonView jsonValue)
+  : RecordMarkerDecisionAttributes()
 {
   *this = jsonValue;
 }

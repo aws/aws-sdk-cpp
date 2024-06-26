@@ -26,11 +26,8 @@ MobileSdkRelease::MobileSdkRelease() :
 {
 }
 
-MobileSdkRelease::MobileSdkRelease(JsonView jsonValue) : 
-    m_releaseVersionHasBeenSet(false),
-    m_timestampHasBeenSet(false),
-    m_releaseNotesHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+MobileSdkRelease::MobileSdkRelease(JsonView jsonValue)
+  : MobileSdkRelease()
 {
   *this = jsonValue;
 }

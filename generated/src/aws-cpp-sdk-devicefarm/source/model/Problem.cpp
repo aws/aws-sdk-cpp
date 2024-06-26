@@ -30,15 +30,8 @@ Problem::Problem() :
 {
 }
 
-Problem::Problem(JsonView jsonValue) : 
-    m_runHasBeenSet(false),
-    m_jobHasBeenSet(false),
-    m_suiteHasBeenSet(false),
-    m_testHasBeenSet(false),
-    m_deviceHasBeenSet(false),
-    m_result(ExecutionResult::NOT_SET),
-    m_resultHasBeenSet(false),
-    m_messageHasBeenSet(false)
+Problem::Problem(JsonView jsonValue)
+  : Problem()
 {
   *this = jsonValue;
 }

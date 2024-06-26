@@ -30,15 +30,8 @@ AbortCriteria::AbortCriteria() :
 {
 }
 
-AbortCriteria::AbortCriteria(JsonView jsonValue) : 
-    m_failureType(JobExecutionFailureType::NOT_SET),
-    m_failureTypeHasBeenSet(false),
-    m_action(AbortAction::NOT_SET),
-    m_actionHasBeenSet(false),
-    m_thresholdPercentage(0.0),
-    m_thresholdPercentageHasBeenSet(false),
-    m_minNumberOfExecutedThings(0),
-    m_minNumberOfExecutedThingsHasBeenSet(false)
+AbortCriteria::AbortCriteria(JsonView jsonValue)
+  : AbortCriteria()
 {
   *this = jsonValue;
 }

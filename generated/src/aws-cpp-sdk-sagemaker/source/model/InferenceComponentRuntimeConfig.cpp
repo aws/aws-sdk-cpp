@@ -24,9 +24,8 @@ InferenceComponentRuntimeConfig::InferenceComponentRuntimeConfig() :
 {
 }
 
-InferenceComponentRuntimeConfig::InferenceComponentRuntimeConfig(JsonView jsonValue) : 
-    m_copyCount(0),
-    m_copyCountHasBeenSet(false)
+InferenceComponentRuntimeConfig::InferenceComponentRuntimeConfig(JsonView jsonValue)
+  : InferenceComponentRuntimeConfig()
 {
   *this = jsonValue;
 }

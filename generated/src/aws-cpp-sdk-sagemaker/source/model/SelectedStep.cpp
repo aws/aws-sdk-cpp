@@ -23,8 +23,8 @@ SelectedStep::SelectedStep() :
 {
 }
 
-SelectedStep::SelectedStep(JsonView jsonValue) : 
-    m_stepNameHasBeenSet(false)
+SelectedStep::SelectedStep(JsonView jsonValue)
+  : SelectedStep()
 {
   *this = jsonValue;
 }

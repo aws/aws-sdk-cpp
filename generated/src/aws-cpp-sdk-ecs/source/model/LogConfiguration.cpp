@@ -26,11 +26,8 @@ LogConfiguration::LogConfiguration() :
 {
 }
 
-LogConfiguration::LogConfiguration(JsonView jsonValue) : 
-    m_logDriver(LogDriver::NOT_SET),
-    m_logDriverHasBeenSet(false),
-    m_optionsHasBeenSet(false),
-    m_secretOptionsHasBeenSet(false)
+LogConfiguration::LogConfiguration(JsonView jsonValue)
+  : LogConfiguration()
 {
   *this = jsonValue;
 }

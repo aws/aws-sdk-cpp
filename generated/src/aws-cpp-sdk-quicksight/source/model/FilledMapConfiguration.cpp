@@ -29,14 +29,8 @@ FilledMapConfiguration::FilledMapConfiguration() :
 {
 }
 
-FilledMapConfiguration::FilledMapConfiguration(JsonView jsonValue) : 
-    m_fieldWellsHasBeenSet(false),
-    m_sortConfigurationHasBeenSet(false),
-    m_legendHasBeenSet(false),
-    m_tooltipHasBeenSet(false),
-    m_windowOptionsHasBeenSet(false),
-    m_mapStyleOptionsHasBeenSet(false),
-    m_interactionsHasBeenSet(false)
+FilledMapConfiguration::FilledMapConfiguration(JsonView jsonValue)
+  : FilledMapConfiguration()
 {
   *this = jsonValue;
 }

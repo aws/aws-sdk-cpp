@@ -25,10 +25,8 @@ FaultRootCause::FaultRootCause() :
 {
 }
 
-FaultRootCause::FaultRootCause(JsonView jsonValue) : 
-    m_servicesHasBeenSet(false),
-    m_clientImpacting(false),
-    m_clientImpactingHasBeenSet(false)
+FaultRootCause::FaultRootCause(JsonView jsonValue)
+  : FaultRootCause()
 {
   *this = jsonValue;
 }

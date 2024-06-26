@@ -25,10 +25,8 @@ BaselineMetric::BaselineMetric() :
 {
 }
 
-BaselineMetric::BaselineMetric(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_value(0.0),
-    m_valueHasBeenSet(false)
+BaselineMetric::BaselineMetric(JsonView jsonValue)
+  : BaselineMetric()
 {
   *this = jsonValue;
 }

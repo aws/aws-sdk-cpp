@@ -23,9 +23,8 @@ UpdateTargetGroupResult::UpdateTargetGroupResult() :
 {
 }
 
-UpdateTargetGroupResult::UpdateTargetGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(TargetGroupStatus::NOT_SET),
-    m_type(TargetGroupType::NOT_SET)
+UpdateTargetGroupResult::UpdateTargetGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateTargetGroupResult()
 {
   *this = result;
 }

@@ -32,17 +32,8 @@ S3DeltaDirectTarget::S3DeltaDirectTarget() :
 {
 }
 
-S3DeltaDirectTarget::S3DeltaDirectTarget(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_inputsHasBeenSet(false),
-    m_partitionKeysHasBeenSet(false),
-    m_pathHasBeenSet(false),
-    m_compression(DeltaTargetCompressionType::NOT_SET),
-    m_compressionHasBeenSet(false),
-    m_format(TargetFormat::NOT_SET),
-    m_formatHasBeenSet(false),
-    m_additionalOptionsHasBeenSet(false),
-    m_schemaChangePolicyHasBeenSet(false)
+S3DeltaDirectTarget::S3DeltaDirectTarget(JsonView jsonValue)
+  : S3DeltaDirectTarget()
 {
   *this = jsonValue;
 }

@@ -29,14 +29,8 @@ RetrainingSchedulerSummary::RetrainingSchedulerSummary() :
 {
 }
 
-RetrainingSchedulerSummary::RetrainingSchedulerSummary(JsonView jsonValue) : 
-    m_modelNameHasBeenSet(false),
-    m_modelArnHasBeenSet(false),
-    m_status(RetrainingSchedulerStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_retrainingStartDateHasBeenSet(false),
-    m_retrainingFrequencyHasBeenSet(false),
-    m_lookbackWindowHasBeenSet(false)
+RetrainingSchedulerSummary::RetrainingSchedulerSummary(JsonView jsonValue)
+  : RetrainingSchedulerSummary()
 {
   *this = jsonValue;
 }

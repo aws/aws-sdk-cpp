@@ -34,17 +34,8 @@ UserDetail::UserDetail() :
 {
 }
 
-UserDetail::UserDetail(const XmlNode& xmlNode) : 
-    m_pathHasBeenSet(false),
-    m_userNameHasBeenSet(false),
-    m_userIdHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_createDateHasBeenSet(false),
-    m_userPolicyListHasBeenSet(false),
-    m_groupListHasBeenSet(false),
-    m_attachedManagedPoliciesHasBeenSet(false),
-    m_permissionsBoundaryHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+UserDetail::UserDetail(const XmlNode& xmlNode)
+  : UserDetail()
 {
   *this = xmlNode;
 }

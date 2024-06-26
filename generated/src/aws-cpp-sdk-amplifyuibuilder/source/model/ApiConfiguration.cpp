@@ -25,10 +25,8 @@ ApiConfiguration::ApiConfiguration() :
 {
 }
 
-ApiConfiguration::ApiConfiguration(JsonView jsonValue) : 
-    m_graphQLConfigHasBeenSet(false),
-    m_dataStoreConfigHasBeenSet(false),
-    m_noApiConfigHasBeenSet(false)
+ApiConfiguration::ApiConfiguration(JsonView jsonValue)
+  : ApiConfiguration()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ DeleteVolumeResult::DeleteVolumeResult() :
 {
 }
 
-DeleteVolumeResult::DeleteVolumeResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_lifecycle(VolumeLifecycle::NOT_SET)
+DeleteVolumeResult::DeleteVolumeResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeleteVolumeResult()
 {
   *this = result;
 }

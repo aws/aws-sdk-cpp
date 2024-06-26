@@ -26,11 +26,8 @@ TaskTimedOutEventDetails::TaskTimedOutEventDetails() :
 {
 }
 
-TaskTimedOutEventDetails::TaskTimedOutEventDetails(JsonView jsonValue) : 
-    m_resourceTypeHasBeenSet(false),
-    m_resourceHasBeenSet(false),
-    m_errorHasBeenSet(false),
-    m_causeHasBeenSet(false)
+TaskTimedOutEventDetails::TaskTimedOutEventDetails(JsonView jsonValue)
+  : TaskTimedOutEventDetails()
 {
   *this = jsonValue;
 }

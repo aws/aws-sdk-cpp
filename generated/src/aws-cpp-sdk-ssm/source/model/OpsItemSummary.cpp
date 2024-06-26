@@ -41,26 +41,8 @@ OpsItemSummary::OpsItemSummary() :
 {
 }
 
-OpsItemSummary::OpsItemSummary(JsonView jsonValue) : 
-    m_createdByHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_lastModifiedByHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_priority(0),
-    m_priorityHasBeenSet(false),
-    m_sourceHasBeenSet(false),
-    m_status(OpsItemStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_opsItemIdHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_operationalDataHasBeenSet(false),
-    m_categoryHasBeenSet(false),
-    m_severityHasBeenSet(false),
-    m_opsItemTypeHasBeenSet(false),
-    m_actualStartTimeHasBeenSet(false),
-    m_actualEndTimeHasBeenSet(false),
-    m_plannedStartTimeHasBeenSet(false),
-    m_plannedEndTimeHasBeenSet(false)
+OpsItemSummary::OpsItemSummary(JsonView jsonValue)
+  : OpsItemSummary()
 {
   *this = jsonValue;
 }

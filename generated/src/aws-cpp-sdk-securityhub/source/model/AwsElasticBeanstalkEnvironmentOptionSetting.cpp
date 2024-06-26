@@ -26,11 +26,8 @@ AwsElasticBeanstalkEnvironmentOptionSetting::AwsElasticBeanstalkEnvironmentOptio
 {
 }
 
-AwsElasticBeanstalkEnvironmentOptionSetting::AwsElasticBeanstalkEnvironmentOptionSetting(JsonView jsonValue) : 
-    m_namespaceHasBeenSet(false),
-    m_optionNameHasBeenSet(false),
-    m_resourceNameHasBeenSet(false),
-    m_valueHasBeenSet(false)
+AwsElasticBeanstalkEnvironmentOptionSetting::AwsElasticBeanstalkEnvironmentOptionSetting(JsonView jsonValue)
+  : AwsElasticBeanstalkEnvironmentOptionSetting()
 {
   *this = jsonValue;
 }

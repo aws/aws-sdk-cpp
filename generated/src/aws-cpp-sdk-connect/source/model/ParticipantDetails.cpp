@@ -23,8 +23,8 @@ ParticipantDetails::ParticipantDetails() :
 {
 }
 
-ParticipantDetails::ParticipantDetails(JsonView jsonValue) : 
-    m_displayNameHasBeenSet(false)
+ParticipantDetails::ParticipantDetails(JsonView jsonValue)
+  : ParticipantDetails()
 {
   *this = jsonValue;
 }

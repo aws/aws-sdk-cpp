@@ -24,9 +24,8 @@ AssignedSessionAction::AssignedSessionAction() :
 {
 }
 
-AssignedSessionAction::AssignedSessionAction(JsonView jsonValue) : 
-    m_definitionHasBeenSet(false),
-    m_sessionActionIdHasBeenSet(false)
+AssignedSessionAction::AssignedSessionAction(JsonView jsonValue)
+  : AssignedSessionAction()
 {
   *this = jsonValue;
 }

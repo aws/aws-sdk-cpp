@@ -24,9 +24,8 @@ LambdaCodeHook::LambdaCodeHook() :
 {
 }
 
-LambdaCodeHook::LambdaCodeHook(JsonView jsonValue) : 
-    m_lambdaARNHasBeenSet(false),
-    m_codeHookInterfaceVersionHasBeenSet(false)
+LambdaCodeHook::LambdaCodeHook(JsonView jsonValue)
+  : LambdaCodeHook()
 {
   *this = jsonValue;
 }

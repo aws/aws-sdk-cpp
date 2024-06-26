@@ -24,9 +24,8 @@ BatchUpdatePartitionFailureEntry::BatchUpdatePartitionFailureEntry() :
 {
 }
 
-BatchUpdatePartitionFailureEntry::BatchUpdatePartitionFailureEntry(JsonView jsonValue) : 
-    m_partitionValueListHasBeenSet(false),
-    m_errorDetailHasBeenSet(false)
+BatchUpdatePartitionFailureEntry::BatchUpdatePartitionFailureEntry(JsonView jsonValue)
+  : BatchUpdatePartitionFailureEntry()
 {
   *this = jsonValue;
 }

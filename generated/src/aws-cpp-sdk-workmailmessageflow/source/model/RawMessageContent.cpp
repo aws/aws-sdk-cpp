@@ -23,8 +23,8 @@ RawMessageContent::RawMessageContent() :
 {
 }
 
-RawMessageContent::RawMessageContent(JsonView jsonValue) : 
-    m_s3ReferenceHasBeenSet(false)
+RawMessageContent::RawMessageContent(JsonView jsonValue)
+  : RawMessageContent()
 {
   *this = jsonValue;
 }

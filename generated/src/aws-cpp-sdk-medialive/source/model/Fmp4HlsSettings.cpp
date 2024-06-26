@@ -27,12 +27,8 @@ Fmp4HlsSettings::Fmp4HlsSettings() :
 {
 }
 
-Fmp4HlsSettings::Fmp4HlsSettings(JsonView jsonValue) : 
-    m_audioRenditionSetsHasBeenSet(false),
-    m_nielsenId3Behavior(Fmp4NielsenId3Behavior::NOT_SET),
-    m_nielsenId3BehaviorHasBeenSet(false),
-    m_timedMetadataBehavior(Fmp4TimedMetadataBehavior::NOT_SET),
-    m_timedMetadataBehaviorHasBeenSet(false)
+Fmp4HlsSettings::Fmp4HlsSettings(JsonView jsonValue)
+  : Fmp4HlsSettings()
 {
   *this = jsonValue;
 }

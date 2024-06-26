@@ -24,9 +24,8 @@ ThemeValue::ThemeValue() :
 {
 }
 
-ThemeValue::ThemeValue(JsonView jsonValue) : 
-    m_valueHasBeenSet(false),
-    m_childrenHasBeenSet(false)
+ThemeValue::ThemeValue(JsonView jsonValue)
+  : ThemeValue()
 {
   *this = jsonValue;
 }

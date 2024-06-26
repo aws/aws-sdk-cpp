@@ -25,10 +25,8 @@ ChoiceImprovementPlan::ChoiceImprovementPlan() :
 {
 }
 
-ChoiceImprovementPlan::ChoiceImprovementPlan(JsonView jsonValue) : 
-    m_choiceIdHasBeenSet(false),
-    m_displayTextHasBeenSet(false),
-    m_improvementPlanUrlHasBeenSet(false)
+ChoiceImprovementPlan::ChoiceImprovementPlan(JsonView jsonValue)
+  : ChoiceImprovementPlan()
 {
   *this = jsonValue;
 }

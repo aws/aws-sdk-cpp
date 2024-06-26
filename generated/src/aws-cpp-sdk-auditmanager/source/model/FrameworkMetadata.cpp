@@ -26,11 +26,8 @@ FrameworkMetadata::FrameworkMetadata() :
 {
 }
 
-FrameworkMetadata::FrameworkMetadata(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_logoHasBeenSet(false),
-    m_complianceTypeHasBeenSet(false)
+FrameworkMetadata::FrameworkMetadata(JsonView jsonValue)
+  : FrameworkMetadata()
 {
   *this = jsonValue;
 }

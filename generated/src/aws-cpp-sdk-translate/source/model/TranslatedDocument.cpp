@@ -24,8 +24,8 @@ TranslatedDocument::TranslatedDocument() :
 {
 }
 
-TranslatedDocument::TranslatedDocument(JsonView jsonValue) : 
-    m_contentHasBeenSet(false)
+TranslatedDocument::TranslatedDocument(JsonView jsonValue)
+  : TranslatedDocument()
 {
   *this = jsonValue;
 }

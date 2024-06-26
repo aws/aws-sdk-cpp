@@ -26,11 +26,8 @@ FrameResolution::FrameResolution() :
 {
 }
 
-FrameResolution::FrameResolution(JsonView jsonValue) : 
-    m_frameHeight(0),
-    m_frameHeightHasBeenSet(false),
-    m_frameWidth(0),
-    m_frameWidthHasBeenSet(false)
+FrameResolution::FrameResolution(JsonView jsonValue)
+  : FrameResolution()
 {
   *this = jsonValue;
 }

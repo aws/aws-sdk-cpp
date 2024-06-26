@@ -29,14 +29,8 @@ AuditEventFieldValueUnion::AuditEventFieldValueUnion() :
 {
 }
 
-AuditEventFieldValueUnion::AuditEventFieldValueUnion(JsonView jsonValue) : 
-    m_booleanValue(false),
-    m_booleanValueHasBeenSet(false),
-    m_doubleValue(0.0),
-    m_doubleValueHasBeenSet(false),
-    m_emptyValueHasBeenSet(false),
-    m_stringValueHasBeenSet(false),
-    m_userArnValueHasBeenSet(false)
+AuditEventFieldValueUnion::AuditEventFieldValueUnion(JsonView jsonValue)
+  : AuditEventFieldValueUnion()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ AwsWafv2WebAclCaptchaConfigDetails::AwsWafv2WebAclCaptchaConfigDetails() :
 {
 }
 
-AwsWafv2WebAclCaptchaConfigDetails::AwsWafv2WebAclCaptchaConfigDetails(JsonView jsonValue) : 
-    m_immunityTimePropertyHasBeenSet(false)
+AwsWafv2WebAclCaptchaConfigDetails::AwsWafv2WebAclCaptchaConfigDetails(JsonView jsonValue)
+  : AwsWafv2WebAclCaptchaConfigDetails()
 {
   *this = jsonValue;
 }

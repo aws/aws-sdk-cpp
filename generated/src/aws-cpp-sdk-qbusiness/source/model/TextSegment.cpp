@@ -27,12 +27,8 @@ TextSegment::TextSegment() :
 {
 }
 
-TextSegment::TextSegment(JsonView jsonValue) : 
-    m_beginOffset(0),
-    m_beginOffsetHasBeenSet(false),
-    m_endOffset(0),
-    m_endOffsetHasBeenSet(false),
-    m_snippetExcerptHasBeenSet(false)
+TextSegment::TextSegment(JsonView jsonValue)
+  : TextSegment()
 {
   *this = jsonValue;
 }

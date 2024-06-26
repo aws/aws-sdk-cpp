@@ -25,10 +25,8 @@ SystemInstanceFilter::SystemInstanceFilter() :
 {
 }
 
-SystemInstanceFilter::SystemInstanceFilter(JsonView jsonValue) : 
-    m_name(SystemInstanceFilterName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
+SystemInstanceFilter::SystemInstanceFilter(JsonView jsonValue)
+  : SystemInstanceFilter()
 {
   *this = jsonValue;
 }

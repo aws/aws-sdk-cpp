@@ -22,8 +22,8 @@ GetCelebrityRecognitionResult::GetCelebrityRecognitionResult() :
 {
 }
 
-GetCelebrityRecognitionResult::GetCelebrityRecognitionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_jobStatus(VideoJobStatus::NOT_SET)
+GetCelebrityRecognitionResult::GetCelebrityRecognitionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetCelebrityRecognitionResult()
 {
   *this = result;
 }

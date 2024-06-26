@@ -24,9 +24,8 @@ AdditionalLimit::AdditionalLimit() :
 {
 }
 
-AdditionalLimit::AdditionalLimit(JsonView jsonValue) : 
-    m_limitNameHasBeenSet(false),
-    m_limitValuesHasBeenSet(false)
+AdditionalLimit::AdditionalLimit(JsonView jsonValue)
+  : AdditionalLimit()
 {
   *this = jsonValue;
 }

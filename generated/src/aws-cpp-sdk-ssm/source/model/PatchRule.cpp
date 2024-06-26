@@ -30,15 +30,8 @@ PatchRule::PatchRule() :
 {
 }
 
-PatchRule::PatchRule(JsonView jsonValue) : 
-    m_patchFilterGroupHasBeenSet(false),
-    m_complianceLevel(PatchComplianceLevel::NOT_SET),
-    m_complianceLevelHasBeenSet(false),
-    m_approveAfterDays(0),
-    m_approveAfterDaysHasBeenSet(false),
-    m_approveUntilDateHasBeenSet(false),
-    m_enableNonSecurity(false),
-    m_enableNonSecurityHasBeenSet(false)
+PatchRule::PatchRule(JsonView jsonValue)
+  : PatchRule()
 {
   *this = jsonValue;
 }

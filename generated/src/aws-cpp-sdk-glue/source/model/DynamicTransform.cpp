@@ -30,15 +30,8 @@ DynamicTransform::DynamicTransform() :
 {
 }
 
-DynamicTransform::DynamicTransform(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_transformNameHasBeenSet(false),
-    m_inputsHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_functionNameHasBeenSet(false),
-    m_pathHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_outputSchemasHasBeenSet(false)
+DynamicTransform::DynamicTransform(JsonView jsonValue)
+  : DynamicTransform()
 {
   *this = jsonValue;
 }

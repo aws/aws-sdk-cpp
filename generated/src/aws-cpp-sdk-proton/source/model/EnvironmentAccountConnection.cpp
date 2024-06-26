@@ -34,19 +34,8 @@ EnvironmentAccountConnection::EnvironmentAccountConnection() :
 {
 }
 
-EnvironmentAccountConnection::EnvironmentAccountConnection(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_codebuildRoleArnHasBeenSet(false),
-    m_componentRoleArnHasBeenSet(false),
-    m_environmentAccountIdHasBeenSet(false),
-    m_environmentNameHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_lastModifiedAtHasBeenSet(false),
-    m_managementAccountIdHasBeenSet(false),
-    m_requestedAtHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_status(EnvironmentAccountConnectionStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+EnvironmentAccountConnection::EnvironmentAccountConnection(JsonView jsonValue)
+  : EnvironmentAccountConnection()
 {
   *this = jsonValue;
 }

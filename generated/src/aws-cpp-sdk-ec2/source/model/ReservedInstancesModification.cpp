@@ -33,16 +33,8 @@ ReservedInstancesModification::ReservedInstancesModification() :
 {
 }
 
-ReservedInstancesModification::ReservedInstancesModification(const XmlNode& xmlNode) : 
-    m_clientTokenHasBeenSet(false),
-    m_createDateHasBeenSet(false),
-    m_effectiveDateHasBeenSet(false),
-    m_modificationResultsHasBeenSet(false),
-    m_reservedInstancesIdsHasBeenSet(false),
-    m_reservedInstancesModificationIdHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_updateDateHasBeenSet(false)
+ReservedInstancesModification::ReservedInstancesModification(const XmlNode& xmlNode)
+  : ReservedInstancesModification()
 {
   *this = xmlNode;
 }

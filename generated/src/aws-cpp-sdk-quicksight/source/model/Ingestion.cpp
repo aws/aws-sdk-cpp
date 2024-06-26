@@ -38,23 +38,8 @@ Ingestion::Ingestion() :
 {
 }
 
-Ingestion::Ingestion(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_ingestionIdHasBeenSet(false),
-    m_ingestionStatus(IngestionStatus::NOT_SET),
-    m_ingestionStatusHasBeenSet(false),
-    m_errorInfoHasBeenSet(false),
-    m_rowInfoHasBeenSet(false),
-    m_queueInfoHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_ingestionTimeInSeconds(0),
-    m_ingestionTimeInSecondsHasBeenSet(false),
-    m_ingestionSizeInBytes(0),
-    m_ingestionSizeInBytesHasBeenSet(false),
-    m_requestSource(IngestionRequestSource::NOT_SET),
-    m_requestSourceHasBeenSet(false),
-    m_requestType(IngestionRequestType::NOT_SET),
-    m_requestTypeHasBeenSet(false)
+Ingestion::Ingestion(JsonView jsonValue)
+  : Ingestion()
 {
   *this = jsonValue;
 }

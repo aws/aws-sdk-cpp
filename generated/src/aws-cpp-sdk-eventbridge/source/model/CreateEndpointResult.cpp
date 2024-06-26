@@ -22,8 +22,8 @@ CreateEndpointResult::CreateEndpointResult() :
 {
 }
 
-CreateEndpointResult::CreateEndpointResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_state(EndpointState::NOT_SET)
+CreateEndpointResult::CreateEndpointResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateEndpointResult()
 {
   *this = result;
 }

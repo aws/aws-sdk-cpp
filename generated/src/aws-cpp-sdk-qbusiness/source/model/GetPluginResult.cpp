@@ -24,10 +24,8 @@ GetPluginResult::GetPluginResult() :
 {
 }
 
-GetPluginResult::GetPluginResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_type(PluginType::NOT_SET),
-    m_buildStatus(PluginBuildStatus::NOT_SET),
-    m_state(PluginState::NOT_SET)
+GetPluginResult::GetPluginResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetPluginResult()
 {
   *this = result;
 }

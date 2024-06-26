@@ -25,10 +25,8 @@ Definition::Definition() :
 {
 }
 
-Definition::Definition(JsonView jsonValue) : 
-    m_iamActionDefinitionHasBeenSet(false),
-    m_scpActionDefinitionHasBeenSet(false),
-    m_ssmActionDefinitionHasBeenSet(false)
+Definition::Definition(JsonView jsonValue)
+  : Definition()
 {
   *this = jsonValue;
 }

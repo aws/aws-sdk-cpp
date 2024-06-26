@@ -26,9 +26,8 @@ StorageLensDataExportEncryption::StorageLensDataExportEncryption() :
 {
 }
 
-StorageLensDataExportEncryption::StorageLensDataExportEncryption(const XmlNode& xmlNode) : 
-    m_sSES3HasBeenSet(false),
-    m_sSEKMSHasBeenSet(false)
+StorageLensDataExportEncryption::StorageLensDataExportEncryption(const XmlNode& xmlNode)
+  : StorageLensDataExportEncryption()
 {
   *this = xmlNode;
 }

@@ -24,9 +24,8 @@ ActiveSpeakerOnlyConfiguration::ActiveSpeakerOnlyConfiguration() :
 {
 }
 
-ActiveSpeakerOnlyConfiguration::ActiveSpeakerOnlyConfiguration(JsonView jsonValue) : 
-    m_activeSpeakerPosition(ActiveSpeakerPosition::NOT_SET),
-    m_activeSpeakerPositionHasBeenSet(false)
+ActiveSpeakerOnlyConfiguration::ActiveSpeakerOnlyConfiguration(JsonView jsonValue)
+  : ActiveSpeakerOnlyConfiguration()
 {
   *this = jsonValue;
 }

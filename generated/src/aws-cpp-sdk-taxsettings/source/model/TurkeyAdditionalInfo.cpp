@@ -27,12 +27,8 @@ TurkeyAdditionalInfo::TurkeyAdditionalInfo() :
 {
 }
 
-TurkeyAdditionalInfo::TurkeyAdditionalInfo(JsonView jsonValue) : 
-    m_industries(Industries::NOT_SET),
-    m_industriesHasBeenSet(false),
-    m_kepEmailIdHasBeenSet(false),
-    m_secondaryTaxIdHasBeenSet(false),
-    m_taxOfficeHasBeenSet(false)
+TurkeyAdditionalInfo::TurkeyAdditionalInfo(JsonView jsonValue)
+  : TurkeyAdditionalInfo()
 {
   *this = jsonValue;
 }

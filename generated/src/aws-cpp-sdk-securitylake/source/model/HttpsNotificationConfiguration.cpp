@@ -28,13 +28,8 @@ HttpsNotificationConfiguration::HttpsNotificationConfiguration() :
 {
 }
 
-HttpsNotificationConfiguration::HttpsNotificationConfiguration(JsonView jsonValue) : 
-    m_authorizationApiKeyNameHasBeenSet(false),
-    m_authorizationApiKeyValueHasBeenSet(false),
-    m_endpointHasBeenSet(false),
-    m_httpMethod(HttpMethod::NOT_SET),
-    m_httpMethodHasBeenSet(false),
-    m_targetRoleArnHasBeenSet(false)
+HttpsNotificationConfiguration::HttpsNotificationConfiguration(JsonView jsonValue)
+  : HttpsNotificationConfiguration()
 {
   *this = jsonValue;
 }

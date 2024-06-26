@@ -23,9 +23,8 @@ GetTrafficPolicyResult::GetTrafficPolicyResult() :
 {
 }
 
-GetTrafficPolicyResult::GetTrafficPolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_defaultAction(AcceptAction::NOT_SET),
-    m_maxMessageSizeBytes(0)
+GetTrafficPolicyResult::GetTrafficPolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetTrafficPolicyResult()
 {
   *this = result;
 }

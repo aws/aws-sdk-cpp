@@ -25,10 +25,8 @@ BucketPublicAccess::BucketPublicAccess() :
 {
 }
 
-BucketPublicAccess::BucketPublicAccess(JsonView jsonValue) : 
-    m_effectivePermission(EffectivePermission::NOT_SET),
-    m_effectivePermissionHasBeenSet(false),
-    m_permissionConfigurationHasBeenSet(false)
+BucketPublicAccess::BucketPublicAccess(JsonView jsonValue)
+  : BucketPublicAccess()
 {
   *this = jsonValue;
 }

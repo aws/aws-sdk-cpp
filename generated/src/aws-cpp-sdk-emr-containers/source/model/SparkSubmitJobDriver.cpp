@@ -25,10 +25,8 @@ SparkSubmitJobDriver::SparkSubmitJobDriver() :
 {
 }
 
-SparkSubmitJobDriver::SparkSubmitJobDriver(JsonView jsonValue) : 
-    m_entryPointHasBeenSet(false),
-    m_entryPointArgumentsHasBeenSet(false),
-    m_sparkSubmitParametersHasBeenSet(false)
+SparkSubmitJobDriver::SparkSubmitJobDriver(JsonView jsonValue)
+  : SparkSubmitJobDriver()
 {
   *this = jsonValue;
 }

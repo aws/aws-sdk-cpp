@@ -26,11 +26,8 @@ ListedGateway::ListedGateway() :
 {
 }
 
-ListedGateway::ListedGateway(JsonView jsonValue) : 
-    m_gatewayArnHasBeenSet(false),
-    m_gatewayState(GatewayState::NOT_SET),
-    m_gatewayStateHasBeenSet(false),
-    m_nameHasBeenSet(false)
+ListedGateway::ListedGateway(JsonView jsonValue)
+  : ListedGateway()
 {
   *this = jsonValue;
 }

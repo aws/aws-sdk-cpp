@@ -24,9 +24,8 @@ VeevaConnectorProfileCredentials::VeevaConnectorProfileCredentials() :
 {
 }
 
-VeevaConnectorProfileCredentials::VeevaConnectorProfileCredentials(JsonView jsonValue) : 
-    m_usernameHasBeenSet(false),
-    m_passwordHasBeenSet(false)
+VeevaConnectorProfileCredentials::VeevaConnectorProfileCredentials(JsonView jsonValue)
+  : VeevaConnectorProfileCredentials()
 {
   *this = jsonValue;
 }

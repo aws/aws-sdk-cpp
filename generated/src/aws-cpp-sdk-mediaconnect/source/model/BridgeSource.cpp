@@ -24,9 +24,8 @@ BridgeSource::BridgeSource() :
 {
 }
 
-BridgeSource::BridgeSource(JsonView jsonValue) : 
-    m_flowSourceHasBeenSet(false),
-    m_networkSourceHasBeenSet(false)
+BridgeSource::BridgeSource(JsonView jsonValue)
+  : BridgeSource()
 {
   *this = jsonValue;
 }

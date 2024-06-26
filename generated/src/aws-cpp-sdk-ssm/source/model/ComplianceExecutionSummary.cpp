@@ -25,10 +25,8 @@ ComplianceExecutionSummary::ComplianceExecutionSummary() :
 {
 }
 
-ComplianceExecutionSummary::ComplianceExecutionSummary(JsonView jsonValue) : 
-    m_executionTimeHasBeenSet(false),
-    m_executionIdHasBeenSet(false),
-    m_executionTypeHasBeenSet(false)
+ComplianceExecutionSummary::ComplianceExecutionSummary(JsonView jsonValue)
+  : ComplianceExecutionSummary()
 {
   *this = jsonValue;
 }

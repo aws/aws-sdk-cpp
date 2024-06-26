@@ -24,9 +24,8 @@ AccessDescription::AccessDescription() :
 {
 }
 
-AccessDescription::AccessDescription(JsonView jsonValue) : 
-    m_accessMethodHasBeenSet(false),
-    m_accessLocationHasBeenSet(false)
+AccessDescription::AccessDescription(JsonView jsonValue)
+  : AccessDescription()
 {
   *this = jsonValue;
 }

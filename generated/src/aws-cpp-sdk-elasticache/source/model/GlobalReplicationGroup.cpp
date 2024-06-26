@@ -41,24 +41,8 @@ GlobalReplicationGroup::GlobalReplicationGroup() :
 {
 }
 
-GlobalReplicationGroup::GlobalReplicationGroup(const XmlNode& xmlNode) : 
-    m_globalReplicationGroupIdHasBeenSet(false),
-    m_globalReplicationGroupDescriptionHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_cacheNodeTypeHasBeenSet(false),
-    m_engineHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_membersHasBeenSet(false),
-    m_clusterEnabled(false),
-    m_clusterEnabledHasBeenSet(false),
-    m_globalNodeGroupsHasBeenSet(false),
-    m_authTokenEnabled(false),
-    m_authTokenEnabledHasBeenSet(false),
-    m_transitEncryptionEnabled(false),
-    m_transitEncryptionEnabledHasBeenSet(false),
-    m_atRestEncryptionEnabled(false),
-    m_atRestEncryptionEnabledHasBeenSet(false),
-    m_aRNHasBeenSet(false)
+GlobalReplicationGroup::GlobalReplicationGroup(const XmlNode& xmlNode)
+  : GlobalReplicationGroup()
 {
   *this = xmlNode;
 }

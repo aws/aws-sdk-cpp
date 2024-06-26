@@ -22,8 +22,8 @@ GetLicenseEndpointResult::GetLicenseEndpointResult() :
 {
 }
 
-GetLicenseEndpointResult::GetLicenseEndpointResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(LicenseEndpointStatus::NOT_SET)
+GetLicenseEndpointResult::GetLicenseEndpointResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetLicenseEndpointResult()
 {
   *this = result;
 }

@@ -25,10 +25,8 @@ MaximumAllowedResources::MaximumAllowedResources() :
 {
 }
 
-MaximumAllowedResources::MaximumAllowedResources(JsonView jsonValue) : 
-    m_cpuHasBeenSet(false),
-    m_memoryHasBeenSet(false),
-    m_diskHasBeenSet(false)
+MaximumAllowedResources::MaximumAllowedResources(JsonView jsonValue)
+  : MaximumAllowedResources()
 {
   *this = jsonValue;
 }

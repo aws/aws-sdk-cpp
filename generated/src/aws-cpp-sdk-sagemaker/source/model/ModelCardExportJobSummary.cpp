@@ -31,16 +31,8 @@ ModelCardExportJobSummary::ModelCardExportJobSummary() :
 {
 }
 
-ModelCardExportJobSummary::ModelCardExportJobSummary(JsonView jsonValue) : 
-    m_modelCardExportJobNameHasBeenSet(false),
-    m_modelCardExportJobArnHasBeenSet(false),
-    m_status(ModelCardExportJobStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_modelCardNameHasBeenSet(false),
-    m_modelCardVersion(0),
-    m_modelCardVersionHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_lastModifiedAtHasBeenSet(false)
+ModelCardExportJobSummary::ModelCardExportJobSummary(JsonView jsonValue)
+  : ModelCardExportJobSummary()
 {
   *this = jsonValue;
 }

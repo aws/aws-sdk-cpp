@@ -25,10 +25,8 @@ BudgetedAndActualAmounts::BudgetedAndActualAmounts() :
 {
 }
 
-BudgetedAndActualAmounts::BudgetedAndActualAmounts(JsonView jsonValue) : 
-    m_budgetedAmountHasBeenSet(false),
-    m_actualAmountHasBeenSet(false),
-    m_timePeriodHasBeenSet(false)
+BudgetedAndActualAmounts::BudgetedAndActualAmounts(JsonView jsonValue)
+  : BudgetedAndActualAmounts()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ S3Parameters::S3Parameters() :
 {
 }
 
-S3Parameters::S3Parameters(JsonView jsonValue) : 
-    m_manifestFileLocationHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
+S3Parameters::S3Parameters(JsonView jsonValue)
+  : S3Parameters()
 {
   *this = jsonValue;
 }

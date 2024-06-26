@@ -28,14 +28,8 @@ DescribeResizeResult::DescribeResizeResult() :
 {
 }
 
-DescribeResizeResult::DescribeResizeResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_targetNumberOfNodes(0),
-    m_avgResizeRateInMegaBytesPerSecond(0.0),
-    m_totalResizeDataInMegaBytes(0),
-    m_progressInMegaBytes(0),
-    m_elapsedTimeInSeconds(0),
-    m_estimatedTimeToCompletionInSeconds(0),
-    m_dataTransferProgressPercent(0.0)
+DescribeResizeResult::DescribeResizeResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : DescribeResizeResult()
 {
   *this = result;
 }

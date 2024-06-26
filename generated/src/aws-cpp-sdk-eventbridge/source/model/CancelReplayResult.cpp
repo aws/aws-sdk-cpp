@@ -22,8 +22,8 @@ CancelReplayResult::CancelReplayResult() :
 {
 }
 
-CancelReplayResult::CancelReplayResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_state(ReplayState::NOT_SET)
+CancelReplayResult::CancelReplayResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CancelReplayResult()
 {
   *this = result;
 }

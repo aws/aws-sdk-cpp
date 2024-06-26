@@ -30,15 +30,8 @@ FrameCaptureSettings::FrameCaptureSettings() :
 {
 }
 
-FrameCaptureSettings::FrameCaptureSettings(JsonView jsonValue) : 
-    m_framerateDenominator(0),
-    m_framerateDenominatorHasBeenSet(false),
-    m_framerateNumerator(0),
-    m_framerateNumeratorHasBeenSet(false),
-    m_maxCaptures(0),
-    m_maxCapturesHasBeenSet(false),
-    m_quality(0),
-    m_qualityHasBeenSet(false)
+FrameCaptureSettings::FrameCaptureSettings(JsonView jsonValue)
+  : FrameCaptureSettings()
 {
   *this = jsonValue;
 }

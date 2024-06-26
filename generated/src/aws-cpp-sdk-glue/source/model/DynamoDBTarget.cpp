@@ -27,12 +27,8 @@ DynamoDBTarget::DynamoDBTarget() :
 {
 }
 
-DynamoDBTarget::DynamoDBTarget(JsonView jsonValue) : 
-    m_pathHasBeenSet(false),
-    m_scanAll(false),
-    m_scanAllHasBeenSet(false),
-    m_scanRate(0.0),
-    m_scanRateHasBeenSet(false)
+DynamoDBTarget::DynamoDBTarget(JsonView jsonValue)
+  : DynamoDBTarget()
 {
   *this = jsonValue;
 }

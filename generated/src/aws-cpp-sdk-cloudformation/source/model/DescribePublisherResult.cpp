@@ -23,9 +23,8 @@ DescribePublisherResult::DescribePublisherResult() :
 {
 }
 
-DescribePublisherResult::DescribePublisherResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_publisherStatus(PublisherStatus::NOT_SET),
-    m_identityProvider(IdentityProvider::NOT_SET)
+DescribePublisherResult::DescribePublisherResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : DescribePublisherResult()
 {
   *this = result;
 }

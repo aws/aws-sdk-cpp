@@ -24,9 +24,8 @@ MissingDataConfiguration::MissingDataConfiguration() :
 {
 }
 
-MissingDataConfiguration::MissingDataConfiguration(JsonView jsonValue) : 
-    m_treatmentOption(MissingDataTreatmentOption::NOT_SET),
-    m_treatmentOptionHasBeenSet(false)
+MissingDataConfiguration::MissingDataConfiguration(JsonView jsonValue)
+  : MissingDataConfiguration()
 {
   *this = jsonValue;
 }

@@ -28,13 +28,8 @@ SparkConnectorSource::SparkConnectorSource() :
 {
 }
 
-SparkConnectorSource::SparkConnectorSource(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_connectionNameHasBeenSet(false),
-    m_connectorNameHasBeenSet(false),
-    m_connectionTypeHasBeenSet(false),
-    m_additionalOptionsHasBeenSet(false),
-    m_outputSchemasHasBeenSet(false)
+SparkConnectorSource::SparkConnectorSource(JsonView jsonValue)
+  : SparkConnectorSource()
 {
   *this = jsonValue;
 }

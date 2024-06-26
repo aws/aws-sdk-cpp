@@ -35,20 +35,8 @@ MetricDatapoint::MetricDatapoint() :
 {
 }
 
-MetricDatapoint::MetricDatapoint(JsonView jsonValue) : 
-    m_average(0.0),
-    m_averageHasBeenSet(false),
-    m_maximum(0.0),
-    m_maximumHasBeenSet(false),
-    m_minimum(0.0),
-    m_minimumHasBeenSet(false),
-    m_sampleCount(0.0),
-    m_sampleCountHasBeenSet(false),
-    m_sum(0.0),
-    m_sumHasBeenSet(false),
-    m_timestampHasBeenSet(false),
-    m_unit(MetricUnit::NOT_SET),
-    m_unitHasBeenSet(false)
+MetricDatapoint::MetricDatapoint(JsonView jsonValue)
+  : MetricDatapoint()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ MetricAttribution::MetricAttribution() :
 {
 }
 
-MetricAttribution::MetricAttribution(JsonView jsonValue) : 
-    m_eventAttributionSourceHasBeenSet(false)
+MetricAttribution::MetricAttribution(JsonView jsonValue)
+  : MetricAttribution()
 {
   *this = jsonValue;
 }

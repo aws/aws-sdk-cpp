@@ -27,12 +27,8 @@ HlsCdnSettings::HlsCdnSettings() :
 {
 }
 
-HlsCdnSettings::HlsCdnSettings(JsonView jsonValue) : 
-    m_hlsAkamaiSettingsHasBeenSet(false),
-    m_hlsBasicPutSettingsHasBeenSet(false),
-    m_hlsMediaStoreSettingsHasBeenSet(false),
-    m_hlsS3SettingsHasBeenSet(false),
-    m_hlsWebdavSettingsHasBeenSet(false)
+HlsCdnSettings::HlsCdnSettings(JsonView jsonValue)
+  : HlsCdnSettings()
 {
   *this = jsonValue;
 }

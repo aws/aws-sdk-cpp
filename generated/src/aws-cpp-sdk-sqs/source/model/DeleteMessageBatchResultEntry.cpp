@@ -23,8 +23,8 @@ DeleteMessageBatchResultEntry::DeleteMessageBatchResultEntry() :
 {
 }
 
-DeleteMessageBatchResultEntry::DeleteMessageBatchResultEntry(JsonView jsonValue) : 
-    m_idHasBeenSet(false)
+DeleteMessageBatchResultEntry::DeleteMessageBatchResultEntry(JsonView jsonValue)
+  : DeleteMessageBatchResultEntry()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ StepDependency::StepDependency() :
 {
 }
 
-StepDependency::StepDependency(JsonView jsonValue) : 
-    m_status(DependencyConsumerResolutionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_stepIdHasBeenSet(false)
+StepDependency::StepDependency(JsonView jsonValue)
+  : StepDependency()
 {
   *this = jsonValue;
 }

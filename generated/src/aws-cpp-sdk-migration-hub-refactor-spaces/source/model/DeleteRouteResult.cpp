@@ -22,8 +22,8 @@ DeleteRouteResult::DeleteRouteResult() :
 {
 }
 
-DeleteRouteResult::DeleteRouteResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_state(RouteState::NOT_SET)
+DeleteRouteResult::DeleteRouteResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeleteRouteResult()
 {
   *this = result;
 }

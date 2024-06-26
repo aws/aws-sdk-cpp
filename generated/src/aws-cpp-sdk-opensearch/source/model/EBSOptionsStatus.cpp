@@ -24,9 +24,8 @@ EBSOptionsStatus::EBSOptionsStatus() :
 {
 }
 
-EBSOptionsStatus::EBSOptionsStatus(JsonView jsonValue) : 
-    m_optionsHasBeenSet(false),
-    m_statusHasBeenSet(false)
+EBSOptionsStatus::EBSOptionsStatus(JsonView jsonValue)
+  : EBSOptionsStatus()
 {
   *this = jsonValue;
 }

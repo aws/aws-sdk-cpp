@@ -25,11 +25,8 @@ DescribeSMBSettingsResult::DescribeSMBSettingsResult() :
 {
 }
 
-DescribeSMBSettingsResult::DescribeSMBSettingsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_activeDirectoryStatus(ActiveDirectoryStatus::NOT_SET),
-    m_sMBGuestPasswordSet(false),
-    m_sMBSecurityStrategy(SMBSecurityStrategy::NOT_SET),
-    m_fileSharesVisible(false)
+DescribeSMBSettingsResult::DescribeSMBSettingsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeSMBSettingsResult()
 {
   *this = result;
 }

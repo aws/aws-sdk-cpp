@@ -23,8 +23,8 @@ DatadogSourceProperties::DatadogSourceProperties() :
 {
 }
 
-DatadogSourceProperties::DatadogSourceProperties(JsonView jsonValue) : 
-    m_objectHasBeenSet(false)
+DatadogSourceProperties::DatadogSourceProperties(JsonView jsonValue)
+  : DatadogSourceProperties()
 {
   *this = jsonValue;
 }

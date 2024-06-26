@@ -27,12 +27,8 @@ OrganizationalUnitScope::OrganizationalUnitScope() :
 {
 }
 
-OrganizationalUnitScope::OrganizationalUnitScope(JsonView jsonValue) : 
-    m_organizationalUnitsHasBeenSet(false),
-    m_allOrganizationalUnitsEnabled(false),
-    m_allOrganizationalUnitsEnabledHasBeenSet(false),
-    m_excludeSpecifiedOrganizationalUnits(false),
-    m_excludeSpecifiedOrganizationalUnitsHasBeenSet(false)
+OrganizationalUnitScope::OrganizationalUnitScope(JsonView jsonValue)
+  : OrganizationalUnitScope()
 {
   *this = jsonValue;
 }

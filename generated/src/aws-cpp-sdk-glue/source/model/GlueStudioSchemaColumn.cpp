@@ -24,9 +24,8 @@ GlueStudioSchemaColumn::GlueStudioSchemaColumn() :
 {
 }
 
-GlueStudioSchemaColumn::GlueStudioSchemaColumn(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_typeHasBeenSet(false)
+GlueStudioSchemaColumn::GlueStudioSchemaColumn(JsonView jsonValue)
+  : GlueStudioSchemaColumn()
 {
   *this = jsonValue;
 }

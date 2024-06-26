@@ -25,10 +25,8 @@ OutputDetail::OutputDetail() :
 {
 }
 
-OutputDetail::OutputDetail(JsonView jsonValue) : 
-    m_durationInMs(0),
-    m_durationInMsHasBeenSet(false),
-    m_videoDetailsHasBeenSet(false)
+OutputDetail::OutputDetail(JsonView jsonValue)
+  : OutputDetail()
 {
   *this = jsonValue;
 }

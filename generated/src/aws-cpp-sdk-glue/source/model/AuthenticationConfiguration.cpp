@@ -26,11 +26,8 @@ AuthenticationConfiguration::AuthenticationConfiguration() :
 {
 }
 
-AuthenticationConfiguration::AuthenticationConfiguration(JsonView jsonValue) : 
-    m_authenticationType(AuthenticationType::NOT_SET),
-    m_authenticationTypeHasBeenSet(false),
-    m_secretArnHasBeenSet(false),
-    m_oAuth2PropertiesHasBeenSet(false)
+AuthenticationConfiguration::AuthenticationConfiguration(JsonView jsonValue)
+  : AuthenticationConfiguration()
 {
   *this = jsonValue;
 }

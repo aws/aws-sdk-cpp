@@ -24,9 +24,8 @@ Configuration::Configuration() :
 {
 }
 
-Configuration::Configuration(JsonView jsonValue) : 
-    m_cognitoUserPoolConfigurationHasBeenSet(false),
-    m_openIdConnectConfigurationHasBeenSet(false)
+Configuration::Configuration(JsonView jsonValue)
+  : Configuration()
 {
   *this = jsonValue;
 }

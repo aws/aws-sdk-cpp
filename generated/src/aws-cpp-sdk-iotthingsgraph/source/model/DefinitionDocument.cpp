@@ -25,10 +25,8 @@ DefinitionDocument::DefinitionDocument() :
 {
 }
 
-DefinitionDocument::DefinitionDocument(JsonView jsonValue) : 
-    m_language(DefinitionLanguage::NOT_SET),
-    m_languageHasBeenSet(false),
-    m_textHasBeenSet(false)
+DefinitionDocument::DefinitionDocument(JsonView jsonValue)
+  : DefinitionDocument()
 {
   *this = jsonValue;
 }

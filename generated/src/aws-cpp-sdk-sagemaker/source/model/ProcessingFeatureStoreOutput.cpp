@@ -23,8 +23,8 @@ ProcessingFeatureStoreOutput::ProcessingFeatureStoreOutput() :
 {
 }
 
-ProcessingFeatureStoreOutput::ProcessingFeatureStoreOutput(JsonView jsonValue) : 
-    m_featureGroupNameHasBeenSet(false)
+ProcessingFeatureStoreOutput::ProcessingFeatureStoreOutput(JsonView jsonValue)
+  : ProcessingFeatureStoreOutput()
 {
   *this = jsonValue;
 }

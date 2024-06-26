@@ -27,12 +27,8 @@ FilterExpression::FilterExpression() :
 {
 }
 
-FilterExpression::FilterExpression(JsonView jsonValue) : 
-    m_operation(FilterOperation::NOT_SET),
-    m_operationHasBeenSet(false),
-    m_negated(false),
-    m_negatedHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+FilterExpression::FilterExpression(JsonView jsonValue)
+  : FilterExpression()
 {
   *this = jsonValue;
 }

@@ -28,13 +28,8 @@ SchemaConfiguration::SchemaConfiguration() :
 {
 }
 
-SchemaConfiguration::SchemaConfiguration(JsonView jsonValue) : 
-    m_roleARNHasBeenSet(false),
-    m_catalogIdHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_tableNameHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_versionIdHasBeenSet(false)
+SchemaConfiguration::SchemaConfiguration(JsonView jsonValue)
+  : SchemaConfiguration()
 {
   *this = jsonValue;
 }

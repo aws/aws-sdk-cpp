@@ -24,9 +24,8 @@ ResultRow::ResultRow() :
 {
 }
 
-ResultRow::ResultRow(JsonView jsonValue) : 
-    m_groupedBysHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+ResultRow::ResultRow(JsonView jsonValue)
+  : ResultRow()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ ServiceVersion::ServiceVersion() :
 {
 }
 
-ServiceVersion::ServiceVersion(JsonView jsonValue) : 
-    m_versionHasBeenSet(false)
+ServiceVersion::ServiceVersion(JsonView jsonValue)
+  : ServiceVersion()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ AssetBundleExportJobWarning::AssetBundleExportJobWarning() :
 {
 }
 
-AssetBundleExportJobWarning::AssetBundleExportJobWarning(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_messageHasBeenSet(false)
+AssetBundleExportJobWarning::AssetBundleExportJobWarning(JsonView jsonValue)
+  : AssetBundleExportJobWarning()
 {
   *this = jsonValue;
 }

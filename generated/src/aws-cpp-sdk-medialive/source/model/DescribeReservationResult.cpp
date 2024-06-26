@@ -28,14 +28,8 @@ DescribeReservationResult::DescribeReservationResult() :
 {
 }
 
-DescribeReservationResult::DescribeReservationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_count(0),
-    m_duration(0),
-    m_durationUnits(OfferingDurationUnits::NOT_SET),
-    m_fixedPrice(0.0),
-    m_offeringType(OfferingType::NOT_SET),
-    m_state(ReservationState::NOT_SET),
-    m_usagePrice(0.0)
+DescribeReservationResult::DescribeReservationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeReservationResult()
 {
   *this = result;
 }

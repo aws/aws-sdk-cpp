@@ -28,13 +28,8 @@ AssetInfo::AssetInfo() :
 {
 }
 
-AssetInfo::AssetInfo(JsonView jsonValue) : 
-    m_assetIdHasBeenSet(false),
-    m_rackIdHasBeenSet(false),
-    m_assetType(AssetType::NOT_SET),
-    m_assetTypeHasBeenSet(false),
-    m_computeAttributesHasBeenSet(false),
-    m_assetLocationHasBeenSet(false)
+AssetInfo::AssetInfo(JsonView jsonValue)
+  : AssetInfo()
 {
   *this = jsonValue;
 }

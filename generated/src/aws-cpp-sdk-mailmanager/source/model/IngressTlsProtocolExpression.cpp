@@ -27,12 +27,8 @@ IngressTlsProtocolExpression::IngressTlsProtocolExpression() :
 {
 }
 
-IngressTlsProtocolExpression::IngressTlsProtocolExpression(JsonView jsonValue) : 
-    m_evaluateHasBeenSet(false),
-    m_operator(IngressTlsProtocolOperator::NOT_SET),
-    m_operatorHasBeenSet(false),
-    m_value(IngressTlsProtocolAttribute::NOT_SET),
-    m_valueHasBeenSet(false)
+IngressTlsProtocolExpression::IngressTlsProtocolExpression(JsonView jsonValue)
+  : IngressTlsProtocolExpression()
 {
   *this = jsonValue;
 }

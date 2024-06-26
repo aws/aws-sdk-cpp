@@ -34,19 +34,8 @@ FlywheelIterationProperties::FlywheelIterationProperties() :
 {
 }
 
-FlywheelIterationProperties::FlywheelIterationProperties(JsonView jsonValue) : 
-    m_flywheelArnHasBeenSet(false),
-    m_flywheelIterationIdHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_status(FlywheelIterationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_evaluatedModelArnHasBeenSet(false),
-    m_evaluatedModelMetricsHasBeenSet(false),
-    m_trainedModelArnHasBeenSet(false),
-    m_trainedModelMetricsHasBeenSet(false),
-    m_evaluationManifestS3PrefixHasBeenSet(false)
+FlywheelIterationProperties::FlywheelIterationProperties(JsonView jsonValue)
+  : FlywheelIterationProperties()
 {
   *this = jsonValue;
 }

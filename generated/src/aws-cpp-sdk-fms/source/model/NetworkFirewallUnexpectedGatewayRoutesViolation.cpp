@@ -26,11 +26,8 @@ NetworkFirewallUnexpectedGatewayRoutesViolation::NetworkFirewallUnexpectedGatewa
 {
 }
 
-NetworkFirewallUnexpectedGatewayRoutesViolation::NetworkFirewallUnexpectedGatewayRoutesViolation(JsonView jsonValue) : 
-    m_gatewayIdHasBeenSet(false),
-    m_violatingRoutesHasBeenSet(false),
-    m_routeTableIdHasBeenSet(false),
-    m_vpcIdHasBeenSet(false)
+NetworkFirewallUnexpectedGatewayRoutesViolation::NetworkFirewallUnexpectedGatewayRoutesViolation(JsonView jsonValue)
+  : NetworkFirewallUnexpectedGatewayRoutesViolation()
 {
   *this = jsonValue;
 }

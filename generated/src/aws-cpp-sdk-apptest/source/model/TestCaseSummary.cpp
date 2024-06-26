@@ -32,17 +32,8 @@ TestCaseSummary::TestCaseSummary() :
 {
 }
 
-TestCaseSummary::TestCaseSummary(JsonView jsonValue) : 
-    m_testCaseIdHasBeenSet(false),
-    m_testCaseArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_statusReasonHasBeenSet(false),
-    m_latestVersion(0),
-    m_latestVersionHasBeenSet(false),
-    m_status(TestCaseLifecycle::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastUpdateTimeHasBeenSet(false)
+TestCaseSummary::TestCaseSummary(JsonView jsonValue)
+  : TestCaseSummary()
 {
   *this = jsonValue;
 }

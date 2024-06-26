@@ -27,12 +27,8 @@ SearchStatus::SearchStatus() :
 {
 }
 
-SearchStatus::SearchStatus(JsonView jsonValue) : 
-    m_completionTimestampHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_state(SearchState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_submissionTimestampHasBeenSet(false)
+SearchStatus::SearchStatus(JsonView jsonValue)
+  : SearchStatus()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ AnomalousService::AnomalousService() :
 {
 }
 
-AnomalousService::AnomalousService(JsonView jsonValue) : 
-    m_serviceIdHasBeenSet(false)
+AnomalousService::AnomalousService(JsonView jsonValue)
+  : AnomalousService()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ WebhookFilterRule::WebhookFilterRule() :
 {
 }
 
-WebhookFilterRule::WebhookFilterRule(JsonView jsonValue) : 
-    m_jsonPathHasBeenSet(false),
-    m_matchEqualsHasBeenSet(false)
+WebhookFilterRule::WebhookFilterRule(JsonView jsonValue)
+  : WebhookFilterRule()
 {
   *this = jsonValue;
 }

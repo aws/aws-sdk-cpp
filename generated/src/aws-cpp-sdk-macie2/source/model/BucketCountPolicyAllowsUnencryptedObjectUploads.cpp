@@ -28,13 +28,8 @@ BucketCountPolicyAllowsUnencryptedObjectUploads::BucketCountPolicyAllowsUnencryp
 {
 }
 
-BucketCountPolicyAllowsUnencryptedObjectUploads::BucketCountPolicyAllowsUnencryptedObjectUploads(JsonView jsonValue) : 
-    m_allowsUnencryptedObjectUploads(0),
-    m_allowsUnencryptedObjectUploadsHasBeenSet(false),
-    m_deniesUnencryptedObjectUploads(0),
-    m_deniesUnencryptedObjectUploadsHasBeenSet(false),
-    m_unknown(0),
-    m_unknownHasBeenSet(false)
+BucketCountPolicyAllowsUnencryptedObjectUploads::BucketCountPolicyAllowsUnencryptedObjectUploads(JsonView jsonValue)
+  : BucketCountPolicyAllowsUnencryptedObjectUploads()
 {
   *this = jsonValue;
 }

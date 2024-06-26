@@ -41,26 +41,8 @@ ComboChartConfiguration::ComboChartConfiguration() :
 {
 }
 
-ComboChartConfiguration::ComboChartConfiguration(JsonView jsonValue) : 
-    m_fieldWellsHasBeenSet(false),
-    m_sortConfigurationHasBeenSet(false),
-    m_barsArrangement(BarsArrangement::NOT_SET),
-    m_barsArrangementHasBeenSet(false),
-    m_categoryAxisHasBeenSet(false),
-    m_categoryLabelOptionsHasBeenSet(false),
-    m_primaryYAxisDisplayOptionsHasBeenSet(false),
-    m_primaryYAxisLabelOptionsHasBeenSet(false),
-    m_secondaryYAxisDisplayOptionsHasBeenSet(false),
-    m_secondaryYAxisLabelOptionsHasBeenSet(false),
-    m_singleAxisOptionsHasBeenSet(false),
-    m_colorLabelOptionsHasBeenSet(false),
-    m_legendHasBeenSet(false),
-    m_barDataLabelsHasBeenSet(false),
-    m_lineDataLabelsHasBeenSet(false),
-    m_tooltipHasBeenSet(false),
-    m_referenceLinesHasBeenSet(false),
-    m_visualPaletteHasBeenSet(false),
-    m_interactionsHasBeenSet(false)
+ComboChartConfiguration::ComboChartConfiguration(JsonView jsonValue)
+  : ComboChartConfiguration()
 {
   *this = jsonValue;
 }

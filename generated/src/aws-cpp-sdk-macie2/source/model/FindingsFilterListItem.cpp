@@ -28,13 +28,8 @@ FindingsFilterListItem::FindingsFilterListItem() :
 {
 }
 
-FindingsFilterListItem::FindingsFilterListItem(JsonView jsonValue) : 
-    m_action(FindingsFilterAction::NOT_SET),
-    m_actionHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+FindingsFilterListItem::FindingsFilterListItem(JsonView jsonValue)
+  : FindingsFilterListItem()
 {
   *this = jsonValue;
 }

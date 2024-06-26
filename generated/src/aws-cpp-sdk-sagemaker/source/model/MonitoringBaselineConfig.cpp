@@ -25,10 +25,8 @@ MonitoringBaselineConfig::MonitoringBaselineConfig() :
 {
 }
 
-MonitoringBaselineConfig::MonitoringBaselineConfig(JsonView jsonValue) : 
-    m_baseliningJobNameHasBeenSet(false),
-    m_constraintsResourceHasBeenSet(false),
-    m_statisticsResourceHasBeenSet(false)
+MonitoringBaselineConfig::MonitoringBaselineConfig(JsonView jsonValue)
+  : MonitoringBaselineConfig()
 {
   *this = jsonValue;
 }

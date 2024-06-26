@@ -24,9 +24,8 @@ AIMLOptionsStatus::AIMLOptionsStatus() :
 {
 }
 
-AIMLOptionsStatus::AIMLOptionsStatus(JsonView jsonValue) : 
-    m_optionsHasBeenSet(false),
-    m_statusHasBeenSet(false)
+AIMLOptionsStatus::AIMLOptionsStatus(JsonView jsonValue)
+  : AIMLOptionsStatus()
 {
   *this = jsonValue;
 }

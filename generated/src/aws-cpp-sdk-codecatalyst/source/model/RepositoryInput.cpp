@@ -24,9 +24,8 @@ RepositoryInput::RepositoryInput() :
 {
 }
 
-RepositoryInput::RepositoryInput(JsonView jsonValue) : 
-    m_repositoryNameHasBeenSet(false),
-    m_branchNameHasBeenSet(false)
+RepositoryInput::RepositoryInput(JsonView jsonValue)
+  : RepositoryInput()
 {
   *this = jsonValue;
 }

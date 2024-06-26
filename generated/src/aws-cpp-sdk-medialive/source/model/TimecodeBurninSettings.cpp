@@ -27,12 +27,8 @@ TimecodeBurninSettings::TimecodeBurninSettings() :
 {
 }
 
-TimecodeBurninSettings::TimecodeBurninSettings(JsonView jsonValue) : 
-    m_fontSize(TimecodeBurninFontSize::NOT_SET),
-    m_fontSizeHasBeenSet(false),
-    m_position(TimecodeBurninPosition::NOT_SET),
-    m_positionHasBeenSet(false),
-    m_prefixHasBeenSet(false)
+TimecodeBurninSettings::TimecodeBurninSettings(JsonView jsonValue)
+  : TimecodeBurninSettings()
 {
   *this = jsonValue;
 }

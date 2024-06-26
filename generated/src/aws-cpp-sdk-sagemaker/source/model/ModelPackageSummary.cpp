@@ -33,18 +33,8 @@ ModelPackageSummary::ModelPackageSummary() :
 {
 }
 
-ModelPackageSummary::ModelPackageSummary(JsonView jsonValue) : 
-    m_modelPackageNameHasBeenSet(false),
-    m_modelPackageGroupNameHasBeenSet(false),
-    m_modelPackageVersion(0),
-    m_modelPackageVersionHasBeenSet(false),
-    m_modelPackageArnHasBeenSet(false),
-    m_modelPackageDescriptionHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_modelPackageStatus(ModelPackageStatus::NOT_SET),
-    m_modelPackageStatusHasBeenSet(false),
-    m_modelApprovalStatus(ModelApprovalStatus::NOT_SET),
-    m_modelApprovalStatusHasBeenSet(false)
+ModelPackageSummary::ModelPackageSummary(JsonView jsonValue)
+  : ModelPackageSummary()
 {
   *this = jsonValue;
 }

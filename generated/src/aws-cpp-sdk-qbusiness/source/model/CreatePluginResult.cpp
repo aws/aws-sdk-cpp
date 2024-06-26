@@ -22,8 +22,8 @@ CreatePluginResult::CreatePluginResult() :
 {
 }
 
-CreatePluginResult::CreatePluginResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_buildStatus(PluginBuildStatus::NOT_SET)
+CreatePluginResult::CreatePluginResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreatePluginResult()
 {
   *this = result;
 }

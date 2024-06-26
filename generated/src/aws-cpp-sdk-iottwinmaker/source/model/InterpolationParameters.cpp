@@ -26,11 +26,8 @@ InterpolationParameters::InterpolationParameters() :
 {
 }
 
-InterpolationParameters::InterpolationParameters(JsonView jsonValue) : 
-    m_interpolationType(InterpolationType::NOT_SET),
-    m_interpolationTypeHasBeenSet(false),
-    m_intervalInSeconds(0),
-    m_intervalInSecondsHasBeenSet(false)
+InterpolationParameters::InterpolationParameters(JsonView jsonValue)
+  : InterpolationParameters()
 {
   *this = jsonValue;
 }

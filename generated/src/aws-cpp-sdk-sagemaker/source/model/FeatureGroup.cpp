@@ -39,24 +39,8 @@ FeatureGroup::FeatureGroup() :
 {
 }
 
-FeatureGroup::FeatureGroup(JsonView jsonValue) : 
-    m_featureGroupArnHasBeenSet(false),
-    m_featureGroupNameHasBeenSet(false),
-    m_recordIdentifierFeatureNameHasBeenSet(false),
-    m_eventTimeFeatureNameHasBeenSet(false),
-    m_featureDefinitionsHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_onlineStoreConfigHasBeenSet(false),
-    m_offlineStoreConfigHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_featureGroupStatus(FeatureGroupStatus::NOT_SET),
-    m_featureGroupStatusHasBeenSet(false),
-    m_offlineStoreStatusHasBeenSet(false),
-    m_lastUpdateStatusHasBeenSet(false),
-    m_failureReasonHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+FeatureGroup::FeatureGroup(JsonView jsonValue)
+  : FeatureGroup()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ SuggestionMatch::SuggestionMatch() :
 {
 }
 
-SuggestionMatch::SuggestionMatch(JsonView jsonValue) : 
-    m_suggestionHasBeenSet(false),
-    m_score(0),
-    m_scoreHasBeenSet(false),
-    m_idHasBeenSet(false)
+SuggestionMatch::SuggestionMatch(JsonView jsonValue)
+  : SuggestionMatch()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ SSMOutput::SSMOutput() :
 {
 }
 
-SSMOutput::SSMOutput(JsonView jsonValue) : 
-    m_s3LocationHasBeenSet(false)
+SSMOutput::SSMOutput(JsonView jsonValue)
+  : SSMOutput()
 {
   *this = jsonValue;
 }

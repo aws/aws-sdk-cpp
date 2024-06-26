@@ -25,10 +25,8 @@ GetSolVnfInfo::GetSolVnfInfo() :
 {
 }
 
-GetSolVnfInfo::GetSolVnfInfo(JsonView jsonValue) : 
-    m_vnfState(VnfOperationalState::NOT_SET),
-    m_vnfStateHasBeenSet(false),
-    m_vnfcResourceInfoHasBeenSet(false)
+GetSolVnfInfo::GetSolVnfInfo(JsonView jsonValue)
+  : GetSolVnfInfo()
 {
   *this = jsonValue;
 }

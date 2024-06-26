@@ -24,9 +24,8 @@ ExperimentTemplateTargetInputFilter::ExperimentTemplateTargetInputFilter() :
 {
 }
 
-ExperimentTemplateTargetInputFilter::ExperimentTemplateTargetInputFilter(JsonView jsonValue) : 
-    m_pathHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+ExperimentTemplateTargetInputFilter::ExperimentTemplateTargetInputFilter(JsonView jsonValue)
+  : ExperimentTemplateTargetInputFilter()
 {
   *this = jsonValue;
 }

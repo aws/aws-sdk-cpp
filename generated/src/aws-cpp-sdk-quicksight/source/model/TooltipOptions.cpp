@@ -27,12 +27,8 @@ TooltipOptions::TooltipOptions() :
 {
 }
 
-TooltipOptions::TooltipOptions(JsonView jsonValue) : 
-    m_tooltipVisibility(Visibility::NOT_SET),
-    m_tooltipVisibilityHasBeenSet(false),
-    m_selectedTooltipType(SelectedTooltipType::NOT_SET),
-    m_selectedTooltipTypeHasBeenSet(false),
-    m_fieldBasedTooltipHasBeenSet(false)
+TooltipOptions::TooltipOptions(JsonView jsonValue)
+  : TooltipOptions()
 {
   *this = jsonValue;
 }

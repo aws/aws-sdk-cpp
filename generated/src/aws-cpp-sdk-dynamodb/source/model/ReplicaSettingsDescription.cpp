@@ -34,19 +34,8 @@ ReplicaSettingsDescription::ReplicaSettingsDescription() :
 {
 }
 
-ReplicaSettingsDescription::ReplicaSettingsDescription(JsonView jsonValue) : 
-    m_regionNameHasBeenSet(false),
-    m_replicaStatus(ReplicaStatus::NOT_SET),
-    m_replicaStatusHasBeenSet(false),
-    m_replicaBillingModeSummaryHasBeenSet(false),
-    m_replicaProvisionedReadCapacityUnits(0),
-    m_replicaProvisionedReadCapacityUnitsHasBeenSet(false),
-    m_replicaProvisionedReadCapacityAutoScalingSettingsHasBeenSet(false),
-    m_replicaProvisionedWriteCapacityUnits(0),
-    m_replicaProvisionedWriteCapacityUnitsHasBeenSet(false),
-    m_replicaProvisionedWriteCapacityAutoScalingSettingsHasBeenSet(false),
-    m_replicaGlobalSecondaryIndexSettingsHasBeenSet(false),
-    m_replicaTableClassSummaryHasBeenSet(false)
+ReplicaSettingsDescription::ReplicaSettingsDescription(JsonView jsonValue)
+  : ReplicaSettingsDescription()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ TargetSummary::TargetSummary() :
 {
 }
 
-TargetSummary::TargetSummary(JsonView jsonValue) : 
-    m_targetAddressHasBeenSet(false),
-    m_targetTypeHasBeenSet(false),
-    m_targetStatus(TargetStatus::NOT_SET),
-    m_targetStatusHasBeenSet(false)
+TargetSummary::TargetSummary(JsonView jsonValue)
+  : TargetSummary()
 {
   *this = jsonValue;
 }

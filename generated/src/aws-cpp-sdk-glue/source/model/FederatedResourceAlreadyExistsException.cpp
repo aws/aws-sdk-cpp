@@ -24,9 +24,8 @@ FederatedResourceAlreadyExistsException::FederatedResourceAlreadyExistsException
 {
 }
 
-FederatedResourceAlreadyExistsException::FederatedResourceAlreadyExistsException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_associatedGlueResourceHasBeenSet(false)
+FederatedResourceAlreadyExistsException::FederatedResourceAlreadyExistsException(JsonView jsonValue)
+  : FederatedResourceAlreadyExistsException()
 {
   *this = jsonValue;
 }

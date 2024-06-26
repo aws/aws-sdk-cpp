@@ -33,18 +33,8 @@ Recommender::Recommender() :
 {
 }
 
-Recommender::Recommender(JsonView jsonValue) : 
-    m_recommenderArnHasBeenSet(false),
-    m_datasetGroupArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_recipeArnHasBeenSet(false),
-    m_recommenderConfigHasBeenSet(false),
-    m_creationDateTimeHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_failureReasonHasBeenSet(false),
-    m_latestRecommenderUpdateHasBeenSet(false),
-    m_modelMetricsHasBeenSet(false)
+Recommender::Recommender(JsonView jsonValue)
+  : Recommender()
 {
   *this = jsonValue;
 }

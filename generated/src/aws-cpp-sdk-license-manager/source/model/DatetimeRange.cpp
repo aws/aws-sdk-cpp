@@ -24,9 +24,8 @@ DatetimeRange::DatetimeRange() :
 {
 }
 
-DatetimeRange::DatetimeRange(JsonView jsonValue) : 
-    m_beginHasBeenSet(false),
-    m_endHasBeenSet(false)
+DatetimeRange::DatetimeRange(JsonView jsonValue)
+  : DatetimeRange()
 {
   *this = jsonValue;
 }

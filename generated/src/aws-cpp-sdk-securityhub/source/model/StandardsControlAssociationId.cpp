@@ -24,9 +24,8 @@ StandardsControlAssociationId::StandardsControlAssociationId() :
 {
 }
 
-StandardsControlAssociationId::StandardsControlAssociationId(JsonView jsonValue) : 
-    m_securityControlIdHasBeenSet(false),
-    m_standardsArnHasBeenSet(false)
+StandardsControlAssociationId::StandardsControlAssociationId(JsonView jsonValue)
+  : StandardsControlAssociationId()
 {
   *this = jsonValue;
 }

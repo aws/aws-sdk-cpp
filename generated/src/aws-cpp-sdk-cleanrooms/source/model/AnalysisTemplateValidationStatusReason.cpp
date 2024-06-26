@@ -23,8 +23,8 @@ AnalysisTemplateValidationStatusReason::AnalysisTemplateValidationStatusReason()
 {
 }
 
-AnalysisTemplateValidationStatusReason::AnalysisTemplateValidationStatusReason(JsonView jsonValue) : 
-    m_messageHasBeenSet(false)
+AnalysisTemplateValidationStatusReason::AnalysisTemplateValidationStatusReason(JsonView jsonValue)
+  : AnalysisTemplateValidationStatusReason()
 {
   *this = jsonValue;
 }

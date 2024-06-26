@@ -25,10 +25,8 @@ SourceAuth::SourceAuth() :
 {
 }
 
-SourceAuth::SourceAuth(JsonView jsonValue) : 
-    m_type(SourceAuthType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_resourceHasBeenSet(false)
+SourceAuth::SourceAuth(JsonView jsonValue)
+  : SourceAuth()
 {
   *this = jsonValue;
 }

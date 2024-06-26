@@ -23,9 +23,8 @@ CreateDataSetResult::CreateDataSetResult() :
 {
 }
 
-CreateDataSetResult::CreateDataSetResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_assetType(AssetType::NOT_SET),
-    m_origin(Origin::NOT_SET)
+CreateDataSetResult::CreateDataSetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateDataSetResult()
 {
   *this = result;
 }

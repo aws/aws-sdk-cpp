@@ -23,8 +23,8 @@ InstanceTypeItem::InstanceTypeItem() :
 {
 }
 
-InstanceTypeItem::InstanceTypeItem(JsonView jsonValue) : 
-    m_instanceTypeHasBeenSet(false)
+InstanceTypeItem::InstanceTypeItem(JsonView jsonValue)
+  : InstanceTypeItem()
 {
   *this = jsonValue;
 }

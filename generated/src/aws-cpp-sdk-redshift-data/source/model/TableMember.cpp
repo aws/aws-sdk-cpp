@@ -25,10 +25,8 @@ TableMember::TableMember() :
 {
 }
 
-TableMember::TableMember(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_schemaHasBeenSet(false),
-    m_typeHasBeenSet(false)
+TableMember::TableMember(JsonView jsonValue)
+  : TableMember()
 {
   *this = jsonValue;
 }

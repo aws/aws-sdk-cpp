@@ -22,8 +22,8 @@ CreateParallelDataResult::CreateParallelDataResult() :
 {
 }
 
-CreateParallelDataResult::CreateParallelDataResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(ParallelDataStatus::NOT_SET)
+CreateParallelDataResult::CreateParallelDataResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateParallelDataResult()
 {
   *this = result;
 }

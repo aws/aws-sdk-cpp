@@ -26,11 +26,8 @@ CustomLabel::CustomLabel() :
 {
 }
 
-CustomLabel::CustomLabel(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_confidence(0.0),
-    m_confidenceHasBeenSet(false),
-    m_geometryHasBeenSet(false)
+CustomLabel::CustomLabel(JsonView jsonValue)
+  : CustomLabel()
 {
   *this = jsonValue;
 }

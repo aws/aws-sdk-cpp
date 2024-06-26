@@ -28,13 +28,8 @@ FacetAttributeDefinition::FacetAttributeDefinition() :
 {
 }
 
-FacetAttributeDefinition::FacetAttributeDefinition(JsonView jsonValue) : 
-    m_type(FacetAttributeType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_defaultValueHasBeenSet(false),
-    m_isImmutable(false),
-    m_isImmutableHasBeenSet(false),
-    m_rulesHasBeenSet(false)
+FacetAttributeDefinition::FacetAttributeDefinition(JsonView jsonValue)
+  : FacetAttributeDefinition()
 {
   *this = jsonValue;
 }

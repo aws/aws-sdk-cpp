@@ -24,9 +24,8 @@ ChoiceContent::ChoiceContent() :
 {
 }
 
-ChoiceContent::ChoiceContent(JsonView jsonValue) : 
-    m_displayTextHasBeenSet(false),
-    m_urlHasBeenSet(false)
+ChoiceContent::ChoiceContent(JsonView jsonValue)
+  : ChoiceContent()
 {
   *this = jsonValue;
 }

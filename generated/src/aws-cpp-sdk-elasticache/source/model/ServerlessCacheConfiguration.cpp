@@ -27,10 +27,8 @@ ServerlessCacheConfiguration::ServerlessCacheConfiguration() :
 {
 }
 
-ServerlessCacheConfiguration::ServerlessCacheConfiguration(const XmlNode& xmlNode) : 
-    m_serverlessCacheNameHasBeenSet(false),
-    m_engineHasBeenSet(false),
-    m_majorEngineVersionHasBeenSet(false)
+ServerlessCacheConfiguration::ServerlessCacheConfiguration(const XmlNode& xmlNode)
+  : ServerlessCacheConfiguration()
 {
   *this = xmlNode;
 }

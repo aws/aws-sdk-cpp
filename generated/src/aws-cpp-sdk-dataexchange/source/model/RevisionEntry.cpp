@@ -35,20 +35,8 @@ RevisionEntry::RevisionEntry() :
 {
 }
 
-RevisionEntry::RevisionEntry(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_commentHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_dataSetIdHasBeenSet(false),
-    m_finalized(false),
-    m_finalizedHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_sourceIdHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_revocationCommentHasBeenSet(false),
-    m_revoked(false),
-    m_revokedHasBeenSet(false),
-    m_revokedAtHasBeenSet(false)
+RevisionEntry::RevisionEntry(JsonView jsonValue)
+  : RevisionEntry()
 {
   *this = jsonValue;
 }

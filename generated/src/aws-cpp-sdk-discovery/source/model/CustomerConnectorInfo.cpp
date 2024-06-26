@@ -36,21 +36,8 @@ CustomerConnectorInfo::CustomerConnectorInfo() :
 {
 }
 
-CustomerConnectorInfo::CustomerConnectorInfo(JsonView jsonValue) : 
-    m_activeConnectors(0),
-    m_activeConnectorsHasBeenSet(false),
-    m_healthyConnectors(0),
-    m_healthyConnectorsHasBeenSet(false),
-    m_blackListedConnectors(0),
-    m_blackListedConnectorsHasBeenSet(false),
-    m_shutdownConnectors(0),
-    m_shutdownConnectorsHasBeenSet(false),
-    m_unhealthyConnectors(0),
-    m_unhealthyConnectorsHasBeenSet(false),
-    m_totalConnectors(0),
-    m_totalConnectorsHasBeenSet(false),
-    m_unknownConnectors(0),
-    m_unknownConnectorsHasBeenSet(false)
+CustomerConnectorInfo::CustomerConnectorInfo(JsonView jsonValue)
+  : CustomerConnectorInfo()
 {
   *this = jsonValue;
 }

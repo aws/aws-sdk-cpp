@@ -23,8 +23,8 @@ LoRaWANListDevice::LoRaWANListDevice() :
 {
 }
 
-LoRaWANListDevice::LoRaWANListDevice(JsonView jsonValue) : 
-    m_devEuiHasBeenSet(false)
+LoRaWANListDevice::LoRaWANListDevice(JsonView jsonValue)
+  : LoRaWANListDevice()
 {
   *this = jsonValue;
 }

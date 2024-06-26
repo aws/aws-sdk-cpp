@@ -33,18 +33,8 @@ RealTimeContactAnalysisSegmentTranscript::RealTimeContactAnalysisSegmentTranscri
 {
 }
 
-RealTimeContactAnalysisSegmentTranscript::RealTimeContactAnalysisSegmentTranscript(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_participantIdHasBeenSet(false),
-    m_participantRole(ParticipantRole::NOT_SET),
-    m_participantRoleHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_contentHasBeenSet(false),
-    m_contentTypeHasBeenSet(false),
-    m_timeHasBeenSet(false),
-    m_redactionHasBeenSet(false),
-    m_sentiment(RealTimeContactAnalysisSentimentLabel::NOT_SET),
-    m_sentimentHasBeenSet(false)
+RealTimeContactAnalysisSegmentTranscript::RealTimeContactAnalysisSegmentTranscript(JsonView jsonValue)
+  : RealTimeContactAnalysisSegmentTranscript()
 {
   *this = jsonValue;
 }

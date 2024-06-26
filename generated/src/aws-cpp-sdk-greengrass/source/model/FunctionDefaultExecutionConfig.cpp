@@ -25,10 +25,8 @@ FunctionDefaultExecutionConfig::FunctionDefaultExecutionConfig() :
 {
 }
 
-FunctionDefaultExecutionConfig::FunctionDefaultExecutionConfig(JsonView jsonValue) : 
-    m_isolationMode(FunctionIsolationMode::NOT_SET),
-    m_isolationModeHasBeenSet(false),
-    m_runAsHasBeenSet(false)
+FunctionDefaultExecutionConfig::FunctionDefaultExecutionConfig(JsonView jsonValue)
+  : FunctionDefaultExecutionConfig()
 {
   *this = jsonValue;
 }

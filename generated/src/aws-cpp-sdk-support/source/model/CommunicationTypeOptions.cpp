@@ -25,10 +25,8 @@ CommunicationTypeOptions::CommunicationTypeOptions() :
 {
 }
 
-CommunicationTypeOptions::CommunicationTypeOptions(JsonView jsonValue) : 
-    m_typeHasBeenSet(false),
-    m_supportedHoursHasBeenSet(false),
-    m_datesWithoutSupportHasBeenSet(false)
+CommunicationTypeOptions::CommunicationTypeOptions(JsonView jsonValue)
+  : CommunicationTypeOptions()
 {
   *this = jsonValue;
 }

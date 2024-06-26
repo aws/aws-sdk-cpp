@@ -25,10 +25,8 @@ ReadSetBatchError::ReadSetBatchError() :
 {
 }
 
-ReadSetBatchError::ReadSetBatchError(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+ReadSetBatchError::ReadSetBatchError(JsonView jsonValue)
+  : ReadSetBatchError()
 {
   *this = jsonValue;
 }

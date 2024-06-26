@@ -23,9 +23,8 @@ UpdateDiscovererResult::UpdateDiscovererResult() :
 {
 }
 
-UpdateDiscovererResult::UpdateDiscovererResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_state(DiscovererState::NOT_SET),
-    m_crossAccount(false)
+UpdateDiscovererResult::UpdateDiscovererResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateDiscovererResult()
 {
   *this = result;
 }

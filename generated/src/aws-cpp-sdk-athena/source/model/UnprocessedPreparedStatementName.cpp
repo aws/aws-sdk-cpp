@@ -25,10 +25,8 @@ UnprocessedPreparedStatementName::UnprocessedPreparedStatementName() :
 {
 }
 
-UnprocessedPreparedStatementName::UnprocessedPreparedStatementName(JsonView jsonValue) : 
-    m_statementNameHasBeenSet(false),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
+UnprocessedPreparedStatementName::UnprocessedPreparedStatementName(JsonView jsonValue)
+  : UnprocessedPreparedStatementName()
 {
   *this = jsonValue;
 }

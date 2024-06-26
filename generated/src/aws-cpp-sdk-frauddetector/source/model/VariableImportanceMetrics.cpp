@@ -23,8 +23,8 @@ VariableImportanceMetrics::VariableImportanceMetrics() :
 {
 }
 
-VariableImportanceMetrics::VariableImportanceMetrics(JsonView jsonValue) : 
-    m_logOddsMetricsHasBeenSet(false)
+VariableImportanceMetrics::VariableImportanceMetrics(JsonView jsonValue)
+  : VariableImportanceMetrics()
 {
   *this = jsonValue;
 }

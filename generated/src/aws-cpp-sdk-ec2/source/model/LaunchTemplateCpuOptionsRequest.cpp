@@ -30,13 +30,8 @@ LaunchTemplateCpuOptionsRequest::LaunchTemplateCpuOptionsRequest() :
 {
 }
 
-LaunchTemplateCpuOptionsRequest::LaunchTemplateCpuOptionsRequest(const XmlNode& xmlNode) : 
-    m_coreCount(0),
-    m_coreCountHasBeenSet(false),
-    m_threadsPerCore(0),
-    m_threadsPerCoreHasBeenSet(false),
-    m_amdSevSnp(AmdSevSnpSpecification::NOT_SET),
-    m_amdSevSnpHasBeenSet(false)
+LaunchTemplateCpuOptionsRequest::LaunchTemplateCpuOptionsRequest(const XmlNode& xmlNode)
+  : LaunchTemplateCpuOptionsRequest()
 {
   *this = xmlNode;
 }

@@ -24,9 +24,8 @@ SrtDestinationSettings::SrtDestinationSettings() :
 {
 }
 
-SrtDestinationSettings::SrtDestinationSettings(JsonView jsonValue) : 
-    m_stylePassthrough(SrtStylePassthrough::NOT_SET),
-    m_stylePassthroughHasBeenSet(false)
+SrtDestinationSettings::SrtDestinationSettings(JsonView jsonValue)
+  : SrtDestinationSettings()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ ModifyClusterResult::ModifyClusterResult() :
 {
 }
 
-ModifyClusterResult::ModifyClusterResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_stepConcurrencyLevel(0)
+ModifyClusterResult::ModifyClusterResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ModifyClusterResult()
 {
   *this = result;
 }

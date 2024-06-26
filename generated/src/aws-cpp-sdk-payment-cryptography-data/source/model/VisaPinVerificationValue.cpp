@@ -25,10 +25,8 @@ VisaPinVerificationValue::VisaPinVerificationValue() :
 {
 }
 
-VisaPinVerificationValue::VisaPinVerificationValue(JsonView jsonValue) : 
-    m_encryptedPinBlockHasBeenSet(false),
-    m_pinVerificationKeyIndex(0),
-    m_pinVerificationKeyIndexHasBeenSet(false)
+VisaPinVerificationValue::VisaPinVerificationValue(JsonView jsonValue)
+  : VisaPinVerificationValue()
 {
   *this = jsonValue;
 }

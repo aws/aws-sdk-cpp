@@ -25,10 +25,8 @@ DestinationConfiguration::DestinationConfiguration() :
 {
 }
 
-DestinationConfiguration::DestinationConfiguration(JsonView jsonValue) : 
-    m_cloudWatchLogsHasBeenSet(false),
-    m_firehoseHasBeenSet(false),
-    m_s3HasBeenSet(false)
+DestinationConfiguration::DestinationConfiguration(JsonView jsonValue)
+  : DestinationConfiguration()
 {
   *this = jsonValue;
 }

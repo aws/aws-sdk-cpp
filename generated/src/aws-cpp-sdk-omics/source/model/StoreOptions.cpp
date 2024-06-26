@@ -23,8 +23,8 @@ StoreOptions::StoreOptions() :
 {
 }
 
-StoreOptions::StoreOptions(JsonView jsonValue) : 
-    m_tsvStoreOptionsHasBeenSet(false)
+StoreOptions::StoreOptions(JsonView jsonValue)
+  : StoreOptions()
 {
   *this = jsonValue;
 }

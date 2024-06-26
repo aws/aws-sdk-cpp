@@ -24,9 +24,8 @@ IngestEndpoint::IngestEndpoint() :
 {
 }
 
-IngestEndpoint::IngestEndpoint(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_urlHasBeenSet(false)
+IngestEndpoint::IngestEndpoint(JsonView jsonValue)
+  : IngestEndpoint()
 {
   *this = jsonValue;
 }

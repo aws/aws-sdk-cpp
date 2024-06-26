@@ -28,13 +28,8 @@ SyncJobSummary::SyncJobSummary() :
 {
 }
 
-SyncJobSummary::SyncJobSummary(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_workspaceIdHasBeenSet(false),
-    m_syncSourceHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_creationDateTimeHasBeenSet(false),
-    m_updateDateTimeHasBeenSet(false)
+SyncJobSummary::SyncJobSummary(JsonView jsonValue)
+  : SyncJobSummary()
 {
   *this = jsonValue;
 }

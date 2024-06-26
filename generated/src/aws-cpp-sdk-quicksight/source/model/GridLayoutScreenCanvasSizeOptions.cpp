@@ -25,10 +25,8 @@ GridLayoutScreenCanvasSizeOptions::GridLayoutScreenCanvasSizeOptions() :
 {
 }
 
-GridLayoutScreenCanvasSizeOptions::GridLayoutScreenCanvasSizeOptions(JsonView jsonValue) : 
-    m_resizeOption(ResizeOption::NOT_SET),
-    m_resizeOptionHasBeenSet(false),
-    m_optimizedViewPortWidthHasBeenSet(false)
+GridLayoutScreenCanvasSizeOptions::GridLayoutScreenCanvasSizeOptions(JsonView jsonValue)
+  : GridLayoutScreenCanvasSizeOptions()
 {
   *this = jsonValue;
 }

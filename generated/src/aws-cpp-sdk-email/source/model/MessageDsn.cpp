@@ -27,10 +27,8 @@ MessageDsn::MessageDsn() :
 {
 }
 
-MessageDsn::MessageDsn(const XmlNode& xmlNode) : 
-    m_reportingMtaHasBeenSet(false),
-    m_arrivalDateHasBeenSet(false),
-    m_extensionFieldsHasBeenSet(false)
+MessageDsn::MessageDsn(const XmlNode& xmlNode)
+  : MessageDsn()
 {
   *this = xmlNode;
 }

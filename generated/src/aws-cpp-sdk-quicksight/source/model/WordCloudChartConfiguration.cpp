@@ -27,12 +27,8 @@ WordCloudChartConfiguration::WordCloudChartConfiguration() :
 {
 }
 
-WordCloudChartConfiguration::WordCloudChartConfiguration(JsonView jsonValue) : 
-    m_fieldWellsHasBeenSet(false),
-    m_sortConfigurationHasBeenSet(false),
-    m_categoryLabelOptionsHasBeenSet(false),
-    m_wordCloudOptionsHasBeenSet(false),
-    m_interactionsHasBeenSet(false)
+WordCloudChartConfiguration::WordCloudChartConfiguration(JsonView jsonValue)
+  : WordCloudChartConfiguration()
 {
   *this = jsonValue;
 }

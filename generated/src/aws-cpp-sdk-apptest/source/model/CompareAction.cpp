@@ -24,9 +24,8 @@ CompareAction::CompareAction() :
 {
 }
 
-CompareAction::CompareAction(JsonView jsonValue) : 
-    m_inputHasBeenSet(false),
-    m_outputHasBeenSet(false)
+CompareAction::CompareAction(JsonView jsonValue)
+  : CompareAction()
 {
   *this = jsonValue;
 }

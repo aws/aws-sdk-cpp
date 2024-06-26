@@ -27,12 +27,8 @@ BatchPermissionsRequestEntry::BatchPermissionsRequestEntry() :
 {
 }
 
-BatchPermissionsRequestEntry::BatchPermissionsRequestEntry(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_principalHasBeenSet(false),
-    m_resourceHasBeenSet(false),
-    m_permissionsHasBeenSet(false),
-    m_permissionsWithGrantOptionHasBeenSet(false)
+BatchPermissionsRequestEntry::BatchPermissionsRequestEntry(JsonView jsonValue)
+  : BatchPermissionsRequestEntry()
 {
   *this = jsonValue;
 }

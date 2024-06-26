@@ -24,9 +24,8 @@ RecordTag::RecordTag() :
 {
 }
 
-RecordTag::RecordTag(JsonView jsonValue) : 
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false)
+RecordTag::RecordTag(JsonView jsonValue)
+  : RecordTag()
 {
   *this = jsonValue;
 }

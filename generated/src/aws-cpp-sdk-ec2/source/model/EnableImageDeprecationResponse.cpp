@@ -22,8 +22,8 @@ EnableImageDeprecationResponse::EnableImageDeprecationResponse() :
 {
 }
 
-EnableImageDeprecationResponse::EnableImageDeprecationResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_return(false)
+EnableImageDeprecationResponse::EnableImageDeprecationResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : EnableImageDeprecationResponse()
 {
   *this = result;
 }

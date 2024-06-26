@@ -24,9 +24,8 @@ StartSegmentDetectionFilters::StartSegmentDetectionFilters() :
 {
 }
 
-StartSegmentDetectionFilters::StartSegmentDetectionFilters(JsonView jsonValue) : 
-    m_technicalCueFilterHasBeenSet(false),
-    m_shotFilterHasBeenSet(false)
+StartSegmentDetectionFilters::StartSegmentDetectionFilters(JsonView jsonValue)
+  : StartSegmentDetectionFilters()
 {
   *this = jsonValue;
 }

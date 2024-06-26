@@ -33,18 +33,8 @@ ClusterOperationV2::ClusterOperationV2() :
 {
 }
 
-ClusterOperationV2::ClusterOperationV2(JsonView jsonValue) : 
-    m_clusterArnHasBeenSet(false),
-    m_clusterType(ClusterType::NOT_SET),
-    m_clusterTypeHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_errorInfoHasBeenSet(false),
-    m_operationArnHasBeenSet(false),
-    m_operationStateHasBeenSet(false),
-    m_operationTypeHasBeenSet(false),
-    m_provisionedHasBeenSet(false),
-    m_serverlessHasBeenSet(false)
+ClusterOperationV2::ClusterOperationV2(JsonView jsonValue)
+  : ClusterOperationV2()
 {
   *this = jsonValue;
 }

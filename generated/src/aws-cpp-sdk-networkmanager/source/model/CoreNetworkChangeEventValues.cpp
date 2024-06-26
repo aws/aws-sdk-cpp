@@ -27,12 +27,8 @@ CoreNetworkChangeEventValues::CoreNetworkChangeEventValues() :
 {
 }
 
-CoreNetworkChangeEventValues::CoreNetworkChangeEventValues(JsonView jsonValue) : 
-    m_edgeLocationHasBeenSet(false),
-    m_segmentNameHasBeenSet(false),
-    m_networkFunctionGroupNameHasBeenSet(false),
-    m_attachmentIdHasBeenSet(false),
-    m_cidrHasBeenSet(false)
+CoreNetworkChangeEventValues::CoreNetworkChangeEventValues(JsonView jsonValue)
+  : CoreNetworkChangeEventValues()
 {
   *this = jsonValue;
 }

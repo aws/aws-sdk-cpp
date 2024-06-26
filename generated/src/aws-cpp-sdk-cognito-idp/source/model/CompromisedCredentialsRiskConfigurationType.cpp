@@ -24,9 +24,8 @@ CompromisedCredentialsRiskConfigurationType::CompromisedCredentialsRiskConfigura
 {
 }
 
-CompromisedCredentialsRiskConfigurationType::CompromisedCredentialsRiskConfigurationType(JsonView jsonValue) : 
-    m_eventFilterHasBeenSet(false),
-    m_actionsHasBeenSet(false)
+CompromisedCredentialsRiskConfigurationType::CompromisedCredentialsRiskConfigurationType(JsonView jsonValue)
+  : CompromisedCredentialsRiskConfigurationType()
 {
   *this = jsonValue;
 }

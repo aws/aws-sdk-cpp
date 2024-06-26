@@ -23,8 +23,8 @@ UtteranceAudioInputSpecification::UtteranceAudioInputSpecification() :
 {
 }
 
-UtteranceAudioInputSpecification::UtteranceAudioInputSpecification(JsonView jsonValue) : 
-    m_audioFileS3LocationHasBeenSet(false)
+UtteranceAudioInputSpecification::UtteranceAudioInputSpecification(JsonView jsonValue)
+  : UtteranceAudioInputSpecification()
 {
   *this = jsonValue;
 }

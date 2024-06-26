@@ -23,8 +23,8 @@ DeletedUniqueId::DeletedUniqueId() :
 {
 }
 
-DeletedUniqueId::DeletedUniqueId(JsonView jsonValue) : 
-    m_uniqueIdHasBeenSet(false)
+DeletedUniqueId::DeletedUniqueId(JsonView jsonValue)
+  : DeletedUniqueId()
 {
   *this = jsonValue;
 }

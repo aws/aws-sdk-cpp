@@ -23,8 +23,8 @@ FeaturedDocument::FeaturedDocument() :
 {
 }
 
-FeaturedDocument::FeaturedDocument(JsonView jsonValue) : 
-    m_idHasBeenSet(false)
+FeaturedDocument::FeaturedDocument(JsonView jsonValue)
+  : FeaturedDocument()
 {
   *this = jsonValue;
 }

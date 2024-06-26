@@ -25,10 +25,8 @@ FirewallPolicyStatelessRuleGroupReferencesDetails::FirewallPolicyStatelessRuleGr
 {
 }
 
-FirewallPolicyStatelessRuleGroupReferencesDetails::FirewallPolicyStatelessRuleGroupReferencesDetails(JsonView jsonValue) : 
-    m_priority(0),
-    m_priorityHasBeenSet(false),
-    m_resourceArnHasBeenSet(false)
+FirewallPolicyStatelessRuleGroupReferencesDetails::FirewallPolicyStatelessRuleGroupReferencesDetails(JsonView jsonValue)
+  : FirewallPolicyStatelessRuleGroupReferencesDetails()
 {
   *this = jsonValue;
 }

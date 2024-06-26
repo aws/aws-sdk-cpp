@@ -23,8 +23,8 @@ MapRunStartedEventDetails::MapRunStartedEventDetails() :
 {
 }
 
-MapRunStartedEventDetails::MapRunStartedEventDetails(JsonView jsonValue) : 
-    m_mapRunArnHasBeenSet(false)
+MapRunStartedEventDetails::MapRunStartedEventDetails(JsonView jsonValue)
+  : MapRunStartedEventDetails()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ AwsAthenaWorkGroupDetails::AwsAthenaWorkGroupDetails() :
 {
 }
 
-AwsAthenaWorkGroupDetails::AwsAthenaWorkGroupDetails(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_configurationHasBeenSet(false)
+AwsAthenaWorkGroupDetails::AwsAthenaWorkGroupDetails(JsonView jsonValue)
+  : AwsAthenaWorkGroupDetails()
 {
   *this = jsonValue;
 }

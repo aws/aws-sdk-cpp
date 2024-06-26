@@ -24,10 +24,8 @@ GetSigningPlatformResult::GetSigningPlatformResult() :
 {
 }
 
-GetSigningPlatformResult::GetSigningPlatformResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_category(Category::NOT_SET),
-    m_maxSizeInMB(0),
-    m_revocationSupported(false)
+GetSigningPlatformResult::GetSigningPlatformResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetSigningPlatformResult()
 {
   *this = result;
 }

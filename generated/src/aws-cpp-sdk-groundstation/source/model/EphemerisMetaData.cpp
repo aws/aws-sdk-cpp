@@ -27,12 +27,8 @@ EphemerisMetaData::EphemerisMetaData() :
 {
 }
 
-EphemerisMetaData::EphemerisMetaData(JsonView jsonValue) : 
-    m_ephemerisIdHasBeenSet(false),
-    m_epochHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_source(EphemerisSource::NOT_SET),
-    m_sourceHasBeenSet(false)
+EphemerisMetaData::EphemerisMetaData(JsonView jsonValue)
+  : EphemerisMetaData()
 {
   *this = jsonValue;
 }

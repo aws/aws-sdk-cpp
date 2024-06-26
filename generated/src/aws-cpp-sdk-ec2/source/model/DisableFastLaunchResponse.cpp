@@ -24,10 +24,8 @@ DisableFastLaunchResponse::DisableFastLaunchResponse() :
 {
 }
 
-DisableFastLaunchResponse::DisableFastLaunchResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_resourceType(FastLaunchResourceType::NOT_SET),
-    m_maxParallelLaunches(0),
-    m_state(FastLaunchStateCode::NOT_SET)
+DisableFastLaunchResponse::DisableFastLaunchResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : DisableFastLaunchResponse()
 {
   *this = result;
 }

@@ -24,9 +24,8 @@ TableFieldLinkContentConfiguration::TableFieldLinkContentConfiguration() :
 {
 }
 
-TableFieldLinkContentConfiguration::TableFieldLinkContentConfiguration(JsonView jsonValue) : 
-    m_customTextContentHasBeenSet(false),
-    m_customIconContentHasBeenSet(false)
+TableFieldLinkContentConfiguration::TableFieldLinkContentConfiguration(JsonView jsonValue)
+  : TableFieldLinkContentConfiguration()
 {
   *this = jsonValue;
 }

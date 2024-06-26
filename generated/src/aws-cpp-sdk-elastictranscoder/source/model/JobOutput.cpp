@@ -47,32 +47,8 @@ JobOutput::JobOutput() :
 {
 }
 
-JobOutput::JobOutput(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_keyHasBeenSet(false),
-    m_thumbnailPatternHasBeenSet(false),
-    m_thumbnailEncryptionHasBeenSet(false),
-    m_rotateHasBeenSet(false),
-    m_presetIdHasBeenSet(false),
-    m_segmentDurationHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_statusDetailHasBeenSet(false),
-    m_duration(0),
-    m_durationHasBeenSet(false),
-    m_width(0),
-    m_widthHasBeenSet(false),
-    m_height(0),
-    m_heightHasBeenSet(false),
-    m_frameRateHasBeenSet(false),
-    m_fileSize(0),
-    m_fileSizeHasBeenSet(false),
-    m_durationMillis(0),
-    m_durationMillisHasBeenSet(false),
-    m_watermarksHasBeenSet(false),
-    m_albumArtHasBeenSet(false),
-    m_captionsHasBeenSet(false),
-    m_encryptionHasBeenSet(false),
-    m_appliedColorSpaceConversionHasBeenSet(false)
+JobOutput::JobOutput(JsonView jsonValue)
+  : JobOutput()
 {
   *this = jsonValue;
 }

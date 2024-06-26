@@ -23,8 +23,8 @@ InputDeviceSettings::InputDeviceSettings() :
 {
 }
 
-InputDeviceSettings::InputDeviceSettings(JsonView jsonValue) : 
-    m_idHasBeenSet(false)
+InputDeviceSettings::InputDeviceSettings(JsonView jsonValue)
+  : InputDeviceSettings()
 {
   *this = jsonValue;
 }

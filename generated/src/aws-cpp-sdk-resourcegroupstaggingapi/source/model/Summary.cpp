@@ -30,15 +30,8 @@ Summary::Summary() :
 {
 }
 
-Summary::Summary(JsonView jsonValue) : 
-    m_lastUpdatedHasBeenSet(false),
-    m_targetIdHasBeenSet(false),
-    m_targetIdType(TargetIdType::NOT_SET),
-    m_targetIdTypeHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
-    m_nonCompliantResources(0),
-    m_nonCompliantResourcesHasBeenSet(false)
+Summary::Summary(JsonView jsonValue)
+  : Summary()
 {
   *this = jsonValue;
 }

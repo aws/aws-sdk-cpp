@@ -24,9 +24,8 @@ Import::Import() :
 {
 }
 
-Import::Import(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_revisionHasBeenSet(false)
+Import::Import(JsonView jsonValue)
+  : Import()
 {
   *this = jsonValue;
 }

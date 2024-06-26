@@ -24,9 +24,8 @@ Sasl::Sasl() :
 {
 }
 
-Sasl::Sasl(JsonView jsonValue) : 
-    m_scramHasBeenSet(false),
-    m_iamHasBeenSet(false)
+Sasl::Sasl(JsonView jsonValue)
+  : Sasl()
 {
   *this = jsonValue;
 }

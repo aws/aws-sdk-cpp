@@ -26,9 +26,8 @@ AsnAuthorizationContext::AsnAuthorizationContext() :
 {
 }
 
-AsnAuthorizationContext::AsnAuthorizationContext(const XmlNode& xmlNode) : 
-    m_messageHasBeenSet(false),
-    m_signatureHasBeenSet(false)
+AsnAuthorizationContext::AsnAuthorizationContext(const XmlNode& xmlNode)
+  : AsnAuthorizationContext()
 {
   *this = xmlNode;
 }

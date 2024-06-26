@@ -24,9 +24,8 @@ EksContainerEnvironmentVariable::EksContainerEnvironmentVariable() :
 {
 }
 
-EksContainerEnvironmentVariable::EksContainerEnvironmentVariable(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
+EksContainerEnvironmentVariable::EksContainerEnvironmentVariable(JsonView jsonValue)
+  : EksContainerEnvironmentVariable()
 {
   *this = jsonValue;
 }

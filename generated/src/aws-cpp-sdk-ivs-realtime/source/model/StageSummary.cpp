@@ -26,11 +26,8 @@ StageSummary::StageSummary() :
 {
 }
 
-StageSummary::StageSummary(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_activeSessionIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+StageSummary::StageSummary(JsonView jsonValue)
+  : StageSummary()
 {
   *this = jsonValue;
 }

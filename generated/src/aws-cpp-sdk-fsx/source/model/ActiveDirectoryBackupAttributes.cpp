@@ -25,10 +25,8 @@ ActiveDirectoryBackupAttributes::ActiveDirectoryBackupAttributes() :
 {
 }
 
-ActiveDirectoryBackupAttributes::ActiveDirectoryBackupAttributes(JsonView jsonValue) : 
-    m_domainNameHasBeenSet(false),
-    m_activeDirectoryIdHasBeenSet(false),
-    m_resourceARNHasBeenSet(false)
+ActiveDirectoryBackupAttributes::ActiveDirectoryBackupAttributes(JsonView jsonValue)
+  : ActiveDirectoryBackupAttributes()
 {
   *this = jsonValue;
 }

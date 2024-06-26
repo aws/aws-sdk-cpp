@@ -28,13 +28,8 @@ PerformanceInsightsMetricsDetail::PerformanceInsightsMetricsDetail() :
 {
 }
 
-PerformanceInsightsMetricsDetail::PerformanceInsightsMetricsDetail(JsonView jsonValue) : 
-    m_metricDisplayNameHasBeenSet(false),
-    m_unitHasBeenSet(false),
-    m_metricQueryHasBeenSet(false),
-    m_referenceDataHasBeenSet(false),
-    m_statsAtAnomalyHasBeenSet(false),
-    m_statsAtBaselineHasBeenSet(false)
+PerformanceInsightsMetricsDetail::PerformanceInsightsMetricsDetail(JsonView jsonValue)
+  : PerformanceInsightsMetricsDetail()
 {
   *this = jsonValue;
 }

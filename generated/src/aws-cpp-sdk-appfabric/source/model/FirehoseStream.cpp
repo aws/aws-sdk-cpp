@@ -23,8 +23,8 @@ FirehoseStream::FirehoseStream() :
 {
 }
 
-FirehoseStream::FirehoseStream(JsonView jsonValue) : 
-    m_streamNameHasBeenSet(false)
+FirehoseStream::FirehoseStream(JsonView jsonValue)
+  : FirehoseStream()
 {
   *this = jsonValue;
 }

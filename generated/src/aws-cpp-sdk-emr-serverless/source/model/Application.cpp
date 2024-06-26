@@ -45,30 +45,8 @@ Application::Application() :
 {
 }
 
-Application::Application(JsonView jsonValue) : 
-    m_applicationIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_releaseLabelHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_state(ApplicationState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_stateDetailsHasBeenSet(false),
-    m_initialCapacityHasBeenSet(false),
-    m_maximumCapacityHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_autoStartConfigurationHasBeenSet(false),
-    m_autoStopConfigurationHasBeenSet(false),
-    m_networkConfigurationHasBeenSet(false),
-    m_architecture(Architecture::NOT_SET),
-    m_architectureHasBeenSet(false),
-    m_imageConfigurationHasBeenSet(false),
-    m_workerTypeSpecificationsHasBeenSet(false),
-    m_runtimeConfigurationHasBeenSet(false),
-    m_monitoringConfigurationHasBeenSet(false),
-    m_interactiveConfigurationHasBeenSet(false)
+Application::Application(JsonView jsonValue)
+  : Application()
 {
   *this = jsonValue;
 }

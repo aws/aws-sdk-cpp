@@ -40,25 +40,8 @@ OntapFileSystemConfiguration::OntapFileSystemConfiguration() :
 {
 }
 
-OntapFileSystemConfiguration::OntapFileSystemConfiguration(JsonView jsonValue) : 
-    m_automaticBackupRetentionDays(0),
-    m_automaticBackupRetentionDaysHasBeenSet(false),
-    m_dailyAutomaticBackupStartTimeHasBeenSet(false),
-    m_deploymentType(OntapDeploymentType::NOT_SET),
-    m_deploymentTypeHasBeenSet(false),
-    m_endpointIpAddressRangeHasBeenSet(false),
-    m_endpointsHasBeenSet(false),
-    m_diskIopsConfigurationHasBeenSet(false),
-    m_preferredSubnetIdHasBeenSet(false),
-    m_routeTableIdsHasBeenSet(false),
-    m_throughputCapacity(0),
-    m_throughputCapacityHasBeenSet(false),
-    m_weeklyMaintenanceStartTimeHasBeenSet(false),
-    m_fsxAdminPasswordHasBeenSet(false),
-    m_hAPairs(0),
-    m_hAPairsHasBeenSet(false),
-    m_throughputCapacityPerHAPair(0),
-    m_throughputCapacityPerHAPairHasBeenSet(false)
+OntapFileSystemConfiguration::OntapFileSystemConfiguration(JsonView jsonValue)
+  : OntapFileSystemConfiguration()
 {
   *this = jsonValue;
 }

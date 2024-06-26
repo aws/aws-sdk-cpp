@@ -26,11 +26,8 @@ EncryptionInTransit::EncryptionInTransit() :
 {
 }
 
-EncryptionInTransit::EncryptionInTransit(JsonView jsonValue) : 
-    m_clientBroker(ClientBroker::NOT_SET),
-    m_clientBrokerHasBeenSet(false),
-    m_inCluster(false),
-    m_inClusterHasBeenSet(false)
+EncryptionInTransit::EncryptionInTransit(JsonView jsonValue)
+  : EncryptionInTransit()
 {
   *this = jsonValue;
 }

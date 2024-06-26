@@ -27,12 +27,8 @@ GraphQLRenderConfig::GraphQLRenderConfig() :
 {
 }
 
-GraphQLRenderConfig::GraphQLRenderConfig(JsonView jsonValue) : 
-    m_typesFilePathHasBeenSet(false),
-    m_queriesFilePathHasBeenSet(false),
-    m_mutationsFilePathHasBeenSet(false),
-    m_subscriptionsFilePathHasBeenSet(false),
-    m_fragmentsFilePathHasBeenSet(false)
+GraphQLRenderConfig::GraphQLRenderConfig(JsonView jsonValue)
+  : GraphQLRenderConfig()
 {
   *this = jsonValue;
 }

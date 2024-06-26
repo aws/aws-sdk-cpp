@@ -25,8 +25,8 @@ S3KeyFilter::S3KeyFilter() :
 {
 }
 
-S3KeyFilter::S3KeyFilter(const XmlNode& xmlNode) : 
-    m_filterRulesHasBeenSet(false)
+S3KeyFilter::S3KeyFilter(const XmlNode& xmlNode)
+  : S3KeyFilter()
 {
   *this = xmlNode;
 }

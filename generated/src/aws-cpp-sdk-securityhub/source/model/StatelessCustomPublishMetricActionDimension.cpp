@@ -23,8 +23,8 @@ StatelessCustomPublishMetricActionDimension::StatelessCustomPublishMetricActionD
 {
 }
 
-StatelessCustomPublishMetricActionDimension::StatelessCustomPublishMetricActionDimension(JsonView jsonValue) : 
-    m_valueHasBeenSet(false)
+StatelessCustomPublishMetricActionDimension::StatelessCustomPublishMetricActionDimension(JsonView jsonValue)
+  : StatelessCustomPublishMetricActionDimension()
 {
   *this = jsonValue;
 }

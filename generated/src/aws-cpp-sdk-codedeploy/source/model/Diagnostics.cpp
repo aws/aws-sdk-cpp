@@ -27,12 +27,8 @@ Diagnostics::Diagnostics() :
 {
 }
 
-Diagnostics::Diagnostics(JsonView jsonValue) : 
-    m_errorCode(LifecycleErrorCode::NOT_SET),
-    m_errorCodeHasBeenSet(false),
-    m_scriptNameHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_logTailHasBeenSet(false)
+Diagnostics::Diagnostics(JsonView jsonValue)
+  : Diagnostics()
 {
   *this = jsonValue;
 }

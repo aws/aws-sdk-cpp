@@ -24,9 +24,8 @@ DataflowEndpointConfig::DataflowEndpointConfig() :
 {
 }
 
-DataflowEndpointConfig::DataflowEndpointConfig(JsonView jsonValue) : 
-    m_dataflowEndpointNameHasBeenSet(false),
-    m_dataflowEndpointRegionHasBeenSet(false)
+DataflowEndpointConfig::DataflowEndpointConfig(JsonView jsonValue)
+  : DataflowEndpointConfig()
 {
   *this = jsonValue;
 }

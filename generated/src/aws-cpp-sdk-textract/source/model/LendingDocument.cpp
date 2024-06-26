@@ -24,9 +24,8 @@ LendingDocument::LendingDocument() :
 {
 }
 
-LendingDocument::LendingDocument(JsonView jsonValue) : 
-    m_lendingFieldsHasBeenSet(false),
-    m_signatureDetectionsHasBeenSet(false)
+LendingDocument::LendingDocument(JsonView jsonValue)
+  : LendingDocument()
 {
   *this = jsonValue;
 }

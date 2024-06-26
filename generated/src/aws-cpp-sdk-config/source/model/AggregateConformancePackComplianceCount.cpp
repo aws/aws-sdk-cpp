@@ -26,11 +26,8 @@ AggregateConformancePackComplianceCount::AggregateConformancePackComplianceCount
 {
 }
 
-AggregateConformancePackComplianceCount::AggregateConformancePackComplianceCount(JsonView jsonValue) : 
-    m_compliantConformancePackCount(0),
-    m_compliantConformancePackCountHasBeenSet(false),
-    m_nonCompliantConformancePackCount(0),
-    m_nonCompliantConformancePackCountHasBeenSet(false)
+AggregateConformancePackComplianceCount::AggregateConformancePackComplianceCount(JsonView jsonValue)
+  : AggregateConformancePackComplianceCount()
 {
   *this = jsonValue;
 }

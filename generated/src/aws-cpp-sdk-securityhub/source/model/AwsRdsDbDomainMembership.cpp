@@ -26,11 +26,8 @@ AwsRdsDbDomainMembership::AwsRdsDbDomainMembership() :
 {
 }
 
-AwsRdsDbDomainMembership::AwsRdsDbDomainMembership(JsonView jsonValue) : 
-    m_domainHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_fqdnHasBeenSet(false),
-    m_iamRoleNameHasBeenSet(false)
+AwsRdsDbDomainMembership::AwsRdsDbDomainMembership(JsonView jsonValue)
+  : AwsRdsDbDomainMembership()
 {
   *this = jsonValue;
 }

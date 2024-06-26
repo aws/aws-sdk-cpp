@@ -25,10 +25,8 @@ AudienceQualityMetrics::AudienceQualityMetrics() :
 {
 }
 
-AudienceQualityMetrics::AudienceQualityMetrics(JsonView jsonValue) : 
-    m_recallMetric(0.0),
-    m_recallMetricHasBeenSet(false),
-    m_relevanceMetricsHasBeenSet(false)
+AudienceQualityMetrics::AudienceQualityMetrics(JsonView jsonValue)
+  : AudienceQualityMetrics()
 {
   *this = jsonValue;
 }

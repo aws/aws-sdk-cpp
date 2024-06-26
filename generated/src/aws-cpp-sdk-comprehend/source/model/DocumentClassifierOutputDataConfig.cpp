@@ -25,10 +25,8 @@ DocumentClassifierOutputDataConfig::DocumentClassifierOutputDataConfig() :
 {
 }
 
-DocumentClassifierOutputDataConfig::DocumentClassifierOutputDataConfig(JsonView jsonValue) : 
-    m_s3UriHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_flywheelStatsS3PrefixHasBeenSet(false)
+DocumentClassifierOutputDataConfig::DocumentClassifierOutputDataConfig(JsonView jsonValue)
+  : DocumentClassifierOutputDataConfig()
 {
   *this = jsonValue;
 }

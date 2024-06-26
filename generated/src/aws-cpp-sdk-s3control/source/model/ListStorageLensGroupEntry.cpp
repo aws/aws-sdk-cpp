@@ -27,10 +27,8 @@ ListStorageLensGroupEntry::ListStorageLensGroupEntry() :
 {
 }
 
-ListStorageLensGroupEntry::ListStorageLensGroupEntry(const XmlNode& xmlNode) : 
-    m_nameHasBeenSet(false),
-    m_storageLensGroupArnHasBeenSet(false),
-    m_homeRegionHasBeenSet(false)
+ListStorageLensGroupEntry::ListStorageLensGroupEntry(const XmlNode& xmlNode)
+  : ListStorageLensGroupEntry()
 {
   *this = xmlNode;
 }

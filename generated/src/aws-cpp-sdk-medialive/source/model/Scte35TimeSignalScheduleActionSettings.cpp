@@ -23,8 +23,8 @@ Scte35TimeSignalScheduleActionSettings::Scte35TimeSignalScheduleActionSettings()
 {
 }
 
-Scte35TimeSignalScheduleActionSettings::Scte35TimeSignalScheduleActionSettings(JsonView jsonValue) : 
-    m_scte35DescriptorsHasBeenSet(false)
+Scte35TimeSignalScheduleActionSettings::Scte35TimeSignalScheduleActionSettings(JsonView jsonValue)
+  : Scte35TimeSignalScheduleActionSettings()
 {
   *this = jsonValue;
 }

@@ -30,15 +30,8 @@ RDSDBInstanceRecommendationOption::RDSDBInstanceRecommendationOption() :
 {
 }
 
-RDSDBInstanceRecommendationOption::RDSDBInstanceRecommendationOption(JsonView jsonValue) : 
-    m_dbInstanceClassHasBeenSet(false),
-    m_projectedUtilizationMetricsHasBeenSet(false),
-    m_performanceRisk(0.0),
-    m_performanceRiskHasBeenSet(false),
-    m_rank(0),
-    m_rankHasBeenSet(false),
-    m_savingsOpportunityHasBeenSet(false),
-    m_savingsOpportunityAfterDiscountsHasBeenSet(false)
+RDSDBInstanceRecommendationOption::RDSDBInstanceRecommendationOption(JsonView jsonValue)
+  : RDSDBInstanceRecommendationOption()
 {
   *this = jsonValue;
 }

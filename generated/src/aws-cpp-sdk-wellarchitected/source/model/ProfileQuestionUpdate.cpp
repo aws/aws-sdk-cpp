@@ -24,9 +24,8 @@ ProfileQuestionUpdate::ProfileQuestionUpdate() :
 {
 }
 
-ProfileQuestionUpdate::ProfileQuestionUpdate(JsonView jsonValue) : 
-    m_questionIdHasBeenSet(false),
-    m_selectedChoiceIdsHasBeenSet(false)
+ProfileQuestionUpdate::ProfileQuestionUpdate(JsonView jsonValue)
+  : ProfileQuestionUpdate()
 {
   *this = jsonValue;
 }

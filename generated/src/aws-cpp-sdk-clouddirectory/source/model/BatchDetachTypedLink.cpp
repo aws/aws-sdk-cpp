@@ -23,8 +23,8 @@ BatchDetachTypedLink::BatchDetachTypedLink() :
 {
 }
 
-BatchDetachTypedLink::BatchDetachTypedLink(JsonView jsonValue) : 
-    m_typedLinkSpecifierHasBeenSet(false)
+BatchDetachTypedLink::BatchDetachTypedLink(JsonView jsonValue)
+  : BatchDetachTypedLink()
 {
   *this = jsonValue;
 }

@@ -35,18 +35,8 @@ ManagedActionHistoryItem::ManagedActionHistoryItem() :
 {
 }
 
-ManagedActionHistoryItem::ManagedActionHistoryItem(const XmlNode& xmlNode) : 
-    m_actionIdHasBeenSet(false),
-    m_actionType(ActionType::NOT_SET),
-    m_actionTypeHasBeenSet(false),
-    m_actionDescriptionHasBeenSet(false),
-    m_failureType(FailureType::NOT_SET),
-    m_failureTypeHasBeenSet(false),
-    m_status(ActionHistoryStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_failureDescriptionHasBeenSet(false),
-    m_executedTimeHasBeenSet(false),
-    m_finishedTimeHasBeenSet(false)
+ManagedActionHistoryItem::ManagedActionHistoryItem(const XmlNode& xmlNode)
+  : ManagedActionHistoryItem()
 {
   *this = xmlNode;
 }

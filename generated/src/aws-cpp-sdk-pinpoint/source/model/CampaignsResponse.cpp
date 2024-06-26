@@ -24,9 +24,8 @@ CampaignsResponse::CampaignsResponse() :
 {
 }
 
-CampaignsResponse::CampaignsResponse(JsonView jsonValue) : 
-    m_itemHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
+CampaignsResponse::CampaignsResponse(JsonView jsonValue)
+  : CampaignsResponse()
 {
   *this = jsonValue;
 }

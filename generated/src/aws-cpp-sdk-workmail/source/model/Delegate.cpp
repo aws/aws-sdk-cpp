@@ -25,10 +25,8 @@ Delegate::Delegate() :
 {
 }
 
-Delegate::Delegate(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_type(MemberType::NOT_SET),
-    m_typeHasBeenSet(false)
+Delegate::Delegate(JsonView jsonValue)
+  : Delegate()
 {
   *this = jsonValue;
 }

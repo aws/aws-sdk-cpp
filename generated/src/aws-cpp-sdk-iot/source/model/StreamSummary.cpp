@@ -27,12 +27,8 @@ StreamSummary::StreamSummary() :
 {
 }
 
-StreamSummary::StreamSummary(JsonView jsonValue) : 
-    m_streamIdHasBeenSet(false),
-    m_streamArnHasBeenSet(false),
-    m_streamVersion(0),
-    m_streamVersionHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+StreamSummary::StreamSummary(JsonView jsonValue)
+  : StreamSummary()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ TeletextSourceSettings::TeletextSourceSettings() :
 {
 }
 
-TeletextSourceSettings::TeletextSourceSettings(JsonView jsonValue) : 
-    m_outputRectangleHasBeenSet(false),
-    m_pageNumberHasBeenSet(false)
+TeletextSourceSettings::TeletextSourceSettings(JsonView jsonValue)
+  : TeletextSourceSettings()
 {
   *this = jsonValue;
 }

@@ -27,10 +27,8 @@ EventInformation::EventInformation() :
 {
 }
 
-EventInformation::EventInformation(const XmlNode& xmlNode) : 
-    m_eventDescriptionHasBeenSet(false),
-    m_eventSubTypeHasBeenSet(false),
-    m_instanceIdHasBeenSet(false)
+EventInformation::EventInformation(const XmlNode& xmlNode)
+  : EventInformation()
 {
   *this = xmlNode;
 }

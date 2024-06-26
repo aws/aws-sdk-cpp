@@ -23,8 +23,8 @@ IAMRoleIdentity::IAMRoleIdentity() :
 {
 }
 
-IAMRoleIdentity::IAMRoleIdentity(JsonView jsonValue) : 
-    m_arnHasBeenSet(false)
+IAMRoleIdentity::IAMRoleIdentity(JsonView jsonValue)
+  : IAMRoleIdentity()
 {
   *this = jsonValue;
 }

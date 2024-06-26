@@ -24,9 +24,8 @@ BatchDeleteDevicePositionHistoryError::BatchDeleteDevicePositionHistoryError() :
 {
 }
 
-BatchDeleteDevicePositionHistoryError::BatchDeleteDevicePositionHistoryError(JsonView jsonValue) : 
-    m_deviceIdHasBeenSet(false),
-    m_errorHasBeenSet(false)
+BatchDeleteDevicePositionHistoryError::BatchDeleteDevicePositionHistoryError(JsonView jsonValue)
+  : BatchDeleteDevicePositionHistoryError()
 {
   *this = jsonValue;
 }

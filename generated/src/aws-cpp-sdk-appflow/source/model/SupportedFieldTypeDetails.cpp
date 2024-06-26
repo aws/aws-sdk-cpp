@@ -23,8 +23,8 @@ SupportedFieldTypeDetails::SupportedFieldTypeDetails() :
 {
 }
 
-SupportedFieldTypeDetails::SupportedFieldTypeDetails(JsonView jsonValue) : 
-    m_v1HasBeenSet(false)
+SupportedFieldTypeDetails::SupportedFieldTypeDetails(JsonView jsonValue)
+  : SupportedFieldTypeDetails()
 {
   *this = jsonValue;
 }

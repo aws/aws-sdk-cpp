@@ -27,12 +27,8 @@ SelfGrantStatusDetail::SelfGrantStatusDetail() :
 {
 }
 
-SelfGrantStatusDetail::SelfGrantStatusDetail(JsonView jsonValue) : 
-    m_databaseNameHasBeenSet(false),
-    m_failureCauseHasBeenSet(false),
-    m_schemaNameHasBeenSet(false),
-    m_status(SelfGrantStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+SelfGrantStatusDetail::SelfGrantStatusDetail(JsonView jsonValue)
+  : SelfGrantStatusDetail()
 {
   *this = jsonValue;
 }

@@ -33,18 +33,8 @@ DataProductSummary::DataProductSummary() :
 {
 }
 
-DataProductSummary::DataProductSummary(JsonView jsonValue) : 
-    m_createdAtHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_dataProductItemsHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_domainIdHasBeenSet(false),
-    m_glossaryTermsHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_owningProjectIdHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_updatedByHasBeenSet(false)
+DataProductSummary::DataProductSummary(JsonView jsonValue)
+  : DataProductSummary()
 {
   *this = jsonValue;
 }

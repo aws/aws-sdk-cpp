@@ -31,16 +31,8 @@ CoreNetworkChangeEvent::CoreNetworkChangeEvent() :
 {
 }
 
-CoreNetworkChangeEvent::CoreNetworkChangeEvent(JsonView jsonValue) : 
-    m_type(ChangeType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_action(ChangeAction::NOT_SET),
-    m_actionHasBeenSet(false),
-    m_identifierPathHasBeenSet(false),
-    m_eventTimeHasBeenSet(false),
-    m_status(ChangeStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+CoreNetworkChangeEvent::CoreNetworkChangeEvent(JsonView jsonValue)
+  : CoreNetworkChangeEvent()
 {
   *this = jsonValue;
 }

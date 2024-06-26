@@ -28,13 +28,8 @@ TestGridSessionAction::TestGridSessionAction() :
 {
 }
 
-TestGridSessionAction::TestGridSessionAction(JsonView jsonValue) : 
-    m_actionHasBeenSet(false),
-    m_startedHasBeenSet(false),
-    m_duration(0),
-    m_durationHasBeenSet(false),
-    m_statusCodeHasBeenSet(false),
-    m_requestMethodHasBeenSet(false)
+TestGridSessionAction::TestGridSessionAction(JsonView jsonValue)
+  : TestGridSessionAction()
 {
   *this = jsonValue;
 }

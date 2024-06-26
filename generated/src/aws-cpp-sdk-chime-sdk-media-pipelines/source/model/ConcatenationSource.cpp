@@ -25,10 +25,8 @@ ConcatenationSource::ConcatenationSource() :
 {
 }
 
-ConcatenationSource::ConcatenationSource(JsonView jsonValue) : 
-    m_type(ConcatenationSourceType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_mediaCapturePipelineSourceConfigurationHasBeenSet(false)
+ConcatenationSource::ConcatenationSource(JsonView jsonValue)
+  : ConcatenationSource()
 {
   *this = jsonValue;
 }

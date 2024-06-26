@@ -24,9 +24,8 @@ SmsMfaConfigType::SmsMfaConfigType() :
 {
 }
 
-SmsMfaConfigType::SmsMfaConfigType(JsonView jsonValue) : 
-    m_smsAuthenticationMessageHasBeenSet(false),
-    m_smsConfigurationHasBeenSet(false)
+SmsMfaConfigType::SmsMfaConfigType(JsonView jsonValue)
+  : SmsMfaConfigType()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ LateDataRuleConfiguration::LateDataRuleConfiguration() :
 {
 }
 
-LateDataRuleConfiguration::LateDataRuleConfiguration(JsonView jsonValue) : 
-    m_deltaTimeSessionWindowConfigurationHasBeenSet(false)
+LateDataRuleConfiguration::LateDataRuleConfiguration(JsonView jsonValue)
+  : LateDataRuleConfiguration()
 {
   *this = jsonValue;
 }

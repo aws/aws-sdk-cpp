@@ -23,8 +23,8 @@ CustomRequestHandling::CustomRequestHandling() :
 {
 }
 
-CustomRequestHandling::CustomRequestHandling(JsonView jsonValue) : 
-    m_insertHeadersHasBeenSet(false)
+CustomRequestHandling::CustomRequestHandling(JsonView jsonValue)
+  : CustomRequestHandling()
 {
   *this = jsonValue;
 }

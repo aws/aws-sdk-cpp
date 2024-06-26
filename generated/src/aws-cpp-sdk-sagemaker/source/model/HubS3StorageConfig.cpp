@@ -23,8 +23,8 @@ HubS3StorageConfig::HubS3StorageConfig() :
 {
 }
 
-HubS3StorageConfig::HubS3StorageConfig(JsonView jsonValue) : 
-    m_s3OutputPathHasBeenSet(false)
+HubS3StorageConfig::HubS3StorageConfig(JsonView jsonValue)
+  : HubS3StorageConfig()
 {
   *this = jsonValue;
 }

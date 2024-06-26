@@ -38,23 +38,8 @@ JobSettings::JobSettings() :
 {
 }
 
-JobSettings::JobSettings(JsonView jsonValue) : 
-    m_adAvailOffset(0),
-    m_adAvailOffsetHasBeenSet(false),
-    m_availBlankingHasBeenSet(false),
-    m_colorConversion3DLUTSettingsHasBeenSet(false),
-    m_esamHasBeenSet(false),
-    m_extendedDataServicesHasBeenSet(false),
-    m_followSource(0),
-    m_followSourceHasBeenSet(false),
-    m_inputsHasBeenSet(false),
-    m_kantarWatermarkHasBeenSet(false),
-    m_motionImageInserterHasBeenSet(false),
-    m_nielsenConfigurationHasBeenSet(false),
-    m_nielsenNonLinearWatermarkHasBeenSet(false),
-    m_outputGroupsHasBeenSet(false),
-    m_timecodeConfigHasBeenSet(false),
-    m_timedMetadataInsertionHasBeenSet(false)
+JobSettings::JobSettings(JsonView jsonValue)
+  : JobSettings()
 {
   *this = jsonValue;
 }

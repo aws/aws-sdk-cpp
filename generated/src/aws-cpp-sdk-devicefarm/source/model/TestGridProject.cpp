@@ -27,12 +27,8 @@ TestGridProject::TestGridProject() :
 {
 }
 
-TestGridProject::TestGridProject(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_vpcConfigHasBeenSet(false),
-    m_createdHasBeenSet(false)
+TestGridProject::TestGridProject(JsonView jsonValue)
+  : TestGridProject()
 {
   *this = jsonValue;
 }

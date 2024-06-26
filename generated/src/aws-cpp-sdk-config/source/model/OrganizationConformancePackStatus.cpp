@@ -28,13 +28,8 @@ OrganizationConformancePackStatus::OrganizationConformancePackStatus() :
 {
 }
 
-OrganizationConformancePackStatus::OrganizationConformancePackStatus(JsonView jsonValue) : 
-    m_organizationConformancePackNameHasBeenSet(false),
-    m_status(OrganizationResourceStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_lastUpdateTimeHasBeenSet(false)
+OrganizationConformancePackStatus::OrganizationConformancePackStatus(JsonView jsonValue)
+  : OrganizationConformancePackStatus()
 {
   *this = jsonValue;
 }

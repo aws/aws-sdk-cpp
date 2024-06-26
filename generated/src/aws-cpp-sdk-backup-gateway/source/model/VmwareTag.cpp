@@ -25,10 +25,8 @@ VmwareTag::VmwareTag() :
 {
 }
 
-VmwareTag::VmwareTag(JsonView jsonValue) : 
-    m_vmwareCategoryHasBeenSet(false),
-    m_vmwareTagDescriptionHasBeenSet(false),
-    m_vmwareTagNameHasBeenSet(false)
+VmwareTag::VmwareTag(JsonView jsonValue)
+  : VmwareTag()
 {
   *this = jsonValue;
 }

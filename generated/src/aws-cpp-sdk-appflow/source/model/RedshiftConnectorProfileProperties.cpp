@@ -32,17 +32,8 @@ RedshiftConnectorProfileProperties::RedshiftConnectorProfileProperties() :
 {
 }
 
-RedshiftConnectorProfileProperties::RedshiftConnectorProfileProperties(JsonView jsonValue) : 
-    m_databaseUrlHasBeenSet(false),
-    m_bucketNameHasBeenSet(false),
-    m_bucketPrefixHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_dataApiRoleArnHasBeenSet(false),
-    m_isRedshiftServerless(false),
-    m_isRedshiftServerlessHasBeenSet(false),
-    m_clusterIdentifierHasBeenSet(false),
-    m_workgroupNameHasBeenSet(false),
-    m_databaseNameHasBeenSet(false)
+RedshiftConnectorProfileProperties::RedshiftConnectorProfileProperties(JsonView jsonValue)
+  : RedshiftConnectorProfileProperties()
 {
   *this = jsonValue;
 }

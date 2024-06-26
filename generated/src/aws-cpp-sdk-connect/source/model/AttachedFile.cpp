@@ -35,20 +35,8 @@ AttachedFile::AttachedFile() :
 {
 }
 
-AttachedFile::AttachedFile(JsonView jsonValue) : 
-    m_creationTimeHasBeenSet(false),
-    m_fileArnHasBeenSet(false),
-    m_fileIdHasBeenSet(false),
-    m_fileNameHasBeenSet(false),
-    m_fileSizeInBytes(0),
-    m_fileSizeInBytesHasBeenSet(false),
-    m_fileStatus(FileStatusType::NOT_SET),
-    m_fileStatusHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_fileUseCaseType(FileUseCaseType::NOT_SET),
-    m_fileUseCaseTypeHasBeenSet(false),
-    m_associatedResourceArnHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+AttachedFile::AttachedFile(JsonView jsonValue)
+  : AttachedFile()
 {
   *this = jsonValue;
 }

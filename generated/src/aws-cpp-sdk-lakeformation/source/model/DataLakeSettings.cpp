@@ -34,19 +34,8 @@ DataLakeSettings::DataLakeSettings() :
 {
 }
 
-DataLakeSettings::DataLakeSettings(JsonView jsonValue) : 
-    m_dataLakeAdminsHasBeenSet(false),
-    m_readOnlyAdminsHasBeenSet(false),
-    m_createDatabaseDefaultPermissionsHasBeenSet(false),
-    m_createTableDefaultPermissionsHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_trustedResourceOwnersHasBeenSet(false),
-    m_allowExternalDataFiltering(false),
-    m_allowExternalDataFilteringHasBeenSet(false),
-    m_allowFullTableExternalDataAccess(false),
-    m_allowFullTableExternalDataAccessHasBeenSet(false),
-    m_externalDataFilteringAllowListHasBeenSet(false),
-    m_authorizedSessionTagValueListHasBeenSet(false)
+DataLakeSettings::DataLakeSettings(JsonView jsonValue)
+  : DataLakeSettings()
 {
   *this = jsonValue;
 }

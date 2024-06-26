@@ -27,12 +27,8 @@ ListDevicePositionsResponseEntry::ListDevicePositionsResponseEntry() :
 {
 }
 
-ListDevicePositionsResponseEntry::ListDevicePositionsResponseEntry(JsonView jsonValue) : 
-    m_deviceIdHasBeenSet(false),
-    m_sampleTimeHasBeenSet(false),
-    m_positionHasBeenSet(false),
-    m_accuracyHasBeenSet(false),
-    m_positionPropertiesHasBeenSet(false)
+ListDevicePositionsResponseEntry::ListDevicePositionsResponseEntry(JsonView jsonValue)
+  : ListDevicePositionsResponseEntry()
 {
   *this = jsonValue;
 }

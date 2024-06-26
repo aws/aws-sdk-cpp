@@ -26,11 +26,8 @@ DeviceSummary::DeviceSummary() :
 {
 }
 
-DeviceSummary::DeviceSummary(JsonView jsonValue) : 
-    m_associatedWithJobHasBeenSet(false),
-    m_managedDeviceArnHasBeenSet(false),
-    m_managedDeviceIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+DeviceSummary::DeviceSummary(JsonView jsonValue)
+  : DeviceSummary()
 {
   *this = jsonValue;
 }

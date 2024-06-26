@@ -27,12 +27,8 @@ StepStatus::StepStatus() :
 {
 }
 
-StepStatus::StepStatus(JsonView jsonValue) : 
-    m_state(StepState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_stateChangeReasonHasBeenSet(false),
-    m_failureDetailsHasBeenSet(false),
-    m_timelineHasBeenSet(false)
+StepStatus::StepStatus(JsonView jsonValue)
+  : StepStatus()
 {
   *this = jsonValue;
 }

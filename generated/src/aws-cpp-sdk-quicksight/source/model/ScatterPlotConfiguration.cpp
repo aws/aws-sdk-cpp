@@ -33,18 +33,8 @@ ScatterPlotConfiguration::ScatterPlotConfiguration() :
 {
 }
 
-ScatterPlotConfiguration::ScatterPlotConfiguration(JsonView jsonValue) : 
-    m_fieldWellsHasBeenSet(false),
-    m_sortConfigurationHasBeenSet(false),
-    m_xAxisLabelOptionsHasBeenSet(false),
-    m_xAxisDisplayOptionsHasBeenSet(false),
-    m_yAxisLabelOptionsHasBeenSet(false),
-    m_yAxisDisplayOptionsHasBeenSet(false),
-    m_legendHasBeenSet(false),
-    m_dataLabelsHasBeenSet(false),
-    m_tooltipHasBeenSet(false),
-    m_visualPaletteHasBeenSet(false),
-    m_interactionsHasBeenSet(false)
+ScatterPlotConfiguration::ScatterPlotConfiguration(JsonView jsonValue)
+  : ScatterPlotConfiguration()
 {
   *this = jsonValue;
 }

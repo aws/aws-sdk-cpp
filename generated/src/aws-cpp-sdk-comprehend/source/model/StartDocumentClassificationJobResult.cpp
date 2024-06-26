@@ -22,8 +22,8 @@ StartDocumentClassificationJobResult::StartDocumentClassificationJobResult() :
 {
 }
 
-StartDocumentClassificationJobResult::StartDocumentClassificationJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_jobStatus(JobStatus::NOT_SET)
+StartDocumentClassificationJobResult::StartDocumentClassificationJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : StartDocumentClassificationJobResult()
 {
   *this = result;
 }

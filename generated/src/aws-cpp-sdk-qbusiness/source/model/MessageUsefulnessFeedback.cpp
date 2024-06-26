@@ -28,13 +28,8 @@ MessageUsefulnessFeedback::MessageUsefulnessFeedback() :
 {
 }
 
-MessageUsefulnessFeedback::MessageUsefulnessFeedback(JsonView jsonValue) : 
-    m_usefulness(MessageUsefulness::NOT_SET),
-    m_usefulnessHasBeenSet(false),
-    m_reason(MessageUsefulnessReason::NOT_SET),
-    m_reasonHasBeenSet(false),
-    m_commentHasBeenSet(false),
-    m_submittedAtHasBeenSet(false)
+MessageUsefulnessFeedback::MessageUsefulnessFeedback(JsonView jsonValue)
+  : MessageUsefulnessFeedback()
 {
   *this = jsonValue;
 }

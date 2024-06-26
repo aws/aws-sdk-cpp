@@ -33,18 +33,8 @@ BatchDescribeModelPackageSummary::BatchDescribeModelPackageSummary() :
 {
 }
 
-BatchDescribeModelPackageSummary::BatchDescribeModelPackageSummary(JsonView jsonValue) : 
-    m_modelPackageGroupNameHasBeenSet(false),
-    m_modelPackageVersion(0),
-    m_modelPackageVersionHasBeenSet(false),
-    m_modelPackageArnHasBeenSet(false),
-    m_modelPackageDescriptionHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_inferenceSpecificationHasBeenSet(false),
-    m_modelPackageStatus(ModelPackageStatus::NOT_SET),
-    m_modelPackageStatusHasBeenSet(false),
-    m_modelApprovalStatus(ModelApprovalStatus::NOT_SET),
-    m_modelApprovalStatusHasBeenSet(false)
+BatchDescribeModelPackageSummary::BatchDescribeModelPackageSummary(JsonView jsonValue)
+  : BatchDescribeModelPackageSummary()
 {
   *this = jsonValue;
 }

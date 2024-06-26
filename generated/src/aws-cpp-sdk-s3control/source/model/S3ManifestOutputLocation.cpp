@@ -30,13 +30,8 @@ S3ManifestOutputLocation::S3ManifestOutputLocation() :
 {
 }
 
-S3ManifestOutputLocation::S3ManifestOutputLocation(const XmlNode& xmlNode) : 
-    m_expectedManifestBucketOwnerHasBeenSet(false),
-    m_bucketHasBeenSet(false),
-    m_manifestPrefixHasBeenSet(false),
-    m_manifestEncryptionHasBeenSet(false),
-    m_manifestFormat(GeneratedManifestFormat::NOT_SET),
-    m_manifestFormatHasBeenSet(false)
+S3ManifestOutputLocation::S3ManifestOutputLocation(const XmlNode& xmlNode)
+  : S3ManifestOutputLocation()
 {
   *this = xmlNode;
 }

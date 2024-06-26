@@ -36,21 +36,8 @@ Endpoint::Endpoint() :
 {
 }
 
-Endpoint::Endpoint(JsonView jsonValue) : 
-    m_endpointArnHasBeenSet(false),
-    m_outpostsIdHasBeenSet(false),
-    m_cidrBlockHasBeenSet(false),
-    m_status(EndpointStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_networkInterfacesHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_subnetIdHasBeenSet(false),
-    m_securityGroupIdHasBeenSet(false),
-    m_accessType(EndpointAccessType::NOT_SET),
-    m_accessTypeHasBeenSet(false),
-    m_customerOwnedIpv4PoolHasBeenSet(false),
-    m_failedReasonHasBeenSet(false)
+Endpoint::Endpoint(JsonView jsonValue)
+  : Endpoint()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ PivotTableFieldWells::PivotTableFieldWells() :
 {
 }
 
-PivotTableFieldWells::PivotTableFieldWells(JsonView jsonValue) : 
-    m_pivotTableAggregatedFieldWellsHasBeenSet(false)
+PivotTableFieldWells::PivotTableFieldWells(JsonView jsonValue)
+  : PivotTableFieldWells()
 {
   *this = jsonValue;
 }

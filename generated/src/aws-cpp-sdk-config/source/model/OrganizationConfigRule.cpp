@@ -29,14 +29,8 @@ OrganizationConfigRule::OrganizationConfigRule() :
 {
 }
 
-OrganizationConfigRule::OrganizationConfigRule(JsonView jsonValue) : 
-    m_organizationConfigRuleNameHasBeenSet(false),
-    m_organizationConfigRuleArnHasBeenSet(false),
-    m_organizationManagedRuleMetadataHasBeenSet(false),
-    m_organizationCustomRuleMetadataHasBeenSet(false),
-    m_excludedAccountsHasBeenSet(false),
-    m_lastUpdateTimeHasBeenSet(false),
-    m_organizationCustomPolicyRuleMetadataHasBeenSet(false)
+OrganizationConfigRule::OrganizationConfigRule(JsonView jsonValue)
+  : OrganizationConfigRule()
 {
   *this = jsonValue;
 }

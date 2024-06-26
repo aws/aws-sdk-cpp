@@ -22,8 +22,8 @@ StartFHIRImportJobResult::StartFHIRImportJobResult() :
 {
 }
 
-StartFHIRImportJobResult::StartFHIRImportJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_jobStatus(JobStatus::NOT_SET)
+StartFHIRImportJobResult::StartFHIRImportJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : StartFHIRImportJobResult()
 {
   *this = result;
 }

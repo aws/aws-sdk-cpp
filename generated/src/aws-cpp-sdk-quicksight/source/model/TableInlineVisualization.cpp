@@ -23,8 +23,8 @@ TableInlineVisualization::TableInlineVisualization() :
 {
 }
 
-TableInlineVisualization::TableInlineVisualization(JsonView jsonValue) : 
-    m_dataBarsHasBeenSet(false)
+TableInlineVisualization::TableInlineVisualization(JsonView jsonValue)
+  : TableInlineVisualization()
 {
   *this = jsonValue;
 }

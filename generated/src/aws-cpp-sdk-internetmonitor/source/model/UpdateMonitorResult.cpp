@@ -22,8 +22,8 @@ UpdateMonitorResult::UpdateMonitorResult() :
 {
 }
 
-UpdateMonitorResult::UpdateMonitorResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(MonitorConfigState::NOT_SET)
+UpdateMonitorResult::UpdateMonitorResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateMonitorResult()
 {
   *this = result;
 }

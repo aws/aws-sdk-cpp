@@ -22,8 +22,8 @@ CreateFlowResult::CreateFlowResult() :
 {
 }
 
-CreateFlowResult::CreateFlowResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_flowStatus(FlowStatus::NOT_SET)
+CreateFlowResult::CreateFlowResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateFlowResult()
 {
   *this = result;
 }

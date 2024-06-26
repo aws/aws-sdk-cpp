@@ -27,12 +27,8 @@ WorkloadJiraConfigurationInput::WorkloadJiraConfigurationInput() :
 {
 }
 
-WorkloadJiraConfigurationInput::WorkloadJiraConfigurationInput(JsonView jsonValue) : 
-    m_issueManagementStatus(WorkloadIssueManagementStatus::NOT_SET),
-    m_issueManagementStatusHasBeenSet(false),
-    m_issueManagementType(IssueManagementType::NOT_SET),
-    m_issueManagementTypeHasBeenSet(false),
-    m_jiraProjectKeyHasBeenSet(false)
+WorkloadJiraConfigurationInput::WorkloadJiraConfigurationInput(JsonView jsonValue)
+  : WorkloadJiraConfigurationInput()
 {
   *this = jsonValue;
 }

@@ -23,9 +23,8 @@ GetInsightRuleReportResult::GetInsightRuleReportResult() :
 {
 }
 
-GetInsightRuleReportResult::GetInsightRuleReportResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_aggregateValue(0.0),
-    m_approximateUniqueCount(0)
+GetInsightRuleReportResult::GetInsightRuleReportResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : GetInsightRuleReportResult()
 {
   *this = result;
 }

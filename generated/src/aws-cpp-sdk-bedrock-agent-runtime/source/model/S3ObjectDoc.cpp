@@ -23,8 +23,8 @@ S3ObjectDoc::S3ObjectDoc() :
 {
 }
 
-S3ObjectDoc::S3ObjectDoc(JsonView jsonValue) : 
-    m_uriHasBeenSet(false)
+S3ObjectDoc::S3ObjectDoc(JsonView jsonValue)
+  : S3ObjectDoc()
 {
   *this = jsonValue;
 }

@@ -32,15 +32,8 @@ VgwTelemetry::VgwTelemetry() :
 {
 }
 
-VgwTelemetry::VgwTelemetry(const XmlNode& xmlNode) : 
-    m_acceptedRouteCount(0),
-    m_acceptedRouteCountHasBeenSet(false),
-    m_lastStatusChangeHasBeenSet(false),
-    m_outsideIpAddressHasBeenSet(false),
-    m_status(TelemetryStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_certificateArnHasBeenSet(false)
+VgwTelemetry::VgwTelemetry(const XmlNode& xmlNode)
+  : VgwTelemetry()
 {
   *this = xmlNode;
 }

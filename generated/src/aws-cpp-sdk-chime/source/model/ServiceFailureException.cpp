@@ -25,10 +25,8 @@ ServiceFailureException::ServiceFailureException() :
 {
 }
 
-ServiceFailureException::ServiceFailureException(JsonView jsonValue) : 
-    m_code(ErrorCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+ServiceFailureException::ServiceFailureException(JsonView jsonValue)
+  : ServiceFailureException()
 {
   *this = jsonValue;
 }

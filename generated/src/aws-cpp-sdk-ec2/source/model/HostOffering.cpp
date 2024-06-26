@@ -34,17 +34,8 @@ HostOffering::HostOffering() :
 {
 }
 
-HostOffering::HostOffering(const XmlNode& xmlNode) : 
-    m_currencyCode(CurrencyCodeValues::NOT_SET),
-    m_currencyCodeHasBeenSet(false),
-    m_duration(0),
-    m_durationHasBeenSet(false),
-    m_hourlyPriceHasBeenSet(false),
-    m_instanceFamilyHasBeenSet(false),
-    m_offeringIdHasBeenSet(false),
-    m_paymentOption(PaymentOption::NOT_SET),
-    m_paymentOptionHasBeenSet(false),
-    m_upfrontPriceHasBeenSet(false)
+HostOffering::HostOffering(const XmlNode& xmlNode)
+  : HostOffering()
 {
   *this = xmlNode;
 }

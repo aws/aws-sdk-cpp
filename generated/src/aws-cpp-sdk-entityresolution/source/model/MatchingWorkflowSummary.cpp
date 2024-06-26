@@ -28,13 +28,8 @@ MatchingWorkflowSummary::MatchingWorkflowSummary() :
 {
 }
 
-MatchingWorkflowSummary::MatchingWorkflowSummary(JsonView jsonValue) : 
-    m_createdAtHasBeenSet(false),
-    m_resolutionType(ResolutionType::NOT_SET),
-    m_resolutionTypeHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_workflowArnHasBeenSet(false),
-    m_workflowNameHasBeenSet(false)
+MatchingWorkflowSummary::MatchingWorkflowSummary(JsonView jsonValue)
+  : MatchingWorkflowSummary()
 {
   *this = jsonValue;
 }

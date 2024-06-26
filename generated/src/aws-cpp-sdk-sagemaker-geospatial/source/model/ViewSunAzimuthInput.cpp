@@ -26,11 +26,8 @@ ViewSunAzimuthInput::ViewSunAzimuthInput() :
 {
 }
 
-ViewSunAzimuthInput::ViewSunAzimuthInput(JsonView jsonValue) : 
-    m_lowerBound(0.0),
-    m_lowerBoundHasBeenSet(false),
-    m_upperBound(0.0),
-    m_upperBoundHasBeenSet(false)
+ViewSunAzimuthInput::ViewSunAzimuthInput(JsonView jsonValue)
+  : ViewSunAzimuthInput()
 {
   *this = jsonValue;
 }

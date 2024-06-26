@@ -24,9 +24,8 @@ CustomerManagedPolicyReference::CustomerManagedPolicyReference() :
 {
 }
 
-CustomerManagedPolicyReference::CustomerManagedPolicyReference(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_pathHasBeenSet(false)
+CustomerManagedPolicyReference::CustomerManagedPolicyReference(JsonView jsonValue)
+  : CustomerManagedPolicyReference()
 {
   *this = jsonValue;
 }

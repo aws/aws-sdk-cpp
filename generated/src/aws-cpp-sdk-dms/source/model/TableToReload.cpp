@@ -24,9 +24,8 @@ TableToReload::TableToReload() :
 {
 }
 
-TableToReload::TableToReload(JsonView jsonValue) : 
-    m_schemaNameHasBeenSet(false),
-    m_tableNameHasBeenSet(false)
+TableToReload::TableToReload(JsonView jsonValue)
+  : TableToReload()
 {
   *this = jsonValue;
 }

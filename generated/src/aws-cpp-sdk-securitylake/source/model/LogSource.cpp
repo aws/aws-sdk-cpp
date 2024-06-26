@@ -25,10 +25,8 @@ LogSource::LogSource() :
 {
 }
 
-LogSource::LogSource(JsonView jsonValue) : 
-    m_accountHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_sourcesHasBeenSet(false)
+LogSource::LogSource(JsonView jsonValue)
+  : LogSource()
 {
   *this = jsonValue;
 }

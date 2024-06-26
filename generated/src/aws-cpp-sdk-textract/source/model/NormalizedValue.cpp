@@ -25,10 +25,8 @@ NormalizedValue::NormalizedValue() :
 {
 }
 
-NormalizedValue::NormalizedValue(JsonView jsonValue) : 
-    m_valueHasBeenSet(false),
-    m_valueType(ValueType::NOT_SET),
-    m_valueTypeHasBeenSet(false)
+NormalizedValue::NormalizedValue(JsonView jsonValue)
+  : NormalizedValue()
 {
   *this = jsonValue;
 }

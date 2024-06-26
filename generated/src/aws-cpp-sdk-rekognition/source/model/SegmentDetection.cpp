@@ -41,26 +41,8 @@ SegmentDetection::SegmentDetection() :
 {
 }
 
-SegmentDetection::SegmentDetection(JsonView jsonValue) : 
-    m_type(SegmentType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_startTimestampMillis(0),
-    m_startTimestampMillisHasBeenSet(false),
-    m_endTimestampMillis(0),
-    m_endTimestampMillisHasBeenSet(false),
-    m_durationMillis(0),
-    m_durationMillisHasBeenSet(false),
-    m_startTimecodeSMPTEHasBeenSet(false),
-    m_endTimecodeSMPTEHasBeenSet(false),
-    m_durationSMPTEHasBeenSet(false),
-    m_technicalCueSegmentHasBeenSet(false),
-    m_shotSegmentHasBeenSet(false),
-    m_startFrameNumber(0),
-    m_startFrameNumberHasBeenSet(false),
-    m_endFrameNumber(0),
-    m_endFrameNumberHasBeenSet(false),
-    m_durationFrames(0),
-    m_durationFramesHasBeenSet(false)
+SegmentDetection::SegmentDetection(JsonView jsonValue)
+  : SegmentDetection()
 {
   *this = jsonValue;
 }

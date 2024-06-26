@@ -23,8 +23,8 @@ SnsTopicConfiguration::SnsTopicConfiguration() :
 {
 }
 
-SnsTopicConfiguration::SnsTopicConfiguration(JsonView jsonValue) : 
-    m_topicPolicyHasBeenSet(false)
+SnsTopicConfiguration::SnsTopicConfiguration(JsonView jsonValue)
+  : SnsTopicConfiguration()
 {
   *this = jsonValue;
 }

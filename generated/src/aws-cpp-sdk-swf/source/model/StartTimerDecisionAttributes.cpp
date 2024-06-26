@@ -25,10 +25,8 @@ StartTimerDecisionAttributes::StartTimerDecisionAttributes() :
 {
 }
 
-StartTimerDecisionAttributes::StartTimerDecisionAttributes(JsonView jsonValue) : 
-    m_timerIdHasBeenSet(false),
-    m_controlHasBeenSet(false),
-    m_startToFireTimeoutHasBeenSet(false)
+StartTimerDecisionAttributes::StartTimerDecisionAttributes(JsonView jsonValue)
+  : StartTimerDecisionAttributes()
 {
   *this = jsonValue;
 }

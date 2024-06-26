@@ -27,12 +27,8 @@ EntityDetail::EntityDetail() :
 {
 }
 
-EntityDetail::EntityDetail(JsonView jsonValue) : 
-    m_entityTypeHasBeenSet(false),
-    m_entityArnHasBeenSet(false),
-    m_entityIdentifierHasBeenSet(false),
-    m_lastModifiedDateHasBeenSet(false),
-    m_detailsDocumentHasBeenSet(false)
+EntityDetail::EntityDetail(JsonView jsonValue)
+  : EntityDetail()
 {
   *this = jsonValue;
 }

@@ -32,17 +32,8 @@ ResourceCountsSummary::ResourceCountsSummary() :
 {
 }
 
-ResourceCountsSummary::ResourceCountsSummary(JsonView jsonValue) : 
-    m_behindMajor(0),
-    m_behindMajorHasBeenSet(false),
-    m_behindMinor(0),
-    m_behindMinorHasBeenSet(false),
-    m_failed(0),
-    m_failedHasBeenSet(false),
-    m_total(0),
-    m_totalHasBeenSet(false),
-    m_upToDate(0),
-    m_upToDateHasBeenSet(false)
+ResourceCountsSummary::ResourceCountsSummary(JsonView jsonValue)
+  : ResourceCountsSummary()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ ResourceDataSyncDestinationDataSharing::ResourceDataSyncDestinationDataSharing()
 {
 }
 
-ResourceDataSyncDestinationDataSharing::ResourceDataSyncDestinationDataSharing(JsonView jsonValue) : 
-    m_destinationDataSharingTypeHasBeenSet(false)
+ResourceDataSyncDestinationDataSharing::ResourceDataSyncDestinationDataSharing(JsonView jsonValue)
+  : ResourceDataSyncDestinationDataSharing()
 {
   *this = jsonValue;
 }

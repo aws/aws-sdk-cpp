@@ -31,16 +31,8 @@ TrackingServerSummary::TrackingServerSummary() :
 {
 }
 
-TrackingServerSummary::TrackingServerSummary(JsonView jsonValue) : 
-    m_trackingServerArnHasBeenSet(false),
-    m_trackingServerNameHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_trackingServerStatus(TrackingServerStatus::NOT_SET),
-    m_trackingServerStatusHasBeenSet(false),
-    m_isActive(IsTrackingServerActive::NOT_SET),
-    m_isActiveHasBeenSet(false),
-    m_mlflowVersionHasBeenSet(false)
+TrackingServerSummary::TrackingServerSummary(JsonView jsonValue)
+  : TrackingServerSummary()
 {
   *this = jsonValue;
 }

@@ -27,12 +27,8 @@ ComparativeOrder::ComparativeOrder() :
 {
 }
 
-ComparativeOrder::ComparativeOrder(JsonView jsonValue) : 
-    m_useOrdering(ColumnOrderingType::NOT_SET),
-    m_useOrderingHasBeenSet(false),
-    m_specifedOrderHasBeenSet(false),
-    m_treatUndefinedSpecifiedValues(UndefinedSpecifiedValueType::NOT_SET),
-    m_treatUndefinedSpecifiedValuesHasBeenSet(false)
+ComparativeOrder::ComparativeOrder(JsonView jsonValue)
+  : ComparativeOrder()
 {
   *this = jsonValue;
 }

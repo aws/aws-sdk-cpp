@@ -23,9 +23,8 @@ AdminGetUserResult::AdminGetUserResult() :
 {
 }
 
-AdminGetUserResult::AdminGetUserResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_enabled(false),
-    m_userStatus(UserStatusType::NOT_SET)
+AdminGetUserResult::AdminGetUserResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : AdminGetUserResult()
 {
   *this = result;
 }

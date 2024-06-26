@@ -23,9 +23,8 @@ DeleteProtectConfigurationResult::DeleteProtectConfigurationResult() :
 {
 }
 
-DeleteProtectConfigurationResult::DeleteProtectConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_accountDefault(false),
-    m_deletionProtectionEnabled(false)
+DeleteProtectConfigurationResult::DeleteProtectConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeleteProtectConfigurationResult()
 {
   *this = result;
 }

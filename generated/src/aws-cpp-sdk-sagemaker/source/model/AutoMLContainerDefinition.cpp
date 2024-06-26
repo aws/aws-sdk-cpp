@@ -25,10 +25,8 @@ AutoMLContainerDefinition::AutoMLContainerDefinition() :
 {
 }
 
-AutoMLContainerDefinition::AutoMLContainerDefinition(JsonView jsonValue) : 
-    m_imageHasBeenSet(false),
-    m_modelDataUrlHasBeenSet(false),
-    m_environmentHasBeenSet(false)
+AutoMLContainerDefinition::AutoMLContainerDefinition(JsonView jsonValue)
+  : AutoMLContainerDefinition()
 {
   *this = jsonValue;
 }

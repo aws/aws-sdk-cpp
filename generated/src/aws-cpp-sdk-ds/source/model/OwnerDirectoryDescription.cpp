@@ -29,14 +29,8 @@ OwnerDirectoryDescription::OwnerDirectoryDescription() :
 {
 }
 
-OwnerDirectoryDescription::OwnerDirectoryDescription(JsonView jsonValue) : 
-    m_directoryIdHasBeenSet(false),
-    m_accountIdHasBeenSet(false),
-    m_dnsIpAddrsHasBeenSet(false),
-    m_vpcSettingsHasBeenSet(false),
-    m_radiusSettingsHasBeenSet(false),
-    m_radiusStatus(RadiusStatus::NOT_SET),
-    m_radiusStatusHasBeenSet(false)
+OwnerDirectoryDescription::OwnerDirectoryDescription(JsonView jsonValue)
+  : OwnerDirectoryDescription()
 {
   *this = jsonValue;
 }

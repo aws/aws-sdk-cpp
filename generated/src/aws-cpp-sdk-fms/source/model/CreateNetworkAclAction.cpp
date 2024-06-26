@@ -26,11 +26,8 @@ CreateNetworkAclAction::CreateNetworkAclAction() :
 {
 }
 
-CreateNetworkAclAction::CreateNetworkAclAction(JsonView jsonValue) : 
-    m_descriptionHasBeenSet(false),
-    m_vpcHasBeenSet(false),
-    m_fMSCanRemediate(false),
-    m_fMSCanRemediateHasBeenSet(false)
+CreateNetworkAclAction::CreateNetworkAclAction(JsonView jsonValue)
+  : CreateNetworkAclAction()
 {
   *this = jsonValue;
 }

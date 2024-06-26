@@ -29,14 +29,8 @@ EvaluateDataQuality::EvaluateDataQuality() :
 {
 }
 
-EvaluateDataQuality::EvaluateDataQuality(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_inputsHasBeenSet(false),
-    m_rulesetHasBeenSet(false),
-    m_output(DQTransformOutput::NOT_SET),
-    m_outputHasBeenSet(false),
-    m_publishingOptionsHasBeenSet(false),
-    m_stopJobOnFailureOptionsHasBeenSet(false)
+EvaluateDataQuality::EvaluateDataQuality(JsonView jsonValue)
+  : EvaluateDataQuality()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ RunLogLocation::RunLogLocation() :
 {
 }
 
-RunLogLocation::RunLogLocation(JsonView jsonValue) : 
-    m_engineLogStreamHasBeenSet(false),
-    m_runLogStreamHasBeenSet(false)
+RunLogLocation::RunLogLocation(JsonView jsonValue)
+  : RunLogLocation()
 {
   *this = jsonValue;
 }

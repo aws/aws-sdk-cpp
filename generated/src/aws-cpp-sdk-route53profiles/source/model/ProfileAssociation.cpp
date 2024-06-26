@@ -32,17 +32,8 @@ ProfileAssociation::ProfileAssociation() :
 {
 }
 
-ProfileAssociation::ProfileAssociation(JsonView jsonValue) : 
-    m_creationTimeHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_modificationTimeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_profileIdHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_status(ProfileStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false)
+ProfileAssociation::ProfileAssociation(JsonView jsonValue)
+  : ProfileAssociation()
 {
   *this = jsonValue;
 }

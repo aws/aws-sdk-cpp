@@ -26,11 +26,8 @@ CreateConnectionAuthRequestParameters::CreateConnectionAuthRequestParameters() :
 {
 }
 
-CreateConnectionAuthRequestParameters::CreateConnectionAuthRequestParameters(JsonView jsonValue) : 
-    m_basicAuthParametersHasBeenSet(false),
-    m_oAuthParametersHasBeenSet(false),
-    m_apiKeyAuthParametersHasBeenSet(false),
-    m_invocationHttpParametersHasBeenSet(false)
+CreateConnectionAuthRequestParameters::CreateConnectionAuthRequestParameters(JsonView jsonValue)
+  : CreateConnectionAuthRequestParameters()
 {
   *this = jsonValue;
 }

@@ -29,12 +29,8 @@ Transition::Transition() :
 {
 }
 
-Transition::Transition(const XmlNode& xmlNode) : 
-    m_dateHasBeenSet(false),
-    m_days(0),
-    m_daysHasBeenSet(false),
-    m_storageClass(TransitionStorageClass::NOT_SET),
-    m_storageClassHasBeenSet(false)
+Transition::Transition(const XmlNode& xmlNode)
+  : Transition()
 {
   *this = xmlNode;
 }

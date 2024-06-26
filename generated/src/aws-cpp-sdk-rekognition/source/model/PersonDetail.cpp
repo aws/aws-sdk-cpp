@@ -26,11 +26,8 @@ PersonDetail::PersonDetail() :
 {
 }
 
-PersonDetail::PersonDetail(JsonView jsonValue) : 
-    m_index(0),
-    m_indexHasBeenSet(false),
-    m_boundingBoxHasBeenSet(false),
-    m_faceHasBeenSet(false)
+PersonDetail::PersonDetail(JsonView jsonValue)
+  : PersonDetail()
 {
   *this = jsonValue;
 }

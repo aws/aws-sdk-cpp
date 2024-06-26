@@ -27,12 +27,8 @@ ListMapsResponseEntry::ListMapsResponseEntry() :
 {
 }
 
-ListMapsResponseEntry::ListMapsResponseEntry(JsonView jsonValue) : 
-    m_mapNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_dataSourceHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
+ListMapsResponseEntry::ListMapsResponseEntry(JsonView jsonValue)
+  : ListMapsResponseEntry()
 {
   *this = jsonValue;
 }

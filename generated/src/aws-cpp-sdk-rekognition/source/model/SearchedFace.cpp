@@ -23,8 +23,8 @@ SearchedFace::SearchedFace() :
 {
 }
 
-SearchedFace::SearchedFace(JsonView jsonValue) : 
-    m_faceIdHasBeenSet(false)
+SearchedFace::SearchedFace(JsonView jsonValue)
+  : SearchedFace()
 {
   *this = jsonValue;
 }

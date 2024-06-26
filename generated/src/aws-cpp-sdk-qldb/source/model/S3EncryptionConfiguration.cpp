@@ -25,10 +25,8 @@ S3EncryptionConfiguration::S3EncryptionConfiguration() :
 {
 }
 
-S3EncryptionConfiguration::S3EncryptionConfiguration(JsonView jsonValue) : 
-    m_objectEncryptionType(S3ObjectEncryptionType::NOT_SET),
-    m_objectEncryptionTypeHasBeenSet(false),
-    m_kmsKeyArnHasBeenSet(false)
+S3EncryptionConfiguration::S3EncryptionConfiguration(JsonView jsonValue)
+  : S3EncryptionConfiguration()
 {
   *this = jsonValue;
 }

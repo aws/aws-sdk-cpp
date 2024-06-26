@@ -22,8 +22,8 @@ GetAdapterVersionResult::GetAdapterVersionResult() :
 {
 }
 
-GetAdapterVersionResult::GetAdapterVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(AdapterVersionStatus::NOT_SET)
+GetAdapterVersionResult::GetAdapterVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetAdapterVersionResult()
 {
   *this = result;
 }

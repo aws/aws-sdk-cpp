@@ -26,11 +26,8 @@ ToolResultContentBlock::ToolResultContentBlock() :
 {
 }
 
-ToolResultContentBlock::ToolResultContentBlock(JsonView jsonValue) : 
-    m_jsonHasBeenSet(false),
-    m_textHasBeenSet(false),
-    m_imageHasBeenSet(false),
-    m_documentHasBeenSet(false)
+ToolResultContentBlock::ToolResultContentBlock(JsonView jsonValue)
+  : ToolResultContentBlock()
 {
   *this = jsonValue;
 }

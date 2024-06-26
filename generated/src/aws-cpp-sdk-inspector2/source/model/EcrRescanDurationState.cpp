@@ -29,14 +29,8 @@ EcrRescanDurationState::EcrRescanDurationState() :
 {
 }
 
-EcrRescanDurationState::EcrRescanDurationState(JsonView jsonValue) : 
-    m_pullDateRescanDuration(EcrPullDateRescanDuration::NOT_SET),
-    m_pullDateRescanDurationHasBeenSet(false),
-    m_rescanDuration(EcrRescanDuration::NOT_SET),
-    m_rescanDurationHasBeenSet(false),
-    m_status(EcrRescanDurationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+EcrRescanDurationState::EcrRescanDurationState(JsonView jsonValue)
+  : EcrRescanDurationState()
 {
   *this = jsonValue;
 }

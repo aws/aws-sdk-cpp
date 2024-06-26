@@ -34,19 +34,8 @@ CustomKeyStoresListEntry::CustomKeyStoresListEntry() :
 {
 }
 
-CustomKeyStoresListEntry::CustomKeyStoresListEntry(JsonView jsonValue) : 
-    m_customKeyStoreIdHasBeenSet(false),
-    m_customKeyStoreNameHasBeenSet(false),
-    m_cloudHsmClusterIdHasBeenSet(false),
-    m_trustAnchorCertificateHasBeenSet(false),
-    m_connectionState(ConnectionStateType::NOT_SET),
-    m_connectionStateHasBeenSet(false),
-    m_connectionErrorCode(ConnectionErrorCodeType::NOT_SET),
-    m_connectionErrorCodeHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_customKeyStoreType(CustomKeyStoreType::NOT_SET),
-    m_customKeyStoreTypeHasBeenSet(false),
-    m_xksProxyConfigurationHasBeenSet(false)
+CustomKeyStoresListEntry::CustomKeyStoresListEntry(JsonView jsonValue)
+  : CustomKeyStoresListEntry()
 {
   *this = jsonValue;
 }

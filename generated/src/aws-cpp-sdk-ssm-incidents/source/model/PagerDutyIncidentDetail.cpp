@@ -26,11 +26,8 @@ PagerDutyIncidentDetail::PagerDutyIncidentDetail() :
 {
 }
 
-PagerDutyIncidentDetail::PagerDutyIncidentDetail(JsonView jsonValue) : 
-    m_autoResolve(false),
-    m_autoResolveHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_secretIdHasBeenSet(false)
+PagerDutyIncidentDetail::PagerDutyIncidentDetail(JsonView jsonValue)
+  : PagerDutyIncidentDetail()
 {
   *this = jsonValue;
 }

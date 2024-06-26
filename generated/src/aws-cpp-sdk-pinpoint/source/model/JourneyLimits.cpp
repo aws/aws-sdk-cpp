@@ -32,17 +32,8 @@ JourneyLimits::JourneyLimits() :
 {
 }
 
-JourneyLimits::JourneyLimits(JsonView jsonValue) : 
-    m_dailyCap(0),
-    m_dailyCapHasBeenSet(false),
-    m_endpointReentryCap(0),
-    m_endpointReentryCapHasBeenSet(false),
-    m_messagesPerSecond(0),
-    m_messagesPerSecondHasBeenSet(false),
-    m_endpointReentryIntervalHasBeenSet(false),
-    m_timeframeCapHasBeenSet(false),
-    m_totalCap(0),
-    m_totalCapHasBeenSet(false)
+JourneyLimits::JourneyLimits(JsonView jsonValue)
+  : JourneyLimits()
 {
   *this = jsonValue;
 }

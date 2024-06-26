@@ -24,9 +24,8 @@ CreatedByInfo::CreatedByInfo() :
 {
 }
 
-CreatedByInfo::CreatedByInfo(JsonView jsonValue) : 
-    m_connectUserArnHasBeenSet(false),
-    m_aWSIdentityArnHasBeenSet(false)
+CreatedByInfo::CreatedByInfo(JsonView jsonValue)
+  : CreatedByInfo()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ EphemeralStorage::EphemeralStorage() :
 {
 }
 
-EphemeralStorage::EphemeralStorage(JsonView jsonValue) : 
-    m_size(0),
-    m_sizeHasBeenSet(false)
+EphemeralStorage::EphemeralStorage(JsonView jsonValue)
+  : EphemeralStorage()
 {
   *this = jsonValue;
 }

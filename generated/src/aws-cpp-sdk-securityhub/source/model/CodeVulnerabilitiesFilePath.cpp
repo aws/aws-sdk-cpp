@@ -28,13 +28,8 @@ CodeVulnerabilitiesFilePath::CodeVulnerabilitiesFilePath() :
 {
 }
 
-CodeVulnerabilitiesFilePath::CodeVulnerabilitiesFilePath(JsonView jsonValue) : 
-    m_endLine(0),
-    m_endLineHasBeenSet(false),
-    m_fileNameHasBeenSet(false),
-    m_filePathHasBeenSet(false),
-    m_startLine(0),
-    m_startLineHasBeenSet(false)
+CodeVulnerabilitiesFilePath::CodeVulnerabilitiesFilePath(JsonView jsonValue)
+  : CodeVulnerabilitiesFilePath()
 {
   *this = jsonValue;
 }

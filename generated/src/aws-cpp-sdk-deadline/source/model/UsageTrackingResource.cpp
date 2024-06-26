@@ -23,8 +23,8 @@ UsageTrackingResource::UsageTrackingResource() :
 {
 }
 
-UsageTrackingResource::UsageTrackingResource(JsonView jsonValue) : 
-    m_queueIdHasBeenSet(false)
+UsageTrackingResource::UsageTrackingResource(JsonView jsonValue)
+  : UsageTrackingResource()
 {
   *this = jsonValue;
 }

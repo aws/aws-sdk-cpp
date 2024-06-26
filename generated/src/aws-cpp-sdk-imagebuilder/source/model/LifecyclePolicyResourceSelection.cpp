@@ -24,9 +24,8 @@ LifecyclePolicyResourceSelection::LifecyclePolicyResourceSelection() :
 {
 }
 
-LifecyclePolicyResourceSelection::LifecyclePolicyResourceSelection(JsonView jsonValue) : 
-    m_recipesHasBeenSet(false),
-    m_tagMapHasBeenSet(false)
+LifecyclePolicyResourceSelection::LifecyclePolicyResourceSelection(JsonView jsonValue)
+  : LifecyclePolicyResourceSelection()
 {
   *this = jsonValue;
 }

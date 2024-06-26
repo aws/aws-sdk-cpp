@@ -25,10 +25,8 @@ ResourceErrorsDetails::ResourceErrorsDetails() :
 {
 }
 
-ResourceErrorsDetails::ResourceErrorsDetails(JsonView jsonValue) : 
-    m_hasMoreErrors(false),
-    m_hasMoreErrorsHasBeenSet(false),
-    m_resourceErrorsHasBeenSet(false)
+ResourceErrorsDetails::ResourceErrorsDetails(JsonView jsonValue)
+  : ResourceErrorsDetails()
 {
   *this = jsonValue;
 }

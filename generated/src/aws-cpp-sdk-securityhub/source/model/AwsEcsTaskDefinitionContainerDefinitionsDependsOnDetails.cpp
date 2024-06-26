@@ -24,9 +24,8 @@ AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails::AwsEcsTaskDefinitionCo
 {
 }
 
-AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails::AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails(JsonView jsonValue) : 
-    m_conditionHasBeenSet(false),
-    m_containerNameHasBeenSet(false)
+AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails::AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails(JsonView jsonValue)
+  : AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails()
 {
   *this = jsonValue;
 }

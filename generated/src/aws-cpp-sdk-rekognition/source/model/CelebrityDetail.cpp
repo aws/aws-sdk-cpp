@@ -30,15 +30,8 @@ CelebrityDetail::CelebrityDetail() :
 {
 }
 
-CelebrityDetail::CelebrityDetail(JsonView jsonValue) : 
-    m_urlsHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_confidence(0.0),
-    m_confidenceHasBeenSet(false),
-    m_boundingBoxHasBeenSet(false),
-    m_faceHasBeenSet(false),
-    m_knownGenderHasBeenSet(false)
+CelebrityDetail::CelebrityDetail(JsonView jsonValue)
+  : CelebrityDetail()
 {
   *this = jsonValue;
 }

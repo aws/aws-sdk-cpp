@@ -24,9 +24,8 @@ StartShotDetectionFilter::StartShotDetectionFilter() :
 {
 }
 
-StartShotDetectionFilter::StartShotDetectionFilter(JsonView jsonValue) : 
-    m_minSegmentConfidence(0.0),
-    m_minSegmentConfidenceHasBeenSet(false)
+StartShotDetectionFilter::StartShotDetectionFilter(JsonView jsonValue)
+  : StartShotDetectionFilter()
 {
   *this = jsonValue;
 }

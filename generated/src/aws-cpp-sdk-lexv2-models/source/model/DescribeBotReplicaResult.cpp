@@ -22,8 +22,8 @@ DescribeBotReplicaResult::DescribeBotReplicaResult() :
 {
 }
 
-DescribeBotReplicaResult::DescribeBotReplicaResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_botReplicaStatus(BotReplicaStatus::NOT_SET)
+DescribeBotReplicaResult::DescribeBotReplicaResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeBotReplicaResult()
 {
   *this = result;
 }

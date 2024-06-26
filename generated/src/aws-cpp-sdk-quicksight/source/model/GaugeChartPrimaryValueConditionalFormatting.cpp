@@ -24,9 +24,8 @@ GaugeChartPrimaryValueConditionalFormatting::GaugeChartPrimaryValueConditionalFo
 {
 }
 
-GaugeChartPrimaryValueConditionalFormatting::GaugeChartPrimaryValueConditionalFormatting(JsonView jsonValue) : 
-    m_textColorHasBeenSet(false),
-    m_iconHasBeenSet(false)
+GaugeChartPrimaryValueConditionalFormatting::GaugeChartPrimaryValueConditionalFormatting(JsonView jsonValue)
+  : GaugeChartPrimaryValueConditionalFormatting()
 {
   *this = jsonValue;
 }

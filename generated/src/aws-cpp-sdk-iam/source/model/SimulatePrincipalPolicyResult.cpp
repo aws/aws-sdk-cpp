@@ -22,8 +22,8 @@ SimulatePrincipalPolicyResult::SimulatePrincipalPolicyResult() :
 {
 }
 
-SimulatePrincipalPolicyResult::SimulatePrincipalPolicyResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_isTruncated(false)
+SimulatePrincipalPolicyResult::SimulatePrincipalPolicyResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : SimulatePrincipalPolicyResult()
 {
   *this = result;
 }

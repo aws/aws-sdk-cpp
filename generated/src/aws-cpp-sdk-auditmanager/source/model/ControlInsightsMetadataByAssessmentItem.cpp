@@ -27,12 +27,8 @@ ControlInsightsMetadataByAssessmentItem::ControlInsightsMetadataByAssessmentItem
 {
 }
 
-ControlInsightsMetadataByAssessmentItem::ControlInsightsMetadataByAssessmentItem(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_evidenceInsightsHasBeenSet(false),
-    m_controlSetNameHasBeenSet(false),
-    m_lastUpdatedHasBeenSet(false)
+ControlInsightsMetadataByAssessmentItem::ControlInsightsMetadataByAssessmentItem(JsonView jsonValue)
+  : ControlInsightsMetadataByAssessmentItem()
 {
   *this = jsonValue;
 }

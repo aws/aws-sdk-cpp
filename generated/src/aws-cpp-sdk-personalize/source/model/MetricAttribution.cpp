@@ -30,15 +30,8 @@ MetricAttribution::MetricAttribution() :
 {
 }
 
-MetricAttribution::MetricAttribution(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_metricAttributionArnHasBeenSet(false),
-    m_datasetGroupArnHasBeenSet(false),
-    m_metricsOutputConfigHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_creationDateTimeHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false),
-    m_failureReasonHasBeenSet(false)
+MetricAttribution::MetricAttribution(JsonView jsonValue)
+  : MetricAttribution()
 {
   *this = jsonValue;
 }

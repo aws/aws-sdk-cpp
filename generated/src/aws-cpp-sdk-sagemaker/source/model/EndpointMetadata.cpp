@@ -27,12 +27,8 @@ EndpointMetadata::EndpointMetadata() :
 {
 }
 
-EndpointMetadata::EndpointMetadata(JsonView jsonValue) : 
-    m_endpointNameHasBeenSet(false),
-    m_endpointConfigNameHasBeenSet(false),
-    m_endpointStatus(EndpointStatus::NOT_SET),
-    m_endpointStatusHasBeenSet(false),
-    m_failureReasonHasBeenSet(false)
+EndpointMetadata::EndpointMetadata(JsonView jsonValue)
+  : EndpointMetadata()
 {
   *this = jsonValue;
 }

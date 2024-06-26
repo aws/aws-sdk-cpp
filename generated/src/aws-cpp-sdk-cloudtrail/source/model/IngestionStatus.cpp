@@ -27,12 +27,8 @@ IngestionStatus::IngestionStatus() :
 {
 }
 
-IngestionStatus::IngestionStatus(JsonView jsonValue) : 
-    m_latestIngestionSuccessTimeHasBeenSet(false),
-    m_latestIngestionSuccessEventIDHasBeenSet(false),
-    m_latestIngestionErrorCodeHasBeenSet(false),
-    m_latestIngestionAttemptTimeHasBeenSet(false),
-    m_latestIngestionAttemptEventIDHasBeenSet(false)
+IngestionStatus::IngestionStatus(JsonView jsonValue)
+  : IngestionStatus()
 {
   *this = jsonValue;
 }

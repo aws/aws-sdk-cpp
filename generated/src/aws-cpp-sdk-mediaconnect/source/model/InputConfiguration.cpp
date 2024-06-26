@@ -26,11 +26,8 @@ InputConfiguration::InputConfiguration() :
 {
 }
 
-InputConfiguration::InputConfiguration(JsonView jsonValue) : 
-    m_inputIpHasBeenSet(false),
-    m_inputPort(0),
-    m_inputPortHasBeenSet(false),
-    m_interfaceHasBeenSet(false)
+InputConfiguration::InputConfiguration(JsonView jsonValue)
+  : InputConfiguration()
 {
   *this = jsonValue;
 }

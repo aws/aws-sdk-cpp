@@ -23,8 +23,8 @@ FileFilter::FileFilter() :
 {
 }
 
-FileFilter::FileFilter(JsonView jsonValue) : 
-    m_fileArnHasBeenSet(false)
+FileFilter::FileFilter(JsonView jsonValue)
+  : FileFilter()
 {
   *this = jsonValue;
 }

@@ -32,17 +32,8 @@ EdgeModelStat::EdgeModelStat() :
 {
 }
 
-EdgeModelStat::EdgeModelStat(JsonView jsonValue) : 
-    m_modelNameHasBeenSet(false),
-    m_modelVersionHasBeenSet(false),
-    m_offlineDeviceCount(0),
-    m_offlineDeviceCountHasBeenSet(false),
-    m_connectedDeviceCount(0),
-    m_connectedDeviceCountHasBeenSet(false),
-    m_activeDeviceCount(0),
-    m_activeDeviceCountHasBeenSet(false),
-    m_samplingDeviceCount(0),
-    m_samplingDeviceCountHasBeenSet(false)
+EdgeModelStat::EdgeModelStat(JsonView jsonValue)
+  : EdgeModelStat()
 {
   *this = jsonValue;
 }

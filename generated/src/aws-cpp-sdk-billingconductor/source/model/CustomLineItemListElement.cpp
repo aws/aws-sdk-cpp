@@ -37,22 +37,8 @@ CustomLineItemListElement::CustomLineItemListElement() :
 {
 }
 
-CustomLineItemListElement::CustomLineItemListElement(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_chargeDetailsHasBeenSet(false),
-    m_currencyCode(CurrencyCode::NOT_SET),
-    m_currencyCodeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_productCodeHasBeenSet(false),
-    m_billingGroupArnHasBeenSet(false),
-    m_creationTime(0),
-    m_creationTimeHasBeenSet(false),
-    m_lastModifiedTime(0),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_associationSize(0),
-    m_associationSizeHasBeenSet(false),
-    m_accountIdHasBeenSet(false)
+CustomLineItemListElement::CustomLineItemListElement(JsonView jsonValue)
+  : CustomLineItemListElement()
 {
   *this = jsonValue;
 }

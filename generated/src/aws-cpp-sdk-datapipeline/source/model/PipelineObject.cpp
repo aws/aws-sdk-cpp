@@ -25,10 +25,8 @@ PipelineObject::PipelineObject() :
 {
 }
 
-PipelineObject::PipelineObject(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_fieldsHasBeenSet(false)
+PipelineObject::PipelineObject(JsonView jsonValue)
+  : PipelineObject()
 {
   *this = jsonValue;
 }

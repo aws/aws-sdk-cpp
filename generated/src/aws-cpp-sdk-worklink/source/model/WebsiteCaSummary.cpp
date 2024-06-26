@@ -25,10 +25,8 @@ WebsiteCaSummary::WebsiteCaSummary() :
 {
 }
 
-WebsiteCaSummary::WebsiteCaSummary(JsonView jsonValue) : 
-    m_websiteCaIdHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_displayNameHasBeenSet(false)
+WebsiteCaSummary::WebsiteCaSummary(JsonView jsonValue)
+  : WebsiteCaSummary()
 {
   *this = jsonValue;
 }

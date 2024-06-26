@@ -49,34 +49,8 @@ SetSourceRequest::SetSourceRequest() :
 {
 }
 
-SetSourceRequest::SetSourceRequest(JsonView jsonValue) : 
-    m_decryptionHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_entitlementArnHasBeenSet(false),
-    m_ingestPort(0),
-    m_ingestPortHasBeenSet(false),
-    m_maxBitrate(0),
-    m_maxBitrateHasBeenSet(false),
-    m_maxLatency(0),
-    m_maxLatencyHasBeenSet(false),
-    m_maxSyncBuffer(0),
-    m_maxSyncBufferHasBeenSet(false),
-    m_mediaStreamSourceConfigurationsHasBeenSet(false),
-    m_minLatency(0),
-    m_minLatencyHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_protocol(Protocol::NOT_SET),
-    m_protocolHasBeenSet(false),
-    m_senderControlPort(0),
-    m_senderControlPortHasBeenSet(false),
-    m_senderIpAddressHasBeenSet(false),
-    m_sourceListenerAddressHasBeenSet(false),
-    m_sourceListenerPort(0),
-    m_sourceListenerPortHasBeenSet(false),
-    m_streamIdHasBeenSet(false),
-    m_vpcInterfaceNameHasBeenSet(false),
-    m_whitelistCidrHasBeenSet(false),
-    m_gatewayBridgeSourceHasBeenSet(false)
+SetSourceRequest::SetSourceRequest(JsonView jsonValue)
+  : SetSourceRequest()
 {
   *this = jsonValue;
 }

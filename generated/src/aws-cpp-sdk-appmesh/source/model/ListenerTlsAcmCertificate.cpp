@@ -23,8 +23,8 @@ ListenerTlsAcmCertificate::ListenerTlsAcmCertificate() :
 {
 }
 
-ListenerTlsAcmCertificate::ListenerTlsAcmCertificate(JsonView jsonValue) : 
-    m_certificateArnHasBeenSet(false)
+ListenerTlsAcmCertificate::ListenerTlsAcmCertificate(JsonView jsonValue)
+  : ListenerTlsAcmCertificate()
 {
   *this = jsonValue;
 }

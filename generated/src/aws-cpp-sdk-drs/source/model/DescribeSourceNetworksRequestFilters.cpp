@@ -25,10 +25,8 @@ DescribeSourceNetworksRequestFilters::DescribeSourceNetworksRequestFilters() :
 {
 }
 
-DescribeSourceNetworksRequestFilters::DescribeSourceNetworksRequestFilters(JsonView jsonValue) : 
-    m_originAccountIDHasBeenSet(false),
-    m_originRegionHasBeenSet(false),
-    m_sourceNetworkIDsHasBeenSet(false)
+DescribeSourceNetworksRequestFilters::DescribeSourceNetworksRequestFilters(JsonView jsonValue)
+  : DescribeSourceNetworksRequestFilters()
 {
   *this = jsonValue;
 }

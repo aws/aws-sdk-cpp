@@ -34,19 +34,8 @@ ExecutionStats::ExecutionStats() :
 {
 }
 
-ExecutionStats::ExecutionStats(JsonView jsonValue) : 
-    m_executionTimeInMillis(0),
-    m_executionTimeInMillisHasBeenSet(false),
-    m_dataWrites(0),
-    m_dataWritesHasBeenSet(false),
-    m_bytesMetered(0),
-    m_bytesMeteredHasBeenSet(false),
-    m_cumulativeBytesScanned(0),
-    m_cumulativeBytesScannedHasBeenSet(false),
-    m_recordsIngested(0),
-    m_recordsIngestedHasBeenSet(false),
-    m_queryResultRows(0),
-    m_queryResultRowsHasBeenSet(false)
+ExecutionStats::ExecutionStats(JsonView jsonValue)
+  : ExecutionStats()
 {
   *this = jsonValue;
 }

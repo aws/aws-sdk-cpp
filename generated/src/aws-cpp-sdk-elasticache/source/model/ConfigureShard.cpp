@@ -29,12 +29,8 @@ ConfigureShard::ConfigureShard() :
 {
 }
 
-ConfigureShard::ConfigureShard(const XmlNode& xmlNode) : 
-    m_nodeGroupIdHasBeenSet(false),
-    m_newReplicaCount(0),
-    m_newReplicaCountHasBeenSet(false),
-    m_preferredAvailabilityZonesHasBeenSet(false),
-    m_preferredOutpostArnsHasBeenSet(false)
+ConfigureShard::ConfigureShard(const XmlNode& xmlNode)
+  : ConfigureShard()
 {
   *this = xmlNode;
 }

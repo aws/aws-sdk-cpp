@@ -26,11 +26,8 @@ OnDemandThroughput::OnDemandThroughput() :
 {
 }
 
-OnDemandThroughput::OnDemandThroughput(JsonView jsonValue) : 
-    m_maxReadRequestUnits(0),
-    m_maxReadRequestUnitsHasBeenSet(false),
-    m_maxWriteRequestUnits(0),
-    m_maxWriteRequestUnitsHasBeenSet(false)
+OnDemandThroughput::OnDemandThroughput(JsonView jsonValue)
+  : OnDemandThroughput()
 {
   *this = jsonValue;
 }

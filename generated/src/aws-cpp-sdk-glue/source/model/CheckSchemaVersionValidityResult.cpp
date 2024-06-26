@@ -22,8 +22,8 @@ CheckSchemaVersionValidityResult::CheckSchemaVersionValidityResult() :
 {
 }
 
-CheckSchemaVersionValidityResult::CheckSchemaVersionValidityResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_valid(false)
+CheckSchemaVersionValidityResult::CheckSchemaVersionValidityResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CheckSchemaVersionValidityResult()
 {
   *this = result;
 }

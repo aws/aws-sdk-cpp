@@ -25,10 +25,8 @@ NotificationSummary::NotificationSummary() :
 {
 }
 
-NotificationSummary::NotificationSummary(JsonView jsonValue) : 
-    m_type(NotificationType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_lensUpgradeSummaryHasBeenSet(false)
+NotificationSummary::NotificationSummary(JsonView jsonValue)
+  : NotificationSummary()
 {
   *this = jsonValue;
 }

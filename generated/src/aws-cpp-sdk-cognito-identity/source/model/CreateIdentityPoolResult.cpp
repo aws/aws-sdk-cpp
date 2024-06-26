@@ -23,9 +23,8 @@ CreateIdentityPoolResult::CreateIdentityPoolResult() :
 {
 }
 
-CreateIdentityPoolResult::CreateIdentityPoolResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_allowUnauthenticatedIdentities(false),
-    m_allowClassicFlow(false)
+CreateIdentityPoolResult::CreateIdentityPoolResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateIdentityPoolResult()
 {
   *this = result;
 }

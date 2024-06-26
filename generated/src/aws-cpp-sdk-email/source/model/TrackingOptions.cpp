@@ -25,8 +25,8 @@ TrackingOptions::TrackingOptions() :
 {
 }
 
-TrackingOptions::TrackingOptions(const XmlNode& xmlNode) : 
-    m_customRedirectDomainHasBeenSet(false)
+TrackingOptions::TrackingOptions(const XmlNode& xmlNode)
+  : TrackingOptions()
 {
   *this = xmlNode;
 }

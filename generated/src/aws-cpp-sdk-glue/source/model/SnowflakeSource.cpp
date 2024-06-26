@@ -25,10 +25,8 @@ SnowflakeSource::SnowflakeSource() :
 {
 }
 
-SnowflakeSource::SnowflakeSource(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_dataHasBeenSet(false),
-    m_outputSchemasHasBeenSet(false)
+SnowflakeSource::SnowflakeSource(JsonView jsonValue)
+  : SnowflakeSource()
 {
   *this = jsonValue;
 }

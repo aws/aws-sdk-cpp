@@ -26,11 +26,8 @@ DatabricksParameters::DatabricksParameters() :
 {
 }
 
-DatabricksParameters::DatabricksParameters(JsonView jsonValue) : 
-    m_hostHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_sqlEndpointPathHasBeenSet(false)
+DatabricksParameters::DatabricksParameters(JsonView jsonValue)
+  : DatabricksParameters()
 {
   *this = jsonValue;
 }

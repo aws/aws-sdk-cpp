@@ -25,10 +25,8 @@ Contributor::Contributor() :
 {
 }
 
-Contributor::Contributor(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_value(0),
-    m_valueHasBeenSet(false)
+Contributor::Contributor(JsonView jsonValue)
+  : Contributor()
 {
   *this = jsonValue;
 }

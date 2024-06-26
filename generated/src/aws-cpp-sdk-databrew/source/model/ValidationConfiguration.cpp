@@ -25,10 +25,8 @@ ValidationConfiguration::ValidationConfiguration() :
 {
 }
 
-ValidationConfiguration::ValidationConfiguration(JsonView jsonValue) : 
-    m_rulesetArnHasBeenSet(false),
-    m_validationMode(ValidationMode::NOT_SET),
-    m_validationModeHasBeenSet(false)
+ValidationConfiguration::ValidationConfiguration(JsonView jsonValue)
+  : ValidationConfiguration()
 {
   *this = jsonValue;
 }

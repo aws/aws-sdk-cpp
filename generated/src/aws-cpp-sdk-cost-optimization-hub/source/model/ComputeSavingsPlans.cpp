@@ -24,9 +24,8 @@ ComputeSavingsPlans::ComputeSavingsPlans() :
 {
 }
 
-ComputeSavingsPlans::ComputeSavingsPlans(JsonView jsonValue) : 
-    m_configurationHasBeenSet(false),
-    m_costCalculationHasBeenSet(false)
+ComputeSavingsPlans::ComputeSavingsPlans(JsonView jsonValue)
+  : ComputeSavingsPlans()
 {
   *this = jsonValue;
 }

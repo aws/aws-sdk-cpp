@@ -22,8 +22,8 @@ GetTemplateResult::GetTemplateResult() :
 {
 }
 
-GetTemplateResult::GetTemplateResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(TemplateStatus::NOT_SET)
+GetTemplateResult::GetTemplateResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetTemplateResult()
 {
   *this = result;
 }

@@ -25,10 +25,8 @@ BatchAddFacetToObject::BatchAddFacetToObject() :
 {
 }
 
-BatchAddFacetToObject::BatchAddFacetToObject(JsonView jsonValue) : 
-    m_schemaFacetHasBeenSet(false),
-    m_objectAttributeListHasBeenSet(false),
-    m_objectReferenceHasBeenSet(false)
+BatchAddFacetToObject::BatchAddFacetToObject(JsonView jsonValue)
+  : BatchAddFacetToObject()
 {
   *this = jsonValue;
 }

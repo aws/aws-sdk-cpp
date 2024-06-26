@@ -27,12 +27,8 @@ SearchPlaceIndexForPositionSummary::SearchPlaceIndexForPositionSummary() :
 {
 }
 
-SearchPlaceIndexForPositionSummary::SearchPlaceIndexForPositionSummary(JsonView jsonValue) : 
-    m_positionHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_dataSourceHasBeenSet(false),
-    m_languageHasBeenSet(false)
+SearchPlaceIndexForPositionSummary::SearchPlaceIndexForPositionSummary(JsonView jsonValue)
+  : SearchPlaceIndexForPositionSummary()
 {
   *this = jsonValue;
 }

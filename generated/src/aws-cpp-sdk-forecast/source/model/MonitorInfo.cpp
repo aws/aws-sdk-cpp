@@ -24,9 +24,8 @@ MonitorInfo::MonitorInfo() :
 {
 }
 
-MonitorInfo::MonitorInfo(JsonView jsonValue) : 
-    m_monitorArnHasBeenSet(false),
-    m_statusHasBeenSet(false)
+MonitorInfo::MonitorInfo(JsonView jsonValue)
+  : MonitorInfo()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ ServiceLimitExceededException::ServiceLimitExceededException() :
 {
 }
 
-ServiceLimitExceededException::ServiceLimitExceededException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_codeHasBeenSet(false)
+ServiceLimitExceededException::ServiceLimitExceededException(JsonView jsonValue)
+  : ServiceLimitExceededException()
 {
   *this = jsonValue;
 }

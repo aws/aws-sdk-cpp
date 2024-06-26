@@ -24,9 +24,8 @@ DASHTimestampRange::DASHTimestampRange() :
 {
 }
 
-DASHTimestampRange::DASHTimestampRange(JsonView jsonValue) : 
-    m_startTimestampHasBeenSet(false),
-    m_endTimestampHasBeenSet(false)
+DASHTimestampRange::DASHTimestampRange(JsonView jsonValue)
+  : DASHTimestampRange()
 {
   *this = jsonValue;
 }

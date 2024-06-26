@@ -22,8 +22,8 @@ GetServiceEndpointResult::GetServiceEndpointResult() :
 {
 }
 
-GetServiceEndpointResult::GetServiceEndpointResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_serviceType(WirelessGatewayServiceType::NOT_SET)
+GetServiceEndpointResult::GetServiceEndpointResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetServiceEndpointResult()
 {
   *this = result;
 }

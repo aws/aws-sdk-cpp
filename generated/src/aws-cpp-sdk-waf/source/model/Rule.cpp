@@ -26,11 +26,8 @@ Rule::Rule() :
 {
 }
 
-Rule::Rule(JsonView jsonValue) : 
-    m_ruleIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_metricNameHasBeenSet(false),
-    m_predicatesHasBeenSet(false)
+Rule::Rule(JsonView jsonValue)
+  : Rule()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ RuntimeVersionError::RuntimeVersionError() :
 {
 }
 
-RuntimeVersionError::RuntimeVersionError(JsonView jsonValue) : 
-    m_errorCodeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+RuntimeVersionError::RuntimeVersionError(JsonView jsonValue)
+  : RuntimeVersionError()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ NativeIndexConfiguration::NativeIndexConfiguration() :
 {
 }
 
-NativeIndexConfiguration::NativeIndexConfiguration(JsonView jsonValue) : 
-    m_indexIdHasBeenSet(false),
-    m_boostingOverrideHasBeenSet(false)
+NativeIndexConfiguration::NativeIndexConfiguration(JsonView jsonValue)
+  : NativeIndexConfiguration()
 {
   *this = jsonValue;
 }

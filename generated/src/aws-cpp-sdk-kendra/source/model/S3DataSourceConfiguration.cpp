@@ -28,13 +28,8 @@ S3DataSourceConfiguration::S3DataSourceConfiguration() :
 {
 }
 
-S3DataSourceConfiguration::S3DataSourceConfiguration(JsonView jsonValue) : 
-    m_bucketNameHasBeenSet(false),
-    m_inclusionPrefixesHasBeenSet(false),
-    m_inclusionPatternsHasBeenSet(false),
-    m_exclusionPatternsHasBeenSet(false),
-    m_documentsMetadataConfigurationHasBeenSet(false),
-    m_accessControlListConfigurationHasBeenSet(false)
+S3DataSourceConfiguration::S3DataSourceConfiguration(JsonView jsonValue)
+  : S3DataSourceConfiguration()
 {
   *this = jsonValue;
 }

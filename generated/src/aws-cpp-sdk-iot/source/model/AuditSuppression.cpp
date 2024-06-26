@@ -28,13 +28,8 @@ AuditSuppression::AuditSuppression() :
 {
 }
 
-AuditSuppression::AuditSuppression(JsonView jsonValue) : 
-    m_checkNameHasBeenSet(false),
-    m_resourceIdentifierHasBeenSet(false),
-    m_expirationDateHasBeenSet(false),
-    m_suppressIndefinitely(false),
-    m_suppressIndefinitelyHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+AuditSuppression::AuditSuppression(JsonView jsonValue)
+  : AuditSuppression()
 {
   *this = jsonValue;
 }

@@ -33,18 +33,8 @@ DescribedSecurityPolicy::DescribedSecurityPolicy() :
 {
 }
 
-DescribedSecurityPolicy::DescribedSecurityPolicy(JsonView jsonValue) : 
-    m_fips(false),
-    m_fipsHasBeenSet(false),
-    m_securityPolicyNameHasBeenSet(false),
-    m_sshCiphersHasBeenSet(false),
-    m_sshKexsHasBeenSet(false),
-    m_sshMacsHasBeenSet(false),
-    m_tlsCiphersHasBeenSet(false),
-    m_sshHostKeyAlgorithmsHasBeenSet(false),
-    m_type(SecurityPolicyResourceType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_protocolsHasBeenSet(false)
+DescribedSecurityPolicy::DescribedSecurityPolicy(JsonView jsonValue)
+  : DescribedSecurityPolicy()
 {
   *this = jsonValue;
 }

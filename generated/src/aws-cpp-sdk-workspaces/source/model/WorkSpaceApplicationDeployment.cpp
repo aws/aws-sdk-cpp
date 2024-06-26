@@ -23,8 +23,8 @@ WorkSpaceApplicationDeployment::WorkSpaceApplicationDeployment() :
 {
 }
 
-WorkSpaceApplicationDeployment::WorkSpaceApplicationDeployment(JsonView jsonValue) : 
-    m_associationsHasBeenSet(false)
+WorkSpaceApplicationDeployment::WorkSpaceApplicationDeployment(JsonView jsonValue)
+  : WorkSpaceApplicationDeployment()
 {
   *this = jsonValue;
 }

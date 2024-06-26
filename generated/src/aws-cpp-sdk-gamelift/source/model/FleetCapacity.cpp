@@ -29,14 +29,8 @@ FleetCapacity::FleetCapacity() :
 {
 }
 
-FleetCapacity::FleetCapacity(JsonView jsonValue) : 
-    m_fleetIdHasBeenSet(false),
-    m_fleetArnHasBeenSet(false),
-    m_instanceType(EC2InstanceType::NOT_SET),
-    m_instanceTypeHasBeenSet(false),
-    m_instanceCountsHasBeenSet(false),
-    m_locationHasBeenSet(false),
-    m_replicaContainerGroupCountsHasBeenSet(false)
+FleetCapacity::FleetCapacity(JsonView jsonValue)
+  : FleetCapacity()
 {
   *this = jsonValue;
 }

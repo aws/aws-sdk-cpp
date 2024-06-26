@@ -32,17 +32,8 @@ FindMatchesMetrics::FindMatchesMetrics() :
 {
 }
 
-FindMatchesMetrics::FindMatchesMetrics(JsonView jsonValue) : 
-    m_areaUnderPRCurve(0.0),
-    m_areaUnderPRCurveHasBeenSet(false),
-    m_precision(0.0),
-    m_precisionHasBeenSet(false),
-    m_recall(0.0),
-    m_recallHasBeenSet(false),
-    m_f1(0.0),
-    m_f1HasBeenSet(false),
-    m_confusionMatrixHasBeenSet(false),
-    m_columnImportancesHasBeenSet(false)
+FindMatchesMetrics::FindMatchesMetrics(JsonView jsonValue)
+  : FindMatchesMetrics()
 {
   *this = jsonValue;
 }

@@ -27,12 +27,8 @@ APIKeySummary::APIKeySummary() :
 {
 }
 
-APIKeySummary::APIKeySummary(JsonView jsonValue) : 
-    m_tokenDomainsHasBeenSet(false),
-    m_aPIKeyHasBeenSet(false),
-    m_creationTimestampHasBeenSet(false),
-    m_version(0),
-    m_versionHasBeenSet(false)
+APIKeySummary::APIKeySummary(JsonView jsonValue)
+  : APIKeySummary()
 {
   *this = jsonValue;
 }

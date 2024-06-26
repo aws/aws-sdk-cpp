@@ -23,8 +23,8 @@ TestCases::TestCases() :
 {
 }
 
-TestCases::TestCases(JsonView jsonValue) : 
-    m_sequentialHasBeenSet(false)
+TestCases::TestCases(JsonView jsonValue)
+  : TestCases()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ KafkaActionHeader::KafkaActionHeader() :
 {
 }
 
-KafkaActionHeader::KafkaActionHeader(JsonView jsonValue) : 
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false)
+KafkaActionHeader::KafkaActionHeader(JsonView jsonValue)
+  : KafkaActionHeader()
 {
   *this = jsonValue;
 }

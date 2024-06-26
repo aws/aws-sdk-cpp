@@ -25,10 +25,8 @@ GuardrailTraceAssessment::GuardrailTraceAssessment() :
 {
 }
 
-GuardrailTraceAssessment::GuardrailTraceAssessment(JsonView jsonValue) : 
-    m_modelOutputHasBeenSet(false),
-    m_inputAssessmentHasBeenSet(false),
-    m_outputAssessmentsHasBeenSet(false)
+GuardrailTraceAssessment::GuardrailTraceAssessment(JsonView jsonValue)
+  : GuardrailTraceAssessment()
 {
   *this = jsonValue;
 }

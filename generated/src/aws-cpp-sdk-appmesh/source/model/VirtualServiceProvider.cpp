@@ -24,9 +24,8 @@ VirtualServiceProvider::VirtualServiceProvider() :
 {
 }
 
-VirtualServiceProvider::VirtualServiceProvider(JsonView jsonValue) : 
-    m_virtualNodeHasBeenSet(false),
-    m_virtualRouterHasBeenSet(false)
+VirtualServiceProvider::VirtualServiceProvider(JsonView jsonValue)
+  : VirtualServiceProvider()
 {
   *this = jsonValue;
 }

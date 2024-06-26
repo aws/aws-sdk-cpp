@@ -48,8 +48,8 @@ InvokeResult& InvokeResult::operator=(InvokeResult&& toMove)
    return *this;
 }
 
-InvokeResult::InvokeResult(Aws::AmazonWebServiceResult<ResponseStream>&& result) : 
-    m_statusCode(0)
+InvokeResult::InvokeResult(Aws::AmazonWebServiceResult<ResponseStream>&& result)
+  : InvokeResult()
 {
   *this = std::move(result);
 }

@@ -25,8 +25,8 @@ IpamPublicAddressTags::IpamPublicAddressTags() :
 {
 }
 
-IpamPublicAddressTags::IpamPublicAddressTags(const XmlNode& xmlNode) : 
-    m_eipTagsHasBeenSet(false)
+IpamPublicAddressTags::IpamPublicAddressTags(const XmlNode& xmlNode)
+  : IpamPublicAddressTags()
 {
   *this = xmlNode;
 }

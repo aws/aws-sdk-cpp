@@ -30,15 +30,8 @@ DiscovererSummary::DiscovererSummary() :
 {
 }
 
-DiscovererSummary::DiscovererSummary(JsonView jsonValue) : 
-    m_discovererArnHasBeenSet(false),
-    m_discovererIdHasBeenSet(false),
-    m_sourceArnHasBeenSet(false),
-    m_state(DiscovererState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_crossAccount(false),
-    m_crossAccountHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+DiscovererSummary::DiscovererSummary(JsonView jsonValue)
+  : DiscovererSummary()
 {
   *this = jsonValue;
 }

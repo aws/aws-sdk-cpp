@@ -25,10 +25,8 @@ S3Configuration::S3Configuration() :
 {
 }
 
-S3Configuration::S3Configuration(JsonView jsonValue) : 
-    m_roleARNHasBeenSet(false),
-    m_bucketARNHasBeenSet(false),
-    m_fileKeyHasBeenSet(false)
+S3Configuration::S3Configuration(JsonView jsonValue)
+  : S3Configuration()
 {
   *this = jsonValue;
 }

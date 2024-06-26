@@ -25,10 +25,8 @@ Filter::Filter() :
 {
 }
 
-Filter::Filter(JsonView jsonValue) : 
-    m_dimensionValueHasBeenSet(false),
-    m_filterOperation(FilterOperation::NOT_SET),
-    m_filterOperationHasBeenSet(false)
+Filter::Filter(JsonView jsonValue)
+  : Filter()
 {
   *this = jsonValue;
 }

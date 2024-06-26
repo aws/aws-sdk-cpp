@@ -23,8 +23,8 @@ OfferTargetingFilter::OfferTargetingFilter() :
 {
 }
 
-OfferTargetingFilter::OfferTargetingFilter(JsonView jsonValue) : 
-    m_valueListHasBeenSet(false)
+OfferTargetingFilter::OfferTargetingFilter(JsonView jsonValue)
+  : OfferTargetingFilter()
 {
   *this = jsonValue;
 }

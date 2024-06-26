@@ -25,10 +25,8 @@ ProviderIdNameSpaceConfiguration::ProviderIdNameSpaceConfiguration() :
 {
 }
 
-ProviderIdNameSpaceConfiguration::ProviderIdNameSpaceConfiguration(JsonView jsonValue) : 
-    m_descriptionHasBeenSet(false),
-    m_providerSourceConfigurationDefinitionHasBeenSet(false),
-    m_providerTargetConfigurationDefinitionHasBeenSet(false)
+ProviderIdNameSpaceConfiguration::ProviderIdNameSpaceConfiguration(JsonView jsonValue)
+  : ProviderIdNameSpaceConfiguration()
 {
   *this = jsonValue;
 }

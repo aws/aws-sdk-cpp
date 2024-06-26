@@ -28,13 +28,8 @@ EbsInstanceBlockDevice::EbsInstanceBlockDevice() :
 {
 }
 
-EbsInstanceBlockDevice::EbsInstanceBlockDevice(JsonView jsonValue) : 
-    m_attachTimeHasBeenSet(false),
-    m_deleteOnTermination(false),
-    m_deleteOnTerminationHasBeenSet(false),
-    m_status(AttachmentStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_volumeIdHasBeenSet(false)
+EbsInstanceBlockDevice::EbsInstanceBlockDevice(JsonView jsonValue)
+  : EbsInstanceBlockDevice()
 {
   *this = jsonValue;
 }

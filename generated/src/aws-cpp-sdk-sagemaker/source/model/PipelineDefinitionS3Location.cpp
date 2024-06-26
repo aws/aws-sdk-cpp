@@ -25,10 +25,8 @@ PipelineDefinitionS3Location::PipelineDefinitionS3Location() :
 {
 }
 
-PipelineDefinitionS3Location::PipelineDefinitionS3Location(JsonView jsonValue) : 
-    m_bucketHasBeenSet(false),
-    m_objectKeyHasBeenSet(false),
-    m_versionIdHasBeenSet(false)
+PipelineDefinitionS3Location::PipelineDefinitionS3Location(JsonView jsonValue)
+  : PipelineDefinitionS3Location()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ PublicWorkforceTaskPrice::PublicWorkforceTaskPrice() :
 {
 }
 
-PublicWorkforceTaskPrice::PublicWorkforceTaskPrice(JsonView jsonValue) : 
-    m_amountInUsdHasBeenSet(false)
+PublicWorkforceTaskPrice::PublicWorkforceTaskPrice(JsonView jsonValue)
+  : PublicWorkforceTaskPrice()
 {
   *this = jsonValue;
 }

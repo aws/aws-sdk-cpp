@@ -23,8 +23,8 @@ MalaysiaAdditionalInfo::MalaysiaAdditionalInfo() :
 {
 }
 
-MalaysiaAdditionalInfo::MalaysiaAdditionalInfo(JsonView jsonValue) : 
-    m_serviceTaxCodesHasBeenSet(false)
+MalaysiaAdditionalInfo::MalaysiaAdditionalInfo(JsonView jsonValue)
+  : MalaysiaAdditionalInfo()
 {
   *this = jsonValue;
 }

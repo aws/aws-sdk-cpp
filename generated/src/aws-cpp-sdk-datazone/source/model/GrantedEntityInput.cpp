@@ -23,8 +23,8 @@ GrantedEntityInput::GrantedEntityInput() :
 {
 }
 
-GrantedEntityInput::GrantedEntityInput(JsonView jsonValue) : 
-    m_listingHasBeenSet(false)
+GrantedEntityInput::GrantedEntityInput(JsonView jsonValue)
+  : GrantedEntityInput()
 {
   *this = jsonValue;
 }

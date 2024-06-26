@@ -27,12 +27,8 @@ SymmetricEncryptionAttributes::SymmetricEncryptionAttributes() :
 {
 }
 
-SymmetricEncryptionAttributes::SymmetricEncryptionAttributes(JsonView jsonValue) : 
-    m_initializationVectorHasBeenSet(false),
-    m_mode(EncryptionMode::NOT_SET),
-    m_modeHasBeenSet(false),
-    m_paddingType(PaddingType::NOT_SET),
-    m_paddingTypeHasBeenSet(false)
+SymmetricEncryptionAttributes::SymmetricEncryptionAttributes(JsonView jsonValue)
+  : SymmetricEncryptionAttributes()
 {
   *this = jsonValue;
 }

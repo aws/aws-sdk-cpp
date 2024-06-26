@@ -24,9 +24,8 @@ DatabaseCDC::DatabaseCDC() :
 {
 }
 
-DatabaseCDC::DatabaseCDC(JsonView jsonValue) : 
-    m_sourceMetadataHasBeenSet(false),
-    m_targetMetadataHasBeenSet(false)
+DatabaseCDC::DatabaseCDC(JsonView jsonValue)
+  : DatabaseCDC()
 {
   *this = jsonValue;
 }

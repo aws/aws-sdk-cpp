@@ -25,10 +25,8 @@ ResourceAccessPolicy::ResourceAccessPolicy() :
 {
 }
 
-ResourceAccessPolicy::ResourceAccessPolicy(JsonView jsonValue) : 
-    m_permission(Permission::NOT_SET),
-    m_permissionHasBeenSet(false),
-    m_resourceIdHasBeenSet(false)
+ResourceAccessPolicy::ResourceAccessPolicy(JsonView jsonValue)
+  : ResourceAccessPolicy()
 {
   *this = jsonValue;
 }

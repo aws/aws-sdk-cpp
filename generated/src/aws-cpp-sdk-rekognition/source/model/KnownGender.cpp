@@ -24,9 +24,8 @@ KnownGender::KnownGender() :
 {
 }
 
-KnownGender::KnownGender(JsonView jsonValue) : 
-    m_type(KnownGenderType::NOT_SET),
-    m_typeHasBeenSet(false)
+KnownGender::KnownGender(JsonView jsonValue)
+  : KnownGender()
 {
   *this = jsonValue;
 }

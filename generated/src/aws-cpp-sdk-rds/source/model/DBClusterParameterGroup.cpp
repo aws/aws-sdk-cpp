@@ -28,11 +28,8 @@ DBClusterParameterGroup::DBClusterParameterGroup() :
 {
 }
 
-DBClusterParameterGroup::DBClusterParameterGroup(const XmlNode& xmlNode) : 
-    m_dBClusterParameterGroupNameHasBeenSet(false),
-    m_dBParameterGroupFamilyHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_dBClusterParameterGroupArnHasBeenSet(false)
+DBClusterParameterGroup::DBClusterParameterGroup(const XmlNode& xmlNode)
+  : DBClusterParameterGroup()
 {
   *this = xmlNode;
 }

@@ -35,20 +35,8 @@ BatchSegmentJob::BatchSegmentJob() :
 {
 }
 
-BatchSegmentJob::BatchSegmentJob(JsonView jsonValue) : 
-    m_jobNameHasBeenSet(false),
-    m_batchSegmentJobArnHasBeenSet(false),
-    m_filterArnHasBeenSet(false),
-    m_failureReasonHasBeenSet(false),
-    m_solutionVersionArnHasBeenSet(false),
-    m_numResults(0),
-    m_numResultsHasBeenSet(false),
-    m_jobInputHasBeenSet(false),
-    m_jobOutputHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_creationDateTimeHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false)
+BatchSegmentJob::BatchSegmentJob(JsonView jsonValue)
+  : BatchSegmentJob()
 {
   *this = jsonValue;
 }

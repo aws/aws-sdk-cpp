@@ -24,9 +24,8 @@ Segment::Segment() :
 {
 }
 
-Segment::Segment(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_documentHasBeenSet(false)
+Segment::Segment(JsonView jsonValue)
+  : Segment()
 {
   *this = jsonValue;
 }

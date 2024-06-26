@@ -22,8 +22,8 @@ GetFederationTokenResult::GetFederationTokenResult() :
 {
 }
 
-GetFederationTokenResult::GetFederationTokenResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_packedPolicySize(0)
+GetFederationTokenResult::GetFederationTokenResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : GetFederationTokenResult()
 {
   *this = result;
 }

@@ -26,11 +26,8 @@ StaticKeyProvider::StaticKeyProvider() :
 {
 }
 
-StaticKeyProvider::StaticKeyProvider(JsonView jsonValue) : 
-    m_keyFormatHasBeenSet(false),
-    m_keyFormatVersionsHasBeenSet(false),
-    m_staticKeyValueHasBeenSet(false),
-    m_urlHasBeenSet(false)
+StaticKeyProvider::StaticKeyProvider(JsonView jsonValue)
+  : StaticKeyProvider()
 {
   *this = jsonValue;
 }

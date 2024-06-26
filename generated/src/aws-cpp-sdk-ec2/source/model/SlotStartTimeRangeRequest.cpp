@@ -26,9 +26,8 @@ SlotStartTimeRangeRequest::SlotStartTimeRangeRequest() :
 {
 }
 
-SlotStartTimeRangeRequest::SlotStartTimeRangeRequest(const XmlNode& xmlNode) : 
-    m_earliestTimeHasBeenSet(false),
-    m_latestTimeHasBeenSet(false)
+SlotStartTimeRangeRequest::SlotStartTimeRangeRequest(const XmlNode& xmlNode)
+  : SlotStartTimeRangeRequest()
 {
   *this = xmlNode;
 }

@@ -23,8 +23,8 @@ AwsEc2ClientVpnEndpointAuthenticationOptionsMutualAuthenticationDetails::AwsEc2C
 {
 }
 
-AwsEc2ClientVpnEndpointAuthenticationOptionsMutualAuthenticationDetails::AwsEc2ClientVpnEndpointAuthenticationOptionsMutualAuthenticationDetails(JsonView jsonValue) : 
-    m_clientRootCertificateChainHasBeenSet(false)
+AwsEc2ClientVpnEndpointAuthenticationOptionsMutualAuthenticationDetails::AwsEc2ClientVpnEndpointAuthenticationOptionsMutualAuthenticationDetails(JsonView jsonValue)
+  : AwsEc2ClientVpnEndpointAuthenticationOptionsMutualAuthenticationDetails()
 {
   *this = jsonValue;
 }

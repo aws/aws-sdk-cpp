@@ -23,8 +23,8 @@ HeatMapFieldWells::HeatMapFieldWells() :
 {
 }
 
-HeatMapFieldWells::HeatMapFieldWells(JsonView jsonValue) : 
-    m_heatMapAggregatedFieldWellsHasBeenSet(false)
+HeatMapFieldWells::HeatMapFieldWells(JsonView jsonValue)
+  : HeatMapFieldWells()
 {
   *this = jsonValue;
 }

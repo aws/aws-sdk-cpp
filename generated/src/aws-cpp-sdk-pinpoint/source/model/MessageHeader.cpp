@@ -24,9 +24,8 @@ MessageHeader::MessageHeader() :
 {
 }
 
-MessageHeader::MessageHeader(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
+MessageHeader::MessageHeader(JsonView jsonValue)
+  : MessageHeader()
 {
   *this = jsonValue;
 }

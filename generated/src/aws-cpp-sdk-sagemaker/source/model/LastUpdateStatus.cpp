@@ -25,10 +25,8 @@ LastUpdateStatus::LastUpdateStatus() :
 {
 }
 
-LastUpdateStatus::LastUpdateStatus(JsonView jsonValue) : 
-    m_status(LastUpdateStatusValue::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_failureReasonHasBeenSet(false)
+LastUpdateStatus::LastUpdateStatus(JsonView jsonValue)
+  : LastUpdateStatus()
 {
   *this = jsonValue;
 }

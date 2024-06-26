@@ -24,9 +24,8 @@ AwsEcsTaskDefinitionPlacementConstraintsDetails::AwsEcsTaskDefinitionPlacementCo
 {
 }
 
-AwsEcsTaskDefinitionPlacementConstraintsDetails::AwsEcsTaskDefinitionPlacementConstraintsDetails(JsonView jsonValue) : 
-    m_expressionHasBeenSet(false),
-    m_typeHasBeenSet(false)
+AwsEcsTaskDefinitionPlacementConstraintsDetails::AwsEcsTaskDefinitionPlacementConstraintsDetails(JsonView jsonValue)
+  : AwsEcsTaskDefinitionPlacementConstraintsDetails()
 {
   *this = jsonValue;
 }

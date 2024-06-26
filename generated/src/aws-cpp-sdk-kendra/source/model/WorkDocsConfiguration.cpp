@@ -30,15 +30,8 @@ WorkDocsConfiguration::WorkDocsConfiguration() :
 {
 }
 
-WorkDocsConfiguration::WorkDocsConfiguration(JsonView jsonValue) : 
-    m_organizationIdHasBeenSet(false),
-    m_crawlComments(false),
-    m_crawlCommentsHasBeenSet(false),
-    m_useChangeLog(false),
-    m_useChangeLogHasBeenSet(false),
-    m_inclusionPatternsHasBeenSet(false),
-    m_exclusionPatternsHasBeenSet(false),
-    m_fieldMappingsHasBeenSet(false)
+WorkDocsConfiguration::WorkDocsConfiguration(JsonView jsonValue)
+  : WorkDocsConfiguration()
 {
   *this = jsonValue;
 }

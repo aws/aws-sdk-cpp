@@ -22,8 +22,8 @@ TestSegmentPatternResult::TestSegmentPatternResult() :
 {
 }
 
-TestSegmentPatternResult::TestSegmentPatternResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_match(false)
+TestSegmentPatternResult::TestSegmentPatternResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : TestSegmentPatternResult()
 {
   *this = result;
 }

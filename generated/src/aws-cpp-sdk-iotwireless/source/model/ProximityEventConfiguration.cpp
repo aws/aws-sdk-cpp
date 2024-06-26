@@ -25,10 +25,8 @@ ProximityEventConfiguration::ProximityEventConfiguration() :
 {
 }
 
-ProximityEventConfiguration::ProximityEventConfiguration(JsonView jsonValue) : 
-    m_sidewalkHasBeenSet(false),
-    m_wirelessDeviceIdEventTopic(EventNotificationTopicStatus::NOT_SET),
-    m_wirelessDeviceIdEventTopicHasBeenSet(false)
+ProximityEventConfiguration::ProximityEventConfiguration(JsonView jsonValue)
+  : ProximityEventConfiguration()
 {
   *this = jsonValue;
 }

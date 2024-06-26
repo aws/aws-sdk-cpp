@@ -25,10 +25,8 @@ AttributeDimension::AttributeDimension() :
 {
 }
 
-AttributeDimension::AttributeDimension(JsonView jsonValue) : 
-    m_attributeType(AttributeType::NOT_SET),
-    m_attributeTypeHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+AttributeDimension::AttributeDimension(JsonView jsonValue)
+  : AttributeDimension()
 {
   *this = jsonValue;
 }

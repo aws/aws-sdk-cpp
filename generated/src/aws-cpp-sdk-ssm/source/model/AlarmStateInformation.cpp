@@ -25,10 +25,8 @@ AlarmStateInformation::AlarmStateInformation() :
 {
 }
 
-AlarmStateInformation::AlarmStateInformation(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_state(ExternalAlarmState::NOT_SET),
-    m_stateHasBeenSet(false)
+AlarmStateInformation::AlarmStateInformation(JsonView jsonValue)
+  : AlarmStateInformation()
 {
   *this = jsonValue;
 }

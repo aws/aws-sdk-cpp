@@ -28,13 +28,8 @@ DatasetExportJobSummary::DatasetExportJobSummary() :
 {
 }
 
-DatasetExportJobSummary::DatasetExportJobSummary(JsonView jsonValue) : 
-    m_datasetExportJobArnHasBeenSet(false),
-    m_jobNameHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_creationDateTimeHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false),
-    m_failureReasonHasBeenSet(false)
+DatasetExportJobSummary::DatasetExportJobSummary(JsonView jsonValue)
+  : DatasetExportJobSummary()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ FrameCaptureOutputSettings::FrameCaptureOutputSettings() :
 {
 }
 
-FrameCaptureOutputSettings::FrameCaptureOutputSettings(JsonView jsonValue) : 
-    m_nameModifierHasBeenSet(false)
+FrameCaptureOutputSettings::FrameCaptureOutputSettings(JsonView jsonValue)
+  : FrameCaptureOutputSettings()
 {
   *this = jsonValue;
 }

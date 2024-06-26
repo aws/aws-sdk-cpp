@@ -32,17 +32,8 @@ DescribedConnector::DescribedConnector() :
 {
 }
 
-DescribedConnector::DescribedConnector(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_connectorIdHasBeenSet(false),
-    m_urlHasBeenSet(false),
-    m_as2ConfigHasBeenSet(false),
-    m_accessRoleHasBeenSet(false),
-    m_loggingRoleHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_sftpConfigHasBeenSet(false),
-    m_serviceManagedEgressIpAddressesHasBeenSet(false),
-    m_securityPolicyNameHasBeenSet(false)
+DescribedConnector::DescribedConnector(JsonView jsonValue)
+  : DescribedConnector()
 {
   *this = jsonValue;
 }

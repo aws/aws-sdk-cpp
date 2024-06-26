@@ -23,8 +23,8 @@ ActionLocalIpDetails::ActionLocalIpDetails() :
 {
 }
 
-ActionLocalIpDetails::ActionLocalIpDetails(JsonView jsonValue) : 
-    m_ipAddressV4HasBeenSet(false)
+ActionLocalIpDetails::ActionLocalIpDetails(JsonView jsonValue)
+  : ActionLocalIpDetails()
 {
   *this = jsonValue;
 }

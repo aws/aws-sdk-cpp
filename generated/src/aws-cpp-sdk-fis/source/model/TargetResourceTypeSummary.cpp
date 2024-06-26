@@ -24,9 +24,8 @@ TargetResourceTypeSummary::TargetResourceTypeSummary() :
 {
 }
 
-TargetResourceTypeSummary::TargetResourceTypeSummary(JsonView jsonValue) : 
-    m_resourceTypeHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+TargetResourceTypeSummary::TargetResourceTypeSummary(JsonView jsonValue)
+  : TargetResourceTypeSummary()
 {
   *this = jsonValue;
 }

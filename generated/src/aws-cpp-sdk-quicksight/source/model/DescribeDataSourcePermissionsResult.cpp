@@ -22,8 +22,8 @@ DescribeDataSourcePermissionsResult::DescribeDataSourcePermissionsResult() :
 {
 }
 
-DescribeDataSourcePermissionsResult::DescribeDataSourcePermissionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+DescribeDataSourcePermissionsResult::DescribeDataSourcePermissionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeDataSourcePermissionsResult()
 {
   *this = result;
 }

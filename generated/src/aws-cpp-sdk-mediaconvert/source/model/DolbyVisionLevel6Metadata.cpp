@@ -26,11 +26,8 @@ DolbyVisionLevel6Metadata::DolbyVisionLevel6Metadata() :
 {
 }
 
-DolbyVisionLevel6Metadata::DolbyVisionLevel6Metadata(JsonView jsonValue) : 
-    m_maxCll(0),
-    m_maxCllHasBeenSet(false),
-    m_maxFall(0),
-    m_maxFallHasBeenSet(false)
+DolbyVisionLevel6Metadata::DolbyVisionLevel6Metadata(JsonView jsonValue)
+  : DolbyVisionLevel6Metadata()
 {
   *this = jsonValue;
 }

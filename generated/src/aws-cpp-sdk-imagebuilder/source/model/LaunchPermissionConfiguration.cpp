@@ -26,11 +26,8 @@ LaunchPermissionConfiguration::LaunchPermissionConfiguration() :
 {
 }
 
-LaunchPermissionConfiguration::LaunchPermissionConfiguration(JsonView jsonValue) : 
-    m_userIdsHasBeenSet(false),
-    m_userGroupsHasBeenSet(false),
-    m_organizationArnsHasBeenSet(false),
-    m_organizationalUnitArnsHasBeenSet(false)
+LaunchPermissionConfiguration::LaunchPermissionConfiguration(JsonView jsonValue)
+  : LaunchPermissionConfiguration()
 {
   *this = jsonValue;
 }

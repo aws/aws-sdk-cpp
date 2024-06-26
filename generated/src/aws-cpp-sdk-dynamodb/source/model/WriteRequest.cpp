@@ -24,9 +24,8 @@ WriteRequest::WriteRequest() :
 {
 }
 
-WriteRequest::WriteRequest(JsonView jsonValue) : 
-    m_putRequestHasBeenSet(false),
-    m_deleteRequestHasBeenSet(false)
+WriteRequest::WriteRequest(JsonView jsonValue)
+  : WriteRequest()
 {
   *this = jsonValue;
 }

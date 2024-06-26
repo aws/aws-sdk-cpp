@@ -27,10 +27,8 @@ LaunchTemplateCapacityReservationSpecificationRequest::LaunchTemplateCapacityRes
 {
 }
 
-LaunchTemplateCapacityReservationSpecificationRequest::LaunchTemplateCapacityReservationSpecificationRequest(const XmlNode& xmlNode) : 
-    m_capacityReservationPreference(CapacityReservationPreference::NOT_SET),
-    m_capacityReservationPreferenceHasBeenSet(false),
-    m_capacityReservationTargetHasBeenSet(false)
+LaunchTemplateCapacityReservationSpecificationRequest::LaunchTemplateCapacityReservationSpecificationRequest(const XmlNode& xmlNode)
+  : LaunchTemplateCapacityReservationSpecificationRequest()
 {
   *this = xmlNode;
 }

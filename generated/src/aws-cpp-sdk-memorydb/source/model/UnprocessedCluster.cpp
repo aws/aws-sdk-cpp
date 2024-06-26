@@ -25,10 +25,8 @@ UnprocessedCluster::UnprocessedCluster() :
 {
 }
 
-UnprocessedCluster::UnprocessedCluster(JsonView jsonValue) : 
-    m_clusterNameHasBeenSet(false),
-    m_errorTypeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
+UnprocessedCluster::UnprocessedCluster(JsonView jsonValue)
+  : UnprocessedCluster()
 {
   *this = jsonValue;
 }

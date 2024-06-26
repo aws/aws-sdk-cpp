@@ -24,9 +24,8 @@ VoutFilter::VoutFilter() :
 {
 }
 
-VoutFilter::VoutFilter(JsonView jsonValue) : 
-    m_voutSpent(false),
-    m_voutSpentHasBeenSet(false)
+VoutFilter::VoutFilter(JsonView jsonValue)
+  : VoutFilter()
 {
   *this = jsonValue;
 }

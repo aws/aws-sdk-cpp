@@ -24,9 +24,8 @@ ClassificationScopeSummary::ClassificationScopeSummary() :
 {
 }
 
-ClassificationScopeSummary::ClassificationScopeSummary(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false)
+ClassificationScopeSummary::ClassificationScopeSummary(JsonView jsonValue)
+  : ClassificationScopeSummary()
 {
   *this = jsonValue;
 }

@@ -34,19 +34,8 @@ SavingsPlanRate::SavingsPlanRate() :
 {
 }
 
-SavingsPlanRate::SavingsPlanRate(JsonView jsonValue) : 
-    m_rateHasBeenSet(false),
-    m_currency(CurrencyCode::NOT_SET),
-    m_currencyHasBeenSet(false),
-    m_unit(SavingsPlanRateUnit::NOT_SET),
-    m_unitHasBeenSet(false),
-    m_productType(SavingsPlanProductType::NOT_SET),
-    m_productTypeHasBeenSet(false),
-    m_serviceCode(SavingsPlanRateServiceCode::NOT_SET),
-    m_serviceCodeHasBeenSet(false),
-    m_usageTypeHasBeenSet(false),
-    m_operationHasBeenSet(false),
-    m_propertiesHasBeenSet(false)
+SavingsPlanRate::SavingsPlanRate(JsonView jsonValue)
+  : SavingsPlanRate()
 {
   *this = jsonValue;
 }

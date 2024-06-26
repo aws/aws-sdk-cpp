@@ -23,8 +23,8 @@ RecommendationData::RecommendationData() :
 {
 }
 
-RecommendationData::RecommendationData(JsonView jsonValue) : 
-    m_rdsEngineHasBeenSet(false)
+RecommendationData::RecommendationData(JsonView jsonValue)
+  : RecommendationData()
 {
   *this = jsonValue;
 }

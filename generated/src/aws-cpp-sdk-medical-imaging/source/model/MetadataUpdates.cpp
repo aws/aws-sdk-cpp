@@ -23,8 +23,8 @@ MetadataUpdates::MetadataUpdates() :
 {
 }
 
-MetadataUpdates::MetadataUpdates(JsonView jsonValue) : 
-    m_dICOMUpdatesHasBeenSet(false)
+MetadataUpdates::MetadataUpdates(JsonView jsonValue)
+  : MetadataUpdates()
 {
   *this = jsonValue;
 }

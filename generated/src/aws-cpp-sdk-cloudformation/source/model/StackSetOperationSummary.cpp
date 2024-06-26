@@ -34,17 +34,8 @@ StackSetOperationSummary::StackSetOperationSummary() :
 {
 }
 
-StackSetOperationSummary::StackSetOperationSummary(const XmlNode& xmlNode) : 
-    m_operationIdHasBeenSet(false),
-    m_action(StackSetOperationAction::NOT_SET),
-    m_actionHasBeenSet(false),
-    m_status(StackSetOperationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_creationTimestampHasBeenSet(false),
-    m_endTimestampHasBeenSet(false),
-    m_statusReasonHasBeenSet(false),
-    m_statusDetailsHasBeenSet(false),
-    m_operationPreferencesHasBeenSet(false)
+StackSetOperationSummary::StackSetOperationSummary(const XmlNode& xmlNode)
+  : StackSetOperationSummary()
 {
   *this = xmlNode;
 }

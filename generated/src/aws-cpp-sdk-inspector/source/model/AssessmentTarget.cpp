@@ -27,12 +27,8 @@ AssessmentTarget::AssessmentTarget() :
 {
 }
 
-AssessmentTarget::AssessmentTarget(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_resourceGroupArnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+AssessmentTarget::AssessmentTarget(JsonView jsonValue)
+  : AssessmentTarget()
 {
   *this = jsonValue;
 }

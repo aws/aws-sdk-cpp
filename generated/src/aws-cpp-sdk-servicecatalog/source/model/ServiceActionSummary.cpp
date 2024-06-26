@@ -27,12 +27,8 @@ ServiceActionSummary::ServiceActionSummary() :
 {
 }
 
-ServiceActionSummary::ServiceActionSummary(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_definitionType(ServiceActionDefinitionType::NOT_SET),
-    m_definitionTypeHasBeenSet(false)
+ServiceActionSummary::ServiceActionSummary(JsonView jsonValue)
+  : ServiceActionSummary()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ CreateGraphSnapshotResult::CreateGraphSnapshotResult() :
 {
 }
 
-CreateGraphSnapshotResult::CreateGraphSnapshotResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(SnapshotStatus::NOT_SET)
+CreateGraphSnapshotResult::CreateGraphSnapshotResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateGraphSnapshotResult()
 {
   *this = result;
 }

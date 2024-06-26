@@ -24,9 +24,8 @@ RecipeReference::RecipeReference() :
 {
 }
 
-RecipeReference::RecipeReference(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_recipeVersionHasBeenSet(false)
+RecipeReference::RecipeReference(JsonView jsonValue)
+  : RecipeReference()
 {
   *this = jsonValue;
 }

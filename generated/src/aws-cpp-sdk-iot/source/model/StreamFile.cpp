@@ -25,10 +25,8 @@ StreamFile::StreamFile() :
 {
 }
 
-StreamFile::StreamFile(JsonView jsonValue) : 
-    m_fileId(0),
-    m_fileIdHasBeenSet(false),
-    m_s3LocationHasBeenSet(false)
+StreamFile::StreamFile(JsonView jsonValue)
+  : StreamFile()
 {
   *this = jsonValue;
 }

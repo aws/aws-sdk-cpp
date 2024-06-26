@@ -26,11 +26,8 @@ ChallengeResponseType::ChallengeResponseType() :
 {
 }
 
-ChallengeResponseType::ChallengeResponseType(JsonView jsonValue) : 
-    m_challengeName(ChallengeName::NOT_SET),
-    m_challengeNameHasBeenSet(false),
-    m_challengeResponse(ChallengeResponse::NOT_SET),
-    m_challengeResponseHasBeenSet(false)
+ChallengeResponseType::ChallengeResponseType(JsonView jsonValue)
+  : ChallengeResponseType()
 {
   *this = jsonValue;
 }

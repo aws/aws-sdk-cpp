@@ -26,9 +26,8 @@ SecurityGroupRuleUpdate::SecurityGroupRuleUpdate() :
 {
 }
 
-SecurityGroupRuleUpdate::SecurityGroupRuleUpdate(const XmlNode& xmlNode) : 
-    m_securityGroupRuleIdHasBeenSet(false),
-    m_securityGroupRuleHasBeenSet(false)
+SecurityGroupRuleUpdate::SecurityGroupRuleUpdate(const XmlNode& xmlNode)
+  : SecurityGroupRuleUpdate()
 {
   *this = xmlNode;
 }

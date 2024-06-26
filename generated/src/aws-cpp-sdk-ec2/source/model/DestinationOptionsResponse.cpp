@@ -30,13 +30,8 @@ DestinationOptionsResponse::DestinationOptionsResponse() :
 {
 }
 
-DestinationOptionsResponse::DestinationOptionsResponse(const XmlNode& xmlNode) : 
-    m_fileFormat(DestinationFileFormat::NOT_SET),
-    m_fileFormatHasBeenSet(false),
-    m_hiveCompatiblePartitions(false),
-    m_hiveCompatiblePartitionsHasBeenSet(false),
-    m_perHourPartition(false),
-    m_perHourPartitionHasBeenSet(false)
+DestinationOptionsResponse::DestinationOptionsResponse(const XmlNode& xmlNode)
+  : DestinationOptionsResponse()
 {
   *this = xmlNode;
 }

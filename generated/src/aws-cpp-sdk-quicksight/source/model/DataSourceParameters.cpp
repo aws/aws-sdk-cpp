@@ -48,33 +48,8 @@ DataSourceParameters::DataSourceParameters() :
 {
 }
 
-DataSourceParameters::DataSourceParameters(JsonView jsonValue) : 
-    m_amazonElasticsearchParametersHasBeenSet(false),
-    m_athenaParametersHasBeenSet(false),
-    m_auroraParametersHasBeenSet(false),
-    m_auroraPostgreSqlParametersHasBeenSet(false),
-    m_awsIotAnalyticsParametersHasBeenSet(false),
-    m_jiraParametersHasBeenSet(false),
-    m_mariaDbParametersHasBeenSet(false),
-    m_mySqlParametersHasBeenSet(false),
-    m_oracleParametersHasBeenSet(false),
-    m_postgreSqlParametersHasBeenSet(false),
-    m_prestoParametersHasBeenSet(false),
-    m_rdsParametersHasBeenSet(false),
-    m_redshiftParametersHasBeenSet(false),
-    m_s3ParametersHasBeenSet(false),
-    m_serviceNowParametersHasBeenSet(false),
-    m_snowflakeParametersHasBeenSet(false),
-    m_sparkParametersHasBeenSet(false),
-    m_sqlServerParametersHasBeenSet(false),
-    m_teradataParametersHasBeenSet(false),
-    m_twitterParametersHasBeenSet(false),
-    m_amazonOpenSearchParametersHasBeenSet(false),
-    m_exasolParametersHasBeenSet(false),
-    m_databricksParametersHasBeenSet(false),
-    m_starburstParametersHasBeenSet(false),
-    m_trinoParametersHasBeenSet(false),
-    m_bigQueryParametersHasBeenSet(false)
+DataSourceParameters::DataSourceParameters(JsonView jsonValue)
+  : DataSourceParameters()
 {
   *this = jsonValue;
 }

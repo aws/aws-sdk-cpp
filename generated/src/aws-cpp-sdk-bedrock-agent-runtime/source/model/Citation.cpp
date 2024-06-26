@@ -24,9 +24,8 @@ Citation::Citation() :
 {
 }
 
-Citation::Citation(JsonView jsonValue) : 
-    m_generatedResponsePartHasBeenSet(false),
-    m_retrievedReferencesHasBeenSet(false)
+Citation::Citation(JsonView jsonValue)
+  : Citation()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ AssetBundleImportJobAnalysisOverridePermissions::AssetBundleImportJobAnalysisOve
 {
 }
 
-AssetBundleImportJobAnalysisOverridePermissions::AssetBundleImportJobAnalysisOverridePermissions(JsonView jsonValue) : 
-    m_analysisIdsHasBeenSet(false),
-    m_permissionsHasBeenSet(false)
+AssetBundleImportJobAnalysisOverridePermissions::AssetBundleImportJobAnalysisOverridePermissions(JsonView jsonValue)
+  : AssetBundleImportJobAnalysisOverridePermissions()
 {
   *this = jsonValue;
 }

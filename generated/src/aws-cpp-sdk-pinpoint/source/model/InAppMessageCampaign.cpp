@@ -34,19 +34,8 @@ InAppMessageCampaign::InAppMessageCampaign() :
 {
 }
 
-InAppMessageCampaign::InAppMessageCampaign(JsonView jsonValue) : 
-    m_campaignIdHasBeenSet(false),
-    m_dailyCap(0),
-    m_dailyCapHasBeenSet(false),
-    m_inAppMessageHasBeenSet(false),
-    m_priority(0),
-    m_priorityHasBeenSet(false),
-    m_scheduleHasBeenSet(false),
-    m_sessionCap(0),
-    m_sessionCapHasBeenSet(false),
-    m_totalCap(0),
-    m_totalCapHasBeenSet(false),
-    m_treatmentIdHasBeenSet(false)
+InAppMessageCampaign::InAppMessageCampaign(JsonView jsonValue)
+  : InAppMessageCampaign()
 {
   *this = jsonValue;
 }

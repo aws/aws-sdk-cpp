@@ -22,8 +22,8 @@ GetVpcLinkResult::GetVpcLinkResult() :
 {
 }
 
-GetVpcLinkResult::GetVpcLinkResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(VpcLinkStatus::NOT_SET)
+GetVpcLinkResult::GetVpcLinkResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetVpcLinkResult()
 {
   *this = result;
 }

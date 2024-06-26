@@ -23,8 +23,8 @@ Label::Label() :
 {
 }
 
-Label::Label(JsonView jsonValue) : 
-    m_nameHasBeenSet(false)
+Label::Label(JsonView jsonValue)
+  : Label()
 {
   *this = jsonValue;
 }

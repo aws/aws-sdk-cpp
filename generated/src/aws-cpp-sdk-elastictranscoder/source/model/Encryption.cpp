@@ -26,11 +26,8 @@ Encryption::Encryption() :
 {
 }
 
-Encryption::Encryption(JsonView jsonValue) : 
-    m_modeHasBeenSet(false),
-    m_keyHasBeenSet(false),
-    m_keyMd5HasBeenSet(false),
-    m_initializationVectorHasBeenSet(false)
+Encryption::Encryption(JsonView jsonValue)
+  : Encryption()
 {
   *this = jsonValue;
 }

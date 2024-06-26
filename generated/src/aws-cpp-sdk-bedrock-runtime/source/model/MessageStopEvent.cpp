@@ -25,10 +25,8 @@ MessageStopEvent::MessageStopEvent() :
 {
 }
 
-MessageStopEvent::MessageStopEvent(JsonView jsonValue) : 
-    m_stopReason(StopReason::NOT_SET),
-    m_stopReasonHasBeenSet(false),
-    m_additionalModelResponseFieldsHasBeenSet(false)
+MessageStopEvent::MessageStopEvent(JsonView jsonValue)
+  : MessageStopEvent()
 {
   *this = jsonValue;
 }

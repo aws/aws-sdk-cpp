@@ -23,8 +23,8 @@ DataStorage::DataStorage() :
 {
 }
 
-DataStorage::DataStorage(JsonView jsonValue) : 
-    m_cwLogHasBeenSet(false)
+DataStorage::DataStorage(JsonView jsonValue)
+  : DataStorage()
 {
   *this = jsonValue;
 }

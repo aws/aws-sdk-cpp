@@ -23,9 +23,8 @@ GetDetectorVersionResult::GetDetectorVersionResult() :
 {
 }
 
-GetDetectorVersionResult::GetDetectorVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(DetectorVersionStatus::NOT_SET),
-    m_ruleExecutionMode(RuleExecutionMode::NOT_SET)
+GetDetectorVersionResult::GetDetectorVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetDetectorVersionResult()
 {
   *this = result;
 }

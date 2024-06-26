@@ -27,12 +27,8 @@ CodeGenNode::CodeGenNode() :
 {
 }
 
-CodeGenNode::CodeGenNode(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_nodeTypeHasBeenSet(false),
-    m_argsHasBeenSet(false),
-    m_lineNumber(0),
-    m_lineNumberHasBeenSet(false)
+CodeGenNode::CodeGenNode(JsonView jsonValue)
+  : CodeGenNode()
 {
   *this = jsonValue;
 }

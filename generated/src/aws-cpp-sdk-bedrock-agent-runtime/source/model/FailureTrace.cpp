@@ -24,9 +24,8 @@ FailureTrace::FailureTrace() :
 {
 }
 
-FailureTrace::FailureTrace(JsonView jsonValue) : 
-    m_failureReasonHasBeenSet(false),
-    m_traceIdHasBeenSet(false)
+FailureTrace::FailureTrace(JsonView jsonValue)
+  : FailureTrace()
 {
   *this = jsonValue;
 }

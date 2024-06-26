@@ -23,8 +23,8 @@ Campaign::Campaign() :
 {
 }
 
-Campaign::Campaign(JsonView jsonValue) : 
-    m_campaignIdHasBeenSet(false)
+Campaign::Campaign(JsonView jsonValue)
+  : Campaign()
 {
   *this = jsonValue;
 }

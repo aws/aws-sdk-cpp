@@ -24,9 +24,8 @@ DataResource::DataResource() :
 {
 }
 
-DataResource::DataResource(JsonView jsonValue) : 
-    m_typeHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+DataResource::DataResource(JsonView jsonValue)
+  : DataResource()
 {
   *this = jsonValue;
 }

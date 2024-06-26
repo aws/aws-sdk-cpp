@@ -23,8 +23,8 @@ BatchGetObjectInformation::BatchGetObjectInformation() :
 {
 }
 
-BatchGetObjectInformation::BatchGetObjectInformation(JsonView jsonValue) : 
-    m_objectReferenceHasBeenSet(false)
+BatchGetObjectInformation::BatchGetObjectInformation(JsonView jsonValue)
+  : BatchGetObjectInformation()
 {
   *this = jsonValue;
 }

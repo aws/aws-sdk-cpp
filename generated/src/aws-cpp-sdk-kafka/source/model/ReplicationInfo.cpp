@@ -28,13 +28,8 @@ ReplicationInfo::ReplicationInfo() :
 {
 }
 
-ReplicationInfo::ReplicationInfo(JsonView jsonValue) : 
-    m_consumerGroupReplicationHasBeenSet(false),
-    m_sourceKafkaClusterArnHasBeenSet(false),
-    m_targetCompressionType(TargetCompressionType::NOT_SET),
-    m_targetCompressionTypeHasBeenSet(false),
-    m_targetKafkaClusterArnHasBeenSet(false),
-    m_topicReplicationHasBeenSet(false)
+ReplicationInfo::ReplicationInfo(JsonView jsonValue)
+  : ReplicationInfo()
 {
   *this = jsonValue;
 }

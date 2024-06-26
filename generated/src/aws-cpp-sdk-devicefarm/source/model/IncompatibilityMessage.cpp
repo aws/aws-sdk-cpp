@@ -25,10 +25,8 @@ IncompatibilityMessage::IncompatibilityMessage() :
 {
 }
 
-IncompatibilityMessage::IncompatibilityMessage(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_type(DeviceAttribute::NOT_SET),
-    m_typeHasBeenSet(false)
+IncompatibilityMessage::IncompatibilityMessage(JsonView jsonValue)
+  : IncompatibilityMessage()
 {
   *this = jsonValue;
 }

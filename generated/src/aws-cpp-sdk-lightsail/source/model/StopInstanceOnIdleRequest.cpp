@@ -24,9 +24,8 @@ StopInstanceOnIdleRequest::StopInstanceOnIdleRequest() :
 {
 }
 
-StopInstanceOnIdleRequest::StopInstanceOnIdleRequest(JsonView jsonValue) : 
-    m_thresholdHasBeenSet(false),
-    m_durationHasBeenSet(false)
+StopInstanceOnIdleRequest::StopInstanceOnIdleRequest(JsonView jsonValue)
+  : StopInstanceOnIdleRequest()
 {
   *this = jsonValue;
 }

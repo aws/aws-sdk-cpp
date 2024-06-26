@@ -33,18 +33,8 @@ TopBottomMoversComputation::TopBottomMoversComputation() :
 {
 }
 
-TopBottomMoversComputation::TopBottomMoversComputation(JsonView jsonValue) : 
-    m_computationIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_timeHasBeenSet(false),
-    m_categoryHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_moverSize(0),
-    m_moverSizeHasBeenSet(false),
-    m_sortOrder(TopBottomSortOrder::NOT_SET),
-    m_sortOrderHasBeenSet(false),
-    m_type(TopBottomComputationType::NOT_SET),
-    m_typeHasBeenSet(false)
+TopBottomMoversComputation::TopBottomMoversComputation(JsonView jsonValue)
+  : TopBottomMoversComputation()
 {
   *this = jsonValue;
 }

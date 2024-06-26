@@ -24,9 +24,8 @@ RuleSummary::RuleSummary() :
 {
 }
 
-RuleSummary::RuleSummary(JsonView jsonValue) : 
-    m_ruleIdHasBeenSet(false),
-    m_nameHasBeenSet(false)
+RuleSummary::RuleSummary(JsonView jsonValue)
+  : RuleSummary()
 {
   *this = jsonValue;
 }

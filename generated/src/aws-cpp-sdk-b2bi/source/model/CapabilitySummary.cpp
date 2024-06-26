@@ -28,13 +28,8 @@ CapabilitySummary::CapabilitySummary() :
 {
 }
 
-CapabilitySummary::CapabilitySummary(JsonView jsonValue) : 
-    m_capabilityIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_type(CapabilityType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_modifiedAtHasBeenSet(false)
+CapabilitySummary::CapabilitySummary(JsonView jsonValue)
+  : CapabilitySummary()
 {
   *this = jsonValue;
 }

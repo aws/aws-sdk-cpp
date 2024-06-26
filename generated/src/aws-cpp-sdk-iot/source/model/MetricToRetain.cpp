@@ -26,11 +26,8 @@ MetricToRetain::MetricToRetain() :
 {
 }
 
-MetricToRetain::MetricToRetain(JsonView jsonValue) : 
-    m_metricHasBeenSet(false),
-    m_metricDimensionHasBeenSet(false),
-    m_exportMetric(false),
-    m_exportMetricHasBeenSet(false)
+MetricToRetain::MetricToRetain(JsonView jsonValue)
+  : MetricToRetain()
 {
   *this = jsonValue;
 }

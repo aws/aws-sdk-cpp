@@ -55,40 +55,8 @@ AwsEc2LaunchTemplateDataDetails::AwsEc2LaunchTemplateDataDetails() :
 {
 }
 
-AwsEc2LaunchTemplateDataDetails::AwsEc2LaunchTemplateDataDetails(JsonView jsonValue) : 
-    m_blockDeviceMappingSetHasBeenSet(false),
-    m_capacityReservationSpecificationHasBeenSet(false),
-    m_cpuOptionsHasBeenSet(false),
-    m_creditSpecificationHasBeenSet(false),
-    m_disableApiStop(false),
-    m_disableApiStopHasBeenSet(false),
-    m_disableApiTermination(false),
-    m_disableApiTerminationHasBeenSet(false),
-    m_ebsOptimized(false),
-    m_ebsOptimizedHasBeenSet(false),
-    m_elasticGpuSpecificationSetHasBeenSet(false),
-    m_elasticInferenceAcceleratorSetHasBeenSet(false),
-    m_enclaveOptionsHasBeenSet(false),
-    m_hibernationOptionsHasBeenSet(false),
-    m_iamInstanceProfileHasBeenSet(false),
-    m_imageIdHasBeenSet(false),
-    m_instanceInitiatedShutdownBehaviorHasBeenSet(false),
-    m_instanceMarketOptionsHasBeenSet(false),
-    m_instanceRequirementsHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_kernelIdHasBeenSet(false),
-    m_keyNameHasBeenSet(false),
-    m_licenseSetHasBeenSet(false),
-    m_maintenanceOptionsHasBeenSet(false),
-    m_metadataOptionsHasBeenSet(false),
-    m_monitoringHasBeenSet(false),
-    m_networkInterfaceSetHasBeenSet(false),
-    m_placementHasBeenSet(false),
-    m_privateDnsNameOptionsHasBeenSet(false),
-    m_ramDiskIdHasBeenSet(false),
-    m_securityGroupIdSetHasBeenSet(false),
-    m_securityGroupSetHasBeenSet(false),
-    m_userDataHasBeenSet(false)
+AwsEc2LaunchTemplateDataDetails::AwsEc2LaunchTemplateDataDetails(JsonView jsonValue)
+  : AwsEc2LaunchTemplateDataDetails()
 {
   *this = jsonValue;
 }

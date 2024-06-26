@@ -26,11 +26,8 @@ PushMessageActivity::PushMessageActivity() :
 {
 }
 
-PushMessageActivity::PushMessageActivity(JsonView jsonValue) : 
-    m_messageConfigHasBeenSet(false),
-    m_nextActivityHasBeenSet(false),
-    m_templateNameHasBeenSet(false),
-    m_templateVersionHasBeenSet(false)
+PushMessageActivity::PushMessageActivity(JsonView jsonValue)
+  : PushMessageActivity()
 {
   *this = jsonValue;
 }

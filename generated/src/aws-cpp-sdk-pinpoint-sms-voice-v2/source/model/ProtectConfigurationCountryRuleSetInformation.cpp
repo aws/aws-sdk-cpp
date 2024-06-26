@@ -24,9 +24,8 @@ ProtectConfigurationCountryRuleSetInformation::ProtectConfigurationCountryRuleSe
 {
 }
 
-ProtectConfigurationCountryRuleSetInformation::ProtectConfigurationCountryRuleSetInformation(JsonView jsonValue) : 
-    m_protectStatus(ProtectStatus::NOT_SET),
-    m_protectStatusHasBeenSet(false)
+ProtectConfigurationCountryRuleSetInformation::ProtectConfigurationCountryRuleSetInformation(JsonView jsonValue)
+  : ProtectConfigurationCountryRuleSetInformation()
 {
   *this = jsonValue;
 }

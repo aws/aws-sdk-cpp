@@ -28,13 +28,8 @@ CategoryProperties::CategoryProperties() :
 {
 }
 
-CategoryProperties::CategoryProperties(JsonView jsonValue) : 
-    m_categoryNameHasBeenSet(false),
-    m_rulesHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_lastUpdateTimeHasBeenSet(false),
-    m_inputType(InputType::NOT_SET),
-    m_inputTypeHasBeenSet(false)
+CategoryProperties::CategoryProperties(JsonView jsonValue)
+  : CategoryProperties()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ UnsupportedUserEditionException::UnsupportedUserEditionException() :
 {
 }
 
-UnsupportedUserEditionException::UnsupportedUserEditionException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
+UnsupportedUserEditionException::UnsupportedUserEditionException(JsonView jsonValue)
+  : UnsupportedUserEditionException()
 {
   *this = jsonValue;
 }

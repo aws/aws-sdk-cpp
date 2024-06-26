@@ -30,15 +30,8 @@ Ec2InstanceAggregation::Ec2InstanceAggregation() :
 {
 }
 
-Ec2InstanceAggregation::Ec2InstanceAggregation(JsonView jsonValue) : 
-    m_amisHasBeenSet(false),
-    m_instanceIdsHasBeenSet(false),
-    m_instanceTagsHasBeenSet(false),
-    m_operatingSystemsHasBeenSet(false),
-    m_sortBy(Ec2InstanceSortBy::NOT_SET),
-    m_sortByHasBeenSet(false),
-    m_sortOrder(SortOrder::NOT_SET),
-    m_sortOrderHasBeenSet(false)
+Ec2InstanceAggregation::Ec2InstanceAggregation(JsonView jsonValue)
+  : Ec2InstanceAggregation()
 {
   *this = jsonValue;
 }

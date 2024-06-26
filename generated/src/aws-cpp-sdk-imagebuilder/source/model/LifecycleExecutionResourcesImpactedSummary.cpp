@@ -24,9 +24,8 @@ LifecycleExecutionResourcesImpactedSummary::LifecycleExecutionResourcesImpactedS
 {
 }
 
-LifecycleExecutionResourcesImpactedSummary::LifecycleExecutionResourcesImpactedSummary(JsonView jsonValue) : 
-    m_hasImpactedResources(false),
-    m_hasImpactedResourcesHasBeenSet(false)
+LifecycleExecutionResourcesImpactedSummary::LifecycleExecutionResourcesImpactedSummary(JsonView jsonValue)
+  : LifecycleExecutionResourcesImpactedSummary()
 {
   *this = jsonValue;
 }

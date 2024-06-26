@@ -26,11 +26,8 @@ SheetVisualScopingConfiguration::SheetVisualScopingConfiguration() :
 {
 }
 
-SheetVisualScopingConfiguration::SheetVisualScopingConfiguration(JsonView jsonValue) : 
-    m_sheetIdHasBeenSet(false),
-    m_scope(FilterVisualScope::NOT_SET),
-    m_scopeHasBeenSet(false),
-    m_visualIdsHasBeenSet(false)
+SheetVisualScopingConfiguration::SheetVisualScopingConfiguration(JsonView jsonValue)
+  : SheetVisualScopingConfiguration()
 {
   *this = jsonValue;
 }

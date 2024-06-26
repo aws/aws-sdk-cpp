@@ -25,10 +25,8 @@ ProtectiveEquipmentSummarizationAttributes::ProtectiveEquipmentSummarizationAttr
 {
 }
 
-ProtectiveEquipmentSummarizationAttributes::ProtectiveEquipmentSummarizationAttributes(JsonView jsonValue) : 
-    m_minConfidence(0.0),
-    m_minConfidenceHasBeenSet(false),
-    m_requiredEquipmentTypesHasBeenSet(false)
+ProtectiveEquipmentSummarizationAttributes::ProtectiveEquipmentSummarizationAttributes(JsonView jsonValue)
+  : ProtectiveEquipmentSummarizationAttributes()
 {
   *this = jsonValue;
 }

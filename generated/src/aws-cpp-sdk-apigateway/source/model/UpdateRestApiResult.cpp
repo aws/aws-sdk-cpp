@@ -24,10 +24,8 @@ UpdateRestApiResult::UpdateRestApiResult() :
 {
 }
 
-UpdateRestApiResult::UpdateRestApiResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_minimumCompressionSize(0),
-    m_apiKeySource(ApiKeySourceType::NOT_SET),
-    m_disableExecuteApiEndpoint(false)
+UpdateRestApiResult::UpdateRestApiResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateRestApiResult()
 {
   *this = result;
 }

@@ -28,13 +28,8 @@ CloudwatchMetricAction::CloudwatchMetricAction() :
 {
 }
 
-CloudwatchMetricAction::CloudwatchMetricAction(JsonView jsonValue) : 
-    m_roleArnHasBeenSet(false),
-    m_metricNamespaceHasBeenSet(false),
-    m_metricNameHasBeenSet(false),
-    m_metricValueHasBeenSet(false),
-    m_metricUnitHasBeenSet(false),
-    m_metricTimestampHasBeenSet(false)
+CloudwatchMetricAction::CloudwatchMetricAction(JsonView jsonValue)
+  : CloudwatchMetricAction()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ CompositionRelationshipSummary::CompositionRelationshipSummary() :
 {
 }
 
-CompositionRelationshipSummary::CompositionRelationshipSummary(JsonView jsonValue) : 
-    m_assetModelIdHasBeenSet(false),
-    m_assetModelCompositeModelIdHasBeenSet(false),
-    m_assetModelCompositeModelTypeHasBeenSet(false)
+CompositionRelationshipSummary::CompositionRelationshipSummary(JsonView jsonValue)
+  : CompositionRelationshipSummary()
 {
   *this = jsonValue;
 }

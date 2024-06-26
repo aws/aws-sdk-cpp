@@ -35,20 +35,8 @@ CaptionDestinationSettings::CaptionDestinationSettings() :
 {
 }
 
-CaptionDestinationSettings::CaptionDestinationSettings(JsonView jsonValue) : 
-    m_aribDestinationSettingsHasBeenSet(false),
-    m_burnInDestinationSettingsHasBeenSet(false),
-    m_dvbSubDestinationSettingsHasBeenSet(false),
-    m_ebuTtDDestinationSettingsHasBeenSet(false),
-    m_embeddedDestinationSettingsHasBeenSet(false),
-    m_embeddedPlusScte20DestinationSettingsHasBeenSet(false),
-    m_rtmpCaptionInfoDestinationSettingsHasBeenSet(false),
-    m_scte20PlusEmbeddedDestinationSettingsHasBeenSet(false),
-    m_scte27DestinationSettingsHasBeenSet(false),
-    m_smpteTtDestinationSettingsHasBeenSet(false),
-    m_teletextDestinationSettingsHasBeenSet(false),
-    m_ttmlDestinationSettingsHasBeenSet(false),
-    m_webvttDestinationSettingsHasBeenSet(false)
+CaptionDestinationSettings::CaptionDestinationSettings(JsonView jsonValue)
+  : CaptionDestinationSettings()
 {
   *this = jsonValue;
 }

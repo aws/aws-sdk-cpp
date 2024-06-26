@@ -26,11 +26,8 @@ ContainerOverrides::ContainerOverrides() :
 {
 }
 
-ContainerOverrides::ContainerOverrides(JsonView jsonValue) : 
-    m_commandHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_environmentHasBeenSet(false),
-    m_resourceRequirementsHasBeenSet(false)
+ContainerOverrides::ContainerOverrides(JsonView jsonValue)
+  : ContainerOverrides()
 {
   *this = jsonValue;
 }

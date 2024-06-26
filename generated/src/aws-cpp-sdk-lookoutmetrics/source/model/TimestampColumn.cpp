@@ -24,9 +24,8 @@ TimestampColumn::TimestampColumn() :
 {
 }
 
-TimestampColumn::TimestampColumn(JsonView jsonValue) : 
-    m_columnNameHasBeenSet(false),
-    m_columnFormatHasBeenSet(false)
+TimestampColumn::TimestampColumn(JsonView jsonValue)
+  : TimestampColumn()
 {
   *this = jsonValue;
 }

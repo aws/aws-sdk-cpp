@@ -24,9 +24,8 @@ Artifact::Artifact() :
 {
 }
 
-Artifact::Artifact(JsonView jsonValue) : 
-    m_artifactFileNameHasBeenSet(false),
-    m_artifactIdHasBeenSet(false)
+Artifact::Artifact(JsonView jsonValue)
+  : Artifact()
 {
   *this = jsonValue;
 }

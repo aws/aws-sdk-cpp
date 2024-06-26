@@ -26,11 +26,8 @@ SpectrumConfig::SpectrumConfig() :
 {
 }
 
-SpectrumConfig::SpectrumConfig(JsonView jsonValue) : 
-    m_bandwidthHasBeenSet(false),
-    m_centerFrequencyHasBeenSet(false),
-    m_polarization(Polarization::NOT_SET),
-    m_polarizationHasBeenSet(false)
+SpectrumConfig::SpectrumConfig(JsonView jsonValue)
+  : SpectrumConfig()
 {
   *this = jsonValue;
 }

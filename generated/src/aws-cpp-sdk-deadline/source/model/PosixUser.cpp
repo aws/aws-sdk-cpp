@@ -24,9 +24,8 @@ PosixUser::PosixUser() :
 {
 }
 
-PosixUser::PosixUser(JsonView jsonValue) : 
-    m_groupHasBeenSet(false),
-    m_userHasBeenSet(false)
+PosixUser::PosixUser(JsonView jsonValue)
+  : PosixUser()
 {
   *this = jsonValue;
 }

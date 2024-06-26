@@ -23,8 +23,8 @@ ContentFeedbackData::ContentFeedbackData() :
 {
 }
 
-ContentFeedbackData::ContentFeedbackData(JsonView jsonValue) : 
-    m_generativeContentFeedbackDataHasBeenSet(false)
+ContentFeedbackData::ContentFeedbackData(JsonView jsonValue)
+  : ContentFeedbackData()
 {
   *this = jsonValue;
 }

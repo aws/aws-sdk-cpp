@@ -25,10 +25,8 @@ TotalAggregationComputation::TotalAggregationComputation() :
 {
 }
 
-TotalAggregationComputation::TotalAggregationComputation(JsonView jsonValue) : 
-    m_computationIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
+TotalAggregationComputation::TotalAggregationComputation(JsonView jsonValue)
+  : TotalAggregationComputation()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ BasicAuthCredentials::BasicAuthCredentials() :
 {
 }
 
-BasicAuthCredentials::BasicAuthCredentials(JsonView jsonValue) : 
-    m_usernameHasBeenSet(false),
-    m_passwordHasBeenSet(false)
+BasicAuthCredentials::BasicAuthCredentials(JsonView jsonValue)
+  : BasicAuthCredentials()
 {
   *this = jsonValue;
 }
