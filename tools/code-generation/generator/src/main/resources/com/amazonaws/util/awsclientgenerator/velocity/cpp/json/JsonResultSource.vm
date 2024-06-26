@@ -25,7 +25,10 @@ ${typeInfo.className}::${typeInfo.className}()$initializers
 {
 }
 
-${typeInfo.className}::${typeInfo.className}(const Aws::AmazonWebServiceResult<JsonValue>& result)$initializers
+${typeInfo.className}::${typeInfo.className}(const Aws::AmazonWebServiceResult<JsonValue>& result)
+#if($initializers)
+  : ${typeInfo.className}()
+#end
 {
   *this = result;
 }
