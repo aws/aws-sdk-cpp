@@ -22,8 +22,8 @@ CreateScanResult::CreateScanResult() :
 {
 }
 
-CreateScanResult::CreateScanResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_scanState(ScanState::NOT_SET)
+CreateScanResult::CreateScanResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateScanResult()
 {
   *this = result;
 }

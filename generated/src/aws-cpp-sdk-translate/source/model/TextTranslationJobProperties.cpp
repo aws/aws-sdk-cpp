@@ -38,23 +38,8 @@ TextTranslationJobProperties::TextTranslationJobProperties() :
 {
 }
 
-TextTranslationJobProperties::TextTranslationJobProperties(JsonView jsonValue) : 
-    m_jobIdHasBeenSet(false),
-    m_jobNameHasBeenSet(false),
-    m_jobStatus(JobStatus::NOT_SET),
-    m_jobStatusHasBeenSet(false),
-    m_jobDetailsHasBeenSet(false),
-    m_sourceLanguageCodeHasBeenSet(false),
-    m_targetLanguageCodesHasBeenSet(false),
-    m_terminologyNamesHasBeenSet(false),
-    m_parallelDataNamesHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_submittedTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_inputDataConfigHasBeenSet(false),
-    m_outputDataConfigHasBeenSet(false),
-    m_dataAccessRoleArnHasBeenSet(false),
-    m_settingsHasBeenSet(false)
+TextTranslationJobProperties::TextTranslationJobProperties(JsonView jsonValue)
+  : TextTranslationJobProperties()
 {
   *this = jsonValue;
 }

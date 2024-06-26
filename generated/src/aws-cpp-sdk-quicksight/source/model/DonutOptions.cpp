@@ -24,9 +24,8 @@ DonutOptions::DonutOptions() :
 {
 }
 
-DonutOptions::DonutOptions(JsonView jsonValue) : 
-    m_arcOptionsHasBeenSet(false),
-    m_donutCenterOptionsHasBeenSet(false)
+DonutOptions::DonutOptions(JsonView jsonValue)
+  : DonutOptions()
 {
   *this = jsonValue;
 }

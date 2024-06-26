@@ -37,22 +37,8 @@ SubscriptionTargetSummary::SubscriptionTargetSummary() :
 {
 }
 
-SubscriptionTargetSummary::SubscriptionTargetSummary(JsonView jsonValue) : 
-    m_applicableAssetTypesHasBeenSet(false),
-    m_authorizedPrincipalsHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_domainIdHasBeenSet(false),
-    m_environmentIdHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_manageAccessRoleHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_projectIdHasBeenSet(false),
-    m_providerHasBeenSet(false),
-    m_subscriptionTargetConfigHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_updatedByHasBeenSet(false)
+SubscriptionTargetSummary::SubscriptionTargetSummary(JsonView jsonValue)
+  : SubscriptionTargetSummary()
 {
   *this = jsonValue;
 }

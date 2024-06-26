@@ -26,11 +26,8 @@ ImportTaskSummaryServers::ImportTaskSummaryServers() :
 {
 }
 
-ImportTaskSummaryServers::ImportTaskSummaryServers(JsonView jsonValue) : 
-    m_createdCount(0),
-    m_createdCountHasBeenSet(false),
-    m_modifiedCount(0),
-    m_modifiedCountHasBeenSet(false)
+ImportTaskSummaryServers::ImportTaskSummaryServers(JsonView jsonValue)
+  : ImportTaskSummaryServers()
 {
   *this = jsonValue;
 }

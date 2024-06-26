@@ -28,13 +28,8 @@ IsBinaryFile::IsBinaryFile() :
 {
 }
 
-IsBinaryFile::IsBinaryFile(JsonView jsonValue) : 
-    m_source(false),
-    m_sourceHasBeenSet(false),
-    m_destination(false),
-    m_destinationHasBeenSet(false),
-    m_base(false),
-    m_baseHasBeenSet(false)
+IsBinaryFile::IsBinaryFile(JsonView jsonValue)
+  : IsBinaryFile()
 {
   *this = jsonValue;
 }

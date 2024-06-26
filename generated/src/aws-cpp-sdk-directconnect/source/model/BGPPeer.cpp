@@ -36,21 +36,8 @@ BGPPeer::BGPPeer() :
 {
 }
 
-BGPPeer::BGPPeer(JsonView jsonValue) : 
-    m_bgpPeerIdHasBeenSet(false),
-    m_asn(0),
-    m_asnHasBeenSet(false),
-    m_authKeyHasBeenSet(false),
-    m_addressFamily(AddressFamily::NOT_SET),
-    m_addressFamilyHasBeenSet(false),
-    m_amazonAddressHasBeenSet(false),
-    m_customerAddressHasBeenSet(false),
-    m_bgpPeerState(BGPPeerState::NOT_SET),
-    m_bgpPeerStateHasBeenSet(false),
-    m_bgpStatus(BGPStatus::NOT_SET),
-    m_bgpStatusHasBeenSet(false),
-    m_awsDeviceV2HasBeenSet(false),
-    m_awsLogicalDeviceIdHasBeenSet(false)
+BGPPeer::BGPPeer(JsonView jsonValue)
+  : BGPPeer()
 {
   *this = jsonValue;
 }

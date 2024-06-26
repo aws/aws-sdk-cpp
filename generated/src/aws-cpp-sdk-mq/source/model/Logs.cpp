@@ -26,11 +26,8 @@ Logs::Logs() :
 {
 }
 
-Logs::Logs(JsonView jsonValue) : 
-    m_audit(false),
-    m_auditHasBeenSet(false),
-    m_general(false),
-    m_generalHasBeenSet(false)
+Logs::Logs(JsonView jsonValue)
+  : Logs()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ InsufficientPermissionsException::InsufficientPermissionsException() :
 {
 }
 
-InsufficientPermissionsException::InsufficientPermissionsException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
+InsufficientPermissionsException::InsufficientPermissionsException(JsonView jsonValue)
+  : InsufficientPermissionsException()
 {
   *this = jsonValue;
 }

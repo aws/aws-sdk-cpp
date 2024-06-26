@@ -24,9 +24,8 @@ DeploymentConfigurationValidationPolicy::DeploymentConfigurationValidationPolicy
 {
 }
 
-DeploymentConfigurationValidationPolicy::DeploymentConfigurationValidationPolicy(JsonView jsonValue) : 
-    m_timeoutInSeconds(0),
-    m_timeoutInSecondsHasBeenSet(false)
+DeploymentConfigurationValidationPolicy::DeploymentConfigurationValidationPolicy(JsonView jsonValue)
+  : DeploymentConfigurationValidationPolicy()
 {
   *this = jsonValue;
 }

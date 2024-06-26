@@ -22,8 +22,8 @@ CreateIndexResult::CreateIndexResult() :
 {
 }
 
-CreateIndexResult::CreateIndexResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_state(IndexState::NOT_SET)
+CreateIndexResult::CreateIndexResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateIndexResult()
 {
   *this = result;
 }

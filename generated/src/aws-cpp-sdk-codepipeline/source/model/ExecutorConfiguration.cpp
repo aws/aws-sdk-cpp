@@ -24,9 +24,8 @@ ExecutorConfiguration::ExecutorConfiguration() :
 {
 }
 
-ExecutorConfiguration::ExecutorConfiguration(JsonView jsonValue) : 
-    m_lambdaExecutorConfigurationHasBeenSet(false),
-    m_jobWorkerExecutorConfigurationHasBeenSet(false)
+ExecutorConfiguration::ExecutorConfiguration(JsonView jsonValue)
+  : ExecutorConfiguration()
 {
   *this = jsonValue;
 }

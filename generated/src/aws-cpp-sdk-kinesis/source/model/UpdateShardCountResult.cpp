@@ -23,9 +23,8 @@ UpdateShardCountResult::UpdateShardCountResult() :
 {
 }
 
-UpdateShardCountResult::UpdateShardCountResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_currentShardCount(0),
-    m_targetShardCount(0)
+UpdateShardCountResult::UpdateShardCountResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateShardCountResult()
 {
   *this = result;
 }

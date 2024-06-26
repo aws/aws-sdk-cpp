@@ -24,9 +24,8 @@ GuardrailSensitiveInformationPolicy::GuardrailSensitiveInformationPolicy() :
 {
 }
 
-GuardrailSensitiveInformationPolicy::GuardrailSensitiveInformationPolicy(JsonView jsonValue) : 
-    m_piiEntitiesHasBeenSet(false),
-    m_regexesHasBeenSet(false)
+GuardrailSensitiveInformationPolicy::GuardrailSensitiveInformationPolicy(JsonView jsonValue)
+  : GuardrailSensitiveInformationPolicy()
 {
   *this = jsonValue;
 }

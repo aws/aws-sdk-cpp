@@ -24,9 +24,8 @@ AwsWafv2CustomHttpHeader::AwsWafv2CustomHttpHeader() :
 {
 }
 
-AwsWafv2CustomHttpHeader::AwsWafv2CustomHttpHeader(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
+AwsWafv2CustomHttpHeader::AwsWafv2CustomHttpHeader(JsonView jsonValue)
+  : AwsWafv2CustomHttpHeader()
 {
   *this = jsonValue;
 }

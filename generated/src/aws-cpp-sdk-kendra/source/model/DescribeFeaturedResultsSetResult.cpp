@@ -24,10 +24,8 @@ DescribeFeaturedResultsSetResult::DescribeFeaturedResultsSetResult() :
 {
 }
 
-DescribeFeaturedResultsSetResult::DescribeFeaturedResultsSetResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(FeaturedResultsSetStatus::NOT_SET),
-    m_lastUpdatedTimestamp(0),
-    m_creationTimestamp(0)
+DescribeFeaturedResultsSetResult::DescribeFeaturedResultsSetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeFeaturedResultsSetResult()
 {
   *this = result;
 }

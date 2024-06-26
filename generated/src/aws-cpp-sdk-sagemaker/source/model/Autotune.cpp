@@ -24,9 +24,8 @@ Autotune::Autotune() :
 {
 }
 
-Autotune::Autotune(JsonView jsonValue) : 
-    m_mode(AutotuneMode::NOT_SET),
-    m_modeHasBeenSet(false)
+Autotune::Autotune(JsonView jsonValue)
+  : Autotune()
 {
   *this = jsonValue;
 }

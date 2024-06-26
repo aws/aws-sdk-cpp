@@ -22,8 +22,8 @@ DescribeProjectResult::DescribeProjectResult() :
 {
 }
 
-DescribeProjectResult::DescribeProjectResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_projectStatus(ProjectStatus::NOT_SET)
+DescribeProjectResult::DescribeProjectResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeProjectResult()
 {
   *this = result;
 }

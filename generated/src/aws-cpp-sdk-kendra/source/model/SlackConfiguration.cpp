@@ -40,25 +40,8 @@ SlackConfiguration::SlackConfiguration() :
 {
 }
 
-SlackConfiguration::SlackConfiguration(JsonView jsonValue) : 
-    m_teamIdHasBeenSet(false),
-    m_secretArnHasBeenSet(false),
-    m_vpcConfigurationHasBeenSet(false),
-    m_slackEntityListHasBeenSet(false),
-    m_useChangeLog(false),
-    m_useChangeLogHasBeenSet(false),
-    m_crawlBotMessage(false),
-    m_crawlBotMessageHasBeenSet(false),
-    m_excludeArchived(false),
-    m_excludeArchivedHasBeenSet(false),
-    m_sinceCrawlDateHasBeenSet(false),
-    m_lookBackPeriod(0),
-    m_lookBackPeriodHasBeenSet(false),
-    m_privateChannelFilterHasBeenSet(false),
-    m_publicChannelFilterHasBeenSet(false),
-    m_inclusionPatternsHasBeenSet(false),
-    m_exclusionPatternsHasBeenSet(false),
-    m_fieldMappingsHasBeenSet(false)
+SlackConfiguration::SlackConfiguration(JsonView jsonValue)
+  : SlackConfiguration()
 {
   *this = jsonValue;
 }

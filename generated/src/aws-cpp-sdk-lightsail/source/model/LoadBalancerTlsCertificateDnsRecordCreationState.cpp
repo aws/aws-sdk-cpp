@@ -25,10 +25,8 @@ LoadBalancerTlsCertificateDnsRecordCreationState::LoadBalancerTlsCertificateDnsR
 {
 }
 
-LoadBalancerTlsCertificateDnsRecordCreationState::LoadBalancerTlsCertificateDnsRecordCreationState(JsonView jsonValue) : 
-    m_code(LoadBalancerTlsCertificateDnsRecordCreationStateCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+LoadBalancerTlsCertificateDnsRecordCreationState::LoadBalancerTlsCertificateDnsRecordCreationState(JsonView jsonValue)
+  : LoadBalancerTlsCertificateDnsRecordCreationState()
 {
   *this = jsonValue;
 }

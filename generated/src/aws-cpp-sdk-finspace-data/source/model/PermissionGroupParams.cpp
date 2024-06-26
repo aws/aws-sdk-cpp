@@ -24,9 +24,8 @@ PermissionGroupParams::PermissionGroupParams() :
 {
 }
 
-PermissionGroupParams::PermissionGroupParams(JsonView jsonValue) : 
-    m_permissionGroupIdHasBeenSet(false),
-    m_datasetPermissionsHasBeenSet(false)
+PermissionGroupParams::PermissionGroupParams(JsonView jsonValue)
+  : PermissionGroupParams()
 {
   *this = jsonValue;
 }

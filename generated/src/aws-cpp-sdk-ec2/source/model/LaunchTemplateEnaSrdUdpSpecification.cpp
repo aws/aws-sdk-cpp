@@ -26,9 +26,8 @@ LaunchTemplateEnaSrdUdpSpecification::LaunchTemplateEnaSrdUdpSpecification() :
 {
 }
 
-LaunchTemplateEnaSrdUdpSpecification::LaunchTemplateEnaSrdUdpSpecification(const XmlNode& xmlNode) : 
-    m_enaSrdUdpEnabled(false),
-    m_enaSrdUdpEnabledHasBeenSet(false)
+LaunchTemplateEnaSrdUdpSpecification::LaunchTemplateEnaSrdUdpSpecification(const XmlNode& xmlNode)
+  : LaunchTemplateEnaSrdUdpSpecification()
 {
   *this = xmlNode;
 }

@@ -38,23 +38,8 @@ WorkflowRunStatistics::WorkflowRunStatistics() :
 {
 }
 
-WorkflowRunStatistics::WorkflowRunStatistics(JsonView jsonValue) : 
-    m_totalActions(0),
-    m_totalActionsHasBeenSet(false),
-    m_timeoutActions(0),
-    m_timeoutActionsHasBeenSet(false),
-    m_failedActions(0),
-    m_failedActionsHasBeenSet(false),
-    m_stoppedActions(0),
-    m_stoppedActionsHasBeenSet(false),
-    m_succeededActions(0),
-    m_succeededActionsHasBeenSet(false),
-    m_runningActions(0),
-    m_runningActionsHasBeenSet(false),
-    m_erroredActions(0),
-    m_erroredActionsHasBeenSet(false),
-    m_waitingActions(0),
-    m_waitingActionsHasBeenSet(false)
+WorkflowRunStatistics::WorkflowRunStatistics(JsonView jsonValue)
+  : WorkflowRunStatistics()
 {
   *this = jsonValue;
 }

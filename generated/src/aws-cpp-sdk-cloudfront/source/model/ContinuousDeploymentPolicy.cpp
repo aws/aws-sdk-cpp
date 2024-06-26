@@ -27,10 +27,8 @@ ContinuousDeploymentPolicy::ContinuousDeploymentPolicy() :
 {
 }
 
-ContinuousDeploymentPolicy::ContinuousDeploymentPolicy(const XmlNode& xmlNode) : 
-    m_idHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_continuousDeploymentPolicyConfigHasBeenSet(false)
+ContinuousDeploymentPolicy::ContinuousDeploymentPolicy(const XmlNode& xmlNode)
+  : ContinuousDeploymentPolicy()
 {
   *this = xmlNode;
 }

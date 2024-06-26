@@ -25,10 +25,8 @@ HumanLoopActivationOutput::HumanLoopActivationOutput() :
 {
 }
 
-HumanLoopActivationOutput::HumanLoopActivationOutput(JsonView jsonValue) : 
-    m_humanLoopArnHasBeenSet(false),
-    m_humanLoopActivationReasonsHasBeenSet(false),
-    m_humanLoopActivationConditionsEvaluationResultsHasBeenSet(false)
+HumanLoopActivationOutput::HumanLoopActivationOutput(JsonView jsonValue)
+  : HumanLoopActivationOutput()
 {
   *this = jsonValue;
 }

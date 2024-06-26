@@ -27,12 +27,8 @@ VoiceMessage::VoiceMessage() :
 {
 }
 
-VoiceMessage::VoiceMessage(JsonView jsonValue) : 
-    m_bodyHasBeenSet(false),
-    m_languageCodeHasBeenSet(false),
-    m_originationNumberHasBeenSet(false),
-    m_substitutionsHasBeenSet(false),
-    m_voiceIdHasBeenSet(false)
+VoiceMessage::VoiceMessage(JsonView jsonValue)
+  : VoiceMessage()
 {
   *this = jsonValue;
 }

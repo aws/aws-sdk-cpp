@@ -37,22 +37,8 @@ BillingGroupListElement::BillingGroupListElement() :
 {
 }
 
-BillingGroupListElement::BillingGroupListElement(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_primaryAccountIdHasBeenSet(false),
-    m_computationPreferenceHasBeenSet(false),
-    m_size(0),
-    m_sizeHasBeenSet(false),
-    m_creationTime(0),
-    m_creationTimeHasBeenSet(false),
-    m_lastModifiedTime(0),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_status(BillingGroupStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusReasonHasBeenSet(false),
-    m_accountGroupingHasBeenSet(false)
+BillingGroupListElement::BillingGroupListElement(JsonView jsonValue)
+  : BillingGroupListElement()
 {
   *this = jsonValue;
 }

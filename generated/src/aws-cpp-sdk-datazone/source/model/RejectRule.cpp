@@ -26,11 +26,8 @@ RejectRule::RejectRule() :
 {
 }
 
-RejectRule::RejectRule(JsonView jsonValue) : 
-    m_rule(RejectRuleBehavior::NOT_SET),
-    m_ruleHasBeenSet(false),
-    m_threshold(0.0),
-    m_thresholdHasBeenSet(false)
+RejectRule::RejectRule(JsonView jsonValue)
+  : RejectRule()
 {
   *this = jsonValue;
 }

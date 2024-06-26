@@ -24,9 +24,8 @@ SchemaFacet::SchemaFacet() :
 {
 }
 
-SchemaFacet::SchemaFacet(JsonView jsonValue) : 
-    m_schemaArnHasBeenSet(false),
-    m_facetNameHasBeenSet(false)
+SchemaFacet::SchemaFacet(JsonView jsonValue)
+  : SchemaFacet()
 {
   *this = jsonValue;
 }

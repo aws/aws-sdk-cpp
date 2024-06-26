@@ -24,9 +24,8 @@ Tag::Tag() :
 {
 }
 
-Tag::Tag(JsonView jsonValue) : 
-    m_tagKeyHasBeenSet(false),
-    m_tagValueHasBeenSet(false)
+Tag::Tag(JsonView jsonValue)
+  : Tag()
 {
   *this = jsonValue;
 }

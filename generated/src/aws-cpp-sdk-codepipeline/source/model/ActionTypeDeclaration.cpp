@@ -30,15 +30,8 @@ ActionTypeDeclaration::ActionTypeDeclaration() :
 {
 }
 
-ActionTypeDeclaration::ActionTypeDeclaration(JsonView jsonValue) : 
-    m_descriptionHasBeenSet(false),
-    m_executorHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_inputArtifactDetailsHasBeenSet(false),
-    m_outputArtifactDetailsHasBeenSet(false),
-    m_permissionsHasBeenSet(false),
-    m_propertiesHasBeenSet(false),
-    m_urlsHasBeenSet(false)
+ActionTypeDeclaration::ActionTypeDeclaration(JsonView jsonValue)
+  : ActionTypeDeclaration()
 {
   *this = jsonValue;
 }

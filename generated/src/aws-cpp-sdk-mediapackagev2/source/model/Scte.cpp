@@ -23,8 +23,8 @@ Scte::Scte() :
 {
 }
 
-Scte::Scte(JsonView jsonValue) : 
-    m_scteFilterHasBeenSet(false)
+Scte::Scte(JsonView jsonValue)
+  : Scte()
 {
   *this = jsonValue;
 }

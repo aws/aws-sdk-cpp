@@ -24,9 +24,8 @@ UpdateCustomLineItemFlatChargeDetails::UpdateCustomLineItemFlatChargeDetails() :
 {
 }
 
-UpdateCustomLineItemFlatChargeDetails::UpdateCustomLineItemFlatChargeDetails(JsonView jsonValue) : 
-    m_chargeValue(0.0),
-    m_chargeValueHasBeenSet(false)
+UpdateCustomLineItemFlatChargeDetails::UpdateCustomLineItemFlatChargeDetails(JsonView jsonValue)
+  : UpdateCustomLineItemFlatChargeDetails()
 {
   *this = jsonValue;
 }

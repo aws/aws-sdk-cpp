@@ -25,8 +25,8 @@ ErrorDocument::ErrorDocument() :
 {
 }
 
-ErrorDocument::ErrorDocument(const XmlNode& xmlNode) : 
-    m_keyHasBeenSet(false)
+ErrorDocument::ErrorDocument(const XmlNode& xmlNode)
+  : ErrorDocument()
 {
   *this = xmlNode;
 }

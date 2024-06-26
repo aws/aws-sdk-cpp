@@ -33,18 +33,8 @@ AgentInfo::AgentInfo() :
 {
 }
 
-AgentInfo::AgentInfo(JsonView jsonValue) : 
-    m_agentIdHasBeenSet(false),
-    m_hostNameHasBeenSet(false),
-    m_agentNetworkInfoListHasBeenSet(false),
-    m_connectorIdHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_health(AgentStatus::NOT_SET),
-    m_healthHasBeenSet(false),
-    m_lastHealthPingTimeHasBeenSet(false),
-    m_collectionStatusHasBeenSet(false),
-    m_agentTypeHasBeenSet(false),
-    m_registeredTimeHasBeenSet(false)
+AgentInfo::AgentInfo(JsonView jsonValue)
+  : AgentInfo()
 {
   *this = jsonValue;
 }

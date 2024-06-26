@@ -23,9 +23,8 @@ PutKeyResult::PutKeyResult() :
 {
 }
 
-PutKeyResult::PutKeyResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_itemCount(0),
-    m_totalSizeInBytes(0)
+PutKeyResult::PutKeyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : PutKeyResult()
 {
   *this = result;
 }

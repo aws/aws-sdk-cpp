@@ -24,9 +24,8 @@ KxCommandLineArgument::KxCommandLineArgument() :
 {
 }
 
-KxCommandLineArgument::KxCommandLineArgument(JsonView jsonValue) : 
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false)
+KxCommandLineArgument::KxCommandLineArgument(JsonView jsonValue)
+  : KxCommandLineArgument()
 {
   *this = jsonValue;
 }

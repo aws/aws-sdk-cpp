@@ -26,11 +26,8 @@ DeploymentProperties::DeploymentProperties() :
 {
 }
 
-DeploymentProperties::DeploymentProperties(JsonView jsonValue) : 
-    m_endTimeoutMinutes(0),
-    m_endTimeoutMinutesHasBeenSet(false),
-    m_startTimeoutMinutes(0),
-    m_startTimeoutMinutesHasBeenSet(false)
+DeploymentProperties::DeploymentProperties(JsonView jsonValue)
+  : DeploymentProperties()
 {
   *this = jsonValue;
 }

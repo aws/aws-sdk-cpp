@@ -24,9 +24,8 @@ VoiceRecordingConfiguration::VoiceRecordingConfiguration() :
 {
 }
 
-VoiceRecordingConfiguration::VoiceRecordingConfiguration(JsonView jsonValue) : 
-    m_voiceRecordingTrack(VoiceRecordingTrack::NOT_SET),
-    m_voiceRecordingTrackHasBeenSet(false)
+VoiceRecordingConfiguration::VoiceRecordingConfiguration(JsonView jsonValue)
+  : VoiceRecordingConfiguration()
 {
   *this = jsonValue;
 }

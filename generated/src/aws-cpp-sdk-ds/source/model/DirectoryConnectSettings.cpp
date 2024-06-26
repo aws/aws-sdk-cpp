@@ -26,11 +26,8 @@ DirectoryConnectSettings::DirectoryConnectSettings() :
 {
 }
 
-DirectoryConnectSettings::DirectoryConnectSettings(JsonView jsonValue) : 
-    m_vpcIdHasBeenSet(false),
-    m_subnetIdsHasBeenSet(false),
-    m_customerDnsIpsHasBeenSet(false),
-    m_customerUserNameHasBeenSet(false)
+DirectoryConnectSettings::DirectoryConnectSettings(JsonView jsonValue)
+  : DirectoryConnectSettings()
 {
   *this = jsonValue;
 }

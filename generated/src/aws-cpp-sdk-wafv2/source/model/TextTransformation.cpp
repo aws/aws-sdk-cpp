@@ -26,11 +26,8 @@ TextTransformation::TextTransformation() :
 {
 }
 
-TextTransformation::TextTransformation(JsonView jsonValue) : 
-    m_priority(0),
-    m_priorityHasBeenSet(false),
-    m_type(TextTransformationType::NOT_SET),
-    m_typeHasBeenSet(false)
+TextTransformation::TextTransformation(JsonView jsonValue)
+  : TextTransformation()
 {
   *this = jsonValue;
 }

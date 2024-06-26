@@ -23,9 +23,8 @@ RetryDataReplicationResult::RetryDataReplicationResult() :
 {
 }
 
-RetryDataReplicationResult::RetryDataReplicationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_isArchived(false),
-    m_replicationType(ReplicationType::NOT_SET)
+RetryDataReplicationResult::RetryDataReplicationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : RetryDataReplicationResult()
 {
   *this = result;
 }

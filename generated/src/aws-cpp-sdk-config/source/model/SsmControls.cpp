@@ -26,11 +26,8 @@ SsmControls::SsmControls() :
 {
 }
 
-SsmControls::SsmControls(JsonView jsonValue) : 
-    m_concurrentExecutionRatePercentage(0),
-    m_concurrentExecutionRatePercentageHasBeenSet(false),
-    m_errorPercentage(0),
-    m_errorPercentageHasBeenSet(false)
+SsmControls::SsmControls(JsonView jsonValue)
+  : SsmControls()
 {
   *this = jsonValue;
 }

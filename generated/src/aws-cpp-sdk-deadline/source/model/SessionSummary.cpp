@@ -33,18 +33,8 @@ SessionSummary::SessionSummary() :
 {
 }
 
-SessionSummary::SessionSummary(JsonView jsonValue) : 
-    m_endedAtHasBeenSet(false),
-    m_fleetIdHasBeenSet(false),
-    m_lifecycleStatus(SessionLifecycleStatus::NOT_SET),
-    m_lifecycleStatusHasBeenSet(false),
-    m_sessionIdHasBeenSet(false),
-    m_startedAtHasBeenSet(false),
-    m_targetLifecycleStatus(SessionLifecycleTargetStatus::NOT_SET),
-    m_targetLifecycleStatusHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_updatedByHasBeenSet(false),
-    m_workerIdHasBeenSet(false)
+SessionSummary::SessionSummary(JsonView jsonValue)
+  : SessionSummary()
 {
   *this = jsonValue;
 }

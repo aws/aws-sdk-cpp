@@ -28,14 +28,8 @@ GetDeploymentResult::GetDeploymentResult() :
 {
 }
 
-GetDeploymentResult::GetDeploymentResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_deploymentNumber(0),
-    m_deploymentDurationInMinutes(0),
-    m_growthType(GrowthType::NOT_SET),
-    m_growthFactor(0.0),
-    m_finalBakeTimeInMinutes(0),
-    m_state(DeploymentState::NOT_SET),
-    m_percentageComplete(0.0)
+GetDeploymentResult::GetDeploymentResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetDeploymentResult()
 {
   *this = result;
 }

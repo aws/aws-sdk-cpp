@@ -23,9 +23,8 @@ BatchImportFindingsResult::BatchImportFindingsResult() :
 {
 }
 
-BatchImportFindingsResult::BatchImportFindingsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_failedCount(0),
-    m_successCount(0)
+BatchImportFindingsResult::BatchImportFindingsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : BatchImportFindingsResult()
 {
   *this = result;
 }

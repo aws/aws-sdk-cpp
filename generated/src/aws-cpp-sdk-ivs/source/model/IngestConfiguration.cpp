@@ -24,9 +24,8 @@ IngestConfiguration::IngestConfiguration() :
 {
 }
 
-IngestConfiguration::IngestConfiguration(JsonView jsonValue) : 
-    m_audioHasBeenSet(false),
-    m_videoHasBeenSet(false)
+IngestConfiguration::IngestConfiguration(JsonView jsonValue)
+  : IngestConfiguration()
 {
   *this = jsonValue;
 }

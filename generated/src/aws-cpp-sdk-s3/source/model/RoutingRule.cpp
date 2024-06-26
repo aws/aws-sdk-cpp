@@ -26,9 +26,8 @@ RoutingRule::RoutingRule() :
 {
 }
 
-RoutingRule::RoutingRule(const XmlNode& xmlNode) : 
-    m_conditionHasBeenSet(false),
-    m_redirectHasBeenSet(false)
+RoutingRule::RoutingRule(const XmlNode& xmlNode)
+  : RoutingRule()
 {
   *this = xmlNode;
 }

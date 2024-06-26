@@ -29,14 +29,8 @@ Alert::Alert() :
 {
 }
 
-Alert::Alert(JsonView jsonValue) : 
-    m_alertCodeHasBeenSet(false),
-    m_alertMessageHasBeenSet(false),
-    m_category(AlertCategory::NOT_SET),
-    m_categoryHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_relatedResourceArnsHasBeenSet(false),
-    m_resourceArnHasBeenSet(false)
+Alert::Alert(JsonView jsonValue)
+  : Alert()
 {
   *this = jsonValue;
 }

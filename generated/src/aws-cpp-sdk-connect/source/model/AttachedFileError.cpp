@@ -25,10 +25,8 @@ AttachedFileError::AttachedFileError() :
 {
 }
 
-AttachedFileError::AttachedFileError(JsonView jsonValue) : 
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_fileIdHasBeenSet(false)
+AttachedFileError::AttachedFileError(JsonView jsonValue)
+  : AttachedFileError()
 {
   *this = jsonValue;
 }

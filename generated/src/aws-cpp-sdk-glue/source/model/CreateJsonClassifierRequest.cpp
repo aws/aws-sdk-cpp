@@ -24,9 +24,8 @@ CreateJsonClassifierRequest::CreateJsonClassifierRequest() :
 {
 }
 
-CreateJsonClassifierRequest::CreateJsonClassifierRequest(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_jsonPathHasBeenSet(false)
+CreateJsonClassifierRequest::CreateJsonClassifierRequest(JsonView jsonValue)
+  : CreateJsonClassifierRequest()
 {
   *this = jsonValue;
 }

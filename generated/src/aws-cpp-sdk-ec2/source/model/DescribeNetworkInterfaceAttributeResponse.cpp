@@ -22,8 +22,8 @@ DescribeNetworkInterfaceAttributeResponse::DescribeNetworkInterfaceAttributeResp
 {
 }
 
-DescribeNetworkInterfaceAttributeResponse::DescribeNetworkInterfaceAttributeResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_associatePublicIpAddress(false)
+DescribeNetworkInterfaceAttributeResponse::DescribeNetworkInterfaceAttributeResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : DescribeNetworkInterfaceAttributeResponse()
 {
   *this = result;
 }

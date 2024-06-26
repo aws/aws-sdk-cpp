@@ -27,12 +27,8 @@ ApiInvocationInput::ApiInvocationInput() :
 {
 }
 
-ApiInvocationInput::ApiInvocationInput(JsonView jsonValue) : 
-    m_actionGroupHasBeenSet(false),
-    m_apiPathHasBeenSet(false),
-    m_httpMethodHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_requestBodyHasBeenSet(false)
+ApiInvocationInput::ApiInvocationInput(JsonView jsonValue)
+  : ApiInvocationInput()
 {
   *this = jsonValue;
 }

@@ -29,14 +29,8 @@ IdNamespaceSummary::IdNamespaceSummary() :
 {
 }
 
-IdNamespaceSummary::IdNamespaceSummary(JsonView jsonValue) : 
-    m_createdAtHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_idNamespaceArnHasBeenSet(false),
-    m_idNamespaceNameHasBeenSet(false),
-    m_type(IdNamespaceType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+IdNamespaceSummary::IdNamespaceSummary(JsonView jsonValue)
+  : IdNamespaceSummary()
 {
   *this = jsonValue;
 }

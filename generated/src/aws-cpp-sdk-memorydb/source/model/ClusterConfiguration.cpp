@@ -39,24 +39,8 @@ ClusterConfiguration::ClusterConfiguration() :
 {
 }
 
-ClusterConfiguration::ClusterConfiguration(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_nodeTypeHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_maintenanceWindowHasBeenSet(false),
-    m_topicArnHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_parameterGroupNameHasBeenSet(false),
-    m_subnetGroupNameHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_snapshotRetentionLimit(0),
-    m_snapshotRetentionLimitHasBeenSet(false),
-    m_snapshotWindowHasBeenSet(false),
-    m_numShards(0),
-    m_numShardsHasBeenSet(false),
-    m_shardsHasBeenSet(false)
+ClusterConfiguration::ClusterConfiguration(JsonView jsonValue)
+  : ClusterConfiguration()
 {
   *this = jsonValue;
 }

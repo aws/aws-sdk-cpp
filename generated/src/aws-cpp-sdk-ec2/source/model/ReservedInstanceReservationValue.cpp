@@ -26,9 +26,8 @@ ReservedInstanceReservationValue::ReservedInstanceReservationValue() :
 {
 }
 
-ReservedInstanceReservationValue::ReservedInstanceReservationValue(const XmlNode& xmlNode) : 
-    m_reservationValueHasBeenSet(false),
-    m_reservedInstanceIdHasBeenSet(false)
+ReservedInstanceReservationValue::ReservedInstanceReservationValue(const XmlNode& xmlNode)
+  : ReservedInstanceReservationValue()
 {
   *this = xmlNode;
 }

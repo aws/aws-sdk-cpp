@@ -23,8 +23,8 @@ PendingVerification::PendingVerification() :
 {
 }
 
-PendingVerification::PendingVerification(JsonView jsonValue) : 
-    m_exceptionMessageHasBeenSet(false)
+PendingVerification::PendingVerification(JsonView jsonValue)
+  : PendingVerification()
 {
   *this = jsonValue;
 }

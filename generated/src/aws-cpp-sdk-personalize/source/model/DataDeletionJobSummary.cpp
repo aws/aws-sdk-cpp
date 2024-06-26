@@ -29,14 +29,8 @@ DataDeletionJobSummary::DataDeletionJobSummary() :
 {
 }
 
-DataDeletionJobSummary::DataDeletionJobSummary(JsonView jsonValue) : 
-    m_dataDeletionJobArnHasBeenSet(false),
-    m_datasetGroupArnHasBeenSet(false),
-    m_jobNameHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_creationDateTimeHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false),
-    m_failureReasonHasBeenSet(false)
+DataDeletionJobSummary::DataDeletionJobSummary(JsonView jsonValue)
+  : DataDeletionJobSummary()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ AwsAthenaWorkGroupConfigurationResultConfigurationEncryptionConfigurationDetails
 {
 }
 
-AwsAthenaWorkGroupConfigurationResultConfigurationEncryptionConfigurationDetails::AwsAthenaWorkGroupConfigurationResultConfigurationEncryptionConfigurationDetails(JsonView jsonValue) : 
-    m_encryptionOptionHasBeenSet(false),
-    m_kmsKeyHasBeenSet(false)
+AwsAthenaWorkGroupConfigurationResultConfigurationEncryptionConfigurationDetails::AwsAthenaWorkGroupConfigurationResultConfigurationEncryptionConfigurationDetails(JsonView jsonValue)
+  : AwsAthenaWorkGroupConfigurationResultConfigurationEncryptionConfigurationDetails()
 {
   *this = jsonValue;
 }

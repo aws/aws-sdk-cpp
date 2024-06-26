@@ -25,10 +25,8 @@ RelevanceFeedback::RelevanceFeedback() :
 {
 }
 
-RelevanceFeedback::RelevanceFeedback(JsonView jsonValue) : 
-    m_resultIdHasBeenSet(false),
-    m_relevanceValue(RelevanceType::NOT_SET),
-    m_relevanceValueHasBeenSet(false)
+RelevanceFeedback::RelevanceFeedback(JsonView jsonValue)
+  : RelevanceFeedback()
 {
   *this = jsonValue;
 }

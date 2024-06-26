@@ -24,9 +24,8 @@ AutoTuneOptionsStatus::AutoTuneOptionsStatus() :
 {
 }
 
-AutoTuneOptionsStatus::AutoTuneOptionsStatus(JsonView jsonValue) : 
-    m_optionsHasBeenSet(false),
-    m_statusHasBeenSet(false)
+AutoTuneOptionsStatus::AutoTuneOptionsStatus(JsonView jsonValue)
+  : AutoTuneOptionsStatus()
 {
   *this = jsonValue;
 }

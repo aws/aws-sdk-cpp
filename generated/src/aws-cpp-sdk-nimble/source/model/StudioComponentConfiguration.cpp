@@ -26,11 +26,8 @@ StudioComponentConfiguration::StudioComponentConfiguration() :
 {
 }
 
-StudioComponentConfiguration::StudioComponentConfiguration(JsonView jsonValue) : 
-    m_activeDirectoryConfigurationHasBeenSet(false),
-    m_computeFarmConfigurationHasBeenSet(false),
-    m_licenseServiceConfigurationHasBeenSet(false),
-    m_sharedFileSystemConfigurationHasBeenSet(false)
+StudioComponentConfiguration::StudioComponentConfiguration(JsonView jsonValue)
+  : StudioComponentConfiguration()
 {
   *this = jsonValue;
 }

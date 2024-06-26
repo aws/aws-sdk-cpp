@@ -23,8 +23,8 @@ AntennaDownlinkConfig::AntennaDownlinkConfig() :
 {
 }
 
-AntennaDownlinkConfig::AntennaDownlinkConfig(JsonView jsonValue) : 
-    m_spectrumConfigHasBeenSet(false)
+AntennaDownlinkConfig::AntennaDownlinkConfig(JsonView jsonValue)
+  : AntennaDownlinkConfig()
 {
   *this = jsonValue;
 }

@@ -27,10 +27,8 @@ VPC::VPC() :
 {
 }
 
-VPC::VPC(const XmlNode& xmlNode) : 
-    m_vPCRegion(VPCRegion::NOT_SET),
-    m_vPCRegionHasBeenSet(false),
-    m_vPCIdHasBeenSet(false)
+VPC::VPC(const XmlNode& xmlNode)
+  : VPC()
 {
   *this = xmlNode;
 }

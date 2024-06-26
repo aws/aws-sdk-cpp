@@ -33,18 +33,8 @@ UpdateFormData::UpdateFormData() :
 {
 }
 
-UpdateFormData::UpdateFormData(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_dataTypeHasBeenSet(false),
-    m_formActionType(FormActionType::NOT_SET),
-    m_formActionTypeHasBeenSet(false),
-    m_fieldsHasBeenSet(false),
-    m_styleHasBeenSet(false),
-    m_sectionalElementsHasBeenSet(false),
-    m_schemaVersionHasBeenSet(false),
-    m_ctaHasBeenSet(false),
-    m_labelDecorator(LabelDecorator::NOT_SET),
-    m_labelDecoratorHasBeenSet(false)
+UpdateFormData::UpdateFormData(JsonView jsonValue)
+  : UpdateFormData()
 {
   *this = jsonValue;
 }

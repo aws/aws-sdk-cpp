@@ -25,8 +25,8 @@ PredictiveScalingCustomizedScalingMetric::PredictiveScalingCustomizedScalingMetr
 {
 }
 
-PredictiveScalingCustomizedScalingMetric::PredictiveScalingCustomizedScalingMetric(const XmlNode& xmlNode) : 
-    m_metricDataQueriesHasBeenSet(false)
+PredictiveScalingCustomizedScalingMetric::PredictiveScalingCustomizedScalingMetric(const XmlNode& xmlNode)
+  : PredictiveScalingCustomizedScalingMetric()
 {
   *this = xmlNode;
 }

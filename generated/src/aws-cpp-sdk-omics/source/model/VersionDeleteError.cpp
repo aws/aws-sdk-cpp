@@ -24,9 +24,8 @@ VersionDeleteError::VersionDeleteError() :
 {
 }
 
-VersionDeleteError::VersionDeleteError(JsonView jsonValue) : 
-    m_versionNameHasBeenSet(false),
-    m_messageHasBeenSet(false)
+VersionDeleteError::VersionDeleteError(JsonView jsonValue)
+  : VersionDeleteError()
 {
   *this = jsonValue;
 }

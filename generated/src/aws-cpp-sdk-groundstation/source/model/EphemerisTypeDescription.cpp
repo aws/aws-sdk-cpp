@@ -24,9 +24,8 @@ EphemerisTypeDescription::EphemerisTypeDescription() :
 {
 }
 
-EphemerisTypeDescription::EphemerisTypeDescription(JsonView jsonValue) : 
-    m_oemHasBeenSet(false),
-    m_tleHasBeenSet(false)
+EphemerisTypeDescription::EphemerisTypeDescription(JsonView jsonValue)
+  : EphemerisTypeDescription()
 {
   *this = jsonValue;
 }

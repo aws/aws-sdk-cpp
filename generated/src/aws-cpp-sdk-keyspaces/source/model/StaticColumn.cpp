@@ -23,8 +23,8 @@ StaticColumn::StaticColumn() :
 {
 }
 
-StaticColumn::StaticColumn(JsonView jsonValue) : 
-    m_nameHasBeenSet(false)
+StaticColumn::StaticColumn(JsonView jsonValue)
+  : StaticColumn()
 {
   *this = jsonValue;
 }

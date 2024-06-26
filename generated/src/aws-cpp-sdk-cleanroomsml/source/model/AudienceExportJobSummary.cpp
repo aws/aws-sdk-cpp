@@ -32,17 +32,8 @@ AudienceExportJobSummary::AudienceExportJobSummary() :
 {
 }
 
-AudienceExportJobSummary::AudienceExportJobSummary(JsonView jsonValue) : 
-    m_audienceGenerationJobArnHasBeenSet(false),
-    m_audienceSizeHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_outputLocationHasBeenSet(false),
-    m_status(AudienceExportJobStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusDetailsHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
+AudienceExportJobSummary::AudienceExportJobSummary(JsonView jsonValue)
+  : AudienceExportJobSummary()
 {
   *this = jsonValue;
 }

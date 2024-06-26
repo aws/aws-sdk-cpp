@@ -36,21 +36,8 @@ Environment::Environment() :
 {
 }
 
-Environment::Environment(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_environmentIdHasBeenSet(false),
-    m_awsAccountIdHasBeenSet(false),
-    m_status(EnvironmentStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_environmentUrlHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_environmentArnHasBeenSet(false),
-    m_sageMakerStudioDomainUrlHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_dedicatedServiceAccountIdHasBeenSet(false),
-    m_federationMode(FederationMode::NOT_SET),
-    m_federationModeHasBeenSet(false),
-    m_federationParametersHasBeenSet(false)
+Environment::Environment(JsonView jsonValue)
+  : Environment()
 {
   *this = jsonValue;
 }

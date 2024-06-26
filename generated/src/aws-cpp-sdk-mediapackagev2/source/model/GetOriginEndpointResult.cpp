@@ -23,9 +23,8 @@ GetOriginEndpointResult::GetOriginEndpointResult() :
 {
 }
 
-GetOriginEndpointResult::GetOriginEndpointResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_containerType(ContainerType::NOT_SET),
-    m_startoverWindowSeconds(0)
+GetOriginEndpointResult::GetOriginEndpointResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetOriginEndpointResult()
 {
   *this = result;
 }

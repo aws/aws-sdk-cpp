@@ -25,10 +25,8 @@ Batch::Batch() :
 {
 }
 
-Batch::Batch(JsonView jsonValue) : 
-    m_batchJobNameHasBeenSet(false),
-    m_batchJobParametersHasBeenSet(false),
-    m_exportDataSetNamesHasBeenSet(false)
+Batch::Batch(JsonView jsonValue)
+  : Batch()
 {
   *this = jsonValue;
 }

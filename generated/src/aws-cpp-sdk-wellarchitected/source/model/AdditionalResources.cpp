@@ -25,10 +25,8 @@ AdditionalResources::AdditionalResources() :
 {
 }
 
-AdditionalResources::AdditionalResources(JsonView jsonValue) : 
-    m_type(AdditionalResourceType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_contentHasBeenSet(false)
+AdditionalResources::AdditionalResources(JsonView jsonValue)
+  : AdditionalResources()
 {
   *this = jsonValue;
 }

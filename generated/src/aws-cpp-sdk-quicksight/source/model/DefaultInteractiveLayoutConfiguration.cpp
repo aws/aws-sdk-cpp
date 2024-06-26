@@ -24,9 +24,8 @@ DefaultInteractiveLayoutConfiguration::DefaultInteractiveLayoutConfiguration() :
 {
 }
 
-DefaultInteractiveLayoutConfiguration::DefaultInteractiveLayoutConfiguration(JsonView jsonValue) : 
-    m_gridHasBeenSet(false),
-    m_freeFormHasBeenSet(false)
+DefaultInteractiveLayoutConfiguration::DefaultInteractiveLayoutConfiguration(JsonView jsonValue)
+  : DefaultInteractiveLayoutConfiguration()
 {
   *this = jsonValue;
 }

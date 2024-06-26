@@ -24,9 +24,8 @@ DetectedSignature::DetectedSignature() :
 {
 }
 
-DetectedSignature::DetectedSignature(JsonView jsonValue) : 
-    m_page(0),
-    m_pageHasBeenSet(false)
+DetectedSignature::DetectedSignature(JsonView jsonValue)
+  : DetectedSignature()
 {
   *this = jsonValue;
 }

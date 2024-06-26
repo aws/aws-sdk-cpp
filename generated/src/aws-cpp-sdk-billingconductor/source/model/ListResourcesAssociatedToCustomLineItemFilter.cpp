@@ -24,9 +24,8 @@ ListResourcesAssociatedToCustomLineItemFilter::ListResourcesAssociatedToCustomLi
 {
 }
 
-ListResourcesAssociatedToCustomLineItemFilter::ListResourcesAssociatedToCustomLineItemFilter(JsonView jsonValue) : 
-    m_relationship(CustomLineItemRelationship::NOT_SET),
-    m_relationshipHasBeenSet(false)
+ListResourcesAssociatedToCustomLineItemFilter::ListResourcesAssociatedToCustomLineItemFilter(JsonView jsonValue)
+  : ListResourcesAssociatedToCustomLineItemFilter()
 {
   *this = jsonValue;
 }

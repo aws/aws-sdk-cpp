@@ -27,12 +27,8 @@ TimecodeConfig::TimecodeConfig() :
 {
 }
 
-TimecodeConfig::TimecodeConfig(JsonView jsonValue) : 
-    m_anchorHasBeenSet(false),
-    m_source(TimecodeSource::NOT_SET),
-    m_sourceHasBeenSet(false),
-    m_startHasBeenSet(false),
-    m_timestampOffsetHasBeenSet(false)
+TimecodeConfig::TimecodeConfig(JsonView jsonValue)
+  : TimecodeConfig()
 {
   *this = jsonValue;
 }

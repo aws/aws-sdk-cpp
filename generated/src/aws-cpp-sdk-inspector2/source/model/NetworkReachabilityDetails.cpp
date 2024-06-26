@@ -26,11 +26,8 @@ NetworkReachabilityDetails::NetworkReachabilityDetails() :
 {
 }
 
-NetworkReachabilityDetails::NetworkReachabilityDetails(JsonView jsonValue) : 
-    m_networkPathHasBeenSet(false),
-    m_openPortRangeHasBeenSet(false),
-    m_protocol(NetworkProtocol::NOT_SET),
-    m_protocolHasBeenSet(false)
+NetworkReachabilityDetails::NetworkReachabilityDetails(JsonView jsonValue)
+  : NetworkReachabilityDetails()
 {
   *this = jsonValue;
 }

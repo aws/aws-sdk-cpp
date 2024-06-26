@@ -23,9 +23,8 @@ ListRealtimeContactAnalysisSegmentsV2Result::ListRealtimeContactAnalysisSegments
 {
 }
 
-ListRealtimeContactAnalysisSegmentsV2Result::ListRealtimeContactAnalysisSegmentsV2Result(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_channel(RealTimeContactAnalysisSupportedChannel::NOT_SET),
-    m_status(RealTimeContactAnalysisStatus::NOT_SET)
+ListRealtimeContactAnalysisSegmentsV2Result::ListRealtimeContactAnalysisSegmentsV2Result(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ListRealtimeContactAnalysisSegmentsV2Result()
 {
   *this = result;
 }

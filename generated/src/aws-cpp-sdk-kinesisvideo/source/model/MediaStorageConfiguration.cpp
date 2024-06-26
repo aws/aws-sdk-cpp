@@ -25,10 +25,8 @@ MediaStorageConfiguration::MediaStorageConfiguration() :
 {
 }
 
-MediaStorageConfiguration::MediaStorageConfiguration(JsonView jsonValue) : 
-    m_streamARNHasBeenSet(false),
-    m_status(MediaStorageConfigurationStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+MediaStorageConfiguration::MediaStorageConfiguration(JsonView jsonValue)
+  : MediaStorageConfiguration()
 {
   *this = jsonValue;
 }

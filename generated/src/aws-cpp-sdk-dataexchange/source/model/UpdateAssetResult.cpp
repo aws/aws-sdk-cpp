@@ -22,8 +22,8 @@ UpdateAssetResult::UpdateAssetResult() :
 {
 }
 
-UpdateAssetResult::UpdateAssetResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_assetType(AssetType::NOT_SET)
+UpdateAssetResult::UpdateAssetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateAssetResult()
 {
   *this = result;
 }

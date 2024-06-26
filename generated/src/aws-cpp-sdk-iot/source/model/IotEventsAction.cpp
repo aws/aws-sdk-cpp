@@ -27,12 +27,8 @@ IotEventsAction::IotEventsAction() :
 {
 }
 
-IotEventsAction::IotEventsAction(JsonView jsonValue) : 
-    m_inputNameHasBeenSet(false),
-    m_messageIdHasBeenSet(false),
-    m_batchMode(false),
-    m_batchModeHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
+IotEventsAction::IotEventsAction(JsonView jsonValue)
+  : IotEventsAction()
 {
   *this = jsonValue;
 }

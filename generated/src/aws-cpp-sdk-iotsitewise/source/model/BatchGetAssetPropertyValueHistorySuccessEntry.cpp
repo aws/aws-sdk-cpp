@@ -24,9 +24,8 @@ BatchGetAssetPropertyValueHistorySuccessEntry::BatchGetAssetPropertyValueHistory
 {
 }
 
-BatchGetAssetPropertyValueHistorySuccessEntry::BatchGetAssetPropertyValueHistorySuccessEntry(JsonView jsonValue) : 
-    m_entryIdHasBeenSet(false),
-    m_assetPropertyValueHistoryHasBeenSet(false)
+BatchGetAssetPropertyValueHistorySuccessEntry::BatchGetAssetPropertyValueHistorySuccessEntry(JsonView jsonValue)
+  : BatchGetAssetPropertyValueHistorySuccessEntry()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ Target::Target() :
 {
 }
 
-Target::Target(JsonView jsonValue) : 
-    m_accountIdHasBeenSet(false),
-    m_organizationalUnitIdHasBeenSet(false),
-    m_rootIdHasBeenSet(false)
+Target::Target(JsonView jsonValue)
+  : Target()
 {
   *this = jsonValue;
 }

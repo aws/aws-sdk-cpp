@@ -25,10 +25,8 @@ TlsValidationContextTrust::TlsValidationContextTrust() :
 {
 }
 
-TlsValidationContextTrust::TlsValidationContextTrust(JsonView jsonValue) : 
-    m_acmHasBeenSet(false),
-    m_fileHasBeenSet(false),
-    m_sdsHasBeenSet(false)
+TlsValidationContextTrust::TlsValidationContextTrust(JsonView jsonValue)
+  : TlsValidationContextTrust()
 {
   *this = jsonValue;
 }

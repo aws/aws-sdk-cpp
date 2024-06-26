@@ -23,9 +23,8 @@ GetCostCategoriesResult::GetCostCategoriesResult() :
 {
 }
 
-GetCostCategoriesResult::GetCostCategoriesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_returnSize(0),
-    m_totalSize(0)
+GetCostCategoriesResult::GetCostCategoriesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetCostCategoriesResult()
 {
   *this = result;
 }

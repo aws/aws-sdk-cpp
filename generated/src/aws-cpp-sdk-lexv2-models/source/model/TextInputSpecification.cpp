@@ -24,9 +24,8 @@ TextInputSpecification::TextInputSpecification() :
 {
 }
 
-TextInputSpecification::TextInputSpecification(JsonView jsonValue) : 
-    m_startTimeoutMs(0),
-    m_startTimeoutMsHasBeenSet(false)
+TextInputSpecification::TextInputSpecification(JsonView jsonValue)
+  : TextInputSpecification()
 {
   *this = jsonValue;
 }

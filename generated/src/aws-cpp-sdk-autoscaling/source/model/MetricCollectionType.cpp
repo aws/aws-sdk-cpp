@@ -25,8 +25,8 @@ MetricCollectionType::MetricCollectionType() :
 {
 }
 
-MetricCollectionType::MetricCollectionType(const XmlNode& xmlNode) : 
-    m_metricHasBeenSet(false)
+MetricCollectionType::MetricCollectionType(const XmlNode& xmlNode)
+  : MetricCollectionType()
 {
   *this = xmlNode;
 }

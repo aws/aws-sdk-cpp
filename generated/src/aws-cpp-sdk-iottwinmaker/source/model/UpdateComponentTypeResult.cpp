@@ -22,8 +22,8 @@ UpdateComponentTypeResult::UpdateComponentTypeResult() :
 {
 }
 
-UpdateComponentTypeResult::UpdateComponentTypeResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_state(State::NOT_SET)
+UpdateComponentTypeResult::UpdateComponentTypeResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateComponentTypeResult()
 {
   *this = result;
 }

@@ -22,8 +22,8 @@ ValidateStateMachineDefinitionResult::ValidateStateMachineDefinitionResult() :
 {
 }
 
-ValidateStateMachineDefinitionResult::ValidateStateMachineDefinitionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_result(ValidateStateMachineDefinitionResultCode::NOT_SET)
+ValidateStateMachineDefinitionResult::ValidateStateMachineDefinitionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ValidateStateMachineDefinitionResult()
 {
   *this = result;
 }

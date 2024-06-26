@@ -28,13 +28,8 @@ RevisionLocation::RevisionLocation() :
 {
 }
 
-RevisionLocation::RevisionLocation(JsonView jsonValue) : 
-    m_revisionType(RevisionLocationType::NOT_SET),
-    m_revisionTypeHasBeenSet(false),
-    m_s3LocationHasBeenSet(false),
-    m_gitHubLocationHasBeenSet(false),
-    m_stringHasBeenSet(false),
-    m_appSpecContentHasBeenSet(false)
+RevisionLocation::RevisionLocation(JsonView jsonValue)
+  : RevisionLocation()
 {
   *this = jsonValue;
 }

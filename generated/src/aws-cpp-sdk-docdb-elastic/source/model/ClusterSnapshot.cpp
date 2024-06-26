@@ -35,20 +35,8 @@ ClusterSnapshot::ClusterSnapshot() :
 {
 }
 
-ClusterSnapshot::ClusterSnapshot(JsonView jsonValue) : 
-    m_adminUserNameHasBeenSet(false),
-    m_clusterArnHasBeenSet(false),
-    m_clusterCreationTimeHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_snapshotArnHasBeenSet(false),
-    m_snapshotCreationTimeHasBeenSet(false),
-    m_snapshotNameHasBeenSet(false),
-    m_snapshotType(SnapshotType::NOT_SET),
-    m_snapshotTypeHasBeenSet(false),
-    m_status(Status::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_subnetIdsHasBeenSet(false),
-    m_vpcSecurityGroupIdsHasBeenSet(false)
+ClusterSnapshot::ClusterSnapshot(JsonView jsonValue)
+  : ClusterSnapshot()
 {
   *this = jsonValue;
 }

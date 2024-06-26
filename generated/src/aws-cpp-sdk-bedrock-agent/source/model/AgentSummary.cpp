@@ -30,15 +30,8 @@ AgentSummary::AgentSummary() :
 {
 }
 
-AgentSummary::AgentSummary(JsonView jsonValue) : 
-    m_agentIdHasBeenSet(false),
-    m_agentNameHasBeenSet(false),
-    m_agentStatus(AgentStatus::NOT_SET),
-    m_agentStatusHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_guardrailConfigurationHasBeenSet(false),
-    m_latestAgentVersionHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+AgentSummary::AgentSummary(JsonView jsonValue)
+  : AgentSummary()
 {
   *this = jsonValue;
 }

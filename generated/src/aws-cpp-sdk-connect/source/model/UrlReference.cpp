@@ -24,9 +24,8 @@ UrlReference::UrlReference() :
 {
 }
 
-UrlReference::UrlReference(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
+UrlReference::UrlReference(JsonView jsonValue)
+  : UrlReference()
 {
   *this = jsonValue;
 }

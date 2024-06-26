@@ -24,9 +24,8 @@ AdditionalInstanceConfiguration::AdditionalInstanceConfiguration() :
 {
 }
 
-AdditionalInstanceConfiguration::AdditionalInstanceConfiguration(JsonView jsonValue) : 
-    m_systemsManagerAgentHasBeenSet(false),
-    m_userDataOverrideHasBeenSet(false)
+AdditionalInstanceConfiguration::AdditionalInstanceConfiguration(JsonView jsonValue)
+  : AdditionalInstanceConfiguration()
 {
   *this = jsonValue;
 }

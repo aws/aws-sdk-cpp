@@ -25,10 +25,8 @@ GreengrassOutputDetails::GreengrassOutputDetails() :
 {
 }
 
-GreengrassOutputDetails::GreengrassOutputDetails(JsonView jsonValue) : 
-    m_componentVersionArnHasBeenSet(false),
-    m_componentNameHasBeenSet(false),
-    m_componentVersionHasBeenSet(false)
+GreengrassOutputDetails::GreengrassOutputDetails(JsonView jsonValue)
+  : GreengrassOutputDetails()
 {
   *this = jsonValue;
 }

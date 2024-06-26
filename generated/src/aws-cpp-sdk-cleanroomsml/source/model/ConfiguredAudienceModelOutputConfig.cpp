@@ -24,9 +24,8 @@ ConfiguredAudienceModelOutputConfig::ConfiguredAudienceModelOutputConfig() :
 {
 }
 
-ConfiguredAudienceModelOutputConfig::ConfiguredAudienceModelOutputConfig(JsonView jsonValue) : 
-    m_destinationHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
+ConfiguredAudienceModelOutputConfig::ConfiguredAudienceModelOutputConfig(JsonView jsonValue)
+  : ConfiguredAudienceModelOutputConfig()
 {
   *this = jsonValue;
 }

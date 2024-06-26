@@ -32,17 +32,8 @@ Domain::Domain() :
 {
 }
 
-Domain::Domain(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_supportCodeHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_locationHasBeenSet(false),
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_domainEntriesHasBeenSet(false),
-    m_registeredDomainDelegationInfoHasBeenSet(false)
+Domain::Domain(JsonView jsonValue)
+  : Domain()
 {
   *this = jsonValue;
 }

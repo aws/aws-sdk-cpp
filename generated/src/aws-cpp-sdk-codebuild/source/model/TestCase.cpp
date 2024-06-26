@@ -31,16 +31,8 @@ TestCase::TestCase() :
 {
 }
 
-TestCase::TestCase(JsonView jsonValue) : 
-    m_reportArnHasBeenSet(false),
-    m_testRawDataPathHasBeenSet(false),
-    m_prefixHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_durationInNanoSeconds(0),
-    m_durationInNanoSecondsHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_expiredHasBeenSet(false)
+TestCase::TestCase(JsonView jsonValue)
+  : TestCase()
 {
   *this = jsonValue;
 }

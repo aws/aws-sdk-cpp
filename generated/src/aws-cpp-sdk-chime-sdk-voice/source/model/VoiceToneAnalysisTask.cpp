@@ -29,14 +29,8 @@ VoiceToneAnalysisTask::VoiceToneAnalysisTask() :
 {
 }
 
-VoiceToneAnalysisTask::VoiceToneAnalysisTask(JsonView jsonValue) : 
-    m_voiceToneAnalysisTaskIdHasBeenSet(false),
-    m_voiceToneAnalysisTaskStatusHasBeenSet(false),
-    m_callDetailsHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false),
-    m_updatedTimestampHasBeenSet(false),
-    m_startedTimestampHasBeenSet(false),
-    m_statusMessageHasBeenSet(false)
+VoiceToneAnalysisTask::VoiceToneAnalysisTask(JsonView jsonValue)
+  : VoiceToneAnalysisTask()
 {
   *this = jsonValue;
 }

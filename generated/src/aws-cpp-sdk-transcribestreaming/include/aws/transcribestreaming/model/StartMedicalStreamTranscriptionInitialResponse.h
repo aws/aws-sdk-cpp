@@ -127,16 +127,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Shows whether channel identification was enabled for your transcription.</p>
-     */
-    inline bool GetEnableChannelIdentification() const{ return m_enableChannelIdentification; }
-    inline bool EnableChannelIdentificationHasBeenSet() const { return m_enableChannelIdentificationHasBeenSet; }
-    inline void SetEnableChannelIdentification(bool value) { m_enableChannelIdentificationHasBeenSet = true; m_enableChannelIdentification = value; }
-    inline StartMedicalStreamTranscriptionInitialResponse& WithEnableChannelIdentification(bool value) { SetEnableChannelIdentification(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Provides the sample rate that you specified in your request.</p>
      */
     inline int GetMediaSampleRateHertz() const{ return m_mediaSampleRateHertz; }
@@ -147,12 +137,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>Provides the number of channels that you specified in your request.</p>
+     * <p>Shows whether channel identification was enabled for your transcription.</p>
      */
-    inline int GetNumberOfChannels() const{ return m_numberOfChannels; }
-    inline bool NumberOfChannelsHasBeenSet() const { return m_numberOfChannelsHasBeenSet; }
-    inline void SetNumberOfChannels(int value) { m_numberOfChannelsHasBeenSet = true; m_numberOfChannels = value; }
-    inline StartMedicalStreamTranscriptionInitialResponse& WithNumberOfChannels(int value) { SetNumberOfChannels(value); return *this;}
+    inline bool GetEnableChannelIdentification() const{ return m_enableChannelIdentification; }
+    inline bool EnableChannelIdentificationHasBeenSet() const { return m_enableChannelIdentificationHasBeenSet; }
+    inline void SetEnableChannelIdentification(bool value) { m_enableChannelIdentificationHasBeenSet = true; m_enableChannelIdentification = value; }
+    inline StartMedicalStreamTranscriptionInitialResponse& WithEnableChannelIdentification(bool value) { SetEnableChannelIdentification(value); return *this;}
     ///@}
 
     ///@{
@@ -165,6 +155,16 @@ namespace Model
     inline void SetMediaEncoding(MediaEncoding&& value) { m_mediaEncodingHasBeenSet = true; m_mediaEncoding = std::move(value); }
     inline StartMedicalStreamTranscriptionInitialResponse& WithMediaEncoding(const MediaEncoding& value) { SetMediaEncoding(value); return *this;}
     inline StartMedicalStreamTranscriptionInitialResponse& WithMediaEncoding(MediaEncoding&& value) { SetMediaEncoding(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Provides the number of channels that you specified in your request.</p>
+     */
+    inline int GetNumberOfChannels() const{ return m_numberOfChannels; }
+    inline bool NumberOfChannelsHasBeenSet() const { return m_numberOfChannelsHasBeenSet; }
+    inline void SetNumberOfChannels(int value) { m_numberOfChannelsHasBeenSet = true; m_numberOfChannels = value; }
+    inline StartMedicalStreamTranscriptionInitialResponse& WithNumberOfChannels(int value) { SetNumberOfChannels(value); return *this;}
     ///@}
 
     ///@{
@@ -203,17 +203,17 @@ namespace Model
     MedicalContentIdentificationType m_contentIdentificationType;
     bool m_contentIdentificationTypeHasBeenSet = false;
 
-    bool m_enableChannelIdentification;
-    bool m_enableChannelIdentificationHasBeenSet = false;
-
     int m_mediaSampleRateHertz;
     bool m_mediaSampleRateHertzHasBeenSet = false;
 
-    int m_numberOfChannels;
-    bool m_numberOfChannelsHasBeenSet = false;
+    bool m_enableChannelIdentification;
+    bool m_enableChannelIdentificationHasBeenSet = false;
 
     MediaEncoding m_mediaEncoding;
     bool m_mediaEncodingHasBeenSet = false;
+
+    int m_numberOfChannels;
+    bool m_numberOfChannelsHasBeenSet = false;
 
     Aws::String m_sessionId;
     bool m_sessionIdHasBeenSet = false;

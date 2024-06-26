@@ -37,22 +37,8 @@ QueryStage::QueryStage() :
 {
 }
 
-QueryStage::QueryStage(JsonView jsonValue) : 
-    m_stageId(0),
-    m_stageIdHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_outputBytes(0),
-    m_outputBytesHasBeenSet(false),
-    m_outputRows(0),
-    m_outputRowsHasBeenSet(false),
-    m_inputBytes(0),
-    m_inputBytesHasBeenSet(false),
-    m_inputRows(0),
-    m_inputRowsHasBeenSet(false),
-    m_executionTime(0),
-    m_executionTimeHasBeenSet(false),
-    m_queryStagePlanHasBeenSet(false),
-    m_subStagesHasBeenSet(false)
+QueryStage::QueryStage(JsonView jsonValue)
+  : QueryStage()
 {
   *this = jsonValue;
 }

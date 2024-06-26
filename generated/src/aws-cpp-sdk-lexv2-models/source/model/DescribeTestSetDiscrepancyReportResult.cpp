@@ -22,8 +22,8 @@ DescribeTestSetDiscrepancyReportResult::DescribeTestSetDiscrepancyReportResult()
 {
 }
 
-DescribeTestSetDiscrepancyReportResult::DescribeTestSetDiscrepancyReportResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_testSetDiscrepancyReportStatus(TestSetDiscrepancyReportStatus::NOT_SET)
+DescribeTestSetDiscrepancyReportResult::DescribeTestSetDiscrepancyReportResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeTestSetDiscrepancyReportResult()
 {
   *this = result;
 }

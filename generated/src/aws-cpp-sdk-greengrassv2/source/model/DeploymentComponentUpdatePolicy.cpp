@@ -26,11 +26,8 @@ DeploymentComponentUpdatePolicy::DeploymentComponentUpdatePolicy() :
 {
 }
 
-DeploymentComponentUpdatePolicy::DeploymentComponentUpdatePolicy(JsonView jsonValue) : 
-    m_timeoutInSeconds(0),
-    m_timeoutInSecondsHasBeenSet(false),
-    m_action(DeploymentComponentUpdatePolicyAction::NOT_SET),
-    m_actionHasBeenSet(false)
+DeploymentComponentUpdatePolicy::DeploymentComponentUpdatePolicy(JsonView jsonValue)
+  : DeploymentComponentUpdatePolicy()
 {
   *this = jsonValue;
 }

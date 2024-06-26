@@ -23,8 +23,8 @@ SegmentCondition::SegmentCondition() :
 {
 }
 
-SegmentCondition::SegmentCondition(JsonView jsonValue) : 
-    m_segmentIdHasBeenSet(false)
+SegmentCondition::SegmentCondition(JsonView jsonValue)
+  : SegmentCondition()
 {
   *this = jsonValue;
 }

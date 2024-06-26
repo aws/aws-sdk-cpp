@@ -27,12 +27,8 @@ EventStreamDestinationDetails::EventStreamDestinationDetails() :
 {
 }
 
-EventStreamDestinationDetails::EventStreamDestinationDetails(JsonView jsonValue) : 
-    m_uriHasBeenSet(false),
-    m_status(EventStreamDestinationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_unhealthySinceHasBeenSet(false),
-    m_messageHasBeenSet(false)
+EventStreamDestinationDetails::EventStreamDestinationDetails(JsonView jsonValue)
+  : EventStreamDestinationDetails()
 {
   *this = jsonValue;
 }

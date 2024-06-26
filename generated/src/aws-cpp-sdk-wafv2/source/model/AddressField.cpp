@@ -23,8 +23,8 @@ AddressField::AddressField() :
 {
 }
 
-AddressField::AddressField(JsonView jsonValue) : 
-    m_identifierHasBeenSet(false)
+AddressField::AddressField(JsonView jsonValue)
+  : AddressField()
 {
   *this = jsonValue;
 }

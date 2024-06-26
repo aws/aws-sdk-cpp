@@ -28,13 +28,8 @@ Connection::Connection() :
 {
 }
 
-Connection::Connection(JsonView jsonValue) : 
-    m_replicationInstanceArnHasBeenSet(false),
-    m_endpointArnHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_lastFailureMessageHasBeenSet(false),
-    m_endpointIdentifierHasBeenSet(false),
-    m_replicationInstanceIdentifierHasBeenSet(false)
+Connection::Connection(JsonView jsonValue)
+  : Connection()
 {
   *this = jsonValue;
 }

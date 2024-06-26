@@ -25,9 +25,8 @@ EvaluationFormItem::EvaluationFormItem() :
 {
 }
 
-EvaluationFormItem::EvaluationFormItem(JsonView jsonValue) : 
-    m_sectionHasBeenSet(false),
-    m_questionHasBeenSet(false)
+EvaluationFormItem::EvaluationFormItem(JsonView jsonValue)
+  : EvaluationFormItem()
 {
   *this = jsonValue;
 }

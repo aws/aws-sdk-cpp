@@ -25,10 +25,8 @@ LustreLogConfiguration::LustreLogConfiguration() :
 {
 }
 
-LustreLogConfiguration::LustreLogConfiguration(JsonView jsonValue) : 
-    m_level(LustreAccessAuditLogLevel::NOT_SET),
-    m_levelHasBeenSet(false),
-    m_destinationHasBeenSet(false)
+LustreLogConfiguration::LustreLogConfiguration(JsonView jsonValue)
+  : LustreLogConfiguration()
 {
   *this = jsonValue;
 }

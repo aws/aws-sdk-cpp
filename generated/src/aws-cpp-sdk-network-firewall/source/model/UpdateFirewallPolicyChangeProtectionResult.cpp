@@ -22,8 +22,8 @@ UpdateFirewallPolicyChangeProtectionResult::UpdateFirewallPolicyChangeProtection
 {
 }
 
-UpdateFirewallPolicyChangeProtectionResult::UpdateFirewallPolicyChangeProtectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_firewallPolicyChangeProtection(false)
+UpdateFirewallPolicyChangeProtectionResult::UpdateFirewallPolicyChangeProtectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateFirewallPolicyChangeProtectionResult()
 {
   *this = result;
 }

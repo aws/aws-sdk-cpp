@@ -33,18 +33,8 @@ RepositoryMetadata::RepositoryMetadata() :
 {
 }
 
-RepositoryMetadata::RepositoryMetadata(JsonView jsonValue) : 
-    m_accountIdHasBeenSet(false),
-    m_repositoryIdHasBeenSet(false),
-    m_repositoryNameHasBeenSet(false),
-    m_repositoryDescriptionHasBeenSet(false),
-    m_defaultBranchHasBeenSet(false),
-    m_lastModifiedDateHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_cloneUrlHttpHasBeenSet(false),
-    m_cloneUrlSshHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
+RepositoryMetadata::RepositoryMetadata(JsonView jsonValue)
+  : RepositoryMetadata()
 {
   *this = jsonValue;
 }

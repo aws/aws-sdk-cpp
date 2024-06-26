@@ -28,11 +28,8 @@ AsyncErrorDetails::AsyncErrorDetails() :
 {
 }
 
-AsyncErrorDetails::AsyncErrorDetails(const XmlNode& xmlNode) : 
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_resourceHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
+AsyncErrorDetails::AsyncErrorDetails(const XmlNode& xmlNode)
+  : AsyncErrorDetails()
 {
   *this = xmlNode;
 }

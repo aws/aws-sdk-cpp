@@ -26,11 +26,8 @@ SchemaReference::SchemaReference() :
 {
 }
 
-SchemaReference::SchemaReference(JsonView jsonValue) : 
-    m_schemaIdHasBeenSet(false),
-    m_schemaVersionIdHasBeenSet(false),
-    m_schemaVersionNumber(0),
-    m_schemaVersionNumberHasBeenSet(false)
+SchemaReference::SchemaReference(JsonView jsonValue)
+  : SchemaReference()
 {
   *this = jsonValue;
 }

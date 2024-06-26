@@ -39,24 +39,8 @@ LogGroup::LogGroup() :
 {
 }
 
-LogGroup::LogGroup(JsonView jsonValue) : 
-    m_logGroupNameHasBeenSet(false),
-    m_creationTime(0),
-    m_creationTimeHasBeenSet(false),
-    m_retentionInDays(0),
-    m_retentionInDaysHasBeenSet(false),
-    m_metricFilterCount(0),
-    m_metricFilterCountHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_storedBytes(0),
-    m_storedBytesHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_dataProtectionStatus(DataProtectionStatus::NOT_SET),
-    m_dataProtectionStatusHasBeenSet(false),
-    m_inheritedPropertiesHasBeenSet(false),
-    m_logGroupClass(LogGroupClass::NOT_SET),
-    m_logGroupClassHasBeenSet(false),
-    m_logGroupArnHasBeenSet(false)
+LogGroup::LogGroup(JsonView jsonValue)
+  : LogGroup()
 {
   *this = jsonValue;
 }

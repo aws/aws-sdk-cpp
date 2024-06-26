@@ -32,17 +32,8 @@ Workflow::Workflow() :
 {
 }
 
-Workflow::Workflow(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_defaultRunPropertiesHasBeenSet(false),
-    m_createdOnHasBeenSet(false),
-    m_lastModifiedOnHasBeenSet(false),
-    m_lastRunHasBeenSet(false),
-    m_graphHasBeenSet(false),
-    m_maxConcurrentRuns(0),
-    m_maxConcurrentRunsHasBeenSet(false),
-    m_blueprintDetailsHasBeenSet(false)
+Workflow::Workflow(JsonView jsonValue)
+  : Workflow()
 {
   *this = jsonValue;
 }

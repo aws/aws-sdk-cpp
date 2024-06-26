@@ -28,11 +28,8 @@ TargetDescription::TargetDescription() :
 {
 }
 
-TargetDescription::TargetDescription(const XmlNode& xmlNode) : 
-    m_idHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false)
+TargetDescription::TargetDescription(const XmlNode& xmlNode)
+  : TargetDescription()
 {
   *this = xmlNode;
 }

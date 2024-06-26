@@ -28,13 +28,8 @@ InAppMessageContent::InAppMessageContent() :
 {
 }
 
-InAppMessageContent::InAppMessageContent(JsonView jsonValue) : 
-    m_backgroundColorHasBeenSet(false),
-    m_bodyConfigHasBeenSet(false),
-    m_headerConfigHasBeenSet(false),
-    m_imageUrlHasBeenSet(false),
-    m_primaryBtnHasBeenSet(false),
-    m_secondaryBtnHasBeenSet(false)
+InAppMessageContent::InAppMessageContent(JsonView jsonValue)
+  : InAppMessageContent()
 {
   *this = jsonValue;
 }

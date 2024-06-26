@@ -23,8 +23,8 @@ DataAlreadyAcceptedException::DataAlreadyAcceptedException() :
 {
 }
 
-DataAlreadyAcceptedException::DataAlreadyAcceptedException(JsonView jsonValue) : 
-    m_expectedSequenceTokenHasBeenSet(false)
+DataAlreadyAcceptedException::DataAlreadyAcceptedException(JsonView jsonValue)
+  : DataAlreadyAcceptedException()
 {
   *this = jsonValue;
 }

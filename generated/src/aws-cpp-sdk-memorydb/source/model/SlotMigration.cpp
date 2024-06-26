@@ -24,9 +24,8 @@ SlotMigration::SlotMigration() :
 {
 }
 
-SlotMigration::SlotMigration(JsonView jsonValue) : 
-    m_progressPercentage(0.0),
-    m_progressPercentageHasBeenSet(false)
+SlotMigration::SlotMigration(JsonView jsonValue)
+  : SlotMigration()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ ListOpenIDConnectProviderTagsResult::ListOpenIDConnectProviderTagsResult() :
 {
 }
 
-ListOpenIDConnectProviderTagsResult::ListOpenIDConnectProviderTagsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_isTruncated(false)
+ListOpenIDConnectProviderTagsResult::ListOpenIDConnectProviderTagsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : ListOpenIDConnectProviderTagsResult()
 {
   *this = result;
 }

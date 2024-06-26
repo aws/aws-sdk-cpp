@@ -26,11 +26,8 @@ AutoMLCandidateStep::AutoMLCandidateStep() :
 {
 }
 
-AutoMLCandidateStep::AutoMLCandidateStep(JsonView jsonValue) : 
-    m_candidateStepType(CandidateStepType::NOT_SET),
-    m_candidateStepTypeHasBeenSet(false),
-    m_candidateStepArnHasBeenSet(false),
-    m_candidateStepNameHasBeenSet(false)
+AutoMLCandidateStep::AutoMLCandidateStep(JsonView jsonValue)
+  : AutoMLCandidateStep()
 {
   *this = jsonValue;
 }

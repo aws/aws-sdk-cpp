@@ -24,9 +24,8 @@ Command::Command() :
 {
 }
 
-Command::Command(JsonView jsonValue) : 
-    m_rebootHasBeenSet(false),
-    m_unlockHasBeenSet(false)
+Command::Command(JsonView jsonValue)
+  : Command()
 {
   *this = jsonValue;
 }

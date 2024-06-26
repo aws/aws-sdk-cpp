@@ -34,19 +34,8 @@ SheetDefinition::SheetDefinition() :
 {
 }
 
-SheetDefinition::SheetDefinition(JsonView jsonValue) : 
-    m_sheetIdHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_parameterControlsHasBeenSet(false),
-    m_filterControlsHasBeenSet(false),
-    m_visualsHasBeenSet(false),
-    m_textBoxesHasBeenSet(false),
-    m_layoutsHasBeenSet(false),
-    m_sheetControlLayoutsHasBeenSet(false),
-    m_contentType(SheetContentType::NOT_SET),
-    m_contentTypeHasBeenSet(false)
+SheetDefinition::SheetDefinition(JsonView jsonValue)
+  : SheetDefinition()
 {
   *this = jsonValue;
 }

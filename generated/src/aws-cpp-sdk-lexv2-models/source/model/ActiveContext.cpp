@@ -23,8 +23,8 @@ ActiveContext::ActiveContext() :
 {
 }
 
-ActiveContext::ActiveContext(JsonView jsonValue) : 
-    m_nameHasBeenSet(false)
+ActiveContext::ActiveContext(JsonView jsonValue)
+  : ActiveContext()
 {
   *this = jsonValue;
 }

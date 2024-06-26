@@ -26,9 +26,8 @@ SpotInstanceStateFault::SpotInstanceStateFault() :
 {
 }
 
-SpotInstanceStateFault::SpotInstanceStateFault(const XmlNode& xmlNode) : 
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+SpotInstanceStateFault::SpotInstanceStateFault(const XmlNode& xmlNode)
+  : SpotInstanceStateFault()
 {
   *this = xmlNode;
 }

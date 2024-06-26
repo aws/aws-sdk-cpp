@@ -30,14 +30,8 @@ ReplicationConfigurationDescription::ReplicationConfigurationDescription() :
 {
 }
 
-ReplicationConfigurationDescription::ReplicationConfigurationDescription(JsonView jsonValue) : 
-    m_sourceFileSystemIdHasBeenSet(false),
-    m_sourceFileSystemRegionHasBeenSet(false),
-    m_sourceFileSystemArnHasBeenSet(false),
-    m_originalSourceFileSystemArnHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_destinationsHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
+ReplicationConfigurationDescription::ReplicationConfigurationDescription(JsonView jsonValue)
+  : ReplicationConfigurationDescription()
 {
   *this = jsonValue;
 }

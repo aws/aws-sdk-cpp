@@ -25,10 +25,8 @@ Function::Function() :
 {
 }
 
-Function::Function(JsonView jsonValue) : 
-    m_functionArnHasBeenSet(false),
-    m_functionConfigurationHasBeenSet(false),
-    m_idHasBeenSet(false)
+Function::Function(JsonView jsonValue)
+  : Function()
 {
   *this = jsonValue;
 }

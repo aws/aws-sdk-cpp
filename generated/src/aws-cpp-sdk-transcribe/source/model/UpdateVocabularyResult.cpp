@@ -23,9 +23,8 @@ UpdateVocabularyResult::UpdateVocabularyResult() :
 {
 }
 
-UpdateVocabularyResult::UpdateVocabularyResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_languageCode(LanguageCode::NOT_SET),
-    m_vocabularyState(VocabularyState::NOT_SET)
+UpdateVocabularyResult::UpdateVocabularyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateVocabularyResult()
 {
   *this = result;
 }

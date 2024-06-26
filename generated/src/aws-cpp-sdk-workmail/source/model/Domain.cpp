@@ -24,9 +24,8 @@ Domain::Domain() :
 {
 }
 
-Domain::Domain(JsonView jsonValue) : 
-    m_domainNameHasBeenSet(false),
-    m_hostedZoneIdHasBeenSet(false)
+Domain::Domain(JsonView jsonValue)
+  : Domain()
 {
   *this = jsonValue;
 }

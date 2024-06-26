@@ -27,12 +27,8 @@ GuardrailManagedWord::GuardrailManagedWord() :
 {
 }
 
-GuardrailManagedWord::GuardrailManagedWord(JsonView jsonValue) : 
-    m_action(GuardrailWordPolicyAction::NOT_SET),
-    m_actionHasBeenSet(false),
-    m_matchHasBeenSet(false),
-    m_type(GuardrailManagedWordType::NOT_SET),
-    m_typeHasBeenSet(false)
+GuardrailManagedWord::GuardrailManagedWord(JsonView jsonValue)
+  : GuardrailManagedWord()
 {
   *this = jsonValue;
 }

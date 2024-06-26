@@ -23,8 +23,8 @@ GatewayRouteVirtualService::GatewayRouteVirtualService() :
 {
 }
 
-GatewayRouteVirtualService::GatewayRouteVirtualService(JsonView jsonValue) : 
-    m_virtualServiceNameHasBeenSet(false)
+GatewayRouteVirtualService::GatewayRouteVirtualService(JsonView jsonValue)
+  : GatewayRouteVirtualService()
 {
   *this = jsonValue;
 }

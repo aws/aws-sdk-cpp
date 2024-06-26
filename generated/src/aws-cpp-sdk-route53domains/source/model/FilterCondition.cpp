@@ -27,12 +27,8 @@ FilterCondition::FilterCondition() :
 {
 }
 
-FilterCondition::FilterCondition(JsonView jsonValue) : 
-    m_name(ListDomainsAttributeName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_operator(Operator::NOT_SET),
-    m_operatorHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+FilterCondition::FilterCondition(JsonView jsonValue)
+  : FilterCondition()
 {
   *this = jsonValue;
 }

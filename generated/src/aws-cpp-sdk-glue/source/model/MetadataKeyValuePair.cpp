@@ -24,9 +24,8 @@ MetadataKeyValuePair::MetadataKeyValuePair() :
 {
 }
 
-MetadataKeyValuePair::MetadataKeyValuePair(JsonView jsonValue) : 
-    m_metadataKeyHasBeenSet(false),
-    m_metadataValueHasBeenSet(false)
+MetadataKeyValuePair::MetadataKeyValuePair(JsonView jsonValue)
+  : MetadataKeyValuePair()
 {
   *this = jsonValue;
 }

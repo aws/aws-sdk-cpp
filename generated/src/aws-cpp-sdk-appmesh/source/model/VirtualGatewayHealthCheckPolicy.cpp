@@ -35,20 +35,8 @@ VirtualGatewayHealthCheckPolicy::VirtualGatewayHealthCheckPolicy() :
 {
 }
 
-VirtualGatewayHealthCheckPolicy::VirtualGatewayHealthCheckPolicy(JsonView jsonValue) : 
-    m_healthyThreshold(0),
-    m_healthyThresholdHasBeenSet(false),
-    m_intervalMillis(0),
-    m_intervalMillisHasBeenSet(false),
-    m_pathHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_protocol(VirtualGatewayPortProtocol::NOT_SET),
-    m_protocolHasBeenSet(false),
-    m_timeoutMillis(0),
-    m_timeoutMillisHasBeenSet(false),
-    m_unhealthyThreshold(0),
-    m_unhealthyThresholdHasBeenSet(false)
+VirtualGatewayHealthCheckPolicy::VirtualGatewayHealthCheckPolicy(JsonView jsonValue)
+  : VirtualGatewayHealthCheckPolicy()
 {
   *this = jsonValue;
 }

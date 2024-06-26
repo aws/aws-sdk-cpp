@@ -46,31 +46,8 @@ PhoneNumberInformation::PhoneNumberInformation() :
 {
 }
 
-PhoneNumberInformation::PhoneNumberInformation(JsonView jsonValue) : 
-    m_phoneNumberArnHasBeenSet(false),
-    m_phoneNumberIdHasBeenSet(false),
-    m_phoneNumberHasBeenSet(false),
-    m_status(NumberStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_isoCountryCodeHasBeenSet(false),
-    m_messageType(MessageType::NOT_SET),
-    m_messageTypeHasBeenSet(false),
-    m_numberCapabilitiesHasBeenSet(false),
-    m_numberType(NumberType::NOT_SET),
-    m_numberTypeHasBeenSet(false),
-    m_monthlyLeasingPriceHasBeenSet(false),
-    m_twoWayEnabled(false),
-    m_twoWayEnabledHasBeenSet(false),
-    m_twoWayChannelArnHasBeenSet(false),
-    m_twoWayChannelRoleHasBeenSet(false),
-    m_selfManagedOptOutsEnabled(false),
-    m_selfManagedOptOutsEnabledHasBeenSet(false),
-    m_optOutListNameHasBeenSet(false),
-    m_deletionProtectionEnabled(false),
-    m_deletionProtectionEnabledHasBeenSet(false),
-    m_poolIdHasBeenSet(false),
-    m_registrationIdHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false)
+PhoneNumberInformation::PhoneNumberInformation(JsonView jsonValue)
+  : PhoneNumberInformation()
 {
   *this = jsonValue;
 }

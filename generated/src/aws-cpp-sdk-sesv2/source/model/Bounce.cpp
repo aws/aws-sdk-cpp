@@ -26,11 +26,8 @@ Bounce::Bounce() :
 {
 }
 
-Bounce::Bounce(JsonView jsonValue) : 
-    m_bounceType(BounceType::NOT_SET),
-    m_bounceTypeHasBeenSet(false),
-    m_bounceSubTypeHasBeenSet(false),
-    m_diagnosticCodeHasBeenSet(false)
+Bounce::Bounce(JsonView jsonValue)
+  : Bounce()
 {
   *this = jsonValue;
 }

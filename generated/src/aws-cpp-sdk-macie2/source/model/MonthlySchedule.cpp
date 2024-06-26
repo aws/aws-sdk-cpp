@@ -24,9 +24,8 @@ MonthlySchedule::MonthlySchedule() :
 {
 }
 
-MonthlySchedule::MonthlySchedule(JsonView jsonValue) : 
-    m_dayOfMonth(0),
-    m_dayOfMonthHasBeenSet(false)
+MonthlySchedule::MonthlySchedule(JsonView jsonValue)
+  : MonthlySchedule()
 {
   *this = jsonValue;
 }

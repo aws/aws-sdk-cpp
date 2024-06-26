@@ -22,8 +22,8 @@ ListConfigurationRevisionsResult::ListConfigurationRevisionsResult() :
 {
 }
 
-ListConfigurationRevisionsResult::ListConfigurationRevisionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_maxResults(0)
+ListConfigurationRevisionsResult::ListConfigurationRevisionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ListConfigurationRevisionsResult()
 {
   *this = result;
 }

@@ -24,9 +24,8 @@ GroupCertificateAuthorityProperties::GroupCertificateAuthorityProperties() :
 {
 }
 
-GroupCertificateAuthorityProperties::GroupCertificateAuthorityProperties(JsonView jsonValue) : 
-    m_groupCertificateAuthorityArnHasBeenSet(false),
-    m_groupCertificateAuthorityIdHasBeenSet(false)
+GroupCertificateAuthorityProperties::GroupCertificateAuthorityProperties(JsonView jsonValue)
+  : GroupCertificateAuthorityProperties()
 {
   *this = jsonValue;
 }

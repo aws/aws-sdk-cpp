@@ -25,10 +25,8 @@ KafkaClusterDescription::KafkaClusterDescription() :
 {
 }
 
-KafkaClusterDescription::KafkaClusterDescription(JsonView jsonValue) : 
-    m_amazonMskClusterHasBeenSet(false),
-    m_kafkaClusterAliasHasBeenSet(false),
-    m_vpcConfigHasBeenSet(false)
+KafkaClusterDescription::KafkaClusterDescription(JsonView jsonValue)
+  : KafkaClusterDescription()
 {
   *this = jsonValue;
 }

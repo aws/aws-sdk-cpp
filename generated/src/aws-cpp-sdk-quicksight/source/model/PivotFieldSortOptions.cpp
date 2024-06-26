@@ -24,9 +24,8 @@ PivotFieldSortOptions::PivotFieldSortOptions() :
 {
 }
 
-PivotFieldSortOptions::PivotFieldSortOptions(JsonView jsonValue) : 
-    m_fieldIdHasBeenSet(false),
-    m_sortByHasBeenSet(false)
+PivotFieldSortOptions::PivotFieldSortOptions(JsonView jsonValue)
+  : PivotFieldSortOptions()
 {
   *this = jsonValue;
 }

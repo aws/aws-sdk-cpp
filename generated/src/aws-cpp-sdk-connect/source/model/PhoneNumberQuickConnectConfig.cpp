@@ -23,8 +23,8 @@ PhoneNumberQuickConnectConfig::PhoneNumberQuickConnectConfig() :
 {
 }
 
-PhoneNumberQuickConnectConfig::PhoneNumberQuickConnectConfig(JsonView jsonValue) : 
-    m_phoneNumberHasBeenSet(false)
+PhoneNumberQuickConnectConfig::PhoneNumberQuickConnectConfig(JsonView jsonValue)
+  : PhoneNumberQuickConnectConfig()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ LexBotConfig::LexBotConfig() :
 {
 }
 
-LexBotConfig::LexBotConfig(JsonView jsonValue) : 
-    m_lexBotHasBeenSet(false),
-    m_lexV2BotHasBeenSet(false)
+LexBotConfig::LexBotConfig(JsonView jsonValue)
+  : LexBotConfig()
 {
   *this = jsonValue;
 }

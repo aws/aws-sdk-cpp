@@ -25,10 +25,8 @@ SourceAccessConfiguration::SourceAccessConfiguration() :
 {
 }
 
-SourceAccessConfiguration::SourceAccessConfiguration(JsonView jsonValue) : 
-    m_type(SourceAccessType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_uRIHasBeenSet(false)
+SourceAccessConfiguration::SourceAccessConfiguration(JsonView jsonValue)
+  : SourceAccessConfiguration()
 {
   *this = jsonValue;
 }

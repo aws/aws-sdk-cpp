@@ -30,15 +30,8 @@ DirectConnectGateway::DirectConnectGateway() :
 {
 }
 
-DirectConnectGateway::DirectConnectGateway(JsonView jsonValue) : 
-    m_directConnectGatewayIdHasBeenSet(false),
-    m_directConnectGatewayNameHasBeenSet(false),
-    m_amazonSideAsn(0),
-    m_amazonSideAsnHasBeenSet(false),
-    m_ownerAccountHasBeenSet(false),
-    m_directConnectGatewayState(DirectConnectGatewayState::NOT_SET),
-    m_directConnectGatewayStateHasBeenSet(false),
-    m_stateChangeErrorHasBeenSet(false)
+DirectConnectGateway::DirectConnectGateway(JsonView jsonValue)
+  : DirectConnectGateway()
 {
   *this = jsonValue;
 }

@@ -27,12 +27,8 @@ VpcPeeringAuthorization::VpcPeeringAuthorization() :
 {
 }
 
-VpcPeeringAuthorization::VpcPeeringAuthorization(JsonView jsonValue) : 
-    m_gameLiftAwsAccountIdHasBeenSet(false),
-    m_peerVpcAwsAccountIdHasBeenSet(false),
-    m_peerVpcIdHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_expirationTimeHasBeenSet(false)
+VpcPeeringAuthorization::VpcPeeringAuthorization(JsonView jsonValue)
+  : VpcPeeringAuthorization()
 {
   *this = jsonValue;
 }

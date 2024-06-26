@@ -23,8 +23,8 @@ JobAttachmentDetailsIdentifiers::JobAttachmentDetailsIdentifiers() :
 {
 }
 
-JobAttachmentDetailsIdentifiers::JobAttachmentDetailsIdentifiers(JsonView jsonValue) : 
-    m_jobIdHasBeenSet(false)
+JobAttachmentDetailsIdentifiers::JobAttachmentDetailsIdentifiers(JsonView jsonValue)
+  : JobAttachmentDetailsIdentifiers()
 {
   *this = jsonValue;
 }

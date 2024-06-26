@@ -29,14 +29,8 @@ LegendOptions::LegendOptions() :
 {
 }
 
-LegendOptions::LegendOptions(JsonView jsonValue) : 
-    m_visibility(Visibility::NOT_SET),
-    m_visibilityHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_position(LegendPosition::NOT_SET),
-    m_positionHasBeenSet(false),
-    m_widthHasBeenSet(false),
-    m_heightHasBeenSet(false)
+LegendOptions::LegendOptions(JsonView jsonValue)
+  : LegendOptions()
 {
   *this = jsonValue;
 }

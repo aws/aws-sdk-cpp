@@ -27,12 +27,8 @@ LakeFormationDataPermissionAsset::LakeFormationDataPermissionAsset() :
 {
 }
 
-LakeFormationDataPermissionAsset::LakeFormationDataPermissionAsset(JsonView jsonValue) : 
-    m_lakeFormationDataPermissionDetailsHasBeenSet(false),
-    m_lakeFormationDataPermissionType(LakeFormationDataPermissionType::NOT_SET),
-    m_lakeFormationDataPermissionTypeHasBeenSet(false),
-    m_permissionsHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
+LakeFormationDataPermissionAsset::LakeFormationDataPermissionAsset(JsonView jsonValue)
+  : LakeFormationDataPermissionAsset()
 {
   *this = jsonValue;
 }

@@ -36,19 +36,8 @@ TransitGatewayAttachment::TransitGatewayAttachment() :
 {
 }
 
-TransitGatewayAttachment::TransitGatewayAttachment(const XmlNode& xmlNode) : 
-    m_transitGatewayAttachmentIdHasBeenSet(false),
-    m_transitGatewayIdHasBeenSet(false),
-    m_transitGatewayOwnerIdHasBeenSet(false),
-    m_resourceOwnerIdHasBeenSet(false),
-    m_resourceType(TransitGatewayAttachmentResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_state(TransitGatewayAttachmentState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_associationHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+TransitGatewayAttachment::TransitGatewayAttachment(const XmlNode& xmlNode)
+  : TransitGatewayAttachment()
 {
   *this = xmlNode;
 }

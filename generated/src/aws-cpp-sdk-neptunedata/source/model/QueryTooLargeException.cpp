@@ -25,10 +25,8 @@ QueryTooLargeException::QueryTooLargeException() :
 {
 }
 
-QueryTooLargeException::QueryTooLargeException(JsonView jsonValue) : 
-    m_detailedMessageHasBeenSet(false),
-    m_requestIdHasBeenSet(false),
-    m_codeHasBeenSet(false)
+QueryTooLargeException::QueryTooLargeException(JsonView jsonValue)
+  : QueryTooLargeException()
 {
   *this = jsonValue;
 }

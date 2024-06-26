@@ -24,9 +24,8 @@ SoftwareUpdatePreferences::SoftwareUpdatePreferences() :
 {
 }
 
-SoftwareUpdatePreferences::SoftwareUpdatePreferences(JsonView jsonValue) : 
-    m_automaticUpdatePolicy(AutomaticUpdatePolicy::NOT_SET),
-    m_automaticUpdatePolicyHasBeenSet(false)
+SoftwareUpdatePreferences::SoftwareUpdatePreferences(JsonView jsonValue)
+  : SoftwareUpdatePreferences()
 {
   *this = jsonValue;
 }

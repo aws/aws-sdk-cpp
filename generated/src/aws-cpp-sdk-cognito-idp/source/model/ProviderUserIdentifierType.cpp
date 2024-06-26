@@ -25,10 +25,8 @@ ProviderUserIdentifierType::ProviderUserIdentifierType() :
 {
 }
 
-ProviderUserIdentifierType::ProviderUserIdentifierType(JsonView jsonValue) : 
-    m_providerNameHasBeenSet(false),
-    m_providerAttributeNameHasBeenSet(false),
-    m_providerAttributeValueHasBeenSet(false)
+ProviderUserIdentifierType::ProviderUserIdentifierType(JsonView jsonValue)
+  : ProviderUserIdentifierType()
 {
   *this = jsonValue;
 }

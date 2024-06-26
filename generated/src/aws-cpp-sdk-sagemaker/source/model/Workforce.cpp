@@ -34,19 +34,8 @@ Workforce::Workforce() :
 {
 }
 
-Workforce::Workforce(JsonView jsonValue) : 
-    m_workforceNameHasBeenSet(false),
-    m_workforceArnHasBeenSet(false),
-    m_lastUpdatedDateHasBeenSet(false),
-    m_sourceIpConfigHasBeenSet(false),
-    m_subDomainHasBeenSet(false),
-    m_cognitoConfigHasBeenSet(false),
-    m_oidcConfigHasBeenSet(false),
-    m_createDateHasBeenSet(false),
-    m_workforceVpcConfigHasBeenSet(false),
-    m_status(WorkforceStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_failureReasonHasBeenSet(false)
+Workforce::Workforce(JsonView jsonValue)
+  : Workforce()
 {
   *this = jsonValue;
 }

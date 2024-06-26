@@ -29,14 +29,8 @@ UtteranceData::UtteranceData() :
 {
 }
 
-UtteranceData::UtteranceData(JsonView jsonValue) : 
-    m_utteranceStringHasBeenSet(false),
-    m_count(0),
-    m_countHasBeenSet(false),
-    m_distinctUsers(0),
-    m_distinctUsersHasBeenSet(false),
-    m_firstUtteredDateHasBeenSet(false),
-    m_lastUtteredDateHasBeenSet(false)
+UtteranceData::UtteranceData(JsonView jsonValue)
+  : UtteranceData()
 {
   *this = jsonValue;
 }

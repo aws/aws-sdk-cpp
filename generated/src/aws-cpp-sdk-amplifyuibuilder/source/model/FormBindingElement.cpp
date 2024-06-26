@@ -24,9 +24,8 @@ FormBindingElement::FormBindingElement() :
 {
 }
 
-FormBindingElement::FormBindingElement(JsonView jsonValue) : 
-    m_elementHasBeenSet(false),
-    m_propertyHasBeenSet(false)
+FormBindingElement::FormBindingElement(JsonView jsonValue)
+  : FormBindingElement()
 {
   *this = jsonValue;
 }

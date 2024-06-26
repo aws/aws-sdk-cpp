@@ -47,32 +47,8 @@ CloudWatchAlarmTemplateSummary::CloudWatchAlarmTemplateSummary() :
 {
 }
 
-CloudWatchAlarmTemplateSummary::CloudWatchAlarmTemplateSummary(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_comparisonOperator(CloudWatchAlarmTemplateComparisonOperator::NOT_SET),
-    m_comparisonOperatorHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_datapointsToAlarm(0),
-    m_datapointsToAlarmHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_evaluationPeriods(0),
-    m_evaluationPeriodsHasBeenSet(false),
-    m_groupIdHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_metricNameHasBeenSet(false),
-    m_modifiedAtHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_period(0),
-    m_periodHasBeenSet(false),
-    m_statistic(CloudWatchAlarmTemplateStatistic::NOT_SET),
-    m_statisticHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_targetResourceType(CloudWatchAlarmTemplateTargetResourceType::NOT_SET),
-    m_targetResourceTypeHasBeenSet(false),
-    m_threshold(0.0),
-    m_thresholdHasBeenSet(false),
-    m_treatMissingData(CloudWatchAlarmTemplateTreatMissingData::NOT_SET),
-    m_treatMissingDataHasBeenSet(false)
+CloudWatchAlarmTemplateSummary::CloudWatchAlarmTemplateSummary(JsonView jsonValue)
+  : CloudWatchAlarmTemplateSummary()
 {
   *this = jsonValue;
 }

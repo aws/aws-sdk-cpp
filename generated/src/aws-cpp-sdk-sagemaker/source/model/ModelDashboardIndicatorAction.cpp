@@ -24,9 +24,8 @@ ModelDashboardIndicatorAction::ModelDashboardIndicatorAction() :
 {
 }
 
-ModelDashboardIndicatorAction::ModelDashboardIndicatorAction(JsonView jsonValue) : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
+ModelDashboardIndicatorAction::ModelDashboardIndicatorAction(JsonView jsonValue)
+  : ModelDashboardIndicatorAction()
 {
   *this = jsonValue;
 }

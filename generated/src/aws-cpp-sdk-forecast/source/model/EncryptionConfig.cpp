@@ -24,9 +24,8 @@ EncryptionConfig::EncryptionConfig() :
 {
 }
 
-EncryptionConfig::EncryptionConfig(JsonView jsonValue) : 
-    m_roleArnHasBeenSet(false),
-    m_kMSKeyArnHasBeenSet(false)
+EncryptionConfig::EncryptionConfig(JsonView jsonValue)
+  : EncryptionConfig()
 {
   *this = jsonValue;
 }

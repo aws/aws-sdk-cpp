@@ -24,9 +24,8 @@ DestinationConfig::DestinationConfig() :
 {
 }
 
-DestinationConfig::DestinationConfig(JsonView jsonValue) : 
-    m_onSuccessHasBeenSet(false),
-    m_onFailureHasBeenSet(false)
+DestinationConfig::DestinationConfig(JsonView jsonValue)
+  : DestinationConfig()
 {
   *this = jsonValue;
 }

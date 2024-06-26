@@ -23,8 +23,8 @@ AwsCertificateManagerCertificateOptions::AwsCertificateManagerCertificateOptions
 {
 }
 
-AwsCertificateManagerCertificateOptions::AwsCertificateManagerCertificateOptions(JsonView jsonValue) : 
-    m_certificateTransparencyLoggingPreferenceHasBeenSet(false)
+AwsCertificateManagerCertificateOptions::AwsCertificateManagerCertificateOptions(JsonView jsonValue)
+  : AwsCertificateManagerCertificateOptions()
 {
   *this = jsonValue;
 }

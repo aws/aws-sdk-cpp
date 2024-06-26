@@ -25,10 +25,8 @@ ContractIdentifier::ContractIdentifier() :
 {
 }
 
-ContractIdentifier::ContractIdentifier(JsonView jsonValue) : 
-    m_network(QueryNetwork::NOT_SET),
-    m_networkHasBeenSet(false),
-    m_contractAddressHasBeenSet(false)
+ContractIdentifier::ContractIdentifier(JsonView jsonValue)
+  : ContractIdentifier()
 {
   *this = jsonValue;
 }

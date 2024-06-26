@@ -25,10 +25,8 @@ AuditEventField::AuditEventField() :
 {
 }
 
-AuditEventField::AuditEventField(JsonView jsonValue) : 
-    m_eventFieldIdHasBeenSet(false),
-    m_newValueHasBeenSet(false),
-    m_oldValueHasBeenSet(false)
+AuditEventField::AuditEventField(JsonView jsonValue)
+  : AuditEventField()
 {
   *this = jsonValue;
 }

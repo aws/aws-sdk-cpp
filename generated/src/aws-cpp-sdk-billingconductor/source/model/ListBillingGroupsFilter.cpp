@@ -27,12 +27,8 @@ ListBillingGroupsFilter::ListBillingGroupsFilter() :
 {
 }
 
-ListBillingGroupsFilter::ListBillingGroupsFilter(JsonView jsonValue) : 
-    m_arnsHasBeenSet(false),
-    m_pricingPlanHasBeenSet(false),
-    m_statusesHasBeenSet(false),
-    m_autoAssociate(false),
-    m_autoAssociateHasBeenSet(false)
+ListBillingGroupsFilter::ListBillingGroupsFilter(JsonView jsonValue)
+  : ListBillingGroupsFilter()
 {
   *this = jsonValue;
 }

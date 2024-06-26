@@ -22,8 +22,8 @@ GetSuiteRunResult::GetSuiteRunResult() :
 {
 }
 
-GetSuiteRunResult::GetSuiteRunResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(SuiteRunStatus::NOT_SET)
+GetSuiteRunResult::GetSuiteRunResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetSuiteRunResult()
 {
   *this = result;
 }

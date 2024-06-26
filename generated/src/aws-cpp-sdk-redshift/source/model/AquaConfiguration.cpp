@@ -28,11 +28,8 @@ AquaConfiguration::AquaConfiguration() :
 {
 }
 
-AquaConfiguration::AquaConfiguration(const XmlNode& xmlNode) : 
-    m_aquaStatus(AquaStatus::NOT_SET),
-    m_aquaStatusHasBeenSet(false),
-    m_aquaConfigurationStatus(AquaConfigurationStatus::NOT_SET),
-    m_aquaConfigurationStatusHasBeenSet(false)
+AquaConfiguration::AquaConfiguration(const XmlNode& xmlNode)
+  : AquaConfiguration()
 {
   *this = xmlNode;
 }

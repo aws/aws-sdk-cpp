@@ -23,8 +23,8 @@ ClusterServiceConnectDefaults::ClusterServiceConnectDefaults() :
 {
 }
 
-ClusterServiceConnectDefaults::ClusterServiceConnectDefaults(JsonView jsonValue) : 
-    m_namespaceHasBeenSet(false)
+ClusterServiceConnectDefaults::ClusterServiceConnectDefaults(JsonView jsonValue)
+  : ClusterServiceConnectDefaults()
 {
   *this = jsonValue;
 }

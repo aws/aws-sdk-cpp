@@ -28,13 +28,8 @@ Room::Room() :
 {
 }
 
-Room::Room(JsonView jsonValue) : 
-    m_roomIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_accountIdHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false),
-    m_updatedTimestampHasBeenSet(false)
+Room::Room(JsonView jsonValue)
+  : Room()
 {
   *this = jsonValue;
 }

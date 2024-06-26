@@ -24,9 +24,8 @@ NodeFabricAttributes::NodeFabricAttributes() :
 {
 }
 
-NodeFabricAttributes::NodeFabricAttributes(JsonView jsonValue) : 
-    m_peerEndpointHasBeenSet(false),
-    m_peerEventEndpointHasBeenSet(false)
+NodeFabricAttributes::NodeFabricAttributes(JsonView jsonValue)
+  : NodeFabricAttributes()
 {
   *this = jsonValue;
 }

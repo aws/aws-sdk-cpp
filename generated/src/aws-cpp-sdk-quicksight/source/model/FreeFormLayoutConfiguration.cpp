@@ -24,9 +24,8 @@ FreeFormLayoutConfiguration::FreeFormLayoutConfiguration() :
 {
 }
 
-FreeFormLayoutConfiguration::FreeFormLayoutConfiguration(JsonView jsonValue) : 
-    m_elementsHasBeenSet(false),
-    m_canvasSizeOptionsHasBeenSet(false)
+FreeFormLayoutConfiguration::FreeFormLayoutConfiguration(JsonView jsonValue)
+  : FreeFormLayoutConfiguration()
 {
   *this = jsonValue;
 }

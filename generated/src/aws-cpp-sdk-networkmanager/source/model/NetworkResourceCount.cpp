@@ -25,10 +25,8 @@ NetworkResourceCount::NetworkResourceCount() :
 {
 }
 
-NetworkResourceCount::NetworkResourceCount(JsonView jsonValue) : 
-    m_resourceTypeHasBeenSet(false),
-    m_count(0),
-    m_countHasBeenSet(false)
+NetworkResourceCount::NetworkResourceCount(JsonView jsonValue)
+  : NetworkResourceCount()
 {
   *this = jsonValue;
 }

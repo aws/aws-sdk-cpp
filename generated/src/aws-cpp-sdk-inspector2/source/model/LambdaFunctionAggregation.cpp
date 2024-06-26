@@ -30,15 +30,8 @@ LambdaFunctionAggregation::LambdaFunctionAggregation() :
 {
 }
 
-LambdaFunctionAggregation::LambdaFunctionAggregation(JsonView jsonValue) : 
-    m_functionNamesHasBeenSet(false),
-    m_functionTagsHasBeenSet(false),
-    m_resourceIdsHasBeenSet(false),
-    m_runtimesHasBeenSet(false),
-    m_sortBy(LambdaFunctionSortBy::NOT_SET),
-    m_sortByHasBeenSet(false),
-    m_sortOrder(SortOrder::NOT_SET),
-    m_sortOrderHasBeenSet(false)
+LambdaFunctionAggregation::LambdaFunctionAggregation(JsonView jsonValue)
+  : LambdaFunctionAggregation()
 {
   *this = jsonValue;
 }

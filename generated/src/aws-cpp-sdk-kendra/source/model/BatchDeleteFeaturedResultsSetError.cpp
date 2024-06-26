@@ -26,11 +26,8 @@ BatchDeleteFeaturedResultsSetError::BatchDeleteFeaturedResultsSetError() :
 {
 }
 
-BatchDeleteFeaturedResultsSetError::BatchDeleteFeaturedResultsSetError(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_errorCode(ErrorCode::NOT_SET),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
+BatchDeleteFeaturedResultsSetError::BatchDeleteFeaturedResultsSetError(JsonView jsonValue)
+  : BatchDeleteFeaturedResultsSetError()
 {
   *this = jsonValue;
 }

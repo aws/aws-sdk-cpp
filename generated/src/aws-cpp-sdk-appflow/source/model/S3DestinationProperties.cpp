@@ -25,10 +25,8 @@ S3DestinationProperties::S3DestinationProperties() :
 {
 }
 
-S3DestinationProperties::S3DestinationProperties(JsonView jsonValue) : 
-    m_bucketNameHasBeenSet(false),
-    m_bucketPrefixHasBeenSet(false),
-    m_s3OutputFormatConfigHasBeenSet(false)
+S3DestinationProperties::S3DestinationProperties(JsonView jsonValue)
+  : S3DestinationProperties()
 {
   *this = jsonValue;
 }

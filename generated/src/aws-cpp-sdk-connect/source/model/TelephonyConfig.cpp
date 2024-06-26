@@ -23,8 +23,8 @@ TelephonyConfig::TelephonyConfig() :
 {
 }
 
-TelephonyConfig::TelephonyConfig(JsonView jsonValue) : 
-    m_distributionsHasBeenSet(false)
+TelephonyConfig::TelephonyConfig(JsonView jsonValue)
+  : TelephonyConfig()
 {
   *this = jsonValue;
 }

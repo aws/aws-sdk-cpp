@@ -29,14 +29,8 @@ OpsItemEventSummary::OpsItemEventSummary() :
 {
 }
 
-OpsItemEventSummary::OpsItemEventSummary(JsonView jsonValue) : 
-    m_opsItemIdHasBeenSet(false),
-    m_eventIdHasBeenSet(false),
-    m_sourceHasBeenSet(false),
-    m_detailTypeHasBeenSet(false),
-    m_detailHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_createdTimeHasBeenSet(false)
+OpsItemEventSummary::OpsItemEventSummary(JsonView jsonValue)
+  : OpsItemEventSummary()
 {
   *this = jsonValue;
 }

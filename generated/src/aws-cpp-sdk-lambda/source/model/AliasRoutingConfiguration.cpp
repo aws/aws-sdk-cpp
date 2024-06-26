@@ -23,8 +23,8 @@ AliasRoutingConfiguration::AliasRoutingConfiguration() :
 {
 }
 
-AliasRoutingConfiguration::AliasRoutingConfiguration(JsonView jsonValue) : 
-    m_additionalVersionWeightsHasBeenSet(false)
+AliasRoutingConfiguration::AliasRoutingConfiguration(JsonView jsonValue)
+  : AliasRoutingConfiguration()
 {
   *this = jsonValue;
 }

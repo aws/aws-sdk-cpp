@@ -31,15 +31,8 @@ Environment::Environment() :
 {
 }
 
-Environment::Environment(JsonView jsonValue) : 
-    m_applicationIdHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_state(EnvironmentState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_monitorsHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
+Environment::Environment(JsonView jsonValue)
+  : Environment()
 {
   *this = jsonValue;
 }

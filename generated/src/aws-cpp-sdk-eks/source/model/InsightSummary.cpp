@@ -31,16 +31,8 @@ InsightSummary::InsightSummary() :
 {
 }
 
-InsightSummary::InsightSummary(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_category(Category::NOT_SET),
-    m_categoryHasBeenSet(false),
-    m_kubernetesVersionHasBeenSet(false),
-    m_lastRefreshTimeHasBeenSet(false),
-    m_lastTransitionTimeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_insightStatusHasBeenSet(false)
+InsightSummary::InsightSummary(JsonView jsonValue)
+  : InsightSummary()
 {
   *this = jsonValue;
 }

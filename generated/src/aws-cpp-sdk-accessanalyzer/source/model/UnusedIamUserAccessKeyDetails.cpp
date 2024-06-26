@@ -24,9 +24,8 @@ UnusedIamUserAccessKeyDetails::UnusedIamUserAccessKeyDetails() :
 {
 }
 
-UnusedIamUserAccessKeyDetails::UnusedIamUserAccessKeyDetails(JsonView jsonValue) : 
-    m_accessKeyIdHasBeenSet(false),
-    m_lastAccessedHasBeenSet(false)
+UnusedIamUserAccessKeyDetails::UnusedIamUserAccessKeyDetails(JsonView jsonValue)
+  : UnusedIamUserAccessKeyDetails()
 {
   *this = jsonValue;
 }

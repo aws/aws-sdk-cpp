@@ -24,9 +24,8 @@ NameValuePair::NameValuePair() :
 {
 }
 
-NameValuePair::NameValuePair(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
+NameValuePair::NameValuePair(JsonView jsonValue)
+  : NameValuePair()
 {
   *this = jsonValue;
 }

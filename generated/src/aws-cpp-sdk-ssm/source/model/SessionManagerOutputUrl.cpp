@@ -24,9 +24,8 @@ SessionManagerOutputUrl::SessionManagerOutputUrl() :
 {
 }
 
-SessionManagerOutputUrl::SessionManagerOutputUrl(JsonView jsonValue) : 
-    m_s3OutputUrlHasBeenSet(false),
-    m_cloudWatchOutputUrlHasBeenSet(false)
+SessionManagerOutputUrl::SessionManagerOutputUrl(JsonView jsonValue)
+  : SessionManagerOutputUrl()
 {
   *this = jsonValue;
 }

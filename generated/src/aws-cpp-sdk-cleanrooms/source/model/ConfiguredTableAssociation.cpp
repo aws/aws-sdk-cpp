@@ -33,18 +33,8 @@ ConfiguredTableAssociation::ConfiguredTableAssociation() :
 {
 }
 
-ConfiguredTableAssociation::ConfiguredTableAssociation(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_configuredTableIdHasBeenSet(false),
-    m_configuredTableArnHasBeenSet(false),
-    m_membershipIdHasBeenSet(false),
-    m_membershipArnHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
+ConfiguredTableAssociation::ConfiguredTableAssociation(JsonView jsonValue)
+  : ConfiguredTableAssociation()
 {
   *this = jsonValue;
 }

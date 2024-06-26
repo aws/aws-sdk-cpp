@@ -25,10 +25,8 @@ ReputationOptions::ReputationOptions() :
 {
 }
 
-ReputationOptions::ReputationOptions(JsonView jsonValue) : 
-    m_reputationMetricsEnabled(false),
-    m_reputationMetricsEnabledHasBeenSet(false),
-    m_lastFreshStartHasBeenSet(false)
+ReputationOptions::ReputationOptions(JsonView jsonValue)
+  : ReputationOptions()
 {
   *this = jsonValue;
 }

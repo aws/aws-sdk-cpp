@@ -24,9 +24,8 @@ SavingsPlansSavings::SavingsPlansSavings() :
 {
 }
 
-SavingsPlansSavings::SavingsPlansSavings(JsonView jsonValue) : 
-    m_netSavingsHasBeenSet(false),
-    m_onDemandCostEquivalentHasBeenSet(false)
+SavingsPlansSavings::SavingsPlansSavings(JsonView jsonValue)
+  : SavingsPlansSavings()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ CloudWatchMetricsDataSummary::CloudWatchMetricsDataSummary() :
 {
 }
 
-CloudWatchMetricsDataSummary::CloudWatchMetricsDataSummary(JsonView jsonValue) : 
-    m_timestampMetricValuePairListHasBeenSet(false),
-    m_statusCode(CloudWatchMetricDataStatusCode::NOT_SET),
-    m_statusCodeHasBeenSet(false)
+CloudWatchMetricsDataSummary::CloudWatchMetricsDataSummary(JsonView jsonValue)
+  : CloudWatchMetricsDataSummary()
 {
   *this = jsonValue;
 }

@@ -29,14 +29,8 @@ FilterGroup::FilterGroup() :
 {
 }
 
-FilterGroup::FilterGroup(JsonView jsonValue) : 
-    m_filterGroupIdHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_scopeConfigurationHasBeenSet(false),
-    m_status(WidgetStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_crossDataset(CrossDatasetTypes::NOT_SET),
-    m_crossDatasetHasBeenSet(false)
+FilterGroup::FilterGroup(JsonView jsonValue)
+  : FilterGroup()
 {
   *this = jsonValue;
 }

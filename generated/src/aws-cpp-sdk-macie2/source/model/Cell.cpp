@@ -28,13 +28,8 @@ Cell::Cell() :
 {
 }
 
-Cell::Cell(JsonView jsonValue) : 
-    m_cellReferenceHasBeenSet(false),
-    m_column(0),
-    m_columnHasBeenSet(false),
-    m_columnNameHasBeenSet(false),
-    m_row(0),
-    m_rowHasBeenSet(false)
+Cell::Cell(JsonView jsonValue)
+  : Cell()
 {
   *this = jsonValue;
 }

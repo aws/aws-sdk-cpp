@@ -28,13 +28,8 @@ ScannedItemCount::ScannedItemCount() :
 {
 }
 
-ScannedItemCount::ScannedItemCount(JsonView jsonValue) : 
-    m_totalGb(0),
-    m_totalGbHasBeenSet(false),
-    m_files(0),
-    m_filesHasBeenSet(false),
-    m_volumes(0),
-    m_volumesHasBeenSet(false)
+ScannedItemCount::ScannedItemCount(JsonView jsonValue)
+  : ScannedItemCount()
 {
   *this = jsonValue;
 }

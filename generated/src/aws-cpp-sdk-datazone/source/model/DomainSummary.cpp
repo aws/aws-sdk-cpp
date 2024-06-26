@@ -32,17 +32,8 @@ DomainSummary::DomainSummary() :
 {
 }
 
-DomainSummary::DomainSummary(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false),
-    m_managedAccountIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_portalUrlHasBeenSet(false),
-    m_status(DomainStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+DomainSummary::DomainSummary(JsonView jsonValue)
+  : DomainSummary()
 {
   *this = jsonValue;
 }

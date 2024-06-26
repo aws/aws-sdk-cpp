@@ -30,15 +30,8 @@ WorkloadData::WorkloadData() :
 {
 }
 
-WorkloadData::WorkloadData(JsonView jsonValue) : 
-    m_descriptionHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_documentationUrlHasBeenSet(false),
-    m_iconUrlHasBeenSet(false),
-    m_status(WorkloadStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_workloadNameHasBeenSet(false)
+WorkloadData::WorkloadData(JsonView jsonValue)
+  : WorkloadData()
 {
   *this = jsonValue;
 }

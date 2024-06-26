@@ -27,12 +27,8 @@ DomainSummary::DomainSummary() :
 {
 }
 
-DomainSummary::DomainSummary(JsonView jsonValue) : 
-    m_domainNameHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_domainStatus(DomainStatus::NOT_SET),
-    m_domainStatusHasBeenSet(false)
+DomainSummary::DomainSummary(JsonView jsonValue)
+  : DomainSummary()
 {
   *this = jsonValue;
 }

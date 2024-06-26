@@ -25,10 +25,8 @@ PropertyFilters::PropertyFilters() :
 {
 }
 
-PropertyFilters::PropertyFilters(JsonView jsonValue) : 
-    m_logicalOperator(LogicalOperator::NOT_SET),
-    m_logicalOperatorHasBeenSet(false),
-    m_propertiesHasBeenSet(false)
+PropertyFilters::PropertyFilters(JsonView jsonValue)
+  : PropertyFilters()
 {
   *this = jsonValue;
 }

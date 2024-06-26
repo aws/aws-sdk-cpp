@@ -24,9 +24,8 @@ HttpActionHeader::HttpActionHeader() :
 {
 }
 
-HttpActionHeader::HttpActionHeader(JsonView jsonValue) : 
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false)
+HttpActionHeader::HttpActionHeader(JsonView jsonValue)
+  : HttpActionHeader()
 {
   *this = jsonValue;
 }

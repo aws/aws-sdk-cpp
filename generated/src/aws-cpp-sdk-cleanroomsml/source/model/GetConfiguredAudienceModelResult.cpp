@@ -24,10 +24,8 @@ GetConfiguredAudienceModelResult::GetConfiguredAudienceModelResult() :
 {
 }
 
-GetConfiguredAudienceModelResult::GetConfiguredAudienceModelResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_childResourceTagOnCreatePolicy(TagOnCreatePolicy::NOT_SET),
-    m_minMatchingSeedSize(0),
-    m_status(ConfiguredAudienceModelStatus::NOT_SET)
+GetConfiguredAudienceModelResult::GetConfiguredAudienceModelResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetConfiguredAudienceModelResult()
 {
   *this = result;
 }

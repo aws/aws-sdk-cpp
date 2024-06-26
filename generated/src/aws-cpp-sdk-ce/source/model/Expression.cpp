@@ -28,13 +28,8 @@ Expression::Expression() :
 {
 }
 
-Expression::Expression(JsonView jsonValue) : 
-    m_orHasBeenSet(false),
-    m_andHasBeenSet(false),
-    m_notHasBeenSet(false),
-    m_dimensionsHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_costCategoriesHasBeenSet(false)
+Expression::Expression(JsonView jsonValue)
+  : Expression()
 {
   *this = jsonValue;
 }

@@ -30,14 +30,8 @@ ManagedRuleGroupStatement::ManagedRuleGroupStatement() :
 {
 }
 
-ManagedRuleGroupStatement::ManagedRuleGroupStatement(JsonView jsonValue) : 
-    m_vendorNameHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_excludedRulesHasBeenSet(false),
-    m_scopeDownStatementHasBeenSet(false),
-    m_managedRuleGroupConfigsHasBeenSet(false),
-    m_ruleActionOverridesHasBeenSet(false)
+ManagedRuleGroupStatement::ManagedRuleGroupStatement(JsonView jsonValue)
+  : ManagedRuleGroupStatement()
 {
   *this = jsonValue;
 }

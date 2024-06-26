@@ -27,12 +27,8 @@ VpcEndpointSummary::VpcEndpointSummary() :
 {
 }
 
-VpcEndpointSummary::VpcEndpointSummary(JsonView jsonValue) : 
-    m_vpcEndpointIdHasBeenSet(false),
-    m_vpcEndpointOwnerHasBeenSet(false),
-    m_domainArnHasBeenSet(false),
-    m_status(VpcEndpointStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+VpcEndpointSummary::VpcEndpointSummary(JsonView jsonValue)
+  : VpcEndpointSummary()
 {
   *this = jsonValue;
 }

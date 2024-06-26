@@ -24,9 +24,8 @@ VirtualObject::VirtualObject() :
 {
 }
 
-VirtualObject::VirtualObject(JsonView jsonValue) : 
-    m_uriHasBeenSet(false),
-    m_eTagHasBeenSet(false)
+VirtualObject::VirtualObject(JsonView jsonValue)
+  : VirtualObject()
 {
   *this = jsonValue;
 }

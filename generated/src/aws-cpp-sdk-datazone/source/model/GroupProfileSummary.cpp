@@ -27,12 +27,8 @@ GroupProfileSummary::GroupProfileSummary() :
 {
 }
 
-GroupProfileSummary::GroupProfileSummary(JsonView jsonValue) : 
-    m_domainIdHasBeenSet(false),
-    m_groupNameHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_status(GroupProfileStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+GroupProfileSummary::GroupProfileSummary(JsonView jsonValue)
+  : GroupProfileSummary()
 {
   *this = jsonValue;
 }

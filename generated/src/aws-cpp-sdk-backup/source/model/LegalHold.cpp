@@ -30,15 +30,8 @@ LegalHold::LegalHold() :
 {
 }
 
-LegalHold::LegalHold(JsonView jsonValue) : 
-    m_titleHasBeenSet(false),
-    m_status(LegalHoldStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_legalHoldIdHasBeenSet(false),
-    m_legalHoldArnHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_cancellationDateHasBeenSet(false)
+LegalHold::LegalHold(JsonView jsonValue)
+  : LegalHold()
 {
   *this = jsonValue;
 }

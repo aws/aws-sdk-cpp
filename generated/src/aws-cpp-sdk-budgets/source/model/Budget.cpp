@@ -35,20 +35,8 @@ Budget::Budget() :
 {
 }
 
-Budget::Budget(JsonView jsonValue) : 
-    m_budgetNameHasBeenSet(false),
-    m_budgetLimitHasBeenSet(false),
-    m_plannedBudgetLimitsHasBeenSet(false),
-    m_costFiltersHasBeenSet(false),
-    m_costTypesHasBeenSet(false),
-    m_timeUnit(TimeUnit::NOT_SET),
-    m_timeUnitHasBeenSet(false),
-    m_timePeriodHasBeenSet(false),
-    m_calculatedSpendHasBeenSet(false),
-    m_budgetType(BudgetType::NOT_SET),
-    m_budgetTypeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_autoAdjustDataHasBeenSet(false)
+Budget::Budget(JsonView jsonValue)
+  : Budget()
 {
   *this = jsonValue;
 }

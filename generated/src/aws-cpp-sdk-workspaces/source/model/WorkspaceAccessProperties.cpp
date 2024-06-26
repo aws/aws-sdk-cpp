@@ -38,23 +38,8 @@ WorkspaceAccessProperties::WorkspaceAccessProperties() :
 {
 }
 
-WorkspaceAccessProperties::WorkspaceAccessProperties(JsonView jsonValue) : 
-    m_deviceTypeWindows(AccessPropertyValue::NOT_SET),
-    m_deviceTypeWindowsHasBeenSet(false),
-    m_deviceTypeOsx(AccessPropertyValue::NOT_SET),
-    m_deviceTypeOsxHasBeenSet(false),
-    m_deviceTypeWeb(AccessPropertyValue::NOT_SET),
-    m_deviceTypeWebHasBeenSet(false),
-    m_deviceTypeIos(AccessPropertyValue::NOT_SET),
-    m_deviceTypeIosHasBeenSet(false),
-    m_deviceTypeAndroid(AccessPropertyValue::NOT_SET),
-    m_deviceTypeAndroidHasBeenSet(false),
-    m_deviceTypeChromeOs(AccessPropertyValue::NOT_SET),
-    m_deviceTypeChromeOsHasBeenSet(false),
-    m_deviceTypeZeroClient(AccessPropertyValue::NOT_SET),
-    m_deviceTypeZeroClientHasBeenSet(false),
-    m_deviceTypeLinux(AccessPropertyValue::NOT_SET),
-    m_deviceTypeLinuxHasBeenSet(false)
+WorkspaceAccessProperties::WorkspaceAccessProperties(JsonView jsonValue)
+  : WorkspaceAccessProperties()
 {
   *this = jsonValue;
 }

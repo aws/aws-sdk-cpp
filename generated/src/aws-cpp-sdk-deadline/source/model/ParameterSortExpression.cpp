@@ -25,10 +25,8 @@ ParameterSortExpression::ParameterSortExpression() :
 {
 }
 
-ParameterSortExpression::ParameterSortExpression(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_sortOrder(SortOrder::NOT_SET),
-    m_sortOrderHasBeenSet(false)
+ParameterSortExpression::ParameterSortExpression(JsonView jsonValue)
+  : ParameterSortExpression()
 {
   *this = jsonValue;
 }

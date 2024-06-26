@@ -34,19 +34,8 @@ ServiceSummary::ServiceSummary() :
 {
 }
 
-ServiceSummary::ServiceSummary(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_type(ServiceType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_instanceCount(0),
-    m_instanceCountHasBeenSet(false),
-    m_dnsConfigHasBeenSet(false),
-    m_healthCheckConfigHasBeenSet(false),
-    m_healthCheckCustomConfigHasBeenSet(false),
-    m_createDateHasBeenSet(false)
+ServiceSummary::ServiceSummary(JsonView jsonValue)
+  : ServiceSummary()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ FailureConditions::FailureConditions() :
 {
 }
 
-FailureConditions::FailureConditions(JsonView jsonValue) : 
-    m_result(Result::NOT_SET),
-    m_resultHasBeenSet(false)
+FailureConditions::FailureConditions(JsonView jsonValue)
+  : FailureConditions()
 {
   *this = jsonValue;
 }

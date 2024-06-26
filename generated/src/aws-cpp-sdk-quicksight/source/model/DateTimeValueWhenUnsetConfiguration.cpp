@@ -25,10 +25,8 @@ DateTimeValueWhenUnsetConfiguration::DateTimeValueWhenUnsetConfiguration() :
 {
 }
 
-DateTimeValueWhenUnsetConfiguration::DateTimeValueWhenUnsetConfiguration(JsonView jsonValue) : 
-    m_valueWhenUnsetOption(ValueWhenUnsetOption::NOT_SET),
-    m_valueWhenUnsetOptionHasBeenSet(false),
-    m_customValueHasBeenSet(false)
+DateTimeValueWhenUnsetConfiguration::DateTimeValueWhenUnsetConfiguration(JsonView jsonValue)
+  : DateTimeValueWhenUnsetConfiguration()
 {
   *this = jsonValue;
 }

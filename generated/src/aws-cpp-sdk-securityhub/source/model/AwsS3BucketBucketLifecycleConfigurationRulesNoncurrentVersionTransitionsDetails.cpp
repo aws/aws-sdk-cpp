@@ -25,10 +25,8 @@ AwsS3BucketBucketLifecycleConfigurationRulesNoncurrentVersionTransitionsDetails:
 {
 }
 
-AwsS3BucketBucketLifecycleConfigurationRulesNoncurrentVersionTransitionsDetails::AwsS3BucketBucketLifecycleConfigurationRulesNoncurrentVersionTransitionsDetails(JsonView jsonValue) : 
-    m_days(0),
-    m_daysHasBeenSet(false),
-    m_storageClassHasBeenSet(false)
+AwsS3BucketBucketLifecycleConfigurationRulesNoncurrentVersionTransitionsDetails::AwsS3BucketBucketLifecycleConfigurationRulesNoncurrentVersionTransitionsDetails(JsonView jsonValue)
+  : AwsS3BucketBucketLifecycleConfigurationRulesNoncurrentVersionTransitionsDetails()
 {
   *this = jsonValue;
 }

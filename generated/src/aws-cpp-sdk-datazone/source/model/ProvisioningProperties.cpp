@@ -23,8 +23,8 @@ ProvisioningProperties::ProvisioningProperties() :
 {
 }
 
-ProvisioningProperties::ProvisioningProperties(JsonView jsonValue) : 
-    m_cloudFormationHasBeenSet(false)
+ProvisioningProperties::ProvisioningProperties(JsonView jsonValue)
+  : ProvisioningProperties()
 {
   *this = jsonValue;
 }

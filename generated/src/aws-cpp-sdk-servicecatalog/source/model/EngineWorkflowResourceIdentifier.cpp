@@ -23,8 +23,8 @@ EngineWorkflowResourceIdentifier::EngineWorkflowResourceIdentifier() :
 {
 }
 
-EngineWorkflowResourceIdentifier::EngineWorkflowResourceIdentifier(JsonView jsonValue) : 
-    m_uniqueTagHasBeenSet(false)
+EngineWorkflowResourceIdentifier::EngineWorkflowResourceIdentifier(JsonView jsonValue)
+  : EngineWorkflowResourceIdentifier()
 {
   *this = jsonValue;
 }

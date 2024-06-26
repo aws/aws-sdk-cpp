@@ -29,14 +29,8 @@ Offering::Offering() :
 {
 }
 
-Offering::Offering(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_type(OfferingType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_platform(DevicePlatform::NOT_SET),
-    m_platformHasBeenSet(false),
-    m_recurringChargesHasBeenSet(false)
+Offering::Offering(JsonView jsonValue)
+  : Offering()
 {
   *this = jsonValue;
 }

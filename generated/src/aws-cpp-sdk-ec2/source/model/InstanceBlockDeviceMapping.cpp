@@ -26,9 +26,8 @@ InstanceBlockDeviceMapping::InstanceBlockDeviceMapping() :
 {
 }
 
-InstanceBlockDeviceMapping::InstanceBlockDeviceMapping(const XmlNode& xmlNode) : 
-    m_deviceNameHasBeenSet(false),
-    m_ebsHasBeenSet(false)
+InstanceBlockDeviceMapping::InstanceBlockDeviceMapping(const XmlNode& xmlNode)
+  : InstanceBlockDeviceMapping()
 {
   *this = xmlNode;
 }

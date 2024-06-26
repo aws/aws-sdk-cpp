@@ -24,9 +24,8 @@ TN3270Summary::TN3270Summary() :
 {
 }
 
-TN3270Summary::TN3270Summary(JsonView jsonValue) : 
-    m_stepInputHasBeenSet(false),
-    m_stepOutputHasBeenSet(false)
+TN3270Summary::TN3270Summary(JsonView jsonValue)
+  : TN3270Summary()
 {
   *this = jsonValue;
 }

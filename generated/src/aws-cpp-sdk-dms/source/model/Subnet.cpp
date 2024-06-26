@@ -25,10 +25,8 @@ Subnet::Subnet() :
 {
 }
 
-Subnet::Subnet(JsonView jsonValue) : 
-    m_subnetIdentifierHasBeenSet(false),
-    m_subnetAvailabilityZoneHasBeenSet(false),
-    m_subnetStatusHasBeenSet(false)
+Subnet::Subnet(JsonView jsonValue)
+  : Subnet()
 {
   *this = jsonValue;
 }

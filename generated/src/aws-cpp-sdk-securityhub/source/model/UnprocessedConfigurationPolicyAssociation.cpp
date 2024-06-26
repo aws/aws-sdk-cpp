@@ -25,10 +25,8 @@ UnprocessedConfigurationPolicyAssociation::UnprocessedConfigurationPolicyAssocia
 {
 }
 
-UnprocessedConfigurationPolicyAssociation::UnprocessedConfigurationPolicyAssociation(JsonView jsonValue) : 
-    m_configurationPolicyAssociationIdentifiersHasBeenSet(false),
-    m_errorCodeHasBeenSet(false),
-    m_errorReasonHasBeenSet(false)
+UnprocessedConfigurationPolicyAssociation::UnprocessedConfigurationPolicyAssociation(JsonView jsonValue)
+  : UnprocessedConfigurationPolicyAssociation()
 {
   *this = jsonValue;
 }

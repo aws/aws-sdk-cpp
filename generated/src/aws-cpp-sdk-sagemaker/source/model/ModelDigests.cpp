@@ -23,8 +23,8 @@ ModelDigests::ModelDigests() :
 {
 }
 
-ModelDigests::ModelDigests(JsonView jsonValue) : 
-    m_artifactDigestHasBeenSet(false)
+ModelDigests::ModelDigests(JsonView jsonValue)
+  : ModelDigests()
 {
   *this = jsonValue;
 }

@@ -25,8 +25,8 @@ LaunchTemplateLicenseConfigurationRequest::LaunchTemplateLicenseConfigurationReq
 {
 }
 
-LaunchTemplateLicenseConfigurationRequest::LaunchTemplateLicenseConfigurationRequest(const XmlNode& xmlNode) : 
-    m_licenseConfigurationArnHasBeenSet(false)
+LaunchTemplateLicenseConfigurationRequest::LaunchTemplateLicenseConfigurationRequest(const XmlNode& xmlNode)
+  : LaunchTemplateLicenseConfigurationRequest()
 {
   *this = xmlNode;
 }

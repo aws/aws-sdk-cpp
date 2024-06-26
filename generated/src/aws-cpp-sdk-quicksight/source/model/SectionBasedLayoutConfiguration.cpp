@@ -26,11 +26,8 @@ SectionBasedLayoutConfiguration::SectionBasedLayoutConfiguration() :
 {
 }
 
-SectionBasedLayoutConfiguration::SectionBasedLayoutConfiguration(JsonView jsonValue) : 
-    m_headerSectionsHasBeenSet(false),
-    m_bodySectionsHasBeenSet(false),
-    m_footerSectionsHasBeenSet(false),
-    m_canvasSizeOptionsHasBeenSet(false)
+SectionBasedLayoutConfiguration::SectionBasedLayoutConfiguration(JsonView jsonValue)
+  : SectionBasedLayoutConfiguration()
 {
   *this = jsonValue;
 }

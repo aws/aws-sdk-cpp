@@ -29,14 +29,8 @@ IPSet::IPSet() :
 {
 }
 
-IPSet::IPSet(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_aRNHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_iPAddressVersion(IPAddressVersion::NOT_SET),
-    m_iPAddressVersionHasBeenSet(false),
-    m_addressesHasBeenSet(false)
+IPSet::IPSet(JsonView jsonValue)
+  : IPSet()
 {
   *this = jsonValue;
 }

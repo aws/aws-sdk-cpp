@@ -24,9 +24,8 @@ MultiplexProgramChannelDestinationSettings::MultiplexProgramChannelDestinationSe
 {
 }
 
-MultiplexProgramChannelDestinationSettings::MultiplexProgramChannelDestinationSettings(JsonView jsonValue) : 
-    m_multiplexIdHasBeenSet(false),
-    m_programNameHasBeenSet(false)
+MultiplexProgramChannelDestinationSettings::MultiplexProgramChannelDestinationSettings(JsonView jsonValue)
+  : MultiplexProgramChannelDestinationSettings()
 {
   *this = jsonValue;
 }

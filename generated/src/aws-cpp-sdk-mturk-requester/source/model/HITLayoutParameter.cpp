@@ -24,9 +24,8 @@ HITLayoutParameter::HITLayoutParameter() :
 {
 }
 
-HITLayoutParameter::HITLayoutParameter(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
+HITLayoutParameter::HITLayoutParameter(JsonView jsonValue)
+  : HITLayoutParameter()
 {
   *this = jsonValue;
 }

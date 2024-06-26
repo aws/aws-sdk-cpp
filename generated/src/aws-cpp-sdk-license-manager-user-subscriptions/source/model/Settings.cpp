@@ -24,9 +24,8 @@ Settings::Settings() :
 {
 }
 
-Settings::Settings(JsonView jsonValue) : 
-    m_securityGroupIdHasBeenSet(false),
-    m_subnetsHasBeenSet(false)
+Settings::Settings(JsonView jsonValue)
+  : Settings()
 {
   *this = jsonValue;
 }

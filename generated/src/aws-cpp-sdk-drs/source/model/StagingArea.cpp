@@ -27,12 +27,8 @@ StagingArea::StagingArea() :
 {
 }
 
-StagingArea::StagingArea(JsonView jsonValue) : 
-    m_errorMessageHasBeenSet(false),
-    m_stagingAccountIDHasBeenSet(false),
-    m_stagingSourceServerArnHasBeenSet(false),
-    m_status(ExtensionStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+StagingArea::StagingArea(JsonView jsonValue)
+  : StagingArea()
 {
   *this = jsonValue;
 }

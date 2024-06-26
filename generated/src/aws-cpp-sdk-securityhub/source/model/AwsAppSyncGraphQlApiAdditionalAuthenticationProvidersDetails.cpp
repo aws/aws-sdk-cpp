@@ -26,11 +26,8 @@ AwsAppSyncGraphQlApiAdditionalAuthenticationProvidersDetails::AwsAppSyncGraphQlA
 {
 }
 
-AwsAppSyncGraphQlApiAdditionalAuthenticationProvidersDetails::AwsAppSyncGraphQlApiAdditionalAuthenticationProvidersDetails(JsonView jsonValue) : 
-    m_authenticationTypeHasBeenSet(false),
-    m_lambdaAuthorizerConfigHasBeenSet(false),
-    m_openIdConnectConfigHasBeenSet(false),
-    m_userPoolConfigHasBeenSet(false)
+AwsAppSyncGraphQlApiAdditionalAuthenticationProvidersDetails::AwsAppSyncGraphQlApiAdditionalAuthenticationProvidersDetails(JsonView jsonValue)
+  : AwsAppSyncGraphQlApiAdditionalAuthenticationProvidersDetails()
 {
   *this = jsonValue;
 }

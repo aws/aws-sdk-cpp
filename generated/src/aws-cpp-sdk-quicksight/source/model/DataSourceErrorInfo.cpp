@@ -25,10 +25,8 @@ DataSourceErrorInfo::DataSourceErrorInfo() :
 {
 }
 
-DataSourceErrorInfo::DataSourceErrorInfo(JsonView jsonValue) : 
-    m_type(DataSourceErrorInfoType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+DataSourceErrorInfo::DataSourceErrorInfo(JsonView jsonValue)
+  : DataSourceErrorInfo()
 {
   *this = jsonValue;
 }

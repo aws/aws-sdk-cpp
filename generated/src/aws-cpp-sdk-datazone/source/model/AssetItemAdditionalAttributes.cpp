@@ -25,10 +25,8 @@ AssetItemAdditionalAttributes::AssetItemAdditionalAttributes() :
 {
 }
 
-AssetItemAdditionalAttributes::AssetItemAdditionalAttributes(JsonView jsonValue) : 
-    m_formsOutputHasBeenSet(false),
-    m_latestTimeSeriesDataPointFormsOutputHasBeenSet(false),
-    m_readOnlyFormsOutputHasBeenSet(false)
+AssetItemAdditionalAttributes::AssetItemAdditionalAttributes(JsonView jsonValue)
+  : AssetItemAdditionalAttributes()
 {
   *this = jsonValue;
 }

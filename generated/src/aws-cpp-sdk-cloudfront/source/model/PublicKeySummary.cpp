@@ -29,12 +29,8 @@ PublicKeySummary::PublicKeySummary() :
 {
 }
 
-PublicKeySummary::PublicKeySummary(const XmlNode& xmlNode) : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_encodedKeyHasBeenSet(false),
-    m_commentHasBeenSet(false)
+PublicKeySummary::PublicKeySummary(const XmlNode& xmlNode)
+  : PublicKeySummary()
 {
   *this = xmlNode;
 }

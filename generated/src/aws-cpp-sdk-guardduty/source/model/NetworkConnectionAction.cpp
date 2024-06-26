@@ -30,15 +30,8 @@ NetworkConnectionAction::NetworkConnectionAction() :
 {
 }
 
-NetworkConnectionAction::NetworkConnectionAction(JsonView jsonValue) : 
-    m_blocked(false),
-    m_blockedHasBeenSet(false),
-    m_connectionDirectionHasBeenSet(false),
-    m_localPortDetailsHasBeenSet(false),
-    m_protocolHasBeenSet(false),
-    m_localIpDetailsHasBeenSet(false),
-    m_remoteIpDetailsHasBeenSet(false),
-    m_remotePortDetailsHasBeenSet(false)
+NetworkConnectionAction::NetworkConnectionAction(JsonView jsonValue)
+  : NetworkConnectionAction()
 {
   *this = jsonValue;
 }

@@ -30,14 +30,8 @@ ResolvedComponentVersion::ResolvedComponentVersion() :
 {
 }
 
-ResolvedComponentVersion::ResolvedComponentVersion(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_componentNameHasBeenSet(false),
-    m_componentVersionHasBeenSet(false),
-    m_recipeHasBeenSet(false),
-    m_vendorGuidance(VendorGuidance::NOT_SET),
-    m_vendorGuidanceHasBeenSet(false),
-    m_messageHasBeenSet(false)
+ResolvedComponentVersion::ResolvedComponentVersion(JsonView jsonValue)
+  : ResolvedComponentVersion()
 {
   *this = jsonValue;
 }

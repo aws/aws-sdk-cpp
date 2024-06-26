@@ -27,12 +27,8 @@ ErrorsListItem::ErrorsListItem() :
 {
 }
 
-ErrorsListItem::ErrorsListItem(JsonView jsonValue) : 
-    m_page(0),
-    m_pageHasBeenSet(false),
-    m_errorCode(PageBasedErrorCode::NOT_SET),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
+ErrorsListItem::ErrorsListItem(JsonView jsonValue)
+  : ErrorsListItem()
 {
   *this = jsonValue;
 }

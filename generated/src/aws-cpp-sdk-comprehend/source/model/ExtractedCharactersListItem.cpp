@@ -26,11 +26,8 @@ ExtractedCharactersListItem::ExtractedCharactersListItem() :
 {
 }
 
-ExtractedCharactersListItem::ExtractedCharactersListItem(JsonView jsonValue) : 
-    m_page(0),
-    m_pageHasBeenSet(false),
-    m_count(0),
-    m_countHasBeenSet(false)
+ExtractedCharactersListItem::ExtractedCharactersListItem(JsonView jsonValue)
+  : ExtractedCharactersListItem()
 {
   *this = jsonValue;
 }

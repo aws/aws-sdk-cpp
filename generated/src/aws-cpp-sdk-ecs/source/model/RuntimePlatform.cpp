@@ -26,11 +26,8 @@ RuntimePlatform::RuntimePlatform() :
 {
 }
 
-RuntimePlatform::RuntimePlatform(JsonView jsonValue) : 
-    m_cpuArchitecture(CPUArchitecture::NOT_SET),
-    m_cpuArchitectureHasBeenSet(false),
-    m_operatingSystemFamily(OSFamily::NOT_SET),
-    m_operatingSystemFamilyHasBeenSet(false)
+RuntimePlatform::RuntimePlatform(JsonView jsonValue)
+  : RuntimePlatform()
 {
   *this = jsonValue;
 }

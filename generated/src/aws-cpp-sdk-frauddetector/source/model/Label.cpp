@@ -27,12 +27,8 @@ Label::Label() :
 {
 }
 
-Label::Label(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_arnHasBeenSet(false)
+Label::Label(JsonView jsonValue)
+  : Label()
 {
   *this = jsonValue;
 }

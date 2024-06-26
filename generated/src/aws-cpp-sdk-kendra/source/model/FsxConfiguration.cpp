@@ -30,15 +30,8 @@ FsxConfiguration::FsxConfiguration() :
 {
 }
 
-FsxConfiguration::FsxConfiguration(JsonView jsonValue) : 
-    m_fileSystemIdHasBeenSet(false),
-    m_fileSystemType(FsxFileSystemType::NOT_SET),
-    m_fileSystemTypeHasBeenSet(false),
-    m_vpcConfigurationHasBeenSet(false),
-    m_secretArnHasBeenSet(false),
-    m_inclusionPatternsHasBeenSet(false),
-    m_exclusionPatternsHasBeenSet(false),
-    m_fieldMappingsHasBeenSet(false)
+FsxConfiguration::FsxConfiguration(JsonView jsonValue)
+  : FsxConfiguration()
 {
   *this = jsonValue;
 }

@@ -33,18 +33,8 @@ MediaInsightsPipelineConfigurationElement::MediaInsightsPipelineConfigurationEle
 {
 }
 
-MediaInsightsPipelineConfigurationElement::MediaInsightsPipelineConfigurationElement(JsonView jsonValue) : 
-    m_type(MediaInsightsPipelineConfigurationElementType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_amazonTranscribeCallAnalyticsProcessorConfigurationHasBeenSet(false),
-    m_amazonTranscribeProcessorConfigurationHasBeenSet(false),
-    m_kinesisDataStreamSinkConfigurationHasBeenSet(false),
-    m_s3RecordingSinkConfigurationHasBeenSet(false),
-    m_voiceAnalyticsProcessorConfigurationHasBeenSet(false),
-    m_lambdaFunctionSinkConfigurationHasBeenSet(false),
-    m_sqsQueueSinkConfigurationHasBeenSet(false),
-    m_snsTopicSinkConfigurationHasBeenSet(false),
-    m_voiceEnhancementSinkConfigurationHasBeenSet(false)
+MediaInsightsPipelineConfigurationElement::MediaInsightsPipelineConfigurationElement(JsonView jsonValue)
+  : MediaInsightsPipelineConfigurationElement()
 {
   *this = jsonValue;
 }

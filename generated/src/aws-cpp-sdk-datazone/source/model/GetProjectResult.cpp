@@ -22,8 +22,8 @@ GetProjectResult::GetProjectResult() :
 {
 }
 
-GetProjectResult::GetProjectResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_projectStatus(ProjectStatus::NOT_SET)
+GetProjectResult::GetProjectResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetProjectResult()
 {
   *this = result;
 }

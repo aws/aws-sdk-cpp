@@ -22,8 +22,8 @@ DeleteWorkflowResult::DeleteWorkflowResult() :
 {
 }
 
-DeleteWorkflowResult::DeleteWorkflowResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(MigrationWorkflowStatusEnum::NOT_SET)
+DeleteWorkflowResult::DeleteWorkflowResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeleteWorkflowResult()
 {
   *this = result;
 }

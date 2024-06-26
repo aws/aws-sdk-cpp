@@ -26,11 +26,8 @@ Notifications::Notifications() :
 {
 }
 
-Notifications::Notifications(JsonView jsonValue) : 
-    m_progressingHasBeenSet(false),
-    m_completedHasBeenSet(false),
-    m_warningHasBeenSet(false),
-    m_errorHasBeenSet(false)
+Notifications::Notifications(JsonView jsonValue)
+  : Notifications()
 {
   *this = jsonValue;
 }

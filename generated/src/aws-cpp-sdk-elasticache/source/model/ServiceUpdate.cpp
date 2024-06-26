@@ -40,23 +40,8 @@ ServiceUpdate::ServiceUpdate() :
 {
 }
 
-ServiceUpdate::ServiceUpdate(const XmlNode& xmlNode) : 
-    m_serviceUpdateNameHasBeenSet(false),
-    m_serviceUpdateReleaseDateHasBeenSet(false),
-    m_serviceUpdateEndDateHasBeenSet(false),
-    m_serviceUpdateSeverity(ServiceUpdateSeverity::NOT_SET),
-    m_serviceUpdateSeverityHasBeenSet(false),
-    m_serviceUpdateRecommendedApplyByDateHasBeenSet(false),
-    m_serviceUpdateStatus(ServiceUpdateStatus::NOT_SET),
-    m_serviceUpdateStatusHasBeenSet(false),
-    m_serviceUpdateDescriptionHasBeenSet(false),
-    m_serviceUpdateType(ServiceUpdateType::NOT_SET),
-    m_serviceUpdateTypeHasBeenSet(false),
-    m_engineHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_autoUpdateAfterRecommendedApplyByDate(false),
-    m_autoUpdateAfterRecommendedApplyByDateHasBeenSet(false),
-    m_estimatedUpdateTimeHasBeenSet(false)
+ServiceUpdate::ServiceUpdate(const XmlNode& xmlNode)
+  : ServiceUpdate()
 {
   *this = xmlNode;
 }

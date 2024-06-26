@@ -26,9 +26,8 @@ LaunchTemplateAndOverridesResponse::LaunchTemplateAndOverridesResponse() :
 {
 }
 
-LaunchTemplateAndOverridesResponse::LaunchTemplateAndOverridesResponse(const XmlNode& xmlNode) : 
-    m_launchTemplateSpecificationHasBeenSet(false),
-    m_overridesHasBeenSet(false)
+LaunchTemplateAndOverridesResponse::LaunchTemplateAndOverridesResponse(const XmlNode& xmlNode)
+  : LaunchTemplateAndOverridesResponse()
 {
   *this = xmlNode;
 }

@@ -24,9 +24,8 @@ FileGroupSettings::FileGroupSettings() :
 {
 }
 
-FileGroupSettings::FileGroupSettings(JsonView jsonValue) : 
-    m_destinationHasBeenSet(false),
-    m_destinationSettingsHasBeenSet(false)
+FileGroupSettings::FileGroupSettings(JsonView jsonValue)
+  : FileGroupSettings()
 {
   *this = jsonValue;
 }

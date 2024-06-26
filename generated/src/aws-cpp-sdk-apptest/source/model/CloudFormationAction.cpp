@@ -25,10 +25,8 @@ CloudFormationAction::CloudFormationAction() :
 {
 }
 
-CloudFormationAction::CloudFormationAction(JsonView jsonValue) : 
-    m_resourceHasBeenSet(false),
-    m_actionType(CloudFormationActionType::NOT_SET),
-    m_actionTypeHasBeenSet(false)
+CloudFormationAction::CloudFormationAction(JsonView jsonValue)
+  : CloudFormationAction()
 {
   *this = jsonValue;
 }

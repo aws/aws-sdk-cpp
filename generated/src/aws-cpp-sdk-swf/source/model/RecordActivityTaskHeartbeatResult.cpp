@@ -22,8 +22,8 @@ RecordActivityTaskHeartbeatResult::RecordActivityTaskHeartbeatResult() :
 {
 }
 
-RecordActivityTaskHeartbeatResult::RecordActivityTaskHeartbeatResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_cancelRequested(false)
+RecordActivityTaskHeartbeatResult::RecordActivityTaskHeartbeatResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : RecordActivityTaskHeartbeatResult()
 {
   *this = result;
 }

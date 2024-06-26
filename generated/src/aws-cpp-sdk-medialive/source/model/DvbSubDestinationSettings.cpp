@@ -54,39 +54,8 @@ DvbSubDestinationSettings::DvbSubDestinationSettings() :
 {
 }
 
-DvbSubDestinationSettings::DvbSubDestinationSettings(JsonView jsonValue) : 
-    m_alignment(DvbSubDestinationAlignment::NOT_SET),
-    m_alignmentHasBeenSet(false),
-    m_backgroundColor(DvbSubDestinationBackgroundColor::NOT_SET),
-    m_backgroundColorHasBeenSet(false),
-    m_backgroundOpacity(0),
-    m_backgroundOpacityHasBeenSet(false),
-    m_fontHasBeenSet(false),
-    m_fontColor(DvbSubDestinationFontColor::NOT_SET),
-    m_fontColorHasBeenSet(false),
-    m_fontOpacity(0),
-    m_fontOpacityHasBeenSet(false),
-    m_fontResolution(0),
-    m_fontResolutionHasBeenSet(false),
-    m_fontSizeHasBeenSet(false),
-    m_outlineColor(DvbSubDestinationOutlineColor::NOT_SET),
-    m_outlineColorHasBeenSet(false),
-    m_outlineSize(0),
-    m_outlineSizeHasBeenSet(false),
-    m_shadowColor(DvbSubDestinationShadowColor::NOT_SET),
-    m_shadowColorHasBeenSet(false),
-    m_shadowOpacity(0),
-    m_shadowOpacityHasBeenSet(false),
-    m_shadowXOffset(0),
-    m_shadowXOffsetHasBeenSet(false),
-    m_shadowYOffset(0),
-    m_shadowYOffsetHasBeenSet(false),
-    m_teletextGridControl(DvbSubDestinationTeletextGridControl::NOT_SET),
-    m_teletextGridControlHasBeenSet(false),
-    m_xPosition(0),
-    m_xPositionHasBeenSet(false),
-    m_yPosition(0),
-    m_yPositionHasBeenSet(false)
+DvbSubDestinationSettings::DvbSubDestinationSettings(JsonView jsonValue)
+  : DvbSubDestinationSettings()
 {
   *this = jsonValue;
 }

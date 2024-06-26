@@ -30,13 +30,8 @@ VerifiedAccessEndpointLoadBalancerOptions::VerifiedAccessEndpointLoadBalancerOpt
 {
 }
 
-VerifiedAccessEndpointLoadBalancerOptions::VerifiedAccessEndpointLoadBalancerOptions(const XmlNode& xmlNode) : 
-    m_protocol(VerifiedAccessEndpointProtocol::NOT_SET),
-    m_protocolHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_loadBalancerArnHasBeenSet(false),
-    m_subnetIdsHasBeenSet(false)
+VerifiedAccessEndpointLoadBalancerOptions::VerifiedAccessEndpointLoadBalancerOptions(const XmlNode& xmlNode)
+  : VerifiedAccessEndpointLoadBalancerOptions()
 {
   *this = xmlNode;
 }

@@ -23,9 +23,8 @@ CreateAnnotationStoreResult::CreateAnnotationStoreResult() :
 {
 }
 
-CreateAnnotationStoreResult::CreateAnnotationStoreResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_storeFormat(StoreFormat::NOT_SET),
-    m_status(StoreStatus::NOT_SET)
+CreateAnnotationStoreResult::CreateAnnotationStoreResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateAnnotationStoreResult()
 {
   *this = result;
 }

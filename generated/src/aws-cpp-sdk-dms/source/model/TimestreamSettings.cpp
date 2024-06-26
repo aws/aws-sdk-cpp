@@ -31,16 +31,8 @@ TimestreamSettings::TimestreamSettings() :
 {
 }
 
-TimestreamSettings::TimestreamSettings(JsonView jsonValue) : 
-    m_databaseNameHasBeenSet(false),
-    m_memoryDuration(0),
-    m_memoryDurationHasBeenSet(false),
-    m_magneticDuration(0),
-    m_magneticDurationHasBeenSet(false),
-    m_cdcInsertsAndUpdates(false),
-    m_cdcInsertsAndUpdatesHasBeenSet(false),
-    m_enableMagneticStoreWrites(false),
-    m_enableMagneticStoreWritesHasBeenSet(false)
+TimestreamSettings::TimestreamSettings(JsonView jsonValue)
+  : TimestreamSettings()
 {
   *this = jsonValue;
 }

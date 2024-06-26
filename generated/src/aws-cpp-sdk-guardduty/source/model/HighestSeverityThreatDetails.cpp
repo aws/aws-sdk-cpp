@@ -26,11 +26,8 @@ HighestSeverityThreatDetails::HighestSeverityThreatDetails() :
 {
 }
 
-HighestSeverityThreatDetails::HighestSeverityThreatDetails(JsonView jsonValue) : 
-    m_severityHasBeenSet(false),
-    m_threatNameHasBeenSet(false),
-    m_count(0),
-    m_countHasBeenSet(false)
+HighestSeverityThreatDetails::HighestSeverityThreatDetails(JsonView jsonValue)
+  : HighestSeverityThreatDetails()
 {
   *this = jsonValue;
 }

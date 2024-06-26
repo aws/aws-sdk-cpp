@@ -26,11 +26,8 @@ ListJobsSortCriteria::ListJobsSortCriteria() :
 {
 }
 
-ListJobsSortCriteria::ListJobsSortCriteria(JsonView jsonValue) : 
-    m_attributeName(ListJobsSortAttributeName::NOT_SET),
-    m_attributeNameHasBeenSet(false),
-    m_orderBy(OrderBy::NOT_SET),
-    m_orderByHasBeenSet(false)
+ListJobsSortCriteria::ListJobsSortCriteria(JsonView jsonValue)
+  : ListJobsSortCriteria()
 {
   *this = jsonValue;
 }

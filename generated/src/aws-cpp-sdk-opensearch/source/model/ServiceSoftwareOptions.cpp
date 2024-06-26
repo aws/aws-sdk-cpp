@@ -34,19 +34,8 @@ ServiceSoftwareOptions::ServiceSoftwareOptions() :
 {
 }
 
-ServiceSoftwareOptions::ServiceSoftwareOptions(JsonView jsonValue) : 
-    m_currentVersionHasBeenSet(false),
-    m_newVersionHasBeenSet(false),
-    m_updateAvailable(false),
-    m_updateAvailableHasBeenSet(false),
-    m_cancellable(false),
-    m_cancellableHasBeenSet(false),
-    m_updateStatus(DeploymentStatus::NOT_SET),
-    m_updateStatusHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_automatedUpdateDateHasBeenSet(false),
-    m_optionalDeployment(false),
-    m_optionalDeploymentHasBeenSet(false)
+ServiceSoftwareOptions::ServiceSoftwareOptions(JsonView jsonValue)
+  : ServiceSoftwareOptions()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ AssociatedAccessPolicy::AssociatedAccessPolicy() :
 {
 }
 
-AssociatedAccessPolicy::AssociatedAccessPolicy(JsonView jsonValue) : 
-    m_policyArnHasBeenSet(false),
-    m_accessScopeHasBeenSet(false),
-    m_associatedAtHasBeenSet(false),
-    m_modifiedAtHasBeenSet(false)
+AssociatedAccessPolicy::AssociatedAccessPolicy(JsonView jsonValue)
+  : AssociatedAccessPolicy()
 {
   *this = jsonValue;
 }

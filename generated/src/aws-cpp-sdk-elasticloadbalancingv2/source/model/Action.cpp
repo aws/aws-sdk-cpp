@@ -34,17 +34,8 @@ Action::Action() :
 {
 }
 
-Action::Action(const XmlNode& xmlNode) : 
-    m_type(ActionTypeEnum::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_targetGroupArnHasBeenSet(false),
-    m_authenticateOidcConfigHasBeenSet(false),
-    m_authenticateCognitoConfigHasBeenSet(false),
-    m_order(0),
-    m_orderHasBeenSet(false),
-    m_redirectConfigHasBeenSet(false),
-    m_fixedResponseConfigHasBeenSet(false),
-    m_forwardConfigHasBeenSet(false)
+Action::Action(const XmlNode& xmlNode)
+  : Action()
 {
   *this = xmlNode;
 }

@@ -31,16 +31,8 @@ ColorConversion3DLUTSetting::ColorConversion3DLUTSetting() :
 {
 }
 
-ColorConversion3DLUTSetting::ColorConversion3DLUTSetting(JsonView jsonValue) : 
-    m_fileInputHasBeenSet(false),
-    m_inputColorSpace(ColorSpace::NOT_SET),
-    m_inputColorSpaceHasBeenSet(false),
-    m_inputMasteringLuminance(0),
-    m_inputMasteringLuminanceHasBeenSet(false),
-    m_outputColorSpace(ColorSpace::NOT_SET),
-    m_outputColorSpaceHasBeenSet(false),
-    m_outputMasteringLuminance(0),
-    m_outputMasteringLuminanceHasBeenSet(false)
+ColorConversion3DLUTSetting::ColorConversion3DLUTSetting(JsonView jsonValue)
+  : ColorConversion3DLUTSetting()
 {
   *this = jsonValue;
 }

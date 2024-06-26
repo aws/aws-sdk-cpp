@@ -26,11 +26,8 @@ ConformancePackRuleCompliance::ConformancePackRuleCompliance() :
 {
 }
 
-ConformancePackRuleCompliance::ConformancePackRuleCompliance(JsonView jsonValue) : 
-    m_configRuleNameHasBeenSet(false),
-    m_complianceType(ConformancePackComplianceType::NOT_SET),
-    m_complianceTypeHasBeenSet(false),
-    m_controlsHasBeenSet(false)
+ConformancePackRuleCompliance::ConformancePackRuleCompliance(JsonView jsonValue)
+  : ConformancePackRuleCompliance()
 {
   *this = jsonValue;
 }

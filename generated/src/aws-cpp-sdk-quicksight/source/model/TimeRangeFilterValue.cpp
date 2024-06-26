@@ -25,10 +25,8 @@ TimeRangeFilterValue::TimeRangeFilterValue() :
 {
 }
 
-TimeRangeFilterValue::TimeRangeFilterValue(JsonView jsonValue) : 
-    m_staticValueHasBeenSet(false),
-    m_rollingDateHasBeenSet(false),
-    m_parameterHasBeenSet(false)
+TimeRangeFilterValue::TimeRangeFilterValue(JsonView jsonValue)
+  : TimeRangeFilterValue()
 {
   *this = jsonValue;
 }

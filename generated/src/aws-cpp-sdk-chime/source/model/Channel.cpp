@@ -33,18 +33,8 @@ Channel::Channel() :
 {
 }
 
-Channel::Channel(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_channelArnHasBeenSet(false),
-    m_mode(ChannelMode::NOT_SET),
-    m_modeHasBeenSet(false),
-    m_privacy(ChannelPrivacy::NOT_SET),
-    m_privacyHasBeenSet(false),
-    m_metadataHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false),
-    m_lastMessageTimestampHasBeenSet(false),
-    m_lastUpdatedTimestampHasBeenSet(false)
+Channel::Channel(JsonView jsonValue)
+  : Channel()
 {
   *this = jsonValue;
 }

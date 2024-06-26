@@ -32,17 +32,8 @@ ImportSummary::ImportSummary() :
 {
 }
 
-ImportSummary::ImportSummary(JsonView jsonValue) : 
-    m_importArnHasBeenSet(false),
-    m_importStatus(ImportStatus::NOT_SET),
-    m_importStatusHasBeenSet(false),
-    m_tableArnHasBeenSet(false),
-    m_s3BucketSourceHasBeenSet(false),
-    m_cloudWatchLogGroupArnHasBeenSet(false),
-    m_inputFormat(InputFormat::NOT_SET),
-    m_inputFormatHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
+ImportSummary::ImportSummary(JsonView jsonValue)
+  : ImportSummary()
 {
   *this = jsonValue;
 }

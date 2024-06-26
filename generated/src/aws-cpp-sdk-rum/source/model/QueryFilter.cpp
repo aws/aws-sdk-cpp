@@ -24,9 +24,8 @@ QueryFilter::QueryFilter() :
 {
 }
 
-QueryFilter::QueryFilter(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+QueryFilter::QueryFilter(JsonView jsonValue)
+  : QueryFilter()
 {
   *this = jsonValue;
 }

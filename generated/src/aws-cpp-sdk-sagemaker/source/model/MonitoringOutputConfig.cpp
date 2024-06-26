@@ -24,9 +24,8 @@ MonitoringOutputConfig::MonitoringOutputConfig() :
 {
 }
 
-MonitoringOutputConfig::MonitoringOutputConfig(JsonView jsonValue) : 
-    m_monitoringOutputsHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
+MonitoringOutputConfig::MonitoringOutputConfig(JsonView jsonValue)
+  : MonitoringOutputConfig()
 {
   *this = jsonValue;
 }

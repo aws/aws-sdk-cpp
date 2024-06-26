@@ -30,15 +30,8 @@ MotionImageInserter::MotionImageInserter() :
 {
 }
 
-MotionImageInserter::MotionImageInserter(JsonView jsonValue) : 
-    m_framerateHasBeenSet(false),
-    m_inputHasBeenSet(false),
-    m_insertionMode(MotionImageInsertionMode::NOT_SET),
-    m_insertionModeHasBeenSet(false),
-    m_offsetHasBeenSet(false),
-    m_playback(MotionImagePlayback::NOT_SET),
-    m_playbackHasBeenSet(false),
-    m_startTimeHasBeenSet(false)
+MotionImageInserter::MotionImageInserter(JsonView jsonValue)
+  : MotionImageInserter()
 {
   *this = jsonValue;
 }

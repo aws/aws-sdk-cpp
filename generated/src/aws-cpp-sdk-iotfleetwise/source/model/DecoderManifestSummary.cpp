@@ -31,16 +31,8 @@ DecoderManifestSummary::DecoderManifestSummary() :
 {
 }
 
-DecoderManifestSummary::DecoderManifestSummary(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_modelManifestArnHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_status(ManifestStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastModificationTimeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+DecoderManifestSummary::DecoderManifestSummary(JsonView jsonValue)
+  : DecoderManifestSummary()
 {
   *this = jsonValue;
 }

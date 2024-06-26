@@ -23,8 +23,8 @@ DefaultSpaceStorageSettings::DefaultSpaceStorageSettings() :
 {
 }
 
-DefaultSpaceStorageSettings::DefaultSpaceStorageSettings(JsonView jsonValue) : 
-    m_defaultEbsStorageSettingsHasBeenSet(false)
+DefaultSpaceStorageSettings::DefaultSpaceStorageSettings(JsonView jsonValue)
+  : DefaultSpaceStorageSettings()
 {
   *this = jsonValue;
 }

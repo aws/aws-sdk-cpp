@@ -27,10 +27,8 @@ ServerSideEncryptionRule::ServerSideEncryptionRule() :
 {
 }
 
-ServerSideEncryptionRule::ServerSideEncryptionRule(const XmlNode& xmlNode) : 
-    m_applyServerSideEncryptionByDefaultHasBeenSet(false),
-    m_bucketKeyEnabled(false),
-    m_bucketKeyEnabledHasBeenSet(false)
+ServerSideEncryptionRule::ServerSideEncryptionRule(const XmlNode& xmlNode)
+  : ServerSideEncryptionRule()
 {
   *this = xmlNode;
 }

@@ -24,8 +24,8 @@ RawEmail::RawEmail() :
 {
 }
 
-RawEmail::RawEmail(JsonView jsonValue) : 
-    m_dataHasBeenSet(false)
+RawEmail::RawEmail(JsonView jsonValue)
+  : RawEmail()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ DeleteConnectorResult::DeleteConnectorResult() :
 {
 }
 
-DeleteConnectorResult::DeleteConnectorResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_connectorState(ConnectorState::NOT_SET)
+DeleteConnectorResult::DeleteConnectorResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeleteConnectorResult()
 {
   *this = result;
 }

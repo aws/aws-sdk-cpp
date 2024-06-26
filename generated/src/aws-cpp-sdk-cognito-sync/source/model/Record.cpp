@@ -29,14 +29,8 @@ Record::Record() :
 {
 }
 
-Record::Record(JsonView jsonValue) : 
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_syncCount(0),
-    m_syncCountHasBeenSet(false),
-    m_lastModifiedDateHasBeenSet(false),
-    m_lastModifiedByHasBeenSet(false),
-    m_deviceLastModifiedDateHasBeenSet(false)
+Record::Record(JsonView jsonValue)
+  : Record()
 {
   *this = jsonValue;
 }

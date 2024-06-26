@@ -26,11 +26,8 @@ S3SourceAdditionalOptions::S3SourceAdditionalOptions() :
 {
 }
 
-S3SourceAdditionalOptions::S3SourceAdditionalOptions(JsonView jsonValue) : 
-    m_boundedSize(0),
-    m_boundedSizeHasBeenSet(false),
-    m_boundedFiles(0),
-    m_boundedFilesHasBeenSet(false)
+S3SourceAdditionalOptions::S3SourceAdditionalOptions(JsonView jsonValue)
+  : S3SourceAdditionalOptions()
 {
   *this = jsonValue;
 }

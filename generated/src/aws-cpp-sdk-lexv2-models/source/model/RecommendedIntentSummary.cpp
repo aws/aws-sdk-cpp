@@ -26,11 +26,8 @@ RecommendedIntentSummary::RecommendedIntentSummary() :
 {
 }
 
-RecommendedIntentSummary::RecommendedIntentSummary(JsonView jsonValue) : 
-    m_intentIdHasBeenSet(false),
-    m_intentNameHasBeenSet(false),
-    m_sampleUtterancesCount(0),
-    m_sampleUtterancesCountHasBeenSet(false)
+RecommendedIntentSummary::RecommendedIntentSummary(JsonView jsonValue)
+  : RecommendedIntentSummary()
 {
   *this = jsonValue;
 }

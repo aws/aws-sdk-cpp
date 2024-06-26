@@ -22,8 +22,8 @@ QueryObjectsResult::QueryObjectsResult() :
 {
 }
 
-QueryObjectsResult::QueryObjectsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_hasMoreResults(false)
+QueryObjectsResult::QueryObjectsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : QueryObjectsResult()
 {
   *this = result;
 }

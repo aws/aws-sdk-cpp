@@ -23,8 +23,8 @@ GaugeChartConditionalFormatting::GaugeChartConditionalFormatting() :
 {
 }
 
-GaugeChartConditionalFormatting::GaugeChartConditionalFormatting(JsonView jsonValue) : 
-    m_conditionalFormattingOptionsHasBeenSet(false)
+GaugeChartConditionalFormatting::GaugeChartConditionalFormatting(JsonView jsonValue)
+  : GaugeChartConditionalFormatting()
 {
   *this = jsonValue;
 }

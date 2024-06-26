@@ -24,9 +24,8 @@ DuplicateRequest::DuplicateRequest() :
 {
 }
 
-DuplicateRequest::DuplicateRequest(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_duplicateOperationIdHasBeenSet(false)
+DuplicateRequest::DuplicateRequest(JsonView jsonValue)
+  : DuplicateRequest()
 {
   *this = jsonValue;
 }

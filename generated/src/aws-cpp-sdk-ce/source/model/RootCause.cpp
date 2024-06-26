@@ -27,12 +27,8 @@ RootCause::RootCause() :
 {
 }
 
-RootCause::RootCause(JsonView jsonValue) : 
-    m_serviceHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_linkedAccountHasBeenSet(false),
-    m_usageTypeHasBeenSet(false),
-    m_linkedAccountNameHasBeenSet(false)
+RootCause::RootCause(JsonView jsonValue)
+  : RootCause()
 {
   *this = jsonValue;
 }

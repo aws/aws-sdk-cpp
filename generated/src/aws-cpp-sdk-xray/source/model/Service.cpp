@@ -37,22 +37,8 @@ Service::Service() :
 {
 }
 
-Service::Service(JsonView jsonValue) : 
-    m_referenceId(0),
-    m_referenceIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_namesHasBeenSet(false),
-    m_root(false),
-    m_rootHasBeenSet(false),
-    m_accountIdHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_edgesHasBeenSet(false),
-    m_summaryStatisticsHasBeenSet(false),
-    m_durationHistogramHasBeenSet(false),
-    m_responseTimeHistogramHasBeenSet(false)
+Service::Service(JsonView jsonValue)
+  : Service()
 {
   *this = jsonValue;
 }

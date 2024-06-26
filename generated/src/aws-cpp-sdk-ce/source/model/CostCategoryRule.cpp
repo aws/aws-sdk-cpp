@@ -27,12 +27,8 @@ CostCategoryRule::CostCategoryRule() :
 {
 }
 
-CostCategoryRule::CostCategoryRule(JsonView jsonValue) : 
-    m_valueHasBeenSet(false),
-    m_ruleHasBeenSet(false),
-    m_inheritedValueHasBeenSet(false),
-    m_type(CostCategoryRuleType::NOT_SET),
-    m_typeHasBeenSet(false)
+CostCategoryRule::CostCategoryRule(JsonView jsonValue)
+  : CostCategoryRule()
 {
   *this = jsonValue;
 }

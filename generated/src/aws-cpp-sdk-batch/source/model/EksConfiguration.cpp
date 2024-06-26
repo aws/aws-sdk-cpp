@@ -24,9 +24,8 @@ EksConfiguration::EksConfiguration() :
 {
 }
 
-EksConfiguration::EksConfiguration(JsonView jsonValue) : 
-    m_eksClusterArnHasBeenSet(false),
-    m_kubernetesNamespaceHasBeenSet(false)
+EksConfiguration::EksConfiguration(JsonView jsonValue)
+  : EksConfiguration()
 {
   *this = jsonValue;
 }

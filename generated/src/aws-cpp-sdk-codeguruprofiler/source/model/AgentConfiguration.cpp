@@ -27,12 +27,8 @@ AgentConfiguration::AgentConfiguration() :
 {
 }
 
-AgentConfiguration::AgentConfiguration(JsonView jsonValue) : 
-    m_agentParametersHasBeenSet(false),
-    m_periodInSeconds(0),
-    m_periodInSecondsHasBeenSet(false),
-    m_shouldProfile(false),
-    m_shouldProfileHasBeenSet(false)
+AgentConfiguration::AgentConfiguration(JsonView jsonValue)
+  : AgentConfiguration()
 {
   *this = jsonValue;
 }

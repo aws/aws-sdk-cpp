@@ -23,8 +23,8 @@ InviteAction::InviteAction() :
 {
 }
 
-InviteAction::InviteAction(JsonView jsonValue) : 
-    m_principalHasBeenSet(false)
+InviteAction::InviteAction(JsonView jsonValue)
+  : InviteAction()
 {
   *this = jsonValue;
 }

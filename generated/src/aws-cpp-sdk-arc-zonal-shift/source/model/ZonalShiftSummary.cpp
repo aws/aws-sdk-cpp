@@ -32,17 +32,8 @@ ZonalShiftSummary::ZonalShiftSummary() :
 {
 }
 
-ZonalShiftSummary::ZonalShiftSummary(JsonView jsonValue) : 
-    m_awayFromHasBeenSet(false),
-    m_commentHasBeenSet(false),
-    m_expiryTimeHasBeenSet(false),
-    m_practiceRunOutcome(PracticeRunOutcome::NOT_SET),
-    m_practiceRunOutcomeHasBeenSet(false),
-    m_resourceIdentifierHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_status(ZonalShiftStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_zonalShiftIdHasBeenSet(false)
+ZonalShiftSummary::ZonalShiftSummary(JsonView jsonValue)
+  : ZonalShiftSummary()
 {
   *this = jsonValue;
 }

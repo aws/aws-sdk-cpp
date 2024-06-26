@@ -26,11 +26,8 @@ ProvisionedResource::ProvisionedResource() :
 {
 }
 
-ProvisionedResource::ProvisionedResource(JsonView jsonValue) : 
-    m_identifierHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_provisioningEngine(ProvisionedResourceEngine::NOT_SET),
-    m_provisioningEngineHasBeenSet(false)
+ProvisionedResource::ProvisionedResource(JsonView jsonValue)
+  : ProvisionedResource()
 {
   *this = jsonValue;
 }

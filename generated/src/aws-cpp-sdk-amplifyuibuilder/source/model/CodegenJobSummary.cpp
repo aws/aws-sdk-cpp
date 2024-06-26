@@ -27,12 +27,8 @@ CodegenJobSummary::CodegenJobSummary() :
 {
 }
 
-CodegenJobSummary::CodegenJobSummary(JsonView jsonValue) : 
-    m_appIdHasBeenSet(false),
-    m_environmentNameHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_modifiedAtHasBeenSet(false)
+CodegenJobSummary::CodegenJobSummary(JsonView jsonValue)
+  : CodegenJobSummary()
 {
   *this = jsonValue;
 }

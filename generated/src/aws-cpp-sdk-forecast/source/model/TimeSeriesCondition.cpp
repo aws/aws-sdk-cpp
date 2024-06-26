@@ -26,11 +26,8 @@ TimeSeriesCondition::TimeSeriesCondition() :
 {
 }
 
-TimeSeriesCondition::TimeSeriesCondition(JsonView jsonValue) : 
-    m_attributeNameHasBeenSet(false),
-    m_attributeValueHasBeenSet(false),
-    m_condition(Condition::NOT_SET),
-    m_conditionHasBeenSet(false)
+TimeSeriesCondition::TimeSeriesCondition(JsonView jsonValue)
+  : TimeSeriesCondition()
 {
   *this = jsonValue;
 }

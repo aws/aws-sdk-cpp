@@ -24,9 +24,8 @@ AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails::AwsEcsTaskDefinitionCont
 {
 }
 
-AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails::AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_valueFromHasBeenSet(false)
+AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails::AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails(JsonView jsonValue)
+  : AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails()
 {
   *this = jsonValue;
 }

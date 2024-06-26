@@ -36,21 +36,8 @@ Event::Event() :
 {
 }
 
-Event::Event(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_serviceHasBeenSet(false),
-    m_eventTypeCodeHasBeenSet(false),
-    m_eventTypeCategory(EventTypeCategory::NOT_SET),
-    m_eventTypeCategoryHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_statusCode(EventStatusCode::NOT_SET),
-    m_statusCodeHasBeenSet(false),
-    m_eventScopeCode(EventScopeCode::NOT_SET),
-    m_eventScopeCodeHasBeenSet(false)
+Event::Event(JsonView jsonValue)
+  : Event()
 {
   *this = jsonValue;
 }

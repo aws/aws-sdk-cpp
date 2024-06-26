@@ -24,9 +24,8 @@ FetchPageRequest::FetchPageRequest() :
 {
 }
 
-FetchPageRequest::FetchPageRequest(JsonView jsonValue) : 
-    m_transactionIdHasBeenSet(false),
-    m_nextPageTokenHasBeenSet(false)
+FetchPageRequest::FetchPageRequest(JsonView jsonValue)
+  : FetchPageRequest()
 {
   *this = jsonValue;
 }

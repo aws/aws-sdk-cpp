@@ -33,18 +33,8 @@ Record::Record() :
 {
 }
 
-Record::Record(JsonView jsonValue) : 
-    m_dimensionsHasBeenSet(false),
-    m_measureNameHasBeenSet(false),
-    m_measureValueHasBeenSet(false),
-    m_measureValueType(MeasureValueType::NOT_SET),
-    m_measureValueTypeHasBeenSet(false),
-    m_timeHasBeenSet(false),
-    m_timeUnit(TimeUnit::NOT_SET),
-    m_timeUnitHasBeenSet(false),
-    m_version(0),
-    m_versionHasBeenSet(false),
-    m_measureValuesHasBeenSet(false)
+Record::Record(JsonView jsonValue)
+  : Record()
 {
   *this = jsonValue;
 }

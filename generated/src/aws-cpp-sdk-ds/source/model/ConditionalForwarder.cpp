@@ -26,11 +26,8 @@ ConditionalForwarder::ConditionalForwarder() :
 {
 }
 
-ConditionalForwarder::ConditionalForwarder(JsonView jsonValue) : 
-    m_remoteDomainNameHasBeenSet(false),
-    m_dnsIpAddrsHasBeenSet(false),
-    m_replicationScope(ReplicationScope::NOT_SET),
-    m_replicationScopeHasBeenSet(false)
+ConditionalForwarder::ConditionalForwarder(JsonView jsonValue)
+  : ConditionalForwarder()
 {
   *this = jsonValue;
 }

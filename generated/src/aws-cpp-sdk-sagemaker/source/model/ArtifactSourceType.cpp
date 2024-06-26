@@ -25,10 +25,8 @@ ArtifactSourceType::ArtifactSourceType() :
 {
 }
 
-ArtifactSourceType::ArtifactSourceType(JsonView jsonValue) : 
-    m_sourceIdType(ArtifactSourceIdType::NOT_SET),
-    m_sourceIdTypeHasBeenSet(false),
-    m_valueHasBeenSet(false)
+ArtifactSourceType::ArtifactSourceType(JsonView jsonValue)
+  : ArtifactSourceType()
 {
   *this = jsonValue;
 }

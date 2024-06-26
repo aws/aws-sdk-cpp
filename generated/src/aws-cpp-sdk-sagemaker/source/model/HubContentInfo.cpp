@@ -38,23 +38,8 @@ HubContentInfo::HubContentInfo() :
 {
 }
 
-HubContentInfo::HubContentInfo(JsonView jsonValue) : 
-    m_hubContentNameHasBeenSet(false),
-    m_hubContentArnHasBeenSet(false),
-    m_sageMakerPublicHubContentArnHasBeenSet(false),
-    m_hubContentVersionHasBeenSet(false),
-    m_hubContentType(HubContentType::NOT_SET),
-    m_hubContentTypeHasBeenSet(false),
-    m_documentSchemaVersionHasBeenSet(false),
-    m_hubContentDisplayNameHasBeenSet(false),
-    m_hubContentDescriptionHasBeenSet(false),
-    m_supportStatus(HubContentSupportStatus::NOT_SET),
-    m_supportStatusHasBeenSet(false),
-    m_hubContentSearchKeywordsHasBeenSet(false),
-    m_hubContentStatus(HubContentStatus::NOT_SET),
-    m_hubContentStatusHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_originalCreationTimeHasBeenSet(false)
+HubContentInfo::HubContentInfo(JsonView jsonValue)
+  : HubContentInfo()
 {
   *this = jsonValue;
 }

@@ -26,10 +26,8 @@ CanDbcDefinition::CanDbcDefinition() :
 {
 }
 
-CanDbcDefinition::CanDbcDefinition(JsonView jsonValue) : 
-    m_networkInterfaceHasBeenSet(false),
-    m_canDbcFilesHasBeenSet(false),
-    m_signalsMapHasBeenSet(false)
+CanDbcDefinition::CanDbcDefinition(JsonView jsonValue)
+  : CanDbcDefinition()
 {
   *this = jsonValue;
 }

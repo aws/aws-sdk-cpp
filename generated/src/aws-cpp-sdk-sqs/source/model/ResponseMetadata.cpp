@@ -24,8 +24,8 @@ ResponseMetadata::ResponseMetadata() :
 {
 }
 
-ResponseMetadata::ResponseMetadata(JsonView jsonValue) : 
-    m_requestIdHasBeenSet(false)
+ResponseMetadata::ResponseMetadata(JsonView jsonValue)
+  : ResponseMetadata()
 {
   *this = jsonValue;
 }

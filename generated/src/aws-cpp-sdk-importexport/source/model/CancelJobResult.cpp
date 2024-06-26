@@ -22,8 +22,8 @@ CancelJobResult::CancelJobResult() :
 {
 }
 
-CancelJobResult::CancelJobResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_success(false)
+CancelJobResult::CancelJobResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : CancelJobResult()
 {
   *this = result;
 }

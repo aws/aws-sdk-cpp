@@ -23,8 +23,8 @@ EndpointEventBus::EndpointEventBus() :
 {
 }
 
-EndpointEventBus::EndpointEventBus(JsonView jsonValue) : 
-    m_eventBusArnHasBeenSet(false)
+EndpointEventBus::EndpointEventBus(JsonView jsonValue)
+  : EndpointEventBus()
 {
   *this = jsonValue;
 }

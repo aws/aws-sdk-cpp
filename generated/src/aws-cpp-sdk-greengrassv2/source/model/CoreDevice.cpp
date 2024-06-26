@@ -26,11 +26,8 @@ CoreDevice::CoreDevice() :
 {
 }
 
-CoreDevice::CoreDevice(JsonView jsonValue) : 
-    m_coreDeviceThingNameHasBeenSet(false),
-    m_status(CoreDeviceStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_lastStatusUpdateTimestampHasBeenSet(false)
+CoreDevice::CoreDevice(JsonView jsonValue)
+  : CoreDevice()
 {
   *this = jsonValue;
 }

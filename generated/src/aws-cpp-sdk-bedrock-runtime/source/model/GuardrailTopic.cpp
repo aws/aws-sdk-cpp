@@ -27,12 +27,8 @@ GuardrailTopic::GuardrailTopic() :
 {
 }
 
-GuardrailTopic::GuardrailTopic(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_type(GuardrailTopicType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_action(GuardrailTopicPolicyAction::NOT_SET),
-    m_actionHasBeenSet(false)
+GuardrailTopic::GuardrailTopic(JsonView jsonValue)
+  : GuardrailTopic()
 {
   *this = jsonValue;
 }

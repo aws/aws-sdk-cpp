@@ -26,11 +26,8 @@ DataProductSort::DataProductSort() :
 {
 }
 
-DataProductSort::DataProductSort(JsonView jsonValue) : 
-    m_sortBy(DataProductSortBy::NOT_SET),
-    m_sortByHasBeenSet(false),
-    m_sortOrder(SortOrder::NOT_SET),
-    m_sortOrderHasBeenSet(false)
+DataProductSort::DataProductSort(JsonView jsonValue)
+  : DataProductSort()
 {
   *this = jsonValue;
 }

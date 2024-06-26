@@ -23,8 +23,8 @@ ConnectionApiKeyAuthResponseParameters::ConnectionApiKeyAuthResponseParameters()
 {
 }
 
-ConnectionApiKeyAuthResponseParameters::ConnectionApiKeyAuthResponseParameters(JsonView jsonValue) : 
-    m_apiKeyNameHasBeenSet(false)
+ConnectionApiKeyAuthResponseParameters::ConnectionApiKeyAuthResponseParameters(JsonView jsonValue)
+  : ConnectionApiKeyAuthResponseParameters()
 {
   *this = jsonValue;
 }

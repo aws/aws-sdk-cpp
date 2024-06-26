@@ -24,9 +24,8 @@ RegionsInfo::RegionsInfo() :
 {
 }
 
-RegionsInfo::RegionsInfo(JsonView jsonValue) : 
-    m_primaryRegionHasBeenSet(false),
-    m_additionalRegionsHasBeenSet(false)
+RegionsInfo::RegionsInfo(JsonView jsonValue)
+  : RegionsInfo()
 {
   *this = jsonValue;
 }

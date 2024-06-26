@@ -24,9 +24,8 @@ VisualReferenceInput::VisualReferenceInput() :
 {
 }
 
-VisualReferenceInput::VisualReferenceInput(JsonView jsonValue) : 
-    m_baseScreenshotsHasBeenSet(false),
-    m_baseCanaryRunIdHasBeenSet(false)
+VisualReferenceInput::VisualReferenceInput(JsonView jsonValue)
+  : VisualReferenceInput()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ PatchFilter::PatchFilter() :
 {
 }
 
-PatchFilter::PatchFilter(JsonView jsonValue) : 
-    m_key(PatchFilterKey::NOT_SET),
-    m_keyHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+PatchFilter::PatchFilter(JsonView jsonValue)
+  : PatchFilter()
 {
   *this = jsonValue;
 }

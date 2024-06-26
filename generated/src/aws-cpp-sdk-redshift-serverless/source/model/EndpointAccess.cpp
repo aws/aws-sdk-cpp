@@ -33,18 +33,8 @@ EndpointAccess::EndpointAccess() :
 {
 }
 
-EndpointAccess::EndpointAccess(JsonView jsonValue) : 
-    m_addressHasBeenSet(false),
-    m_endpointArnHasBeenSet(false),
-    m_endpointCreateTimeHasBeenSet(false),
-    m_endpointNameHasBeenSet(false),
-    m_endpointStatusHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_subnetIdsHasBeenSet(false),
-    m_vpcEndpointHasBeenSet(false),
-    m_vpcSecurityGroupsHasBeenSet(false),
-    m_workgroupNameHasBeenSet(false)
+EndpointAccess::EndpointAccess(JsonView jsonValue)
+  : EndpointAccess()
 {
   *this = jsonValue;
 }

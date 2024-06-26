@@ -25,10 +25,8 @@ CanaryScheduleOutput::CanaryScheduleOutput() :
 {
 }
 
-CanaryScheduleOutput::CanaryScheduleOutput(JsonView jsonValue) : 
-    m_expressionHasBeenSet(false),
-    m_durationInSeconds(0),
-    m_durationInSecondsHasBeenSet(false)
+CanaryScheduleOutput::CanaryScheduleOutput(JsonView jsonValue)
+  : CanaryScheduleOutput()
 {
   *this = jsonValue;
 }

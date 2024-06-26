@@ -23,8 +23,8 @@ QueryFilter::QueryFilter() :
 {
 }
 
-QueryFilter::QueryFilter(JsonView jsonValue) : 
-    m_deltaTimeHasBeenSet(false)
+QueryFilter::QueryFilter(JsonView jsonValue)
+  : QueryFilter()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ Parameters::Parameters() :
 {
 }
 
-Parameters::Parameters(JsonView jsonValue) : 
-    m_influxDBv2HasBeenSet(false)
+Parameters::Parameters(JsonView jsonValue)
+  : Parameters()
 {
   *this = jsonValue;
 }

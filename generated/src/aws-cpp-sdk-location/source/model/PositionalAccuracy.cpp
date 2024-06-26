@@ -24,9 +24,8 @@ PositionalAccuracy::PositionalAccuracy() :
 {
 }
 
-PositionalAccuracy::PositionalAccuracy(JsonView jsonValue) : 
-    m_horizontal(0.0),
-    m_horizontalHasBeenSet(false)
+PositionalAccuracy::PositionalAccuracy(JsonView jsonValue)
+  : PositionalAccuracy()
 {
   *this = jsonValue;
 }

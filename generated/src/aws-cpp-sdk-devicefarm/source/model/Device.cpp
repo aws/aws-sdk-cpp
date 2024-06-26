@@ -50,35 +50,8 @@ Device::Device() :
 {
 }
 
-Device::Device(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_manufacturerHasBeenSet(false),
-    m_modelHasBeenSet(false),
-    m_modelIdHasBeenSet(false),
-    m_formFactor(DeviceFormFactor::NOT_SET),
-    m_formFactorHasBeenSet(false),
-    m_platform(DevicePlatform::NOT_SET),
-    m_platformHasBeenSet(false),
-    m_osHasBeenSet(false),
-    m_cpuHasBeenSet(false),
-    m_resolutionHasBeenSet(false),
-    m_heapSize(0),
-    m_heapSizeHasBeenSet(false),
-    m_memory(0),
-    m_memoryHasBeenSet(false),
-    m_imageHasBeenSet(false),
-    m_carrierHasBeenSet(false),
-    m_radioHasBeenSet(false),
-    m_remoteAccessEnabled(false),
-    m_remoteAccessEnabledHasBeenSet(false),
-    m_remoteDebugEnabled(false),
-    m_remoteDebugEnabledHasBeenSet(false),
-    m_fleetTypeHasBeenSet(false),
-    m_fleetNameHasBeenSet(false),
-    m_instancesHasBeenSet(false),
-    m_availability(DeviceAvailability::NOT_SET),
-    m_availabilityHasBeenSet(false)
+Device::Device(JsonView jsonValue)
+  : Device()
 {
   *this = jsonValue;
 }

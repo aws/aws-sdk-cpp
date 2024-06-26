@@ -25,10 +25,8 @@ DeleteObjectInput::DeleteObjectInput() :
 {
 }
 
-DeleteObjectInput::DeleteObjectInput(JsonView jsonValue) : 
-    m_uriHasBeenSet(false),
-    m_eTagHasBeenSet(false),
-    m_partitionValuesHasBeenSet(false)
+DeleteObjectInput::DeleteObjectInput(JsonView jsonValue)
+  : DeleteObjectInput()
 {
   *this = jsonValue;
 }

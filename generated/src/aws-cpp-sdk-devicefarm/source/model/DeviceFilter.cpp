@@ -27,12 +27,8 @@ DeviceFilter::DeviceFilter() :
 {
 }
 
-DeviceFilter::DeviceFilter(JsonView jsonValue) : 
-    m_attribute(DeviceFilterAttribute::NOT_SET),
-    m_attributeHasBeenSet(false),
-    m_operator(RuleOperator::NOT_SET),
-    m_operatorHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+DeviceFilter::DeviceFilter(JsonView jsonValue)
+  : DeviceFilter()
 {
   *this = jsonValue;
 }

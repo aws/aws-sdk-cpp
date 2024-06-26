@@ -26,11 +26,8 @@ BotVersionSortBy::BotVersionSortBy() :
 {
 }
 
-BotVersionSortBy::BotVersionSortBy(JsonView jsonValue) : 
-    m_attribute(BotVersionSortAttribute::NOT_SET),
-    m_attributeHasBeenSet(false),
-    m_order(SortOrder::NOT_SET),
-    m_orderHasBeenSet(false)
+BotVersionSortBy::BotVersionSortBy(JsonView jsonValue)
+  : BotVersionSortBy()
 {
   *this = jsonValue;
 }

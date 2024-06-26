@@ -24,9 +24,8 @@ ThirdPartyFirewallPolicy::ThirdPartyFirewallPolicy() :
 {
 }
 
-ThirdPartyFirewallPolicy::ThirdPartyFirewallPolicy(JsonView jsonValue) : 
-    m_firewallDeploymentModel(FirewallDeploymentModel::NOT_SET),
-    m_firewallDeploymentModelHasBeenSet(false)
+ThirdPartyFirewallPolicy::ThirdPartyFirewallPolicy(JsonView jsonValue)
+  : ThirdPartyFirewallPolicy()
 {
   *this = jsonValue;
 }

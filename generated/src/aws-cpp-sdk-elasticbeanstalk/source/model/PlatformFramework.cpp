@@ -26,9 +26,8 @@ PlatformFramework::PlatformFramework() :
 {
 }
 
-PlatformFramework::PlatformFramework(const XmlNode& xmlNode) : 
-    m_nameHasBeenSet(false),
-    m_versionHasBeenSet(false)
+PlatformFramework::PlatformFramework(const XmlNode& xmlNode)
+  : PlatformFramework()
 {
   *this = xmlNode;
 }

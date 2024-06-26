@@ -28,13 +28,8 @@ TopicRuleListItem::TopicRuleListItem() :
 {
 }
 
-TopicRuleListItem::TopicRuleListItem(JsonView jsonValue) : 
-    m_ruleArnHasBeenSet(false),
-    m_ruleNameHasBeenSet(false),
-    m_topicPatternHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_ruleDisabled(false),
-    m_ruleDisabledHasBeenSet(false)
+TopicRuleListItem::TopicRuleListItem(JsonView jsonValue)
+  : TopicRuleListItem()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ ListControlSelectAllOptions::ListControlSelectAllOptions() :
 {
 }
 
-ListControlSelectAllOptions::ListControlSelectAllOptions(JsonView jsonValue) : 
-    m_visibility(Visibility::NOT_SET),
-    m_visibilityHasBeenSet(false)
+ListControlSelectAllOptions::ListControlSelectAllOptions(JsonView jsonValue)
+  : ListControlSelectAllOptions()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ EvaluationResultIdentifier::EvaluationResultIdentifier() :
 {
 }
 
-EvaluationResultIdentifier::EvaluationResultIdentifier(JsonView jsonValue) : 
-    m_evaluationResultQualifierHasBeenSet(false),
-    m_orderingTimestampHasBeenSet(false),
-    m_resourceEvaluationIdHasBeenSet(false)
+EvaluationResultIdentifier::EvaluationResultIdentifier(JsonView jsonValue)
+  : EvaluationResultIdentifier()
 {
   *this = jsonValue;
 }

@@ -27,12 +27,8 @@ RecommenderUpdateSummary::RecommenderUpdateSummary() :
 {
 }
 
-RecommenderUpdateSummary::RecommenderUpdateSummary(JsonView jsonValue) : 
-    m_recommenderConfigHasBeenSet(false),
-    m_creationDateTimeHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_failureReasonHasBeenSet(false)
+RecommenderUpdateSummary::RecommenderUpdateSummary(JsonView jsonValue)
+  : RecommenderUpdateSummary()
 {
   *this = jsonValue;
 }

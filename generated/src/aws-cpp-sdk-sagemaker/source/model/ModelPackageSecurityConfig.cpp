@@ -23,8 +23,8 @@ ModelPackageSecurityConfig::ModelPackageSecurityConfig() :
 {
 }
 
-ModelPackageSecurityConfig::ModelPackageSecurityConfig(JsonView jsonValue) : 
-    m_kmsKeyIdHasBeenSet(false)
+ModelPackageSecurityConfig::ModelPackageSecurityConfig(JsonView jsonValue)
+  : ModelPackageSecurityConfig()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ Toolchain::Toolchain() :
 {
 }
 
-Toolchain::Toolchain(JsonView jsonValue) : 
-    m_sourceHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_stackParametersHasBeenSet(false)
+Toolchain::Toolchain(JsonView jsonValue)
+  : Toolchain()
 {
   *this = jsonValue;
 }

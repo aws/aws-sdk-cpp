@@ -30,15 +30,8 @@ ManagedRuleSetVersion::ManagedRuleSetVersion() :
 {
 }
 
-ManagedRuleSetVersion::ManagedRuleSetVersion(JsonView jsonValue) : 
-    m_associatedRuleGroupArnHasBeenSet(false),
-    m_capacity(0),
-    m_capacityHasBeenSet(false),
-    m_forecastedLifetime(0),
-    m_forecastedLifetimeHasBeenSet(false),
-    m_publishTimestampHasBeenSet(false),
-    m_lastUpdateTimestampHasBeenSet(false),
-    m_expiryTimestampHasBeenSet(false)
+ManagedRuleSetVersion::ManagedRuleSetVersion(JsonView jsonValue)
+  : ManagedRuleSetVersion()
 {
   *this = jsonValue;
 }

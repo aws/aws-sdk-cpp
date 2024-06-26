@@ -25,10 +25,8 @@ SignInOptions::SignInOptions() :
 {
 }
 
-SignInOptions::SignInOptions(JsonView jsonValue) : 
-    m_applicationUrlHasBeenSet(false),
-    m_origin(SignInOrigin::NOT_SET),
-    m_originHasBeenSet(false)
+SignInOptions::SignInOptions(JsonView jsonValue)
+  : SignInOptions()
 {
   *this = jsonValue;
 }

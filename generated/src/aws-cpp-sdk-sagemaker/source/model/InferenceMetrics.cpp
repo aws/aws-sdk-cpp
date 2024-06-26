@@ -26,11 +26,8 @@ InferenceMetrics::InferenceMetrics() :
 {
 }
 
-InferenceMetrics::InferenceMetrics(JsonView jsonValue) : 
-    m_maxInvocations(0),
-    m_maxInvocationsHasBeenSet(false),
-    m_modelLatency(0),
-    m_modelLatencyHasBeenSet(false)
+InferenceMetrics::InferenceMetrics(JsonView jsonValue)
+  : InferenceMetrics()
 {
   *this = jsonValue;
 }

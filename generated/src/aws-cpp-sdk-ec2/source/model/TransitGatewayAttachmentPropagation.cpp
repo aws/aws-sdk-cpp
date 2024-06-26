@@ -27,10 +27,8 @@ TransitGatewayAttachmentPropagation::TransitGatewayAttachmentPropagation() :
 {
 }
 
-TransitGatewayAttachmentPropagation::TransitGatewayAttachmentPropagation(const XmlNode& xmlNode) : 
-    m_transitGatewayRouteTableIdHasBeenSet(false),
-    m_state(TransitGatewayPropagationState::NOT_SET),
-    m_stateHasBeenSet(false)
+TransitGatewayAttachmentPropagation::TransitGatewayAttachmentPropagation(const XmlNode& xmlNode)
+  : TransitGatewayAttachmentPropagation()
 {
   *this = xmlNode;
 }

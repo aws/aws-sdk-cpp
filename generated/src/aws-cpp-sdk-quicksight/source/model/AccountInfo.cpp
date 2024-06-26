@@ -29,14 +29,8 @@ AccountInfo::AccountInfo() :
 {
 }
 
-AccountInfo::AccountInfo(JsonView jsonValue) : 
-    m_accountNameHasBeenSet(false),
-    m_edition(Edition::NOT_SET),
-    m_editionHasBeenSet(false),
-    m_notificationEmailHasBeenSet(false),
-    m_authenticationTypeHasBeenSet(false),
-    m_accountSubscriptionStatusHasBeenSet(false),
-    m_iAMIdentityCenterInstanceArnHasBeenSet(false)
+AccountInfo::AccountInfo(JsonView jsonValue)
+  : AccountInfo()
 {
   *this = jsonValue;
 }

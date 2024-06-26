@@ -24,9 +24,8 @@ UiTemplateInfo::UiTemplateInfo() :
 {
 }
 
-UiTemplateInfo::UiTemplateInfo(JsonView jsonValue) : 
-    m_urlHasBeenSet(false),
-    m_contentSha256HasBeenSet(false)
+UiTemplateInfo::UiTemplateInfo(JsonView jsonValue)
+  : UiTemplateInfo()
 {
   *this = jsonValue;
 }

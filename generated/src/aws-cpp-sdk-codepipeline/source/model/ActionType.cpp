@@ -27,12 +27,8 @@ ActionType::ActionType() :
 {
 }
 
-ActionType::ActionType(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_settingsHasBeenSet(false),
-    m_actionConfigurationPropertiesHasBeenSet(false),
-    m_inputArtifactDetailsHasBeenSet(false),
-    m_outputArtifactDetailsHasBeenSet(false)
+ActionType::ActionType(JsonView jsonValue)
+  : ActionType()
 {
   *this = jsonValue;
 }

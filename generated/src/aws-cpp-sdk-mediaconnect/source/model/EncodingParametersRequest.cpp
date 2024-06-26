@@ -26,11 +26,8 @@ EncodingParametersRequest::EncodingParametersRequest() :
 {
 }
 
-EncodingParametersRequest::EncodingParametersRequest(JsonView jsonValue) : 
-    m_compressionFactor(0.0),
-    m_compressionFactorHasBeenSet(false),
-    m_encoderProfile(EncoderProfile::NOT_SET),
-    m_encoderProfileHasBeenSet(false)
+EncodingParametersRequest::EncodingParametersRequest(JsonView jsonValue)
+  : EncodingParametersRequest()
 {
   *this = jsonValue;
 }

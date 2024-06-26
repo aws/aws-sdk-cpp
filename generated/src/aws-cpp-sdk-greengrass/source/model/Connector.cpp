@@ -25,10 +25,8 @@ Connector::Connector() :
 {
 }
 
-Connector::Connector(JsonView jsonValue) : 
-    m_connectorArnHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_parametersHasBeenSet(false)
+Connector::Connector(JsonView jsonValue)
+  : Connector()
 {
   *this = jsonValue;
 }

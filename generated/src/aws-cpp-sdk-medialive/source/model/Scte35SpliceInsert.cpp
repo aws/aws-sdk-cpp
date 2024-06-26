@@ -28,13 +28,8 @@ Scte35SpliceInsert::Scte35SpliceInsert() :
 {
 }
 
-Scte35SpliceInsert::Scte35SpliceInsert(JsonView jsonValue) : 
-    m_adAvailOffset(0),
-    m_adAvailOffsetHasBeenSet(false),
-    m_noRegionalBlackoutFlag(Scte35SpliceInsertNoRegionalBlackoutBehavior::NOT_SET),
-    m_noRegionalBlackoutFlagHasBeenSet(false),
-    m_webDeliveryAllowedFlag(Scte35SpliceInsertWebDeliveryAllowedBehavior::NOT_SET),
-    m_webDeliveryAllowedFlagHasBeenSet(false)
+Scte35SpliceInsert::Scte35SpliceInsert(JsonView jsonValue)
+  : Scte35SpliceInsert()
 {
   *this = jsonValue;
 }

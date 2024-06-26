@@ -26,9 +26,8 @@ MemoryInfo::MemoryInfo() :
 {
 }
 
-MemoryInfo::MemoryInfo(const XmlNode& xmlNode) : 
-    m_sizeInMiB(0),
-    m_sizeInMiBHasBeenSet(false)
+MemoryInfo::MemoryInfo(const XmlNode& xmlNode)
+  : MemoryInfo()
 {
   *this = xmlNode;
 }

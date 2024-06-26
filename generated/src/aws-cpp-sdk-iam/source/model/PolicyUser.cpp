@@ -26,9 +26,8 @@ PolicyUser::PolicyUser() :
 {
 }
 
-PolicyUser::PolicyUser(const XmlNode& xmlNode) : 
-    m_userNameHasBeenSet(false),
-    m_userIdHasBeenSet(false)
+PolicyUser::PolicyUser(const XmlNode& xmlNode)
+  : PolicyUser()
 {
   *this = xmlNode;
 }

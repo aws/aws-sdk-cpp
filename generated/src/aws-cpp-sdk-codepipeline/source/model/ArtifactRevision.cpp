@@ -28,13 +28,8 @@ ArtifactRevision::ArtifactRevision() :
 {
 }
 
-ArtifactRevision::ArtifactRevision(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_revisionIdHasBeenSet(false),
-    m_revisionChangeIdentifierHasBeenSet(false),
-    m_revisionSummaryHasBeenSet(false),
-    m_createdHasBeenSet(false),
-    m_revisionUrlHasBeenSet(false)
+ArtifactRevision::ArtifactRevision(JsonView jsonValue)
+  : ArtifactRevision()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ PrometheusInfo::PrometheusInfo() :
 {
 }
 
-PrometheusInfo::PrometheusInfo(JsonView jsonValue) : 
-    m_jmxExporterHasBeenSet(false),
-    m_nodeExporterHasBeenSet(false)
+PrometheusInfo::PrometheusInfo(JsonView jsonValue)
+  : PrometheusInfo()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ Configuration::Configuration() :
 {
 }
 
-Configuration::Configuration(JsonView jsonValue) : 
-    m_classificationHasBeenSet(false),
-    m_propertiesHasBeenSet(false),
-    m_configurationsHasBeenSet(false)
+Configuration::Configuration(JsonView jsonValue)
+  : Configuration()
 {
   *this = jsonValue;
 }

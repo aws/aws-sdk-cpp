@@ -44,29 +44,8 @@ MaxP95Performance::MaxP95Performance() :
 {
 }
 
-MaxP95Performance::MaxP95Performance(JsonView jsonValue) : 
-    m_iopsRead(0.0),
-    m_iopsReadHasBeenSet(false),
-    m_iopsWrite(0.0),
-    m_iopsWriteHasBeenSet(false),
-    m_iopsOther(0.0),
-    m_iopsOtherHasBeenSet(false),
-    m_iopsTotal(0.0),
-    m_iopsTotalHasBeenSet(false),
-    m_throughputRead(0.0),
-    m_throughputReadHasBeenSet(false),
-    m_throughputWrite(0.0),
-    m_throughputWriteHasBeenSet(false),
-    m_throughputOther(0.0),
-    m_throughputOtherHasBeenSet(false),
-    m_throughputTotal(0.0),
-    m_throughputTotalHasBeenSet(false),
-    m_latencyRead(0.0),
-    m_latencyReadHasBeenSet(false),
-    m_latencyWrite(0.0),
-    m_latencyWriteHasBeenSet(false),
-    m_latencyOther(0.0),
-    m_latencyOtherHasBeenSet(false)
+MaxP95Performance::MaxP95Performance(JsonView jsonValue)
+  : MaxP95Performance()
 {
   *this = jsonValue;
 }

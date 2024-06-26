@@ -23,9 +23,8 @@ UpdateTemplateResult::UpdateTemplateResult() :
 {
 }
 
-UpdateTemplateResult::UpdateTemplateResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_creationStatus(ResourceStatus::NOT_SET),
-    m_status(0)
+UpdateTemplateResult::UpdateTemplateResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateTemplateResult()
 {
   *this = result;
 }

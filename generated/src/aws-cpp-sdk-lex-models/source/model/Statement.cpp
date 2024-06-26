@@ -24,9 +24,8 @@ Statement::Statement() :
 {
 }
 
-Statement::Statement(JsonView jsonValue) : 
-    m_messagesHasBeenSet(false),
-    m_responseCardHasBeenSet(false)
+Statement::Statement(JsonView jsonValue)
+  : Statement()
 {
   *this = jsonValue;
 }

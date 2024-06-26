@@ -59,44 +59,8 @@ DeploymentInfo::DeploymentInfo() :
 {
 }
 
-DeploymentInfo::DeploymentInfo(JsonView jsonValue) : 
-    m_applicationNameHasBeenSet(false),
-    m_deploymentGroupNameHasBeenSet(false),
-    m_deploymentConfigNameHasBeenSet(false),
-    m_deploymentIdHasBeenSet(false),
-    m_previousRevisionHasBeenSet(false),
-    m_revisionHasBeenSet(false),
-    m_status(DeploymentStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_errorInformationHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_completeTimeHasBeenSet(false),
-    m_deploymentOverviewHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_creator(DeploymentCreator::NOT_SET),
-    m_creatorHasBeenSet(false),
-    m_ignoreApplicationStopFailures(false),
-    m_ignoreApplicationStopFailuresHasBeenSet(false),
-    m_autoRollbackConfigurationHasBeenSet(false),
-    m_updateOutdatedInstancesOnly(false),
-    m_updateOutdatedInstancesOnlyHasBeenSet(false),
-    m_rollbackInfoHasBeenSet(false),
-    m_deploymentStyleHasBeenSet(false),
-    m_targetInstancesHasBeenSet(false),
-    m_instanceTerminationWaitTimeStarted(false),
-    m_instanceTerminationWaitTimeStartedHasBeenSet(false),
-    m_blueGreenDeploymentConfigurationHasBeenSet(false),
-    m_loadBalancerInfoHasBeenSet(false),
-    m_additionalDeploymentStatusInfoHasBeenSet(false),
-    m_fileExistsBehavior(FileExistsBehavior::NOT_SET),
-    m_fileExistsBehaviorHasBeenSet(false),
-    m_deploymentStatusMessagesHasBeenSet(false),
-    m_computePlatform(ComputePlatform::NOT_SET),
-    m_computePlatformHasBeenSet(false),
-    m_externalIdHasBeenSet(false),
-    m_relatedDeploymentsHasBeenSet(false),
-    m_overrideAlarmConfigurationHasBeenSet(false)
+DeploymentInfo::DeploymentInfo(JsonView jsonValue)
+  : DeploymentInfo()
 {
   *this = jsonValue;
 }

@@ -29,12 +29,8 @@ EnvironmentInfoDescription::EnvironmentInfoDescription() :
 {
 }
 
-EnvironmentInfoDescription::EnvironmentInfoDescription(const XmlNode& xmlNode) : 
-    m_infoType(EnvironmentInfoType::NOT_SET),
-    m_infoTypeHasBeenSet(false),
-    m_ec2InstanceIdHasBeenSet(false),
-    m_sampleTimestampHasBeenSet(false),
-    m_messageHasBeenSet(false)
+EnvironmentInfoDescription::EnvironmentInfoDescription(const XmlNode& xmlNode)
+  : EnvironmentInfoDescription()
 {
   *this = xmlNode;
 }

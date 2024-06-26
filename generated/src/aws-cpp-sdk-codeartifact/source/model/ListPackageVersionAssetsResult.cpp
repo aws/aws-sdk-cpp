@@ -22,8 +22,8 @@ ListPackageVersionAssetsResult::ListPackageVersionAssetsResult() :
 {
 }
 
-ListPackageVersionAssetsResult::ListPackageVersionAssetsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_format(PackageFormat::NOT_SET)
+ListPackageVersionAssetsResult::ListPackageVersionAssetsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ListPackageVersionAssetsResult()
 {
   *this = result;
 }

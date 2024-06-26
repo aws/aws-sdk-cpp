@@ -24,9 +24,8 @@ NestedFilters::NestedFilters() :
 {
 }
 
-NestedFilters::NestedFilters(JsonView jsonValue) : 
-    m_nestedPropertyNameHasBeenSet(false),
-    m_filtersHasBeenSet(false)
+NestedFilters::NestedFilters(JsonView jsonValue)
+  : NestedFilters()
 {
   *this = jsonValue;
 }

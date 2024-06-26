@@ -26,9 +26,8 @@ ReferenceLink::ReferenceLink() :
 {
 }
 
-ReferenceLink::ReferenceLink(const XmlNode& xmlNode) : 
-    m_textHasBeenSet(false),
-    m_linkHasBeenSet(false)
+ReferenceLink::ReferenceLink(const XmlNode& xmlNode)
+  : ReferenceLink()
 {
   *this = xmlNode;
 }

@@ -28,11 +28,8 @@ DocumentSuggesterOptions::DocumentSuggesterOptions() :
 {
 }
 
-DocumentSuggesterOptions::DocumentSuggesterOptions(const XmlNode& xmlNode) : 
-    m_sourceFieldHasBeenSet(false),
-    m_fuzzyMatching(SuggesterFuzzyMatching::NOT_SET),
-    m_fuzzyMatchingHasBeenSet(false),
-    m_sortExpressionHasBeenSet(false)
+DocumentSuggesterOptions::DocumentSuggesterOptions(const XmlNode& xmlNode)
+  : DocumentSuggesterOptions()
 {
   *this = xmlNode;
 }

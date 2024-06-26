@@ -26,11 +26,8 @@ ScalingPolicy::ScalingPolicy() :
 {
 }
 
-ScalingPolicy::ScalingPolicy(JsonView jsonValue) : 
-    m_policyNameHasBeenSet(false),
-    m_policyType(PolicyType::NOT_SET),
-    m_policyTypeHasBeenSet(false),
-    m_targetTrackingConfigurationHasBeenSet(false)
+ScalingPolicy::ScalingPolicy(JsonView jsonValue)
+  : ScalingPolicy()
 {
   *this = jsonValue;
 }

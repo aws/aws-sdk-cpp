@@ -26,11 +26,8 @@ TooManyTagsException::TooManyTagsException() :
 {
 }
 
-TooManyTagsException::TooManyTagsException(JsonView jsonValue) : 
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_requestIdHasBeenSet(false),
-    m_resourceNameHasBeenSet(false)
+TooManyTagsException::TooManyTagsException(JsonView jsonValue)
+  : TooManyTagsException()
 {
   *this = jsonValue;
 }

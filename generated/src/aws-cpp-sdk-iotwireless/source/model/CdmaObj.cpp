@@ -38,23 +38,8 @@ CdmaObj::CdmaObj() :
 {
 }
 
-CdmaObj::CdmaObj(JsonView jsonValue) : 
-    m_systemId(0),
-    m_systemIdHasBeenSet(false),
-    m_networkId(0),
-    m_networkIdHasBeenSet(false),
-    m_baseStationId(0),
-    m_baseStationIdHasBeenSet(false),
-    m_registrationZone(0),
-    m_registrationZoneHasBeenSet(false),
-    m_cdmaLocalIdHasBeenSet(false),
-    m_pilotPower(0),
-    m_pilotPowerHasBeenSet(false),
-    m_baseLat(0.0),
-    m_baseLatHasBeenSet(false),
-    m_baseLng(0.0),
-    m_baseLngHasBeenSet(false),
-    m_cdmaNmrHasBeenSet(false)
+CdmaObj::CdmaObj(JsonView jsonValue)
+  : CdmaObj()
 {
   *this = jsonValue;
 }

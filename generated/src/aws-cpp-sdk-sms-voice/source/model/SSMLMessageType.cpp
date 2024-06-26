@@ -25,10 +25,8 @@ SSMLMessageType::SSMLMessageType() :
 {
 }
 
-SSMLMessageType::SSMLMessageType(JsonView jsonValue) : 
-    m_languageCodeHasBeenSet(false),
-    m_textHasBeenSet(false),
-    m_voiceIdHasBeenSet(false)
+SSMLMessageType::SSMLMessageType(JsonView jsonValue)
+  : SSMLMessageType()
 {
   *this = jsonValue;
 }

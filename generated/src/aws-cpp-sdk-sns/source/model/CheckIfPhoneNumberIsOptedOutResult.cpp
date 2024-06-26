@@ -22,8 +22,8 @@ CheckIfPhoneNumberIsOptedOutResult::CheckIfPhoneNumberIsOptedOutResult() :
 {
 }
 
-CheckIfPhoneNumberIsOptedOutResult::CheckIfPhoneNumberIsOptedOutResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_isOptedOut(false)
+CheckIfPhoneNumberIsOptedOutResult::CheckIfPhoneNumberIsOptedOutResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : CheckIfPhoneNumberIsOptedOutResult()
 {
   *this = result;
 }

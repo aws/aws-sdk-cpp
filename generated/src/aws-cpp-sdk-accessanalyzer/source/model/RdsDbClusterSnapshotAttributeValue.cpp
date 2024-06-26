@@ -23,8 +23,8 @@ RdsDbClusterSnapshotAttributeValue::RdsDbClusterSnapshotAttributeValue() :
 {
 }
 
-RdsDbClusterSnapshotAttributeValue::RdsDbClusterSnapshotAttributeValue(JsonView jsonValue) : 
-    m_accountIdsHasBeenSet(false)
+RdsDbClusterSnapshotAttributeValue::RdsDbClusterSnapshotAttributeValue(JsonView jsonValue)
+  : RdsDbClusterSnapshotAttributeValue()
 {
   *this = jsonValue;
 }

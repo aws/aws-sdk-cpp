@@ -25,10 +25,8 @@ OrganizationNode::OrganizationNode() :
 {
 }
 
-OrganizationNode::OrganizationNode(JsonView jsonValue) : 
-    m_type(OrganizationNodeType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_valueHasBeenSet(false)
+OrganizationNode::OrganizationNode(JsonView jsonValue)
+  : OrganizationNode()
 {
   *this = jsonValue;
 }

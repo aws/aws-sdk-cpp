@@ -26,11 +26,8 @@ RecommendedOptionProjectedMetric::RecommendedOptionProjectedMetric() :
 {
 }
 
-RecommendedOptionProjectedMetric::RecommendedOptionProjectedMetric(JsonView jsonValue) : 
-    m_recommendedInstanceTypeHasBeenSet(false),
-    m_rank(0),
-    m_rankHasBeenSet(false),
-    m_projectedMetricsHasBeenSet(false)
+RecommendedOptionProjectedMetric::RecommendedOptionProjectedMetric(JsonView jsonValue)
+  : RecommendedOptionProjectedMetric()
 {
   *this = jsonValue;
 }

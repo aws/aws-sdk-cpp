@@ -24,9 +24,8 @@ AssetBundleExportJobRefreshScheduleOverrideProperties::AssetBundleExportJobRefre
 {
 }
 
-AssetBundleExportJobRefreshScheduleOverrideProperties::AssetBundleExportJobRefreshScheduleOverrideProperties(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_propertiesHasBeenSet(false)
+AssetBundleExportJobRefreshScheduleOverrideProperties::AssetBundleExportJobRefreshScheduleOverrideProperties(JsonView jsonValue)
+  : AssetBundleExportJobRefreshScheduleOverrideProperties()
 {
   *this = jsonValue;
 }

@@ -29,14 +29,8 @@ ExecuteCommandLogConfiguration::ExecuteCommandLogConfiguration() :
 {
 }
 
-ExecuteCommandLogConfiguration::ExecuteCommandLogConfiguration(JsonView jsonValue) : 
-    m_cloudWatchLogGroupNameHasBeenSet(false),
-    m_cloudWatchEncryptionEnabled(false),
-    m_cloudWatchEncryptionEnabledHasBeenSet(false),
-    m_s3BucketNameHasBeenSet(false),
-    m_s3EncryptionEnabled(false),
-    m_s3EncryptionEnabledHasBeenSet(false),
-    m_s3KeyPrefixHasBeenSet(false)
+ExecuteCommandLogConfiguration::ExecuteCommandLogConfiguration(JsonView jsonValue)
+  : ExecuteCommandLogConfiguration()
 {
   *this = jsonValue;
 }

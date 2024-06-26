@@ -24,9 +24,8 @@ LoRaWANJoinEventNotificationConfigurations::LoRaWANJoinEventNotificationConfigur
 {
 }
 
-LoRaWANJoinEventNotificationConfigurations::LoRaWANJoinEventNotificationConfigurations(JsonView jsonValue) : 
-    m_devEuiEventTopic(EventNotificationTopicStatus::NOT_SET),
-    m_devEuiEventTopicHasBeenSet(false)
+LoRaWANJoinEventNotificationConfigurations::LoRaWANJoinEventNotificationConfigurations(JsonView jsonValue)
+  : LoRaWANJoinEventNotificationConfigurations()
 {
   *this = jsonValue;
 }

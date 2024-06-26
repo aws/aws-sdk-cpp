@@ -30,14 +30,8 @@ ClientCertificate::ClientCertificate() :
 {
 }
 
-ClientCertificate::ClientCertificate(JsonView jsonValue) : 
-    m_clientCertificateIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_pemEncodedCertificateHasBeenSet(false),
-    m_createdDateHasBeenSet(false),
-    m_expirationDateHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
+ClientCertificate::ClientCertificate(JsonView jsonValue)
+  : ClientCertificate()
 {
   *this = jsonValue;
 }

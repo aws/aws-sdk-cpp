@@ -22,8 +22,8 @@ StartReferenceImportJobResult::StartReferenceImportJobResult() :
 {
 }
 
-StartReferenceImportJobResult::StartReferenceImportJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(ReferenceImportJobStatus::NOT_SET)
+StartReferenceImportJobResult::StartReferenceImportJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : StartReferenceImportJobResult()
 {
   *this = result;
 }

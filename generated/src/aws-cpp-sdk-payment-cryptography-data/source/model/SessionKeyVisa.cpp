@@ -24,9 +24,8 @@ SessionKeyVisa::SessionKeyVisa() :
 {
 }
 
-SessionKeyVisa::SessionKeyVisa(JsonView jsonValue) : 
-    m_panSequenceNumberHasBeenSet(false),
-    m_primaryAccountNumberHasBeenSet(false)
+SessionKeyVisa::SessionKeyVisa(JsonView jsonValue)
+  : SessionKeyVisa()
 {
   *this = jsonValue;
 }

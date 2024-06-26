@@ -22,8 +22,8 @@ DescribeStudioLifecycleConfigResult::DescribeStudioLifecycleConfigResult() :
 {
 }
 
-DescribeStudioLifecycleConfigResult::DescribeStudioLifecycleConfigResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_studioLifecycleConfigAppType(StudioLifecycleConfigAppType::NOT_SET)
+DescribeStudioLifecycleConfigResult::DescribeStudioLifecycleConfigResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeStudioLifecycleConfigResult()
 {
   *this = result;
 }

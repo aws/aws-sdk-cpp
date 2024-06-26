@@ -29,14 +29,8 @@ FailedAccount::FailedAccount() :
 {
 }
 
-FailedAccount::FailedAccount(JsonView jsonValue) : 
-    m_accountIdHasBeenSet(false),
-    m_errorCode(ErrorCode::NOT_SET),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_resourceStatusHasBeenSet(false),
-    m_status(Status::NOT_SET),
-    m_statusHasBeenSet(false)
+FailedAccount::FailedAccount(JsonView jsonValue)
+  : FailedAccount()
 {
   *this = jsonValue;
 }

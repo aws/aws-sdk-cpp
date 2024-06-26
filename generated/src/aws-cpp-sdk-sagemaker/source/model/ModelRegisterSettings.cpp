@@ -25,10 +25,8 @@ ModelRegisterSettings::ModelRegisterSettings() :
 {
 }
 
-ModelRegisterSettings::ModelRegisterSettings(JsonView jsonValue) : 
-    m_status(FeatureStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_crossAccountModelRegisterRoleArnHasBeenSet(false)
+ModelRegisterSettings::ModelRegisterSettings(JsonView jsonValue)
+  : ModelRegisterSettings()
 {
   *this = jsonValue;
 }

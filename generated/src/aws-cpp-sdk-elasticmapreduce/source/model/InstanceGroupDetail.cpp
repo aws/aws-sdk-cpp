@@ -42,27 +42,8 @@ InstanceGroupDetail::InstanceGroupDetail() :
 {
 }
 
-InstanceGroupDetail::InstanceGroupDetail(JsonView jsonValue) : 
-    m_instanceGroupIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_market(MarketType::NOT_SET),
-    m_marketHasBeenSet(false),
-    m_instanceRole(InstanceRoleType::NOT_SET),
-    m_instanceRoleHasBeenSet(false),
-    m_bidPriceHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_instanceRequestCount(0),
-    m_instanceRequestCountHasBeenSet(false),
-    m_instanceRunningCount(0),
-    m_instanceRunningCountHasBeenSet(false),
-    m_state(InstanceGroupState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_lastStateChangeReasonHasBeenSet(false),
-    m_creationDateTimeHasBeenSet(false),
-    m_startDateTimeHasBeenSet(false),
-    m_readyDateTimeHasBeenSet(false),
-    m_endDateTimeHasBeenSet(false),
-    m_customAmiIdHasBeenSet(false)
+InstanceGroupDetail::InstanceGroupDetail(JsonView jsonValue)
+  : InstanceGroupDetail()
 {
   *this = jsonValue;
 }

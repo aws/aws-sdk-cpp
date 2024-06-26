@@ -25,10 +25,8 @@ DeleteDetectorRequest::DeleteDetectorRequest() :
 {
 }
 
-DeleteDetectorRequest::DeleteDetectorRequest(JsonView jsonValue) : 
-    m_messageIdHasBeenSet(false),
-    m_detectorModelNameHasBeenSet(false),
-    m_keyValueHasBeenSet(false)
+DeleteDetectorRequest::DeleteDetectorRequest(JsonView jsonValue)
+  : DeleteDetectorRequest()
 {
   *this = jsonValue;
 }

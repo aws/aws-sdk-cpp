@@ -24,9 +24,8 @@ AdditionalDataset::AdditionalDataset() :
 {
 }
 
-AdditionalDataset::AdditionalDataset(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_configurationHasBeenSet(false)
+AdditionalDataset::AdditionalDataset(JsonView jsonValue)
+  : AdditionalDataset()
 {
   *this = jsonValue;
 }

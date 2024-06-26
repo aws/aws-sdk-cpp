@@ -28,13 +28,8 @@ DataIngestionJobSummary::DataIngestionJobSummary() :
 {
 }
 
-DataIngestionJobSummary::DataIngestionJobSummary(JsonView jsonValue) : 
-    m_jobIdHasBeenSet(false),
-    m_datasetNameHasBeenSet(false),
-    m_datasetArnHasBeenSet(false),
-    m_ingestionInputConfigurationHasBeenSet(false),
-    m_status(IngestionJobStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+DataIngestionJobSummary::DataIngestionJobSummary(JsonView jsonValue)
+  : DataIngestionJobSummary()
 {
   *this = jsonValue;
 }

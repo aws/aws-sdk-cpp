@@ -25,10 +25,8 @@ LabelMatchStatement::LabelMatchStatement() :
 {
 }
 
-LabelMatchStatement::LabelMatchStatement(JsonView jsonValue) : 
-    m_scope(LabelMatchScope::NOT_SET),
-    m_scopeHasBeenSet(false),
-    m_keyHasBeenSet(false)
+LabelMatchStatement::LabelMatchStatement(JsonView jsonValue)
+  : LabelMatchStatement()
 {
   *this = jsonValue;
 }

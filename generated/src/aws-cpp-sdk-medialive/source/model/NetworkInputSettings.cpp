@@ -25,10 +25,8 @@ NetworkInputSettings::NetworkInputSettings() :
 {
 }
 
-NetworkInputSettings::NetworkInputSettings(JsonView jsonValue) : 
-    m_hlsInputSettingsHasBeenSet(false),
-    m_serverValidation(NetworkInputServerValidation::NOT_SET),
-    m_serverValidationHasBeenSet(false)
+NetworkInputSettings::NetworkInputSettings(JsonView jsonValue)
+  : NetworkInputSettings()
 {
   *this = jsonValue;
 }

@@ -24,10 +24,8 @@ TestInvokeAuthorizerResult::TestInvokeAuthorizerResult() :
 {
 }
 
-TestInvokeAuthorizerResult::TestInvokeAuthorizerResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_isAuthenticated(false),
-    m_refreshAfterInSeconds(0),
-    m_disconnectAfterInSeconds(0)
+TestInvokeAuthorizerResult::TestInvokeAuthorizerResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : TestInvokeAuthorizerResult()
 {
   *this = result;
 }

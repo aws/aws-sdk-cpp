@@ -29,14 +29,8 @@ AgentInfo::AgentInfo() :
 {
 }
 
-AgentInfo::AgentInfo(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_connectedToAgentTimestampHasBeenSet(false),
-    m_agentPauseDurationInSeconds(0),
-    m_agentPauseDurationInSecondsHasBeenSet(false),
-    m_hierarchyGroupsHasBeenSet(false),
-    m_deviceInfoHasBeenSet(false),
-    m_capabilitiesHasBeenSet(false)
+AgentInfo::AgentInfo(JsonView jsonValue)
+  : AgentInfo()
 {
   *this = jsonValue;
 }

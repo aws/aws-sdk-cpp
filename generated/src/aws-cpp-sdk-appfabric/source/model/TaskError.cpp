@@ -24,9 +24,8 @@ TaskError::TaskError() :
 {
 }
 
-TaskError::TaskError(JsonView jsonValue) : 
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
+TaskError::TaskError(JsonView jsonValue)
+  : TaskError()
 {
   *this = jsonValue;
 }

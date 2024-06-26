@@ -25,10 +25,8 @@ ServiceNowConnectorProfileCredentials::ServiceNowConnectorProfileCredentials() :
 {
 }
 
-ServiceNowConnectorProfileCredentials::ServiceNowConnectorProfileCredentials(JsonView jsonValue) : 
-    m_usernameHasBeenSet(false),
-    m_passwordHasBeenSet(false),
-    m_oAuth2CredentialsHasBeenSet(false)
+ServiceNowConnectorProfileCredentials::ServiceNowConnectorProfileCredentials(JsonView jsonValue)
+  : ServiceNowConnectorProfileCredentials()
 {
   *this = jsonValue;
 }

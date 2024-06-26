@@ -28,13 +28,8 @@ SegmentDimensions::SegmentDimensions() :
 {
 }
 
-SegmentDimensions::SegmentDimensions(JsonView jsonValue) : 
-    m_attributesHasBeenSet(false),
-    m_behaviorHasBeenSet(false),
-    m_demographicHasBeenSet(false),
-    m_locationHasBeenSet(false),
-    m_metricsHasBeenSet(false),
-    m_userAttributesHasBeenSet(false)
+SegmentDimensions::SegmentDimensions(JsonView jsonValue)
+  : SegmentDimensions()
 {
   *this = jsonValue;
 }

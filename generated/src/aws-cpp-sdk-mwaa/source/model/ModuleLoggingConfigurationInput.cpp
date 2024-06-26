@@ -26,11 +26,8 @@ ModuleLoggingConfigurationInput::ModuleLoggingConfigurationInput() :
 {
 }
 
-ModuleLoggingConfigurationInput::ModuleLoggingConfigurationInput(JsonView jsonValue) : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_logLevel(LoggingLevel::NOT_SET),
-    m_logLevelHasBeenSet(false)
+ModuleLoggingConfigurationInput::ModuleLoggingConfigurationInput(JsonView jsonValue)
+  : ModuleLoggingConfigurationInput()
 {
   *this = jsonValue;
 }

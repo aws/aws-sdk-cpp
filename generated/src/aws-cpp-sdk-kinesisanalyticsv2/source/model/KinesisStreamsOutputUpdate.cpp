@@ -23,8 +23,8 @@ KinesisStreamsOutputUpdate::KinesisStreamsOutputUpdate() :
 {
 }
 
-KinesisStreamsOutputUpdate::KinesisStreamsOutputUpdate(JsonView jsonValue) : 
-    m_resourceARNUpdateHasBeenSet(false)
+KinesisStreamsOutputUpdate::KinesisStreamsOutputUpdate(JsonView jsonValue)
+  : KinesisStreamsOutputUpdate()
 {
   *this = jsonValue;
 }

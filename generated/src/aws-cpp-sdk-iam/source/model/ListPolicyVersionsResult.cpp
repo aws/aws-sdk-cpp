@@ -22,8 +22,8 @@ ListPolicyVersionsResult::ListPolicyVersionsResult() :
 {
 }
 
-ListPolicyVersionsResult::ListPolicyVersionsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_isTruncated(false)
+ListPolicyVersionsResult::ListPolicyVersionsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : ListPolicyVersionsResult()
 {
   *this = result;
 }

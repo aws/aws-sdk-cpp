@@ -23,8 +23,8 @@ LoaderIdResult::LoaderIdResult() :
 {
 }
 
-LoaderIdResult::LoaderIdResult(JsonView jsonValue) : 
-    m_loadIdsHasBeenSet(false)
+LoaderIdResult::LoaderIdResult(JsonView jsonValue)
+  : LoaderIdResult()
 {
   *this = jsonValue;
 }

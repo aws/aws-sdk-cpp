@@ -22,8 +22,8 @@ CreateServiceNetworkResult::CreateServiceNetworkResult() :
 {
 }
 
-CreateServiceNetworkResult::CreateServiceNetworkResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_authType(AuthType::NOT_SET)
+CreateServiceNetworkResult::CreateServiceNetworkResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateServiceNetworkResult()
 {
   *this = result;
 }

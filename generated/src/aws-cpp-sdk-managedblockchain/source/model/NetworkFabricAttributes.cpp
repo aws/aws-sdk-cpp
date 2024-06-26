@@ -25,10 +25,8 @@ NetworkFabricAttributes::NetworkFabricAttributes() :
 {
 }
 
-NetworkFabricAttributes::NetworkFabricAttributes(JsonView jsonValue) : 
-    m_orderingServiceEndpointHasBeenSet(false),
-    m_edition(Edition::NOT_SET),
-    m_editionHasBeenSet(false)
+NetworkFabricAttributes::NetworkFabricAttributes(JsonView jsonValue)
+  : NetworkFabricAttributes()
 {
   *this = jsonValue;
 }

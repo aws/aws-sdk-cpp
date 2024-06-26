@@ -30,15 +30,8 @@ FlywheelModelEvaluationMetrics::FlywheelModelEvaluationMetrics() :
 {
 }
 
-FlywheelModelEvaluationMetrics::FlywheelModelEvaluationMetrics(JsonView jsonValue) : 
-    m_averageF1Score(0.0),
-    m_averageF1ScoreHasBeenSet(false),
-    m_averagePrecision(0.0),
-    m_averagePrecisionHasBeenSet(false),
-    m_averageRecall(0.0),
-    m_averageRecallHasBeenSet(false),
-    m_averageAccuracy(0.0),
-    m_averageAccuracyHasBeenSet(false)
+FlywheelModelEvaluationMetrics::FlywheelModelEvaluationMetrics(JsonView jsonValue)
+  : FlywheelModelEvaluationMetrics()
 {
   *this = jsonValue;
 }

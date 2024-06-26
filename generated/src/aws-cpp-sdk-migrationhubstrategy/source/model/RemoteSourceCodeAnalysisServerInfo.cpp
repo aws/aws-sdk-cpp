@@ -23,8 +23,8 @@ RemoteSourceCodeAnalysisServerInfo::RemoteSourceCodeAnalysisServerInfo() :
 {
 }
 
-RemoteSourceCodeAnalysisServerInfo::RemoteSourceCodeAnalysisServerInfo(JsonView jsonValue) : 
-    m_remoteSourceCodeAnalysisServerConfigurationTimestampHasBeenSet(false)
+RemoteSourceCodeAnalysisServerInfo::RemoteSourceCodeAnalysisServerInfo(JsonView jsonValue)
+  : RemoteSourceCodeAnalysisServerInfo()
 {
   *this = jsonValue;
 }

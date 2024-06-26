@@ -28,13 +28,8 @@ ReportedRuntimeContextState::ReportedRuntimeContextState() :
 {
 }
 
-ReportedRuntimeContextState::ReportedRuntimeContextState(JsonView jsonValue) : 
-    m_desiredState(DesiredState::NOT_SET),
-    m_desiredStateHasBeenSet(false),
-    m_deviceReportedStatus(DeviceReportedStatus::NOT_SET),
-    m_deviceReportedStatusHasBeenSet(false),
-    m_deviceReportedTimeHasBeenSet(false),
-    m_runtimeContextNameHasBeenSet(false)
+ReportedRuntimeContextState::ReportedRuntimeContextState(JsonView jsonValue)
+  : ReportedRuntimeContextState()
 {
   *this = jsonValue;
 }

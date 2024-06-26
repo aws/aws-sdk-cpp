@@ -28,13 +28,8 @@ DocumentDetails::DocumentDetails() :
 {
 }
 
-DocumentDetails::DocumentDetails(JsonView jsonValue) : 
-    m_documentIdHasBeenSet(false),
-    m_status(DocumentStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_errorHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+DocumentDetails::DocumentDetails(JsonView jsonValue)
+  : DocumentDetails()
 {
   *this = jsonValue;
 }

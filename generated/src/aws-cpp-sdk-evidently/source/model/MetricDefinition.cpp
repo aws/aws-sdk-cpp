@@ -27,12 +27,8 @@ MetricDefinition::MetricDefinition() :
 {
 }
 
-MetricDefinition::MetricDefinition(JsonView jsonValue) : 
-    m_entityIdKeyHasBeenSet(false),
-    m_eventPatternHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_unitLabelHasBeenSet(false),
-    m_valueKeyHasBeenSet(false)
+MetricDefinition::MetricDefinition(JsonView jsonValue)
+  : MetricDefinition()
 {
   *this = jsonValue;
 }

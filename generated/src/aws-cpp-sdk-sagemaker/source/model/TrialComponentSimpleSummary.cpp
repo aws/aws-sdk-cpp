@@ -27,12 +27,8 @@ TrialComponentSimpleSummary::TrialComponentSimpleSummary() :
 {
 }
 
-TrialComponentSimpleSummary::TrialComponentSimpleSummary(JsonView jsonValue) : 
-    m_trialComponentNameHasBeenSet(false),
-    m_trialComponentArnHasBeenSet(false),
-    m_trialComponentSourceHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_createdByHasBeenSet(false)
+TrialComponentSimpleSummary::TrialComponentSimpleSummary(JsonView jsonValue)
+  : TrialComponentSimpleSummary()
 {
   *this = jsonValue;
 }

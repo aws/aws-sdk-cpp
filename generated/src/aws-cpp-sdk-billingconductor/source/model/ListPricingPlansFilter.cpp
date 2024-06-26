@@ -23,8 +23,8 @@ ListPricingPlansFilter::ListPricingPlansFilter() :
 {
 }
 
-ListPricingPlansFilter::ListPricingPlansFilter(JsonView jsonValue) : 
-    m_arnsHasBeenSet(false)
+ListPricingPlansFilter::ListPricingPlansFilter(JsonView jsonValue)
+  : ListPricingPlansFilter()
 {
   *this = jsonValue;
 }

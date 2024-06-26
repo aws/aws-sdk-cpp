@@ -25,10 +25,8 @@ ResourceStringFilter::ResourceStringFilter() :
 {
 }
 
-ResourceStringFilter::ResourceStringFilter(JsonView jsonValue) : 
-    m_comparison(ResourceStringComparison::NOT_SET),
-    m_comparisonHasBeenSet(false),
-    m_valueHasBeenSet(false)
+ResourceStringFilter::ResourceStringFilter(JsonView jsonValue)
+  : ResourceStringFilter()
 {
   *this = jsonValue;
 }

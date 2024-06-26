@@ -26,11 +26,8 @@ StrategySummary::StrategySummary() :
 {
 }
 
-StrategySummary::StrategySummary(JsonView jsonValue) : 
-    m_count(0),
-    m_countHasBeenSet(false),
-    m_strategy(Strategy::NOT_SET),
-    m_strategyHasBeenSet(false)
+StrategySummary::StrategySummary(JsonView jsonValue)
+  : StrategySummary()
 {
   *this = jsonValue;
 }

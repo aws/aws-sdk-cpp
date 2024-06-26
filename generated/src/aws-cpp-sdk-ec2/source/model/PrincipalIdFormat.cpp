@@ -26,9 +26,8 @@ PrincipalIdFormat::PrincipalIdFormat() :
 {
 }
 
-PrincipalIdFormat::PrincipalIdFormat(const XmlNode& xmlNode) : 
-    m_arnHasBeenSet(false),
-    m_statusesHasBeenSet(false)
+PrincipalIdFormat::PrincipalIdFormat(const XmlNode& xmlNode)
+  : PrincipalIdFormat()
 {
   *this = xmlNode;
 }

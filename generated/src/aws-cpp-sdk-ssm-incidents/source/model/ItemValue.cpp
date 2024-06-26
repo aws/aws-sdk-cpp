@@ -26,11 +26,8 @@ ItemValue::ItemValue() :
 {
 }
 
-ItemValue::ItemValue(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_metricDefinitionHasBeenSet(false),
-    m_pagerDutyIncidentDetailHasBeenSet(false),
-    m_urlHasBeenSet(false)
+ItemValue::ItemValue(JsonView jsonValue)
+  : ItemValue()
 {
   *this = jsonValue;
 }

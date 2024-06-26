@@ -25,10 +25,8 @@ BatchDetachObject::BatchDetachObject() :
 {
 }
 
-BatchDetachObject::BatchDetachObject(JsonView jsonValue) : 
-    m_parentReferenceHasBeenSet(false),
-    m_linkNameHasBeenSet(false),
-    m_batchReferenceNameHasBeenSet(false)
+BatchDetachObject::BatchDetachObject(JsonView jsonValue)
+  : BatchDetachObject()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ SnowflakeRoleConfiguration::SnowflakeRoleConfiguration() :
 {
 }
 
-SnowflakeRoleConfiguration::SnowflakeRoleConfiguration(JsonView jsonValue) : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_snowflakeRoleHasBeenSet(false)
+SnowflakeRoleConfiguration::SnowflakeRoleConfiguration(JsonView jsonValue)
+  : SnowflakeRoleConfiguration()
 {
   *this = jsonValue;
 }

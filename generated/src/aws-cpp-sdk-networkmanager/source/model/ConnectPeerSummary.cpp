@@ -31,16 +31,8 @@ ConnectPeerSummary::ConnectPeerSummary() :
 {
 }
 
-ConnectPeerSummary::ConnectPeerSummary(JsonView jsonValue) : 
-    m_coreNetworkIdHasBeenSet(false),
-    m_connectAttachmentIdHasBeenSet(false),
-    m_connectPeerIdHasBeenSet(false),
-    m_edgeLocationHasBeenSet(false),
-    m_connectPeerState(ConnectPeerState::NOT_SET),
-    m_connectPeerStateHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_subnetArnHasBeenSet(false)
+ConnectPeerSummary::ConnectPeerSummary(JsonView jsonValue)
+  : ConnectPeerSummary()
 {
   *this = jsonValue;
 }

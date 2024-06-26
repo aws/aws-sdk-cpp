@@ -26,11 +26,8 @@ SnapStartResponse::SnapStartResponse() :
 {
 }
 
-SnapStartResponse::SnapStartResponse(JsonView jsonValue) : 
-    m_applyOn(SnapStartApplyOn::NOT_SET),
-    m_applyOnHasBeenSet(false),
-    m_optimizationStatus(SnapStartOptimizationStatus::NOT_SET),
-    m_optimizationStatusHasBeenSet(false)
+SnapStartResponse::SnapStartResponse(JsonView jsonValue)
+  : SnapStartResponse()
 {
   *this = jsonValue;
 }

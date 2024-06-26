@@ -24,9 +24,8 @@ ImageConfigError::ImageConfigError() :
 {
 }
 
-ImageConfigError::ImageConfigError(JsonView jsonValue) : 
-    m_errorCodeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+ImageConfigError::ImageConfigError(JsonView jsonValue)
+  : ImageConfigError()
 {
   *this = jsonValue;
 }

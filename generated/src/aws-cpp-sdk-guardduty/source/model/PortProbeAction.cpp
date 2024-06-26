@@ -25,10 +25,8 @@ PortProbeAction::PortProbeAction() :
 {
 }
 
-PortProbeAction::PortProbeAction(JsonView jsonValue) : 
-    m_blocked(false),
-    m_blockedHasBeenSet(false),
-    m_portProbeDetailsHasBeenSet(false)
+PortProbeAction::PortProbeAction(JsonView jsonValue)
+  : PortProbeAction()
 {
   *this = jsonValue;
 }

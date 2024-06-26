@@ -24,9 +24,8 @@ ConversationLogSettings::ConversationLogSettings() :
 {
 }
 
-ConversationLogSettings::ConversationLogSettings(JsonView jsonValue) : 
-    m_textLogSettingsHasBeenSet(false),
-    m_audioLogSettingsHasBeenSet(false)
+ConversationLogSettings::ConversationLogSettings(JsonView jsonValue)
+  : ConversationLogSettings()
 {
   *this = jsonValue;
 }

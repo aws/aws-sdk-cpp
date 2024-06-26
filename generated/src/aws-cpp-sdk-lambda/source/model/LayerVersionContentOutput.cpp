@@ -28,13 +28,8 @@ LayerVersionContentOutput::LayerVersionContentOutput() :
 {
 }
 
-LayerVersionContentOutput::LayerVersionContentOutput(JsonView jsonValue) : 
-    m_locationHasBeenSet(false),
-    m_codeSha256HasBeenSet(false),
-    m_codeSize(0),
-    m_codeSizeHasBeenSet(false),
-    m_signingProfileVersionArnHasBeenSet(false),
-    m_signingJobArnHasBeenSet(false)
+LayerVersionContentOutput::LayerVersionContentOutput(JsonView jsonValue)
+  : LayerVersionContentOutput()
 {
   *this = jsonValue;
 }

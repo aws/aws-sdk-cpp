@@ -29,14 +29,8 @@ LoadBalancerTlsCertificateDomainValidationRecord::LoadBalancerTlsCertificateDoma
 {
 }
 
-LoadBalancerTlsCertificateDomainValidationRecord::LoadBalancerTlsCertificateDomainValidationRecord(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_validationStatus(LoadBalancerTlsCertificateDomainStatus::NOT_SET),
-    m_validationStatusHasBeenSet(false),
-    m_domainNameHasBeenSet(false),
-    m_dnsRecordCreationStateHasBeenSet(false)
+LoadBalancerTlsCertificateDomainValidationRecord::LoadBalancerTlsCertificateDomainValidationRecord(JsonView jsonValue)
+  : LoadBalancerTlsCertificateDomainValidationRecord()
 {
   *this = jsonValue;
 }

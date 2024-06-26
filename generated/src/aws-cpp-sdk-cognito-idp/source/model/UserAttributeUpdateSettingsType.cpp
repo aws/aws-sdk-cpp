@@ -23,8 +23,8 @@ UserAttributeUpdateSettingsType::UserAttributeUpdateSettingsType() :
 {
 }
 
-UserAttributeUpdateSettingsType::UserAttributeUpdateSettingsType(JsonView jsonValue) : 
-    m_attributesRequireVerificationBeforeUpdateHasBeenSet(false)
+UserAttributeUpdateSettingsType::UserAttributeUpdateSettingsType(JsonView jsonValue)
+  : UserAttributeUpdateSettingsType()
 {
   *this = jsonValue;
 }

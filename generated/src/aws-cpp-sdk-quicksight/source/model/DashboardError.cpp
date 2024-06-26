@@ -26,11 +26,8 @@ DashboardError::DashboardError() :
 {
 }
 
-DashboardError::DashboardError(JsonView jsonValue) : 
-    m_type(DashboardErrorType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_violatedEntitiesHasBeenSet(false)
+DashboardError::DashboardError(JsonView jsonValue)
+  : DashboardError()
 {
   *this = jsonValue;
 }

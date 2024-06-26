@@ -41,26 +41,8 @@ TargetGroupSummary::TargetGroupSummary() :
 {
 }
 
-TargetGroupSummary::TargetGroupSummary(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_ipAddressType(IpAddressType::NOT_SET),
-    m_ipAddressTypeHasBeenSet(false),
-    m_lambdaEventStructureVersion(LambdaEventStructureVersion::NOT_SET),
-    m_lambdaEventStructureVersionHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_protocol(TargetGroupProtocol::NOT_SET),
-    m_protocolHasBeenSet(false),
-    m_serviceArnsHasBeenSet(false),
-    m_status(TargetGroupStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_type(TargetGroupType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_vpcIdentifierHasBeenSet(false)
+TargetGroupSummary::TargetGroupSummary(JsonView jsonValue)
+  : TargetGroupSummary()
 {
   *this = jsonValue;
 }

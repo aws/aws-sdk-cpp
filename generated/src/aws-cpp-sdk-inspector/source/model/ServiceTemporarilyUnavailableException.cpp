@@ -25,10 +25,8 @@ ServiceTemporarilyUnavailableException::ServiceTemporarilyUnavailableException()
 {
 }
 
-ServiceTemporarilyUnavailableException::ServiceTemporarilyUnavailableException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_canRetry(false),
-    m_canRetryHasBeenSet(false)
+ServiceTemporarilyUnavailableException::ServiceTemporarilyUnavailableException(JsonView jsonValue)
+  : ServiceTemporarilyUnavailableException()
 {
   *this = jsonValue;
 }

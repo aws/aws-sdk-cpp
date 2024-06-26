@@ -22,8 +22,8 @@ SearchFacesByImageResult::SearchFacesByImageResult() :
 {
 }
 
-SearchFacesByImageResult::SearchFacesByImageResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_searchedFaceConfidence(0.0)
+SearchFacesByImageResult::SearchFacesByImageResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : SearchFacesByImageResult()
 {
   *this = result;
 }

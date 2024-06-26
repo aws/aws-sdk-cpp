@@ -27,12 +27,8 @@ MonitoringConfiguration::MonitoringConfiguration() :
 {
 }
 
-MonitoringConfiguration::MonitoringConfiguration(JsonView jsonValue) : 
-    m_persistentAppUI(PersistentAppUI::NOT_SET),
-    m_persistentAppUIHasBeenSet(false),
-    m_cloudWatchMonitoringConfigurationHasBeenSet(false),
-    m_s3MonitoringConfigurationHasBeenSet(false),
-    m_containerLogRotationConfigurationHasBeenSet(false)
+MonitoringConfiguration::MonitoringConfiguration(JsonView jsonValue)
+  : MonitoringConfiguration()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ SearchRoutingProfilesResult::SearchRoutingProfilesResult() :
 {
 }
 
-SearchRoutingProfilesResult::SearchRoutingProfilesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_approximateTotalCount(0)
+SearchRoutingProfilesResult::SearchRoutingProfilesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : SearchRoutingProfilesResult()
 {
   *this = result;
 }

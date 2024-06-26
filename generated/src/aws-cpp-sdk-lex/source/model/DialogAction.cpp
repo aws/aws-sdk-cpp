@@ -32,17 +32,8 @@ DialogAction::DialogAction() :
 {
 }
 
-DialogAction::DialogAction(JsonView jsonValue) : 
-    m_type(DialogActionType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_intentNameHasBeenSet(false),
-    m_slotsHasBeenSet(false),
-    m_slotToElicitHasBeenSet(false),
-    m_fulfillmentState(FulfillmentState::NOT_SET),
-    m_fulfillmentStateHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_messageFormat(MessageFormatType::NOT_SET),
-    m_messageFormatHasBeenSet(false)
+DialogAction::DialogAction(JsonView jsonValue)
+  : DialogAction()
 {
   *this = jsonValue;
 }

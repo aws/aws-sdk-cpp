@@ -27,10 +27,8 @@ TransitGatewayAttachmentAssociation::TransitGatewayAttachmentAssociation() :
 {
 }
 
-TransitGatewayAttachmentAssociation::TransitGatewayAttachmentAssociation(const XmlNode& xmlNode) : 
-    m_transitGatewayRouteTableIdHasBeenSet(false),
-    m_state(TransitGatewayAssociationState::NOT_SET),
-    m_stateHasBeenSet(false)
+TransitGatewayAttachmentAssociation::TransitGatewayAttachmentAssociation(const XmlNode& xmlNode)
+  : TransitGatewayAttachmentAssociation()
 {
   *this = xmlNode;
 }

@@ -25,10 +25,8 @@ ProcessorParameter::ProcessorParameter() :
 {
 }
 
-ProcessorParameter::ProcessorParameter(JsonView jsonValue) : 
-    m_parameterName(ProcessorParameterName::NOT_SET),
-    m_parameterNameHasBeenSet(false),
-    m_parameterValueHasBeenSet(false)
+ProcessorParameter::ProcessorParameter(JsonView jsonValue)
+  : ProcessorParameter()
 {
   *this = jsonValue;
 }

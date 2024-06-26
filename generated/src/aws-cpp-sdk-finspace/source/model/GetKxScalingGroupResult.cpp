@@ -22,8 +22,8 @@ GetKxScalingGroupResult::GetKxScalingGroupResult() :
 {
 }
 
-GetKxScalingGroupResult::GetKxScalingGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(KxScalingGroupStatus::NOT_SET)
+GetKxScalingGroupResult::GetKxScalingGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetKxScalingGroupResult()
 {
   *this = result;
 }

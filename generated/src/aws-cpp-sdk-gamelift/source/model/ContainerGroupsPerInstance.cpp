@@ -26,11 +26,8 @@ ContainerGroupsPerInstance::ContainerGroupsPerInstance() :
 {
 }
 
-ContainerGroupsPerInstance::ContainerGroupsPerInstance(JsonView jsonValue) : 
-    m_desiredReplicaContainerGroupsPerInstance(0),
-    m_desiredReplicaContainerGroupsPerInstanceHasBeenSet(false),
-    m_maxReplicaContainerGroupsPerInstance(0),
-    m_maxReplicaContainerGroupsPerInstanceHasBeenSet(false)
+ContainerGroupsPerInstance::ContainerGroupsPerInstance(JsonView jsonValue)
+  : ContainerGroupsPerInstance()
 {
   *this = jsonValue;
 }

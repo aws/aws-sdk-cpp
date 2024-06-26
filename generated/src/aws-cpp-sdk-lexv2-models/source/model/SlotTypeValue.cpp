@@ -24,9 +24,8 @@ SlotTypeValue::SlotTypeValue() :
 {
 }
 
-SlotTypeValue::SlotTypeValue(JsonView jsonValue) : 
-    m_sampleValueHasBeenSet(false),
-    m_synonymsHasBeenSet(false)
+SlotTypeValue::SlotTypeValue(JsonView jsonValue)
+  : SlotTypeValue()
 {
   *this = jsonValue;
 }

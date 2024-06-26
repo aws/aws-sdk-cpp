@@ -26,11 +26,8 @@ ApplicationVersionChangeDetails::ApplicationVersionChangeDetails() :
 {
 }
 
-ApplicationVersionChangeDetails::ApplicationVersionChangeDetails(JsonView jsonValue) : 
-    m_applicationVersionUpdatedFrom(0),
-    m_applicationVersionUpdatedFromHasBeenSet(false),
-    m_applicationVersionUpdatedTo(0),
-    m_applicationVersionUpdatedToHasBeenSet(false)
+ApplicationVersionChangeDetails::ApplicationVersionChangeDetails(JsonView jsonValue)
+  : ApplicationVersionChangeDetails()
 {
   *this = jsonValue;
 }

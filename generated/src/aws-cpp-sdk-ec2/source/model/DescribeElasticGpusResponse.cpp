@@ -22,8 +22,8 @@ DescribeElasticGpusResponse::DescribeElasticGpusResponse() :
 {
 }
 
-DescribeElasticGpusResponse::DescribeElasticGpusResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_maxResults(0)
+DescribeElasticGpusResponse::DescribeElasticGpusResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : DescribeElasticGpusResponse()
 {
   *this = result;
 }

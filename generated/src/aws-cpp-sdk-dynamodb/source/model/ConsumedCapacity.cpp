@@ -32,17 +32,8 @@ ConsumedCapacity::ConsumedCapacity() :
 {
 }
 
-ConsumedCapacity::ConsumedCapacity(JsonView jsonValue) : 
-    m_tableNameHasBeenSet(false),
-    m_capacityUnits(0.0),
-    m_capacityUnitsHasBeenSet(false),
-    m_readCapacityUnits(0.0),
-    m_readCapacityUnitsHasBeenSet(false),
-    m_writeCapacityUnits(0.0),
-    m_writeCapacityUnitsHasBeenSet(false),
-    m_tableHasBeenSet(false),
-    m_localSecondaryIndexesHasBeenSet(false),
-    m_globalSecondaryIndexesHasBeenSet(false)
+ConsumedCapacity::ConsumedCapacity(JsonView jsonValue)
+  : ConsumedCapacity()
 {
   *this = jsonValue;
 }

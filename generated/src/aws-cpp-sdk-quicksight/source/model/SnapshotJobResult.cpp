@@ -23,8 +23,8 @@ SnapshotJobResult::SnapshotJobResult() :
 {
 }
 
-SnapshotJobResult::SnapshotJobResult(JsonView jsonValue) : 
-    m_anonymousUsersHasBeenSet(false)
+SnapshotJobResult::SnapshotJobResult(JsonView jsonValue)
+  : SnapshotJobResult()
 {
   *this = jsonValue;
 }

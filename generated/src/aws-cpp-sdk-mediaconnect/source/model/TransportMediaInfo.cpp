@@ -23,8 +23,8 @@ TransportMediaInfo::TransportMediaInfo() :
 {
 }
 
-TransportMediaInfo::TransportMediaInfo(JsonView jsonValue) : 
-    m_programsHasBeenSet(false)
+TransportMediaInfo::TransportMediaInfo(JsonView jsonValue)
+  : TransportMediaInfo()
 {
   *this = jsonValue;
 }

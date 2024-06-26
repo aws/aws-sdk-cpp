@@ -31,14 +31,8 @@ RollbackDetails::RollbackDetails() :
 {
 }
 
-RollbackDetails::RollbackDetails(const XmlNode& xmlNode) : 
-    m_rollbackReasonHasBeenSet(false),
-    m_rollbackStartTimeHasBeenSet(false),
-    m_percentageCompleteOnRollback(0),
-    m_percentageCompleteOnRollbackHasBeenSet(false),
-    m_instancesToUpdateOnRollback(0),
-    m_instancesToUpdateOnRollbackHasBeenSet(false),
-    m_progressDetailsOnRollbackHasBeenSet(false)
+RollbackDetails::RollbackDetails(const XmlNode& xmlNode)
+  : RollbackDetails()
 {
   *this = xmlNode;
 }

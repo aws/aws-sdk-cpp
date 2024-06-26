@@ -25,10 +25,8 @@ Cvss3::Cvss3() :
 {
 }
 
-Cvss3::Cvss3(JsonView jsonValue) : 
-    m_baseScore(0.0),
-    m_baseScoreHasBeenSet(false),
-    m_scoringVectorHasBeenSet(false)
+Cvss3::Cvss3(JsonView jsonValue)
+  : Cvss3()
 {
   *this = jsonValue;
 }

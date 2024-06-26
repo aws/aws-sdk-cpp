@@ -24,9 +24,8 @@ EnvironmentResponse::EnvironmentResponse() :
 {
 }
 
-EnvironmentResponse::EnvironmentResponse(JsonView jsonValue) : 
-    m_variablesHasBeenSet(false),
-    m_errorHasBeenSet(false)
+EnvironmentResponse::EnvironmentResponse(JsonView jsonValue)
+  : EnvironmentResponse()
 {
   *this = jsonValue;
 }

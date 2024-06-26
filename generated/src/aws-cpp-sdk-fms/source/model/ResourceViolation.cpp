@@ -46,31 +46,8 @@ ResourceViolation::ResourceViolation() :
 {
 }
 
-ResourceViolation::ResourceViolation(JsonView jsonValue) : 
-    m_awsVPCSecurityGroupViolationHasBeenSet(false),
-    m_awsEc2NetworkInterfaceViolationHasBeenSet(false),
-    m_awsEc2InstanceViolationHasBeenSet(false),
-    m_networkFirewallMissingFirewallViolationHasBeenSet(false),
-    m_networkFirewallMissingSubnetViolationHasBeenSet(false),
-    m_networkFirewallMissingExpectedRTViolationHasBeenSet(false),
-    m_networkFirewallPolicyModifiedViolationHasBeenSet(false),
-    m_networkFirewallInternetTrafficNotInspectedViolationHasBeenSet(false),
-    m_networkFirewallInvalidRouteConfigurationViolationHasBeenSet(false),
-    m_networkFirewallBlackHoleRouteDetectedViolationHasBeenSet(false),
-    m_networkFirewallUnexpectedFirewallRoutesViolationHasBeenSet(false),
-    m_networkFirewallUnexpectedGatewayRoutesViolationHasBeenSet(false),
-    m_networkFirewallMissingExpectedRoutesViolationHasBeenSet(false),
-    m_dnsRuleGroupPriorityConflictViolationHasBeenSet(false),
-    m_dnsDuplicateRuleGroupViolationHasBeenSet(false),
-    m_dnsRuleGroupLimitExceededViolationHasBeenSet(false),
-    m_firewallSubnetIsOutOfScopeViolationHasBeenSet(false),
-    m_routeHasOutOfScopeEndpointViolationHasBeenSet(false),
-    m_thirdPartyFirewallMissingFirewallViolationHasBeenSet(false),
-    m_thirdPartyFirewallMissingSubnetViolationHasBeenSet(false),
-    m_thirdPartyFirewallMissingExpectedRouteTableViolationHasBeenSet(false),
-    m_firewallSubnetMissingVPCEndpointViolationHasBeenSet(false),
-    m_invalidNetworkAclEntriesViolationHasBeenSet(false),
-    m_possibleRemediationActionsHasBeenSet(false)
+ResourceViolation::ResourceViolation(JsonView jsonValue)
+  : ResourceViolation()
 {
   *this = jsonValue;
 }

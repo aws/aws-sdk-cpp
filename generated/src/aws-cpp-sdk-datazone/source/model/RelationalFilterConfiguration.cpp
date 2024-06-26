@@ -25,10 +25,8 @@ RelationalFilterConfiguration::RelationalFilterConfiguration() :
 {
 }
 
-RelationalFilterConfiguration::RelationalFilterConfiguration(JsonView jsonValue) : 
-    m_databaseNameHasBeenSet(false),
-    m_filterExpressionsHasBeenSet(false),
-    m_schemaNameHasBeenSet(false)
+RelationalFilterConfiguration::RelationalFilterConfiguration(JsonView jsonValue)
+  : RelationalFilterConfiguration()
 {
   *this = jsonValue;
 }

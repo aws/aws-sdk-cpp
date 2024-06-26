@@ -31,16 +31,8 @@ Theme::Theme() :
 {
 }
 
-Theme::Theme(JsonView jsonValue) : 
-    m_appIdHasBeenSet(false),
-    m_environmentNameHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_modifiedAtHasBeenSet(false),
-    m_valuesHasBeenSet(false),
-    m_overridesHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+Theme::Theme(JsonView jsonValue)
+  : Theme()
 {
   *this = jsonValue;
 }

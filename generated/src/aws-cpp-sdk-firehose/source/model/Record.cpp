@@ -24,8 +24,8 @@ Record::Record() :
 {
 }
 
-Record::Record(JsonView jsonValue) : 
-    m_dataHasBeenSet(false)
+Record::Record(JsonView jsonValue)
+  : Record()
 {
   *this = jsonValue;
 }

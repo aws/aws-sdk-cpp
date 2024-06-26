@@ -23,8 +23,8 @@ SchedulingPolicyListingDetail::SchedulingPolicyListingDetail() :
 {
 }
 
-SchedulingPolicyListingDetail::SchedulingPolicyListingDetail(JsonView jsonValue) : 
-    m_arnHasBeenSet(false)
+SchedulingPolicyListingDetail::SchedulingPolicyListingDetail(JsonView jsonValue)
+  : SchedulingPolicyListingDetail()
 {
   *this = jsonValue;
 }

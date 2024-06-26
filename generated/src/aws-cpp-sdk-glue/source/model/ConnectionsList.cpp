@@ -23,8 +23,8 @@ ConnectionsList::ConnectionsList() :
 {
 }
 
-ConnectionsList::ConnectionsList(JsonView jsonValue) : 
-    m_connectionsHasBeenSet(false)
+ConnectionsList::ConnectionsList(JsonView jsonValue)
+  : ConnectionsList()
 {
   *this = jsonValue;
 }

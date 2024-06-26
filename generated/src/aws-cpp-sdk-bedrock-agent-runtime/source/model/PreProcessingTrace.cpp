@@ -24,9 +24,8 @@ PreProcessingTrace::PreProcessingTrace() :
 {
 }
 
-PreProcessingTrace::PreProcessingTrace(JsonView jsonValue) : 
-    m_modelInvocationInputHasBeenSet(false),
-    m_modelInvocationOutputHasBeenSet(false)
+PreProcessingTrace::PreProcessingTrace(JsonView jsonValue)
+  : PreProcessingTrace()
 {
   *this = jsonValue;
 }

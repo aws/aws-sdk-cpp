@@ -32,17 +32,8 @@ IngestionJob::IngestionJob() :
 {
 }
 
-IngestionJob::IngestionJob(JsonView jsonValue) : 
-    m_dataSourceIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_failureReasonsHasBeenSet(false),
-    m_ingestionJobIdHasBeenSet(false),
-    m_knowledgeBaseIdHasBeenSet(false),
-    m_startedAtHasBeenSet(false),
-    m_statisticsHasBeenSet(false),
-    m_status(IngestionJobStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+IngestionJob::IngestionJob(JsonView jsonValue)
+  : IngestionJob()
 {
   *this = jsonValue;
 }

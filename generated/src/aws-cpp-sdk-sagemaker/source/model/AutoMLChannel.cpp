@@ -30,15 +30,8 @@ AutoMLChannel::AutoMLChannel() :
 {
 }
 
-AutoMLChannel::AutoMLChannel(JsonView jsonValue) : 
-    m_dataSourceHasBeenSet(false),
-    m_compressionType(CompressionType::NOT_SET),
-    m_compressionTypeHasBeenSet(false),
-    m_targetAttributeNameHasBeenSet(false),
-    m_contentTypeHasBeenSet(false),
-    m_channelType(AutoMLChannelType::NOT_SET),
-    m_channelTypeHasBeenSet(false),
-    m_sampleWeightAttributeNameHasBeenSet(false)
+AutoMLChannel::AutoMLChannel(JsonView jsonValue)
+  : AutoMLChannel()
 {
   *this = jsonValue;
 }

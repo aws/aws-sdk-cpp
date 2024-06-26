@@ -26,11 +26,8 @@ DifferentialPrivacyTemplateUpdateParameters::DifferentialPrivacyTemplateUpdatePa
 {
 }
 
-DifferentialPrivacyTemplateUpdateParameters::DifferentialPrivacyTemplateUpdateParameters(JsonView jsonValue) : 
-    m_epsilon(0),
-    m_epsilonHasBeenSet(false),
-    m_usersNoisePerQuery(0),
-    m_usersNoisePerQueryHasBeenSet(false)
+DifferentialPrivacyTemplateUpdateParameters::DifferentialPrivacyTemplateUpdateParameters(JsonView jsonValue)
+  : DifferentialPrivacyTemplateUpdateParameters()
 {
   *this = jsonValue;
 }

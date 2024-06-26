@@ -25,10 +25,8 @@ VolumeFilter::VolumeFilter() :
 {
 }
 
-VolumeFilter::VolumeFilter(JsonView jsonValue) : 
-    m_name(VolumeFilterName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+VolumeFilter::VolumeFilter(JsonView jsonValue)
+  : VolumeFilter()
 {
   *this = jsonValue;
 }

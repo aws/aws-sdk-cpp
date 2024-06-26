@@ -27,12 +27,8 @@ WorkflowConfiguration::WorkflowConfiguration() :
 {
 }
 
-WorkflowConfiguration::WorkflowConfiguration(JsonView jsonValue) : 
-    m_workflowArnHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_parallelGroupHasBeenSet(false),
-    m_onFailure(OnWorkflowFailure::NOT_SET),
-    m_onFailureHasBeenSet(false)
+WorkflowConfiguration::WorkflowConfiguration(JsonView jsonValue)
+  : WorkflowConfiguration()
 {
   *this = jsonValue;
 }

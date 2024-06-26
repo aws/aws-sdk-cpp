@@ -23,8 +23,8 @@ Regex::Regex() :
 {
 }
 
-Regex::Regex(JsonView jsonValue) : 
-    m_regexStringHasBeenSet(false)
+Regex::Regex(JsonView jsonValue)
+  : Regex()
 {
   *this = jsonValue;
 }

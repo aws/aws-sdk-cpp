@@ -27,12 +27,8 @@ AgentListEntry::AgentListEntry() :
 {
 }
 
-AgentListEntry::AgentListEntry(JsonView jsonValue) : 
-    m_agentArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_status(AgentStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_platformHasBeenSet(false)
+AgentListEntry::AgentListEntry(JsonView jsonValue)
+  : AgentListEntry()
 {
   *this = jsonValue;
 }

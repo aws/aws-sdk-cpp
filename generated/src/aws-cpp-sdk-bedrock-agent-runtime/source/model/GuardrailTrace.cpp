@@ -27,12 +27,8 @@ GuardrailTrace::GuardrailTrace() :
 {
 }
 
-GuardrailTrace::GuardrailTrace(JsonView jsonValue) : 
-    m_action(GuardrailAction::NOT_SET),
-    m_actionHasBeenSet(false),
-    m_inputAssessmentsHasBeenSet(false),
-    m_outputAssessmentsHasBeenSet(false),
-    m_traceIdHasBeenSet(false)
+GuardrailTrace::GuardrailTrace(JsonView jsonValue)
+  : GuardrailTrace()
 {
   *this = jsonValue;
 }

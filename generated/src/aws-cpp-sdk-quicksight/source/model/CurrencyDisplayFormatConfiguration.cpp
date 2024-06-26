@@ -31,16 +31,8 @@ CurrencyDisplayFormatConfiguration::CurrencyDisplayFormatConfiguration() :
 {
 }
 
-CurrencyDisplayFormatConfiguration::CurrencyDisplayFormatConfiguration(JsonView jsonValue) : 
-    m_prefixHasBeenSet(false),
-    m_suffixHasBeenSet(false),
-    m_separatorConfigurationHasBeenSet(false),
-    m_symbolHasBeenSet(false),
-    m_decimalPlacesConfigurationHasBeenSet(false),
-    m_numberScale(NumberScale::NOT_SET),
-    m_numberScaleHasBeenSet(false),
-    m_negativeValueConfigurationHasBeenSet(false),
-    m_nullValueFormatConfigurationHasBeenSet(false)
+CurrencyDisplayFormatConfiguration::CurrencyDisplayFormatConfiguration(JsonView jsonValue)
+  : CurrencyDisplayFormatConfiguration()
 {
   *this = jsonValue;
 }

@@ -34,19 +34,8 @@ GlobalConfiguration::GlobalConfiguration() :
 {
 }
 
-GlobalConfiguration::GlobalConfiguration(JsonView jsonValue) : 
-    m_initialAudioGain(0),
-    m_initialAudioGainHasBeenSet(false),
-    m_inputEndAction(GlobalConfigurationInputEndAction::NOT_SET),
-    m_inputEndActionHasBeenSet(false),
-    m_inputLossBehaviorHasBeenSet(false),
-    m_outputLockingMode(GlobalConfigurationOutputLockingMode::NOT_SET),
-    m_outputLockingModeHasBeenSet(false),
-    m_outputTimingSource(GlobalConfigurationOutputTimingSource::NOT_SET),
-    m_outputTimingSourceHasBeenSet(false),
-    m_supportLowFramerateInputs(GlobalConfigurationLowFramerateInputs::NOT_SET),
-    m_supportLowFramerateInputsHasBeenSet(false),
-    m_outputLockingSettingsHasBeenSet(false)
+GlobalConfiguration::GlobalConfiguration(JsonView jsonValue)
+  : GlobalConfiguration()
 {
   *this = jsonValue;
 }

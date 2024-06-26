@@ -27,12 +27,8 @@ Assessment::Assessment() :
 {
 }
 
-Assessment::Assessment(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_awsAccountHasBeenSet(false),
-    m_metadataHasBeenSet(false),
-    m_frameworkHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+Assessment::Assessment(JsonView jsonValue)
+  : Assessment()
 {
   *this = jsonValue;
 }

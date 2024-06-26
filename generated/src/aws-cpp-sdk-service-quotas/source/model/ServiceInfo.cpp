@@ -24,9 +24,8 @@ ServiceInfo::ServiceInfo() :
 {
 }
 
-ServiceInfo::ServiceInfo(JsonView jsonValue) : 
-    m_serviceCodeHasBeenSet(false),
-    m_serviceNameHasBeenSet(false)
+ServiceInfo::ServiceInfo(JsonView jsonValue)
+  : ServiceInfo()
 {
   *this = jsonValue;
 }

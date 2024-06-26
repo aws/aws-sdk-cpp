@@ -25,10 +25,8 @@ CustomLogSourceAttributes::CustomLogSourceAttributes() :
 {
 }
 
-CustomLogSourceAttributes::CustomLogSourceAttributes(JsonView jsonValue) : 
-    m_crawlerArnHasBeenSet(false),
-    m_databaseArnHasBeenSet(false),
-    m_tableArnHasBeenSet(false)
+CustomLogSourceAttributes::CustomLogSourceAttributes(JsonView jsonValue)
+  : CustomLogSourceAttributes()
 {
   *this = jsonValue;
 }

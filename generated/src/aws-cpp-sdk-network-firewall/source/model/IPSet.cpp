@@ -23,8 +23,8 @@ IPSet::IPSet() :
 {
 }
 
-IPSet::IPSet(JsonView jsonValue) : 
-    m_definitionHasBeenSet(false)
+IPSet::IPSet(JsonView jsonValue)
+  : IPSet()
 {
   *this = jsonValue;
 }

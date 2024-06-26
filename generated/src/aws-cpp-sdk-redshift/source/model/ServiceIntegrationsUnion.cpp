@@ -25,8 +25,8 @@ ServiceIntegrationsUnion::ServiceIntegrationsUnion() :
 {
 }
 
-ServiceIntegrationsUnion::ServiceIntegrationsUnion(const XmlNode& xmlNode) : 
-    m_lakeFormationHasBeenSet(false)
+ServiceIntegrationsUnion::ServiceIntegrationsUnion(const XmlNode& xmlNode)
+  : ServiceIntegrationsUnion()
 {
   *this = xmlNode;
 }

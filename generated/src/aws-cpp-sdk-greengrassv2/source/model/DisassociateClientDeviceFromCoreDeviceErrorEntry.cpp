@@ -25,10 +25,8 @@ DisassociateClientDeviceFromCoreDeviceErrorEntry::DisassociateClientDeviceFromCo
 {
 }
 
-DisassociateClientDeviceFromCoreDeviceErrorEntry::DisassociateClientDeviceFromCoreDeviceErrorEntry(JsonView jsonValue) : 
-    m_thingNameHasBeenSet(false),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+DisassociateClientDeviceFromCoreDeviceErrorEntry::DisassociateClientDeviceFromCoreDeviceErrorEntry(JsonView jsonValue)
+  : DisassociateClientDeviceFromCoreDeviceErrorEntry()
 {
   *this = jsonValue;
 }

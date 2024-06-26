@@ -25,10 +25,8 @@ ResponseTimeRootCause::ResponseTimeRootCause() :
 {
 }
 
-ResponseTimeRootCause::ResponseTimeRootCause(JsonView jsonValue) : 
-    m_servicesHasBeenSet(false),
-    m_clientImpacting(false),
-    m_clientImpactingHasBeenSet(false)
+ResponseTimeRootCause::ResponseTimeRootCause(JsonView jsonValue)
+  : ResponseTimeRootCause()
 {
   *this = jsonValue;
 }

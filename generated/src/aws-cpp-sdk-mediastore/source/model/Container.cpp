@@ -30,15 +30,8 @@ Container::Container() :
 {
 }
 
-Container::Container(JsonView jsonValue) : 
-    m_endpointHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_aRNHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_status(ContainerStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_accessLoggingEnabled(false),
-    m_accessLoggingEnabledHasBeenSet(false)
+Container::Container(JsonView jsonValue)
+  : Container()
 {
   *this = jsonValue;
 }

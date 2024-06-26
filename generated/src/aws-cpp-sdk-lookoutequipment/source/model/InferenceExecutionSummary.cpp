@@ -38,23 +38,8 @@ InferenceExecutionSummary::InferenceExecutionSummary() :
 {
 }
 
-InferenceExecutionSummary::InferenceExecutionSummary(JsonView jsonValue) : 
-    m_modelNameHasBeenSet(false),
-    m_modelArnHasBeenSet(false),
-    m_inferenceSchedulerNameHasBeenSet(false),
-    m_inferenceSchedulerArnHasBeenSet(false),
-    m_scheduledStartTimeHasBeenSet(false),
-    m_dataStartTimeHasBeenSet(false),
-    m_dataEndTimeHasBeenSet(false),
-    m_dataInputConfigurationHasBeenSet(false),
-    m_dataOutputConfigurationHasBeenSet(false),
-    m_customerResultObjectHasBeenSet(false),
-    m_status(InferenceExecutionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_failedReasonHasBeenSet(false),
-    m_modelVersion(0),
-    m_modelVersionHasBeenSet(false),
-    m_modelVersionArnHasBeenSet(false)
+InferenceExecutionSummary::InferenceExecutionSummary(JsonView jsonValue)
+  : InferenceExecutionSummary()
 {
   *this = jsonValue;
 }

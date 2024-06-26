@@ -24,9 +24,8 @@ CodeStorageExceededException::CodeStorageExceededException() :
 {
 }
 
-CodeStorageExceededException::CodeStorageExceededException(JsonView jsonValue) : 
-    m_typeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+CodeStorageExceededException::CodeStorageExceededException(JsonView jsonValue)
+  : CodeStorageExceededException()
 {
   *this = jsonValue;
 }

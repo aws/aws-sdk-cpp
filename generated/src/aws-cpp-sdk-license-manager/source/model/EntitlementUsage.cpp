@@ -27,12 +27,8 @@ EntitlementUsage::EntitlementUsage() :
 {
 }
 
-EntitlementUsage::EntitlementUsage(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_consumedValueHasBeenSet(false),
-    m_maxCountHasBeenSet(false),
-    m_unit(EntitlementDataUnit::NOT_SET),
-    m_unitHasBeenSet(false)
+EntitlementUsage::EntitlementUsage(JsonView jsonValue)
+  : EntitlementUsage()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ KPIConfiguration::KPIConfiguration() :
 {
 }
 
-KPIConfiguration::KPIConfiguration(JsonView jsonValue) : 
-    m_fieldWellsHasBeenSet(false),
-    m_sortConfigurationHasBeenSet(false),
-    m_kPIOptionsHasBeenSet(false),
-    m_interactionsHasBeenSet(false)
+KPIConfiguration::KPIConfiguration(JsonView jsonValue)
+  : KPIConfiguration()
 {
   *this = jsonValue;
 }

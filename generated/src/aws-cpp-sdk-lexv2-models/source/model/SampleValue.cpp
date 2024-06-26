@@ -23,8 +23,8 @@ SampleValue::SampleValue() :
 {
 }
 
-SampleValue::SampleValue(JsonView jsonValue) : 
-    m_valueHasBeenSet(false)
+SampleValue::SampleValue(JsonView jsonValue)
+  : SampleValue()
 {
   *this = jsonValue;
 }

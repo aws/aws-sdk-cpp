@@ -23,8 +23,8 @@ SampleUtterance::SampleUtterance() :
 {
 }
 
-SampleUtterance::SampleUtterance(JsonView jsonValue) : 
-    m_utteranceHasBeenSet(false)
+SampleUtterance::SampleUtterance(JsonView jsonValue)
+  : SampleUtterance()
 {
   *this = jsonValue;
 }

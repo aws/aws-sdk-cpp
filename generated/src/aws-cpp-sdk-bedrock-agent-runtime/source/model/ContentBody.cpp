@@ -23,8 +23,8 @@ ContentBody::ContentBody() :
 {
 }
 
-ContentBody::ContentBody(JsonView jsonValue) : 
-    m_bodyHasBeenSet(false)
+ContentBody::ContentBody(JsonView jsonValue)
+  : ContentBody()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ TimeSeriesConfig::TimeSeriesConfig() :
 {
 }
 
-TimeSeriesConfig::TimeSeriesConfig(JsonView jsonValue) : 
-    m_targetAttributeNameHasBeenSet(false),
-    m_timestampAttributeNameHasBeenSet(false),
-    m_itemIdentifierAttributeNameHasBeenSet(false),
-    m_groupingAttributeNamesHasBeenSet(false)
+TimeSeriesConfig::TimeSeriesConfig(JsonView jsonValue)
+  : TimeSeriesConfig()
 {
   *this = jsonValue;
 }

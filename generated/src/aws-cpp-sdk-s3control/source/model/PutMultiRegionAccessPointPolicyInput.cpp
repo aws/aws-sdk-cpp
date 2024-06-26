@@ -26,9 +26,8 @@ PutMultiRegionAccessPointPolicyInput::PutMultiRegionAccessPointPolicyInput() :
 {
 }
 
-PutMultiRegionAccessPointPolicyInput::PutMultiRegionAccessPointPolicyInput(const XmlNode& xmlNode) : 
-    m_nameHasBeenSet(false),
-    m_policyHasBeenSet(false)
+PutMultiRegionAccessPointPolicyInput::PutMultiRegionAccessPointPolicyInput(const XmlNode& xmlNode)
+  : PutMultiRegionAccessPointPolicyInput()
 {
   *this = xmlNode;
 }

@@ -21,8 +21,8 @@ GetBucketRequestPaymentResult::GetBucketRequestPaymentResult() :
 {
 }
 
-GetBucketRequestPaymentResult::GetBucketRequestPaymentResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_payer(Payer::NOT_SET)
+GetBucketRequestPaymentResult::GetBucketRequestPaymentResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : GetBucketRequestPaymentResult()
 {
   *this = result;
 }

@@ -27,12 +27,8 @@ ArrayPropertiesDetail::ArrayPropertiesDetail() :
 {
 }
 
-ArrayPropertiesDetail::ArrayPropertiesDetail(JsonView jsonValue) : 
-    m_statusSummaryHasBeenSet(false),
-    m_size(0),
-    m_sizeHasBeenSet(false),
-    m_index(0),
-    m_indexHasBeenSet(false)
+ArrayPropertiesDetail::ArrayPropertiesDetail(JsonView jsonValue)
+  : ArrayPropertiesDetail()
 {
   *this = jsonValue;
 }

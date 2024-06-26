@@ -25,10 +25,8 @@ NonCompliantSummary::NonCompliantSummary() :
 {
 }
 
-NonCompliantSummary::NonCompliantSummary(JsonView jsonValue) : 
-    m_nonCompliantCount(0),
-    m_nonCompliantCountHasBeenSet(false),
-    m_severitySummaryHasBeenSet(false)
+NonCompliantSummary::NonCompliantSummary(JsonView jsonValue)
+  : NonCompliantSummary()
 {
   *this = jsonValue;
 }

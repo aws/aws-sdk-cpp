@@ -24,9 +24,8 @@ AttachmentsConfiguration::AttachmentsConfiguration() :
 {
 }
 
-AttachmentsConfiguration::AttachmentsConfiguration(JsonView jsonValue) : 
-    m_attachmentsControlMode(AttachmentsControlMode::NOT_SET),
-    m_attachmentsControlModeHasBeenSet(false)
+AttachmentsConfiguration::AttachmentsConfiguration(JsonView jsonValue)
+  : AttachmentsConfiguration()
 {
   *this = jsonValue;
 }

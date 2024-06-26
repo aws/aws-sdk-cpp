@@ -28,13 +28,8 @@ GuardrailStreamConfiguration::GuardrailStreamConfiguration() :
 {
 }
 
-GuardrailStreamConfiguration::GuardrailStreamConfiguration(JsonView jsonValue) : 
-    m_guardrailIdentifierHasBeenSet(false),
-    m_guardrailVersionHasBeenSet(false),
-    m_trace(GuardrailTrace::NOT_SET),
-    m_traceHasBeenSet(false),
-    m_streamProcessingMode(GuardrailStreamProcessingMode::NOT_SET),
-    m_streamProcessingModeHasBeenSet(false)
+GuardrailStreamConfiguration::GuardrailStreamConfiguration(JsonView jsonValue)
+  : GuardrailStreamConfiguration()
 {
   *this = jsonValue;
 }

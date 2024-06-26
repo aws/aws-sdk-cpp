@@ -27,10 +27,8 @@ TransitGatewayMulticastDeregisteredGroupMembers::TransitGatewayMulticastDeregist
 {
 }
 
-TransitGatewayMulticastDeregisteredGroupMembers::TransitGatewayMulticastDeregisteredGroupMembers(const XmlNode& xmlNode) : 
-    m_transitGatewayMulticastDomainIdHasBeenSet(false),
-    m_deregisteredNetworkInterfaceIdsHasBeenSet(false),
-    m_groupIpAddressHasBeenSet(false)
+TransitGatewayMulticastDeregisteredGroupMembers::TransitGatewayMulticastDeregisteredGroupMembers(const XmlNode& xmlNode)
+  : TransitGatewayMulticastDeregisteredGroupMembers()
 {
   *this = xmlNode;
 }

@@ -24,9 +24,8 @@ IntegerDefaultValues::IntegerDefaultValues() :
 {
 }
 
-IntegerDefaultValues::IntegerDefaultValues(JsonView jsonValue) : 
-    m_dynamicValueHasBeenSet(false),
-    m_staticValuesHasBeenSet(false)
+IntegerDefaultValues::IntegerDefaultValues(JsonView jsonValue)
+  : IntegerDefaultValues()
 {
   *this = jsonValue;
 }

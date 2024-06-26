@@ -26,11 +26,8 @@ TechnicalCueSegment::TechnicalCueSegment() :
 {
 }
 
-TechnicalCueSegment::TechnicalCueSegment(JsonView jsonValue) : 
-    m_type(TechnicalCueType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_confidence(0.0),
-    m_confidenceHasBeenSet(false)
+TechnicalCueSegment::TechnicalCueSegment(JsonView jsonValue)
+  : TechnicalCueSegment()
 {
   *this = jsonValue;
 }

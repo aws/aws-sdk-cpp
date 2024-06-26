@@ -26,11 +26,8 @@ DestinationConfiguration::DestinationConfiguration() :
 {
 }
 
-DestinationConfiguration::DestinationConfiguration(JsonView jsonValue) : 
-    m_type(DestinationType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_s3ConfigurationHasBeenSet(false),
-    m_iotTwinMakerConfigurationHasBeenSet(false)
+DestinationConfiguration::DestinationConfiguration(JsonView jsonValue)
+  : DestinationConfiguration()
 {
   *this = jsonValue;
 }

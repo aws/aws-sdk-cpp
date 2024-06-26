@@ -26,11 +26,8 @@ WebvttHlsSourceSettings::WebvttHlsSourceSettings() :
 {
 }
 
-WebvttHlsSourceSettings::WebvttHlsSourceSettings(JsonView jsonValue) : 
-    m_renditionGroupIdHasBeenSet(false),
-    m_renditionLanguageCode(LanguageCode::NOT_SET),
-    m_renditionLanguageCodeHasBeenSet(false),
-    m_renditionNameHasBeenSet(false)
+WebvttHlsSourceSettings::WebvttHlsSourceSettings(JsonView jsonValue)
+  : WebvttHlsSourceSettings()
 {
   *this = jsonValue;
 }

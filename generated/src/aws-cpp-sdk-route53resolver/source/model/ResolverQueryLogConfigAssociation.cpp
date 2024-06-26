@@ -31,16 +31,8 @@ ResolverQueryLogConfigAssociation::ResolverQueryLogConfigAssociation() :
 {
 }
 
-ResolverQueryLogConfigAssociation::ResolverQueryLogConfigAssociation(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_resolverQueryLogConfigIdHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_status(ResolverQueryLogConfigAssociationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_error(ResolverQueryLogConfigAssociationError::NOT_SET),
-    m_errorHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_creationTimeHasBeenSet(false)
+ResolverQueryLogConfigAssociation::ResolverQueryLogConfigAssociation(JsonView jsonValue)
+  : ResolverQueryLogConfigAssociation()
 {
   *this = jsonValue;
 }

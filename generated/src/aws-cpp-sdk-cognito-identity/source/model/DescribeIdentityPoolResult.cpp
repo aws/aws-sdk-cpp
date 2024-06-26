@@ -23,9 +23,8 @@ DescribeIdentityPoolResult::DescribeIdentityPoolResult() :
 {
 }
 
-DescribeIdentityPoolResult::DescribeIdentityPoolResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_allowUnauthenticatedIdentities(false),
-    m_allowClassicFlow(false)
+DescribeIdentityPoolResult::DescribeIdentityPoolResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeIdentityPoolResult()
 {
   *this = result;
 }

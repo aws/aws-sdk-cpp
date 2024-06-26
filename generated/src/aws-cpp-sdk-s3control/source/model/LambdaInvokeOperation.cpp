@@ -27,10 +27,8 @@ LambdaInvokeOperation::LambdaInvokeOperation() :
 {
 }
 
-LambdaInvokeOperation::LambdaInvokeOperation(const XmlNode& xmlNode) : 
-    m_functionArnHasBeenSet(false),
-    m_invocationSchemaVersionHasBeenSet(false),
-    m_userArgumentsHasBeenSet(false)
+LambdaInvokeOperation::LambdaInvokeOperation(const XmlNode& xmlNode)
+  : LambdaInvokeOperation()
 {
   *this = xmlNode;
 }

@@ -23,9 +23,8 @@ GetIPSetResult::GetIPSetResult() :
 {
 }
 
-GetIPSetResult::GetIPSetResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_format(IpSetFormat::NOT_SET),
-    m_status(IpSetStatus::NOT_SET)
+GetIPSetResult::GetIPSetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetIPSetResult()
 {
   *this = result;
 }

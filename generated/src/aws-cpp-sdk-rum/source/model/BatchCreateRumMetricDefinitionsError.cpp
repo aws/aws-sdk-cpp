@@ -25,10 +25,8 @@ BatchCreateRumMetricDefinitionsError::BatchCreateRumMetricDefinitionsError() :
 {
 }
 
-BatchCreateRumMetricDefinitionsError::BatchCreateRumMetricDefinitionsError(JsonView jsonValue) : 
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_metricDefinitionHasBeenSet(false)
+BatchCreateRumMetricDefinitionsError::BatchCreateRumMetricDefinitionsError(JsonView jsonValue)
+  : BatchCreateRumMetricDefinitionsError()
 {
   *this = jsonValue;
 }

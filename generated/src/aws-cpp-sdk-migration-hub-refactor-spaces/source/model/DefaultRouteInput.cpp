@@ -24,9 +24,8 @@ DefaultRouteInput::DefaultRouteInput() :
 {
 }
 
-DefaultRouteInput::DefaultRouteInput(JsonView jsonValue) : 
-    m_activationState(RouteActivationState::NOT_SET),
-    m_activationStateHasBeenSet(false)
+DefaultRouteInput::DefaultRouteInput(JsonView jsonValue)
+  : DefaultRouteInput()
 {
   *this = jsonValue;
 }

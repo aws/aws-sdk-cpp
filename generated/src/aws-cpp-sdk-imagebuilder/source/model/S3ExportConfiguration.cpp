@@ -27,12 +27,8 @@ S3ExportConfiguration::S3ExportConfiguration() :
 {
 }
 
-S3ExportConfiguration::S3ExportConfiguration(JsonView jsonValue) : 
-    m_roleNameHasBeenSet(false),
-    m_diskImageFormat(DiskImageFormat::NOT_SET),
-    m_diskImageFormatHasBeenSet(false),
-    m_s3BucketHasBeenSet(false),
-    m_s3PrefixHasBeenSet(false)
+S3ExportConfiguration::S3ExportConfiguration(JsonView jsonValue)
+  : S3ExportConfiguration()
 {
   *this = jsonValue;
 }

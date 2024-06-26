@@ -24,9 +24,8 @@ NumberAttributeConstraintsType::NumberAttributeConstraintsType() :
 {
 }
 
-NumberAttributeConstraintsType::NumberAttributeConstraintsType(JsonView jsonValue) : 
-    m_minValueHasBeenSet(false),
-    m_maxValueHasBeenSet(false)
+NumberAttributeConstraintsType::NumberAttributeConstraintsType(JsonView jsonValue)
+  : NumberAttributeConstraintsType()
 {
   *this = jsonValue;
 }

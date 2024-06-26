@@ -25,10 +25,8 @@ Step::Step() :
 {
 }
 
-Step::Step(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_actionHasBeenSet(false)
+Step::Step(JsonView jsonValue)
+  : Step()
 {
   *this = jsonValue;
 }

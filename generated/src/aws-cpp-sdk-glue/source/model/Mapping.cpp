@@ -29,14 +29,8 @@ Mapping::Mapping() :
 {
 }
 
-Mapping::Mapping(JsonView jsonValue) : 
-    m_toKeyHasBeenSet(false),
-    m_fromPathHasBeenSet(false),
-    m_fromTypeHasBeenSet(false),
-    m_toTypeHasBeenSet(false),
-    m_dropped(false),
-    m_droppedHasBeenSet(false),
-    m_childrenHasBeenSet(false)
+Mapping::Mapping(JsonView jsonValue)
+  : Mapping()
 {
   *this = jsonValue;
 }

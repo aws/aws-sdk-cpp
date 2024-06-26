@@ -29,12 +29,8 @@ ReferencedSecurityGroup::ReferencedSecurityGroup() :
 {
 }
 
-ReferencedSecurityGroup::ReferencedSecurityGroup(const XmlNode& xmlNode) : 
-    m_groupIdHasBeenSet(false),
-    m_peeringStatusHasBeenSet(false),
-    m_userIdHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_vpcPeeringConnectionIdHasBeenSet(false)
+ReferencedSecurityGroup::ReferencedSecurityGroup(const XmlNode& xmlNode)
+  : ReferencedSecurityGroup()
 {
   *this = xmlNode;
 }

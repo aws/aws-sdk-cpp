@@ -23,8 +23,8 @@ OidcMemberDefinition::OidcMemberDefinition() :
 {
 }
 
-OidcMemberDefinition::OidcMemberDefinition(JsonView jsonValue) : 
-    m_groupsHasBeenSet(false)
+OidcMemberDefinition::OidcMemberDefinition(JsonView jsonValue)
+  : OidcMemberDefinition()
 {
   *this = jsonValue;
 }

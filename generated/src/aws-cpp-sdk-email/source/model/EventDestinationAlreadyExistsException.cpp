@@ -26,9 +26,8 @@ EventDestinationAlreadyExistsException::EventDestinationAlreadyExistsException()
 {
 }
 
-EventDestinationAlreadyExistsException::EventDestinationAlreadyExistsException(const XmlNode& xmlNode) : 
-    m_configurationSetNameHasBeenSet(false),
-    m_eventDestinationNameHasBeenSet(false)
+EventDestinationAlreadyExistsException::EventDestinationAlreadyExistsException(const XmlNode& xmlNode)
+  : EventDestinationAlreadyExistsException()
 {
   *this = xmlNode;
 }

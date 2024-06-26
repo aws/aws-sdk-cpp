@@ -25,10 +25,8 @@ ConnectionHttpParameters::ConnectionHttpParameters() :
 {
 }
 
-ConnectionHttpParameters::ConnectionHttpParameters(JsonView jsonValue) : 
-    m_headerParametersHasBeenSet(false),
-    m_queryStringParametersHasBeenSet(false),
-    m_bodyParametersHasBeenSet(false)
+ConnectionHttpParameters::ConnectionHttpParameters(JsonView jsonValue)
+  : ConnectionHttpParameters()
 {
   *this = jsonValue;
 }

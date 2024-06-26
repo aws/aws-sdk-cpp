@@ -24,9 +24,8 @@ OperationStatusFilter::OperationStatusFilter() :
 {
 }
 
-OperationStatusFilter::OperationStatusFilter(JsonView jsonValue) : 
-    m_status(StatusValues::NOT_SET),
-    m_statusHasBeenSet(false)
+OperationStatusFilter::OperationStatusFilter(JsonView jsonValue)
+  : OperationStatusFilter()
 {
   *this = jsonValue;
 }

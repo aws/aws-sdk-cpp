@@ -26,11 +26,8 @@ RulesSource::RulesSource() :
 {
 }
 
-RulesSource::RulesSource(JsonView jsonValue) : 
-    m_rulesStringHasBeenSet(false),
-    m_rulesSourceListHasBeenSet(false),
-    m_statefulRulesHasBeenSet(false),
-    m_statelessRulesAndCustomActionsHasBeenSet(false)
+RulesSource::RulesSource(JsonView jsonValue)
+  : RulesSource()
 {
   *this = jsonValue;
 }

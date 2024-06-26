@@ -24,9 +24,8 @@ ReEncryptResult::ReEncryptResult() :
 {
 }
 
-ReEncryptResult::ReEncryptResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_sourceEncryptionAlgorithm(EncryptionAlgorithmSpec::NOT_SET),
-    m_destinationEncryptionAlgorithm(EncryptionAlgorithmSpec::NOT_SET)
+ReEncryptResult::ReEncryptResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ReEncryptResult()
 {
   *this = result;
 }

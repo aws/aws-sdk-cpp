@@ -24,9 +24,8 @@ DestinationProperties::DestinationProperties() :
 {
 }
 
-DestinationProperties::DestinationProperties(JsonView jsonValue) : 
-    m_destinationArnHasBeenSet(false),
-    m_kmsKeyArnHasBeenSet(false)
+DestinationProperties::DestinationProperties(JsonView jsonValue)
+  : DestinationProperties()
 {
   *this = jsonValue;
 }

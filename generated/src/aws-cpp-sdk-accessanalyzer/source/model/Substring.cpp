@@ -26,11 +26,8 @@ Substring::Substring() :
 {
 }
 
-Substring::Substring(JsonView jsonValue) : 
-    m_start(0),
-    m_startHasBeenSet(false),
-    m_length(0),
-    m_lengthHasBeenSet(false)
+Substring::Substring(JsonView jsonValue)
+  : Substring()
 {
   *this = jsonValue;
 }

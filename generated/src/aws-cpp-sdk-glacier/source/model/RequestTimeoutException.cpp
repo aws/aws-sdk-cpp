@@ -25,10 +25,8 @@ RequestTimeoutException::RequestTimeoutException() :
 {
 }
 
-RequestTimeoutException::RequestTimeoutException(JsonView jsonValue) : 
-    m_typeHasBeenSet(false),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+RequestTimeoutException::RequestTimeoutException(JsonView jsonValue)
+  : RequestTimeoutException()
 {
   *this = jsonValue;
 }

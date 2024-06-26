@@ -29,14 +29,8 @@ TaskOverride::TaskOverride() :
 {
 }
 
-TaskOverride::TaskOverride(JsonView jsonValue) : 
-    m_containerOverridesHasBeenSet(false),
-    m_cpuHasBeenSet(false),
-    m_inferenceAcceleratorOverridesHasBeenSet(false),
-    m_executionRoleArnHasBeenSet(false),
-    m_memoryHasBeenSet(false),
-    m_taskRoleArnHasBeenSet(false),
-    m_ephemeralStorageHasBeenSet(false)
+TaskOverride::TaskOverride(JsonView jsonValue)
+  : TaskOverride()
 {
   *this = jsonValue;
 }

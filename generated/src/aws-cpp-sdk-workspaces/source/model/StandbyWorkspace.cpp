@@ -28,13 +28,8 @@ StandbyWorkspace::StandbyWorkspace() :
 {
 }
 
-StandbyWorkspace::StandbyWorkspace(JsonView jsonValue) : 
-    m_primaryWorkspaceIdHasBeenSet(false),
-    m_volumeEncryptionKeyHasBeenSet(false),
-    m_directoryIdHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_dataReplication(DataReplication::NOT_SET),
-    m_dataReplicationHasBeenSet(false)
+StandbyWorkspace::StandbyWorkspace(JsonView jsonValue)
+  : StandbyWorkspace()
 {
   *this = jsonValue;
 }

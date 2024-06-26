@@ -28,11 +28,8 @@ InsightRuleContributor::InsightRuleContributor() :
 {
 }
 
-InsightRuleContributor::InsightRuleContributor(const XmlNode& xmlNode) : 
-    m_keysHasBeenSet(false),
-    m_approximateAggregateValue(0.0),
-    m_approximateAggregateValueHasBeenSet(false),
-    m_datapointsHasBeenSet(false)
+InsightRuleContributor::InsightRuleContributor(const XmlNode& xmlNode)
+  : InsightRuleContributor()
 {
   *this = xmlNode;
 }

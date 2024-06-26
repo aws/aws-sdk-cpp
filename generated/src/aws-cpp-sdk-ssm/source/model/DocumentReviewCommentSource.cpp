@@ -25,10 +25,8 @@ DocumentReviewCommentSource::DocumentReviewCommentSource() :
 {
 }
 
-DocumentReviewCommentSource::DocumentReviewCommentSource(JsonView jsonValue) : 
-    m_type(DocumentReviewCommentType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_contentHasBeenSet(false)
+DocumentReviewCommentSource::DocumentReviewCommentSource(JsonView jsonValue)
+  : DocumentReviewCommentSource()
 {
   *this = jsonValue;
 }

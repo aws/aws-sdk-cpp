@@ -35,20 +35,8 @@ AnnotationStoreVersionItem::AnnotationStoreVersionItem() :
 {
 }
 
-AnnotationStoreVersionItem::AnnotationStoreVersionItem(JsonView jsonValue) : 
-    m_storeIdHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_status(VersionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_versionArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_versionNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_versionSizeBytes(0),
-    m_versionSizeBytesHasBeenSet(false)
+AnnotationStoreVersionItem::AnnotationStoreVersionItem(JsonView jsonValue)
+  : AnnotationStoreVersionItem()
 {
   *this = jsonValue;
 }

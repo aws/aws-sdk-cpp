@@ -25,10 +25,8 @@ ContainerConfig::ContainerConfig() :
 {
 }
 
-ContainerConfig::ContainerConfig(JsonView jsonValue) : 
-    m_containerArgumentsHasBeenSet(false),
-    m_containerEntrypointHasBeenSet(false),
-    m_containerEnvironmentVariablesHasBeenSet(false)
+ContainerConfig::ContainerConfig(JsonView jsonValue)
+  : ContainerConfig()
 {
   *this = jsonValue;
 }

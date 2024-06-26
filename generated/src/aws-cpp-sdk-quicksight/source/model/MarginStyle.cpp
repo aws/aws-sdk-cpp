@@ -24,9 +24,8 @@ MarginStyle::MarginStyle() :
 {
 }
 
-MarginStyle::MarginStyle(JsonView jsonValue) : 
-    m_show(false),
-    m_showHasBeenSet(false)
+MarginStyle::MarginStyle(JsonView jsonValue)
+  : MarginStyle()
 {
   *this = jsonValue;
 }

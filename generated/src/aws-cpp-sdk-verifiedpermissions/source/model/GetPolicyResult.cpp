@@ -23,9 +23,8 @@ GetPolicyResult::GetPolicyResult() :
 {
 }
 
-GetPolicyResult::GetPolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_policyType(PolicyType::NOT_SET),
-    m_effect(PolicyEffect::NOT_SET)
+GetPolicyResult::GetPolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetPolicyResult()
 {
   *this = result;
 }

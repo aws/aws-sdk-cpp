@@ -27,12 +27,8 @@ LambdaFunctionMetadata::LambdaFunctionMetadata() :
 {
 }
 
-LambdaFunctionMetadata::LambdaFunctionMetadata(JsonView jsonValue) : 
-    m_functionNameHasBeenSet(false),
-    m_functionTagsHasBeenSet(false),
-    m_layersHasBeenSet(false),
-    m_runtime(Runtime::NOT_SET),
-    m_runtimeHasBeenSet(false)
+LambdaFunctionMetadata::LambdaFunctionMetadata(JsonView jsonValue)
+  : LambdaFunctionMetadata()
 {
   *this = jsonValue;
 }

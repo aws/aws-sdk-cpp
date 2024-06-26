@@ -24,9 +24,8 @@ ComputeFarmConfiguration::ComputeFarmConfiguration() :
 {
 }
 
-ComputeFarmConfiguration::ComputeFarmConfiguration(JsonView jsonValue) : 
-    m_activeDirectoryUserHasBeenSet(false),
-    m_endpointHasBeenSet(false)
+ComputeFarmConfiguration::ComputeFarmConfiguration(JsonView jsonValue)
+  : ComputeFarmConfiguration()
 {
   *this = jsonValue;
 }

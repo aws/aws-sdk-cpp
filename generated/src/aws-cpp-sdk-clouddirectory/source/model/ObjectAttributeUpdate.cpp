@@ -24,9 +24,8 @@ ObjectAttributeUpdate::ObjectAttributeUpdate() :
 {
 }
 
-ObjectAttributeUpdate::ObjectAttributeUpdate(JsonView jsonValue) : 
-    m_objectAttributeKeyHasBeenSet(false),
-    m_objectAttributeActionHasBeenSet(false)
+ObjectAttributeUpdate::ObjectAttributeUpdate(JsonView jsonValue)
+  : ObjectAttributeUpdate()
 {
   *this = jsonValue;
 }

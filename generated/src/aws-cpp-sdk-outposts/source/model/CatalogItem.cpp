@@ -32,17 +32,8 @@ CatalogItem::CatalogItem() :
 {
 }
 
-CatalogItem::CatalogItem(JsonView jsonValue) : 
-    m_catalogItemIdHasBeenSet(false),
-    m_itemStatus(CatalogItemStatus::NOT_SET),
-    m_itemStatusHasBeenSet(false),
-    m_eC2CapacitiesHasBeenSet(false),
-    m_powerKva(0.0),
-    m_powerKvaHasBeenSet(false),
-    m_weightLbs(0),
-    m_weightLbsHasBeenSet(false),
-    m_supportedUplinkGbpsHasBeenSet(false),
-    m_supportedStorageHasBeenSet(false)
+CatalogItem::CatalogItem(JsonView jsonValue)
+  : CatalogItem()
 {
   *this = jsonValue;
 }

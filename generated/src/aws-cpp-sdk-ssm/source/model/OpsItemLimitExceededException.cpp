@@ -27,12 +27,8 @@ OpsItemLimitExceededException::OpsItemLimitExceededException() :
 {
 }
 
-OpsItemLimitExceededException::OpsItemLimitExceededException(JsonView jsonValue) : 
-    m_resourceTypesHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false),
-    m_limitTypeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+OpsItemLimitExceededException::OpsItemLimitExceededException(JsonView jsonValue)
+  : OpsItemLimitExceededException()
 {
   *this = jsonValue;
 }

@@ -36,21 +36,8 @@ Authorizer::Authorizer() :
 {
 }
 
-Authorizer::Authorizer(JsonView jsonValue) : 
-    m_authorizerCredentialsArnHasBeenSet(false),
-    m_authorizerIdHasBeenSet(false),
-    m_authorizerPayloadFormatVersionHasBeenSet(false),
-    m_authorizerResultTtlInSeconds(0),
-    m_authorizerResultTtlInSecondsHasBeenSet(false),
-    m_authorizerType(AuthorizerType::NOT_SET),
-    m_authorizerTypeHasBeenSet(false),
-    m_authorizerUriHasBeenSet(false),
-    m_enableSimpleResponses(false),
-    m_enableSimpleResponsesHasBeenSet(false),
-    m_identitySourceHasBeenSet(false),
-    m_identityValidationExpressionHasBeenSet(false),
-    m_jwtConfigurationHasBeenSet(false),
-    m_nameHasBeenSet(false)
+Authorizer::Authorizer(JsonView jsonValue)
+  : Authorizer()
 {
   *this = jsonValue;
 }

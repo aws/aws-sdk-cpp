@@ -26,11 +26,8 @@ AddonIssue::AddonIssue() :
 {
 }
 
-AddonIssue::AddonIssue(JsonView jsonValue) : 
-    m_code(AddonIssueCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_resourceIdsHasBeenSet(false)
+AddonIssue::AddonIssue(JsonView jsonValue)
+  : AddonIssue()
 {
   *this = jsonValue;
 }

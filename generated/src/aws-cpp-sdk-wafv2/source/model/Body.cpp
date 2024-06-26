@@ -24,9 +24,8 @@ Body::Body() :
 {
 }
 
-Body::Body(JsonView jsonValue) : 
-    m_oversizeHandling(OversizeHandling::NOT_SET),
-    m_oversizeHandlingHasBeenSet(false)
+Body::Body(JsonView jsonValue)
+  : Body()
 {
   *this = jsonValue;
 }

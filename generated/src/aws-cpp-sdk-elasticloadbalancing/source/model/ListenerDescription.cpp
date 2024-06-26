@@ -26,9 +26,8 @@ ListenerDescription::ListenerDescription() :
 {
 }
 
-ListenerDescription::ListenerDescription(const XmlNode& xmlNode) : 
-    m_listenerHasBeenSet(false),
-    m_policyNamesHasBeenSet(false)
+ListenerDescription::ListenerDescription(const XmlNode& xmlNode)
+  : ListenerDescription()
 {
   *this = xmlNode;
 }

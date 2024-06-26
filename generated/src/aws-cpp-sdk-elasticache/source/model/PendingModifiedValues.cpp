@@ -36,19 +36,8 @@ PendingModifiedValues::PendingModifiedValues() :
 {
 }
 
-PendingModifiedValues::PendingModifiedValues(const XmlNode& xmlNode) : 
-    m_numCacheNodes(0),
-    m_numCacheNodesHasBeenSet(false),
-    m_cacheNodeIdsToRemoveHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_cacheNodeTypeHasBeenSet(false),
-    m_authTokenStatus(AuthTokenUpdateStatus::NOT_SET),
-    m_authTokenStatusHasBeenSet(false),
-    m_logDeliveryConfigurationsHasBeenSet(false),
-    m_transitEncryptionEnabled(false),
-    m_transitEncryptionEnabledHasBeenSet(false),
-    m_transitEncryptionMode(TransitEncryptionMode::NOT_SET),
-    m_transitEncryptionModeHasBeenSet(false)
+PendingModifiedValues::PendingModifiedValues(const XmlNode& xmlNode)
+  : PendingModifiedValues()
 {
   *this = xmlNode;
 }

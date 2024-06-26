@@ -25,10 +25,8 @@ SampleUtteranceGenerationSpecification::SampleUtteranceGenerationSpecification()
 {
 }
 
-SampleUtteranceGenerationSpecification::SampleUtteranceGenerationSpecification(JsonView jsonValue) : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_bedrockModelSpecificationHasBeenSet(false)
+SampleUtteranceGenerationSpecification::SampleUtteranceGenerationSpecification(JsonView jsonValue)
+  : SampleUtteranceGenerationSpecification()
 {
   *this = jsonValue;
 }

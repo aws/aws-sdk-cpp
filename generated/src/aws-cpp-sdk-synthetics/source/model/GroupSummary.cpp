@@ -25,10 +25,8 @@ GroupSummary::GroupSummary() :
 {
 }
 
-GroupSummary::GroupSummary(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false)
+GroupSummary::GroupSummary(JsonView jsonValue)
+  : GroupSummary()
 {
   *this = jsonValue;
 }

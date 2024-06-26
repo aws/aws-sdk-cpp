@@ -30,15 +30,8 @@ Usage::Usage() :
 {
 }
 
-Usage::Usage(JsonView jsonValue) : 
-    m_currency(Currency::NOT_SET),
-    m_currencyHasBeenSet(false),
-    m_estimatedMonthlyCost(0.0),
-    m_estimatedMonthlyCostHasBeenSet(false),
-    m_total(0.0),
-    m_totalHasBeenSet(false),
-    m_type(UsageType::NOT_SET),
-    m_typeHasBeenSet(false)
+Usage::Usage(JsonView jsonValue)
+  : Usage()
 {
   *this = jsonValue;
 }

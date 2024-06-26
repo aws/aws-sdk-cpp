@@ -22,8 +22,8 @@ DescribeApplicationProviderResult::DescribeApplicationProviderResult() :
 {
 }
 
-DescribeApplicationProviderResult::DescribeApplicationProviderResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_federationProtocol(FederationProtocol::NOT_SET)
+DescribeApplicationProviderResult::DescribeApplicationProviderResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeApplicationProviderResult()
 {
   *this = result;
 }

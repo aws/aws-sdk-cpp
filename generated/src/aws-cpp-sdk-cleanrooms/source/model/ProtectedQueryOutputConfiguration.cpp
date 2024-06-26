@@ -23,8 +23,8 @@ ProtectedQueryOutputConfiguration::ProtectedQueryOutputConfiguration() :
 {
 }
 
-ProtectedQueryOutputConfiguration::ProtectedQueryOutputConfiguration(JsonView jsonValue) : 
-    m_s3HasBeenSet(false)
+ProtectedQueryOutputConfiguration::ProtectedQueryOutputConfiguration(JsonView jsonValue)
+  : ProtectedQueryOutputConfiguration()
 {
   *this = jsonValue;
 }

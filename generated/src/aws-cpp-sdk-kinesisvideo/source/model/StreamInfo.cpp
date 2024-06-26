@@ -33,18 +33,8 @@ StreamInfo::StreamInfo() :
 {
 }
 
-StreamInfo::StreamInfo(JsonView jsonValue) : 
-    m_deviceNameHasBeenSet(false),
-    m_streamNameHasBeenSet(false),
-    m_streamARNHasBeenSet(false),
-    m_mediaTypeHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_status(Status::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_dataRetentionInHours(0),
-    m_dataRetentionInHoursHasBeenSet(false)
+StreamInfo::StreamInfo(JsonView jsonValue)
+  : StreamInfo()
 {
   *this = jsonValue;
 }

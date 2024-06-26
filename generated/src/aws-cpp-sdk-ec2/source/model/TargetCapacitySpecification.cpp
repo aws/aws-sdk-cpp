@@ -34,17 +34,8 @@ TargetCapacitySpecification::TargetCapacitySpecification() :
 {
 }
 
-TargetCapacitySpecification::TargetCapacitySpecification(const XmlNode& xmlNode) : 
-    m_totalTargetCapacity(0),
-    m_totalTargetCapacityHasBeenSet(false),
-    m_onDemandTargetCapacity(0),
-    m_onDemandTargetCapacityHasBeenSet(false),
-    m_spotTargetCapacity(0),
-    m_spotTargetCapacityHasBeenSet(false),
-    m_defaultTargetCapacityType(DefaultTargetCapacityType::NOT_SET),
-    m_defaultTargetCapacityTypeHasBeenSet(false),
-    m_targetCapacityUnitType(TargetCapacityUnitType::NOT_SET),
-    m_targetCapacityUnitTypeHasBeenSet(false)
+TargetCapacitySpecification::TargetCapacitySpecification(const XmlNode& xmlNode)
+  : TargetCapacitySpecification()
 {
   *this = xmlNode;
 }

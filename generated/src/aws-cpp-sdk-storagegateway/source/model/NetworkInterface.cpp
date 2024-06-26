@@ -25,10 +25,8 @@ NetworkInterface::NetworkInterface() :
 {
 }
 
-NetworkInterface::NetworkInterface(JsonView jsonValue) : 
-    m_ipv4AddressHasBeenSet(false),
-    m_macAddressHasBeenSet(false),
-    m_ipv6AddressHasBeenSet(false)
+NetworkInterface::NetworkInterface(JsonView jsonValue)
+  : NetworkInterface()
 {
   *this = jsonValue;
 }

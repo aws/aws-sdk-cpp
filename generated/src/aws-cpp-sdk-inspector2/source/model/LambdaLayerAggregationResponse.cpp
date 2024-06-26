@@ -27,12 +27,8 @@ LambdaLayerAggregationResponse::LambdaLayerAggregationResponse() :
 {
 }
 
-LambdaLayerAggregationResponse::LambdaLayerAggregationResponse(JsonView jsonValue) : 
-    m_accountIdHasBeenSet(false),
-    m_functionNameHasBeenSet(false),
-    m_layerArnHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_severityCountsHasBeenSet(false)
+LambdaLayerAggregationResponse::LambdaLayerAggregationResponse(JsonView jsonValue)
+  : LambdaLayerAggregationResponse()
 {
   *this = jsonValue;
 }

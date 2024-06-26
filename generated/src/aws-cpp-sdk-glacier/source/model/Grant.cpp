@@ -25,10 +25,8 @@ Grant::Grant() :
 {
 }
 
-Grant::Grant(JsonView jsonValue) : 
-    m_granteeHasBeenSet(false),
-    m_permission(Permission::NOT_SET),
-    m_permissionHasBeenSet(false)
+Grant::Grant(JsonView jsonValue)
+  : Grant()
 {
   *this = jsonValue;
 }

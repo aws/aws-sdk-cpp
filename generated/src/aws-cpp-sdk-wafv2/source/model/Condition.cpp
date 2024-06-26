@@ -24,9 +24,8 @@ Condition::Condition() :
 {
 }
 
-Condition::Condition(JsonView jsonValue) : 
-    m_actionConditionHasBeenSet(false),
-    m_labelNameConditionHasBeenSet(false)
+Condition::Condition(JsonView jsonValue)
+  : Condition()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ DnsProperties::DnsProperties() :
 {
 }
 
-DnsProperties::DnsProperties(JsonView jsonValue) : 
-    m_hostedZoneIdHasBeenSet(false),
-    m_sOAHasBeenSet(false)
+DnsProperties::DnsProperties(JsonView jsonValue)
+  : DnsProperties()
 {
   *this = jsonValue;
 }

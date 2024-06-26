@@ -25,10 +25,8 @@ HeaderObject::HeaderObject() :
 {
 }
 
-HeaderObject::HeaderObject(JsonView jsonValue) : 
-    m_option(ForwardValues::NOT_SET),
-    m_optionHasBeenSet(false),
-    m_headersAllowListHasBeenSet(false)
+HeaderObject::HeaderObject(JsonView jsonValue)
+  : HeaderObject()
 {
   *this = jsonValue;
 }

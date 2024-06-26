@@ -26,11 +26,8 @@ DimensionMapping::DimensionMapping() :
 {
 }
 
-DimensionMapping::DimensionMapping(JsonView jsonValue) : 
-    m_dimensionValueHasBeenSet(false),
-    m_dimensionValueType(DimensionValueType::NOT_SET),
-    m_dimensionValueTypeHasBeenSet(false),
-    m_dimensionNameHasBeenSet(false)
+DimensionMapping::DimensionMapping(JsonView jsonValue)
+  : DimensionMapping()
 {
   *this = jsonValue;
 }

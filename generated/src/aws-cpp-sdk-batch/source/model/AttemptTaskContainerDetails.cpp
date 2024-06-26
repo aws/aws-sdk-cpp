@@ -28,13 +28,8 @@ AttemptTaskContainerDetails::AttemptTaskContainerDetails() :
 {
 }
 
-AttemptTaskContainerDetails::AttemptTaskContainerDetails(JsonView jsonValue) : 
-    m_exitCode(0),
-    m_exitCodeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_reasonHasBeenSet(false),
-    m_logStreamNameHasBeenSet(false),
-    m_networkInterfacesHasBeenSet(false)
+AttemptTaskContainerDetails::AttemptTaskContainerDetails(JsonView jsonValue)
+  : AttemptTaskContainerDetails()
 {
   *this = jsonValue;
 }

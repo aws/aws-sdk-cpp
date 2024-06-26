@@ -23,8 +23,8 @@ InputProcessingConfiguration::InputProcessingConfiguration() :
 {
 }
 
-InputProcessingConfiguration::InputProcessingConfiguration(JsonView jsonValue) : 
-    m_inputLambdaProcessorHasBeenSet(false)
+InputProcessingConfiguration::InputProcessingConfiguration(JsonView jsonValue)
+  : InputProcessingConfiguration()
 {
   *this = jsonValue;
 }

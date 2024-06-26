@@ -36,21 +36,8 @@ Settings::Settings() :
 {
 }
 
-Settings::Settings(JsonView jsonValue) : 
-    m_vocabularyNameHasBeenSet(false),
-    m_showSpeakerLabels(false),
-    m_showSpeakerLabelsHasBeenSet(false),
-    m_maxSpeakerLabels(0),
-    m_maxSpeakerLabelsHasBeenSet(false),
-    m_channelIdentification(false),
-    m_channelIdentificationHasBeenSet(false),
-    m_showAlternatives(false),
-    m_showAlternativesHasBeenSet(false),
-    m_maxAlternatives(0),
-    m_maxAlternativesHasBeenSet(false),
-    m_vocabularyFilterNameHasBeenSet(false),
-    m_vocabularyFilterMethod(VocabularyFilterMethod::NOT_SET),
-    m_vocabularyFilterMethodHasBeenSet(false)
+Settings::Settings(JsonView jsonValue)
+  : Settings()
 {
   *this = jsonValue;
 }

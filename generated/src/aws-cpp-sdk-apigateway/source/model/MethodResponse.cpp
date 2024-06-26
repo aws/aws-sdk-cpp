@@ -27,11 +27,8 @@ MethodResponse::MethodResponse() :
 {
 }
 
-MethodResponse::MethodResponse(JsonView jsonValue) : 
-    m_statusCodeHasBeenSet(false),
-    m_responseParametersHasBeenSet(false),
-    m_responseModelsHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
+MethodResponse::MethodResponse(JsonView jsonValue)
+  : MethodResponse()
 {
   *this = jsonValue;
 }

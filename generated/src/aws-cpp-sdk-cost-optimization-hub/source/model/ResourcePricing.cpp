@@ -29,14 +29,8 @@ ResourcePricing::ResourcePricing() :
 {
 }
 
-ResourcePricing::ResourcePricing(JsonView jsonValue) : 
-    m_estimatedCostBeforeDiscounts(0.0),
-    m_estimatedCostBeforeDiscountsHasBeenSet(false),
-    m_estimatedNetUnusedAmortizedCommitments(0.0),
-    m_estimatedNetUnusedAmortizedCommitmentsHasBeenSet(false),
-    m_estimatedDiscountsHasBeenSet(false),
-    m_estimatedCostAfterDiscounts(0.0),
-    m_estimatedCostAfterDiscountsHasBeenSet(false)
+ResourcePricing::ResourcePricing(JsonView jsonValue)
+  : ResourcePricing()
 {
   *this = jsonValue;
 }

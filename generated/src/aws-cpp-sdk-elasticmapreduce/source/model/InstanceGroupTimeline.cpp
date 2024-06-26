@@ -25,10 +25,8 @@ InstanceGroupTimeline::InstanceGroupTimeline() :
 {
 }
 
-InstanceGroupTimeline::InstanceGroupTimeline(JsonView jsonValue) : 
-    m_creationDateTimeHasBeenSet(false),
-    m_readyDateTimeHasBeenSet(false),
-    m_endDateTimeHasBeenSet(false)
+InstanceGroupTimeline::InstanceGroupTimeline(JsonView jsonValue)
+  : InstanceGroupTimeline()
 {
   *this = jsonValue;
 }

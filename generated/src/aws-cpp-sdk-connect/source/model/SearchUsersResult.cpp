@@ -22,8 +22,8 @@ SearchUsersResult::SearchUsersResult() :
 {
 }
 
-SearchUsersResult::SearchUsersResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_approximateTotalCount(0)
+SearchUsersResult::SearchUsersResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : SearchUsersResult()
 {
   *this = result;
 }

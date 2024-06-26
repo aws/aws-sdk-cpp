@@ -24,9 +24,8 @@ ColumnLFTag::ColumnLFTag() :
 {
 }
 
-ColumnLFTag::ColumnLFTag(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_lFTagsHasBeenSet(false)
+ColumnLFTag::ColumnLFTag(JsonView jsonValue)
+  : ColumnLFTag()
 {
   *this = jsonValue;
 }

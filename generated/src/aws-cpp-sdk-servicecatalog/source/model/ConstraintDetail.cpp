@@ -28,13 +28,8 @@ ConstraintDetail::ConstraintDetail() :
 {
 }
 
-ConstraintDetail::ConstraintDetail(JsonView jsonValue) : 
-    m_constraintIdHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_ownerHasBeenSet(false),
-    m_productIdHasBeenSet(false),
-    m_portfolioIdHasBeenSet(false)
+ConstraintDetail::ConstraintDetail(JsonView jsonValue)
+  : ConstraintDetail()
 {
   *this = jsonValue;
 }

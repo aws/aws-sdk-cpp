@@ -33,18 +33,8 @@ ConnectPeer::ConnectPeer() :
 {
 }
 
-ConnectPeer::ConnectPeer(JsonView jsonValue) : 
-    m_coreNetworkIdHasBeenSet(false),
-    m_connectAttachmentIdHasBeenSet(false),
-    m_connectPeerIdHasBeenSet(false),
-    m_edgeLocationHasBeenSet(false),
-    m_state(ConnectPeerState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_configurationHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_subnetArnHasBeenSet(false),
-    m_lastModificationErrorsHasBeenSet(false)
+ConnectPeer::ConnectPeer(JsonView jsonValue)
+  : ConnectPeer()
 {
   *this = jsonValue;
 }

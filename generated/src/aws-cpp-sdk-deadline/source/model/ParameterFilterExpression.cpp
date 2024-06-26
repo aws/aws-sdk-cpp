@@ -26,11 +26,8 @@ ParameterFilterExpression::ParameterFilterExpression() :
 {
 }
 
-ParameterFilterExpression::ParameterFilterExpression(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_operator(ComparisonOperator::NOT_SET),
-    m_operatorHasBeenSet(false),
-    m_valueHasBeenSet(false)
+ParameterFilterExpression::ParameterFilterExpression(JsonView jsonValue)
+  : ParameterFilterExpression()
 {
   *this = jsonValue;
 }

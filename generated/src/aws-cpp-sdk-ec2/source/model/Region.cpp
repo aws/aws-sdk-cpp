@@ -27,10 +27,8 @@ Region::Region() :
 {
 }
 
-Region::Region(const XmlNode& xmlNode) : 
-    m_endpointHasBeenSet(false),
-    m_regionNameHasBeenSet(false),
-    m_optInStatusHasBeenSet(false)
+Region::Region(const XmlNode& xmlNode)
+  : Region()
 {
   *this = xmlNode;
 }

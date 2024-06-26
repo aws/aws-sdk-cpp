@@ -23,8 +23,8 @@ LogDelivery::LogDelivery() :
 {
 }
 
-LogDelivery::LogDelivery(JsonView jsonValue) : 
-    m_workerLogDeliveryHasBeenSet(false)
+LogDelivery::LogDelivery(JsonView jsonValue)
+  : LogDelivery()
 {
   *this = jsonValue;
 }

@@ -27,10 +27,8 @@ S3AccessControlPolicy::S3AccessControlPolicy() :
 {
 }
 
-S3AccessControlPolicy::S3AccessControlPolicy(const XmlNode& xmlNode) : 
-    m_accessControlListHasBeenSet(false),
-    m_cannedAccessControlList(S3CannedAccessControlList::NOT_SET),
-    m_cannedAccessControlListHasBeenSet(false)
+S3AccessControlPolicy::S3AccessControlPolicy(const XmlNode& xmlNode)
+  : S3AccessControlPolicy()
 {
   *this = xmlNode;
 }

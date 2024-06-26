@@ -24,9 +24,8 @@ DependentEntity::DependentEntity() :
 {
 }
 
-DependentEntity::DependentEntity(JsonView jsonValue) : 
-    m_relationTypeHasBeenSet(false),
-    m_dependentResourceIdsHasBeenSet(false)
+DependentEntity::DependentEntity(JsonView jsonValue)
+  : DependentEntity()
 {
   *this = jsonValue;
 }

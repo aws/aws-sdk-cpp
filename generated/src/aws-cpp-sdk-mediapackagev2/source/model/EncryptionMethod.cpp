@@ -26,11 +26,8 @@ EncryptionMethod::EncryptionMethod() :
 {
 }
 
-EncryptionMethod::EncryptionMethod(JsonView jsonValue) : 
-    m_tsEncryptionMethod(TsEncryptionMethod::NOT_SET),
-    m_tsEncryptionMethodHasBeenSet(false),
-    m_cmafEncryptionMethod(CmafEncryptionMethod::NOT_SET),
-    m_cmafEncryptionMethodHasBeenSet(false)
+EncryptionMethod::EncryptionMethod(JsonView jsonValue)
+  : EncryptionMethod()
 {
   *this = jsonValue;
 }

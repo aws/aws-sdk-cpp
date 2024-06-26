@@ -22,8 +22,8 @@ CheckCapacityResult::CheckCapacityResult() :
 {
 }
 
-CheckCapacityResult::CheckCapacityResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_capacity(0)
+CheckCapacityResult::CheckCapacityResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CheckCapacityResult()
 {
   *this = result;
 }

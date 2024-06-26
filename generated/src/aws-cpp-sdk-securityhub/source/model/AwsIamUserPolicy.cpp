@@ -23,8 +23,8 @@ AwsIamUserPolicy::AwsIamUserPolicy() :
 {
 }
 
-AwsIamUserPolicy::AwsIamUserPolicy(JsonView jsonValue) : 
-    m_policyNameHasBeenSet(false)
+AwsIamUserPolicy::AwsIamUserPolicy(JsonView jsonValue)
+  : AwsIamUserPolicy()
 {
   *this = jsonValue;
 }

@@ -35,20 +35,8 @@ UserAccessResultItem::UserAccessResultItem() :
 {
 }
 
-UserAccessResultItem::UserAccessResultItem(JsonView jsonValue) : 
-    m_appHasBeenSet(false),
-    m_tenantIdHasBeenSet(false),
-    m_tenantDisplayNameHasBeenSet(false),
-    m_taskIdHasBeenSet(false),
-    m_resultStatus(ResultStatus::NOT_SET),
-    m_resultStatusHasBeenSet(false),
-    m_emailHasBeenSet(false),
-    m_userIdHasBeenSet(false),
-    m_userFullNameHasBeenSet(false),
-    m_userFirstNameHasBeenSet(false),
-    m_userLastNameHasBeenSet(false),
-    m_userStatusHasBeenSet(false),
-    m_taskErrorHasBeenSet(false)
+UserAccessResultItem::UserAccessResultItem(JsonView jsonValue)
+  : UserAccessResultItem()
 {
   *this = jsonValue;
 }

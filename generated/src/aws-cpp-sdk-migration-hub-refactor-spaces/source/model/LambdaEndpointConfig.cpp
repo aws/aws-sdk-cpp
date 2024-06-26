@@ -23,8 +23,8 @@ LambdaEndpointConfig::LambdaEndpointConfig() :
 {
 }
 
-LambdaEndpointConfig::LambdaEndpointConfig(JsonView jsonValue) : 
-    m_arnHasBeenSet(false)
+LambdaEndpointConfig::LambdaEndpointConfig(JsonView jsonValue)
+  : LambdaEndpointConfig()
 {
   *this = jsonValue;
 }

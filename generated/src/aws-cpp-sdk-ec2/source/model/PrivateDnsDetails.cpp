@@ -25,8 +25,8 @@ PrivateDnsDetails::PrivateDnsDetails() :
 {
 }
 
-PrivateDnsDetails::PrivateDnsDetails(const XmlNode& xmlNode) : 
-    m_privateDnsNameHasBeenSet(false)
+PrivateDnsDetails::PrivateDnsDetails(const XmlNode& xmlNode)
+  : PrivateDnsDetails()
 {
   *this = xmlNode;
 }

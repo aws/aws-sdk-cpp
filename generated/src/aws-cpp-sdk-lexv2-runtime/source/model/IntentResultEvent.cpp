@@ -30,15 +30,8 @@ IntentResultEvent::IntentResultEvent() :
 {
 }
 
-IntentResultEvent::IntentResultEvent(JsonView jsonValue) : 
-    m_inputMode(InputMode::NOT_SET),
-    m_inputModeHasBeenSet(false),
-    m_interpretationsHasBeenSet(false),
-    m_sessionStateHasBeenSet(false),
-    m_requestAttributesHasBeenSet(false),
-    m_sessionIdHasBeenSet(false),
-    m_eventIdHasBeenSet(false),
-    m_recognizedBotMemberHasBeenSet(false)
+IntentResultEvent::IntentResultEvent(JsonView jsonValue)
+  : IntentResultEvent()
 {
   *this = jsonValue;
 }

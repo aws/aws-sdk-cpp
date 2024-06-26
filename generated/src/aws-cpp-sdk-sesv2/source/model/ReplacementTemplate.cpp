@@ -23,8 +23,8 @@ ReplacementTemplate::ReplacementTemplate() :
 {
 }
 
-ReplacementTemplate::ReplacementTemplate(JsonView jsonValue) : 
-    m_replacementTemplateDataHasBeenSet(false)
+ReplacementTemplate::ReplacementTemplate(JsonView jsonValue)
+  : ReplacementTemplate()
 {
   *this = jsonValue;
 }

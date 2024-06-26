@@ -24,9 +24,8 @@ DataflowEndpointListItem::DataflowEndpointListItem() :
 {
 }
 
-DataflowEndpointListItem::DataflowEndpointListItem(JsonView jsonValue) : 
-    m_dataflowEndpointGroupArnHasBeenSet(false),
-    m_dataflowEndpointGroupIdHasBeenSet(false)
+DataflowEndpointListItem::DataflowEndpointListItem(JsonView jsonValue)
+  : DataflowEndpointListItem()
 {
   *this = jsonValue;
 }

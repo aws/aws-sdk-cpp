@@ -29,14 +29,8 @@ Invitation::Invitation() :
 {
 }
 
-Invitation::Invitation(JsonView jsonValue) : 
-    m_invitationIdHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_expirationDateHasBeenSet(false),
-    m_status(InvitationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_networkSummaryHasBeenSet(false),
-    m_arnHasBeenSet(false)
+Invitation::Invitation(JsonView jsonValue)
+  : Invitation()
 {
   *this = jsonValue;
 }

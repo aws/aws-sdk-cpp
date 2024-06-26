@@ -26,11 +26,8 @@ ScriptModeConfig::ScriptModeConfig() :
 {
 }
 
-ScriptModeConfig::ScriptModeConfig(JsonView jsonValue) : 
-    m_compressionType(CompressionType::NOT_SET),
-    m_compressionTypeHasBeenSet(false),
-    m_entryPointHasBeenSet(false),
-    m_s3UriHasBeenSet(false)
+ScriptModeConfig::ScriptModeConfig(JsonView jsonValue)
+  : ScriptModeConfig()
 {
   *this = jsonValue;
 }

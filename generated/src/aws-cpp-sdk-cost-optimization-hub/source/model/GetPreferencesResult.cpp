@@ -23,9 +23,8 @@ GetPreferencesResult::GetPreferencesResult() :
 {
 }
 
-GetPreferencesResult::GetPreferencesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_savingsEstimationMode(SavingsEstimationMode::NOT_SET),
-    m_memberAccountDiscountVisibility(MemberAccountDiscountVisibility::NOT_SET)
+GetPreferencesResult::GetPreferencesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetPreferencesResult()
 {
   *this = result;
 }

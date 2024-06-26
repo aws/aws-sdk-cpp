@@ -24,9 +24,8 @@ PivotTableDataPathOption::PivotTableDataPathOption() :
 {
 }
 
-PivotTableDataPathOption::PivotTableDataPathOption(JsonView jsonValue) : 
-    m_dataPathListHasBeenSet(false),
-    m_widthHasBeenSet(false)
+PivotTableDataPathOption::PivotTableDataPathOption(JsonView jsonValue)
+  : PivotTableDataPathOption()
 {
   *this = jsonValue;
 }

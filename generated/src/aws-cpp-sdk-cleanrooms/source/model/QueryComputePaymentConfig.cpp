@@ -24,9 +24,8 @@ QueryComputePaymentConfig::QueryComputePaymentConfig() :
 {
 }
 
-QueryComputePaymentConfig::QueryComputePaymentConfig(JsonView jsonValue) : 
-    m_isResponsible(false),
-    m_isResponsibleHasBeenSet(false)
+QueryComputePaymentConfig::QueryComputePaymentConfig(JsonView jsonValue)
+  : QueryComputePaymentConfig()
 {
   *this = jsonValue;
 }

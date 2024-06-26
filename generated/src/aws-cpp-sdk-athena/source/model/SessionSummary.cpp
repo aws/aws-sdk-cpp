@@ -27,12 +27,8 @@ SessionSummary::SessionSummary() :
 {
 }
 
-SessionSummary::SessionSummary(JsonView jsonValue) : 
-    m_sessionIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_notebookVersionHasBeenSet(false),
-    m_statusHasBeenSet(false)
+SessionSummary::SessionSummary(JsonView jsonValue)
+  : SessionSummary()
 {
   *this = jsonValue;
 }

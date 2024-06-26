@@ -28,13 +28,8 @@ AwsWafv2RulesDetails::AwsWafv2RulesDetails() :
 {
 }
 
-AwsWafv2RulesDetails::AwsWafv2RulesDetails(JsonView jsonValue) : 
-    m_actionHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_overrideActionHasBeenSet(false),
-    m_priority(0),
-    m_priorityHasBeenSet(false),
-    m_visibilityConfigHasBeenSet(false)
+AwsWafv2RulesDetails::AwsWafv2RulesDetails(JsonView jsonValue)
+  : AwsWafv2RulesDetails()
 {
   *this = jsonValue;
 }

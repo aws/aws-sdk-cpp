@@ -26,11 +26,8 @@ AppComponent::AppComponent() :
 {
 }
 
-AppComponent::AppComponent(JsonView jsonValue) : 
-    m_additionalInfoHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_typeHasBeenSet(false)
+AppComponent::AppComponent(JsonView jsonValue)
+  : AppComponent()
 {
   *this = jsonValue;
 }

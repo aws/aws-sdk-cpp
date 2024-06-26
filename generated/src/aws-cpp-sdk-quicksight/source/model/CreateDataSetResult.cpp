@@ -22,8 +22,8 @@ CreateDataSetResult::CreateDataSetResult() :
 {
 }
 
-CreateDataSetResult::CreateDataSetResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+CreateDataSetResult::CreateDataSetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateDataSetResult()
 {
   *this = result;
 }

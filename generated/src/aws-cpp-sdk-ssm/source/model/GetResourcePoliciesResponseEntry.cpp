@@ -25,10 +25,8 @@ GetResourcePoliciesResponseEntry::GetResourcePoliciesResponseEntry() :
 {
 }
 
-GetResourcePoliciesResponseEntry::GetResourcePoliciesResponseEntry(JsonView jsonValue) : 
-    m_policyIdHasBeenSet(false),
-    m_policyHashHasBeenSet(false),
-    m_policyHasBeenSet(false)
+GetResourcePoliciesResponseEntry::GetResourcePoliciesResponseEntry(JsonView jsonValue)
+  : GetResourcePoliciesResponseEntry()
 {
   *this = jsonValue;
 }

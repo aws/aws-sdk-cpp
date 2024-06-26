@@ -25,10 +25,8 @@ ApplicationPolicies::ApplicationPolicies() :
 {
 }
 
-ApplicationPolicies::ApplicationPolicies(JsonView jsonValue) : 
-    m_critical(false),
-    m_criticalHasBeenSet(false),
-    m_policiesHasBeenSet(false)
+ApplicationPolicies::ApplicationPolicies(JsonView jsonValue)
+  : ApplicationPolicies()
 {
   *this = jsonValue;
 }

@@ -27,12 +27,8 @@ DataCatalog::DataCatalog() :
 {
 }
 
-DataCatalog::DataCatalog(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_type(DataCatalogType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_parametersHasBeenSet(false)
+DataCatalog::DataCatalog(JsonView jsonValue)
+  : DataCatalog()
 {
   *this = jsonValue;
 }

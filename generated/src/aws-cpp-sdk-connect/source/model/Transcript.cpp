@@ -25,10 +25,8 @@ Transcript::Transcript() :
 {
 }
 
-Transcript::Transcript(JsonView jsonValue) : 
-    m_criteriaHasBeenSet(false),
-    m_matchType(SearchContactsMatchType::NOT_SET),
-    m_matchTypeHasBeenSet(false)
+Transcript::Transcript(JsonView jsonValue)
+  : Transcript()
 {
   *this = jsonValue;
 }

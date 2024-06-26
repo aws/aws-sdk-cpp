@@ -28,13 +28,8 @@ TrustedAdvisorCheckResult::TrustedAdvisorCheckResult() :
 {
 }
 
-TrustedAdvisorCheckResult::TrustedAdvisorCheckResult(JsonView jsonValue) : 
-    m_checkIdHasBeenSet(false),
-    m_timestampHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_resourcesSummaryHasBeenSet(false),
-    m_categorySpecificSummaryHasBeenSet(false),
-    m_flaggedResourcesHasBeenSet(false)
+TrustedAdvisorCheckResult::TrustedAdvisorCheckResult(JsonView jsonValue)
+  : TrustedAdvisorCheckResult()
 {
   *this = jsonValue;
 }

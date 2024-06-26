@@ -24,9 +24,8 @@ LoggingConfiguration::LoggingConfiguration() :
 {
 }
 
-LoggingConfiguration::LoggingConfiguration(JsonView jsonValue) : 
-    m_loggingRoleHasBeenSet(false),
-    m_logGroupNameHasBeenSet(false)
+LoggingConfiguration::LoggingConfiguration(JsonView jsonValue)
+  : LoggingConfiguration()
 {
   *this = jsonValue;
 }

@@ -27,12 +27,8 @@ GuardrailRegexConfig::GuardrailRegexConfig() :
 {
 }
 
-GuardrailRegexConfig::GuardrailRegexConfig(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_patternHasBeenSet(false),
-    m_action(GuardrailSensitiveInformationAction::NOT_SET),
-    m_actionHasBeenSet(false)
+GuardrailRegexConfig::GuardrailRegexConfig(JsonView jsonValue)
+  : GuardrailRegexConfig()
 {
   *this = jsonValue;
 }

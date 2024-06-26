@@ -25,10 +25,8 @@ AccessControl::AccessControl() :
 {
 }
 
-AccessControl::AccessControl(JsonView jsonValue) : 
-    m_principalsHasBeenSet(false),
-    m_memberRelation(MemberRelation::NOT_SET),
-    m_memberRelationHasBeenSet(false)
+AccessControl::AccessControl(JsonView jsonValue)
+  : AccessControl()
 {
   *this = jsonValue;
 }

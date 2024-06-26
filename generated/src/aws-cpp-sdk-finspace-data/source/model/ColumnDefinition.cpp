@@ -26,11 +26,8 @@ ColumnDefinition::ColumnDefinition() :
 {
 }
 
-ColumnDefinition::ColumnDefinition(JsonView jsonValue) : 
-    m_dataType(ColumnDataType::NOT_SET),
-    m_dataTypeHasBeenSet(false),
-    m_columnNameHasBeenSet(false),
-    m_columnDescriptionHasBeenSet(false)
+ColumnDefinition::ColumnDefinition(JsonView jsonValue)
+  : ColumnDefinition()
 {
   *this = jsonValue;
 }

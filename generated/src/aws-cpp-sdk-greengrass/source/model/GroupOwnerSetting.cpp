@@ -25,10 +25,8 @@ GroupOwnerSetting::GroupOwnerSetting() :
 {
 }
 
-GroupOwnerSetting::GroupOwnerSetting(JsonView jsonValue) : 
-    m_autoAddGroupOwner(false),
-    m_autoAddGroupOwnerHasBeenSet(false),
-    m_groupOwnerHasBeenSet(false)
+GroupOwnerSetting::GroupOwnerSetting(JsonView jsonValue)
+  : GroupOwnerSetting()
 {
   *this = jsonValue;
 }

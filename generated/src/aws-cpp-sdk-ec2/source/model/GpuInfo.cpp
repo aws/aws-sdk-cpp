@@ -27,10 +27,8 @@ GpuInfo::GpuInfo() :
 {
 }
 
-GpuInfo::GpuInfo(const XmlNode& xmlNode) : 
-    m_gpusHasBeenSet(false),
-    m_totalGpuMemoryInMiB(0),
-    m_totalGpuMemoryInMiBHasBeenSet(false)
+GpuInfo::GpuInfo(const XmlNode& xmlNode)
+  : GpuInfo()
 {
   *this = xmlNode;
 }

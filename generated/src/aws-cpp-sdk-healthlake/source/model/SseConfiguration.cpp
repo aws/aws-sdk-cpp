@@ -23,8 +23,8 @@ SseConfiguration::SseConfiguration() :
 {
 }
 
-SseConfiguration::SseConfiguration(JsonView jsonValue) : 
-    m_kmsEncryptionConfigHasBeenSet(false)
+SseConfiguration::SseConfiguration(JsonView jsonValue)
+  : SseConfiguration()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ VirtualGatewayListenerTlsValidationContext::VirtualGatewayListenerTlsValidationC
 {
 }
 
-VirtualGatewayListenerTlsValidationContext::VirtualGatewayListenerTlsValidationContext(JsonView jsonValue) : 
-    m_subjectAlternativeNamesHasBeenSet(false),
-    m_trustHasBeenSet(false)
+VirtualGatewayListenerTlsValidationContext::VirtualGatewayListenerTlsValidationContext(JsonView jsonValue)
+  : VirtualGatewayListenerTlsValidationContext()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ TaskEphemeralStorage::TaskEphemeralStorage() :
 {
 }
 
-TaskEphemeralStorage::TaskEphemeralStorage(JsonView jsonValue) : 
-    m_sizeInGiB(0),
-    m_sizeInGiBHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
+TaskEphemeralStorage::TaskEphemeralStorage(JsonView jsonValue)
+  : TaskEphemeralStorage()
 {
   *this = jsonValue;
 }

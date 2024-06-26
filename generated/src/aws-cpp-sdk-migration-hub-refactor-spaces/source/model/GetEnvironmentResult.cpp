@@ -23,9 +23,8 @@ GetEnvironmentResult::GetEnvironmentResult() :
 {
 }
 
-GetEnvironmentResult::GetEnvironmentResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_networkFabricType(NetworkFabricType::NOT_SET),
-    m_state(EnvironmentState::NOT_SET)
+GetEnvironmentResult::GetEnvironmentResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetEnvironmentResult()
 {
   *this = result;
 }

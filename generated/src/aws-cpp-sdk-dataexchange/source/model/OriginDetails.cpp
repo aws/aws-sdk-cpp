@@ -23,8 +23,8 @@ OriginDetails::OriginDetails() :
 {
 }
 
-OriginDetails::OriginDetails(JsonView jsonValue) : 
-    m_productIdHasBeenSet(false)
+OriginDetails::OriginDetails(JsonView jsonValue)
+  : OriginDetails()
 {
   *this = jsonValue;
 }

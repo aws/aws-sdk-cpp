@@ -24,9 +24,8 @@ RateLimitHeader::RateLimitHeader() :
 {
 }
 
-RateLimitHeader::RateLimitHeader(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_textTransformationsHasBeenSet(false)
+RateLimitHeader::RateLimitHeader(JsonView jsonValue)
+  : RateLimitHeader()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ Identity::Identity() :
 {
 }
 
-Identity::Identity(JsonView jsonValue) : 
-    m_userHasBeenSet(false),
-    m_groupHasBeenSet(false),
-    m_iamUserHasBeenSet(false),
-    m_iamRoleHasBeenSet(false)
+Identity::Identity(JsonView jsonValue)
+  : Identity()
 {
   *this = jsonValue;
 }

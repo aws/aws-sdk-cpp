@@ -24,9 +24,8 @@ VirtualGatewayListenerTlsFileCertificate::VirtualGatewayListenerTlsFileCertifica
 {
 }
 
-VirtualGatewayListenerTlsFileCertificate::VirtualGatewayListenerTlsFileCertificate(JsonView jsonValue) : 
-    m_certificateChainHasBeenSet(false),
-    m_privateKeyHasBeenSet(false)
+VirtualGatewayListenerTlsFileCertificate::VirtualGatewayListenerTlsFileCertificate(JsonView jsonValue)
+  : VirtualGatewayListenerTlsFileCertificate()
 {
   *this = jsonValue;
 }

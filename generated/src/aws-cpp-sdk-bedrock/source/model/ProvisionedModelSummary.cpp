@@ -38,23 +38,8 @@ ProvisionedModelSummary::ProvisionedModelSummary() :
 {
 }
 
-ProvisionedModelSummary::ProvisionedModelSummary(JsonView jsonValue) : 
-    m_provisionedModelNameHasBeenSet(false),
-    m_provisionedModelArnHasBeenSet(false),
-    m_modelArnHasBeenSet(false),
-    m_desiredModelArnHasBeenSet(false),
-    m_foundationModelArnHasBeenSet(false),
-    m_modelUnits(0),
-    m_modelUnitsHasBeenSet(false),
-    m_desiredModelUnits(0),
-    m_desiredModelUnitsHasBeenSet(false),
-    m_status(ProvisionedModelStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_commitmentDuration(CommitmentDuration::NOT_SET),
-    m_commitmentDurationHasBeenSet(false),
-    m_commitmentExpirationTimeHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false)
+ProvisionedModelSummary::ProvisionedModelSummary(JsonView jsonValue)
+  : ProvisionedModelSummary()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ DescribeStreamProcessorResult::DescribeStreamProcessorResult() :
 {
 }
 
-DescribeStreamProcessorResult::DescribeStreamProcessorResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(StreamProcessorStatus::NOT_SET)
+DescribeStreamProcessorResult::DescribeStreamProcessorResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeStreamProcessorResult()
 {
   *this = result;
 }

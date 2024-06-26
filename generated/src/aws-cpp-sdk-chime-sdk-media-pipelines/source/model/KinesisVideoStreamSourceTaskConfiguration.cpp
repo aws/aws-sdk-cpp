@@ -26,11 +26,8 @@ KinesisVideoStreamSourceTaskConfiguration::KinesisVideoStreamSourceTaskConfigura
 {
 }
 
-KinesisVideoStreamSourceTaskConfiguration::KinesisVideoStreamSourceTaskConfiguration(JsonView jsonValue) : 
-    m_streamArnHasBeenSet(false),
-    m_channelId(0),
-    m_channelIdHasBeenSet(false),
-    m_fragmentNumberHasBeenSet(false)
+KinesisVideoStreamSourceTaskConfiguration::KinesisVideoStreamSourceTaskConfiguration(JsonView jsonValue)
+  : KinesisVideoStreamSourceTaskConfiguration()
 {
   *this = jsonValue;
 }

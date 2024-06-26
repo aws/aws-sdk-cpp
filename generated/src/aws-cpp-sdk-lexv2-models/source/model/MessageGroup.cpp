@@ -24,9 +24,8 @@ MessageGroup::MessageGroup() :
 {
 }
 
-MessageGroup::MessageGroup(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_variationsHasBeenSet(false)
+MessageGroup::MessageGroup(JsonView jsonValue)
+  : MessageGroup()
 {
   *this = jsonValue;
 }

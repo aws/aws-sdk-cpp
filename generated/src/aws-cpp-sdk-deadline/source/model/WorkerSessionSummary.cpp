@@ -31,16 +31,8 @@ WorkerSessionSummary::WorkerSessionSummary() :
 {
 }
 
-WorkerSessionSummary::WorkerSessionSummary(JsonView jsonValue) : 
-    m_endedAtHasBeenSet(false),
-    m_jobIdHasBeenSet(false),
-    m_lifecycleStatus(SessionLifecycleStatus::NOT_SET),
-    m_lifecycleStatusHasBeenSet(false),
-    m_queueIdHasBeenSet(false),
-    m_sessionIdHasBeenSet(false),
-    m_startedAtHasBeenSet(false),
-    m_targetLifecycleStatus(SessionLifecycleTargetStatus::NOT_SET),
-    m_targetLifecycleStatusHasBeenSet(false)
+WorkerSessionSummary::WorkerSessionSummary(JsonView jsonValue)
+  : WorkerSessionSummary()
 {
   *this = jsonValue;
 }

@@ -50,35 +50,8 @@ OpenZFSVolumeConfiguration::OpenZFSVolumeConfiguration() :
 {
 }
 
-OpenZFSVolumeConfiguration::OpenZFSVolumeConfiguration(JsonView jsonValue) : 
-    m_parentVolumeIdHasBeenSet(false),
-    m_volumePathHasBeenSet(false),
-    m_storageCapacityReservationGiB(0),
-    m_storageCapacityReservationGiBHasBeenSet(false),
-    m_storageCapacityQuotaGiB(0),
-    m_storageCapacityQuotaGiBHasBeenSet(false),
-    m_recordSizeKiB(0),
-    m_recordSizeKiBHasBeenSet(false),
-    m_dataCompressionType(OpenZFSDataCompressionType::NOT_SET),
-    m_dataCompressionTypeHasBeenSet(false),
-    m_copyTagsToSnapshots(false),
-    m_copyTagsToSnapshotsHasBeenSet(false),
-    m_originSnapshotHasBeenSet(false),
-    m_readOnly(false),
-    m_readOnlyHasBeenSet(false),
-    m_nfsExportsHasBeenSet(false),
-    m_userAndGroupQuotasHasBeenSet(false),
-    m_restoreToSnapshotHasBeenSet(false),
-    m_deleteIntermediateSnaphots(false),
-    m_deleteIntermediateSnaphotsHasBeenSet(false),
-    m_deleteClonedVolumes(false),
-    m_deleteClonedVolumesHasBeenSet(false),
-    m_deleteIntermediateData(false),
-    m_deleteIntermediateDataHasBeenSet(false),
-    m_sourceSnapshotARNHasBeenSet(false),
-    m_destinationSnapshotHasBeenSet(false),
-    m_copyStrategy(OpenZFSCopyStrategy::NOT_SET),
-    m_copyStrategyHasBeenSet(false)
+OpenZFSVolumeConfiguration::OpenZFSVolumeConfiguration(JsonView jsonValue)
+  : OpenZFSVolumeConfiguration()
 {
   *this = jsonValue;
 }

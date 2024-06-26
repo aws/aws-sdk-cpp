@@ -26,11 +26,8 @@ ReasonCodeSummary::ReasonCodeSummary() :
 {
 }
 
-ReasonCodeSummary::ReasonCodeSummary(JsonView jsonValue) : 
-    m_name(FindingReasonCode::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_value(0.0),
-    m_valueHasBeenSet(false)
+ReasonCodeSummary::ReasonCodeSummary(JsonView jsonValue)
+  : ReasonCodeSummary()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ S3Object::S3Object() :
 {
 }
 
-S3Object::S3Object(JsonView jsonValue) : 
-    m_bucketHasBeenSet(false),
-    m_keyHasBeenSet(false)
+S3Object::S3Object(JsonView jsonValue)
+  : S3Object()
 {
   *this = jsonValue;
 }

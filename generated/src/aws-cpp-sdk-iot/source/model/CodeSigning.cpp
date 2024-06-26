@@ -25,10 +25,8 @@ CodeSigning::CodeSigning() :
 {
 }
 
-CodeSigning::CodeSigning(JsonView jsonValue) : 
-    m_awsSignerJobIdHasBeenSet(false),
-    m_startSigningJobParameterHasBeenSet(false),
-    m_customCodeSigningHasBeenSet(false)
+CodeSigning::CodeSigning(JsonView jsonValue)
+  : CodeSigning()
 {
   *this = jsonValue;
 }

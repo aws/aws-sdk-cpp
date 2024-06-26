@@ -28,13 +28,8 @@ Stairs::Stairs() :
 {
 }
 
-Stairs::Stairs(JsonView jsonValue) : 
-    m_durationInSeconds(0),
-    m_durationInSecondsHasBeenSet(false),
-    m_numberOfSteps(0),
-    m_numberOfStepsHasBeenSet(false),
-    m_usersPerStep(0),
-    m_usersPerStepHasBeenSet(false)
+Stairs::Stairs(JsonView jsonValue)
+  : Stairs()
 {
   *this = jsonValue;
 }

@@ -29,14 +29,8 @@ IntegerListConfigurationOptions::IntegerListConfigurationOptions() :
 {
 }
 
-IntegerListConfigurationOptions::IntegerListConfigurationOptions(JsonView jsonValue) : 
-    m_defaultValueHasBeenSet(false),
-    m_min(0),
-    m_minHasBeenSet(false),
-    m_max(0),
-    m_maxHasBeenSet(false),
-    m_maxItems(0),
-    m_maxItemsHasBeenSet(false)
+IntegerListConfigurationOptions::IntegerListConfigurationOptions(JsonView jsonValue)
+  : IntegerListConfigurationOptions()
 {
   *this = jsonValue;
 }

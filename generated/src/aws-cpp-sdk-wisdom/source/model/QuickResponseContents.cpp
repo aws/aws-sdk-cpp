@@ -24,9 +24,8 @@ QuickResponseContents::QuickResponseContents() :
 {
 }
 
-QuickResponseContents::QuickResponseContents(JsonView jsonValue) : 
-    m_markdownHasBeenSet(false),
-    m_plainTextHasBeenSet(false)
+QuickResponseContents::QuickResponseContents(JsonView jsonValue)
+  : QuickResponseContents()
 {
   *this = jsonValue;
 }

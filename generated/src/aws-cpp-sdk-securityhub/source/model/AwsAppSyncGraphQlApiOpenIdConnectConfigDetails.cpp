@@ -28,13 +28,8 @@ AwsAppSyncGraphQlApiOpenIdConnectConfigDetails::AwsAppSyncGraphQlApiOpenIdConnec
 {
 }
 
-AwsAppSyncGraphQlApiOpenIdConnectConfigDetails::AwsAppSyncGraphQlApiOpenIdConnectConfigDetails(JsonView jsonValue) : 
-    m_authTtL(0),
-    m_authTtLHasBeenSet(false),
-    m_clientIdHasBeenSet(false),
-    m_iatTtL(0),
-    m_iatTtLHasBeenSet(false),
-    m_issuerHasBeenSet(false)
+AwsAppSyncGraphQlApiOpenIdConnectConfigDetails::AwsAppSyncGraphQlApiOpenIdConnectConfigDetails(JsonView jsonValue)
+  : AwsAppSyncGraphQlApiOpenIdConnectConfigDetails()
 {
   *this = jsonValue;
 }

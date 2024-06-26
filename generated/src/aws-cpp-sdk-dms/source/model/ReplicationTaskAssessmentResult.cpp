@@ -29,14 +29,8 @@ ReplicationTaskAssessmentResult::ReplicationTaskAssessmentResult() :
 {
 }
 
-ReplicationTaskAssessmentResult::ReplicationTaskAssessmentResult(JsonView jsonValue) : 
-    m_replicationTaskIdentifierHasBeenSet(false),
-    m_replicationTaskArnHasBeenSet(false),
-    m_replicationTaskLastAssessmentDateHasBeenSet(false),
-    m_assessmentStatusHasBeenSet(false),
-    m_assessmentResultsFileHasBeenSet(false),
-    m_assessmentResultsHasBeenSet(false),
-    m_s3ObjectUrlHasBeenSet(false)
+ReplicationTaskAssessmentResult::ReplicationTaskAssessmentResult(JsonView jsonValue)
+  : ReplicationTaskAssessmentResult()
 {
   *this = jsonValue;
 }

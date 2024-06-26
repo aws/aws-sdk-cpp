@@ -26,11 +26,8 @@ SourceNetworkData::SourceNetworkData() :
 {
 }
 
-SourceNetworkData::SourceNetworkData(JsonView jsonValue) : 
-    m_sourceNetworkIDHasBeenSet(false),
-    m_sourceVpcHasBeenSet(false),
-    m_stackNameHasBeenSet(false),
-    m_targetVpcHasBeenSet(false)
+SourceNetworkData::SourceNetworkData(JsonView jsonValue)
+  : SourceNetworkData()
 {
   *this = jsonValue;
 }

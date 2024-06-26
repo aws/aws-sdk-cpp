@@ -24,9 +24,8 @@ FeaturedResultsConflictException::FeaturedResultsConflictException() :
 {
 }
 
-FeaturedResultsConflictException::FeaturedResultsConflictException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_conflictingItemsHasBeenSet(false)
+FeaturedResultsConflictException::FeaturedResultsConflictException(JsonView jsonValue)
+  : FeaturedResultsConflictException()
 {
   *this = jsonValue;
 }

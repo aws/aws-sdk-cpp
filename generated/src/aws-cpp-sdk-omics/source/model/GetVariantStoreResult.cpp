@@ -23,9 +23,8 @@ GetVariantStoreResult::GetVariantStoreResult() :
 {
 }
 
-GetVariantStoreResult::GetVariantStoreResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(StoreStatus::NOT_SET),
-    m_storeSizeBytes(0)
+GetVariantStoreResult::GetVariantStoreResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetVariantStoreResult()
 {
   *this = result;
 }

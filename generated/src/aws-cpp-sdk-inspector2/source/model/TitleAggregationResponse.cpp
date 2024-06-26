@@ -26,11 +26,8 @@ TitleAggregationResponse::TitleAggregationResponse() :
 {
 }
 
-TitleAggregationResponse::TitleAggregationResponse(JsonView jsonValue) : 
-    m_accountIdHasBeenSet(false),
-    m_severityCountsHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_vulnerabilityIdHasBeenSet(false)
+TitleAggregationResponse::TitleAggregationResponse(JsonView jsonValue)
+  : TitleAggregationResponse()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ OutputDestination::OutputDestination() :
 {
 }
 
-OutputDestination::OutputDestination(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_mediaPackageSettingsHasBeenSet(false),
-    m_multiplexSettingsHasBeenSet(false),
-    m_settingsHasBeenSet(false)
+OutputDestination::OutputDestination(JsonView jsonValue)
+  : OutputDestination()
 {
   *this = jsonValue;
 }

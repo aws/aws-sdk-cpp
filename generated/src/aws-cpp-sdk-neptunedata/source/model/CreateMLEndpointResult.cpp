@@ -22,8 +22,8 @@ CreateMLEndpointResult::CreateMLEndpointResult() :
 {
 }
 
-CreateMLEndpointResult::CreateMLEndpointResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_creationTimeInMillis(0)
+CreateMLEndpointResult::CreateMLEndpointResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateMLEndpointResult()
 {
   *this = result;
 }

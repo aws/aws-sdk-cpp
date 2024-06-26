@@ -26,11 +26,8 @@ BatchPolicy::BatchPolicy() :
 {
 }
 
-BatchPolicy::BatchPolicy(JsonView jsonValue) : 
-    m_timeoutInSeconds(0),
-    m_timeoutInSecondsHasBeenSet(false),
-    m_maxConcurrency(0),
-    m_maxConcurrencyHasBeenSet(false)
+BatchPolicy::BatchPolicy(JsonView jsonValue)
+  : BatchPolicy()
 {
   *this = jsonValue;
 }

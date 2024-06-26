@@ -28,12 +28,8 @@ PutFileEntry::PutFileEntry() :
 {
 }
 
-PutFileEntry::PutFileEntry(JsonView jsonValue) : 
-    m_filePathHasBeenSet(false),
-    m_fileMode(FileModeTypeEnum::NOT_SET),
-    m_fileModeHasBeenSet(false),
-    m_fileContentHasBeenSet(false),
-    m_sourceFileHasBeenSet(false)
+PutFileEntry::PutFileEntry(JsonView jsonValue)
+  : PutFileEntry()
 {
   *this = jsonValue;
 }

@@ -27,12 +27,8 @@ ServiceConnectConfiguration::ServiceConnectConfiguration() :
 {
 }
 
-ServiceConnectConfiguration::ServiceConnectConfiguration(JsonView jsonValue) : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_namespaceHasBeenSet(false),
-    m_servicesHasBeenSet(false),
-    m_logConfigurationHasBeenSet(false)
+ServiceConnectConfiguration::ServiceConnectConfiguration(JsonView jsonValue)
+  : ServiceConnectConfiguration()
 {
   *this = jsonValue;
 }

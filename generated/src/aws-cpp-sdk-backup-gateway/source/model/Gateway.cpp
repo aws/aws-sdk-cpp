@@ -28,13 +28,8 @@ Gateway::Gateway() :
 {
 }
 
-Gateway::Gateway(JsonView jsonValue) : 
-    m_gatewayArnHasBeenSet(false),
-    m_gatewayDisplayNameHasBeenSet(false),
-    m_gatewayType(GatewayType::NOT_SET),
-    m_gatewayTypeHasBeenSet(false),
-    m_hypervisorIdHasBeenSet(false),
-    m_lastSeenTimeHasBeenSet(false)
+Gateway::Gateway(JsonView jsonValue)
+  : Gateway()
 {
   *this = jsonValue;
 }

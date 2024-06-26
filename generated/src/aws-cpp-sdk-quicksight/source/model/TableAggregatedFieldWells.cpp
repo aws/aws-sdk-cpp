@@ -24,9 +24,8 @@ TableAggregatedFieldWells::TableAggregatedFieldWells() :
 {
 }
 
-TableAggregatedFieldWells::TableAggregatedFieldWells(JsonView jsonValue) : 
-    m_groupByHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+TableAggregatedFieldWells::TableAggregatedFieldWells(JsonView jsonValue)
+  : TableAggregatedFieldWells()
 {
   *this = jsonValue;
 }

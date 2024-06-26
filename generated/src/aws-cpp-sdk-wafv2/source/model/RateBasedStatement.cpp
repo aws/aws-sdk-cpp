@@ -32,16 +32,8 @@ RateBasedStatement::RateBasedStatement() :
 {
 }
 
-RateBasedStatement::RateBasedStatement(JsonView jsonValue) : 
-    m_limit(0),
-    m_limitHasBeenSet(false),
-    m_evaluationWindowSec(0),
-    m_evaluationWindowSecHasBeenSet(false),
-    m_aggregateKeyType(RateBasedStatementAggregateKeyType::NOT_SET),
-    m_aggregateKeyTypeHasBeenSet(false),
-    m_scopeDownStatementHasBeenSet(false),
-    m_forwardedIPConfigHasBeenSet(false),
-    m_customKeysHasBeenSet(false)
+RateBasedStatement::RateBasedStatement(JsonView jsonValue)
+  : RateBasedStatement()
 {
   *this = jsonValue;
 }

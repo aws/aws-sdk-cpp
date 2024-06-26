@@ -25,10 +25,8 @@ CoreNetworkNetworkFunctionGroup::CoreNetworkNetworkFunctionGroup() :
 {
 }
 
-CoreNetworkNetworkFunctionGroup::CoreNetworkNetworkFunctionGroup(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_edgeLocationsHasBeenSet(false),
-    m_segmentsHasBeenSet(false)
+CoreNetworkNetworkFunctionGroup::CoreNetworkNetworkFunctionGroup(JsonView jsonValue)
+  : CoreNetworkNetworkFunctionGroup()
 {
   *this = jsonValue;
 }

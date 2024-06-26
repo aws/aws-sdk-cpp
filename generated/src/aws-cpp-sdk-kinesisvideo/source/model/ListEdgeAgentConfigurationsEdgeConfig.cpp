@@ -30,15 +30,8 @@ ListEdgeAgentConfigurationsEdgeConfig::ListEdgeAgentConfigurationsEdgeConfig() :
 {
 }
 
-ListEdgeAgentConfigurationsEdgeConfig::ListEdgeAgentConfigurationsEdgeConfig(JsonView jsonValue) : 
-    m_streamNameHasBeenSet(false),
-    m_streamARNHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_syncStatus(SyncStatus::NOT_SET),
-    m_syncStatusHasBeenSet(false),
-    m_failedStatusDetailsHasBeenSet(false),
-    m_edgeConfigHasBeenSet(false)
+ListEdgeAgentConfigurationsEdgeConfig::ListEdgeAgentConfigurationsEdgeConfig(JsonView jsonValue)
+  : ListEdgeAgentConfigurationsEdgeConfig()
 {
   *this = jsonValue;
 }

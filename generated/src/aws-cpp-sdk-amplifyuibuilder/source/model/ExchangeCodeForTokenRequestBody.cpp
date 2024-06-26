@@ -25,10 +25,8 @@ ExchangeCodeForTokenRequestBody::ExchangeCodeForTokenRequestBody() :
 {
 }
 
-ExchangeCodeForTokenRequestBody::ExchangeCodeForTokenRequestBody(JsonView jsonValue) : 
-    m_codeHasBeenSet(false),
-    m_redirectUriHasBeenSet(false),
-    m_clientIdHasBeenSet(false)
+ExchangeCodeForTokenRequestBody::ExchangeCodeForTokenRequestBody(JsonView jsonValue)
+  : ExchangeCodeForTokenRequestBody()
 {
   *this = jsonValue;
 }

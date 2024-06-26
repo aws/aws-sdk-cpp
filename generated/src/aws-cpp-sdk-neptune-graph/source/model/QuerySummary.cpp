@@ -30,15 +30,8 @@ QuerySummary::QuerySummary() :
 {
 }
 
-QuerySummary::QuerySummary(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_queryStringHasBeenSet(false),
-    m_waited(0),
-    m_waitedHasBeenSet(false),
-    m_elapsed(0),
-    m_elapsedHasBeenSet(false),
-    m_state(QueryState::NOT_SET),
-    m_stateHasBeenSet(false)
+QuerySummary::QuerySummary(JsonView jsonValue)
+  : QuerySummary()
 {
   *this = jsonValue;
 }

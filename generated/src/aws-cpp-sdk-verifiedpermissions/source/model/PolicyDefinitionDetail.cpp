@@ -24,9 +24,8 @@ PolicyDefinitionDetail::PolicyDefinitionDetail() :
 {
 }
 
-PolicyDefinitionDetail::PolicyDefinitionDetail(JsonView jsonValue) : 
-    m_staticHasBeenSet(false),
-    m_templateLinkedHasBeenSet(false)
+PolicyDefinitionDetail::PolicyDefinitionDetail(JsonView jsonValue)
+  : PolicyDefinitionDetail()
 {
   *this = jsonValue;
 }

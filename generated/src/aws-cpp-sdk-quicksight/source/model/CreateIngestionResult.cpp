@@ -23,9 +23,8 @@ CreateIngestionResult::CreateIngestionResult() :
 {
 }
 
-CreateIngestionResult::CreateIngestionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_ingestionStatus(IngestionStatus::NOT_SET),
-    m_status(0)
+CreateIngestionResult::CreateIngestionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateIngestionResult()
 {
   *this = result;
 }

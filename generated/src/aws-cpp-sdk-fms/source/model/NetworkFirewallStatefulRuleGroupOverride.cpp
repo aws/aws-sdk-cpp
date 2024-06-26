@@ -24,9 +24,8 @@ NetworkFirewallStatefulRuleGroupOverride::NetworkFirewallStatefulRuleGroupOverri
 {
 }
 
-NetworkFirewallStatefulRuleGroupOverride::NetworkFirewallStatefulRuleGroupOverride(JsonView jsonValue) : 
-    m_action(NetworkFirewallOverrideAction::NOT_SET),
-    m_actionHasBeenSet(false)
+NetworkFirewallStatefulRuleGroupOverride::NetworkFirewallStatefulRuleGroupOverride(JsonView jsonValue)
+  : NetworkFirewallStatefulRuleGroupOverride()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ AccountHealth::AccountHealth() :
 {
 }
 
-AccountHealth::AccountHealth(JsonView jsonValue) : 
-    m_accountIdHasBeenSet(false),
-    m_insightHasBeenSet(false)
+AccountHealth::AccountHealth(JsonView jsonValue)
+  : AccountHealth()
 {
   *this = jsonValue;
 }

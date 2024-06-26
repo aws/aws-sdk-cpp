@@ -24,9 +24,8 @@ EpssDetails::EpssDetails() :
 {
 }
 
-EpssDetails::EpssDetails(JsonView jsonValue) : 
-    m_score(0.0),
-    m_scoreHasBeenSet(false)
+EpssDetails::EpssDetails(JsonView jsonValue)
+  : EpssDetails()
 {
   *this = jsonValue;
 }

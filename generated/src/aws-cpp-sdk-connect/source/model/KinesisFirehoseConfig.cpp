@@ -23,8 +23,8 @@ KinesisFirehoseConfig::KinesisFirehoseConfig() :
 {
 }
 
-KinesisFirehoseConfig::KinesisFirehoseConfig(JsonView jsonValue) : 
-    m_firehoseArnHasBeenSet(false)
+KinesisFirehoseConfig::KinesisFirehoseConfig(JsonView jsonValue)
+  : KinesisFirehoseConfig()
 {
   *this = jsonValue;
 }

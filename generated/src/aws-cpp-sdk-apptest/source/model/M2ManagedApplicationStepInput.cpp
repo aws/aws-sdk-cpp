@@ -30,15 +30,8 @@ M2ManagedApplicationStepInput::M2ManagedApplicationStepInput() :
 {
 }
 
-M2ManagedApplicationStepInput::M2ManagedApplicationStepInput(JsonView jsonValue) : 
-    m_applicationIdHasBeenSet(false),
-    m_runtimeHasBeenSet(false),
-    m_vpcEndpointServiceNameHasBeenSet(false),
-    m_listenerPort(0),
-    m_listenerPortHasBeenSet(false),
-    m_actionType(M2ManagedActionType::NOT_SET),
-    m_actionTypeHasBeenSet(false),
-    m_propertiesHasBeenSet(false)
+M2ManagedApplicationStepInput::M2ManagedApplicationStepInput(JsonView jsonValue)
+  : M2ManagedApplicationStepInput()
 {
   *this = jsonValue;
 }

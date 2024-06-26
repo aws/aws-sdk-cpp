@@ -26,11 +26,8 @@ Branch::Branch() :
 {
 }
 
-Branch::Branch(JsonView jsonValue) : 
-    m_fullyQualifiedNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_deprecationMessageHasBeenSet(false),
-    m_commentHasBeenSet(false)
+Branch::Branch(JsonView jsonValue)
+  : Branch()
 {
   *this = jsonValue;
 }

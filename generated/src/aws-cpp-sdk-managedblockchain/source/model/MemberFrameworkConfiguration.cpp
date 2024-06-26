@@ -23,8 +23,8 @@ MemberFrameworkConfiguration::MemberFrameworkConfiguration() :
 {
 }
 
-MemberFrameworkConfiguration::MemberFrameworkConfiguration(JsonView jsonValue) : 
-    m_fabricHasBeenSet(false)
+MemberFrameworkConfiguration::MemberFrameworkConfiguration(JsonView jsonValue)
+  : MemberFrameworkConfiguration()
 {
   *this = jsonValue;
 }

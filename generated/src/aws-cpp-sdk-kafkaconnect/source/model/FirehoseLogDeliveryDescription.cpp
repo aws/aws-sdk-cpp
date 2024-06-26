@@ -25,10 +25,8 @@ FirehoseLogDeliveryDescription::FirehoseLogDeliveryDescription() :
 {
 }
 
-FirehoseLogDeliveryDescription::FirehoseLogDeliveryDescription(JsonView jsonValue) : 
-    m_deliveryStreamHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
+FirehoseLogDeliveryDescription::FirehoseLogDeliveryDescription(JsonView jsonValue)
+  : FirehoseLogDeliveryDescription()
 {
   *this = jsonValue;
 }

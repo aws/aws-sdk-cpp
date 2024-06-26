@@ -37,22 +37,8 @@ CrawlerMetrics::CrawlerMetrics() :
 {
 }
 
-CrawlerMetrics::CrawlerMetrics(JsonView jsonValue) : 
-    m_crawlerNameHasBeenSet(false),
-    m_timeLeftSeconds(0.0),
-    m_timeLeftSecondsHasBeenSet(false),
-    m_stillEstimating(false),
-    m_stillEstimatingHasBeenSet(false),
-    m_lastRuntimeSeconds(0.0),
-    m_lastRuntimeSecondsHasBeenSet(false),
-    m_medianRuntimeSeconds(0.0),
-    m_medianRuntimeSecondsHasBeenSet(false),
-    m_tablesCreated(0),
-    m_tablesCreatedHasBeenSet(false),
-    m_tablesUpdated(0),
-    m_tablesUpdatedHasBeenSet(false),
-    m_tablesDeleted(0),
-    m_tablesDeletedHasBeenSet(false)
+CrawlerMetrics::CrawlerMetrics(JsonView jsonValue)
+  : CrawlerMetrics()
 {
   *this = jsonValue;
 }

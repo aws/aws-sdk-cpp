@@ -26,11 +26,8 @@ SortCriteria::SortCriteria() :
 {
 }
 
-SortCriteria::SortCriteria(JsonView jsonValue) : 
-    m_field(SortField::NOT_SET),
-    m_fieldHasBeenSet(false),
-    m_sortOrder(SortOrder::NOT_SET),
-    m_sortOrderHasBeenSet(false)
+SortCriteria::SortCriteria(JsonView jsonValue)
+  : SortCriteria()
 {
   *this = jsonValue;
 }

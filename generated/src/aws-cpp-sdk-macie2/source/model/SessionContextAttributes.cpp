@@ -25,10 +25,8 @@ SessionContextAttributes::SessionContextAttributes() :
 {
 }
 
-SessionContextAttributes::SessionContextAttributes(JsonView jsonValue) : 
-    m_creationDateHasBeenSet(false),
-    m_mfaAuthenticated(false),
-    m_mfaAuthenticatedHasBeenSet(false)
+SessionContextAttributes::SessionContextAttributes(JsonView jsonValue)
+  : SessionContextAttributes()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ OnlineAbConfig::OnlineAbConfig() :
 {
 }
 
-OnlineAbConfig::OnlineAbConfig(JsonView jsonValue) : 
-    m_controlTreatmentNameHasBeenSet(false),
-    m_treatmentWeightsHasBeenSet(false)
+OnlineAbConfig::OnlineAbConfig(JsonView jsonValue)
+  : OnlineAbConfig()
 {
   *this = jsonValue;
 }

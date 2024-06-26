@@ -22,8 +22,8 @@ CreateOutboundConnectionResult::CreateOutboundConnectionResult() :
 {
 }
 
-CreateOutboundConnectionResult::CreateOutboundConnectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_connectionMode(ConnectionMode::NOT_SET)
+CreateOutboundConnectionResult::CreateOutboundConnectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateOutboundConnectionResult()
 {
   *this = result;
 }

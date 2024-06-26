@@ -32,17 +32,8 @@ OidcConfig::OidcConfig() :
 {
 }
 
-OidcConfig::OidcConfig(JsonView jsonValue) : 
-    m_clientIdHasBeenSet(false),
-    m_clientSecretHasBeenSet(false),
-    m_issuerHasBeenSet(false),
-    m_authorizationEndpointHasBeenSet(false),
-    m_tokenEndpointHasBeenSet(false),
-    m_userInfoEndpointHasBeenSet(false),
-    m_logoutEndpointHasBeenSet(false),
-    m_jwksUriHasBeenSet(false),
-    m_scopeHasBeenSet(false),
-    m_authenticationRequestExtraParamsHasBeenSet(false)
+OidcConfig::OidcConfig(JsonView jsonValue)
+  : OidcConfig()
 {
   *this = jsonValue;
 }

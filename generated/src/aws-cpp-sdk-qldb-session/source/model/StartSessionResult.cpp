@@ -24,9 +24,8 @@ StartSessionResult::StartSessionResult() :
 {
 }
 
-StartSessionResult::StartSessionResult(JsonView jsonValue) : 
-    m_sessionTokenHasBeenSet(false),
-    m_timingInformationHasBeenSet(false)
+StartSessionResult::StartSessionResult(JsonView jsonValue)
+  : StartSessionResult()
 {
   *this = jsonValue;
 }

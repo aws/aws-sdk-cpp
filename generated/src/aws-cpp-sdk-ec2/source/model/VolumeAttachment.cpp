@@ -34,17 +34,8 @@ VolumeAttachment::VolumeAttachment() :
 {
 }
 
-VolumeAttachment::VolumeAttachment(const XmlNode& xmlNode) : 
-    m_attachTimeHasBeenSet(false),
-    m_deviceHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_state(VolumeAttachmentState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_volumeIdHasBeenSet(false),
-    m_deleteOnTermination(false),
-    m_deleteOnTerminationHasBeenSet(false),
-    m_associatedResourceHasBeenSet(false),
-    m_instanceOwningServiceHasBeenSet(false)
+VolumeAttachment::VolumeAttachment(const XmlNode& xmlNode)
+  : VolumeAttachment()
 {
   *this = xmlNode;
 }

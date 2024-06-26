@@ -28,13 +28,8 @@ TargetAddress::TargetAddress() :
 {
 }
 
-TargetAddress::TargetAddress(JsonView jsonValue) : 
-    m_ipHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_ipv6HasBeenSet(false),
-    m_protocol(Protocol::NOT_SET),
-    m_protocolHasBeenSet(false)
+TargetAddress::TargetAddress(JsonView jsonValue)
+  : TargetAddress()
 {
   *this = jsonValue;
 }

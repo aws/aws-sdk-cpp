@@ -24,9 +24,8 @@ InputLossFailoverSettings::InputLossFailoverSettings() :
 {
 }
 
-InputLossFailoverSettings::InputLossFailoverSettings(JsonView jsonValue) : 
-    m_inputLossThresholdMsec(0),
-    m_inputLossThresholdMsecHasBeenSet(false)
+InputLossFailoverSettings::InputLossFailoverSettings(JsonView jsonValue)
+  : InputLossFailoverSettings()
 {
   *this = jsonValue;
 }

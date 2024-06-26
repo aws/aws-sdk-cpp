@@ -27,12 +27,8 @@ AwsEcsContainerDetails::AwsEcsContainerDetails() :
 {
 }
 
-AwsEcsContainerDetails::AwsEcsContainerDetails(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_imageHasBeenSet(false),
-    m_mountPointsHasBeenSet(false),
-    m_privileged(false),
-    m_privilegedHasBeenSet(false)
+AwsEcsContainerDetails::AwsEcsContainerDetails(JsonView jsonValue)
+  : AwsEcsContainerDetails()
 {
   *this = jsonValue;
 }

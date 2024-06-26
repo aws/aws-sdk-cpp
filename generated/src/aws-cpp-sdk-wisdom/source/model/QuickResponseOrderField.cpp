@@ -25,10 +25,8 @@ QuickResponseOrderField::QuickResponseOrderField() :
 {
 }
 
-QuickResponseOrderField::QuickResponseOrderField(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_order(Order::NOT_SET),
-    m_orderHasBeenSet(false)
+QuickResponseOrderField::QuickResponseOrderField(JsonView jsonValue)
+  : QuickResponseOrderField()
 {
   *this = jsonValue;
 }

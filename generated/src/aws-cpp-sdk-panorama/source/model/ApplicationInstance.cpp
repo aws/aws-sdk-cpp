@@ -36,21 +36,8 @@ ApplicationInstance::ApplicationInstance() :
 {
 }
 
-ApplicationInstance::ApplicationInstance(JsonView jsonValue) : 
-    m_applicationInstanceIdHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_defaultRuntimeContextDeviceHasBeenSet(false),
-    m_defaultRuntimeContextDeviceNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_healthStatus(ApplicationInstanceHealthStatus::NOT_SET),
-    m_healthStatusHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_runtimeContextStatesHasBeenSet(false),
-    m_status(ApplicationInstanceStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusDescriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+ApplicationInstance::ApplicationInstance(JsonView jsonValue)
+  : ApplicationInstance()
 {
   *this = jsonValue;
 }

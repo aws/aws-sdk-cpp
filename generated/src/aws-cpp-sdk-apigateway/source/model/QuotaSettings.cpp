@@ -28,13 +28,8 @@ QuotaSettings::QuotaSettings() :
 {
 }
 
-QuotaSettings::QuotaSettings(JsonView jsonValue) : 
-    m_limit(0),
-    m_limitHasBeenSet(false),
-    m_offset(0),
-    m_offsetHasBeenSet(false),
-    m_period(QuotaPeriodType::NOT_SET),
-    m_periodHasBeenSet(false)
+QuotaSettings::QuotaSettings(JsonView jsonValue)
+  : QuotaSettings()
 {
   *this = jsonValue;
 }

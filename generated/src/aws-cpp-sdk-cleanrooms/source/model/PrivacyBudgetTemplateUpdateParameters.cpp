@@ -23,8 +23,8 @@ PrivacyBudgetTemplateUpdateParameters::PrivacyBudgetTemplateUpdateParameters() :
 {
 }
 
-PrivacyBudgetTemplateUpdateParameters::PrivacyBudgetTemplateUpdateParameters(JsonView jsonValue) : 
-    m_differentialPrivacyHasBeenSet(false)
+PrivacyBudgetTemplateUpdateParameters::PrivacyBudgetTemplateUpdateParameters(JsonView jsonValue)
+  : PrivacyBudgetTemplateUpdateParameters()
 {
   *this = jsonValue;
 }

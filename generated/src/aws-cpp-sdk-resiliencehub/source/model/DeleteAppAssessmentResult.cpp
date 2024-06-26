@@ -22,8 +22,8 @@ DeleteAppAssessmentResult::DeleteAppAssessmentResult() :
 {
 }
 
-DeleteAppAssessmentResult::DeleteAppAssessmentResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_assessmentStatus(AssessmentStatus::NOT_SET)
+DeleteAppAssessmentResult::DeleteAppAssessmentResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeleteAppAssessmentResult()
 {
   *this = result;
 }

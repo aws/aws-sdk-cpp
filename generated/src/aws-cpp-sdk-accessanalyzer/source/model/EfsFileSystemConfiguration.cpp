@@ -23,8 +23,8 @@ EfsFileSystemConfiguration::EfsFileSystemConfiguration() :
 {
 }
 
-EfsFileSystemConfiguration::EfsFileSystemConfiguration(JsonView jsonValue) : 
-    m_fileSystemPolicyHasBeenSet(false)
+EfsFileSystemConfiguration::EfsFileSystemConfiguration(JsonView jsonValue)
+  : EfsFileSystemConfiguration()
 {
   *this = jsonValue;
 }

@@ -33,18 +33,8 @@ EksPodProperties::EksPodProperties() :
 {
 }
 
-EksPodProperties::EksPodProperties(JsonView jsonValue) : 
-    m_serviceAccountNameHasBeenSet(false),
-    m_hostNetwork(false),
-    m_hostNetworkHasBeenSet(false),
-    m_dnsPolicyHasBeenSet(false),
-    m_imagePullSecretsHasBeenSet(false),
-    m_containersHasBeenSet(false),
-    m_initContainersHasBeenSet(false),
-    m_volumesHasBeenSet(false),
-    m_metadataHasBeenSet(false),
-    m_shareProcessNamespace(false),
-    m_shareProcessNamespaceHasBeenSet(false)
+EksPodProperties::EksPodProperties(JsonView jsonValue)
+  : EksPodProperties()
 {
   *this = jsonValue;
 }

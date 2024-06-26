@@ -24,9 +24,8 @@ PermissionsBoundary::PermissionsBoundary() :
 {
 }
 
-PermissionsBoundary::PermissionsBoundary(JsonView jsonValue) : 
-    m_customerManagedPolicyReferenceHasBeenSet(false),
-    m_managedPolicyArnHasBeenSet(false)
+PermissionsBoundary::PermissionsBoundary(JsonView jsonValue)
+  : PermissionsBoundary()
 {
   *this = jsonValue;
 }

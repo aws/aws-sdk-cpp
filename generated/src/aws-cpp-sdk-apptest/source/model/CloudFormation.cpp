@@ -24,9 +24,8 @@ CloudFormation::CloudFormation() :
 {
 }
 
-CloudFormation::CloudFormation(JsonView jsonValue) : 
-    m_templateLocationHasBeenSet(false),
-    m_parametersHasBeenSet(false)
+CloudFormation::CloudFormation(JsonView jsonValue)
+  : CloudFormation()
 {
   *this = jsonValue;
 }

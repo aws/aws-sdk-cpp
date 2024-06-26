@@ -25,8 +25,8 @@ InvalidLambdaFunctionException::InvalidLambdaFunctionException() :
 {
 }
 
-InvalidLambdaFunctionException::InvalidLambdaFunctionException(const XmlNode& xmlNode) : 
-    m_functionArnHasBeenSet(false)
+InvalidLambdaFunctionException::InvalidLambdaFunctionException(const XmlNode& xmlNode)
+  : InvalidLambdaFunctionException()
 {
   *this = xmlNode;
 }

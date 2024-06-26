@@ -26,12 +26,8 @@ GetTestRunStepResult::GetTestRunStepResult() :
 {
 }
 
-GetTestRunStepResult::GetTestRunStepResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_testCaseVersion(0),
-    m_testSuiteVersion(0),
-    m_beforeStep(false),
-    m_afterStep(false),
-    m_status(StepRunStatus::NOT_SET)
+GetTestRunStepResult::GetTestRunStepResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetTestRunStepResult()
 {
   *this = result;
 }

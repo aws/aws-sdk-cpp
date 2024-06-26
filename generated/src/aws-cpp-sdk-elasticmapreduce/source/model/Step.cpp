@@ -29,14 +29,8 @@ Step::Step() :
 {
 }
 
-Step::Step(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_configHasBeenSet(false),
-    m_actionOnFailure(ActionOnFailure::NOT_SET),
-    m_actionOnFailureHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_executionRoleArnHasBeenSet(false)
+Step::Step(JsonView jsonValue)
+  : Step()
 {
   *this = jsonValue;
 }

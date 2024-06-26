@@ -23,8 +23,8 @@ EksInfo::EksInfo() :
 {
 }
 
-EksInfo::EksInfo(JsonView jsonValue) : 
-    m_namespaceHasBeenSet(false)
+EksInfo::EksInfo(JsonView jsonValue)
+  : EksInfo()
 {
   *this = jsonValue;
 }

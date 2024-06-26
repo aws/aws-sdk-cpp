@@ -30,15 +30,8 @@ ModelQualityAppSpecification::ModelQualityAppSpecification() :
 {
 }
 
-ModelQualityAppSpecification::ModelQualityAppSpecification(JsonView jsonValue) : 
-    m_imageUriHasBeenSet(false),
-    m_containerEntrypointHasBeenSet(false),
-    m_containerArgumentsHasBeenSet(false),
-    m_recordPreprocessorSourceUriHasBeenSet(false),
-    m_postAnalyticsProcessorSourceUriHasBeenSet(false),
-    m_problemType(MonitoringProblemType::NOT_SET),
-    m_problemTypeHasBeenSet(false),
-    m_environmentHasBeenSet(false)
+ModelQualityAppSpecification::ModelQualityAppSpecification(JsonView jsonValue)
+  : ModelQualityAppSpecification()
 {
   *this = jsonValue;
 }

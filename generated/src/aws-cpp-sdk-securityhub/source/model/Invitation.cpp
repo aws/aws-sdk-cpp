@@ -26,11 +26,8 @@ Invitation::Invitation() :
 {
 }
 
-Invitation::Invitation(JsonView jsonValue) : 
-    m_accountIdHasBeenSet(false),
-    m_invitationIdHasBeenSet(false),
-    m_invitedAtHasBeenSet(false),
-    m_memberStatusHasBeenSet(false)
+Invitation::Invitation(JsonView jsonValue)
+  : Invitation()
 {
   *this = jsonValue;
 }

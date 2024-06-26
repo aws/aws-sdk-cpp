@@ -26,9 +26,8 @@ ScalarReferenceDetails::ScalarReferenceDetails() :
 {
 }
 
-ScalarReferenceDetails::ScalarReferenceDetails(const XmlNode& xmlNode) : 
-    m_value(0.0),
-    m_valueHasBeenSet(false)
+ScalarReferenceDetails::ScalarReferenceDetails(const XmlNode& xmlNode)
+  : ScalarReferenceDetails()
 {
   *this = xmlNode;
 }

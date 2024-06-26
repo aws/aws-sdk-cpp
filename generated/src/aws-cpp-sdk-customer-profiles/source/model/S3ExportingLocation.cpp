@@ -24,9 +24,8 @@ S3ExportingLocation::S3ExportingLocation() :
 {
 }
 
-S3ExportingLocation::S3ExportingLocation(JsonView jsonValue) : 
-    m_s3BucketNameHasBeenSet(false),
-    m_s3KeyNameHasBeenSet(false)
+S3ExportingLocation::S3ExportingLocation(JsonView jsonValue)
+  : S3ExportingLocation()
 {
   *this = jsonValue;
 }

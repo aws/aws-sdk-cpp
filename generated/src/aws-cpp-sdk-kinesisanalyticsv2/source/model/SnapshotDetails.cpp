@@ -30,15 +30,8 @@ SnapshotDetails::SnapshotDetails() :
 {
 }
 
-SnapshotDetails::SnapshotDetails(JsonView jsonValue) : 
-    m_snapshotNameHasBeenSet(false),
-    m_snapshotStatus(SnapshotStatus::NOT_SET),
-    m_snapshotStatusHasBeenSet(false),
-    m_applicationVersionId(0),
-    m_applicationVersionIdHasBeenSet(false),
-    m_snapshotCreationTimestampHasBeenSet(false),
-    m_runtimeEnvironment(RuntimeEnvironment::NOT_SET),
-    m_runtimeEnvironmentHasBeenSet(false)
+SnapshotDetails::SnapshotDetails(JsonView jsonValue)
+  : SnapshotDetails()
 {
   *this = jsonValue;
 }

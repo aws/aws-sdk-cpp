@@ -63,48 +63,8 @@ M3u8Settings::M3u8Settings() :
 {
 }
 
-M3u8Settings::M3u8Settings(JsonView jsonValue) : 
-    m_audioDuration(M3u8AudioDuration::NOT_SET),
-    m_audioDurationHasBeenSet(false),
-    m_audioFramesPerPes(0),
-    m_audioFramesPerPesHasBeenSet(false),
-    m_audioPidsHasBeenSet(false),
-    m_dataPTSControl(M3u8DataPtsControl::NOT_SET),
-    m_dataPTSControlHasBeenSet(false),
-    m_maxPcrInterval(0),
-    m_maxPcrIntervalHasBeenSet(false),
-    m_nielsenId3(M3u8NielsenId3::NOT_SET),
-    m_nielsenId3HasBeenSet(false),
-    m_patInterval(0),
-    m_patIntervalHasBeenSet(false),
-    m_pcrControl(M3u8PcrControl::NOT_SET),
-    m_pcrControlHasBeenSet(false),
-    m_pcrPid(0),
-    m_pcrPidHasBeenSet(false),
-    m_pmtInterval(0),
-    m_pmtIntervalHasBeenSet(false),
-    m_pmtPid(0),
-    m_pmtPidHasBeenSet(false),
-    m_privateMetadataPid(0),
-    m_privateMetadataPidHasBeenSet(false),
-    m_programNumber(0),
-    m_programNumberHasBeenSet(false),
-    m_ptsOffset(0),
-    m_ptsOffsetHasBeenSet(false),
-    m_ptsOffsetMode(TsPtsOffset::NOT_SET),
-    m_ptsOffsetModeHasBeenSet(false),
-    m_scte35Pid(0),
-    m_scte35PidHasBeenSet(false),
-    m_scte35Source(M3u8Scte35Source::NOT_SET),
-    m_scte35SourceHasBeenSet(false),
-    m_timedMetadata(TimedMetadata::NOT_SET),
-    m_timedMetadataHasBeenSet(false),
-    m_timedMetadataPid(0),
-    m_timedMetadataPidHasBeenSet(false),
-    m_transportStreamId(0),
-    m_transportStreamIdHasBeenSet(false),
-    m_videoPid(0),
-    m_videoPidHasBeenSet(false)
+M3u8Settings::M3u8Settings(JsonView jsonValue)
+  : M3u8Settings()
 {
   *this = jsonValue;
 }

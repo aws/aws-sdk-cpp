@@ -25,10 +25,8 @@ StageSession::StageSession() :
 {
 }
 
-StageSession::StageSession(JsonView jsonValue) : 
-    m_sessionIdHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
+StageSession::StageSession(JsonView jsonValue)
+  : StageSession()
 {
   *this = jsonValue;
 }

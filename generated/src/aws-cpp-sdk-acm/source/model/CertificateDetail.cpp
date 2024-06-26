@@ -54,39 +54,8 @@ CertificateDetail::CertificateDetail() :
 {
 }
 
-CertificateDetail::CertificateDetail(JsonView jsonValue) : 
-    m_certificateArnHasBeenSet(false),
-    m_domainNameHasBeenSet(false),
-    m_subjectAlternativeNamesHasBeenSet(false),
-    m_domainValidationOptionsHasBeenSet(false),
-    m_serialHasBeenSet(false),
-    m_subjectHasBeenSet(false),
-    m_issuerHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_issuedAtHasBeenSet(false),
-    m_importedAtHasBeenSet(false),
-    m_status(CertificateStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_revokedAtHasBeenSet(false),
-    m_revocationReason(RevocationReason::NOT_SET),
-    m_revocationReasonHasBeenSet(false),
-    m_notBeforeHasBeenSet(false),
-    m_notAfterHasBeenSet(false),
-    m_keyAlgorithm(KeyAlgorithm::NOT_SET),
-    m_keyAlgorithmHasBeenSet(false),
-    m_signatureAlgorithmHasBeenSet(false),
-    m_inUseByHasBeenSet(false),
-    m_failureReason(FailureReason::NOT_SET),
-    m_failureReasonHasBeenSet(false),
-    m_type(CertificateType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_renewalSummaryHasBeenSet(false),
-    m_keyUsagesHasBeenSet(false),
-    m_extendedKeyUsagesHasBeenSet(false),
-    m_certificateAuthorityArnHasBeenSet(false),
-    m_renewalEligibility(RenewalEligibility::NOT_SET),
-    m_renewalEligibilityHasBeenSet(false),
-    m_optionsHasBeenSet(false)
+CertificateDetail::CertificateDetail(JsonView jsonValue)
+  : CertificateDetail()
 {
   *this = jsonValue;
 }

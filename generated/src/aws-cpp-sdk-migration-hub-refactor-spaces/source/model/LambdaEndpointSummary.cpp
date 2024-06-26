@@ -23,8 +23,8 @@ LambdaEndpointSummary::LambdaEndpointSummary() :
 {
 }
 
-LambdaEndpointSummary::LambdaEndpointSummary(JsonView jsonValue) : 
-    m_arnHasBeenSet(false)
+LambdaEndpointSummary::LambdaEndpointSummary(JsonView jsonValue)
+  : LambdaEndpointSummary()
 {
   *this = jsonValue;
 }

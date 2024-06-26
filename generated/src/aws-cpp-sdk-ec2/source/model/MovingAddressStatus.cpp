@@ -27,10 +27,8 @@ MovingAddressStatus::MovingAddressStatus() :
 {
 }
 
-MovingAddressStatus::MovingAddressStatus(const XmlNode& xmlNode) : 
-    m_moveStatus(MoveStatus::NOT_SET),
-    m_moveStatusHasBeenSet(false),
-    m_publicIpHasBeenSet(false)
+MovingAddressStatus::MovingAddressStatus(const XmlNode& xmlNode)
+  : MovingAddressStatus()
 {
   *this = xmlNode;
 }

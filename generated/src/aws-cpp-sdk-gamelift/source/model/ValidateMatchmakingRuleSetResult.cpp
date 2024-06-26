@@ -22,8 +22,8 @@ ValidateMatchmakingRuleSetResult::ValidateMatchmakingRuleSetResult() :
 {
 }
 
-ValidateMatchmakingRuleSetResult::ValidateMatchmakingRuleSetResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_valid(false)
+ValidateMatchmakingRuleSetResult::ValidateMatchmakingRuleSetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ValidateMatchmakingRuleSetResult()
 {
   *this = result;
 }

@@ -24,9 +24,8 @@ CustomEvents::CustomEvents() :
 {
 }
 
-CustomEvents::CustomEvents(JsonView jsonValue) : 
-    m_status(CustomEventsStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+CustomEvents::CustomEvents(JsonView jsonValue)
+  : CustomEvents()
 {
   *this = jsonValue;
 }

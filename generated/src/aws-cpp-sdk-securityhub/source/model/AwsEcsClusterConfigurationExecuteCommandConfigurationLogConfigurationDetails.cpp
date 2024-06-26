@@ -29,14 +29,8 @@ AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails::Aw
 {
 }
 
-AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails::AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails(JsonView jsonValue) : 
-    m_cloudWatchEncryptionEnabled(false),
-    m_cloudWatchEncryptionEnabledHasBeenSet(false),
-    m_cloudWatchLogGroupNameHasBeenSet(false),
-    m_s3BucketNameHasBeenSet(false),
-    m_s3EncryptionEnabled(false),
-    m_s3EncryptionEnabledHasBeenSet(false),
-    m_s3KeyPrefixHasBeenSet(false)
+AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails::AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails(JsonView jsonValue)
+  : AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails()
 {
   *this = jsonValue;
 }

@@ -32,17 +32,8 @@ ModelPackagingJobMetadata::ModelPackagingJobMetadata() :
 {
 }
 
-ModelPackagingJobMetadata::ModelPackagingJobMetadata(JsonView jsonValue) : 
-    m_jobNameHasBeenSet(false),
-    m_projectNameHasBeenSet(false),
-    m_modelVersionHasBeenSet(false),
-    m_modelPackagingJobDescriptionHasBeenSet(false),
-    m_modelPackagingMethodHasBeenSet(false),
-    m_status(ModelPackagingJobStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_creationTimestampHasBeenSet(false),
-    m_lastUpdatedTimestampHasBeenSet(false)
+ModelPackagingJobMetadata::ModelPackagingJobMetadata(JsonView jsonValue)
+  : ModelPackagingJobMetadata()
 {
   *this = jsonValue;
 }

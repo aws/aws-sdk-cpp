@@ -25,10 +25,8 @@ IPAddressTypeStatus::IPAddressTypeStatus() :
 {
 }
 
-IPAddressTypeStatus::IPAddressTypeStatus(JsonView jsonValue) : 
-    m_options(IPAddressType::NOT_SET),
-    m_optionsHasBeenSet(false),
-    m_statusHasBeenSet(false)
+IPAddressTypeStatus::IPAddressTypeStatus(JsonView jsonValue)
+  : IPAddressTypeStatus()
 {
   *this = jsonValue;
 }

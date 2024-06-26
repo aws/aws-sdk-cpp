@@ -32,15 +32,8 @@ StatisticSet::StatisticSet() :
 {
 }
 
-StatisticSet::StatisticSet(const XmlNode& xmlNode) : 
-    m_sampleCount(0.0),
-    m_sampleCountHasBeenSet(false),
-    m_sum(0.0),
-    m_sumHasBeenSet(false),
-    m_minimum(0.0),
-    m_minimumHasBeenSet(false),
-    m_maximum(0.0),
-    m_maximumHasBeenSet(false)
+StatisticSet::StatisticSet(const XmlNode& xmlNode)
+  : StatisticSet()
 {
   *this = xmlNode;
 }

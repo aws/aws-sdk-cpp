@@ -27,12 +27,8 @@ KxNode::KxNode() :
 {
 }
 
-KxNode::KxNode(JsonView jsonValue) : 
-    m_nodeIdHasBeenSet(false),
-    m_availabilityZoneIdHasBeenSet(false),
-    m_launchTimeHasBeenSet(false),
-    m_status(KxNodeStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+KxNode::KxNode(JsonView jsonValue)
+  : KxNode()
 {
   *this = jsonValue;
 }

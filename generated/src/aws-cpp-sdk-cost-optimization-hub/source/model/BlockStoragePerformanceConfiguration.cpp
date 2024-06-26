@@ -26,11 +26,8 @@ BlockStoragePerformanceConfiguration::BlockStoragePerformanceConfiguration() :
 {
 }
 
-BlockStoragePerformanceConfiguration::BlockStoragePerformanceConfiguration(JsonView jsonValue) : 
-    m_iops(0.0),
-    m_iopsHasBeenSet(false),
-    m_throughput(0.0),
-    m_throughputHasBeenSet(false)
+BlockStoragePerformanceConfiguration::BlockStoragePerformanceConfiguration(JsonView jsonValue)
+  : BlockStoragePerformanceConfiguration()
 {
   *this = jsonValue;
 }

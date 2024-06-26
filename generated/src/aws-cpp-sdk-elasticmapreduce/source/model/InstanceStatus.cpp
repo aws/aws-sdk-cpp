@@ -26,11 +26,8 @@ InstanceStatus::InstanceStatus() :
 {
 }
 
-InstanceStatus::InstanceStatus(JsonView jsonValue) : 
-    m_state(InstanceState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_stateChangeReasonHasBeenSet(false),
-    m_timelineHasBeenSet(false)
+InstanceStatus::InstanceStatus(JsonView jsonValue)
+  : InstanceStatus()
 {
   *this = jsonValue;
 }

@@ -39,24 +39,8 @@ ReviewTemplateAnswer::ReviewTemplateAnswer() :
 {
 }
 
-ReviewTemplateAnswer::ReviewTemplateAnswer(JsonView jsonValue) : 
-    m_questionIdHasBeenSet(false),
-    m_pillarIdHasBeenSet(false),
-    m_questionTitleHasBeenSet(false),
-    m_questionDescriptionHasBeenSet(false),
-    m_improvementPlanUrlHasBeenSet(false),
-    m_helpfulResourceUrlHasBeenSet(false),
-    m_helpfulResourceDisplayTextHasBeenSet(false),
-    m_choicesHasBeenSet(false),
-    m_selectedChoicesHasBeenSet(false),
-    m_choiceAnswersHasBeenSet(false),
-    m_isApplicable(false),
-    m_isApplicableHasBeenSet(false),
-    m_answerStatus(ReviewTemplateAnswerStatus::NOT_SET),
-    m_answerStatusHasBeenSet(false),
-    m_notesHasBeenSet(false),
-    m_reason(AnswerReason::NOT_SET),
-    m_reasonHasBeenSet(false)
+ReviewTemplateAnswer::ReviewTemplateAnswer(JsonView jsonValue)
+  : ReviewTemplateAnswer()
 {
   *this = jsonValue;
 }

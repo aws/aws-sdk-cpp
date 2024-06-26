@@ -23,9 +23,8 @@ DescribeUploadBufferResult::DescribeUploadBufferResult() :
 {
 }
 
-DescribeUploadBufferResult::DescribeUploadBufferResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_uploadBufferUsedInBytes(0),
-    m_uploadBufferAllocatedInBytes(0)
+DescribeUploadBufferResult::DescribeUploadBufferResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeUploadBufferResult()
 {
   *this = result;
 }

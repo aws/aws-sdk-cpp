@@ -28,13 +28,8 @@ RefreshSchemasStatus::RefreshSchemasStatus() :
 {
 }
 
-RefreshSchemasStatus::RefreshSchemasStatus(JsonView jsonValue) : 
-    m_endpointArnHasBeenSet(false),
-    m_replicationInstanceArnHasBeenSet(false),
-    m_status(RefreshSchemasStatusTypeValue::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_lastRefreshDateHasBeenSet(false),
-    m_lastFailureMessageHasBeenSet(false)
+RefreshSchemasStatus::RefreshSchemasStatus(JsonView jsonValue)
+  : RefreshSchemasStatus()
 {
   *this = jsonValue;
 }

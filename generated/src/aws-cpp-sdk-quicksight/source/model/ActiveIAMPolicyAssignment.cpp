@@ -24,9 +24,8 @@ ActiveIAMPolicyAssignment::ActiveIAMPolicyAssignment() :
 {
 }
 
-ActiveIAMPolicyAssignment::ActiveIAMPolicyAssignment(JsonView jsonValue) : 
-    m_assignmentNameHasBeenSet(false),
-    m_policyArnHasBeenSet(false)
+ActiveIAMPolicyAssignment::ActiveIAMPolicyAssignment(JsonView jsonValue)
+  : ActiveIAMPolicyAssignment()
 {
   *this = jsonValue;
 }

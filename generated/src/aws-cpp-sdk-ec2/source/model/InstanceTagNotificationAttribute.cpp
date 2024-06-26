@@ -27,10 +27,8 @@ InstanceTagNotificationAttribute::InstanceTagNotificationAttribute() :
 {
 }
 
-InstanceTagNotificationAttribute::InstanceTagNotificationAttribute(const XmlNode& xmlNode) : 
-    m_instanceTagKeysHasBeenSet(false),
-    m_includeAllTagsOfInstance(false),
-    m_includeAllTagsOfInstanceHasBeenSet(false)
+InstanceTagNotificationAttribute::InstanceTagNotificationAttribute(const XmlNode& xmlNode)
+  : InstanceTagNotificationAttribute()
 {
   *this = xmlNode;
 }

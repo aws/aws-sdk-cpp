@@ -25,10 +25,8 @@ TrustedCertificatePublicKey::TrustedCertificatePublicKey() :
 {
 }
 
-TrustedCertificatePublicKey::TrustedCertificatePublicKey(JsonView jsonValue) : 
-    m_keyAttributesHasBeenSet(false),
-    m_publicKeyCertificateHasBeenSet(false),
-    m_certificateAuthorityPublicKeyIdentifierHasBeenSet(false)
+TrustedCertificatePublicKey::TrustedCertificatePublicKey(JsonView jsonValue)
+  : TrustedCertificatePublicKey()
 {
   *this = jsonValue;
 }

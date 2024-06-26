@@ -29,12 +29,8 @@ NodeConfigurationOptionsFilter::NodeConfigurationOptionsFilter() :
 {
 }
 
-NodeConfigurationOptionsFilter::NodeConfigurationOptionsFilter(const XmlNode& xmlNode) : 
-    m_name(NodeConfigurationOptionsFilterName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_operator(OperatorType::NOT_SET),
-    m_operatorHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+NodeConfigurationOptionsFilter::NodeConfigurationOptionsFilter(const XmlNode& xmlNode)
+  : NodeConfigurationOptionsFilter()
 {
   *this = xmlNode;
 }

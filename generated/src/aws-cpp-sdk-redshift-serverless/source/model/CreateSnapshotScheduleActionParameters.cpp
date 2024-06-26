@@ -27,12 +27,8 @@ CreateSnapshotScheduleActionParameters::CreateSnapshotScheduleActionParameters()
 {
 }
 
-CreateSnapshotScheduleActionParameters::CreateSnapshotScheduleActionParameters(JsonView jsonValue) : 
-    m_namespaceNameHasBeenSet(false),
-    m_retentionPeriod(0),
-    m_retentionPeriodHasBeenSet(false),
-    m_snapshotNamePrefixHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+CreateSnapshotScheduleActionParameters::CreateSnapshotScheduleActionParameters(JsonView jsonValue)
+  : CreateSnapshotScheduleActionParameters()
 {
   *this = jsonValue;
 }

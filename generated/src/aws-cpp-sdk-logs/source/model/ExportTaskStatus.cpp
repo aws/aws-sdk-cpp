@@ -25,10 +25,8 @@ ExportTaskStatus::ExportTaskStatus() :
 {
 }
 
-ExportTaskStatus::ExportTaskStatus(JsonView jsonValue) : 
-    m_code(ExportTaskStatusCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+ExportTaskStatus::ExportTaskStatus(JsonView jsonValue)
+  : ExportTaskStatus()
 {
   *this = jsonValue;
 }

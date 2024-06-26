@@ -23,8 +23,8 @@ BadRequestDetail::BadRequestDetail() :
 {
 }
 
-BadRequestDetail::BadRequestDetail(JsonView jsonValue) : 
-    m_codeErrorsHasBeenSet(false)
+BadRequestDetail::BadRequestDetail(JsonView jsonValue)
+  : BadRequestDetail()
 {
   *this = jsonValue;
 }

@@ -31,16 +31,8 @@ ProposalSummary::ProposalSummary() :
 {
 }
 
-ProposalSummary::ProposalSummary(JsonView jsonValue) : 
-    m_proposalIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_proposedByMemberIdHasBeenSet(false),
-    m_proposedByMemberNameHasBeenSet(false),
-    m_status(ProposalStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_expirationDateHasBeenSet(false),
-    m_arnHasBeenSet(false)
+ProposalSummary::ProposalSummary(JsonView jsonValue)
+  : ProposalSummary()
 {
   *this = jsonValue;
 }

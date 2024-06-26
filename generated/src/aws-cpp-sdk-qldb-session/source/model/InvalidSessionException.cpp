@@ -24,9 +24,8 @@ InvalidSessionException::InvalidSessionException() :
 {
 }
 
-InvalidSessionException::InvalidSessionException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_codeHasBeenSet(false)
+InvalidSessionException::InvalidSessionException(JsonView jsonValue)
+  : InvalidSessionException()
 {
   *this = jsonValue;
 }

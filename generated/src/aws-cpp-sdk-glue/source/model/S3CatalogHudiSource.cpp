@@ -27,12 +27,8 @@ S3CatalogHudiSource::S3CatalogHudiSource() :
 {
 }
 
-S3CatalogHudiSource::S3CatalogHudiSource(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_databaseHasBeenSet(false),
-    m_tableHasBeenSet(false),
-    m_additionalHudiOptionsHasBeenSet(false),
-    m_outputSchemasHasBeenSet(false)
+S3CatalogHudiSource::S3CatalogHudiSource(JsonView jsonValue)
+  : S3CatalogHudiSource()
 {
   *this = jsonValue;
 }

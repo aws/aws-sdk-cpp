@@ -26,11 +26,8 @@ VirtualNodeConnectionPool::VirtualNodeConnectionPool() :
 {
 }
 
-VirtualNodeConnectionPool::VirtualNodeConnectionPool(JsonView jsonValue) : 
-    m_grpcHasBeenSet(false),
-    m_httpHasBeenSet(false),
-    m_http2HasBeenSet(false),
-    m_tcpHasBeenSet(false)
+VirtualNodeConnectionPool::VirtualNodeConnectionPool(JsonView jsonValue)
+  : VirtualNodeConnectionPool()
 {
   *this = jsonValue;
 }

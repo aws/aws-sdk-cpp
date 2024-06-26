@@ -22,8 +22,8 @@ CreatePresignedNotebookUrlResult::CreatePresignedNotebookUrlResult() :
 {
 }
 
-CreatePresignedNotebookUrlResult::CreatePresignedNotebookUrlResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_authTokenExpirationTime(0)
+CreatePresignedNotebookUrlResult::CreatePresignedNotebookUrlResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreatePresignedNotebookUrlResult()
 {
   *this = result;
 }

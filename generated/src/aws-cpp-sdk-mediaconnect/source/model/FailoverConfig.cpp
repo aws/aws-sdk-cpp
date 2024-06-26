@@ -29,14 +29,8 @@ FailoverConfig::FailoverConfig() :
 {
 }
 
-FailoverConfig::FailoverConfig(JsonView jsonValue) : 
-    m_failoverMode(FailoverMode::NOT_SET),
-    m_failoverModeHasBeenSet(false),
-    m_recoveryWindow(0),
-    m_recoveryWindowHasBeenSet(false),
-    m_sourcePriorityHasBeenSet(false),
-    m_state(State::NOT_SET),
-    m_stateHasBeenSet(false)
+FailoverConfig::FailoverConfig(JsonView jsonValue)
+  : FailoverConfig()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ DescribeInputSecurityGroupResult::DescribeInputSecurityGroupResult() :
 {
 }
 
-DescribeInputSecurityGroupResult::DescribeInputSecurityGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_state(InputSecurityGroupState::NOT_SET)
+DescribeInputSecurityGroupResult::DescribeInputSecurityGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeInputSecurityGroupResult()
 {
   *this = result;
 }

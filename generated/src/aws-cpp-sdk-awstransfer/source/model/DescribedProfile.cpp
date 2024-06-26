@@ -29,14 +29,8 @@ DescribedProfile::DescribedProfile() :
 {
 }
 
-DescribedProfile::DescribedProfile(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_profileIdHasBeenSet(false),
-    m_profileType(ProfileType::NOT_SET),
-    m_profileTypeHasBeenSet(false),
-    m_as2IdHasBeenSet(false),
-    m_certificateIdsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+DescribedProfile::DescribedProfile(JsonView jsonValue)
+  : DescribedProfile()
 {
   *this = jsonValue;
 }

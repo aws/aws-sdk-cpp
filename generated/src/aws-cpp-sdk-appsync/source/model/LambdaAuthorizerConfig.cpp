@@ -26,11 +26,8 @@ LambdaAuthorizerConfig::LambdaAuthorizerConfig() :
 {
 }
 
-LambdaAuthorizerConfig::LambdaAuthorizerConfig(JsonView jsonValue) : 
-    m_authorizerResultTtlInSeconds(0),
-    m_authorizerResultTtlInSecondsHasBeenSet(false),
-    m_authorizerUriHasBeenSet(false),
-    m_identityValidationExpressionHasBeenSet(false)
+LambdaAuthorizerConfig::LambdaAuthorizerConfig(JsonView jsonValue)
+  : LambdaAuthorizerConfig()
 {
   *this = jsonValue;
 }

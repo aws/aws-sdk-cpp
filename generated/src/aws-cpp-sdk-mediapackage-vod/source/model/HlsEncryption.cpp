@@ -26,11 +26,8 @@ HlsEncryption::HlsEncryption() :
 {
 }
 
-HlsEncryption::HlsEncryption(JsonView jsonValue) : 
-    m_constantInitializationVectorHasBeenSet(false),
-    m_encryptionMethod(EncryptionMethod::NOT_SET),
-    m_encryptionMethodHasBeenSet(false),
-    m_spekeKeyProviderHasBeenSet(false)
+HlsEncryption::HlsEncryption(JsonView jsonValue)
+  : HlsEncryption()
 {
   *this = jsonValue;
 }

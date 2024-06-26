@@ -24,9 +24,8 @@ S3BucketOwner::S3BucketOwner() :
 {
 }
 
-S3BucketOwner::S3BucketOwner(JsonView jsonValue) : 
-    m_displayNameHasBeenSet(false),
-    m_idHasBeenSet(false)
+S3BucketOwner::S3BucketOwner(JsonView jsonValue)
+  : S3BucketOwner()
 {
   *this = jsonValue;
 }

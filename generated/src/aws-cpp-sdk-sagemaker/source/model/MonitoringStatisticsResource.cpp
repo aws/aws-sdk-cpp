@@ -23,8 +23,8 @@ MonitoringStatisticsResource::MonitoringStatisticsResource() :
 {
 }
 
-MonitoringStatisticsResource::MonitoringStatisticsResource(JsonView jsonValue) : 
-    m_s3UriHasBeenSet(false)
+MonitoringStatisticsResource::MonitoringStatisticsResource(JsonView jsonValue)
+  : MonitoringStatisticsResource()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ RecommendationConfiguration::RecommendationConfiguration() :
 {
 }
 
-RecommendationConfiguration::RecommendationConfiguration(JsonView jsonValue) : 
-    m_enableBusinessNameGeneration(false),
-    m_enableBusinessNameGenerationHasBeenSet(false)
+RecommendationConfiguration::RecommendationConfiguration(JsonView jsonValue)
+  : RecommendationConfiguration()
 {
   *this = jsonValue;
 }

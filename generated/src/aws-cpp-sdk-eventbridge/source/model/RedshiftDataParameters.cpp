@@ -30,15 +30,8 @@ RedshiftDataParameters::RedshiftDataParameters() :
 {
 }
 
-RedshiftDataParameters::RedshiftDataParameters(JsonView jsonValue) : 
-    m_secretManagerArnHasBeenSet(false),
-    m_databaseHasBeenSet(false),
-    m_dbUserHasBeenSet(false),
-    m_sqlHasBeenSet(false),
-    m_statementNameHasBeenSet(false),
-    m_withEvent(false),
-    m_withEventHasBeenSet(false),
-    m_sqlsHasBeenSet(false)
+RedshiftDataParameters::RedshiftDataParameters(JsonView jsonValue)
+  : RedshiftDataParameters()
 {
   *this = jsonValue;
 }

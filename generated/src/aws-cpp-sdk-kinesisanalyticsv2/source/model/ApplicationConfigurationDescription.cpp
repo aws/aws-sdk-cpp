@@ -31,16 +31,8 @@ ApplicationConfigurationDescription::ApplicationConfigurationDescription() :
 {
 }
 
-ApplicationConfigurationDescription::ApplicationConfigurationDescription(JsonView jsonValue) : 
-    m_sqlApplicationConfigurationDescriptionHasBeenSet(false),
-    m_applicationCodeConfigurationDescriptionHasBeenSet(false),
-    m_runConfigurationDescriptionHasBeenSet(false),
-    m_flinkApplicationConfigurationDescriptionHasBeenSet(false),
-    m_environmentPropertyDescriptionsHasBeenSet(false),
-    m_applicationSnapshotConfigurationDescriptionHasBeenSet(false),
-    m_applicationSystemRollbackConfigurationDescriptionHasBeenSet(false),
-    m_vpcConfigurationDescriptionsHasBeenSet(false),
-    m_zeppelinApplicationConfigurationDescriptionHasBeenSet(false)
+ApplicationConfigurationDescription::ApplicationConfigurationDescription(JsonView jsonValue)
+  : ApplicationConfigurationDescription()
 {
   *this = jsonValue;
 }

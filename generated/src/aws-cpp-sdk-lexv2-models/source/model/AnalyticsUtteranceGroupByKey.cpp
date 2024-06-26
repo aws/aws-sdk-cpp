@@ -25,10 +25,8 @@ AnalyticsUtteranceGroupByKey::AnalyticsUtteranceGroupByKey() :
 {
 }
 
-AnalyticsUtteranceGroupByKey::AnalyticsUtteranceGroupByKey(JsonView jsonValue) : 
-    m_name(AnalyticsUtteranceField::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
+AnalyticsUtteranceGroupByKey::AnalyticsUtteranceGroupByKey(JsonView jsonValue)
+  : AnalyticsUtteranceGroupByKey()
 {
   *this = jsonValue;
 }

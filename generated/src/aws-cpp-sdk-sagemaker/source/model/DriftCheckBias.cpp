@@ -25,10 +25,8 @@ DriftCheckBias::DriftCheckBias() :
 {
 }
 
-DriftCheckBias::DriftCheckBias(JsonView jsonValue) : 
-    m_configFileHasBeenSet(false),
-    m_preTrainingConstraintsHasBeenSet(false),
-    m_postTrainingConstraintsHasBeenSet(false)
+DriftCheckBias::DriftCheckBias(JsonView jsonValue)
+  : DriftCheckBias()
 {
   *this = jsonValue;
 }

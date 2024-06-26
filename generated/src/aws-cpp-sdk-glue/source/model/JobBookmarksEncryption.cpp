@@ -25,10 +25,8 @@ JobBookmarksEncryption::JobBookmarksEncryption() :
 {
 }
 
-JobBookmarksEncryption::JobBookmarksEncryption(JsonView jsonValue) : 
-    m_jobBookmarksEncryptionMode(JobBookmarksEncryptionMode::NOT_SET),
-    m_jobBookmarksEncryptionModeHasBeenSet(false),
-    m_kmsKeyArnHasBeenSet(false)
+JobBookmarksEncryption::JobBookmarksEncryption(JsonView jsonValue)
+  : JobBookmarksEncryption()
 {
   *this = jsonValue;
 }

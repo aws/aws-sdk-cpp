@@ -24,9 +24,8 @@ TaskVolumeConfiguration::TaskVolumeConfiguration() :
 {
 }
 
-TaskVolumeConfiguration::TaskVolumeConfiguration(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_managedEBSVolumeHasBeenSet(false)
+TaskVolumeConfiguration::TaskVolumeConfiguration(JsonView jsonValue)
+  : TaskVolumeConfiguration()
 {
   *this = jsonValue;
 }

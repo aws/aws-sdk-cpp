@@ -28,13 +28,8 @@ ReplicationSubnetGroup::ReplicationSubnetGroup() :
 {
 }
 
-ReplicationSubnetGroup::ReplicationSubnetGroup(JsonView jsonValue) : 
-    m_replicationSubnetGroupIdentifierHasBeenSet(false),
-    m_replicationSubnetGroupDescriptionHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_subnetGroupStatusHasBeenSet(false),
-    m_subnetsHasBeenSet(false),
-    m_supportedNetworkTypesHasBeenSet(false)
+ReplicationSubnetGroup::ReplicationSubnetGroup(JsonView jsonValue)
+  : ReplicationSubnetGroup()
 {
   *this = jsonValue;
 }

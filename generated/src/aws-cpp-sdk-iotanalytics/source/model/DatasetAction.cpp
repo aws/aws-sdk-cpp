@@ -25,10 +25,8 @@ DatasetAction::DatasetAction() :
 {
 }
 
-DatasetAction::DatasetAction(JsonView jsonValue) : 
-    m_actionNameHasBeenSet(false),
-    m_queryActionHasBeenSet(false),
-    m_containerActionHasBeenSet(false)
+DatasetAction::DatasetAction(JsonView jsonValue)
+  : DatasetAction()
 {
   *this = jsonValue;
 }

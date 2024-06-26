@@ -22,8 +22,8 @@ GetNetworkRoutesResult::GetNetworkRoutesResult() :
 {
 }
 
-GetNetworkRoutesResult::GetNetworkRoutesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_routeTableType(RouteTableType::NOT_SET)
+GetNetworkRoutesResult::GetNetworkRoutesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetNetworkRoutesResult()
 {
   *this = result;
 }

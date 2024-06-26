@@ -27,12 +27,8 @@ RoutingProfileQueueConfig::RoutingProfileQueueConfig() :
 {
 }
 
-RoutingProfileQueueConfig::RoutingProfileQueueConfig(JsonView jsonValue) : 
-    m_queueReferenceHasBeenSet(false),
-    m_priority(0),
-    m_priorityHasBeenSet(false),
-    m_delay(0),
-    m_delayHasBeenSet(false)
+RoutingProfileQueueConfig::RoutingProfileQueueConfig(JsonView jsonValue)
+  : RoutingProfileQueueConfig()
 {
   *this = jsonValue;
 }

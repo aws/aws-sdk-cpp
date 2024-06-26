@@ -23,9 +23,8 @@ CreateInferenceSchedulerResult::CreateInferenceSchedulerResult() :
 {
 }
 
-CreateInferenceSchedulerResult::CreateInferenceSchedulerResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(InferenceSchedulerStatus::NOT_SET),
-    m_modelQuality(ModelQuality::NOT_SET)
+CreateInferenceSchedulerResult::CreateInferenceSchedulerResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateInferenceSchedulerResult()
 {
   *this = result;
 }

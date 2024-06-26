@@ -26,11 +26,8 @@ DropNullFields::DropNullFields() :
 {
 }
 
-DropNullFields::DropNullFields(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_inputsHasBeenSet(false),
-    m_nullCheckBoxListHasBeenSet(false),
-    m_nullTextListHasBeenSet(false)
+DropNullFields::DropNullFields(JsonView jsonValue)
+  : DropNullFields()
 {
   *this = jsonValue;
 }

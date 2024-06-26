@@ -33,18 +33,8 @@ WorkerSummary::WorkerSummary() :
 {
 }
 
-WorkerSummary::WorkerSummary(JsonView jsonValue) : 
-    m_createdAtHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_farmIdHasBeenSet(false),
-    m_fleetIdHasBeenSet(false),
-    m_hostPropertiesHasBeenSet(false),
-    m_logHasBeenSet(false),
-    m_status(WorkerStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_updatedByHasBeenSet(false),
-    m_workerIdHasBeenSet(false)
+WorkerSummary::WorkerSummary(JsonView jsonValue)
+  : WorkerSummary()
 {
   *this = jsonValue;
 }

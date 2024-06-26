@@ -23,8 +23,8 @@ AutoMLPartialFailureReason::AutoMLPartialFailureReason() :
 {
 }
 
-AutoMLPartialFailureReason::AutoMLPartialFailureReason(JsonView jsonValue) : 
-    m_partialFailureMessageHasBeenSet(false)
+AutoMLPartialFailureReason::AutoMLPartialFailureReason(JsonView jsonValue)
+  : AutoMLPartialFailureReason()
 {
   *this = jsonValue;
 }

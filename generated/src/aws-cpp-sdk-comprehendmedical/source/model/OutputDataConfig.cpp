@@ -24,9 +24,8 @@ OutputDataConfig::OutputDataConfig() :
 {
 }
 
-OutputDataConfig::OutputDataConfig(JsonView jsonValue) : 
-    m_s3BucketHasBeenSet(false),
-    m_s3KeyHasBeenSet(false)
+OutputDataConfig::OutputDataConfig(JsonView jsonValue)
+  : OutputDataConfig()
 {
   *this = jsonValue;
 }

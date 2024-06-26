@@ -34,19 +34,8 @@ StreamingSessionBackup::StreamingSessionBackup() :
 {
 }
 
-StreamingSessionBackup::StreamingSessionBackup(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_backupIdHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_launchProfileIdHasBeenSet(false),
-    m_ownedByHasBeenSet(false),
-    m_sessionIdHasBeenSet(false),
-    m_state(StreamingSessionState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_statusCode(StreamingSessionStatusCode::NOT_SET),
-    m_statusCodeHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+StreamingSessionBackup::StreamingSessionBackup(JsonView jsonValue)
+  : StreamingSessionBackup()
 {
   *this = jsonValue;
 }

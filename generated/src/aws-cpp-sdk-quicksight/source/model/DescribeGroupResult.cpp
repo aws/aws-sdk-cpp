@@ -22,8 +22,8 @@ DescribeGroupResult::DescribeGroupResult() :
 {
 }
 
-DescribeGroupResult::DescribeGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+DescribeGroupResult::DescribeGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeGroupResult()
 {
   *this = result;
 }

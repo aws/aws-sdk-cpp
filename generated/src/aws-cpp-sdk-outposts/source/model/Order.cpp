@@ -35,20 +35,8 @@ Order::Order() :
 {
 }
 
-Order::Order(JsonView jsonValue) : 
-    m_outpostIdHasBeenSet(false),
-    m_orderIdHasBeenSet(false),
-    m_status(OrderStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_lineItemsHasBeenSet(false),
-    m_paymentOption(PaymentOption::NOT_SET),
-    m_paymentOptionHasBeenSet(false),
-    m_orderSubmissionDateHasBeenSet(false),
-    m_orderFulfilledDateHasBeenSet(false),
-    m_paymentTerm(PaymentTerm::NOT_SET),
-    m_paymentTermHasBeenSet(false),
-    m_orderType(OrderType::NOT_SET),
-    m_orderTypeHasBeenSet(false)
+Order::Order(JsonView jsonValue)
+  : Order()
 {
   *this = jsonValue;
 }

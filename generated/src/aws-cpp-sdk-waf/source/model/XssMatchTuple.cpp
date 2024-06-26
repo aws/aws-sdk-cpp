@@ -25,10 +25,8 @@ XssMatchTuple::XssMatchTuple() :
 {
 }
 
-XssMatchTuple::XssMatchTuple(JsonView jsonValue) : 
-    m_fieldToMatchHasBeenSet(false),
-    m_textTransformation(TextTransformation::NOT_SET),
-    m_textTransformationHasBeenSet(false)
+XssMatchTuple::XssMatchTuple(JsonView jsonValue)
+  : XssMatchTuple()
 {
   *this = jsonValue;
 }

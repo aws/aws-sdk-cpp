@@ -29,14 +29,8 @@ ColumnTooltipItem::ColumnTooltipItem() :
 {
 }
 
-ColumnTooltipItem::ColumnTooltipItem(JsonView jsonValue) : 
-    m_columnHasBeenSet(false),
-    m_labelHasBeenSet(false),
-    m_visibility(Visibility::NOT_SET),
-    m_visibilityHasBeenSet(false),
-    m_aggregationHasBeenSet(false),
-    m_tooltipTarget(TooltipTarget::NOT_SET),
-    m_tooltipTargetHasBeenSet(false)
+ColumnTooltipItem::ColumnTooltipItem(JsonView jsonValue)
+  : ColumnTooltipItem()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ EFSMountTimeoutException::EFSMountTimeoutException() :
 {
 }
 
-EFSMountTimeoutException::EFSMountTimeoutException(JsonView jsonValue) : 
-    m_typeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+EFSMountTimeoutException::EFSMountTimeoutException(JsonView jsonValue)
+  : EFSMountTimeoutException()
 {
   *this = jsonValue;
 }

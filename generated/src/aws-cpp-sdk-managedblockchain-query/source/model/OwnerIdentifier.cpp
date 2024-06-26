@@ -23,8 +23,8 @@ OwnerIdentifier::OwnerIdentifier() :
 {
 }
 
-OwnerIdentifier::OwnerIdentifier(JsonView jsonValue) : 
-    m_addressHasBeenSet(false)
+OwnerIdentifier::OwnerIdentifier(JsonView jsonValue)
+  : OwnerIdentifier()
 {
   *this = jsonValue;
 }

@@ -23,9 +23,8 @@ GetPlaybackConfigurationResult::GetPlaybackConfigurationResult() :
 {
 }
 
-GetPlaybackConfigurationResult::GetPlaybackConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_insertionMode(InsertionMode::NOT_SET),
-    m_personalizationThresholdSeconds(0)
+GetPlaybackConfigurationResult::GetPlaybackConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetPlaybackConfigurationResult()
 {
   *this = result;
 }

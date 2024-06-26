@@ -25,10 +25,8 @@ DefaultExportDestination::DefaultExportDestination() :
 {
 }
 
-DefaultExportDestination::DefaultExportDestination(JsonView jsonValue) : 
-    m_destinationType(ExportDestinationType::NOT_SET),
-    m_destinationTypeHasBeenSet(false),
-    m_destinationHasBeenSet(false)
+DefaultExportDestination::DefaultExportDestination(JsonView jsonValue)
+  : DefaultExportDestination()
 {
   *this = jsonValue;
 }

@@ -27,10 +27,8 @@ ObjectLambdaAccessPoint::ObjectLambdaAccessPoint() :
 {
 }
 
-ObjectLambdaAccessPoint::ObjectLambdaAccessPoint(const XmlNode& xmlNode) : 
-    m_nameHasBeenSet(false),
-    m_objectLambdaAccessPointArnHasBeenSet(false),
-    m_aliasHasBeenSet(false)
+ObjectLambdaAccessPoint::ObjectLambdaAccessPoint(const XmlNode& xmlNode)
+  : ObjectLambdaAccessPoint()
 {
   *this = xmlNode;
 }

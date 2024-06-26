@@ -24,9 +24,8 @@ OnDemandResizingSpecification::OnDemandResizingSpecification() :
 {
 }
 
-OnDemandResizingSpecification::OnDemandResizingSpecification(JsonView jsonValue) : 
-    m_timeoutDurationMinutes(0),
-    m_timeoutDurationMinutesHasBeenSet(false)
+OnDemandResizingSpecification::OnDemandResizingSpecification(JsonView jsonValue)
+  : OnDemandResizingSpecification()
 {
   *this = jsonValue;
 }

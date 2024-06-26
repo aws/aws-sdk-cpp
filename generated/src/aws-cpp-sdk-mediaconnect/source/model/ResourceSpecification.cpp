@@ -26,11 +26,8 @@ ResourceSpecification::ResourceSpecification() :
 {
 }
 
-ResourceSpecification::ResourceSpecification(JsonView jsonValue) : 
-    m_reservedBitrate(0),
-    m_reservedBitrateHasBeenSet(false),
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false)
+ResourceSpecification::ResourceSpecification(JsonView jsonValue)
+  : ResourceSpecification()
 {
   *this = jsonValue;
 }

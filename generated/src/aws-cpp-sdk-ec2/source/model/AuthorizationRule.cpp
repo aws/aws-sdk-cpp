@@ -31,14 +31,8 @@ AuthorizationRule::AuthorizationRule() :
 {
 }
 
-AuthorizationRule::AuthorizationRule(const XmlNode& xmlNode) : 
-    m_clientVpnEndpointIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_groupIdHasBeenSet(false),
-    m_accessAll(false),
-    m_accessAllHasBeenSet(false),
-    m_destinationCidrHasBeenSet(false),
-    m_statusHasBeenSet(false)
+AuthorizationRule::AuthorizationRule(const XmlNode& xmlNode)
+  : AuthorizationRule()
 {
   *this = xmlNode;
 }

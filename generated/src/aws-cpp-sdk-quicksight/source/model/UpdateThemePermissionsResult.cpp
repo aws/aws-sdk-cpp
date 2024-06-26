@@ -22,8 +22,8 @@ UpdateThemePermissionsResult::UpdateThemePermissionsResult() :
 {
 }
 
-UpdateThemePermissionsResult::UpdateThemePermissionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+UpdateThemePermissionsResult::UpdateThemePermissionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateThemePermissionsResult()
 {
   *this = result;
 }

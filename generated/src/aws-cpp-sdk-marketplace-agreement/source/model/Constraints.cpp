@@ -24,9 +24,8 @@ Constraints::Constraints() :
 {
 }
 
-Constraints::Constraints(JsonView jsonValue) : 
-    m_multipleDimensionSelectionHasBeenSet(false),
-    m_quantityConfigurationHasBeenSet(false)
+Constraints::Constraints(JsonView jsonValue)
+  : Constraints()
 {
   *this = jsonValue;
 }

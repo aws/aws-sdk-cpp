@@ -26,11 +26,8 @@ CoversBodyPart::CoversBodyPart() :
 {
 }
 
-CoversBodyPart::CoversBodyPart(JsonView jsonValue) : 
-    m_confidence(0.0),
-    m_confidenceHasBeenSet(false),
-    m_value(false),
-    m_valueHasBeenSet(false)
+CoversBodyPart::CoversBodyPart(JsonView jsonValue)
+  : CoversBodyPart()
 {
   *this = jsonValue;
 }

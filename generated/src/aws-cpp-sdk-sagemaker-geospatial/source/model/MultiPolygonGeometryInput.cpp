@@ -23,8 +23,8 @@ MultiPolygonGeometryInput::MultiPolygonGeometryInput() :
 {
 }
 
-MultiPolygonGeometryInput::MultiPolygonGeometryInput(JsonView jsonValue) : 
-    m_coordinatesHasBeenSet(false)
+MultiPolygonGeometryInput::MultiPolygonGeometryInput(JsonView jsonValue)
+  : MultiPolygonGeometryInput()
 {
   *this = jsonValue;
 }

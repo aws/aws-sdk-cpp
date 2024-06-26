@@ -32,17 +32,8 @@ TransformConfigParameter::TransformConfigParameter() :
 {
 }
 
-TransformConfigParameter::TransformConfigParameter(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_type(ParamType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_validationRuleHasBeenSet(false),
-    m_validationMessageHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_listType(ParamType::NOT_SET),
-    m_listTypeHasBeenSet(false),
-    m_isOptional(false),
-    m_isOptionalHasBeenSet(false)
+TransformConfigParameter::TransformConfigParameter(JsonView jsonValue)
+  : TransformConfigParameter()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ CustomRoutingListener::CustomRoutingListener() :
 {
 }
 
-CustomRoutingListener::CustomRoutingListener(JsonView jsonValue) : 
-    m_listenerArnHasBeenSet(false),
-    m_portRangesHasBeenSet(false)
+CustomRoutingListener::CustomRoutingListener(JsonView jsonValue)
+  : CustomRoutingListener()
 {
   *this = jsonValue;
 }

@@ -28,13 +28,8 @@ ConnectionDetails::ConnectionDetails() :
 {
 }
 
-ConnectionDetails::ConnectionDetails(JsonView jsonValue) : 
-    m_clientPublicKeyHasBeenSet(false),
-    m_serverPublicKeyHasBeenSet(false),
-    m_serverEndpointHasBeenSet(false),
-    m_clientTunnelAddressHasBeenSet(false),
-    m_serverTunnelAddressHasBeenSet(false),
-    m_allowedIpsHasBeenSet(false)
+ConnectionDetails::ConnectionDetails(JsonView jsonValue)
+  : ConnectionDetails()
 {
   *this = jsonValue;
 }

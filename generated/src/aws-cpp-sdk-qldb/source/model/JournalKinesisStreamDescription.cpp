@@ -35,20 +35,8 @@ JournalKinesisStreamDescription::JournalKinesisStreamDescription() :
 {
 }
 
-JournalKinesisStreamDescription::JournalKinesisStreamDescription(JsonView jsonValue) : 
-    m_ledgerNameHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_inclusiveStartTimeHasBeenSet(false),
-    m_exclusiveEndTimeHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_streamIdHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_status(StreamStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_kinesisConfigurationHasBeenSet(false),
-    m_errorCause(ErrorCause::NOT_SET),
-    m_errorCauseHasBeenSet(false),
-    m_streamNameHasBeenSet(false)
+JournalKinesisStreamDescription::JournalKinesisStreamDescription(JsonView jsonValue)
+  : JournalKinesisStreamDescription()
 {
   *this = jsonValue;
 }

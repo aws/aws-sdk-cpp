@@ -40,25 +40,8 @@ ProjectSummary::ProjectSummary() :
 {
 }
 
-ProjectSummary::ProjectSummary(JsonView jsonValue) : 
-    m_activeExperimentCount(0),
-    m_activeExperimentCountHasBeenSet(false),
-    m_activeLaunchCount(0),
-    m_activeLaunchCountHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_experimentCount(0),
-    m_experimentCountHasBeenSet(false),
-    m_featureCount(0),
-    m_featureCountHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_launchCount(0),
-    m_launchCountHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_status(ProjectStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+ProjectSummary::ProjectSummary(JsonView jsonValue)
+  : ProjectSummary()
 {
   *this = jsonValue;
 }

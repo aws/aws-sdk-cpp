@@ -32,17 +32,8 @@ SimulationJobSummary::SimulationJobSummary() :
 {
 }
 
-SimulationJobSummary::SimulationJobSummary(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_status(SimulationJobStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_simulationApplicationNamesHasBeenSet(false),
-    m_robotApplicationNamesHasBeenSet(false),
-    m_dataSourceNamesHasBeenSet(false),
-    m_computeType(ComputeType::NOT_SET),
-    m_computeTypeHasBeenSet(false)
+SimulationJobSummary::SimulationJobSummary(JsonView jsonValue)
+  : SimulationJobSummary()
 {
   *this = jsonValue;
 }

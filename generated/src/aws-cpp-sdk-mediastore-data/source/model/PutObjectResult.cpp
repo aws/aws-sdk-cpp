@@ -22,8 +22,8 @@ PutObjectResult::PutObjectResult() :
 {
 }
 
-PutObjectResult::PutObjectResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_storageClass(StorageClass::NOT_SET)
+PutObjectResult::PutObjectResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : PutObjectResult()
 {
   *this = result;
 }

@@ -24,9 +24,8 @@ CookieSynchronizationConfiguration::CookieSynchronizationConfiguration() :
 {
 }
 
-CookieSynchronizationConfiguration::CookieSynchronizationConfiguration(JsonView jsonValue) : 
-    m_allowlistHasBeenSet(false),
-    m_blocklistHasBeenSet(false)
+CookieSynchronizationConfiguration::CookieSynchronizationConfiguration(JsonView jsonValue)
+  : CookieSynchronizationConfiguration()
 {
   *this = jsonValue;
 }

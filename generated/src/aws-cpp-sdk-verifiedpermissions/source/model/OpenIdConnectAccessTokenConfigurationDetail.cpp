@@ -24,9 +24,8 @@ OpenIdConnectAccessTokenConfigurationDetail::OpenIdConnectAccessTokenConfigurati
 {
 }
 
-OpenIdConnectAccessTokenConfigurationDetail::OpenIdConnectAccessTokenConfigurationDetail(JsonView jsonValue) : 
-    m_principalIdClaimHasBeenSet(false),
-    m_audiencesHasBeenSet(false)
+OpenIdConnectAccessTokenConfigurationDetail::OpenIdConnectAccessTokenConfigurationDetail(JsonView jsonValue)
+  : OpenIdConnectAccessTokenConfigurationDetail()
 {
   *this = jsonValue;
 }

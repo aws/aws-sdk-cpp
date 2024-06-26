@@ -27,12 +27,8 @@ InventoryDeletionSummaryItem::InventoryDeletionSummaryItem() :
 {
 }
 
-InventoryDeletionSummaryItem::InventoryDeletionSummaryItem(JsonView jsonValue) : 
-    m_versionHasBeenSet(false),
-    m_count(0),
-    m_countHasBeenSet(false),
-    m_remainingCount(0),
-    m_remainingCountHasBeenSet(false)
+InventoryDeletionSummaryItem::InventoryDeletionSummaryItem(JsonView jsonValue)
+  : InventoryDeletionSummaryItem()
 {
   *this = jsonValue;
 }

@@ -36,21 +36,8 @@ AwsS3BucketBucketLifecycleConfigurationRulesDetails::AwsS3BucketBucketLifecycleC
 {
 }
 
-AwsS3BucketBucketLifecycleConfigurationRulesDetails::AwsS3BucketBucketLifecycleConfigurationRulesDetails(JsonView jsonValue) : 
-    m_abortIncompleteMultipartUploadHasBeenSet(false),
-    m_expirationDateHasBeenSet(false),
-    m_expirationInDays(0),
-    m_expirationInDaysHasBeenSet(false),
-    m_expiredObjectDeleteMarker(false),
-    m_expiredObjectDeleteMarkerHasBeenSet(false),
-    m_filterHasBeenSet(false),
-    m_iDHasBeenSet(false),
-    m_noncurrentVersionExpirationInDays(0),
-    m_noncurrentVersionExpirationInDaysHasBeenSet(false),
-    m_noncurrentVersionTransitionsHasBeenSet(false),
-    m_prefixHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_transitionsHasBeenSet(false)
+AwsS3BucketBucketLifecycleConfigurationRulesDetails::AwsS3BucketBucketLifecycleConfigurationRulesDetails(JsonView jsonValue)
+  : AwsS3BucketBucketLifecycleConfigurationRulesDetails()
 {
   *this = jsonValue;
 }

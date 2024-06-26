@@ -24,9 +24,8 @@ ImportDestination::ImportDestination() :
 {
 }
 
-ImportDestination::ImportDestination(JsonView jsonValue) : 
-    m_suppressionListDestinationHasBeenSet(false),
-    m_contactListDestinationHasBeenSet(false)
+ImportDestination::ImportDestination(JsonView jsonValue)
+  : ImportDestination()
 {
   *this = jsonValue;
 }

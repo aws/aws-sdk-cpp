@@ -24,9 +24,8 @@ ReplicaConfigurationRequest::ReplicaConfigurationRequest() :
 {
 }
 
-ReplicaConfigurationRequest::ReplicaConfigurationRequest(JsonView jsonValue) : 
-    m_replicaCount(0),
-    m_replicaCountHasBeenSet(false)
+ReplicaConfigurationRequest::ReplicaConfigurationRequest(JsonView jsonValue)
+  : ReplicaConfigurationRequest()
 {
   *this = jsonValue;
 }

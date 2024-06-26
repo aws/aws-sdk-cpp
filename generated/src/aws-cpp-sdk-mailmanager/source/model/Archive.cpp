@@ -27,12 +27,8 @@ Archive::Archive() :
 {
 }
 
-Archive::Archive(JsonView jsonValue) : 
-    m_archiveIdHasBeenSet(false),
-    m_archiveNameHasBeenSet(false),
-    m_archiveState(ArchiveState::NOT_SET),
-    m_archiveStateHasBeenSet(false),
-    m_lastUpdatedTimestampHasBeenSet(false)
+Archive::Archive(JsonView jsonValue)
+  : Archive()
 {
   *this = jsonValue;
 }

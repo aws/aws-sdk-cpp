@@ -27,12 +27,8 @@ MonitoringNetworkConfig::MonitoringNetworkConfig() :
 {
 }
 
-MonitoringNetworkConfig::MonitoringNetworkConfig(JsonView jsonValue) : 
-    m_enableInterContainerTrafficEncryption(false),
-    m_enableInterContainerTrafficEncryptionHasBeenSet(false),
-    m_enableNetworkIsolation(false),
-    m_enableNetworkIsolationHasBeenSet(false),
-    m_vpcConfigHasBeenSet(false)
+MonitoringNetworkConfig::MonitoringNetworkConfig(JsonView jsonValue)
+  : MonitoringNetworkConfig()
 {
   *this = jsonValue;
 }

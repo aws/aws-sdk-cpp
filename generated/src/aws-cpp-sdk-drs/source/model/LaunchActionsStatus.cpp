@@ -24,9 +24,8 @@ LaunchActionsStatus::LaunchActionsStatus() :
 {
 }
 
-LaunchActionsStatus::LaunchActionsStatus(JsonView jsonValue) : 
-    m_runsHasBeenSet(false),
-    m_ssmAgentDiscoveryDatetimeHasBeenSet(false)
+LaunchActionsStatus::LaunchActionsStatus(JsonView jsonValue)
+  : LaunchActionsStatus()
 {
   *this = jsonValue;
 }

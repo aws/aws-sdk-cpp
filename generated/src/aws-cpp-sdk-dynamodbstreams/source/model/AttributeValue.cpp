@@ -35,19 +35,8 @@ AttributeValue::AttributeValue() :
 {
 }
 
-AttributeValue::AttributeValue(JsonView jsonValue) : 
-    m_sHasBeenSet(false),
-    m_nHasBeenSet(false),
-    m_bHasBeenSet(false),
-    m_sSHasBeenSet(false),
-    m_nSHasBeenSet(false),
-    m_bSHasBeenSet(false),
-    m_mHasBeenSet(false),
-    m_lHasBeenSet(false),
-    m_nULL(false),
-    m_nULLHasBeenSet(false),
-    m_bOOL(false),
-    m_bOOLHasBeenSet(false)
+AttributeValue::AttributeValue(JsonView jsonValue)
+  : AttributeValue()
 {
   *this = jsonValue;
 }

@@ -28,13 +28,8 @@ CanaryRunConfigOutput::CanaryRunConfigOutput() :
 {
 }
 
-CanaryRunConfigOutput::CanaryRunConfigOutput(JsonView jsonValue) : 
-    m_timeoutInSeconds(0),
-    m_timeoutInSecondsHasBeenSet(false),
-    m_memoryInMB(0),
-    m_memoryInMBHasBeenSet(false),
-    m_activeTracing(false),
-    m_activeTracingHasBeenSet(false)
+CanaryRunConfigOutput::CanaryRunConfigOutput(JsonView jsonValue)
+  : CanaryRunConfigOutput()
 {
   *this = jsonValue;
 }

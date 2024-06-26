@@ -27,10 +27,8 @@ CreateVolumePermission::CreateVolumePermission() :
 {
 }
 
-CreateVolumePermission::CreateVolumePermission(const XmlNode& xmlNode) : 
-    m_group(PermissionGroup::NOT_SET),
-    m_groupHasBeenSet(false),
-    m_userIdHasBeenSet(false)
+CreateVolumePermission::CreateVolumePermission(const XmlNode& xmlNode)
+  : CreateVolumePermission()
 {
   *this = xmlNode;
 }

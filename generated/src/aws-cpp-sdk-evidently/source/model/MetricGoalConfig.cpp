@@ -25,10 +25,8 @@ MetricGoalConfig::MetricGoalConfig() :
 {
 }
 
-MetricGoalConfig::MetricGoalConfig(JsonView jsonValue) : 
-    m_desiredChange(ChangeDirectionEnum::NOT_SET),
-    m_desiredChangeHasBeenSet(false),
-    m_metricDefinitionHasBeenSet(false)
+MetricGoalConfig::MetricGoalConfig(JsonView jsonValue)
+  : MetricGoalConfig()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ KubernetesNetworkConfigRequest::KubernetesNetworkConfigRequest() :
 {
 }
 
-KubernetesNetworkConfigRequest::KubernetesNetworkConfigRequest(JsonView jsonValue) : 
-    m_serviceIpv4CidrHasBeenSet(false),
-    m_ipFamily(IpFamily::NOT_SET),
-    m_ipFamilyHasBeenSet(false)
+KubernetesNetworkConfigRequest::KubernetesNetworkConfigRequest(JsonView jsonValue)
+  : KubernetesNetworkConfigRequest()
 {
   *this = jsonValue;
 }

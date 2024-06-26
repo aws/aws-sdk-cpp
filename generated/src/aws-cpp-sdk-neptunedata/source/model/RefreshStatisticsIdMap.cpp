@@ -23,8 +23,8 @@ RefreshStatisticsIdMap::RefreshStatisticsIdMap() :
 {
 }
 
-RefreshStatisticsIdMap::RefreshStatisticsIdMap(JsonView jsonValue) : 
-    m_statisticsIdHasBeenSet(false)
+RefreshStatisticsIdMap::RefreshStatisticsIdMap(JsonView jsonValue)
+  : RefreshStatisticsIdMap()
 {
   *this = jsonValue;
 }

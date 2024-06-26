@@ -28,13 +28,8 @@ RealtimeEndpointInfo::RealtimeEndpointInfo() :
 {
 }
 
-RealtimeEndpointInfo::RealtimeEndpointInfo(JsonView jsonValue) : 
-    m_peakRequestsPerSecond(0),
-    m_peakRequestsPerSecondHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_endpointUrlHasBeenSet(false),
-    m_endpointStatus(RealtimeEndpointStatus::NOT_SET),
-    m_endpointStatusHasBeenSet(false)
+RealtimeEndpointInfo::RealtimeEndpointInfo(JsonView jsonValue)
+  : RealtimeEndpointInfo()
 {
   *this = jsonValue;
 }

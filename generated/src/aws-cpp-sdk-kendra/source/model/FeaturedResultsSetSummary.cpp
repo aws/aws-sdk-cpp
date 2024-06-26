@@ -30,15 +30,8 @@ FeaturedResultsSetSummary::FeaturedResultsSetSummary() :
 {
 }
 
-FeaturedResultsSetSummary::FeaturedResultsSetSummary(JsonView jsonValue) : 
-    m_featuredResultsSetIdHasBeenSet(false),
-    m_featuredResultsSetNameHasBeenSet(false),
-    m_status(FeaturedResultsSetStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_lastUpdatedTimestamp(0),
-    m_lastUpdatedTimestampHasBeenSet(false),
-    m_creationTimestamp(0),
-    m_creationTimestampHasBeenSet(false)
+FeaturedResultsSetSummary::FeaturedResultsSetSummary(JsonView jsonValue)
+  : FeaturedResultsSetSummary()
 {
   *this = jsonValue;
 }

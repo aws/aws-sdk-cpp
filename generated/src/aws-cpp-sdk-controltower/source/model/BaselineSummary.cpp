@@ -25,10 +25,8 @@ BaselineSummary::BaselineSummary() :
 {
 }
 
-BaselineSummary::BaselineSummary(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_nameHasBeenSet(false)
+BaselineSummary::BaselineSummary(JsonView jsonValue)
+  : BaselineSummary()
 {
   *this = jsonValue;
 }

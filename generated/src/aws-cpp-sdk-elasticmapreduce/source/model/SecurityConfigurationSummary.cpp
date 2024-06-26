@@ -24,9 +24,8 @@ SecurityConfigurationSummary::SecurityConfigurationSummary() :
 {
 }
 
-SecurityConfigurationSummary::SecurityConfigurationSummary(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_creationDateTimeHasBeenSet(false)
+SecurityConfigurationSummary::SecurityConfigurationSummary(JsonView jsonValue)
+  : SecurityConfigurationSummary()
 {
   *this = jsonValue;
 }

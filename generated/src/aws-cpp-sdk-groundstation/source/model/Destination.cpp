@@ -27,12 +27,8 @@ Destination::Destination() :
 {
 }
 
-Destination::Destination(JsonView jsonValue) : 
-    m_configDetailsHasBeenSet(false),
-    m_configIdHasBeenSet(false),
-    m_configType(ConfigCapabilityType::NOT_SET),
-    m_configTypeHasBeenSet(false),
-    m_dataflowDestinationRegionHasBeenSet(false)
+Destination::Destination(JsonView jsonValue)
+  : Destination()
 {
   *this = jsonValue;
 }

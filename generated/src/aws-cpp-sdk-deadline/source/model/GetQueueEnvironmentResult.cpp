@@ -23,9 +23,8 @@ GetQueueEnvironmentResult::GetQueueEnvironmentResult() :
 {
 }
 
-GetQueueEnvironmentResult::GetQueueEnvironmentResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_priority(0),
-    m_templateType(EnvironmentTemplateType::NOT_SET)
+GetQueueEnvironmentResult::GetQueueEnvironmentResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetQueueEnvironmentResult()
 {
   *this = result;
 }

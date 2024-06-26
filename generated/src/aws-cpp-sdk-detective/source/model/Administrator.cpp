@@ -25,10 +25,8 @@ Administrator::Administrator() :
 {
 }
 
-Administrator::Administrator(JsonView jsonValue) : 
-    m_accountIdHasBeenSet(false),
-    m_graphArnHasBeenSet(false),
-    m_delegationTimeHasBeenSet(false)
+Administrator::Administrator(JsonView jsonValue)
+  : Administrator()
 {
   *this = jsonValue;
 }

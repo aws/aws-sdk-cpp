@@ -24,9 +24,8 @@ PermissionConfiguration::PermissionConfiguration() :
 {
 }
 
-PermissionConfiguration::PermissionConfiguration(JsonView jsonValue) : 
-    m_bucketLevelPermissionsHasBeenSet(false),
-    m_accountLevelPermissionsHasBeenSet(false)
+PermissionConfiguration::PermissionConfiguration(JsonView jsonValue)
+  : PermissionConfiguration()
 {
   *this = jsonValue;
 }

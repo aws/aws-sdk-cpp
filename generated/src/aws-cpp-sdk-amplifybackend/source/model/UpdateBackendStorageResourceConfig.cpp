@@ -25,10 +25,8 @@ UpdateBackendStorageResourceConfig::UpdateBackendStorageResourceConfig() :
 {
 }
 
-UpdateBackendStorageResourceConfig::UpdateBackendStorageResourceConfig(JsonView jsonValue) : 
-    m_permissionsHasBeenSet(false),
-    m_serviceName(ServiceName::NOT_SET),
-    m_serviceNameHasBeenSet(false)
+UpdateBackendStorageResourceConfig::UpdateBackendStorageResourceConfig(JsonView jsonValue)
+  : UpdateBackendStorageResourceConfig()
 {
   *this = jsonValue;
 }

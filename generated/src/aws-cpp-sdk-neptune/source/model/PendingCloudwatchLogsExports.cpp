@@ -26,9 +26,8 @@ PendingCloudwatchLogsExports::PendingCloudwatchLogsExports() :
 {
 }
 
-PendingCloudwatchLogsExports::PendingCloudwatchLogsExports(const XmlNode& xmlNode) : 
-    m_logTypesToEnableHasBeenSet(false),
-    m_logTypesToDisableHasBeenSet(false)
+PendingCloudwatchLogsExports::PendingCloudwatchLogsExports(const XmlNode& xmlNode)
+  : PendingCloudwatchLogsExports()
 {
   *this = xmlNode;
 }

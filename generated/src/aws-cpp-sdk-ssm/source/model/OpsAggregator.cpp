@@ -28,13 +28,8 @@ OpsAggregator::OpsAggregator() :
 {
 }
 
-OpsAggregator::OpsAggregator(JsonView jsonValue) : 
-    m_aggregatorTypeHasBeenSet(false),
-    m_typeNameHasBeenSet(false),
-    m_attributeNameHasBeenSet(false),
-    m_valuesHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_aggregatorsHasBeenSet(false)
+OpsAggregator::OpsAggregator(JsonView jsonValue)
+  : OpsAggregator()
 {
   *this = jsonValue;
 }

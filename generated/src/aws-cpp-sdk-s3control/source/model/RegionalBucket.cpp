@@ -30,13 +30,8 @@ RegionalBucket::RegionalBucket() :
 {
 }
 
-RegionalBucket::RegionalBucket(const XmlNode& xmlNode) : 
-    m_bucketHasBeenSet(false),
-    m_bucketArnHasBeenSet(false),
-    m_publicAccessBlockEnabled(false),
-    m_publicAccessBlockEnabledHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_outpostIdHasBeenSet(false)
+RegionalBucket::RegionalBucket(const XmlNode& xmlNode)
+  : RegionalBucket()
 {
   *this = xmlNode;
 }

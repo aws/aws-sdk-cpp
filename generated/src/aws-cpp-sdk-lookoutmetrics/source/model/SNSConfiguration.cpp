@@ -26,11 +26,8 @@ SNSConfiguration::SNSConfiguration() :
 {
 }
 
-SNSConfiguration::SNSConfiguration(JsonView jsonValue) : 
-    m_roleArnHasBeenSet(false),
-    m_snsTopicArnHasBeenSet(false),
-    m_snsFormat(SnsFormat::NOT_SET),
-    m_snsFormatHasBeenSet(false)
+SNSConfiguration::SNSConfiguration(JsonView jsonValue)
+  : SNSConfiguration()
 {
   *this = jsonValue;
 }

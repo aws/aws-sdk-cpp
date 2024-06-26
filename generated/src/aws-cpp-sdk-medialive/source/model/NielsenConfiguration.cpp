@@ -25,10 +25,8 @@ NielsenConfiguration::NielsenConfiguration() :
 {
 }
 
-NielsenConfiguration::NielsenConfiguration(JsonView jsonValue) : 
-    m_distributorIdHasBeenSet(false),
-    m_nielsenPcmToId3Tagging(NielsenPcmToId3TaggingState::NOT_SET),
-    m_nielsenPcmToId3TaggingHasBeenSet(false)
+NielsenConfiguration::NielsenConfiguration(JsonView jsonValue)
+  : NielsenConfiguration()
 {
   *this = jsonValue;
 }

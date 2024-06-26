@@ -24,9 +24,8 @@ CompatibleVersionsMap::CompatibleVersionsMap() :
 {
 }
 
-CompatibleVersionsMap::CompatibleVersionsMap(JsonView jsonValue) : 
-    m_sourceVersionHasBeenSet(false),
-    m_targetVersionsHasBeenSet(false)
+CompatibleVersionsMap::CompatibleVersionsMap(JsonView jsonValue)
+  : CompatibleVersionsMap()
 {
   *this = jsonValue;
 }

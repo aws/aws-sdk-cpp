@@ -22,8 +22,8 @@ UpdateDimensionResult::UpdateDimensionResult() :
 {
 }
 
-UpdateDimensionResult::UpdateDimensionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_type(DimensionType::NOT_SET)
+UpdateDimensionResult::UpdateDimensionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateDimensionResult()
 {
   *this = result;
 }

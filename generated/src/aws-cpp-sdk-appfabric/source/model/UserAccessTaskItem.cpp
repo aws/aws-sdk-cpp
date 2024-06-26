@@ -26,11 +26,8 @@ UserAccessTaskItem::UserAccessTaskItem() :
 {
 }
 
-UserAccessTaskItem::UserAccessTaskItem(JsonView jsonValue) : 
-    m_appHasBeenSet(false),
-    m_tenantIdHasBeenSet(false),
-    m_taskIdHasBeenSet(false),
-    m_errorHasBeenSet(false)
+UserAccessTaskItem::UserAccessTaskItem(JsonView jsonValue)
+  : UserAccessTaskItem()
 {
   *this = jsonValue;
 }

@@ -26,12 +26,8 @@ UpdatePricingRuleResult::UpdatePricingRuleResult() :
 {
 }
 
-UpdatePricingRuleResult::UpdatePricingRuleResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_scope(PricingRuleScope::NOT_SET),
-    m_type(PricingRuleType::NOT_SET),
-    m_modifierPercentage(0.0),
-    m_associatedPricingPlanCount(0),
-    m_lastModifiedTime(0)
+UpdatePricingRuleResult::UpdatePricingRuleResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdatePricingRuleResult()
 {
   *this = result;
 }

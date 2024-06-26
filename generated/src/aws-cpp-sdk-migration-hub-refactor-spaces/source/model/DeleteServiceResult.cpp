@@ -22,8 +22,8 @@ DeleteServiceResult::DeleteServiceResult() :
 {
 }
 
-DeleteServiceResult::DeleteServiceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_state(ServiceState::NOT_SET)
+DeleteServiceResult::DeleteServiceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeleteServiceResult()
 {
   *this = result;
 }

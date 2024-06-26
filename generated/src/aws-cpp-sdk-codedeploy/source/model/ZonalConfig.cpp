@@ -27,12 +27,8 @@ ZonalConfig::ZonalConfig() :
 {
 }
 
-ZonalConfig::ZonalConfig(JsonView jsonValue) : 
-    m_firstZoneMonitorDurationInSeconds(0),
-    m_firstZoneMonitorDurationInSecondsHasBeenSet(false),
-    m_monitorDurationInSeconds(0),
-    m_monitorDurationInSecondsHasBeenSet(false),
-    m_minimumHealthyHostsPerZoneHasBeenSet(false)
+ZonalConfig::ZonalConfig(JsonView jsonValue)
+  : ZonalConfig()
 {
   *this = jsonValue;
 }

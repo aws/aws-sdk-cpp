@@ -26,11 +26,8 @@ AcceleratorTotalMemoryMiBRange::AcceleratorTotalMemoryMiBRange() :
 {
 }
 
-AcceleratorTotalMemoryMiBRange::AcceleratorTotalMemoryMiBRange(JsonView jsonValue) : 
-    m_max(0),
-    m_maxHasBeenSet(false),
-    m_min(0),
-    m_minHasBeenSet(false)
+AcceleratorTotalMemoryMiBRange::AcceleratorTotalMemoryMiBRange(JsonView jsonValue)
+  : AcceleratorTotalMemoryMiBRange()
 {
   *this = jsonValue;
 }

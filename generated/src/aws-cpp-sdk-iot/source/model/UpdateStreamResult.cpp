@@ -22,8 +22,8 @@ UpdateStreamResult::UpdateStreamResult() :
 {
 }
 
-UpdateStreamResult::UpdateStreamResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_streamVersion(0)
+UpdateStreamResult::UpdateStreamResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateStreamResult()
 {
   *this = result;
 }

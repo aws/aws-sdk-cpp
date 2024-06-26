@@ -35,18 +35,8 @@ ReservedInstancesListing::ReservedInstancesListing() :
 {
 }
 
-ReservedInstancesListing::ReservedInstancesListing(const XmlNode& xmlNode) : 
-    m_clientTokenHasBeenSet(false),
-    m_createDateHasBeenSet(false),
-    m_instanceCountsHasBeenSet(false),
-    m_priceSchedulesHasBeenSet(false),
-    m_reservedInstancesIdHasBeenSet(false),
-    m_reservedInstancesListingIdHasBeenSet(false),
-    m_status(ListingStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_updateDateHasBeenSet(false)
+ReservedInstancesListing::ReservedInstancesListing(const XmlNode& xmlNode)
+  : ReservedInstancesListing()
 {
   *this = xmlNode;
 }

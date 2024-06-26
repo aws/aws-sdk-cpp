@@ -25,10 +25,8 @@ PluginAuthConfiguration::PluginAuthConfiguration() :
 {
 }
 
-PluginAuthConfiguration::PluginAuthConfiguration(JsonView jsonValue) : 
-    m_basicAuthConfigurationHasBeenSet(false),
-    m_oAuth2ClientCredentialConfigurationHasBeenSet(false),
-    m_noAuthConfigurationHasBeenSet(false)
+PluginAuthConfiguration::PluginAuthConfiguration(JsonView jsonValue)
+  : PluginAuthConfiguration()
 {
   *this = jsonValue;
 }

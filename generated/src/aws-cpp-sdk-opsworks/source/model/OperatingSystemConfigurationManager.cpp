@@ -24,9 +24,8 @@ OperatingSystemConfigurationManager::OperatingSystemConfigurationManager() :
 {
 }
 
-OperatingSystemConfigurationManager::OperatingSystemConfigurationManager(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_versionHasBeenSet(false)
+OperatingSystemConfigurationManager::OperatingSystemConfigurationManager(JsonView jsonValue)
+  : OperatingSystemConfigurationManager()
 {
   *this = jsonValue;
 }

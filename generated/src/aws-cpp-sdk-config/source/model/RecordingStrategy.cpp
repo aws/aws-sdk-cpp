@@ -24,9 +24,8 @@ RecordingStrategy::RecordingStrategy() :
 {
 }
 
-RecordingStrategy::RecordingStrategy(JsonView jsonValue) : 
-    m_useOnly(RecordingStrategyType::NOT_SET),
-    m_useOnlyHasBeenSet(false)
+RecordingStrategy::RecordingStrategy(JsonView jsonValue)
+  : RecordingStrategy()
 {
   *this = jsonValue;
 }

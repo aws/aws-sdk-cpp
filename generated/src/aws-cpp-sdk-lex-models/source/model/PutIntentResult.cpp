@@ -22,8 +22,8 @@ PutIntentResult::PutIntentResult() :
 {
 }
 
-PutIntentResult::PutIntentResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_createVersion(false)
+PutIntentResult::PutIntentResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : PutIntentResult()
 {
   *this = result;
 }

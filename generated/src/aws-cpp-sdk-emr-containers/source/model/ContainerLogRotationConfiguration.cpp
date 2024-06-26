@@ -25,10 +25,8 @@ ContainerLogRotationConfiguration::ContainerLogRotationConfiguration() :
 {
 }
 
-ContainerLogRotationConfiguration::ContainerLogRotationConfiguration(JsonView jsonValue) : 
-    m_rotationSizeHasBeenSet(false),
-    m_maxFilesToKeep(0),
-    m_maxFilesToKeepHasBeenSet(false)
+ContainerLogRotationConfiguration::ContainerLogRotationConfiguration(JsonView jsonValue)
+  : ContainerLogRotationConfiguration()
 {
   *this = jsonValue;
 }

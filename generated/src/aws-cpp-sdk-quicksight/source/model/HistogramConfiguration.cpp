@@ -31,16 +31,8 @@ HistogramConfiguration::HistogramConfiguration() :
 {
 }
 
-HistogramConfiguration::HistogramConfiguration(JsonView jsonValue) : 
-    m_fieldWellsHasBeenSet(false),
-    m_xAxisDisplayOptionsHasBeenSet(false),
-    m_xAxisLabelOptionsHasBeenSet(false),
-    m_yAxisDisplayOptionsHasBeenSet(false),
-    m_binOptionsHasBeenSet(false),
-    m_dataLabelsHasBeenSet(false),
-    m_tooltipHasBeenSet(false),
-    m_visualPaletteHasBeenSet(false),
-    m_interactionsHasBeenSet(false)
+HistogramConfiguration::HistogramConfiguration(JsonView jsonValue)
+  : HistogramConfiguration()
 {
   *this = jsonValue;
 }

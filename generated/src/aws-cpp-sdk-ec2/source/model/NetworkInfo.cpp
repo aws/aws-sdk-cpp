@@ -47,30 +47,8 @@ NetworkInfo::NetworkInfo() :
 {
 }
 
-NetworkInfo::NetworkInfo(const XmlNode& xmlNode) : 
-    m_networkPerformanceHasBeenSet(false),
-    m_maximumNetworkInterfaces(0),
-    m_maximumNetworkInterfacesHasBeenSet(false),
-    m_maximumNetworkCards(0),
-    m_maximumNetworkCardsHasBeenSet(false),
-    m_defaultNetworkCardIndex(0),
-    m_defaultNetworkCardIndexHasBeenSet(false),
-    m_networkCardsHasBeenSet(false),
-    m_ipv4AddressesPerInterface(0),
-    m_ipv4AddressesPerInterfaceHasBeenSet(false),
-    m_ipv6AddressesPerInterface(0),
-    m_ipv6AddressesPerInterfaceHasBeenSet(false),
-    m_ipv6Supported(false),
-    m_ipv6SupportedHasBeenSet(false),
-    m_enaSupport(EnaSupport::NOT_SET),
-    m_enaSupportHasBeenSet(false),
-    m_efaSupported(false),
-    m_efaSupportedHasBeenSet(false),
-    m_efaInfoHasBeenSet(false),
-    m_encryptionInTransitSupported(false),
-    m_encryptionInTransitSupportedHasBeenSet(false),
-    m_enaSrdSupported(false),
-    m_enaSrdSupportedHasBeenSet(false)
+NetworkInfo::NetworkInfo(const XmlNode& xmlNode)
+  : NetworkInfo()
 {
   *this = xmlNode;
 }

@@ -26,9 +26,8 @@ S3AccessControlList::S3AccessControlList() :
 {
 }
 
-S3AccessControlList::S3AccessControlList(const XmlNode& xmlNode) : 
-    m_ownerHasBeenSet(false),
-    m_grantsHasBeenSet(false)
+S3AccessControlList::S3AccessControlList(const XmlNode& xmlNode)
+  : S3AccessControlList()
 {
   *this = xmlNode;
 }

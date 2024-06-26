@@ -46,31 +46,8 @@ Studio::Studio() :
 {
 }
 
-Studio::Studio(JsonView jsonValue) : 
-    m_studioIdHasBeenSet(false),
-    m_studioArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_authMode(AuthMode::NOT_SET),
-    m_authModeHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_subnetIdsHasBeenSet(false),
-    m_serviceRoleHasBeenSet(false),
-    m_userRoleHasBeenSet(false),
-    m_workspaceSecurityGroupIdHasBeenSet(false),
-    m_engineSecurityGroupIdHasBeenSet(false),
-    m_urlHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_defaultS3LocationHasBeenSet(false),
-    m_idpAuthUrlHasBeenSet(false),
-    m_idpRelayStateParameterNameHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_idcInstanceArnHasBeenSet(false),
-    m_trustedIdentityPropagationEnabled(false),
-    m_trustedIdentityPropagationEnabledHasBeenSet(false),
-    m_idcUserAssignment(IdcUserAssignment::NOT_SET),
-    m_idcUserAssignmentHasBeenSet(false),
-    m_encryptionKeyArnHasBeenSet(false)
+Studio::Studio(JsonView jsonValue)
+  : Studio()
 {
   *this = jsonValue;
 }

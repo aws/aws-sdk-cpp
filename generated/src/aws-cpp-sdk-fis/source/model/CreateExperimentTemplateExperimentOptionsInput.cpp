@@ -26,11 +26,8 @@ CreateExperimentTemplateExperimentOptionsInput::CreateExperimentTemplateExperime
 {
 }
 
-CreateExperimentTemplateExperimentOptionsInput::CreateExperimentTemplateExperimentOptionsInput(JsonView jsonValue) : 
-    m_accountTargeting(AccountTargeting::NOT_SET),
-    m_accountTargetingHasBeenSet(false),
-    m_emptyTargetResolutionMode(EmptyTargetResolutionMode::NOT_SET),
-    m_emptyTargetResolutionModeHasBeenSet(false)
+CreateExperimentTemplateExperimentOptionsInput::CreateExperimentTemplateExperimentOptionsInput(JsonView jsonValue)
+  : CreateExperimentTemplateExperimentOptionsInput()
 {
   *this = jsonValue;
 }

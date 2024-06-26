@@ -26,11 +26,8 @@ PackageSummary::PackageSummary() :
 {
 }
 
-PackageSummary::PackageSummary(JsonView jsonValue) : 
-    m_packageNameHasBeenSet(false),
-    m_defaultVersionNameHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_lastModifiedDateHasBeenSet(false)
+PackageSummary::PackageSummary(JsonView jsonValue)
+  : PackageSummary()
 {
   *this = jsonValue;
 }

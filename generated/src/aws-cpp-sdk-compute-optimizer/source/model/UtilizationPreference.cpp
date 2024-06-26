@@ -25,10 +25,8 @@ UtilizationPreference::UtilizationPreference() :
 {
 }
 
-UtilizationPreference::UtilizationPreference(JsonView jsonValue) : 
-    m_metricName(CustomizableMetricName::NOT_SET),
-    m_metricNameHasBeenSet(false),
-    m_metricParametersHasBeenSet(false)
+UtilizationPreference::UtilizationPreference(JsonView jsonValue)
+  : UtilizationPreference()
 {
   *this = jsonValue;
 }

@@ -30,15 +30,8 @@ EmailTemplateRequest::EmailTemplateRequest() :
 {
 }
 
-EmailTemplateRequest::EmailTemplateRequest(JsonView jsonValue) : 
-    m_defaultSubstitutionsHasBeenSet(false),
-    m_htmlPartHasBeenSet(false),
-    m_recommenderIdHasBeenSet(false),
-    m_subjectHasBeenSet(false),
-    m_headersHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_templateDescriptionHasBeenSet(false),
-    m_textPartHasBeenSet(false)
+EmailTemplateRequest::EmailTemplateRequest(JsonView jsonValue)
+  : EmailTemplateRequest()
 {
   *this = jsonValue;
 }

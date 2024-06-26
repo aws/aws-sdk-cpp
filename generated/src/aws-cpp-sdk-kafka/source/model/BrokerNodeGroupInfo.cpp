@@ -30,15 +30,8 @@ BrokerNodeGroupInfo::BrokerNodeGroupInfo() :
 {
 }
 
-BrokerNodeGroupInfo::BrokerNodeGroupInfo(JsonView jsonValue) : 
-    m_brokerAZDistribution(BrokerAZDistribution::NOT_SET),
-    m_brokerAZDistributionHasBeenSet(false),
-    m_clientSubnetsHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_securityGroupsHasBeenSet(false),
-    m_storageInfoHasBeenSet(false),
-    m_connectivityInfoHasBeenSet(false),
-    m_zoneIdsHasBeenSet(false)
+BrokerNodeGroupInfo::BrokerNodeGroupInfo(JsonView jsonValue)
+  : BrokerNodeGroupInfo()
 {
   *this = jsonValue;
 }

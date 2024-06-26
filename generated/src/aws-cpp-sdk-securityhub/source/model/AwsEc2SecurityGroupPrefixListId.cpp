@@ -23,8 +23,8 @@ AwsEc2SecurityGroupPrefixListId::AwsEc2SecurityGroupPrefixListId() :
 {
 }
 
-AwsEc2SecurityGroupPrefixListId::AwsEc2SecurityGroupPrefixListId(JsonView jsonValue) : 
-    m_prefixListIdHasBeenSet(false)
+AwsEc2SecurityGroupPrefixListId::AwsEc2SecurityGroupPrefixListId(JsonView jsonValue)
+  : AwsEc2SecurityGroupPrefixListId()
 {
   *this = jsonValue;
 }

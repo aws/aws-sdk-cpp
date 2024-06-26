@@ -25,10 +25,8 @@ LendingField::LendingField() :
 {
 }
 
-LendingField::LendingField(JsonView jsonValue) : 
-    m_typeHasBeenSet(false),
-    m_keyDetectionHasBeenSet(false),
-    m_valueDetectionsHasBeenSet(false)
+LendingField::LendingField(JsonView jsonValue)
+  : LendingField()
 {
   *this = jsonValue;
 }

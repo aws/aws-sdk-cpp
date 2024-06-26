@@ -23,8 +23,8 @@ CapabilityConfiguration::CapabilityConfiguration() :
 {
 }
 
-CapabilityConfiguration::CapabilityConfiguration(JsonView jsonValue) : 
-    m_ediHasBeenSet(false)
+CapabilityConfiguration::CapabilityConfiguration(JsonView jsonValue)
+  : CapabilityConfiguration()
 {
   *this = jsonValue;
 }

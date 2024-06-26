@@ -24,9 +24,8 @@ VariationConfig::VariationConfig() :
 {
 }
 
-VariationConfig::VariationConfig(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
+VariationConfig::VariationConfig(JsonView jsonValue)
+  : VariationConfig()
 {
   *this = jsonValue;
 }

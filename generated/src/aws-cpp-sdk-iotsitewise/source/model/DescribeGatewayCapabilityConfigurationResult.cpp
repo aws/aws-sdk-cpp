@@ -22,8 +22,8 @@ DescribeGatewayCapabilityConfigurationResult::DescribeGatewayCapabilityConfigura
 {
 }
 
-DescribeGatewayCapabilityConfigurationResult::DescribeGatewayCapabilityConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_capabilitySyncStatus(CapabilitySyncStatus::NOT_SET)
+DescribeGatewayCapabilityConfigurationResult::DescribeGatewayCapabilityConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeGatewayCapabilityConfigurationResult()
 {
   *this = result;
 }

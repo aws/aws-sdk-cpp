@@ -22,8 +22,8 @@ TestCustomDataIdentifierResult::TestCustomDataIdentifierResult() :
 {
 }
 
-TestCustomDataIdentifierResult::TestCustomDataIdentifierResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_matchCount(0)
+TestCustomDataIdentifierResult::TestCustomDataIdentifierResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : TestCustomDataIdentifierResult()
 {
   *this = result;
 }

@@ -24,9 +24,8 @@ ModelDiagnosticsOutputConfiguration::ModelDiagnosticsOutputConfiguration() :
 {
 }
 
-ModelDiagnosticsOutputConfiguration::ModelDiagnosticsOutputConfiguration(JsonView jsonValue) : 
-    m_s3OutputConfigurationHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
+ModelDiagnosticsOutputConfiguration::ModelDiagnosticsOutputConfiguration(JsonView jsonValue)
+  : ModelDiagnosticsOutputConfiguration()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ Allowed::Allowed() :
 {
 }
 
-Allowed::Allowed(JsonView jsonValue) : 
-    m_policiesHasBeenSet(false)
+Allowed::Allowed(JsonView jsonValue)
+  : Allowed()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ ProposedNetworkFunctionGroupChange::ProposedNetworkFunctionGroupChange() :
 {
 }
 
-ProposedNetworkFunctionGroupChange::ProposedNetworkFunctionGroupChange(JsonView jsonValue) : 
-    m_tagsHasBeenSet(false),
-    m_attachmentPolicyRuleNumber(0),
-    m_attachmentPolicyRuleNumberHasBeenSet(false),
-    m_networkFunctionGroupNameHasBeenSet(false)
+ProposedNetworkFunctionGroupChange::ProposedNetworkFunctionGroupChange(JsonView jsonValue)
+  : ProposedNetworkFunctionGroupChange()
 {
   *this = jsonValue;
 }

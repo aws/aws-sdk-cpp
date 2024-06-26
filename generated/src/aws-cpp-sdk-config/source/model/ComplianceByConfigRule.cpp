@@ -24,9 +24,8 @@ ComplianceByConfigRule::ComplianceByConfigRule() :
 {
 }
 
-ComplianceByConfigRule::ComplianceByConfigRule(JsonView jsonValue) : 
-    m_configRuleNameHasBeenSet(false),
-    m_complianceHasBeenSet(false)
+ComplianceByConfigRule::ComplianceByConfigRule(JsonView jsonValue)
+  : ComplianceByConfigRule()
 {
   *this = jsonValue;
 }

@@ -28,13 +28,8 @@ FailedKeyRegistrationEntry::FailedKeyRegistrationEntry() :
 {
 }
 
-FailedKeyRegistrationEntry::FailedKeyRegistrationEntry(JsonView jsonValue) : 
-    m_keyArnHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_statusCode(0),
-    m_statusCodeHasBeenSet(false),
-    m_senderFault(false),
-    m_senderFaultHasBeenSet(false)
+FailedKeyRegistrationEntry::FailedKeyRegistrationEntry(JsonView jsonValue)
+  : FailedKeyRegistrationEntry()
 {
   *this = jsonValue;
 }

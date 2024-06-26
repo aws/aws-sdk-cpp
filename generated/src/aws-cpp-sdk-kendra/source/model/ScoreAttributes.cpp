@@ -24,9 +24,8 @@ ScoreAttributes::ScoreAttributes() :
 {
 }
 
-ScoreAttributes::ScoreAttributes(JsonView jsonValue) : 
-    m_scoreConfidence(ScoreConfidence::NOT_SET),
-    m_scoreConfidenceHasBeenSet(false)
+ScoreAttributes::ScoreAttributes(JsonView jsonValue)
+  : ScoreAttributes()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ SageMakerPipelineParameters::SageMakerPipelineParameters() :
 {
 }
 
-SageMakerPipelineParameters::SageMakerPipelineParameters(JsonView jsonValue) : 
-    m_pipelineParameterListHasBeenSet(false)
+SageMakerPipelineParameters::SageMakerPipelineParameters(JsonView jsonValue)
+  : SageMakerPipelineParameters()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ RegexMatchTuple::RegexMatchTuple() :
 {
 }
 
-RegexMatchTuple::RegexMatchTuple(JsonView jsonValue) : 
-    m_fieldToMatchHasBeenSet(false),
-    m_textTransformation(TextTransformation::NOT_SET),
-    m_textTransformationHasBeenSet(false),
-    m_regexPatternSetIdHasBeenSet(false)
+RegexMatchTuple::RegexMatchTuple(JsonView jsonValue)
+  : RegexMatchTuple()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ ErrorDetail::ErrorDetail() :
 {
 }
 
-ErrorDetail::ErrorDetail(JsonView jsonValue) : 
-    m_detailedErrorCodeHasBeenSet(false),
-    m_detailedErrorMessageHasBeenSet(false)
+ErrorDetail::ErrorDetail(JsonView jsonValue)
+  : ErrorDetail()
 {
   *this = jsonValue;
 }

@@ -27,12 +27,8 @@ BatchGetTableOptimizerEntry::BatchGetTableOptimizerEntry() :
 {
 }
 
-BatchGetTableOptimizerEntry::BatchGetTableOptimizerEntry(JsonView jsonValue) : 
-    m_catalogIdHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_tableNameHasBeenSet(false),
-    m_type(TableOptimizerType::NOT_SET),
-    m_typeHasBeenSet(false)
+BatchGetTableOptimizerEntry::BatchGetTableOptimizerEntry(JsonView jsonValue)
+  : BatchGetTableOptimizerEntry()
 {
   *this = jsonValue;
 }

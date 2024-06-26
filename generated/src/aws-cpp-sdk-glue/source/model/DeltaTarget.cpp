@@ -28,13 +28,8 @@ DeltaTarget::DeltaTarget() :
 {
 }
 
-DeltaTarget::DeltaTarget(JsonView jsonValue) : 
-    m_deltaTablesHasBeenSet(false),
-    m_connectionNameHasBeenSet(false),
-    m_writeManifest(false),
-    m_writeManifestHasBeenSet(false),
-    m_createNativeDeltaTable(false),
-    m_createNativeDeltaTableHasBeenSet(false)
+DeltaTarget::DeltaTarget(JsonView jsonValue)
+  : DeltaTarget()
 {
   *this = jsonValue;
 }

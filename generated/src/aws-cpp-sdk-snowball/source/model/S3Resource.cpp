@@ -25,10 +25,8 @@ S3Resource::S3Resource() :
 {
 }
 
-S3Resource::S3Resource(JsonView jsonValue) : 
-    m_bucketArnHasBeenSet(false),
-    m_keyRangeHasBeenSet(false),
-    m_targetOnDeviceServicesHasBeenSet(false)
+S3Resource::S3Resource(JsonView jsonValue)
+  : S3Resource()
 {
   *this = jsonValue;
 }

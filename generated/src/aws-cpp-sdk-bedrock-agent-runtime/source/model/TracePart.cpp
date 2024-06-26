@@ -27,12 +27,8 @@ TracePart::TracePart() :
 {
 }
 
-TracePart::TracePart(JsonView jsonValue) : 
-    m_agentAliasIdHasBeenSet(false),
-    m_agentIdHasBeenSet(false),
-    m_agentVersionHasBeenSet(false),
-    m_sessionIdHasBeenSet(false),
-    m_traceHasBeenSet(false)
+TracePart::TracePart(JsonView jsonValue)
+  : TracePart()
 {
   *this = jsonValue;
 }

@@ -34,19 +34,8 @@ TargetedSentimentMention::TargetedSentimentMention() :
 {
 }
 
-TargetedSentimentMention::TargetedSentimentMention(JsonView jsonValue) : 
-    m_score(0.0),
-    m_scoreHasBeenSet(false),
-    m_groupScore(0.0),
-    m_groupScoreHasBeenSet(false),
-    m_textHasBeenSet(false),
-    m_type(TargetedSentimentEntityType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_mentionSentimentHasBeenSet(false),
-    m_beginOffset(0),
-    m_beginOffsetHasBeenSet(false),
-    m_endOffset(0),
-    m_endOffsetHasBeenSet(false)
+TargetedSentimentMention::TargetedSentimentMention(JsonView jsonValue)
+  : TargetedSentimentMention()
 {
   *this = jsonValue;
 }

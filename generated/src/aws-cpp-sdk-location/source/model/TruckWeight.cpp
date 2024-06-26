@@ -26,11 +26,8 @@ TruckWeight::TruckWeight() :
 {
 }
 
-TruckWeight::TruckWeight(JsonView jsonValue) : 
-    m_total(0.0),
-    m_totalHasBeenSet(false),
-    m_unit(VehicleWeightUnit::NOT_SET),
-    m_unitHasBeenSet(false)
+TruckWeight::TruckWeight(JsonView jsonValue)
+  : TruckWeight()
 {
   *this = jsonValue;
 }

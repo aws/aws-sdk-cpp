@@ -26,11 +26,8 @@ CodeSnippetError::CodeSnippetError() :
 {
 }
 
-CodeSnippetError::CodeSnippetError(JsonView jsonValue) : 
-    m_errorCode(CodeSnippetErrorCode::NOT_SET),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_findingArnHasBeenSet(false)
+CodeSnippetError::CodeSnippetError(JsonView jsonValue)
+  : CodeSnippetError()
 {
   *this = jsonValue;
 }

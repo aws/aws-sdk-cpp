@@ -24,9 +24,8 @@ GoneException::GoneException() :
 {
 }
 
-GoneException::GoneException(JsonView jsonValue) : 
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+GoneException::GoneException(JsonView jsonValue)
+  : GoneException()
 {
   *this = jsonValue;
 }

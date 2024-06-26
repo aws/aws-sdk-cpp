@@ -30,15 +30,8 @@ AwsS3AccountPublicAccessBlockDetails::AwsS3AccountPublicAccessBlockDetails() :
 {
 }
 
-AwsS3AccountPublicAccessBlockDetails::AwsS3AccountPublicAccessBlockDetails(JsonView jsonValue) : 
-    m_blockPublicAcls(false),
-    m_blockPublicAclsHasBeenSet(false),
-    m_blockPublicPolicy(false),
-    m_blockPublicPolicyHasBeenSet(false),
-    m_ignorePublicAcls(false),
-    m_ignorePublicAclsHasBeenSet(false),
-    m_restrictPublicBuckets(false),
-    m_restrictPublicBucketsHasBeenSet(false)
+AwsS3AccountPublicAccessBlockDetails::AwsS3AccountPublicAccessBlockDetails(JsonView jsonValue)
+  : AwsS3AccountPublicAccessBlockDetails()
 {
   *this = jsonValue;
 }

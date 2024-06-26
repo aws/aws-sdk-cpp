@@ -25,11 +25,8 @@ GetProfileObjectTypeResult::GetProfileObjectTypeResult() :
 {
 }
 
-GetProfileObjectTypeResult::GetProfileObjectTypeResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_expirationDays(0),
-    m_allowProfileCreation(false),
-    m_maxAvailableProfileObjectCount(0),
-    m_maxProfileObjectCount(0)
+GetProfileObjectTypeResult::GetProfileObjectTypeResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetProfileObjectTypeResult()
 {
   *this = result;
 }

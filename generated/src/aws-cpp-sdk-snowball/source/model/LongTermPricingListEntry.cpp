@@ -35,20 +35,8 @@ LongTermPricingListEntry::LongTermPricingListEntry() :
 {
 }
 
-LongTermPricingListEntry::LongTermPricingListEntry(JsonView jsonValue) : 
-    m_longTermPricingIdHasBeenSet(false),
-    m_longTermPricingEndDateHasBeenSet(false),
-    m_longTermPricingStartDateHasBeenSet(false),
-    m_longTermPricingType(LongTermPricingType::NOT_SET),
-    m_longTermPricingTypeHasBeenSet(false),
-    m_currentActiveJobHasBeenSet(false),
-    m_replacementJobHasBeenSet(false),
-    m_isLongTermPricingAutoRenew(false),
-    m_isLongTermPricingAutoRenewHasBeenSet(false),
-    m_longTermPricingStatusHasBeenSet(false),
-    m_snowballType(SnowballType::NOT_SET),
-    m_snowballTypeHasBeenSet(false),
-    m_jobIdsHasBeenSet(false)
+LongTermPricingListEntry::LongTermPricingListEntry(JsonView jsonValue)
+  : LongTermPricingListEntry()
 {
   *this = jsonValue;
 }

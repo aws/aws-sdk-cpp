@@ -36,21 +36,8 @@ EndpointInput::EndpointInput() :
 {
 }
 
-EndpointInput::EndpointInput(JsonView jsonValue) : 
-    m_endpointNameHasBeenSet(false),
-    m_localPathHasBeenSet(false),
-    m_s3InputMode(ProcessingS3InputMode::NOT_SET),
-    m_s3InputModeHasBeenSet(false),
-    m_s3DataDistributionType(ProcessingS3DataDistributionType::NOT_SET),
-    m_s3DataDistributionTypeHasBeenSet(false),
-    m_featuresAttributeHasBeenSet(false),
-    m_inferenceAttributeHasBeenSet(false),
-    m_probabilityAttributeHasBeenSet(false),
-    m_probabilityThresholdAttribute(0.0),
-    m_probabilityThresholdAttributeHasBeenSet(false),
-    m_startTimeOffsetHasBeenSet(false),
-    m_endTimeOffsetHasBeenSet(false),
-    m_excludeFeaturesAttributeHasBeenSet(false)
+EndpointInput::EndpointInput(JsonView jsonValue)
+  : EndpointInput()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ ErrorInfo::ErrorInfo() :
 {
 }
 
-ErrorInfo::ErrorInfo(JsonView jsonValue) : 
-    m_type(IngestionErrorType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+ErrorInfo::ErrorInfo(JsonView jsonValue)
+  : ErrorInfo()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ DescribeEnvironmentHealthResult::DescribeEnvironmentHealthResult() :
 {
 }
 
-DescribeEnvironmentHealthResult::DescribeEnvironmentHealthResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_status(EnvironmentHealth::NOT_SET)
+DescribeEnvironmentHealthResult::DescribeEnvironmentHealthResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : DescribeEnvironmentHealthResult()
 {
   *this = result;
 }

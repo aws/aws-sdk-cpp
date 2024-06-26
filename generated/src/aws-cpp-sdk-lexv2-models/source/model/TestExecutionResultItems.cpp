@@ -27,12 +27,8 @@ TestExecutionResultItems::TestExecutionResultItems() :
 {
 }
 
-TestExecutionResultItems::TestExecutionResultItems(JsonView jsonValue) : 
-    m_overallTestResultsHasBeenSet(false),
-    m_conversationLevelTestResultsHasBeenSet(false),
-    m_intentClassificationTestResultsHasBeenSet(false),
-    m_intentLevelSlotResolutionTestResultsHasBeenSet(false),
-    m_utteranceLevelTestResultsHasBeenSet(false)
+TestExecutionResultItems::TestExecutionResultItems(JsonView jsonValue)
+  : TestExecutionResultItems()
 {
   *this = jsonValue;
 }

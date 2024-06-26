@@ -25,10 +25,8 @@ PoAttributes::PoAttributes() :
 {
 }
 
-PoAttributes::PoAttributes(JsonView jsonValue) : 
-    m_encodingHasBeenSet(false),
-    m_formatHasBeenSet(false),
-    m_memberFileExtensionsHasBeenSet(false)
+PoAttributes::PoAttributes(JsonView jsonValue)
+  : PoAttributes()
 {
   *this = jsonValue;
 }

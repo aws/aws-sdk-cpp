@@ -27,12 +27,8 @@ IngestionSummary::IngestionSummary() :
 {
 }
 
-IngestionSummary::IngestionSummary(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_appHasBeenSet(false),
-    m_tenantIdHasBeenSet(false),
-    m_state(IngestionState::NOT_SET),
-    m_stateHasBeenSet(false)
+IngestionSummary::IngestionSummary(JsonView jsonValue)
+  : IngestionSummary()
 {
   *this = jsonValue;
 }

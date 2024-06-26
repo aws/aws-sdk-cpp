@@ -24,9 +24,8 @@ SipMediaApplicationLoggingConfiguration::SipMediaApplicationLoggingConfiguration
 {
 }
 
-SipMediaApplicationLoggingConfiguration::SipMediaApplicationLoggingConfiguration(JsonView jsonValue) : 
-    m_enableSipMediaApplicationMessageLogs(false),
-    m_enableSipMediaApplicationMessageLogsHasBeenSet(false)
+SipMediaApplicationLoggingConfiguration::SipMediaApplicationLoggingConfiguration(JsonView jsonValue)
+  : SipMediaApplicationLoggingConfiguration()
 {
   *this = jsonValue;
 }

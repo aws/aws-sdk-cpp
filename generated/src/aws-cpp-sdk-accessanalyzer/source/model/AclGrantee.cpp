@@ -24,9 +24,8 @@ AclGrantee::AclGrantee() :
 {
 }
 
-AclGrantee::AclGrantee(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_uriHasBeenSet(false)
+AclGrantee::AclGrantee(JsonView jsonValue)
+  : AclGrantee()
 {
   *this = jsonValue;
 }

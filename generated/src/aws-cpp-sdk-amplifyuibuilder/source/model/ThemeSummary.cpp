@@ -26,11 +26,8 @@ ThemeSummary::ThemeSummary() :
 {
 }
 
-ThemeSummary::ThemeSummary(JsonView jsonValue) : 
-    m_appIdHasBeenSet(false),
-    m_environmentNameHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false)
+ThemeSummary::ThemeSummary(JsonView jsonValue)
+  : ThemeSummary()
 {
   *this = jsonValue;
 }

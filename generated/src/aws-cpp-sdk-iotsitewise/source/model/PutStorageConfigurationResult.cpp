@@ -24,10 +24,8 @@ PutStorageConfigurationResult::PutStorageConfigurationResult() :
 {
 }
 
-PutStorageConfigurationResult::PutStorageConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_storageType(StorageType::NOT_SET),
-    m_disassociatedDataStorage(DisassociatedDataStorageState::NOT_SET),
-    m_warmTier(WarmTierState::NOT_SET)
+PutStorageConfigurationResult::PutStorageConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : PutStorageConfigurationResult()
 {
   *this = result;
 }

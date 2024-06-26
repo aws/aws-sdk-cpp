@@ -24,9 +24,8 @@ SqlQueryDatasetAction::SqlQueryDatasetAction() :
 {
 }
 
-SqlQueryDatasetAction::SqlQueryDatasetAction(JsonView jsonValue) : 
-    m_sqlQueryHasBeenSet(false),
-    m_filtersHasBeenSet(false)
+SqlQueryDatasetAction::SqlQueryDatasetAction(JsonView jsonValue)
+  : SqlQueryDatasetAction()
 {
   *this = jsonValue;
 }

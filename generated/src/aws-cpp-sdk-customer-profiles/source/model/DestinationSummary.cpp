@@ -26,11 +26,8 @@ DestinationSummary::DestinationSummary() :
 {
 }
 
-DestinationSummary::DestinationSummary(JsonView jsonValue) : 
-    m_uriHasBeenSet(false),
-    m_status(EventStreamDestinationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_unhealthySinceHasBeenSet(false)
+DestinationSummary::DestinationSummary(JsonView jsonValue)
+  : DestinationSummary()
 {
   *this = jsonValue;
 }

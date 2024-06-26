@@ -27,10 +27,8 @@ ClientVpnEndpointStatus::ClientVpnEndpointStatus() :
 {
 }
 
-ClientVpnEndpointStatus::ClientVpnEndpointStatus(const XmlNode& xmlNode) : 
-    m_code(ClientVpnEndpointStatusCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+ClientVpnEndpointStatus::ClientVpnEndpointStatus(const XmlNode& xmlNode)
+  : ClientVpnEndpointStatus()
 {
   *this = xmlNode;
 }

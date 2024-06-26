@@ -22,8 +22,8 @@ GetBucketsAggregationResult::GetBucketsAggregationResult() :
 {
 }
 
-GetBucketsAggregationResult::GetBucketsAggregationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_totalCount(0)
+GetBucketsAggregationResult::GetBucketsAggregationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetBucketsAggregationResult()
 {
   *this = result;
 }

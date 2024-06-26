@@ -26,11 +26,8 @@ NumericalDimensionField::NumericalDimensionField() :
 {
 }
 
-NumericalDimensionField::NumericalDimensionField(JsonView jsonValue) : 
-    m_fieldIdHasBeenSet(false),
-    m_columnHasBeenSet(false),
-    m_hierarchyIdHasBeenSet(false),
-    m_formatConfigurationHasBeenSet(false)
+NumericalDimensionField::NumericalDimensionField(JsonView jsonValue)
+  : NumericalDimensionField()
 {
   *this = jsonValue;
 }

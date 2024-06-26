@@ -27,12 +27,8 @@ State::State() :
 {
 }
 
-State::State(JsonView jsonValue) : 
-    m_errorCode(ErrorCode::NOT_SET),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_status(Status::NOT_SET),
-    m_statusHasBeenSet(false)
+State::State(JsonView jsonValue)
+  : State()
 {
   *this = jsonValue;
 }

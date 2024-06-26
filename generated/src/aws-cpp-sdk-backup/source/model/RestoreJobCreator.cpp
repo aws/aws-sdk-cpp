@@ -23,8 +23,8 @@ RestoreJobCreator::RestoreJobCreator() :
 {
 }
 
-RestoreJobCreator::RestoreJobCreator(JsonView jsonValue) : 
-    m_restoreTestingPlanArnHasBeenSet(false)
+RestoreJobCreator::RestoreJobCreator(JsonView jsonValue)
+  : RestoreJobCreator()
 {
   *this = jsonValue;
 }

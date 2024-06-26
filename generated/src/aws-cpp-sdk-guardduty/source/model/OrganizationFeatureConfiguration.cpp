@@ -27,12 +27,8 @@ OrganizationFeatureConfiguration::OrganizationFeatureConfiguration() :
 {
 }
 
-OrganizationFeatureConfiguration::OrganizationFeatureConfiguration(JsonView jsonValue) : 
-    m_name(OrgFeature::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_autoEnable(OrgFeatureStatus::NOT_SET),
-    m_autoEnableHasBeenSet(false),
-    m_additionalConfigurationHasBeenSet(false)
+OrganizationFeatureConfiguration::OrganizationFeatureConfiguration(JsonView jsonValue)
+  : OrganizationFeatureConfiguration()
 {
   *this = jsonValue;
 }

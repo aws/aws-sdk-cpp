@@ -24,9 +24,8 @@ ResultFrame::ResultFrame() :
 {
 }
 
-ResultFrame::ResultFrame(JsonView jsonValue) : 
-    m_resultSetMetadataHasBeenSet(false),
-    m_recordsHasBeenSet(false)
+ResultFrame::ResultFrame(JsonView jsonValue)
+  : ResultFrame()
 {
   *this = jsonValue;
 }

@@ -40,25 +40,8 @@ Control::Control() :
 {
 }
 
-Control::Control(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_type(ControlType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_testingInformationHasBeenSet(false),
-    m_actionPlanTitleHasBeenSet(false),
-    m_actionPlanInstructionsHasBeenSet(false),
-    m_controlSourcesHasBeenSet(false),
-    m_controlMappingSourcesHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_lastUpdatedByHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_state(ControlState::NOT_SET),
-    m_stateHasBeenSet(false)
+Control::Control(JsonView jsonValue)
+  : Control()
 {
   *this = jsonValue;
 }

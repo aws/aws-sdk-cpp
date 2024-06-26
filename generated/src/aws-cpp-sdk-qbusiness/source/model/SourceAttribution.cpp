@@ -29,14 +29,8 @@ SourceAttribution::SourceAttribution() :
 {
 }
 
-SourceAttribution::SourceAttribution(JsonView jsonValue) : 
-    m_titleHasBeenSet(false),
-    m_snippetHasBeenSet(false),
-    m_urlHasBeenSet(false),
-    m_citationNumber(0),
-    m_citationNumberHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_textMessageSegmentsHasBeenSet(false)
+SourceAttribution::SourceAttribution(JsonView jsonValue)
+  : SourceAttribution()
 {
   *this = jsonValue;
 }

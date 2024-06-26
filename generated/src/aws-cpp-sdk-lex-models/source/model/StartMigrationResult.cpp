@@ -23,9 +23,8 @@ StartMigrationResult::StartMigrationResult() :
 {
 }
 
-StartMigrationResult::StartMigrationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_v1BotLocale(Locale::NOT_SET),
-    m_migrationStrategy(MigrationStrategy::NOT_SET)
+StartMigrationResult::StartMigrationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : StartMigrationResult()
 {
   *this = result;
 }

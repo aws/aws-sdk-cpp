@@ -24,9 +24,8 @@ NfsMountOptions::NfsMountOptions() :
 {
 }
 
-NfsMountOptions::NfsMountOptions(JsonView jsonValue) : 
-    m_version(NfsVersion::NOT_SET),
-    m_versionHasBeenSet(false)
+NfsMountOptions::NfsMountOptions(JsonView jsonValue)
+  : NfsMountOptions()
 {
   *this = jsonValue;
 }

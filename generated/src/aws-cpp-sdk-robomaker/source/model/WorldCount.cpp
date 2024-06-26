@@ -26,11 +26,8 @@ WorldCount::WorldCount() :
 {
 }
 
-WorldCount::WorldCount(JsonView jsonValue) : 
-    m_floorplanCount(0),
-    m_floorplanCountHasBeenSet(false),
-    m_interiorCountPerFloorplan(0),
-    m_interiorCountPerFloorplanHasBeenSet(false)
+WorldCount::WorldCount(JsonView jsonValue)
+  : WorldCount()
 {
   *this = jsonValue;
 }

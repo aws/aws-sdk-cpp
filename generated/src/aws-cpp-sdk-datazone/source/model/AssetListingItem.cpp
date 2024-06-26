@@ -35,20 +35,8 @@ AssetListingItem::AssetListingItem() :
 {
 }
 
-AssetListingItem::AssetListingItem(JsonView jsonValue) : 
-    m_additionalAttributesHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_entityIdHasBeenSet(false),
-    m_entityRevisionHasBeenSet(false),
-    m_entityTypeHasBeenSet(false),
-    m_glossaryTermsHasBeenSet(false),
-    m_listingCreatedByHasBeenSet(false),
-    m_listingIdHasBeenSet(false),
-    m_listingRevisionHasBeenSet(false),
-    m_listingUpdatedByHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_owningProjectIdHasBeenSet(false)
+AssetListingItem::AssetListingItem(JsonView jsonValue)
+  : AssetListingItem()
 {
   *this = jsonValue;
 }

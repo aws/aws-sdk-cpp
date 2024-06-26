@@ -23,8 +23,8 @@ DisassociatedFace::DisassociatedFace() :
 {
 }
 
-DisassociatedFace::DisassociatedFace(JsonView jsonValue) : 
-    m_faceIdHasBeenSet(false)
+DisassociatedFace::DisassociatedFace(JsonView jsonValue)
+  : DisassociatedFace()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ Thing::Thing() :
 {
 }
 
-Thing::Thing(JsonView jsonValue) : 
-    m_thingArnHasBeenSet(false),
-    m_thingNameHasBeenSet(false)
+Thing::Thing(JsonView jsonValue)
+  : Thing()
 {
   *this = jsonValue;
 }

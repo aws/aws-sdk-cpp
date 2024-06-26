@@ -24,9 +24,8 @@ LambdaConfiguration::LambdaConfiguration() :
 {
 }
 
-LambdaConfiguration::LambdaConfiguration(JsonView jsonValue) : 
-    m_roleArnHasBeenSet(false),
-    m_lambdaArnHasBeenSet(false)
+LambdaConfiguration::LambdaConfiguration(JsonView jsonValue)
+  : LambdaConfiguration()
 {
   *this = jsonValue;
 }

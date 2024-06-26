@@ -25,10 +25,8 @@ Schedule::Schedule() :
 {
 }
 
-Schedule::Schedule(JsonView jsonValue) : 
-    m_scheduleExpressionHasBeenSet(false),
-    m_state(ScheduleState::NOT_SET),
-    m_stateHasBeenSet(false)
+Schedule::Schedule(JsonView jsonValue)
+  : Schedule()
 {
   *this = jsonValue;
 }

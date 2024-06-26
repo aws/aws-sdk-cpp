@@ -25,10 +25,8 @@ InputLogEvent::InputLogEvent() :
 {
 }
 
-InputLogEvent::InputLogEvent(JsonView jsonValue) : 
-    m_timestamp(0),
-    m_timestampHasBeenSet(false),
-    m_messageHasBeenSet(false)
+InputLogEvent::InputLogEvent(JsonView jsonValue)
+  : InputLogEvent()
 {
   *this = jsonValue;
 }

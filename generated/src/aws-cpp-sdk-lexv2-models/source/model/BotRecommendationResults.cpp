@@ -25,10 +25,8 @@ BotRecommendationResults::BotRecommendationResults() :
 {
 }
 
-BotRecommendationResults::BotRecommendationResults(JsonView jsonValue) : 
-    m_botLocaleExportUrlHasBeenSet(false),
-    m_associatedTranscriptsUrlHasBeenSet(false),
-    m_statisticsHasBeenSet(false)
+BotRecommendationResults::BotRecommendationResults(JsonView jsonValue)
+  : BotRecommendationResults()
 {
   *this = jsonValue;
 }

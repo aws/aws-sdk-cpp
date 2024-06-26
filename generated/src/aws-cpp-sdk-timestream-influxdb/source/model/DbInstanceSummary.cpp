@@ -36,21 +36,8 @@ DbInstanceSummary::DbInstanceSummary() :
 {
 }
 
-DbInstanceSummary::DbInstanceSummary(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_status(Status::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_endpointHasBeenSet(false),
-    m_dbInstanceType(DbInstanceType::NOT_SET),
-    m_dbInstanceTypeHasBeenSet(false),
-    m_dbStorageType(DbStorageType::NOT_SET),
-    m_dbStorageTypeHasBeenSet(false),
-    m_allocatedStorage(0),
-    m_allocatedStorageHasBeenSet(false),
-    m_deploymentType(DeploymentType::NOT_SET),
-    m_deploymentTypeHasBeenSet(false)
+DbInstanceSummary::DbInstanceSummary(JsonView jsonValue)
+  : DbInstanceSummary()
 {
   *this = jsonValue;
 }

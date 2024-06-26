@@ -27,12 +27,8 @@ CapacityProviderStrategyItem::CapacityProviderStrategyItem() :
 {
 }
 
-CapacityProviderStrategyItem::CapacityProviderStrategyItem(JsonView jsonValue) : 
-    m_capacityProviderHasBeenSet(false),
-    m_weight(0),
-    m_weightHasBeenSet(false),
-    m_base(0),
-    m_baseHasBeenSet(false)
+CapacityProviderStrategyItem::CapacityProviderStrategyItem(JsonView jsonValue)
+  : CapacityProviderStrategyItem()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ ResourceValue::ResourceValue() :
 {
 }
 
-ResourceValue::ResourceValue(JsonView jsonValue) : 
-    m_value(ResourceValueType::NOT_SET),
-    m_valueHasBeenSet(false)
+ResourceValue::ResourceValue(JsonView jsonValue)
+  : ResourceValue()
 {
   *this = jsonValue;
 }

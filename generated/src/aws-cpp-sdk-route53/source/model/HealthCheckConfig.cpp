@@ -52,35 +52,8 @@ HealthCheckConfig::HealthCheckConfig() :
 {
 }
 
-HealthCheckConfig::HealthCheckConfig(const XmlNode& xmlNode) : 
-    m_iPAddressHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_type(HealthCheckType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_resourcePathHasBeenSet(false),
-    m_fullyQualifiedDomainNameHasBeenSet(false),
-    m_searchStringHasBeenSet(false),
-    m_requestInterval(0),
-    m_requestIntervalHasBeenSet(false),
-    m_failureThreshold(0),
-    m_failureThresholdHasBeenSet(false),
-    m_measureLatency(false),
-    m_measureLatencyHasBeenSet(false),
-    m_inverted(false),
-    m_invertedHasBeenSet(false),
-    m_disabled(false),
-    m_disabledHasBeenSet(false),
-    m_healthThreshold(0),
-    m_healthThresholdHasBeenSet(false),
-    m_childHealthChecksHasBeenSet(false),
-    m_enableSNI(false),
-    m_enableSNIHasBeenSet(false),
-    m_regionsHasBeenSet(false),
-    m_alarmIdentifierHasBeenSet(false),
-    m_insufficientDataHealthStatus(InsufficientDataHealthStatus::NOT_SET),
-    m_insufficientDataHealthStatusHasBeenSet(false),
-    m_routingControlArnHasBeenSet(false)
+HealthCheckConfig::HealthCheckConfig(const XmlNode& xmlNode)
+  : HealthCheckConfig()
 {
   *this = xmlNode;
 }

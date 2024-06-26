@@ -23,9 +23,8 @@ GetTransformerResult::GetTransformerResult() :
 {
 }
 
-GetTransformerResult::GetTransformerResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_fileFormat(FileFormat::NOT_SET),
-    m_status(TransformerStatus::NOT_SET)
+GetTransformerResult::GetTransformerResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetTransformerResult()
 {
   *this = result;
 }

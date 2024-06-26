@@ -25,10 +25,8 @@ KubernetesRoleDetails::KubernetesRoleDetails() :
 {
 }
 
-KubernetesRoleDetails::KubernetesRoleDetails(JsonView jsonValue) : 
-    m_kindHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_uidHasBeenSet(false)
+KubernetesRoleDetails::KubernetesRoleDetails(JsonView jsonValue)
+  : KubernetesRoleDetails()
 {
   *this = jsonValue;
 }

@@ -43,28 +43,8 @@ IBMDb2Settings::IBMDb2Settings() :
 {
 }
 
-IBMDb2Settings::IBMDb2Settings(JsonView jsonValue) : 
-    m_databaseNameHasBeenSet(false),
-    m_passwordHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_serverNameHasBeenSet(false),
-    m_setDataCaptureChanges(false),
-    m_setDataCaptureChangesHasBeenSet(false),
-    m_currentLsnHasBeenSet(false),
-    m_maxKBytesPerRead(0),
-    m_maxKBytesPerReadHasBeenSet(false),
-    m_usernameHasBeenSet(false),
-    m_secretsManagerAccessRoleArnHasBeenSet(false),
-    m_secretsManagerSecretIdHasBeenSet(false),
-    m_loadTimeout(0),
-    m_loadTimeoutHasBeenSet(false),
-    m_writeBufferSize(0),
-    m_writeBufferSizeHasBeenSet(false),
-    m_maxFileSize(0),
-    m_maxFileSizeHasBeenSet(false),
-    m_keepCsvFiles(false),
-    m_keepCsvFilesHasBeenSet(false)
+IBMDb2Settings::IBMDb2Settings(JsonView jsonValue)
+  : IBMDb2Settings()
 {
   *this = jsonValue;
 }

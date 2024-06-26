@@ -27,12 +27,8 @@ PipelineContext::PipelineContext() :
 {
 }
 
-PipelineContext::PipelineContext(JsonView jsonValue) : 
-    m_pipelineNameHasBeenSet(false),
-    m_stageHasBeenSet(false),
-    m_actionHasBeenSet(false),
-    m_pipelineArnHasBeenSet(false),
-    m_pipelineExecutionIdHasBeenSet(false)
+PipelineContext::PipelineContext(JsonView jsonValue)
+  : PipelineContext()
 {
   *this = jsonValue;
 }

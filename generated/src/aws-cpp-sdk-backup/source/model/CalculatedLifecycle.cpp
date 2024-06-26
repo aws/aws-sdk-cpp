@@ -24,9 +24,8 @@ CalculatedLifecycle::CalculatedLifecycle() :
 {
 }
 
-CalculatedLifecycle::CalculatedLifecycle(JsonView jsonValue) : 
-    m_moveToColdStorageAtHasBeenSet(false),
-    m_deleteAtHasBeenSet(false)
+CalculatedLifecycle::CalculatedLifecycle(JsonView jsonValue)
+  : CalculatedLifecycle()
 {
   *this = jsonValue;
 }

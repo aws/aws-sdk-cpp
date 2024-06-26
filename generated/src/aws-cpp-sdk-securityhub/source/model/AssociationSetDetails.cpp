@@ -29,14 +29,8 @@ AssociationSetDetails::AssociationSetDetails() :
 {
 }
 
-AssociationSetDetails::AssociationSetDetails(JsonView jsonValue) : 
-    m_associationStateHasBeenSet(false),
-    m_gatewayIdHasBeenSet(false),
-    m_main(false),
-    m_mainHasBeenSet(false),
-    m_routeTableAssociationIdHasBeenSet(false),
-    m_routeTableIdHasBeenSet(false),
-    m_subnetIdHasBeenSet(false)
+AssociationSetDetails::AssociationSetDetails(JsonView jsonValue)
+  : AssociationSetDetails()
 {
   *this = jsonValue;
 }

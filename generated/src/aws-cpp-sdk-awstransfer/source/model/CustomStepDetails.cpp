@@ -27,12 +27,8 @@ CustomStepDetails::CustomStepDetails() :
 {
 }
 
-CustomStepDetails::CustomStepDetails(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_targetHasBeenSet(false),
-    m_timeoutSeconds(0),
-    m_timeoutSecondsHasBeenSet(false),
-    m_sourceFileLocationHasBeenSet(false)
+CustomStepDetails::CustomStepDetails(JsonView jsonValue)
+  : CustomStepDetails()
 {
   *this = jsonValue;
 }

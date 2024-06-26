@@ -27,12 +27,8 @@ AwsLogSourceConfiguration::AwsLogSourceConfiguration() :
 {
 }
 
-AwsLogSourceConfiguration::AwsLogSourceConfiguration(JsonView jsonValue) : 
-    m_accountsHasBeenSet(false),
-    m_regionsHasBeenSet(false),
-    m_sourceName(AwsLogSourceName::NOT_SET),
-    m_sourceNameHasBeenSet(false),
-    m_sourceVersionHasBeenSet(false)
+AwsLogSourceConfiguration::AwsLogSourceConfiguration(JsonView jsonValue)
+  : AwsLogSourceConfiguration()
 {
   *this = jsonValue;
 }

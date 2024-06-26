@@ -22,8 +22,8 @@ DeleteVpcPeeringConnectionResponse::DeleteVpcPeeringConnectionResponse() :
 {
 }
 
-DeleteVpcPeeringConnectionResponse::DeleteVpcPeeringConnectionResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_return(false)
+DeleteVpcPeeringConnectionResponse::DeleteVpcPeeringConnectionResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : DeleteVpcPeeringConnectionResponse()
 {
   *this = result;
 }

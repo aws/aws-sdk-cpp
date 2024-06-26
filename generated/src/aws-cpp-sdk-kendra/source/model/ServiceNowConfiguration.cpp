@@ -30,15 +30,8 @@ ServiceNowConfiguration::ServiceNowConfiguration() :
 {
 }
 
-ServiceNowConfiguration::ServiceNowConfiguration(JsonView jsonValue) : 
-    m_hostUrlHasBeenSet(false),
-    m_secretArnHasBeenSet(false),
-    m_serviceNowBuildVersion(ServiceNowBuildVersionType::NOT_SET),
-    m_serviceNowBuildVersionHasBeenSet(false),
-    m_knowledgeArticleConfigurationHasBeenSet(false),
-    m_serviceCatalogConfigurationHasBeenSet(false),
-    m_authenticationType(ServiceNowAuthenticationType::NOT_SET),
-    m_authenticationTypeHasBeenSet(false)
+ServiceNowConfiguration::ServiceNowConfiguration(JsonView jsonValue)
+  : ServiceNowConfiguration()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ CustomModelTrainingParameters::CustomModelTrainingParameters() :
 {
 }
 
-CustomModelTrainingParameters::CustomModelTrainingParameters(JsonView jsonValue) : 
-    m_sourceS3DirectoryPathHasBeenSet(false),
-    m_trainingEntryPointScriptHasBeenSet(false),
-    m_transformEntryPointScriptHasBeenSet(false)
+CustomModelTrainingParameters::CustomModelTrainingParameters(JsonView jsonValue)
+  : CustomModelTrainingParameters()
 {
   *this = jsonValue;
 }

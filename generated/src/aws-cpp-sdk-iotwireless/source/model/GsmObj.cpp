@@ -36,21 +36,8 @@ GsmObj::GsmObj() :
 {
 }
 
-GsmObj::GsmObj(JsonView jsonValue) : 
-    m_mcc(0),
-    m_mccHasBeenSet(false),
-    m_mnc(0),
-    m_mncHasBeenSet(false),
-    m_lac(0),
-    m_lacHasBeenSet(false),
-    m_geranCid(0),
-    m_geranCidHasBeenSet(false),
-    m_gsmLocalIdHasBeenSet(false),
-    m_gsmTimingAdvance(0),
-    m_gsmTimingAdvanceHasBeenSet(false),
-    m_rxLevel(0),
-    m_rxLevelHasBeenSet(false),
-    m_gsmNmrHasBeenSet(false)
+GsmObj::GsmObj(JsonView jsonValue)
+  : GsmObj()
 {
   *this = jsonValue;
 }

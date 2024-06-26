@@ -26,11 +26,8 @@ ListTransactionsSort::ListTransactionsSort() :
 {
 }
 
-ListTransactionsSort::ListTransactionsSort(JsonView jsonValue) : 
-    m_sortBy(ListTransactionsSortBy::NOT_SET),
-    m_sortByHasBeenSet(false),
-    m_sortOrder(SortOrder::NOT_SET),
-    m_sortOrderHasBeenSet(false)
+ListTransactionsSort::ListTransactionsSort(JsonView jsonValue)
+  : ListTransactionsSort()
 {
   *this = jsonValue;
 }

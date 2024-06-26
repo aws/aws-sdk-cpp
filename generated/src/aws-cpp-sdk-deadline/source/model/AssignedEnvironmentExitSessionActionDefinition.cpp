@@ -23,8 +23,8 @@ AssignedEnvironmentExitSessionActionDefinition::AssignedEnvironmentExitSessionAc
 {
 }
 
-AssignedEnvironmentExitSessionActionDefinition::AssignedEnvironmentExitSessionActionDefinition(JsonView jsonValue) : 
-    m_environmentIdHasBeenSet(false)
+AssignedEnvironmentExitSessionActionDefinition::AssignedEnvironmentExitSessionActionDefinition(JsonView jsonValue)
+  : AssignedEnvironmentExitSessionActionDefinition()
 {
   *this = jsonValue;
 }

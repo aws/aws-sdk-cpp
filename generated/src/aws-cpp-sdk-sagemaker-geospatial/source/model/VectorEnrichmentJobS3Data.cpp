@@ -24,9 +24,8 @@ VectorEnrichmentJobS3Data::VectorEnrichmentJobS3Data() :
 {
 }
 
-VectorEnrichmentJobS3Data::VectorEnrichmentJobS3Data(JsonView jsonValue) : 
-    m_kmsKeyIdHasBeenSet(false),
-    m_s3UriHasBeenSet(false)
+VectorEnrichmentJobS3Data::VectorEnrichmentJobS3Data(JsonView jsonValue)
+  : VectorEnrichmentJobS3Data()
 {
   *this = jsonValue;
 }

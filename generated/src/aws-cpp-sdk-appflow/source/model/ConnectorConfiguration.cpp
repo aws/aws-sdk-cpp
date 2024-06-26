@@ -56,41 +56,8 @@ ConnectorConfiguration::ConnectorConfiguration() :
 {
 }
 
-ConnectorConfiguration::ConnectorConfiguration(JsonView jsonValue) : 
-    m_canUseAsSource(false),
-    m_canUseAsSourceHasBeenSet(false),
-    m_canUseAsDestination(false),
-    m_canUseAsDestinationHasBeenSet(false),
-    m_supportedDestinationConnectorsHasBeenSet(false),
-    m_supportedSchedulingFrequenciesHasBeenSet(false),
-    m_isPrivateLinkEnabled(false),
-    m_isPrivateLinkEnabledHasBeenSet(false),
-    m_isPrivateLinkEndpointUrlRequired(false),
-    m_isPrivateLinkEndpointUrlRequiredHasBeenSet(false),
-    m_supportedTriggerTypesHasBeenSet(false),
-    m_connectorMetadataHasBeenSet(false),
-    m_connectorType(ConnectorType::NOT_SET),
-    m_connectorTypeHasBeenSet(false),
-    m_connectorLabelHasBeenSet(false),
-    m_connectorDescriptionHasBeenSet(false),
-    m_connectorOwnerHasBeenSet(false),
-    m_connectorNameHasBeenSet(false),
-    m_connectorVersionHasBeenSet(false),
-    m_connectorArnHasBeenSet(false),
-    m_connectorModesHasBeenSet(false),
-    m_authenticationConfigHasBeenSet(false),
-    m_connectorRuntimeSettingsHasBeenSet(false),
-    m_supportedApiVersionsHasBeenSet(false),
-    m_supportedOperatorsHasBeenSet(false),
-    m_supportedWriteOperationsHasBeenSet(false),
-    m_connectorProvisioningType(ConnectorProvisioningType::NOT_SET),
-    m_connectorProvisioningTypeHasBeenSet(false),
-    m_connectorProvisioningConfigHasBeenSet(false),
-    m_logoURLHasBeenSet(false),
-    m_registeredAtHasBeenSet(false),
-    m_registeredByHasBeenSet(false),
-    m_supportedDataTransferTypesHasBeenSet(false),
-    m_supportedDataTransferApisHasBeenSet(false)
+ConnectorConfiguration::ConnectorConfiguration(JsonView jsonValue)
+  : ConnectorConfiguration()
 {
   *this = jsonValue;
 }

@@ -50,33 +50,8 @@ Host::Host() :
 {
 }
 
-Host::Host(const XmlNode& xmlNode) : 
-    m_autoPlacement(AutoPlacement::NOT_SET),
-    m_autoPlacementHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_availableCapacityHasBeenSet(false),
-    m_clientTokenHasBeenSet(false),
-    m_hostIdHasBeenSet(false),
-    m_hostPropertiesHasBeenSet(false),
-    m_hostReservationIdHasBeenSet(false),
-    m_instancesHasBeenSet(false),
-    m_state(AllocationState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_allocationTimeHasBeenSet(false),
-    m_releaseTimeHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_hostRecovery(HostRecovery::NOT_SET),
-    m_hostRecoveryHasBeenSet(false),
-    m_allowsMultipleInstanceTypes(AllowsMultipleInstanceTypes::NOT_SET),
-    m_allowsMultipleInstanceTypesHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_availabilityZoneIdHasBeenSet(false),
-    m_memberOfServiceLinkedResourceGroup(false),
-    m_memberOfServiceLinkedResourceGroupHasBeenSet(false),
-    m_outpostArnHasBeenSet(false),
-    m_hostMaintenance(HostMaintenance::NOT_SET),
-    m_hostMaintenanceHasBeenSet(false),
-    m_assetIdHasBeenSet(false)
+Host::Host(const XmlNode& xmlNode)
+  : Host()
 {
   *this = xmlNode;
 }

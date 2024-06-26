@@ -25,10 +25,8 @@ RevisionDestinationEntry::RevisionDestinationEntry() :
 {
 }
 
-RevisionDestinationEntry::RevisionDestinationEntry(JsonView jsonValue) : 
-    m_bucketHasBeenSet(false),
-    m_keyPatternHasBeenSet(false),
-    m_revisionIdHasBeenSet(false)
+RevisionDestinationEntry::RevisionDestinationEntry(JsonView jsonValue)
+  : RevisionDestinationEntry()
 {
   *this = jsonValue;
 }

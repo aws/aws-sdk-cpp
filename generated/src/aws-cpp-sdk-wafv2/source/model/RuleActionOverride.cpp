@@ -24,9 +24,8 @@ RuleActionOverride::RuleActionOverride() :
 {
 }
 
-RuleActionOverride::RuleActionOverride(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_actionToUseHasBeenSet(false)
+RuleActionOverride::RuleActionOverride(JsonView jsonValue)
+  : RuleActionOverride()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ VpcAttachmentOptions::VpcAttachmentOptions() :
 {
 }
 
-VpcAttachmentOptions::VpcAttachmentOptions(JsonView jsonValue) : 
-    m_attachToVpc(false),
-    m_attachToVpcHasBeenSet(false),
-    m_cidrBlockHasBeenSet(false)
+VpcAttachmentOptions::VpcAttachmentOptions(JsonView jsonValue)
+  : VpcAttachmentOptions()
 {
   *this = jsonValue;
 }

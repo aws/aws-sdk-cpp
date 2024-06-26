@@ -28,13 +28,8 @@ ReservedInstanceOptions::ReservedInstanceOptions() :
 {
 }
 
-ReservedInstanceOptions::ReservedInstanceOptions(JsonView jsonValue) : 
-    m_purchasingOption(PurchasingOption::NOT_SET),
-    m_purchasingOptionHasBeenSet(false),
-    m_offeringClass(OfferingClass::NOT_SET),
-    m_offeringClassHasBeenSet(false),
-    m_termLength(TermLength::NOT_SET),
-    m_termLengthHasBeenSet(false)
+ReservedInstanceOptions::ReservedInstanceOptions(JsonView jsonValue)
+  : ReservedInstanceOptions()
 {
   *this = jsonValue;
 }

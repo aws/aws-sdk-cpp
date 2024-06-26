@@ -23,8 +23,8 @@ CreateTieringInput::CreateTieringInput() :
 {
 }
 
-CreateTieringInput::CreateTieringInput(JsonView jsonValue) : 
-    m_freeTierHasBeenSet(false)
+CreateTieringInput::CreateTieringInput(JsonView jsonValue)
+  : CreateTieringInput()
 {
   *this = jsonValue;
 }

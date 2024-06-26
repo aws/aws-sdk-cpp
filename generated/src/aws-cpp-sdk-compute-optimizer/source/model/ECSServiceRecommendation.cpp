@@ -39,24 +39,8 @@ ECSServiceRecommendation::ECSServiceRecommendation() :
 {
 }
 
-ECSServiceRecommendation::ECSServiceRecommendation(JsonView jsonValue) : 
-    m_serviceArnHasBeenSet(false),
-    m_accountIdHasBeenSet(false),
-    m_currentServiceConfigurationHasBeenSet(false),
-    m_utilizationMetricsHasBeenSet(false),
-    m_lookbackPeriodInDays(0.0),
-    m_lookbackPeriodInDaysHasBeenSet(false),
-    m_launchType(ECSServiceLaunchType::NOT_SET),
-    m_launchTypeHasBeenSet(false),
-    m_lastRefreshTimestampHasBeenSet(false),
-    m_finding(ECSServiceRecommendationFinding::NOT_SET),
-    m_findingHasBeenSet(false),
-    m_findingReasonCodesHasBeenSet(false),
-    m_serviceRecommendationOptionsHasBeenSet(false),
-    m_currentPerformanceRisk(CurrentPerformanceRisk::NOT_SET),
-    m_currentPerformanceRiskHasBeenSet(false),
-    m_effectiveRecommendationPreferencesHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+ECSServiceRecommendation::ECSServiceRecommendation(JsonView jsonValue)
+  : ECSServiceRecommendation()
 {
   *this = jsonValue;
 }

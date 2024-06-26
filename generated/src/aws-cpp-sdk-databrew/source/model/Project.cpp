@@ -36,21 +36,8 @@ Project::Project() :
 {
 }
 
-Project::Project(JsonView jsonValue) : 
-    m_accountIdHasBeenSet(false),
-    m_createDateHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_datasetNameHasBeenSet(false),
-    m_lastModifiedDateHasBeenSet(false),
-    m_lastModifiedByHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_recipeNameHasBeenSet(false),
-    m_resourceArnHasBeenSet(false),
-    m_sampleHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_openedByHasBeenSet(false),
-    m_openDateHasBeenSet(false)
+Project::Project(JsonView jsonValue)
+  : Project()
 {
   *this = jsonValue;
 }

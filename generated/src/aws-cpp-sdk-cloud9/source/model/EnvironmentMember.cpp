@@ -28,13 +28,8 @@ EnvironmentMember::EnvironmentMember() :
 {
 }
 
-EnvironmentMember::EnvironmentMember(JsonView jsonValue) : 
-    m_permissions(Permissions::NOT_SET),
-    m_permissionsHasBeenSet(false),
-    m_userIdHasBeenSet(false),
-    m_userArnHasBeenSet(false),
-    m_environmentIdHasBeenSet(false),
-    m_lastAccessHasBeenSet(false)
+EnvironmentMember::EnvironmentMember(JsonView jsonValue)
+  : EnvironmentMember()
 {
   *this = jsonValue;
 }

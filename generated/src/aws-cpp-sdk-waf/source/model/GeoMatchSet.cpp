@@ -25,10 +25,8 @@ GeoMatchSet::GeoMatchSet() :
 {
 }
 
-GeoMatchSet::GeoMatchSet(JsonView jsonValue) : 
-    m_geoMatchSetIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_geoMatchConstraintsHasBeenSet(false)
+GeoMatchSet::GeoMatchSet(JsonView jsonValue)
+  : GeoMatchSet()
 {
   *this = jsonValue;
 }

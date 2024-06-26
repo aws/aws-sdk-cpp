@@ -26,11 +26,8 @@ ContributorInsightsSummary::ContributorInsightsSummary() :
 {
 }
 
-ContributorInsightsSummary::ContributorInsightsSummary(JsonView jsonValue) : 
-    m_tableNameHasBeenSet(false),
-    m_indexNameHasBeenSet(false),
-    m_contributorInsightsStatus(ContributorInsightsStatus::NOT_SET),
-    m_contributorInsightsStatusHasBeenSet(false)
+ContributorInsightsSummary::ContributorInsightsSummary(JsonView jsonValue)
+  : ContributorInsightsSummary()
 {
   *this = jsonValue;
 }

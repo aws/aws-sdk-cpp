@@ -30,15 +30,8 @@ SchemaListItem::SchemaListItem() :
 {
 }
 
-SchemaListItem::SchemaListItem(JsonView jsonValue) : 
-    m_registryNameHasBeenSet(false),
-    m_schemaNameHasBeenSet(false),
-    m_schemaArnHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_schemaStatus(SchemaStatus::NOT_SET),
-    m_schemaStatusHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_updatedTimeHasBeenSet(false)
+SchemaListItem::SchemaListItem(JsonView jsonValue)
+  : SchemaListItem()
 {
   *this = jsonValue;
 }

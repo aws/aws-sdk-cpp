@@ -23,8 +23,8 @@ UserIdentityConfiguration::UserIdentityConfiguration() :
 {
 }
 
-UserIdentityConfiguration::UserIdentityConfiguration(JsonView jsonValue) : 
-    m_identityAttributeNameHasBeenSet(false)
+UserIdentityConfiguration::UserIdentityConfiguration(JsonView jsonValue)
+  : UserIdentityConfiguration()
 {
   *this = jsonValue;
 }

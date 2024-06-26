@@ -24,9 +24,8 @@ CdiInputSpecification::CdiInputSpecification() :
 {
 }
 
-CdiInputSpecification::CdiInputSpecification(JsonView jsonValue) : 
-    m_resolution(CdiInputResolution::NOT_SET),
-    m_resolutionHasBeenSet(false)
+CdiInputSpecification::CdiInputSpecification(JsonView jsonValue)
+  : CdiInputSpecification()
 {
   *this = jsonValue;
 }

@@ -23,9 +23,8 @@ GetRetrieverResult::GetRetrieverResult() :
 {
 }
 
-GetRetrieverResult::GetRetrieverResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_type(RetrieverType::NOT_SET),
-    m_status(RetrieverStatus::NOT_SET)
+GetRetrieverResult::GetRetrieverResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetRetrieverResult()
 {
   *this = result;
 }

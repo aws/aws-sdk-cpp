@@ -26,11 +26,8 @@ ItalyAdditionalInfo::ItalyAdditionalInfo() :
 {
 }
 
-ItalyAdditionalInfo::ItalyAdditionalInfo(JsonView jsonValue) : 
-    m_cigNumberHasBeenSet(false),
-    m_cupNumberHasBeenSet(false),
-    m_sdiAccountIdHasBeenSet(false),
-    m_taxCodeHasBeenSet(false)
+ItalyAdditionalInfo::ItalyAdditionalInfo(JsonView jsonValue)
+  : ItalyAdditionalInfo()
 {
   *this = jsonValue;
 }

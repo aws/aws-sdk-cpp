@@ -26,9 +26,8 @@ DBSnapshotAttributesResult::DBSnapshotAttributesResult() :
 {
 }
 
-DBSnapshotAttributesResult::DBSnapshotAttributesResult(const XmlNode& xmlNode) : 
-    m_dBSnapshotIdentifierHasBeenSet(false),
-    m_dBSnapshotAttributesHasBeenSet(false)
+DBSnapshotAttributesResult::DBSnapshotAttributesResult(const XmlNode& xmlNode)
+  : DBSnapshotAttributesResult()
 {
   *this = xmlNode;
 }

@@ -25,10 +25,8 @@ DataAggregation::DataAggregation() :
 {
 }
 
-DataAggregation::DataAggregation(JsonView jsonValue) : 
-    m_datasetRowDateGranularity(TopicTimeGranularity::NOT_SET),
-    m_datasetRowDateGranularityHasBeenSet(false),
-    m_defaultDateColumnNameHasBeenSet(false)
+DataAggregation::DataAggregation(JsonView jsonValue)
+  : DataAggregation()
 {
   *this = jsonValue;
 }

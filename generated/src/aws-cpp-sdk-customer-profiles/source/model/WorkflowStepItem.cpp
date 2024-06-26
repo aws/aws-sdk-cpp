@@ -23,8 +23,8 @@ WorkflowStepItem::WorkflowStepItem() :
 {
 }
 
-WorkflowStepItem::WorkflowStepItem(JsonView jsonValue) : 
-    m_appflowIntegrationHasBeenSet(false)
+WorkflowStepItem::WorkflowStepItem(JsonView jsonValue)
+  : WorkflowStepItem()
 {
   *this = jsonValue;
 }

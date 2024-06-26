@@ -24,9 +24,8 @@ InterpolatedAssetPropertyValue::InterpolatedAssetPropertyValue() :
 {
 }
 
-InterpolatedAssetPropertyValue::InterpolatedAssetPropertyValue(JsonView jsonValue) : 
-    m_timestampHasBeenSet(false),
-    m_valueHasBeenSet(false)
+InterpolatedAssetPropertyValue::InterpolatedAssetPropertyValue(JsonView jsonValue)
+  : InterpolatedAssetPropertyValue()
 {
   *this = jsonValue;
 }

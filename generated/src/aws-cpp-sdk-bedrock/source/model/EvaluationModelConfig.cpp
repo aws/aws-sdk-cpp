@@ -23,8 +23,8 @@ EvaluationModelConfig::EvaluationModelConfig() :
 {
 }
 
-EvaluationModelConfig::EvaluationModelConfig(JsonView jsonValue) : 
-    m_bedrockModelHasBeenSet(false)
+EvaluationModelConfig::EvaluationModelConfig(JsonView jsonValue)
+  : EvaluationModelConfig()
 {
   *this = jsonValue;
 }

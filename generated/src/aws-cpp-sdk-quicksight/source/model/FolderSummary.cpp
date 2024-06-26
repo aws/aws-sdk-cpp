@@ -31,16 +31,8 @@ FolderSummary::FolderSummary() :
 {
 }
 
-FolderSummary::FolderSummary(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_folderIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_folderType(FolderType::NOT_SET),
-    m_folderTypeHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_sharingModel(SharingModel::NOT_SET),
-    m_sharingModelHasBeenSet(false)
+FolderSummary::FolderSummary(JsonView jsonValue)
+  : FolderSummary()
 {
   *this = jsonValue;
 }

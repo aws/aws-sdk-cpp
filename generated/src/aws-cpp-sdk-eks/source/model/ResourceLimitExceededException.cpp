@@ -26,11 +26,8 @@ ResourceLimitExceededException::ResourceLimitExceededException() :
 {
 }
 
-ResourceLimitExceededException::ResourceLimitExceededException(JsonView jsonValue) : 
-    m_clusterNameHasBeenSet(false),
-    m_nodegroupNameHasBeenSet(false),
-    m_subscriptionIdHasBeenSet(false),
-    m_messageHasBeenSet(false)
+ResourceLimitExceededException::ResourceLimitExceededException(JsonView jsonValue)
+  : ResourceLimitExceededException()
 {
   *this = jsonValue;
 }

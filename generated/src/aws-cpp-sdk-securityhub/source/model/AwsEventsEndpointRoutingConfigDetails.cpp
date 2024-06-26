@@ -23,8 +23,8 @@ AwsEventsEndpointRoutingConfigDetails::AwsEventsEndpointRoutingConfigDetails() :
 {
 }
 
-AwsEventsEndpointRoutingConfigDetails::AwsEventsEndpointRoutingConfigDetails(JsonView jsonValue) : 
-    m_failoverConfigHasBeenSet(false)
+AwsEventsEndpointRoutingConfigDetails::AwsEventsEndpointRoutingConfigDetails(JsonView jsonValue)
+  : AwsEventsEndpointRoutingConfigDetails()
 {
   *this = jsonValue;
 }

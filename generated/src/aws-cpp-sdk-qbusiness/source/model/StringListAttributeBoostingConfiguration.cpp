@@ -24,9 +24,8 @@ StringListAttributeBoostingConfiguration::StringListAttributeBoostingConfigurati
 {
 }
 
-StringListAttributeBoostingConfiguration::StringListAttributeBoostingConfiguration(JsonView jsonValue) : 
-    m_boostingLevel(DocumentAttributeBoostingLevel::NOT_SET),
-    m_boostingLevelHasBeenSet(false)
+StringListAttributeBoostingConfiguration::StringListAttributeBoostingConfiguration(JsonView jsonValue)
+  : StringListAttributeBoostingConfiguration()
 {
   *this = jsonValue;
 }

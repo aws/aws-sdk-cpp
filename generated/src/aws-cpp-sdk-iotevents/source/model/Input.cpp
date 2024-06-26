@@ -24,9 +24,8 @@ Input::Input() :
 {
 }
 
-Input::Input(JsonView jsonValue) : 
-    m_inputConfigurationHasBeenSet(false),
-    m_inputDefinitionHasBeenSet(false)
+Input::Input(JsonView jsonValue)
+  : Input()
 {
   *this = jsonValue;
 }

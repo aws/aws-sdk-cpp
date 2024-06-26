@@ -28,13 +28,8 @@ DiskInfo::DiskInfo() :
 {
 }
 
-DiskInfo::DiskInfo(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_pathHasBeenSet(false),
-    m_sizeInGb(0),
-    m_sizeInGbHasBeenSet(false),
-    m_isSystemDisk(false),
-    m_isSystemDiskHasBeenSet(false)
+DiskInfo::DiskInfo(JsonView jsonValue)
+  : DiskInfo()
 {
   *this = jsonValue;
 }

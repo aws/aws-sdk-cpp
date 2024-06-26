@@ -25,10 +25,8 @@ AssetListingDetails::AssetListingDetails() :
 {
 }
 
-AssetListingDetails::AssetListingDetails(JsonView jsonValue) : 
-    m_listingIdHasBeenSet(false),
-    m_listingStatus(ListingStatus::NOT_SET),
-    m_listingStatusHasBeenSet(false)
+AssetListingDetails::AssetListingDetails(JsonView jsonValue)
+  : AssetListingDetails()
 {
   *this = jsonValue;
 }

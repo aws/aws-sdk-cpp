@@ -25,10 +25,8 @@ FileCacheNFSConfiguration::FileCacheNFSConfiguration() :
 {
 }
 
-FileCacheNFSConfiguration::FileCacheNFSConfiguration(JsonView jsonValue) : 
-    m_version(NfsVersion::NOT_SET),
-    m_versionHasBeenSet(false),
-    m_dnsIpsHasBeenSet(false)
+FileCacheNFSConfiguration::FileCacheNFSConfiguration(JsonView jsonValue)
+  : FileCacheNFSConfiguration()
 {
   *this = jsonValue;
 }

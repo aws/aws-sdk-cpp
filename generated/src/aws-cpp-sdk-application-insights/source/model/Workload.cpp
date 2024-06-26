@@ -28,13 +28,8 @@ Workload::Workload() :
 {
 }
 
-Workload::Workload(JsonView jsonValue) : 
-    m_workloadIdHasBeenSet(false),
-    m_componentNameHasBeenSet(false),
-    m_workloadNameHasBeenSet(false),
-    m_tier(Tier::NOT_SET),
-    m_tierHasBeenSet(false),
-    m_workloadRemarksHasBeenSet(false)
+Workload::Workload(JsonView jsonValue)
+  : Workload()
 {
   *this = jsonValue;
 }

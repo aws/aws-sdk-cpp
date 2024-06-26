@@ -22,8 +22,8 @@ ListUserTagsResult::ListUserTagsResult() :
 {
 }
 
-ListUserTagsResult::ListUserTagsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_isTruncated(false)
+ListUserTagsResult::ListUserTagsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : ListUserTagsResult()
 {
   *this = result;
 }

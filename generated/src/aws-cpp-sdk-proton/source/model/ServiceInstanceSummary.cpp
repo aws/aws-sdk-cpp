@@ -37,22 +37,8 @@ ServiceInstanceSummary::ServiceInstanceSummary() :
 {
 }
 
-ServiceInstanceSummary::ServiceInstanceSummary(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_deploymentStatus(DeploymentStatus::NOT_SET),
-    m_deploymentStatusHasBeenSet(false),
-    m_deploymentStatusMessageHasBeenSet(false),
-    m_environmentNameHasBeenSet(false),
-    m_lastAttemptedDeploymentIdHasBeenSet(false),
-    m_lastDeploymentAttemptedAtHasBeenSet(false),
-    m_lastDeploymentSucceededAtHasBeenSet(false),
-    m_lastSucceededDeploymentIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_serviceNameHasBeenSet(false),
-    m_templateMajorVersionHasBeenSet(false),
-    m_templateMinorVersionHasBeenSet(false),
-    m_templateNameHasBeenSet(false)
+ServiceInstanceSummary::ServiceInstanceSummary(JsonView jsonValue)
+  : ServiceInstanceSummary()
 {
   *this = jsonValue;
 }

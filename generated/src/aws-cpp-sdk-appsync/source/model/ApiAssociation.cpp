@@ -27,12 +27,8 @@ ApiAssociation::ApiAssociation() :
 {
 }
 
-ApiAssociation::ApiAssociation(JsonView jsonValue) : 
-    m_domainNameHasBeenSet(false),
-    m_apiIdHasBeenSet(false),
-    m_associationStatus(AssociationStatus::NOT_SET),
-    m_associationStatusHasBeenSet(false),
-    m_deploymentDetailHasBeenSet(false)
+ApiAssociation::ApiAssociation(JsonView jsonValue)
+  : ApiAssociation()
 {
   *this = jsonValue;
 }

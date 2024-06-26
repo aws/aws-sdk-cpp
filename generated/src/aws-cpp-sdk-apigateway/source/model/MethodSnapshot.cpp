@@ -25,10 +25,8 @@ MethodSnapshot::MethodSnapshot() :
 {
 }
 
-MethodSnapshot::MethodSnapshot(JsonView jsonValue) : 
-    m_authorizationTypeHasBeenSet(false),
-    m_apiKeyRequired(false),
-    m_apiKeyRequiredHasBeenSet(false)
+MethodSnapshot::MethodSnapshot(JsonView jsonValue)
+  : MethodSnapshot()
 {
   *this = jsonValue;
 }

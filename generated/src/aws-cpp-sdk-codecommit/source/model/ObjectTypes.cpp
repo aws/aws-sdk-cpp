@@ -28,13 +28,8 @@ ObjectTypes::ObjectTypes() :
 {
 }
 
-ObjectTypes::ObjectTypes(JsonView jsonValue) : 
-    m_source(ObjectTypeEnum::NOT_SET),
-    m_sourceHasBeenSet(false),
-    m_destination(ObjectTypeEnum::NOT_SET),
-    m_destinationHasBeenSet(false),
-    m_base(ObjectTypeEnum::NOT_SET),
-    m_baseHasBeenSet(false)
+ObjectTypes::ObjectTypes(JsonView jsonValue)
+  : ObjectTypes()
 {
   *this = jsonValue;
 }

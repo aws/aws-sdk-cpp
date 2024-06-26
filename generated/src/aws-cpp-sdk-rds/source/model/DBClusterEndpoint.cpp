@@ -34,17 +34,8 @@ DBClusterEndpoint::DBClusterEndpoint() :
 {
 }
 
-DBClusterEndpoint::DBClusterEndpoint(const XmlNode& xmlNode) : 
-    m_dBClusterEndpointIdentifierHasBeenSet(false),
-    m_dBClusterIdentifierHasBeenSet(false),
-    m_dBClusterEndpointResourceIdentifierHasBeenSet(false),
-    m_endpointHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_endpointTypeHasBeenSet(false),
-    m_customEndpointTypeHasBeenSet(false),
-    m_staticMembersHasBeenSet(false),
-    m_excludedMembersHasBeenSet(false),
-    m_dBClusterEndpointArnHasBeenSet(false)
+DBClusterEndpoint::DBClusterEndpoint(const XmlNode& xmlNode)
+  : DBClusterEndpoint()
 {
   *this = xmlNode;
 }

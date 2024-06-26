@@ -29,14 +29,8 @@ AthenaError::AthenaError() :
 {
 }
 
-AthenaError::AthenaError(JsonView jsonValue) : 
-    m_errorCategory(0),
-    m_errorCategoryHasBeenSet(false),
-    m_errorType(0),
-    m_errorTypeHasBeenSet(false),
-    m_retryable(false),
-    m_retryableHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
+AthenaError::AthenaError(JsonView jsonValue)
+  : AthenaError()
 {
   *this = jsonValue;
 }

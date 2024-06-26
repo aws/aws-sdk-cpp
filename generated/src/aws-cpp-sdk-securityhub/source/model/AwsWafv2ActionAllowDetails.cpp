@@ -23,8 +23,8 @@ AwsWafv2ActionAllowDetails::AwsWafv2ActionAllowDetails() :
 {
 }
 
-AwsWafv2ActionAllowDetails::AwsWafv2ActionAllowDetails(JsonView jsonValue) : 
-    m_customRequestHandlingHasBeenSet(false)
+AwsWafv2ActionAllowDetails::AwsWafv2ActionAllowDetails(JsonView jsonValue)
+  : AwsWafv2ActionAllowDetails()
 {
   *this = jsonValue;
 }

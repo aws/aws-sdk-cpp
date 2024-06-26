@@ -25,10 +25,8 @@ CapacityTaskFailure::CapacityTaskFailure() :
 {
 }
 
-CapacityTaskFailure::CapacityTaskFailure(JsonView jsonValue) : 
-    m_reasonHasBeenSet(false),
-    m_type(CapacityTaskFailureType::NOT_SET),
-    m_typeHasBeenSet(false)
+CapacityTaskFailure::CapacityTaskFailure(JsonView jsonValue)
+  : CapacityTaskFailure()
 {
   *this = jsonValue;
 }

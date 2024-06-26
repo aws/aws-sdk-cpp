@@ -38,23 +38,8 @@ ConfigRuleEvaluationStatus::ConfigRuleEvaluationStatus() :
 {
 }
 
-ConfigRuleEvaluationStatus::ConfigRuleEvaluationStatus(JsonView jsonValue) : 
-    m_configRuleNameHasBeenSet(false),
-    m_configRuleArnHasBeenSet(false),
-    m_configRuleIdHasBeenSet(false),
-    m_lastSuccessfulInvocationTimeHasBeenSet(false),
-    m_lastFailedInvocationTimeHasBeenSet(false),
-    m_lastSuccessfulEvaluationTimeHasBeenSet(false),
-    m_lastFailedEvaluationTimeHasBeenSet(false),
-    m_firstActivatedTimeHasBeenSet(false),
-    m_lastDeactivatedTimeHasBeenSet(false),
-    m_lastErrorCodeHasBeenSet(false),
-    m_lastErrorMessageHasBeenSet(false),
-    m_firstEvaluationStarted(false),
-    m_firstEvaluationStartedHasBeenSet(false),
-    m_lastDebugLogDeliveryStatusHasBeenSet(false),
-    m_lastDebugLogDeliveryStatusReasonHasBeenSet(false),
-    m_lastDebugLogDeliveryTimeHasBeenSet(false)
+ConfigRuleEvaluationStatus::ConfigRuleEvaluationStatus(JsonView jsonValue)
+  : ConfigRuleEvaluationStatus()
 {
   *this = jsonValue;
 }

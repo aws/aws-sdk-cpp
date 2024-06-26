@@ -30,15 +30,8 @@ ThingDocument::ThingDocument() :
 {
 }
 
-ThingDocument::ThingDocument(JsonView jsonValue) : 
-    m_thingNameHasBeenSet(false),
-    m_thingIdHasBeenSet(false),
-    m_thingTypeNameHasBeenSet(false),
-    m_thingGroupNamesHasBeenSet(false),
-    m_attributesHasBeenSet(false),
-    m_shadowHasBeenSet(false),
-    m_deviceDefenderHasBeenSet(false),
-    m_connectivityHasBeenSet(false)
+ThingDocument::ThingDocument(JsonView jsonValue)
+  : ThingDocument()
 {
   *this = jsonValue;
 }

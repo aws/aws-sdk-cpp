@@ -25,10 +25,8 @@ ConnectionDetails::ConnectionDetails() :
 {
 }
 
-ConnectionDetails::ConnectionDetails(JsonView jsonValue) : 
-    m_mtu(0),
-    m_mtuHasBeenSet(false),
-    m_socketAddressHasBeenSet(false)
+ConnectionDetails::ConnectionDetails(JsonView jsonValue)
+  : ConnectionDetails()
 {
   *this = jsonValue;
 }

@@ -27,12 +27,8 @@ RemixSettings::RemixSettings() :
 {
 }
 
-RemixSettings::RemixSettings(JsonView jsonValue) : 
-    m_channelMappingsHasBeenSet(false),
-    m_channelsIn(0),
-    m_channelsInHasBeenSet(false),
-    m_channelsOut(0),
-    m_channelsOutHasBeenSet(false)
+RemixSettings::RemixSettings(JsonView jsonValue)
+  : RemixSettings()
 {
   *this = jsonValue;
 }

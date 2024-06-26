@@ -27,12 +27,8 @@ ListLinksItem::ListLinksItem() :
 {
 }
 
-ListLinksItem::ListLinksItem(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_labelHasBeenSet(false),
-    m_resourceTypesHasBeenSet(false),
-    m_sinkArnHasBeenSet(false)
+ListLinksItem::ListLinksItem(JsonView jsonValue)
+  : ListLinksItem()
 {
   *this = jsonValue;
 }

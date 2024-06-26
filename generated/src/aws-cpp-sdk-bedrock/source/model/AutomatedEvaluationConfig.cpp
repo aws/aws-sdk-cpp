@@ -23,8 +23,8 @@ AutomatedEvaluationConfig::AutomatedEvaluationConfig() :
 {
 }
 
-AutomatedEvaluationConfig::AutomatedEvaluationConfig(JsonView jsonValue) : 
-    m_datasetMetricConfigsHasBeenSet(false)
+AutomatedEvaluationConfig::AutomatedEvaluationConfig(JsonView jsonValue)
+  : AutomatedEvaluationConfig()
 {
   *this = jsonValue;
 }

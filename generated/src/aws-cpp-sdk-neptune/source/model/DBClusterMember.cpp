@@ -30,13 +30,8 @@ DBClusterMember::DBClusterMember() :
 {
 }
 
-DBClusterMember::DBClusterMember(const XmlNode& xmlNode) : 
-    m_dBInstanceIdentifierHasBeenSet(false),
-    m_isClusterWriter(false),
-    m_isClusterWriterHasBeenSet(false),
-    m_dBClusterParameterGroupStatusHasBeenSet(false),
-    m_promotionTier(0),
-    m_promotionTierHasBeenSet(false)
+DBClusterMember::DBClusterMember(const XmlNode& xmlNode)
+  : DBClusterMember()
 {
   *this = xmlNode;
 }

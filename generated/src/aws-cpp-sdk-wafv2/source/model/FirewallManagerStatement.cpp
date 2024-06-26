@@ -24,9 +24,8 @@ FirewallManagerStatement::FirewallManagerStatement() :
 {
 }
 
-FirewallManagerStatement::FirewallManagerStatement(JsonView jsonValue) : 
-    m_managedRuleGroupStatementHasBeenSet(false),
-    m_ruleGroupReferenceStatementHasBeenSet(false)
+FirewallManagerStatement::FirewallManagerStatement(JsonView jsonValue)
+  : FirewallManagerStatement()
 {
   *this = jsonValue;
 }

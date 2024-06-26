@@ -25,10 +25,8 @@ ReviewDetails::ReviewDetails() :
 {
 }
 
-ReviewDetails::ReviewDetails(JsonView jsonValue) : 
-    m_status(ReviewStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_caseIdHasBeenSet(false)
+ReviewDetails::ReviewDetails(JsonView jsonValue)
+  : ReviewDetails()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ EncryptionAtRestOptionsStatus::EncryptionAtRestOptionsStatus() :
 {
 }
 
-EncryptionAtRestOptionsStatus::EncryptionAtRestOptionsStatus(JsonView jsonValue) : 
-    m_optionsHasBeenSet(false),
-    m_statusHasBeenSet(false)
+EncryptionAtRestOptionsStatus::EncryptionAtRestOptionsStatus(JsonView jsonValue)
+  : EncryptionAtRestOptionsStatus()
 {
   *this = jsonValue;
 }

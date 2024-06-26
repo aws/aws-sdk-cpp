@@ -26,11 +26,8 @@ TemplateVersionsResponse::TemplateVersionsResponse() :
 {
 }
 
-TemplateVersionsResponse::TemplateVersionsResponse(JsonView jsonValue) : 
-    m_itemHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_requestIDHasBeenSet(false)
+TemplateVersionsResponse::TemplateVersionsResponse(JsonView jsonValue)
+  : TemplateVersionsResponse()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ UpgradeElasticsearchDomainResult::UpgradeElasticsearchDomainResult() :
 {
 }
 
-UpgradeElasticsearchDomainResult::UpgradeElasticsearchDomainResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_performCheckOnly(false)
+UpgradeElasticsearchDomainResult::UpgradeElasticsearchDomainResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpgradeElasticsearchDomainResult()
 {
   *this = result;
 }

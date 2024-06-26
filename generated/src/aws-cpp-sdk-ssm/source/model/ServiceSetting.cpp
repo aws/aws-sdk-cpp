@@ -28,13 +28,8 @@ ServiceSetting::ServiceSetting() :
 {
 }
 
-ServiceSetting::ServiceSetting(JsonView jsonValue) : 
-    m_settingIdHasBeenSet(false),
-    m_settingValueHasBeenSet(false),
-    m_lastModifiedDateHasBeenSet(false),
-    m_lastModifiedUserHasBeenSet(false),
-    m_aRNHasBeenSet(false),
-    m_statusHasBeenSet(false)
+ServiceSetting::ServiceSetting(JsonView jsonValue)
+  : ServiceSetting()
 {
   *this = jsonValue;
 }

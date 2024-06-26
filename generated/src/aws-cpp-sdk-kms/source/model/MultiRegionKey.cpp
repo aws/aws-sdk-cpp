@@ -24,9 +24,8 @@ MultiRegionKey::MultiRegionKey() :
 {
 }
 
-MultiRegionKey::MultiRegionKey(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_regionHasBeenSet(false)
+MultiRegionKey::MultiRegionKey(JsonView jsonValue)
+  : MultiRegionKey()
 {
   *this = jsonValue;
 }

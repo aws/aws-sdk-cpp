@@ -24,9 +24,8 @@ DestinationS3Location::DestinationS3Location() :
 {
 }
 
-DestinationS3Location::DestinationS3Location(JsonView jsonValue) : 
-    m_bucketHasBeenSet(false),
-    m_prefixHasBeenSet(false)
+DestinationS3Location::DestinationS3Location(JsonView jsonValue)
+  : DestinationS3Location()
 {
   *this = jsonValue;
 }

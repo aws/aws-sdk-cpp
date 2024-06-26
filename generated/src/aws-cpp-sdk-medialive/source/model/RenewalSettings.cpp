@@ -26,11 +26,8 @@ RenewalSettings::RenewalSettings() :
 {
 }
 
-RenewalSettings::RenewalSettings(JsonView jsonValue) : 
-    m_automaticRenewal(ReservationAutomaticRenewal::NOT_SET),
-    m_automaticRenewalHasBeenSet(false),
-    m_renewalCount(0),
-    m_renewalCountHasBeenSet(false)
+RenewalSettings::RenewalSettings(JsonView jsonValue)
+  : RenewalSettings()
 {
   *this = jsonValue;
 }

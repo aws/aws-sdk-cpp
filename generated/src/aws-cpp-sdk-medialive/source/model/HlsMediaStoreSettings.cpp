@@ -32,17 +32,8 @@ HlsMediaStoreSettings::HlsMediaStoreSettings() :
 {
 }
 
-HlsMediaStoreSettings::HlsMediaStoreSettings(JsonView jsonValue) : 
-    m_connectionRetryInterval(0),
-    m_connectionRetryIntervalHasBeenSet(false),
-    m_filecacheDuration(0),
-    m_filecacheDurationHasBeenSet(false),
-    m_mediaStoreStorageClass(HlsMediaStoreStorageClass::NOT_SET),
-    m_mediaStoreStorageClassHasBeenSet(false),
-    m_numRetries(0),
-    m_numRetriesHasBeenSet(false),
-    m_restartDelay(0),
-    m_restartDelayHasBeenSet(false)
+HlsMediaStoreSettings::HlsMediaStoreSettings(JsonView jsonValue)
+  : HlsMediaStoreSettings()
 {
   *this = jsonValue;
 }

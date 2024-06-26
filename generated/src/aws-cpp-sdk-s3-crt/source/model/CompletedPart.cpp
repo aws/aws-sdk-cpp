@@ -31,14 +31,8 @@ CompletedPart::CompletedPart() :
 {
 }
 
-CompletedPart::CompletedPart(const XmlNode& xmlNode) : 
-    m_eTagHasBeenSet(false),
-    m_checksumCRC32HasBeenSet(false),
-    m_checksumCRC32CHasBeenSet(false),
-    m_checksumSHA1HasBeenSet(false),
-    m_checksumSHA256HasBeenSet(false),
-    m_partNumber(0),
-    m_partNumberHasBeenSet(false)
+CompletedPart::CompletedPart(const XmlNode& xmlNode)
+  : CompletedPart()
 {
   *this = xmlNode;
 }

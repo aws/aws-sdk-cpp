@@ -24,9 +24,8 @@ OrganizationEbsVolumesResult::OrganizationEbsVolumesResult() :
 {
 }
 
-OrganizationEbsVolumesResult::OrganizationEbsVolumesResult(JsonView jsonValue) : 
-    m_autoEnable(false),
-    m_autoEnableHasBeenSet(false)
+OrganizationEbsVolumesResult::OrganizationEbsVolumesResult(JsonView jsonValue)
+  : OrganizationEbsVolumesResult()
 {
   *this = jsonValue;
 }

@@ -28,13 +28,8 @@ UpdateVehicleRequestItem::UpdateVehicleRequestItem() :
 {
 }
 
-UpdateVehicleRequestItem::UpdateVehicleRequestItem(JsonView jsonValue) : 
-    m_vehicleNameHasBeenSet(false),
-    m_modelManifestArnHasBeenSet(false),
-    m_decoderManifestArnHasBeenSet(false),
-    m_attributesHasBeenSet(false),
-    m_attributeUpdateMode(UpdateMode::NOT_SET),
-    m_attributeUpdateModeHasBeenSet(false)
+UpdateVehicleRequestItem::UpdateVehicleRequestItem(JsonView jsonValue)
+  : UpdateVehicleRequestItem()
 {
   *this = jsonValue;
 }

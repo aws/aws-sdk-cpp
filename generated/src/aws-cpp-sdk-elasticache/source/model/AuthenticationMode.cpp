@@ -27,10 +27,8 @@ AuthenticationMode::AuthenticationMode() :
 {
 }
 
-AuthenticationMode::AuthenticationMode(const XmlNode& xmlNode) : 
-    m_type(InputAuthenticationType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_passwordsHasBeenSet(false)
+AuthenticationMode::AuthenticationMode(const XmlNode& xmlNode)
+  : AuthenticationMode()
 {
   *this = xmlNode;
 }

@@ -23,8 +23,8 @@ LegGeometry::LegGeometry() :
 {
 }
 
-LegGeometry::LegGeometry(JsonView jsonValue) : 
-    m_lineStringHasBeenSet(false)
+LegGeometry::LegGeometry(JsonView jsonValue)
+  : LegGeometry()
 {
   *this = jsonValue;
 }

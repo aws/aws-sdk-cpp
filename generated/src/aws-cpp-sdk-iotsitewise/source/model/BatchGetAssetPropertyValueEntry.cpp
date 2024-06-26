@@ -26,11 +26,8 @@ BatchGetAssetPropertyValueEntry::BatchGetAssetPropertyValueEntry() :
 {
 }
 
-BatchGetAssetPropertyValueEntry::BatchGetAssetPropertyValueEntry(JsonView jsonValue) : 
-    m_entryIdHasBeenSet(false),
-    m_assetIdHasBeenSet(false),
-    m_propertyIdHasBeenSet(false),
-    m_propertyAliasHasBeenSet(false)
+BatchGetAssetPropertyValueEntry::BatchGetAssetPropertyValueEntry(JsonView jsonValue)
+  : BatchGetAssetPropertyValueEntry()
 {
   *this = jsonValue;
 }

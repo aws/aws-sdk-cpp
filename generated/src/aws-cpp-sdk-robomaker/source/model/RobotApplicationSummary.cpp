@@ -27,12 +27,8 @@ RobotApplicationSummary::RobotApplicationSummary() :
 {
 }
 
-RobotApplicationSummary::RobotApplicationSummary(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false),
-    m_robotSoftwareSuiteHasBeenSet(false)
+RobotApplicationSummary::RobotApplicationSummary(JsonView jsonValue)
+  : RobotApplicationSummary()
 {
   *this = jsonValue;
 }

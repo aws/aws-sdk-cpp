@@ -23,8 +23,8 @@ PendingResource::PendingResource() :
 {
 }
 
-PendingResource::PendingResource(JsonView jsonValue) : 
-    m_resourceArnHasBeenSet(false)
+PendingResource::PendingResource(JsonView jsonValue)
+  : PendingResource()
 {
   *this = jsonValue;
 }

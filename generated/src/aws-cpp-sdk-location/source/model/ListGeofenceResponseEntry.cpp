@@ -28,13 +28,8 @@ ListGeofenceResponseEntry::ListGeofenceResponseEntry() :
 {
 }
 
-ListGeofenceResponseEntry::ListGeofenceResponseEntry(JsonView jsonValue) : 
-    m_geofenceIdHasBeenSet(false),
-    m_geometryHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false),
-    m_geofencePropertiesHasBeenSet(false)
+ListGeofenceResponseEntry::ListGeofenceResponseEntry(JsonView jsonValue)
+  : ListGeofenceResponseEntry()
 {
   *this = jsonValue;
 }

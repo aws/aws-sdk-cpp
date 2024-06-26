@@ -35,20 +35,8 @@ GameServer::GameServer() :
 {
 }
 
-GameServer::GameServer(JsonView jsonValue) : 
-    m_gameServerGroupNameHasBeenSet(false),
-    m_gameServerGroupArnHasBeenSet(false),
-    m_gameServerIdHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_connectionInfoHasBeenSet(false),
-    m_gameServerDataHasBeenSet(false),
-    m_claimStatus(GameServerClaimStatus::NOT_SET),
-    m_claimStatusHasBeenSet(false),
-    m_utilizationStatus(GameServerUtilizationStatus::NOT_SET),
-    m_utilizationStatusHasBeenSet(false),
-    m_registrationTimeHasBeenSet(false),
-    m_lastClaimTimeHasBeenSet(false),
-    m_lastHealthCheckTimeHasBeenSet(false)
+GameServer::GameServer(JsonView jsonValue)
+  : GameServer()
 {
   *this = jsonValue;
 }

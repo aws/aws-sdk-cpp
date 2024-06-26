@@ -31,16 +31,8 @@ HoursOfOperation::HoursOfOperation() :
 {
 }
 
-HoursOfOperation::HoursOfOperation(JsonView jsonValue) : 
-    m_hoursOfOperationIdHasBeenSet(false),
-    m_hoursOfOperationArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_timeZoneHasBeenSet(false),
-    m_configHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_lastModifiedRegionHasBeenSet(false)
+HoursOfOperation::HoursOfOperation(JsonView jsonValue)
+  : HoursOfOperation()
 {
   *this = jsonValue;
 }

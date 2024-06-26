@@ -24,9 +24,8 @@ SearchResourcesTagCriterionPair::SearchResourcesTagCriterionPair() :
 {
 }
 
-SearchResourcesTagCriterionPair::SearchResourcesTagCriterionPair(JsonView jsonValue) : 
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false)
+SearchResourcesTagCriterionPair::SearchResourcesTagCriterionPair(JsonView jsonValue)
+  : SearchResourcesTagCriterionPair()
 {
   *this = jsonValue;
 }

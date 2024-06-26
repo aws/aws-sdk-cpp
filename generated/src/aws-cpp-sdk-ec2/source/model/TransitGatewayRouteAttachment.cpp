@@ -28,11 +28,8 @@ TransitGatewayRouteAttachment::TransitGatewayRouteAttachment() :
 {
 }
 
-TransitGatewayRouteAttachment::TransitGatewayRouteAttachment(const XmlNode& xmlNode) : 
-    m_resourceIdHasBeenSet(false),
-    m_transitGatewayAttachmentIdHasBeenSet(false),
-    m_resourceType(TransitGatewayAttachmentResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false)
+TransitGatewayRouteAttachment::TransitGatewayRouteAttachment(const XmlNode& xmlNode)
+  : TransitGatewayRouteAttachment()
 {
   *this = xmlNode;
 }

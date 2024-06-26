@@ -22,8 +22,8 @@ IsAuthorizedResult::IsAuthorizedResult() :
 {
 }
 
-IsAuthorizedResult::IsAuthorizedResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_decision(Decision::NOT_SET)
+IsAuthorizedResult::IsAuthorizedResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : IsAuthorizedResult()
 {
   *this = result;
 }

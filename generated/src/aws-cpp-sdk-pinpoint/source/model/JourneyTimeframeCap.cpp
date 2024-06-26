@@ -26,11 +26,8 @@ JourneyTimeframeCap::JourneyTimeframeCap() :
 {
 }
 
-JourneyTimeframeCap::JourneyTimeframeCap(JsonView jsonValue) : 
-    m_cap(0),
-    m_capHasBeenSet(false),
-    m_days(0),
-    m_daysHasBeenSet(false)
+JourneyTimeframeCap::JourneyTimeframeCap(JsonView jsonValue)
+  : JourneyTimeframeCap()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ AssetContract::AssetContract() :
 {
 }
 
-AssetContract::AssetContract(JsonView jsonValue) : 
-    m_contractIdentifierHasBeenSet(false),
-    m_tokenStandard(QueryTokenStandard::NOT_SET),
-    m_tokenStandardHasBeenSet(false),
-    m_deployerAddressHasBeenSet(false)
+AssetContract::AssetContract(JsonView jsonValue)
+  : AssetContract()
 {
   *this = jsonValue;
 }

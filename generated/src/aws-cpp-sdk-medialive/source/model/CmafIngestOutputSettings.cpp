@@ -23,8 +23,8 @@ CmafIngestOutputSettings::CmafIngestOutputSettings() :
 {
 }
 
-CmafIngestOutputSettings::CmafIngestOutputSettings(JsonView jsonValue) : 
-    m_nameModifierHasBeenSet(false)
+CmafIngestOutputSettings::CmafIngestOutputSettings(JsonView jsonValue)
+  : CmafIngestOutputSettings()
 {
   *this = jsonValue;
 }

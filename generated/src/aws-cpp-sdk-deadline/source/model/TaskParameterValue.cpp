@@ -26,11 +26,8 @@ TaskParameterValue::TaskParameterValue() :
 {
 }
 
-TaskParameterValue::TaskParameterValue(JsonView jsonValue) : 
-    m_floatHasBeenSet(false),
-    m_intHasBeenSet(false),
-    m_pathHasBeenSet(false),
-    m_stringHasBeenSet(false)
+TaskParameterValue::TaskParameterValue(JsonView jsonValue)
+  : TaskParameterValue()
 {
   *this = jsonValue;
 }

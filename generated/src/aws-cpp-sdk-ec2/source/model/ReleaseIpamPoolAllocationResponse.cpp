@@ -22,8 +22,8 @@ ReleaseIpamPoolAllocationResponse::ReleaseIpamPoolAllocationResponse() :
 {
 }
 
-ReleaseIpamPoolAllocationResponse::ReleaseIpamPoolAllocationResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_success(false)
+ReleaseIpamPoolAllocationResponse::ReleaseIpamPoolAllocationResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : ReleaseIpamPoolAllocationResponse()
 {
   *this = result;
 }

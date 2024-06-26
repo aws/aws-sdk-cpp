@@ -24,9 +24,8 @@ CertificateDoesNotExistException::CertificateDoesNotExistException() :
 {
 }
 
-CertificateDoesNotExistException::CertificateDoesNotExistException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
+CertificateDoesNotExistException::CertificateDoesNotExistException(JsonView jsonValue)
+  : CertificateDoesNotExistException()
 {
   *this = jsonValue;
 }

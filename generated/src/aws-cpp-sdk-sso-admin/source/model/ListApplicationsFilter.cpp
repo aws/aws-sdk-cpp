@@ -24,9 +24,8 @@ ListApplicationsFilter::ListApplicationsFilter() :
 {
 }
 
-ListApplicationsFilter::ListApplicationsFilter(JsonView jsonValue) : 
-    m_applicationAccountHasBeenSet(false),
-    m_applicationProviderHasBeenSet(false)
+ListApplicationsFilter::ListApplicationsFilter(JsonView jsonValue)
+  : ListApplicationsFilter()
 {
   *this = jsonValue;
 }

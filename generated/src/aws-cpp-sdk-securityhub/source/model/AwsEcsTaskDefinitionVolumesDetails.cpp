@@ -26,11 +26,8 @@ AwsEcsTaskDefinitionVolumesDetails::AwsEcsTaskDefinitionVolumesDetails() :
 {
 }
 
-AwsEcsTaskDefinitionVolumesDetails::AwsEcsTaskDefinitionVolumesDetails(JsonView jsonValue) : 
-    m_dockerVolumeConfigurationHasBeenSet(false),
-    m_efsVolumeConfigurationHasBeenSet(false),
-    m_hostHasBeenSet(false),
-    m_nameHasBeenSet(false)
+AwsEcsTaskDefinitionVolumesDetails::AwsEcsTaskDefinitionVolumesDetails(JsonView jsonValue)
+  : AwsEcsTaskDefinitionVolumesDetails()
 {
   *this = jsonValue;
 }

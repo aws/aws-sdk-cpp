@@ -24,9 +24,8 @@ GuardrailManagedWords::GuardrailManagedWords() :
 {
 }
 
-GuardrailManagedWords::GuardrailManagedWords(JsonView jsonValue) : 
-    m_type(GuardrailManagedWordsType::NOT_SET),
-    m_typeHasBeenSet(false)
+GuardrailManagedWords::GuardrailManagedWords(JsonView jsonValue)
+  : GuardrailManagedWords()
 {
   *this = jsonValue;
 }

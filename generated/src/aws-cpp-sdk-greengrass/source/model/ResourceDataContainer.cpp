@@ -27,12 +27,8 @@ ResourceDataContainer::ResourceDataContainer() :
 {
 }
 
-ResourceDataContainer::ResourceDataContainer(JsonView jsonValue) : 
-    m_localDeviceResourceDataHasBeenSet(false),
-    m_localVolumeResourceDataHasBeenSet(false),
-    m_s3MachineLearningModelResourceDataHasBeenSet(false),
-    m_sageMakerMachineLearningModelResourceDataHasBeenSet(false),
-    m_secretsManagerSecretResourceDataHasBeenSet(false)
+ResourceDataContainer::ResourceDataContainer(JsonView jsonValue)
+  : ResourceDataContainer()
 {
   *this = jsonValue;
 }

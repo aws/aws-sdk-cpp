@@ -31,14 +31,8 @@ ResourceDetail::ResourceDetail() :
 {
 }
 
-ResourceDetail::ResourceDetail(const XmlNode& xmlNode) : 
-    m_resourceTypeHasBeenSet(false),
-    m_logicalResourceIdHasBeenSet(false),
-    m_resourceIdentifierHasBeenSet(false),
-    m_resourceStatus(GeneratedTemplateResourceStatus::NOT_SET),
-    m_resourceStatusHasBeenSet(false),
-    m_resourceStatusReasonHasBeenSet(false),
-    m_warningsHasBeenSet(false)
+ResourceDetail::ResourceDetail(const XmlNode& xmlNode)
+  : ResourceDetail()
 {
   *this = xmlNode;
 }

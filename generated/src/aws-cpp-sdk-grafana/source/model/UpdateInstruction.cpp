@@ -27,12 +27,8 @@ UpdateInstruction::UpdateInstruction() :
 {
 }
 
-UpdateInstruction::UpdateInstruction(JsonView jsonValue) : 
-    m_action(UpdateAction::NOT_SET),
-    m_actionHasBeenSet(false),
-    m_role(Role::NOT_SET),
-    m_roleHasBeenSet(false),
-    m_usersHasBeenSet(false)
+UpdateInstruction::UpdateInstruction(JsonView jsonValue)
+  : UpdateInstruction()
 {
   *this = jsonValue;
 }

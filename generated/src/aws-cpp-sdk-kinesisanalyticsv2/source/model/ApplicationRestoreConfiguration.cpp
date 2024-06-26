@@ -25,10 +25,8 @@ ApplicationRestoreConfiguration::ApplicationRestoreConfiguration() :
 {
 }
 
-ApplicationRestoreConfiguration::ApplicationRestoreConfiguration(JsonView jsonValue) : 
-    m_applicationRestoreType(ApplicationRestoreType::NOT_SET),
-    m_applicationRestoreTypeHasBeenSet(false),
-    m_snapshotNameHasBeenSet(false)
+ApplicationRestoreConfiguration::ApplicationRestoreConfiguration(JsonView jsonValue)
+  : ApplicationRestoreConfiguration()
 {
   *this = jsonValue;
 }

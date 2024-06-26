@@ -32,17 +32,8 @@ LteNetworkMeasurements::LteNetworkMeasurements() :
 {
 }
 
-LteNetworkMeasurements::LteNetworkMeasurements(JsonView jsonValue) : 
-    m_earfcn(0),
-    m_earfcnHasBeenSet(false),
-    m_cellId(0),
-    m_cellIdHasBeenSet(false),
-    m_pci(0),
-    m_pciHasBeenSet(false),
-    m_rsrp(0),
-    m_rsrpHasBeenSet(false),
-    m_rsrq(0.0),
-    m_rsrqHasBeenSet(false)
+LteNetworkMeasurements::LteNetworkMeasurements(JsonView jsonValue)
+  : LteNetworkMeasurements()
 {
   *this = jsonValue;
 }

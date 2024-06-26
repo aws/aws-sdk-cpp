@@ -22,8 +22,8 @@ DescribeRescoreExecutionPlanResult::DescribeRescoreExecutionPlanResult() :
 {
 }
 
-DescribeRescoreExecutionPlanResult::DescribeRescoreExecutionPlanResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(RescoreExecutionPlanStatus::NOT_SET)
+DescribeRescoreExecutionPlanResult::DescribeRescoreExecutionPlanResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeRescoreExecutionPlanResult()
 {
   *this = result;
 }

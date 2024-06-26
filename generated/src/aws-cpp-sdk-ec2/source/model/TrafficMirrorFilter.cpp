@@ -30,13 +30,8 @@ TrafficMirrorFilter::TrafficMirrorFilter() :
 {
 }
 
-TrafficMirrorFilter::TrafficMirrorFilter(const XmlNode& xmlNode) : 
-    m_trafficMirrorFilterIdHasBeenSet(false),
-    m_ingressFilterRulesHasBeenSet(false),
-    m_egressFilterRulesHasBeenSet(false),
-    m_networkServicesHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+TrafficMirrorFilter::TrafficMirrorFilter(const XmlNode& xmlNode)
+  : TrafficMirrorFilter()
 {
   *this = xmlNode;
 }

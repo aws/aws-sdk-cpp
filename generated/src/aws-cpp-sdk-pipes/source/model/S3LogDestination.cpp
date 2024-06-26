@@ -27,12 +27,8 @@ S3LogDestination::S3LogDestination() :
 {
 }
 
-S3LogDestination::S3LogDestination(JsonView jsonValue) : 
-    m_bucketNameHasBeenSet(false),
-    m_prefixHasBeenSet(false),
-    m_bucketOwnerHasBeenSet(false),
-    m_outputFormat(S3OutputFormat::NOT_SET),
-    m_outputFormatHasBeenSet(false)
+S3LogDestination::S3LogDestination(JsonView jsonValue)
+  : S3LogDestination()
 {
   *this = jsonValue;
 }

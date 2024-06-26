@@ -30,15 +30,8 @@ ThirdPartyJobData::ThirdPartyJobData() :
 {
 }
 
-ThirdPartyJobData::ThirdPartyJobData(JsonView jsonValue) : 
-    m_actionTypeIdHasBeenSet(false),
-    m_actionConfigurationHasBeenSet(false),
-    m_pipelineContextHasBeenSet(false),
-    m_inputArtifactsHasBeenSet(false),
-    m_outputArtifactsHasBeenSet(false),
-    m_artifactCredentialsHasBeenSet(false),
-    m_continuationTokenHasBeenSet(false),
-    m_encryptionKeyHasBeenSet(false)
+ThirdPartyJobData::ThirdPartyJobData(JsonView jsonValue)
+  : ThirdPartyJobData()
 {
   *this = jsonValue;
 }

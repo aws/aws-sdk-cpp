@@ -22,8 +22,8 @@ ModifyCapacityReservationFleetResponse::ModifyCapacityReservationFleetResponse()
 {
 }
 
-ModifyCapacityReservationFleetResponse::ModifyCapacityReservationFleetResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_return(false)
+ModifyCapacityReservationFleetResponse::ModifyCapacityReservationFleetResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : ModifyCapacityReservationFleetResponse()
 {
   *this = result;
 }

@@ -26,11 +26,8 @@ DkimSigningAttributes::DkimSigningAttributes() :
 {
 }
 
-DkimSigningAttributes::DkimSigningAttributes(JsonView jsonValue) : 
-    m_domainSigningSelectorHasBeenSet(false),
-    m_domainSigningPrivateKeyHasBeenSet(false),
-    m_nextSigningKeyLength(DkimSigningKeyLength::NOT_SET),
-    m_nextSigningKeyLengthHasBeenSet(false)
+DkimSigningAttributes::DkimSigningAttributes(JsonView jsonValue)
+  : DkimSigningAttributes()
 {
   *this = jsonValue;
 }

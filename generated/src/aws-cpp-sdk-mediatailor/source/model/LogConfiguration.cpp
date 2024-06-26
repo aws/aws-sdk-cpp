@@ -24,9 +24,8 @@ LogConfiguration::LogConfiguration() :
 {
 }
 
-LogConfiguration::LogConfiguration(JsonView jsonValue) : 
-    m_percentEnabled(0),
-    m_percentEnabledHasBeenSet(false)
+LogConfiguration::LogConfiguration(JsonView jsonValue)
+  : LogConfiguration()
 {
   *this = jsonValue;
 }

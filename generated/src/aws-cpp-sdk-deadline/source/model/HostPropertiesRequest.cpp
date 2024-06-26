@@ -24,9 +24,8 @@ HostPropertiesRequest::HostPropertiesRequest() :
 {
 }
 
-HostPropertiesRequest::HostPropertiesRequest(JsonView jsonValue) : 
-    m_hostNameHasBeenSet(false),
-    m_ipAddressesHasBeenSet(false)
+HostPropertiesRequest::HostPropertiesRequest(JsonView jsonValue)
+  : HostPropertiesRequest()
 {
   *this = jsonValue;
 }

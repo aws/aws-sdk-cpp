@@ -24,9 +24,8 @@ Licensing::Licensing() :
 {
 }
 
-Licensing::Licensing(JsonView jsonValue) : 
-    m_osByol(false),
-    m_osByolHasBeenSet(false)
+Licensing::Licensing(JsonView jsonValue)
+  : Licensing()
 {
   *this = jsonValue;
 }

@@ -27,12 +27,8 @@ GoogleAnalyticsConnectorProfileCredentials::GoogleAnalyticsConnectorProfileCrede
 {
 }
 
-GoogleAnalyticsConnectorProfileCredentials::GoogleAnalyticsConnectorProfileCredentials(JsonView jsonValue) : 
-    m_clientIdHasBeenSet(false),
-    m_clientSecretHasBeenSet(false),
-    m_accessTokenHasBeenSet(false),
-    m_refreshTokenHasBeenSet(false),
-    m_oAuthRequestHasBeenSet(false)
+GoogleAnalyticsConnectorProfileCredentials::GoogleAnalyticsConnectorProfileCredentials(JsonView jsonValue)
+  : GoogleAnalyticsConnectorProfileCredentials()
 {
   *this = jsonValue;
 }

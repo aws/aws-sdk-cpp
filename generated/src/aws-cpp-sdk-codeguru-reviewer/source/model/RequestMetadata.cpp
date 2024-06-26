@@ -27,12 +27,8 @@ RequestMetadata::RequestMetadata() :
 {
 }
 
-RequestMetadata::RequestMetadata(JsonView jsonValue) : 
-    m_requestIdHasBeenSet(false),
-    m_requesterHasBeenSet(false),
-    m_eventInfoHasBeenSet(false),
-    m_vendorName(VendorName::NOT_SET),
-    m_vendorNameHasBeenSet(false)
+RequestMetadata::RequestMetadata(JsonView jsonValue)
+  : RequestMetadata()
 {
   *this = jsonValue;
 }

@@ -24,10 +24,8 @@ GetOperationDetailResult::GetOperationDetailResult() :
 {
 }
 
-GetOperationDetailResult::GetOperationDetailResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(OperationStatus::NOT_SET),
-    m_type(OperationType::NOT_SET),
-    m_statusFlag(StatusFlag::NOT_SET)
+GetOperationDetailResult::GetOperationDetailResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetOperationDetailResult()
 {
   *this = result;
 }

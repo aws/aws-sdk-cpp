@@ -24,9 +24,8 @@ AwsEc2LaunchTemplateDataIamInstanceProfileDetails::AwsEc2LaunchTemplateDataIamIn
 {
 }
 
-AwsEc2LaunchTemplateDataIamInstanceProfileDetails::AwsEc2LaunchTemplateDataIamInstanceProfileDetails(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false)
+AwsEc2LaunchTemplateDataIamInstanceProfileDetails::AwsEc2LaunchTemplateDataIamInstanceProfileDetails(JsonView jsonValue)
+  : AwsEc2LaunchTemplateDataIamInstanceProfileDetails()
 {
   *this = jsonValue;
 }

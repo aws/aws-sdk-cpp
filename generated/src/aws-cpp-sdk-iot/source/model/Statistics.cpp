@@ -38,23 +38,8 @@ Statistics::Statistics() :
 {
 }
 
-Statistics::Statistics(JsonView jsonValue) : 
-    m_count(0),
-    m_countHasBeenSet(false),
-    m_average(0.0),
-    m_averageHasBeenSet(false),
-    m_sum(0.0),
-    m_sumHasBeenSet(false),
-    m_minimum(0.0),
-    m_minimumHasBeenSet(false),
-    m_maximum(0.0),
-    m_maximumHasBeenSet(false),
-    m_sumOfSquares(0.0),
-    m_sumOfSquaresHasBeenSet(false),
-    m_variance(0.0),
-    m_varianceHasBeenSet(false),
-    m_stdDeviation(0.0),
-    m_stdDeviationHasBeenSet(false)
+Statistics::Statistics(JsonView jsonValue)
+  : Statistics()
 {
   *this = jsonValue;
 }

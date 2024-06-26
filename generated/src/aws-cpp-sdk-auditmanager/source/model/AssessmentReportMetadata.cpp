@@ -31,16 +31,8 @@ AssessmentReportMetadata::AssessmentReportMetadata() :
 {
 }
 
-AssessmentReportMetadata::AssessmentReportMetadata(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_assessmentIdHasBeenSet(false),
-    m_assessmentNameHasBeenSet(false),
-    m_authorHasBeenSet(false),
-    m_status(AssessmentReportStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_creationTimeHasBeenSet(false)
+AssessmentReportMetadata::AssessmentReportMetadata(JsonView jsonValue)
+  : AssessmentReportMetadata()
 {
   *this = jsonValue;
 }

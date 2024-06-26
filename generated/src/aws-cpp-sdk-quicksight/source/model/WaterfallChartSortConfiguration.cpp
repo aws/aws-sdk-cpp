@@ -24,9 +24,8 @@ WaterfallChartSortConfiguration::WaterfallChartSortConfiguration() :
 {
 }
 
-WaterfallChartSortConfiguration::WaterfallChartSortConfiguration(JsonView jsonValue) : 
-    m_categorySortHasBeenSet(false),
-    m_breakdownItemsLimitHasBeenSet(false)
+WaterfallChartSortConfiguration::WaterfallChartSortConfiguration(JsonView jsonValue)
+  : WaterfallChartSortConfiguration()
 {
   *this = jsonValue;
 }

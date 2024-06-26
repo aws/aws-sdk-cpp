@@ -23,8 +23,8 @@ CreateReplicaAction::CreateReplicaAction() :
 {
 }
 
-CreateReplicaAction::CreateReplicaAction(JsonView jsonValue) : 
-    m_regionNameHasBeenSet(false)
+CreateReplicaAction::CreateReplicaAction(JsonView jsonValue)
+  : CreateReplicaAction()
 {
   *this = jsonValue;
 }

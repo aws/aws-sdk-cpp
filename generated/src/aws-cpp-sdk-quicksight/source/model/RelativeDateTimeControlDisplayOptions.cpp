@@ -25,10 +25,8 @@ RelativeDateTimeControlDisplayOptions::RelativeDateTimeControlDisplayOptions() :
 {
 }
 
-RelativeDateTimeControlDisplayOptions::RelativeDateTimeControlDisplayOptions(JsonView jsonValue) : 
-    m_titleOptionsHasBeenSet(false),
-    m_dateTimeFormatHasBeenSet(false),
-    m_infoIconLabelOptionsHasBeenSet(false)
+RelativeDateTimeControlDisplayOptions::RelativeDateTimeControlDisplayOptions(JsonView jsonValue)
+  : RelativeDateTimeControlDisplayOptions()
 {
   *this = jsonValue;
 }

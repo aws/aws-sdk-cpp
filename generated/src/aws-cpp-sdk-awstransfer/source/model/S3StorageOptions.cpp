@@ -24,9 +24,8 @@ S3StorageOptions::S3StorageOptions() :
 {
 }
 
-S3StorageOptions::S3StorageOptions(JsonView jsonValue) : 
-    m_directoryListingOptimization(DirectoryListingOptimization::NOT_SET),
-    m_directoryListingOptimizationHasBeenSet(false)
+S3StorageOptions::S3StorageOptions(JsonView jsonValue)
+  : S3StorageOptions()
 {
   *this = jsonValue;
 }

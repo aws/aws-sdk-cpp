@@ -23,8 +23,8 @@ Ec2AutoScalingGroupConfiguration::Ec2AutoScalingGroupConfiguration() :
 {
 }
 
-Ec2AutoScalingGroupConfiguration::Ec2AutoScalingGroupConfiguration(JsonView jsonValue) : 
-    m_instanceHasBeenSet(false)
+Ec2AutoScalingGroupConfiguration::Ec2AutoScalingGroupConfiguration(JsonView jsonValue)
+  : Ec2AutoScalingGroupConfiguration()
 {
   *this = jsonValue;
 }

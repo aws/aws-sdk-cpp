@@ -22,8 +22,8 @@ GetFunctionConcurrencyResult::GetFunctionConcurrencyResult() :
 {
 }
 
-GetFunctionConcurrencyResult::GetFunctionConcurrencyResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_reservedConcurrentExecutions(0)
+GetFunctionConcurrencyResult::GetFunctionConcurrencyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetFunctionConcurrencyResult()
 {
   *this = result;
 }

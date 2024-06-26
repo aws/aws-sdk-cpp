@@ -22,8 +22,8 @@ DisassociateSourceGraphqlApiResult::DisassociateSourceGraphqlApiResult() :
 {
 }
 
-DisassociateSourceGraphqlApiResult::DisassociateSourceGraphqlApiResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_sourceApiAssociationStatus(SourceApiAssociationStatus::NOT_SET)
+DisassociateSourceGraphqlApiResult::DisassociateSourceGraphqlApiResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DisassociateSourceGraphqlApiResult()
 {
   *this = result;
 }

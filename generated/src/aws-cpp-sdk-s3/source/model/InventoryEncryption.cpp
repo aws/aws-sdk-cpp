@@ -26,9 +26,8 @@ InventoryEncryption::InventoryEncryption() :
 {
 }
 
-InventoryEncryption::InventoryEncryption(const XmlNode& xmlNode) : 
-    m_sSES3HasBeenSet(false),
-    m_sSEKMSHasBeenSet(false)
+InventoryEncryption::InventoryEncryption(const XmlNode& xmlNode)
+  : InventoryEncryption()
 {
   *this = xmlNode;
 }

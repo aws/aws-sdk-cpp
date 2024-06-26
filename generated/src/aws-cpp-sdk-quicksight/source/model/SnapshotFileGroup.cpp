@@ -23,8 +23,8 @@ SnapshotFileGroup::SnapshotFileGroup() :
 {
 }
 
-SnapshotFileGroup::SnapshotFileGroup(JsonView jsonValue) : 
-    m_filesHasBeenSet(false)
+SnapshotFileGroup::SnapshotFileGroup(JsonView jsonValue)
+  : SnapshotFileGroup()
 {
   *this = jsonValue;
 }

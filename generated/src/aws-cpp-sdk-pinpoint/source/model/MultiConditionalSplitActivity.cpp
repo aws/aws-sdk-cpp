@@ -25,10 +25,8 @@ MultiConditionalSplitActivity::MultiConditionalSplitActivity() :
 {
 }
 
-MultiConditionalSplitActivity::MultiConditionalSplitActivity(JsonView jsonValue) : 
-    m_branchesHasBeenSet(false),
-    m_defaultActivityHasBeenSet(false),
-    m_evaluationWaitTimeHasBeenSet(false)
+MultiConditionalSplitActivity::MultiConditionalSplitActivity(JsonView jsonValue)
+  : MultiConditionalSplitActivity()
 {
   *this = jsonValue;
 }

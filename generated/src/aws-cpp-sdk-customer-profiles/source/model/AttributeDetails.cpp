@@ -24,9 +24,8 @@ AttributeDetails::AttributeDetails() :
 {
 }
 
-AttributeDetails::AttributeDetails(JsonView jsonValue) : 
-    m_attributesHasBeenSet(false),
-    m_expressionHasBeenSet(false)
+AttributeDetails::AttributeDetails(JsonView jsonValue)
+  : AttributeDetails()
 {
   *this = jsonValue;
 }

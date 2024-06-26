@@ -28,13 +28,8 @@ AllowListSummary::AllowListSummary() :
 {
 }
 
-AllowListSummary::AllowListSummary(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+AllowListSummary::AllowListSummary(JsonView jsonValue)
+  : AllowListSummary()
 {
   *this = jsonValue;
 }

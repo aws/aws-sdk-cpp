@@ -22,8 +22,8 @@ GetApplicationResult::GetApplicationResult() :
 {
 }
 
-GetApplicationResult::GetApplicationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_isVerifiedAuthor(false)
+GetApplicationResult::GetApplicationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetApplicationResult()
 {
   *this = result;
 }

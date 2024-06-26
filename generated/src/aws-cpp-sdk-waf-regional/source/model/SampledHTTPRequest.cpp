@@ -28,13 +28,8 @@ SampledHTTPRequest::SampledHTTPRequest() :
 {
 }
 
-SampledHTTPRequest::SampledHTTPRequest(JsonView jsonValue) : 
-    m_requestHasBeenSet(false),
-    m_weight(0),
-    m_weightHasBeenSet(false),
-    m_timestampHasBeenSet(false),
-    m_actionHasBeenSet(false),
-    m_ruleWithinRuleGroupHasBeenSet(false)
+SampledHTTPRequest::SampledHTTPRequest(JsonView jsonValue)
+  : SampledHTTPRequest()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ ExperimentTemplateCloudWatchLogsLogConfiguration::ExperimentTemplateCloudWatchLo
 {
 }
 
-ExperimentTemplateCloudWatchLogsLogConfiguration::ExperimentTemplateCloudWatchLogsLogConfiguration(JsonView jsonValue) : 
-    m_logGroupArnHasBeenSet(false)
+ExperimentTemplateCloudWatchLogsLogConfiguration::ExperimentTemplateCloudWatchLogsLogConfiguration(JsonView jsonValue)
+  : ExperimentTemplateCloudWatchLogsLogConfiguration()
 {
   *this = jsonValue;
 }

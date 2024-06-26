@@ -22,8 +22,8 @@ DeleteSnapshotResult::DeleteSnapshotResult() :
 {
 }
 
-DeleteSnapshotResult::DeleteSnapshotResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_lifecycle(SnapshotLifecycle::NOT_SET)
+DeleteSnapshotResult::DeleteSnapshotResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeleteSnapshotResult()
 {
   *this = result;
 }

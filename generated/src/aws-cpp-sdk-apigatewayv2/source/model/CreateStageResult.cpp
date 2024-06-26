@@ -23,9 +23,8 @@ CreateStageResult::CreateStageResult() :
 {
 }
 
-CreateStageResult::CreateStageResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_apiGatewayManaged(false),
-    m_autoDeploy(false)
+CreateStageResult::CreateStageResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateStageResult()
 {
   *this = result;
 }

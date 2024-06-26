@@ -26,9 +26,8 @@ FastLaunchSnapshotConfigurationRequest::FastLaunchSnapshotConfigurationRequest()
 {
 }
 
-FastLaunchSnapshotConfigurationRequest::FastLaunchSnapshotConfigurationRequest(const XmlNode& xmlNode) : 
-    m_targetResourceCount(0),
-    m_targetResourceCountHasBeenSet(false)
+FastLaunchSnapshotConfigurationRequest::FastLaunchSnapshotConfigurationRequest(const XmlNode& xmlNode)
+  : FastLaunchSnapshotConfigurationRequest()
 {
   *this = xmlNode;
 }

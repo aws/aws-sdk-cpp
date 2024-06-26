@@ -25,10 +25,8 @@ AccessKeyLastUsed::AccessKeyLastUsed() :
 {
 }
 
-AccessKeyLastUsed::AccessKeyLastUsed(JsonView jsonValue) : 
-    m_lastUsedDateHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_serviceNameHasBeenSet(false)
+AccessKeyLastUsed::AccessKeyLastUsed(JsonView jsonValue)
+  : AccessKeyLastUsed()
 {
   *this = jsonValue;
 }

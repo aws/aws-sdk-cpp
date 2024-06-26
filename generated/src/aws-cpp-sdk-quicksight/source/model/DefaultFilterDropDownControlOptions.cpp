@@ -26,11 +26,8 @@ DefaultFilterDropDownControlOptions::DefaultFilterDropDownControlOptions() :
 {
 }
 
-DefaultFilterDropDownControlOptions::DefaultFilterDropDownControlOptions(JsonView jsonValue) : 
-    m_displayOptionsHasBeenSet(false),
-    m_type(SheetControlListType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_selectableValuesHasBeenSet(false)
+DefaultFilterDropDownControlOptions::DefaultFilterDropDownControlOptions(JsonView jsonValue)
+  : DefaultFilterDropDownControlOptions()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ KinesisParameters::KinesisParameters() :
 {
 }
 
-KinesisParameters::KinesisParameters(JsonView jsonValue) : 
-    m_partitionKeyHasBeenSet(false)
+KinesisParameters::KinesisParameters(JsonView jsonValue)
+  : KinesisParameters()
 {
   *this = jsonValue;
 }

@@ -31,16 +31,8 @@ EventBridgeRuleTemplateGroupSummary::EventBridgeRuleTemplateGroupSummary() :
 {
 }
 
-EventBridgeRuleTemplateGroupSummary::EventBridgeRuleTemplateGroupSummary(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_modifiedAtHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_templateCount(0),
-    m_templateCountHasBeenSet(false)
+EventBridgeRuleTemplateGroupSummary::EventBridgeRuleTemplateGroupSummary(JsonView jsonValue)
+  : EventBridgeRuleTemplateGroupSummary()
 {
   *this = jsonValue;
 }

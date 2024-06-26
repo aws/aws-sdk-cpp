@@ -25,8 +25,8 @@ AlarmSpecification::AlarmSpecification() :
 {
 }
 
-AlarmSpecification::AlarmSpecification(const XmlNode& xmlNode) : 
-    m_alarmsHasBeenSet(false)
+AlarmSpecification::AlarmSpecification(const XmlNode& xmlNode)
+  : AlarmSpecification()
 {
   *this = xmlNode;
 }

@@ -25,10 +25,8 @@ NewUserAgentDetail::NewUserAgentDetail() :
 {
 }
 
-NewUserAgentDetail::NewUserAgentDetail(JsonView jsonValue) : 
-    m_userAgentHasBeenSet(false),
-    m_isNewForEntireAccount(false),
-    m_isNewForEntireAccountHasBeenSet(false)
+NewUserAgentDetail::NewUserAgentDetail(JsonView jsonValue)
+  : NewUserAgentDetail()
 {
   *this = jsonValue;
 }

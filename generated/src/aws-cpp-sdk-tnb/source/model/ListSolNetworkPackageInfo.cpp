@@ -37,22 +37,8 @@ ListSolNetworkPackageInfo::ListSolNetworkPackageInfo() :
 {
 }
 
-ListSolNetworkPackageInfo::ListSolNetworkPackageInfo(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_metadataHasBeenSet(false),
-    m_nsdDesignerHasBeenSet(false),
-    m_nsdIdHasBeenSet(false),
-    m_nsdInvariantIdHasBeenSet(false),
-    m_nsdNameHasBeenSet(false),
-    m_nsdOnboardingState(NsdOnboardingState::NOT_SET),
-    m_nsdOnboardingStateHasBeenSet(false),
-    m_nsdOperationalState(NsdOperationalState::NOT_SET),
-    m_nsdOperationalStateHasBeenSet(false),
-    m_nsdUsageState(NsdUsageState::NOT_SET),
-    m_nsdUsageStateHasBeenSet(false),
-    m_nsdVersionHasBeenSet(false),
-    m_vnfPkgIdsHasBeenSet(false)
+ListSolNetworkPackageInfo::ListSolNetworkPackageInfo(JsonView jsonValue)
+  : ListSolNetworkPackageInfo()
 {
   *this = jsonValue;
 }

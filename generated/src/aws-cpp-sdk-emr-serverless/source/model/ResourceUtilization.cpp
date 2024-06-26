@@ -28,13 +28,8 @@ ResourceUtilization::ResourceUtilization() :
 {
 }
 
-ResourceUtilization::ResourceUtilization(JsonView jsonValue) : 
-    m_vCPUHour(0.0),
-    m_vCPUHourHasBeenSet(false),
-    m_memoryGBHour(0.0),
-    m_memoryGBHourHasBeenSet(false),
-    m_storageGBHour(0.0),
-    m_storageGBHourHasBeenSet(false)
+ResourceUtilization::ResourceUtilization(JsonView jsonValue)
+  : ResourceUtilization()
 {
   *this = jsonValue;
 }

@@ -26,9 +26,8 @@ FailedCapacityReservationFleetCancellationResponse::FailedCapacityReservationFle
 {
 }
 
-FailedCapacityReservationFleetCancellationResponse::FailedCapacityReservationFleetCancellationResponse(const XmlNode& xmlNode) : 
-    m_capacityReservationFleetIdHasBeenSet(false),
-    m_cancelCapacityReservationFleetErrorHasBeenSet(false)
+FailedCapacityReservationFleetCancellationResponse::FailedCapacityReservationFleetCancellationResponse(const XmlNode& xmlNode)
+  : FailedCapacityReservationFleetCancellationResponse()
 {
   *this = xmlNode;
 }

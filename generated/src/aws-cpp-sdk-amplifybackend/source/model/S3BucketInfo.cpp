@@ -24,9 +24,8 @@ S3BucketInfo::S3BucketInfo() :
 {
 }
 
-S3BucketInfo::S3BucketInfo(JsonView jsonValue) : 
-    m_creationDateHasBeenSet(false),
-    m_nameHasBeenSet(false)
+S3BucketInfo::S3BucketInfo(JsonView jsonValue)
+  : S3BucketInfo()
 {
   *this = jsonValue;
 }

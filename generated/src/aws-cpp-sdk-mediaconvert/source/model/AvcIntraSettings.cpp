@@ -41,26 +41,8 @@ AvcIntraSettings::AvcIntraSettings() :
 {
 }
 
-AvcIntraSettings::AvcIntraSettings(JsonView jsonValue) : 
-    m_avcIntraClass(AvcIntraClass::NOT_SET),
-    m_avcIntraClassHasBeenSet(false),
-    m_avcIntraUhdSettingsHasBeenSet(false),
-    m_framerateControl(AvcIntraFramerateControl::NOT_SET),
-    m_framerateControlHasBeenSet(false),
-    m_framerateConversionAlgorithm(AvcIntraFramerateConversionAlgorithm::NOT_SET),
-    m_framerateConversionAlgorithmHasBeenSet(false),
-    m_framerateDenominator(0),
-    m_framerateDenominatorHasBeenSet(false),
-    m_framerateNumerator(0),
-    m_framerateNumeratorHasBeenSet(false),
-    m_interlaceMode(AvcIntraInterlaceMode::NOT_SET),
-    m_interlaceModeHasBeenSet(false),
-    m_scanTypeConversionMode(AvcIntraScanTypeConversionMode::NOT_SET),
-    m_scanTypeConversionModeHasBeenSet(false),
-    m_slowPal(AvcIntraSlowPal::NOT_SET),
-    m_slowPalHasBeenSet(false),
-    m_telecine(AvcIntraTelecine::NOT_SET),
-    m_telecineHasBeenSet(false)
+AvcIntraSettings::AvcIntraSettings(JsonView jsonValue)
+  : AvcIntraSettings()
 {
   *this = jsonValue;
 }

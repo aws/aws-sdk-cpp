@@ -24,9 +24,8 @@ WriteEventStream::WriteEventStream() :
 {
 }
 
-WriteEventStream::WriteEventStream(JsonView jsonValue) : 
-    m_destinationStreamArnHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
+WriteEventStream::WriteEventStream(JsonView jsonValue)
+  : WriteEventStream()
 {
   *this = jsonValue;
 }

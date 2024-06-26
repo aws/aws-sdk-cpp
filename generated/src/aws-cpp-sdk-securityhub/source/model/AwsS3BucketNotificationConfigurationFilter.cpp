@@ -23,8 +23,8 @@ AwsS3BucketNotificationConfigurationFilter::AwsS3BucketNotificationConfiguration
 {
 }
 
-AwsS3BucketNotificationConfigurationFilter::AwsS3BucketNotificationConfigurationFilter(JsonView jsonValue) : 
-    m_s3KeyFilterHasBeenSet(false)
+AwsS3BucketNotificationConfigurationFilter::AwsS3BucketNotificationConfigurationFilter(JsonView jsonValue)
+  : AwsS3BucketNotificationConfigurationFilter()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ CloudWatchLogGroupLogDestination::CloudWatchLogGroupLogDestination() :
 {
 }
 
-CloudWatchLogGroupLogDestination::CloudWatchLogGroupLogDestination(JsonView jsonValue) : 
-    m_cloudWatchLogGroupArnHasBeenSet(false),
-    m_logPrefixHasBeenSet(false)
+CloudWatchLogGroupLogDestination::CloudWatchLogGroupLogDestination(JsonView jsonValue)
+  : CloudWatchLogGroupLogDestination()
 {
   *this = jsonValue;
 }

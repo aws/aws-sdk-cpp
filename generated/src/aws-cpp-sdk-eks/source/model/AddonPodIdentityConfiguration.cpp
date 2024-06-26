@@ -24,9 +24,8 @@ AddonPodIdentityConfiguration::AddonPodIdentityConfiguration() :
 {
 }
 
-AddonPodIdentityConfiguration::AddonPodIdentityConfiguration(JsonView jsonValue) : 
-    m_serviceAccountHasBeenSet(false),
-    m_recommendedManagedPoliciesHasBeenSet(false)
+AddonPodIdentityConfiguration::AddonPodIdentityConfiguration(JsonView jsonValue)
+  : AddonPodIdentityConfiguration()
 {
   *this = jsonValue;
 }

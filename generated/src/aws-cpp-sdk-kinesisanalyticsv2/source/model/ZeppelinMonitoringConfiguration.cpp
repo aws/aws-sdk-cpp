@@ -24,9 +24,8 @@ ZeppelinMonitoringConfiguration::ZeppelinMonitoringConfiguration() :
 {
 }
 
-ZeppelinMonitoringConfiguration::ZeppelinMonitoringConfiguration(JsonView jsonValue) : 
-    m_logLevel(LogLevel::NOT_SET),
-    m_logLevelHasBeenSet(false)
+ZeppelinMonitoringConfiguration::ZeppelinMonitoringConfiguration(JsonView jsonValue)
+  : ZeppelinMonitoringConfiguration()
 {
   *this = jsonValue;
 }

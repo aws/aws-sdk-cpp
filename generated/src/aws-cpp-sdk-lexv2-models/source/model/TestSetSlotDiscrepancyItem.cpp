@@ -25,10 +25,8 @@ TestSetSlotDiscrepancyItem::TestSetSlotDiscrepancyItem() :
 {
 }
 
-TestSetSlotDiscrepancyItem::TestSetSlotDiscrepancyItem(JsonView jsonValue) : 
-    m_intentNameHasBeenSet(false),
-    m_slotNameHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
+TestSetSlotDiscrepancyItem::TestSetSlotDiscrepancyItem(JsonView jsonValue)
+  : TestSetSlotDiscrepancyItem()
 {
   *this = jsonValue;
 }

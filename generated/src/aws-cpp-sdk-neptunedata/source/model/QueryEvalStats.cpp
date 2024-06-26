@@ -29,14 +29,8 @@ QueryEvalStats::QueryEvalStats() :
 {
 }
 
-QueryEvalStats::QueryEvalStats(JsonView jsonValue) : 
-    m_waited(0),
-    m_waitedHasBeenSet(false),
-    m_elapsed(0),
-    m_elapsedHasBeenSet(false),
-    m_cancelled(false),
-    m_cancelledHasBeenSet(false),
-    m_subqueriesHasBeenSet(false)
+QueryEvalStats::QueryEvalStats(JsonView jsonValue)
+  : QueryEvalStats()
 {
   *this = jsonValue;
 }

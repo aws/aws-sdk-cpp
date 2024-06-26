@@ -24,9 +24,8 @@ InvalidRequestException::InvalidRequestException() :
 {
 }
 
-InvalidRequestException::InvalidRequestException(JsonView jsonValue) : 
-    m_athenaErrorCodeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+InvalidRequestException::InvalidRequestException(JsonView jsonValue)
+  : InvalidRequestException()
 {
   *this = jsonValue;
 }

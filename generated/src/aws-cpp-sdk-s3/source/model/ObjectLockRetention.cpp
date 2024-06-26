@@ -27,10 +27,8 @@ ObjectLockRetention::ObjectLockRetention() :
 {
 }
 
-ObjectLockRetention::ObjectLockRetention(const XmlNode& xmlNode) : 
-    m_mode(ObjectLockRetentionMode::NOT_SET),
-    m_modeHasBeenSet(false),
-    m_retainUntilDateHasBeenSet(false)
+ObjectLockRetention::ObjectLockRetention(const XmlNode& xmlNode)
+  : ObjectLockRetention()
 {
   *this = xmlNode;
 }

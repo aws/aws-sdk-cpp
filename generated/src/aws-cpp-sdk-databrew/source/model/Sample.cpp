@@ -26,11 +26,8 @@ Sample::Sample() :
 {
 }
 
-Sample::Sample(JsonView jsonValue) : 
-    m_size(0),
-    m_sizeHasBeenSet(false),
-    m_type(SampleType::NOT_SET),
-    m_typeHasBeenSet(false)
+Sample::Sample(JsonView jsonValue)
+  : Sample()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ TooManyTags::TooManyTags() :
 {
 }
 
-TooManyTags::TooManyTags(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_resourceNameHasBeenSet(false)
+TooManyTags::TooManyTags(JsonView jsonValue)
+  : TooManyTags()
 {
   *this = jsonValue;
 }

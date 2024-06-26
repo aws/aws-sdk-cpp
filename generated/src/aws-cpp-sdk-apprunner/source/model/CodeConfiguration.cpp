@@ -25,10 +25,8 @@ CodeConfiguration::CodeConfiguration() :
 {
 }
 
-CodeConfiguration::CodeConfiguration(JsonView jsonValue) : 
-    m_configurationSource(ConfigurationSource::NOT_SET),
-    m_configurationSourceHasBeenSet(false),
-    m_codeConfigurationValuesHasBeenSet(false)
+CodeConfiguration::CodeConfiguration(JsonView jsonValue)
+  : CodeConfiguration()
 {
   *this = jsonValue;
 }

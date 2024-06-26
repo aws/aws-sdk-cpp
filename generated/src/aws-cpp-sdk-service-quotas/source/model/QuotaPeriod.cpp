@@ -26,11 +26,8 @@ QuotaPeriod::QuotaPeriod() :
 {
 }
 
-QuotaPeriod::QuotaPeriod(JsonView jsonValue) : 
-    m_periodValue(0),
-    m_periodValueHasBeenSet(false),
-    m_periodUnit(PeriodUnit::NOT_SET),
-    m_periodUnitHasBeenSet(false)
+QuotaPeriod::QuotaPeriod(JsonView jsonValue)
+  : QuotaPeriod()
 {
   *this = jsonValue;
 }

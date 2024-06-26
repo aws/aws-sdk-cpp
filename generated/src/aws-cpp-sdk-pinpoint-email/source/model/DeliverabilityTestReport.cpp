@@ -29,14 +29,8 @@ DeliverabilityTestReport::DeliverabilityTestReport() :
 {
 }
 
-DeliverabilityTestReport::DeliverabilityTestReport(JsonView jsonValue) : 
-    m_reportIdHasBeenSet(false),
-    m_reportNameHasBeenSet(false),
-    m_subjectHasBeenSet(false),
-    m_fromEmailAddressHasBeenSet(false),
-    m_createDateHasBeenSet(false),
-    m_deliverabilityTestStatus(DeliverabilityTestStatus::NOT_SET),
-    m_deliverabilityTestStatusHasBeenSet(false)
+DeliverabilityTestReport::DeliverabilityTestReport(JsonView jsonValue)
+  : DeliverabilityTestReport()
 {
   *this = jsonValue;
 }

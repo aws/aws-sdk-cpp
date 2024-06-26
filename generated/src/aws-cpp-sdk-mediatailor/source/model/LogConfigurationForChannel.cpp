@@ -23,8 +23,8 @@ LogConfigurationForChannel::LogConfigurationForChannel() :
 {
 }
 
-LogConfigurationForChannel::LogConfigurationForChannel(JsonView jsonValue) : 
-    m_logTypesHasBeenSet(false)
+LogConfigurationForChannel::LogConfigurationForChannel(JsonView jsonValue)
+  : LogConfigurationForChannel()
 {
   *this = jsonValue;
 }

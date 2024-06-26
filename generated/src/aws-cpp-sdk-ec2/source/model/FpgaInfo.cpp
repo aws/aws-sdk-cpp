@@ -27,10 +27,8 @@ FpgaInfo::FpgaInfo() :
 {
 }
 
-FpgaInfo::FpgaInfo(const XmlNode& xmlNode) : 
-    m_fpgasHasBeenSet(false),
-    m_totalFpgaMemoryInMiB(0),
-    m_totalFpgaMemoryInMiBHasBeenSet(false)
+FpgaInfo::FpgaInfo(const XmlNode& xmlNode)
+  : FpgaInfo()
 {
   *this = xmlNode;
 }

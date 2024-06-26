@@ -25,10 +25,8 @@ EthernetPayload::EthernetPayload() :
 {
 }
 
-EthernetPayload::EthernetPayload(JsonView jsonValue) : 
-    m_connectionType(ConnectionType::NOT_SET),
-    m_connectionTypeHasBeenSet(false),
-    m_staticIpConnectionInfoHasBeenSet(false)
+EthernetPayload::EthernetPayload(JsonView jsonValue)
+  : EthernetPayload()
 {
   *this = jsonValue;
 }

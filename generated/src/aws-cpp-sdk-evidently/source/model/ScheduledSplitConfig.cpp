@@ -25,10 +25,8 @@ ScheduledSplitConfig::ScheduledSplitConfig() :
 {
 }
 
-ScheduledSplitConfig::ScheduledSplitConfig(JsonView jsonValue) : 
-    m_groupWeightsHasBeenSet(false),
-    m_segmentOverridesHasBeenSet(false),
-    m_startTimeHasBeenSet(false)
+ScheduledSplitConfig::ScheduledSplitConfig(JsonView jsonValue)
+  : ScheduledSplitConfig()
 {
   *this = jsonValue;
 }

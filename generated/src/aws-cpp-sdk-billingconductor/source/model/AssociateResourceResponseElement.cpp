@@ -24,9 +24,8 @@ AssociateResourceResponseElement::AssociateResourceResponseElement() :
 {
 }
 
-AssociateResourceResponseElement::AssociateResourceResponseElement(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_errorHasBeenSet(false)
+AssociateResourceResponseElement::AssociateResourceResponseElement(JsonView jsonValue)
+  : AssociateResourceResponseElement()
 {
   *this = jsonValue;
 }

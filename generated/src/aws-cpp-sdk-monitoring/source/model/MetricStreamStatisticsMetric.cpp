@@ -26,9 +26,8 @@ MetricStreamStatisticsMetric::MetricStreamStatisticsMetric() :
 {
 }
 
-MetricStreamStatisticsMetric::MetricStreamStatisticsMetric(const XmlNode& xmlNode) : 
-    m_namespaceHasBeenSet(false),
-    m_metricNameHasBeenSet(false)
+MetricStreamStatisticsMetric::MetricStreamStatisticsMetric(const XmlNode& xmlNode)
+  : MetricStreamStatisticsMetric()
 {
   *this = xmlNode;
 }

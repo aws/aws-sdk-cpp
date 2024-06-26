@@ -24,9 +24,8 @@ OSUpdateSettings::OSUpdateSettings() :
 {
 }
 
-OSUpdateSettings::OSUpdateSettings(JsonView jsonValue) : 
-    m_oSVersion(OSVersion::NOT_SET),
-    m_oSVersionHasBeenSet(false)
+OSUpdateSettings::OSUpdateSettings(JsonView jsonValue)
+  : OSUpdateSettings()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ ArchiveStringToEvaluate::ArchiveStringToEvaluate() :
 {
 }
 
-ArchiveStringToEvaluate::ArchiveStringToEvaluate(JsonView jsonValue) : 
-    m_attribute(ArchiveStringEmailAttribute::NOT_SET),
-    m_attributeHasBeenSet(false)
+ArchiveStringToEvaluate::ArchiveStringToEvaluate(JsonView jsonValue)
+  : ArchiveStringToEvaluate()
 {
   *this = jsonValue;
 }

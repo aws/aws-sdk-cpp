@@ -22,8 +22,8 @@ PrepareAgentResult::PrepareAgentResult() :
 {
 }
 
-PrepareAgentResult::PrepareAgentResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_agentStatus(AgentStatus::NOT_SET)
+PrepareAgentResult::PrepareAgentResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : PrepareAgentResult()
 {
   *this = result;
 }

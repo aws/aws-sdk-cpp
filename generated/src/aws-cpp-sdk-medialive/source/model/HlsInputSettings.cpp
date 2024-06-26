@@ -32,17 +32,8 @@ HlsInputSettings::HlsInputSettings() :
 {
 }
 
-HlsInputSettings::HlsInputSettings(JsonView jsonValue) : 
-    m_bandwidth(0),
-    m_bandwidthHasBeenSet(false),
-    m_bufferSegments(0),
-    m_bufferSegmentsHasBeenSet(false),
-    m_retries(0),
-    m_retriesHasBeenSet(false),
-    m_retryInterval(0),
-    m_retryIntervalHasBeenSet(false),
-    m_scte35Source(HlsScte35SourceType::NOT_SET),
-    m_scte35SourceHasBeenSet(false)
+HlsInputSettings::HlsInputSettings(JsonView jsonValue)
+  : HlsInputSettings()
 {
   *this = jsonValue;
 }

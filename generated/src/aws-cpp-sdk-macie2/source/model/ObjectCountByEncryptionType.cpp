@@ -32,17 +32,8 @@ ObjectCountByEncryptionType::ObjectCountByEncryptionType() :
 {
 }
 
-ObjectCountByEncryptionType::ObjectCountByEncryptionType(JsonView jsonValue) : 
-    m_customerManaged(0),
-    m_customerManagedHasBeenSet(false),
-    m_kmsManaged(0),
-    m_kmsManagedHasBeenSet(false),
-    m_s3Managed(0),
-    m_s3ManagedHasBeenSet(false),
-    m_unencrypted(0),
-    m_unencryptedHasBeenSet(false),
-    m_unknown(0),
-    m_unknownHasBeenSet(false)
+ObjectCountByEncryptionType::ObjectCountByEncryptionType(JsonView jsonValue)
+  : ObjectCountByEncryptionType()
 {
   *this = jsonValue;
 }

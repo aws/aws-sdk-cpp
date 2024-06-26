@@ -26,11 +26,8 @@ NumberAttributeBoostingConfiguration::NumberAttributeBoostingConfiguration() :
 {
 }
 
-NumberAttributeBoostingConfiguration::NumberAttributeBoostingConfiguration(JsonView jsonValue) : 
-    m_boostingLevel(DocumentAttributeBoostingLevel::NOT_SET),
-    m_boostingLevelHasBeenSet(false),
-    m_boostingType(NumberAttributeBoostingType::NOT_SET),
-    m_boostingTypeHasBeenSet(false)
+NumberAttributeBoostingConfiguration::NumberAttributeBoostingConfiguration(JsonView jsonValue)
+  : NumberAttributeBoostingConfiguration()
 {
   *this = jsonValue;
 }

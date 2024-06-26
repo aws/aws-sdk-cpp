@@ -25,10 +25,8 @@ TransitGatewayPeering::TransitGatewayPeering() :
 {
 }
 
-TransitGatewayPeering::TransitGatewayPeering(JsonView jsonValue) : 
-    m_peeringHasBeenSet(false),
-    m_transitGatewayArnHasBeenSet(false),
-    m_transitGatewayPeeringAttachmentIdHasBeenSet(false)
+TransitGatewayPeering::TransitGatewayPeering(JsonView jsonValue)
+  : TransitGatewayPeering()
 {
   *this = jsonValue;
 }

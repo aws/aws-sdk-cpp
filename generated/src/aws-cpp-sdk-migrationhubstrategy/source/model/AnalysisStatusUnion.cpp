@@ -26,11 +26,8 @@ AnalysisStatusUnion::AnalysisStatusUnion() :
 {
 }
 
-AnalysisStatusUnion::AnalysisStatusUnion(JsonView jsonValue) : 
-    m_runtimeAnalysisStatus(RuntimeAnalysisStatus::NOT_SET),
-    m_runtimeAnalysisStatusHasBeenSet(false),
-    m_srcCodeOrDbAnalysisStatus(SrcCodeOrDbAnalysisStatus::NOT_SET),
-    m_srcCodeOrDbAnalysisStatusHasBeenSet(false)
+AnalysisStatusUnion::AnalysisStatusUnion(JsonView jsonValue)
+  : AnalysisStatusUnion()
 {
   *this = jsonValue;
 }

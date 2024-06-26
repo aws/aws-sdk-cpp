@@ -24,9 +24,8 @@ FormStyleConfig::FormStyleConfig() :
 {
 }
 
-FormStyleConfig::FormStyleConfig(JsonView jsonValue) : 
-    m_tokenReferenceHasBeenSet(false),
-    m_valueHasBeenSet(false)
+FormStyleConfig::FormStyleConfig(JsonView jsonValue)
+  : FormStyleConfig()
 {
   *this = jsonValue;
 }

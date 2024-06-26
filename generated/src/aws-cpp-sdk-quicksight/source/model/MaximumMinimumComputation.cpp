@@ -28,13 +28,8 @@ MaximumMinimumComputation::MaximumMinimumComputation() :
 {
 }
 
-MaximumMinimumComputation::MaximumMinimumComputation(JsonView jsonValue) : 
-    m_computationIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_timeHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_type(MaximumMinimumComputationType::NOT_SET),
-    m_typeHasBeenSet(false)
+MaximumMinimumComputation::MaximumMinimumComputation(JsonView jsonValue)
+  : MaximumMinimumComputation()
 {
   *this = jsonValue;
 }

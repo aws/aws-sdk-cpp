@@ -26,11 +26,8 @@ S3DestinationSettings::S3DestinationSettings() :
 {
 }
 
-S3DestinationSettings::S3DestinationSettings(JsonView jsonValue) : 
-    m_accessControlHasBeenSet(false),
-    m_encryptionHasBeenSet(false),
-    m_storageClass(S3StorageClass::NOT_SET),
-    m_storageClassHasBeenSet(false)
+S3DestinationSettings::S3DestinationSettings(JsonView jsonValue)
+  : S3DestinationSettings()
 {
   *this = jsonValue;
 }

@@ -30,15 +30,8 @@ QueryRuntimeStatisticsRows::QueryRuntimeStatisticsRows() :
 {
 }
 
-QueryRuntimeStatisticsRows::QueryRuntimeStatisticsRows(JsonView jsonValue) : 
-    m_inputRows(0),
-    m_inputRowsHasBeenSet(false),
-    m_inputBytes(0),
-    m_inputBytesHasBeenSet(false),
-    m_outputBytes(0),
-    m_outputBytesHasBeenSet(false),
-    m_outputRows(0),
-    m_outputRowsHasBeenSet(false)
+QueryRuntimeStatisticsRows::QueryRuntimeStatisticsRows(JsonView jsonValue)
+  : QueryRuntimeStatisticsRows()
 {
   *this = jsonValue;
 }

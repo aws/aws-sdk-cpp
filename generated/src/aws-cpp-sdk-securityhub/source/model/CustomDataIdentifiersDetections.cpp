@@ -27,12 +27,8 @@ CustomDataIdentifiersDetections::CustomDataIdentifiersDetections() :
 {
 }
 
-CustomDataIdentifiersDetections::CustomDataIdentifiersDetections(JsonView jsonValue) : 
-    m_count(0),
-    m_countHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_occurrencesHasBeenSet(false)
+CustomDataIdentifiersDetections::CustomDataIdentifiersDetections(JsonView jsonValue)
+  : CustomDataIdentifiersDetections()
 {
   *this = jsonValue;
 }

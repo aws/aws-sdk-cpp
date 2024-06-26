@@ -25,10 +25,8 @@ ApplyMapping::ApplyMapping() :
 {
 }
 
-ApplyMapping::ApplyMapping(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_inputsHasBeenSet(false),
-    m_mappingHasBeenSet(false)
+ApplyMapping::ApplyMapping(JsonView jsonValue)
+  : ApplyMapping()
 {
   *this = jsonValue;
 }

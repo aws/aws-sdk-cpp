@@ -24,9 +24,8 @@ BusinessNameGenerationConfiguration::BusinessNameGenerationConfiguration() :
 {
 }
 
-BusinessNameGenerationConfiguration::BusinessNameGenerationConfiguration(JsonView jsonValue) : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
+BusinessNameGenerationConfiguration::BusinessNameGenerationConfiguration(JsonView jsonValue)
+  : BusinessNameGenerationConfiguration()
 {
   *this = jsonValue;
 }

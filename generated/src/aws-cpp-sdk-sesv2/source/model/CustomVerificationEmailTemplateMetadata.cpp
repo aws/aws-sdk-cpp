@@ -27,12 +27,8 @@ CustomVerificationEmailTemplateMetadata::CustomVerificationEmailTemplateMetadata
 {
 }
 
-CustomVerificationEmailTemplateMetadata::CustomVerificationEmailTemplateMetadata(JsonView jsonValue) : 
-    m_templateNameHasBeenSet(false),
-    m_fromEmailAddressHasBeenSet(false),
-    m_templateSubjectHasBeenSet(false),
-    m_successRedirectionURLHasBeenSet(false),
-    m_failureRedirectionURLHasBeenSet(false)
+CustomVerificationEmailTemplateMetadata::CustomVerificationEmailTemplateMetadata(JsonView jsonValue)
+  : CustomVerificationEmailTemplateMetadata()
 {
   *this = jsonValue;
 }

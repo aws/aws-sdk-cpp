@@ -22,9 +22,8 @@ GetBucketVersioningResult::GetBucketVersioningResult() :
 {
 }
 
-GetBucketVersioningResult::GetBucketVersioningResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_status(BucketVersioningStatus::NOT_SET),
-    m_mFADelete(MFADeleteStatus::NOT_SET)
+GetBucketVersioningResult::GetBucketVersioningResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : GetBucketVersioningResult()
 {
   *this = result;
 }

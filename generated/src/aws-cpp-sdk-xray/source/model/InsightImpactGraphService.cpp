@@ -29,14 +29,8 @@ InsightImpactGraphService::InsightImpactGraphService() :
 {
 }
 
-InsightImpactGraphService::InsightImpactGraphService(JsonView jsonValue) : 
-    m_referenceId(0),
-    m_referenceIdHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_namesHasBeenSet(false),
-    m_accountIdHasBeenSet(false),
-    m_edgesHasBeenSet(false)
+InsightImpactGraphService::InsightImpactGraphService(JsonView jsonValue)
+  : InsightImpactGraphService()
 {
   *this = jsonValue;
 }

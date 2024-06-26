@@ -31,14 +31,8 @@ RealtimeLogConfigs::RealtimeLogConfigs() :
 {
 }
 
-RealtimeLogConfigs::RealtimeLogConfigs(const XmlNode& xmlNode) : 
-    m_maxItems(0),
-    m_maxItemsHasBeenSet(false),
-    m_itemsHasBeenSet(false),
-    m_isTruncated(false),
-    m_isTruncatedHasBeenSet(false),
-    m_markerHasBeenSet(false),
-    m_nextMarkerHasBeenSet(false)
+RealtimeLogConfigs::RealtimeLogConfigs(const XmlNode& xmlNode)
+  : RealtimeLogConfigs()
 {
   *this = xmlNode;
 }

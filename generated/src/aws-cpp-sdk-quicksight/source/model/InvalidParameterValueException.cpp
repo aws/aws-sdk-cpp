@@ -24,9 +24,8 @@ InvalidParameterValueException::InvalidParameterValueException() :
 {
 }
 
-InvalidParameterValueException::InvalidParameterValueException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
+InvalidParameterValueException::InvalidParameterValueException(JsonView jsonValue)
+  : InvalidParameterValueException()
 {
   *this = jsonValue;
 }

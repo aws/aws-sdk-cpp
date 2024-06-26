@@ -32,17 +32,8 @@ KeyUsageFlags::KeyUsageFlags() :
 {
 }
 
-KeyUsageFlags::KeyUsageFlags(JsonView jsonValue) : 
-    m_dataEncipherment(false),
-    m_dataEnciphermentHasBeenSet(false),
-    m_digitalSignature(false),
-    m_digitalSignatureHasBeenSet(false),
-    m_keyAgreement(false),
-    m_keyAgreementHasBeenSet(false),
-    m_keyEncipherment(false),
-    m_keyEnciphermentHasBeenSet(false),
-    m_nonRepudiation(false),
-    m_nonRepudiationHasBeenSet(false)
+KeyUsageFlags::KeyUsageFlags(JsonView jsonValue)
+  : KeyUsageFlags()
 {
   *this = jsonValue;
 }

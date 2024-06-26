@@ -24,9 +24,8 @@ JobWorkerExecutorConfiguration::JobWorkerExecutorConfiguration() :
 {
 }
 
-JobWorkerExecutorConfiguration::JobWorkerExecutorConfiguration(JsonView jsonValue) : 
-    m_pollingAccountsHasBeenSet(false),
-    m_pollingServicePrincipalsHasBeenSet(false)
+JobWorkerExecutorConfiguration::JobWorkerExecutorConfiguration(JsonView jsonValue)
+  : JobWorkerExecutorConfiguration()
 {
   *this = jsonValue;
 }

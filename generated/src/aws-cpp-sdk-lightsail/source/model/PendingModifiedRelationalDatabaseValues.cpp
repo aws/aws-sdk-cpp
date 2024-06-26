@@ -26,11 +26,8 @@ PendingModifiedRelationalDatabaseValues::PendingModifiedRelationalDatabaseValues
 {
 }
 
-PendingModifiedRelationalDatabaseValues::PendingModifiedRelationalDatabaseValues(JsonView jsonValue) : 
-    m_masterUserPasswordHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_backupRetentionEnabled(false),
-    m_backupRetentionEnabledHasBeenSet(false)
+PendingModifiedRelationalDatabaseValues::PendingModifiedRelationalDatabaseValues(JsonView jsonValue)
+  : PendingModifiedRelationalDatabaseValues()
 {
   *this = jsonValue;
 }

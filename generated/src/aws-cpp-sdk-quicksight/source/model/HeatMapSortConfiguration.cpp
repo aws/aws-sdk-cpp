@@ -26,11 +26,8 @@ HeatMapSortConfiguration::HeatMapSortConfiguration() :
 {
 }
 
-HeatMapSortConfiguration::HeatMapSortConfiguration(JsonView jsonValue) : 
-    m_heatMapRowSortHasBeenSet(false),
-    m_heatMapColumnSortHasBeenSet(false),
-    m_heatMapRowItemsLimitConfigurationHasBeenSet(false),
-    m_heatMapColumnItemsLimitConfigurationHasBeenSet(false)
+HeatMapSortConfiguration::HeatMapSortConfiguration(JsonView jsonValue)
+  : HeatMapSortConfiguration()
 {
   *this = jsonValue;
 }

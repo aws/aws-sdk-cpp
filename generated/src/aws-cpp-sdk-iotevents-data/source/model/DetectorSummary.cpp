@@ -28,13 +28,8 @@ DetectorSummary::DetectorSummary() :
 {
 }
 
-DetectorSummary::DetectorSummary(JsonView jsonValue) : 
-    m_detectorModelNameHasBeenSet(false),
-    m_keyValueHasBeenSet(false),
-    m_detectorModelVersionHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastUpdateTimeHasBeenSet(false)
+DetectorSummary::DetectorSummary(JsonView jsonValue)
+  : DetectorSummary()
 {
   *this = jsonValue;
 }

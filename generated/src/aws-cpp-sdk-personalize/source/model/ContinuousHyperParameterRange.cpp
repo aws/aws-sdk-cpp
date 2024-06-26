@@ -27,12 +27,8 @@ ContinuousHyperParameterRange::ContinuousHyperParameterRange() :
 {
 }
 
-ContinuousHyperParameterRange::ContinuousHyperParameterRange(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_minValue(0.0),
-    m_minValueHasBeenSet(false),
-    m_maxValue(0.0),
-    m_maxValueHasBeenSet(false)
+ContinuousHyperParameterRange::ContinuousHyperParameterRange(JsonView jsonValue)
+  : ContinuousHyperParameterRange()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ AutomatedEncodingSettings::AutomatedEncodingSettings() :
 {
 }
 
-AutomatedEncodingSettings::AutomatedEncodingSettings(JsonView jsonValue) : 
-    m_abrSettingsHasBeenSet(false)
+AutomatedEncodingSettings::AutomatedEncodingSettings(JsonView jsonValue)
+  : AutomatedEncodingSettings()
 {
   *this = jsonValue;
 }

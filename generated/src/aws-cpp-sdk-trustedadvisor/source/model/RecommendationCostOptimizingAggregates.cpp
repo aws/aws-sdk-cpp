@@ -26,11 +26,8 @@ RecommendationCostOptimizingAggregates::RecommendationCostOptimizingAggregates()
 {
 }
 
-RecommendationCostOptimizingAggregates::RecommendationCostOptimizingAggregates(JsonView jsonValue) : 
-    m_estimatedMonthlySavings(0.0),
-    m_estimatedMonthlySavingsHasBeenSet(false),
-    m_estimatedPercentMonthlySavings(0.0),
-    m_estimatedPercentMonthlySavingsHasBeenSet(false)
+RecommendationCostOptimizingAggregates::RecommendationCostOptimizingAggregates(JsonView jsonValue)
+  : RecommendationCostOptimizingAggregates()
 {
   *this = jsonValue;
 }

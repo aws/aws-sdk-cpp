@@ -25,10 +25,8 @@ InternalServerException::InternalServerException() :
 {
 }
 
-InternalServerException::InternalServerException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_code(0),
-    m_codeHasBeenSet(false)
+InternalServerException::InternalServerException(JsonView jsonValue)
+  : InternalServerException()
 {
   *this = jsonValue;
 }

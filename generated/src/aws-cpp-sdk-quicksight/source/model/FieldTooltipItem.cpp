@@ -28,13 +28,8 @@ FieldTooltipItem::FieldTooltipItem() :
 {
 }
 
-FieldTooltipItem::FieldTooltipItem(JsonView jsonValue) : 
-    m_fieldIdHasBeenSet(false),
-    m_labelHasBeenSet(false),
-    m_visibility(Visibility::NOT_SET),
-    m_visibilityHasBeenSet(false),
-    m_tooltipTarget(TooltipTarget::NOT_SET),
-    m_tooltipTargetHasBeenSet(false)
+FieldTooltipItem::FieldTooltipItem(JsonView jsonValue)
+  : FieldTooltipItem()
 {
   *this = jsonValue;
 }

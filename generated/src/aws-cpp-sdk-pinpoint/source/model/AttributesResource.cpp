@@ -25,10 +25,8 @@ AttributesResource::AttributesResource() :
 {
 }
 
-AttributesResource::AttributesResource(JsonView jsonValue) : 
-    m_applicationIdHasBeenSet(false),
-    m_attributeTypeHasBeenSet(false),
-    m_attributesHasBeenSet(false)
+AttributesResource::AttributesResource(JsonView jsonValue)
+  : AttributesResource()
 {
   *this = jsonValue;
 }

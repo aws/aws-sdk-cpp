@@ -24,9 +24,8 @@ CreateAssessmentFrameworkControlSet::CreateAssessmentFrameworkControlSet() :
 {
 }
 
-CreateAssessmentFrameworkControlSet::CreateAssessmentFrameworkControlSet(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_controlsHasBeenSet(false)
+CreateAssessmentFrameworkControlSet::CreateAssessmentFrameworkControlSet(JsonView jsonValue)
+  : CreateAssessmentFrameworkControlSet()
 {
   *this = jsonValue;
 }

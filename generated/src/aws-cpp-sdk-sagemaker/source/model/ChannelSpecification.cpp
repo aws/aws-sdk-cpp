@@ -29,14 +29,8 @@ ChannelSpecification::ChannelSpecification() :
 {
 }
 
-ChannelSpecification::ChannelSpecification(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_isRequired(false),
-    m_isRequiredHasBeenSet(false),
-    m_supportedContentTypesHasBeenSet(false),
-    m_supportedCompressionTypesHasBeenSet(false),
-    m_supportedInputModesHasBeenSet(false)
+ChannelSpecification::ChannelSpecification(JsonView jsonValue)
+  : ChannelSpecification()
 {
   *this = jsonValue;
 }

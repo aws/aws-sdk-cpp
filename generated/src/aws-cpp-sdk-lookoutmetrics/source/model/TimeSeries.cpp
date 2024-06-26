@@ -25,10 +25,8 @@ TimeSeries::TimeSeries() :
 {
 }
 
-TimeSeries::TimeSeries(JsonView jsonValue) : 
-    m_timeSeriesIdHasBeenSet(false),
-    m_dimensionListHasBeenSet(false),
-    m_metricValueListHasBeenSet(false)
+TimeSeries::TimeSeries(JsonView jsonValue)
+  : TimeSeries()
 {
   *this = jsonValue;
 }

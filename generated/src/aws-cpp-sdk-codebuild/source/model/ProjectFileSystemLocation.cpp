@@ -28,13 +28,8 @@ ProjectFileSystemLocation::ProjectFileSystemLocation() :
 {
 }
 
-ProjectFileSystemLocation::ProjectFileSystemLocation(JsonView jsonValue) : 
-    m_type(FileSystemType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_locationHasBeenSet(false),
-    m_mountPointHasBeenSet(false),
-    m_identifierHasBeenSet(false),
-    m_mountOptionsHasBeenSet(false)
+ProjectFileSystemLocation::ProjectFileSystemLocation(JsonView jsonValue)
+  : ProjectFileSystemLocation()
 {
   *this = jsonValue;
 }

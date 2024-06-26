@@ -25,10 +25,8 @@ NamedEntityDefinitionMetric::NamedEntityDefinitionMetric() :
 {
 }
 
-NamedEntityDefinitionMetric::NamedEntityDefinitionMetric(JsonView jsonValue) : 
-    m_aggregation(NamedEntityAggType::NOT_SET),
-    m_aggregationHasBeenSet(false),
-    m_aggregationFunctionParametersHasBeenSet(false)
+NamedEntityDefinitionMetric::NamedEntityDefinitionMetric(JsonView jsonValue)
+  : NamedEntityDefinitionMetric()
 {
   *this = jsonValue;
 }

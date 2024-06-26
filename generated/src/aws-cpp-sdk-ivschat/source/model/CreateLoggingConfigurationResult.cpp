@@ -22,8 +22,8 @@ CreateLoggingConfigurationResult::CreateLoggingConfigurationResult() :
 {
 }
 
-CreateLoggingConfigurationResult::CreateLoggingConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_state(CreateLoggingConfigurationState::NOT_SET)
+CreateLoggingConfigurationResult::CreateLoggingConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateLoggingConfigurationResult()
 {
   *this = result;
 }

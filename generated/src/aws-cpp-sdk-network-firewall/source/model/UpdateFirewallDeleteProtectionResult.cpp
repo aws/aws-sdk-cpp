@@ -22,8 +22,8 @@ UpdateFirewallDeleteProtectionResult::UpdateFirewallDeleteProtectionResult() :
 {
 }
 
-UpdateFirewallDeleteProtectionResult::UpdateFirewallDeleteProtectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_deleteProtection(false)
+UpdateFirewallDeleteProtectionResult::UpdateFirewallDeleteProtectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateFirewallDeleteProtectionResult()
 {
   *this = result;
 }

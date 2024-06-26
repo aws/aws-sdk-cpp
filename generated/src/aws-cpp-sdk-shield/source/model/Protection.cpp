@@ -28,13 +28,8 @@ Protection::Protection() :
 {
 }
 
-Protection::Protection(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_resourceArnHasBeenSet(false),
-    m_healthCheckIdsHasBeenSet(false),
-    m_protectionArnHasBeenSet(false),
-    m_applicationLayerAutomaticResponseConfigurationHasBeenSet(false)
+Protection::Protection(JsonView jsonValue)
+  : Protection()
 {
   *this = jsonValue;
 }

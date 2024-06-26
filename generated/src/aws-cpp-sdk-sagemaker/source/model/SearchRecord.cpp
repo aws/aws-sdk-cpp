@@ -37,22 +37,8 @@ SearchRecord::SearchRecord() :
 {
 }
 
-SearchRecord::SearchRecord(JsonView jsonValue) : 
-    m_trainingJobHasBeenSet(false),
-    m_experimentHasBeenSet(false),
-    m_trialHasBeenSet(false),
-    m_trialComponentHasBeenSet(false),
-    m_endpointHasBeenSet(false),
-    m_modelPackageHasBeenSet(false),
-    m_modelPackageGroupHasBeenSet(false),
-    m_pipelineHasBeenSet(false),
-    m_pipelineExecutionHasBeenSet(false),
-    m_featureGroupHasBeenSet(false),
-    m_featureMetadataHasBeenSet(false),
-    m_projectHasBeenSet(false),
-    m_hyperParameterTuningJobHasBeenSet(false),
-    m_modelCardHasBeenSet(false),
-    m_modelHasBeenSet(false)
+SearchRecord::SearchRecord(JsonView jsonValue)
+  : SearchRecord()
 {
   *this = jsonValue;
 }

@@ -40,23 +40,8 @@ SecurityGroupRule::SecurityGroupRule() :
 {
 }
 
-SecurityGroupRule::SecurityGroupRule(const XmlNode& xmlNode) : 
-    m_securityGroupRuleIdHasBeenSet(false),
-    m_groupIdHasBeenSet(false),
-    m_groupOwnerIdHasBeenSet(false),
-    m_isEgress(false),
-    m_isEgressHasBeenSet(false),
-    m_ipProtocolHasBeenSet(false),
-    m_fromPort(0),
-    m_fromPortHasBeenSet(false),
-    m_toPort(0),
-    m_toPortHasBeenSet(false),
-    m_cidrIpv4HasBeenSet(false),
-    m_cidrIpv6HasBeenSet(false),
-    m_prefixListIdHasBeenSet(false),
-    m_referencedGroupInfoHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+SecurityGroupRule::SecurityGroupRule(const XmlNode& xmlNode)
+  : SecurityGroupRule()
 {
   *this = xmlNode;
 }

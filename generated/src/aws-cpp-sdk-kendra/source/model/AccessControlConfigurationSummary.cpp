@@ -23,8 +23,8 @@ AccessControlConfigurationSummary::AccessControlConfigurationSummary() :
 {
 }
 
-AccessControlConfigurationSummary::AccessControlConfigurationSummary(JsonView jsonValue) : 
-    m_idHasBeenSet(false)
+AccessControlConfigurationSummary::AccessControlConfigurationSummary(JsonView jsonValue)
+  : AccessControlConfigurationSummary()
 {
   *this = jsonValue;
 }

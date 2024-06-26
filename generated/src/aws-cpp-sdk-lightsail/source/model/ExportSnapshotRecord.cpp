@@ -32,17 +32,8 @@ ExportSnapshotRecord::ExportSnapshotRecord() :
 {
 }
 
-ExportSnapshotRecord::ExportSnapshotRecord(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_locationHasBeenSet(false),
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_state(RecordState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_sourceInfoHasBeenSet(false),
-    m_destinationInfoHasBeenSet(false)
+ExportSnapshotRecord::ExportSnapshotRecord(JsonView jsonValue)
+  : ExportSnapshotRecord()
 {
   *this = jsonValue;
 }

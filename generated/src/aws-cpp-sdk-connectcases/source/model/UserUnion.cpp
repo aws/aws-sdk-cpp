@@ -23,8 +23,8 @@ UserUnion::UserUnion() :
 {
 }
 
-UserUnion::UserUnion(JsonView jsonValue) : 
-    m_userArnHasBeenSet(false)
+UserUnion::UserUnion(JsonView jsonValue)
+  : UserUnion()
 {
   *this = jsonValue;
 }

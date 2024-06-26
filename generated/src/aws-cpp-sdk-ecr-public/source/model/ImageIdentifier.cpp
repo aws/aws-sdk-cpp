@@ -24,9 +24,8 @@ ImageIdentifier::ImageIdentifier() :
 {
 }
 
-ImageIdentifier::ImageIdentifier(JsonView jsonValue) : 
-    m_imageDigestHasBeenSet(false),
-    m_imageTagHasBeenSet(false)
+ImageIdentifier::ImageIdentifier(JsonView jsonValue)
+  : ImageIdentifier()
 {
   *this = jsonValue;
 }

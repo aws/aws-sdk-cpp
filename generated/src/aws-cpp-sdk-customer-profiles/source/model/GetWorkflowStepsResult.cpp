@@ -22,8 +22,8 @@ GetWorkflowStepsResult::GetWorkflowStepsResult() :
 {
 }
 
-GetWorkflowStepsResult::GetWorkflowStepsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_workflowType(WorkflowType::NOT_SET)
+GetWorkflowStepsResult::GetWorkflowStepsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetWorkflowStepsResult()
 {
   *this = result;
 }

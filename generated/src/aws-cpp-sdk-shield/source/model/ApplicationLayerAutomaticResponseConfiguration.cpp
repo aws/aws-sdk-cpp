@@ -25,10 +25,8 @@ ApplicationLayerAutomaticResponseConfiguration::ApplicationLayerAutomaticRespons
 {
 }
 
-ApplicationLayerAutomaticResponseConfiguration::ApplicationLayerAutomaticResponseConfiguration(JsonView jsonValue) : 
-    m_status(ApplicationLayerAutomaticResponseStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_actionHasBeenSet(false)
+ApplicationLayerAutomaticResponseConfiguration::ApplicationLayerAutomaticResponseConfiguration(JsonView jsonValue)
+  : ApplicationLayerAutomaticResponseConfiguration()
 {
   *this = jsonValue;
 }

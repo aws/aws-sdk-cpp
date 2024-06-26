@@ -26,11 +26,8 @@ PineconeConfiguration::PineconeConfiguration() :
 {
 }
 
-PineconeConfiguration::PineconeConfiguration(JsonView jsonValue) : 
-    m_connectionStringHasBeenSet(false),
-    m_credentialsSecretArnHasBeenSet(false),
-    m_fieldMappingHasBeenSet(false),
-    m_namespaceHasBeenSet(false)
+PineconeConfiguration::PineconeConfiguration(JsonView jsonValue)
+  : PineconeConfiguration()
 {
   *this = jsonValue;
 }

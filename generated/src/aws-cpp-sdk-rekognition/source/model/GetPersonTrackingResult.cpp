@@ -22,8 +22,8 @@ GetPersonTrackingResult::GetPersonTrackingResult() :
 {
 }
 
-GetPersonTrackingResult::GetPersonTrackingResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_jobStatus(VideoJobStatus::NOT_SET)
+GetPersonTrackingResult::GetPersonTrackingResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetPersonTrackingResult()
 {
   *this = result;
 }

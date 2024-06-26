@@ -24,9 +24,8 @@ Predecessor::Predecessor() :
 {
 }
 
-Predecessor::Predecessor(JsonView jsonValue) : 
-    m_jobNameHasBeenSet(false),
-    m_runIdHasBeenSet(false)
+Predecessor::Predecessor(JsonView jsonValue)
+  : Predecessor()
 {
   *this = jsonValue;
 }

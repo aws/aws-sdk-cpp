@@ -23,8 +23,8 @@ InputDeviceRequest::InputDeviceRequest() :
 {
 }
 
-InputDeviceRequest::InputDeviceRequest(JsonView jsonValue) : 
-    m_idHasBeenSet(false)
+InputDeviceRequest::InputDeviceRequest(JsonView jsonValue)
+  : InputDeviceRequest()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ FunnelChartFieldWells::FunnelChartFieldWells() :
 {
 }
 
-FunnelChartFieldWells::FunnelChartFieldWells(JsonView jsonValue) : 
-    m_funnelChartAggregatedFieldWellsHasBeenSet(false)
+FunnelChartFieldWells::FunnelChartFieldWells(JsonView jsonValue)
+  : FunnelChartFieldWells()
 {
   *this = jsonValue;
 }

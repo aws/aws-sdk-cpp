@@ -25,10 +25,8 @@ AttackStatisticsDataItem::AttackStatisticsDataItem() :
 {
 }
 
-AttackStatisticsDataItem::AttackStatisticsDataItem(JsonView jsonValue) : 
-    m_attackVolumeHasBeenSet(false),
-    m_attackCount(0),
-    m_attackCountHasBeenSet(false)
+AttackStatisticsDataItem::AttackStatisticsDataItem(JsonView jsonValue)
+  : AttackStatisticsDataItem()
 {
   *this = jsonValue;
 }

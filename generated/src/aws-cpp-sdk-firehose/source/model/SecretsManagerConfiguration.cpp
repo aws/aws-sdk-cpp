@@ -26,11 +26,8 @@ SecretsManagerConfiguration::SecretsManagerConfiguration() :
 {
 }
 
-SecretsManagerConfiguration::SecretsManagerConfiguration(JsonView jsonValue) : 
-    m_secretARNHasBeenSet(false),
-    m_roleARNHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
+SecretsManagerConfiguration::SecretsManagerConfiguration(JsonView jsonValue)
+  : SecretsManagerConfiguration()
 {
   *this = jsonValue;
 }

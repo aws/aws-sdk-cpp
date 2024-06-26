@@ -27,10 +27,8 @@ NetworkAclAssociation::NetworkAclAssociation() :
 {
 }
 
-NetworkAclAssociation::NetworkAclAssociation(const XmlNode& xmlNode) : 
-    m_networkAclAssociationIdHasBeenSet(false),
-    m_networkAclIdHasBeenSet(false),
-    m_subnetIdHasBeenSet(false)
+NetworkAclAssociation::NetworkAclAssociation(const XmlNode& xmlNode)
+  : NetworkAclAssociation()
 {
   *this = xmlNode;
 }

@@ -26,10 +26,8 @@ InternalException::InternalException() :
 {
 }
 
-InternalException::InternalException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_retryAfterSeconds(0),
-    m_retryAfterSecondsHasBeenSet(false)
+InternalException::InternalException(JsonView jsonValue)
+  : InternalException()
 {
   *this = jsonValue;
 }

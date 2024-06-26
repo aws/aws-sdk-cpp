@@ -26,9 +26,8 @@ Ipv6Range::Ipv6Range() :
 {
 }
 
-Ipv6Range::Ipv6Range(const XmlNode& xmlNode) : 
-    m_cidrIpv6HasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+Ipv6Range::Ipv6Range(const XmlNode& xmlNode)
+  : Ipv6Range()
 {
   *this = xmlNode;
 }

@@ -34,19 +34,8 @@ AuditCheckDetails::AuditCheckDetails() :
 {
 }
 
-AuditCheckDetails::AuditCheckDetails(JsonView jsonValue) : 
-    m_checkRunStatus(AuditCheckRunStatus::NOT_SET),
-    m_checkRunStatusHasBeenSet(false),
-    m_checkCompliant(false),
-    m_checkCompliantHasBeenSet(false),
-    m_totalResourcesCount(0),
-    m_totalResourcesCountHasBeenSet(false),
-    m_nonCompliantResourcesCount(0),
-    m_nonCompliantResourcesCountHasBeenSet(false),
-    m_suppressedNonCompliantResourcesCount(0),
-    m_suppressedNonCompliantResourcesCountHasBeenSet(false),
-    m_errorCodeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+AuditCheckDetails::AuditCheckDetails(JsonView jsonValue)
+  : AuditCheckDetails()
 {
   *this = jsonValue;
 }

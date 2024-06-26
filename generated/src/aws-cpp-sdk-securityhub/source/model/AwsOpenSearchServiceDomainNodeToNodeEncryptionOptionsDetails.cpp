@@ -24,9 +24,8 @@ AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails::AwsOpenSearchServi
 {
 }
 
-AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails::AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails(JsonView jsonValue) : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
+AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails::AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails(JsonView jsonValue)
+  : AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails()
 {
   *this = jsonValue;
 }

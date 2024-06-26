@@ -40,25 +40,8 @@ Participant::Participant() :
 {
 }
 
-Participant::Participant(JsonView jsonValue) : 
-    m_participantIdHasBeenSet(false),
-    m_userIdHasBeenSet(false),
-    m_state(ParticipantState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_firstJoinTimeHasBeenSet(false),
-    m_attributesHasBeenSet(false),
-    m_published(false),
-    m_publishedHasBeenSet(false),
-    m_ispNameHasBeenSet(false),
-    m_osNameHasBeenSet(false),
-    m_osVersionHasBeenSet(false),
-    m_browserNameHasBeenSet(false),
-    m_browserVersionHasBeenSet(false),
-    m_sdkVersionHasBeenSet(false),
-    m_recordingS3BucketNameHasBeenSet(false),
-    m_recordingS3PrefixHasBeenSet(false),
-    m_recordingState(ParticipantRecordingState::NOT_SET),
-    m_recordingStateHasBeenSet(false)
+Participant::Participant(JsonView jsonValue)
+  : Participant()
 {
   *this = jsonValue;
 }

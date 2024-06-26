@@ -25,11 +25,8 @@ DescribeAccountLimitsResult::DescribeAccountLimitsResult() :
 {
 }
 
-DescribeAccountLimitsResult::DescribeAccountLimitsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_maxNumberOfAutoScalingGroups(0),
-    m_maxNumberOfLaunchConfigurations(0),
-    m_numberOfAutoScalingGroups(0),
-    m_numberOfLaunchConfigurations(0)
+DescribeAccountLimitsResult::DescribeAccountLimitsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : DescribeAccountLimitsResult()
 {
   *this = result;
 }

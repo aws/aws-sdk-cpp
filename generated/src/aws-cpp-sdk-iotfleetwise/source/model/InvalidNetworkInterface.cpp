@@ -25,10 +25,8 @@ InvalidNetworkInterface::InvalidNetworkInterface() :
 {
 }
 
-InvalidNetworkInterface::InvalidNetworkInterface(JsonView jsonValue) : 
-    m_interfaceIdHasBeenSet(false),
-    m_reason(NetworkInterfaceFailureReason::NOT_SET),
-    m_reasonHasBeenSet(false)
+InvalidNetworkInterface::InvalidNetworkInterface(JsonView jsonValue)
+  : InvalidNetworkInterface()
 {
   *this = jsonValue;
 }

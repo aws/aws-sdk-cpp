@@ -28,13 +28,8 @@ CustomizedLoadMetricSpecification::CustomizedLoadMetricSpecification() :
 {
 }
 
-CustomizedLoadMetricSpecification::CustomizedLoadMetricSpecification(JsonView jsonValue) : 
-    m_metricNameHasBeenSet(false),
-    m_namespaceHasBeenSet(false),
-    m_dimensionsHasBeenSet(false),
-    m_statistic(MetricStatistic::NOT_SET),
-    m_statisticHasBeenSet(false),
-    m_unitHasBeenSet(false)
+CustomizedLoadMetricSpecification::CustomizedLoadMetricSpecification(JsonView jsonValue)
+  : CustomizedLoadMetricSpecification()
 {
   *this = jsonValue;
 }

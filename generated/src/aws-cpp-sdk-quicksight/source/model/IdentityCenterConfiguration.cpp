@@ -24,9 +24,8 @@ IdentityCenterConfiguration::IdentityCenterConfiguration() :
 {
 }
 
-IdentityCenterConfiguration::IdentityCenterConfiguration(JsonView jsonValue) : 
-    m_enableIdentityPropagation(false),
-    m_enableIdentityPropagationHasBeenSet(false)
+IdentityCenterConfiguration::IdentityCenterConfiguration(JsonView jsonValue)
+  : IdentityCenterConfiguration()
 {
   *this = jsonValue;
 }

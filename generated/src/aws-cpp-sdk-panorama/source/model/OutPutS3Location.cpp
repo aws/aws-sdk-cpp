@@ -24,9 +24,8 @@ OutPutS3Location::OutPutS3Location() :
 {
 }
 
-OutPutS3Location::OutPutS3Location(JsonView jsonValue) : 
-    m_bucketNameHasBeenSet(false),
-    m_objectKeyHasBeenSet(false)
+OutPutS3Location::OutPutS3Location(JsonView jsonValue)
+  : OutPutS3Location()
 {
   *this = jsonValue;
 }

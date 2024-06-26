@@ -33,18 +33,8 @@ RDSDataSpec::RDSDataSpec() :
 {
 }
 
-RDSDataSpec::RDSDataSpec(JsonView jsonValue) : 
-    m_databaseInformationHasBeenSet(false),
-    m_selectSqlQueryHasBeenSet(false),
-    m_databaseCredentialsHasBeenSet(false),
-    m_s3StagingLocationHasBeenSet(false),
-    m_dataRearrangementHasBeenSet(false),
-    m_dataSchemaHasBeenSet(false),
-    m_dataSchemaUriHasBeenSet(false),
-    m_resourceRoleHasBeenSet(false),
-    m_serviceRoleHasBeenSet(false),
-    m_subnetIdHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false)
+RDSDataSpec::RDSDataSpec(JsonView jsonValue)
+  : RDSDataSpec()
 {
   *this = jsonValue;
 }

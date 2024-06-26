@@ -23,8 +23,8 @@ EsamManifestConfirmConditionNotification::EsamManifestConfirmConditionNotificati
 {
 }
 
-EsamManifestConfirmConditionNotification::EsamManifestConfirmConditionNotification(JsonView jsonValue) : 
-    m_mccXmlHasBeenSet(false)
+EsamManifestConfirmConditionNotification::EsamManifestConfirmConditionNotification(JsonView jsonValue)
+  : EsamManifestConfirmConditionNotification()
 {
   *this = jsonValue;
 }

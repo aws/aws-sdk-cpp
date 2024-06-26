@@ -30,15 +30,8 @@ NodeInfo::NodeInfo() :
 {
 }
 
-NodeInfo::NodeInfo(JsonView jsonValue) : 
-    m_addedToClusterTimeHasBeenSet(false),
-    m_brokerNodeInfoHasBeenSet(false),
-    m_controllerNodeInfoHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_nodeARNHasBeenSet(false),
-    m_nodeType(NodeType::NOT_SET),
-    m_nodeTypeHasBeenSet(false),
-    m_zookeeperNodeInfoHasBeenSet(false)
+NodeInfo::NodeInfo(JsonView jsonValue)
+  : NodeInfo()
 {
   *this = jsonValue;
 }

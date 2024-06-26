@@ -27,10 +27,8 @@ SubnetAssociation::SubnetAssociation() :
 {
 }
 
-SubnetAssociation::SubnetAssociation(const XmlNode& xmlNode) : 
-    m_subnetIdHasBeenSet(false),
-    m_state(TransitGatewayMulitcastDomainAssociationState::NOT_SET),
-    m_stateHasBeenSet(false)
+SubnetAssociation::SubnetAssociation(const XmlNode& xmlNode)
+  : SubnetAssociation()
 {
   *this = xmlNode;
 }

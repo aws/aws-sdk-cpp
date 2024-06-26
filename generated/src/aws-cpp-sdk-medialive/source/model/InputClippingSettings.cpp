@@ -26,11 +26,8 @@ InputClippingSettings::InputClippingSettings() :
 {
 }
 
-InputClippingSettings::InputClippingSettings(JsonView jsonValue) : 
-    m_inputTimecodeSource(InputTimecodeSource::NOT_SET),
-    m_inputTimecodeSourceHasBeenSet(false),
-    m_startTimecodeHasBeenSet(false),
-    m_stopTimecodeHasBeenSet(false)
+InputClippingSettings::InputClippingSettings(JsonView jsonValue)
+  : InputClippingSettings()
 {
   *this = jsonValue;
 }

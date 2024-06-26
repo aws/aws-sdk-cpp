@@ -43,28 +43,8 @@ WorkspaceDirectory::WorkspaceDirectory() :
 {
 }
 
-WorkspaceDirectory::WorkspaceDirectory(JsonView jsonValue) : 
-    m_directoryIdHasBeenSet(false),
-    m_aliasHasBeenSet(false),
-    m_directoryNameHasBeenSet(false),
-    m_registrationCodeHasBeenSet(false),
-    m_subnetIdsHasBeenSet(false),
-    m_dnsIpAddressesHasBeenSet(false),
-    m_customerUserNameHasBeenSet(false),
-    m_iamRoleIdHasBeenSet(false),
-    m_directoryType(WorkspaceDirectoryType::NOT_SET),
-    m_directoryTypeHasBeenSet(false),
-    m_workspaceSecurityGroupIdHasBeenSet(false),
-    m_state(WorkspaceDirectoryState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_workspaceCreationPropertiesHasBeenSet(false),
-    m_ipGroupIdsHasBeenSet(false),
-    m_workspaceAccessPropertiesHasBeenSet(false),
-    m_tenancy(Tenancy::NOT_SET),
-    m_tenancyHasBeenSet(false),
-    m_selfservicePermissionsHasBeenSet(false),
-    m_samlPropertiesHasBeenSet(false),
-    m_certificateBasedAuthPropertiesHasBeenSet(false)
+WorkspaceDirectory::WorkspaceDirectory(JsonView jsonValue)
+  : WorkspaceDirectory()
 {
   *this = jsonValue;
 }

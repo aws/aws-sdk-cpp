@@ -23,8 +23,8 @@ AppRegistryConfiguration::AppRegistryConfiguration() :
 {
 }
 
-AppRegistryConfiguration::AppRegistryConfiguration(JsonView jsonValue) : 
-    m_tagQueryConfigurationHasBeenSet(false)
+AppRegistryConfiguration::AppRegistryConfiguration(JsonView jsonValue)
+  : AppRegistryConfiguration()
 {
   *this = jsonValue;
 }

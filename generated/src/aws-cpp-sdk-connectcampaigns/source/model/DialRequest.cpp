@@ -26,11 +26,8 @@ DialRequest::DialRequest() :
 {
 }
 
-DialRequest::DialRequest(JsonView jsonValue) : 
-    m_clientTokenHasBeenSet(false),
-    m_phoneNumberHasBeenSet(false),
-    m_expirationTimeHasBeenSet(false),
-    m_attributesHasBeenSet(false)
+DialRequest::DialRequest(JsonView jsonValue)
+  : DialRequest()
 {
   *this = jsonValue;
 }

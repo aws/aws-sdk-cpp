@@ -22,8 +22,8 @@ DescribeGeofenceCollectionResult::DescribeGeofenceCollectionResult() :
 {
 }
 
-DescribeGeofenceCollectionResult::DescribeGeofenceCollectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_geofenceCount(0)
+DescribeGeofenceCollectionResult::DescribeGeofenceCollectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeGeofenceCollectionResult()
 {
   *this = result;
 }

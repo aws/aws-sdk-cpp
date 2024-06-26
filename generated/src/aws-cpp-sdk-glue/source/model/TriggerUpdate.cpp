@@ -28,13 +28,8 @@ TriggerUpdate::TriggerUpdate() :
 {
 }
 
-TriggerUpdate::TriggerUpdate(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_scheduleHasBeenSet(false),
-    m_actionsHasBeenSet(false),
-    m_predicateHasBeenSet(false),
-    m_eventBatchingConditionHasBeenSet(false)
+TriggerUpdate::TriggerUpdate(JsonView jsonValue)
+  : TriggerUpdate()
 {
   *this = jsonValue;
 }

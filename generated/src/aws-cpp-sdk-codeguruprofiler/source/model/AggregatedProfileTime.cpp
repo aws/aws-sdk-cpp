@@ -25,10 +25,8 @@ AggregatedProfileTime::AggregatedProfileTime() :
 {
 }
 
-AggregatedProfileTime::AggregatedProfileTime(JsonView jsonValue) : 
-    m_period(AggregationPeriod::NOT_SET),
-    m_periodHasBeenSet(false),
-    m_startHasBeenSet(false)
+AggregatedProfileTime::AggregatedProfileTime(JsonView jsonValue)
+  : AggregatedProfileTime()
 {
   *this = jsonValue;
 }

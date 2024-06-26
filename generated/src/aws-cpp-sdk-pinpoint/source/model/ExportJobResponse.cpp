@@ -41,26 +41,8 @@ ExportJobResponse::ExportJobResponse() :
 {
 }
 
-ExportJobResponse::ExportJobResponse(JsonView jsonValue) : 
-    m_applicationIdHasBeenSet(false),
-    m_completedPieces(0),
-    m_completedPiecesHasBeenSet(false),
-    m_completionDateHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_definitionHasBeenSet(false),
-    m_failedPieces(0),
-    m_failedPiecesHasBeenSet(false),
-    m_failuresHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_jobStatus(JobStatus::NOT_SET),
-    m_jobStatusHasBeenSet(false),
-    m_totalFailures(0),
-    m_totalFailuresHasBeenSet(false),
-    m_totalPieces(0),
-    m_totalPiecesHasBeenSet(false),
-    m_totalProcessed(0),
-    m_totalProcessedHasBeenSet(false),
-    m_typeHasBeenSet(false)
+ExportJobResponse::ExportJobResponse(JsonView jsonValue)
+  : ExportJobResponse()
 {
   *this = jsonValue;
 }

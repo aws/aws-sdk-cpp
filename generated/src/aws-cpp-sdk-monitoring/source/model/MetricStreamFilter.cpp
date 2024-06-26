@@ -26,9 +26,8 @@ MetricStreamFilter::MetricStreamFilter() :
 {
 }
 
-MetricStreamFilter::MetricStreamFilter(const XmlNode& xmlNode) : 
-    m_namespaceHasBeenSet(false),
-    m_metricNamesHasBeenSet(false)
+MetricStreamFilter::MetricStreamFilter(const XmlNode& xmlNode)
+  : MetricStreamFilter()
 {
   *this = xmlNode;
 }

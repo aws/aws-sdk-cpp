@@ -30,15 +30,8 @@ SolutionConfig::SolutionConfig() :
 {
 }
 
-SolutionConfig::SolutionConfig(JsonView jsonValue) : 
-    m_eventValueThresholdHasBeenSet(false),
-    m_hpoConfigHasBeenSet(false),
-    m_algorithmHyperParametersHasBeenSet(false),
-    m_featureTransformationParametersHasBeenSet(false),
-    m_autoMLConfigHasBeenSet(false),
-    m_optimizationObjectiveHasBeenSet(false),
-    m_trainingDataConfigHasBeenSet(false),
-    m_autoTrainingConfigHasBeenSet(false)
+SolutionConfig::SolutionConfig(JsonView jsonValue)
+  : SolutionConfig()
 {
   *this = jsonValue;
 }

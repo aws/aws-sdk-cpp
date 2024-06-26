@@ -24,9 +24,8 @@ BatchListAttachedIndicesResponse::BatchListAttachedIndicesResponse() :
 {
 }
 
-BatchListAttachedIndicesResponse::BatchListAttachedIndicesResponse(JsonView jsonValue) : 
-    m_indexAttachmentsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
+BatchListAttachedIndicesResponse::BatchListAttachedIndicesResponse(JsonView jsonValue)
+  : BatchListAttachedIndicesResponse()
 {
   *this = jsonValue;
 }

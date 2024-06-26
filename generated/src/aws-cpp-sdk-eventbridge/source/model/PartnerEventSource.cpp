@@ -24,9 +24,8 @@ PartnerEventSource::PartnerEventSource() :
 {
 }
 
-PartnerEventSource::PartnerEventSource(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false)
+PartnerEventSource::PartnerEventSource(JsonView jsonValue)
+  : PartnerEventSource()
 {
   *this = jsonValue;
 }

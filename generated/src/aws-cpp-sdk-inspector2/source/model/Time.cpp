@@ -24,9 +24,8 @@ Time::Time() :
 {
 }
 
-Time::Time(JsonView jsonValue) : 
-    m_timeOfDayHasBeenSet(false),
-    m_timezoneHasBeenSet(false)
+Time::Time(JsonView jsonValue)
+  : Time()
 {
   *this = jsonValue;
 }

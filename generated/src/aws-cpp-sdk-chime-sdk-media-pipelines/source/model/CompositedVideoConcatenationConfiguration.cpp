@@ -24,9 +24,8 @@ CompositedVideoConcatenationConfiguration::CompositedVideoConcatenationConfigura
 {
 }
 
-CompositedVideoConcatenationConfiguration::CompositedVideoConcatenationConfiguration(JsonView jsonValue) : 
-    m_state(ArtifactsConcatenationState::NOT_SET),
-    m_stateHasBeenSet(false)
+CompositedVideoConcatenationConfiguration::CompositedVideoConcatenationConfiguration(JsonView jsonValue)
+  : CompositedVideoConcatenationConfiguration()
 {
   *this = jsonValue;
 }

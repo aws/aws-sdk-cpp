@@ -27,10 +27,8 @@ CancelSpotFleetRequestsError::CancelSpotFleetRequestsError() :
 {
 }
 
-CancelSpotFleetRequestsError::CancelSpotFleetRequestsError(const XmlNode& xmlNode) : 
-    m_code(CancelBatchErrorCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+CancelSpotFleetRequestsError::CancelSpotFleetRequestsError(const XmlNode& xmlNode)
+  : CancelSpotFleetRequestsError()
 {
   *this = xmlNode;
 }

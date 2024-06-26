@@ -26,11 +26,8 @@ OpenIdConnectConfigurationDetail::OpenIdConnectConfigurationDetail() :
 {
 }
 
-OpenIdConnectConfigurationDetail::OpenIdConnectConfigurationDetail(JsonView jsonValue) : 
-    m_issuerHasBeenSet(false),
-    m_entityIdPrefixHasBeenSet(false),
-    m_groupConfigurationHasBeenSet(false),
-    m_tokenSelectionHasBeenSet(false)
+OpenIdConnectConfigurationDetail::OpenIdConnectConfigurationDetail(JsonView jsonValue)
+  : OpenIdConnectConfigurationDetail()
 {
   *this = jsonValue;
 }

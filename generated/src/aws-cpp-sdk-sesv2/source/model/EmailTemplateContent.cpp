@@ -25,10 +25,8 @@ EmailTemplateContent::EmailTemplateContent() :
 {
 }
 
-EmailTemplateContent::EmailTemplateContent(JsonView jsonValue) : 
-    m_subjectHasBeenSet(false),
-    m_textHasBeenSet(false),
-    m_htmlHasBeenSet(false)
+EmailTemplateContent::EmailTemplateContent(JsonView jsonValue)
+  : EmailTemplateContent()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ EntitlementData::EntitlementData() :
 {
 }
 
-EntitlementData::EntitlementData(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_unit(EntitlementDataUnit::NOT_SET),
-    m_unitHasBeenSet(false)
+EntitlementData::EntitlementData(JsonView jsonValue)
+  : EntitlementData()
 {
   *this = jsonValue;
 }

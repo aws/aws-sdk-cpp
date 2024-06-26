@@ -24,9 +24,8 @@ TypedLinkSchemaAndFacetName::TypedLinkSchemaAndFacetName() :
 {
 }
 
-TypedLinkSchemaAndFacetName::TypedLinkSchemaAndFacetName(JsonView jsonValue) : 
-    m_schemaArnHasBeenSet(false),
-    m_typedLinkNameHasBeenSet(false)
+TypedLinkSchemaAndFacetName::TypedLinkSchemaAndFacetName(JsonView jsonValue)
+  : TypedLinkSchemaAndFacetName()
 {
   *this = jsonValue;
 }

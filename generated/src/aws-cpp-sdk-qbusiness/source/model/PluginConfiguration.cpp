@@ -23,8 +23,8 @@ PluginConfiguration::PluginConfiguration() :
 {
 }
 
-PluginConfiguration::PluginConfiguration(JsonView jsonValue) : 
-    m_pluginIdHasBeenSet(false)
+PluginConfiguration::PluginConfiguration(JsonView jsonValue)
+  : PluginConfiguration()
 {
   *this = jsonValue;
 }

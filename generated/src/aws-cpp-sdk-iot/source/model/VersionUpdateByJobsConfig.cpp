@@ -25,10 +25,8 @@ VersionUpdateByJobsConfig::VersionUpdateByJobsConfig() :
 {
 }
 
-VersionUpdateByJobsConfig::VersionUpdateByJobsConfig(JsonView jsonValue) : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
+VersionUpdateByJobsConfig::VersionUpdateByJobsConfig(JsonView jsonValue)
+  : VersionUpdateByJobsConfig()
 {
   *this = jsonValue;
 }

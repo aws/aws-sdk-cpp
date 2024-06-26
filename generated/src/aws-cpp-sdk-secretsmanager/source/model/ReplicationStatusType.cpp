@@ -28,13 +28,8 @@ ReplicationStatusType::ReplicationStatusType() :
 {
 }
 
-ReplicationStatusType::ReplicationStatusType(JsonView jsonValue) : 
-    m_regionHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_status(StatusType::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_lastAccessedDateHasBeenSet(false)
+ReplicationStatusType::ReplicationStatusType(JsonView jsonValue)
+  : ReplicationStatusType()
 {
   *this = jsonValue;
 }

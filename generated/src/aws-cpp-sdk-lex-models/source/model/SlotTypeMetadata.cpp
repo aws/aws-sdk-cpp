@@ -27,12 +27,8 @@ SlotTypeMetadata::SlotTypeMetadata() :
 {
 }
 
-SlotTypeMetadata::SlotTypeMetadata(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_lastUpdatedDateHasBeenSet(false),
-    m_createdDateHasBeenSet(false),
-    m_versionHasBeenSet(false)
+SlotTypeMetadata::SlotTypeMetadata(JsonView jsonValue)
+  : SlotTypeMetadata()
 {
   *this = jsonValue;
 }

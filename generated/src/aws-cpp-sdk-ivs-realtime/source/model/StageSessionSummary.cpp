@@ -25,10 +25,8 @@ StageSessionSummary::StageSessionSummary() :
 {
 }
 
-StageSessionSummary::StageSessionSummary(JsonView jsonValue) : 
-    m_sessionIdHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
+StageSessionSummary::StageSessionSummary(JsonView jsonValue)
+  : StageSessionSummary()
 {
   *this = jsonValue;
 }

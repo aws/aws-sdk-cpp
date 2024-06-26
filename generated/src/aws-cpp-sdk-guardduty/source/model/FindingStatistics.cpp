@@ -23,8 +23,8 @@ FindingStatistics::FindingStatistics() :
 {
 }
 
-FindingStatistics::FindingStatistics(JsonView jsonValue) : 
-    m_countBySeverityHasBeenSet(false)
+FindingStatistics::FindingStatistics(JsonView jsonValue)
+  : FindingStatistics()
 {
   *this = jsonValue;
 }

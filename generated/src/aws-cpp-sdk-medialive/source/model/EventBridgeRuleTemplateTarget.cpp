@@ -23,8 +23,8 @@ EventBridgeRuleTemplateTarget::EventBridgeRuleTemplateTarget() :
 {
 }
 
-EventBridgeRuleTemplateTarget::EventBridgeRuleTemplateTarget(JsonView jsonValue) : 
-    m_arnHasBeenSet(false)
+EventBridgeRuleTemplateTarget::EventBridgeRuleTemplateTarget(JsonView jsonValue)
+  : EventBridgeRuleTemplateTarget()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ BillingModeSummary::BillingModeSummary() :
 {
 }
 
-BillingModeSummary::BillingModeSummary(JsonView jsonValue) : 
-    m_billingMode(BillingMode::NOT_SET),
-    m_billingModeHasBeenSet(false),
-    m_lastUpdateToPayPerRequestDateTimeHasBeenSet(false)
+BillingModeSummary::BillingModeSummary(JsonView jsonValue)
+  : BillingModeSummary()
 {
   *this = jsonValue;
 }

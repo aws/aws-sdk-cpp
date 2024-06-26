@@ -26,11 +26,8 @@ SqlParameter::SqlParameter() :
 {
 }
 
-SqlParameter::SqlParameter(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_typeHint(TypeHint::NOT_SET),
-    m_typeHintHasBeenSet(false)
+SqlParameter::SqlParameter(JsonView jsonValue)
+  : SqlParameter()
 {
   *this = jsonValue;
 }

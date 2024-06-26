@@ -23,8 +23,8 @@ QueueSearchFilter::QueueSearchFilter() :
 {
 }
 
-QueueSearchFilter::QueueSearchFilter(JsonView jsonValue) : 
-    m_tagFilterHasBeenSet(false)
+QueueSearchFilter::QueueSearchFilter(JsonView jsonValue)
+  : QueueSearchFilter()
 {
   *this = jsonValue;
 }

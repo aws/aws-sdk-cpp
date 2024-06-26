@@ -28,11 +28,8 @@ TrafficConfig::TrafficConfig() :
 {
 }
 
-TrafficConfig::TrafficConfig(const XmlNode& xmlNode) : 
-    m_singleWeightConfigHasBeenSet(false),
-    m_singleHeaderConfigHasBeenSet(false),
-    m_type(ContinuousDeploymentPolicyType::NOT_SET),
-    m_typeHasBeenSet(false)
+TrafficConfig::TrafficConfig(const XmlNode& xmlNode)
+  : TrafficConfig()
 {
   *this = xmlNode;
 }

@@ -27,12 +27,8 @@ AwsEc2VolumeAttachment::AwsEc2VolumeAttachment() :
 {
 }
 
-AwsEc2VolumeAttachment::AwsEc2VolumeAttachment(JsonView jsonValue) : 
-    m_attachTimeHasBeenSet(false),
-    m_deleteOnTermination(false),
-    m_deleteOnTerminationHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_statusHasBeenSet(false)
+AwsEc2VolumeAttachment::AwsEc2VolumeAttachment(JsonView jsonValue)
+  : AwsEc2VolumeAttachment()
 {
   *this = jsonValue;
 }

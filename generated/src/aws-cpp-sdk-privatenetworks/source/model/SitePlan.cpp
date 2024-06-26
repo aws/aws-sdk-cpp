@@ -24,9 +24,8 @@ SitePlan::SitePlan() :
 {
 }
 
-SitePlan::SitePlan(JsonView jsonValue) : 
-    m_optionsHasBeenSet(false),
-    m_resourceDefinitionsHasBeenSet(false)
+SitePlan::SitePlan(JsonView jsonValue)
+  : SitePlan()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ RetentionPeriod::RetentionPeriod() :
 {
 }
 
-RetentionPeriod::RetentionPeriod(JsonView jsonValue) : 
-    m_retentionPeriodValue(0),
-    m_retentionPeriodValueHasBeenSet(false),
-    m_retentionPeriodUnit(RetentionPeriodUnit::NOT_SET),
-    m_retentionPeriodUnitHasBeenSet(false)
+RetentionPeriod::RetentionPeriod(JsonView jsonValue)
+  : RetentionPeriod()
 {
   *this = jsonValue;
 }

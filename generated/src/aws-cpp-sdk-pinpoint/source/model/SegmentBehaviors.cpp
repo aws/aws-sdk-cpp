@@ -23,8 +23,8 @@ SegmentBehaviors::SegmentBehaviors() :
 {
 }
 
-SegmentBehaviors::SegmentBehaviors(JsonView jsonValue) : 
-    m_recencyHasBeenSet(false)
+SegmentBehaviors::SegmentBehaviors(JsonView jsonValue)
+  : SegmentBehaviors()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ HomeDirectoryMapEntry::HomeDirectoryMapEntry() :
 {
 }
 
-HomeDirectoryMapEntry::HomeDirectoryMapEntry(JsonView jsonValue) : 
-    m_entryHasBeenSet(false),
-    m_targetHasBeenSet(false),
-    m_type(MapType::NOT_SET),
-    m_typeHasBeenSet(false)
+HomeDirectoryMapEntry::HomeDirectoryMapEntry(JsonView jsonValue)
+  : HomeDirectoryMapEntry()
 {
   *this = jsonValue;
 }

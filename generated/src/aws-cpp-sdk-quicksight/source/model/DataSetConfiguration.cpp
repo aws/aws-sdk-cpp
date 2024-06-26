@@ -25,10 +25,8 @@ DataSetConfiguration::DataSetConfiguration() :
 {
 }
 
-DataSetConfiguration::DataSetConfiguration(JsonView jsonValue) : 
-    m_placeholderHasBeenSet(false),
-    m_dataSetSchemaHasBeenSet(false),
-    m_columnGroupSchemaListHasBeenSet(false)
+DataSetConfiguration::DataSetConfiguration(JsonView jsonValue)
+  : DataSetConfiguration()
 {
   *this = jsonValue;
 }

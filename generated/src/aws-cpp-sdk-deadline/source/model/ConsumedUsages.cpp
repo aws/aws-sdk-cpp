@@ -24,9 +24,8 @@ ConsumedUsages::ConsumedUsages() :
 {
 }
 
-ConsumedUsages::ConsumedUsages(JsonView jsonValue) : 
-    m_approximateDollarUsage(0.0),
-    m_approximateDollarUsageHasBeenSet(false)
+ConsumedUsages::ConsumedUsages(JsonView jsonValue)
+  : ConsumedUsages()
 {
   *this = jsonValue;
 }

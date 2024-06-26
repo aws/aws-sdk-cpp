@@ -28,13 +28,8 @@ ThesaurusSummary::ThesaurusSummary() :
 {
 }
 
-ThesaurusSummary::ThesaurusSummary(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_status(ThesaurusStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+ThesaurusSummary::ThesaurusSummary(JsonView jsonValue)
+  : ThesaurusSummary()
 {
   *this = jsonValue;
 }

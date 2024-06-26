@@ -24,9 +24,8 @@ ListCustomLineItemVersionsBillingPeriodRangeFilter::ListCustomLineItemVersionsBi
 {
 }
 
-ListCustomLineItemVersionsBillingPeriodRangeFilter::ListCustomLineItemVersionsBillingPeriodRangeFilter(JsonView jsonValue) : 
-    m_startBillingPeriodHasBeenSet(false),
-    m_endBillingPeriodHasBeenSet(false)
+ListCustomLineItemVersionsBillingPeriodRangeFilter::ListCustomLineItemVersionsBillingPeriodRangeFilter(JsonView jsonValue)
+  : ListCustomLineItemVersionsBillingPeriodRangeFilter()
 {
   *this = jsonValue;
 }

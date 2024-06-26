@@ -25,10 +25,8 @@ OpenIdConfiguration::OpenIdConfiguration() :
 {
 }
 
-OpenIdConfiguration::OpenIdConfiguration(JsonView jsonValue) : 
-    m_issuerHasBeenSet(false),
-    m_subjectHasBeenSet(false),
-    m_audienceHasBeenSet(false)
+OpenIdConfiguration::OpenIdConfiguration(JsonView jsonValue)
+  : OpenIdConfiguration()
 {
   *this = jsonValue;
 }

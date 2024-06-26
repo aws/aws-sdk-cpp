@@ -23,8 +23,8 @@ Greengrass::Greengrass() :
 {
 }
 
-Greengrass::Greengrass(JsonView jsonValue) : 
-    m_groupArnHasBeenSet(false)
+Greengrass::Greengrass(JsonView jsonValue)
+  : Greengrass()
 {
   *this = jsonValue;
 }

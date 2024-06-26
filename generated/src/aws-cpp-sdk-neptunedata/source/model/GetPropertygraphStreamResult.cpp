@@ -23,9 +23,8 @@ GetPropertygraphStreamResult::GetPropertygraphStreamResult() :
 {
 }
 
-GetPropertygraphStreamResult::GetPropertygraphStreamResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_lastTrxTimestampInMillis(0),
-    m_totalRecords(0)
+GetPropertygraphStreamResult::GetPropertygraphStreamResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetPropertygraphStreamResult()
 {
   *this = result;
 }

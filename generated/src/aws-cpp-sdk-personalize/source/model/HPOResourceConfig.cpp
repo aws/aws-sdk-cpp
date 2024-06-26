@@ -24,9 +24,8 @@ HPOResourceConfig::HPOResourceConfig() :
 {
 }
 
-HPOResourceConfig::HPOResourceConfig(JsonView jsonValue) : 
-    m_maxNumberOfTrainingJobsHasBeenSet(false),
-    m_maxParallelTrainingJobsHasBeenSet(false)
+HPOResourceConfig::HPOResourceConfig(JsonView jsonValue)
+  : HPOResourceConfig()
 {
   *this = jsonValue;
 }

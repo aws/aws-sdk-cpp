@@ -25,10 +25,8 @@ FindingProviderSeverity::FindingProviderSeverity() :
 {
 }
 
-FindingProviderSeverity::FindingProviderSeverity(JsonView jsonValue) : 
-    m_label(SeverityLabel::NOT_SET),
-    m_labelHasBeenSet(false),
-    m_originalHasBeenSet(false)
+FindingProviderSeverity::FindingProviderSeverity(JsonView jsonValue)
+  : FindingProviderSeverity()
 {
   *this = jsonValue;
 }

@@ -34,19 +34,8 @@ RulesetItem::RulesetItem() :
 {
 }
 
-RulesetItem::RulesetItem(JsonView jsonValue) : 
-    m_accountIdHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_createDateHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_lastModifiedByHasBeenSet(false),
-    m_lastModifiedDateHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_resourceArnHasBeenSet(false),
-    m_ruleCount(0),
-    m_ruleCountHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_targetArnHasBeenSet(false)
+RulesetItem::RulesetItem(JsonView jsonValue)
+  : RulesetItem()
 {
   *this = jsonValue;
 }

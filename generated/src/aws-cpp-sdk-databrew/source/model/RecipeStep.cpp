@@ -24,9 +24,8 @@ RecipeStep::RecipeStep() :
 {
 }
 
-RecipeStep::RecipeStep(JsonView jsonValue) : 
-    m_actionHasBeenSet(false),
-    m_conditionExpressionsHasBeenSet(false)
+RecipeStep::RecipeStep(JsonView jsonValue)
+  : RecipeStep()
 {
   *this = jsonValue;
 }

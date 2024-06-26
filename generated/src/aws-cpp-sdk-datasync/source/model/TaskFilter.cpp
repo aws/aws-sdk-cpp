@@ -27,12 +27,8 @@ TaskFilter::TaskFilter() :
 {
 }
 
-TaskFilter::TaskFilter(JsonView jsonValue) : 
-    m_name(TaskFilterName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_valuesHasBeenSet(false),
-    m_operator(Operator::NOT_SET),
-    m_operatorHasBeenSet(false)
+TaskFilter::TaskFilter(JsonView jsonValue)
+  : TaskFilter()
 {
   *this = jsonValue;
 }

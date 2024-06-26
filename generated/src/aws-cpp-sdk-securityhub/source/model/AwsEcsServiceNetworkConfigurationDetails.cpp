@@ -23,8 +23,8 @@ AwsEcsServiceNetworkConfigurationDetails::AwsEcsServiceNetworkConfigurationDetai
 {
 }
 
-AwsEcsServiceNetworkConfigurationDetails::AwsEcsServiceNetworkConfigurationDetails(JsonView jsonValue) : 
-    m_awsVpcConfigurationHasBeenSet(false)
+AwsEcsServiceNetworkConfigurationDetails::AwsEcsServiceNetworkConfigurationDetails(JsonView jsonValue)
+  : AwsEcsServiceNetworkConfigurationDetails()
 {
   *this = jsonValue;
 }

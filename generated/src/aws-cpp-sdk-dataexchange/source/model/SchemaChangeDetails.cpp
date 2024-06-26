@@ -26,11 +26,8 @@ SchemaChangeDetails::SchemaChangeDetails() :
 {
 }
 
-SchemaChangeDetails::SchemaChangeDetails(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_type(SchemaChangeType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+SchemaChangeDetails::SchemaChangeDetails(JsonView jsonValue)
+  : SchemaChangeDetails()
 {
   *this = jsonValue;
 }

@@ -50,33 +50,8 @@ DistributionSummary::DistributionSummary() :
 {
 }
 
-DistributionSummary::DistributionSummary(const XmlNode& xmlNode) : 
-    m_idHasBeenSet(false),
-    m_aRNHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_domainNameHasBeenSet(false),
-    m_aliasesHasBeenSet(false),
-    m_originsHasBeenSet(false),
-    m_originGroupsHasBeenSet(false),
-    m_defaultCacheBehaviorHasBeenSet(false),
-    m_cacheBehaviorsHasBeenSet(false),
-    m_customErrorResponsesHasBeenSet(false),
-    m_commentHasBeenSet(false),
-    m_priceClass(PriceClass::NOT_SET),
-    m_priceClassHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_viewerCertificateHasBeenSet(false),
-    m_restrictionsHasBeenSet(false),
-    m_webACLIdHasBeenSet(false),
-    m_httpVersion(HttpVersion::NOT_SET),
-    m_httpVersionHasBeenSet(false),
-    m_isIPV6Enabled(false),
-    m_isIPV6EnabledHasBeenSet(false),
-    m_aliasICPRecordalsHasBeenSet(false),
-    m_staging(false),
-    m_stagingHasBeenSet(false)
+DistributionSummary::DistributionSummary(const XmlNode& xmlNode)
+  : DistributionSummary()
 {
   *this = xmlNode;
 }

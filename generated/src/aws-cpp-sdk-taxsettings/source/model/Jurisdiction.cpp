@@ -24,9 +24,8 @@ Jurisdiction::Jurisdiction() :
 {
 }
 
-Jurisdiction::Jurisdiction(JsonView jsonValue) : 
-    m_countryCodeHasBeenSet(false),
-    m_stateOrRegionHasBeenSet(false)
+Jurisdiction::Jurisdiction(JsonView jsonValue)
+  : Jurisdiction()
 {
   *this = jsonValue;
 }

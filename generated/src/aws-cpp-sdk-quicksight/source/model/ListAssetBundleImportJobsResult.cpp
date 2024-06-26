@@ -22,8 +22,8 @@ ListAssetBundleImportJobsResult::ListAssetBundleImportJobsResult() :
 {
 }
 
-ListAssetBundleImportJobsResult::ListAssetBundleImportJobsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+ListAssetBundleImportJobsResult::ListAssetBundleImportJobsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ListAssetBundleImportJobsResult()
 {
   *this = result;
 }

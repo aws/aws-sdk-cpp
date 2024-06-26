@@ -46,29 +46,8 @@ PlatformDescription::PlatformDescription() :
 {
 }
 
-PlatformDescription::PlatformDescription(const XmlNode& xmlNode) : 
-    m_platformArnHasBeenSet(false),
-    m_platformOwnerHasBeenSet(false),
-    m_platformNameHasBeenSet(false),
-    m_platformVersionHasBeenSet(false),
-    m_solutionStackNameHasBeenSet(false),
-    m_platformStatus(PlatformStatus::NOT_SET),
-    m_platformStatusHasBeenSet(false),
-    m_dateCreatedHasBeenSet(false),
-    m_dateUpdatedHasBeenSet(false),
-    m_platformCategoryHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_maintainerHasBeenSet(false),
-    m_operatingSystemNameHasBeenSet(false),
-    m_operatingSystemVersionHasBeenSet(false),
-    m_programmingLanguagesHasBeenSet(false),
-    m_frameworksHasBeenSet(false),
-    m_customAmiListHasBeenSet(false),
-    m_supportedTierListHasBeenSet(false),
-    m_supportedAddonListHasBeenSet(false),
-    m_platformLifecycleStateHasBeenSet(false),
-    m_platformBranchNameHasBeenSet(false),
-    m_platformBranchLifecycleStateHasBeenSet(false)
+PlatformDescription::PlatformDescription(const XmlNode& xmlNode)
+  : PlatformDescription()
 {
   *this = xmlNode;
 }

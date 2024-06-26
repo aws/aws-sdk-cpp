@@ -32,17 +32,8 @@ Recommendation::Recommendation() :
 {
 }
 
-Recommendation::Recommendation(JsonView jsonValue) : 
-    m_resourceArnHasBeenSet(false),
-    m_type(RecommendationType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_status(RecommendationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false),
-    m_lastUpdatedTimestampHasBeenSet(false),
-    m_impact(RecommendationImpact::NOT_SET),
-    m_impactHasBeenSet(false)
+Recommendation::Recommendation(JsonView jsonValue)
+  : Recommendation()
 {
   *this = jsonValue;
 }

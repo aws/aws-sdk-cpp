@@ -29,14 +29,8 @@ ErrorRootCauseService::ErrorRootCauseService() :
 {
 }
 
-ErrorRootCauseService::ErrorRootCauseService(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_namesHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_accountIdHasBeenSet(false),
-    m_entityPathHasBeenSet(false),
-    m_inferred(false),
-    m_inferredHasBeenSet(false)
+ErrorRootCauseService::ErrorRootCauseService(JsonView jsonValue)
+  : ErrorRootCauseService()
 {
   *this = jsonValue;
 }

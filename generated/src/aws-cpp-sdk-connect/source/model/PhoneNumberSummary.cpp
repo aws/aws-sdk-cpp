@@ -29,14 +29,8 @@ PhoneNumberSummary::PhoneNumberSummary() :
 {
 }
 
-PhoneNumberSummary::PhoneNumberSummary(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_phoneNumberHasBeenSet(false),
-    m_phoneNumberType(PhoneNumberType::NOT_SET),
-    m_phoneNumberTypeHasBeenSet(false),
-    m_phoneNumberCountryCode(PhoneNumberCountryCode::NOT_SET),
-    m_phoneNumberCountryCodeHasBeenSet(false)
+PhoneNumberSummary::PhoneNumberSummary(JsonView jsonValue)
+  : PhoneNumberSummary()
 {
   *this = jsonValue;
 }

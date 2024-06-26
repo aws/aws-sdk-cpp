@@ -28,13 +28,8 @@ DocumentReviewerResponseSource::DocumentReviewerResponseSource() :
 {
 }
 
-DocumentReviewerResponseSource::DocumentReviewerResponseSource(JsonView jsonValue) : 
-    m_createTimeHasBeenSet(false),
-    m_updatedTimeHasBeenSet(false),
-    m_reviewStatus(ReviewStatus::NOT_SET),
-    m_reviewStatusHasBeenSet(false),
-    m_commentHasBeenSet(false),
-    m_reviewerHasBeenSet(false)
+DocumentReviewerResponseSource::DocumentReviewerResponseSource(JsonView jsonValue)
+  : DocumentReviewerResponseSource()
 {
   *this = jsonValue;
 }

@@ -26,9 +26,8 @@ EnabledMetric::EnabledMetric() :
 {
 }
 
-EnabledMetric::EnabledMetric(const XmlNode& xmlNode) : 
-    m_metricHasBeenSet(false),
-    m_granularityHasBeenSet(false)
+EnabledMetric::EnabledMetric(const XmlNode& xmlNode)
+  : EnabledMetric()
 {
   *this = xmlNode;
 }

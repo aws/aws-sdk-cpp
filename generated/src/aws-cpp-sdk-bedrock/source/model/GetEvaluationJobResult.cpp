@@ -23,9 +23,8 @@ GetEvaluationJobResult::GetEvaluationJobResult() :
 {
 }
 
-GetEvaluationJobResult::GetEvaluationJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(EvaluationJobStatus::NOT_SET),
-    m_jobType(EvaluationJobType::NOT_SET)
+GetEvaluationJobResult::GetEvaluationJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetEvaluationJobResult()
 {
   *this = result;
 }

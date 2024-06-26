@@ -25,10 +25,8 @@ ColumnHierarchy::ColumnHierarchy() :
 {
 }
 
-ColumnHierarchy::ColumnHierarchy(JsonView jsonValue) : 
-    m_explicitHierarchyHasBeenSet(false),
-    m_dateTimeHierarchyHasBeenSet(false),
-    m_predefinedHierarchyHasBeenSet(false)
+ColumnHierarchy::ColumnHierarchy(JsonView jsonValue)
+  : ColumnHierarchy()
 {
   *this = jsonValue;
 }

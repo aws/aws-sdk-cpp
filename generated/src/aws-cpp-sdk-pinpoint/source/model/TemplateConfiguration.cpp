@@ -27,12 +27,8 @@ TemplateConfiguration::TemplateConfiguration() :
 {
 }
 
-TemplateConfiguration::TemplateConfiguration(JsonView jsonValue) : 
-    m_emailTemplateHasBeenSet(false),
-    m_pushTemplateHasBeenSet(false),
-    m_sMSTemplateHasBeenSet(false),
-    m_voiceTemplateHasBeenSet(false),
-    m_inAppTemplateHasBeenSet(false)
+TemplateConfiguration::TemplateConfiguration(JsonView jsonValue)
+  : TemplateConfiguration()
 {
   *this = jsonValue;
 }

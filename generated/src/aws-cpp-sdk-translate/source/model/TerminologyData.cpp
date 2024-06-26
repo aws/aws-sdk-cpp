@@ -28,12 +28,8 @@ TerminologyData::TerminologyData() :
 {
 }
 
-TerminologyData::TerminologyData(JsonView jsonValue) : 
-    m_fileHasBeenSet(false),
-    m_format(TerminologyDataFormat::NOT_SET),
-    m_formatHasBeenSet(false),
-    m_directionality(Directionality::NOT_SET),
-    m_directionalityHasBeenSet(false)
+TerminologyData::TerminologyData(JsonView jsonValue)
+  : TerminologyData()
 {
   *this = jsonValue;
 }

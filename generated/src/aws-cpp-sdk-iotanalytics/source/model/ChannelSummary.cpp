@@ -29,14 +29,8 @@ ChannelSummary::ChannelSummary() :
 {
 }
 
-ChannelSummary::ChannelSummary(JsonView jsonValue) : 
-    m_channelNameHasBeenSet(false),
-    m_channelStorageHasBeenSet(false),
-    m_status(ChannelStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastUpdateTimeHasBeenSet(false),
-    m_lastMessageArrivalTimeHasBeenSet(false)
+ChannelSummary::ChannelSummary(JsonView jsonValue)
+  : ChannelSummary()
 {
   *this = jsonValue;
 }

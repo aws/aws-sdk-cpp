@@ -23,8 +23,8 @@ IncrementalPullConfig::IncrementalPullConfig() :
 {
 }
 
-IncrementalPullConfig::IncrementalPullConfig(JsonView jsonValue) : 
-    m_datetimeTypeFieldNameHasBeenSet(false)
+IncrementalPullConfig::IncrementalPullConfig(JsonView jsonValue)
+  : IncrementalPullConfig()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ MembershipItem::MembershipItem() :
 {
 }
 
-MembershipItem::MembershipItem(JsonView jsonValue) : 
-    m_memberIdHasBeenSet(false),
-    m_role(RoomMembershipRole::NOT_SET),
-    m_roleHasBeenSet(false)
+MembershipItem::MembershipItem(JsonView jsonValue)
+  : MembershipItem()
 {
   *this = jsonValue;
 }

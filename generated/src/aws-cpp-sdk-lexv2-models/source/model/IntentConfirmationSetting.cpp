@@ -36,21 +36,8 @@ IntentConfirmationSetting::IntentConfirmationSetting() :
 {
 }
 
-IntentConfirmationSetting::IntentConfirmationSetting(JsonView jsonValue) : 
-    m_promptSpecificationHasBeenSet(false),
-    m_declinationResponseHasBeenSet(false),
-    m_active(false),
-    m_activeHasBeenSet(false),
-    m_confirmationResponseHasBeenSet(false),
-    m_confirmationNextStepHasBeenSet(false),
-    m_confirmationConditionalHasBeenSet(false),
-    m_declinationNextStepHasBeenSet(false),
-    m_declinationConditionalHasBeenSet(false),
-    m_failureResponseHasBeenSet(false),
-    m_failureNextStepHasBeenSet(false),
-    m_failureConditionalHasBeenSet(false),
-    m_codeHookHasBeenSet(false),
-    m_elicitationCodeHookHasBeenSet(false)
+IntentConfirmationSetting::IntentConfirmationSetting(JsonView jsonValue)
+  : IntentConfirmationSetting()
 {
   *this = jsonValue;
 }

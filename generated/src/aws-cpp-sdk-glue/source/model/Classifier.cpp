@@ -26,11 +26,8 @@ Classifier::Classifier() :
 {
 }
 
-Classifier::Classifier(JsonView jsonValue) : 
-    m_grokClassifierHasBeenSet(false),
-    m_xMLClassifierHasBeenSet(false),
-    m_jsonClassifierHasBeenSet(false),
-    m_csvClassifierHasBeenSet(false)
+Classifier::Classifier(JsonView jsonValue)
+  : Classifier()
 {
   *this = jsonValue;
 }

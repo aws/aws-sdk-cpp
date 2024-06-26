@@ -26,11 +26,8 @@ AcceptChoice::AcceptChoice() :
 {
 }
 
-AcceptChoice::AcceptChoice(JsonView jsonValue) : 
-    m_editedValueHasBeenSet(false),
-    m_predictionChoice(0),
-    m_predictionChoiceHasBeenSet(false),
-    m_predictionTargetHasBeenSet(false)
+AcceptChoice::AcceptChoice(JsonView jsonValue)
+  : AcceptChoice()
 {
   *this = jsonValue;
 }

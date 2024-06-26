@@ -25,10 +25,8 @@ KeyUsage::KeyUsage() :
 {
 }
 
-KeyUsage::KeyUsage(JsonView jsonValue) : 
-    m_critical(false),
-    m_criticalHasBeenSet(false),
-    m_usageFlagsHasBeenSet(false)
+KeyUsage::KeyUsage(JsonView jsonValue)
+  : KeyUsage()
 {
   *this = jsonValue;
 }

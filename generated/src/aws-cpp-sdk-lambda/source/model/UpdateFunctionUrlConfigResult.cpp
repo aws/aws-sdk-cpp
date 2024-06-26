@@ -23,9 +23,8 @@ UpdateFunctionUrlConfigResult::UpdateFunctionUrlConfigResult() :
 {
 }
 
-UpdateFunctionUrlConfigResult::UpdateFunctionUrlConfigResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_authType(FunctionUrlAuthType::NOT_SET),
-    m_invokeMode(InvokeMode::NOT_SET)
+UpdateFunctionUrlConfigResult::UpdateFunctionUrlConfigResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateFunctionUrlConfigResult()
 {
   *this = result;
 }

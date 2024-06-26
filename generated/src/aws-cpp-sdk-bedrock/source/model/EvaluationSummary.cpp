@@ -31,16 +31,8 @@ EvaluationSummary::EvaluationSummary() :
 {
 }
 
-EvaluationSummary::EvaluationSummary(JsonView jsonValue) : 
-    m_jobArnHasBeenSet(false),
-    m_jobNameHasBeenSet(false),
-    m_status(EvaluationJobStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_jobType(EvaluationJobType::NOT_SET),
-    m_jobTypeHasBeenSet(false),
-    m_evaluationTaskTypesHasBeenSet(false),
-    m_modelIdentifiersHasBeenSet(false)
+EvaluationSummary::EvaluationSummary(JsonView jsonValue)
+  : EvaluationSummary()
 {
   *this = jsonValue;
 }

@@ -28,13 +28,8 @@ RemediationExecutionStep::RemediationExecutionStep() :
 {
 }
 
-RemediationExecutionStep::RemediationExecutionStep(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_state(RemediationExecutionStepState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_stopTimeHasBeenSet(false)
+RemediationExecutionStep::RemediationExecutionStep(JsonView jsonValue)
+  : RemediationExecutionStep()
 {
   *this = jsonValue;
 }

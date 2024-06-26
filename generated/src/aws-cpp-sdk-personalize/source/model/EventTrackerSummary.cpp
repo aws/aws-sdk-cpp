@@ -27,12 +27,8 @@ EventTrackerSummary::EventTrackerSummary() :
 {
 }
 
-EventTrackerSummary::EventTrackerSummary(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_eventTrackerArnHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_creationDateTimeHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false)
+EventTrackerSummary::EventTrackerSummary(JsonView jsonValue)
+  : EventTrackerSummary()
 {
   *this = jsonValue;
 }

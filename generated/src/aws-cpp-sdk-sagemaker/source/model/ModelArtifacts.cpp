@@ -23,8 +23,8 @@ ModelArtifacts::ModelArtifacts() :
 {
 }
 
-ModelArtifacts::ModelArtifacts(JsonView jsonValue) : 
-    m_s3ModelArtifactsHasBeenSet(false)
+ModelArtifacts::ModelArtifacts(JsonView jsonValue)
+  : ModelArtifacts()
 {
   *this = jsonValue;
 }

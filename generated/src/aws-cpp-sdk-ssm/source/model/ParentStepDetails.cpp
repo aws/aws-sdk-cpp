@@ -28,13 +28,8 @@ ParentStepDetails::ParentStepDetails() :
 {
 }
 
-ParentStepDetails::ParentStepDetails(JsonView jsonValue) : 
-    m_stepExecutionIdHasBeenSet(false),
-    m_stepNameHasBeenSet(false),
-    m_actionHasBeenSet(false),
-    m_iteration(0),
-    m_iterationHasBeenSet(false),
-    m_iteratorValueHasBeenSet(false)
+ParentStepDetails::ParentStepDetails(JsonView jsonValue)
+  : ParentStepDetails()
 {
   *this = jsonValue;
 }

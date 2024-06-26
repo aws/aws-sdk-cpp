@@ -24,9 +24,8 @@ EntityDoesNotExistException::EntityDoesNotExistException() :
 {
 }
 
-EntityDoesNotExistException::EntityDoesNotExistException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
+EntityDoesNotExistException::EntityDoesNotExistException(JsonView jsonValue)
+  : EntityDoesNotExistException()
 {
   *this = jsonValue;
 }

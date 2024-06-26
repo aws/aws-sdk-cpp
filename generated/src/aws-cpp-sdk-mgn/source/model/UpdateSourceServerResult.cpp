@@ -23,9 +23,8 @@ UpdateSourceServerResult::UpdateSourceServerResult() :
 {
 }
 
-UpdateSourceServerResult::UpdateSourceServerResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_isArchived(false),
-    m_replicationType(ReplicationType::NOT_SET)
+UpdateSourceServerResult::UpdateSourceServerResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateSourceServerResult()
 {
   *this = result;
 }

@@ -25,10 +25,8 @@ JobDetails::JobDetails() :
 {
 }
 
-JobDetails::JobDetails(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_dataHasBeenSet(false),
-    m_accountIdHasBeenSet(false)
+JobDetails::JobDetails(JsonView jsonValue)
+  : JobDetails()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ ResponseInspectionBodyContains::ResponseInspectionBodyContains() :
 {
 }
 
-ResponseInspectionBodyContains::ResponseInspectionBodyContains(JsonView jsonValue) : 
-    m_successStringsHasBeenSet(false),
-    m_failureStringsHasBeenSet(false)
+ResponseInspectionBodyContains::ResponseInspectionBodyContains(JsonView jsonValue)
+  : ResponseInspectionBodyContains()
 {
   *this = jsonValue;
 }

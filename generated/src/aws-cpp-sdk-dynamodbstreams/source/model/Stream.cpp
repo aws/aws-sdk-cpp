@@ -25,10 +25,8 @@ Stream::Stream() :
 {
 }
 
-Stream::Stream(JsonView jsonValue) : 
-    m_streamArnHasBeenSet(false),
-    m_tableNameHasBeenSet(false),
-    m_streamLabelHasBeenSet(false)
+Stream::Stream(JsonView jsonValue)
+  : Stream()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ AuditEventResultEntry::AuditEventResultEntry() :
 {
 }
 
-AuditEventResultEntry::AuditEventResultEntry(JsonView jsonValue) : 
-    m_eventIDHasBeenSet(false),
-    m_idHasBeenSet(false)
+AuditEventResultEntry::AuditEventResultEntry(JsonView jsonValue)
+  : AuditEventResultEntry()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ PinData::PinData() :
 {
 }
 
-PinData::PinData(JsonView jsonValue) : 
-    m_pinOffsetHasBeenSet(false),
-    m_verificationValueHasBeenSet(false)
+PinData::PinData(JsonView jsonValue)
+  : PinData()
 {
   *this = jsonValue;
 }

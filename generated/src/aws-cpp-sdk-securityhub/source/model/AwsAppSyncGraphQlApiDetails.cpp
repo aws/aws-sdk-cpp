@@ -35,20 +35,8 @@ AwsAppSyncGraphQlApiDetails::AwsAppSyncGraphQlApiDetails() :
 {
 }
 
-AwsAppSyncGraphQlApiDetails::AwsAppSyncGraphQlApiDetails(JsonView jsonValue) : 
-    m_apiIdHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_openIdConnectConfigHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_lambdaAuthorizerConfigHasBeenSet(false),
-    m_xrayEnabled(false),
-    m_xrayEnabledHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_userPoolConfigHasBeenSet(false),
-    m_authenticationTypeHasBeenSet(false),
-    m_logConfigHasBeenSet(false),
-    m_additionalAuthenticationProvidersHasBeenSet(false),
-    m_wafWebAclArnHasBeenSet(false)
+AwsAppSyncGraphQlApiDetails::AwsAppSyncGraphQlApiDetails(JsonView jsonValue)
+  : AwsAppSyncGraphQlApiDetails()
 {
   *this = jsonValue;
 }

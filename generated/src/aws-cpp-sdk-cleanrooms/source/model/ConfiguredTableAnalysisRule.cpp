@@ -29,14 +29,8 @@ ConfiguredTableAnalysisRule::ConfiguredTableAnalysisRule() :
 {
 }
 
-ConfiguredTableAnalysisRule::ConfiguredTableAnalysisRule(JsonView jsonValue) : 
-    m_configuredTableIdHasBeenSet(false),
-    m_configuredTableArnHasBeenSet(false),
-    m_policyHasBeenSet(false),
-    m_type(ConfiguredTableAnalysisRuleType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
+ConfiguredTableAnalysisRule::ConfiguredTableAnalysisRule(JsonView jsonValue)
+  : ConfiguredTableAnalysisRule()
 {
   *this = jsonValue;
 }

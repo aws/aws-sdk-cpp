@@ -27,10 +27,8 @@ AvailabilityOptionsStatus::AvailabilityOptionsStatus() :
 {
 }
 
-AvailabilityOptionsStatus::AvailabilityOptionsStatus(const XmlNode& xmlNode) : 
-    m_options(false),
-    m_optionsHasBeenSet(false),
-    m_statusHasBeenSet(false)
+AvailabilityOptionsStatus::AvailabilityOptionsStatus(const XmlNode& xmlNode)
+  : AvailabilityOptionsStatus()
 {
   *this = xmlNode;
 }

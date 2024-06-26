@@ -23,8 +23,8 @@ TemplateVersionSourceInput::TemplateVersionSourceInput() :
 {
 }
 
-TemplateVersionSourceInput::TemplateVersionSourceInput(JsonView jsonValue) : 
-    m_s3HasBeenSet(false)
+TemplateVersionSourceInput::TemplateVersionSourceInput(JsonView jsonValue)
+  : TemplateVersionSourceInput()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ LayoutConfiguration::LayoutConfiguration() :
 {
 }
 
-LayoutConfiguration::LayoutConfiguration(JsonView jsonValue) : 
-    m_gridLayoutHasBeenSet(false),
-    m_freeFormLayoutHasBeenSet(false),
-    m_sectionBasedLayoutHasBeenSet(false)
+LayoutConfiguration::LayoutConfiguration(JsonView jsonValue)
+  : LayoutConfiguration()
 {
   *this = jsonValue;
 }

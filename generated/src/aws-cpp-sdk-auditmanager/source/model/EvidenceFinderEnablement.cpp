@@ -28,13 +28,8 @@ EvidenceFinderEnablement::EvidenceFinderEnablement() :
 {
 }
 
-EvidenceFinderEnablement::EvidenceFinderEnablement(JsonView jsonValue) : 
-    m_eventDataStoreArnHasBeenSet(false),
-    m_enablementStatus(EvidenceFinderEnablementStatus::NOT_SET),
-    m_enablementStatusHasBeenSet(false),
-    m_backfillStatus(EvidenceFinderBackfillStatus::NOT_SET),
-    m_backfillStatusHasBeenSet(false),
-    m_errorHasBeenSet(false)
+EvidenceFinderEnablement::EvidenceFinderEnablement(JsonView jsonValue)
+  : EvidenceFinderEnablement()
 {
   *this = jsonValue;
 }

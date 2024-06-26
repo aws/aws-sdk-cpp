@@ -24,9 +24,8 @@ DvbTdtSettings::DvbTdtSettings() :
 {
 }
 
-DvbTdtSettings::DvbTdtSettings(JsonView jsonValue) : 
-    m_tdtInterval(0),
-    m_tdtIntervalHasBeenSet(false)
+DvbTdtSettings::DvbTdtSettings(JsonView jsonValue)
+  : DvbTdtSettings()
 {
   *this = jsonValue;
 }

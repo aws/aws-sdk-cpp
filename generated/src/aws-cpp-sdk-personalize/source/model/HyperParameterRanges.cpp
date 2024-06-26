@@ -25,10 +25,8 @@ HyperParameterRanges::HyperParameterRanges() :
 {
 }
 
-HyperParameterRanges::HyperParameterRanges(JsonView jsonValue) : 
-    m_integerHyperParameterRangesHasBeenSet(false),
-    m_continuousHyperParameterRangesHasBeenSet(false),
-    m_categoricalHyperParameterRangesHasBeenSet(false)
+HyperParameterRanges::HyperParameterRanges(JsonView jsonValue)
+  : HyperParameterRanges()
 {
   *this = jsonValue;
 }

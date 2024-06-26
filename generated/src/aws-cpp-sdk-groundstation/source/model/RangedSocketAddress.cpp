@@ -24,9 +24,8 @@ RangedSocketAddress::RangedSocketAddress() :
 {
 }
 
-RangedSocketAddress::RangedSocketAddress(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_portRangeHasBeenSet(false)
+RangedSocketAddress::RangedSocketAddress(JsonView jsonValue)
+  : RangedSocketAddress()
 {
   *this = jsonValue;
 }

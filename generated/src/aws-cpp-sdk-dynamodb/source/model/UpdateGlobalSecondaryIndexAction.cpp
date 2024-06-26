@@ -25,10 +25,8 @@ UpdateGlobalSecondaryIndexAction::UpdateGlobalSecondaryIndexAction() :
 {
 }
 
-UpdateGlobalSecondaryIndexAction::UpdateGlobalSecondaryIndexAction(JsonView jsonValue) : 
-    m_indexNameHasBeenSet(false),
-    m_provisionedThroughputHasBeenSet(false),
-    m_onDemandThroughputHasBeenSet(false)
+UpdateGlobalSecondaryIndexAction::UpdateGlobalSecondaryIndexAction(JsonView jsonValue)
+  : UpdateGlobalSecondaryIndexAction()
 {
   *this = jsonValue;
 }

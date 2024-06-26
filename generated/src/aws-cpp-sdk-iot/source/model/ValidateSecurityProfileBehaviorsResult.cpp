@@ -22,8 +22,8 @@ ValidateSecurityProfileBehaviorsResult::ValidateSecurityProfileBehaviorsResult()
 {
 }
 
-ValidateSecurityProfileBehaviorsResult::ValidateSecurityProfileBehaviorsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_valid(false)
+ValidateSecurityProfileBehaviorsResult::ValidateSecurityProfileBehaviorsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ValidateSecurityProfileBehaviorsResult()
 {
   *this = result;
 }

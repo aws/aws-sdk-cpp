@@ -23,8 +23,8 @@ AwsS3BucketBucketLifecycleConfigurationRulesFilterDetails::AwsS3BucketBucketLife
 {
 }
 
-AwsS3BucketBucketLifecycleConfigurationRulesFilterDetails::AwsS3BucketBucketLifecycleConfigurationRulesFilterDetails(JsonView jsonValue) : 
-    m_predicateHasBeenSet(false)
+AwsS3BucketBucketLifecycleConfigurationRulesFilterDetails::AwsS3BucketBucketLifecycleConfigurationRulesFilterDetails(JsonView jsonValue)
+  : AwsS3BucketBucketLifecycleConfigurationRulesFilterDetails()
 {
   *this = jsonValue;
 }

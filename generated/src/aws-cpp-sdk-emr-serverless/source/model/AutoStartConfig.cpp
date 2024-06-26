@@ -24,9 +24,8 @@ AutoStartConfig::AutoStartConfig() :
 {
 }
 
-AutoStartConfig::AutoStartConfig(JsonView jsonValue) : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
+AutoStartConfig::AutoStartConfig(JsonView jsonValue)
+  : AutoStartConfig()
 {
   *this = jsonValue;
 }

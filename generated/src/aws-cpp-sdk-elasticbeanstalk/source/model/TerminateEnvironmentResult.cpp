@@ -25,11 +25,8 @@ TerminateEnvironmentResult::TerminateEnvironmentResult() :
 {
 }
 
-TerminateEnvironmentResult::TerminateEnvironmentResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_status(EnvironmentStatus::NOT_SET),
-    m_abortableOperationInProgress(false),
-    m_health(EnvironmentHealth::NOT_SET),
-    m_healthStatus(EnvironmentHealthStatus::NOT_SET)
+TerminateEnvironmentResult::TerminateEnvironmentResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : TerminateEnvironmentResult()
 {
   *this = result;
 }

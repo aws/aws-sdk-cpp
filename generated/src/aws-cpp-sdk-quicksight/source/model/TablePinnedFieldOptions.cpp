@@ -23,8 +23,8 @@ TablePinnedFieldOptions::TablePinnedFieldOptions() :
 {
 }
 
-TablePinnedFieldOptions::TablePinnedFieldOptions(JsonView jsonValue) : 
-    m_pinnedLeftFieldsHasBeenSet(false)
+TablePinnedFieldOptions::TablePinnedFieldOptions(JsonView jsonValue)
+  : TablePinnedFieldOptions()
 {
   *this = jsonValue;
 }

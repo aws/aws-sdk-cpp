@@ -27,12 +27,8 @@ AdminAccountSummary::AdminAccountSummary() :
 {
 }
 
-AdminAccountSummary::AdminAccountSummary(JsonView jsonValue) : 
-    m_adminAccountHasBeenSet(false),
-    m_defaultAdmin(false),
-    m_defaultAdminHasBeenSet(false),
-    m_status(OrganizationStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+AdminAccountSummary::AdminAccountSummary(JsonView jsonValue)
+  : AdminAccountSummary()
 {
   *this = jsonValue;
 }

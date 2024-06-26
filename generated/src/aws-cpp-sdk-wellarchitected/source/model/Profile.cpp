@@ -32,17 +32,8 @@ Profile::Profile() :
 {
 }
 
-Profile::Profile(JsonView jsonValue) : 
-    m_profileArnHasBeenSet(false),
-    m_profileVersionHasBeenSet(false),
-    m_profileNameHasBeenSet(false),
-    m_profileDescriptionHasBeenSet(false),
-    m_profileQuestionsHasBeenSet(false),
-    m_ownerHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_shareInvitationIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+Profile::Profile(JsonView jsonValue)
+  : Profile()
 {
   *this = jsonValue;
 }

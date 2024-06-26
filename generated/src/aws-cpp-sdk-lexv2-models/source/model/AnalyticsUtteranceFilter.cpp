@@ -27,12 +27,8 @@ AnalyticsUtteranceFilter::AnalyticsUtteranceFilter() :
 {
 }
 
-AnalyticsUtteranceFilter::AnalyticsUtteranceFilter(JsonView jsonValue) : 
-    m_name(AnalyticsUtteranceFilterName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_operator(AnalyticsFilterOperator::NOT_SET),
-    m_operatorHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+AnalyticsUtteranceFilter::AnalyticsUtteranceFilter(JsonView jsonValue)
+  : AnalyticsUtteranceFilter()
 {
   *this = jsonValue;
 }

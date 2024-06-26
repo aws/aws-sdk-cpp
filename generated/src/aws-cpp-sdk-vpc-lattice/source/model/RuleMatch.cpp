@@ -23,8 +23,8 @@ RuleMatch::RuleMatch() :
 {
 }
 
-RuleMatch::RuleMatch(JsonView jsonValue) : 
-    m_httpMatchHasBeenSet(false)
+RuleMatch::RuleMatch(JsonView jsonValue)
+  : RuleMatch()
 {
   *this = jsonValue;
 }

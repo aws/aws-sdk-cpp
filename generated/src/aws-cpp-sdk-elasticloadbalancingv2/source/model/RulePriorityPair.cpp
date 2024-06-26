@@ -27,10 +27,8 @@ RulePriorityPair::RulePriorityPair() :
 {
 }
 
-RulePriorityPair::RulePriorityPair(const XmlNode& xmlNode) : 
-    m_ruleArnHasBeenSet(false),
-    m_priority(0),
-    m_priorityHasBeenSet(false)
+RulePriorityPair::RulePriorityPair(const XmlNode& xmlNode)
+  : RulePriorityPair()
 {
   *this = xmlNode;
 }

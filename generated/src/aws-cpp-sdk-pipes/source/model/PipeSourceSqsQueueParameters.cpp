@@ -26,11 +26,8 @@ PipeSourceSqsQueueParameters::PipeSourceSqsQueueParameters() :
 {
 }
 
-PipeSourceSqsQueueParameters::PipeSourceSqsQueueParameters(JsonView jsonValue) : 
-    m_batchSize(0),
-    m_batchSizeHasBeenSet(false),
-    m_maximumBatchingWindowInSeconds(0),
-    m_maximumBatchingWindowInSecondsHasBeenSet(false)
+PipeSourceSqsQueueParameters::PipeSourceSqsQueueParameters(JsonView jsonValue)
+  : PipeSourceSqsQueueParameters()
 {
   *this = jsonValue;
 }

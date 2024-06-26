@@ -24,9 +24,8 @@ Options::Options() :
 {
 }
 
-Options::Options(JsonView jsonValue) : 
-    m_activationOverrideBehavior(ActivationOverrideBehavior::NOT_SET),
-    m_activationOverrideBehaviorHasBeenSet(false)
+Options::Options(JsonView jsonValue)
+  : Options()
 {
   *this = jsonValue;
 }

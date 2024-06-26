@@ -24,9 +24,8 @@ RuntimeHintDetails::RuntimeHintDetails() :
 {
 }
 
-RuntimeHintDetails::RuntimeHintDetails(JsonView jsonValue) : 
-    m_runtimeHintValuesHasBeenSet(false),
-    m_subSlotHintsHasBeenSet(false)
+RuntimeHintDetails::RuntimeHintDetails(JsonView jsonValue)
+  : RuntimeHintDetails()
 {
   *this = jsonValue;
 }

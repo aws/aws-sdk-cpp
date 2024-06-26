@@ -40,25 +40,8 @@ OTAUpdateInfo::OTAUpdateInfo() :
 {
 }
 
-OTAUpdateInfo::OTAUpdateInfo(JsonView jsonValue) : 
-    m_otaUpdateIdHasBeenSet(false),
-    m_otaUpdateArnHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_lastModifiedDateHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_targetsHasBeenSet(false),
-    m_protocolsHasBeenSet(false),
-    m_awsJobExecutionsRolloutConfigHasBeenSet(false),
-    m_awsJobPresignedUrlConfigHasBeenSet(false),
-    m_targetSelection(TargetSelection::NOT_SET),
-    m_targetSelectionHasBeenSet(false),
-    m_otaUpdateFilesHasBeenSet(false),
-    m_otaUpdateStatus(OTAUpdateStatus::NOT_SET),
-    m_otaUpdateStatusHasBeenSet(false),
-    m_awsIotJobIdHasBeenSet(false),
-    m_awsIotJobArnHasBeenSet(false),
-    m_errorInfoHasBeenSet(false),
-    m_additionalParametersHasBeenSet(false)
+OTAUpdateInfo::OTAUpdateInfo(JsonView jsonValue)
+  : OTAUpdateInfo()
 {
   *this = jsonValue;
 }

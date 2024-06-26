@@ -28,13 +28,8 @@ PeriodToDateComputation::PeriodToDateComputation() :
 {
 }
 
-PeriodToDateComputation::PeriodToDateComputation(JsonView jsonValue) : 
-    m_computationIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_timeHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_periodTimeGranularity(TimeGranularity::NOT_SET),
-    m_periodTimeGranularityHasBeenSet(false)
+PeriodToDateComputation::PeriodToDateComputation(JsonView jsonValue)
+  : PeriodToDateComputation()
 {
   *this = jsonValue;
 }

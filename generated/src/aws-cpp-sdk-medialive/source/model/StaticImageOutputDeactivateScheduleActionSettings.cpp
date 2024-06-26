@@ -27,12 +27,8 @@ StaticImageOutputDeactivateScheduleActionSettings::StaticImageOutputDeactivateSc
 {
 }
 
-StaticImageOutputDeactivateScheduleActionSettings::StaticImageOutputDeactivateScheduleActionSettings(JsonView jsonValue) : 
-    m_fadeOut(0),
-    m_fadeOutHasBeenSet(false),
-    m_layer(0),
-    m_layerHasBeenSet(false),
-    m_outputNamesHasBeenSet(false)
+StaticImageOutputDeactivateScheduleActionSettings::StaticImageOutputDeactivateScheduleActionSettings(JsonView jsonValue)
+  : StaticImageOutputDeactivateScheduleActionSettings()
 {
   *this = jsonValue;
 }

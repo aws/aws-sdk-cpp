@@ -28,11 +28,8 @@ ResponseHeadersPolicyServerTimingHeadersConfig::ResponseHeadersPolicyServerTimin
 {
 }
 
-ResponseHeadersPolicyServerTimingHeadersConfig::ResponseHeadersPolicyServerTimingHeadersConfig(const XmlNode& xmlNode) : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_samplingRate(0.0),
-    m_samplingRateHasBeenSet(false)
+ResponseHeadersPolicyServerTimingHeadersConfig::ResponseHeadersPolicyServerTimingHeadersConfig(const XmlNode& xmlNode)
+  : ResponseHeadersPolicyServerTimingHeadersConfig()
 {
   *this = xmlNode;
 }

@@ -29,14 +29,8 @@ AnomalyGroup::AnomalyGroup() :
 {
 }
 
-AnomalyGroup::AnomalyGroup(JsonView jsonValue) : 
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_anomalyGroupIdHasBeenSet(false),
-    m_anomalyGroupScore(0.0),
-    m_anomalyGroupScoreHasBeenSet(false),
-    m_primaryMetricNameHasBeenSet(false),
-    m_metricLevelImpactListHasBeenSet(false)
+AnomalyGroup::AnomalyGroup(JsonView jsonValue)
+  : AnomalyGroup()
 {
   *this = jsonValue;
 }

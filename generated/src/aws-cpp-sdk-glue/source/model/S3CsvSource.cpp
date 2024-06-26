@@ -52,37 +52,8 @@ S3CsvSource::S3CsvSource() :
 {
 }
 
-S3CsvSource::S3CsvSource(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_pathsHasBeenSet(false),
-    m_compressionType(CompressionType::NOT_SET),
-    m_compressionTypeHasBeenSet(false),
-    m_exclusionsHasBeenSet(false),
-    m_groupSizeHasBeenSet(false),
-    m_groupFilesHasBeenSet(false),
-    m_recurse(false),
-    m_recurseHasBeenSet(false),
-    m_maxBand(0),
-    m_maxBandHasBeenSet(false),
-    m_maxFilesInBand(0),
-    m_maxFilesInBandHasBeenSet(false),
-    m_additionalOptionsHasBeenSet(false),
-    m_separator(Separator::NOT_SET),
-    m_separatorHasBeenSet(false),
-    m_escaperHasBeenSet(false),
-    m_quoteChar(QuoteChar::NOT_SET),
-    m_quoteCharHasBeenSet(false),
-    m_multiline(false),
-    m_multilineHasBeenSet(false),
-    m_withHeader(false),
-    m_withHeaderHasBeenSet(false),
-    m_writeHeader(false),
-    m_writeHeaderHasBeenSet(false),
-    m_skipFirst(false),
-    m_skipFirstHasBeenSet(false),
-    m_optimizePerformance(false),
-    m_optimizePerformanceHasBeenSet(false),
-    m_outputSchemasHasBeenSet(false)
+S3CsvSource::S3CsvSource(JsonView jsonValue)
+  : S3CsvSource()
 {
   *this = jsonValue;
 }

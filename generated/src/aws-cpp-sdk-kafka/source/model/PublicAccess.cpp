@@ -23,8 +23,8 @@ PublicAccess::PublicAccess() :
 {
 }
 
-PublicAccess::PublicAccess(JsonView jsonValue) : 
-    m_typeHasBeenSet(false)
+PublicAccess::PublicAccess(JsonView jsonValue)
+  : PublicAccess()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ MultiplexVideoSettings::MultiplexVideoSettings() :
 {
 }
 
-MultiplexVideoSettings::MultiplexVideoSettings(JsonView jsonValue) : 
-    m_constantBitrate(0),
-    m_constantBitrateHasBeenSet(false),
-    m_statmuxSettingsHasBeenSet(false)
+MultiplexVideoSettings::MultiplexVideoSettings(JsonView jsonValue)
+  : MultiplexVideoSettings()
 {
   *this = jsonValue;
 }

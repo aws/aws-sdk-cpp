@@ -25,10 +25,8 @@ ListProfileObjectTypeTemplateItem::ListProfileObjectTypeTemplateItem() :
 {
 }
 
-ListProfileObjectTypeTemplateItem::ListProfileObjectTypeTemplateItem(JsonView jsonValue) : 
-    m_templateIdHasBeenSet(false),
-    m_sourceNameHasBeenSet(false),
-    m_sourceObjectHasBeenSet(false)
+ListProfileObjectTypeTemplateItem::ListProfileObjectTypeTemplateItem(JsonView jsonValue)
+  : ListProfileObjectTypeTemplateItem()
 {
   *this = jsonValue;
 }

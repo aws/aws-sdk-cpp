@@ -25,10 +25,8 @@ RoutingProfileQueueReference::RoutingProfileQueueReference() :
 {
 }
 
-RoutingProfileQueueReference::RoutingProfileQueueReference(JsonView jsonValue) : 
-    m_queueIdHasBeenSet(false),
-    m_channel(Channel::NOT_SET),
-    m_channelHasBeenSet(false)
+RoutingProfileQueueReference::RoutingProfileQueueReference(JsonView jsonValue)
+  : RoutingProfileQueueReference()
 {
   *this = jsonValue;
 }

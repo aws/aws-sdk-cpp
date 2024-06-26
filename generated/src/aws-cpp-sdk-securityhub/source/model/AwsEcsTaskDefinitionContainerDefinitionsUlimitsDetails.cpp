@@ -27,12 +27,8 @@ AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails::AwsEcsTaskDefinitionCont
 {
 }
 
-AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails::AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails(JsonView jsonValue) : 
-    m_hardLimit(0),
-    m_hardLimitHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_softLimit(0),
-    m_softLimitHasBeenSet(false)
+AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails::AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails(JsonView jsonValue)
+  : AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails()
 {
   *this = jsonValue;
 }

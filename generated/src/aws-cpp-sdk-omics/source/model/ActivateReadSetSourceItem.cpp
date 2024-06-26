@@ -26,11 +26,8 @@ ActivateReadSetSourceItem::ActivateReadSetSourceItem() :
 {
 }
 
-ActivateReadSetSourceItem::ActivateReadSetSourceItem(JsonView jsonValue) : 
-    m_readSetIdHasBeenSet(false),
-    m_status(ReadSetActivationJobItemStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false)
+ActivateReadSetSourceItem::ActivateReadSetSourceItem(JsonView jsonValue)
+  : ActivateReadSetSourceItem()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ AwsJobAbortConfig::AwsJobAbortConfig() :
 {
 }
 
-AwsJobAbortConfig::AwsJobAbortConfig(JsonView jsonValue) : 
-    m_abortCriteriaListHasBeenSet(false)
+AwsJobAbortConfig::AwsJobAbortConfig(JsonView jsonValue)
+  : AwsJobAbortConfig()
 {
   *this = jsonValue;
 }

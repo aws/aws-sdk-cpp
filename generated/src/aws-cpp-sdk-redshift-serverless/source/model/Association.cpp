@@ -26,11 +26,8 @@ Association::Association() :
 {
 }
 
-Association::Association(JsonView jsonValue) : 
-    m_customDomainCertificateArnHasBeenSet(false),
-    m_customDomainCertificateExpiryTimeHasBeenSet(false),
-    m_customDomainNameHasBeenSet(false),
-    m_workgroupNameHasBeenSet(false)
+Association::Association(JsonView jsonValue)
+  : Association()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ AggregationType::AggregationType() :
 {
 }
 
-AggregationType::AggregationType(JsonView jsonValue) : 
-    m_name(AggregationTypeName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+AggregationType::AggregationType(JsonView jsonValue)
+  : AggregationType()
 {
   *this = jsonValue;
 }

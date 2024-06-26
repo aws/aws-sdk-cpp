@@ -22,8 +22,8 @@ UpdateProvisionedProductPropertiesResult::UpdateProvisionedProductPropertiesResu
 {
 }
 
-UpdateProvisionedProductPropertiesResult::UpdateProvisionedProductPropertiesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(RecordStatus::NOT_SET)
+UpdateProvisionedProductPropertiesResult::UpdateProvisionedProductPropertiesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateProvisionedProductPropertiesResult()
 {
   *this = result;
 }

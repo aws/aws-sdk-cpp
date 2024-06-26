@@ -27,10 +27,8 @@ KeyNameConstraint::KeyNameConstraint() :
 {
 }
 
-KeyNameConstraint::KeyNameConstraint(const XmlNode& xmlNode) : 
-    m_matchAnyPrefixHasBeenSet(false),
-    m_matchAnySuffixHasBeenSet(false),
-    m_matchAnySubstringHasBeenSet(false)
+KeyNameConstraint::KeyNameConstraint(const XmlNode& xmlNode)
+  : KeyNameConstraint()
 {
   *this = xmlNode;
 }

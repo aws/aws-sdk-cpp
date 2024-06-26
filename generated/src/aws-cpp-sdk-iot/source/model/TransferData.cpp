@@ -27,12 +27,8 @@ TransferData::TransferData() :
 {
 }
 
-TransferData::TransferData(JsonView jsonValue) : 
-    m_transferMessageHasBeenSet(false),
-    m_rejectReasonHasBeenSet(false),
-    m_transferDateHasBeenSet(false),
-    m_acceptDateHasBeenSet(false),
-    m_rejectDateHasBeenSet(false)
+TransferData::TransferData(JsonView jsonValue)
+  : TransferData()
 {
   *this = jsonValue;
 }

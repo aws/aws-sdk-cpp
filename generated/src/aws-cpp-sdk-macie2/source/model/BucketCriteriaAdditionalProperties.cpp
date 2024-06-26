@@ -33,18 +33,8 @@ BucketCriteriaAdditionalProperties::BucketCriteriaAdditionalProperties() :
 {
 }
 
-BucketCriteriaAdditionalProperties::BucketCriteriaAdditionalProperties(JsonView jsonValue) : 
-    m_eqHasBeenSet(false),
-    m_gt(0),
-    m_gtHasBeenSet(false),
-    m_gte(0),
-    m_gteHasBeenSet(false),
-    m_lt(0),
-    m_ltHasBeenSet(false),
-    m_lte(0),
-    m_lteHasBeenSet(false),
-    m_neqHasBeenSet(false),
-    m_prefixHasBeenSet(false)
+BucketCriteriaAdditionalProperties::BucketCriteriaAdditionalProperties(JsonView jsonValue)
+  : BucketCriteriaAdditionalProperties()
 {
   *this = jsonValue;
 }

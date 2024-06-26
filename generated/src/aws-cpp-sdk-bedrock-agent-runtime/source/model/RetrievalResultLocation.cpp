@@ -25,10 +25,8 @@ RetrievalResultLocation::RetrievalResultLocation() :
 {
 }
 
-RetrievalResultLocation::RetrievalResultLocation(JsonView jsonValue) : 
-    m_s3LocationHasBeenSet(false),
-    m_type(RetrievalResultLocationType::NOT_SET),
-    m_typeHasBeenSet(false)
+RetrievalResultLocation::RetrievalResultLocation(JsonView jsonValue)
+  : RetrievalResultLocation()
 {
   *this = jsonValue;
 }

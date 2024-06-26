@@ -27,12 +27,8 @@ IdentityProvider::IdentityProvider() :
 {
 }
 
-IdentityProvider::IdentityProvider(JsonView jsonValue) : 
-    m_identityProviderArnHasBeenSet(false),
-    m_identityProviderDetailsHasBeenSet(false),
-    m_identityProviderNameHasBeenSet(false),
-    m_identityProviderType(IdentityProviderType::NOT_SET),
-    m_identityProviderTypeHasBeenSet(false)
+IdentityProvider::IdentityProvider(JsonView jsonValue)
+  : IdentityProvider()
 {
   *this = jsonValue;
 }

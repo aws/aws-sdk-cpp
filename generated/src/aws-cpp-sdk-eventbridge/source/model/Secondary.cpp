@@ -23,8 +23,8 @@ Secondary::Secondary() :
 {
 }
 
-Secondary::Secondary(JsonView jsonValue) : 
-    m_routeHasBeenSet(false)
+Secondary::Secondary(JsonView jsonValue)
+  : Secondary()
 {
   *this = jsonValue;
 }

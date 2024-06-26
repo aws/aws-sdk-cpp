@@ -28,13 +28,8 @@ LambdaFunctionInfo::LambdaFunctionInfo() :
 {
 }
 
-LambdaFunctionInfo::LambdaFunctionInfo(JsonView jsonValue) : 
-    m_functionNameHasBeenSet(false),
-    m_functionAliasHasBeenSet(false),
-    m_currentVersionHasBeenSet(false),
-    m_targetVersionHasBeenSet(false),
-    m_targetVersionWeight(0.0),
-    m_targetVersionWeightHasBeenSet(false)
+LambdaFunctionInfo::LambdaFunctionInfo(JsonView jsonValue)
+  : LambdaFunctionInfo()
 {
   *this = jsonValue;
 }

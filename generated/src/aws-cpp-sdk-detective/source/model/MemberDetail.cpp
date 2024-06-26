@@ -36,21 +36,8 @@ MemberDetail::MemberDetail() :
 {
 }
 
-MemberDetail::MemberDetail(JsonView jsonValue) : 
-    m_accountIdHasBeenSet(false),
-    m_emailAddressHasBeenSet(false),
-    m_graphArnHasBeenSet(false),
-    m_administratorIdHasBeenSet(false),
-    m_status(MemberStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_disabledReason(MemberDisabledReason::NOT_SET),
-    m_disabledReasonHasBeenSet(false),
-    m_invitedTimeHasBeenSet(false),
-    m_updatedTimeHasBeenSet(false),
-    m_invitationType(InvitationType::NOT_SET),
-    m_invitationTypeHasBeenSet(false),
-    m_volumeUsageByDatasourcePackageHasBeenSet(false),
-    m_datasourcePackageIngestStatesHasBeenSet(false)
+MemberDetail::MemberDetail(JsonView jsonValue)
+  : MemberDetail()
 {
   *this = jsonValue;
 }

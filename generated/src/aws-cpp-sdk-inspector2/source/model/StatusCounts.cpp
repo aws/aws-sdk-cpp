@@ -28,13 +28,8 @@ StatusCounts::StatusCounts() :
 {
 }
 
-StatusCounts::StatusCounts(JsonView jsonValue) : 
-    m_failed(0),
-    m_failedHasBeenSet(false),
-    m_passed(0),
-    m_passedHasBeenSet(false),
-    m_skipped(0),
-    m_skippedHasBeenSet(false)
+StatusCounts::StatusCounts(JsonView jsonValue)
+  : StatusCounts()
 {
   *this = jsonValue;
 }

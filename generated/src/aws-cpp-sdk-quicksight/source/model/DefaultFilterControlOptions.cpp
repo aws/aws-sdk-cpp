@@ -29,14 +29,8 @@ DefaultFilterControlOptions::DefaultFilterControlOptions() :
 {
 }
 
-DefaultFilterControlOptions::DefaultFilterControlOptions(JsonView jsonValue) : 
-    m_defaultDateTimePickerOptionsHasBeenSet(false),
-    m_defaultListOptionsHasBeenSet(false),
-    m_defaultDropdownOptionsHasBeenSet(false),
-    m_defaultTextFieldOptionsHasBeenSet(false),
-    m_defaultTextAreaOptionsHasBeenSet(false),
-    m_defaultSliderOptionsHasBeenSet(false),
-    m_defaultRelativeDateTimeOptionsHasBeenSet(false)
+DefaultFilterControlOptions::DefaultFilterControlOptions(JsonView jsonValue)
+  : DefaultFilterControlOptions()
 {
   *this = jsonValue;
 }

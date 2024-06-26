@@ -64,49 +64,8 @@ FilterCriteria::FilterCriteria() :
 {
 }
 
-FilterCriteria::FilterCriteria(JsonView jsonValue) : 
-    m_awsAccountIdHasBeenSet(false),
-    m_codeVulnerabilityDetectorNameHasBeenSet(false),
-    m_codeVulnerabilityDetectorTagsHasBeenSet(false),
-    m_codeVulnerabilityFilePathHasBeenSet(false),
-    m_componentIdHasBeenSet(false),
-    m_componentTypeHasBeenSet(false),
-    m_ec2InstanceImageIdHasBeenSet(false),
-    m_ec2InstanceSubnetIdHasBeenSet(false),
-    m_ec2InstanceVpcIdHasBeenSet(false),
-    m_ecrImageArchitectureHasBeenSet(false),
-    m_ecrImageHashHasBeenSet(false),
-    m_ecrImagePushedAtHasBeenSet(false),
-    m_ecrImageRegistryHasBeenSet(false),
-    m_ecrImageRepositoryNameHasBeenSet(false),
-    m_ecrImageTagsHasBeenSet(false),
-    m_epssScoreHasBeenSet(false),
-    m_exploitAvailableHasBeenSet(false),
-    m_findingArnHasBeenSet(false),
-    m_findingStatusHasBeenSet(false),
-    m_findingTypeHasBeenSet(false),
-    m_firstObservedAtHasBeenSet(false),
-    m_fixAvailableHasBeenSet(false),
-    m_inspectorScoreHasBeenSet(false),
-    m_lambdaFunctionExecutionRoleArnHasBeenSet(false),
-    m_lambdaFunctionLastModifiedAtHasBeenSet(false),
-    m_lambdaFunctionLayersHasBeenSet(false),
-    m_lambdaFunctionNameHasBeenSet(false),
-    m_lambdaFunctionRuntimeHasBeenSet(false),
-    m_lastObservedAtHasBeenSet(false),
-    m_networkProtocolHasBeenSet(false),
-    m_portRangeHasBeenSet(false),
-    m_relatedVulnerabilitiesHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_resourceTagsHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
-    m_severityHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_vendorSeverityHasBeenSet(false),
-    m_vulnerabilityIdHasBeenSet(false),
-    m_vulnerabilitySourceHasBeenSet(false),
-    m_vulnerablePackagesHasBeenSet(false)
+FilterCriteria::FilterCriteria(JsonView jsonValue)
+  : FilterCriteria()
 {
   *this = jsonValue;
 }

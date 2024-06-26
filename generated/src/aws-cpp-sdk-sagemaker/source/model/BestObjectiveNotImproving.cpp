@@ -24,9 +24,8 @@ BestObjectiveNotImproving::BestObjectiveNotImproving() :
 {
 }
 
-BestObjectiveNotImproving::BestObjectiveNotImproving(JsonView jsonValue) : 
-    m_maxNumberOfTrainingJobsNotImproving(0),
-    m_maxNumberOfTrainingJobsNotImprovingHasBeenSet(false)
+BestObjectiveNotImproving::BestObjectiveNotImproving(JsonView jsonValue)
+  : BestObjectiveNotImproving()
 {
   *this = jsonValue;
 }

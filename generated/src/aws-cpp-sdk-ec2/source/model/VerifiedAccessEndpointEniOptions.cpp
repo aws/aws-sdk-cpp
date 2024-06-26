@@ -29,12 +29,8 @@ VerifiedAccessEndpointEniOptions::VerifiedAccessEndpointEniOptions() :
 {
 }
 
-VerifiedAccessEndpointEniOptions::VerifiedAccessEndpointEniOptions(const XmlNode& xmlNode) : 
-    m_networkInterfaceIdHasBeenSet(false),
-    m_protocol(VerifiedAccessEndpointProtocol::NOT_SET),
-    m_protocolHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false)
+VerifiedAccessEndpointEniOptions::VerifiedAccessEndpointEniOptions(const XmlNode& xmlNode)
+  : VerifiedAccessEndpointEniOptions()
 {
   *this = xmlNode;
 }

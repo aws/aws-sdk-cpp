@@ -29,12 +29,8 @@ FpgaImageAttribute::FpgaImageAttribute() :
 {
 }
 
-FpgaImageAttribute::FpgaImageAttribute(const XmlNode& xmlNode) : 
-    m_fpgaImageIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_loadPermissionsHasBeenSet(false),
-    m_productCodesHasBeenSet(false)
+FpgaImageAttribute::FpgaImageAttribute(const XmlNode& xmlNode)
+  : FpgaImageAttribute()
 {
   *this = xmlNode;
 }

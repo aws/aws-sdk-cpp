@@ -26,9 +26,8 @@ CreateVolumePermissionModifications::CreateVolumePermissionModifications() :
 {
 }
 
-CreateVolumePermissionModifications::CreateVolumePermissionModifications(const XmlNode& xmlNode) : 
-    m_addHasBeenSet(false),
-    m_removeHasBeenSet(false)
+CreateVolumePermissionModifications::CreateVolumePermissionModifications(const XmlNode& xmlNode)
+  : CreateVolumePermissionModifications()
 {
   *this = xmlNode;
 }

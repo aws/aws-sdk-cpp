@@ -26,11 +26,8 @@ RecommendationJobResourceLimit::RecommendationJobResourceLimit() :
 {
 }
 
-RecommendationJobResourceLimit::RecommendationJobResourceLimit(JsonView jsonValue) : 
-    m_maxNumberOfTests(0),
-    m_maxNumberOfTestsHasBeenSet(false),
-    m_maxParallelOfTests(0),
-    m_maxParallelOfTestsHasBeenSet(false)
+RecommendationJobResourceLimit::RecommendationJobResourceLimit(JsonView jsonValue)
+  : RecommendationJobResourceLimit()
 {
   *this = jsonValue;
 }

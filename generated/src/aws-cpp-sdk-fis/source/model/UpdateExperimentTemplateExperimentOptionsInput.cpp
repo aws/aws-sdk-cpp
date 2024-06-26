@@ -24,9 +24,8 @@ UpdateExperimentTemplateExperimentOptionsInput::UpdateExperimentTemplateExperime
 {
 }
 
-UpdateExperimentTemplateExperimentOptionsInput::UpdateExperimentTemplateExperimentOptionsInput(JsonView jsonValue) : 
-    m_emptyTargetResolutionMode(EmptyTargetResolutionMode::NOT_SET),
-    m_emptyTargetResolutionModeHasBeenSet(false)
+UpdateExperimentTemplateExperimentOptionsInput::UpdateExperimentTemplateExperimentOptionsInput(JsonView jsonValue)
+  : UpdateExperimentTemplateExperimentOptionsInput()
 {
   *this = jsonValue;
 }

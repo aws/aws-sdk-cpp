@@ -24,10 +24,8 @@ GetStepResult::GetStepResult() :
 {
 }
 
-GetStepResult::GetStepResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_lifecycleStatus(StepLifecycleStatus::NOT_SET),
-    m_targetTaskRunStatus(StepTargetTaskRunStatus::NOT_SET),
-    m_taskRunStatus(TaskRunStatus::NOT_SET)
+GetStepResult::GetStepResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetStepResult()
 {
   *this = result;
 }

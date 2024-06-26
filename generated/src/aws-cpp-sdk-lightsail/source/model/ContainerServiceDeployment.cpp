@@ -29,14 +29,8 @@ ContainerServiceDeployment::ContainerServiceDeployment() :
 {
 }
 
-ContainerServiceDeployment::ContainerServiceDeployment(JsonView jsonValue) : 
-    m_version(0),
-    m_versionHasBeenSet(false),
-    m_state(ContainerServiceDeploymentState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_containersHasBeenSet(false),
-    m_publicEndpointHasBeenSet(false),
-    m_createdAtHasBeenSet(false)
+ContainerServiceDeployment::ContainerServiceDeployment(JsonView jsonValue)
+  : ContainerServiceDeployment()
 {
   *this = jsonValue;
 }

@@ -31,16 +31,8 @@ DistributionConfiguration::DistributionConfiguration() :
 {
 }
 
-DistributionConfiguration::DistributionConfiguration(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_distributionsHasBeenSet(false),
-    m_timeoutMinutes(0),
-    m_timeoutMinutesHasBeenSet(false),
-    m_dateCreatedHasBeenSet(false),
-    m_dateUpdatedHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+DistributionConfiguration::DistributionConfiguration(JsonView jsonValue)
+  : DistributionConfiguration()
 {
   *this = jsonValue;
 }

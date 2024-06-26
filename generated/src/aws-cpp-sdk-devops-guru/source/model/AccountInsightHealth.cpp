@@ -26,11 +26,8 @@ AccountInsightHealth::AccountInsightHealth() :
 {
 }
 
-AccountInsightHealth::AccountInsightHealth(JsonView jsonValue) : 
-    m_openProactiveInsights(0),
-    m_openProactiveInsightsHasBeenSet(false),
-    m_openReactiveInsights(0),
-    m_openReactiveInsightsHasBeenSet(false)
+AccountInsightHealth::AccountInsightHealth(JsonView jsonValue)
+  : AccountInsightHealth()
 {
   *this = jsonValue;
 }

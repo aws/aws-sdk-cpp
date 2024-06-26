@@ -23,8 +23,8 @@ GuardrailWordConfig::GuardrailWordConfig() :
 {
 }
 
-GuardrailWordConfig::GuardrailWordConfig(JsonView jsonValue) : 
-    m_textHasBeenSet(false)
+GuardrailWordConfig::GuardrailWordConfig(JsonView jsonValue)
+  : GuardrailWordConfig()
 {
   *this = jsonValue;
 }

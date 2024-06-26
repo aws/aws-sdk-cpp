@@ -28,11 +28,8 @@ ResponseHeadersPolicyCustomHeader::ResponseHeadersPolicyCustomHeader() :
 {
 }
 
-ResponseHeadersPolicyCustomHeader::ResponseHeadersPolicyCustomHeader(const XmlNode& xmlNode) : 
-    m_headerHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_override(false),
-    m_overrideHasBeenSet(false)
+ResponseHeadersPolicyCustomHeader::ResponseHeadersPolicyCustomHeader(const XmlNode& xmlNode)
+  : ResponseHeadersPolicyCustomHeader()
 {
   *this = xmlNode;
 }

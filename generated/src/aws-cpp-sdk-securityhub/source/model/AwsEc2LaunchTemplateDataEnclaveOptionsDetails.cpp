@@ -24,9 +24,8 @@ AwsEc2LaunchTemplateDataEnclaveOptionsDetails::AwsEc2LaunchTemplateDataEnclaveOp
 {
 }
 
-AwsEc2LaunchTemplateDataEnclaveOptionsDetails::AwsEc2LaunchTemplateDataEnclaveOptionsDetails(JsonView jsonValue) : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
+AwsEc2LaunchTemplateDataEnclaveOptionsDetails::AwsEc2LaunchTemplateDataEnclaveOptionsDetails(JsonView jsonValue)
+  : AwsEc2LaunchTemplateDataEnclaveOptionsDetails()
 {
   *this = jsonValue;
 }

@@ -36,21 +36,8 @@ ModelDashboardMonitoringSchedule::ModelDashboardMonitoringSchedule() :
 {
 }
 
-ModelDashboardMonitoringSchedule::ModelDashboardMonitoringSchedule(JsonView jsonValue) : 
-    m_monitoringScheduleArnHasBeenSet(false),
-    m_monitoringScheduleNameHasBeenSet(false),
-    m_monitoringScheduleStatus(ScheduleStatus::NOT_SET),
-    m_monitoringScheduleStatusHasBeenSet(false),
-    m_monitoringType(MonitoringType::NOT_SET),
-    m_monitoringTypeHasBeenSet(false),
-    m_failureReasonHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_monitoringScheduleConfigHasBeenSet(false),
-    m_endpointNameHasBeenSet(false),
-    m_monitoringAlertSummariesHasBeenSet(false),
-    m_lastMonitoringExecutionSummaryHasBeenSet(false),
-    m_batchTransformInputHasBeenSet(false)
+ModelDashboardMonitoringSchedule::ModelDashboardMonitoringSchedule(JsonView jsonValue)
+  : ModelDashboardMonitoringSchedule()
 {
   *this = jsonValue;
 }

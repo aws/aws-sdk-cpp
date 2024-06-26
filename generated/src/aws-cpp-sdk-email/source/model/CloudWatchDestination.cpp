@@ -25,8 +25,8 @@ CloudWatchDestination::CloudWatchDestination() :
 {
 }
 
-CloudWatchDestination::CloudWatchDestination(const XmlNode& xmlNode) : 
-    m_dimensionConfigurationsHasBeenSet(false)
+CloudWatchDestination::CloudWatchDestination(const XmlNode& xmlNode)
+  : CloudWatchDestination()
 {
   *this = xmlNode;
 }

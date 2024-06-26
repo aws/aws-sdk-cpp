@@ -32,17 +32,8 @@ LaunchProfileInitialization::LaunchProfileInitialization() :
 {
 }
 
-LaunchProfileInitialization::LaunchProfileInitialization(JsonView jsonValue) : 
-    m_activeDirectoryHasBeenSet(false),
-    m_ec2SecurityGroupIdsHasBeenSet(false),
-    m_launchProfileIdHasBeenSet(false),
-    m_launchProfileProtocolVersionHasBeenSet(false),
-    m_launchPurposeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_platform(LaunchProfilePlatform::NOT_SET),
-    m_platformHasBeenSet(false),
-    m_systemInitializationScriptsHasBeenSet(false),
-    m_userInitializationScriptsHasBeenSet(false)
+LaunchProfileInitialization::LaunchProfileInitialization(JsonView jsonValue)
+  : LaunchProfileInitialization()
 {
   *this = jsonValue;
 }

@@ -27,12 +27,8 @@ AWSManagedRulesATPRuleSet::AWSManagedRulesATPRuleSet() :
 {
 }
 
-AWSManagedRulesATPRuleSet::AWSManagedRulesATPRuleSet(JsonView jsonValue) : 
-    m_loginPathHasBeenSet(false),
-    m_requestInspectionHasBeenSet(false),
-    m_responseInspectionHasBeenSet(false),
-    m_enableRegexInPath(false),
-    m_enableRegexInPathHasBeenSet(false)
+AWSManagedRulesATPRuleSet::AWSManagedRulesATPRuleSet(JsonView jsonValue)
+  : AWSManagedRulesATPRuleSet()
 {
   *this = jsonValue;
 }

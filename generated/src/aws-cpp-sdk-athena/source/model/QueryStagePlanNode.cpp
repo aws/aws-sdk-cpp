@@ -26,11 +26,8 @@ QueryStagePlanNode::QueryStagePlanNode() :
 {
 }
 
-QueryStagePlanNode::QueryStagePlanNode(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_identifierHasBeenSet(false),
-    m_childrenHasBeenSet(false),
-    m_remoteSourcesHasBeenSet(false)
+QueryStagePlanNode::QueryStagePlanNode(JsonView jsonValue)
+  : QueryStagePlanNode()
 {
   *this = jsonValue;
 }

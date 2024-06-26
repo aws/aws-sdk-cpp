@@ -22,8 +22,8 @@ ListMFADevicesResult::ListMFADevicesResult() :
 {
 }
 
-ListMFADevicesResult::ListMFADevicesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_isTruncated(false)
+ListMFADevicesResult::ListMFADevicesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : ListMFADevicesResult()
 {
   *this = result;
 }

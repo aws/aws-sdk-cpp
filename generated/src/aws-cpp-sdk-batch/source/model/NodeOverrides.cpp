@@ -25,10 +25,8 @@ NodeOverrides::NodeOverrides() :
 {
 }
 
-NodeOverrides::NodeOverrides(JsonView jsonValue) : 
-    m_numNodes(0),
-    m_numNodesHasBeenSet(false),
-    m_nodePropertyOverridesHasBeenSet(false)
+NodeOverrides::NodeOverrides(JsonView jsonValue)
+  : NodeOverrides()
 {
   *this = jsonValue;
 }

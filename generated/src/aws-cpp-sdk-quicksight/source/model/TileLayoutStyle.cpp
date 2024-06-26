@@ -24,9 +24,8 @@ TileLayoutStyle::TileLayoutStyle() :
 {
 }
 
-TileLayoutStyle::TileLayoutStyle(JsonView jsonValue) : 
-    m_gutterHasBeenSet(false),
-    m_marginHasBeenSet(false)
+TileLayoutStyle::TileLayoutStyle(JsonView jsonValue)
+  : TileLayoutStyle()
 {
   *this = jsonValue;
 }

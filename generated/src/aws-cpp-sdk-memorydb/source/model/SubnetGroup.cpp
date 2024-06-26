@@ -27,12 +27,8 @@ SubnetGroup::SubnetGroup() :
 {
 }
 
-SubnetGroup::SubnetGroup(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_subnetsHasBeenSet(false),
-    m_aRNHasBeenSet(false)
+SubnetGroup::SubnetGroup(JsonView jsonValue)
+  : SubnetGroup()
 {
   *this = jsonValue;
 }

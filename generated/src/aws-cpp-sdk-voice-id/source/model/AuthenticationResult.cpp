@@ -32,17 +32,8 @@ AuthenticationResult::AuthenticationResult() :
 {
 }
 
-AuthenticationResult::AuthenticationResult(JsonView jsonValue) : 
-    m_audioAggregationEndedAtHasBeenSet(false),
-    m_audioAggregationStartedAtHasBeenSet(false),
-    m_authenticationResultIdHasBeenSet(false),
-    m_configurationHasBeenSet(false),
-    m_customerSpeakerIdHasBeenSet(false),
-    m_decision(AuthenticationDecision::NOT_SET),
-    m_decisionHasBeenSet(false),
-    m_generatedSpeakerIdHasBeenSet(false),
-    m_score(0),
-    m_scoreHasBeenSet(false)
+AuthenticationResult::AuthenticationResult(JsonView jsonValue)
+  : AuthenticationResult()
 {
   *this = jsonValue;
 }

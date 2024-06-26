@@ -33,18 +33,8 @@ RecommendationJobInputConfig::RecommendationJobInputConfig() :
 {
 }
 
-RecommendationJobInputConfig::RecommendationJobInputConfig(JsonView jsonValue) : 
-    m_modelPackageVersionArnHasBeenSet(false),
-    m_modelNameHasBeenSet(false),
-    m_jobDurationInSeconds(0),
-    m_jobDurationInSecondsHasBeenSet(false),
-    m_trafficPatternHasBeenSet(false),
-    m_resourceLimitHasBeenSet(false),
-    m_endpointConfigurationsHasBeenSet(false),
-    m_volumeKmsKeyIdHasBeenSet(false),
-    m_containerConfigHasBeenSet(false),
-    m_endpointsHasBeenSet(false),
-    m_vpcConfigHasBeenSet(false)
+RecommendationJobInputConfig::RecommendationJobInputConfig(JsonView jsonValue)
+  : RecommendationJobInputConfig()
 {
   *this = jsonValue;
 }

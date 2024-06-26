@@ -26,11 +26,8 @@ DataProductFilters::DataProductFilters() :
 {
 }
 
-DataProductFilters::DataProductFilters(JsonView jsonValue) : 
-    m_entityIdHasBeenSet(false),
-    m_productTitleHasBeenSet(false),
-    m_visibilityHasBeenSet(false),
-    m_lastModifiedDateHasBeenSet(false)
+DataProductFilters::DataProductFilters(JsonView jsonValue)
+  : DataProductFilters()
 {
   *this = jsonValue;
 }

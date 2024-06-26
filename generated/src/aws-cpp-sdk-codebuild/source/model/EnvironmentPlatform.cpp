@@ -25,10 +25,8 @@ EnvironmentPlatform::EnvironmentPlatform() :
 {
 }
 
-EnvironmentPlatform::EnvironmentPlatform(JsonView jsonValue) : 
-    m_platform(PlatformType::NOT_SET),
-    m_platformHasBeenSet(false),
-    m_languagesHasBeenSet(false)
+EnvironmentPlatform::EnvironmentPlatform(JsonView jsonValue)
+  : EnvironmentPlatform()
 {
   *this = jsonValue;
 }

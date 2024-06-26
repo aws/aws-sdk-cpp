@@ -28,13 +28,8 @@ ScheduleActivityTaskFailedEventAttributes::ScheduleActivityTaskFailedEventAttrib
 {
 }
 
-ScheduleActivityTaskFailedEventAttributes::ScheduleActivityTaskFailedEventAttributes(JsonView jsonValue) : 
-    m_activityTypeHasBeenSet(false),
-    m_activityIdHasBeenSet(false),
-    m_cause(ScheduleActivityTaskFailedCause::NOT_SET),
-    m_causeHasBeenSet(false),
-    m_decisionTaskCompletedEventId(0),
-    m_decisionTaskCompletedEventIdHasBeenSet(false)
+ScheduleActivityTaskFailedEventAttributes::ScheduleActivityTaskFailedEventAttributes(JsonView jsonValue)
+  : ScheduleActivityTaskFailedEventAttributes()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ TrainingRepositoryAuthConfig::TrainingRepositoryAuthConfig() :
 {
 }
 
-TrainingRepositoryAuthConfig::TrainingRepositoryAuthConfig(JsonView jsonValue) : 
-    m_trainingRepositoryCredentialsProviderArnHasBeenSet(false)
+TrainingRepositoryAuthConfig::TrainingRepositoryAuthConfig(JsonView jsonValue)
+  : TrainingRepositoryAuthConfig()
 {
   *this = jsonValue;
 }

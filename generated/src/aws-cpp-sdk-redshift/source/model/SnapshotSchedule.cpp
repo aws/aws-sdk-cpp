@@ -32,15 +32,8 @@ SnapshotSchedule::SnapshotSchedule() :
 {
 }
 
-SnapshotSchedule::SnapshotSchedule(const XmlNode& xmlNode) : 
-    m_scheduleDefinitionsHasBeenSet(false),
-    m_scheduleIdentifierHasBeenSet(false),
-    m_scheduleDescriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_nextInvocationsHasBeenSet(false),
-    m_associatedClusterCount(0),
-    m_associatedClusterCountHasBeenSet(false),
-    m_associatedClustersHasBeenSet(false)
+SnapshotSchedule::SnapshotSchedule(const XmlNode& xmlNode)
+  : SnapshotSchedule()
 {
   *this = xmlNode;
 }

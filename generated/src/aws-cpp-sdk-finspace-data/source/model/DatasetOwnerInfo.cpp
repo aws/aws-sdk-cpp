@@ -25,10 +25,8 @@ DatasetOwnerInfo::DatasetOwnerInfo() :
 {
 }
 
-DatasetOwnerInfo::DatasetOwnerInfo(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_phoneNumberHasBeenSet(false),
-    m_emailHasBeenSet(false)
+DatasetOwnerInfo::DatasetOwnerInfo(JsonView jsonValue)
+  : DatasetOwnerInfo()
 {
   *this = jsonValue;
 }

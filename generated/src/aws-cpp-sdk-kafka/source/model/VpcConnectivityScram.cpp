@@ -24,9 +24,8 @@ VpcConnectivityScram::VpcConnectivityScram() :
 {
 }
 
-VpcConnectivityScram::VpcConnectivityScram(JsonView jsonValue) : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
+VpcConnectivityScram::VpcConnectivityScram(JsonView jsonValue)
+  : VpcConnectivityScram()
 {
   *this = jsonValue;
 }

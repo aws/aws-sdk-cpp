@@ -26,11 +26,8 @@ CalculateRouteCarModeOptions::CalculateRouteCarModeOptions() :
 {
 }
 
-CalculateRouteCarModeOptions::CalculateRouteCarModeOptions(JsonView jsonValue) : 
-    m_avoidFerries(false),
-    m_avoidFerriesHasBeenSet(false),
-    m_avoidTolls(false),
-    m_avoidTollsHasBeenSet(false)
+CalculateRouteCarModeOptions::CalculateRouteCarModeOptions(JsonView jsonValue)
+  : CalculateRouteCarModeOptions()
 {
   *this = jsonValue;
 }

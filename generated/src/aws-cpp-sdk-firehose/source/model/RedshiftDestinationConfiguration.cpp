@@ -35,20 +35,8 @@ RedshiftDestinationConfiguration::RedshiftDestinationConfiguration() :
 {
 }
 
-RedshiftDestinationConfiguration::RedshiftDestinationConfiguration(JsonView jsonValue) : 
-    m_roleARNHasBeenSet(false),
-    m_clusterJDBCURLHasBeenSet(false),
-    m_copyCommandHasBeenSet(false),
-    m_usernameHasBeenSet(false),
-    m_passwordHasBeenSet(false),
-    m_retryOptionsHasBeenSet(false),
-    m_s3ConfigurationHasBeenSet(false),
-    m_processingConfigurationHasBeenSet(false),
-    m_s3BackupMode(RedshiftS3BackupMode::NOT_SET),
-    m_s3BackupModeHasBeenSet(false),
-    m_s3BackupConfigurationHasBeenSet(false),
-    m_cloudWatchLoggingOptionsHasBeenSet(false),
-    m_secretsManagerConfigurationHasBeenSet(false)
+RedshiftDestinationConfiguration::RedshiftDestinationConfiguration(JsonView jsonValue)
+  : RedshiftDestinationConfiguration()
 {
   *this = jsonValue;
 }

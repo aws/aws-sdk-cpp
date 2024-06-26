@@ -22,8 +22,8 @@ DescribeLocationEfsResult::DescribeLocationEfsResult() :
 {
 }
 
-DescribeLocationEfsResult::DescribeLocationEfsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_inTransitEncryption(EfsInTransitEncryption::NOT_SET)
+DescribeLocationEfsResult::DescribeLocationEfsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeLocationEfsResult()
 {
   *this = result;
 }

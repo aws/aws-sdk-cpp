@@ -32,17 +32,8 @@ DynamoDBAction::DynamoDBAction() :
 {
 }
 
-DynamoDBAction::DynamoDBAction(JsonView jsonValue) : 
-    m_hashKeyTypeHasBeenSet(false),
-    m_hashKeyFieldHasBeenSet(false),
-    m_hashKeyValueHasBeenSet(false),
-    m_rangeKeyTypeHasBeenSet(false),
-    m_rangeKeyFieldHasBeenSet(false),
-    m_rangeKeyValueHasBeenSet(false),
-    m_operationHasBeenSet(false),
-    m_payloadFieldHasBeenSet(false),
-    m_tableNameHasBeenSet(false),
-    m_payloadHasBeenSet(false)
+DynamoDBAction::DynamoDBAction(JsonView jsonValue)
+  : DynamoDBAction()
 {
   *this = jsonValue;
 }

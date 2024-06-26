@@ -26,11 +26,8 @@ SubtitlesOutput::SubtitlesOutput() :
 {
 }
 
-SubtitlesOutput::SubtitlesOutput(JsonView jsonValue) : 
-    m_formatsHasBeenSet(false),
-    m_subtitleFileUrisHasBeenSet(false),
-    m_outputStartIndex(0),
-    m_outputStartIndexHasBeenSet(false)
+SubtitlesOutput::SubtitlesOutput(JsonView jsonValue)
+  : SubtitlesOutput()
 {
   *this = jsonValue;
 }

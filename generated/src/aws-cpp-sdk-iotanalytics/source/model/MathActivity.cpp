@@ -26,11 +26,8 @@ MathActivity::MathActivity() :
 {
 }
 
-MathActivity::MathActivity(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_attributeHasBeenSet(false),
-    m_mathHasBeenSet(false),
-    m_nextHasBeenSet(false)
+MathActivity::MathActivity(JsonView jsonValue)
+  : MathActivity()
 {
   *this = jsonValue;
 }

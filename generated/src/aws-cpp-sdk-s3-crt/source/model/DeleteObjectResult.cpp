@@ -22,9 +22,8 @@ DeleteObjectResult::DeleteObjectResult() :
 {
 }
 
-DeleteObjectResult::DeleteObjectResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_deleteMarker(false),
-    m_requestCharged(RequestCharged::NOT_SET)
+DeleteObjectResult::DeleteObjectResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : DeleteObjectResult()
 {
   *this = result;
 }

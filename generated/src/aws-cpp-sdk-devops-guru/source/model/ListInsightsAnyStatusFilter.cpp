@@ -25,10 +25,8 @@ ListInsightsAnyStatusFilter::ListInsightsAnyStatusFilter() :
 {
 }
 
-ListInsightsAnyStatusFilter::ListInsightsAnyStatusFilter(JsonView jsonValue) : 
-    m_type(InsightType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_startTimeRangeHasBeenSet(false)
+ListInsightsAnyStatusFilter::ListInsightsAnyStatusFilter(JsonView jsonValue)
+  : ListInsightsAnyStatusFilter()
 {
   *this = jsonValue;
 }

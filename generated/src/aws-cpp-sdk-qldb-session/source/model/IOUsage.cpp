@@ -26,11 +26,8 @@ IOUsage::IOUsage() :
 {
 }
 
-IOUsage::IOUsage(JsonView jsonValue) : 
-    m_readIOs(0),
-    m_readIOsHasBeenSet(false),
-    m_writeIOs(0),
-    m_writeIOsHasBeenSet(false)
+IOUsage::IOUsage(JsonView jsonValue)
+  : IOUsage()
 {
   *this = jsonValue;
 }

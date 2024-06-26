@@ -31,16 +31,8 @@ Repository::Repository() :
 {
 }
 
-Repository::Repository(JsonView jsonValue) : 
-    m_repositoryArnHasBeenSet(false),
-    m_registryIdHasBeenSet(false),
-    m_repositoryNameHasBeenSet(false),
-    m_repositoryUriHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_imageTagMutability(ImageTagMutability::NOT_SET),
-    m_imageTagMutabilityHasBeenSet(false),
-    m_imageScanningConfigurationHasBeenSet(false),
-    m_encryptionConfigurationHasBeenSet(false)
+Repository::Repository(JsonView jsonValue)
+  : Repository()
 {
   *this = jsonValue;
 }

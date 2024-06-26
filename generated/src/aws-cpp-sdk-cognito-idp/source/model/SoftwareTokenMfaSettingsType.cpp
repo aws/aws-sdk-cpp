@@ -26,11 +26,8 @@ SoftwareTokenMfaSettingsType::SoftwareTokenMfaSettingsType() :
 {
 }
 
-SoftwareTokenMfaSettingsType::SoftwareTokenMfaSettingsType(JsonView jsonValue) : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_preferredMfa(false),
-    m_preferredMfaHasBeenSet(false)
+SoftwareTokenMfaSettingsType::SoftwareTokenMfaSettingsType(JsonView jsonValue)
+  : SoftwareTokenMfaSettingsType()
 {
   *this = jsonValue;
 }

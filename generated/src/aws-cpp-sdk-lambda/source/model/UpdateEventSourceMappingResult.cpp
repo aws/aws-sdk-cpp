@@ -29,15 +29,8 @@ UpdateEventSourceMappingResult::UpdateEventSourceMappingResult() :
 {
 }
 
-UpdateEventSourceMappingResult::UpdateEventSourceMappingResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_startingPosition(EventSourcePosition::NOT_SET),
-    m_batchSize(0),
-    m_maximumBatchingWindowInSeconds(0),
-    m_parallelizationFactor(0),
-    m_maximumRecordAgeInSeconds(0),
-    m_bisectBatchOnFunctionError(false),
-    m_maximumRetryAttempts(0),
-    m_tumblingWindowInSeconds(0)
+UpdateEventSourceMappingResult::UpdateEventSourceMappingResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateEventSourceMappingResult()
 {
   *this = result;
 }

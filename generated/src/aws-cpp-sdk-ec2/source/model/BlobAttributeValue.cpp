@@ -26,8 +26,8 @@ BlobAttributeValue::BlobAttributeValue() :
 {
 }
 
-BlobAttributeValue::BlobAttributeValue(const XmlNode& xmlNode) : 
-    m_valueHasBeenSet(false)
+BlobAttributeValue::BlobAttributeValue(const XmlNode& xmlNode)
+  : BlobAttributeValue()
 {
   *this = xmlNode;
 }

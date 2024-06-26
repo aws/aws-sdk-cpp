@@ -37,22 +37,8 @@ DeliveryStreamDescription::DeliveryStreamDescription() :
 {
 }
 
-DeliveryStreamDescription::DeliveryStreamDescription(JsonView jsonValue) : 
-    m_deliveryStreamNameHasBeenSet(false),
-    m_deliveryStreamARNHasBeenSet(false),
-    m_deliveryStreamStatus(DeliveryStreamStatus::NOT_SET),
-    m_deliveryStreamStatusHasBeenSet(false),
-    m_failureDescriptionHasBeenSet(false),
-    m_deliveryStreamEncryptionConfigurationHasBeenSet(false),
-    m_deliveryStreamType(DeliveryStreamType::NOT_SET),
-    m_deliveryStreamTypeHasBeenSet(false),
-    m_versionIdHasBeenSet(false),
-    m_createTimestampHasBeenSet(false),
-    m_lastUpdateTimestampHasBeenSet(false),
-    m_sourceHasBeenSet(false),
-    m_destinationsHasBeenSet(false),
-    m_hasMoreDestinations(false),
-    m_hasMoreDestinationsHasBeenSet(false)
+DeliveryStreamDescription::DeliveryStreamDescription(JsonView jsonValue)
+  : DeliveryStreamDescription()
 {
   *this = jsonValue;
 }

@@ -27,12 +27,8 @@ PrivateGraphEndpointSummary::PrivateGraphEndpointSummary() :
 {
 }
 
-PrivateGraphEndpointSummary::PrivateGraphEndpointSummary(JsonView jsonValue) : 
-    m_vpcIdHasBeenSet(false),
-    m_subnetIdsHasBeenSet(false),
-    m_status(PrivateGraphEndpointStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_vpcEndpointIdHasBeenSet(false)
+PrivateGraphEndpointSummary::PrivateGraphEndpointSummary(JsonView jsonValue)
+  : PrivateGraphEndpointSummary()
 {
   *this = jsonValue;
 }

@@ -27,12 +27,8 @@ DataLabelType::DataLabelType() :
 {
 }
 
-DataLabelType::DataLabelType(JsonView jsonValue) : 
-    m_fieldLabelTypeHasBeenSet(false),
-    m_dataPathLabelTypeHasBeenSet(false),
-    m_rangeEndsLabelTypeHasBeenSet(false),
-    m_minimumLabelTypeHasBeenSet(false),
-    m_maximumLabelTypeHasBeenSet(false)
+DataLabelType::DataLabelType(JsonView jsonValue)
+  : DataLabelType()
 {
   *this = jsonValue;
 }

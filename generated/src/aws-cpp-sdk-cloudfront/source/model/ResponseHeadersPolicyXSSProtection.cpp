@@ -31,14 +31,8 @@ ResponseHeadersPolicyXSSProtection::ResponseHeadersPolicyXSSProtection() :
 {
 }
 
-ResponseHeadersPolicyXSSProtection::ResponseHeadersPolicyXSSProtection(const XmlNode& xmlNode) : 
-    m_override(false),
-    m_overrideHasBeenSet(false),
-    m_protection(false),
-    m_protectionHasBeenSet(false),
-    m_modeBlock(false),
-    m_modeBlockHasBeenSet(false),
-    m_reportUriHasBeenSet(false)
+ResponseHeadersPolicyXSSProtection::ResponseHeadersPolicyXSSProtection(const XmlNode& xmlNode)
+  : ResponseHeadersPolicyXSSProtection()
 {
   *this = xmlNode;
 }

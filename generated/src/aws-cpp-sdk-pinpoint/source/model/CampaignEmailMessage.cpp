@@ -27,12 +27,8 @@ CampaignEmailMessage::CampaignEmailMessage() :
 {
 }
 
-CampaignEmailMessage::CampaignEmailMessage(JsonView jsonValue) : 
-    m_bodyHasBeenSet(false),
-    m_fromAddressHasBeenSet(false),
-    m_headersHasBeenSet(false),
-    m_htmlBodyHasBeenSet(false),
-    m_titleHasBeenSet(false)
+CampaignEmailMessage::CampaignEmailMessage(JsonView jsonValue)
+  : CampaignEmailMessage()
 {
   *this = jsonValue;
 }

@@ -27,12 +27,8 @@ SchedulingConfig::SchedulingConfig() :
 {
 }
 
-SchedulingConfig::SchedulingConfig(JsonView jsonValue) : 
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_endBehavior(JobEndBehavior::NOT_SET),
-    m_endBehaviorHasBeenSet(false),
-    m_maintenanceWindowsHasBeenSet(false)
+SchedulingConfig::SchedulingConfig(JsonView jsonValue)
+  : SchedulingConfig()
 {
   *this = jsonValue;
 }

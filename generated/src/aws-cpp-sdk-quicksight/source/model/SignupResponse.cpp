@@ -27,12 +27,8 @@ SignupResponse::SignupResponse() :
 {
 }
 
-SignupResponse::SignupResponse(JsonView jsonValue) : 
-    m_iAMUser(false),
-    m_iAMUserHasBeenSet(false),
-    m_userLoginNameHasBeenSet(false),
-    m_accountNameHasBeenSet(false),
-    m_directoryTypeHasBeenSet(false)
+SignupResponse::SignupResponse(JsonView jsonValue)
+  : SignupResponse()
 {
   *this = jsonValue;
 }

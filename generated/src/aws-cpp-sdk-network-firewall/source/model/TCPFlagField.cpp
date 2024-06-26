@@ -24,9 +24,8 @@ TCPFlagField::TCPFlagField() :
 {
 }
 
-TCPFlagField::TCPFlagField(JsonView jsonValue) : 
-    m_flagsHasBeenSet(false),
-    m_masksHasBeenSet(false)
+TCPFlagField::TCPFlagField(JsonView jsonValue)
+  : TCPFlagField()
 {
   *this = jsonValue;
 }

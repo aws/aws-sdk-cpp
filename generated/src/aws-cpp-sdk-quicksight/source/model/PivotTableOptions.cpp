@@ -41,26 +41,8 @@ PivotTableOptions::PivotTableOptions() :
 {
 }
 
-PivotTableOptions::PivotTableOptions(JsonView jsonValue) : 
-    m_metricPlacement(PivotTableMetricPlacement::NOT_SET),
-    m_metricPlacementHasBeenSet(false),
-    m_singleMetricVisibility(Visibility::NOT_SET),
-    m_singleMetricVisibilityHasBeenSet(false),
-    m_columnNamesVisibility(Visibility::NOT_SET),
-    m_columnNamesVisibilityHasBeenSet(false),
-    m_toggleButtonsVisibility(Visibility::NOT_SET),
-    m_toggleButtonsVisibilityHasBeenSet(false),
-    m_columnHeaderStyleHasBeenSet(false),
-    m_rowHeaderStyleHasBeenSet(false),
-    m_cellStyleHasBeenSet(false),
-    m_rowFieldNamesStyleHasBeenSet(false),
-    m_rowAlternateColorOptionsHasBeenSet(false),
-    m_collapsedRowDimensionsVisibility(Visibility::NOT_SET),
-    m_collapsedRowDimensionsVisibilityHasBeenSet(false),
-    m_rowsLayout(PivotTableRowsLayout::NOT_SET),
-    m_rowsLayoutHasBeenSet(false),
-    m_rowsLabelOptionsHasBeenSet(false),
-    m_defaultCellWidthHasBeenSet(false)
+PivotTableOptions::PivotTableOptions(JsonView jsonValue)
+  : PivotTableOptions()
 {
   *this = jsonValue;
 }

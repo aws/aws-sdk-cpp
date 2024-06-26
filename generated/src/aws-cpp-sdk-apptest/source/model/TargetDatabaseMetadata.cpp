@@ -26,11 +26,8 @@ TargetDatabaseMetadata::TargetDatabaseMetadata() :
 {
 }
 
-TargetDatabaseMetadata::TargetDatabaseMetadata(JsonView jsonValue) : 
-    m_type(TargetDatabase::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_captureTool(CaptureTool::NOT_SET),
-    m_captureToolHasBeenSet(false)
+TargetDatabaseMetadata::TargetDatabaseMetadata(JsonView jsonValue)
+  : TargetDatabaseMetadata()
 {
   *this = jsonValue;
 }

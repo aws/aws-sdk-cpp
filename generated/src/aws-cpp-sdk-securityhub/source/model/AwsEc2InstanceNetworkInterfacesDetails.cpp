@@ -23,8 +23,8 @@ AwsEc2InstanceNetworkInterfacesDetails::AwsEc2InstanceNetworkInterfacesDetails()
 {
 }
 
-AwsEc2InstanceNetworkInterfacesDetails::AwsEc2InstanceNetworkInterfacesDetails(JsonView jsonValue) : 
-    m_networkInterfaceIdHasBeenSet(false)
+AwsEc2InstanceNetworkInterfacesDetails::AwsEc2InstanceNetworkInterfacesDetails(JsonView jsonValue)
+  : AwsEc2InstanceNetworkInterfacesDetails()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ AwsRedshiftClusterClusterSecurityGroup::AwsRedshiftClusterClusterSecurityGroup()
 {
 }
 
-AwsRedshiftClusterClusterSecurityGroup::AwsRedshiftClusterClusterSecurityGroup(JsonView jsonValue) : 
-    m_clusterSecurityGroupNameHasBeenSet(false),
-    m_statusHasBeenSet(false)
+AwsRedshiftClusterClusterSecurityGroup::AwsRedshiftClusterClusterSecurityGroup(JsonView jsonValue)
+  : AwsRedshiftClusterClusterSecurityGroup()
 {
   *this = jsonValue;
 }

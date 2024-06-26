@@ -24,9 +24,8 @@ DatabaseLFTagPolicyAndPermissions::DatabaseLFTagPolicyAndPermissions() :
 {
 }
 
-DatabaseLFTagPolicyAndPermissions::DatabaseLFTagPolicyAndPermissions(JsonView jsonValue) : 
-    m_expressionHasBeenSet(false),
-    m_permissionsHasBeenSet(false)
+DatabaseLFTagPolicyAndPermissions::DatabaseLFTagPolicyAndPermissions(JsonView jsonValue)
+  : DatabaseLFTagPolicyAndPermissions()
 {
   *this = jsonValue;
 }

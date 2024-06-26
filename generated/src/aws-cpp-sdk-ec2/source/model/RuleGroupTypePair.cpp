@@ -26,9 +26,8 @@ RuleGroupTypePair::RuleGroupTypePair() :
 {
 }
 
-RuleGroupTypePair::RuleGroupTypePair(const XmlNode& xmlNode) : 
-    m_ruleGroupArnHasBeenSet(false),
-    m_ruleGroupTypeHasBeenSet(false)
+RuleGroupTypePair::RuleGroupTypePair(const XmlNode& xmlNode)
+  : RuleGroupTypePair()
 {
   *this = xmlNode;
 }

@@ -25,10 +25,8 @@ FetchPageResult::FetchPageResult() :
 {
 }
 
-FetchPageResult::FetchPageResult(JsonView jsonValue) : 
-    m_pageHasBeenSet(false),
-    m_timingInformationHasBeenSet(false),
-    m_consumedIOsHasBeenSet(false)
+FetchPageResult::FetchPageResult(JsonView jsonValue)
+  : FetchPageResult()
 {
   *this = jsonValue;
 }

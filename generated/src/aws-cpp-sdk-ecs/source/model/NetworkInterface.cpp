@@ -25,10 +25,8 @@ NetworkInterface::NetworkInterface() :
 {
 }
 
-NetworkInterface::NetworkInterface(JsonView jsonValue) : 
-    m_attachmentIdHasBeenSet(false),
-    m_privateIpv4AddressHasBeenSet(false),
-    m_ipv6AddressHasBeenSet(false)
+NetworkInterface::NetworkInterface(JsonView jsonValue)
+  : NetworkInterface()
 {
   *this = jsonValue;
 }

@@ -39,24 +39,8 @@ ProcessDetails::ProcessDetails() :
 {
 }
 
-ProcessDetails::ProcessDetails(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_executablePathHasBeenSet(false),
-    m_executableSha256HasBeenSet(false),
-    m_namespacePid(0),
-    m_namespacePidHasBeenSet(false),
-    m_pwdHasBeenSet(false),
-    m_pid(0),
-    m_pidHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_uuidHasBeenSet(false),
-    m_parentUuidHasBeenSet(false),
-    m_userHasBeenSet(false),
-    m_userId(0),
-    m_userIdHasBeenSet(false),
-    m_euid(0),
-    m_euidHasBeenSet(false),
-    m_lineageHasBeenSet(false)
+ProcessDetails::ProcessDetails(JsonView jsonValue)
+  : ProcessDetails()
 {
   *this = jsonValue;
 }

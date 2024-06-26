@@ -35,20 +35,8 @@ BudgetSummary::BudgetSummary() :
 {
 }
 
-BudgetSummary::BudgetSummary(JsonView jsonValue) : 
-    m_approximateDollarLimit(0.0),
-    m_approximateDollarLimitHasBeenSet(false),
-    m_budgetIdHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_status(BudgetStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_updatedByHasBeenSet(false),
-    m_usageTrackingResourceHasBeenSet(false),
-    m_usagesHasBeenSet(false)
+BudgetSummary::BudgetSummary(JsonView jsonValue)
+  : BudgetSummary()
 {
   *this = jsonValue;
 }

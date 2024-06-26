@@ -27,12 +27,8 @@ IntegerDatasetParameter::IntegerDatasetParameter() :
 {
 }
 
-IntegerDatasetParameter::IntegerDatasetParameter(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_valueType(DatasetParameterValueType::NOT_SET),
-    m_valueTypeHasBeenSet(false),
-    m_defaultValuesHasBeenSet(false)
+IntegerDatasetParameter::IntegerDatasetParameter(JsonView jsonValue)
+  : IntegerDatasetParameter()
 {
   *this = jsonValue;
 }

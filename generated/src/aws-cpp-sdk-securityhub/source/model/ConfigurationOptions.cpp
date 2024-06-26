@@ -30,15 +30,8 @@ ConfigurationOptions::ConfigurationOptions() :
 {
 }
 
-ConfigurationOptions::ConfigurationOptions(JsonView jsonValue) : 
-    m_integerHasBeenSet(false),
-    m_integerListHasBeenSet(false),
-    m_doubleHasBeenSet(false),
-    m_stringHasBeenSet(false),
-    m_stringListHasBeenSet(false),
-    m_booleanHasBeenSet(false),
-    m_enumHasBeenSet(false),
-    m_enumListHasBeenSet(false)
+ConfigurationOptions::ConfigurationOptions(JsonView jsonValue)
+  : ConfigurationOptions()
 {
   *this = jsonValue;
 }

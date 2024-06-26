@@ -24,9 +24,8 @@ Rule::Rule() :
 {
 }
 
-Rule::Rule(JsonView jsonValue) : 
-    m_matchingKeysHasBeenSet(false),
-    m_ruleNameHasBeenSet(false)
+Rule::Rule(JsonView jsonValue)
+  : Rule()
 {
   *this = jsonValue;
 }

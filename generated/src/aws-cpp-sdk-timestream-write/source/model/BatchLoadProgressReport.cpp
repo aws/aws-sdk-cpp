@@ -34,19 +34,8 @@ BatchLoadProgressReport::BatchLoadProgressReport() :
 {
 }
 
-BatchLoadProgressReport::BatchLoadProgressReport(JsonView jsonValue) : 
-    m_recordsProcessed(0),
-    m_recordsProcessedHasBeenSet(false),
-    m_recordsIngested(0),
-    m_recordsIngestedHasBeenSet(false),
-    m_parseFailures(0),
-    m_parseFailuresHasBeenSet(false),
-    m_recordIngestionFailures(0),
-    m_recordIngestionFailuresHasBeenSet(false),
-    m_fileFailures(0),
-    m_fileFailuresHasBeenSet(false),
-    m_bytesMetered(0),
-    m_bytesMeteredHasBeenSet(false)
+BatchLoadProgressReport::BatchLoadProgressReport(JsonView jsonValue)
+  : BatchLoadProgressReport()
 {
   *this = jsonValue;
 }

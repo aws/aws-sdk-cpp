@@ -24,9 +24,8 @@ MembershipProtectedQueryResultConfiguration::MembershipProtectedQueryResultConfi
 {
 }
 
-MembershipProtectedQueryResultConfiguration::MembershipProtectedQueryResultConfiguration(JsonView jsonValue) : 
-    m_outputConfigurationHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
+MembershipProtectedQueryResultConfiguration::MembershipProtectedQueryResultConfiguration(JsonView jsonValue)
+  : MembershipProtectedQueryResultConfiguration()
 {
   *this = jsonValue;
 }

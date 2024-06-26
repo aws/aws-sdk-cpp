@@ -27,12 +27,8 @@ ModuleLoggingConfiguration::ModuleLoggingConfiguration() :
 {
 }
 
-ModuleLoggingConfiguration::ModuleLoggingConfiguration(JsonView jsonValue) : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_logLevel(LoggingLevel::NOT_SET),
-    m_logLevelHasBeenSet(false),
-    m_cloudWatchLogGroupArnHasBeenSet(false)
+ModuleLoggingConfiguration::ModuleLoggingConfiguration(JsonView jsonValue)
+  : ModuleLoggingConfiguration()
 {
   *this = jsonValue;
 }

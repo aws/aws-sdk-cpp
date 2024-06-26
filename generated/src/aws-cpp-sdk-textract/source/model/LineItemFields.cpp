@@ -23,8 +23,8 @@ LineItemFields::LineItemFields() :
 {
 }
 
-LineItemFields::LineItemFields(JsonView jsonValue) : 
-    m_lineItemExpenseFieldsHasBeenSet(false)
+LineItemFields::LineItemFields(JsonView jsonValue)
+  : LineItemFields()
 {
   *this = jsonValue;
 }

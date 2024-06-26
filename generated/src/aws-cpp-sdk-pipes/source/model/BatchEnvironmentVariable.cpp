@@ -24,9 +24,8 @@ BatchEnvironmentVariable::BatchEnvironmentVariable() :
 {
 }
 
-BatchEnvironmentVariable::BatchEnvironmentVariable(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
+BatchEnvironmentVariable::BatchEnvironmentVariable(JsonView jsonValue)
+  : BatchEnvironmentVariable()
 {
   *this = jsonValue;
 }

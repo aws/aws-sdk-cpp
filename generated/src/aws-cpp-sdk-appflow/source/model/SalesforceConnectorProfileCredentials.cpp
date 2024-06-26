@@ -29,14 +29,8 @@ SalesforceConnectorProfileCredentials::SalesforceConnectorProfileCredentials() :
 {
 }
 
-SalesforceConnectorProfileCredentials::SalesforceConnectorProfileCredentials(JsonView jsonValue) : 
-    m_accessTokenHasBeenSet(false),
-    m_refreshTokenHasBeenSet(false),
-    m_oAuthRequestHasBeenSet(false),
-    m_clientCredentialsArnHasBeenSet(false),
-    m_oAuth2GrantType(OAuth2GrantType::NOT_SET),
-    m_oAuth2GrantTypeHasBeenSet(false),
-    m_jwtTokenHasBeenSet(false)
+SalesforceConnectorProfileCredentials::SalesforceConnectorProfileCredentials(JsonView jsonValue)
+  : SalesforceConnectorProfileCredentials()
 {
   *this = jsonValue;
 }

@@ -29,14 +29,8 @@ MacAlgorithmEmv::MacAlgorithmEmv() :
 {
 }
 
-MacAlgorithmEmv::MacAlgorithmEmv(JsonView jsonValue) : 
-    m_majorKeyDerivationMode(MajorKeyDerivationMode::NOT_SET),
-    m_majorKeyDerivationModeHasBeenSet(false),
-    m_panSequenceNumberHasBeenSet(false),
-    m_primaryAccountNumberHasBeenSet(false),
-    m_sessionKeyDerivationMode(SessionKeyDerivationMode::NOT_SET),
-    m_sessionKeyDerivationModeHasBeenSet(false),
-    m_sessionKeyDerivationValueHasBeenSet(false)
+MacAlgorithmEmv::MacAlgorithmEmv(JsonView jsonValue)
+  : MacAlgorithmEmv()
 {
   *this = jsonValue;
 }

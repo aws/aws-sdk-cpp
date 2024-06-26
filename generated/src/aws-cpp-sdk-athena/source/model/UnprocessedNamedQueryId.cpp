@@ -25,10 +25,8 @@ UnprocessedNamedQueryId::UnprocessedNamedQueryId() :
 {
 }
 
-UnprocessedNamedQueryId::UnprocessedNamedQueryId(JsonView jsonValue) : 
-    m_namedQueryIdHasBeenSet(false),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
+UnprocessedNamedQueryId::UnprocessedNamedQueryId(JsonView jsonValue)
+  : UnprocessedNamedQueryId()
 {
   *this = jsonValue;
 }

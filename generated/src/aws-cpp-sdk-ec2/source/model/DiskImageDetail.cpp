@@ -29,12 +29,8 @@ DiskImageDetail::DiskImageDetail() :
 {
 }
 
-DiskImageDetail::DiskImageDetail(const XmlNode& xmlNode) : 
-    m_bytes(0),
-    m_bytesHasBeenSet(false),
-    m_format(DiskImageFormat::NOT_SET),
-    m_formatHasBeenSet(false),
-    m_importManifestUrlHasBeenSet(false)
+DiskImageDetail::DiskImageDetail(const XmlNode& xmlNode)
+  : DiskImageDetail()
 {
   *this = xmlNode;
 }

@@ -23,9 +23,8 @@ DeleteImageSetResult::DeleteImageSetResult() :
 {
 }
 
-DeleteImageSetResult::DeleteImageSetResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_imageSetState(ImageSetState::NOT_SET),
-    m_imageSetWorkflowStatus(ImageSetWorkflowStatus::NOT_SET)
+DeleteImageSetResult::DeleteImageSetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeleteImageSetResult()
 {
   *this = result;
 }

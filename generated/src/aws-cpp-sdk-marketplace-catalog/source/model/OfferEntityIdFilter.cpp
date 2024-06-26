@@ -23,8 +23,8 @@ OfferEntityIdFilter::OfferEntityIdFilter() :
 {
 }
 
-OfferEntityIdFilter::OfferEntityIdFilter(JsonView jsonValue) : 
-    m_valueListHasBeenSet(false)
+OfferEntityIdFilter::OfferEntityIdFilter(JsonView jsonValue)
+  : OfferEntityIdFilter()
 {
   *this = jsonValue;
 }

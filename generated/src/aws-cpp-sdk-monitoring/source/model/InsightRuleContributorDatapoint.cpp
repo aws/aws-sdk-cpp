@@ -27,10 +27,8 @@ InsightRuleContributorDatapoint::InsightRuleContributorDatapoint() :
 {
 }
 
-InsightRuleContributorDatapoint::InsightRuleContributorDatapoint(const XmlNode& xmlNode) : 
-    m_timestampHasBeenSet(false),
-    m_approximateValue(0.0),
-    m_approximateValueHasBeenSet(false)
+InsightRuleContributorDatapoint::InsightRuleContributorDatapoint(const XmlNode& xmlNode)
+  : InsightRuleContributorDatapoint()
 {
   *this = xmlNode;
 }

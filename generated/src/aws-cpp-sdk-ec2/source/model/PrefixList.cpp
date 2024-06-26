@@ -27,10 +27,8 @@ PrefixList::PrefixList() :
 {
 }
 
-PrefixList::PrefixList(const XmlNode& xmlNode) : 
-    m_cidrsHasBeenSet(false),
-    m_prefixListIdHasBeenSet(false),
-    m_prefixListNameHasBeenSet(false)
+PrefixList::PrefixList(const XmlNode& xmlNode)
+  : PrefixList()
 {
   *this = xmlNode;
 }

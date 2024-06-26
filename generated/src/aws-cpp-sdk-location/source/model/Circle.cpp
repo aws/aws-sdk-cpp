@@ -25,10 +25,8 @@ Circle::Circle() :
 {
 }
 
-Circle::Circle(JsonView jsonValue) : 
-    m_centerHasBeenSet(false),
-    m_radius(0.0),
-    m_radiusHasBeenSet(false)
+Circle::Circle(JsonView jsonValue)
+  : Circle()
 {
   *this = jsonValue;
 }

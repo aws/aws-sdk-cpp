@@ -28,13 +28,8 @@ VorbisSettings::VorbisSettings() :
 {
 }
 
-VorbisSettings::VorbisSettings(JsonView jsonValue) : 
-    m_channels(0),
-    m_channelsHasBeenSet(false),
-    m_sampleRate(0),
-    m_sampleRateHasBeenSet(false),
-    m_vbrQuality(0),
-    m_vbrQualityHasBeenSet(false)
+VorbisSettings::VorbisSettings(JsonView jsonValue)
+  : VorbisSettings()
 {
   *this = jsonValue;
 }

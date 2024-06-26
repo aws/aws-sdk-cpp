@@ -28,13 +28,8 @@ CampaignSummary::CampaignSummary() :
 {
 }
 
-CampaignSummary::CampaignSummary(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_campaignArnHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_creationDateTimeHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false),
-    m_failureReasonHasBeenSet(false)
+CampaignSummary::CampaignSummary(JsonView jsonValue)
+  : CampaignSummary()
 {
   *this = jsonValue;
 }

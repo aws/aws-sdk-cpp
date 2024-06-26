@@ -25,10 +25,8 @@ SuggestStatus::SuggestStatus() :
 {
 }
 
-SuggestStatus::SuggestStatus(JsonView jsonValue) : 
-    m_timems(0),
-    m_timemsHasBeenSet(false),
-    m_ridHasBeenSet(false)
+SuggestStatus::SuggestStatus(JsonView jsonValue)
+  : SuggestStatus()
 {
   *this = jsonValue;
 }

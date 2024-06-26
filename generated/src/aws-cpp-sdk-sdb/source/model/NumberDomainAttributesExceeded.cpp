@@ -26,9 +26,8 @@ NumberDomainAttributesExceeded::NumberDomainAttributesExceeded() :
 {
 }
 
-NumberDomainAttributesExceeded::NumberDomainAttributesExceeded(const XmlNode& xmlNode) : 
-    m_boxUsage(0.0),
-    m_boxUsageHasBeenSet(false)
+NumberDomainAttributesExceeded::NumberDomainAttributesExceeded(const XmlNode& xmlNode)
+  : NumberDomainAttributesExceeded()
 {
   *this = xmlNode;
 }

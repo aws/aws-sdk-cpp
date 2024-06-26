@@ -22,8 +22,8 @@ UpdateContributorInsightsResult::UpdateContributorInsightsResult() :
 {
 }
 
-UpdateContributorInsightsResult::UpdateContributorInsightsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_contributorInsightsStatus(ContributorInsightsStatus::NOT_SET)
+UpdateContributorInsightsResult::UpdateContributorInsightsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateContributorInsightsResult()
 {
   *this = result;
 }

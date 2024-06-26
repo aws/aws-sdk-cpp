@@ -24,9 +24,8 @@ Categories::Categories() :
 {
 }
 
-Categories::Categories(JsonView jsonValue) : 
-    m_matchedCategoriesHasBeenSet(false),
-    m_matchedDetailsHasBeenSet(false)
+Categories::Categories(JsonView jsonValue)
+  : Categories()
 {
   *this = jsonValue;
 }

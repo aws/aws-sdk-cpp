@@ -26,11 +26,8 @@ RecurringPaymentTerm::RecurringPaymentTerm() :
 {
 }
 
-RecurringPaymentTerm::RecurringPaymentTerm(JsonView jsonValue) : 
-    m_billingPeriodHasBeenSet(false),
-    m_currencyCodeHasBeenSet(false),
-    m_priceHasBeenSet(false),
-    m_typeHasBeenSet(false)
+RecurringPaymentTerm::RecurringPaymentTerm(JsonView jsonValue)
+  : RecurringPaymentTerm()
 {
   *this = jsonValue;
 }

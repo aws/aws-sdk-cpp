@@ -24,9 +24,8 @@ InvalidRequestDetail::InvalidRequestDetail() :
 {
 }
 
-InvalidRequestDetail::InvalidRequestDetail(JsonView jsonValue) : 
-    m_reason(InvalidRequestDetailReason::NOT_SET),
-    m_reasonHasBeenSet(false)
+InvalidRequestDetail::InvalidRequestDetail(JsonView jsonValue)
+  : InvalidRequestDetail()
 {
   *this = jsonValue;
 }

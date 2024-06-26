@@ -25,10 +25,8 @@ NotificationAction::NotificationAction() :
 {
 }
 
-NotificationAction::NotificationAction(JsonView jsonValue) : 
-    m_actionHasBeenSet(false),
-    m_smsConfigurationsHasBeenSet(false),
-    m_emailConfigurationsHasBeenSet(false)
+NotificationAction::NotificationAction(JsonView jsonValue)
+  : NotificationAction()
 {
   *this = jsonValue;
 }

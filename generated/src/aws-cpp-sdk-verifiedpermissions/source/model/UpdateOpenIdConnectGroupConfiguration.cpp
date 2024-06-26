@@ -24,9 +24,8 @@ UpdateOpenIdConnectGroupConfiguration::UpdateOpenIdConnectGroupConfiguration() :
 {
 }
 
-UpdateOpenIdConnectGroupConfiguration::UpdateOpenIdConnectGroupConfiguration(JsonView jsonValue) : 
-    m_groupClaimHasBeenSet(false),
-    m_groupEntityTypeHasBeenSet(false)
+UpdateOpenIdConnectGroupConfiguration::UpdateOpenIdConnectGroupConfiguration(JsonView jsonValue)
+  : UpdateOpenIdConnectGroupConfiguration()
 {
   *this = jsonValue;
 }

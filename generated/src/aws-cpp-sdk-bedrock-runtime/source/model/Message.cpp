@@ -25,10 +25,8 @@ Message::Message() :
 {
 }
 
-Message::Message(JsonView jsonValue) : 
-    m_role(ConversationRole::NOT_SET),
-    m_roleHasBeenSet(false),
-    m_contentHasBeenSet(false)
+Message::Message(JsonView jsonValue)
+  : Message()
 {
   *this = jsonValue;
 }

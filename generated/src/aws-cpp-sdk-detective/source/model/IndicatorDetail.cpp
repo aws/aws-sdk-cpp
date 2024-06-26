@@ -30,15 +30,8 @@ IndicatorDetail::IndicatorDetail() :
 {
 }
 
-IndicatorDetail::IndicatorDetail(JsonView jsonValue) : 
-    m_tTPsObservedDetailHasBeenSet(false),
-    m_impossibleTravelDetailHasBeenSet(false),
-    m_flaggedIpAddressDetailHasBeenSet(false),
-    m_newGeolocationDetailHasBeenSet(false),
-    m_newAsoDetailHasBeenSet(false),
-    m_newUserAgentDetailHasBeenSet(false),
-    m_relatedFindingDetailHasBeenSet(false),
-    m_relatedFindingGroupDetailHasBeenSet(false)
+IndicatorDetail::IndicatorDetail(JsonView jsonValue)
+  : IndicatorDetail()
 {
   *this = jsonValue;
 }

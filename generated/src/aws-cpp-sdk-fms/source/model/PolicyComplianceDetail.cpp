@@ -30,15 +30,8 @@ PolicyComplianceDetail::PolicyComplianceDetail() :
 {
 }
 
-PolicyComplianceDetail::PolicyComplianceDetail(JsonView jsonValue) : 
-    m_policyOwnerHasBeenSet(false),
-    m_policyIdHasBeenSet(false),
-    m_memberAccountHasBeenSet(false),
-    m_violatorsHasBeenSet(false),
-    m_evaluationLimitExceeded(false),
-    m_evaluationLimitExceededHasBeenSet(false),
-    m_expiredAtHasBeenSet(false),
-    m_issueInfoMapHasBeenSet(false)
+PolicyComplianceDetail::PolicyComplianceDetail(JsonView jsonValue)
+  : PolicyComplianceDetail()
 {
   *this = jsonValue;
 }

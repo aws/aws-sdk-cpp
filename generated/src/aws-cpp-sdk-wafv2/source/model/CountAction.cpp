@@ -23,8 +23,8 @@ CountAction::CountAction() :
 {
 }
 
-CountAction::CountAction(JsonView jsonValue) : 
-    m_customRequestHandlingHasBeenSet(false)
+CountAction::CountAction(JsonView jsonValue)
+  : CountAction()
 {
   *this = jsonValue;
 }

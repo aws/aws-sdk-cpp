@@ -21,8 +21,8 @@ GetTrafficPolicyInstanceCountResult::GetTrafficPolicyInstanceCountResult() :
 {
 }
 
-GetTrafficPolicyInstanceCountResult::GetTrafficPolicyInstanceCountResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_trafficPolicyInstanceCount(0)
+GetTrafficPolicyInstanceCountResult::GetTrafficPolicyInstanceCountResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : GetTrafficPolicyInstanceCountResult()
 {
   *this = result;
 }

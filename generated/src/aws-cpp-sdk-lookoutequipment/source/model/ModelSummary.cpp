@@ -43,28 +43,8 @@ ModelSummary::ModelSummary() :
 {
 }
 
-ModelSummary::ModelSummary(JsonView jsonValue) : 
-    m_modelNameHasBeenSet(false),
-    m_modelArnHasBeenSet(false),
-    m_datasetNameHasBeenSet(false),
-    m_datasetArnHasBeenSet(false),
-    m_status(ModelStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_activeModelVersion(0),
-    m_activeModelVersionHasBeenSet(false),
-    m_activeModelVersionArnHasBeenSet(false),
-    m_latestScheduledRetrainingStatus(ModelVersionStatus::NOT_SET),
-    m_latestScheduledRetrainingStatusHasBeenSet(false),
-    m_latestScheduledRetrainingModelVersion(0),
-    m_latestScheduledRetrainingModelVersionHasBeenSet(false),
-    m_latestScheduledRetrainingStartTimeHasBeenSet(false),
-    m_nextScheduledRetrainingStartDateHasBeenSet(false),
-    m_retrainingSchedulerStatus(RetrainingSchedulerStatus::NOT_SET),
-    m_retrainingSchedulerStatusHasBeenSet(false),
-    m_modelDiagnosticsOutputConfigurationHasBeenSet(false),
-    m_modelQuality(ModelQuality::NOT_SET),
-    m_modelQualityHasBeenSet(false)
+ModelSummary::ModelSummary(JsonView jsonValue)
+  : ModelSummary()
 {
   *this = jsonValue;
 }

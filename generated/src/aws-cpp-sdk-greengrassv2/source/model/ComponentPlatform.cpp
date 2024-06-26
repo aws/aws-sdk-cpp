@@ -24,9 +24,8 @@ ComponentPlatform::ComponentPlatform() :
 {
 }
 
-ComponentPlatform::ComponentPlatform(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_attributesHasBeenSet(false)
+ComponentPlatform::ComponentPlatform(JsonView jsonValue)
+  : ComponentPlatform()
 {
   *this = jsonValue;
 }

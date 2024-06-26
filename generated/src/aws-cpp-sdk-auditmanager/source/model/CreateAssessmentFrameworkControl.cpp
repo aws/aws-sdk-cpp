@@ -23,8 +23,8 @@ CreateAssessmentFrameworkControl::CreateAssessmentFrameworkControl() :
 {
 }
 
-CreateAssessmentFrameworkControl::CreateAssessmentFrameworkControl(JsonView jsonValue) : 
-    m_idHasBeenSet(false)
+CreateAssessmentFrameworkControl::CreateAssessmentFrameworkControl(JsonView jsonValue)
+  : CreateAssessmentFrameworkControl()
 {
   *this = jsonValue;
 }

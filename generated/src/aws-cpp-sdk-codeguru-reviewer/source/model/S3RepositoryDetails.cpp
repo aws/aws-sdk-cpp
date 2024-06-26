@@ -24,9 +24,8 @@ S3RepositoryDetails::S3RepositoryDetails() :
 {
 }
 
-S3RepositoryDetails::S3RepositoryDetails(JsonView jsonValue) : 
-    m_bucketNameHasBeenSet(false),
-    m_codeArtifactsHasBeenSet(false)
+S3RepositoryDetails::S3RepositoryDetails(JsonView jsonValue)
+  : S3RepositoryDetails()
 {
   *this = jsonValue;
 }

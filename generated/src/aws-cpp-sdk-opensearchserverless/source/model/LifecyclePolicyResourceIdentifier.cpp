@@ -25,10 +25,8 @@ LifecyclePolicyResourceIdentifier::LifecyclePolicyResourceIdentifier() :
 {
 }
 
-LifecyclePolicyResourceIdentifier::LifecyclePolicyResourceIdentifier(JsonView jsonValue) : 
-    m_resourceHasBeenSet(false),
-    m_type(LifecyclePolicyType::NOT_SET),
-    m_typeHasBeenSet(false)
+LifecyclePolicyResourceIdentifier::LifecyclePolicyResourceIdentifier(JsonView jsonValue)
+  : LifecyclePolicyResourceIdentifier()
 {
   *this = jsonValue;
 }

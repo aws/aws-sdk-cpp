@@ -29,14 +29,8 @@ Campaign::Campaign() :
 {
 }
 
-Campaign::Campaign(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_connectInstanceIdHasBeenSet(false),
-    m_dialerConfigHasBeenSet(false),
-    m_outboundCallConfigHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+Campaign::Campaign(JsonView jsonValue)
+  : Campaign()
 {
   *this = jsonValue;
 }

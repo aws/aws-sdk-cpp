@@ -25,10 +25,8 @@ EbsVolumeConfiguration::EbsVolumeConfiguration() :
 {
 }
 
-EbsVolumeConfiguration::EbsVolumeConfiguration(JsonView jsonValue) : 
-    m_storageHasBeenSet(false),
-    m_performanceHasBeenSet(false),
-    m_attachmentStateHasBeenSet(false)
+EbsVolumeConfiguration::EbsVolumeConfiguration(JsonView jsonValue)
+  : EbsVolumeConfiguration()
 {
   *this = jsonValue;
 }

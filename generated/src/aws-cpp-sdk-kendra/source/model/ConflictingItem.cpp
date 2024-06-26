@@ -25,10 +25,8 @@ ConflictingItem::ConflictingItem() :
 {
 }
 
-ConflictingItem::ConflictingItem(JsonView jsonValue) : 
-    m_queryTextHasBeenSet(false),
-    m_setNameHasBeenSet(false),
-    m_setIdHasBeenSet(false)
+ConflictingItem::ConflictingItem(JsonView jsonValue)
+  : ConflictingItem()
 {
   *this = jsonValue;
 }

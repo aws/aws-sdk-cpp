@@ -24,9 +24,8 @@ MaintenanceWindowAutomationParameters::MaintenanceWindowAutomationParameters() :
 {
 }
 
-MaintenanceWindowAutomationParameters::MaintenanceWindowAutomationParameters(JsonView jsonValue) : 
-    m_documentVersionHasBeenSet(false),
-    m_parametersHasBeenSet(false)
+MaintenanceWindowAutomationParameters::MaintenanceWindowAutomationParameters(JsonView jsonValue)
+  : MaintenanceWindowAutomationParameters()
 {
   *this = jsonValue;
 }

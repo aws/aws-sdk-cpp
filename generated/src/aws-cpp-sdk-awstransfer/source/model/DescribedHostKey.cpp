@@ -29,14 +29,8 @@ DescribedHostKey::DescribedHostKey() :
 {
 }
 
-DescribedHostKey::DescribedHostKey(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_hostKeyIdHasBeenSet(false),
-    m_hostKeyFingerprintHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_dateImportedHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+DescribedHostKey::DescribedHostKey(JsonView jsonValue)
+  : DescribedHostKey()
 {
   *this = jsonValue;
 }

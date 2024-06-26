@@ -23,9 +23,8 @@ StartDeleteMonitorDeploymentResult::StartDeleteMonitorDeploymentResult() :
 {
 }
 
-StartDeleteMonitorDeploymentResult::StartDeleteMonitorDeploymentResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_monitorChangesPendingDeployment(false),
-    m_status(SignalMapStatus::NOT_SET)
+StartDeleteMonitorDeploymentResult::StartDeleteMonitorDeploymentResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : StartDeleteMonitorDeploymentResult()
 {
   *this = result;
 }

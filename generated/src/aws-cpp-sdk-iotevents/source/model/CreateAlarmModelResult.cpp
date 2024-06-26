@@ -22,8 +22,8 @@ CreateAlarmModelResult::CreateAlarmModelResult() :
 {
 }
 
-CreateAlarmModelResult::CreateAlarmModelResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(AlarmModelVersionStatus::NOT_SET)
+CreateAlarmModelResult::CreateAlarmModelResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateAlarmModelResult()
 {
   *this = result;
 }

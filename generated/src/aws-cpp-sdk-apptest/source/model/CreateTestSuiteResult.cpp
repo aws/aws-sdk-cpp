@@ -22,8 +22,8 @@ CreateTestSuiteResult::CreateTestSuiteResult() :
 {
 }
 
-CreateTestSuiteResult::CreateTestSuiteResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_testSuiteVersion(0)
+CreateTestSuiteResult::CreateTestSuiteResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateTestSuiteResult()
 {
   *this = result;
 }

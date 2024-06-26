@@ -41,26 +41,8 @@ ServiceSummary::ServiceSummary() :
 {
 }
 
-ServiceSummary::ServiceSummary(JsonView jsonValue) : 
-    m_applicationIdHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_createdByAccountIdHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_endpointType(ServiceEndpointType::NOT_SET),
-    m_endpointTypeHasBeenSet(false),
-    m_environmentIdHasBeenSet(false),
-    m_errorHasBeenSet(false),
-    m_lambdaEndpointHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_ownerAccountIdHasBeenSet(false),
-    m_serviceIdHasBeenSet(false),
-    m_state(ServiceState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_urlEndpointHasBeenSet(false),
-    m_vpcIdHasBeenSet(false)
+ServiceSummary::ServiceSummary(JsonView jsonValue)
+  : ServiceSummary()
 {
   *this = jsonValue;
 }

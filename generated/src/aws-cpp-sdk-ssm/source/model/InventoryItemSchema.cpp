@@ -26,11 +26,8 @@ InventoryItemSchema::InventoryItemSchema() :
 {
 }
 
-InventoryItemSchema::InventoryItemSchema(JsonView jsonValue) : 
-    m_typeNameHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_attributesHasBeenSet(false),
-    m_displayNameHasBeenSet(false)
+InventoryItemSchema::InventoryItemSchema(JsonView jsonValue)
+  : InventoryItemSchema()
 {
   *this = jsonValue;
 }

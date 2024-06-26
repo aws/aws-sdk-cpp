@@ -23,9 +23,8 @@ ExportEarthObservationJobResult::ExportEarthObservationJobResult() :
 {
 }
 
-ExportEarthObservationJobResult::ExportEarthObservationJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_exportSourceImages(false),
-    m_exportStatus(EarthObservationJobExportStatus::NOT_SET)
+ExportEarthObservationJobResult::ExportEarthObservationJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ExportEarthObservationJobResult()
 {
   *this = result;
 }

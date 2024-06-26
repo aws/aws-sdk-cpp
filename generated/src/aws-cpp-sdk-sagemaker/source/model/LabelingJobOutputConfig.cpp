@@ -25,10 +25,8 @@ LabelingJobOutputConfig::LabelingJobOutputConfig() :
 {
 }
 
-LabelingJobOutputConfig::LabelingJobOutputConfig(JsonView jsonValue) : 
-    m_s3OutputPathHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_snsTopicArnHasBeenSet(false)
+LabelingJobOutputConfig::LabelingJobOutputConfig(JsonView jsonValue)
+  : LabelingJobOutputConfig()
 {
   *this = jsonValue;
 }

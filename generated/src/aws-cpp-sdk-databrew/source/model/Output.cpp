@@ -33,18 +33,8 @@ Output::Output() :
 {
 }
 
-Output::Output(JsonView jsonValue) : 
-    m_compressionFormat(CompressionFormat::NOT_SET),
-    m_compressionFormatHasBeenSet(false),
-    m_format(OutputFormat::NOT_SET),
-    m_formatHasBeenSet(false),
-    m_partitionColumnsHasBeenSet(false),
-    m_locationHasBeenSet(false),
-    m_overwrite(false),
-    m_overwriteHasBeenSet(false),
-    m_formatOptionsHasBeenSet(false),
-    m_maxOutputFiles(0),
-    m_maxOutputFilesHasBeenSet(false)
+Output::Output(JsonView jsonValue)
+  : Output()
 {
   *this = jsonValue;
 }

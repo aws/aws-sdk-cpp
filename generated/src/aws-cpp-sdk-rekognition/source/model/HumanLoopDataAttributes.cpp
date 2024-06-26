@@ -23,8 +23,8 @@ HumanLoopDataAttributes::HumanLoopDataAttributes() :
 {
 }
 
-HumanLoopDataAttributes::HumanLoopDataAttributes(JsonView jsonValue) : 
-    m_contentClassifiersHasBeenSet(false)
+HumanLoopDataAttributes::HumanLoopDataAttributes(JsonView jsonValue)
+  : HumanLoopDataAttributes()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ CognitoGroupConfigurationItem::CognitoGroupConfigurationItem() :
 {
 }
 
-CognitoGroupConfigurationItem::CognitoGroupConfigurationItem(JsonView jsonValue) : 
-    m_groupEntityTypeHasBeenSet(false)
+CognitoGroupConfigurationItem::CognitoGroupConfigurationItem(JsonView jsonValue)
+  : CognitoGroupConfigurationItem()
 {
   *this = jsonValue;
 }

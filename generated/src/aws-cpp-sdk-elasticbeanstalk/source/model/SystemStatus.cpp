@@ -26,9 +26,8 @@ SystemStatus::SystemStatus() :
 {
 }
 
-SystemStatus::SystemStatus(const XmlNode& xmlNode) : 
-    m_cPUUtilizationHasBeenSet(false),
-    m_loadAverageHasBeenSet(false)
+SystemStatus::SystemStatus(const XmlNode& xmlNode)
+  : SystemStatus()
 {
   *this = xmlNode;
 }

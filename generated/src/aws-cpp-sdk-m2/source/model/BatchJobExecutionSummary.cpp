@@ -34,19 +34,8 @@ BatchJobExecutionSummary::BatchJobExecutionSummary() :
 {
 }
 
-BatchJobExecutionSummary::BatchJobExecutionSummary(JsonView jsonValue) : 
-    m_applicationIdHasBeenSet(false),
-    m_batchJobIdentifierHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_executionIdHasBeenSet(false),
-    m_jobIdHasBeenSet(false),
-    m_jobNameHasBeenSet(false),
-    m_jobType(BatchJobType::NOT_SET),
-    m_jobTypeHasBeenSet(false),
-    m_returnCodeHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_status(BatchJobExecutionStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+BatchJobExecutionSummary::BatchJobExecutionSummary(JsonView jsonValue)
+  : BatchJobExecutionSummary()
 {
   *this = jsonValue;
 }

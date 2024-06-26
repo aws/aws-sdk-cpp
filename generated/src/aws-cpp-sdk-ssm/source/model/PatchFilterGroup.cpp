@@ -23,8 +23,8 @@ PatchFilterGroup::PatchFilterGroup() :
 {
 }
 
-PatchFilterGroup::PatchFilterGroup(JsonView jsonValue) : 
-    m_patchFiltersHasBeenSet(false)
+PatchFilterGroup::PatchFilterGroup(JsonView jsonValue)
+  : PatchFilterGroup()
 {
   *this = jsonValue;
 }

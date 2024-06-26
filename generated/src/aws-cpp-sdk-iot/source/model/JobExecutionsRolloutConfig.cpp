@@ -25,10 +25,8 @@ JobExecutionsRolloutConfig::JobExecutionsRolloutConfig() :
 {
 }
 
-JobExecutionsRolloutConfig::JobExecutionsRolloutConfig(JsonView jsonValue) : 
-    m_maximumPerMinute(0),
-    m_maximumPerMinuteHasBeenSet(false),
-    m_exponentialRateHasBeenSet(false)
+JobExecutionsRolloutConfig::JobExecutionsRolloutConfig(JsonView jsonValue)
+  : JobExecutionsRolloutConfig()
 {
   *this = jsonValue;
 }

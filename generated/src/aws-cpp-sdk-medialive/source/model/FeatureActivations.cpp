@@ -26,11 +26,8 @@ FeatureActivations::FeatureActivations() :
 {
 }
 
-FeatureActivations::FeatureActivations(JsonView jsonValue) : 
-    m_inputPrepareScheduleActions(FeatureActivationsInputPrepareScheduleActions::NOT_SET),
-    m_inputPrepareScheduleActionsHasBeenSet(false),
-    m_outputStaticImageOverlayScheduleActions(FeatureActivationsOutputStaticImageOverlayScheduleActions::NOT_SET),
-    m_outputStaticImageOverlayScheduleActionsHasBeenSet(false)
+FeatureActivations::FeatureActivations(JsonView jsonValue)
+  : FeatureActivations()
 {
   *this = jsonValue;
 }

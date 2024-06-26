@@ -25,10 +25,8 @@ ModelDeployConfig::ModelDeployConfig() :
 {
 }
 
-ModelDeployConfig::ModelDeployConfig(JsonView jsonValue) : 
-    m_autoGenerateEndpointName(false),
-    m_autoGenerateEndpointNameHasBeenSet(false),
-    m_endpointNameHasBeenSet(false)
+ModelDeployConfig::ModelDeployConfig(JsonView jsonValue)
+  : ModelDeployConfig()
 {
   *this = jsonValue;
 }

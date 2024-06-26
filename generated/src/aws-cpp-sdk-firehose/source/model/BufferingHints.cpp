@@ -26,11 +26,8 @@ BufferingHints::BufferingHints() :
 {
 }
 
-BufferingHints::BufferingHints(JsonView jsonValue) : 
-    m_sizeInMBs(0),
-    m_sizeInMBsHasBeenSet(false),
-    m_intervalInSeconds(0),
-    m_intervalInSecondsHasBeenSet(false)
+BufferingHints::BufferingHints(JsonView jsonValue)
+  : BufferingHints()
 {
   *this = jsonValue;
 }

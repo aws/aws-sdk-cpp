@@ -27,12 +27,8 @@ DeploymentSpecificationsField::DeploymentSpecificationsField() :
 {
 }
 
-DeploymentSpecificationsField::DeploymentSpecificationsField(JsonView jsonValue) : 
-    m_allowedValuesHasBeenSet(false),
-    m_conditionalsHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_requiredHasBeenSet(false)
+DeploymentSpecificationsField::DeploymentSpecificationsField(JsonView jsonValue)
+  : DeploymentSpecificationsField()
 {
   *this = jsonValue;
 }

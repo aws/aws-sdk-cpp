@@ -25,10 +25,8 @@ RuleGroupSourceStatefulRulesDetails::RuleGroupSourceStatefulRulesDetails() :
 {
 }
 
-RuleGroupSourceStatefulRulesDetails::RuleGroupSourceStatefulRulesDetails(JsonView jsonValue) : 
-    m_actionHasBeenSet(false),
-    m_headerHasBeenSet(false),
-    m_ruleOptionsHasBeenSet(false)
+RuleGroupSourceStatefulRulesDetails::RuleGroupSourceStatefulRulesDetails(JsonView jsonValue)
+  : RuleGroupSourceStatefulRulesDetails()
 {
   *this = jsonValue;
 }

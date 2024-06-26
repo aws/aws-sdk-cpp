@@ -29,12 +29,8 @@ VpcIpv6CidrBlockAssociation::VpcIpv6CidrBlockAssociation() :
 {
 }
 
-VpcIpv6CidrBlockAssociation::VpcIpv6CidrBlockAssociation(const XmlNode& xmlNode) : 
-    m_associationIdHasBeenSet(false),
-    m_ipv6CidrBlockHasBeenSet(false),
-    m_ipv6CidrBlockStateHasBeenSet(false),
-    m_networkBorderGroupHasBeenSet(false),
-    m_ipv6PoolHasBeenSet(false)
+VpcIpv6CidrBlockAssociation::VpcIpv6CidrBlockAssociation(const XmlNode& xmlNode)
+  : VpcIpv6CidrBlockAssociation()
 {
   *this = xmlNode;
 }

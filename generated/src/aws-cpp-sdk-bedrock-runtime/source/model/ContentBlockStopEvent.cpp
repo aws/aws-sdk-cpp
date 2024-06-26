@@ -24,9 +24,8 @@ ContentBlockStopEvent::ContentBlockStopEvent() :
 {
 }
 
-ContentBlockStopEvent::ContentBlockStopEvent(JsonView jsonValue) : 
-    m_contentBlockIndex(0),
-    m_contentBlockIndexHasBeenSet(false)
+ContentBlockStopEvent::ContentBlockStopEvent(JsonView jsonValue)
+  : ContentBlockStopEvent()
 {
   *this = jsonValue;
 }

@@ -32,17 +32,8 @@ MovSettings::MovSettings() :
 {
 }
 
-MovSettings::MovSettings(JsonView jsonValue) : 
-    m_clapAtom(MovClapAtom::NOT_SET),
-    m_clapAtomHasBeenSet(false),
-    m_cslgAtom(MovCslgAtom::NOT_SET),
-    m_cslgAtomHasBeenSet(false),
-    m_mpeg2FourCCControl(MovMpeg2FourCCControl::NOT_SET),
-    m_mpeg2FourCCControlHasBeenSet(false),
-    m_paddingControl(MovPaddingControl::NOT_SET),
-    m_paddingControlHasBeenSet(false),
-    m_reference(MovReference::NOT_SET),
-    m_referenceHasBeenSet(false)
+MovSettings::MovSettings(JsonView jsonValue)
+  : MovSettings()
 {
   *this = jsonValue;
 }

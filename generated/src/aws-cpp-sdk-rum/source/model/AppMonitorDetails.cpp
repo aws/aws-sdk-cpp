@@ -25,10 +25,8 @@ AppMonitorDetails::AppMonitorDetails() :
 {
 }
 
-AppMonitorDetails::AppMonitorDetails(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_versionHasBeenSet(false)
+AppMonitorDetails::AppMonitorDetails(JsonView jsonValue)
+  : AppMonitorDetails()
 {
   *this = jsonValue;
 }

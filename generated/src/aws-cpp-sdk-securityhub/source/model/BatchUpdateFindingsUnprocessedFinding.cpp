@@ -25,10 +25,8 @@ BatchUpdateFindingsUnprocessedFinding::BatchUpdateFindingsUnprocessedFinding() :
 {
 }
 
-BatchUpdateFindingsUnprocessedFinding::BatchUpdateFindingsUnprocessedFinding(JsonView jsonValue) : 
-    m_findingIdentifierHasBeenSet(false),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
+BatchUpdateFindingsUnprocessedFinding::BatchUpdateFindingsUnprocessedFinding(JsonView jsonValue)
+  : BatchUpdateFindingsUnprocessedFinding()
 {
   *this = jsonValue;
 }

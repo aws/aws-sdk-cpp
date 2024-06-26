@@ -23,8 +23,8 @@ AnalysisSource::AnalysisSource() :
 {
 }
 
-AnalysisSource::AnalysisSource(JsonView jsonValue) : 
-    m_textHasBeenSet(false)
+AnalysisSource::AnalysisSource(JsonView jsonValue)
+  : AnalysisSource()
 {
   *this = jsonValue;
 }

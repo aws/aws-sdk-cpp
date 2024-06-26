@@ -40,25 +40,8 @@ PoolInformation::PoolInformation() :
 {
 }
 
-PoolInformation::PoolInformation(JsonView jsonValue) : 
-    m_poolArnHasBeenSet(false),
-    m_poolIdHasBeenSet(false),
-    m_status(PoolStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_messageType(MessageType::NOT_SET),
-    m_messageTypeHasBeenSet(false),
-    m_twoWayEnabled(false),
-    m_twoWayEnabledHasBeenSet(false),
-    m_twoWayChannelArnHasBeenSet(false),
-    m_twoWayChannelRoleHasBeenSet(false),
-    m_selfManagedOptOutsEnabled(false),
-    m_selfManagedOptOutsEnabledHasBeenSet(false),
-    m_optOutListNameHasBeenSet(false),
-    m_sharedRoutesEnabled(false),
-    m_sharedRoutesEnabledHasBeenSet(false),
-    m_deletionProtectionEnabled(false),
-    m_deletionProtectionEnabledHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false)
+PoolInformation::PoolInformation(JsonView jsonValue)
+  : PoolInformation()
 {
   *this = jsonValue;
 }

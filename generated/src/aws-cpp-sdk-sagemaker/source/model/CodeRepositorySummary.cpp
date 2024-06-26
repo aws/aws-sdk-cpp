@@ -27,12 +27,8 @@ CodeRepositorySummary::CodeRepositorySummary() :
 {
 }
 
-CodeRepositorySummary::CodeRepositorySummary(JsonView jsonValue) : 
-    m_codeRepositoryNameHasBeenSet(false),
-    m_codeRepositoryArnHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_gitConfigHasBeenSet(false)
+CodeRepositorySummary::CodeRepositorySummary(JsonView jsonValue)
+  : CodeRepositorySummary()
 {
   *this = jsonValue;
 }

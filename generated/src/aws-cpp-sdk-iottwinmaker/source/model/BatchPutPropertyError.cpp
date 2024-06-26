@@ -25,10 +25,8 @@ BatchPutPropertyError::BatchPutPropertyError() :
 {
 }
 
-BatchPutPropertyError::BatchPutPropertyError(JsonView jsonValue) : 
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_entryHasBeenSet(false)
+BatchPutPropertyError::BatchPutPropertyError(JsonView jsonValue)
+  : BatchPutPropertyError()
 {
   *this = jsonValue;
 }

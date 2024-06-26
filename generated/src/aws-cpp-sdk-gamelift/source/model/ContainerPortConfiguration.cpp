@@ -23,8 +23,8 @@ ContainerPortConfiguration::ContainerPortConfiguration() :
 {
 }
 
-ContainerPortConfiguration::ContainerPortConfiguration(JsonView jsonValue) : 
-    m_containerPortRangesHasBeenSet(false)
+ContainerPortConfiguration::ContainerPortConfiguration(JsonView jsonValue)
+  : ContainerPortConfiguration()
 {
   *this = jsonValue;
 }

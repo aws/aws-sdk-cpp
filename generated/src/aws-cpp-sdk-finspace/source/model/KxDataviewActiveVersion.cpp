@@ -27,12 +27,8 @@ KxDataviewActiveVersion::KxDataviewActiveVersion() :
 {
 }
 
-KxDataviewActiveVersion::KxDataviewActiveVersion(JsonView jsonValue) : 
-    m_changesetIdHasBeenSet(false),
-    m_segmentConfigurationsHasBeenSet(false),
-    m_attachedClustersHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false),
-    m_versionIdHasBeenSet(false)
+KxDataviewActiveVersion::KxDataviewActiveVersion(JsonView jsonValue)
+  : KxDataviewActiveVersion()
 {
   *this = jsonValue;
 }

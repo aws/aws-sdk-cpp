@@ -23,8 +23,8 @@ AnonymousUserQSearchBarEmbeddingConfiguration::AnonymousUserQSearchBarEmbeddingC
 {
 }
 
-AnonymousUserQSearchBarEmbeddingConfiguration::AnonymousUserQSearchBarEmbeddingConfiguration(JsonView jsonValue) : 
-    m_initialTopicIdHasBeenSet(false)
+AnonymousUserQSearchBarEmbeddingConfiguration::AnonymousUserQSearchBarEmbeddingConfiguration(JsonView jsonValue)
+  : AnonymousUserQSearchBarEmbeddingConfiguration()
 {
   *this = jsonValue;
 }

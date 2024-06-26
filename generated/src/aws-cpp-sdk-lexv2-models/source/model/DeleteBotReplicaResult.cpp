@@ -22,8 +22,8 @@ DeleteBotReplicaResult::DeleteBotReplicaResult() :
 {
 }
 
-DeleteBotReplicaResult::DeleteBotReplicaResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_botReplicaStatus(BotReplicaStatus::NOT_SET)
+DeleteBotReplicaResult::DeleteBotReplicaResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeleteBotReplicaResult()
 {
   *this = result;
 }

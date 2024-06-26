@@ -27,12 +27,8 @@ FieldBasedTooltip::FieldBasedTooltip() :
 {
 }
 
-FieldBasedTooltip::FieldBasedTooltip(JsonView jsonValue) : 
-    m_aggregationVisibility(Visibility::NOT_SET),
-    m_aggregationVisibilityHasBeenSet(false),
-    m_tooltipTitleType(TooltipTitleType::NOT_SET),
-    m_tooltipTitleTypeHasBeenSet(false),
-    m_tooltipFieldsHasBeenSet(false)
+FieldBasedTooltip::FieldBasedTooltip(JsonView jsonValue)
+  : FieldBasedTooltip()
 {
   *this = jsonValue;
 }

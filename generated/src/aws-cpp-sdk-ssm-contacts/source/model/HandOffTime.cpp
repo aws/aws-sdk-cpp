@@ -26,11 +26,8 @@ HandOffTime::HandOffTime() :
 {
 }
 
-HandOffTime::HandOffTime(JsonView jsonValue) : 
-    m_hourOfDay(0),
-    m_hourOfDayHasBeenSet(false),
-    m_minuteOfHour(0),
-    m_minuteOfHourHasBeenSet(false)
+HandOffTime::HandOffTime(JsonView jsonValue)
+  : HandOffTime()
 {
   *this = jsonValue;
 }

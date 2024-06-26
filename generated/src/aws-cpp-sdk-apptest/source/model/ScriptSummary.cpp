@@ -25,10 +25,8 @@ ScriptSummary::ScriptSummary() :
 {
 }
 
-ScriptSummary::ScriptSummary(JsonView jsonValue) : 
-    m_scriptLocationHasBeenSet(false),
-    m_type(ScriptType::NOT_SET),
-    m_typeHasBeenSet(false)
+ScriptSummary::ScriptSummary(JsonView jsonValue)
+  : ScriptSummary()
 {
   *this = jsonValue;
 }

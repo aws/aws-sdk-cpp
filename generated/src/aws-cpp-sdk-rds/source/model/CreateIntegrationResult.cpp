@@ -22,8 +22,8 @@ CreateIntegrationResult::CreateIntegrationResult() :
 {
 }
 
-CreateIntegrationResult::CreateIntegrationResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_status(IntegrationStatus::NOT_SET)
+CreateIntegrationResult::CreateIntegrationResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : CreateIntegrationResult()
 {
   *this = result;
 }

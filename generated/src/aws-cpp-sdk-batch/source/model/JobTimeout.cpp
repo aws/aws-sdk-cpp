@@ -24,9 +24,8 @@ JobTimeout::JobTimeout() :
 {
 }
 
-JobTimeout::JobTimeout(JsonView jsonValue) : 
-    m_attemptDurationSeconds(0),
-    m_attemptDurationSecondsHasBeenSet(false)
+JobTimeout::JobTimeout(JsonView jsonValue)
+  : JobTimeout()
 {
   *this = jsonValue;
 }

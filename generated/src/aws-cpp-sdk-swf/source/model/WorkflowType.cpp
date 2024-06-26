@@ -24,9 +24,8 @@ WorkflowType::WorkflowType() :
 {
 }
 
-WorkflowType::WorkflowType(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_versionHasBeenSet(false)
+WorkflowType::WorkflowType(JsonView jsonValue)
+  : WorkflowType()
 {
   *this = jsonValue;
 }

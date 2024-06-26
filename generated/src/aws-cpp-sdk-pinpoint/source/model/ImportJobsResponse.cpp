@@ -24,9 +24,8 @@ ImportJobsResponse::ImportJobsResponse() :
 {
 }
 
-ImportJobsResponse::ImportJobsResponse(JsonView jsonValue) : 
-    m_itemHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
+ImportJobsResponse::ImportJobsResponse(JsonView jsonValue)
+  : ImportJobsResponse()
 {
   *this = jsonValue;
 }

@@ -29,12 +29,8 @@ LaunchPermission::LaunchPermission() :
 {
 }
 
-LaunchPermission::LaunchPermission(const XmlNode& xmlNode) : 
-    m_group(PermissionGroup::NOT_SET),
-    m_groupHasBeenSet(false),
-    m_userIdHasBeenSet(false),
-    m_organizationArnHasBeenSet(false),
-    m_organizationalUnitArnHasBeenSet(false)
+LaunchPermission::LaunchPermission(const XmlNode& xmlNode)
+  : LaunchPermission()
 {
   *this = xmlNode;
 }

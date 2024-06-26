@@ -29,14 +29,8 @@ FieldValueUnion::FieldValueUnion() :
 {
 }
 
-FieldValueUnion::FieldValueUnion(JsonView jsonValue) : 
-    m_booleanValue(false),
-    m_booleanValueHasBeenSet(false),
-    m_doubleValue(0.0),
-    m_doubleValueHasBeenSet(false),
-    m_emptyValueHasBeenSet(false),
-    m_stringValueHasBeenSet(false),
-    m_userArnValueHasBeenSet(false)
+FieldValueUnion::FieldValueUnion(JsonView jsonValue)
+  : FieldValueUnion()
 {
   *this = jsonValue;
 }

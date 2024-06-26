@@ -24,9 +24,8 @@ RegisteredDomainDelegationInfo::RegisteredDomainDelegationInfo() :
 {
 }
 
-RegisteredDomainDelegationInfo::RegisteredDomainDelegationInfo(JsonView jsonValue) : 
-    m_nameServersUpdateStateHasBeenSet(false),
-    m_r53HostedZoneDeletionStateHasBeenSet(false)
+RegisteredDomainDelegationInfo::RegisteredDomainDelegationInfo(JsonView jsonValue)
+  : RegisteredDomainDelegationInfo()
 {
   *this = jsonValue;
 }

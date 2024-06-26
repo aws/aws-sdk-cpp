@@ -26,11 +26,8 @@ DeploymentStyle::DeploymentStyle() :
 {
 }
 
-DeploymentStyle::DeploymentStyle(JsonView jsonValue) : 
-    m_deploymentType(DeploymentType::NOT_SET),
-    m_deploymentTypeHasBeenSet(false),
-    m_deploymentOption(DeploymentOption::NOT_SET),
-    m_deploymentOptionHasBeenSet(false)
+DeploymentStyle::DeploymentStyle(JsonView jsonValue)
+  : DeploymentStyle()
 {
   *this = jsonValue;
 }

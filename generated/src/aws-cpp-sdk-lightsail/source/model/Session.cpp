@@ -26,11 +26,8 @@ Session::Session() :
 {
 }
 
-Session::Session(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_urlHasBeenSet(false),
-    m_isPrimary(false),
-    m_isPrimaryHasBeenSet(false)
+Session::Session(JsonView jsonValue)
+  : Session()
 {
   *this = jsonValue;
 }

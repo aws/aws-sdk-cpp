@@ -28,14 +28,8 @@ DescribePredictorResult::DescribePredictorResult() :
 {
 }
 
-DescribePredictorResult::DescribePredictorResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_forecastHorizon(0),
-    m_performAutoML(false),
-    m_autoMLOverrideStrategy(AutoMLOverrideStrategy::NOT_SET),
-    m_performHPO(false),
-    m_estimatedTimeRemainingInMinutes(0),
-    m_isAutoPredictor(false),
-    m_optimizationMetric(OptimizationMetric::NOT_SET)
+DescribePredictorResult::DescribePredictorResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribePredictorResult()
 {
   *this = result;
 }

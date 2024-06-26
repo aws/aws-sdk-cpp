@@ -27,12 +27,8 @@ RealtimeContactAnalysisSegment::RealtimeContactAnalysisSegment() :
 {
 }
 
-RealtimeContactAnalysisSegment::RealtimeContactAnalysisSegment(JsonView jsonValue) : 
-    m_transcriptHasBeenSet(false),
-    m_categoriesHasBeenSet(false),
-    m_issuesHasBeenSet(false),
-    m_eventHasBeenSet(false),
-    m_attachmentsHasBeenSet(false)
+RealtimeContactAnalysisSegment::RealtimeContactAnalysisSegment(JsonView jsonValue)
+  : RealtimeContactAnalysisSegment()
 {
   *this = jsonValue;
 }

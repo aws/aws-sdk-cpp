@@ -27,12 +27,8 @@ PhysicalResourceId::PhysicalResourceId() :
 {
 }
 
-PhysicalResourceId::PhysicalResourceId(JsonView jsonValue) : 
-    m_awsAccountIdHasBeenSet(false),
-    m_awsRegionHasBeenSet(false),
-    m_identifierHasBeenSet(false),
-    m_type(PhysicalIdentifierType::NOT_SET),
-    m_typeHasBeenSet(false)
+PhysicalResourceId::PhysicalResourceId(JsonView jsonValue)
+  : PhysicalResourceId()
 {
   *this = jsonValue;
 }

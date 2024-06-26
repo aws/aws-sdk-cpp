@@ -24,9 +24,8 @@ ConditionalFormattingColor::ConditionalFormattingColor() :
 {
 }
 
-ConditionalFormattingColor::ConditionalFormattingColor(JsonView jsonValue) : 
-    m_solidHasBeenSet(false),
-    m_gradientHasBeenSet(false)
+ConditionalFormattingColor::ConditionalFormattingColor(JsonView jsonValue)
+  : ConditionalFormattingColor()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ TagRef::TagRef() :
 {
 }
 
-TagRef::TagRef(JsonView jsonValue) : 
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false)
+TagRef::TagRef(JsonView jsonValue)
+  : TagRef()
 {
   *this = jsonValue;
 }

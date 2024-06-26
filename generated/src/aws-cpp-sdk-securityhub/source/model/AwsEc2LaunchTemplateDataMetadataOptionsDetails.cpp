@@ -28,13 +28,8 @@ AwsEc2LaunchTemplateDataMetadataOptionsDetails::AwsEc2LaunchTemplateDataMetadata
 {
 }
 
-AwsEc2LaunchTemplateDataMetadataOptionsDetails::AwsEc2LaunchTemplateDataMetadataOptionsDetails(JsonView jsonValue) : 
-    m_httpEndpointHasBeenSet(false),
-    m_httpProtocolIpv6HasBeenSet(false),
-    m_httpTokensHasBeenSet(false),
-    m_httpPutResponseHopLimit(0),
-    m_httpPutResponseHopLimitHasBeenSet(false),
-    m_instanceMetadataTagsHasBeenSet(false)
+AwsEc2LaunchTemplateDataMetadataOptionsDetails::AwsEc2LaunchTemplateDataMetadataOptionsDetails(JsonView jsonValue)
+  : AwsEc2LaunchTemplateDataMetadataOptionsDetails()
 {
   *this = jsonValue;
 }

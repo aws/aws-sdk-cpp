@@ -25,10 +25,8 @@ SimulationSoftwareSuite::SimulationSoftwareSuite() :
 {
 }
 
-SimulationSoftwareSuite::SimulationSoftwareSuite(JsonView jsonValue) : 
-    m_name(SimulationSoftwareSuiteType::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_versionHasBeenSet(false)
+SimulationSoftwareSuite::SimulationSoftwareSuite(JsonView jsonValue)
+  : SimulationSoftwareSuite()
 {
   *this = jsonValue;
 }

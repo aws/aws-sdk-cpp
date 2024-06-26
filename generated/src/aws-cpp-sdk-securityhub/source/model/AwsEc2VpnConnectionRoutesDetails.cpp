@@ -24,9 +24,8 @@ AwsEc2VpnConnectionRoutesDetails::AwsEc2VpnConnectionRoutesDetails() :
 {
 }
 
-AwsEc2VpnConnectionRoutesDetails::AwsEc2VpnConnectionRoutesDetails(JsonView jsonValue) : 
-    m_destinationCidrBlockHasBeenSet(false),
-    m_stateHasBeenSet(false)
+AwsEc2VpnConnectionRoutesDetails::AwsEc2VpnConnectionRoutesDetails(JsonView jsonValue)
+  : AwsEc2VpnConnectionRoutesDetails()
 {
   *this = jsonValue;
 }

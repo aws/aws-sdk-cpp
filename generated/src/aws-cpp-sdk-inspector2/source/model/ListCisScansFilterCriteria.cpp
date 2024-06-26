@@ -32,17 +32,8 @@ ListCisScansFilterCriteria::ListCisScansFilterCriteria() :
 {
 }
 
-ListCisScansFilterCriteria::ListCisScansFilterCriteria(JsonView jsonValue) : 
-    m_failedChecksFiltersHasBeenSet(false),
-    m_scanArnFiltersHasBeenSet(false),
-    m_scanAtFiltersHasBeenSet(false),
-    m_scanConfigurationArnFiltersHasBeenSet(false),
-    m_scanNameFiltersHasBeenSet(false),
-    m_scanStatusFiltersHasBeenSet(false),
-    m_scheduledByFiltersHasBeenSet(false),
-    m_targetAccountIdFiltersHasBeenSet(false),
-    m_targetResourceIdFiltersHasBeenSet(false),
-    m_targetResourceTagFiltersHasBeenSet(false)
+ListCisScansFilterCriteria::ListCisScansFilterCriteria(JsonView jsonValue)
+  : ListCisScansFilterCriteria()
 {
   *this = jsonValue;
 }

@@ -33,18 +33,8 @@ StreamDescription::StreamDescription() :
 {
 }
 
-StreamDescription::StreamDescription(JsonView jsonValue) : 
-    m_streamArnHasBeenSet(false),
-    m_streamLabelHasBeenSet(false),
-    m_streamStatus(StreamStatus::NOT_SET),
-    m_streamStatusHasBeenSet(false),
-    m_streamViewType(StreamViewType::NOT_SET),
-    m_streamViewTypeHasBeenSet(false),
-    m_creationRequestDateTimeHasBeenSet(false),
-    m_tableNameHasBeenSet(false),
-    m_keySchemaHasBeenSet(false),
-    m_shardsHasBeenSet(false),
-    m_lastEvaluatedShardIdHasBeenSet(false)
+StreamDescription::StreamDescription(JsonView jsonValue)
+  : StreamDescription()
 {
   *this = jsonValue;
 }

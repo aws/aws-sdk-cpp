@@ -21,8 +21,8 @@ ListBucketIntelligentTieringConfigurationsResult::ListBucketIntelligentTieringCo
 {
 }
 
-ListBucketIntelligentTieringConfigurationsResult::ListBucketIntelligentTieringConfigurationsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_isTruncated(false)
+ListBucketIntelligentTieringConfigurationsResult::ListBucketIntelligentTieringConfigurationsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : ListBucketIntelligentTieringConfigurationsResult()
 {
   *this = result;
 }

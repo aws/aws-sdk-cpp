@@ -25,10 +25,8 @@ ArtifactLocation::ArtifactLocation() :
 {
 }
 
-ArtifactLocation::ArtifactLocation(JsonView jsonValue) : 
-    m_type(ArtifactLocationType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_s3LocationHasBeenSet(false)
+ArtifactLocation::ArtifactLocation(JsonView jsonValue)
+  : ArtifactLocation()
 {
   *this = jsonValue;
 }

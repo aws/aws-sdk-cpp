@@ -25,10 +25,8 @@ BatchDeleteDelegationByAssessmentError::BatchDeleteDelegationByAssessmentError()
 {
 }
 
-BatchDeleteDelegationByAssessmentError::BatchDeleteDelegationByAssessmentError(JsonView jsonValue) : 
-    m_delegationIdHasBeenSet(false),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
+BatchDeleteDelegationByAssessmentError::BatchDeleteDelegationByAssessmentError(JsonView jsonValue)
+  : BatchDeleteDelegationByAssessmentError()
 {
   *this = jsonValue;
 }

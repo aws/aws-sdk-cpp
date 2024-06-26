@@ -24,10 +24,8 @@ StartVectorEnrichmentJobResult::StartVectorEnrichmentJobResult() :
 {
 }
 
-StartVectorEnrichmentJobResult::StartVectorEnrichmentJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_durationInSeconds(0),
-    m_status(VectorEnrichmentJobStatus::NOT_SET),
-    m_type(VectorEnrichmentJobType::NOT_SET)
+StartVectorEnrichmentJobResult::StartVectorEnrichmentJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : StartVectorEnrichmentJobResult()
 {
   *this = result;
 }

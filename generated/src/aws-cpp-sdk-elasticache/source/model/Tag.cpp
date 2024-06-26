@@ -26,9 +26,8 @@ Tag::Tag() :
 {
 }
 
-Tag::Tag(const XmlNode& xmlNode) : 
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false)
+Tag::Tag(const XmlNode& xmlNode)
+  : Tag()
 {
   *this = xmlNode;
 }

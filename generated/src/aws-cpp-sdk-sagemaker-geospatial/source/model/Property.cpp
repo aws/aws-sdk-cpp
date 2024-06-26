@@ -28,13 +28,8 @@ Property::Property() :
 {
 }
 
-Property::Property(JsonView jsonValue) : 
-    m_eoCloudCoverHasBeenSet(false),
-    m_landsatCloudCoverLandHasBeenSet(false),
-    m_platformHasBeenSet(false),
-    m_viewOffNadirHasBeenSet(false),
-    m_viewSunAzimuthHasBeenSet(false),
-    m_viewSunElevationHasBeenSet(false)
+Property::Property(JsonView jsonValue)
+  : Property()
 {
   *this = jsonValue;
 }

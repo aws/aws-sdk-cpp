@@ -28,13 +28,8 @@ EnhancedMetricsConfig::EnhancedMetricsConfig() :
 {
 }
 
-EnhancedMetricsConfig::EnhancedMetricsConfig(JsonView jsonValue) : 
-    m_resolverLevelMetricsBehavior(ResolverLevelMetricsBehavior::NOT_SET),
-    m_resolverLevelMetricsBehaviorHasBeenSet(false),
-    m_dataSourceLevelMetricsBehavior(DataSourceLevelMetricsBehavior::NOT_SET),
-    m_dataSourceLevelMetricsBehaviorHasBeenSet(false),
-    m_operationLevelMetricsConfig(OperationLevelMetricsConfig::NOT_SET),
-    m_operationLevelMetricsConfigHasBeenSet(false)
+EnhancedMetricsConfig::EnhancedMetricsConfig(JsonView jsonValue)
+  : EnhancedMetricsConfig()
 {
   *this = jsonValue;
 }

@@ -31,16 +31,8 @@ EksContainer::EksContainer() :
 {
 }
 
-EksContainer::EksContainer(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_imageHasBeenSet(false),
-    m_imagePullPolicyHasBeenSet(false),
-    m_commandHasBeenSet(false),
-    m_argsHasBeenSet(false),
-    m_envHasBeenSet(false),
-    m_resourcesHasBeenSet(false),
-    m_volumeMountsHasBeenSet(false),
-    m_securityContextHasBeenSet(false)
+EksContainer::EksContainer(JsonView jsonValue)
+  : EksContainer()
 {
   *this = jsonValue;
 }

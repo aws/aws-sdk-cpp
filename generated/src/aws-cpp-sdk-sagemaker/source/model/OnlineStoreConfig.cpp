@@ -28,13 +28,8 @@ OnlineStoreConfig::OnlineStoreConfig() :
 {
 }
 
-OnlineStoreConfig::OnlineStoreConfig(JsonView jsonValue) : 
-    m_securityConfigHasBeenSet(false),
-    m_enableOnlineStore(false),
-    m_enableOnlineStoreHasBeenSet(false),
-    m_ttlDurationHasBeenSet(false),
-    m_storageType(StorageType::NOT_SET),
-    m_storageTypeHasBeenSet(false)
+OnlineStoreConfig::OnlineStoreConfig(JsonView jsonValue)
+  : OnlineStoreConfig()
 {
   *this = jsonValue;
 }

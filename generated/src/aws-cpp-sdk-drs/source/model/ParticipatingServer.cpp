@@ -27,12 +27,8 @@ ParticipatingServer::ParticipatingServer() :
 {
 }
 
-ParticipatingServer::ParticipatingServer(JsonView jsonValue) : 
-    m_launchActionsStatusHasBeenSet(false),
-    m_launchStatus(LaunchStatus::NOT_SET),
-    m_launchStatusHasBeenSet(false),
-    m_recoveryInstanceIDHasBeenSet(false),
-    m_sourceServerIDHasBeenSet(false)
+ParticipatingServer::ParticipatingServer(JsonView jsonValue)
+  : ParticipatingServer()
 {
   *this = jsonValue;
 }

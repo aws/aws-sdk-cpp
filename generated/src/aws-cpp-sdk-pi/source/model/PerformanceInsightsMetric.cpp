@@ -27,12 +27,8 @@ PerformanceInsightsMetric::PerformanceInsightsMetric() :
 {
 }
 
-PerformanceInsightsMetric::PerformanceInsightsMetric(JsonView jsonValue) : 
-    m_metricHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_dimensionsHasBeenSet(false),
-    m_value(0.0),
-    m_valueHasBeenSet(false)
+PerformanceInsightsMetric::PerformanceInsightsMetric(JsonView jsonValue)
+  : PerformanceInsightsMetric()
 {
   *this = jsonValue;
 }

@@ -34,19 +34,8 @@ EventBridgeRuleTemplateSummary::EventBridgeRuleTemplateSummary() :
 {
 }
 
-EventBridgeRuleTemplateSummary::EventBridgeRuleTemplateSummary(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_eventTargetCount(0),
-    m_eventTargetCountHasBeenSet(false),
-    m_eventType(EventBridgeRuleTemplateEventType::NOT_SET),
-    m_eventTypeHasBeenSet(false),
-    m_groupIdHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_modifiedAtHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+EventBridgeRuleTemplateSummary::EventBridgeRuleTemplateSummary(JsonView jsonValue)
+  : EventBridgeRuleTemplateSummary()
 {
   *this = jsonValue;
 }

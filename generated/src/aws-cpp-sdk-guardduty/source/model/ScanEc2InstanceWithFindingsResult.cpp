@@ -23,8 +23,8 @@ ScanEc2InstanceWithFindingsResult::ScanEc2InstanceWithFindingsResult() :
 {
 }
 
-ScanEc2InstanceWithFindingsResult::ScanEc2InstanceWithFindingsResult(JsonView jsonValue) : 
-    m_ebsVolumesHasBeenSet(false)
+ScanEc2InstanceWithFindingsResult::ScanEc2InstanceWithFindingsResult(JsonView jsonValue)
+  : ScanEc2InstanceWithFindingsResult()
 {
   *this = jsonValue;
 }

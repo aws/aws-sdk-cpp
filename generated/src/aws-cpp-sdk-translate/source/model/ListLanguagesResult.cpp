@@ -22,8 +22,8 @@ ListLanguagesResult::ListLanguagesResult() :
 {
 }
 
-ListLanguagesResult::ListLanguagesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_displayLanguageCode(DisplayLanguageCode::NOT_SET)
+ListLanguagesResult::ListLanguagesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ListLanguagesResult()
 {
   *this = result;
 }

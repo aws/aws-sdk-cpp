@@ -44,29 +44,8 @@ APNSMessage::APNSMessage() :
 {
 }
 
-APNSMessage::APNSMessage(JsonView jsonValue) : 
-    m_aPNSPushTypeHasBeenSet(false),
-    m_action(Action::NOT_SET),
-    m_actionHasBeenSet(false),
-    m_badge(0),
-    m_badgeHasBeenSet(false),
-    m_bodyHasBeenSet(false),
-    m_categoryHasBeenSet(false),
-    m_collapseIdHasBeenSet(false),
-    m_dataHasBeenSet(false),
-    m_mediaUrlHasBeenSet(false),
-    m_preferredAuthenticationMethodHasBeenSet(false),
-    m_priorityHasBeenSet(false),
-    m_rawContentHasBeenSet(false),
-    m_silentPush(false),
-    m_silentPushHasBeenSet(false),
-    m_soundHasBeenSet(false),
-    m_substitutionsHasBeenSet(false),
-    m_threadIdHasBeenSet(false),
-    m_timeToLive(0),
-    m_timeToLiveHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_urlHasBeenSet(false)
+APNSMessage::APNSMessage(JsonView jsonValue)
+  : APNSMessage()
 {
   *this = jsonValue;
 }

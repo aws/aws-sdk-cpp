@@ -23,8 +23,8 @@ BatchDetachFromIndexResponse::BatchDetachFromIndexResponse() :
 {
 }
 
-BatchDetachFromIndexResponse::BatchDetachFromIndexResponse(JsonView jsonValue) : 
-    m_detachedObjectIdentifierHasBeenSet(false)
+BatchDetachFromIndexResponse::BatchDetachFromIndexResponse(JsonView jsonValue)
+  : BatchDetachFromIndexResponse()
 {
   *this = jsonValue;
 }

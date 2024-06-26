@@ -26,11 +26,8 @@ TimecodeConfig::TimecodeConfig() :
 {
 }
 
-TimecodeConfig::TimecodeConfig(JsonView jsonValue) : 
-    m_source(TimecodeConfigSource::NOT_SET),
-    m_sourceHasBeenSet(false),
-    m_syncThreshold(0),
-    m_syncThresholdHasBeenSet(false)
+TimecodeConfig::TimecodeConfig(JsonView jsonValue)
+  : TimecodeConfig()
 {
   *this = jsonValue;
 }

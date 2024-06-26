@@ -26,11 +26,8 @@ PropertyType::PropertyType() :
 {
 }
 
-PropertyType::PropertyType(JsonView jsonValue) : 
-    m_attributeHasBeenSet(false),
-    m_measurementHasBeenSet(false),
-    m_transformHasBeenSet(false),
-    m_metricHasBeenSet(false)
+PropertyType::PropertyType(JsonView jsonValue)
+  : PropertyType()
 {
   *this = jsonValue;
 }

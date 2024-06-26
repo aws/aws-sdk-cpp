@@ -22,8 +22,8 @@ GetContentModerationResult::GetContentModerationResult() :
 {
 }
 
-GetContentModerationResult::GetContentModerationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_jobStatus(VideoJobStatus::NOT_SET)
+GetContentModerationResult::GetContentModerationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetContentModerationResult()
 {
   *this = result;
 }

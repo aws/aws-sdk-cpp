@@ -26,11 +26,8 @@ ListCalculatedAttributeForProfileItem::ListCalculatedAttributeForProfileItem() :
 {
 }
 
-ListCalculatedAttributeForProfileItem::ListCalculatedAttributeForProfileItem(JsonView jsonValue) : 
-    m_calculatedAttributeNameHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_isDataPartialHasBeenSet(false),
-    m_valueHasBeenSet(false)
+ListCalculatedAttributeForProfileItem::ListCalculatedAttributeForProfileItem(JsonView jsonValue)
+  : ListCalculatedAttributeForProfileItem()
 {
   *this = jsonValue;
 }

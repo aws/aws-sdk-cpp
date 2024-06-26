@@ -24,9 +24,8 @@ DataSourceFreeTrial::DataSourceFreeTrial() :
 {
 }
 
-DataSourceFreeTrial::DataSourceFreeTrial(JsonView jsonValue) : 
-    m_freeTrialDaysRemaining(0),
-    m_freeTrialDaysRemainingHasBeenSet(false)
+DataSourceFreeTrial::DataSourceFreeTrial(JsonView jsonValue)
+  : DataSourceFreeTrial()
 {
   *this = jsonValue;
 }

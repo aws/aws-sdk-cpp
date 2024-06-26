@@ -23,8 +23,8 @@ RuleGroupVariablesIpSetsDetails::RuleGroupVariablesIpSetsDetails() :
 {
 }
 
-RuleGroupVariablesIpSetsDetails::RuleGroupVariablesIpSetsDetails(JsonView jsonValue) : 
-    m_definitionHasBeenSet(false)
+RuleGroupVariablesIpSetsDetails::RuleGroupVariablesIpSetsDetails(JsonView jsonValue)
+  : RuleGroupVariablesIpSetsDetails()
 {
   *this = jsonValue;
 }

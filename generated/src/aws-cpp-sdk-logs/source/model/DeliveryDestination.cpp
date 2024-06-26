@@ -30,15 +30,8 @@ DeliveryDestination::DeliveryDestination() :
 {
 }
 
-DeliveryDestination::DeliveryDestination(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_deliveryDestinationType(DeliveryDestinationType::NOT_SET),
-    m_deliveryDestinationTypeHasBeenSet(false),
-    m_outputFormat(OutputFormat::NOT_SET),
-    m_outputFormatHasBeenSet(false),
-    m_deliveryDestinationConfigurationHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+DeliveryDestination::DeliveryDestination(JsonView jsonValue)
+  : DeliveryDestination()
 {
   *this = jsonValue;
 }

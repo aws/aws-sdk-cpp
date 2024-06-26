@@ -25,10 +25,8 @@ RegionScope::RegionScope() :
 {
 }
 
-RegionScope::RegionScope(JsonView jsonValue) : 
-    m_regionsHasBeenSet(false),
-    m_allRegionsEnabled(false),
-    m_allRegionsEnabledHasBeenSet(false)
+RegionScope::RegionScope(JsonView jsonValue)
+  : RegionScope()
 {
   *this = jsonValue;
 }

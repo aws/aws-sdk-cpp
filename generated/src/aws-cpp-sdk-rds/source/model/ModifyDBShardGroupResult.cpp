@@ -24,10 +24,8 @@ ModifyDBShardGroupResult::ModifyDBShardGroupResult() :
 {
 }
 
-ModifyDBShardGroupResult::ModifyDBShardGroupResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_maxACU(0.0),
-    m_computeRedundancy(0),
-    m_publiclyAccessible(false)
+ModifyDBShardGroupResult::ModifyDBShardGroupResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : ModifyDBShardGroupResult()
 {
   *this = result;
 }

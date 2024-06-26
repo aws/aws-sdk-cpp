@@ -23,8 +23,8 @@ ServiceUpdateRequest::ServiceUpdateRequest() :
 {
 }
 
-ServiceUpdateRequest::ServiceUpdateRequest(JsonView jsonValue) : 
-    m_serviceUpdateNameToApplyHasBeenSet(false)
+ServiceUpdateRequest::ServiceUpdateRequest(JsonView jsonValue)
+  : ServiceUpdateRequest()
 {
   *this = jsonValue;
 }

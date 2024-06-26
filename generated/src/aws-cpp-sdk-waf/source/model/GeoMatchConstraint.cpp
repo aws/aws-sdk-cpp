@@ -26,11 +26,8 @@ GeoMatchConstraint::GeoMatchConstraint() :
 {
 }
 
-GeoMatchConstraint::GeoMatchConstraint(JsonView jsonValue) : 
-    m_type(GeoMatchConstraintType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_value(GeoMatchConstraintValue::NOT_SET),
-    m_valueHasBeenSet(false)
+GeoMatchConstraint::GeoMatchConstraint(JsonView jsonValue)
+  : GeoMatchConstraint()
 {
   *this = jsonValue;
 }

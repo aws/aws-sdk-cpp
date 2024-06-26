@@ -26,11 +26,8 @@ PresetSettings::PresetSettings() :
 {
 }
 
-PresetSettings::PresetSettings(JsonView jsonValue) : 
-    m_audioDescriptionsHasBeenSet(false),
-    m_captionDescriptionsHasBeenSet(false),
-    m_containerSettingsHasBeenSet(false),
-    m_videoDescriptionHasBeenSet(false)
+PresetSettings::PresetSettings(JsonView jsonValue)
+  : PresetSettings()
 {
   *this = jsonValue;
 }

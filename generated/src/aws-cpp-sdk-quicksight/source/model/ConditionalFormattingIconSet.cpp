@@ -25,10 +25,8 @@ ConditionalFormattingIconSet::ConditionalFormattingIconSet() :
 {
 }
 
-ConditionalFormattingIconSet::ConditionalFormattingIconSet(JsonView jsonValue) : 
-    m_expressionHasBeenSet(false),
-    m_iconSetType(ConditionalFormattingIconSetType::NOT_SET),
-    m_iconSetTypeHasBeenSet(false)
+ConditionalFormattingIconSet::ConditionalFormattingIconSet(JsonView jsonValue)
+  : ConditionalFormattingIconSet()
 {
   *this = jsonValue;
 }

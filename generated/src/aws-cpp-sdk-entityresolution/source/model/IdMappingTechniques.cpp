@@ -25,10 +25,8 @@ IdMappingTechniques::IdMappingTechniques() :
 {
 }
 
-IdMappingTechniques::IdMappingTechniques(JsonView jsonValue) : 
-    m_idMappingType(IdMappingType::NOT_SET),
-    m_idMappingTypeHasBeenSet(false),
-    m_providerPropertiesHasBeenSet(false)
+IdMappingTechniques::IdMappingTechniques(JsonView jsonValue)
+  : IdMappingTechniques()
 {
   *this = jsonValue;
 }

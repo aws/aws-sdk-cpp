@@ -24,9 +24,8 @@ MaintenanceWindowIdentityForTarget::MaintenanceWindowIdentityForTarget() :
 {
 }
 
-MaintenanceWindowIdentityForTarget::MaintenanceWindowIdentityForTarget(JsonView jsonValue) : 
-    m_windowIdHasBeenSet(false),
-    m_nameHasBeenSet(false)
+MaintenanceWindowIdentityForTarget::MaintenanceWindowIdentityForTarget(JsonView jsonValue)
+  : MaintenanceWindowIdentityForTarget()
 {
   *this = jsonValue;
 }

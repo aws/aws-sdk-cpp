@@ -40,23 +40,8 @@ ConfigurationOptionDescription::ConfigurationOptionDescription() :
 {
 }
 
-ConfigurationOptionDescription::ConfigurationOptionDescription(const XmlNode& xmlNode) : 
-    m_namespaceHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_defaultValueHasBeenSet(false),
-    m_changeSeverityHasBeenSet(false),
-    m_userDefined(false),
-    m_userDefinedHasBeenSet(false),
-    m_valueType(ConfigurationOptionValueType::NOT_SET),
-    m_valueTypeHasBeenSet(false),
-    m_valueOptionsHasBeenSet(false),
-    m_minValue(0),
-    m_minValueHasBeenSet(false),
-    m_maxValue(0),
-    m_maxValueHasBeenSet(false),
-    m_maxLength(0),
-    m_maxLengthHasBeenSet(false),
-    m_regexHasBeenSet(false)
+ConfigurationOptionDescription::ConfigurationOptionDescription(const XmlNode& xmlNode)
+  : ConfigurationOptionDescription()
 {
   *this = xmlNode;
 }

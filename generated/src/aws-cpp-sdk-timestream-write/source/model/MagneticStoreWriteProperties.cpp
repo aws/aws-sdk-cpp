@@ -25,10 +25,8 @@ MagneticStoreWriteProperties::MagneticStoreWriteProperties() :
 {
 }
 
-MagneticStoreWriteProperties::MagneticStoreWriteProperties(JsonView jsonValue) : 
-    m_enableMagneticStoreWrites(false),
-    m_enableMagneticStoreWritesHasBeenSet(false),
-    m_magneticStoreRejectedDataLocationHasBeenSet(false)
+MagneticStoreWriteProperties::MagneticStoreWriteProperties(JsonView jsonValue)
+  : MagneticStoreWriteProperties()
 {
   *this = jsonValue;
 }

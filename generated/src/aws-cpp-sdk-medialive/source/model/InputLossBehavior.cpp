@@ -30,15 +30,8 @@ InputLossBehavior::InputLossBehavior() :
 {
 }
 
-InputLossBehavior::InputLossBehavior(JsonView jsonValue) : 
-    m_blackFrameMsec(0),
-    m_blackFrameMsecHasBeenSet(false),
-    m_inputLossImageColorHasBeenSet(false),
-    m_inputLossImageSlateHasBeenSet(false),
-    m_inputLossImageType(InputLossImageType::NOT_SET),
-    m_inputLossImageTypeHasBeenSet(false),
-    m_repeatFrameMsec(0),
-    m_repeatFrameMsecHasBeenSet(false)
+InputLossBehavior::InputLossBehavior(JsonView jsonValue)
+  : InputLossBehavior()
 {
   *this = jsonValue;
 }

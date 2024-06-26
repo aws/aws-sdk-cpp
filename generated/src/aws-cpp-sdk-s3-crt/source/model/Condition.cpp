@@ -26,9 +26,8 @@ Condition::Condition() :
 {
 }
 
-Condition::Condition(const XmlNode& xmlNode) : 
-    m_httpErrorCodeReturnedEqualsHasBeenSet(false),
-    m_keyPrefixEqualsHasBeenSet(false)
+Condition::Condition(const XmlNode& xmlNode)
+  : Condition()
 {
   *this = xmlNode;
 }

@@ -22,8 +22,8 @@ UpdateDashboardLinksResult::UpdateDashboardLinksResult() :
 {
 }
 
-UpdateDashboardLinksResult::UpdateDashboardLinksResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+UpdateDashboardLinksResult::UpdateDashboardLinksResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateDashboardLinksResult()
 {
   *this = result;
 }

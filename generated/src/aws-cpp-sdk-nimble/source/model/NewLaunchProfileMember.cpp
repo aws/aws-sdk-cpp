@@ -25,10 +25,8 @@ NewLaunchProfileMember::NewLaunchProfileMember() :
 {
 }
 
-NewLaunchProfileMember::NewLaunchProfileMember(JsonView jsonValue) : 
-    m_persona(LaunchProfilePersona::NOT_SET),
-    m_personaHasBeenSet(false),
-    m_principalIdHasBeenSet(false)
+NewLaunchProfileMember::NewLaunchProfileMember(JsonView jsonValue)
+  : NewLaunchProfileMember()
 {
   *this = jsonValue;
 }

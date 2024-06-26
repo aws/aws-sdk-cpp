@@ -35,20 +35,8 @@ Insight::Insight() :
 {
 }
 
-Insight::Insight(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_category(Category::NOT_SET),
-    m_categoryHasBeenSet(false),
-    m_kubernetesVersionHasBeenSet(false),
-    m_lastRefreshTimeHasBeenSet(false),
-    m_lastTransitionTimeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_insightStatusHasBeenSet(false),
-    m_recommendationHasBeenSet(false),
-    m_additionalInfoHasBeenSet(false),
-    m_resourcesHasBeenSet(false),
-    m_categorySpecificSummaryHasBeenSet(false)
+Insight::Insight(JsonView jsonValue)
+  : Insight()
 {
   *this = jsonValue;
 }

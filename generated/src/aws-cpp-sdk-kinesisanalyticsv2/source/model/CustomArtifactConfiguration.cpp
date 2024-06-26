@@ -26,11 +26,8 @@ CustomArtifactConfiguration::CustomArtifactConfiguration() :
 {
 }
 
-CustomArtifactConfiguration::CustomArtifactConfiguration(JsonView jsonValue) : 
-    m_artifactType(ArtifactType::NOT_SET),
-    m_artifactTypeHasBeenSet(false),
-    m_s3ContentLocationHasBeenSet(false),
-    m_mavenReferenceHasBeenSet(false)
+CustomArtifactConfiguration::CustomArtifactConfiguration(JsonView jsonValue)
+  : CustomArtifactConfiguration()
 {
   *this = jsonValue;
 }

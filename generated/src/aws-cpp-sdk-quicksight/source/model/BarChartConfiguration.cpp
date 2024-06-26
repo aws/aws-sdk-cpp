@@ -41,26 +41,8 @@ BarChartConfiguration::BarChartConfiguration() :
 {
 }
 
-BarChartConfiguration::BarChartConfiguration(JsonView jsonValue) : 
-    m_fieldWellsHasBeenSet(false),
-    m_sortConfigurationHasBeenSet(false),
-    m_orientation(BarChartOrientation::NOT_SET),
-    m_orientationHasBeenSet(false),
-    m_barsArrangement(BarsArrangement::NOT_SET),
-    m_barsArrangementHasBeenSet(false),
-    m_visualPaletteHasBeenSet(false),
-    m_smallMultiplesOptionsHasBeenSet(false),
-    m_categoryAxisHasBeenSet(false),
-    m_categoryLabelOptionsHasBeenSet(false),
-    m_valueAxisHasBeenSet(false),
-    m_valueLabelOptionsHasBeenSet(false),
-    m_colorLabelOptionsHasBeenSet(false),
-    m_legendHasBeenSet(false),
-    m_dataLabelsHasBeenSet(false),
-    m_tooltipHasBeenSet(false),
-    m_referenceLinesHasBeenSet(false),
-    m_contributionAnalysisDefaultsHasBeenSet(false),
-    m_interactionsHasBeenSet(false)
+BarChartConfiguration::BarChartConfiguration(JsonView jsonValue)
+  : BarChartConfiguration()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ MonitorDataSource::MonitorDataSource() :
 {
 }
 
-MonitorDataSource::MonitorDataSource(JsonView jsonValue) : 
-    m_datasetImportJobArnHasBeenSet(false),
-    m_forecastArnHasBeenSet(false),
-    m_predictorArnHasBeenSet(false)
+MonitorDataSource::MonitorDataSource(JsonView jsonValue)
+  : MonitorDataSource()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ LifecyclePolicyStats::LifecyclePolicyStats() :
 {
 }
 
-LifecyclePolicyStats::LifecyclePolicyStats(JsonView jsonValue) : 
-    m_retentionPolicyCount(0),
-    m_retentionPolicyCountHasBeenSet(false)
+LifecyclePolicyStats::LifecyclePolicyStats(JsonView jsonValue)
+  : LifecyclePolicyStats()
 {
   *this = jsonValue;
 }

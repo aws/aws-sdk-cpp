@@ -26,11 +26,8 @@ HandshakeResource::HandshakeResource() :
 {
 }
 
-HandshakeResource::HandshakeResource(JsonView jsonValue) : 
-    m_valueHasBeenSet(false),
-    m_type(HandshakeResourceType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_resourcesHasBeenSet(false)
+HandshakeResource::HandshakeResource(JsonView jsonValue)
+  : HandshakeResource()
 {
   *this = jsonValue;
 }

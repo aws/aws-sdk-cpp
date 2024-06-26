@@ -26,11 +26,8 @@ MessageResponse::MessageResponse() :
 {
 }
 
-MessageResponse::MessageResponse(JsonView jsonValue) : 
-    m_applicationIdHasBeenSet(false),
-    m_endpointResultHasBeenSet(false),
-    m_requestIdHasBeenSet(false),
-    m_resultHasBeenSet(false)
+MessageResponse::MessageResponse(JsonView jsonValue)
+  : MessageResponse()
 {
   *this = jsonValue;
 }

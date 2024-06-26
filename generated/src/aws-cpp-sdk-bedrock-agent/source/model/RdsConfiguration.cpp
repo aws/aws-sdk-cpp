@@ -27,12 +27,8 @@ RdsConfiguration::RdsConfiguration() :
 {
 }
 
-RdsConfiguration::RdsConfiguration(JsonView jsonValue) : 
-    m_credentialsSecretArnHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_fieldMappingHasBeenSet(false),
-    m_resourceArnHasBeenSet(false),
-    m_tableNameHasBeenSet(false)
+RdsConfiguration::RdsConfiguration(JsonView jsonValue)
+  : RdsConfiguration()
 {
   *this = jsonValue;
 }

@@ -27,12 +27,8 @@ EntityDisplayData::EntityDisplayData() :
 {
 }
 
-EntityDisplayData::EntityDisplayData(JsonView jsonValue) : 
-    m_userNameHasBeenSet(false),
-    m_groupNameHasBeenSet(false),
-    m_identifiedUserNameHasBeenSet(false),
-    m_firstNameHasBeenSet(false),
-    m_lastNameHasBeenSet(false)
+EntityDisplayData::EntityDisplayData(JsonView jsonValue)
+  : EntityDisplayData()
 {
   *this = jsonValue;
 }

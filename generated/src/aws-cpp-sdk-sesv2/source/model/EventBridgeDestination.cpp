@@ -23,8 +23,8 @@ EventBridgeDestination::EventBridgeDestination() :
 {
 }
 
-EventBridgeDestination::EventBridgeDestination(JsonView jsonValue) : 
-    m_eventBusArnHasBeenSet(false)
+EventBridgeDestination::EventBridgeDestination(JsonView jsonValue)
+  : EventBridgeDestination()
 {
   *this = jsonValue;
 }

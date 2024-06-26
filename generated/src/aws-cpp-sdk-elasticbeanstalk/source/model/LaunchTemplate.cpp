@@ -25,8 +25,8 @@ LaunchTemplate::LaunchTemplate() :
 {
 }
 
-LaunchTemplate::LaunchTemplate(const XmlNode& xmlNode) : 
-    m_idHasBeenSet(false)
+LaunchTemplate::LaunchTemplate(const XmlNode& xmlNode)
+  : LaunchTemplate()
 {
   *this = xmlNode;
 }

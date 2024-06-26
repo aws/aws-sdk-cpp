@@ -23,8 +23,8 @@ ShiftDetails::ShiftDetails() :
 {
 }
 
-ShiftDetails::ShiftDetails(JsonView jsonValue) : 
-    m_overriddenContactIdsHasBeenSet(false)
+ShiftDetails::ShiftDetails(JsonView jsonValue)
+  : ShiftDetails()
 {
   *this = jsonValue;
 }

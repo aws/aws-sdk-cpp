@@ -26,11 +26,8 @@ ContractMetadata::ContractMetadata() :
 {
 }
 
-ContractMetadata::ContractMetadata(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_symbolHasBeenSet(false),
-    m_decimals(0),
-    m_decimalsHasBeenSet(false)
+ContractMetadata::ContractMetadata(JsonView jsonValue)
+  : ContractMetadata()
 {
   *this = jsonValue;
 }

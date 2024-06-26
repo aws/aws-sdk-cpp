@@ -24,9 +24,8 @@ PatchGroupPatchBaselineMapping::PatchGroupPatchBaselineMapping() :
 {
 }
 
-PatchGroupPatchBaselineMapping::PatchGroupPatchBaselineMapping(JsonView jsonValue) : 
-    m_patchGroupHasBeenSet(false),
-    m_baselineIdentityHasBeenSet(false)
+PatchGroupPatchBaselineMapping::PatchGroupPatchBaselineMapping(JsonView jsonValue)
+  : PatchGroupPatchBaselineMapping()
 {
   *this = jsonValue;
 }

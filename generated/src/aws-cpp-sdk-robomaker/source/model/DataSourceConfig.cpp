@@ -28,13 +28,8 @@ DataSourceConfig::DataSourceConfig() :
 {
 }
 
-DataSourceConfig::DataSourceConfig(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_s3BucketHasBeenSet(false),
-    m_s3KeysHasBeenSet(false),
-    m_type(DataSourceType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_destinationHasBeenSet(false)
+DataSourceConfig::DataSourceConfig(JsonView jsonValue)
+  : DataSourceConfig()
 {
   *this = jsonValue;
 }

@@ -32,17 +32,8 @@ StartReadSetImportJobSourceItem::StartReadSetImportJobSourceItem() :
 {
 }
 
-StartReadSetImportJobSourceItem::StartReadSetImportJobSourceItem(JsonView jsonValue) : 
-    m_sourceFilesHasBeenSet(false),
-    m_sourceFileType(FileType::NOT_SET),
-    m_sourceFileTypeHasBeenSet(false),
-    m_subjectIdHasBeenSet(false),
-    m_sampleIdHasBeenSet(false),
-    m_generatedFromHasBeenSet(false),
-    m_referenceArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+StartReadSetImportJobSourceItem::StartReadSetImportJobSourceItem(JsonView jsonValue)
+  : StartReadSetImportJobSourceItem()
 {
   *this = jsonValue;
 }

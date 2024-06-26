@@ -24,9 +24,8 @@ ViolationEventOccurrenceRange::ViolationEventOccurrenceRange() :
 {
 }
 
-ViolationEventOccurrenceRange::ViolationEventOccurrenceRange(JsonView jsonValue) : 
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
+ViolationEventOccurrenceRange::ViolationEventOccurrenceRange(JsonView jsonValue)
+  : ViolationEventOccurrenceRange()
 {
   *this = jsonValue;
 }

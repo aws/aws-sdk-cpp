@@ -22,8 +22,8 @@ GetContactReachabilityStatusResult::GetContactReachabilityStatusResult() :
 {
 }
 
-GetContactReachabilityStatusResult::GetContactReachabilityStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(ReachabilityStatus::NOT_SET)
+GetContactReachabilityStatusResult::GetContactReachabilityStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetContactReachabilityStatusResult()
 {
   *this = result;
 }

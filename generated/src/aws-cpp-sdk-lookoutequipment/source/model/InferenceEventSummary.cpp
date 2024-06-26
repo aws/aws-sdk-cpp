@@ -29,14 +29,8 @@ InferenceEventSummary::InferenceEventSummary() :
 {
 }
 
-InferenceEventSummary::InferenceEventSummary(JsonView jsonValue) : 
-    m_inferenceSchedulerArnHasBeenSet(false),
-    m_inferenceSchedulerNameHasBeenSet(false),
-    m_eventStartTimeHasBeenSet(false),
-    m_eventEndTimeHasBeenSet(false),
-    m_diagnosticsHasBeenSet(false),
-    m_eventDurationInSeconds(0),
-    m_eventDurationInSecondsHasBeenSet(false)
+InferenceEventSummary::InferenceEventSummary(JsonView jsonValue)
+  : InferenceEventSummary()
 {
   *this = jsonValue;
 }

@@ -31,16 +31,8 @@ BuildPhase::BuildPhase() :
 {
 }
 
-BuildPhase::BuildPhase(JsonView jsonValue) : 
-    m_phaseType(BuildPhaseType::NOT_SET),
-    m_phaseTypeHasBeenSet(false),
-    m_phaseStatus(StatusType::NOT_SET),
-    m_phaseStatusHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_durationInSeconds(0),
-    m_durationInSecondsHasBeenSet(false),
-    m_contextsHasBeenSet(false)
+BuildPhase::BuildPhase(JsonView jsonValue)
+  : BuildPhase()
 {
   *this = jsonValue;
 }

@@ -30,15 +30,8 @@ GroupType::GroupType() :
 {
 }
 
-GroupType::GroupType(JsonView jsonValue) : 
-    m_groupNameHasBeenSet(false),
-    m_userPoolIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_precedence(0),
-    m_precedenceHasBeenSet(false),
-    m_lastModifiedDateHasBeenSet(false),
-    m_creationDateHasBeenSet(false)
+GroupType::GroupType(JsonView jsonValue)
+  : GroupType()
 {
   *this = jsonValue;
 }

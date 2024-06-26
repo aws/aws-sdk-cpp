@@ -26,11 +26,8 @@ RetryPolicy::RetryPolicy() :
 {
 }
 
-RetryPolicy::RetryPolicy(JsonView jsonValue) : 
-    m_maxAttempts(0),
-    m_maxAttemptsHasBeenSet(false),
-    m_maxFailedAttemptsPerHour(0),
-    m_maxFailedAttemptsPerHourHasBeenSet(false)
+RetryPolicy::RetryPolicy(JsonView jsonValue)
+  : RetryPolicy()
 {
   *this = jsonValue;
 }

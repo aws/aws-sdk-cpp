@@ -23,9 +23,8 @@ ListIdentityPoolUsageResult::ListIdentityPoolUsageResult() :
 {
 }
 
-ListIdentityPoolUsageResult::ListIdentityPoolUsageResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_maxResults(0),
-    m_count(0)
+ListIdentityPoolUsageResult::ListIdentityPoolUsageResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ListIdentityPoolUsageResult()
 {
   *this = result;
 }

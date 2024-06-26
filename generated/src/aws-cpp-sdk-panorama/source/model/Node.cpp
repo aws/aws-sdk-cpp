@@ -34,19 +34,8 @@ Node::Node() :
 {
 }
 
-Node::Node(JsonView jsonValue) : 
-    m_category(NodeCategory::NOT_SET),
-    m_categoryHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_nodeIdHasBeenSet(false),
-    m_ownerAccountHasBeenSet(false),
-    m_packageArnHasBeenSet(false),
-    m_packageIdHasBeenSet(false),
-    m_packageNameHasBeenSet(false),
-    m_packageVersionHasBeenSet(false),
-    m_patchVersionHasBeenSet(false)
+Node::Node(JsonView jsonValue)
+  : Node()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ CreateProvisioningTemplateResult::CreateProvisioningTemplateResult() :
 {
 }
 
-CreateProvisioningTemplateResult::CreateProvisioningTemplateResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_defaultVersionId(0)
+CreateProvisioningTemplateResult::CreateProvisioningTemplateResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateProvisioningTemplateResult()
 {
   *this = result;
 }

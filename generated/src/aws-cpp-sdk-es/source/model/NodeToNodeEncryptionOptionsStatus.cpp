@@ -24,9 +24,8 @@ NodeToNodeEncryptionOptionsStatus::NodeToNodeEncryptionOptionsStatus() :
 {
 }
 
-NodeToNodeEncryptionOptionsStatus::NodeToNodeEncryptionOptionsStatus(JsonView jsonValue) : 
-    m_optionsHasBeenSet(false),
-    m_statusHasBeenSet(false)
+NodeToNodeEncryptionOptionsStatus::NodeToNodeEncryptionOptionsStatus(JsonView jsonValue)
+  : NodeToNodeEncryptionOptionsStatus()
 {
   *this = jsonValue;
 }

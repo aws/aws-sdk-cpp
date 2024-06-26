@@ -29,14 +29,8 @@ ExportStatus::ExportStatus() :
 {
 }
 
-ExportStatus::ExportStatus(JsonView jsonValue) : 
-    m_createdAtHasBeenSet(false),
-    m_lastRefreshedAtHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false),
-    m_statusCode(ExportStatusCode::NOT_SET),
-    m_statusCodeHasBeenSet(false),
-    m_statusReason(ExecutionStatusReason::NOT_SET),
-    m_statusReasonHasBeenSet(false)
+ExportStatus::ExportStatus(JsonView jsonValue)
+  : ExportStatus()
 {
   *this = jsonValue;
 }

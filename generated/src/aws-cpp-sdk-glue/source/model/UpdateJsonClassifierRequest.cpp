@@ -24,9 +24,8 @@ UpdateJsonClassifierRequest::UpdateJsonClassifierRequest() :
 {
 }
 
-UpdateJsonClassifierRequest::UpdateJsonClassifierRequest(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_jsonPathHasBeenSet(false)
+UpdateJsonClassifierRequest::UpdateJsonClassifierRequest(JsonView jsonValue)
+  : UpdateJsonClassifierRequest()
 {
   *this = jsonValue;
 }

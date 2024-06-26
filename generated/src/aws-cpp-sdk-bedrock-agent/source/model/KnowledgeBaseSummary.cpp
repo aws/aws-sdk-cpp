@@ -28,13 +28,8 @@ KnowledgeBaseSummary::KnowledgeBaseSummary() :
 {
 }
 
-KnowledgeBaseSummary::KnowledgeBaseSummary(JsonView jsonValue) : 
-    m_descriptionHasBeenSet(false),
-    m_knowledgeBaseIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_status(KnowledgeBaseStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+KnowledgeBaseSummary::KnowledgeBaseSummary(JsonView jsonValue)
+  : KnowledgeBaseSummary()
 {
   *this = jsonValue;
 }

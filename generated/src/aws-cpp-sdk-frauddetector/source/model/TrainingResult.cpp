@@ -25,10 +25,8 @@ TrainingResult::TrainingResult() :
 {
 }
 
-TrainingResult::TrainingResult(JsonView jsonValue) : 
-    m_dataValidationMetricsHasBeenSet(false),
-    m_trainingMetricsHasBeenSet(false),
-    m_variableImportanceMetricsHasBeenSet(false)
+TrainingResult::TrainingResult(JsonView jsonValue)
+  : TrainingResult()
 {
   *this = jsonValue;
 }

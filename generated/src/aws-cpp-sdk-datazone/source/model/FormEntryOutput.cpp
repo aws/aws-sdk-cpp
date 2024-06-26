@@ -26,11 +26,8 @@ FormEntryOutput::FormEntryOutput() :
 {
 }
 
-FormEntryOutput::FormEntryOutput(JsonView jsonValue) : 
-    m_required(false),
-    m_requiredHasBeenSet(false),
-    m_typeNameHasBeenSet(false),
-    m_typeRevisionHasBeenSet(false)
+FormEntryOutput::FormEntryOutput(JsonView jsonValue)
+  : FormEntryOutput()
 {
   *this = jsonValue;
 }

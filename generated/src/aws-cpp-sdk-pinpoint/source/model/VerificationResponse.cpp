@@ -24,9 +24,8 @@ VerificationResponse::VerificationResponse() :
 {
 }
 
-VerificationResponse::VerificationResponse(JsonView jsonValue) : 
-    m_valid(false),
-    m_validHasBeenSet(false)
+VerificationResponse::VerificationResponse(JsonView jsonValue)
+  : VerificationResponse()
 {
   *this = jsonValue;
 }

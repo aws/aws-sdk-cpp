@@ -24,9 +24,8 @@ FileFormatConfiguration::FileFormatConfiguration() :
 {
 }
 
-FileFormatConfiguration::FileFormatConfiguration(JsonView jsonValue) : 
-    m_jsonConfigurationHasBeenSet(false),
-    m_parquetConfigurationHasBeenSet(false)
+FileFormatConfiguration::FileFormatConfiguration(JsonView jsonValue)
+  : FileFormatConfiguration()
 {
   *this = jsonValue;
 }

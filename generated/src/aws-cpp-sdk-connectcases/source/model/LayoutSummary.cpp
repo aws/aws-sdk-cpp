@@ -25,10 +25,8 @@ LayoutSummary::LayoutSummary() :
 {
 }
 
-LayoutSummary::LayoutSummary(JsonView jsonValue) : 
-    m_layoutArnHasBeenSet(false),
-    m_layoutIdHasBeenSet(false),
-    m_nameHasBeenSet(false)
+LayoutSummary::LayoutSummary(JsonView jsonValue)
+  : LayoutSummary()
 {
   *this = jsonValue;
 }

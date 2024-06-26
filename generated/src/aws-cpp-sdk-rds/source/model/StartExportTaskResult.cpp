@@ -24,10 +24,8 @@ StartExportTaskResult::StartExportTaskResult() :
 {
 }
 
-StartExportTaskResult::StartExportTaskResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_percentProgress(0),
-    m_totalExtractedDataInGB(0),
-    m_sourceType(ExportSourceType::NOT_SET)
+StartExportTaskResult::StartExportTaskResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : StartExportTaskResult()
 {
   *this = result;
 }

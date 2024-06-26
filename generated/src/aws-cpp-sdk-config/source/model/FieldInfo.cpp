@@ -23,8 +23,8 @@ FieldInfo::FieldInfo() :
 {
 }
 
-FieldInfo::FieldInfo(JsonView jsonValue) : 
-    m_nameHasBeenSet(false)
+FieldInfo::FieldInfo(JsonView jsonValue)
+  : FieldInfo()
 {
   *this = jsonValue;
 }

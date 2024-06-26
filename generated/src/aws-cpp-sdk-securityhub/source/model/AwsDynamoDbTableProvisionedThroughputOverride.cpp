@@ -24,9 +24,8 @@ AwsDynamoDbTableProvisionedThroughputOverride::AwsDynamoDbTableProvisionedThroug
 {
 }
 
-AwsDynamoDbTableProvisionedThroughputOverride::AwsDynamoDbTableProvisionedThroughputOverride(JsonView jsonValue) : 
-    m_readCapacityUnits(0),
-    m_readCapacityUnitsHasBeenSet(false)
+AwsDynamoDbTableProvisionedThroughputOverride::AwsDynamoDbTableProvisionedThroughputOverride(JsonView jsonValue)
+  : AwsDynamoDbTableProvisionedThroughputOverride()
 {
   *this = jsonValue;
 }

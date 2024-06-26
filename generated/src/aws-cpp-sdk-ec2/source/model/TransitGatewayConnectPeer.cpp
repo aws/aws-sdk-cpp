@@ -31,14 +31,8 @@ TransitGatewayConnectPeer::TransitGatewayConnectPeer() :
 {
 }
 
-TransitGatewayConnectPeer::TransitGatewayConnectPeer(const XmlNode& xmlNode) : 
-    m_transitGatewayAttachmentIdHasBeenSet(false),
-    m_transitGatewayConnectPeerIdHasBeenSet(false),
-    m_state(TransitGatewayConnectPeerState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_connectPeerConfigurationHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+TransitGatewayConnectPeer::TransitGatewayConnectPeer(const XmlNode& xmlNode)
+  : TransitGatewayConnectPeer()
 {
   *this = xmlNode;
 }

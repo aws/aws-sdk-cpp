@@ -24,9 +24,8 @@ CategoryEvent::CategoryEvent() :
 {
 }
 
-CategoryEvent::CategoryEvent(JsonView jsonValue) : 
-    m_matchedCategoriesHasBeenSet(false),
-    m_matchedDetailsHasBeenSet(false)
+CategoryEvent::CategoryEvent(JsonView jsonValue)
+  : CategoryEvent()
 {
   *this = jsonValue;
 }

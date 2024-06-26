@@ -25,10 +25,8 @@ ShipmentInformation::ShipmentInformation() :
 {
 }
 
-ShipmentInformation::ShipmentInformation(JsonView jsonValue) : 
-    m_shipmentTrackingNumberHasBeenSet(false),
-    m_shipmentCarrier(ShipmentCarrier::NOT_SET),
-    m_shipmentCarrierHasBeenSet(false)
+ShipmentInformation::ShipmentInformation(JsonView jsonValue)
+  : ShipmentInformation()
 {
   *this = jsonValue;
 }

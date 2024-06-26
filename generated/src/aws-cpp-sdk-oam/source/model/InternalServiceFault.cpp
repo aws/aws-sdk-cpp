@@ -25,9 +25,8 @@ InternalServiceFault::InternalServiceFault() :
 {
 }
 
-InternalServiceFault::InternalServiceFault(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_amznErrorTypeHasBeenSet(false)
+InternalServiceFault::InternalServiceFault(JsonView jsonValue)
+  : InternalServiceFault()
 {
   *this = jsonValue;
 }

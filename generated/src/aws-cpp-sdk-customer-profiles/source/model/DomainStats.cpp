@@ -30,15 +30,8 @@ DomainStats::DomainStats() :
 {
 }
 
-DomainStats::DomainStats(JsonView jsonValue) : 
-    m_profileCount(0),
-    m_profileCountHasBeenSet(false),
-    m_meteringProfileCount(0),
-    m_meteringProfileCountHasBeenSet(false),
-    m_objectCount(0),
-    m_objectCountHasBeenSet(false),
-    m_totalSize(0),
-    m_totalSizeHasBeenSet(false)
+DomainStats::DomainStats(JsonView jsonValue)
+  : DomainStats()
 {
   *this = jsonValue;
 }

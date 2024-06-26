@@ -25,10 +25,8 @@ RecommendationRelatedAnomaly::RecommendationRelatedAnomaly() :
 {
 }
 
-RecommendationRelatedAnomaly::RecommendationRelatedAnomaly(JsonView jsonValue) : 
-    m_resourcesHasBeenSet(false),
-    m_sourceDetailsHasBeenSet(false),
-    m_anomalyIdHasBeenSet(false)
+RecommendationRelatedAnomaly::RecommendationRelatedAnomaly(JsonView jsonValue)
+  : RecommendationRelatedAnomaly()
 {
   *this = jsonValue;
 }

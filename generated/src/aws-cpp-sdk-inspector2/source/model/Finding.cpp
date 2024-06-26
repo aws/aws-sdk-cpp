@@ -49,34 +49,8 @@ Finding::Finding() :
 {
 }
 
-Finding::Finding(JsonView jsonValue) : 
-    m_awsAccountIdHasBeenSet(false),
-    m_codeVulnerabilityDetailsHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_epssHasBeenSet(false),
-    m_exploitAvailable(ExploitAvailable::NOT_SET),
-    m_exploitAvailableHasBeenSet(false),
-    m_exploitabilityDetailsHasBeenSet(false),
-    m_findingArnHasBeenSet(false),
-    m_firstObservedAtHasBeenSet(false),
-    m_fixAvailable(FixAvailable::NOT_SET),
-    m_fixAvailableHasBeenSet(false),
-    m_inspectorScore(0.0),
-    m_inspectorScoreHasBeenSet(false),
-    m_inspectorScoreDetailsHasBeenSet(false),
-    m_lastObservedAtHasBeenSet(false),
-    m_networkReachabilityDetailsHasBeenSet(false),
-    m_packageVulnerabilityDetailsHasBeenSet(false),
-    m_remediationHasBeenSet(false),
-    m_resourcesHasBeenSet(false),
-    m_severity(Severity::NOT_SET),
-    m_severityHasBeenSet(false),
-    m_status(FindingStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_type(FindingType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+Finding::Finding(JsonView jsonValue)
+  : Finding()
 {
   *this = jsonValue;
 }

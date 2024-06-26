@@ -23,8 +23,8 @@ GetSolVnfcResourceInfo::GetSolVnfcResourceInfo() :
 {
 }
 
-GetSolVnfcResourceInfo::GetSolVnfcResourceInfo(JsonView jsonValue) : 
-    m_metadataHasBeenSet(false)
+GetSolVnfcResourceInfo::GetSolVnfcResourceInfo(JsonView jsonValue)
+  : GetSolVnfcResourceInfo()
 {
   *this = jsonValue;
 }

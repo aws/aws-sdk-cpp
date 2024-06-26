@@ -24,9 +24,8 @@ BranchDiffSourceCodeType::BranchDiffSourceCodeType() :
 {
 }
 
-BranchDiffSourceCodeType::BranchDiffSourceCodeType(JsonView jsonValue) : 
-    m_sourceBranchNameHasBeenSet(false),
-    m_destinationBranchNameHasBeenSet(false)
+BranchDiffSourceCodeType::BranchDiffSourceCodeType(JsonView jsonValue)
+  : BranchDiffSourceCodeType()
 {
   *this = jsonValue;
 }

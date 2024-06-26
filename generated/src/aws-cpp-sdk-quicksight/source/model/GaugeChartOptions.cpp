@@ -28,13 +28,8 @@ GaugeChartOptions::GaugeChartOptions() :
 {
 }
 
-GaugeChartOptions::GaugeChartOptions(JsonView jsonValue) : 
-    m_primaryValueDisplayType(PrimaryValueDisplayType::NOT_SET),
-    m_primaryValueDisplayTypeHasBeenSet(false),
-    m_comparisonHasBeenSet(false),
-    m_arcAxisHasBeenSet(false),
-    m_arcHasBeenSet(false),
-    m_primaryValueFontConfigurationHasBeenSet(false)
+GaugeChartOptions::GaugeChartOptions(JsonView jsonValue)
+  : GaugeChartOptions()
 {
   *this = jsonValue;
 }

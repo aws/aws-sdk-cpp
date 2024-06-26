@@ -28,13 +28,8 @@ ComputeConfiguration::ComputeConfiguration() :
 {
 }
 
-ComputeConfiguration::ComputeConfiguration(JsonView jsonValue) : 
-    m_vCpu(0.0),
-    m_vCpuHasBeenSet(false),
-    m_memorySizeInMB(0),
-    m_memorySizeInMBHasBeenSet(false),
-    m_architectureHasBeenSet(false),
-    m_platformHasBeenSet(false)
+ComputeConfiguration::ComputeConfiguration(JsonView jsonValue)
+  : ComputeConfiguration()
 {
   *this = jsonValue;
 }

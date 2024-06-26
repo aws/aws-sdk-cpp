@@ -24,9 +24,8 @@ ColumnSelector::ColumnSelector() :
 {
 }
 
-ColumnSelector::ColumnSelector(JsonView jsonValue) : 
-    m_regexHasBeenSet(false),
-    m_nameHasBeenSet(false)
+ColumnSelector::ColumnSelector(JsonView jsonValue)
+  : ColumnSelector()
 {
   *this = jsonValue;
 }

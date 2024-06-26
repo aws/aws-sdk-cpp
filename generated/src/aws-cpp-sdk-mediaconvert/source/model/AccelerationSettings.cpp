@@ -24,9 +24,8 @@ AccelerationSettings::AccelerationSettings() :
 {
 }
 
-AccelerationSettings::AccelerationSettings(JsonView jsonValue) : 
-    m_mode(AccelerationMode::NOT_SET),
-    m_modeHasBeenSet(false)
+AccelerationSettings::AccelerationSettings(JsonView jsonValue)
+  : AccelerationSettings()
 {
   *this = jsonValue;
 }

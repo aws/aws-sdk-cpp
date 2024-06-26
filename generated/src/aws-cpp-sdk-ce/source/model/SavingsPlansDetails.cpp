@@ -25,10 +25,8 @@ SavingsPlansDetails::SavingsPlansDetails() :
 {
 }
 
-SavingsPlansDetails::SavingsPlansDetails(JsonView jsonValue) : 
-    m_regionHasBeenSet(false),
-    m_instanceFamilyHasBeenSet(false),
-    m_offeringIdHasBeenSet(false)
+SavingsPlansDetails::SavingsPlansDetails(JsonView jsonValue)
+  : SavingsPlansDetails()
 {
   *this = jsonValue;
 }

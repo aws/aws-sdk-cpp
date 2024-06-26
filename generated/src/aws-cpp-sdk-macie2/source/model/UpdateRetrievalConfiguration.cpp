@@ -25,10 +25,8 @@ UpdateRetrievalConfiguration::UpdateRetrievalConfiguration() :
 {
 }
 
-UpdateRetrievalConfiguration::UpdateRetrievalConfiguration(JsonView jsonValue) : 
-    m_retrievalMode(RetrievalMode::NOT_SET),
-    m_retrievalModeHasBeenSet(false),
-    m_roleNameHasBeenSet(false)
+UpdateRetrievalConfiguration::UpdateRetrievalConfiguration(JsonView jsonValue)
+  : UpdateRetrievalConfiguration()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ AwsMskClusterClusterInfoClientAuthenticationSaslIamDetails::AwsMskClusterCluster
 {
 }
 
-AwsMskClusterClusterInfoClientAuthenticationSaslIamDetails::AwsMskClusterClusterInfoClientAuthenticationSaslIamDetails(JsonView jsonValue) : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
+AwsMskClusterClusterInfoClientAuthenticationSaslIamDetails::AwsMskClusterClusterInfoClientAuthenticationSaslIamDetails(JsonView jsonValue)
+  : AwsMskClusterClusterInfoClientAuthenticationSaslIamDetails()
 {
   *this = jsonValue;
 }

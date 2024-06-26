@@ -27,12 +27,8 @@ MetadataEvent::MetadataEvent() :
 {
 }
 
-MetadataEvent::MetadataEvent(JsonView jsonValue) : 
-    m_conversationIdHasBeenSet(false),
-    m_userMessageIdHasBeenSet(false),
-    m_systemMessageIdHasBeenSet(false),
-    m_sourceAttributionsHasBeenSet(false),
-    m_finalTextMessageHasBeenSet(false)
+MetadataEvent::MetadataEvent(JsonView jsonValue)
+  : MetadataEvent()
 {
   *this = jsonValue;
 }

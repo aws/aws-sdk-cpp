@@ -25,10 +25,8 @@ AllowListStatus::AllowListStatus() :
 {
 }
 
-AllowListStatus::AllowListStatus(JsonView jsonValue) : 
-    m_code(AllowListStatusCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+AllowListStatus::AllowListStatus(JsonView jsonValue)
+  : AllowListStatus()
 {
   *this = jsonValue;
 }

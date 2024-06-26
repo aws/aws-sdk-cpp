@@ -21,8 +21,8 @@ RestoreObjectResult::RestoreObjectResult() :
 {
 }
 
-RestoreObjectResult::RestoreObjectResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_requestCharged(RequestCharged::NOT_SET)
+RestoreObjectResult::RestoreObjectResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : RestoreObjectResult()
 {
   *this = result;
 }

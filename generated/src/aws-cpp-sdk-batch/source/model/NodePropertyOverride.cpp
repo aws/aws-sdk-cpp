@@ -26,11 +26,8 @@ NodePropertyOverride::NodePropertyOverride() :
 {
 }
 
-NodePropertyOverride::NodePropertyOverride(JsonView jsonValue) : 
-    m_targetNodesHasBeenSet(false),
-    m_containerOverridesHasBeenSet(false),
-    m_ecsPropertiesOverrideHasBeenSet(false),
-    m_instanceTypesHasBeenSet(false)
+NodePropertyOverride::NodePropertyOverride(JsonView jsonValue)
+  : NodePropertyOverride()
 {
   *this = jsonValue;
 }

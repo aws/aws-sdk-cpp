@@ -22,8 +22,8 @@ SearchTransitGatewayRoutesResponse::SearchTransitGatewayRoutesResponse() :
 {
 }
 
-SearchTransitGatewayRoutesResponse::SearchTransitGatewayRoutesResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_additionalRoutesAvailable(false)
+SearchTransitGatewayRoutesResponse::SearchTransitGatewayRoutesResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : SearchTransitGatewayRoutesResponse()
 {
   *this = result;
 }

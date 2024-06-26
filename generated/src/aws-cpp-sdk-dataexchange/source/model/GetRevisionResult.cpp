@@ -23,9 +23,8 @@ GetRevisionResult::GetRevisionResult() :
 {
 }
 
-GetRevisionResult::GetRevisionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_finalized(false),
-    m_revoked(false)
+GetRevisionResult::GetRevisionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetRevisionResult()
 {
   *this = result;
 }

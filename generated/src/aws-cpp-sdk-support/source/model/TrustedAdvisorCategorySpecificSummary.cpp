@@ -23,8 +23,8 @@ TrustedAdvisorCategorySpecificSummary::TrustedAdvisorCategorySpecificSummary() :
 {
 }
 
-TrustedAdvisorCategorySpecificSummary::TrustedAdvisorCategorySpecificSummary(JsonView jsonValue) : 
-    m_costOptimizingHasBeenSet(false)
+TrustedAdvisorCategorySpecificSummary::TrustedAdvisorCategorySpecificSummary(JsonView jsonValue)
+  : TrustedAdvisorCategorySpecificSummary()
 {
   *this = jsonValue;
 }

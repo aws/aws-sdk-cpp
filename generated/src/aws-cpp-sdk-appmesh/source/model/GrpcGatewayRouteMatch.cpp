@@ -27,12 +27,8 @@ GrpcGatewayRouteMatch::GrpcGatewayRouteMatch() :
 {
 }
 
-GrpcGatewayRouteMatch::GrpcGatewayRouteMatch(JsonView jsonValue) : 
-    m_hostnameHasBeenSet(false),
-    m_metadataHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_serviceNameHasBeenSet(false)
+GrpcGatewayRouteMatch::GrpcGatewayRouteMatch(JsonView jsonValue)
+  : GrpcGatewayRouteMatch()
 {
   *this = jsonValue;
 }

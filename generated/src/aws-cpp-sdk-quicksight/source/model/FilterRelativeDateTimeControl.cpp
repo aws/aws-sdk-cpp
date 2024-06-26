@@ -26,11 +26,8 @@ FilterRelativeDateTimeControl::FilterRelativeDateTimeControl() :
 {
 }
 
-FilterRelativeDateTimeControl::FilterRelativeDateTimeControl(JsonView jsonValue) : 
-    m_filterControlIdHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_sourceFilterIdHasBeenSet(false),
-    m_displayOptionsHasBeenSet(false)
+FilterRelativeDateTimeControl::FilterRelativeDateTimeControl(JsonView jsonValue)
+  : FilterRelativeDateTimeControl()
 {
   *this = jsonValue;
 }

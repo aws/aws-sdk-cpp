@@ -26,11 +26,8 @@ AwsEc2LaunchTemplateDataCpuOptionsDetails::AwsEc2LaunchTemplateDataCpuOptionsDet
 {
 }
 
-AwsEc2LaunchTemplateDataCpuOptionsDetails::AwsEc2LaunchTemplateDataCpuOptionsDetails(JsonView jsonValue) : 
-    m_coreCount(0),
-    m_coreCountHasBeenSet(false),
-    m_threadsPerCore(0),
-    m_threadsPerCoreHasBeenSet(false)
+AwsEc2LaunchTemplateDataCpuOptionsDetails::AwsEc2LaunchTemplateDataCpuOptionsDetails(JsonView jsonValue)
+  : AwsEc2LaunchTemplateDataCpuOptionsDetails()
 {
   *this = jsonValue;
 }

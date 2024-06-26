@@ -34,19 +34,8 @@ ComplianceDrift::ComplianceDrift() :
 {
 }
 
-ComplianceDrift::ComplianceDrift(JsonView jsonValue) : 
-    m_actualReferenceIdHasBeenSet(false),
-    m_actualValueHasBeenSet(false),
-    m_appIdHasBeenSet(false),
-    m_appVersionHasBeenSet(false),
-    m_diffType(DifferenceType::NOT_SET),
-    m_diffTypeHasBeenSet(false),
-    m_driftType(DriftType::NOT_SET),
-    m_driftTypeHasBeenSet(false),
-    m_entityIdHasBeenSet(false),
-    m_entityTypeHasBeenSet(false),
-    m_expectedReferenceIdHasBeenSet(false),
-    m_expectedValueHasBeenSet(false)
+ComplianceDrift::ComplianceDrift(JsonView jsonValue)
+  : ComplianceDrift()
 {
   *this = jsonValue;
 }

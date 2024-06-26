@@ -23,8 +23,8 @@ ECSEffectiveRecommendationPreferences::ECSEffectiveRecommendationPreferences() :
 {
 }
 
-ECSEffectiveRecommendationPreferences::ECSEffectiveRecommendationPreferences(JsonView jsonValue) : 
-    m_savingsEstimationModeHasBeenSet(false)
+ECSEffectiveRecommendationPreferences::ECSEffectiveRecommendationPreferences(JsonView jsonValue)
+  : ECSEffectiveRecommendationPreferences()
 {
   *this = jsonValue;
 }

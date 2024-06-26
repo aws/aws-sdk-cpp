@@ -27,12 +27,8 @@ OAuth2Defaults::OAuth2Defaults() :
 {
 }
 
-OAuth2Defaults::OAuth2Defaults(JsonView jsonValue) : 
-    m_oauthScopesHasBeenSet(false),
-    m_tokenUrlsHasBeenSet(false),
-    m_authCodeUrlsHasBeenSet(false),
-    m_oauth2GrantTypesSupportedHasBeenSet(false),
-    m_oauth2CustomPropertiesHasBeenSet(false)
+OAuth2Defaults::OAuth2Defaults(JsonView jsonValue)
+  : OAuth2Defaults()
 {
   *this = jsonValue;
 }

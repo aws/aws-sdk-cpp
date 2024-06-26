@@ -24,9 +24,8 @@ InvalidTargetException::InvalidTargetException() :
 {
 }
 
-InvalidTargetException::InvalidTargetException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
+InvalidTargetException::InvalidTargetException(JsonView jsonValue)
+  : InvalidTargetException()
 {
   *this = jsonValue;
 }

@@ -32,17 +32,8 @@ PITPolicyRule::PITPolicyRule() :
 {
 }
 
-PITPolicyRule::PITPolicyRule(JsonView jsonValue) : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_interval(0),
-    m_intervalHasBeenSet(false),
-    m_retentionDuration(0),
-    m_retentionDurationHasBeenSet(false),
-    m_ruleID(0),
-    m_ruleIDHasBeenSet(false),
-    m_units(PITPolicyRuleUnits::NOT_SET),
-    m_unitsHasBeenSet(false)
+PITPolicyRule::PITPolicyRule(JsonView jsonValue)
+  : PITPolicyRule()
 {
   *this = jsonValue;
 }

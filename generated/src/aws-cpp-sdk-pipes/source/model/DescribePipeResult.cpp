@@ -23,9 +23,8 @@ DescribePipeResult::DescribePipeResult() :
 {
 }
 
-DescribePipeResult::DescribePipeResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_desiredState(RequestedPipeStateDescribeResponse::NOT_SET),
-    m_currentState(PipeState::NOT_SET)
+DescribePipeResult::DescribePipeResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribePipeResult()
 {
   *this = result;
 }

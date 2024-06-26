@@ -31,14 +31,8 @@ AsyncOperation::AsyncOperation() :
 {
 }
 
-AsyncOperation::AsyncOperation(const XmlNode& xmlNode) : 
-    m_creationTimeHasBeenSet(false),
-    m_operation(AsyncOperationName::NOT_SET),
-    m_operationHasBeenSet(false),
-    m_requestTokenARNHasBeenSet(false),
-    m_requestParametersHasBeenSet(false),
-    m_requestStatusHasBeenSet(false),
-    m_responseDetailsHasBeenSet(false)
+AsyncOperation::AsyncOperation(const XmlNode& xmlNode)
+  : AsyncOperation()
 {
   *this = xmlNode;
 }

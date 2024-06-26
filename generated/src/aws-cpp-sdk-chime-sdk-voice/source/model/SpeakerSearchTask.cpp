@@ -30,15 +30,8 @@ SpeakerSearchTask::SpeakerSearchTask() :
 {
 }
 
-SpeakerSearchTask::SpeakerSearchTask(JsonView jsonValue) : 
-    m_speakerSearchTaskIdHasBeenSet(false),
-    m_speakerSearchTaskStatusHasBeenSet(false),
-    m_callDetailsHasBeenSet(false),
-    m_speakerSearchDetailsHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false),
-    m_updatedTimestampHasBeenSet(false),
-    m_startedTimestampHasBeenSet(false),
-    m_statusMessageHasBeenSet(false)
+SpeakerSearchTask::SpeakerSearchTask(JsonView jsonValue)
+  : SpeakerSearchTask()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ SelfManagedKafkaAccessConfigurationCredentials::SelfManagedKafkaAccessConfigurat
 {
 }
 
-SelfManagedKafkaAccessConfigurationCredentials::SelfManagedKafkaAccessConfigurationCredentials(JsonView jsonValue) : 
-    m_basicAuthHasBeenSet(false),
-    m_saslScram512AuthHasBeenSet(false),
-    m_saslScram256AuthHasBeenSet(false),
-    m_clientCertificateTlsAuthHasBeenSet(false)
+SelfManagedKafkaAccessConfigurationCredentials::SelfManagedKafkaAccessConfigurationCredentials(JsonView jsonValue)
+  : SelfManagedKafkaAccessConfigurationCredentials()
 {
   *this = jsonValue;
 }

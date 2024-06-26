@@ -27,10 +27,8 @@ S3Retention::S3Retention() :
 {
 }
 
-S3Retention::S3Retention(const XmlNode& xmlNode) : 
-    m_retainUntilDateHasBeenSet(false),
-    m_mode(S3ObjectLockRetentionMode::NOT_SET),
-    m_modeHasBeenSet(false)
+S3Retention::S3Retention(const XmlNode& xmlNode)
+  : S3Retention()
 {
   *this = xmlNode;
 }

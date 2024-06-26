@@ -25,10 +25,8 @@ NetworkHeader::NetworkHeader() :
 {
 }
 
-NetworkHeader::NetworkHeader(JsonView jsonValue) : 
-    m_protocolHasBeenSet(false),
-    m_destinationHasBeenSet(false),
-    m_sourceHasBeenSet(false)
+NetworkHeader::NetworkHeader(JsonView jsonValue)
+  : NetworkHeader()
 {
   *this = jsonValue;
 }

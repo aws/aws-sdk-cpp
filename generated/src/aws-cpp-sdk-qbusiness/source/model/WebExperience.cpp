@@ -28,13 +28,8 @@ WebExperience::WebExperience() :
 {
 }
 
-WebExperience::WebExperience(JsonView jsonValue) : 
-    m_webExperienceIdHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_defaultEndpointHasBeenSet(false),
-    m_status(WebExperienceStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+WebExperience::WebExperience(JsonView jsonValue)
+  : WebExperience()
 {
   *this = jsonValue;
 }

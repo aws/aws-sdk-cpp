@@ -25,10 +25,8 @@ AwsRedshiftClusterHsmStatus::AwsRedshiftClusterHsmStatus() :
 {
 }
 
-AwsRedshiftClusterHsmStatus::AwsRedshiftClusterHsmStatus(JsonView jsonValue) : 
-    m_hsmClientCertificateIdentifierHasBeenSet(false),
-    m_hsmConfigurationIdentifierHasBeenSet(false),
-    m_statusHasBeenSet(false)
+AwsRedshiftClusterHsmStatus::AwsRedshiftClusterHsmStatus(JsonView jsonValue)
+  : AwsRedshiftClusterHsmStatus()
 {
   *this = jsonValue;
 }

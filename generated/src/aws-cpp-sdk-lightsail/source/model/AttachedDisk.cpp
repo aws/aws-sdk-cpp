@@ -25,10 +25,8 @@ AttachedDisk::AttachedDisk() :
 {
 }
 
-AttachedDisk::AttachedDisk(JsonView jsonValue) : 
-    m_pathHasBeenSet(false),
-    m_sizeInGb(0),
-    m_sizeInGbHasBeenSet(false)
+AttachedDisk::AttachedDisk(JsonView jsonValue)
+  : AttachedDisk()
 {
   *this = jsonValue;
 }

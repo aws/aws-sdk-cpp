@@ -27,10 +27,8 @@ MasterUserSecret::MasterUserSecret() :
 {
 }
 
-MasterUserSecret::MasterUserSecret(const XmlNode& xmlNode) : 
-    m_secretArnHasBeenSet(false),
-    m_secretStatusHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
+MasterUserSecret::MasterUserSecret(const XmlNode& xmlNode)
+  : MasterUserSecret()
 {
   *this = xmlNode;
 }

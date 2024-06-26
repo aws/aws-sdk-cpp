@@ -23,8 +23,8 @@ ParametricS3MonitoringConfiguration::ParametricS3MonitoringConfiguration() :
 {
 }
 
-ParametricS3MonitoringConfiguration::ParametricS3MonitoringConfiguration(JsonView jsonValue) : 
-    m_logUriHasBeenSet(false)
+ParametricS3MonitoringConfiguration::ParametricS3MonitoringConfiguration(JsonView jsonValue)
+  : ParametricS3MonitoringConfiguration()
 {
   *this = jsonValue;
 }

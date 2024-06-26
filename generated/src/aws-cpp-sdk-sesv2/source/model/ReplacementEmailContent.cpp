@@ -23,8 +23,8 @@ ReplacementEmailContent::ReplacementEmailContent() :
 {
 }
 
-ReplacementEmailContent::ReplacementEmailContent(JsonView jsonValue) : 
-    m_replacementTemplateHasBeenSet(false)
+ReplacementEmailContent::ReplacementEmailContent(JsonView jsonValue)
+  : ReplacementEmailContent()
 {
   *this = jsonValue;
 }

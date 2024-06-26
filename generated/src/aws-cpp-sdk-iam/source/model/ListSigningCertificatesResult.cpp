@@ -22,8 +22,8 @@ ListSigningCertificatesResult::ListSigningCertificatesResult() :
 {
 }
 
-ListSigningCertificatesResult::ListSigningCertificatesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_isTruncated(false)
+ListSigningCertificatesResult::ListSigningCertificatesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : ListSigningCertificatesResult()
 {
   *this = result;
 }

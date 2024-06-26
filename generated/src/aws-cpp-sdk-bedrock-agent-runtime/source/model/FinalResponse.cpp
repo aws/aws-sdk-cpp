@@ -23,8 +23,8 @@ FinalResponse::FinalResponse() :
 {
 }
 
-FinalResponse::FinalResponse(JsonView jsonValue) : 
-    m_textHasBeenSet(false)
+FinalResponse::FinalResponse(JsonView jsonValue)
+  : FinalResponse()
 {
   *this = jsonValue;
 }

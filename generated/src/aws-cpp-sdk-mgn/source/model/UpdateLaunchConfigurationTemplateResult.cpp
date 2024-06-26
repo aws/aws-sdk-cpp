@@ -29,15 +29,8 @@ UpdateLaunchConfigurationTemplateResult::UpdateLaunchConfigurationTemplateResult
 {
 }
 
-UpdateLaunchConfigurationTemplateResult::UpdateLaunchConfigurationTemplateResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_associatePublicIpAddress(false),
-    m_bootMode(BootMode::NOT_SET),
-    m_copyPrivateIp(false),
-    m_copyTags(false),
-    m_enableMapAutoTagging(false),
-    m_launchDisposition(LaunchDisposition::NOT_SET),
-    m_smallVolumeMaxSize(0),
-    m_targetInstanceTypeRightSizingMethod(TargetInstanceTypeRightSizingMethod::NOT_SET)
+UpdateLaunchConfigurationTemplateResult::UpdateLaunchConfigurationTemplateResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateLaunchConfigurationTemplateResult()
 {
   *this = result;
 }

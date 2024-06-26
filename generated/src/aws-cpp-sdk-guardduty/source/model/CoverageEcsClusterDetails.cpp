@@ -25,10 +25,8 @@ CoverageEcsClusterDetails::CoverageEcsClusterDetails() :
 {
 }
 
-CoverageEcsClusterDetails::CoverageEcsClusterDetails(JsonView jsonValue) : 
-    m_clusterNameHasBeenSet(false),
-    m_fargateDetailsHasBeenSet(false),
-    m_containerInstanceDetailsHasBeenSet(false)
+CoverageEcsClusterDetails::CoverageEcsClusterDetails(JsonView jsonValue)
+  : CoverageEcsClusterDetails()
 {
   *this = jsonValue;
 }

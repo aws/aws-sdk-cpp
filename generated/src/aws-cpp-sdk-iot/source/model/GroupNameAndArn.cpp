@@ -24,9 +24,8 @@ GroupNameAndArn::GroupNameAndArn() :
 {
 }
 
-GroupNameAndArn::GroupNameAndArn(JsonView jsonValue) : 
-    m_groupNameHasBeenSet(false),
-    m_groupArnHasBeenSet(false)
+GroupNameAndArn::GroupNameAndArn(JsonView jsonValue)
+  : GroupNameAndArn()
 {
   *this = jsonValue;
 }

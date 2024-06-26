@@ -38,23 +38,8 @@ ConnectorSummary::ConnectorSummary() :
 {
 }
 
-ConnectorSummary::ConnectorSummary(JsonView jsonValue) : 
-    m_capacityHasBeenSet(false),
-    m_connectorArnHasBeenSet(false),
-    m_connectorDescriptionHasBeenSet(false),
-    m_connectorNameHasBeenSet(false),
-    m_connectorState(ConnectorState::NOT_SET),
-    m_connectorStateHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_currentVersionHasBeenSet(false),
-    m_kafkaClusterHasBeenSet(false),
-    m_kafkaClusterClientAuthenticationHasBeenSet(false),
-    m_kafkaClusterEncryptionInTransitHasBeenSet(false),
-    m_kafkaConnectVersionHasBeenSet(false),
-    m_logDeliveryHasBeenSet(false),
-    m_pluginsHasBeenSet(false),
-    m_serviceExecutionRoleArnHasBeenSet(false),
-    m_workerConfigurationHasBeenSet(false)
+ConnectorSummary::ConnectorSummary(JsonView jsonValue)
+  : ConnectorSummary()
 {
   *this = jsonValue;
 }

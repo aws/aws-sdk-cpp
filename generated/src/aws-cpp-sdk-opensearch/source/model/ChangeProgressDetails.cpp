@@ -30,15 +30,8 @@ ChangeProgressDetails::ChangeProgressDetails() :
 {
 }
 
-ChangeProgressDetails::ChangeProgressDetails(JsonView jsonValue) : 
-    m_changeIdHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_configChangeStatus(ConfigChangeStatus::NOT_SET),
-    m_configChangeStatusHasBeenSet(false),
-    m_initiatedBy(InitiatedBy::NOT_SET),
-    m_initiatedByHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false)
+ChangeProgressDetails::ChangeProgressDetails(JsonView jsonValue)
+  : ChangeProgressDetails()
 {
   *this = jsonValue;
 }

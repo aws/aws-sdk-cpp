@@ -26,9 +26,8 @@ SpotFleetMonitoring::SpotFleetMonitoring() :
 {
 }
 
-SpotFleetMonitoring::SpotFleetMonitoring(const XmlNode& xmlNode) : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
+SpotFleetMonitoring::SpotFleetMonitoring(const XmlNode& xmlNode)
+  : SpotFleetMonitoring()
 {
   *this = xmlNode;
 }

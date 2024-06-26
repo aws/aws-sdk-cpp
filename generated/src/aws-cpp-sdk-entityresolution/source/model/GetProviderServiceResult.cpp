@@ -23,9 +23,8 @@ GetProviderServiceResult::GetProviderServiceResult() :
 {
 }
 
-GetProviderServiceResult::GetProviderServiceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_anonymizedOutput(false),
-    m_providerServiceType(ServiceType::NOT_SET)
+GetProviderServiceResult::GetProviderServiceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetProviderServiceResult()
 {
   *this = result;
 }

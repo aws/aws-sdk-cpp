@@ -25,10 +25,8 @@ CloudWatchConfig::CloudWatchConfig() :
 {
 }
 
-CloudWatchConfig::CloudWatchConfig(JsonView jsonValue) : 
-    m_logGroupNameHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_largeDataDeliveryS3ConfigHasBeenSet(false)
+CloudWatchConfig::CloudWatchConfig(JsonView jsonValue)
+  : CloudWatchConfig()
 {
   *this = jsonValue;
 }

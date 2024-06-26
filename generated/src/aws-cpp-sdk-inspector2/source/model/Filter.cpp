@@ -33,18 +33,8 @@ Filter::Filter() :
 {
 }
 
-Filter::Filter(JsonView jsonValue) : 
-    m_action(FilterAction::NOT_SET),
-    m_actionHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_criteriaHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_reasonHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+Filter::Filter(JsonView jsonValue)
+  : Filter()
 {
   *this = jsonValue;
 }

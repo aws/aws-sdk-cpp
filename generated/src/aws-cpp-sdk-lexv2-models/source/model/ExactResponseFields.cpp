@@ -24,9 +24,8 @@ ExactResponseFields::ExactResponseFields() :
 {
 }
 
-ExactResponseFields::ExactResponseFields(JsonView jsonValue) : 
-    m_questionFieldHasBeenSet(false),
-    m_answerFieldHasBeenSet(false)
+ExactResponseFields::ExactResponseFields(JsonView jsonValue)
+  : ExactResponseFields()
 {
   *this = jsonValue;
 }

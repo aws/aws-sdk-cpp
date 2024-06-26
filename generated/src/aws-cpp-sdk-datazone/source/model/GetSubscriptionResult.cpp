@@ -23,9 +23,8 @@ GetSubscriptionResult::GetSubscriptionResult() :
 {
 }
 
-GetSubscriptionResult::GetSubscriptionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_retainPermissions(false),
-    m_status(SubscriptionStatus::NOT_SET)
+GetSubscriptionResult::GetSubscriptionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetSubscriptionResult()
 {
   *this = result;
 }

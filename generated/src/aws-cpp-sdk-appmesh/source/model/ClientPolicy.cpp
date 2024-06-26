@@ -23,8 +23,8 @@ ClientPolicy::ClientPolicy() :
 {
 }
 
-ClientPolicy::ClientPolicy(JsonView jsonValue) : 
-    m_tlsHasBeenSet(false)
+ClientPolicy::ClientPolicy(JsonView jsonValue)
+  : ClientPolicy()
 {
   *this = jsonValue;
 }

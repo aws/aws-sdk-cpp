@@ -31,16 +31,8 @@ TopicRefreshSchedule::TopicRefreshSchedule() :
 {
 }
 
-TopicRefreshSchedule::TopicRefreshSchedule(JsonView jsonValue) : 
-    m_isEnabled(false),
-    m_isEnabledHasBeenSet(false),
-    m_basedOnSpiceSchedule(false),
-    m_basedOnSpiceScheduleHasBeenSet(false),
-    m_startingAtHasBeenSet(false),
-    m_timezoneHasBeenSet(false),
-    m_repeatAtHasBeenSet(false),
-    m_topicScheduleType(TopicScheduleType::NOT_SET),
-    m_topicScheduleTypeHasBeenSet(false)
+TopicRefreshSchedule::TopicRefreshSchedule(JsonView jsonValue)
+  : TopicRefreshSchedule()
 {
   *this = jsonValue;
 }

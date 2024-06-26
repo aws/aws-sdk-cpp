@@ -28,13 +28,8 @@ DeploymentTarget::DeploymentTarget() :
 {
 }
 
-DeploymentTarget::DeploymentTarget(JsonView jsonValue) : 
-    m_deploymentTargetType(DeploymentTargetType::NOT_SET),
-    m_deploymentTargetTypeHasBeenSet(false),
-    m_instanceTargetHasBeenSet(false),
-    m_lambdaTargetHasBeenSet(false),
-    m_ecsTargetHasBeenSet(false),
-    m_cloudFormationTargetHasBeenSet(false)
+DeploymentTarget::DeploymentTarget(JsonView jsonValue)
+  : DeploymentTarget()
 {
   *this = jsonValue;
 }

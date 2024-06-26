@@ -26,11 +26,8 @@ ProfileConfiguration::ProfileConfiguration() :
 {
 }
 
-ProfileConfiguration::ProfileConfiguration(JsonView jsonValue) : 
-    m_datasetStatisticsConfigurationHasBeenSet(false),
-    m_profileColumnsHasBeenSet(false),
-    m_columnStatisticsConfigurationsHasBeenSet(false),
-    m_entityDetectorConfigurationHasBeenSet(false)
+ProfileConfiguration::ProfileConfiguration(JsonView jsonValue)
+  : ProfileConfiguration()
 {
   *this = jsonValue;
 }

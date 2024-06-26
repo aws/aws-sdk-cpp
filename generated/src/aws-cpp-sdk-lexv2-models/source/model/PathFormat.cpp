@@ -23,8 +23,8 @@ PathFormat::PathFormat() :
 {
 }
 
-PathFormat::PathFormat(JsonView jsonValue) : 
-    m_objectPrefixesHasBeenSet(false)
+PathFormat::PathFormat(JsonView jsonValue)
+  : PathFormat()
 {
   *this = jsonValue;
 }

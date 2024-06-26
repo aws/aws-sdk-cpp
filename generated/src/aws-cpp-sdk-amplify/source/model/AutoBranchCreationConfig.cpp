@@ -37,22 +37,8 @@ AutoBranchCreationConfig::AutoBranchCreationConfig() :
 {
 }
 
-AutoBranchCreationConfig::AutoBranchCreationConfig(JsonView jsonValue) : 
-    m_stage(Stage::NOT_SET),
-    m_stageHasBeenSet(false),
-    m_frameworkHasBeenSet(false),
-    m_enableAutoBuild(false),
-    m_enableAutoBuildHasBeenSet(false),
-    m_environmentVariablesHasBeenSet(false),
-    m_basicAuthCredentialsHasBeenSet(false),
-    m_enableBasicAuth(false),
-    m_enableBasicAuthHasBeenSet(false),
-    m_enablePerformanceMode(false),
-    m_enablePerformanceModeHasBeenSet(false),
-    m_buildSpecHasBeenSet(false),
-    m_enablePullRequestPreview(false),
-    m_enablePullRequestPreviewHasBeenSet(false),
-    m_pullRequestEnvironmentNameHasBeenSet(false)
+AutoBranchCreationConfig::AutoBranchCreationConfig(JsonView jsonValue)
+  : AutoBranchCreationConfig()
 {
   *this = jsonValue;
 }

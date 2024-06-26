@@ -25,8 +25,8 @@ ParameterConstraints::ParameterConstraints() :
 {
 }
 
-ParameterConstraints::ParameterConstraints(const XmlNode& xmlNode) : 
-    m_allowedValuesHasBeenSet(false)
+ParameterConstraints::ParameterConstraints(const XmlNode& xmlNode)
+  : ParameterConstraints()
 {
   *this = xmlNode;
 }

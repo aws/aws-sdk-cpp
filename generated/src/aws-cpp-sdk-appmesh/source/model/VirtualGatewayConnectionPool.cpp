@@ -25,10 +25,8 @@ VirtualGatewayConnectionPool::VirtualGatewayConnectionPool() :
 {
 }
 
-VirtualGatewayConnectionPool::VirtualGatewayConnectionPool(JsonView jsonValue) : 
-    m_grpcHasBeenSet(false),
-    m_httpHasBeenSet(false),
-    m_http2HasBeenSet(false)
+VirtualGatewayConnectionPool::VirtualGatewayConnectionPool(JsonView jsonValue)
+  : VirtualGatewayConnectionPool()
 {
   *this = jsonValue;
 }

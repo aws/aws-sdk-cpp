@@ -26,11 +26,8 @@ SourceCodeRepository::SourceCodeRepository() :
 {
 }
 
-SourceCodeRepository::SourceCodeRepository(JsonView jsonValue) : 
-    m_branchHasBeenSet(false),
-    m_projectNameHasBeenSet(false),
-    m_repositoryHasBeenSet(false),
-    m_versionControlTypeHasBeenSet(false)
+SourceCodeRepository::SourceCodeRepository(JsonView jsonValue)
+  : SourceCodeRepository()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ FindingSourceDetail::FindingSourceDetail() :
 {
 }
 
-FindingSourceDetail::FindingSourceDetail(JsonView jsonValue) : 
-    m_accessPointArnHasBeenSet(false),
-    m_accessPointAccountHasBeenSet(false)
+FindingSourceDetail::FindingSourceDetail(JsonView jsonValue)
+  : FindingSourceDetail()
 {
   *this = jsonValue;
 }

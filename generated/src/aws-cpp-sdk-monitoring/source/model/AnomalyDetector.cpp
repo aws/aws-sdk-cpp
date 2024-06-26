@@ -30,13 +30,8 @@ AnomalyDetector::AnomalyDetector() :
 {
 }
 
-AnomalyDetector::AnomalyDetector(const XmlNode& xmlNode) : 
-    m_configurationHasBeenSet(false),
-    m_stateValue(AnomalyDetectorStateValue::NOT_SET),
-    m_stateValueHasBeenSet(false),
-    m_metricCharacteristicsHasBeenSet(false),
-    m_singleMetricAnomalyDetectorHasBeenSet(false),
-    m_metricMathAnomalyDetectorHasBeenSet(false)
+AnomalyDetector::AnomalyDetector(const XmlNode& xmlNode)
+  : AnomalyDetector()
 {
   *this = xmlNode;
 }

@@ -23,8 +23,8 @@ InputLambdaProcessorUpdate::InputLambdaProcessorUpdate() :
 {
 }
 
-InputLambdaProcessorUpdate::InputLambdaProcessorUpdate(JsonView jsonValue) : 
-    m_resourceARNUpdateHasBeenSet(false)
+InputLambdaProcessorUpdate::InputLambdaProcessorUpdate(JsonView jsonValue)
+  : InputLambdaProcessorUpdate()
 {
   *this = jsonValue;
 }

@@ -32,17 +32,8 @@ ParameterSliderControl::ParameterSliderControl() :
 {
 }
 
-ParameterSliderControl::ParameterSliderControl(JsonView jsonValue) : 
-    m_parameterControlIdHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_sourceParameterNameHasBeenSet(false),
-    m_displayOptionsHasBeenSet(false),
-    m_maximumValue(0.0),
-    m_maximumValueHasBeenSet(false),
-    m_minimumValue(0.0),
-    m_minimumValueHasBeenSet(false),
-    m_stepSize(0.0),
-    m_stepSizeHasBeenSet(false)
+ParameterSliderControl::ParameterSliderControl(JsonView jsonValue)
+  : ParameterSliderControl()
 {
   *this = jsonValue;
 }

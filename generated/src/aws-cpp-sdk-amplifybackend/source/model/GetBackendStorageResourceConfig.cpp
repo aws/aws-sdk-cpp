@@ -28,13 +28,8 @@ GetBackendStorageResourceConfig::GetBackendStorageResourceConfig() :
 {
 }
 
-GetBackendStorageResourceConfig::GetBackendStorageResourceConfig(JsonView jsonValue) : 
-    m_bucketNameHasBeenSet(false),
-    m_imported(false),
-    m_importedHasBeenSet(false),
-    m_permissionsHasBeenSet(false),
-    m_serviceName(ServiceName::NOT_SET),
-    m_serviceNameHasBeenSet(false)
+GetBackendStorageResourceConfig::GetBackendStorageResourceConfig(JsonView jsonValue)
+  : GetBackendStorageResourceConfig()
 {
   *this = jsonValue;
 }

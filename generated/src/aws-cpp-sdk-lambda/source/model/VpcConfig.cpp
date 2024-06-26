@@ -26,11 +26,8 @@ VpcConfig::VpcConfig() :
 {
 }
 
-VpcConfig::VpcConfig(JsonView jsonValue) : 
-    m_subnetIdsHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false),
-    m_ipv6AllowedForDualStack(false),
-    m_ipv6AllowedForDualStackHasBeenSet(false)
+VpcConfig::VpcConfig(JsonView jsonValue)
+  : VpcConfig()
 {
   *this = jsonValue;
 }

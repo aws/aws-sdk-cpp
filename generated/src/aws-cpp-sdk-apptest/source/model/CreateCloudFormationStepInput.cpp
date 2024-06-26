@@ -24,9 +24,8 @@ CreateCloudFormationStepInput::CreateCloudFormationStepInput() :
 {
 }
 
-CreateCloudFormationStepInput::CreateCloudFormationStepInput(JsonView jsonValue) : 
-    m_templateLocationHasBeenSet(false),
-    m_parametersHasBeenSet(false)
+CreateCloudFormationStepInput::CreateCloudFormationStepInput(JsonView jsonValue)
+  : CreateCloudFormationStepInput()
 {
   *this = jsonValue;
 }

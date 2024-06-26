@@ -25,10 +25,8 @@ BackupRetentionPolicy::BackupRetentionPolicy() :
 {
 }
 
-BackupRetentionPolicy::BackupRetentionPolicy(JsonView jsonValue) : 
-    m_type(BackupRetentionType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_valueHasBeenSet(false)
+BackupRetentionPolicy::BackupRetentionPolicy(JsonView jsonValue)
+  : BackupRetentionPolicy()
 {
   *this = jsonValue;
 }

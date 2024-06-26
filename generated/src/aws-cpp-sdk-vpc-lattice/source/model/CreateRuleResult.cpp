@@ -22,8 +22,8 @@ CreateRuleResult::CreateRuleResult() :
 {
 }
 
-CreateRuleResult::CreateRuleResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_priority(0)
+CreateRuleResult::CreateRuleResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateRuleResult()
 {
   *this = result;
 }

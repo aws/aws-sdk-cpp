@@ -26,11 +26,8 @@ RegistrationOutput::RegistrationOutput() :
 {
 }
 
-RegistrationOutput::RegistrationOutput(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_resultHasBeenSet(false),
-    m_status(ExecutionStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+RegistrationOutput::RegistrationOutput(JsonView jsonValue)
+  : RegistrationOutput()
 {
   *this = jsonValue;
 }

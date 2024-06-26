@@ -37,22 +37,8 @@ RecoveryPointByResource::RecoveryPointByResource() :
 {
 }
 
-RecoveryPointByResource::RecoveryPointByResource(JsonView jsonValue) : 
-    m_recoveryPointArnHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_status(RecoveryPointStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_encryptionKeyArnHasBeenSet(false),
-    m_backupSizeBytes(0),
-    m_backupSizeBytesHasBeenSet(false),
-    m_backupVaultNameHasBeenSet(false),
-    m_isParent(false),
-    m_isParentHasBeenSet(false),
-    m_parentRecoveryPointArnHasBeenSet(false),
-    m_resourceNameHasBeenSet(false),
-    m_vaultType(VaultType::NOT_SET),
-    m_vaultTypeHasBeenSet(false)
+RecoveryPointByResource::RecoveryPointByResource(JsonView jsonValue)
+  : RecoveryPointByResource()
 {
   *this = jsonValue;
 }

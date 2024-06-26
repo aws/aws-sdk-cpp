@@ -37,22 +37,8 @@ CoverageFilterCriteria::CoverageFilterCriteria() :
 {
 }
 
-CoverageFilterCriteria::CoverageFilterCriteria(JsonView jsonValue) : 
-    m_accountIdHasBeenSet(false),
-    m_ec2InstanceTagsHasBeenSet(false),
-    m_ecrImageTagsHasBeenSet(false),
-    m_ecrRepositoryNameHasBeenSet(false),
-    m_imagePulledAtHasBeenSet(false),
-    m_lambdaFunctionNameHasBeenSet(false),
-    m_lambdaFunctionRuntimeHasBeenSet(false),
-    m_lambdaFunctionTagsHasBeenSet(false),
-    m_lastScannedAtHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
-    m_scanModeHasBeenSet(false),
-    m_scanStatusCodeHasBeenSet(false),
-    m_scanStatusReasonHasBeenSet(false),
-    m_scanTypeHasBeenSet(false)
+CoverageFilterCriteria::CoverageFilterCriteria(JsonView jsonValue)
+  : CoverageFilterCriteria()
 {
   *this = jsonValue;
 }

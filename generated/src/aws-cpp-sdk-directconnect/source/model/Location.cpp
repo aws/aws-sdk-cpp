@@ -28,13 +28,8 @@ Location::Location() :
 {
 }
 
-Location::Location(JsonView jsonValue) : 
-    m_locationCodeHasBeenSet(false),
-    m_locationNameHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_availablePortSpeedsHasBeenSet(false),
-    m_availableProvidersHasBeenSet(false),
-    m_availableMacSecPortSpeedsHasBeenSet(false)
+Location::Location(JsonView jsonValue)
+  : Location()
 {
   *this = jsonValue;
 }

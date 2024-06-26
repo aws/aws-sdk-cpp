@@ -32,17 +32,8 @@ DataSetImportSummary::DataSetImportSummary() :
 {
 }
 
-DataSetImportSummary::DataSetImportSummary(JsonView jsonValue) : 
-    m_failed(0),
-    m_failedHasBeenSet(false),
-    m_inProgress(0),
-    m_inProgressHasBeenSet(false),
-    m_pending(0),
-    m_pendingHasBeenSet(false),
-    m_succeeded(0),
-    m_succeededHasBeenSet(false),
-    m_total(0),
-    m_totalHasBeenSet(false)
+DataSetImportSummary::DataSetImportSummary(JsonView jsonValue)
+  : DataSetImportSummary()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ ProcessingResources::ProcessingResources() :
 {
 }
 
-ProcessingResources::ProcessingResources(JsonView jsonValue) : 
-    m_clusterConfigHasBeenSet(false)
+ProcessingResources::ProcessingResources(JsonView jsonValue)
+  : ProcessingResources()
 {
   *this = jsonValue;
 }

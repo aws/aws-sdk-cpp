@@ -22,8 +22,8 @@ ReplaceVpnTunnelResponse::ReplaceVpnTunnelResponse() :
 {
 }
 
-ReplaceVpnTunnelResponse::ReplaceVpnTunnelResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_return(false)
+ReplaceVpnTunnelResponse::ReplaceVpnTunnelResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : ReplaceVpnTunnelResponse()
 {
   *this = result;
 }

@@ -24,9 +24,8 @@ ThroughputLimitExceeded::ThroughputLimitExceeded() :
 {
 }
 
-ThroughputLimitExceeded::ThroughputLimitExceeded(JsonView jsonValue) : 
-    m_errorCodeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+ThroughputLimitExceeded::ThroughputLimitExceeded(JsonView jsonValue)
+  : ThroughputLimitExceeded()
 {
   *this = jsonValue;
 }

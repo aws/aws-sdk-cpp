@@ -42,25 +42,8 @@ FleetCapacityReservation::FleetCapacityReservation() :
 {
 }
 
-FleetCapacityReservation::FleetCapacityReservation(const XmlNode& xmlNode) : 
-    m_capacityReservationIdHasBeenSet(false),
-    m_availabilityZoneIdHasBeenSet(false),
-    m_instanceType(InstanceType::NOT_SET),
-    m_instanceTypeHasBeenSet(false),
-    m_instancePlatform(CapacityReservationInstancePlatform::NOT_SET),
-    m_instancePlatformHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_totalInstanceCount(0),
-    m_totalInstanceCountHasBeenSet(false),
-    m_fulfilledCapacity(0.0),
-    m_fulfilledCapacityHasBeenSet(false),
-    m_ebsOptimized(false),
-    m_ebsOptimizedHasBeenSet(false),
-    m_createDateHasBeenSet(false),
-    m_weight(0.0),
-    m_weightHasBeenSet(false),
-    m_priority(0),
-    m_priorityHasBeenSet(false)
+FleetCapacityReservation::FleetCapacityReservation(const XmlNode& xmlNode)
+  : FleetCapacityReservation()
 {
   *this = xmlNode;
 }

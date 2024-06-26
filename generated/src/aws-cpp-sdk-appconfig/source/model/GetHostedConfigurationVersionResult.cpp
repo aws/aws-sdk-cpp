@@ -54,8 +54,8 @@ GetHostedConfigurationVersionResult& GetHostedConfigurationVersionResult::operat
    return *this;
 }
 
-GetHostedConfigurationVersionResult::GetHostedConfigurationVersionResult(Aws::AmazonWebServiceResult<ResponseStream>&& result) : 
-    m_versionNumber(0)
+GetHostedConfigurationVersionResult::GetHostedConfigurationVersionResult(Aws::AmazonWebServiceResult<ResponseStream>&& result)
+  : GetHostedConfigurationVersionResult()
 {
   *this = std::move(result);
 }

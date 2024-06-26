@@ -23,8 +23,8 @@ LabelSummary::LabelSummary() :
 {
 }
 
-LabelSummary::LabelSummary(JsonView jsonValue) : 
-    m_nameHasBeenSet(false)
+LabelSummary::LabelSummary(JsonView jsonValue)
+  : LabelSummary()
 {
   *this = jsonValue;
 }

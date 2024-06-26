@@ -23,8 +23,8 @@ CodeRepository::CodeRepository() :
 {
 }
 
-CodeRepository::CodeRepository(JsonView jsonValue) : 
-    m_repositoryUrlHasBeenSet(false)
+CodeRepository::CodeRepository(JsonView jsonValue)
+  : CodeRepository()
 {
   *this = jsonValue;
 }

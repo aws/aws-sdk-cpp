@@ -26,11 +26,8 @@ RepositoryScanningConfigurationFailure::RepositoryScanningConfigurationFailure()
 {
 }
 
-RepositoryScanningConfigurationFailure::RepositoryScanningConfigurationFailure(JsonView jsonValue) : 
-    m_repositoryNameHasBeenSet(false),
-    m_failureCode(ScanningConfigurationFailureCode::NOT_SET),
-    m_failureCodeHasBeenSet(false),
-    m_failureReasonHasBeenSet(false)
+RepositoryScanningConfigurationFailure::RepositoryScanningConfigurationFailure(JsonView jsonValue)
+  : RepositoryScanningConfigurationFailure()
 {
   *this = jsonValue;
 }

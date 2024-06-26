@@ -23,8 +23,8 @@ StartSessionRequest::StartSessionRequest() :
 {
 }
 
-StartSessionRequest::StartSessionRequest(JsonView jsonValue) : 
-    m_ledgerNameHasBeenSet(false)
+StartSessionRequest::StartSessionRequest(JsonView jsonValue)
+  : StartSessionRequest()
 {
   *this = jsonValue;
 }

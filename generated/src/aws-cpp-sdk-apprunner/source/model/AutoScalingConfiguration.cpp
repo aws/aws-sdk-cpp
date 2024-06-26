@@ -42,27 +42,8 @@ AutoScalingConfiguration::AutoScalingConfiguration() :
 {
 }
 
-AutoScalingConfiguration::AutoScalingConfiguration(JsonView jsonValue) : 
-    m_autoScalingConfigurationArnHasBeenSet(false),
-    m_autoScalingConfigurationNameHasBeenSet(false),
-    m_autoScalingConfigurationRevision(0),
-    m_autoScalingConfigurationRevisionHasBeenSet(false),
-    m_latest(false),
-    m_latestHasBeenSet(false),
-    m_status(AutoScalingConfigurationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_maxConcurrency(0),
-    m_maxConcurrencyHasBeenSet(false),
-    m_minSize(0),
-    m_minSizeHasBeenSet(false),
-    m_maxSize(0),
-    m_maxSizeHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_deletedAtHasBeenSet(false),
-    m_hasAssociatedService(false),
-    m_hasAssociatedServiceHasBeenSet(false),
-    m_isDefault(false),
-    m_isDefaultHasBeenSet(false)
+AutoScalingConfiguration::AutoScalingConfiguration(JsonView jsonValue)
+  : AutoScalingConfiguration()
 {
   *this = jsonValue;
 }

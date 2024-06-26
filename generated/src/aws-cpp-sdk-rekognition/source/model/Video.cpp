@@ -23,8 +23,8 @@ Video::Video() :
 {
 }
 
-Video::Video(JsonView jsonValue) : 
-    m_s3ObjectHasBeenSet(false)
+Video::Video(JsonView jsonValue)
+  : Video()
 {
   *this = jsonValue;
 }

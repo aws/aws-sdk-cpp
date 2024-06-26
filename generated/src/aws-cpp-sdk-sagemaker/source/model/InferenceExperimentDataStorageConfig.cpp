@@ -25,10 +25,8 @@ InferenceExperimentDataStorageConfig::InferenceExperimentDataStorageConfig() :
 {
 }
 
-InferenceExperimentDataStorageConfig::InferenceExperimentDataStorageConfig(JsonView jsonValue) : 
-    m_destinationHasBeenSet(false),
-    m_kmsKeyHasBeenSet(false),
-    m_contentTypeHasBeenSet(false)
+InferenceExperimentDataStorageConfig::InferenceExperimentDataStorageConfig(JsonView jsonValue)
+  : InferenceExperimentDataStorageConfig()
 {
   *this = jsonValue;
 }

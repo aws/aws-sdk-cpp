@@ -26,11 +26,8 @@ TemporalStatisticsConfigInput::TemporalStatisticsConfigInput() :
 {
 }
 
-TemporalStatisticsConfigInput::TemporalStatisticsConfigInput(JsonView jsonValue) : 
-    m_groupBy(GroupBy::NOT_SET),
-    m_groupByHasBeenSet(false),
-    m_statisticsHasBeenSet(false),
-    m_targetBandsHasBeenSet(false)
+TemporalStatisticsConfigInput::TemporalStatisticsConfigInput(JsonView jsonValue)
+  : TemporalStatisticsConfigInput()
 {
   *this = jsonValue;
 }

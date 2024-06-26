@@ -24,9 +24,8 @@ ResaleAuthorizationAvailabilityEndDateFilterDateRange::ResaleAuthorizationAvaila
 {
 }
 
-ResaleAuthorizationAvailabilityEndDateFilterDateRange::ResaleAuthorizationAvailabilityEndDateFilterDateRange(JsonView jsonValue) : 
-    m_afterValueHasBeenSet(false),
-    m_beforeValueHasBeenSet(false)
+ResaleAuthorizationAvailabilityEndDateFilterDateRange::ResaleAuthorizationAvailabilityEndDateFilterDateRange(JsonView jsonValue)
+  : ResaleAuthorizationAvailabilityEndDateFilterDateRange()
 {
   *this = jsonValue;
 }

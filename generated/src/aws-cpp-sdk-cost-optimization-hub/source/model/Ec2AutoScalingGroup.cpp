@@ -24,9 +24,8 @@ Ec2AutoScalingGroup::Ec2AutoScalingGroup() :
 {
 }
 
-Ec2AutoScalingGroup::Ec2AutoScalingGroup(JsonView jsonValue) : 
-    m_configurationHasBeenSet(false),
-    m_costCalculationHasBeenSet(false)
+Ec2AutoScalingGroup::Ec2AutoScalingGroup(JsonView jsonValue)
+  : Ec2AutoScalingGroup()
 {
   *this = jsonValue;
 }

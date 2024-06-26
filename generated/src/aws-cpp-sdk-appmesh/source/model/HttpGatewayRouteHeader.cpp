@@ -26,11 +26,8 @@ HttpGatewayRouteHeader::HttpGatewayRouteHeader() :
 {
 }
 
-HttpGatewayRouteHeader::HttpGatewayRouteHeader(JsonView jsonValue) : 
-    m_invert(false),
-    m_invertHasBeenSet(false),
-    m_matchHasBeenSet(false),
-    m_nameHasBeenSet(false)
+HttpGatewayRouteHeader::HttpGatewayRouteHeader(JsonView jsonValue)
+  : HttpGatewayRouteHeader()
 {
   *this = jsonValue;
 }

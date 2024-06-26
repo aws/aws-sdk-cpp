@@ -28,13 +28,8 @@ PortMapping::PortMapping() :
 {
 }
 
-PortMapping::PortMapping(JsonView jsonValue) : 
-    m_jobPort(0),
-    m_jobPortHasBeenSet(false),
-    m_applicationPort(0),
-    m_applicationPortHasBeenSet(false),
-    m_enableOnPublicIp(false),
-    m_enableOnPublicIpHasBeenSet(false)
+PortMapping::PortMapping(JsonView jsonValue)
+  : PortMapping()
 {
   *this = jsonValue;
 }

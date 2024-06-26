@@ -26,11 +26,8 @@ AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails::AwsEc2Launc
 {
 }
 
-AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails::AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails(JsonView jsonValue) : 
-    m_max(0.0),
-    m_maxHasBeenSet(false),
-    m_min(0.0),
-    m_minHasBeenSet(false)
+AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails::AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails(JsonView jsonValue)
+  : AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails()
 {
   *this = jsonValue;
 }

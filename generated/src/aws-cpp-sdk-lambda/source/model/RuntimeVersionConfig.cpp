@@ -24,9 +24,8 @@ RuntimeVersionConfig::RuntimeVersionConfig() :
 {
 }
 
-RuntimeVersionConfig::RuntimeVersionConfig(JsonView jsonValue) : 
-    m_runtimeVersionArnHasBeenSet(false),
-    m_errorHasBeenSet(false)
+RuntimeVersionConfig::RuntimeVersionConfig(JsonView jsonValue)
+  : RuntimeVersionConfig()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ ScheduledSplitsLaunchDefinition::ScheduledSplitsLaunchDefinition() :
 {
 }
 
-ScheduledSplitsLaunchDefinition::ScheduledSplitsLaunchDefinition(JsonView jsonValue) : 
-    m_stepsHasBeenSet(false)
+ScheduledSplitsLaunchDefinition::ScheduledSplitsLaunchDefinition(JsonView jsonValue)
+  : ScheduledSplitsLaunchDefinition()
 {
   *this = jsonValue;
 }

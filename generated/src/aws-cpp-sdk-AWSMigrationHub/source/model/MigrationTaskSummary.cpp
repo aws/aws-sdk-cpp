@@ -30,15 +30,8 @@ MigrationTaskSummary::MigrationTaskSummary() :
 {
 }
 
-MigrationTaskSummary::MigrationTaskSummary(JsonView jsonValue) : 
-    m_progressUpdateStreamHasBeenSet(false),
-    m_migrationTaskNameHasBeenSet(false),
-    m_status(Status::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_progressPercent(0),
-    m_progressPercentHasBeenSet(false),
-    m_statusDetailHasBeenSet(false),
-    m_updateDateTimeHasBeenSet(false)
+MigrationTaskSummary::MigrationTaskSummary(JsonView jsonValue)
+  : MigrationTaskSummary()
 {
   *this = jsonValue;
 }

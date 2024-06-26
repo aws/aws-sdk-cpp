@@ -31,16 +31,8 @@ ServiceResourceCost::ServiceResourceCost() :
 {
 }
 
-ServiceResourceCost::ServiceResourceCost(JsonView jsonValue) : 
-    m_typeHasBeenSet(false),
-    m_state(CostEstimationServiceResourceState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_count(0),
-    m_countHasBeenSet(false),
-    m_unitCost(0.0),
-    m_unitCostHasBeenSet(false),
-    m_cost(0.0),
-    m_costHasBeenSet(false)
+ServiceResourceCost::ServiceResourceCost(JsonView jsonValue)
+  : ServiceResourceCost()
 {
   *this = jsonValue;
 }

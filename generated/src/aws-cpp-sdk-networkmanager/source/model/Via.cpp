@@ -24,9 +24,8 @@ Via::Via() :
 {
 }
 
-Via::Via(JsonView jsonValue) : 
-    m_networkFunctionGroupsHasBeenSet(false),
-    m_withEdgeOverridesHasBeenSet(false)
+Via::Via(JsonView jsonValue)
+  : Via()
 {
   *this = jsonValue;
 }

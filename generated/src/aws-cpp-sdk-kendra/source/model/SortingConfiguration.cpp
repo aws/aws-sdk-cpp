@@ -25,10 +25,8 @@ SortingConfiguration::SortingConfiguration() :
 {
 }
 
-SortingConfiguration::SortingConfiguration(JsonView jsonValue) : 
-    m_documentAttributeKeyHasBeenSet(false),
-    m_sortOrder(SortOrder::NOT_SET),
-    m_sortOrderHasBeenSet(false)
+SortingConfiguration::SortingConfiguration(JsonView jsonValue)
+  : SortingConfiguration()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ BotSortBy::BotSortBy() :
 {
 }
 
-BotSortBy::BotSortBy(JsonView jsonValue) : 
-    m_attribute(BotSortAttribute::NOT_SET),
-    m_attributeHasBeenSet(false),
-    m_order(SortOrder::NOT_SET),
-    m_orderHasBeenSet(false)
+BotSortBy::BotSortBy(JsonView jsonValue)
+  : BotSortBy()
 {
   *this = jsonValue;
 }

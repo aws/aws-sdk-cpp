@@ -24,9 +24,8 @@ FailedEntity::FailedEntity() :
 {
 }
 
-FailedEntity::FailedEntity(JsonView jsonValue) : 
-    m_entityIdHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
+FailedEntity::FailedEntity(JsonView jsonValue)
+  : FailedEntity()
 {
   *this = jsonValue;
 }

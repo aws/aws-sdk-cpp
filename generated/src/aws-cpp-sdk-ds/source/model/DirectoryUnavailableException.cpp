@@ -24,9 +24,8 @@ DirectoryUnavailableException::DirectoryUnavailableException() :
 {
 }
 
-DirectoryUnavailableException::DirectoryUnavailableException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
+DirectoryUnavailableException::DirectoryUnavailableException(JsonView jsonValue)
+  : DirectoryUnavailableException()
 {
   *this = jsonValue;
 }

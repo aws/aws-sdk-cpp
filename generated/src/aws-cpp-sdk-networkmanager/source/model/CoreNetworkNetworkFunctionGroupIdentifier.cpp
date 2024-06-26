@@ -25,10 +25,8 @@ CoreNetworkNetworkFunctionGroupIdentifier::CoreNetworkNetworkFunctionGroupIdenti
 {
 }
 
-CoreNetworkNetworkFunctionGroupIdentifier::CoreNetworkNetworkFunctionGroupIdentifier(JsonView jsonValue) : 
-    m_coreNetworkIdHasBeenSet(false),
-    m_networkFunctionGroupNameHasBeenSet(false),
-    m_edgeLocationHasBeenSet(false)
+CoreNetworkNetworkFunctionGroupIdentifier::CoreNetworkNetworkFunctionGroupIdentifier(JsonView jsonValue)
+  : CoreNetworkNetworkFunctionGroupIdentifier()
 {
   *this = jsonValue;
 }

@@ -27,12 +27,8 @@ ScatterPlotCategoricallyAggregatedFieldWells::ScatterPlotCategoricallyAggregated
 {
 }
 
-ScatterPlotCategoricallyAggregatedFieldWells::ScatterPlotCategoricallyAggregatedFieldWells(JsonView jsonValue) : 
-    m_xAxisHasBeenSet(false),
-    m_yAxisHasBeenSet(false),
-    m_categoryHasBeenSet(false),
-    m_sizeHasBeenSet(false),
-    m_labelHasBeenSet(false)
+ScatterPlotCategoricallyAggregatedFieldWells::ScatterPlotCategoricallyAggregatedFieldWells(JsonView jsonValue)
+  : ScatterPlotCategoricallyAggregatedFieldWells()
 {
   *this = jsonValue;
 }

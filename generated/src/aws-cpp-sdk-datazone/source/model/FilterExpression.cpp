@@ -25,10 +25,8 @@ FilterExpression::FilterExpression() :
 {
 }
 
-FilterExpression::FilterExpression(JsonView jsonValue) : 
-    m_expressionHasBeenSet(false),
-    m_type(FilterExpressionType::NOT_SET),
-    m_typeHasBeenSet(false)
+FilterExpression::FilterExpression(JsonView jsonValue)
+  : FilterExpression()
 {
   *this = jsonValue;
 }

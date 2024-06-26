@@ -25,10 +25,8 @@ PermissionEntry::PermissionEntry() :
 {
 }
 
-PermissionEntry::PermissionEntry(JsonView jsonValue) : 
-    m_role(Role::NOT_SET),
-    m_roleHasBeenSet(false),
-    m_userHasBeenSet(false)
+PermissionEntry::PermissionEntry(JsonView jsonValue)
+  : PermissionEntry()
 {
   *this = jsonValue;
 }

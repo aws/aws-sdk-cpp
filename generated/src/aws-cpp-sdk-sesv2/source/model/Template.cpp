@@ -26,11 +26,8 @@ Template::Template() :
 {
 }
 
-Template::Template(JsonView jsonValue) : 
-    m_templateNameHasBeenSet(false),
-    m_templateArnHasBeenSet(false),
-    m_templateDataHasBeenSet(false),
-    m_headersHasBeenSet(false)
+Template::Template(JsonView jsonValue)
+  : Template()
 {
   *this = jsonValue;
 }

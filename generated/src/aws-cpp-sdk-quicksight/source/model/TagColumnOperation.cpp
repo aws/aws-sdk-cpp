@@ -24,9 +24,8 @@ TagColumnOperation::TagColumnOperation() :
 {
 }
 
-TagColumnOperation::TagColumnOperation(JsonView jsonValue) : 
-    m_columnNameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+TagColumnOperation::TagColumnOperation(JsonView jsonValue)
+  : TagColumnOperation()
 {
   *this = jsonValue;
 }

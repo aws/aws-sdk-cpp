@@ -28,13 +28,8 @@ FlowDefinition::FlowDefinition() :
 {
 }
 
-FlowDefinition::FlowDefinition(JsonView jsonValue) : 
-    m_descriptionHasBeenSet(false),
-    m_flowNameHasBeenSet(false),
-    m_kmsArnHasBeenSet(false),
-    m_sourceFlowConfigHasBeenSet(false),
-    m_tasksHasBeenSet(false),
-    m_triggerConfigHasBeenSet(false)
+FlowDefinition::FlowDefinition(JsonView jsonValue)
+  : FlowDefinition()
 {
   *this = jsonValue;
 }

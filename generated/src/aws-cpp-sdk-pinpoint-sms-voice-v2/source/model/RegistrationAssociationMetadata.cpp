@@ -27,12 +27,8 @@ RegistrationAssociationMetadata::RegistrationAssociationMetadata() :
 {
 }
 
-RegistrationAssociationMetadata::RegistrationAssociationMetadata(JsonView jsonValue) : 
-    m_resourceArnHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
-    m_isoCountryCodeHasBeenSet(false),
-    m_phoneNumberHasBeenSet(false)
+RegistrationAssociationMetadata::RegistrationAssociationMetadata(JsonView jsonValue)
+  : RegistrationAssociationMetadata()
 {
   *this = jsonValue;
 }

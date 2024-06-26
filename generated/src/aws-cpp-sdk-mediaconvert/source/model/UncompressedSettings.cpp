@@ -40,25 +40,8 @@ UncompressedSettings::UncompressedSettings() :
 {
 }
 
-UncompressedSettings::UncompressedSettings(JsonView jsonValue) : 
-    m_fourcc(UncompressedFourcc::NOT_SET),
-    m_fourccHasBeenSet(false),
-    m_framerateControl(UncompressedFramerateControl::NOT_SET),
-    m_framerateControlHasBeenSet(false),
-    m_framerateConversionAlgorithm(UncompressedFramerateConversionAlgorithm::NOT_SET),
-    m_framerateConversionAlgorithmHasBeenSet(false),
-    m_framerateDenominator(0),
-    m_framerateDenominatorHasBeenSet(false),
-    m_framerateNumerator(0),
-    m_framerateNumeratorHasBeenSet(false),
-    m_interlaceMode(UncompressedInterlaceMode::NOT_SET),
-    m_interlaceModeHasBeenSet(false),
-    m_scanTypeConversionMode(UncompressedScanTypeConversionMode::NOT_SET),
-    m_scanTypeConversionModeHasBeenSet(false),
-    m_slowPal(UncompressedSlowPal::NOT_SET),
-    m_slowPalHasBeenSet(false),
-    m_telecine(UncompressedTelecine::NOT_SET),
-    m_telecineHasBeenSet(false)
+UncompressedSettings::UncompressedSettings(JsonView jsonValue)
+  : UncompressedSettings()
 {
   *this = jsonValue;
 }

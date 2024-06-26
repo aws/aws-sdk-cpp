@@ -25,10 +25,8 @@ WaterfallChartGroupColorConfiguration::WaterfallChartGroupColorConfiguration() :
 {
 }
 
-WaterfallChartGroupColorConfiguration::WaterfallChartGroupColorConfiguration(JsonView jsonValue) : 
-    m_positiveBarColorHasBeenSet(false),
-    m_negativeBarColorHasBeenSet(false),
-    m_totalBarColorHasBeenSet(false)
+WaterfallChartGroupColorConfiguration::WaterfallChartGroupColorConfiguration(JsonView jsonValue)
+  : WaterfallChartGroupColorConfiguration()
 {
   *this = jsonValue;
 }

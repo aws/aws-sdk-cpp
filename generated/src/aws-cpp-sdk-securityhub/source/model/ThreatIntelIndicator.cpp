@@ -30,15 +30,8 @@ ThreatIntelIndicator::ThreatIntelIndicator() :
 {
 }
 
-ThreatIntelIndicator::ThreatIntelIndicator(JsonView jsonValue) : 
-    m_type(ThreatIntelIndicatorType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_category(ThreatIntelIndicatorCategory::NOT_SET),
-    m_categoryHasBeenSet(false),
-    m_lastObservedAtHasBeenSet(false),
-    m_sourceHasBeenSet(false),
-    m_sourceUrlHasBeenSet(false)
+ThreatIntelIndicator::ThreatIntelIndicator(JsonView jsonValue)
+  : ThreatIntelIndicator()
 {
   *this = jsonValue;
 }

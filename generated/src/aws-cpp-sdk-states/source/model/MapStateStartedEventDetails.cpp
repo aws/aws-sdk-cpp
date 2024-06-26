@@ -24,9 +24,8 @@ MapStateStartedEventDetails::MapStateStartedEventDetails() :
 {
 }
 
-MapStateStartedEventDetails::MapStateStartedEventDetails(JsonView jsonValue) : 
-    m_length(0),
-    m_lengthHasBeenSet(false)
+MapStateStartedEventDetails::MapStateStartedEventDetails(JsonView jsonValue)
+  : MapStateStartedEventDetails()
 {
   *this = jsonValue;
 }

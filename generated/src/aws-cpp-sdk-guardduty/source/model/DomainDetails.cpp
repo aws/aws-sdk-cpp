@@ -23,8 +23,8 @@ DomainDetails::DomainDetails() :
 {
 }
 
-DomainDetails::DomainDetails(JsonView jsonValue) : 
-    m_domainHasBeenSet(false)
+DomainDetails::DomainDetails(JsonView jsonValue)
+  : DomainDetails()
 {
   *this = jsonValue;
 }

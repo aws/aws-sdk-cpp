@@ -28,13 +28,8 @@ Group::Group() :
 {
 }
 
-Group::Group(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false)
+Group::Group(JsonView jsonValue)
+  : Group()
 {
   *this = jsonValue;
 }

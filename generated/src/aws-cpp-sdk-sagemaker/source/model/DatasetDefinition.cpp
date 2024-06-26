@@ -29,14 +29,8 @@ DatasetDefinition::DatasetDefinition() :
 {
 }
 
-DatasetDefinition::DatasetDefinition(JsonView jsonValue) : 
-    m_athenaDatasetDefinitionHasBeenSet(false),
-    m_redshiftDatasetDefinitionHasBeenSet(false),
-    m_localPathHasBeenSet(false),
-    m_dataDistributionType(DataDistributionType::NOT_SET),
-    m_dataDistributionTypeHasBeenSet(false),
-    m_inputMode(InputMode::NOT_SET),
-    m_inputModeHasBeenSet(false)
+DatasetDefinition::DatasetDefinition(JsonView jsonValue)
+  : DatasetDefinition()
 {
   *this = jsonValue;
 }

@@ -45,30 +45,8 @@ SnowflakeNodeData::SnowflakeNodeData() :
 {
 }
 
-SnowflakeNodeData::SnowflakeNodeData(JsonView jsonValue) : 
-    m_sourceTypeHasBeenSet(false),
-    m_connectionHasBeenSet(false),
-    m_schemaHasBeenSet(false),
-    m_tableHasBeenSet(false),
-    m_databaseHasBeenSet(false),
-    m_tempDirHasBeenSet(false),
-    m_iamRoleHasBeenSet(false),
-    m_additionalOptionsHasBeenSet(false),
-    m_sampleQueryHasBeenSet(false),
-    m_preActionHasBeenSet(false),
-    m_postActionHasBeenSet(false),
-    m_actionHasBeenSet(false),
-    m_upsert(false),
-    m_upsertHasBeenSet(false),
-    m_mergeActionHasBeenSet(false),
-    m_mergeWhenMatchedHasBeenSet(false),
-    m_mergeWhenNotMatchedHasBeenSet(false),
-    m_mergeClauseHasBeenSet(false),
-    m_stagingTableHasBeenSet(false),
-    m_selectedColumnsHasBeenSet(false),
-    m_autoPushdown(false),
-    m_autoPushdownHasBeenSet(false),
-    m_tableSchemaHasBeenSet(false)
+SnowflakeNodeData::SnowflakeNodeData(JsonView jsonValue)
+  : SnowflakeNodeData()
 {
   *this = jsonValue;
 }

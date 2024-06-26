@@ -29,14 +29,8 @@ ExportReadSetJobDetail::ExportReadSetJobDetail() :
 {
 }
 
-ExportReadSetJobDetail::ExportReadSetJobDetail(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_sequenceStoreIdHasBeenSet(false),
-    m_destinationHasBeenSet(false),
-    m_status(ReadSetExportJobStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_completionTimeHasBeenSet(false)
+ExportReadSetJobDetail::ExportReadSetJobDetail(JsonView jsonValue)
+  : ExportReadSetJobDetail()
 {
   *this = jsonValue;
 }

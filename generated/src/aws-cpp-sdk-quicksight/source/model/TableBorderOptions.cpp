@@ -27,12 +27,8 @@ TableBorderOptions::TableBorderOptions() :
 {
 }
 
-TableBorderOptions::TableBorderOptions(JsonView jsonValue) : 
-    m_colorHasBeenSet(false),
-    m_thickness(0),
-    m_thicknessHasBeenSet(false),
-    m_style(TableBorderStyle::NOT_SET),
-    m_styleHasBeenSet(false)
+TableBorderOptions::TableBorderOptions(JsonView jsonValue)
+  : TableBorderOptions()
 {
   *this = jsonValue;
 }

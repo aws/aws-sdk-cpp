@@ -37,22 +37,8 @@ KantarWatermarkSettings::KantarWatermarkSettings() :
 {
 }
 
-KantarWatermarkSettings::KantarWatermarkSettings(JsonView jsonValue) : 
-    m_channelNameHasBeenSet(false),
-    m_contentReferenceHasBeenSet(false),
-    m_credentialsSecretNameHasBeenSet(false),
-    m_fileOffset(0.0),
-    m_fileOffsetHasBeenSet(false),
-    m_kantarLicenseId(0),
-    m_kantarLicenseIdHasBeenSet(false),
-    m_kantarServerUrlHasBeenSet(false),
-    m_logDestinationHasBeenSet(false),
-    m_metadata3HasBeenSet(false),
-    m_metadata4HasBeenSet(false),
-    m_metadata5HasBeenSet(false),
-    m_metadata6HasBeenSet(false),
-    m_metadata7HasBeenSet(false),
-    m_metadata8HasBeenSet(false)
+KantarWatermarkSettings::KantarWatermarkSettings(JsonView jsonValue)
+  : KantarWatermarkSettings()
 {
   *this = jsonValue;
 }

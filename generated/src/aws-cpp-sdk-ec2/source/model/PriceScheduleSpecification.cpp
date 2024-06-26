@@ -30,13 +30,8 @@ PriceScheduleSpecification::PriceScheduleSpecification() :
 {
 }
 
-PriceScheduleSpecification::PriceScheduleSpecification(const XmlNode& xmlNode) : 
-    m_currencyCode(CurrencyCodeValues::NOT_SET),
-    m_currencyCodeHasBeenSet(false),
-    m_price(0.0),
-    m_priceHasBeenSet(false),
-    m_term(0),
-    m_termHasBeenSet(false)
+PriceScheduleSpecification::PriceScheduleSpecification(const XmlNode& xmlNode)
+  : PriceScheduleSpecification()
 {
   *this = xmlNode;
 }

@@ -24,9 +24,8 @@ AvailabilityZonesMismatch::AvailabilityZonesMismatch() :
 {
 }
 
-AvailabilityZonesMismatch::AvailabilityZonesMismatch(JsonView jsonValue) : 
-    m_errorCodeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+AvailabilityZonesMismatch::AvailabilityZonesMismatch(JsonView jsonValue)
+  : AvailabilityZonesMismatch()
 {
   *this = jsonValue;
 }

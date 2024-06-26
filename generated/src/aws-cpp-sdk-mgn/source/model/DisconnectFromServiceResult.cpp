@@ -23,9 +23,8 @@ DisconnectFromServiceResult::DisconnectFromServiceResult() :
 {
 }
 
-DisconnectFromServiceResult::DisconnectFromServiceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_isArchived(false),
-    m_replicationType(ReplicationType::NOT_SET)
+DisconnectFromServiceResult::DisconnectFromServiceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DisconnectFromServiceResult()
 {
   *this = result;
 }

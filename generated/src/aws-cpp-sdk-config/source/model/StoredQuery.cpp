@@ -27,12 +27,8 @@ StoredQuery::StoredQuery() :
 {
 }
 
-StoredQuery::StoredQuery(JsonView jsonValue) : 
-    m_queryIdHasBeenSet(false),
-    m_queryArnHasBeenSet(false),
-    m_queryNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_expressionHasBeenSet(false)
+StoredQuery::StoredQuery(JsonView jsonValue)
+  : StoredQuery()
 {
   *this = jsonValue;
 }

@@ -25,8 +25,8 @@ DeleteMultiRegionAccessPointInput::DeleteMultiRegionAccessPointInput() :
 {
 }
 
-DeleteMultiRegionAccessPointInput::DeleteMultiRegionAccessPointInput(const XmlNode& xmlNode) : 
-    m_nameHasBeenSet(false)
+DeleteMultiRegionAccessPointInput::DeleteMultiRegionAccessPointInput(const XmlNode& xmlNode)
+  : DeleteMultiRegionAccessPointInput()
 {
   *this = xmlNode;
 }

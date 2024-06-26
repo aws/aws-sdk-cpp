@@ -24,9 +24,8 @@ LambdaStepMetadata::LambdaStepMetadata() :
 {
 }
 
-LambdaStepMetadata::LambdaStepMetadata(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_outputParametersHasBeenSet(false)
+LambdaStepMetadata::LambdaStepMetadata(JsonView jsonValue)
+  : LambdaStepMetadata()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ AwsElasticBeanstalkEnvironmentEnvironmentLink::AwsElasticBeanstalkEnvironmentEnv
 {
 }
 
-AwsElasticBeanstalkEnvironmentEnvironmentLink::AwsElasticBeanstalkEnvironmentEnvironmentLink(JsonView jsonValue) : 
-    m_environmentNameHasBeenSet(false),
-    m_linkNameHasBeenSet(false)
+AwsElasticBeanstalkEnvironmentEnvironmentLink::AwsElasticBeanstalkEnvironmentEnvironmentLink(JsonView jsonValue)
+  : AwsElasticBeanstalkEnvironmentEnvironmentLink()
 {
   *this = jsonValue;
 }

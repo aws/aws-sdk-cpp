@@ -24,9 +24,8 @@ BridgeOutput::BridgeOutput() :
 {
 }
 
-BridgeOutput::BridgeOutput(JsonView jsonValue) : 
-    m_flowOutputHasBeenSet(false),
-    m_networkOutputHasBeenSet(false)
+BridgeOutput::BridgeOutput(JsonView jsonValue)
+  : BridgeOutput()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ Query::Query() :
 {
 }
 
-Query::Query(JsonView jsonValue) : 
-    m_queryIdHasBeenSet(false),
-    m_queryStatus(QueryStatus::NOT_SET),
-    m_queryStatusHasBeenSet(false),
-    m_creationTimeHasBeenSet(false)
+Query::Query(JsonView jsonValue)
+  : Query()
 {
   *this = jsonValue;
 }

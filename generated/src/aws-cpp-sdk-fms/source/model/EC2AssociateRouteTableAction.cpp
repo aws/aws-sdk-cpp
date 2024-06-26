@@ -26,11 +26,8 @@ EC2AssociateRouteTableAction::EC2AssociateRouteTableAction() :
 {
 }
 
-EC2AssociateRouteTableAction::EC2AssociateRouteTableAction(JsonView jsonValue) : 
-    m_descriptionHasBeenSet(false),
-    m_routeTableIdHasBeenSet(false),
-    m_subnetIdHasBeenSet(false),
-    m_gatewayIdHasBeenSet(false)
+EC2AssociateRouteTableAction::EC2AssociateRouteTableAction(JsonView jsonValue)
+  : EC2AssociateRouteTableAction()
 {
   *this = jsonValue;
 }

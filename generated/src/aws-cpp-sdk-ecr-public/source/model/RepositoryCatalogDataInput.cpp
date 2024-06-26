@@ -29,13 +29,8 @@ RepositoryCatalogDataInput::RepositoryCatalogDataInput() :
 {
 }
 
-RepositoryCatalogDataInput::RepositoryCatalogDataInput(JsonView jsonValue) : 
-    m_descriptionHasBeenSet(false),
-    m_architecturesHasBeenSet(false),
-    m_operatingSystemsHasBeenSet(false),
-    m_logoImageBlobHasBeenSet(false),
-    m_aboutTextHasBeenSet(false),
-    m_usageTextHasBeenSet(false)
+RepositoryCatalogDataInput::RepositoryCatalogDataInput(JsonView jsonValue)
+  : RepositoryCatalogDataInput()
 {
   *this = jsonValue;
 }

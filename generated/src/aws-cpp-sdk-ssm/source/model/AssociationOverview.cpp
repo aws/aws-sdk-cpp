@@ -25,10 +25,8 @@ AssociationOverview::AssociationOverview() :
 {
 }
 
-AssociationOverview::AssociationOverview(JsonView jsonValue) : 
-    m_statusHasBeenSet(false),
-    m_detailedStatusHasBeenSet(false),
-    m_associationStatusAggregatedCountHasBeenSet(false)
+AssociationOverview::AssociationOverview(JsonView jsonValue)
+  : AssociationOverview()
 {
   *this = jsonValue;
 }

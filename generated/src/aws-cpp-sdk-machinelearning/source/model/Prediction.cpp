@@ -27,12 +27,8 @@ Prediction::Prediction() :
 {
 }
 
-Prediction::Prediction(JsonView jsonValue) : 
-    m_predictedLabelHasBeenSet(false),
-    m_predictedValue(0.0),
-    m_predictedValueHasBeenSet(false),
-    m_predictedScoresHasBeenSet(false),
-    m_detailsHasBeenSet(false)
+Prediction::Prediction(JsonView jsonValue)
+  : Prediction()
 {
   *this = jsonValue;
 }

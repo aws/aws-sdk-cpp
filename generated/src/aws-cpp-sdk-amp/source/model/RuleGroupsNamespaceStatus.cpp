@@ -25,10 +25,8 @@ RuleGroupsNamespaceStatus::RuleGroupsNamespaceStatus() :
 {
 }
 
-RuleGroupsNamespaceStatus::RuleGroupsNamespaceStatus(JsonView jsonValue) : 
-    m_statusCode(RuleGroupsNamespaceStatusCode::NOT_SET),
-    m_statusCodeHasBeenSet(false),
-    m_statusReasonHasBeenSet(false)
+RuleGroupsNamespaceStatus::RuleGroupsNamespaceStatus(JsonView jsonValue)
+  : RuleGroupsNamespaceStatus()
 {
   *this = jsonValue;
 }

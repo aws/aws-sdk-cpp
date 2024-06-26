@@ -30,15 +30,8 @@ GrantEntitlementRequest::GrantEntitlementRequest() :
 {
 }
 
-GrantEntitlementRequest::GrantEntitlementRequest(JsonView jsonValue) : 
-    m_dataTransferSubscriberFeePercent(0),
-    m_dataTransferSubscriberFeePercentHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_encryptionHasBeenSet(false),
-    m_entitlementStatus(EntitlementStatus::NOT_SET),
-    m_entitlementStatusHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_subscribersHasBeenSet(false)
+GrantEntitlementRequest::GrantEntitlementRequest(JsonView jsonValue)
+  : GrantEntitlementRequest()
 {
   *this = jsonValue;
 }

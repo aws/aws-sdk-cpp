@@ -27,12 +27,8 @@ LineageGroupSummary::LineageGroupSummary() :
 {
 }
 
-LineageGroupSummary::LineageGroupSummary(JsonView jsonValue) : 
-    m_lineageGroupArnHasBeenSet(false),
-    m_lineageGroupNameHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false)
+LineageGroupSummary::LineageGroupSummary(JsonView jsonValue)
+  : LineageGroupSummary()
 {
   *this = jsonValue;
 }

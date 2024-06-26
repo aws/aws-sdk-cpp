@@ -24,10 +24,8 @@ ModifyCurrentDBClusterCapacityResult::ModifyCurrentDBClusterCapacityResult() :
 {
 }
 
-ModifyCurrentDBClusterCapacityResult::ModifyCurrentDBClusterCapacityResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_pendingCapacity(0),
-    m_currentCapacity(0),
-    m_secondsBeforeTimeout(0)
+ModifyCurrentDBClusterCapacityResult::ModifyCurrentDBClusterCapacityResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : ModifyCurrentDBClusterCapacityResult()
 {
   *this = result;
 }

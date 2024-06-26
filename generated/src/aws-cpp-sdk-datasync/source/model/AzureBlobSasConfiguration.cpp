@@ -23,8 +23,8 @@ AzureBlobSasConfiguration::AzureBlobSasConfiguration() :
 {
 }
 
-AzureBlobSasConfiguration::AzureBlobSasConfiguration(JsonView jsonValue) : 
-    m_tokenHasBeenSet(false)
+AzureBlobSasConfiguration::AzureBlobSasConfiguration(JsonView jsonValue)
+  : AzureBlobSasConfiguration()
 {
   *this = jsonValue;
 }

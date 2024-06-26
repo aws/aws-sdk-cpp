@@ -24,9 +24,8 @@ ScheduleConfiguration::ScheduleConfiguration() :
 {
 }
 
-ScheduleConfiguration::ScheduleConfiguration(JsonView jsonValue) : 
-    m_clipRangeHasBeenSet(false),
-    m_transitionHasBeenSet(false)
+ScheduleConfiguration::ScheduleConfiguration(JsonView jsonValue)
+  : ScheduleConfiguration()
 {
   *this = jsonValue;
 }

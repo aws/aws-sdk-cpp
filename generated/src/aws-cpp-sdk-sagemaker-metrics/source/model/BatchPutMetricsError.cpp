@@ -26,11 +26,8 @@ BatchPutMetricsError::BatchPutMetricsError() :
 {
 }
 
-BatchPutMetricsError::BatchPutMetricsError(JsonView jsonValue) : 
-    m_code(PutMetricsErrorCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_metricIndex(0),
-    m_metricIndexHasBeenSet(false)
+BatchPutMetricsError::BatchPutMetricsError(JsonView jsonValue)
+  : BatchPutMetricsError()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ S3LocationDescription::S3LocationDescription() :
 {
 }
 
-S3LocationDescription::S3LocationDescription(JsonView jsonValue) : 
-    m_bucketArnHasBeenSet(false),
-    m_fileKeyHasBeenSet(false),
-    m_objectVersionHasBeenSet(false)
+S3LocationDescription::S3LocationDescription(JsonView jsonValue)
+  : S3LocationDescription()
 {
   *this = jsonValue;
 }

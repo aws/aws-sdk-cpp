@@ -27,12 +27,8 @@ ImportedSidewalkDevice::ImportedSidewalkDevice() :
 {
 }
 
-ImportedSidewalkDevice::ImportedSidewalkDevice(JsonView jsonValue) : 
-    m_sidewalkManufacturingSnHasBeenSet(false),
-    m_onboardingStatus(OnboardStatus::NOT_SET),
-    m_onboardingStatusHasBeenSet(false),
-    m_onboardingStatusReasonHasBeenSet(false),
-    m_lastUpdateTimeHasBeenSet(false)
+ImportedSidewalkDevice::ImportedSidewalkDevice(JsonView jsonValue)
+  : ImportedSidewalkDevice()
 {
   *this = jsonValue;
 }

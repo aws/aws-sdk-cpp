@@ -23,8 +23,8 @@ EnhancedMetrics::EnhancedMetrics() :
 {
 }
 
-EnhancedMetrics::EnhancedMetrics(JsonView jsonValue) : 
-    m_shardLevelMetricsHasBeenSet(false)
+EnhancedMetrics::EnhancedMetrics(JsonView jsonValue)
+  : EnhancedMetrics()
 {
   *this = jsonValue;
 }

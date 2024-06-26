@@ -27,12 +27,8 @@ DomainNameConfig::DomainNameConfig() :
 {
 }
 
-DomainNameConfig::DomainNameConfig(JsonView jsonValue) : 
-    m_domainNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_certificateArnHasBeenSet(false),
-    m_appsyncDomainNameHasBeenSet(false),
-    m_hostedZoneIdHasBeenSet(false)
+DomainNameConfig::DomainNameConfig(JsonView jsonValue)
+  : DomainNameConfig()
 {
   *this = jsonValue;
 }

@@ -34,17 +34,8 @@ VpnGateway::VpnGateway() :
 {
 }
 
-VpnGateway::VpnGateway(const XmlNode& xmlNode) : 
-    m_availabilityZoneHasBeenSet(false),
-    m_state(VpnState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_type(GatewayType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_vpcAttachmentsHasBeenSet(false),
-    m_vpnGatewayIdHasBeenSet(false),
-    m_amazonSideAsn(0),
-    m_amazonSideAsnHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+VpnGateway::VpnGateway(const XmlNode& xmlNode)
+  : VpnGateway()
 {
   *this = xmlNode;
 }

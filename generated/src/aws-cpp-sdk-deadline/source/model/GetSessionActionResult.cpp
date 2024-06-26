@@ -24,10 +24,8 @@ GetSessionActionResult::GetSessionActionResult() :
 {
 }
 
-GetSessionActionResult::GetSessionActionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_processExitCode(0),
-    m_progressPercent(0.0),
-    m_status(SessionActionStatus::NOT_SET)
+GetSessionActionResult::GetSessionActionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetSessionActionResult()
 {
   *this = result;
 }

@@ -28,13 +28,8 @@ WebACL::WebACL() :
 {
 }
 
-WebACL::WebACL(JsonView jsonValue) : 
-    m_webACLIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_metricNameHasBeenSet(false),
-    m_defaultActionHasBeenSet(false),
-    m_rulesHasBeenSet(false),
-    m_webACLArnHasBeenSet(false)
+WebACL::WebACL(JsonView jsonValue)
+  : WebACL()
 {
   *this = jsonValue;
 }

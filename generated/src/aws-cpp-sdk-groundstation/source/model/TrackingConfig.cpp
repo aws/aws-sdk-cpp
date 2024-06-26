@@ -24,9 +24,8 @@ TrackingConfig::TrackingConfig() :
 {
 }
 
-TrackingConfig::TrackingConfig(JsonView jsonValue) : 
-    m_autotrack(Criticality::NOT_SET),
-    m_autotrackHasBeenSet(false)
+TrackingConfig::TrackingConfig(JsonView jsonValue)
+  : TrackingConfig()
 {
   *this = jsonValue;
 }

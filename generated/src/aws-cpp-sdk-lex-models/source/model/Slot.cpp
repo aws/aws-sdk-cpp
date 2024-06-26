@@ -36,21 +36,8 @@ Slot::Slot() :
 {
 }
 
-Slot::Slot(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_slotConstraint(SlotConstraint::NOT_SET),
-    m_slotConstraintHasBeenSet(false),
-    m_slotTypeHasBeenSet(false),
-    m_slotTypeVersionHasBeenSet(false),
-    m_valueElicitationPromptHasBeenSet(false),
-    m_priority(0),
-    m_priorityHasBeenSet(false),
-    m_sampleUtterancesHasBeenSet(false),
-    m_responseCardHasBeenSet(false),
-    m_obfuscationSetting(ObfuscationSetting::NOT_SET),
-    m_obfuscationSettingHasBeenSet(false),
-    m_defaultValueSpecHasBeenSet(false)
+Slot::Slot(JsonView jsonValue)
+  : Slot()
 {
   *this = jsonValue;
 }

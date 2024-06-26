@@ -22,8 +22,8 @@ DisableIpamOrganizationAdminAccountResponse::DisableIpamOrganizationAdminAccount
 {
 }
 
-DisableIpamOrganizationAdminAccountResponse::DisableIpamOrganizationAdminAccountResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_success(false)
+DisableIpamOrganizationAdminAccountResponse::DisableIpamOrganizationAdminAccountResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : DisableIpamOrganizationAdminAccountResponse()
 {
   *this = result;
 }

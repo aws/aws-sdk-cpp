@@ -22,8 +22,8 @@ DescribeHumanTaskUiResult::DescribeHumanTaskUiResult() :
 {
 }
 
-DescribeHumanTaskUiResult::DescribeHumanTaskUiResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_humanTaskUiStatus(HumanTaskUiStatus::NOT_SET)
+DescribeHumanTaskUiResult::DescribeHumanTaskUiResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeHumanTaskUiResult()
 {
   *this = result;
 }

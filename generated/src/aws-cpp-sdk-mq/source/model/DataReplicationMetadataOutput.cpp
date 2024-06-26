@@ -24,9 +24,8 @@ DataReplicationMetadataOutput::DataReplicationMetadataOutput() :
 {
 }
 
-DataReplicationMetadataOutput::DataReplicationMetadataOutput(JsonView jsonValue) : 
-    m_dataReplicationCounterpartHasBeenSet(false),
-    m_dataReplicationRoleHasBeenSet(false)
+DataReplicationMetadataOutput::DataReplicationMetadataOutput(JsonView jsonValue)
+  : DataReplicationMetadataOutput()
 {
   *this = jsonValue;
 }

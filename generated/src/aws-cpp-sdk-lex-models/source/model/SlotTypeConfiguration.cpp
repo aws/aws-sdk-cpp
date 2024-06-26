@@ -23,8 +23,8 @@ SlotTypeConfiguration::SlotTypeConfiguration() :
 {
 }
 
-SlotTypeConfiguration::SlotTypeConfiguration(JsonView jsonValue) : 
-    m_regexConfigurationHasBeenSet(false)
+SlotTypeConfiguration::SlotTypeConfiguration(JsonView jsonValue)
+  : SlotTypeConfiguration()
 {
   *this = jsonValue;
 }

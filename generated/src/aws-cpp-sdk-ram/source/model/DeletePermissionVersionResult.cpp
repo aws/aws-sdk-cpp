@@ -23,9 +23,8 @@ DeletePermissionVersionResult::DeletePermissionVersionResult() :
 {
 }
 
-DeletePermissionVersionResult::DeletePermissionVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_returnValue(false),
-    m_permissionStatus(PermissionStatus::NOT_SET)
+DeletePermissionVersionResult::DeletePermissionVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeletePermissionVersionResult()
 {
   *this = result;
 }

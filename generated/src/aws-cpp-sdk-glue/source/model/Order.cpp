@@ -25,10 +25,8 @@ Order::Order() :
 {
 }
 
-Order::Order(JsonView jsonValue) : 
-    m_columnHasBeenSet(false),
-    m_sortOrder(0),
-    m_sortOrderHasBeenSet(false)
+Order::Order(JsonView jsonValue)
+  : Order()
 {
   *this = jsonValue;
 }

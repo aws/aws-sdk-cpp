@@ -22,8 +22,8 @@ DeleteNamespaceResult::DeleteNamespaceResult() :
 {
 }
 
-DeleteNamespaceResult::DeleteNamespaceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+DeleteNamespaceResult::DeleteNamespaceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeleteNamespaceResult()
 {
   *this = result;
 }

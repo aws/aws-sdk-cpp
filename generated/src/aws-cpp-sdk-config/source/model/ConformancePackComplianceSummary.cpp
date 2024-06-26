@@ -25,10 +25,8 @@ ConformancePackComplianceSummary::ConformancePackComplianceSummary() :
 {
 }
 
-ConformancePackComplianceSummary::ConformancePackComplianceSummary(JsonView jsonValue) : 
-    m_conformancePackNameHasBeenSet(false),
-    m_conformancePackComplianceStatus(ConformancePackComplianceType::NOT_SET),
-    m_conformancePackComplianceStatusHasBeenSet(false)
+ConformancePackComplianceSummary::ConformancePackComplianceSummary(JsonView jsonValue)
+  : ConformancePackComplianceSummary()
 {
   *this = jsonValue;
 }

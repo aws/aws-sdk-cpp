@@ -23,8 +23,8 @@ ClusterInstanceStorageConfig::ClusterInstanceStorageConfig() :
 {
 }
 
-ClusterInstanceStorageConfig::ClusterInstanceStorageConfig(JsonView jsonValue) : 
-    m_ebsVolumeConfigHasBeenSet(false)
+ClusterInstanceStorageConfig::ClusterInstanceStorageConfig(JsonView jsonValue)
+  : ClusterInstanceStorageConfig()
 {
   *this = jsonValue;
 }

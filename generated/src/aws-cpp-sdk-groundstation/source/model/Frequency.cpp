@@ -26,11 +26,8 @@ Frequency::Frequency() :
 {
 }
 
-Frequency::Frequency(JsonView jsonValue) : 
-    m_units(FrequencyUnits::NOT_SET),
-    m_unitsHasBeenSet(false),
-    m_value(0.0),
-    m_valueHasBeenSet(false)
+Frequency::Frequency(JsonView jsonValue)
+  : Frequency()
 {
   *this = jsonValue;
 }

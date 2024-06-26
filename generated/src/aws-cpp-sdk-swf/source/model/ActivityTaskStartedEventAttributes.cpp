@@ -25,10 +25,8 @@ ActivityTaskStartedEventAttributes::ActivityTaskStartedEventAttributes() :
 {
 }
 
-ActivityTaskStartedEventAttributes::ActivityTaskStartedEventAttributes(JsonView jsonValue) : 
-    m_identityHasBeenSet(false),
-    m_scheduledEventId(0),
-    m_scheduledEventIdHasBeenSet(false)
+ActivityTaskStartedEventAttributes::ActivityTaskStartedEventAttributes(JsonView jsonValue)
+  : ActivityTaskStartedEventAttributes()
 {
   *this = jsonValue;
 }

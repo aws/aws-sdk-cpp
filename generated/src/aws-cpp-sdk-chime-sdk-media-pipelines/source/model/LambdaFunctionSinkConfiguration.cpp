@@ -23,8 +23,8 @@ LambdaFunctionSinkConfiguration::LambdaFunctionSinkConfiguration() :
 {
 }
 
-LambdaFunctionSinkConfiguration::LambdaFunctionSinkConfiguration(JsonView jsonValue) : 
-    m_insightsTargetHasBeenSet(false)
+LambdaFunctionSinkConfiguration::LambdaFunctionSinkConfiguration(JsonView jsonValue)
+  : LambdaFunctionSinkConfiguration()
 {
   *this = jsonValue;
 }

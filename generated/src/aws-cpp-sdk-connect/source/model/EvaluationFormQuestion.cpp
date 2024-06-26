@@ -32,17 +32,8 @@ EvaluationFormQuestion::EvaluationFormQuestion() :
 {
 }
 
-EvaluationFormQuestion::EvaluationFormQuestion(JsonView jsonValue) : 
-    m_titleHasBeenSet(false),
-    m_instructionsHasBeenSet(false),
-    m_refIdHasBeenSet(false),
-    m_notApplicableEnabled(false),
-    m_notApplicableEnabledHasBeenSet(false),
-    m_questionType(EvaluationFormQuestionType::NOT_SET),
-    m_questionTypeHasBeenSet(false),
-    m_questionTypePropertiesHasBeenSet(false),
-    m_weight(0.0),
-    m_weightHasBeenSet(false)
+EvaluationFormQuestion::EvaluationFormQuestion(JsonView jsonValue)
+  : EvaluationFormQuestion()
 {
   *this = jsonValue;
 }

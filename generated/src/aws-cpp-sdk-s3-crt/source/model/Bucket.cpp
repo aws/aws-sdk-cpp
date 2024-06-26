@@ -26,9 +26,8 @@ Bucket::Bucket() :
 {
 }
 
-Bucket::Bucket(const XmlNode& xmlNode) : 
-    m_nameHasBeenSet(false),
-    m_creationDateHasBeenSet(false)
+Bucket::Bucket(const XmlNode& xmlNode)
+  : Bucket()
 {
   *this = xmlNode;
 }

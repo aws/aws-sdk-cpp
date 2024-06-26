@@ -24,9 +24,8 @@ AwsRdsDbOptionGroupMembership::AwsRdsDbOptionGroupMembership() :
 {
 }
 
-AwsRdsDbOptionGroupMembership::AwsRdsDbOptionGroupMembership(JsonView jsonValue) : 
-    m_optionGroupNameHasBeenSet(false),
-    m_statusHasBeenSet(false)
+AwsRdsDbOptionGroupMembership::AwsRdsDbOptionGroupMembership(JsonView jsonValue)
+  : AwsRdsDbOptionGroupMembership()
 {
   *this = jsonValue;
 }

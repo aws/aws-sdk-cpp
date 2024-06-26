@@ -23,8 +23,8 @@ PipelineExecutionFilter::PipelineExecutionFilter() :
 {
 }
 
-PipelineExecutionFilter::PipelineExecutionFilter(JsonView jsonValue) : 
-    m_succeededInStageHasBeenSet(false)
+PipelineExecutionFilter::PipelineExecutionFilter(JsonView jsonValue)
+  : PipelineExecutionFilter()
 {
   *this = jsonValue;
 }

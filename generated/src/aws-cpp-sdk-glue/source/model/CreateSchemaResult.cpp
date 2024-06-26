@@ -28,14 +28,8 @@ CreateSchemaResult::CreateSchemaResult() :
 {
 }
 
-CreateSchemaResult::CreateSchemaResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_dataFormat(DataFormat::NOT_SET),
-    m_compatibility(Compatibility::NOT_SET),
-    m_schemaCheckpoint(0),
-    m_latestSchemaVersion(0),
-    m_nextSchemaVersion(0),
-    m_schemaStatus(SchemaStatus::NOT_SET),
-    m_schemaVersionStatus(SchemaVersionStatus::NOT_SET)
+CreateSchemaResult::CreateSchemaResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateSchemaResult()
 {
   *this = result;
 }

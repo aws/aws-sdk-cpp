@@ -24,9 +24,8 @@ SentimentResponse::SentimentResponse() :
 {
 }
 
-SentimentResponse::SentimentResponse(JsonView jsonValue) : 
-    m_sentimentLabelHasBeenSet(false),
-    m_sentimentScoreHasBeenSet(false)
+SentimentResponse::SentimentResponse(JsonView jsonValue)
+  : SentimentResponse()
 {
   *this = jsonValue;
 }

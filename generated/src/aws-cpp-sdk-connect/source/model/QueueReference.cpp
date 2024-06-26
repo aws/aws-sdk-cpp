@@ -24,9 +24,8 @@ QueueReference::QueueReference() :
 {
 }
 
-QueueReference::QueueReference(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false)
+QueueReference::QueueReference(JsonView jsonValue)
+  : QueueReference()
 {
   *this = jsonValue;
 }

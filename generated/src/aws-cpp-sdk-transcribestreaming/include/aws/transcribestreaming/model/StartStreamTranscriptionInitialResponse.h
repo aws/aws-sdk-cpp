@@ -40,6 +40,17 @@ namespace Model
 
     ///@{
     /**
+     * <p>Shows whether automatic multi-language identification was enabled for your
+     * transcription.</p>
+     */
+    inline bool GetIdentifyMultipleLanguages() const{ return m_identifyMultipleLanguages; }
+    inline bool IdentifyMultipleLanguagesHasBeenSet() const { return m_identifyMultipleLanguagesHasBeenSet; }
+    inline void SetIdentifyMultipleLanguages(bool value) { m_identifyMultipleLanguagesHasBeenSet = true; m_identifyMultipleLanguages = value; }
+    inline StartStreamTranscriptionInitialResponse& WithIdentifyMultipleLanguages(bool value) { SetIdentifyMultipleLanguages(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Provides the names of the custom vocabularies that you specified in your
      * request.</p>
      */
@@ -51,17 +62,6 @@ namespace Model
     inline StartStreamTranscriptionInitialResponse& WithVocabularyNames(const Aws::String& value) { SetVocabularyNames(value); return *this;}
     inline StartStreamTranscriptionInitialResponse& WithVocabularyNames(Aws::String&& value) { SetVocabularyNames(std::move(value)); return *this;}
     inline StartStreamTranscriptionInitialResponse& WithVocabularyNames(const char* value) { SetVocabularyNames(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Shows whether automatic multi-language identification was enabled for your
-     * transcription.</p>
-     */
-    inline bool GetIdentifyMultipleLanguages() const{ return m_identifyMultipleLanguages; }
-    inline bool IdentifyMultipleLanguagesHasBeenSet() const { return m_identifyMultipleLanguagesHasBeenSet; }
-    inline void SetIdentifyMultipleLanguages(bool value) { m_identifyMultipleLanguagesHasBeenSet = true; m_identifyMultipleLanguages = value; }
-    inline StartStreamTranscriptionInitialResponse& WithIdentifyMultipleLanguages(bool value) { SetIdentifyMultipleLanguages(value); return *this;}
     ///@}
 
     ///@{
@@ -120,17 +120,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Shows whether automatic language identification was enabled for your
-     * transcription.</p>
-     */
-    inline bool GetIdentifyLanguage() const{ return m_identifyLanguage; }
-    inline bool IdentifyLanguageHasBeenSet() const { return m_identifyLanguageHasBeenSet; }
-    inline void SetIdentifyLanguage(bool value) { m_identifyLanguageHasBeenSet = true; m_identifyLanguage = value; }
-    inline StartStreamTranscriptionInitialResponse& WithIdentifyLanguage(bool value) { SetIdentifyLanguage(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Provides the media encoding you specified in your request.</p>
      */
     inline const MediaEncoding& GetMediaEncoding() const{ return m_mediaEncoding; }
@@ -139,6 +128,17 @@ namespace Model
     inline void SetMediaEncoding(MediaEncoding&& value) { m_mediaEncodingHasBeenSet = true; m_mediaEncoding = std::move(value); }
     inline StartStreamTranscriptionInitialResponse& WithMediaEncoding(const MediaEncoding& value) { SetMediaEncoding(value); return *this;}
     inline StartStreamTranscriptionInitialResponse& WithMediaEncoding(MediaEncoding&& value) { SetMediaEncoding(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Shows whether automatic language identification was enabled for your
+     * transcription.</p>
+     */
+    inline bool GetIdentifyLanguage() const{ return m_identifyLanguage; }
+    inline bool IdentifyLanguageHasBeenSet() const { return m_identifyLanguageHasBeenSet; }
+    inline void SetIdentifyLanguage(bool value) { m_identifyLanguageHasBeenSet = true; m_identifyLanguage = value; }
+    inline StartStreamTranscriptionInitialResponse& WithIdentifyLanguage(bool value) { SetIdentifyLanguage(value); return *this;}
     ///@}
 
     ///@{
@@ -184,17 +184,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Shows whether partial results stabilization was enabled for your
-     * transcription.</p>
-     */
-    inline bool GetEnablePartialResultsStabilization() const{ return m_enablePartialResultsStabilization; }
-    inline bool EnablePartialResultsStabilizationHasBeenSet() const { return m_enablePartialResultsStabilizationHasBeenSet; }
-    inline void SetEnablePartialResultsStabilization(bool value) { m_enablePartialResultsStabilizationHasBeenSet = true; m_enablePartialResultsStabilization = value; }
-    inline StartStreamTranscriptionInitialResponse& WithEnablePartialResultsStabilization(bool value) { SetEnablePartialResultsStabilization(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Provides the language code that you specified in your request.</p>
      */
     inline const LanguageCode& GetLanguageCode() const{ return m_languageCode; }
@@ -203,6 +192,17 @@ namespace Model
     inline void SetLanguageCode(LanguageCode&& value) { m_languageCodeHasBeenSet = true; m_languageCode = std::move(value); }
     inline StartStreamTranscriptionInitialResponse& WithLanguageCode(const LanguageCode& value) { SetLanguageCode(value); return *this;}
     inline StartStreamTranscriptionInitialResponse& WithLanguageCode(LanguageCode&& value) { SetLanguageCode(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Shows whether partial results stabilization was enabled for your
+     * transcription.</p>
+     */
+    inline bool GetEnablePartialResultsStabilization() const{ return m_enablePartialResultsStabilization; }
+    inline bool EnablePartialResultsStabilizationHasBeenSet() const { return m_enablePartialResultsStabilizationHasBeenSet; }
+    inline void SetEnablePartialResultsStabilization(bool value) { m_enablePartialResultsStabilizationHasBeenSet = true; m_enablePartialResultsStabilization = value; }
+    inline StartStreamTranscriptionInitialResponse& WithEnablePartialResultsStabilization(bool value) { SetEnablePartialResultsStabilization(value); return *this;}
     ///@}
 
     ///@{
@@ -256,18 +256,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Provides the preferred language that you specified in your request.</p>
-     */
-    inline const LanguageCode& GetPreferredLanguage() const{ return m_preferredLanguage; }
-    inline bool PreferredLanguageHasBeenSet() const { return m_preferredLanguageHasBeenSet; }
-    inline void SetPreferredLanguage(const LanguageCode& value) { m_preferredLanguageHasBeenSet = true; m_preferredLanguage = value; }
-    inline void SetPreferredLanguage(LanguageCode&& value) { m_preferredLanguageHasBeenSet = true; m_preferredLanguage = std::move(value); }
-    inline StartStreamTranscriptionInitialResponse& WithPreferredLanguage(const LanguageCode& value) { SetPreferredLanguage(value); return *this;}
-    inline StartStreamTranscriptionInitialResponse& WithPreferredLanguage(LanguageCode&& value) { SetPreferredLanguage(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Lists the PII entity types you specified in your request.</p>
      */
     inline const Aws::String& GetPiiEntityTypes() const{ return m_piiEntityTypes; }
@@ -282,22 +270,24 @@ namespace Model
 
     ///@{
     /**
+     * <p>Provides the preferred language that you specified in your request.</p>
+     */
+    inline const LanguageCode& GetPreferredLanguage() const{ return m_preferredLanguage; }
+    inline bool PreferredLanguageHasBeenSet() const { return m_preferredLanguageHasBeenSet; }
+    inline void SetPreferredLanguage(const LanguageCode& value) { m_preferredLanguageHasBeenSet = true; m_preferredLanguage = value; }
+    inline void SetPreferredLanguage(LanguageCode&& value) { m_preferredLanguageHasBeenSet = true; m_preferredLanguage = std::move(value); }
+    inline StartStreamTranscriptionInitialResponse& WithPreferredLanguage(const LanguageCode& value) { SetPreferredLanguage(value); return *this;}
+    inline StartStreamTranscriptionInitialResponse& WithPreferredLanguage(LanguageCode&& value) { SetPreferredLanguage(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Shows whether channel identification was enabled for your transcription.</p>
      */
     inline bool GetEnableChannelIdentification() const{ return m_enableChannelIdentification; }
     inline bool EnableChannelIdentificationHasBeenSet() const { return m_enableChannelIdentificationHasBeenSet; }
     inline void SetEnableChannelIdentification(bool value) { m_enableChannelIdentificationHasBeenSet = true; m_enableChannelIdentification = value; }
     inline StartStreamTranscriptionInitialResponse& WithEnableChannelIdentification(bool value) { SetEnableChannelIdentification(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Provides the number of channels that you specified in your request.</p>
-     */
-    inline int GetNumberOfChannels() const{ return m_numberOfChannels; }
-    inline bool NumberOfChannelsHasBeenSet() const { return m_numberOfChannelsHasBeenSet; }
-    inline void SetNumberOfChannels(int value) { m_numberOfChannelsHasBeenSet = true; m_numberOfChannels = value; }
-    inline StartStreamTranscriptionInitialResponse& WithNumberOfChannels(int value) { SetNumberOfChannels(value); return *this;}
     ///@}
 
     ///@{
@@ -310,6 +300,16 @@ namespace Model
     inline void SetVocabularyFilterMethod(VocabularyFilterMethod&& value) { m_vocabularyFilterMethodHasBeenSet = true; m_vocabularyFilterMethod = std::move(value); }
     inline StartStreamTranscriptionInitialResponse& WithVocabularyFilterMethod(const VocabularyFilterMethod& value) { SetVocabularyFilterMethod(value); return *this;}
     inline StartStreamTranscriptionInitialResponse& WithVocabularyFilterMethod(VocabularyFilterMethod&& value) { SetVocabularyFilterMethod(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Provides the number of channels that you specified in your request.</p>
+     */
+    inline int GetNumberOfChannels() const{ return m_numberOfChannels; }
+    inline bool NumberOfChannelsHasBeenSet() const { return m_numberOfChannelsHasBeenSet; }
+    inline void SetNumberOfChannels(int value) { m_numberOfChannelsHasBeenSet = true; m_numberOfChannels = value; }
+    inline StartStreamTranscriptionInitialResponse& WithNumberOfChannels(int value) { SetNumberOfChannels(value); return *this;}
     ///@}
 
     ///@{
@@ -327,11 +327,11 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_vocabularyNames;
-    bool m_vocabularyNamesHasBeenSet = false;
-
     bool m_identifyMultipleLanguages;
     bool m_identifyMultipleLanguagesHasBeenSet = false;
+
+    Aws::String m_vocabularyNames;
+    bool m_vocabularyNamesHasBeenSet = false;
 
     Aws::String m_languageModelName;
     bool m_languageModelNameHasBeenSet = false;
@@ -345,11 +345,11 @@ namespace Model
     int m_mediaSampleRateHertz;
     bool m_mediaSampleRateHertzHasBeenSet = false;
 
-    bool m_identifyLanguage;
-    bool m_identifyLanguageHasBeenSet = false;
-
     MediaEncoding m_mediaEncoding;
     bool m_mediaEncodingHasBeenSet = false;
+
+    bool m_identifyLanguage;
+    bool m_identifyLanguageHasBeenSet = false;
 
     PartialResultsStability m_partialResultsStability;
     bool m_partialResultsStabilityHasBeenSet = false;
@@ -360,11 +360,11 @@ namespace Model
     Aws::String m_vocabularyFilterNames;
     bool m_vocabularyFilterNamesHasBeenSet = false;
 
-    bool m_enablePartialResultsStabilization;
-    bool m_enablePartialResultsStabilizationHasBeenSet = false;
-
     LanguageCode m_languageCode;
     bool m_languageCodeHasBeenSet = false;
+
+    bool m_enablePartialResultsStabilization;
+    bool m_enablePartialResultsStabilizationHasBeenSet = false;
 
     Aws::String m_vocabularyName;
     bool m_vocabularyNameHasBeenSet = false;
@@ -378,20 +378,20 @@ namespace Model
     ContentIdentificationType m_contentIdentificationType;
     bool m_contentIdentificationTypeHasBeenSet = false;
 
-    LanguageCode m_preferredLanguage;
-    bool m_preferredLanguageHasBeenSet = false;
-
     Aws::String m_piiEntityTypes;
     bool m_piiEntityTypesHasBeenSet = false;
+
+    LanguageCode m_preferredLanguage;
+    bool m_preferredLanguageHasBeenSet = false;
 
     bool m_enableChannelIdentification;
     bool m_enableChannelIdentificationHasBeenSet = false;
 
-    int m_numberOfChannels;
-    bool m_numberOfChannelsHasBeenSet = false;
-
     VocabularyFilterMethod m_vocabularyFilterMethod;
     bool m_vocabularyFilterMethodHasBeenSet = false;
+
+    int m_numberOfChannels;
+    bool m_numberOfChannelsHasBeenSet = false;
 
     Aws::String m_sessionId;
     bool m_sessionIdHasBeenSet = false;

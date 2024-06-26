@@ -26,9 +26,8 @@ KinesisFirehoseDestination::KinesisFirehoseDestination() :
 {
 }
 
-KinesisFirehoseDestination::KinesisFirehoseDestination(const XmlNode& xmlNode) : 
-    m_iAMRoleARNHasBeenSet(false),
-    m_deliveryStreamARNHasBeenSet(false)
+KinesisFirehoseDestination::KinesisFirehoseDestination(const XmlNode& xmlNode)
+  : KinesisFirehoseDestination()
 {
   *this = xmlNode;
 }

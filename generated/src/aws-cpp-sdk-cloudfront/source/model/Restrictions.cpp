@@ -25,8 +25,8 @@ Restrictions::Restrictions() :
 {
 }
 
-Restrictions::Restrictions(const XmlNode& xmlNode) : 
-    m_geoRestrictionHasBeenSet(false)
+Restrictions::Restrictions(const XmlNode& xmlNode)
+  : Restrictions()
 {
   *this = xmlNode;
 }

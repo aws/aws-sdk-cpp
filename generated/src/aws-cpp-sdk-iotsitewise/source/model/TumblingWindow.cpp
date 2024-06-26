@@ -24,9 +24,8 @@ TumblingWindow::TumblingWindow() :
 {
 }
 
-TumblingWindow::TumblingWindow(JsonView jsonValue) : 
-    m_intervalHasBeenSet(false),
-    m_offsetHasBeenSet(false)
+TumblingWindow::TumblingWindow(JsonView jsonValue)
+  : TumblingWindow()
 {
   *this = jsonValue;
 }

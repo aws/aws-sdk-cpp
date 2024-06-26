@@ -27,12 +27,8 @@ ChartAxisLabelOptions::ChartAxisLabelOptions() :
 {
 }
 
-ChartAxisLabelOptions::ChartAxisLabelOptions(JsonView jsonValue) : 
-    m_visibility(Visibility::NOT_SET),
-    m_visibilityHasBeenSet(false),
-    m_sortIconVisibility(Visibility::NOT_SET),
-    m_sortIconVisibilityHasBeenSet(false),
-    m_axisLabelOptionsHasBeenSet(false)
+ChartAxisLabelOptions::ChartAxisLabelOptions(JsonView jsonValue)
+  : ChartAxisLabelOptions()
 {
   *this = jsonValue;
 }

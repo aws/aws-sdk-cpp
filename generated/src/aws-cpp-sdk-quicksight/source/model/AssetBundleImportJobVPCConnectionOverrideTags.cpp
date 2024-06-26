@@ -24,9 +24,8 @@ AssetBundleImportJobVPCConnectionOverrideTags::AssetBundleImportJobVPCConnection
 {
 }
 
-AssetBundleImportJobVPCConnectionOverrideTags::AssetBundleImportJobVPCConnectionOverrideTags(JsonView jsonValue) : 
-    m_vPCConnectionIdsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+AssetBundleImportJobVPCConnectionOverrideTags::AssetBundleImportJobVPCConnectionOverrideTags(JsonView jsonValue)
+  : AssetBundleImportJobVPCConnectionOverrideTags()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ ConditionParameter::ConditionParameter() :
 {
 }
 
-ConditionParameter::ConditionParameter(JsonView jsonValue) : 
-    m_conditionKeyHasBeenSet(false),
-    m_conditionValueHasBeenSet(false)
+ConditionParameter::ConditionParameter(JsonView jsonValue)
+  : ConditionParameter()
 {
   *this = jsonValue;
 }

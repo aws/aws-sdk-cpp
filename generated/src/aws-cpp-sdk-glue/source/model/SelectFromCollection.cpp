@@ -26,11 +26,8 @@ SelectFromCollection::SelectFromCollection() :
 {
 }
 
-SelectFromCollection::SelectFromCollection(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_inputsHasBeenSet(false),
-    m_index(0),
-    m_indexHasBeenSet(false)
+SelectFromCollection::SelectFromCollection(JsonView jsonValue)
+  : SelectFromCollection()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ ScteDash::ScteDash() :
 {
 }
 
-ScteDash::ScteDash(JsonView jsonValue) : 
-    m_adMarkerDash(AdMarkerDash::NOT_SET),
-    m_adMarkerDashHasBeenSet(false)
+ScteDash::ScteDash(JsonView jsonValue)
+  : ScteDash()
 {
   *this = jsonValue;
 }

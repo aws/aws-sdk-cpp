@@ -26,11 +26,8 @@ JourneyExecutionMetricsResponse::JourneyExecutionMetricsResponse() :
 {
 }
 
-JourneyExecutionMetricsResponse::JourneyExecutionMetricsResponse(JsonView jsonValue) : 
-    m_applicationIdHasBeenSet(false),
-    m_journeyIdHasBeenSet(false),
-    m_lastEvaluatedTimeHasBeenSet(false),
-    m_metricsHasBeenSet(false)
+JourneyExecutionMetricsResponse::JourneyExecutionMetricsResponse(JsonView jsonValue)
+  : JourneyExecutionMetricsResponse()
 {
   *this = jsonValue;
 }

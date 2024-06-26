@@ -24,9 +24,8 @@ IntegerParameterRangeSpecification::IntegerParameterRangeSpecification() :
 {
 }
 
-IntegerParameterRangeSpecification::IntegerParameterRangeSpecification(JsonView jsonValue) : 
-    m_minValueHasBeenSet(false),
-    m_maxValueHasBeenSet(false)
+IntegerParameterRangeSpecification::IntegerParameterRangeSpecification(JsonView jsonValue)
+  : IntegerParameterRangeSpecification()
 {
   *this = jsonValue;
 }

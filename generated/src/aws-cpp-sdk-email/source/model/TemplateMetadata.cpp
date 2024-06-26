@@ -26,9 +26,8 @@ TemplateMetadata::TemplateMetadata() :
 {
 }
 
-TemplateMetadata::TemplateMetadata(const XmlNode& xmlNode) : 
-    m_nameHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false)
+TemplateMetadata::TemplateMetadata(const XmlNode& xmlNode)
+  : TemplateMetadata()
 {
   *this = xmlNode;
 }

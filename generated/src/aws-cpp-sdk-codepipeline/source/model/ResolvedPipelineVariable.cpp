@@ -24,9 +24,8 @@ ResolvedPipelineVariable::ResolvedPipelineVariable() :
 {
 }
 
-ResolvedPipelineVariable::ResolvedPipelineVariable(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_resolvedValueHasBeenSet(false)
+ResolvedPipelineVariable::ResolvedPipelineVariable(JsonView jsonValue)
+  : ResolvedPipelineVariable()
 {
   *this = jsonValue;
 }

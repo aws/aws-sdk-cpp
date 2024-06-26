@@ -27,12 +27,8 @@ ElasticsearchAction::ElasticsearchAction() :
 {
 }
 
-ElasticsearchAction::ElasticsearchAction(JsonView jsonValue) : 
-    m_roleArnHasBeenSet(false),
-    m_endpointHasBeenSet(false),
-    m_indexHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_idHasBeenSet(false)
+ElasticsearchAction::ElasticsearchAction(JsonView jsonValue)
+  : ElasticsearchAction()
 {
   *this = jsonValue;
 }

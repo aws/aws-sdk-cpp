@@ -27,12 +27,8 @@ ResponseTimeRootCauseEntity::ResponseTimeRootCauseEntity() :
 {
 }
 
-ResponseTimeRootCauseEntity::ResponseTimeRootCauseEntity(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_coverage(0.0),
-    m_coverageHasBeenSet(false),
-    m_remote(false),
-    m_remoteHasBeenSet(false)
+ResponseTimeRootCauseEntity::ResponseTimeRootCauseEntity(JsonView jsonValue)
+  : ResponseTimeRootCauseEntity()
 {
   *this = jsonValue;
 }

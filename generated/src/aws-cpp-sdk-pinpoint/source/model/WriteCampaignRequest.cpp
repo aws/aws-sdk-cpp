@@ -43,28 +43,8 @@ WriteCampaignRequest::WriteCampaignRequest() :
 {
 }
 
-WriteCampaignRequest::WriteCampaignRequest(JsonView jsonValue) : 
-    m_additionalTreatmentsHasBeenSet(false),
-    m_customDeliveryConfigurationHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_holdoutPercent(0),
-    m_holdoutPercentHasBeenSet(false),
-    m_hookHasBeenSet(false),
-    m_isPaused(false),
-    m_isPausedHasBeenSet(false),
-    m_limitsHasBeenSet(false),
-    m_messageConfigurationHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_scheduleHasBeenSet(false),
-    m_segmentIdHasBeenSet(false),
-    m_segmentVersion(0),
-    m_segmentVersionHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_templateConfigurationHasBeenSet(false),
-    m_treatmentDescriptionHasBeenSet(false),
-    m_treatmentNameHasBeenSet(false),
-    m_priority(0),
-    m_priorityHasBeenSet(false)
+WriteCampaignRequest::WriteCampaignRequest(JsonView jsonValue)
+  : WriteCampaignRequest()
 {
   *this = jsonValue;
 }

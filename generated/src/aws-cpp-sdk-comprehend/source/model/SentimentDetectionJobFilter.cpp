@@ -27,12 +27,8 @@ SentimentDetectionJobFilter::SentimentDetectionJobFilter() :
 {
 }
 
-SentimentDetectionJobFilter::SentimentDetectionJobFilter(JsonView jsonValue) : 
-    m_jobNameHasBeenSet(false),
-    m_jobStatus(JobStatus::NOT_SET),
-    m_jobStatusHasBeenSet(false),
-    m_submitTimeBeforeHasBeenSet(false),
-    m_submitTimeAfterHasBeenSet(false)
+SentimentDetectionJobFilter::SentimentDetectionJobFilter(JsonView jsonValue)
+  : SentimentDetectionJobFilter()
 {
   *this = jsonValue;
 }

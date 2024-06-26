@@ -28,13 +28,8 @@ S3Action::S3Action() :
 {
 }
 
-S3Action::S3Action(JsonView jsonValue) : 
-    m_actionFailurePolicy(ActionFailurePolicy::NOT_SET),
-    m_actionFailurePolicyHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_s3BucketHasBeenSet(false),
-    m_s3PrefixHasBeenSet(false),
-    m_s3SseKmsKeyIdHasBeenSet(false)
+S3Action::S3Action(JsonView jsonValue)
+  : S3Action()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ IdpMetadata::IdpMetadata() :
 {
 }
 
-IdpMetadata::IdpMetadata(JsonView jsonValue) : 
-    m_urlHasBeenSet(false),
-    m_xmlHasBeenSet(false)
+IdpMetadata::IdpMetadata(JsonView jsonValue)
+  : IdpMetadata()
 {
   *this = jsonValue;
 }

@@ -29,12 +29,8 @@ FunctionMetadata::FunctionMetadata() :
 {
 }
 
-FunctionMetadata::FunctionMetadata(const XmlNode& xmlNode) : 
-    m_functionARNHasBeenSet(false),
-    m_stage(FunctionStage::NOT_SET),
-    m_stageHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false)
+FunctionMetadata::FunctionMetadata(const XmlNode& xmlNode)
+  : FunctionMetadata()
 {
   *this = xmlNode;
 }

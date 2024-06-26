@@ -26,11 +26,8 @@ HeaderMatch::HeaderMatch() :
 {
 }
 
-HeaderMatch::HeaderMatch(JsonView jsonValue) : 
-    m_caseSensitive(false),
-    m_caseSensitiveHasBeenSet(false),
-    m_matchHasBeenSet(false),
-    m_nameHasBeenSet(false)
+HeaderMatch::HeaderMatch(JsonView jsonValue)
+  : HeaderMatch()
 {
   *this = jsonValue;
 }

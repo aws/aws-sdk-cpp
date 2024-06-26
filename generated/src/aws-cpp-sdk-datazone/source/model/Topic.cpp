@@ -26,11 +26,8 @@ Topic::Topic() :
 {
 }
 
-Topic::Topic(JsonView jsonValue) : 
-    m_resourceHasBeenSet(false),
-    m_role(NotificationRole::NOT_SET),
-    m_roleHasBeenSet(false),
-    m_subjectHasBeenSet(false)
+Topic::Topic(JsonView jsonValue)
+  : Topic()
 {
   *this = jsonValue;
 }

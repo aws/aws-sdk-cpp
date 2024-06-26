@@ -26,9 +26,8 @@ InstanceMaintenanceOptions::InstanceMaintenanceOptions() :
 {
 }
 
-InstanceMaintenanceOptions::InstanceMaintenanceOptions(const XmlNode& xmlNode) : 
-    m_autoRecovery(InstanceAutoRecoveryState::NOT_SET),
-    m_autoRecoveryHasBeenSet(false)
+InstanceMaintenanceOptions::InstanceMaintenanceOptions(const XmlNode& xmlNode)
+  : InstanceMaintenanceOptions()
 {
   *this = xmlNode;
 }

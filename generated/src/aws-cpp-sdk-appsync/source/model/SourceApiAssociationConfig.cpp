@@ -24,9 +24,8 @@ SourceApiAssociationConfig::SourceApiAssociationConfig() :
 {
 }
 
-SourceApiAssociationConfig::SourceApiAssociationConfig(JsonView jsonValue) : 
-    m_mergeType(MergeType::NOT_SET),
-    m_mergeTypeHasBeenSet(false)
+SourceApiAssociationConfig::SourceApiAssociationConfig(JsonView jsonValue)
+  : SourceApiAssociationConfig()
 {
   *this = jsonValue;
 }

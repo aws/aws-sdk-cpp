@@ -23,8 +23,8 @@ DateTimeDatasetParameterDefaultValues::DateTimeDatasetParameterDefaultValues() :
 {
 }
 
-DateTimeDatasetParameterDefaultValues::DateTimeDatasetParameterDefaultValues(JsonView jsonValue) : 
-    m_staticValuesHasBeenSet(false)
+DateTimeDatasetParameterDefaultValues::DateTimeDatasetParameterDefaultValues(JsonView jsonValue)
+  : DateTimeDatasetParameterDefaultValues()
 {
   *this = jsonValue;
 }

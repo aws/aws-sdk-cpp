@@ -27,12 +27,8 @@ CreateNetworkAclEntriesAction::CreateNetworkAclEntriesAction() :
 {
 }
 
-CreateNetworkAclEntriesAction::CreateNetworkAclEntriesAction(JsonView jsonValue) : 
-    m_descriptionHasBeenSet(false),
-    m_networkAclIdHasBeenSet(false),
-    m_networkAclEntriesToBeCreatedHasBeenSet(false),
-    m_fMSCanRemediate(false),
-    m_fMSCanRemediateHasBeenSet(false)
+CreateNetworkAclEntriesAction::CreateNetworkAclEntriesAction(JsonView jsonValue)
+  : CreateNetworkAclEntriesAction()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ NoDatabaseMigrationPreference::NoDatabaseMigrationPreference() :
 {
 }
 
-NoDatabaseMigrationPreference::NoDatabaseMigrationPreference(JsonView jsonValue) : 
-    m_targetDatabaseEngineHasBeenSet(false)
+NoDatabaseMigrationPreference::NoDatabaseMigrationPreference(JsonView jsonValue)
+  : NoDatabaseMigrationPreference()
 {
   *this = jsonValue;
 }

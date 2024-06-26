@@ -27,12 +27,8 @@ S3DeltaSource::S3DeltaSource() :
 {
 }
 
-S3DeltaSource::S3DeltaSource(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_pathsHasBeenSet(false),
-    m_additionalDeltaOptionsHasBeenSet(false),
-    m_additionalOptionsHasBeenSet(false),
-    m_outputSchemasHasBeenSet(false)
+S3DeltaSource::S3DeltaSource(JsonView jsonValue)
+  : S3DeltaSource()
 {
   *this = jsonValue;
 }

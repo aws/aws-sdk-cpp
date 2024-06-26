@@ -25,10 +25,8 @@ PerformanceInsightsMetricQuery::PerformanceInsightsMetricQuery() :
 {
 }
 
-PerformanceInsightsMetricQuery::PerformanceInsightsMetricQuery(JsonView jsonValue) : 
-    m_metricHasBeenSet(false),
-    m_groupByHasBeenSet(false),
-    m_filterHasBeenSet(false)
+PerformanceInsightsMetricQuery::PerformanceInsightsMetricQuery(JsonView jsonValue)
+  : PerformanceInsightsMetricQuery()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ BlockPublicAccessConfigurationMetadata::BlockPublicAccessConfigurationMetadata()
 {
 }
 
-BlockPublicAccessConfigurationMetadata::BlockPublicAccessConfigurationMetadata(JsonView jsonValue) : 
-    m_creationDateTimeHasBeenSet(false),
-    m_createdByArnHasBeenSet(false)
+BlockPublicAccessConfigurationMetadata::BlockPublicAccessConfigurationMetadata(JsonView jsonValue)
+  : BlockPublicAccessConfigurationMetadata()
 {
   *this = jsonValue;
 }

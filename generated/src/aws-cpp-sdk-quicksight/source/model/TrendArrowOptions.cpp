@@ -24,9 +24,8 @@ TrendArrowOptions::TrendArrowOptions() :
 {
 }
 
-TrendArrowOptions::TrendArrowOptions(JsonView jsonValue) : 
-    m_visibility(Visibility::NOT_SET),
-    m_visibilityHasBeenSet(false)
+TrendArrowOptions::TrendArrowOptions(JsonView jsonValue)
+  : TrendArrowOptions()
 {
   *this = jsonValue;
 }

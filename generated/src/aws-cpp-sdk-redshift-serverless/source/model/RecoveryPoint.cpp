@@ -29,14 +29,8 @@ RecoveryPoint::RecoveryPoint() :
 {
 }
 
-RecoveryPoint::RecoveryPoint(JsonView jsonValue) : 
-    m_namespaceArnHasBeenSet(false),
-    m_namespaceNameHasBeenSet(false),
-    m_recoveryPointCreateTimeHasBeenSet(false),
-    m_recoveryPointIdHasBeenSet(false),
-    m_totalSizeInMegaBytes(0.0),
-    m_totalSizeInMegaBytesHasBeenSet(false),
-    m_workgroupNameHasBeenSet(false)
+RecoveryPoint::RecoveryPoint(JsonView jsonValue)
+  : RecoveryPoint()
 {
   *this = jsonValue;
 }

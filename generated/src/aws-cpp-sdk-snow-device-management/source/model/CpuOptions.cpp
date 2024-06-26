@@ -26,11 +26,8 @@ CpuOptions::CpuOptions() :
 {
 }
 
-CpuOptions::CpuOptions(JsonView jsonValue) : 
-    m_coreCount(0),
-    m_coreCountHasBeenSet(false),
-    m_threadsPerCore(0),
-    m_threadsPerCoreHasBeenSet(false)
+CpuOptions::CpuOptions(JsonView jsonValue)
+  : CpuOptions()
 {
   *this = jsonValue;
 }

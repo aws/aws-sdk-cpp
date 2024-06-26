@@ -23,8 +23,8 @@ DeviceJobConfig::DeviceJobConfig() :
 {
 }
 
-DeviceJobConfig::DeviceJobConfig(JsonView jsonValue) : 
-    m_oTAJobConfigHasBeenSet(false)
+DeviceJobConfig::DeviceJobConfig(JsonView jsonValue)
+  : DeviceJobConfig()
 {
   *this = jsonValue;
 }

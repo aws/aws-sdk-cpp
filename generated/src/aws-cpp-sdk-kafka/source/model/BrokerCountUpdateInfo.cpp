@@ -24,9 +24,8 @@ BrokerCountUpdateInfo::BrokerCountUpdateInfo() :
 {
 }
 
-BrokerCountUpdateInfo::BrokerCountUpdateInfo(JsonView jsonValue) : 
-    m_createdBrokerIdsHasBeenSet(false),
-    m_deletedBrokerIdsHasBeenSet(false)
+BrokerCountUpdateInfo::BrokerCountUpdateInfo(JsonView jsonValue)
+  : BrokerCountUpdateInfo()
 {
   *this = jsonValue;
 }

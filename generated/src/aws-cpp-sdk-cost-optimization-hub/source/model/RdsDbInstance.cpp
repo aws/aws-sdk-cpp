@@ -24,9 +24,8 @@ RdsDbInstance::RdsDbInstance() :
 {
 }
 
-RdsDbInstance::RdsDbInstance(JsonView jsonValue) : 
-    m_configurationHasBeenSet(false),
-    m_costCalculationHasBeenSet(false)
+RdsDbInstance::RdsDbInstance(JsonView jsonValue)
+  : RdsDbInstance()
 {
   *this = jsonValue;
 }

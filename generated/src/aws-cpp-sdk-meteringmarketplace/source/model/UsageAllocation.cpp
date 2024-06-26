@@ -25,10 +25,8 @@ UsageAllocation::UsageAllocation() :
 {
 }
 
-UsageAllocation::UsageAllocation(JsonView jsonValue) : 
-    m_allocatedUsageQuantity(0),
-    m_allocatedUsageQuantityHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+UsageAllocation::UsageAllocation(JsonView jsonValue)
+  : UsageAllocation()
 {
   *this = jsonValue;
 }

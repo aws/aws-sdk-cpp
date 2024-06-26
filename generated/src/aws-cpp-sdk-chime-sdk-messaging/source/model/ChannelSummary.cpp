@@ -30,15 +30,8 @@ ChannelSummary::ChannelSummary() :
 {
 }
 
-ChannelSummary::ChannelSummary(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_channelArnHasBeenSet(false),
-    m_mode(ChannelMode::NOT_SET),
-    m_modeHasBeenSet(false),
-    m_privacy(ChannelPrivacy::NOT_SET),
-    m_privacyHasBeenSet(false),
-    m_metadataHasBeenSet(false),
-    m_lastMessageTimestampHasBeenSet(false)
+ChannelSummary::ChannelSummary(JsonView jsonValue)
+  : ChannelSummary()
 {
   *this = jsonValue;
 }

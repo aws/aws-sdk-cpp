@@ -31,16 +31,8 @@ UploadSettings::UploadSettings() :
 {
 }
 
-UploadSettings::UploadSettings(JsonView jsonValue) : 
-    m_format(FileFormat::NOT_SET),
-    m_formatHasBeenSet(false),
-    m_startFromRow(0),
-    m_startFromRowHasBeenSet(false),
-    m_containsHeader(false),
-    m_containsHeaderHasBeenSet(false),
-    m_textQualifier(TextQualifier::NOT_SET),
-    m_textQualifierHasBeenSet(false),
-    m_delimiterHasBeenSet(false)
+UploadSettings::UploadSettings(JsonView jsonValue)
+  : UploadSettings()
 {
   *this = jsonValue;
 }

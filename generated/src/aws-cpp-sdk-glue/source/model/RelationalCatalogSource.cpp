@@ -25,10 +25,8 @@ RelationalCatalogSource::RelationalCatalogSource() :
 {
 }
 
-RelationalCatalogSource::RelationalCatalogSource(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_databaseHasBeenSet(false),
-    m_tableHasBeenSet(false)
+RelationalCatalogSource::RelationalCatalogSource(JsonView jsonValue)
+  : RelationalCatalogSource()
 {
   *this = jsonValue;
 }

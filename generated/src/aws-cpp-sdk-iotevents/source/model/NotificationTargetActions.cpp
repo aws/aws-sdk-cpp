@@ -23,8 +23,8 @@ NotificationTargetActions::NotificationTargetActions() :
 {
 }
 
-NotificationTargetActions::NotificationTargetActions(JsonView jsonValue) : 
-    m_lambdaActionHasBeenSet(false)
+NotificationTargetActions::NotificationTargetActions(JsonView jsonValue)
+  : NotificationTargetActions()
 {
   *this = jsonValue;
 }

@@ -41,26 +41,8 @@ Container::Container() :
 {
 }
 
-Container::Container(JsonView jsonValue) : 
-    m_containerArnHasBeenSet(false),
-    m_taskArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_imageHasBeenSet(false),
-    m_imageDigestHasBeenSet(false),
-    m_runtimeIdHasBeenSet(false),
-    m_lastStatusHasBeenSet(false),
-    m_exitCode(0),
-    m_exitCodeHasBeenSet(false),
-    m_reasonHasBeenSet(false),
-    m_networkBindingsHasBeenSet(false),
-    m_networkInterfacesHasBeenSet(false),
-    m_healthStatus(HealthStatus::NOT_SET),
-    m_healthStatusHasBeenSet(false),
-    m_managedAgentsHasBeenSet(false),
-    m_cpuHasBeenSet(false),
-    m_memoryHasBeenSet(false),
-    m_memoryReservationHasBeenSet(false),
-    m_gpuIdsHasBeenSet(false)
+Container::Container(JsonView jsonValue)
+  : Container()
 {
   *this = jsonValue;
 }

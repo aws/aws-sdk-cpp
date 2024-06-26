@@ -34,19 +34,8 @@ Job::Job() :
 {
 }
 
-Job::Job(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_pipelineIdHasBeenSet(false),
-    m_inputHasBeenSet(false),
-    m_inputsHasBeenSet(false),
-    m_outputHasBeenSet(false),
-    m_outputsHasBeenSet(false),
-    m_outputKeyPrefixHasBeenSet(false),
-    m_playlistsHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_userMetadataHasBeenSet(false),
-    m_timingHasBeenSet(false)
+Job::Job(JsonView jsonValue)
+  : Job()
 {
   *this = jsonValue;
 }

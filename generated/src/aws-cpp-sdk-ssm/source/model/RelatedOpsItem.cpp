@@ -23,8 +23,8 @@ RelatedOpsItem::RelatedOpsItem() :
 {
 }
 
-RelatedOpsItem::RelatedOpsItem(JsonView jsonValue) : 
-    m_opsItemIdHasBeenSet(false)
+RelatedOpsItem::RelatedOpsItem(JsonView jsonValue)
+  : RelatedOpsItem()
 {
   *this = jsonValue;
 }

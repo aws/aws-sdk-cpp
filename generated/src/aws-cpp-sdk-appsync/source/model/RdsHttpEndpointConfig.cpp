@@ -27,12 +27,8 @@ RdsHttpEndpointConfig::RdsHttpEndpointConfig() :
 {
 }
 
-RdsHttpEndpointConfig::RdsHttpEndpointConfig(JsonView jsonValue) : 
-    m_awsRegionHasBeenSet(false),
-    m_dbClusterIdentifierHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_schemaHasBeenSet(false),
-    m_awsSecretStoreArnHasBeenSet(false)
+RdsHttpEndpointConfig::RdsHttpEndpointConfig(JsonView jsonValue)
+  : RdsHttpEndpointConfig()
 {
   *this = jsonValue;
 }

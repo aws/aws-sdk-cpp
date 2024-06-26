@@ -26,11 +26,8 @@ TransformationTool::TransformationTool() :
 {
 }
 
-TransformationTool::TransformationTool(JsonView jsonValue) : 
-    m_descriptionHasBeenSet(false),
-    m_name(TransformationToolName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_tranformationToolInstallationLinkHasBeenSet(false)
+TransformationTool::TransformationTool(JsonView jsonValue)
+  : TransformationTool()
 {
   *this = jsonValue;
 }

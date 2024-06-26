@@ -26,11 +26,8 @@ BinWidthOptions::BinWidthOptions() :
 {
 }
 
-BinWidthOptions::BinWidthOptions(JsonView jsonValue) : 
-    m_value(0.0),
-    m_valueHasBeenSet(false),
-    m_binCountLimit(0),
-    m_binCountLimitHasBeenSet(false)
+BinWidthOptions::BinWidthOptions(JsonView jsonValue)
+  : BinWidthOptions()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ ConverseOutput::ConverseOutput() :
 {
 }
 
-ConverseOutput::ConverseOutput(JsonView jsonValue) : 
-    m_messageHasBeenSet(false)
+ConverseOutput::ConverseOutput(JsonView jsonValue)
+  : ConverseOutput()
 {
   *this = jsonValue;
 }

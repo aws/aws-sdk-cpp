@@ -27,10 +27,8 @@ PredictiveScalingPredefinedLoadMetric::PredictiveScalingPredefinedLoadMetric() :
 {
 }
 
-PredictiveScalingPredefinedLoadMetric::PredictiveScalingPredefinedLoadMetric(const XmlNode& xmlNode) : 
-    m_predefinedMetricType(PredefinedLoadMetricType::NOT_SET),
-    m_predefinedMetricTypeHasBeenSet(false),
-    m_resourceLabelHasBeenSet(false)
+PredictiveScalingPredefinedLoadMetric::PredictiveScalingPredefinedLoadMetric(const XmlNode& xmlNode)
+  : PredictiveScalingPredefinedLoadMetric()
 {
   *this = xmlNode;
 }

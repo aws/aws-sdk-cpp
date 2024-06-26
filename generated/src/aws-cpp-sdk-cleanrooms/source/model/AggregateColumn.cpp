@@ -25,10 +25,8 @@ AggregateColumn::AggregateColumn() :
 {
 }
 
-AggregateColumn::AggregateColumn(JsonView jsonValue) : 
-    m_columnNamesHasBeenSet(false),
-    m_function(AggregateFunctionName::NOT_SET),
-    m_functionHasBeenSet(false)
+AggregateColumn::AggregateColumn(JsonView jsonValue)
+  : AggregateColumn()
 {
   *this = jsonValue;
 }

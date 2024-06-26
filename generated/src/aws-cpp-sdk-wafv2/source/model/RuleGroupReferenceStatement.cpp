@@ -25,10 +25,8 @@ RuleGroupReferenceStatement::RuleGroupReferenceStatement() :
 {
 }
 
-RuleGroupReferenceStatement::RuleGroupReferenceStatement(JsonView jsonValue) : 
-    m_aRNHasBeenSet(false),
-    m_excludedRulesHasBeenSet(false),
-    m_ruleActionOverridesHasBeenSet(false)
+RuleGroupReferenceStatement::RuleGroupReferenceStatement(JsonView jsonValue)
+  : RuleGroupReferenceStatement()
 {
   *this = jsonValue;
 }

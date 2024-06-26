@@ -25,10 +25,8 @@ DeployedImage::DeployedImage() :
 {
 }
 
-DeployedImage::DeployedImage(JsonView jsonValue) : 
-    m_specifiedImageHasBeenSet(false),
-    m_resolvedImageHasBeenSet(false),
-    m_resolutionTimeHasBeenSet(false)
+DeployedImage::DeployedImage(JsonView jsonValue)
+  : DeployedImage()
 {
   *this = jsonValue;
 }

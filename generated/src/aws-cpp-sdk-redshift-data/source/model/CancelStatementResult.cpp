@@ -22,8 +22,8 @@ CancelStatementResult::CancelStatementResult() :
 {
 }
 
-CancelStatementResult::CancelStatementResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(false)
+CancelStatementResult::CancelStatementResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CancelStatementResult()
 {
   *this = result;
 }

@@ -22,8 +22,8 @@ GetCellReadinessSummaryResult::GetCellReadinessSummaryResult() :
 {
 }
 
-GetCellReadinessSummaryResult::GetCellReadinessSummaryResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_readiness(Readiness::NOT_SET)
+GetCellReadinessSummaryResult::GetCellReadinessSummaryResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetCellReadinessSummaryResult()
 {
   *this = result;
 }

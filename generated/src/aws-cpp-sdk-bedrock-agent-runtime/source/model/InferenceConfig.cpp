@@ -23,8 +23,8 @@ InferenceConfig::InferenceConfig() :
 {
 }
 
-InferenceConfig::InferenceConfig(JsonView jsonValue) : 
-    m_textInferenceConfigHasBeenSet(false)
+InferenceConfig::InferenceConfig(JsonView jsonValue)
+  : InferenceConfig()
 {
   *this = jsonValue;
 }

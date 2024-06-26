@@ -23,8 +23,8 @@ ImportSource::ImportSource() :
 {
 }
 
-ImportSource::ImportSource(JsonView jsonValue) : 
-    m_s3HasBeenSet(false)
+ImportSource::ImportSource(JsonView jsonValue)
+  : ImportSource()
 {
   *this = jsonValue;
 }

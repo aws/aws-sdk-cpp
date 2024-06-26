@@ -27,12 +27,8 @@ KxAttachedCluster::KxAttachedCluster() :
 {
 }
 
-KxAttachedCluster::KxAttachedCluster(JsonView jsonValue) : 
-    m_clusterNameHasBeenSet(false),
-    m_clusterType(KxClusterType::NOT_SET),
-    m_clusterTypeHasBeenSet(false),
-    m_clusterStatus(KxClusterStatus::NOT_SET),
-    m_clusterStatusHasBeenSet(false)
+KxAttachedCluster::KxAttachedCluster(JsonView jsonValue)
+  : KxAttachedCluster()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ AttributeGroupDetails::AttributeGroupDetails() :
 {
 }
 
-AttributeGroupDetails::AttributeGroupDetails(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_createdByHasBeenSet(false)
+AttributeGroupDetails::AttributeGroupDetails(JsonView jsonValue)
+  : AttributeGroupDetails()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ FileSystemEndpoints::FileSystemEndpoints() :
 {
 }
 
-FileSystemEndpoints::FileSystemEndpoints(JsonView jsonValue) : 
-    m_interclusterHasBeenSet(false),
-    m_managementHasBeenSet(false)
+FileSystemEndpoints::FileSystemEndpoints(JsonView jsonValue)
+  : FileSystemEndpoints()
 {
   *this = jsonValue;
 }

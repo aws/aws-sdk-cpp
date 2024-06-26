@@ -23,8 +23,8 @@ WorkerAccessConfiguration::WorkerAccessConfiguration() :
 {
 }
 
-WorkerAccessConfiguration::WorkerAccessConfiguration(JsonView jsonValue) : 
-    m_s3PresignHasBeenSet(false)
+WorkerAccessConfiguration::WorkerAccessConfiguration(JsonView jsonValue)
+  : WorkerAccessConfiguration()
 {
   *this = jsonValue;
 }

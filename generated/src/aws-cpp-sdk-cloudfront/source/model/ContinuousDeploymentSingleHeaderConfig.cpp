@@ -26,9 +26,8 @@ ContinuousDeploymentSingleHeaderConfig::ContinuousDeploymentSingleHeaderConfig()
 {
 }
 
-ContinuousDeploymentSingleHeaderConfig::ContinuousDeploymentSingleHeaderConfig(const XmlNode& xmlNode) : 
-    m_headerHasBeenSet(false),
-    m_valueHasBeenSet(false)
+ContinuousDeploymentSingleHeaderConfig::ContinuousDeploymentSingleHeaderConfig(const XmlNode& xmlNode)
+  : ContinuousDeploymentSingleHeaderConfig()
 {
   *this = xmlNode;
 }

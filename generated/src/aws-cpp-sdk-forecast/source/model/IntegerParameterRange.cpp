@@ -29,14 +29,8 @@ IntegerParameterRange::IntegerParameterRange() :
 {
 }
 
-IntegerParameterRange::IntegerParameterRange(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_maxValue(0),
-    m_maxValueHasBeenSet(false),
-    m_minValue(0),
-    m_minValueHasBeenSet(false),
-    m_scalingType(ScalingType::NOT_SET),
-    m_scalingTypeHasBeenSet(false)
+IntegerParameterRange::IntegerParameterRange(JsonView jsonValue)
+  : IntegerParameterRange()
 {
   *this = jsonValue;
 }

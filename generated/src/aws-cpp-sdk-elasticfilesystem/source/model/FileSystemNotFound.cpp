@@ -24,9 +24,8 @@ FileSystemNotFound::FileSystemNotFound() :
 {
 }
 
-FileSystemNotFound::FileSystemNotFound(JsonView jsonValue) : 
-    m_errorCodeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+FileSystemNotFound::FileSystemNotFound(JsonView jsonValue)
+  : FileSystemNotFound()
 {
   *this = jsonValue;
 }

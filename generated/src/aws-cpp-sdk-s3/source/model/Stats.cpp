@@ -30,13 +30,8 @@ Stats::Stats() :
 {
 }
 
-Stats::Stats(const XmlNode& xmlNode) : 
-    m_bytesScanned(0),
-    m_bytesScannedHasBeenSet(false),
-    m_bytesProcessed(0),
-    m_bytesProcessedHasBeenSet(false),
-    m_bytesReturned(0),
-    m_bytesReturnedHasBeenSet(false)
+Stats::Stats(const XmlNode& xmlNode)
+  : Stats()
 {
   *this = xmlNode;
 }

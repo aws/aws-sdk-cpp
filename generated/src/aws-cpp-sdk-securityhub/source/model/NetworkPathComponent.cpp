@@ -26,11 +26,8 @@ NetworkPathComponent::NetworkPathComponent() :
 {
 }
 
-NetworkPathComponent::NetworkPathComponent(JsonView jsonValue) : 
-    m_componentIdHasBeenSet(false),
-    m_componentTypeHasBeenSet(false),
-    m_egressHasBeenSet(false),
-    m_ingressHasBeenSet(false)
+NetworkPathComponent::NetworkPathComponent(JsonView jsonValue)
+  : NetworkPathComponent()
 {
   *this = jsonValue;
 }

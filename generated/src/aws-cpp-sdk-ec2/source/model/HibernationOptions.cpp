@@ -26,9 +26,8 @@ HibernationOptions::HibernationOptions() :
 {
 }
 
-HibernationOptions::HibernationOptions(const XmlNode& xmlNode) : 
-    m_configured(false),
-    m_configuredHasBeenSet(false)
+HibernationOptions::HibernationOptions(const XmlNode& xmlNode)
+  : HibernationOptions()
 {
   *this = xmlNode;
 }

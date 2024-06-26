@@ -27,12 +27,8 @@ InputColumn::InputColumn() :
 {
 }
 
-InputColumn::InputColumn(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_type(InputColumnDataType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_subType(ColumnDataSubType::NOT_SET),
-    m_subTypeHasBeenSet(false)
+InputColumn::InputColumn(JsonView jsonValue)
+  : InputColumn()
 {
   *this = jsonValue;
 }

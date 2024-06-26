@@ -25,10 +25,8 @@ AuthenticationDescription::AuthenticationDescription() :
 {
 }
 
-AuthenticationDescription::AuthenticationDescription(JsonView jsonValue) : 
-    m_awsSsoHasBeenSet(false),
-    m_providersHasBeenSet(false),
-    m_samlHasBeenSet(false)
+AuthenticationDescription::AuthenticationDescription(JsonView jsonValue)
+  : AuthenticationDescription()
 {
   *this = jsonValue;
 }

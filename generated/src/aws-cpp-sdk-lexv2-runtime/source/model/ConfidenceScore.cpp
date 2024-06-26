@@ -24,9 +24,8 @@ ConfidenceScore::ConfidenceScore() :
 {
 }
 
-ConfidenceScore::ConfidenceScore(JsonView jsonValue) : 
-    m_score(0.0),
-    m_scoreHasBeenSet(false)
+ConfidenceScore::ConfidenceScore(JsonView jsonValue)
+  : ConfidenceScore()
 {
   *this = jsonValue;
 }

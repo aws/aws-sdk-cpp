@@ -24,9 +24,8 @@ RootCertificatePublicKey::RootCertificatePublicKey() :
 {
 }
 
-RootCertificatePublicKey::RootCertificatePublicKey(JsonView jsonValue) : 
-    m_keyAttributesHasBeenSet(false),
-    m_publicKeyCertificateHasBeenSet(false)
+RootCertificatePublicKey::RootCertificatePublicKey(JsonView jsonValue)
+  : RootCertificatePublicKey()
 {
   *this = jsonValue;
 }

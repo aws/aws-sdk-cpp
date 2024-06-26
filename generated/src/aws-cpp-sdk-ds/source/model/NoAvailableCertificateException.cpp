@@ -24,9 +24,8 @@ NoAvailableCertificateException::NoAvailableCertificateException() :
 {
 }
 
-NoAvailableCertificateException::NoAvailableCertificateException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
+NoAvailableCertificateException::NoAvailableCertificateException(JsonView jsonValue)
+  : NoAvailableCertificateException()
 {
   *this = jsonValue;
 }

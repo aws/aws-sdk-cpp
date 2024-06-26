@@ -32,15 +32,8 @@ S3BucketDestination::S3BucketDestination() :
 {
 }
 
-S3BucketDestination::S3BucketDestination(const XmlNode& xmlNode) : 
-    m_format(Format::NOT_SET),
-    m_formatHasBeenSet(false),
-    m_outputSchemaVersion(OutputSchemaVersion::NOT_SET),
-    m_outputSchemaVersionHasBeenSet(false),
-    m_accountIdHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_prefixHasBeenSet(false),
-    m_encryptionHasBeenSet(false)
+S3BucketDestination::S3BucketDestination(const XmlNode& xmlNode)
+  : S3BucketDestination()
 {
   *this = xmlNode;
 }

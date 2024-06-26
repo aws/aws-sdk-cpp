@@ -25,10 +25,8 @@ KafkaVersion::KafkaVersion() :
 {
 }
 
-KafkaVersion::KafkaVersion(JsonView jsonValue) : 
-    m_versionHasBeenSet(false),
-    m_status(KafkaVersionStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+KafkaVersion::KafkaVersion(JsonView jsonValue)
+  : KafkaVersion()
 {
   *this = jsonValue;
 }

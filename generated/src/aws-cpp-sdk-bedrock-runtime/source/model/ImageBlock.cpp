@@ -25,10 +25,8 @@ ImageBlock::ImageBlock() :
 {
 }
 
-ImageBlock::ImageBlock(JsonView jsonValue) : 
-    m_format(ImageFormat::NOT_SET),
-    m_formatHasBeenSet(false),
-    m_sourceHasBeenSet(false)
+ImageBlock::ImageBlock(JsonView jsonValue)
+  : ImageBlock()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ DeleteCustomVocabularyResult::DeleteCustomVocabularyResult() :
 {
 }
 
-DeleteCustomVocabularyResult::DeleteCustomVocabularyResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_customVocabularyStatus(CustomVocabularyStatus::NOT_SET)
+DeleteCustomVocabularyResult::DeleteCustomVocabularyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeleteCustomVocabularyResult()
 {
   *this = result;
 }

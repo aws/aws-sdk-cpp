@@ -36,21 +36,8 @@ LambdaConfigType::LambdaConfigType() :
 {
 }
 
-LambdaConfigType::LambdaConfigType(JsonView jsonValue) : 
-    m_preSignUpHasBeenSet(false),
-    m_customMessageHasBeenSet(false),
-    m_postConfirmationHasBeenSet(false),
-    m_preAuthenticationHasBeenSet(false),
-    m_postAuthenticationHasBeenSet(false),
-    m_defineAuthChallengeHasBeenSet(false),
-    m_createAuthChallengeHasBeenSet(false),
-    m_verifyAuthChallengeResponseHasBeenSet(false),
-    m_preTokenGenerationHasBeenSet(false),
-    m_userMigrationHasBeenSet(false),
-    m_preTokenGenerationConfigHasBeenSet(false),
-    m_customSMSSenderHasBeenSet(false),
-    m_customEmailSenderHasBeenSet(false),
-    m_kMSKeyIDHasBeenSet(false)
+LambdaConfigType::LambdaConfigType(JsonView jsonValue)
+  : LambdaConfigType()
 {
   *this = jsonValue;
 }

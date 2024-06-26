@@ -44,29 +44,8 @@ NetAppONTAPSVM::NetAppONTAPSVM() :
 {
 }
 
-NetAppONTAPSVM::NetAppONTAPSVM(JsonView jsonValue) : 
-    m_clusterUuidHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_svmNameHasBeenSet(false),
-    m_cifsShareCount(0),
-    m_cifsShareCountHasBeenSet(false),
-    m_enabledProtocolsHasBeenSet(false),
-    m_totalCapacityUsed(0),
-    m_totalCapacityUsedHasBeenSet(false),
-    m_totalCapacityProvisioned(0),
-    m_totalCapacityProvisionedHasBeenSet(false),
-    m_totalLogicalCapacityUsed(0),
-    m_totalLogicalCapacityUsedHasBeenSet(false),
-    m_maxP95PerformanceHasBeenSet(false),
-    m_recommendationsHasBeenSet(false),
-    m_nfsExportedVolumes(0),
-    m_nfsExportedVolumesHasBeenSet(false),
-    m_recommendationStatus(RecommendationStatus::NOT_SET),
-    m_recommendationStatusHasBeenSet(false),
-    m_totalSnapshotCapacityUsed(0),
-    m_totalSnapshotCapacityUsedHasBeenSet(false),
-    m_lunCount(0),
-    m_lunCountHasBeenSet(false)
+NetAppONTAPSVM::NetAppONTAPSVM(JsonView jsonValue)
+  : NetAppONTAPSVM()
 {
   *this = jsonValue;
 }

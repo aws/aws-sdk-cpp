@@ -24,10 +24,8 @@ DescribeAutoPredictorResult::DescribeAutoPredictorResult() :
 {
 }
 
-DescribeAutoPredictorResult::DescribeAutoPredictorResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_forecastHorizon(0),
-    m_estimatedTimeRemainingInMinutes(0),
-    m_optimizationMetric(OptimizationMetric::NOT_SET)
+DescribeAutoPredictorResult::DescribeAutoPredictorResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeAutoPredictorResult()
 {
   *this = result;
 }

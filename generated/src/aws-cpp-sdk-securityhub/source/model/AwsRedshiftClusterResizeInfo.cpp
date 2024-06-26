@@ -25,10 +25,8 @@ AwsRedshiftClusterResizeInfo::AwsRedshiftClusterResizeInfo() :
 {
 }
 
-AwsRedshiftClusterResizeInfo::AwsRedshiftClusterResizeInfo(JsonView jsonValue) : 
-    m_allowCancelResize(false),
-    m_allowCancelResizeHasBeenSet(false),
-    m_resizeTypeHasBeenSet(false)
+AwsRedshiftClusterResizeInfo::AwsRedshiftClusterResizeInfo(JsonView jsonValue)
+  : AwsRedshiftClusterResizeInfo()
 {
   *this = jsonValue;
 }

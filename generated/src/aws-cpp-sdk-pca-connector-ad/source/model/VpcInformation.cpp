@@ -23,8 +23,8 @@ VpcInformation::VpcInformation() :
 {
 }
 
-VpcInformation::VpcInformation(JsonView jsonValue) : 
-    m_securityGroupIdsHasBeenSet(false)
+VpcInformation::VpcInformation(JsonView jsonValue)
+  : VpcInformation()
 {
   *this = jsonValue;
 }

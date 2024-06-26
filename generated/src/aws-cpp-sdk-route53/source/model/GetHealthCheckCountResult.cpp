@@ -21,8 +21,8 @@ GetHealthCheckCountResult::GetHealthCheckCountResult() :
 {
 }
 
-GetHealthCheckCountResult::GetHealthCheckCountResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_healthCheckCount(0)
+GetHealthCheckCountResult::GetHealthCheckCountResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : GetHealthCheckCountResult()
 {
   *this = result;
 }

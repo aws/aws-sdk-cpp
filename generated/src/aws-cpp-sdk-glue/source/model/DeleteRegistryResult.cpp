@@ -22,8 +22,8 @@ DeleteRegistryResult::DeleteRegistryResult() :
 {
 }
 
-DeleteRegistryResult::DeleteRegistryResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(RegistryStatus::NOT_SET)
+DeleteRegistryResult::DeleteRegistryResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeleteRegistryResult()
 {
   *this = result;
 }

@@ -28,13 +28,8 @@ TokenUsage::TokenUsage() :
 {
 }
 
-TokenUsage::TokenUsage(JsonView jsonValue) : 
-    m_inputTokens(0),
-    m_inputTokensHasBeenSet(false),
-    m_outputTokens(0),
-    m_outputTokensHasBeenSet(false),
-    m_totalTokens(0),
-    m_totalTokensHasBeenSet(false)
+TokenUsage::TokenUsage(JsonView jsonValue)
+  : TokenUsage()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ DisableImageResponse::DisableImageResponse() :
 {
 }
 
-DisableImageResponse::DisableImageResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_return(false)
+DisableImageResponse::DisableImageResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : DisableImageResponse()
 {
   *this = result;
 }

@@ -27,13 +27,8 @@ GetLaunchConfigurationResult::GetLaunchConfigurationResult() :
 {
 }
 
-GetLaunchConfigurationResult::GetLaunchConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_bootMode(BootMode::NOT_SET),
-    m_copyPrivateIp(false),
-    m_copyTags(false),
-    m_enableMapAutoTagging(false),
-    m_launchDisposition(LaunchDisposition::NOT_SET),
-    m_targetInstanceTypeRightSizingMethod(TargetInstanceTypeRightSizingMethod::NOT_SET)
+GetLaunchConfigurationResult::GetLaunchConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetLaunchConfigurationResult()
 {
   *this = result;
 }

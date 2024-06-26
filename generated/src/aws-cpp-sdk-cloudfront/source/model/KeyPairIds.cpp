@@ -27,10 +27,8 @@ KeyPairIds::KeyPairIds() :
 {
 }
 
-KeyPairIds::KeyPairIds(const XmlNode& xmlNode) : 
-    m_quantity(0),
-    m_quantityHasBeenSet(false),
-    m_itemsHasBeenSet(false)
+KeyPairIds::KeyPairIds(const XmlNode& xmlNode)
+  : KeyPairIds()
 {
   *this = xmlNode;
 }

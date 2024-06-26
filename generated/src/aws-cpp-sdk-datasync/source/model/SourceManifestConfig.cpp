@@ -23,8 +23,8 @@ SourceManifestConfig::SourceManifestConfig() :
 {
 }
 
-SourceManifestConfig::SourceManifestConfig(JsonView jsonValue) : 
-    m_s3HasBeenSet(false)
+SourceManifestConfig::SourceManifestConfig(JsonView jsonValue)
+  : SourceManifestConfig()
 {
   *this = jsonValue;
 }

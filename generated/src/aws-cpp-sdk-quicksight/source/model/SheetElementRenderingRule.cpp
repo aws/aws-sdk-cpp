@@ -24,9 +24,8 @@ SheetElementRenderingRule::SheetElementRenderingRule() :
 {
 }
 
-SheetElementRenderingRule::SheetElementRenderingRule(JsonView jsonValue) : 
-    m_expressionHasBeenSet(false),
-    m_configurationOverridesHasBeenSet(false)
+SheetElementRenderingRule::SheetElementRenderingRule(JsonView jsonValue)
+  : SheetElementRenderingRule()
 {
   *this = jsonValue;
 }

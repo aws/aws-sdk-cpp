@@ -34,19 +34,8 @@ ContactMethod::ContactMethod() :
 {
 }
 
-ContactMethod::ContactMethod(JsonView jsonValue) : 
-    m_contactEndpointHasBeenSet(false),
-    m_status(ContactMethodStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_protocol(ContactProtocol::NOT_SET),
-    m_protocolHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_locationHasBeenSet(false),
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_supportCodeHasBeenSet(false)
+ContactMethod::ContactMethod(JsonView jsonValue)
+  : ContactMethod()
 {
   *this = jsonValue;
 }

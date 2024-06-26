@@ -26,11 +26,8 @@ MonitorDeployment::MonitorDeployment() :
 {
 }
 
-MonitorDeployment::MonitorDeployment(JsonView jsonValue) : 
-    m_detailsUriHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_status(SignalMapMonitorDeploymentStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+MonitorDeployment::MonitorDeployment(JsonView jsonValue)
+  : MonitorDeployment()
 {
   *this = jsonValue;
 }

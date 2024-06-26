@@ -26,11 +26,8 @@ Highlight::Highlight() :
 {
 }
 
-Highlight::Highlight(JsonView jsonValue) : 
-    m_beginOffsetInclusive(0),
-    m_beginOffsetInclusiveHasBeenSet(false),
-    m_endOffsetExclusive(0),
-    m_endOffsetExclusiveHasBeenSet(false)
+Highlight::Highlight(JsonView jsonValue)
+  : Highlight()
 {
   *this = jsonValue;
 }

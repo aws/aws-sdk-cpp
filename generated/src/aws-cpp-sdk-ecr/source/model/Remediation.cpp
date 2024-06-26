@@ -23,8 +23,8 @@ Remediation::Remediation() :
 {
 }
 
-Remediation::Remediation(JsonView jsonValue) : 
-    m_recommendationHasBeenSet(false)
+Remediation::Remediation(JsonView jsonValue)
+  : Remediation()
 {
   *this = jsonValue;
 }

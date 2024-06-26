@@ -24,9 +24,8 @@ PartitionKey::PartitionKey() :
 {
 }
 
-PartitionKey::PartitionKey(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_typeHasBeenSet(false)
+PartitionKey::PartitionKey(JsonView jsonValue)
+  : PartitionKey()
 {
   *this = jsonValue;
 }

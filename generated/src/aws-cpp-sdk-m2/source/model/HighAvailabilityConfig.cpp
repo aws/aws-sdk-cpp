@@ -24,9 +24,8 @@ HighAvailabilityConfig::HighAvailabilityConfig() :
 {
 }
 
-HighAvailabilityConfig::HighAvailabilityConfig(JsonView jsonValue) : 
-    m_desiredCapacity(0),
-    m_desiredCapacityHasBeenSet(false)
+HighAvailabilityConfig::HighAvailabilityConfig(JsonView jsonValue)
+  : HighAvailabilityConfig()
 {
   *this = jsonValue;
 }

@@ -27,12 +27,8 @@ Certificates::Certificates() :
 {
 }
 
-Certificates::Certificates(JsonView jsonValue) : 
-    m_clusterCsrHasBeenSet(false),
-    m_hsmCertificateHasBeenSet(false),
-    m_awsHardwareCertificateHasBeenSet(false),
-    m_manufacturerHardwareCertificateHasBeenSet(false),
-    m_clusterCertificateHasBeenSet(false)
+Certificates::Certificates(JsonView jsonValue)
+  : Certificates()
 {
   *this = jsonValue;
 }

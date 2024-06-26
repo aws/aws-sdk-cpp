@@ -27,12 +27,8 @@ UpdateExperimentTemplateActionInputItem::UpdateExperimentTemplateActionInputItem
 {
 }
 
-UpdateExperimentTemplateActionInputItem::UpdateExperimentTemplateActionInputItem(JsonView jsonValue) : 
-    m_actionIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_targetsHasBeenSet(false),
-    m_startAfterHasBeenSet(false)
+UpdateExperimentTemplateActionInputItem::UpdateExperimentTemplateActionInputItem(JsonView jsonValue)
+  : UpdateExperimentTemplateActionInputItem()
 {
   *this = jsonValue;
 }

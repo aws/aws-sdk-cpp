@@ -27,10 +27,8 @@ AccessKeyLastUsed::AccessKeyLastUsed() :
 {
 }
 
-AccessKeyLastUsed::AccessKeyLastUsed(const XmlNode& xmlNode) : 
-    m_lastUsedDateHasBeenSet(false),
-    m_serviceNameHasBeenSet(false),
-    m_regionHasBeenSet(false)
+AccessKeyLastUsed::AccessKeyLastUsed(const XmlNode& xmlNode)
+  : AccessKeyLastUsed()
 {
   *this = xmlNode;
 }

@@ -25,10 +25,8 @@ OutpostConfigRequest::OutpostConfigRequest() :
 {
 }
 
-OutpostConfigRequest::OutpostConfigRequest(JsonView jsonValue) : 
-    m_outpostArnsHasBeenSet(false),
-    m_controlPlaneInstanceTypeHasBeenSet(false),
-    m_controlPlanePlacementHasBeenSet(false)
+OutpostConfigRequest::OutpostConfigRequest(JsonView jsonValue)
+  : OutpostConfigRequest()
 {
   *this = jsonValue;
 }

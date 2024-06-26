@@ -25,10 +25,8 @@ EncryptionAlgorithmOptions::EncryptionAlgorithmOptions() :
 {
 }
 
-EncryptionAlgorithmOptions::EncryptionAlgorithmOptions(JsonView jsonValue) : 
-    m_allowedValuesHasBeenSet(false),
-    m_defaultValue(EncryptionAlgorithm::NOT_SET),
-    m_defaultValueHasBeenSet(false)
+EncryptionAlgorithmOptions::EncryptionAlgorithmOptions(JsonView jsonValue)
+  : EncryptionAlgorithmOptions()
 {
   *this = jsonValue;
 }

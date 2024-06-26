@@ -28,13 +28,8 @@ RuleConfig::RuleConfig() :
 {
 }
 
-RuleConfig::RuleConfig(JsonView jsonValue) : 
-    m_inverted(false),
-    m_invertedHasBeenSet(false),
-    m_threshold(0),
-    m_thresholdHasBeenSet(false),
-    m_type(RuleType::NOT_SET),
-    m_typeHasBeenSet(false)
+RuleConfig::RuleConfig(JsonView jsonValue)
+  : RuleConfig()
 {
   *this = jsonValue;
 }

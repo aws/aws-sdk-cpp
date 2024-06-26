@@ -32,17 +32,8 @@ TimeSeriesSummary::TimeSeriesSummary() :
 {
 }
 
-TimeSeriesSummary::TimeSeriesSummary(JsonView jsonValue) : 
-    m_assetIdHasBeenSet(false),
-    m_propertyIdHasBeenSet(false),
-    m_aliasHasBeenSet(false),
-    m_timeSeriesIdHasBeenSet(false),
-    m_dataType(PropertyDataType::NOT_SET),
-    m_dataTypeHasBeenSet(false),
-    m_dataTypeSpecHasBeenSet(false),
-    m_timeSeriesCreationDateHasBeenSet(false),
-    m_timeSeriesLastUpdateDateHasBeenSet(false),
-    m_timeSeriesArnHasBeenSet(false)
+TimeSeriesSummary::TimeSeriesSummary(JsonView jsonValue)
+  : TimeSeriesSummary()
 {
   *this = jsonValue;
 }

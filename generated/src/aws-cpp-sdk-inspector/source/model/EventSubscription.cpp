@@ -25,10 +25,8 @@ EventSubscription::EventSubscription() :
 {
 }
 
-EventSubscription::EventSubscription(JsonView jsonValue) : 
-    m_event(InspectorEvent::NOT_SET),
-    m_eventHasBeenSet(false),
-    m_subscribedAtHasBeenSet(false)
+EventSubscription::EventSubscription(JsonView jsonValue)
+  : EventSubscription()
 {
   *this = jsonValue;
 }

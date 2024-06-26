@@ -28,13 +28,8 @@ TableSideBorderOptions::TableSideBorderOptions() :
 {
 }
 
-TableSideBorderOptions::TableSideBorderOptions(JsonView jsonValue) : 
-    m_innerVerticalHasBeenSet(false),
-    m_innerHorizontalHasBeenSet(false),
-    m_leftHasBeenSet(false),
-    m_rightHasBeenSet(false),
-    m_topHasBeenSet(false),
-    m_bottomHasBeenSet(false)
+TableSideBorderOptions::TableSideBorderOptions(JsonView jsonValue)
+  : TableSideBorderOptions()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ ServerSummary::ServerSummary() :
 {
 }
 
-ServerSummary::ServerSummary(JsonView jsonValue) : 
-    m_serverOsType(ServerOsType::NOT_SET),
-    m_serverOsTypeHasBeenSet(false),
-    m_count(0),
-    m_countHasBeenSet(false)
+ServerSummary::ServerSummary(JsonView jsonValue)
+  : ServerSummary()
 {
   *this = jsonValue;
 }

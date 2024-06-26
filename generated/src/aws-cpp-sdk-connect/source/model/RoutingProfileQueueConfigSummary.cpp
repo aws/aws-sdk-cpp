@@ -31,16 +31,8 @@ RoutingProfileQueueConfigSummary::RoutingProfileQueueConfigSummary() :
 {
 }
 
-RoutingProfileQueueConfigSummary::RoutingProfileQueueConfigSummary(JsonView jsonValue) : 
-    m_queueIdHasBeenSet(false),
-    m_queueArnHasBeenSet(false),
-    m_queueNameHasBeenSet(false),
-    m_priority(0),
-    m_priorityHasBeenSet(false),
-    m_delay(0),
-    m_delayHasBeenSet(false),
-    m_channel(Channel::NOT_SET),
-    m_channelHasBeenSet(false)
+RoutingProfileQueueConfigSummary::RoutingProfileQueueConfigSummary(JsonView jsonValue)
+  : RoutingProfileQueueConfigSummary()
 {
   *this = jsonValue;
 }

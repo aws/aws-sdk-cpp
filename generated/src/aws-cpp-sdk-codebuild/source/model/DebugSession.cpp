@@ -25,10 +25,8 @@ DebugSession::DebugSession() :
 {
 }
 
-DebugSession::DebugSession(JsonView jsonValue) : 
-    m_sessionEnabled(false),
-    m_sessionEnabledHasBeenSet(false),
-    m_sessionTargetHasBeenSet(false)
+DebugSession::DebugSession(JsonView jsonValue)
+  : DebugSession()
 {
   *this = jsonValue;
 }

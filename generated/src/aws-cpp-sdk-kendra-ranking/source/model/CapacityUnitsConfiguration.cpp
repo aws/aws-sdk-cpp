@@ -24,9 +24,8 @@ CapacityUnitsConfiguration::CapacityUnitsConfiguration() :
 {
 }
 
-CapacityUnitsConfiguration::CapacityUnitsConfiguration(JsonView jsonValue) : 
-    m_rescoreCapacityUnits(0),
-    m_rescoreCapacityUnitsHasBeenSet(false)
+CapacityUnitsConfiguration::CapacityUnitsConfiguration(JsonView jsonValue)
+  : CapacityUnitsConfiguration()
 {
   *this = jsonValue;
 }

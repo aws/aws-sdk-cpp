@@ -25,10 +25,8 @@ DatastoreStorageSummary::DatastoreStorageSummary() :
 {
 }
 
-DatastoreStorageSummary::DatastoreStorageSummary(JsonView jsonValue) : 
-    m_serviceManagedS3HasBeenSet(false),
-    m_customerManagedS3HasBeenSet(false),
-    m_iotSiteWiseMultiLayerStorageHasBeenSet(false)
+DatastoreStorageSummary::DatastoreStorageSummary(JsonView jsonValue)
+  : DatastoreStorageSummary()
 {
   *this = jsonValue;
 }

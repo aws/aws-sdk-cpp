@@ -24,9 +24,8 @@ AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails::AwsEcsTask
 {
 }
 
-AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails::AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails(JsonView jsonValue) : 
-    m_optionsHasBeenSet(false),
-    m_typeHasBeenSet(false)
+AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails::AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails(JsonView jsonValue)
+  : AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails()
 {
   *this = jsonValue;
 }

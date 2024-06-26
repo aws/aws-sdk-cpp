@@ -25,8 +25,8 @@ ProposedMultiRegionAccessPointPolicy::ProposedMultiRegionAccessPointPolicy() :
 {
 }
 
-ProposedMultiRegionAccessPointPolicy::ProposedMultiRegionAccessPointPolicy(const XmlNode& xmlNode) : 
-    m_policyHasBeenSet(false)
+ProposedMultiRegionAccessPointPolicy::ProposedMultiRegionAccessPointPolicy(const XmlNode& xmlNode)
+  : ProposedMultiRegionAccessPointPolicy()
 {
   *this = xmlNode;
 }

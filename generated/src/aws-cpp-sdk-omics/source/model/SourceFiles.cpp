@@ -24,9 +24,8 @@ SourceFiles::SourceFiles() :
 {
 }
 
-SourceFiles::SourceFiles(JsonView jsonValue) : 
-    m_source1HasBeenSet(false),
-    m_source2HasBeenSet(false)
+SourceFiles::SourceFiles(JsonView jsonValue)
+  : SourceFiles()
 {
   *this = jsonValue;
 }

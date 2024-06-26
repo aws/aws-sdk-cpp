@@ -30,15 +30,8 @@ MetricDataPoint::MetricDataPoint() :
 {
 }
 
-MetricDataPoint::MetricDataPoint(JsonView jsonValue) : 
-    m_fpr(0.0),
-    m_fprHasBeenSet(false),
-    m_precision(0.0),
-    m_precisionHasBeenSet(false),
-    m_tpr(0.0),
-    m_tprHasBeenSet(false),
-    m_threshold(0.0),
-    m_thresholdHasBeenSet(false)
+MetricDataPoint::MetricDataPoint(JsonView jsonValue)
+  : MetricDataPoint()
 {
   *this = jsonValue;
 }

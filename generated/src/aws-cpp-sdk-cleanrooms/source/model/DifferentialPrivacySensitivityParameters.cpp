@@ -31,16 +31,8 @@ DifferentialPrivacySensitivityParameters::DifferentialPrivacySensitivityParamete
 {
 }
 
-DifferentialPrivacySensitivityParameters::DifferentialPrivacySensitivityParameters(JsonView jsonValue) : 
-    m_aggregationType(DifferentialPrivacyAggregationType::NOT_SET),
-    m_aggregationTypeHasBeenSet(false),
-    m_aggregationExpressionHasBeenSet(false),
-    m_userContributionLimit(0),
-    m_userContributionLimitHasBeenSet(false),
-    m_minColumnValue(0.0),
-    m_minColumnValueHasBeenSet(false),
-    m_maxColumnValue(0.0),
-    m_maxColumnValueHasBeenSet(false)
+DifferentialPrivacySensitivityParameters::DifferentialPrivacySensitivityParameters(JsonView jsonValue)
+  : DifferentialPrivacySensitivityParameters()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ AuditEventPerformedBy::AuditEventPerformedBy() :
 {
 }
 
-AuditEventPerformedBy::AuditEventPerformedBy(JsonView jsonValue) : 
-    m_iamPrincipalArnHasBeenSet(false),
-    m_userHasBeenSet(false)
+AuditEventPerformedBy::AuditEventPerformedBy(JsonView jsonValue)
+  : AuditEventPerformedBy()
 {
   *this = jsonValue;
 }

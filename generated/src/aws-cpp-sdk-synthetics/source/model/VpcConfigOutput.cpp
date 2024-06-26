@@ -25,10 +25,8 @@ VpcConfigOutput::VpcConfigOutput() :
 {
 }
 
-VpcConfigOutput::VpcConfigOutput(JsonView jsonValue) : 
-    m_vpcIdHasBeenSet(false),
-    m_subnetIdsHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false)
+VpcConfigOutput::VpcConfigOutput(JsonView jsonValue)
+  : VpcConfigOutput()
 {
   *this = jsonValue;
 }

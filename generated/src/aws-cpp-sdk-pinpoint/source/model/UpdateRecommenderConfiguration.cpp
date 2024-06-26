@@ -32,17 +32,8 @@ UpdateRecommenderConfiguration::UpdateRecommenderConfiguration() :
 {
 }
 
-UpdateRecommenderConfiguration::UpdateRecommenderConfiguration(JsonView jsonValue) : 
-    m_attributesHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_recommendationProviderIdTypeHasBeenSet(false),
-    m_recommendationProviderRoleArnHasBeenSet(false),
-    m_recommendationProviderUriHasBeenSet(false),
-    m_recommendationTransformerUriHasBeenSet(false),
-    m_recommendationsDisplayNameHasBeenSet(false),
-    m_recommendationsPerMessage(0),
-    m_recommendationsPerMessageHasBeenSet(false)
+UpdateRecommenderConfiguration::UpdateRecommenderConfiguration(JsonView jsonValue)
+  : UpdateRecommenderConfiguration()
 {
   *this = jsonValue;
 }

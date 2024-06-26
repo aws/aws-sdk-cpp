@@ -22,8 +22,8 @@ CreateProjectResult::CreateProjectResult() :
 {
 }
 
-CreateProjectResult::CreateProjectResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_projectStatus(ProjectStatus::NOT_SET)
+CreateProjectResult::CreateProjectResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateProjectResult()
 {
   *this = result;
 }

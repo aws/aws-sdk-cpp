@@ -43,28 +43,8 @@ CallAnalyticsJob::CallAnalyticsJob() :
 {
 }
 
-CallAnalyticsJob::CallAnalyticsJob(JsonView jsonValue) : 
-    m_callAnalyticsJobNameHasBeenSet(false),
-    m_callAnalyticsJobStatus(CallAnalyticsJobStatus::NOT_SET),
-    m_callAnalyticsJobStatusHasBeenSet(false),
-    m_callAnalyticsJobDetailsHasBeenSet(false),
-    m_languageCode(LanguageCode::NOT_SET),
-    m_languageCodeHasBeenSet(false),
-    m_mediaSampleRateHertz(0),
-    m_mediaSampleRateHertzHasBeenSet(false),
-    m_mediaFormat(MediaFormat::NOT_SET),
-    m_mediaFormatHasBeenSet(false),
-    m_mediaHasBeenSet(false),
-    m_transcriptHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_completionTimeHasBeenSet(false),
-    m_failureReasonHasBeenSet(false),
-    m_dataAccessRoleArnHasBeenSet(false),
-    m_identifiedLanguageScore(0.0),
-    m_identifiedLanguageScoreHasBeenSet(false),
-    m_settingsHasBeenSet(false),
-    m_channelDefinitionsHasBeenSet(false)
+CallAnalyticsJob::CallAnalyticsJob(JsonView jsonValue)
+  : CallAnalyticsJob()
 {
   *this = jsonValue;
 }

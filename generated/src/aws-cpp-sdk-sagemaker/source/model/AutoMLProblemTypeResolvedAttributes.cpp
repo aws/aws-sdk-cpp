@@ -24,9 +24,8 @@ AutoMLProblemTypeResolvedAttributes::AutoMLProblemTypeResolvedAttributes() :
 {
 }
 
-AutoMLProblemTypeResolvedAttributes::AutoMLProblemTypeResolvedAttributes(JsonView jsonValue) : 
-    m_tabularResolvedAttributesHasBeenSet(false),
-    m_textGenerationResolvedAttributesHasBeenSet(false)
+AutoMLProblemTypeResolvedAttributes::AutoMLProblemTypeResolvedAttributes(JsonView jsonValue)
+  : AutoMLProblemTypeResolvedAttributes()
 {
   *this = jsonValue;
 }

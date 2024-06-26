@@ -25,10 +25,8 @@ RouteMatrixEntryError::RouteMatrixEntryError() :
 {
 }
 
-RouteMatrixEntryError::RouteMatrixEntryError(JsonView jsonValue) : 
-    m_code(RouteMatrixErrorCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+RouteMatrixEntryError::RouteMatrixEntryError(JsonView jsonValue)
+  : RouteMatrixEntryError()
 {
   *this = jsonValue;
 }

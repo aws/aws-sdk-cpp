@@ -29,14 +29,8 @@ TransactionOutputItem::TransactionOutputItem() :
 {
 }
 
-TransactionOutputItem::TransactionOutputItem(JsonView jsonValue) : 
-    m_transactionHashHasBeenSet(false),
-    m_transactionIdHasBeenSet(false),
-    m_network(QueryNetwork::NOT_SET),
-    m_networkHasBeenSet(false),
-    m_transactionTimestampHasBeenSet(false),
-    m_confirmationStatus(ConfirmationStatus::NOT_SET),
-    m_confirmationStatusHasBeenSet(false)
+TransactionOutputItem::TransactionOutputItem(JsonView jsonValue)
+  : TransactionOutputItem()
 {
   *this = jsonValue;
 }

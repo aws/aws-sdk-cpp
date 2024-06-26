@@ -26,11 +26,8 @@ ServiceInsightHealth::ServiceInsightHealth() :
 {
 }
 
-ServiceInsightHealth::ServiceInsightHealth(JsonView jsonValue) : 
-    m_openProactiveInsights(0),
-    m_openProactiveInsightsHasBeenSet(false),
-    m_openReactiveInsights(0),
-    m_openReactiveInsightsHasBeenSet(false)
+ServiceInsightHealth::ServiceInsightHealth(JsonView jsonValue)
+  : ServiceInsightHealth()
 {
   *this = jsonValue;
 }

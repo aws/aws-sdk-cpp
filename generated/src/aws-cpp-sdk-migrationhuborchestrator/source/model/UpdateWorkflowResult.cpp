@@ -22,8 +22,8 @@ UpdateWorkflowResult::UpdateWorkflowResult() :
 {
 }
 
-UpdateWorkflowResult::UpdateWorkflowResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(MigrationWorkflowStatusEnum::NOT_SET)
+UpdateWorkflowResult::UpdateWorkflowResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateWorkflowResult()
 {
   *this = result;
 }

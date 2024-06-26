@@ -47,32 +47,8 @@ App::App() :
 {
 }
 
-App::App(JsonView jsonValue) : 
-    m_appArnHasBeenSet(false),
-    m_assessmentSchedule(AppAssessmentScheduleType::NOT_SET),
-    m_assessmentScheduleHasBeenSet(false),
-    m_complianceStatus(AppComplianceStatusType::NOT_SET),
-    m_complianceStatusHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_driftStatus(AppDriftStatusType::NOT_SET),
-    m_driftStatusHasBeenSet(false),
-    m_eventSubscriptionsHasBeenSet(false),
-    m_lastAppComplianceEvaluationTimeHasBeenSet(false),
-    m_lastDriftEvaluationTimeHasBeenSet(false),
-    m_lastResiliencyScoreEvaluationTimeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_permissionModelHasBeenSet(false),
-    m_policyArnHasBeenSet(false),
-    m_resiliencyScore(0.0),
-    m_resiliencyScoreHasBeenSet(false),
-    m_rpoInSecs(0),
-    m_rpoInSecsHasBeenSet(false),
-    m_rtoInSecs(0),
-    m_rtoInSecsHasBeenSet(false),
-    m_status(AppStatusType::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+App::App(JsonView jsonValue)
+  : App()
 {
   *this = jsonValue;
 }

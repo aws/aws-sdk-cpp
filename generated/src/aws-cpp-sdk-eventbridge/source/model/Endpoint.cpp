@@ -36,21 +36,8 @@ Endpoint::Endpoint() :
 {
 }
 
-Endpoint::Endpoint(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_routingConfigHasBeenSet(false),
-    m_replicationConfigHasBeenSet(false),
-    m_eventBusesHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_endpointIdHasBeenSet(false),
-    m_endpointUrlHasBeenSet(false),
-    m_state(EndpointState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_stateReasonHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false)
+Endpoint::Endpoint(JsonView jsonValue)
+  : Endpoint()
 {
   *this = jsonValue;
 }

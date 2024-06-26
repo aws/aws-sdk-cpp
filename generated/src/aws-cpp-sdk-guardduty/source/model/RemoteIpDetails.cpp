@@ -28,13 +28,8 @@ RemoteIpDetails::RemoteIpDetails() :
 {
 }
 
-RemoteIpDetails::RemoteIpDetails(JsonView jsonValue) : 
-    m_cityHasBeenSet(false),
-    m_countryHasBeenSet(false),
-    m_geoLocationHasBeenSet(false),
-    m_ipAddressV4HasBeenSet(false),
-    m_ipAddressV6HasBeenSet(false),
-    m_organizationHasBeenSet(false)
+RemoteIpDetails::RemoteIpDetails(JsonView jsonValue)
+  : RemoteIpDetails()
 {
   *this = jsonValue;
 }

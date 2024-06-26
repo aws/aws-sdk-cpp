@@ -33,16 +33,8 @@ ServerlessCacheSnapshot::ServerlessCacheSnapshot() :
 {
 }
 
-ServerlessCacheSnapshot::ServerlessCacheSnapshot(const XmlNode& xmlNode) : 
-    m_serverlessCacheSnapshotNameHasBeenSet(false),
-    m_aRNHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_snapshotTypeHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_expiryTimeHasBeenSet(false),
-    m_bytesUsedForCacheHasBeenSet(false),
-    m_serverlessCacheConfigurationHasBeenSet(false)
+ServerlessCacheSnapshot::ServerlessCacheSnapshot(const XmlNode& xmlNode)
+  : ServerlessCacheSnapshot()
 {
   *this = xmlNode;
 }

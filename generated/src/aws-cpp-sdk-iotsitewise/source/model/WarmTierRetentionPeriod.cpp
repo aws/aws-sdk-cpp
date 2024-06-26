@@ -26,11 +26,8 @@ WarmTierRetentionPeriod::WarmTierRetentionPeriod() :
 {
 }
 
-WarmTierRetentionPeriod::WarmTierRetentionPeriod(JsonView jsonValue) : 
-    m_numberOfDays(0),
-    m_numberOfDaysHasBeenSet(false),
-    m_unlimited(false),
-    m_unlimitedHasBeenSet(false)
+WarmTierRetentionPeriod::WarmTierRetentionPeriod(JsonView jsonValue)
+  : WarmTierRetentionPeriod()
 {
   *this = jsonValue;
 }

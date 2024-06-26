@@ -25,10 +25,8 @@ SigV4Authorization::SigV4Authorization() :
 {
 }
 
-SigV4Authorization::SigV4Authorization(JsonView jsonValue) : 
-    m_signingRegionHasBeenSet(false),
-    m_serviceNameHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
+SigV4Authorization::SigV4Authorization(JsonView jsonValue)
+  : SigV4Authorization()
 {
   *this = jsonValue;
 }

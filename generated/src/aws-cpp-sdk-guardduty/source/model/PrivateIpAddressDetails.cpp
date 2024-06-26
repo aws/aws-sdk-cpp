@@ -24,9 +24,8 @@ PrivateIpAddressDetails::PrivateIpAddressDetails() :
 {
 }
 
-PrivateIpAddressDetails::PrivateIpAddressDetails(JsonView jsonValue) : 
-    m_privateDnsNameHasBeenSet(false),
-    m_privateIpAddressHasBeenSet(false)
+PrivateIpAddressDetails::PrivateIpAddressDetails(JsonView jsonValue)
+  : PrivateIpAddressDetails()
 {
   *this = jsonValue;
 }

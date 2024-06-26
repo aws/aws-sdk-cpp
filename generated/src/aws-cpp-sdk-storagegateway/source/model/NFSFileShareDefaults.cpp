@@ -28,13 +28,8 @@ NFSFileShareDefaults::NFSFileShareDefaults() :
 {
 }
 
-NFSFileShareDefaults::NFSFileShareDefaults(JsonView jsonValue) : 
-    m_fileModeHasBeenSet(false),
-    m_directoryModeHasBeenSet(false),
-    m_groupId(0),
-    m_groupIdHasBeenSet(false),
-    m_ownerId(0),
-    m_ownerIdHasBeenSet(false)
+NFSFileShareDefaults::NFSFileShareDefaults(JsonView jsonValue)
+  : NFSFileShareDefaults()
 {
   *this = jsonValue;
 }

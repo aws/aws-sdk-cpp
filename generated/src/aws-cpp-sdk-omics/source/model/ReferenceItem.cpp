@@ -23,8 +23,8 @@ ReferenceItem::ReferenceItem() :
 {
 }
 
-ReferenceItem::ReferenceItem(JsonView jsonValue) : 
-    m_referenceArnHasBeenSet(false)
+ReferenceItem::ReferenceItem(JsonView jsonValue)
+  : ReferenceItem()
 {
   *this = jsonValue;
 }

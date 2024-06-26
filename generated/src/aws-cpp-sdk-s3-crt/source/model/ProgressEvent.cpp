@@ -25,8 +25,8 @@ ProgressEvent::ProgressEvent() :
 {
 }
 
-ProgressEvent::ProgressEvent(const XmlNode& xmlNode) : 
-    m_detailsHasBeenSet(false)
+ProgressEvent::ProgressEvent(const XmlNode& xmlNode)
+  : ProgressEvent()
 {
   *this = xmlNode;
 }

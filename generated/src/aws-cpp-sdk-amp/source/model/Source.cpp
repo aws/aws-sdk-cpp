@@ -23,8 +23,8 @@ Source::Source() :
 {
 }
 
-Source::Source(JsonView jsonValue) : 
-    m_eksConfigurationHasBeenSet(false)
+Source::Source(JsonView jsonValue)
+  : Source()
 {
   *this = jsonValue;
 }

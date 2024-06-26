@@ -23,8 +23,8 @@ LambdaAvailabilityProvider::LambdaAvailabilityProvider() :
 {
 }
 
-LambdaAvailabilityProvider::LambdaAvailabilityProvider(JsonView jsonValue) : 
-    m_lambdaArnHasBeenSet(false)
+LambdaAvailabilityProvider::LambdaAvailabilityProvider(JsonView jsonValue)
+  : LambdaAvailabilityProvider()
 {
   *this = jsonValue;
 }

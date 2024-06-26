@@ -26,9 +26,8 @@ GlobalNodeGroup::GlobalNodeGroup() :
 {
 }
 
-GlobalNodeGroup::GlobalNodeGroup(const XmlNode& xmlNode) : 
-    m_globalNodeGroupIdHasBeenSet(false),
-    m_slotsHasBeenSet(false)
+GlobalNodeGroup::GlobalNodeGroup(const XmlNode& xmlNode)
+  : GlobalNodeGroup()
 {
   *this = xmlNode;
 }

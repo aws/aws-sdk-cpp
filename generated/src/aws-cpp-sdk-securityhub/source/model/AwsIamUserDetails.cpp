@@ -30,15 +30,8 @@ AwsIamUserDetails::AwsIamUserDetails() :
 {
 }
 
-AwsIamUserDetails::AwsIamUserDetails(JsonView jsonValue) : 
-    m_attachedManagedPoliciesHasBeenSet(false),
-    m_createDateHasBeenSet(false),
-    m_groupListHasBeenSet(false),
-    m_pathHasBeenSet(false),
-    m_permissionsBoundaryHasBeenSet(false),
-    m_userIdHasBeenSet(false),
-    m_userNameHasBeenSet(false),
-    m_userPolicyListHasBeenSet(false)
+AwsIamUserDetails::AwsIamUserDetails(JsonView jsonValue)
+  : AwsIamUserDetails()
 {
   *this = jsonValue;
 }

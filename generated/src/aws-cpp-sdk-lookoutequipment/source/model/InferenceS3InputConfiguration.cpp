@@ -24,9 +24,8 @@ InferenceS3InputConfiguration::InferenceS3InputConfiguration() :
 {
 }
 
-InferenceS3InputConfiguration::InferenceS3InputConfiguration(JsonView jsonValue) : 
-    m_bucketHasBeenSet(false),
-    m_prefixHasBeenSet(false)
+InferenceS3InputConfiguration::InferenceS3InputConfiguration(JsonView jsonValue)
+  : InferenceS3InputConfiguration()
 {
   *this = jsonValue;
 }

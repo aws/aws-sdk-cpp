@@ -25,10 +25,8 @@ RDSStorageSavingsOpportunityAfterDiscounts::RDSStorageSavingsOpportunityAfterDis
 {
 }
 
-RDSStorageSavingsOpportunityAfterDiscounts::RDSStorageSavingsOpportunityAfterDiscounts(JsonView jsonValue) : 
-    m_savingsOpportunityPercentage(0.0),
-    m_savingsOpportunityPercentageHasBeenSet(false),
-    m_estimatedMonthlySavingsHasBeenSet(false)
+RDSStorageSavingsOpportunityAfterDiscounts::RDSStorageSavingsOpportunityAfterDiscounts(JsonView jsonValue)
+  : RDSStorageSavingsOpportunityAfterDiscounts()
 {
   *this = jsonValue;
 }

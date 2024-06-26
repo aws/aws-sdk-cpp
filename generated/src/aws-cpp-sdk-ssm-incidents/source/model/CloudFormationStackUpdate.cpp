@@ -25,10 +25,8 @@ CloudFormationStackUpdate::CloudFormationStackUpdate() :
 {
 }
 
-CloudFormationStackUpdate::CloudFormationStackUpdate(JsonView jsonValue) : 
-    m_endTimeHasBeenSet(false),
-    m_stackArnHasBeenSet(false),
-    m_startTimeHasBeenSet(false)
+CloudFormationStackUpdate::CloudFormationStackUpdate(JsonView jsonValue)
+  : CloudFormationStackUpdate()
 {
   *this = jsonValue;
 }

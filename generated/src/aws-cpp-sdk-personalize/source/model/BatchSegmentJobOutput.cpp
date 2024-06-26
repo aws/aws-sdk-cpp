@@ -23,8 +23,8 @@ BatchSegmentJobOutput::BatchSegmentJobOutput() :
 {
 }
 
-BatchSegmentJobOutput::BatchSegmentJobOutput(JsonView jsonValue) : 
-    m_s3DataDestinationHasBeenSet(false)
+BatchSegmentJobOutput::BatchSegmentJobOutput(JsonView jsonValue)
+  : BatchSegmentJobOutput()
 {
   *this = jsonValue;
 }

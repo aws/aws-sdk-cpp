@@ -24,9 +24,8 @@ SageMakerPipelineParameter::SageMakerPipelineParameter() :
 {
 }
 
-SageMakerPipelineParameter::SageMakerPipelineParameter(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
+SageMakerPipelineParameter::SageMakerPipelineParameter(JsonView jsonValue)
+  : SageMakerPipelineParameter()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ HttpGatewayRouteAction::HttpGatewayRouteAction() :
 {
 }
 
-HttpGatewayRouteAction::HttpGatewayRouteAction(JsonView jsonValue) : 
-    m_rewriteHasBeenSet(false),
-    m_targetHasBeenSet(false)
+HttpGatewayRouteAction::HttpGatewayRouteAction(JsonView jsonValue)
+  : HttpGatewayRouteAction()
 {
   *this = jsonValue;
 }

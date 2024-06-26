@@ -26,11 +26,8 @@ VcfOptions::VcfOptions() :
 {
 }
 
-VcfOptions::VcfOptions(JsonView jsonValue) : 
-    m_ignoreQualField(false),
-    m_ignoreQualFieldHasBeenSet(false),
-    m_ignoreFilterField(false),
-    m_ignoreFilterFieldHasBeenSet(false)
+VcfOptions::VcfOptions(JsonView jsonValue)
+  : VcfOptions()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ CodeSource::CodeSource() :
 {
 }
 
-CodeSource::CodeSource(JsonView jsonValue) : 
-    m_s3HasBeenSet(false)
+CodeSource::CodeSource(JsonView jsonValue)
+  : CodeSource()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ AttributeSuggestionsDescribeConfig::AttributeSuggestionsDescribeConfig() :
 {
 }
 
-AttributeSuggestionsDescribeConfig::AttributeSuggestionsDescribeConfig(JsonView jsonValue) : 
-    m_suggestableConfigListHasBeenSet(false),
-    m_attributeSuggestionsMode(AttributeSuggestionsMode::NOT_SET),
-    m_attributeSuggestionsModeHasBeenSet(false)
+AttributeSuggestionsDescribeConfig::AttributeSuggestionsDescribeConfig(JsonView jsonValue)
+  : AttributeSuggestionsDescribeConfig()
 {
   *this = jsonValue;
 }

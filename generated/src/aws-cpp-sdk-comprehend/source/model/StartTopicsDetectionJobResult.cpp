@@ -22,8 +22,8 @@ StartTopicsDetectionJobResult::StartTopicsDetectionJobResult() :
 {
 }
 
-StartTopicsDetectionJobResult::StartTopicsDetectionJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_jobStatus(JobStatus::NOT_SET)
+StartTopicsDetectionJobResult::StartTopicsDetectionJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : StartTopicsDetectionJobResult()
 {
   *this = result;
 }

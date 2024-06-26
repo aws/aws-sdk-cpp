@@ -30,13 +30,8 @@ DestinationOptionsRequest::DestinationOptionsRequest() :
 {
 }
 
-DestinationOptionsRequest::DestinationOptionsRequest(const XmlNode& xmlNode) : 
-    m_fileFormat(DestinationFileFormat::NOT_SET),
-    m_fileFormatHasBeenSet(false),
-    m_hiveCompatiblePartitions(false),
-    m_hiveCompatiblePartitionsHasBeenSet(false),
-    m_perHourPartition(false),
-    m_perHourPartitionHasBeenSet(false)
+DestinationOptionsRequest::DestinationOptionsRequest(const XmlNode& xmlNode)
+  : DestinationOptionsRequest()
 {
   *this = xmlNode;
 }

@@ -25,10 +25,8 @@ UsageTopAccountsResult::UsageTopAccountsResult() :
 {
 }
 
-UsageTopAccountsResult::UsageTopAccountsResult(JsonView jsonValue) : 
-    m_feature(UsageFeature::NOT_SET),
-    m_featureHasBeenSet(false),
-    m_accountsHasBeenSet(false)
+UsageTopAccountsResult::UsageTopAccountsResult(JsonView jsonValue)
+  : UsageTopAccountsResult()
 {
   *this = jsonValue;
 }

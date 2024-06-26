@@ -29,14 +29,8 @@ SearchRelatedItemsResponseItem::SearchRelatedItemsResponseItem() :
 {
 }
 
-SearchRelatedItemsResponseItem::SearchRelatedItemsResponseItem(JsonView jsonValue) : 
-    m_associationTimeHasBeenSet(false),
-    m_contentHasBeenSet(false),
-    m_performedByHasBeenSet(false),
-    m_relatedItemIdHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_type(RelatedItemType::NOT_SET),
-    m_typeHasBeenSet(false)
+SearchRelatedItemsResponseItem::SearchRelatedItemsResponseItem(JsonView jsonValue)
+  : SearchRelatedItemsResponseItem()
 {
   *this = jsonValue;
 }

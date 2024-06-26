@@ -32,17 +32,8 @@ ProjectSummary::ProjectSummary() :
 {
 }
 
-ProjectSummary::ProjectSummary(JsonView jsonValue) : 
-    m_createdAtHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_domainIdHasBeenSet(false),
-    m_failureReasonsHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_projectStatus(ProjectStatus::NOT_SET),
-    m_projectStatusHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+ProjectSummary::ProjectSummary(JsonView jsonValue)
+  : ProjectSummary()
 {
   *this = jsonValue;
 }

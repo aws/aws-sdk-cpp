@@ -22,8 +22,8 @@ DescribeChannelResult::DescribeChannelResult() :
 {
 }
 
-DescribeChannelResult::DescribeChannelResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_channelState(ChannelState::NOT_SET)
+DescribeChannelResult::DescribeChannelResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeChannelResult()
 {
   *this = result;
 }

@@ -26,11 +26,8 @@ GlueRunConfigurationInput::GlueRunConfigurationInput() :
 {
 }
 
-GlueRunConfigurationInput::GlueRunConfigurationInput(JsonView jsonValue) : 
-    m_autoImportDataQualityResult(false),
-    m_autoImportDataQualityResultHasBeenSet(false),
-    m_dataAccessRoleHasBeenSet(false),
-    m_relationalFilterConfigurationsHasBeenSet(false)
+GlueRunConfigurationInput::GlueRunConfigurationInput(JsonView jsonValue)
+  : GlueRunConfigurationInput()
 {
   *this = jsonValue;
 }

@@ -68,53 +68,8 @@ Cluster::Cluster() :
 {
 }
 
-Cluster::Cluster(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_ec2InstanceAttributesHasBeenSet(false),
-    m_instanceCollectionType(InstanceCollectionType::NOT_SET),
-    m_instanceCollectionTypeHasBeenSet(false),
-    m_logUriHasBeenSet(false),
-    m_logEncryptionKmsKeyIdHasBeenSet(false),
-    m_requestedAmiVersionHasBeenSet(false),
-    m_runningAmiVersionHasBeenSet(false),
-    m_releaseLabelHasBeenSet(false),
-    m_autoTerminate(false),
-    m_autoTerminateHasBeenSet(false),
-    m_terminationProtected(false),
-    m_terminationProtectedHasBeenSet(false),
-    m_unhealthyNodeReplacement(false),
-    m_unhealthyNodeReplacementHasBeenSet(false),
-    m_visibleToAllUsers(false),
-    m_visibleToAllUsersHasBeenSet(false),
-    m_applicationsHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_serviceRoleHasBeenSet(false),
-    m_normalizedInstanceHours(0),
-    m_normalizedInstanceHoursHasBeenSet(false),
-    m_masterPublicDnsNameHasBeenSet(false),
-    m_configurationsHasBeenSet(false),
-    m_securityConfigurationHasBeenSet(false),
-    m_autoScalingRoleHasBeenSet(false),
-    m_scaleDownBehavior(ScaleDownBehavior::NOT_SET),
-    m_scaleDownBehaviorHasBeenSet(false),
-    m_customAmiIdHasBeenSet(false),
-    m_ebsRootVolumeSize(0),
-    m_ebsRootVolumeSizeHasBeenSet(false),
-    m_repoUpgradeOnBoot(RepoUpgradeOnBoot::NOT_SET),
-    m_repoUpgradeOnBootHasBeenSet(false),
-    m_kerberosAttributesHasBeenSet(false),
-    m_clusterArnHasBeenSet(false),
-    m_outpostArnHasBeenSet(false),
-    m_stepConcurrencyLevel(0),
-    m_stepConcurrencyLevelHasBeenSet(false),
-    m_placementGroupsHasBeenSet(false),
-    m_oSReleaseLabelHasBeenSet(false),
-    m_ebsRootVolumeIops(0),
-    m_ebsRootVolumeIopsHasBeenSet(false),
-    m_ebsRootVolumeThroughput(0),
-    m_ebsRootVolumeThroughputHasBeenSet(false)
+Cluster::Cluster(JsonView jsonValue)
+  : Cluster()
 {
   *this = jsonValue;
 }

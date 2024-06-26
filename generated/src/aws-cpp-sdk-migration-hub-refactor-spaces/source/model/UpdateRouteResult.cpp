@@ -22,8 +22,8 @@ UpdateRouteResult::UpdateRouteResult() :
 {
 }
 
-UpdateRouteResult::UpdateRouteResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_state(RouteState::NOT_SET)
+UpdateRouteResult::UpdateRouteResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateRouteResult()
 {
   *this = result;
 }

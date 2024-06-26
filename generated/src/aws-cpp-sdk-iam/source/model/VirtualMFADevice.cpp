@@ -31,13 +31,8 @@ VirtualMFADevice::VirtualMFADevice() :
 {
 }
 
-VirtualMFADevice::VirtualMFADevice(const XmlNode& xmlNode) : 
-    m_serialNumberHasBeenSet(false),
-    m_base32StringSeedHasBeenSet(false),
-    m_qRCodePNGHasBeenSet(false),
-    m_userHasBeenSet(false),
-    m_enableDateHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+VirtualMFADevice::VirtualMFADevice(const XmlNode& xmlNode)
+  : VirtualMFADevice()
 {
   *this = xmlNode;
 }

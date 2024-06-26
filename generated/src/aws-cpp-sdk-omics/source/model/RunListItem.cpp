@@ -37,22 +37,8 @@ RunListItem::RunListItem() :
 {
 }
 
-RunListItem::RunListItem(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_status(RunStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_workflowIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_priority(0),
-    m_priorityHasBeenSet(false),
-    m_storageCapacity(0),
-    m_storageCapacityHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_stopTimeHasBeenSet(false),
-    m_storageType(StorageType::NOT_SET),
-    m_storageTypeHasBeenSet(false)
+RunListItem::RunListItem(JsonView jsonValue)
+  : RunListItem()
 {
   *this = jsonValue;
 }

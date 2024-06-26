@@ -25,10 +25,8 @@ InvalidNumericDataException::InvalidNumericDataException() :
 {
 }
 
-InvalidNumericDataException::InvalidNumericDataException(JsonView jsonValue) : 
-    m_detailedMessageHasBeenSet(false),
-    m_requestIdHasBeenSet(false),
-    m_codeHasBeenSet(false)
+InvalidNumericDataException::InvalidNumericDataException(JsonView jsonValue)
+  : InvalidNumericDataException()
 {
   *this = jsonValue;
 }

@@ -25,8 +25,8 @@ SuccessfulQueuedPurchaseDeletion::SuccessfulQueuedPurchaseDeletion() :
 {
 }
 
-SuccessfulQueuedPurchaseDeletion::SuccessfulQueuedPurchaseDeletion(const XmlNode& xmlNode) : 
-    m_reservedInstancesIdHasBeenSet(false)
+SuccessfulQueuedPurchaseDeletion::SuccessfulQueuedPurchaseDeletion(const XmlNode& xmlNode)
+  : SuccessfulQueuedPurchaseDeletion()
 {
   *this = xmlNode;
 }

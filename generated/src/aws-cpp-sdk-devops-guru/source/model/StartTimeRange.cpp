@@ -24,9 +24,8 @@ StartTimeRange::StartTimeRange() :
 {
 }
 
-StartTimeRange::StartTimeRange(JsonView jsonValue) : 
-    m_fromTimeHasBeenSet(false),
-    m_toTimeHasBeenSet(false)
+StartTimeRange::StartTimeRange(JsonView jsonValue)
+  : StartTimeRange()
 {
   *this = jsonValue;
 }

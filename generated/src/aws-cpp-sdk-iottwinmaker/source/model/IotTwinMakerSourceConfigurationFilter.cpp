@@ -24,9 +24,8 @@ IotTwinMakerSourceConfigurationFilter::IotTwinMakerSourceConfigurationFilter() :
 {
 }
 
-IotTwinMakerSourceConfigurationFilter::IotTwinMakerSourceConfigurationFilter(JsonView jsonValue) : 
-    m_filterByComponentTypeHasBeenSet(false),
-    m_filterByEntityHasBeenSet(false)
+IotTwinMakerSourceConfigurationFilter::IotTwinMakerSourceConfigurationFilter(JsonView jsonValue)
+  : IotTwinMakerSourceConfigurationFilter()
 {
   *this = jsonValue;
 }

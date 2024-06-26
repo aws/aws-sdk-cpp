@@ -24,9 +24,8 @@ OfferingPromotion::OfferingPromotion() :
 {
 }
 
-OfferingPromotion::OfferingPromotion(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+OfferingPromotion::OfferingPromotion(JsonView jsonValue)
+  : OfferingPromotion()
 {
   *this = jsonValue;
 }

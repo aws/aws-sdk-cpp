@@ -26,11 +26,8 @@ ConfluencePageToIndexFieldMapping::ConfluencePageToIndexFieldMapping() :
 {
 }
 
-ConfluencePageToIndexFieldMapping::ConfluencePageToIndexFieldMapping(JsonView jsonValue) : 
-    m_dataSourceFieldName(ConfluencePageFieldName::NOT_SET),
-    m_dataSourceFieldNameHasBeenSet(false),
-    m_dateFieldFormatHasBeenSet(false),
-    m_indexFieldNameHasBeenSet(false)
+ConfluencePageToIndexFieldMapping::ConfluencePageToIndexFieldMapping(JsonView jsonValue)
+  : ConfluencePageToIndexFieldMapping()
 {
   *this = jsonValue;
 }

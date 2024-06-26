@@ -22,8 +22,8 @@ UnarchiveApplicationResult::UnarchiveApplicationResult() :
 {
 }
 
-UnarchiveApplicationResult::UnarchiveApplicationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_isArchived(false)
+UnarchiveApplicationResult::UnarchiveApplicationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UnarchiveApplicationResult()
 {
   *this = result;
 }

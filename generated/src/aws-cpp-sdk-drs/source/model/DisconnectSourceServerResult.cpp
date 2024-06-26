@@ -23,9 +23,8 @@ DisconnectSourceServerResult::DisconnectSourceServerResult() :
 {
 }
 
-DisconnectSourceServerResult::DisconnectSourceServerResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_lastLaunchResult(LastLaunchResult::NOT_SET),
-    m_replicationDirection(ReplicationDirection::NOT_SET)
+DisconnectSourceServerResult::DisconnectSourceServerResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DisconnectSourceServerResult()
 {
   *this = result;
 }

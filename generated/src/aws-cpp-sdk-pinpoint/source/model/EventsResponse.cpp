@@ -23,8 +23,8 @@ EventsResponse::EventsResponse() :
 {
 }
 
-EventsResponse::EventsResponse(JsonView jsonValue) : 
-    m_resultsHasBeenSet(false)
+EventsResponse::EventsResponse(JsonView jsonValue)
+  : EventsResponse()
 {
   *this = jsonValue;
 }

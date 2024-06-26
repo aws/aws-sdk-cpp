@@ -33,18 +33,8 @@ StaticIp::StaticIp() :
 {
 }
 
-StaticIp::StaticIp(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_supportCodeHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_locationHasBeenSet(false),
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_ipAddressHasBeenSet(false),
-    m_attachedToHasBeenSet(false),
-    m_isAttached(false),
-    m_isAttachedHasBeenSet(false)
+StaticIp::StaticIp(JsonView jsonValue)
+  : StaticIp()
 {
   *this = jsonValue;
 }

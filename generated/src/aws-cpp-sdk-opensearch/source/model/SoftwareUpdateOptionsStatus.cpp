@@ -24,9 +24,8 @@ SoftwareUpdateOptionsStatus::SoftwareUpdateOptionsStatus() :
 {
 }
 
-SoftwareUpdateOptionsStatus::SoftwareUpdateOptionsStatus(JsonView jsonValue) : 
-    m_optionsHasBeenSet(false),
-    m_statusHasBeenSet(false)
+SoftwareUpdateOptionsStatus::SoftwareUpdateOptionsStatus(JsonView jsonValue)
+  : SoftwareUpdateOptionsStatus()
 {
   *this = jsonValue;
 }

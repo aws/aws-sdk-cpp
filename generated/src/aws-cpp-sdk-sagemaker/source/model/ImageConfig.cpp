@@ -25,10 +25,8 @@ ImageConfig::ImageConfig() :
 {
 }
 
-ImageConfig::ImageConfig(JsonView jsonValue) : 
-    m_repositoryAccessMode(RepositoryAccessMode::NOT_SET),
-    m_repositoryAccessModeHasBeenSet(false),
-    m_repositoryAuthConfigHasBeenSet(false)
+ImageConfig::ImageConfig(JsonView jsonValue)
+  : ImageConfig()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ DescribeTaskResult::DescribeTaskResult() :
 {
 }
 
-DescribeTaskResult::DescribeTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_state(TaskState::NOT_SET)
+DescribeTaskResult::DescribeTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeTaskResult()
 {
   *this = result;
 }

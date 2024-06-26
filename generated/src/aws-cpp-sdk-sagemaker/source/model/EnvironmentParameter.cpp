@@ -25,10 +25,8 @@ EnvironmentParameter::EnvironmentParameter() :
 {
 }
 
-EnvironmentParameter::EnvironmentParameter(JsonView jsonValue) : 
-    m_keyHasBeenSet(false),
-    m_valueTypeHasBeenSet(false),
-    m_valueHasBeenSet(false)
+EnvironmentParameter::EnvironmentParameter(JsonView jsonValue)
+  : EnvironmentParameter()
 {
   *this = jsonValue;
 }

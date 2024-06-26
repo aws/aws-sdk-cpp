@@ -27,10 +27,8 @@ CustomHeaders::CustomHeaders() :
 {
 }
 
-CustomHeaders::CustomHeaders(const XmlNode& xmlNode) : 
-    m_quantity(0),
-    m_quantityHasBeenSet(false),
-    m_itemsHasBeenSet(false)
+CustomHeaders::CustomHeaders(const XmlNode& xmlNode)
+  : CustomHeaders()
 {
   *this = xmlNode;
 }

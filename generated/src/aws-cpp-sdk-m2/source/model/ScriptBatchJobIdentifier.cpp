@@ -23,8 +23,8 @@ ScriptBatchJobIdentifier::ScriptBatchJobIdentifier() :
 {
 }
 
-ScriptBatchJobIdentifier::ScriptBatchJobIdentifier(JsonView jsonValue) : 
-    m_scriptNameHasBeenSet(false)
+ScriptBatchJobIdentifier::ScriptBatchJobIdentifier(JsonView jsonValue)
+  : ScriptBatchJobIdentifier()
 {
   *this = jsonValue;
 }

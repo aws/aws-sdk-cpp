@@ -27,12 +27,8 @@ Filter::Filter() :
 {
 }
 
-Filter::Filter(JsonView jsonValue) : 
-    m_behavior(FilterBehavior::NOT_SET),
-    m_behaviorHasBeenSet(false),
-    m_requirement(FilterRequirement::NOT_SET),
-    m_requirementHasBeenSet(false),
-    m_conditionsHasBeenSet(false)
+Filter::Filter(JsonView jsonValue)
+  : Filter()
 {
   *this = jsonValue;
 }

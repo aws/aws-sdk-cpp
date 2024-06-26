@@ -30,13 +30,8 @@ S3JobManifestGenerator::S3JobManifestGenerator() :
 {
 }
 
-S3JobManifestGenerator::S3JobManifestGenerator(const XmlNode& xmlNode) : 
-    m_expectedBucketOwnerHasBeenSet(false),
-    m_sourceBucketHasBeenSet(false),
-    m_manifestOutputLocationHasBeenSet(false),
-    m_filterHasBeenSet(false),
-    m_enableManifestOutput(false),
-    m_enableManifestOutputHasBeenSet(false)
+S3JobManifestGenerator::S3JobManifestGenerator(const XmlNode& xmlNode)
+  : S3JobManifestGenerator()
 {
   *this = xmlNode;
 }

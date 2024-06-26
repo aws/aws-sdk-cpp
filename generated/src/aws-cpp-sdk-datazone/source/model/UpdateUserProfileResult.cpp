@@ -23,9 +23,8 @@ UpdateUserProfileResult::UpdateUserProfileResult() :
 {
 }
 
-UpdateUserProfileResult::UpdateUserProfileResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(UserProfileStatus::NOT_SET),
-    m_type(UserProfileType::NOT_SET)
+UpdateUserProfileResult::UpdateUserProfileResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateUserProfileResult()
 {
   *this = result;
 }

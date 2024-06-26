@@ -24,9 +24,8 @@ KPIVisualStandardLayout::KPIVisualStandardLayout() :
 {
 }
 
-KPIVisualStandardLayout::KPIVisualStandardLayout(JsonView jsonValue) : 
-    m_type(KPIVisualStandardLayoutType::NOT_SET),
-    m_typeHasBeenSet(false)
+KPIVisualStandardLayout::KPIVisualStandardLayout(JsonView jsonValue)
+  : KPIVisualStandardLayout()
 {
   *this = jsonValue;
 }

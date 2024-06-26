@@ -25,10 +25,8 @@ RelatedItemTypeFilter::RelatedItemTypeFilter() :
 {
 }
 
-RelatedItemTypeFilter::RelatedItemTypeFilter(JsonView jsonValue) : 
-    m_commentHasBeenSet(false),
-    m_contactHasBeenSet(false),
-    m_fileHasBeenSet(false)
+RelatedItemTypeFilter::RelatedItemTypeFilter(JsonView jsonValue)
+  : RelatedItemTypeFilter()
 {
   *this = jsonValue;
 }

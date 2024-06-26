@@ -26,11 +26,8 @@ UpdateProgramTransition::UpdateProgramTransition() :
 {
 }
 
-UpdateProgramTransition::UpdateProgramTransition(JsonView jsonValue) : 
-    m_durationMillis(0),
-    m_durationMillisHasBeenSet(false),
-    m_scheduledStartTimeMillis(0),
-    m_scheduledStartTimeMillisHasBeenSet(false)
+UpdateProgramTransition::UpdateProgramTransition(JsonView jsonValue)
+  : UpdateProgramTransition()
 {
   *this = jsonValue;
 }

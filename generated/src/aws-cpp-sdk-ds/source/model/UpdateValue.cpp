@@ -23,8 +23,8 @@ UpdateValue::UpdateValue() :
 {
 }
 
-UpdateValue::UpdateValue(JsonView jsonValue) : 
-    m_oSUpdateSettingsHasBeenSet(false)
+UpdateValue::UpdateValue(JsonView jsonValue)
+  : UpdateValue()
 {
   *this = jsonValue;
 }

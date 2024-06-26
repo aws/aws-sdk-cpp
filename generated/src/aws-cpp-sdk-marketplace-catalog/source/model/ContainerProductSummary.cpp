@@ -25,10 +25,8 @@ ContainerProductSummary::ContainerProductSummary() :
 {
 }
 
-ContainerProductSummary::ContainerProductSummary(JsonView jsonValue) : 
-    m_productTitleHasBeenSet(false),
-    m_visibility(ContainerProductVisibilityString::NOT_SET),
-    m_visibilityHasBeenSet(false)
+ContainerProductSummary::ContainerProductSummary(JsonView jsonValue)
+  : ContainerProductSummary()
 {
   *this = jsonValue;
 }

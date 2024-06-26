@@ -44,29 +44,8 @@ PortalSummary::PortalSummary() :
 {
 }
 
-PortalSummary::PortalSummary(JsonView jsonValue) : 
-    m_authenticationType(AuthenticationType::NOT_SET),
-    m_authenticationTypeHasBeenSet(false),
-    m_browserSettingsArnHasBeenSet(false),
-    m_browserType(BrowserType::NOT_SET),
-    m_browserTypeHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_instanceType(InstanceType::NOT_SET),
-    m_instanceTypeHasBeenSet(false),
-    m_ipAccessSettingsArnHasBeenSet(false),
-    m_maxConcurrentSessions(0),
-    m_maxConcurrentSessionsHasBeenSet(false),
-    m_networkSettingsArnHasBeenSet(false),
-    m_portalArnHasBeenSet(false),
-    m_portalEndpointHasBeenSet(false),
-    m_portalStatus(PortalStatus::NOT_SET),
-    m_portalStatusHasBeenSet(false),
-    m_rendererType(RendererType::NOT_SET),
-    m_rendererTypeHasBeenSet(false),
-    m_trustStoreArnHasBeenSet(false),
-    m_userAccessLoggingSettingsArnHasBeenSet(false),
-    m_userSettingsArnHasBeenSet(false)
+PortalSummary::PortalSummary(JsonView jsonValue)
+  : PortalSummary()
 {
   *this = jsonValue;
 }

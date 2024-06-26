@@ -22,8 +22,8 @@ GetIdentityResolutionJobResult::GetIdentityResolutionJobResult() :
 {
 }
 
-GetIdentityResolutionJobResult::GetIdentityResolutionJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(IdentityResolutionJobStatus::NOT_SET)
+GetIdentityResolutionJobResult::GetIdentityResolutionJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetIdentityResolutionJobResult()
 {
   *this = result;
 }

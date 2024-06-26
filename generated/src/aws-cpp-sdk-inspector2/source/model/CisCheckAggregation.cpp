@@ -31,16 +31,8 @@ CisCheckAggregation::CisCheckAggregation() :
 {
 }
 
-CisCheckAggregation::CisCheckAggregation(JsonView jsonValue) : 
-    m_accountIdHasBeenSet(false),
-    m_checkDescriptionHasBeenSet(false),
-    m_checkIdHasBeenSet(false),
-    m_level(CisSecurityLevel::NOT_SET),
-    m_levelHasBeenSet(false),
-    m_platformHasBeenSet(false),
-    m_scanArnHasBeenSet(false),
-    m_statusCountsHasBeenSet(false),
-    m_titleHasBeenSet(false)
+CisCheckAggregation::CisCheckAggregation(JsonView jsonValue)
+  : CisCheckAggregation()
 {
   *this = jsonValue;
 }

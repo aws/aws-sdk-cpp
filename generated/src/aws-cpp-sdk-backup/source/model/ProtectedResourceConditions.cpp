@@ -24,9 +24,8 @@ ProtectedResourceConditions::ProtectedResourceConditions() :
 {
 }
 
-ProtectedResourceConditions::ProtectedResourceConditions(JsonView jsonValue) : 
-    m_stringEqualsHasBeenSet(false),
-    m_stringNotEqualsHasBeenSet(false)
+ProtectedResourceConditions::ProtectedResourceConditions(JsonView jsonValue)
+  : ProtectedResourceConditions()
 {
   *this = jsonValue;
 }

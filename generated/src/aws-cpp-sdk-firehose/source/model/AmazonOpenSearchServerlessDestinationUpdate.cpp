@@ -30,15 +30,8 @@ AmazonOpenSearchServerlessDestinationUpdate::AmazonOpenSearchServerlessDestinati
 {
 }
 
-AmazonOpenSearchServerlessDestinationUpdate::AmazonOpenSearchServerlessDestinationUpdate(JsonView jsonValue) : 
-    m_roleARNHasBeenSet(false),
-    m_collectionEndpointHasBeenSet(false),
-    m_indexNameHasBeenSet(false),
-    m_bufferingHintsHasBeenSet(false),
-    m_retryOptionsHasBeenSet(false),
-    m_s3UpdateHasBeenSet(false),
-    m_processingConfigurationHasBeenSet(false),
-    m_cloudWatchLoggingOptionsHasBeenSet(false)
+AmazonOpenSearchServerlessDestinationUpdate::AmazonOpenSearchServerlessDestinationUpdate(JsonView jsonValue)
+  : AmazonOpenSearchServerlessDestinationUpdate()
 {
   *this = jsonValue;
 }

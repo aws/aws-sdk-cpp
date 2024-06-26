@@ -26,11 +26,8 @@ CoverageSortCriteria::CoverageSortCriteria() :
 {
 }
 
-CoverageSortCriteria::CoverageSortCriteria(JsonView jsonValue) : 
-    m_attributeName(CoverageSortKey::NOT_SET),
-    m_attributeNameHasBeenSet(false),
-    m_orderBy(OrderBy::NOT_SET),
-    m_orderByHasBeenSet(false)
+CoverageSortCriteria::CoverageSortCriteria(JsonView jsonValue)
+  : CoverageSortCriteria()
 {
   *this = jsonValue;
 }

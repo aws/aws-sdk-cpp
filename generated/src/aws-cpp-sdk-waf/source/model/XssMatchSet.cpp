@@ -25,10 +25,8 @@ XssMatchSet::XssMatchSet() :
 {
 }
 
-XssMatchSet::XssMatchSet(JsonView jsonValue) : 
-    m_xssMatchSetIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_xssMatchTuplesHasBeenSet(false)
+XssMatchSet::XssMatchSet(JsonView jsonValue)
+  : XssMatchSet()
 {
   *this = jsonValue;
 }

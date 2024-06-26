@@ -24,9 +24,8 @@ PutKeyRequestListItem::PutKeyRequestListItem() :
 {
 }
 
-PutKeyRequestListItem::PutKeyRequestListItem(JsonView jsonValue) : 
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false)
+PutKeyRequestListItem::PutKeyRequestListItem(JsonView jsonValue)
+  : PutKeyRequestListItem()
 {
   *this = jsonValue;
 }

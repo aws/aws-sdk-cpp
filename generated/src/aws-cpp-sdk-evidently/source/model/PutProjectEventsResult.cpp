@@ -22,8 +22,8 @@ PutProjectEventsResult::PutProjectEventsResult() :
 {
 }
 
-PutProjectEventsResult::PutProjectEventsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_failedEventCount(0)
+PutProjectEventsResult::PutProjectEventsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : PutProjectEventsResult()
 {
   *this = result;
 }

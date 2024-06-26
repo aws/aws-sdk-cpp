@@ -27,12 +27,8 @@ RotationOverride::RotationOverride() :
 {
 }
 
-RotationOverride::RotationOverride(JsonView jsonValue) : 
-    m_rotationOverrideIdHasBeenSet(false),
-    m_newContactIdsHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_createTimeHasBeenSet(false)
+RotationOverride::RotationOverride(JsonView jsonValue)
+  : RotationOverride()
 {
   *this = jsonValue;
 }

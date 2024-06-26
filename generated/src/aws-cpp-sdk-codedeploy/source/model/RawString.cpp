@@ -24,9 +24,8 @@ RawString::RawString() :
 {
 }
 
-RawString::RawString(JsonView jsonValue) : 
-    m_contentHasBeenSet(false),
-    m_sha256HasBeenSet(false)
+RawString::RawString(JsonView jsonValue)
+  : RawString()
 {
   *this = jsonValue;
 }

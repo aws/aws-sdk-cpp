@@ -25,10 +25,8 @@ OracleSQLCatalogSource::OracleSQLCatalogSource() :
 {
 }
 
-OracleSQLCatalogSource::OracleSQLCatalogSource(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_databaseHasBeenSet(false),
-    m_tableHasBeenSet(false)
+OracleSQLCatalogSource::OracleSQLCatalogSource(JsonView jsonValue)
+  : OracleSQLCatalogSource()
 {
   *this = jsonValue;
 }

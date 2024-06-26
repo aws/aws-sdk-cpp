@@ -25,10 +25,8 @@ AuthenticationConfiguration::AuthenticationConfiguration() :
 {
 }
 
-AuthenticationConfiguration::AuthenticationConfiguration(JsonView jsonValue) : 
-    m_roleARNHasBeenSet(false),
-    m_connectivity(Connectivity::NOT_SET),
-    m_connectivityHasBeenSet(false)
+AuthenticationConfiguration::AuthenticationConfiguration(JsonView jsonValue)
+  : AuthenticationConfiguration()
 {
   *this = jsonValue;
 }

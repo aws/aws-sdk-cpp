@@ -27,12 +27,8 @@ SessionConfiguration::SessionConfiguration() :
 {
 }
 
-SessionConfiguration::SessionConfiguration(JsonView jsonValue) : 
-    m_executionRoleHasBeenSet(false),
-    m_workingDirectoryHasBeenSet(false),
-    m_idleTimeoutSeconds(0),
-    m_idleTimeoutSecondsHasBeenSet(false),
-    m_encryptionConfigurationHasBeenSet(false)
+SessionConfiguration::SessionConfiguration(JsonView jsonValue)
+  : SessionConfiguration()
 {
   *this = jsonValue;
 }

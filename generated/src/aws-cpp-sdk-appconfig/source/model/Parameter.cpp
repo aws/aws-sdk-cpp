@@ -27,12 +27,8 @@ Parameter::Parameter() :
 {
 }
 
-Parameter::Parameter(JsonView jsonValue) : 
-    m_descriptionHasBeenSet(false),
-    m_required(false),
-    m_requiredHasBeenSet(false),
-    m_dynamic(false),
-    m_dynamicHasBeenSet(false)
+Parameter::Parameter(JsonView jsonValue)
+  : Parameter()
 {
   *this = jsonValue;
 }

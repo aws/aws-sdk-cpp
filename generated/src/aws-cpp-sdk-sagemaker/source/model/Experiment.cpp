@@ -32,17 +32,8 @@ Experiment::Experiment() :
 {
 }
 
-Experiment::Experiment(JsonView jsonValue) : 
-    m_experimentNameHasBeenSet(false),
-    m_experimentArnHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_sourceHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_lastModifiedByHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+Experiment::Experiment(JsonView jsonValue)
+  : Experiment()
 {
   *this = jsonValue;
 }

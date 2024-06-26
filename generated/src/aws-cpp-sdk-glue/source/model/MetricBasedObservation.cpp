@@ -25,10 +25,8 @@ MetricBasedObservation::MetricBasedObservation() :
 {
 }
 
-MetricBasedObservation::MetricBasedObservation(JsonView jsonValue) : 
-    m_metricNameHasBeenSet(false),
-    m_metricValuesHasBeenSet(false),
-    m_newRulesHasBeenSet(false)
+MetricBasedObservation::MetricBasedObservation(JsonView jsonValue)
+  : MetricBasedObservation()
 {
   *this = jsonValue;
 }

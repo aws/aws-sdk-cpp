@@ -28,13 +28,8 @@ CsvConfiguration::CsvConfiguration() :
 {
 }
 
-CsvConfiguration::CsvConfiguration(JsonView jsonValue) : 
-    m_columnSeparatorHasBeenSet(false),
-    m_escapeCharHasBeenSet(false),
-    m_quoteCharHasBeenSet(false),
-    m_nullValueHasBeenSet(false),
-    m_trimWhiteSpace(false),
-    m_trimWhiteSpaceHasBeenSet(false)
+CsvConfiguration::CsvConfiguration(JsonView jsonValue)
+  : CsvConfiguration()
 {
   *this = jsonValue;
 }

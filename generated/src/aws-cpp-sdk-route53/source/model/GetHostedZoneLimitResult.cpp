@@ -21,8 +21,8 @@ GetHostedZoneLimitResult::GetHostedZoneLimitResult() :
 {
 }
 
-GetHostedZoneLimitResult::GetHostedZoneLimitResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_count(0)
+GetHostedZoneLimitResult::GetHostedZoneLimitResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : GetHostedZoneLimitResult()
 {
   *this = result;
 }

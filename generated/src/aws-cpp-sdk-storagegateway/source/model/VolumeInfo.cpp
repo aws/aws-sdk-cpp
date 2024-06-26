@@ -30,15 +30,8 @@ VolumeInfo::VolumeInfo() :
 {
 }
 
-VolumeInfo::VolumeInfo(JsonView jsonValue) : 
-    m_volumeARNHasBeenSet(false),
-    m_volumeIdHasBeenSet(false),
-    m_gatewayARNHasBeenSet(false),
-    m_gatewayIdHasBeenSet(false),
-    m_volumeTypeHasBeenSet(false),
-    m_volumeSizeInBytes(0),
-    m_volumeSizeInBytesHasBeenSet(false),
-    m_volumeAttachmentStatusHasBeenSet(false)
+VolumeInfo::VolumeInfo(JsonView jsonValue)
+  : VolumeInfo()
 {
   *this = jsonValue;
 }

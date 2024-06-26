@@ -24,9 +24,8 @@ ResourceLimitExceededException::ResourceLimitExceededException() :
 {
 }
 
-ResourceLimitExceededException::ResourceLimitExceededException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_parameterNameHasBeenSet(false)
+ResourceLimitExceededException::ResourceLimitExceededException(JsonView jsonValue)
+  : ResourceLimitExceededException()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ GetFormTypeResult::GetFormTypeResult() :
 {
 }
 
-GetFormTypeResult::GetFormTypeResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(FormTypeStatus::NOT_SET)
+GetFormTypeResult::GetFormTypeResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetFormTypeResult()
 {
   *this = result;
 }

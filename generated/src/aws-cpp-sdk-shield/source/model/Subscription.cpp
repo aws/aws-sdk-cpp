@@ -33,18 +33,8 @@ Subscription::Subscription() :
 {
 }
 
-Subscription::Subscription(JsonView jsonValue) : 
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_timeCommitmentInSeconds(0),
-    m_timeCommitmentInSecondsHasBeenSet(false),
-    m_autoRenew(AutoRenew::NOT_SET),
-    m_autoRenewHasBeenSet(false),
-    m_limitsHasBeenSet(false),
-    m_proactiveEngagementStatus(ProactiveEngagementStatus::NOT_SET),
-    m_proactiveEngagementStatusHasBeenSet(false),
-    m_subscriptionLimitsHasBeenSet(false),
-    m_subscriptionArnHasBeenSet(false)
+Subscription::Subscription(JsonView jsonValue)
+  : Subscription()
 {
   *this = jsonValue;
 }

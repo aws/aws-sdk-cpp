@@ -25,10 +25,8 @@ AuthorizedTargetsByService::AuthorizedTargetsByService() :
 {
 }
 
-AuthorizedTargetsByService::AuthorizedTargetsByService(JsonView jsonValue) : 
-    m_service(ServiceType::NOT_SET),
-    m_serviceHasBeenSet(false),
-    m_authorizedTargetsHasBeenSet(false)
+AuthorizedTargetsByService::AuthorizedTargetsByService(JsonView jsonValue)
+  : AuthorizedTargetsByService()
 {
   *this = jsonValue;
 }

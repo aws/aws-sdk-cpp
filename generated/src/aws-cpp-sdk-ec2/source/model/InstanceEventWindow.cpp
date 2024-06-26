@@ -32,15 +32,8 @@ InstanceEventWindow::InstanceEventWindow() :
 {
 }
 
-InstanceEventWindow::InstanceEventWindow(const XmlNode& xmlNode) : 
-    m_instanceEventWindowIdHasBeenSet(false),
-    m_timeRangesHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_cronExpressionHasBeenSet(false),
-    m_associationTargetHasBeenSet(false),
-    m_state(InstanceEventWindowState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+InstanceEventWindow::InstanceEventWindow(const XmlNode& xmlNode)
+  : InstanceEventWindow()
 {
   *this = xmlNode;
 }

@@ -23,9 +23,8 @@ DescribeUserResult::DescribeUserResult() :
 {
 }
 
-DescribeUserResult::DescribeUserResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_consoleAccess(false),
-    m_replicationUser(false)
+DescribeUserResult::DescribeUserResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeUserResult()
 {
   *this = result;
 }

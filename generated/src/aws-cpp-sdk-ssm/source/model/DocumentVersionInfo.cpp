@@ -36,21 +36,8 @@ DocumentVersionInfo::DocumentVersionInfo() :
 {
 }
 
-DocumentVersionInfo::DocumentVersionInfo(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_documentVersionHasBeenSet(false),
-    m_versionNameHasBeenSet(false),
-    m_createdDateHasBeenSet(false),
-    m_isDefaultVersion(false),
-    m_isDefaultVersionHasBeenSet(false),
-    m_documentFormat(DocumentFormat::NOT_SET),
-    m_documentFormatHasBeenSet(false),
-    m_status(DocumentStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusInformationHasBeenSet(false),
-    m_reviewStatus(ReviewStatus::NOT_SET),
-    m_reviewStatusHasBeenSet(false)
+DocumentVersionInfo::DocumentVersionInfo(JsonView jsonValue)
+  : DocumentVersionInfo()
 {
   *this = jsonValue;
 }

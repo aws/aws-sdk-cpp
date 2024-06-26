@@ -24,9 +24,8 @@ RadarChartAreaStyleSettings::RadarChartAreaStyleSettings() :
 {
 }
 
-RadarChartAreaStyleSettings::RadarChartAreaStyleSettings(JsonView jsonValue) : 
-    m_visibility(Visibility::NOT_SET),
-    m_visibilityHasBeenSet(false)
+RadarChartAreaStyleSettings::RadarChartAreaStyleSettings(JsonView jsonValue)
+  : RadarChartAreaStyleSettings()
 {
   *this = jsonValue;
 }

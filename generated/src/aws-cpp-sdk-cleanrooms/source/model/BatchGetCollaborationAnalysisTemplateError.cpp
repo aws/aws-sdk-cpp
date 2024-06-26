@@ -25,10 +25,8 @@ BatchGetCollaborationAnalysisTemplateError::BatchGetCollaborationAnalysisTemplat
 {
 }
 
-BatchGetCollaborationAnalysisTemplateError::BatchGetCollaborationAnalysisTemplateError(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+BatchGetCollaborationAnalysisTemplateError::BatchGetCollaborationAnalysisTemplateError(JsonView jsonValue)
+  : BatchGetCollaborationAnalysisTemplateError()
 {
   *this = jsonValue;
 }

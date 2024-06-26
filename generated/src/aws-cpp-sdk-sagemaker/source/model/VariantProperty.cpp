@@ -24,9 +24,8 @@ VariantProperty::VariantProperty() :
 {
 }
 
-VariantProperty::VariantProperty(JsonView jsonValue) : 
-    m_variantPropertyType(VariantPropertyType::NOT_SET),
-    m_variantPropertyTypeHasBeenSet(false)
+VariantProperty::VariantProperty(JsonView jsonValue)
+  : VariantProperty()
 {
   *this = jsonValue;
 }

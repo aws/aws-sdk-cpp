@@ -26,11 +26,8 @@ FsxProtocolSmb::FsxProtocolSmb() :
 {
 }
 
-FsxProtocolSmb::FsxProtocolSmb(JsonView jsonValue) : 
-    m_domainHasBeenSet(false),
-    m_mountOptionsHasBeenSet(false),
-    m_passwordHasBeenSet(false),
-    m_userHasBeenSet(false)
+FsxProtocolSmb::FsxProtocolSmb(JsonView jsonValue)
+  : FsxProtocolSmb()
 {
   *this = jsonValue;
 }

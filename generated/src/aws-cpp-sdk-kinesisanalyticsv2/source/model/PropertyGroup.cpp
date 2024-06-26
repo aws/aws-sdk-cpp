@@ -24,9 +24,8 @@ PropertyGroup::PropertyGroup() :
 {
 }
 
-PropertyGroup::PropertyGroup(JsonView jsonValue) : 
-    m_propertyGroupIdHasBeenSet(false),
-    m_propertyMapHasBeenSet(false)
+PropertyGroup::PropertyGroup(JsonView jsonValue)
+  : PropertyGroup()
 {
   *this = jsonValue;
 }

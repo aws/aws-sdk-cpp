@@ -24,9 +24,8 @@ VolumeMount::VolumeMount() :
 {
 }
 
-VolumeMount::VolumeMount(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_mountPathHasBeenSet(false)
+VolumeMount::VolumeMount(JsonView jsonValue)
+  : VolumeMount()
 {
   *this = jsonValue;
 }

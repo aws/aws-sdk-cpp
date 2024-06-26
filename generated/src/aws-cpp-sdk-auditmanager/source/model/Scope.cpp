@@ -23,8 +23,8 @@ Scope::Scope() :
 {
 }
 
-Scope::Scope(JsonView jsonValue) : 
-    m_awsAccountsHasBeenSet(false)
+Scope::Scope(JsonView jsonValue)
+  : Scope()
 {
   *this = jsonValue;
 }

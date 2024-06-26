@@ -27,12 +27,8 @@ ModelVersion::ModelVersion() :
 {
 }
 
-ModelVersion::ModelVersion(JsonView jsonValue) : 
-    m_modelIdHasBeenSet(false),
-    m_modelType(ModelTypeEnum::NOT_SET),
-    m_modelTypeHasBeenSet(false),
-    m_modelVersionNumberHasBeenSet(false),
-    m_arnHasBeenSet(false)
+ModelVersion::ModelVersion(JsonView jsonValue)
+  : ModelVersion()
 {
   *this = jsonValue;
 }

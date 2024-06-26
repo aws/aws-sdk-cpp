@@ -27,12 +27,8 @@ StepDetailsError::StepDetailsError() :
 {
 }
 
-StepDetailsError::StepDetailsError(JsonView jsonValue) : 
-    m_code(JobEntityErrorCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_jobIdHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_stepIdHasBeenSet(false)
+StepDetailsError::StepDetailsError(JsonView jsonValue)
+  : StepDetailsError()
 {
   *this = jsonValue;
 }

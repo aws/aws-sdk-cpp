@@ -31,14 +31,8 @@ EventDestination::EventDestination() :
 {
 }
 
-EventDestination::EventDestination(const XmlNode& xmlNode) : 
-    m_nameHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_matchingEventTypesHasBeenSet(false),
-    m_kinesisFirehoseDestinationHasBeenSet(false),
-    m_cloudWatchDestinationHasBeenSet(false),
-    m_sNSDestinationHasBeenSet(false)
+EventDestination::EventDestination(const XmlNode& xmlNode)
+  : EventDestination()
 {
   *this = xmlNode;
 }

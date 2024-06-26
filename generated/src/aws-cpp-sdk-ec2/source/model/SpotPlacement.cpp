@@ -28,11 +28,8 @@ SpotPlacement::SpotPlacement() :
 {
 }
 
-SpotPlacement::SpotPlacement(const XmlNode& xmlNode) : 
-    m_availabilityZoneHasBeenSet(false),
-    m_groupNameHasBeenSet(false),
-    m_tenancy(Tenancy::NOT_SET),
-    m_tenancyHasBeenSet(false)
+SpotPlacement::SpotPlacement(const XmlNode& xmlNode)
+  : SpotPlacement()
 {
   *this = xmlNode;
 }

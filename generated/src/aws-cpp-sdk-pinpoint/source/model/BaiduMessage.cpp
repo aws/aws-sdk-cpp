@@ -39,24 +39,8 @@ BaiduMessage::BaiduMessage() :
 {
 }
 
-BaiduMessage::BaiduMessage(JsonView jsonValue) : 
-    m_action(Action::NOT_SET),
-    m_actionHasBeenSet(false),
-    m_bodyHasBeenSet(false),
-    m_dataHasBeenSet(false),
-    m_iconReferenceHasBeenSet(false),
-    m_imageIconUrlHasBeenSet(false),
-    m_imageUrlHasBeenSet(false),
-    m_rawContentHasBeenSet(false),
-    m_silentPush(false),
-    m_silentPushHasBeenSet(false),
-    m_smallImageIconUrlHasBeenSet(false),
-    m_soundHasBeenSet(false),
-    m_substitutionsHasBeenSet(false),
-    m_timeToLive(0),
-    m_timeToLiveHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_urlHasBeenSet(false)
+BaiduMessage::BaiduMessage(JsonView jsonValue)
+  : BaiduMessage()
 {
   *this = jsonValue;
 }

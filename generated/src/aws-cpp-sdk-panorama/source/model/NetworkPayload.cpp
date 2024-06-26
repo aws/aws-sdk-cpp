@@ -25,10 +25,8 @@ NetworkPayload::NetworkPayload() :
 {
 }
 
-NetworkPayload::NetworkPayload(JsonView jsonValue) : 
-    m_ethernet0HasBeenSet(false),
-    m_ethernet1HasBeenSet(false),
-    m_ntpHasBeenSet(false)
+NetworkPayload::NetworkPayload(JsonView jsonValue)
+  : NetworkPayload()
 {
   *this = jsonValue;
 }

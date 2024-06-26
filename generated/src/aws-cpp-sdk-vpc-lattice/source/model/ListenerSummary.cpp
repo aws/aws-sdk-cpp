@@ -31,16 +31,8 @@ ListenerSummary::ListenerSummary() :
 {
 }
 
-ListenerSummary::ListenerSummary(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_protocol(ListenerProtocol::NOT_SET),
-    m_protocolHasBeenSet(false)
+ListenerSummary::ListenerSummary(JsonView jsonValue)
+  : ListenerSummary()
 {
   *this = jsonValue;
 }

@@ -31,16 +31,8 @@ BotSummary::BotSummary() :
 {
 }
 
-BotSummary::BotSummary(JsonView jsonValue) : 
-    m_botIdHasBeenSet(false),
-    m_botNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_botStatus(BotStatus::NOT_SET),
-    m_botStatusHasBeenSet(false),
-    m_latestBotVersionHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false),
-    m_botType(BotType::NOT_SET),
-    m_botTypeHasBeenSet(false)
+BotSummary::BotSummary(JsonView jsonValue)
+  : BotSummary()
 {
   *this = jsonValue;
 }

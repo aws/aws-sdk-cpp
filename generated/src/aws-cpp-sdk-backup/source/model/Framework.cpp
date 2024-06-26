@@ -29,14 +29,8 @@ Framework::Framework() :
 {
 }
 
-Framework::Framework(JsonView jsonValue) : 
-    m_frameworkNameHasBeenSet(false),
-    m_frameworkArnHasBeenSet(false),
-    m_frameworkDescriptionHasBeenSet(false),
-    m_numberOfControls(0),
-    m_numberOfControlsHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_deploymentStatusHasBeenSet(false)
+Framework::Framework(JsonView jsonValue)
+  : Framework()
 {
   *this = jsonValue;
 }

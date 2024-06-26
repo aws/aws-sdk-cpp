@@ -24,9 +24,8 @@ MonthlyTransfer::MonthlyTransfer() :
 {
 }
 
-MonthlyTransfer::MonthlyTransfer(JsonView jsonValue) : 
-    m_gbPerMonthAllocated(0),
-    m_gbPerMonthAllocatedHasBeenSet(false)
+MonthlyTransfer::MonthlyTransfer(JsonView jsonValue)
+  : MonthlyTransfer()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ FaceDetection::FaceDetection() :
 {
 }
 
-FaceDetection::FaceDetection(JsonView jsonValue) : 
-    m_timestamp(0),
-    m_timestampHasBeenSet(false),
-    m_faceHasBeenSet(false)
+FaceDetection::FaceDetection(JsonView jsonValue)
+  : FaceDetection()
 {
   *this = jsonValue;
 }

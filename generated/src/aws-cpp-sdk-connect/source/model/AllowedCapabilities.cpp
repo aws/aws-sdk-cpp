@@ -24,9 +24,8 @@ AllowedCapabilities::AllowedCapabilities() :
 {
 }
 
-AllowedCapabilities::AllowedCapabilities(JsonView jsonValue) : 
-    m_customerHasBeenSet(false),
-    m_agentHasBeenSet(false)
+AllowedCapabilities::AllowedCapabilities(JsonView jsonValue)
+  : AllowedCapabilities()
 {
   *this = jsonValue;
 }

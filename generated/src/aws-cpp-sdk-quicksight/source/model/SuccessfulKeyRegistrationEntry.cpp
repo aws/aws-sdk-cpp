@@ -25,10 +25,8 @@ SuccessfulKeyRegistrationEntry::SuccessfulKeyRegistrationEntry() :
 {
 }
 
-SuccessfulKeyRegistrationEntry::SuccessfulKeyRegistrationEntry(JsonView jsonValue) : 
-    m_keyArnHasBeenSet(false),
-    m_statusCode(0),
-    m_statusCodeHasBeenSet(false)
+SuccessfulKeyRegistrationEntry::SuccessfulKeyRegistrationEntry(JsonView jsonValue)
+  : SuccessfulKeyRegistrationEntry()
 {
   *this = jsonValue;
 }

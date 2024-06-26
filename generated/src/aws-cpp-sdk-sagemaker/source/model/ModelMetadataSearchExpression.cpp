@@ -23,8 +23,8 @@ ModelMetadataSearchExpression::ModelMetadataSearchExpression() :
 {
 }
 
-ModelMetadataSearchExpression::ModelMetadataSearchExpression(JsonView jsonValue) : 
-    m_filtersHasBeenSet(false)
+ModelMetadataSearchExpression::ModelMetadataSearchExpression(JsonView jsonValue)
+  : ModelMetadataSearchExpression()
 {
   *this = jsonValue;
 }

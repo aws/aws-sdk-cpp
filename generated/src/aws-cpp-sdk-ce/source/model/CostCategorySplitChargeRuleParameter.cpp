@@ -25,10 +25,8 @@ CostCategorySplitChargeRuleParameter::CostCategorySplitChargeRuleParameter() :
 {
 }
 
-CostCategorySplitChargeRuleParameter::CostCategorySplitChargeRuleParameter(JsonView jsonValue) : 
-    m_type(CostCategorySplitChargeRuleParameterType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+CostCategorySplitChargeRuleParameter::CostCategorySplitChargeRuleParameter(JsonView jsonValue)
+  : CostCategorySplitChargeRuleParameter()
 {
   *this = jsonValue;
 }

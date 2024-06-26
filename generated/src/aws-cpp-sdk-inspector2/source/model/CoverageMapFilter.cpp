@@ -26,11 +26,8 @@ CoverageMapFilter::CoverageMapFilter() :
 {
 }
 
-CoverageMapFilter::CoverageMapFilter(JsonView jsonValue) : 
-    m_comparison(CoverageMapComparison::NOT_SET),
-    m_comparisonHasBeenSet(false),
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false)
+CoverageMapFilter::CoverageMapFilter(JsonView jsonValue)
+  : CoverageMapFilter()
 {
   *this = jsonValue;
 }

@@ -31,16 +31,8 @@ DICOMImportJobSummary::DICOMImportJobSummary() :
 {
 }
 
-DICOMImportJobSummary::DICOMImportJobSummary(JsonView jsonValue) : 
-    m_jobIdHasBeenSet(false),
-    m_jobNameHasBeenSet(false),
-    m_jobStatus(JobStatus::NOT_SET),
-    m_jobStatusHasBeenSet(false),
-    m_datastoreIdHasBeenSet(false),
-    m_dataAccessRoleArnHasBeenSet(false),
-    m_endedAtHasBeenSet(false),
-    m_submittedAtHasBeenSet(false),
-    m_messageHasBeenSet(false)
+DICOMImportJobSummary::DICOMImportJobSummary(JsonView jsonValue)
+  : DICOMImportJobSummary()
 {
   *this = jsonValue;
 }

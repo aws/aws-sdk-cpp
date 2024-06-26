@@ -26,11 +26,8 @@ RecoveryInstanceDisk::RecoveryInstanceDisk() :
 {
 }
 
-RecoveryInstanceDisk::RecoveryInstanceDisk(JsonView jsonValue) : 
-    m_bytes(0),
-    m_bytesHasBeenSet(false),
-    m_ebsVolumeIDHasBeenSet(false),
-    m_internalDeviceNameHasBeenSet(false)
+RecoveryInstanceDisk::RecoveryInstanceDisk(JsonView jsonValue)
+  : RecoveryInstanceDisk()
 {
   *this = jsonValue;
 }

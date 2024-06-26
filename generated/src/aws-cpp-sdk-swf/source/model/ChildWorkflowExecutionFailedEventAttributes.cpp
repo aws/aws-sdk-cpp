@@ -30,15 +30,8 @@ ChildWorkflowExecutionFailedEventAttributes::ChildWorkflowExecutionFailedEventAt
 {
 }
 
-ChildWorkflowExecutionFailedEventAttributes::ChildWorkflowExecutionFailedEventAttributes(JsonView jsonValue) : 
-    m_workflowExecutionHasBeenSet(false),
-    m_workflowTypeHasBeenSet(false),
-    m_reasonHasBeenSet(false),
-    m_detailsHasBeenSet(false),
-    m_initiatedEventId(0),
-    m_initiatedEventIdHasBeenSet(false),
-    m_startedEventId(0),
-    m_startedEventIdHasBeenSet(false)
+ChildWorkflowExecutionFailedEventAttributes::ChildWorkflowExecutionFailedEventAttributes(JsonView jsonValue)
+  : ChildWorkflowExecutionFailedEventAttributes()
 {
   *this = jsonValue;
 }

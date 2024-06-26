@@ -25,10 +25,8 @@ WorkforceVpcConfigRequest::WorkforceVpcConfigRequest() :
 {
 }
 
-WorkforceVpcConfigRequest::WorkforceVpcConfigRequest(JsonView jsonValue) : 
-    m_vpcIdHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false),
-    m_subnetsHasBeenSet(false)
+WorkforceVpcConfigRequest::WorkforceVpcConfigRequest(JsonView jsonValue)
+  : WorkforceVpcConfigRequest()
 {
   *this = jsonValue;
 }

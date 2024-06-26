@@ -28,13 +28,8 @@ GovernedCatalogTarget::GovernedCatalogTarget() :
 {
 }
 
-GovernedCatalogTarget::GovernedCatalogTarget(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_inputsHasBeenSet(false),
-    m_partitionKeysHasBeenSet(false),
-    m_tableHasBeenSet(false),
-    m_databaseHasBeenSet(false),
-    m_schemaChangePolicyHasBeenSet(false)
+GovernedCatalogTarget::GovernedCatalogTarget(JsonView jsonValue)
+  : GovernedCatalogTarget()
 {
   *this = jsonValue;
 }

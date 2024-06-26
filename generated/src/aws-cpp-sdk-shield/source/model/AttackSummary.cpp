@@ -27,12 +27,8 @@ AttackSummary::AttackSummary() :
 {
 }
 
-AttackSummary::AttackSummary(JsonView jsonValue) : 
-    m_attackIdHasBeenSet(false),
-    m_resourceArnHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_attackVectorsHasBeenSet(false)
+AttackSummary::AttackSummary(JsonView jsonValue)
+  : AttackSummary()
 {
   *this = jsonValue;
 }

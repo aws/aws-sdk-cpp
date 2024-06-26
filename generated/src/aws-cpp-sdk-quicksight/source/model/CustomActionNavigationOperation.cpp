@@ -23,8 +23,8 @@ CustomActionNavigationOperation::CustomActionNavigationOperation() :
 {
 }
 
-CustomActionNavigationOperation::CustomActionNavigationOperation(JsonView jsonValue) : 
-    m_localNavigationConfigurationHasBeenSet(false)
+CustomActionNavigationOperation::CustomActionNavigationOperation(JsonView jsonValue)
+  : CustomActionNavigationOperation()
 {
   *this = jsonValue;
 }

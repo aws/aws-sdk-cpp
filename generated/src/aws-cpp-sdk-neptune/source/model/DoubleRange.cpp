@@ -28,11 +28,8 @@ DoubleRange::DoubleRange() :
 {
 }
 
-DoubleRange::DoubleRange(const XmlNode& xmlNode) : 
-    m_from(0.0),
-    m_fromHasBeenSet(false),
-    m_to(0.0),
-    m_toHasBeenSet(false)
+DoubleRange::DoubleRange(const XmlNode& xmlNode)
+  : DoubleRange()
 {
   *this = xmlNode;
 }

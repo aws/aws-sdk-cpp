@@ -56,41 +56,8 @@ MsSmoothGroupSettings::MsSmoothGroupSettings() :
 {
 }
 
-MsSmoothGroupSettings::MsSmoothGroupSettings(JsonView jsonValue) : 
-    m_acquisitionPointIdHasBeenSet(false),
-    m_audioOnlyTimecodeControl(SmoothGroupAudioOnlyTimecodeControl::NOT_SET),
-    m_audioOnlyTimecodeControlHasBeenSet(false),
-    m_certificateMode(SmoothGroupCertificateMode::NOT_SET),
-    m_certificateModeHasBeenSet(false),
-    m_connectionRetryInterval(0),
-    m_connectionRetryIntervalHasBeenSet(false),
-    m_destinationHasBeenSet(false),
-    m_eventIdHasBeenSet(false),
-    m_eventIdMode(SmoothGroupEventIdMode::NOT_SET),
-    m_eventIdModeHasBeenSet(false),
-    m_eventStopBehavior(SmoothGroupEventStopBehavior::NOT_SET),
-    m_eventStopBehaviorHasBeenSet(false),
-    m_filecacheDuration(0),
-    m_filecacheDurationHasBeenSet(false),
-    m_fragmentLength(0),
-    m_fragmentLengthHasBeenSet(false),
-    m_inputLossAction(InputLossActionForMsSmoothOut::NOT_SET),
-    m_inputLossActionHasBeenSet(false),
-    m_numRetries(0),
-    m_numRetriesHasBeenSet(false),
-    m_restartDelay(0),
-    m_restartDelayHasBeenSet(false),
-    m_segmentationMode(SmoothGroupSegmentationMode::NOT_SET),
-    m_segmentationModeHasBeenSet(false),
-    m_sendDelayMs(0),
-    m_sendDelayMsHasBeenSet(false),
-    m_sparseTrackType(SmoothGroupSparseTrackType::NOT_SET),
-    m_sparseTrackTypeHasBeenSet(false),
-    m_streamManifestBehavior(SmoothGroupStreamManifestBehavior::NOT_SET),
-    m_streamManifestBehaviorHasBeenSet(false),
-    m_timestampOffsetHasBeenSet(false),
-    m_timestampOffsetMode(SmoothGroupTimestampOffsetMode::NOT_SET),
-    m_timestampOffsetModeHasBeenSet(false)
+MsSmoothGroupSettings::MsSmoothGroupSettings(JsonView jsonValue)
+  : MsSmoothGroupSettings()
 {
   *this = jsonValue;
 }

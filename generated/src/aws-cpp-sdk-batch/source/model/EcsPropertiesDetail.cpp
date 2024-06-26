@@ -23,8 +23,8 @@ EcsPropertiesDetail::EcsPropertiesDetail() :
 {
 }
 
-EcsPropertiesDetail::EcsPropertiesDetail(JsonView jsonValue) : 
-    m_taskPropertiesHasBeenSet(false)
+EcsPropertiesDetail::EcsPropertiesDetail(JsonView jsonValue)
+  : EcsPropertiesDetail()
 {
   *this = jsonValue;
 }

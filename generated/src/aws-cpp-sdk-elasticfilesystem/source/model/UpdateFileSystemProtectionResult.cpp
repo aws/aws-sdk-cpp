@@ -22,8 +22,8 @@ UpdateFileSystemProtectionResult::UpdateFileSystemProtectionResult() :
 {
 }
 
-UpdateFileSystemProtectionResult::UpdateFileSystemProtectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_replicationOverwriteProtection(ReplicationOverwriteProtection::NOT_SET)
+UpdateFileSystemProtectionResult::UpdateFileSystemProtectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateFileSystemProtectionResult()
 {
   *this = result;
 }

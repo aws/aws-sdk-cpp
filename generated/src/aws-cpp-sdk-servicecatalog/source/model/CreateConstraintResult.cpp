@@ -22,8 +22,8 @@ CreateConstraintResult::CreateConstraintResult() :
 {
 }
 
-CreateConstraintResult::CreateConstraintResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(Status::NOT_SET)
+CreateConstraintResult::CreateConstraintResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateConstraintResult()
 {
   *this = result;
 }

@@ -22,8 +22,8 @@ DescribeDetectorModelAnalysisResult::DescribeDetectorModelAnalysisResult() :
 {
 }
 
-DescribeDetectorModelAnalysisResult::DescribeDetectorModelAnalysisResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(AnalysisStatus::NOT_SET)
+DescribeDetectorModelAnalysisResult::DescribeDetectorModelAnalysisResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeDetectorModelAnalysisResult()
 {
   *this = result;
 }

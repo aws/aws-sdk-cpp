@@ -22,8 +22,8 @@ SearchFoldersResult::SearchFoldersResult() :
 {
 }
 
-SearchFoldersResult::SearchFoldersResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+SearchFoldersResult::SearchFoldersResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : SearchFoldersResult()
 {
   *this = result;
 }

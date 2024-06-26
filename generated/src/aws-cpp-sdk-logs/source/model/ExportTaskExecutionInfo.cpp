@@ -26,11 +26,8 @@ ExportTaskExecutionInfo::ExportTaskExecutionInfo() :
 {
 }
 
-ExportTaskExecutionInfo::ExportTaskExecutionInfo(JsonView jsonValue) : 
-    m_creationTime(0),
-    m_creationTimeHasBeenSet(false),
-    m_completionTime(0),
-    m_completionTimeHasBeenSet(false)
+ExportTaskExecutionInfo::ExportTaskExecutionInfo(JsonView jsonValue)
+  : ExportTaskExecutionInfo()
 {
   *this = jsonValue;
 }

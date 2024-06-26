@@ -29,14 +29,8 @@ NodeSummary::NodeSummary() :
 {
 }
 
-NodeSummary::NodeSummary(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_status(NodeStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_arnHasBeenSet(false)
+NodeSummary::NodeSummary(JsonView jsonValue)
+  : NodeSummary()
 {
   *this = jsonValue;
 }

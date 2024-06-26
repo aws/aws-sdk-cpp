@@ -23,8 +23,8 @@ PipelineConfig::PipelineConfig() :
 {
 }
 
-PipelineConfig::PipelineConfig(JsonView jsonValue) : 
-    m_functionsHasBeenSet(false)
+PipelineConfig::PipelineConfig(JsonView jsonValue)
+  : PipelineConfig()
 {
   *this = jsonValue;
 }

@@ -27,10 +27,8 @@ BulkEmailDestination::BulkEmailDestination() :
 {
 }
 
-BulkEmailDestination::BulkEmailDestination(const XmlNode& xmlNode) : 
-    m_destinationHasBeenSet(false),
-    m_replacementTagsHasBeenSet(false),
-    m_replacementTemplateDataHasBeenSet(false)
+BulkEmailDestination::BulkEmailDestination(const XmlNode& xmlNode)
+  : BulkEmailDestination()
 {
   *this = xmlNode;
 }

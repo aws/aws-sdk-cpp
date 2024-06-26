@@ -29,14 +29,8 @@ ConfluenceSpaceConfiguration::ConfluenceSpaceConfiguration() :
 {
 }
 
-ConfluenceSpaceConfiguration::ConfluenceSpaceConfiguration(JsonView jsonValue) : 
-    m_crawlPersonalSpaces(false),
-    m_crawlPersonalSpacesHasBeenSet(false),
-    m_crawlArchivedSpaces(false),
-    m_crawlArchivedSpacesHasBeenSet(false),
-    m_includeSpacesHasBeenSet(false),
-    m_excludeSpacesHasBeenSet(false),
-    m_spaceFieldMappingsHasBeenSet(false)
+ConfluenceSpaceConfiguration::ConfluenceSpaceConfiguration(JsonView jsonValue)
+  : ConfluenceSpaceConfiguration()
 {
   *this = jsonValue;
 }

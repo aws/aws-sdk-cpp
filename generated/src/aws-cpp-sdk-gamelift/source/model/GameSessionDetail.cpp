@@ -25,10 +25,8 @@ GameSessionDetail::GameSessionDetail() :
 {
 }
 
-GameSessionDetail::GameSessionDetail(JsonView jsonValue) : 
-    m_gameSessionHasBeenSet(false),
-    m_protectionPolicy(ProtectionPolicy::NOT_SET),
-    m_protectionPolicyHasBeenSet(false)
+GameSessionDetail::GameSessionDetail(JsonView jsonValue)
+  : GameSessionDetail()
 {
   *this = jsonValue;
 }

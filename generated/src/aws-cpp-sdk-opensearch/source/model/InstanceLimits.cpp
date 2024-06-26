@@ -23,8 +23,8 @@ InstanceLimits::InstanceLimits() :
 {
 }
 
-InstanceLimits::InstanceLimits(JsonView jsonValue) : 
-    m_instanceCountLimitsHasBeenSet(false)
+InstanceLimits::InstanceLimits(JsonView jsonValue)
+  : InstanceLimits()
 {
   *this = jsonValue;
 }

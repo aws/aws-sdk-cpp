@@ -25,10 +25,8 @@ FulfillmentActivity::FulfillmentActivity() :
 {
 }
 
-FulfillmentActivity::FulfillmentActivity(JsonView jsonValue) : 
-    m_type(FulfillmentActivityType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_codeHookHasBeenSet(false)
+FulfillmentActivity::FulfillmentActivity(JsonView jsonValue)
+  : FulfillmentActivity()
 {
   *this = jsonValue;
 }

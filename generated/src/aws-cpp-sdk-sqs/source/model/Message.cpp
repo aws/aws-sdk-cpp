@@ -29,14 +29,8 @@ Message::Message() :
 {
 }
 
-Message::Message(JsonView jsonValue) : 
-    m_messageIdHasBeenSet(false),
-    m_receiptHandleHasBeenSet(false),
-    m_mD5OfBodyHasBeenSet(false),
-    m_bodyHasBeenSet(false),
-    m_attributesHasBeenSet(false),
-    m_mD5OfMessageAttributesHasBeenSet(false),
-    m_messageAttributesHasBeenSet(false)
+Message::Message(JsonView jsonValue)
+  : Message()
 {
   *this = jsonValue;
 }

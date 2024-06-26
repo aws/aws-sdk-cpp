@@ -24,9 +24,8 @@ QueryField::QueryField() :
 {
 }
 
-QueryField::QueryField(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_typeHasBeenSet(false)
+QueryField::QueryField(JsonView jsonValue)
+  : QueryField()
 {
   *this = jsonValue;
 }

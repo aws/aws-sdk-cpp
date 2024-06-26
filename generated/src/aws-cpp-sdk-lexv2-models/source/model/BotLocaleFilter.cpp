@@ -27,12 +27,8 @@ BotLocaleFilter::BotLocaleFilter() :
 {
 }
 
-BotLocaleFilter::BotLocaleFilter(JsonView jsonValue) : 
-    m_name(BotLocaleFilterName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_valuesHasBeenSet(false),
-    m_operator(BotLocaleFilterOperator::NOT_SET),
-    m_operatorHasBeenSet(false)
+BotLocaleFilter::BotLocaleFilter(JsonView jsonValue)
+  : BotLocaleFilter()
 {
   *this = jsonValue;
 }

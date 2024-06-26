@@ -25,10 +25,8 @@ InputS3Object::InputS3Object() :
 {
 }
 
-InputS3Object::InputS3Object(JsonView jsonValue) : 
-    m_bucketHasBeenSet(false),
-    m_keyHasBeenSet(false),
-    m_versionIdHasBeenSet(false)
+InputS3Object::InputS3Object(JsonView jsonValue)
+  : InputS3Object()
 {
   *this = jsonValue;
 }

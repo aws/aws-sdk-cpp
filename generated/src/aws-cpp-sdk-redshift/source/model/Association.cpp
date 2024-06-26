@@ -27,10 +27,8 @@ Association::Association() :
 {
 }
 
-Association::Association(const XmlNode& xmlNode) : 
-    m_customDomainCertificateArnHasBeenSet(false),
-    m_customDomainCertificateExpiryDateHasBeenSet(false),
-    m_certificateAssociationsHasBeenSet(false)
+Association::Association(const XmlNode& xmlNode)
+  : Association()
 {
   *this = xmlNode;
 }

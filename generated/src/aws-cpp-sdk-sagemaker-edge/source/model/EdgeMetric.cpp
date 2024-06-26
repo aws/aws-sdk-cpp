@@ -27,12 +27,8 @@ EdgeMetric::EdgeMetric() :
 {
 }
 
-EdgeMetric::EdgeMetric(JsonView jsonValue) : 
-    m_dimensionHasBeenSet(false),
-    m_metricNameHasBeenSet(false),
-    m_value(0.0),
-    m_valueHasBeenSet(false),
-    m_timestampHasBeenSet(false)
+EdgeMetric::EdgeMetric(JsonView jsonValue)
+  : EdgeMetric()
 {
   *this = jsonValue;
 }

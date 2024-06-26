@@ -35,20 +35,8 @@ ListMessageMoveTasksResultEntry::ListMessageMoveTasksResultEntry() :
 {
 }
 
-ListMessageMoveTasksResultEntry::ListMessageMoveTasksResultEntry(JsonView jsonValue) : 
-    m_taskHandleHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_sourceArnHasBeenSet(false),
-    m_destinationArnHasBeenSet(false),
-    m_maxNumberOfMessagesPerSecond(0),
-    m_maxNumberOfMessagesPerSecondHasBeenSet(false),
-    m_approximateNumberOfMessagesMoved(0),
-    m_approximateNumberOfMessagesMovedHasBeenSet(false),
-    m_approximateNumberOfMessagesToMove(0),
-    m_approximateNumberOfMessagesToMoveHasBeenSet(false),
-    m_failureReasonHasBeenSet(false),
-    m_startedTimestamp(0),
-    m_startedTimestampHasBeenSet(false)
+ListMessageMoveTasksResultEntry::ListMessageMoveTasksResultEntry(JsonView jsonValue)
+  : ListMessageMoveTasksResultEntry()
 {
   *this = jsonValue;
 }

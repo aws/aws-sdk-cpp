@@ -32,17 +32,8 @@ PlacementStatistics::PlacementStatistics() :
 {
 }
 
-PlacementStatistics::PlacementStatistics(JsonView jsonValue) : 
-    m_inboxPercentage(0.0),
-    m_inboxPercentageHasBeenSet(false),
-    m_spamPercentage(0.0),
-    m_spamPercentageHasBeenSet(false),
-    m_missingPercentage(0.0),
-    m_missingPercentageHasBeenSet(false),
-    m_spfPercentage(0.0),
-    m_spfPercentageHasBeenSet(false),
-    m_dkimPercentage(0.0),
-    m_dkimPercentageHasBeenSet(false)
+PlacementStatistics::PlacementStatistics(JsonView jsonValue)
+  : PlacementStatistics()
 {
   *this = jsonValue;
 }

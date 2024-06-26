@@ -27,10 +27,8 @@ VerifiedAccessEndpointStatus::VerifiedAccessEndpointStatus() :
 {
 }
 
-VerifiedAccessEndpointStatus::VerifiedAccessEndpointStatus(const XmlNode& xmlNode) : 
-    m_code(VerifiedAccessEndpointStatusCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+VerifiedAccessEndpointStatus::VerifiedAccessEndpointStatus(const XmlNode& xmlNode)
+  : VerifiedAccessEndpointStatus()
 {
   *this = xmlNode;
 }

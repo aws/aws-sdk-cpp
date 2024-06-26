@@ -41,26 +41,8 @@ SupportedInstanceType::SupportedInstanceType() :
 {
 }
 
-SupportedInstanceType::SupportedInstanceType(JsonView jsonValue) : 
-    m_typeHasBeenSet(false),
-    m_memoryGB(0.0),
-    m_memoryGBHasBeenSet(false),
-    m_storageGB(0),
-    m_storageGBHasBeenSet(false),
-    m_vCPU(0),
-    m_vCPUHasBeenSet(false),
-    m_is64BitsOnly(false),
-    m_is64BitsOnlyHasBeenSet(false),
-    m_instanceFamilyIdHasBeenSet(false),
-    m_ebsOptimizedAvailable(false),
-    m_ebsOptimizedAvailableHasBeenSet(false),
-    m_ebsOptimizedByDefault(false),
-    m_ebsOptimizedByDefaultHasBeenSet(false),
-    m_numberOfDisks(0),
-    m_numberOfDisksHasBeenSet(false),
-    m_ebsStorageOnly(false),
-    m_ebsStorageOnlyHasBeenSet(false),
-    m_architectureHasBeenSet(false)
+SupportedInstanceType::SupportedInstanceType(JsonView jsonValue)
+  : SupportedInstanceType()
 {
   *this = jsonValue;
 }

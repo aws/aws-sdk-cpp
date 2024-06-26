@@ -24,9 +24,8 @@ AwsApiGatewayAccessLogSettings::AwsApiGatewayAccessLogSettings() :
 {
 }
 
-AwsApiGatewayAccessLogSettings::AwsApiGatewayAccessLogSettings(JsonView jsonValue) : 
-    m_formatHasBeenSet(false),
-    m_destinationArnHasBeenSet(false)
+AwsApiGatewayAccessLogSettings::AwsApiGatewayAccessLogSettings(JsonView jsonValue)
+  : AwsApiGatewayAccessLogSettings()
 {
   *this = jsonValue;
 }

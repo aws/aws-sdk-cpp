@@ -34,19 +34,8 @@ TestExecutionSummary::TestExecutionSummary() :
 {
 }
 
-TestExecutionSummary::TestExecutionSummary(JsonView jsonValue) : 
-    m_testExecutionIdHasBeenSet(false),
-    m_creationDateTimeHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false),
-    m_testExecutionStatus(TestExecutionStatus::NOT_SET),
-    m_testExecutionStatusHasBeenSet(false),
-    m_testSetIdHasBeenSet(false),
-    m_testSetNameHasBeenSet(false),
-    m_targetHasBeenSet(false),
-    m_apiMode(TestExecutionApiMode::NOT_SET),
-    m_apiModeHasBeenSet(false),
-    m_testExecutionModality(TestExecutionModality::NOT_SET),
-    m_testExecutionModalityHasBeenSet(false)
+TestExecutionSummary::TestExecutionSummary(JsonView jsonValue)
+  : TestExecutionSummary()
 {
   *this = jsonValue;
 }

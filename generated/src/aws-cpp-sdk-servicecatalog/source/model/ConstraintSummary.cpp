@@ -24,9 +24,8 @@ ConstraintSummary::ConstraintSummary() :
 {
 }
 
-ConstraintSummary::ConstraintSummary(JsonView jsonValue) : 
-    m_typeHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+ConstraintSummary::ConstraintSummary(JsonView jsonValue)
+  : ConstraintSummary()
 {
   *this = jsonValue;
 }

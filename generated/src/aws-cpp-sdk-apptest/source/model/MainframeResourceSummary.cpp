@@ -24,9 +24,8 @@ MainframeResourceSummary::MainframeResourceSummary() :
 {
 }
 
-MainframeResourceSummary::MainframeResourceSummary(JsonView jsonValue) : 
-    m_m2ManagedApplicationHasBeenSet(false),
-    m_m2NonManagedApplicationHasBeenSet(false)
+MainframeResourceSummary::MainframeResourceSummary(JsonView jsonValue)
+  : MainframeResourceSummary()
 {
   *this = jsonValue;
 }

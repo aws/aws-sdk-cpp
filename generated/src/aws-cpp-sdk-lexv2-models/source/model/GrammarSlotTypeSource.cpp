@@ -25,10 +25,8 @@ GrammarSlotTypeSource::GrammarSlotTypeSource() :
 {
 }
 
-GrammarSlotTypeSource::GrammarSlotTypeSource(JsonView jsonValue) : 
-    m_s3BucketNameHasBeenSet(false),
-    m_s3ObjectKeyHasBeenSet(false),
-    m_kmsKeyArnHasBeenSet(false)
+GrammarSlotTypeSource::GrammarSlotTypeSource(JsonView jsonValue)
+  : GrammarSlotTypeSource()
 {
   *this = jsonValue;
 }

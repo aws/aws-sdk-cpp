@@ -22,8 +22,8 @@ DetectLabelsResult::DetectLabelsResult() :
 {
 }
 
-DetectLabelsResult::DetectLabelsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_orientationCorrection(OrientationCorrection::NOT_SET)
+DetectLabelsResult::DetectLabelsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DetectLabelsResult()
 {
   *this = result;
 }

@@ -24,9 +24,8 @@ ServiceCatalogProvisionedProductDetails::ServiceCatalogProvisionedProductDetails
 {
 }
 
-ServiceCatalogProvisionedProductDetails::ServiceCatalogProvisionedProductDetails(JsonView jsonValue) : 
-    m_provisionedProductIdHasBeenSet(false),
-    m_provisionedProductStatusMessageHasBeenSet(false)
+ServiceCatalogProvisionedProductDetails::ServiceCatalogProvisionedProductDetails(JsonView jsonValue)
+  : ServiceCatalogProvisionedProductDetails()
 {
   *this = jsonValue;
 }

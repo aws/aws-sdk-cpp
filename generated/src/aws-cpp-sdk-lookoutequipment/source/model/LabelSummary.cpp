@@ -32,17 +32,8 @@ LabelSummary::LabelSummary() :
 {
 }
 
-LabelSummary::LabelSummary(JsonView jsonValue) : 
-    m_labelGroupNameHasBeenSet(false),
-    m_labelIdHasBeenSet(false),
-    m_labelGroupArnHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_rating(LabelRating::NOT_SET),
-    m_ratingHasBeenSet(false),
-    m_faultCodeHasBeenSet(false),
-    m_equipmentHasBeenSet(false),
-    m_createdAtHasBeenSet(false)
+LabelSummary::LabelSummary(JsonView jsonValue)
+  : LabelSummary()
 {
   *this = jsonValue;
 }

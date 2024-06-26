@@ -25,8 +25,8 @@ InventoryFilter::InventoryFilter() :
 {
 }
 
-InventoryFilter::InventoryFilter(const XmlNode& xmlNode) : 
-    m_prefixHasBeenSet(false)
+InventoryFilter::InventoryFilter(const XmlNode& xmlNode)
+  : InventoryFilter()
 {
   *this = xmlNode;
 }

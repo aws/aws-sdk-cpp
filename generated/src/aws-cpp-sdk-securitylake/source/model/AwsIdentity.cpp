@@ -24,9 +24,8 @@ AwsIdentity::AwsIdentity() :
 {
 }
 
-AwsIdentity::AwsIdentity(JsonView jsonValue) : 
-    m_externalIdHasBeenSet(false),
-    m_principalHasBeenSet(false)
+AwsIdentity::AwsIdentity(JsonView jsonValue)
+  : AwsIdentity()
 {
   *this = jsonValue;
 }

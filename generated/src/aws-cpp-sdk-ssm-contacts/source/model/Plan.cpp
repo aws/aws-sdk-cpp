@@ -24,9 +24,8 @@ Plan::Plan() :
 {
 }
 
-Plan::Plan(JsonView jsonValue) : 
-    m_stagesHasBeenSet(false),
-    m_rotationIdsHasBeenSet(false)
+Plan::Plan(JsonView jsonValue)
+  : Plan()
 {
   *this = jsonValue;
 }

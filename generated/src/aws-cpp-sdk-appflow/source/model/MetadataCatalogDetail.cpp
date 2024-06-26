@@ -27,12 +27,8 @@ MetadataCatalogDetail::MetadataCatalogDetail() :
 {
 }
 
-MetadataCatalogDetail::MetadataCatalogDetail(JsonView jsonValue) : 
-    m_catalogType(CatalogType::NOT_SET),
-    m_catalogTypeHasBeenSet(false),
-    m_tableNameHasBeenSet(false),
-    m_tableRegistrationOutputHasBeenSet(false),
-    m_partitionRegistrationOutputHasBeenSet(false)
+MetadataCatalogDetail::MetadataCatalogDetail(JsonView jsonValue)
+  : MetadataCatalogDetail()
 {
   *this = jsonValue;
 }

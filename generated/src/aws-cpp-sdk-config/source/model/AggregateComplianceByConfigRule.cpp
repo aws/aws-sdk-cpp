@@ -26,11 +26,8 @@ AggregateComplianceByConfigRule::AggregateComplianceByConfigRule() :
 {
 }
 
-AggregateComplianceByConfigRule::AggregateComplianceByConfigRule(JsonView jsonValue) : 
-    m_configRuleNameHasBeenSet(false),
-    m_complianceHasBeenSet(false),
-    m_accountIdHasBeenSet(false),
-    m_awsRegionHasBeenSet(false)
+AggregateComplianceByConfigRule::AggregateComplianceByConfigRule(JsonView jsonValue)
+  : AggregateComplianceByConfigRule()
 {
   *this = jsonValue;
 }

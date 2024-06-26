@@ -23,8 +23,8 @@ DetectorStateSummary::DetectorStateSummary() :
 {
 }
 
-DetectorStateSummary::DetectorStateSummary(JsonView jsonValue) : 
-    m_stateNameHasBeenSet(false)
+DetectorStateSummary::DetectorStateSummary(JsonView jsonValue)
+  : DetectorStateSummary()
 {
   *this = jsonValue;
 }

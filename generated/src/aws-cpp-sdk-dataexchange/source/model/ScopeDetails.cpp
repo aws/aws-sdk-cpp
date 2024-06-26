@@ -25,10 +25,8 @@ ScopeDetails::ScopeDetails() :
 {
 }
 
-ScopeDetails::ScopeDetails(JsonView jsonValue) : 
-    m_lakeFormationTagPoliciesHasBeenSet(false),
-    m_redshiftDataSharesHasBeenSet(false),
-    m_s3DataAccessesHasBeenSet(false)
+ScopeDetails::ScopeDetails(JsonView jsonValue)
+  : ScopeDetails()
 {
   *this = jsonValue;
 }

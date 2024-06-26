@@ -33,18 +33,8 @@ DominantColor::DominantColor() :
 {
 }
 
-DominantColor::DominantColor(JsonView jsonValue) : 
-    m_red(0),
-    m_redHasBeenSet(false),
-    m_blue(0),
-    m_blueHasBeenSet(false),
-    m_green(0),
-    m_greenHasBeenSet(false),
-    m_hexCodeHasBeenSet(false),
-    m_cSSColorHasBeenSet(false),
-    m_simplifiedColorHasBeenSet(false),
-    m_pixelPercent(0.0),
-    m_pixelPercentHasBeenSet(false)
+DominantColor::DominantColor(JsonView jsonValue)
+  : DominantColor()
 {
   *this = jsonValue;
 }

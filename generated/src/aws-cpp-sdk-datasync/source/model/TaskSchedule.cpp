@@ -25,10 +25,8 @@ TaskSchedule::TaskSchedule() :
 {
 }
 
-TaskSchedule::TaskSchedule(JsonView jsonValue) : 
-    m_scheduleExpressionHasBeenSet(false),
-    m_status(ScheduleStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+TaskSchedule::TaskSchedule(JsonView jsonValue)
+  : TaskSchedule()
 {
   *this = jsonValue;
 }

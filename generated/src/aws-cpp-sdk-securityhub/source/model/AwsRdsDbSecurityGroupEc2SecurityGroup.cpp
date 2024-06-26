@@ -26,11 +26,8 @@ AwsRdsDbSecurityGroupEc2SecurityGroup::AwsRdsDbSecurityGroupEc2SecurityGroup() :
 {
 }
 
-AwsRdsDbSecurityGroupEc2SecurityGroup::AwsRdsDbSecurityGroupEc2SecurityGroup(JsonView jsonValue) : 
-    m_ec2SecurityGroupIdHasBeenSet(false),
-    m_ec2SecurityGroupNameHasBeenSet(false),
-    m_ec2SecurityGroupOwnerIdHasBeenSet(false),
-    m_statusHasBeenSet(false)
+AwsRdsDbSecurityGroupEc2SecurityGroup::AwsRdsDbSecurityGroupEc2SecurityGroup(JsonView jsonValue)
+  : AwsRdsDbSecurityGroupEc2SecurityGroup()
 {
   *this = jsonValue;
 }

@@ -29,14 +29,8 @@ Database::Database() :
 {
 }
 
-Database::Database(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_tableCount(0),
-    m_tableCountHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false)
+Database::Database(JsonView jsonValue)
+  : Database()
 {
   *this = jsonValue;
 }

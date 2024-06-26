@@ -31,16 +31,8 @@ OperationSummary::OperationSummary() :
 {
 }
 
-OperationSummary::OperationSummary(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_type(OperationType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_status(OperationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_targetArnHasBeenSet(false),
-    m_startedAtHasBeenSet(false),
-    m_endedAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+OperationSummary::OperationSummary(JsonView jsonValue)
+  : OperationSummary()
 {
   *this = jsonValue;
 }

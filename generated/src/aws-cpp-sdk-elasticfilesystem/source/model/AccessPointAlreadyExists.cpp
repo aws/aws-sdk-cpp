@@ -25,10 +25,8 @@ AccessPointAlreadyExists::AccessPointAlreadyExists() :
 {
 }
 
-AccessPointAlreadyExists::AccessPointAlreadyExists(JsonView jsonValue) : 
-    m_errorCodeHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_accessPointIdHasBeenSet(false)
+AccessPointAlreadyExists::AccessPointAlreadyExists(JsonView jsonValue)
+  : AccessPointAlreadyExists()
 {
   *this = jsonValue;
 }

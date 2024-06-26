@@ -25,10 +25,8 @@ DiscoveryServerConfiguration::DiscoveryServerConfiguration() :
 {
 }
 
-DiscoveryServerConfiguration::DiscoveryServerConfiguration(JsonView jsonValue) : 
-    m_serverHostnameHasBeenSet(false),
-    m_serverPort(0),
-    m_serverPortHasBeenSet(false)
+DiscoveryServerConfiguration::DiscoveryServerConfiguration(JsonView jsonValue)
+  : DiscoveryServerConfiguration()
 {
   *this = jsonValue;
 }

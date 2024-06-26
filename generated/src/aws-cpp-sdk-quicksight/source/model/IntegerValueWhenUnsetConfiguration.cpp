@@ -26,11 +26,8 @@ IntegerValueWhenUnsetConfiguration::IntegerValueWhenUnsetConfiguration() :
 {
 }
 
-IntegerValueWhenUnsetConfiguration::IntegerValueWhenUnsetConfiguration(JsonView jsonValue) : 
-    m_valueWhenUnsetOption(ValueWhenUnsetOption::NOT_SET),
-    m_valueWhenUnsetOptionHasBeenSet(false),
-    m_customValue(0),
-    m_customValueHasBeenSet(false)
+IntegerValueWhenUnsetConfiguration::IntegerValueWhenUnsetConfiguration(JsonView jsonValue)
+  : IntegerValueWhenUnsetConfiguration()
 {
   *this = jsonValue;
 }

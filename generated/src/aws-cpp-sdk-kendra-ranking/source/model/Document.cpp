@@ -30,15 +30,8 @@ Document::Document() :
 {
 }
 
-Document::Document(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_groupIdHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_bodyHasBeenSet(false),
-    m_tokenizedTitleHasBeenSet(false),
-    m_tokenizedBodyHasBeenSet(false),
-    m_originalScore(0.0),
-    m_originalScoreHasBeenSet(false)
+Document::Document(JsonView jsonValue)
+  : Document()
 {
   *this = jsonValue;
 }

@@ -28,13 +28,8 @@ NodePropertiesSummary::NodePropertiesSummary() :
 {
 }
 
-NodePropertiesSummary::NodePropertiesSummary(JsonView jsonValue) : 
-    m_isMainNode(false),
-    m_isMainNodeHasBeenSet(false),
-    m_numNodes(0),
-    m_numNodesHasBeenSet(false),
-    m_nodeIndex(0),
-    m_nodeIndexHasBeenSet(false)
+NodePropertiesSummary::NodePropertiesSummary(JsonView jsonValue)
+  : NodePropertiesSummary()
 {
   *this = jsonValue;
 }

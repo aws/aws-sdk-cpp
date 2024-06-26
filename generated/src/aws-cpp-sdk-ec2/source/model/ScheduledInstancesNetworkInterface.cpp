@@ -41,24 +41,8 @@ ScheduledInstancesNetworkInterface::ScheduledInstancesNetworkInterface() :
 {
 }
 
-ScheduledInstancesNetworkInterface::ScheduledInstancesNetworkInterface(const XmlNode& xmlNode) : 
-    m_associatePublicIpAddress(false),
-    m_associatePublicIpAddressHasBeenSet(false),
-    m_deleteOnTermination(false),
-    m_deleteOnTerminationHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_deviceIndex(0),
-    m_deviceIndexHasBeenSet(false),
-    m_groupsHasBeenSet(false),
-    m_ipv6AddressCount(0),
-    m_ipv6AddressCountHasBeenSet(false),
-    m_ipv6AddressesHasBeenSet(false),
-    m_networkInterfaceIdHasBeenSet(false),
-    m_privateIpAddressHasBeenSet(false),
-    m_privateIpAddressConfigsHasBeenSet(false),
-    m_secondaryPrivateIpAddressCount(0),
-    m_secondaryPrivateIpAddressCountHasBeenSet(false),
-    m_subnetIdHasBeenSet(false)
+ScheduledInstancesNetworkInterface::ScheduledInstancesNetworkInterface(const XmlNode& xmlNode)
+  : ScheduledInstancesNetworkInterface()
 {
   *this = xmlNode;
 }

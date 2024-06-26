@@ -24,9 +24,8 @@ DuplicateTimestamps::DuplicateTimestamps() :
 {
 }
 
-DuplicateTimestamps::DuplicateTimestamps(JsonView jsonValue) : 
-    m_totalNumberOfDuplicateTimestamps(0),
-    m_totalNumberOfDuplicateTimestampsHasBeenSet(false)
+DuplicateTimestamps::DuplicateTimestamps(JsonView jsonValue)
+  : DuplicateTimestamps()
 {
   *this = jsonValue;
 }

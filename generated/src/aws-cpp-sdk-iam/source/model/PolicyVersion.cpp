@@ -29,12 +29,8 @@ PolicyVersion::PolicyVersion() :
 {
 }
 
-PolicyVersion::PolicyVersion(const XmlNode& xmlNode) : 
-    m_documentHasBeenSet(false),
-    m_versionIdHasBeenSet(false),
-    m_isDefaultVersion(false),
-    m_isDefaultVersionHasBeenSet(false),
-    m_createDateHasBeenSet(false)
+PolicyVersion::PolicyVersion(const XmlNode& xmlNode)
+  : PolicyVersion()
 {
   *this = xmlNode;
 }

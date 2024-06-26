@@ -24,9 +24,8 @@ ResourceConfigForUpdate::ResourceConfigForUpdate() :
 {
 }
 
-ResourceConfigForUpdate::ResourceConfigForUpdate(JsonView jsonValue) : 
-    m_keepAlivePeriodInSeconds(0),
-    m_keepAlivePeriodInSecondsHasBeenSet(false)
+ResourceConfigForUpdate::ResourceConfigForUpdate(JsonView jsonValue)
+  : ResourceConfigForUpdate()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ ReleaseConfiguration::ReleaseConfiguration() :
 {
 }
 
-ReleaseConfiguration::ReleaseConfiguration(JsonView jsonValue) : 
-    m_durationSinceLastAccessHasBeenSet(false)
+ReleaseConfiguration::ReleaseConfiguration(JsonView jsonValue)
+  : ReleaseConfiguration()
 {
   *this = jsonValue;
 }

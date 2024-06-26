@@ -25,11 +25,8 @@ UpdateTrailResult::UpdateTrailResult() :
 {
 }
 
-UpdateTrailResult::UpdateTrailResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_includeGlobalServiceEvents(false),
-    m_isMultiRegionTrail(false),
-    m_logFileValidationEnabled(false),
-    m_isOrganizationTrail(false)
+UpdateTrailResult::UpdateTrailResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateTrailResult()
 {
   *this = result;
 }

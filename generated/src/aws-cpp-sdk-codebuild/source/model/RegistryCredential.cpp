@@ -25,10 +25,8 @@ RegistryCredential::RegistryCredential() :
 {
 }
 
-RegistryCredential::RegistryCredential(JsonView jsonValue) : 
-    m_credentialHasBeenSet(false),
-    m_credentialProvider(CredentialProviderType::NOT_SET),
-    m_credentialProviderHasBeenSet(false)
+RegistryCredential::RegistryCredential(JsonView jsonValue)
+  : RegistryCredential()
 {
   *this = jsonValue;
 }

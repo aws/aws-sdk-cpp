@@ -62,47 +62,8 @@ InstancesCount::InstancesCount() :
 {
 }
 
-InstancesCount::InstancesCount(JsonView jsonValue) : 
-    m_assigning(0),
-    m_assigningHasBeenSet(false),
-    m_booting(0),
-    m_bootingHasBeenSet(false),
-    m_connectionLost(0),
-    m_connectionLostHasBeenSet(false),
-    m_deregistering(0),
-    m_deregisteringHasBeenSet(false),
-    m_online(0),
-    m_onlineHasBeenSet(false),
-    m_pending(0),
-    m_pendingHasBeenSet(false),
-    m_rebooting(0),
-    m_rebootingHasBeenSet(false),
-    m_registered(0),
-    m_registeredHasBeenSet(false),
-    m_registering(0),
-    m_registeringHasBeenSet(false),
-    m_requested(0),
-    m_requestedHasBeenSet(false),
-    m_runningSetup(0),
-    m_runningSetupHasBeenSet(false),
-    m_setupFailed(0),
-    m_setupFailedHasBeenSet(false),
-    m_shuttingDown(0),
-    m_shuttingDownHasBeenSet(false),
-    m_startFailed(0),
-    m_startFailedHasBeenSet(false),
-    m_stopFailed(0),
-    m_stopFailedHasBeenSet(false),
-    m_stopped(0),
-    m_stoppedHasBeenSet(false),
-    m_stopping(0),
-    m_stoppingHasBeenSet(false),
-    m_terminated(0),
-    m_terminatedHasBeenSet(false),
-    m_terminating(0),
-    m_terminatingHasBeenSet(false),
-    m_unassigning(0),
-    m_unassigningHasBeenSet(false)
+InstancesCount::InstancesCount(JsonView jsonValue)
+  : InstancesCount()
 {
   *this = jsonValue;
 }

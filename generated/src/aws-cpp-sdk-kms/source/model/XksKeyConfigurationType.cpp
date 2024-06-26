@@ -23,8 +23,8 @@ XksKeyConfigurationType::XksKeyConfigurationType() :
 {
 }
 
-XksKeyConfigurationType::XksKeyConfigurationType(JsonView jsonValue) : 
-    m_idHasBeenSet(false)
+XksKeyConfigurationType::XksKeyConfigurationType(JsonView jsonValue)
+  : XksKeyConfigurationType()
 {
   *this = jsonValue;
 }

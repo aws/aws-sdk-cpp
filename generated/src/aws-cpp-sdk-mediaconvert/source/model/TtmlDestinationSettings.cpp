@@ -24,9 +24,8 @@ TtmlDestinationSettings::TtmlDestinationSettings() :
 {
 }
 
-TtmlDestinationSettings::TtmlDestinationSettings(JsonView jsonValue) : 
-    m_stylePassthrough(TtmlStylePassthrough::NOT_SET),
-    m_stylePassthroughHasBeenSet(false)
+TtmlDestinationSettings::TtmlDestinationSettings(JsonView jsonValue)
+  : TtmlDestinationSettings()
 {
   *this = jsonValue;
 }

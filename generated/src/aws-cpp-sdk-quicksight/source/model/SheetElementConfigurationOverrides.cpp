@@ -24,9 +24,8 @@ SheetElementConfigurationOverrides::SheetElementConfigurationOverrides() :
 {
 }
 
-SheetElementConfigurationOverrides::SheetElementConfigurationOverrides(JsonView jsonValue) : 
-    m_visibility(Visibility::NOT_SET),
-    m_visibilityHasBeenSet(false)
+SheetElementConfigurationOverrides::SheetElementConfigurationOverrides(JsonView jsonValue)
+  : SheetElementConfigurationOverrides()
 {
   *this = jsonValue;
 }

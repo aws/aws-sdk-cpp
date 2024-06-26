@@ -24,9 +24,8 @@ HttpDataSourceConfig::HttpDataSourceConfig() :
 {
 }
 
-HttpDataSourceConfig::HttpDataSourceConfig(JsonView jsonValue) : 
-    m_endpointHasBeenSet(false),
-    m_authorizationConfigHasBeenSet(false)
+HttpDataSourceConfig::HttpDataSourceConfig(JsonView jsonValue)
+  : HttpDataSourceConfig()
 {
   *this = jsonValue;
 }

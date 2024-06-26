@@ -23,8 +23,8 @@ AwsEc2InstanceMonitoringDetails::AwsEc2InstanceMonitoringDetails() :
 {
 }
 
-AwsEc2InstanceMonitoringDetails::AwsEc2InstanceMonitoringDetails(JsonView jsonValue) : 
-    m_stateHasBeenSet(false)
+AwsEc2InstanceMonitoringDetails::AwsEc2InstanceMonitoringDetails(JsonView jsonValue)
+  : AwsEc2InstanceMonitoringDetails()
 {
   *this = jsonValue;
 }

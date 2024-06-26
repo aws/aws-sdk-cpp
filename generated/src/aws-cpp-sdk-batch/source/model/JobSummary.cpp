@@ -38,23 +38,8 @@ JobSummary::JobSummary() :
 {
 }
 
-JobSummary::JobSummary(JsonView jsonValue) : 
-    m_jobArnHasBeenSet(false),
-    m_jobIdHasBeenSet(false),
-    m_jobNameHasBeenSet(false),
-    m_createdAt(0),
-    m_createdAtHasBeenSet(false),
-    m_status(JobStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusReasonHasBeenSet(false),
-    m_startedAt(0),
-    m_startedAtHasBeenSet(false),
-    m_stoppedAt(0),
-    m_stoppedAtHasBeenSet(false),
-    m_containerHasBeenSet(false),
-    m_arrayPropertiesHasBeenSet(false),
-    m_nodePropertiesHasBeenSet(false),
-    m_jobDefinitionHasBeenSet(false)
+JobSummary::JobSummary(JsonView jsonValue)
+  : JobSummary()
 {
   *this = jsonValue;
 }

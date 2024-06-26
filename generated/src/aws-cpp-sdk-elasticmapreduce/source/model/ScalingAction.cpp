@@ -25,10 +25,8 @@ ScalingAction::ScalingAction() :
 {
 }
 
-ScalingAction::ScalingAction(JsonView jsonValue) : 
-    m_market(MarketType::NOT_SET),
-    m_marketHasBeenSet(false),
-    m_simpleScalingPolicyConfigurationHasBeenSet(false)
+ScalingAction::ScalingAction(JsonView jsonValue)
+  : ScalingAction()
 {
   *this = jsonValue;
 }

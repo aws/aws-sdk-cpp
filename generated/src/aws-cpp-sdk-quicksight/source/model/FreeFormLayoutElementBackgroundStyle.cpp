@@ -25,10 +25,8 @@ FreeFormLayoutElementBackgroundStyle::FreeFormLayoutElementBackgroundStyle() :
 {
 }
 
-FreeFormLayoutElementBackgroundStyle::FreeFormLayoutElementBackgroundStyle(JsonView jsonValue) : 
-    m_visibility(Visibility::NOT_SET),
-    m_visibilityHasBeenSet(false),
-    m_colorHasBeenSet(false)
+FreeFormLayoutElementBackgroundStyle::FreeFormLayoutElementBackgroundStyle(JsonView jsonValue)
+  : FreeFormLayoutElementBackgroundStyle()
 {
   *this = jsonValue;
 }

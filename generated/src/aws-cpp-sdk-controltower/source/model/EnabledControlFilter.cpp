@@ -25,10 +25,8 @@ EnabledControlFilter::EnabledControlFilter() :
 {
 }
 
-EnabledControlFilter::EnabledControlFilter(JsonView jsonValue) : 
-    m_controlIdentifiersHasBeenSet(false),
-    m_driftStatusesHasBeenSet(false),
-    m_statusesHasBeenSet(false)
+EnabledControlFilter::EnabledControlFilter(JsonView jsonValue)
+  : EnabledControlFilter()
 {
   *this = jsonValue;
 }

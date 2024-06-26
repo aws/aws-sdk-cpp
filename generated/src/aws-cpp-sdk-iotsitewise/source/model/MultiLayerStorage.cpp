@@ -23,8 +23,8 @@ MultiLayerStorage::MultiLayerStorage() :
 {
 }
 
-MultiLayerStorage::MultiLayerStorage(JsonView jsonValue) : 
-    m_customerManagedS3StorageHasBeenSet(false)
+MultiLayerStorage::MultiLayerStorage(JsonView jsonValue)
+  : MultiLayerStorage()
 {
   *this = jsonValue;
 }

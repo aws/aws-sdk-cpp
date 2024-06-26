@@ -28,13 +28,8 @@ DateDimensionField::DateDimensionField() :
 {
 }
 
-DateDimensionField::DateDimensionField(JsonView jsonValue) : 
-    m_fieldIdHasBeenSet(false),
-    m_columnHasBeenSet(false),
-    m_dateGranularity(TimeGranularity::NOT_SET),
-    m_dateGranularityHasBeenSet(false),
-    m_hierarchyIdHasBeenSet(false),
-    m_formatConfigurationHasBeenSet(false)
+DateDimensionField::DateDimensionField(JsonView jsonValue)
+  : DateDimensionField()
 {
   *this = jsonValue;
 }

@@ -32,17 +32,8 @@ HttpRouteMatch::HttpRouteMatch() :
 {
 }
 
-HttpRouteMatch::HttpRouteMatch(JsonView jsonValue) : 
-    m_headersHasBeenSet(false),
-    m_method(HttpMethod::NOT_SET),
-    m_methodHasBeenSet(false),
-    m_pathHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_prefixHasBeenSet(false),
-    m_queryParametersHasBeenSet(false),
-    m_scheme(HttpScheme::NOT_SET),
-    m_schemeHasBeenSet(false)
+HttpRouteMatch::HttpRouteMatch(JsonView jsonValue)
+  : HttpRouteMatch()
 {
   *this = jsonValue;
 }

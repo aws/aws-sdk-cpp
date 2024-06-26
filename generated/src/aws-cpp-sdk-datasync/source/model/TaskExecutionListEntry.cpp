@@ -25,10 +25,8 @@ TaskExecutionListEntry::TaskExecutionListEntry() :
 {
 }
 
-TaskExecutionListEntry::TaskExecutionListEntry(JsonView jsonValue) : 
-    m_taskExecutionArnHasBeenSet(false),
-    m_status(TaskExecutionStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+TaskExecutionListEntry::TaskExecutionListEntry(JsonView jsonValue)
+  : TaskExecutionListEntry()
 {
   *this = jsonValue;
 }

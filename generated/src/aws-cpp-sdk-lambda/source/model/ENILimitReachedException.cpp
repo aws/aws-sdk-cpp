@@ -24,9 +24,8 @@ ENILimitReachedException::ENILimitReachedException() :
 {
 }
 
-ENILimitReachedException::ENILimitReachedException(JsonView jsonValue) : 
-    m_typeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+ENILimitReachedException::ENILimitReachedException(JsonView jsonValue)
+  : ENILimitReachedException()
 {
   *this = jsonValue;
 }

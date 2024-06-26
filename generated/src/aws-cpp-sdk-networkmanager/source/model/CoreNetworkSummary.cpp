@@ -30,15 +30,8 @@ CoreNetworkSummary::CoreNetworkSummary() :
 {
 }
 
-CoreNetworkSummary::CoreNetworkSummary(JsonView jsonValue) : 
-    m_coreNetworkIdHasBeenSet(false),
-    m_coreNetworkArnHasBeenSet(false),
-    m_globalNetworkIdHasBeenSet(false),
-    m_ownerAccountIdHasBeenSet(false),
-    m_state(CoreNetworkState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+CoreNetworkSummary::CoreNetworkSummary(JsonView jsonValue)
+  : CoreNetworkSummary()
 {
   *this = jsonValue;
 }

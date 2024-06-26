@@ -26,11 +26,8 @@ ImageQuality::ImageQuality() :
 {
 }
 
-ImageQuality::ImageQuality(JsonView jsonValue) : 
-    m_brightness(0.0),
-    m_brightnessHasBeenSet(false),
-    m_sharpness(0.0),
-    m_sharpnessHasBeenSet(false)
+ImageQuality::ImageQuality(JsonView jsonValue)
+  : ImageQuality()
 {
   *this = jsonValue;
 }

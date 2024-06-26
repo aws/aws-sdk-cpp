@@ -24,9 +24,8 @@ VirtualGatewayStatus::VirtualGatewayStatus() :
 {
 }
 
-VirtualGatewayStatus::VirtualGatewayStatus(JsonView jsonValue) : 
-    m_status(VirtualGatewayStatusCode::NOT_SET),
-    m_statusHasBeenSet(false)
+VirtualGatewayStatus::VirtualGatewayStatus(JsonView jsonValue)
+  : VirtualGatewayStatus()
 {
   *this = jsonValue;
 }

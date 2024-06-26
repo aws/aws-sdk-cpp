@@ -27,12 +27,8 @@ ConnectivityInfo::ConnectivityInfo() :
 {
 }
 
-ConnectivityInfo::ConnectivityInfo(JsonView jsonValue) : 
-    m_hostAddressHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_metadataHasBeenSet(false),
-    m_portNumber(0),
-    m_portNumberHasBeenSet(false)
+ConnectivityInfo::ConnectivityInfo(JsonView jsonValue)
+  : ConnectivityInfo()
 {
   *this = jsonValue;
 }

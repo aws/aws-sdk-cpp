@@ -24,9 +24,8 @@ PivotTableFieldCollapseStateTarget::PivotTableFieldCollapseStateTarget() :
 {
 }
 
-PivotTableFieldCollapseStateTarget::PivotTableFieldCollapseStateTarget(JsonView jsonValue) : 
-    m_fieldIdHasBeenSet(false),
-    m_fieldDataPathValuesHasBeenSet(false)
+PivotTableFieldCollapseStateTarget::PivotTableFieldCollapseStateTarget(JsonView jsonValue)
+  : PivotTableFieldCollapseStateTarget()
 {
   *this = jsonValue;
 }

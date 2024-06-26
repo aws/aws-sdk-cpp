@@ -26,11 +26,8 @@ ExperienceEntitiesSummary::ExperienceEntitiesSummary() :
 {
 }
 
-ExperienceEntitiesSummary::ExperienceEntitiesSummary(JsonView jsonValue) : 
-    m_entityIdHasBeenSet(false),
-    m_entityType(EntityType::NOT_SET),
-    m_entityTypeHasBeenSet(false),
-    m_displayDataHasBeenSet(false)
+ExperienceEntitiesSummary::ExperienceEntitiesSummary(JsonView jsonValue)
+  : ExperienceEntitiesSummary()
 {
   *this = jsonValue;
 }

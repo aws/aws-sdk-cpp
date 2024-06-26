@@ -28,13 +28,8 @@ ImportAssetsFromLakeFormationTagPolicyResponseDetails::ImportAssetsFromLakeForma
 {
 }
 
-ImportAssetsFromLakeFormationTagPolicyResponseDetails::ImportAssetsFromLakeFormationTagPolicyResponseDetails(JsonView jsonValue) : 
-    m_catalogIdHasBeenSet(false),
-    m_databaseHasBeenSet(false),
-    m_tableHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_dataSetIdHasBeenSet(false),
-    m_revisionIdHasBeenSet(false)
+ImportAssetsFromLakeFormationTagPolicyResponseDetails::ImportAssetsFromLakeFormationTagPolicyResponseDetails(JsonView jsonValue)
+  : ImportAssetsFromLakeFormationTagPolicyResponseDetails()
 {
   *this = jsonValue;
 }

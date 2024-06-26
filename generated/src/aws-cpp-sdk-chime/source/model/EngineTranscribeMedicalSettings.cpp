@@ -33,18 +33,8 @@ EngineTranscribeMedicalSettings::EngineTranscribeMedicalSettings() :
 {
 }
 
-EngineTranscribeMedicalSettings::EngineTranscribeMedicalSettings(JsonView jsonValue) : 
-    m_languageCode(TranscribeMedicalLanguageCode::NOT_SET),
-    m_languageCodeHasBeenSet(false),
-    m_specialty(TranscribeMedicalSpecialty::NOT_SET),
-    m_specialtyHasBeenSet(false),
-    m_type(TranscribeMedicalType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_vocabularyNameHasBeenSet(false),
-    m_region(TranscribeMedicalRegion::NOT_SET),
-    m_regionHasBeenSet(false),
-    m_contentIdentificationType(TranscribeMedicalContentIdentificationType::NOT_SET),
-    m_contentIdentificationTypeHasBeenSet(false)
+EngineTranscribeMedicalSettings::EngineTranscribeMedicalSettings(JsonView jsonValue)
+  : EngineTranscribeMedicalSettings()
 {
   *this = jsonValue;
 }

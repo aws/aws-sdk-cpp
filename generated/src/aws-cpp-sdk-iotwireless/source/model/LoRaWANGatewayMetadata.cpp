@@ -27,12 +27,8 @@ LoRaWANGatewayMetadata::LoRaWANGatewayMetadata() :
 {
 }
 
-LoRaWANGatewayMetadata::LoRaWANGatewayMetadata(JsonView jsonValue) : 
-    m_gatewayEuiHasBeenSet(false),
-    m_snr(0.0),
-    m_snrHasBeenSet(false),
-    m_rssi(0.0),
-    m_rssiHasBeenSet(false)
+LoRaWANGatewayMetadata::LoRaWANGatewayMetadata(JsonView jsonValue)
+  : LoRaWANGatewayMetadata()
 {
   *this = jsonValue;
 }

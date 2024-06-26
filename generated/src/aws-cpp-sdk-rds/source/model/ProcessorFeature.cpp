@@ -26,9 +26,8 @@ ProcessorFeature::ProcessorFeature() :
 {
 }
 
-ProcessorFeature::ProcessorFeature(const XmlNode& xmlNode) : 
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
+ProcessorFeature::ProcessorFeature(const XmlNode& xmlNode)
+  : ProcessorFeature()
 {
   *this = xmlNode;
 }

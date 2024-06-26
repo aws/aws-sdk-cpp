@@ -27,10 +27,8 @@ JobManifestSpec::JobManifestSpec() :
 {
 }
 
-JobManifestSpec::JobManifestSpec(const XmlNode& xmlNode) : 
-    m_format(JobManifestFormat::NOT_SET),
-    m_formatHasBeenSet(false),
-    m_fieldsHasBeenSet(false)
+JobManifestSpec::JobManifestSpec(const XmlNode& xmlNode)
+  : JobManifestSpec()
 {
   *this = xmlNode;
 }

@@ -25,10 +25,8 @@ SpeakerSearchResult::SpeakerSearchResult() :
 {
 }
 
-SpeakerSearchResult::SpeakerSearchResult(JsonView jsonValue) : 
-    m_confidenceScore(0.0),
-    m_confidenceScoreHasBeenSet(false),
-    m_voiceProfileIdHasBeenSet(false)
+SpeakerSearchResult::SpeakerSearchResult(JsonView jsonValue)
+  : SpeakerSearchResult()
 {
   *this = jsonValue;
 }

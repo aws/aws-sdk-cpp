@@ -23,8 +23,8 @@ AssistantIntegrationConfiguration::AssistantIntegrationConfiguration() :
 {
 }
 
-AssistantIntegrationConfiguration::AssistantIntegrationConfiguration(JsonView jsonValue) : 
-    m_topicIntegrationArnHasBeenSet(false)
+AssistantIntegrationConfiguration::AssistantIntegrationConfiguration(JsonView jsonValue)
+  : AssistantIntegrationConfiguration()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ OrganizationAffectedEntitiesErrorItem::OrganizationAffectedEntitiesErrorItem() :
 {
 }
 
-OrganizationAffectedEntitiesErrorItem::OrganizationAffectedEntitiesErrorItem(JsonView jsonValue) : 
-    m_awsAccountIdHasBeenSet(false),
-    m_eventArnHasBeenSet(false),
-    m_errorNameHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
+OrganizationAffectedEntitiesErrorItem::OrganizationAffectedEntitiesErrorItem(JsonView jsonValue)
+  : OrganizationAffectedEntitiesErrorItem()
 {
   *this = jsonValue;
 }

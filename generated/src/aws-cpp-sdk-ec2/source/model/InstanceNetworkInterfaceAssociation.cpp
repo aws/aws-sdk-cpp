@@ -29,12 +29,8 @@ InstanceNetworkInterfaceAssociation::InstanceNetworkInterfaceAssociation() :
 {
 }
 
-InstanceNetworkInterfaceAssociation::InstanceNetworkInterfaceAssociation(const XmlNode& xmlNode) : 
-    m_carrierIpHasBeenSet(false),
-    m_customerOwnedIpHasBeenSet(false),
-    m_ipOwnerIdHasBeenSet(false),
-    m_publicDnsNameHasBeenSet(false),
-    m_publicIpHasBeenSet(false)
+InstanceNetworkInterfaceAssociation::InstanceNetworkInterfaceAssociation(const XmlNode& xmlNode)
+  : InstanceNetworkInterfaceAssociation()
 {
   *this = xmlNode;
 }

@@ -25,10 +25,8 @@ FailureDescription::FailureDescription() :
 {
 }
 
-FailureDescription::FailureDescription(JsonView jsonValue) : 
-    m_type(DeliveryStreamFailureType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_detailsHasBeenSet(false)
+FailureDescription::FailureDescription(JsonView jsonValue)
+  : FailureDescription()
 {
   *this = jsonValue;
 }

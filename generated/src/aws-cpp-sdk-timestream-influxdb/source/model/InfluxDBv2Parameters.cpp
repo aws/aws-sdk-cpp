@@ -36,21 +36,8 @@ InfluxDBv2Parameters::InfluxDBv2Parameters() :
 {
 }
 
-InfluxDBv2Parameters::InfluxDBv2Parameters(JsonView jsonValue) : 
-    m_fluxLogEnabled(false),
-    m_fluxLogEnabledHasBeenSet(false),
-    m_logLevel(LogLevel::NOT_SET),
-    m_logLevelHasBeenSet(false),
-    m_noTasks(false),
-    m_noTasksHasBeenSet(false),
-    m_queryConcurrency(0),
-    m_queryConcurrencyHasBeenSet(false),
-    m_queryQueueSize(0),
-    m_queryQueueSizeHasBeenSet(false),
-    m_tracingType(TracingType::NOT_SET),
-    m_tracingTypeHasBeenSet(false),
-    m_metricsDisabled(false),
-    m_metricsDisabledHasBeenSet(false)
+InfluxDBv2Parameters::InfluxDBv2Parameters(JsonView jsonValue)
+  : InfluxDBv2Parameters()
 {
   *this = jsonValue;
 }

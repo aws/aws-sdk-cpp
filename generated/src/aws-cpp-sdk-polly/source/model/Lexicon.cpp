@@ -24,9 +24,8 @@ Lexicon::Lexicon() :
 {
 }
 
-Lexicon::Lexicon(JsonView jsonValue) : 
-    m_contentHasBeenSet(false),
-    m_nameHasBeenSet(false)
+Lexicon::Lexicon(JsonView jsonValue)
+  : Lexicon()
 {
   *this = jsonValue;
 }

@@ -29,14 +29,8 @@ StorageConfiguration::StorageConfiguration() :
 {
 }
 
-StorageConfiguration::StorageConfiguration(JsonView jsonValue) : 
-    m_mongoDbAtlasConfigurationHasBeenSet(false),
-    m_opensearchServerlessConfigurationHasBeenSet(false),
-    m_pineconeConfigurationHasBeenSet(false),
-    m_rdsConfigurationHasBeenSet(false),
-    m_redisEnterpriseCloudConfigurationHasBeenSet(false),
-    m_type(KnowledgeBaseStorageType::NOT_SET),
-    m_typeHasBeenSet(false)
+StorageConfiguration::StorageConfiguration(JsonView jsonValue)
+  : StorageConfiguration()
 {
   *this = jsonValue;
 }

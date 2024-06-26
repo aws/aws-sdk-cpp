@@ -26,11 +26,8 @@ InvalidRequestRegionException::InvalidRequestRegionException() :
 {
 }
 
-InvalidRequestRegionException::InvalidRequestRegionException(JsonView jsonValue) : 
-    m_errorHasBeenSet(false),
-    m_error_descriptionHasBeenSet(false),
-    m_endpointHasBeenSet(false),
-    m_regionHasBeenSet(false)
+InvalidRequestRegionException::InvalidRequestRegionException(JsonView jsonValue)
+  : InvalidRequestRegionException()
 {
   *this = jsonValue;
 }

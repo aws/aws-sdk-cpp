@@ -23,8 +23,8 @@ BatchScheduleActionDeleteRequest::BatchScheduleActionDeleteRequest() :
 {
 }
 
-BatchScheduleActionDeleteRequest::BatchScheduleActionDeleteRequest(JsonView jsonValue) : 
-    m_actionNamesHasBeenSet(false)
+BatchScheduleActionDeleteRequest::BatchScheduleActionDeleteRequest(JsonView jsonValue)
+  : BatchScheduleActionDeleteRequest()
 {
   *this = jsonValue;
 }

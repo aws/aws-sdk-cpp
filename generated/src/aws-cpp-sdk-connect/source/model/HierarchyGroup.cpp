@@ -30,15 +30,8 @@ HierarchyGroup::HierarchyGroup() :
 {
 }
 
-HierarchyGroup::HierarchyGroup(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_levelIdHasBeenSet(false),
-    m_hierarchyPathHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_lastModifiedRegionHasBeenSet(false)
+HierarchyGroup::HierarchyGroup(JsonView jsonValue)
+  : HierarchyGroup()
 {
   *this = jsonValue;
 }

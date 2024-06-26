@@ -33,18 +33,8 @@ AwsRdsEventSubscriptionDetails::AwsRdsEventSubscriptionDetails() :
 {
 }
 
-AwsRdsEventSubscriptionDetails::AwsRdsEventSubscriptionDetails(JsonView jsonValue) : 
-    m_custSubscriptionIdHasBeenSet(false),
-    m_customerAwsIdHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_eventCategoriesListHasBeenSet(false),
-    m_eventSubscriptionArnHasBeenSet(false),
-    m_snsTopicArnHasBeenSet(false),
-    m_sourceIdsListHasBeenSet(false),
-    m_sourceTypeHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_subscriptionCreationTimeHasBeenSet(false)
+AwsRdsEventSubscriptionDetails::AwsRdsEventSubscriptionDetails(JsonView jsonValue)
+  : AwsRdsEventSubscriptionDetails()
 {
   *this = jsonValue;
 }

@@ -30,15 +30,8 @@ AgentKnowledgeBase::AgentKnowledgeBase() :
 {
 }
 
-AgentKnowledgeBase::AgentKnowledgeBase(JsonView jsonValue) : 
-    m_agentIdHasBeenSet(false),
-    m_agentVersionHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_knowledgeBaseIdHasBeenSet(false),
-    m_knowledgeBaseState(KnowledgeBaseState::NOT_SET),
-    m_knowledgeBaseStateHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+AgentKnowledgeBase::AgentKnowledgeBase(JsonView jsonValue)
+  : AgentKnowledgeBase()
 {
   *this = jsonValue;
 }

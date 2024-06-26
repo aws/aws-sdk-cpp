@@ -23,8 +23,8 @@ RadarChartSeriesSettings::RadarChartSeriesSettings() :
 {
 }
 
-RadarChartSeriesSettings::RadarChartSeriesSettings(JsonView jsonValue) : 
-    m_areaStyleSettingsHasBeenSet(false)
+RadarChartSeriesSettings::RadarChartSeriesSettings(JsonView jsonValue)
+  : RadarChartSeriesSettings()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ M2ManagedApplicationStepOutput::M2ManagedApplicationStepOutput() :
 {
 }
 
-M2ManagedApplicationStepOutput::M2ManagedApplicationStepOutput(JsonView jsonValue) : 
-    m_importDataSetSummaryHasBeenSet(false)
+M2ManagedApplicationStepOutput::M2ManagedApplicationStepOutput(JsonView jsonValue)
+  : M2ManagedApplicationStepOutput()
 {
   *this = jsonValue;
 }

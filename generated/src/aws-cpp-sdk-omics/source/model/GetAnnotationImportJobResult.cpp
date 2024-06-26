@@ -23,9 +23,8 @@ GetAnnotationImportJobResult::GetAnnotationImportJobResult() :
 {
 }
 
-GetAnnotationImportJobResult::GetAnnotationImportJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(JobStatus::NOT_SET),
-    m_runLeftNormalization(false)
+GetAnnotationImportJobResult::GetAnnotationImportJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetAnnotationImportJobResult()
 {
   *this = result;
 }

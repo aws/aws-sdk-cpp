@@ -23,9 +23,8 @@ GetV2LoggingOptionsResult::GetV2LoggingOptionsResult() :
 {
 }
 
-GetV2LoggingOptionsResult::GetV2LoggingOptionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_defaultLogLevel(LogLevel::NOT_SET),
-    m_disableAllLogs(false)
+GetV2LoggingOptionsResult::GetV2LoggingOptionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetV2LoggingOptionsResult()
 {
   *this = result;
 }

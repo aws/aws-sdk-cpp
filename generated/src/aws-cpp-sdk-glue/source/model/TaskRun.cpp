@@ -34,19 +34,8 @@ TaskRun::TaskRun() :
 {
 }
 
-TaskRun::TaskRun(JsonView jsonValue) : 
-    m_transformIdHasBeenSet(false),
-    m_taskRunIdHasBeenSet(false),
-    m_status(TaskStatusType::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_logGroupNameHasBeenSet(false),
-    m_propertiesHasBeenSet(false),
-    m_errorStringHasBeenSet(false),
-    m_startedOnHasBeenSet(false),
-    m_lastModifiedOnHasBeenSet(false),
-    m_completedOnHasBeenSet(false),
-    m_executionTime(0),
-    m_executionTimeHasBeenSet(false)
+TaskRun::TaskRun(JsonView jsonValue)
+  : TaskRun()
 {
   *this = jsonValue;
 }

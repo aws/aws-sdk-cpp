@@ -28,13 +28,8 @@ ApplicationSettingsResource::ApplicationSettingsResource() :
 {
 }
 
-ApplicationSettingsResource::ApplicationSettingsResource(JsonView jsonValue) : 
-    m_applicationIdHasBeenSet(false),
-    m_campaignHookHasBeenSet(false),
-    m_lastModifiedDateHasBeenSet(false),
-    m_limitsHasBeenSet(false),
-    m_quietTimeHasBeenSet(false),
-    m_journeyLimitsHasBeenSet(false)
+ApplicationSettingsResource::ApplicationSettingsResource(JsonView jsonValue)
+  : ApplicationSettingsResource()
 {
   *this = jsonValue;
 }

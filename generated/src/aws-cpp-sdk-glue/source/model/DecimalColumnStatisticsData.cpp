@@ -28,13 +28,8 @@ DecimalColumnStatisticsData::DecimalColumnStatisticsData() :
 {
 }
 
-DecimalColumnStatisticsData::DecimalColumnStatisticsData(JsonView jsonValue) : 
-    m_minimumValueHasBeenSet(false),
-    m_maximumValueHasBeenSet(false),
-    m_numberOfNulls(0),
-    m_numberOfNullsHasBeenSet(false),
-    m_numberOfDistinctValues(0),
-    m_numberOfDistinctValuesHasBeenSet(false)
+DecimalColumnStatisticsData::DecimalColumnStatisticsData(JsonView jsonValue)
+  : DecimalColumnStatisticsData()
 {
   *this = jsonValue;
 }

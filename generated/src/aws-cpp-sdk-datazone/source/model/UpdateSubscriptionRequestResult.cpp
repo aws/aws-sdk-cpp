@@ -22,8 +22,8 @@ UpdateSubscriptionRequestResult::UpdateSubscriptionRequestResult() :
 {
 }
 
-UpdateSubscriptionRequestResult::UpdateSubscriptionRequestResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(SubscriptionRequestStatus::NOT_SET)
+UpdateSubscriptionRequestResult::UpdateSubscriptionRequestResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateSubscriptionRequestResult()
 {
   *this = result;
 }

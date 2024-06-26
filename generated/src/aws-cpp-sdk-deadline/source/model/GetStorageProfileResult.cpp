@@ -22,8 +22,8 @@ GetStorageProfileResult::GetStorageProfileResult() :
 {
 }
 
-GetStorageProfileResult::GetStorageProfileResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_osFamily(StorageProfileOperatingSystemFamily::NOT_SET)
+GetStorageProfileResult::GetStorageProfileResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetStorageProfileResult()
 {
   *this = result;
 }

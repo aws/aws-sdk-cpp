@@ -29,14 +29,8 @@ DeploymentDataSummary::DeploymentDataSummary() :
 {
 }
 
-DeploymentDataSummary::DeploymentDataSummary(JsonView jsonValue) : 
-    m_createdAtHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_patternNameHasBeenSet(false),
-    m_status(DeploymentStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_workloadNameHasBeenSet(false)
+DeploymentDataSummary::DeploymentDataSummary(JsonView jsonValue)
+  : DeploymentDataSummary()
 {
   *this = jsonValue;
 }

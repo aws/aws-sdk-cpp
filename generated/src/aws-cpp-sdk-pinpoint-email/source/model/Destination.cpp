@@ -25,10 +25,8 @@ Destination::Destination() :
 {
 }
 
-Destination::Destination(JsonView jsonValue) : 
-    m_toAddressesHasBeenSet(false),
-    m_ccAddressesHasBeenSet(false),
-    m_bccAddressesHasBeenSet(false)
+Destination::Destination(JsonView jsonValue)
+  : Destination()
 {
   *this = jsonValue;
 }

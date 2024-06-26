@@ -24,9 +24,8 @@ NotificationConfiguration::NotificationConfiguration() :
 {
 }
 
-NotificationConfiguration::NotificationConfiguration(JsonView jsonValue) : 
-    m_httpsNotificationConfigurationHasBeenSet(false),
-    m_sqsNotificationConfigurationHasBeenSet(false)
+NotificationConfiguration::NotificationConfiguration(JsonView jsonValue)
+  : NotificationConfiguration()
 {
   *this = jsonValue;
 }

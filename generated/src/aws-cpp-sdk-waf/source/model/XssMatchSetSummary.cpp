@@ -24,9 +24,8 @@ XssMatchSetSummary::XssMatchSetSummary() :
 {
 }
 
-XssMatchSetSummary::XssMatchSetSummary(JsonView jsonValue) : 
-    m_xssMatchSetIdHasBeenSet(false),
-    m_nameHasBeenSet(false)
+XssMatchSetSummary::XssMatchSetSummary(JsonView jsonValue)
+  : XssMatchSetSummary()
 {
   *this = jsonValue;
 }

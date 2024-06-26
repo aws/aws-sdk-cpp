@@ -24,9 +24,8 @@ ContentBlockDelta::ContentBlockDelta() :
 {
 }
 
-ContentBlockDelta::ContentBlockDelta(JsonView jsonValue) : 
-    m_textHasBeenSet(false),
-    m_toolUseHasBeenSet(false)
+ContentBlockDelta::ContentBlockDelta(JsonView jsonValue)
+  : ContentBlockDelta()
 {
   *this = jsonValue;
 }

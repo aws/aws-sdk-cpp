@@ -26,11 +26,8 @@ RuleIpExpression::RuleIpExpression() :
 {
 }
 
-RuleIpExpression::RuleIpExpression(JsonView jsonValue) : 
-    m_evaluateHasBeenSet(false),
-    m_operator(RuleIpOperator::NOT_SET),
-    m_operatorHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+RuleIpExpression::RuleIpExpression(JsonView jsonValue)
+  : RuleIpExpression()
 {
   *this = jsonValue;
 }

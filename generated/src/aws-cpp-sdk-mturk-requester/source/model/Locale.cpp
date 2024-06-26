@@ -24,9 +24,8 @@ Locale::Locale() :
 {
 }
 
-Locale::Locale(JsonView jsonValue) : 
-    m_countryHasBeenSet(false),
-    m_subdivisionHasBeenSet(false)
+Locale::Locale(JsonView jsonValue)
+  : Locale()
 {
   *this = jsonValue;
 }

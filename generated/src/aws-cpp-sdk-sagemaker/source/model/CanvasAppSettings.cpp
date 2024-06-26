@@ -29,14 +29,8 @@ CanvasAppSettings::CanvasAppSettings() :
 {
 }
 
-CanvasAppSettings::CanvasAppSettings(JsonView jsonValue) : 
-    m_timeSeriesForecastingSettingsHasBeenSet(false),
-    m_modelRegisterSettingsHasBeenSet(false),
-    m_workspaceSettingsHasBeenSet(false),
-    m_identityProviderOAuthSettingsHasBeenSet(false),
-    m_directDeploySettingsHasBeenSet(false),
-    m_kendraSettingsHasBeenSet(false),
-    m_generativeAiSettingsHasBeenSet(false)
+CanvasAppSettings::CanvasAppSettings(JsonView jsonValue)
+  : CanvasAppSettings()
 {
   *this = jsonValue;
 }

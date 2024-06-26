@@ -25,10 +25,8 @@ AxisLabelOptions::AxisLabelOptions() :
 {
 }
 
-AxisLabelOptions::AxisLabelOptions(JsonView jsonValue) : 
-    m_fontConfigurationHasBeenSet(false),
-    m_customLabelHasBeenSet(false),
-    m_applyToHasBeenSet(false)
+AxisLabelOptions::AxisLabelOptions(JsonView jsonValue)
+  : AxisLabelOptions()
 {
   *this = jsonValue;
 }

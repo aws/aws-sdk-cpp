@@ -26,11 +26,8 @@ LabelGroupSummary::LabelGroupSummary() :
 {
 }
 
-LabelGroupSummary::LabelGroupSummary(JsonView jsonValue) : 
-    m_labelGroupNameHasBeenSet(false),
-    m_labelGroupArnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+LabelGroupSummary::LabelGroupSummary(JsonView jsonValue)
+  : LabelGroupSummary()
 {
   *this = jsonValue;
 }

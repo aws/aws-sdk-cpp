@@ -28,11 +28,8 @@ InvalidObjectState::InvalidObjectState() :
 {
 }
 
-InvalidObjectState::InvalidObjectState(const XmlNode& xmlNode) : 
-    m_storageClass(StorageClass::NOT_SET),
-    m_storageClassHasBeenSet(false),
-    m_accessTier(IntelligentTieringAccessTier::NOT_SET),
-    m_accessTierHasBeenSet(false)
+InvalidObjectState::InvalidObjectState(const XmlNode& xmlNode)
+  : InvalidObjectState()
 {
   *this = xmlNode;
 }

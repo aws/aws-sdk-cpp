@@ -27,12 +27,8 @@ S3Configuration::S3Configuration() :
 {
 }
 
-S3Configuration::S3Configuration(JsonView jsonValue) : 
-    m_bucketNameHasBeenSet(false),
-    m_objectKeyPrefixHasBeenSet(false),
-    m_encryptionOption(S3EncryptionOption::NOT_SET),
-    m_encryptionOptionHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
+S3Configuration::S3Configuration(JsonView jsonValue)
+  : S3Configuration()
 {
   *this = jsonValue;
 }

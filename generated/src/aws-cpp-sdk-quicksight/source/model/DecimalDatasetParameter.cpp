@@ -27,12 +27,8 @@ DecimalDatasetParameter::DecimalDatasetParameter() :
 {
 }
 
-DecimalDatasetParameter::DecimalDatasetParameter(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_valueType(DatasetParameterValueType::NOT_SET),
-    m_valueTypeHasBeenSet(false),
-    m_defaultValuesHasBeenSet(false)
+DecimalDatasetParameter::DecimalDatasetParameter(JsonView jsonValue)
+  : DecimalDatasetParameter()
 {
   *this = jsonValue;
 }

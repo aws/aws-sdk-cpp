@@ -23,9 +23,8 @@ GetApplicationResult::GetApplicationResult() :
 {
 }
 
-GetApplicationResult::GetApplicationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_engineType(EngineType::NOT_SET),
-    m_status(ApplicationLifecycle::NOT_SET)
+GetApplicationResult::GetApplicationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetApplicationResult()
 {
   *this = result;
 }

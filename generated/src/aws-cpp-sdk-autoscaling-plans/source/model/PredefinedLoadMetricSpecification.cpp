@@ -25,10 +25,8 @@ PredefinedLoadMetricSpecification::PredefinedLoadMetricSpecification() :
 {
 }
 
-PredefinedLoadMetricSpecification::PredefinedLoadMetricSpecification(JsonView jsonValue) : 
-    m_predefinedLoadMetricType(LoadMetricType::NOT_SET),
-    m_predefinedLoadMetricTypeHasBeenSet(false),
-    m_resourceLabelHasBeenSet(false)
+PredefinedLoadMetricSpecification::PredefinedLoadMetricSpecification(JsonView jsonValue)
+  : PredefinedLoadMetricSpecification()
 {
   *this = jsonValue;
 }

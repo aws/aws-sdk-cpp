@@ -29,14 +29,8 @@ TrainingDatasetSummary::TrainingDatasetSummary() :
 {
 }
 
-TrainingDatasetSummary::TrainingDatasetSummary(JsonView jsonValue) : 
-    m_createTimeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_status(TrainingDatasetStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_trainingDatasetArnHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
+TrainingDatasetSummary::TrainingDatasetSummary(JsonView jsonValue)
+  : TrainingDatasetSummary()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ PauseStateScheduleActionSettings::PauseStateScheduleActionSettings() :
 {
 }
 
-PauseStateScheduleActionSettings::PauseStateScheduleActionSettings(JsonView jsonValue) : 
-    m_pipelinesHasBeenSet(false)
+PauseStateScheduleActionSettings::PauseStateScheduleActionSettings(JsonView jsonValue)
+  : PauseStateScheduleActionSettings()
 {
   *this = jsonValue;
 }

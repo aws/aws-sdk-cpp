@@ -24,9 +24,8 @@ ApplicationFleetAssociation::ApplicationFleetAssociation() :
 {
 }
 
-ApplicationFleetAssociation::ApplicationFleetAssociation(JsonView jsonValue) : 
-    m_fleetNameHasBeenSet(false),
-    m_applicationArnHasBeenSet(false)
+ApplicationFleetAssociation::ApplicationFleetAssociation(JsonView jsonValue)
+  : ApplicationFleetAssociation()
 {
   *this = jsonValue;
 }

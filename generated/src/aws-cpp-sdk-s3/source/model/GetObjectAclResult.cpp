@@ -21,8 +21,8 @@ GetObjectAclResult::GetObjectAclResult() :
 {
 }
 
-GetObjectAclResult::GetObjectAclResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_requestCharged(RequestCharged::NOT_SET)
+GetObjectAclResult::GetObjectAclResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : GetObjectAclResult()
 {
   *this = result;
 }

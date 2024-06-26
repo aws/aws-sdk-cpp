@@ -23,8 +23,8 @@ UpdateParticipantRoleConfigChannelInfo::UpdateParticipantRoleConfigChannelInfo()
 {
 }
 
-UpdateParticipantRoleConfigChannelInfo::UpdateParticipantRoleConfigChannelInfo(JsonView jsonValue) : 
-    m_chatHasBeenSet(false)
+UpdateParticipantRoleConfigChannelInfo::UpdateParticipantRoleConfigChannelInfo(JsonView jsonValue)
+  : UpdateParticipantRoleConfigChannelInfo()
 {
   *this = jsonValue;
 }

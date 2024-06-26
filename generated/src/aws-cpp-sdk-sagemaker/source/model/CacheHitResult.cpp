@@ -23,8 +23,8 @@ CacheHitResult::CacheHitResult() :
 {
 }
 
-CacheHitResult::CacheHitResult(JsonView jsonValue) : 
-    m_sourcePipelineExecutionArnHasBeenSet(false)
+CacheHitResult::CacheHitResult(JsonView jsonValue)
+  : CacheHitResult()
 {
   *this = jsonValue;
 }

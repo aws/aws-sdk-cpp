@@ -23,8 +23,8 @@ ValidateSolFunctionPackageContentMetadata::ValidateSolFunctionPackageContentMeta
 {
 }
 
-ValidateSolFunctionPackageContentMetadata::ValidateSolFunctionPackageContentMetadata(JsonView jsonValue) : 
-    m_vnfdHasBeenSet(false)
+ValidateSolFunctionPackageContentMetadata::ValidateSolFunctionPackageContentMetadata(JsonView jsonValue)
+  : ValidateSolFunctionPackageContentMetadata()
 {
   *this = jsonValue;
 }

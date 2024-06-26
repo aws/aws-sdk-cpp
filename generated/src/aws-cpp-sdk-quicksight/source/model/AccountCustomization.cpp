@@ -24,9 +24,8 @@ AccountCustomization::AccountCustomization() :
 {
 }
 
-AccountCustomization::AccountCustomization(JsonView jsonValue) : 
-    m_defaultThemeHasBeenSet(false),
-    m_defaultEmailCustomizationTemplateHasBeenSet(false)
+AccountCustomization::AccountCustomization(JsonView jsonValue)
+  : AccountCustomization()
 {
   *this = jsonValue;
 }

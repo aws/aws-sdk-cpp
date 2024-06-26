@@ -26,11 +26,8 @@ ContinueAsNewWorkflowExecutionFailedEventAttributes::ContinueAsNewWorkflowExecut
 {
 }
 
-ContinueAsNewWorkflowExecutionFailedEventAttributes::ContinueAsNewWorkflowExecutionFailedEventAttributes(JsonView jsonValue) : 
-    m_cause(ContinueAsNewWorkflowExecutionFailedCause::NOT_SET),
-    m_causeHasBeenSet(false),
-    m_decisionTaskCompletedEventId(0),
-    m_decisionTaskCompletedEventIdHasBeenSet(false)
+ContinueAsNewWorkflowExecutionFailedEventAttributes::ContinueAsNewWorkflowExecutionFailedEventAttributes(JsonView jsonValue)
+  : ContinueAsNewWorkflowExecutionFailedEventAttributes()
 {
   *this = jsonValue;
 }

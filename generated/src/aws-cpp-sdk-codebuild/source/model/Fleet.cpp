@@ -40,25 +40,8 @@ Fleet::Fleet() :
 {
 }
 
-Fleet::Fleet(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_createdHasBeenSet(false),
-    m_lastModifiedHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_baseCapacity(0),
-    m_baseCapacityHasBeenSet(false),
-    m_environmentType(EnvironmentType::NOT_SET),
-    m_environmentTypeHasBeenSet(false),
-    m_computeType(ComputeType::NOT_SET),
-    m_computeTypeHasBeenSet(false),
-    m_scalingConfigurationHasBeenSet(false),
-    m_overflowBehavior(FleetOverflowBehavior::NOT_SET),
-    m_overflowBehaviorHasBeenSet(false),
-    m_vpcConfigHasBeenSet(false),
-    m_fleetServiceRoleHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+Fleet::Fleet(JsonView jsonValue)
+  : Fleet()
 {
   *this = jsonValue;
 }

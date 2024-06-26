@@ -24,9 +24,8 @@ DiskSnapshotInfo::DiskSnapshotInfo() :
 {
 }
 
-DiskSnapshotInfo::DiskSnapshotInfo(JsonView jsonValue) : 
-    m_sizeInGb(0),
-    m_sizeInGbHasBeenSet(false)
+DiskSnapshotInfo::DiskSnapshotInfo(JsonView jsonValue)
+  : DiskSnapshotInfo()
 {
   *this = jsonValue;
 }

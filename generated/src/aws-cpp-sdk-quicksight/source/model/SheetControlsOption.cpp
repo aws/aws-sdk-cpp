@@ -24,9 +24,8 @@ SheetControlsOption::SheetControlsOption() :
 {
 }
 
-SheetControlsOption::SheetControlsOption(JsonView jsonValue) : 
-    m_visibilityState(DashboardUIState::NOT_SET),
-    m_visibilityStateHasBeenSet(false)
+SheetControlsOption::SheetControlsOption(JsonView jsonValue)
+  : SheetControlsOption()
 {
   *this = jsonValue;
 }

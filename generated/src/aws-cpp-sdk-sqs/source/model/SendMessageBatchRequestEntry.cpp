@@ -30,15 +30,8 @@ SendMessageBatchRequestEntry::SendMessageBatchRequestEntry() :
 {
 }
 
-SendMessageBatchRequestEntry::SendMessageBatchRequestEntry(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_messageBodyHasBeenSet(false),
-    m_delaySeconds(0),
-    m_delaySecondsHasBeenSet(false),
-    m_messageAttributesHasBeenSet(false),
-    m_messageSystemAttributesHasBeenSet(false),
-    m_messageDeduplicationIdHasBeenSet(false),
-    m_messageGroupIdHasBeenSet(false)
+SendMessageBatchRequestEntry::SendMessageBatchRequestEntry(JsonView jsonValue)
+  : SendMessageBatchRequestEntry()
 {
   *this = jsonValue;
 }

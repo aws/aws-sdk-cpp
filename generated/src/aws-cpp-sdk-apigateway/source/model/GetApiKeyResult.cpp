@@ -22,8 +22,8 @@ GetApiKeyResult::GetApiKeyResult() :
 {
 }
 
-GetApiKeyResult::GetApiKeyResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_enabled(false)
+GetApiKeyResult::GetApiKeyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetApiKeyResult()
 {
   *this = result;
 }

@@ -23,9 +23,8 @@ DescribeHubResult::DescribeHubResult() :
 {
 }
 
-DescribeHubResult::DescribeHubResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_autoEnableControls(false),
-    m_controlFindingGenerator(ControlFindingGenerator::NOT_SET)
+DescribeHubResult::DescribeHubResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeHubResult()
 {
   *this = result;
 }

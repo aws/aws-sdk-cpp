@@ -29,14 +29,8 @@ CreateVehicleRequestItem::CreateVehicleRequestItem() :
 {
 }
 
-CreateVehicleRequestItem::CreateVehicleRequestItem(JsonView jsonValue) : 
-    m_vehicleNameHasBeenSet(false),
-    m_modelManifestArnHasBeenSet(false),
-    m_decoderManifestArnHasBeenSet(false),
-    m_attributesHasBeenSet(false),
-    m_associationBehavior(VehicleAssociationBehavior::NOT_SET),
-    m_associationBehaviorHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+CreateVehicleRequestItem::CreateVehicleRequestItem(JsonView jsonValue)
+  : CreateVehicleRequestItem()
 {
   *this = jsonValue;
 }

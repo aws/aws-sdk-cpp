@@ -35,20 +35,8 @@ EksPodPropertiesDetail::EksPodPropertiesDetail() :
 {
 }
 
-EksPodPropertiesDetail::EksPodPropertiesDetail(JsonView jsonValue) : 
-    m_serviceAccountNameHasBeenSet(false),
-    m_hostNetwork(false),
-    m_hostNetworkHasBeenSet(false),
-    m_dnsPolicyHasBeenSet(false),
-    m_imagePullSecretsHasBeenSet(false),
-    m_containersHasBeenSet(false),
-    m_initContainersHasBeenSet(false),
-    m_volumesHasBeenSet(false),
-    m_podNameHasBeenSet(false),
-    m_nodeNameHasBeenSet(false),
-    m_metadataHasBeenSet(false),
-    m_shareProcessNamespace(false),
-    m_shareProcessNamespaceHasBeenSet(false)
+EksPodPropertiesDetail::EksPodPropertiesDetail(JsonView jsonValue)
+  : EksPodPropertiesDetail()
 {
   *this = jsonValue;
 }

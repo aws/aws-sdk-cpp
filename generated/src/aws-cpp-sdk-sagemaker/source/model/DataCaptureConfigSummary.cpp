@@ -30,15 +30,8 @@ DataCaptureConfigSummary::DataCaptureConfigSummary() :
 {
 }
 
-DataCaptureConfigSummary::DataCaptureConfigSummary(JsonView jsonValue) : 
-    m_enableCapture(false),
-    m_enableCaptureHasBeenSet(false),
-    m_captureStatus(CaptureStatus::NOT_SET),
-    m_captureStatusHasBeenSet(false),
-    m_currentSamplingPercentage(0),
-    m_currentSamplingPercentageHasBeenSet(false),
-    m_destinationS3UriHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
+DataCaptureConfigSummary::DataCaptureConfigSummary(JsonView jsonValue)
+  : DataCaptureConfigSummary()
 {
   *this = jsonValue;
 }

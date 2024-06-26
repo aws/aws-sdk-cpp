@@ -23,8 +23,8 @@ SelectedSheetsFilterScopeConfiguration::SelectedSheetsFilterScopeConfiguration()
 {
 }
 
-SelectedSheetsFilterScopeConfiguration::SelectedSheetsFilterScopeConfiguration(JsonView jsonValue) : 
-    m_sheetVisualScopingConfigurationsHasBeenSet(false)
+SelectedSheetsFilterScopeConfiguration::SelectedSheetsFilterScopeConfiguration(JsonView jsonValue)
+  : SelectedSheetsFilterScopeConfiguration()
 {
   *this = jsonValue;
 }

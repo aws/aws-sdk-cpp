@@ -24,9 +24,8 @@ StandardsStatusReason::StandardsStatusReason() :
 {
 }
 
-StandardsStatusReason::StandardsStatusReason(JsonView jsonValue) : 
-    m_statusReasonCode(StatusReasonCode::NOT_SET),
-    m_statusReasonCodeHasBeenSet(false)
+StandardsStatusReason::StandardsStatusReason(JsonView jsonValue)
+  : StandardsStatusReason()
 {
   *this = jsonValue;
 }

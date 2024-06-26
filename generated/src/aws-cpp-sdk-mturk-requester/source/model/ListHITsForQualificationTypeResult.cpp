@@ -22,8 +22,8 @@ ListHITsForQualificationTypeResult::ListHITsForQualificationTypeResult() :
 {
 }
 
-ListHITsForQualificationTypeResult::ListHITsForQualificationTypeResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_numResults(0)
+ListHITsForQualificationTypeResult::ListHITsForQualificationTypeResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ListHITsForQualificationTypeResult()
 {
   *this = result;
 }

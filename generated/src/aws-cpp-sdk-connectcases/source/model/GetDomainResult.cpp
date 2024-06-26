@@ -22,8 +22,8 @@ GetDomainResult::GetDomainResult() :
 {
 }
 
-GetDomainResult::GetDomainResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_domainStatus(DomainStatus::NOT_SET)
+GetDomainResult::GetDomainResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetDomainResult()
 {
   *this = result;
 }

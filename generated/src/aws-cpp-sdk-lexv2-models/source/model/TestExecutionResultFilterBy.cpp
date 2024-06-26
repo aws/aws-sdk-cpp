@@ -25,10 +25,8 @@ TestExecutionResultFilterBy::TestExecutionResultFilterBy() :
 {
 }
 
-TestExecutionResultFilterBy::TestExecutionResultFilterBy(JsonView jsonValue) : 
-    m_resultTypeFilter(TestResultTypeFilter::NOT_SET),
-    m_resultTypeFilterHasBeenSet(false),
-    m_conversationLevelTestResultsFilterByHasBeenSet(false)
+TestExecutionResultFilterBy::TestExecutionResultFilterBy(JsonView jsonValue)
+  : TestExecutionResultFilterBy()
 {
   *this = jsonValue;
 }

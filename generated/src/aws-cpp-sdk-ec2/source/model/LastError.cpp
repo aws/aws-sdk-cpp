@@ -26,9 +26,8 @@ LastError::LastError() :
 {
 }
 
-LastError::LastError(const XmlNode& xmlNode) : 
-    m_messageHasBeenSet(false),
-    m_codeHasBeenSet(false)
+LastError::LastError(const XmlNode& xmlNode)
+  : LastError()
 {
   *this = xmlNode;
 }

@@ -32,15 +32,8 @@ RecipientDsnFields::RecipientDsnFields() :
 {
 }
 
-RecipientDsnFields::RecipientDsnFields(const XmlNode& xmlNode) : 
-    m_finalRecipientHasBeenSet(false),
-    m_action(DsnAction::NOT_SET),
-    m_actionHasBeenSet(false),
-    m_remoteMtaHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_diagnosticCodeHasBeenSet(false),
-    m_lastAttemptDateHasBeenSet(false),
-    m_extensionFieldsHasBeenSet(false)
+RecipientDsnFields::RecipientDsnFields(const XmlNode& xmlNode)
+  : RecipientDsnFields()
 {
   *this = xmlNode;
 }

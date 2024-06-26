@@ -31,16 +31,8 @@ ReplicationConfigurationReplicatedDisk::ReplicationConfigurationReplicatedDisk()
 {
 }
 
-ReplicationConfigurationReplicatedDisk::ReplicationConfigurationReplicatedDisk(JsonView jsonValue) : 
-    m_deviceNameHasBeenSet(false),
-    m_iops(0),
-    m_iopsHasBeenSet(false),
-    m_isBootDisk(false),
-    m_isBootDiskHasBeenSet(false),
-    m_stagingDiskType(ReplicationConfigurationReplicatedDiskStagingDiskType::NOT_SET),
-    m_stagingDiskTypeHasBeenSet(false),
-    m_throughput(0),
-    m_throughputHasBeenSet(false)
+ReplicationConfigurationReplicatedDisk::ReplicationConfigurationReplicatedDisk(JsonView jsonValue)
+  : ReplicationConfigurationReplicatedDisk()
 {
   *this = jsonValue;
 }

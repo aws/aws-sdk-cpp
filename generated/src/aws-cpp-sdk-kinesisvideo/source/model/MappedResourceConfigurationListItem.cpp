@@ -24,9 +24,8 @@ MappedResourceConfigurationListItem::MappedResourceConfigurationListItem() :
 {
 }
 
-MappedResourceConfigurationListItem::MappedResourceConfigurationListItem(JsonView jsonValue) : 
-    m_typeHasBeenSet(false),
-    m_aRNHasBeenSet(false)
+MappedResourceConfigurationListItem::MappedResourceConfigurationListItem(JsonView jsonValue)
+  : MappedResourceConfigurationListItem()
 {
   *this = jsonValue;
 }

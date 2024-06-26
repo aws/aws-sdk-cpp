@@ -23,8 +23,8 @@ NetworkPath::NetworkPath() :
 {
 }
 
-NetworkPath::NetworkPath(JsonView jsonValue) : 
-    m_stepsHasBeenSet(false)
+NetworkPath::NetworkPath(JsonView jsonValue)
+  : NetworkPath()
 {
   *this = jsonValue;
 }

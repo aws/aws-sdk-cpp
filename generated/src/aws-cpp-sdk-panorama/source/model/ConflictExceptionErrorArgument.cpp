@@ -24,9 +24,8 @@ ConflictExceptionErrorArgument::ConflictExceptionErrorArgument() :
 {
 }
 
-ConflictExceptionErrorArgument::ConflictExceptionErrorArgument(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
+ConflictExceptionErrorArgument::ConflictExceptionErrorArgument(JsonView jsonValue)
+  : ConflictExceptionErrorArgument()
 {
   *this = jsonValue;
 }

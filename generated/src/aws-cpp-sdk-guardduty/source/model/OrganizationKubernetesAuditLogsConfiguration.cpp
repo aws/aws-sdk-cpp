@@ -24,9 +24,8 @@ OrganizationKubernetesAuditLogsConfiguration::OrganizationKubernetesAuditLogsCon
 {
 }
 
-OrganizationKubernetesAuditLogsConfiguration::OrganizationKubernetesAuditLogsConfiguration(JsonView jsonValue) : 
-    m_autoEnable(false),
-    m_autoEnableHasBeenSet(false)
+OrganizationKubernetesAuditLogsConfiguration::OrganizationKubernetesAuditLogsConfiguration(JsonView jsonValue)
+  : OrganizationKubernetesAuditLogsConfiguration()
 {
   *this = jsonValue;
 }

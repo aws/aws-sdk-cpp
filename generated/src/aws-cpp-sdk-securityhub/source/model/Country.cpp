@@ -24,9 +24,8 @@ Country::Country() :
 {
 }
 
-Country::Country(JsonView jsonValue) : 
-    m_countryCodeHasBeenSet(false),
-    m_countryNameHasBeenSet(false)
+Country::Country(JsonView jsonValue)
+  : Country()
 {
   *this = jsonValue;
 }

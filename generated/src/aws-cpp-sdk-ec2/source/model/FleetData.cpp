@@ -53,36 +53,8 @@ FleetData::FleetData() :
 {
 }
 
-FleetData::FleetData(const XmlNode& xmlNode) : 
-    m_activityStatus(FleetActivityStatus::NOT_SET),
-    m_activityStatusHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_fleetIdHasBeenSet(false),
-    m_fleetState(FleetStateCode::NOT_SET),
-    m_fleetStateHasBeenSet(false),
-    m_clientTokenHasBeenSet(false),
-    m_excessCapacityTerminationPolicy(FleetExcessCapacityTerminationPolicy::NOT_SET),
-    m_excessCapacityTerminationPolicyHasBeenSet(false),
-    m_fulfilledCapacity(0.0),
-    m_fulfilledCapacityHasBeenSet(false),
-    m_fulfilledOnDemandCapacity(0.0),
-    m_fulfilledOnDemandCapacityHasBeenSet(false),
-    m_launchTemplateConfigsHasBeenSet(false),
-    m_targetCapacitySpecificationHasBeenSet(false),
-    m_terminateInstancesWithExpiration(false),
-    m_terminateInstancesWithExpirationHasBeenSet(false),
-    m_type(FleetType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_validFromHasBeenSet(false),
-    m_validUntilHasBeenSet(false),
-    m_replaceUnhealthyInstances(false),
-    m_replaceUnhealthyInstancesHasBeenSet(false),
-    m_spotOptionsHasBeenSet(false),
-    m_onDemandOptionsHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_errorsHasBeenSet(false),
-    m_instancesHasBeenSet(false),
-    m_contextHasBeenSet(false)
+FleetData::FleetData(const XmlNode& xmlNode)
+  : FleetData()
 {
   *this = xmlNode;
 }

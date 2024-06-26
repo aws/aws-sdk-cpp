@@ -28,13 +28,8 @@ PrefetchSchedule::PrefetchSchedule() :
 {
 }
 
-PrefetchSchedule::PrefetchSchedule(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_consumptionHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_playbackConfigurationNameHasBeenSet(false),
-    m_retrievalHasBeenSet(false),
-    m_streamIdHasBeenSet(false)
+PrefetchSchedule::PrefetchSchedule(JsonView jsonValue)
+  : PrefetchSchedule()
 {
   *this = jsonValue;
 }

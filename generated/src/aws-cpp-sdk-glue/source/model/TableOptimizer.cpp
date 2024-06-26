@@ -26,11 +26,8 @@ TableOptimizer::TableOptimizer() :
 {
 }
 
-TableOptimizer::TableOptimizer(JsonView jsonValue) : 
-    m_type(TableOptimizerType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_configurationHasBeenSet(false),
-    m_lastRunHasBeenSet(false)
+TableOptimizer::TableOptimizer(JsonView jsonValue)
+  : TableOptimizer()
 {
   *this = jsonValue;
 }

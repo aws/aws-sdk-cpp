@@ -27,12 +27,8 @@ SlackUserIdentity::SlackUserIdentity() :
 {
 }
 
-SlackUserIdentity::SlackUserIdentity(JsonView jsonValue) : 
-    m_iamRoleArnHasBeenSet(false),
-    m_chatConfigurationArnHasBeenSet(false),
-    m_slackTeamIdHasBeenSet(false),
-    m_slackUserIdHasBeenSet(false),
-    m_awsUserIdentityHasBeenSet(false)
+SlackUserIdentity::SlackUserIdentity(JsonView jsonValue)
+  : SlackUserIdentity()
 {
   *this = jsonValue;
 }

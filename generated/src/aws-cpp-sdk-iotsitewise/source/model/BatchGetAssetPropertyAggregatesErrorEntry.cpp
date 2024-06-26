@@ -26,11 +26,8 @@ BatchGetAssetPropertyAggregatesErrorEntry::BatchGetAssetPropertyAggregatesErrorE
 {
 }
 
-BatchGetAssetPropertyAggregatesErrorEntry::BatchGetAssetPropertyAggregatesErrorEntry(JsonView jsonValue) : 
-    m_errorCode(BatchGetAssetPropertyAggregatesErrorCode::NOT_SET),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_entryIdHasBeenSet(false)
+BatchGetAssetPropertyAggregatesErrorEntry::BatchGetAssetPropertyAggregatesErrorEntry(JsonView jsonValue)
+  : BatchGetAssetPropertyAggregatesErrorEntry()
 {
   *this = jsonValue;
 }

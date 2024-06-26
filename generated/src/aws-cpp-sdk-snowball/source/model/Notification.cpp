@@ -27,12 +27,8 @@ Notification::Notification() :
 {
 }
 
-Notification::Notification(JsonView jsonValue) : 
-    m_snsTopicARNHasBeenSet(false),
-    m_jobStatesToNotifyHasBeenSet(false),
-    m_notifyAll(false),
-    m_notifyAllHasBeenSet(false),
-    m_devicePickupSnsTopicARNHasBeenSet(false)
+Notification::Notification(JsonView jsonValue)
+  : Notification()
 {
   *this = jsonValue;
 }

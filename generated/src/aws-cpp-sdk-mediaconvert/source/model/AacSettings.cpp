@@ -40,25 +40,8 @@ AacSettings::AacSettings() :
 {
 }
 
-AacSettings::AacSettings(JsonView jsonValue) : 
-    m_audioDescriptionBroadcasterMix(AacAudioDescriptionBroadcasterMix::NOT_SET),
-    m_audioDescriptionBroadcasterMixHasBeenSet(false),
-    m_bitrate(0),
-    m_bitrateHasBeenSet(false),
-    m_codecProfile(AacCodecProfile::NOT_SET),
-    m_codecProfileHasBeenSet(false),
-    m_codingMode(AacCodingMode::NOT_SET),
-    m_codingModeHasBeenSet(false),
-    m_rateControlMode(AacRateControlMode::NOT_SET),
-    m_rateControlModeHasBeenSet(false),
-    m_rawFormat(AacRawFormat::NOT_SET),
-    m_rawFormatHasBeenSet(false),
-    m_sampleRate(0),
-    m_sampleRateHasBeenSet(false),
-    m_specification(AacSpecification::NOT_SET),
-    m_specificationHasBeenSet(false),
-    m_vbrQuality(AacVbrQuality::NOT_SET),
-    m_vbrQualityHasBeenSet(false)
+AacSettings::AacSettings(JsonView jsonValue)
+  : AacSettings()
 {
   *this = jsonValue;
 }

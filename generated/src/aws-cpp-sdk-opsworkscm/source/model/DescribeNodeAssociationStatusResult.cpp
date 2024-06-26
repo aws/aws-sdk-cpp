@@ -22,8 +22,8 @@ DescribeNodeAssociationStatusResult::DescribeNodeAssociationStatusResult() :
 {
 }
 
-DescribeNodeAssociationStatusResult::DescribeNodeAssociationStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_nodeAssociationStatus(NodeAssociationStatus::NOT_SET)
+DescribeNodeAssociationStatusResult::DescribeNodeAssociationStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeNodeAssociationStatusResult()
 {
   *this = result;
 }

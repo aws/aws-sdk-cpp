@@ -25,10 +25,8 @@ ServiceSyncBlockerSummary::ServiceSyncBlockerSummary() :
 {
 }
 
-ServiceSyncBlockerSummary::ServiceSyncBlockerSummary(JsonView jsonValue) : 
-    m_latestBlockersHasBeenSet(false),
-    m_serviceInstanceNameHasBeenSet(false),
-    m_serviceNameHasBeenSet(false)
+ServiceSyncBlockerSummary::ServiceSyncBlockerSummary(JsonView jsonValue)
+  : ServiceSyncBlockerSummary()
 {
   *this = jsonValue;
 }

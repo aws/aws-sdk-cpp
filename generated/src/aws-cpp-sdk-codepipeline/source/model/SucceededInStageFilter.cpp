@@ -23,8 +23,8 @@ SucceededInStageFilter::SucceededInStageFilter() :
 {
 }
 
-SucceededInStageFilter::SucceededInStageFilter(JsonView jsonValue) : 
-    m_stageNameHasBeenSet(false)
+SucceededInStageFilter::SucceededInStageFilter(JsonView jsonValue)
+  : SucceededInStageFilter()
 {
   *this = jsonValue;
 }

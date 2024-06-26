@@ -24,9 +24,8 @@ WordCloudAggregatedFieldWells::WordCloudAggregatedFieldWells() :
 {
 }
 
-WordCloudAggregatedFieldWells::WordCloudAggregatedFieldWells(JsonView jsonValue) : 
-    m_groupByHasBeenSet(false),
-    m_sizeHasBeenSet(false)
+WordCloudAggregatedFieldWells::WordCloudAggregatedFieldWells(JsonView jsonValue)
+  : WordCloudAggregatedFieldWells()
 {
   *this = jsonValue;
 }

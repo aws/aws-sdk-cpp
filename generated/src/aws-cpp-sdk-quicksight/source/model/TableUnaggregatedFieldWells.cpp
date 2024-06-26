@@ -23,8 +23,8 @@ TableUnaggregatedFieldWells::TableUnaggregatedFieldWells() :
 {
 }
 
-TableUnaggregatedFieldWells::TableUnaggregatedFieldWells(JsonView jsonValue) : 
-    m_valuesHasBeenSet(false)
+TableUnaggregatedFieldWells::TableUnaggregatedFieldWells(JsonView jsonValue)
+  : TableUnaggregatedFieldWells()
 {
   *this = jsonValue;
 }

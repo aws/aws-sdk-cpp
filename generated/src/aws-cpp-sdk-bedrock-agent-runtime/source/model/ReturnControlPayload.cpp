@@ -24,9 +24,8 @@ ReturnControlPayload::ReturnControlPayload() :
 {
 }
 
-ReturnControlPayload::ReturnControlPayload(JsonView jsonValue) : 
-    m_invocationIdHasBeenSet(false),
-    m_invocationInputsHasBeenSet(false)
+ReturnControlPayload::ReturnControlPayload(JsonView jsonValue)
+  : ReturnControlPayload()
 {
   *this = jsonValue;
 }

@@ -26,9 +26,8 @@ CrossZoneLoadBalancing::CrossZoneLoadBalancing() :
 {
 }
 
-CrossZoneLoadBalancing::CrossZoneLoadBalancing(const XmlNode& xmlNode) : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
+CrossZoneLoadBalancing::CrossZoneLoadBalancing(const XmlNode& xmlNode)
+  : CrossZoneLoadBalancing()
 {
   *this = xmlNode;
 }

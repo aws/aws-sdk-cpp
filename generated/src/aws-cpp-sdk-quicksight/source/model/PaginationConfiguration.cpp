@@ -26,11 +26,8 @@ PaginationConfiguration::PaginationConfiguration() :
 {
 }
 
-PaginationConfiguration::PaginationConfiguration(JsonView jsonValue) : 
-    m_pageSize(0),
-    m_pageSizeHasBeenSet(false),
-    m_pageNumber(0),
-    m_pageNumberHasBeenSet(false)
+PaginationConfiguration::PaginationConfiguration(JsonView jsonValue)
+  : PaginationConfiguration()
 {
   *this = jsonValue;
 }

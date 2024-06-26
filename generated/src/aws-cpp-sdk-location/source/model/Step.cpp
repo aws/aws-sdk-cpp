@@ -30,15 +30,8 @@ Step::Step() :
 {
 }
 
-Step::Step(JsonView jsonValue) : 
-    m_startPositionHasBeenSet(false),
-    m_endPositionHasBeenSet(false),
-    m_distance(0.0),
-    m_distanceHasBeenSet(false),
-    m_durationSeconds(0.0),
-    m_durationSecondsHasBeenSet(false),
-    m_geometryOffset(0),
-    m_geometryOffsetHasBeenSet(false)
+Step::Step(JsonView jsonValue)
+  : Step()
 {
   *this = jsonValue;
 }

@@ -41,26 +41,8 @@ ClusterMetadata::ClusterMetadata() :
 {
 }
 
-ClusterMetadata::ClusterMetadata(JsonView jsonValue) : 
-    m_clusterIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_kmsKeyARNHasBeenSet(false),
-    m_roleARNHasBeenSet(false),
-    m_clusterState(ClusterState::NOT_SET),
-    m_clusterStateHasBeenSet(false),
-    m_jobType(JobType::NOT_SET),
-    m_jobTypeHasBeenSet(false),
-    m_snowballType(SnowballType::NOT_SET),
-    m_snowballTypeHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_resourcesHasBeenSet(false),
-    m_addressIdHasBeenSet(false),
-    m_shippingOption(ShippingOption::NOT_SET),
-    m_shippingOptionHasBeenSet(false),
-    m_notificationHasBeenSet(false),
-    m_forwardingAddressIdHasBeenSet(false),
-    m_taxDocumentsHasBeenSet(false),
-    m_onDeviceServiceConfigurationHasBeenSet(false)
+ClusterMetadata::ClusterMetadata(JsonView jsonValue)
+  : ClusterMetadata()
 {
   *this = jsonValue;
 }

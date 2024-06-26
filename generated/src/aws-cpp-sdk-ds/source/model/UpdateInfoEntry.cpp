@@ -31,16 +31,8 @@ UpdateInfoEntry::UpdateInfoEntry() :
 {
 }
 
-UpdateInfoEntry::UpdateInfoEntry(JsonView jsonValue) : 
-    m_regionHasBeenSet(false),
-    m_status(UpdateStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusReasonHasBeenSet(false),
-    m_initiatedByHasBeenSet(false),
-    m_newValueHasBeenSet(false),
-    m_previousValueHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false)
+UpdateInfoEntry::UpdateInfoEntry(JsonView jsonValue)
+  : UpdateInfoEntry()
 {
   *this = jsonValue;
 }

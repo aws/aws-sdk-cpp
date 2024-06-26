@@ -24,9 +24,8 @@ TargetResource::TargetResource() :
 {
 }
 
-TargetResource::TargetResource(JsonView jsonValue) : 
-    m_nLBResourceHasBeenSet(false),
-    m_r53ResourceHasBeenSet(false)
+TargetResource::TargetResource(JsonView jsonValue)
+  : TargetResource()
 {
   *this = jsonValue;
 }

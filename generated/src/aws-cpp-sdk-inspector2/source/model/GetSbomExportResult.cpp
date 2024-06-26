@@ -24,10 +24,8 @@ GetSbomExportResult::GetSbomExportResult() :
 {
 }
 
-GetSbomExportResult::GetSbomExportResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_errorCode(ReportingErrorCode::NOT_SET),
-    m_format(SbomReportFormat::NOT_SET),
-    m_status(ExternalReportStatus::NOT_SET)
+GetSbomExportResult::GetSbomExportResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetSbomExportResult()
 {
   *this = result;
 }

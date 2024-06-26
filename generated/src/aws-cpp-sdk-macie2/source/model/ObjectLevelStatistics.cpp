@@ -28,13 +28,8 @@ ObjectLevelStatistics::ObjectLevelStatistics() :
 {
 }
 
-ObjectLevelStatistics::ObjectLevelStatistics(JsonView jsonValue) : 
-    m_fileType(0),
-    m_fileTypeHasBeenSet(false),
-    m_storageClass(0),
-    m_storageClassHasBeenSet(false),
-    m_total(0),
-    m_totalHasBeenSet(false)
+ObjectLevelStatistics::ObjectLevelStatistics(JsonView jsonValue)
+  : ObjectLevelStatistics()
 {
   *this = jsonValue;
 }

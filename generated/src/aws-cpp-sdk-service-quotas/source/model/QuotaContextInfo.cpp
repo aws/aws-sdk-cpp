@@ -26,11 +26,8 @@ QuotaContextInfo::QuotaContextInfo() :
 {
 }
 
-QuotaContextInfo::QuotaContextInfo(JsonView jsonValue) : 
-    m_contextScope(QuotaContextScope::NOT_SET),
-    m_contextScopeHasBeenSet(false),
-    m_contextScopeTypeHasBeenSet(false),
-    m_contextIdHasBeenSet(false)
+QuotaContextInfo::QuotaContextInfo(JsonView jsonValue)
+  : QuotaContextInfo()
 {
   *this = jsonValue;
 }

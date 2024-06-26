@@ -24,9 +24,8 @@ AwsEc2NetworkInterfaceSecurityGroup::AwsEc2NetworkInterfaceSecurityGroup() :
 {
 }
 
-AwsEc2NetworkInterfaceSecurityGroup::AwsEc2NetworkInterfaceSecurityGroup(JsonView jsonValue) : 
-    m_groupNameHasBeenSet(false),
-    m_groupIdHasBeenSet(false)
+AwsEc2NetworkInterfaceSecurityGroup::AwsEc2NetworkInterfaceSecurityGroup(JsonView jsonValue)
+  : AwsEc2NetworkInterfaceSecurityGroup()
 {
   *this = jsonValue;
 }

@@ -35,20 +35,8 @@ WorkflowStepMetadata::WorkflowStepMetadata() :
 {
 }
 
-WorkflowStepMetadata::WorkflowStepMetadata(JsonView jsonValue) : 
-    m_stepExecutionIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_actionHasBeenSet(false),
-    m_status(WorkflowStepExecutionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_rollbackStatus(WorkflowStepExecutionRollbackStatus::NOT_SET),
-    m_rollbackStatusHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_inputsHasBeenSet(false),
-    m_outputsHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
+WorkflowStepMetadata::WorkflowStepMetadata(JsonView jsonValue)
+  : WorkflowStepMetadata()
 {
   *this = jsonValue;
 }

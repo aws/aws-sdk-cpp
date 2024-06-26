@@ -26,9 +26,8 @@ StorageLensTag::StorageLensTag() :
 {
 }
 
-StorageLensTag::StorageLensTag(const XmlNode& xmlNode) : 
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false)
+StorageLensTag::StorageLensTag(const XmlNode& xmlNode)
+  : StorageLensTag()
 {
   *this = xmlNode;
 }

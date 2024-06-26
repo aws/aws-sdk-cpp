@@ -26,11 +26,8 @@ ThemeAlias::ThemeAlias() :
 {
 }
 
-ThemeAlias::ThemeAlias(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_aliasNameHasBeenSet(false),
-    m_themeVersionNumber(0),
-    m_themeVersionNumberHasBeenSet(false)
+ThemeAlias::ThemeAlias(JsonView jsonValue)
+  : ThemeAlias()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ CreateServiceNetworkServiceAssociationResult::CreateServiceNetworkServiceAssocia
 {
 }
 
-CreateServiceNetworkServiceAssociationResult::CreateServiceNetworkServiceAssociationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(ServiceNetworkServiceAssociationStatus::NOT_SET)
+CreateServiceNetworkServiceAssociationResult::CreateServiceNetworkServiceAssociationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateServiceNetworkServiceAssociationResult()
 {
   *this = result;
 }

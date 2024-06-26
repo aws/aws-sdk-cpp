@@ -25,10 +25,8 @@ ListInsightsStatusFilter::ListInsightsStatusFilter() :
 {
 }
 
-ListInsightsStatusFilter::ListInsightsStatusFilter(JsonView jsonValue) : 
-    m_ongoingHasBeenSet(false),
-    m_closedHasBeenSet(false),
-    m_anyHasBeenSet(false)
+ListInsightsStatusFilter::ListInsightsStatusFilter(JsonView jsonValue)
+  : ListInsightsStatusFilter()
 {
   *this = jsonValue;
 }

@@ -35,20 +35,8 @@ ClusterNodeDetails::ClusterNodeDetails() :
 {
 }
 
-ClusterNodeDetails::ClusterNodeDetails(JsonView jsonValue) : 
-    m_instanceGroupNameHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_instanceStatusHasBeenSet(false),
-    m_instanceType(ClusterInstanceType::NOT_SET),
-    m_instanceTypeHasBeenSet(false),
-    m_launchTimeHasBeenSet(false),
-    m_lifeCycleConfigHasBeenSet(false),
-    m_threadsPerCore(0),
-    m_threadsPerCoreHasBeenSet(false),
-    m_instanceStorageConfigsHasBeenSet(false),
-    m_privatePrimaryIpHasBeenSet(false),
-    m_privateDnsHostnameHasBeenSet(false),
-    m_placementHasBeenSet(false)
+ClusterNodeDetails::ClusterNodeDetails(JsonView jsonValue)
+  : ClusterNodeDetails()
 {
   *this = jsonValue;
 }

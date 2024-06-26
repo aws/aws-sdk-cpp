@@ -26,11 +26,8 @@ EventParameters::EventParameters() :
 {
 }
 
-EventParameters::EventParameters(JsonView jsonValue) : 
-    m_eventType(EventTypeValues::NOT_SET),
-    m_eventTypeHasBeenSet(false),
-    m_snapshotOwnerHasBeenSet(false),
-    m_descriptionRegexHasBeenSet(false)
+EventParameters::EventParameters(JsonView jsonValue)
+  : EventParameters()
 {
   *this = jsonValue;
 }

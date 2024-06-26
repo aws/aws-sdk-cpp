@@ -23,9 +23,8 @@ DescribeProvisioningTemplateVersionResult::DescribeProvisioningTemplateVersionRe
 {
 }
 
-DescribeProvisioningTemplateVersionResult::DescribeProvisioningTemplateVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_versionId(0),
-    m_isDefaultVersion(false)
+DescribeProvisioningTemplateVersionResult::DescribeProvisioningTemplateVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeProvisioningTemplateVersionResult()
 {
   *this = result;
 }

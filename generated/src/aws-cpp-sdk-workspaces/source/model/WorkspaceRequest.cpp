@@ -33,18 +33,8 @@ WorkspaceRequest::WorkspaceRequest() :
 {
 }
 
-WorkspaceRequest::WorkspaceRequest(JsonView jsonValue) : 
-    m_directoryIdHasBeenSet(false),
-    m_userNameHasBeenSet(false),
-    m_bundleIdHasBeenSet(false),
-    m_volumeEncryptionKeyHasBeenSet(false),
-    m_userVolumeEncryptionEnabled(false),
-    m_userVolumeEncryptionEnabledHasBeenSet(false),
-    m_rootVolumeEncryptionEnabled(false),
-    m_rootVolumeEncryptionEnabledHasBeenSet(false),
-    m_workspacePropertiesHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_workspaceNameHasBeenSet(false)
+WorkspaceRequest::WorkspaceRequest(JsonView jsonValue)
+  : WorkspaceRequest()
 {
   *this = jsonValue;
 }

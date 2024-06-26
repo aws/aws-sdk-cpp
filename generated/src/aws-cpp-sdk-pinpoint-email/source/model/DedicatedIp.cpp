@@ -28,13 +28,8 @@ DedicatedIp::DedicatedIp() :
 {
 }
 
-DedicatedIp::DedicatedIp(JsonView jsonValue) : 
-    m_ipHasBeenSet(false),
-    m_warmupStatus(WarmupStatus::NOT_SET),
-    m_warmupStatusHasBeenSet(false),
-    m_warmupPercentage(0),
-    m_warmupPercentageHasBeenSet(false),
-    m_poolNameHasBeenSet(false)
+DedicatedIp::DedicatedIp(JsonView jsonValue)
+  : DedicatedIp()
 {
   *this = jsonValue;
 }

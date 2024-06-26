@@ -25,10 +25,8 @@ ArchiveBooleanExpression::ArchiveBooleanExpression() :
 {
 }
 
-ArchiveBooleanExpression::ArchiveBooleanExpression(JsonView jsonValue) : 
-    m_evaluateHasBeenSet(false),
-    m_operator(ArchiveBooleanOperator::NOT_SET),
-    m_operatorHasBeenSet(false)
+ArchiveBooleanExpression::ArchiveBooleanExpression(JsonView jsonValue)
+  : ArchiveBooleanExpression()
 {
   *this = jsonValue;
 }

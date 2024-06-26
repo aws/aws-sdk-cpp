@@ -23,8 +23,8 @@ DisconnectReason::DisconnectReason() :
 {
 }
 
-DisconnectReason::DisconnectReason(JsonView jsonValue) : 
-    m_codeHasBeenSet(false)
+DisconnectReason::DisconnectReason(JsonView jsonValue)
+  : DisconnectReason()
 {
   *this = jsonValue;
 }

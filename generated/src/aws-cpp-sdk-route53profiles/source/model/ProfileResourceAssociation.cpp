@@ -34,19 +34,8 @@ ProfileResourceAssociation::ProfileResourceAssociation() :
 {
 }
 
-ProfileResourceAssociation::ProfileResourceAssociation(JsonView jsonValue) : 
-    m_creationTimeHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_modificationTimeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_profileIdHasBeenSet(false),
-    m_resourceArnHasBeenSet(false),
-    m_resourcePropertiesHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
-    m_status(ProfileStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false)
+ProfileResourceAssociation::ProfileResourceAssociation(JsonView jsonValue)
+  : ProfileResourceAssociation()
 {
   *this = jsonValue;
 }

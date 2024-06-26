@@ -27,10 +27,8 @@ HostedZoneConfig::HostedZoneConfig() :
 {
 }
 
-HostedZoneConfig::HostedZoneConfig(const XmlNode& xmlNode) : 
-    m_commentHasBeenSet(false),
-    m_privateZone(false),
-    m_privateZoneHasBeenSet(false)
+HostedZoneConfig::HostedZoneConfig(const XmlNode& xmlNode)
+  : HostedZoneConfig()
 {
   *this = xmlNode;
 }

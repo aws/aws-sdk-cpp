@@ -24,9 +24,8 @@ ReportWithRawData::ReportWithRawData() :
 {
 }
 
-ReportWithRawData::ReportWithRawData(JsonView jsonValue) : 
-    m_reportArnHasBeenSet(false),
-    m_dataHasBeenSet(false)
+ReportWithRawData::ReportWithRawData(JsonView jsonValue)
+  : ReportWithRawData()
 {
   *this = jsonValue;
 }

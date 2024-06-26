@@ -23,8 +23,8 @@ LambdaExecutorConfiguration::LambdaExecutorConfiguration() :
 {
 }
 
-LambdaExecutorConfiguration::LambdaExecutorConfiguration(JsonView jsonValue) : 
-    m_lambdaFunctionArnHasBeenSet(false)
+LambdaExecutorConfiguration::LambdaExecutorConfiguration(JsonView jsonValue)
+  : LambdaExecutorConfiguration()
 {
   *this = jsonValue;
 }

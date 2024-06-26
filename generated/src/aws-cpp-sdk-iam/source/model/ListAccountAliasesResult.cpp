@@ -22,8 +22,8 @@ ListAccountAliasesResult::ListAccountAliasesResult() :
 {
 }
 
-ListAccountAliasesResult::ListAccountAliasesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_isTruncated(false)
+ListAccountAliasesResult::ListAccountAliasesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : ListAccountAliasesResult()
 {
   *this = result;
 }

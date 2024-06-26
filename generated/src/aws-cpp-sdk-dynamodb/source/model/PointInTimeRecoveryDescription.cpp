@@ -26,11 +26,8 @@ PointInTimeRecoveryDescription::PointInTimeRecoveryDescription() :
 {
 }
 
-PointInTimeRecoveryDescription::PointInTimeRecoveryDescription(JsonView jsonValue) : 
-    m_pointInTimeRecoveryStatus(PointInTimeRecoveryStatus::NOT_SET),
-    m_pointInTimeRecoveryStatusHasBeenSet(false),
-    m_earliestRestorableDateTimeHasBeenSet(false),
-    m_latestRestorableDateTimeHasBeenSet(false)
+PointInTimeRecoveryDescription::PointInTimeRecoveryDescription(JsonView jsonValue)
+  : PointInTimeRecoveryDescription()
 {
   *this = jsonValue;
 }

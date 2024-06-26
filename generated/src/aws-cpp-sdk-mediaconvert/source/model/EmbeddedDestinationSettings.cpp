@@ -26,11 +26,8 @@ EmbeddedDestinationSettings::EmbeddedDestinationSettings() :
 {
 }
 
-EmbeddedDestinationSettings::EmbeddedDestinationSettings(JsonView jsonValue) : 
-    m_destination608ChannelNumber(0),
-    m_destination608ChannelNumberHasBeenSet(false),
-    m_destination708ServiceNumber(0),
-    m_destination708ServiceNumberHasBeenSet(false)
+EmbeddedDestinationSettings::EmbeddedDestinationSettings(JsonView jsonValue)
+  : EmbeddedDestinationSettings()
 {
   *this = jsonValue;
 }

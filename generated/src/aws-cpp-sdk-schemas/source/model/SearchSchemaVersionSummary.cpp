@@ -26,11 +26,8 @@ SearchSchemaVersionSummary::SearchSchemaVersionSummary() :
 {
 }
 
-SearchSchemaVersionSummary::SearchSchemaVersionSummary(JsonView jsonValue) : 
-    m_createdDateHasBeenSet(false),
-    m_schemaVersionHasBeenSet(false),
-    m_type(Type::NOT_SET),
-    m_typeHasBeenSet(false)
+SearchSchemaVersionSummary::SearchSchemaVersionSummary(JsonView jsonValue)
+  : SearchSchemaVersionSummary()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ DecisionTaskStartedEventAttributes::DecisionTaskStartedEventAttributes() :
 {
 }
 
-DecisionTaskStartedEventAttributes::DecisionTaskStartedEventAttributes(JsonView jsonValue) : 
-    m_identityHasBeenSet(false),
-    m_scheduledEventId(0),
-    m_scheduledEventIdHasBeenSet(false)
+DecisionTaskStartedEventAttributes::DecisionTaskStartedEventAttributes(JsonView jsonValue)
+  : DecisionTaskStartedEventAttributes()
 {
   *this = jsonValue;
 }

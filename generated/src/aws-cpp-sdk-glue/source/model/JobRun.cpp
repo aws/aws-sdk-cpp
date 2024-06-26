@@ -58,43 +58,8 @@ JobRun::JobRun() :
 {
 }
 
-JobRun::JobRun(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_attempt(0),
-    m_attemptHasBeenSet(false),
-    m_previousRunIdHasBeenSet(false),
-    m_triggerNameHasBeenSet(false),
-    m_jobNameHasBeenSet(false),
-    m_jobMode(JobMode::NOT_SET),
-    m_jobModeHasBeenSet(false),
-    m_startedOnHasBeenSet(false),
-    m_lastModifiedOnHasBeenSet(false),
-    m_completedOnHasBeenSet(false),
-    m_jobRunState(JobRunState::NOT_SET),
-    m_jobRunStateHasBeenSet(false),
-    m_argumentsHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_predecessorRunsHasBeenSet(false),
-    m_executionTime(0),
-    m_executionTimeHasBeenSet(false),
-    m_timeout(0),
-    m_timeoutHasBeenSet(false),
-    m_maxCapacity(0.0),
-    m_maxCapacityHasBeenSet(false),
-    m_workerType(WorkerType::NOT_SET),
-    m_workerTypeHasBeenSet(false),
-    m_numberOfWorkers(0),
-    m_numberOfWorkersHasBeenSet(false),
-    m_securityConfigurationHasBeenSet(false),
-    m_logGroupNameHasBeenSet(false),
-    m_notificationPropertyHasBeenSet(false),
-    m_glueVersionHasBeenSet(false),
-    m_dPUSeconds(0.0),
-    m_dPUSecondsHasBeenSet(false),
-    m_executionClass(ExecutionClass::NOT_SET),
-    m_executionClassHasBeenSet(false),
-    m_maintenanceWindowHasBeenSet(false),
-    m_profileNameHasBeenSet(false)
+JobRun::JobRun(JsonView jsonValue)
+  : JobRun()
 {
   *this = jsonValue;
 }

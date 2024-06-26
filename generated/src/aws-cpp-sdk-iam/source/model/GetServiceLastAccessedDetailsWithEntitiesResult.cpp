@@ -23,9 +23,8 @@ GetServiceLastAccessedDetailsWithEntitiesResult::GetServiceLastAccessedDetailsWi
 {
 }
 
-GetServiceLastAccessedDetailsWithEntitiesResult::GetServiceLastAccessedDetailsWithEntitiesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_jobStatus(JobStatusType::NOT_SET),
-    m_isTruncated(false)
+GetServiceLastAccessedDetailsWithEntitiesResult::GetServiceLastAccessedDetailsWithEntitiesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : GetServiceLastAccessedDetailsWithEntitiesResult()
 {
   *this = result;
 }

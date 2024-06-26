@@ -28,13 +28,8 @@ SecurityGroupRemediationAction::SecurityGroupRemediationAction() :
 {
 }
 
-SecurityGroupRemediationAction::SecurityGroupRemediationAction(JsonView jsonValue) : 
-    m_remediationActionType(RemediationActionType::NOT_SET),
-    m_remediationActionTypeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_remediationResultHasBeenSet(false),
-    m_isDefaultAction(false),
-    m_isDefaultActionHasBeenSet(false)
+SecurityGroupRemediationAction::SecurityGroupRemediationAction(JsonView jsonValue)
+  : SecurityGroupRemediationAction()
 {
   *this = jsonValue;
 }

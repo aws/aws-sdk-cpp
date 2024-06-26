@@ -23,8 +23,8 @@ ChannelEgressEndpoint::ChannelEgressEndpoint() :
 {
 }
 
-ChannelEgressEndpoint::ChannelEgressEndpoint(JsonView jsonValue) : 
-    m_sourceIpHasBeenSet(false)
+ChannelEgressEndpoint::ChannelEgressEndpoint(JsonView jsonValue)
+  : ChannelEgressEndpoint()
 {
   *this = jsonValue;
 }

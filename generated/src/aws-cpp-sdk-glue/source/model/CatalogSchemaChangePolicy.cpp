@@ -26,11 +26,8 @@ CatalogSchemaChangePolicy::CatalogSchemaChangePolicy() :
 {
 }
 
-CatalogSchemaChangePolicy::CatalogSchemaChangePolicy(JsonView jsonValue) : 
-    m_enableUpdateCatalog(false),
-    m_enableUpdateCatalogHasBeenSet(false),
-    m_updateBehavior(UpdateCatalogBehavior::NOT_SET),
-    m_updateBehaviorHasBeenSet(false)
+CatalogSchemaChangePolicy::CatalogSchemaChangePolicy(JsonView jsonValue)
+  : CatalogSchemaChangePolicy()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ ExternalMetricsPreference::ExternalMetricsPreference() :
 {
 }
 
-ExternalMetricsPreference::ExternalMetricsPreference(JsonView jsonValue) : 
-    m_source(ExternalMetricsSource::NOT_SET),
-    m_sourceHasBeenSet(false)
+ExternalMetricsPreference::ExternalMetricsPreference(JsonView jsonValue)
+  : ExternalMetricsPreference()
 {
   *this = jsonValue;
 }

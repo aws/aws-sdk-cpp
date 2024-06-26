@@ -25,10 +25,8 @@ ProvisionedCapacityDescription::ProvisionedCapacityDescription() :
 {
 }
 
-ProvisionedCapacityDescription::ProvisionedCapacityDescription(JsonView jsonValue) : 
-    m_capacityIdHasBeenSet(false),
-    m_startDateHasBeenSet(false),
-    m_expirationDateHasBeenSet(false)
+ProvisionedCapacityDescription::ProvisionedCapacityDescription(JsonView jsonValue)
+  : ProvisionedCapacityDescription()
 {
   *this = jsonValue;
 }

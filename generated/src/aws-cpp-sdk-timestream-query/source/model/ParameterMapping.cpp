@@ -24,9 +24,8 @@ ParameterMapping::ParameterMapping() :
 {
 }
 
-ParameterMapping::ParameterMapping(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_typeHasBeenSet(false)
+ParameterMapping::ParameterMapping(JsonView jsonValue)
+  : ParameterMapping()
 {
   *this = jsonValue;
 }

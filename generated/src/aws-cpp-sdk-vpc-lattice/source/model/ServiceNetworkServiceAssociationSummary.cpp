@@ -36,21 +36,8 @@ ServiceNetworkServiceAssociationSummary::ServiceNetworkServiceAssociationSummary
 {
 }
 
-ServiceNetworkServiceAssociationSummary::ServiceNetworkServiceAssociationSummary(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_customDomainNameHasBeenSet(false),
-    m_dnsEntryHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_serviceArnHasBeenSet(false),
-    m_serviceIdHasBeenSet(false),
-    m_serviceNameHasBeenSet(false),
-    m_serviceNetworkArnHasBeenSet(false),
-    m_serviceNetworkIdHasBeenSet(false),
-    m_serviceNetworkNameHasBeenSet(false),
-    m_status(ServiceNetworkServiceAssociationStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+ServiceNetworkServiceAssociationSummary::ServiceNetworkServiceAssociationSummary(JsonView jsonValue)
+  : ServiceNetworkServiceAssociationSummary()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ CoreNetworkSegmentEdgeIdentifier::CoreNetworkSegmentEdgeIdentifier() :
 {
 }
 
-CoreNetworkSegmentEdgeIdentifier::CoreNetworkSegmentEdgeIdentifier(JsonView jsonValue) : 
-    m_coreNetworkIdHasBeenSet(false),
-    m_segmentNameHasBeenSet(false),
-    m_edgeLocationHasBeenSet(false)
+CoreNetworkSegmentEdgeIdentifier::CoreNetworkSegmentEdgeIdentifier(JsonView jsonValue)
+  : CoreNetworkSegmentEdgeIdentifier()
 {
   *this = jsonValue;
 }

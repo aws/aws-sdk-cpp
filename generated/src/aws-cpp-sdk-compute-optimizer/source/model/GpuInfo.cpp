@@ -23,8 +23,8 @@ GpuInfo::GpuInfo() :
 {
 }
 
-GpuInfo::GpuInfo(JsonView jsonValue) : 
-    m_gpusHasBeenSet(false)
+GpuInfo::GpuInfo(JsonView jsonValue)
+  : GpuInfo()
 {
   *this = jsonValue;
 }

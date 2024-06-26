@@ -29,12 +29,8 @@ TemplateParameter::TemplateParameter() :
 {
 }
 
-TemplateParameter::TemplateParameter(const XmlNode& xmlNode) : 
-    m_parameterKeyHasBeenSet(false),
-    m_defaultValueHasBeenSet(false),
-    m_noEcho(false),
-    m_noEchoHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+TemplateParameter::TemplateParameter(const XmlNode& xmlNode)
+  : TemplateParameter()
 {
   *this = xmlNode;
 }

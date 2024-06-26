@@ -27,12 +27,8 @@ AggregationConstraint::AggregationConstraint() :
 {
 }
 
-AggregationConstraint::AggregationConstraint(JsonView jsonValue) : 
-    m_columnNameHasBeenSet(false),
-    m_minimum(0),
-    m_minimumHasBeenSet(false),
-    m_type(AggregationType::NOT_SET),
-    m_typeHasBeenSet(false)
+AggregationConstraint::AggregationConstraint(JsonView jsonValue)
+  : AggregationConstraint()
 {
   *this = jsonValue;
 }

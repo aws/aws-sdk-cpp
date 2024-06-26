@@ -24,9 +24,8 @@ IngressConfiguration::IngressConfiguration() :
 {
 }
 
-IngressConfiguration::IngressConfiguration(JsonView jsonValue) : 
-    m_isPubliclyAccessible(false),
-    m_isPubliclyAccessibleHasBeenSet(false)
+IngressConfiguration::IngressConfiguration(JsonView jsonValue)
+  : IngressConfiguration()
 {
   *this = jsonValue;
 }

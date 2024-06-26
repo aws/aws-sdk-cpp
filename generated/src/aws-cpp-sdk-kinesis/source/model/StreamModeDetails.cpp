@@ -24,9 +24,8 @@ StreamModeDetails::StreamModeDetails() :
 {
 }
 
-StreamModeDetails::StreamModeDetails(JsonView jsonValue) : 
-    m_streamMode(StreamMode::NOT_SET),
-    m_streamModeHasBeenSet(false)
+StreamModeDetails::StreamModeDetails(JsonView jsonValue)
+  : StreamModeDetails()
 {
   *this = jsonValue;
 }

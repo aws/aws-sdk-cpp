@@ -24,9 +24,8 @@ AwsRdsDbSecurityGroupIpRange::AwsRdsDbSecurityGroupIpRange() :
 {
 }
 
-AwsRdsDbSecurityGroupIpRange::AwsRdsDbSecurityGroupIpRange(JsonView jsonValue) : 
-    m_cidrIpHasBeenSet(false),
-    m_statusHasBeenSet(false)
+AwsRdsDbSecurityGroupIpRange::AwsRdsDbSecurityGroupIpRange(JsonView jsonValue)
+  : AwsRdsDbSecurityGroupIpRange()
 {
   *this = jsonValue;
 }

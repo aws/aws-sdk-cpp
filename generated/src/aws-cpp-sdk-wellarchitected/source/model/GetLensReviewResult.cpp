@@ -22,8 +22,8 @@ GetLensReviewResult::GetLensReviewResult() :
 {
 }
 
-GetLensReviewResult::GetLensReviewResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_milestoneNumber(0)
+GetLensReviewResult::GetLensReviewResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetLensReviewResult()
 {
   *this = result;
 }

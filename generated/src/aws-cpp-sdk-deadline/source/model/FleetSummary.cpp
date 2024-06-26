@@ -42,27 +42,8 @@ FleetSummary::FleetSummary() :
 {
 }
 
-FleetSummary::FleetSummary(JsonView jsonValue) : 
-    m_autoScalingStatus(AutoScalingStatus::NOT_SET),
-    m_autoScalingStatusHasBeenSet(false),
-    m_configurationHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_farmIdHasBeenSet(false),
-    m_fleetIdHasBeenSet(false),
-    m_maxWorkerCount(0),
-    m_maxWorkerCountHasBeenSet(false),
-    m_minWorkerCount(0),
-    m_minWorkerCountHasBeenSet(false),
-    m_status(FleetStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_targetWorkerCount(0),
-    m_targetWorkerCountHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_updatedByHasBeenSet(false),
-    m_workerCount(0),
-    m_workerCountHasBeenSet(false)
+FleetSummary::FleetSummary(JsonView jsonValue)
+  : FleetSummary()
 {
   *this = jsonValue;
 }

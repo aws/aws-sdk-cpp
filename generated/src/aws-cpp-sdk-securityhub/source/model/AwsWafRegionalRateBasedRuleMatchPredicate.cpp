@@ -26,11 +26,8 @@ AwsWafRegionalRateBasedRuleMatchPredicate::AwsWafRegionalRateBasedRuleMatchPredi
 {
 }
 
-AwsWafRegionalRateBasedRuleMatchPredicate::AwsWafRegionalRateBasedRuleMatchPredicate(JsonView jsonValue) : 
-    m_dataIdHasBeenSet(false),
-    m_negated(false),
-    m_negatedHasBeenSet(false),
-    m_typeHasBeenSet(false)
+AwsWafRegionalRateBasedRuleMatchPredicate::AwsWafRegionalRateBasedRuleMatchPredicate(JsonView jsonValue)
+  : AwsWafRegionalRateBasedRuleMatchPredicate()
 {
   *this = jsonValue;
 }

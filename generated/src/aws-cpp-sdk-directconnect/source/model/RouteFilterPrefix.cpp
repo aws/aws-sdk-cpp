@@ -23,8 +23,8 @@ RouteFilterPrefix::RouteFilterPrefix() :
 {
 }
 
-RouteFilterPrefix::RouteFilterPrefix(JsonView jsonValue) : 
-    m_cidrHasBeenSet(false)
+RouteFilterPrefix::RouteFilterPrefix(JsonView jsonValue)
+  : RouteFilterPrefix()
 {
   *this = jsonValue;
 }

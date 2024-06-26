@@ -23,9 +23,8 @@ UpdateDataSourceResult::UpdateDataSourceResult() :
 {
 }
 
-UpdateDataSourceResult::UpdateDataSourceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_updateStatus(ResourceStatus::NOT_SET),
-    m_status(0)
+UpdateDataSourceResult::UpdateDataSourceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateDataSourceResult()
 {
   *this = result;
 }

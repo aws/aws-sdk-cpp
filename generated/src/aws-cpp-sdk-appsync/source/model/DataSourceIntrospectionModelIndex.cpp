@@ -24,9 +24,8 @@ DataSourceIntrospectionModelIndex::DataSourceIntrospectionModelIndex() :
 {
 }
 
-DataSourceIntrospectionModelIndex::DataSourceIntrospectionModelIndex(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_fieldsHasBeenSet(false)
+DataSourceIntrospectionModelIndex::DataSourceIntrospectionModelIndex(JsonView jsonValue)
+  : DataSourceIntrospectionModelIndex()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ DataQualityObservation::DataQualityObservation() :
 {
 }
 
-DataQualityObservation::DataQualityObservation(JsonView jsonValue) : 
-    m_descriptionHasBeenSet(false),
-    m_metricBasedObservationHasBeenSet(false)
+DataQualityObservation::DataQualityObservation(JsonView jsonValue)
+  : DataQualityObservation()
 {
   *this = jsonValue;
 }

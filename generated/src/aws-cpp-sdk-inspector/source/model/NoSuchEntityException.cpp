@@ -27,12 +27,8 @@ NoSuchEntityException::NoSuchEntityException() :
 {
 }
 
-NoSuchEntityException::NoSuchEntityException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_errorCode(NoSuchEntityErrorCode::NOT_SET),
-    m_errorCodeHasBeenSet(false),
-    m_canRetry(false),
-    m_canRetryHasBeenSet(false)
+NoSuchEntityException::NoSuchEntityException(JsonView jsonValue)
+  : NoSuchEntityException()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ UpdateSPICECapacityConfigurationResult::UpdateSPICECapacityConfigurationResult()
 {
 }
 
-UpdateSPICECapacityConfigurationResult::UpdateSPICECapacityConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+UpdateSPICECapacityConfigurationResult::UpdateSPICECapacityConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateSPICECapacityConfigurationResult()
 {
   *this = result;
 }

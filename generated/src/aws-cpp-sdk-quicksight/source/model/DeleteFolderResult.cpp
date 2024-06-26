@@ -22,8 +22,8 @@ DeleteFolderResult::DeleteFolderResult() :
 {
 }
 
-DeleteFolderResult::DeleteFolderResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+DeleteFolderResult::DeleteFolderResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeleteFolderResult()
 {
   *this = result;
 }

@@ -27,12 +27,8 @@ OnDemandCapacityReservationOptions::OnDemandCapacityReservationOptions() :
 {
 }
 
-OnDemandCapacityReservationOptions::OnDemandCapacityReservationOptions(JsonView jsonValue) : 
-    m_usageStrategy(OnDemandCapacityReservationUsageStrategy::NOT_SET),
-    m_usageStrategyHasBeenSet(false),
-    m_capacityReservationPreference(OnDemandCapacityReservationPreference::NOT_SET),
-    m_capacityReservationPreferenceHasBeenSet(false),
-    m_capacityReservationResourceGroupArnHasBeenSet(false)
+OnDemandCapacityReservationOptions::OnDemandCapacityReservationOptions(JsonView jsonValue)
+  : OnDemandCapacityReservationOptions()
 {
   *this = jsonValue;
 }

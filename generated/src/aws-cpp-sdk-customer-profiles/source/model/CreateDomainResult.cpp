@@ -22,8 +22,8 @@ CreateDomainResult::CreateDomainResult() :
 {
 }
 
-CreateDomainResult::CreateDomainResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_defaultExpirationDays(0)
+CreateDomainResult::CreateDomainResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateDomainResult()
 {
   *this = result;
 }

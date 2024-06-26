@@ -25,10 +25,8 @@ WorkflowExecutionCanceledEventAttributes::WorkflowExecutionCanceledEventAttribut
 {
 }
 
-WorkflowExecutionCanceledEventAttributes::WorkflowExecutionCanceledEventAttributes(JsonView jsonValue) : 
-    m_detailsHasBeenSet(false),
-    m_decisionTaskCompletedEventId(0),
-    m_decisionTaskCompletedEventIdHasBeenSet(false)
+WorkflowExecutionCanceledEventAttributes::WorkflowExecutionCanceledEventAttributes(JsonView jsonValue)
+  : WorkflowExecutionCanceledEventAttributes()
 {
   *this = jsonValue;
 }

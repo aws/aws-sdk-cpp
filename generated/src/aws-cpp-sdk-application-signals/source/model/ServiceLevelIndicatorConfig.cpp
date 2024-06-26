@@ -27,12 +27,8 @@ ServiceLevelIndicatorConfig::ServiceLevelIndicatorConfig() :
 {
 }
 
-ServiceLevelIndicatorConfig::ServiceLevelIndicatorConfig(JsonView jsonValue) : 
-    m_sliMetricConfigHasBeenSet(false),
-    m_metricThreshold(0.0),
-    m_metricThresholdHasBeenSet(false),
-    m_comparisonOperator(ServiceLevelIndicatorComparisonOperator::NOT_SET),
-    m_comparisonOperatorHasBeenSet(false)
+ServiceLevelIndicatorConfig::ServiceLevelIndicatorConfig(JsonView jsonValue)
+  : ServiceLevelIndicatorConfig()
 {
   *this = jsonValue;
 }

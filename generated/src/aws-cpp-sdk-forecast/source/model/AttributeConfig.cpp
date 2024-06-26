@@ -24,9 +24,8 @@ AttributeConfig::AttributeConfig() :
 {
 }
 
-AttributeConfig::AttributeConfig(JsonView jsonValue) : 
-    m_attributeNameHasBeenSet(false),
-    m_transformationsHasBeenSet(false)
+AttributeConfig::AttributeConfig(JsonView jsonValue)
+  : AttributeConfig()
 {
   *this = jsonValue;
 }

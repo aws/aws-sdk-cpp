@@ -27,12 +27,8 @@ LaunchActionRun::LaunchActionRun() :
 {
 }
 
-LaunchActionRun::LaunchActionRun(JsonView jsonValue) : 
-    m_actionHasBeenSet(false),
-    m_failureReasonHasBeenSet(false),
-    m_runIdHasBeenSet(false),
-    m_status(LaunchActionRunStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+LaunchActionRun::LaunchActionRun(JsonView jsonValue)
+  : LaunchActionRun()
 {
   *this = jsonValue;
 }

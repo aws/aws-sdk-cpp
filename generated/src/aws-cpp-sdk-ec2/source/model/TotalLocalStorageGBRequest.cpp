@@ -28,11 +28,8 @@ TotalLocalStorageGBRequest::TotalLocalStorageGBRequest() :
 {
 }
 
-TotalLocalStorageGBRequest::TotalLocalStorageGBRequest(const XmlNode& xmlNode) : 
-    m_min(0.0),
-    m_minHasBeenSet(false),
-    m_max(0.0),
-    m_maxHasBeenSet(false)
+TotalLocalStorageGBRequest::TotalLocalStorageGBRequest(const XmlNode& xmlNode)
+  : TotalLocalStorageGBRequest()
 {
   *this = xmlNode;
 }

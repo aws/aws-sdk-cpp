@@ -26,11 +26,8 @@ ExportStatistics::ExportStatistics() :
 {
 }
 
-ExportStatistics::ExportStatistics(JsonView jsonValue) : 
-    m_processedRecordsCount(0),
-    m_processedRecordsCountHasBeenSet(false),
-    m_exportedRecordsCount(0),
-    m_exportedRecordsCountHasBeenSet(false)
+ExportStatistics::ExportStatistics(JsonView jsonValue)
+  : ExportStatistics()
 {
   *this = jsonValue;
 }

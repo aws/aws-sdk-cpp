@@ -25,10 +25,8 @@ BatchIsAuthorizedWithTokenInputItem::BatchIsAuthorizedWithTokenInputItem() :
 {
 }
 
-BatchIsAuthorizedWithTokenInputItem::BatchIsAuthorizedWithTokenInputItem(JsonView jsonValue) : 
-    m_actionHasBeenSet(false),
-    m_resourceHasBeenSet(false),
-    m_contextHasBeenSet(false)
+BatchIsAuthorizedWithTokenInputItem::BatchIsAuthorizedWithTokenInputItem(JsonView jsonValue)
+  : BatchIsAuthorizedWithTokenInputItem()
 {
   *this = jsonValue;
 }

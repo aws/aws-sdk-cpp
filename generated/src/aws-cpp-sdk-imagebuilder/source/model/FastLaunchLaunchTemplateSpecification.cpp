@@ -25,10 +25,8 @@ FastLaunchLaunchTemplateSpecification::FastLaunchLaunchTemplateSpecification() :
 {
 }
 
-FastLaunchLaunchTemplateSpecification::FastLaunchLaunchTemplateSpecification(JsonView jsonValue) : 
-    m_launchTemplateIdHasBeenSet(false),
-    m_launchTemplateNameHasBeenSet(false),
-    m_launchTemplateVersionHasBeenSet(false)
+FastLaunchLaunchTemplateSpecification::FastLaunchLaunchTemplateSpecification(JsonView jsonValue)
+  : FastLaunchLaunchTemplateSpecification()
 {
   *this = jsonValue;
 }

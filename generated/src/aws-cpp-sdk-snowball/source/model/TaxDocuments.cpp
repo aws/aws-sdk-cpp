@@ -23,8 +23,8 @@ TaxDocuments::TaxDocuments() :
 {
 }
 
-TaxDocuments::TaxDocuments(JsonView jsonValue) : 
-    m_iNDHasBeenSet(false)
+TaxDocuments::TaxDocuments(JsonView jsonValue)
+  : TaxDocuments()
 {
   *this = jsonValue;
 }

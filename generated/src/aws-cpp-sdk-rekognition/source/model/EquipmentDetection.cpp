@@ -28,13 +28,8 @@ EquipmentDetection::EquipmentDetection() :
 {
 }
 
-EquipmentDetection::EquipmentDetection(JsonView jsonValue) : 
-    m_boundingBoxHasBeenSet(false),
-    m_confidence(0.0),
-    m_confidenceHasBeenSet(false),
-    m_type(ProtectiveEquipmentType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_coversBodyPartHasBeenSet(false)
+EquipmentDetection::EquipmentDetection(JsonView jsonValue)
+  : EquipmentDetection()
 {
   *this = jsonValue;
 }

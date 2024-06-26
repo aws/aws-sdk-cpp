@@ -24,9 +24,8 @@ LoRaWANConnectionStatusResourceTypeEventConfiguration::LoRaWANConnectionStatusRe
 {
 }
 
-LoRaWANConnectionStatusResourceTypeEventConfiguration::LoRaWANConnectionStatusResourceTypeEventConfiguration(JsonView jsonValue) : 
-    m_wirelessGatewayEventTopic(EventNotificationTopicStatus::NOT_SET),
-    m_wirelessGatewayEventTopicHasBeenSet(false)
+LoRaWANConnectionStatusResourceTypeEventConfiguration::LoRaWANConnectionStatusResourceTypeEventConfiguration(JsonView jsonValue)
+  : LoRaWANConnectionStatusResourceTypeEventConfiguration()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ ListKeysResponseListItem::ListKeysResponseListItem() :
 {
 }
 
-ListKeysResponseListItem::ListKeysResponseListItem(JsonView jsonValue) : 
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false)
+ListKeysResponseListItem::ListKeysResponseListItem(JsonView jsonValue)
+  : ListKeysResponseListItem()
 {
   *this = jsonValue;
 }

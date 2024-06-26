@@ -24,9 +24,8 @@ Term::Term() :
 {
 }
 
-Term::Term(JsonView jsonValue) : 
-    m_sourceTextHasBeenSet(false),
-    m_targetTextHasBeenSet(false)
+Term::Term(JsonView jsonValue)
+  : Term()
 {
   *this = jsonValue;
 }

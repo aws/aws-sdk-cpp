@@ -26,11 +26,8 @@ ComputeCapacity::ComputeCapacity() :
 {
 }
 
-ComputeCapacity::ComputeCapacity(JsonView jsonValue) : 
-    m_desiredInstances(0),
-    m_desiredInstancesHasBeenSet(false),
-    m_desiredSessions(0),
-    m_desiredSessionsHasBeenSet(false)
+ComputeCapacity::ComputeCapacity(JsonView jsonValue)
+  : ComputeCapacity()
 {
   *this = jsonValue;
 }

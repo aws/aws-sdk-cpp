@@ -26,9 +26,8 @@ AttributeDoesNotExist::AttributeDoesNotExist() :
 {
 }
 
-AttributeDoesNotExist::AttributeDoesNotExist(const XmlNode& xmlNode) : 
-    m_boxUsage(0.0),
-    m_boxUsageHasBeenSet(false)
+AttributeDoesNotExist::AttributeDoesNotExist(const XmlNode& xmlNode)
+  : AttributeDoesNotExist()
 {
   *this = xmlNode;
 }

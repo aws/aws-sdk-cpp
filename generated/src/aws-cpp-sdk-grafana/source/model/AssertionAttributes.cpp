@@ -28,13 +28,8 @@ AssertionAttributes::AssertionAttributes() :
 {
 }
 
-AssertionAttributes::AssertionAttributes(JsonView jsonValue) : 
-    m_emailHasBeenSet(false),
-    m_groupsHasBeenSet(false),
-    m_loginHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_orgHasBeenSet(false),
-    m_roleHasBeenSet(false)
+AssertionAttributes::AssertionAttributes(JsonView jsonValue)
+  : AssertionAttributes()
 {
   *this = jsonValue;
 }

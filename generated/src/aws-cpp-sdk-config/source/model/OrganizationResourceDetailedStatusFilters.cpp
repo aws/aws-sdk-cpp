@@ -25,10 +25,8 @@ OrganizationResourceDetailedStatusFilters::OrganizationResourceDetailedStatusFil
 {
 }
 
-OrganizationResourceDetailedStatusFilters::OrganizationResourceDetailedStatusFilters(JsonView jsonValue) : 
-    m_accountIdHasBeenSet(false),
-    m_status(OrganizationResourceDetailedStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+OrganizationResourceDetailedStatusFilters::OrganizationResourceDetailedStatusFilters(JsonView jsonValue)
+  : OrganizationResourceDetailedStatusFilters()
 {
   *this = jsonValue;
 }

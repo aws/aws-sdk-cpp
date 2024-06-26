@@ -29,14 +29,8 @@ ProtectConfigurationInformation::ProtectConfigurationInformation() :
 {
 }
 
-ProtectConfigurationInformation::ProtectConfigurationInformation(JsonView jsonValue) : 
-    m_protectConfigurationArnHasBeenSet(false),
-    m_protectConfigurationIdHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false),
-    m_accountDefault(false),
-    m_accountDefaultHasBeenSet(false),
-    m_deletionProtectionEnabled(false),
-    m_deletionProtectionEnabledHasBeenSet(false)
+ProtectConfigurationInformation::ProtectConfigurationInformation(JsonView jsonValue)
+  : ProtectConfigurationInformation()
 {
   *this = jsonValue;
 }

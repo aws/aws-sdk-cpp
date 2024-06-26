@@ -27,12 +27,8 @@ ManagedAgentStateChange::ManagedAgentStateChange() :
 {
 }
 
-ManagedAgentStateChange::ManagedAgentStateChange(JsonView jsonValue) : 
-    m_containerNameHasBeenSet(false),
-    m_managedAgentName(ManagedAgentName::NOT_SET),
-    m_managedAgentNameHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_reasonHasBeenSet(false)
+ManagedAgentStateChange::ManagedAgentStateChange(JsonView jsonValue)
+  : ManagedAgentStateChange()
 {
   *this = jsonValue;
 }

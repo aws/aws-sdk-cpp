@@ -24,9 +24,8 @@ Page::Page() :
 {
 }
 
-Page::Page(JsonView jsonValue) : 
-    m_valuesHasBeenSet(false),
-    m_nextPageTokenHasBeenSet(false)
+Page::Page(JsonView jsonValue)
+  : Page()
 {
   *this = jsonValue;
 }

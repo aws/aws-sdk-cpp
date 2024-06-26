@@ -26,10 +26,8 @@ RecipientInfo::RecipientInfo() :
 {
 }
 
-RecipientInfo::RecipientInfo(JsonView jsonValue) : 
-    m_keyEncryptionAlgorithm(KeyEncryptionMechanism::NOT_SET),
-    m_keyEncryptionAlgorithmHasBeenSet(false),
-    m_attestationDocumentHasBeenSet(false)
+RecipientInfo::RecipientInfo(JsonView jsonValue)
+  : RecipientInfo()
 {
   *this = jsonValue;
 }

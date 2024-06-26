@@ -25,10 +25,8 @@ AccessConfiguration::AccessConfiguration() :
 {
 }
 
-AccessConfiguration::AccessConfiguration(JsonView jsonValue) : 
-    m_accessControlsHasBeenSet(false),
-    m_memberRelation(MemberRelation::NOT_SET),
-    m_memberRelationHasBeenSet(false)
+AccessConfiguration::AccessConfiguration(JsonView jsonValue)
+  : AccessConfiguration()
 {
   *this = jsonValue;
 }

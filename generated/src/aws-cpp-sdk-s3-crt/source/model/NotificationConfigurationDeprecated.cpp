@@ -27,10 +27,8 @@ NotificationConfigurationDeprecated::NotificationConfigurationDeprecated() :
 {
 }
 
-NotificationConfigurationDeprecated::NotificationConfigurationDeprecated(const XmlNode& xmlNode) : 
-    m_topicConfigurationHasBeenSet(false),
-    m_queueConfigurationHasBeenSet(false),
-    m_cloudFunctionConfigurationHasBeenSet(false)
+NotificationConfigurationDeprecated::NotificationConfigurationDeprecated(const XmlNode& xmlNode)
+  : NotificationConfigurationDeprecated()
 {
   *this = xmlNode;
 }

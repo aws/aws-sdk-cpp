@@ -27,10 +27,8 @@ ResponseError::ResponseError() :
 {
 }
 
-ResponseError::ResponseError(const XmlNode& xmlNode) : 
-    m_code(LaunchTemplateErrorCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+ResponseError::ResponseError(const XmlNode& xmlNode)
+  : ResponseError()
 {
   *this = xmlNode;
 }

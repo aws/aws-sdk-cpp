@@ -26,11 +26,8 @@ ZonalStatisticsConfigInput::ZonalStatisticsConfigInput() :
 {
 }
 
-ZonalStatisticsConfigInput::ZonalStatisticsConfigInput(JsonView jsonValue) : 
-    m_statisticsHasBeenSet(false),
-    m_targetBandsHasBeenSet(false),
-    m_zoneS3PathHasBeenSet(false),
-    m_zoneS3PathKmsKeyIdHasBeenSet(false)
+ZonalStatisticsConfigInput::ZonalStatisticsConfigInput(JsonView jsonValue)
+  : ZonalStatisticsConfigInput()
 {
   *this = jsonValue;
 }

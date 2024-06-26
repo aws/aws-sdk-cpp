@@ -30,15 +30,8 @@ DataTransfer::DataTransfer() :
 {
 }
 
-DataTransfer::DataTransfer(JsonView jsonValue) : 
-    m_bytesTransferred(0),
-    m_bytesTransferredHasBeenSet(false),
-    m_objectsTransferred(0),
-    m_objectsTransferredHasBeenSet(false),
-    m_totalBytes(0),
-    m_totalBytesHasBeenSet(false),
-    m_totalObjects(0),
-    m_totalObjectsHasBeenSet(false)
+DataTransfer::DataTransfer(JsonView jsonValue)
+  : DataTransfer()
 {
   *this = jsonValue;
 }

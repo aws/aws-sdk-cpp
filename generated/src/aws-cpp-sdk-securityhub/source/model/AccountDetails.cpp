@@ -24,9 +24,8 @@ AccountDetails::AccountDetails() :
 {
 }
 
-AccountDetails::AccountDetails(JsonView jsonValue) : 
-    m_accountIdHasBeenSet(false),
-    m_emailHasBeenSet(false)
+AccountDetails::AccountDetails(JsonView jsonValue)
+  : AccountDetails()
 {
   *this = jsonValue;
 }

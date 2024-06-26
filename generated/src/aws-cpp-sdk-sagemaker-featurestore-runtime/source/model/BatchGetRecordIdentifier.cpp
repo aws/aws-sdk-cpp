@@ -25,10 +25,8 @@ BatchGetRecordIdentifier::BatchGetRecordIdentifier() :
 {
 }
 
-BatchGetRecordIdentifier::BatchGetRecordIdentifier(JsonView jsonValue) : 
-    m_featureGroupNameHasBeenSet(false),
-    m_recordIdentifiersValueAsStringHasBeenSet(false),
-    m_featureNamesHasBeenSet(false)
+BatchGetRecordIdentifier::BatchGetRecordIdentifier(JsonView jsonValue)
+  : BatchGetRecordIdentifier()
 {
   *this = jsonValue;
 }

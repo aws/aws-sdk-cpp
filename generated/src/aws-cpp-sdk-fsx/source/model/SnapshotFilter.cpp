@@ -25,10 +25,8 @@ SnapshotFilter::SnapshotFilter() :
 {
 }
 
-SnapshotFilter::SnapshotFilter(JsonView jsonValue) : 
-    m_name(SnapshotFilterName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+SnapshotFilter::SnapshotFilter(JsonView jsonValue)
+  : SnapshotFilter()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ JiraSelectedQuestionConfiguration::JiraSelectedQuestionConfiguration() :
 {
 }
 
-JiraSelectedQuestionConfiguration::JiraSelectedQuestionConfiguration(JsonView jsonValue) : 
-    m_selectedPillarsHasBeenSet(false)
+JiraSelectedQuestionConfiguration::JiraSelectedQuestionConfiguration(JsonView jsonValue)
+  : JiraSelectedQuestionConfiguration()
 {
   *this = jsonValue;
 }

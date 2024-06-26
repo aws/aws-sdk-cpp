@@ -27,12 +27,8 @@ Trace::Trace() :
 {
 }
 
-Trace::Trace(JsonView jsonValue) : 
-    m_failureTraceHasBeenSet(false),
-    m_guardrailTraceHasBeenSet(false),
-    m_orchestrationTraceHasBeenSet(false),
-    m_postProcessingTraceHasBeenSet(false),
-    m_preProcessingTraceHasBeenSet(false)
+Trace::Trace(JsonView jsonValue)
+  : Trace()
 {
   *this = jsonValue;
 }

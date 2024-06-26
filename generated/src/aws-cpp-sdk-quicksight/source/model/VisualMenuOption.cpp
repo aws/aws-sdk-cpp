@@ -24,9 +24,8 @@ VisualMenuOption::VisualMenuOption() :
 {
 }
 
-VisualMenuOption::VisualMenuOption(JsonView jsonValue) : 
-    m_availabilityStatus(DashboardBehavior::NOT_SET),
-    m_availabilityStatusHasBeenSet(false)
+VisualMenuOption::VisualMenuOption(JsonView jsonValue)
+  : VisualMenuOption()
 {
   *this = jsonValue;
 }

@@ -28,13 +28,8 @@ RecommenderConfig::RecommenderConfig() :
 {
 }
 
-RecommenderConfig::RecommenderConfig(JsonView jsonValue) : 
-    m_itemExplorationConfigHasBeenSet(false),
-    m_minRecommendationRequestsPerSecond(0),
-    m_minRecommendationRequestsPerSecondHasBeenSet(false),
-    m_trainingDataConfigHasBeenSet(false),
-    m_enableMetadataWithRecommendations(false),
-    m_enableMetadataWithRecommendationsHasBeenSet(false)
+RecommenderConfig::RecommenderConfig(JsonView jsonValue)
+  : RecommenderConfig()
 {
   *this = jsonValue;
 }

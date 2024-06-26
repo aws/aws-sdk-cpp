@@ -26,11 +26,8 @@ ConfigurableUpfrontPricingTerm::ConfigurableUpfrontPricingTerm() :
 {
 }
 
-ConfigurableUpfrontPricingTerm::ConfigurableUpfrontPricingTerm(JsonView jsonValue) : 
-    m_configurationHasBeenSet(false),
-    m_currencyCodeHasBeenSet(false),
-    m_rateCardsHasBeenSet(false),
-    m_typeHasBeenSet(false)
+ConfigurableUpfrontPricingTerm::ConfigurableUpfrontPricingTerm(JsonView jsonValue)
+  : ConfigurableUpfrontPricingTerm()
 {
   *this = jsonValue;
 }

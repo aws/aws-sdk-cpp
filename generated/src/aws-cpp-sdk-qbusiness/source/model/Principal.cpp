@@ -24,9 +24,8 @@ Principal::Principal() :
 {
 }
 
-Principal::Principal(JsonView jsonValue) : 
-    m_userHasBeenSet(false),
-    m_groupHasBeenSet(false)
+Principal::Principal(JsonView jsonValue)
+  : Principal()
 {
   *this = jsonValue;
 }

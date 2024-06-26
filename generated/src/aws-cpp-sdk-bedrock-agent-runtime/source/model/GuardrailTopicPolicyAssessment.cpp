@@ -23,8 +23,8 @@ GuardrailTopicPolicyAssessment::GuardrailTopicPolicyAssessment() :
 {
 }
 
-GuardrailTopicPolicyAssessment::GuardrailTopicPolicyAssessment(JsonView jsonValue) : 
-    m_topicsHasBeenSet(false)
+GuardrailTopicPolicyAssessment::GuardrailTopicPolicyAssessment(JsonView jsonValue)
+  : GuardrailTopicPolicyAssessment()
 {
   *this = jsonValue;
 }

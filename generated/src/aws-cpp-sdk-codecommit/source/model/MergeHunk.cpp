@@ -27,12 +27,8 @@ MergeHunk::MergeHunk() :
 {
 }
 
-MergeHunk::MergeHunk(JsonView jsonValue) : 
-    m_isConflict(false),
-    m_isConflictHasBeenSet(false),
-    m_sourceHasBeenSet(false),
-    m_destinationHasBeenSet(false),
-    m_baseHasBeenSet(false)
+MergeHunk::MergeHunk(JsonView jsonValue)
+  : MergeHunk()
 {
   *this = jsonValue;
 }

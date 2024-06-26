@@ -29,12 +29,8 @@ CreateFleetError::CreateFleetError() :
 {
 }
 
-CreateFleetError::CreateFleetError(const XmlNode& xmlNode) : 
-    m_launchTemplateAndOverridesHasBeenSet(false),
-    m_lifecycle(InstanceLifecycle::NOT_SET),
-    m_lifecycleHasBeenSet(false),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
+CreateFleetError::CreateFleetError(const XmlNode& xmlNode)
+  : CreateFleetError()
 {
   *this = xmlNode;
 }

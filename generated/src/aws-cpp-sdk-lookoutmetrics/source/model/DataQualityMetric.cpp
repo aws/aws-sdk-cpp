@@ -28,13 +28,8 @@ DataQualityMetric::DataQualityMetric() :
 {
 }
 
-DataQualityMetric::DataQualityMetric(JsonView jsonValue) : 
-    m_metricType(DataQualityMetricType::NOT_SET),
-    m_metricTypeHasBeenSet(false),
-    m_metricDescriptionHasBeenSet(false),
-    m_relatedColumnNameHasBeenSet(false),
-    m_metricValue(0.0),
-    m_metricValueHasBeenSet(false)
+DataQualityMetric::DataQualityMetric(JsonView jsonValue)
+  : DataQualityMetric()
 {
   *this = jsonValue;
 }

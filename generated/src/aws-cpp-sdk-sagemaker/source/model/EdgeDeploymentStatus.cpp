@@ -32,17 +32,8 @@ EdgeDeploymentStatus::EdgeDeploymentStatus() :
 {
 }
 
-EdgeDeploymentStatus::EdgeDeploymentStatus(JsonView jsonValue) : 
-    m_stageStatus(StageStatus::NOT_SET),
-    m_stageStatusHasBeenSet(false),
-    m_edgeDeploymentSuccessInStage(0),
-    m_edgeDeploymentSuccessInStageHasBeenSet(false),
-    m_edgeDeploymentPendingInStage(0),
-    m_edgeDeploymentPendingInStageHasBeenSet(false),
-    m_edgeDeploymentFailedInStage(0),
-    m_edgeDeploymentFailedInStageHasBeenSet(false),
-    m_edgeDeploymentStatusMessageHasBeenSet(false),
-    m_edgeDeploymentStageStartTimeHasBeenSet(false)
+EdgeDeploymentStatus::EdgeDeploymentStatus(JsonView jsonValue)
+  : EdgeDeploymentStatus()
 {
   *this = jsonValue;
 }

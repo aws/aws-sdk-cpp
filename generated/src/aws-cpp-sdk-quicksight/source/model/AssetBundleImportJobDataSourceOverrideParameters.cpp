@@ -28,13 +28,8 @@ AssetBundleImportJobDataSourceOverrideParameters::AssetBundleImportJobDataSource
 {
 }
 
-AssetBundleImportJobDataSourceOverrideParameters::AssetBundleImportJobDataSourceOverrideParameters(JsonView jsonValue) : 
-    m_dataSourceIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_dataSourceParametersHasBeenSet(false),
-    m_vpcConnectionPropertiesHasBeenSet(false),
-    m_sslPropertiesHasBeenSet(false),
-    m_credentialsHasBeenSet(false)
+AssetBundleImportJobDataSourceOverrideParameters::AssetBundleImportJobDataSourceOverrideParameters(JsonView jsonValue)
+  : AssetBundleImportJobDataSourceOverrideParameters()
 {
   *this = jsonValue;
 }

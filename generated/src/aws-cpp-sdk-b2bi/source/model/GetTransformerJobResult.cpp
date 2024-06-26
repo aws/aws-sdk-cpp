@@ -22,8 +22,8 @@ GetTransformerJobResult::GetTransformerJobResult() :
 {
 }
 
-GetTransformerJobResult::GetTransformerJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(TransformerJobStatus::NOT_SET)
+GetTransformerJobResult::GetTransformerJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetTransformerJobResult()
 {
   *this = result;
 }

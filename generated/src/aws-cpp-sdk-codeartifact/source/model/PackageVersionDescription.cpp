@@ -37,22 +37,8 @@ PackageVersionDescription::PackageVersionDescription() :
 {
 }
 
-PackageVersionDescription::PackageVersionDescription(JsonView jsonValue) : 
-    m_format(PackageFormat::NOT_SET),
-    m_formatHasBeenSet(false),
-    m_namespaceHasBeenSet(false),
-    m_packageNameHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_summaryHasBeenSet(false),
-    m_homePageHasBeenSet(false),
-    m_sourceCodeRepositoryHasBeenSet(false),
-    m_publishedTimeHasBeenSet(false),
-    m_licensesHasBeenSet(false),
-    m_revisionHasBeenSet(false),
-    m_status(PackageVersionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_originHasBeenSet(false)
+PackageVersionDescription::PackageVersionDescription(JsonView jsonValue)
+  : PackageVersionDescription()
 {
   *this = jsonValue;
 }

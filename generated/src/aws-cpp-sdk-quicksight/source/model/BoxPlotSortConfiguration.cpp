@@ -24,9 +24,8 @@ BoxPlotSortConfiguration::BoxPlotSortConfiguration() :
 {
 }
 
-BoxPlotSortConfiguration::BoxPlotSortConfiguration(JsonView jsonValue) : 
-    m_categorySortHasBeenSet(false),
-    m_paginationConfigurationHasBeenSet(false)
+BoxPlotSortConfiguration::BoxPlotSortConfiguration(JsonView jsonValue)
+  : BoxPlotSortConfiguration()
 {
   *this = jsonValue;
 }

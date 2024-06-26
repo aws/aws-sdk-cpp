@@ -31,16 +31,8 @@ Image::Image() :
 {
 }
 
-Image::Image(JsonView jsonValue) : 
-    m_creationTimeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_failureReasonHasBeenSet(false),
-    m_imageArnHasBeenSet(false),
-    m_imageNameHasBeenSet(false),
-    m_imageStatus(ImageStatus::NOT_SET),
-    m_imageStatusHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false)
+Image::Image(JsonView jsonValue)
+  : Image()
 {
   *this = jsonValue;
 }

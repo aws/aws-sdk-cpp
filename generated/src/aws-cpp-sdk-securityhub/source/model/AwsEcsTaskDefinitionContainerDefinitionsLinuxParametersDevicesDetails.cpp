@@ -25,10 +25,8 @@ AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails::AwsEcsTas
 {
 }
 
-AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails(JsonView jsonValue) : 
-    m_containerPathHasBeenSet(false),
-    m_hostPathHasBeenSet(false),
-    m_permissionsHasBeenSet(false)
+AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails(JsonView jsonValue)
+  : AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails()
 {
   *this = jsonValue;
 }

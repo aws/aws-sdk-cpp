@@ -27,12 +27,8 @@ AnalyticsSessionFilter::AnalyticsSessionFilter() :
 {
 }
 
-AnalyticsSessionFilter::AnalyticsSessionFilter(JsonView jsonValue) : 
-    m_name(AnalyticsSessionFilterName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_operator(AnalyticsFilterOperator::NOT_SET),
-    m_operatorHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+AnalyticsSessionFilter::AnalyticsSessionFilter(JsonView jsonValue)
+  : AnalyticsSessionFilter()
 {
   *this = jsonValue;
 }

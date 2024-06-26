@@ -36,21 +36,8 @@ ServiceTemplateVersion::ServiceTemplateVersion() :
 {
 }
 
-ServiceTemplateVersion::ServiceTemplateVersion(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_compatibleEnvironmentTemplatesHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_lastModifiedAtHasBeenSet(false),
-    m_majorVersionHasBeenSet(false),
-    m_minorVersionHasBeenSet(false),
-    m_recommendedMinorVersionHasBeenSet(false),
-    m_schemaHasBeenSet(false),
-    m_status(TemplateVersionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_supportedComponentSourcesHasBeenSet(false),
-    m_templateNameHasBeenSet(false)
+ServiceTemplateVersion::ServiceTemplateVersion(JsonView jsonValue)
+  : ServiceTemplateVersion()
 {
   *this = jsonValue;
 }

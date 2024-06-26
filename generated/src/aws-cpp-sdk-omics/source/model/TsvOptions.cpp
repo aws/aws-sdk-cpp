@@ -23,8 +23,8 @@ TsvOptions::TsvOptions() :
 {
 }
 
-TsvOptions::TsvOptions(JsonView jsonValue) : 
-    m_readOptionsHasBeenSet(false)
+TsvOptions::TsvOptions(JsonView jsonValue)
+  : TsvOptions()
 {
   *this = jsonValue;
 }

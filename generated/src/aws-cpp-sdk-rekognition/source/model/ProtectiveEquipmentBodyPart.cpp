@@ -27,12 +27,8 @@ ProtectiveEquipmentBodyPart::ProtectiveEquipmentBodyPart() :
 {
 }
 
-ProtectiveEquipmentBodyPart::ProtectiveEquipmentBodyPart(JsonView jsonValue) : 
-    m_name(BodyPart::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_confidence(0.0),
-    m_confidenceHasBeenSet(false),
-    m_equipmentDetectionsHasBeenSet(false)
+ProtectiveEquipmentBodyPart::ProtectiveEquipmentBodyPart(JsonView jsonValue)
+  : ProtectiveEquipmentBodyPart()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ AssetCompositeModelPathSegment::AssetCompositeModelPathSegment() :
 {
 }
 
-AssetCompositeModelPathSegment::AssetCompositeModelPathSegment(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false)
+AssetCompositeModelPathSegment::AssetCompositeModelPathSegment(JsonView jsonValue)
+  : AssetCompositeModelPathSegment()
 {
   *this = jsonValue;
 }

@@ -25,8 +25,8 @@ InstanceIpv4Prefix::InstanceIpv4Prefix() :
 {
 }
 
-InstanceIpv4Prefix::InstanceIpv4Prefix(const XmlNode& xmlNode) : 
-    m_ipv4PrefixHasBeenSet(false)
+InstanceIpv4Prefix::InstanceIpv4Prefix(const XmlNode& xmlNode)
+  : InstanceIpv4Prefix()
 {
   *this = xmlNode;
 }

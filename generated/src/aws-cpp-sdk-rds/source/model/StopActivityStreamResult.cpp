@@ -22,8 +22,8 @@ StopActivityStreamResult::StopActivityStreamResult() :
 {
 }
 
-StopActivityStreamResult::StopActivityStreamResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_status(ActivityStreamStatus::NOT_SET)
+StopActivityStreamResult::StopActivityStreamResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : StopActivityStreamResult()
 {
   *this = result;
 }

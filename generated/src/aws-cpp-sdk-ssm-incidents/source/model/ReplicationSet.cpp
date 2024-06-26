@@ -32,17 +32,8 @@ ReplicationSet::ReplicationSet() :
 {
 }
 
-ReplicationSet::ReplicationSet(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_deletionProtected(false),
-    m_deletionProtectedHasBeenSet(false),
-    m_lastModifiedByHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_regionMapHasBeenSet(false),
-    m_status(ReplicationSetStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+ReplicationSet::ReplicationSet(JsonView jsonValue)
+  : ReplicationSet()
 {
   *this = jsonValue;
 }

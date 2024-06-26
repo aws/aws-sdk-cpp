@@ -27,12 +27,8 @@ GuardrailPiiEntityFilter::GuardrailPiiEntityFilter() :
 {
 }
 
-GuardrailPiiEntityFilter::GuardrailPiiEntityFilter(JsonView jsonValue) : 
-    m_action(GuardrailSensitiveInformationPolicyAction::NOT_SET),
-    m_actionHasBeenSet(false),
-    m_matchHasBeenSet(false),
-    m_type(GuardrailPiiEntityType::NOT_SET),
-    m_typeHasBeenSet(false)
+GuardrailPiiEntityFilter::GuardrailPiiEntityFilter(JsonView jsonValue)
+  : GuardrailPiiEntityFilter()
 {
   *this = jsonValue;
 }

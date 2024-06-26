@@ -23,8 +23,8 @@ TriggerNodeDetails::TriggerNodeDetails() :
 {
 }
 
-TriggerNodeDetails::TriggerNodeDetails(JsonView jsonValue) : 
-    m_triggerHasBeenSet(false)
+TriggerNodeDetails::TriggerNodeDetails(JsonView jsonValue)
+  : TriggerNodeDetails()
 {
   *this = jsonValue;
 }

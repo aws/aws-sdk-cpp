@@ -42,27 +42,8 @@ SubjectNameFlagsV3::SubjectNameFlagsV3() :
 {
 }
 
-SubjectNameFlagsV3::SubjectNameFlagsV3(JsonView jsonValue) : 
-    m_requireCommonName(false),
-    m_requireCommonNameHasBeenSet(false),
-    m_requireDirectoryPath(false),
-    m_requireDirectoryPathHasBeenSet(false),
-    m_requireDnsAsCn(false),
-    m_requireDnsAsCnHasBeenSet(false),
-    m_requireEmail(false),
-    m_requireEmailHasBeenSet(false),
-    m_sanRequireDirectoryGuid(false),
-    m_sanRequireDirectoryGuidHasBeenSet(false),
-    m_sanRequireDns(false),
-    m_sanRequireDnsHasBeenSet(false),
-    m_sanRequireDomainDns(false),
-    m_sanRequireDomainDnsHasBeenSet(false),
-    m_sanRequireEmail(false),
-    m_sanRequireEmailHasBeenSet(false),
-    m_sanRequireSpn(false),
-    m_sanRequireSpnHasBeenSet(false),
-    m_sanRequireUpn(false),
-    m_sanRequireUpnHasBeenSet(false)
+SubjectNameFlagsV3::SubjectNameFlagsV3(JsonView jsonValue)
+  : SubjectNameFlagsV3()
 {
   *this = jsonValue;
 }

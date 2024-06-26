@@ -23,8 +23,8 @@ FormattedVss::FormattedVss() :
 {
 }
 
-FormattedVss::FormattedVss(JsonView jsonValue) : 
-    m_vssJsonHasBeenSet(false)
+FormattedVss::FormattedVss(JsonView jsonValue)
+  : FormattedVss()
 {
   *this = jsonValue;
 }

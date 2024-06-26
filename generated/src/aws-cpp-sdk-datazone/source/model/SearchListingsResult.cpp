@@ -22,8 +22,8 @@ SearchListingsResult::SearchListingsResult() :
 {
 }
 
-SearchListingsResult::SearchListingsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_totalMatchCount(0)
+SearchListingsResult::SearchListingsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : SearchListingsResult()
 {
   *this = result;
 }

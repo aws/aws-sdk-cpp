@@ -30,15 +30,8 @@ ApiGatewayProxyConfig::ApiGatewayProxyConfig() :
 {
 }
 
-ApiGatewayProxyConfig::ApiGatewayProxyConfig(JsonView jsonValue) : 
-    m_apiGatewayIdHasBeenSet(false),
-    m_endpointType(ApiGatewayEndpointType::NOT_SET),
-    m_endpointTypeHasBeenSet(false),
-    m_nlbArnHasBeenSet(false),
-    m_nlbNameHasBeenSet(false),
-    m_proxyUrlHasBeenSet(false),
-    m_stageNameHasBeenSet(false),
-    m_vpcLinkIdHasBeenSet(false)
+ApiGatewayProxyConfig::ApiGatewayProxyConfig(JsonView jsonValue)
+  : ApiGatewayProxyConfig()
 {
   *this = jsonValue;
 }

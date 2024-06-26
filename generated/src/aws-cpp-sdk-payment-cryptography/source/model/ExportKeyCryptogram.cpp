@@ -26,11 +26,8 @@ ExportKeyCryptogram::ExportKeyCryptogram() :
 {
 }
 
-ExportKeyCryptogram::ExportKeyCryptogram(JsonView jsonValue) : 
-    m_certificateAuthorityPublicKeyIdentifierHasBeenSet(false),
-    m_wrappingKeyCertificateHasBeenSet(false),
-    m_wrappingSpec(WrappingKeySpec::NOT_SET),
-    m_wrappingSpecHasBeenSet(false)
+ExportKeyCryptogram::ExportKeyCryptogram(JsonView jsonValue)
+  : ExportKeyCryptogram()
 {
   *this = jsonValue;
 }

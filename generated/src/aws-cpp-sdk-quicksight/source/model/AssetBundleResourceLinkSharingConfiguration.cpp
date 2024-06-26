@@ -23,8 +23,8 @@ AssetBundleResourceLinkSharingConfiguration::AssetBundleResourceLinkSharingConfi
 {
 }
 
-AssetBundleResourceLinkSharingConfiguration::AssetBundleResourceLinkSharingConfiguration(JsonView jsonValue) : 
-    m_permissionsHasBeenSet(false)
+AssetBundleResourceLinkSharingConfiguration::AssetBundleResourceLinkSharingConfiguration(JsonView jsonValue)
+  : AssetBundleResourceLinkSharingConfiguration()
 {
   *this = jsonValue;
 }

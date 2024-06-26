@@ -23,8 +23,8 @@ KeyProviderSettings::KeyProviderSettings() :
 {
 }
 
-KeyProviderSettings::KeyProviderSettings(JsonView jsonValue) : 
-    m_staticKeySettingsHasBeenSet(false)
+KeyProviderSettings::KeyProviderSettings(JsonView jsonValue)
+  : KeyProviderSettings()
 {
   *this = jsonValue;
 }

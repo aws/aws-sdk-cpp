@@ -23,8 +23,8 @@ ReplicationConfiguration::ReplicationConfiguration() :
 {
 }
 
-ReplicationConfiguration::ReplicationConfiguration(JsonView jsonValue) : 
-    m_rulesHasBeenSet(false)
+ReplicationConfiguration::ReplicationConfiguration(JsonView jsonValue)
+  : ReplicationConfiguration()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ GetQueueFleetAssociationResult::GetQueueFleetAssociationResult() :
 {
 }
 
-GetQueueFleetAssociationResult::GetQueueFleetAssociationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(QueueFleetAssociationStatus::NOT_SET)
+GetQueueFleetAssociationResult::GetQueueFleetAssociationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetQueueFleetAssociationResult()
 {
   *this = result;
 }

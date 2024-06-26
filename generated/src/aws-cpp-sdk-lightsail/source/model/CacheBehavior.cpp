@@ -24,9 +24,8 @@ CacheBehavior::CacheBehavior() :
 {
 }
 
-CacheBehavior::CacheBehavior(JsonView jsonValue) : 
-    m_behavior(BehaviorEnum::NOT_SET),
-    m_behaviorHasBeenSet(false)
+CacheBehavior::CacheBehavior(JsonView jsonValue)
+  : CacheBehavior()
 {
   *this = jsonValue;
 }

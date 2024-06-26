@@ -25,10 +25,8 @@ InstanceMetadataOptions::InstanceMetadataOptions() :
 {
 }
 
-InstanceMetadataOptions::InstanceMetadataOptions(JsonView jsonValue) : 
-    m_httpTokensHasBeenSet(false),
-    m_httpPutResponseHopLimit(0),
-    m_httpPutResponseHopLimitHasBeenSet(false)
+InstanceMetadataOptions::InstanceMetadataOptions(JsonView jsonValue)
+  : InstanceMetadataOptions()
 {
   *this = jsonValue;
 }

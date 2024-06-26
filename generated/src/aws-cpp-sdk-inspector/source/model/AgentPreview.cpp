@@ -31,16 +31,8 @@ AgentPreview::AgentPreview() :
 {
 }
 
-AgentPreview::AgentPreview(JsonView jsonValue) : 
-    m_hostnameHasBeenSet(false),
-    m_agentIdHasBeenSet(false),
-    m_autoScalingGroupHasBeenSet(false),
-    m_agentHealth(AgentHealth::NOT_SET),
-    m_agentHealthHasBeenSet(false),
-    m_agentVersionHasBeenSet(false),
-    m_operatingSystemHasBeenSet(false),
-    m_kernelVersionHasBeenSet(false),
-    m_ipv4AddressHasBeenSet(false)
+AgentPreview::AgentPreview(JsonView jsonValue)
+  : AgentPreview()
 {
   *this = jsonValue;
 }

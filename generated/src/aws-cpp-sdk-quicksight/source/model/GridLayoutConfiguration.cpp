@@ -24,9 +24,8 @@ GridLayoutConfiguration::GridLayoutConfiguration() :
 {
 }
 
-GridLayoutConfiguration::GridLayoutConfiguration(JsonView jsonValue) : 
-    m_elementsHasBeenSet(false),
-    m_canvasSizeOptionsHasBeenSet(false)
+GridLayoutConfiguration::GridLayoutConfiguration(JsonView jsonValue)
+  : GridLayoutConfiguration()
 {
   *this = jsonValue;
 }

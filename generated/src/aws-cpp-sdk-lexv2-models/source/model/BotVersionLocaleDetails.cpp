@@ -23,8 +23,8 @@ BotVersionLocaleDetails::BotVersionLocaleDetails() :
 {
 }
 
-BotVersionLocaleDetails::BotVersionLocaleDetails(JsonView jsonValue) : 
-    m_sourceBotVersionHasBeenSet(false)
+BotVersionLocaleDetails::BotVersionLocaleDetails(JsonView jsonValue)
+  : BotVersionLocaleDetails()
 {
   *this = jsonValue;
 }

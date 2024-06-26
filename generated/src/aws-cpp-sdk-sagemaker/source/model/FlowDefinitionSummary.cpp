@@ -28,13 +28,8 @@ FlowDefinitionSummary::FlowDefinitionSummary() :
 {
 }
 
-FlowDefinitionSummary::FlowDefinitionSummary(JsonView jsonValue) : 
-    m_flowDefinitionNameHasBeenSet(false),
-    m_flowDefinitionArnHasBeenSet(false),
-    m_flowDefinitionStatus(FlowDefinitionStatus::NOT_SET),
-    m_flowDefinitionStatusHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_failureReasonHasBeenSet(false)
+FlowDefinitionSummary::FlowDefinitionSummary(JsonView jsonValue)
+  : FlowDefinitionSummary()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ OpsFilter::OpsFilter() :
 {
 }
 
-OpsFilter::OpsFilter(JsonView jsonValue) : 
-    m_keyHasBeenSet(false),
-    m_valuesHasBeenSet(false),
-    m_type(OpsFilterOperatorType::NOT_SET),
-    m_typeHasBeenSet(false)
+OpsFilter::OpsFilter(JsonView jsonValue)
+  : OpsFilter()
 {
   *this = jsonValue;
 }

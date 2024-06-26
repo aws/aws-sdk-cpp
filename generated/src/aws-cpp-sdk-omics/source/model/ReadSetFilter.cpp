@@ -33,18 +33,8 @@ ReadSetFilter::ReadSetFilter() :
 {
 }
 
-ReadSetFilter::ReadSetFilter(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_status(ReadSetStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_referenceArnHasBeenSet(false),
-    m_createdAfterHasBeenSet(false),
-    m_createdBeforeHasBeenSet(false),
-    m_sampleIdHasBeenSet(false),
-    m_subjectIdHasBeenSet(false),
-    m_generatedFromHasBeenSet(false),
-    m_creationType(CreationType::NOT_SET),
-    m_creationTypeHasBeenSet(false)
+ReadSetFilter::ReadSetFilter(JsonView jsonValue)
+  : ReadSetFilter()
 {
   *this = jsonValue;
 }

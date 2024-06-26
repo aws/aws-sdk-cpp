@@ -24,9 +24,8 @@ S3ArtifactLocation::S3ArtifactLocation() :
 {
 }
 
-S3ArtifactLocation::S3ArtifactLocation(JsonView jsonValue) : 
-    m_bucketNameHasBeenSet(false),
-    m_objectKeyHasBeenSet(false)
+S3ArtifactLocation::S3ArtifactLocation(JsonView jsonValue)
+  : S3ArtifactLocation()
 {
   *this = jsonValue;
 }

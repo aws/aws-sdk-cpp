@@ -26,11 +26,8 @@ S3SourceConfig::S3SourceConfig() :
 {
 }
 
-S3SourceConfig::S3SourceConfig(JsonView jsonValue) : 
-    m_roleArnHasBeenSet(false),
-    m_templatedPathListHasBeenSet(false),
-    m_historicalDataPathListHasBeenSet(false),
-    m_fileFormatDescriptorHasBeenSet(false)
+S3SourceConfig::S3SourceConfig(JsonView jsonValue)
+  : S3SourceConfig()
 {
   *this = jsonValue;
 }

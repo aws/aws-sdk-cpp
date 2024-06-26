@@ -26,11 +26,8 @@ OperationFailureException::OperationFailureException() :
 {
 }
 
-OperationFailureException::OperationFailureException(JsonView jsonValue) : 
-    m_codeHasBeenSet(false),
-    m_docsHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_tipHasBeenSet(false)
+OperationFailureException::OperationFailureException(JsonView jsonValue)
+  : OperationFailureException()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ SyncJobStatus::SyncJobStatus() :
 {
 }
 
-SyncJobStatus::SyncJobStatus(JsonView jsonValue) : 
-    m_state(SyncJobState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_errorHasBeenSet(false)
+SyncJobStatus::SyncJobStatus(JsonView jsonValue)
+  : SyncJobStatus()
 {
   *this = jsonValue;
 }

@@ -28,13 +28,8 @@ SimulationApplicationSummary::SimulationApplicationSummary() :
 {
 }
 
-SimulationApplicationSummary::SimulationApplicationSummary(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false),
-    m_robotSoftwareSuiteHasBeenSet(false),
-    m_simulationSoftwareSuiteHasBeenSet(false)
+SimulationApplicationSummary::SimulationApplicationSummary(JsonView jsonValue)
+  : SimulationApplicationSummary()
 {
   *this = jsonValue;
 }

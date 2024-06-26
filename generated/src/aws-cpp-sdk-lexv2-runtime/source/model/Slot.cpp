@@ -27,12 +27,8 @@ Slot::Slot() :
 {
 }
 
-Slot::Slot(JsonView jsonValue) : 
-    m_valueHasBeenSet(false),
-    m_shape(Shape::NOT_SET),
-    m_shapeHasBeenSet(false),
-    m_valuesHasBeenSet(false),
-    m_subSlotsHasBeenSet(false)
+Slot::Slot(JsonView jsonValue)
+  : Slot()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ BatchListOutgoingTypedLinksResponse::BatchListOutgoingTypedLinksResponse() :
 {
 }
 
-BatchListOutgoingTypedLinksResponse::BatchListOutgoingTypedLinksResponse(JsonView jsonValue) : 
-    m_typedLinkSpecifiersHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
+BatchListOutgoingTypedLinksResponse::BatchListOutgoingTypedLinksResponse(JsonView jsonValue)
+  : BatchListOutgoingTypedLinksResponse()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ DatasetOrgAttributes::DatasetOrgAttributes() :
 {
 }
 
-DatasetOrgAttributes::DatasetOrgAttributes(JsonView jsonValue) : 
-    m_gdgHasBeenSet(false),
-    m_poHasBeenSet(false),
-    m_psHasBeenSet(false),
-    m_vsamHasBeenSet(false)
+DatasetOrgAttributes::DatasetOrgAttributes(JsonView jsonValue)
+  : DatasetOrgAttributes()
 {
   *this = jsonValue;
 }

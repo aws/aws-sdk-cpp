@@ -24,9 +24,8 @@ AwsElbLoadBalancerAdditionalAttribute::AwsElbLoadBalancerAdditionalAttribute() :
 {
 }
 
-AwsElbLoadBalancerAdditionalAttribute::AwsElbLoadBalancerAdditionalAttribute(JsonView jsonValue) : 
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false)
+AwsElbLoadBalancerAdditionalAttribute::AwsElbLoadBalancerAdditionalAttribute(JsonView jsonValue)
+  : AwsElbLoadBalancerAdditionalAttribute()
 {
   *this = jsonValue;
 }

@@ -28,13 +28,8 @@ ConsumerGroupReplication::ConsumerGroupReplication() :
 {
 }
 
-ConsumerGroupReplication::ConsumerGroupReplication(JsonView jsonValue) : 
-    m_consumerGroupsToExcludeHasBeenSet(false),
-    m_consumerGroupsToReplicateHasBeenSet(false),
-    m_detectAndCopyNewConsumerGroups(false),
-    m_detectAndCopyNewConsumerGroupsHasBeenSet(false),
-    m_synchroniseConsumerGroupOffsets(false),
-    m_synchroniseConsumerGroupOffsetsHasBeenSet(false)
+ConsumerGroupReplication::ConsumerGroupReplication(JsonView jsonValue)
+  : ConsumerGroupReplication()
 {
   *this = jsonValue;
 }

@@ -25,8 +25,8 @@ ObjectLockRule::ObjectLockRule() :
 {
 }
 
-ObjectLockRule::ObjectLockRule(const XmlNode& xmlNode) : 
-    m_defaultRetentionHasBeenSet(false)
+ObjectLockRule::ObjectLockRule(const XmlNode& xmlNode)
+  : ObjectLockRule()
 {
   *this = xmlNode;
 }

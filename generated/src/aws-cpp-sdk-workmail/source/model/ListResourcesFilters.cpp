@@ -26,11 +26,8 @@ ListResourcesFilters::ListResourcesFilters() :
 {
 }
 
-ListResourcesFilters::ListResourcesFilters(JsonView jsonValue) : 
-    m_namePrefixHasBeenSet(false),
-    m_primaryEmailPrefixHasBeenSet(false),
-    m_state(EntityState::NOT_SET),
-    m_stateHasBeenSet(false)
+ListResourcesFilters::ListResourcesFilters(JsonView jsonValue)
+  : ListResourcesFilters()
 {
   *this = jsonValue;
 }

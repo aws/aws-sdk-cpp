@@ -27,10 +27,8 @@ ManagedRuleDescription::ManagedRuleDescription() :
 {
 }
 
-ManagedRuleDescription::ManagedRuleDescription(const XmlNode& xmlNode) : 
-    m_templateNameHasBeenSet(false),
-    m_resourceARNHasBeenSet(false),
-    m_ruleStateHasBeenSet(false)
+ManagedRuleDescription::ManagedRuleDescription(const XmlNode& xmlNode)
+  : ManagedRuleDescription()
 {
   *this = xmlNode;
 }

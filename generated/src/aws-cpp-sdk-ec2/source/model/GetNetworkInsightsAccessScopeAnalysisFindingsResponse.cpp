@@ -22,8 +22,8 @@ GetNetworkInsightsAccessScopeAnalysisFindingsResponse::GetNetworkInsightsAccessS
 {
 }
 
-GetNetworkInsightsAccessScopeAnalysisFindingsResponse::GetNetworkInsightsAccessScopeAnalysisFindingsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_analysisStatus(AnalysisStatus::NOT_SET)
+GetNetworkInsightsAccessScopeAnalysisFindingsResponse::GetNetworkInsightsAccessScopeAnalysisFindingsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : GetNetworkInsightsAccessScopeAnalysisFindingsResponse()
 {
   *this = result;
 }

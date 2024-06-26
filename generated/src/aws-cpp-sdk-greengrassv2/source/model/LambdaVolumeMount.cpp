@@ -28,13 +28,8 @@ LambdaVolumeMount::LambdaVolumeMount() :
 {
 }
 
-LambdaVolumeMount::LambdaVolumeMount(JsonView jsonValue) : 
-    m_sourcePathHasBeenSet(false),
-    m_destinationPathHasBeenSet(false),
-    m_permission(LambdaFilesystemPermission::NOT_SET),
-    m_permissionHasBeenSet(false),
-    m_addGroupOwner(false),
-    m_addGroupOwnerHasBeenSet(false)
+LambdaVolumeMount::LambdaVolumeMount(JsonView jsonValue)
+  : LambdaVolumeMount()
 {
   *this = jsonValue;
 }

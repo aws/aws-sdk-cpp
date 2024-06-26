@@ -24,9 +24,8 @@ CalculatedSpend::CalculatedSpend() :
 {
 }
 
-CalculatedSpend::CalculatedSpend(JsonView jsonValue) : 
-    m_actualSpendHasBeenSet(false),
-    m_forecastedSpendHasBeenSet(false)
+CalculatedSpend::CalculatedSpend(JsonView jsonValue)
+  : CalculatedSpend()
 {
   *this = jsonValue;
 }

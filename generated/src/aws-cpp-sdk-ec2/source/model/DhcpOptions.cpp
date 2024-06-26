@@ -28,11 +28,8 @@ DhcpOptions::DhcpOptions() :
 {
 }
 
-DhcpOptions::DhcpOptions(const XmlNode& xmlNode) : 
-    m_dhcpConfigurationsHasBeenSet(false),
-    m_dhcpOptionsIdHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+DhcpOptions::DhcpOptions(const XmlNode& xmlNode)
+  : DhcpOptions()
 {
   *this = xmlNode;
 }

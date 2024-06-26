@@ -30,15 +30,8 @@ Behavior::Behavior() :
 {
 }
 
-Behavior::Behavior(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_metricHasBeenSet(false),
-    m_metricDimensionHasBeenSet(false),
-    m_criteriaHasBeenSet(false),
-    m_suppressAlerts(false),
-    m_suppressAlertsHasBeenSet(false),
-    m_exportMetric(false),
-    m_exportMetricHasBeenSet(false)
+Behavior::Behavior(JsonView jsonValue)
+  : Behavior()
 {
   *this = jsonValue;
 }

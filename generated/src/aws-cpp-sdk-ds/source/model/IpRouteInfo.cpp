@@ -29,14 +29,8 @@ IpRouteInfo::IpRouteInfo() :
 {
 }
 
-IpRouteInfo::IpRouteInfo(JsonView jsonValue) : 
-    m_directoryIdHasBeenSet(false),
-    m_cidrIpHasBeenSet(false),
-    m_ipRouteStatusMsg(IpRouteStatusMsg::NOT_SET),
-    m_ipRouteStatusMsgHasBeenSet(false),
-    m_addedDateTimeHasBeenSet(false),
-    m_ipRouteStatusReasonHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+IpRouteInfo::IpRouteInfo(JsonView jsonValue)
+  : IpRouteInfo()
 {
   *this = jsonValue;
 }

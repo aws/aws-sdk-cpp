@@ -24,9 +24,8 @@ GetRetainedMessageResult::GetRetainedMessageResult() :
 {
 }
 
-GetRetainedMessageResult::GetRetainedMessageResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_qos(0),
-    m_lastModifiedTime(0)
+GetRetainedMessageResult::GetRetainedMessageResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetRetainedMessageResult()
 {
   *this = result;
 }

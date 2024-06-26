@@ -32,15 +32,8 @@ TransitGatewayPropagation::TransitGatewayPropagation() :
 {
 }
 
-TransitGatewayPropagation::TransitGatewayPropagation(const XmlNode& xmlNode) : 
-    m_transitGatewayAttachmentIdHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_resourceType(TransitGatewayAttachmentResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_transitGatewayRouteTableIdHasBeenSet(false),
-    m_state(TransitGatewayPropagationState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_transitGatewayRouteTableAnnouncementIdHasBeenSet(false)
+TransitGatewayPropagation::TransitGatewayPropagation(const XmlNode& xmlNode)
+  : TransitGatewayPropagation()
 {
   *this = xmlNode;
 }

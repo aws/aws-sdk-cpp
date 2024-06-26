@@ -26,11 +26,8 @@ SetupRequest::SetupRequest() :
 {
 }
 
-SetupRequest::SetupRequest(JsonView jsonValue) : 
-    m_instanceNameHasBeenSet(false),
-    m_domainNamesHasBeenSet(false),
-    m_certificateProvider(CertificateProvider::NOT_SET),
-    m_certificateProviderHasBeenSet(false)
+SetupRequest::SetupRequest(JsonView jsonValue)
+  : SetupRequest()
 {
   *this = jsonValue;
 }

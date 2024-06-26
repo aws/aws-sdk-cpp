@@ -28,13 +28,8 @@ RuleSummary::RuleSummary() :
 {
 }
 
-RuleSummary::RuleSummary(JsonView jsonValue) : 
-    m_identifierHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_retentionPeriodHasBeenSet(false),
-    m_lockState(LockState::NOT_SET),
-    m_lockStateHasBeenSet(false),
-    m_ruleArnHasBeenSet(false)
+RuleSummary::RuleSummary(JsonView jsonValue)
+  : RuleSummary()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ AuthenticationMethodItem::AuthenticationMethodItem() :
 {
 }
 
-AuthenticationMethodItem::AuthenticationMethodItem(JsonView jsonValue) : 
-    m_authenticationMethodHasBeenSet(false),
-    m_authenticationMethodType(AuthenticationMethodType::NOT_SET),
-    m_authenticationMethodTypeHasBeenSet(false)
+AuthenticationMethodItem::AuthenticationMethodItem(JsonView jsonValue)
+  : AuthenticationMethodItem()
 {
   *this = jsonValue;
 }

@@ -29,12 +29,8 @@ TargetHealth::TargetHealth() :
 {
 }
 
-TargetHealth::TargetHealth(const XmlNode& xmlNode) : 
-    m_state(TargetHealthStateEnum::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_reason(TargetHealthReasonEnum::NOT_SET),
-    m_reasonHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+TargetHealth::TargetHealth(const XmlNode& xmlNode)
+  : TargetHealth()
 {
   *this = xmlNode;
 }

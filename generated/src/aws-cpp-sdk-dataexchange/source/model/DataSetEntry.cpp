@@ -34,19 +34,8 @@ DataSetEntry::DataSetEntry() :
 {
 }
 
-DataSetEntry::DataSetEntry(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_assetType(AssetType::NOT_SET),
-    m_assetTypeHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_origin(Origin::NOT_SET),
-    m_originHasBeenSet(false),
-    m_originDetailsHasBeenSet(false),
-    m_sourceIdHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+DataSetEntry::DataSetEntry(JsonView jsonValue)
+  : DataSetEntry()
 {
   *this = jsonValue;
 }

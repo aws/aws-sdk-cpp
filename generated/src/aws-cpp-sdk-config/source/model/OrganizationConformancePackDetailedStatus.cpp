@@ -29,14 +29,8 @@ OrganizationConformancePackDetailedStatus::OrganizationConformancePackDetailedSt
 {
 }
 
-OrganizationConformancePackDetailedStatus::OrganizationConformancePackDetailedStatus(JsonView jsonValue) : 
-    m_accountIdHasBeenSet(false),
-    m_conformancePackNameHasBeenSet(false),
-    m_status(OrganizationResourceDetailedStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_lastUpdateTimeHasBeenSet(false)
+OrganizationConformancePackDetailedStatus::OrganizationConformancePackDetailedStatus(JsonView jsonValue)
+  : OrganizationConformancePackDetailedStatus()
 {
   *this = jsonValue;
 }

@@ -28,13 +28,8 @@ ExternalEvaluation::ExternalEvaluation() :
 {
 }
 
-ExternalEvaluation::ExternalEvaluation(JsonView jsonValue) : 
-    m_complianceResourceTypeHasBeenSet(false),
-    m_complianceResourceIdHasBeenSet(false),
-    m_complianceType(ComplianceType::NOT_SET),
-    m_complianceTypeHasBeenSet(false),
-    m_annotationHasBeenSet(false),
-    m_orderingTimestampHasBeenSet(false)
+ExternalEvaluation::ExternalEvaluation(JsonView jsonValue)
+  : ExternalEvaluation()
 {
   *this = jsonValue;
 }

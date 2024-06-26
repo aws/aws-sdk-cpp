@@ -29,14 +29,8 @@ SessionStatus::SessionStatus() :
 {
 }
 
-SessionStatus::SessionStatus(JsonView jsonValue) : 
-    m_startDateTimeHasBeenSet(false),
-    m_lastModifiedDateTimeHasBeenSet(false),
-    m_endDateTimeHasBeenSet(false),
-    m_idleSinceDateTimeHasBeenSet(false),
-    m_state(SessionState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_stateChangeReasonHasBeenSet(false)
+SessionStatus::SessionStatus(JsonView jsonValue)
+  : SessionStatus()
 {
   *this = jsonValue;
 }

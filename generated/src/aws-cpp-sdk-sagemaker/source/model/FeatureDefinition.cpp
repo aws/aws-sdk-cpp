@@ -28,13 +28,8 @@ FeatureDefinition::FeatureDefinition() :
 {
 }
 
-FeatureDefinition::FeatureDefinition(JsonView jsonValue) : 
-    m_featureNameHasBeenSet(false),
-    m_featureType(FeatureType::NOT_SET),
-    m_featureTypeHasBeenSet(false),
-    m_collectionType(CollectionType::NOT_SET),
-    m_collectionTypeHasBeenSet(false),
-    m_collectionConfigHasBeenSet(false)
+FeatureDefinition::FeatureDefinition(JsonView jsonValue)
+  : FeatureDefinition()
 {
   *this = jsonValue;
 }

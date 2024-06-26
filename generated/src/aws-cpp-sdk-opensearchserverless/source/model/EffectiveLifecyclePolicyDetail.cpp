@@ -31,16 +31,8 @@ EffectiveLifecyclePolicyDetail::EffectiveLifecyclePolicyDetail() :
 {
 }
 
-EffectiveLifecyclePolicyDetail::EffectiveLifecyclePolicyDetail(JsonView jsonValue) : 
-    m_noMinRetentionPeriod(false),
-    m_noMinRetentionPeriodHasBeenSet(false),
-    m_policyNameHasBeenSet(false),
-    m_resourceHasBeenSet(false),
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_retentionPeriodHasBeenSet(false),
-    m_type(LifecyclePolicyType::NOT_SET),
-    m_typeHasBeenSet(false)
+EffectiveLifecyclePolicyDetail::EffectiveLifecyclePolicyDetail(JsonView jsonValue)
+  : EffectiveLifecyclePolicyDetail()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ ComponentParameterDetail::ComponentParameterDetail() :
 {
 }
 
-ComponentParameterDetail::ComponentParameterDetail(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_defaultValueHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+ComponentParameterDetail::ComponentParameterDetail(JsonView jsonValue)
+  : ComponentParameterDetail()
 {
   *this = jsonValue;
 }

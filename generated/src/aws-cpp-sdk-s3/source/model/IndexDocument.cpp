@@ -25,8 +25,8 @@ IndexDocument::IndexDocument() :
 {
 }
 
-IndexDocument::IndexDocument(const XmlNode& xmlNode) : 
-    m_suffixHasBeenSet(false)
+IndexDocument::IndexDocument(const XmlNode& xmlNode)
+  : IndexDocument()
 {
   *this = xmlNode;
 }

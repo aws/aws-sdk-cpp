@@ -24,9 +24,8 @@ LocalIpDetails::LocalIpDetails() :
 {
 }
 
-LocalIpDetails::LocalIpDetails(JsonView jsonValue) : 
-    m_ipAddressV4HasBeenSet(false),
-    m_ipAddressV6HasBeenSet(false)
+LocalIpDetails::LocalIpDetails(JsonView jsonValue)
+  : LocalIpDetails()
 {
   *this = jsonValue;
 }

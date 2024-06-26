@@ -23,8 +23,8 @@ KendraIndexConfiguration::KendraIndexConfiguration() :
 {
 }
 
-KendraIndexConfiguration::KendraIndexConfiguration(JsonView jsonValue) : 
-    m_indexIdHasBeenSet(false)
+KendraIndexConfiguration::KendraIndexConfiguration(JsonView jsonValue)
+  : KendraIndexConfiguration()
 {
   *this = jsonValue;
 }

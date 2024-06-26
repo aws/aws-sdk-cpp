@@ -23,8 +23,8 @@ ListExportsRequestFilters::ListExportsRequestFilters() :
 {
 }
 
-ListExportsRequestFilters::ListExportsRequestFilters(JsonView jsonValue) : 
-    m_exportIDsHasBeenSet(false)
+ListExportsRequestFilters::ListExportsRequestFilters(JsonView jsonValue)
+  : ListExportsRequestFilters()
 {
   *this = jsonValue;
 }

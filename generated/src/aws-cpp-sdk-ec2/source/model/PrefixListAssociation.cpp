@@ -26,9 +26,8 @@ PrefixListAssociation::PrefixListAssociation() :
 {
 }
 
-PrefixListAssociation::PrefixListAssociation(const XmlNode& xmlNode) : 
-    m_resourceIdHasBeenSet(false),
-    m_resourceOwnerHasBeenSet(false)
+PrefixListAssociation::PrefixListAssociation(const XmlNode& xmlNode)
+  : PrefixListAssociation()
 {
   *this = xmlNode;
 }

@@ -25,8 +25,8 @@ S3SetObjectTaggingOperation::S3SetObjectTaggingOperation() :
 {
 }
 
-S3SetObjectTaggingOperation::S3SetObjectTaggingOperation(const XmlNode& xmlNode) : 
-    m_tagSetHasBeenSet(false)
+S3SetObjectTaggingOperation::S3SetObjectTaggingOperation(const XmlNode& xmlNode)
+  : S3SetObjectTaggingOperation()
 {
   *this = xmlNode;
 }

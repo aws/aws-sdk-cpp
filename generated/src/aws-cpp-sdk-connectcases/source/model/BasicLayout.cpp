@@ -24,9 +24,8 @@ BasicLayout::BasicLayout() :
 {
 }
 
-BasicLayout::BasicLayout(JsonView jsonValue) : 
-    m_moreInfoHasBeenSet(false),
-    m_topPanelHasBeenSet(false)
+BasicLayout::BasicLayout(JsonView jsonValue)
+  : BasicLayout()
 {
   *this = jsonValue;
 }

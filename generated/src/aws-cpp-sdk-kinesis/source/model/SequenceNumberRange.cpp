@@ -24,9 +24,8 @@ SequenceNumberRange::SequenceNumberRange() :
 {
 }
 
-SequenceNumberRange::SequenceNumberRange(JsonView jsonValue) : 
-    m_startingSequenceNumberHasBeenSet(false),
-    m_endingSequenceNumberHasBeenSet(false)
+SequenceNumberRange::SequenceNumberRange(JsonView jsonValue)
+  : SequenceNumberRange()
 {
   *this = jsonValue;
 }

@@ -27,12 +27,8 @@ LifecyclePolicyErrorDetail::LifecyclePolicyErrorDetail() :
 {
 }
 
-LifecyclePolicyErrorDetail::LifecyclePolicyErrorDetail(JsonView jsonValue) : 
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_type(LifecyclePolicyType::NOT_SET),
-    m_typeHasBeenSet(false)
+LifecyclePolicyErrorDetail::LifecyclePolicyErrorDetail(JsonView jsonValue)
+  : LifecyclePolicyErrorDetail()
 {
   *this = jsonValue;
 }

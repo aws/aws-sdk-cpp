@@ -23,9 +23,8 @@ PutRecordBatchResult::PutRecordBatchResult() :
 {
 }
 
-PutRecordBatchResult::PutRecordBatchResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_failedPutCount(0),
-    m_encrypted(false)
+PutRecordBatchResult::PutRecordBatchResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : PutRecordBatchResult()
 {
   *this = result;
 }

@@ -25,10 +25,8 @@ DatabaseMigrationPreference::DatabaseMigrationPreference() :
 {
 }
 
-DatabaseMigrationPreference::DatabaseMigrationPreference(JsonView jsonValue) : 
-    m_heterogeneousHasBeenSet(false),
-    m_homogeneousHasBeenSet(false),
-    m_noPreferenceHasBeenSet(false)
+DatabaseMigrationPreference::DatabaseMigrationPreference(JsonView jsonValue)
+  : DatabaseMigrationPreference()
 {
   *this = jsonValue;
 }

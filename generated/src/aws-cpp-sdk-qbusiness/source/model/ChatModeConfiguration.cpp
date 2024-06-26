@@ -23,8 +23,8 @@ ChatModeConfiguration::ChatModeConfiguration() :
 {
 }
 
-ChatModeConfiguration::ChatModeConfiguration(JsonView jsonValue) : 
-    m_pluginConfigurationHasBeenSet(false)
+ChatModeConfiguration::ChatModeConfiguration(JsonView jsonValue)
+  : ChatModeConfiguration()
 {
   *this = jsonValue;
 }

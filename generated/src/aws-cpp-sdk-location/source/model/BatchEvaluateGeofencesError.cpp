@@ -25,10 +25,8 @@ BatchEvaluateGeofencesError::BatchEvaluateGeofencesError() :
 {
 }
 
-BatchEvaluateGeofencesError::BatchEvaluateGeofencesError(JsonView jsonValue) : 
-    m_deviceIdHasBeenSet(false),
-    m_sampleTimeHasBeenSet(false),
-    m_errorHasBeenSet(false)
+BatchEvaluateGeofencesError::BatchEvaluateGeofencesError(JsonView jsonValue)
+  : BatchEvaluateGeofencesError()
 {
   *this = jsonValue;
 }

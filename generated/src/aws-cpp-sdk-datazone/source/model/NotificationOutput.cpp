@@ -35,20 +35,8 @@ NotificationOutput::NotificationOutput() :
 {
 }
 
-NotificationOutput::NotificationOutput(JsonView jsonValue) : 
-    m_actionLinkHasBeenSet(false),
-    m_creationTimestampHasBeenSet(false),
-    m_domainIdentifierHasBeenSet(false),
-    m_identifierHasBeenSet(false),
-    m_lastUpdatedTimestampHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_metadataHasBeenSet(false),
-    m_status(TaskStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_topicHasBeenSet(false),
-    m_type(NotificationType::NOT_SET),
-    m_typeHasBeenSet(false)
+NotificationOutput::NotificationOutput(JsonView jsonValue)
+  : NotificationOutput()
 {
   *this = jsonValue;
 }

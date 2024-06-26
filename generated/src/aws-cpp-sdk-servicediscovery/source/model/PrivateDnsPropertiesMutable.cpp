@@ -23,8 +23,8 @@ PrivateDnsPropertiesMutable::PrivateDnsPropertiesMutable() :
 {
 }
 
-PrivateDnsPropertiesMutable::PrivateDnsPropertiesMutable(JsonView jsonValue) : 
-    m_sOAHasBeenSet(false)
+PrivateDnsPropertiesMutable::PrivateDnsPropertiesMutable(JsonView jsonValue)
+  : PrivateDnsPropertiesMutable()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ VersionInfo::VersionInfo() :
 {
 }
 
-VersionInfo::VersionInfo(JsonView jsonValue) : 
-    m_agentVersionHasBeenSet(false),
-    m_agentHashHasBeenSet(false),
-    m_dockerVersionHasBeenSet(false)
+VersionInfo::VersionInfo(JsonView jsonValue)
+  : VersionInfo()
 {
   *this = jsonValue;
 }

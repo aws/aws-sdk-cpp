@@ -25,10 +25,8 @@ KnownFraudsterRisk::KnownFraudsterRisk() :
 {
 }
 
-KnownFraudsterRisk::KnownFraudsterRisk(JsonView jsonValue) : 
-    m_generatedFraudsterIdHasBeenSet(false),
-    m_riskScore(0),
-    m_riskScoreHasBeenSet(false)
+KnownFraudsterRisk::KnownFraudsterRisk(JsonView jsonValue)
+  : KnownFraudsterRisk()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ Spacing::Spacing() :
 {
 }
 
-Spacing::Spacing(JsonView jsonValue) : 
-    m_topHasBeenSet(false),
-    m_bottomHasBeenSet(false),
-    m_leftHasBeenSet(false),
-    m_rightHasBeenSet(false)
+Spacing::Spacing(JsonView jsonValue)
+  : Spacing()
 {
   *this = jsonValue;
 }

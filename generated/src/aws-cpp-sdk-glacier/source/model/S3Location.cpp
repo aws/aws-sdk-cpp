@@ -32,17 +32,8 @@ S3Location::S3Location() :
 {
 }
 
-S3Location::S3Location(JsonView jsonValue) : 
-    m_bucketNameHasBeenSet(false),
-    m_prefixHasBeenSet(false),
-    m_encryptionHasBeenSet(false),
-    m_cannedACL(CannedACL::NOT_SET),
-    m_cannedACLHasBeenSet(false),
-    m_accessControlListHasBeenSet(false),
-    m_taggingHasBeenSet(false),
-    m_userMetadataHasBeenSet(false),
-    m_storageClass(StorageClass::NOT_SET),
-    m_storageClassHasBeenSet(false)
+S3Location::S3Location(JsonView jsonValue)
+  : S3Location()
 {
   *this = jsonValue;
 }

@@ -27,12 +27,8 @@ AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails::AwsEcsTaskDefinitio
 {
 }
 
-AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails::AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails(JsonView jsonValue) : 
-    m_containerPort(0),
-    m_containerPortHasBeenSet(false),
-    m_hostPort(0),
-    m_hostPortHasBeenSet(false),
-    m_protocolHasBeenSet(false)
+AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails::AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails(JsonView jsonValue)
+  : AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails()
 {
   *this = jsonValue;
 }

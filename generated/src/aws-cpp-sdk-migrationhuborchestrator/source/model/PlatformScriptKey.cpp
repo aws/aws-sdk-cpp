@@ -24,9 +24,8 @@ PlatformScriptKey::PlatformScriptKey() :
 {
 }
 
-PlatformScriptKey::PlatformScriptKey(JsonView jsonValue) : 
-    m_linuxHasBeenSet(false),
-    m_windowsHasBeenSet(false)
+PlatformScriptKey::PlatformScriptKey(JsonView jsonValue)
+  : PlatformScriptKey()
 {
   *this = jsonValue;
 }

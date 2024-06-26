@@ -22,8 +22,8 @@ CreateTestCaseResult::CreateTestCaseResult() :
 {
 }
 
-CreateTestCaseResult::CreateTestCaseResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_testCaseVersion(0)
+CreateTestCaseResult::CreateTestCaseResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateTestCaseResult()
 {
   *this = result;
 }

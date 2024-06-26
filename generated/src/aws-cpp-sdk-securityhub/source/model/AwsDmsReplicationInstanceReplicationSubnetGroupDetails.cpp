@@ -23,8 +23,8 @@ AwsDmsReplicationInstanceReplicationSubnetGroupDetails::AwsDmsReplicationInstanc
 {
 }
 
-AwsDmsReplicationInstanceReplicationSubnetGroupDetails::AwsDmsReplicationInstanceReplicationSubnetGroupDetails(JsonView jsonValue) : 
-    m_replicationSubnetGroupIdentifierHasBeenSet(false)
+AwsDmsReplicationInstanceReplicationSubnetGroupDetails::AwsDmsReplicationInstanceReplicationSubnetGroupDetails(JsonView jsonValue)
+  : AwsDmsReplicationInstanceReplicationSubnetGroupDetails()
 {
   *this = jsonValue;
 }

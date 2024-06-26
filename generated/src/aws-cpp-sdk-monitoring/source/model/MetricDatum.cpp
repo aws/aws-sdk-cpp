@@ -36,19 +36,8 @@ MetricDatum::MetricDatum() :
 {
 }
 
-MetricDatum::MetricDatum(const XmlNode& xmlNode) : 
-    m_metricNameHasBeenSet(false),
-    m_dimensionsHasBeenSet(false),
-    m_timestampHasBeenSet(false),
-    m_value(0.0),
-    m_valueHasBeenSet(false),
-    m_statisticValuesHasBeenSet(false),
-    m_valuesHasBeenSet(false),
-    m_countsHasBeenSet(false),
-    m_unit(StandardUnit::NOT_SET),
-    m_unitHasBeenSet(false),
-    m_storageResolution(0),
-    m_storageResolutionHasBeenSet(false)
+MetricDatum::MetricDatum(const XmlNode& xmlNode)
+  : MetricDatum()
 {
   *this = xmlNode;
 }

@@ -54,39 +54,8 @@ BurnInDestinationSettings::BurnInDestinationSettings() :
 {
 }
 
-BurnInDestinationSettings::BurnInDestinationSettings(JsonView jsonValue) : 
-    m_alignment(BurnInAlignment::NOT_SET),
-    m_alignmentHasBeenSet(false),
-    m_backgroundColor(BurnInBackgroundColor::NOT_SET),
-    m_backgroundColorHasBeenSet(false),
-    m_backgroundOpacity(0),
-    m_backgroundOpacityHasBeenSet(false),
-    m_fontHasBeenSet(false),
-    m_fontColor(BurnInFontColor::NOT_SET),
-    m_fontColorHasBeenSet(false),
-    m_fontOpacity(0),
-    m_fontOpacityHasBeenSet(false),
-    m_fontResolution(0),
-    m_fontResolutionHasBeenSet(false),
-    m_fontSizeHasBeenSet(false),
-    m_outlineColor(BurnInOutlineColor::NOT_SET),
-    m_outlineColorHasBeenSet(false),
-    m_outlineSize(0),
-    m_outlineSizeHasBeenSet(false),
-    m_shadowColor(BurnInShadowColor::NOT_SET),
-    m_shadowColorHasBeenSet(false),
-    m_shadowOpacity(0),
-    m_shadowOpacityHasBeenSet(false),
-    m_shadowXOffset(0),
-    m_shadowXOffsetHasBeenSet(false),
-    m_shadowYOffset(0),
-    m_shadowYOffsetHasBeenSet(false),
-    m_teletextGridControl(BurnInTeletextGridControl::NOT_SET),
-    m_teletextGridControlHasBeenSet(false),
-    m_xPosition(0),
-    m_xPositionHasBeenSet(false),
-    m_yPosition(0),
-    m_yPositionHasBeenSet(false)
+BurnInDestinationSettings::BurnInDestinationSettings(JsonView jsonValue)
+  : BurnInDestinationSettings()
 {
   *this = jsonValue;
 }

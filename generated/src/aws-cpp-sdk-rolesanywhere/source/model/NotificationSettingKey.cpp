@@ -26,11 +26,8 @@ NotificationSettingKey::NotificationSettingKey() :
 {
 }
 
-NotificationSettingKey::NotificationSettingKey(JsonView jsonValue) : 
-    m_channel(NotificationChannel::NOT_SET),
-    m_channelHasBeenSet(false),
-    m_event(NotificationEvent::NOT_SET),
-    m_eventHasBeenSet(false)
+NotificationSettingKey::NotificationSettingKey(JsonView jsonValue)
+  : NotificationSettingKey()
 {
   *this = jsonValue;
 }

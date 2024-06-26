@@ -28,11 +28,8 @@ Limits::Limits() :
 {
 }
 
-Limits::Limits(const XmlNode& xmlNode) : 
-    m_maximumReplicationCount(0),
-    m_maximumReplicationCountHasBeenSet(false),
-    m_maximumPartitionCount(0),
-    m_maximumPartitionCountHasBeenSet(false)
+Limits::Limits(const XmlNode& xmlNode)
+  : Limits()
 {
   *this = xmlNode;
 }

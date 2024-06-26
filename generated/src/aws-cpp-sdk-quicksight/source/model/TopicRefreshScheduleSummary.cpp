@@ -26,11 +26,8 @@ TopicRefreshScheduleSummary::TopicRefreshScheduleSummary() :
 {
 }
 
-TopicRefreshScheduleSummary::TopicRefreshScheduleSummary(JsonView jsonValue) : 
-    m_datasetIdHasBeenSet(false),
-    m_datasetArnHasBeenSet(false),
-    m_datasetNameHasBeenSet(false),
-    m_refreshScheduleHasBeenSet(false)
+TopicRefreshScheduleSummary::TopicRefreshScheduleSummary(JsonView jsonValue)
+  : TopicRefreshScheduleSummary()
 {
   *this = jsonValue;
 }

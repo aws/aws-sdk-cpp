@@ -33,18 +33,8 @@ InstanceProfile::InstanceProfile() :
 {
 }
 
-InstanceProfile::InstanceProfile(JsonView jsonValue) : 
-    m_instanceProfileArnHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_kmsKeyArnHasBeenSet(false),
-    m_publiclyAccessible(false),
-    m_publiclyAccessibleHasBeenSet(false),
-    m_networkTypeHasBeenSet(false),
-    m_instanceProfileNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_instanceProfileCreationTimeHasBeenSet(false),
-    m_subnetGroupIdentifierHasBeenSet(false),
-    m_vpcSecurityGroupsHasBeenSet(false)
+InstanceProfile::InstanceProfile(JsonView jsonValue)
+  : InstanceProfile()
 {
   *this = jsonValue;
 }

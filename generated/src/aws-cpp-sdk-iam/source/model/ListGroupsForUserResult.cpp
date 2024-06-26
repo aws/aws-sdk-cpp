@@ -22,8 +22,8 @@ ListGroupsForUserResult::ListGroupsForUserResult() :
 {
 }
 
-ListGroupsForUserResult::ListGroupsForUserResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_isTruncated(false)
+ListGroupsForUserResult::ListGroupsForUserResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : ListGroupsForUserResult()
 {
   *this = result;
 }

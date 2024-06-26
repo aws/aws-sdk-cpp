@@ -27,12 +27,8 @@ SchemaVersionSummary::SchemaVersionSummary() :
 {
 }
 
-SchemaVersionSummary::SchemaVersionSummary(JsonView jsonValue) : 
-    m_schemaArnHasBeenSet(false),
-    m_schemaNameHasBeenSet(false),
-    m_schemaVersionHasBeenSet(false),
-    m_type(Type::NOT_SET),
-    m_typeHasBeenSet(false)
+SchemaVersionSummary::SchemaVersionSummary(JsonView jsonValue)
+  : SchemaVersionSummary()
 {
   *this = jsonValue;
 }

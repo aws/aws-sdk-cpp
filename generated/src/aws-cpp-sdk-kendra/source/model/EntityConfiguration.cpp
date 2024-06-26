@@ -25,10 +25,8 @@ EntityConfiguration::EntityConfiguration() :
 {
 }
 
-EntityConfiguration::EntityConfiguration(JsonView jsonValue) : 
-    m_entityIdHasBeenSet(false),
-    m_entityType(EntityType::NOT_SET),
-    m_entityTypeHasBeenSet(false)
+EntityConfiguration::EntityConfiguration(JsonView jsonValue)
+  : EntityConfiguration()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ HumanTaskUiSummary::HumanTaskUiSummary() :
 {
 }
 
-HumanTaskUiSummary::HumanTaskUiSummary(JsonView jsonValue) : 
-    m_humanTaskUiNameHasBeenSet(false),
-    m_humanTaskUiArnHasBeenSet(false),
-    m_creationTimeHasBeenSet(false)
+HumanTaskUiSummary::HumanTaskUiSummary(JsonView jsonValue)
+  : HumanTaskUiSummary()
 {
   *this = jsonValue;
 }

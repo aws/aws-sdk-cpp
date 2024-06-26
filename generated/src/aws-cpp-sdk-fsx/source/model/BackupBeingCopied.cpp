@@ -24,9 +24,8 @@ BackupBeingCopied::BackupBeingCopied() :
 {
 }
 
-BackupBeingCopied::BackupBeingCopied(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_backupIdHasBeenSet(false)
+BackupBeingCopied::BackupBeingCopied(JsonView jsonValue)
+  : BackupBeingCopied()
 {
   *this = jsonValue;
 }

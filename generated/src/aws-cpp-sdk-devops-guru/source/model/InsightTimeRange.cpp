@@ -24,9 +24,8 @@ InsightTimeRange::InsightTimeRange() :
 {
 }
 
-InsightTimeRange::InsightTimeRange(JsonView jsonValue) : 
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
+InsightTimeRange::InsightTimeRange(JsonView jsonValue)
+  : InsightTimeRange()
 {
   *this = jsonValue;
 }

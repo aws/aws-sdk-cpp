@@ -35,20 +35,8 @@ WebCrawlerConfiguration::WebCrawlerConfiguration() :
 {
 }
 
-WebCrawlerConfiguration::WebCrawlerConfiguration(JsonView jsonValue) : 
-    m_urlsHasBeenSet(false),
-    m_crawlDepth(0),
-    m_crawlDepthHasBeenSet(false),
-    m_maxLinksPerPage(0),
-    m_maxLinksPerPageHasBeenSet(false),
-    m_maxContentSizePerPageInMegaBytes(0.0),
-    m_maxContentSizePerPageInMegaBytesHasBeenSet(false),
-    m_maxUrlsPerMinuteCrawlRate(0),
-    m_maxUrlsPerMinuteCrawlRateHasBeenSet(false),
-    m_urlInclusionPatternsHasBeenSet(false),
-    m_urlExclusionPatternsHasBeenSet(false),
-    m_proxyConfigurationHasBeenSet(false),
-    m_authenticationConfigurationHasBeenSet(false)
+WebCrawlerConfiguration::WebCrawlerConfiguration(JsonView jsonValue)
+  : WebCrawlerConfiguration()
 {
   *this = jsonValue;
 }

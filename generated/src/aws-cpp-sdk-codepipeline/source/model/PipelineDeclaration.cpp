@@ -35,20 +35,8 @@ PipelineDeclaration::PipelineDeclaration() :
 {
 }
 
-PipelineDeclaration::PipelineDeclaration(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_artifactStoreHasBeenSet(false),
-    m_artifactStoresHasBeenSet(false),
-    m_stagesHasBeenSet(false),
-    m_version(0),
-    m_versionHasBeenSet(false),
-    m_executionMode(ExecutionMode::NOT_SET),
-    m_executionModeHasBeenSet(false),
-    m_pipelineType(PipelineType::NOT_SET),
-    m_pipelineTypeHasBeenSet(false),
-    m_variablesHasBeenSet(false),
-    m_triggersHasBeenSet(false)
+PipelineDeclaration::PipelineDeclaration(JsonView jsonValue)
+  : PipelineDeclaration()
 {
   *this = jsonValue;
 }

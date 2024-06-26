@@ -30,15 +30,8 @@ ParameterListControl::ParameterListControl() :
 {
 }
 
-ParameterListControl::ParameterListControl(JsonView jsonValue) : 
-    m_parameterControlIdHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_sourceParameterNameHasBeenSet(false),
-    m_displayOptionsHasBeenSet(false),
-    m_type(SheetControlListType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_selectableValuesHasBeenSet(false),
-    m_cascadingControlConfigurationHasBeenSet(false)
+ParameterListControl::ParameterListControl(JsonView jsonValue)
+  : ParameterListControl()
 {
   *this = jsonValue;
 }

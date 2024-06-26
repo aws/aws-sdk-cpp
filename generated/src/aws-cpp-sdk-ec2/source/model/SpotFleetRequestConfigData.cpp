@@ -63,46 +63,8 @@ SpotFleetRequestConfigData::SpotFleetRequestConfigData() :
 {
 }
 
-SpotFleetRequestConfigData::SpotFleetRequestConfigData(const XmlNode& xmlNode) : 
-    m_allocationStrategy(AllocationStrategy::NOT_SET),
-    m_allocationStrategyHasBeenSet(false),
-    m_onDemandAllocationStrategy(OnDemandAllocationStrategy::NOT_SET),
-    m_onDemandAllocationStrategyHasBeenSet(false),
-    m_spotMaintenanceStrategiesHasBeenSet(false),
-    m_clientTokenHasBeenSet(false),
-    m_excessCapacityTerminationPolicy(ExcessCapacityTerminationPolicy::NOT_SET),
-    m_excessCapacityTerminationPolicyHasBeenSet(false),
-    m_fulfilledCapacity(0.0),
-    m_fulfilledCapacityHasBeenSet(false),
-    m_onDemandFulfilledCapacity(0.0),
-    m_onDemandFulfilledCapacityHasBeenSet(false),
-    m_iamFleetRoleHasBeenSet(false),
-    m_launchSpecificationsHasBeenSet(false),
-    m_launchTemplateConfigsHasBeenSet(false),
-    m_spotPriceHasBeenSet(false),
-    m_targetCapacity(0),
-    m_targetCapacityHasBeenSet(false),
-    m_onDemandTargetCapacity(0),
-    m_onDemandTargetCapacityHasBeenSet(false),
-    m_onDemandMaxTotalPriceHasBeenSet(false),
-    m_spotMaxTotalPriceHasBeenSet(false),
-    m_terminateInstancesWithExpiration(false),
-    m_terminateInstancesWithExpirationHasBeenSet(false),
-    m_type(FleetType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_validFromHasBeenSet(false),
-    m_validUntilHasBeenSet(false),
-    m_replaceUnhealthyInstances(false),
-    m_replaceUnhealthyInstancesHasBeenSet(false),
-    m_instanceInterruptionBehavior(InstanceInterruptionBehavior::NOT_SET),
-    m_instanceInterruptionBehaviorHasBeenSet(false),
-    m_loadBalancersConfigHasBeenSet(false),
-    m_instancePoolsToUseCount(0),
-    m_instancePoolsToUseCountHasBeenSet(false),
-    m_contextHasBeenSet(false),
-    m_targetCapacityUnitType(TargetCapacityUnitType::NOT_SET),
-    m_targetCapacityUnitTypeHasBeenSet(false),
-    m_tagSpecificationsHasBeenSet(false)
+SpotFleetRequestConfigData::SpotFleetRequestConfigData(const XmlNode& xmlNode)
+  : SpotFleetRequestConfigData()
 {
   *this = xmlNode;
 }

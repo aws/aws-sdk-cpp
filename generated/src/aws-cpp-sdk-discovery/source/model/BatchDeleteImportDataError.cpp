@@ -26,11 +26,8 @@ BatchDeleteImportDataError::BatchDeleteImportDataError() :
 {
 }
 
-BatchDeleteImportDataError::BatchDeleteImportDataError(JsonView jsonValue) : 
-    m_importTaskIdHasBeenSet(false),
-    m_errorCode(BatchDeleteImportDataErrorCode::NOT_SET),
-    m_errorCodeHasBeenSet(false),
-    m_errorDescriptionHasBeenSet(false)
+BatchDeleteImportDataError::BatchDeleteImportDataError(JsonView jsonValue)
+  : BatchDeleteImportDataError()
 {
   *this = jsonValue;
 }

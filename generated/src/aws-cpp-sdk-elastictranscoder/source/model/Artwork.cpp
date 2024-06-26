@@ -29,14 +29,8 @@ Artwork::Artwork() :
 {
 }
 
-Artwork::Artwork(JsonView jsonValue) : 
-    m_inputKeyHasBeenSet(false),
-    m_maxWidthHasBeenSet(false),
-    m_maxHeightHasBeenSet(false),
-    m_sizingPolicyHasBeenSet(false),
-    m_paddingPolicyHasBeenSet(false),
-    m_albumArtFormatHasBeenSet(false),
-    m_encryptionHasBeenSet(false)
+Artwork::Artwork(JsonView jsonValue)
+  : Artwork()
 {
   *this = jsonValue;
 }

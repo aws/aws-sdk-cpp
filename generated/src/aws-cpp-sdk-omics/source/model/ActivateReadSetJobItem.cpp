@@ -28,13 +28,8 @@ ActivateReadSetJobItem::ActivateReadSetJobItem() :
 {
 }
 
-ActivateReadSetJobItem::ActivateReadSetJobItem(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_sequenceStoreIdHasBeenSet(false),
-    m_status(ReadSetActivationJobStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_completionTimeHasBeenSet(false)
+ActivateReadSetJobItem::ActivateReadSetJobItem(JsonView jsonValue)
+  : ActivateReadSetJobItem()
 {
   *this = jsonValue;
 }

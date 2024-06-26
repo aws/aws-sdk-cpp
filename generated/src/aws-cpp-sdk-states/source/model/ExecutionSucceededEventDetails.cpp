@@ -24,9 +24,8 @@ ExecutionSucceededEventDetails::ExecutionSucceededEventDetails() :
 {
 }
 
-ExecutionSucceededEventDetails::ExecutionSucceededEventDetails(JsonView jsonValue) : 
-    m_outputHasBeenSet(false),
-    m_outputDetailsHasBeenSet(false)
+ExecutionSucceededEventDetails::ExecutionSucceededEventDetails(JsonView jsonValue)
+  : ExecutionSucceededEventDetails()
 {
   *this = jsonValue;
 }

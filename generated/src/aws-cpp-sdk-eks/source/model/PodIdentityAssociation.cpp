@@ -32,17 +32,8 @@ PodIdentityAssociation::PodIdentityAssociation() :
 {
 }
 
-PodIdentityAssociation::PodIdentityAssociation(JsonView jsonValue) : 
-    m_clusterNameHasBeenSet(false),
-    m_namespaceHasBeenSet(false),
-    m_serviceAccountHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_associationArnHasBeenSet(false),
-    m_associationIdHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_modifiedAtHasBeenSet(false),
-    m_ownerArnHasBeenSet(false)
+PodIdentityAssociation::PodIdentityAssociation(JsonView jsonValue)
+  : PodIdentityAssociation()
 {
   *this = jsonValue;
 }

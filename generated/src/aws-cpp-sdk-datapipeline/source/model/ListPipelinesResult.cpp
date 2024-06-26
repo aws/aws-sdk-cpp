@@ -22,8 +22,8 @@ ListPipelinesResult::ListPipelinesResult() :
 {
 }
 
-ListPipelinesResult::ListPipelinesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_hasMoreResults(false)
+ListPipelinesResult::ListPipelinesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ListPipelinesResult()
 {
   *this = result;
 }

@@ -32,17 +32,8 @@ Voice::Voice() :
 {
 }
 
-Voice::Voice(JsonView jsonValue) : 
-    m_gender(Gender::NOT_SET),
-    m_genderHasBeenSet(false),
-    m_id(VoiceId::NOT_SET),
-    m_idHasBeenSet(false),
-    m_languageCode(LanguageCode::NOT_SET),
-    m_languageCodeHasBeenSet(false),
-    m_languageNameHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_additionalLanguageCodesHasBeenSet(false),
-    m_supportedEnginesHasBeenSet(false)
+Voice::Voice(JsonView jsonValue)
+  : Voice()
 {
   *this = jsonValue;
 }

@@ -35,20 +35,8 @@ Deployment::Deployment() :
 {
 }
 
-Deployment::Deployment(JsonView jsonValue) : 
-    m_deploymentIdHasBeenSet(false),
-    m_stackIdHasBeenSet(false),
-    m_appIdHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_completedAtHasBeenSet(false),
-    m_duration(0),
-    m_durationHasBeenSet(false),
-    m_iamUserArnHasBeenSet(false),
-    m_commentHasBeenSet(false),
-    m_commandHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_customJsonHasBeenSet(false),
-    m_instanceIdsHasBeenSet(false)
+Deployment::Deployment(JsonView jsonValue)
+  : Deployment()
 {
   *this = jsonValue;
 }

@@ -36,21 +36,8 @@ BatchReadOperation::BatchReadOperation() :
 {
 }
 
-BatchReadOperation::BatchReadOperation(JsonView jsonValue) : 
-    m_listObjectAttributesHasBeenSet(false),
-    m_listObjectChildrenHasBeenSet(false),
-    m_listAttachedIndicesHasBeenSet(false),
-    m_listObjectParentPathsHasBeenSet(false),
-    m_getObjectInformationHasBeenSet(false),
-    m_getObjectAttributesHasBeenSet(false),
-    m_listObjectParentsHasBeenSet(false),
-    m_listObjectPoliciesHasBeenSet(false),
-    m_listPolicyAttachmentsHasBeenSet(false),
-    m_lookupPolicyHasBeenSet(false),
-    m_listIndexHasBeenSet(false),
-    m_listOutgoingTypedLinksHasBeenSet(false),
-    m_listIncomingTypedLinksHasBeenSet(false),
-    m_getLinkAttributesHasBeenSet(false)
+BatchReadOperation::BatchReadOperation(JsonView jsonValue)
+  : BatchReadOperation()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ ValidationExceptionErrorArgument::ValidationExceptionErrorArgument() :
 {
 }
 
-ValidationExceptionErrorArgument::ValidationExceptionErrorArgument(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
+ValidationExceptionErrorArgument::ValidationExceptionErrorArgument(JsonView jsonValue)
+  : ValidationExceptionErrorArgument()
 {
   *this = jsonValue;
 }

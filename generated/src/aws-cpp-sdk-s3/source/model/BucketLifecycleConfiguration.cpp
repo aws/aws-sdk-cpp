@@ -25,8 +25,8 @@ BucketLifecycleConfiguration::BucketLifecycleConfiguration() :
 {
 }
 
-BucketLifecycleConfiguration::BucketLifecycleConfiguration(const XmlNode& xmlNode) : 
-    m_rulesHasBeenSet(false)
+BucketLifecycleConfiguration::BucketLifecycleConfiguration(const XmlNode& xmlNode)
+  : BucketLifecycleConfiguration()
 {
   *this = xmlNode;
 }

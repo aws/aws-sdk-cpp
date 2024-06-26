@@ -23,8 +23,8 @@ Owner::Owner() :
 {
 }
 
-Owner::Owner(JsonView jsonValue) : 
-    m_idHasBeenSet(false)
+Owner::Owner(JsonView jsonValue)
+  : Owner()
 {
   *this = jsonValue;
 }

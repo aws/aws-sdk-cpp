@@ -23,8 +23,8 @@ IntermediateSourceConfiguration::IntermediateSourceConfiguration() :
 {
 }
 
-IntermediateSourceConfiguration::IntermediateSourceConfiguration(JsonView jsonValue) : 
-    m_intermediateS3PathHasBeenSet(false)
+IntermediateSourceConfiguration::IntermediateSourceConfiguration(JsonView jsonValue)
+  : IntermediateSourceConfiguration()
 {
   *this = jsonValue;
 }

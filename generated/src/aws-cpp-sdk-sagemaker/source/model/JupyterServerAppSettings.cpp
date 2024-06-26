@@ -25,10 +25,8 @@ JupyterServerAppSettings::JupyterServerAppSettings() :
 {
 }
 
-JupyterServerAppSettings::JupyterServerAppSettings(JsonView jsonValue) : 
-    m_defaultResourceSpecHasBeenSet(false),
-    m_lifecycleConfigArnsHasBeenSet(false),
-    m_codeRepositoriesHasBeenSet(false)
+JupyterServerAppSettings::JupyterServerAppSettings(JsonView jsonValue)
+  : JupyterServerAppSettings()
 {
   *this = jsonValue;
 }

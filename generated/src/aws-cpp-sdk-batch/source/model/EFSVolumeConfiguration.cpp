@@ -29,14 +29,8 @@ EFSVolumeConfiguration::EFSVolumeConfiguration() :
 {
 }
 
-EFSVolumeConfiguration::EFSVolumeConfiguration(JsonView jsonValue) : 
-    m_fileSystemIdHasBeenSet(false),
-    m_rootDirectoryHasBeenSet(false),
-    m_transitEncryption(EFSTransitEncryption::NOT_SET),
-    m_transitEncryptionHasBeenSet(false),
-    m_transitEncryptionPort(0),
-    m_transitEncryptionPortHasBeenSet(false),
-    m_authorizationConfigHasBeenSet(false)
+EFSVolumeConfiguration::EFSVolumeConfiguration(JsonView jsonValue)
+  : EFSVolumeConfiguration()
 {
   *this = jsonValue;
 }

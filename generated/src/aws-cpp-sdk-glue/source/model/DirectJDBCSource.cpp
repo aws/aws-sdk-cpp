@@ -29,14 +29,8 @@ DirectJDBCSource::DirectJDBCSource() :
 {
 }
 
-DirectJDBCSource::DirectJDBCSource(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_databaseHasBeenSet(false),
-    m_tableHasBeenSet(false),
-    m_connectionNameHasBeenSet(false),
-    m_connectionType(JDBCConnectionType::NOT_SET),
-    m_connectionTypeHasBeenSet(false),
-    m_redshiftTmpDirHasBeenSet(false)
+DirectJDBCSource::DirectJDBCSource(JsonView jsonValue)
+  : DirectJDBCSource()
 {
   *this = jsonValue;
 }

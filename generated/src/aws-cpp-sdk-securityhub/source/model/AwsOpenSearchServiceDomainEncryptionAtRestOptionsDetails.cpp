@@ -25,10 +25,8 @@ AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetails::AwsOpenSearchServiceDo
 {
 }
 
-AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetails::AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetails(JsonView jsonValue) : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
+AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetails::AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetails(JsonView jsonValue)
+  : AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetails()
 {
   *this = jsonValue;
 }

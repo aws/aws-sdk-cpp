@@ -28,13 +28,8 @@ TimeSeriesDataPointSummaryFormOutput::TimeSeriesDataPointSummaryFormOutput() :
 {
 }
 
-TimeSeriesDataPointSummaryFormOutput::TimeSeriesDataPointSummaryFormOutput(JsonView jsonValue) : 
-    m_contentSummaryHasBeenSet(false),
-    m_formNameHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_timestampHasBeenSet(false),
-    m_typeIdentifierHasBeenSet(false),
-    m_typeRevisionHasBeenSet(false)
+TimeSeriesDataPointSummaryFormOutput::TimeSeriesDataPointSummaryFormOutput(JsonView jsonValue)
+  : TimeSeriesDataPointSummaryFormOutput()
 {
   *this = jsonValue;
 }

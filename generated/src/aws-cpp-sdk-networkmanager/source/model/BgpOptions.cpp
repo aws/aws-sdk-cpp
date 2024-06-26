@@ -24,9 +24,8 @@ BgpOptions::BgpOptions() :
 {
 }
 
-BgpOptions::BgpOptions(JsonView jsonValue) : 
-    m_peerAsn(0),
-    m_peerAsnHasBeenSet(false)
+BgpOptions::BgpOptions(JsonView jsonValue)
+  : BgpOptions()
 {
   *this = jsonValue;
 }

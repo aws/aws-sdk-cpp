@@ -23,8 +23,8 @@ DefaultErrorDetails::DefaultErrorDetails() :
 {
 }
 
-DefaultErrorDetails::DefaultErrorDetails(JsonView jsonValue) : 
-    m_messageHasBeenSet(false)
+DefaultErrorDetails::DefaultErrorDetails(JsonView jsonValue)
+  : DefaultErrorDetails()
 {
   *this = jsonValue;
 }

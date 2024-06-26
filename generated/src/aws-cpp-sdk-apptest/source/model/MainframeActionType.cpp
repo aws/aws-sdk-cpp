@@ -24,9 +24,8 @@ MainframeActionType::MainframeActionType() :
 {
 }
 
-MainframeActionType::MainframeActionType(JsonView jsonValue) : 
-    m_batchHasBeenSet(false),
-    m_tn3270HasBeenSet(false)
+MainframeActionType::MainframeActionType(JsonView jsonValue)
+  : MainframeActionType()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ IndexFacesResult::IndexFacesResult() :
 {
 }
 
-IndexFacesResult::IndexFacesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_orientationCorrection(OrientationCorrection::NOT_SET)
+IndexFacesResult::IndexFacesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : IndexFacesResult()
 {
   *this = result;
 }

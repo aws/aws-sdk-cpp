@@ -26,11 +26,8 @@ SchemaVersionNumber::SchemaVersionNumber() :
 {
 }
 
-SchemaVersionNumber::SchemaVersionNumber(JsonView jsonValue) : 
-    m_latestVersion(false),
-    m_latestVersionHasBeenSet(false),
-    m_versionNumber(0),
-    m_versionNumberHasBeenSet(false)
+SchemaVersionNumber::SchemaVersionNumber(JsonView jsonValue)
+  : SchemaVersionNumber()
 {
   *this = jsonValue;
 }

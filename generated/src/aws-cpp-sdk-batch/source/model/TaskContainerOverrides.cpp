@@ -26,11 +26,8 @@ TaskContainerOverrides::TaskContainerOverrides() :
 {
 }
 
-TaskContainerOverrides::TaskContainerOverrides(JsonView jsonValue) : 
-    m_commandHasBeenSet(false),
-    m_environmentHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_resourceRequirementsHasBeenSet(false)
+TaskContainerOverrides::TaskContainerOverrides(JsonView jsonValue)
+  : TaskContainerOverrides()
 {
   *this = jsonValue;
 }

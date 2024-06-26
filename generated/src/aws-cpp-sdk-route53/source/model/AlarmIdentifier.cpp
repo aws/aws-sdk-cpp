@@ -27,10 +27,8 @@ AlarmIdentifier::AlarmIdentifier() :
 {
 }
 
-AlarmIdentifier::AlarmIdentifier(const XmlNode& xmlNode) : 
-    m_region(CloudWatchRegion::NOT_SET),
-    m_regionHasBeenSet(false),
-    m_nameHasBeenSet(false)
+AlarmIdentifier::AlarmIdentifier(const XmlNode& xmlNode)
+  : AlarmIdentifier()
 {
   *this = xmlNode;
 }

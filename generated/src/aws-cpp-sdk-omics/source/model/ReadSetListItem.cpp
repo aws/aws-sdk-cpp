@@ -40,25 +40,8 @@ ReadSetListItem::ReadSetListItem() :
 {
 }
 
-ReadSetListItem::ReadSetListItem(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_sequenceStoreIdHasBeenSet(false),
-    m_subjectIdHasBeenSet(false),
-    m_sampleIdHasBeenSet(false),
-    m_status(ReadSetStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_referenceArnHasBeenSet(false),
-    m_fileType(FileType::NOT_SET),
-    m_fileTypeHasBeenSet(false),
-    m_sequenceInformationHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_creationType(CreationType::NOT_SET),
-    m_creationTypeHasBeenSet(false),
-    m_etagHasBeenSet(false)
+ReadSetListItem::ReadSetListItem(JsonView jsonValue)
+  : ReadSetListItem()
 {
   *this = jsonValue;
 }

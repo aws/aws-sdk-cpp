@@ -32,17 +32,8 @@ MetadataGenerationRunItem::MetadataGenerationRunItem() :
 {
 }
 
-MetadataGenerationRunItem::MetadataGenerationRunItem(JsonView jsonValue) : 
-    m_createdAtHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_domainIdHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_owningProjectIdHasBeenSet(false),
-    m_status(MetadataGenerationRunStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_targetHasBeenSet(false),
-    m_type(MetadataGenerationRunType::NOT_SET),
-    m_typeHasBeenSet(false)
+MetadataGenerationRunItem::MetadataGenerationRunItem(JsonView jsonValue)
+  : MetadataGenerationRunItem()
 {
   *this = jsonValue;
 }

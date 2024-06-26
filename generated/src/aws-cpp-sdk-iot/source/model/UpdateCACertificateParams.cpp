@@ -24,9 +24,8 @@ UpdateCACertificateParams::UpdateCACertificateParams() :
 {
 }
 
-UpdateCACertificateParams::UpdateCACertificateParams(JsonView jsonValue) : 
-    m_action(CACertificateUpdateAction::NOT_SET),
-    m_actionHasBeenSet(false)
+UpdateCACertificateParams::UpdateCACertificateParams(JsonView jsonValue)
+  : UpdateCACertificateParams()
 {
   *this = jsonValue;
 }

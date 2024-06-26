@@ -29,12 +29,8 @@ ImageRecycleBinInfo::ImageRecycleBinInfo() :
 {
 }
 
-ImageRecycleBinInfo::ImageRecycleBinInfo(const XmlNode& xmlNode) : 
-    m_imageIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_recycleBinEnterTimeHasBeenSet(false),
-    m_recycleBinExitTimeHasBeenSet(false)
+ImageRecycleBinInfo::ImageRecycleBinInfo(const XmlNode& xmlNode)
+  : ImageRecycleBinInfo()
 {
   *this = xmlNode;
 }

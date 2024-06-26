@@ -25,10 +25,8 @@ ManagedPersistenceMonitoringConfiguration::ManagedPersistenceMonitoringConfigura
 {
 }
 
-ManagedPersistenceMonitoringConfiguration::ManagedPersistenceMonitoringConfiguration(JsonView jsonValue) : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_encryptionKeyArnHasBeenSet(false)
+ManagedPersistenceMonitoringConfiguration::ManagedPersistenceMonitoringConfiguration(JsonView jsonValue)
+  : ManagedPersistenceMonitoringConfiguration()
 {
   *this = jsonValue;
 }

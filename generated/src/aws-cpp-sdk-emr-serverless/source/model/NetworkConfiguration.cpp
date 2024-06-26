@@ -24,9 +24,8 @@ NetworkConfiguration::NetworkConfiguration() :
 {
 }
 
-NetworkConfiguration::NetworkConfiguration(JsonView jsonValue) : 
-    m_subnetIdsHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false)
+NetworkConfiguration::NetworkConfiguration(JsonView jsonValue)
+  : NetworkConfiguration()
 {
   *this = jsonValue;
 }

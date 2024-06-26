@@ -22,8 +22,8 @@ DescribeMitigationActionResult::DescribeMitigationActionResult() :
 {
 }
 
-DescribeMitigationActionResult::DescribeMitigationActionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_actionType(MitigationActionType::NOT_SET)
+DescribeMitigationActionResult::DescribeMitigationActionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeMitigationActionResult()
 {
   *this = result;
 }

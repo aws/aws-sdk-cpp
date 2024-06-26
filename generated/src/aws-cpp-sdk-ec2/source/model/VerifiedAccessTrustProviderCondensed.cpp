@@ -32,15 +32,8 @@ VerifiedAccessTrustProviderCondensed::VerifiedAccessTrustProviderCondensed() :
 {
 }
 
-VerifiedAccessTrustProviderCondensed::VerifiedAccessTrustProviderCondensed(const XmlNode& xmlNode) : 
-    m_verifiedAccessTrustProviderIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_trustProviderType(TrustProviderType::NOT_SET),
-    m_trustProviderTypeHasBeenSet(false),
-    m_userTrustProviderType(UserTrustProviderType::NOT_SET),
-    m_userTrustProviderTypeHasBeenSet(false),
-    m_deviceTrustProviderType(DeviceTrustProviderType::NOT_SET),
-    m_deviceTrustProviderTypeHasBeenSet(false)
+VerifiedAccessTrustProviderCondensed::VerifiedAccessTrustProviderCondensed(const XmlNode& xmlNode)
+  : VerifiedAccessTrustProviderCondensed()
 {
   *this = xmlNode;
 }

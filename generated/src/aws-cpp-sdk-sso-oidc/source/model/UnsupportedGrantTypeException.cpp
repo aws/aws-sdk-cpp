@@ -24,9 +24,8 @@ UnsupportedGrantTypeException::UnsupportedGrantTypeException() :
 {
 }
 
-UnsupportedGrantTypeException::UnsupportedGrantTypeException(JsonView jsonValue) : 
-    m_errorHasBeenSet(false),
-    m_error_descriptionHasBeenSet(false)
+UnsupportedGrantTypeException::UnsupportedGrantTypeException(JsonView jsonValue)
+  : UnsupportedGrantTypeException()
 {
   *this = jsonValue;
 }

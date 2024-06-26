@@ -25,10 +25,8 @@ StopTimecode::StopTimecode() :
 {
 }
 
-StopTimecode::StopTimecode(JsonView jsonValue) : 
-    m_lastFrameClippingBehavior(LastFrameClippingBehavior::NOT_SET),
-    m_lastFrameClippingBehaviorHasBeenSet(false),
-    m_timecodeHasBeenSet(false)
+StopTimecode::StopTimecode(JsonView jsonValue)
+  : StopTimecode()
 {
   *this = jsonValue;
 }

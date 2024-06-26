@@ -24,9 +24,8 @@ DeleteMessageBatchRequestEntry::DeleteMessageBatchRequestEntry() :
 {
 }
 
-DeleteMessageBatchRequestEntry::DeleteMessageBatchRequestEntry(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_receiptHandleHasBeenSet(false)
+DeleteMessageBatchRequestEntry::DeleteMessageBatchRequestEntry(JsonView jsonValue)
+  : DeleteMessageBatchRequestEntry()
 {
   *this = jsonValue;
 }

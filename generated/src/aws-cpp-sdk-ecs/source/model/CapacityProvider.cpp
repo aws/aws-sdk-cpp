@@ -31,16 +31,8 @@ CapacityProvider::CapacityProvider() :
 {
 }
 
-CapacityProvider::CapacityProvider(JsonView jsonValue) : 
-    m_capacityProviderArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_status(CapacityProviderStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_autoScalingGroupProviderHasBeenSet(false),
-    m_updateStatus(CapacityProviderUpdateStatus::NOT_SET),
-    m_updateStatusHasBeenSet(false),
-    m_updateStatusReasonHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+CapacityProvider::CapacityProvider(JsonView jsonValue)
+  : CapacityProvider()
 {
   *this = jsonValue;
 }

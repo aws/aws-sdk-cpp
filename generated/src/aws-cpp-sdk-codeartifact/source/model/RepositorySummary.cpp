@@ -29,14 +29,8 @@ RepositorySummary::RepositorySummary() :
 {
 }
 
-RepositorySummary::RepositorySummary(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_administratorAccountHasBeenSet(false),
-    m_domainNameHasBeenSet(false),
-    m_domainOwnerHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_createdTimeHasBeenSet(false)
+RepositorySummary::RepositorySummary(JsonView jsonValue)
+  : RepositorySummary()
 {
   *this = jsonValue;
 }

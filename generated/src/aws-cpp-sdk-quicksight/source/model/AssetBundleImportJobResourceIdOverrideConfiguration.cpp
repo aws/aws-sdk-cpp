@@ -23,8 +23,8 @@ AssetBundleImportJobResourceIdOverrideConfiguration::AssetBundleImportJobResourc
 {
 }
 
-AssetBundleImportJobResourceIdOverrideConfiguration::AssetBundleImportJobResourceIdOverrideConfiguration(JsonView jsonValue) : 
-    m_prefixForAllResourcesHasBeenSet(false)
+AssetBundleImportJobResourceIdOverrideConfiguration::AssetBundleImportJobResourceIdOverrideConfiguration(JsonView jsonValue)
+  : AssetBundleImportJobResourceIdOverrideConfiguration()
 {
   *this = jsonValue;
 }

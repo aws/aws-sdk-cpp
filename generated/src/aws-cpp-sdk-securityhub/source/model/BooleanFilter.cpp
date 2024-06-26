@@ -24,9 +24,8 @@ BooleanFilter::BooleanFilter() :
 {
 }
 
-BooleanFilter::BooleanFilter(JsonView jsonValue) : 
-    m_value(false),
-    m_valueHasBeenSet(false)
+BooleanFilter::BooleanFilter(JsonView jsonValue)
+  : BooleanFilter()
 {
   *this = jsonValue;
 }

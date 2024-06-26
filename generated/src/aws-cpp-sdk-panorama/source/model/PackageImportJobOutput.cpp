@@ -26,11 +26,8 @@ PackageImportJobOutput::PackageImportJobOutput() :
 {
 }
 
-PackageImportJobOutput::PackageImportJobOutput(JsonView jsonValue) : 
-    m_outputS3LocationHasBeenSet(false),
-    m_packageIdHasBeenSet(false),
-    m_packageVersionHasBeenSet(false),
-    m_patchVersionHasBeenSet(false)
+PackageImportJobOutput::PackageImportJobOutput(JsonView jsonValue)
+  : PackageImportJobOutput()
 {
   *this = jsonValue;
 }

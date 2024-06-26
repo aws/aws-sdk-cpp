@@ -25,10 +25,8 @@ DatabasePreferences::DatabasePreferences() :
 {
 }
 
-DatabasePreferences::DatabasePreferences(JsonView jsonValue) : 
-    m_databaseManagementPreference(DatabaseManagementPreference::NOT_SET),
-    m_databaseManagementPreferenceHasBeenSet(false),
-    m_databaseMigrationPreferenceHasBeenSet(false)
+DatabasePreferences::DatabasePreferences(JsonView jsonValue)
+  : DatabasePreferences()
 {
   *this = jsonValue;
 }

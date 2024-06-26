@@ -26,11 +26,8 @@ ShippingDetails::ShippingDetails() :
 {
 }
 
-ShippingDetails::ShippingDetails(JsonView jsonValue) : 
-    m_shippingOption(ShippingOption::NOT_SET),
-    m_shippingOptionHasBeenSet(false),
-    m_inboundShipmentHasBeenSet(false),
-    m_outboundShipmentHasBeenSet(false)
+ShippingDetails::ShippingDetails(JsonView jsonValue)
+  : ShippingDetails()
 {
   *this = jsonValue;
 }

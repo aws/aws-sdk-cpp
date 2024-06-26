@@ -24,9 +24,8 @@ PullRequestStatusChangedEventMetadata::PullRequestStatusChangedEventMetadata() :
 {
 }
 
-PullRequestStatusChangedEventMetadata::PullRequestStatusChangedEventMetadata(JsonView jsonValue) : 
-    m_pullRequestStatus(PullRequestStatusEnum::NOT_SET),
-    m_pullRequestStatusHasBeenSet(false)
+PullRequestStatusChangedEventMetadata::PullRequestStatusChangedEventMetadata(JsonView jsonValue)
+  : PullRequestStatusChangedEventMetadata()
 {
   *this = jsonValue;
 }

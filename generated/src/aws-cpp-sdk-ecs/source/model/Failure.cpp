@@ -25,10 +25,8 @@ Failure::Failure() :
 {
 }
 
-Failure::Failure(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_reasonHasBeenSet(false),
-    m_detailHasBeenSet(false)
+Failure::Failure(JsonView jsonValue)
+  : Failure()
 {
   *this = jsonValue;
 }

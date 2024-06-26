@@ -28,11 +28,8 @@ ScheduledInstancesBlockDeviceMapping::ScheduledInstancesBlockDeviceMapping() :
 {
 }
 
-ScheduledInstancesBlockDeviceMapping::ScheduledInstancesBlockDeviceMapping(const XmlNode& xmlNode) : 
-    m_deviceNameHasBeenSet(false),
-    m_ebsHasBeenSet(false),
-    m_noDeviceHasBeenSet(false),
-    m_virtualNameHasBeenSet(false)
+ScheduledInstancesBlockDeviceMapping::ScheduledInstancesBlockDeviceMapping(const XmlNode& xmlNode)
+  : ScheduledInstancesBlockDeviceMapping()
 {
   *this = xmlNode;
 }

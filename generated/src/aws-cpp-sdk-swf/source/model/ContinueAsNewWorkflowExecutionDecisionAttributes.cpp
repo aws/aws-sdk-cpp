@@ -32,17 +32,8 @@ ContinueAsNewWorkflowExecutionDecisionAttributes::ContinueAsNewWorkflowExecution
 {
 }
 
-ContinueAsNewWorkflowExecutionDecisionAttributes::ContinueAsNewWorkflowExecutionDecisionAttributes(JsonView jsonValue) : 
-    m_inputHasBeenSet(false),
-    m_executionStartToCloseTimeoutHasBeenSet(false),
-    m_taskListHasBeenSet(false),
-    m_taskPriorityHasBeenSet(false),
-    m_taskStartToCloseTimeoutHasBeenSet(false),
-    m_childPolicy(ChildPolicy::NOT_SET),
-    m_childPolicyHasBeenSet(false),
-    m_tagListHasBeenSet(false),
-    m_workflowTypeVersionHasBeenSet(false),
-    m_lambdaRoleHasBeenSet(false)
+ContinueAsNewWorkflowExecutionDecisionAttributes::ContinueAsNewWorkflowExecutionDecisionAttributes(JsonView jsonValue)
+  : ContinueAsNewWorkflowExecutionDecisionAttributes()
 {
   *this = jsonValue;
 }

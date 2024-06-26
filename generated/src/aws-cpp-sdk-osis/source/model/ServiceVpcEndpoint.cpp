@@ -25,10 +25,8 @@ ServiceVpcEndpoint::ServiceVpcEndpoint() :
 {
 }
 
-ServiceVpcEndpoint::ServiceVpcEndpoint(JsonView jsonValue) : 
-    m_serviceName(VpcEndpointServiceName::NOT_SET),
-    m_serviceNameHasBeenSet(false),
-    m_vpcEndpointIdHasBeenSet(false)
+ServiceVpcEndpoint::ServiceVpcEndpoint(JsonView jsonValue)
+  : ServiceVpcEndpoint()
 {
   *this = jsonValue;
 }

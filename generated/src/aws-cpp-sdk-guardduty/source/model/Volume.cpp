@@ -24,9 +24,8 @@ Volume::Volume() :
 {
 }
 
-Volume::Volume(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_hostPathHasBeenSet(false)
+Volume::Volume(JsonView jsonValue)
+  : Volume()
 {
   *this = jsonValue;
 }

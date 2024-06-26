@@ -25,10 +25,8 @@ PredefinedScalingMetricSpecification::PredefinedScalingMetricSpecification() :
 {
 }
 
-PredefinedScalingMetricSpecification::PredefinedScalingMetricSpecification(JsonView jsonValue) : 
-    m_predefinedScalingMetricType(ScalingMetricType::NOT_SET),
-    m_predefinedScalingMetricTypeHasBeenSet(false),
-    m_resourceLabelHasBeenSet(false)
+PredefinedScalingMetricSpecification::PredefinedScalingMetricSpecification(JsonView jsonValue)
+  : PredefinedScalingMetricSpecification()
 {
   *this = jsonValue;
 }

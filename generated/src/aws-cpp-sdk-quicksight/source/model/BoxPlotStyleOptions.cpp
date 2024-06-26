@@ -24,9 +24,8 @@ BoxPlotStyleOptions::BoxPlotStyleOptions() :
 {
 }
 
-BoxPlotStyleOptions::BoxPlotStyleOptions(JsonView jsonValue) : 
-    m_fillStyle(BoxPlotFillStyle::NOT_SET),
-    m_fillStyleHasBeenSet(false)
+BoxPlotStyleOptions::BoxPlotStyleOptions(JsonView jsonValue)
+  : BoxPlotStyleOptions()
 {
   *this = jsonValue;
 }

@@ -23,9 +23,8 @@ StartMonitorDeploymentResult::StartMonitorDeploymentResult() :
 {
 }
 
-StartMonitorDeploymentResult::StartMonitorDeploymentResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_monitorChangesPendingDeployment(false),
-    m_status(SignalMapStatus::NOT_SET)
+StartMonitorDeploymentResult::StartMonitorDeploymentResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : StartMonitorDeploymentResult()
 {
   *this = result;
 }

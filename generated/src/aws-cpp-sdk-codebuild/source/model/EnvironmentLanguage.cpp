@@ -25,10 +25,8 @@ EnvironmentLanguage::EnvironmentLanguage() :
 {
 }
 
-EnvironmentLanguage::EnvironmentLanguage(JsonView jsonValue) : 
-    m_language(LanguageType::NOT_SET),
-    m_languageHasBeenSet(false),
-    m_imagesHasBeenSet(false)
+EnvironmentLanguage::EnvironmentLanguage(JsonView jsonValue)
+  : EnvironmentLanguage()
 {
   *this = jsonValue;
 }

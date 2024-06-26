@@ -25,10 +25,8 @@ ConformancePackComplianceScore::ConformancePackComplianceScore() :
 {
 }
 
-ConformancePackComplianceScore::ConformancePackComplianceScore(JsonView jsonValue) : 
-    m_scoreHasBeenSet(false),
-    m_conformancePackNameHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false)
+ConformancePackComplianceScore::ConformancePackComplianceScore(JsonView jsonValue)
+  : ConformancePackComplianceScore()
 {
   *this = jsonValue;
 }

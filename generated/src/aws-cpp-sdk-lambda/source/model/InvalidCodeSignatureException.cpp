@@ -24,9 +24,8 @@ InvalidCodeSignatureException::InvalidCodeSignatureException() :
 {
 }
 
-InvalidCodeSignatureException::InvalidCodeSignatureException(JsonView jsonValue) : 
-    m_typeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+InvalidCodeSignatureException::InvalidCodeSignatureException(JsonView jsonValue)
+  : InvalidCodeSignatureException()
 {
   *this = jsonValue;
 }

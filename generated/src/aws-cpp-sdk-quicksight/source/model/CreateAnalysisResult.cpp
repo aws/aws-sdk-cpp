@@ -23,9 +23,8 @@ CreateAnalysisResult::CreateAnalysisResult() :
 {
 }
 
-CreateAnalysisResult::CreateAnalysisResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_creationStatus(ResourceStatus::NOT_SET),
-    m_status(0)
+CreateAnalysisResult::CreateAnalysisResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateAnalysisResult()
 {
   *this = result;
 }

@@ -25,10 +25,8 @@ SigningProfileRevocationRecord::SigningProfileRevocationRecord() :
 {
 }
 
-SigningProfileRevocationRecord::SigningProfileRevocationRecord(JsonView jsonValue) : 
-    m_revocationEffectiveFromHasBeenSet(false),
-    m_revokedAtHasBeenSet(false),
-    m_revokedByHasBeenSet(false)
+SigningProfileRevocationRecord::SigningProfileRevocationRecord(JsonView jsonValue)
+  : SigningProfileRevocationRecord()
 {
   *this = jsonValue;
 }

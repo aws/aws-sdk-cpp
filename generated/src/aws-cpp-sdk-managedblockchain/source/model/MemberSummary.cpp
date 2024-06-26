@@ -31,16 +31,8 @@ MemberSummary::MemberSummary() :
 {
 }
 
-MemberSummary::MemberSummary(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_status(MemberStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_isOwned(false),
-    m_isOwnedHasBeenSet(false),
-    m_arnHasBeenSet(false)
+MemberSummary::MemberSummary(JsonView jsonValue)
+  : MemberSummary()
 {
   *this = jsonValue;
 }

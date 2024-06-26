@@ -39,24 +39,8 @@ Launch::Launch() :
 {
 }
 
-Launch::Launch(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_executionHasBeenSet(false),
-    m_groupsHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_metricMonitorsHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_projectHasBeenSet(false),
-    m_randomizationSaltHasBeenSet(false),
-    m_scheduledSplitsDefinitionHasBeenSet(false),
-    m_status(LaunchStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusReasonHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_type(LaunchType::NOT_SET),
-    m_typeHasBeenSet(false)
+Launch::Launch(JsonView jsonValue)
+  : Launch()
 {
   *this = jsonValue;
 }

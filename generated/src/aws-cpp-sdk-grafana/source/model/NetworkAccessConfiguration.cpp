@@ -24,9 +24,8 @@ NetworkAccessConfiguration::NetworkAccessConfiguration() :
 {
 }
 
-NetworkAccessConfiguration::NetworkAccessConfiguration(JsonView jsonValue) : 
-    m_prefixListIdsHasBeenSet(false),
-    m_vpceIdsHasBeenSet(false)
+NetworkAccessConfiguration::NetworkAccessConfiguration(JsonView jsonValue)
+  : NetworkAccessConfiguration()
 {
   *this = jsonValue;
 }

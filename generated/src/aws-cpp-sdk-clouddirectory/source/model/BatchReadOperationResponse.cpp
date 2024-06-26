@@ -24,9 +24,8 @@ BatchReadOperationResponse::BatchReadOperationResponse() :
 {
 }
 
-BatchReadOperationResponse::BatchReadOperationResponse(JsonView jsonValue) : 
-    m_successfulResponseHasBeenSet(false),
-    m_exceptionResponseHasBeenSet(false)
+BatchReadOperationResponse::BatchReadOperationResponse(JsonView jsonValue)
+  : BatchReadOperationResponse()
 {
   *this = jsonValue;
 }

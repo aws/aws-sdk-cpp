@@ -28,13 +28,8 @@ Deployment::Deployment() :
 {
 }
 
-Deployment::Deployment(JsonView jsonValue) : 
-    m_createdAtHasBeenSet(false),
-    m_deploymentArnHasBeenSet(false),
-    m_deploymentIdHasBeenSet(false),
-    m_deploymentType(DeploymentType::NOT_SET),
-    m_deploymentTypeHasBeenSet(false),
-    m_groupArnHasBeenSet(false)
+Deployment::Deployment(JsonView jsonValue)
+  : Deployment()
 {
   *this = jsonValue;
 }

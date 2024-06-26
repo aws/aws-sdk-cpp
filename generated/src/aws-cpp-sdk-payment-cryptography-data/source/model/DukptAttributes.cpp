@@ -25,10 +25,8 @@ DukptAttributes::DukptAttributes() :
 {
 }
 
-DukptAttributes::DukptAttributes(JsonView jsonValue) : 
-    m_dukptDerivationType(DukptDerivationType::NOT_SET),
-    m_dukptDerivationTypeHasBeenSet(false),
-    m_keySerialNumberHasBeenSet(false)
+DukptAttributes::DukptAttributes(JsonView jsonValue)
+  : DukptAttributes()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ AtigData::AtigData() :
 {
 }
 
-AtigData::AtigData(JsonView jsonValue) : 
-    m_firstSeenHasBeenSet(false),
-    m_lastSeenHasBeenSet(false),
-    m_targetsHasBeenSet(false),
-    m_ttpsHasBeenSet(false)
+AtigData::AtigData(JsonView jsonValue)
+  : AtigData()
 {
   *this = jsonValue;
 }

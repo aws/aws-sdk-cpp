@@ -30,15 +30,8 @@ AudienceModelSummary::AudienceModelSummary() :
 {
 }
 
-AudienceModelSummary::AudienceModelSummary(JsonView jsonValue) : 
-    m_audienceModelArnHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_status(AudienceModelStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_trainingDatasetArnHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
+AudienceModelSummary::AudienceModelSummary(JsonView jsonValue)
+  : AudienceModelSummary()
 {
   *this = jsonValue;
 }

@@ -30,15 +30,8 @@ DatasetImageStats::DatasetImageStats() :
 {
 }
 
-DatasetImageStats::DatasetImageStats(JsonView jsonValue) : 
-    m_total(0),
-    m_totalHasBeenSet(false),
-    m_labeled(0),
-    m_labeledHasBeenSet(false),
-    m_normal(0),
-    m_normalHasBeenSet(false),
-    m_anomaly(0),
-    m_anomalyHasBeenSet(false)
+DatasetImageStats::DatasetImageStats(JsonView jsonValue)
+  : DatasetImageStats()
 {
   *this = jsonValue;
 }

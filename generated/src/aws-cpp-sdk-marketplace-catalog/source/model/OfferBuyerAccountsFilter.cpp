@@ -23,8 +23,8 @@ OfferBuyerAccountsFilter::OfferBuyerAccountsFilter() :
 {
 }
 
-OfferBuyerAccountsFilter::OfferBuyerAccountsFilter(JsonView jsonValue) : 
-    m_wildCardValueHasBeenSet(false)
+OfferBuyerAccountsFilter::OfferBuyerAccountsFilter(JsonView jsonValue)
+  : OfferBuyerAccountsFilter()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ SOAChange::SOAChange() :
 {
 }
 
-SOAChange::SOAChange(JsonView jsonValue) : 
-    m_tTL(0),
-    m_tTLHasBeenSet(false)
+SOAChange::SOAChange(JsonView jsonValue)
+  : SOAChange()
 {
   *this = jsonValue;
 }

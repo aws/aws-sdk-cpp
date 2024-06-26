@@ -32,17 +32,8 @@ RecordingConfiguration::RecordingConfiguration() :
 {
 }
 
-RecordingConfiguration::RecordingConfiguration(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_destinationConfigurationHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_recordingReconnectWindowSeconds(0),
-    m_recordingReconnectWindowSecondsHasBeenSet(false),
-    m_renditionConfigurationHasBeenSet(false),
-    m_state(RecordingConfigurationState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_thumbnailConfigurationHasBeenSet(false)
+RecordingConfiguration::RecordingConfiguration(JsonView jsonValue)
+  : RecordingConfiguration()
 {
   *this = jsonValue;
 }

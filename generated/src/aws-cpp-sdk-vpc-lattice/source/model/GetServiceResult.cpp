@@ -23,9 +23,8 @@ GetServiceResult::GetServiceResult() :
 {
 }
 
-GetServiceResult::GetServiceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_authType(AuthType::NOT_SET),
-    m_status(ServiceStatus::NOT_SET)
+GetServiceResult::GetServiceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetServiceResult()
 {
   *this = result;
 }

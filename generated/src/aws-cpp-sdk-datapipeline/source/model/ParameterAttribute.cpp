@@ -24,9 +24,8 @@ ParameterAttribute::ParameterAttribute() :
 {
 }
 
-ParameterAttribute::ParameterAttribute(JsonView jsonValue) : 
-    m_keyHasBeenSet(false),
-    m_stringValueHasBeenSet(false)
+ParameterAttribute::ParameterAttribute(JsonView jsonValue)
+  : ParameterAttribute()
 {
   *this = jsonValue;
 }

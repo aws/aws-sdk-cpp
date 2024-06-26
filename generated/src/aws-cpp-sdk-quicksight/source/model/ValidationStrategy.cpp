@@ -24,9 +24,8 @@ ValidationStrategy::ValidationStrategy() :
 {
 }
 
-ValidationStrategy::ValidationStrategy(JsonView jsonValue) : 
-    m_mode(ValidationStrategyMode::NOT_SET),
-    m_modeHasBeenSet(false)
+ValidationStrategy::ValidationStrategy(JsonView jsonValue)
+  : ValidationStrategy()
 {
   *this = jsonValue;
 }

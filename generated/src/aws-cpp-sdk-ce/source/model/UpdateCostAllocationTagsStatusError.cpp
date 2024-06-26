@@ -25,10 +25,8 @@ UpdateCostAllocationTagsStatusError::UpdateCostAllocationTagsStatusError() :
 {
 }
 
-UpdateCostAllocationTagsStatusError::UpdateCostAllocationTagsStatusError(JsonView jsonValue) : 
-    m_tagKeyHasBeenSet(false),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+UpdateCostAllocationTagsStatusError::UpdateCostAllocationTagsStatusError(JsonView jsonValue)
+  : UpdateCostAllocationTagsStatusError()
 {
   *this = jsonValue;
 }

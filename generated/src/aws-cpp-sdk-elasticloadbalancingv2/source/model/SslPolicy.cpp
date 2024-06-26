@@ -28,11 +28,8 @@ SslPolicy::SslPolicy() :
 {
 }
 
-SslPolicy::SslPolicy(const XmlNode& xmlNode) : 
-    m_sslProtocolsHasBeenSet(false),
-    m_ciphersHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_supportedLoadBalancerTypesHasBeenSet(false)
+SslPolicy::SslPolicy(const XmlNode& xmlNode)
+  : SslPolicy()
 {
   *this = xmlNode;
 }

@@ -27,12 +27,8 @@ ManagedRuleGroupSummary::ManagedRuleGroupSummary() :
 {
 }
 
-ManagedRuleGroupSummary::ManagedRuleGroupSummary(JsonView jsonValue) : 
-    m_vendorNameHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_versioningSupported(false),
-    m_versioningSupportedHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+ManagedRuleGroupSummary::ManagedRuleGroupSummary(JsonView jsonValue)
+  : ManagedRuleGroupSummary()
 {
   *this = jsonValue;
 }

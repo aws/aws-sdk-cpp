@@ -25,10 +25,8 @@ ApprovalRuleEventMetadata::ApprovalRuleEventMetadata() :
 {
 }
 
-ApprovalRuleEventMetadata::ApprovalRuleEventMetadata(JsonView jsonValue) : 
-    m_approvalRuleNameHasBeenSet(false),
-    m_approvalRuleIdHasBeenSet(false),
-    m_approvalRuleContentHasBeenSet(false)
+ApprovalRuleEventMetadata::ApprovalRuleEventMetadata(JsonView jsonValue)
+  : ApprovalRuleEventMetadata()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ AssetListingItemAdditionalAttributes::AssetListingItemAdditionalAttributes() :
 {
 }
 
-AssetListingItemAdditionalAttributes::AssetListingItemAdditionalAttributes(JsonView jsonValue) : 
-    m_formsHasBeenSet(false),
-    m_latestTimeSeriesDataPointFormsHasBeenSet(false)
+AssetListingItemAdditionalAttributes::AssetListingItemAdditionalAttributes(JsonView jsonValue)
+  : AssetListingItemAdditionalAttributes()
 {
   *this = jsonValue;
 }

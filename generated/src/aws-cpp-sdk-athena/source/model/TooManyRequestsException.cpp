@@ -25,10 +25,8 @@ TooManyRequestsException::TooManyRequestsException() :
 {
 }
 
-TooManyRequestsException::TooManyRequestsException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_reason(ThrottleReason::NOT_SET),
-    m_reasonHasBeenSet(false)
+TooManyRequestsException::TooManyRequestsException(JsonView jsonValue)
+  : TooManyRequestsException()
 {
   *this = jsonValue;
 }

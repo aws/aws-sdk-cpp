@@ -25,10 +25,8 @@ TimeToLiveDescription::TimeToLiveDescription() :
 {
 }
 
-TimeToLiveDescription::TimeToLiveDescription(JsonView jsonValue) : 
-    m_timeToLiveStatus(TimeToLiveStatus::NOT_SET),
-    m_timeToLiveStatusHasBeenSet(false),
-    m_attributeNameHasBeenSet(false)
+TimeToLiveDescription::TimeToLiveDescription(JsonView jsonValue)
+  : TimeToLiveDescription()
 {
   *this = jsonValue;
 }

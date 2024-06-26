@@ -24,9 +24,8 @@ CodeArtifacts::CodeArtifacts() :
 {
 }
 
-CodeArtifacts::CodeArtifacts(JsonView jsonValue) : 
-    m_sourceCodeArtifactsObjectKeyHasBeenSet(false),
-    m_buildArtifactsObjectKeyHasBeenSet(false)
+CodeArtifacts::CodeArtifacts(JsonView jsonValue)
+  : CodeArtifacts()
 {
   *this = jsonValue;
 }

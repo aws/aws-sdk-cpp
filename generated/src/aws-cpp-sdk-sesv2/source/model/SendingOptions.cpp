@@ -24,9 +24,8 @@ SendingOptions::SendingOptions() :
 {
 }
 
-SendingOptions::SendingOptions(JsonView jsonValue) : 
-    m_sendingEnabled(false),
-    m_sendingEnabledHasBeenSet(false)
+SendingOptions::SendingOptions(JsonView jsonValue)
+  : SendingOptions()
 {
   *this = jsonValue;
 }

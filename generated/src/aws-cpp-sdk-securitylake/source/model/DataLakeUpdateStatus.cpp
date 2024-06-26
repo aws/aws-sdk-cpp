@@ -26,11 +26,8 @@ DataLakeUpdateStatus::DataLakeUpdateStatus() :
 {
 }
 
-DataLakeUpdateStatus::DataLakeUpdateStatus(JsonView jsonValue) : 
-    m_exceptionHasBeenSet(false),
-    m_requestIdHasBeenSet(false),
-    m_status(DataLakeStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+DataLakeUpdateStatus::DataLakeUpdateStatus(JsonView jsonValue)
+  : DataLakeUpdateStatus()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ FolderMember::FolderMember() :
 {
 }
 
-FolderMember::FolderMember(JsonView jsonValue) : 
-    m_memberIdHasBeenSet(false),
-    m_memberType(MemberType::NOT_SET),
-    m_memberTypeHasBeenSet(false)
+FolderMember::FolderMember(JsonView jsonValue)
+  : FolderMember()
 {
   *this = jsonValue;
 }

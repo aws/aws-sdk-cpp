@@ -29,14 +29,8 @@ CloudComponentStatus::CloudComponentStatus() :
 {
 }
 
-CloudComponentStatus::CloudComponentStatus(JsonView jsonValue) : 
-    m_componentState(CloudComponentState::NOT_SET),
-    m_componentStateHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_errorsHasBeenSet(false),
-    m_vendorGuidance(VendorGuidance::NOT_SET),
-    m_vendorGuidanceHasBeenSet(false),
-    m_vendorGuidanceMessageHasBeenSet(false)
+CloudComponentStatus::CloudComponentStatus(JsonView jsonValue)
+  : CloudComponentStatus()
 {
   *this = jsonValue;
 }

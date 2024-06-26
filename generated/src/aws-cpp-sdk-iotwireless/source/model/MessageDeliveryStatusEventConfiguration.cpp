@@ -25,10 +25,8 @@ MessageDeliveryStatusEventConfiguration::MessageDeliveryStatusEventConfiguration
 {
 }
 
-MessageDeliveryStatusEventConfiguration::MessageDeliveryStatusEventConfiguration(JsonView jsonValue) : 
-    m_sidewalkHasBeenSet(false),
-    m_wirelessDeviceIdEventTopic(EventNotificationTopicStatus::NOT_SET),
-    m_wirelessDeviceIdEventTopicHasBeenSet(false)
+MessageDeliveryStatusEventConfiguration::MessageDeliveryStatusEventConfiguration(JsonView jsonValue)
+  : MessageDeliveryStatusEventConfiguration()
 {
   *this = jsonValue;
 }

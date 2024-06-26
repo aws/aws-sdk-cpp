@@ -30,15 +30,8 @@ SSMValidationParameters::SSMValidationParameters() :
 {
 }
 
-SSMValidationParameters::SSMValidationParameters(JsonView jsonValue) : 
-    m_sourceHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_scriptType(ScriptType::NOT_SET),
-    m_scriptTypeHasBeenSet(false),
-    m_commandHasBeenSet(false),
-    m_executionTimeoutSeconds(0),
-    m_executionTimeoutSecondsHasBeenSet(false),
-    m_outputS3BucketNameHasBeenSet(false)
+SSMValidationParameters::SSMValidationParameters(JsonView jsonValue)
+  : SSMValidationParameters()
 {
   *this = jsonValue;
 }

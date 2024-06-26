@@ -29,14 +29,8 @@ ProvisioningArtifactParameter::ProvisioningArtifactParameter() :
 {
 }
 
-ProvisioningArtifactParameter::ProvisioningArtifactParameter(JsonView jsonValue) : 
-    m_parameterKeyHasBeenSet(false),
-    m_defaultValueHasBeenSet(false),
-    m_parameterTypeHasBeenSet(false),
-    m_isNoEcho(false),
-    m_isNoEchoHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_parameterConstraintsHasBeenSet(false)
+ProvisioningArtifactParameter::ProvisioningArtifactParameter(JsonView jsonValue)
+  : ProvisioningArtifactParameter()
 {
   *this = jsonValue;
 }

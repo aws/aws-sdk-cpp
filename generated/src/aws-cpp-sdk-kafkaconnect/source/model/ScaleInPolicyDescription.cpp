@@ -24,9 +24,8 @@ ScaleInPolicyDescription::ScaleInPolicyDescription() :
 {
 }
 
-ScaleInPolicyDescription::ScaleInPolicyDescription(JsonView jsonValue) : 
-    m_cpuUtilizationPercentage(0),
-    m_cpuUtilizationPercentageHasBeenSet(false)
+ScaleInPolicyDescription::ScaleInPolicyDescription(JsonView jsonValue)
+  : ScaleInPolicyDescription()
 {
   *this = jsonValue;
 }

@@ -30,15 +30,8 @@ Header::Header() :
 {
 }
 
-Header::Header(JsonView jsonValue) : 
-    m_protocol(StatefulRuleProtocol::NOT_SET),
-    m_protocolHasBeenSet(false),
-    m_sourceHasBeenSet(false),
-    m_sourcePortHasBeenSet(false),
-    m_direction(StatefulRuleDirection::NOT_SET),
-    m_directionHasBeenSet(false),
-    m_destinationHasBeenSet(false),
-    m_destinationPortHasBeenSet(false)
+Header::Header(JsonView jsonValue)
+  : Header()
 {
   *this = jsonValue;
 }

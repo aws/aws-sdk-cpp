@@ -25,10 +25,8 @@ DatasetEntityRecognizerDocuments::DatasetEntityRecognizerDocuments() :
 {
 }
 
-DatasetEntityRecognizerDocuments::DatasetEntityRecognizerDocuments(JsonView jsonValue) : 
-    m_s3UriHasBeenSet(false),
-    m_inputFormat(InputFormat::NOT_SET),
-    m_inputFormatHasBeenSet(false)
+DatasetEntityRecognizerDocuments::DatasetEntityRecognizerDocuments(JsonView jsonValue)
+  : DatasetEntityRecognizerDocuments()
 {
   *this = jsonValue;
 }

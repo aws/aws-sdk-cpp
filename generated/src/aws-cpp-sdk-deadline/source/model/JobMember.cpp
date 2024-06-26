@@ -31,16 +31,8 @@ JobMember::JobMember() :
 {
 }
 
-JobMember::JobMember(JsonView jsonValue) : 
-    m_farmIdHasBeenSet(false),
-    m_identityStoreIdHasBeenSet(false),
-    m_jobIdHasBeenSet(false),
-    m_membershipLevel(MembershipLevel::NOT_SET),
-    m_membershipLevelHasBeenSet(false),
-    m_principalIdHasBeenSet(false),
-    m_principalType(PrincipalType::NOT_SET),
-    m_principalTypeHasBeenSet(false),
-    m_queueIdHasBeenSet(false)
+JobMember::JobMember(JsonView jsonValue)
+  : JobMember()
 {
   *this = jsonValue;
 }

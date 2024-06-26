@@ -28,11 +28,8 @@ VCpuCountRangeRequest::VCpuCountRangeRequest() :
 {
 }
 
-VCpuCountRangeRequest::VCpuCountRangeRequest(const XmlNode& xmlNode) : 
-    m_min(0),
-    m_minHasBeenSet(false),
-    m_max(0),
-    m_maxHasBeenSet(false)
+VCpuCountRangeRequest::VCpuCountRangeRequest(const XmlNode& xmlNode)
+  : VCpuCountRangeRequest()
 {
   *this = xmlNode;
 }

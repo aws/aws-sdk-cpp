@@ -24,9 +24,8 @@ ComputeType::ComputeType() :
 {
 }
 
-ComputeType::ComputeType(JsonView jsonValue) : 
-    m_name(Compute::NOT_SET),
-    m_nameHasBeenSet(false)
+ComputeType::ComputeType(JsonView jsonValue)
+  : ComputeType()
 {
   *this = jsonValue;
 }

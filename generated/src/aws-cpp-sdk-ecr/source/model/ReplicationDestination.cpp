@@ -24,9 +24,8 @@ ReplicationDestination::ReplicationDestination() :
 {
 }
 
-ReplicationDestination::ReplicationDestination(JsonView jsonValue) : 
-    m_regionHasBeenSet(false),
-    m_registryIdHasBeenSet(false)
+ReplicationDestination::ReplicationDestination(JsonView jsonValue)
+  : ReplicationDestination()
 {
   *this = jsonValue;
 }

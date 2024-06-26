@@ -25,10 +25,8 @@ DateTimeDefaultValues::DateTimeDefaultValues() :
 {
 }
 
-DateTimeDefaultValues::DateTimeDefaultValues(JsonView jsonValue) : 
-    m_dynamicValueHasBeenSet(false),
-    m_staticValuesHasBeenSet(false),
-    m_rollingDateHasBeenSet(false)
+DateTimeDefaultValues::DateTimeDefaultValues(JsonView jsonValue)
+  : DateTimeDefaultValues()
 {
   *this = jsonValue;
 }

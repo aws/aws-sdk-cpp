@@ -23,8 +23,8 @@ DataRetrievalPolicy::DataRetrievalPolicy() :
 {
 }
 
-DataRetrievalPolicy::DataRetrievalPolicy(JsonView jsonValue) : 
-    m_rulesHasBeenSet(false)
+DataRetrievalPolicy::DataRetrievalPolicy(JsonView jsonValue)
+  : DataRetrievalPolicy()
 {
   *this = jsonValue;
 }

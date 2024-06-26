@@ -23,9 +23,8 @@ GetMailboxDetailsResult::GetMailboxDetailsResult() :
 {
 }
 
-GetMailboxDetailsResult::GetMailboxDetailsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_mailboxQuota(0),
-    m_mailboxSize(0.0)
+GetMailboxDetailsResult::GetMailboxDetailsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetMailboxDetailsResult()
 {
   *this = result;
 }

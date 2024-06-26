@@ -24,9 +24,8 @@ TestSetTurnResult::TestSetTurnResult() :
 {
 }
 
-TestSetTurnResult::TestSetTurnResult(JsonView jsonValue) : 
-    m_agentHasBeenSet(false),
-    m_userHasBeenSet(false)
+TestSetTurnResult::TestSetTurnResult(JsonView jsonValue)
+  : TestSetTurnResult()
 {
   *this = jsonValue;
 }

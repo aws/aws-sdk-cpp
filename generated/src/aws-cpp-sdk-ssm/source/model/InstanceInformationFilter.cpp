@@ -25,10 +25,8 @@ InstanceInformationFilter::InstanceInformationFilter() :
 {
 }
 
-InstanceInformationFilter::InstanceInformationFilter(JsonView jsonValue) : 
-    m_key(InstanceInformationFilterKey::NOT_SET),
-    m_keyHasBeenSet(false),
-    m_valueSetHasBeenSet(false)
+InstanceInformationFilter::InstanceInformationFilter(JsonView jsonValue)
+  : InstanceInformationFilter()
 {
   *this = jsonValue;
 }

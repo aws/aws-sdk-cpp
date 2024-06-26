@@ -33,18 +33,8 @@ Vocabulary::Vocabulary() :
 {
 }
 
-Vocabulary::Vocabulary(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_languageCode(VocabularyLanguageCode::NOT_SET),
-    m_languageCodeHasBeenSet(false),
-    m_state(VocabularyState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_failureReasonHasBeenSet(false),
-    m_contentHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+Vocabulary::Vocabulary(JsonView jsonValue)
+  : Vocabulary()
 {
   *this = jsonValue;
 }

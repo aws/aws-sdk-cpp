@@ -25,9 +25,8 @@ PayloadPart::PayloadPart() :
 {
 }
 
-PayloadPart::PayloadPart(JsonView jsonValue) : 
-    m_attributionHasBeenSet(false),
-    m_bytesHasBeenSet(false)
+PayloadPart::PayloadPart(JsonView jsonValue)
+  : PayloadPart()
 {
   *this = jsonValue;
 }

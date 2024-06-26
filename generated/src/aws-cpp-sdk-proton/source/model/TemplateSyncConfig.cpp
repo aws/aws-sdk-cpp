@@ -30,15 +30,8 @@ TemplateSyncConfig::TemplateSyncConfig() :
 {
 }
 
-TemplateSyncConfig::TemplateSyncConfig(JsonView jsonValue) : 
-    m_branchHasBeenSet(false),
-    m_repositoryNameHasBeenSet(false),
-    m_repositoryProvider(RepositoryProvider::NOT_SET),
-    m_repositoryProviderHasBeenSet(false),
-    m_subdirectoryHasBeenSet(false),
-    m_templateNameHasBeenSet(false),
-    m_templateType(TemplateType::NOT_SET),
-    m_templateTypeHasBeenSet(false)
+TemplateSyncConfig::TemplateSyncConfig(JsonView jsonValue)
+  : TemplateSyncConfig()
 {
   *this = jsonValue;
 }

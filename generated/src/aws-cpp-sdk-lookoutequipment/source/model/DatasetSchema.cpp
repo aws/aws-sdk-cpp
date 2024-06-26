@@ -23,8 +23,8 @@ DatasetSchema::DatasetSchema() :
 {
 }
 
-DatasetSchema::DatasetSchema(JsonView jsonValue) : 
-    m_inlineDataSchemaHasBeenSet(false)
+DatasetSchema::DatasetSchema(JsonView jsonValue)
+  : DatasetSchema()
 {
   *this = jsonValue;
 }

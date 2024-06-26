@@ -25,10 +25,8 @@ BotAliasTestExecutionTarget::BotAliasTestExecutionTarget() :
 {
 }
 
-BotAliasTestExecutionTarget::BotAliasTestExecutionTarget(JsonView jsonValue) : 
-    m_botIdHasBeenSet(false),
-    m_botAliasIdHasBeenSet(false),
-    m_localeIdHasBeenSet(false)
+BotAliasTestExecutionTarget::BotAliasTestExecutionTarget(JsonView jsonValue)
+  : BotAliasTestExecutionTarget()
 {
   *this = jsonValue;
 }

@@ -26,12 +26,8 @@ DescribeOfferingResult::DescribeOfferingResult() :
 {
 }
 
-DescribeOfferingResult::DescribeOfferingResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_duration(0),
-    m_durationUnits(OfferingDurationUnits::NOT_SET),
-    m_fixedPrice(0.0),
-    m_offeringType(OfferingType::NOT_SET),
-    m_usagePrice(0.0)
+DescribeOfferingResult::DescribeOfferingResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeOfferingResult()
 {
   *this = result;
 }

@@ -25,10 +25,8 @@ StepAction::StepAction() :
 {
 }
 
-StepAction::StepAction(JsonView jsonValue) : 
-    m_resourceActionHasBeenSet(false),
-    m_mainframeActionHasBeenSet(false),
-    m_compareActionHasBeenSet(false)
+StepAction::StepAction(JsonView jsonValue)
+  : StepAction()
 {
   *this = jsonValue;
 }

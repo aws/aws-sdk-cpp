@@ -30,15 +30,8 @@ NotificationSetting::NotificationSetting() :
 {
 }
 
-NotificationSetting::NotificationSetting(JsonView jsonValue) : 
-    m_channel(NotificationChannel::NOT_SET),
-    m_channelHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_event(NotificationEvent::NOT_SET),
-    m_eventHasBeenSet(false),
-    m_threshold(0),
-    m_thresholdHasBeenSet(false)
+NotificationSetting::NotificationSetting(JsonView jsonValue)
+  : NotificationSetting()
 {
   *this = jsonValue;
 }

@@ -29,14 +29,8 @@ AssetBundleImportJobSummary::AssetBundleImportJobSummary() :
 {
 }
 
-AssetBundleImportJobSummary::AssetBundleImportJobSummary(JsonView jsonValue) : 
-    m_jobStatus(AssetBundleImportJobStatus::NOT_SET),
-    m_jobStatusHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_assetBundleImportJobIdHasBeenSet(false),
-    m_failureAction(AssetBundleImportFailureAction::NOT_SET),
-    m_failureActionHasBeenSet(false)
+AssetBundleImportJobSummary::AssetBundleImportJobSummary(JsonView jsonValue)
+  : AssetBundleImportJobSummary()
 {
   *this = jsonValue;
 }

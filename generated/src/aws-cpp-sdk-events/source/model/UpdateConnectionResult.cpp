@@ -22,8 +22,8 @@ UpdateConnectionResult::UpdateConnectionResult() :
 {
 }
 
-UpdateConnectionResult::UpdateConnectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_connectionState(ConnectionState::NOT_SET)
+UpdateConnectionResult::UpdateConnectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateConnectionResult()
 {
   *this = result;
 }

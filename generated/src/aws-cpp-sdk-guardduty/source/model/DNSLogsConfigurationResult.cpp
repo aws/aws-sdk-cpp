@@ -24,9 +24,8 @@ DNSLogsConfigurationResult::DNSLogsConfigurationResult() :
 {
 }
 
-DNSLogsConfigurationResult::DNSLogsConfigurationResult(JsonView jsonValue) : 
-    m_status(DataSourceStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+DNSLogsConfigurationResult::DNSLogsConfigurationResult(JsonView jsonValue)
+  : DNSLogsConfigurationResult()
 {
   *this = jsonValue;
 }

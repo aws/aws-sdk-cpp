@@ -26,11 +26,8 @@ BucketStatisticsBySensitivity::BucketStatisticsBySensitivity() :
 {
 }
 
-BucketStatisticsBySensitivity::BucketStatisticsBySensitivity(JsonView jsonValue) : 
-    m_classificationErrorHasBeenSet(false),
-    m_notClassifiedHasBeenSet(false),
-    m_notSensitiveHasBeenSet(false),
-    m_sensitiveHasBeenSet(false)
+BucketStatisticsBySensitivity::BucketStatisticsBySensitivity(JsonView jsonValue)
+  : BucketStatisticsBySensitivity()
 {
   *this = jsonValue;
 }

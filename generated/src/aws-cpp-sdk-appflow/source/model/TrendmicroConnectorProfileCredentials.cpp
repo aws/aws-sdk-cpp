@@ -23,8 +23,8 @@ TrendmicroConnectorProfileCredentials::TrendmicroConnectorProfileCredentials() :
 {
 }
 
-TrendmicroConnectorProfileCredentials::TrendmicroConnectorProfileCredentials(JsonView jsonValue) : 
-    m_apiSecretKeyHasBeenSet(false)
+TrendmicroConnectorProfileCredentials::TrendmicroConnectorProfileCredentials(JsonView jsonValue)
+  : TrendmicroConnectorProfileCredentials()
 {
   *this = jsonValue;
 }

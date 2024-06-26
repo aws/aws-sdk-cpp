@@ -25,10 +25,8 @@ NetworkFirewallPolicyModifiedViolation::NetworkFirewallPolicyModifiedViolation()
 {
 }
 
-NetworkFirewallPolicyModifiedViolation::NetworkFirewallPolicyModifiedViolation(JsonView jsonValue) : 
-    m_violationTargetHasBeenSet(false),
-    m_currentPolicyDescriptionHasBeenSet(false),
-    m_expectedPolicyDescriptionHasBeenSet(false)
+NetworkFirewallPolicyModifiedViolation::NetworkFirewallPolicyModifiedViolation(JsonView jsonValue)
+  : NetworkFirewallPolicyModifiedViolation()
 {
   *this = jsonValue;
 }

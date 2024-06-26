@@ -25,10 +25,8 @@ LifecycleExecutionResourceAction::LifecycleExecutionResourceAction() :
 {
 }
 
-LifecycleExecutionResourceAction::LifecycleExecutionResourceAction(JsonView jsonValue) : 
-    m_name(LifecycleExecutionResourceActionName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_reasonHasBeenSet(false)
+LifecycleExecutionResourceAction::LifecycleExecutionResourceAction(JsonView jsonValue)
+  : LifecycleExecutionResourceAction()
 {
   *this = jsonValue;
 }

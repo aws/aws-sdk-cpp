@@ -24,9 +24,8 @@ DirectoryAlreadySharedException::DirectoryAlreadySharedException() :
 {
 }
 
-DirectoryAlreadySharedException::DirectoryAlreadySharedException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
+DirectoryAlreadySharedException::DirectoryAlreadySharedException(JsonView jsonValue)
+  : DirectoryAlreadySharedException()
 {
   *this = jsonValue;
 }

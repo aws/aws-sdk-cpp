@@ -33,18 +33,8 @@ BatchDeleteConfigurationTask::BatchDeleteConfigurationTask() :
 {
 }
 
-BatchDeleteConfigurationTask::BatchDeleteConfigurationTask(JsonView jsonValue) : 
-    m_taskIdHasBeenSet(false),
-    m_status(BatchDeleteConfigurationTaskStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_configurationType(DeletionConfigurationItemType::NOT_SET),
-    m_configurationTypeHasBeenSet(false),
-    m_requestedConfigurationsHasBeenSet(false),
-    m_deletedConfigurationsHasBeenSet(false),
-    m_failedConfigurationsHasBeenSet(false),
-    m_deletionWarningsHasBeenSet(false)
+BatchDeleteConfigurationTask::BatchDeleteConfigurationTask(JsonView jsonValue)
+  : BatchDeleteConfigurationTask()
 {
   *this = jsonValue;
 }

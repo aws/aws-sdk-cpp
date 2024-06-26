@@ -24,9 +24,8 @@ AudioTrackSelection::AudioTrackSelection() :
 {
 }
 
-AudioTrackSelection::AudioTrackSelection(JsonView jsonValue) : 
-    m_tracksHasBeenSet(false),
-    m_dolbyEDecodeHasBeenSet(false)
+AudioTrackSelection::AudioTrackSelection(JsonView jsonValue)
+  : AudioTrackSelection()
 {
   *this = jsonValue;
 }

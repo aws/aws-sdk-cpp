@@ -22,8 +22,8 @@ DeleteLicenseResult::DeleteLicenseResult() :
 {
 }
 
-DeleteLicenseResult::DeleteLicenseResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(LicenseDeletionStatus::NOT_SET)
+DeleteLicenseResult::DeleteLicenseResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeleteLicenseResult()
 {
   *this = result;
 }

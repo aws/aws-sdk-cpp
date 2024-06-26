@@ -25,10 +25,8 @@ ContainerServiceECRImagePullerRole::ContainerServiceECRImagePullerRole() :
 {
 }
 
-ContainerServiceECRImagePullerRole::ContainerServiceECRImagePullerRole(JsonView jsonValue) : 
-    m_isActive(false),
-    m_isActiveHasBeenSet(false),
-    m_principalArnHasBeenSet(false)
+ContainerServiceECRImagePullerRole::ContainerServiceECRImagePullerRole(JsonView jsonValue)
+  : ContainerServiceECRImagePullerRole()
 {
   *this = jsonValue;
 }

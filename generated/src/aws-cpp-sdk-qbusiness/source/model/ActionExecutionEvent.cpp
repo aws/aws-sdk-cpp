@@ -25,10 +25,8 @@ ActionExecutionEvent::ActionExecutionEvent() :
 {
 }
 
-ActionExecutionEvent::ActionExecutionEvent(JsonView jsonValue) : 
-    m_pluginIdHasBeenSet(false),
-    m_payloadHasBeenSet(false),
-    m_payloadFieldNameSeparatorHasBeenSet(false)
+ActionExecutionEvent::ActionExecutionEvent(JsonView jsonValue)
+  : ActionExecutionEvent()
 {
   *this = jsonValue;
 }

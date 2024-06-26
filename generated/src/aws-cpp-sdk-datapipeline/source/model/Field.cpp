@@ -25,10 +25,8 @@ Field::Field() :
 {
 }
 
-Field::Field(JsonView jsonValue) : 
-    m_keyHasBeenSet(false),
-    m_stringValueHasBeenSet(false),
-    m_refValueHasBeenSet(false)
+Field::Field(JsonView jsonValue)
+  : Field()
 {
   *this = jsonValue;
 }

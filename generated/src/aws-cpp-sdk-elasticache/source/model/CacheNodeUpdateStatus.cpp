@@ -34,17 +34,8 @@ CacheNodeUpdateStatus::CacheNodeUpdateStatus() :
 {
 }
 
-CacheNodeUpdateStatus::CacheNodeUpdateStatus(const XmlNode& xmlNode) : 
-    m_cacheNodeIdHasBeenSet(false),
-    m_nodeUpdateStatus(NodeUpdateStatus::NOT_SET),
-    m_nodeUpdateStatusHasBeenSet(false),
-    m_nodeDeletionDateHasBeenSet(false),
-    m_nodeUpdateStartDateHasBeenSet(false),
-    m_nodeUpdateEndDateHasBeenSet(false),
-    m_nodeUpdateInitiatedBy(NodeUpdateInitiatedBy::NOT_SET),
-    m_nodeUpdateInitiatedByHasBeenSet(false),
-    m_nodeUpdateInitiatedDateHasBeenSet(false),
-    m_nodeUpdateStatusModifiedDateHasBeenSet(false)
+CacheNodeUpdateStatus::CacheNodeUpdateStatus(const XmlNode& xmlNode)
+  : CacheNodeUpdateStatus()
 {
   *this = xmlNode;
 }

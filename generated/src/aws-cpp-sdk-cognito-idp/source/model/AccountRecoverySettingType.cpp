@@ -23,8 +23,8 @@ AccountRecoverySettingType::AccountRecoverySettingType() :
 {
 }
 
-AccountRecoverySettingType::AccountRecoverySettingType(JsonView jsonValue) : 
-    m_recoveryMechanismsHasBeenSet(false)
+AccountRecoverySettingType::AccountRecoverySettingType(JsonView jsonValue)
+  : AccountRecoverySettingType()
 {
   *this = jsonValue;
 }

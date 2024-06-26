@@ -35,18 +35,8 @@ RestoreStatus::RestoreStatus() :
 {
 }
 
-RestoreStatus::RestoreStatus(const XmlNode& xmlNode) : 
-    m_statusHasBeenSet(false),
-    m_currentRestoreRateInMegaBytesPerSecond(0.0),
-    m_currentRestoreRateInMegaBytesPerSecondHasBeenSet(false),
-    m_snapshotSizeInMegaBytes(0),
-    m_snapshotSizeInMegaBytesHasBeenSet(false),
-    m_progressInMegaBytes(0),
-    m_progressInMegaBytesHasBeenSet(false),
-    m_elapsedTimeInSeconds(0),
-    m_elapsedTimeInSecondsHasBeenSet(false),
-    m_estimatedTimeToCompletionInSeconds(0),
-    m_estimatedTimeToCompletionInSecondsHasBeenSet(false)
+RestoreStatus::RestoreStatus(const XmlNode& xmlNode)
+  : RestoreStatus()
 {
   *this = xmlNode;
 }

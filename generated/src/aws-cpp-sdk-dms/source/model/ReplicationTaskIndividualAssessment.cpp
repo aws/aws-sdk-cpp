@@ -27,12 +27,8 @@ ReplicationTaskIndividualAssessment::ReplicationTaskIndividualAssessment() :
 {
 }
 
-ReplicationTaskIndividualAssessment::ReplicationTaskIndividualAssessment(JsonView jsonValue) : 
-    m_replicationTaskIndividualAssessmentArnHasBeenSet(false),
-    m_replicationTaskAssessmentRunArnHasBeenSet(false),
-    m_individualAssessmentNameHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_replicationTaskIndividualAssessmentStartDateHasBeenSet(false)
+ReplicationTaskIndividualAssessment::ReplicationTaskIndividualAssessment(JsonView jsonValue)
+  : ReplicationTaskIndividualAssessment()
 {
   *this = jsonValue;
 }

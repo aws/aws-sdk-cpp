@@ -32,15 +32,8 @@ AccessPoint::AccessPoint() :
 {
 }
 
-AccessPoint::AccessPoint(const XmlNode& xmlNode) : 
-    m_nameHasBeenSet(false),
-    m_networkOrigin(NetworkOrigin::NOT_SET),
-    m_networkOriginHasBeenSet(false),
-    m_vpcConfigurationHasBeenSet(false),
-    m_bucketHasBeenSet(false),
-    m_accessPointArnHasBeenSet(false),
-    m_aliasHasBeenSet(false),
-    m_bucketAccountIdHasBeenSet(false)
+AccessPoint::AccessPoint(const XmlNode& xmlNode)
+  : AccessPoint()
 {
   *this = xmlNode;
 }

@@ -28,13 +28,8 @@ SourceFieldProperties::SourceFieldProperties() :
 {
 }
 
-SourceFieldProperties::SourceFieldProperties(JsonView jsonValue) : 
-    m_isRetrievable(false),
-    m_isRetrievableHasBeenSet(false),
-    m_isQueryable(false),
-    m_isQueryableHasBeenSet(false),
-    m_isTimestampFieldForIncrementalQueries(false),
-    m_isTimestampFieldForIncrementalQueriesHasBeenSet(false)
+SourceFieldProperties::SourceFieldProperties(JsonView jsonValue)
+  : SourceFieldProperties()
 {
   *this = jsonValue;
 }

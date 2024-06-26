@@ -25,10 +25,8 @@ ChannelMessageStatusStructure::ChannelMessageStatusStructure() :
 {
 }
 
-ChannelMessageStatusStructure::ChannelMessageStatusStructure(JsonView jsonValue) : 
-    m_value(ChannelMessageStatus::NOT_SET),
-    m_valueHasBeenSet(false),
-    m_detailHasBeenSet(false)
+ChannelMessageStatusStructure::ChannelMessageStatusStructure(JsonView jsonValue)
+  : ChannelMessageStatusStructure()
 {
   *this = jsonValue;
 }

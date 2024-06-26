@@ -43,28 +43,8 @@ Cluster::Cluster() :
 {
 }
 
-Cluster::Cluster(JsonView jsonValue) : 
-    m_clusterNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_clusterArnHasBeenSet(false),
-    m_totalNodes(0),
-    m_totalNodesHasBeenSet(false),
-    m_activeNodes(0),
-    m_activeNodesHasBeenSet(false),
-    m_nodeTypeHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_clusterDiscoveryEndpointHasBeenSet(false),
-    m_nodeIdsToRemoveHasBeenSet(false),
-    m_nodesHasBeenSet(false),
-    m_preferredMaintenanceWindowHasBeenSet(false),
-    m_notificationConfigurationHasBeenSet(false),
-    m_subnetGroupHasBeenSet(false),
-    m_securityGroupsHasBeenSet(false),
-    m_iamRoleArnHasBeenSet(false),
-    m_parameterGroupHasBeenSet(false),
-    m_sSEDescriptionHasBeenSet(false),
-    m_clusterEndpointEncryptionType(ClusterEndpointEncryptionType::NOT_SET),
-    m_clusterEndpointEncryptionTypeHasBeenSet(false)
+Cluster::Cluster(JsonView jsonValue)
+  : Cluster()
 {
   *this = jsonValue;
 }

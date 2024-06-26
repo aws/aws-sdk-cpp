@@ -28,12 +28,8 @@ CanaryCodeInput::CanaryCodeInput() :
 {
 }
 
-CanaryCodeInput::CanaryCodeInput(JsonView jsonValue) : 
-    m_s3BucketHasBeenSet(false),
-    m_s3KeyHasBeenSet(false),
-    m_s3VersionHasBeenSet(false),
-    m_zipFileHasBeenSet(false),
-    m_handlerHasBeenSet(false)
+CanaryCodeInput::CanaryCodeInput(JsonView jsonValue)
+  : CanaryCodeInput()
 {
   *this = jsonValue;
 }

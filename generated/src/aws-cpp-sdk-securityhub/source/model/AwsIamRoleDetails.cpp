@@ -33,18 +33,8 @@ AwsIamRoleDetails::AwsIamRoleDetails() :
 {
 }
 
-AwsIamRoleDetails::AwsIamRoleDetails(JsonView jsonValue) : 
-    m_assumeRolePolicyDocumentHasBeenSet(false),
-    m_attachedManagedPoliciesHasBeenSet(false),
-    m_createDateHasBeenSet(false),
-    m_instanceProfileListHasBeenSet(false),
-    m_permissionsBoundaryHasBeenSet(false),
-    m_roleIdHasBeenSet(false),
-    m_roleNameHasBeenSet(false),
-    m_rolePolicyListHasBeenSet(false),
-    m_maxSessionDuration(0),
-    m_maxSessionDurationHasBeenSet(false),
-    m_pathHasBeenSet(false)
+AwsIamRoleDetails::AwsIamRoleDetails(JsonView jsonValue)
+  : AwsIamRoleDetails()
 {
   *this = jsonValue;
 }

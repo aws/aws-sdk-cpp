@@ -29,14 +29,8 @@ AwsAmazonMqBrokerLogsDetails::AwsAmazonMqBrokerLogsDetails() :
 {
 }
 
-AwsAmazonMqBrokerLogsDetails::AwsAmazonMqBrokerLogsDetails(JsonView jsonValue) : 
-    m_audit(false),
-    m_auditHasBeenSet(false),
-    m_general(false),
-    m_generalHasBeenSet(false),
-    m_auditLogGroupHasBeenSet(false),
-    m_generalLogGroupHasBeenSet(false),
-    m_pendingHasBeenSet(false)
+AwsAmazonMqBrokerLogsDetails::AwsAmazonMqBrokerLogsDetails(JsonView jsonValue)
+  : AwsAmazonMqBrokerLogsDetails()
 {
   *this = jsonValue;
 }

@@ -39,22 +39,8 @@ ResourceChange::ResourceChange() :
 {
 }
 
-ResourceChange::ResourceChange(const XmlNode& xmlNode) : 
-    m_policyAction(PolicyAction::NOT_SET),
-    m_policyActionHasBeenSet(false),
-    m_action(ChangeAction::NOT_SET),
-    m_actionHasBeenSet(false),
-    m_logicalResourceIdHasBeenSet(false),
-    m_physicalResourceIdHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
-    m_replacement(Replacement::NOT_SET),
-    m_replacementHasBeenSet(false),
-    m_scopeHasBeenSet(false),
-    m_detailsHasBeenSet(false),
-    m_changeSetIdHasBeenSet(false),
-    m_moduleInfoHasBeenSet(false),
-    m_beforeContextHasBeenSet(false),
-    m_afterContextHasBeenSet(false)
+ResourceChange::ResourceChange(const XmlNode& xmlNode)
+  : ResourceChange()
 {
   *this = xmlNode;
 }

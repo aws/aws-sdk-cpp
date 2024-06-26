@@ -26,9 +26,8 @@ InstanceCreditSpecificationRequest::InstanceCreditSpecificationRequest() :
 {
 }
 
-InstanceCreditSpecificationRequest::InstanceCreditSpecificationRequest(const XmlNode& xmlNode) : 
-    m_instanceIdHasBeenSet(false),
-    m_cpuCreditsHasBeenSet(false)
+InstanceCreditSpecificationRequest::InstanceCreditSpecificationRequest(const XmlNode& xmlNode)
+  : InstanceCreditSpecificationRequest()
 {
   *this = xmlNode;
 }

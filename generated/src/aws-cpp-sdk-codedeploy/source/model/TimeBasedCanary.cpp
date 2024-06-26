@@ -26,11 +26,8 @@ TimeBasedCanary::TimeBasedCanary() :
 {
 }
 
-TimeBasedCanary::TimeBasedCanary(JsonView jsonValue) : 
-    m_canaryPercentage(0),
-    m_canaryPercentageHasBeenSet(false),
-    m_canaryInterval(0),
-    m_canaryIntervalHasBeenSet(false)
+TimeBasedCanary::TimeBasedCanary(JsonView jsonValue)
+  : TimeBasedCanary()
 {
   *this = jsonValue;
 }

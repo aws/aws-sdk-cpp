@@ -31,16 +31,8 @@ AssetAttributes::AssetAttributes() :
 {
 }
 
-AssetAttributes::AssetAttributes(JsonView jsonValue) : 
-    m_schemaVersion(0),
-    m_schemaVersionHasBeenSet(false),
-    m_agentIdHasBeenSet(false),
-    m_autoScalingGroupHasBeenSet(false),
-    m_amiIdHasBeenSet(false),
-    m_hostnameHasBeenSet(false),
-    m_ipv4AddressesHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_networkInterfacesHasBeenSet(false)
+AssetAttributes::AssetAttributes(JsonView jsonValue)
+  : AssetAttributes()
 {
   *this = jsonValue;
 }

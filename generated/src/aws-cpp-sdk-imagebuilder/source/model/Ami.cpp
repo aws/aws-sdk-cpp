@@ -28,13 +28,8 @@ Ami::Ami() :
 {
 }
 
-Ami::Ami(JsonView jsonValue) : 
-    m_regionHasBeenSet(false),
-    m_imageHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_accountIdHasBeenSet(false)
+Ami::Ami(JsonView jsonValue)
+  : Ami()
 {
   *this = jsonValue;
 }

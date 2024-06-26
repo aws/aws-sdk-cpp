@@ -24,9 +24,8 @@ BatchSummary::BatchSummary() :
 {
 }
 
-BatchSummary::BatchSummary(JsonView jsonValue) : 
-    m_stepInputHasBeenSet(false),
-    m_stepOutputHasBeenSet(false)
+BatchSummary::BatchSummary(JsonView jsonValue)
+  : BatchSummary()
 {
   *this = jsonValue;
 }

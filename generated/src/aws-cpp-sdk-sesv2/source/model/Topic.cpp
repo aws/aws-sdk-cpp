@@ -27,12 +27,8 @@ Topic::Topic() :
 {
 }
 
-Topic::Topic(JsonView jsonValue) : 
-    m_topicNameHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_defaultSubscriptionStatus(SubscriptionStatus::NOT_SET),
-    m_defaultSubscriptionStatusHasBeenSet(false)
+Topic::Topic(JsonView jsonValue)
+  : Topic()
 {
   *this = jsonValue;
 }

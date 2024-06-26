@@ -31,16 +31,8 @@ LifecycleExecutionResource::LifecycleExecutionResource() :
 {
 }
 
-LifecycleExecutionResource::LifecycleExecutionResource(JsonView jsonValue) : 
-    m_accountIdHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_actionHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_snapshotsHasBeenSet(false),
-    m_imageUrisHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
+LifecycleExecutionResource::LifecycleExecutionResource(JsonView jsonValue)
+  : LifecycleExecutionResource()
 {
   *this = jsonValue;
 }

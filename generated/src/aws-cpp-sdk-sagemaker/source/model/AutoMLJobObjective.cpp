@@ -24,9 +24,8 @@ AutoMLJobObjective::AutoMLJobObjective() :
 {
 }
 
-AutoMLJobObjective::AutoMLJobObjective(JsonView jsonValue) : 
-    m_metricName(AutoMLMetricEnum::NOT_SET),
-    m_metricNameHasBeenSet(false)
+AutoMLJobObjective::AutoMLJobObjective(JsonView jsonValue)
+  : AutoMLJobObjective()
 {
   *this = jsonValue;
 }

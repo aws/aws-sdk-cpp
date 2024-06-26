@@ -23,9 +23,8 @@ ScanResult::ScanResult() :
 {
 }
 
-ScanResult::ScanResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_count(0),
-    m_scannedCount(0)
+ScanResult::ScanResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ScanResult()
 {
   *this = result;
 }

@@ -25,8 +25,8 @@ TargetGroup::TargetGroup() :
 {
 }
 
-TargetGroup::TargetGroup(const XmlNode& xmlNode) : 
-    m_arnHasBeenSet(false)
+TargetGroup::TargetGroup(const XmlNode& xmlNode)
+  : TargetGroup()
 {
   *this = xmlNode;
 }

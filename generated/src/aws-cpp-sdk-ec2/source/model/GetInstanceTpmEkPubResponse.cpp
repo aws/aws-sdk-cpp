@@ -23,9 +23,8 @@ GetInstanceTpmEkPubResponse::GetInstanceTpmEkPubResponse() :
 {
 }
 
-GetInstanceTpmEkPubResponse::GetInstanceTpmEkPubResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_keyType(EkPubKeyType::NOT_SET),
-    m_keyFormat(EkPubKeyFormat::NOT_SET)
+GetInstanceTpmEkPubResponse::GetInstanceTpmEkPubResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : GetInstanceTpmEkPubResponse()
 {
   *this = result;
 }

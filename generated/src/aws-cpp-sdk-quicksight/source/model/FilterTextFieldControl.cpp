@@ -26,11 +26,8 @@ FilterTextFieldControl::FilterTextFieldControl() :
 {
 }
 
-FilterTextFieldControl::FilterTextFieldControl(JsonView jsonValue) : 
-    m_filterControlIdHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_sourceFilterIdHasBeenSet(false),
-    m_displayOptionsHasBeenSet(false)
+FilterTextFieldControl::FilterTextFieldControl(JsonView jsonValue)
+  : FilterTextFieldControl()
 {
   *this = jsonValue;
 }

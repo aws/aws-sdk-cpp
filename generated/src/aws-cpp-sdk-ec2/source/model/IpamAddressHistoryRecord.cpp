@@ -38,21 +38,8 @@ IpamAddressHistoryRecord::IpamAddressHistoryRecord() :
 {
 }
 
-IpamAddressHistoryRecord::IpamAddressHistoryRecord(const XmlNode& xmlNode) : 
-    m_resourceOwnerIdHasBeenSet(false),
-    m_resourceRegionHasBeenSet(false),
-    m_resourceType(IpamAddressHistoryResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_resourceCidrHasBeenSet(false),
-    m_resourceNameHasBeenSet(false),
-    m_resourceComplianceStatus(IpamComplianceStatus::NOT_SET),
-    m_resourceComplianceStatusHasBeenSet(false),
-    m_resourceOverlapStatus(IpamOverlapStatus::NOT_SET),
-    m_resourceOverlapStatusHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_sampledStartTimeHasBeenSet(false),
-    m_sampledEndTimeHasBeenSet(false)
+IpamAddressHistoryRecord::IpamAddressHistoryRecord(const XmlNode& xmlNode)
+  : IpamAddressHistoryRecord()
 {
   *this = xmlNode;
 }

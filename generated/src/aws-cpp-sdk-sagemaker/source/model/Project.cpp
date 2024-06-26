@@ -35,20 +35,8 @@ Project::Project() :
 {
 }
 
-Project::Project(JsonView jsonValue) : 
-    m_projectArnHasBeenSet(false),
-    m_projectNameHasBeenSet(false),
-    m_projectIdHasBeenSet(false),
-    m_projectDescriptionHasBeenSet(false),
-    m_serviceCatalogProvisioningDetailsHasBeenSet(false),
-    m_serviceCatalogProvisionedProductDetailsHasBeenSet(false),
-    m_projectStatus(ProjectStatus::NOT_SET),
-    m_projectStatusHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_lastModifiedByHasBeenSet(false)
+Project::Project(JsonView jsonValue)
+  : Project()
 {
   *this = jsonValue;
 }

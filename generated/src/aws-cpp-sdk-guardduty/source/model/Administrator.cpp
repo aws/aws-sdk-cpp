@@ -26,11 +26,8 @@ Administrator::Administrator() :
 {
 }
 
-Administrator::Administrator(JsonView jsonValue) : 
-    m_accountIdHasBeenSet(false),
-    m_invitationIdHasBeenSet(false),
-    m_relationshipStatusHasBeenSet(false),
-    m_invitedAtHasBeenSet(false)
+Administrator::Administrator(JsonView jsonValue)
+  : Administrator()
 {
   *this = jsonValue;
 }

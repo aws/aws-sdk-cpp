@@ -24,9 +24,8 @@ IngressIpToEvaluate::IngressIpToEvaluate() :
 {
 }
 
-IngressIpToEvaluate::IngressIpToEvaluate(JsonView jsonValue) : 
-    m_attribute(IngressIpv4Attribute::NOT_SET),
-    m_attributeHasBeenSet(false)
+IngressIpToEvaluate::IngressIpToEvaluate(JsonView jsonValue)
+  : IngressIpToEvaluate()
 {
   *this = jsonValue;
 }

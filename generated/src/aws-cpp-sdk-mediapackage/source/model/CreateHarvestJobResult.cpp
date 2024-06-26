@@ -22,8 +22,8 @@ CreateHarvestJobResult::CreateHarvestJobResult() :
 {
 }
 
-CreateHarvestJobResult::CreateHarvestJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(Status::NOT_SET)
+CreateHarvestJobResult::CreateHarvestJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateHarvestJobResult()
 {
   *this = result;
 }

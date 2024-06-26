@@ -28,11 +28,8 @@ TemplateConfiguration::TemplateConfiguration() :
 {
 }
 
-TemplateConfiguration::TemplateConfiguration(const XmlNode& xmlNode) : 
-    m_deletionPolicy(GeneratedTemplateDeletionPolicy::NOT_SET),
-    m_deletionPolicyHasBeenSet(false),
-    m_updateReplacePolicy(GeneratedTemplateUpdateReplacePolicy::NOT_SET),
-    m_updateReplacePolicyHasBeenSet(false)
+TemplateConfiguration::TemplateConfiguration(const XmlNode& xmlNode)
+  : TemplateConfiguration()
 {
   *this = xmlNode;
 }

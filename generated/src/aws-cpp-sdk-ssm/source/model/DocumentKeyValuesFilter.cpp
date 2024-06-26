@@ -24,9 +24,8 @@ DocumentKeyValuesFilter::DocumentKeyValuesFilter() :
 {
 }
 
-DocumentKeyValuesFilter::DocumentKeyValuesFilter(JsonView jsonValue) : 
-    m_keyHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+DocumentKeyValuesFilter::DocumentKeyValuesFilter(JsonView jsonValue)
+  : DocumentKeyValuesFilter()
 {
   *this = jsonValue;
 }

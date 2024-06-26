@@ -30,13 +30,8 @@ InventoryS3BucketDestination::InventoryS3BucketDestination() :
 {
 }
 
-InventoryS3BucketDestination::InventoryS3BucketDestination(const XmlNode& xmlNode) : 
-    m_accountIdHasBeenSet(false),
-    m_bucketHasBeenSet(false),
-    m_format(InventoryFormat::NOT_SET),
-    m_formatHasBeenSet(false),
-    m_prefixHasBeenSet(false),
-    m_encryptionHasBeenSet(false)
+InventoryS3BucketDestination::InventoryS3BucketDestination(const XmlNode& xmlNode)
+  : InventoryS3BucketDestination()
 {
   *this = xmlNode;
 }

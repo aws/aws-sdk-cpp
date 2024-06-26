@@ -24,9 +24,8 @@ EdgeModelSummary::EdgeModelSummary() :
 {
 }
 
-EdgeModelSummary::EdgeModelSummary(JsonView jsonValue) : 
-    m_modelNameHasBeenSet(false),
-    m_modelVersionHasBeenSet(false)
+EdgeModelSummary::EdgeModelSummary(JsonView jsonValue)
+  : EdgeModelSummary()
 {
   *this = jsonValue;
 }

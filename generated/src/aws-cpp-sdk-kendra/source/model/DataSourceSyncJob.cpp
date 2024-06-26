@@ -32,17 +32,8 @@ DataSourceSyncJob::DataSourceSyncJob() :
 {
 }
 
-DataSourceSyncJob::DataSourceSyncJob(JsonView jsonValue) : 
-    m_executionIdHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_status(DataSourceSyncJobStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_errorCode(ErrorCode::NOT_SET),
-    m_errorCodeHasBeenSet(false),
-    m_dataSourceErrorCodeHasBeenSet(false),
-    m_metricsHasBeenSet(false)
+DataSourceSyncJob::DataSourceSyncJob(JsonView jsonValue)
+  : DataSourceSyncJob()
 {
   *this = jsonValue;
 }

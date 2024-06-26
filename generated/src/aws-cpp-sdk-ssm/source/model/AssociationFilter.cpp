@@ -25,10 +25,8 @@ AssociationFilter::AssociationFilter() :
 {
 }
 
-AssociationFilter::AssociationFilter(JsonView jsonValue) : 
-    m_key(AssociationFilterKey::NOT_SET),
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false)
+AssociationFilter::AssociationFilter(JsonView jsonValue)
+  : AssociationFilter()
 {
   *this = jsonValue;
 }

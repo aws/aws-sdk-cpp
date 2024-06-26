@@ -22,8 +22,8 @@ GetGeneratedTemplateResult::GetGeneratedTemplateResult() :
 {
 }
 
-GetGeneratedTemplateResult::GetGeneratedTemplateResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_status(GeneratedTemplateStatus::NOT_SET)
+GetGeneratedTemplateResult::GetGeneratedTemplateResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : GetGeneratedTemplateResult()
 {
   *this = result;
 }

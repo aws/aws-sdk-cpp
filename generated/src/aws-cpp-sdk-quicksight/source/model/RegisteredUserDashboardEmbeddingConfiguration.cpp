@@ -24,9 +24,8 @@ RegisteredUserDashboardEmbeddingConfiguration::RegisteredUserDashboardEmbeddingC
 {
 }
 
-RegisteredUserDashboardEmbeddingConfiguration::RegisteredUserDashboardEmbeddingConfiguration(JsonView jsonValue) : 
-    m_initialDashboardIdHasBeenSet(false),
-    m_featureConfigurationsHasBeenSet(false)
+RegisteredUserDashboardEmbeddingConfiguration::RegisteredUserDashboardEmbeddingConfiguration(JsonView jsonValue)
+  : RegisteredUserDashboardEmbeddingConfiguration()
 {
   *this = jsonValue;
 }

@@ -37,22 +37,8 @@ Report::Report() :
 {
 }
 
-Report::Report(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_type(ReportType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_reportGroupArnHasBeenSet(false),
-    m_executionIdHasBeenSet(false),
-    m_status(ReportStatusType::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_createdHasBeenSet(false),
-    m_expiredHasBeenSet(false),
-    m_exportConfigHasBeenSet(false),
-    m_truncated(false),
-    m_truncatedHasBeenSet(false),
-    m_testSummaryHasBeenSet(false),
-    m_codeCoverageSummaryHasBeenSet(false)
+Report::Report(JsonView jsonValue)
+  : Report()
 {
   *this = jsonValue;
 }

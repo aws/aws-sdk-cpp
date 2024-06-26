@@ -28,13 +28,8 @@ OfflineStoreConfig::OfflineStoreConfig() :
 {
 }
 
-OfflineStoreConfig::OfflineStoreConfig(JsonView jsonValue) : 
-    m_s3StorageConfigHasBeenSet(false),
-    m_disableGlueTableCreation(false),
-    m_disableGlueTableCreationHasBeenSet(false),
-    m_dataCatalogConfigHasBeenSet(false),
-    m_tableFormat(TableFormat::NOT_SET),
-    m_tableFormatHasBeenSet(false)
+OfflineStoreConfig::OfflineStoreConfig(JsonView jsonValue)
+  : OfflineStoreConfig()
 {
   *this = jsonValue;
 }

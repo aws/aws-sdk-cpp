@@ -26,11 +26,8 @@ RightsizingRecommendationConfiguration::RightsizingRecommendationConfiguration()
 {
 }
 
-RightsizingRecommendationConfiguration::RightsizingRecommendationConfiguration(JsonView jsonValue) : 
-    m_recommendationTarget(RecommendationTarget::NOT_SET),
-    m_recommendationTargetHasBeenSet(false),
-    m_benefitsConsidered(false),
-    m_benefitsConsideredHasBeenSet(false)
+RightsizingRecommendationConfiguration::RightsizingRecommendationConfiguration(JsonView jsonValue)
+  : RightsizingRecommendationConfiguration()
 {
   *this = jsonValue;
 }

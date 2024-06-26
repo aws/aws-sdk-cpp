@@ -29,14 +29,8 @@ ChannelMembership::ChannelMembership() :
 {
 }
 
-ChannelMembership::ChannelMembership(JsonView jsonValue) : 
-    m_invitedByHasBeenSet(false),
-    m_type(ChannelMembershipType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_memberHasBeenSet(false),
-    m_channelArnHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false),
-    m_lastUpdatedTimestampHasBeenSet(false)
+ChannelMembership::ChannelMembership(JsonView jsonValue)
+  : ChannelMembership()
 {
   *this = jsonValue;
 }

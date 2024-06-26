@@ -26,11 +26,8 @@ ArtifactStore::ArtifactStore() :
 {
 }
 
-ArtifactStore::ArtifactStore(JsonView jsonValue) : 
-    m_type(ArtifactStoreType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_locationHasBeenSet(false),
-    m_encryptionKeyHasBeenSet(false)
+ArtifactStore::ArtifactStore(JsonView jsonValue)
+  : ArtifactStore()
 {
   *this = jsonValue;
 }

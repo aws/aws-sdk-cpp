@@ -24,9 +24,8 @@ SslProperties::SslProperties() :
 {
 }
 
-SslProperties::SslProperties(JsonView jsonValue) : 
-    m_disableSsl(false),
-    m_disableSslHasBeenSet(false)
+SslProperties::SslProperties(JsonView jsonValue)
+  : SslProperties()
 {
   *this = jsonValue;
 }

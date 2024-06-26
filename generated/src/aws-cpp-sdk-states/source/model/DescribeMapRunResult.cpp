@@ -26,12 +26,8 @@ DescribeMapRunResult::DescribeMapRunResult() :
 {
 }
 
-DescribeMapRunResult::DescribeMapRunResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(MapRunStatus::NOT_SET),
-    m_maxConcurrency(0),
-    m_toleratedFailurePercentage(0.0),
-    m_toleratedFailureCount(0),
-    m_redriveCount(0)
+DescribeMapRunResult::DescribeMapRunResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeMapRunResult()
 {
   *this = result;
 }

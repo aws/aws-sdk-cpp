@@ -23,8 +23,8 @@ DailySchedule::DailySchedule() :
 {
 }
 
-DailySchedule::DailySchedule(JsonView jsonValue) : 
-    m_startTimeHasBeenSet(false)
+DailySchedule::DailySchedule(JsonView jsonValue)
+  : DailySchedule()
 {
   *this = jsonValue;
 }

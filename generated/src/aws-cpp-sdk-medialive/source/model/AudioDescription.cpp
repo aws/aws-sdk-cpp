@@ -39,24 +39,8 @@ AudioDescription::AudioDescription() :
 {
 }
 
-AudioDescription::AudioDescription(JsonView jsonValue) : 
-    m_audioNormalizationSettingsHasBeenSet(false),
-    m_audioSelectorNameHasBeenSet(false),
-    m_audioType(AudioType::NOT_SET),
-    m_audioTypeHasBeenSet(false),
-    m_audioTypeControl(AudioDescriptionAudioTypeControl::NOT_SET),
-    m_audioTypeControlHasBeenSet(false),
-    m_audioWatermarkingSettingsHasBeenSet(false),
-    m_codecSettingsHasBeenSet(false),
-    m_languageCodeHasBeenSet(false),
-    m_languageCodeControl(AudioDescriptionLanguageCodeControl::NOT_SET),
-    m_languageCodeControlHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_remixSettingsHasBeenSet(false),
-    m_streamNameHasBeenSet(false),
-    m_audioDashRolesHasBeenSet(false),
-    m_dvbDashAccessibility(DvbDashAccessibility::NOT_SET),
-    m_dvbDashAccessibilityHasBeenSet(false)
+AudioDescription::AudioDescription(JsonView jsonValue)
+  : AudioDescription()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ KernelSpec::KernelSpec() :
 {
 }
 
-KernelSpec::KernelSpec(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_displayNameHasBeenSet(false)
+KernelSpec::KernelSpec(JsonView jsonValue)
+  : KernelSpec()
 {
   *this = jsonValue;
 }

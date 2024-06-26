@@ -26,11 +26,8 @@ ComponentDataConfiguration::ComponentDataConfiguration() :
 {
 }
 
-ComponentDataConfiguration::ComponentDataConfiguration(JsonView jsonValue) : 
-    m_modelHasBeenSet(false),
-    m_sortHasBeenSet(false),
-    m_predicateHasBeenSet(false),
-    m_identifiersHasBeenSet(false)
+ComponentDataConfiguration::ComponentDataConfiguration(JsonView jsonValue)
+  : ComponentDataConfiguration()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ ExecutionTimeFilter::ExecutionTimeFilter() :
 {
 }
 
-ExecutionTimeFilter::ExecutionTimeFilter(JsonView jsonValue) : 
-    m_oldestDateHasBeenSet(false),
-    m_latestDateHasBeenSet(false)
+ExecutionTimeFilter::ExecutionTimeFilter(JsonView jsonValue)
+  : ExecutionTimeFilter()
 {
   *this = jsonValue;
 }

@@ -28,13 +28,8 @@ ResourceLimits::ResourceLimits() :
 {
 }
 
-ResourceLimits::ResourceLimits(JsonView jsonValue) : 
-    m_maxNumberOfTrainingJobs(0),
-    m_maxNumberOfTrainingJobsHasBeenSet(false),
-    m_maxParallelTrainingJobs(0),
-    m_maxParallelTrainingJobsHasBeenSet(false),
-    m_maxRuntimeInSeconds(0),
-    m_maxRuntimeInSecondsHasBeenSet(false)
+ResourceLimits::ResourceLimits(JsonView jsonValue)
+  : ResourceLimits()
 {
   *this = jsonValue;
 }

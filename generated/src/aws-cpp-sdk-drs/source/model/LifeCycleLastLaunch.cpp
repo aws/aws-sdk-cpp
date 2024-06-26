@@ -25,10 +25,8 @@ LifeCycleLastLaunch::LifeCycleLastLaunch() :
 {
 }
 
-LifeCycleLastLaunch::LifeCycleLastLaunch(JsonView jsonValue) : 
-    m_initiatedHasBeenSet(false),
-    m_status(LaunchStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+LifeCycleLastLaunch::LifeCycleLastLaunch(JsonView jsonValue)
+  : LifeCycleLastLaunch()
 {
   *this = jsonValue;
 }

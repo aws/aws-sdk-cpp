@@ -24,9 +24,8 @@ IngressTlsProtocolToEvaluate::IngressTlsProtocolToEvaluate() :
 {
 }
 
-IngressTlsProtocolToEvaluate::IngressTlsProtocolToEvaluate(JsonView jsonValue) : 
-    m_attribute(IngressTlsAttribute::NOT_SET),
-    m_attributeHasBeenSet(false)
+IngressTlsProtocolToEvaluate::IngressTlsProtocolToEvaluate(JsonView jsonValue)
+  : IngressTlsProtocolToEvaluate()
 {
   *this = jsonValue;
 }

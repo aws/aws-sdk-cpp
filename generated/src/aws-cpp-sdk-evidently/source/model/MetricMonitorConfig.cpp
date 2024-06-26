@@ -23,8 +23,8 @@ MetricMonitorConfig::MetricMonitorConfig() :
 {
 }
 
-MetricMonitorConfig::MetricMonitorConfig(JsonView jsonValue) : 
-    m_metricDefinitionHasBeenSet(false)
+MetricMonitorConfig::MetricMonitorConfig(JsonView jsonValue)
+  : MetricMonitorConfig()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ FilterDefinition::FilterDefinition() :
 {
 }
 
-FilterDefinition::FilterDefinition(JsonView jsonValue) : 
-    m_nameHasBeenSet(false)
+FilterDefinition::FilterDefinition(JsonView jsonValue)
+  : FilterDefinition()
 {
   *this = jsonValue;
 }

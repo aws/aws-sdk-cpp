@@ -30,15 +30,8 @@ RegistrationVersionStatusHistory::RegistrationVersionStatusHistory() :
 {
 }
 
-RegistrationVersionStatusHistory::RegistrationVersionStatusHistory(JsonView jsonValue) : 
-    m_draftTimestampHasBeenSet(false),
-    m_submittedTimestampHasBeenSet(false),
-    m_reviewingTimestampHasBeenSet(false),
-    m_approvedTimestampHasBeenSet(false),
-    m_discardedTimestampHasBeenSet(false),
-    m_deniedTimestampHasBeenSet(false),
-    m_revokedTimestampHasBeenSet(false),
-    m_archivedTimestampHasBeenSet(false)
+RegistrationVersionStatusHistory::RegistrationVersionStatusHistory(JsonView jsonValue)
+  : RegistrationVersionStatusHistory()
 {
   *this = jsonValue;
 }

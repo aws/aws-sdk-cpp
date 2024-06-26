@@ -27,12 +27,8 @@ AnomalyObject::AnomalyObject() :
 {
 }
 
-AnomalyObject::AnomalyObject(JsonView jsonValue) : 
-    m_profileType(ProfileType::NOT_SET),
-    m_profileTypeHasBeenSet(false),
-    m_profileSubtype(ProfileSubtype::NOT_SET),
-    m_profileSubtypeHasBeenSet(false),
-    m_observationsHasBeenSet(false)
+AnomalyObject::AnomalyObject(JsonView jsonValue)
+  : AnomalyObject()
 {
   *this = jsonValue;
 }

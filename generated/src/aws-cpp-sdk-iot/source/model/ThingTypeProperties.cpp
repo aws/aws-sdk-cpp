@@ -24,9 +24,8 @@ ThingTypeProperties::ThingTypeProperties() :
 {
 }
 
-ThingTypeProperties::ThingTypeProperties(JsonView jsonValue) : 
-    m_thingTypeDescriptionHasBeenSet(false),
-    m_searchableAttributesHasBeenSet(false)
+ThingTypeProperties::ThingTypeProperties(JsonView jsonValue)
+  : ThingTypeProperties()
 {
   *this = jsonValue;
 }

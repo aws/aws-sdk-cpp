@@ -24,9 +24,8 @@ ResourceTag::ResourceTag() :
 {
 }
 
-ResourceTag::ResourceTag(JsonView jsonValue) : 
-    m_resourceTagKeyHasBeenSet(false),
-    m_resourceTagValueHasBeenSet(false)
+ResourceTag::ResourceTag(JsonView jsonValue)
+  : ResourceTag()
 {
   *this = jsonValue;
 }

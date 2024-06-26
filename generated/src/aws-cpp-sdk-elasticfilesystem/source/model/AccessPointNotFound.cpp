@@ -24,9 +24,8 @@ AccessPointNotFound::AccessPointNotFound() :
 {
 }
 
-AccessPointNotFound::AccessPointNotFound(JsonView jsonValue) : 
-    m_errorCodeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+AccessPointNotFound::AccessPointNotFound(JsonView jsonValue)
+  : AccessPointNotFound()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ ViewOffNadirInput::ViewOffNadirInput() :
 {
 }
 
-ViewOffNadirInput::ViewOffNadirInput(JsonView jsonValue) : 
-    m_lowerBound(0.0),
-    m_lowerBoundHasBeenSet(false),
-    m_upperBound(0.0),
-    m_upperBoundHasBeenSet(false)
+ViewOffNadirInput::ViewOffNadirInput(JsonView jsonValue)
+  : ViewOffNadirInput()
 {
   *this = jsonValue;
 }

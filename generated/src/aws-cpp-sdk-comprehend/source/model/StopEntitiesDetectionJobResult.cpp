@@ -22,8 +22,8 @@ StopEntitiesDetectionJobResult::StopEntitiesDetectionJobResult() :
 {
 }
 
-StopEntitiesDetectionJobResult::StopEntitiesDetectionJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_jobStatus(JobStatus::NOT_SET)
+StopEntitiesDetectionJobResult::StopEntitiesDetectionJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : StopEntitiesDetectionJobResult()
 {
   *this = result;
 }

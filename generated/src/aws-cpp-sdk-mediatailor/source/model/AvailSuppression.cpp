@@ -27,12 +27,8 @@ AvailSuppression::AvailSuppression() :
 {
 }
 
-AvailSuppression::AvailSuppression(JsonView jsonValue) : 
-    m_fillPolicy(FillPolicy::NOT_SET),
-    m_fillPolicyHasBeenSet(false),
-    m_mode(Mode::NOT_SET),
-    m_modeHasBeenSet(false),
-    m_valueHasBeenSet(false)
+AvailSuppression::AvailSuppression(JsonView jsonValue)
+  : AvailSuppression()
 {
   *this = jsonValue;
 }

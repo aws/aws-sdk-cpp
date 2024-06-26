@@ -24,11 +24,8 @@ ListObjectVersionsResult::ListObjectVersionsResult() :
 {
 }
 
-ListObjectVersionsResult::ListObjectVersionsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_isTruncated(false),
-    m_maxKeys(0),
-    m_encodingType(EncodingType::NOT_SET),
-    m_requestCharged(RequestCharged::NOT_SET)
+ListObjectVersionsResult::ListObjectVersionsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : ListObjectVersionsResult()
 {
   *this = result;
 }

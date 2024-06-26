@@ -25,10 +25,8 @@ OutputResolutionStackInput::OutputResolutionStackInput() :
 {
 }
 
-OutputResolutionStackInput::OutputResolutionStackInput(JsonView jsonValue) : 
-    m_predefined(PredefinedResolution::NOT_SET),
-    m_predefinedHasBeenSet(false),
-    m_userDefinedHasBeenSet(false)
+OutputResolutionStackInput::OutputResolutionStackInput(JsonView jsonValue)
+  : OutputResolutionStackInput()
 {
   *this = jsonValue;
 }

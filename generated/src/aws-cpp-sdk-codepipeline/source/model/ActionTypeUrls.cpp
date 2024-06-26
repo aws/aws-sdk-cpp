@@ -26,11 +26,8 @@ ActionTypeUrls::ActionTypeUrls() :
 {
 }
 
-ActionTypeUrls::ActionTypeUrls(JsonView jsonValue) : 
-    m_configurationUrlHasBeenSet(false),
-    m_entityUrlTemplateHasBeenSet(false),
-    m_executionUrlTemplateHasBeenSet(false),
-    m_revisionUrlTemplateHasBeenSet(false)
+ActionTypeUrls::ActionTypeUrls(JsonView jsonValue)
+  : ActionTypeUrls()
 {
   *this = jsonValue;
 }

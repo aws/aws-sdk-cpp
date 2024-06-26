@@ -25,10 +25,8 @@ ImageScanFindingsSummary::ImageScanFindingsSummary() :
 {
 }
 
-ImageScanFindingsSummary::ImageScanFindingsSummary(JsonView jsonValue) : 
-    m_imageScanCompletedAtHasBeenSet(false),
-    m_vulnerabilitySourceUpdatedAtHasBeenSet(false),
-    m_findingSeverityCountsHasBeenSet(false)
+ImageScanFindingsSummary::ImageScanFindingsSummary(JsonView jsonValue)
+  : ImageScanFindingsSummary()
 {
   *this = jsonValue;
 }

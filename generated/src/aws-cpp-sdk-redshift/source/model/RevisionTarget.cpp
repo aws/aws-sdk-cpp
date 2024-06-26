@@ -27,10 +27,8 @@ RevisionTarget::RevisionTarget() :
 {
 }
 
-RevisionTarget::RevisionTarget(const XmlNode& xmlNode) : 
-    m_databaseRevisionHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_databaseRevisionReleaseDateHasBeenSet(false)
+RevisionTarget::RevisionTarget(const XmlNode& xmlNode)
+  : RevisionTarget()
 {
   *this = xmlNode;
 }

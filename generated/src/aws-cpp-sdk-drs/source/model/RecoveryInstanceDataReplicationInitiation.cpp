@@ -24,9 +24,8 @@ RecoveryInstanceDataReplicationInitiation::RecoveryInstanceDataReplicationInitia
 {
 }
 
-RecoveryInstanceDataReplicationInitiation::RecoveryInstanceDataReplicationInitiation(JsonView jsonValue) : 
-    m_startDateTimeHasBeenSet(false),
-    m_stepsHasBeenSet(false)
+RecoveryInstanceDataReplicationInitiation::RecoveryInstanceDataReplicationInitiation(JsonView jsonValue)
+  : RecoveryInstanceDataReplicationInitiation()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ InsightsFilter::InsightsFilter() :
 {
 }
 
-InsightsFilter::InsightsFilter(JsonView jsonValue) : 
-    m_categoriesHasBeenSet(false),
-    m_kubernetesVersionsHasBeenSet(false),
-    m_statusesHasBeenSet(false)
+InsightsFilter::InsightsFilter(JsonView jsonValue)
+  : InsightsFilter()
 {
   *this = jsonValue;
 }

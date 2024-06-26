@@ -30,15 +30,8 @@ BotAliasSummary::BotAliasSummary() :
 {
 }
 
-BotAliasSummary::BotAliasSummary(JsonView jsonValue) : 
-    m_botAliasIdHasBeenSet(false),
-    m_botAliasNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_botVersionHasBeenSet(false),
-    m_botAliasStatus(BotAliasStatus::NOT_SET),
-    m_botAliasStatusHasBeenSet(false),
-    m_creationDateTimeHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false)
+BotAliasSummary::BotAliasSummary(JsonView jsonValue)
+  : BotAliasSummary()
 {
   *this = jsonValue;
 }

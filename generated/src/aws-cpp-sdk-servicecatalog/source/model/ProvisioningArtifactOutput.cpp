@@ -24,9 +24,8 @@ ProvisioningArtifactOutput::ProvisioningArtifactOutput() :
 {
 }
 
-ProvisioningArtifactOutput::ProvisioningArtifactOutput(JsonView jsonValue) : 
-    m_keyHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+ProvisioningArtifactOutput::ProvisioningArtifactOutput(JsonView jsonValue)
+  : ProvisioningArtifactOutput()
 {
   *this = jsonValue;
 }

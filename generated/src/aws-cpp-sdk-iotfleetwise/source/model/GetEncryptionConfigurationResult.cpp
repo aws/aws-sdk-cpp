@@ -23,9 +23,8 @@ GetEncryptionConfigurationResult::GetEncryptionConfigurationResult() :
 {
 }
 
-GetEncryptionConfigurationResult::GetEncryptionConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_encryptionStatus(EncryptionStatus::NOT_SET),
-    m_encryptionType(EncryptionType::NOT_SET)
+GetEncryptionConfigurationResult::GetEncryptionConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetEncryptionConfigurationResult()
 {
   *this = result;
 }

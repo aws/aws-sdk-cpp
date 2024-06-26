@@ -25,10 +25,8 @@ AggregateConfiguration::AggregateConfiguration() :
 {
 }
 
-AggregateConfiguration::AggregateConfiguration(JsonView jsonValue) : 
-    m_aggregatesHasBeenSet(false),
-    m_totalConstituents(0),
-    m_totalConstituentsHasBeenSet(false)
+AggregateConfiguration::AggregateConfiguration(JsonView jsonValue)
+  : AggregateConfiguration()
 {
   *this = jsonValue;
 }

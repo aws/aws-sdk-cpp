@@ -37,22 +37,8 @@ BatchWriteOperationResponse::BatchWriteOperationResponse() :
 {
 }
 
-BatchWriteOperationResponse::BatchWriteOperationResponse(JsonView jsonValue) : 
-    m_createObjectHasBeenSet(false),
-    m_attachObjectHasBeenSet(false),
-    m_detachObjectHasBeenSet(false),
-    m_updateObjectAttributesHasBeenSet(false),
-    m_deleteObjectHasBeenSet(false),
-    m_addFacetToObjectHasBeenSet(false),
-    m_removeFacetFromObjectHasBeenSet(false),
-    m_attachPolicyHasBeenSet(false),
-    m_detachPolicyHasBeenSet(false),
-    m_createIndexHasBeenSet(false),
-    m_attachToIndexHasBeenSet(false),
-    m_detachFromIndexHasBeenSet(false),
-    m_attachTypedLinkHasBeenSet(false),
-    m_detachTypedLinkHasBeenSet(false),
-    m_updateLinkAttributesHasBeenSet(false)
+BatchWriteOperationResponse::BatchWriteOperationResponse(JsonView jsonValue)
+  : BatchWriteOperationResponse()
 {
   *this = jsonValue;
 }

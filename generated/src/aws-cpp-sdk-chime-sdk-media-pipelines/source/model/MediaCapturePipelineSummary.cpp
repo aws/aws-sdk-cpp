@@ -24,9 +24,8 @@ MediaCapturePipelineSummary::MediaCapturePipelineSummary() :
 {
 }
 
-MediaCapturePipelineSummary::MediaCapturePipelineSummary(JsonView jsonValue) : 
-    m_mediaPipelineIdHasBeenSet(false),
-    m_mediaPipelineArnHasBeenSet(false)
+MediaCapturePipelineSummary::MediaCapturePipelineSummary(JsonView jsonValue)
+  : MediaCapturePipelineSummary()
 {
   *this = jsonValue;
 }

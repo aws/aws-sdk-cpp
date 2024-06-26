@@ -25,10 +25,8 @@ ResourceDownloadOwnerSetting::ResourceDownloadOwnerSetting() :
 {
 }
 
-ResourceDownloadOwnerSetting::ResourceDownloadOwnerSetting(JsonView jsonValue) : 
-    m_groupOwnerHasBeenSet(false),
-    m_groupPermission(Permission::NOT_SET),
-    m_groupPermissionHasBeenSet(false)
+ResourceDownloadOwnerSetting::ResourceDownloadOwnerSetting(JsonView jsonValue)
+  : ResourceDownloadOwnerSetting()
 {
   *this = jsonValue;
 }

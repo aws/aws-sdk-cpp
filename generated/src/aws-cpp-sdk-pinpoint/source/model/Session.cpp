@@ -27,12 +27,8 @@ Session::Session() :
 {
 }
 
-Session::Session(JsonView jsonValue) : 
-    m_duration(0),
-    m_durationHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_startTimestampHasBeenSet(false),
-    m_stopTimestampHasBeenSet(false)
+Session::Session(JsonView jsonValue)
+  : Session()
 {
   *this = jsonValue;
 }

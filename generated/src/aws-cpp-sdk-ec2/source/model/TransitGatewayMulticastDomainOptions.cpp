@@ -30,13 +30,8 @@ TransitGatewayMulticastDomainOptions::TransitGatewayMulticastDomainOptions() :
 {
 }
 
-TransitGatewayMulticastDomainOptions::TransitGatewayMulticastDomainOptions(const XmlNode& xmlNode) : 
-    m_igmpv2Support(Igmpv2SupportValue::NOT_SET),
-    m_igmpv2SupportHasBeenSet(false),
-    m_staticSourcesSupport(StaticSourcesSupportValue::NOT_SET),
-    m_staticSourcesSupportHasBeenSet(false),
-    m_autoAcceptSharedAssociations(AutoAcceptSharedAssociationsValue::NOT_SET),
-    m_autoAcceptSharedAssociationsHasBeenSet(false)
+TransitGatewayMulticastDomainOptions::TransitGatewayMulticastDomainOptions(const XmlNode& xmlNode)
+  : TransitGatewayMulticastDomainOptions()
 {
   *this = xmlNode;
 }

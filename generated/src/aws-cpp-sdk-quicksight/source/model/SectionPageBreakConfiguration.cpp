@@ -23,8 +23,8 @@ SectionPageBreakConfiguration::SectionPageBreakConfiguration() :
 {
 }
 
-SectionPageBreakConfiguration::SectionPageBreakConfiguration(JsonView jsonValue) : 
-    m_afterHasBeenSet(false)
+SectionPageBreakConfiguration::SectionPageBreakConfiguration(JsonView jsonValue)
+  : SectionPageBreakConfiguration()
 {
   *this = jsonValue;
 }

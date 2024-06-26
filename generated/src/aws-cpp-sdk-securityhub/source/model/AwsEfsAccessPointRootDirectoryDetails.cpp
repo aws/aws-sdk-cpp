@@ -24,9 +24,8 @@ AwsEfsAccessPointRootDirectoryDetails::AwsEfsAccessPointRootDirectoryDetails() :
 {
 }
 
-AwsEfsAccessPointRootDirectoryDetails::AwsEfsAccessPointRootDirectoryDetails(JsonView jsonValue) : 
-    m_creationInfoHasBeenSet(false),
-    m_pathHasBeenSet(false)
+AwsEfsAccessPointRootDirectoryDetails::AwsEfsAccessPointRootDirectoryDetails(JsonView jsonValue)
+  : AwsEfsAccessPointRootDirectoryDetails()
 {
   *this = jsonValue;
 }

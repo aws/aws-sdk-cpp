@@ -24,9 +24,8 @@ ResultReuseInformation::ResultReuseInformation() :
 {
 }
 
-ResultReuseInformation::ResultReuseInformation(JsonView jsonValue) : 
-    m_reusedPreviousResult(false),
-    m_reusedPreviousResultHasBeenSet(false)
+ResultReuseInformation::ResultReuseInformation(JsonView jsonValue)
+  : ResultReuseInformation()
 {
   *this = jsonValue;
 }

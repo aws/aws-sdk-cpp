@@ -25,10 +25,8 @@ FrontOfQueueJobSummary::FrontOfQueueJobSummary() :
 {
 }
 
-FrontOfQueueJobSummary::FrontOfQueueJobSummary(JsonView jsonValue) : 
-    m_jobArnHasBeenSet(false),
-    m_earliestTimeAtPosition(0),
-    m_earliestTimeAtPositionHasBeenSet(false)
+FrontOfQueueJobSummary::FrontOfQueueJobSummary(JsonView jsonValue)
+  : FrontOfQueueJobSummary()
 {
   *this = jsonValue;
 }

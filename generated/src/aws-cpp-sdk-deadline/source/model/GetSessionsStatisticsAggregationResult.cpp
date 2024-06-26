@@ -22,8 +22,8 @@ GetSessionsStatisticsAggregationResult::GetSessionsStatisticsAggregationResult()
 {
 }
 
-GetSessionsStatisticsAggregationResult::GetSessionsStatisticsAggregationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(SessionsStatisticsAggregationStatus::NOT_SET)
+GetSessionsStatisticsAggregationResult::GetSessionsStatisticsAggregationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetSessionsStatisticsAggregationResult()
 {
   *this = result;
 }

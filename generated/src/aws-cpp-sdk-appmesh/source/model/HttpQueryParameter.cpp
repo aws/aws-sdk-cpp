@@ -24,9 +24,8 @@ HttpQueryParameter::HttpQueryParameter() :
 {
 }
 
-HttpQueryParameter::HttpQueryParameter(JsonView jsonValue) : 
-    m_matchHasBeenSet(false),
-    m_nameHasBeenSet(false)
+HttpQueryParameter::HttpQueryParameter(JsonView jsonValue)
+  : HttpQueryParameter()
 {
   *this = jsonValue;
 }

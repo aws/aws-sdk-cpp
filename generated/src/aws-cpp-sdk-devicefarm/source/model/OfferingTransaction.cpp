@@ -27,12 +27,8 @@ OfferingTransaction::OfferingTransaction() :
 {
 }
 
-OfferingTransaction::OfferingTransaction(JsonView jsonValue) : 
-    m_offeringStatusHasBeenSet(false),
-    m_transactionIdHasBeenSet(false),
-    m_offeringPromotionIdHasBeenSet(false),
-    m_createdOnHasBeenSet(false),
-    m_costHasBeenSet(false)
+OfferingTransaction::OfferingTransaction(JsonView jsonValue)
+  : OfferingTransaction()
 {
   *this = jsonValue;
 }

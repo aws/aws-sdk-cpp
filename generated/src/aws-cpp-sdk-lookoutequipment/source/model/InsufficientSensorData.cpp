@@ -24,9 +24,8 @@ InsufficientSensorData::InsufficientSensorData() :
 {
 }
 
-InsufficientSensorData::InsufficientSensorData(JsonView jsonValue) : 
-    m_missingCompleteSensorDataHasBeenSet(false),
-    m_sensorsWithShortDateRangeHasBeenSet(false)
+InsufficientSensorData::InsufficientSensorData(JsonView jsonValue)
+  : InsufficientSensorData()
 {
   *this = jsonValue;
 }

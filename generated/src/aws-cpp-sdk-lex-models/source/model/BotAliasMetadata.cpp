@@ -30,15 +30,8 @@ BotAliasMetadata::BotAliasMetadata() :
 {
 }
 
-BotAliasMetadata::BotAliasMetadata(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_botVersionHasBeenSet(false),
-    m_botNameHasBeenSet(false),
-    m_lastUpdatedDateHasBeenSet(false),
-    m_createdDateHasBeenSet(false),
-    m_checksumHasBeenSet(false),
-    m_conversationLogsHasBeenSet(false)
+BotAliasMetadata::BotAliasMetadata(JsonView jsonValue)
+  : BotAliasMetadata()
 {
   *this = jsonValue;
 }

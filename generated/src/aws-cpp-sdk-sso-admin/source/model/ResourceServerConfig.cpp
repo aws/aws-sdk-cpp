@@ -23,8 +23,8 @@ ResourceServerConfig::ResourceServerConfig() :
 {
 }
 
-ResourceServerConfig::ResourceServerConfig(JsonView jsonValue) : 
-    m_scopesHasBeenSet(false)
+ResourceServerConfig::ResourceServerConfig(JsonView jsonValue)
+  : ResourceServerConfig()
 {
   *this = jsonValue;
 }

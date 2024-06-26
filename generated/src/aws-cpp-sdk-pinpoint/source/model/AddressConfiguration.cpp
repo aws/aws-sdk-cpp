@@ -29,14 +29,8 @@ AddressConfiguration::AddressConfiguration() :
 {
 }
 
-AddressConfiguration::AddressConfiguration(JsonView jsonValue) : 
-    m_bodyOverrideHasBeenSet(false),
-    m_channelType(ChannelType::NOT_SET),
-    m_channelTypeHasBeenSet(false),
-    m_contextHasBeenSet(false),
-    m_rawContentHasBeenSet(false),
-    m_substitutionsHasBeenSet(false),
-    m_titleOverrideHasBeenSet(false)
+AddressConfiguration::AddressConfiguration(JsonView jsonValue)
+  : AddressConfiguration()
 {
   *this = jsonValue;
 }

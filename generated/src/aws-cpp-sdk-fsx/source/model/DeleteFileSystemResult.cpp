@@ -22,8 +22,8 @@ DeleteFileSystemResult::DeleteFileSystemResult() :
 {
 }
 
-DeleteFileSystemResult::DeleteFileSystemResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_lifecycle(FileSystemLifecycle::NOT_SET)
+DeleteFileSystemResult::DeleteFileSystemResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeleteFileSystemResult()
 {
   *this = result;
 }

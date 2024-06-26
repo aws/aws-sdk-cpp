@@ -24,9 +24,8 @@ SimplifiedApplication::SimplifiedApplication() :
 {
 }
 
-SimplifiedApplication::SimplifiedApplication(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_versionHasBeenSet(false)
+SimplifiedApplication::SimplifiedApplication(JsonView jsonValue)
+  : SimplifiedApplication()
 {
   *this = jsonValue;
 }

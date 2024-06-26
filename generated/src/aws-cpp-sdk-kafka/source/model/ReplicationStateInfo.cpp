@@ -24,9 +24,8 @@ ReplicationStateInfo::ReplicationStateInfo() :
 {
 }
 
-ReplicationStateInfo::ReplicationStateInfo(JsonView jsonValue) : 
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+ReplicationStateInfo::ReplicationStateInfo(JsonView jsonValue)
+  : ReplicationStateInfo()
 {
   *this = jsonValue;
 }

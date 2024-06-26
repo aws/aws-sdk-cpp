@@ -27,12 +27,8 @@ ColumnConfiguration::ColumnConfiguration() :
 {
 }
 
-ColumnConfiguration::ColumnConfiguration(JsonView jsonValue) : 
-    m_documentIdColumnNameHasBeenSet(false),
-    m_documentDataColumnNameHasBeenSet(false),
-    m_documentTitleColumnNameHasBeenSet(false),
-    m_fieldMappingsHasBeenSet(false),
-    m_changeDetectingColumnsHasBeenSet(false)
+ColumnConfiguration::ColumnConfiguration(JsonView jsonValue)
+  : ColumnConfiguration()
 {
   *this = jsonValue;
 }

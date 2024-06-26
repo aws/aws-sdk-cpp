@@ -27,12 +27,8 @@ CopyStepDetails::CopyStepDetails() :
 {
 }
 
-CopyStepDetails::CopyStepDetails(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_destinationFileLocationHasBeenSet(false),
-    m_overwriteExisting(OverwriteExisting::NOT_SET),
-    m_overwriteExistingHasBeenSet(false),
-    m_sourceFileLocationHasBeenSet(false)
+CopyStepDetails::CopyStepDetails(JsonView jsonValue)
+  : CopyStepDetails()
 {
   *this = jsonValue;
 }

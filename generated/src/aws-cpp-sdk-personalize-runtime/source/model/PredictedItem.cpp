@@ -28,13 +28,8 @@ PredictedItem::PredictedItem() :
 {
 }
 
-PredictedItem::PredictedItem(JsonView jsonValue) : 
-    m_itemIdHasBeenSet(false),
-    m_score(0.0),
-    m_scoreHasBeenSet(false),
-    m_promotionNameHasBeenSet(false),
-    m_metadataHasBeenSet(false),
-    m_reasonHasBeenSet(false)
+PredictedItem::PredictedItem(JsonView jsonValue)
+  : PredictedItem()
 {
   *this = jsonValue;
 }

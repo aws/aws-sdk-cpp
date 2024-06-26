@@ -23,8 +23,8 @@ PrometheusMonitoringConfiguration::PrometheusMonitoringConfiguration() :
 {
 }
 
-PrometheusMonitoringConfiguration::PrometheusMonitoringConfiguration(JsonView jsonValue) : 
-    m_remoteWriteUrlHasBeenSet(false)
+PrometheusMonitoringConfiguration::PrometheusMonitoringConfiguration(JsonView jsonValue)
+  : PrometheusMonitoringConfiguration()
 {
   *this = jsonValue;
 }

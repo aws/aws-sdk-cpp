@@ -27,12 +27,8 @@ FirewallConfig::FirewallConfig() :
 {
 }
 
-FirewallConfig::FirewallConfig(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_firewallFailOpen(FirewallFailOpenStatus::NOT_SET),
-    m_firewallFailOpenHasBeenSet(false)
+FirewallConfig::FirewallConfig(JsonView jsonValue)
+  : FirewallConfig()
 {
   *this = jsonValue;
 }

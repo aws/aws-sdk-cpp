@@ -25,10 +25,8 @@ CustomActionURLOperation::CustomActionURLOperation() :
 {
 }
 
-CustomActionURLOperation::CustomActionURLOperation(JsonView jsonValue) : 
-    m_uRLTemplateHasBeenSet(false),
-    m_uRLTarget(URLTargetConfiguration::NOT_SET),
-    m_uRLTargetHasBeenSet(false)
+CustomActionURLOperation::CustomActionURLOperation(JsonView jsonValue)
+  : CustomActionURLOperation()
 {
   *this = jsonValue;
 }

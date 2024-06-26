@@ -25,10 +25,8 @@ ListSinksItem::ListSinksItem() :
 {
 }
 
-ListSinksItem::ListSinksItem(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false)
+ListSinksItem::ListSinksItem(JsonView jsonValue)
+  : ListSinksItem()
 {
   *this = jsonValue;
 }

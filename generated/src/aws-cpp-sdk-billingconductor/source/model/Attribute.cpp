@@ -24,9 +24,8 @@ Attribute::Attribute() :
 {
 }
 
-Attribute::Attribute(JsonView jsonValue) : 
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false)
+Attribute::Attribute(JsonView jsonValue)
+  : Attribute()
 {
   *this = jsonValue;
 }

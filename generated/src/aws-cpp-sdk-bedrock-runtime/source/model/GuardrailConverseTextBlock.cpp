@@ -23,8 +23,8 @@ GuardrailConverseTextBlock::GuardrailConverseTextBlock() :
 {
 }
 
-GuardrailConverseTextBlock::GuardrailConverseTextBlock(JsonView jsonValue) : 
-    m_textHasBeenSet(false)
+GuardrailConverseTextBlock::GuardrailConverseTextBlock(JsonView jsonValue)
+  : GuardrailConverseTextBlock()
 {
   *this = jsonValue;
 }

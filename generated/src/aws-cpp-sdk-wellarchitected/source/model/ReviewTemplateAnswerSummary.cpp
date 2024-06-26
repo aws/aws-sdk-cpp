@@ -36,21 +36,8 @@ ReviewTemplateAnswerSummary::ReviewTemplateAnswerSummary() :
 {
 }
 
-ReviewTemplateAnswerSummary::ReviewTemplateAnswerSummary(JsonView jsonValue) : 
-    m_questionIdHasBeenSet(false),
-    m_pillarIdHasBeenSet(false),
-    m_questionTitleHasBeenSet(false),
-    m_choicesHasBeenSet(false),
-    m_selectedChoicesHasBeenSet(false),
-    m_choiceAnswerSummariesHasBeenSet(false),
-    m_isApplicable(false),
-    m_isApplicableHasBeenSet(false),
-    m_answerStatus(ReviewTemplateAnswerStatus::NOT_SET),
-    m_answerStatusHasBeenSet(false),
-    m_reason(AnswerReason::NOT_SET),
-    m_reasonHasBeenSet(false),
-    m_questionType(QuestionType::NOT_SET),
-    m_questionTypeHasBeenSet(false)
+ReviewTemplateAnswerSummary::ReviewTemplateAnswerSummary(JsonView jsonValue)
+  : ReviewTemplateAnswerSummary()
 {
   *this = jsonValue;
 }

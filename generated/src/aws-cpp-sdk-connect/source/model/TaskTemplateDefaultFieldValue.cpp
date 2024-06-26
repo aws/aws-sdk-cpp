@@ -24,9 +24,8 @@ TaskTemplateDefaultFieldValue::TaskTemplateDefaultFieldValue() :
 {
 }
 
-TaskTemplateDefaultFieldValue::TaskTemplateDefaultFieldValue(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_defaultValueHasBeenSet(false)
+TaskTemplateDefaultFieldValue::TaskTemplateDefaultFieldValue(JsonView jsonValue)
+  : TaskTemplateDefaultFieldValue()
 {
   *this = jsonValue;
 }

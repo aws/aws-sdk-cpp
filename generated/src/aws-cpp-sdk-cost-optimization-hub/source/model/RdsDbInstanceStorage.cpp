@@ -24,9 +24,8 @@ RdsDbInstanceStorage::RdsDbInstanceStorage() :
 {
 }
 
-RdsDbInstanceStorage::RdsDbInstanceStorage(JsonView jsonValue) : 
-    m_configurationHasBeenSet(false),
-    m_costCalculationHasBeenSet(false)
+RdsDbInstanceStorage::RdsDbInstanceStorage(JsonView jsonValue)
+  : RdsDbInstanceStorage()
 {
   *this = jsonValue;
 }

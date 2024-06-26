@@ -22,8 +22,8 @@ UpdateBridgeStateResult::UpdateBridgeStateResult() :
 {
 }
 
-UpdateBridgeStateResult::UpdateBridgeStateResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_desiredState(DesiredState::NOT_SET)
+UpdateBridgeStateResult::UpdateBridgeStateResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateBridgeStateResult()
 {
   *this = result;
 }

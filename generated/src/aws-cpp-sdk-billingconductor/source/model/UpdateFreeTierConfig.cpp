@@ -24,9 +24,8 @@ UpdateFreeTierConfig::UpdateFreeTierConfig() :
 {
 }
 
-UpdateFreeTierConfig::UpdateFreeTierConfig(JsonView jsonValue) : 
-    m_activated(false),
-    m_activatedHasBeenSet(false)
+UpdateFreeTierConfig::UpdateFreeTierConfig(JsonView jsonValue)
+  : UpdateFreeTierConfig()
 {
   *this = jsonValue;
 }

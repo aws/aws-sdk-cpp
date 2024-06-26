@@ -26,12 +26,8 @@ UpdateMaintenanceWindowResult::UpdateMaintenanceWindowResult() :
 {
 }
 
-UpdateMaintenanceWindowResult::UpdateMaintenanceWindowResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_scheduleOffset(0),
-    m_duration(0),
-    m_cutoff(0),
-    m_allowUnassociatedTargets(false),
-    m_enabled(false)
+UpdateMaintenanceWindowResult::UpdateMaintenanceWindowResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateMaintenanceWindowResult()
 {
   *this = result;
 }

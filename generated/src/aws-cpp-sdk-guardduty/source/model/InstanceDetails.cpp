@@ -35,20 +35,8 @@ InstanceDetails::InstanceDetails() :
 {
 }
 
-InstanceDetails::InstanceDetails(JsonView jsonValue) : 
-    m_availabilityZoneHasBeenSet(false),
-    m_iamInstanceProfileHasBeenSet(false),
-    m_imageDescriptionHasBeenSet(false),
-    m_imageIdHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_instanceStateHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_outpostArnHasBeenSet(false),
-    m_launchTimeHasBeenSet(false),
-    m_networkInterfacesHasBeenSet(false),
-    m_platformHasBeenSet(false),
-    m_productCodesHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+InstanceDetails::InstanceDetails(JsonView jsonValue)
+  : InstanceDetails()
 {
   *this = jsonValue;
 }

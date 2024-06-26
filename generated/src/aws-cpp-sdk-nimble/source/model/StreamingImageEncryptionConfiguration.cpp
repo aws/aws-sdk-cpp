@@ -25,10 +25,8 @@ StreamingImageEncryptionConfiguration::StreamingImageEncryptionConfiguration() :
 {
 }
 
-StreamingImageEncryptionConfiguration::StreamingImageEncryptionConfiguration(JsonView jsonValue) : 
-    m_keyArnHasBeenSet(false),
-    m_keyType(StreamingImageEncryptionConfigurationKeyType::NOT_SET),
-    m_keyTypeHasBeenSet(false)
+StreamingImageEncryptionConfiguration::StreamingImageEncryptionConfiguration(JsonView jsonValue)
+  : StreamingImageEncryptionConfiguration()
 {
   *this = jsonValue;
 }

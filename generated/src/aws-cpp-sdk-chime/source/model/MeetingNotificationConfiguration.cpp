@@ -24,9 +24,8 @@ MeetingNotificationConfiguration::MeetingNotificationConfiguration() :
 {
 }
 
-MeetingNotificationConfiguration::MeetingNotificationConfiguration(JsonView jsonValue) : 
-    m_snsTopicArnHasBeenSet(false),
-    m_sqsQueueArnHasBeenSet(false)
+MeetingNotificationConfiguration::MeetingNotificationConfiguration(JsonView jsonValue)
+  : MeetingNotificationConfiguration()
 {
   *this = jsonValue;
 }

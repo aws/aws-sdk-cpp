@@ -24,9 +24,8 @@ RuleGroupSourceStatelessRuleMatchAttributesTcpFlags::RuleGroupSourceStatelessRul
 {
 }
 
-RuleGroupSourceStatelessRuleMatchAttributesTcpFlags::RuleGroupSourceStatelessRuleMatchAttributesTcpFlags(JsonView jsonValue) : 
-    m_flagsHasBeenSet(false),
-    m_masksHasBeenSet(false)
+RuleGroupSourceStatelessRuleMatchAttributesTcpFlags::RuleGroupSourceStatelessRuleMatchAttributesTcpFlags(JsonView jsonValue)
+  : RuleGroupSourceStatelessRuleMatchAttributesTcpFlags()
 {
   *this = jsonValue;
 }

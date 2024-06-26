@@ -22,8 +22,8 @@ GetEventPredictionMetadataResult::GetEventPredictionMetadataResult() :
 {
 }
 
-GetEventPredictionMetadataResult::GetEventPredictionMetadataResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_ruleExecutionMode(RuleExecutionMode::NOT_SET)
+GetEventPredictionMetadataResult::GetEventPredictionMetadataResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetEventPredictionMetadataResult()
 {
   *this = result;
 }

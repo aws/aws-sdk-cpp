@@ -30,13 +30,8 @@ CustomErrorResponse::CustomErrorResponse() :
 {
 }
 
-CustomErrorResponse::CustomErrorResponse(const XmlNode& xmlNode) : 
-    m_errorCode(0),
-    m_errorCodeHasBeenSet(false),
-    m_responsePagePathHasBeenSet(false),
-    m_responseCodeHasBeenSet(false),
-    m_errorCachingMinTTL(0),
-    m_errorCachingMinTTLHasBeenSet(false)
+CustomErrorResponse::CustomErrorResponse(const XmlNode& xmlNode)
+  : CustomErrorResponse()
 {
   *this = xmlNode;
 }

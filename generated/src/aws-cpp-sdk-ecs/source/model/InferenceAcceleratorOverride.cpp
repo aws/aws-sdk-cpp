@@ -24,9 +24,8 @@ InferenceAcceleratorOverride::InferenceAcceleratorOverride() :
 {
 }
 
-InferenceAcceleratorOverride::InferenceAcceleratorOverride(JsonView jsonValue) : 
-    m_deviceNameHasBeenSet(false),
-    m_deviceTypeHasBeenSet(false)
+InferenceAcceleratorOverride::InferenceAcceleratorOverride(JsonView jsonValue)
+  : InferenceAcceleratorOverride()
 {
   *this = jsonValue;
 }

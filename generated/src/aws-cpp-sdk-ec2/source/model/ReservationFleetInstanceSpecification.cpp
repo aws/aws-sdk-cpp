@@ -36,19 +36,8 @@ ReservationFleetInstanceSpecification::ReservationFleetInstanceSpecification() :
 {
 }
 
-ReservationFleetInstanceSpecification::ReservationFleetInstanceSpecification(const XmlNode& xmlNode) : 
-    m_instanceType(InstanceType::NOT_SET),
-    m_instanceTypeHasBeenSet(false),
-    m_instancePlatform(CapacityReservationInstancePlatform::NOT_SET),
-    m_instancePlatformHasBeenSet(false),
-    m_weight(0.0),
-    m_weightHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_availabilityZoneIdHasBeenSet(false),
-    m_ebsOptimized(false),
-    m_ebsOptimizedHasBeenSet(false),
-    m_priority(0),
-    m_priorityHasBeenSet(false)
+ReservationFleetInstanceSpecification::ReservationFleetInstanceSpecification(const XmlNode& xmlNode)
+  : ReservationFleetInstanceSpecification()
 {
   *this = xmlNode;
 }

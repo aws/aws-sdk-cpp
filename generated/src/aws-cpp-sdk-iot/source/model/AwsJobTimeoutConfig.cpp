@@ -24,9 +24,8 @@ AwsJobTimeoutConfig::AwsJobTimeoutConfig() :
 {
 }
 
-AwsJobTimeoutConfig::AwsJobTimeoutConfig(JsonView jsonValue) : 
-    m_inProgressTimeoutInMinutes(0),
-    m_inProgressTimeoutInMinutesHasBeenSet(false)
+AwsJobTimeoutConfig::AwsJobTimeoutConfig(JsonView jsonValue)
+  : AwsJobTimeoutConfig()
 {
   *this = jsonValue;
 }

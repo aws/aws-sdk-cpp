@@ -24,9 +24,8 @@ FlinkRunConfiguration::FlinkRunConfiguration() :
 {
 }
 
-FlinkRunConfiguration::FlinkRunConfiguration(JsonView jsonValue) : 
-    m_allowNonRestoredState(false),
-    m_allowNonRestoredStateHasBeenSet(false)
+FlinkRunConfiguration::FlinkRunConfiguration(JsonView jsonValue)
+  : FlinkRunConfiguration()
 {
   *this = jsonValue;
 }

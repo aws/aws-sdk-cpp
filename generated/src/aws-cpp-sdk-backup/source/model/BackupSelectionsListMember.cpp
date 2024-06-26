@@ -28,13 +28,8 @@ BackupSelectionsListMember::BackupSelectionsListMember() :
 {
 }
 
-BackupSelectionsListMember::BackupSelectionsListMember(JsonView jsonValue) : 
-    m_selectionIdHasBeenSet(false),
-    m_selectionNameHasBeenSet(false),
-    m_backupPlanIdHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_creatorRequestIdHasBeenSet(false),
-    m_iamRoleArnHasBeenSet(false)
+BackupSelectionsListMember::BackupSelectionsListMember(JsonView jsonValue)
+  : BackupSelectionsListMember()
 {
   *this = jsonValue;
 }

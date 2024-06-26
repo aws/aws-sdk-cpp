@@ -26,11 +26,8 @@ VirtualGatewayListener::VirtualGatewayListener() :
 {
 }
 
-VirtualGatewayListener::VirtualGatewayListener(JsonView jsonValue) : 
-    m_connectionPoolHasBeenSet(false),
-    m_healthCheckHasBeenSet(false),
-    m_portMappingHasBeenSet(false),
-    m_tlsHasBeenSet(false)
+VirtualGatewayListener::VirtualGatewayListener(JsonView jsonValue)
+  : VirtualGatewayListener()
 {
   *this = jsonValue;
 }

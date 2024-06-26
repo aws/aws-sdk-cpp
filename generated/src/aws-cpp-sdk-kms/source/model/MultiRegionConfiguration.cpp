@@ -26,11 +26,8 @@ MultiRegionConfiguration::MultiRegionConfiguration() :
 {
 }
 
-MultiRegionConfiguration::MultiRegionConfiguration(JsonView jsonValue) : 
-    m_multiRegionKeyType(MultiRegionKeyType::NOT_SET),
-    m_multiRegionKeyTypeHasBeenSet(false),
-    m_primaryKeyHasBeenSet(false),
-    m_replicaKeysHasBeenSet(false)
+MultiRegionConfiguration::MultiRegionConfiguration(JsonView jsonValue)
+  : MultiRegionConfiguration()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ PushSync::PushSync() :
 {
 }
 
-PushSync::PushSync(JsonView jsonValue) : 
-    m_applicationArnsHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
+PushSync::PushSync(JsonView jsonValue)
+  : PushSync()
 {
   *this = jsonValue;
 }

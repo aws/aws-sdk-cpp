@@ -22,8 +22,8 @@ DescribeWhatIfForecastExportResult::DescribeWhatIfForecastExportResult() :
 {
 }
 
-DescribeWhatIfForecastExportResult::DescribeWhatIfForecastExportResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_estimatedTimeRemainingInMinutes(0)
+DescribeWhatIfForecastExportResult::DescribeWhatIfForecastExportResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeWhatIfForecastExportResult()
 {
   *this = result;
 }

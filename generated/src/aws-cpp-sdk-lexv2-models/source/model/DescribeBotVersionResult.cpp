@@ -24,10 +24,8 @@ DescribeBotVersionResult::DescribeBotVersionResult() :
 {
 }
 
-DescribeBotVersionResult::DescribeBotVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_idleSessionTTLInSeconds(0),
-    m_botStatus(BotStatus::NOT_SET),
-    m_botType(BotType::NOT_SET)
+DescribeBotVersionResult::DescribeBotVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeBotVersionResult()
 {
   *this = result;
 }

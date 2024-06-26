@@ -32,17 +32,8 @@ WcdmaNmrObj::WcdmaNmrObj() :
 {
 }
 
-WcdmaNmrObj::WcdmaNmrObj(JsonView jsonValue) : 
-    m_uarfcndl(0),
-    m_uarfcndlHasBeenSet(false),
-    m_psc(0),
-    m_pscHasBeenSet(false),
-    m_utranCid(0),
-    m_utranCidHasBeenSet(false),
-    m_rscp(0),
-    m_rscpHasBeenSet(false),
-    m_pathLoss(0),
-    m_pathLossHasBeenSet(false)
+WcdmaNmrObj::WcdmaNmrObj(JsonView jsonValue)
+  : WcdmaNmrObj()
 {
   *this = jsonValue;
 }

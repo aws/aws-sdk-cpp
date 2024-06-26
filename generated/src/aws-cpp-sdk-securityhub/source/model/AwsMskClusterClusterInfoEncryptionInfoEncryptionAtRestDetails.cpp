@@ -23,8 +23,8 @@ AwsMskClusterClusterInfoEncryptionInfoEncryptionAtRestDetails::AwsMskClusterClus
 {
 }
 
-AwsMskClusterClusterInfoEncryptionInfoEncryptionAtRestDetails::AwsMskClusterClusterInfoEncryptionInfoEncryptionAtRestDetails(JsonView jsonValue) : 
-    m_dataVolumeKMSKeyIdHasBeenSet(false)
+AwsMskClusterClusterInfoEncryptionInfoEncryptionAtRestDetails::AwsMskClusterClusterInfoEncryptionInfoEncryptionAtRestDetails(JsonView jsonValue)
+  : AwsMskClusterClusterInfoEncryptionInfoEncryptionAtRestDetails()
 {
   *this = jsonValue;
 }

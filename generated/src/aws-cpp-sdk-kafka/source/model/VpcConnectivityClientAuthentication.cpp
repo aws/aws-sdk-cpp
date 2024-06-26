@@ -24,9 +24,8 @@ VpcConnectivityClientAuthentication::VpcConnectivityClientAuthentication() :
 {
 }
 
-VpcConnectivityClientAuthentication::VpcConnectivityClientAuthentication(JsonView jsonValue) : 
-    m_saslHasBeenSet(false),
-    m_tlsHasBeenSet(false)
+VpcConnectivityClientAuthentication::VpcConnectivityClientAuthentication(JsonView jsonValue)
+  : VpcConnectivityClientAuthentication()
 {
   *this = jsonValue;
 }

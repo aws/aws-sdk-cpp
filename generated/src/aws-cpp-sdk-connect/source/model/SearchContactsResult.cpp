@@ -22,8 +22,8 @@ SearchContactsResult::SearchContactsResult() :
 {
 }
 
-SearchContactsResult::SearchContactsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_totalCount(0)
+SearchContactsResult::SearchContactsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : SearchContactsResult()
 {
   *this = result;
 }

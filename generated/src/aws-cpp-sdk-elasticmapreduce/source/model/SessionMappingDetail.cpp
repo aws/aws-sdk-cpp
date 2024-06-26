@@ -30,15 +30,8 @@ SessionMappingDetail::SessionMappingDetail() :
 {
 }
 
-SessionMappingDetail::SessionMappingDetail(JsonView jsonValue) : 
-    m_studioIdHasBeenSet(false),
-    m_identityIdHasBeenSet(false),
-    m_identityNameHasBeenSet(false),
-    m_identityType(IdentityType::NOT_SET),
-    m_identityTypeHasBeenSet(false),
-    m_sessionPolicyArnHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false)
+SessionMappingDetail::SessionMappingDetail(JsonView jsonValue)
+  : SessionMappingDetail()
 {
   *this = jsonValue;
 }

@@ -31,16 +31,8 @@ EC2ResourceDetails::EC2ResourceDetails() :
 {
 }
 
-EC2ResourceDetails::EC2ResourceDetails(JsonView jsonValue) : 
-    m_hourlyOnDemandRateHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_platformHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_skuHasBeenSet(false),
-    m_memoryHasBeenSet(false),
-    m_networkPerformanceHasBeenSet(false),
-    m_storageHasBeenSet(false),
-    m_vcpuHasBeenSet(false)
+EC2ResourceDetails::EC2ResourceDetails(JsonView jsonValue)
+  : EC2ResourceDetails()
 {
   *this = jsonValue;
 }

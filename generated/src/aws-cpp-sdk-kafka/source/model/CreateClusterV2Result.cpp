@@ -23,9 +23,8 @@ CreateClusterV2Result::CreateClusterV2Result() :
 {
 }
 
-CreateClusterV2Result::CreateClusterV2Result(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_state(ClusterState::NOT_SET),
-    m_clusterType(ClusterType::NOT_SET)
+CreateClusterV2Result::CreateClusterV2Result(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateClusterV2Result()
 {
   *this = result;
 }

@@ -25,10 +25,8 @@ NewStudioMember::NewStudioMember() :
 {
 }
 
-NewStudioMember::NewStudioMember(JsonView jsonValue) : 
-    m_persona(StudioPersona::NOT_SET),
-    m_personaHasBeenSet(false),
-    m_principalIdHasBeenSet(false)
+NewStudioMember::NewStudioMember(JsonView jsonValue)
+  : NewStudioMember()
 {
   *this = jsonValue;
 }

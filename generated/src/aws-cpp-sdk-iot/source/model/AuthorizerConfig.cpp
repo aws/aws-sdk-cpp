@@ -25,10 +25,8 @@ AuthorizerConfig::AuthorizerConfig() :
 {
 }
 
-AuthorizerConfig::AuthorizerConfig(JsonView jsonValue) : 
-    m_defaultAuthorizerNameHasBeenSet(false),
-    m_allowAuthorizerOverride(false),
-    m_allowAuthorizerOverrideHasBeenSet(false)
+AuthorizerConfig::AuthorizerConfig(JsonView jsonValue)
+  : AuthorizerConfig()
 {
   *this = jsonValue;
 }

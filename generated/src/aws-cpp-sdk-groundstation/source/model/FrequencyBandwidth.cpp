@@ -26,11 +26,8 @@ FrequencyBandwidth::FrequencyBandwidth() :
 {
 }
 
-FrequencyBandwidth::FrequencyBandwidth(JsonView jsonValue) : 
-    m_units(BandwidthUnits::NOT_SET),
-    m_unitsHasBeenSet(false),
-    m_value(0.0),
-    m_valueHasBeenSet(false)
+FrequencyBandwidth::FrequencyBandwidth(JsonView jsonValue)
+  : FrequencyBandwidth()
 {
   *this = jsonValue;
 }

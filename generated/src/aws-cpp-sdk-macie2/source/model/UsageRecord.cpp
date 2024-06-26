@@ -26,11 +26,8 @@ UsageRecord::UsageRecord() :
 {
 }
 
-UsageRecord::UsageRecord(JsonView jsonValue) : 
-    m_accountIdHasBeenSet(false),
-    m_automatedDiscoveryFreeTrialStartDateHasBeenSet(false),
-    m_freeTrialStartDateHasBeenSet(false),
-    m_usageHasBeenSet(false)
+UsageRecord::UsageRecord(JsonView jsonValue)
+  : UsageRecord()
 {
   *this = jsonValue;
 }

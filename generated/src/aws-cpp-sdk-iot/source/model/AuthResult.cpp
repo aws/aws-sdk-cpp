@@ -28,13 +28,8 @@ AuthResult::AuthResult() :
 {
 }
 
-AuthResult::AuthResult(JsonView jsonValue) : 
-    m_authInfoHasBeenSet(false),
-    m_allowedHasBeenSet(false),
-    m_deniedHasBeenSet(false),
-    m_authDecision(AuthDecision::NOT_SET),
-    m_authDecisionHasBeenSet(false),
-    m_missingContextValuesHasBeenSet(false)
+AuthResult::AuthResult(JsonView jsonValue)
+  : AuthResult()
 {
   *this = jsonValue;
 }

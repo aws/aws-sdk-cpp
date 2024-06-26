@@ -27,10 +27,8 @@ InstanceEventWindowDisassociationRequest::InstanceEventWindowDisassociationReque
 {
 }
 
-InstanceEventWindowDisassociationRequest::InstanceEventWindowDisassociationRequest(const XmlNode& xmlNode) : 
-    m_instanceIdsHasBeenSet(false),
-    m_instanceTagsHasBeenSet(false),
-    m_dedicatedHostIdsHasBeenSet(false)
+InstanceEventWindowDisassociationRequest::InstanceEventWindowDisassociationRequest(const XmlNode& xmlNode)
+  : InstanceEventWindowDisassociationRequest()
 {
   *this = xmlNode;
 }

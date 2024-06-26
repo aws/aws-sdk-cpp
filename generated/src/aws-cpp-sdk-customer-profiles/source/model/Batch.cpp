@@ -24,9 +24,8 @@ Batch::Batch() :
 {
 }
 
-Batch::Batch(JsonView jsonValue) : 
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
+Batch::Batch(JsonView jsonValue)
+  : Batch()
 {
   *this = jsonValue;
 }

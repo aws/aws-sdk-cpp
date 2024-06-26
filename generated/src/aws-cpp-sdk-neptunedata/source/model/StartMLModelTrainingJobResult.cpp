@@ -22,8 +22,8 @@ StartMLModelTrainingJobResult::StartMLModelTrainingJobResult() :
 {
 }
 
-StartMLModelTrainingJobResult::StartMLModelTrainingJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_creationTimeInMillis(0)
+StartMLModelTrainingJobResult::StartMLModelTrainingJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : StartMLModelTrainingJobResult()
 {
   *this = result;
 }

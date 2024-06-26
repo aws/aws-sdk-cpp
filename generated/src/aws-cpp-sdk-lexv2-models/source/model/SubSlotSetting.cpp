@@ -24,9 +24,8 @@ SubSlotSetting::SubSlotSetting() :
 {
 }
 
-SubSlotSetting::SubSlotSetting(JsonView jsonValue) : 
-    m_expressionHasBeenSet(false),
-    m_slotSpecificationsHasBeenSet(false)
+SubSlotSetting::SubSlotSetting(JsonView jsonValue)
+  : SubSlotSetting()
 {
   *this = jsonValue;
 }

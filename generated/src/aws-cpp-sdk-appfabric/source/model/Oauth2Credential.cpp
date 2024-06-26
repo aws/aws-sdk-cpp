@@ -24,9 +24,8 @@ Oauth2Credential::Oauth2Credential() :
 {
 }
 
-Oauth2Credential::Oauth2Credential(JsonView jsonValue) : 
-    m_clientIdHasBeenSet(false),
-    m_clientSecretHasBeenSet(false)
+Oauth2Credential::Oauth2Credential(JsonView jsonValue)
+  : Oauth2Credential()
 {
   *this = jsonValue;
 }

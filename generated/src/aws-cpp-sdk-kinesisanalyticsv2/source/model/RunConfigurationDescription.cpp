@@ -24,9 +24,8 @@ RunConfigurationDescription::RunConfigurationDescription() :
 {
 }
 
-RunConfigurationDescription::RunConfigurationDescription(JsonView jsonValue) : 
-    m_applicationRestoreConfigurationDescriptionHasBeenSet(false),
-    m_flinkRunConfigurationDescriptionHasBeenSet(false)
+RunConfigurationDescription::RunConfigurationDescription(JsonView jsonValue)
+  : RunConfigurationDescription()
 {
   *this = jsonValue;
 }

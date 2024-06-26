@@ -27,12 +27,8 @@ Occurrences::Occurrences() :
 {
 }
 
-Occurrences::Occurrences(JsonView jsonValue) : 
-    m_cellsHasBeenSet(false),
-    m_lineRangesHasBeenSet(false),
-    m_offsetRangesHasBeenSet(false),
-    m_pagesHasBeenSet(false),
-    m_recordsHasBeenSet(false)
+Occurrences::Occurrences(JsonView jsonValue)
+  : Occurrences()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ ColumnGroup::ColumnGroup() :
 {
 }
 
-ColumnGroup::ColumnGroup(JsonView jsonValue) : 
-    m_geoSpatialColumnGroupHasBeenSet(false)
+ColumnGroup::ColumnGroup(JsonView jsonValue)
+  : ColumnGroup()
 {
   *this = jsonValue;
 }

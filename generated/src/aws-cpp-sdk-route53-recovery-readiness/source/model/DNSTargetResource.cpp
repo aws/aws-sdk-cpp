@@ -27,12 +27,8 @@ DNSTargetResource::DNSTargetResource() :
 {
 }
 
-DNSTargetResource::DNSTargetResource(JsonView jsonValue) : 
-    m_domainNameHasBeenSet(false),
-    m_hostedZoneArnHasBeenSet(false),
-    m_recordSetIdHasBeenSet(false),
-    m_recordTypeHasBeenSet(false),
-    m_targetResourceHasBeenSet(false)
+DNSTargetResource::DNSTargetResource(JsonView jsonValue)
+  : DNSTargetResource()
 {
   *this = jsonValue;
 }

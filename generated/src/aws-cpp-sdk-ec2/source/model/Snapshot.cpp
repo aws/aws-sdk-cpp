@@ -47,30 +47,8 @@ Snapshot::Snapshot() :
 {
 }
 
-Snapshot::Snapshot(const XmlNode& xmlNode) : 
-    m_dataEncryptionKeyIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_encrypted(false),
-    m_encryptedHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_progressHasBeenSet(false),
-    m_snapshotIdHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_state(SnapshotState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_stateMessageHasBeenSet(false),
-    m_volumeIdHasBeenSet(false),
-    m_volumeSize(0),
-    m_volumeSizeHasBeenSet(false),
-    m_ownerAliasHasBeenSet(false),
-    m_outpostArnHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_storageTier(StorageTier::NOT_SET),
-    m_storageTierHasBeenSet(false),
-    m_restoreExpiryTimeHasBeenSet(false),
-    m_sseType(SSEType::NOT_SET),
-    m_sseTypeHasBeenSet(false)
+Snapshot::Snapshot(const XmlNode& xmlNode)
+  : Snapshot()
 {
   *this = xmlNode;
 }

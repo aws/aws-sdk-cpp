@@ -30,15 +30,8 @@ ApiResult::ApiResult() :
 {
 }
 
-ApiResult::ApiResult(JsonView jsonValue) : 
-    m_actionGroupHasBeenSet(false),
-    m_apiPathHasBeenSet(false),
-    m_httpMethodHasBeenSet(false),
-    m_httpStatusCode(0),
-    m_httpStatusCodeHasBeenSet(false),
-    m_responseBodyHasBeenSet(false),
-    m_responseState(ResponseState::NOT_SET),
-    m_responseStateHasBeenSet(false)
+ApiResult::ApiResult(JsonView jsonValue)
+  : ApiResult()
 {
   *this = jsonValue;
 }

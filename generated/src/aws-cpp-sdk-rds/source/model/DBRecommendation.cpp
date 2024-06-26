@@ -44,27 +44,8 @@ DBRecommendation::DBRecommendation() :
 {
 }
 
-DBRecommendation::DBRecommendation(const XmlNode& xmlNode) : 
-    m_recommendationIdHasBeenSet(false),
-    m_typeIdHasBeenSet(false),
-    m_severityHasBeenSet(false),
-    m_resourceArnHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_updatedTimeHasBeenSet(false),
-    m_detectionHasBeenSet(false),
-    m_recommendationHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_reasonHasBeenSet(false),
-    m_recommendedActionsHasBeenSet(false),
-    m_categoryHasBeenSet(false),
-    m_sourceHasBeenSet(false),
-    m_typeDetectionHasBeenSet(false),
-    m_typeRecommendationHasBeenSet(false),
-    m_impactHasBeenSet(false),
-    m_additionalInfoHasBeenSet(false),
-    m_linksHasBeenSet(false),
-    m_issueDetailsHasBeenSet(false)
+DBRecommendation::DBRecommendation(const XmlNode& xmlNode)
+  : DBRecommendation()
 {
   *this = xmlNode;
 }

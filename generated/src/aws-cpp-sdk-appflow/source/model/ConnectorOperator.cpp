@@ -56,41 +56,8 @@ ConnectorOperator::ConnectorOperator() :
 {
 }
 
-ConnectorOperator::ConnectorOperator(JsonView jsonValue) : 
-    m_amplitude(AmplitudeConnectorOperator::NOT_SET),
-    m_amplitudeHasBeenSet(false),
-    m_datadog(DatadogConnectorOperator::NOT_SET),
-    m_datadogHasBeenSet(false),
-    m_dynatrace(DynatraceConnectorOperator::NOT_SET),
-    m_dynatraceHasBeenSet(false),
-    m_googleAnalytics(GoogleAnalyticsConnectorOperator::NOT_SET),
-    m_googleAnalyticsHasBeenSet(false),
-    m_inforNexus(InforNexusConnectorOperator::NOT_SET),
-    m_inforNexusHasBeenSet(false),
-    m_marketo(MarketoConnectorOperator::NOT_SET),
-    m_marketoHasBeenSet(false),
-    m_s3(S3ConnectorOperator::NOT_SET),
-    m_s3HasBeenSet(false),
-    m_salesforce(SalesforceConnectorOperator::NOT_SET),
-    m_salesforceHasBeenSet(false),
-    m_serviceNow(ServiceNowConnectorOperator::NOT_SET),
-    m_serviceNowHasBeenSet(false),
-    m_singular(SingularConnectorOperator::NOT_SET),
-    m_singularHasBeenSet(false),
-    m_slack(SlackConnectorOperator::NOT_SET),
-    m_slackHasBeenSet(false),
-    m_trendmicro(TrendmicroConnectorOperator::NOT_SET),
-    m_trendmicroHasBeenSet(false),
-    m_veeva(VeevaConnectorOperator::NOT_SET),
-    m_veevaHasBeenSet(false),
-    m_zendesk(ZendeskConnectorOperator::NOT_SET),
-    m_zendeskHasBeenSet(false),
-    m_sAPOData(SAPODataConnectorOperator::NOT_SET),
-    m_sAPODataHasBeenSet(false),
-    m_customConnector(Operator::NOT_SET),
-    m_customConnectorHasBeenSet(false),
-    m_pardot(PardotConnectorOperator::NOT_SET),
-    m_pardotHasBeenSet(false)
+ConnectorOperator::ConnectorOperator(JsonView jsonValue)
+  : ConnectorOperator()
 {
   *this = jsonValue;
 }

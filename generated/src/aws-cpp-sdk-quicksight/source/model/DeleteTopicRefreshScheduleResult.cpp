@@ -22,8 +22,8 @@ DeleteTopicRefreshScheduleResult::DeleteTopicRefreshScheduleResult() :
 {
 }
 
-DeleteTopicRefreshScheduleResult::DeleteTopicRefreshScheduleResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+DeleteTopicRefreshScheduleResult::DeleteTopicRefreshScheduleResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeleteTopicRefreshScheduleResult()
 {
   *this = result;
 }

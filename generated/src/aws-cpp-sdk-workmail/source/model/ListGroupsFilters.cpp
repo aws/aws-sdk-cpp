@@ -26,11 +26,8 @@ ListGroupsFilters::ListGroupsFilters() :
 {
 }
 
-ListGroupsFilters::ListGroupsFilters(JsonView jsonValue) : 
-    m_namePrefixHasBeenSet(false),
-    m_primaryEmailPrefixHasBeenSet(false),
-    m_state(EntityState::NOT_SET),
-    m_stateHasBeenSet(false)
+ListGroupsFilters::ListGroupsFilters(JsonView jsonValue)
+  : ListGroupsFilters()
 {
   *this = jsonValue;
 }

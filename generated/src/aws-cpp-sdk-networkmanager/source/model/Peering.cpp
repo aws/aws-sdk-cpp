@@ -35,20 +35,8 @@ Peering::Peering() :
 {
 }
 
-Peering::Peering(JsonView jsonValue) : 
-    m_coreNetworkIdHasBeenSet(false),
-    m_coreNetworkArnHasBeenSet(false),
-    m_peeringIdHasBeenSet(false),
-    m_ownerAccountIdHasBeenSet(false),
-    m_peeringType(PeeringType::NOT_SET),
-    m_peeringTypeHasBeenSet(false),
-    m_state(PeeringState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_edgeLocationHasBeenSet(false),
-    m_resourceArnHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_lastModificationErrorsHasBeenSet(false)
+Peering::Peering(JsonView jsonValue)
+  : Peering()
 {
   *this = jsonValue;
 }

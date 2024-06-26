@@ -25,10 +25,8 @@ UpsertRedshiftTargetOptions::UpsertRedshiftTargetOptions() :
 {
 }
 
-UpsertRedshiftTargetOptions::UpsertRedshiftTargetOptions(JsonView jsonValue) : 
-    m_tableLocationHasBeenSet(false),
-    m_connectionNameHasBeenSet(false),
-    m_upsertKeysHasBeenSet(false)
+UpsertRedshiftTargetOptions::UpsertRedshiftTargetOptions(JsonView jsonValue)
+  : UpsertRedshiftTargetOptions()
 {
   *this = jsonValue;
 }

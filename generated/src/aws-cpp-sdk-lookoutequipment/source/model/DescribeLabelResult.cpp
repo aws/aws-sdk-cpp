@@ -22,8 +22,8 @@ DescribeLabelResult::DescribeLabelResult() :
 {
 }
 
-DescribeLabelResult::DescribeLabelResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_rating(LabelRating::NOT_SET)
+DescribeLabelResult::DescribeLabelResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeLabelResult()
 {
   *this = result;
 }

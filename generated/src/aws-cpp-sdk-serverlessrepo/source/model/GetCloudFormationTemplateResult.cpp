@@ -22,8 +22,8 @@ GetCloudFormationTemplateResult::GetCloudFormationTemplateResult() :
 {
 }
 
-GetCloudFormationTemplateResult::GetCloudFormationTemplateResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(Status::NOT_SET)
+GetCloudFormationTemplateResult::GetCloudFormationTemplateResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetCloudFormationTemplateResult()
 {
   *this = result;
 }

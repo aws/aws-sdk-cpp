@@ -25,8 +25,8 @@ HostHeaderConditionConfig::HostHeaderConditionConfig() :
 {
 }
 
-HostHeaderConditionConfig::HostHeaderConditionConfig(const XmlNode& xmlNode) : 
-    m_valuesHasBeenSet(false)
+HostHeaderConditionConfig::HostHeaderConditionConfig(const XmlNode& xmlNode)
+  : HostHeaderConditionConfig()
 {
   *this = xmlNode;
 }

@@ -32,17 +32,8 @@ IntentSummary::IntentSummary() :
 {
 }
 
-IntentSummary::IntentSummary(JsonView jsonValue) : 
-    m_intentNameHasBeenSet(false),
-    m_checkpointLabelHasBeenSet(false),
-    m_slotsHasBeenSet(false),
-    m_confirmationStatus(ConfirmationStatus::NOT_SET),
-    m_confirmationStatusHasBeenSet(false),
-    m_dialogActionType(DialogActionType::NOT_SET),
-    m_dialogActionTypeHasBeenSet(false),
-    m_fulfillmentState(FulfillmentState::NOT_SET),
-    m_fulfillmentStateHasBeenSet(false),
-    m_slotToElicitHasBeenSet(false)
+IntentSummary::IntentSummary(JsonView jsonValue)
+  : IntentSummary()
 {
   *this = jsonValue;
 }

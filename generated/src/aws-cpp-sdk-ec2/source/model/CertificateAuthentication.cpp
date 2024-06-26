@@ -25,8 +25,8 @@ CertificateAuthentication::CertificateAuthentication() :
 {
 }
 
-CertificateAuthentication::CertificateAuthentication(const XmlNode& xmlNode) : 
-    m_clientRootCertificateChainHasBeenSet(false)
+CertificateAuthentication::CertificateAuthentication(const XmlNode& xmlNode)
+  : CertificateAuthentication()
 {
   *this = xmlNode;
 }

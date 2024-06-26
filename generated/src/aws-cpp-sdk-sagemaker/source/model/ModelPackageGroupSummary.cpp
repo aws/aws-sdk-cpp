@@ -28,13 +28,8 @@ ModelPackageGroupSummary::ModelPackageGroupSummary() :
 {
 }
 
-ModelPackageGroupSummary::ModelPackageGroupSummary(JsonView jsonValue) : 
-    m_modelPackageGroupNameHasBeenSet(false),
-    m_modelPackageGroupArnHasBeenSet(false),
-    m_modelPackageGroupDescriptionHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_modelPackageGroupStatus(ModelPackageGroupStatus::NOT_SET),
-    m_modelPackageGroupStatusHasBeenSet(false)
+ModelPackageGroupSummary::ModelPackageGroupSummary(JsonView jsonValue)
+  : ModelPackageGroupSummary()
 {
   *this = jsonValue;
 }

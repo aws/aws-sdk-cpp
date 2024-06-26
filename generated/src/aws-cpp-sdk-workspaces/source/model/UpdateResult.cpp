@@ -25,10 +25,8 @@ UpdateResult::UpdateResult() :
 {
 }
 
-UpdateResult::UpdateResult(JsonView jsonValue) : 
-    m_updateAvailable(false),
-    m_updateAvailableHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+UpdateResult::UpdateResult(JsonView jsonValue)
+  : UpdateResult()
 {
   *this = jsonValue;
 }

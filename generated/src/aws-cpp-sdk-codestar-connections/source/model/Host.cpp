@@ -30,15 +30,8 @@ Host::Host() :
 {
 }
 
-Host::Host(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_hostArnHasBeenSet(false),
-    m_providerType(ProviderType::NOT_SET),
-    m_providerTypeHasBeenSet(false),
-    m_providerEndpointHasBeenSet(false),
-    m_vpcConfigurationHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false)
+Host::Host(JsonView jsonValue)
+  : Host()
 {
   *this = jsonValue;
 }

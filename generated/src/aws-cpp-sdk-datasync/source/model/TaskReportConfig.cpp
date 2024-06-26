@@ -30,15 +30,8 @@ TaskReportConfig::TaskReportConfig() :
 {
 }
 
-TaskReportConfig::TaskReportConfig(JsonView jsonValue) : 
-    m_destinationHasBeenSet(false),
-    m_outputType(ReportOutputType::NOT_SET),
-    m_outputTypeHasBeenSet(false),
-    m_reportLevel(ReportLevel::NOT_SET),
-    m_reportLevelHasBeenSet(false),
-    m_objectVersionIds(ObjectVersionIds::NOT_SET),
-    m_objectVersionIdsHasBeenSet(false),
-    m_overridesHasBeenSet(false)
+TaskReportConfig::TaskReportConfig(JsonView jsonValue)
+  : TaskReportConfig()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ TrendmicroSourceProperties::TrendmicroSourceProperties() :
 {
 }
 
-TrendmicroSourceProperties::TrendmicroSourceProperties(JsonView jsonValue) : 
-    m_objectHasBeenSet(false)
+TrendmicroSourceProperties::TrendmicroSourceProperties(JsonView jsonValue)
+  : TrendmicroSourceProperties()
 {
   *this = jsonValue;
 }

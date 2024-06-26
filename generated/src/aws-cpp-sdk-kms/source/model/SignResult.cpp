@@ -23,8 +23,8 @@ SignResult::SignResult() :
 {
 }
 
-SignResult::SignResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_signingAlgorithm(SigningAlgorithmSpec::NOT_SET)
+SignResult::SignResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : SignResult()
 {
   *this = result;
 }

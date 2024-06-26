@@ -28,13 +28,8 @@ WorkloadJiraConfigurationOutput::WorkloadJiraConfigurationOutput() :
 {
 }
 
-WorkloadJiraConfigurationOutput::WorkloadJiraConfigurationOutput(JsonView jsonValue) : 
-    m_issueManagementStatus(WorkloadIssueManagementStatus::NOT_SET),
-    m_issueManagementStatusHasBeenSet(false),
-    m_issueManagementType(IssueManagementType::NOT_SET),
-    m_issueManagementTypeHasBeenSet(false),
-    m_jiraProjectKeyHasBeenSet(false),
-    m_statusMessageHasBeenSet(false)
+WorkloadJiraConfigurationOutput::WorkloadJiraConfigurationOutput(JsonView jsonValue)
+  : WorkloadJiraConfigurationOutput()
 {
   *this = jsonValue;
 }

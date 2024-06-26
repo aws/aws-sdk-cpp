@@ -24,9 +24,8 @@ SessionCommand::SessionCommand() :
 {
 }
 
-SessionCommand::SessionCommand(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_pythonVersionHasBeenSet(false)
+SessionCommand::SessionCommand(JsonView jsonValue)
+  : SessionCommand()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ QueryParameterMatch::QueryParameterMatch() :
 {
 }
 
-QueryParameterMatch::QueryParameterMatch(JsonView jsonValue) : 
-    m_exactHasBeenSet(false)
+QueryParameterMatch::QueryParameterMatch(JsonView jsonValue)
+  : QueryParameterMatch()
 {
   *this = jsonValue;
 }

@@ -29,14 +29,8 @@ AutomatedAbrSettings::AutomatedAbrSettings() :
 {
 }
 
-AutomatedAbrSettings::AutomatedAbrSettings(JsonView jsonValue) : 
-    m_maxAbrBitrate(0),
-    m_maxAbrBitrateHasBeenSet(false),
-    m_maxRenditions(0),
-    m_maxRenditionsHasBeenSet(false),
-    m_minAbrBitrate(0),
-    m_minAbrBitrateHasBeenSet(false),
-    m_rulesHasBeenSet(false)
+AutomatedAbrSettings::AutomatedAbrSettings(JsonView jsonValue)
+  : AutomatedAbrSettings()
 {
   *this = jsonValue;
 }

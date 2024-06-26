@@ -28,13 +28,8 @@ OutputConfig::OutputConfig() :
 {
 }
 
-OutputConfig::OutputConfig(JsonView jsonValue) : 
-    m_s3OutputLocationHasBeenSet(false),
-    m_targetDevice(TargetDevice::NOT_SET),
-    m_targetDeviceHasBeenSet(false),
-    m_targetPlatformHasBeenSet(false),
-    m_compilerOptionsHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
+OutputConfig::OutputConfig(JsonView jsonValue)
+  : OutputConfig()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ DomainNotWhitelistedException::DomainNotWhitelistedException() :
 {
 }
 
-DomainNotWhitelistedException::DomainNotWhitelistedException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
+DomainNotWhitelistedException::DomainNotWhitelistedException(JsonView jsonValue)
+  : DomainNotWhitelistedException()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ InboxPlacementTrackingOption::InboxPlacementTrackingOption() :
 {
 }
 
-InboxPlacementTrackingOption::InboxPlacementTrackingOption(JsonView jsonValue) : 
-    m_global(false),
-    m_globalHasBeenSet(false),
-    m_trackedIspsHasBeenSet(false)
+InboxPlacementTrackingOption::InboxPlacementTrackingOption(JsonView jsonValue)
+  : InboxPlacementTrackingOption()
 {
   *this = jsonValue;
 }

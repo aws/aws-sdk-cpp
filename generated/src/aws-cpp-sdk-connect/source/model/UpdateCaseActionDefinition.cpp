@@ -23,8 +23,8 @@ UpdateCaseActionDefinition::UpdateCaseActionDefinition() :
 {
 }
 
-UpdateCaseActionDefinition::UpdateCaseActionDefinition(JsonView jsonValue) : 
-    m_fieldsHasBeenSet(false)
+UpdateCaseActionDefinition::UpdateCaseActionDefinition(JsonView jsonValue)
+  : UpdateCaseActionDefinition()
 {
   *this = jsonValue;
 }

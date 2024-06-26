@@ -34,19 +34,8 @@ ConnectorProfile::ConnectorProfile() :
 {
 }
 
-ConnectorProfile::ConnectorProfile(JsonView jsonValue) : 
-    m_connectorProfileArnHasBeenSet(false),
-    m_connectorProfileNameHasBeenSet(false),
-    m_connectorType(ConnectorType::NOT_SET),
-    m_connectorTypeHasBeenSet(false),
-    m_connectorLabelHasBeenSet(false),
-    m_connectionMode(ConnectionMode::NOT_SET),
-    m_connectionModeHasBeenSet(false),
-    m_credentialsArnHasBeenSet(false),
-    m_connectorProfilePropertiesHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false),
-    m_privateConnectionProvisioningStateHasBeenSet(false)
+ConnectorProfile::ConnectorProfile(JsonView jsonValue)
+  : ConnectorProfile()
 {
   *this = jsonValue;
 }

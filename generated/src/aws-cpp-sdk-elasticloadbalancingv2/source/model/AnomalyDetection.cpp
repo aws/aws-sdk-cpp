@@ -28,11 +28,8 @@ AnomalyDetection::AnomalyDetection() :
 {
 }
 
-AnomalyDetection::AnomalyDetection(const XmlNode& xmlNode) : 
-    m_result(AnomalyResultEnum::NOT_SET),
-    m_resultHasBeenSet(false),
-    m_mitigationInEffect(MitigationInEffectEnum::NOT_SET),
-    m_mitigationInEffectHasBeenSet(false)
+AnomalyDetection::AnomalyDetection(const XmlNode& xmlNode)
+  : AnomalyDetection()
 {
   *this = xmlNode;
 }

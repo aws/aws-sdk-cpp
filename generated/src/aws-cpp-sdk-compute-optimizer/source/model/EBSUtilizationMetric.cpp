@@ -28,13 +28,8 @@ EBSUtilizationMetric::EBSUtilizationMetric() :
 {
 }
 
-EBSUtilizationMetric::EBSUtilizationMetric(JsonView jsonValue) : 
-    m_name(EBSMetricName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_statistic(MetricStatistic::NOT_SET),
-    m_statisticHasBeenSet(false),
-    m_value(0.0),
-    m_valueHasBeenSet(false)
+EBSUtilizationMetric::EBSUtilizationMetric(JsonView jsonValue)
+  : EBSUtilizationMetric()
 {
   *this = jsonValue;
 }

@@ -35,20 +35,8 @@ BackupRuleInput::BackupRuleInput() :
 {
 }
 
-BackupRuleInput::BackupRuleInput(JsonView jsonValue) : 
-    m_ruleNameHasBeenSet(false),
-    m_targetBackupVaultNameHasBeenSet(false),
-    m_scheduleExpressionHasBeenSet(false),
-    m_startWindowMinutes(0),
-    m_startWindowMinutesHasBeenSet(false),
-    m_completionWindowMinutes(0),
-    m_completionWindowMinutesHasBeenSet(false),
-    m_lifecycleHasBeenSet(false),
-    m_recoveryPointTagsHasBeenSet(false),
-    m_copyActionsHasBeenSet(false),
-    m_enableContinuousBackup(false),
-    m_enableContinuousBackupHasBeenSet(false),
-    m_scheduleExpressionTimezoneHasBeenSet(false)
+BackupRuleInput::BackupRuleInput(JsonView jsonValue)
+  : BackupRuleInput()
 {
   *this = jsonValue;
 }

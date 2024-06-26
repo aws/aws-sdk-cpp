@@ -22,8 +22,8 @@ CreateEventBridgeRuleTemplateResult::CreateEventBridgeRuleTemplateResult() :
 {
 }
 
-CreateEventBridgeRuleTemplateResult::CreateEventBridgeRuleTemplateResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_eventType(EventBridgeRuleTemplateEventType::NOT_SET)
+CreateEventBridgeRuleTemplateResult::CreateEventBridgeRuleTemplateResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateEventBridgeRuleTemplateResult()
 {
   *this = result;
 }

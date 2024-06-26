@@ -24,9 +24,8 @@ InputIdentifier::InputIdentifier() :
 {
 }
 
-InputIdentifier::InputIdentifier(JsonView jsonValue) : 
-    m_iotEventsInputIdentifierHasBeenSet(false),
-    m_iotSiteWiseInputIdentifierHasBeenSet(false)
+InputIdentifier::InputIdentifier(JsonView jsonValue)
+  : InputIdentifier()
 {
   *this = jsonValue;
 }

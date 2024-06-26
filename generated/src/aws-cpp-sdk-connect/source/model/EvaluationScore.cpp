@@ -28,13 +28,8 @@ EvaluationScore::EvaluationScore() :
 {
 }
 
-EvaluationScore::EvaluationScore(JsonView jsonValue) : 
-    m_percentage(0.0),
-    m_percentageHasBeenSet(false),
-    m_notApplicable(false),
-    m_notApplicableHasBeenSet(false),
-    m_automaticFail(false),
-    m_automaticFailHasBeenSet(false)
+EvaluationScore::EvaluationScore(JsonView jsonValue)
+  : EvaluationScore()
 {
   *this = jsonValue;
 }

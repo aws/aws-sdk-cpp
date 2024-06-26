@@ -24,9 +24,8 @@ ActionSummary::ActionSummary() :
 {
 }
 
-ActionSummary::ActionSummary(JsonView jsonValue) : 
-    m_actionType(ActionType::NOT_SET),
-    m_actionTypeHasBeenSet(false)
+ActionSummary::ActionSummary(JsonView jsonValue)
+  : ActionSummary()
 {
   *this = jsonValue;
 }

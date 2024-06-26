@@ -28,13 +28,8 @@ DetectMitigationActionsTaskStatistics::DetectMitigationActionsTaskStatistics() :
 {
 }
 
-DetectMitigationActionsTaskStatistics::DetectMitigationActionsTaskStatistics(JsonView jsonValue) : 
-    m_actionsExecuted(0),
-    m_actionsExecutedHasBeenSet(false),
-    m_actionsSkipped(0),
-    m_actionsSkippedHasBeenSet(false),
-    m_actionsFailed(0),
-    m_actionsFailedHasBeenSet(false)
+DetectMitigationActionsTaskStatistics::DetectMitigationActionsTaskStatistics(JsonView jsonValue)
+  : DetectMitigationActionsTaskStatistics()
 {
   *this = jsonValue;
 }

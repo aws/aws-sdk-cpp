@@ -28,13 +28,8 @@ AwsEfsAccessPointDetails::AwsEfsAccessPointDetails() :
 {
 }
 
-AwsEfsAccessPointDetails::AwsEfsAccessPointDetails(JsonView jsonValue) : 
-    m_accessPointIdHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_clientTokenHasBeenSet(false),
-    m_fileSystemIdHasBeenSet(false),
-    m_posixUserHasBeenSet(false),
-    m_rootDirectoryHasBeenSet(false)
+AwsEfsAccessPointDetails::AwsEfsAccessPointDetails(JsonView jsonValue)
+  : AwsEfsAccessPointDetails()
 {
   *this = jsonValue;
 }

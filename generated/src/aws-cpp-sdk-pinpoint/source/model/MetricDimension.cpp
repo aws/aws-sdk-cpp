@@ -25,10 +25,8 @@ MetricDimension::MetricDimension() :
 {
 }
 
-MetricDimension::MetricDimension(JsonView jsonValue) : 
-    m_comparisonOperatorHasBeenSet(false),
-    m_value(0.0),
-    m_valueHasBeenSet(false)
+MetricDimension::MetricDimension(JsonView jsonValue)
+  : MetricDimension()
 {
   *this = jsonValue;
 }

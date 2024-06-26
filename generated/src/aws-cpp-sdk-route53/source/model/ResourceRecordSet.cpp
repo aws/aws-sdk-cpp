@@ -45,28 +45,8 @@ ResourceRecordSet::ResourceRecordSet() :
 {
 }
 
-ResourceRecordSet::ResourceRecordSet(const XmlNode& xmlNode) : 
-    m_nameHasBeenSet(false),
-    m_type(RRType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_setIdentifierHasBeenSet(false),
-    m_weight(0),
-    m_weightHasBeenSet(false),
-    m_region(ResourceRecordSetRegion::NOT_SET),
-    m_regionHasBeenSet(false),
-    m_geoLocationHasBeenSet(false),
-    m_failover(ResourceRecordSetFailover::NOT_SET),
-    m_failoverHasBeenSet(false),
-    m_multiValueAnswer(false),
-    m_multiValueAnswerHasBeenSet(false),
-    m_tTL(0),
-    m_tTLHasBeenSet(false),
-    m_resourceRecordsHasBeenSet(false),
-    m_aliasTargetHasBeenSet(false),
-    m_healthCheckIdHasBeenSet(false),
-    m_trafficPolicyInstanceIdHasBeenSet(false),
-    m_cidrRoutingConfigHasBeenSet(false),
-    m_geoProximityLocationHasBeenSet(false)
+ResourceRecordSet::ResourceRecordSet(const XmlNode& xmlNode)
+  : ResourceRecordSet()
 {
   *this = xmlNode;
 }

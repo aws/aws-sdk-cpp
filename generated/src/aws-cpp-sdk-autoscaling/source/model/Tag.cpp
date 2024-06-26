@@ -30,13 +30,8 @@ Tag::Tag() :
 {
 }
 
-Tag::Tag(const XmlNode& xmlNode) : 
-    m_resourceIdHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_propagateAtLaunch(false),
-    m_propagateAtLaunchHasBeenSet(false)
+Tag::Tag(const XmlNode& xmlNode)
+  : Tag()
 {
   *this = xmlNode;
 }

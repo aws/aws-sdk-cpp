@@ -23,8 +23,8 @@ SectionLayoutConfiguration::SectionLayoutConfiguration() :
 {
 }
 
-SectionLayoutConfiguration::SectionLayoutConfiguration(JsonView jsonValue) : 
-    m_freeFormLayoutHasBeenSet(false)
+SectionLayoutConfiguration::SectionLayoutConfiguration(JsonView jsonValue)
+  : SectionLayoutConfiguration()
 {
   *this = jsonValue;
 }

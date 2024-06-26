@@ -24,9 +24,8 @@ TrainingDataSchema::TrainingDataSchema() :
 {
 }
 
-TrainingDataSchema::TrainingDataSchema(JsonView jsonValue) : 
-    m_modelVariablesHasBeenSet(false),
-    m_labelSchemaHasBeenSet(false)
+TrainingDataSchema::TrainingDataSchema(JsonView jsonValue)
+  : TrainingDataSchema()
 {
   *this = jsonValue;
 }

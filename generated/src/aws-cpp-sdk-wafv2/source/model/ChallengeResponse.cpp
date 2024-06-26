@@ -28,13 +28,8 @@ ChallengeResponse::ChallengeResponse() :
 {
 }
 
-ChallengeResponse::ChallengeResponse(JsonView jsonValue) : 
-    m_responseCode(0),
-    m_responseCodeHasBeenSet(false),
-    m_solveTimestamp(0),
-    m_solveTimestampHasBeenSet(false),
-    m_failureReason(FailureReason::NOT_SET),
-    m_failureReasonHasBeenSet(false)
+ChallengeResponse::ChallengeResponse(JsonView jsonValue)
+  : ChallengeResponse()
 {
   *this = jsonValue;
 }

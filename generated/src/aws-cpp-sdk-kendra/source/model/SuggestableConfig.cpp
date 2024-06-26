@@ -25,10 +25,8 @@ SuggestableConfig::SuggestableConfig() :
 {
 }
 
-SuggestableConfig::SuggestableConfig(JsonView jsonValue) : 
-    m_attributeNameHasBeenSet(false),
-    m_suggestable(false),
-    m_suggestableHasBeenSet(false)
+SuggestableConfig::SuggestableConfig(JsonView jsonValue)
+  : SuggestableConfig()
 {
   *this = jsonValue;
 }

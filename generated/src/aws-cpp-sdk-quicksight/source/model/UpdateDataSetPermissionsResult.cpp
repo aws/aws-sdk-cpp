@@ -22,8 +22,8 @@ UpdateDataSetPermissionsResult::UpdateDataSetPermissionsResult() :
 {
 }
 
-UpdateDataSetPermissionsResult::UpdateDataSetPermissionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+UpdateDataSetPermissionsResult::UpdateDataSetPermissionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateDataSetPermissionsResult()
 {
   *this = result;
 }

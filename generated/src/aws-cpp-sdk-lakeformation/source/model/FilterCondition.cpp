@@ -27,12 +27,8 @@ FilterCondition::FilterCondition() :
 {
 }
 
-FilterCondition::FilterCondition(JsonView jsonValue) : 
-    m_field(FieldNameString::NOT_SET),
-    m_fieldHasBeenSet(false),
-    m_comparisonOperator(ComparisonOperator::NOT_SET),
-    m_comparisonOperatorHasBeenSet(false),
-    m_stringValueListHasBeenSet(false)
+FilterCondition::FilterCondition(JsonView jsonValue)
+  : FilterCondition()
 {
   *this = jsonValue;
 }

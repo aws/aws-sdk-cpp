@@ -28,13 +28,8 @@ GatewayRouteData::GatewayRouteData() :
 {
 }
 
-GatewayRouteData::GatewayRouteData(JsonView jsonValue) : 
-    m_gatewayRouteNameHasBeenSet(false),
-    m_meshNameHasBeenSet(false),
-    m_metadataHasBeenSet(false),
-    m_specHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_virtualGatewayNameHasBeenSet(false)
+GatewayRouteData::GatewayRouteData(JsonView jsonValue)
+  : GatewayRouteData()
 {
   *this = jsonValue;
 }

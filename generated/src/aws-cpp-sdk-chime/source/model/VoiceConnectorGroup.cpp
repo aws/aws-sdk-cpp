@@ -28,13 +28,8 @@ VoiceConnectorGroup::VoiceConnectorGroup() :
 {
 }
 
-VoiceConnectorGroup::VoiceConnectorGroup(JsonView jsonValue) : 
-    m_voiceConnectorGroupIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_voiceConnectorItemsHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false),
-    m_updatedTimestampHasBeenSet(false),
-    m_voiceConnectorGroupArnHasBeenSet(false)
+VoiceConnectorGroup::VoiceConnectorGroup(JsonView jsonValue)
+  : VoiceConnectorGroup()
 {
   *this = jsonValue;
 }

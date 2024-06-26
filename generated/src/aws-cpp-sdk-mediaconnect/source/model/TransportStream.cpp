@@ -34,19 +34,8 @@ TransportStream::TransportStream() :
 {
 }
 
-TransportStream::TransportStream(JsonView jsonValue) : 
-    m_channels(0),
-    m_channelsHasBeenSet(false),
-    m_codecHasBeenSet(false),
-    m_frameRateHasBeenSet(false),
-    m_frameResolutionHasBeenSet(false),
-    m_pid(0),
-    m_pidHasBeenSet(false),
-    m_sampleRate(0),
-    m_sampleRateHasBeenSet(false),
-    m_sampleSize(0),
-    m_sampleSizeHasBeenSet(false),
-    m_streamTypeHasBeenSet(false)
+TransportStream::TransportStream(JsonView jsonValue)
+  : TransportStream()
 {
   *this = jsonValue;
 }

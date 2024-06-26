@@ -25,10 +25,8 @@ UserSummary::UserSummary() :
 {
 }
 
-UserSummary::UserSummary(JsonView jsonValue) : 
-    m_pendingChange(ChangeType::NOT_SET),
-    m_pendingChangeHasBeenSet(false),
-    m_usernameHasBeenSet(false)
+UserSummary::UserSummary(JsonView jsonValue)
+  : UserSummary()
 {
   *this = jsonValue;
 }

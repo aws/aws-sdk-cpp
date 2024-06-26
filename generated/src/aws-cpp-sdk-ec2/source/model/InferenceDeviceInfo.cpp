@@ -29,12 +29,8 @@ InferenceDeviceInfo::InferenceDeviceInfo() :
 {
 }
 
-InferenceDeviceInfo::InferenceDeviceInfo(const XmlNode& xmlNode) : 
-    m_count(0),
-    m_countHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_manufacturerHasBeenSet(false),
-    m_memoryInfoHasBeenSet(false)
+InferenceDeviceInfo::InferenceDeviceInfo(const XmlNode& xmlNode)
+  : InferenceDeviceInfo()
 {
   *this = xmlNode;
 }

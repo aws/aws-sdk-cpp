@@ -29,14 +29,8 @@ PackageGroupOriginRestriction::PackageGroupOriginRestriction() :
 {
 }
 
-PackageGroupOriginRestriction::PackageGroupOriginRestriction(JsonView jsonValue) : 
-    m_mode(PackageGroupOriginRestrictionMode::NOT_SET),
-    m_modeHasBeenSet(false),
-    m_effectiveMode(PackageGroupOriginRestrictionMode::NOT_SET),
-    m_effectiveModeHasBeenSet(false),
-    m_inheritedFromHasBeenSet(false),
-    m_repositoriesCount(0),
-    m_repositoriesCountHasBeenSet(false)
+PackageGroupOriginRestriction::PackageGroupOriginRestriction(JsonView jsonValue)
+  : PackageGroupOriginRestriction()
 {
   *this = jsonValue;
 }

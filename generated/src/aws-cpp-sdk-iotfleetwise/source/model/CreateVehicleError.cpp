@@ -25,10 +25,8 @@ CreateVehicleError::CreateVehicleError() :
 {
 }
 
-CreateVehicleError::CreateVehicleError(JsonView jsonValue) : 
-    m_vehicleNameHasBeenSet(false),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+CreateVehicleError::CreateVehicleError(JsonView jsonValue)
+  : CreateVehicleError()
 {
   *this = jsonValue;
 }

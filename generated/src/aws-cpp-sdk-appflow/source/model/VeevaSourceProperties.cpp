@@ -30,15 +30,8 @@ VeevaSourceProperties::VeevaSourceProperties() :
 {
 }
 
-VeevaSourceProperties::VeevaSourceProperties(JsonView jsonValue) : 
-    m_objectHasBeenSet(false),
-    m_documentTypeHasBeenSet(false),
-    m_includeSourceFiles(false),
-    m_includeSourceFilesHasBeenSet(false),
-    m_includeRenditions(false),
-    m_includeRenditionsHasBeenSet(false),
-    m_includeAllVersions(false),
-    m_includeAllVersionsHasBeenSet(false)
+VeevaSourceProperties::VeevaSourceProperties(JsonView jsonValue)
+  : VeevaSourceProperties()
 {
   *this = jsonValue;
 }

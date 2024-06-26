@@ -26,11 +26,8 @@ PermissionSetProvisioningStatusMetadata::PermissionSetProvisioningStatusMetadata
 {
 }
 
-PermissionSetProvisioningStatusMetadata::PermissionSetProvisioningStatusMetadata(JsonView jsonValue) : 
-    m_createdDateHasBeenSet(false),
-    m_requestIdHasBeenSet(false),
-    m_status(StatusValues::NOT_SET),
-    m_statusHasBeenSet(false)
+PermissionSetProvisioningStatusMetadata::PermissionSetProvisioningStatusMetadata(JsonView jsonValue)
+  : PermissionSetProvisioningStatusMetadata()
 {
   *this = jsonValue;
 }

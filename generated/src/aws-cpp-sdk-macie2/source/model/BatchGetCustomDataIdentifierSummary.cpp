@@ -29,14 +29,8 @@ BatchGetCustomDataIdentifierSummary::BatchGetCustomDataIdentifierSummary() :
 {
 }
 
-BatchGetCustomDataIdentifierSummary::BatchGetCustomDataIdentifierSummary(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_deleted(false),
-    m_deletedHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false)
+BatchGetCustomDataIdentifierSummary::BatchGetCustomDataIdentifierSummary(JsonView jsonValue)
+  : BatchGetCustomDataIdentifierSummary()
 {
   *this = jsonValue;
 }

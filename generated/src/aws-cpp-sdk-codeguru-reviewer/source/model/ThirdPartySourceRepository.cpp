@@ -25,10 +25,8 @@ ThirdPartySourceRepository::ThirdPartySourceRepository() :
 {
 }
 
-ThirdPartySourceRepository::ThirdPartySourceRepository(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_connectionArnHasBeenSet(false),
-    m_ownerHasBeenSet(false)
+ThirdPartySourceRepository::ThirdPartySourceRepository(JsonView jsonValue)
+  : ThirdPartySourceRepository()
 {
   *this = jsonValue;
 }

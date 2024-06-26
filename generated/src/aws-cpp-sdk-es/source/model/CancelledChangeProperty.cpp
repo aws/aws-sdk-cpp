@@ -25,10 +25,8 @@ CancelledChangeProperty::CancelledChangeProperty() :
 {
 }
 
-CancelledChangeProperty::CancelledChangeProperty(JsonView jsonValue) : 
-    m_propertyNameHasBeenSet(false),
-    m_cancelledValueHasBeenSet(false),
-    m_activeValueHasBeenSet(false)
+CancelledChangeProperty::CancelledChangeProperty(JsonView jsonValue)
+  : CancelledChangeProperty()
 {
   *this = jsonValue;
 }

@@ -27,10 +27,8 @@ CachePolicyCookiesConfig::CachePolicyCookiesConfig() :
 {
 }
 
-CachePolicyCookiesConfig::CachePolicyCookiesConfig(const XmlNode& xmlNode) : 
-    m_cookieBehavior(CachePolicyCookieBehavior::NOT_SET),
-    m_cookieBehaviorHasBeenSet(false),
-    m_cookiesHasBeenSet(false)
+CachePolicyCookiesConfig::CachePolicyCookiesConfig(const XmlNode& xmlNode)
+  : CachePolicyCookiesConfig()
 {
   *this = xmlNode;
 }

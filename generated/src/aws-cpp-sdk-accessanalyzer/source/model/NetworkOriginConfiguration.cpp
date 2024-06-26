@@ -24,9 +24,8 @@ NetworkOriginConfiguration::NetworkOriginConfiguration() :
 {
 }
 
-NetworkOriginConfiguration::NetworkOriginConfiguration(JsonView jsonValue) : 
-    m_vpcConfigurationHasBeenSet(false),
-    m_internetConfigurationHasBeenSet(false)
+NetworkOriginConfiguration::NetworkOriginConfiguration(JsonView jsonValue)
+  : NetworkOriginConfiguration()
 {
   *this = jsonValue;
 }

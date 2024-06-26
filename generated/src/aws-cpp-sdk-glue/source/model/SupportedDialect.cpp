@@ -25,10 +25,8 @@ SupportedDialect::SupportedDialect() :
 {
 }
 
-SupportedDialect::SupportedDialect(JsonView jsonValue) : 
-    m_dialect(ViewDialect::NOT_SET),
-    m_dialectHasBeenSet(false),
-    m_dialectVersionHasBeenSet(false)
+SupportedDialect::SupportedDialect(JsonView jsonValue)
+  : SupportedDialect()
 {
   *this = jsonValue;
 }

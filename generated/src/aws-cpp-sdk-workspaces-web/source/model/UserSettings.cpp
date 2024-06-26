@@ -43,28 +43,8 @@ UserSettings::UserSettings() :
 {
 }
 
-UserSettings::UserSettings(JsonView jsonValue) : 
-    m_additionalEncryptionContextHasBeenSet(false),
-    m_associatedPortalArnsHasBeenSet(false),
-    m_cookieSynchronizationConfigurationHasBeenSet(false),
-    m_copyAllowed(EnabledType::NOT_SET),
-    m_copyAllowedHasBeenSet(false),
-    m_customerManagedKeyHasBeenSet(false),
-    m_deepLinkAllowed(EnabledType::NOT_SET),
-    m_deepLinkAllowedHasBeenSet(false),
-    m_disconnectTimeoutInMinutes(0),
-    m_disconnectTimeoutInMinutesHasBeenSet(false),
-    m_downloadAllowed(EnabledType::NOT_SET),
-    m_downloadAllowedHasBeenSet(false),
-    m_idleDisconnectTimeoutInMinutes(0),
-    m_idleDisconnectTimeoutInMinutesHasBeenSet(false),
-    m_pasteAllowed(EnabledType::NOT_SET),
-    m_pasteAllowedHasBeenSet(false),
-    m_printAllowed(EnabledType::NOT_SET),
-    m_printAllowedHasBeenSet(false),
-    m_uploadAllowed(EnabledType::NOT_SET),
-    m_uploadAllowedHasBeenSet(false),
-    m_userSettingsArnHasBeenSet(false)
+UserSettings::UserSettings(JsonView jsonValue)
+  : UserSettings()
 {
   *this = jsonValue;
 }

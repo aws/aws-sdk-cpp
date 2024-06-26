@@ -29,12 +29,8 @@ Byoasn::Byoasn() :
 {
 }
 
-Byoasn::Byoasn(const XmlNode& xmlNode) : 
-    m_asnHasBeenSet(false),
-    m_ipamIdHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_state(AsnState::NOT_SET),
-    m_stateHasBeenSet(false)
+Byoasn::Byoasn(const XmlNode& xmlNode)
+  : Byoasn()
 {
   *this = xmlNode;
 }

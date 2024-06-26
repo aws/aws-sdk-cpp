@@ -31,16 +31,8 @@ Message::Message() :
 {
 }
 
-Message::Message(JsonView jsonValue) : 
-    m_messageIdHasBeenSet(false),
-    m_bodyHasBeenSet(false),
-    m_timeHasBeenSet(false),
-    m_type(MessageType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_attachmentsHasBeenSet(false),
-    m_sourceAttributionHasBeenSet(false),
-    m_actionReviewHasBeenSet(false),
-    m_actionExecutionHasBeenSet(false)
+Message::Message(JsonView jsonValue)
+  : Message()
 {
   *this = jsonValue;
 }

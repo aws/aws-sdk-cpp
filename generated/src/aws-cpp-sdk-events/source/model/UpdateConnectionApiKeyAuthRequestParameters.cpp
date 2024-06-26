@@ -24,9 +24,8 @@ UpdateConnectionApiKeyAuthRequestParameters::UpdateConnectionApiKeyAuthRequestPa
 {
 }
 
-UpdateConnectionApiKeyAuthRequestParameters::UpdateConnectionApiKeyAuthRequestParameters(JsonView jsonValue) : 
-    m_apiKeyNameHasBeenSet(false),
-    m_apiKeyValueHasBeenSet(false)
+UpdateConnectionApiKeyAuthRequestParameters::UpdateConnectionApiKeyAuthRequestParameters(JsonView jsonValue)
+  : UpdateConnectionApiKeyAuthRequestParameters()
 {
   *this = jsonValue;
 }

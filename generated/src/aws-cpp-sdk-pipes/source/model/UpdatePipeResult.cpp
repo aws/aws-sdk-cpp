@@ -23,9 +23,8 @@ UpdatePipeResult::UpdatePipeResult() :
 {
 }
 
-UpdatePipeResult::UpdatePipeResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_desiredState(RequestedPipeState::NOT_SET),
-    m_currentState(PipeState::NOT_SET)
+UpdatePipeResult::UpdatePipeResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdatePipeResult()
 {
   *this = result;
 }

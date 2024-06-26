@@ -25,10 +25,8 @@ VideoOverlay::VideoOverlay() :
 {
 }
 
-VideoOverlay::VideoOverlay(JsonView jsonValue) : 
-    m_endTimecodeHasBeenSet(false),
-    m_inputHasBeenSet(false),
-    m_startTimecodeHasBeenSet(false)
+VideoOverlay::VideoOverlay(JsonView jsonValue)
+  : VideoOverlay()
 {
   *this = jsonValue;
 }

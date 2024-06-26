@@ -33,18 +33,8 @@ QuantumTaskSummary::QuantumTaskSummary() :
 {
 }
 
-QuantumTaskSummary::QuantumTaskSummary(JsonView jsonValue) : 
-    m_createdAtHasBeenSet(false),
-    m_deviceArnHasBeenSet(false),
-    m_endedAtHasBeenSet(false),
-    m_outputS3BucketHasBeenSet(false),
-    m_outputS3DirectoryHasBeenSet(false),
-    m_quantumTaskArnHasBeenSet(false),
-    m_shots(0),
-    m_shotsHasBeenSet(false),
-    m_status(QuantumTaskStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+QuantumTaskSummary::QuantumTaskSummary(JsonView jsonValue)
+  : QuantumTaskSummary()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ IotSiteWiseSourceConfigurationFilter::IotSiteWiseSourceConfigurationFilter() :
 {
 }
 
-IotSiteWiseSourceConfigurationFilter::IotSiteWiseSourceConfigurationFilter(JsonView jsonValue) : 
-    m_filterByAssetModelHasBeenSet(false),
-    m_filterByAssetHasBeenSet(false)
+IotSiteWiseSourceConfigurationFilter::IotSiteWiseSourceConfigurationFilter(JsonView jsonValue)
+  : IotSiteWiseSourceConfigurationFilter()
 {
   *this = jsonValue;
 }

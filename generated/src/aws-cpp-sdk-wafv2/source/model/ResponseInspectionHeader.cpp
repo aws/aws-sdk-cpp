@@ -25,10 +25,8 @@ ResponseInspectionHeader::ResponseInspectionHeader() :
 {
 }
 
-ResponseInspectionHeader::ResponseInspectionHeader(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_successValuesHasBeenSet(false),
-    m_failureValuesHasBeenSet(false)
+ResponseInspectionHeader::ResponseInspectionHeader(JsonView jsonValue)
+  : ResponseInspectionHeader()
 {
   *this = jsonValue;
 }

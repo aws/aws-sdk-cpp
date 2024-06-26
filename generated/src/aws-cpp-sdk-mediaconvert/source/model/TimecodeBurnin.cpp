@@ -27,12 +27,8 @@ TimecodeBurnin::TimecodeBurnin() :
 {
 }
 
-TimecodeBurnin::TimecodeBurnin(JsonView jsonValue) : 
-    m_fontSize(0),
-    m_fontSizeHasBeenSet(false),
-    m_position(TimecodeBurninPosition::NOT_SET),
-    m_positionHasBeenSet(false),
-    m_prefixHasBeenSet(false)
+TimecodeBurnin::TimecodeBurnin(JsonView jsonValue)
+  : TimecodeBurnin()
 {
   *this = jsonValue;
 }

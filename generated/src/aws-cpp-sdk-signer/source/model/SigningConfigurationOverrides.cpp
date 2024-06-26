@@ -26,11 +26,8 @@ SigningConfigurationOverrides::SigningConfigurationOverrides() :
 {
 }
 
-SigningConfigurationOverrides::SigningConfigurationOverrides(JsonView jsonValue) : 
-    m_encryptionAlgorithm(EncryptionAlgorithm::NOT_SET),
-    m_encryptionAlgorithmHasBeenSet(false),
-    m_hashAlgorithm(HashAlgorithm::NOT_SET),
-    m_hashAlgorithmHasBeenSet(false)
+SigningConfigurationOverrides::SigningConfigurationOverrides(JsonView jsonValue)
+  : SigningConfigurationOverrides()
 {
   *this = jsonValue;
 }

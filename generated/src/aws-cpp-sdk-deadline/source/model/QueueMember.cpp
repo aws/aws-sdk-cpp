@@ -30,15 +30,8 @@ QueueMember::QueueMember() :
 {
 }
 
-QueueMember::QueueMember(JsonView jsonValue) : 
-    m_farmIdHasBeenSet(false),
-    m_identityStoreIdHasBeenSet(false),
-    m_membershipLevel(MembershipLevel::NOT_SET),
-    m_membershipLevelHasBeenSet(false),
-    m_principalIdHasBeenSet(false),
-    m_principalType(PrincipalType::NOT_SET),
-    m_principalTypeHasBeenSet(false),
-    m_queueIdHasBeenSet(false)
+QueueMember::QueueMember(JsonView jsonValue)
+  : QueueMember()
 {
   *this = jsonValue;
 }

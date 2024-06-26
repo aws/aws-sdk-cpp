@@ -23,8 +23,8 @@ InstanceAssociationOutputLocation::InstanceAssociationOutputLocation() :
 {
 }
 
-InstanceAssociationOutputLocation::InstanceAssociationOutputLocation(JsonView jsonValue) : 
-    m_s3LocationHasBeenSet(false)
+InstanceAssociationOutputLocation::InstanceAssociationOutputLocation(JsonView jsonValue)
+  : InstanceAssociationOutputLocation()
 {
   *this = jsonValue;
 }

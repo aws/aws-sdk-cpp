@@ -35,20 +35,8 @@ TableCellStyle::TableCellStyle() :
 {
 }
 
-TableCellStyle::TableCellStyle(JsonView jsonValue) : 
-    m_visibility(Visibility::NOT_SET),
-    m_visibilityHasBeenSet(false),
-    m_fontConfigurationHasBeenSet(false),
-    m_textWrap(TextWrap::NOT_SET),
-    m_textWrapHasBeenSet(false),
-    m_horizontalTextAlignment(HorizontalTextAlignment::NOT_SET),
-    m_horizontalTextAlignmentHasBeenSet(false),
-    m_verticalTextAlignment(VerticalTextAlignment::NOT_SET),
-    m_verticalTextAlignmentHasBeenSet(false),
-    m_backgroundColorHasBeenSet(false),
-    m_height(0),
-    m_heightHasBeenSet(false),
-    m_borderHasBeenSet(false)
+TableCellStyle::TableCellStyle(JsonView jsonValue)
+  : TableCellStyle()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ IotSiteWiseCustomerManagedDatastoreS3StorageSummary::IotSiteWiseCustomerManagedD
 {
 }
 
-IotSiteWiseCustomerManagedDatastoreS3StorageSummary::IotSiteWiseCustomerManagedDatastoreS3StorageSummary(JsonView jsonValue) : 
-    m_bucketHasBeenSet(false),
-    m_keyPrefixHasBeenSet(false)
+IotSiteWiseCustomerManagedDatastoreS3StorageSummary::IotSiteWiseCustomerManagedDatastoreS3StorageSummary(JsonView jsonValue)
+  : IotSiteWiseCustomerManagedDatastoreS3StorageSummary()
 {
   *this = jsonValue;
 }

@@ -24,10 +24,8 @@ DescribeQuerySuggestionsBlockListResult::DescribeQuerySuggestionsBlockListResult
 {
 }
 
-DescribeQuerySuggestionsBlockListResult::DescribeQuerySuggestionsBlockListResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(QuerySuggestionsBlockListStatus::NOT_SET),
-    m_itemCount(0),
-    m_fileSizeBytes(0)
+DescribeQuerySuggestionsBlockListResult::DescribeQuerySuggestionsBlockListResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeQuerySuggestionsBlockListResult()
 {
   *this = result;
 }

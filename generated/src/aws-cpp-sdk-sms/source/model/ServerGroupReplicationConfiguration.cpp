@@ -24,9 +24,8 @@ ServerGroupReplicationConfiguration::ServerGroupReplicationConfiguration() :
 {
 }
 
-ServerGroupReplicationConfiguration::ServerGroupReplicationConfiguration(JsonView jsonValue) : 
-    m_serverGroupIdHasBeenSet(false),
-    m_serverReplicationConfigurationsHasBeenSet(false)
+ServerGroupReplicationConfiguration::ServerGroupReplicationConfiguration(JsonView jsonValue)
+  : ServerGroupReplicationConfiguration()
 {
   *this = jsonValue;
 }

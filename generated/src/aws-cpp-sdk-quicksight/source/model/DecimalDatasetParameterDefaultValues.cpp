@@ -23,8 +23,8 @@ DecimalDatasetParameterDefaultValues::DecimalDatasetParameterDefaultValues() :
 {
 }
 
-DecimalDatasetParameterDefaultValues::DecimalDatasetParameterDefaultValues(JsonView jsonValue) : 
-    m_staticValuesHasBeenSet(false)
+DecimalDatasetParameterDefaultValues::DecimalDatasetParameterDefaultValues(JsonView jsonValue)
+  : DecimalDatasetParameterDefaultValues()
 {
   *this = jsonValue;
 }

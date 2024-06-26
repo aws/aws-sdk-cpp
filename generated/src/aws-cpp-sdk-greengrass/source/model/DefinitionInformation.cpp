@@ -30,15 +30,8 @@ DefinitionInformation::DefinitionInformation() :
 {
 }
 
-DefinitionInformation::DefinitionInformation(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_creationTimestampHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_lastUpdatedTimestampHasBeenSet(false),
-    m_latestVersionHasBeenSet(false),
-    m_latestVersionArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+DefinitionInformation::DefinitionInformation(JsonView jsonValue)
+  : DefinitionInformation()
 {
   *this = jsonValue;
 }

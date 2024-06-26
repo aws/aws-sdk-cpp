@@ -24,9 +24,8 @@ WorkflowExecution::WorkflowExecution() :
 {
 }
 
-WorkflowExecution::WorkflowExecution(JsonView jsonValue) : 
-    m_workflowIdHasBeenSet(false),
-    m_runIdHasBeenSet(false)
+WorkflowExecution::WorkflowExecution(JsonView jsonValue)
+  : WorkflowExecution()
 {
   *this = jsonValue;
 }

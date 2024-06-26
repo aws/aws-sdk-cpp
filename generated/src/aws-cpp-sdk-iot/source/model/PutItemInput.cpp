@@ -23,8 +23,8 @@ PutItemInput::PutItemInput() :
 {
 }
 
-PutItemInput::PutItemInput(JsonView jsonValue) : 
-    m_tableNameHasBeenSet(false)
+PutItemInput::PutItemInput(JsonView jsonValue)
+  : PutItemInput()
 {
   *this = jsonValue;
 }

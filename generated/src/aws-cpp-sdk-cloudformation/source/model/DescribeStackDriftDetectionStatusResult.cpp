@@ -24,10 +24,8 @@ DescribeStackDriftDetectionStatusResult::DescribeStackDriftDetectionStatusResult
 {
 }
 
-DescribeStackDriftDetectionStatusResult::DescribeStackDriftDetectionStatusResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_stackDriftStatus(StackDriftStatus::NOT_SET),
-    m_detectionStatus(StackDriftDetectionStatus::NOT_SET),
-    m_driftedStackResourceCount(0)
+DescribeStackDriftDetectionStatusResult::DescribeStackDriftDetectionStatusResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : DescribeStackDriftDetectionStatusResult()
 {
   *this = result;
 }

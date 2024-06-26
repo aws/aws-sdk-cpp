@@ -23,8 +23,8 @@ HttpUrlDestinationProperties::HttpUrlDestinationProperties() :
 {
 }
 
-HttpUrlDestinationProperties::HttpUrlDestinationProperties(JsonView jsonValue) : 
-    m_confirmationUrlHasBeenSet(false)
+HttpUrlDestinationProperties::HttpUrlDestinationProperties(JsonView jsonValue)
+  : HttpUrlDestinationProperties()
 {
   *this = jsonValue;
 }

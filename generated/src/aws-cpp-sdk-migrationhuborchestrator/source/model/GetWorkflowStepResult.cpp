@@ -27,13 +27,8 @@ GetWorkflowStepResult::GetWorkflowStepResult() :
 {
 }
 
-GetWorkflowStepResult::GetWorkflowStepResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_stepActionType(StepActionType::NOT_SET),
-    m_owner(Owner::NOT_SET),
-    m_status(StepStatus::NOT_SET),
-    m_noOfSrvCompleted(0),
-    m_noOfSrvFailed(0),
-    m_totalNoOfSrv(0)
+GetWorkflowStepResult::GetWorkflowStepResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetWorkflowStepResult()
 {
   *this = result;
 }

@@ -23,8 +23,8 @@ QueriesConfig::QueriesConfig() :
 {
 }
 
-QueriesConfig::QueriesConfig(JsonView jsonValue) : 
-    m_queriesHasBeenSet(false)
+QueriesConfig::QueriesConfig(JsonView jsonValue)
+  : QueriesConfig()
 {
   *this = jsonValue;
 }

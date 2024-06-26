@@ -30,15 +30,8 @@ AbsoluteTimeRange::AbsoluteTimeRange() :
 {
 }
 
-AbsoluteTimeRange::AbsoluteTimeRange(JsonView jsonValue) : 
-    m_startTime(0),
-    m_startTimeHasBeenSet(false),
-    m_endTime(0),
-    m_endTimeHasBeenSet(false),
-    m_first(0),
-    m_firstHasBeenSet(false),
-    m_last(0),
-    m_lastHasBeenSet(false)
+AbsoluteTimeRange::AbsoluteTimeRange(JsonView jsonValue)
+  : AbsoluteTimeRange()
 {
   *this = jsonValue;
 }

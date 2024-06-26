@@ -28,13 +28,8 @@ RowInfo::RowInfo() :
 {
 }
 
-RowInfo::RowInfo(JsonView jsonValue) : 
-    m_rowsIngested(0),
-    m_rowsIngestedHasBeenSet(false),
-    m_rowsDropped(0),
-    m_rowsDroppedHasBeenSet(false),
-    m_totalRowsInDataset(0),
-    m_totalRowsInDatasetHasBeenSet(false)
+RowInfo::RowInfo(JsonView jsonValue)
+  : RowInfo()
 {
   *this = jsonValue;
 }

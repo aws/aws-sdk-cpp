@@ -27,10 +27,8 @@ OriginRequestPolicyCookiesConfig::OriginRequestPolicyCookiesConfig() :
 {
 }
 
-OriginRequestPolicyCookiesConfig::OriginRequestPolicyCookiesConfig(const XmlNode& xmlNode) : 
-    m_cookieBehavior(OriginRequestPolicyCookieBehavior::NOT_SET),
-    m_cookieBehaviorHasBeenSet(false),
-    m_cookiesHasBeenSet(false)
+OriginRequestPolicyCookiesConfig::OriginRequestPolicyCookiesConfig(const XmlNode& xmlNode)
+  : OriginRequestPolicyCookiesConfig()
 {
   *this = xmlNode;
 }

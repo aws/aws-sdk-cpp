@@ -27,12 +27,8 @@ InferenceSpecification::InferenceSpecification() :
 {
 }
 
-InferenceSpecification::InferenceSpecification(JsonView jsonValue) : 
-    m_containersHasBeenSet(false),
-    m_supportedTransformInstanceTypesHasBeenSet(false),
-    m_supportedRealtimeInferenceInstanceTypesHasBeenSet(false),
-    m_supportedContentTypesHasBeenSet(false),
-    m_supportedResponseMIMETypesHasBeenSet(false)
+InferenceSpecification::InferenceSpecification(JsonView jsonValue)
+  : InferenceSpecification()
 {
   *this = jsonValue;
 }

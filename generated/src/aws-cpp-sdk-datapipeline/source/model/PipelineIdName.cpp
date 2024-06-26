@@ -24,9 +24,8 @@ PipelineIdName::PipelineIdName() :
 {
 }
 
-PipelineIdName::PipelineIdName(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false)
+PipelineIdName::PipelineIdName(JsonView jsonValue)
+  : PipelineIdName()
 {
   *this = jsonValue;
 }

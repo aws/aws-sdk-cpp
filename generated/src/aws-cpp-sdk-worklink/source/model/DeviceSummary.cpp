@@ -25,10 +25,8 @@ DeviceSummary::DeviceSummary() :
 {
 }
 
-DeviceSummary::DeviceSummary(JsonView jsonValue) : 
-    m_deviceIdHasBeenSet(false),
-    m_deviceStatus(DeviceStatus::NOT_SET),
-    m_deviceStatusHasBeenSet(false)
+DeviceSummary::DeviceSummary(JsonView jsonValue)
+  : DeviceSummary()
 {
   *this = jsonValue;
 }

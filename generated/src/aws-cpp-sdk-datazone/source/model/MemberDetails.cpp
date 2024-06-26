@@ -24,9 +24,8 @@ MemberDetails::MemberDetails() :
 {
 }
 
-MemberDetails::MemberDetails(JsonView jsonValue) : 
-    m_groupHasBeenSet(false),
-    m_userHasBeenSet(false)
+MemberDetails::MemberDetails(JsonView jsonValue)
+  : MemberDetails()
 {
   *this = jsonValue;
 }

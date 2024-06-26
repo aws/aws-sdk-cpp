@@ -25,10 +25,8 @@ GeoMosaicConfigInput::GeoMosaicConfigInput() :
 {
 }
 
-GeoMosaicConfigInput::GeoMosaicConfigInput(JsonView jsonValue) : 
-    m_algorithmName(AlgorithmNameGeoMosaic::NOT_SET),
-    m_algorithmNameHasBeenSet(false),
-    m_targetBandsHasBeenSet(false)
+GeoMosaicConfigInput::GeoMosaicConfigInput(JsonView jsonValue)
+  : GeoMosaicConfigInput()
 {
   *this = jsonValue;
 }

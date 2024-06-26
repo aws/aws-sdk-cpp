@@ -25,10 +25,8 @@ MongoDbAtlasFieldMapping::MongoDbAtlasFieldMapping() :
 {
 }
 
-MongoDbAtlasFieldMapping::MongoDbAtlasFieldMapping(JsonView jsonValue) : 
-    m_metadataFieldHasBeenSet(false),
-    m_textFieldHasBeenSet(false),
-    m_vectorFieldHasBeenSet(false)
+MongoDbAtlasFieldMapping::MongoDbAtlasFieldMapping(JsonView jsonValue)
+  : MongoDbAtlasFieldMapping()
 {
   *this = jsonValue;
 }

@@ -27,12 +27,8 @@ MetricComparisonComputation::MetricComparisonComputation() :
 {
 }
 
-MetricComparisonComputation::MetricComparisonComputation(JsonView jsonValue) : 
-    m_computationIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_timeHasBeenSet(false),
-    m_fromValueHasBeenSet(false),
-    m_targetValueHasBeenSet(false)
+MetricComparisonComputation::MetricComparisonComputation(JsonView jsonValue)
+  : MetricComparisonComputation()
 {
   *this = jsonValue;
 }

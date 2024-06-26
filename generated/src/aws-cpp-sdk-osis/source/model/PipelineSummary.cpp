@@ -35,20 +35,8 @@ PipelineSummary::PipelineSummary() :
 {
 }
 
-PipelineSummary::PipelineSummary(JsonView jsonValue) : 
-    m_status(PipelineStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusReasonHasBeenSet(false),
-    m_pipelineNameHasBeenSet(false),
-    m_pipelineArnHasBeenSet(false),
-    m_minUnits(0),
-    m_minUnitsHasBeenSet(false),
-    m_maxUnits(0),
-    m_maxUnitsHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false),
-    m_destinationsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+PipelineSummary::PipelineSummary(JsonView jsonValue)
+  : PipelineSummary()
 {
   *this = jsonValue;
 }

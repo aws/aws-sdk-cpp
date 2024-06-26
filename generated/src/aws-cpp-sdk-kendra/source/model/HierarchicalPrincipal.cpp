@@ -23,8 +23,8 @@ HierarchicalPrincipal::HierarchicalPrincipal() :
 {
 }
 
-HierarchicalPrincipal::HierarchicalPrincipal(JsonView jsonValue) : 
-    m_principalListHasBeenSet(false)
+HierarchicalPrincipal::HierarchicalPrincipal(JsonView jsonValue)
+  : HierarchicalPrincipal()
 {
   *this = jsonValue;
 }

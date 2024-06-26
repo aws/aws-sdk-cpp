@@ -26,11 +26,8 @@ AudioSpecification::AudioSpecification() :
 {
 }
 
-AudioSpecification::AudioSpecification(JsonView jsonValue) : 
-    m_maxLengthMs(0),
-    m_maxLengthMsHasBeenSet(false),
-    m_endTimeoutMs(0),
-    m_endTimeoutMsHasBeenSet(false)
+AudioSpecification::AudioSpecification(JsonView jsonValue)
+  : AudioSpecification()
 {
   *this = jsonValue;
 }

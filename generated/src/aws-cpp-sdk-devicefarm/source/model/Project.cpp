@@ -28,13 +28,8 @@ Project::Project() :
 {
 }
 
-Project::Project(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_defaultJobTimeoutMinutes(0),
-    m_defaultJobTimeoutMinutesHasBeenSet(false),
-    m_createdHasBeenSet(false),
-    m_vpcConfigHasBeenSet(false)
+Project::Project(JsonView jsonValue)
+  : Project()
 {
   *this = jsonValue;
 }

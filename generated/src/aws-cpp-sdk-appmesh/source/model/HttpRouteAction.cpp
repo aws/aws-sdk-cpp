@@ -23,8 +23,8 @@ HttpRouteAction::HttpRouteAction() :
 {
 }
 
-HttpRouteAction::HttpRouteAction(JsonView jsonValue) : 
-    m_weightedTargetsHasBeenSet(false)
+HttpRouteAction::HttpRouteAction(JsonView jsonValue)
+  : HttpRouteAction()
 {
   *this = jsonValue;
 }

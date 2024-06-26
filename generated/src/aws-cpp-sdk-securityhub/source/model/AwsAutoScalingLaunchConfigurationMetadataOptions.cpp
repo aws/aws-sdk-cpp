@@ -26,11 +26,8 @@ AwsAutoScalingLaunchConfigurationMetadataOptions::AwsAutoScalingLaunchConfigurat
 {
 }
 
-AwsAutoScalingLaunchConfigurationMetadataOptions::AwsAutoScalingLaunchConfigurationMetadataOptions(JsonView jsonValue) : 
-    m_httpEndpointHasBeenSet(false),
-    m_httpPutResponseHopLimit(0),
-    m_httpPutResponseHopLimitHasBeenSet(false),
-    m_httpTokensHasBeenSet(false)
+AwsAutoScalingLaunchConfigurationMetadataOptions::AwsAutoScalingLaunchConfigurationMetadataOptions(JsonView jsonValue)
+  : AwsAutoScalingLaunchConfigurationMetadataOptions()
 {
   *this = jsonValue;
 }

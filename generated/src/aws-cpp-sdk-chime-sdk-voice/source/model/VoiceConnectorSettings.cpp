@@ -23,8 +23,8 @@ VoiceConnectorSettings::VoiceConnectorSettings() :
 {
 }
 
-VoiceConnectorSettings::VoiceConnectorSettings(JsonView jsonValue) : 
-    m_cdrBucketHasBeenSet(false)
+VoiceConnectorSettings::VoiceConnectorSettings(JsonView jsonValue)
+  : VoiceConnectorSettings()
 {
   *this = jsonValue;
 }

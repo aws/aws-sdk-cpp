@@ -24,9 +24,8 @@ AxisLogarithmicScale::AxisLogarithmicScale() :
 {
 }
 
-AxisLogarithmicScale::AxisLogarithmicScale(JsonView jsonValue) : 
-    m_base(0.0),
-    m_baseHasBeenSet(false)
+AxisLogarithmicScale::AxisLogarithmicScale(JsonView jsonValue)
+  : AxisLogarithmicScale()
 {
   *this = jsonValue;
 }

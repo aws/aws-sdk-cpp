@@ -23,9 +23,8 @@ GetQuantumTaskResult::GetQuantumTaskResult() :
 {
 }
 
-GetQuantumTaskResult::GetQuantumTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_shots(0),
-    m_status(QuantumTaskStatus::NOT_SET)
+GetQuantumTaskResult::GetQuantumTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetQuantumTaskResult()
 {
   *this = result;
 }

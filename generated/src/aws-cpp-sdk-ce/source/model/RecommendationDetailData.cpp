@@ -56,41 +56,8 @@ RecommendationDetailData::RecommendationDetailData() :
 {
 }
 
-RecommendationDetailData::RecommendationDetailData(JsonView jsonValue) : 
-    m_accountScope(AccountScope::NOT_SET),
-    m_accountScopeHasBeenSet(false),
-    m_lookbackPeriodInDays(LookbackPeriodInDays::NOT_SET),
-    m_lookbackPeriodInDaysHasBeenSet(false),
-    m_savingsPlansType(SupportedSavingsPlansType::NOT_SET),
-    m_savingsPlansTypeHasBeenSet(false),
-    m_termInYears(TermInYears::NOT_SET),
-    m_termInYearsHasBeenSet(false),
-    m_paymentOption(PaymentOption::NOT_SET),
-    m_paymentOptionHasBeenSet(false),
-    m_accountIdHasBeenSet(false),
-    m_currencyCodeHasBeenSet(false),
-    m_instanceFamilyHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_offeringIdHasBeenSet(false),
-    m_generationTimestampHasBeenSet(false),
-    m_latestUsageTimestampHasBeenSet(false),
-    m_currentAverageHourlyOnDemandSpendHasBeenSet(false),
-    m_currentMaximumHourlyOnDemandSpendHasBeenSet(false),
-    m_currentMinimumHourlyOnDemandSpendHasBeenSet(false),
-    m_estimatedAverageUtilizationHasBeenSet(false),
-    m_estimatedMonthlySavingsAmountHasBeenSet(false),
-    m_estimatedOnDemandCostHasBeenSet(false),
-    m_estimatedOnDemandCostWithCurrentCommitmentHasBeenSet(false),
-    m_estimatedROIHasBeenSet(false),
-    m_estimatedSPCostHasBeenSet(false),
-    m_estimatedSavingsAmountHasBeenSet(false),
-    m_estimatedSavingsPercentageHasBeenSet(false),
-    m_existingHourlyCommitmentHasBeenSet(false),
-    m_hourlyCommitmentToPurchaseHasBeenSet(false),
-    m_upfrontCostHasBeenSet(false),
-    m_currentAverageCoverageHasBeenSet(false),
-    m_estimatedAverageCoverageHasBeenSet(false),
-    m_metricsOverLookbackPeriodHasBeenSet(false)
+RecommendationDetailData::RecommendationDetailData(JsonView jsonValue)
+  : RecommendationDetailData()
 {
   *this = jsonValue;
 }

@@ -29,14 +29,8 @@ SimulationAppMetadata::SimulationAppMetadata() :
 {
 }
 
-SimulationAppMetadata::SimulationAppMetadata(JsonView jsonValue) : 
-    m_domainHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_simulationHasBeenSet(false),
-    m_status(SimulationAppStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_targetStatus(SimulationAppTargetStatus::NOT_SET),
-    m_targetStatusHasBeenSet(false)
+SimulationAppMetadata::SimulationAppMetadata(JsonView jsonValue)
+  : SimulationAppMetadata()
 {
   *this = jsonValue;
 }

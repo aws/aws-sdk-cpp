@@ -27,12 +27,8 @@ SectionBasedLayoutPaperCanvasSizeOptions::SectionBasedLayoutPaperCanvasSizeOptio
 {
 }
 
-SectionBasedLayoutPaperCanvasSizeOptions::SectionBasedLayoutPaperCanvasSizeOptions(JsonView jsonValue) : 
-    m_paperSize(PaperSize::NOT_SET),
-    m_paperSizeHasBeenSet(false),
-    m_paperOrientation(PaperOrientation::NOT_SET),
-    m_paperOrientationHasBeenSet(false),
-    m_paperMarginHasBeenSet(false)
+SectionBasedLayoutPaperCanvasSizeOptions::SectionBasedLayoutPaperCanvasSizeOptions(JsonView jsonValue)
+  : SectionBasedLayoutPaperCanvasSizeOptions()
 {
   *this = jsonValue;
 }

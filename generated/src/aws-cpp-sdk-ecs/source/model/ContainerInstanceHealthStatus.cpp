@@ -25,10 +25,8 @@ ContainerInstanceHealthStatus::ContainerInstanceHealthStatus() :
 {
 }
 
-ContainerInstanceHealthStatus::ContainerInstanceHealthStatus(JsonView jsonValue) : 
-    m_overallStatus(InstanceHealthCheckState::NOT_SET),
-    m_overallStatusHasBeenSet(false),
-    m_detailsHasBeenSet(false)
+ContainerInstanceHealthStatus::ContainerInstanceHealthStatus(JsonView jsonValue)
+  : ContainerInstanceHealthStatus()
 {
   *this = jsonValue;
 }

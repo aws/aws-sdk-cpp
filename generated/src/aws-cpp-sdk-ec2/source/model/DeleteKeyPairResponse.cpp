@@ -22,8 +22,8 @@ DeleteKeyPairResponse::DeleteKeyPairResponse() :
 {
 }
 
-DeleteKeyPairResponse::DeleteKeyPairResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_return(false)
+DeleteKeyPairResponse::DeleteKeyPairResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : DeleteKeyPairResponse()
 {
   *this = result;
 }

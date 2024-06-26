@@ -34,19 +34,8 @@ Grant::Grant() :
 {
 }
 
-Grant::Grant(JsonView jsonValue) : 
-    m_grantArnHasBeenSet(false),
-    m_grantNameHasBeenSet(false),
-    m_parentArnHasBeenSet(false),
-    m_licenseArnHasBeenSet(false),
-    m_granteePrincipalArnHasBeenSet(false),
-    m_homeRegionHasBeenSet(false),
-    m_grantStatus(GrantStatus::NOT_SET),
-    m_grantStatusHasBeenSet(false),
-    m_statusReasonHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_grantedOperationsHasBeenSet(false),
-    m_optionsHasBeenSet(false)
+Grant::Grant(JsonView jsonValue)
+  : Grant()
 {
   *this = jsonValue;
 }

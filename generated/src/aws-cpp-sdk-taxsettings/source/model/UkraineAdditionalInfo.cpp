@@ -24,9 +24,8 @@ UkraineAdditionalInfo::UkraineAdditionalInfo() :
 {
 }
 
-UkraineAdditionalInfo::UkraineAdditionalInfo(JsonView jsonValue) : 
-    m_ukraineTrnType(UkraineTrnType::NOT_SET),
-    m_ukraineTrnTypeHasBeenSet(false)
+UkraineAdditionalInfo::UkraineAdditionalInfo(JsonView jsonValue)
+  : UkraineAdditionalInfo()
 {
   *this = jsonValue;
 }

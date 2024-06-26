@@ -26,11 +26,8 @@ WorkflowExecutionTimedOutEventAttributes::WorkflowExecutionTimedOutEventAttribut
 {
 }
 
-WorkflowExecutionTimedOutEventAttributes::WorkflowExecutionTimedOutEventAttributes(JsonView jsonValue) : 
-    m_timeoutType(WorkflowExecutionTimeoutType::NOT_SET),
-    m_timeoutTypeHasBeenSet(false),
-    m_childPolicy(ChildPolicy::NOT_SET),
-    m_childPolicyHasBeenSet(false)
+WorkflowExecutionTimedOutEventAttributes::WorkflowExecutionTimedOutEventAttributes(JsonView jsonValue)
+  : WorkflowExecutionTimedOutEventAttributes()
 {
   *this = jsonValue;
 }

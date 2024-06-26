@@ -26,9 +26,8 @@ SecurityGroupIdentifier::SecurityGroupIdentifier() :
 {
 }
 
-SecurityGroupIdentifier::SecurityGroupIdentifier(const XmlNode& xmlNode) : 
-    m_groupIdHasBeenSet(false),
-    m_groupNameHasBeenSet(false)
+SecurityGroupIdentifier::SecurityGroupIdentifier(const XmlNode& xmlNode)
+  : SecurityGroupIdentifier()
 {
   *this = xmlNode;
 }

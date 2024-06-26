@@ -32,17 +32,8 @@ ManagedResourceSummary::ManagedResourceSummary() :
 {
 }
 
-ManagedResourceSummary::ManagedResourceSummary(JsonView jsonValue) : 
-    m_appliedWeightsHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_autoshiftsHasBeenSet(false),
-    m_availabilityZonesHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_practiceRunStatus(ZonalAutoshiftStatus::NOT_SET),
-    m_practiceRunStatusHasBeenSet(false),
-    m_zonalAutoshiftStatus(ZonalAutoshiftStatus::NOT_SET),
-    m_zonalAutoshiftStatusHasBeenSet(false),
-    m_zonalShiftsHasBeenSet(false)
+ManagedResourceSummary::ManagedResourceSummary(JsonView jsonValue)
+  : ManagedResourceSummary()
 {
   *this = jsonValue;
 }

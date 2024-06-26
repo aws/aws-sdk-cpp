@@ -24,9 +24,8 @@ DetailedGlossaryTerm::DetailedGlossaryTerm() :
 {
 }
 
-DetailedGlossaryTerm::DetailedGlossaryTerm(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_shortDescriptionHasBeenSet(false)
+DetailedGlossaryTerm::DetailedGlossaryTerm(JsonView jsonValue)
+  : DetailedGlossaryTerm()
 {
   *this = jsonValue;
 }

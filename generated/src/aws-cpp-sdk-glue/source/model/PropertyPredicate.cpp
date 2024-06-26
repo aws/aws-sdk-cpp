@@ -26,11 +26,8 @@ PropertyPredicate::PropertyPredicate() :
 {
 }
 
-PropertyPredicate::PropertyPredicate(JsonView jsonValue) : 
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_comparator(Comparator::NOT_SET),
-    m_comparatorHasBeenSet(false)
+PropertyPredicate::PropertyPredicate(JsonView jsonValue)
+  : PropertyPredicate()
 {
   *this = jsonValue;
 }

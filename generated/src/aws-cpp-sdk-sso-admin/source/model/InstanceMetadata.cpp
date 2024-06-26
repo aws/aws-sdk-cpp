@@ -29,14 +29,8 @@ InstanceMetadata::InstanceMetadata() :
 {
 }
 
-InstanceMetadata::InstanceMetadata(JsonView jsonValue) : 
-    m_createdDateHasBeenSet(false),
-    m_identityStoreIdHasBeenSet(false),
-    m_instanceArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_ownerAccountIdHasBeenSet(false),
-    m_status(InstanceStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+InstanceMetadata::InstanceMetadata(JsonView jsonValue)
+  : InstanceMetadata()
 {
   *this = jsonValue;
 }

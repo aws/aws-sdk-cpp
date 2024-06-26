@@ -23,9 +23,8 @@ CreateGraphUsingImportTaskResult::CreateGraphUsingImportTaskResult() :
 {
 }
 
-CreateGraphUsingImportTaskResult::CreateGraphUsingImportTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_format(Format::NOT_SET),
-    m_status(ImportTaskStatus::NOT_SET)
+CreateGraphUsingImportTaskResult::CreateGraphUsingImportTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateGraphUsingImportTaskResult()
 {
   *this = result;
 }

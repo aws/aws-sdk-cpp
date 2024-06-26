@@ -24,9 +24,8 @@ Identity::Identity() :
 {
 }
 
-Identity::Identity(JsonView jsonValue) : 
-    m_sourceIpHasBeenSet(false),
-    m_userAgentHasBeenSet(false)
+Identity::Identity(JsonView jsonValue)
+  : Identity()
 {
   *this = jsonValue;
 }

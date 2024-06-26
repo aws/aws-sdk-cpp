@@ -24,9 +24,8 @@ EC2CreateRouteTableAction::EC2CreateRouteTableAction() :
 {
 }
 
-EC2CreateRouteTableAction::EC2CreateRouteTableAction(JsonView jsonValue) : 
-    m_descriptionHasBeenSet(false),
-    m_vpcIdHasBeenSet(false)
+EC2CreateRouteTableAction::EC2CreateRouteTableAction(JsonView jsonValue)
+  : EC2CreateRouteTableAction()
 {
   *this = jsonValue;
 }

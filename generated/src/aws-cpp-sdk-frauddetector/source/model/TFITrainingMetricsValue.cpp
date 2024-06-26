@@ -24,9 +24,8 @@ TFITrainingMetricsValue::TFITrainingMetricsValue() :
 {
 }
 
-TFITrainingMetricsValue::TFITrainingMetricsValue(JsonView jsonValue) : 
-    m_metricDataPointsHasBeenSet(false),
-    m_modelPerformanceHasBeenSet(false)
+TFITrainingMetricsValue::TFITrainingMetricsValue(JsonView jsonValue)
+  : TFITrainingMetricsValue()
 {
   *this = jsonValue;
 }

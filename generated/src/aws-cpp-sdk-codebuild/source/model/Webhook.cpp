@@ -33,18 +33,8 @@ Webhook::Webhook() :
 {
 }
 
-Webhook::Webhook(JsonView jsonValue) : 
-    m_urlHasBeenSet(false),
-    m_payloadUrlHasBeenSet(false),
-    m_secretHasBeenSet(false),
-    m_branchFilterHasBeenSet(false),
-    m_filterGroupsHasBeenSet(false),
-    m_buildType(WebhookBuildType::NOT_SET),
-    m_buildTypeHasBeenSet(false),
-    m_manualCreation(false),
-    m_manualCreationHasBeenSet(false),
-    m_lastModifiedSecretHasBeenSet(false),
-    m_scopeConfigurationHasBeenSet(false)
+Webhook::Webhook(JsonView jsonValue)
+  : Webhook()
 {
   *this = jsonValue;
 }

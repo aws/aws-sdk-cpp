@@ -26,11 +26,8 @@ CustomResponse::CustomResponse() :
 {
 }
 
-CustomResponse::CustomResponse(JsonView jsonValue) : 
-    m_responseCode(0),
-    m_responseCodeHasBeenSet(false),
-    m_customResponseBodyKeyHasBeenSet(false),
-    m_responseHeadersHasBeenSet(false)
+CustomResponse::CustomResponse(JsonView jsonValue)
+  : CustomResponse()
 {
   *this = jsonValue;
 }

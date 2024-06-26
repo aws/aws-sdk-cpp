@@ -32,17 +32,8 @@ ConsolidatedReportMetric::ConsolidatedReportMetric() :
 {
 }
 
-ConsolidatedReportMetric::ConsolidatedReportMetric(JsonView jsonValue) : 
-    m_metricType(MetricType::NOT_SET),
-    m_metricTypeHasBeenSet(false),
-    m_riskCountsHasBeenSet(false),
-    m_workloadIdHasBeenSet(false),
-    m_workloadNameHasBeenSet(false),
-    m_workloadArnHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_lensesHasBeenSet(false),
-    m_lensesAppliedCount(0),
-    m_lensesAppliedCountHasBeenSet(false)
+ConsolidatedReportMetric::ConsolidatedReportMetric(JsonView jsonValue)
+  : ConsolidatedReportMetric()
 {
   *this = jsonValue;
 }

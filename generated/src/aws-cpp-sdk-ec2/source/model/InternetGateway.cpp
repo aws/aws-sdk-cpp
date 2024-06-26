@@ -28,11 +28,8 @@ InternetGateway::InternetGateway() :
 {
 }
 
-InternetGateway::InternetGateway(const XmlNode& xmlNode) : 
-    m_attachmentsHasBeenSet(false),
-    m_internetGatewayIdHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+InternetGateway::InternetGateway(const XmlNode& xmlNode)
+  : InternetGateway()
 {
   *this = xmlNode;
 }

@@ -28,13 +28,8 @@ AutoMerging::AutoMerging() :
 {
 }
 
-AutoMerging::AutoMerging(JsonView jsonValue) : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_consolidationHasBeenSet(false),
-    m_conflictResolutionHasBeenSet(false),
-    m_minAllowedConfidenceScoreForMerging(0.0),
-    m_minAllowedConfidenceScoreForMergingHasBeenSet(false)
+AutoMerging::AutoMerging(JsonView jsonValue)
+  : AutoMerging()
 {
   *this = jsonValue;
 }

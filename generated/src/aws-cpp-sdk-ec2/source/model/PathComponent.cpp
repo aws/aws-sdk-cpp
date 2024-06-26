@@ -45,28 +45,8 @@ PathComponent::PathComponent() :
 {
 }
 
-PathComponent::PathComponent(const XmlNode& xmlNode) : 
-    m_sequenceNumber(0),
-    m_sequenceNumberHasBeenSet(false),
-    m_aclRuleHasBeenSet(false),
-    m_attachedToHasBeenSet(false),
-    m_componentHasBeenSet(false),
-    m_destinationVpcHasBeenSet(false),
-    m_outboundHeaderHasBeenSet(false),
-    m_inboundHeaderHasBeenSet(false),
-    m_routeTableRouteHasBeenSet(false),
-    m_securityGroupRuleHasBeenSet(false),
-    m_sourceVpcHasBeenSet(false),
-    m_subnetHasBeenSet(false),
-    m_vpcHasBeenSet(false),
-    m_additionalDetailsHasBeenSet(false),
-    m_transitGatewayHasBeenSet(false),
-    m_transitGatewayRouteTableRouteHasBeenSet(false),
-    m_explanationsHasBeenSet(false),
-    m_elasticLoadBalancerListenerHasBeenSet(false),
-    m_firewallStatelessRuleHasBeenSet(false),
-    m_firewallStatefulRuleHasBeenSet(false),
-    m_serviceNameHasBeenSet(false)
+PathComponent::PathComponent(const XmlNode& xmlNode)
+  : PathComponent()
 {
   *this = xmlNode;
 }

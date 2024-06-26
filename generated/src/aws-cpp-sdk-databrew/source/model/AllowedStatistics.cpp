@@ -23,8 +23,8 @@ AllowedStatistics::AllowedStatistics() :
 {
 }
 
-AllowedStatistics::AllowedStatistics(JsonView jsonValue) : 
-    m_statisticsHasBeenSet(false)
+AllowedStatistics::AllowedStatistics(JsonView jsonValue)
+  : AllowedStatistics()
 {
   *this = jsonValue;
 }

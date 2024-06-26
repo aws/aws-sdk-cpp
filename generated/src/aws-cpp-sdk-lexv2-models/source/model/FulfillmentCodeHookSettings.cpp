@@ -28,13 +28,8 @@ FulfillmentCodeHookSettings::FulfillmentCodeHookSettings() :
 {
 }
 
-FulfillmentCodeHookSettings::FulfillmentCodeHookSettings(JsonView jsonValue) : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_postFulfillmentStatusSpecificationHasBeenSet(false),
-    m_fulfillmentUpdatesSpecificationHasBeenSet(false),
-    m_active(false),
-    m_activeHasBeenSet(false)
+FulfillmentCodeHookSettings::FulfillmentCodeHookSettings(JsonView jsonValue)
+  : FulfillmentCodeHookSettings()
 {
   *this = jsonValue;
 }

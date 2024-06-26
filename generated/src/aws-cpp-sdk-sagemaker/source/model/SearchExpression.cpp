@@ -27,12 +27,8 @@ SearchExpression::SearchExpression() :
 {
 }
 
-SearchExpression::SearchExpression(JsonView jsonValue) : 
-    m_filtersHasBeenSet(false),
-    m_nestedFiltersHasBeenSet(false),
-    m_subExpressionsHasBeenSet(false),
-    m_operator(BooleanOperator::NOT_SET),
-    m_operatorHasBeenSet(false)
+SearchExpression::SearchExpression(JsonView jsonValue)
+  : SearchExpression()
 {
   *this = jsonValue;
 }

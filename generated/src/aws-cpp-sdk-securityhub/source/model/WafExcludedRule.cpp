@@ -23,8 +23,8 @@ WafExcludedRule::WafExcludedRule() :
 {
 }
 
-WafExcludedRule::WafExcludedRule(JsonView jsonValue) : 
-    m_ruleIdHasBeenSet(false)
+WafExcludedRule::WafExcludedRule(JsonView jsonValue)
+  : WafExcludedRule()
 {
   *this = jsonValue;
 }

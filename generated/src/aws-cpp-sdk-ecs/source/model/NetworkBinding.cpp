@@ -31,16 +31,8 @@ NetworkBinding::NetworkBinding() :
 {
 }
 
-NetworkBinding::NetworkBinding(JsonView jsonValue) : 
-    m_bindIPHasBeenSet(false),
-    m_containerPort(0),
-    m_containerPortHasBeenSet(false),
-    m_hostPort(0),
-    m_hostPortHasBeenSet(false),
-    m_protocol(TransportProtocol::NOT_SET),
-    m_protocolHasBeenSet(false),
-    m_containerPortRangeHasBeenSet(false),
-    m_hostPortRangeHasBeenSet(false)
+NetworkBinding::NetworkBinding(JsonView jsonValue)
+  : NetworkBinding()
 {
   *this = jsonValue;
 }

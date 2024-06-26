@@ -27,12 +27,8 @@ MapRunListItem::MapRunListItem() :
 {
 }
 
-MapRunListItem::MapRunListItem(JsonView jsonValue) : 
-    m_executionArnHasBeenSet(false),
-    m_mapRunArnHasBeenSet(false),
-    m_stateMachineArnHasBeenSet(false),
-    m_startDateHasBeenSet(false),
-    m_stopDateHasBeenSet(false)
+MapRunListItem::MapRunListItem(JsonView jsonValue)
+  : MapRunListItem()
 {
   *this = jsonValue;
 }

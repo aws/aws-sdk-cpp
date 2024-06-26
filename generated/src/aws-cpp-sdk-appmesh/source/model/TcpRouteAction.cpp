@@ -23,8 +23,8 @@ TcpRouteAction::TcpRouteAction() :
 {
 }
 
-TcpRouteAction::TcpRouteAction(JsonView jsonValue) : 
-    m_weightedTargetsHasBeenSet(false)
+TcpRouteAction::TcpRouteAction(JsonView jsonValue)
+  : TcpRouteAction()
 {
   *this = jsonValue;
 }

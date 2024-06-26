@@ -24,9 +24,8 @@ IspPlacement::IspPlacement() :
 {
 }
 
-IspPlacement::IspPlacement(JsonView jsonValue) : 
-    m_ispNameHasBeenSet(false),
-    m_placementStatisticsHasBeenSet(false)
+IspPlacement::IspPlacement(JsonView jsonValue)
+  : IspPlacement()
 {
   *this = jsonValue;
 }

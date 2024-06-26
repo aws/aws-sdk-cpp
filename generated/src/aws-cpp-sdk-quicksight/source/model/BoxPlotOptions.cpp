@@ -27,12 +27,8 @@ BoxPlotOptions::BoxPlotOptions() :
 {
 }
 
-BoxPlotOptions::BoxPlotOptions(JsonView jsonValue) : 
-    m_styleOptionsHasBeenSet(false),
-    m_outlierVisibility(Visibility::NOT_SET),
-    m_outlierVisibilityHasBeenSet(false),
-    m_allDataPointsVisibility(Visibility::NOT_SET),
-    m_allDataPointsVisibilityHasBeenSet(false)
+BoxPlotOptions::BoxPlotOptions(JsonView jsonValue)
+  : BoxPlotOptions()
 {
   *this = jsonValue;
 }

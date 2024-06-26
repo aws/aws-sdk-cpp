@@ -23,8 +23,8 @@ SearchResultItem::SearchResultItem() :
 {
 }
 
-SearchResultItem::SearchResultItem(JsonView jsonValue) : 
-    m_assetListingHasBeenSet(false)
+SearchResultItem::SearchResultItem(JsonView jsonValue)
+  : SearchResultItem()
 {
   *this = jsonValue;
 }

@@ -25,11 +25,8 @@ DescribeResourceScanResult::DescribeResourceScanResult() :
 {
 }
 
-DescribeResourceScanResult::DescribeResourceScanResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_status(ResourceScanStatus::NOT_SET),
-    m_percentageCompleted(0.0),
-    m_resourcesScanned(0),
-    m_resourcesRead(0)
+DescribeResourceScanResult::DescribeResourceScanResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : DescribeResourceScanResult()
 {
   *this = result;
 }

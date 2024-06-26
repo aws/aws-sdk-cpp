@@ -28,13 +28,8 @@ ExperimentOptions::ExperimentOptions() :
 {
 }
 
-ExperimentOptions::ExperimentOptions(JsonView jsonValue) : 
-    m_accountTargeting(AccountTargeting::NOT_SET),
-    m_accountTargetingHasBeenSet(false),
-    m_emptyTargetResolutionMode(EmptyTargetResolutionMode::NOT_SET),
-    m_emptyTargetResolutionModeHasBeenSet(false),
-    m_actionsMode(ActionsMode::NOT_SET),
-    m_actionsModeHasBeenSet(false)
+ExperimentOptions::ExperimentOptions(JsonView jsonValue)
+  : ExperimentOptions()
 {
   *this = jsonValue;
 }

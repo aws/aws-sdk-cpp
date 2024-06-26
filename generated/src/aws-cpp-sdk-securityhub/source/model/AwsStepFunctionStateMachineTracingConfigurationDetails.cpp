@@ -24,9 +24,8 @@ AwsStepFunctionStateMachineTracingConfigurationDetails::AwsStepFunctionStateMach
 {
 }
 
-AwsStepFunctionStateMachineTracingConfigurationDetails::AwsStepFunctionStateMachineTracingConfigurationDetails(JsonView jsonValue) : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
+AwsStepFunctionStateMachineTracingConfigurationDetails::AwsStepFunctionStateMachineTracingConfigurationDetails(JsonView jsonValue)
+  : AwsStepFunctionStateMachineTracingConfigurationDetails()
 {
   *this = jsonValue;
 }

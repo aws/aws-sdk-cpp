@@ -24,9 +24,8 @@ ParallelDataDataLocation::ParallelDataDataLocation() :
 {
 }
 
-ParallelDataDataLocation::ParallelDataDataLocation(JsonView jsonValue) : 
-    m_repositoryTypeHasBeenSet(false),
-    m_locationHasBeenSet(false)
+ParallelDataDataLocation::ParallelDataDataLocation(JsonView jsonValue)
+  : ParallelDataDataLocation()
 {
   *this = jsonValue;
 }

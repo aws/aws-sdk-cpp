@@ -25,10 +25,8 @@ RepositoryFilter::RepositoryFilter() :
 {
 }
 
-RepositoryFilter::RepositoryFilter(JsonView jsonValue) : 
-    m_filterHasBeenSet(false),
-    m_filterType(RepositoryFilterType::NOT_SET),
-    m_filterTypeHasBeenSet(false)
+RepositoryFilter::RepositoryFilter(JsonView jsonValue)
+  : RepositoryFilter()
 {
   *this = jsonValue;
 }

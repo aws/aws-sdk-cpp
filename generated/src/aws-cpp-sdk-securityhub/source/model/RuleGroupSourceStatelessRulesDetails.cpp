@@ -25,10 +25,8 @@ RuleGroupSourceStatelessRulesDetails::RuleGroupSourceStatelessRulesDetails() :
 {
 }
 
-RuleGroupSourceStatelessRulesDetails::RuleGroupSourceStatelessRulesDetails(JsonView jsonValue) : 
-    m_priority(0),
-    m_priorityHasBeenSet(false),
-    m_ruleDefinitionHasBeenSet(false)
+RuleGroupSourceStatelessRulesDetails::RuleGroupSourceStatelessRulesDetails(JsonView jsonValue)
+  : RuleGroupSourceStatelessRulesDetails()
 {
   *this = jsonValue;
 }

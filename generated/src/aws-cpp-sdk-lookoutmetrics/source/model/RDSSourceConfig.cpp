@@ -31,16 +31,8 @@ RDSSourceConfig::RDSSourceConfig() :
 {
 }
 
-RDSSourceConfig::RDSSourceConfig(JsonView jsonValue) : 
-    m_dBInstanceIdentifierHasBeenSet(false),
-    m_databaseHostHasBeenSet(false),
-    m_databasePort(0),
-    m_databasePortHasBeenSet(false),
-    m_secretManagerArnHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_tableNameHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_vpcConfigurationHasBeenSet(false)
+RDSSourceConfig::RDSSourceConfig(JsonView jsonValue)
+  : RDSSourceConfig()
 {
   *this = jsonValue;
 }

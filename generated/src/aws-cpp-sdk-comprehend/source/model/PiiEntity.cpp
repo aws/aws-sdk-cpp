@@ -30,15 +30,8 @@ PiiEntity::PiiEntity() :
 {
 }
 
-PiiEntity::PiiEntity(JsonView jsonValue) : 
-    m_score(0.0),
-    m_scoreHasBeenSet(false),
-    m_type(PiiEntityType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_beginOffset(0),
-    m_beginOffsetHasBeenSet(false),
-    m_endOffset(0),
-    m_endOffsetHasBeenSet(false)
+PiiEntity::PiiEntity(JsonView jsonValue)
+  : PiiEntity()
 {
   *this = jsonValue;
 }

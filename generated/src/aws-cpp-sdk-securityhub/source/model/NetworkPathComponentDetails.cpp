@@ -24,9 +24,8 @@ NetworkPathComponentDetails::NetworkPathComponentDetails() :
 {
 }
 
-NetworkPathComponentDetails::NetworkPathComponentDetails(JsonView jsonValue) : 
-    m_addressHasBeenSet(false),
-    m_portRangesHasBeenSet(false)
+NetworkPathComponentDetails::NetworkPathComponentDetails(JsonView jsonValue)
+  : NetworkPathComponentDetails()
 {
   *this = jsonValue;
 }

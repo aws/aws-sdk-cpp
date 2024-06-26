@@ -24,10 +24,8 @@ DescribeDomainConfigurationResult::DescribeDomainConfigurationResult() :
 {
 }
 
-DescribeDomainConfigurationResult::DescribeDomainConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_domainConfigurationStatus(DomainConfigurationStatus::NOT_SET),
-    m_serviceType(ServiceType::NOT_SET),
-    m_domainType(DomainType::NOT_SET)
+DescribeDomainConfigurationResult::DescribeDomainConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeDomainConfigurationResult()
 {
   *this = result;
 }

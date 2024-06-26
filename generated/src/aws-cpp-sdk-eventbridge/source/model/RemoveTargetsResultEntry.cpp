@@ -25,10 +25,8 @@ RemoveTargetsResultEntry::RemoveTargetsResultEntry() :
 {
 }
 
-RemoveTargetsResultEntry::RemoveTargetsResultEntry(JsonView jsonValue) : 
-    m_targetIdHasBeenSet(false),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
+RemoveTargetsResultEntry::RemoveTargetsResultEntry(JsonView jsonValue)
+  : RemoveTargetsResultEntry()
 {
   *this = jsonValue;
 }

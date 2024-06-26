@@ -30,15 +30,8 @@ CoreNetworkChange::CoreNetworkChange() :
 {
 }
 
-CoreNetworkChange::CoreNetworkChange(JsonView jsonValue) : 
-    m_type(ChangeType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_action(ChangeAction::NOT_SET),
-    m_actionHasBeenSet(false),
-    m_identifierHasBeenSet(false),
-    m_previousValuesHasBeenSet(false),
-    m_newValuesHasBeenSet(false),
-    m_identifierPathHasBeenSet(false)
+CoreNetworkChange::CoreNetworkChange(JsonView jsonValue)
+  : CoreNetworkChange()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ MalformedQueryException::MalformedQueryException() :
 {
 }
 
-MalformedQueryException::MalformedQueryException(JsonView jsonValue) : 
-    m_detailedMessageHasBeenSet(false),
-    m_requestIdHasBeenSet(false),
-    m_codeHasBeenSet(false)
+MalformedQueryException::MalformedQueryException(JsonView jsonValue)
+  : MalformedQueryException()
 {
   *this = jsonValue;
 }

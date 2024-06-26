@@ -39,24 +39,8 @@ CreateDashManifestConfiguration::CreateDashManifestConfiguration() :
 {
 }
 
-CreateDashManifestConfiguration::CreateDashManifestConfiguration(JsonView jsonValue) : 
-    m_manifestNameHasBeenSet(false),
-    m_manifestWindowSeconds(0),
-    m_manifestWindowSecondsHasBeenSet(false),
-    m_filterConfigurationHasBeenSet(false),
-    m_minUpdatePeriodSeconds(0),
-    m_minUpdatePeriodSecondsHasBeenSet(false),
-    m_minBufferTimeSeconds(0),
-    m_minBufferTimeSecondsHasBeenSet(false),
-    m_suggestedPresentationDelaySeconds(0),
-    m_suggestedPresentationDelaySecondsHasBeenSet(false),
-    m_segmentTemplateFormat(DashSegmentTemplateFormat::NOT_SET),
-    m_segmentTemplateFormatHasBeenSet(false),
-    m_periodTriggersHasBeenSet(false),
-    m_scteDashHasBeenSet(false),
-    m_drmSignaling(DashDrmSignaling::NOT_SET),
-    m_drmSignalingHasBeenSet(false),
-    m_utcTimingHasBeenSet(false)
+CreateDashManifestConfiguration::CreateDashManifestConfiguration(JsonView jsonValue)
+  : CreateDashManifestConfiguration()
 {
   *this = jsonValue;
 }

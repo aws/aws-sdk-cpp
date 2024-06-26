@@ -24,9 +24,8 @@ Media::Media() :
 {
 }
 
-Media::Media(JsonView jsonValue) : 
-    m_mediaFileUriHasBeenSet(false),
-    m_redactedMediaFileUriHasBeenSet(false)
+Media::Media(JsonView jsonValue)
+  : Media()
 {
   *this = jsonValue;
 }

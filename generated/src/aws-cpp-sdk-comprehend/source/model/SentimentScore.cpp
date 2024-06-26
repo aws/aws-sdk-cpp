@@ -30,15 +30,8 @@ SentimentScore::SentimentScore() :
 {
 }
 
-SentimentScore::SentimentScore(JsonView jsonValue) : 
-    m_positive(0.0),
-    m_positiveHasBeenSet(false),
-    m_negative(0.0),
-    m_negativeHasBeenSet(false),
-    m_neutral(0.0),
-    m_neutralHasBeenSet(false),
-    m_mixed(0.0),
-    m_mixedHasBeenSet(false)
+SentimentScore::SentimentScore(JsonView jsonValue)
+  : SentimentScore()
 {
   *this = jsonValue;
 }

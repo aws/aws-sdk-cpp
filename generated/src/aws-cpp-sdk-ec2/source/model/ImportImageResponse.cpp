@@ -22,8 +22,8 @@ ImportImageResponse::ImportImageResponse() :
 {
 }
 
-ImportImageResponse::ImportImageResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_encrypted(false)
+ImportImageResponse::ImportImageResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : ImportImageResponse()
 {
   *this = result;
 }

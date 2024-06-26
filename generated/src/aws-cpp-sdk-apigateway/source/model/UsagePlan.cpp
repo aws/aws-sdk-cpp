@@ -32,16 +32,8 @@ UsagePlan::UsagePlan() :
 {
 }
 
-UsagePlan::UsagePlan(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_apiStagesHasBeenSet(false),
-    m_throttleHasBeenSet(false),
-    m_quotaHasBeenSet(false),
-    m_productCodeHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
+UsagePlan::UsagePlan(JsonView jsonValue)
+  : UsagePlan()
 {
   *this = jsonValue;
 }

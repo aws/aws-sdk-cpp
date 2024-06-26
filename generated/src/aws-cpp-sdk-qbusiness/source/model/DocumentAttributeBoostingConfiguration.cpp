@@ -26,11 +26,8 @@ DocumentAttributeBoostingConfiguration::DocumentAttributeBoostingConfiguration()
 {
 }
 
-DocumentAttributeBoostingConfiguration::DocumentAttributeBoostingConfiguration(JsonView jsonValue) : 
-    m_numberConfigurationHasBeenSet(false),
-    m_stringConfigurationHasBeenSet(false),
-    m_dateConfigurationHasBeenSet(false),
-    m_stringListConfigurationHasBeenSet(false)
+DocumentAttributeBoostingConfiguration::DocumentAttributeBoostingConfiguration(JsonView jsonValue)
+  : DocumentAttributeBoostingConfiguration()
 {
   *this = jsonValue;
 }

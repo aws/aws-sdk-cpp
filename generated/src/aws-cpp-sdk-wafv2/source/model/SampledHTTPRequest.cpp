@@ -35,20 +35,8 @@ SampledHTTPRequest::SampledHTTPRequest() :
 {
 }
 
-SampledHTTPRequest::SampledHTTPRequest(JsonView jsonValue) : 
-    m_requestHasBeenSet(false),
-    m_weight(0),
-    m_weightHasBeenSet(false),
-    m_timestampHasBeenSet(false),
-    m_actionHasBeenSet(false),
-    m_ruleNameWithinRuleGroupHasBeenSet(false),
-    m_requestHeadersInsertedHasBeenSet(false),
-    m_responseCodeSent(0),
-    m_responseCodeSentHasBeenSet(false),
-    m_labelsHasBeenSet(false),
-    m_captchaResponseHasBeenSet(false),
-    m_challengeResponseHasBeenSet(false),
-    m_overriddenActionHasBeenSet(false)
+SampledHTTPRequest::SampledHTTPRequest(JsonView jsonValue)
+  : SampledHTTPRequest()
 {
   *this = jsonValue;
 }

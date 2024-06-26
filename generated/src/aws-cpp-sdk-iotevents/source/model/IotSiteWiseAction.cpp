@@ -27,12 +27,8 @@ IotSiteWiseAction::IotSiteWiseAction() :
 {
 }
 
-IotSiteWiseAction::IotSiteWiseAction(JsonView jsonValue) : 
-    m_entryIdHasBeenSet(false),
-    m_assetIdHasBeenSet(false),
-    m_propertyIdHasBeenSet(false),
-    m_propertyAliasHasBeenSet(false),
-    m_propertyValueHasBeenSet(false)
+IotSiteWiseAction::IotSiteWiseAction(JsonView jsonValue)
+  : IotSiteWiseAction()
 {
   *this = jsonValue;
 }

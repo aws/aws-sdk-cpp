@@ -30,15 +30,8 @@ ServicePrincipalNameSummary::ServicePrincipalNameSummary() :
 {
 }
 
-ServicePrincipalNameSummary::ServicePrincipalNameSummary(JsonView jsonValue) : 
-    m_connectorArnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_directoryRegistrationArnHasBeenSet(false),
-    m_status(ServicePrincipalNameStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusReason(ServicePrincipalNameStatusReason::NOT_SET),
-    m_statusReasonHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+ServicePrincipalNameSummary::ServicePrincipalNameSummary(JsonView jsonValue)
+  : ServicePrincipalNameSummary()
 {
   *this = jsonValue;
 }

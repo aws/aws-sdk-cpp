@@ -29,14 +29,8 @@ CertificateInfo::CertificateInfo() :
 {
 }
 
-CertificateInfo::CertificateInfo(JsonView jsonValue) : 
-    m_certificateIdHasBeenSet(false),
-    m_commonNameHasBeenSet(false),
-    m_state(CertificateState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_expiryDateTimeHasBeenSet(false),
-    m_type(CertificateType::NOT_SET),
-    m_typeHasBeenSet(false)
+CertificateInfo::CertificateInfo(JsonView jsonValue)
+  : CertificateInfo()
 {
   *this = jsonValue;
 }

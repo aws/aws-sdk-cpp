@@ -24,9 +24,8 @@ SelfGrantStatusOutput::SelfGrantStatusOutput() :
 {
 }
 
-SelfGrantStatusOutput::SelfGrantStatusOutput(JsonView jsonValue) : 
-    m_glueSelfGrantStatusHasBeenSet(false),
-    m_redshiftSelfGrantStatusHasBeenSet(false)
+SelfGrantStatusOutput::SelfGrantStatusOutput(JsonView jsonValue)
+  : SelfGrantStatusOutput()
 {
   *this = jsonValue;
 }

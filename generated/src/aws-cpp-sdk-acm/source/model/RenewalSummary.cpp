@@ -28,13 +28,8 @@ RenewalSummary::RenewalSummary() :
 {
 }
 
-RenewalSummary::RenewalSummary(JsonView jsonValue) : 
-    m_renewalStatus(RenewalStatus::NOT_SET),
-    m_renewalStatusHasBeenSet(false),
-    m_domainValidationOptionsHasBeenSet(false),
-    m_renewalStatusReason(FailureReason::NOT_SET),
-    m_renewalStatusReasonHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+RenewalSummary::RenewalSummary(JsonView jsonValue)
+  : RenewalSummary()
 {
   *this = jsonValue;
 }

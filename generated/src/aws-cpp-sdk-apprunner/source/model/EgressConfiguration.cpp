@@ -25,10 +25,8 @@ EgressConfiguration::EgressConfiguration() :
 {
 }
 
-EgressConfiguration::EgressConfiguration(JsonView jsonValue) : 
-    m_egressType(EgressType::NOT_SET),
-    m_egressTypeHasBeenSet(false),
-    m_vpcConnectorArnHasBeenSet(false)
+EgressConfiguration::EgressConfiguration(JsonView jsonValue)
+  : EgressConfiguration()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ LogGroupConfiguration::LogGroupConfiguration() :
 {
 }
 
-LogGroupConfiguration::LogGroupConfiguration(JsonView jsonValue) : 
-    m_filterHasBeenSet(false)
+LogGroupConfiguration::LogGroupConfiguration(JsonView jsonValue)
+  : LogGroupConfiguration()
 {
   *this = jsonValue;
 }

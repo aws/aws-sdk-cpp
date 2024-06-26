@@ -29,14 +29,8 @@ DirectKinesisSource::DirectKinesisSource() :
 {
 }
 
-DirectKinesisSource::DirectKinesisSource(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_windowSize(0),
-    m_windowSizeHasBeenSet(false),
-    m_detectSchema(false),
-    m_detectSchemaHasBeenSet(false),
-    m_streamingOptionsHasBeenSet(false),
-    m_dataPreviewOptionsHasBeenSet(false)
+DirectKinesisSource::DirectKinesisSource(JsonView jsonValue)
+  : DirectKinesisSource()
 {
   *this = jsonValue;
 }

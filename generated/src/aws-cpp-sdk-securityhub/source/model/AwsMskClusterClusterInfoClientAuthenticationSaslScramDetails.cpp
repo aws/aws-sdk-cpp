@@ -24,9 +24,8 @@ AwsMskClusterClusterInfoClientAuthenticationSaslScramDetails::AwsMskClusterClust
 {
 }
 
-AwsMskClusterClusterInfoClientAuthenticationSaslScramDetails::AwsMskClusterClusterInfoClientAuthenticationSaslScramDetails(JsonView jsonValue) : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
+AwsMskClusterClusterInfoClientAuthenticationSaslScramDetails::AwsMskClusterClusterInfoClientAuthenticationSaslScramDetails(JsonView jsonValue)
+  : AwsMskClusterClusterInfoClientAuthenticationSaslScramDetails()
 {
   *this = jsonValue;
 }

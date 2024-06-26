@@ -23,8 +23,8 @@ CriteriaBlockForJob::CriteriaBlockForJob() :
 {
 }
 
-CriteriaBlockForJob::CriteriaBlockForJob(JsonView jsonValue) : 
-    m_andHasBeenSet(false)
+CriteriaBlockForJob::CriteriaBlockForJob(JsonView jsonValue)
+  : CriteriaBlockForJob()
 {
   *this = jsonValue;
 }

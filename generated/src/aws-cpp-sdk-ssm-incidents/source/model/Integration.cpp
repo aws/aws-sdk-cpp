@@ -23,8 +23,8 @@ Integration::Integration() :
 {
 }
 
-Integration::Integration(JsonView jsonValue) : 
-    m_pagerDutyConfigurationHasBeenSet(false)
+Integration::Integration(JsonView jsonValue)
+  : Integration()
 {
   *this = jsonValue;
 }

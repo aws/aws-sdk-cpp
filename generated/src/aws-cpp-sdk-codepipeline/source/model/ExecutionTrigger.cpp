@@ -25,10 +25,8 @@ ExecutionTrigger::ExecutionTrigger() :
 {
 }
 
-ExecutionTrigger::ExecutionTrigger(JsonView jsonValue) : 
-    m_triggerType(TriggerType::NOT_SET),
-    m_triggerTypeHasBeenSet(false),
-    m_triggerDetailHasBeenSet(false)
+ExecutionTrigger::ExecutionTrigger(JsonView jsonValue)
+  : ExecutionTrigger()
 {
   *this = jsonValue;
 }

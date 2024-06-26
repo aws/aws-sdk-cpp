@@ -27,10 +27,8 @@ PlatformFilter::PlatformFilter() :
 {
 }
 
-PlatformFilter::PlatformFilter(const XmlNode& xmlNode) : 
-    m_typeHasBeenSet(false),
-    m_operatorHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+PlatformFilter::PlatformFilter(const XmlNode& xmlNode)
+  : PlatformFilter()
 {
   *this = xmlNode;
 }

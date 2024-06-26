@@ -28,13 +28,8 @@ RDSEffectiveRecommendationPreferences::RDSEffectiveRecommendationPreferences() :
 {
 }
 
-RDSEffectiveRecommendationPreferences::RDSEffectiveRecommendationPreferences(JsonView jsonValue) : 
-    m_cpuVendorArchitecturesHasBeenSet(false),
-    m_enhancedInfrastructureMetrics(EnhancedInfrastructureMetrics::NOT_SET),
-    m_enhancedInfrastructureMetricsHasBeenSet(false),
-    m_lookBackPeriod(LookBackPeriodPreference::NOT_SET),
-    m_lookBackPeriodHasBeenSet(false),
-    m_savingsEstimationModeHasBeenSet(false)
+RDSEffectiveRecommendationPreferences::RDSEffectiveRecommendationPreferences(JsonView jsonValue)
+  : RDSEffectiveRecommendationPreferences()
 {
   *this = jsonValue;
 }

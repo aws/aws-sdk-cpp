@@ -23,9 +23,8 @@ DescribeDataSourceResult::DescribeDataSourceResult() :
 {
 }
 
-DescribeDataSourceResult::DescribeDataSourceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_type(DataSourceType::NOT_SET),
-    m_status(DataSourceStatus::NOT_SET)
+DescribeDataSourceResult::DescribeDataSourceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeDataSourceResult()
 {
   *this = result;
 }

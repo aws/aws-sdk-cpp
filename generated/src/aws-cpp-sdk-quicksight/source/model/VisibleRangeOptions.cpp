@@ -23,8 +23,8 @@ VisibleRangeOptions::VisibleRangeOptions() :
 {
 }
 
-VisibleRangeOptions::VisibleRangeOptions(JsonView jsonValue) : 
-    m_percentRangeHasBeenSet(false)
+VisibleRangeOptions::VisibleRangeOptions(JsonView jsonValue)
+  : VisibleRangeOptions()
 {
   *this = jsonValue;
 }

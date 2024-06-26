@@ -33,18 +33,8 @@ ContainerDefinition::ContainerDefinition() :
 {
 }
 
-ContainerDefinition::ContainerDefinition(JsonView jsonValue) : 
-    m_containerHostnameHasBeenSet(false),
-    m_imageHasBeenSet(false),
-    m_imageConfigHasBeenSet(false),
-    m_mode(ContainerMode::NOT_SET),
-    m_modeHasBeenSet(false),
-    m_modelDataUrlHasBeenSet(false),
-    m_modelDataSourceHasBeenSet(false),
-    m_environmentHasBeenSet(false),
-    m_modelPackageNameHasBeenSet(false),
-    m_inferenceSpecificationNameHasBeenSet(false),
-    m_multiModelConfigHasBeenSet(false)
+ContainerDefinition::ContainerDefinition(JsonView jsonValue)
+  : ContainerDefinition()
 {
   *this = jsonValue;
 }

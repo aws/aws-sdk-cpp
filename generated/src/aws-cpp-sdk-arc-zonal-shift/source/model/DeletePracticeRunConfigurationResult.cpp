@@ -22,8 +22,8 @@ DeletePracticeRunConfigurationResult::DeletePracticeRunConfigurationResult() :
 {
 }
 
-DeletePracticeRunConfigurationResult::DeletePracticeRunConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_zonalAutoshiftStatus(ZonalAutoshiftStatus::NOT_SET)
+DeletePracticeRunConfigurationResult::DeletePracticeRunConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeletePracticeRunConfigurationResult()
 {
   *this = result;
 }

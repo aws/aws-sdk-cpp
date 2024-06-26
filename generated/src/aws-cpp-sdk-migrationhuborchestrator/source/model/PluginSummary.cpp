@@ -29,14 +29,8 @@ PluginSummary::PluginSummary() :
 {
 }
 
-PluginSummary::PluginSummary(JsonView jsonValue) : 
-    m_pluginIdHasBeenSet(false),
-    m_hostnameHasBeenSet(false),
-    m_status(PluginHealth::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_ipAddressHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_registeredTimeHasBeenSet(false)
+PluginSummary::PluginSummary(JsonView jsonValue)
+  : PluginSummary()
 {
   *this = jsonValue;
 }

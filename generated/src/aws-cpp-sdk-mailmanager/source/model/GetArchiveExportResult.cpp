@@ -22,8 +22,8 @@ GetArchiveExportResult::GetArchiveExportResult() :
 {
 }
 
-GetArchiveExportResult::GetArchiveExportResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_maxResults(0)
+GetArchiveExportResult::GetArchiveExportResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetArchiveExportResult()
 {
   *this = result;
 }

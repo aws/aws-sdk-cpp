@@ -26,11 +26,8 @@ EvaluationFormScoringStrategy::EvaluationFormScoringStrategy() :
 {
 }
 
-EvaluationFormScoringStrategy::EvaluationFormScoringStrategy(JsonView jsonValue) : 
-    m_mode(EvaluationFormScoringMode::NOT_SET),
-    m_modeHasBeenSet(false),
-    m_status(EvaluationFormScoringStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+EvaluationFormScoringStrategy::EvaluationFormScoringStrategy(JsonView jsonValue)
+  : EvaluationFormScoringStrategy()
 {
   *this = jsonValue;
 }

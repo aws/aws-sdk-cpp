@@ -23,9 +23,8 @@ GetModelCustomizationJobResult::GetModelCustomizationJobResult() :
 {
 }
 
-GetModelCustomizationJobResult::GetModelCustomizationJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(ModelCustomizationJobStatus::NOT_SET),
-    m_customizationType(CustomizationType::NOT_SET)
+GetModelCustomizationJobResult::GetModelCustomizationJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetModelCustomizationJobResult()
 {
   *this = result;
 }

@@ -24,9 +24,8 @@ CloudWatchMonitoringConfiguration::CloudWatchMonitoringConfiguration() :
 {
 }
 
-CloudWatchMonitoringConfiguration::CloudWatchMonitoringConfiguration(JsonView jsonValue) : 
-    m_logGroupNameHasBeenSet(false),
-    m_logStreamNamePrefixHasBeenSet(false)
+CloudWatchMonitoringConfiguration::CloudWatchMonitoringConfiguration(JsonView jsonValue)
+  : CloudWatchMonitoringConfiguration()
 {
   *this = jsonValue;
 }

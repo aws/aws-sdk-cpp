@@ -24,9 +24,8 @@ RenewalTermConfiguration::RenewalTermConfiguration() :
 {
 }
 
-RenewalTermConfiguration::RenewalTermConfiguration(JsonView jsonValue) : 
-    m_enableAutoRenew(false),
-    m_enableAutoRenewHasBeenSet(false)
+RenewalTermConfiguration::RenewalTermConfiguration(JsonView jsonValue)
+  : RenewalTermConfiguration()
 {
   *this = jsonValue;
 }

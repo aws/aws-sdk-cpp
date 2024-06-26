@@ -25,10 +25,8 @@ SetFileModeEntry::SetFileModeEntry() :
 {
 }
 
-SetFileModeEntry::SetFileModeEntry(JsonView jsonValue) : 
-    m_filePathHasBeenSet(false),
-    m_fileMode(FileModeTypeEnum::NOT_SET),
-    m_fileModeHasBeenSet(false)
+SetFileModeEntry::SetFileModeEntry(JsonView jsonValue)
+  : SetFileModeEntry()
 {
   *this = jsonValue;
 }

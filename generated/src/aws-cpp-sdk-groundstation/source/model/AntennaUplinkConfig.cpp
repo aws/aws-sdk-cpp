@@ -26,11 +26,8 @@ AntennaUplinkConfig::AntennaUplinkConfig() :
 {
 }
 
-AntennaUplinkConfig::AntennaUplinkConfig(JsonView jsonValue) : 
-    m_spectrumConfigHasBeenSet(false),
-    m_targetEirpHasBeenSet(false),
-    m_transmitDisabled(false),
-    m_transmitDisabledHasBeenSet(false)
+AntennaUplinkConfig::AntennaUplinkConfig(JsonView jsonValue)
+  : AntennaUplinkConfig()
 {
   *this = jsonValue;
 }

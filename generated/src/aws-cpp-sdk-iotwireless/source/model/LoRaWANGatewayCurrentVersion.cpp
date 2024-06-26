@@ -23,8 +23,8 @@ LoRaWANGatewayCurrentVersion::LoRaWANGatewayCurrentVersion() :
 {
 }
 
-LoRaWANGatewayCurrentVersion::LoRaWANGatewayCurrentVersion(JsonView jsonValue) : 
-    m_currentVersionHasBeenSet(false)
+LoRaWANGatewayCurrentVersion::LoRaWANGatewayCurrentVersion(JsonView jsonValue)
+  : LoRaWANGatewayCurrentVersion()
 {
   *this = jsonValue;
 }

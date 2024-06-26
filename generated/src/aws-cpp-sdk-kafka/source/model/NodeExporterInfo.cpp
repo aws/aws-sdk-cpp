@@ -24,9 +24,8 @@ NodeExporterInfo::NodeExporterInfo() :
 {
 }
 
-NodeExporterInfo::NodeExporterInfo(JsonView jsonValue) : 
-    m_enabledInBroker(false),
-    m_enabledInBrokerHasBeenSet(false)
+NodeExporterInfo::NodeExporterInfo(JsonView jsonValue)
+  : NodeExporterInfo()
 {
   *this = jsonValue;
 }

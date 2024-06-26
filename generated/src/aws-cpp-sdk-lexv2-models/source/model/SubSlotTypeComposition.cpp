@@ -24,9 +24,8 @@ SubSlotTypeComposition::SubSlotTypeComposition() :
 {
 }
 
-SubSlotTypeComposition::SubSlotTypeComposition(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_slotTypeIdHasBeenSet(false)
+SubSlotTypeComposition::SubSlotTypeComposition(JsonView jsonValue)
+  : SubSlotTypeComposition()
 {
   *this = jsonValue;
 }

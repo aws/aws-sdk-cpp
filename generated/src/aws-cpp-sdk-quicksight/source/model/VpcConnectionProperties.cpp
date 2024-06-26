@@ -23,8 +23,8 @@ VpcConnectionProperties::VpcConnectionProperties() :
 {
 }
 
-VpcConnectionProperties::VpcConnectionProperties(JsonView jsonValue) : 
-    m_vpcConnectionArnHasBeenSet(false)
+VpcConnectionProperties::VpcConnectionProperties(JsonView jsonValue)
+  : VpcConnectionProperties()
 {
   *this = jsonValue;
 }

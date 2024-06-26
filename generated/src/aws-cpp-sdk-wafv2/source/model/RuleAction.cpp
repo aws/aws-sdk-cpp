@@ -27,12 +27,8 @@ RuleAction::RuleAction() :
 {
 }
 
-RuleAction::RuleAction(JsonView jsonValue) : 
-    m_blockHasBeenSet(false),
-    m_allowHasBeenSet(false),
-    m_countHasBeenSet(false),
-    m_captchaHasBeenSet(false),
-    m_challengeHasBeenSet(false)
+RuleAction::RuleAction(JsonView jsonValue)
+  : RuleAction()
 {
   *this = jsonValue;
 }

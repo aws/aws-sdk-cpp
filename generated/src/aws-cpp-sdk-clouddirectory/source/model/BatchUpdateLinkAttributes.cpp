@@ -24,9 +24,8 @@ BatchUpdateLinkAttributes::BatchUpdateLinkAttributes() :
 {
 }
 
-BatchUpdateLinkAttributes::BatchUpdateLinkAttributes(JsonView jsonValue) : 
-    m_typedLinkSpecifierHasBeenSet(false),
-    m_attributeUpdatesHasBeenSet(false)
+BatchUpdateLinkAttributes::BatchUpdateLinkAttributes(JsonView jsonValue)
+  : BatchUpdateLinkAttributes()
 {
   *this = jsonValue;
 }

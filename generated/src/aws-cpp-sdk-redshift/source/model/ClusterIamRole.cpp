@@ -26,9 +26,8 @@ ClusterIamRole::ClusterIamRole() :
 {
 }
 
-ClusterIamRole::ClusterIamRole(const XmlNode& xmlNode) : 
-    m_iamRoleArnHasBeenSet(false),
-    m_applyStatusHasBeenSet(false)
+ClusterIamRole::ClusterIamRole(const XmlNode& xmlNode)
+  : ClusterIamRole()
 {
   *this = xmlNode;
 }

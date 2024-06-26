@@ -23,9 +23,8 @@ GetBudgetResult::GetBudgetResult() :
 {
 }
 
-GetBudgetResult::GetBudgetResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_approximateDollarLimit(0.0),
-    m_status(BudgetStatus::NOT_SET)
+GetBudgetResult::GetBudgetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetBudgetResult()
 {
   *this = result;
 }

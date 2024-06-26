@@ -25,8 +25,8 @@ CompletedMultipartUpload::CompletedMultipartUpload() :
 {
 }
 
-CompletedMultipartUpload::CompletedMultipartUpload(const XmlNode& xmlNode) : 
-    m_partsHasBeenSet(false)
+CompletedMultipartUpload::CompletedMultipartUpload(const XmlNode& xmlNode)
+  : CompletedMultipartUpload()
 {
   *this = xmlNode;
 }

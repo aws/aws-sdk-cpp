@@ -33,18 +33,8 @@ TransformFilterCriteria::TransformFilterCriteria() :
 {
 }
 
-TransformFilterCriteria::TransformFilterCriteria(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_transformType(TransformType::NOT_SET),
-    m_transformTypeHasBeenSet(false),
-    m_status(TransformStatusType::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_glueVersionHasBeenSet(false),
-    m_createdBeforeHasBeenSet(false),
-    m_createdAfterHasBeenSet(false),
-    m_lastModifiedBeforeHasBeenSet(false),
-    m_lastModifiedAfterHasBeenSet(false),
-    m_schemaHasBeenSet(false)
+TransformFilterCriteria::TransformFilterCriteria(JsonView jsonValue)
+  : TransformFilterCriteria()
 {
   *this = jsonValue;
 }

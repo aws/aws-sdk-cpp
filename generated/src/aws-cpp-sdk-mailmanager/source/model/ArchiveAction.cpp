@@ -25,10 +25,8 @@ ArchiveAction::ArchiveAction() :
 {
 }
 
-ArchiveAction::ArchiveAction(JsonView jsonValue) : 
-    m_actionFailurePolicy(ActionFailurePolicy::NOT_SET),
-    m_actionFailurePolicyHasBeenSet(false),
-    m_targetArchiveHasBeenSet(false)
+ArchiveAction::ArchiveAction(JsonView jsonValue)
+  : ArchiveAction()
 {
   *this = jsonValue;
 }

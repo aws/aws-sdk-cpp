@@ -30,15 +30,8 @@ CustomPluginRevisionSummary::CustomPluginRevisionSummary() :
 {
 }
 
-CustomPluginRevisionSummary::CustomPluginRevisionSummary(JsonView jsonValue) : 
-    m_contentType(CustomPluginContentType::NOT_SET),
-    m_contentTypeHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_fileDescriptionHasBeenSet(false),
-    m_locationHasBeenSet(false),
-    m_revision(0),
-    m_revisionHasBeenSet(false)
+CustomPluginRevisionSummary::CustomPluginRevisionSummary(JsonView jsonValue)
+  : CustomPluginRevisionSummary()
 {
   *this = jsonValue;
 }

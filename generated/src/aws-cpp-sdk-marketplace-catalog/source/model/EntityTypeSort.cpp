@@ -28,13 +28,8 @@ EntityTypeSort::EntityTypeSort() :
 {
 }
 
-EntityTypeSort::EntityTypeSort(JsonView jsonValue) : 
-    m_dataProductSortHasBeenSet(false),
-    m_saaSProductSortHasBeenSet(false),
-    m_amiProductSortHasBeenSet(false),
-    m_offerSortHasBeenSet(false),
-    m_containerProductSortHasBeenSet(false),
-    m_resaleAuthorizationSortHasBeenSet(false)
+EntityTypeSort::EntityTypeSort(JsonView jsonValue)
+  : EntityTypeSort()
 {
   *this = jsonValue;
 }

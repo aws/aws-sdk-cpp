@@ -26,11 +26,8 @@ TargetOnDeviceService::TargetOnDeviceService() :
 {
 }
 
-TargetOnDeviceService::TargetOnDeviceService(JsonView jsonValue) : 
-    m_serviceName(DeviceServiceName::NOT_SET),
-    m_serviceNameHasBeenSet(false),
-    m_transferOption(TransferOption::NOT_SET),
-    m_transferOptionHasBeenSet(false)
+TargetOnDeviceService::TargetOnDeviceService(JsonView jsonValue)
+  : TargetOnDeviceService()
 {
   *this = jsonValue;
 }

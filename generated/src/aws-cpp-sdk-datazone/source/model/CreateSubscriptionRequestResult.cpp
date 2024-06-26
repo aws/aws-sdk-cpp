@@ -22,8 +22,8 @@ CreateSubscriptionRequestResult::CreateSubscriptionRequestResult() :
 {
 }
 
-CreateSubscriptionRequestResult::CreateSubscriptionRequestResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(SubscriptionRequestStatus::NOT_SET)
+CreateSubscriptionRequestResult::CreateSubscriptionRequestResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateSubscriptionRequestResult()
 {
   *this = result;
 }

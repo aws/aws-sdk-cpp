@@ -41,26 +41,8 @@ Cluster::Cluster() :
 {
 }
 
-Cluster::Cluster(JsonView jsonValue) : 
-    m_backupPolicy(BackupPolicy::NOT_SET),
-    m_backupPolicyHasBeenSet(false),
-    m_backupRetentionPolicyHasBeenSet(false),
-    m_clusterIdHasBeenSet(false),
-    m_createTimestampHasBeenSet(false),
-    m_hsmsHasBeenSet(false),
-    m_hsmTypeHasBeenSet(false),
-    m_preCoPasswordHasBeenSet(false),
-    m_securityGroupHasBeenSet(false),
-    m_sourceBackupIdHasBeenSet(false),
-    m_state(ClusterState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_stateMessageHasBeenSet(false),
-    m_subnetMappingHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_certificatesHasBeenSet(false),
-    m_tagListHasBeenSet(false),
-    m_mode(ClusterMode::NOT_SET),
-    m_modeHasBeenSet(false)
+Cluster::Cluster(JsonView jsonValue)
+  : Cluster()
 {
   *this = jsonValue;
 }

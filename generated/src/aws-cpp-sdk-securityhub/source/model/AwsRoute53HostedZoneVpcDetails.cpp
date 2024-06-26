@@ -24,9 +24,8 @@ AwsRoute53HostedZoneVpcDetails::AwsRoute53HostedZoneVpcDetails() :
 {
 }
 
-AwsRoute53HostedZoneVpcDetails::AwsRoute53HostedZoneVpcDetails(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_regionHasBeenSet(false)
+AwsRoute53HostedZoneVpcDetails::AwsRoute53HostedZoneVpcDetails(JsonView jsonValue)
+  : AwsRoute53HostedZoneVpcDetails()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ SpellCorrectedQuery::SpellCorrectedQuery() :
 {
 }
 
-SpellCorrectedQuery::SpellCorrectedQuery(JsonView jsonValue) : 
-    m_suggestedQueryTextHasBeenSet(false),
-    m_correctionsHasBeenSet(false)
+SpellCorrectedQuery::SpellCorrectedQuery(JsonView jsonValue)
+  : SpellCorrectedQuery()
 {
   *this = jsonValue;
 }

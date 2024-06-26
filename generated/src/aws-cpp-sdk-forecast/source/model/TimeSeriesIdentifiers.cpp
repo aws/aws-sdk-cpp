@@ -25,10 +25,8 @@ TimeSeriesIdentifiers::TimeSeriesIdentifiers() :
 {
 }
 
-TimeSeriesIdentifiers::TimeSeriesIdentifiers(JsonView jsonValue) : 
-    m_dataSourceHasBeenSet(false),
-    m_schemaHasBeenSet(false),
-    m_formatHasBeenSet(false)
+TimeSeriesIdentifiers::TimeSeriesIdentifiers(JsonView jsonValue)
+  : TimeSeriesIdentifiers()
 {
   *this = jsonValue;
 }

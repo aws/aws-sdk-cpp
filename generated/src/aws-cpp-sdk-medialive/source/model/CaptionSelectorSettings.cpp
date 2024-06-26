@@ -29,14 +29,8 @@ CaptionSelectorSettings::CaptionSelectorSettings() :
 {
 }
 
-CaptionSelectorSettings::CaptionSelectorSettings(JsonView jsonValue) : 
-    m_ancillarySourceSettingsHasBeenSet(false),
-    m_aribSourceSettingsHasBeenSet(false),
-    m_dvbSubSourceSettingsHasBeenSet(false),
-    m_embeddedSourceSettingsHasBeenSet(false),
-    m_scte20SourceSettingsHasBeenSet(false),
-    m_scte27SourceSettingsHasBeenSet(false),
-    m_teletextSourceSettingsHasBeenSet(false)
+CaptionSelectorSettings::CaptionSelectorSettings(JsonView jsonValue)
+  : CaptionSelectorSettings()
 {
   *this = jsonValue;
 }

@@ -40,23 +40,8 @@ SnapshotInfo::SnapshotInfo() :
 {
 }
 
-SnapshotInfo::SnapshotInfo(const XmlNode& xmlNode) : 
-    m_descriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_encrypted(false),
-    m_encryptedHasBeenSet(false),
-    m_volumeIdHasBeenSet(false),
-    m_state(SnapshotState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_volumeSize(0),
-    m_volumeSizeHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_progressHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_snapshotIdHasBeenSet(false),
-    m_outpostArnHasBeenSet(false),
-    m_sseType(SSEType::NOT_SET),
-    m_sseTypeHasBeenSet(false)
+SnapshotInfo::SnapshotInfo(const XmlNode& xmlNode)
+  : SnapshotInfo()
 {
   *this = xmlNode;
 }

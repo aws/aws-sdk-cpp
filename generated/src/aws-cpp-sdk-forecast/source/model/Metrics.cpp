@@ -26,11 +26,8 @@ Metrics::Metrics() :
 {
 }
 
-Metrics::Metrics(JsonView jsonValue) : 
-    m_weightedQuantileLossesHasBeenSet(false),
-    m_errorMetricsHasBeenSet(false),
-    m_averageWeightedQuantileLoss(0.0),
-    m_averageWeightedQuantileLossHasBeenSet(false)
+Metrics::Metrics(JsonView jsonValue)
+  : Metrics()
 {
   *this = jsonValue;
 }

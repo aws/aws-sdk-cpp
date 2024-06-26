@@ -26,11 +26,8 @@ UpdateBackendAuthForgotPasswordConfig::UpdateBackendAuthForgotPasswordConfig() :
 {
 }
 
-UpdateBackendAuthForgotPasswordConfig::UpdateBackendAuthForgotPasswordConfig(JsonView jsonValue) : 
-    m_deliveryMethod(DeliveryMethod::NOT_SET),
-    m_deliveryMethodHasBeenSet(false),
-    m_emailSettingsHasBeenSet(false),
-    m_smsSettingsHasBeenSet(false)
+UpdateBackendAuthForgotPasswordConfig::UpdateBackendAuthForgotPasswordConfig(JsonView jsonValue)
+  : UpdateBackendAuthForgotPasswordConfig()
 {
   *this = jsonValue;
 }

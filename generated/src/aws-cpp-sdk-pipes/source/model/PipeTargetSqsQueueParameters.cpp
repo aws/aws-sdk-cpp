@@ -24,9 +24,8 @@ PipeTargetSqsQueueParameters::PipeTargetSqsQueueParameters() :
 {
 }
 
-PipeTargetSqsQueueParameters::PipeTargetSqsQueueParameters(JsonView jsonValue) : 
-    m_messageGroupIdHasBeenSet(false),
-    m_messageDeduplicationIdHasBeenSet(false)
+PipeTargetSqsQueueParameters::PipeTargetSqsQueueParameters(JsonView jsonValue)
+  : PipeTargetSqsQueueParameters()
 {
   *this = jsonValue;
 }

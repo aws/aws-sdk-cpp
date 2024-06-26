@@ -33,18 +33,8 @@ ViewFrame::ViewFrame() :
 {
 }
 
-ViewFrame::ViewFrame(JsonView jsonValue) : 
-    m_startColumnIndex(0),
-    m_startColumnIndexHasBeenSet(false),
-    m_columnRange(0),
-    m_columnRangeHasBeenSet(false),
-    m_hiddenColumnsHasBeenSet(false),
-    m_startRowIndex(0),
-    m_startRowIndexHasBeenSet(false),
-    m_rowRange(0),
-    m_rowRangeHasBeenSet(false),
-    m_analytics(AnalyticsMode::NOT_SET),
-    m_analyticsHasBeenSet(false)
+ViewFrame::ViewFrame(JsonView jsonValue)
+  : ViewFrame()
 {
   *this = jsonValue;
 }

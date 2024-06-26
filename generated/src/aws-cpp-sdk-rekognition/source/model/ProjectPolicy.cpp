@@ -28,13 +28,8 @@ ProjectPolicy::ProjectPolicy() :
 {
 }
 
-ProjectPolicy::ProjectPolicy(JsonView jsonValue) : 
-    m_projectArnHasBeenSet(false),
-    m_policyNameHasBeenSet(false),
-    m_policyRevisionIdHasBeenSet(false),
-    m_policyDocumentHasBeenSet(false),
-    m_creationTimestampHasBeenSet(false),
-    m_lastUpdatedTimestampHasBeenSet(false)
+ProjectPolicy::ProjectPolicy(JsonView jsonValue)
+  : ProjectPolicy()
 {
   *this = jsonValue;
 }

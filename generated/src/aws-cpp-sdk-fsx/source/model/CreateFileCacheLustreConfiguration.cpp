@@ -28,13 +28,8 @@ CreateFileCacheLustreConfiguration::CreateFileCacheLustreConfiguration() :
 {
 }
 
-CreateFileCacheLustreConfiguration::CreateFileCacheLustreConfiguration(JsonView jsonValue) : 
-    m_perUnitStorageThroughput(0),
-    m_perUnitStorageThroughputHasBeenSet(false),
-    m_deploymentType(FileCacheLustreDeploymentType::NOT_SET),
-    m_deploymentTypeHasBeenSet(false),
-    m_weeklyMaintenanceStartTimeHasBeenSet(false),
-    m_metadataConfigurationHasBeenSet(false)
+CreateFileCacheLustreConfiguration::CreateFileCacheLustreConfiguration(JsonView jsonValue)
+  : CreateFileCacheLustreConfiguration()
 {
   *this = jsonValue;
 }

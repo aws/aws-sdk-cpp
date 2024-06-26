@@ -26,11 +26,8 @@ OracleSQLCatalogTarget::OracleSQLCatalogTarget() :
 {
 }
 
-OracleSQLCatalogTarget::OracleSQLCatalogTarget(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_inputsHasBeenSet(false),
-    m_databaseHasBeenSet(false),
-    m_tableHasBeenSet(false)
+OracleSQLCatalogTarget::OracleSQLCatalogTarget(JsonView jsonValue)
+  : OracleSQLCatalogTarget()
 {
   *this = jsonValue;
 }

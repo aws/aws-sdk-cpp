@@ -23,8 +23,8 @@ Partition::Partition() :
 {
 }
 
-Partition::Partition(JsonView jsonValue) : 
-    m_attributeNameHasBeenSet(false)
+Partition::Partition(JsonView jsonValue)
+  : Partition()
 {
   *this = jsonValue;
 }

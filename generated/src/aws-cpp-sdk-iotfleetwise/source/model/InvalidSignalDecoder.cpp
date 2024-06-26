@@ -26,11 +26,8 @@ InvalidSignalDecoder::InvalidSignalDecoder() :
 {
 }
 
-InvalidSignalDecoder::InvalidSignalDecoder(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_reason(SignalDecoderFailureReason::NOT_SET),
-    m_reasonHasBeenSet(false),
-    m_hintHasBeenSet(false)
+InvalidSignalDecoder::InvalidSignalDecoder(JsonView jsonValue)
+  : InvalidSignalDecoder()
 {
   *this = jsonValue;
 }

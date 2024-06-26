@@ -24,9 +24,8 @@ StatisticOverride::StatisticOverride() :
 {
 }
 
-StatisticOverride::StatisticOverride(JsonView jsonValue) : 
-    m_statisticHasBeenSet(false),
-    m_parametersHasBeenSet(false)
+StatisticOverride::StatisticOverride(JsonView jsonValue)
+  : StatisticOverride()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ FederatedTable::FederatedTable() :
 {
 }
 
-FederatedTable::FederatedTable(JsonView jsonValue) : 
-    m_identifierHasBeenSet(false),
-    m_databaseIdentifierHasBeenSet(false),
-    m_connectionNameHasBeenSet(false)
+FederatedTable::FederatedTable(JsonView jsonValue)
+  : FederatedTable()
 {
   *this = jsonValue;
 }

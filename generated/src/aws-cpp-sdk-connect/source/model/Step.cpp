@@ -26,11 +26,8 @@ Step::Step() :
 {
 }
 
-Step::Step(JsonView jsonValue) : 
-    m_expiryHasBeenSet(false),
-    m_expressionHasBeenSet(false),
-    m_status(RoutingCriteriaStepStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+Step::Step(JsonView jsonValue)
+  : Step()
 {
   *this = jsonValue;
 }

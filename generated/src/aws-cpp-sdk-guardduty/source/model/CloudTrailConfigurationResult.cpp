@@ -24,9 +24,8 @@ CloudTrailConfigurationResult::CloudTrailConfigurationResult() :
 {
 }
 
-CloudTrailConfigurationResult::CloudTrailConfigurationResult(JsonView jsonValue) : 
-    m_status(DataSourceStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+CloudTrailConfigurationResult::CloudTrailConfigurationResult(JsonView jsonValue)
+  : CloudTrailConfigurationResult()
 {
   *this = jsonValue;
 }

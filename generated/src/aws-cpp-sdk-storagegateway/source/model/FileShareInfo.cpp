@@ -28,13 +28,8 @@ FileShareInfo::FileShareInfo() :
 {
 }
 
-FileShareInfo::FileShareInfo(JsonView jsonValue) : 
-    m_fileShareType(FileShareType::NOT_SET),
-    m_fileShareTypeHasBeenSet(false),
-    m_fileShareARNHasBeenSet(false),
-    m_fileShareIdHasBeenSet(false),
-    m_fileShareStatusHasBeenSet(false),
-    m_gatewayARNHasBeenSet(false)
+FileShareInfo::FileShareInfo(JsonView jsonValue)
+  : FileShareInfo()
 {
   *this = jsonValue;
 }

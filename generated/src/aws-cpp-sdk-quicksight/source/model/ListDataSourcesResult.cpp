@@ -22,8 +22,8 @@ ListDataSourcesResult::ListDataSourcesResult() :
 {
 }
 
-ListDataSourcesResult::ListDataSourcesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+ListDataSourcesResult::ListDataSourcesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ListDataSourcesResult()
 {
   *this = result;
 }

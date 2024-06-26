@@ -23,9 +23,8 @@ TestInvokeMethodResult::TestInvokeMethodResult() :
 {
 }
 
-TestInvokeMethodResult::TestInvokeMethodResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0),
-    m_latency(0)
+TestInvokeMethodResult::TestInvokeMethodResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : TestInvokeMethodResult()
 {
   *this = result;
 }

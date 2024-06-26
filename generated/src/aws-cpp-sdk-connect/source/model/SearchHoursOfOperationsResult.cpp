@@ -22,8 +22,8 @@ SearchHoursOfOperationsResult::SearchHoursOfOperationsResult() :
 {
 }
 
-SearchHoursOfOperationsResult::SearchHoursOfOperationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_approximateTotalCount(0)
+SearchHoursOfOperationsResult::SearchHoursOfOperationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : SearchHoursOfOperationsResult()
 {
   *this = result;
 }

@@ -28,13 +28,8 @@ AwsDynamoDbTableReplica::AwsDynamoDbTableReplica() :
 {
 }
 
-AwsDynamoDbTableReplica::AwsDynamoDbTableReplica(JsonView jsonValue) : 
-    m_globalSecondaryIndexesHasBeenSet(false),
-    m_kmsMasterKeyIdHasBeenSet(false),
-    m_provisionedThroughputOverrideHasBeenSet(false),
-    m_regionNameHasBeenSet(false),
-    m_replicaStatusHasBeenSet(false),
-    m_replicaStatusDescriptionHasBeenSet(false)
+AwsDynamoDbTableReplica::AwsDynamoDbTableReplica(JsonView jsonValue)
+  : AwsDynamoDbTableReplica()
 {
   *this = jsonValue;
 }

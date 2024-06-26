@@ -30,15 +30,8 @@ TestSetImportResourceSpecification::TestSetImportResourceSpecification() :
 {
 }
 
-TestSetImportResourceSpecification::TestSetImportResourceSpecification(JsonView jsonValue) : 
-    m_testSetNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_storageLocationHasBeenSet(false),
-    m_importInputLocationHasBeenSet(false),
-    m_modality(TestSetModality::NOT_SET),
-    m_modalityHasBeenSet(false),
-    m_testSetTagsHasBeenSet(false)
+TestSetImportResourceSpecification::TestSetImportResourceSpecification(JsonView jsonValue)
+  : TestSetImportResourceSpecification()
 {
   *this = jsonValue;
 }

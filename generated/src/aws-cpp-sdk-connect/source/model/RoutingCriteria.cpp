@@ -26,11 +26,8 @@ RoutingCriteria::RoutingCriteria() :
 {
 }
 
-RoutingCriteria::RoutingCriteria(JsonView jsonValue) : 
-    m_stepsHasBeenSet(false),
-    m_activationTimestampHasBeenSet(false),
-    m_index(0),
-    m_indexHasBeenSet(false)
+RoutingCriteria::RoutingCriteria(JsonView jsonValue)
+  : RoutingCriteria()
 {
   *this = jsonValue;
 }

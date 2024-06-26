@@ -24,9 +24,8 @@ IdNamespaceInputSource::IdNamespaceInputSource() :
 {
 }
 
-IdNamespaceInputSource::IdNamespaceInputSource(JsonView jsonValue) : 
-    m_inputSourceARNHasBeenSet(false),
-    m_schemaNameHasBeenSet(false)
+IdNamespaceInputSource::IdNamespaceInputSource(JsonView jsonValue)
+  : IdNamespaceInputSource()
 {
   *this = jsonValue;
 }

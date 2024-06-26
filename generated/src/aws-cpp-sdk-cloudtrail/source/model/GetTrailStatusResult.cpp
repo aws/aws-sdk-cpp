@@ -22,8 +22,8 @@ GetTrailStatusResult::GetTrailStatusResult() :
 {
 }
 
-GetTrailStatusResult::GetTrailStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_isLogging(false)
+GetTrailStatusResult::GetTrailStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetTrailStatusResult()
 {
   *this = result;
 }

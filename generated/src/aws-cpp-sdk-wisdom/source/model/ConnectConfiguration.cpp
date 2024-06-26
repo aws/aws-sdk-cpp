@@ -23,8 +23,8 @@ ConnectConfiguration::ConnectConfiguration() :
 {
 }
 
-ConnectConfiguration::ConnectConfiguration(JsonView jsonValue) : 
-    m_instanceIdHasBeenSet(false)
+ConnectConfiguration::ConnectConfiguration(JsonView jsonValue)
+  : ConnectConfiguration()
 {
   *this = jsonValue;
 }

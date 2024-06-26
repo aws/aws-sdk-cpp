@@ -23,8 +23,8 @@ PortForwardingConfig::PortForwardingConfig() :
 {
 }
 
-PortForwardingConfig::PortForwardingConfig(JsonView jsonValue) : 
-    m_portMappingsHasBeenSet(false)
+PortForwardingConfig::PortForwardingConfig(JsonView jsonValue)
+  : PortForwardingConfig()
 {
   *this = jsonValue;
 }

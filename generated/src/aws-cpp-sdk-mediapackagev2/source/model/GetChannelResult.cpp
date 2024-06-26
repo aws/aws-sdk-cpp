@@ -22,8 +22,8 @@ GetChannelResult::GetChannelResult() :
 {
 }
 
-GetChannelResult::GetChannelResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_inputType(InputType::NOT_SET)
+GetChannelResult::GetChannelResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetChannelResult()
 {
   *this = result;
 }

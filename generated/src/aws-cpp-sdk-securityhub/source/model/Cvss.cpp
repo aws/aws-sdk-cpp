@@ -28,13 +28,8 @@ Cvss::Cvss() :
 {
 }
 
-Cvss::Cvss(JsonView jsonValue) : 
-    m_versionHasBeenSet(false),
-    m_baseScore(0.0),
-    m_baseScoreHasBeenSet(false),
-    m_baseVectorHasBeenSet(false),
-    m_sourceHasBeenSet(false),
-    m_adjustmentsHasBeenSet(false)
+Cvss::Cvss(JsonView jsonValue)
+  : Cvss()
 {
   *this = jsonValue;
 }

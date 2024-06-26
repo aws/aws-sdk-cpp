@@ -25,10 +25,8 @@ HPOObjective::HPOObjective() :
 {
 }
 
-HPOObjective::HPOObjective(JsonView jsonValue) : 
-    m_typeHasBeenSet(false),
-    m_metricNameHasBeenSet(false),
-    m_metricRegexHasBeenSet(false)
+HPOObjective::HPOObjective(JsonView jsonValue)
+  : HPOObjective()
 {
   *this = jsonValue;
 }

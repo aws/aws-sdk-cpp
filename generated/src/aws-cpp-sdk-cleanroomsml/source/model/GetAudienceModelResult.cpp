@@ -22,8 +22,8 @@ GetAudienceModelResult::GetAudienceModelResult() :
 {
 }
 
-GetAudienceModelResult::GetAudienceModelResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(AudienceModelStatus::NOT_SET)
+GetAudienceModelResult::GetAudienceModelResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetAudienceModelResult()
 {
   *this = result;
 }

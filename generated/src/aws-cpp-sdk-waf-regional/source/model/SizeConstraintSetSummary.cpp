@@ -24,9 +24,8 @@ SizeConstraintSetSummary::SizeConstraintSetSummary() :
 {
 }
 
-SizeConstraintSetSummary::SizeConstraintSetSummary(JsonView jsonValue) : 
-    m_sizeConstraintSetIdHasBeenSet(false),
-    m_nameHasBeenSet(false)
+SizeConstraintSetSummary::SizeConstraintSetSummary(JsonView jsonValue)
+  : SizeConstraintSetSummary()
 {
   *this = jsonValue;
 }

@@ -31,16 +31,8 @@ ImageDetail::ImageDetail() :
 {
 }
 
-ImageDetail::ImageDetail(JsonView jsonValue) : 
-    m_registryIdHasBeenSet(false),
-    m_repositoryNameHasBeenSet(false),
-    m_imageDigestHasBeenSet(false),
-    m_imageTagsHasBeenSet(false),
-    m_imageSizeInBytes(0),
-    m_imageSizeInBytesHasBeenSet(false),
-    m_imagePushedAtHasBeenSet(false),
-    m_imageManifestMediaTypeHasBeenSet(false),
-    m_artifactMediaTypeHasBeenSet(false)
+ImageDetail::ImageDetail(JsonView jsonValue)
+  : ImageDetail()
 {
   *this = jsonValue;
 }

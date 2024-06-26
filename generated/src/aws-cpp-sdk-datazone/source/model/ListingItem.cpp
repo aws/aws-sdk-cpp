@@ -23,8 +23,8 @@ ListingItem::ListingItem() :
 {
 }
 
-ListingItem::ListingItem(JsonView jsonValue) : 
-    m_assetListingHasBeenSet(false)
+ListingItem::ListingItem(JsonView jsonValue)
+  : ListingItem()
 {
   *this = jsonValue;
 }

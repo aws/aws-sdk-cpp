@@ -24,10 +24,8 @@ UpdateOriginEndpointResult::UpdateOriginEndpointResult() :
 {
 }
 
-UpdateOriginEndpointResult::UpdateOriginEndpointResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_origination(Origination::NOT_SET),
-    m_startoverWindowSeconds(0),
-    m_timeDelaySeconds(0)
+UpdateOriginEndpointResult::UpdateOriginEndpointResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateOriginEndpointResult()
 {
   *this = result;
 }

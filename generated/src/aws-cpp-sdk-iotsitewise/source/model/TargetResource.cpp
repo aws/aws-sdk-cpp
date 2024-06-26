@@ -23,8 +23,8 @@ TargetResource::TargetResource() :
 {
 }
 
-TargetResource::TargetResource(JsonView jsonValue) : 
-    m_assetIdHasBeenSet(false)
+TargetResource::TargetResource(JsonView jsonValue)
+  : TargetResource()
 {
   *this = jsonValue;
 }

@@ -28,11 +28,8 @@ ValidDBInstanceModificationsMessage::ValidDBInstanceModificationsMessage() :
 {
 }
 
-ValidDBInstanceModificationsMessage::ValidDBInstanceModificationsMessage(const XmlNode& xmlNode) : 
-    m_storageHasBeenSet(false),
-    m_validProcessorFeaturesHasBeenSet(false),
-    m_supportsDedicatedLogVolume(false),
-    m_supportsDedicatedLogVolumeHasBeenSet(false)
+ValidDBInstanceModificationsMessage::ValidDBInstanceModificationsMessage(const XmlNode& xmlNode)
+  : ValidDBInstanceModificationsMessage()
 {
   *this = xmlNode;
 }

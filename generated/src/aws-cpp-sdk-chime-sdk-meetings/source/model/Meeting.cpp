@@ -31,16 +31,8 @@ Meeting::Meeting() :
 {
 }
 
-Meeting::Meeting(JsonView jsonValue) : 
-    m_meetingIdHasBeenSet(false),
-    m_meetingHostIdHasBeenSet(false),
-    m_externalMeetingIdHasBeenSet(false),
-    m_mediaRegionHasBeenSet(false),
-    m_mediaPlacementHasBeenSet(false),
-    m_meetingFeaturesHasBeenSet(false),
-    m_primaryMeetingIdHasBeenSet(false),
-    m_tenantIdsHasBeenSet(false),
-    m_meetingArnHasBeenSet(false)
+Meeting::Meeting(JsonView jsonValue)
+  : Meeting()
 {
   *this = jsonValue;
 }

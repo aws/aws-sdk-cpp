@@ -24,10 +24,8 @@ CreateSolNetworkPackageResult::CreateSolNetworkPackageResult() :
 {
 }
 
-CreateSolNetworkPackageResult::CreateSolNetworkPackageResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_nsdOnboardingState(NsdOnboardingState::NOT_SET),
-    m_nsdOperationalState(NsdOperationalState::NOT_SET),
-    m_nsdUsageState(NsdUsageState::NOT_SET)
+CreateSolNetworkPackageResult::CreateSolNetworkPackageResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateSolNetworkPackageResult()
 {
   *this = result;
 }

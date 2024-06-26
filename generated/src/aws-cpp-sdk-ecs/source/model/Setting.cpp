@@ -28,13 +28,8 @@ Setting::Setting() :
 {
 }
 
-Setting::Setting(JsonView jsonValue) : 
-    m_name(SettingName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_principalArnHasBeenSet(false),
-    m_type(SettingType::NOT_SET),
-    m_typeHasBeenSet(false)
+Setting::Setting(JsonView jsonValue)
+  : Setting()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ AudienceMedia::AudienceMedia() :
 {
 }
 
-AudienceMedia::AudienceMedia(JsonView jsonValue) : 
-    m_alternateMediaHasBeenSet(false),
-    m_audienceHasBeenSet(false)
+AudienceMedia::AudienceMedia(JsonView jsonValue)
+  : AudienceMedia()
 {
   *this = jsonValue;
 }

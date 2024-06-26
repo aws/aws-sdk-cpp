@@ -27,12 +27,8 @@ DeleteNetworkAclEntriesAction::DeleteNetworkAclEntriesAction() :
 {
 }
 
-DeleteNetworkAclEntriesAction::DeleteNetworkAclEntriesAction(JsonView jsonValue) : 
-    m_descriptionHasBeenSet(false),
-    m_networkAclIdHasBeenSet(false),
-    m_networkAclEntriesToBeDeletedHasBeenSet(false),
-    m_fMSCanRemediate(false),
-    m_fMSCanRemediateHasBeenSet(false)
+DeleteNetworkAclEntriesAction::DeleteNetworkAclEntriesAction(JsonView jsonValue)
+  : DeleteNetworkAclEntriesAction()
 {
   *this = jsonValue;
 }

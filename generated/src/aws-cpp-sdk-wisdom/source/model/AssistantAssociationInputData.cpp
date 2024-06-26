@@ -23,8 +23,8 @@ AssistantAssociationInputData::AssistantAssociationInputData() :
 {
 }
 
-AssistantAssociationInputData::AssistantAssociationInputData(JsonView jsonValue) : 
-    m_knowledgeBaseIdHasBeenSet(false)
+AssistantAssociationInputData::AssistantAssociationInputData(JsonView jsonValue)
+  : AssistantAssociationInputData()
 {
   *this = jsonValue;
 }

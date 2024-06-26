@@ -30,15 +30,8 @@ PullThroughCacheRule::PullThroughCacheRule() :
 {
 }
 
-PullThroughCacheRule::PullThroughCacheRule(JsonView jsonValue) : 
-    m_ecrRepositoryPrefixHasBeenSet(false),
-    m_upstreamRegistryUrlHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_registryIdHasBeenSet(false),
-    m_credentialArnHasBeenSet(false),
-    m_upstreamRegistry(UpstreamRegistry::NOT_SET),
-    m_upstreamRegistryHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+PullThroughCacheRule::PullThroughCacheRule(JsonView jsonValue)
+  : PullThroughCacheRule()
 {
   *this = jsonValue;
 }

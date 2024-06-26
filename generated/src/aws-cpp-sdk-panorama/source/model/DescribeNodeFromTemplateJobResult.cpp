@@ -23,9 +23,8 @@ DescribeNodeFromTemplateJobResult::DescribeNodeFromTemplateJobResult() :
 {
 }
 
-DescribeNodeFromTemplateJobResult::DescribeNodeFromTemplateJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(NodeFromTemplateJobStatus::NOT_SET),
-    m_templateType(TemplateType::NOT_SET)
+DescribeNodeFromTemplateJobResult::DescribeNodeFromTemplateJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeNodeFromTemplateJobResult()
 {
   *this = result;
 }

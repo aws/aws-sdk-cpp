@@ -31,16 +31,8 @@ InstanceTypeConfig::InstanceTypeConfig() :
 {
 }
 
-InstanceTypeConfig::InstanceTypeConfig(JsonView jsonValue) : 
-    m_instanceTypeHasBeenSet(false),
-    m_weightedCapacity(0),
-    m_weightedCapacityHasBeenSet(false),
-    m_bidPriceHasBeenSet(false),
-    m_bidPriceAsPercentageOfOnDemandPrice(0.0),
-    m_bidPriceAsPercentageOfOnDemandPriceHasBeenSet(false),
-    m_ebsConfigurationHasBeenSet(false),
-    m_configurationsHasBeenSet(false),
-    m_customAmiIdHasBeenSet(false)
+InstanceTypeConfig::InstanceTypeConfig(JsonView jsonValue)
+  : InstanceTypeConfig()
 {
   *this = jsonValue;
 }

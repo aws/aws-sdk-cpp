@@ -23,9 +23,8 @@ DescribeIpRestrictionResult::DescribeIpRestrictionResult() :
 {
 }
 
-DescribeIpRestrictionResult::DescribeIpRestrictionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_enabled(false),
-    m_status(0)
+DescribeIpRestrictionResult::DescribeIpRestrictionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeIpRestrictionResult()
 {
   *this = result;
 }

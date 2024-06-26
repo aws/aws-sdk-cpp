@@ -24,9 +24,8 @@ UpdateAbpV1_1::UpdateAbpV1_1() :
 {
 }
 
-UpdateAbpV1_1::UpdateAbpV1_1(JsonView jsonValue) : 
-    m_fCntStart(0),
-    m_fCntStartHasBeenSet(false)
+UpdateAbpV1_1::UpdateAbpV1_1(JsonView jsonValue)
+  : UpdateAbpV1_1()
 {
   *this = jsonValue;
 }

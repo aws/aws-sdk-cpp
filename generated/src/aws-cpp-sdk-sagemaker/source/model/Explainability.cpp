@@ -23,8 +23,8 @@ Explainability::Explainability() :
 {
 }
 
-Explainability::Explainability(JsonView jsonValue) : 
-    m_reportHasBeenSet(false)
+Explainability::Explainability(JsonView jsonValue)
+  : Explainability()
 {
   *this = jsonValue;
 }

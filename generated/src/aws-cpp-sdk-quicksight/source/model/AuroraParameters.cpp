@@ -26,11 +26,8 @@ AuroraParameters::AuroraParameters() :
 {
 }
 
-AuroraParameters::AuroraParameters(JsonView jsonValue) : 
-    m_hostHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_databaseHasBeenSet(false)
+AuroraParameters::AuroraParameters(JsonView jsonValue)
+  : AuroraParameters()
 {
   *this = jsonValue;
 }

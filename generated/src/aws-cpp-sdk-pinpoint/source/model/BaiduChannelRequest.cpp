@@ -26,11 +26,8 @@ BaiduChannelRequest::BaiduChannelRequest() :
 {
 }
 
-BaiduChannelRequest::BaiduChannelRequest(JsonView jsonValue) : 
-    m_apiKeyHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_secretKeyHasBeenSet(false)
+BaiduChannelRequest::BaiduChannelRequest(JsonView jsonValue)
+  : BaiduChannelRequest()
 {
   *this = jsonValue;
 }

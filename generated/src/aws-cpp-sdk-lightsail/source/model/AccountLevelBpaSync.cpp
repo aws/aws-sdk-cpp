@@ -29,14 +29,8 @@ AccountLevelBpaSync::AccountLevelBpaSync() :
 {
 }
 
-AccountLevelBpaSync::AccountLevelBpaSync(JsonView jsonValue) : 
-    m_status(AccountLevelBpaSyncStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_lastSyncedAtHasBeenSet(false),
-    m_message(BPAStatusMessage::NOT_SET),
-    m_messageHasBeenSet(false),
-    m_bpaImpactsLightsail(false),
-    m_bpaImpactsLightsailHasBeenSet(false)
+AccountLevelBpaSync::AccountLevelBpaSync(JsonView jsonValue)
+  : AccountLevelBpaSync()
 {
   *this = jsonValue;
 }

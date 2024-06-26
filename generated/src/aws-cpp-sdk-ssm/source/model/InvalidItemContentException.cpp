@@ -24,9 +24,8 @@ InvalidItemContentException::InvalidItemContentException() :
 {
 }
 
-InvalidItemContentException::InvalidItemContentException(JsonView jsonValue) : 
-    m_typeNameHasBeenSet(false),
-    m_messageHasBeenSet(false)
+InvalidItemContentException::InvalidItemContentException(JsonView jsonValue)
+  : InvalidItemContentException()
 {
   *this = jsonValue;
 }

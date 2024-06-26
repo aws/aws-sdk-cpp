@@ -22,8 +22,8 @@ UpdateTestConfigurationResult::UpdateTestConfigurationResult() :
 {
 }
 
-UpdateTestConfigurationResult::UpdateTestConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_testConfigurationVersion(0)
+UpdateTestConfigurationResult::UpdateTestConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateTestConfigurationResult()
 {
   *this = result;
 }

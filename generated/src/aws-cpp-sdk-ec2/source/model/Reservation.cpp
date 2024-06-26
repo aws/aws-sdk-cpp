@@ -29,12 +29,8 @@ Reservation::Reservation() :
 {
 }
 
-Reservation::Reservation(const XmlNode& xmlNode) : 
-    m_groupsHasBeenSet(false),
-    m_instancesHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_requesterIdHasBeenSet(false),
-    m_reservationIdHasBeenSet(false)
+Reservation::Reservation(const XmlNode& xmlNode)
+  : Reservation()
 {
   *this = xmlNode;
 }

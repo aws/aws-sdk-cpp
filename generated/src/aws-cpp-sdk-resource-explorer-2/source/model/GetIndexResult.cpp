@@ -23,9 +23,8 @@ GetIndexResult::GetIndexResult() :
 {
 }
 
-GetIndexResult::GetIndexResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_state(IndexState::NOT_SET),
-    m_type(IndexType::NOT_SET)
+GetIndexResult::GetIndexResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetIndexResult()
 {
   *this = result;
 }

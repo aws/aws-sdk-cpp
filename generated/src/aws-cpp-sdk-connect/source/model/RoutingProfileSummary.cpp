@@ -27,12 +27,8 @@ RoutingProfileSummary::RoutingProfileSummary() :
 {
 }
 
-RoutingProfileSummary::RoutingProfileSummary(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_lastModifiedRegionHasBeenSet(false)
+RoutingProfileSummary::RoutingProfileSummary(JsonView jsonValue)
+  : RoutingProfileSummary()
 {
   *this = jsonValue;
 }

@@ -28,13 +28,8 @@ LogSettingsRequest::LogSettingsRequest() :
 {
 }
 
-LogSettingsRequest::LogSettingsRequest(JsonView jsonValue) : 
-    m_logType(LogType::NOT_SET),
-    m_logTypeHasBeenSet(false),
-    m_destination(Destination::NOT_SET),
-    m_destinationHasBeenSet(false),
-    m_kmsKeyArnHasBeenSet(false),
-    m_resourceArnHasBeenSet(false)
+LogSettingsRequest::LogSettingsRequest(JsonView jsonValue)
+  : LogSettingsRequest()
 {
   *this = jsonValue;
 }

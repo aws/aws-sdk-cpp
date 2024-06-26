@@ -27,12 +27,8 @@ EnabledBaselineSummary::EnabledBaselineSummary() :
 {
 }
 
-EnabledBaselineSummary::EnabledBaselineSummary(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_baselineIdentifierHasBeenSet(false),
-    m_baselineVersionHasBeenSet(false),
-    m_statusSummaryHasBeenSet(false),
-    m_targetIdentifierHasBeenSet(false)
+EnabledBaselineSummary::EnabledBaselineSummary(JsonView jsonValue)
+  : EnabledBaselineSummary()
 {
   *this = jsonValue;
 }

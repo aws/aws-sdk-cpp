@@ -28,13 +28,8 @@ Pose::Pose() :
 {
 }
 
-Pose::Pose(JsonView jsonValue) : 
-    m_roll(0.0),
-    m_rollHasBeenSet(false),
-    m_yaw(0.0),
-    m_yawHasBeenSet(false),
-    m_pitch(0.0),
-    m_pitchHasBeenSet(false)
+Pose::Pose(JsonView jsonValue)
+  : Pose()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ ResourceARNDetail::ResourceARNDetail() :
 {
 }
 
-ResourceARNDetail::ResourceARNDetail(JsonView jsonValue) : 
-    m_aRNHasBeenSet(false)
+ResourceARNDetail::ResourceARNDetail(JsonView jsonValue)
+  : ResourceARNDetail()
 {
   *this = jsonValue;
 }

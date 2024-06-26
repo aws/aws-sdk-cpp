@@ -24,9 +24,8 @@ AssetBundleExportJobDashboardOverrideProperties::AssetBundleExportJobDashboardOv
 {
 }
 
-AssetBundleExportJobDashboardOverrideProperties::AssetBundleExportJobDashboardOverrideProperties(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_propertiesHasBeenSet(false)
+AssetBundleExportJobDashboardOverrideProperties::AssetBundleExportJobDashboardOverrideProperties(JsonView jsonValue)
+  : AssetBundleExportJobDashboardOverrideProperties()
 {
   *this = jsonValue;
 }

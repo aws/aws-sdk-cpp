@@ -24,9 +24,8 @@ ResourceNotFound::ResourceNotFound() :
 {
 }
 
-ResourceNotFound::ResourceNotFound(JsonView jsonValue) : 
-    m_resourceARNHasBeenSet(false),
-    m_messageHasBeenSet(false)
+ResourceNotFound::ResourceNotFound(JsonView jsonValue)
+  : ResourceNotFound()
 {
   *this = jsonValue;
 }

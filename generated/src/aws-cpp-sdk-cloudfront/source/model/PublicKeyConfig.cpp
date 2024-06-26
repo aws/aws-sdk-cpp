@@ -28,11 +28,8 @@ PublicKeyConfig::PublicKeyConfig() :
 {
 }
 
-PublicKeyConfig::PublicKeyConfig(const XmlNode& xmlNode) : 
-    m_callerReferenceHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_encodedKeyHasBeenSet(false),
-    m_commentHasBeenSet(false)
+PublicKeyConfig::PublicKeyConfig(const XmlNode& xmlNode)
+  : PublicKeyConfig()
 {
   *this = xmlNode;
 }

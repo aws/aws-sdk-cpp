@@ -24,9 +24,8 @@ AwsBackupBackupPlanAdvancedBackupSettingsDetails::AwsBackupBackupPlanAdvancedBac
 {
 }
 
-AwsBackupBackupPlanAdvancedBackupSettingsDetails::AwsBackupBackupPlanAdvancedBackupSettingsDetails(JsonView jsonValue) : 
-    m_backupOptionsHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false)
+AwsBackupBackupPlanAdvancedBackupSettingsDetails::AwsBackupBackupPlanAdvancedBackupSettingsDetails(JsonView jsonValue)
+  : AwsBackupBackupPlanAdvancedBackupSettingsDetails()
 {
   *this = jsonValue;
 }

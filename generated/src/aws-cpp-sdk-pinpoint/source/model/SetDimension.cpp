@@ -25,10 +25,8 @@ SetDimension::SetDimension() :
 {
 }
 
-SetDimension::SetDimension(JsonView jsonValue) : 
-    m_dimensionType(DimensionType::NOT_SET),
-    m_dimensionTypeHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+SetDimension::SetDimension(JsonView jsonValue)
+  : SetDimension()
 {
   *this = jsonValue;
 }

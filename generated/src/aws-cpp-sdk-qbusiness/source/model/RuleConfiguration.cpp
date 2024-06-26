@@ -24,9 +24,8 @@ RuleConfiguration::RuleConfiguration() :
 {
 }
 
-RuleConfiguration::RuleConfiguration(JsonView jsonValue) : 
-    m_contentBlockerRuleHasBeenSet(false),
-    m_contentRetrievalRuleHasBeenSet(false)
+RuleConfiguration::RuleConfiguration(JsonView jsonValue)
+  : RuleConfiguration()
 {
   *this = jsonValue;
 }

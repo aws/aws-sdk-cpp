@@ -28,13 +28,8 @@ EndpointConfiguration::EndpointConfiguration() :
 {
 }
 
-EndpointConfiguration::EndpointConfiguration(JsonView jsonValue) : 
-    m_endpointIdHasBeenSet(false),
-    m_weight(0),
-    m_weightHasBeenSet(false),
-    m_clientIPPreservationEnabled(false),
-    m_clientIPPreservationEnabledHasBeenSet(false),
-    m_attachmentArnHasBeenSet(false)
+EndpointConfiguration::EndpointConfiguration(JsonView jsonValue)
+  : EndpointConfiguration()
 {
   *this = jsonValue;
 }

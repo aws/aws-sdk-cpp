@@ -25,10 +25,8 @@ Shard::Shard() :
 {
 }
 
-Shard::Shard(JsonView jsonValue) : 
-    m_shardIdHasBeenSet(false),
-    m_sequenceNumberRangeHasBeenSet(false),
-    m_parentShardIdHasBeenSet(false)
+Shard::Shard(JsonView jsonValue)
+  : Shard()
 {
   *this = jsonValue;
 }

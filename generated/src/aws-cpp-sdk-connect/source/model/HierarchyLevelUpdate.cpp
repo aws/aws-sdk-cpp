@@ -23,8 +23,8 @@ HierarchyLevelUpdate::HierarchyLevelUpdate() :
 {
 }
 
-HierarchyLevelUpdate::HierarchyLevelUpdate(JsonView jsonValue) : 
-    m_nameHasBeenSet(false)
+HierarchyLevelUpdate::HierarchyLevelUpdate(JsonView jsonValue)
+  : HierarchyLevelUpdate()
 {
   *this = jsonValue;
 }

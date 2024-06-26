@@ -31,14 +31,8 @@ InstanceStatusEvent::InstanceStatusEvent() :
 {
 }
 
-InstanceStatusEvent::InstanceStatusEvent(const XmlNode& xmlNode) : 
-    m_instanceEventIdHasBeenSet(false),
-    m_code(EventCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_notAfterHasBeenSet(false),
-    m_notBeforeHasBeenSet(false),
-    m_notBeforeDeadlineHasBeenSet(false)
+InstanceStatusEvent::InstanceStatusEvent(const XmlNode& xmlNode)
+  : InstanceStatusEvent()
 {
   *this = xmlNode;
 }

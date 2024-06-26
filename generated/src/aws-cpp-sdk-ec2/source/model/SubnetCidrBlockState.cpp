@@ -27,10 +27,8 @@ SubnetCidrBlockState::SubnetCidrBlockState() :
 {
 }
 
-SubnetCidrBlockState::SubnetCidrBlockState(const XmlNode& xmlNode) : 
-    m_state(SubnetCidrBlockStateCode::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_statusMessageHasBeenSet(false)
+SubnetCidrBlockState::SubnetCidrBlockState(const XmlNode& xmlNode)
+  : SubnetCidrBlockState()
 {
   *this = xmlNode;
 }

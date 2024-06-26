@@ -24,9 +24,8 @@ IpCountry::IpCountry() :
 {
 }
 
-IpCountry::IpCountry(JsonView jsonValue) : 
-    m_codeHasBeenSet(false),
-    m_nameHasBeenSet(false)
+IpCountry::IpCountry(JsonView jsonValue)
+  : IpCountry()
 {
   *this = jsonValue;
 }

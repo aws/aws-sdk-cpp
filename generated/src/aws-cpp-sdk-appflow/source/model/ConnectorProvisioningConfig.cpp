@@ -23,8 +23,8 @@ ConnectorProvisioningConfig::ConnectorProvisioningConfig() :
 {
 }
 
-ConnectorProvisioningConfig::ConnectorProvisioningConfig(JsonView jsonValue) : 
-    m_lambdaHasBeenSet(false)
+ConnectorProvisioningConfig::ConnectorProvisioningConfig(JsonView jsonValue)
+  : ConnectorProvisioningConfig()
 {
   *this = jsonValue;
 }

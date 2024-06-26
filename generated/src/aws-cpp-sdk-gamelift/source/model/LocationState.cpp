@@ -25,10 +25,8 @@ LocationState::LocationState() :
 {
 }
 
-LocationState::LocationState(JsonView jsonValue) : 
-    m_locationHasBeenSet(false),
-    m_status(FleetStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+LocationState::LocationState(JsonView jsonValue)
+  : LocationState()
 {
   *this = jsonValue;
 }

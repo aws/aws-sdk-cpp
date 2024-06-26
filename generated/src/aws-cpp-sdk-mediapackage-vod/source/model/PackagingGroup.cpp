@@ -31,16 +31,8 @@ PackagingGroup::PackagingGroup() :
 {
 }
 
-PackagingGroup::PackagingGroup(JsonView jsonValue) : 
-    m_approximateAssetCount(0),
-    m_approximateAssetCountHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_authorizationHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_domainNameHasBeenSet(false),
-    m_egressAccessLogsHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+PackagingGroup::PackagingGroup(JsonView jsonValue)
+  : PackagingGroup()
 {
   *this = jsonValue;
 }

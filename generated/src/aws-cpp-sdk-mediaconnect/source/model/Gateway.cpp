@@ -29,14 +29,8 @@ Gateway::Gateway() :
 {
 }
 
-Gateway::Gateway(JsonView jsonValue) : 
-    m_egressCidrBlocksHasBeenSet(false),
-    m_gatewayArnHasBeenSet(false),
-    m_gatewayMessagesHasBeenSet(false),
-    m_gatewayState(GatewayState::NOT_SET),
-    m_gatewayStateHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_networksHasBeenSet(false)
+Gateway::Gateway(JsonView jsonValue)
+  : Gateway()
 {
   *this = jsonValue;
 }

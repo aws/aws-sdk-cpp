@@ -25,11 +25,8 @@ CreateEnvironmentResult::CreateEnvironmentResult() :
 {
 }
 
-CreateEnvironmentResult::CreateEnvironmentResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_status(EnvironmentStatus::NOT_SET),
-    m_abortableOperationInProgress(false),
-    m_health(EnvironmentHealth::NOT_SET),
-    m_healthStatus(EnvironmentHealthStatus::NOT_SET)
+CreateEnvironmentResult::CreateEnvironmentResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : CreateEnvironmentResult()
 {
   *this = result;
 }

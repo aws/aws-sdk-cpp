@@ -26,11 +26,8 @@ ConfigurationRevision::ConfigurationRevision() :
 {
 }
 
-ConfigurationRevision::ConfigurationRevision(JsonView jsonValue) : 
-    m_creationTimeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_revision(0),
-    m_revisionHasBeenSet(false)
+ConfigurationRevision::ConfigurationRevision(JsonView jsonValue)
+  : ConfigurationRevision()
 {
   *this = jsonValue;
 }

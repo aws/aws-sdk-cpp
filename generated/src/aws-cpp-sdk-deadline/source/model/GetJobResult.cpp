@@ -27,13 +27,8 @@ GetJobResult::GetJobResult() :
 {
 }
 
-GetJobResult::GetJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_lifecycleStatus(JobLifecycleStatus::NOT_SET),
-    m_maxFailedTasksCount(0),
-    m_maxRetriesPerTask(0),
-    m_priority(0),
-    m_targetTaskRunStatus(JobTargetTaskRunStatus::NOT_SET),
-    m_taskRunStatus(TaskRunStatus::NOT_SET)
+GetJobResult::GetJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetJobResult()
 {
   *this = result;
 }

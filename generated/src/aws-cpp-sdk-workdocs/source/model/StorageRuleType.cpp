@@ -26,11 +26,8 @@ StorageRuleType::StorageRuleType() :
 {
 }
 
-StorageRuleType::StorageRuleType(JsonView jsonValue) : 
-    m_storageAllocatedInBytes(0),
-    m_storageAllocatedInBytesHasBeenSet(false),
-    m_storageType(StorageType::NOT_SET),
-    m_storageTypeHasBeenSet(false)
+StorageRuleType::StorageRuleType(JsonView jsonValue)
+  : StorageRuleType()
 {
   *this = jsonValue;
 }

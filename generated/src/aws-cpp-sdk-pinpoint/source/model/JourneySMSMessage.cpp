@@ -28,13 +28,8 @@ JourneySMSMessage::JourneySMSMessage() :
 {
 }
 
-JourneySMSMessage::JourneySMSMessage(JsonView jsonValue) : 
-    m_messageType(MessageType::NOT_SET),
-    m_messageTypeHasBeenSet(false),
-    m_originationNumberHasBeenSet(false),
-    m_senderIdHasBeenSet(false),
-    m_entityIdHasBeenSet(false),
-    m_templateIdHasBeenSet(false)
+JourneySMSMessage::JourneySMSMessage(JsonView jsonValue)
+  : JourneySMSMessage()
 {
   *this = jsonValue;
 }

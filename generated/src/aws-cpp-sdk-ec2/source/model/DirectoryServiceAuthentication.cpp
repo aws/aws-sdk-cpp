@@ -25,8 +25,8 @@ DirectoryServiceAuthentication::DirectoryServiceAuthentication() :
 {
 }
 
-DirectoryServiceAuthentication::DirectoryServiceAuthentication(const XmlNode& xmlNode) : 
-    m_directoryIdHasBeenSet(false)
+DirectoryServiceAuthentication::DirectoryServiceAuthentication(const XmlNode& xmlNode)
+  : DirectoryServiceAuthentication()
 {
   *this = xmlNode;
 }

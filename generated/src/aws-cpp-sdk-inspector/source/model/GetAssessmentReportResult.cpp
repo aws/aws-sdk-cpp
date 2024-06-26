@@ -22,8 +22,8 @@ GetAssessmentReportResult::GetAssessmentReportResult() :
 {
 }
 
-GetAssessmentReportResult::GetAssessmentReportResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(ReportStatus::NOT_SET)
+GetAssessmentReportResult::GetAssessmentReportResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetAssessmentReportResult()
 {
   *this = result;
 }

@@ -26,9 +26,8 @@ FederatedAuthentication::FederatedAuthentication() :
 {
 }
 
-FederatedAuthentication::FederatedAuthentication(const XmlNode& xmlNode) : 
-    m_samlProviderArnHasBeenSet(false),
-    m_selfServiceSamlProviderArnHasBeenSet(false)
+FederatedAuthentication::FederatedAuthentication(const XmlNode& xmlNode)
+  : FederatedAuthentication()
 {
   *this = xmlNode;
 }

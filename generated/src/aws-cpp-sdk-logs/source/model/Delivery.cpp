@@ -29,14 +29,8 @@ Delivery::Delivery() :
 {
 }
 
-Delivery::Delivery(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_deliverySourceNameHasBeenSet(false),
-    m_deliveryDestinationArnHasBeenSet(false),
-    m_deliveryDestinationType(DeliveryDestinationType::NOT_SET),
-    m_deliveryDestinationTypeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+Delivery::Delivery(JsonView jsonValue)
+  : Delivery()
 {
   *this = jsonValue;
 }

@@ -31,16 +31,8 @@ RestoreJobSummary::RestoreJobSummary() :
 {
 }
 
-RestoreJobSummary::RestoreJobSummary(JsonView jsonValue) : 
-    m_regionHasBeenSet(false),
-    m_accountIdHasBeenSet(false),
-    m_state(RestoreJobState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
-    m_count(0),
-    m_countHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
+RestoreJobSummary::RestoreJobSummary(JsonView jsonValue)
+  : RestoreJobSummary()
 {
   *this = jsonValue;
 }

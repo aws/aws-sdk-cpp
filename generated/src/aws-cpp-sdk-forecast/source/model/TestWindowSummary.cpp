@@ -26,11 +26,8 @@ TestWindowSummary::TestWindowSummary() :
 {
 }
 
-TestWindowSummary::TestWindowSummary(JsonView jsonValue) : 
-    m_testWindowStartHasBeenSet(false),
-    m_testWindowEndHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_messageHasBeenSet(false)
+TestWindowSummary::TestWindowSummary(JsonView jsonValue)
+  : TestWindowSummary()
 {
   *this = jsonValue;
 }

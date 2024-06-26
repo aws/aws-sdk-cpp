@@ -28,13 +28,8 @@ MessageInsightsDataSource::MessageInsightsDataSource() :
 {
 }
 
-MessageInsightsDataSource::MessageInsightsDataSource(JsonView jsonValue) : 
-    m_startDateHasBeenSet(false),
-    m_endDateHasBeenSet(false),
-    m_includeHasBeenSet(false),
-    m_excludeHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
+MessageInsightsDataSource::MessageInsightsDataSource(JsonView jsonValue)
+  : MessageInsightsDataSource()
 {
   *this = jsonValue;
 }

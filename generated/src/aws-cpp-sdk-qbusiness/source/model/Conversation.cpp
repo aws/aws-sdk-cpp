@@ -25,10 +25,8 @@ Conversation::Conversation() :
 {
 }
 
-Conversation::Conversation(JsonView jsonValue) : 
-    m_conversationIdHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_startTimeHasBeenSet(false)
+Conversation::Conversation(JsonView jsonValue)
+  : Conversation()
 {
   *this = jsonValue;
 }

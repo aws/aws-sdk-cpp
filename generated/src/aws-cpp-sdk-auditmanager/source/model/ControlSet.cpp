@@ -25,10 +25,8 @@ ControlSet::ControlSet() :
 {
 }
 
-ControlSet::ControlSet(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_controlsHasBeenSet(false)
+ControlSet::ControlSet(JsonView jsonValue)
+  : ControlSet()
 {
   *this = jsonValue;
 }

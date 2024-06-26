@@ -38,23 +38,8 @@ EnhancedImageScanFinding::EnhancedImageScanFinding() :
 {
 }
 
-EnhancedImageScanFinding::EnhancedImageScanFinding(JsonView jsonValue) : 
-    m_awsAccountIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_findingArnHasBeenSet(false),
-    m_firstObservedAtHasBeenSet(false),
-    m_lastObservedAtHasBeenSet(false),
-    m_packageVulnerabilityDetailsHasBeenSet(false),
-    m_remediationHasBeenSet(false),
-    m_resourcesHasBeenSet(false),
-    m_score(0.0),
-    m_scoreHasBeenSet(false),
-    m_scoreDetailsHasBeenSet(false),
-    m_severityHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+EnhancedImageScanFinding::EnhancedImageScanFinding(JsonView jsonValue)
+  : EnhancedImageScanFinding()
 {
   *this = jsonValue;
 }

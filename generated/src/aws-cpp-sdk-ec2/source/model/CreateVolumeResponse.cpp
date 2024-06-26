@@ -30,16 +30,8 @@ CreateVolumeResponse::CreateVolumeResponse() :
 {
 }
 
-CreateVolumeResponse::CreateVolumeResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_encrypted(false),
-    m_size(0),
-    m_state(VolumeState::NOT_SET),
-    m_iops(0),
-    m_volumeType(VolumeType::NOT_SET),
-    m_fastRestored(false),
-    m_multiAttachEnabled(false),
-    m_throughput(0),
-    m_sseType(SSEType::NOT_SET)
+CreateVolumeResponse::CreateVolumeResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : CreateVolumeResponse()
 {
   *this = result;
 }

@@ -28,13 +28,8 @@ QueryExecutionStatus::QueryExecutionStatus() :
 {
 }
 
-QueryExecutionStatus::QueryExecutionStatus(JsonView jsonValue) : 
-    m_state(QueryExecutionState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_stateChangeReasonHasBeenSet(false),
-    m_submissionDateTimeHasBeenSet(false),
-    m_completionDateTimeHasBeenSet(false),
-    m_athenaErrorHasBeenSet(false)
+QueryExecutionStatus::QueryExecutionStatus(JsonView jsonValue)
+  : QueryExecutionStatus()
 {
   *this = jsonValue;
 }

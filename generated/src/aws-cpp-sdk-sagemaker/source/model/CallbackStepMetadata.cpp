@@ -25,10 +25,8 @@ CallbackStepMetadata::CallbackStepMetadata() :
 {
 }
 
-CallbackStepMetadata::CallbackStepMetadata(JsonView jsonValue) : 
-    m_callbackTokenHasBeenSet(false),
-    m_sqsQueueUrlHasBeenSet(false),
-    m_outputParametersHasBeenSet(false)
+CallbackStepMetadata::CallbackStepMetadata(JsonView jsonValue)
+  : CallbackStepMetadata()
 {
   *this = jsonValue;
 }

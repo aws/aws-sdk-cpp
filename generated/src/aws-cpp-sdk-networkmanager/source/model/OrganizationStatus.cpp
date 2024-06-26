@@ -26,11 +26,8 @@ OrganizationStatus::OrganizationStatus() :
 {
 }
 
-OrganizationStatus::OrganizationStatus(JsonView jsonValue) : 
-    m_organizationIdHasBeenSet(false),
-    m_organizationAwsServiceAccessStatusHasBeenSet(false),
-    m_sLRDeploymentStatusHasBeenSet(false),
-    m_accountStatusListHasBeenSet(false)
+OrganizationStatus::OrganizationStatus(JsonView jsonValue)
+  : OrganizationStatus()
 {
   *this = jsonValue;
 }

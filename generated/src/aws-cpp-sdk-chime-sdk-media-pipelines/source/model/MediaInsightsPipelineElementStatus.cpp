@@ -26,11 +26,8 @@ MediaInsightsPipelineElementStatus::MediaInsightsPipelineElementStatus() :
 {
 }
 
-MediaInsightsPipelineElementStatus::MediaInsightsPipelineElementStatus(JsonView jsonValue) : 
-    m_type(MediaInsightsPipelineConfigurationElementType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_status(MediaPipelineElementStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+MediaInsightsPipelineElementStatus::MediaInsightsPipelineElementStatus(JsonView jsonValue)
+  : MediaInsightsPipelineElementStatus()
 {
   *this = jsonValue;
 }

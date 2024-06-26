@@ -27,12 +27,8 @@ ParameterTextAreaControl::ParameterTextAreaControl() :
 {
 }
 
-ParameterTextAreaControl::ParameterTextAreaControl(JsonView jsonValue) : 
-    m_parameterControlIdHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_sourceParameterNameHasBeenSet(false),
-    m_delimiterHasBeenSet(false),
-    m_displayOptionsHasBeenSet(false)
+ParameterTextAreaControl::ParameterTextAreaControl(JsonView jsonValue)
+  : ParameterTextAreaControl()
 {
   *this = jsonValue;
 }

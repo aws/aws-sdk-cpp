@@ -23,8 +23,8 @@ GrpcRouteAction::GrpcRouteAction() :
 {
 }
 
-GrpcRouteAction::GrpcRouteAction(JsonView jsonValue) : 
-    m_weightedTargetsHasBeenSet(false)
+GrpcRouteAction::GrpcRouteAction(JsonView jsonValue)
+  : GrpcRouteAction()
 {
   *this = jsonValue;
 }

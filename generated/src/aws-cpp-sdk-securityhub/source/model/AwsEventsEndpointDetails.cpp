@@ -33,18 +33,8 @@ AwsEventsEndpointDetails::AwsEventsEndpointDetails() :
 {
 }
 
-AwsEventsEndpointDetails::AwsEventsEndpointDetails(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_endpointIdHasBeenSet(false),
-    m_endpointUrlHasBeenSet(false),
-    m_eventBusesHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_replicationConfigHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_routingConfigHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_stateReasonHasBeenSet(false)
+AwsEventsEndpointDetails::AwsEventsEndpointDetails(JsonView jsonValue)
+  : AwsEventsEndpointDetails()
 {
   *this = jsonValue;
 }

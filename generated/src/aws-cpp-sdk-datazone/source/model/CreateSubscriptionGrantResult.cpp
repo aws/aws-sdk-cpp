@@ -22,8 +22,8 @@ CreateSubscriptionGrantResult::CreateSubscriptionGrantResult() :
 {
 }
 
-CreateSubscriptionGrantResult::CreateSubscriptionGrantResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(SubscriptionGrantOverallStatus::NOT_SET)
+CreateSubscriptionGrantResult::CreateSubscriptionGrantResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateSubscriptionGrantResult()
 {
   *this = result;
 }

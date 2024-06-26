@@ -38,23 +38,8 @@ StopCisMessageProgress::StopCisMessageProgress() :
 {
 }
 
-StopCisMessageProgress::StopCisMessageProgress(JsonView jsonValue) : 
-    m_errorChecks(0),
-    m_errorChecksHasBeenSet(false),
-    m_failedChecks(0),
-    m_failedChecksHasBeenSet(false),
-    m_informationalChecks(0),
-    m_informationalChecksHasBeenSet(false),
-    m_notApplicableChecks(0),
-    m_notApplicableChecksHasBeenSet(false),
-    m_notEvaluatedChecks(0),
-    m_notEvaluatedChecksHasBeenSet(false),
-    m_successfulChecks(0),
-    m_successfulChecksHasBeenSet(false),
-    m_totalChecks(0),
-    m_totalChecksHasBeenSet(false),
-    m_unknownChecks(0),
-    m_unknownChecksHasBeenSet(false)
+StopCisMessageProgress::StopCisMessageProgress(JsonView jsonValue)
+  : StopCisMessageProgress()
 {
   *this = jsonValue;
 }

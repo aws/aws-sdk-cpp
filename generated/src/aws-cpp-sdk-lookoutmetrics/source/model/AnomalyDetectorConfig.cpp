@@ -24,9 +24,8 @@ AnomalyDetectorConfig::AnomalyDetectorConfig() :
 {
 }
 
-AnomalyDetectorConfig::AnomalyDetectorConfig(JsonView jsonValue) : 
-    m_anomalyDetectorFrequency(Frequency::NOT_SET),
-    m_anomalyDetectorFrequencyHasBeenSet(false)
+AnomalyDetectorConfig::AnomalyDetectorConfig(JsonView jsonValue)
+  : AnomalyDetectorConfig()
 {
   *this = jsonValue;
 }

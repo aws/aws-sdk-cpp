@@ -24,9 +24,8 @@ Details::Details() :
 {
 }
 
-Details::Details(JsonView jsonValue) : 
-    m_importAssetFromSignedUrlJobErrorDetailsHasBeenSet(false),
-    m_importAssetsFromS3JobErrorDetailsHasBeenSet(false)
+Details::Details(JsonView jsonValue)
+  : Details()
 {
   *this = jsonValue;
 }

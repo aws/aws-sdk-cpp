@@ -23,8 +23,8 @@ TrackingInformation::TrackingInformation() :
 {
 }
 
-TrackingInformation::TrackingInformation(JsonView jsonValue) : 
-    m_trackingNumberHasBeenSet(false)
+TrackingInformation::TrackingInformation(JsonView jsonValue)
+  : TrackingInformation()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ ThirdPartyJobDetails::ThirdPartyJobDetails() :
 {
 }
 
-ThirdPartyJobDetails::ThirdPartyJobDetails(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_dataHasBeenSet(false),
-    m_nonceHasBeenSet(false)
+ThirdPartyJobDetails::ThirdPartyJobDetails(JsonView jsonValue)
+  : ThirdPartyJobDetails()
 {
   *this = jsonValue;
 }

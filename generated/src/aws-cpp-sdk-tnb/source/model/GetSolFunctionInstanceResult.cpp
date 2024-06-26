@@ -22,8 +22,8 @@ GetSolFunctionInstanceResult::GetSolFunctionInstanceResult() :
 {
 }
 
-GetSolFunctionInstanceResult::GetSolFunctionInstanceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_instantiationState(VnfInstantiationState::NOT_SET)
+GetSolFunctionInstanceResult::GetSolFunctionInstanceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetSolFunctionInstanceResult()
 {
   *this = result;
 }

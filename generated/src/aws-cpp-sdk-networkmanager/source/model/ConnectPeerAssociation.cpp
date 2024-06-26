@@ -28,13 +28,8 @@ ConnectPeerAssociation::ConnectPeerAssociation() :
 {
 }
 
-ConnectPeerAssociation::ConnectPeerAssociation(JsonView jsonValue) : 
-    m_connectPeerIdHasBeenSet(false),
-    m_globalNetworkIdHasBeenSet(false),
-    m_deviceIdHasBeenSet(false),
-    m_linkIdHasBeenSet(false),
-    m_state(ConnectPeerAssociationState::NOT_SET),
-    m_stateHasBeenSet(false)
+ConnectPeerAssociation::ConnectPeerAssociation(JsonView jsonValue)
+  : ConnectPeerAssociation()
 {
   *this = jsonValue;
 }

@@ -28,13 +28,8 @@ HumanLoopSummary::HumanLoopSummary() :
 {
 }
 
-HumanLoopSummary::HumanLoopSummary(JsonView jsonValue) : 
-    m_humanLoopNameHasBeenSet(false),
-    m_humanLoopStatus(HumanLoopStatus::NOT_SET),
-    m_humanLoopStatusHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_failureReasonHasBeenSet(false),
-    m_flowDefinitionArnHasBeenSet(false)
+HumanLoopSummary::HumanLoopSummary(JsonView jsonValue)
+  : HumanLoopSummary()
 {
   *this = jsonValue;
 }

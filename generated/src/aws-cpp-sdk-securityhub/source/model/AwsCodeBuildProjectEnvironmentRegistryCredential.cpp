@@ -24,9 +24,8 @@ AwsCodeBuildProjectEnvironmentRegistryCredential::AwsCodeBuildProjectEnvironment
 {
 }
 
-AwsCodeBuildProjectEnvironmentRegistryCredential::AwsCodeBuildProjectEnvironmentRegistryCredential(JsonView jsonValue) : 
-    m_credentialHasBeenSet(false),
-    m_credentialProviderHasBeenSet(false)
+AwsCodeBuildProjectEnvironmentRegistryCredential::AwsCodeBuildProjectEnvironmentRegistryCredential(JsonView jsonValue)
+  : AwsCodeBuildProjectEnvironmentRegistryCredential()
 {
   *this = jsonValue;
 }

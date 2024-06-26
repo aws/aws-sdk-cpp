@@ -32,15 +32,8 @@ CreateTransitGatewayVpcAttachmentRequestOptions::CreateTransitGatewayVpcAttachme
 {
 }
 
-CreateTransitGatewayVpcAttachmentRequestOptions::CreateTransitGatewayVpcAttachmentRequestOptions(const XmlNode& xmlNode) : 
-    m_dnsSupport(DnsSupportValue::NOT_SET),
-    m_dnsSupportHasBeenSet(false),
-    m_securityGroupReferencingSupport(SecurityGroupReferencingSupportValue::NOT_SET),
-    m_securityGroupReferencingSupportHasBeenSet(false),
-    m_ipv6Support(Ipv6SupportValue::NOT_SET),
-    m_ipv6SupportHasBeenSet(false),
-    m_applianceModeSupport(ApplianceModeSupportValue::NOT_SET),
-    m_applianceModeSupportHasBeenSet(false)
+CreateTransitGatewayVpcAttachmentRequestOptions::CreateTransitGatewayVpcAttachmentRequestOptions(const XmlNode& xmlNode)
+  : CreateTransitGatewayVpcAttachmentRequestOptions()
 {
   *this = xmlNode;
 }

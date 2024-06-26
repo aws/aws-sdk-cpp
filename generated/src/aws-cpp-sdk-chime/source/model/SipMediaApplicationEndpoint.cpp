@@ -23,8 +23,8 @@ SipMediaApplicationEndpoint::SipMediaApplicationEndpoint() :
 {
 }
 
-SipMediaApplicationEndpoint::SipMediaApplicationEndpoint(JsonView jsonValue) : 
-    m_lambdaArnHasBeenSet(false)
+SipMediaApplicationEndpoint::SipMediaApplicationEndpoint(JsonView jsonValue)
+  : SipMediaApplicationEndpoint()
 {
   *this = jsonValue;
 }

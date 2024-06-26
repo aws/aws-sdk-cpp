@@ -32,17 +32,8 @@ ReplacePermissionAssociationsWork::ReplacePermissionAssociationsWork() :
 {
 }
 
-ReplacePermissionAssociationsWork::ReplacePermissionAssociationsWork(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_fromPermissionArnHasBeenSet(false),
-    m_fromPermissionVersionHasBeenSet(false),
-    m_toPermissionArnHasBeenSet(false),
-    m_toPermissionVersionHasBeenSet(false),
-    m_status(ReplacePermissionAssociationsWorkStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false)
+ReplacePermissionAssociationsWork::ReplacePermissionAssociationsWork(JsonView jsonValue)
+  : ReplacePermissionAssociationsWork()
 {
   *this = jsonValue;
 }

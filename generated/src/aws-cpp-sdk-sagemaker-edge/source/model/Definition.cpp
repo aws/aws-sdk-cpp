@@ -27,12 +27,8 @@ Definition::Definition() :
 {
 }
 
-Definition::Definition(JsonView jsonValue) : 
-    m_modelHandleHasBeenSet(false),
-    m_s3UrlHasBeenSet(false),
-    m_checksumHasBeenSet(false),
-    m_state(ModelState::NOT_SET),
-    m_stateHasBeenSet(false)
+Definition::Definition(JsonView jsonValue)
+  : Definition()
 {
   *this = jsonValue;
 }

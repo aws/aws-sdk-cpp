@@ -26,11 +26,8 @@ GeoLocation::GeoLocation() :
 {
 }
 
-GeoLocation::GeoLocation(JsonView jsonValue) : 
-    m_lat(0.0),
-    m_latHasBeenSet(false),
-    m_lon(0.0),
-    m_lonHasBeenSet(false)
+GeoLocation::GeoLocation(JsonView jsonValue)
+  : GeoLocation()
 {
   *this = jsonValue;
 }

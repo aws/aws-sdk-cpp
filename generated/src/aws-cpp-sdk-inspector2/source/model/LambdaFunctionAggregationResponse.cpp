@@ -29,14 +29,8 @@ LambdaFunctionAggregationResponse::LambdaFunctionAggregationResponse() :
 {
 }
 
-LambdaFunctionAggregationResponse::LambdaFunctionAggregationResponse(JsonView jsonValue) : 
-    m_accountIdHasBeenSet(false),
-    m_functionNameHasBeenSet(false),
-    m_lambdaTagsHasBeenSet(false),
-    m_lastModifiedAtHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_runtimeHasBeenSet(false),
-    m_severityCountsHasBeenSet(false)
+LambdaFunctionAggregationResponse::LambdaFunctionAggregationResponse(JsonView jsonValue)
+  : LambdaFunctionAggregationResponse()
 {
   *this = jsonValue;
 }

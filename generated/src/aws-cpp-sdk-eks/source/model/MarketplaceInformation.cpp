@@ -24,9 +24,8 @@ MarketplaceInformation::MarketplaceInformation() :
 {
 }
 
-MarketplaceInformation::MarketplaceInformation(JsonView jsonValue) : 
-    m_productIdHasBeenSet(false),
-    m_productUrlHasBeenSet(false)
+MarketplaceInformation::MarketplaceInformation(JsonView jsonValue)
+  : MarketplaceInformation()
 {
   *this = jsonValue;
 }

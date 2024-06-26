@@ -26,11 +26,8 @@ AdditionalResultAttribute::AdditionalResultAttribute() :
 {
 }
 
-AdditionalResultAttribute::AdditionalResultAttribute(JsonView jsonValue) : 
-    m_keyHasBeenSet(false),
-    m_valueType(AdditionalResultAttributeValueType::NOT_SET),
-    m_valueTypeHasBeenSet(false),
-    m_valueHasBeenSet(false)
+AdditionalResultAttribute::AdditionalResultAttribute(JsonView jsonValue)
+  : AdditionalResultAttribute()
 {
   *this = jsonValue;
 }

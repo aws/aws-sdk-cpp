@@ -26,11 +26,8 @@ PivotTableTotalOptions::PivotTableTotalOptions() :
 {
 }
 
-PivotTableTotalOptions::PivotTableTotalOptions(JsonView jsonValue) : 
-    m_rowSubtotalOptionsHasBeenSet(false),
-    m_columnSubtotalOptionsHasBeenSet(false),
-    m_rowTotalOptionsHasBeenSet(false),
-    m_columnTotalOptionsHasBeenSet(false)
+PivotTableTotalOptions::PivotTableTotalOptions(JsonView jsonValue)
+  : PivotTableTotalOptions()
 {
   *this = jsonValue;
 }

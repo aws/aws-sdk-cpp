@@ -26,11 +26,8 @@ SearchJobsFilter::SearchJobsFilter() :
 {
 }
 
-SearchJobsFilter::SearchJobsFilter(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_operator(SearchJobsFilterOperator::NOT_SET),
-    m_operatorHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+SearchJobsFilter::SearchJobsFilter(JsonView jsonValue)
+  : SearchJobsFilter()
 {
   *this = jsonValue;
 }

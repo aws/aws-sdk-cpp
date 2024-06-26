@@ -24,9 +24,8 @@ DecimalPlacesConfiguration::DecimalPlacesConfiguration() :
 {
 }
 
-DecimalPlacesConfiguration::DecimalPlacesConfiguration(JsonView jsonValue) : 
-    m_decimalPlaces(0),
-    m_decimalPlacesHasBeenSet(false)
+DecimalPlacesConfiguration::DecimalPlacesConfiguration(JsonView jsonValue)
+  : DecimalPlacesConfiguration()
 {
   *this = jsonValue;
 }

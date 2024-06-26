@@ -24,9 +24,8 @@ InvalidSignal::InvalidSignal() :
 {
 }
 
-InvalidSignal::InvalidSignal(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_reasonHasBeenSet(false)
+InvalidSignal::InvalidSignal(JsonView jsonValue)
+  : InvalidSignal()
 {
   *this = jsonValue;
 }

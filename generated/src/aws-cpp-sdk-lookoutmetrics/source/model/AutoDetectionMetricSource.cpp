@@ -23,8 +23,8 @@ AutoDetectionMetricSource::AutoDetectionMetricSource() :
 {
 }
 
-AutoDetectionMetricSource::AutoDetectionMetricSource(JsonView jsonValue) : 
-    m_s3SourceConfigHasBeenSet(false)
+AutoDetectionMetricSource::AutoDetectionMetricSource(JsonView jsonValue)
+  : AutoDetectionMetricSource()
 {
   *this = jsonValue;
 }

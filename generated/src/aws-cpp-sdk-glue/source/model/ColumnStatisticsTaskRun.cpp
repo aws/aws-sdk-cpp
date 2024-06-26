@@ -44,29 +44,8 @@ ColumnStatisticsTaskRun::ColumnStatisticsTaskRun() :
 {
 }
 
-ColumnStatisticsTaskRun::ColumnStatisticsTaskRun(JsonView jsonValue) : 
-    m_customerIdHasBeenSet(false),
-    m_columnStatisticsTaskRunIdHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_tableNameHasBeenSet(false),
-    m_columnNameListHasBeenSet(false),
-    m_catalogIDHasBeenSet(false),
-    m_roleHasBeenSet(false),
-    m_sampleSize(0.0),
-    m_sampleSizeHasBeenSet(false),
-    m_securityConfigurationHasBeenSet(false),
-    m_numberOfWorkers(0),
-    m_numberOfWorkersHasBeenSet(false),
-    m_workerTypeHasBeenSet(false),
-    m_status(ColumnStatisticsState::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastUpdatedHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_dPUSeconds(0.0),
-    m_dPUSecondsHasBeenSet(false)
+ColumnStatisticsTaskRun::ColumnStatisticsTaskRun(JsonView jsonValue)
+  : ColumnStatisticsTaskRun()
 {
   *this = jsonValue;
 }

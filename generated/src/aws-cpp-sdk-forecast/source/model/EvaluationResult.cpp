@@ -24,9 +24,8 @@ EvaluationResult::EvaluationResult() :
 {
 }
 
-EvaluationResult::EvaluationResult(JsonView jsonValue) : 
-    m_algorithmArnHasBeenSet(false),
-    m_testWindowsHasBeenSet(false)
+EvaluationResult::EvaluationResult(JsonView jsonValue)
+  : EvaluationResult()
 {
   *this = jsonValue;
 }

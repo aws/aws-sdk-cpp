@@ -22,8 +22,8 @@ GetSchemaMappingResult::GetSchemaMappingResult() :
 {
 }
 
-GetSchemaMappingResult::GetSchemaMappingResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_hasWorkflows(false)
+GetSchemaMappingResult::GetSchemaMappingResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetSchemaMappingResult()
 {
   *this = result;
 }

@@ -26,11 +26,8 @@ BridgeFlowSource::BridgeFlowSource() :
 {
 }
 
-BridgeFlowSource::BridgeFlowSource(JsonView jsonValue) : 
-    m_flowArnHasBeenSet(false),
-    m_flowVpcInterfaceAttachmentHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_outputArnHasBeenSet(false)
+BridgeFlowSource::BridgeFlowSource(JsonView jsonValue)
+  : BridgeFlowSource()
 {
   *this = jsonValue;
 }

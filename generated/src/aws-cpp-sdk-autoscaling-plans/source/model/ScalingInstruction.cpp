@@ -46,31 +46,8 @@ ScalingInstruction::ScalingInstruction() :
 {
 }
 
-ScalingInstruction::ScalingInstruction(JsonView jsonValue) : 
-    m_serviceNamespace(ServiceNamespace::NOT_SET),
-    m_serviceNamespaceHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_scalableDimension(ScalableDimension::NOT_SET),
-    m_scalableDimensionHasBeenSet(false),
-    m_minCapacity(0),
-    m_minCapacityHasBeenSet(false),
-    m_maxCapacity(0),
-    m_maxCapacityHasBeenSet(false),
-    m_targetTrackingConfigurationsHasBeenSet(false),
-    m_predefinedLoadMetricSpecificationHasBeenSet(false),
-    m_customizedLoadMetricSpecificationHasBeenSet(false),
-    m_scheduledActionBufferTime(0),
-    m_scheduledActionBufferTimeHasBeenSet(false),
-    m_predictiveScalingMaxCapacityBehavior(PredictiveScalingMaxCapacityBehavior::NOT_SET),
-    m_predictiveScalingMaxCapacityBehaviorHasBeenSet(false),
-    m_predictiveScalingMaxCapacityBuffer(0),
-    m_predictiveScalingMaxCapacityBufferHasBeenSet(false),
-    m_predictiveScalingMode(PredictiveScalingMode::NOT_SET),
-    m_predictiveScalingModeHasBeenSet(false),
-    m_scalingPolicyUpdateBehavior(ScalingPolicyUpdateBehavior::NOT_SET),
-    m_scalingPolicyUpdateBehaviorHasBeenSet(false),
-    m_disableDynamicScaling(false),
-    m_disableDynamicScalingHasBeenSet(false)
+ScalingInstruction::ScalingInstruction(JsonView jsonValue)
+  : ScalingInstruction()
 {
   *this = jsonValue;
 }

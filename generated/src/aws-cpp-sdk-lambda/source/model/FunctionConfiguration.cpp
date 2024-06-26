@@ -69,53 +69,8 @@ FunctionConfiguration::FunctionConfiguration() :
 {
 }
 
-FunctionConfiguration::FunctionConfiguration(JsonView jsonValue) : 
-    m_functionNameHasBeenSet(false),
-    m_functionArnHasBeenSet(false),
-    m_runtime(Runtime::NOT_SET),
-    m_runtimeHasBeenSet(false),
-    m_roleHasBeenSet(false),
-    m_handlerHasBeenSet(false),
-    m_codeSize(0),
-    m_codeSizeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_timeout(0),
-    m_timeoutHasBeenSet(false),
-    m_memorySize(0),
-    m_memorySizeHasBeenSet(false),
-    m_lastModifiedHasBeenSet(false),
-    m_codeSha256HasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_vpcConfigHasBeenSet(false),
-    m_deadLetterConfigHasBeenSet(false),
-    m_environmentHasBeenSet(false),
-    m_kMSKeyArnHasBeenSet(false),
-    m_tracingConfigHasBeenSet(false),
-    m_masterArnHasBeenSet(false),
-    m_revisionIdHasBeenSet(false),
-    m_layersHasBeenSet(false),
-    m_state(State::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_stateReasonHasBeenSet(false),
-    m_stateReasonCode(StateReasonCode::NOT_SET),
-    m_stateReasonCodeHasBeenSet(false),
-    m_lastUpdateStatus(LastUpdateStatus::NOT_SET),
-    m_lastUpdateStatusHasBeenSet(false),
-    m_lastUpdateStatusReasonHasBeenSet(false),
-    m_lastUpdateStatusReasonCode(LastUpdateStatusReasonCode::NOT_SET),
-    m_lastUpdateStatusReasonCodeHasBeenSet(false),
-    m_fileSystemConfigsHasBeenSet(false),
-    m_packageType(PackageType::NOT_SET),
-    m_packageTypeHasBeenSet(false),
-    m_imageConfigResponseHasBeenSet(false),
-    m_signingProfileVersionArnHasBeenSet(false),
-    m_signingJobArnHasBeenSet(false),
-    m_architecturesHasBeenSet(false),
-    m_ephemeralStorageHasBeenSet(false),
-    m_snapStartHasBeenSet(false),
-    m_runtimeVersionConfigHasBeenSet(false),
-    m_loggingConfigHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
+FunctionConfiguration::FunctionConfiguration(JsonView jsonValue)
+  : FunctionConfiguration()
 {
   *this = jsonValue;
 }

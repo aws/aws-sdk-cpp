@@ -25,10 +25,8 @@ PendingModifiedServiceUpdate::PendingModifiedServiceUpdate() :
 {
 }
 
-PendingModifiedServiceUpdate::PendingModifiedServiceUpdate(JsonView jsonValue) : 
-    m_serviceUpdateNameHasBeenSet(false),
-    m_status(ServiceUpdateStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+PendingModifiedServiceUpdate::PendingModifiedServiceUpdate(JsonView jsonValue)
+  : PendingModifiedServiceUpdate()
 {
   *this = jsonValue;
 }

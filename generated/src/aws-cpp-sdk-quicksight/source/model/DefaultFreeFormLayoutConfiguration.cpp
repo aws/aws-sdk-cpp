@@ -23,8 +23,8 @@ DefaultFreeFormLayoutConfiguration::DefaultFreeFormLayoutConfiguration() :
 {
 }
 
-DefaultFreeFormLayoutConfiguration::DefaultFreeFormLayoutConfiguration(JsonView jsonValue) : 
-    m_canvasSizeOptionsHasBeenSet(false)
+DefaultFreeFormLayoutConfiguration::DefaultFreeFormLayoutConfiguration(JsonView jsonValue)
+  : DefaultFreeFormLayoutConfiguration()
 {
   *this = jsonValue;
 }

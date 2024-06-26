@@ -34,17 +34,8 @@ DateOptions::DateOptions() :
 {
 }
 
-DateOptions::DateOptions(const XmlNode& xmlNode) : 
-    m_defaultValueHasBeenSet(false),
-    m_sourceFieldHasBeenSet(false),
-    m_facetEnabled(false),
-    m_facetEnabledHasBeenSet(false),
-    m_searchEnabled(false),
-    m_searchEnabledHasBeenSet(false),
-    m_returnEnabled(false),
-    m_returnEnabledHasBeenSet(false),
-    m_sortEnabled(false),
-    m_sortEnabledHasBeenSet(false)
+DateOptions::DateOptions(const XmlNode& xmlNode)
+  : DateOptions()
 {
   *this = xmlNode;
 }

@@ -23,8 +23,8 @@ AwsS3BucketBucketLifecycleConfigurationDetails::AwsS3BucketBucketLifecycleConfig
 {
 }
 
-AwsS3BucketBucketLifecycleConfigurationDetails::AwsS3BucketBucketLifecycleConfigurationDetails(JsonView jsonValue) : 
-    m_rulesHasBeenSet(false)
+AwsS3BucketBucketLifecycleConfigurationDetails::AwsS3BucketBucketLifecycleConfigurationDetails(JsonView jsonValue)
+  : AwsS3BucketBucketLifecycleConfigurationDetails()
 {
   *this = jsonValue;
 }

@@ -32,17 +32,8 @@ AttributeFilter::AttributeFilter() :
 {
 }
 
-AttributeFilter::AttributeFilter(JsonView jsonValue) : 
-    m_andAllFiltersHasBeenSet(false),
-    m_orAllFiltersHasBeenSet(false),
-    m_notFilterHasBeenSet(false),
-    m_equalsToHasBeenSet(false),
-    m_containsAllHasBeenSet(false),
-    m_containsAnyHasBeenSet(false),
-    m_greaterThanHasBeenSet(false),
-    m_greaterThanOrEqualsHasBeenSet(false),
-    m_lessThanHasBeenSet(false),
-    m_lessThanOrEqualsHasBeenSet(false)
+AttributeFilter::AttributeFilter(JsonView jsonValue)
+  : AttributeFilter()
 {
   *this = jsonValue;
 }

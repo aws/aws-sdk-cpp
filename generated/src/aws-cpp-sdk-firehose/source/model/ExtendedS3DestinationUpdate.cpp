@@ -39,24 +39,8 @@ ExtendedS3DestinationUpdate::ExtendedS3DestinationUpdate() :
 {
 }
 
-ExtendedS3DestinationUpdate::ExtendedS3DestinationUpdate(JsonView jsonValue) : 
-    m_roleARNHasBeenSet(false),
-    m_bucketARNHasBeenSet(false),
-    m_prefixHasBeenSet(false),
-    m_errorOutputPrefixHasBeenSet(false),
-    m_bufferingHintsHasBeenSet(false),
-    m_compressionFormat(CompressionFormat::NOT_SET),
-    m_compressionFormatHasBeenSet(false),
-    m_encryptionConfigurationHasBeenSet(false),
-    m_cloudWatchLoggingOptionsHasBeenSet(false),
-    m_processingConfigurationHasBeenSet(false),
-    m_s3BackupMode(S3BackupMode::NOT_SET),
-    m_s3BackupModeHasBeenSet(false),
-    m_s3BackupUpdateHasBeenSet(false),
-    m_dataFormatConversionConfigurationHasBeenSet(false),
-    m_dynamicPartitioningConfigurationHasBeenSet(false),
-    m_fileExtensionHasBeenSet(false),
-    m_customTimeZoneHasBeenSet(false)
+ExtendedS3DestinationUpdate::ExtendedS3DestinationUpdate(JsonView jsonValue)
+  : ExtendedS3DestinationUpdate()
 {
   *this = jsonValue;
 }

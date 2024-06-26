@@ -25,10 +25,8 @@ CloudTrailProperties::CloudTrailProperties() :
 {
 }
 
-CloudTrailProperties::CloudTrailProperties(JsonView jsonValue) : 
-    m_trailPropertiesHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
+CloudTrailProperties::CloudTrailProperties(JsonView jsonValue)
+  : CloudTrailProperties()
 {
   *this = jsonValue;
 }

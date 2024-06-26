@@ -24,9 +24,8 @@ FailedRemediationExceptionBatch::FailedRemediationExceptionBatch() :
 {
 }
 
-FailedRemediationExceptionBatch::FailedRemediationExceptionBatch(JsonView jsonValue) : 
-    m_failureMessageHasBeenSet(false),
-    m_failedItemsHasBeenSet(false)
+FailedRemediationExceptionBatch::FailedRemediationExceptionBatch(JsonView jsonValue)
+  : FailedRemediationExceptionBatch()
 {
   *this = jsonValue;
 }

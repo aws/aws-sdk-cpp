@@ -25,10 +25,8 @@ UserInfo::UserInfo() :
 {
 }
 
-UserInfo::UserInfo(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_emailHasBeenSet(false),
-    m_dateHasBeenSet(false)
+UserInfo::UserInfo(JsonView jsonValue)
+  : UserInfo()
 {
   *this = jsonValue;
 }

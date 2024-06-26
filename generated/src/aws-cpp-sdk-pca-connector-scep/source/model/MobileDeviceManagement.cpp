@@ -23,8 +23,8 @@ MobileDeviceManagement::MobileDeviceManagement() :
 {
 }
 
-MobileDeviceManagement::MobileDeviceManagement(JsonView jsonValue) : 
-    m_intuneHasBeenSet(false)
+MobileDeviceManagement::MobileDeviceManagement(JsonView jsonValue)
+  : MobileDeviceManagement()
 {
   *this = jsonValue;
 }

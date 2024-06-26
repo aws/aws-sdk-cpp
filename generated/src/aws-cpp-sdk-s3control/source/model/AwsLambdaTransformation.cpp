@@ -26,9 +26,8 @@ AwsLambdaTransformation::AwsLambdaTransformation() :
 {
 }
 
-AwsLambdaTransformation::AwsLambdaTransformation(const XmlNode& xmlNode) : 
-    m_functionArnHasBeenSet(false),
-    m_functionPayloadHasBeenSet(false)
+AwsLambdaTransformation::AwsLambdaTransformation(const XmlNode& xmlNode)
+  : AwsLambdaTransformation()
 {
   *this = xmlNode;
 }

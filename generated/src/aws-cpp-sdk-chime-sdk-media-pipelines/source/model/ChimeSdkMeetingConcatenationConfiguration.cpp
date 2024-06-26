@@ -23,8 +23,8 @@ ChimeSdkMeetingConcatenationConfiguration::ChimeSdkMeetingConcatenationConfigura
 {
 }
 
-ChimeSdkMeetingConcatenationConfiguration::ChimeSdkMeetingConcatenationConfiguration(JsonView jsonValue) : 
-    m_artifactsConfigurationHasBeenSet(false)
+ChimeSdkMeetingConcatenationConfiguration::ChimeSdkMeetingConcatenationConfiguration(JsonView jsonValue)
+  : ChimeSdkMeetingConcatenationConfiguration()
 {
   *this = jsonValue;
 }

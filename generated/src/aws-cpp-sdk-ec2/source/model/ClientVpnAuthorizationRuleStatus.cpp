@@ -27,10 +27,8 @@ ClientVpnAuthorizationRuleStatus::ClientVpnAuthorizationRuleStatus() :
 {
 }
 
-ClientVpnAuthorizationRuleStatus::ClientVpnAuthorizationRuleStatus(const XmlNode& xmlNode) : 
-    m_code(ClientVpnAuthorizationRuleStatusCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+ClientVpnAuthorizationRuleStatus::ClientVpnAuthorizationRuleStatus(const XmlNode& xmlNode)
+  : ClientVpnAuthorizationRuleStatus()
 {
   *this = xmlNode;
 }

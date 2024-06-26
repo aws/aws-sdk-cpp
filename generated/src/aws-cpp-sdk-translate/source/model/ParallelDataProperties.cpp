@@ -45,30 +45,8 @@ ParallelDataProperties::ParallelDataProperties() :
 {
 }
 
-ParallelDataProperties::ParallelDataProperties(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_status(ParallelDataStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_sourceLanguageCodeHasBeenSet(false),
-    m_targetLanguageCodesHasBeenSet(false),
-    m_parallelDataConfigHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_importedDataSize(0),
-    m_importedDataSizeHasBeenSet(false),
-    m_importedRecordCount(0),
-    m_importedRecordCountHasBeenSet(false),
-    m_failedRecordCount(0),
-    m_failedRecordCountHasBeenSet(false),
-    m_skippedRecordCount(0),
-    m_skippedRecordCountHasBeenSet(false),
-    m_encryptionKeyHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false),
-    m_latestUpdateAttemptStatus(ParallelDataStatus::NOT_SET),
-    m_latestUpdateAttemptStatusHasBeenSet(false),
-    m_latestUpdateAttemptAtHasBeenSet(false)
+ParallelDataProperties::ParallelDataProperties(JsonView jsonValue)
+  : ParallelDataProperties()
 {
   *this = jsonValue;
 }

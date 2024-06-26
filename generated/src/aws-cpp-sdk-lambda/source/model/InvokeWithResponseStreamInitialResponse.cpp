@@ -27,11 +27,8 @@ InvokeWithResponseStreamInitialResponse::InvokeWithResponseStreamInitialResponse
 {
 }
 
-InvokeWithResponseStreamInitialResponse::InvokeWithResponseStreamInitialResponse(JsonView jsonValue) : 
-    m_responseStreamContentTypeHasBeenSet(false),
-    m_executedVersionHasBeenSet(false),
-    m_statusCode(0),
-    m_statusCodeHasBeenSet(false)
+InvokeWithResponseStreamInitialResponse::InvokeWithResponseStreamInitialResponse(JsonView jsonValue)
+  : InvokeWithResponseStreamInitialResponse()
 {
   *this = jsonValue;
 }

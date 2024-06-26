@@ -23,8 +23,8 @@ CascadingControlConfiguration::CascadingControlConfiguration() :
 {
 }
 
-CascadingControlConfiguration::CascadingControlConfiguration(JsonView jsonValue) : 
-    m_sourceControlsHasBeenSet(false)
+CascadingControlConfiguration::CascadingControlConfiguration(JsonView jsonValue)
+  : CascadingControlConfiguration()
 {
   *this = jsonValue;
 }

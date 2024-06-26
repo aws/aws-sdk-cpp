@@ -26,11 +26,8 @@ SecurityHubConfiguration::SecurityHubConfiguration() :
 {
 }
 
-SecurityHubConfiguration::SecurityHubConfiguration(JsonView jsonValue) : 
-    m_publishClassificationFindings(false),
-    m_publishClassificationFindingsHasBeenSet(false),
-    m_publishPolicyFindings(false),
-    m_publishPolicyFindingsHasBeenSet(false)
+SecurityHubConfiguration::SecurityHubConfiguration(JsonView jsonValue)
+  : SecurityHubConfiguration()
 {
   *this = jsonValue;
 }

@@ -32,15 +32,8 @@ ResourceScanSummary::ResourceScanSummary() :
 {
 }
 
-ResourceScanSummary::ResourceScanSummary(const XmlNode& xmlNode) : 
-    m_resourceScanIdHasBeenSet(false),
-    m_status(ResourceScanStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusReasonHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_percentageCompleted(0.0),
-    m_percentageCompletedHasBeenSet(false)
+ResourceScanSummary::ResourceScanSummary(const XmlNode& xmlNode)
+  : ResourceScanSummary()
 {
   *this = xmlNode;
 }

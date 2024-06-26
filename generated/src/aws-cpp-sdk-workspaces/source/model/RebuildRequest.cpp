@@ -23,8 +23,8 @@ RebuildRequest::RebuildRequest() :
 {
 }
 
-RebuildRequest::RebuildRequest(JsonView jsonValue) : 
-    m_workspaceIdHasBeenSet(false)
+RebuildRequest::RebuildRequest(JsonView jsonValue)
+  : RebuildRequest()
 {
   *this = jsonValue;
 }

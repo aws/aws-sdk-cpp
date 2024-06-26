@@ -23,8 +23,8 @@ FilterByEntity::FilterByEntity() :
 {
 }
 
-FilterByEntity::FilterByEntity(JsonView jsonValue) : 
-    m_entityIdHasBeenSet(false)
+FilterByEntity::FilterByEntity(JsonView jsonValue)
+  : FilterByEntity()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ AllowListCriteria::AllowListCriteria() :
 {
 }
 
-AllowListCriteria::AllowListCriteria(JsonView jsonValue) : 
-    m_regexHasBeenSet(false),
-    m_s3WordsListHasBeenSet(false)
+AllowListCriteria::AllowListCriteria(JsonView jsonValue)
+  : AllowListCriteria()
 {
   *this = jsonValue;
 }

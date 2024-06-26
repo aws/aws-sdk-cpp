@@ -25,10 +25,8 @@ MembershipDatasources::MembershipDatasources() :
 {
 }
 
-MembershipDatasources::MembershipDatasources(JsonView jsonValue) : 
-    m_accountIdHasBeenSet(false),
-    m_graphArnHasBeenSet(false),
-    m_datasourcePackageIngestHistoryHasBeenSet(false)
+MembershipDatasources::MembershipDatasources(JsonView jsonValue)
+  : MembershipDatasources()
 {
   *this = jsonValue;
 }

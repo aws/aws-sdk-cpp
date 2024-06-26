@@ -26,9 +26,8 @@ ErrorDetails::ErrorDetails() :
 {
 }
 
-ErrorDetails::ErrorDetails(const XmlNode& xmlNode) : 
-    m_messageHasBeenSet(false),
-    m_codeHasBeenSet(false)
+ErrorDetails::ErrorDetails(const XmlNode& xmlNode)
+  : ErrorDetails()
 {
   *this = xmlNode;
 }

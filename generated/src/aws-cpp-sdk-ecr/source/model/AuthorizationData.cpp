@@ -25,10 +25,8 @@ AuthorizationData::AuthorizationData() :
 {
 }
 
-AuthorizationData::AuthorizationData(JsonView jsonValue) : 
-    m_authorizationTokenHasBeenSet(false),
-    m_expiresAtHasBeenSet(false),
-    m_proxyEndpointHasBeenSet(false)
+AuthorizationData::AuthorizationData(JsonView jsonValue)
+  : AuthorizationData()
 {
   *this = jsonValue;
 }

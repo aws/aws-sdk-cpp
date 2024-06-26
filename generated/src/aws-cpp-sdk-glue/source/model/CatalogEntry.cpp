@@ -24,9 +24,8 @@ CatalogEntry::CatalogEntry() :
 {
 }
 
-CatalogEntry::CatalogEntry(JsonView jsonValue) : 
-    m_databaseNameHasBeenSet(false),
-    m_tableNameHasBeenSet(false)
+CatalogEntry::CatalogEntry(JsonView jsonValue)
+  : CatalogEntry()
 {
   *this = jsonValue;
 }

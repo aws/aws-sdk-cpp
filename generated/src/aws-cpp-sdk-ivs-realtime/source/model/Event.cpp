@@ -29,14 +29,8 @@ Event::Event() :
 {
 }
 
-Event::Event(JsonView jsonValue) : 
-    m_name(EventName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_participantIdHasBeenSet(false),
-    m_eventTimeHasBeenSet(false),
-    m_remoteParticipantIdHasBeenSet(false),
-    m_errorCode(EventErrorCode::NOT_SET),
-    m_errorCodeHasBeenSet(false)
+Event::Event(JsonView jsonValue)
+  : Event()
 {
   *this = jsonValue;
 }

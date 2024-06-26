@@ -25,10 +25,8 @@ NotificationDetails::NotificationDetails() :
 {
 }
 
-NotificationDetails::NotificationDetails(JsonView jsonValue) : 
-    m_dataUpdateHasBeenSet(false),
-    m_deprecationHasBeenSet(false),
-    m_schemaChangeHasBeenSet(false)
+NotificationDetails::NotificationDetails(JsonView jsonValue)
+  : NotificationDetails()
 {
   *this = jsonValue;
 }

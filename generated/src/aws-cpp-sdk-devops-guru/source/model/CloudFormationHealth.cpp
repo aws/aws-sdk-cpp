@@ -26,11 +26,8 @@ CloudFormationHealth::CloudFormationHealth() :
 {
 }
 
-CloudFormationHealth::CloudFormationHealth(JsonView jsonValue) : 
-    m_stackNameHasBeenSet(false),
-    m_insightHasBeenSet(false),
-    m_analyzedResourceCount(0),
-    m_analyzedResourceCountHasBeenSet(false)
+CloudFormationHealth::CloudFormationHealth(JsonView jsonValue)
+  : CloudFormationHealth()
 {
   *this = jsonValue;
 }

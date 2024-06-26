@@ -25,10 +25,8 @@ AwsRedshiftClusterDeferredMaintenanceWindow::AwsRedshiftClusterDeferredMaintenan
 {
 }
 
-AwsRedshiftClusterDeferredMaintenanceWindow::AwsRedshiftClusterDeferredMaintenanceWindow(JsonView jsonValue) : 
-    m_deferMaintenanceEndTimeHasBeenSet(false),
-    m_deferMaintenanceIdentifierHasBeenSet(false),
-    m_deferMaintenanceStartTimeHasBeenSet(false)
+AwsRedshiftClusterDeferredMaintenanceWindow::AwsRedshiftClusterDeferredMaintenanceWindow(JsonView jsonValue)
+  : AwsRedshiftClusterDeferredMaintenanceWindow()
 {
   *this = jsonValue;
 }

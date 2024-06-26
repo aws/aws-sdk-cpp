@@ -25,10 +25,8 @@ PolicyQualifierInfo::PolicyQualifierInfo() :
 {
 }
 
-PolicyQualifierInfo::PolicyQualifierInfo(JsonView jsonValue) : 
-    m_policyQualifierId(PolicyQualifierId::NOT_SET),
-    m_policyQualifierIdHasBeenSet(false),
-    m_qualifierHasBeenSet(false)
+PolicyQualifierInfo::PolicyQualifierInfo(JsonView jsonValue)
+  : PolicyQualifierInfo()
 {
   *this = jsonValue;
 }

@@ -24,8 +24,8 @@ DatasetChanges::DatasetChanges() :
 {
 }
 
-DatasetChanges::DatasetChanges(JsonView jsonValue) : 
-    m_groundTruthHasBeenSet(false)
+DatasetChanges::DatasetChanges(JsonView jsonValue)
+  : DatasetChanges()
 {
   *this = jsonValue;
 }

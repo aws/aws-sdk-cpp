@@ -24,9 +24,8 @@ PredictorEvent::PredictorEvent() :
 {
 }
 
-PredictorEvent::PredictorEvent(JsonView jsonValue) : 
-    m_detailHasBeenSet(false),
-    m_datetimeHasBeenSet(false)
+PredictorEvent::PredictorEvent(JsonView jsonValue)
+  : PredictorEvent()
 {
   *this = jsonValue;
 }

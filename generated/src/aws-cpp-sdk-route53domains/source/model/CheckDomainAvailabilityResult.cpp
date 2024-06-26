@@ -22,8 +22,8 @@ CheckDomainAvailabilityResult::CheckDomainAvailabilityResult() :
 {
 }
 
-CheckDomainAvailabilityResult::CheckDomainAvailabilityResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_availability(DomainAvailability::NOT_SET)
+CheckDomainAvailabilityResult::CheckDomainAvailabilityResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CheckDomainAvailabilityResult()
 {
   *this = result;
 }

@@ -24,9 +24,8 @@ ImagePipelineAggregation::ImagePipelineAggregation() :
 {
 }
 
-ImagePipelineAggregation::ImagePipelineAggregation(JsonView jsonValue) : 
-    m_imagePipelineArnHasBeenSet(false),
-    m_severityCountsHasBeenSet(false)
+ImagePipelineAggregation::ImagePipelineAggregation(JsonView jsonValue)
+  : ImagePipelineAggregation()
 {
   *this = jsonValue;
 }

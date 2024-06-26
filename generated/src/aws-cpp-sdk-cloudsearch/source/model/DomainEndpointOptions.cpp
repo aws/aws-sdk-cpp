@@ -28,11 +28,8 @@ DomainEndpointOptions::DomainEndpointOptions() :
 {
 }
 
-DomainEndpointOptions::DomainEndpointOptions(const XmlNode& xmlNode) : 
-    m_enforceHTTPS(false),
-    m_enforceHTTPSHasBeenSet(false),
-    m_tLSSecurityPolicy(TLSSecurityPolicy::NOT_SET),
-    m_tLSSecurityPolicyHasBeenSet(false)
+DomainEndpointOptions::DomainEndpointOptions(const XmlNode& xmlNode)
+  : DomainEndpointOptions()
 {
   *this = xmlNode;
 }

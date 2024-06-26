@@ -23,8 +23,8 @@ ResultAttribute::ResultAttribute() :
 {
 }
 
-ResultAttribute::ResultAttribute(JsonView jsonValue) : 
-    m_typeNameHasBeenSet(false)
+ResultAttribute::ResultAttribute(JsonView jsonValue)
+  : ResultAttribute()
 {
   *this = jsonValue;
 }

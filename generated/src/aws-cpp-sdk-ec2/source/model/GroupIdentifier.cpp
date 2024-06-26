@@ -26,9 +26,8 @@ GroupIdentifier::GroupIdentifier() :
 {
 }
 
-GroupIdentifier::GroupIdentifier(const XmlNode& xmlNode) : 
-    m_groupNameHasBeenSet(false),
-    m_groupIdHasBeenSet(false)
+GroupIdentifier::GroupIdentifier(const XmlNode& xmlNode)
+  : GroupIdentifier()
 {
   *this = xmlNode;
 }

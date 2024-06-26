@@ -24,9 +24,8 @@ Content::Content() :
 {
 }
 
-Content::Content(JsonView jsonValue) : 
-    m_dataHasBeenSet(false),
-    m_charsetHasBeenSet(false)
+Content::Content(JsonView jsonValue)
+  : Content()
 {
   *this = jsonValue;
 }

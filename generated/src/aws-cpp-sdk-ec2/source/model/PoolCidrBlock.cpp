@@ -25,8 +25,8 @@ PoolCidrBlock::PoolCidrBlock() :
 {
 }
 
-PoolCidrBlock::PoolCidrBlock(const XmlNode& xmlNode) : 
-    m_cidrHasBeenSet(false)
+PoolCidrBlock::PoolCidrBlock(const XmlNode& xmlNode)
+  : PoolCidrBlock()
 {
   *this = xmlNode;
 }

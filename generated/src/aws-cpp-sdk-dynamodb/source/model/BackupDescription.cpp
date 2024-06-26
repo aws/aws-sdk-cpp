@@ -25,10 +25,8 @@ BackupDescription::BackupDescription() :
 {
 }
 
-BackupDescription::BackupDescription(JsonView jsonValue) : 
-    m_backupDetailsHasBeenSet(false),
-    m_sourceTableDetailsHasBeenSet(false),
-    m_sourceTableFeatureDetailsHasBeenSet(false)
+BackupDescription::BackupDescription(JsonView jsonValue)
+  : BackupDescription()
 {
   *this = jsonValue;
 }

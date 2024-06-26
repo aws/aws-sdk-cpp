@@ -25,10 +25,8 @@ ToxicLabels::ToxicLabels() :
 {
 }
 
-ToxicLabels::ToxicLabels(JsonView jsonValue) : 
-    m_labelsHasBeenSet(false),
-    m_toxicity(0.0),
-    m_toxicityHasBeenSet(false)
+ToxicLabels::ToxicLabels(JsonView jsonValue)
+  : ToxicLabels()
 {
   *this = jsonValue;
 }

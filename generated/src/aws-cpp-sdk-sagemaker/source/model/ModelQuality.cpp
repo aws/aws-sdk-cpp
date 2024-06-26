@@ -24,9 +24,8 @@ ModelQuality::ModelQuality() :
 {
 }
 
-ModelQuality::ModelQuality(JsonView jsonValue) : 
-    m_statisticsHasBeenSet(false),
-    m_constraintsHasBeenSet(false)
+ModelQuality::ModelQuality(JsonView jsonValue)
+  : ModelQuality()
 {
   *this = jsonValue;
 }

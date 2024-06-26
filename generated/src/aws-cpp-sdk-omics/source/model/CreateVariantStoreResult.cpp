@@ -22,8 +22,8 @@ CreateVariantStoreResult::CreateVariantStoreResult() :
 {
 }
 
-CreateVariantStoreResult::CreateVariantStoreResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(StoreStatus::NOT_SET)
+CreateVariantStoreResult::CreateVariantStoreResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateVariantStoreResult()
 {
   *this = result;
 }

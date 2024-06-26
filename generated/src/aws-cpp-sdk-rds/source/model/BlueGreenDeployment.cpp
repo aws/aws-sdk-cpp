@@ -35,18 +35,8 @@ BlueGreenDeployment::BlueGreenDeployment() :
 {
 }
 
-BlueGreenDeployment::BlueGreenDeployment(const XmlNode& xmlNode) : 
-    m_blueGreenDeploymentIdentifierHasBeenSet(false),
-    m_blueGreenDeploymentNameHasBeenSet(false),
-    m_sourceHasBeenSet(false),
-    m_targetHasBeenSet(false),
-    m_switchoverDetailsHasBeenSet(false),
-    m_tasksHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_statusDetailsHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_deleteTimeHasBeenSet(false),
-    m_tagListHasBeenSet(false)
+BlueGreenDeployment::BlueGreenDeployment(const XmlNode& xmlNode)
+  : BlueGreenDeployment()
 {
   *this = xmlNode;
 }

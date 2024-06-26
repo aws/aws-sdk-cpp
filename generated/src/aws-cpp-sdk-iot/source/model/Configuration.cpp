@@ -24,9 +24,8 @@ Configuration::Configuration() :
 {
 }
 
-Configuration::Configuration(JsonView jsonValue) : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
+Configuration::Configuration(JsonView jsonValue)
+  : Configuration()
 {
   *this = jsonValue;
 }

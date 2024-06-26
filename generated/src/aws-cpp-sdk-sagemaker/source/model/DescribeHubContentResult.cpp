@@ -24,10 +24,8 @@ DescribeHubContentResult::DescribeHubContentResult() :
 {
 }
 
-DescribeHubContentResult::DescribeHubContentResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_hubContentType(HubContentType::NOT_SET),
-    m_supportStatus(HubContentSupportStatus::NOT_SET),
-    m_hubContentStatus(HubContentStatus::NOT_SET)
+DescribeHubContentResult::DescribeHubContentResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeHubContentResult()
 {
   *this = result;
 }

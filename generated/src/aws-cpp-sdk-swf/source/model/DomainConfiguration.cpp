@@ -23,8 +23,8 @@ DomainConfiguration::DomainConfiguration() :
 {
 }
 
-DomainConfiguration::DomainConfiguration(JsonView jsonValue) : 
-    m_workflowExecutionRetentionPeriodInDaysHasBeenSet(false)
+DomainConfiguration::DomainConfiguration(JsonView jsonValue)
+  : DomainConfiguration()
 {
   *this = jsonValue;
 }

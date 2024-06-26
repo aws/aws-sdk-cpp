@@ -23,8 +23,8 @@ HttpProperties::HttpProperties() :
 {
 }
 
-HttpProperties::HttpProperties(JsonView jsonValue) : 
-    m_httpNameHasBeenSet(false)
+HttpProperties::HttpProperties(JsonView jsonValue)
+  : HttpProperties()
 {
   *this = jsonValue;
 }

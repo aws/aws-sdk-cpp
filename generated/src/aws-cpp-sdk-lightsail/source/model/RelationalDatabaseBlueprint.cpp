@@ -30,15 +30,8 @@ RelationalDatabaseBlueprint::RelationalDatabaseBlueprint() :
 {
 }
 
-RelationalDatabaseBlueprint::RelationalDatabaseBlueprint(JsonView jsonValue) : 
-    m_blueprintIdHasBeenSet(false),
-    m_engine(RelationalDatabaseEngine::NOT_SET),
-    m_engineHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_engineDescriptionHasBeenSet(false),
-    m_engineVersionDescriptionHasBeenSet(false),
-    m_isEngineDefault(false),
-    m_isEngineDefaultHasBeenSet(false)
+RelationalDatabaseBlueprint::RelationalDatabaseBlueprint(JsonView jsonValue)
+  : RelationalDatabaseBlueprint()
 {
   *this = jsonValue;
 }

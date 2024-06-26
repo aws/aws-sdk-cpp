@@ -25,10 +25,8 @@ SegmentReference::SegmentReference() :
 {
 }
 
-SegmentReference::SegmentReference(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_version(0),
-    m_versionHasBeenSet(false)
+SegmentReference::SegmentReference(JsonView jsonValue)
+  : SegmentReference()
 {
   *this = jsonValue;
 }

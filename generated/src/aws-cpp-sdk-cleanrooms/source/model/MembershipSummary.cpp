@@ -35,20 +35,8 @@ MembershipSummary::MembershipSummary() :
 {
 }
 
-MembershipSummary::MembershipSummary(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_collaborationArnHasBeenSet(false),
-    m_collaborationIdHasBeenSet(false),
-    m_collaborationCreatorAccountIdHasBeenSet(false),
-    m_collaborationCreatorDisplayNameHasBeenSet(false),
-    m_collaborationNameHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false),
-    m_status(MembershipStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_memberAbilitiesHasBeenSet(false),
-    m_paymentConfigurationHasBeenSet(false)
+MembershipSummary::MembershipSummary(JsonView jsonValue)
+  : MembershipSummary()
 {
   *this = jsonValue;
 }

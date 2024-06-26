@@ -24,9 +24,8 @@ NotificationChannelConfig::NotificationChannelConfig() :
 {
 }
 
-NotificationChannelConfig::NotificationChannelConfig(JsonView jsonValue) : 
-    m_snsHasBeenSet(false),
-    m_filtersHasBeenSet(false)
+NotificationChannelConfig::NotificationChannelConfig(JsonView jsonValue)
+  : NotificationChannelConfig()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ EncryptionConfig::EncryptionConfig() :
 {
 }
 
-EncryptionConfig::EncryptionConfig(JsonView jsonValue) : 
-    m_encryptionType(EncryptionType::NOT_SET),
-    m_encryptionTypeHasBeenSet(false),
-    m_keyIdHasBeenSet(false)
+EncryptionConfig::EncryptionConfig(JsonView jsonValue)
+  : EncryptionConfig()
 {
   *this = jsonValue;
 }

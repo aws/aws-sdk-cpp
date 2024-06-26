@@ -26,11 +26,8 @@ Counts::Counts() :
 {
 }
 
-Counts::Counts(JsonView jsonValue) : 
-    m_count(0),
-    m_countHasBeenSet(false),
-    m_groupKey(GroupKey::NOT_SET),
-    m_groupKeyHasBeenSet(false)
+Counts::Counts(JsonView jsonValue)
+  : Counts()
 {
   *this = jsonValue;
 }

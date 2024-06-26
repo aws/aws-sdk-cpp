@@ -29,14 +29,8 @@ ResourceSyncAttempt::ResourceSyncAttempt() :
 {
 }
 
-ResourceSyncAttempt::ResourceSyncAttempt(JsonView jsonValue) : 
-    m_eventsHasBeenSet(false),
-    m_initialRevisionHasBeenSet(false),
-    m_startedAtHasBeenSet(false),
-    m_status(ResourceSyncStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_targetHasBeenSet(false),
-    m_targetRevisionHasBeenSet(false)
+ResourceSyncAttempt::ResourceSyncAttempt(JsonView jsonValue)
+  : ResourceSyncAttempt()
 {
   *this = jsonValue;
 }

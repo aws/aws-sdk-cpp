@@ -25,10 +25,8 @@ ExtendedKeyUsage::ExtendedKeyUsage() :
 {
 }
 
-ExtendedKeyUsage::ExtendedKeyUsage(JsonView jsonValue) : 
-    m_name(ExtendedKeyUsageName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_oIDHasBeenSet(false)
+ExtendedKeyUsage::ExtendedKeyUsage(JsonView jsonValue)
+  : ExtendedKeyUsage()
 {
   *this = jsonValue;
 }

@@ -26,9 +26,8 @@ ReplicationTimeValue::ReplicationTimeValue() :
 {
 }
 
-ReplicationTimeValue::ReplicationTimeValue(const XmlNode& xmlNode) : 
-    m_minutes(0),
-    m_minutesHasBeenSet(false)
+ReplicationTimeValue::ReplicationTimeValue(const XmlNode& xmlNode)
+  : ReplicationTimeValue()
 {
   *this = xmlNode;
 }

@@ -26,11 +26,8 @@ MonitoringConfiguration::MonitoringConfiguration() :
 {
 }
 
-MonitoringConfiguration::MonitoringConfiguration(JsonView jsonValue) : 
-    m_s3MonitoringConfigurationHasBeenSet(false),
-    m_managedPersistenceMonitoringConfigurationHasBeenSet(false),
-    m_cloudWatchLoggingConfigurationHasBeenSet(false),
-    m_prometheusMonitoringConfigurationHasBeenSet(false)
+MonitoringConfiguration::MonitoringConfiguration(JsonView jsonValue)
+  : MonitoringConfiguration()
 {
   *this = jsonValue;
 }

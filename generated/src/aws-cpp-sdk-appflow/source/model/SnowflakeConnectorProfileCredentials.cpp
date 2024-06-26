@@ -24,9 +24,8 @@ SnowflakeConnectorProfileCredentials::SnowflakeConnectorProfileCredentials() :
 {
 }
 
-SnowflakeConnectorProfileCredentials::SnowflakeConnectorProfileCredentials(JsonView jsonValue) : 
-    m_usernameHasBeenSet(false),
-    m_passwordHasBeenSet(false)
+SnowflakeConnectorProfileCredentials::SnowflakeConnectorProfileCredentials(JsonView jsonValue)
+  : SnowflakeConnectorProfileCredentials()
 {
   *this = jsonValue;
 }

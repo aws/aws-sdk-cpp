@@ -34,19 +34,8 @@ DeploymentOverview::DeploymentOverview() :
 {
 }
 
-DeploymentOverview::DeploymentOverview(JsonView jsonValue) : 
-    m_pending(0),
-    m_pendingHasBeenSet(false),
-    m_inProgress(0),
-    m_inProgressHasBeenSet(false),
-    m_succeeded(0),
-    m_succeededHasBeenSet(false),
-    m_failed(0),
-    m_failedHasBeenSet(false),
-    m_skipped(0),
-    m_skippedHasBeenSet(false),
-    m_ready(0),
-    m_readyHasBeenSet(false)
+DeploymentOverview::DeploymentOverview(JsonView jsonValue)
+  : DeploymentOverview()
 {
   *this = jsonValue;
 }

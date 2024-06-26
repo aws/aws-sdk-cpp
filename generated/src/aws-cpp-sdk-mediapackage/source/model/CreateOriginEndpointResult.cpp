@@ -24,10 +24,8 @@ CreateOriginEndpointResult::CreateOriginEndpointResult() :
 {
 }
 
-CreateOriginEndpointResult::CreateOriginEndpointResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_origination(Origination::NOT_SET),
-    m_startoverWindowSeconds(0),
-    m_timeDelaySeconds(0)
+CreateOriginEndpointResult::CreateOriginEndpointResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateOriginEndpointResult()
 {
   *this = result;
 }

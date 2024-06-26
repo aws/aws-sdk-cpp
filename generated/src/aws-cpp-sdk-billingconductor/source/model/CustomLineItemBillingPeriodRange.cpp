@@ -24,9 +24,8 @@ CustomLineItemBillingPeriodRange::CustomLineItemBillingPeriodRange() :
 {
 }
 
-CustomLineItemBillingPeriodRange::CustomLineItemBillingPeriodRange(JsonView jsonValue) : 
-    m_inclusiveStartBillingPeriodHasBeenSet(false),
-    m_exclusiveEndBillingPeriodHasBeenSet(false)
+CustomLineItemBillingPeriodRange::CustomLineItemBillingPeriodRange(JsonView jsonValue)
+  : CustomLineItemBillingPeriodRange()
 {
   *this = jsonValue;
 }

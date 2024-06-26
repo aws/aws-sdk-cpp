@@ -28,13 +28,8 @@ CreateBackendAuthResourceConfig::CreateBackendAuthResourceConfig() :
 {
 }
 
-CreateBackendAuthResourceConfig::CreateBackendAuthResourceConfig(JsonView jsonValue) : 
-    m_authResources(AuthResources::NOT_SET),
-    m_authResourcesHasBeenSet(false),
-    m_identityPoolConfigsHasBeenSet(false),
-    m_service(Service::NOT_SET),
-    m_serviceHasBeenSet(false),
-    m_userPoolConfigsHasBeenSet(false)
+CreateBackendAuthResourceConfig::CreateBackendAuthResourceConfig(JsonView jsonValue)
+  : CreateBackendAuthResourceConfig()
 {
   *this = jsonValue;
 }

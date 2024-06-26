@@ -31,16 +31,8 @@ JobConfigInput::JobConfigInput() :
 {
 }
 
-JobConfigInput::JobConfigInput(JsonView jsonValue) : 
-    m_bandMathConfigHasBeenSet(false),
-    m_cloudMaskingConfigHasBeenSet(false),
-    m_cloudRemovalConfigHasBeenSet(false),
-    m_geoMosaicConfigHasBeenSet(false),
-    m_landCoverSegmentationConfigHasBeenSet(false),
-    m_resamplingConfigHasBeenSet(false),
-    m_stackConfigHasBeenSet(false),
-    m_temporalStatisticsConfigHasBeenSet(false),
-    m_zonalStatisticsConfigHasBeenSet(false)
+JobConfigInput::JobConfigInput(JsonView jsonValue)
+  : JobConfigInput()
 {
   *this = jsonValue;
 }

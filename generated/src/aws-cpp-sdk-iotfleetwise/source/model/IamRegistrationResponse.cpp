@@ -26,11 +26,8 @@ IamRegistrationResponse::IamRegistrationResponse() :
 {
 }
 
-IamRegistrationResponse::IamRegistrationResponse(JsonView jsonValue) : 
-    m_roleArnHasBeenSet(false),
-    m_registrationStatus(RegistrationStatus::NOT_SET),
-    m_registrationStatusHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
+IamRegistrationResponse::IamRegistrationResponse(JsonView jsonValue)
+  : IamRegistrationResponse()
 {
   *this = jsonValue;
 }

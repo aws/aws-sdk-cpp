@@ -25,8 +25,8 @@ SourceIpConditionConfig::SourceIpConditionConfig() :
 {
 }
 
-SourceIpConditionConfig::SourceIpConditionConfig(const XmlNode& xmlNode) : 
-    m_valuesHasBeenSet(false)
+SourceIpConditionConfig::SourceIpConditionConfig(const XmlNode& xmlNode)
+  : SourceIpConditionConfig()
 {
   *this = xmlNode;
 }

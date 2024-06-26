@@ -29,14 +29,8 @@ Observation::Observation() :
 {
 }
 
-Observation::Observation(JsonView jsonValue) : 
-    m_actionGroupInvocationOutputHasBeenSet(false),
-    m_finalResponseHasBeenSet(false),
-    m_knowledgeBaseLookupOutputHasBeenSet(false),
-    m_repromptResponseHasBeenSet(false),
-    m_traceIdHasBeenSet(false),
-    m_type(Type::NOT_SET),
-    m_typeHasBeenSet(false)
+Observation::Observation(JsonView jsonValue)
+  : Observation()
 {
   *this = jsonValue;
 }

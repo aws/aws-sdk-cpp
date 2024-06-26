@@ -25,10 +25,8 @@ InstancePropertyFilter::InstancePropertyFilter() :
 {
 }
 
-InstancePropertyFilter::InstancePropertyFilter(JsonView jsonValue) : 
-    m_key(InstancePropertyFilterKey::NOT_SET),
-    m_keyHasBeenSet(false),
-    m_valueSetHasBeenSet(false)
+InstancePropertyFilter::InstancePropertyFilter(JsonView jsonValue)
+  : InstancePropertyFilter()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ PieChartAggregatedFieldWells::PieChartAggregatedFieldWells() :
 {
 }
 
-PieChartAggregatedFieldWells::PieChartAggregatedFieldWells(JsonView jsonValue) : 
-    m_categoryHasBeenSet(false),
-    m_valuesHasBeenSet(false),
-    m_smallMultiplesHasBeenSet(false)
+PieChartAggregatedFieldWells::PieChartAggregatedFieldWells(JsonView jsonValue)
+  : PieChartAggregatedFieldWells()
 {
   *this = jsonValue;
 }

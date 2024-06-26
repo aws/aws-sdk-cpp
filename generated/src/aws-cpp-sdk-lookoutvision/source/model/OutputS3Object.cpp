@@ -24,9 +24,8 @@ OutputS3Object::OutputS3Object() :
 {
 }
 
-OutputS3Object::OutputS3Object(JsonView jsonValue) : 
-    m_bucketHasBeenSet(false),
-    m_keyHasBeenSet(false)
+OutputS3Object::OutputS3Object(JsonView jsonValue)
+  : OutputS3Object()
 {
   *this = jsonValue;
 }

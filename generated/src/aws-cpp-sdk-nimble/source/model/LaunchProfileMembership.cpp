@@ -27,12 +27,8 @@ LaunchProfileMembership::LaunchProfileMembership() :
 {
 }
 
-LaunchProfileMembership::LaunchProfileMembership(JsonView jsonValue) : 
-    m_identityStoreIdHasBeenSet(false),
-    m_persona(LaunchProfilePersona::NOT_SET),
-    m_personaHasBeenSet(false),
-    m_principalIdHasBeenSet(false),
-    m_sidHasBeenSet(false)
+LaunchProfileMembership::LaunchProfileMembership(JsonView jsonValue)
+  : LaunchProfileMembership()
 {
   *this = jsonValue;
 }

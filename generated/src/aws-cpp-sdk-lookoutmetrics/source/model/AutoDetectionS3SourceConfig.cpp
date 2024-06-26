@@ -24,9 +24,8 @@ AutoDetectionS3SourceConfig::AutoDetectionS3SourceConfig() :
 {
 }
 
-AutoDetectionS3SourceConfig::AutoDetectionS3SourceConfig(JsonView jsonValue) : 
-    m_templatedPathListHasBeenSet(false),
-    m_historicalDataPathListHasBeenSet(false)
+AutoDetectionS3SourceConfig::AutoDetectionS3SourceConfig(JsonView jsonValue)
+  : AutoDetectionS3SourceConfig()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ StopProjectVersionResult::StopProjectVersionResult() :
 {
 }
 
-StopProjectVersionResult::StopProjectVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(ProjectVersionStatus::NOT_SET)
+StopProjectVersionResult::StopProjectVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : StopProjectVersionResult()
 {
   *this = result;
 }

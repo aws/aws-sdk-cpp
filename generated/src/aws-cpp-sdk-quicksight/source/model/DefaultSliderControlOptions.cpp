@@ -31,16 +31,8 @@ DefaultSliderControlOptions::DefaultSliderControlOptions() :
 {
 }
 
-DefaultSliderControlOptions::DefaultSliderControlOptions(JsonView jsonValue) : 
-    m_displayOptionsHasBeenSet(false),
-    m_type(SheetControlSliderType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_maximumValue(0.0),
-    m_maximumValueHasBeenSet(false),
-    m_minimumValue(0.0),
-    m_minimumValueHasBeenSet(false),
-    m_stepSize(0.0),
-    m_stepSizeHasBeenSet(false)
+DefaultSliderControlOptions::DefaultSliderControlOptions(JsonView jsonValue)
+  : DefaultSliderControlOptions()
 {
   *this = jsonValue;
 }

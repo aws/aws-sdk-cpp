@@ -24,9 +24,8 @@ InferenceExecutionConfig::InferenceExecutionConfig() :
 {
 }
 
-InferenceExecutionConfig::InferenceExecutionConfig(JsonView jsonValue) : 
-    m_mode(InferenceExecutionMode::NOT_SET),
-    m_modeHasBeenSet(false)
+InferenceExecutionConfig::InferenceExecutionConfig(JsonView jsonValue)
+  : InferenceExecutionConfig()
 {
   *this = jsonValue;
 }

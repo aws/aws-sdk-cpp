@@ -26,11 +26,8 @@ BulkEmailEntry::BulkEmailEntry() :
 {
 }
 
-BulkEmailEntry::BulkEmailEntry(JsonView jsonValue) : 
-    m_destinationHasBeenSet(false),
-    m_replacementTagsHasBeenSet(false),
-    m_replacementEmailContentHasBeenSet(false),
-    m_replacementHeadersHasBeenSet(false)
+BulkEmailEntry::BulkEmailEntry(JsonView jsonValue)
+  : BulkEmailEntry()
 {
   *this = jsonValue;
 }

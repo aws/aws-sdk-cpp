@@ -24,9 +24,8 @@ LogSourceResource::LogSourceResource() :
 {
 }
 
-LogSourceResource::LogSourceResource(JsonView jsonValue) : 
-    m_awsLogSourceHasBeenSet(false),
-    m_customLogSourceHasBeenSet(false)
+LogSourceResource::LogSourceResource(JsonView jsonValue)
+  : LogSourceResource()
 {
   *this = jsonValue;
 }

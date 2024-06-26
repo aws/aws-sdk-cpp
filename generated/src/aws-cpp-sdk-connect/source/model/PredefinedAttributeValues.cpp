@@ -23,8 +23,8 @@ PredefinedAttributeValues::PredefinedAttributeValues() :
 {
 }
 
-PredefinedAttributeValues::PredefinedAttributeValues(JsonView jsonValue) : 
-    m_stringListHasBeenSet(false)
+PredefinedAttributeValues::PredefinedAttributeValues(JsonView jsonValue)
+  : PredefinedAttributeValues()
 {
   *this = jsonValue;
 }

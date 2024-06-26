@@ -25,10 +25,8 @@ Anomaly::Anomaly() :
 {
 }
 
-Anomaly::Anomaly(JsonView jsonValue) : 
-    m_instancesHasBeenSet(false),
-    m_metricHasBeenSet(false),
-    m_reasonHasBeenSet(false)
+Anomaly::Anomaly(JsonView jsonValue)
+  : Anomaly()
 {
   *this = jsonValue;
 }

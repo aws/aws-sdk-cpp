@@ -27,10 +27,8 @@ ManagedRule::ManagedRule() :
 {
 }
 
-ManagedRule::ManagedRule(const XmlNode& xmlNode) : 
-    m_templateNameHasBeenSet(false),
-    m_resourceARNHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+ManagedRule::ManagedRule(const XmlNode& xmlNode)
+  : ManagedRule()
 {
   *this = xmlNode;
 }

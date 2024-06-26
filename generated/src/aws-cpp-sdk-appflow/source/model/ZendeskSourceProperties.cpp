@@ -23,8 +23,8 @@ ZendeskSourceProperties::ZendeskSourceProperties() :
 {
 }
 
-ZendeskSourceProperties::ZendeskSourceProperties(JsonView jsonValue) : 
-    m_objectHasBeenSet(false)
+ZendeskSourceProperties::ZendeskSourceProperties(JsonView jsonValue)
+  : ZendeskSourceProperties()
 {
   *this = jsonValue;
 }

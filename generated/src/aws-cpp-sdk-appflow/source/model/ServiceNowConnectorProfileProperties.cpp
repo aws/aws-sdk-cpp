@@ -23,8 +23,8 @@ ServiceNowConnectorProfileProperties::ServiceNowConnectorProfileProperties() :
 {
 }
 
-ServiceNowConnectorProfileProperties::ServiceNowConnectorProfileProperties(JsonView jsonValue) : 
-    m_instanceUrlHasBeenSet(false)
+ServiceNowConnectorProfileProperties::ServiceNowConnectorProfileProperties(JsonView jsonValue)
+  : ServiceNowConnectorProfileProperties()
 {
   *this = jsonValue;
 }

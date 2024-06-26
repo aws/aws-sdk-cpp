@@ -33,18 +33,8 @@ ImportJobRequest::ImportJobRequest() :
 {
 }
 
-ImportJobRequest::ImportJobRequest(JsonView jsonValue) : 
-    m_defineSegment(false),
-    m_defineSegmentHasBeenSet(false),
-    m_externalIdHasBeenSet(false),
-    m_format(Format::NOT_SET),
-    m_formatHasBeenSet(false),
-    m_registerEndpoints(false),
-    m_registerEndpointsHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_s3UrlHasBeenSet(false),
-    m_segmentIdHasBeenSet(false),
-    m_segmentNameHasBeenSet(false)
+ImportJobRequest::ImportJobRequest(JsonView jsonValue)
+  : ImportJobRequest()
 {
   *this = jsonValue;
 }

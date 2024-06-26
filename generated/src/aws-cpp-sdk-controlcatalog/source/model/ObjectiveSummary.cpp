@@ -28,13 +28,8 @@ ObjectiveSummary::ObjectiveSummary() :
 {
 }
 
-ObjectiveSummary::ObjectiveSummary(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_domainHasBeenSet(false),
-    m_lastUpdateTimeHasBeenSet(false),
-    m_nameHasBeenSet(false)
+ObjectiveSummary::ObjectiveSummary(JsonView jsonValue)
+  : ObjectiveSummary()
 {
   *this = jsonValue;
 }

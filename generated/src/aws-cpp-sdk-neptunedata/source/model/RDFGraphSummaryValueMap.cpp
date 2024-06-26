@@ -25,10 +25,8 @@ RDFGraphSummaryValueMap::RDFGraphSummaryValueMap() :
 {
 }
 
-RDFGraphSummaryValueMap::RDFGraphSummaryValueMap(JsonView jsonValue) : 
-    m_versionHasBeenSet(false),
-    m_lastStatisticsComputationTimeHasBeenSet(false),
-    m_graphSummaryHasBeenSet(false)
+RDFGraphSummaryValueMap::RDFGraphSummaryValueMap(JsonView jsonValue)
+  : RDFGraphSummaryValueMap()
 {
   *this = jsonValue;
 }

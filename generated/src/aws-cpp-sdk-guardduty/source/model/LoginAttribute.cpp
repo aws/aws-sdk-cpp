@@ -28,13 +28,8 @@ LoginAttribute::LoginAttribute() :
 {
 }
 
-LoginAttribute::LoginAttribute(JsonView jsonValue) : 
-    m_userHasBeenSet(false),
-    m_applicationHasBeenSet(false),
-    m_failedLoginAttempts(0),
-    m_failedLoginAttemptsHasBeenSet(false),
-    m_successfulLoginAttempts(0),
-    m_successfulLoginAttemptsHasBeenSet(false)
+LoginAttribute::LoginAttribute(JsonView jsonValue)
+  : LoginAttribute()
 {
   *this = jsonValue;
 }

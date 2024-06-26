@@ -23,8 +23,8 @@ AnnotationConsolidationConfig::AnnotationConsolidationConfig() :
 {
 }
 
-AnnotationConsolidationConfig::AnnotationConsolidationConfig(JsonView jsonValue) : 
-    m_annotationConsolidationLambdaArnHasBeenSet(false)
+AnnotationConsolidationConfig::AnnotationConsolidationConfig(JsonView jsonValue)
+  : AnnotationConsolidationConfig()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ PinVerificationAttributes::PinVerificationAttributes() :
 {
 }
 
-PinVerificationAttributes::PinVerificationAttributes(JsonView jsonValue) : 
-    m_ibm3624PinHasBeenSet(false),
-    m_visaPinHasBeenSet(false)
+PinVerificationAttributes::PinVerificationAttributes(JsonView jsonValue)
+  : PinVerificationAttributes()
 {
   *this = jsonValue;
 }

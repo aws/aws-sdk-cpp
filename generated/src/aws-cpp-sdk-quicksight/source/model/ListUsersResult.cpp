@@ -22,8 +22,8 @@ ListUsersResult::ListUsersResult() :
 {
 }
 
-ListUsersResult::ListUsersResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+ListUsersResult::ListUsersResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ListUsersResult()
 {
   *this = result;
 }

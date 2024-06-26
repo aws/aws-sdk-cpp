@@ -26,11 +26,8 @@ ApplicationAssignment::ApplicationAssignment() :
 {
 }
 
-ApplicationAssignment::ApplicationAssignment(JsonView jsonValue) : 
-    m_applicationArnHasBeenSet(false),
-    m_principalIdHasBeenSet(false),
-    m_principalType(PrincipalType::NOT_SET),
-    m_principalTypeHasBeenSet(false)
+ApplicationAssignment::ApplicationAssignment(JsonView jsonValue)
+  : ApplicationAssignment()
 {
   *this = jsonValue;
 }

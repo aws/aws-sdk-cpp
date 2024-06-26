@@ -29,14 +29,8 @@ AttemptDetail::AttemptDetail() :
 {
 }
 
-AttemptDetail::AttemptDetail(JsonView jsonValue) : 
-    m_containerHasBeenSet(false),
-    m_startedAt(0),
-    m_startedAtHasBeenSet(false),
-    m_stoppedAt(0),
-    m_stoppedAtHasBeenSet(false),
-    m_statusReasonHasBeenSet(false),
-    m_taskPropertiesHasBeenSet(false)
+AttemptDetail::AttemptDetail(JsonView jsonValue)
+  : AttemptDetail()
 {
   *this = jsonValue;
 }

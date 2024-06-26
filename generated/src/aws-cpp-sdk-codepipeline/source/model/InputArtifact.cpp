@@ -23,8 +23,8 @@ InputArtifact::InputArtifact() :
 {
 }
 
-InputArtifact::InputArtifact(JsonView jsonValue) : 
-    m_nameHasBeenSet(false)
+InputArtifact::InputArtifact(JsonView jsonValue)
+  : InputArtifact()
 {
   *this = jsonValue;
 }

@@ -23,9 +23,8 @@ DescribeMonitoringScheduleResult::DescribeMonitoringScheduleResult() :
 {
 }
 
-DescribeMonitoringScheduleResult::DescribeMonitoringScheduleResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_monitoringScheduleStatus(ScheduleStatus::NOT_SET),
-    m_monitoringType(MonitoringType::NOT_SET)
+DescribeMonitoringScheduleResult::DescribeMonitoringScheduleResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeMonitoringScheduleResult()
 {
   *this = result;
 }

@@ -24,9 +24,8 @@ FileLocation::FileLocation() :
 {
 }
 
-FileLocation::FileLocation(JsonView jsonValue) : 
-    m_s3FileLocationHasBeenSet(false),
-    m_efsFileLocationHasBeenSet(false)
+FileLocation::FileLocation(JsonView jsonValue)
+  : FileLocation()
 {
   *this = jsonValue;
 }

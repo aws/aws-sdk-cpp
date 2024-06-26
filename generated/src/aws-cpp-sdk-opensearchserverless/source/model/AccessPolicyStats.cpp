@@ -24,9 +24,8 @@ AccessPolicyStats::AccessPolicyStats() :
 {
 }
 
-AccessPolicyStats::AccessPolicyStats(JsonView jsonValue) : 
-    m_dataPolicyCount(0),
-    m_dataPolicyCountHasBeenSet(false)
+AccessPolicyStats::AccessPolicyStats(JsonView jsonValue)
+  : AccessPolicyStats()
 {
   *this = jsonValue;
 }

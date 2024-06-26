@@ -26,11 +26,8 @@ TimeSeriesReplacementsDataSource::TimeSeriesReplacementsDataSource() :
 {
 }
 
-TimeSeriesReplacementsDataSource::TimeSeriesReplacementsDataSource(JsonView jsonValue) : 
-    m_s3ConfigHasBeenSet(false),
-    m_schemaHasBeenSet(false),
-    m_formatHasBeenSet(false),
-    m_timestampFormatHasBeenSet(false)
+TimeSeriesReplacementsDataSource::TimeSeriesReplacementsDataSource(JsonView jsonValue)
+  : TimeSeriesReplacementsDataSource()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ ArcOptions::ArcOptions() :
 {
 }
 
-ArcOptions::ArcOptions(JsonView jsonValue) : 
-    m_arcThickness(ArcThickness::NOT_SET),
-    m_arcThicknessHasBeenSet(false)
+ArcOptions::ArcOptions(JsonView jsonValue)
+  : ArcOptions()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ AmpConfiguration::AmpConfiguration() :
 {
 }
 
-AmpConfiguration::AmpConfiguration(JsonView jsonValue) : 
-    m_workspaceArnHasBeenSet(false)
+AmpConfiguration::AmpConfiguration(JsonView jsonValue)
+  : AmpConfiguration()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ LaunchTemplateSpecification::LaunchTemplateSpecification() :
 {
 }
 
-LaunchTemplateSpecification::LaunchTemplateSpecification(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_idHasBeenSet(false)
+LaunchTemplateSpecification::LaunchTemplateSpecification(JsonView jsonValue)
+  : LaunchTemplateSpecification()
 {
   *this = jsonValue;
 }

@@ -35,20 +35,8 @@ InAppTemplateResponse::InAppTemplateResponse() :
 {
 }
 
-InAppTemplateResponse::InAppTemplateResponse(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_contentHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_customConfigHasBeenSet(false),
-    m_lastModifiedDateHasBeenSet(false),
-    m_layout(Layout::NOT_SET),
-    m_layoutHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_templateDescriptionHasBeenSet(false),
-    m_templateNameHasBeenSet(false),
-    m_templateType(TemplateType::NOT_SET),
-    m_templateTypeHasBeenSet(false),
-    m_versionHasBeenSet(false)
+InAppTemplateResponse::InAppTemplateResponse(JsonView jsonValue)
+  : InAppTemplateResponse()
 {
   *this = jsonValue;
 }

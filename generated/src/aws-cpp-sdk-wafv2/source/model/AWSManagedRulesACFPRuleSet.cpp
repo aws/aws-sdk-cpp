@@ -28,13 +28,8 @@ AWSManagedRulesACFPRuleSet::AWSManagedRulesACFPRuleSet() :
 {
 }
 
-AWSManagedRulesACFPRuleSet::AWSManagedRulesACFPRuleSet(JsonView jsonValue) : 
-    m_creationPathHasBeenSet(false),
-    m_registrationPagePathHasBeenSet(false),
-    m_requestInspectionHasBeenSet(false),
-    m_responseInspectionHasBeenSet(false),
-    m_enableRegexInPath(false),
-    m_enableRegexInPathHasBeenSet(false)
+AWSManagedRulesACFPRuleSet::AWSManagedRulesACFPRuleSet(JsonView jsonValue)
+  : AWSManagedRulesACFPRuleSet()
 {
   *this = jsonValue;
 }

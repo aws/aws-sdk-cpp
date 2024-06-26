@@ -43,28 +43,8 @@ AwsBackupRecoveryPointDetails::AwsBackupRecoveryPointDetails() :
 {
 }
 
-AwsBackupRecoveryPointDetails::AwsBackupRecoveryPointDetails(JsonView jsonValue) : 
-    m_backupSizeInBytes(0),
-    m_backupSizeInBytesHasBeenSet(false),
-    m_backupVaultArnHasBeenSet(false),
-    m_backupVaultNameHasBeenSet(false),
-    m_calculatedLifecycleHasBeenSet(false),
-    m_completionDateHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_encryptionKeyArnHasBeenSet(false),
-    m_iamRoleArnHasBeenSet(false),
-    m_isEncrypted(false),
-    m_isEncryptedHasBeenSet(false),
-    m_lastRestoreTimeHasBeenSet(false),
-    m_lifecycleHasBeenSet(false),
-    m_recoveryPointArnHasBeenSet(false),
-    m_resourceArnHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
-    m_sourceBackupVaultArnHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_storageClassHasBeenSet(false)
+AwsBackupRecoveryPointDetails::AwsBackupRecoveryPointDetails(JsonView jsonValue)
+  : AwsBackupRecoveryPointDetails()
 {
   *this = jsonValue;
 }

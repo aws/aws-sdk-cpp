@@ -24,9 +24,8 @@ MetricAttributionOutput::MetricAttributionOutput() :
 {
 }
 
-MetricAttributionOutput::MetricAttributionOutput(JsonView jsonValue) : 
-    m_s3DataDestinationHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
+MetricAttributionOutput::MetricAttributionOutput(JsonView jsonValue)
+  : MetricAttributionOutput()
 {
   *this = jsonValue;
 }

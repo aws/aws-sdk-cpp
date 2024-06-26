@@ -30,15 +30,8 @@ Thumbnails::Thumbnails() :
 {
 }
 
-Thumbnails::Thumbnails(JsonView jsonValue) : 
-    m_formatHasBeenSet(false),
-    m_intervalHasBeenSet(false),
-    m_resolutionHasBeenSet(false),
-    m_aspectRatioHasBeenSet(false),
-    m_maxWidthHasBeenSet(false),
-    m_maxHeightHasBeenSet(false),
-    m_sizingPolicyHasBeenSet(false),
-    m_paddingPolicyHasBeenSet(false)
+Thumbnails::Thumbnails(JsonView jsonValue)
+  : Thumbnails()
 {
   *this = jsonValue;
 }

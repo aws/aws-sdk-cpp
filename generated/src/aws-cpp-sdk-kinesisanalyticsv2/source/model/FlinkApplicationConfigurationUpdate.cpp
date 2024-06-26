@@ -25,10 +25,8 @@ FlinkApplicationConfigurationUpdate::FlinkApplicationConfigurationUpdate() :
 {
 }
 
-FlinkApplicationConfigurationUpdate::FlinkApplicationConfigurationUpdate(JsonView jsonValue) : 
-    m_checkpointConfigurationUpdateHasBeenSet(false),
-    m_monitoringConfigurationUpdateHasBeenSet(false),
-    m_parallelismConfigurationUpdateHasBeenSet(false)
+FlinkApplicationConfigurationUpdate::FlinkApplicationConfigurationUpdate(JsonView jsonValue)
+  : FlinkApplicationConfigurationUpdate()
 {
   *this = jsonValue;
 }

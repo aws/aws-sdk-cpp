@@ -26,11 +26,8 @@ AppsListDataSummary::AppsListDataSummary() :
 {
 }
 
-AppsListDataSummary::AppsListDataSummary(JsonView jsonValue) : 
-    m_listArnHasBeenSet(false),
-    m_listIdHasBeenSet(false),
-    m_listNameHasBeenSet(false),
-    m_appsListHasBeenSet(false)
+AppsListDataSummary::AppsListDataSummary(JsonView jsonValue)
+  : AppsListDataSummary()
 {
   *this = jsonValue;
 }

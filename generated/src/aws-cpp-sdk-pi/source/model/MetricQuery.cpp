@@ -25,10 +25,8 @@ MetricQuery::MetricQuery() :
 {
 }
 
-MetricQuery::MetricQuery(JsonView jsonValue) : 
-    m_metricHasBeenSet(false),
-    m_groupByHasBeenSet(false),
-    m_filterHasBeenSet(false)
+MetricQuery::MetricQuery(JsonView jsonValue)
+  : MetricQuery()
 {
   *this = jsonValue;
 }

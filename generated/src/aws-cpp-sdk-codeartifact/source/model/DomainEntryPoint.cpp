@@ -24,9 +24,8 @@ DomainEntryPoint::DomainEntryPoint() :
 {
 }
 
-DomainEntryPoint::DomainEntryPoint(JsonView jsonValue) : 
-    m_repositoryNameHasBeenSet(false),
-    m_externalConnectionNameHasBeenSet(false)
+DomainEntryPoint::DomainEntryPoint(JsonView jsonValue)
+  : DomainEntryPoint()
 {
   *this = jsonValue;
 }

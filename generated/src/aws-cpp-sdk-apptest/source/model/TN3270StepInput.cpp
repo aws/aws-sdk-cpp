@@ -26,11 +26,8 @@ TN3270StepInput::TN3270StepInput() :
 {
 }
 
-TN3270StepInput::TN3270StepInput(JsonView jsonValue) : 
-    m_resourceHasBeenSet(false),
-    m_scriptHasBeenSet(false),
-    m_exportDataSetNamesHasBeenSet(false),
-    m_propertiesHasBeenSet(false)
+TN3270StepInput::TN3270StepInput(JsonView jsonValue)
+  : TN3270StepInput()
 {
   *this = jsonValue;
 }

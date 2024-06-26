@@ -26,11 +26,8 @@ InputSource::InputSource() :
 {
 }
 
-InputSource::InputSource(JsonView jsonValue) : 
-    m_applyNormalization(false),
-    m_applyNormalizationHasBeenSet(false),
-    m_inputSourceARNHasBeenSet(false),
-    m_schemaNameHasBeenSet(false)
+InputSource::InputSource(JsonView jsonValue)
+  : InputSource()
 {
   *this = jsonValue;
 }

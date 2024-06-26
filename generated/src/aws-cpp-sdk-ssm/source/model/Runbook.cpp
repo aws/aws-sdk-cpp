@@ -31,16 +31,8 @@ Runbook::Runbook() :
 {
 }
 
-Runbook::Runbook(JsonView jsonValue) : 
-    m_documentNameHasBeenSet(false),
-    m_documentVersionHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_targetParameterNameHasBeenSet(false),
-    m_targetsHasBeenSet(false),
-    m_targetMapsHasBeenSet(false),
-    m_maxConcurrencyHasBeenSet(false),
-    m_maxErrorsHasBeenSet(false),
-    m_targetLocationsHasBeenSet(false)
+Runbook::Runbook(JsonView jsonValue)
+  : Runbook()
 {
   *this = jsonValue;
 }

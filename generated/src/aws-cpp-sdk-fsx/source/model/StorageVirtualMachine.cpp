@@ -38,23 +38,8 @@ StorageVirtualMachine::StorageVirtualMachine() :
 {
 }
 
-StorageVirtualMachine::StorageVirtualMachine(JsonView jsonValue) : 
-    m_activeDirectoryConfigurationHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_endpointsHasBeenSet(false),
-    m_fileSystemIdHasBeenSet(false),
-    m_lifecycle(StorageVirtualMachineLifecycle::NOT_SET),
-    m_lifecycleHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_resourceARNHasBeenSet(false),
-    m_storageVirtualMachineIdHasBeenSet(false),
-    m_subtype(StorageVirtualMachineSubtype::NOT_SET),
-    m_subtypeHasBeenSet(false),
-    m_uUIDHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_lifecycleTransitionReasonHasBeenSet(false),
-    m_rootVolumeSecurityStyle(StorageVirtualMachineRootVolumeSecurityStyle::NOT_SET),
-    m_rootVolumeSecurityStyleHasBeenSet(false)
+StorageVirtualMachine::StorageVirtualMachine(JsonView jsonValue)
+  : StorageVirtualMachine()
 {
   *this = jsonValue;
 }

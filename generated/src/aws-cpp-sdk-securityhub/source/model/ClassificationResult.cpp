@@ -30,15 +30,8 @@ ClassificationResult::ClassificationResult() :
 {
 }
 
-ClassificationResult::ClassificationResult(JsonView jsonValue) : 
-    m_mimeTypeHasBeenSet(false),
-    m_sizeClassified(0),
-    m_sizeClassifiedHasBeenSet(false),
-    m_additionalOccurrences(false),
-    m_additionalOccurrencesHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_sensitiveDataHasBeenSet(false),
-    m_customDataIdentifiersHasBeenSet(false)
+ClassificationResult::ClassificationResult(JsonView jsonValue)
+  : ClassificationResult()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ ConnectorEntity::ConnectorEntity() :
 {
 }
 
-ConnectorEntity::ConnectorEntity(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_labelHasBeenSet(false),
-    m_hasNestedEntities(false),
-    m_hasNestedEntitiesHasBeenSet(false)
+ConnectorEntity::ConnectorEntity(JsonView jsonValue)
+  : ConnectorEntity()
 {
   *this = jsonValue;
 }

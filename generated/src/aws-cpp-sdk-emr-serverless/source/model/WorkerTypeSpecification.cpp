@@ -23,8 +23,8 @@ WorkerTypeSpecification::WorkerTypeSpecification() :
 {
 }
 
-WorkerTypeSpecification::WorkerTypeSpecification(JsonView jsonValue) : 
-    m_imageConfigurationHasBeenSet(false)
+WorkerTypeSpecification::WorkerTypeSpecification(JsonView jsonValue)
+  : WorkerTypeSpecification()
 {
   *this = jsonValue;
 }

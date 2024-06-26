@@ -26,11 +26,8 @@ BatchIsAuthorizedInputItem::BatchIsAuthorizedInputItem() :
 {
 }
 
-BatchIsAuthorizedInputItem::BatchIsAuthorizedInputItem(JsonView jsonValue) : 
-    m_principalHasBeenSet(false),
-    m_actionHasBeenSet(false),
-    m_resourceHasBeenSet(false),
-    m_contextHasBeenSet(false)
+BatchIsAuthorizedInputItem::BatchIsAuthorizedInputItem(JsonView jsonValue)
+  : BatchIsAuthorizedInputItem()
 {
   *this = jsonValue;
 }

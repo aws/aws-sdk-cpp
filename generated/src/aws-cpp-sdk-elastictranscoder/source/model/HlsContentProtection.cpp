@@ -28,13 +28,8 @@ HlsContentProtection::HlsContentProtection() :
 {
 }
 
-HlsContentProtection::HlsContentProtection(JsonView jsonValue) : 
-    m_methodHasBeenSet(false),
-    m_keyHasBeenSet(false),
-    m_keyMd5HasBeenSet(false),
-    m_initializationVectorHasBeenSet(false),
-    m_licenseAcquisitionUrlHasBeenSet(false),
-    m_keyStoragePolicyHasBeenSet(false)
+HlsContentProtection::HlsContentProtection(JsonView jsonValue)
+  : HlsContentProtection()
 {
   *this = jsonValue;
 }

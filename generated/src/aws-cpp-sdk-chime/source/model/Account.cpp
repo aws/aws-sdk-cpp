@@ -34,19 +34,8 @@ Account::Account() :
 {
 }
 
-Account::Account(JsonView jsonValue) : 
-    m_awsAccountIdHasBeenSet(false),
-    m_accountIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_accountType(AccountType::NOT_SET),
-    m_accountTypeHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false),
-    m_defaultLicense(License::NOT_SET),
-    m_defaultLicenseHasBeenSet(false),
-    m_supportedLicensesHasBeenSet(false),
-    m_accountStatus(AccountStatus::NOT_SET),
-    m_accountStatusHasBeenSet(false),
-    m_signinDelegateGroupsHasBeenSet(false)
+Account::Account(JsonView jsonValue)
+  : Account()
 {
   *this = jsonValue;
 }

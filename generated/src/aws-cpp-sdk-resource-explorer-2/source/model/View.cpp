@@ -28,13 +28,8 @@ View::View() :
 {
 }
 
-View::View(JsonView jsonValue) : 
-    m_filtersHasBeenSet(false),
-    m_includedPropertiesHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false),
-    m_ownerHasBeenSet(false),
-    m_scopeHasBeenSet(false),
-    m_viewArnHasBeenSet(false)
+View::View(JsonView jsonValue)
+  : View()
 {
   *this = jsonValue;
 }

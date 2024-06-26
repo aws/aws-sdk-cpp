@@ -26,12 +26,8 @@ ModifyUsageLimitResult::ModifyUsageLimitResult() :
 {
 }
 
-ModifyUsageLimitResult::ModifyUsageLimitResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_featureType(UsageLimitFeatureType::NOT_SET),
-    m_limitType(UsageLimitLimitType::NOT_SET),
-    m_amount(0),
-    m_period(UsageLimitPeriod::NOT_SET),
-    m_breachAction(UsageLimitBreachAction::NOT_SET)
+ModifyUsageLimitResult::ModifyUsageLimitResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : ModifyUsageLimitResult()
 {
   *this = result;
 }

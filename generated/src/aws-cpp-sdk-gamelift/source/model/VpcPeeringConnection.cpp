@@ -29,14 +29,8 @@ VpcPeeringConnection::VpcPeeringConnection() :
 {
 }
 
-VpcPeeringConnection::VpcPeeringConnection(JsonView jsonValue) : 
-    m_fleetIdHasBeenSet(false),
-    m_fleetArnHasBeenSet(false),
-    m_ipV4CidrBlockHasBeenSet(false),
-    m_vpcPeeringConnectionIdHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_peerVpcIdHasBeenSet(false),
-    m_gameLiftVpcIdHasBeenSet(false)
+VpcPeeringConnection::VpcPeeringConnection(JsonView jsonValue)
+  : VpcPeeringConnection()
 {
   *this = jsonValue;
 }

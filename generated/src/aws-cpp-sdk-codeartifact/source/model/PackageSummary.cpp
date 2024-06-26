@@ -27,12 +27,8 @@ PackageSummary::PackageSummary() :
 {
 }
 
-PackageSummary::PackageSummary(JsonView jsonValue) : 
-    m_format(PackageFormat::NOT_SET),
-    m_formatHasBeenSet(false),
-    m_namespaceHasBeenSet(false),
-    m_packageHasBeenSet(false),
-    m_originConfigurationHasBeenSet(false)
+PackageSummary::PackageSummary(JsonView jsonValue)
+  : PackageSummary()
 {
   *this = jsonValue;
 }

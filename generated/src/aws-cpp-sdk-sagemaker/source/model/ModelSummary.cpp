@@ -25,10 +25,8 @@ ModelSummary::ModelSummary() :
 {
 }
 
-ModelSummary::ModelSummary(JsonView jsonValue) : 
-    m_modelNameHasBeenSet(false),
-    m_modelArnHasBeenSet(false),
-    m_creationTimeHasBeenSet(false)
+ModelSummary::ModelSummary(JsonView jsonValue)
+  : ModelSummary()
 {
   *this = jsonValue;
 }

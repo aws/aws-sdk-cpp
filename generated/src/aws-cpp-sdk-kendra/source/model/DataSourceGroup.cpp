@@ -24,9 +24,8 @@ DataSourceGroup::DataSourceGroup() :
 {
 }
 
-DataSourceGroup::DataSourceGroup(JsonView jsonValue) : 
-    m_groupIdHasBeenSet(false),
-    m_dataSourceIdHasBeenSet(false)
+DataSourceGroup::DataSourceGroup(JsonView jsonValue)
+  : DataSourceGroup()
 {
   *this = jsonValue;
 }

@@ -24,10 +24,8 @@ DescribeLedgerResult::DescribeLedgerResult() :
 {
 }
 
-DescribeLedgerResult::DescribeLedgerResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_state(LedgerState::NOT_SET),
-    m_permissionsMode(PermissionsMode::NOT_SET),
-    m_deletionProtection(false)
+DescribeLedgerResult::DescribeLedgerResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeLedgerResult()
 {
   *this = result;
 }

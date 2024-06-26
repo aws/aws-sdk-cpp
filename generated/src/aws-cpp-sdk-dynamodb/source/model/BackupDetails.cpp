@@ -32,17 +32,8 @@ BackupDetails::BackupDetails() :
 {
 }
 
-BackupDetails::BackupDetails(JsonView jsonValue) : 
-    m_backupArnHasBeenSet(false),
-    m_backupNameHasBeenSet(false),
-    m_backupSizeBytes(0),
-    m_backupSizeBytesHasBeenSet(false),
-    m_backupStatus(BackupStatus::NOT_SET),
-    m_backupStatusHasBeenSet(false),
-    m_backupType(BackupType::NOT_SET),
-    m_backupTypeHasBeenSet(false),
-    m_backupCreationDateTimeHasBeenSet(false),
-    m_backupExpiryDateTimeHasBeenSet(false)
+BackupDetails::BackupDetails(JsonView jsonValue)
+  : BackupDetails()
 {
   *this = jsonValue;
 }

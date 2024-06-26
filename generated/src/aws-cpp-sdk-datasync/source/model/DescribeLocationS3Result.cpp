@@ -22,8 +22,8 @@ DescribeLocationS3Result::DescribeLocationS3Result() :
 {
 }
 
-DescribeLocationS3Result::DescribeLocationS3Result(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_s3StorageClass(S3StorageClass::NOT_SET)
+DescribeLocationS3Result::DescribeLocationS3Result(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeLocationS3Result()
 {
   *this = result;
 }

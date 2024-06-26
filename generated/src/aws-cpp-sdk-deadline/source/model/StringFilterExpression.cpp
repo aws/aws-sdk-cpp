@@ -26,11 +26,8 @@ StringFilterExpression::StringFilterExpression() :
 {
 }
 
-StringFilterExpression::StringFilterExpression(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_operator(ComparisonOperator::NOT_SET),
-    m_operatorHasBeenSet(false),
-    m_valueHasBeenSet(false)
+StringFilterExpression::StringFilterExpression(JsonView jsonValue)
+  : StringFilterExpression()
 {
   *this = jsonValue;
 }

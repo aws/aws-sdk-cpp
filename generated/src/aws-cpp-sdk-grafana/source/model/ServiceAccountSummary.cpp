@@ -27,12 +27,8 @@ ServiceAccountSummary::ServiceAccountSummary() :
 {
 }
 
-ServiceAccountSummary::ServiceAccountSummary(JsonView jsonValue) : 
-    m_grafanaRole(Role::NOT_SET),
-    m_grafanaRoleHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_isDisabledHasBeenSet(false),
-    m_nameHasBeenSet(false)
+ServiceAccountSummary::ServiceAccountSummary(JsonView jsonValue)
+  : ServiceAccountSummary()
 {
   *this = jsonValue;
 }

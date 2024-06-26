@@ -24,9 +24,8 @@ ServiceVolumeConfiguration::ServiceVolumeConfiguration() :
 {
 }
 
-ServiceVolumeConfiguration::ServiceVolumeConfiguration(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_managedEBSVolumeHasBeenSet(false)
+ServiceVolumeConfiguration::ServiceVolumeConfiguration(JsonView jsonValue)
+  : ServiceVolumeConfiguration()
 {
   *this = jsonValue;
 }

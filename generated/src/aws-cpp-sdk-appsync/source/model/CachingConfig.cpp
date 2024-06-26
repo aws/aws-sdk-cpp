@@ -25,10 +25,8 @@ CachingConfig::CachingConfig() :
 {
 }
 
-CachingConfig::CachingConfig(JsonView jsonValue) : 
-    m_ttl(0),
-    m_ttlHasBeenSet(false),
-    m_cachingKeysHasBeenSet(false)
+CachingConfig::CachingConfig(JsonView jsonValue)
+  : CachingConfig()
 {
   *this = jsonValue;
 }

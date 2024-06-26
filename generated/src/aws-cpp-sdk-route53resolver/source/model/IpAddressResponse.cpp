@@ -31,16 +31,8 @@ IpAddressResponse::IpAddressResponse() :
 {
 }
 
-IpAddressResponse::IpAddressResponse(JsonView jsonValue) : 
-    m_ipIdHasBeenSet(false),
-    m_subnetIdHasBeenSet(false),
-    m_ipHasBeenSet(false),
-    m_ipv6HasBeenSet(false),
-    m_status(IpAddressStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_modificationTimeHasBeenSet(false)
+IpAddressResponse::IpAddressResponse(JsonView jsonValue)
+  : IpAddressResponse()
 {
   *this = jsonValue;
 }

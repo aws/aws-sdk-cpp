@@ -26,11 +26,8 @@ CategoricalDimensionField::CategoricalDimensionField() :
 {
 }
 
-CategoricalDimensionField::CategoricalDimensionField(JsonView jsonValue) : 
-    m_fieldIdHasBeenSet(false),
-    m_columnHasBeenSet(false),
-    m_hierarchyIdHasBeenSet(false),
-    m_formatConfigurationHasBeenSet(false)
+CategoricalDimensionField::CategoricalDimensionField(JsonView jsonValue)
+  : CategoricalDimensionField()
 {
   *this = jsonValue;
 }

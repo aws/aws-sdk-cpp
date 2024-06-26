@@ -26,11 +26,8 @@ InstanceEstimatedMonthlySavings::InstanceEstimatedMonthlySavings() :
 {
 }
 
-InstanceEstimatedMonthlySavings::InstanceEstimatedMonthlySavings(JsonView jsonValue) : 
-    m_currency(Currency::NOT_SET),
-    m_currencyHasBeenSet(false),
-    m_value(0.0),
-    m_valueHasBeenSet(false)
+InstanceEstimatedMonthlySavings::InstanceEstimatedMonthlySavings(JsonView jsonValue)
+  : InstanceEstimatedMonthlySavings()
 {
   *this = jsonValue;
 }

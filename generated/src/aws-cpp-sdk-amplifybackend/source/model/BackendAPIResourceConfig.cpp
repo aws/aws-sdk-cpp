@@ -28,13 +28,8 @@ BackendAPIResourceConfig::BackendAPIResourceConfig() :
 {
 }
 
-BackendAPIResourceConfig::BackendAPIResourceConfig(JsonView jsonValue) : 
-    m_additionalAuthTypesHasBeenSet(false),
-    m_apiNameHasBeenSet(false),
-    m_conflictResolutionHasBeenSet(false),
-    m_defaultAuthTypeHasBeenSet(false),
-    m_serviceHasBeenSet(false),
-    m_transformSchemaHasBeenSet(false)
+BackendAPIResourceConfig::BackendAPIResourceConfig(JsonView jsonValue)
+  : BackendAPIResourceConfig()
 {
   *this = jsonValue;
 }

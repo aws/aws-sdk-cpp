@@ -24,9 +24,8 @@ EbsStorageSettings::EbsStorageSettings() :
 {
 }
 
-EbsStorageSettings::EbsStorageSettings(JsonView jsonValue) : 
-    m_ebsVolumeSizeInGb(0),
-    m_ebsVolumeSizeInGbHasBeenSet(false)
+EbsStorageSettings::EbsStorageSettings(JsonView jsonValue)
+  : EbsStorageSettings()
 {
   *this = jsonValue;
 }

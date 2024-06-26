@@ -29,14 +29,8 @@ DeploymentEvent::DeploymentEvent() :
 {
 }
 
-DeploymentEvent::DeploymentEvent(JsonView jsonValue) : 
-    m_eventType(DeploymentEventType::NOT_SET),
-    m_eventTypeHasBeenSet(false),
-    m_triggeredBy(TriggeredBy::NOT_SET),
-    m_triggeredByHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_actionInvocationsHasBeenSet(false),
-    m_occurredAtHasBeenSet(false)
+DeploymentEvent::DeploymentEvent(JsonView jsonValue)
+  : DeploymentEvent()
 {
   *this = jsonValue;
 }

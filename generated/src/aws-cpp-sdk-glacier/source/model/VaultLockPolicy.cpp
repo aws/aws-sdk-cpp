@@ -23,8 +23,8 @@ VaultLockPolicy::VaultLockPolicy() :
 {
 }
 
-VaultLockPolicy::VaultLockPolicy(JsonView jsonValue) : 
-    m_policyHasBeenSet(false)
+VaultLockPolicy::VaultLockPolicy(JsonView jsonValue)
+  : VaultLockPolicy()
 {
   *this = jsonValue;
 }

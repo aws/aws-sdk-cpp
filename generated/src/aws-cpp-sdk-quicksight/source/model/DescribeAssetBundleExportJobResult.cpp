@@ -27,13 +27,8 @@ DescribeAssetBundleExportJobResult::DescribeAssetBundleExportJobResult() :
 {
 }
 
-DescribeAssetBundleExportJobResult::DescribeAssetBundleExportJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_jobStatus(AssetBundleExportJobStatus::NOT_SET),
-    m_includeAllDependencies(false),
-    m_exportFormat(AssetBundleExportFormat::NOT_SET),
-    m_status(0),
-    m_includePermissions(false),
-    m_includeTags(false)
+DescribeAssetBundleExportJobResult::DescribeAssetBundleExportJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeAssetBundleExportJobResult()
 {
   *this = result;
 }

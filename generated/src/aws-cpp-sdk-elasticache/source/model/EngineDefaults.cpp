@@ -28,11 +28,8 @@ EngineDefaults::EngineDefaults() :
 {
 }
 
-EngineDefaults::EngineDefaults(const XmlNode& xmlNode) : 
-    m_cacheParameterGroupFamilyHasBeenSet(false),
-    m_markerHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_cacheNodeTypeSpecificParametersHasBeenSet(false)
+EngineDefaults::EngineDefaults(const XmlNode& xmlNode)
+  : EngineDefaults()
 {
   *this = xmlNode;
 }

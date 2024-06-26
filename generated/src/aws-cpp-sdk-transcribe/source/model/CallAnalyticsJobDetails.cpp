@@ -23,8 +23,8 @@ CallAnalyticsJobDetails::CallAnalyticsJobDetails() :
 {
 }
 
-CallAnalyticsJobDetails::CallAnalyticsJobDetails(JsonView jsonValue) : 
-    m_skippedHasBeenSet(false)
+CallAnalyticsJobDetails::CallAnalyticsJobDetails(JsonView jsonValue)
+  : CallAnalyticsJobDetails()
 {
   *this = jsonValue;
 }

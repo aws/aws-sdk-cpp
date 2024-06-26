@@ -34,19 +34,8 @@ Aggregates::Aggregates() :
 {
 }
 
-Aggregates::Aggregates(JsonView jsonValue) : 
-    m_average(0.0),
-    m_averageHasBeenSet(false),
-    m_count(0.0),
-    m_countHasBeenSet(false),
-    m_maximum(0.0),
-    m_maximumHasBeenSet(false),
-    m_minimum(0.0),
-    m_minimumHasBeenSet(false),
-    m_sum(0.0),
-    m_sumHasBeenSet(false),
-    m_standardDeviation(0.0),
-    m_standardDeviationHasBeenSet(false)
+Aggregates::Aggregates(JsonView jsonValue)
+  : Aggregates()
 {
   *this = jsonValue;
 }

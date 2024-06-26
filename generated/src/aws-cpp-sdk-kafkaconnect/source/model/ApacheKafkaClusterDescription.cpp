@@ -24,9 +24,8 @@ ApacheKafkaClusterDescription::ApacheKafkaClusterDescription() :
 {
 }
 
-ApacheKafkaClusterDescription::ApacheKafkaClusterDescription(JsonView jsonValue) : 
-    m_bootstrapServersHasBeenSet(false),
-    m_vpcHasBeenSet(false)
+ApacheKafkaClusterDescription::ApacheKafkaClusterDescription(JsonView jsonValue)
+  : ApacheKafkaClusterDescription()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ SpeakerSearchDetails::SpeakerSearchDetails() :
 {
 }
 
-SpeakerSearchDetails::SpeakerSearchDetails(JsonView jsonValue) : 
-    m_resultsHasBeenSet(false),
-    m_voiceprintGenerationStatusHasBeenSet(false)
+SpeakerSearchDetails::SpeakerSearchDetails(JsonView jsonValue)
+  : SpeakerSearchDetails()
 {
   *this = jsonValue;
 }

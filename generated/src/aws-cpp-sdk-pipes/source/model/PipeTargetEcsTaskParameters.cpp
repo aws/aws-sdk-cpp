@@ -42,27 +42,8 @@ PipeTargetEcsTaskParameters::PipeTargetEcsTaskParameters() :
 {
 }
 
-PipeTargetEcsTaskParameters::PipeTargetEcsTaskParameters(JsonView jsonValue) : 
-    m_taskDefinitionArnHasBeenSet(false),
-    m_taskCount(0),
-    m_taskCountHasBeenSet(false),
-    m_launchType(LaunchType::NOT_SET),
-    m_launchTypeHasBeenSet(false),
-    m_networkConfigurationHasBeenSet(false),
-    m_platformVersionHasBeenSet(false),
-    m_groupHasBeenSet(false),
-    m_capacityProviderStrategyHasBeenSet(false),
-    m_enableECSManagedTags(false),
-    m_enableECSManagedTagsHasBeenSet(false),
-    m_enableExecuteCommand(false),
-    m_enableExecuteCommandHasBeenSet(false),
-    m_placementConstraintsHasBeenSet(false),
-    m_placementStrategyHasBeenSet(false),
-    m_propagateTags(PropagateTags::NOT_SET),
-    m_propagateTagsHasBeenSet(false),
-    m_referenceIdHasBeenSet(false),
-    m_overridesHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+PipeTargetEcsTaskParameters::PipeTargetEcsTaskParameters(JsonView jsonValue)
+  : PipeTargetEcsTaskParameters()
 {
   *this = jsonValue;
 }

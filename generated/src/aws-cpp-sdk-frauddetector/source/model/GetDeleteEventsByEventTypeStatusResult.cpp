@@ -22,8 +22,8 @@ GetDeleteEventsByEventTypeStatusResult::GetDeleteEventsByEventTypeStatusResult()
 {
 }
 
-GetDeleteEventsByEventTypeStatusResult::GetDeleteEventsByEventTypeStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_eventsDeletionStatus(AsyncJobStatus::NOT_SET)
+GetDeleteEventsByEventTypeStatusResult::GetDeleteEventsByEventTypeStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetDeleteEventsByEventTypeStatusResult()
 {
   *this = result;
 }

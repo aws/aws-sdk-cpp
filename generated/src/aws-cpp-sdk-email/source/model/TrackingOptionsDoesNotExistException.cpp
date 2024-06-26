@@ -25,8 +25,8 @@ TrackingOptionsDoesNotExistException::TrackingOptionsDoesNotExistException() :
 {
 }
 
-TrackingOptionsDoesNotExistException::TrackingOptionsDoesNotExistException(const XmlNode& xmlNode) : 
-    m_configurationSetNameHasBeenSet(false)
+TrackingOptionsDoesNotExistException::TrackingOptionsDoesNotExistException(const XmlNode& xmlNode)
+  : TrackingOptionsDoesNotExistException()
 {
   *this = xmlNode;
 }

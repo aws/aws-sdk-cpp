@@ -27,12 +27,8 @@ FunctionConfigurationEnvironment::FunctionConfigurationEnvironment() :
 {
 }
 
-FunctionConfigurationEnvironment::FunctionConfigurationEnvironment(JsonView jsonValue) : 
-    m_accessSysfs(false),
-    m_accessSysfsHasBeenSet(false),
-    m_executionHasBeenSet(false),
-    m_resourceAccessPoliciesHasBeenSet(false),
-    m_variablesHasBeenSet(false)
+FunctionConfigurationEnvironment::FunctionConfigurationEnvironment(JsonView jsonValue)
+  : FunctionConfigurationEnvironment()
 {
   *this = jsonValue;
 }

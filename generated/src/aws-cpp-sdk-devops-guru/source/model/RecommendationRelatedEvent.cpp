@@ -24,9 +24,8 @@ RecommendationRelatedEvent::RecommendationRelatedEvent() :
 {
 }
 
-RecommendationRelatedEvent::RecommendationRelatedEvent(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_resourcesHasBeenSet(false)
+RecommendationRelatedEvent::RecommendationRelatedEvent(JsonView jsonValue)
+  : RecommendationRelatedEvent()
 {
   *this = jsonValue;
 }

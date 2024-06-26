@@ -24,9 +24,8 @@ ShuffleConfig::ShuffleConfig() :
 {
 }
 
-ShuffleConfig::ShuffleConfig(JsonView jsonValue) : 
-    m_seed(0),
-    m_seedHasBeenSet(false)
+ShuffleConfig::ShuffleConfig(JsonView jsonValue)
+  : ShuffleConfig()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ DataUpdateRequestDetails::DataUpdateRequestDetails() :
 {
 }
 
-DataUpdateRequestDetails::DataUpdateRequestDetails(JsonView jsonValue) : 
-    m_dataUpdatedAtHasBeenSet(false)
+DataUpdateRequestDetails::DataUpdateRequestDetails(JsonView jsonValue)
+  : DataUpdateRequestDetails()
 {
   *this = jsonValue;
 }

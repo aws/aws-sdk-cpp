@@ -24,9 +24,8 @@ ValueMapping::ValueMapping() :
 {
 }
 
-ValueMapping::ValueMapping(JsonView jsonValue) : 
-    m_displayValueHasBeenSet(false),
-    m_valueHasBeenSet(false)
+ValueMapping::ValueMapping(JsonView jsonValue)
+  : ValueMapping()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ ActionExecutionResult::ActionExecutionResult() :
 {
 }
 
-ActionExecutionResult::ActionExecutionResult(JsonView jsonValue) : 
-    m_externalExecutionIdHasBeenSet(false),
-    m_externalExecutionSummaryHasBeenSet(false),
-    m_externalExecutionUrlHasBeenSet(false),
-    m_errorDetailsHasBeenSet(false)
+ActionExecutionResult::ActionExecutionResult(JsonView jsonValue)
+  : ActionExecutionResult()
 {
   *this = jsonValue;
 }

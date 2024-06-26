@@ -26,11 +26,8 @@ CompleteWorkflowExecutionFailedEventAttributes::CompleteWorkflowExecutionFailedE
 {
 }
 
-CompleteWorkflowExecutionFailedEventAttributes::CompleteWorkflowExecutionFailedEventAttributes(JsonView jsonValue) : 
-    m_cause(CompleteWorkflowExecutionFailedCause::NOT_SET),
-    m_causeHasBeenSet(false),
-    m_decisionTaskCompletedEventId(0),
-    m_decisionTaskCompletedEventIdHasBeenSet(false)
+CompleteWorkflowExecutionFailedEventAttributes::CompleteWorkflowExecutionFailedEventAttributes(JsonView jsonValue)
+  : CompleteWorkflowExecutionFailedEventAttributes()
 {
   *this = jsonValue;
 }

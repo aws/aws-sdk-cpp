@@ -30,15 +30,8 @@ DataReplicationInfo::DataReplicationInfo() :
 {
 }
 
-DataReplicationInfo::DataReplicationInfo(JsonView jsonValue) : 
-    m_dataReplicationErrorHasBeenSet(false),
-    m_dataReplicationInitiationHasBeenSet(false),
-    m_dataReplicationState(DataReplicationState::NOT_SET),
-    m_dataReplicationStateHasBeenSet(false),
-    m_etaDateTimeHasBeenSet(false),
-    m_lagDurationHasBeenSet(false),
-    m_lastSnapshotDateTimeHasBeenSet(false),
-    m_replicatedDisksHasBeenSet(false)
+DataReplicationInfo::DataReplicationInfo(JsonView jsonValue)
+  : DataReplicationInfo()
 {
   *this = jsonValue;
 }

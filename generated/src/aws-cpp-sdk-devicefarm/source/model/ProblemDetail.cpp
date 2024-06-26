@@ -24,9 +24,8 @@ ProblemDetail::ProblemDetail() :
 {
 }
 
-ProblemDetail::ProblemDetail(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false)
+ProblemDetail::ProblemDetail(JsonView jsonValue)
+  : ProblemDetail()
 {
   *this = jsonValue;
 }

@@ -27,12 +27,8 @@ AppInstanceUser::AppInstanceUser() :
 {
 }
 
-AppInstanceUser::AppInstanceUser(JsonView jsonValue) : 
-    m_appInstanceUserArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false),
-    m_metadataHasBeenSet(false),
-    m_lastUpdatedTimestampHasBeenSet(false)
+AppInstanceUser::AppInstanceUser(JsonView jsonValue)
+  : AppInstanceUser()
 {
   *this = jsonValue;
 }

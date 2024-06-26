@@ -24,9 +24,8 @@ AwsElbAppCookieStickinessPolicy::AwsElbAppCookieStickinessPolicy() :
 {
 }
 
-AwsElbAppCookieStickinessPolicy::AwsElbAppCookieStickinessPolicy(JsonView jsonValue) : 
-    m_cookieNameHasBeenSet(false),
-    m_policyNameHasBeenSet(false)
+AwsElbAppCookieStickinessPolicy::AwsElbAppCookieStickinessPolicy(JsonView jsonValue)
+  : AwsElbAppCookieStickinessPolicy()
 {
   *this = jsonValue;
 }

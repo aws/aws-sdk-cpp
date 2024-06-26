@@ -24,9 +24,8 @@ PipelinePauseStateSettings::PipelinePauseStateSettings() :
 {
 }
 
-PipelinePauseStateSettings::PipelinePauseStateSettings(JsonView jsonValue) : 
-    m_pipelineId(PipelineId::NOT_SET),
-    m_pipelineIdHasBeenSet(false)
+PipelinePauseStateSettings::PipelinePauseStateSettings(JsonView jsonValue)
+  : PipelinePauseStateSettings()
 {
   *this = jsonValue;
 }

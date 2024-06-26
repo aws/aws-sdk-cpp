@@ -28,13 +28,8 @@ FindingsReportSummary::FindingsReportSummary() :
 {
 }
 
-FindingsReportSummary::FindingsReportSummary(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_profileEndTimeHasBeenSet(false),
-    m_profileStartTimeHasBeenSet(false),
-    m_profilingGroupNameHasBeenSet(false),
-    m_totalNumberOfFindings(0),
-    m_totalNumberOfFindingsHasBeenSet(false)
+FindingsReportSummary::FindingsReportSummary(JsonView jsonValue)
+  : FindingsReportSummary()
 {
   *this = jsonValue;
 }

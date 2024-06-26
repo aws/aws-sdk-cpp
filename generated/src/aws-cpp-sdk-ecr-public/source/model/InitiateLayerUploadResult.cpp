@@ -22,8 +22,8 @@ InitiateLayerUploadResult::InitiateLayerUploadResult() :
 {
 }
 
-InitiateLayerUploadResult::InitiateLayerUploadResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_partSize(0)
+InitiateLayerUploadResult::InitiateLayerUploadResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : InitiateLayerUploadResult()
 {
   *this = result;
 }

@@ -24,9 +24,8 @@ CustomLogSourceConfiguration::CustomLogSourceConfiguration() :
 {
 }
 
-CustomLogSourceConfiguration::CustomLogSourceConfiguration(JsonView jsonValue) : 
-    m_crawlerConfigurationHasBeenSet(false),
-    m_providerIdentityHasBeenSet(false)
+CustomLogSourceConfiguration::CustomLogSourceConfiguration(JsonView jsonValue)
+  : CustomLogSourceConfiguration()
 {
   *this = jsonValue;
 }

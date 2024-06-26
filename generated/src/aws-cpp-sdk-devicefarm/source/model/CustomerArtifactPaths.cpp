@@ -25,10 +25,8 @@ CustomerArtifactPaths::CustomerArtifactPaths() :
 {
 }
 
-CustomerArtifactPaths::CustomerArtifactPaths(JsonView jsonValue) : 
-    m_iosPathsHasBeenSet(false),
-    m_androidPathsHasBeenSet(false),
-    m_deviceHostPathsHasBeenSet(false)
+CustomerArtifactPaths::CustomerArtifactPaths(JsonView jsonValue)
+  : CustomerArtifactPaths()
 {
   *this = jsonValue;
 }

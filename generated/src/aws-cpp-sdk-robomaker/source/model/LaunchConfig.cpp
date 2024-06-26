@@ -29,14 +29,8 @@ LaunchConfig::LaunchConfig() :
 {
 }
 
-LaunchConfig::LaunchConfig(JsonView jsonValue) : 
-    m_packageNameHasBeenSet(false),
-    m_launchFileHasBeenSet(false),
-    m_environmentVariablesHasBeenSet(false),
-    m_portForwardingConfigHasBeenSet(false),
-    m_streamUI(false),
-    m_streamUIHasBeenSet(false),
-    m_commandHasBeenSet(false)
+LaunchConfig::LaunchConfig(JsonView jsonValue)
+  : LaunchConfig()
 {
   *this = jsonValue;
 }

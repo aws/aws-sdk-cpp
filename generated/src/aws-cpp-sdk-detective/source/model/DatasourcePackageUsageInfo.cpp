@@ -25,10 +25,8 @@ DatasourcePackageUsageInfo::DatasourcePackageUsageInfo() :
 {
 }
 
-DatasourcePackageUsageInfo::DatasourcePackageUsageInfo(JsonView jsonValue) : 
-    m_volumeUsageInBytes(0),
-    m_volumeUsageInBytesHasBeenSet(false),
-    m_volumeUsageUpdateTimeHasBeenSet(false)
+DatasourcePackageUsageInfo::DatasourcePackageUsageInfo(JsonView jsonValue)
+  : DatasourcePackageUsageInfo()
 {
   *this = jsonValue;
 }

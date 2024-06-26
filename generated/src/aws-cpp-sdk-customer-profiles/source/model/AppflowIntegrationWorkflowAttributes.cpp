@@ -26,11 +26,8 @@ AppflowIntegrationWorkflowAttributes::AppflowIntegrationWorkflowAttributes() :
 {
 }
 
-AppflowIntegrationWorkflowAttributes::AppflowIntegrationWorkflowAttributes(JsonView jsonValue) : 
-    m_sourceConnectorType(SourceConnectorType::NOT_SET),
-    m_sourceConnectorTypeHasBeenSet(false),
-    m_connectorProfileNameHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
+AppflowIntegrationWorkflowAttributes::AppflowIntegrationWorkflowAttributes(JsonView jsonValue)
+  : AppflowIntegrationWorkflowAttributes()
 {
   *this = jsonValue;
 }

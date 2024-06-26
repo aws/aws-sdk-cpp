@@ -25,8 +25,8 @@ Instance::Instance() :
 {
 }
 
-Instance::Instance(const XmlNode& xmlNode) : 
-    m_instanceIdHasBeenSet(false)
+Instance::Instance(const XmlNode& xmlNode)
+  : Instance()
 {
   *this = xmlNode;
 }

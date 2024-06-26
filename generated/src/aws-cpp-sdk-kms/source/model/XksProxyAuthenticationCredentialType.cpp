@@ -24,9 +24,8 @@ XksProxyAuthenticationCredentialType::XksProxyAuthenticationCredentialType() :
 {
 }
 
-XksProxyAuthenticationCredentialType::XksProxyAuthenticationCredentialType(JsonView jsonValue) : 
-    m_accessKeyIdHasBeenSet(false),
-    m_rawSecretAccessKeyHasBeenSet(false)
+XksProxyAuthenticationCredentialType::XksProxyAuthenticationCredentialType(JsonView jsonValue)
+  : XksProxyAuthenticationCredentialType()
 {
   *this = jsonValue;
 }

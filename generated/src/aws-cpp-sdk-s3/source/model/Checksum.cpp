@@ -28,11 +28,8 @@ Checksum::Checksum() :
 {
 }
 
-Checksum::Checksum(const XmlNode& xmlNode) : 
-    m_checksumCRC32HasBeenSet(false),
-    m_checksumCRC32CHasBeenSet(false),
-    m_checksumSHA1HasBeenSet(false),
-    m_checksumSHA256HasBeenSet(false)
+Checksum::Checksum(const XmlNode& xmlNode)
+  : Checksum()
 {
   *this = xmlNode;
 }

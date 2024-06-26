@@ -25,10 +25,8 @@ DeviceInfo::DeviceInfo() :
 {
 }
 
-DeviceInfo::DeviceInfo(JsonView jsonValue) : 
-    m_platformNameHasBeenSet(false),
-    m_platformVersionHasBeenSet(false),
-    m_operatingSystemHasBeenSet(false)
+DeviceInfo::DeviceInfo(JsonView jsonValue)
+  : DeviceInfo()
 {
   *this = jsonValue;
 }

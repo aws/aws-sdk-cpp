@@ -23,8 +23,8 @@ VpcInterfaceAttachment::VpcInterfaceAttachment() :
 {
 }
 
-VpcInterfaceAttachment::VpcInterfaceAttachment(JsonView jsonValue) : 
-    m_vpcInterfaceNameHasBeenSet(false)
+VpcInterfaceAttachment::VpcInterfaceAttachment(JsonView jsonValue)
+  : VpcInterfaceAttachment()
 {
   *this = jsonValue;
 }

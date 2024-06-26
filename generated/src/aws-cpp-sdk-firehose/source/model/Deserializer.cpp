@@ -24,9 +24,8 @@ Deserializer::Deserializer() :
 {
 }
 
-Deserializer::Deserializer(JsonView jsonValue) : 
-    m_openXJsonSerDeHasBeenSet(false),
-    m_hiveJsonSerDeHasBeenSet(false)
+Deserializer::Deserializer(JsonView jsonValue)
+  : Deserializer()
 {
   *this = jsonValue;
 }

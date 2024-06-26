@@ -24,9 +24,8 @@ HttpEndpointDescription::HttpEndpointDescription() :
 {
 }
 
-HttpEndpointDescription::HttpEndpointDescription(JsonView jsonValue) : 
-    m_urlHasBeenSet(false),
-    m_nameHasBeenSet(false)
+HttpEndpointDescription::HttpEndpointDescription(JsonView jsonValue)
+  : HttpEndpointDescription()
 {
   *this = jsonValue;
 }

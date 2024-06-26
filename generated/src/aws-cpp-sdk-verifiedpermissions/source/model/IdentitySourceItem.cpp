@@ -28,13 +28,8 @@ IdentitySourceItem::IdentitySourceItem() :
 {
 }
 
-IdentitySourceItem::IdentitySourceItem(JsonView jsonValue) : 
-    m_createdDateHasBeenSet(false),
-    m_identitySourceIdHasBeenSet(false),
-    m_lastUpdatedDateHasBeenSet(false),
-    m_policyStoreIdHasBeenSet(false),
-    m_principalEntityTypeHasBeenSet(false),
-    m_configurationHasBeenSet(false)
+IdentitySourceItem::IdentitySourceItem(JsonView jsonValue)
+  : IdentitySourceItem()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ CustomConnectorSourceProperties::CustomConnectorSourceProperties() :
 {
 }
 
-CustomConnectorSourceProperties::CustomConnectorSourceProperties(JsonView jsonValue) : 
-    m_entityNameHasBeenSet(false),
-    m_customPropertiesHasBeenSet(false),
-    m_dataTransferApiHasBeenSet(false)
+CustomConnectorSourceProperties::CustomConnectorSourceProperties(JsonView jsonValue)
+  : CustomConnectorSourceProperties()
 {
   *this = jsonValue;
 }

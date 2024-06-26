@@ -23,8 +23,8 @@ CustomPluginLocation::CustomPluginLocation() :
 {
 }
 
-CustomPluginLocation::CustomPluginLocation(JsonView jsonValue) : 
-    m_s3LocationHasBeenSet(false)
+CustomPluginLocation::CustomPluginLocation(JsonView jsonValue)
+  : CustomPluginLocation()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ Hdr10Settings::Hdr10Settings() :
 {
 }
 
-Hdr10Settings::Hdr10Settings(JsonView jsonValue) : 
-    m_maxCll(0),
-    m_maxCllHasBeenSet(false),
-    m_maxFall(0),
-    m_maxFallHasBeenSet(false)
+Hdr10Settings::Hdr10Settings(JsonView jsonValue)
+  : Hdr10Settings()
 {
   *this = jsonValue;
 }

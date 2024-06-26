@@ -24,9 +24,8 @@ S3BucketCriteriaForJob::S3BucketCriteriaForJob() :
 {
 }
 
-S3BucketCriteriaForJob::S3BucketCriteriaForJob(JsonView jsonValue) : 
-    m_excludesHasBeenSet(false),
-    m_includesHasBeenSet(false)
+S3BucketCriteriaForJob::S3BucketCriteriaForJob(JsonView jsonValue)
+  : S3BucketCriteriaForJob()
 {
   *this = jsonValue;
 }

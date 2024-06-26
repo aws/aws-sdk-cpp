@@ -22,8 +22,8 @@ StopTextTranslationJobResult::StopTextTranslationJobResult() :
 {
 }
 
-StopTextTranslationJobResult::StopTextTranslationJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_jobStatus(JobStatus::NOT_SET)
+StopTextTranslationJobResult::StopTextTranslationJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : StopTextTranslationJobResult()
 {
   *this = result;
 }

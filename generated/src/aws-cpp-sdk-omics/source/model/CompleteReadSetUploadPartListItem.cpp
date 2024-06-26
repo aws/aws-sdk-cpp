@@ -27,12 +27,8 @@ CompleteReadSetUploadPartListItem::CompleteReadSetUploadPartListItem() :
 {
 }
 
-CompleteReadSetUploadPartListItem::CompleteReadSetUploadPartListItem(JsonView jsonValue) : 
-    m_partNumber(0),
-    m_partNumberHasBeenSet(false),
-    m_partSource(ReadSetPartSource::NOT_SET),
-    m_partSourceHasBeenSet(false),
-    m_checksumHasBeenSet(false)
+CompleteReadSetUploadPartListItem::CompleteReadSetUploadPartListItem(JsonView jsonValue)
+  : CompleteReadSetUploadPartListItem()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ LambdaFunctionSucceededEventDetails::LambdaFunctionSucceededEventDetails() :
 {
 }
 
-LambdaFunctionSucceededEventDetails::LambdaFunctionSucceededEventDetails(JsonView jsonValue) : 
-    m_outputHasBeenSet(false),
-    m_outputDetailsHasBeenSet(false)
+LambdaFunctionSucceededEventDetails::LambdaFunctionSucceededEventDetails(JsonView jsonValue)
+  : LambdaFunctionSucceededEventDetails()
 {
   *this = jsonValue;
 }

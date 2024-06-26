@@ -24,9 +24,8 @@ ServiceFault::ServiceFault() :
 {
 }
 
-ServiceFault::ServiceFault(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_turkErrorCodeHasBeenSet(false)
+ServiceFault::ServiceFault(JsonView jsonValue)
+  : ServiceFault()
 {
   *this = jsonValue;
 }

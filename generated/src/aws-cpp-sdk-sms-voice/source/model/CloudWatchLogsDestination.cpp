@@ -24,9 +24,8 @@ CloudWatchLogsDestination::CloudWatchLogsDestination() :
 {
 }
 
-CloudWatchLogsDestination::CloudWatchLogsDestination(JsonView jsonValue) : 
-    m_iamRoleArnHasBeenSet(false),
-    m_logGroupArnHasBeenSet(false)
+CloudWatchLogsDestination::CloudWatchLogsDestination(JsonView jsonValue)
+  : CloudWatchLogsDestination()
 {
   *this = jsonValue;
 }

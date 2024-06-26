@@ -22,8 +22,8 @@ GetCisScanReportResult::GetCisScanReportResult() :
 {
 }
 
-GetCisScanReportResult::GetCisScanReportResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(CisReportStatus::NOT_SET)
+GetCisScanReportResult::GetCisScanReportResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetCisScanReportResult()
 {
   *this = result;
 }

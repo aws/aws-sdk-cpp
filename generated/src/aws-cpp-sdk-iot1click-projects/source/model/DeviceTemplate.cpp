@@ -24,9 +24,8 @@ DeviceTemplate::DeviceTemplate() :
 {
 }
 
-DeviceTemplate::DeviceTemplate(JsonView jsonValue) : 
-    m_deviceTypeHasBeenSet(false),
-    m_callbackOverridesHasBeenSet(false)
+DeviceTemplate::DeviceTemplate(JsonView jsonValue)
+  : DeviceTemplate()
 {
   *this = jsonValue;
 }

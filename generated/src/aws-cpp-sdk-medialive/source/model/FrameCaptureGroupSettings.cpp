@@ -24,9 +24,8 @@ FrameCaptureGroupSettings::FrameCaptureGroupSettings() :
 {
 }
 
-FrameCaptureGroupSettings::FrameCaptureGroupSettings(JsonView jsonValue) : 
-    m_destinationHasBeenSet(false),
-    m_frameCaptureCdnSettingsHasBeenSet(false)
+FrameCaptureGroupSettings::FrameCaptureGroupSettings(JsonView jsonValue)
+  : FrameCaptureGroupSettings()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ JobRunAsUser::JobRunAsUser() :
 {
 }
 
-JobRunAsUser::JobRunAsUser(JsonView jsonValue) : 
-    m_posixHasBeenSet(false),
-    m_runAs(RunAs::NOT_SET),
-    m_runAsHasBeenSet(false),
-    m_windowsHasBeenSet(false)
+JobRunAsUser::JobRunAsUser(JsonView jsonValue)
+  : JobRunAsUser()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ JobAttachmentDetailsError::JobAttachmentDetailsError() :
 {
 }
 
-JobAttachmentDetailsError::JobAttachmentDetailsError(JsonView jsonValue) : 
-    m_code(JobEntityErrorCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_jobIdHasBeenSet(false),
-    m_messageHasBeenSet(false)
+JobAttachmentDetailsError::JobAttachmentDetailsError(JsonView jsonValue)
+  : JobAttachmentDetailsError()
 {
   *this = jsonValue;
 }

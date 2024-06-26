@@ -28,13 +28,8 @@ OutputDescription::OutputDescription() :
 {
 }
 
-OutputDescription::OutputDescription(JsonView jsonValue) : 
-    m_outputIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_kinesisStreamsOutputDescriptionHasBeenSet(false),
-    m_kinesisFirehoseOutputDescriptionHasBeenSet(false),
-    m_lambdaOutputDescriptionHasBeenSet(false),
-    m_destinationSchemaHasBeenSet(false)
+OutputDescription::OutputDescription(JsonView jsonValue)
+  : OutputDescription()
 {
   *this = jsonValue;
 }

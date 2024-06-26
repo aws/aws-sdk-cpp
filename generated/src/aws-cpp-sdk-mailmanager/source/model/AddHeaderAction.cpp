@@ -24,9 +24,8 @@ AddHeaderAction::AddHeaderAction() :
 {
 }
 
-AddHeaderAction::AddHeaderAction(JsonView jsonValue) : 
-    m_headerNameHasBeenSet(false),
-    m_headerValueHasBeenSet(false)
+AddHeaderAction::AddHeaderAction(JsonView jsonValue)
+  : AddHeaderAction()
 {
   *this = jsonValue;
 }

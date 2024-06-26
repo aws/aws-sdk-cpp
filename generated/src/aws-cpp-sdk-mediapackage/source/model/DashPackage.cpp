@@ -49,34 +49,8 @@ DashPackage::DashPackage() :
 {
 }
 
-DashPackage::DashPackage(JsonView jsonValue) : 
-    m_adTriggersHasBeenSet(false),
-    m_adsOnDeliveryRestrictions(AdsOnDeliveryRestrictions::NOT_SET),
-    m_adsOnDeliveryRestrictionsHasBeenSet(false),
-    m_encryptionHasBeenSet(false),
-    m_includeIframeOnlyStream(false),
-    m_includeIframeOnlyStreamHasBeenSet(false),
-    m_manifestLayout(ManifestLayout::NOT_SET),
-    m_manifestLayoutHasBeenSet(false),
-    m_manifestWindowSeconds(0),
-    m_manifestWindowSecondsHasBeenSet(false),
-    m_minBufferTimeSeconds(0),
-    m_minBufferTimeSecondsHasBeenSet(false),
-    m_minUpdatePeriodSeconds(0),
-    m_minUpdatePeriodSecondsHasBeenSet(false),
-    m_periodTriggersHasBeenSet(false),
-    m_profile(Profile::NOT_SET),
-    m_profileHasBeenSet(false),
-    m_segmentDurationSeconds(0),
-    m_segmentDurationSecondsHasBeenSet(false),
-    m_segmentTemplateFormat(SegmentTemplateFormat::NOT_SET),
-    m_segmentTemplateFormatHasBeenSet(false),
-    m_streamSelectionHasBeenSet(false),
-    m_suggestedPresentationDelaySeconds(0),
-    m_suggestedPresentationDelaySecondsHasBeenSet(false),
-    m_utcTiming(UtcTiming::NOT_SET),
-    m_utcTimingHasBeenSet(false),
-    m_utcTimingUriHasBeenSet(false)
+DashPackage::DashPackage(JsonView jsonValue)
+  : DashPackage()
 {
   *this = jsonValue;
 }

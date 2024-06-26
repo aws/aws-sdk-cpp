@@ -33,18 +33,8 @@ GlossaryItem::GlossaryItem() :
 {
 }
 
-GlossaryItem::GlossaryItem(JsonView jsonValue) : 
-    m_createdAtHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_domainIdHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_owningProjectIdHasBeenSet(false),
-    m_status(GlossaryStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_updatedByHasBeenSet(false)
+GlossaryItem::GlossaryItem(JsonView jsonValue)
+  : GlossaryItem()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ MetricPolicy::MetricPolicy() :
 {
 }
 
-MetricPolicy::MetricPolicy(JsonView jsonValue) : 
-    m_containerLevelMetrics(ContainerLevelMetrics::NOT_SET),
-    m_containerLevelMetricsHasBeenSet(false),
-    m_metricPolicyRulesHasBeenSet(false)
+MetricPolicy::MetricPolicy(JsonView jsonValue)
+  : MetricPolicy()
 {
   *this = jsonValue;
 }

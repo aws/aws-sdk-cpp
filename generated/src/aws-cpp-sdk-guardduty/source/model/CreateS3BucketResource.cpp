@@ -24,9 +24,8 @@ CreateS3BucketResource::CreateS3BucketResource() :
 {
 }
 
-CreateS3BucketResource::CreateS3BucketResource(JsonView jsonValue) : 
-    m_bucketNameHasBeenSet(false),
-    m_objectPrefixesHasBeenSet(false)
+CreateS3BucketResource::CreateS3BucketResource(JsonView jsonValue)
+  : CreateS3BucketResource()
 {
   *this = jsonValue;
 }

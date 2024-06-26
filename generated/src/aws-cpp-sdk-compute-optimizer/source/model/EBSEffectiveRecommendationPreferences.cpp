@@ -23,8 +23,8 @@ EBSEffectiveRecommendationPreferences::EBSEffectiveRecommendationPreferences() :
 {
 }
 
-EBSEffectiveRecommendationPreferences::EBSEffectiveRecommendationPreferences(JsonView jsonValue) : 
-    m_savingsEstimationModeHasBeenSet(false)
+EBSEffectiveRecommendationPreferences::EBSEffectiveRecommendationPreferences(JsonView jsonValue)
+  : EBSEffectiveRecommendationPreferences()
 {
   *this = jsonValue;
 }

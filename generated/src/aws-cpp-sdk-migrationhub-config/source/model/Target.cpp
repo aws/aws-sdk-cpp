@@ -25,10 +25,8 @@ Target::Target() :
 {
 }
 
-Target::Target(JsonView jsonValue) : 
-    m_type(TargetType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_idHasBeenSet(false)
+Target::Target(JsonView jsonValue)
+  : Target()
 {
   *this = jsonValue;
 }

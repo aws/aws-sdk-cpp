@@ -25,10 +25,8 @@ RelationshipsListItem::RelationshipsListItem() :
 {
 }
 
-RelationshipsListItem::RelationshipsListItem(JsonView jsonValue) : 
-    m_idsHasBeenSet(false),
-    m_type(RelationshipType::NOT_SET),
-    m_typeHasBeenSet(false)
+RelationshipsListItem::RelationshipsListItem(JsonView jsonValue)
+  : RelationshipsListItem()
 {
   *this = jsonValue;
 }

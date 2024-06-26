@@ -25,10 +25,8 @@ DedicatedIpPool::DedicatedIpPool() :
 {
 }
 
-DedicatedIpPool::DedicatedIpPool(JsonView jsonValue) : 
-    m_poolNameHasBeenSet(false),
-    m_scalingMode(ScalingMode::NOT_SET),
-    m_scalingModeHasBeenSet(false)
+DedicatedIpPool::DedicatedIpPool(JsonView jsonValue)
+  : DedicatedIpPool()
 {
   *this = jsonValue;
 }

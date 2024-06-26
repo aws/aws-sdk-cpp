@@ -26,11 +26,8 @@ DeviceConfigurationType::DeviceConfigurationType() :
 {
 }
 
-DeviceConfigurationType::DeviceConfigurationType(JsonView jsonValue) : 
-    m_challengeRequiredOnNewDevice(false),
-    m_challengeRequiredOnNewDeviceHasBeenSet(false),
-    m_deviceOnlyRememberedOnUserPrompt(false),
-    m_deviceOnlyRememberedOnUserPromptHasBeenSet(false)
+DeviceConfigurationType::DeviceConfigurationType(JsonView jsonValue)
+  : DeviceConfigurationType()
 {
   *this = jsonValue;
 }

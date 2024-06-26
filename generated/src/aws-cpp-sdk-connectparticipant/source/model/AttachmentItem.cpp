@@ -27,12 +27,8 @@ AttachmentItem::AttachmentItem() :
 {
 }
 
-AttachmentItem::AttachmentItem(JsonView jsonValue) : 
-    m_contentTypeHasBeenSet(false),
-    m_attachmentIdHasBeenSet(false),
-    m_attachmentNameHasBeenSet(false),
-    m_status(ArtifactStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+AttachmentItem::AttachmentItem(JsonView jsonValue)
+  : AttachmentItem()
 {
   *this = jsonValue;
 }

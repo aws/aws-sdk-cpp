@@ -24,9 +24,8 @@ NodeInterface::NodeInterface() :
 {
 }
 
-NodeInterface::NodeInterface(JsonView jsonValue) : 
-    m_inputsHasBeenSet(false),
-    m_outputsHasBeenSet(false)
+NodeInterface::NodeInterface(JsonView jsonValue)
+  : NodeInterface()
 {
   *this = jsonValue;
 }

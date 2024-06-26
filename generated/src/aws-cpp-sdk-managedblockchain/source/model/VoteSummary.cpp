@@ -26,11 +26,8 @@ VoteSummary::VoteSummary() :
 {
 }
 
-VoteSummary::VoteSummary(JsonView jsonValue) : 
-    m_vote(VoteValue::NOT_SET),
-    m_voteHasBeenSet(false),
-    m_memberNameHasBeenSet(false),
-    m_memberIdHasBeenSet(false)
+VoteSummary::VoteSummary(JsonView jsonValue)
+  : VoteSummary()
 {
   *this = jsonValue;
 }

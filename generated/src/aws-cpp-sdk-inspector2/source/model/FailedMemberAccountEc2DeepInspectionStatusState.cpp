@@ -26,11 +26,8 @@ FailedMemberAccountEc2DeepInspectionStatusState::FailedMemberAccountEc2DeepInspe
 {
 }
 
-FailedMemberAccountEc2DeepInspectionStatusState::FailedMemberAccountEc2DeepInspectionStatusState(JsonView jsonValue) : 
-    m_accountIdHasBeenSet(false),
-    m_ec2ScanStatus(Status::NOT_SET),
-    m_ec2ScanStatusHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
+FailedMemberAccountEc2DeepInspectionStatusState::FailedMemberAccountEc2DeepInspectionStatusState(JsonView jsonValue)
+  : FailedMemberAccountEc2DeepInspectionStatusState()
 {
   *this = jsonValue;
 }

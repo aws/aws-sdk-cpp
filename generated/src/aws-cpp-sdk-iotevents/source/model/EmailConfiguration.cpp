@@ -25,10 +25,8 @@ EmailConfiguration::EmailConfiguration() :
 {
 }
 
-EmailConfiguration::EmailConfiguration(JsonView jsonValue) : 
-    m_fromHasBeenSet(false),
-    m_contentHasBeenSet(false),
-    m_recipientsHasBeenSet(false)
+EmailConfiguration::EmailConfiguration(JsonView jsonValue)
+  : EmailConfiguration()
 {
   *this = jsonValue;
 }

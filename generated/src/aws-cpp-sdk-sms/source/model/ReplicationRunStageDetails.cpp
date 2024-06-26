@@ -24,9 +24,8 @@ ReplicationRunStageDetails::ReplicationRunStageDetails() :
 {
 }
 
-ReplicationRunStageDetails::ReplicationRunStageDetails(JsonView jsonValue) : 
-    m_stageHasBeenSet(false),
-    m_stageProgressHasBeenSet(false)
+ReplicationRunStageDetails::ReplicationRunStageDetails(JsonView jsonValue)
+  : ReplicationRunStageDetails()
 {
   *this = jsonValue;
 }

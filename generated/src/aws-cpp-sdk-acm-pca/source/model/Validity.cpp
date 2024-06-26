@@ -26,11 +26,8 @@ Validity::Validity() :
 {
 }
 
-Validity::Validity(JsonView jsonValue) : 
-    m_value(0),
-    m_valueHasBeenSet(false),
-    m_type(ValidityPeriodType::NOT_SET),
-    m_typeHasBeenSet(false)
+Validity::Validity(JsonView jsonValue)
+  : Validity()
 {
   *this = jsonValue;
 }

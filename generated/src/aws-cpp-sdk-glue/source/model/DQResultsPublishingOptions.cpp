@@ -28,13 +28,8 @@ DQResultsPublishingOptions::DQResultsPublishingOptions() :
 {
 }
 
-DQResultsPublishingOptions::DQResultsPublishingOptions(JsonView jsonValue) : 
-    m_evaluationContextHasBeenSet(false),
-    m_resultsS3PrefixHasBeenSet(false),
-    m_cloudWatchMetricsEnabled(false),
-    m_cloudWatchMetricsEnabledHasBeenSet(false),
-    m_resultsPublishingEnabled(false),
-    m_resultsPublishingEnabledHasBeenSet(false)
+DQResultsPublishingOptions::DQResultsPublishingOptions(JsonView jsonValue)
+  : DQResultsPublishingOptions()
 {
   *this = jsonValue;
 }

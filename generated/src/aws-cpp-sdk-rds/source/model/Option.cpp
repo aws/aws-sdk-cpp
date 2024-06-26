@@ -36,19 +36,8 @@ Option::Option() :
 {
 }
 
-Option::Option(const XmlNode& xmlNode) : 
-    m_optionNameHasBeenSet(false),
-    m_optionDescriptionHasBeenSet(false),
-    m_persistent(false),
-    m_persistentHasBeenSet(false),
-    m_permanent(false),
-    m_permanentHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_optionVersionHasBeenSet(false),
-    m_optionSettingsHasBeenSet(false),
-    m_dBSecurityGroupMembershipsHasBeenSet(false),
-    m_vpcSecurityGroupMembershipsHasBeenSet(false)
+Option::Option(const XmlNode& xmlNode)
+  : Option()
 {
   *this = xmlNode;
 }

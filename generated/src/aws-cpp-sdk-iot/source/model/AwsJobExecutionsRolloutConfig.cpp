@@ -25,10 +25,8 @@ AwsJobExecutionsRolloutConfig::AwsJobExecutionsRolloutConfig() :
 {
 }
 
-AwsJobExecutionsRolloutConfig::AwsJobExecutionsRolloutConfig(JsonView jsonValue) : 
-    m_maximumPerMinute(0),
-    m_maximumPerMinuteHasBeenSet(false),
-    m_exponentialRateHasBeenSet(false)
+AwsJobExecutionsRolloutConfig::AwsJobExecutionsRolloutConfig(JsonView jsonValue)
+  : AwsJobExecutionsRolloutConfig()
 {
   *this = jsonValue;
 }

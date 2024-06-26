@@ -26,11 +26,8 @@ TransitionEvent::TransitionEvent() :
 {
 }
 
-TransitionEvent::TransitionEvent(JsonView jsonValue) : 
-    m_eventNameHasBeenSet(false),
-    m_conditionHasBeenSet(false),
-    m_actionsHasBeenSet(false),
-    m_nextStateHasBeenSet(false)
+TransitionEvent::TransitionEvent(JsonView jsonValue)
+  : TransitionEvent()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ MediaPackageGroupSettings::MediaPackageGroupSettings() :
 {
 }
 
-MediaPackageGroupSettings::MediaPackageGroupSettings(JsonView jsonValue) : 
-    m_destinationHasBeenSet(false)
+MediaPackageGroupSettings::MediaPackageGroupSettings(JsonView jsonValue)
+  : MediaPackageGroupSettings()
 {
   *this = jsonValue;
 }

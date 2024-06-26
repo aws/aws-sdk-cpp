@@ -26,9 +26,8 @@ NumberItemAttributesExceeded::NumberItemAttributesExceeded() :
 {
 }
 
-NumberItemAttributesExceeded::NumberItemAttributesExceeded(const XmlNode& xmlNode) : 
-    m_boxUsage(0.0),
-    m_boxUsageHasBeenSet(false)
+NumberItemAttributesExceeded::NumberItemAttributesExceeded(const XmlNode& xmlNode)
+  : NumberItemAttributesExceeded()
 {
   *this = xmlNode;
 }

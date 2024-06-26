@@ -29,14 +29,8 @@ WorkflowStepExecution::WorkflowStepExecution() :
 {
 }
 
-WorkflowStepExecution::WorkflowStepExecution(JsonView jsonValue) : 
-    m_stepExecutionIdHasBeenSet(false),
-    m_imageBuildVersionArnHasBeenSet(false),
-    m_workflowExecutionIdHasBeenSet(false),
-    m_workflowBuildVersionArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_actionHasBeenSet(false),
-    m_startTimeHasBeenSet(false)
+WorkflowStepExecution::WorkflowStepExecution(JsonView jsonValue)
+  : WorkflowStepExecution()
 {
   *this = jsonValue;
 }

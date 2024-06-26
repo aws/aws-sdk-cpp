@@ -22,8 +22,8 @@ UpdateTemplateAliasResult::UpdateTemplateAliasResult() :
 {
 }
 
-UpdateTemplateAliasResult::UpdateTemplateAliasResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+UpdateTemplateAliasResult::UpdateTemplateAliasResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateTemplateAliasResult()
 {
   *this = result;
 }

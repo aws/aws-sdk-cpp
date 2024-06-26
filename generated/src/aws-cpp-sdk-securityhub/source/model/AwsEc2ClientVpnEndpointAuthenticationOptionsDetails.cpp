@@ -26,11 +26,8 @@ AwsEc2ClientVpnEndpointAuthenticationOptionsDetails::AwsEc2ClientVpnEndpointAuth
 {
 }
 
-AwsEc2ClientVpnEndpointAuthenticationOptionsDetails::AwsEc2ClientVpnEndpointAuthenticationOptionsDetails(JsonView jsonValue) : 
-    m_typeHasBeenSet(false),
-    m_activeDirectoryHasBeenSet(false),
-    m_mutualAuthenticationHasBeenSet(false),
-    m_federatedAuthenticationHasBeenSet(false)
+AwsEc2ClientVpnEndpointAuthenticationOptionsDetails::AwsEc2ClientVpnEndpointAuthenticationOptionsDetails(JsonView jsonValue)
+  : AwsEc2ClientVpnEndpointAuthenticationOptionsDetails()
 {
   *this = jsonValue;
 }

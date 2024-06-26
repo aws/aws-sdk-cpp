@@ -27,12 +27,8 @@ SelfManagedActiveDirectoryAttributes::SelfManagedActiveDirectoryAttributes() :
 {
 }
 
-SelfManagedActiveDirectoryAttributes::SelfManagedActiveDirectoryAttributes(JsonView jsonValue) : 
-    m_domainNameHasBeenSet(false),
-    m_organizationalUnitDistinguishedNameHasBeenSet(false),
-    m_fileSystemAdministratorsGroupHasBeenSet(false),
-    m_userNameHasBeenSet(false),
-    m_dnsIpsHasBeenSet(false)
+SelfManagedActiveDirectoryAttributes::SelfManagedActiveDirectoryAttributes(JsonView jsonValue)
+  : SelfManagedActiveDirectoryAttributes()
 {
   *this = jsonValue;
 }

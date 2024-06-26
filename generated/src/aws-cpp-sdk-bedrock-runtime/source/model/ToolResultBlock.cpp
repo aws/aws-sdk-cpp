@@ -26,11 +26,8 @@ ToolResultBlock::ToolResultBlock() :
 {
 }
 
-ToolResultBlock::ToolResultBlock(JsonView jsonValue) : 
-    m_toolUseIdHasBeenSet(false),
-    m_contentHasBeenSet(false),
-    m_status(ToolResultStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+ToolResultBlock::ToolResultBlock(JsonView jsonValue)
+  : ToolResultBlock()
 {
   *this = jsonValue;
 }

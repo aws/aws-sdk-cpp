@@ -26,11 +26,8 @@ TLSCertificateConfiguration::TLSCertificateConfiguration() :
 {
 }
 
-TLSCertificateConfiguration::TLSCertificateConfiguration(JsonView jsonValue) : 
-    m_certificateProviderType(CertificateProviderType::NOT_SET),
-    m_certificateProviderTypeHasBeenSet(false),
-    m_publicCertificateSecretArnHasBeenSet(false),
-    m_privateCertificateSecretArnHasBeenSet(false)
+TLSCertificateConfiguration::TLSCertificateConfiguration(JsonView jsonValue)
+  : TLSCertificateConfiguration()
 {
   *this = jsonValue;
 }

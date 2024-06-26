@@ -30,15 +30,8 @@ MediaLiveConnectorPipeline::MediaLiveConnectorPipeline() :
 {
 }
 
-MediaLiveConnectorPipeline::MediaLiveConnectorPipeline(JsonView jsonValue) : 
-    m_sourcesHasBeenSet(false),
-    m_sinksHasBeenSet(false),
-    m_mediaPipelineIdHasBeenSet(false),
-    m_mediaPipelineArnHasBeenSet(false),
-    m_status(MediaPipelineStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false),
-    m_updatedTimestampHasBeenSet(false)
+MediaLiveConnectorPipeline::MediaLiveConnectorPipeline(JsonView jsonValue)
+  : MediaLiveConnectorPipeline()
 {
   *this = jsonValue;
 }

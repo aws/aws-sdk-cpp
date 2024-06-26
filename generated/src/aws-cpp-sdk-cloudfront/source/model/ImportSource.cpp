@@ -27,10 +27,8 @@ ImportSource::ImportSource() :
 {
 }
 
-ImportSource::ImportSource(const XmlNode& xmlNode) : 
-    m_sourceType(ImportSourceType::NOT_SET),
-    m_sourceTypeHasBeenSet(false),
-    m_sourceARNHasBeenSet(false)
+ImportSource::ImportSource(const XmlNode& xmlNode)
+  : ImportSource()
 {
   *this = xmlNode;
 }

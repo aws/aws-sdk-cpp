@@ -26,9 +26,8 @@ PolicyGroup::PolicyGroup() :
 {
 }
 
-PolicyGroup::PolicyGroup(const XmlNode& xmlNode) : 
-    m_groupNameHasBeenSet(false),
-    m_groupIdHasBeenSet(false)
+PolicyGroup::PolicyGroup(const XmlNode& xmlNode)
+  : PolicyGroup()
 {
   *this = xmlNode;
 }

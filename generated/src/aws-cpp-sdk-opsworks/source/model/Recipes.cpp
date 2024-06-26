@@ -27,12 +27,8 @@ Recipes::Recipes() :
 {
 }
 
-Recipes::Recipes(JsonView jsonValue) : 
-    m_setupHasBeenSet(false),
-    m_configureHasBeenSet(false),
-    m_deployHasBeenSet(false),
-    m_undeployHasBeenSet(false),
-    m_shutdownHasBeenSet(false)
+Recipes::Recipes(JsonView jsonValue)
+  : Recipes()
 {
   *this = jsonValue;
 }

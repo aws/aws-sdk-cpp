@@ -33,18 +33,8 @@ AutoScalingGroupRecommendationOption::AutoScalingGroupRecommendationOption() :
 {
 }
 
-AutoScalingGroupRecommendationOption::AutoScalingGroupRecommendationOption(JsonView jsonValue) : 
-    m_configurationHasBeenSet(false),
-    m_instanceGpuInfoHasBeenSet(false),
-    m_projectedUtilizationMetricsHasBeenSet(false),
-    m_performanceRisk(0.0),
-    m_performanceRiskHasBeenSet(false),
-    m_rank(0),
-    m_rankHasBeenSet(false),
-    m_savingsOpportunityHasBeenSet(false),
-    m_savingsOpportunityAfterDiscountsHasBeenSet(false),
-    m_migrationEffort(MigrationEffort::NOT_SET),
-    m_migrationEffortHasBeenSet(false)
+AutoScalingGroupRecommendationOption::AutoScalingGroupRecommendationOption(JsonView jsonValue)
+  : AutoScalingGroupRecommendationOption()
 {
   *this = jsonValue;
 }

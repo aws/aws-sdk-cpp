@@ -22,8 +22,8 @@ SearchRasterDataCollectionResult::SearchRasterDataCollectionResult() :
 {
 }
 
-SearchRasterDataCollectionResult::SearchRasterDataCollectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_approximateResultCount(0)
+SearchRasterDataCollectionResult::SearchRasterDataCollectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : SearchRasterDataCollectionResult()
 {
   *this = result;
 }

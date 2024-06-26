@@ -24,9 +24,8 @@ RegexMatchSetSummary::RegexMatchSetSummary() :
 {
 }
 
-RegexMatchSetSummary::RegexMatchSetSummary(JsonView jsonValue) : 
-    m_regexMatchSetIdHasBeenSet(false),
-    m_nameHasBeenSet(false)
+RegexMatchSetSummary::RegexMatchSetSummary(JsonView jsonValue)
+  : RegexMatchSetSummary()
 {
   *this = jsonValue;
 }

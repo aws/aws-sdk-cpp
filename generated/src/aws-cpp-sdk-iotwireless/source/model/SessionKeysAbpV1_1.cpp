@@ -26,11 +26,8 @@ SessionKeysAbpV1_1::SessionKeysAbpV1_1() :
 {
 }
 
-SessionKeysAbpV1_1::SessionKeysAbpV1_1(JsonView jsonValue) : 
-    m_fNwkSIntKeyHasBeenSet(false),
-    m_sNwkSIntKeyHasBeenSet(false),
-    m_nwkSEncKeyHasBeenSet(false),
-    m_appSKeyHasBeenSet(false)
+SessionKeysAbpV1_1::SessionKeysAbpV1_1(JsonView jsonValue)
+  : SessionKeysAbpV1_1()
 {
   *this = jsonValue;
 }

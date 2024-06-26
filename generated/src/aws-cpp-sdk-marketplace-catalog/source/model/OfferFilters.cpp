@@ -32,17 +32,8 @@ OfferFilters::OfferFilters() :
 {
 }
 
-OfferFilters::OfferFilters(JsonView jsonValue) : 
-    m_entityIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_productIdHasBeenSet(false),
-    m_resaleAuthorizationIdHasBeenSet(false),
-    m_releaseDateHasBeenSet(false),
-    m_availabilityEndDateHasBeenSet(false),
-    m_buyerAccountsHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_targetingHasBeenSet(false),
-    m_lastModifiedDateHasBeenSet(false)
+OfferFilters::OfferFilters(JsonView jsonValue)
+  : OfferFilters()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ GetChatControlsConfigurationResult::GetChatControlsConfigurationResult() :
 {
 }
 
-GetChatControlsConfigurationResult::GetChatControlsConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_responseScope(ResponseScope::NOT_SET)
+GetChatControlsConfigurationResult::GetChatControlsConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetChatControlsConfigurationResult()
 {
   *this = result;
 }

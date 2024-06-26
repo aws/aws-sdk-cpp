@@ -25,10 +25,8 @@ VirtualGatewayTlsValidationContextTrust::VirtualGatewayTlsValidationContextTrust
 {
 }
 
-VirtualGatewayTlsValidationContextTrust::VirtualGatewayTlsValidationContextTrust(JsonView jsonValue) : 
-    m_acmHasBeenSet(false),
-    m_fileHasBeenSet(false),
-    m_sdsHasBeenSet(false)
+VirtualGatewayTlsValidationContextTrust::VirtualGatewayTlsValidationContextTrust(JsonView jsonValue)
+  : VirtualGatewayTlsValidationContextTrust()
 {
   *this = jsonValue;
 }

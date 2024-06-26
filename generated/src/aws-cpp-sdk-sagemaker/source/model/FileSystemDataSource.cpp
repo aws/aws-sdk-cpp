@@ -28,13 +28,8 @@ FileSystemDataSource::FileSystemDataSource() :
 {
 }
 
-FileSystemDataSource::FileSystemDataSource(JsonView jsonValue) : 
-    m_fileSystemIdHasBeenSet(false),
-    m_fileSystemAccessMode(FileSystemAccessMode::NOT_SET),
-    m_fileSystemAccessModeHasBeenSet(false),
-    m_fileSystemType(FileSystemType::NOT_SET),
-    m_fileSystemTypeHasBeenSet(false),
-    m_directoryPathHasBeenSet(false)
+FileSystemDataSource::FileSystemDataSource(JsonView jsonValue)
+  : FileSystemDataSource()
 {
   *this = jsonValue;
 }

@@ -28,11 +28,8 @@ TypeFilters::TypeFilters() :
 {
 }
 
-TypeFilters::TypeFilters(const XmlNode& xmlNode) : 
-    m_category(Category::NOT_SET),
-    m_categoryHasBeenSet(false),
-    m_publisherIdHasBeenSet(false),
-    m_typeNamePrefixHasBeenSet(false)
+TypeFilters::TypeFilters(const XmlNode& xmlNode)
+  : TypeFilters()
 {
   *this = xmlNode;
 }

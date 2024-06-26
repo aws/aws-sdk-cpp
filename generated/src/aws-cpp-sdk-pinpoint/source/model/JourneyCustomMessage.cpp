@@ -23,8 +23,8 @@ JourneyCustomMessage::JourneyCustomMessage() :
 {
 }
 
-JourneyCustomMessage::JourneyCustomMessage(JsonView jsonValue) : 
-    m_dataHasBeenSet(false)
+JourneyCustomMessage::JourneyCustomMessage(JsonView jsonValue)
+  : JourneyCustomMessage()
 {
   *this = jsonValue;
 }

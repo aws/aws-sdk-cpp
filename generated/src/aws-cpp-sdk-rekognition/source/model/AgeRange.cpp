@@ -26,11 +26,8 @@ AgeRange::AgeRange() :
 {
 }
 
-AgeRange::AgeRange(JsonView jsonValue) : 
-    m_low(0),
-    m_lowHasBeenSet(false),
-    m_high(0),
-    m_highHasBeenSet(false)
+AgeRange::AgeRange(JsonView jsonValue)
+  : AgeRange()
 {
   *this = jsonValue;
 }

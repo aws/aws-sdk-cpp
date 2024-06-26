@@ -28,13 +28,8 @@ ConnectionConfiguration::ConnectionConfiguration() :
 {
 }
 
-ConnectionConfiguration::ConnectionConfiguration(JsonView jsonValue) : 
-    m_databaseHostHasBeenSet(false),
-    m_databasePort(0),
-    m_databasePortHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_tableNameHasBeenSet(false),
-    m_secretArnHasBeenSet(false)
+ConnectionConfiguration::ConnectionConfiguration(JsonView jsonValue)
+  : ConnectionConfiguration()
 {
   *this = jsonValue;
 }

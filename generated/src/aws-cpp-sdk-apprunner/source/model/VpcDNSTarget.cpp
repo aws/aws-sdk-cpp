@@ -25,10 +25,8 @@ VpcDNSTarget::VpcDNSTarget() :
 {
 }
 
-VpcDNSTarget::VpcDNSTarget(JsonView jsonValue) : 
-    m_vpcIngressConnectionArnHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_domainNameHasBeenSet(false)
+VpcDNSTarget::VpcDNSTarget(JsonView jsonValue)
+  : VpcDNSTarget()
 {
   *this = jsonValue;
 }

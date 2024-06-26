@@ -25,10 +25,8 @@ DataColor::DataColor() :
 {
 }
 
-DataColor::DataColor(JsonView jsonValue) : 
-    m_colorHasBeenSet(false),
-    m_dataValue(0.0),
-    m_dataValueHasBeenSet(false)
+DataColor::DataColor(JsonView jsonValue)
+  : DataColor()
 {
   *this = jsonValue;
 }

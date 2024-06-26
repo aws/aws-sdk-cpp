@@ -22,8 +22,8 @@ DeleteDatastoreResult::DeleteDatastoreResult() :
 {
 }
 
-DeleteDatastoreResult::DeleteDatastoreResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_datastoreStatus(DatastoreStatus::NOT_SET)
+DeleteDatastoreResult::DeleteDatastoreResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeleteDatastoreResult()
 {
   *this = result;
 }

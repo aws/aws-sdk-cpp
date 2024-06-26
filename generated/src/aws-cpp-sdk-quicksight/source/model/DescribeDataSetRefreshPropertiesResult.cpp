@@ -22,8 +22,8 @@ DescribeDataSetRefreshPropertiesResult::DescribeDataSetRefreshPropertiesResult()
 {
 }
 
-DescribeDataSetRefreshPropertiesResult::DescribeDataSetRefreshPropertiesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+DescribeDataSetRefreshPropertiesResult::DescribeDataSetRefreshPropertiesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeDataSetRefreshPropertiesResult()
 {
   *this = result;
 }

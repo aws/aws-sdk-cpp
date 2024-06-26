@@ -25,10 +25,8 @@ RuleSet::RuleSet() :
 {
 }
 
-RuleSet::RuleSet(JsonView jsonValue) : 
-    m_lastModificationDateHasBeenSet(false),
-    m_ruleSetIdHasBeenSet(false),
-    m_ruleSetNameHasBeenSet(false)
+RuleSet::RuleSet(JsonView jsonValue)
+  : RuleSet()
 {
   *this = jsonValue;
 }

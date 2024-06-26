@@ -26,9 +26,8 @@ TargetReservationValue::TargetReservationValue() :
 {
 }
 
-TargetReservationValue::TargetReservationValue(const XmlNode& xmlNode) : 
-    m_reservationValueHasBeenSet(false),
-    m_targetConfigurationHasBeenSet(false)
+TargetReservationValue::TargetReservationValue(const XmlNode& xmlNode)
+  : TargetReservationValue()
 {
   *this = xmlNode;
 }

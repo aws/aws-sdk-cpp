@@ -28,13 +28,8 @@ UsageStatistics::UsageStatistics() :
 {
 }
 
-UsageStatistics::UsageStatistics(JsonView jsonValue) : 
-    m_sumByAccountHasBeenSet(false),
-    m_topAccountsByFeatureHasBeenSet(false),
-    m_sumByDataSourceHasBeenSet(false),
-    m_sumByResourceHasBeenSet(false),
-    m_topResourcesHasBeenSet(false),
-    m_sumByFeatureHasBeenSet(false)
+UsageStatistics::UsageStatistics(JsonView jsonValue)
+  : UsageStatistics()
 {
   *this = jsonValue;
 }

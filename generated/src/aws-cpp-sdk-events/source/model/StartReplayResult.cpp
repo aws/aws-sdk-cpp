@@ -22,8 +22,8 @@ StartReplayResult::StartReplayResult() :
 {
 }
 
-StartReplayResult::StartReplayResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_state(ReplayState::NOT_SET)
+StartReplayResult::StartReplayResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : StartReplayResult()
 {
   *this = result;
 }

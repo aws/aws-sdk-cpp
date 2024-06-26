@@ -25,10 +25,8 @@ AutomationExecutionFilter::AutomationExecutionFilter() :
 {
 }
 
-AutomationExecutionFilter::AutomationExecutionFilter(JsonView jsonValue) : 
-    m_key(AutomationExecutionFilterKey::NOT_SET),
-    m_keyHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+AutomationExecutionFilter::AutomationExecutionFilter(JsonView jsonValue)
+  : AutomationExecutionFilter()
 {
   *this = jsonValue;
 }

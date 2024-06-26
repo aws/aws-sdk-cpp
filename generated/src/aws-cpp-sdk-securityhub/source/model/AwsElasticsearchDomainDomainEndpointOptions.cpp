@@ -25,10 +25,8 @@ AwsElasticsearchDomainDomainEndpointOptions::AwsElasticsearchDomainDomainEndpoin
 {
 }
 
-AwsElasticsearchDomainDomainEndpointOptions::AwsElasticsearchDomainDomainEndpointOptions(JsonView jsonValue) : 
-    m_enforceHTTPS(false),
-    m_enforceHTTPSHasBeenSet(false),
-    m_tLSSecurityPolicyHasBeenSet(false)
+AwsElasticsearchDomainDomainEndpointOptions::AwsElasticsearchDomainDomainEndpointOptions(JsonView jsonValue)
+  : AwsElasticsearchDomainDomainEndpointOptions()
 {
   *this = jsonValue;
 }

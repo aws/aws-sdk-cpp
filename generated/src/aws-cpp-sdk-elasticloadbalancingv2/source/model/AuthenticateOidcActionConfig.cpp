@@ -39,22 +39,8 @@ AuthenticateOidcActionConfig::AuthenticateOidcActionConfig() :
 {
 }
 
-AuthenticateOidcActionConfig::AuthenticateOidcActionConfig(const XmlNode& xmlNode) : 
-    m_issuerHasBeenSet(false),
-    m_authorizationEndpointHasBeenSet(false),
-    m_tokenEndpointHasBeenSet(false),
-    m_userInfoEndpointHasBeenSet(false),
-    m_clientIdHasBeenSet(false),
-    m_clientSecretHasBeenSet(false),
-    m_sessionCookieNameHasBeenSet(false),
-    m_scopeHasBeenSet(false),
-    m_sessionTimeout(0),
-    m_sessionTimeoutHasBeenSet(false),
-    m_authenticationRequestExtraParamsHasBeenSet(false),
-    m_onUnauthenticatedRequest(AuthenticateOidcActionConditionalBehaviorEnum::NOT_SET),
-    m_onUnauthenticatedRequestHasBeenSet(false),
-    m_useExistingClientSecret(false),
-    m_useExistingClientSecretHasBeenSet(false)
+AuthenticateOidcActionConfig::AuthenticateOidcActionConfig(const XmlNode& xmlNode)
+  : AuthenticateOidcActionConfig()
 {
   *this = xmlNode;
 }

@@ -23,9 +23,8 @@ CreateDeploymentResult::CreateDeploymentResult() :
 {
 }
 
-CreateDeploymentResult::CreateDeploymentResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_autoDeployed(false),
-    m_deploymentStatus(DeploymentStatus::NOT_SET)
+CreateDeploymentResult::CreateDeploymentResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateDeploymentResult()
 {
   *this = result;
 }

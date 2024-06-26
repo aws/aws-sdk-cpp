@@ -26,11 +26,8 @@ CodeGenNodeArg::CodeGenNodeArg() :
 {
 }
 
-CodeGenNodeArg::CodeGenNodeArg(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_param(false),
-    m_paramHasBeenSet(false)
+CodeGenNodeArg::CodeGenNodeArg(JsonView jsonValue)
+  : CodeGenNodeArg()
 {
   *this = jsonValue;
 }

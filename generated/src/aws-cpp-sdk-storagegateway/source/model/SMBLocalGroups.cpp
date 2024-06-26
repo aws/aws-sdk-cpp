@@ -23,8 +23,8 @@ SMBLocalGroups::SMBLocalGroups() :
 {
 }
 
-SMBLocalGroups::SMBLocalGroups(JsonView jsonValue) : 
-    m_gatewayAdminsHasBeenSet(false)
+SMBLocalGroups::SMBLocalGroups(JsonView jsonValue)
+  : SMBLocalGroups()
 {
   *this = jsonValue;
 }

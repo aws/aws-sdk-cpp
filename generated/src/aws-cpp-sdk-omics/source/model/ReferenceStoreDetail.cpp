@@ -28,13 +28,8 @@ ReferenceStoreDetail::ReferenceStoreDetail() :
 {
 }
 
-ReferenceStoreDetail::ReferenceStoreDetail(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_sseConfigHasBeenSet(false),
-    m_creationTimeHasBeenSet(false)
+ReferenceStoreDetail::ReferenceStoreDetail(JsonView jsonValue)
+  : ReferenceStoreDetail()
 {
   *this = jsonValue;
 }

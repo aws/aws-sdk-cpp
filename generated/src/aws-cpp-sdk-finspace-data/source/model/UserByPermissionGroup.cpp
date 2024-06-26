@@ -35,20 +35,8 @@ UserByPermissionGroup::UserByPermissionGroup() :
 {
 }
 
-UserByPermissionGroup::UserByPermissionGroup(JsonView jsonValue) : 
-    m_userIdHasBeenSet(false),
-    m_status(UserStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_firstNameHasBeenSet(false),
-    m_lastNameHasBeenSet(false),
-    m_emailAddressHasBeenSet(false),
-    m_type(UserType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_apiAccess(ApiAccess::NOT_SET),
-    m_apiAccessHasBeenSet(false),
-    m_apiAccessPrincipalArnHasBeenSet(false),
-    m_membershipStatus(PermissionGroupMembershipStatus::NOT_SET),
-    m_membershipStatusHasBeenSet(false)
+UserByPermissionGroup::UserByPermissionGroup(JsonView jsonValue)
+  : UserByPermissionGroup()
 {
   *this = jsonValue;
 }

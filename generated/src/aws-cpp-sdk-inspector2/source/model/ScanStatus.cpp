@@ -26,11 +26,8 @@ ScanStatus::ScanStatus() :
 {
 }
 
-ScanStatus::ScanStatus(JsonView jsonValue) : 
-    m_reason(ScanStatusReason::NOT_SET),
-    m_reasonHasBeenSet(false),
-    m_statusCode(ScanStatusCode::NOT_SET),
-    m_statusCodeHasBeenSet(false)
+ScanStatus::ScanStatus(JsonView jsonValue)
+  : ScanStatus()
 {
   *this = jsonValue;
 }

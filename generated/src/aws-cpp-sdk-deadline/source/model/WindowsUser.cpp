@@ -24,9 +24,8 @@ WindowsUser::WindowsUser() :
 {
 }
 
-WindowsUser::WindowsUser(JsonView jsonValue) : 
-    m_passwordArnHasBeenSet(false),
-    m_userHasBeenSet(false)
+WindowsUser::WindowsUser(JsonView jsonValue)
+  : WindowsUser()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ StartSchemaCreationResult::StartSchemaCreationResult() :
 {
 }
 
-StartSchemaCreationResult::StartSchemaCreationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(SchemaStatus::NOT_SET)
+StartSchemaCreationResult::StartSchemaCreationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : StartSchemaCreationResult()
 {
   *this = result;
 }

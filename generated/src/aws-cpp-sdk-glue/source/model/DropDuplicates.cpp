@@ -25,10 +25,8 @@ DropDuplicates::DropDuplicates() :
 {
 }
 
-DropDuplicates::DropDuplicates(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_inputsHasBeenSet(false),
-    m_columnsHasBeenSet(false)
+DropDuplicates::DropDuplicates(JsonView jsonValue)
+  : DropDuplicates()
 {
   *this = jsonValue;
 }

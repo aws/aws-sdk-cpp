@@ -25,10 +25,8 @@ TopicNumericEqualityFilter::TopicNumericEqualityFilter() :
 {
 }
 
-TopicNumericEqualityFilter::TopicNumericEqualityFilter(JsonView jsonValue) : 
-    m_constantHasBeenSet(false),
-    m_aggregation(NamedFilterAggType::NOT_SET),
-    m_aggregationHasBeenSet(false)
+TopicNumericEqualityFilter::TopicNumericEqualityFilter(JsonView jsonValue)
+  : TopicNumericEqualityFilter()
 {
   *this = jsonValue;
 }

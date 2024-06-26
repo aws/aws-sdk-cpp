@@ -24,9 +24,8 @@ TimingInformation::TimingInformation() :
 {
 }
 
-TimingInformation::TimingInformation(JsonView jsonValue) : 
-    m_processingTimeMilliseconds(0),
-    m_processingTimeMillisecondsHasBeenSet(false)
+TimingInformation::TimingInformation(JsonView jsonValue)
+  : TimingInformation()
 {
   *this = jsonValue;
 }

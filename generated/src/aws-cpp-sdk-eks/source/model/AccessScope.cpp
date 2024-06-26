@@ -25,10 +25,8 @@ AccessScope::AccessScope() :
 {
 }
 
-AccessScope::AccessScope(JsonView jsonValue) : 
-    m_type(AccessScopeType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_namespacesHasBeenSet(false)
+AccessScope::AccessScope(JsonView jsonValue)
+  : AccessScope()
 {
   *this = jsonValue;
 }

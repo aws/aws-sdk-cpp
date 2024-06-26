@@ -26,11 +26,8 @@ InvalidSensorData::InvalidSensorData() :
 {
 }
 
-InvalidSensorData::InvalidSensorData(JsonView jsonValue) : 
-    m_affectedSensorCount(0),
-    m_affectedSensorCountHasBeenSet(false),
-    m_totalNumberOfInvalidValues(0),
-    m_totalNumberOfInvalidValuesHasBeenSet(false)
+InvalidSensorData::InvalidSensorData(JsonView jsonValue)
+  : InvalidSensorData()
 {
   *this = jsonValue;
 }

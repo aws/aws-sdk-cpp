@@ -28,13 +28,8 @@ SourceDetail::SourceDetail() :
 {
 }
 
-SourceDetail::SourceDetail(JsonView jsonValue) : 
-    m_eventSource(EventSource::NOT_SET),
-    m_eventSourceHasBeenSet(false),
-    m_messageType(MessageType::NOT_SET),
-    m_messageTypeHasBeenSet(false),
-    m_maximumExecutionFrequency(MaximumExecutionFrequency::NOT_SET),
-    m_maximumExecutionFrequencyHasBeenSet(false)
+SourceDetail::SourceDetail(JsonView jsonValue)
+  : SourceDetail()
 {
   *this = jsonValue;
 }

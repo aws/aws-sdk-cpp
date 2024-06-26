@@ -23,8 +23,8 @@ NullValueFormatConfiguration::NullValueFormatConfiguration() :
 {
 }
 
-NullValueFormatConfiguration::NullValueFormatConfiguration(JsonView jsonValue) : 
-    m_nullStringHasBeenSet(false)
+NullValueFormatConfiguration::NullValueFormatConfiguration(JsonView jsonValue)
+  : NullValueFormatConfiguration()
 {
   *this = jsonValue;
 }

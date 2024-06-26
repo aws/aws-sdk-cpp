@@ -24,9 +24,8 @@ MapRunFailedEventDetails::MapRunFailedEventDetails() :
 {
 }
 
-MapRunFailedEventDetails::MapRunFailedEventDetails(JsonView jsonValue) : 
-    m_errorHasBeenSet(false),
-    m_causeHasBeenSet(false)
+MapRunFailedEventDetails::MapRunFailedEventDetails(JsonView jsonValue)
+  : MapRunFailedEventDetails()
 {
   *this = jsonValue;
 }

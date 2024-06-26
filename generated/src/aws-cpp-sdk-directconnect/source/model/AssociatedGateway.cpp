@@ -27,12 +27,8 @@ AssociatedGateway::AssociatedGateway() :
 {
 }
 
-AssociatedGateway::AssociatedGateway(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_type(GatewayType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_ownerAccountHasBeenSet(false),
-    m_regionHasBeenSet(false)
+AssociatedGateway::AssociatedGateway(JsonView jsonValue)
+  : AssociatedGateway()
 {
   *this = jsonValue;
 }

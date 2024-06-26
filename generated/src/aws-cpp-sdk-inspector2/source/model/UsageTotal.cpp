@@ -24,9 +24,8 @@ UsageTotal::UsageTotal() :
 {
 }
 
-UsageTotal::UsageTotal(JsonView jsonValue) : 
-    m_accountIdHasBeenSet(false),
-    m_usageHasBeenSet(false)
+UsageTotal::UsageTotal(JsonView jsonValue)
+  : UsageTotal()
 {
   *this = jsonValue;
 }

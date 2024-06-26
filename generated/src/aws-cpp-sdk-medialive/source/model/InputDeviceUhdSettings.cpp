@@ -44,29 +44,8 @@ InputDeviceUhdSettings::InputDeviceUhdSettings() :
 {
 }
 
-InputDeviceUhdSettings::InputDeviceUhdSettings(JsonView jsonValue) : 
-    m_activeInput(InputDeviceActiveInput::NOT_SET),
-    m_activeInputHasBeenSet(false),
-    m_configuredInput(InputDeviceConfiguredInput::NOT_SET),
-    m_configuredInputHasBeenSet(false),
-    m_deviceState(InputDeviceState::NOT_SET),
-    m_deviceStateHasBeenSet(false),
-    m_framerate(0.0),
-    m_framerateHasBeenSet(false),
-    m_height(0),
-    m_heightHasBeenSet(false),
-    m_maxBitrate(0),
-    m_maxBitrateHasBeenSet(false),
-    m_scanType(InputDeviceScanType::NOT_SET),
-    m_scanTypeHasBeenSet(false),
-    m_width(0),
-    m_widthHasBeenSet(false),
-    m_latencyMs(0),
-    m_latencyMsHasBeenSet(false),
-    m_codec(InputDeviceCodec::NOT_SET),
-    m_codecHasBeenSet(false),
-    m_mediaconnectSettingsHasBeenSet(false),
-    m_audioChannelPairsHasBeenSet(false)
+InputDeviceUhdSettings::InputDeviceUhdSettings(JsonView jsonValue)
+  : InputDeviceUhdSettings()
 {
   *this = jsonValue;
 }

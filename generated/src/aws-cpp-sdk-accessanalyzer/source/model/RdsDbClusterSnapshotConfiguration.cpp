@@ -24,9 +24,8 @@ RdsDbClusterSnapshotConfiguration::RdsDbClusterSnapshotConfiguration() :
 {
 }
 
-RdsDbClusterSnapshotConfiguration::RdsDbClusterSnapshotConfiguration(JsonView jsonValue) : 
-    m_attributesHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
+RdsDbClusterSnapshotConfiguration::RdsDbClusterSnapshotConfiguration(JsonView jsonValue)
+  : RdsDbClusterSnapshotConfiguration()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ DisassociateResourceSharePermissionResult::DisassociateResourceSharePermissionRe
 {
 }
 
-DisassociateResourceSharePermissionResult::DisassociateResourceSharePermissionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_returnValue(false)
+DisassociateResourceSharePermissionResult::DisassociateResourceSharePermissionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DisassociateResourceSharePermissionResult()
 {
   *this = result;
 }

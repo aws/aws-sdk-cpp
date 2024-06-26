@@ -26,11 +26,8 @@ LocalSizeConfig::LocalSizeConfig() :
 {
 }
 
-LocalSizeConfig::LocalSizeConfig(JsonView jsonValue) : 
-    m_maxLocalMediaSizeInMB(0),
-    m_maxLocalMediaSizeInMBHasBeenSet(false),
-    m_strategyOnFullSize(StrategyOnFullSize::NOT_SET),
-    m_strategyOnFullSizeHasBeenSet(false)
+LocalSizeConfig::LocalSizeConfig(JsonView jsonValue)
+  : LocalSizeConfig()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ BatchStatementResponse::BatchStatementResponse() :
 {
 }
 
-BatchStatementResponse::BatchStatementResponse(JsonView jsonValue) : 
-    m_errorHasBeenSet(false),
-    m_tableNameHasBeenSet(false),
-    m_itemHasBeenSet(false)
+BatchStatementResponse::BatchStatementResponse(JsonView jsonValue)
+  : BatchStatementResponse()
 {
   *this = jsonValue;
 }

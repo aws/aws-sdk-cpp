@@ -27,12 +27,8 @@ VirtualRouterData::VirtualRouterData() :
 {
 }
 
-VirtualRouterData::VirtualRouterData(JsonView jsonValue) : 
-    m_meshNameHasBeenSet(false),
-    m_metadataHasBeenSet(false),
-    m_specHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_virtualRouterNameHasBeenSet(false)
+VirtualRouterData::VirtualRouterData(JsonView jsonValue)
+  : VirtualRouterData()
 {
   *this = jsonValue;
 }

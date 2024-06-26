@@ -27,12 +27,8 @@ CategoricalMeasureField::CategoricalMeasureField() :
 {
 }
 
-CategoricalMeasureField::CategoricalMeasureField(JsonView jsonValue) : 
-    m_fieldIdHasBeenSet(false),
-    m_columnHasBeenSet(false),
-    m_aggregationFunction(CategoricalAggregationFunction::NOT_SET),
-    m_aggregationFunctionHasBeenSet(false),
-    m_formatConfigurationHasBeenSet(false)
+CategoricalMeasureField::CategoricalMeasureField(JsonView jsonValue)
+  : CategoricalMeasureField()
 {
   *this = jsonValue;
 }

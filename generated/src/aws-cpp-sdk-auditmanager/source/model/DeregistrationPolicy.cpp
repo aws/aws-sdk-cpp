@@ -24,9 +24,8 @@ DeregistrationPolicy::DeregistrationPolicy() :
 {
 }
 
-DeregistrationPolicy::DeregistrationPolicy(JsonView jsonValue) : 
-    m_deleteResources(DeleteResources::NOT_SET),
-    m_deleteResourcesHasBeenSet(false)
+DeregistrationPolicy::DeregistrationPolicy(JsonView jsonValue)
+  : DeregistrationPolicy()
 {
   *this = jsonValue;
 }

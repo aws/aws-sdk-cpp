@@ -22,8 +22,8 @@ GetAssetResult::GetAssetResult() :
 {
 }
 
-GetAssetResult::GetAssetResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_assetType(AssetType::NOT_SET)
+GetAssetResult::GetAssetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetAssetResult()
 {
   *this = result;
 }

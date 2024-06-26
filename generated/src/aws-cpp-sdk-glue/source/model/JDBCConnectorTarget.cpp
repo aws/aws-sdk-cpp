@@ -30,15 +30,8 @@ JDBCConnectorTarget::JDBCConnectorTarget() :
 {
 }
 
-JDBCConnectorTarget::JDBCConnectorTarget(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_inputsHasBeenSet(false),
-    m_connectionNameHasBeenSet(false),
-    m_connectionTableHasBeenSet(false),
-    m_connectorNameHasBeenSet(false),
-    m_connectionTypeHasBeenSet(false),
-    m_additionalOptionsHasBeenSet(false),
-    m_outputSchemasHasBeenSet(false)
+JDBCConnectorTarget::JDBCConnectorTarget(JsonView jsonValue)
+  : JDBCConnectorTarget()
 {
   *this = jsonValue;
 }

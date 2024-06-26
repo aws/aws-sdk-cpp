@@ -26,11 +26,8 @@ Finding::Finding() :
 {
 }
 
-Finding::Finding(JsonView jsonValue) : 
-    m_creationTimeHasBeenSet(false),
-    m_detailsHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false)
+Finding::Finding(JsonView jsonValue)
+  : Finding()
 {
   *this = jsonValue;
 }

@@ -26,12 +26,8 @@ CreateSnapshotResponse::CreateSnapshotResponse() :
 {
 }
 
-CreateSnapshotResponse::CreateSnapshotResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_encrypted(false),
-    m_state(SnapshotState::NOT_SET),
-    m_volumeSize(0),
-    m_storageTier(StorageTier::NOT_SET),
-    m_sseType(SSEType::NOT_SET)
+CreateSnapshotResponse::CreateSnapshotResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : CreateSnapshotResponse()
 {
   *this = result;
 }

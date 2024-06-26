@@ -30,15 +30,8 @@ EndpointDescription::EndpointDescription() :
 {
 }
 
-EndpointDescription::EndpointDescription(JsonView jsonValue) : 
-    m_endpointIdHasBeenSet(false),
-    m_weight(0),
-    m_weightHasBeenSet(false),
-    m_healthState(HealthState::NOT_SET),
-    m_healthStateHasBeenSet(false),
-    m_healthReasonHasBeenSet(false),
-    m_clientIPPreservationEnabled(false),
-    m_clientIPPreservationEnabledHasBeenSet(false)
+EndpointDescription::EndpointDescription(JsonView jsonValue)
+  : EndpointDescription()
 {
   *this = jsonValue;
 }

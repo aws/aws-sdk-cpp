@@ -25,10 +25,8 @@ DeploymentFilter::DeploymentFilter() :
 {
 }
 
-DeploymentFilter::DeploymentFilter(JsonView jsonValue) : 
-    m_name(DeploymentFilterKey::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+DeploymentFilter::DeploymentFilter(JsonView jsonValue)
+  : DeploymentFilter()
 {
   *this = jsonValue;
 }

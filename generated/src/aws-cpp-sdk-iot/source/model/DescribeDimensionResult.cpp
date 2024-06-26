@@ -22,8 +22,8 @@ DescribeDimensionResult::DescribeDimensionResult() :
 {
 }
 
-DescribeDimensionResult::DescribeDimensionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_type(DimensionType::NOT_SET)
+DescribeDimensionResult::DescribeDimensionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeDimensionResult()
 {
   *this = result;
 }

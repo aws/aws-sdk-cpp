@@ -24,9 +24,8 @@ DescribeConfigRulesFilters::DescribeConfigRulesFilters() :
 {
 }
 
-DescribeConfigRulesFilters::DescribeConfigRulesFilters(JsonView jsonValue) : 
-    m_evaluationMode(EvaluationMode::NOT_SET),
-    m_evaluationModeHasBeenSet(false)
+DescribeConfigRulesFilters::DescribeConfigRulesFilters(JsonView jsonValue)
+  : DescribeConfigRulesFilters()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ VirtualGatewayGrpcConnectionPool::VirtualGatewayGrpcConnectionPool() :
 {
 }
 
-VirtualGatewayGrpcConnectionPool::VirtualGatewayGrpcConnectionPool(JsonView jsonValue) : 
-    m_maxRequests(0),
-    m_maxRequestsHasBeenSet(false)
+VirtualGatewayGrpcConnectionPool::VirtualGatewayGrpcConnectionPool(JsonView jsonValue)
+  : VirtualGatewayGrpcConnectionPool()
 {
   *this = jsonValue;
 }

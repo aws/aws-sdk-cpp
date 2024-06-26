@@ -30,15 +30,8 @@ PromptSpecification::PromptSpecification() :
 {
 }
 
-PromptSpecification::PromptSpecification(JsonView jsonValue) : 
-    m_messageGroupsHasBeenSet(false),
-    m_maxRetries(0),
-    m_maxRetriesHasBeenSet(false),
-    m_allowInterrupt(false),
-    m_allowInterruptHasBeenSet(false),
-    m_messageSelectionStrategy(MessageSelectionStrategy::NOT_SET),
-    m_messageSelectionStrategyHasBeenSet(false),
-    m_promptAttemptsSpecificationHasBeenSet(false)
+PromptSpecification::PromptSpecification(JsonView jsonValue)
+  : PromptSpecification()
 {
   *this = jsonValue;
 }

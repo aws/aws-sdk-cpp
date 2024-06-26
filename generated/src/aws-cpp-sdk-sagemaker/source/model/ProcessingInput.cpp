@@ -27,12 +27,8 @@ ProcessingInput::ProcessingInput() :
 {
 }
 
-ProcessingInput::ProcessingInput(JsonView jsonValue) : 
-    m_inputNameHasBeenSet(false),
-    m_appManaged(false),
-    m_appManagedHasBeenSet(false),
-    m_s3InputHasBeenSet(false),
-    m_datasetDefinitionHasBeenSet(false)
+ProcessingInput::ProcessingInput(JsonView jsonValue)
+  : ProcessingInput()
 {
   *this = jsonValue;
 }

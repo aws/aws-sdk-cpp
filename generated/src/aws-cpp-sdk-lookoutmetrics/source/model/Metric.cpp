@@ -26,11 +26,8 @@ Metric::Metric() :
 {
 }
 
-Metric::Metric(JsonView jsonValue) : 
-    m_metricNameHasBeenSet(false),
-    m_aggregationFunction(AggregationFunction::NOT_SET),
-    m_aggregationFunctionHasBeenSet(false),
-    m_namespaceHasBeenSet(false)
+Metric::Metric(JsonView jsonValue)
+  : Metric()
 {
   *this = jsonValue;
 }

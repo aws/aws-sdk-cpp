@@ -39,24 +39,8 @@ DescribedCertificate::DescribedCertificate() :
 {
 }
 
-DescribedCertificate::DescribedCertificate(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_certificateIdHasBeenSet(false),
-    m_usage(CertificateUsageType::NOT_SET),
-    m_usageHasBeenSet(false),
-    m_status(CertificateStatusType::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_certificateHasBeenSet(false),
-    m_certificateChainHasBeenSet(false),
-    m_activeDateHasBeenSet(false),
-    m_inactiveDateHasBeenSet(false),
-    m_serialHasBeenSet(false),
-    m_notBeforeDateHasBeenSet(false),
-    m_notAfterDateHasBeenSet(false),
-    m_type(CertificateType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+DescribedCertificate::DescribedCertificate(JsonView jsonValue)
+  : DescribedCertificate()
 {
   *this = jsonValue;
 }

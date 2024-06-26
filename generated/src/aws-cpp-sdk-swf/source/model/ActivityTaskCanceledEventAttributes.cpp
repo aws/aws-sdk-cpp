@@ -29,14 +29,8 @@ ActivityTaskCanceledEventAttributes::ActivityTaskCanceledEventAttributes() :
 {
 }
 
-ActivityTaskCanceledEventAttributes::ActivityTaskCanceledEventAttributes(JsonView jsonValue) : 
-    m_detailsHasBeenSet(false),
-    m_scheduledEventId(0),
-    m_scheduledEventIdHasBeenSet(false),
-    m_startedEventId(0),
-    m_startedEventIdHasBeenSet(false),
-    m_latestCancelRequestedEventId(0),
-    m_latestCancelRequestedEventIdHasBeenSet(false)
+ActivityTaskCanceledEventAttributes::ActivityTaskCanceledEventAttributes(JsonView jsonValue)
+  : ActivityTaskCanceledEventAttributes()
 {
   *this = jsonValue;
 }

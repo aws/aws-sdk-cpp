@@ -28,13 +28,8 @@ ErrorStatistics::ErrorStatistics() :
 {
 }
 
-ErrorStatistics::ErrorStatistics(JsonView jsonValue) : 
-    m_throttleCount(0),
-    m_throttleCountHasBeenSet(false),
-    m_otherCount(0),
-    m_otherCountHasBeenSet(false),
-    m_totalCount(0),
-    m_totalCountHasBeenSet(false)
+ErrorStatistics::ErrorStatistics(JsonView jsonValue)
+  : ErrorStatistics()
 {
   *this = jsonValue;
 }

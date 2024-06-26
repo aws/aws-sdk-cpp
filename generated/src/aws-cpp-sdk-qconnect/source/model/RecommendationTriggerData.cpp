@@ -23,8 +23,8 @@ RecommendationTriggerData::RecommendationTriggerData() :
 {
 }
 
-RecommendationTriggerData::RecommendationTriggerData(JsonView jsonValue) : 
-    m_queryHasBeenSet(false)
+RecommendationTriggerData::RecommendationTriggerData(JsonView jsonValue)
+  : RecommendationTriggerData()
 {
   *this = jsonValue;
 }

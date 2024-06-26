@@ -25,10 +25,8 @@ DashIsoEncryptionSettings::DashIsoEncryptionSettings() :
 {
 }
 
-DashIsoEncryptionSettings::DashIsoEncryptionSettings(JsonView jsonValue) : 
-    m_playbackDeviceCompatibility(DashIsoPlaybackDeviceCompatibility::NOT_SET),
-    m_playbackDeviceCompatibilityHasBeenSet(false),
-    m_spekeKeyProviderHasBeenSet(false)
+DashIsoEncryptionSettings::DashIsoEncryptionSettings(JsonView jsonValue)
+  : DashIsoEncryptionSettings()
 {
   *this = jsonValue;
 }

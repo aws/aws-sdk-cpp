@@ -25,10 +25,8 @@ ParsingException::ParsingException() :
 {
 }
 
-ParsingException::ParsingException(JsonView jsonValue) : 
-    m_detailedMessageHasBeenSet(false),
-    m_requestIdHasBeenSet(false),
-    m_codeHasBeenSet(false)
+ParsingException::ParsingException(JsonView jsonValue)
+  : ParsingException()
 {
   *this = jsonValue;
 }

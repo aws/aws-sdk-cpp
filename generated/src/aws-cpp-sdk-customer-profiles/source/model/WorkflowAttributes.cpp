@@ -23,8 +23,8 @@ WorkflowAttributes::WorkflowAttributes() :
 {
 }
 
-WorkflowAttributes::WorkflowAttributes(JsonView jsonValue) : 
-    m_appflowIntegrationHasBeenSet(false)
+WorkflowAttributes::WorkflowAttributes(JsonView jsonValue)
+  : WorkflowAttributes()
 {
   *this = jsonValue;
 }

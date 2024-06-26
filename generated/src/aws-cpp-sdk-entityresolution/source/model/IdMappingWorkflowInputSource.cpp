@@ -26,11 +26,8 @@ IdMappingWorkflowInputSource::IdMappingWorkflowInputSource() :
 {
 }
 
-IdMappingWorkflowInputSource::IdMappingWorkflowInputSource(JsonView jsonValue) : 
-    m_inputSourceARNHasBeenSet(false),
-    m_schemaNameHasBeenSet(false),
-    m_type(IdNamespaceType::NOT_SET),
-    m_typeHasBeenSet(false)
+IdMappingWorkflowInputSource::IdMappingWorkflowInputSource(JsonView jsonValue)
+  : IdMappingWorkflowInputSource()
 {
   *this = jsonValue;
 }

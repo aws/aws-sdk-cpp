@@ -24,9 +24,8 @@ NumericAxisOptions::NumericAxisOptions() :
 {
 }
 
-NumericAxisOptions::NumericAxisOptions(JsonView jsonValue) : 
-    m_scaleHasBeenSet(false),
-    m_rangeHasBeenSet(false)
+NumericAxisOptions::NumericAxisOptions(JsonView jsonValue)
+  : NumericAxisOptions()
 {
   *this = jsonValue;
 }

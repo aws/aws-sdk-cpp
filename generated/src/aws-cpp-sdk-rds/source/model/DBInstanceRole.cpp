@@ -27,10 +27,8 @@ DBInstanceRole::DBInstanceRole() :
 {
 }
 
-DBInstanceRole::DBInstanceRole(const XmlNode& xmlNode) : 
-    m_roleArnHasBeenSet(false),
-    m_featureNameHasBeenSet(false),
-    m_statusHasBeenSet(false)
+DBInstanceRole::DBInstanceRole(const XmlNode& xmlNode)
+  : DBInstanceRole()
 {
   *this = xmlNode;
 }

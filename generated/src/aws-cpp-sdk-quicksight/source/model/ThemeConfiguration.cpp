@@ -26,11 +26,8 @@ ThemeConfiguration::ThemeConfiguration() :
 {
 }
 
-ThemeConfiguration::ThemeConfiguration(JsonView jsonValue) : 
-    m_dataColorPaletteHasBeenSet(false),
-    m_uIColorPaletteHasBeenSet(false),
-    m_sheetHasBeenSet(false),
-    m_typographyHasBeenSet(false)
+ThemeConfiguration::ThemeConfiguration(JsonView jsonValue)
+  : ThemeConfiguration()
 {
   *this = jsonValue;
 }

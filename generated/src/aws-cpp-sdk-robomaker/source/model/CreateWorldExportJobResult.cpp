@@ -23,9 +23,8 @@ CreateWorldExportJobResult::CreateWorldExportJobResult() :
 {
 }
 
-CreateWorldExportJobResult::CreateWorldExportJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(WorldExportJobStatus::NOT_SET),
-    m_failureCode(WorldExportJobErrorCode::NOT_SET)
+CreateWorldExportJobResult::CreateWorldExportJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateWorldExportJobResult()
 {
   *this = result;
 }

@@ -26,11 +26,8 @@ RankingData::RankingData() :
 {
 }
 
-RankingData::RankingData(JsonView jsonValue) : 
-    m_relevanceLevel(RelevanceLevel::NOT_SET),
-    m_relevanceLevelHasBeenSet(false),
-    m_relevanceScore(0.0),
-    m_relevanceScoreHasBeenSet(false)
+RankingData::RankingData(JsonView jsonValue)
+  : RankingData()
 {
   *this = jsonValue;
 }

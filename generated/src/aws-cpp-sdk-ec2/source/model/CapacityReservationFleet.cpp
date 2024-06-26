@@ -41,24 +41,8 @@ CapacityReservationFleet::CapacityReservationFleet() :
 {
 }
 
-CapacityReservationFleet::CapacityReservationFleet(const XmlNode& xmlNode) : 
-    m_capacityReservationFleetIdHasBeenSet(false),
-    m_capacityReservationFleetArnHasBeenSet(false),
-    m_state(CapacityReservationFleetState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_totalTargetCapacity(0),
-    m_totalTargetCapacityHasBeenSet(false),
-    m_totalFulfilledCapacity(0.0),
-    m_totalFulfilledCapacityHasBeenSet(false),
-    m_tenancy(FleetCapacityReservationTenancy::NOT_SET),
-    m_tenancyHasBeenSet(false),
-    m_endDateHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_instanceMatchCriteria(FleetInstanceMatchCriteria::NOT_SET),
-    m_instanceMatchCriteriaHasBeenSet(false),
-    m_allocationStrategyHasBeenSet(false),
-    m_instanceTypeSpecificationsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+CapacityReservationFleet::CapacityReservationFleet(const XmlNode& xmlNode)
+  : CapacityReservationFleet()
 {
   *this = xmlNode;
 }

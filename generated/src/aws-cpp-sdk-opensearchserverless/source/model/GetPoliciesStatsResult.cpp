@@ -22,8 +22,8 @@ GetPoliciesStatsResult::GetPoliciesStatsResult() :
 {
 }
 
-GetPoliciesStatsResult::GetPoliciesStatsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_totalPolicyCount(0)
+GetPoliciesStatsResult::GetPoliciesStatsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetPoliciesStatsResult()
 {
   *this = result;
 }

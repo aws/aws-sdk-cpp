@@ -22,8 +22,8 @@ DeleteConnectionResult::DeleteConnectionResult() :
 {
 }
 
-DeleteConnectionResult::DeleteConnectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_connectionState(ConnectionState::NOT_SET)
+DeleteConnectionResult::DeleteConnectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeleteConnectionResult()
 {
   *this = result;
 }

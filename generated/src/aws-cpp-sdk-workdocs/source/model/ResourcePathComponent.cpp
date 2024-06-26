@@ -24,9 +24,8 @@ ResourcePathComponent::ResourcePathComponent() :
 {
 }
 
-ResourcePathComponent::ResourcePathComponent(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false)
+ResourcePathComponent::ResourcePathComponent(JsonView jsonValue)
+  : ResourcePathComponent()
 {
   *this = jsonValue;
 }

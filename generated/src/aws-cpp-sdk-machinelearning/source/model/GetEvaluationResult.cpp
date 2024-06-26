@@ -23,9 +23,8 @@ GetEvaluationResult::GetEvaluationResult() :
 {
 }
 
-GetEvaluationResult::GetEvaluationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(EntityStatus::NOT_SET),
-    m_computeTime(0)
+GetEvaluationResult::GetEvaluationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetEvaluationResult()
 {
   *this = result;
 }

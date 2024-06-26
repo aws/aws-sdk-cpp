@@ -25,10 +25,8 @@ ConflictingOperationException::ConflictingOperationException() :
 {
 }
 
-ConflictingOperationException::ConflictingOperationException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_resourceArnHasBeenSet(false)
+ConflictingOperationException::ConflictingOperationException(JsonView jsonValue)
+  : ConflictingOperationException()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ SearchedLogStream::SearchedLogStream() :
 {
 }
 
-SearchedLogStream::SearchedLogStream(JsonView jsonValue) : 
-    m_logStreamNameHasBeenSet(false),
-    m_searchedCompletely(false),
-    m_searchedCompletelyHasBeenSet(false)
+SearchedLogStream::SearchedLogStream(JsonView jsonValue)
+  : SearchedLogStream()
 {
   *this = jsonValue;
 }

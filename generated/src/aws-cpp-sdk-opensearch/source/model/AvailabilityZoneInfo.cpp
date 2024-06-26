@@ -29,14 +29,8 @@ AvailabilityZoneInfo::AvailabilityZoneInfo() :
 {
 }
 
-AvailabilityZoneInfo::AvailabilityZoneInfo(JsonView jsonValue) : 
-    m_availabilityZoneNameHasBeenSet(false),
-    m_zoneStatus(ZoneStatus::NOT_SET),
-    m_zoneStatusHasBeenSet(false),
-    m_configuredDataNodeCountHasBeenSet(false),
-    m_availableDataNodeCountHasBeenSet(false),
-    m_totalShardsHasBeenSet(false),
-    m_totalUnAssignedShardsHasBeenSet(false)
+AvailabilityZoneInfo::AvailabilityZoneInfo(JsonView jsonValue)
+  : AvailabilityZoneInfo()
 {
   *this = jsonValue;
 }

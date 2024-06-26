@@ -28,13 +28,8 @@ RollingUpdatePolicy::RollingUpdatePolicy() :
 {
 }
 
-RollingUpdatePolicy::RollingUpdatePolicy(JsonView jsonValue) : 
-    m_maximumBatchSizeHasBeenSet(false),
-    m_waitIntervalInSeconds(0),
-    m_waitIntervalInSecondsHasBeenSet(false),
-    m_maximumExecutionTimeoutInSeconds(0),
-    m_maximumExecutionTimeoutInSecondsHasBeenSet(false),
-    m_rollbackMaximumBatchSizeHasBeenSet(false)
+RollingUpdatePolicy::RollingUpdatePolicy(JsonView jsonValue)
+  : RollingUpdatePolicy()
 {
   *this = jsonValue;
 }

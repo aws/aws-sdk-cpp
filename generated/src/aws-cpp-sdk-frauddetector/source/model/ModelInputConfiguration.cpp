@@ -29,14 +29,8 @@ ModelInputConfiguration::ModelInputConfiguration() :
 {
 }
 
-ModelInputConfiguration::ModelInputConfiguration(JsonView jsonValue) : 
-    m_eventTypeNameHasBeenSet(false),
-    m_format(ModelInputDataFormat::NOT_SET),
-    m_formatHasBeenSet(false),
-    m_useEventVariables(false),
-    m_useEventVariablesHasBeenSet(false),
-    m_jsonInputTemplateHasBeenSet(false),
-    m_csvInputTemplateHasBeenSet(false)
+ModelInputConfiguration::ModelInputConfiguration(JsonView jsonValue)
+  : ModelInputConfiguration()
 {
   *this = jsonValue;
 }

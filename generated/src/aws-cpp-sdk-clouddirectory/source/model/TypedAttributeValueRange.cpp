@@ -28,13 +28,8 @@ TypedAttributeValueRange::TypedAttributeValueRange() :
 {
 }
 
-TypedAttributeValueRange::TypedAttributeValueRange(JsonView jsonValue) : 
-    m_startMode(RangeMode::NOT_SET),
-    m_startModeHasBeenSet(false),
-    m_startValueHasBeenSet(false),
-    m_endMode(RangeMode::NOT_SET),
-    m_endModeHasBeenSet(false),
-    m_endValueHasBeenSet(false)
+TypedAttributeValueRange::TypedAttributeValueRange(JsonView jsonValue)
+  : TypedAttributeValueRange()
 {
   *this = jsonValue;
 }

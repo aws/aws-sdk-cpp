@@ -26,11 +26,8 @@ SamlProperties::SamlProperties() :
 {
 }
 
-SamlProperties::SamlProperties(JsonView jsonValue) : 
-    m_status(SamlStatusEnum::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_userAccessUrlHasBeenSet(false),
-    m_relayStateParameterNameHasBeenSet(false)
+SamlProperties::SamlProperties(JsonView jsonValue)
+  : SamlProperties()
 {
   *this = jsonValue;
 }

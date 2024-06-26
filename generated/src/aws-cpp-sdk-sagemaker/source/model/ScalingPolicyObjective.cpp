@@ -26,11 +26,8 @@ ScalingPolicyObjective::ScalingPolicyObjective() :
 {
 }
 
-ScalingPolicyObjective::ScalingPolicyObjective(JsonView jsonValue) : 
-    m_minInvocationsPerMinute(0),
-    m_minInvocationsPerMinuteHasBeenSet(false),
-    m_maxInvocationsPerMinute(0),
-    m_maxInvocationsPerMinuteHasBeenSet(false)
+ScalingPolicyObjective::ScalingPolicyObjective(JsonView jsonValue)
+  : ScalingPolicyObjective()
 {
   *this = jsonValue;
 }

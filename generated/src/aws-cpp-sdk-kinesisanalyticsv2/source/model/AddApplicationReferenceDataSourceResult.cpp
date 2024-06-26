@@ -22,8 +22,8 @@ AddApplicationReferenceDataSourceResult::AddApplicationReferenceDataSourceResult
 {
 }
 
-AddApplicationReferenceDataSourceResult::AddApplicationReferenceDataSourceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_applicationVersionId(0)
+AddApplicationReferenceDataSourceResult::AddApplicationReferenceDataSourceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : AddApplicationReferenceDataSourceResult()
 {
   *this = result;
 }

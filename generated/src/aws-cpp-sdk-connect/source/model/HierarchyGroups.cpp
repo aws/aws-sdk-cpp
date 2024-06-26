@@ -27,12 +27,8 @@ HierarchyGroups::HierarchyGroups() :
 {
 }
 
-HierarchyGroups::HierarchyGroups(JsonView jsonValue) : 
-    m_level1HasBeenSet(false),
-    m_level2HasBeenSet(false),
-    m_level3HasBeenSet(false),
-    m_level4HasBeenSet(false),
-    m_level5HasBeenSet(false)
+HierarchyGroups::HierarchyGroups(JsonView jsonValue)
+  : HierarchyGroups()
 {
   *this = jsonValue;
 }

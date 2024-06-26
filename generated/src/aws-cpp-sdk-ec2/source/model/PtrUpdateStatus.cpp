@@ -27,10 +27,8 @@ PtrUpdateStatus::PtrUpdateStatus() :
 {
 }
 
-PtrUpdateStatus::PtrUpdateStatus(const XmlNode& xmlNode) : 
-    m_valueHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_reasonHasBeenSet(false)
+PtrUpdateStatus::PtrUpdateStatus(const XmlNode& xmlNode)
+  : PtrUpdateStatus()
 {
   *this = xmlNode;
 }

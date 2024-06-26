@@ -31,16 +31,8 @@ JobStep::JobStep() :
 {
 }
 
-JobStep::JobStep(JsonView jsonValue) : 
-    m_procStepNameHasBeenSet(false),
-    m_procStepNumber(0),
-    m_procStepNumberHasBeenSet(false),
-    m_stepCondCodeHasBeenSet(false),
-    m_stepNameHasBeenSet(false),
-    m_stepNumber(0),
-    m_stepNumberHasBeenSet(false),
-    m_stepRestartable(false),
-    m_stepRestartableHasBeenSet(false)
+JobStep::JobStep(JsonView jsonValue)
+  : JobStep()
 {
   *this = jsonValue;
 }

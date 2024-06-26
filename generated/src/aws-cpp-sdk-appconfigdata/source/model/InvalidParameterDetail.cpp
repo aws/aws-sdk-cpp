@@ -24,9 +24,8 @@ InvalidParameterDetail::InvalidParameterDetail() :
 {
 }
 
-InvalidParameterDetail::InvalidParameterDetail(JsonView jsonValue) : 
-    m_problem(InvalidParameterProblem::NOT_SET),
-    m_problemHasBeenSet(false)
+InvalidParameterDetail::InvalidParameterDetail(JsonView jsonValue)
+  : InvalidParameterDetail()
 {
   *this = jsonValue;
 }

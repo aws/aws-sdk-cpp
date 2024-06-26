@@ -24,9 +24,8 @@ BatchUpdateObjectAttributes::BatchUpdateObjectAttributes() :
 {
 }
 
-BatchUpdateObjectAttributes::BatchUpdateObjectAttributes(JsonView jsonValue) : 
-    m_objectReferenceHasBeenSet(false),
-    m_attributeUpdatesHasBeenSet(false)
+BatchUpdateObjectAttributes::BatchUpdateObjectAttributes(JsonView jsonValue)
+  : BatchUpdateObjectAttributes()
 {
   *this = jsonValue;
 }

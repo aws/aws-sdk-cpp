@@ -23,8 +23,8 @@ ImageClassificationJobConfig::ImageClassificationJobConfig() :
 {
 }
 
-ImageClassificationJobConfig::ImageClassificationJobConfig(JsonView jsonValue) : 
-    m_completionCriteriaHasBeenSet(false)
+ImageClassificationJobConfig::ImageClassificationJobConfig(JsonView jsonValue)
+  : ImageClassificationJobConfig()
 {
   *this = jsonValue;
 }

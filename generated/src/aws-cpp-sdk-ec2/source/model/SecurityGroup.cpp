@@ -32,15 +32,8 @@ SecurityGroup::SecurityGroup() :
 {
 }
 
-SecurityGroup::SecurityGroup(const XmlNode& xmlNode) : 
-    m_descriptionHasBeenSet(false),
-    m_groupNameHasBeenSet(false),
-    m_ipPermissionsHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_groupIdHasBeenSet(false),
-    m_ipPermissionsEgressHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_vpcIdHasBeenSet(false)
+SecurityGroup::SecurityGroup(const XmlNode& xmlNode)
+  : SecurityGroup()
 {
   *this = xmlNode;
 }

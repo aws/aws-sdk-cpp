@@ -24,9 +24,8 @@ UpdateLabelsPayload::UpdateLabelsPayload() :
 {
 }
 
-UpdateLabelsPayload::UpdateLabelsPayload(JsonView jsonValue) : 
-    m_addOrUpdateLabelsHasBeenSet(false),
-    m_removeLabelsHasBeenSet(false)
+UpdateLabelsPayload::UpdateLabelsPayload(JsonView jsonValue)
+  : UpdateLabelsPayload()
 {
   *this = jsonValue;
 }

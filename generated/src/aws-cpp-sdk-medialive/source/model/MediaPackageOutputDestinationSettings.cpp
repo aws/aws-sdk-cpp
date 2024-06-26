@@ -23,8 +23,8 @@ MediaPackageOutputDestinationSettings::MediaPackageOutputDestinationSettings() :
 {
 }
 
-MediaPackageOutputDestinationSettings::MediaPackageOutputDestinationSettings(JsonView jsonValue) : 
-    m_channelIdHasBeenSet(false)
+MediaPackageOutputDestinationSettings::MediaPackageOutputDestinationSettings(JsonView jsonValue)
+  : MediaPackageOutputDestinationSettings()
 {
   *this = jsonValue;
 }

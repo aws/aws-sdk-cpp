@@ -27,12 +27,8 @@ ValidateStateMachineDefinitionDiagnostic::ValidateStateMachineDefinitionDiagnost
 {
 }
 
-ValidateStateMachineDefinitionDiagnostic::ValidateStateMachineDefinitionDiagnostic(JsonView jsonValue) : 
-    m_severity(ValidateStateMachineDefinitionSeverity::NOT_SET),
-    m_severityHasBeenSet(false),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_locationHasBeenSet(false)
+ValidateStateMachineDefinitionDiagnostic::ValidateStateMachineDefinitionDiagnostic(JsonView jsonValue)
+  : ValidateStateMachineDefinitionDiagnostic()
 {
   *this = jsonValue;
 }

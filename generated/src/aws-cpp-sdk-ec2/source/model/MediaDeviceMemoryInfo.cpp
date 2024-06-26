@@ -26,9 +26,8 @@ MediaDeviceMemoryInfo::MediaDeviceMemoryInfo() :
 {
 }
 
-MediaDeviceMemoryInfo::MediaDeviceMemoryInfo(const XmlNode& xmlNode) : 
-    m_sizeInMiB(0),
-    m_sizeInMiBHasBeenSet(false)
+MediaDeviceMemoryInfo::MediaDeviceMemoryInfo(const XmlNode& xmlNode)
+  : MediaDeviceMemoryInfo()
 {
   *this = xmlNode;
 }

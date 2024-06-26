@@ -38,23 +38,8 @@ CreateOpenZFSVolumeConfiguration::CreateOpenZFSVolumeConfiguration() :
 {
 }
 
-CreateOpenZFSVolumeConfiguration::CreateOpenZFSVolumeConfiguration(JsonView jsonValue) : 
-    m_parentVolumeIdHasBeenSet(false),
-    m_storageCapacityReservationGiB(0),
-    m_storageCapacityReservationGiBHasBeenSet(false),
-    m_storageCapacityQuotaGiB(0),
-    m_storageCapacityQuotaGiBHasBeenSet(false),
-    m_recordSizeKiB(0),
-    m_recordSizeKiBHasBeenSet(false),
-    m_dataCompressionType(OpenZFSDataCompressionType::NOT_SET),
-    m_dataCompressionTypeHasBeenSet(false),
-    m_copyTagsToSnapshots(false),
-    m_copyTagsToSnapshotsHasBeenSet(false),
-    m_originSnapshotHasBeenSet(false),
-    m_readOnly(false),
-    m_readOnlyHasBeenSet(false),
-    m_nfsExportsHasBeenSet(false),
-    m_userAndGroupQuotasHasBeenSet(false)
+CreateOpenZFSVolumeConfiguration::CreateOpenZFSVolumeConfiguration(JsonView jsonValue)
+  : CreateOpenZFSVolumeConfiguration()
 {
   *this = jsonValue;
 }

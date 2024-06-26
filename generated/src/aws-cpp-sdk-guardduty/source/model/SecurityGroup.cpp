@@ -24,9 +24,8 @@ SecurityGroup::SecurityGroup() :
 {
 }
 
-SecurityGroup::SecurityGroup(JsonView jsonValue) : 
-    m_groupIdHasBeenSet(false),
-    m_groupNameHasBeenSet(false)
+SecurityGroup::SecurityGroup(JsonView jsonValue)
+  : SecurityGroup()
 {
   *this = jsonValue;
 }

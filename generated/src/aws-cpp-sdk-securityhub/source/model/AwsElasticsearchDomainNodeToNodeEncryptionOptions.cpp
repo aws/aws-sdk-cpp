@@ -24,9 +24,8 @@ AwsElasticsearchDomainNodeToNodeEncryptionOptions::AwsElasticsearchDomainNodeToN
 {
 }
 
-AwsElasticsearchDomainNodeToNodeEncryptionOptions::AwsElasticsearchDomainNodeToNodeEncryptionOptions(JsonView jsonValue) : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
+AwsElasticsearchDomainNodeToNodeEncryptionOptions::AwsElasticsearchDomainNodeToNodeEncryptionOptions(JsonView jsonValue)
+  : AwsElasticsearchDomainNodeToNodeEncryptionOptions()
 {
   *this = jsonValue;
 }

@@ -26,9 +26,8 @@ InstanceAttachmentEnaSrdUdpSpecification::InstanceAttachmentEnaSrdUdpSpecificati
 {
 }
 
-InstanceAttachmentEnaSrdUdpSpecification::InstanceAttachmentEnaSrdUdpSpecification(const XmlNode& xmlNode) : 
-    m_enaSrdUdpEnabled(false),
-    m_enaSrdUdpEnabledHasBeenSet(false)
+InstanceAttachmentEnaSrdUdpSpecification::InstanceAttachmentEnaSrdUdpSpecification(const XmlNode& xmlNode)
+  : InstanceAttachmentEnaSrdUdpSpecification()
 {
   *this = xmlNode;
 }

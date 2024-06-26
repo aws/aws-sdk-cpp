@@ -25,10 +25,8 @@ AwsOpenSearchServiceDomainMasterUserOptionsDetails::AwsOpenSearchServiceDomainMa
 {
 }
 
-AwsOpenSearchServiceDomainMasterUserOptionsDetails::AwsOpenSearchServiceDomainMasterUserOptionsDetails(JsonView jsonValue) : 
-    m_masterUserArnHasBeenSet(false),
-    m_masterUserNameHasBeenSet(false),
-    m_masterUserPasswordHasBeenSet(false)
+AwsOpenSearchServiceDomainMasterUserOptionsDetails::AwsOpenSearchServiceDomainMasterUserOptionsDetails(JsonView jsonValue)
+  : AwsOpenSearchServiceDomainMasterUserOptionsDetails()
 {
   *this = jsonValue;
 }

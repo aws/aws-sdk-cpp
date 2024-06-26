@@ -24,9 +24,8 @@ UntagColumnOperation::UntagColumnOperation() :
 {
 }
 
-UntagColumnOperation::UntagColumnOperation(JsonView jsonValue) : 
-    m_columnNameHasBeenSet(false),
-    m_tagNamesHasBeenSet(false)
+UntagColumnOperation::UntagColumnOperation(JsonView jsonValue)
+  : UntagColumnOperation()
 {
   *this = jsonValue;
 }

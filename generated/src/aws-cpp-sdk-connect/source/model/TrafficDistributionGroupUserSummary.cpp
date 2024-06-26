@@ -23,8 +23,8 @@ TrafficDistributionGroupUserSummary::TrafficDistributionGroupUserSummary() :
 {
 }
 
-TrafficDistributionGroupUserSummary::TrafficDistributionGroupUserSummary(JsonView jsonValue) : 
-    m_userIdHasBeenSet(false)
+TrafficDistributionGroupUserSummary::TrafficDistributionGroupUserSummary(JsonView jsonValue)
+  : TrafficDistributionGroupUserSummary()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ TlsCertificateData::TlsCertificateData() :
 {
 }
 
-TlsCertificateData::TlsCertificateData(JsonView jsonValue) : 
-    m_certificateArnHasBeenSet(false),
-    m_certificateSerialHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false)
+TlsCertificateData::TlsCertificateData(JsonView jsonValue)
+  : TlsCertificateData()
 {
   *this = jsonValue;
 }

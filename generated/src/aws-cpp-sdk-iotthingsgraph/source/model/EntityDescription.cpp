@@ -28,13 +28,8 @@ EntityDescription::EntityDescription() :
 {
 }
 
-EntityDescription::EntityDescription(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_type(EntityType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_definitionHasBeenSet(false)
+EntityDescription::EntityDescription(JsonView jsonValue)
+  : EntityDescription()
 {
   *this = jsonValue;
 }

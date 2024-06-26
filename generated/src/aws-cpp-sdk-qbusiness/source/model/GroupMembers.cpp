@@ -24,9 +24,8 @@ GroupMembers::GroupMembers() :
 {
 }
 
-GroupMembers::GroupMembers(JsonView jsonValue) : 
-    m_memberGroupsHasBeenSet(false),
-    m_memberUsersHasBeenSet(false)
+GroupMembers::GroupMembers(JsonView jsonValue)
+  : GroupMembers()
 {
   *this = jsonValue;
 }

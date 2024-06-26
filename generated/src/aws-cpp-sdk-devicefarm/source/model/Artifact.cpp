@@ -28,13 +28,8 @@ Artifact::Artifact() :
 {
 }
 
-Artifact::Artifact(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_type(ArtifactType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_extensionHasBeenSet(false),
-    m_urlHasBeenSet(false)
+Artifact::Artifact(JsonView jsonValue)
+  : Artifact()
 {
   *this = jsonValue;
 }

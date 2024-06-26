@@ -25,10 +25,8 @@ AnomalySourceMetadata::AnomalySourceMetadata() :
 {
 }
 
-AnomalySourceMetadata::AnomalySourceMetadata(JsonView jsonValue) : 
-    m_sourceHasBeenSet(false),
-    m_sourceResourceNameHasBeenSet(false),
-    m_sourceResourceTypeHasBeenSet(false)
+AnomalySourceMetadata::AnomalySourceMetadata(JsonView jsonValue)
+  : AnomalySourceMetadata()
 {
   *this = jsonValue;
 }

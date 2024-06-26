@@ -23,8 +23,8 @@ AuditLogDestinationConfiguration::AuditLogDestinationConfiguration() :
 {
 }
 
-AuditLogDestinationConfiguration::AuditLogDestinationConfiguration(JsonView jsonValue) : 
-    m_destinationHasBeenSet(false)
+AuditLogDestinationConfiguration::AuditLogDestinationConfiguration(JsonView jsonValue)
+  : AuditLogDestinationConfiguration()
 {
   *this = jsonValue;
 }

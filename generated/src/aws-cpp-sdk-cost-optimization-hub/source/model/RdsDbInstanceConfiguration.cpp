@@ -23,8 +23,8 @@ RdsDbInstanceConfiguration::RdsDbInstanceConfiguration() :
 {
 }
 
-RdsDbInstanceConfiguration::RdsDbInstanceConfiguration(JsonView jsonValue) : 
-    m_instanceHasBeenSet(false)
+RdsDbInstanceConfiguration::RdsDbInstanceConfiguration(JsonView jsonValue)
+  : RdsDbInstanceConfiguration()
 {
   *this = jsonValue;
 }

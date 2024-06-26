@@ -27,12 +27,8 @@ BatchCreateObject::BatchCreateObject() :
 {
 }
 
-BatchCreateObject::BatchCreateObject(JsonView jsonValue) : 
-    m_schemaFacetHasBeenSet(false),
-    m_objectAttributeListHasBeenSet(false),
-    m_parentReferenceHasBeenSet(false),
-    m_linkNameHasBeenSet(false),
-    m_batchReferenceNameHasBeenSet(false)
+BatchCreateObject::BatchCreateObject(JsonView jsonValue)
+  : BatchCreateObject()
 {
   *this = jsonValue;
 }

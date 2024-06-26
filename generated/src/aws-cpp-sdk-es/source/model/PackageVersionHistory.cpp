@@ -25,10 +25,8 @@ PackageVersionHistory::PackageVersionHistory() :
 {
 }
 
-PackageVersionHistory::PackageVersionHistory(JsonView jsonValue) : 
-    m_packageVersionHasBeenSet(false),
-    m_commitMessageHasBeenSet(false),
-    m_createdAtHasBeenSet(false)
+PackageVersionHistory::PackageVersionHistory(JsonView jsonValue)
+  : PackageVersionHistory()
 {
   *this = jsonValue;
 }

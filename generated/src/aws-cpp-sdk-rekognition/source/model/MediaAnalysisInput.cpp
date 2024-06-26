@@ -23,8 +23,8 @@ MediaAnalysisInput::MediaAnalysisInput() :
 {
 }
 
-MediaAnalysisInput::MediaAnalysisInput(JsonView jsonValue) : 
-    m_s3ObjectHasBeenSet(false)
+MediaAnalysisInput::MediaAnalysisInput(JsonView jsonValue)
+  : MediaAnalysisInput()
 {
   *this = jsonValue;
 }

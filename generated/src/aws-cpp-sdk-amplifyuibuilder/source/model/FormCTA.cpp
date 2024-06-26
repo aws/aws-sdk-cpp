@@ -27,12 +27,8 @@ FormCTA::FormCTA() :
 {
 }
 
-FormCTA::FormCTA(JsonView jsonValue) : 
-    m_position(FormButtonsPosition::NOT_SET),
-    m_positionHasBeenSet(false),
-    m_clearHasBeenSet(false),
-    m_cancelHasBeenSet(false),
-    m_submitHasBeenSet(false)
+FormCTA::FormCTA(JsonView jsonValue)
+  : FormCTA()
 {
   *this = jsonValue;
 }

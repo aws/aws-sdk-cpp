@@ -26,11 +26,8 @@ RDSStorageEstimatedMonthlySavings::RDSStorageEstimatedMonthlySavings() :
 {
 }
 
-RDSStorageEstimatedMonthlySavings::RDSStorageEstimatedMonthlySavings(JsonView jsonValue) : 
-    m_currency(Currency::NOT_SET),
-    m_currencyHasBeenSet(false),
-    m_value(0.0),
-    m_valueHasBeenSet(false)
+RDSStorageEstimatedMonthlySavings::RDSStorageEstimatedMonthlySavings(JsonView jsonValue)
+  : RDSStorageEstimatedMonthlySavings()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ ResultSet::ResultSet() :
 {
 }
 
-ResultSet::ResultSet(JsonView jsonValue) : 
-    m_rowsHasBeenSet(false),
-    m_resultSetMetadataHasBeenSet(false)
+ResultSet::ResultSet(JsonView jsonValue)
+  : ResultSet()
 {
   *this = jsonValue;
 }

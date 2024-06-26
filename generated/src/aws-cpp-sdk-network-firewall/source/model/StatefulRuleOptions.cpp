@@ -24,9 +24,8 @@ StatefulRuleOptions::StatefulRuleOptions() :
 {
 }
 
-StatefulRuleOptions::StatefulRuleOptions(JsonView jsonValue) : 
-    m_ruleOrder(RuleOrder::NOT_SET),
-    m_ruleOrderHasBeenSet(false)
+StatefulRuleOptions::StatefulRuleOptions(JsonView jsonValue)
+  : StatefulRuleOptions()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ InputFile::InputFile() :
 {
 }
 
-InputFile::InputFile(JsonView jsonValue) : 
-    m_sourceLocationHasBeenSet(false),
-    m_targetLocationHasBeenSet(false),
-    m_fileMetadataHasBeenSet(false)
+InputFile::InputFile(JsonView jsonValue)
+  : InputFile()
 {
   *this = jsonValue;
 }

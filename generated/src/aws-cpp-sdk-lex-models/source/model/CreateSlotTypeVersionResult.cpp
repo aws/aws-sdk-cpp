@@ -22,8 +22,8 @@ CreateSlotTypeVersionResult::CreateSlotTypeVersionResult() :
 {
 }
 
-CreateSlotTypeVersionResult::CreateSlotTypeVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_valueSelectionStrategy(SlotValueSelectionStrategy::NOT_SET)
+CreateSlotTypeVersionResult::CreateSlotTypeVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateSlotTypeVersionResult()
 {
   *this = result;
 }

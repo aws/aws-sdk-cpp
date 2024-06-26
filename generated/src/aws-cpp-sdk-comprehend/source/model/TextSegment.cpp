@@ -23,8 +23,8 @@ TextSegment::TextSegment() :
 {
 }
 
-TextSegment::TextSegment(JsonView jsonValue) : 
-    m_textHasBeenSet(false)
+TextSegment::TextSegment(JsonView jsonValue)
+  : TextSegment()
 {
   *this = jsonValue;
 }

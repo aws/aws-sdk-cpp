@@ -26,11 +26,8 @@ ByoipCidr::ByoipCidr() :
 {
 }
 
-ByoipCidr::ByoipCidr(JsonView jsonValue) : 
-    m_cidrHasBeenSet(false),
-    m_state(ByoipCidrState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_eventsHasBeenSet(false)
+ByoipCidr::ByoipCidr(JsonView jsonValue)
+  : ByoipCidr()
 {
   *this = jsonValue;
 }

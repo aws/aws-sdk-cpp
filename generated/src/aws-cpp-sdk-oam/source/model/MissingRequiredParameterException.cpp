@@ -25,9 +25,8 @@ MissingRequiredParameterException::MissingRequiredParameterException() :
 {
 }
 
-MissingRequiredParameterException::MissingRequiredParameterException(JsonView jsonValue) : 
-    m_amznErrorTypeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+MissingRequiredParameterException::MissingRequiredParameterException(JsonView jsonValue)
+  : MissingRequiredParameterException()
 {
   *this = jsonValue;
 }

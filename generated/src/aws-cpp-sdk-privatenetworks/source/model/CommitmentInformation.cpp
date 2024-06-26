@@ -25,10 +25,8 @@ CommitmentInformation::CommitmentInformation() :
 {
 }
 
-CommitmentInformation::CommitmentInformation(JsonView jsonValue) : 
-    m_commitmentConfigurationHasBeenSet(false),
-    m_expiresOnHasBeenSet(false),
-    m_startAtHasBeenSet(false)
+CommitmentInformation::CommitmentInformation(JsonView jsonValue)
+  : CommitmentInformation()
 {
   *this = jsonValue;
 }

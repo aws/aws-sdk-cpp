@@ -26,11 +26,8 @@ NFSDataRepositoryConfiguration::NFSDataRepositoryConfiguration() :
 {
 }
 
-NFSDataRepositoryConfiguration::NFSDataRepositoryConfiguration(JsonView jsonValue) : 
-    m_version(NfsVersion::NOT_SET),
-    m_versionHasBeenSet(false),
-    m_dnsIpsHasBeenSet(false),
-    m_autoExportPolicyHasBeenSet(false)
+NFSDataRepositoryConfiguration::NFSDataRepositoryConfiguration(JsonView jsonValue)
+  : NFSDataRepositoryConfiguration()
 {
   *this = jsonValue;
 }

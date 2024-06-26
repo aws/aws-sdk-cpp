@@ -27,12 +27,8 @@ DomainName::DomainName() :
 {
 }
 
-DomainName::DomainName(JsonView jsonValue) : 
-    m_apiMappingSelectionExpressionHasBeenSet(false),
-    m_domainNameHasBeenSet(false),
-    m_domainNameConfigurationsHasBeenSet(false),
-    m_mutualTlsAuthenticationHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+DomainName::DomainName(JsonView jsonValue)
+  : DomainName()
 {
   *this = jsonValue;
 }

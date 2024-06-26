@@ -26,11 +26,8 @@ BrokerSoftwareInfo::BrokerSoftwareInfo() :
 {
 }
 
-BrokerSoftwareInfo::BrokerSoftwareInfo(JsonView jsonValue) : 
-    m_configurationArnHasBeenSet(false),
-    m_configurationRevision(0),
-    m_configurationRevisionHasBeenSet(false),
-    m_kafkaVersionHasBeenSet(false)
+BrokerSoftwareInfo::BrokerSoftwareInfo(JsonView jsonValue)
+  : BrokerSoftwareInfo()
 {
   *this = jsonValue;
 }

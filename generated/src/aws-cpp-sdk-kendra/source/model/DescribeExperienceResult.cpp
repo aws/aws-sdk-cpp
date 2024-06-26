@@ -22,8 +22,8 @@ DescribeExperienceResult::DescribeExperienceResult() :
 {
 }
 
-DescribeExperienceResult::DescribeExperienceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(ExperienceStatus::NOT_SET)
+DescribeExperienceResult::DescribeExperienceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeExperienceResult()
 {
   *this = result;
 }

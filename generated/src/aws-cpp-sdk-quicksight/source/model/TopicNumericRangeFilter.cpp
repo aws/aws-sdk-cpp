@@ -27,12 +27,8 @@ TopicNumericRangeFilter::TopicNumericRangeFilter() :
 {
 }
 
-TopicNumericRangeFilter::TopicNumericRangeFilter(JsonView jsonValue) : 
-    m_inclusive(false),
-    m_inclusiveHasBeenSet(false),
-    m_constantHasBeenSet(false),
-    m_aggregation(NamedFilterAggType::NOT_SET),
-    m_aggregationHasBeenSet(false)
+TopicNumericRangeFilter::TopicNumericRangeFilter(JsonView jsonValue)
+  : TopicNumericRangeFilter()
 {
   *this = jsonValue;
 }

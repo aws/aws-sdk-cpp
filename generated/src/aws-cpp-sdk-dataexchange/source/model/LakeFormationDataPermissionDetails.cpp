@@ -23,8 +23,8 @@ LakeFormationDataPermissionDetails::LakeFormationDataPermissionDetails() :
 {
 }
 
-LakeFormationDataPermissionDetails::LakeFormationDataPermissionDetails(JsonView jsonValue) : 
-    m_lFTagPolicyHasBeenSet(false)
+LakeFormationDataPermissionDetails::LakeFormationDataPermissionDetails(JsonView jsonValue)
+  : LakeFormationDataPermissionDetails()
 {
   *this = jsonValue;
 }

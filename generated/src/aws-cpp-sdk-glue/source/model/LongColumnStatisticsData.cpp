@@ -30,15 +30,8 @@ LongColumnStatisticsData::LongColumnStatisticsData() :
 {
 }
 
-LongColumnStatisticsData::LongColumnStatisticsData(JsonView jsonValue) : 
-    m_minimumValue(0),
-    m_minimumValueHasBeenSet(false),
-    m_maximumValue(0),
-    m_maximumValueHasBeenSet(false),
-    m_numberOfNulls(0),
-    m_numberOfNullsHasBeenSet(false),
-    m_numberOfDistinctValues(0),
-    m_numberOfDistinctValuesHasBeenSet(false)
+LongColumnStatisticsData::LongColumnStatisticsData(JsonView jsonValue)
+  : LongColumnStatisticsData()
 {
   *this = jsonValue;
 }

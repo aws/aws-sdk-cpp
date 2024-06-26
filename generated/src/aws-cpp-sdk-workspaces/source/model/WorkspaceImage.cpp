@@ -36,21 +36,8 @@ WorkspaceImage::WorkspaceImage() :
 {
 }
 
-WorkspaceImage::WorkspaceImage(JsonView jsonValue) : 
-    m_imageIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_operatingSystemHasBeenSet(false),
-    m_state(WorkspaceImageState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_requiredTenancy(WorkspaceImageRequiredTenancy::NOT_SET),
-    m_requiredTenancyHasBeenSet(false),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_createdHasBeenSet(false),
-    m_ownerAccountIdHasBeenSet(false),
-    m_updatesHasBeenSet(false),
-    m_errorDetailsHasBeenSet(false)
+WorkspaceImage::WorkspaceImage(JsonView jsonValue)
+  : WorkspaceImage()
 {
   *this = jsonValue;
 }

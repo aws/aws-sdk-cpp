@@ -45,30 +45,8 @@ Certificate::Certificate() :
 {
 }
 
-Certificate::Certificate(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_domainNameHasBeenSet(false),
-    m_status(CertificateStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_serialNumberHasBeenSet(false),
-    m_subjectAlternativeNamesHasBeenSet(false),
-    m_domainValidationRecordsHasBeenSet(false),
-    m_requestFailureReasonHasBeenSet(false),
-    m_inUseResourceCount(0),
-    m_inUseResourceCountHasBeenSet(false),
-    m_keyAlgorithmHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_issuedAtHasBeenSet(false),
-    m_issuerCAHasBeenSet(false),
-    m_notBeforeHasBeenSet(false),
-    m_notAfterHasBeenSet(false),
-    m_eligibleToRenewHasBeenSet(false),
-    m_renewalSummaryHasBeenSet(false),
-    m_revokedAtHasBeenSet(false),
-    m_revocationReasonHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_supportCodeHasBeenSet(false)
+Certificate::Certificate(JsonView jsonValue)
+  : Certificate()
 {
   *this = jsonValue;
 }

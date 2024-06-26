@@ -27,12 +27,8 @@ AdditionalS3DataSource::AdditionalS3DataSource() :
 {
 }
 
-AdditionalS3DataSource::AdditionalS3DataSource(JsonView jsonValue) : 
-    m_s3DataType(AdditionalS3DataSourceDataType::NOT_SET),
-    m_s3DataTypeHasBeenSet(false),
-    m_s3UriHasBeenSet(false),
-    m_compressionType(CompressionType::NOT_SET),
-    m_compressionTypeHasBeenSet(false)
+AdditionalS3DataSource::AdditionalS3DataSource(JsonView jsonValue)
+  : AdditionalS3DataSource()
 {
   *this = jsonValue;
 }

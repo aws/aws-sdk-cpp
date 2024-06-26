@@ -38,23 +38,8 @@ WirelessDeviceImportTask::WirelessDeviceImportTask() :
 {
 }
 
-WirelessDeviceImportTask::WirelessDeviceImportTask(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_destinationNameHasBeenSet(false),
-    m_sidewalkHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_status(ImportTaskStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusReasonHasBeenSet(false),
-    m_initializedImportedDeviceCount(0),
-    m_initializedImportedDeviceCountHasBeenSet(false),
-    m_pendingImportedDeviceCount(0),
-    m_pendingImportedDeviceCountHasBeenSet(false),
-    m_onboardedImportedDeviceCount(0),
-    m_onboardedImportedDeviceCountHasBeenSet(false),
-    m_failedImportedDeviceCount(0),
-    m_failedImportedDeviceCountHasBeenSet(false)
+WirelessDeviceImportTask::WirelessDeviceImportTask(JsonView jsonValue)
+  : WirelessDeviceImportTask()
 {
   *this = jsonValue;
 }

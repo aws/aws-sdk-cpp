@@ -29,14 +29,8 @@ FilledMapVisual::FilledMapVisual() :
 {
 }
 
-FilledMapVisual::FilledMapVisual(JsonView jsonValue) : 
-    m_visualIdHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_subtitleHasBeenSet(false),
-    m_chartConfigurationHasBeenSet(false),
-    m_conditionalFormattingHasBeenSet(false),
-    m_columnHierarchiesHasBeenSet(false),
-    m_actionsHasBeenSet(false)
+FilledMapVisual::FilledMapVisual(JsonView jsonValue)
+  : FilledMapVisual()
 {
   *this = jsonValue;
 }

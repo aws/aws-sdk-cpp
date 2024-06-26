@@ -33,18 +33,8 @@ ReplicatorSummary::ReplicatorSummary() :
 {
 }
 
-ReplicatorSummary::ReplicatorSummary(JsonView jsonValue) : 
-    m_creationTimeHasBeenSet(false),
-    m_currentVersionHasBeenSet(false),
-    m_isReplicatorReference(false),
-    m_isReplicatorReferenceHasBeenSet(false),
-    m_kafkaClustersSummaryHasBeenSet(false),
-    m_replicationInfoSummaryListHasBeenSet(false),
-    m_replicatorArnHasBeenSet(false),
-    m_replicatorNameHasBeenSet(false),
-    m_replicatorResourceArnHasBeenSet(false),
-    m_replicatorState(ReplicatorState::NOT_SET),
-    m_replicatorStateHasBeenSet(false)
+ReplicatorSummary::ReplicatorSummary(JsonView jsonValue)
+  : ReplicatorSummary()
 {
   *this = jsonValue;
 }

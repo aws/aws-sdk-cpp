@@ -24,9 +24,8 @@ StatusDetails::StatusDetails() :
 {
 }
 
-StatusDetails::StatusDetails(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_statusCodeHasBeenSet(false)
+StatusDetails::StatusDetails(JsonView jsonValue)
+  : StatusDetails()
 {
   *this = jsonValue;
 }

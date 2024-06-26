@@ -23,9 +23,8 @@ CreateRevisionResult::CreateRevisionResult() :
 {
 }
 
-CreateRevisionResult::CreateRevisionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_finalized(false),
-    m_revoked(false)
+CreateRevisionResult::CreateRevisionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateRevisionResult()
 {
   *this = result;
 }

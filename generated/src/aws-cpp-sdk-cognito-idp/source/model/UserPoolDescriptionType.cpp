@@ -27,12 +27,8 @@ UserPoolDescriptionType::UserPoolDescriptionType() :
 {
 }
 
-UserPoolDescriptionType::UserPoolDescriptionType(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_lambdaConfigHasBeenSet(false),
-    m_lastModifiedDateHasBeenSet(false),
-    m_creationDateHasBeenSet(false)
+UserPoolDescriptionType::UserPoolDescriptionType(JsonView jsonValue)
+  : UserPoolDescriptionType()
 {
   *this = jsonValue;
 }

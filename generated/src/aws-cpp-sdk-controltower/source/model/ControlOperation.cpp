@@ -33,18 +33,8 @@ ControlOperation::ControlOperation() :
 {
 }
 
-ControlOperation::ControlOperation(JsonView jsonValue) : 
-    m_controlIdentifierHasBeenSet(false),
-    m_enabledControlIdentifierHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_operationIdentifierHasBeenSet(false),
-    m_operationType(ControlOperationType::NOT_SET),
-    m_operationTypeHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_status(ControlOperationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_targetIdentifierHasBeenSet(false)
+ControlOperation::ControlOperation(JsonView jsonValue)
+  : ControlOperation()
 {
   *this = jsonValue;
 }

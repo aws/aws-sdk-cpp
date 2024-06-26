@@ -23,8 +23,8 @@ KinesisDataStream::KinesisDataStream() :
 {
 }
 
-KinesisDataStream::KinesisDataStream(JsonView jsonValue) : 
-    m_arnHasBeenSet(false)
+KinesisDataStream::KinesisDataStream(JsonView jsonValue)
+  : KinesisDataStream()
 {
   *this = jsonValue;
 }

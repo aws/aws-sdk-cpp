@@ -24,9 +24,8 @@ DatasetDocumentClassifierInputDataConfig::DatasetDocumentClassifierInputDataConf
 {
 }
 
-DatasetDocumentClassifierInputDataConfig::DatasetDocumentClassifierInputDataConfig(JsonView jsonValue) : 
-    m_s3UriHasBeenSet(false),
-    m_labelDelimiterHasBeenSet(false)
+DatasetDocumentClassifierInputDataConfig::DatasetDocumentClassifierInputDataConfig(JsonView jsonValue)
+  : DatasetDocumentClassifierInputDataConfig()
 {
   *this = jsonValue;
 }

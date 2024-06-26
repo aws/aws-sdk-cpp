@@ -34,19 +34,8 @@ Tunnel::Tunnel() :
 {
 }
 
-Tunnel::Tunnel(JsonView jsonValue) : 
-    m_tunnelIdHasBeenSet(false),
-    m_tunnelArnHasBeenSet(false),
-    m_status(TunnelStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_sourceConnectionStateHasBeenSet(false),
-    m_destinationConnectionStateHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_destinationConfigHasBeenSet(false),
-    m_timeoutConfigHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false)
+Tunnel::Tunnel(JsonView jsonValue)
+  : Tunnel()
 {
   *this = jsonValue;
 }

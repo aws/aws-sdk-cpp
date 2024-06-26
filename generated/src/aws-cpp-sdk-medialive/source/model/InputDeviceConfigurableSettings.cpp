@@ -32,17 +32,8 @@ InputDeviceConfigurableSettings::InputDeviceConfigurableSettings() :
 {
 }
 
-InputDeviceConfigurableSettings::InputDeviceConfigurableSettings(JsonView jsonValue) : 
-    m_configuredInput(InputDeviceConfiguredInput::NOT_SET),
-    m_configuredInputHasBeenSet(false),
-    m_maxBitrate(0),
-    m_maxBitrateHasBeenSet(false),
-    m_latencyMs(0),
-    m_latencyMsHasBeenSet(false),
-    m_codec(InputDeviceCodec::NOT_SET),
-    m_codecHasBeenSet(false),
-    m_mediaconnectSettingsHasBeenSet(false),
-    m_audioChannelPairsHasBeenSet(false)
+InputDeviceConfigurableSettings::InputDeviceConfigurableSettings(JsonView jsonValue)
+  : InputDeviceConfigurableSettings()
 {
   *this = jsonValue;
 }

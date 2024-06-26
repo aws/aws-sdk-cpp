@@ -26,9 +26,8 @@ Range::Range() :
 {
 }
 
-Range::Range(const XmlNode& xmlNode) : 
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
+Range::Range(const XmlNode& xmlNode)
+  : Range()
 {
   *this = xmlNode;
 }

@@ -30,13 +30,8 @@ DataStorage::DataStorage() :
 {
 }
 
-DataStorage::DataStorage(const XmlNode& xmlNode) : 
-    m_maximum(0),
-    m_maximumHasBeenSet(false),
-    m_minimum(0),
-    m_minimumHasBeenSet(false),
-    m_unit(DataStorageUnit::NOT_SET),
-    m_unitHasBeenSet(false)
+DataStorage::DataStorage(const XmlNode& xmlNode)
+  : DataStorage()
 {
   *this = xmlNode;
 }

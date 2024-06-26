@@ -25,10 +25,8 @@ Reference::Reference() :
 {
 }
 
-Reference::Reference(JsonView jsonValue) : 
-    m_valueHasBeenSet(false),
-    m_type(ReferenceType::NOT_SET),
-    m_typeHasBeenSet(false)
+Reference::Reference(JsonView jsonValue)
+  : Reference()
 {
   *this = jsonValue;
 }

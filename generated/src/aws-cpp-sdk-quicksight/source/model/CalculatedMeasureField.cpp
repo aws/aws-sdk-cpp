@@ -24,9 +24,8 @@ CalculatedMeasureField::CalculatedMeasureField() :
 {
 }
 
-CalculatedMeasureField::CalculatedMeasureField(JsonView jsonValue) : 
-    m_fieldIdHasBeenSet(false),
-    m_expressionHasBeenSet(false)
+CalculatedMeasureField::CalculatedMeasureField(JsonView jsonValue)
+  : CalculatedMeasureField()
 {
   *this = jsonValue;
 }

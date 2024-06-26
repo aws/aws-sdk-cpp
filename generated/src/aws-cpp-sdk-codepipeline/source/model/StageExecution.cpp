@@ -27,12 +27,8 @@ StageExecution::StageExecution() :
 {
 }
 
-StageExecution::StageExecution(JsonView jsonValue) : 
-    m_pipelineExecutionIdHasBeenSet(false),
-    m_status(StageExecutionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_type(ExecutionType::NOT_SET),
-    m_typeHasBeenSet(false)
+StageExecution::StageExecution(JsonView jsonValue)
+  : StageExecution()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ NotificationRuleSummary::NotificationRuleSummary() :
 {
 }
 
-NotificationRuleSummary::NotificationRuleSummary(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false)
+NotificationRuleSummary::NotificationRuleSummary(JsonView jsonValue)
+  : NotificationRuleSummary()
 {
   *this = jsonValue;
 }

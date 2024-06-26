@@ -23,8 +23,8 @@ RuntimeSettings::RuntimeSettings() :
 {
 }
 
-RuntimeSettings::RuntimeSettings(JsonView jsonValue) : 
-    m_slotResolutionImprovementHasBeenSet(false)
+RuntimeSettings::RuntimeSettings(JsonView jsonValue)
+  : RuntimeSettings()
 {
   *this = jsonValue;
 }

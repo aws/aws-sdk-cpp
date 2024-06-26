@@ -23,8 +23,8 @@ MonitoringGroundTruthS3Input::MonitoringGroundTruthS3Input() :
 {
 }
 
-MonitoringGroundTruthS3Input::MonitoringGroundTruthS3Input(JsonView jsonValue) : 
-    m_s3UriHasBeenSet(false)
+MonitoringGroundTruthS3Input::MonitoringGroundTruthS3Input(JsonView jsonValue)
+  : MonitoringGroundTruthS3Input()
 {
   *this = jsonValue;
 }

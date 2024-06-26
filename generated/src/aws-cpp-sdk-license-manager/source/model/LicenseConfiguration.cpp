@@ -43,28 +43,8 @@ LicenseConfiguration::LicenseConfiguration() :
 {
 }
 
-LicenseConfiguration::LicenseConfiguration(JsonView jsonValue) : 
-    m_licenseConfigurationIdHasBeenSet(false),
-    m_licenseConfigurationArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_licenseCountingType(LicenseCountingType::NOT_SET),
-    m_licenseCountingTypeHasBeenSet(false),
-    m_licenseRulesHasBeenSet(false),
-    m_licenseCount(0),
-    m_licenseCountHasBeenSet(false),
-    m_licenseCountHardLimit(false),
-    m_licenseCountHardLimitHasBeenSet(false),
-    m_disassociateWhenNotFound(false),
-    m_disassociateWhenNotFoundHasBeenSet(false),
-    m_consumedLicenses(0),
-    m_consumedLicensesHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_ownerAccountIdHasBeenSet(false),
-    m_consumedLicenseSummaryListHasBeenSet(false),
-    m_managedResourceSummaryListHasBeenSet(false),
-    m_productInformationListHasBeenSet(false),
-    m_automatedDiscoveryInformationHasBeenSet(false)
+LicenseConfiguration::LicenseConfiguration(JsonView jsonValue)
+  : LicenseConfiguration()
 {
   *this = jsonValue;
 }

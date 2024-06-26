@@ -27,12 +27,8 @@ CognitoOptions::CognitoOptions() :
 {
 }
 
-CognitoOptions::CognitoOptions(JsonView jsonValue) : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_userPoolIdHasBeenSet(false),
-    m_identityPoolIdHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
+CognitoOptions::CognitoOptions(JsonView jsonValue)
+  : CognitoOptions()
 {
   *this = jsonValue;
 }

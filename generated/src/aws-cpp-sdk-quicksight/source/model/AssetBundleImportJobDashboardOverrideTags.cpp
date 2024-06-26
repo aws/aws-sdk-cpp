@@ -24,9 +24,8 @@ AssetBundleImportJobDashboardOverrideTags::AssetBundleImportJobDashboardOverride
 {
 }
 
-AssetBundleImportJobDashboardOverrideTags::AssetBundleImportJobDashboardOverrideTags(JsonView jsonValue) : 
-    m_dashboardIdsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+AssetBundleImportJobDashboardOverrideTags::AssetBundleImportJobDashboardOverrideTags(JsonView jsonValue)
+  : AssetBundleImportJobDashboardOverrideTags()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ ServiceId::ServiceId() :
 {
 }
 
-ServiceId::ServiceId(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_namesHasBeenSet(false),
-    m_accountIdHasBeenSet(false),
-    m_typeHasBeenSet(false)
+ServiceId::ServiceId(JsonView jsonValue)
+  : ServiceId()
 {
   *this = jsonValue;
 }

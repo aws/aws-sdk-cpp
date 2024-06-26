@@ -24,9 +24,8 @@ S3Path::S3Path() :
 {
 }
 
-S3Path::S3Path(JsonView jsonValue) : 
-    m_bucketHasBeenSet(false),
-    m_keyHasBeenSet(false)
+S3Path::S3Path(JsonView jsonValue)
+  : S3Path()
 {
   *this = jsonValue;
 }

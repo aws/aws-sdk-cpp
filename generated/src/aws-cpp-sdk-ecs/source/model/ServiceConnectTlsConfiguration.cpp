@@ -25,10 +25,8 @@ ServiceConnectTlsConfiguration::ServiceConnectTlsConfiguration() :
 {
 }
 
-ServiceConnectTlsConfiguration::ServiceConnectTlsConfiguration(JsonView jsonValue) : 
-    m_issuerCertificateAuthorityHasBeenSet(false),
-    m_kmsKeyHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
+ServiceConnectTlsConfiguration::ServiceConnectTlsConfiguration(JsonView jsonValue)
+  : ServiceConnectTlsConfiguration()
 {
   *this = jsonValue;
 }

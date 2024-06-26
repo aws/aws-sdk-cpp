@@ -25,10 +25,8 @@ Rule::Rule() :
 {
 }
 
-Rule::Rule(JsonView jsonValue) : 
-    m_type(RuleType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_parametersHasBeenSet(false)
+Rule::Rule(JsonView jsonValue)
+  : Rule()
 {
   *this = jsonValue;
 }

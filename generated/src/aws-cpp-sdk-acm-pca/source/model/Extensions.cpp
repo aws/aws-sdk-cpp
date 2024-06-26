@@ -27,12 +27,8 @@ Extensions::Extensions() :
 {
 }
 
-Extensions::Extensions(JsonView jsonValue) : 
-    m_certificatePoliciesHasBeenSet(false),
-    m_extendedKeyUsageHasBeenSet(false),
-    m_keyUsageHasBeenSet(false),
-    m_subjectAlternativeNamesHasBeenSet(false),
-    m_customExtensionsHasBeenSet(false)
+Extensions::Extensions(JsonView jsonValue)
+  : Extensions()
 {
   *this = jsonValue;
 }

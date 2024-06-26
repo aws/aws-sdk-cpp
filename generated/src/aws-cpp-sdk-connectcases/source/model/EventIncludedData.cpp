@@ -24,9 +24,8 @@ EventIncludedData::EventIncludedData() :
 {
 }
 
-EventIncludedData::EventIncludedData(JsonView jsonValue) : 
-    m_caseDataHasBeenSet(false),
-    m_relatedItemDataHasBeenSet(false)
+EventIncludedData::EventIncludedData(JsonView jsonValue)
+  : EventIncludedData()
 {
   *this = jsonValue;
 }

@@ -28,13 +28,8 @@ InAppTemplateRequest::InAppTemplateRequest() :
 {
 }
 
-InAppTemplateRequest::InAppTemplateRequest(JsonView jsonValue) : 
-    m_contentHasBeenSet(false),
-    m_customConfigHasBeenSet(false),
-    m_layout(Layout::NOT_SET),
-    m_layoutHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_templateDescriptionHasBeenSet(false)
+InAppTemplateRequest::InAppTemplateRequest(JsonView jsonValue)
+  : InAppTemplateRequest()
 {
   *this = jsonValue;
 }

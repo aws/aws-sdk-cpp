@@ -23,8 +23,8 @@ AwsEc2ClientVpnEndpointAuthenticationOptionsActiveDirectoryDetails::AwsEc2Client
 {
 }
 
-AwsEc2ClientVpnEndpointAuthenticationOptionsActiveDirectoryDetails::AwsEc2ClientVpnEndpointAuthenticationOptionsActiveDirectoryDetails(JsonView jsonValue) : 
-    m_directoryIdHasBeenSet(false)
+AwsEc2ClientVpnEndpointAuthenticationOptionsActiveDirectoryDetails::AwsEc2ClientVpnEndpointAuthenticationOptionsActiveDirectoryDetails(JsonView jsonValue)
+  : AwsEc2ClientVpnEndpointAuthenticationOptionsActiveDirectoryDetails()
 {
   *this = jsonValue;
 }

@@ -30,13 +30,8 @@ ScalingParameters::ScalingParameters() :
 {
 }
 
-ScalingParameters::ScalingParameters(const XmlNode& xmlNode) : 
-    m_desiredInstanceType(PartitionInstanceType::NOT_SET),
-    m_desiredInstanceTypeHasBeenSet(false),
-    m_desiredReplicationCount(0),
-    m_desiredReplicationCountHasBeenSet(false),
-    m_desiredPartitionCount(0),
-    m_desiredPartitionCountHasBeenSet(false)
+ScalingParameters::ScalingParameters(const XmlNode& xmlNode)
+  : ScalingParameters()
 {
   *this = xmlNode;
 }

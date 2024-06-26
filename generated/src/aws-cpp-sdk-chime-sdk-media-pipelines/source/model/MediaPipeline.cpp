@@ -27,12 +27,8 @@ MediaPipeline::MediaPipeline() :
 {
 }
 
-MediaPipeline::MediaPipeline(JsonView jsonValue) : 
-    m_mediaCapturePipelineHasBeenSet(false),
-    m_mediaLiveConnectorPipelineHasBeenSet(false),
-    m_mediaConcatenationPipelineHasBeenSet(false),
-    m_mediaInsightsPipelineHasBeenSet(false),
-    m_mediaStreamPipelineHasBeenSet(false)
+MediaPipeline::MediaPipeline(JsonView jsonValue)
+  : MediaPipeline()
 {
   *this = jsonValue;
 }

@@ -28,13 +28,8 @@ TrafficRoutingConfig::TrafficRoutingConfig() :
 {
 }
 
-TrafficRoutingConfig::TrafficRoutingConfig(JsonView jsonValue) : 
-    m_type(TrafficRoutingConfigType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_waitIntervalInSeconds(0),
-    m_waitIntervalInSecondsHasBeenSet(false),
-    m_canarySizeHasBeenSet(false),
-    m_linearStepSizeHasBeenSet(false)
+TrafficRoutingConfig::TrafficRoutingConfig(JsonView jsonValue)
+  : TrafficRoutingConfig()
 {
   *this = jsonValue;
 }

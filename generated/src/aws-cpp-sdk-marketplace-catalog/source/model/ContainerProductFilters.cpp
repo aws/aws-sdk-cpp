@@ -26,11 +26,8 @@ ContainerProductFilters::ContainerProductFilters() :
 {
 }
 
-ContainerProductFilters::ContainerProductFilters(JsonView jsonValue) : 
-    m_entityIdHasBeenSet(false),
-    m_lastModifiedDateHasBeenSet(false),
-    m_productTitleHasBeenSet(false),
-    m_visibilityHasBeenSet(false)
+ContainerProductFilters::ContainerProductFilters(JsonView jsonValue)
+  : ContainerProductFilters()
 {
   *this = jsonValue;
 }

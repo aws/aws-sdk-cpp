@@ -22,8 +22,8 @@ GetTextDetectionResult::GetTextDetectionResult() :
 {
 }
 
-GetTextDetectionResult::GetTextDetectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_jobStatus(VideoJobStatus::NOT_SET)
+GetTextDetectionResult::GetTextDetectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetTextDetectionResult()
 {
   *this = result;
 }

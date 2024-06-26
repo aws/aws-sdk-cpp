@@ -28,13 +28,8 @@ EnvironmentActionSummary::EnvironmentActionSummary() :
 {
 }
 
-EnvironmentActionSummary::EnvironmentActionSummary(JsonView jsonValue) : 
-    m_descriptionHasBeenSet(false),
-    m_domainIdHasBeenSet(false),
-    m_environmentIdHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_parametersHasBeenSet(false)
+EnvironmentActionSummary::EnvironmentActionSummary(JsonView jsonValue)
+  : EnvironmentActionSummary()
 {
   *this = jsonValue;
 }

@@ -36,21 +36,8 @@ RxNormAttribute::RxNormAttribute() :
 {
 }
 
-RxNormAttribute::RxNormAttribute(JsonView jsonValue) : 
-    m_type(RxNormAttributeType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_score(0.0),
-    m_scoreHasBeenSet(false),
-    m_relationshipScore(0.0),
-    m_relationshipScoreHasBeenSet(false),
-    m_id(0),
-    m_idHasBeenSet(false),
-    m_beginOffset(0),
-    m_beginOffsetHasBeenSet(false),
-    m_endOffset(0),
-    m_endOffsetHasBeenSet(false),
-    m_textHasBeenSet(false),
-    m_traitsHasBeenSet(false)
+RxNormAttribute::RxNormAttribute(JsonView jsonValue)
+  : RxNormAttribute()
 {
   *this = jsonValue;
 }

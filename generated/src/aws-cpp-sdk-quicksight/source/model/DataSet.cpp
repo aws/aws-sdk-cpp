@@ -41,26 +41,8 @@ DataSet::DataSet() :
 {
 }
 
-DataSet::DataSet(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_dataSetIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_physicalTableMapHasBeenSet(false),
-    m_logicalTableMapHasBeenSet(false),
-    m_outputColumnsHasBeenSet(false),
-    m_importMode(DataSetImportMode::NOT_SET),
-    m_importModeHasBeenSet(false),
-    m_consumedSpiceCapacityInBytes(0),
-    m_consumedSpiceCapacityInBytesHasBeenSet(false),
-    m_columnGroupsHasBeenSet(false),
-    m_fieldFoldersHasBeenSet(false),
-    m_rowLevelPermissionDataSetHasBeenSet(false),
-    m_rowLevelPermissionTagConfigurationHasBeenSet(false),
-    m_columnLevelPermissionRulesHasBeenSet(false),
-    m_dataSetUsageConfigurationHasBeenSet(false),
-    m_datasetParametersHasBeenSet(false)
+DataSet::DataSet(JsonView jsonValue)
+  : DataSet()
 {
   *this = jsonValue;
 }

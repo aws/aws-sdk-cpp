@@ -26,11 +26,8 @@ ImportTaskSummaryWaves::ImportTaskSummaryWaves() :
 {
 }
 
-ImportTaskSummaryWaves::ImportTaskSummaryWaves(JsonView jsonValue) : 
-    m_createdCount(0),
-    m_createdCountHasBeenSet(false),
-    m_modifiedCount(0),
-    m_modifiedCountHasBeenSet(false)
+ImportTaskSummaryWaves::ImportTaskSummaryWaves(JsonView jsonValue)
+  : ImportTaskSummaryWaves()
 {
   *this = jsonValue;
 }

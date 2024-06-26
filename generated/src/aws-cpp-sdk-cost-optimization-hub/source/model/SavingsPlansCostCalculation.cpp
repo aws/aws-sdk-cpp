@@ -23,8 +23,8 @@ SavingsPlansCostCalculation::SavingsPlansCostCalculation() :
 {
 }
 
-SavingsPlansCostCalculation::SavingsPlansCostCalculation(JsonView jsonValue) : 
-    m_pricingHasBeenSet(false)
+SavingsPlansCostCalculation::SavingsPlansCostCalculation(JsonView jsonValue)
+  : SavingsPlansCostCalculation()
 {
   *this = jsonValue;
 }

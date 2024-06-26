@@ -26,11 +26,8 @@ IntentSortBy::IntentSortBy() :
 {
 }
 
-IntentSortBy::IntentSortBy(JsonView jsonValue) : 
-    m_attribute(IntentSortAttribute::NOT_SET),
-    m_attributeHasBeenSet(false),
-    m_order(SortOrder::NOT_SET),
-    m_orderHasBeenSet(false)
+IntentSortBy::IntentSortBy(JsonView jsonValue)
+  : IntentSortBy()
 {
   *this = jsonValue;
 }

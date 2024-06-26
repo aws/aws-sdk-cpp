@@ -24,9 +24,8 @@ Scte35ReturnToNetworkScheduleActionSettings::Scte35ReturnToNetworkScheduleAction
 {
 }
 
-Scte35ReturnToNetworkScheduleActionSettings::Scte35ReturnToNetworkScheduleActionSettings(JsonView jsonValue) : 
-    m_spliceEventId(0),
-    m_spliceEventIdHasBeenSet(false)
+Scte35ReturnToNetworkScheduleActionSettings::Scte35ReturnToNetworkScheduleActionSettings(JsonView jsonValue)
+  : Scte35ReturnToNetworkScheduleActionSettings()
 {
   *this = jsonValue;
 }

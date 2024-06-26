@@ -26,9 +26,8 @@ RealtimeMetricsSubscriptionConfig::RealtimeMetricsSubscriptionConfig() :
 {
 }
 
-RealtimeMetricsSubscriptionConfig::RealtimeMetricsSubscriptionConfig(const XmlNode& xmlNode) : 
-    m_realtimeMetricsSubscriptionStatus(RealtimeMetricsSubscriptionStatus::NOT_SET),
-    m_realtimeMetricsSubscriptionStatusHasBeenSet(false)
+RealtimeMetricsSubscriptionConfig::RealtimeMetricsSubscriptionConfig(const XmlNode& xmlNode)
+  : RealtimeMetricsSubscriptionConfig()
 {
   *this = xmlNode;
 }

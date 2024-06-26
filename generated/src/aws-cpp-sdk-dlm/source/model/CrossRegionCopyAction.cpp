@@ -25,10 +25,8 @@ CrossRegionCopyAction::CrossRegionCopyAction() :
 {
 }
 
-CrossRegionCopyAction::CrossRegionCopyAction(JsonView jsonValue) : 
-    m_targetHasBeenSet(false),
-    m_encryptionConfigurationHasBeenSet(false),
-    m_retainRuleHasBeenSet(false)
+CrossRegionCopyAction::CrossRegionCopyAction(JsonView jsonValue)
+  : CrossRegionCopyAction()
 {
   *this = jsonValue;
 }

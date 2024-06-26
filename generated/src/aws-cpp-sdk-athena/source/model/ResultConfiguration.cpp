@@ -26,11 +26,8 @@ ResultConfiguration::ResultConfiguration() :
 {
 }
 
-ResultConfiguration::ResultConfiguration(JsonView jsonValue) : 
-    m_outputLocationHasBeenSet(false),
-    m_encryptionConfigurationHasBeenSet(false),
-    m_expectedBucketOwnerHasBeenSet(false),
-    m_aclConfigurationHasBeenSet(false)
+ResultConfiguration::ResultConfiguration(JsonView jsonValue)
+  : ResultConfiguration()
 {
   *this = jsonValue;
 }

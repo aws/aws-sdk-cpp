@@ -24,9 +24,8 @@ TimestampRange::TimestampRange() :
 {
 }
 
-TimestampRange::TimestampRange(JsonView jsonValue) : 
-    m_startTimestampHasBeenSet(false),
-    m_endTimestampHasBeenSet(false)
+TimestampRange::TimestampRange(JsonView jsonValue)
+  : TimestampRange()
 {
   *this = jsonValue;
 }

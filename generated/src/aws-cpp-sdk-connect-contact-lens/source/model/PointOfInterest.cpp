@@ -26,11 +26,8 @@ PointOfInterest::PointOfInterest() :
 {
 }
 
-PointOfInterest::PointOfInterest(JsonView jsonValue) : 
-    m_beginOffsetMillis(0),
-    m_beginOffsetMillisHasBeenSet(false),
-    m_endOffsetMillis(0),
-    m_endOffsetMillisHasBeenSet(false)
+PointOfInterest::PointOfInterest(JsonView jsonValue)
+  : PointOfInterest()
 {
   *this = jsonValue;
 }

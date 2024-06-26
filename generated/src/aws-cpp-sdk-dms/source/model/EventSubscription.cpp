@@ -32,17 +32,8 @@ EventSubscription::EventSubscription() :
 {
 }
 
-EventSubscription::EventSubscription(JsonView jsonValue) : 
-    m_customerAwsIdHasBeenSet(false),
-    m_custSubscriptionIdHasBeenSet(false),
-    m_snsTopicArnHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_subscriptionCreationTimeHasBeenSet(false),
-    m_sourceTypeHasBeenSet(false),
-    m_sourceIdsListHasBeenSet(false),
-    m_eventCategoriesListHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
+EventSubscription::EventSubscription(JsonView jsonValue)
+  : EventSubscription()
 {
   *this = jsonValue;
 }

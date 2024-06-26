@@ -28,13 +28,8 @@ MitigationActionParams::MitigationActionParams() :
 {
 }
 
-MitigationActionParams::MitigationActionParams(JsonView jsonValue) : 
-    m_updateDeviceCertificateParamsHasBeenSet(false),
-    m_updateCACertificateParamsHasBeenSet(false),
-    m_addThingsToThingGroupParamsHasBeenSet(false),
-    m_replaceDefaultPolicyVersionParamsHasBeenSet(false),
-    m_enableIoTLoggingParamsHasBeenSet(false),
-    m_publishFindingToSnsParamsHasBeenSet(false)
+MitigationActionParams::MitigationActionParams(JsonView jsonValue)
+  : MitigationActionParams()
 {
   *this = jsonValue;
 }

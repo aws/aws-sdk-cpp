@@ -28,13 +28,8 @@ InferredState::InferredState() :
 {
 }
 
-InferredState::InferredState(JsonView jsonValue) : 
-    m_positionHasBeenSet(false),
-    m_accuracyHasBeenSet(false),
-    m_deviationDistance(0.0),
-    m_deviationDistanceHasBeenSet(false),
-    m_proxyDetected(false),
-    m_proxyDetectedHasBeenSet(false)
+InferredState::InferredState(JsonView jsonValue)
+  : InferredState()
 {
   *this = jsonValue;
 }

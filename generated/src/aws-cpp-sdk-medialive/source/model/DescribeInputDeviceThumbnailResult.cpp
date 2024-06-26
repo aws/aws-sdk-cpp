@@ -49,9 +49,8 @@ DescribeInputDeviceThumbnailResult& DescribeInputDeviceThumbnailResult::operator
    return *this;
 }
 
-DescribeInputDeviceThumbnailResult::DescribeInputDeviceThumbnailResult(Aws::AmazonWebServiceResult<ResponseStream>&& result) : 
-    m_contentType(ContentType::NOT_SET),
-    m_contentLength(0)
+DescribeInputDeviceThumbnailResult::DescribeInputDeviceThumbnailResult(Aws::AmazonWebServiceResult<ResponseStream>&& result)
+  : DescribeInputDeviceThumbnailResult()
 {
   *this = std::move(result);
 }

@@ -26,11 +26,8 @@ SipRuleTargetApplication::SipRuleTargetApplication() :
 {
 }
 
-SipRuleTargetApplication::SipRuleTargetApplication(JsonView jsonValue) : 
-    m_sipMediaApplicationIdHasBeenSet(false),
-    m_priority(0),
-    m_priorityHasBeenSet(false),
-    m_awsRegionHasBeenSet(false)
+SipRuleTargetApplication::SipRuleTargetApplication(JsonView jsonValue)
+  : SipRuleTargetApplication()
 {
   *this = jsonValue;
 }

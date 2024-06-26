@@ -25,10 +25,8 @@ ConfigurationSetFilter::ConfigurationSetFilter() :
 {
 }
 
-ConfigurationSetFilter::ConfigurationSetFilter(JsonView jsonValue) : 
-    m_name(ConfigurationSetFilterName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+ConfigurationSetFilter::ConfigurationSetFilter(JsonView jsonValue)
+  : ConfigurationSetFilter()
 {
   *this = jsonValue;
 }

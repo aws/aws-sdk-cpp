@@ -31,16 +31,8 @@ RuleSummary::RuleSummary() :
 {
 }
 
-RuleSummary::RuleSummary(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_isDefault(false),
-    m_isDefaultHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_priority(0),
-    m_priorityHasBeenSet(false)
+RuleSummary::RuleSummary(JsonView jsonValue)
+  : RuleSummary()
 {
   *this = jsonValue;
 }

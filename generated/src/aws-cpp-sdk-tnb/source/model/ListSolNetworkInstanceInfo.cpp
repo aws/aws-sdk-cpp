@@ -31,16 +31,8 @@ ListSolNetworkInstanceInfo::ListSolNetworkInstanceInfo() :
 {
 }
 
-ListSolNetworkInstanceInfo::ListSolNetworkInstanceInfo(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_metadataHasBeenSet(false),
-    m_nsInstanceDescriptionHasBeenSet(false),
-    m_nsInstanceNameHasBeenSet(false),
-    m_nsState(NsState::NOT_SET),
-    m_nsStateHasBeenSet(false),
-    m_nsdIdHasBeenSet(false),
-    m_nsdInfoIdHasBeenSet(false)
+ListSolNetworkInstanceInfo::ListSolNetworkInstanceInfo(JsonView jsonValue)
+  : ListSolNetworkInstanceInfo()
 {
   *this = jsonValue;
 }

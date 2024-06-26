@@ -49,34 +49,8 @@ AmazonRedshiftNodeData::AmazonRedshiftNodeData() :
 {
 }
 
-AmazonRedshiftNodeData::AmazonRedshiftNodeData(JsonView jsonValue) : 
-    m_accessTypeHasBeenSet(false),
-    m_sourceTypeHasBeenSet(false),
-    m_connectionHasBeenSet(false),
-    m_schemaHasBeenSet(false),
-    m_tableHasBeenSet(false),
-    m_catalogDatabaseHasBeenSet(false),
-    m_catalogTableHasBeenSet(false),
-    m_catalogRedshiftSchemaHasBeenSet(false),
-    m_catalogRedshiftTableHasBeenSet(false),
-    m_tempDirHasBeenSet(false),
-    m_iamRoleHasBeenSet(false),
-    m_advancedOptionsHasBeenSet(false),
-    m_sampleQueryHasBeenSet(false),
-    m_preActionHasBeenSet(false),
-    m_postActionHasBeenSet(false),
-    m_actionHasBeenSet(false),
-    m_tablePrefixHasBeenSet(false),
-    m_upsert(false),
-    m_upsertHasBeenSet(false),
-    m_mergeActionHasBeenSet(false),
-    m_mergeWhenMatchedHasBeenSet(false),
-    m_mergeWhenNotMatchedHasBeenSet(false),
-    m_mergeClauseHasBeenSet(false),
-    m_crawlerConnectionHasBeenSet(false),
-    m_tableSchemaHasBeenSet(false),
-    m_stagingTableHasBeenSet(false),
-    m_selectedColumnsHasBeenSet(false)
+AmazonRedshiftNodeData::AmazonRedshiftNodeData(JsonView jsonValue)
+  : AmazonRedshiftNodeData()
 {
   *this = jsonValue;
 }

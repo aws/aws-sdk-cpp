@@ -24,9 +24,8 @@ ActivitiesResponse::ActivitiesResponse() :
 {
 }
 
-ActivitiesResponse::ActivitiesResponse(JsonView jsonValue) : 
-    m_itemHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
+ActivitiesResponse::ActivitiesResponse(JsonView jsonValue)
+  : ActivitiesResponse()
 {
   *this = jsonValue;
 }

@@ -27,12 +27,8 @@ VirtualNodeData::VirtualNodeData() :
 {
 }
 
-VirtualNodeData::VirtualNodeData(JsonView jsonValue) : 
-    m_meshNameHasBeenSet(false),
-    m_metadataHasBeenSet(false),
-    m_specHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_virtualNodeNameHasBeenSet(false)
+VirtualNodeData::VirtualNodeData(JsonView jsonValue)
+  : VirtualNodeData()
 {
   *this = jsonValue;
 }

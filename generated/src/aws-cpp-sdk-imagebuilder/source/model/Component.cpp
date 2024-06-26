@@ -44,29 +44,8 @@ Component::Component() :
 {
 }
 
-Component::Component(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_changeDescriptionHasBeenSet(false),
-    m_type(ComponentType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_platform(Platform::NOT_SET),
-    m_platformHasBeenSet(false),
-    m_supportedOsVersionsHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_ownerHasBeenSet(false),
-    m_dataHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_encrypted(false),
-    m_encryptedHasBeenSet(false),
-    m_dateCreatedHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_publisherHasBeenSet(false),
-    m_obfuscate(false),
-    m_obfuscateHasBeenSet(false)
+Component::Component(JsonView jsonValue)
+  : Component()
 {
   *this = jsonValue;
 }

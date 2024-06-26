@@ -23,8 +23,8 @@ AnonymousUserGenerativeQnAEmbeddingConfiguration::AnonymousUserGenerativeQnAEmbe
 {
 }
 
-AnonymousUserGenerativeQnAEmbeddingConfiguration::AnonymousUserGenerativeQnAEmbeddingConfiguration(JsonView jsonValue) : 
-    m_initialTopicIdHasBeenSet(false)
+AnonymousUserGenerativeQnAEmbeddingConfiguration::AnonymousUserGenerativeQnAEmbeddingConfiguration(JsonView jsonValue)
+  : AnonymousUserGenerativeQnAEmbeddingConfiguration()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ SecureNamespaceInfo::SecureNamespaceInfo() :
 {
 }
 
-SecureNamespaceInfo::SecureNamespaceInfo(JsonView jsonValue) : 
-    m_clusterIdHasBeenSet(false),
-    m_namespaceHasBeenSet(false)
+SecureNamespaceInfo::SecureNamespaceInfo(JsonView jsonValue)
+  : SecureNamespaceInfo()
 {
   *this = jsonValue;
 }

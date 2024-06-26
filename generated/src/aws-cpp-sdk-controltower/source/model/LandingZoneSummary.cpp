@@ -23,8 +23,8 @@ LandingZoneSummary::LandingZoneSummary() :
 {
 }
 
-LandingZoneSummary::LandingZoneSummary(JsonView jsonValue) : 
-    m_arnHasBeenSet(false)
+LandingZoneSummary::LandingZoneSummary(JsonView jsonValue)
+  : LandingZoneSummary()
 {
   *this = jsonValue;
 }

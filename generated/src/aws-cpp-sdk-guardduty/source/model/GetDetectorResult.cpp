@@ -23,9 +23,8 @@ GetDetectorResult::GetDetectorResult() :
 {
 }
 
-GetDetectorResult::GetDetectorResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_findingPublishingFrequency(FindingPublishingFrequency::NOT_SET),
-    m_status(DetectorStatus::NOT_SET)
+GetDetectorResult::GetDetectorResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetDetectorResult()
 {
   *this = result;
 }

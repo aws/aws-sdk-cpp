@@ -25,10 +25,8 @@ TableExcerpt::TableExcerpt() :
 {
 }
 
-TableExcerpt::TableExcerpt(JsonView jsonValue) : 
-    m_rowsHasBeenSet(false),
-    m_totalNumberOfRows(0),
-    m_totalNumberOfRowsHasBeenSet(false)
+TableExcerpt::TableExcerpt(JsonView jsonValue)
+  : TableExcerpt()
 {
   *this = jsonValue;
 }

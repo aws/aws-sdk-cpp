@@ -24,9 +24,8 @@ ReleaseLabelFilter::ReleaseLabelFilter() :
 {
 }
 
-ReleaseLabelFilter::ReleaseLabelFilter(JsonView jsonValue) : 
-    m_prefixHasBeenSet(false),
-    m_applicationHasBeenSet(false)
+ReleaseLabelFilter::ReleaseLabelFilter(JsonView jsonValue)
+  : ReleaseLabelFilter()
 {
   *this = jsonValue;
 }

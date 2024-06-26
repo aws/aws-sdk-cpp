@@ -27,10 +27,8 @@ SwitchoverDetail::SwitchoverDetail() :
 {
 }
 
-SwitchoverDetail::SwitchoverDetail(const XmlNode& xmlNode) : 
-    m_sourceMemberHasBeenSet(false),
-    m_targetMemberHasBeenSet(false),
-    m_statusHasBeenSet(false)
+SwitchoverDetail::SwitchoverDetail(const XmlNode& xmlNode)
+  : SwitchoverDetail()
 {
   *this = xmlNode;
 }

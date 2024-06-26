@@ -26,9 +26,8 @@ TimeRangeFilter::TimeRangeFilter() :
 {
 }
 
-TimeRangeFilter::TimeRangeFilter(const XmlNode& xmlNode) : 
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
+TimeRangeFilter::TimeRangeFilter(const XmlNode& xmlNode)
+  : TimeRangeFilter()
 {
   *this = xmlNode;
 }

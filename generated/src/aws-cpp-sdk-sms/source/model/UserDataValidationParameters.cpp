@@ -25,10 +25,8 @@ UserDataValidationParameters::UserDataValidationParameters() :
 {
 }
 
-UserDataValidationParameters::UserDataValidationParameters(JsonView jsonValue) : 
-    m_sourceHasBeenSet(false),
-    m_scriptType(ScriptType::NOT_SET),
-    m_scriptTypeHasBeenSet(false)
+UserDataValidationParameters::UserDataValidationParameters(JsonView jsonValue)
+  : UserDataValidationParameters()
 {
   *this = jsonValue;
 }

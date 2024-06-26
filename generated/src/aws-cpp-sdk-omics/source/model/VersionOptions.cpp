@@ -23,8 +23,8 @@ VersionOptions::VersionOptions() :
 {
 }
 
-VersionOptions::VersionOptions(JsonView jsonValue) : 
-    m_tsvVersionOptionsHasBeenSet(false)
+VersionOptions::VersionOptions(JsonView jsonValue)
+  : VersionOptions()
 {
   *this = jsonValue;
 }

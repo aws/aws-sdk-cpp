@@ -27,12 +27,8 @@ DkimAttributes::DkimAttributes() :
 {
 }
 
-DkimAttributes::DkimAttributes(JsonView jsonValue) : 
-    m_signingEnabled(false),
-    m_signingEnabledHasBeenSet(false),
-    m_status(DkimStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_tokensHasBeenSet(false)
+DkimAttributes::DkimAttributes(JsonView jsonValue)
+  : DkimAttributes()
 {
   *this = jsonValue;
 }

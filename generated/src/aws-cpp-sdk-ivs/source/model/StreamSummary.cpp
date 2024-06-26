@@ -31,16 +31,8 @@ StreamSummary::StreamSummary() :
 {
 }
 
-StreamSummary::StreamSummary(JsonView jsonValue) : 
-    m_channelArnHasBeenSet(false),
-    m_health(StreamHealth::NOT_SET),
-    m_healthHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_state(StreamState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_streamIdHasBeenSet(false),
-    m_viewerCount(0),
-    m_viewerCountHasBeenSet(false)
+StreamSummary::StreamSummary(JsonView jsonValue)
+  : StreamSummary()
 {
   *this = jsonValue;
 }

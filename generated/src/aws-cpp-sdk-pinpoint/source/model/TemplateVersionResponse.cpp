@@ -29,14 +29,8 @@ TemplateVersionResponse::TemplateVersionResponse() :
 {
 }
 
-TemplateVersionResponse::TemplateVersionResponse(JsonView jsonValue) : 
-    m_creationDateHasBeenSet(false),
-    m_defaultSubstitutionsHasBeenSet(false),
-    m_lastModifiedDateHasBeenSet(false),
-    m_templateDescriptionHasBeenSet(false),
-    m_templateNameHasBeenSet(false),
-    m_templateTypeHasBeenSet(false),
-    m_versionHasBeenSet(false)
+TemplateVersionResponse::TemplateVersionResponse(JsonView jsonValue)
+  : TemplateVersionResponse()
 {
   *this = jsonValue;
 }

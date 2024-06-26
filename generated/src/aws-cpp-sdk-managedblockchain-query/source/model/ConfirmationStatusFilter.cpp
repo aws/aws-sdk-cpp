@@ -23,8 +23,8 @@ ConfirmationStatusFilter::ConfirmationStatusFilter() :
 {
 }
 
-ConfirmationStatusFilter::ConfirmationStatusFilter(JsonView jsonValue) : 
-    m_includeHasBeenSet(false)
+ConfirmationStatusFilter::ConfirmationStatusFilter(JsonView jsonValue)
+  : ConfirmationStatusFilter()
 {
   *this = jsonValue;
 }

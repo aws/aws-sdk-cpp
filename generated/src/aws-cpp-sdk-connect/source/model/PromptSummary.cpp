@@ -27,12 +27,8 @@ PromptSummary::PromptSummary() :
 {
 }
 
-PromptSummary::PromptSummary(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_lastModifiedRegionHasBeenSet(false)
+PromptSummary::PromptSummary(JsonView jsonValue)
+  : PromptSummary()
 {
   *this = jsonValue;
 }

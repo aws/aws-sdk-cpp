@@ -29,14 +29,8 @@ AwsMskClusterClusterInfoDetails::AwsMskClusterClusterInfoDetails() :
 {
 }
 
-AwsMskClusterClusterInfoDetails::AwsMskClusterClusterInfoDetails(JsonView jsonValue) : 
-    m_encryptionInfoHasBeenSet(false),
-    m_currentVersionHasBeenSet(false),
-    m_numberOfBrokerNodes(0),
-    m_numberOfBrokerNodesHasBeenSet(false),
-    m_clusterNameHasBeenSet(false),
-    m_clientAuthenticationHasBeenSet(false),
-    m_enhancedMonitoringHasBeenSet(false)
+AwsMskClusterClusterInfoDetails::AwsMskClusterClusterInfoDetails(JsonView jsonValue)
+  : AwsMskClusterClusterInfoDetails()
 {
   *this = jsonValue;
 }

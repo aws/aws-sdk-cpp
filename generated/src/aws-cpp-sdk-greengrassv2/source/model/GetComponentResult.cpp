@@ -23,8 +23,8 @@ GetComponentResult::GetComponentResult() :
 {
 }
 
-GetComponentResult::GetComponentResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_recipeOutputFormat(RecipeOutputFormat::NOT_SET)
+GetComponentResult::GetComponentResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetComponentResult()
 {
   *this = result;
 }

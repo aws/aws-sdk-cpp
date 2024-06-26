@@ -25,10 +25,8 @@ FreeFormLayoutElementBorderStyle::FreeFormLayoutElementBorderStyle() :
 {
 }
 
-FreeFormLayoutElementBorderStyle::FreeFormLayoutElementBorderStyle(JsonView jsonValue) : 
-    m_visibility(Visibility::NOT_SET),
-    m_visibilityHasBeenSet(false),
-    m_colorHasBeenSet(false)
+FreeFormLayoutElementBorderStyle::FreeFormLayoutElementBorderStyle(JsonView jsonValue)
+  : FreeFormLayoutElementBorderStyle()
 {
   *this = jsonValue;
 }

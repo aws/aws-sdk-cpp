@@ -26,11 +26,8 @@ DatasetParameter::DatasetParameter() :
 {
 }
 
-DatasetParameter::DatasetParameter(JsonView jsonValue) : 
-    m_stringDatasetParameterHasBeenSet(false),
-    m_decimalDatasetParameterHasBeenSet(false),
-    m_integerDatasetParameterHasBeenSet(false),
-    m_dateTimeDatasetParameterHasBeenSet(false)
+DatasetParameter::DatasetParameter(JsonView jsonValue)
+  : DatasetParameter()
 {
   *this = jsonValue;
 }

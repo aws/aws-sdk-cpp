@@ -23,8 +23,8 @@ ContactChannelAddress::ContactChannelAddress() :
 {
 }
 
-ContactChannelAddress::ContactChannelAddress(JsonView jsonValue) : 
-    m_simpleAddressHasBeenSet(false)
+ContactChannelAddress::ContactChannelAddress(JsonView jsonValue)
+  : ContactChannelAddress()
 {
   *this = jsonValue;
 }

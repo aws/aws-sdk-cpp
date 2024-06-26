@@ -25,10 +25,8 @@ SearchGroupedFilterExpressions::SearchGroupedFilterExpressions() :
 {
 }
 
-SearchGroupedFilterExpressions::SearchGroupedFilterExpressions(JsonView jsonValue) : 
-    m_filtersHasBeenSet(false),
-    m_operator(LogicalOperator::NOT_SET),
-    m_operatorHasBeenSet(false)
+SearchGroupedFilterExpressions::SearchGroupedFilterExpressions(JsonView jsonValue)
+  : SearchGroupedFilterExpressions()
 {
   *this = jsonValue;
 }

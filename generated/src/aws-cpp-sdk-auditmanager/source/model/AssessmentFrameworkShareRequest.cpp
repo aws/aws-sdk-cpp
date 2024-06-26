@@ -40,25 +40,8 @@ AssessmentFrameworkShareRequest::AssessmentFrameworkShareRequest() :
 {
 }
 
-AssessmentFrameworkShareRequest::AssessmentFrameworkShareRequest(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_frameworkIdHasBeenSet(false),
-    m_frameworkNameHasBeenSet(false),
-    m_frameworkDescriptionHasBeenSet(false),
-    m_status(ShareRequestStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_sourceAccountHasBeenSet(false),
-    m_destinationAccountHasBeenSet(false),
-    m_destinationRegionHasBeenSet(false),
-    m_expirationTimeHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastUpdatedHasBeenSet(false),
-    m_commentHasBeenSet(false),
-    m_standardControlsCount(0),
-    m_standardControlsCountHasBeenSet(false),
-    m_customControlsCount(0),
-    m_customControlsCountHasBeenSet(false),
-    m_complianceTypeHasBeenSet(false)
+AssessmentFrameworkShareRequest::AssessmentFrameworkShareRequest(JsonView jsonValue)
+  : AssessmentFrameworkShareRequest()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ ContainerGroupsConfiguration::ContainerGroupsConfiguration() :
 {
 }
 
-ContainerGroupsConfiguration::ContainerGroupsConfiguration(JsonView jsonValue) : 
-    m_containerGroupDefinitionNamesHasBeenSet(false),
-    m_connectionPortRangeHasBeenSet(false),
-    m_desiredReplicaContainerGroupsPerInstance(0),
-    m_desiredReplicaContainerGroupsPerInstanceHasBeenSet(false)
+ContainerGroupsConfiguration::ContainerGroupsConfiguration(JsonView jsonValue)
+  : ContainerGroupsConfiguration()
 {
   *this = jsonValue;
 }

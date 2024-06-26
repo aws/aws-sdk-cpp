@@ -24,9 +24,8 @@ SourceMetadata::SourceMetadata() :
 {
 }
 
-SourceMetadata::SourceMetadata(JsonView jsonValue) : 
-    m_sourceArnHasBeenSet(false),
-    m_sourceUpdateTokenHasBeenSet(false)
+SourceMetadata::SourceMetadata(JsonView jsonValue)
+  : SourceMetadata()
 {
   *this = jsonValue;
 }

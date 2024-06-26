@@ -23,8 +23,8 @@ DeprecationRequestDetails::DeprecationRequestDetails() :
 {
 }
 
-DeprecationRequestDetails::DeprecationRequestDetails(JsonView jsonValue) : 
-    m_deprecationAtHasBeenSet(false)
+DeprecationRequestDetails::DeprecationRequestDetails(JsonView jsonValue)
+  : DeprecationRequestDetails()
 {
   *this = jsonValue;
 }

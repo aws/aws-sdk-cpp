@@ -35,20 +35,8 @@ RecommenderConfigurationResponse::RecommenderConfigurationResponse() :
 {
 }
 
-RecommenderConfigurationResponse::RecommenderConfigurationResponse(JsonView jsonValue) : 
-    m_attributesHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_lastModifiedDateHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_recommendationProviderIdTypeHasBeenSet(false),
-    m_recommendationProviderRoleArnHasBeenSet(false),
-    m_recommendationProviderUriHasBeenSet(false),
-    m_recommendationTransformerUriHasBeenSet(false),
-    m_recommendationsDisplayNameHasBeenSet(false),
-    m_recommendationsPerMessage(0),
-    m_recommendationsPerMessageHasBeenSet(false)
+RecommenderConfigurationResponse::RecommenderConfigurationResponse(JsonView jsonValue)
+  : RecommenderConfigurationResponse()
 {
   *this = jsonValue;
 }

@@ -32,17 +32,8 @@ EvaluationSummary::EvaluationSummary() :
 {
 }
 
-EvaluationSummary::EvaluationSummary(JsonView jsonValue) : 
-    m_evaluationIdHasBeenSet(false),
-    m_evaluationArnHasBeenSet(false),
-    m_evaluationFormTitleHasBeenSet(false),
-    m_evaluationFormIdHasBeenSet(false),
-    m_status(EvaluationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_evaluatorArnHasBeenSet(false),
-    m_scoreHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false)
+EvaluationSummary::EvaluationSummary(JsonView jsonValue)
+  : EvaluationSummary()
 {
   *this = jsonValue;
 }

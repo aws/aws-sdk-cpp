@@ -28,13 +28,8 @@ ConnectPeerBgpConfiguration::ConnectPeerBgpConfiguration() :
 {
 }
 
-ConnectPeerBgpConfiguration::ConnectPeerBgpConfiguration(JsonView jsonValue) : 
-    m_coreNetworkAsn(0),
-    m_coreNetworkAsnHasBeenSet(false),
-    m_peerAsn(0),
-    m_peerAsnHasBeenSet(false),
-    m_coreNetworkAddressHasBeenSet(false),
-    m_peerAddressHasBeenSet(false)
+ConnectPeerBgpConfiguration::ConnectPeerBgpConfiguration(JsonView jsonValue)
+  : ConnectPeerBgpConfiguration()
 {
   *this = jsonValue;
 }

@@ -36,21 +36,8 @@ FlywheelProperties::FlywheelProperties() :
 {
 }
 
-FlywheelProperties::FlywheelProperties(JsonView jsonValue) : 
-    m_flywheelArnHasBeenSet(false),
-    m_activeModelArnHasBeenSet(false),
-    m_dataAccessRoleArnHasBeenSet(false),
-    m_taskConfigHasBeenSet(false),
-    m_dataLakeS3UriHasBeenSet(false),
-    m_dataSecurityConfigHasBeenSet(false),
-    m_status(FlywheelStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_modelType(ModelType::NOT_SET),
-    m_modelTypeHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_latestFlywheelIterationHasBeenSet(false)
+FlywheelProperties::FlywheelProperties(JsonView jsonValue)
+  : FlywheelProperties()
 {
   *this = jsonValue;
 }

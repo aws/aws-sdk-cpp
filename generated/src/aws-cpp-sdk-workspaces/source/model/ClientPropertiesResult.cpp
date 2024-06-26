@@ -24,9 +24,8 @@ ClientPropertiesResult::ClientPropertiesResult() :
 {
 }
 
-ClientPropertiesResult::ClientPropertiesResult(JsonView jsonValue) : 
-    m_resourceIdHasBeenSet(false),
-    m_clientPropertiesHasBeenSet(false)
+ClientPropertiesResult::ClientPropertiesResult(JsonView jsonValue)
+  : ClientPropertiesResult()
 {
   *this = jsonValue;
 }

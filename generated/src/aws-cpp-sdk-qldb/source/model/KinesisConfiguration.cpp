@@ -25,10 +25,8 @@ KinesisConfiguration::KinesisConfiguration() :
 {
 }
 
-KinesisConfiguration::KinesisConfiguration(JsonView jsonValue) : 
-    m_streamArnHasBeenSet(false),
-    m_aggregationEnabled(false),
-    m_aggregationEnabledHasBeenSet(false)
+KinesisConfiguration::KinesisConfiguration(JsonView jsonValue)
+  : KinesisConfiguration()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ FargatePlatformConfiguration::FargatePlatformConfiguration() :
 {
 }
 
-FargatePlatformConfiguration::FargatePlatformConfiguration(JsonView jsonValue) : 
-    m_platformVersionHasBeenSet(false)
+FargatePlatformConfiguration::FargatePlatformConfiguration(JsonView jsonValue)
+  : FargatePlatformConfiguration()
 {
   *this = jsonValue;
 }

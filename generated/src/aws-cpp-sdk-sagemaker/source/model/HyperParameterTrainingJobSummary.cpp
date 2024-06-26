@@ -36,21 +36,8 @@ HyperParameterTrainingJobSummary::HyperParameterTrainingJobSummary() :
 {
 }
 
-HyperParameterTrainingJobSummary::HyperParameterTrainingJobSummary(JsonView jsonValue) : 
-    m_trainingJobDefinitionNameHasBeenSet(false),
-    m_trainingJobNameHasBeenSet(false),
-    m_trainingJobArnHasBeenSet(false),
-    m_tuningJobNameHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_trainingStartTimeHasBeenSet(false),
-    m_trainingEndTimeHasBeenSet(false),
-    m_trainingJobStatus(TrainingJobStatus::NOT_SET),
-    m_trainingJobStatusHasBeenSet(false),
-    m_tunedHyperParametersHasBeenSet(false),
-    m_failureReasonHasBeenSet(false),
-    m_finalHyperParameterTuningJobObjectiveMetricHasBeenSet(false),
-    m_objectiveStatus(ObjectiveStatus::NOT_SET),
-    m_objectiveStatusHasBeenSet(false)
+HyperParameterTrainingJobSummary::HyperParameterTrainingJobSummary(JsonView jsonValue)
+  : HyperParameterTrainingJobSummary()
 {
   *this = jsonValue;
 }

@@ -28,13 +28,8 @@ WorkflowTypeInfo::WorkflowTypeInfo() :
 {
 }
 
-WorkflowTypeInfo::WorkflowTypeInfo(JsonView jsonValue) : 
-    m_workflowTypeHasBeenSet(false),
-    m_status(RegistrationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_deprecationDateHasBeenSet(false)
+WorkflowTypeInfo::WorkflowTypeInfo(JsonView jsonValue)
+  : WorkflowTypeInfo()
 {
   *this = jsonValue;
 }

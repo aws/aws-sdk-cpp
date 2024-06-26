@@ -24,9 +24,8 @@ InvalidGatewayRequestException::InvalidGatewayRequestException() :
 {
 }
 
-InvalidGatewayRequestException::InvalidGatewayRequestException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_errorHasBeenSet(false)
+InvalidGatewayRequestException::InvalidGatewayRequestException(JsonView jsonValue)
+  : InvalidGatewayRequestException()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ SchemaUnion::SchemaUnion() :
 {
 }
 
-SchemaUnion::SchemaUnion(JsonView jsonValue) : 
-    m_tabularSchemaConfigHasBeenSet(false)
+SchemaUnion::SchemaUnion(JsonView jsonValue)
+  : SchemaUnion()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ ArchivalSummary::ArchivalSummary() :
 {
 }
 
-ArchivalSummary::ArchivalSummary(JsonView jsonValue) : 
-    m_archivalDateTimeHasBeenSet(false),
-    m_archivalReasonHasBeenSet(false),
-    m_archivalBackupArnHasBeenSet(false)
+ArchivalSummary::ArchivalSummary(JsonView jsonValue)
+  : ArchivalSummary()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ Acceptor::Acceptor() :
 {
 }
 
-Acceptor::Acceptor(JsonView jsonValue) : 
-    m_accountIdHasBeenSet(false)
+Acceptor::Acceptor(JsonView jsonValue)
+  : Acceptor()
 {
   *this = jsonValue;
 }

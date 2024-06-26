@@ -27,12 +27,8 @@ CustomDataIdentifierSummary::CustomDataIdentifierSummary() :
 {
 }
 
-CustomDataIdentifierSummary::CustomDataIdentifierSummary(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false)
+CustomDataIdentifierSummary::CustomDataIdentifierSummary(JsonView jsonValue)
+  : CustomDataIdentifierSummary()
 {
   *this = jsonValue;
 }

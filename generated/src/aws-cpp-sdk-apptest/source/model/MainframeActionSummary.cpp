@@ -24,9 +24,8 @@ MainframeActionSummary::MainframeActionSummary() :
 {
 }
 
-MainframeActionSummary::MainframeActionSummary(JsonView jsonValue) : 
-    m_batchHasBeenSet(false),
-    m_tn3270HasBeenSet(false)
+MainframeActionSummary::MainframeActionSummary(JsonView jsonValue)
+  : MainframeActionSummary()
 {
   *this = jsonValue;
 }

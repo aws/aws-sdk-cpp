@@ -29,12 +29,8 @@ AsnAssociation::AsnAssociation() :
 {
 }
 
-AsnAssociation::AsnAssociation(const XmlNode& xmlNode) : 
-    m_asnHasBeenSet(false),
-    m_cidrHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_state(AsnAssociationState::NOT_SET),
-    m_stateHasBeenSet(false)
+AsnAssociation::AsnAssociation(const XmlNode& xmlNode)
+  : AsnAssociation()
 {
   *this = xmlNode;
 }

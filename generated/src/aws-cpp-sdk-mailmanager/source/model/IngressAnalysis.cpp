@@ -24,9 +24,8 @@ IngressAnalysis::IngressAnalysis() :
 {
 }
 
-IngressAnalysis::IngressAnalysis(JsonView jsonValue) : 
-    m_analyzerHasBeenSet(false),
-    m_resultFieldHasBeenSet(false)
+IngressAnalysis::IngressAnalysis(JsonView jsonValue)
+  : IngressAnalysis()
 {
   *this = jsonValue;
 }

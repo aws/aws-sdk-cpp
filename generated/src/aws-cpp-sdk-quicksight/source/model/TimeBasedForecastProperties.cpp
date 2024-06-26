@@ -34,19 +34,8 @@ TimeBasedForecastProperties::TimeBasedForecastProperties() :
 {
 }
 
-TimeBasedForecastProperties::TimeBasedForecastProperties(JsonView jsonValue) : 
-    m_periodsForward(0),
-    m_periodsForwardHasBeenSet(false),
-    m_periodsBackward(0),
-    m_periodsBackwardHasBeenSet(false),
-    m_upperBoundary(0.0),
-    m_upperBoundaryHasBeenSet(false),
-    m_lowerBoundary(0.0),
-    m_lowerBoundaryHasBeenSet(false),
-    m_predictionInterval(0),
-    m_predictionIntervalHasBeenSet(false),
-    m_seasonality(0),
-    m_seasonalityHasBeenSet(false)
+TimeBasedForecastProperties::TimeBasedForecastProperties(JsonView jsonValue)
+  : TimeBasedForecastProperties()
 {
   *this = jsonValue;
 }

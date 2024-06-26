@@ -23,8 +23,8 @@ StartTimecode::StartTimecode() :
 {
 }
 
-StartTimecode::StartTimecode(JsonView jsonValue) : 
-    m_timecodeHasBeenSet(false)
+StartTimecode::StartTimecode(JsonView jsonValue)
+  : StartTimecode()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ GetApplicationResult::GetApplicationResult() :
 {
 }
 
-GetApplicationResult::GetApplicationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(ApplicationStatus::NOT_SET)
+GetApplicationResult::GetApplicationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetApplicationResult()
 {
   *this = result;
 }

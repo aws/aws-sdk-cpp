@@ -24,9 +24,8 @@ WorkerBlock::WorkerBlock() :
 {
 }
 
-WorkerBlock::WorkerBlock(JsonView jsonValue) : 
-    m_workerIdHasBeenSet(false),
-    m_reasonHasBeenSet(false)
+WorkerBlock::WorkerBlock(JsonView jsonValue)
+  : WorkerBlock()
 {
   *this = jsonValue;
 }

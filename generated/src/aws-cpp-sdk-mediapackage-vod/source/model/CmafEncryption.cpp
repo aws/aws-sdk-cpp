@@ -24,9 +24,8 @@ CmafEncryption::CmafEncryption() :
 {
 }
 
-CmafEncryption::CmafEncryption(JsonView jsonValue) : 
-    m_constantInitializationVectorHasBeenSet(false),
-    m_spekeKeyProviderHasBeenSet(false)
+CmafEncryption::CmafEncryption(JsonView jsonValue)
+  : CmafEncryption()
 {
   *this = jsonValue;
 }

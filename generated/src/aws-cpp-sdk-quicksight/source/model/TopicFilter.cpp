@@ -35,20 +35,8 @@ TopicFilter::TopicFilter() :
 {
 }
 
-TopicFilter::TopicFilter(JsonView jsonValue) : 
-    m_filterDescriptionHasBeenSet(false),
-    m_filterClass(FilterClass::NOT_SET),
-    m_filterClassHasBeenSet(false),
-    m_filterNameHasBeenSet(false),
-    m_filterSynonymsHasBeenSet(false),
-    m_operandFieldNameHasBeenSet(false),
-    m_filterType(NamedFilterType::NOT_SET),
-    m_filterTypeHasBeenSet(false),
-    m_categoryFilterHasBeenSet(false),
-    m_numericEqualityFilterHasBeenSet(false),
-    m_numericRangeFilterHasBeenSet(false),
-    m_dateRangeFilterHasBeenSet(false),
-    m_relativeDateFilterHasBeenSet(false)
+TopicFilter::TopicFilter(JsonView jsonValue)
+  : TopicFilter()
 {
   *this = jsonValue;
 }

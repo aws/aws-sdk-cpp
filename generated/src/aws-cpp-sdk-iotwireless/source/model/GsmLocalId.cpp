@@ -26,11 +26,8 @@ GsmLocalId::GsmLocalId() :
 {
 }
 
-GsmLocalId::GsmLocalId(JsonView jsonValue) : 
-    m_bsic(0),
-    m_bsicHasBeenSet(false),
-    m_bcch(0),
-    m_bcchHasBeenSet(false)
+GsmLocalId::GsmLocalId(JsonView jsonValue)
+  : GsmLocalId()
 {
   *this = jsonValue;
 }

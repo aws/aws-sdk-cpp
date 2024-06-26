@@ -25,10 +25,8 @@ MediaAnalysisDetectModerationLabelsConfig::MediaAnalysisDetectModerationLabelsCo
 {
 }
 
-MediaAnalysisDetectModerationLabelsConfig::MediaAnalysisDetectModerationLabelsConfig(JsonView jsonValue) : 
-    m_minConfidence(0.0),
-    m_minConfidenceHasBeenSet(false),
-    m_projectVersionHasBeenSet(false)
+MediaAnalysisDetectModerationLabelsConfig::MediaAnalysisDetectModerationLabelsConfig(JsonView jsonValue)
+  : MediaAnalysisDetectModerationLabelsConfig()
 {
   *this = jsonValue;
 }

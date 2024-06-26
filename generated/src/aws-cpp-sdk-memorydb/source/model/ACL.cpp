@@ -29,14 +29,8 @@ ACL::ACL() :
 {
 }
 
-ACL::ACL(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_userNamesHasBeenSet(false),
-    m_minimumEngineVersionHasBeenSet(false),
-    m_pendingChangesHasBeenSet(false),
-    m_clustersHasBeenSet(false),
-    m_aRNHasBeenSet(false)
+ACL::ACL(JsonView jsonValue)
+  : ACL()
 {
   *this = jsonValue;
 }

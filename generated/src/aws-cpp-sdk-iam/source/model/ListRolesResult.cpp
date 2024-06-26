@@ -22,8 +22,8 @@ ListRolesResult::ListRolesResult() :
 {
 }
 
-ListRolesResult::ListRolesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_isTruncated(false)
+ListRolesResult::ListRolesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : ListRolesResult()
 {
   *this = result;
 }

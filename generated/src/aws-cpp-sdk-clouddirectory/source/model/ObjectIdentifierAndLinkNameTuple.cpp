@@ -24,9 +24,8 @@ ObjectIdentifierAndLinkNameTuple::ObjectIdentifierAndLinkNameTuple() :
 {
 }
 
-ObjectIdentifierAndLinkNameTuple::ObjectIdentifierAndLinkNameTuple(JsonView jsonValue) : 
-    m_objectIdentifierHasBeenSet(false),
-    m_linkNameHasBeenSet(false)
+ObjectIdentifierAndLinkNameTuple::ObjectIdentifierAndLinkNameTuple(JsonView jsonValue)
+  : ObjectIdentifierAndLinkNameTuple()
 {
   *this = jsonValue;
 }

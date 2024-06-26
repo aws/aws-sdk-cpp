@@ -22,8 +22,8 @@ ListKeyPoliciesResult::ListKeyPoliciesResult() :
 {
 }
 
-ListKeyPoliciesResult::ListKeyPoliciesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_truncated(false)
+ListKeyPoliciesResult::ListKeyPoliciesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ListKeyPoliciesResult()
 {
   *this = result;
 }

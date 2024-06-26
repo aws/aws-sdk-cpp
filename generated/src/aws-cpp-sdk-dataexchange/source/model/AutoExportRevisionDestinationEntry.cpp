@@ -24,9 +24,8 @@ AutoExportRevisionDestinationEntry::AutoExportRevisionDestinationEntry() :
 {
 }
 
-AutoExportRevisionDestinationEntry::AutoExportRevisionDestinationEntry(JsonView jsonValue) : 
-    m_bucketHasBeenSet(false),
-    m_keyPatternHasBeenSet(false)
+AutoExportRevisionDestinationEntry::AutoExportRevisionDestinationEntry(JsonView jsonValue)
+  : AutoExportRevisionDestinationEntry()
 {
   *this = jsonValue;
 }

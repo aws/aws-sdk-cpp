@@ -30,15 +30,8 @@ MaintenanceStartTime::MaintenanceStartTime() :
 {
 }
 
-MaintenanceStartTime::MaintenanceStartTime(JsonView jsonValue) : 
-    m_dayOfMonth(0),
-    m_dayOfMonthHasBeenSet(false),
-    m_dayOfWeek(0),
-    m_dayOfWeekHasBeenSet(false),
-    m_hourOfDay(0),
-    m_hourOfDayHasBeenSet(false),
-    m_minuteOfHour(0),
-    m_minuteOfHourHasBeenSet(false)
+MaintenanceStartTime::MaintenanceStartTime(JsonView jsonValue)
+  : MaintenanceStartTime()
 {
   *this = jsonValue;
 }

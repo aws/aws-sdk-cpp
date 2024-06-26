@@ -26,11 +26,8 @@ DbParameterGroupSummary::DbParameterGroupSummary() :
 {
 }
 
-DbParameterGroupSummary::DbParameterGroupSummary(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+DbParameterGroupSummary::DbParameterGroupSummary(JsonView jsonValue)
+  : DbParameterGroupSummary()
 {
   *this = jsonValue;
 }

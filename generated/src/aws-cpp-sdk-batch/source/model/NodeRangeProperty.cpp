@@ -26,11 +26,8 @@ NodeRangeProperty::NodeRangeProperty() :
 {
 }
 
-NodeRangeProperty::NodeRangeProperty(JsonView jsonValue) : 
-    m_targetNodesHasBeenSet(false),
-    m_containerHasBeenSet(false),
-    m_instanceTypesHasBeenSet(false),
-    m_ecsPropertiesHasBeenSet(false)
+NodeRangeProperty::NodeRangeProperty(JsonView jsonValue)
+  : NodeRangeProperty()
 {
   *this = jsonValue;
 }

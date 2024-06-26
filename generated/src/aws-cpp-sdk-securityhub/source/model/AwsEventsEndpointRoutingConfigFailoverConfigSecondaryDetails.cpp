@@ -23,8 +23,8 @@ AwsEventsEndpointRoutingConfigFailoverConfigSecondaryDetails::AwsEventsEndpointR
 {
 }
 
-AwsEventsEndpointRoutingConfigFailoverConfigSecondaryDetails::AwsEventsEndpointRoutingConfigFailoverConfigSecondaryDetails(JsonView jsonValue) : 
-    m_routeHasBeenSet(false)
+AwsEventsEndpointRoutingConfigFailoverConfigSecondaryDetails::AwsEventsEndpointRoutingConfigFailoverConfigSecondaryDetails(JsonView jsonValue)
+  : AwsEventsEndpointRoutingConfigFailoverConfigSecondaryDetails()
 {
   *this = jsonValue;
 }

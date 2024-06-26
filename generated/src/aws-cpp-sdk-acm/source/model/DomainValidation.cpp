@@ -30,15 +30,8 @@ DomainValidation::DomainValidation() :
 {
 }
 
-DomainValidation::DomainValidation(JsonView jsonValue) : 
-    m_domainNameHasBeenSet(false),
-    m_validationEmailsHasBeenSet(false),
-    m_validationDomainHasBeenSet(false),
-    m_validationStatus(DomainStatus::NOT_SET),
-    m_validationStatusHasBeenSet(false),
-    m_resourceRecordHasBeenSet(false),
-    m_validationMethod(ValidationMethod::NOT_SET),
-    m_validationMethodHasBeenSet(false)
+DomainValidation::DomainValidation(JsonView jsonValue)
+  : DomainValidation()
 {
   *this = jsonValue;
 }

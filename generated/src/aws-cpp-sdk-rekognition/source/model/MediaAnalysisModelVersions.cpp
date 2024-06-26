@@ -23,8 +23,8 @@ MediaAnalysisModelVersions::MediaAnalysisModelVersions() :
 {
 }
 
-MediaAnalysisModelVersions::MediaAnalysisModelVersions(JsonView jsonValue) : 
-    m_moderationHasBeenSet(false)
+MediaAnalysisModelVersions::MediaAnalysisModelVersions(JsonView jsonValue)
+  : MediaAnalysisModelVersions()
 {
   *this = jsonValue;
 }

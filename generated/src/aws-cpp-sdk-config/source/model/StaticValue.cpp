@@ -23,8 +23,8 @@ StaticValue::StaticValue() :
 {
 }
 
-StaticValue::StaticValue(JsonView jsonValue) : 
-    m_valuesHasBeenSet(false)
+StaticValue::StaticValue(JsonView jsonValue)
+  : StaticValue()
 {
   *this = jsonValue;
 }

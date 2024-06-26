@@ -26,9 +26,8 @@ CloudWatchMetrics::CloudWatchMetrics() :
 {
 }
 
-CloudWatchMetrics::CloudWatchMetrics(const XmlNode& xmlNode) : 
-    m_isEnabled(false),
-    m_isEnabledHasBeenSet(false)
+CloudWatchMetrics::CloudWatchMetrics(const XmlNode& xmlNode)
+  : CloudWatchMetrics()
 {
   *this = xmlNode;
 }

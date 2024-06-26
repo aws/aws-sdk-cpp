@@ -37,22 +37,8 @@ CloudWatchAlarmDefinition::CloudWatchAlarmDefinition() :
 {
 }
 
-CloudWatchAlarmDefinition::CloudWatchAlarmDefinition(JsonView jsonValue) : 
-    m_comparisonOperator(ComparisonOperator::NOT_SET),
-    m_comparisonOperatorHasBeenSet(false),
-    m_evaluationPeriods(0),
-    m_evaluationPeriodsHasBeenSet(false),
-    m_metricNameHasBeenSet(false),
-    m_namespaceHasBeenSet(false),
-    m_period(0),
-    m_periodHasBeenSet(false),
-    m_statistic(Statistic::NOT_SET),
-    m_statisticHasBeenSet(false),
-    m_threshold(0.0),
-    m_thresholdHasBeenSet(false),
-    m_unit(Unit::NOT_SET),
-    m_unitHasBeenSet(false),
-    m_dimensionsHasBeenSet(false)
+CloudWatchAlarmDefinition::CloudWatchAlarmDefinition(JsonView jsonValue)
+  : CloudWatchAlarmDefinition()
 {
   *this = jsonValue;
 }

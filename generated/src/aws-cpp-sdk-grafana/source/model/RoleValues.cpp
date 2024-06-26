@@ -24,9 +24,8 @@ RoleValues::RoleValues() :
 {
 }
 
-RoleValues::RoleValues(JsonView jsonValue) : 
-    m_adminHasBeenSet(false),
-    m_editorHasBeenSet(false)
+RoleValues::RoleValues(JsonView jsonValue)
+  : RoleValues()
 {
   *this = jsonValue;
 }

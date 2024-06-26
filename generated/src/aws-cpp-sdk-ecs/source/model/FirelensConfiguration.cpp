@@ -25,10 +25,8 @@ FirelensConfiguration::FirelensConfiguration() :
 {
 }
 
-FirelensConfiguration::FirelensConfiguration(JsonView jsonValue) : 
-    m_type(FirelensConfigurationType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_optionsHasBeenSet(false)
+FirelensConfiguration::FirelensConfiguration(JsonView jsonValue)
+  : FirelensConfiguration()
 {
   *this = jsonValue;
 }

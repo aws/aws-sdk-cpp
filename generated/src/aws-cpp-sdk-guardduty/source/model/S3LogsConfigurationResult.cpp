@@ -24,9 +24,8 @@ S3LogsConfigurationResult::S3LogsConfigurationResult() :
 {
 }
 
-S3LogsConfigurationResult::S3LogsConfigurationResult(JsonView jsonValue) : 
-    m_status(DataSourceStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+S3LogsConfigurationResult::S3LogsConfigurationResult(JsonView jsonValue)
+  : S3LogsConfigurationResult()
 {
   *this = jsonValue;
 }

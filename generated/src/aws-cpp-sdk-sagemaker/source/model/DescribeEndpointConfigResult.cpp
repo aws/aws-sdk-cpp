@@ -22,8 +22,8 @@ DescribeEndpointConfigResult::DescribeEndpointConfigResult() :
 {
 }
 
-DescribeEndpointConfigResult::DescribeEndpointConfigResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_enableNetworkIsolation(false)
+DescribeEndpointConfigResult::DescribeEndpointConfigResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeEndpointConfigResult()
 {
   *this = result;
 }

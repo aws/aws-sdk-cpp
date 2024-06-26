@@ -40,25 +40,8 @@ ServiceQuota::ServiceQuota() :
 {
 }
 
-ServiceQuota::ServiceQuota(JsonView jsonValue) : 
-    m_serviceCodeHasBeenSet(false),
-    m_serviceNameHasBeenSet(false),
-    m_quotaArnHasBeenSet(false),
-    m_quotaCodeHasBeenSet(false),
-    m_quotaNameHasBeenSet(false),
-    m_value(0.0),
-    m_valueHasBeenSet(false),
-    m_unitHasBeenSet(false),
-    m_adjustable(false),
-    m_adjustableHasBeenSet(false),
-    m_globalQuota(false),
-    m_globalQuotaHasBeenSet(false),
-    m_usageMetricHasBeenSet(false),
-    m_periodHasBeenSet(false),
-    m_errorReasonHasBeenSet(false),
-    m_quotaAppliedAtLevel(AppliedLevelEnum::NOT_SET),
-    m_quotaAppliedAtLevelHasBeenSet(false),
-    m_quotaContextHasBeenSet(false)
+ServiceQuota::ServiceQuota(JsonView jsonValue)
+  : ServiceQuota()
 {
   *this = jsonValue;
 }

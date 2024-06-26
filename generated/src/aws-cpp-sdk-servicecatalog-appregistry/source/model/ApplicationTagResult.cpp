@@ -27,12 +27,8 @@ ApplicationTagResult::ApplicationTagResult() :
 {
 }
 
-ApplicationTagResult::ApplicationTagResult(JsonView jsonValue) : 
-    m_applicationTagStatus(ApplicationTagStatus::NOT_SET),
-    m_applicationTagStatusHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_resourcesHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
+ApplicationTagResult::ApplicationTagResult(JsonView jsonValue)
+  : ApplicationTagResult()
 {
   *this = jsonValue;
 }

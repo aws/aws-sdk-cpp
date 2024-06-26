@@ -26,11 +26,8 @@ OutputDestinationSettings::OutputDestinationSettings() :
 {
 }
 
-OutputDestinationSettings::OutputDestinationSettings(JsonView jsonValue) : 
-    m_passwordParamHasBeenSet(false),
-    m_streamNameHasBeenSet(false),
-    m_urlHasBeenSet(false),
-    m_usernameHasBeenSet(false)
+OutputDestinationSettings::OutputDestinationSettings(JsonView jsonValue)
+  : OutputDestinationSettings()
 {
   *this = jsonValue;
 }

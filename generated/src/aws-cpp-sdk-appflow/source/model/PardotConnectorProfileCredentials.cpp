@@ -26,11 +26,8 @@ PardotConnectorProfileCredentials::PardotConnectorProfileCredentials() :
 {
 }
 
-PardotConnectorProfileCredentials::PardotConnectorProfileCredentials(JsonView jsonValue) : 
-    m_accessTokenHasBeenSet(false),
-    m_refreshTokenHasBeenSet(false),
-    m_oAuthRequestHasBeenSet(false),
-    m_clientCredentialsArnHasBeenSet(false)
+PardotConnectorProfileCredentials::PardotConnectorProfileCredentials(JsonView jsonValue)
+  : PardotConnectorProfileCredentials()
 {
   *this = jsonValue;
 }

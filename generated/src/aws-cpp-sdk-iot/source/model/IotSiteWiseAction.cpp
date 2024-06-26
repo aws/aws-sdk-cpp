@@ -24,9 +24,8 @@ IotSiteWiseAction::IotSiteWiseAction() :
 {
 }
 
-IotSiteWiseAction::IotSiteWiseAction(JsonView jsonValue) : 
-    m_putAssetPropertyValueEntriesHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
+IotSiteWiseAction::IotSiteWiseAction(JsonView jsonValue)
+  : IotSiteWiseAction()
 {
   *this = jsonValue;
 }

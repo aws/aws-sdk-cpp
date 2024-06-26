@@ -22,8 +22,8 @@ CreateMountTargetResult::CreateMountTargetResult() :
 {
 }
 
-CreateMountTargetResult::CreateMountTargetResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_lifeCycleState(LifeCycleState::NOT_SET)
+CreateMountTargetResult::CreateMountTargetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateMountTargetResult()
 {
   *this = result;
 }

@@ -24,9 +24,8 @@ MountTargetNotFound::MountTargetNotFound() :
 {
 }
 
-MountTargetNotFound::MountTargetNotFound(JsonView jsonValue) : 
-    m_errorCodeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+MountTargetNotFound::MountTargetNotFound(JsonView jsonValue)
+  : MountTargetNotFound()
 {
   *this = jsonValue;
 }

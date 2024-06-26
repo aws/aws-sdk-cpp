@@ -23,8 +23,8 @@ TemplateConfiguration::TemplateConfiguration() :
 {
 }
 
-TemplateConfiguration::TemplateConfiguration(JsonView jsonValue) : 
-    m_templateHasBeenSet(false)
+TemplateConfiguration::TemplateConfiguration(JsonView jsonValue)
+  : TemplateConfiguration()
 {
   *this = jsonValue;
 }

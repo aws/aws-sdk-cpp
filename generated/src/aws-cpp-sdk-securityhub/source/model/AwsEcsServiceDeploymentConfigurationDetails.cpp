@@ -27,12 +27,8 @@ AwsEcsServiceDeploymentConfigurationDetails::AwsEcsServiceDeploymentConfiguratio
 {
 }
 
-AwsEcsServiceDeploymentConfigurationDetails::AwsEcsServiceDeploymentConfigurationDetails(JsonView jsonValue) : 
-    m_deploymentCircuitBreakerHasBeenSet(false),
-    m_maximumPercent(0),
-    m_maximumPercentHasBeenSet(false),
-    m_minimumHealthyPercent(0),
-    m_minimumHealthyPercentHasBeenSet(false)
+AwsEcsServiceDeploymentConfigurationDetails::AwsEcsServiceDeploymentConfigurationDetails(JsonView jsonValue)
+  : AwsEcsServiceDeploymentConfigurationDetails()
 {
   *this = jsonValue;
 }

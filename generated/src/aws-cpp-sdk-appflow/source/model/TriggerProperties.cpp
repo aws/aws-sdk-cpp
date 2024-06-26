@@ -23,8 +23,8 @@ TriggerProperties::TriggerProperties() :
 {
 }
 
-TriggerProperties::TriggerProperties(JsonView jsonValue) : 
-    m_scheduledHasBeenSet(false)
+TriggerProperties::TriggerProperties(JsonView jsonValue)
+  : TriggerProperties()
 {
   *this = jsonValue;
 }

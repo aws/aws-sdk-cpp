@@ -25,10 +25,8 @@ TargetInstances::TargetInstances() :
 {
 }
 
-TargetInstances::TargetInstances(JsonView jsonValue) : 
-    m_tagFiltersHasBeenSet(false),
-    m_autoScalingGroupsHasBeenSet(false),
-    m_ec2TagSetHasBeenSet(false)
+TargetInstances::TargetInstances(JsonView jsonValue)
+  : TargetInstances()
 {
   *this = jsonValue;
 }

@@ -46,31 +46,8 @@ Finding::Finding() :
 {
 }
 
-Finding::Finding(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_schemaVersion(0),
-    m_schemaVersionHasBeenSet(false),
-    m_serviceHasBeenSet(false),
-    m_serviceAttributesHasBeenSet(false),
-    m_assetType(AssetType::NOT_SET),
-    m_assetTypeHasBeenSet(false),
-    m_assetAttributesHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_recommendationHasBeenSet(false),
-    m_severity(Severity::NOT_SET),
-    m_severityHasBeenSet(false),
-    m_numericSeverity(0.0),
-    m_numericSeverityHasBeenSet(false),
-    m_confidence(0),
-    m_confidenceHasBeenSet(false),
-    m_indicatorOfCompromise(false),
-    m_indicatorOfCompromiseHasBeenSet(false),
-    m_attributesHasBeenSet(false),
-    m_userAttributesHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+Finding::Finding(JsonView jsonValue)
+  : Finding()
 {
   *this = jsonValue;
 }

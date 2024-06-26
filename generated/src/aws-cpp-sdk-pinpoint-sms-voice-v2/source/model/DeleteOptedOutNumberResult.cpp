@@ -22,8 +22,8 @@ DeleteOptedOutNumberResult::DeleteOptedOutNumberResult() :
 {
 }
 
-DeleteOptedOutNumberResult::DeleteOptedOutNumberResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_endUserOptedOut(false)
+DeleteOptedOutNumberResult::DeleteOptedOutNumberResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeleteOptedOutNumberResult()
 {
   *this = result;
 }

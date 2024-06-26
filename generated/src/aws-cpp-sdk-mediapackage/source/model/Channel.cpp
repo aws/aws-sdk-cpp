@@ -30,15 +30,8 @@ Channel::Channel() :
 {
 }
 
-Channel::Channel(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_egressAccessLogsHasBeenSet(false),
-    m_hlsIngestHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_ingressAccessLogsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+Channel::Channel(JsonView jsonValue)
+  : Channel()
 {
   *this = jsonValue;
 }

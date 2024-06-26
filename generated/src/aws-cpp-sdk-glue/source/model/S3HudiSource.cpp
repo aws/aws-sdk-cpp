@@ -27,12 +27,8 @@ S3HudiSource::S3HudiSource() :
 {
 }
 
-S3HudiSource::S3HudiSource(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_pathsHasBeenSet(false),
-    m_additionalHudiOptionsHasBeenSet(false),
-    m_additionalOptionsHasBeenSet(false),
-    m_outputSchemasHasBeenSet(false)
+S3HudiSource::S3HudiSource(JsonView jsonValue)
+  : S3HudiSource()
 {
   *this = jsonValue;
 }

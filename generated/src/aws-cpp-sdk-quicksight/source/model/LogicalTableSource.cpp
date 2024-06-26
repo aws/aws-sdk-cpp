@@ -25,10 +25,8 @@ LogicalTableSource::LogicalTableSource() :
 {
 }
 
-LogicalTableSource::LogicalTableSource(JsonView jsonValue) : 
-    m_joinInstructionHasBeenSet(false),
-    m_physicalTableIdHasBeenSet(false),
-    m_dataSetArnHasBeenSet(false)
+LogicalTableSource::LogicalTableSource(JsonView jsonValue)
+  : LogicalTableSource()
 {
   *this = jsonValue;
 }

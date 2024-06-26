@@ -24,9 +24,8 @@ FileSystemConfig::FileSystemConfig() :
 {
 }
 
-FileSystemConfig::FileSystemConfig(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_localMountPathHasBeenSet(false)
+FileSystemConfig::FileSystemConfig(JsonView jsonValue)
+  : FileSystemConfig()
 {
   *this = jsonValue;
 }

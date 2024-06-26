@@ -23,8 +23,8 @@ S3StorageConfiguration::S3StorageConfiguration() :
 {
 }
 
-S3StorageConfiguration::S3StorageConfiguration(JsonView jsonValue) : 
-    m_bucketNameHasBeenSet(false)
+S3StorageConfiguration::S3StorageConfiguration(JsonView jsonValue)
+  : S3StorageConfiguration()
 {
   *this = jsonValue;
 }

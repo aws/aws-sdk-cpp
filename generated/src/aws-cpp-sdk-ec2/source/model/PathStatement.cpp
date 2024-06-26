@@ -26,9 +26,8 @@ PathStatement::PathStatement() :
 {
 }
 
-PathStatement::PathStatement(const XmlNode& xmlNode) : 
-    m_packetHeaderStatementHasBeenSet(false),
-    m_resourceStatementHasBeenSet(false)
+PathStatement::PathStatement(const XmlNode& xmlNode)
+  : PathStatement()
 {
   *this = xmlNode;
 }

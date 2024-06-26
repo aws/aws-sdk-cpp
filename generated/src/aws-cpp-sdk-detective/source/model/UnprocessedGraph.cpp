@@ -24,9 +24,8 @@ UnprocessedGraph::UnprocessedGraph() :
 {
 }
 
-UnprocessedGraph::UnprocessedGraph(JsonView jsonValue) : 
-    m_graphArnHasBeenSet(false),
-    m_reasonHasBeenSet(false)
+UnprocessedGraph::UnprocessedGraph(JsonView jsonValue)
+  : UnprocessedGraph()
 {
   *this = jsonValue;
 }

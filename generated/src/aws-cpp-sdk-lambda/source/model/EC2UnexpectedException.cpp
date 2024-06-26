@@ -25,10 +25,8 @@ EC2UnexpectedException::EC2UnexpectedException() :
 {
 }
 
-EC2UnexpectedException::EC2UnexpectedException(JsonView jsonValue) : 
-    m_typeHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_eC2ErrorCodeHasBeenSet(false)
+EC2UnexpectedException::EC2UnexpectedException(JsonView jsonValue)
+  : EC2UnexpectedException()
 {
   *this = jsonValue;
 }

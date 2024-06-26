@@ -23,8 +23,8 @@ StopRequest::StopRequest() :
 {
 }
 
-StopRequest::StopRequest(JsonView jsonValue) : 
-    m_workspaceIdHasBeenSet(false)
+StopRequest::StopRequest(JsonView jsonValue)
+  : StopRequest()
 {
   *this = jsonValue;
 }

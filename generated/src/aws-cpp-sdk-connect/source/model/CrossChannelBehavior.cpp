@@ -24,9 +24,8 @@ CrossChannelBehavior::CrossChannelBehavior() :
 {
 }
 
-CrossChannelBehavior::CrossChannelBehavior(JsonView jsonValue) : 
-    m_behaviorType(BehaviorType::NOT_SET),
-    m_behaviorTypeHasBeenSet(false)
+CrossChannelBehavior::CrossChannelBehavior(JsonView jsonValue)
+  : CrossChannelBehavior()
 {
   *this = jsonValue;
 }

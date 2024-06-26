@@ -23,8 +23,8 @@ FeaturedDocumentMissing::FeaturedDocumentMissing() :
 {
 }
 
-FeaturedDocumentMissing::FeaturedDocumentMissing(JsonView jsonValue) : 
-    m_idHasBeenSet(false)
+FeaturedDocumentMissing::FeaturedDocumentMissing(JsonView jsonValue)
+  : FeaturedDocumentMissing()
 {
   *this = jsonValue;
 }

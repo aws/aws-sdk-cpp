@@ -39,22 +39,8 @@ StackSetDriftDetectionDetails::StackSetDriftDetectionDetails() :
 {
 }
 
-StackSetDriftDetectionDetails::StackSetDriftDetectionDetails(const XmlNode& xmlNode) : 
-    m_driftStatus(StackSetDriftStatus::NOT_SET),
-    m_driftStatusHasBeenSet(false),
-    m_driftDetectionStatus(StackSetDriftDetectionStatus::NOT_SET),
-    m_driftDetectionStatusHasBeenSet(false),
-    m_lastDriftCheckTimestampHasBeenSet(false),
-    m_totalStackInstancesCount(0),
-    m_totalStackInstancesCountHasBeenSet(false),
-    m_driftedStackInstancesCount(0),
-    m_driftedStackInstancesCountHasBeenSet(false),
-    m_inSyncStackInstancesCount(0),
-    m_inSyncStackInstancesCountHasBeenSet(false),
-    m_inProgressStackInstancesCount(0),
-    m_inProgressStackInstancesCountHasBeenSet(false),
-    m_failedStackInstancesCount(0),
-    m_failedStackInstancesCountHasBeenSet(false)
+StackSetDriftDetectionDetails::StackSetDriftDetectionDetails(const XmlNode& xmlNode)
+  : StackSetDriftDetectionDetails()
 {
   *this = xmlNode;
 }

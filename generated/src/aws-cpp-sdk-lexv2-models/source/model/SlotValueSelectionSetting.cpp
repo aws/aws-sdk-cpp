@@ -26,11 +26,8 @@ SlotValueSelectionSetting::SlotValueSelectionSetting() :
 {
 }
 
-SlotValueSelectionSetting::SlotValueSelectionSetting(JsonView jsonValue) : 
-    m_resolutionStrategy(SlotValueResolutionStrategy::NOT_SET),
-    m_resolutionStrategyHasBeenSet(false),
-    m_regexFilterHasBeenSet(false),
-    m_advancedRecognitionSettingHasBeenSet(false)
+SlotValueSelectionSetting::SlotValueSelectionSetting(JsonView jsonValue)
+  : SlotValueSelectionSetting()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ DatasetEntityRecognizerInputDataConfig::DatasetEntityRecognizerInputDataConfig()
 {
 }
 
-DatasetEntityRecognizerInputDataConfig::DatasetEntityRecognizerInputDataConfig(JsonView jsonValue) : 
-    m_annotationsHasBeenSet(false),
-    m_documentsHasBeenSet(false),
-    m_entityListHasBeenSet(false)
+DatasetEntityRecognizerInputDataConfig::DatasetEntityRecognizerInputDataConfig(JsonView jsonValue)
+  : DatasetEntityRecognizerInputDataConfig()
 {
   *this = jsonValue;
 }

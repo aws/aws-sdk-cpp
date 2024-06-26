@@ -41,26 +41,8 @@ AgentVersion::AgentVersion() :
 {
 }
 
-AgentVersion::AgentVersion(JsonView jsonValue) : 
-    m_agentArnHasBeenSet(false),
-    m_agentIdHasBeenSet(false),
-    m_agentNameHasBeenSet(false),
-    m_agentResourceRoleArnHasBeenSet(false),
-    m_agentStatus(AgentStatus::NOT_SET),
-    m_agentStatusHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_customerEncryptionKeyArnHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_failureReasonsHasBeenSet(false),
-    m_foundationModelHasBeenSet(false),
-    m_guardrailConfigurationHasBeenSet(false),
-    m_idleSessionTTLInSeconds(0),
-    m_idleSessionTTLInSecondsHasBeenSet(false),
-    m_instructionHasBeenSet(false),
-    m_promptOverrideConfigurationHasBeenSet(false),
-    m_recommendedActionsHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_versionHasBeenSet(false)
+AgentVersion::AgentVersion(JsonView jsonValue)
+  : AgentVersion()
 {
   *this = jsonValue;
 }

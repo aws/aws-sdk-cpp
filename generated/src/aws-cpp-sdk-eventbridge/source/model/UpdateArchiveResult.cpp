@@ -22,8 +22,8 @@ UpdateArchiveResult::UpdateArchiveResult() :
 {
 }
 
-UpdateArchiveResult::UpdateArchiveResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_state(ArchiveState::NOT_SET)
+UpdateArchiveResult::UpdateArchiveResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateArchiveResult()
 {
   *this = result;
 }

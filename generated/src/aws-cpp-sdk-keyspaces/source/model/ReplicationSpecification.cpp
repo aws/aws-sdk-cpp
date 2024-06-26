@@ -25,10 +25,8 @@ ReplicationSpecification::ReplicationSpecification() :
 {
 }
 
-ReplicationSpecification::ReplicationSpecification(JsonView jsonValue) : 
-    m_replicationStrategy(Rs::NOT_SET),
-    m_replicationStrategyHasBeenSet(false),
-    m_regionListHasBeenSet(false)
+ReplicationSpecification::ReplicationSpecification(JsonView jsonValue)
+  : ReplicationSpecification()
 {
   *this = jsonValue;
 }

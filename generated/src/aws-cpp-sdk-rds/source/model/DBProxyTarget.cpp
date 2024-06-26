@@ -35,18 +35,8 @@ DBProxyTarget::DBProxyTarget() :
 {
 }
 
-DBProxyTarget::DBProxyTarget(const XmlNode& xmlNode) : 
-    m_targetArnHasBeenSet(false),
-    m_endpointHasBeenSet(false),
-    m_trackedClusterIdHasBeenSet(false),
-    m_rdsResourceIdHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_type(TargetType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_role(TargetRole::NOT_SET),
-    m_roleHasBeenSet(false),
-    m_targetHealthHasBeenSet(false)
+DBProxyTarget::DBProxyTarget(const XmlNode& xmlNode)
+  : DBProxyTarget()
 {
   *this = xmlNode;
 }

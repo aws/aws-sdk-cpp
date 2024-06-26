@@ -24,9 +24,8 @@ RdsReservedInstances::RdsReservedInstances() :
 {
 }
 
-RdsReservedInstances::RdsReservedInstances(JsonView jsonValue) : 
-    m_configurationHasBeenSet(false),
-    m_costCalculationHasBeenSet(false)
+RdsReservedInstances::RdsReservedInstances(JsonView jsonValue)
+  : RdsReservedInstances()
 {
   *this = jsonValue;
 }

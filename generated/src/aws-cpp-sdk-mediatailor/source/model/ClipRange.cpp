@@ -26,11 +26,8 @@ ClipRange::ClipRange() :
 {
 }
 
-ClipRange::ClipRange(JsonView jsonValue) : 
-    m_endOffsetMillis(0),
-    m_endOffsetMillisHasBeenSet(false),
-    m_startOffsetMillis(0),
-    m_startOffsetMillisHasBeenSet(false)
+ClipRange::ClipRange(JsonView jsonValue)
+  : ClipRange()
 {
   *this = jsonValue;
 }

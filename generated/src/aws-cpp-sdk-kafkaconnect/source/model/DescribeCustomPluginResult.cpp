@@ -22,8 +22,8 @@ DescribeCustomPluginResult::DescribeCustomPluginResult() :
 {
 }
 
-DescribeCustomPluginResult::DescribeCustomPluginResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_customPluginState(CustomPluginState::NOT_SET)
+DescribeCustomPluginResult::DescribeCustomPluginResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeCustomPluginResult()
 {
   *this = result;
 }

@@ -24,9 +24,8 @@ CmafAdditionalManifest::CmafAdditionalManifest() :
 {
 }
 
-CmafAdditionalManifest::CmafAdditionalManifest(JsonView jsonValue) : 
-    m_manifestNameModifierHasBeenSet(false),
-    m_selectedOutputsHasBeenSet(false)
+CmafAdditionalManifest::CmafAdditionalManifest(JsonView jsonValue)
+  : CmafAdditionalManifest()
 {
   *this = jsonValue;
 }

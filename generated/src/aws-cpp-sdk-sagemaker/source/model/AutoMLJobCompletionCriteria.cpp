@@ -28,13 +28,8 @@ AutoMLJobCompletionCriteria::AutoMLJobCompletionCriteria() :
 {
 }
 
-AutoMLJobCompletionCriteria::AutoMLJobCompletionCriteria(JsonView jsonValue) : 
-    m_maxCandidates(0),
-    m_maxCandidatesHasBeenSet(false),
-    m_maxRuntimePerTrainingJobInSeconds(0),
-    m_maxRuntimePerTrainingJobInSecondsHasBeenSet(false),
-    m_maxAutoMLJobRuntimeInSeconds(0),
-    m_maxAutoMLJobRuntimeInSecondsHasBeenSet(false)
+AutoMLJobCompletionCriteria::AutoMLJobCompletionCriteria(JsonView jsonValue)
+  : AutoMLJobCompletionCriteria()
 {
   *this = jsonValue;
 }

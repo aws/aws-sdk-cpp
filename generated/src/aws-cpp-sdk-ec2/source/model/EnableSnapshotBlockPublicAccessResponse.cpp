@@ -22,8 +22,8 @@ EnableSnapshotBlockPublicAccessResponse::EnableSnapshotBlockPublicAccessResponse
 {
 }
 
-EnableSnapshotBlockPublicAccessResponse::EnableSnapshotBlockPublicAccessResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_state(SnapshotBlockPublicAccessState::NOT_SET)
+EnableSnapshotBlockPublicAccessResponse::EnableSnapshotBlockPublicAccessResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : EnableSnapshotBlockPublicAccessResponse()
 {
   *this = result;
 }

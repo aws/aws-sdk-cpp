@@ -24,9 +24,8 @@ InputClipping::InputClipping() :
 {
 }
 
-InputClipping::InputClipping(JsonView jsonValue) : 
-    m_endTimecodeHasBeenSet(false),
-    m_startTimecodeHasBeenSet(false)
+InputClipping::InputClipping(JsonView jsonValue)
+  : InputClipping()
 {
   *this = jsonValue;
 }

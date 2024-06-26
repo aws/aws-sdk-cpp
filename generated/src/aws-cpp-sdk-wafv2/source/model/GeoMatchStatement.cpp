@@ -24,9 +24,8 @@ GeoMatchStatement::GeoMatchStatement() :
 {
 }
 
-GeoMatchStatement::GeoMatchStatement(JsonView jsonValue) : 
-    m_countryCodesHasBeenSet(false),
-    m_forwardedIPConfigHasBeenSet(false)
+GeoMatchStatement::GeoMatchStatement(JsonView jsonValue)
+  : GeoMatchStatement()
 {
   *this = jsonValue;
 }

@@ -28,13 +28,8 @@ AutomaticInputFailoverSettings::AutomaticInputFailoverSettings() :
 {
 }
 
-AutomaticInputFailoverSettings::AutomaticInputFailoverSettings(JsonView jsonValue) : 
-    m_errorClearTimeMsec(0),
-    m_errorClearTimeMsecHasBeenSet(false),
-    m_failoverConditionsHasBeenSet(false),
-    m_inputPreference(InputPreference::NOT_SET),
-    m_inputPreferenceHasBeenSet(false),
-    m_secondaryInputIdHasBeenSet(false)
+AutomaticInputFailoverSettings::AutomaticInputFailoverSettings(JsonView jsonValue)
+  : AutomaticInputFailoverSettings()
 {
   *this = jsonValue;
 }

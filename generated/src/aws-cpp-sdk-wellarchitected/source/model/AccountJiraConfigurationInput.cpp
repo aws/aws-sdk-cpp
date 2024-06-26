@@ -29,14 +29,8 @@ AccountJiraConfigurationInput::AccountJiraConfigurationInput() :
 {
 }
 
-AccountJiraConfigurationInput::AccountJiraConfigurationInput(JsonView jsonValue) : 
-    m_issueManagementStatus(AccountJiraIssueManagementStatus::NOT_SET),
-    m_issueManagementStatusHasBeenSet(false),
-    m_issueManagementType(IssueManagementType::NOT_SET),
-    m_issueManagementTypeHasBeenSet(false),
-    m_jiraProjectKeyHasBeenSet(false),
-    m_integrationStatus(IntegrationStatusInput::NOT_SET),
-    m_integrationStatusHasBeenSet(false)
+AccountJiraConfigurationInput::AccountJiraConfigurationInput(JsonView jsonValue)
+  : AccountJiraConfigurationInput()
 {
   *this = jsonValue;
 }

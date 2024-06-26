@@ -26,9 +26,8 @@ Suggester::Suggester() :
 {
 }
 
-Suggester::Suggester(const XmlNode& xmlNode) : 
-    m_suggesterNameHasBeenSet(false),
-    m_documentSuggesterOptionsHasBeenSet(false)
+Suggester::Suggester(const XmlNode& xmlNode)
+  : Suggester()
 {
   *this = xmlNode;
 }

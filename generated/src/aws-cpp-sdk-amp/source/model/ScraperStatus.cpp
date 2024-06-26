@@ -24,9 +24,8 @@ ScraperStatus::ScraperStatus() :
 {
 }
 
-ScraperStatus::ScraperStatus(JsonView jsonValue) : 
-    m_statusCode(ScraperStatusCode::NOT_SET),
-    m_statusCodeHasBeenSet(false)
+ScraperStatus::ScraperStatus(JsonView jsonValue)
+  : ScraperStatus()
 {
   *this = jsonValue;
 }

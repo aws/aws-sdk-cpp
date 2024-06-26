@@ -26,11 +26,8 @@ MemberError::MemberError() :
 {
 }
 
-MemberError::MemberError(JsonView jsonValue) : 
-    m_memberIdHasBeenSet(false),
-    m_errorCode(ErrorCode::NOT_SET),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
+MemberError::MemberError(JsonView jsonValue)
+  : MemberError()
 {
   *this = jsonValue;
 }

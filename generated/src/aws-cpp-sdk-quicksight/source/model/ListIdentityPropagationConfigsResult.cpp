@@ -22,8 +22,8 @@ ListIdentityPropagationConfigsResult::ListIdentityPropagationConfigsResult() :
 {
 }
 
-ListIdentityPropagationConfigsResult::ListIdentityPropagationConfigsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+ListIdentityPropagationConfigsResult::ListIdentityPropagationConfigsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ListIdentityPropagationConfigsResult()
 {
   *this = result;
 }

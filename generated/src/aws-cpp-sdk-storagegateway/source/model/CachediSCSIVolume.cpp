@@ -38,23 +38,8 @@ CachediSCSIVolume::CachediSCSIVolume() :
 {
 }
 
-CachediSCSIVolume::CachediSCSIVolume(JsonView jsonValue) : 
-    m_volumeARNHasBeenSet(false),
-    m_volumeIdHasBeenSet(false),
-    m_volumeTypeHasBeenSet(false),
-    m_volumeStatusHasBeenSet(false),
-    m_volumeAttachmentStatusHasBeenSet(false),
-    m_volumeSizeInBytes(0),
-    m_volumeSizeInBytesHasBeenSet(false),
-    m_volumeProgress(0.0),
-    m_volumeProgressHasBeenSet(false),
-    m_sourceSnapshotIdHasBeenSet(false),
-    m_volumeiSCSIAttributesHasBeenSet(false),
-    m_createdDateHasBeenSet(false),
-    m_volumeUsedInBytes(0),
-    m_volumeUsedInBytesHasBeenSet(false),
-    m_kMSKeyHasBeenSet(false),
-    m_targetNameHasBeenSet(false)
+CachediSCSIVolume::CachediSCSIVolume(JsonView jsonValue)
+  : CachediSCSIVolume()
 {
   *this = jsonValue;
 }

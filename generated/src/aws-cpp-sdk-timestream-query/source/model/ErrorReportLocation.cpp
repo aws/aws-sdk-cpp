@@ -23,8 +23,8 @@ ErrorReportLocation::ErrorReportLocation() :
 {
 }
 
-ErrorReportLocation::ErrorReportLocation(JsonView jsonValue) : 
-    m_s3ReportLocationHasBeenSet(false)
+ErrorReportLocation::ErrorReportLocation(JsonView jsonValue)
+  : ErrorReportLocation()
 {
   *this = jsonValue;
 }

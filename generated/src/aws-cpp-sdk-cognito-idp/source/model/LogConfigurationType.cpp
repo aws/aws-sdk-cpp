@@ -27,12 +27,8 @@ LogConfigurationType::LogConfigurationType() :
 {
 }
 
-LogConfigurationType::LogConfigurationType(JsonView jsonValue) : 
-    m_logLevel(LogLevel::NOT_SET),
-    m_logLevelHasBeenSet(false),
-    m_eventSource(EventSourceName::NOT_SET),
-    m_eventSourceHasBeenSet(false),
-    m_cloudWatchLogsConfigurationHasBeenSet(false)
+LogConfigurationType::LogConfigurationType(JsonView jsonValue)
+  : LogConfigurationType()
 {
   *this = jsonValue;
 }

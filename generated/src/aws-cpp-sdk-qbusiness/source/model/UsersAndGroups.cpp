@@ -24,9 +24,8 @@ UsersAndGroups::UsersAndGroups() :
 {
 }
 
-UsersAndGroups::UsersAndGroups(JsonView jsonValue) : 
-    m_userIdsHasBeenSet(false),
-    m_userGroupsHasBeenSet(false)
+UsersAndGroups::UsersAndGroups(JsonView jsonValue)
+  : UsersAndGroups()
 {
   *this = jsonValue;
 }

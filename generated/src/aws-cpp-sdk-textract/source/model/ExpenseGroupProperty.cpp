@@ -24,9 +24,8 @@ ExpenseGroupProperty::ExpenseGroupProperty() :
 {
 }
 
-ExpenseGroupProperty::ExpenseGroupProperty(JsonView jsonValue) : 
-    m_typesHasBeenSet(false),
-    m_idHasBeenSet(false)
+ExpenseGroupProperty::ExpenseGroupProperty(JsonView jsonValue)
+  : ExpenseGroupProperty()
 {
   *this = jsonValue;
 }

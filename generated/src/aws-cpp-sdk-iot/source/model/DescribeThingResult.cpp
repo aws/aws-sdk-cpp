@@ -22,8 +22,8 @@ DescribeThingResult::DescribeThingResult() :
 {
 }
 
-DescribeThingResult::DescribeThingResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_version(0)
+DescribeThingResult::DescribeThingResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeThingResult()
 {
   *this = result;
 }

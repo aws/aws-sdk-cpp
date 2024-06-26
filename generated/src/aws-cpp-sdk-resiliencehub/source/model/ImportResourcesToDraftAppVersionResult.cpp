@@ -22,8 +22,8 @@ ImportResourcesToDraftAppVersionResult::ImportResourcesToDraftAppVersionResult()
 {
 }
 
-ImportResourcesToDraftAppVersionResult::ImportResourcesToDraftAppVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(ResourceImportStatusType::NOT_SET)
+ImportResourcesToDraftAppVersionResult::ImportResourcesToDraftAppVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ImportResourcesToDraftAppVersionResult()
 {
   *this = result;
 }

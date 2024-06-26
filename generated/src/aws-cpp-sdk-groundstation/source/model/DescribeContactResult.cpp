@@ -22,8 +22,8 @@ DescribeContactResult::DescribeContactResult() :
 {
 }
 
-DescribeContactResult::DescribeContactResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_contactStatus(ContactStatus::NOT_SET)
+DescribeContactResult::DescribeContactResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeContactResult()
 {
   *this = result;
 }

@@ -23,8 +23,8 @@ LayoutSections::LayoutSections() :
 {
 }
 
-LayoutSections::LayoutSections(JsonView jsonValue) : 
-    m_sectionsHasBeenSet(false)
+LayoutSections::LayoutSections(JsonView jsonValue)
+  : LayoutSections()
 {
   *this = jsonValue;
 }

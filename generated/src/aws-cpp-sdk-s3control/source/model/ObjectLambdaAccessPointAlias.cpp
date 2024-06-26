@@ -27,10 +27,8 @@ ObjectLambdaAccessPointAlias::ObjectLambdaAccessPointAlias() :
 {
 }
 
-ObjectLambdaAccessPointAlias::ObjectLambdaAccessPointAlias(const XmlNode& xmlNode) : 
-    m_valueHasBeenSet(false),
-    m_status(ObjectLambdaAccessPointAliasStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+ObjectLambdaAccessPointAlias::ObjectLambdaAccessPointAlias(const XmlNode& xmlNode)
+  : ObjectLambdaAccessPointAlias()
 {
   *this = xmlNode;
 }

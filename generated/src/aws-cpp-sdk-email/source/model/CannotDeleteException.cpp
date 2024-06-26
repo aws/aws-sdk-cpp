@@ -25,8 +25,8 @@ CannotDeleteException::CannotDeleteException() :
 {
 }
 
-CannotDeleteException::CannotDeleteException(const XmlNode& xmlNode) : 
-    m_nameHasBeenSet(false)
+CannotDeleteException::CannotDeleteException(const XmlNode& xmlNode)
+  : CannotDeleteException()
 {
   *this = xmlNode;
 }

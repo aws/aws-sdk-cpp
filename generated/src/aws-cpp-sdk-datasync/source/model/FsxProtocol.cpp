@@ -24,9 +24,8 @@ FsxProtocol::FsxProtocol() :
 {
 }
 
-FsxProtocol::FsxProtocol(JsonView jsonValue) : 
-    m_nFSHasBeenSet(false),
-    m_sMBHasBeenSet(false)
+FsxProtocol::FsxProtocol(JsonView jsonValue)
+  : FsxProtocol()
 {
   *this = jsonValue;
 }

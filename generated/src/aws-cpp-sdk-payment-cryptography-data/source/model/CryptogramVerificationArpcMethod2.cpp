@@ -24,9 +24,8 @@ CryptogramVerificationArpcMethod2::CryptogramVerificationArpcMethod2() :
 {
 }
 
-CryptogramVerificationArpcMethod2::CryptogramVerificationArpcMethod2(JsonView jsonValue) : 
-    m_cardStatusUpdateHasBeenSet(false),
-    m_proprietaryAuthenticationDataHasBeenSet(false)
+CryptogramVerificationArpcMethod2::CryptogramVerificationArpcMethod2(JsonView jsonValue)
+  : CryptogramVerificationArpcMethod2()
 {
   *this = jsonValue;
 }

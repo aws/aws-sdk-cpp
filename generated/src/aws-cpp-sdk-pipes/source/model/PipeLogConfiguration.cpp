@@ -28,13 +28,8 @@ PipeLogConfiguration::PipeLogConfiguration() :
 {
 }
 
-PipeLogConfiguration::PipeLogConfiguration(JsonView jsonValue) : 
-    m_s3LogDestinationHasBeenSet(false),
-    m_firehoseLogDestinationHasBeenSet(false),
-    m_cloudwatchLogsLogDestinationHasBeenSet(false),
-    m_level(LogLevel::NOT_SET),
-    m_levelHasBeenSet(false),
-    m_includeExecutionDataHasBeenSet(false)
+PipeLogConfiguration::PipeLogConfiguration(JsonView jsonValue)
+  : PipeLogConfiguration()
 {
   *this = jsonValue;
 }

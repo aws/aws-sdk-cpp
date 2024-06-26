@@ -23,8 +23,8 @@ EmergencyCallingConfiguration::EmergencyCallingConfiguration() :
 {
 }
 
-EmergencyCallingConfiguration::EmergencyCallingConfiguration(JsonView jsonValue) : 
-    m_dNISHasBeenSet(false)
+EmergencyCallingConfiguration::EmergencyCallingConfiguration(JsonView jsonValue)
+  : EmergencyCallingConfiguration()
 {
   *this = jsonValue;
 }

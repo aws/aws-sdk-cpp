@@ -21,8 +21,8 @@ GetBucketResult::GetBucketResult() :
 {
 }
 
-GetBucketResult::GetBucketResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_publicAccessBlockEnabled(false)
+GetBucketResult::GetBucketResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : GetBucketResult()
 {
   *this = result;
 }

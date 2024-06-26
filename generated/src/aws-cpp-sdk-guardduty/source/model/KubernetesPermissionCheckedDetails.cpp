@@ -27,12 +27,8 @@ KubernetesPermissionCheckedDetails::KubernetesPermissionCheckedDetails() :
 {
 }
 
-KubernetesPermissionCheckedDetails::KubernetesPermissionCheckedDetails(JsonView jsonValue) : 
-    m_verbHasBeenSet(false),
-    m_resourceHasBeenSet(false),
-    m_namespaceHasBeenSet(false),
-    m_allowed(false),
-    m_allowedHasBeenSet(false)
+KubernetesPermissionCheckedDetails::KubernetesPermissionCheckedDetails(JsonView jsonValue)
+  : KubernetesPermissionCheckedDetails()
 {
   *this = jsonValue;
 }

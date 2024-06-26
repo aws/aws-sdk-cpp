@@ -26,11 +26,8 @@ BackendAuthAppleProviderConfig::BackendAuthAppleProviderConfig() :
 {
 }
 
-BackendAuthAppleProviderConfig::BackendAuthAppleProviderConfig(JsonView jsonValue) : 
-    m_clientIdHasBeenSet(false),
-    m_keyIdHasBeenSet(false),
-    m_privateKeyHasBeenSet(false),
-    m_teamIdHasBeenSet(false)
+BackendAuthAppleProviderConfig::BackendAuthAppleProviderConfig(JsonView jsonValue)
+  : BackendAuthAppleProviderConfig()
 {
   *this = jsonValue;
 }

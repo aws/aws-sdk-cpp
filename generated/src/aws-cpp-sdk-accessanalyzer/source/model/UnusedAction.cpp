@@ -24,9 +24,8 @@ UnusedAction::UnusedAction() :
 {
 }
 
-UnusedAction::UnusedAction(JsonView jsonValue) : 
-    m_actionHasBeenSet(false),
-    m_lastAccessedHasBeenSet(false)
+UnusedAction::UnusedAction(JsonView jsonValue)
+  : UnusedAction()
 {
   *this = jsonValue;
 }

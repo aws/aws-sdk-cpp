@@ -25,10 +25,8 @@ ParentEntityUpdateRequest::ParentEntityUpdateRequest() :
 {
 }
 
-ParentEntityUpdateRequest::ParentEntityUpdateRequest(JsonView jsonValue) : 
-    m_updateType(ParentEntityUpdateType::NOT_SET),
-    m_updateTypeHasBeenSet(false),
-    m_parentEntityIdHasBeenSet(false)
+ParentEntityUpdateRequest::ParentEntityUpdateRequest(JsonView jsonValue)
+  : ParentEntityUpdateRequest()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ ProvisionedCapacity::ProvisionedCapacity() :
 {
 }
 
-ProvisionedCapacity::ProvisionedCapacity(JsonView jsonValue) : 
-    m_mcuCount(0),
-    m_mcuCountHasBeenSet(false),
-    m_workerCount(0),
-    m_workerCountHasBeenSet(false)
+ProvisionedCapacity::ProvisionedCapacity(JsonView jsonValue)
+  : ProvisionedCapacity()
 {
   *this = jsonValue;
 }

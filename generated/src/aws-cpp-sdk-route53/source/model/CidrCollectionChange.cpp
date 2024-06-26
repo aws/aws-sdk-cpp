@@ -28,11 +28,8 @@ CidrCollectionChange::CidrCollectionChange() :
 {
 }
 
-CidrCollectionChange::CidrCollectionChange(const XmlNode& xmlNode) : 
-    m_locationNameHasBeenSet(false),
-    m_action(CidrCollectionChangeAction::NOT_SET),
-    m_actionHasBeenSet(false),
-    m_cidrListHasBeenSet(false)
+CidrCollectionChange::CidrCollectionChange(const XmlNode& xmlNode)
+  : CidrCollectionChange()
 {
   *this = xmlNode;
 }

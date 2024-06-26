@@ -23,8 +23,8 @@ AwsWafv2CustomRequestHandlingDetails::AwsWafv2CustomRequestHandlingDetails() :
 {
 }
 
-AwsWafv2CustomRequestHandlingDetails::AwsWafv2CustomRequestHandlingDetails(JsonView jsonValue) : 
-    m_insertHeadersHasBeenSet(false)
+AwsWafv2CustomRequestHandlingDetails::AwsWafv2CustomRequestHandlingDetails(JsonView jsonValue)
+  : AwsWafv2CustomRequestHandlingDetails()
 {
   *this = jsonValue;
 }

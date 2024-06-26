@@ -26,11 +26,8 @@ OidcJwtUpdateConfiguration::OidcJwtUpdateConfiguration() :
 {
 }
 
-OidcJwtUpdateConfiguration::OidcJwtUpdateConfiguration(JsonView jsonValue) : 
-    m_claimAttributePathHasBeenSet(false),
-    m_identityStoreAttributePathHasBeenSet(false),
-    m_jwksRetrievalOption(JwksRetrievalOption::NOT_SET),
-    m_jwksRetrievalOptionHasBeenSet(false)
+OidcJwtUpdateConfiguration::OidcJwtUpdateConfiguration(JsonView jsonValue)
+  : OidcJwtUpdateConfiguration()
 {
   *this = jsonValue;
 }

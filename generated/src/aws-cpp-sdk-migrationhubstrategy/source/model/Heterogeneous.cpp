@@ -23,8 +23,8 @@ Heterogeneous::Heterogeneous() :
 {
 }
 
-Heterogeneous::Heterogeneous(JsonView jsonValue) : 
-    m_targetDatabaseEngineHasBeenSet(false)
+Heterogeneous::Heterogeneous(JsonView jsonValue)
+  : Heterogeneous()
 {
   *this = jsonValue;
 }

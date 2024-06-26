@@ -28,13 +28,8 @@ MixedMeasureMapping::MixedMeasureMapping() :
 {
 }
 
-MixedMeasureMapping::MixedMeasureMapping(JsonView jsonValue) : 
-    m_measureNameHasBeenSet(false),
-    m_sourceColumnHasBeenSet(false),
-    m_targetMeasureNameHasBeenSet(false),
-    m_measureValueType(MeasureValueType::NOT_SET),
-    m_measureValueTypeHasBeenSet(false),
-    m_multiMeasureAttributeMappingsHasBeenSet(false)
+MixedMeasureMapping::MixedMeasureMapping(JsonView jsonValue)
+  : MixedMeasureMapping()
 {
   *this = jsonValue;
 }

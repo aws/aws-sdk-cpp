@@ -22,8 +22,8 @@ StartWorkflowResult::StartWorkflowResult() :
 {
 }
 
-StartWorkflowResult::StartWorkflowResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(MigrationWorkflowStatusEnum::NOT_SET)
+StartWorkflowResult::StartWorkflowResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : StartWorkflowResult()
 {
   *this = result;
 }

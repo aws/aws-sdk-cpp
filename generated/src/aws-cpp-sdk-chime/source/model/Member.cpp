@@ -28,13 +28,8 @@ Member::Member() :
 {
 }
 
-Member::Member(JsonView jsonValue) : 
-    m_memberIdHasBeenSet(false),
-    m_memberType(MemberType::NOT_SET),
-    m_memberTypeHasBeenSet(false),
-    m_emailHasBeenSet(false),
-    m_fullNameHasBeenSet(false),
-    m_accountIdHasBeenSet(false)
+Member::Member(JsonView jsonValue)
+  : Member()
 {
   *this = jsonValue;
 }

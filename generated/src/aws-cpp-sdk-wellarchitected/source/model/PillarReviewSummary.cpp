@@ -27,12 +27,8 @@ PillarReviewSummary::PillarReviewSummary() :
 {
 }
 
-PillarReviewSummary::PillarReviewSummary(JsonView jsonValue) : 
-    m_pillarIdHasBeenSet(false),
-    m_pillarNameHasBeenSet(false),
-    m_notesHasBeenSet(false),
-    m_riskCountsHasBeenSet(false),
-    m_prioritizedRiskCountsHasBeenSet(false)
+PillarReviewSummary::PillarReviewSummary(JsonView jsonValue)
+  : PillarReviewSummary()
 {
   *this = jsonValue;
 }

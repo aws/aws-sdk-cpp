@@ -23,8 +23,8 @@ GetCredentialReportResult::GetCredentialReportResult() :
 {
 }
 
-GetCredentialReportResult::GetCredentialReportResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_reportFormat(ReportFormatType::NOT_SET)
+GetCredentialReportResult::GetCredentialReportResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : GetCredentialReportResult()
 {
   *this = result;
 }

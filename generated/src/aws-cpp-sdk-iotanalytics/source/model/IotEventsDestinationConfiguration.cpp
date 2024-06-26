@@ -24,9 +24,8 @@ IotEventsDestinationConfiguration::IotEventsDestinationConfiguration() :
 {
 }
 
-IotEventsDestinationConfiguration::IotEventsDestinationConfiguration(JsonView jsonValue) : 
-    m_inputNameHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
+IotEventsDestinationConfiguration::IotEventsDestinationConfiguration(JsonView jsonValue)
+  : IotEventsDestinationConfiguration()
 {
   *this = jsonValue;
 }

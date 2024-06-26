@@ -26,11 +26,8 @@ OverallVolume::OverallVolume() :
 {
 }
 
-OverallVolume::OverallVolume(JsonView jsonValue) : 
-    m_volumeStatisticsHasBeenSet(false),
-    m_readRatePercent(0.0),
-    m_readRatePercentHasBeenSet(false),
-    m_domainIspPlacementsHasBeenSet(false)
+OverallVolume::OverallVolume(JsonView jsonValue)
+  : OverallVolume()
 {
   *this = jsonValue;
 }

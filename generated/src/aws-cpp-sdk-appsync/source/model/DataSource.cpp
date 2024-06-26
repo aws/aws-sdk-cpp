@@ -37,22 +37,8 @@ DataSource::DataSource() :
 {
 }
 
-DataSource::DataSource(JsonView jsonValue) : 
-    m_dataSourceArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_type(DataSourceType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_serviceRoleArnHasBeenSet(false),
-    m_dynamodbConfigHasBeenSet(false),
-    m_lambdaConfigHasBeenSet(false),
-    m_elasticsearchConfigHasBeenSet(false),
-    m_openSearchServiceConfigHasBeenSet(false),
-    m_httpConfigHasBeenSet(false),
-    m_relationalDatabaseConfigHasBeenSet(false),
-    m_eventBridgeConfigHasBeenSet(false),
-    m_metricsConfig(DataSourceLevelMetricsConfig::NOT_SET),
-    m_metricsConfigHasBeenSet(false)
+DataSource::DataSource(JsonView jsonValue)
+  : DataSource()
 {
   *this = jsonValue;
 }

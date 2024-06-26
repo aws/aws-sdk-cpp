@@ -29,14 +29,8 @@ S3Target::S3Target() :
 {
 }
 
-S3Target::S3Target(JsonView jsonValue) : 
-    m_pathHasBeenSet(false),
-    m_exclusionsHasBeenSet(false),
-    m_connectionNameHasBeenSet(false),
-    m_sampleSize(0),
-    m_sampleSizeHasBeenSet(false),
-    m_eventQueueArnHasBeenSet(false),
-    m_dlqEventQueueArnHasBeenSet(false)
+S3Target::S3Target(JsonView jsonValue)
+  : S3Target()
 {
   *this = jsonValue;
 }

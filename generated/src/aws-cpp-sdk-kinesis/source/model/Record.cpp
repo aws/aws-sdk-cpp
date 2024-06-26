@@ -29,13 +29,8 @@ Record::Record() :
 {
 }
 
-Record::Record(JsonView jsonValue) : 
-    m_sequenceNumberHasBeenSet(false),
-    m_approximateArrivalTimestampHasBeenSet(false),
-    m_dataHasBeenSet(false),
-    m_partitionKeyHasBeenSet(false),
-    m_encryptionType(EncryptionType::NOT_SET),
-    m_encryptionTypeHasBeenSet(false)
+Record::Record(JsonView jsonValue)
+  : Record()
 {
   *this = jsonValue;
 }

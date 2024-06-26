@@ -24,9 +24,8 @@ VpcConnectivitySasl::VpcConnectivitySasl() :
 {
 }
 
-VpcConnectivitySasl::VpcConnectivitySasl(JsonView jsonValue) : 
-    m_scramHasBeenSet(false),
-    m_iamHasBeenSet(false)
+VpcConnectivitySasl::VpcConnectivitySasl(JsonView jsonValue)
+  : VpcConnectivitySasl()
 {
   *this = jsonValue;
 }

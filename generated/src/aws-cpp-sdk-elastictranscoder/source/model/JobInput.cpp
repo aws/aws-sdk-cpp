@@ -32,17 +32,8 @@ JobInput::JobInput() :
 {
 }
 
-JobInput::JobInput(JsonView jsonValue) : 
-    m_keyHasBeenSet(false),
-    m_frameRateHasBeenSet(false),
-    m_resolutionHasBeenSet(false),
-    m_aspectRatioHasBeenSet(false),
-    m_interlacedHasBeenSet(false),
-    m_containerHasBeenSet(false),
-    m_encryptionHasBeenSet(false),
-    m_timeSpanHasBeenSet(false),
-    m_inputCaptionsHasBeenSet(false),
-    m_detectedPropertiesHasBeenSet(false)
+JobInput::JobInput(JsonView jsonValue)
+  : JobInput()
 {
   *this = jsonValue;
 }

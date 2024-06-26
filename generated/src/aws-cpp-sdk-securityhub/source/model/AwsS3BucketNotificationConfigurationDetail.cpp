@@ -26,11 +26,8 @@ AwsS3BucketNotificationConfigurationDetail::AwsS3BucketNotificationConfiguration
 {
 }
 
-AwsS3BucketNotificationConfigurationDetail::AwsS3BucketNotificationConfigurationDetail(JsonView jsonValue) : 
-    m_eventsHasBeenSet(false),
-    m_filterHasBeenSet(false),
-    m_destinationHasBeenSet(false),
-    m_typeHasBeenSet(false)
+AwsS3BucketNotificationConfigurationDetail::AwsS3BucketNotificationConfigurationDetail(JsonView jsonValue)
+  : AwsS3BucketNotificationConfigurationDetail()
 {
   *this = jsonValue;
 }

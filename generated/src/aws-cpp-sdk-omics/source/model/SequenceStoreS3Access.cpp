@@ -24,9 +24,8 @@ SequenceStoreS3Access::SequenceStoreS3Access() :
 {
 }
 
-SequenceStoreS3Access::SequenceStoreS3Access(JsonView jsonValue) : 
-    m_s3UriHasBeenSet(false),
-    m_s3AccessPointArnHasBeenSet(false)
+SequenceStoreS3Access::SequenceStoreS3Access(JsonView jsonValue)
+  : SequenceStoreS3Access()
 {
   *this = jsonValue;
 }

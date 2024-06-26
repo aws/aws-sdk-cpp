@@ -24,9 +24,8 @@ ThreatsDetectedItemCount::ThreatsDetectedItemCount() :
 {
 }
 
-ThreatsDetectedItemCount::ThreatsDetectedItemCount(JsonView jsonValue) : 
-    m_files(0),
-    m_filesHasBeenSet(false)
+ThreatsDetectedItemCount::ThreatsDetectedItemCount(JsonView jsonValue)
+  : ThreatsDetectedItemCount()
 {
   *this = jsonValue;
 }

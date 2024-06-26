@@ -23,8 +23,8 @@ SlotDefaultValue::SlotDefaultValue() :
 {
 }
 
-SlotDefaultValue::SlotDefaultValue(JsonView jsonValue) : 
-    m_defaultValueHasBeenSet(false)
+SlotDefaultValue::SlotDefaultValue(JsonView jsonValue)
+  : SlotDefaultValue()
 {
   *this = jsonValue;
 }

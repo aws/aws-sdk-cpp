@@ -23,8 +23,8 @@ DefaultSegmentDeliveryConfiguration::DefaultSegmentDeliveryConfiguration() :
 {
 }
 
-DefaultSegmentDeliveryConfiguration::DefaultSegmentDeliveryConfiguration(JsonView jsonValue) : 
-    m_baseUrlHasBeenSet(false)
+DefaultSegmentDeliveryConfiguration::DefaultSegmentDeliveryConfiguration(JsonView jsonValue)
+  : DefaultSegmentDeliveryConfiguration()
 {
   *this = jsonValue;
 }

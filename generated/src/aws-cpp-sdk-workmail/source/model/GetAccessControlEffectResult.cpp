@@ -22,8 +22,8 @@ GetAccessControlEffectResult::GetAccessControlEffectResult() :
 {
 }
 
-GetAccessControlEffectResult::GetAccessControlEffectResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_effect(AccessControlRuleEffect::NOT_SET)
+GetAccessControlEffectResult::GetAccessControlEffectResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetAccessControlEffectResult()
 {
   *this = result;
 }

@@ -24,9 +24,8 @@ OAuth2ClientCredentialConfiguration::OAuth2ClientCredentialConfiguration() :
 {
 }
 
-OAuth2ClientCredentialConfiguration::OAuth2ClientCredentialConfiguration(JsonView jsonValue) : 
-    m_secretArnHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
+OAuth2ClientCredentialConfiguration::OAuth2ClientCredentialConfiguration(JsonView jsonValue)
+  : OAuth2ClientCredentialConfiguration()
 {
   *this = jsonValue;
 }

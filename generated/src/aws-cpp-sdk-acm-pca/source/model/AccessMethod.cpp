@@ -25,10 +25,8 @@ AccessMethod::AccessMethod() :
 {
 }
 
-AccessMethod::AccessMethod(JsonView jsonValue) : 
-    m_customObjectIdentifierHasBeenSet(false),
-    m_accessMethodType(AccessMethodType::NOT_SET),
-    m_accessMethodTypeHasBeenSet(false)
+AccessMethod::AccessMethod(JsonView jsonValue)
+  : AccessMethod()
 {
   *this = jsonValue;
 }

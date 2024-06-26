@@ -29,14 +29,8 @@ RetrieveResultItem::RetrieveResultItem() :
 {
 }
 
-RetrieveResultItem::RetrieveResultItem(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_documentIdHasBeenSet(false),
-    m_documentTitleHasBeenSet(false),
-    m_contentHasBeenSet(false),
-    m_documentURIHasBeenSet(false),
-    m_documentAttributesHasBeenSet(false),
-    m_scoreAttributesHasBeenSet(false)
+RetrieveResultItem::RetrieveResultItem(JsonView jsonValue)
+  : RetrieveResultItem()
 {
   *this = jsonValue;
 }

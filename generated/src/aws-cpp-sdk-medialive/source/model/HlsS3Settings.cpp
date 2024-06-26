@@ -24,9 +24,8 @@ HlsS3Settings::HlsS3Settings() :
 {
 }
 
-HlsS3Settings::HlsS3Settings(JsonView jsonValue) : 
-    m_cannedAcl(S3CannedAcl::NOT_SET),
-    m_cannedAclHasBeenSet(false)
+HlsS3Settings::HlsS3Settings(JsonView jsonValue)
+  : HlsS3Settings()
 {
   *this = jsonValue;
 }

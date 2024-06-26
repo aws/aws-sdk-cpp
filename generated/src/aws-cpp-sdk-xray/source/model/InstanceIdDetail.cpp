@@ -23,8 +23,8 @@ InstanceIdDetail::InstanceIdDetail() :
 {
 }
 
-InstanceIdDetail::InstanceIdDetail(JsonView jsonValue) : 
-    m_idHasBeenSet(false)
+InstanceIdDetail::InstanceIdDetail(JsonView jsonValue)
+  : InstanceIdDetail()
 {
   *this = jsonValue;
 }

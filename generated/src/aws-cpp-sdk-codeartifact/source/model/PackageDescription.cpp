@@ -27,12 +27,8 @@ PackageDescription::PackageDescription() :
 {
 }
 
-PackageDescription::PackageDescription(JsonView jsonValue) : 
-    m_format(PackageFormat::NOT_SET),
-    m_formatHasBeenSet(false),
-    m_namespaceHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_originConfigurationHasBeenSet(false)
+PackageDescription::PackageDescription(JsonView jsonValue)
+  : PackageDescription()
 {
   *this = jsonValue;
 }

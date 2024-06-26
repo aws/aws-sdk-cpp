@@ -30,15 +30,8 @@ InventoryDeletionStatusItem::InventoryDeletionStatusItem() :
 {
 }
 
-InventoryDeletionStatusItem::InventoryDeletionStatusItem(JsonView jsonValue) : 
-    m_deletionIdHasBeenSet(false),
-    m_typeNameHasBeenSet(false),
-    m_deletionStartTimeHasBeenSet(false),
-    m_lastStatus(InventoryDeletionStatus::NOT_SET),
-    m_lastStatusHasBeenSet(false),
-    m_lastStatusMessageHasBeenSet(false),
-    m_deletionSummaryHasBeenSet(false),
-    m_lastStatusUpdateTimeHasBeenSet(false)
+InventoryDeletionStatusItem::InventoryDeletionStatusItem(JsonView jsonValue)
+  : InventoryDeletionStatusItem()
 {
   *this = jsonValue;
 }

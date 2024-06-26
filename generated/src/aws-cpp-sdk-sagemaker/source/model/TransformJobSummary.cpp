@@ -30,15 +30,8 @@ TransformJobSummary::TransformJobSummary() :
 {
 }
 
-TransformJobSummary::TransformJobSummary(JsonView jsonValue) : 
-    m_transformJobNameHasBeenSet(false),
-    m_transformJobArnHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_transformEndTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_transformJobStatus(TransformJobStatus::NOT_SET),
-    m_transformJobStatusHasBeenSet(false),
-    m_failureReasonHasBeenSet(false)
+TransformJobSummary::TransformJobSummary(JsonView jsonValue)
+  : TransformJobSummary()
 {
   *this = jsonValue;
 }

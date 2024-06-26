@@ -23,8 +23,8 @@ ProjectResource::ProjectResource() :
 {
 }
 
-ProjectResource::ProjectResource(JsonView jsonValue) : 
-    m_idHasBeenSet(false)
+ProjectResource::ProjectResource(JsonView jsonValue)
+  : ProjectResource()
 {
   *this = jsonValue;
 }

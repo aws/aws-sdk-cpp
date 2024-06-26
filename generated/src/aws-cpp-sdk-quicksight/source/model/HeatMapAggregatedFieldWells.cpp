@@ -25,10 +25,8 @@ HeatMapAggregatedFieldWells::HeatMapAggregatedFieldWells() :
 {
 }
 
-HeatMapAggregatedFieldWells::HeatMapAggregatedFieldWells(JsonView jsonValue) : 
-    m_rowsHasBeenSet(false),
-    m_columnsHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+HeatMapAggregatedFieldWells::HeatMapAggregatedFieldWells(JsonView jsonValue)
+  : HeatMapAggregatedFieldWells()
 {
   *this = jsonValue;
 }

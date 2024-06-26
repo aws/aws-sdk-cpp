@@ -42,25 +42,8 @@ FpgaImage::FpgaImage() :
 {
 }
 
-FpgaImage::FpgaImage(const XmlNode& xmlNode) : 
-    m_fpgaImageIdHasBeenSet(false),
-    m_fpgaImageGlobalIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_shellVersionHasBeenSet(false),
-    m_pciIdHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_ownerAliasHasBeenSet(false),
-    m_productCodesHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_public(false),
-    m_publicHasBeenSet(false),
-    m_dataRetentionSupport(false),
-    m_dataRetentionSupportHasBeenSet(false),
-    m_instanceTypesHasBeenSet(false)
+FpgaImage::FpgaImage(const XmlNode& xmlNode)
+  : FpgaImage()
 {
   *this = xmlNode;
 }

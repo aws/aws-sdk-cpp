@@ -37,22 +37,8 @@ AwsEcsTaskDefinitionDetails::AwsEcsTaskDefinitionDetails() :
 {
 }
 
-AwsEcsTaskDefinitionDetails::AwsEcsTaskDefinitionDetails(JsonView jsonValue) : 
-    m_containerDefinitionsHasBeenSet(false),
-    m_cpuHasBeenSet(false),
-    m_executionRoleArnHasBeenSet(false),
-    m_familyHasBeenSet(false),
-    m_inferenceAcceleratorsHasBeenSet(false),
-    m_ipcModeHasBeenSet(false),
-    m_memoryHasBeenSet(false),
-    m_networkModeHasBeenSet(false),
-    m_pidModeHasBeenSet(false),
-    m_placementConstraintsHasBeenSet(false),
-    m_proxyConfigurationHasBeenSet(false),
-    m_requiresCompatibilitiesHasBeenSet(false),
-    m_taskRoleArnHasBeenSet(false),
-    m_volumesHasBeenSet(false),
-    m_statusHasBeenSet(false)
+AwsEcsTaskDefinitionDetails::AwsEcsTaskDefinitionDetails(JsonView jsonValue)
+  : AwsEcsTaskDefinitionDetails()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ InstanceTypeCapacity::InstanceTypeCapacity() :
 {
 }
 
-InstanceTypeCapacity::InstanceTypeCapacity(JsonView jsonValue) : 
-    m_instanceTypeHasBeenSet(false),
-    m_count(0),
-    m_countHasBeenSet(false)
+InstanceTypeCapacity::InstanceTypeCapacity(JsonView jsonValue)
+  : InstanceTypeCapacity()
 {
   *this = jsonValue;
 }

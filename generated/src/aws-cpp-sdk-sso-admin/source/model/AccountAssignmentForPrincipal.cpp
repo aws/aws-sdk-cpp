@@ -27,12 +27,8 @@ AccountAssignmentForPrincipal::AccountAssignmentForPrincipal() :
 {
 }
 
-AccountAssignmentForPrincipal::AccountAssignmentForPrincipal(JsonView jsonValue) : 
-    m_accountIdHasBeenSet(false),
-    m_permissionSetArnHasBeenSet(false),
-    m_principalIdHasBeenSet(false),
-    m_principalType(PrincipalType::NOT_SET),
-    m_principalTypeHasBeenSet(false)
+AccountAssignmentForPrincipal::AccountAssignmentForPrincipal(JsonView jsonValue)
+  : AccountAssignmentForPrincipal()
 {
   *this = jsonValue;
 }

@@ -26,10 +26,8 @@ Concurrency::Concurrency() :
 {
 }
 
-Concurrency::Concurrency(JsonView jsonValue) : 
-    m_reservedConcurrentExecutions(0),
-    m_reservedConcurrentExecutionsHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
+Concurrency::Concurrency(JsonView jsonValue)
+  : Concurrency()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ BusinessCallingSettings::BusinessCallingSettings() :
 {
 }
 
-BusinessCallingSettings::BusinessCallingSettings(JsonView jsonValue) : 
-    m_cdrBucketHasBeenSet(false)
+BusinessCallingSettings::BusinessCallingSettings(JsonView jsonValue)
+  : BusinessCallingSettings()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ ScriptBatchJobDefinition::ScriptBatchJobDefinition() :
 {
 }
 
-ScriptBatchJobDefinition::ScriptBatchJobDefinition(JsonView jsonValue) : 
-    m_scriptNameHasBeenSet(false)
+ScriptBatchJobDefinition::ScriptBatchJobDefinition(JsonView jsonValue)
+  : ScriptBatchJobDefinition()
 {
   *this = jsonValue;
 }

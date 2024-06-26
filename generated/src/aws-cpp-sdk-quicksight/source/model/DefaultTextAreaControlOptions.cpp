@@ -24,9 +24,8 @@ DefaultTextAreaControlOptions::DefaultTextAreaControlOptions() :
 {
 }
 
-DefaultTextAreaControlOptions::DefaultTextAreaControlOptions(JsonView jsonValue) : 
-    m_delimiterHasBeenSet(false),
-    m_displayOptionsHasBeenSet(false)
+DefaultTextAreaControlOptions::DefaultTextAreaControlOptions(JsonView jsonValue)
+  : DefaultTextAreaControlOptions()
 {
   *this = jsonValue;
 }

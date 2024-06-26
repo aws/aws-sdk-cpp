@@ -31,16 +31,8 @@ ServiceNetworkSummary::ServiceNetworkSummary() :
 {
 }
 
-ServiceNetworkSummary::ServiceNetworkSummary(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_numberOfAssociatedServices(0),
-    m_numberOfAssociatedServicesHasBeenSet(false),
-    m_numberOfAssociatedVPCs(0),
-    m_numberOfAssociatedVPCsHasBeenSet(false)
+ServiceNetworkSummary::ServiceNetworkSummary(JsonView jsonValue)
+  : ServiceNetworkSummary()
 {
   *this = jsonValue;
 }

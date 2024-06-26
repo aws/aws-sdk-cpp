@@ -25,10 +25,8 @@ UpdateParam::UpdateParam() :
 {
 }
 
-UpdateParam::UpdateParam(JsonView jsonValue) : 
-    m_type(UpdateParamType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_valueHasBeenSet(false)
+UpdateParam::UpdateParam(JsonView jsonValue)
+  : UpdateParam()
 {
   *this = jsonValue;
 }

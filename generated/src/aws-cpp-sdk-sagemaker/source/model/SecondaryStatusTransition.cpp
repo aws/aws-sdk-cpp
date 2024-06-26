@@ -27,12 +27,8 @@ SecondaryStatusTransition::SecondaryStatusTransition() :
 {
 }
 
-SecondaryStatusTransition::SecondaryStatusTransition(JsonView jsonValue) : 
-    m_status(SecondaryStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_statusMessageHasBeenSet(false)
+SecondaryStatusTransition::SecondaryStatusTransition(JsonView jsonValue)
+  : SecondaryStatusTransition()
 {
   *this = jsonValue;
 }

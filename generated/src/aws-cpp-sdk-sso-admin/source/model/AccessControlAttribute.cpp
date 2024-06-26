@@ -24,9 +24,8 @@ AccessControlAttribute::AccessControlAttribute() :
 {
 }
 
-AccessControlAttribute::AccessControlAttribute(JsonView jsonValue) : 
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false)
+AccessControlAttribute::AccessControlAttribute(JsonView jsonValue)
+  : AccessControlAttribute()
 {
   *this = jsonValue;
 }

@@ -32,17 +32,8 @@ SyncBlocker::SyncBlocker() :
 {
 }
 
-SyncBlocker::SyncBlocker(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_type(BlockerType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_status(BlockerStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_createdReasonHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_contextsHasBeenSet(false),
-    m_resolvedReasonHasBeenSet(false),
-    m_resolvedAtHasBeenSet(false)
+SyncBlocker::SyncBlocker(JsonView jsonValue)
+  : SyncBlocker()
 {
   *this = jsonValue;
 }

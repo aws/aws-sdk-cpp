@@ -23,8 +23,8 @@ DeleteGlobalSecondaryIndexAction::DeleteGlobalSecondaryIndexAction() :
 {
 }
 
-DeleteGlobalSecondaryIndexAction::DeleteGlobalSecondaryIndexAction(JsonView jsonValue) : 
-    m_indexNameHasBeenSet(false)
+DeleteGlobalSecondaryIndexAction::DeleteGlobalSecondaryIndexAction(JsonView jsonValue)
+  : DeleteGlobalSecondaryIndexAction()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ SnaplockRetentionPeriod::SnaplockRetentionPeriod() :
 {
 }
 
-SnaplockRetentionPeriod::SnaplockRetentionPeriod(JsonView jsonValue) : 
-    m_defaultRetentionHasBeenSet(false),
-    m_minimumRetentionHasBeenSet(false),
-    m_maximumRetentionHasBeenSet(false)
+SnaplockRetentionPeriod::SnaplockRetentionPeriod(JsonView jsonValue)
+  : SnaplockRetentionPeriod()
 {
   *this = jsonValue;
 }

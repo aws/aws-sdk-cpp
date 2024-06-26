@@ -24,9 +24,8 @@ S3Identifier::S3Identifier() :
 {
 }
 
-S3Identifier::S3Identifier(JsonView jsonValue) : 
-    m_s3BucketNameHasBeenSet(false),
-    m_s3ObjectKeyHasBeenSet(false)
+S3Identifier::S3Identifier(JsonView jsonValue)
+  : S3Identifier()
 {
   *this = jsonValue;
 }

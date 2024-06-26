@@ -43,28 +43,8 @@ User::User() :
 {
 }
 
-User::User(JsonView jsonValue) : 
-    m_userIdHasBeenSet(false),
-    m_status(UserStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_firstNameHasBeenSet(false),
-    m_lastNameHasBeenSet(false),
-    m_emailAddressHasBeenSet(false),
-    m_type(UserType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_apiAccess(ApiAccess::NOT_SET),
-    m_apiAccessHasBeenSet(false),
-    m_apiAccessPrincipalArnHasBeenSet(false),
-    m_createTime(0),
-    m_createTimeHasBeenSet(false),
-    m_lastEnabledTime(0),
-    m_lastEnabledTimeHasBeenSet(false),
-    m_lastDisabledTime(0),
-    m_lastDisabledTimeHasBeenSet(false),
-    m_lastModifiedTime(0),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_lastLoginTime(0),
-    m_lastLoginTimeHasBeenSet(false)
+User::User(JsonView jsonValue)
+  : User()
 {
   *this = jsonValue;
 }

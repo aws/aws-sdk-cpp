@@ -23,8 +23,8 @@ AuthenticationMethod::AuthenticationMethod() :
 {
 }
 
-AuthenticationMethod::AuthenticationMethod(JsonView jsonValue) : 
-    m_iamHasBeenSet(false)
+AuthenticationMethod::AuthenticationMethod(JsonView jsonValue)
+  : AuthenticationMethod()
 {
   *this = jsonValue;
 }

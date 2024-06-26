@@ -26,11 +26,8 @@ JobSample::JobSample() :
 {
 }
 
-JobSample::JobSample(JsonView jsonValue) : 
-    m_mode(SampleMode::NOT_SET),
-    m_modeHasBeenSet(false),
-    m_size(0),
-    m_sizeHasBeenSet(false)
+JobSample::JobSample(JsonView jsonValue)
+  : JobSample()
 {
   *this = jsonValue;
 }

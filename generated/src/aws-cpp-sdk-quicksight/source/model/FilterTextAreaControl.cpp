@@ -27,12 +27,8 @@ FilterTextAreaControl::FilterTextAreaControl() :
 {
 }
 
-FilterTextAreaControl::FilterTextAreaControl(JsonView jsonValue) : 
-    m_filterControlIdHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_sourceFilterIdHasBeenSet(false),
-    m_delimiterHasBeenSet(false),
-    m_displayOptionsHasBeenSet(false)
+FilterTextAreaControl::FilterTextAreaControl(JsonView jsonValue)
+  : FilterTextAreaControl()
 {
   *this = jsonValue;
 }

@@ -38,23 +38,8 @@ Stage::Stage() :
 {
 }
 
-Stage::Stage(JsonView jsonValue) : 
-    m_accessLogSettingsHasBeenSet(false),
-    m_apiGatewayManaged(false),
-    m_apiGatewayManagedHasBeenSet(false),
-    m_autoDeploy(false),
-    m_autoDeployHasBeenSet(false),
-    m_clientCertificateIdHasBeenSet(false),
-    m_createdDateHasBeenSet(false),
-    m_defaultRouteSettingsHasBeenSet(false),
-    m_deploymentIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_lastDeploymentStatusMessageHasBeenSet(false),
-    m_lastUpdatedDateHasBeenSet(false),
-    m_routeSettingsHasBeenSet(false),
-    m_stageNameHasBeenSet(false),
-    m_stageVariablesHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+Stage::Stage(JsonView jsonValue)
+  : Stage()
 {
   *this = jsonValue;
 }

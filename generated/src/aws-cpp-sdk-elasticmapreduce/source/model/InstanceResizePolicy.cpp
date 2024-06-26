@@ -26,11 +26,8 @@ InstanceResizePolicy::InstanceResizePolicy() :
 {
 }
 
-InstanceResizePolicy::InstanceResizePolicy(JsonView jsonValue) : 
-    m_instancesToTerminateHasBeenSet(false),
-    m_instancesToProtectHasBeenSet(false),
-    m_instanceTerminationTimeout(0),
-    m_instanceTerminationTimeoutHasBeenSet(false)
+InstanceResizePolicy::InstanceResizePolicy(JsonView jsonValue)
+  : InstanceResizePolicy()
 {
   *this = jsonValue;
 }

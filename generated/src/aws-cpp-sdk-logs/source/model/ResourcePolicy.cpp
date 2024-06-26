@@ -26,11 +26,8 @@ ResourcePolicy::ResourcePolicy() :
 {
 }
 
-ResourcePolicy::ResourcePolicy(JsonView jsonValue) : 
-    m_policyNameHasBeenSet(false),
-    m_policyDocumentHasBeenSet(false),
-    m_lastUpdatedTime(0),
-    m_lastUpdatedTimeHasBeenSet(false)
+ResourcePolicy::ResourcePolicy(JsonView jsonValue)
+  : ResourcePolicy()
 {
   *this = jsonValue;
 }

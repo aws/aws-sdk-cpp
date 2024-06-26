@@ -30,15 +30,8 @@ Record::Record() :
 {
 }
 
-Record::Record(JsonView jsonValue) : 
-    m_eventIDHasBeenSet(false),
-    m_eventName(OperationType::NOT_SET),
-    m_eventNameHasBeenSet(false),
-    m_eventVersionHasBeenSet(false),
-    m_eventSourceHasBeenSet(false),
-    m_awsRegionHasBeenSet(false),
-    m_dynamodbHasBeenSet(false),
-    m_userIdentityHasBeenSet(false)
+Record::Record(JsonView jsonValue)
+  : Record()
 {
   *this = jsonValue;
 }

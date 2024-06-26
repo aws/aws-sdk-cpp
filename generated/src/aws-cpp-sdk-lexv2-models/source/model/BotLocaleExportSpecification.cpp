@@ -25,10 +25,8 @@ BotLocaleExportSpecification::BotLocaleExportSpecification() :
 {
 }
 
-BotLocaleExportSpecification::BotLocaleExportSpecification(JsonView jsonValue) : 
-    m_botIdHasBeenSet(false),
-    m_botVersionHasBeenSet(false),
-    m_localeIdHasBeenSet(false)
+BotLocaleExportSpecification::BotLocaleExportSpecification(JsonView jsonValue)
+  : BotLocaleExportSpecification()
 {
   *this = jsonValue;
 }

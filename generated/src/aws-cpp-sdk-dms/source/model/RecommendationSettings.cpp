@@ -24,9 +24,8 @@ RecommendationSettings::RecommendationSettings() :
 {
 }
 
-RecommendationSettings::RecommendationSettings(JsonView jsonValue) : 
-    m_instanceSizingTypeHasBeenSet(false),
-    m_workloadTypeHasBeenSet(false)
+RecommendationSettings::RecommendationSettings(JsonView jsonValue)
+  : RecommendationSettings()
 {
   *this = jsonValue;
 }

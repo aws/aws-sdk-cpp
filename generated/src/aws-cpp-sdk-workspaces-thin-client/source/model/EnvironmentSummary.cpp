@@ -39,24 +39,8 @@ EnvironmentSummary::EnvironmentSummary() :
 {
 }
 
-EnvironmentSummary::EnvironmentSummary(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_desktopArnHasBeenSet(false),
-    m_desktopEndpointHasBeenSet(false),
-    m_desktopType(DesktopType::NOT_SET),
-    m_desktopTypeHasBeenSet(false),
-    m_activationCodeHasBeenSet(false),
-    m_softwareSetUpdateSchedule(SoftwareSetUpdateSchedule::NOT_SET),
-    m_softwareSetUpdateScheduleHasBeenSet(false),
-    m_maintenanceWindowHasBeenSet(false),
-    m_softwareSetUpdateMode(SoftwareSetUpdateMode::NOT_SET),
-    m_softwareSetUpdateModeHasBeenSet(false),
-    m_desiredSoftwareSetIdHasBeenSet(false),
-    m_pendingSoftwareSetIdHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_arnHasBeenSet(false)
+EnvironmentSummary::EnvironmentSummary(JsonView jsonValue)
+  : EnvironmentSummary()
 {
   *this = jsonValue;
 }

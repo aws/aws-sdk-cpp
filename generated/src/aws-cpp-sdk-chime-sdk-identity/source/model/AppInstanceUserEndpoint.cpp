@@ -34,19 +34,8 @@ AppInstanceUserEndpoint::AppInstanceUserEndpoint() :
 {
 }
 
-AppInstanceUserEndpoint::AppInstanceUserEndpoint(JsonView jsonValue) : 
-    m_appInstanceUserArnHasBeenSet(false),
-    m_endpointIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_type(AppInstanceUserEndpointType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_resourceArnHasBeenSet(false),
-    m_endpointAttributesHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false),
-    m_lastUpdatedTimestampHasBeenSet(false),
-    m_allowMessages(AllowMessages::NOT_SET),
-    m_allowMessagesHasBeenSet(false),
-    m_endpointStateHasBeenSet(false)
+AppInstanceUserEndpoint::AppInstanceUserEndpoint(JsonView jsonValue)
+  : AppInstanceUserEndpoint()
 {
   *this = jsonValue;
 }

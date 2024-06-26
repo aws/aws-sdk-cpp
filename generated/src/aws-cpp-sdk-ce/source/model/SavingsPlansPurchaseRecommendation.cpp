@@ -34,19 +34,8 @@ SavingsPlansPurchaseRecommendation::SavingsPlansPurchaseRecommendation() :
 {
 }
 
-SavingsPlansPurchaseRecommendation::SavingsPlansPurchaseRecommendation(JsonView jsonValue) : 
-    m_accountScope(AccountScope::NOT_SET),
-    m_accountScopeHasBeenSet(false),
-    m_savingsPlansType(SupportedSavingsPlansType::NOT_SET),
-    m_savingsPlansTypeHasBeenSet(false),
-    m_termInYears(TermInYears::NOT_SET),
-    m_termInYearsHasBeenSet(false),
-    m_paymentOption(PaymentOption::NOT_SET),
-    m_paymentOptionHasBeenSet(false),
-    m_lookbackPeriodInDays(LookbackPeriodInDays::NOT_SET),
-    m_lookbackPeriodInDaysHasBeenSet(false),
-    m_savingsPlansPurchaseRecommendationDetailsHasBeenSet(false),
-    m_savingsPlansPurchaseRecommendationSummaryHasBeenSet(false)
+SavingsPlansPurchaseRecommendation::SavingsPlansPurchaseRecommendation(JsonView jsonValue)
+  : SavingsPlansPurchaseRecommendation()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ TrustStoreSummary::TrustStoreSummary() :
 {
 }
 
-TrustStoreSummary::TrustStoreSummary(JsonView jsonValue) : 
-    m_trustStoreArnHasBeenSet(false)
+TrustStoreSummary::TrustStoreSummary(JsonView jsonValue)
+  : TrustStoreSummary()
 {
   *this = jsonValue;
 }

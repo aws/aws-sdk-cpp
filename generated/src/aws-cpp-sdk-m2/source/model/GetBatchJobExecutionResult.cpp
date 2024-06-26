@@ -23,9 +23,8 @@ GetBatchJobExecutionResult::GetBatchJobExecutionResult() :
 {
 }
 
-GetBatchJobExecutionResult::GetBatchJobExecutionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_jobType(BatchJobType::NOT_SET),
-    m_status(BatchJobExecutionStatus::NOT_SET)
+GetBatchJobExecutionResult::GetBatchJobExecutionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetBatchJobExecutionResult()
 {
   *this = result;
 }

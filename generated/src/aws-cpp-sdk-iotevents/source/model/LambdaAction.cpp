@@ -24,9 +24,8 @@ LambdaAction::LambdaAction() :
 {
 }
 
-LambdaAction::LambdaAction(JsonView jsonValue) : 
-    m_functionArnHasBeenSet(false),
-    m_payloadHasBeenSet(false)
+LambdaAction::LambdaAction(JsonView jsonValue)
+  : LambdaAction()
 {
   *this = jsonValue;
 }

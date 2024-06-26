@@ -25,10 +25,8 @@ BatchRestrictions::BatchRestrictions() :
 {
 }
 
-BatchRestrictions::BatchRestrictions(JsonView jsonValue) : 
-    m_maximumBuildsAllowed(0),
-    m_maximumBuildsAllowedHasBeenSet(false),
-    m_computeTypesAllowedHasBeenSet(false)
+BatchRestrictions::BatchRestrictions(JsonView jsonValue)
+  : BatchRestrictions()
 {
   *this = jsonValue;
 }

@@ -119,17 +119,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Shows whether partial results stabilization was enabled for your Call
-     * Analytics transcription.</p>
-     */
-    inline bool GetEnablePartialResultsStabilization() const{ return m_enablePartialResultsStabilization; }
-    inline bool EnablePartialResultsStabilizationHasBeenSet() const { return m_enablePartialResultsStabilizationHasBeenSet; }
-    inline void SetEnablePartialResultsStabilization(bool value) { m_enablePartialResultsStabilizationHasBeenSet = true; m_enablePartialResultsStabilization = value; }
-    inline StartCallAnalyticsStreamTranscriptionInitialResponse& WithEnablePartialResultsStabilization(bool value) { SetEnablePartialResultsStabilization(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Provides the language code that you specified in your Call Analytics
      * request.</p>
      */
@@ -139,6 +128,17 @@ namespace Model
     inline void SetLanguageCode(CallAnalyticsLanguageCode&& value) { m_languageCodeHasBeenSet = true; m_languageCode = std::move(value); }
     inline StartCallAnalyticsStreamTranscriptionInitialResponse& WithLanguageCode(const CallAnalyticsLanguageCode& value) { SetLanguageCode(value); return *this;}
     inline StartCallAnalyticsStreamTranscriptionInitialResponse& WithLanguageCode(CallAnalyticsLanguageCode&& value) { SetLanguageCode(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Shows whether partial results stabilization was enabled for your Call
+     * Analytics transcription.</p>
+     */
+    inline bool GetEnablePartialResultsStabilization() const{ return m_enablePartialResultsStabilization; }
+    inline bool EnablePartialResultsStabilizationHasBeenSet() const { return m_enablePartialResultsStabilizationHasBeenSet; }
+    inline void SetEnablePartialResultsStabilization(bool value) { m_enablePartialResultsStabilizationHasBeenSet = true; m_enablePartialResultsStabilization = value; }
+    inline StartCallAnalyticsStreamTranscriptionInitialResponse& WithEnablePartialResultsStabilization(bool value) { SetEnablePartialResultsStabilization(value); return *this;}
     ///@}
 
     ///@{
@@ -242,11 +242,11 @@ namespace Model
     PartialResultsStability m_partialResultsStability;
     bool m_partialResultsStabilityHasBeenSet = false;
 
-    bool m_enablePartialResultsStabilization;
-    bool m_enablePartialResultsStabilizationHasBeenSet = false;
-
     CallAnalyticsLanguageCode m_languageCode;
     bool m_languageCodeHasBeenSet = false;
+
+    bool m_enablePartialResultsStabilization;
+    bool m_enablePartialResultsStabilizationHasBeenSet = false;
 
     Aws::String m_vocabularyName;
     bool m_vocabularyNameHasBeenSet = false;

@@ -24,9 +24,8 @@ SearchableContactAttributesCriteria::SearchableContactAttributesCriteria() :
 {
 }
 
-SearchableContactAttributesCriteria::SearchableContactAttributesCriteria(JsonView jsonValue) : 
-    m_keyHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+SearchableContactAttributesCriteria::SearchableContactAttributesCriteria(JsonView jsonValue)
+  : SearchableContactAttributesCriteria()
 {
   *this = jsonValue;
 }

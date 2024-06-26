@@ -23,8 +23,8 @@ SubscribedProjectInput::SubscribedProjectInput() :
 {
 }
 
-SubscribedProjectInput::SubscribedProjectInput(JsonView jsonValue) : 
-    m_identifierHasBeenSet(false)
+SubscribedProjectInput::SubscribedProjectInput(JsonView jsonValue)
+  : SubscribedProjectInput()
 {
   *this = jsonValue;
 }

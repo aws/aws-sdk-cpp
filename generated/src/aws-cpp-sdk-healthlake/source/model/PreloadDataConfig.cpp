@@ -24,9 +24,8 @@ PreloadDataConfig::PreloadDataConfig() :
 {
 }
 
-PreloadDataConfig::PreloadDataConfig(JsonView jsonValue) : 
-    m_preloadDataType(PreloadDataType::NOT_SET),
-    m_preloadDataTypeHasBeenSet(false)
+PreloadDataConfig::PreloadDataConfig(JsonView jsonValue)
+  : PreloadDataConfig()
 {
   *this = jsonValue;
 }

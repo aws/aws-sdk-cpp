@@ -29,14 +29,8 @@ LoggingConfig::LoggingConfig() :
 {
 }
 
-LoggingConfig::LoggingConfig(JsonView jsonValue) : 
-    m_logFormat(LogFormat::NOT_SET),
-    m_logFormatHasBeenSet(false),
-    m_applicationLogLevel(ApplicationLogLevel::NOT_SET),
-    m_applicationLogLevelHasBeenSet(false),
-    m_systemLogLevel(SystemLogLevel::NOT_SET),
-    m_systemLogLevelHasBeenSet(false),
-    m_logGroupHasBeenSet(false)
+LoggingConfig::LoggingConfig(JsonView jsonValue)
+  : LoggingConfig()
 {
   *this = jsonValue;
 }

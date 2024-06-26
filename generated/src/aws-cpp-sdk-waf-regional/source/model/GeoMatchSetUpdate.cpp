@@ -25,10 +25,8 @@ GeoMatchSetUpdate::GeoMatchSetUpdate() :
 {
 }
 
-GeoMatchSetUpdate::GeoMatchSetUpdate(JsonView jsonValue) : 
-    m_action(ChangeAction::NOT_SET),
-    m_actionHasBeenSet(false),
-    m_geoMatchConstraintHasBeenSet(false)
+GeoMatchSetUpdate::GeoMatchSetUpdate(JsonView jsonValue)
+  : GeoMatchSetUpdate()
 {
   *this = jsonValue;
 }

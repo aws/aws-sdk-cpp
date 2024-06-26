@@ -28,11 +28,8 @@ HistoryRecord::HistoryRecord() :
 {
 }
 
-HistoryRecord::HistoryRecord(const XmlNode& xmlNode) : 
-    m_eventInformationHasBeenSet(false),
-    m_eventType(EventType::NOT_SET),
-    m_eventTypeHasBeenSet(false),
-    m_timestampHasBeenSet(false)
+HistoryRecord::HistoryRecord(const XmlNode& xmlNode)
+  : HistoryRecord()
 {
   *this = xmlNode;
 }

@@ -30,15 +30,8 @@ ReviewTemplateSummary::ReviewTemplateSummary() :
 {
 }
 
-ReviewTemplateSummary::ReviewTemplateSummary(JsonView jsonValue) : 
-    m_descriptionHasBeenSet(false),
-    m_lensesHasBeenSet(false),
-    m_ownerHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_templateArnHasBeenSet(false),
-    m_templateNameHasBeenSet(false),
-    m_updateStatus(ReviewTemplateUpdateStatus::NOT_SET),
-    m_updateStatusHasBeenSet(false)
+ReviewTemplateSummary::ReviewTemplateSummary(JsonView jsonValue)
+  : ReviewTemplateSummary()
 {
   *this = jsonValue;
 }

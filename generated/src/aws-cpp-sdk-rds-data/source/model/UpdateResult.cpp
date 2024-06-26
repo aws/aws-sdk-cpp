@@ -23,8 +23,8 @@ UpdateResult::UpdateResult() :
 {
 }
 
-UpdateResult::UpdateResult(JsonView jsonValue) : 
-    m_generatedFieldsHasBeenSet(false)
+UpdateResult::UpdateResult(JsonView jsonValue)
+  : UpdateResult()
 {
   *this = jsonValue;
 }

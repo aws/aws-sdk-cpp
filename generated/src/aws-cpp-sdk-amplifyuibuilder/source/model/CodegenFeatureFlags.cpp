@@ -26,11 +26,8 @@ CodegenFeatureFlags::CodegenFeatureFlags() :
 {
 }
 
-CodegenFeatureFlags::CodegenFeatureFlags(JsonView jsonValue) : 
-    m_isRelationshipSupported(false),
-    m_isRelationshipSupportedHasBeenSet(false),
-    m_isNonModelSupported(false),
-    m_isNonModelSupportedHasBeenSet(false)
+CodegenFeatureFlags::CodegenFeatureFlags(JsonView jsonValue)
+  : CodegenFeatureFlags()
 {
   *this = jsonValue;
 }

@@ -38,23 +38,8 @@ ProjectArtifacts::ProjectArtifacts() :
 {
 }
 
-ProjectArtifacts::ProjectArtifacts(JsonView jsonValue) : 
-    m_type(ArtifactsType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_locationHasBeenSet(false),
-    m_pathHasBeenSet(false),
-    m_namespaceType(ArtifactNamespace::NOT_SET),
-    m_namespaceTypeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_packaging(ArtifactPackaging::NOT_SET),
-    m_packagingHasBeenSet(false),
-    m_overrideArtifactName(false),
-    m_overrideArtifactNameHasBeenSet(false),
-    m_encryptionDisabled(false),
-    m_encryptionDisabledHasBeenSet(false),
-    m_artifactIdentifierHasBeenSet(false),
-    m_bucketOwnerAccess(BucketOwnerAccess::NOT_SET),
-    m_bucketOwnerAccessHasBeenSet(false)
+ProjectArtifacts::ProjectArtifacts(JsonView jsonValue)
+  : ProjectArtifacts()
 {
   *this = jsonValue;
 }

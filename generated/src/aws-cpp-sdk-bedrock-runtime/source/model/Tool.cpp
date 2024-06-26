@@ -23,8 +23,8 @@ Tool::Tool() :
 {
 }
 
-Tool::Tool(JsonView jsonValue) : 
-    m_toolSpecHasBeenSet(false)
+Tool::Tool(JsonView jsonValue)
+  : Tool()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ FrameworkControl::FrameworkControl() :
 {
 }
 
-FrameworkControl::FrameworkControl(JsonView jsonValue) : 
-    m_controlNameHasBeenSet(false),
-    m_controlInputParametersHasBeenSet(false),
-    m_controlScopeHasBeenSet(false)
+FrameworkControl::FrameworkControl(JsonView jsonValue)
+  : FrameworkControl()
 {
   *this = jsonValue;
 }

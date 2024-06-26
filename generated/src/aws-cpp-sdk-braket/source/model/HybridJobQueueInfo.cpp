@@ -26,11 +26,8 @@ HybridJobQueueInfo::HybridJobQueueInfo() :
 {
 }
 
-HybridJobQueueInfo::HybridJobQueueInfo(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_positionHasBeenSet(false),
-    m_queue(QueueName::NOT_SET),
-    m_queueHasBeenSet(false)
+HybridJobQueueInfo::HybridJobQueueInfo(JsonView jsonValue)
+  : HybridJobQueueInfo()
 {
   *this = jsonValue;
 }

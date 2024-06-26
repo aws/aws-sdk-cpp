@@ -30,15 +30,8 @@ ReplicaContainerGroupCounts::ReplicaContainerGroupCounts() :
 {
 }
 
-ReplicaContainerGroupCounts::ReplicaContainerGroupCounts(JsonView jsonValue) : 
-    m_pENDING(0),
-    m_pENDINGHasBeenSet(false),
-    m_aCTIVE(0),
-    m_aCTIVEHasBeenSet(false),
-    m_iDLE(0),
-    m_iDLEHasBeenSet(false),
-    m_tERMINATING(0),
-    m_tERMINATINGHasBeenSet(false)
+ReplicaContainerGroupCounts::ReplicaContainerGroupCounts(JsonView jsonValue)
+  : ReplicaContainerGroupCounts()
 {
   *this = jsonValue;
 }

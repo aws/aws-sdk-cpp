@@ -33,18 +33,8 @@ AwsElbv2LoadBalancerDetails::AwsElbv2LoadBalancerDetails() :
 {
 }
 
-AwsElbv2LoadBalancerDetails::AwsElbv2LoadBalancerDetails(JsonView jsonValue) : 
-    m_availabilityZonesHasBeenSet(false),
-    m_canonicalHostedZoneIdHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_dNSNameHasBeenSet(false),
-    m_ipAddressTypeHasBeenSet(false),
-    m_schemeHasBeenSet(false),
-    m_securityGroupsHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_loadBalancerAttributesHasBeenSet(false)
+AwsElbv2LoadBalancerDetails::AwsElbv2LoadBalancerDetails(JsonView jsonValue)
+  : AwsElbv2LoadBalancerDetails()
 {
   *this = jsonValue;
 }

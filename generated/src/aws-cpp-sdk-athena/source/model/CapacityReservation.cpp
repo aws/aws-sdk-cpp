@@ -32,17 +32,8 @@ CapacityReservation::CapacityReservation() :
 {
 }
 
-CapacityReservation::CapacityReservation(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_status(CapacityReservationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_targetDpus(0),
-    m_targetDpusHasBeenSet(false),
-    m_allocatedDpus(0),
-    m_allocatedDpusHasBeenSet(false),
-    m_lastAllocationHasBeenSet(false),
-    m_lastSuccessfulAllocationTimeHasBeenSet(false),
-    m_creationTimeHasBeenSet(false)
+CapacityReservation::CapacityReservation(JsonView jsonValue)
+  : CapacityReservation()
 {
   *this = jsonValue;
 }

@@ -23,9 +23,8 @@ GetRequestValidatorResult::GetRequestValidatorResult() :
 {
 }
 
-GetRequestValidatorResult::GetRequestValidatorResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_validateRequestBody(false),
-    m_validateRequestParameters(false)
+GetRequestValidatorResult::GetRequestValidatorResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetRequestValidatorResult()
 {
   *this = result;
 }

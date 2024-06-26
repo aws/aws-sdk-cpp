@@ -31,16 +31,8 @@ PackageGroupSummary::PackageGroupSummary() :
 {
 }
 
-PackageGroupSummary::PackageGroupSummary(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_patternHasBeenSet(false),
-    m_domainNameHasBeenSet(false),
-    m_domainOwnerHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_contactInfoHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_originConfigurationHasBeenSet(false),
-    m_parentHasBeenSet(false)
+PackageGroupSummary::PackageGroupSummary(JsonView jsonValue)
+  : PackageGroupSummary()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ ReplaceDefaultPolicyVersionParams::ReplaceDefaultPolicyVersionParams() :
 {
 }
 
-ReplaceDefaultPolicyVersionParams::ReplaceDefaultPolicyVersionParams(JsonView jsonValue) : 
-    m_templateName(PolicyTemplateName::NOT_SET),
-    m_templateNameHasBeenSet(false)
+ReplaceDefaultPolicyVersionParams::ReplaceDefaultPolicyVersionParams(JsonView jsonValue)
+  : ReplaceDefaultPolicyVersionParams()
 {
   *this = jsonValue;
 }

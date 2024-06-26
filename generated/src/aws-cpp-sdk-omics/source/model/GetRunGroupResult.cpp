@@ -25,11 +25,8 @@ GetRunGroupResult::GetRunGroupResult() :
 {
 }
 
-GetRunGroupResult::GetRunGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_maxCpus(0),
-    m_maxRuns(0),
-    m_maxDuration(0),
-    m_maxGpus(0)
+GetRunGroupResult::GetRunGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetRunGroupResult()
 {
   *this = result;
 }

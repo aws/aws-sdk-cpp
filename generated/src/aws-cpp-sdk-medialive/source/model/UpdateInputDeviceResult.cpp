@@ -26,12 +26,8 @@ UpdateInputDeviceResult::UpdateInputDeviceResult() :
 {
 }
 
-UpdateInputDeviceResult::UpdateInputDeviceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_connectionState(InputDeviceConnectionState::NOT_SET),
-    m_deviceSettingsSyncState(DeviceSettingsSyncState::NOT_SET),
-    m_deviceUpdateStatus(DeviceUpdateStatus::NOT_SET),
-    m_type(InputDeviceType::NOT_SET),
-    m_outputType(InputDeviceOutputType::NOT_SET)
+UpdateInputDeviceResult::UpdateInputDeviceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateInputDeviceResult()
 {
   *this = result;
 }

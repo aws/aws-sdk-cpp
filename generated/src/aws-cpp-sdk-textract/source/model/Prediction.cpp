@@ -25,10 +25,8 @@ Prediction::Prediction() :
 {
 }
 
-Prediction::Prediction(JsonView jsonValue) : 
-    m_valueHasBeenSet(false),
-    m_confidence(0.0),
-    m_confidenceHasBeenSet(false)
+Prediction::Prediction(JsonView jsonValue)
+  : Prediction()
 {
   *this = jsonValue;
 }

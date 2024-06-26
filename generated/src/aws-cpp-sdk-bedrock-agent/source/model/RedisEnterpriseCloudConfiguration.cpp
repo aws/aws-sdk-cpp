@@ -26,11 +26,8 @@ RedisEnterpriseCloudConfiguration::RedisEnterpriseCloudConfiguration() :
 {
 }
 
-RedisEnterpriseCloudConfiguration::RedisEnterpriseCloudConfiguration(JsonView jsonValue) : 
-    m_credentialsSecretArnHasBeenSet(false),
-    m_endpointHasBeenSet(false),
-    m_fieldMappingHasBeenSet(false),
-    m_vectorIndexNameHasBeenSet(false)
+RedisEnterpriseCloudConfiguration::RedisEnterpriseCloudConfiguration(JsonView jsonValue)
+  : RedisEnterpriseCloudConfiguration()
 {
   *this = jsonValue;
 }

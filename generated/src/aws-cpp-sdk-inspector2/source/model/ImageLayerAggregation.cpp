@@ -29,14 +29,8 @@ ImageLayerAggregation::ImageLayerAggregation() :
 {
 }
 
-ImageLayerAggregation::ImageLayerAggregation(JsonView jsonValue) : 
-    m_layerHashesHasBeenSet(false),
-    m_repositoriesHasBeenSet(false),
-    m_resourceIdsHasBeenSet(false),
-    m_sortBy(ImageLayerSortBy::NOT_SET),
-    m_sortByHasBeenSet(false),
-    m_sortOrder(SortOrder::NOT_SET),
-    m_sortOrderHasBeenSet(false)
+ImageLayerAggregation::ImageLayerAggregation(JsonView jsonValue)
+  : ImageLayerAggregation()
 {
   *this = jsonValue;
 }

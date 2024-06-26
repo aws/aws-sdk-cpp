@@ -22,8 +22,8 @@ GetGuardrailResult::GetGuardrailResult() :
 {
 }
 
-GetGuardrailResult::GetGuardrailResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(GuardrailStatus::NOT_SET)
+GetGuardrailResult::GetGuardrailResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetGuardrailResult()
 {
   *this = result;
 }

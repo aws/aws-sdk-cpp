@@ -24,9 +24,8 @@ InstanceConfiguration::InstanceConfiguration() :
 {
 }
 
-InstanceConfiguration::InstanceConfiguration(JsonView jsonValue) : 
-    m_imageHasBeenSet(false),
-    m_blockDeviceMappingsHasBeenSet(false)
+InstanceConfiguration::InstanceConfiguration(JsonView jsonValue)
+  : InstanceConfiguration()
 {
   *this = jsonValue;
 }

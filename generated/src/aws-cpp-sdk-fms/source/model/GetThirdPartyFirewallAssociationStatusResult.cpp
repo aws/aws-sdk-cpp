@@ -23,9 +23,8 @@ GetThirdPartyFirewallAssociationStatusResult::GetThirdPartyFirewallAssociationSt
 {
 }
 
-GetThirdPartyFirewallAssociationStatusResult::GetThirdPartyFirewallAssociationStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_thirdPartyFirewallStatus(ThirdPartyFirewallAssociationStatus::NOT_SET),
-    m_marketplaceOnboardingStatus(MarketplaceSubscriptionOnboardingStatus::NOT_SET)
+GetThirdPartyFirewallAssociationStatusResult::GetThirdPartyFirewallAssociationStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetThirdPartyFirewallAssociationStatusResult()
 {
   *this = result;
 }

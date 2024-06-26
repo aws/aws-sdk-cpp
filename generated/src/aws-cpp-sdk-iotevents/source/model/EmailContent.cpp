@@ -24,9 +24,8 @@ EmailContent::EmailContent() :
 {
 }
 
-EmailContent::EmailContent(JsonView jsonValue) : 
-    m_subjectHasBeenSet(false),
-    m_additionalMessageHasBeenSet(false)
+EmailContent::EmailContent(JsonView jsonValue)
+  : EmailContent()
 {
   *this = jsonValue;
 }

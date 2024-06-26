@@ -30,15 +30,8 @@ ViewRepresentation::ViewRepresentation() :
 {
 }
 
-ViewRepresentation::ViewRepresentation(JsonView jsonValue) : 
-    m_dialect(ViewDialect::NOT_SET),
-    m_dialectHasBeenSet(false),
-    m_dialectVersionHasBeenSet(false),
-    m_viewOriginalTextHasBeenSet(false),
-    m_viewExpandedTextHasBeenSet(false),
-    m_validationConnectionHasBeenSet(false),
-    m_isStale(false),
-    m_isStaleHasBeenSet(false)
+ViewRepresentation::ViewRepresentation(JsonView jsonValue)
+  : ViewRepresentation()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ IdentityDocumentField::IdentityDocumentField() :
 {
 }
 
-IdentityDocumentField::IdentityDocumentField(JsonView jsonValue) : 
-    m_typeHasBeenSet(false),
-    m_valueDetectionHasBeenSet(false)
+IdentityDocumentField::IdentityDocumentField(JsonView jsonValue)
+  : IdentityDocumentField()
 {
   *this = jsonValue;
 }

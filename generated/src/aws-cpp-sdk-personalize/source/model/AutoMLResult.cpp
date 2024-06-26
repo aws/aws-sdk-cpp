@@ -23,8 +23,8 @@ AutoMLResult::AutoMLResult() :
 {
 }
 
-AutoMLResult::AutoMLResult(JsonView jsonValue) : 
-    m_bestRecipeArnHasBeenSet(false)
+AutoMLResult::AutoMLResult(JsonView jsonValue)
+  : AutoMLResult()
 {
   *this = jsonValue;
 }

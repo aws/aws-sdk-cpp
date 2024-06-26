@@ -23,8 +23,8 @@ LockConfiguration::LockConfiguration() :
 {
 }
 
-LockConfiguration::LockConfiguration(JsonView jsonValue) : 
-    m_unlockDelayHasBeenSet(false)
+LockConfiguration::LockConfiguration(JsonView jsonValue)
+  : LockConfiguration()
 {
   *this = jsonValue;
 }

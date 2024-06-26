@@ -22,8 +22,8 @@ StopRetrainingSchedulerResult::StopRetrainingSchedulerResult() :
 {
 }
 
-StopRetrainingSchedulerResult::StopRetrainingSchedulerResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(RetrainingSchedulerStatus::NOT_SET)
+StopRetrainingSchedulerResult::StopRetrainingSchedulerResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : StopRetrainingSchedulerResult()
 {
   *this = result;
 }

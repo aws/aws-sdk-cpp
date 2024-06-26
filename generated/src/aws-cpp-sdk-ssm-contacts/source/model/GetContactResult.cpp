@@ -22,8 +22,8 @@ GetContactResult::GetContactResult() :
 {
 }
 
-GetContactResult::GetContactResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_type(ContactType::NOT_SET)
+GetContactResult::GetContactResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetContactResult()
 {
   *this = result;
 }

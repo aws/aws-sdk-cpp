@@ -28,13 +28,8 @@ TreeMapVisual::TreeMapVisual() :
 {
 }
 
-TreeMapVisual::TreeMapVisual(JsonView jsonValue) : 
-    m_visualIdHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_subtitleHasBeenSet(false),
-    m_chartConfigurationHasBeenSet(false),
-    m_actionsHasBeenSet(false),
-    m_columnHierarchiesHasBeenSet(false)
+TreeMapVisual::TreeMapVisual(JsonView jsonValue)
+  : TreeMapVisual()
 {
   *this = jsonValue;
 }

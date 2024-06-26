@@ -23,8 +23,8 @@ LabelDetectionSettings::LabelDetectionSettings() :
 {
 }
 
-LabelDetectionSettings::LabelDetectionSettings(JsonView jsonValue) : 
-    m_generalLabelsHasBeenSet(false)
+LabelDetectionSettings::LabelDetectionSettings(JsonView jsonValue)
+  : LabelDetectionSettings()
 {
   *this = jsonValue;
 }

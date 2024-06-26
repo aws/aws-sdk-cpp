@@ -27,13 +27,8 @@ GetFleetResult::GetFleetResult() :
 {
 }
 
-GetFleetResult::GetFleetResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_autoScalingStatus(AutoScalingStatus::NOT_SET),
-    m_maxWorkerCount(0),
-    m_minWorkerCount(0),
-    m_status(FleetStatus::NOT_SET),
-    m_targetWorkerCount(0),
-    m_workerCount(0)
+GetFleetResult::GetFleetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetFleetResult()
 {
   *this = result;
 }

@@ -28,13 +28,8 @@ GameSessionConnectionInfo::GameSessionConnectionInfo() :
 {
 }
 
-GameSessionConnectionInfo::GameSessionConnectionInfo(JsonView jsonValue) : 
-    m_gameSessionArnHasBeenSet(false),
-    m_ipAddressHasBeenSet(false),
-    m_dnsNameHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_matchedPlayerSessionsHasBeenSet(false)
+GameSessionConnectionInfo::GameSessionConnectionInfo(JsonView jsonValue)
+  : GameSessionConnectionInfo()
 {
   *this = jsonValue;
 }

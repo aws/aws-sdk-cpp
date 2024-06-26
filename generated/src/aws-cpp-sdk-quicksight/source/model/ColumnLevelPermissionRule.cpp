@@ -24,9 +24,8 @@ ColumnLevelPermissionRule::ColumnLevelPermissionRule() :
 {
 }
 
-ColumnLevelPermissionRule::ColumnLevelPermissionRule(JsonView jsonValue) : 
-    m_principalsHasBeenSet(false),
-    m_columnNamesHasBeenSet(false)
+ColumnLevelPermissionRule::ColumnLevelPermissionRule(JsonView jsonValue)
+  : ColumnLevelPermissionRule()
 {
   *this = jsonValue;
 }

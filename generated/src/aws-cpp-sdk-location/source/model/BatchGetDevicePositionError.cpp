@@ -24,9 +24,8 @@ BatchGetDevicePositionError::BatchGetDevicePositionError() :
 {
 }
 
-BatchGetDevicePositionError::BatchGetDevicePositionError(JsonView jsonValue) : 
-    m_deviceIdHasBeenSet(false),
-    m_errorHasBeenSet(false)
+BatchGetDevicePositionError::BatchGetDevicePositionError(JsonView jsonValue)
+  : BatchGetDevicePositionError()
 {
   *this = jsonValue;
 }

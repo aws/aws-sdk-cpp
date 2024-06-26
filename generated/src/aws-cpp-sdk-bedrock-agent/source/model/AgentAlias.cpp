@@ -35,20 +35,8 @@ AgentAlias::AgentAlias() :
 {
 }
 
-AgentAlias::AgentAlias(JsonView jsonValue) : 
-    m_agentAliasArnHasBeenSet(false),
-    m_agentAliasHistoryEventsHasBeenSet(false),
-    m_agentAliasIdHasBeenSet(false),
-    m_agentAliasNameHasBeenSet(false),
-    m_agentAliasStatus(AgentAliasStatus::NOT_SET),
-    m_agentAliasStatusHasBeenSet(false),
-    m_agentIdHasBeenSet(false),
-    m_clientTokenHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_failureReasonsHasBeenSet(false),
-    m_routingConfigurationHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+AgentAlias::AgentAlias(JsonView jsonValue)
+  : AgentAlias()
 {
   *this = jsonValue;
 }

@@ -34,19 +34,8 @@ Job::Job() :
 {
 }
 
-Job::Job(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_creationDateTimeHasBeenSet(false),
-    m_endDateTimeHasBeenSet(false),
-    m_initiatedBy(InitiatedBy::NOT_SET),
-    m_initiatedByHasBeenSet(false),
-    m_jobIDHasBeenSet(false),
-    m_participatingServersHasBeenSet(false),
-    m_status(JobStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_type(JobType::NOT_SET),
-    m_typeHasBeenSet(false)
+Job::Job(JsonView jsonValue)
+  : Job()
 {
   *this = jsonValue;
 }

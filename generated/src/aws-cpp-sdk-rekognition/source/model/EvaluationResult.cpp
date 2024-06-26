@@ -25,10 +25,8 @@ EvaluationResult::EvaluationResult() :
 {
 }
 
-EvaluationResult::EvaluationResult(JsonView jsonValue) : 
-    m_f1Score(0.0),
-    m_f1ScoreHasBeenSet(false),
-    m_summaryHasBeenSet(false)
+EvaluationResult::EvaluationResult(JsonView jsonValue)
+  : EvaluationResult()
 {
   *this = jsonValue;
 }

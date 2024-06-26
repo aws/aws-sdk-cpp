@@ -28,13 +28,8 @@ DifferentialPrivacyPrivacyBudgetAggregation::DifferentialPrivacyPrivacyBudgetAgg
 {
 }
 
-DifferentialPrivacyPrivacyBudgetAggregation::DifferentialPrivacyPrivacyBudgetAggregation(JsonView jsonValue) : 
-    m_type(DifferentialPrivacyAggregationType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_maxCount(0),
-    m_maxCountHasBeenSet(false),
-    m_remainingCount(0),
-    m_remainingCountHasBeenSet(false)
+DifferentialPrivacyPrivacyBudgetAggregation::DifferentialPrivacyPrivacyBudgetAggregation(JsonView jsonValue)
+  : DifferentialPrivacyPrivacyBudgetAggregation()
 {
   *this = jsonValue;
 }

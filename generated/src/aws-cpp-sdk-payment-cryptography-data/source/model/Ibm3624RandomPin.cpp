@@ -25,10 +25,8 @@ Ibm3624RandomPin::Ibm3624RandomPin() :
 {
 }
 
-Ibm3624RandomPin::Ibm3624RandomPin(JsonView jsonValue) : 
-    m_decimalizationTableHasBeenSet(false),
-    m_pinValidationDataHasBeenSet(false),
-    m_pinValidationDataPadCharacterHasBeenSet(false)
+Ibm3624RandomPin::Ibm3624RandomPin(JsonView jsonValue)
+  : Ibm3624RandomPin()
 {
   *this = jsonValue;
 }

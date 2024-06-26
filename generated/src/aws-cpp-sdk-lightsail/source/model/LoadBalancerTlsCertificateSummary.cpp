@@ -25,10 +25,8 @@ LoadBalancerTlsCertificateSummary::LoadBalancerTlsCertificateSummary() :
 {
 }
 
-LoadBalancerTlsCertificateSummary::LoadBalancerTlsCertificateSummary(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_isAttached(false),
-    m_isAttachedHasBeenSet(false)
+LoadBalancerTlsCertificateSummary::LoadBalancerTlsCertificateSummary(JsonView jsonValue)
+  : LoadBalancerTlsCertificateSummary()
 {
   *this = jsonValue;
 }

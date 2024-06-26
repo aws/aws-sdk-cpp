@@ -24,9 +24,8 @@ MultiplexSettingsSummary::MultiplexSettingsSummary() :
 {
 }
 
-MultiplexSettingsSummary::MultiplexSettingsSummary(JsonView jsonValue) : 
-    m_transportStreamBitrate(0),
-    m_transportStreamBitrateHasBeenSet(false)
+MultiplexSettingsSummary::MultiplexSettingsSummary(JsonView jsonValue)
+  : MultiplexSettingsSummary()
 {
   *this = jsonValue;
 }

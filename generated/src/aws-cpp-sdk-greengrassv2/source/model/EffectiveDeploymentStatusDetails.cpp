@@ -24,9 +24,8 @@ EffectiveDeploymentStatusDetails::EffectiveDeploymentStatusDetails() :
 {
 }
 
-EffectiveDeploymentStatusDetails::EffectiveDeploymentStatusDetails(JsonView jsonValue) : 
-    m_errorStackHasBeenSet(false),
-    m_errorTypesHasBeenSet(false)
+EffectiveDeploymentStatusDetails::EffectiveDeploymentStatusDetails(JsonView jsonValue)
+  : EffectiveDeploymentStatusDetails()
 {
   *this = jsonValue;
 }

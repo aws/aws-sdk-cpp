@@ -24,9 +24,8 @@ DirectoryLimitExceededException::DirectoryLimitExceededException() :
 {
 }
 
-DirectoryLimitExceededException::DirectoryLimitExceededException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
+DirectoryLimitExceededException::DirectoryLimitExceededException(JsonView jsonValue)
+  : DirectoryLimitExceededException()
 {
   *this = jsonValue;
 }

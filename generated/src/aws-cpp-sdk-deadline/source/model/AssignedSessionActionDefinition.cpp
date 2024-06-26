@@ -26,11 +26,8 @@ AssignedSessionActionDefinition::AssignedSessionActionDefinition() :
 {
 }
 
-AssignedSessionActionDefinition::AssignedSessionActionDefinition(JsonView jsonValue) : 
-    m_envEnterHasBeenSet(false),
-    m_envExitHasBeenSet(false),
-    m_syncInputJobAttachmentsHasBeenSet(false),
-    m_taskRunHasBeenSet(false)
+AssignedSessionActionDefinition::AssignedSessionActionDefinition(JsonView jsonValue)
+  : AssignedSessionActionDefinition()
 {
   *this = jsonValue;
 }

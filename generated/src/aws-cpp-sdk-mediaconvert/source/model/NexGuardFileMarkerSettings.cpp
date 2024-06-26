@@ -28,13 +28,8 @@ NexGuardFileMarkerSettings::NexGuardFileMarkerSettings() :
 {
 }
 
-NexGuardFileMarkerSettings::NexGuardFileMarkerSettings(JsonView jsonValue) : 
-    m_licenseHasBeenSet(false),
-    m_payload(0),
-    m_payloadHasBeenSet(false),
-    m_presetHasBeenSet(false),
-    m_strength(WatermarkingStrength::NOT_SET),
-    m_strengthHasBeenSet(false)
+NexGuardFileMarkerSettings::NexGuardFileMarkerSettings(JsonView jsonValue)
+  : NexGuardFileMarkerSettings()
 {
   *this = jsonValue;
 }

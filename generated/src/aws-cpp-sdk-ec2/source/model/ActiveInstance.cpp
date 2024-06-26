@@ -29,12 +29,8 @@ ActiveInstance::ActiveInstance() :
 {
 }
 
-ActiveInstance::ActiveInstance(const XmlNode& xmlNode) : 
-    m_instanceIdHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_spotInstanceRequestIdHasBeenSet(false),
-    m_instanceHealth(InstanceHealthStatus::NOT_SET),
-    m_instanceHealthHasBeenSet(false)
+ActiveInstance::ActiveInstance(const XmlNode& xmlNode)
+  : ActiveInstance()
 {
   *this = xmlNode;
 }

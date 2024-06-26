@@ -25,8 +25,8 @@ ResourceRecord::ResourceRecord() :
 {
 }
 
-ResourceRecord::ResourceRecord(const XmlNode& xmlNode) : 
-    m_valueHasBeenSet(false)
+ResourceRecord::ResourceRecord(const XmlNode& xmlNode)
+  : ResourceRecord()
 {
   *this = xmlNode;
 }

@@ -24,10 +24,8 @@ DescribeTestSetResult::DescribeTestSetResult() :
 {
 }
 
-DescribeTestSetResult::DescribeTestSetResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_modality(TestSetModality::NOT_SET),
-    m_status(TestSetStatus::NOT_SET),
-    m_numTurns(0)
+DescribeTestSetResult::DescribeTestSetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeTestSetResult()
 {
   *this = result;
 }

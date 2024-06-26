@@ -27,10 +27,8 @@ MFADevice::MFADevice() :
 {
 }
 
-MFADevice::MFADevice(const XmlNode& xmlNode) : 
-    m_userNameHasBeenSet(false),
-    m_serialNumberHasBeenSet(false),
-    m_enableDateHasBeenSet(false)
+MFADevice::MFADevice(const XmlNode& xmlNode)
+  : MFADevice()
 {
   *this = xmlNode;
 }

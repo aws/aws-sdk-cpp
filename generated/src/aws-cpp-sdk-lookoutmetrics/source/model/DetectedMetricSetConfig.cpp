@@ -25,10 +25,8 @@ DetectedMetricSetConfig::DetectedMetricSetConfig() :
 {
 }
 
-DetectedMetricSetConfig::DetectedMetricSetConfig(JsonView jsonValue) : 
-    m_offsetHasBeenSet(false),
-    m_metricSetFrequencyHasBeenSet(false),
-    m_metricSourceHasBeenSet(false)
+DetectedMetricSetConfig::DetectedMetricSetConfig(JsonView jsonValue)
+  : DetectedMetricSetConfig()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ IdentityProvider::IdentityProvider() :
 {
 }
 
-IdentityProvider::IdentityProvider(JsonView jsonValue) : 
-    m_activeDirectoryIdentityProviderHasBeenSet(false)
+IdentityProvider::IdentityProvider(JsonView jsonValue)
+  : IdentityProvider()
 {
   *this = jsonValue;
 }

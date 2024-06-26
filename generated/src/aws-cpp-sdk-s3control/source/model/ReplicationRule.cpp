@@ -35,18 +35,8 @@ ReplicationRule::ReplicationRule() :
 {
 }
 
-ReplicationRule::ReplicationRule(const XmlNode& xmlNode) : 
-    m_iDHasBeenSet(false),
-    m_priority(0),
-    m_priorityHasBeenSet(false),
-    m_filterHasBeenSet(false),
-    m_status(ReplicationRuleStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_sourceSelectionCriteriaHasBeenSet(false),
-    m_existingObjectReplicationHasBeenSet(false),
-    m_destinationHasBeenSet(false),
-    m_deleteMarkerReplicationHasBeenSet(false),
-    m_bucketHasBeenSet(false)
+ReplicationRule::ReplicationRule(const XmlNode& xmlNode)
+  : ReplicationRule()
 {
   *this = xmlNode;
 }

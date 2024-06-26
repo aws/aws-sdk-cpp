@@ -24,10 +24,8 @@ GetDevEnvironmentResult::GetDevEnvironmentResult() :
 {
 }
 
-GetDevEnvironmentResult::GetDevEnvironmentResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(DevEnvironmentStatus::NOT_SET),
-    m_instanceType(InstanceType::NOT_SET),
-    m_inactivityTimeoutMinutes(0)
+GetDevEnvironmentResult::GetDevEnvironmentResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetDevEnvironmentResult()
 {
   *this = result;
 }

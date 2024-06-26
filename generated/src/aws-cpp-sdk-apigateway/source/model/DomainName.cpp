@@ -43,27 +43,8 @@ DomainName::DomainName() :
 {
 }
 
-DomainName::DomainName(JsonView jsonValue) : 
-    m_domainNameHasBeenSet(false),
-    m_certificateNameHasBeenSet(false),
-    m_certificateArnHasBeenSet(false),
-    m_certificateUploadDateHasBeenSet(false),
-    m_regionalDomainNameHasBeenSet(false),
-    m_regionalHostedZoneIdHasBeenSet(false),
-    m_regionalCertificateNameHasBeenSet(false),
-    m_regionalCertificateArnHasBeenSet(false),
-    m_distributionDomainNameHasBeenSet(false),
-    m_distributionHostedZoneIdHasBeenSet(false),
-    m_endpointConfigurationHasBeenSet(false),
-    m_domainNameStatus(DomainNameStatus::NOT_SET),
-    m_domainNameStatusHasBeenSet(false),
-    m_domainNameStatusMessageHasBeenSet(false),
-    m_securityPolicy(SecurityPolicy::NOT_SET),
-    m_securityPolicyHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_mutualTlsAuthenticationHasBeenSet(false),
-    m_ownershipVerificationCertificateArnHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
+DomainName::DomainName(JsonView jsonValue)
+  : DomainName()
 {
   *this = jsonValue;
 }

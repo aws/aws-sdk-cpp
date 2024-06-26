@@ -24,9 +24,8 @@ RollingDateConfiguration::RollingDateConfiguration() :
 {
 }
 
-RollingDateConfiguration::RollingDateConfiguration(JsonView jsonValue) : 
-    m_dataSetIdentifierHasBeenSet(false),
-    m_expressionHasBeenSet(false)
+RollingDateConfiguration::RollingDateConfiguration(JsonView jsonValue)
+  : RollingDateConfiguration()
 {
   *this = jsonValue;
 }

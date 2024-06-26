@@ -32,15 +32,8 @@ TrafficPolicy::TrafficPolicy() :
 {
 }
 
-TrafficPolicy::TrafficPolicy(const XmlNode& xmlNode) : 
-    m_idHasBeenSet(false),
-    m_version(0),
-    m_versionHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_type(RRType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_documentHasBeenSet(false),
-    m_commentHasBeenSet(false)
+TrafficPolicy::TrafficPolicy(const XmlNode& xmlNode)
+  : TrafficPolicy()
 {
   *this = xmlNode;
 }

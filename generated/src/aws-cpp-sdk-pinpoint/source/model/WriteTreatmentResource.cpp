@@ -30,15 +30,8 @@ WriteTreatmentResource::WriteTreatmentResource() :
 {
 }
 
-WriteTreatmentResource::WriteTreatmentResource(JsonView jsonValue) : 
-    m_customDeliveryConfigurationHasBeenSet(false),
-    m_messageConfigurationHasBeenSet(false),
-    m_scheduleHasBeenSet(false),
-    m_sizePercent(0),
-    m_sizePercentHasBeenSet(false),
-    m_templateConfigurationHasBeenSet(false),
-    m_treatmentDescriptionHasBeenSet(false),
-    m_treatmentNameHasBeenSet(false)
+WriteTreatmentResource::WriteTreatmentResource(JsonView jsonValue)
+  : WriteTreatmentResource()
 {
   *this = jsonValue;
 }

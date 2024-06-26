@@ -23,8 +23,8 @@ ShapeConditionalFormat::ShapeConditionalFormat() :
 {
 }
 
-ShapeConditionalFormat::ShapeConditionalFormat(JsonView jsonValue) : 
-    m_backgroundColorHasBeenSet(false)
+ShapeConditionalFormat::ShapeConditionalFormat(JsonView jsonValue)
+  : ShapeConditionalFormat()
 {
   *this = jsonValue;
 }

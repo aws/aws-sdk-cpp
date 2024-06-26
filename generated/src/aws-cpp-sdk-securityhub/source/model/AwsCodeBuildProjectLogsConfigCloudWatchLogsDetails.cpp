@@ -25,10 +25,8 @@ AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails::AwsCodeBuildProjectLogsConfi
 {
 }
 
-AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails::AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails(JsonView jsonValue) : 
-    m_groupNameHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_streamNameHasBeenSet(false)
+AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails::AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails(JsonView jsonValue)
+  : AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails()
 {
   *this = jsonValue;
 }

@@ -25,8 +25,8 @@ UserData::UserData() :
 {
 }
 
-UserData::UserData(const XmlNode& xmlNode) : 
-    m_dataHasBeenSet(false)
+UserData::UserData(const XmlNode& xmlNode)
+  : UserData()
 {
   *this = xmlNode;
 }

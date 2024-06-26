@@ -33,18 +33,8 @@ CmafIngestGroupSettings::CmafIngestGroupSettings() :
 {
 }
 
-CmafIngestGroupSettings::CmafIngestGroupSettings(JsonView jsonValue) : 
-    m_destinationHasBeenSet(false),
-    m_nielsenId3Behavior(CmafNielsenId3Behavior::NOT_SET),
-    m_nielsenId3BehaviorHasBeenSet(false),
-    m_scte35Type(Scte35Type::NOT_SET),
-    m_scte35TypeHasBeenSet(false),
-    m_segmentLength(0),
-    m_segmentLengthHasBeenSet(false),
-    m_segmentLengthUnits(CmafIngestSegmentLengthUnits::NOT_SET),
-    m_segmentLengthUnitsHasBeenSet(false),
-    m_sendDelayMs(0),
-    m_sendDelayMsHasBeenSet(false)
+CmafIngestGroupSettings::CmafIngestGroupSettings(JsonView jsonValue)
+  : CmafIngestGroupSettings()
 {
   *this = jsonValue;
 }

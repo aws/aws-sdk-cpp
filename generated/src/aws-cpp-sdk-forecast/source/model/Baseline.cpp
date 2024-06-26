@@ -23,8 +23,8 @@ Baseline::Baseline() :
 {
 }
 
-Baseline::Baseline(JsonView jsonValue) : 
-    m_predictorBaselineHasBeenSet(false)
+Baseline::Baseline(JsonView jsonValue)
+  : Baseline()
 {
   *this = jsonValue;
 }

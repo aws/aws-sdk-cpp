@@ -25,10 +25,8 @@ MemberUser::MemberUser() :
 {
 }
 
-MemberUser::MemberUser(JsonView jsonValue) : 
-    m_userIdHasBeenSet(false),
-    m_type(MembershipType::NOT_SET),
-    m_typeHasBeenSet(false)
+MemberUser::MemberUser(JsonView jsonValue)
+  : MemberUser()
 {
   *this = jsonValue;
 }

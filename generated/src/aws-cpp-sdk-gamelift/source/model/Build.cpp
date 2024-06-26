@@ -34,19 +34,8 @@ Build::Build() :
 {
 }
 
-Build::Build(JsonView jsonValue) : 
-    m_buildIdHasBeenSet(false),
-    m_buildArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_status(BuildStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_sizeOnDisk(0),
-    m_sizeOnDiskHasBeenSet(false),
-    m_operatingSystem(OperatingSystem::NOT_SET),
-    m_operatingSystemHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_serverSdkVersionHasBeenSet(false)
+Build::Build(JsonView jsonValue)
+  : Build()
 {
   *this = jsonValue;
 }

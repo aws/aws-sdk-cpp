@@ -23,9 +23,8 @@ GetSchemaByDefinitionResult::GetSchemaByDefinitionResult() :
 {
 }
 
-GetSchemaByDefinitionResult::GetSchemaByDefinitionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_dataFormat(DataFormat::NOT_SET),
-    m_status(SchemaVersionStatus::NOT_SET)
+GetSchemaByDefinitionResult::GetSchemaByDefinitionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetSchemaByDefinitionResult()
 {
   *this = result;
 }

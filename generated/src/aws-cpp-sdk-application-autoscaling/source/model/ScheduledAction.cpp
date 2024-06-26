@@ -35,20 +35,8 @@ ScheduledAction::ScheduledAction() :
 {
 }
 
-ScheduledAction::ScheduledAction(JsonView jsonValue) : 
-    m_scheduledActionNameHasBeenSet(false),
-    m_scheduledActionARNHasBeenSet(false),
-    m_serviceNamespace(ServiceNamespace::NOT_SET),
-    m_serviceNamespaceHasBeenSet(false),
-    m_scheduleHasBeenSet(false),
-    m_timezoneHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_scalableDimension(ScalableDimension::NOT_SET),
-    m_scalableDimensionHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_scalableTargetActionHasBeenSet(false),
-    m_creationTimeHasBeenSet(false)
+ScheduledAction::ScheduledAction(JsonView jsonValue)
+  : ScheduledAction()
 {
   *this = jsonValue;
 }

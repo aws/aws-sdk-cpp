@@ -24,9 +24,8 @@ ChatMessage::ChatMessage() :
 {
 }
 
-ChatMessage::ChatMessage(JsonView jsonValue) : 
-    m_contentTypeHasBeenSet(false),
-    m_contentHasBeenSet(false)
+ChatMessage::ChatMessage(JsonView jsonValue)
+  : ChatMessage()
 {
   *this = jsonValue;
 }

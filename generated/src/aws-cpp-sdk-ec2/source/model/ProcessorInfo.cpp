@@ -29,12 +29,8 @@ ProcessorInfo::ProcessorInfo() :
 {
 }
 
-ProcessorInfo::ProcessorInfo(const XmlNode& xmlNode) : 
-    m_supportedArchitecturesHasBeenSet(false),
-    m_sustainedClockSpeedInGhz(0.0),
-    m_sustainedClockSpeedInGhzHasBeenSet(false),
-    m_supportedFeaturesHasBeenSet(false),
-    m_manufacturerHasBeenSet(false)
+ProcessorInfo::ProcessorInfo(const XmlNode& xmlNode)
+  : ProcessorInfo()
 {
   *this = xmlNode;
 }

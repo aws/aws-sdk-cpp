@@ -26,11 +26,8 @@ UserProfileSummary::UserProfileSummary() :
 {
 }
 
-UserProfileSummary::UserProfileSummary(JsonView jsonValue) : 
-    m_userArnHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_emailAddressHasBeenSet(false),
-    m_sshPublicKeyHasBeenSet(false)
+UserProfileSummary::UserProfileSummary(JsonView jsonValue)
+  : UserProfileSummary()
 {
   *this = jsonValue;
 }

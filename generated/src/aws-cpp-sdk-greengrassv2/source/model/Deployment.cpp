@@ -32,17 +32,8 @@ Deployment::Deployment() :
 {
 }
 
-Deployment::Deployment(JsonView jsonValue) : 
-    m_targetArnHasBeenSet(false),
-    m_revisionIdHasBeenSet(false),
-    m_deploymentIdHasBeenSet(false),
-    m_deploymentNameHasBeenSet(false),
-    m_creationTimestampHasBeenSet(false),
-    m_deploymentStatus(DeploymentStatus::NOT_SET),
-    m_deploymentStatusHasBeenSet(false),
-    m_isLatestForTarget(false),
-    m_isLatestForTargetHasBeenSet(false),
-    m_parentTargetArnHasBeenSet(false)
+Deployment::Deployment(JsonView jsonValue)
+  : Deployment()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ AwsWafRuleDetails::AwsWafRuleDetails() :
 {
 }
 
-AwsWafRuleDetails::AwsWafRuleDetails(JsonView jsonValue) : 
-    m_metricNameHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_predicateListHasBeenSet(false),
-    m_ruleIdHasBeenSet(false)
+AwsWafRuleDetails::AwsWafRuleDetails(JsonView jsonValue)
+  : AwsWafRuleDetails()
 {
   *this = jsonValue;
 }

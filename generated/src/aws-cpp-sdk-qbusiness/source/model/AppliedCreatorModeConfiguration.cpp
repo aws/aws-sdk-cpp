@@ -24,9 +24,8 @@ AppliedCreatorModeConfiguration::AppliedCreatorModeConfiguration() :
 {
 }
 
-AppliedCreatorModeConfiguration::AppliedCreatorModeConfiguration(JsonView jsonValue) : 
-    m_creatorModeControl(CreatorModeControl::NOT_SET),
-    m_creatorModeControlHasBeenSet(false)
+AppliedCreatorModeConfiguration::AppliedCreatorModeConfiguration(JsonView jsonValue)
+  : AppliedCreatorModeConfiguration()
 {
   *this = jsonValue;
 }

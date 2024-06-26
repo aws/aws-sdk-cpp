@@ -29,14 +29,8 @@ BotAliasReplicaSummary::BotAliasReplicaSummary() :
 {
 }
 
-BotAliasReplicaSummary::BotAliasReplicaSummary(JsonView jsonValue) : 
-    m_botAliasIdHasBeenSet(false),
-    m_botAliasReplicationStatus(BotAliasReplicationStatus::NOT_SET),
-    m_botAliasReplicationStatusHasBeenSet(false),
-    m_botVersionHasBeenSet(false),
-    m_creationDateTimeHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false),
-    m_failureReasonsHasBeenSet(false)
+BotAliasReplicaSummary::BotAliasReplicaSummary(JsonView jsonValue)
+  : BotAliasReplicaSummary()
 {
   *this = jsonValue;
 }

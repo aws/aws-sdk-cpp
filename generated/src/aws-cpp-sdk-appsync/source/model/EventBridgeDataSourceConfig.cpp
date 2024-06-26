@@ -23,8 +23,8 @@ EventBridgeDataSourceConfig::EventBridgeDataSourceConfig() :
 {
 }
 
-EventBridgeDataSourceConfig::EventBridgeDataSourceConfig(JsonView jsonValue) : 
-    m_eventBusArnHasBeenSet(false)
+EventBridgeDataSourceConfig::EventBridgeDataSourceConfig(JsonView jsonValue)
+  : EventBridgeDataSourceConfig()
 {
   *this = jsonValue;
 }

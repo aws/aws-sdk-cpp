@@ -38,23 +38,8 @@ Backup::Backup() :
 {
 }
 
-Backup::Backup(JsonView jsonValue) : 
-    m_backupIdHasBeenSet(false),
-    m_backupState(BackupState::NOT_SET),
-    m_backupStateHasBeenSet(false),
-    m_clusterIdHasBeenSet(false),
-    m_createTimestampHasBeenSet(false),
-    m_copyTimestampHasBeenSet(false),
-    m_neverExpires(false),
-    m_neverExpiresHasBeenSet(false),
-    m_sourceRegionHasBeenSet(false),
-    m_sourceBackupHasBeenSet(false),
-    m_sourceClusterHasBeenSet(false),
-    m_deleteTimestampHasBeenSet(false),
-    m_tagListHasBeenSet(false),
-    m_hsmTypeHasBeenSet(false),
-    m_mode(ClusterMode::NOT_SET),
-    m_modeHasBeenSet(false)
+Backup::Backup(JsonView jsonValue)
+  : Backup()
 {
   *this = jsonValue;
 }

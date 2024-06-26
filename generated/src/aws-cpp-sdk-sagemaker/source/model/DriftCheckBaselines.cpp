@@ -26,11 +26,8 @@ DriftCheckBaselines::DriftCheckBaselines() :
 {
 }
 
-DriftCheckBaselines::DriftCheckBaselines(JsonView jsonValue) : 
-    m_biasHasBeenSet(false),
-    m_explainabilityHasBeenSet(false),
-    m_modelQualityHasBeenSet(false),
-    m_modelDataQualityHasBeenSet(false)
+DriftCheckBaselines::DriftCheckBaselines(JsonView jsonValue)
+  : DriftCheckBaselines()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ UserAlias::UserAlias() :
 {
 }
 
-UserAlias::UserAlias(JsonView jsonValue) : 
-    m_indexIdHasBeenSet(false),
-    m_dataSourceIdHasBeenSet(false),
-    m_userIdHasBeenSet(false)
+UserAlias::UserAlias(JsonView jsonValue)
+  : UserAlias()
 {
   *this = jsonValue;
 }

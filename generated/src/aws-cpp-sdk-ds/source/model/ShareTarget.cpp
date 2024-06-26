@@ -25,10 +25,8 @@ ShareTarget::ShareTarget() :
 {
 }
 
-ShareTarget::ShareTarget(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_type(TargetType::NOT_SET),
-    m_typeHasBeenSet(false)
+ShareTarget::ShareTarget(JsonView jsonValue)
+  : ShareTarget()
 {
   *this = jsonValue;
 }

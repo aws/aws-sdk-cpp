@@ -23,8 +23,8 @@ ActionParameters::ActionParameters() :
 {
 }
 
-ActionParameters::ActionParameters(JsonView jsonValue) : 
-    m_awsConsoleLinkHasBeenSet(false)
+ActionParameters::ActionParameters(JsonView jsonValue)
+  : ActionParameters()
 {
   *this = jsonValue;
 }

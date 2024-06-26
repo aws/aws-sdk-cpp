@@ -26,11 +26,8 @@ KxDataviewSegmentConfiguration::KxDataviewSegmentConfiguration() :
 {
 }
 
-KxDataviewSegmentConfiguration::KxDataviewSegmentConfiguration(JsonView jsonValue) : 
-    m_dbPathsHasBeenSet(false),
-    m_volumeNameHasBeenSet(false),
-    m_onDemand(false),
-    m_onDemandHasBeenSet(false)
+KxDataviewSegmentConfiguration::KxDataviewSegmentConfiguration(JsonView jsonValue)
+  : KxDataviewSegmentConfiguration()
 {
   *this = jsonValue;
 }

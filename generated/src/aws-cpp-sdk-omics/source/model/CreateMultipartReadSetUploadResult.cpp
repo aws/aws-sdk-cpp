@@ -22,8 +22,8 @@ CreateMultipartReadSetUploadResult::CreateMultipartReadSetUploadResult() :
 {
 }
 
-CreateMultipartReadSetUploadResult::CreateMultipartReadSetUploadResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_sourceFileType(FileType::NOT_SET)
+CreateMultipartReadSetUploadResult::CreateMultipartReadSetUploadResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateMultipartReadSetUploadResult()
 {
   *this = result;
 }

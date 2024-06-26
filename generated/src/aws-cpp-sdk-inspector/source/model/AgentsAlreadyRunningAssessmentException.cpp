@@ -28,13 +28,8 @@ AgentsAlreadyRunningAssessmentException::AgentsAlreadyRunningAssessmentException
 {
 }
 
-AgentsAlreadyRunningAssessmentException::AgentsAlreadyRunningAssessmentException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_agentsHasBeenSet(false),
-    m_agentsTruncated(false),
-    m_agentsTruncatedHasBeenSet(false),
-    m_canRetry(false),
-    m_canRetryHasBeenSet(false)
+AgentsAlreadyRunningAssessmentException::AgentsAlreadyRunningAssessmentException(JsonView jsonValue)
+  : AgentsAlreadyRunningAssessmentException()
 {
   *this = jsonValue;
 }

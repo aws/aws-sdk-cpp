@@ -47,32 +47,8 @@ Environment::Environment() :
 {
 }
 
-Environment::Environment(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_desktopArnHasBeenSet(false),
-    m_desktopEndpointHasBeenSet(false),
-    m_desktopType(DesktopType::NOT_SET),
-    m_desktopTypeHasBeenSet(false),
-    m_activationCodeHasBeenSet(false),
-    m_registeredDevicesCount(0),
-    m_registeredDevicesCountHasBeenSet(false),
-    m_softwareSetUpdateSchedule(SoftwareSetUpdateSchedule::NOT_SET),
-    m_softwareSetUpdateScheduleHasBeenSet(false),
-    m_maintenanceWindowHasBeenSet(false),
-    m_softwareSetUpdateMode(SoftwareSetUpdateMode::NOT_SET),
-    m_softwareSetUpdateModeHasBeenSet(false),
-    m_desiredSoftwareSetIdHasBeenSet(false),
-    m_pendingSoftwareSetIdHasBeenSet(false),
-    m_pendingSoftwareSetVersionHasBeenSet(false),
-    m_softwareSetComplianceStatus(EnvironmentSoftwareSetComplianceStatus::NOT_SET),
-    m_softwareSetComplianceStatusHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_kmsKeyArnHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_deviceCreationTagsHasBeenSet(false)
+Environment::Environment(JsonView jsonValue)
+  : Environment()
 {
   *this = jsonValue;
 }

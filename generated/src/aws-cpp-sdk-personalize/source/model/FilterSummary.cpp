@@ -29,14 +29,8 @@ FilterSummary::FilterSummary() :
 {
 }
 
-FilterSummary::FilterSummary(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_filterArnHasBeenSet(false),
-    m_creationDateTimeHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false),
-    m_datasetGroupArnHasBeenSet(false),
-    m_failureReasonHasBeenSet(false),
-    m_statusHasBeenSet(false)
+FilterSummary::FilterSummary(JsonView jsonValue)
+  : FilterSummary()
 {
   *this = jsonValue;
 }

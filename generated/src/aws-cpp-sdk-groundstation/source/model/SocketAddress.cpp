@@ -25,10 +25,8 @@ SocketAddress::SocketAddress() :
 {
 }
 
-SocketAddress::SocketAddress(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false)
+SocketAddress::SocketAddress(JsonView jsonValue)
+  : SocketAddress()
 {
   *this = jsonValue;
 }

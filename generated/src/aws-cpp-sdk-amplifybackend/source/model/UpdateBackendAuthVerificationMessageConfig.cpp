@@ -26,11 +26,8 @@ UpdateBackendAuthVerificationMessageConfig::UpdateBackendAuthVerificationMessage
 {
 }
 
-UpdateBackendAuthVerificationMessageConfig::UpdateBackendAuthVerificationMessageConfig(JsonView jsonValue) : 
-    m_deliveryMethod(DeliveryMethod::NOT_SET),
-    m_deliveryMethodHasBeenSet(false),
-    m_emailSettingsHasBeenSet(false),
-    m_smsSettingsHasBeenSet(false)
+UpdateBackendAuthVerificationMessageConfig::UpdateBackendAuthVerificationMessageConfig(JsonView jsonValue)
+  : UpdateBackendAuthVerificationMessageConfig()
 {
   *this = jsonValue;
 }

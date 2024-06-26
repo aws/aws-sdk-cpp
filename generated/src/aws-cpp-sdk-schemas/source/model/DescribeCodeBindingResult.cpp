@@ -22,8 +22,8 @@ DescribeCodeBindingResult::DescribeCodeBindingResult() :
 {
 }
 
-DescribeCodeBindingResult::DescribeCodeBindingResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(CodeGenerationStatus::NOT_SET)
+DescribeCodeBindingResult::DescribeCodeBindingResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeCodeBindingResult()
 {
   *this = result;
 }

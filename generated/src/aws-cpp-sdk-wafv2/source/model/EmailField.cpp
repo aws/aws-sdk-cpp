@@ -23,8 +23,8 @@ EmailField::EmailField() :
 {
 }
 
-EmailField::EmailField(JsonView jsonValue) : 
-    m_identifierHasBeenSet(false)
+EmailField::EmailField(JsonView jsonValue)
+  : EmailField()
 {
   *this = jsonValue;
 }

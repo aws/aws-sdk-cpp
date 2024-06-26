@@ -25,10 +25,8 @@ IAMPolicyAssignmentSummary::IAMPolicyAssignmentSummary() :
 {
 }
 
-IAMPolicyAssignmentSummary::IAMPolicyAssignmentSummary(JsonView jsonValue) : 
-    m_assignmentNameHasBeenSet(false),
-    m_assignmentStatus(AssignmentStatus::NOT_SET),
-    m_assignmentStatusHasBeenSet(false)
+IAMPolicyAssignmentSummary::IAMPolicyAssignmentSummary(JsonView jsonValue)
+  : IAMPolicyAssignmentSummary()
 {
   *this = jsonValue;
 }

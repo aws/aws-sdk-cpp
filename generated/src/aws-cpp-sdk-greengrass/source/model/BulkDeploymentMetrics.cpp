@@ -28,13 +28,8 @@ BulkDeploymentMetrics::BulkDeploymentMetrics() :
 {
 }
 
-BulkDeploymentMetrics::BulkDeploymentMetrics(JsonView jsonValue) : 
-    m_invalidInputRecords(0),
-    m_invalidInputRecordsHasBeenSet(false),
-    m_recordsProcessed(0),
-    m_recordsProcessedHasBeenSet(false),
-    m_retryAttempts(0),
-    m_retryAttemptsHasBeenSet(false)
+BulkDeploymentMetrics::BulkDeploymentMetrics(JsonView jsonValue)
+  : BulkDeploymentMetrics()
 {
   *this = jsonValue;
 }

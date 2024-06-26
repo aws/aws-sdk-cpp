@@ -26,11 +26,8 @@ LanguageCodeItem::LanguageCodeItem() :
 {
 }
 
-LanguageCodeItem::LanguageCodeItem(JsonView jsonValue) : 
-    m_languageCode(LanguageCode::NOT_SET),
-    m_languageCodeHasBeenSet(false),
-    m_durationInSeconds(0.0),
-    m_durationInSecondsHasBeenSet(false)
+LanguageCodeItem::LanguageCodeItem(JsonView jsonValue)
+  : LanguageCodeItem()
 {
   *this = jsonValue;
 }

@@ -27,12 +27,8 @@ ConnectionAliasAssociation::ConnectionAliasAssociation() :
 {
 }
 
-ConnectionAliasAssociation::ConnectionAliasAssociation(JsonView jsonValue) : 
-    m_associationStatus(AssociationStatus::NOT_SET),
-    m_associationStatusHasBeenSet(false),
-    m_associatedAccountIdHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_connectionIdentifierHasBeenSet(false)
+ConnectionAliasAssociation::ConnectionAliasAssociation(JsonView jsonValue)
+  : ConnectionAliasAssociation()
 {
   *this = jsonValue;
 }

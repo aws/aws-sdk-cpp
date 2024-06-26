@@ -25,8 +25,8 @@ ObjectLambdaContentTransformation::ObjectLambdaContentTransformation() :
 {
 }
 
-ObjectLambdaContentTransformation::ObjectLambdaContentTransformation(const XmlNode& xmlNode) : 
-    m_awsLambdaHasBeenSet(false)
+ObjectLambdaContentTransformation::ObjectLambdaContentTransformation(const XmlNode& xmlNode)
+  : ObjectLambdaContentTransformation()
 {
   *this = xmlNode;
 }

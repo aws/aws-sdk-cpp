@@ -25,10 +25,8 @@ AppSpecification::AppSpecification() :
 {
 }
 
-AppSpecification::AppSpecification(JsonView jsonValue) : 
-    m_imageUriHasBeenSet(false),
-    m_containerEntrypointHasBeenSet(false),
-    m_containerArgumentsHasBeenSet(false)
+AppSpecification::AppSpecification(JsonView jsonValue)
+  : AppSpecification()
 {
   *this = jsonValue;
 }

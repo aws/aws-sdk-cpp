@@ -30,15 +30,8 @@ Face::Face() :
 {
 }
 
-Face::Face(JsonView jsonValue) : 
-    m_faceIdHasBeenSet(false),
-    m_boundingBoxHasBeenSet(false),
-    m_imageIdHasBeenSet(false),
-    m_externalImageIdHasBeenSet(false),
-    m_confidence(0.0),
-    m_confidenceHasBeenSet(false),
-    m_indexFacesModelVersionHasBeenSet(false),
-    m_userIdHasBeenSet(false)
+Face::Face(JsonView jsonValue)
+  : Face()
 {
   *this = jsonValue;
 }

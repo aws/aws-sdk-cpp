@@ -26,11 +26,8 @@ StreamKey::StreamKey() :
 {
 }
 
-StreamKey::StreamKey(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_channelArnHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_valueHasBeenSet(false)
+StreamKey::StreamKey(JsonView jsonValue)
+  : StreamKey()
 {
   *this = jsonValue;
 }

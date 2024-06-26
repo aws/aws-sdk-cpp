@@ -26,9 +26,8 @@ StorageLensGroupLevelSelectionCriteria::StorageLensGroupLevelSelectionCriteria()
 {
 }
 
-StorageLensGroupLevelSelectionCriteria::StorageLensGroupLevelSelectionCriteria(const XmlNode& xmlNode) : 
-    m_includeHasBeenSet(false),
-    m_excludeHasBeenSet(false)
+StorageLensGroupLevelSelectionCriteria::StorageLensGroupLevelSelectionCriteria(const XmlNode& xmlNode)
+  : StorageLensGroupLevelSelectionCriteria()
 {
   *this = xmlNode;
 }

@@ -24,9 +24,8 @@ CidrAuthorizationContext::CidrAuthorizationContext() :
 {
 }
 
-CidrAuthorizationContext::CidrAuthorizationContext(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_signatureHasBeenSet(false)
+CidrAuthorizationContext::CidrAuthorizationContext(JsonView jsonValue)
+  : CidrAuthorizationContext()
 {
   *this = jsonValue;
 }

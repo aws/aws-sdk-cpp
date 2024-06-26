@@ -23,8 +23,8 @@ SnowflakeVpcConfiguration::SnowflakeVpcConfiguration() :
 {
 }
 
-SnowflakeVpcConfiguration::SnowflakeVpcConfiguration(JsonView jsonValue) : 
-    m_privateLinkVpceIdHasBeenSet(false)
+SnowflakeVpcConfiguration::SnowflakeVpcConfiguration(JsonView jsonValue)
+  : SnowflakeVpcConfiguration()
 {
   *this = jsonValue;
 }

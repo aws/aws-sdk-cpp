@@ -28,13 +28,8 @@ GatewaySummary::GatewaySummary() :
 {
 }
 
-GatewaySummary::GatewaySummary(JsonView jsonValue) : 
-    m_gatewayIdHasBeenSet(false),
-    m_gatewayNameHasBeenSet(false),
-    m_gatewayPlatformHasBeenSet(false),
-    m_gatewayCapabilitySummariesHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_lastUpdateDateHasBeenSet(false)
+GatewaySummary::GatewaySummary(JsonView jsonValue)
+  : GatewaySummary()
 {
   *this = jsonValue;
 }

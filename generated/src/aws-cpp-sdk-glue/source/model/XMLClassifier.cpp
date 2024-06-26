@@ -29,14 +29,8 @@ XMLClassifier::XMLClassifier() :
 {
 }
 
-XMLClassifier::XMLClassifier(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_classificationHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastUpdatedHasBeenSet(false),
-    m_version(0),
-    m_versionHasBeenSet(false),
-    m_rowTagHasBeenSet(false)
+XMLClassifier::XMLClassifier(JsonView jsonValue)
+  : XMLClassifier()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ TotalAggregationFunction::TotalAggregationFunction() :
 {
 }
 
-TotalAggregationFunction::TotalAggregationFunction(JsonView jsonValue) : 
-    m_simpleTotalAggregationFunction(SimpleTotalAggregationFunction::NOT_SET),
-    m_simpleTotalAggregationFunctionHasBeenSet(false)
+TotalAggregationFunction::TotalAggregationFunction(JsonView jsonValue)
+  : TotalAggregationFunction()
 {
   *this = jsonValue;
 }

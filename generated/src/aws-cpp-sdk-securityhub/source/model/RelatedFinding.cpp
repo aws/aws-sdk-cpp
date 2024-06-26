@@ -24,9 +24,8 @@ RelatedFinding::RelatedFinding() :
 {
 }
 
-RelatedFinding::RelatedFinding(JsonView jsonValue) : 
-    m_productArnHasBeenSet(false),
-    m_idHasBeenSet(false)
+RelatedFinding::RelatedFinding(JsonView jsonValue)
+  : RelatedFinding()
 {
   *this = jsonValue;
 }

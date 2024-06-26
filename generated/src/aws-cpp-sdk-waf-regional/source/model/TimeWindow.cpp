@@ -24,9 +24,8 @@ TimeWindow::TimeWindow() :
 {
 }
 
-TimeWindow::TimeWindow(JsonView jsonValue) : 
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
+TimeWindow::TimeWindow(JsonView jsonValue)
+  : TimeWindow()
 {
   *this = jsonValue;
 }

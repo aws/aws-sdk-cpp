@@ -24,9 +24,8 @@ GroupMetadata::GroupMetadata() :
 {
 }
 
-GroupMetadata::GroupMetadata(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false)
+GroupMetadata::GroupMetadata(JsonView jsonValue)
+  : GroupMetadata()
 {
   *this = jsonValue;
 }

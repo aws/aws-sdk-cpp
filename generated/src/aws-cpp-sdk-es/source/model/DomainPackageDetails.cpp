@@ -33,18 +33,8 @@ DomainPackageDetails::DomainPackageDetails() :
 {
 }
 
-DomainPackageDetails::DomainPackageDetails(JsonView jsonValue) : 
-    m_packageIDHasBeenSet(false),
-    m_packageNameHasBeenSet(false),
-    m_packageType(PackageType::NOT_SET),
-    m_packageTypeHasBeenSet(false),
-    m_lastUpdatedHasBeenSet(false),
-    m_domainNameHasBeenSet(false),
-    m_domainPackageStatus(DomainPackageStatus::NOT_SET),
-    m_domainPackageStatusHasBeenSet(false),
-    m_packageVersionHasBeenSet(false),
-    m_referencePathHasBeenSet(false),
-    m_errorDetailsHasBeenSet(false)
+DomainPackageDetails::DomainPackageDetails(JsonView jsonValue)
+  : DomainPackageDetails()
 {
   *this = jsonValue;
 }

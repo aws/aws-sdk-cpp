@@ -34,19 +34,8 @@ PrivateKeyFlagsV4::PrivateKeyFlagsV4() :
 {
 }
 
-PrivateKeyFlagsV4::PrivateKeyFlagsV4(JsonView jsonValue) : 
-    m_clientVersion(ClientCompatibilityV4::NOT_SET),
-    m_clientVersionHasBeenSet(false),
-    m_exportableKey(false),
-    m_exportableKeyHasBeenSet(false),
-    m_requireAlternateSignatureAlgorithm(false),
-    m_requireAlternateSignatureAlgorithmHasBeenSet(false),
-    m_requireSameKeyRenewal(false),
-    m_requireSameKeyRenewalHasBeenSet(false),
-    m_strongKeyProtectionRequired(false),
-    m_strongKeyProtectionRequiredHasBeenSet(false),
-    m_useLegacyProvider(false),
-    m_useLegacyProviderHasBeenSet(false)
+PrivateKeyFlagsV4::PrivateKeyFlagsV4(JsonView jsonValue)
+  : PrivateKeyFlagsV4()
 {
   *this = jsonValue;
 }

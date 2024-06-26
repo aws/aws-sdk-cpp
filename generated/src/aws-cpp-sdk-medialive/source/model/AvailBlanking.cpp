@@ -25,10 +25,8 @@ AvailBlanking::AvailBlanking() :
 {
 }
 
-AvailBlanking::AvailBlanking(JsonView jsonValue) : 
-    m_availBlankingImageHasBeenSet(false),
-    m_state(AvailBlankingState::NOT_SET),
-    m_stateHasBeenSet(false)
+AvailBlanking::AvailBlanking(JsonView jsonValue)
+  : AvailBlanking()
 {
   *this = jsonValue;
 }

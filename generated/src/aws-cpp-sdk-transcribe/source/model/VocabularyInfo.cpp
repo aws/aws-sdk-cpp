@@ -28,13 +28,8 @@ VocabularyInfo::VocabularyInfo() :
 {
 }
 
-VocabularyInfo::VocabularyInfo(JsonView jsonValue) : 
-    m_vocabularyNameHasBeenSet(false),
-    m_languageCode(LanguageCode::NOT_SET),
-    m_languageCodeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_vocabularyState(VocabularyState::NOT_SET),
-    m_vocabularyStateHasBeenSet(false)
+VocabularyInfo::VocabularyInfo(JsonView jsonValue)
+  : VocabularyInfo()
 {
   *this = jsonValue;
 }

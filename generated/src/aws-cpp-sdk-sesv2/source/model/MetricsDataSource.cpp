@@ -28,13 +28,8 @@ MetricsDataSource::MetricsDataSource() :
 {
 }
 
-MetricsDataSource::MetricsDataSource(JsonView jsonValue) : 
-    m_dimensionsHasBeenSet(false),
-    m_namespace(MetricNamespace::NOT_SET),
-    m_namespaceHasBeenSet(false),
-    m_metricsHasBeenSet(false),
-    m_startDateHasBeenSet(false),
-    m_endDateHasBeenSet(false)
+MetricsDataSource::MetricsDataSource(JsonView jsonValue)
+  : MetricsDataSource()
 {
   *this = jsonValue;
 }

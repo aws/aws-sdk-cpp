@@ -26,9 +26,8 @@ JSONInput::JSONInput() :
 {
 }
 
-JSONInput::JSONInput(const XmlNode& xmlNode) : 
-    m_type(JSONType::NOT_SET),
-    m_typeHasBeenSet(false)
+JSONInput::JSONInput(const XmlNode& xmlNode)
+  : JSONInput()
 {
   *this = xmlNode;
 }

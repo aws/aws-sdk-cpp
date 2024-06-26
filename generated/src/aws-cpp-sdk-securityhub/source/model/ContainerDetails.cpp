@@ -30,15 +30,8 @@ ContainerDetails::ContainerDetails() :
 {
 }
 
-ContainerDetails::ContainerDetails(JsonView jsonValue) : 
-    m_containerRuntimeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_imageIdHasBeenSet(false),
-    m_imageNameHasBeenSet(false),
-    m_launchedAtHasBeenSet(false),
-    m_volumeMountsHasBeenSet(false),
-    m_privileged(false),
-    m_privilegedHasBeenSet(false)
+ContainerDetails::ContainerDetails(JsonView jsonValue)
+  : ContainerDetails()
 {
   *this = jsonValue;
 }

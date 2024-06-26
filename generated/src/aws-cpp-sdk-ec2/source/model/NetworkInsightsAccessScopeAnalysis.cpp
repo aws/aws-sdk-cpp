@@ -38,21 +38,8 @@ NetworkInsightsAccessScopeAnalysis::NetworkInsightsAccessScopeAnalysis() :
 {
 }
 
-NetworkInsightsAccessScopeAnalysis::NetworkInsightsAccessScopeAnalysis(const XmlNode& xmlNode) : 
-    m_networkInsightsAccessScopeAnalysisIdHasBeenSet(false),
-    m_networkInsightsAccessScopeAnalysisArnHasBeenSet(false),
-    m_networkInsightsAccessScopeIdHasBeenSet(false),
-    m_status(AnalysisStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_warningMessageHasBeenSet(false),
-    m_startDateHasBeenSet(false),
-    m_endDateHasBeenSet(false),
-    m_findingsFound(FindingsFound::NOT_SET),
-    m_findingsFoundHasBeenSet(false),
-    m_analyzedEniCount(0),
-    m_analyzedEniCountHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+NetworkInsightsAccessScopeAnalysis::NetworkInsightsAccessScopeAnalysis(const XmlNode& xmlNode)
+  : NetworkInsightsAccessScopeAnalysis()
 {
   *this = xmlNode;
 }

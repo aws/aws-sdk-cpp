@@ -43,26 +43,8 @@ StackSet::StackSet() :
 {
 }
 
-StackSet::StackSet(const XmlNode& xmlNode) : 
-    m_stackSetNameHasBeenSet(false),
-    m_stackSetIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_status(StackSetStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_templateBodyHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_capabilitiesHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_stackSetARNHasBeenSet(false),
-    m_administrationRoleARNHasBeenSet(false),
-    m_executionRoleNameHasBeenSet(false),
-    m_stackSetDriftDetectionDetailsHasBeenSet(false),
-    m_autoDeploymentHasBeenSet(false),
-    m_permissionModel(PermissionModels::NOT_SET),
-    m_permissionModelHasBeenSet(false),
-    m_organizationalUnitIdsHasBeenSet(false),
-    m_managedExecutionHasBeenSet(false),
-    m_regionsHasBeenSet(false)
+StackSet::StackSet(const XmlNode& xmlNode)
+  : StackSet()
 {
   *this = xmlNode;
 }

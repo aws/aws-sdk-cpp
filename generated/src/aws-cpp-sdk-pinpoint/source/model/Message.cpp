@@ -37,22 +37,8 @@ Message::Message() :
 {
 }
 
-Message::Message(JsonView jsonValue) : 
-    m_action(Action::NOT_SET),
-    m_actionHasBeenSet(false),
-    m_bodyHasBeenSet(false),
-    m_imageIconUrlHasBeenSet(false),
-    m_imageSmallIconUrlHasBeenSet(false),
-    m_imageUrlHasBeenSet(false),
-    m_jsonBodyHasBeenSet(false),
-    m_mediaUrlHasBeenSet(false),
-    m_rawContentHasBeenSet(false),
-    m_silentPush(false),
-    m_silentPushHasBeenSet(false),
-    m_timeToLive(0),
-    m_timeToLiveHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_urlHasBeenSet(false)
+Message::Message(JsonView jsonValue)
+  : Message()
 {
   *this = jsonValue;
 }

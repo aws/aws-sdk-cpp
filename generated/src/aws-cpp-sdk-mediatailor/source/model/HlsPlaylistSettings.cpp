@@ -25,10 +25,8 @@ HlsPlaylistSettings::HlsPlaylistSettings() :
 {
 }
 
-HlsPlaylistSettings::HlsPlaylistSettings(JsonView jsonValue) : 
-    m_adMarkupTypeHasBeenSet(false),
-    m_manifestWindowSeconds(0),
-    m_manifestWindowSecondsHasBeenSet(false)
+HlsPlaylistSettings::HlsPlaylistSettings(JsonView jsonValue)
+  : HlsPlaylistSettings()
 {
   *this = jsonValue;
 }

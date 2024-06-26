@@ -24,9 +24,8 @@ EntityAlreadyExistsException::EntityAlreadyExistsException() :
 {
 }
 
-EntityAlreadyExistsException::EntityAlreadyExistsException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
+EntityAlreadyExistsException::EntityAlreadyExistsException(JsonView jsonValue)
+  : EntityAlreadyExistsException()
 {
   *this = jsonValue;
 }

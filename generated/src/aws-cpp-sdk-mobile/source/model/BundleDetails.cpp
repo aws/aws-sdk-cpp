@@ -28,13 +28,8 @@ BundleDetails::BundleDetails() :
 {
 }
 
-BundleDetails::BundleDetails(JsonView jsonValue) : 
-    m_bundleIdHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_iconUrlHasBeenSet(false),
-    m_availablePlatformsHasBeenSet(false)
+BundleDetails::BundleDetails(JsonView jsonValue)
+  : BundleDetails()
 {
   *this = jsonValue;
 }

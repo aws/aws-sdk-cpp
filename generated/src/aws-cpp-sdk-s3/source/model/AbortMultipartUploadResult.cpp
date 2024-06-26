@@ -21,8 +21,8 @@ AbortMultipartUploadResult::AbortMultipartUploadResult() :
 {
 }
 
-AbortMultipartUploadResult::AbortMultipartUploadResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_requestCharged(RequestCharged::NOT_SET)
+AbortMultipartUploadResult::AbortMultipartUploadResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : AbortMultipartUploadResult()
 {
   *this = result;
 }

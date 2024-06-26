@@ -25,10 +25,8 @@ HPOConfig::HPOConfig() :
 {
 }
 
-HPOConfig::HPOConfig(JsonView jsonValue) : 
-    m_hpoObjectiveHasBeenSet(false),
-    m_hpoResourceConfigHasBeenSet(false),
-    m_algorithmHyperParameterRangesHasBeenSet(false)
+HPOConfig::HPOConfig(JsonView jsonValue)
+  : HPOConfig()
 {
   *this = jsonValue;
 }

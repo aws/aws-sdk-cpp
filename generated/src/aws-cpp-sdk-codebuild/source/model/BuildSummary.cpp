@@ -28,13 +28,8 @@ BuildSummary::BuildSummary() :
 {
 }
 
-BuildSummary::BuildSummary(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_requestedOnHasBeenSet(false),
-    m_buildStatus(StatusType::NOT_SET),
-    m_buildStatusHasBeenSet(false),
-    m_primaryArtifactHasBeenSet(false),
-    m_secondaryArtifactsHasBeenSet(false)
+BuildSummary::BuildSummary(JsonView jsonValue)
+  : BuildSummary()
 {
   *this = jsonValue;
 }

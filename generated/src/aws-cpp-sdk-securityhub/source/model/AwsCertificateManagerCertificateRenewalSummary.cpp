@@ -26,11 +26,8 @@ AwsCertificateManagerCertificateRenewalSummary::AwsCertificateManagerCertificate
 {
 }
 
-AwsCertificateManagerCertificateRenewalSummary::AwsCertificateManagerCertificateRenewalSummary(JsonView jsonValue) : 
-    m_domainValidationOptionsHasBeenSet(false),
-    m_renewalStatusHasBeenSet(false),
-    m_renewalStatusReasonHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+AwsCertificateManagerCertificateRenewalSummary::AwsCertificateManagerCertificateRenewalSummary(JsonView jsonValue)
+  : AwsCertificateManagerCertificateRenewalSummary()
 {
   *this = jsonValue;
 }

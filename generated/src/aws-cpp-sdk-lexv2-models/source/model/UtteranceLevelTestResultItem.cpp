@@ -26,11 +26,8 @@ UtteranceLevelTestResultItem::UtteranceLevelTestResultItem() :
 {
 }
 
-UtteranceLevelTestResultItem::UtteranceLevelTestResultItem(JsonView jsonValue) : 
-    m_recordNumber(0),
-    m_recordNumberHasBeenSet(false),
-    m_conversationIdHasBeenSet(false),
-    m_turnResultHasBeenSet(false)
+UtteranceLevelTestResultItem::UtteranceLevelTestResultItem(JsonView jsonValue)
+  : UtteranceLevelTestResultItem()
 {
   *this = jsonValue;
 }

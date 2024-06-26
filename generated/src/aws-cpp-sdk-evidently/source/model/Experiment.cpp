@@ -43,28 +43,8 @@ Experiment::Experiment() :
 {
 }
 
-Experiment::Experiment(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_executionHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_metricGoalsHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_onlineAbDefinitionHasBeenSet(false),
-    m_projectHasBeenSet(false),
-    m_randomizationSaltHasBeenSet(false),
-    m_samplingRate(0),
-    m_samplingRateHasBeenSet(false),
-    m_scheduleHasBeenSet(false),
-    m_segmentHasBeenSet(false),
-    m_status(ExperimentStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusReasonHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_treatmentsHasBeenSet(false),
-    m_type(ExperimentType::NOT_SET),
-    m_typeHasBeenSet(false)
+Experiment::Experiment(JsonView jsonValue)
+  : Experiment()
 {
   *this = jsonValue;
 }

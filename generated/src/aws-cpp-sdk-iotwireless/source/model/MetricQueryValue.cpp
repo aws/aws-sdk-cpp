@@ -34,19 +34,8 @@ MetricQueryValue::MetricQueryValue() :
 {
 }
 
-MetricQueryValue::MetricQueryValue(JsonView jsonValue) : 
-    m_min(0.0),
-    m_minHasBeenSet(false),
-    m_max(0.0),
-    m_maxHasBeenSet(false),
-    m_sum(0.0),
-    m_sumHasBeenSet(false),
-    m_avg(0.0),
-    m_avgHasBeenSet(false),
-    m_std(0.0),
-    m_stdHasBeenSet(false),
-    m_p90(0.0),
-    m_p90HasBeenSet(false)
+MetricQueryValue::MetricQueryValue(JsonView jsonValue)
+  : MetricQueryValue()
 {
   *this = jsonValue;
 }

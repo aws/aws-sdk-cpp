@@ -22,8 +22,8 @@ PutRuntimeManagementConfigResult::PutRuntimeManagementConfigResult() :
 {
 }
 
-PutRuntimeManagementConfigResult::PutRuntimeManagementConfigResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_updateRuntimeOn(UpdateRuntimeOn::NOT_SET)
+PutRuntimeManagementConfigResult::PutRuntimeManagementConfigResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : PutRuntimeManagementConfigResult()
 {
   *this = result;
 }

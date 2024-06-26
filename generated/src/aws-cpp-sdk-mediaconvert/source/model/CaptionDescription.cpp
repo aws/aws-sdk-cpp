@@ -28,13 +28,8 @@ CaptionDescription::CaptionDescription() :
 {
 }
 
-CaptionDescription::CaptionDescription(JsonView jsonValue) : 
-    m_captionSelectorNameHasBeenSet(false),
-    m_customLanguageCodeHasBeenSet(false),
-    m_destinationSettingsHasBeenSet(false),
-    m_languageCode(LanguageCode::NOT_SET),
-    m_languageCodeHasBeenSet(false),
-    m_languageDescriptionHasBeenSet(false)
+CaptionDescription::CaptionDescription(JsonView jsonValue)
+  : CaptionDescription()
 {
   *this = jsonValue;
 }

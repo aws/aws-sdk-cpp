@@ -25,10 +25,8 @@ TypedLinkFacet::TypedLinkFacet() :
 {
 }
 
-TypedLinkFacet::TypedLinkFacet(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_attributesHasBeenSet(false),
-    m_identityAttributeOrderHasBeenSet(false)
+TypedLinkFacet::TypedLinkFacet(JsonView jsonValue)
+  : TypedLinkFacet()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ VectorEnrichmentJobExportErrorDetails::VectorEnrichmentJobExportErrorDetails() :
 {
 }
 
-VectorEnrichmentJobExportErrorDetails::VectorEnrichmentJobExportErrorDetails(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_type(VectorEnrichmentJobExportErrorType::NOT_SET),
-    m_typeHasBeenSet(false)
+VectorEnrichmentJobExportErrorDetails::VectorEnrichmentJobExportErrorDetails(JsonView jsonValue)
+  : VectorEnrichmentJobExportErrorDetails()
 {
   *this = jsonValue;
 }

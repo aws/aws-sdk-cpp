@@ -25,10 +25,8 @@ Evidence::Evidence() :
 {
 }
 
-Evidence::Evidence(JsonView jsonValue) : 
-    m_evidenceDetailHasBeenSet(false),
-    m_evidenceRuleHasBeenSet(false),
-    m_severityHasBeenSet(false)
+Evidence::Evidence(JsonView jsonValue)
+  : Evidence()
 {
   *this = jsonValue;
 }

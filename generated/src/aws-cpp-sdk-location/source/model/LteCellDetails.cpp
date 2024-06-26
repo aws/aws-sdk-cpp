@@ -40,25 +40,8 @@ LteCellDetails::LteCellDetails() :
 {
 }
 
-LteCellDetails::LteCellDetails(JsonView jsonValue) : 
-    m_cellId(0),
-    m_cellIdHasBeenSet(false),
-    m_mcc(0),
-    m_mccHasBeenSet(false),
-    m_mnc(0),
-    m_mncHasBeenSet(false),
-    m_localIdHasBeenSet(false),
-    m_networkMeasurementsHasBeenSet(false),
-    m_timingAdvance(0),
-    m_timingAdvanceHasBeenSet(false),
-    m_nrCapable(false),
-    m_nrCapableHasBeenSet(false),
-    m_rsrp(0),
-    m_rsrpHasBeenSet(false),
-    m_rsrq(0.0),
-    m_rsrqHasBeenSet(false),
-    m_tac(0),
-    m_tacHasBeenSet(false)
+LteCellDetails::LteCellDetails(JsonView jsonValue)
+  : LteCellDetails()
 {
   *this = jsonValue;
 }

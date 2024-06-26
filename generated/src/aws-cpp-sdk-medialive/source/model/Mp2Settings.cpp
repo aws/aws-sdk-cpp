@@ -28,13 +28,8 @@ Mp2Settings::Mp2Settings() :
 {
 }
 
-Mp2Settings::Mp2Settings(JsonView jsonValue) : 
-    m_bitrate(0.0),
-    m_bitrateHasBeenSet(false),
-    m_codingMode(Mp2CodingMode::NOT_SET),
-    m_codingModeHasBeenSet(false),
-    m_sampleRate(0.0),
-    m_sampleRateHasBeenSet(false)
+Mp2Settings::Mp2Settings(JsonView jsonValue)
+  : Mp2Settings()
 {
   *this = jsonValue;
 }

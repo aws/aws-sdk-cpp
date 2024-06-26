@@ -26,11 +26,8 @@ NewDefaultValues::NewDefaultValues() :
 {
 }
 
-NewDefaultValues::NewDefaultValues(JsonView jsonValue) : 
-    m_stringStaticValuesHasBeenSet(false),
-    m_decimalStaticValuesHasBeenSet(false),
-    m_dateTimeStaticValuesHasBeenSet(false),
-    m_integerStaticValuesHasBeenSet(false)
+NewDefaultValues::NewDefaultValues(JsonView jsonValue)
+  : NewDefaultValues()
 {
   *this = jsonValue;
 }

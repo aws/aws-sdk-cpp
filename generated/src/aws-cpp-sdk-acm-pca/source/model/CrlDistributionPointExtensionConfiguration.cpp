@@ -24,9 +24,8 @@ CrlDistributionPointExtensionConfiguration::CrlDistributionPointExtensionConfigu
 {
 }
 
-CrlDistributionPointExtensionConfiguration::CrlDistributionPointExtensionConfiguration(JsonView jsonValue) : 
-    m_omitExtension(false),
-    m_omitExtensionHasBeenSet(false)
+CrlDistributionPointExtensionConfiguration::CrlDistributionPointExtensionConfiguration(JsonView jsonValue)
+  : CrlDistributionPointExtensionConfiguration()
 {
   *this = jsonValue;
 }

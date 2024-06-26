@@ -28,13 +28,8 @@ Exclusion::Exclusion() :
 {
 }
 
-Exclusion::Exclusion(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_recommendationHasBeenSet(false),
-    m_scopesHasBeenSet(false),
-    m_attributesHasBeenSet(false)
+Exclusion::Exclusion(JsonView jsonValue)
+  : Exclusion()
 {
   *this = jsonValue;
 }

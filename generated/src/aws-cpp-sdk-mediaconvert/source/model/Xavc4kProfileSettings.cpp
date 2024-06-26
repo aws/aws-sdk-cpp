@@ -38,23 +38,8 @@ Xavc4kProfileSettings::Xavc4kProfileSettings() :
 {
 }
 
-Xavc4kProfileSettings::Xavc4kProfileSettings(JsonView jsonValue) : 
-    m_bitrateClass(Xavc4kProfileBitrateClass::NOT_SET),
-    m_bitrateClassHasBeenSet(false),
-    m_codecProfile(Xavc4kProfileCodecProfile::NOT_SET),
-    m_codecProfileHasBeenSet(false),
-    m_flickerAdaptiveQuantization(XavcFlickerAdaptiveQuantization::NOT_SET),
-    m_flickerAdaptiveQuantizationHasBeenSet(false),
-    m_gopBReference(XavcGopBReference::NOT_SET),
-    m_gopBReferenceHasBeenSet(false),
-    m_gopClosedCadence(0),
-    m_gopClosedCadenceHasBeenSet(false),
-    m_hrdBufferSize(0),
-    m_hrdBufferSizeHasBeenSet(false),
-    m_qualityTuningLevel(Xavc4kProfileQualityTuningLevel::NOT_SET),
-    m_qualityTuningLevelHasBeenSet(false),
-    m_slices(0),
-    m_slicesHasBeenSet(false)
+Xavc4kProfileSettings::Xavc4kProfileSettings(JsonView jsonValue)
+  : Xavc4kProfileSettings()
 {
   *this = jsonValue;
 }

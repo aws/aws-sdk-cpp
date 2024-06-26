@@ -24,10 +24,8 @@ LockSnapshotResponse::LockSnapshotResponse() :
 {
 }
 
-LockSnapshotResponse::LockSnapshotResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_lockState(LockState::NOT_SET),
-    m_lockDuration(0),
-    m_coolOffPeriod(0)
+LockSnapshotResponse::LockSnapshotResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : LockSnapshotResponse()
 {
   *this = result;
 }

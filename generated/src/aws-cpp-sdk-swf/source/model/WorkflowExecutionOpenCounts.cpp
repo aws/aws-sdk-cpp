@@ -32,17 +32,8 @@ WorkflowExecutionOpenCounts::WorkflowExecutionOpenCounts() :
 {
 }
 
-WorkflowExecutionOpenCounts::WorkflowExecutionOpenCounts(JsonView jsonValue) : 
-    m_openActivityTasks(0),
-    m_openActivityTasksHasBeenSet(false),
-    m_openDecisionTasks(0),
-    m_openDecisionTasksHasBeenSet(false),
-    m_openTimers(0),
-    m_openTimersHasBeenSet(false),
-    m_openChildWorkflowExecutions(0),
-    m_openChildWorkflowExecutionsHasBeenSet(false),
-    m_openLambdaFunctions(0),
-    m_openLambdaFunctionsHasBeenSet(false)
+WorkflowExecutionOpenCounts::WorkflowExecutionOpenCounts(JsonView jsonValue)
+  : WorkflowExecutionOpenCounts()
 {
   *this = jsonValue;
 }

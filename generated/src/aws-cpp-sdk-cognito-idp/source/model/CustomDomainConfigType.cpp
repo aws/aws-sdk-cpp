@@ -23,8 +23,8 @@ CustomDomainConfigType::CustomDomainConfigType() :
 {
 }
 
-CustomDomainConfigType::CustomDomainConfigType(JsonView jsonValue) : 
-    m_certificateArnHasBeenSet(false)
+CustomDomainConfigType::CustomDomainConfigType(JsonView jsonValue)
+  : CustomDomainConfigType()
 {
   *this = jsonValue;
 }

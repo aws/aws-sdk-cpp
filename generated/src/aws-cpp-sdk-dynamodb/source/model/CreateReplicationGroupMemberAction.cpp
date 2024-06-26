@@ -29,14 +29,8 @@ CreateReplicationGroupMemberAction::CreateReplicationGroupMemberAction() :
 {
 }
 
-CreateReplicationGroupMemberAction::CreateReplicationGroupMemberAction(JsonView jsonValue) : 
-    m_regionNameHasBeenSet(false),
-    m_kMSMasterKeyIdHasBeenSet(false),
-    m_provisionedThroughputOverrideHasBeenSet(false),
-    m_onDemandThroughputOverrideHasBeenSet(false),
-    m_globalSecondaryIndexesHasBeenSet(false),
-    m_tableClassOverride(TableClass::NOT_SET),
-    m_tableClassOverrideHasBeenSet(false)
+CreateReplicationGroupMemberAction::CreateReplicationGroupMemberAction(JsonView jsonValue)
+  : CreateReplicationGroupMemberAction()
 {
   *this = jsonValue;
 }

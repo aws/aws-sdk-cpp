@@ -24,9 +24,8 @@ VideoConcatenationConfiguration::VideoConcatenationConfiguration() :
 {
 }
 
-VideoConcatenationConfiguration::VideoConcatenationConfiguration(JsonView jsonValue) : 
-    m_state(ArtifactsConcatenationState::NOT_SET),
-    m_stateHasBeenSet(false)
+VideoConcatenationConfiguration::VideoConcatenationConfiguration(JsonView jsonValue)
+  : VideoConcatenationConfiguration()
 {
   *this = jsonValue;
 }

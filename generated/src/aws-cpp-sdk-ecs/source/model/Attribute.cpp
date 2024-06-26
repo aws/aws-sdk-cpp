@@ -27,12 +27,8 @@ Attribute::Attribute() :
 {
 }
 
-Attribute::Attribute(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_targetType(TargetType::NOT_SET),
-    m_targetTypeHasBeenSet(false),
-    m_targetIdHasBeenSet(false)
+Attribute::Attribute(JsonView jsonValue)
+  : Attribute()
 {
   *this = jsonValue;
 }

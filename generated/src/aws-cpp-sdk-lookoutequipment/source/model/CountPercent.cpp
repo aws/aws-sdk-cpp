@@ -26,11 +26,8 @@ CountPercent::CountPercent() :
 {
 }
 
-CountPercent::CountPercent(JsonView jsonValue) : 
-    m_count(0),
-    m_countHasBeenSet(false),
-    m_percentage(0.0),
-    m_percentageHasBeenSet(false)
+CountPercent::CountPercent(JsonView jsonValue)
+  : CountPercent()
 {
   *this = jsonValue;
 }

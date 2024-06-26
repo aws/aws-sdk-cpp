@@ -36,21 +36,8 @@ AutoMLCandidate::AutoMLCandidate() :
 {
 }
 
-AutoMLCandidate::AutoMLCandidate(JsonView jsonValue) : 
-    m_candidateNameHasBeenSet(false),
-    m_finalAutoMLJobObjectiveMetricHasBeenSet(false),
-    m_objectiveStatus(ObjectiveStatus::NOT_SET),
-    m_objectiveStatusHasBeenSet(false),
-    m_candidateStepsHasBeenSet(false),
-    m_candidateStatus(CandidateStatus::NOT_SET),
-    m_candidateStatusHasBeenSet(false),
-    m_inferenceContainersHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_failureReasonHasBeenSet(false),
-    m_candidatePropertiesHasBeenSet(false),
-    m_inferenceContainerDefinitionsHasBeenSet(false)
+AutoMLCandidate::AutoMLCandidate(JsonView jsonValue)
+  : AutoMLCandidate()
 {
   *this = jsonValue;
 }

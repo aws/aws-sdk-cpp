@@ -43,26 +43,8 @@ ExportTask::ExportTask() :
 {
 }
 
-ExportTask::ExportTask(const XmlNode& xmlNode) : 
-    m_exportTaskIdentifierHasBeenSet(false),
-    m_sourceArnHasBeenSet(false),
-    m_exportOnlyHasBeenSet(false),
-    m_snapshotTimeHasBeenSet(false),
-    m_taskStartTimeHasBeenSet(false),
-    m_taskEndTimeHasBeenSet(false),
-    m_s3BucketHasBeenSet(false),
-    m_s3PrefixHasBeenSet(false),
-    m_iamRoleArnHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_percentProgress(0),
-    m_percentProgressHasBeenSet(false),
-    m_totalExtractedDataInGB(0),
-    m_totalExtractedDataInGBHasBeenSet(false),
-    m_failureCauseHasBeenSet(false),
-    m_warningMessageHasBeenSet(false),
-    m_sourceType(ExportSourceType::NOT_SET),
-    m_sourceTypeHasBeenSet(false)
+ExportTask::ExportTask(const XmlNode& xmlNode)
+  : ExportTask()
 {
   *this = xmlNode;
 }

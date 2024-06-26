@@ -28,13 +28,8 @@ ChoiceAnswer::ChoiceAnswer() :
 {
 }
 
-ChoiceAnswer::ChoiceAnswer(JsonView jsonValue) : 
-    m_choiceIdHasBeenSet(false),
-    m_status(ChoiceStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_reason(ChoiceReason::NOT_SET),
-    m_reasonHasBeenSet(false),
-    m_notesHasBeenSet(false)
+ChoiceAnswer::ChoiceAnswer(JsonView jsonValue)
+  : ChoiceAnswer()
 {
   *this = jsonValue;
 }

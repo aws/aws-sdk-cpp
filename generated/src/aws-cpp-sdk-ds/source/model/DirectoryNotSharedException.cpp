@@ -24,9 +24,8 @@ DirectoryNotSharedException::DirectoryNotSharedException() :
 {
 }
 
-DirectoryNotSharedException::DirectoryNotSharedException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
+DirectoryNotSharedException::DirectoryNotSharedException(JsonView jsonValue)
+  : DirectoryNotSharedException()
 {
   *this = jsonValue;
 }

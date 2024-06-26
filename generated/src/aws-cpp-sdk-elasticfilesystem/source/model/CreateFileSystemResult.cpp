@@ -27,13 +27,8 @@ CreateFileSystemResult::CreateFileSystemResult() :
 {
 }
 
-CreateFileSystemResult::CreateFileSystemResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_lifeCycleState(LifeCycleState::NOT_SET),
-    m_numberOfMountTargets(0),
-    m_performanceMode(PerformanceMode::NOT_SET),
-    m_encrypted(false),
-    m_throughputMode(ThroughputMode::NOT_SET),
-    m_provisionedThroughputInMibps(0.0)
+CreateFileSystemResult::CreateFileSystemResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateFileSystemResult()
 {
   *this = result;
 }

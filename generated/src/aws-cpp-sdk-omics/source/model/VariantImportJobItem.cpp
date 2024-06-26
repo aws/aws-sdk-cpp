@@ -33,18 +33,8 @@ VariantImportJobItem::VariantImportJobItem() :
 {
 }
 
-VariantImportJobItem::VariantImportJobItem(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_destinationNameHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_status(JobStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false),
-    m_completionTimeHasBeenSet(false),
-    m_runLeftNormalization(false),
-    m_runLeftNormalizationHasBeenSet(false),
-    m_annotationFieldsHasBeenSet(false)
+VariantImportJobItem::VariantImportJobItem(JsonView jsonValue)
+  : VariantImportJobItem()
 {
   *this = jsonValue;
 }

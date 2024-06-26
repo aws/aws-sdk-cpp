@@ -27,12 +27,8 @@ AnalyticsPathFilter::AnalyticsPathFilter() :
 {
 }
 
-AnalyticsPathFilter::AnalyticsPathFilter(JsonView jsonValue) : 
-    m_name(AnalyticsCommonFilterName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_operator(AnalyticsFilterOperator::NOT_SET),
-    m_operatorHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+AnalyticsPathFilter::AnalyticsPathFilter(JsonView jsonValue)
+  : AnalyticsPathFilter()
 {
   *this = jsonValue;
 }

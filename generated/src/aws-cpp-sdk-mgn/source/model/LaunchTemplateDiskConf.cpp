@@ -28,13 +28,8 @@ LaunchTemplateDiskConf::LaunchTemplateDiskConf() :
 {
 }
 
-LaunchTemplateDiskConf::LaunchTemplateDiskConf(JsonView jsonValue) : 
-    m_iops(0),
-    m_iopsHasBeenSet(false),
-    m_throughput(0),
-    m_throughputHasBeenSet(false),
-    m_volumeType(VolumeType::NOT_SET),
-    m_volumeTypeHasBeenSet(false)
+LaunchTemplateDiskConf::LaunchTemplateDiskConf(JsonView jsonValue)
+  : LaunchTemplateDiskConf()
 {
   *this = jsonValue;
 }

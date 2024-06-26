@@ -40,25 +40,8 @@ AudioSelector::AudioSelector() :
 {
 }
 
-AudioSelector::AudioSelector(JsonView jsonValue) : 
-    m_audioDurationCorrection(AudioDurationCorrection::NOT_SET),
-    m_audioDurationCorrectionHasBeenSet(false),
-    m_customLanguageCodeHasBeenSet(false),
-    m_defaultSelection(AudioDefaultSelection::NOT_SET),
-    m_defaultSelectionHasBeenSet(false),
-    m_externalAudioFileInputHasBeenSet(false),
-    m_hlsRenditionGroupSettingsHasBeenSet(false),
-    m_languageCode(LanguageCode::NOT_SET),
-    m_languageCodeHasBeenSet(false),
-    m_offset(0),
-    m_offsetHasBeenSet(false),
-    m_pidsHasBeenSet(false),
-    m_programSelection(0),
-    m_programSelectionHasBeenSet(false),
-    m_remixSettingsHasBeenSet(false),
-    m_selectorType(AudioSelectorType::NOT_SET),
-    m_selectorTypeHasBeenSet(false),
-    m_tracksHasBeenSet(false)
+AudioSelector::AudioSelector(JsonView jsonValue)
+  : AudioSelector()
 {
   *this = jsonValue;
 }

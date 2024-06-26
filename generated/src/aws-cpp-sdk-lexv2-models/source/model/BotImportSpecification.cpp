@@ -29,14 +29,8 @@ BotImportSpecification::BotImportSpecification() :
 {
 }
 
-BotImportSpecification::BotImportSpecification(JsonView jsonValue) : 
-    m_botNameHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_dataPrivacyHasBeenSet(false),
-    m_idleSessionTTLInSeconds(0),
-    m_idleSessionTTLInSecondsHasBeenSet(false),
-    m_botTagsHasBeenSet(false),
-    m_testBotAliasTagsHasBeenSet(false)
+BotImportSpecification::BotImportSpecification(JsonView jsonValue)
+  : BotImportSpecification()
 {
   *this = jsonValue;
 }

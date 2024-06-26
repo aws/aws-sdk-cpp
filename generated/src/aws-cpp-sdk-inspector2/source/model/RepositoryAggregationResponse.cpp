@@ -27,12 +27,8 @@ RepositoryAggregationResponse::RepositoryAggregationResponse() :
 {
 }
 
-RepositoryAggregationResponse::RepositoryAggregationResponse(JsonView jsonValue) : 
-    m_accountIdHasBeenSet(false),
-    m_affectedImages(0),
-    m_affectedImagesHasBeenSet(false),
-    m_repositoryHasBeenSet(false),
-    m_severityCountsHasBeenSet(false)
+RepositoryAggregationResponse::RepositoryAggregationResponse(JsonView jsonValue)
+  : RepositoryAggregationResponse()
 {
   *this = jsonValue;
 }

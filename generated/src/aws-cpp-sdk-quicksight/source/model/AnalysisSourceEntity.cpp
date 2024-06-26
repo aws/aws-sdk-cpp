@@ -23,8 +23,8 @@ AnalysisSourceEntity::AnalysisSourceEntity() :
 {
 }
 
-AnalysisSourceEntity::AnalysisSourceEntity(JsonView jsonValue) : 
-    m_sourceTemplateHasBeenSet(false)
+AnalysisSourceEntity::AnalysisSourceEntity(JsonView jsonValue)
+  : AnalysisSourceEntity()
 {
   *this = jsonValue;
 }

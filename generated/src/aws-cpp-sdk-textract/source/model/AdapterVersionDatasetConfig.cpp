@@ -23,8 +23,8 @@ AdapterVersionDatasetConfig::AdapterVersionDatasetConfig() :
 {
 }
 
-AdapterVersionDatasetConfig::AdapterVersionDatasetConfig(JsonView jsonValue) : 
-    m_manifestS3ObjectHasBeenSet(false)
+AdapterVersionDatasetConfig::AdapterVersionDatasetConfig(JsonView jsonValue)
+  : AdapterVersionDatasetConfig()
 {
   *this = jsonValue;
 }

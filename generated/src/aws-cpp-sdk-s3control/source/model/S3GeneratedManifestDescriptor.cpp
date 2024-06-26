@@ -27,10 +27,8 @@ S3GeneratedManifestDescriptor::S3GeneratedManifestDescriptor() :
 {
 }
 
-S3GeneratedManifestDescriptor::S3GeneratedManifestDescriptor(const XmlNode& xmlNode) : 
-    m_format(GeneratedManifestFormat::NOT_SET),
-    m_formatHasBeenSet(false),
-    m_locationHasBeenSet(false)
+S3GeneratedManifestDescriptor::S3GeneratedManifestDescriptor(const XmlNode& xmlNode)
+  : S3GeneratedManifestDescriptor()
 {
   *this = xmlNode;
 }

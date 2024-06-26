@@ -33,18 +33,8 @@ DnssecKey::DnssecKey() :
 {
 }
 
-DnssecKey::DnssecKey(JsonView jsonValue) : 
-    m_algorithm(0),
-    m_algorithmHasBeenSet(false),
-    m_flags(0),
-    m_flagsHasBeenSet(false),
-    m_publicKeyHasBeenSet(false),
-    m_digestType(0),
-    m_digestTypeHasBeenSet(false),
-    m_digestHasBeenSet(false),
-    m_keyTag(0),
-    m_keyTagHasBeenSet(false),
-    m_idHasBeenSet(false)
+DnssecKey::DnssecKey(JsonView jsonValue)
+  : DnssecKey()
 {
   *this = jsonValue;
 }

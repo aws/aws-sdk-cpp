@@ -23,8 +23,8 @@ TlsValidationContextSdsTrust::TlsValidationContextSdsTrust() :
 {
 }
 
-TlsValidationContextSdsTrust::TlsValidationContextSdsTrust(JsonView jsonValue) : 
-    m_secretNameHasBeenSet(false)
+TlsValidationContextSdsTrust::TlsValidationContextSdsTrust(JsonView jsonValue)
+  : TlsValidationContextSdsTrust()
 {
   *this = jsonValue;
 }

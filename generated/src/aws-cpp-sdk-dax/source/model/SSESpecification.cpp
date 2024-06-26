@@ -24,9 +24,8 @@ SSESpecification::SSESpecification() :
 {
 }
 
-SSESpecification::SSESpecification(JsonView jsonValue) : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
+SSESpecification::SSESpecification(JsonView jsonValue)
+  : SSESpecification()
 {
   *this = jsonValue;
 }

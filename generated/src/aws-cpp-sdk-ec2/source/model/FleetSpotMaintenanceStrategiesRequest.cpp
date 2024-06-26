@@ -25,8 +25,8 @@ FleetSpotMaintenanceStrategiesRequest::FleetSpotMaintenanceStrategiesRequest() :
 {
 }
 
-FleetSpotMaintenanceStrategiesRequest::FleetSpotMaintenanceStrategiesRequest(const XmlNode& xmlNode) : 
-    m_capacityRebalanceHasBeenSet(false)
+FleetSpotMaintenanceStrategiesRequest::FleetSpotMaintenanceStrategiesRequest(const XmlNode& xmlNode)
+  : FleetSpotMaintenanceStrategiesRequest()
 {
   *this = xmlNode;
 }

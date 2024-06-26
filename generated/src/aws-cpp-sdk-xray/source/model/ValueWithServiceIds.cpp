@@ -24,9 +24,8 @@ ValueWithServiceIds::ValueWithServiceIds() :
 {
 }
 
-ValueWithServiceIds::ValueWithServiceIds(JsonView jsonValue) : 
-    m_annotationValueHasBeenSet(false),
-    m_serviceIdsHasBeenSet(false)
+ValueWithServiceIds::ValueWithServiceIds(JsonView jsonValue)
+  : ValueWithServiceIds()
 {
   *this = jsonValue;
 }

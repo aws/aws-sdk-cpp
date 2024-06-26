@@ -38,23 +38,8 @@ ParameterHistory::ParameterHistory() :
 {
 }
 
-ParameterHistory::ParameterHistory(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_type(ParameterType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_keyIdHasBeenSet(false),
-    m_lastModifiedDateHasBeenSet(false),
-    m_lastModifiedUserHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_allowedPatternHasBeenSet(false),
-    m_version(0),
-    m_versionHasBeenSet(false),
-    m_labelsHasBeenSet(false),
-    m_tier(ParameterTier::NOT_SET),
-    m_tierHasBeenSet(false),
-    m_policiesHasBeenSet(false),
-    m_dataTypeHasBeenSet(false)
+ParameterHistory::ParameterHistory(JsonView jsonValue)
+  : ParameterHistory()
 {
   *this = jsonValue;
 }

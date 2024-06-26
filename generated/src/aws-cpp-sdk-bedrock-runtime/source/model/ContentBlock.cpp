@@ -28,13 +28,8 @@ ContentBlock::ContentBlock() :
 {
 }
 
-ContentBlock::ContentBlock(JsonView jsonValue) : 
-    m_textHasBeenSet(false),
-    m_imageHasBeenSet(false),
-    m_documentHasBeenSet(false),
-    m_toolUseHasBeenSet(false),
-    m_toolResultHasBeenSet(false),
-    m_guardContentHasBeenSet(false)
+ContentBlock::ContentBlock(JsonView jsonValue)
+  : ContentBlock()
 {
   *this = jsonValue;
 }

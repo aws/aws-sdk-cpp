@@ -24,9 +24,8 @@ JobIdentifier::JobIdentifier() :
 {
 }
 
-JobIdentifier::JobIdentifier(JsonView jsonValue) : 
-    m_fileNameHasBeenSet(false),
-    m_scriptNameHasBeenSet(false)
+JobIdentifier::JobIdentifier(JsonView jsonValue)
+  : JobIdentifier()
 {
   *this = jsonValue;
 }

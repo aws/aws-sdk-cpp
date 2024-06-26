@@ -36,19 +36,8 @@ StackResourceDrift::StackResourceDrift() :
 {
 }
 
-StackResourceDrift::StackResourceDrift(const XmlNode& xmlNode) : 
-    m_stackIdHasBeenSet(false),
-    m_logicalResourceIdHasBeenSet(false),
-    m_physicalResourceIdHasBeenSet(false),
-    m_physicalResourceIdContextHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
-    m_expectedPropertiesHasBeenSet(false),
-    m_actualPropertiesHasBeenSet(false),
-    m_propertyDifferencesHasBeenSet(false),
-    m_stackResourceDriftStatus(StackResourceDriftStatus::NOT_SET),
-    m_stackResourceDriftStatusHasBeenSet(false),
-    m_timestampHasBeenSet(false),
-    m_moduleInfoHasBeenSet(false)
+StackResourceDrift::StackResourceDrift(const XmlNode& xmlNode)
+  : StackResourceDrift()
 {
   *this = xmlNode;
 }

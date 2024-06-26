@@ -27,12 +27,8 @@ Action::Action() :
 {
 }
 
-Action::Action(JsonView jsonValue) : 
-    m_attributeNameHasBeenSet(false),
-    m_operation(Operation::NOT_SET),
-    m_operationHasBeenSet(false),
-    m_value(0.0),
-    m_valueHasBeenSet(false)
+Action::Action(JsonView jsonValue)
+  : Action()
 {
   *this = jsonValue;
 }

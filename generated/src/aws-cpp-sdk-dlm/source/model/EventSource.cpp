@@ -25,10 +25,8 @@ EventSource::EventSource() :
 {
 }
 
-EventSource::EventSource(JsonView jsonValue) : 
-    m_type(EventSourceValues::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_parametersHasBeenSet(false)
+EventSource::EventSource(JsonView jsonValue)
+  : EventSource()
 {
   *this = jsonValue;
 }

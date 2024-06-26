@@ -37,22 +37,8 @@ BatchLoadTaskDescription::BatchLoadTaskDescription() :
 {
 }
 
-BatchLoadTaskDescription::BatchLoadTaskDescription(JsonView jsonValue) : 
-    m_taskIdHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_dataSourceConfigurationHasBeenSet(false),
-    m_progressReportHasBeenSet(false),
-    m_reportConfigurationHasBeenSet(false),
-    m_dataModelConfigurationHasBeenSet(false),
-    m_targetDatabaseNameHasBeenSet(false),
-    m_targetTableNameHasBeenSet(false),
-    m_taskStatus(BatchLoadStatus::NOT_SET),
-    m_taskStatusHasBeenSet(false),
-    m_recordVersion(0),
-    m_recordVersionHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_resumableUntilHasBeenSet(false)
+BatchLoadTaskDescription::BatchLoadTaskDescription(JsonView jsonValue)
+  : BatchLoadTaskDescription()
 {
   *this = jsonValue;
 }

@@ -27,12 +27,8 @@ InsightEvent::InsightEvent() :
 {
 }
 
-InsightEvent::InsightEvent(JsonView jsonValue) : 
-    m_summaryHasBeenSet(false),
-    m_eventTimeHasBeenSet(false),
-    m_clientRequestImpactStatisticsHasBeenSet(false),
-    m_rootCauseServiceRequestImpactStatisticsHasBeenSet(false),
-    m_topAnomalousServicesHasBeenSet(false)
+InsightEvent::InsightEvent(JsonView jsonValue)
+  : InsightEvent()
 {
   *this = jsonValue;
 }

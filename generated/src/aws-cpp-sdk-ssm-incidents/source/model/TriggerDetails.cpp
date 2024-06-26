@@ -26,11 +26,8 @@ TriggerDetails::TriggerDetails() :
 {
 }
 
-TriggerDetails::TriggerDetails(JsonView jsonValue) : 
-    m_rawDataHasBeenSet(false),
-    m_sourceHasBeenSet(false),
-    m_timestampHasBeenSet(false),
-    m_triggerArnHasBeenSet(false)
+TriggerDetails::TriggerDetails(JsonView jsonValue)
+  : TriggerDetails()
 {
   *this = jsonValue;
 }

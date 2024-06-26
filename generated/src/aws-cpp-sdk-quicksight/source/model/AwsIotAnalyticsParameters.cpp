@@ -23,8 +23,8 @@ AwsIotAnalyticsParameters::AwsIotAnalyticsParameters() :
 {
 }
 
-AwsIotAnalyticsParameters::AwsIotAnalyticsParameters(JsonView jsonValue) : 
-    m_dataSetNameHasBeenSet(false)
+AwsIotAnalyticsParameters::AwsIotAnalyticsParameters(JsonView jsonValue)
+  : AwsIotAnalyticsParameters()
 {
   *this = jsonValue;
 }

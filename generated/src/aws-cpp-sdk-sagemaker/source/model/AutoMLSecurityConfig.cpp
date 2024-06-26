@@ -26,11 +26,8 @@ AutoMLSecurityConfig::AutoMLSecurityConfig() :
 {
 }
 
-AutoMLSecurityConfig::AutoMLSecurityConfig(JsonView jsonValue) : 
-    m_volumeKmsKeyIdHasBeenSet(false),
-    m_enableInterContainerTrafficEncryption(false),
-    m_enableInterContainerTrafficEncryptionHasBeenSet(false),
-    m_vpcConfigHasBeenSet(false)
+AutoMLSecurityConfig::AutoMLSecurityConfig(JsonView jsonValue)
+  : AutoMLSecurityConfig()
 {
   *this = jsonValue;
 }

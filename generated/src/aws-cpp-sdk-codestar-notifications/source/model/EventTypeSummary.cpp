@@ -26,11 +26,8 @@ EventTypeSummary::EventTypeSummary() :
 {
 }
 
-EventTypeSummary::EventTypeSummary(JsonView jsonValue) : 
-    m_eventTypeIdHasBeenSet(false),
-    m_serviceNameHasBeenSet(false),
-    m_eventTypeNameHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false)
+EventTypeSummary::EventTypeSummary(JsonView jsonValue)
+  : EventTypeSummary()
 {
   *this = jsonValue;
 }

@@ -39,24 +39,8 @@ SavingsPlansPurchaseRecommendationDetail::SavingsPlansPurchaseRecommendationDeta
 {
 }
 
-SavingsPlansPurchaseRecommendationDetail::SavingsPlansPurchaseRecommendationDetail(JsonView jsonValue) : 
-    m_savingsPlansDetailsHasBeenSet(false),
-    m_accountIdHasBeenSet(false),
-    m_upfrontCostHasBeenSet(false),
-    m_estimatedROIHasBeenSet(false),
-    m_currencyCodeHasBeenSet(false),
-    m_estimatedSPCostHasBeenSet(false),
-    m_estimatedOnDemandCostHasBeenSet(false),
-    m_estimatedOnDemandCostWithCurrentCommitmentHasBeenSet(false),
-    m_estimatedSavingsAmountHasBeenSet(false),
-    m_estimatedSavingsPercentageHasBeenSet(false),
-    m_hourlyCommitmentToPurchaseHasBeenSet(false),
-    m_estimatedAverageUtilizationHasBeenSet(false),
-    m_estimatedMonthlySavingsAmountHasBeenSet(false),
-    m_currentMinimumHourlyOnDemandSpendHasBeenSet(false),
-    m_currentMaximumHourlyOnDemandSpendHasBeenSet(false),
-    m_currentAverageHourlyOnDemandSpendHasBeenSet(false),
-    m_recommendationDetailIdHasBeenSet(false)
+SavingsPlansPurchaseRecommendationDetail::SavingsPlansPurchaseRecommendationDetail(JsonView jsonValue)
+  : SavingsPlansPurchaseRecommendationDetail()
 {
   *this = jsonValue;
 }

@@ -23,9 +23,8 @@ UpdateRoomResult::UpdateRoomResult() :
 {
 }
 
-UpdateRoomResult::UpdateRoomResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_maximumMessageLength(0),
-    m_maximumMessageRatePerSecond(0)
+UpdateRoomResult::UpdateRoomResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateRoomResult()
 {
   *this = result;
 }

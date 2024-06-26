@@ -24,9 +24,8 @@ ArchiveFilterCondition::ArchiveFilterCondition() :
 {
 }
 
-ArchiveFilterCondition::ArchiveFilterCondition(JsonView jsonValue) : 
-    m_booleanExpressionHasBeenSet(false),
-    m_stringExpressionHasBeenSet(false)
+ArchiveFilterCondition::ArchiveFilterCondition(JsonView jsonValue)
+  : ArchiveFilterCondition()
 {
   *this = jsonValue;
 }

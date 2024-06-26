@@ -25,10 +25,8 @@ ByteMatchSetUpdate::ByteMatchSetUpdate() :
 {
 }
 
-ByteMatchSetUpdate::ByteMatchSetUpdate(JsonView jsonValue) : 
-    m_action(ChangeAction::NOT_SET),
-    m_actionHasBeenSet(false),
-    m_byteMatchTupleHasBeenSet(false)
+ByteMatchSetUpdate::ByteMatchSetUpdate(JsonView jsonValue)
+  : ByteMatchSetUpdate()
 {
   *this = jsonValue;
 }

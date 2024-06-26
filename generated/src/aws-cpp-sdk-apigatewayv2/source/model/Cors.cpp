@@ -30,15 +30,8 @@ Cors::Cors() :
 {
 }
 
-Cors::Cors(JsonView jsonValue) : 
-    m_allowCredentials(false),
-    m_allowCredentialsHasBeenSet(false),
-    m_allowHeadersHasBeenSet(false),
-    m_allowMethodsHasBeenSet(false),
-    m_allowOriginsHasBeenSet(false),
-    m_exposeHeadersHasBeenSet(false),
-    m_maxAge(0),
-    m_maxAgeHasBeenSet(false)
+Cors::Cors(JsonView jsonValue)
+  : Cors()
 {
   *this = jsonValue;
 }

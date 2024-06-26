@@ -39,24 +39,8 @@ ReplicationTaskStats::ReplicationTaskStats() :
 {
 }
 
-ReplicationTaskStats::ReplicationTaskStats(JsonView jsonValue) : 
-    m_fullLoadProgressPercent(0),
-    m_fullLoadProgressPercentHasBeenSet(false),
-    m_elapsedTimeMillis(0),
-    m_elapsedTimeMillisHasBeenSet(false),
-    m_tablesLoaded(0),
-    m_tablesLoadedHasBeenSet(false),
-    m_tablesLoading(0),
-    m_tablesLoadingHasBeenSet(false),
-    m_tablesQueued(0),
-    m_tablesQueuedHasBeenSet(false),
-    m_tablesErrored(0),
-    m_tablesErroredHasBeenSet(false),
-    m_freshStartDateHasBeenSet(false),
-    m_startDateHasBeenSet(false),
-    m_stopDateHasBeenSet(false),
-    m_fullLoadStartDateHasBeenSet(false),
-    m_fullLoadFinishDateHasBeenSet(false)
+ReplicationTaskStats::ReplicationTaskStats(JsonView jsonValue)
+  : ReplicationTaskStats()
 {
   *this = jsonValue;
 }

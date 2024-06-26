@@ -34,19 +34,8 @@ ComputeConfig::ComputeConfig() :
 {
 }
 
-ComputeConfig::ComputeConfig(JsonView jsonValue) : 
-    m_availabilityZoneHasBeenSet(false),
-    m_dnsNameServersHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_maxCapacityUnits(0),
-    m_maxCapacityUnitsHasBeenSet(false),
-    m_minCapacityUnits(0),
-    m_minCapacityUnitsHasBeenSet(false),
-    m_multiAZ(false),
-    m_multiAZHasBeenSet(false),
-    m_preferredMaintenanceWindowHasBeenSet(false),
-    m_replicationSubnetGroupIdHasBeenSet(false),
-    m_vpcSecurityGroupIdsHasBeenSet(false)
+ComputeConfig::ComputeConfig(JsonView jsonValue)
+  : ComputeConfig()
 {
   *this = jsonValue;
 }

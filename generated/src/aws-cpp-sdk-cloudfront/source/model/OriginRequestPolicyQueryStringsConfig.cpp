@@ -27,10 +27,8 @@ OriginRequestPolicyQueryStringsConfig::OriginRequestPolicyQueryStringsConfig() :
 {
 }
 
-OriginRequestPolicyQueryStringsConfig::OriginRequestPolicyQueryStringsConfig(const XmlNode& xmlNode) : 
-    m_queryStringBehavior(OriginRequestPolicyQueryStringBehavior::NOT_SET),
-    m_queryStringBehaviorHasBeenSet(false),
-    m_queryStringsHasBeenSet(false)
+OriginRequestPolicyQueryStringsConfig::OriginRequestPolicyQueryStringsConfig(const XmlNode& xmlNode)
+  : OriginRequestPolicyQueryStringsConfig()
 {
   *this = xmlNode;
 }

@@ -27,12 +27,8 @@ ActionSummary::ActionSummary() :
 {
 }
 
-ActionSummary::ActionSummary(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_targetsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+ActionSummary::ActionSummary(JsonView jsonValue)
+  : ActionSummary()
 {
   *this = jsonValue;
 }

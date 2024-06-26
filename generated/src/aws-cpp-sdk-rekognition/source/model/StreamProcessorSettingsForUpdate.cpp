@@ -23,8 +23,8 @@ StreamProcessorSettingsForUpdate::StreamProcessorSettingsForUpdate() :
 {
 }
 
-StreamProcessorSettingsForUpdate::StreamProcessorSettingsForUpdate(JsonView jsonValue) : 
-    m_connectedHomeForUpdateHasBeenSet(false)
+StreamProcessorSettingsForUpdate::StreamProcessorSettingsForUpdate(JsonView jsonValue)
+  : StreamProcessorSettingsForUpdate()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ ErrorReportLocation::ErrorReportLocation() :
 {
 }
 
-ErrorReportLocation::ErrorReportLocation(JsonView jsonValue) : 
-    m_bucketHasBeenSet(false),
-    m_prefixHasBeenSet(false)
+ErrorReportLocation::ErrorReportLocation(JsonView jsonValue)
+  : ErrorReportLocation()
 {
   *this = jsonValue;
 }

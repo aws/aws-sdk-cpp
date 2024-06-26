@@ -34,17 +34,8 @@ TypeVersionSummary::TypeVersionSummary() :
 {
 }
 
-TypeVersionSummary::TypeVersionSummary(const XmlNode& xmlNode) : 
-    m_type(RegistryType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_typeNameHasBeenSet(false),
-    m_versionIdHasBeenSet(false),
-    m_isDefaultVersion(false),
-    m_isDefaultVersionHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_timeCreatedHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_publicVersionNumberHasBeenSet(false)
+TypeVersionSummary::TypeVersionSummary(const XmlNode& xmlNode)
+  : TypeVersionSummary()
 {
   *this = xmlNode;
 }

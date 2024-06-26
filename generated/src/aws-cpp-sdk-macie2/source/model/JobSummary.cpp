@@ -33,18 +33,8 @@ JobSummary::JobSummary() :
 {
 }
 
-JobSummary::JobSummary(JsonView jsonValue) : 
-    m_bucketCriteriaHasBeenSet(false),
-    m_bucketDefinitionsHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_jobIdHasBeenSet(false),
-    m_jobStatus(JobStatus::NOT_SET),
-    m_jobStatusHasBeenSet(false),
-    m_jobType(JobType::NOT_SET),
-    m_jobTypeHasBeenSet(false),
-    m_lastRunErrorStatusHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_userPausedDetailsHasBeenSet(false)
+JobSummary::JobSummary(JsonView jsonValue)
+  : JobSummary()
 {
   *this = jsonValue;
 }

@@ -29,14 +29,8 @@ AnalysisReportSummary::AnalysisReportSummary() :
 {
 }
 
-AnalysisReportSummary::AnalysisReportSummary(JsonView jsonValue) : 
-    m_analysisReportIdHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_status(AnalysisStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+AnalysisReportSummary::AnalysisReportSummary(JsonView jsonValue)
+  : AnalysisReportSummary()
 {
   *this = jsonValue;
 }

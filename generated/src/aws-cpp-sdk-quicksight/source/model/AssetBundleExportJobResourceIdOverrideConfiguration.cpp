@@ -24,9 +24,8 @@ AssetBundleExportJobResourceIdOverrideConfiguration::AssetBundleExportJobResourc
 {
 }
 
-AssetBundleExportJobResourceIdOverrideConfiguration::AssetBundleExportJobResourceIdOverrideConfiguration(JsonView jsonValue) : 
-    m_prefixForAllResources(false),
-    m_prefixForAllResourcesHasBeenSet(false)
+AssetBundleExportJobResourceIdOverrideConfiguration::AssetBundleExportJobResourceIdOverrideConfiguration(JsonView jsonValue)
+  : AssetBundleExportJobResourceIdOverrideConfiguration()
 {
   *this = jsonValue;
 }

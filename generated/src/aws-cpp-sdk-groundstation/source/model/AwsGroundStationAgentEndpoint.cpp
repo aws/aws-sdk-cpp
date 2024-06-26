@@ -29,14 +29,8 @@ AwsGroundStationAgentEndpoint::AwsGroundStationAgentEndpoint() :
 {
 }
 
-AwsGroundStationAgentEndpoint::AwsGroundStationAgentEndpoint(JsonView jsonValue) : 
-    m_agentStatus(AgentStatus::NOT_SET),
-    m_agentStatusHasBeenSet(false),
-    m_auditResults(AuditResults::NOT_SET),
-    m_auditResultsHasBeenSet(false),
-    m_egressAddressHasBeenSet(false),
-    m_ingressAddressHasBeenSet(false),
-    m_nameHasBeenSet(false)
+AwsGroundStationAgentEndpoint::AwsGroundStationAgentEndpoint(JsonView jsonValue)
+  : AwsGroundStationAgentEndpoint()
 {
   *this = jsonValue;
 }

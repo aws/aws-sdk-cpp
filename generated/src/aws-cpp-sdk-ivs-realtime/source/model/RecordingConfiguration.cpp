@@ -24,9 +24,8 @@ RecordingConfiguration::RecordingConfiguration() :
 {
 }
 
-RecordingConfiguration::RecordingConfiguration(JsonView jsonValue) : 
-    m_format(RecordingConfigurationFormat::NOT_SET),
-    m_formatHasBeenSet(false)
+RecordingConfiguration::RecordingConfiguration(JsonView jsonValue)
+  : RecordingConfiguration()
 {
   *this = jsonValue;
 }

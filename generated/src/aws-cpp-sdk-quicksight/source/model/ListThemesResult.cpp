@@ -22,8 +22,8 @@ ListThemesResult::ListThemesResult() :
 {
 }
 
-ListThemesResult::ListThemesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+ListThemesResult::ListThemesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ListThemesResult()
 {
   *this = result;
 }

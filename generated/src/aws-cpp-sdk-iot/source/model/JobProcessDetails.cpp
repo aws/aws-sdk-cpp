@@ -39,24 +39,8 @@ JobProcessDetails::JobProcessDetails() :
 {
 }
 
-JobProcessDetails::JobProcessDetails(JsonView jsonValue) : 
-    m_processingTargetsHasBeenSet(false),
-    m_numberOfCanceledThings(0),
-    m_numberOfCanceledThingsHasBeenSet(false),
-    m_numberOfSucceededThings(0),
-    m_numberOfSucceededThingsHasBeenSet(false),
-    m_numberOfFailedThings(0),
-    m_numberOfFailedThingsHasBeenSet(false),
-    m_numberOfRejectedThings(0),
-    m_numberOfRejectedThingsHasBeenSet(false),
-    m_numberOfQueuedThings(0),
-    m_numberOfQueuedThingsHasBeenSet(false),
-    m_numberOfInProgressThings(0),
-    m_numberOfInProgressThingsHasBeenSet(false),
-    m_numberOfRemovedThings(0),
-    m_numberOfRemovedThingsHasBeenSet(false),
-    m_numberOfTimedOutThings(0),
-    m_numberOfTimedOutThingsHasBeenSet(false)
+JobProcessDetails::JobProcessDetails(JsonView jsonValue)
+  : JobProcessDetails()
 {
   *this = jsonValue;
 }

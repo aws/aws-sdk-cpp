@@ -31,16 +31,8 @@ DynamicScalingConfiguration::DynamicScalingConfiguration() :
 {
 }
 
-DynamicScalingConfiguration::DynamicScalingConfiguration(JsonView jsonValue) : 
-    m_minCapacity(0),
-    m_minCapacityHasBeenSet(false),
-    m_maxCapacity(0),
-    m_maxCapacityHasBeenSet(false),
-    m_scaleInCooldown(0),
-    m_scaleInCooldownHasBeenSet(false),
-    m_scaleOutCooldown(0),
-    m_scaleOutCooldownHasBeenSet(false),
-    m_scalingPoliciesHasBeenSet(false)
+DynamicScalingConfiguration::DynamicScalingConfiguration(JsonView jsonValue)
+  : DynamicScalingConfiguration()
 {
   *this = jsonValue;
 }

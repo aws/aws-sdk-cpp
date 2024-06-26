@@ -24,10 +24,8 @@ GetScanResult::GetScanResult() :
 {
 }
 
-GetScanResult::GetScanResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_analysisType(AnalysisType::NOT_SET),
-    m_numberOfRevisions(0),
-    m_scanState(ScanState::NOT_SET)
+GetScanResult::GetScanResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetScanResult()
 {
   *this = result;
 }

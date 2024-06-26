@@ -32,17 +32,8 @@ Table::Table() :
 {
 }
 
-Table::Table(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_tableNameHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_tableStatus(TableStatus::NOT_SET),
-    m_tableStatusHasBeenSet(false),
-    m_retentionPropertiesHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_magneticStoreWritePropertiesHasBeenSet(false),
-    m_schemaHasBeenSet(false)
+Table::Table(JsonView jsonValue)
+  : Table()
 {
   *this = jsonValue;
 }

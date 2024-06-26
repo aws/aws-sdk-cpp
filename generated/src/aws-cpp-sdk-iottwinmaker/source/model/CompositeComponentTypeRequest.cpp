@@ -23,8 +23,8 @@ CompositeComponentTypeRequest::CompositeComponentTypeRequest() :
 {
 }
 
-CompositeComponentTypeRequest::CompositeComponentTypeRequest(JsonView jsonValue) : 
-    m_componentTypeIdHasBeenSet(false)
+CompositeComponentTypeRequest::CompositeComponentTypeRequest(JsonView jsonValue)
+  : CompositeComponentTypeRequest()
 {
   *this = jsonValue;
 }

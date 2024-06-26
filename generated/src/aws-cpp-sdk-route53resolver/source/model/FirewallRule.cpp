@@ -42,27 +42,8 @@ FirewallRule::FirewallRule() :
 {
 }
 
-FirewallRule::FirewallRule(JsonView jsonValue) : 
-    m_firewallRuleGroupIdHasBeenSet(false),
-    m_firewallDomainListIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_priority(0),
-    m_priorityHasBeenSet(false),
-    m_action(Action::NOT_SET),
-    m_actionHasBeenSet(false),
-    m_blockResponse(BlockResponse::NOT_SET),
-    m_blockResponseHasBeenSet(false),
-    m_blockOverrideDomainHasBeenSet(false),
-    m_blockOverrideDnsType(BlockOverrideDnsType::NOT_SET),
-    m_blockOverrideDnsTypeHasBeenSet(false),
-    m_blockOverrideTtl(0),
-    m_blockOverrideTtlHasBeenSet(false),
-    m_creatorRequestIdHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_modificationTimeHasBeenSet(false),
-    m_firewallDomainRedirectionAction(FirewallDomainRedirectionAction::NOT_SET),
-    m_firewallDomainRedirectionActionHasBeenSet(false),
-    m_qtypeHasBeenSet(false)
+FirewallRule::FirewallRule(JsonView jsonValue)
+  : FirewallRule()
 {
   *this = jsonValue;
 }

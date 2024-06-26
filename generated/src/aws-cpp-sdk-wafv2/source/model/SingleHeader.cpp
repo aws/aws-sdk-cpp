@@ -23,8 +23,8 @@ SingleHeader::SingleHeader() :
 {
 }
 
-SingleHeader::SingleHeader(JsonView jsonValue) : 
-    m_nameHasBeenSet(false)
+SingleHeader::SingleHeader(JsonView jsonValue)
+  : SingleHeader()
 {
   *this = jsonValue;
 }

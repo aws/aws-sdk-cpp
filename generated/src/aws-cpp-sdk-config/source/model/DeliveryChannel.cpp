@@ -28,13 +28,8 @@ DeliveryChannel::DeliveryChannel() :
 {
 }
 
-DeliveryChannel::DeliveryChannel(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_s3BucketNameHasBeenSet(false),
-    m_s3KeyPrefixHasBeenSet(false),
-    m_s3KmsKeyArnHasBeenSet(false),
-    m_snsTopicARNHasBeenSet(false),
-    m_configSnapshotDeliveryPropertiesHasBeenSet(false)
+DeliveryChannel::DeliveryChannel(JsonView jsonValue)
+  : DeliveryChannel()
 {
   *this = jsonValue;
 }

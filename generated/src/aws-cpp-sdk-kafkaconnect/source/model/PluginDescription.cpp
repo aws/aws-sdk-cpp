@@ -23,8 +23,8 @@ PluginDescription::PluginDescription() :
 {
 }
 
-PluginDescription::PluginDescription(JsonView jsonValue) : 
-    m_customPluginHasBeenSet(false)
+PluginDescription::PluginDescription(JsonView jsonValue)
+  : PluginDescription()
 {
   *this = jsonValue;
 }

@@ -28,13 +28,8 @@ UtilizationMetric::UtilizationMetric() :
 {
 }
 
-UtilizationMetric::UtilizationMetric(JsonView jsonValue) : 
-    m_name(MetricName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_statistic(MetricStatistic::NOT_SET),
-    m_statisticHasBeenSet(false),
-    m_value(0.0),
-    m_valueHasBeenSet(false)
+UtilizationMetric::UtilizationMetric(JsonView jsonValue)
+  : UtilizationMetric()
 {
   *this = jsonValue;
 }

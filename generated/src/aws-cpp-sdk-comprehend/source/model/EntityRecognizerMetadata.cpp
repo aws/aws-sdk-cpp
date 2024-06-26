@@ -28,13 +28,8 @@ EntityRecognizerMetadata::EntityRecognizerMetadata() :
 {
 }
 
-EntityRecognizerMetadata::EntityRecognizerMetadata(JsonView jsonValue) : 
-    m_numberOfTrainedDocuments(0),
-    m_numberOfTrainedDocumentsHasBeenSet(false),
-    m_numberOfTestDocuments(0),
-    m_numberOfTestDocumentsHasBeenSet(false),
-    m_evaluationMetricsHasBeenSet(false),
-    m_entityTypesHasBeenSet(false)
+EntityRecognizerMetadata::EntityRecognizerMetadata(JsonView jsonValue)
+  : EntityRecognizerMetadata()
 {
   *this = jsonValue;
 }

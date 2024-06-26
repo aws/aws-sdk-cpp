@@ -24,9 +24,8 @@ StreamFilters::StreamFilters() :
 {
 }
 
-StreamFilters::StreamFilters(JsonView jsonValue) : 
-    m_health(StreamHealth::NOT_SET),
-    m_healthHasBeenSet(false)
+StreamFilters::StreamFilters(JsonView jsonValue)
+  : StreamFilters()
 {
   *this = jsonValue;
 }

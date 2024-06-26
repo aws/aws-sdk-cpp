@@ -28,12 +28,8 @@ AudioInputEvent::AudioInputEvent() :
 {
 }
 
-AudioInputEvent::AudioInputEvent(JsonView jsonValue) : 
-    m_audioChunkHasBeenSet(false),
-    m_contentTypeHasBeenSet(false),
-    m_eventIdHasBeenSet(false),
-    m_clientTimestampMillis(0),
-    m_clientTimestampMillisHasBeenSet(false)
+AudioInputEvent::AudioInputEvent(JsonView jsonValue)
+  : AudioInputEvent()
 {
   *this = jsonValue;
 }

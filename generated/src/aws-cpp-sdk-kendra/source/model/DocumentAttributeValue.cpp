@@ -27,12 +27,8 @@ DocumentAttributeValue::DocumentAttributeValue() :
 {
 }
 
-DocumentAttributeValue::DocumentAttributeValue(JsonView jsonValue) : 
-    m_stringValueHasBeenSet(false),
-    m_stringListValueHasBeenSet(false),
-    m_longValue(0),
-    m_longValueHasBeenSet(false),
-    m_dateValueHasBeenSet(false)
+DocumentAttributeValue::DocumentAttributeValue(JsonView jsonValue)
+  : DocumentAttributeValue()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ ServiceCollection::ServiceCollection() :
 {
 }
 
-ServiceCollection::ServiceCollection(JsonView jsonValue) : 
-    m_serviceNamesHasBeenSet(false)
+ServiceCollection::ServiceCollection(JsonView jsonValue)
+  : ServiceCollection()
 {
   *this = jsonValue;
 }

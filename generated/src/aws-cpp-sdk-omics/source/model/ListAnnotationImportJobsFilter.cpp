@@ -25,10 +25,8 @@ ListAnnotationImportJobsFilter::ListAnnotationImportJobsFilter() :
 {
 }
 
-ListAnnotationImportJobsFilter::ListAnnotationImportJobsFilter(JsonView jsonValue) : 
-    m_status(JobStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_storeNameHasBeenSet(false)
+ListAnnotationImportJobsFilter::ListAnnotationImportJobsFilter(JsonView jsonValue)
+  : ListAnnotationImportJobsFilter()
 {
   *this = jsonValue;
 }

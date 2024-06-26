@@ -26,11 +26,8 @@ FunctionCodeLocation::FunctionCodeLocation() :
 {
 }
 
-FunctionCodeLocation::FunctionCodeLocation(JsonView jsonValue) : 
-    m_repositoryTypeHasBeenSet(false),
-    m_locationHasBeenSet(false),
-    m_imageUriHasBeenSet(false),
-    m_resolvedImageUriHasBeenSet(false)
+FunctionCodeLocation::FunctionCodeLocation(JsonView jsonValue)
+  : FunctionCodeLocation()
 {
   *this = jsonValue;
 }

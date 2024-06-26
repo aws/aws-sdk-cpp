@@ -29,14 +29,8 @@ EnvironmentBlueprintSummary::EnvironmentBlueprintSummary() :
 {
 }
 
-EnvironmentBlueprintSummary::EnvironmentBlueprintSummary(JsonView jsonValue) : 
-    m_createdAtHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_providerHasBeenSet(false),
-    m_provisioningPropertiesHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+EnvironmentBlueprintSummary::EnvironmentBlueprintSummary(JsonView jsonValue)
+  : EnvironmentBlueprintSummary()
 {
   *this = jsonValue;
 }

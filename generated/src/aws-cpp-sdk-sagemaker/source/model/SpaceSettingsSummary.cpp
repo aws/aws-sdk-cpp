@@ -25,10 +25,8 @@ SpaceSettingsSummary::SpaceSettingsSummary() :
 {
 }
 
-SpaceSettingsSummary::SpaceSettingsSummary(JsonView jsonValue) : 
-    m_appType(AppType::NOT_SET),
-    m_appTypeHasBeenSet(false),
-    m_spaceStorageSettingsHasBeenSet(false)
+SpaceSettingsSummary::SpaceSettingsSummary(JsonView jsonValue)
+  : SpaceSettingsSummary()
 {
   *this = jsonValue;
 }

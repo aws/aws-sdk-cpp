@@ -34,19 +34,8 @@ ClusterInstanceGroupDetails::ClusterInstanceGroupDetails() :
 {
 }
 
-ClusterInstanceGroupDetails::ClusterInstanceGroupDetails(JsonView jsonValue) : 
-    m_currentCount(0),
-    m_currentCountHasBeenSet(false),
-    m_targetCount(0),
-    m_targetCountHasBeenSet(false),
-    m_instanceGroupNameHasBeenSet(false),
-    m_instanceType(ClusterInstanceType::NOT_SET),
-    m_instanceTypeHasBeenSet(false),
-    m_lifeCycleConfigHasBeenSet(false),
-    m_executionRoleHasBeenSet(false),
-    m_threadsPerCore(0),
-    m_threadsPerCoreHasBeenSet(false),
-    m_instanceStorageConfigsHasBeenSet(false)
+ClusterInstanceGroupDetails::ClusterInstanceGroupDetails(JsonView jsonValue)
+  : ClusterInstanceGroupDetails()
 {
   *this = jsonValue;
 }

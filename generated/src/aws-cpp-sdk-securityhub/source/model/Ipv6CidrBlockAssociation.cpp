@@ -25,10 +25,8 @@ Ipv6CidrBlockAssociation::Ipv6CidrBlockAssociation() :
 {
 }
 
-Ipv6CidrBlockAssociation::Ipv6CidrBlockAssociation(JsonView jsonValue) : 
-    m_associationIdHasBeenSet(false),
-    m_ipv6CidrBlockHasBeenSet(false),
-    m_cidrBlockStateHasBeenSet(false)
+Ipv6CidrBlockAssociation::Ipv6CidrBlockAssociation(JsonView jsonValue)
+  : Ipv6CidrBlockAssociation()
 {
   *this = jsonValue;
 }

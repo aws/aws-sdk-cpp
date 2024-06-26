@@ -21,8 +21,8 @@ PutObjectLegalHoldResult::PutObjectLegalHoldResult() :
 {
 }
 
-PutObjectLegalHoldResult::PutObjectLegalHoldResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_requestCharged(RequestCharged::NOT_SET)
+PutObjectLegalHoldResult::PutObjectLegalHoldResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : PutObjectLegalHoldResult()
 {
   *this = result;
 }

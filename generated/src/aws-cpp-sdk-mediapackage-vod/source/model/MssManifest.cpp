@@ -24,9 +24,8 @@ MssManifest::MssManifest() :
 {
 }
 
-MssManifest::MssManifest(JsonView jsonValue) : 
-    m_manifestNameHasBeenSet(false),
-    m_streamSelectionHasBeenSet(false)
+MssManifest::MssManifest(JsonView jsonValue)
+  : MssManifest()
 {
   *this = jsonValue;
 }

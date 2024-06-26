@@ -25,10 +25,8 @@ ContainerSummary::ContainerSummary() :
 {
 }
 
-ContainerSummary::ContainerSummary(JsonView jsonValue) : 
-    m_exitCode(0),
-    m_exitCodeHasBeenSet(false),
-    m_reasonHasBeenSet(false)
+ContainerSummary::ContainerSummary(JsonView jsonValue)
+  : ContainerSummary()
 {
   *this = jsonValue;
 }

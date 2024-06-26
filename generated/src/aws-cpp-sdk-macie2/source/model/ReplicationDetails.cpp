@@ -27,12 +27,8 @@ ReplicationDetails::ReplicationDetails() :
 {
 }
 
-ReplicationDetails::ReplicationDetails(JsonView jsonValue) : 
-    m_replicated(false),
-    m_replicatedHasBeenSet(false),
-    m_replicatedExternally(false),
-    m_replicatedExternallyHasBeenSet(false),
-    m_replicationAccountsHasBeenSet(false)
+ReplicationDetails::ReplicationDetails(JsonView jsonValue)
+  : ReplicationDetails()
 {
   *this = jsonValue;
 }

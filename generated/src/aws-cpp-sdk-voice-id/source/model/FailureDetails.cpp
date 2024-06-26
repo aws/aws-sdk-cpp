@@ -25,10 +25,8 @@ FailureDetails::FailureDetails() :
 {
 }
 
-FailureDetails::FailureDetails(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_statusCode(0),
-    m_statusCodeHasBeenSet(false)
+FailureDetails::FailureDetails(JsonView jsonValue)
+  : FailureDetails()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ InstanceGroupStateChangeReason::InstanceGroupStateChangeReason() :
 {
 }
 
-InstanceGroupStateChangeReason::InstanceGroupStateChangeReason(JsonView jsonValue) : 
-    m_code(InstanceGroupStateChangeReasonCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+InstanceGroupStateChangeReason::InstanceGroupStateChangeReason(JsonView jsonValue)
+  : InstanceGroupStateChangeReason()
 {
   *this = jsonValue;
 }

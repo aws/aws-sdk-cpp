@@ -23,8 +23,8 @@ Section::Section() :
 {
 }
 
-Section::Section(JsonView jsonValue) : 
-    m_fieldGroupHasBeenSet(false)
+Section::Section(JsonView jsonValue)
+  : Section()
 {
   *this = jsonValue;
 }

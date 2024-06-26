@@ -23,8 +23,8 @@ SheetControlLayoutConfiguration::SheetControlLayoutConfiguration() :
 {
 }
 
-SheetControlLayoutConfiguration::SheetControlLayoutConfiguration(JsonView jsonValue) : 
-    m_gridLayoutHasBeenSet(false)
+SheetControlLayoutConfiguration::SheetControlLayoutConfiguration(JsonView jsonValue)
+  : SheetControlLayoutConfiguration()
 {
   *this = jsonValue;
 }

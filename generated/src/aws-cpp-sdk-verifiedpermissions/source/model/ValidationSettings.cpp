@@ -24,9 +24,8 @@ ValidationSettings::ValidationSettings() :
 {
 }
 
-ValidationSettings::ValidationSettings(JsonView jsonValue) : 
-    m_mode(ValidationMode::NOT_SET),
-    m_modeHasBeenSet(false)
+ValidationSettings::ValidationSettings(JsonView jsonValue)
+  : ValidationSettings()
 {
   *this = jsonValue;
 }

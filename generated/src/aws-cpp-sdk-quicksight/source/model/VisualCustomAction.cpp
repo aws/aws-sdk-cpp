@@ -29,14 +29,8 @@ VisualCustomAction::VisualCustomAction() :
 {
 }
 
-VisualCustomAction::VisualCustomAction(JsonView jsonValue) : 
-    m_customActionIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_status(WidgetStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_trigger(VisualCustomActionTrigger::NOT_SET),
-    m_triggerHasBeenSet(false),
-    m_actionOperationsHasBeenSet(false)
+VisualCustomAction::VisualCustomAction(JsonView jsonValue)
+  : VisualCustomAction()
 {
   *this = jsonValue;
 }

@@ -26,9 +26,8 @@ ManagedExecution::ManagedExecution() :
 {
 }
 
-ManagedExecution::ManagedExecution(const XmlNode& xmlNode) : 
-    m_active(false),
-    m_activeHasBeenSet(false)
+ManagedExecution::ManagedExecution(const XmlNode& xmlNode)
+  : ManagedExecution()
 {
   *this = xmlNode;
 }

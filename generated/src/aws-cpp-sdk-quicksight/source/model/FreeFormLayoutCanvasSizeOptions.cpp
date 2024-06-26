@@ -23,8 +23,8 @@ FreeFormLayoutCanvasSizeOptions::FreeFormLayoutCanvasSizeOptions() :
 {
 }
 
-FreeFormLayoutCanvasSizeOptions::FreeFormLayoutCanvasSizeOptions(JsonView jsonValue) : 
-    m_screenCanvasSizeOptionsHasBeenSet(false)
+FreeFormLayoutCanvasSizeOptions::FreeFormLayoutCanvasSizeOptions(JsonView jsonValue)
+  : FreeFormLayoutCanvasSizeOptions()
 {
   *this = jsonValue;
 }

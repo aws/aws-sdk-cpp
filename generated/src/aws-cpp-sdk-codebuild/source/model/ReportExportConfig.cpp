@@ -25,10 +25,8 @@ ReportExportConfig::ReportExportConfig() :
 {
 }
 
-ReportExportConfig::ReportExportConfig(JsonView jsonValue) : 
-    m_exportConfigType(ReportExportConfigType::NOT_SET),
-    m_exportConfigTypeHasBeenSet(false),
-    m_s3DestinationHasBeenSet(false)
+ReportExportConfig::ReportExportConfig(JsonView jsonValue)
+  : ReportExportConfig()
 {
   *this = jsonValue;
 }

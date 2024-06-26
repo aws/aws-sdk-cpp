@@ -35,18 +35,8 @@ IdentityNotificationAttributes::IdentityNotificationAttributes() :
 {
 }
 
-IdentityNotificationAttributes::IdentityNotificationAttributes(const XmlNode& xmlNode) : 
-    m_bounceTopicHasBeenSet(false),
-    m_complaintTopicHasBeenSet(false),
-    m_deliveryTopicHasBeenSet(false),
-    m_forwardingEnabled(false),
-    m_forwardingEnabledHasBeenSet(false),
-    m_headersInBounceNotificationsEnabled(false),
-    m_headersInBounceNotificationsEnabledHasBeenSet(false),
-    m_headersInComplaintNotificationsEnabled(false),
-    m_headersInComplaintNotificationsEnabledHasBeenSet(false),
-    m_headersInDeliveryNotificationsEnabled(false),
-    m_headersInDeliveryNotificationsEnabledHasBeenSet(false)
+IdentityNotificationAttributes::IdentityNotificationAttributes(const XmlNode& xmlNode)
+  : IdentityNotificationAttributes()
 {
   *this = xmlNode;
 }

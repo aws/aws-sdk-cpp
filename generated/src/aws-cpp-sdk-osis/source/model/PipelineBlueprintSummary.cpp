@@ -27,12 +27,8 @@ PipelineBlueprintSummary::PipelineBlueprintSummary() :
 {
 }
 
-PipelineBlueprintSummary::PipelineBlueprintSummary(JsonView jsonValue) : 
-    m_blueprintNameHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_displayDescriptionHasBeenSet(false),
-    m_serviceHasBeenSet(false),
-    m_useCaseHasBeenSet(false)
+PipelineBlueprintSummary::PipelineBlueprintSummary(JsonView jsonValue)
+  : PipelineBlueprintSummary()
 {
   *this = jsonValue;
 }

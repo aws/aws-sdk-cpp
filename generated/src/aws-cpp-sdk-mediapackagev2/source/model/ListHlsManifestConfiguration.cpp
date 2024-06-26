@@ -25,10 +25,8 @@ ListHlsManifestConfiguration::ListHlsManifestConfiguration() :
 {
 }
 
-ListHlsManifestConfiguration::ListHlsManifestConfiguration(JsonView jsonValue) : 
-    m_manifestNameHasBeenSet(false),
-    m_childManifestNameHasBeenSet(false),
-    m_urlHasBeenSet(false)
+ListHlsManifestConfiguration::ListHlsManifestConfiguration(JsonView jsonValue)
+  : ListHlsManifestConfiguration()
 {
   *this = jsonValue;
 }

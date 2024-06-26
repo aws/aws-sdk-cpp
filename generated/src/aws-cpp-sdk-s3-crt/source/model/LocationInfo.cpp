@@ -27,10 +27,8 @@ LocationInfo::LocationInfo() :
 {
 }
 
-LocationInfo::LocationInfo(const XmlNode& xmlNode) : 
-    m_type(LocationType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_nameHasBeenSet(false)
+LocationInfo::LocationInfo(const XmlNode& xmlNode)
+  : LocationInfo()
 {
   *this = xmlNode;
 }

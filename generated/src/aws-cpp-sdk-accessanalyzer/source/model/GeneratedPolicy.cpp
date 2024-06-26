@@ -23,8 +23,8 @@ GeneratedPolicy::GeneratedPolicy() :
 {
 }
 
-GeneratedPolicy::GeneratedPolicy(JsonView jsonValue) : 
-    m_policyHasBeenSet(false)
+GeneratedPolicy::GeneratedPolicy(JsonView jsonValue)
+  : GeneratedPolicy()
 {
   *this = jsonValue;
 }

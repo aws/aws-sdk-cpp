@@ -23,9 +23,8 @@ DeleteDataRepositoryAssociationResult::DeleteDataRepositoryAssociationResult() :
 {
 }
 
-DeleteDataRepositoryAssociationResult::DeleteDataRepositoryAssociationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_lifecycle(DataRepositoryLifecycle::NOT_SET),
-    m_deleteDataInFileSystem(false)
+DeleteDataRepositoryAssociationResult::DeleteDataRepositoryAssociationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeleteDataRepositoryAssociationResult()
 {
   *this = result;
 }

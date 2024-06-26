@@ -28,13 +28,8 @@ BarChartSortConfiguration::BarChartSortConfiguration() :
 {
 }
 
-BarChartSortConfiguration::BarChartSortConfiguration(JsonView jsonValue) : 
-    m_categorySortHasBeenSet(false),
-    m_categoryItemsLimitHasBeenSet(false),
-    m_colorSortHasBeenSet(false),
-    m_colorItemsLimitHasBeenSet(false),
-    m_smallMultiplesSortHasBeenSet(false),
-    m_smallMultiplesLimitConfigurationHasBeenSet(false)
+BarChartSortConfiguration::BarChartSortConfiguration(JsonView jsonValue)
+  : BarChartSortConfiguration()
 {
   *this = jsonValue;
 }

@@ -25,8 +25,8 @@ PathPatternConditionConfig::PathPatternConditionConfig() :
 {
 }
 
-PathPatternConditionConfig::PathPatternConditionConfig(const XmlNode& xmlNode) : 
-    m_valuesHasBeenSet(false)
+PathPatternConditionConfig::PathPatternConditionConfig(const XmlNode& xmlNode)
+  : PathPatternConditionConfig()
 {
   *this = xmlNode;
 }

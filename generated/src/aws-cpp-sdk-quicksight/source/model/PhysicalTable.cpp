@@ -25,10 +25,8 @@ PhysicalTable::PhysicalTable() :
 {
 }
 
-PhysicalTable::PhysicalTable(JsonView jsonValue) : 
-    m_relationalTableHasBeenSet(false),
-    m_customSqlHasBeenSet(false),
-    m_s3SourceHasBeenSet(false)
+PhysicalTable::PhysicalTable(JsonView jsonValue)
+  : PhysicalTable()
 {
   *this = jsonValue;
 }

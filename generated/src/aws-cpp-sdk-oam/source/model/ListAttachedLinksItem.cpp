@@ -25,10 +25,8 @@ ListAttachedLinksItem::ListAttachedLinksItem() :
 {
 }
 
-ListAttachedLinksItem::ListAttachedLinksItem(JsonView jsonValue) : 
-    m_labelHasBeenSet(false),
-    m_linkArnHasBeenSet(false),
-    m_resourceTypesHasBeenSet(false)
+ListAttachedLinksItem::ListAttachedLinksItem(JsonView jsonValue)
+  : ListAttachedLinksItem()
 {
   *this = jsonValue;
 }

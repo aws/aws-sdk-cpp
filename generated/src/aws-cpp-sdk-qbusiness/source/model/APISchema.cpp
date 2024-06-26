@@ -24,9 +24,8 @@ APISchema::APISchema() :
 {
 }
 
-APISchema::APISchema(JsonView jsonValue) : 
-    m_payloadHasBeenSet(false),
-    m_s3HasBeenSet(false)
+APISchema::APISchema(JsonView jsonValue)
+  : APISchema()
 {
   *this = jsonValue;
 }

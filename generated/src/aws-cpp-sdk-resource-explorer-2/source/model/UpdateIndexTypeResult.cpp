@@ -23,9 +23,8 @@ UpdateIndexTypeResult::UpdateIndexTypeResult() :
 {
 }
 
-UpdateIndexTypeResult::UpdateIndexTypeResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_state(IndexState::NOT_SET),
-    m_type(IndexType::NOT_SET)
+UpdateIndexTypeResult::UpdateIndexTypeResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateIndexTypeResult()
 {
   *this = result;
 }

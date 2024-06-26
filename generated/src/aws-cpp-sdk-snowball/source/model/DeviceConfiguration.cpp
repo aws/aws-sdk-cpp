@@ -23,8 +23,8 @@ DeviceConfiguration::DeviceConfiguration() :
 {
 }
 
-DeviceConfiguration::DeviceConfiguration(JsonView jsonValue) : 
-    m_snowconeDeviceConfigurationHasBeenSet(false)
+DeviceConfiguration::DeviceConfiguration(JsonView jsonValue)
+  : DeviceConfiguration()
 {
   *this = jsonValue;
 }

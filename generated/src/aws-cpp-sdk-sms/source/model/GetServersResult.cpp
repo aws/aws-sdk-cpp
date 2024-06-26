@@ -22,8 +22,8 @@ GetServersResult::GetServersResult() :
 {
 }
 
-GetServersResult::GetServersResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_serverCatalogStatus(ServerCatalogStatus::NOT_SET)
+GetServersResult::GetServersResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetServersResult()
 {
   *this = result;
 }

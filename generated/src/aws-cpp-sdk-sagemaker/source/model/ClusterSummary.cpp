@@ -27,12 +27,8 @@ ClusterSummary::ClusterSummary() :
 {
 }
 
-ClusterSummary::ClusterSummary(JsonView jsonValue) : 
-    m_clusterArnHasBeenSet(false),
-    m_clusterNameHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_clusterStatus(ClusterStatus::NOT_SET),
-    m_clusterStatusHasBeenSet(false)
+ClusterSummary::ClusterSummary(JsonView jsonValue)
+  : ClusterSummary()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ MetricAttribute::MetricAttribute() :
 {
 }
 
-MetricAttribute::MetricAttribute(JsonView jsonValue) : 
-    m_eventTypeHasBeenSet(false),
-    m_metricNameHasBeenSet(false),
-    m_expressionHasBeenSet(false)
+MetricAttribute::MetricAttribute(JsonView jsonValue)
+  : MetricAttribute()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ RedshiftServerlessStorage::RedshiftServerlessStorage() :
 {
 }
 
-RedshiftServerlessStorage::RedshiftServerlessStorage(JsonView jsonValue) : 
-    m_workgroupNameHasBeenSet(false)
+RedshiftServerlessStorage::RedshiftServerlessStorage(JsonView jsonValue)
+  : RedshiftServerlessStorage()
 {
   *this = jsonValue;
 }

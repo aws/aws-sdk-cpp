@@ -24,9 +24,8 @@ RuleOption::RuleOption() :
 {
 }
 
-RuleOption::RuleOption(JsonView jsonValue) : 
-    m_keywordHasBeenSet(false),
-    m_settingsHasBeenSet(false)
+RuleOption::RuleOption(JsonView jsonValue)
+  : RuleOption()
 {
   *this = jsonValue;
 }

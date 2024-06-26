@@ -30,15 +30,8 @@ WorkflowStepGroupSummary::WorkflowStepGroupSummary() :
 {
 }
 
-WorkflowStepGroupSummary::WorkflowStepGroupSummary(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_owner(Owner::NOT_SET),
-    m_ownerHasBeenSet(false),
-    m_status(StepGroupStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_previousHasBeenSet(false),
-    m_nextHasBeenSet(false)
+WorkflowStepGroupSummary::WorkflowStepGroupSummary(JsonView jsonValue)
+  : WorkflowStepGroupSummary()
 {
   *this = jsonValue;
 }

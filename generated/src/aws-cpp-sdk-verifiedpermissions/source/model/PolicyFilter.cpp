@@ -27,12 +27,8 @@ PolicyFilter::PolicyFilter() :
 {
 }
 
-PolicyFilter::PolicyFilter(JsonView jsonValue) : 
-    m_principalHasBeenSet(false),
-    m_resourceHasBeenSet(false),
-    m_policyType(PolicyType::NOT_SET),
-    m_policyTypeHasBeenSet(false),
-    m_policyTemplateIdHasBeenSet(false)
+PolicyFilter::PolicyFilter(JsonView jsonValue)
+  : PolicyFilter()
 {
   *this = jsonValue;
 }

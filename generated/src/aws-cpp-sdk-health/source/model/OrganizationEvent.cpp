@@ -35,20 +35,8 @@ OrganizationEvent::OrganizationEvent() :
 {
 }
 
-OrganizationEvent::OrganizationEvent(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_serviceHasBeenSet(false),
-    m_eventTypeCodeHasBeenSet(false),
-    m_eventTypeCategory(EventTypeCategory::NOT_SET),
-    m_eventTypeCategoryHasBeenSet(false),
-    m_eventScopeCode(EventScopeCode::NOT_SET),
-    m_eventScopeCodeHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_statusCode(EventStatusCode::NOT_SET),
-    m_statusCodeHasBeenSet(false)
+OrganizationEvent::OrganizationEvent(JsonView jsonValue)
+  : OrganizationEvent()
 {
   *this = jsonValue;
 }

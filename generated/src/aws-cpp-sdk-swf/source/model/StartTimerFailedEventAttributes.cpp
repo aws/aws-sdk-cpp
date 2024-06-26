@@ -27,12 +27,8 @@ StartTimerFailedEventAttributes::StartTimerFailedEventAttributes() :
 {
 }
 
-StartTimerFailedEventAttributes::StartTimerFailedEventAttributes(JsonView jsonValue) : 
-    m_timerIdHasBeenSet(false),
-    m_cause(StartTimerFailedCause::NOT_SET),
-    m_causeHasBeenSet(false),
-    m_decisionTaskCompletedEventId(0),
-    m_decisionTaskCompletedEventIdHasBeenSet(false)
+StartTimerFailedEventAttributes::StartTimerFailedEventAttributes(JsonView jsonValue)
+  : StartTimerFailedEventAttributes()
 {
   *this = jsonValue;
 }

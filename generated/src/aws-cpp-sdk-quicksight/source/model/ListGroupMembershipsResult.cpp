@@ -22,8 +22,8 @@ ListGroupMembershipsResult::ListGroupMembershipsResult() :
 {
 }
 
-ListGroupMembershipsResult::ListGroupMembershipsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+ListGroupMembershipsResult::ListGroupMembershipsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ListGroupMembershipsResult()
 {
   *this = result;
 }

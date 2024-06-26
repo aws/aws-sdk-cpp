@@ -25,9 +25,8 @@ AssetBundleImportSource::AssetBundleImportSource() :
 {
 }
 
-AssetBundleImportSource::AssetBundleImportSource(JsonView jsonValue) : 
-    m_bodyHasBeenSet(false),
-    m_s3UriHasBeenSet(false)
+AssetBundleImportSource::AssetBundleImportSource(JsonView jsonValue)
+  : AssetBundleImportSource()
 {
   *this = jsonValue;
 }

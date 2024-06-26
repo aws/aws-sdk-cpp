@@ -28,13 +28,8 @@ QualificationRequest::QualificationRequest() :
 {
 }
 
-QualificationRequest::QualificationRequest(JsonView jsonValue) : 
-    m_qualificationRequestIdHasBeenSet(false),
-    m_qualificationTypeIdHasBeenSet(false),
-    m_workerIdHasBeenSet(false),
-    m_testHasBeenSet(false),
-    m_answerHasBeenSet(false),
-    m_submitTimeHasBeenSet(false)
+QualificationRequest::QualificationRequest(JsonView jsonValue)
+  : QualificationRequest()
 {
   *this = jsonValue;
 }

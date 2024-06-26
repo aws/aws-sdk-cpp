@@ -24,9 +24,8 @@ ReleaseSummary::ReleaseSummary() :
 {
 }
 
-ReleaseSummary::ReleaseSummary(JsonView jsonValue) : 
-    m_releaseVersionHasBeenSet(false),
-    m_timestampHasBeenSet(false)
+ReleaseSummary::ReleaseSummary(JsonView jsonValue)
+  : ReleaseSummary()
 {
   *this = jsonValue;
 }

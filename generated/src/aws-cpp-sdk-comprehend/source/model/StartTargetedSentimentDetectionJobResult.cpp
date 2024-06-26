@@ -22,8 +22,8 @@ StartTargetedSentimentDetectionJobResult::StartTargetedSentimentDetectionJobResu
 {
 }
 
-StartTargetedSentimentDetectionJobResult::StartTargetedSentimentDetectionJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_jobStatus(JobStatus::NOT_SET)
+StartTargetedSentimentDetectionJobResult::StartTargetedSentimentDetectionJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : StartTargetedSentimentDetectionJobResult()
 {
   *this = result;
 }

@@ -29,14 +29,8 @@ Revision::Revision() :
 {
 }
 
-Revision::Revision(JsonView jsonValue) : 
-    m_branchHasBeenSet(false),
-    m_directoryHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_repositoryNameHasBeenSet(false),
-    m_providerType(ProviderType::NOT_SET),
-    m_providerTypeHasBeenSet(false),
-    m_shaHasBeenSet(false)
+Revision::Revision(JsonView jsonValue)
+  : Revision()
 {
   *this = jsonValue;
 }

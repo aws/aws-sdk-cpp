@@ -26,11 +26,8 @@ EBSEstimatedMonthlySavings::EBSEstimatedMonthlySavings() :
 {
 }
 
-EBSEstimatedMonthlySavings::EBSEstimatedMonthlySavings(JsonView jsonValue) : 
-    m_currency(Currency::NOT_SET),
-    m_currencyHasBeenSet(false),
-    m_value(0.0),
-    m_valueHasBeenSet(false)
+EBSEstimatedMonthlySavings::EBSEstimatedMonthlySavings(JsonView jsonValue)
+  : EBSEstimatedMonthlySavings()
 {
   *this = jsonValue;
 }

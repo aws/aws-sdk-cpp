@@ -38,23 +38,8 @@ Service::Service() :
 {
 }
 
-Service::Service(JsonView jsonValue) : 
-    m_serviceNameHasBeenSet(false),
-    m_serviceIdHasBeenSet(false),
-    m_serviceArnHasBeenSet(false),
-    m_serviceUrlHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_deletedAtHasBeenSet(false),
-    m_status(ServiceStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_sourceConfigurationHasBeenSet(false),
-    m_instanceConfigurationHasBeenSet(false),
-    m_encryptionConfigurationHasBeenSet(false),
-    m_healthCheckConfigurationHasBeenSet(false),
-    m_autoScalingConfigurationSummaryHasBeenSet(false),
-    m_networkConfigurationHasBeenSet(false),
-    m_observabilityConfigurationHasBeenSet(false)
+Service::Service(JsonView jsonValue)
+  : Service()
 {
   *this = jsonValue;
 }

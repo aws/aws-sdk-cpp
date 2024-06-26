@@ -43,28 +43,8 @@ ImageBuilder::ImageBuilder() :
 {
 }
 
-ImageBuilder::ImageBuilder(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_imageArnHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_vpcConfigHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_platform(PlatformType::NOT_SET),
-    m_platformHasBeenSet(false),
-    m_iamRoleArnHasBeenSet(false),
-    m_state(ImageBuilderState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_stateChangeReasonHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_enableDefaultInternetAccess(false),
-    m_enableDefaultInternetAccessHasBeenSet(false),
-    m_domainJoinInfoHasBeenSet(false),
-    m_networkAccessConfigurationHasBeenSet(false),
-    m_imageBuilderErrorsHasBeenSet(false),
-    m_appstreamAgentVersionHasBeenSet(false),
-    m_accessEndpointsHasBeenSet(false)
+ImageBuilder::ImageBuilder(JsonView jsonValue)
+  : ImageBuilder()
 {
   *this = jsonValue;
 }

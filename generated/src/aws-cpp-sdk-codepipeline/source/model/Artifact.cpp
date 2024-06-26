@@ -25,10 +25,8 @@ Artifact::Artifact() :
 {
 }
 
-Artifact::Artifact(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_revisionHasBeenSet(false),
-    m_locationHasBeenSet(false)
+Artifact::Artifact(JsonView jsonValue)
+  : Artifact()
 {
   *this = jsonValue;
 }

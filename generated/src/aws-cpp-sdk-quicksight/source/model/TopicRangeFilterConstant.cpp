@@ -25,10 +25,8 @@ TopicRangeFilterConstant::TopicRangeFilterConstant() :
 {
 }
 
-TopicRangeFilterConstant::TopicRangeFilterConstant(JsonView jsonValue) : 
-    m_constantType(ConstantType::NOT_SET),
-    m_constantTypeHasBeenSet(false),
-    m_rangeConstantHasBeenSet(false)
+TopicRangeFilterConstant::TopicRangeFilterConstant(JsonView jsonValue)
+  : TopicRangeFilterConstant()
 {
   *this = jsonValue;
 }

@@ -29,14 +29,8 @@ ProgressDetail::ProgressDetail() :
 {
 }
 
-ProgressDetail::ProgressDetail(JsonView jsonValue) : 
-    m_currentProgress(RobotDeploymentStep::NOT_SET),
-    m_currentProgressHasBeenSet(false),
-    m_percentDone(0.0),
-    m_percentDoneHasBeenSet(false),
-    m_estimatedTimeRemainingSeconds(0),
-    m_estimatedTimeRemainingSecondsHasBeenSet(false),
-    m_targetResourceHasBeenSet(false)
+ProgressDetail::ProgressDetail(JsonView jsonValue)
+  : ProgressDetail()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ UserSearchCriteria::UserSearchCriteria() :
 {
 }
 
-UserSearchCriteria::UserSearchCriteria(JsonView jsonValue) : 
-    m_orConditionsHasBeenSet(false),
-    m_andConditionsHasBeenSet(false),
-    m_stringConditionHasBeenSet(false),
-    m_hierarchyGroupConditionHasBeenSet(false)
+UserSearchCriteria::UserSearchCriteria(JsonView jsonValue)
+  : UserSearchCriteria()
 {
   *this = jsonValue;
 }

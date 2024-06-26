@@ -24,10 +24,8 @@ AuthorizeEndpointAccessResult::AuthorizeEndpointAccessResult() :
 {
 }
 
-AuthorizeEndpointAccessResult::AuthorizeEndpointAccessResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_status(AuthorizationStatus::NOT_SET),
-    m_allowedAllVPCs(false),
-    m_endpointCount(0)
+AuthorizeEndpointAccessResult::AuthorizeEndpointAccessResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : AuthorizeEndpointAccessResult()
 {
   *this = result;
 }

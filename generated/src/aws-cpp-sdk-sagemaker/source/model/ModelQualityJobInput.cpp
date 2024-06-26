@@ -25,10 +25,8 @@ ModelQualityJobInput::ModelQualityJobInput() :
 {
 }
 
-ModelQualityJobInput::ModelQualityJobInput(JsonView jsonValue) : 
-    m_endpointInputHasBeenSet(false),
-    m_batchTransformInputHasBeenSet(false),
-    m_groundTruthS3InputHasBeenSet(false)
+ModelQualityJobInput::ModelQualityJobInput(JsonView jsonValue)
+  : ModelQualityJobInput()
 {
   *this = jsonValue;
 }

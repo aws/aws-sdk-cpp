@@ -23,9 +23,8 @@ UpdateServiceSettingsResult::UpdateServiceSettingsResult() :
 {
 }
 
-UpdateServiceSettingsResult::UpdateServiceSettingsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_linuxSubscriptionsDiscovery(LinuxSubscriptionsDiscovery::NOT_SET),
-    m_status(Status::NOT_SET)
+UpdateServiceSettingsResult::UpdateServiceSettingsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateServiceSettingsResult()
 {
   *this = result;
 }

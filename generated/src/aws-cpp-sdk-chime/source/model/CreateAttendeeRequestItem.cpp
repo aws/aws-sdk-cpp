@@ -24,9 +24,8 @@ CreateAttendeeRequestItem::CreateAttendeeRequestItem() :
 {
 }
 
-CreateAttendeeRequestItem::CreateAttendeeRequestItem(JsonView jsonValue) : 
-    m_externalUserIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+CreateAttendeeRequestItem::CreateAttendeeRequestItem(JsonView jsonValue)
+  : CreateAttendeeRequestItem()
 {
   *this = jsonValue;
 }

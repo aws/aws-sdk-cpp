@@ -24,9 +24,8 @@ EC2Specification::EC2Specification() :
 {
 }
 
-EC2Specification::EC2Specification(JsonView jsonValue) : 
-    m_offeringClass(OfferingClass::NOT_SET),
-    m_offeringClassHasBeenSet(false)
+EC2Specification::EC2Specification(JsonView jsonValue)
+  : EC2Specification()
 {
   *this = jsonValue;
 }

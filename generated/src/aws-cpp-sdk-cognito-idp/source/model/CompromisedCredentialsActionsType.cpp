@@ -24,9 +24,8 @@ CompromisedCredentialsActionsType::CompromisedCredentialsActionsType() :
 {
 }
 
-CompromisedCredentialsActionsType::CompromisedCredentialsActionsType(JsonView jsonValue) : 
-    m_eventAction(CompromisedCredentialsEventActionType::NOT_SET),
-    m_eventActionHasBeenSet(false)
+CompromisedCredentialsActionsType::CompromisedCredentialsActionsType(JsonView jsonValue)
+  : CompromisedCredentialsActionsType()
 {
   *this = jsonValue;
 }

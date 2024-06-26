@@ -30,13 +30,8 @@ PrivateDnsNameOptionsRequest::PrivateDnsNameOptionsRequest() :
 {
 }
 
-PrivateDnsNameOptionsRequest::PrivateDnsNameOptionsRequest(const XmlNode& xmlNode) : 
-    m_hostnameType(HostnameType::NOT_SET),
-    m_hostnameTypeHasBeenSet(false),
-    m_enableResourceNameDnsARecord(false),
-    m_enableResourceNameDnsARecordHasBeenSet(false),
-    m_enableResourceNameDnsAAAARecord(false),
-    m_enableResourceNameDnsAAAARecordHasBeenSet(false)
+PrivateDnsNameOptionsRequest::PrivateDnsNameOptionsRequest(const XmlNode& xmlNode)
+  : PrivateDnsNameOptionsRequest()
 {
   *this = xmlNode;
 }

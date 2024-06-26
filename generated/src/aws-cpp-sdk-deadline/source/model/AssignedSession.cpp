@@ -26,11 +26,8 @@ AssignedSession::AssignedSession() :
 {
 }
 
-AssignedSession::AssignedSession(JsonView jsonValue) : 
-    m_jobIdHasBeenSet(false),
-    m_logConfigurationHasBeenSet(false),
-    m_queueIdHasBeenSet(false),
-    m_sessionActionsHasBeenSet(false)
+AssignedSession::AssignedSession(JsonView jsonValue)
+  : AssignedSession()
 {
   *this = jsonValue;
 }

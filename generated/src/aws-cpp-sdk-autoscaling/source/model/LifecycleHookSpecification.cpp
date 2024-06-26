@@ -32,15 +32,8 @@ LifecycleHookSpecification::LifecycleHookSpecification() :
 {
 }
 
-LifecycleHookSpecification::LifecycleHookSpecification(const XmlNode& xmlNode) : 
-    m_lifecycleHookNameHasBeenSet(false),
-    m_lifecycleTransitionHasBeenSet(false),
-    m_notificationMetadataHasBeenSet(false),
-    m_heartbeatTimeout(0),
-    m_heartbeatTimeoutHasBeenSet(false),
-    m_defaultResultHasBeenSet(false),
-    m_notificationTargetARNHasBeenSet(false),
-    m_roleARNHasBeenSet(false)
+LifecycleHookSpecification::LifecycleHookSpecification(const XmlNode& xmlNode)
+  : LifecycleHookSpecification()
 {
   *this = xmlNode;
 }

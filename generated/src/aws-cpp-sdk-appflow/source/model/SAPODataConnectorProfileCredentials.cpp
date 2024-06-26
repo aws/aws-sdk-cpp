@@ -24,9 +24,8 @@ SAPODataConnectorProfileCredentials::SAPODataConnectorProfileCredentials() :
 {
 }
 
-SAPODataConnectorProfileCredentials::SAPODataConnectorProfileCredentials(JsonView jsonValue) : 
-    m_basicAuthCredentialsHasBeenSet(false),
-    m_oAuthCredentialsHasBeenSet(false)
+SAPODataConnectorProfileCredentials::SAPODataConnectorProfileCredentials(JsonView jsonValue)
+  : SAPODataConnectorProfileCredentials()
 {
   *this = jsonValue;
 }

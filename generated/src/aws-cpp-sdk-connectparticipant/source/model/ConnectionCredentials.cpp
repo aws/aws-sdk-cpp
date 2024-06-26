@@ -24,9 +24,8 @@ ConnectionCredentials::ConnectionCredentials() :
 {
 }
 
-ConnectionCredentials::ConnectionCredentials(JsonView jsonValue) : 
-    m_connectionTokenHasBeenSet(false),
-    m_expiryHasBeenSet(false)
+ConnectionCredentials::ConnectionCredentials(JsonView jsonValue)
+  : ConnectionCredentials()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ Severity::Severity() :
 {
 }
 
-Severity::Severity(JsonView jsonValue) : 
-    m_description(SeverityDescription::NOT_SET),
-    m_descriptionHasBeenSet(false),
-    m_score(0),
-    m_scoreHasBeenSet(false)
+Severity::Severity(JsonView jsonValue)
+  : Severity()
 {
   *this = jsonValue;
 }

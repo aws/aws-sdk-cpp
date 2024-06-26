@@ -33,18 +33,8 @@ MailboxExportJob::MailboxExportJob() :
 {
 }
 
-MailboxExportJob::MailboxExportJob(JsonView jsonValue) : 
-    m_jobIdHasBeenSet(false),
-    m_entityIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_s3BucketNameHasBeenSet(false),
-    m_s3PathHasBeenSet(false),
-    m_estimatedProgress(0),
-    m_estimatedProgressHasBeenSet(false),
-    m_state(MailboxExportJobState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
+MailboxExportJob::MailboxExportJob(JsonView jsonValue)
+  : MailboxExportJob()
 {
   *this = jsonValue;
 }

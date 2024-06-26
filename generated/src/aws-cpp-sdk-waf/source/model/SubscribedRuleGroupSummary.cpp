@@ -25,10 +25,8 @@ SubscribedRuleGroupSummary::SubscribedRuleGroupSummary() :
 {
 }
 
-SubscribedRuleGroupSummary::SubscribedRuleGroupSummary(JsonView jsonValue) : 
-    m_ruleGroupIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_metricNameHasBeenSet(false)
+SubscribedRuleGroupSummary::SubscribedRuleGroupSummary(JsonView jsonValue)
+  : SubscribedRuleGroupSummary()
 {
   *this = jsonValue;
 }

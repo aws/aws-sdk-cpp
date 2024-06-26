@@ -22,8 +22,8 @@ DeleteFileCacheResult::DeleteFileCacheResult() :
 {
 }
 
-DeleteFileCacheResult::DeleteFileCacheResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_lifecycle(FileCacheLifecycle::NOT_SET)
+DeleteFileCacheResult::DeleteFileCacheResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeleteFileCacheResult()
 {
   *this = result;
 }

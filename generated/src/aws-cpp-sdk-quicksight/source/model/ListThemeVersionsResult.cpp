@@ -22,8 +22,8 @@ ListThemeVersionsResult::ListThemeVersionsResult() :
 {
 }
 
-ListThemeVersionsResult::ListThemeVersionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+ListThemeVersionsResult::ListThemeVersionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ListThemeVersionsResult()
 {
   *this = result;
 }

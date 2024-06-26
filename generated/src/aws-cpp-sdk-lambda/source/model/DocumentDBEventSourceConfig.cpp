@@ -26,11 +26,8 @@ DocumentDBEventSourceConfig::DocumentDBEventSourceConfig() :
 {
 }
 
-DocumentDBEventSourceConfig::DocumentDBEventSourceConfig(JsonView jsonValue) : 
-    m_databaseNameHasBeenSet(false),
-    m_collectionNameHasBeenSet(false),
-    m_fullDocument(FullDocument::NOT_SET),
-    m_fullDocumentHasBeenSet(false)
+DocumentDBEventSourceConfig::DocumentDBEventSourceConfig(JsonView jsonValue)
+  : DocumentDBEventSourceConfig()
 {
   *this = jsonValue;
 }

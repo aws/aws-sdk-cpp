@@ -26,11 +26,8 @@ ContentSourceConfiguration::ContentSourceConfiguration() :
 {
 }
 
-ContentSourceConfiguration::ContentSourceConfiguration(JsonView jsonValue) : 
-    m_dataSourceIdsHasBeenSet(false),
-    m_faqIdsHasBeenSet(false),
-    m_directPutContent(false),
-    m_directPutContentHasBeenSet(false)
+ContentSourceConfiguration::ContentSourceConfiguration(JsonView jsonValue)
+  : ContentSourceConfiguration()
 {
   *this = jsonValue;
 }

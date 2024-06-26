@@ -23,8 +23,8 @@ ValidationDataConfig::ValidationDataConfig() :
 {
 }
 
-ValidationDataConfig::ValidationDataConfig(JsonView jsonValue) : 
-    m_validatorsHasBeenSet(false)
+ValidationDataConfig::ValidationDataConfig(JsonView jsonValue)
+  : ValidationDataConfig()
 {
   *this = jsonValue;
 }

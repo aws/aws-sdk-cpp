@@ -23,8 +23,8 @@ ReadOnlyFieldInfo::ReadOnlyFieldInfo() :
 {
 }
 
-ReadOnlyFieldInfo::ReadOnlyFieldInfo(JsonView jsonValue) : 
-    m_idHasBeenSet(false)
+ReadOnlyFieldInfo::ReadOnlyFieldInfo(JsonView jsonValue)
+  : ReadOnlyFieldInfo()
 {
   *this = jsonValue;
 }

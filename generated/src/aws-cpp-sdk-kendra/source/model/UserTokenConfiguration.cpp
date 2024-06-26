@@ -24,9 +24,8 @@ UserTokenConfiguration::UserTokenConfiguration() :
 {
 }
 
-UserTokenConfiguration::UserTokenConfiguration(JsonView jsonValue) : 
-    m_jwtTokenTypeConfigurationHasBeenSet(false),
-    m_jsonTokenTypeConfigurationHasBeenSet(false)
+UserTokenConfiguration::UserTokenConfiguration(JsonView jsonValue)
+  : UserTokenConfiguration()
 {
   *this = jsonValue;
 }

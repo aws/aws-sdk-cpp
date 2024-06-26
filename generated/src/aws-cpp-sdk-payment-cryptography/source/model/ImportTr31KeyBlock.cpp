@@ -24,9 +24,8 @@ ImportTr31KeyBlock::ImportTr31KeyBlock() :
 {
 }
 
-ImportTr31KeyBlock::ImportTr31KeyBlock(JsonView jsonValue) : 
-    m_wrappingKeyIdentifierHasBeenSet(false),
-    m_wrappedKeyBlockHasBeenSet(false)
+ImportTr31KeyBlock::ImportTr31KeyBlock(JsonView jsonValue)
+  : ImportTr31KeyBlock()
 {
   *this = jsonValue;
 }

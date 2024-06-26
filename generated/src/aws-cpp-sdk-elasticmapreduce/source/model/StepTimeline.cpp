@@ -25,10 +25,8 @@ StepTimeline::StepTimeline() :
 {
 }
 
-StepTimeline::StepTimeline(JsonView jsonValue) : 
-    m_creationDateTimeHasBeenSet(false),
-    m_startDateTimeHasBeenSet(false),
-    m_endDateTimeHasBeenSet(false)
+StepTimeline::StepTimeline(JsonView jsonValue)
+  : StepTimeline()
 {
   *this = jsonValue;
 }

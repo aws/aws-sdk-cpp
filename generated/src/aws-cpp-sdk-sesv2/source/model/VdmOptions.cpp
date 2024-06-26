@@ -24,9 +24,8 @@ VdmOptions::VdmOptions() :
 {
 }
 
-VdmOptions::VdmOptions(JsonView jsonValue) : 
-    m_dashboardOptionsHasBeenSet(false),
-    m_guardianOptionsHasBeenSet(false)
+VdmOptions::VdmOptions(JsonView jsonValue)
+  : VdmOptions()
 {
   *this = jsonValue;
 }

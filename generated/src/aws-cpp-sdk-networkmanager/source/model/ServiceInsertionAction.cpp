@@ -28,13 +28,8 @@ ServiceInsertionAction::ServiceInsertionAction() :
 {
 }
 
-ServiceInsertionAction::ServiceInsertionAction(JsonView jsonValue) : 
-    m_action(SegmentActionServiceInsertion::NOT_SET),
-    m_actionHasBeenSet(false),
-    m_mode(SendViaMode::NOT_SET),
-    m_modeHasBeenSet(false),
-    m_whenSentToHasBeenSet(false),
-    m_viaHasBeenSet(false)
+ServiceInsertionAction::ServiceInsertionAction(JsonView jsonValue)
+  : ServiceInsertionAction()
 {
   *this = jsonValue;
 }

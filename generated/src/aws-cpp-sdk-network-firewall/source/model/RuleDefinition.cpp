@@ -24,9 +24,8 @@ RuleDefinition::RuleDefinition() :
 {
 }
 
-RuleDefinition::RuleDefinition(JsonView jsonValue) : 
-    m_matchAttributesHasBeenSet(false),
-    m_actionsHasBeenSet(false)
+RuleDefinition::RuleDefinition(JsonView jsonValue)
+  : RuleDefinition()
 {
   *this = jsonValue;
 }

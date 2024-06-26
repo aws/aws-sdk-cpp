@@ -30,15 +30,8 @@ S3ReportExportConfig::S3ReportExportConfig() :
 {
 }
 
-S3ReportExportConfig::S3ReportExportConfig(JsonView jsonValue) : 
-    m_bucketHasBeenSet(false),
-    m_bucketOwnerHasBeenSet(false),
-    m_pathHasBeenSet(false),
-    m_packaging(ReportPackagingType::NOT_SET),
-    m_packagingHasBeenSet(false),
-    m_encryptionKeyHasBeenSet(false),
-    m_encryptionDisabled(false),
-    m_encryptionDisabledHasBeenSet(false)
+S3ReportExportConfig::S3ReportExportConfig(JsonView jsonValue)
+  : S3ReportExportConfig()
 {
   *this = jsonValue;
 }

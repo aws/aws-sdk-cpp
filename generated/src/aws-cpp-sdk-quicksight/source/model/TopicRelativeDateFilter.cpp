@@ -27,12 +27,8 @@ TopicRelativeDateFilter::TopicRelativeDateFilter() :
 {
 }
 
-TopicRelativeDateFilter::TopicRelativeDateFilter(JsonView jsonValue) : 
-    m_timeGranularity(TopicTimeGranularity::NOT_SET),
-    m_timeGranularityHasBeenSet(false),
-    m_relativeDateFilterFunction(TopicRelativeDateFilterFunction::NOT_SET),
-    m_relativeDateFilterFunctionHasBeenSet(false),
-    m_constantHasBeenSet(false)
+TopicRelativeDateFilter::TopicRelativeDateFilter(JsonView jsonValue)
+  : TopicRelativeDateFilter()
 {
   *this = jsonValue;
 }

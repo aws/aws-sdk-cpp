@@ -27,12 +27,8 @@ Predicate::Predicate() :
 {
 }
 
-Predicate::Predicate(JsonView jsonValue) : 
-    m_negated(false),
-    m_negatedHasBeenSet(false),
-    m_type(PredicateType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_dataIdHasBeenSet(false)
+Predicate::Predicate(JsonView jsonValue)
+  : Predicate()
 {
   *this = jsonValue;
 }

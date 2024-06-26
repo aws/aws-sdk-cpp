@@ -22,8 +22,8 @@ GetReadSetImportJobResult::GetReadSetImportJobResult() :
 {
 }
 
-GetReadSetImportJobResult::GetReadSetImportJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(ReadSetImportJobStatus::NOT_SET)
+GetReadSetImportJobResult::GetReadSetImportJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetReadSetImportJobResult()
 {
   *this = result;
 }

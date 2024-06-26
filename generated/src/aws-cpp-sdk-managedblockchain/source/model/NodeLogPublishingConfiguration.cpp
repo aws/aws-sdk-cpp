@@ -23,8 +23,8 @@ NodeLogPublishingConfiguration::NodeLogPublishingConfiguration() :
 {
 }
 
-NodeLogPublishingConfiguration::NodeLogPublishingConfiguration(JsonView jsonValue) : 
-    m_fabricHasBeenSet(false)
+NodeLogPublishingConfiguration::NodeLogPublishingConfiguration(JsonView jsonValue)
+  : NodeLogPublishingConfiguration()
 {
   *this = jsonValue;
 }

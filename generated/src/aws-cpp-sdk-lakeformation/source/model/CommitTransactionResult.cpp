@@ -22,8 +22,8 @@ CommitTransactionResult::CommitTransactionResult() :
 {
 }
 
-CommitTransactionResult::CommitTransactionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_transactionStatus(TransactionStatus::NOT_SET)
+CommitTransactionResult::CommitTransactionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CommitTransactionResult()
 {
   *this = result;
 }

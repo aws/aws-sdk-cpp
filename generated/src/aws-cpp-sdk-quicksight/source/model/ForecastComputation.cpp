@@ -40,25 +40,8 @@ ForecastComputation::ForecastComputation() :
 {
 }
 
-ForecastComputation::ForecastComputation(JsonView jsonValue) : 
-    m_computationIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_timeHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_periodsForward(0),
-    m_periodsForwardHasBeenSet(false),
-    m_periodsBackward(0),
-    m_periodsBackwardHasBeenSet(false),
-    m_upperBoundary(0.0),
-    m_upperBoundaryHasBeenSet(false),
-    m_lowerBoundary(0.0),
-    m_lowerBoundaryHasBeenSet(false),
-    m_predictionInterval(0),
-    m_predictionIntervalHasBeenSet(false),
-    m_seasonality(ForecastComputationSeasonality::NOT_SET),
-    m_seasonalityHasBeenSet(false),
-    m_customSeasonalityValue(0),
-    m_customSeasonalityValueHasBeenSet(false)
+ForecastComputation::ForecastComputation(JsonView jsonValue)
+  : ForecastComputation()
 {
   *this = jsonValue;
 }

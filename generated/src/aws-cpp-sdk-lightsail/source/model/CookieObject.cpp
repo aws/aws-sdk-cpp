@@ -25,10 +25,8 @@ CookieObject::CookieObject() :
 {
 }
 
-CookieObject::CookieObject(JsonView jsonValue) : 
-    m_option(ForwardValues::NOT_SET),
-    m_optionHasBeenSet(false),
-    m_cookiesAllowListHasBeenSet(false)
+CookieObject::CookieObject(JsonView jsonValue)
+  : CookieObject()
 {
   *this = jsonValue;
 }

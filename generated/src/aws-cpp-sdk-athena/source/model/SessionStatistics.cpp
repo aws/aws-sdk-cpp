@@ -24,9 +24,8 @@ SessionStatistics::SessionStatistics() :
 {
 }
 
-SessionStatistics::SessionStatistics(JsonView jsonValue) : 
-    m_dpuExecutionInMillis(0),
-    m_dpuExecutionInMillisHasBeenSet(false)
+SessionStatistics::SessionStatistics(JsonView jsonValue)
+  : SessionStatistics()
 {
   *this = jsonValue;
 }

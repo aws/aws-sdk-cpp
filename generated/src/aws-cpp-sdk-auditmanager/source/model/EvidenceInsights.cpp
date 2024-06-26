@@ -28,13 +28,8 @@ EvidenceInsights::EvidenceInsights() :
 {
 }
 
-EvidenceInsights::EvidenceInsights(JsonView jsonValue) : 
-    m_noncompliantEvidenceCount(0),
-    m_noncompliantEvidenceCountHasBeenSet(false),
-    m_compliantEvidenceCount(0),
-    m_compliantEvidenceCountHasBeenSet(false),
-    m_inconclusiveEvidenceCount(0),
-    m_inconclusiveEvidenceCountHasBeenSet(false)
+EvidenceInsights::EvidenceInsights(JsonView jsonValue)
+  : EvidenceInsights()
 {
   *this = jsonValue;
 }

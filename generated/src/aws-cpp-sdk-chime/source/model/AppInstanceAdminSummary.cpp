@@ -23,8 +23,8 @@ AppInstanceAdminSummary::AppInstanceAdminSummary() :
 {
 }
 
-AppInstanceAdminSummary::AppInstanceAdminSummary(JsonView jsonValue) : 
-    m_adminHasBeenSet(false)
+AppInstanceAdminSummary::AppInstanceAdminSummary(JsonView jsonValue)
+  : AppInstanceAdminSummary()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ TaskContainerDependency::TaskContainerDependency() :
 {
 }
 
-TaskContainerDependency::TaskContainerDependency(JsonView jsonValue) : 
-    m_containerNameHasBeenSet(false),
-    m_conditionHasBeenSet(false)
+TaskContainerDependency::TaskContainerDependency(JsonView jsonValue)
+  : TaskContainerDependency()
 {
   *this = jsonValue;
 }

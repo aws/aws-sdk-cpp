@@ -24,9 +24,8 @@ DefaultMessage::DefaultMessage() :
 {
 }
 
-DefaultMessage::DefaultMessage(JsonView jsonValue) : 
-    m_bodyHasBeenSet(false),
-    m_substitutionsHasBeenSet(false)
+DefaultMessage::DefaultMessage(JsonView jsonValue)
+  : DefaultMessage()
 {
   *this = jsonValue;
 }

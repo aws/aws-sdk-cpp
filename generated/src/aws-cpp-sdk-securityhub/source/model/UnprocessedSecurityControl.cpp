@@ -26,11 +26,8 @@ UnprocessedSecurityControl::UnprocessedSecurityControl() :
 {
 }
 
-UnprocessedSecurityControl::UnprocessedSecurityControl(JsonView jsonValue) : 
-    m_securityControlIdHasBeenSet(false),
-    m_errorCode(UnprocessedErrorCode::NOT_SET),
-    m_errorCodeHasBeenSet(false),
-    m_errorReasonHasBeenSet(false)
+UnprocessedSecurityControl::UnprocessedSecurityControl(JsonView jsonValue)
+  : UnprocessedSecurityControl()
 {
   *this = jsonValue;
 }

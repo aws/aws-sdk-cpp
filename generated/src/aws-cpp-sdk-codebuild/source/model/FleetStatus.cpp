@@ -27,12 +27,8 @@ FleetStatus::FleetStatus() :
 {
 }
 
-FleetStatus::FleetStatus(JsonView jsonValue) : 
-    m_statusCode(FleetStatusCode::NOT_SET),
-    m_statusCodeHasBeenSet(false),
-    m_context(FleetContextCode::NOT_SET),
-    m_contextHasBeenSet(false),
-    m_messageHasBeenSet(false)
+FleetStatus::FleetStatus(JsonView jsonValue)
+  : FleetStatus()
 {
   *this = jsonValue;
 }

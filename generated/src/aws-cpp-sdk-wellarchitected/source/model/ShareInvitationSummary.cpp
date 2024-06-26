@@ -37,22 +37,8 @@ ShareInvitationSummary::ShareInvitationSummary() :
 {
 }
 
-ShareInvitationSummary::ShareInvitationSummary(JsonView jsonValue) : 
-    m_shareInvitationIdHasBeenSet(false),
-    m_sharedByHasBeenSet(false),
-    m_sharedWithHasBeenSet(false),
-    m_permissionType(PermissionType::NOT_SET),
-    m_permissionTypeHasBeenSet(false),
-    m_shareResourceType(ShareResourceType::NOT_SET),
-    m_shareResourceTypeHasBeenSet(false),
-    m_workloadNameHasBeenSet(false),
-    m_workloadIdHasBeenSet(false),
-    m_lensNameHasBeenSet(false),
-    m_lensArnHasBeenSet(false),
-    m_profileNameHasBeenSet(false),
-    m_profileArnHasBeenSet(false),
-    m_templateNameHasBeenSet(false),
-    m_templateArnHasBeenSet(false)
+ShareInvitationSummary::ShareInvitationSummary(JsonView jsonValue)
+  : ShareInvitationSummary()
 {
   *this = jsonValue;
 }

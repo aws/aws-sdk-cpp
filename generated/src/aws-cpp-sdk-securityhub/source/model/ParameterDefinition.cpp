@@ -24,9 +24,8 @@ ParameterDefinition::ParameterDefinition() :
 {
 }
 
-ParameterDefinition::ParameterDefinition(JsonView jsonValue) : 
-    m_descriptionHasBeenSet(false),
-    m_configurationOptionsHasBeenSet(false)
+ParameterDefinition::ParameterDefinition(JsonView jsonValue)
+  : ParameterDefinition()
 {
   *this = jsonValue;
 }

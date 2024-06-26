@@ -26,11 +26,8 @@ AwsRdsDbInstanceEndpoint::AwsRdsDbInstanceEndpoint() :
 {
 }
 
-AwsRdsDbInstanceEndpoint::AwsRdsDbInstanceEndpoint(JsonView jsonValue) : 
-    m_addressHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_hostedZoneIdHasBeenSet(false)
+AwsRdsDbInstanceEndpoint::AwsRdsDbInstanceEndpoint(JsonView jsonValue)
+  : AwsRdsDbInstanceEndpoint()
 {
   *this = jsonValue;
 }

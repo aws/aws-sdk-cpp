@@ -24,9 +24,8 @@ OfferNameFilter::OfferNameFilter() :
 {
 }
 
-OfferNameFilter::OfferNameFilter(JsonView jsonValue) : 
-    m_valueListHasBeenSet(false),
-    m_wildCardValueHasBeenSet(false)
+OfferNameFilter::OfferNameFilter(JsonView jsonValue)
+  : OfferNameFilter()
 {
   *this = jsonValue;
 }

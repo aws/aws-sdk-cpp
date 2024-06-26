@@ -28,13 +28,8 @@ RDSDBUtilizationMetric::RDSDBUtilizationMetric() :
 {
 }
 
-RDSDBUtilizationMetric::RDSDBUtilizationMetric(JsonView jsonValue) : 
-    m_name(RDSDBMetricName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_statistic(RDSDBMetricStatistic::NOT_SET),
-    m_statisticHasBeenSet(false),
-    m_value(0.0),
-    m_valueHasBeenSet(false)
+RDSDBUtilizationMetric::RDSDBUtilizationMetric(JsonView jsonValue)
+  : RDSDBUtilizationMetric()
 {
   *this = jsonValue;
 }

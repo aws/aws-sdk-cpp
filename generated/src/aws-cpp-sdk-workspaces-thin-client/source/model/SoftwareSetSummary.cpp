@@ -29,14 +29,8 @@ SoftwareSetSummary::SoftwareSetSummary() :
 {
 }
 
-SoftwareSetSummary::SoftwareSetSummary(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_releasedAtHasBeenSet(false),
-    m_supportedUntilHasBeenSet(false),
-    m_validationStatus(SoftwareSetValidationStatus::NOT_SET),
-    m_validationStatusHasBeenSet(false),
-    m_arnHasBeenSet(false)
+SoftwareSetSummary::SoftwareSetSummary(JsonView jsonValue)
+  : SoftwareSetSummary()
 {
   *this = jsonValue;
 }

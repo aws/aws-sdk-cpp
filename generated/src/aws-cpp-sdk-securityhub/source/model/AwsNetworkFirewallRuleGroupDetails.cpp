@@ -30,15 +30,8 @@ AwsNetworkFirewallRuleGroupDetails::AwsNetworkFirewallRuleGroupDetails() :
 {
 }
 
-AwsNetworkFirewallRuleGroupDetails::AwsNetworkFirewallRuleGroupDetails(JsonView jsonValue) : 
-    m_capacity(0),
-    m_capacityHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_ruleGroupHasBeenSet(false),
-    m_ruleGroupArnHasBeenSet(false),
-    m_ruleGroupIdHasBeenSet(false),
-    m_ruleGroupNameHasBeenSet(false),
-    m_typeHasBeenSet(false)
+AwsNetworkFirewallRuleGroupDetails::AwsNetworkFirewallRuleGroupDetails(JsonView jsonValue)
+  : AwsNetworkFirewallRuleGroupDetails()
 {
   *this = jsonValue;
 }

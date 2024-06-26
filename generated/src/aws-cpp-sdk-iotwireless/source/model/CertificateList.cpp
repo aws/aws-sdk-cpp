@@ -25,10 +25,8 @@ CertificateList::CertificateList() :
 {
 }
 
-CertificateList::CertificateList(JsonView jsonValue) : 
-    m_signingAlg(SigningAlg::NOT_SET),
-    m_signingAlgHasBeenSet(false),
-    m_valueHasBeenSet(false)
+CertificateList::CertificateList(JsonView jsonValue)
+  : CertificateList()
 {
   *this = jsonValue;
 }

@@ -25,8 +25,8 @@ EnvironmentResourcesDescription::EnvironmentResourcesDescription() :
 {
 }
 
-EnvironmentResourcesDescription::EnvironmentResourcesDescription(const XmlNode& xmlNode) : 
-    m_loadBalancerHasBeenSet(false)
+EnvironmentResourcesDescription::EnvironmentResourcesDescription(const XmlNode& xmlNode)
+  : EnvironmentResourcesDescription()
 {
   *this = xmlNode;
 }

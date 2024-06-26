@@ -24,9 +24,8 @@ ScaleOutPolicy::ScaleOutPolicy() :
 {
 }
 
-ScaleOutPolicy::ScaleOutPolicy(JsonView jsonValue) : 
-    m_cpuUtilizationPercentage(0),
-    m_cpuUtilizationPercentageHasBeenSet(false)
+ScaleOutPolicy::ScaleOutPolicy(JsonView jsonValue)
+  : ScaleOutPolicy()
 {
   *this = jsonValue;
 }

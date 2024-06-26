@@ -24,9 +24,8 @@ ModelStreamError::ModelStreamError() :
 {
 }
 
-ModelStreamError::ModelStreamError(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_errorCodeHasBeenSet(false)
+ModelStreamError::ModelStreamError(JsonView jsonValue)
+  : ModelStreamError()
 {
   *this = jsonValue;
 }

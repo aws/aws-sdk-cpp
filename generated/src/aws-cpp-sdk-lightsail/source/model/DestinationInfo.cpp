@@ -24,9 +24,8 @@ DestinationInfo::DestinationInfo() :
 {
 }
 
-DestinationInfo::DestinationInfo(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_serviceHasBeenSet(false)
+DestinationInfo::DestinationInfo(JsonView jsonValue)
+  : DestinationInfo()
 {
   *this = jsonValue;
 }

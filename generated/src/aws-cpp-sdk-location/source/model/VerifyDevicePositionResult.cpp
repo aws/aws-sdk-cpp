@@ -22,8 +22,8 @@ VerifyDevicePositionResult::VerifyDevicePositionResult() :
 {
 }
 
-VerifyDevicePositionResult::VerifyDevicePositionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_distanceUnit(DistanceUnit::NOT_SET)
+VerifyDevicePositionResult::VerifyDevicePositionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : VerifyDevicePositionResult()
 {
   *this = result;
 }

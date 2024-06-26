@@ -22,8 +22,8 @@ GetManagedResourceResult::GetManagedResourceResult() :
 {
 }
 
-GetManagedResourceResult::GetManagedResourceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_zonalAutoshiftStatus(ZonalAutoshiftStatus::NOT_SET)
+GetManagedResourceResult::GetManagedResourceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetManagedResourceResult()
 {
   *this = result;
 }

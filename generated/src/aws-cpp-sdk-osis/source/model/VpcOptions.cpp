@@ -27,12 +27,8 @@ VpcOptions::VpcOptions() :
 {
 }
 
-VpcOptions::VpcOptions(JsonView jsonValue) : 
-    m_subnetIdsHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false),
-    m_vpcAttachmentOptionsHasBeenSet(false),
-    m_vpcEndpointManagement(VpcEndpointManagement::NOT_SET),
-    m_vpcEndpointManagementHasBeenSet(false)
+VpcOptions::VpcOptions(JsonView jsonValue)
+  : VpcOptions()
 {
   *this = jsonValue;
 }

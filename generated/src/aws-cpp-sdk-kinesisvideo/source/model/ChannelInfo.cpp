@@ -31,16 +31,8 @@ ChannelInfo::ChannelInfo() :
 {
 }
 
-ChannelInfo::ChannelInfo(JsonView jsonValue) : 
-    m_channelNameHasBeenSet(false),
-    m_channelARNHasBeenSet(false),
-    m_channelType(ChannelType::NOT_SET),
-    m_channelTypeHasBeenSet(false),
-    m_channelStatus(Status::NOT_SET),
-    m_channelStatusHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_singleMasterConfigurationHasBeenSet(false),
-    m_versionHasBeenSet(false)
+ChannelInfo::ChannelInfo(JsonView jsonValue)
+  : ChannelInfo()
 {
   *this = jsonValue;
 }

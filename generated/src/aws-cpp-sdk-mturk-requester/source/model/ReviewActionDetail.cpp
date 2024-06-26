@@ -31,16 +31,8 @@ ReviewActionDetail::ReviewActionDetail() :
 {
 }
 
-ReviewActionDetail::ReviewActionDetail(JsonView jsonValue) : 
-    m_actionIdHasBeenSet(false),
-    m_actionNameHasBeenSet(false),
-    m_targetIdHasBeenSet(false),
-    m_targetTypeHasBeenSet(false),
-    m_status(ReviewActionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_completeTimeHasBeenSet(false),
-    m_resultHasBeenSet(false),
-    m_errorCodeHasBeenSet(false)
+ReviewActionDetail::ReviewActionDetail(JsonView jsonValue)
+  : ReviewActionDetail()
 {
   *this = jsonValue;
 }

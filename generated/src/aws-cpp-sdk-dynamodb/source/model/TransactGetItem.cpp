@@ -23,8 +23,8 @@ TransactGetItem::TransactGetItem() :
 {
 }
 
-TransactGetItem::TransactGetItem(JsonView jsonValue) : 
-    m_getHasBeenSet(false)
+TransactGetItem::TransactGetItem(JsonView jsonValue)
+  : TransactGetItem()
 {
   *this = jsonValue;
 }

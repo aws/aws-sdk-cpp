@@ -25,10 +25,8 @@ AutoTuneOptionsInput::AutoTuneOptionsInput() :
 {
 }
 
-AutoTuneOptionsInput::AutoTuneOptionsInput(JsonView jsonValue) : 
-    m_desiredState(AutoTuneDesiredState::NOT_SET),
-    m_desiredStateHasBeenSet(false),
-    m_maintenanceSchedulesHasBeenSet(false)
+AutoTuneOptionsInput::AutoTuneOptionsInput(JsonView jsonValue)
+  : AutoTuneOptionsInput()
 {
   *this = jsonValue;
 }

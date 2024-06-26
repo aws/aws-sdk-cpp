@@ -23,9 +23,8 @@ DescribeGatewayInformationResult::DescribeGatewayInformationResult() :
 {
 }
 
-DescribeGatewayInformationResult::DescribeGatewayInformationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_hostEnvironment(HostEnvironment::NOT_SET),
-    m_gatewayCapacity(GatewayCapacity::NOT_SET)
+DescribeGatewayInformationResult::DescribeGatewayInformationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeGatewayInformationResult()
 {
   *this = result;
 }

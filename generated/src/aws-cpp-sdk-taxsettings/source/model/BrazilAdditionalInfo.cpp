@@ -24,9 +24,8 @@ BrazilAdditionalInfo::BrazilAdditionalInfo() :
 {
 }
 
-BrazilAdditionalInfo::BrazilAdditionalInfo(JsonView jsonValue) : 
-    m_ccmCodeHasBeenSet(false),
-    m_legalNatureCodeHasBeenSet(false)
+BrazilAdditionalInfo::BrazilAdditionalInfo(JsonView jsonValue)
+  : BrazilAdditionalInfo()
 {
   *this = jsonValue;
 }

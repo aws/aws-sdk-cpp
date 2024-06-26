@@ -28,13 +28,8 @@ EndpointDetails::EndpointDetails() :
 {
 }
 
-EndpointDetails::EndpointDetails(JsonView jsonValue) : 
-    m_awsGroundStationAgentEndpointHasBeenSet(false),
-    m_endpointHasBeenSet(false),
-    m_healthReasonsHasBeenSet(false),
-    m_healthStatus(CapabilityHealth::NOT_SET),
-    m_healthStatusHasBeenSet(false),
-    m_securityDetailsHasBeenSet(false)
+EndpointDetails::EndpointDetails(JsonView jsonValue)
+  : EndpointDetails()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ StartSourceNetworkRecoveryRequestNetworkEntry::StartSourceNetworkRecoveryRequest
 {
 }
 
-StartSourceNetworkRecoveryRequestNetworkEntry::StartSourceNetworkRecoveryRequestNetworkEntry(JsonView jsonValue) : 
-    m_cfnStackNameHasBeenSet(false),
-    m_sourceNetworkIDHasBeenSet(false)
+StartSourceNetworkRecoveryRequestNetworkEntry::StartSourceNetworkRecoveryRequestNetworkEntry(JsonView jsonValue)
+  : StartSourceNetworkRecoveryRequestNetworkEntry()
 {
   *this = jsonValue;
 }

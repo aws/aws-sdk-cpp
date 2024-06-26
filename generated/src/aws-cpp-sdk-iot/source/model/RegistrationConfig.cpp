@@ -25,10 +25,8 @@ RegistrationConfig::RegistrationConfig() :
 {
 }
 
-RegistrationConfig::RegistrationConfig(JsonView jsonValue) : 
-    m_templateBodyHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_templateNameHasBeenSet(false)
+RegistrationConfig::RegistrationConfig(JsonView jsonValue)
+  : RegistrationConfig()
 {
   *this = jsonValue;
 }

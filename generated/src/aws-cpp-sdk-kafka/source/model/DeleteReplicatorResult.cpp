@@ -22,8 +22,8 @@ DeleteReplicatorResult::DeleteReplicatorResult() :
 {
 }
 
-DeleteReplicatorResult::DeleteReplicatorResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_replicatorState(ReplicatorState::NOT_SET)
+DeleteReplicatorResult::DeleteReplicatorResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeleteReplicatorResult()
 {
   *this = result;
 }

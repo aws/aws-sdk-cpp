@@ -26,9 +26,8 @@ IpamPublicAddressSecurityGroup::IpamPublicAddressSecurityGroup() :
 {
 }
 
-IpamPublicAddressSecurityGroup::IpamPublicAddressSecurityGroup(const XmlNode& xmlNode) : 
-    m_groupNameHasBeenSet(false),
-    m_groupIdHasBeenSet(false)
+IpamPublicAddressSecurityGroup::IpamPublicAddressSecurityGroup(const XmlNode& xmlNode)
+  : IpamPublicAddressSecurityGroup()
 {
   *this = xmlNode;
 }

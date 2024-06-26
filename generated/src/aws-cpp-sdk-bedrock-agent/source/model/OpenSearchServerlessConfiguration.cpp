@@ -25,10 +25,8 @@ OpenSearchServerlessConfiguration::OpenSearchServerlessConfiguration() :
 {
 }
 
-OpenSearchServerlessConfiguration::OpenSearchServerlessConfiguration(JsonView jsonValue) : 
-    m_collectionArnHasBeenSet(false),
-    m_fieldMappingHasBeenSet(false),
-    m_vectorIndexNameHasBeenSet(false)
+OpenSearchServerlessConfiguration::OpenSearchServerlessConfiguration(JsonView jsonValue)
+  : OpenSearchServerlessConfiguration()
 {
   *this = jsonValue;
 }

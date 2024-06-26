@@ -24,9 +24,8 @@ WAFLimitsExceededException::WAFLimitsExceededException() :
 {
 }
 
-WAFLimitsExceededException::WAFLimitsExceededException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_sourceTypeHasBeenSet(false)
+WAFLimitsExceededException::WAFLimitsExceededException(JsonView jsonValue)
+  : WAFLimitsExceededException()
 {
   *this = jsonValue;
 }

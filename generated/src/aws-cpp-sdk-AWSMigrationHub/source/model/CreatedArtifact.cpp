@@ -24,9 +24,8 @@ CreatedArtifact::CreatedArtifact() :
 {
 }
 
-CreatedArtifact::CreatedArtifact(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+CreatedArtifact::CreatedArtifact(JsonView jsonValue)
+  : CreatedArtifact()
 {
   *this = jsonValue;
 }

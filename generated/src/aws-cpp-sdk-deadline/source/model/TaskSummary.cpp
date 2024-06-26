@@ -37,22 +37,8 @@ TaskSummary::TaskSummary() :
 {
 }
 
-TaskSummary::TaskSummary(JsonView jsonValue) : 
-    m_createdAtHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_endedAtHasBeenSet(false),
-    m_failureRetryCount(0),
-    m_failureRetryCountHasBeenSet(false),
-    m_latestSessionActionIdHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_runStatus(TaskRunStatus::NOT_SET),
-    m_runStatusHasBeenSet(false),
-    m_startedAtHasBeenSet(false),
-    m_targetRunStatus(TaskTargetRunStatus::NOT_SET),
-    m_targetRunStatusHasBeenSet(false),
-    m_taskIdHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_updatedByHasBeenSet(false)
+TaskSummary::TaskSummary(JsonView jsonValue)
+  : TaskSummary()
 {
   *this = jsonValue;
 }

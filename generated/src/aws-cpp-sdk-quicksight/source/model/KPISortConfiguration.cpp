@@ -23,8 +23,8 @@ KPISortConfiguration::KPISortConfiguration() :
 {
 }
 
-KPISortConfiguration::KPISortConfiguration(JsonView jsonValue) : 
-    m_trendGroupSortHasBeenSet(false)
+KPISortConfiguration::KPISortConfiguration(JsonView jsonValue)
+  : KPISortConfiguration()
 {
   *this = jsonValue;
 }

@@ -28,11 +28,8 @@ IdFormat::IdFormat() :
 {
 }
 
-IdFormat::IdFormat(const XmlNode& xmlNode) : 
-    m_deadlineHasBeenSet(false),
-    m_resourceHasBeenSet(false),
-    m_useLongIds(false),
-    m_useLongIdsHasBeenSet(false)
+IdFormat::IdFormat(const XmlNode& xmlNode)
+  : IdFormat()
 {
   *this = xmlNode;
 }

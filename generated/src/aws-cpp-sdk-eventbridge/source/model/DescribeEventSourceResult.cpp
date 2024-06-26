@@ -22,8 +22,8 @@ DescribeEventSourceResult::DescribeEventSourceResult() :
 {
 }
 
-DescribeEventSourceResult::DescribeEventSourceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_state(EventSourceState::NOT_SET)
+DescribeEventSourceResult::DescribeEventSourceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeEventSourceResult()
 {
   *this = result;
 }

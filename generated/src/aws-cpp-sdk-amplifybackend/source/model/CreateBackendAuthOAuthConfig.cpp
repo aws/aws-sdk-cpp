@@ -29,14 +29,8 @@ CreateBackendAuthOAuthConfig::CreateBackendAuthOAuthConfig() :
 {
 }
 
-CreateBackendAuthOAuthConfig::CreateBackendAuthOAuthConfig(JsonView jsonValue) : 
-    m_domainPrefixHasBeenSet(false),
-    m_oAuthGrantType(OAuthGrantType::NOT_SET),
-    m_oAuthGrantTypeHasBeenSet(false),
-    m_oAuthScopesHasBeenSet(false),
-    m_redirectSignInURIsHasBeenSet(false),
-    m_redirectSignOutURIsHasBeenSet(false),
-    m_socialProviderSettingsHasBeenSet(false)
+CreateBackendAuthOAuthConfig::CreateBackendAuthOAuthConfig(JsonView jsonValue)
+  : CreateBackendAuthOAuthConfig()
 {
   *this = jsonValue;
 }

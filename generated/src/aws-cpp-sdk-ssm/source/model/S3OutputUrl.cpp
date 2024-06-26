@@ -23,8 +23,8 @@ S3OutputUrl::S3OutputUrl() :
 {
 }
 
-S3OutputUrl::S3OutputUrl(JsonView jsonValue) : 
-    m_outputUrlHasBeenSet(false)
+S3OutputUrl::S3OutputUrl(JsonView jsonValue)
+  : S3OutputUrl()
 {
   *this = jsonValue;
 }

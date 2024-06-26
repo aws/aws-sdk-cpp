@@ -25,10 +25,8 @@ ReportDeliveryChannel::ReportDeliveryChannel() :
 {
 }
 
-ReportDeliveryChannel::ReportDeliveryChannel(JsonView jsonValue) : 
-    m_s3BucketNameHasBeenSet(false),
-    m_s3KeyPrefixHasBeenSet(false),
-    m_formatsHasBeenSet(false)
+ReportDeliveryChannel::ReportDeliveryChannel(JsonView jsonValue)
+  : ReportDeliveryChannel()
 {
   *this = jsonValue;
 }

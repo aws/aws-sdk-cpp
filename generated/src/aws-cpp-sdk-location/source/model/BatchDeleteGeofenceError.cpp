@@ -24,9 +24,8 @@ BatchDeleteGeofenceError::BatchDeleteGeofenceError() :
 {
 }
 
-BatchDeleteGeofenceError::BatchDeleteGeofenceError(JsonView jsonValue) : 
-    m_geofenceIdHasBeenSet(false),
-    m_errorHasBeenSet(false)
+BatchDeleteGeofenceError::BatchDeleteGeofenceError(JsonView jsonValue)
+  : BatchDeleteGeofenceError()
 {
   *this = jsonValue;
 }

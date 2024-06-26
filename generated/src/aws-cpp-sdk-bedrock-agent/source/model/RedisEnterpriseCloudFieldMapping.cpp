@@ -25,10 +25,8 @@ RedisEnterpriseCloudFieldMapping::RedisEnterpriseCloudFieldMapping() :
 {
 }
 
-RedisEnterpriseCloudFieldMapping::RedisEnterpriseCloudFieldMapping(JsonView jsonValue) : 
-    m_metadataFieldHasBeenSet(false),
-    m_textFieldHasBeenSet(false),
-    m_vectorFieldHasBeenSet(false)
+RedisEnterpriseCloudFieldMapping::RedisEnterpriseCloudFieldMapping(JsonView jsonValue)
+  : RedisEnterpriseCloudFieldMapping()
 {
   *this = jsonValue;
 }

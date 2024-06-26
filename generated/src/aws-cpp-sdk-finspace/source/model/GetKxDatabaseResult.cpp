@@ -24,10 +24,8 @@ GetKxDatabaseResult::GetKxDatabaseResult() :
 {
 }
 
-GetKxDatabaseResult::GetKxDatabaseResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_numBytes(0),
-    m_numChangesets(0),
-    m_numFiles(0)
+GetKxDatabaseResult::GetKxDatabaseResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetKxDatabaseResult()
 {
   *this = result;
 }

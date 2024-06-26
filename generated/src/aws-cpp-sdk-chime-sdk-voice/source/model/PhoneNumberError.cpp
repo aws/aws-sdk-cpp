@@ -26,11 +26,8 @@ PhoneNumberError::PhoneNumberError() :
 {
 }
 
-PhoneNumberError::PhoneNumberError(JsonView jsonValue) : 
-    m_phoneNumberIdHasBeenSet(false),
-    m_errorCode(ErrorCode::NOT_SET),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
+PhoneNumberError::PhoneNumberError(JsonView jsonValue)
+  : PhoneNumberError()
 {
   *this = jsonValue;
 }

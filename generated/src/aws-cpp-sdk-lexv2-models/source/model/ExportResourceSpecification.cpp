@@ -26,11 +26,8 @@ ExportResourceSpecification::ExportResourceSpecification() :
 {
 }
 
-ExportResourceSpecification::ExportResourceSpecification(JsonView jsonValue) : 
-    m_botExportSpecificationHasBeenSet(false),
-    m_botLocaleExportSpecificationHasBeenSet(false),
-    m_customVocabularyExportSpecificationHasBeenSet(false),
-    m_testSetExportSpecificationHasBeenSet(false)
+ExportResourceSpecification::ExportResourceSpecification(JsonView jsonValue)
+  : ExportResourceSpecification()
 {
   *this = jsonValue;
 }

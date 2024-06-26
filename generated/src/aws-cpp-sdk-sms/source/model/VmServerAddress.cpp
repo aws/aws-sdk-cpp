@@ -24,9 +24,8 @@ VmServerAddress::VmServerAddress() :
 {
 }
 
-VmServerAddress::VmServerAddress(JsonView jsonValue) : 
-    m_vmManagerIdHasBeenSet(false),
-    m_vmIdHasBeenSet(false)
+VmServerAddress::VmServerAddress(JsonView jsonValue)
+  : VmServerAddress()
 {
   *this = jsonValue;
 }

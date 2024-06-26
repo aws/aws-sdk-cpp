@@ -26,11 +26,8 @@ WriteSegmentRequest::WriteSegmentRequest() :
 {
 }
 
-WriteSegmentRequest::WriteSegmentRequest(JsonView jsonValue) : 
-    m_dimensionsHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_segmentGroupsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+WriteSegmentRequest::WriteSegmentRequest(JsonView jsonValue)
+  : WriteSegmentRequest()
 {
   *this = jsonValue;
 }

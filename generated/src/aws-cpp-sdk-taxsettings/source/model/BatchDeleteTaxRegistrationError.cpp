@@ -25,10 +25,8 @@ BatchDeleteTaxRegistrationError::BatchDeleteTaxRegistrationError() :
 {
 }
 
-BatchDeleteTaxRegistrationError::BatchDeleteTaxRegistrationError(JsonView jsonValue) : 
-    m_accountIdHasBeenSet(false),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+BatchDeleteTaxRegistrationError::BatchDeleteTaxRegistrationError(JsonView jsonValue)
+  : BatchDeleteTaxRegistrationError()
 {
   *this = jsonValue;
 }

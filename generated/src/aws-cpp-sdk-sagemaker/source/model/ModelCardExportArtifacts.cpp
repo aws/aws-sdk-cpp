@@ -23,8 +23,8 @@ ModelCardExportArtifacts::ModelCardExportArtifacts() :
 {
 }
 
-ModelCardExportArtifacts::ModelCardExportArtifacts(JsonView jsonValue) : 
-    m_s3ExportArtifactsHasBeenSet(false)
+ModelCardExportArtifacts::ModelCardExportArtifacts(JsonView jsonValue)
+  : ModelCardExportArtifacts()
 {
   *this = jsonValue;
 }

@@ -27,12 +27,8 @@ UserSummary::UserSummary() :
 {
 }
 
-UserSummary::UserSummary(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_usernameHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_lastModifiedRegionHasBeenSet(false)
+UserSummary::UserSummary(JsonView jsonValue)
+  : UserSummary()
 {
   *this = jsonValue;
 }

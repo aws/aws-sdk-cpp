@@ -28,11 +28,8 @@ InstanceBlockDeviceMappingSpecification::InstanceBlockDeviceMappingSpecification
 {
 }
 
-InstanceBlockDeviceMappingSpecification::InstanceBlockDeviceMappingSpecification(const XmlNode& xmlNode) : 
-    m_deviceNameHasBeenSet(false),
-    m_ebsHasBeenSet(false),
-    m_noDeviceHasBeenSet(false),
-    m_virtualNameHasBeenSet(false)
+InstanceBlockDeviceMappingSpecification::InstanceBlockDeviceMappingSpecification(const XmlNode& xmlNode)
+  : InstanceBlockDeviceMappingSpecification()
 {
   *this = xmlNode;
 }

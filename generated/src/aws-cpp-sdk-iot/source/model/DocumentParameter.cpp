@@ -28,13 +28,8 @@ DocumentParameter::DocumentParameter() :
 {
 }
 
-DocumentParameter::DocumentParameter(JsonView jsonValue) : 
-    m_keyHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_regexHasBeenSet(false),
-    m_exampleHasBeenSet(false),
-    m_optional(false),
-    m_optionalHasBeenSet(false)
+DocumentParameter::DocumentParameter(JsonView jsonValue)
+  : DocumentParameter()
 {
   *this = jsonValue;
 }

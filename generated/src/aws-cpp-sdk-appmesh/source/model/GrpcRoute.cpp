@@ -26,11 +26,8 @@ GrpcRoute::GrpcRoute() :
 {
 }
 
-GrpcRoute::GrpcRoute(JsonView jsonValue) : 
-    m_actionHasBeenSet(false),
-    m_matchHasBeenSet(false),
-    m_retryPolicyHasBeenSet(false),
-    m_timeoutHasBeenSet(false)
+GrpcRoute::GrpcRoute(JsonView jsonValue)
+  : GrpcRoute()
 {
   *this = jsonValue;
 }

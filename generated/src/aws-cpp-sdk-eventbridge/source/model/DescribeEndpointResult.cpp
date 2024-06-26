@@ -22,8 +22,8 @@ DescribeEndpointResult::DescribeEndpointResult() :
 {
 }
 
-DescribeEndpointResult::DescribeEndpointResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_state(EndpointState::NOT_SET)
+DescribeEndpointResult::DescribeEndpointResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeEndpointResult()
 {
   *this = result;
 }

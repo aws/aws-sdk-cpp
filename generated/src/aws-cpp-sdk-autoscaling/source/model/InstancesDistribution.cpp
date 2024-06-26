@@ -33,16 +33,8 @@ InstancesDistribution::InstancesDistribution() :
 {
 }
 
-InstancesDistribution::InstancesDistribution(const XmlNode& xmlNode) : 
-    m_onDemandAllocationStrategyHasBeenSet(false),
-    m_onDemandBaseCapacity(0),
-    m_onDemandBaseCapacityHasBeenSet(false),
-    m_onDemandPercentageAboveBaseCapacity(0),
-    m_onDemandPercentageAboveBaseCapacityHasBeenSet(false),
-    m_spotAllocationStrategyHasBeenSet(false),
-    m_spotInstancePools(0),
-    m_spotInstancePoolsHasBeenSet(false),
-    m_spotMaxPriceHasBeenSet(false)
+InstancesDistribution::InstancesDistribution(const XmlNode& xmlNode)
+  : InstancesDistribution()
 {
   *this = xmlNode;
 }

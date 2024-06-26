@@ -24,9 +24,8 @@ TestCaseFilter::TestCaseFilter() :
 {
 }
 
-TestCaseFilter::TestCaseFilter(JsonView jsonValue) : 
-    m_statusHasBeenSet(false),
-    m_keywordHasBeenSet(false)
+TestCaseFilter::TestCaseFilter(JsonView jsonValue)
+  : TestCaseFilter()
 {
   *this = jsonValue;
 }

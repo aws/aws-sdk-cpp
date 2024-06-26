@@ -24,9 +24,8 @@ ExportTaskError::ExportTaskError() :
 {
 }
 
-ExportTaskError::ExportTaskError(JsonView jsonValue) : 
-    m_errorDataHasBeenSet(false),
-    m_errorDateTimeHasBeenSet(false)
+ExportTaskError::ExportTaskError(JsonView jsonValue)
+  : ExportTaskError()
 {
   *this = jsonValue;
 }

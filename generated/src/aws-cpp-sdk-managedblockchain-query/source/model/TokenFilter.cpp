@@ -26,11 +26,8 @@ TokenFilter::TokenFilter() :
 {
 }
 
-TokenFilter::TokenFilter(JsonView jsonValue) : 
-    m_network(QueryNetwork::NOT_SET),
-    m_networkHasBeenSet(false),
-    m_contractAddressHasBeenSet(false),
-    m_tokenIdHasBeenSet(false)
+TokenFilter::TokenFilter(JsonView jsonValue)
+  : TokenFilter()
 {
   *this = jsonValue;
 }

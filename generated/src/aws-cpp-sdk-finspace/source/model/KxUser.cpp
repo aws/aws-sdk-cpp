@@ -27,12 +27,8 @@ KxUser::KxUser() :
 {
 }
 
-KxUser::KxUser(JsonView jsonValue) : 
-    m_userArnHasBeenSet(false),
-    m_userNameHasBeenSet(false),
-    m_iamRoleHasBeenSet(false),
-    m_createTimestampHasBeenSet(false),
-    m_updateTimestampHasBeenSet(false)
+KxUser::KxUser(JsonView jsonValue)
+  : KxUser()
 {
   *this = jsonValue;
 }

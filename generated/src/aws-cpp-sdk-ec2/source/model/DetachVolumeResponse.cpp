@@ -23,9 +23,8 @@ DetachVolumeResponse::DetachVolumeResponse() :
 {
 }
 
-DetachVolumeResponse::DetachVolumeResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_state(VolumeAttachmentState::NOT_SET),
-    m_deleteOnTermination(false)
+DetachVolumeResponse::DetachVolumeResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : DetachVolumeResponse()
 {
   *this = result;
 }

@@ -27,12 +27,8 @@ DeletionConfig::DeletionConfig() :
 {
 }
 
-DeletionConfig::DeletionConfig(JsonView jsonValue) : 
-    m_edgeRetentionInHours(0),
-    m_edgeRetentionInHoursHasBeenSet(false),
-    m_localSizeConfigHasBeenSet(false),
-    m_deleteAfterUpload(false),
-    m_deleteAfterUploadHasBeenSet(false)
+DeletionConfig::DeletionConfig(JsonView jsonValue)
+  : DeletionConfig()
 {
   *this = jsonValue;
 }

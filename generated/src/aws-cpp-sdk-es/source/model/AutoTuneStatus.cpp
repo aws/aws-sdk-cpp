@@ -31,16 +31,8 @@ AutoTuneStatus::AutoTuneStatus() :
 {
 }
 
-AutoTuneStatus::AutoTuneStatus(JsonView jsonValue) : 
-    m_creationDateHasBeenSet(false),
-    m_updateDateHasBeenSet(false),
-    m_updateVersion(0),
-    m_updateVersionHasBeenSet(false),
-    m_state(AutoTuneState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_pendingDeletion(false),
-    m_pendingDeletionHasBeenSet(false)
+AutoTuneStatus::AutoTuneStatus(JsonView jsonValue)
+  : AutoTuneStatus()
 {
   *this = jsonValue;
 }

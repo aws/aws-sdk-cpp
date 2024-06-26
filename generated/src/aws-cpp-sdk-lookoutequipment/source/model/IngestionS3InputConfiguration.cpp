@@ -25,10 +25,8 @@ IngestionS3InputConfiguration::IngestionS3InputConfiguration() :
 {
 }
 
-IngestionS3InputConfiguration::IngestionS3InputConfiguration(JsonView jsonValue) : 
-    m_bucketHasBeenSet(false),
-    m_prefixHasBeenSet(false),
-    m_keyPatternHasBeenSet(false)
+IngestionS3InputConfiguration::IngestionS3InputConfiguration(JsonView jsonValue)
+  : IngestionS3InputConfiguration()
 {
   *this = jsonValue;
 }

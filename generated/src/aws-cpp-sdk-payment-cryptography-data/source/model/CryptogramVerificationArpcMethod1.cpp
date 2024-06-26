@@ -23,8 +23,8 @@ CryptogramVerificationArpcMethod1::CryptogramVerificationArpcMethod1() :
 {
 }
 
-CryptogramVerificationArpcMethod1::CryptogramVerificationArpcMethod1(JsonView jsonValue) : 
-    m_authResponseCodeHasBeenSet(false)
+CryptogramVerificationArpcMethod1::CryptogramVerificationArpcMethod1(JsonView jsonValue)
+  : CryptogramVerificationArpcMethod1()
 {
   *this = jsonValue;
 }

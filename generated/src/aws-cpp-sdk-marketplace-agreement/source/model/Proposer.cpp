@@ -23,8 +23,8 @@ Proposer::Proposer() :
 {
 }
 
-Proposer::Proposer(JsonView jsonValue) : 
-    m_accountIdHasBeenSet(false)
+Proposer::Proposer(JsonView jsonValue)
+  : Proposer()
 {
   *this = jsonValue;
 }

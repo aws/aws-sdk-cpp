@@ -25,11 +25,8 @@ DescribeThesaurusResult::DescribeThesaurusResult() :
 {
 }
 
-DescribeThesaurusResult::DescribeThesaurusResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(ThesaurusStatus::NOT_SET),
-    m_fileSizeBytes(0),
-    m_termCount(0),
-    m_synonymRuleCount(0)
+DescribeThesaurusResult::DescribeThesaurusResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeThesaurusResult()
 {
   *this = result;
 }

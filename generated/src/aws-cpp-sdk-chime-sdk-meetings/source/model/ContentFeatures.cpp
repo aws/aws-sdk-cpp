@@ -24,9 +24,8 @@ ContentFeatures::ContentFeatures() :
 {
 }
 
-ContentFeatures::ContentFeatures(JsonView jsonValue) : 
-    m_maxResolution(ContentResolution::NOT_SET),
-    m_maxResolutionHasBeenSet(false)
+ContentFeatures::ContentFeatures(JsonView jsonValue)
+  : ContentFeatures()
 {
   *this = jsonValue;
 }

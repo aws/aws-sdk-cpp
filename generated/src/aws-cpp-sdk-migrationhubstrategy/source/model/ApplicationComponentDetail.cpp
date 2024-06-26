@@ -52,37 +52,8 @@ ApplicationComponentDetail::ApplicationComponentDetail() :
 {
 }
 
-ApplicationComponentDetail::ApplicationComponentDetail(JsonView jsonValue) : 
-    m_analysisStatus(SrcCodeOrDbAnalysisStatus::NOT_SET),
-    m_analysisStatusHasBeenSet(false),
-    m_antipatternReportS3ObjectHasBeenSet(false),
-    m_antipatternReportStatus(AntipatternReportStatus::NOT_SET),
-    m_antipatternReportStatusHasBeenSet(false),
-    m_antipatternReportStatusMessageHasBeenSet(false),
-    m_appType(AppType::NOT_SET),
-    m_appTypeHasBeenSet(false),
-    m_appUnitErrorHasBeenSet(false),
-    m_associatedServerIdHasBeenSet(false),
-    m_databaseConfigDetailHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_inclusionStatus(InclusionStatus::NOT_SET),
-    m_inclusionStatusHasBeenSet(false),
-    m_lastAnalyzedTimestampHasBeenSet(false),
-    m_listAntipatternSeveritySummaryHasBeenSet(false),
-    m_moreServerAssociationExists(false),
-    m_moreServerAssociationExistsHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_osDriverHasBeenSet(false),
-    m_osVersionHasBeenSet(false),
-    m_recommendationSetHasBeenSet(false),
-    m_resourceSubType(ResourceSubType::NOT_SET),
-    m_resourceSubTypeHasBeenSet(false),
-    m_resultListHasBeenSet(false),
-    m_runtimeStatus(RuntimeAnalysisStatus::NOT_SET),
-    m_runtimeStatusHasBeenSet(false),
-    m_runtimeStatusMessageHasBeenSet(false),
-    m_sourceCodeRepositoriesHasBeenSet(false),
-    m_statusMessageHasBeenSet(false)
+ApplicationComponentDetail::ApplicationComponentDetail(JsonView jsonValue)
+  : ApplicationComponentDetail()
 {
   *this = jsonValue;
 }

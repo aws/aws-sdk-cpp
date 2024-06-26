@@ -26,9 +26,8 @@ ObjectLambdaTransformationConfiguration::ObjectLambdaTransformationConfiguration
 {
 }
 
-ObjectLambdaTransformationConfiguration::ObjectLambdaTransformationConfiguration(const XmlNode& xmlNode) : 
-    m_actionsHasBeenSet(false),
-    m_contentTransformationHasBeenSet(false)
+ObjectLambdaTransformationConfiguration::ObjectLambdaTransformationConfiguration(const XmlNode& xmlNode)
+  : ObjectLambdaTransformationConfiguration()
 {
   *this = xmlNode;
 }

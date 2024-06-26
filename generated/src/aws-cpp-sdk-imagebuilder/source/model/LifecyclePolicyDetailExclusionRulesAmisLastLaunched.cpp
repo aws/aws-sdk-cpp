@@ -26,11 +26,8 @@ LifecyclePolicyDetailExclusionRulesAmisLastLaunched::LifecyclePolicyDetailExclus
 {
 }
 
-LifecyclePolicyDetailExclusionRulesAmisLastLaunched::LifecyclePolicyDetailExclusionRulesAmisLastLaunched(JsonView jsonValue) : 
-    m_value(0),
-    m_valueHasBeenSet(false),
-    m_unit(LifecyclePolicyTimeUnit::NOT_SET),
-    m_unitHasBeenSet(false)
+LifecyclePolicyDetailExclusionRulesAmisLastLaunched::LifecyclePolicyDetailExclusionRulesAmisLastLaunched(JsonView jsonValue)
+  : LifecyclePolicyDetailExclusionRulesAmisLastLaunched()
 {
   *this = jsonValue;
 }

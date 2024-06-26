@@ -33,18 +33,8 @@ BotChannelAssociation::BotChannelAssociation() :
 {
 }
 
-BotChannelAssociation::BotChannelAssociation(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_botAliasHasBeenSet(false),
-    m_botNameHasBeenSet(false),
-    m_createdDateHasBeenSet(false),
-    m_type(ChannelType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_botConfigurationHasBeenSet(false),
-    m_status(ChannelStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_failureReasonHasBeenSet(false)
+BotChannelAssociation::BotChannelAssociation(JsonView jsonValue)
+  : BotChannelAssociation()
 {
   *this = jsonValue;
 }

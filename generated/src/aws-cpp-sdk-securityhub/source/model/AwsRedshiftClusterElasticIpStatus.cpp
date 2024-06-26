@@ -24,9 +24,8 @@ AwsRedshiftClusterElasticIpStatus::AwsRedshiftClusterElasticIpStatus() :
 {
 }
 
-AwsRedshiftClusterElasticIpStatus::AwsRedshiftClusterElasticIpStatus(JsonView jsonValue) : 
-    m_elasticIpHasBeenSet(false),
-    m_statusHasBeenSet(false)
+AwsRedshiftClusterElasticIpStatus::AwsRedshiftClusterElasticIpStatus(JsonView jsonValue)
+  : AwsRedshiftClusterElasticIpStatus()
 {
   *this = jsonValue;
 }

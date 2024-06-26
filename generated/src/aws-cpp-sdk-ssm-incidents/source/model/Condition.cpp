@@ -25,10 +25,8 @@ Condition::Condition() :
 {
 }
 
-Condition::Condition(JsonView jsonValue) : 
-    m_afterHasBeenSet(false),
-    m_beforeHasBeenSet(false),
-    m_equalsHasBeenSet(false)
+Condition::Condition(JsonView jsonValue)
+  : Condition()
 {
   *this = jsonValue;
 }

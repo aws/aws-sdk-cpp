@@ -23,8 +23,8 @@ DeleteKeyRequestListItem::DeleteKeyRequestListItem() :
 {
 }
 
-DeleteKeyRequestListItem::DeleteKeyRequestListItem(JsonView jsonValue) : 
-    m_keyHasBeenSet(false)
+DeleteKeyRequestListItem::DeleteKeyRequestListItem(JsonView jsonValue)
+  : DeleteKeyRequestListItem()
 {
   *this = jsonValue;
 }

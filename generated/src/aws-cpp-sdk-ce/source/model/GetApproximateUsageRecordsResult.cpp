@@ -22,8 +22,8 @@ GetApproximateUsageRecordsResult::GetApproximateUsageRecordsResult() :
 {
 }
 
-GetApproximateUsageRecordsResult::GetApproximateUsageRecordsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_totalRecords(0)
+GetApproximateUsageRecordsResult::GetApproximateUsageRecordsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetApproximateUsageRecordsResult()
 {
   *this = result;
 }

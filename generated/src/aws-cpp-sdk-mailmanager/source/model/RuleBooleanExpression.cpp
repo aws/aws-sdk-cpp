@@ -25,10 +25,8 @@ RuleBooleanExpression::RuleBooleanExpression() :
 {
 }
 
-RuleBooleanExpression::RuleBooleanExpression(JsonView jsonValue) : 
-    m_evaluateHasBeenSet(false),
-    m_operator(RuleBooleanOperator::NOT_SET),
-    m_operatorHasBeenSet(false)
+RuleBooleanExpression::RuleBooleanExpression(JsonView jsonValue)
+  : RuleBooleanExpression()
 {
   *this = jsonValue;
 }

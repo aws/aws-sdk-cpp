@@ -22,8 +22,8 @@ DeleteAgentResult::DeleteAgentResult() :
 {
 }
 
-DeleteAgentResult::DeleteAgentResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_agentStatus(AgentStatus::NOT_SET)
+DeleteAgentResult::DeleteAgentResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeleteAgentResult()
 {
   *this = result;
 }

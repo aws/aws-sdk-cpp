@@ -24,9 +24,8 @@ CustomerProfilesDestinationProperties::CustomerProfilesDestinationProperties() :
 {
 }
 
-CustomerProfilesDestinationProperties::CustomerProfilesDestinationProperties(JsonView jsonValue) : 
-    m_domainNameHasBeenSet(false),
-    m_objectTypeNameHasBeenSet(false)
+CustomerProfilesDestinationProperties::CustomerProfilesDestinationProperties(JsonView jsonValue)
+  : CustomerProfilesDestinationProperties()
 {
   *this = jsonValue;
 }

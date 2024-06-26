@@ -30,15 +30,8 @@ LifecyclePolicyDetailFilter::LifecyclePolicyDetailFilter() :
 {
 }
 
-LifecyclePolicyDetailFilter::LifecyclePolicyDetailFilter(JsonView jsonValue) : 
-    m_type(LifecyclePolicyDetailFilterType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_value(0),
-    m_valueHasBeenSet(false),
-    m_unit(LifecyclePolicyTimeUnit::NOT_SET),
-    m_unitHasBeenSet(false),
-    m_retainAtLeast(0),
-    m_retainAtLeastHasBeenSet(false)
+LifecyclePolicyDetailFilter::LifecyclePolicyDetailFilter(JsonView jsonValue)
+  : LifecyclePolicyDetailFilter()
 {
   *this = jsonValue;
 }

@@ -26,9 +26,8 @@ Message::Message() :
 {
 }
 
-Message::Message(const XmlNode& xmlNode) : 
-    m_subjectHasBeenSet(false),
-    m_bodyHasBeenSet(false)
+Message::Message(const XmlNode& xmlNode)
+  : Message()
 {
   *this = xmlNode;
 }

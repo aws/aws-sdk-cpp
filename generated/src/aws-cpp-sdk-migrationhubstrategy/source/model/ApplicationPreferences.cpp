@@ -23,8 +23,8 @@ ApplicationPreferences::ApplicationPreferences() :
 {
 }
 
-ApplicationPreferences::ApplicationPreferences(JsonView jsonValue) : 
-    m_managementPreferenceHasBeenSet(false)
+ApplicationPreferences::ApplicationPreferences(JsonView jsonValue)
+  : ApplicationPreferences()
 {
   *this = jsonValue;
 }

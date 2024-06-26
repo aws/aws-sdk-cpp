@@ -25,10 +25,8 @@ StartSigningJobParameter::StartSigningJobParameter() :
 {
 }
 
-StartSigningJobParameter::StartSigningJobParameter(JsonView jsonValue) : 
-    m_signingProfileParameterHasBeenSet(false),
-    m_signingProfileNameHasBeenSet(false),
-    m_destinationHasBeenSet(false)
+StartSigningJobParameter::StartSigningJobParameter(JsonView jsonValue)
+  : StartSigningJobParameter()
 {
   *this = jsonValue;
 }

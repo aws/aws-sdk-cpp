@@ -25,10 +25,8 @@ AccessConfiguration::AccessConfiguration() :
 {
 }
 
-AccessConfiguration::AccessConfiguration(JsonView jsonValue) : 
-    m_accessType(AccessType::NOT_SET),
-    m_accessTypeHasBeenSet(false),
-    m_secretsManagerAccessTokenConfigurationHasBeenSet(false)
+AccessConfiguration::AccessConfiguration(JsonView jsonValue)
+  : AccessConfiguration()
 {
   *this = jsonValue;
 }

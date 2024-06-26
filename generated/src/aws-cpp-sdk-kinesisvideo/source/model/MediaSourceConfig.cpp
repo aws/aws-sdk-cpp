@@ -25,10 +25,8 @@ MediaSourceConfig::MediaSourceConfig() :
 {
 }
 
-MediaSourceConfig::MediaSourceConfig(JsonView jsonValue) : 
-    m_mediaUriSecretArnHasBeenSet(false),
-    m_mediaUriType(MediaUriType::NOT_SET),
-    m_mediaUriTypeHasBeenSet(false)
+MediaSourceConfig::MediaSourceConfig(JsonView jsonValue)
+  : MediaSourceConfig()
 {
   *this = jsonValue;
 }

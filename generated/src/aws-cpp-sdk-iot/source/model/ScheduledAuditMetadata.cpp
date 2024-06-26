@@ -29,14 +29,8 @@ ScheduledAuditMetadata::ScheduledAuditMetadata() :
 {
 }
 
-ScheduledAuditMetadata::ScheduledAuditMetadata(JsonView jsonValue) : 
-    m_scheduledAuditNameHasBeenSet(false),
-    m_scheduledAuditArnHasBeenSet(false),
-    m_frequency(AuditFrequency::NOT_SET),
-    m_frequencyHasBeenSet(false),
-    m_dayOfMonthHasBeenSet(false),
-    m_dayOfWeek(DayOfWeek::NOT_SET),
-    m_dayOfWeekHasBeenSet(false)
+ScheduledAuditMetadata::ScheduledAuditMetadata(JsonView jsonValue)
+  : ScheduledAuditMetadata()
 {
   *this = jsonValue;
 }

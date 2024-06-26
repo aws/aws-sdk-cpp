@@ -28,13 +28,8 @@ VolumeRecoveryPointInfo::VolumeRecoveryPointInfo() :
 {
 }
 
-VolumeRecoveryPointInfo::VolumeRecoveryPointInfo(JsonView jsonValue) : 
-    m_volumeARNHasBeenSet(false),
-    m_volumeSizeInBytes(0),
-    m_volumeSizeInBytesHasBeenSet(false),
-    m_volumeUsageInBytes(0),
-    m_volumeUsageInBytesHasBeenSet(false),
-    m_volumeRecoveryPointTimeHasBeenSet(false)
+VolumeRecoveryPointInfo::VolumeRecoveryPointInfo(JsonView jsonValue)
+  : VolumeRecoveryPointInfo()
 {
   *this = jsonValue;
 }

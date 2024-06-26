@@ -33,18 +33,8 @@ ResourceDataSyncItem::ResourceDataSyncItem() :
 {
 }
 
-ResourceDataSyncItem::ResourceDataSyncItem(JsonView jsonValue) : 
-    m_syncNameHasBeenSet(false),
-    m_syncTypeHasBeenSet(false),
-    m_syncSourceHasBeenSet(false),
-    m_s3DestinationHasBeenSet(false),
-    m_lastSyncTimeHasBeenSet(false),
-    m_lastSuccessfulSyncTimeHasBeenSet(false),
-    m_syncLastModifiedTimeHasBeenSet(false),
-    m_lastStatus(LastResourceDataSyncStatus::NOT_SET),
-    m_lastStatusHasBeenSet(false),
-    m_syncCreatedTimeHasBeenSet(false),
-    m_lastSyncStatusMessageHasBeenSet(false)
+ResourceDataSyncItem::ResourceDataSyncItem(JsonView jsonValue)
+  : ResourceDataSyncItem()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ FieldIdentifier::FieldIdentifier() :
 {
 }
 
-FieldIdentifier::FieldIdentifier(JsonView jsonValue) : 
-    m_idHasBeenSet(false)
+FieldIdentifier::FieldIdentifier(JsonView jsonValue)
+  : FieldIdentifier()
 {
   *this = jsonValue;
 }

@@ -30,15 +30,8 @@ NodeInstance::NodeInstance() :
 {
 }
 
-NodeInstance::NodeInstance(JsonView jsonValue) : 
-    m_currentStatus(NodeInstanceStatus::NOT_SET),
-    m_currentStatusHasBeenSet(false),
-    m_nodeIdHasBeenSet(false),
-    m_nodeInstanceIdHasBeenSet(false),
-    m_nodeNameHasBeenSet(false),
-    m_packageNameHasBeenSet(false),
-    m_packagePatchVersionHasBeenSet(false),
-    m_packageVersionHasBeenSet(false)
+NodeInstance::NodeInstance(JsonView jsonValue)
+  : NodeInstance()
 {
   *this = jsonValue;
 }

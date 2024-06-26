@@ -30,15 +30,8 @@ ComparedFace::ComparedFace() :
 {
 }
 
-ComparedFace::ComparedFace(JsonView jsonValue) : 
-    m_boundingBoxHasBeenSet(false),
-    m_confidence(0.0),
-    m_confidenceHasBeenSet(false),
-    m_landmarksHasBeenSet(false),
-    m_poseHasBeenSet(false),
-    m_qualityHasBeenSet(false),
-    m_emotionsHasBeenSet(false),
-    m_smileHasBeenSet(false)
+ComparedFace::ComparedFace(JsonView jsonValue)
+  : ComparedFace()
 {
   *this = jsonValue;
 }

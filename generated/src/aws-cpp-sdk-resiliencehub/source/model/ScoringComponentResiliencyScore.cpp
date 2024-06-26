@@ -30,15 +30,8 @@ ScoringComponentResiliencyScore::ScoringComponentResiliencyScore() :
 {
 }
 
-ScoringComponentResiliencyScore::ScoringComponentResiliencyScore(JsonView jsonValue) : 
-    m_excludedCount(0),
-    m_excludedCountHasBeenSet(false),
-    m_outstandingCount(0),
-    m_outstandingCountHasBeenSet(false),
-    m_possibleScore(0.0),
-    m_possibleScoreHasBeenSet(false),
-    m_score(0.0),
-    m_scoreHasBeenSet(false)
+ScoringComponentResiliencyScore::ScoringComponentResiliencyScore(JsonView jsonValue)
+  : ScoringComponentResiliencyScore()
 {
   *this = jsonValue;
 }

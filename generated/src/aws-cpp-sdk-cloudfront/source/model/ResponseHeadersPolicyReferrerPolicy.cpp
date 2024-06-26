@@ -28,11 +28,8 @@ ResponseHeadersPolicyReferrerPolicy::ResponseHeadersPolicyReferrerPolicy() :
 {
 }
 
-ResponseHeadersPolicyReferrerPolicy::ResponseHeadersPolicyReferrerPolicy(const XmlNode& xmlNode) : 
-    m_override(false),
-    m_overrideHasBeenSet(false),
-    m_referrerPolicy(ReferrerPolicyList::NOT_SET),
-    m_referrerPolicyHasBeenSet(false)
+ResponseHeadersPolicyReferrerPolicy::ResponseHeadersPolicyReferrerPolicy(const XmlNode& xmlNode)
+  : ResponseHeadersPolicyReferrerPolicy()
 {
   *this = xmlNode;
 }

@@ -26,11 +26,8 @@ MemorySizeConfiguration::MemorySizeConfiguration() :
 {
 }
 
-MemorySizeConfiguration::MemorySizeConfiguration(JsonView jsonValue) : 
-    m_memory(0),
-    m_memoryHasBeenSet(false),
-    m_memoryReservation(0),
-    m_memoryReservationHasBeenSet(false)
+MemorySizeConfiguration::MemorySizeConfiguration(JsonView jsonValue)
+  : MemorySizeConfiguration()
 {
   *this = jsonValue;
 }

@@ -27,11 +27,8 @@ DocumentationPart::DocumentationPart() :
 {
 }
 
-DocumentationPart::DocumentationPart(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_locationHasBeenSet(false),
-    m_propertiesHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
+DocumentationPart::DocumentationPart(JsonView jsonValue)
+  : DocumentationPart()
 {
   *this = jsonValue;
 }

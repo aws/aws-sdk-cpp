@@ -28,11 +28,8 @@ VerifiedAccessLogKinesisDataFirehoseDestination::VerifiedAccessLogKinesisDataFir
 {
 }
 
-VerifiedAccessLogKinesisDataFirehoseDestination::VerifiedAccessLogKinesisDataFirehoseDestination(const XmlNode& xmlNode) : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_deliveryStatusHasBeenSet(false),
-    m_deliveryStreamHasBeenSet(false)
+VerifiedAccessLogKinesisDataFirehoseDestination::VerifiedAccessLogKinesisDataFirehoseDestination(const XmlNode& xmlNode)
+  : VerifiedAccessLogKinesisDataFirehoseDestination()
 {
   *this = xmlNode;
 }

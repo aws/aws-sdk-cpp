@@ -23,9 +23,8 @@ UpdateListenerResult::UpdateListenerResult() :
 {
 }
 
-UpdateListenerResult::UpdateListenerResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_port(0),
-    m_protocol(ListenerProtocol::NOT_SET)
+UpdateListenerResult::UpdateListenerResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateListenerResult()
 {
   *this = result;
 }

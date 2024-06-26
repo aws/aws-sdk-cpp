@@ -36,21 +36,8 @@ CisScanResultDetails::CisScanResultDetails() :
 {
 }
 
-CisScanResultDetails::CisScanResultDetails(JsonView jsonValue) : 
-    m_accountIdHasBeenSet(false),
-    m_checkDescriptionHasBeenSet(false),
-    m_checkIdHasBeenSet(false),
-    m_findingArnHasBeenSet(false),
-    m_level(CisSecurityLevel::NOT_SET),
-    m_levelHasBeenSet(false),
-    m_platformHasBeenSet(false),
-    m_remediationHasBeenSet(false),
-    m_scanArnHasBeenSet(false),
-    m_status(CisFindingStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusReasonHasBeenSet(false),
-    m_targetResourceIdHasBeenSet(false),
-    m_titleHasBeenSet(false)
+CisScanResultDetails::CisScanResultDetails(JsonView jsonValue)
+  : CisScanResultDetails()
 {
   *this = jsonValue;
 }

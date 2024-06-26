@@ -26,11 +26,8 @@ OrchestrationTrace::OrchestrationTrace() :
 {
 }
 
-OrchestrationTrace::OrchestrationTrace(JsonView jsonValue) : 
-    m_invocationInputHasBeenSet(false),
-    m_modelInvocationInputHasBeenSet(false),
-    m_observationHasBeenSet(false),
-    m_rationaleHasBeenSet(false)
+OrchestrationTrace::OrchestrationTrace(JsonView jsonValue)
+  : OrchestrationTrace()
 {
   *this = jsonValue;
 }

@@ -33,18 +33,8 @@ JobListEntry::JobListEntry() :
 {
 }
 
-JobListEntry::JobListEntry(JsonView jsonValue) : 
-    m_jobIdHasBeenSet(false),
-    m_jobState(JobState::NOT_SET),
-    m_jobStateHasBeenSet(false),
-    m_isMaster(false),
-    m_isMasterHasBeenSet(false),
-    m_jobType(JobType::NOT_SET),
-    m_jobTypeHasBeenSet(false),
-    m_snowballType(SnowballType::NOT_SET),
-    m_snowballTypeHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+JobListEntry::JobListEntry(JsonView jsonValue)
+  : JobListEntry()
 {
   *this = jsonValue;
 }

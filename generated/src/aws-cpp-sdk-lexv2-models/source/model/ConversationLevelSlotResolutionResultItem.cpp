@@ -26,11 +26,8 @@ ConversationLevelSlotResolutionResultItem::ConversationLevelSlotResolutionResult
 {
 }
 
-ConversationLevelSlotResolutionResultItem::ConversationLevelSlotResolutionResultItem(JsonView jsonValue) : 
-    m_intentNameHasBeenSet(false),
-    m_slotNameHasBeenSet(false),
-    m_matchResult(TestResultMatchStatus::NOT_SET),
-    m_matchResultHasBeenSet(false)
+ConversationLevelSlotResolutionResultItem::ConversationLevelSlotResolutionResultItem(JsonView jsonValue)
+  : ConversationLevelSlotResolutionResultItem()
 {
   *this = jsonValue;
 }

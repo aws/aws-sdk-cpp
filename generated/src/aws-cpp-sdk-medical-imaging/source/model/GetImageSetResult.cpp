@@ -23,9 +23,8 @@ GetImageSetResult::GetImageSetResult() :
 {
 }
 
-GetImageSetResult::GetImageSetResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_imageSetState(ImageSetState::NOT_SET),
-    m_imageSetWorkflowStatus(ImageSetWorkflowStatus::NOT_SET)
+GetImageSetResult::GetImageSetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetImageSetResult()
 {
   *this = result;
 }

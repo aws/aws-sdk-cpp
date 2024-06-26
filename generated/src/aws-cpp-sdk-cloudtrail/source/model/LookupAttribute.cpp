@@ -25,10 +25,8 @@ LookupAttribute::LookupAttribute() :
 {
 }
 
-LookupAttribute::LookupAttribute(JsonView jsonValue) : 
-    m_attributeKey(LookupAttributeKey::NOT_SET),
-    m_attributeKeyHasBeenSet(false),
-    m_attributeValueHasBeenSet(false)
+LookupAttribute::LookupAttribute(JsonView jsonValue)
+  : LookupAttribute()
 {
   *this = jsonValue;
 }

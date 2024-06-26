@@ -23,8 +23,8 @@ CellSignals::CellSignals() :
 {
 }
 
-CellSignals::CellSignals(JsonView jsonValue) : 
-    m_lteCellDetailsHasBeenSet(false)
+CellSignals::CellSignals(JsonView jsonValue)
+  : CellSignals()
 {
   *this = jsonValue;
 }

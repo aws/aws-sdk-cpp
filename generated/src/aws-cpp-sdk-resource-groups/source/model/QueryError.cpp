@@ -25,10 +25,8 @@ QueryError::QueryError() :
 {
 }
 
-QueryError::QueryError(JsonView jsonValue) : 
-    m_errorCode(QueryErrorCode::NOT_SET),
-    m_errorCodeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+QueryError::QueryError(JsonView jsonValue)
+  : QueryError()
 {
   *this = jsonValue;
 }

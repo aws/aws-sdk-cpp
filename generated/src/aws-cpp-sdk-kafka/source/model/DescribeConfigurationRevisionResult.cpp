@@ -23,8 +23,8 @@ DescribeConfigurationRevisionResult::DescribeConfigurationRevisionResult() :
 {
 }
 
-DescribeConfigurationRevisionResult::DescribeConfigurationRevisionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_revision(0)
+DescribeConfigurationRevisionResult::DescribeConfigurationRevisionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeConfigurationRevisionResult()
 {
   *this = result;
 }

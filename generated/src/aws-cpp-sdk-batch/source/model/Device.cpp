@@ -25,10 +25,8 @@ Device::Device() :
 {
 }
 
-Device::Device(JsonView jsonValue) : 
-    m_hostPathHasBeenSet(false),
-    m_containerPathHasBeenSet(false),
-    m_permissionsHasBeenSet(false)
+Device::Device(JsonView jsonValue)
+  : Device()
 {
   *this = jsonValue;
 }

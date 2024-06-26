@@ -24,9 +24,8 @@ RecommendationError::RecommendationError() :
 {
 }
 
-RecommendationError::RecommendationError(JsonView jsonValue) : 
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+RecommendationError::RecommendationError(JsonView jsonValue)
+  : RecommendationError()
 {
   *this = jsonValue;
 }

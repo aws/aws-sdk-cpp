@@ -25,10 +25,8 @@ RetrievedReference::RetrievedReference() :
 {
 }
 
-RetrievedReference::RetrievedReference(JsonView jsonValue) : 
-    m_contentHasBeenSet(false),
-    m_locationHasBeenSet(false),
-    m_metadataHasBeenSet(false)
+RetrievedReference::RetrievedReference(JsonView jsonValue)
+  : RetrievedReference()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ TextData::TextData() :
 {
 }
 
-TextData::TextData(JsonView jsonValue) : 
-    m_excerptHasBeenSet(false),
-    m_titleHasBeenSet(false)
+TextData::TextData(JsonView jsonValue)
+  : TextData()
 {
   *this = jsonValue;
 }

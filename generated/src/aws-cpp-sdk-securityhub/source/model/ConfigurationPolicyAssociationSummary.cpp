@@ -32,17 +32,8 @@ ConfigurationPolicyAssociationSummary::ConfigurationPolicyAssociationSummary() :
 {
 }
 
-ConfigurationPolicyAssociationSummary::ConfigurationPolicyAssociationSummary(JsonView jsonValue) : 
-    m_configurationPolicyIdHasBeenSet(false),
-    m_targetIdHasBeenSet(false),
-    m_targetType(TargetType::NOT_SET),
-    m_targetTypeHasBeenSet(false),
-    m_associationType(AssociationType::NOT_SET),
-    m_associationTypeHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_associationStatus(ConfigurationPolicyAssociationStatus::NOT_SET),
-    m_associationStatusHasBeenSet(false),
-    m_associationStatusMessageHasBeenSet(false)
+ConfigurationPolicyAssociationSummary::ConfigurationPolicyAssociationSummary(JsonView jsonValue)
+  : ConfigurationPolicyAssociationSummary()
 {
   *this = jsonValue;
 }

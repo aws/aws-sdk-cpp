@@ -22,8 +22,8 @@ DeleteEndpointAccessResult::DeleteEndpointAccessResult() :
 {
 }
 
-DeleteEndpointAccessResult::DeleteEndpointAccessResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_port(0)
+DeleteEndpointAccessResult::DeleteEndpointAccessResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : DeleteEndpointAccessResult()
 {
   *this = result;
 }

@@ -22,8 +22,8 @@ UpdateSubscriptionGrantStatusResult::UpdateSubscriptionGrantStatusResult() :
 {
 }
 
-UpdateSubscriptionGrantStatusResult::UpdateSubscriptionGrantStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(SubscriptionGrantOverallStatus::NOT_SET)
+UpdateSubscriptionGrantStatusResult::UpdateSubscriptionGrantStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateSubscriptionGrantStatusResult()
 {
   *this = result;
 }

@@ -25,10 +25,8 @@ StorageType::StorageType() :
 {
 }
 
-StorageType::StorageType(JsonView jsonValue) : 
-    m_storageTypeNameHasBeenSet(false),
-    m_storageSubTypeNameHasBeenSet(false),
-    m_storageTypeLimitsHasBeenSet(false)
+StorageType::StorageType(JsonView jsonValue)
+  : StorageType()
 {
   *this = jsonValue;
 }

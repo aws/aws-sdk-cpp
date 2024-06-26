@@ -22,8 +22,8 @@ PutImageTagMutabilityResult::PutImageTagMutabilityResult() :
 {
 }
 
-PutImageTagMutabilityResult::PutImageTagMutabilityResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_imageTagMutability(ImageTagMutability::NOT_SET)
+PutImageTagMutabilityResult::PutImageTagMutabilityResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : PutImageTagMutabilityResult()
 {
   *this = result;
 }

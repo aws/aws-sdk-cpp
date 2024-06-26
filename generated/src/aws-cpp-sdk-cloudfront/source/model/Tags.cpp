@@ -25,8 +25,8 @@ Tags::Tags() :
 {
 }
 
-Tags::Tags(const XmlNode& xmlNode) : 
-    m_itemsHasBeenSet(false)
+Tags::Tags(const XmlNode& xmlNode)
+  : Tags()
 {
   *this = xmlNode;
 }

@@ -27,13 +27,8 @@ DescribeJobResult::DescribeJobResult() :
 {
 }
 
-DescribeJobResult::DescribeJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_encryptionMode(EncryptionMode::NOT_SET),
-    m_type(JobType::NOT_SET),
-    m_logSubscription(LogSubscription::NOT_SET),
-    m_maxCapacity(0),
-    m_maxRetries(0),
-    m_timeout(0)
+DescribeJobResult::DescribeJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeJobResult()
 {
   *this = result;
 }

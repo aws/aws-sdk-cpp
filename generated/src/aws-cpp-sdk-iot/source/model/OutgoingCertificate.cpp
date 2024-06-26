@@ -28,13 +28,8 @@ OutgoingCertificate::OutgoingCertificate() :
 {
 }
 
-OutgoingCertificate::OutgoingCertificate(JsonView jsonValue) : 
-    m_certificateArnHasBeenSet(false),
-    m_certificateIdHasBeenSet(false),
-    m_transferredToHasBeenSet(false),
-    m_transferDateHasBeenSet(false),
-    m_transferMessageHasBeenSet(false),
-    m_creationDateHasBeenSet(false)
+OutgoingCertificate::OutgoingCertificate(JsonView jsonValue)
+  : OutgoingCertificate()
 {
   *this = jsonValue;
 }

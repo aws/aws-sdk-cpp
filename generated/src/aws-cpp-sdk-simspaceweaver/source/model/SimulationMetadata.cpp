@@ -29,14 +29,8 @@ SimulationMetadata::SimulationMetadata() :
 {
 }
 
-SimulationMetadata::SimulationMetadata(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_status(SimulationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_targetStatus(SimulationTargetStatus::NOT_SET),
-    m_targetStatusHasBeenSet(false)
+SimulationMetadata::SimulationMetadata(JsonView jsonValue)
+  : SimulationMetadata()
 {
   *this = jsonValue;
 }

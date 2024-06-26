@@ -27,12 +27,8 @@ Cookies::Cookies() :
 {
 }
 
-Cookies::Cookies(JsonView jsonValue) : 
-    m_matchPatternHasBeenSet(false),
-    m_matchScope(MapMatchScope::NOT_SET),
-    m_matchScopeHasBeenSet(false),
-    m_oversizeHandling(OversizeHandling::NOT_SET),
-    m_oversizeHandlingHasBeenSet(false)
+Cookies::Cookies(JsonView jsonValue)
+  : Cookies()
 {
   *this = jsonValue;
 }

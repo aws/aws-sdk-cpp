@@ -23,8 +23,8 @@ TranslationPinDataIsoFormat034::TranslationPinDataIsoFormat034() :
 {
 }
 
-TranslationPinDataIsoFormat034::TranslationPinDataIsoFormat034(JsonView jsonValue) : 
-    m_primaryAccountNumberHasBeenSet(false)
+TranslationPinDataIsoFormat034::TranslationPinDataIsoFormat034(JsonView jsonValue)
+  : TranslationPinDataIsoFormat034()
 {
   *this = jsonValue;
 }

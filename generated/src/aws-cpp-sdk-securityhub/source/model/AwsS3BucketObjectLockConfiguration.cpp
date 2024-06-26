@@ -24,9 +24,8 @@ AwsS3BucketObjectLockConfiguration::AwsS3BucketObjectLockConfiguration() :
 {
 }
 
-AwsS3BucketObjectLockConfiguration::AwsS3BucketObjectLockConfiguration(JsonView jsonValue) : 
-    m_objectLockEnabledHasBeenSet(false),
-    m_ruleHasBeenSet(false)
+AwsS3BucketObjectLockConfiguration::AwsS3BucketObjectLockConfiguration(JsonView jsonValue)
+  : AwsS3BucketObjectLockConfiguration()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ UsageProfileDefinition::UsageProfileDefinition() :
 {
 }
 
-UsageProfileDefinition::UsageProfileDefinition(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_createdOnHasBeenSet(false),
-    m_lastModifiedOnHasBeenSet(false)
+UsageProfileDefinition::UsageProfileDefinition(JsonView jsonValue)
+  : UsageProfileDefinition()
 {
   *this = jsonValue;
 }

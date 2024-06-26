@@ -25,10 +25,8 @@ LFTagPair::LFTagPair() :
 {
 }
 
-LFTagPair::LFTagPair(JsonView jsonValue) : 
-    m_catalogIdHasBeenSet(false),
-    m_tagKeyHasBeenSet(false),
-    m_tagValuesHasBeenSet(false)
+LFTagPair::LFTagPair(JsonView jsonValue)
+  : LFTagPair()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ ListApplicationAssignmentsFilter::ListApplicationAssignmentsFilter() :
 {
 }
 
-ListApplicationAssignmentsFilter::ListApplicationAssignmentsFilter(JsonView jsonValue) : 
-    m_applicationArnHasBeenSet(false)
+ListApplicationAssignmentsFilter::ListApplicationAssignmentsFilter(JsonView jsonValue)
+  : ListApplicationAssignmentsFilter()
 {
   *this = jsonValue;
 }

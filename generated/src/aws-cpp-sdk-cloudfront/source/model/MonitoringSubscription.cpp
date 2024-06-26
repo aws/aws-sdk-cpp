@@ -25,8 +25,8 @@ MonitoringSubscription::MonitoringSubscription() :
 {
 }
 
-MonitoringSubscription::MonitoringSubscription(const XmlNode& xmlNode) : 
-    m_realtimeMetricsSubscriptionConfigHasBeenSet(false)
+MonitoringSubscription::MonitoringSubscription(const XmlNode& xmlNode)
+  : MonitoringSubscription()
 {
   *this = xmlNode;
 }

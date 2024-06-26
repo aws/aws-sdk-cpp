@@ -22,8 +22,8 @@ ExecuteBudgetActionResult::ExecuteBudgetActionResult() :
 {
 }
 
-ExecuteBudgetActionResult::ExecuteBudgetActionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_executionType(ExecutionType::NOT_SET)
+ExecuteBudgetActionResult::ExecuteBudgetActionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ExecuteBudgetActionResult()
 {
   *this = result;
 }

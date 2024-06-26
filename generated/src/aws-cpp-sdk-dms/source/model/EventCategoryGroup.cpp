@@ -24,9 +24,8 @@ EventCategoryGroup::EventCategoryGroup() :
 {
 }
 
-EventCategoryGroup::EventCategoryGroup(JsonView jsonValue) : 
-    m_sourceTypeHasBeenSet(false),
-    m_eventCategoriesHasBeenSet(false)
+EventCategoryGroup::EventCategoryGroup(JsonView jsonValue)
+  : EventCategoryGroup()
 {
   *this = jsonValue;
 }

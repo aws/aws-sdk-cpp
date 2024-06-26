@@ -22,8 +22,8 @@ DeleteCollectionResult::DeleteCollectionResult() :
 {
 }
 
-DeleteCollectionResult::DeleteCollectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_statusCode(0)
+DeleteCollectionResult::DeleteCollectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeleteCollectionResult()
 {
   *this = result;
 }

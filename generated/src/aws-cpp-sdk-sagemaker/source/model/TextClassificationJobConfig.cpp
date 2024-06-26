@@ -25,10 +25,8 @@ TextClassificationJobConfig::TextClassificationJobConfig() :
 {
 }
 
-TextClassificationJobConfig::TextClassificationJobConfig(JsonView jsonValue) : 
-    m_completionCriteriaHasBeenSet(false),
-    m_contentColumnHasBeenSet(false),
-    m_targetLabelColumnHasBeenSet(false)
+TextClassificationJobConfig::TextClassificationJobConfig(JsonView jsonValue)
+  : TextClassificationJobConfig()
 {
   *this = jsonValue;
 }

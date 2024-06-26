@@ -31,16 +31,8 @@ ReplicaGlobalSecondaryIndexSettingsDescription::ReplicaGlobalSecondaryIndexSetti
 {
 }
 
-ReplicaGlobalSecondaryIndexSettingsDescription::ReplicaGlobalSecondaryIndexSettingsDescription(JsonView jsonValue) : 
-    m_indexNameHasBeenSet(false),
-    m_indexStatus(IndexStatus::NOT_SET),
-    m_indexStatusHasBeenSet(false),
-    m_provisionedReadCapacityUnits(0),
-    m_provisionedReadCapacityUnitsHasBeenSet(false),
-    m_provisionedReadCapacityAutoScalingSettingsHasBeenSet(false),
-    m_provisionedWriteCapacityUnits(0),
-    m_provisionedWriteCapacityUnitsHasBeenSet(false),
-    m_provisionedWriteCapacityAutoScalingSettingsHasBeenSet(false)
+ReplicaGlobalSecondaryIndexSettingsDescription::ReplicaGlobalSecondaryIndexSettingsDescription(JsonView jsonValue)
+  : ReplicaGlobalSecondaryIndexSettingsDescription()
 {
   *this = jsonValue;
 }

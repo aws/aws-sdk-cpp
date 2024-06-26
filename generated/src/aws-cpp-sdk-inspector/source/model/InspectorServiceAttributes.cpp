@@ -26,11 +26,8 @@ InspectorServiceAttributes::InspectorServiceAttributes() :
 {
 }
 
-InspectorServiceAttributes::InspectorServiceAttributes(JsonView jsonValue) : 
-    m_schemaVersion(0),
-    m_schemaVersionHasBeenSet(false),
-    m_assessmentRunArnHasBeenSet(false),
-    m_rulesPackageArnHasBeenSet(false)
+InspectorServiceAttributes::InspectorServiceAttributes(JsonView jsonValue)
+  : InspectorServiceAttributes()
 {
   *this = jsonValue;
 }

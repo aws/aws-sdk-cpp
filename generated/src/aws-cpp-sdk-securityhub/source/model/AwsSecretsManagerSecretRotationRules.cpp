@@ -24,9 +24,8 @@ AwsSecretsManagerSecretRotationRules::AwsSecretsManagerSecretRotationRules() :
 {
 }
 
-AwsSecretsManagerSecretRotationRules::AwsSecretsManagerSecretRotationRules(JsonView jsonValue) : 
-    m_automaticallyAfterDays(0),
-    m_automaticallyAfterDaysHasBeenSet(false)
+AwsSecretsManagerSecretRotationRules::AwsSecretsManagerSecretRotationRules(JsonView jsonValue)
+  : AwsSecretsManagerSecretRotationRules()
 {
   *this = jsonValue;
 }

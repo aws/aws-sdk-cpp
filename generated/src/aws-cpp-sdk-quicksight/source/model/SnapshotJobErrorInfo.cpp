@@ -24,9 +24,8 @@ SnapshotJobErrorInfo::SnapshotJobErrorInfo() :
 {
 }
 
-SnapshotJobErrorInfo::SnapshotJobErrorInfo(JsonView jsonValue) : 
-    m_errorMessageHasBeenSet(false),
-    m_errorTypeHasBeenSet(false)
+SnapshotJobErrorInfo::SnapshotJobErrorInfo(JsonView jsonValue)
+  : SnapshotJobErrorInfo()
 {
   *this = jsonValue;
 }

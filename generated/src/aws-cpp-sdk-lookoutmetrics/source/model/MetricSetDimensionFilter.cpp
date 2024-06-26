@@ -24,9 +24,8 @@ MetricSetDimensionFilter::MetricSetDimensionFilter() :
 {
 }
 
-MetricSetDimensionFilter::MetricSetDimensionFilter(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_filterListHasBeenSet(false)
+MetricSetDimensionFilter::MetricSetDimensionFilter(JsonView jsonValue)
+  : MetricSetDimensionFilter()
 {
   *this = jsonValue;
 }

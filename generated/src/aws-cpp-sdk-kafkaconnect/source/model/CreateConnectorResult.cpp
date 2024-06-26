@@ -22,8 +22,8 @@ CreateConnectorResult::CreateConnectorResult() :
 {
 }
 
-CreateConnectorResult::CreateConnectorResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_connectorState(ConnectorState::NOT_SET)
+CreateConnectorResult::CreateConnectorResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateConnectorResult()
 {
   *this = result;
 }

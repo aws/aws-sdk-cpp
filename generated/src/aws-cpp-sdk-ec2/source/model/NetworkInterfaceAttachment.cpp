@@ -37,20 +37,8 @@ NetworkInterfaceAttachment::NetworkInterfaceAttachment() :
 {
 }
 
-NetworkInterfaceAttachment::NetworkInterfaceAttachment(const XmlNode& xmlNode) : 
-    m_attachTimeHasBeenSet(false),
-    m_attachmentIdHasBeenSet(false),
-    m_deleteOnTermination(false),
-    m_deleteOnTerminationHasBeenSet(false),
-    m_deviceIndex(0),
-    m_deviceIndexHasBeenSet(false),
-    m_networkCardIndex(0),
-    m_networkCardIndexHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_instanceOwnerIdHasBeenSet(false),
-    m_status(AttachmentStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_enaSrdSpecificationHasBeenSet(false)
+NetworkInterfaceAttachment::NetworkInterfaceAttachment(const XmlNode& xmlNode)
+  : NetworkInterfaceAttachment()
 {
   *this = xmlNode;
 }

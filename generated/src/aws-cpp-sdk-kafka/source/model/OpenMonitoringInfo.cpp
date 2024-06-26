@@ -23,8 +23,8 @@ OpenMonitoringInfo::OpenMonitoringInfo() :
 {
 }
 
-OpenMonitoringInfo::OpenMonitoringInfo(JsonView jsonValue) : 
-    m_prometheusHasBeenSet(false)
+OpenMonitoringInfo::OpenMonitoringInfo(JsonView jsonValue)
+  : OpenMonitoringInfo()
 {
   *this = jsonValue;
 }

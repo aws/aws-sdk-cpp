@@ -23,8 +23,8 @@ ChannelMembershipSummary::ChannelMembershipSummary() :
 {
 }
 
-ChannelMembershipSummary::ChannelMembershipSummary(JsonView jsonValue) : 
-    m_memberHasBeenSet(false)
+ChannelMembershipSummary::ChannelMembershipSummary(JsonView jsonValue)
+  : ChannelMembershipSummary()
 {
   *this = jsonValue;
 }

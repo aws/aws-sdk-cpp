@@ -23,9 +23,8 @@ ListResolverQueryLogConfigsResult::ListResolverQueryLogConfigsResult() :
 {
 }
 
-ListResolverQueryLogConfigsResult::ListResolverQueryLogConfigsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_totalCount(0),
-    m_totalFilteredCount(0)
+ListResolverQueryLogConfigsResult::ListResolverQueryLogConfigsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ListResolverQueryLogConfigsResult()
 {
   *this = result;
 }

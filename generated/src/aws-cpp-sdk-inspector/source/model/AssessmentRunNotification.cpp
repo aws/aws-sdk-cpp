@@ -31,16 +31,8 @@ AssessmentRunNotification::AssessmentRunNotification() :
 {
 }
 
-AssessmentRunNotification::AssessmentRunNotification(JsonView jsonValue) : 
-    m_dateHasBeenSet(false),
-    m_event(InspectorEvent::NOT_SET),
-    m_eventHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_error(false),
-    m_errorHasBeenSet(false),
-    m_snsTopicArnHasBeenSet(false),
-    m_snsPublishStatusCode(AssessmentRunNotificationSnsStatusCode::NOT_SET),
-    m_snsPublishStatusCodeHasBeenSet(false)
+AssessmentRunNotification::AssessmentRunNotification(JsonView jsonValue)
+  : AssessmentRunNotification()
 {
   *this = jsonValue;
 }

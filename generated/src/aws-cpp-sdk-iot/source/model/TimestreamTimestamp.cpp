@@ -24,9 +24,8 @@ TimestreamTimestamp::TimestreamTimestamp() :
 {
 }
 
-TimestreamTimestamp::TimestreamTimestamp(JsonView jsonValue) : 
-    m_valueHasBeenSet(false),
-    m_unitHasBeenSet(false)
+TimestreamTimestamp::TimestreamTimestamp(JsonView jsonValue)
+  : TimestreamTimestamp()
 {
   *this = jsonValue;
 }

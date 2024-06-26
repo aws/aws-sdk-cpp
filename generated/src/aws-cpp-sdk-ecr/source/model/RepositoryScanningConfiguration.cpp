@@ -29,14 +29,8 @@ RepositoryScanningConfiguration::RepositoryScanningConfiguration() :
 {
 }
 
-RepositoryScanningConfiguration::RepositoryScanningConfiguration(JsonView jsonValue) : 
-    m_repositoryArnHasBeenSet(false),
-    m_repositoryNameHasBeenSet(false),
-    m_scanOnPush(false),
-    m_scanOnPushHasBeenSet(false),
-    m_scanFrequency(ScanFrequency::NOT_SET),
-    m_scanFrequencyHasBeenSet(false),
-    m_appliedScanFiltersHasBeenSet(false)
+RepositoryScanningConfiguration::RepositoryScanningConfiguration(JsonView jsonValue)
+  : RepositoryScanningConfiguration()
 {
   *this = jsonValue;
 }

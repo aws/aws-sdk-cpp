@@ -25,10 +25,8 @@ ConditionalFormattingCustomIconOptions::ConditionalFormattingCustomIconOptions()
 {
 }
 
-ConditionalFormattingCustomIconOptions::ConditionalFormattingCustomIconOptions(JsonView jsonValue) : 
-    m_icon(Icon::NOT_SET),
-    m_iconHasBeenSet(false),
-    m_unicodeIconHasBeenSet(false)
+ConditionalFormattingCustomIconOptions::ConditionalFormattingCustomIconOptions(JsonView jsonValue)
+  : ConditionalFormattingCustomIconOptions()
 {
   *this = jsonValue;
 }

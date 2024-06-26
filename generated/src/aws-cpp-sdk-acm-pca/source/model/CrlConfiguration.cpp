@@ -31,16 +31,8 @@ CrlConfiguration::CrlConfiguration() :
 {
 }
 
-CrlConfiguration::CrlConfiguration(JsonView jsonValue) : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_expirationInDays(0),
-    m_expirationInDaysHasBeenSet(false),
-    m_customCnameHasBeenSet(false),
-    m_s3BucketNameHasBeenSet(false),
-    m_s3ObjectAcl(S3ObjectAcl::NOT_SET),
-    m_s3ObjectAclHasBeenSet(false),
-    m_crlDistributionPointExtensionConfigurationHasBeenSet(false)
+CrlConfiguration::CrlConfiguration(JsonView jsonValue)
+  : CrlConfiguration()
 {
   *this = jsonValue;
 }

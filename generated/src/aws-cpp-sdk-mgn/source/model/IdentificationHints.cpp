@@ -27,12 +27,8 @@ IdentificationHints::IdentificationHints() :
 {
 }
 
-IdentificationHints::IdentificationHints(JsonView jsonValue) : 
-    m_awsInstanceIDHasBeenSet(false),
-    m_fqdnHasBeenSet(false),
-    m_hostnameHasBeenSet(false),
-    m_vmPathHasBeenSet(false),
-    m_vmWareUuidHasBeenSet(false)
+IdentificationHints::IdentificationHints(JsonView jsonValue)
+  : IdentificationHints()
 {
   *this = jsonValue;
 }

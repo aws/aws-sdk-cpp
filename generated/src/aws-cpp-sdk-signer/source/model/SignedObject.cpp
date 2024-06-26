@@ -23,8 +23,8 @@ SignedObject::SignedObject() :
 {
 }
 
-SignedObject::SignedObject(JsonView jsonValue) : 
-    m_s3HasBeenSet(false)
+SignedObject::SignedObject(JsonView jsonValue)
+  : SignedObject()
 {
   *this = jsonValue;
 }

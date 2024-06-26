@@ -34,19 +34,8 @@ Connection::Connection() :
 {
 }
 
-Connection::Connection(JsonView jsonValue) : 
-    m_connectionIdHasBeenSet(false),
-    m_connectionArnHasBeenSet(false),
-    m_globalNetworkIdHasBeenSet(false),
-    m_deviceIdHasBeenSet(false),
-    m_connectedDeviceIdHasBeenSet(false),
-    m_linkIdHasBeenSet(false),
-    m_connectedLinkIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_state(ConnectionState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+Connection::Connection(JsonView jsonValue)
+  : Connection()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ ProviderMarketplaceConfiguration::ProviderMarketplaceConfiguration() :
 {
 }
 
-ProviderMarketplaceConfiguration::ProviderMarketplaceConfiguration(JsonView jsonValue) : 
-    m_assetIdHasBeenSet(false),
-    m_dataSetIdHasBeenSet(false),
-    m_listingIdHasBeenSet(false),
-    m_revisionIdHasBeenSet(false)
+ProviderMarketplaceConfiguration::ProviderMarketplaceConfiguration(JsonView jsonValue)
+  : ProviderMarketplaceConfiguration()
 {
   *this = jsonValue;
 }

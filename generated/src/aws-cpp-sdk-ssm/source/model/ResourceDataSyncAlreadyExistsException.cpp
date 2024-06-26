@@ -23,8 +23,8 @@ ResourceDataSyncAlreadyExistsException::ResourceDataSyncAlreadyExistsException()
 {
 }
 
-ResourceDataSyncAlreadyExistsException::ResourceDataSyncAlreadyExistsException(JsonView jsonValue) : 
-    m_syncNameHasBeenSet(false)
+ResourceDataSyncAlreadyExistsException::ResourceDataSyncAlreadyExistsException(JsonView jsonValue)
+  : ResourceDataSyncAlreadyExistsException()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ DeleteProjectVersionResult::DeleteProjectVersionResult() :
 {
 }
 
-DeleteProjectVersionResult::DeleteProjectVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(ProjectVersionStatus::NOT_SET)
+DeleteProjectVersionResult::DeleteProjectVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeleteProjectVersionResult()
 {
   *this = result;
 }

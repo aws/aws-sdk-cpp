@@ -27,12 +27,8 @@ InstanceHealthSummary::InstanceHealthSummary() :
 {
 }
 
-InstanceHealthSummary::InstanceHealthSummary(JsonView jsonValue) : 
-    m_instanceNameHasBeenSet(false),
-    m_instanceHealth(InstanceHealthState::NOT_SET),
-    m_instanceHealthHasBeenSet(false),
-    m_instanceHealthReason(InstanceHealthReason::NOT_SET),
-    m_instanceHealthReasonHasBeenSet(false)
+InstanceHealthSummary::InstanceHealthSummary(JsonView jsonValue)
+  : InstanceHealthSummary()
 {
   *this = jsonValue;
 }

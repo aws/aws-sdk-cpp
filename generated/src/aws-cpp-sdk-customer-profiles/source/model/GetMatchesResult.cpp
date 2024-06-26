@@ -22,8 +22,8 @@ GetMatchesResult::GetMatchesResult() :
 {
 }
 
-GetMatchesResult::GetMatchesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_potentialMatches(0)
+GetMatchesResult::GetMatchesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetMatchesResult()
 {
   *this = result;
 }

@@ -25,10 +25,8 @@ Filter::Filter() :
 {
 }
 
-Filter::Filter(JsonView jsonValue) : 
-    m_resourceArnsHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_typeHasBeenSet(false)
+Filter::Filter(JsonView jsonValue)
+  : Filter()
 {
   *this = jsonValue;
 }

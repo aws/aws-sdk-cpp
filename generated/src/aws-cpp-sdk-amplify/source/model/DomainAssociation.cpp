@@ -36,21 +36,8 @@ DomainAssociation::DomainAssociation() :
 {
 }
 
-DomainAssociation::DomainAssociation(JsonView jsonValue) : 
-    m_domainAssociationArnHasBeenSet(false),
-    m_domainNameHasBeenSet(false),
-    m_enableAutoSubDomain(false),
-    m_enableAutoSubDomainHasBeenSet(false),
-    m_autoSubDomainCreationPatternsHasBeenSet(false),
-    m_autoSubDomainIAMRoleHasBeenSet(false),
-    m_domainStatus(DomainStatus::NOT_SET),
-    m_domainStatusHasBeenSet(false),
-    m_updateStatus(UpdateStatus::NOT_SET),
-    m_updateStatusHasBeenSet(false),
-    m_statusReasonHasBeenSet(false),
-    m_certificateVerificationDNSRecordHasBeenSet(false),
-    m_subDomainsHasBeenSet(false),
-    m_certificateHasBeenSet(false)
+DomainAssociation::DomainAssociation(JsonView jsonValue)
+  : DomainAssociation()
 {
   *this = jsonValue;
 }

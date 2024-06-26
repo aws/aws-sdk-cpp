@@ -25,10 +25,8 @@ ReportGroupTrendStats::ReportGroupTrendStats() :
 {
 }
 
-ReportGroupTrendStats::ReportGroupTrendStats(JsonView jsonValue) : 
-    m_averageHasBeenSet(false),
-    m_maxHasBeenSet(false),
-    m_minHasBeenSet(false)
+ReportGroupTrendStats::ReportGroupTrendStats(JsonView jsonValue)
+  : ReportGroupTrendStats()
 {
   *this = jsonValue;
 }

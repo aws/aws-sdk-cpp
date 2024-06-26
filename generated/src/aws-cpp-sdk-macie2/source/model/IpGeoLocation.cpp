@@ -26,11 +26,8 @@ IpGeoLocation::IpGeoLocation() :
 {
 }
 
-IpGeoLocation::IpGeoLocation(JsonView jsonValue) : 
-    m_lat(0.0),
-    m_latHasBeenSet(false),
-    m_lon(0.0),
-    m_lonHasBeenSet(false)
+IpGeoLocation::IpGeoLocation(JsonView jsonValue)
+  : IpGeoLocation()
 {
   *this = jsonValue;
 }

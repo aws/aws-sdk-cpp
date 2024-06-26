@@ -22,8 +22,8 @@ DescribeGroupMembershipResult::DescribeGroupMembershipResult() :
 {
 }
 
-DescribeGroupMembershipResult::DescribeGroupMembershipResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+DescribeGroupMembershipResult::DescribeGroupMembershipResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeGroupMembershipResult()
 {
   *this = result;
 }

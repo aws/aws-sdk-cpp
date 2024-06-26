@@ -28,13 +28,8 @@ Ec2EbsVolume::Ec2EbsVolume() :
 {
 }
 
-Ec2EbsVolume::Ec2EbsVolume(JsonView jsonValue) : 
-    m_iops(0),
-    m_iopsHasBeenSet(false),
-    m_sizeGiB(0),
-    m_sizeGiBHasBeenSet(false),
-    m_throughputMiB(0),
-    m_throughputMiBHasBeenSet(false)
+Ec2EbsVolume::Ec2EbsVolume(JsonView jsonValue)
+  : Ec2EbsVolume()
 {
   *this = jsonValue;
 }

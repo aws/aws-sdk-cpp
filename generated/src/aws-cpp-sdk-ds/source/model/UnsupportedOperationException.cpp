@@ -24,9 +24,8 @@ UnsupportedOperationException::UnsupportedOperationException() :
 {
 }
 
-UnsupportedOperationException::UnsupportedOperationException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
+UnsupportedOperationException::UnsupportedOperationException(JsonView jsonValue)
+  : UnsupportedOperationException()
 {
   *this = jsonValue;
 }

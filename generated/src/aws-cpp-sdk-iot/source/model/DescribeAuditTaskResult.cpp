@@ -23,9 +23,8 @@ DescribeAuditTaskResult::DescribeAuditTaskResult() :
 {
 }
 
-DescribeAuditTaskResult::DescribeAuditTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_taskStatus(AuditTaskStatus::NOT_SET),
-    m_taskType(AuditTaskType::NOT_SET)
+DescribeAuditTaskResult::DescribeAuditTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeAuditTaskResult()
 {
   *this = result;
 }

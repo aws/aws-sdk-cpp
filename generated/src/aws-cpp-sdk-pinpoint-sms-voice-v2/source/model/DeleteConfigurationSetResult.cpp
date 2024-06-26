@@ -22,8 +22,8 @@ DeleteConfigurationSetResult::DeleteConfigurationSetResult() :
 {
 }
 
-DeleteConfigurationSetResult::DeleteConfigurationSetResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_defaultMessageType(MessageType::NOT_SET)
+DeleteConfigurationSetResult::DeleteConfigurationSetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeleteConfigurationSetResult()
 {
   *this = result;
 }

@@ -24,9 +24,8 @@ ShardConfigurationRequest::ShardConfigurationRequest() :
 {
 }
 
-ShardConfigurationRequest::ShardConfigurationRequest(JsonView jsonValue) : 
-    m_shardCount(0),
-    m_shardCountHasBeenSet(false)
+ShardConfigurationRequest::ShardConfigurationRequest(JsonView jsonValue)
+  : ShardConfigurationRequest()
 {
   *this = jsonValue;
 }

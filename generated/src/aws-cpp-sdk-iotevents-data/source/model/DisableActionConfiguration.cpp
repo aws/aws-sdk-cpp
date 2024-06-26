@@ -23,8 +23,8 @@ DisableActionConfiguration::DisableActionConfiguration() :
 {
 }
 
-DisableActionConfiguration::DisableActionConfiguration(JsonView jsonValue) : 
-    m_noteHasBeenSet(false)
+DisableActionConfiguration::DisableActionConfiguration(JsonView jsonValue)
+  : DisableActionConfiguration()
 {
   *this = jsonValue;
 }

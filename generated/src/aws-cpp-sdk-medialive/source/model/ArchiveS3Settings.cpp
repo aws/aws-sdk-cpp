@@ -24,9 +24,8 @@ ArchiveS3Settings::ArchiveS3Settings() :
 {
 }
 
-ArchiveS3Settings::ArchiveS3Settings(JsonView jsonValue) : 
-    m_cannedAcl(S3CannedAcl::NOT_SET),
-    m_cannedAclHasBeenSet(false)
+ArchiveS3Settings::ArchiveS3Settings(JsonView jsonValue)
+  : ArchiveS3Settings()
 {
   *this = jsonValue;
 }

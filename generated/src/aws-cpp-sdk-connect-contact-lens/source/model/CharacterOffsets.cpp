@@ -26,11 +26,8 @@ CharacterOffsets::CharacterOffsets() :
 {
 }
 
-CharacterOffsets::CharacterOffsets(JsonView jsonValue) : 
-    m_beginOffsetChar(0),
-    m_beginOffsetCharHasBeenSet(false),
-    m_endOffsetChar(0),
-    m_endOffsetCharHasBeenSet(false)
+CharacterOffsets::CharacterOffsets(JsonView jsonValue)
+  : CharacterOffsets()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ InvalidSecurityGroupIDException::InvalidSecurityGroupIDException() :
 {
 }
 
-InvalidSecurityGroupIDException::InvalidSecurityGroupIDException(JsonView jsonValue) : 
-    m_typeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+InvalidSecurityGroupIDException::InvalidSecurityGroupIDException(JsonView jsonValue)
+  : InvalidSecurityGroupIDException()
 {
   *this = jsonValue;
 }

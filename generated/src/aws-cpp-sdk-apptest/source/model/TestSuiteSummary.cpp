@@ -32,17 +32,8 @@ TestSuiteSummary::TestSuiteSummary() :
 {
 }
 
-TestSuiteSummary::TestSuiteSummary(JsonView jsonValue) : 
-    m_testSuiteIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_statusReasonHasBeenSet(false),
-    m_latestVersion(0),
-    m_latestVersionHasBeenSet(false),
-    m_testSuiteArnHasBeenSet(false),
-    m_status(TestSuiteLifecycle::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastUpdateTimeHasBeenSet(false)
+TestSuiteSummary::TestSuiteSummary(JsonView jsonValue)
+  : TestSuiteSummary()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ AutoAdjustData::AutoAdjustData() :
 {
 }
 
-AutoAdjustData::AutoAdjustData(JsonView jsonValue) : 
-    m_autoAdjustType(AutoAdjustType::NOT_SET),
-    m_autoAdjustTypeHasBeenSet(false),
-    m_historicalOptionsHasBeenSet(false),
-    m_lastAutoAdjustTimeHasBeenSet(false)
+AutoAdjustData::AutoAdjustData(JsonView jsonValue)
+  : AutoAdjustData()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ MLResourceNotFoundException::MLResourceNotFoundException() :
 {
 }
 
-MLResourceNotFoundException::MLResourceNotFoundException(JsonView jsonValue) : 
-    m_detailedMessageHasBeenSet(false),
-    m_requestIdHasBeenSet(false),
-    m_codeHasBeenSet(false)
+MLResourceNotFoundException::MLResourceNotFoundException(JsonView jsonValue)
+  : MLResourceNotFoundException()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ GroupMembershipExistenceResult::GroupMembershipExistenceResult() :
 {
 }
 
-GroupMembershipExistenceResult::GroupMembershipExistenceResult(JsonView jsonValue) : 
-    m_groupIdHasBeenSet(false),
-    m_memberIdHasBeenSet(false),
-    m_membershipExists(false),
-    m_membershipExistsHasBeenSet(false)
+GroupMembershipExistenceResult::GroupMembershipExistenceResult(JsonView jsonValue)
+  : GroupMembershipExistenceResult()
 {
   *this = jsonValue;
 }

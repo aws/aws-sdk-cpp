@@ -40,25 +40,8 @@ Proposal::Proposal() :
 {
 }
 
-Proposal::Proposal(JsonView jsonValue) : 
-    m_proposalIdHasBeenSet(false),
-    m_networkIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_actionsHasBeenSet(false),
-    m_proposedByMemberIdHasBeenSet(false),
-    m_proposedByMemberNameHasBeenSet(false),
-    m_status(ProposalStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_expirationDateHasBeenSet(false),
-    m_yesVoteCount(0),
-    m_yesVoteCountHasBeenSet(false),
-    m_noVoteCount(0),
-    m_noVoteCountHasBeenSet(false),
-    m_outstandingVoteCount(0),
-    m_outstandingVoteCountHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_arnHasBeenSet(false)
+Proposal::Proposal(JsonView jsonValue)
+  : Proposal()
 {
   *this = jsonValue;
 }

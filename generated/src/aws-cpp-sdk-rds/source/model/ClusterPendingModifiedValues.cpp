@@ -39,22 +39,8 @@ ClusterPendingModifiedValues::ClusterPendingModifiedValues() :
 {
 }
 
-ClusterPendingModifiedValues::ClusterPendingModifiedValues(const XmlNode& xmlNode) : 
-    m_pendingCloudwatchLogsExportsHasBeenSet(false),
-    m_dBClusterIdentifierHasBeenSet(false),
-    m_masterUserPasswordHasBeenSet(false),
-    m_iAMDatabaseAuthenticationEnabled(false),
-    m_iAMDatabaseAuthenticationEnabledHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_backupRetentionPeriod(0),
-    m_backupRetentionPeriodHasBeenSet(false),
-    m_allocatedStorage(0),
-    m_allocatedStorageHasBeenSet(false),
-    m_rdsCustomClusterConfigurationHasBeenSet(false),
-    m_iops(0),
-    m_iopsHasBeenSet(false),
-    m_storageTypeHasBeenSet(false),
-    m_certificateDetailsHasBeenSet(false)
+ClusterPendingModifiedValues::ClusterPendingModifiedValues(const XmlNode& xmlNode)
+  : ClusterPendingModifiedValues()
 {
   *this = xmlNode;
 }

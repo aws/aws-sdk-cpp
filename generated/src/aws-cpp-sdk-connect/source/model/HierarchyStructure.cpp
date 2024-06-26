@@ -27,12 +27,8 @@ HierarchyStructure::HierarchyStructure() :
 {
 }
 
-HierarchyStructure::HierarchyStructure(JsonView jsonValue) : 
-    m_levelOneHasBeenSet(false),
-    m_levelTwoHasBeenSet(false),
-    m_levelThreeHasBeenSet(false),
-    m_levelFourHasBeenSet(false),
-    m_levelFiveHasBeenSet(false)
+HierarchyStructure::HierarchyStructure(JsonView jsonValue)
+  : HierarchyStructure()
 {
   *this = jsonValue;
 }

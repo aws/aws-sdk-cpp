@@ -29,14 +29,8 @@ TextInferenceConfig::TextInferenceConfig() :
 {
 }
 
-TextInferenceConfig::TextInferenceConfig(JsonView jsonValue) : 
-    m_maxTokens(0),
-    m_maxTokensHasBeenSet(false),
-    m_stopSequencesHasBeenSet(false),
-    m_temperature(0.0),
-    m_temperatureHasBeenSet(false),
-    m_topP(0.0),
-    m_topPHasBeenSet(false)
+TextInferenceConfig::TextInferenceConfig(JsonView jsonValue)
+  : TextInferenceConfig()
 {
   *this = jsonValue;
 }

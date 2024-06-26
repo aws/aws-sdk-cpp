@@ -24,9 +24,8 @@ FunctionDefinitionVersion::FunctionDefinitionVersion() :
 {
 }
 
-FunctionDefinitionVersion::FunctionDefinitionVersion(JsonView jsonValue) : 
-    m_defaultConfigHasBeenSet(false),
-    m_functionsHasBeenSet(false)
+FunctionDefinitionVersion::FunctionDefinitionVersion(JsonView jsonValue)
+  : FunctionDefinitionVersion()
 {
   *this = jsonValue;
 }

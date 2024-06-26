@@ -33,18 +33,8 @@ BehaviorCriteria::BehaviorCriteria() :
 {
 }
 
-BehaviorCriteria::BehaviorCriteria(JsonView jsonValue) : 
-    m_comparisonOperator(ComparisonOperator::NOT_SET),
-    m_comparisonOperatorHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_durationSeconds(0),
-    m_durationSecondsHasBeenSet(false),
-    m_consecutiveDatapointsToAlarm(0),
-    m_consecutiveDatapointsToAlarmHasBeenSet(false),
-    m_consecutiveDatapointsToClear(0),
-    m_consecutiveDatapointsToClearHasBeenSet(false),
-    m_statisticalThresholdHasBeenSet(false),
-    m_mlDetectionConfigHasBeenSet(false)
+BehaviorCriteria::BehaviorCriteria(JsonView jsonValue)
+  : BehaviorCriteria()
 {
   *this = jsonValue;
 }

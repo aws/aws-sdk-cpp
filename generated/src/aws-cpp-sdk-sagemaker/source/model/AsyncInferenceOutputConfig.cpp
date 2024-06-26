@@ -26,11 +26,8 @@ AsyncInferenceOutputConfig::AsyncInferenceOutputConfig() :
 {
 }
 
-AsyncInferenceOutputConfig::AsyncInferenceOutputConfig(JsonView jsonValue) : 
-    m_kmsKeyIdHasBeenSet(false),
-    m_s3OutputPathHasBeenSet(false),
-    m_notificationConfigHasBeenSet(false),
-    m_s3FailurePathHasBeenSet(false)
+AsyncInferenceOutputConfig::AsyncInferenceOutputConfig(JsonView jsonValue)
+  : AsyncInferenceOutputConfig()
 {
   *this = jsonValue;
 }

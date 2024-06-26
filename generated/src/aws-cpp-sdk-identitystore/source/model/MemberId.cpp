@@ -23,8 +23,8 @@ MemberId::MemberId() :
 {
 }
 
-MemberId::MemberId(JsonView jsonValue) : 
-    m_userIdHasBeenSet(false)
+MemberId::MemberId(JsonView jsonValue)
+  : MemberId()
 {
   *this = jsonValue;
 }

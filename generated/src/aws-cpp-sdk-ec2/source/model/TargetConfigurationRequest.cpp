@@ -27,10 +27,8 @@ TargetConfigurationRequest::TargetConfigurationRequest() :
 {
 }
 
-TargetConfigurationRequest::TargetConfigurationRequest(const XmlNode& xmlNode) : 
-    m_instanceCount(0),
-    m_instanceCountHasBeenSet(false),
-    m_offeringIdHasBeenSet(false)
+TargetConfigurationRequest::TargetConfigurationRequest(const XmlNode& xmlNode)
+  : TargetConfigurationRequest()
 {
   *this = xmlNode;
 }

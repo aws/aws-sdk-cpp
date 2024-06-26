@@ -42,27 +42,8 @@ AwsAmazonMqBrokerDetails::AwsAmazonMqBrokerDetails() :
 {
 }
 
-AwsAmazonMqBrokerDetails::AwsAmazonMqBrokerDetails(JsonView jsonValue) : 
-    m_authenticationStrategyHasBeenSet(false),
-    m_autoMinorVersionUpgrade(false),
-    m_autoMinorVersionUpgradeHasBeenSet(false),
-    m_brokerArnHasBeenSet(false),
-    m_brokerNameHasBeenSet(false),
-    m_deploymentModeHasBeenSet(false),
-    m_encryptionOptionsHasBeenSet(false),
-    m_engineTypeHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_hostInstanceTypeHasBeenSet(false),
-    m_brokerIdHasBeenSet(false),
-    m_ldapServerMetadataHasBeenSet(false),
-    m_logsHasBeenSet(false),
-    m_maintenanceWindowStartTimeHasBeenSet(false),
-    m_publiclyAccessible(false),
-    m_publiclyAccessibleHasBeenSet(false),
-    m_securityGroupsHasBeenSet(false),
-    m_storageTypeHasBeenSet(false),
-    m_subnetIdsHasBeenSet(false),
-    m_usersHasBeenSet(false)
+AwsAmazonMqBrokerDetails::AwsAmazonMqBrokerDetails(JsonView jsonValue)
+  : AwsAmazonMqBrokerDetails()
 {
   *this = jsonValue;
 }

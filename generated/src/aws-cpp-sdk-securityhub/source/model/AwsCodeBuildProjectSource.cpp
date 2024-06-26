@@ -28,13 +28,8 @@ AwsCodeBuildProjectSource::AwsCodeBuildProjectSource() :
 {
 }
 
-AwsCodeBuildProjectSource::AwsCodeBuildProjectSource(JsonView jsonValue) : 
-    m_typeHasBeenSet(false),
-    m_locationHasBeenSet(false),
-    m_gitCloneDepth(0),
-    m_gitCloneDepthHasBeenSet(false),
-    m_insecureSsl(false),
-    m_insecureSslHasBeenSet(false)
+AwsCodeBuildProjectSource::AwsCodeBuildProjectSource(JsonView jsonValue)
+  : AwsCodeBuildProjectSource()
 {
   *this = jsonValue;
 }

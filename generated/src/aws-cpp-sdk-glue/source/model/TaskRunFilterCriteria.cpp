@@ -28,13 +28,8 @@ TaskRunFilterCriteria::TaskRunFilterCriteria() :
 {
 }
 
-TaskRunFilterCriteria::TaskRunFilterCriteria(JsonView jsonValue) : 
-    m_taskRunType(TaskType::NOT_SET),
-    m_taskRunTypeHasBeenSet(false),
-    m_status(TaskStatusType::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_startedBeforeHasBeenSet(false),
-    m_startedAfterHasBeenSet(false)
+TaskRunFilterCriteria::TaskRunFilterCriteria(JsonView jsonValue)
+  : TaskRunFilterCriteria()
 {
   *this = jsonValue;
 }

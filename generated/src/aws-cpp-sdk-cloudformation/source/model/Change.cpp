@@ -29,12 +29,8 @@ Change::Change() :
 {
 }
 
-Change::Change(const XmlNode& xmlNode) : 
-    m_type(ChangeType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_hookInvocationCount(0),
-    m_hookInvocationCountHasBeenSet(false),
-    m_resourceChangeHasBeenSet(false)
+Change::Change(const XmlNode& xmlNode)
+  : Change()
 {
   *this = xmlNode;
 }

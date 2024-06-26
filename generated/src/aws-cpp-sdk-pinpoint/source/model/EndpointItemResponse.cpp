@@ -25,10 +25,8 @@ EndpointItemResponse::EndpointItemResponse() :
 {
 }
 
-EndpointItemResponse::EndpointItemResponse(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_statusCode(0),
-    m_statusCodeHasBeenSet(false)
+EndpointItemResponse::EndpointItemResponse(JsonView jsonValue)
+  : EndpointItemResponse()
 {
   *this = jsonValue;
 }

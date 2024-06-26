@@ -29,14 +29,8 @@ DatasetSummary::DatasetSummary() :
 {
 }
 
-DatasetSummary::DatasetSummary(JsonView jsonValue) : 
-    m_datasetNameHasBeenSet(false),
-    m_status(DatasetStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastUpdateTimeHasBeenSet(false),
-    m_triggersHasBeenSet(false),
-    m_actionsHasBeenSet(false)
+DatasetSummary::DatasetSummary(JsonView jsonValue)
+  : DatasetSummary()
 {
   *this = jsonValue;
 }

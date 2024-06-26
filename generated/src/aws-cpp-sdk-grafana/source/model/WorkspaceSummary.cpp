@@ -37,22 +37,8 @@ WorkspaceSummary::WorkspaceSummary() :
 {
 }
 
-WorkspaceSummary::WorkspaceSummary(JsonView jsonValue) : 
-    m_authenticationHasBeenSet(false),
-    m_createdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_endpointHasBeenSet(false),
-    m_grafanaTokenHasBeenSet(false),
-    m_grafanaVersionHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_licenseType(LicenseType::NOT_SET),
-    m_licenseTypeHasBeenSet(false),
-    m_modifiedHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_notificationDestinationsHasBeenSet(false),
-    m_status(WorkspaceStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+WorkspaceSummary::WorkspaceSummary(JsonView jsonValue)
+  : WorkspaceSummary()
 {
   *this = jsonValue;
 }

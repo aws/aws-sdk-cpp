@@ -25,10 +25,8 @@ ColumnTag::ColumnTag() :
 {
 }
 
-ColumnTag::ColumnTag(JsonView jsonValue) : 
-    m_columnGeographicRole(GeoSpatialDataRole::NOT_SET),
-    m_columnGeographicRoleHasBeenSet(false),
-    m_columnDescriptionHasBeenSet(false)
+ColumnTag::ColumnTag(JsonView jsonValue)
+  : ColumnTag()
 {
   *this = jsonValue;
 }

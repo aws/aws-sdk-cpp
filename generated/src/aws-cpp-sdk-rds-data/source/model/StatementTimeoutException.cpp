@@ -25,10 +25,8 @@ StatementTimeoutException::StatementTimeoutException() :
 {
 }
 
-StatementTimeoutException::StatementTimeoutException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_dbConnectionId(0),
-    m_dbConnectionIdHasBeenSet(false)
+StatementTimeoutException::StatementTimeoutException(JsonView jsonValue)
+  : StatementTimeoutException()
 {
   *this = jsonValue;
 }

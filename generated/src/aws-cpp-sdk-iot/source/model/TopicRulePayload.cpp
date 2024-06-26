@@ -29,14 +29,8 @@ TopicRulePayload::TopicRulePayload() :
 {
 }
 
-TopicRulePayload::TopicRulePayload(JsonView jsonValue) : 
-    m_sqlHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_actionsHasBeenSet(false),
-    m_ruleDisabled(false),
-    m_ruleDisabledHasBeenSet(false),
-    m_awsIotSqlVersionHasBeenSet(false),
-    m_errorActionHasBeenSet(false)
+TopicRulePayload::TopicRulePayload(JsonView jsonValue)
+  : TopicRulePayload()
 {
   *this = jsonValue;
 }

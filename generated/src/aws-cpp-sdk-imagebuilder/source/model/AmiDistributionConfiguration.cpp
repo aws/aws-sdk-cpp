@@ -28,13 +28,8 @@ AmiDistributionConfiguration::AmiDistributionConfiguration() :
 {
 }
 
-AmiDistributionConfiguration::AmiDistributionConfiguration(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_targetAccountIdsHasBeenSet(false),
-    m_amiTagsHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_launchPermissionHasBeenSet(false)
+AmiDistributionConfiguration::AmiDistributionConfiguration(JsonView jsonValue)
+  : AmiDistributionConfiguration()
 {
   *this = jsonValue;
 }

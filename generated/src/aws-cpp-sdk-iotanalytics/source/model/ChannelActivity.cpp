@@ -25,10 +25,8 @@ ChannelActivity::ChannelActivity() :
 {
 }
 
-ChannelActivity::ChannelActivity(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_channelNameHasBeenSet(false),
-    m_nextHasBeenSet(false)
+ChannelActivity::ChannelActivity(JsonView jsonValue)
+  : ChannelActivity()
 {
   *this = jsonValue;
 }

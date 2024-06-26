@@ -29,14 +29,8 @@ RecommendationSummary::RecommendationSummary() :
 {
 }
 
-RecommendationSummary::RecommendationSummary(JsonView jsonValue) : 
-    m_summariesHasBeenSet(false),
-    m_recommendationResourceType(RecommendationSourceType::NOT_SET),
-    m_recommendationResourceTypeHasBeenSet(false),
-    m_accountIdHasBeenSet(false),
-    m_savingsOpportunityHasBeenSet(false),
-    m_currentPerformanceRiskRatingsHasBeenSet(false),
-    m_inferredWorkloadSavingsHasBeenSet(false)
+RecommendationSummary::RecommendationSummary(JsonView jsonValue)
+  : RecommendationSummary()
 {
   *this = jsonValue;
 }

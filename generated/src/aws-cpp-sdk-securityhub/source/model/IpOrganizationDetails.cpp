@@ -27,12 +27,8 @@ IpOrganizationDetails::IpOrganizationDetails() :
 {
 }
 
-IpOrganizationDetails::IpOrganizationDetails(JsonView jsonValue) : 
-    m_asn(0),
-    m_asnHasBeenSet(false),
-    m_asnOrgHasBeenSet(false),
-    m_ispHasBeenSet(false),
-    m_orgHasBeenSet(false)
+IpOrganizationDetails::IpOrganizationDetails(JsonView jsonValue)
+  : IpOrganizationDetails()
 {
   *this = jsonValue;
 }

@@ -33,18 +33,8 @@ HyperParameterTuningJobConfig::HyperParameterTuningJobConfig() :
 {
 }
 
-HyperParameterTuningJobConfig::HyperParameterTuningJobConfig(JsonView jsonValue) : 
-    m_strategy(HyperParameterTuningJobStrategyType::NOT_SET),
-    m_strategyHasBeenSet(false),
-    m_strategyConfigHasBeenSet(false),
-    m_hyperParameterTuningJobObjectiveHasBeenSet(false),
-    m_resourceLimitsHasBeenSet(false),
-    m_parameterRangesHasBeenSet(false),
-    m_trainingJobEarlyStoppingType(TrainingJobEarlyStoppingType::NOT_SET),
-    m_trainingJobEarlyStoppingTypeHasBeenSet(false),
-    m_tuningJobCompletionCriteriaHasBeenSet(false),
-    m_randomSeed(0),
-    m_randomSeedHasBeenSet(false)
+HyperParameterTuningJobConfig::HyperParameterTuningJobConfig(JsonView jsonValue)
+  : HyperParameterTuningJobConfig()
 {
   *this = jsonValue;
 }

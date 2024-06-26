@@ -25,10 +25,8 @@ Payload::Payload() :
 {
 }
 
-Payload::Payload(JsonView jsonValue) : 
-    m_contentExpressionHasBeenSet(false),
-    m_type(PayloadType::NOT_SET),
-    m_typeHasBeenSet(false)
+Payload::Payload(JsonView jsonValue)
+  : Payload()
 {
   *this = jsonValue;
 }

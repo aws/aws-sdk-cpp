@@ -25,10 +25,8 @@ NewAsoDetail::NewAsoDetail() :
 {
 }
 
-NewAsoDetail::NewAsoDetail(JsonView jsonValue) : 
-    m_asoHasBeenSet(false),
-    m_isNewForEntireAccount(false),
-    m_isNewForEntireAccountHasBeenSet(false)
+NewAsoDetail::NewAsoDetail(JsonView jsonValue)
+  : NewAsoDetail()
 {
   *this = jsonValue;
 }

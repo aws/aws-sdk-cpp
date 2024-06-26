@@ -23,9 +23,8 @@ GetKeyRotationStatusResult::GetKeyRotationStatusResult() :
 {
 }
 
-GetKeyRotationStatusResult::GetKeyRotationStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_keyRotationEnabled(false),
-    m_rotationPeriodInDays(0)
+GetKeyRotationStatusResult::GetKeyRotationStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetKeyRotationStatusResult()
 {
   *this = result;
 }

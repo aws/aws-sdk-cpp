@@ -28,13 +28,8 @@ ProductViewDetail::ProductViewDetail() :
 {
 }
 
-ProductViewDetail::ProductViewDetail(JsonView jsonValue) : 
-    m_productViewSummaryHasBeenSet(false),
-    m_status(Status::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_productARNHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_sourceConnectionHasBeenSet(false)
+ProductViewDetail::ProductViewDetail(JsonView jsonValue)
+  : ProductViewDetail()
 {
   *this = jsonValue;
 }

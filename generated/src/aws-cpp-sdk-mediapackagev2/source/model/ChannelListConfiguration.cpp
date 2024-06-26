@@ -30,15 +30,8 @@ ChannelListConfiguration::ChannelListConfiguration() :
 {
 }
 
-ChannelListConfiguration::ChannelListConfiguration(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_channelNameHasBeenSet(false),
-    m_channelGroupNameHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_modifiedAtHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_inputType(InputType::NOT_SET),
-    m_inputTypeHasBeenSet(false)
+ChannelListConfiguration::ChannelListConfiguration(JsonView jsonValue)
+  : ChannelListConfiguration()
 {
   *this = jsonValue;
 }

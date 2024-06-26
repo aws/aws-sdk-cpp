@@ -23,8 +23,8 @@ MeetingFeaturesConfiguration::MeetingFeaturesConfiguration() :
 {
 }
 
-MeetingFeaturesConfiguration::MeetingFeaturesConfiguration(JsonView jsonValue) : 
-    m_audioHasBeenSet(false)
+MeetingFeaturesConfiguration::MeetingFeaturesConfiguration(JsonView jsonValue)
+  : MeetingFeaturesConfiguration()
 {
   *this = jsonValue;
 }

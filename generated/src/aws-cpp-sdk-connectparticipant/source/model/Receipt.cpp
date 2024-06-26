@@ -25,10 +25,8 @@ Receipt::Receipt() :
 {
 }
 
-Receipt::Receipt(JsonView jsonValue) : 
-    m_deliveredTimestampHasBeenSet(false),
-    m_readTimestampHasBeenSet(false),
-    m_recipientParticipantIdHasBeenSet(false)
+Receipt::Receipt(JsonView jsonValue)
+  : Receipt()
 {
   *this = jsonValue;
 }

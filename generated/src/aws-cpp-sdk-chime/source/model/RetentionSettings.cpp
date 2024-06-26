@@ -24,9 +24,8 @@ RetentionSettings::RetentionSettings() :
 {
 }
 
-RetentionSettings::RetentionSettings(JsonView jsonValue) : 
-    m_roomRetentionSettingsHasBeenSet(false),
-    m_conversationRetentionSettingsHasBeenSet(false)
+RetentionSettings::RetentionSettings(JsonView jsonValue)
+  : RetentionSettings()
 {
   *this = jsonValue;
 }

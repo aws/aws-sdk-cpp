@@ -26,9 +26,8 @@ RuleGroupRuleOptionsPair::RuleGroupRuleOptionsPair() :
 {
 }
 
-RuleGroupRuleOptionsPair::RuleGroupRuleOptionsPair(const XmlNode& xmlNode) : 
-    m_ruleGroupArnHasBeenSet(false),
-    m_ruleOptionsHasBeenSet(false)
+RuleGroupRuleOptionsPair::RuleGroupRuleOptionsPair(const XmlNode& xmlNode)
+  : RuleGroupRuleOptionsPair()
 {
   *this = xmlNode;
 }

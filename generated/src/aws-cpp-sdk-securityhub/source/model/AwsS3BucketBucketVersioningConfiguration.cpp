@@ -25,10 +25,8 @@ AwsS3BucketBucketVersioningConfiguration::AwsS3BucketBucketVersioningConfigurati
 {
 }
 
-AwsS3BucketBucketVersioningConfiguration::AwsS3BucketBucketVersioningConfiguration(JsonView jsonValue) : 
-    m_isMfaDeleteEnabled(false),
-    m_isMfaDeleteEnabledHasBeenSet(false),
-    m_statusHasBeenSet(false)
+AwsS3BucketBucketVersioningConfiguration::AwsS3BucketBucketVersioningConfiguration(JsonView jsonValue)
+  : AwsS3BucketBucketVersioningConfiguration()
 {
   *this = jsonValue;
 }

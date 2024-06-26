@@ -23,8 +23,8 @@ ChannelBanSummary::ChannelBanSummary() :
 {
 }
 
-ChannelBanSummary::ChannelBanSummary(JsonView jsonValue) : 
-    m_memberHasBeenSet(false)
+ChannelBanSummary::ChannelBanSummary(JsonView jsonValue)
+  : ChannelBanSummary()
 {
   *this = jsonValue;
 }

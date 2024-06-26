@@ -23,9 +23,8 @@ GetGatewayResponseResult::GetGatewayResponseResult() :
 {
 }
 
-GetGatewayResponseResult::GetGatewayResponseResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_responseType(GatewayResponseType::NOT_SET),
-    m_defaultResponse(false)
+GetGatewayResponseResult::GetGatewayResponseResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetGatewayResponseResult()
 {
   *this = result;
 }

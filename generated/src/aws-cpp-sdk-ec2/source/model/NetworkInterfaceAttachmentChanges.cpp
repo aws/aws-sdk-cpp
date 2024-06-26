@@ -27,10 +27,8 @@ NetworkInterfaceAttachmentChanges::NetworkInterfaceAttachmentChanges() :
 {
 }
 
-NetworkInterfaceAttachmentChanges::NetworkInterfaceAttachmentChanges(const XmlNode& xmlNode) : 
-    m_attachmentIdHasBeenSet(false),
-    m_deleteOnTermination(false),
-    m_deleteOnTerminationHasBeenSet(false)
+NetworkInterfaceAttachmentChanges::NetworkInterfaceAttachmentChanges(const XmlNode& xmlNode)
+  : NetworkInterfaceAttachmentChanges()
 {
   *this = xmlNode;
 }

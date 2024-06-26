@@ -30,15 +30,8 @@ CrawlerTargets::CrawlerTargets() :
 {
 }
 
-CrawlerTargets::CrawlerTargets(JsonView jsonValue) : 
-    m_s3TargetsHasBeenSet(false),
-    m_jdbcTargetsHasBeenSet(false),
-    m_mongoDBTargetsHasBeenSet(false),
-    m_dynamoDBTargetsHasBeenSet(false),
-    m_catalogTargetsHasBeenSet(false),
-    m_deltaTargetsHasBeenSet(false),
-    m_icebergTargetsHasBeenSet(false),
-    m_hudiTargetsHasBeenSet(false)
+CrawlerTargets::CrawlerTargets(JsonView jsonValue)
+  : CrawlerTargets()
 {
   *this = jsonValue;
 }

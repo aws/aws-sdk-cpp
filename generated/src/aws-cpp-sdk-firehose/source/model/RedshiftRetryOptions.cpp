@@ -24,9 +24,8 @@ RedshiftRetryOptions::RedshiftRetryOptions() :
 {
 }
 
-RedshiftRetryOptions::RedshiftRetryOptions(JsonView jsonValue) : 
-    m_durationInSeconds(0),
-    m_durationInSecondsHasBeenSet(false)
+RedshiftRetryOptions::RedshiftRetryOptions(JsonView jsonValue)
+  : RedshiftRetryOptions()
 {
   *this = jsonValue;
 }

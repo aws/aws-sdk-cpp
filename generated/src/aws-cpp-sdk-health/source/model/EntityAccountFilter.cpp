@@ -25,10 +25,8 @@ EntityAccountFilter::EntityAccountFilter() :
 {
 }
 
-EntityAccountFilter::EntityAccountFilter(JsonView jsonValue) : 
-    m_eventArnHasBeenSet(false),
-    m_awsAccountIdHasBeenSet(false),
-    m_statusCodesHasBeenSet(false)
+EntityAccountFilter::EntityAccountFilter(JsonView jsonValue)
+  : EntityAccountFilter()
 {
   *this = jsonValue;
 }

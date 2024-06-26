@@ -26,11 +26,8 @@ CaseFilter::CaseFilter() :
 {
 }
 
-CaseFilter::CaseFilter(JsonView jsonValue) : 
-    m_andAllHasBeenSet(false),
-    m_fieldHasBeenSet(false),
-    m_notHasBeenSet(false),
-    m_orAllHasBeenSet(false)
+CaseFilter::CaseFilter(JsonView jsonValue)
+  : CaseFilter()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ ModifyInstanceMaintenanceOptionsResponse::ModifyInstanceMaintenanceOptionsRespon
 {
 }
 
-ModifyInstanceMaintenanceOptionsResponse::ModifyInstanceMaintenanceOptionsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_autoRecovery(InstanceAutoRecoveryState::NOT_SET)
+ModifyInstanceMaintenanceOptionsResponse::ModifyInstanceMaintenanceOptionsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : ModifyInstanceMaintenanceOptionsResponse()
 {
   *this = result;
 }

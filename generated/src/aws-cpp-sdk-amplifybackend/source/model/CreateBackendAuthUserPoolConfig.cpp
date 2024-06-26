@@ -31,16 +31,8 @@ CreateBackendAuthUserPoolConfig::CreateBackendAuthUserPoolConfig() :
 {
 }
 
-CreateBackendAuthUserPoolConfig::CreateBackendAuthUserPoolConfig(JsonView jsonValue) : 
-    m_forgotPasswordHasBeenSet(false),
-    m_mfaHasBeenSet(false),
-    m_oAuthHasBeenSet(false),
-    m_passwordPolicyHasBeenSet(false),
-    m_requiredSignUpAttributesHasBeenSet(false),
-    m_signInMethod(SignInMethod::NOT_SET),
-    m_signInMethodHasBeenSet(false),
-    m_userPoolNameHasBeenSet(false),
-    m_verificationMessageHasBeenSet(false)
+CreateBackendAuthUserPoolConfig::CreateBackendAuthUserPoolConfig(JsonView jsonValue)
+  : CreateBackendAuthUserPoolConfig()
 {
   *this = jsonValue;
 }

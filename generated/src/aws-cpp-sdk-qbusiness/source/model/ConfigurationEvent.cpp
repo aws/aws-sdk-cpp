@@ -26,11 +26,8 @@ ConfigurationEvent::ConfigurationEvent() :
 {
 }
 
-ConfigurationEvent::ConfigurationEvent(JsonView jsonValue) : 
-    m_chatMode(ChatMode::NOT_SET),
-    m_chatModeHasBeenSet(false),
-    m_chatModeConfigurationHasBeenSet(false),
-    m_attributeFilterHasBeenSet(false)
+ConfigurationEvent::ConfigurationEvent(JsonView jsonValue)
+  : ConfigurationEvent()
 {
   *this = jsonValue;
 }

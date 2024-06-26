@@ -43,26 +43,8 @@ DBProxy::DBProxy() :
 {
 }
 
-DBProxy::DBProxy(const XmlNode& xmlNode) : 
-    m_dBProxyNameHasBeenSet(false),
-    m_dBProxyArnHasBeenSet(false),
-    m_status(DBProxyStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_engineFamilyHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_vpcSecurityGroupIdsHasBeenSet(false),
-    m_vpcSubnetIdsHasBeenSet(false),
-    m_authHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_endpointHasBeenSet(false),
-    m_requireTLS(false),
-    m_requireTLSHasBeenSet(false),
-    m_idleClientTimeout(0),
-    m_idleClientTimeoutHasBeenSet(false),
-    m_debugLogging(false),
-    m_debugLoggingHasBeenSet(false),
-    m_createdDateHasBeenSet(false),
-    m_updatedDateHasBeenSet(false)
+DBProxy::DBProxy(const XmlNode& xmlNode)
+  : DBProxy()
 {
   *this = xmlNode;
 }

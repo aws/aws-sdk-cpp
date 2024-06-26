@@ -23,8 +23,8 @@ DatasetGroundTruthManifest::DatasetGroundTruthManifest() :
 {
 }
 
-DatasetGroundTruthManifest::DatasetGroundTruthManifest(JsonView jsonValue) : 
-    m_s3ObjectHasBeenSet(false)
+DatasetGroundTruthManifest::DatasetGroundTruthManifest(JsonView jsonValue)
+  : DatasetGroundTruthManifest()
 {
   *this = jsonValue;
 }

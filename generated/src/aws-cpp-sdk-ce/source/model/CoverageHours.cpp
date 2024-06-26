@@ -26,11 +26,8 @@ CoverageHours::CoverageHours() :
 {
 }
 
-CoverageHours::CoverageHours(JsonView jsonValue) : 
-    m_onDemandHoursHasBeenSet(false),
-    m_reservedHoursHasBeenSet(false),
-    m_totalRunningHoursHasBeenSet(false),
-    m_coverageHoursPercentageHasBeenSet(false)
+CoverageHours::CoverageHours(JsonView jsonValue)
+  : CoverageHours()
 {
   *this = jsonValue;
 }

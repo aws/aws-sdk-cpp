@@ -23,8 +23,8 @@ LifeCycleLastTestReverted::LifeCycleLastTestReverted() :
 {
 }
 
-LifeCycleLastTestReverted::LifeCycleLastTestReverted(JsonView jsonValue) : 
-    m_apiCallDateTimeHasBeenSet(false)
+LifeCycleLastTestReverted::LifeCycleLastTestReverted(JsonView jsonValue)
+  : LifeCycleLastTestReverted()
 {
   *this = jsonValue;
 }

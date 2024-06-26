@@ -33,18 +33,8 @@ Pipeline::Pipeline() :
 {
 }
 
-Pipeline::Pipeline(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_inputBucketHasBeenSet(false),
-    m_outputBucketHasBeenSet(false),
-    m_roleHasBeenSet(false),
-    m_awsKmsKeyArnHasBeenSet(false),
-    m_notificationsHasBeenSet(false),
-    m_contentConfigHasBeenSet(false),
-    m_thumbnailConfigHasBeenSet(false)
+Pipeline::Pipeline(JsonView jsonValue)
+  : Pipeline()
 {
   *this = jsonValue;
 }

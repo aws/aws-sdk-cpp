@@ -23,8 +23,8 @@ SlotTypeRegexConfiguration::SlotTypeRegexConfiguration() :
 {
 }
 
-SlotTypeRegexConfiguration::SlotTypeRegexConfiguration(JsonView jsonValue) : 
-    m_patternHasBeenSet(false)
+SlotTypeRegexConfiguration::SlotTypeRegexConfiguration(JsonView jsonValue)
+  : SlotTypeRegexConfiguration()
 {
   *this = jsonValue;
 }

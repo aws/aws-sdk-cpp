@@ -25,10 +25,8 @@ RegistrationVersionFilter::RegistrationVersionFilter() :
 {
 }
 
-RegistrationVersionFilter::RegistrationVersionFilter(JsonView jsonValue) : 
-    m_name(RegistrationVersionFilterName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+RegistrationVersionFilter::RegistrationVersionFilter(JsonView jsonValue)
+  : RegistrationVersionFilter()
 {
   *this = jsonValue;
 }

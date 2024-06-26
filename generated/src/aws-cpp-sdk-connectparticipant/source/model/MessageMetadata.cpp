@@ -24,9 +24,8 @@ MessageMetadata::MessageMetadata() :
 {
 }
 
-MessageMetadata::MessageMetadata(JsonView jsonValue) : 
-    m_messageIdHasBeenSet(false),
-    m_receiptsHasBeenSet(false)
+MessageMetadata::MessageMetadata(JsonView jsonValue)
+  : MessageMetadata()
 {
   *this = jsonValue;
 }

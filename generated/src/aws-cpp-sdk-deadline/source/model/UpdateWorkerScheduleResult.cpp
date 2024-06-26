@@ -23,9 +23,8 @@ UpdateWorkerScheduleResult::UpdateWorkerScheduleResult() :
 {
 }
 
-UpdateWorkerScheduleResult::UpdateWorkerScheduleResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_desiredWorkerStatus(DesiredWorkerStatus::NOT_SET),
-    m_updateIntervalSeconds(0)
+UpdateWorkerScheduleResult::UpdateWorkerScheduleResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateWorkerScheduleResult()
 {
   *this = result;
 }

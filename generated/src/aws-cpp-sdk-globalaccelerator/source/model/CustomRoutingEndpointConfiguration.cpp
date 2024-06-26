@@ -24,9 +24,8 @@ CustomRoutingEndpointConfiguration::CustomRoutingEndpointConfiguration() :
 {
 }
 
-CustomRoutingEndpointConfiguration::CustomRoutingEndpointConfiguration(JsonView jsonValue) : 
-    m_endpointIdHasBeenSet(false),
-    m_attachmentArnHasBeenSet(false)
+CustomRoutingEndpointConfiguration::CustomRoutingEndpointConfiguration(JsonView jsonValue)
+  : CustomRoutingEndpointConfiguration()
 {
   *this = jsonValue;
 }

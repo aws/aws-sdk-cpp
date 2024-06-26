@@ -25,10 +25,8 @@ AdminAccount::AdminAccount() :
 {
 }
 
-AdminAccount::AdminAccount(JsonView jsonValue) : 
-    m_adminAccountIdHasBeenSet(false),
-    m_adminStatus(AdminStatus::NOT_SET),
-    m_adminStatusHasBeenSet(false)
+AdminAccount::AdminAccount(JsonView jsonValue)
+  : AdminAccount()
 {
   *this = jsonValue;
 }

@@ -26,9 +26,8 @@ DistributionConfigWithTags::DistributionConfigWithTags() :
 {
 }
 
-DistributionConfigWithTags::DistributionConfigWithTags(const XmlNode& xmlNode) : 
-    m_distributionConfigHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+DistributionConfigWithTags::DistributionConfigWithTags(const XmlNode& xmlNode)
+  : DistributionConfigWithTags()
 {
   *this = xmlNode;
 }

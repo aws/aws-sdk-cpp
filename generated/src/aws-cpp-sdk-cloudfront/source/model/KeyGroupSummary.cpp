@@ -25,8 +25,8 @@ KeyGroupSummary::KeyGroupSummary() :
 {
 }
 
-KeyGroupSummary::KeyGroupSummary(const XmlNode& xmlNode) : 
-    m_keyGroupHasBeenSet(false)
+KeyGroupSummary::KeyGroupSummary(const XmlNode& xmlNode)
+  : KeyGroupSummary()
 {
   *this = xmlNode;
 }

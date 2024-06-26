@@ -40,25 +40,8 @@ XavcHdProfileSettings::XavcHdProfileSettings() :
 {
 }
 
-XavcHdProfileSettings::XavcHdProfileSettings(JsonView jsonValue) : 
-    m_bitrateClass(XavcHdProfileBitrateClass::NOT_SET),
-    m_bitrateClassHasBeenSet(false),
-    m_flickerAdaptiveQuantization(XavcFlickerAdaptiveQuantization::NOT_SET),
-    m_flickerAdaptiveQuantizationHasBeenSet(false),
-    m_gopBReference(XavcGopBReference::NOT_SET),
-    m_gopBReferenceHasBeenSet(false),
-    m_gopClosedCadence(0),
-    m_gopClosedCadenceHasBeenSet(false),
-    m_hrdBufferSize(0),
-    m_hrdBufferSizeHasBeenSet(false),
-    m_interlaceMode(XavcInterlaceMode::NOT_SET),
-    m_interlaceModeHasBeenSet(false),
-    m_qualityTuningLevel(XavcHdProfileQualityTuningLevel::NOT_SET),
-    m_qualityTuningLevelHasBeenSet(false),
-    m_slices(0),
-    m_slicesHasBeenSet(false),
-    m_telecine(XavcHdProfileTelecine::NOT_SET),
-    m_telecineHasBeenSet(false)
+XavcHdProfileSettings::XavcHdProfileSettings(JsonView jsonValue)
+  : XavcHdProfileSettings()
 {
   *this = jsonValue;
 }

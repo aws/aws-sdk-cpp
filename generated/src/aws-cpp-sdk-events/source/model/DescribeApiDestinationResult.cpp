@@ -24,10 +24,8 @@ DescribeApiDestinationResult::DescribeApiDestinationResult() :
 {
 }
 
-DescribeApiDestinationResult::DescribeApiDestinationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_apiDestinationState(ApiDestinationState::NOT_SET),
-    m_httpMethod(ApiDestinationHttpMethod::NOT_SET),
-    m_invocationRateLimitPerSecond(0)
+DescribeApiDestinationResult::DescribeApiDestinationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeApiDestinationResult()
 {
   *this = result;
 }

@@ -26,11 +26,8 @@ ExperimentTemplateExperimentOptions::ExperimentTemplateExperimentOptions() :
 {
 }
 
-ExperimentTemplateExperimentOptions::ExperimentTemplateExperimentOptions(JsonView jsonValue) : 
-    m_accountTargeting(AccountTargeting::NOT_SET),
-    m_accountTargetingHasBeenSet(false),
-    m_emptyTargetResolutionMode(EmptyTargetResolutionMode::NOT_SET),
-    m_emptyTargetResolutionModeHasBeenSet(false)
+ExperimentTemplateExperimentOptions::ExperimentTemplateExperimentOptions(JsonView jsonValue)
+  : ExperimentTemplateExperimentOptions()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ RelatedItemsUpdate::RelatedItemsUpdate() :
 {
 }
 
-RelatedItemsUpdate::RelatedItemsUpdate(JsonView jsonValue) : 
-    m_itemToAddHasBeenSet(false),
-    m_itemToRemoveHasBeenSet(false)
+RelatedItemsUpdate::RelatedItemsUpdate(JsonView jsonValue)
+  : RelatedItemsUpdate()
 {
   *this = jsonValue;
 }

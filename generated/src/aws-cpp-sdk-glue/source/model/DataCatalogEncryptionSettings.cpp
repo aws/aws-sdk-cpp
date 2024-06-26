@@ -24,9 +24,8 @@ DataCatalogEncryptionSettings::DataCatalogEncryptionSettings() :
 {
 }
 
-DataCatalogEncryptionSettings::DataCatalogEncryptionSettings(JsonView jsonValue) : 
-    m_encryptionAtRestHasBeenSet(false),
-    m_connectionPasswordEncryptionHasBeenSet(false)
+DataCatalogEncryptionSettings::DataCatalogEncryptionSettings(JsonView jsonValue)
+  : DataCatalogEncryptionSettings()
 {
   *this = jsonValue;
 }

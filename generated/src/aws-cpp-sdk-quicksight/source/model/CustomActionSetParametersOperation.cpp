@@ -23,8 +23,8 @@ CustomActionSetParametersOperation::CustomActionSetParametersOperation() :
 {
 }
 
-CustomActionSetParametersOperation::CustomActionSetParametersOperation(JsonView jsonValue) : 
-    m_parameterValueConfigurationsHasBeenSet(false)
+CustomActionSetParametersOperation::CustomActionSetParametersOperation(JsonView jsonValue)
+  : CustomActionSetParametersOperation()
 {
   *this = jsonValue;
 }

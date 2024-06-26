@@ -25,8 +25,8 @@ VpnTunnelLogOptions::VpnTunnelLogOptions() :
 {
 }
 
-VpnTunnelLogOptions::VpnTunnelLogOptions(const XmlNode& xmlNode) : 
-    m_cloudWatchLogOptionsHasBeenSet(false)
+VpnTunnelLogOptions::VpnTunnelLogOptions(const XmlNode& xmlNode)
+  : VpnTunnelLogOptions()
 {
   *this = xmlNode;
 }

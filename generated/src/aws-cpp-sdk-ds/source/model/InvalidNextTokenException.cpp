@@ -24,9 +24,8 @@ InvalidNextTokenException::InvalidNextTokenException() :
 {
 }
 
-InvalidNextTokenException::InvalidNextTokenException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
+InvalidNextTokenException::InvalidNextTokenException(JsonView jsonValue)
+  : InvalidNextTokenException()
 {
   *this = jsonValue;
 }

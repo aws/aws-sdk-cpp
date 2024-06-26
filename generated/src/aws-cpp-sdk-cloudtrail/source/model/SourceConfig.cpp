@@ -25,10 +25,8 @@ SourceConfig::SourceConfig() :
 {
 }
 
-SourceConfig::SourceConfig(JsonView jsonValue) : 
-    m_applyToAllRegions(false),
-    m_applyToAllRegionsHasBeenSet(false),
-    m_advancedEventSelectorsHasBeenSet(false)
+SourceConfig::SourceConfig(JsonView jsonValue)
+  : SourceConfig()
 {
   *this = jsonValue;
 }

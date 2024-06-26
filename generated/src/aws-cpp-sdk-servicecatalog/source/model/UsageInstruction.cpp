@@ -24,9 +24,8 @@ UsageInstruction::UsageInstruction() :
 {
 }
 
-UsageInstruction::UsageInstruction(JsonView jsonValue) : 
-    m_typeHasBeenSet(false),
-    m_valueHasBeenSet(false)
+UsageInstruction::UsageInstruction(JsonView jsonValue)
+  : UsageInstruction()
 {
   *this = jsonValue;
 }

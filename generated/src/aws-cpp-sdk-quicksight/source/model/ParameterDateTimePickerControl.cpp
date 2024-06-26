@@ -26,11 +26,8 @@ ParameterDateTimePickerControl::ParameterDateTimePickerControl() :
 {
 }
 
-ParameterDateTimePickerControl::ParameterDateTimePickerControl(JsonView jsonValue) : 
-    m_parameterControlIdHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_sourceParameterNameHasBeenSet(false),
-    m_displayOptionsHasBeenSet(false)
+ParameterDateTimePickerControl::ParameterDateTimePickerControl(JsonView jsonValue)
+  : ParameterDateTimePickerControl()
 {
   *this = jsonValue;
 }

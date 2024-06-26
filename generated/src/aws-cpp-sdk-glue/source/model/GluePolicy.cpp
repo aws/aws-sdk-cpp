@@ -26,11 +26,8 @@ GluePolicy::GluePolicy() :
 {
 }
 
-GluePolicy::GluePolicy(JsonView jsonValue) : 
-    m_policyInJsonHasBeenSet(false),
-    m_policyHashHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
+GluePolicy::GluePolicy(JsonView jsonValue)
+  : GluePolicy()
 {
   *this = jsonValue;
 }

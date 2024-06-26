@@ -24,9 +24,8 @@ R53ResourceRecord::R53ResourceRecord() :
 {
 }
 
-R53ResourceRecord::R53ResourceRecord(JsonView jsonValue) : 
-    m_domainNameHasBeenSet(false),
-    m_recordSetIdHasBeenSet(false)
+R53ResourceRecord::R53ResourceRecord(JsonView jsonValue)
+  : R53ResourceRecord()
 {
   *this = jsonValue;
 }

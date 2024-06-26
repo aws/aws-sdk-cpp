@@ -30,15 +30,8 @@ ElastiCacheInstanceDetails::ElastiCacheInstanceDetails() :
 {
 }
 
-ElastiCacheInstanceDetails::ElastiCacheInstanceDetails(JsonView jsonValue) : 
-    m_familyHasBeenSet(false),
-    m_nodeTypeHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_productDescriptionHasBeenSet(false),
-    m_currentGeneration(false),
-    m_currentGenerationHasBeenSet(false),
-    m_sizeFlexEligible(false),
-    m_sizeFlexEligibleHasBeenSet(false)
+ElastiCacheInstanceDetails::ElastiCacheInstanceDetails(JsonView jsonValue)
+  : ElastiCacheInstanceDetails()
 {
   *this = jsonValue;
 }

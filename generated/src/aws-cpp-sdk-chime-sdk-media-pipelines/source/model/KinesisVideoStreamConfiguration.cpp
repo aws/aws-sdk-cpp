@@ -25,10 +25,8 @@ KinesisVideoStreamConfiguration::KinesisVideoStreamConfiguration() :
 {
 }
 
-KinesisVideoStreamConfiguration::KinesisVideoStreamConfiguration(JsonView jsonValue) : 
-    m_regionHasBeenSet(false),
-    m_dataRetentionInHours(0),
-    m_dataRetentionInHoursHasBeenSet(false)
+KinesisVideoStreamConfiguration::KinesisVideoStreamConfiguration(JsonView jsonValue)
+  : KinesisVideoStreamConfiguration()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ ConformancePackComplianceFilters::ConformancePackComplianceFilters() :
 {
 }
 
-ConformancePackComplianceFilters::ConformancePackComplianceFilters(JsonView jsonValue) : 
-    m_configRuleNamesHasBeenSet(false),
-    m_complianceType(ConformancePackComplianceType::NOT_SET),
-    m_complianceTypeHasBeenSet(false)
+ConformancePackComplianceFilters::ConformancePackComplianceFilters(JsonView jsonValue)
+  : ConformancePackComplianceFilters()
 {
   *this = jsonValue;
 }

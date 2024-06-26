@@ -26,11 +26,8 @@ RStudioServerProAppSettings::RStudioServerProAppSettings() :
 {
 }
 
-RStudioServerProAppSettings::RStudioServerProAppSettings(JsonView jsonValue) : 
-    m_accessStatus(RStudioServerProAccessStatus::NOT_SET),
-    m_accessStatusHasBeenSet(false),
-    m_userGroup(RStudioServerProUserGroup::NOT_SET),
-    m_userGroupHasBeenSet(false)
+RStudioServerProAppSettings::RStudioServerProAppSettings(JsonView jsonValue)
+  : RStudioServerProAppSettings()
 {
   *this = jsonValue;
 }

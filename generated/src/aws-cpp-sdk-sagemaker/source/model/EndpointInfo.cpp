@@ -23,8 +23,8 @@ EndpointInfo::EndpointInfo() :
 {
 }
 
-EndpointInfo::EndpointInfo(JsonView jsonValue) : 
-    m_endpointNameHasBeenSet(false)
+EndpointInfo::EndpointInfo(JsonView jsonValue)
+  : EndpointInfo()
 {
   *this = jsonValue;
 }

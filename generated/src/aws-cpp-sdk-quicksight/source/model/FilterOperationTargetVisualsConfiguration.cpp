@@ -23,8 +23,8 @@ FilterOperationTargetVisualsConfiguration::FilterOperationTargetVisualsConfigura
 {
 }
 
-FilterOperationTargetVisualsConfiguration::FilterOperationTargetVisualsConfiguration(JsonView jsonValue) : 
-    m_sameSheetTargetVisualConfigurationHasBeenSet(false)
+FilterOperationTargetVisualsConfiguration::FilterOperationTargetVisualsConfiguration(JsonView jsonValue)
+  : FilterOperationTargetVisualsConfiguration()
 {
   *this = jsonValue;
 }

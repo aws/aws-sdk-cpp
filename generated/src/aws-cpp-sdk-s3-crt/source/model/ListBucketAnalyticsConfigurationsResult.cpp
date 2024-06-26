@@ -21,8 +21,8 @@ ListBucketAnalyticsConfigurationsResult::ListBucketAnalyticsConfigurationsResult
 {
 }
 
-ListBucketAnalyticsConfigurationsResult::ListBucketAnalyticsConfigurationsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_isTruncated(false)
+ListBucketAnalyticsConfigurationsResult::ListBucketAnalyticsConfigurationsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : ListBucketAnalyticsConfigurationsResult()
 {
   *this = result;
 }

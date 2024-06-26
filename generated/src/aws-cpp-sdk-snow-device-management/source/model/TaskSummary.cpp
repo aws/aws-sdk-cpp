@@ -27,12 +27,8 @@ TaskSummary::TaskSummary() :
 {
 }
 
-TaskSummary::TaskSummary(JsonView jsonValue) : 
-    m_state(TaskState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_taskArnHasBeenSet(false),
-    m_taskIdHasBeenSet(false)
+TaskSummary::TaskSummary(JsonView jsonValue)
+  : TaskSummary()
 {
   *this = jsonValue;
 }

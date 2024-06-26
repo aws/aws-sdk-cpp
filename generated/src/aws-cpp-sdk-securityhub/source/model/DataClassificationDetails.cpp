@@ -24,9 +24,8 @@ DataClassificationDetails::DataClassificationDetails() :
 {
 }
 
-DataClassificationDetails::DataClassificationDetails(JsonView jsonValue) : 
-    m_detailedResultsLocationHasBeenSet(false),
-    m_resultHasBeenSet(false)
+DataClassificationDetails::DataClassificationDetails(JsonView jsonValue)
+  : DataClassificationDetails()
 {
   *this = jsonValue;
 }

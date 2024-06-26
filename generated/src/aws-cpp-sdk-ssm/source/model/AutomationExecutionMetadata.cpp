@@ -56,41 +56,8 @@ AutomationExecutionMetadata::AutomationExecutionMetadata() :
 {
 }
 
-AutomationExecutionMetadata::AutomationExecutionMetadata(JsonView jsonValue) : 
-    m_automationExecutionIdHasBeenSet(false),
-    m_documentNameHasBeenSet(false),
-    m_documentVersionHasBeenSet(false),
-    m_automationExecutionStatus(AutomationExecutionStatus::NOT_SET),
-    m_automationExecutionStatusHasBeenSet(false),
-    m_executionStartTimeHasBeenSet(false),
-    m_executionEndTimeHasBeenSet(false),
-    m_executedByHasBeenSet(false),
-    m_logFileHasBeenSet(false),
-    m_outputsHasBeenSet(false),
-    m_mode(ExecutionMode::NOT_SET),
-    m_modeHasBeenSet(false),
-    m_parentAutomationExecutionIdHasBeenSet(false),
-    m_currentStepNameHasBeenSet(false),
-    m_currentActionHasBeenSet(false),
-    m_failureMessageHasBeenSet(false),
-    m_targetParameterNameHasBeenSet(false),
-    m_targetsHasBeenSet(false),
-    m_targetMapsHasBeenSet(false),
-    m_resolvedTargetsHasBeenSet(false),
-    m_maxConcurrencyHasBeenSet(false),
-    m_maxErrorsHasBeenSet(false),
-    m_targetHasBeenSet(false),
-    m_automationType(AutomationType::NOT_SET),
-    m_automationTypeHasBeenSet(false),
-    m_alarmConfigurationHasBeenSet(false),
-    m_triggeredAlarmsHasBeenSet(false),
-    m_automationSubtype(AutomationSubtype::NOT_SET),
-    m_automationSubtypeHasBeenSet(false),
-    m_scheduledTimeHasBeenSet(false),
-    m_runbooksHasBeenSet(false),
-    m_opsItemIdHasBeenSet(false),
-    m_associationIdHasBeenSet(false),
-    m_changeRequestNameHasBeenSet(false)
+AutomationExecutionMetadata::AutomationExecutionMetadata(JsonView jsonValue)
+  : AutomationExecutionMetadata()
 {
   *this = jsonValue;
 }

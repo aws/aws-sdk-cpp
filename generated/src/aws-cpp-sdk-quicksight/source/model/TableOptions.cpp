@@ -27,12 +27,8 @@ TableOptions::TableOptions() :
 {
 }
 
-TableOptions::TableOptions(JsonView jsonValue) : 
-    m_orientation(TableOrientation::NOT_SET),
-    m_orientationHasBeenSet(false),
-    m_headerStyleHasBeenSet(false),
-    m_cellStyleHasBeenSet(false),
-    m_rowAlternateColorOptionsHasBeenSet(false)
+TableOptions::TableOptions(JsonView jsonValue)
+  : TableOptions()
 {
   *this = jsonValue;
 }

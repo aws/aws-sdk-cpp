@@ -29,14 +29,8 @@ AwsWafRateBasedRuleDetails::AwsWafRateBasedRuleDetails() :
 {
 }
 
-AwsWafRateBasedRuleDetails::AwsWafRateBasedRuleDetails(JsonView jsonValue) : 
-    m_metricNameHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_rateKeyHasBeenSet(false),
-    m_rateLimit(0),
-    m_rateLimitHasBeenSet(false),
-    m_ruleIdHasBeenSet(false),
-    m_matchPredicatesHasBeenSet(false)
+AwsWafRateBasedRuleDetails::AwsWafRateBasedRuleDetails(JsonView jsonValue)
+  : AwsWafRateBasedRuleDetails()
 {
   *this = jsonValue;
 }

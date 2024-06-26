@@ -25,10 +25,8 @@ S3Exception::S3Exception() :
 {
 }
 
-S3Exception::S3Exception(JsonView jsonValue) : 
-    m_detailedMessageHasBeenSet(false),
-    m_requestIdHasBeenSet(false),
-    m_codeHasBeenSet(false)
+S3Exception::S3Exception(JsonView jsonValue)
+  : S3Exception()
 {
   *this = jsonValue;
 }

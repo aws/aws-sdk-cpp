@@ -24,9 +24,8 @@ DetectedFileFormatDescriptor::DetectedFileFormatDescriptor() :
 {
 }
 
-DetectedFileFormatDescriptor::DetectedFileFormatDescriptor(JsonView jsonValue) : 
-    m_csvFormatDescriptorHasBeenSet(false),
-    m_jsonFormatDescriptorHasBeenSet(false)
+DetectedFileFormatDescriptor::DetectedFileFormatDescriptor(JsonView jsonValue)
+  : DetectedFileFormatDescriptor()
 {
   *this = jsonValue;
 }

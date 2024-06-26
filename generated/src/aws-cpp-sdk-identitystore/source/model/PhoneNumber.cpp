@@ -26,11 +26,8 @@ PhoneNumber::PhoneNumber() :
 {
 }
 
-PhoneNumber::PhoneNumber(JsonView jsonValue) : 
-    m_valueHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_primary(false),
-    m_primaryHasBeenSet(false)
+PhoneNumber::PhoneNumber(JsonView jsonValue)
+  : PhoneNumber()
 {
   *this = jsonValue;
 }

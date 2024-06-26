@@ -24,9 +24,8 @@ DataPrivacy::DataPrivacy() :
 {
 }
 
-DataPrivacy::DataPrivacy(JsonView jsonValue) : 
-    m_childDirected(false),
-    m_childDirectedHasBeenSet(false)
+DataPrivacy::DataPrivacy(JsonView jsonValue)
+  : DataPrivacy()
 {
   *this = jsonValue;
 }

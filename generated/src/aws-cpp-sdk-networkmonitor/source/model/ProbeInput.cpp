@@ -31,16 +31,8 @@ ProbeInput::ProbeInput() :
 {
 }
 
-ProbeInput::ProbeInput(JsonView jsonValue) : 
-    m_sourceArnHasBeenSet(false),
-    m_destinationHasBeenSet(false),
-    m_destinationPort(0),
-    m_destinationPortHasBeenSet(false),
-    m_protocol(Protocol::NOT_SET),
-    m_protocolHasBeenSet(false),
-    m_packetSize(0),
-    m_packetSizeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+ProbeInput::ProbeInput(JsonView jsonValue)
+  : ProbeInput()
 {
   *this = jsonValue;
 }

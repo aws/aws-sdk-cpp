@@ -27,12 +27,8 @@ WeightedTarget::WeightedTarget() :
 {
 }
 
-WeightedTarget::WeightedTarget(JsonView jsonValue) : 
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_virtualNodeHasBeenSet(false),
-    m_weight(0),
-    m_weightHasBeenSet(false)
+WeightedTarget::WeightedTarget(JsonView jsonValue)
+  : WeightedTarget()
 {
   *this = jsonValue;
 }

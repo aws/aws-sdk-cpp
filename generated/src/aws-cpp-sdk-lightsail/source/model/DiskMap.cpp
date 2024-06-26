@@ -24,9 +24,8 @@ DiskMap::DiskMap() :
 {
 }
 
-DiskMap::DiskMap(JsonView jsonValue) : 
-    m_originalDiskPathHasBeenSet(false),
-    m_newDiskNameHasBeenSet(false)
+DiskMap::DiskMap(JsonView jsonValue)
+  : DiskMap()
 {
   *this = jsonValue;
 }

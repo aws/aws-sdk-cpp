@@ -25,10 +25,8 @@ ForecastGeofenceEventsDeviceState::ForecastGeofenceEventsDeviceState() :
 {
 }
 
-ForecastGeofenceEventsDeviceState::ForecastGeofenceEventsDeviceState(JsonView jsonValue) : 
-    m_positionHasBeenSet(false),
-    m_speed(0.0),
-    m_speedHasBeenSet(false)
+ForecastGeofenceEventsDeviceState::ForecastGeofenceEventsDeviceState(JsonView jsonValue)
+  : ForecastGeofenceEventsDeviceState()
 {
   *this = jsonValue;
 }

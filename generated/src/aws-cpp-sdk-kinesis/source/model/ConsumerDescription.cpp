@@ -28,13 +28,8 @@ ConsumerDescription::ConsumerDescription() :
 {
 }
 
-ConsumerDescription::ConsumerDescription(JsonView jsonValue) : 
-    m_consumerNameHasBeenSet(false),
-    m_consumerARNHasBeenSet(false),
-    m_consumerStatus(ConsumerStatus::NOT_SET),
-    m_consumerStatusHasBeenSet(false),
-    m_consumerCreationTimestampHasBeenSet(false),
-    m_streamARNHasBeenSet(false)
+ConsumerDescription::ConsumerDescription(JsonView jsonValue)
+  : ConsumerDescription()
 {
   *this = jsonValue;
 }

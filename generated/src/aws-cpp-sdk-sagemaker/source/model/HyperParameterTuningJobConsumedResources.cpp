@@ -24,9 +24,8 @@ HyperParameterTuningJobConsumedResources::HyperParameterTuningJobConsumedResourc
 {
 }
 
-HyperParameterTuningJobConsumedResources::HyperParameterTuningJobConsumedResources(JsonView jsonValue) : 
-    m_runtimeInSeconds(0),
-    m_runtimeInSecondsHasBeenSet(false)
+HyperParameterTuningJobConsumedResources::HyperParameterTuningJobConsumedResources(JsonView jsonValue)
+  : HyperParameterTuningJobConsumedResources()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ Record::Record() :
 {
 }
 
-Record::Record(JsonView jsonValue) : 
-    m_jsonPathHasBeenSet(false),
-    m_recordIndex(0),
-    m_recordIndexHasBeenSet(false)
+Record::Record(JsonView jsonValue)
+  : Record()
 {
   *this = jsonValue;
 }

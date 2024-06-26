@@ -26,9 +26,8 @@ CertificateDetails::CertificateDetails() :
 {
 }
 
-CertificateDetails::CertificateDetails(const XmlNode& xmlNode) : 
-    m_cAIdentifierHasBeenSet(false),
-    m_validTillHasBeenSet(false)
+CertificateDetails::CertificateDetails(const XmlNode& xmlNode)
+  : CertificateDetails()
 {
   *this = xmlNode;
 }

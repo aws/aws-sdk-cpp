@@ -24,9 +24,8 @@ MinimumLabelType::MinimumLabelType() :
 {
 }
 
-MinimumLabelType::MinimumLabelType(JsonView jsonValue) : 
-    m_visibility(Visibility::NOT_SET),
-    m_visibilityHasBeenSet(false)
+MinimumLabelType::MinimumLabelType(JsonView jsonValue)
+  : MinimumLabelType()
 {
   *this = jsonValue;
 }

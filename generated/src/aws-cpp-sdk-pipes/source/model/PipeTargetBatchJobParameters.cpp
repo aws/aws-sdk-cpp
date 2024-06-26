@@ -29,14 +29,8 @@ PipeTargetBatchJobParameters::PipeTargetBatchJobParameters() :
 {
 }
 
-PipeTargetBatchJobParameters::PipeTargetBatchJobParameters(JsonView jsonValue) : 
-    m_jobDefinitionHasBeenSet(false),
-    m_jobNameHasBeenSet(false),
-    m_arrayPropertiesHasBeenSet(false),
-    m_retryStrategyHasBeenSet(false),
-    m_containerOverridesHasBeenSet(false),
-    m_dependsOnHasBeenSet(false),
-    m_parametersHasBeenSet(false)
+PipeTargetBatchJobParameters::PipeTargetBatchJobParameters(JsonView jsonValue)
+  : PipeTargetBatchJobParameters()
 {
   *this = jsonValue;
 }

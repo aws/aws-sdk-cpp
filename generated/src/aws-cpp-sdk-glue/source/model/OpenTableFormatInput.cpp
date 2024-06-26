@@ -23,8 +23,8 @@ OpenTableFormatInput::OpenTableFormatInput() :
 {
 }
 
-OpenTableFormatInput::OpenTableFormatInput(JsonView jsonValue) : 
-    m_icebergInputHasBeenSet(false)
+OpenTableFormatInput::OpenTableFormatInput(JsonView jsonValue)
+  : OpenTableFormatInput()
 {
   *this = jsonValue;
 }

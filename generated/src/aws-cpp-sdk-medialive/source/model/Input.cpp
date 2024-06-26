@@ -42,27 +42,8 @@ Input::Input() :
 {
 }
 
-Input::Input(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_attachedChannelsHasBeenSet(false),
-    m_destinationsHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_inputClass(InputClass::NOT_SET),
-    m_inputClassHasBeenSet(false),
-    m_inputDevicesHasBeenSet(false),
-    m_inputPartnerIdsHasBeenSet(false),
-    m_inputSourceType(InputSourceType::NOT_SET),
-    m_inputSourceTypeHasBeenSet(false),
-    m_mediaConnectFlowsHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_securityGroupsHasBeenSet(false),
-    m_sourcesHasBeenSet(false),
-    m_state(InputState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_type(InputType::NOT_SET),
-    m_typeHasBeenSet(false)
+Input::Input(JsonView jsonValue)
+  : Input()
 {
   *this = jsonValue;
 }

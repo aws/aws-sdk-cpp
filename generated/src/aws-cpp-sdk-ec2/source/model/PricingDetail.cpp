@@ -28,11 +28,8 @@ PricingDetail::PricingDetail() :
 {
 }
 
-PricingDetail::PricingDetail(const XmlNode& xmlNode) : 
-    m_count(0),
-    m_countHasBeenSet(false),
-    m_price(0.0),
-    m_priceHasBeenSet(false)
+PricingDetail::PricingDetail(const XmlNode& xmlNode)
+  : PricingDetail()
 {
   *this = xmlNode;
 }

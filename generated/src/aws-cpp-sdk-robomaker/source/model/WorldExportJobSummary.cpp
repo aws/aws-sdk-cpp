@@ -28,13 +28,8 @@ WorldExportJobSummary::WorldExportJobSummary() :
 {
 }
 
-WorldExportJobSummary::WorldExportJobSummary(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_status(WorldExportJobStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_worldsHasBeenSet(false),
-    m_outputLocationHasBeenSet(false)
+WorldExportJobSummary::WorldExportJobSummary(JsonView jsonValue)
+  : WorldExportJobSummary()
 {
   *this = jsonValue;
 }

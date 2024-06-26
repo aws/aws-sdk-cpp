@@ -23,8 +23,8 @@ ProtectedQuerySingleMemberOutput::ProtectedQuerySingleMemberOutput() :
 {
 }
 
-ProtectedQuerySingleMemberOutput::ProtectedQuerySingleMemberOutput(JsonView jsonValue) : 
-    m_accountIdHasBeenSet(false)
+ProtectedQuerySingleMemberOutput::ProtectedQuerySingleMemberOutput(JsonView jsonValue)
+  : ProtectedQuerySingleMemberOutput()
 {
   *this = jsonValue;
 }

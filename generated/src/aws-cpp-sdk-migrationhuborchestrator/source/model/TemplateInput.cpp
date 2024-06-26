@@ -27,12 +27,8 @@ TemplateInput::TemplateInput() :
 {
 }
 
-TemplateInput::TemplateInput(JsonView jsonValue) : 
-    m_inputNameHasBeenSet(false),
-    m_dataType(DataType::NOT_SET),
-    m_dataTypeHasBeenSet(false),
-    m_required(false),
-    m_requiredHasBeenSet(false)
+TemplateInput::TemplateInput(JsonView jsonValue)
+  : TemplateInput()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ MonitoringDatasetFormat::MonitoringDatasetFormat() :
 {
 }
 
-MonitoringDatasetFormat::MonitoringDatasetFormat(JsonView jsonValue) : 
-    m_csvHasBeenSet(false),
-    m_jsonHasBeenSet(false),
-    m_parquetHasBeenSet(false)
+MonitoringDatasetFormat::MonitoringDatasetFormat(JsonView jsonValue)
+  : MonitoringDatasetFormat()
 {
   *this = jsonValue;
 }

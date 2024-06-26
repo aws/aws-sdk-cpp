@@ -25,10 +25,8 @@ Script::Script() :
 {
 }
 
-Script::Script(JsonView jsonValue) : 
-    m_scriptLocationHasBeenSet(false),
-    m_type(ScriptType::NOT_SET),
-    m_typeHasBeenSet(false)
+Script::Script(JsonView jsonValue)
+  : Script()
 {
   *this = jsonValue;
 }

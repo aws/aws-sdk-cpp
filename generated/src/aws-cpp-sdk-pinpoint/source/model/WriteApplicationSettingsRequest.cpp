@@ -30,15 +30,8 @@ WriteApplicationSettingsRequest::WriteApplicationSettingsRequest() :
 {
 }
 
-WriteApplicationSettingsRequest::WriteApplicationSettingsRequest(JsonView jsonValue) : 
-    m_campaignHookHasBeenSet(false),
-    m_cloudWatchMetricsEnabled(false),
-    m_cloudWatchMetricsEnabledHasBeenSet(false),
-    m_eventTaggingEnabled(false),
-    m_eventTaggingEnabledHasBeenSet(false),
-    m_limitsHasBeenSet(false),
-    m_quietTimeHasBeenSet(false),
-    m_journeyLimitsHasBeenSet(false)
+WriteApplicationSettingsRequest::WriteApplicationSettingsRequest(JsonView jsonValue)
+  : WriteApplicationSettingsRequest()
 {
   *this = jsonValue;
 }

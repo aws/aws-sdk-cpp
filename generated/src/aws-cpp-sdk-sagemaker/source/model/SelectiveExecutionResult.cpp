@@ -23,8 +23,8 @@ SelectiveExecutionResult::SelectiveExecutionResult() :
 {
 }
 
-SelectiveExecutionResult::SelectiveExecutionResult(JsonView jsonValue) : 
-    m_sourcePipelineExecutionArnHasBeenSet(false)
+SelectiveExecutionResult::SelectiveExecutionResult(JsonView jsonValue)
+  : SelectiveExecutionResult()
 {
   *this = jsonValue;
 }

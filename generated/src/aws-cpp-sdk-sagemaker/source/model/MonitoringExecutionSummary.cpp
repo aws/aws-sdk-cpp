@@ -34,19 +34,8 @@ MonitoringExecutionSummary::MonitoringExecutionSummary() :
 {
 }
 
-MonitoringExecutionSummary::MonitoringExecutionSummary(JsonView jsonValue) : 
-    m_monitoringScheduleNameHasBeenSet(false),
-    m_scheduledTimeHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_monitoringExecutionStatus(ExecutionStatus::NOT_SET),
-    m_monitoringExecutionStatusHasBeenSet(false),
-    m_processingJobArnHasBeenSet(false),
-    m_endpointNameHasBeenSet(false),
-    m_failureReasonHasBeenSet(false),
-    m_monitoringJobDefinitionNameHasBeenSet(false),
-    m_monitoringType(MonitoringType::NOT_SET),
-    m_monitoringTypeHasBeenSet(false)
+MonitoringExecutionSummary::MonitoringExecutionSummary(JsonView jsonValue)
+  : MonitoringExecutionSummary()
 {
   *this = jsonValue;
 }

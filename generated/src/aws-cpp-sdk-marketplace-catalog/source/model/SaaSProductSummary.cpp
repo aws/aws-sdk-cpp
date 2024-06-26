@@ -25,10 +25,8 @@ SaaSProductSummary::SaaSProductSummary() :
 {
 }
 
-SaaSProductSummary::SaaSProductSummary(JsonView jsonValue) : 
-    m_productTitleHasBeenSet(false),
-    m_visibility(SaaSProductVisibilityString::NOT_SET),
-    m_visibilityHasBeenSet(false)
+SaaSProductSummary::SaaSProductSummary(JsonView jsonValue)
+  : SaaSProductSummary()
 {
   *this = jsonValue;
 }

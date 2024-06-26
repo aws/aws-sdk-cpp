@@ -28,13 +28,8 @@ MetricStat::MetricStat() :
 {
 }
 
-MetricStat::MetricStat(JsonView jsonValue) : 
-    m_metricHasBeenSet(false),
-    m_period(0),
-    m_periodHasBeenSet(false),
-    m_statHasBeenSet(false),
-    m_unit(StandardUnit::NOT_SET),
-    m_unitHasBeenSet(false)
+MetricStat::MetricStat(JsonView jsonValue)
+  : MetricStat()
 {
   *this = jsonValue;
 }

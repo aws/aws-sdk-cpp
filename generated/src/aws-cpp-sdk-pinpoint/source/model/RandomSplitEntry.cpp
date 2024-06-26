@@ -25,10 +25,8 @@ RandomSplitEntry::RandomSplitEntry() :
 {
 }
 
-RandomSplitEntry::RandomSplitEntry(JsonView jsonValue) : 
-    m_nextActivityHasBeenSet(false),
-    m_percentage(0),
-    m_percentageHasBeenSet(false)
+RandomSplitEntry::RandomSplitEntry(JsonView jsonValue)
+  : RandomSplitEntry()
 {
   *this = jsonValue;
 }

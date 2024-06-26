@@ -24,9 +24,8 @@ FindingIdentifier::FindingIdentifier() :
 {
 }
 
-FindingIdentifier::FindingIdentifier(JsonView jsonValue) : 
-    m_findingIdHasBeenSet(false),
-    m_scanNameHasBeenSet(false)
+FindingIdentifier::FindingIdentifier(JsonView jsonValue)
+  : FindingIdentifier()
 {
   *this = jsonValue;
 }

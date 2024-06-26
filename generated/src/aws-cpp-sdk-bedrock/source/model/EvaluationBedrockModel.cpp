@@ -24,9 +24,8 @@ EvaluationBedrockModel::EvaluationBedrockModel() :
 {
 }
 
-EvaluationBedrockModel::EvaluationBedrockModel(JsonView jsonValue) : 
-    m_modelIdentifierHasBeenSet(false),
-    m_inferenceParamsHasBeenSet(false)
+EvaluationBedrockModel::EvaluationBedrockModel(JsonView jsonValue)
+  : EvaluationBedrockModel()
 {
   *this = jsonValue;
 }

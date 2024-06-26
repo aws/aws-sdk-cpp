@@ -26,11 +26,8 @@ FailedCustomVocabularyItem::FailedCustomVocabularyItem() :
 {
 }
 
-FailedCustomVocabularyItem::FailedCustomVocabularyItem(JsonView jsonValue) : 
-    m_itemIdHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_errorCode(ErrorCode::NOT_SET),
-    m_errorCodeHasBeenSet(false)
+FailedCustomVocabularyItem::FailedCustomVocabularyItem(JsonView jsonValue)
+  : FailedCustomVocabularyItem()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ RecommendationSource::RecommendationSource() :
 {
 }
 
-RecommendationSource::RecommendationSource(JsonView jsonValue) : 
-    m_recommendationSourceArnHasBeenSet(false),
-    m_recommendationSourceType(RecommendationSourceType::NOT_SET),
-    m_recommendationSourceTypeHasBeenSet(false)
+RecommendationSource::RecommendationSource(JsonView jsonValue)
+  : RecommendationSource()
 {
   *this = jsonValue;
 }

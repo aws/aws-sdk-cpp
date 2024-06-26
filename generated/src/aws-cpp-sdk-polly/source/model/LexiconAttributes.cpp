@@ -31,16 +31,8 @@ LexiconAttributes::LexiconAttributes() :
 {
 }
 
-LexiconAttributes::LexiconAttributes(JsonView jsonValue) : 
-    m_alphabetHasBeenSet(false),
-    m_languageCode(LanguageCode::NOT_SET),
-    m_languageCodeHasBeenSet(false),
-    m_lastModifiedHasBeenSet(false),
-    m_lexiconArnHasBeenSet(false),
-    m_lexemesCount(0),
-    m_lexemesCountHasBeenSet(false),
-    m_size(0),
-    m_sizeHasBeenSet(false)
+LexiconAttributes::LexiconAttributes(JsonView jsonValue)
+  : LexiconAttributes()
 {
   *this = jsonValue;
 }

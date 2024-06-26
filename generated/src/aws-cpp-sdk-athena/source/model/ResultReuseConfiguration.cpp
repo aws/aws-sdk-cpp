@@ -23,8 +23,8 @@ ResultReuseConfiguration::ResultReuseConfiguration() :
 {
 }
 
-ResultReuseConfiguration::ResultReuseConfiguration(JsonView jsonValue) : 
-    m_resultReuseByAgeConfigurationHasBeenSet(false)
+ResultReuseConfiguration::ResultReuseConfiguration(JsonView jsonValue)
+  : ResultReuseConfiguration()
 {
   *this = jsonValue;
 }

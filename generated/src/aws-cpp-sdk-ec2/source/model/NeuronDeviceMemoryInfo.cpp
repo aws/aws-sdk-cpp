@@ -26,9 +26,8 @@ NeuronDeviceMemoryInfo::NeuronDeviceMemoryInfo() :
 {
 }
 
-NeuronDeviceMemoryInfo::NeuronDeviceMemoryInfo(const XmlNode& xmlNode) : 
-    m_sizeInMiB(0),
-    m_sizeInMiBHasBeenSet(false)
+NeuronDeviceMemoryInfo::NeuronDeviceMemoryInfo(const XmlNode& xmlNode)
+  : NeuronDeviceMemoryInfo()
 {
   *this = xmlNode;
 }

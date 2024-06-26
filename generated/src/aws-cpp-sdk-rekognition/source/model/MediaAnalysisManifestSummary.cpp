@@ -23,8 +23,8 @@ MediaAnalysisManifestSummary::MediaAnalysisManifestSummary() :
 {
 }
 
-MediaAnalysisManifestSummary::MediaAnalysisManifestSummary(JsonView jsonValue) : 
-    m_s3ObjectHasBeenSet(false)
+MediaAnalysisManifestSummary::MediaAnalysisManifestSummary(JsonView jsonValue)
+  : MediaAnalysisManifestSummary()
 {
   *this = jsonValue;
 }

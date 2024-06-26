@@ -24,9 +24,8 @@ ListVariantStoresFilter::ListVariantStoresFilter() :
 {
 }
 
-ListVariantStoresFilter::ListVariantStoresFilter(JsonView jsonValue) : 
-    m_status(StoreStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+ListVariantStoresFilter::ListVariantStoresFilter(JsonView jsonValue)
+  : ListVariantStoresFilter()
 {
   *this = jsonValue;
 }

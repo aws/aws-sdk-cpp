@@ -24,9 +24,8 @@ AwsLambdaFunctionEnvironment::AwsLambdaFunctionEnvironment() :
 {
 }
 
-AwsLambdaFunctionEnvironment::AwsLambdaFunctionEnvironment(JsonView jsonValue) : 
-    m_variablesHasBeenSet(false),
-    m_errorHasBeenSet(false)
+AwsLambdaFunctionEnvironment::AwsLambdaFunctionEnvironment(JsonView jsonValue)
+  : AwsLambdaFunctionEnvironment()
 {
   *this = jsonValue;
 }

@@ -34,19 +34,8 @@ BackendConnectionErrors::BackendConnectionErrors() :
 {
 }
 
-BackendConnectionErrors::BackendConnectionErrors(JsonView jsonValue) : 
-    m_timeoutCount(0),
-    m_timeoutCountHasBeenSet(false),
-    m_connectionRefusedCount(0),
-    m_connectionRefusedCountHasBeenSet(false),
-    m_hTTPCode4XXCount(0),
-    m_hTTPCode4XXCountHasBeenSet(false),
-    m_hTTPCode5XXCount(0),
-    m_hTTPCode5XXCountHasBeenSet(false),
-    m_unknownHostCount(0),
-    m_unknownHostCountHasBeenSet(false),
-    m_otherCount(0),
-    m_otherCountHasBeenSet(false)
+BackendConnectionErrors::BackendConnectionErrors(JsonView jsonValue)
+  : BackendConnectionErrors()
 {
   *this = jsonValue;
 }

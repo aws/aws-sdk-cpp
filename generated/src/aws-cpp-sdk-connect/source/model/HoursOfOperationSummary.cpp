@@ -27,12 +27,8 @@ HoursOfOperationSummary::HoursOfOperationSummary() :
 {
 }
 
-HoursOfOperationSummary::HoursOfOperationSummary(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_lastModifiedRegionHasBeenSet(false)
+HoursOfOperationSummary::HoursOfOperationSummary(JsonView jsonValue)
+  : HoursOfOperationSummary()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ IsVpcPeeredResult::IsVpcPeeredResult() :
 {
 }
 
-IsVpcPeeredResult::IsVpcPeeredResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_isPeered(false)
+IsVpcPeeredResult::IsVpcPeeredResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : IsVpcPeeredResult()
 {
   *this = result;
 }

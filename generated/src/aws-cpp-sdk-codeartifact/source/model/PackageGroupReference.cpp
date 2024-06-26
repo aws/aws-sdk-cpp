@@ -24,9 +24,8 @@ PackageGroupReference::PackageGroupReference() :
 {
 }
 
-PackageGroupReference::PackageGroupReference(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_patternHasBeenSet(false)
+PackageGroupReference::PackageGroupReference(JsonView jsonValue)
+  : PackageGroupReference()
 {
   *this = jsonValue;
 }

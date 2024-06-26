@@ -26,11 +26,8 @@ StorageConfigurationSummary::StorageConfigurationSummary() :
 {
 }
 
-StorageConfigurationSummary::StorageConfigurationSummary(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_s3HasBeenSet(false),
-    m_tagsHasBeenSet(false)
+StorageConfigurationSummary::StorageConfigurationSummary(JsonView jsonValue)
+  : StorageConfigurationSummary()
 {
   *this = jsonValue;
 }

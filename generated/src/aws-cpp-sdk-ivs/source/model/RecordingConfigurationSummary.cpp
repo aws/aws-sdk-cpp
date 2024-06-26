@@ -28,13 +28,8 @@ RecordingConfigurationSummary::RecordingConfigurationSummary() :
 {
 }
 
-RecordingConfigurationSummary::RecordingConfigurationSummary(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_destinationConfigurationHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_state(RecordingConfigurationState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+RecordingConfigurationSummary::RecordingConfigurationSummary(JsonView jsonValue)
+  : RecordingConfigurationSummary()
 {
   *this = jsonValue;
 }

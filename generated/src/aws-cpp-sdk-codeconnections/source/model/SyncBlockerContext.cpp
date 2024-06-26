@@ -24,9 +24,8 @@ SyncBlockerContext::SyncBlockerContext() :
 {
 }
 
-SyncBlockerContext::SyncBlockerContext(JsonView jsonValue) : 
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false)
+SyncBlockerContext::SyncBlockerContext(JsonView jsonValue)
+  : SyncBlockerContext()
 {
   *this = jsonValue;
 }

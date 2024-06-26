@@ -26,12 +26,8 @@ DescribeJobResult::DescribeJobResult() :
 {
 }
 
-DescribeJobResult::DescribeJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_action(ActionCode::NOT_SET),
-    m_completed(false),
-    m_statusCode(StatusCode::NOT_SET),
-    m_archiveSizeInBytes(0),
-    m_inventorySizeInBytes(0)
+DescribeJobResult::DescribeJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeJobResult()
 {
   *this = result;
 }

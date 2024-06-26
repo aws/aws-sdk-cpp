@@ -33,16 +33,8 @@ CustomerGateway::CustomerGateway() :
 {
 }
 
-CustomerGateway::CustomerGateway(const XmlNode& xmlNode) : 
-    m_bgpAsnHasBeenSet(false),
-    m_customerGatewayIdHasBeenSet(false),
-    m_ipAddressHasBeenSet(false),
-    m_certificateArnHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_deviceNameHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_bgpAsnExtendedHasBeenSet(false)
+CustomerGateway::CustomerGateway(const XmlNode& xmlNode)
+  : CustomerGateway()
 {
   *this = xmlNode;
 }

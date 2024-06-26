@@ -26,11 +26,8 @@ VideoCodecSettings::VideoCodecSettings() :
 {
 }
 
-VideoCodecSettings::VideoCodecSettings(JsonView jsonValue) : 
-    m_frameCaptureSettingsHasBeenSet(false),
-    m_h264SettingsHasBeenSet(false),
-    m_h265SettingsHasBeenSet(false),
-    m_mpeg2SettingsHasBeenSet(false)
+VideoCodecSettings::VideoCodecSettings(JsonView jsonValue)
+  : VideoCodecSettings()
 {
   *this = jsonValue;
 }

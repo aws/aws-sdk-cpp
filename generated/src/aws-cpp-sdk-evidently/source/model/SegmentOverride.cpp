@@ -26,11 +26,8 @@ SegmentOverride::SegmentOverride() :
 {
 }
 
-SegmentOverride::SegmentOverride(JsonView jsonValue) : 
-    m_evaluationOrder(0),
-    m_evaluationOrderHasBeenSet(false),
-    m_segmentHasBeenSet(false),
-    m_weightsHasBeenSet(false)
+SegmentOverride::SegmentOverride(JsonView jsonValue)
+  : SegmentOverride()
 {
   *this = jsonValue;
 }

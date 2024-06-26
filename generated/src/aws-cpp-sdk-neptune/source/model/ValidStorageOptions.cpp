@@ -28,11 +28,8 @@ ValidStorageOptions::ValidStorageOptions() :
 {
 }
 
-ValidStorageOptions::ValidStorageOptions(const XmlNode& xmlNode) : 
-    m_storageTypeHasBeenSet(false),
-    m_storageSizeHasBeenSet(false),
-    m_provisionedIopsHasBeenSet(false),
-    m_iopsToStorageRatioHasBeenSet(false)
+ValidStorageOptions::ValidStorageOptions(const XmlNode& xmlNode)
+  : ValidStorageOptions()
 {
   *this = xmlNode;
 }

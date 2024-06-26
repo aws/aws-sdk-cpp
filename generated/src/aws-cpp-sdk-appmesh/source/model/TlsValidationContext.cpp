@@ -24,9 +24,8 @@ TlsValidationContext::TlsValidationContext() :
 {
 }
 
-TlsValidationContext::TlsValidationContext(JsonView jsonValue) : 
-    m_subjectAlternativeNamesHasBeenSet(false),
-    m_trustHasBeenSet(false)
+TlsValidationContext::TlsValidationContext(JsonView jsonValue)
+  : TlsValidationContext()
 {
   *this = jsonValue;
 }

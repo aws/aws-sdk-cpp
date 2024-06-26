@@ -22,8 +22,8 @@ DescribeNamespaceResult::DescribeNamespaceResult() :
 {
 }
 
-DescribeNamespaceResult::DescribeNamespaceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+DescribeNamespaceResult::DescribeNamespaceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeNamespaceResult()
 {
   *this = result;
 }

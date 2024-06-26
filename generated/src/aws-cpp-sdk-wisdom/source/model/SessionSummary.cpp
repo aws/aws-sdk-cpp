@@ -26,11 +26,8 @@ SessionSummary::SessionSummary() :
 {
 }
 
-SessionSummary::SessionSummary(JsonView jsonValue) : 
-    m_assistantArnHasBeenSet(false),
-    m_assistantIdHasBeenSet(false),
-    m_sessionArnHasBeenSet(false),
-    m_sessionIdHasBeenSet(false)
+SessionSummary::SessionSummary(JsonView jsonValue)
+  : SessionSummary()
 {
   *this = jsonValue;
 }

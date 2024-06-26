@@ -24,9 +24,8 @@ StepRequiredCapabilities::StepRequiredCapabilities() :
 {
 }
 
-StepRequiredCapabilities::StepRequiredCapabilities(JsonView jsonValue) : 
-    m_amountsHasBeenSet(false),
-    m_attributesHasBeenSet(false)
+StepRequiredCapabilities::StepRequiredCapabilities(JsonView jsonValue)
+  : StepRequiredCapabilities()
 {
   *this = jsonValue;
 }

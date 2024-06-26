@@ -23,8 +23,8 @@ ReferenceSets::ReferenceSets() :
 {
 }
 
-ReferenceSets::ReferenceSets(JsonView jsonValue) : 
-    m_iPSetReferencesHasBeenSet(false)
+ReferenceSets::ReferenceSets(JsonView jsonValue)
+  : ReferenceSets()
 {
   *this = jsonValue;
 }

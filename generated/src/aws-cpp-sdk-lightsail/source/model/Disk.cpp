@@ -45,30 +45,8 @@ Disk::Disk() :
 {
 }
 
-Disk::Disk(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_supportCodeHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_locationHasBeenSet(false),
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_addOnsHasBeenSet(false),
-    m_sizeInGb(0),
-    m_sizeInGbHasBeenSet(false),
-    m_isSystemDisk(false),
-    m_isSystemDiskHasBeenSet(false),
-    m_iops(0),
-    m_iopsHasBeenSet(false),
-    m_pathHasBeenSet(false),
-    m_state(DiskState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_attachedToHasBeenSet(false),
-    m_isAttached(false),
-    m_isAttachedHasBeenSet(false),
-    m_autoMountStatus(AutoMountStatus::NOT_SET),
-    m_autoMountStatusHasBeenSet(false)
+Disk::Disk(JsonView jsonValue)
+  : Disk()
 {
   *this = jsonValue;
 }

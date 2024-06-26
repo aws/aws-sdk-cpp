@@ -39,24 +39,8 @@ Bucket::Bucket() :
 {
 }
 
-Bucket::Bucket(JsonView jsonValue) : 
-    m_resourceTypeHasBeenSet(false),
-    m_accessRulesHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_bundleIdHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_urlHasBeenSet(false),
-    m_locationHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_supportCodeHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_objectVersioningHasBeenSet(false),
-    m_ableToUpdateBundle(false),
-    m_ableToUpdateBundleHasBeenSet(false),
-    m_readonlyAccessAccountsHasBeenSet(false),
-    m_resourcesReceivingAccessHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_accessLogConfigHasBeenSet(false)
+Bucket::Bucket(JsonView jsonValue)
+  : Bucket()
 {
   *this = jsonValue;
 }

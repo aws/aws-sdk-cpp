@@ -25,10 +25,8 @@ SourceKeyword::SourceKeyword() :
 {
 }
 
-SourceKeyword::SourceKeyword(JsonView jsonValue) : 
-    m_keywordInputType(KeywordInputType::NOT_SET),
-    m_keywordInputTypeHasBeenSet(false),
-    m_keywordValueHasBeenSet(false)
+SourceKeyword::SourceKeyword(JsonView jsonValue)
+  : SourceKeyword()
 {
   *this = jsonValue;
 }

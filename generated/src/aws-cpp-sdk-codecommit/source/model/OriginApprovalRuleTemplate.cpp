@@ -24,9 +24,8 @@ OriginApprovalRuleTemplate::OriginApprovalRuleTemplate() :
 {
 }
 
-OriginApprovalRuleTemplate::OriginApprovalRuleTemplate(JsonView jsonValue) : 
-    m_approvalRuleTemplateIdHasBeenSet(false),
-    m_approvalRuleTemplateNameHasBeenSet(false)
+OriginApprovalRuleTemplate::OriginApprovalRuleTemplate(JsonView jsonValue)
+  : OriginApprovalRuleTemplate()
 {
   *this = jsonValue;
 }

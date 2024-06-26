@@ -26,11 +26,8 @@ ClientStat::ClientStat() :
 {
 }
 
-ClientStat::ClientStat(JsonView jsonValue) : 
-    m_userAgentHasBeenSet(false),
-    m_numberOfRequestsLast30Days(0),
-    m_numberOfRequestsLast30DaysHasBeenSet(false),
-    m_lastRequestTimeHasBeenSet(false)
+ClientStat::ClientStat(JsonView jsonValue)
+  : ClientStat()
 {
   *this = jsonValue;
 }

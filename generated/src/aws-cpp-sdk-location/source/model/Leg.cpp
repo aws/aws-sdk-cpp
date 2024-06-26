@@ -30,15 +30,8 @@ Leg::Leg() :
 {
 }
 
-Leg::Leg(JsonView jsonValue) : 
-    m_startPositionHasBeenSet(false),
-    m_endPositionHasBeenSet(false),
-    m_distance(0.0),
-    m_distanceHasBeenSet(false),
-    m_durationSeconds(0.0),
-    m_durationSecondsHasBeenSet(false),
-    m_geometryHasBeenSet(false),
-    m_stepsHasBeenSet(false)
+Leg::Leg(JsonView jsonValue)
+  : Leg()
 {
   *this = jsonValue;
 }

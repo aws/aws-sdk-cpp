@@ -24,10 +24,8 @@ CreateDBShardGroupResult::CreateDBShardGroupResult() :
 {
 }
 
-CreateDBShardGroupResult::CreateDBShardGroupResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_maxACU(0.0),
-    m_computeRedundancy(0),
-    m_publiclyAccessible(false)
+CreateDBShardGroupResult::CreateDBShardGroupResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : CreateDBShardGroupResult()
 {
   *this = result;
 }

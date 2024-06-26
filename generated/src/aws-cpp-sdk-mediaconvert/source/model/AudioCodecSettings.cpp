@@ -35,20 +35,8 @@ AudioCodecSettings::AudioCodecSettings() :
 {
 }
 
-AudioCodecSettings::AudioCodecSettings(JsonView jsonValue) : 
-    m_aacSettingsHasBeenSet(false),
-    m_ac3SettingsHasBeenSet(false),
-    m_aiffSettingsHasBeenSet(false),
-    m_codec(AudioCodec::NOT_SET),
-    m_codecHasBeenSet(false),
-    m_eac3AtmosSettingsHasBeenSet(false),
-    m_eac3SettingsHasBeenSet(false),
-    m_flacSettingsHasBeenSet(false),
-    m_mp2SettingsHasBeenSet(false),
-    m_mp3SettingsHasBeenSet(false),
-    m_opusSettingsHasBeenSet(false),
-    m_vorbisSettingsHasBeenSet(false),
-    m_wavSettingsHasBeenSet(false)
+AudioCodecSettings::AudioCodecSettings(JsonView jsonValue)
+  : AudioCodecSettings()
 {
   *this = jsonValue;
 }

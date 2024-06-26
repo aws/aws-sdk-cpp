@@ -24,9 +24,8 @@ PoDetailAttributes::PoDetailAttributes() :
 {
 }
 
-PoDetailAttributes::PoDetailAttributes(JsonView jsonValue) : 
-    m_encodingHasBeenSet(false),
-    m_formatHasBeenSet(false)
+PoDetailAttributes::PoDetailAttributes(JsonView jsonValue)
+  : PoDetailAttributes()
 {
   *this = jsonValue;
 }

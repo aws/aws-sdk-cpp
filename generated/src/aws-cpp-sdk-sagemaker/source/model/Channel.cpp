@@ -32,17 +32,8 @@ Channel::Channel() :
 {
 }
 
-Channel::Channel(JsonView jsonValue) : 
-    m_channelNameHasBeenSet(false),
-    m_dataSourceHasBeenSet(false),
-    m_contentTypeHasBeenSet(false),
-    m_compressionType(CompressionType::NOT_SET),
-    m_compressionTypeHasBeenSet(false),
-    m_recordWrapperType(RecordWrapper::NOT_SET),
-    m_recordWrapperTypeHasBeenSet(false),
-    m_inputMode(TrainingInputMode::NOT_SET),
-    m_inputModeHasBeenSet(false),
-    m_shuffleConfigHasBeenSet(false)
+Channel::Channel(JsonView jsonValue)
+  : Channel()
 {
   *this = jsonValue;
 }

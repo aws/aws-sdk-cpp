@@ -26,11 +26,8 @@ NetworkStatus::NetworkStatus() :
 {
 }
 
-NetworkStatus::NetworkStatus(JsonView jsonValue) : 
-    m_ethernet0StatusHasBeenSet(false),
-    m_ethernet1StatusHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_ntpStatusHasBeenSet(false)
+NetworkStatus::NetworkStatus(JsonView jsonValue)
+  : NetworkStatus()
 {
   *this = jsonValue;
 }

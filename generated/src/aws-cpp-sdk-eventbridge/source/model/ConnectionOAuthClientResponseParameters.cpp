@@ -23,8 +23,8 @@ ConnectionOAuthClientResponseParameters::ConnectionOAuthClientResponseParameters
 {
 }
 
-ConnectionOAuthClientResponseParameters::ConnectionOAuthClientResponseParameters(JsonView jsonValue) : 
-    m_clientIDHasBeenSet(false)
+ConnectionOAuthClientResponseParameters::ConnectionOAuthClientResponseParameters(JsonView jsonValue)
+  : ConnectionOAuthClientResponseParameters()
 {
   *this = jsonValue;
 }

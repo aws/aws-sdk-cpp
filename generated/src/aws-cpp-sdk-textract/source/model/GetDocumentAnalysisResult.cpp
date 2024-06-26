@@ -22,8 +22,8 @@ GetDocumentAnalysisResult::GetDocumentAnalysisResult() :
 {
 }
 
-GetDocumentAnalysisResult::GetDocumentAnalysisResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_jobStatus(JobStatus::NOT_SET)
+GetDocumentAnalysisResult::GetDocumentAnalysisResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetDocumentAnalysisResult()
 {
   *this = result;
 }

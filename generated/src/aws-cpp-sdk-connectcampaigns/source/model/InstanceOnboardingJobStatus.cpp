@@ -27,12 +27,8 @@ InstanceOnboardingJobStatus::InstanceOnboardingJobStatus() :
 {
 }
 
-InstanceOnboardingJobStatus::InstanceOnboardingJobStatus(JsonView jsonValue) : 
-    m_connectInstanceIdHasBeenSet(false),
-    m_status(InstanceOnboardingJobStatusCode::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_failureCode(InstanceOnboardingJobFailureCode::NOT_SET),
-    m_failureCodeHasBeenSet(false)
+InstanceOnboardingJobStatus::InstanceOnboardingJobStatus(JsonView jsonValue)
+  : InstanceOnboardingJobStatus()
 {
   *this = jsonValue;
 }

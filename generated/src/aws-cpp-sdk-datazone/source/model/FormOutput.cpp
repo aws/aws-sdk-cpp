@@ -26,11 +26,8 @@ FormOutput::FormOutput() :
 {
 }
 
-FormOutput::FormOutput(JsonView jsonValue) : 
-    m_contentHasBeenSet(false),
-    m_formNameHasBeenSet(false),
-    m_typeNameHasBeenSet(false),
-    m_typeRevisionHasBeenSet(false)
+FormOutput::FormOutput(JsonView jsonValue)
+  : FormOutput()
 {
   *this = jsonValue;
 }

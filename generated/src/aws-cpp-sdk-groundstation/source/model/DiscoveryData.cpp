@@ -25,10 +25,8 @@ DiscoveryData::DiscoveryData() :
 {
 }
 
-DiscoveryData::DiscoveryData(JsonView jsonValue) : 
-    m_capabilityArnsHasBeenSet(false),
-    m_privateIpAddressesHasBeenSet(false),
-    m_publicIpAddressesHasBeenSet(false)
+DiscoveryData::DiscoveryData(JsonView jsonValue)
+  : DiscoveryData()
 {
   *this = jsonValue;
 }

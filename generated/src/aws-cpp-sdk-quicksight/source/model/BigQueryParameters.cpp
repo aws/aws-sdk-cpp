@@ -24,9 +24,8 @@ BigQueryParameters::BigQueryParameters() :
 {
 }
 
-BigQueryParameters::BigQueryParameters(JsonView jsonValue) : 
-    m_projectIdHasBeenSet(false),
-    m_dataSetRegionHasBeenSet(false)
+BigQueryParameters::BigQueryParameters(JsonView jsonValue)
+  : BigQueryParameters()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ RasterDataCollectionQueryWithBandFilterInput::RasterDataCollectionQueryWithBandF
 {
 }
 
-RasterDataCollectionQueryWithBandFilterInput::RasterDataCollectionQueryWithBandFilterInput(JsonView jsonValue) : 
-    m_areaOfInterestHasBeenSet(false),
-    m_bandFilterHasBeenSet(false),
-    m_propertyFiltersHasBeenSet(false),
-    m_timeRangeFilterHasBeenSet(false)
+RasterDataCollectionQueryWithBandFilterInput::RasterDataCollectionQueryWithBandFilterInput(JsonView jsonValue)
+  : RasterDataCollectionQueryWithBandFilterInput()
 {
   *this = jsonValue;
 }

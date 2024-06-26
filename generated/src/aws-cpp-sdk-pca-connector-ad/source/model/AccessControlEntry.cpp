@@ -28,13 +28,8 @@ AccessControlEntry::AccessControlEntry() :
 {
 }
 
-AccessControlEntry::AccessControlEntry(JsonView jsonValue) : 
-    m_accessRightsHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_groupDisplayNameHasBeenSet(false),
-    m_groupSecurityIdentifierHasBeenSet(false),
-    m_templateArnHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+AccessControlEntry::AccessControlEntry(JsonView jsonValue)
+  : AccessControlEntry()
 {
   *this = jsonValue;
 }

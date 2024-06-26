@@ -32,15 +32,8 @@ VerifiedAccessInstance::VerifiedAccessInstance() :
 {
 }
 
-VerifiedAccessInstance::VerifiedAccessInstance(const XmlNode& xmlNode) : 
-    m_verifiedAccessInstanceIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_verifiedAccessTrustProvidersHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_fipsEnabled(false),
-    m_fipsEnabledHasBeenSet(false)
+VerifiedAccessInstance::VerifiedAccessInstance(const XmlNode& xmlNode)
+  : VerifiedAccessInstance()
 {
   *this = xmlNode;
 }

@@ -26,11 +26,8 @@ BatchCreateChannelMembershipError::BatchCreateChannelMembershipError() :
 {
 }
 
-BatchCreateChannelMembershipError::BatchCreateChannelMembershipError(JsonView jsonValue) : 
-    m_memberArnHasBeenSet(false),
-    m_errorCode(ErrorCode::NOT_SET),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
+BatchCreateChannelMembershipError::BatchCreateChannelMembershipError(JsonView jsonValue)
+  : BatchCreateChannelMembershipError()
 {
   *this = jsonValue;
 }

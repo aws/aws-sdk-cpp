@@ -25,10 +25,8 @@ UserTurnSlotOutput::UserTurnSlotOutput() :
 {
 }
 
-UserTurnSlotOutput::UserTurnSlotOutput(JsonView jsonValue) : 
-    m_valueHasBeenSet(false),
-    m_valuesHasBeenSet(false),
-    m_subSlotsHasBeenSet(false)
+UserTurnSlotOutput::UserTurnSlotOutput(JsonView jsonValue)
+  : UserTurnSlotOutput()
 {
   *this = jsonValue;
 }

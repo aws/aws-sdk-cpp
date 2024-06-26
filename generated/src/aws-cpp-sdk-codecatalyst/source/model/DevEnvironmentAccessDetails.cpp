@@ -24,9 +24,8 @@ DevEnvironmentAccessDetails::DevEnvironmentAccessDetails() :
 {
 }
 
-DevEnvironmentAccessDetails::DevEnvironmentAccessDetails(JsonView jsonValue) : 
-    m_streamUrlHasBeenSet(false),
-    m_tokenValueHasBeenSet(false)
+DevEnvironmentAccessDetails::DevEnvironmentAccessDetails(JsonView jsonValue)
+  : DevEnvironmentAccessDetails()
 {
   *this = jsonValue;
 }

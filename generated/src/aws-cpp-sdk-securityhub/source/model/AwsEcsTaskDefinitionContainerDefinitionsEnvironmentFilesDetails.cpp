@@ -24,9 +24,8 @@ AwsEcsTaskDefinitionContainerDefinitionsEnvironmentFilesDetails::AwsEcsTaskDefin
 {
 }
 
-AwsEcsTaskDefinitionContainerDefinitionsEnvironmentFilesDetails::AwsEcsTaskDefinitionContainerDefinitionsEnvironmentFilesDetails(JsonView jsonValue) : 
-    m_typeHasBeenSet(false),
-    m_valueHasBeenSet(false)
+AwsEcsTaskDefinitionContainerDefinitionsEnvironmentFilesDetails::AwsEcsTaskDefinitionContainerDefinitionsEnvironmentFilesDetails(JsonView jsonValue)
+  : AwsEcsTaskDefinitionContainerDefinitionsEnvironmentFilesDetails()
 {
   *this = jsonValue;
 }

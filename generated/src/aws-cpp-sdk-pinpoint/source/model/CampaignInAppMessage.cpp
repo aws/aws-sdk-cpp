@@ -27,12 +27,8 @@ CampaignInAppMessage::CampaignInAppMessage() :
 {
 }
 
-CampaignInAppMessage::CampaignInAppMessage(JsonView jsonValue) : 
-    m_bodyHasBeenSet(false),
-    m_contentHasBeenSet(false),
-    m_customConfigHasBeenSet(false),
-    m_layout(Layout::NOT_SET),
-    m_layoutHasBeenSet(false)
+CampaignInAppMessage::CampaignInAppMessage(JsonView jsonValue)
+  : CampaignInAppMessage()
 {
   *this = jsonValue;
 }

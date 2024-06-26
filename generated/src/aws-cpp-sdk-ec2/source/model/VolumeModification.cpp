@@ -52,35 +52,8 @@ VolumeModification::VolumeModification() :
 {
 }
 
-VolumeModification::VolumeModification(const XmlNode& xmlNode) : 
-    m_volumeIdHasBeenSet(false),
-    m_modificationState(VolumeModificationState::NOT_SET),
-    m_modificationStateHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_targetSize(0),
-    m_targetSizeHasBeenSet(false),
-    m_targetIops(0),
-    m_targetIopsHasBeenSet(false),
-    m_targetVolumeType(VolumeType::NOT_SET),
-    m_targetVolumeTypeHasBeenSet(false),
-    m_targetThroughput(0),
-    m_targetThroughputHasBeenSet(false),
-    m_targetMultiAttachEnabled(false),
-    m_targetMultiAttachEnabledHasBeenSet(false),
-    m_originalSize(0),
-    m_originalSizeHasBeenSet(false),
-    m_originalIops(0),
-    m_originalIopsHasBeenSet(false),
-    m_originalVolumeType(VolumeType::NOT_SET),
-    m_originalVolumeTypeHasBeenSet(false),
-    m_originalThroughput(0),
-    m_originalThroughputHasBeenSet(false),
-    m_originalMultiAttachEnabled(false),
-    m_originalMultiAttachEnabledHasBeenSet(false),
-    m_progress(0),
-    m_progressHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
+VolumeModification::VolumeModification(const XmlNode& xmlNode)
+  : VolumeModification()
 {
   *this = xmlNode;
 }

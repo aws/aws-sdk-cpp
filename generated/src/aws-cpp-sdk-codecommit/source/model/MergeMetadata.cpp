@@ -28,13 +28,8 @@ MergeMetadata::MergeMetadata() :
 {
 }
 
-MergeMetadata::MergeMetadata(JsonView jsonValue) : 
-    m_isMerged(false),
-    m_isMergedHasBeenSet(false),
-    m_mergedByHasBeenSet(false),
-    m_mergeCommitIdHasBeenSet(false),
-    m_mergeOption(MergeOptionTypeEnum::NOT_SET),
-    m_mergeOptionHasBeenSet(false)
+MergeMetadata::MergeMetadata(JsonView jsonValue)
+  : MergeMetadata()
 {
   *this = jsonValue;
 }

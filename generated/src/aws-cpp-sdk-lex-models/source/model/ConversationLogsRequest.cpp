@@ -24,9 +24,8 @@ ConversationLogsRequest::ConversationLogsRequest() :
 {
 }
 
-ConversationLogsRequest::ConversationLogsRequest(JsonView jsonValue) : 
-    m_logSettingsHasBeenSet(false),
-    m_iamRoleArnHasBeenSet(false)
+ConversationLogsRequest::ConversationLogsRequest(JsonView jsonValue)
+  : ConversationLogsRequest()
 {
   *this = jsonValue;
 }

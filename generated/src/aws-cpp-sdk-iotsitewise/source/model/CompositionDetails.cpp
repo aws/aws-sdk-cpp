@@ -23,8 +23,8 @@ CompositionDetails::CompositionDetails() :
 {
 }
 
-CompositionDetails::CompositionDetails(JsonView jsonValue) : 
-    m_compositionRelationshipHasBeenSet(false)
+CompositionDetails::CompositionDetails(JsonView jsonValue)
+  : CompositionDetails()
 {
   *this = jsonValue;
 }

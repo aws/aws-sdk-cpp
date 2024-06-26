@@ -24,9 +24,8 @@ UnsearchedFace::UnsearchedFace() :
 {
 }
 
-UnsearchedFace::UnsearchedFace(JsonView jsonValue) : 
-    m_faceDetailsHasBeenSet(false),
-    m_reasonsHasBeenSet(false)
+UnsearchedFace::UnsearchedFace(JsonView jsonValue)
+  : UnsearchedFace()
 {
   *this = jsonValue;
 }

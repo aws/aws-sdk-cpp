@@ -36,19 +36,8 @@ LocalGatewayVirtualInterface::LocalGatewayVirtualInterface() :
 {
 }
 
-LocalGatewayVirtualInterface::LocalGatewayVirtualInterface(const XmlNode& xmlNode) : 
-    m_localGatewayVirtualInterfaceIdHasBeenSet(false),
-    m_localGatewayIdHasBeenSet(false),
-    m_vlan(0),
-    m_vlanHasBeenSet(false),
-    m_localAddressHasBeenSet(false),
-    m_peerAddressHasBeenSet(false),
-    m_localBgpAsn(0),
-    m_localBgpAsnHasBeenSet(false),
-    m_peerBgpAsn(0),
-    m_peerBgpAsnHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+LocalGatewayVirtualInterface::LocalGatewayVirtualInterface(const XmlNode& xmlNode)
+  : LocalGatewayVirtualInterface()
 {
   *this = xmlNode;
 }

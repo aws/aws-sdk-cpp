@@ -23,8 +23,8 @@ AssignedSyncInputJobAttachmentsSessionActionDefinition::AssignedSyncInputJobAtta
 {
 }
 
-AssignedSyncInputJobAttachmentsSessionActionDefinition::AssignedSyncInputJobAttachmentsSessionActionDefinition(JsonView jsonValue) : 
-    m_stepIdHasBeenSet(false)
+AssignedSyncInputJobAttachmentsSessionActionDefinition::AssignedSyncInputJobAttachmentsSessionActionDefinition(JsonView jsonValue)
+  : AssignedSyncInputJobAttachmentsSessionActionDefinition()
 {
   *this = jsonValue;
 }

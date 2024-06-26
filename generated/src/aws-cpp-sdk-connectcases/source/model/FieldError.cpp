@@ -25,10 +25,8 @@ FieldError::FieldError() :
 {
 }
 
-FieldError::FieldError(JsonView jsonValue) : 
-    m_errorCodeHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_messageHasBeenSet(false)
+FieldError::FieldError(JsonView jsonValue)
+  : FieldError()
 {
   *this = jsonValue;
 }

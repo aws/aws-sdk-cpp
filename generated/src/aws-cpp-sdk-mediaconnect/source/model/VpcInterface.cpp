@@ -29,14 +29,8 @@ VpcInterface::VpcInterface() :
 {
 }
 
-VpcInterface::VpcInterface(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_networkInterfaceIdsHasBeenSet(false),
-    m_networkInterfaceType(NetworkInterfaceType::NOT_SET),
-    m_networkInterfaceTypeHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false),
-    m_subnetIdHasBeenSet(false)
+VpcInterface::VpcInterface(JsonView jsonValue)
+  : VpcInterface()
 {
   *this = jsonValue;
 }

@@ -27,12 +27,8 @@ RemediationException::RemediationException() :
 {
 }
 
-RemediationException::RemediationException(JsonView jsonValue) : 
-    m_configRuleNameHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_expirationTimeHasBeenSet(false)
+RemediationException::RemediationException(JsonView jsonValue)
+  : RemediationException()
 {
   *this = jsonValue;
 }

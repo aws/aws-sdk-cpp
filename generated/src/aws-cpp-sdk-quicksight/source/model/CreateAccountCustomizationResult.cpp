@@ -22,8 +22,8 @@ CreateAccountCustomizationResult::CreateAccountCustomizationResult() :
 {
 }
 
-CreateAccountCustomizationResult::CreateAccountCustomizationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+CreateAccountCustomizationResult::CreateAccountCustomizationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateAccountCustomizationResult()
 {
   *this = result;
 }

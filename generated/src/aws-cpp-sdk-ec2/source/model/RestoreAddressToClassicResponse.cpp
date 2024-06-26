@@ -22,8 +22,8 @@ RestoreAddressToClassicResponse::RestoreAddressToClassicResponse() :
 {
 }
 
-RestoreAddressToClassicResponse::RestoreAddressToClassicResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_status(Status::NOT_SET)
+RestoreAddressToClassicResponse::RestoreAddressToClassicResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : RestoreAddressToClassicResponse()
 {
   *this = result;
 }

@@ -27,10 +27,8 @@ ScheduledActionType::ScheduledActionType() :
 {
 }
 
-ScheduledActionType::ScheduledActionType(const XmlNode& xmlNode) : 
-    m_resizeClusterHasBeenSet(false),
-    m_pauseClusterHasBeenSet(false),
-    m_resumeClusterHasBeenSet(false)
+ScheduledActionType::ScheduledActionType(const XmlNode& xmlNode)
+  : ScheduledActionType()
 {
   *this = xmlNode;
 }

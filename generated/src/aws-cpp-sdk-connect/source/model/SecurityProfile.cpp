@@ -34,19 +34,8 @@ SecurityProfile::SecurityProfile() :
 {
 }
 
-SecurityProfile::SecurityProfile(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_organizationResourceIdHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_securityProfileNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_allowedAccessControlTagsHasBeenSet(false),
-    m_tagRestrictedResourcesHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_lastModifiedRegionHasBeenSet(false),
-    m_hierarchyRestrictedResourcesHasBeenSet(false),
-    m_allowedAccessControlHierarchyGroupIdHasBeenSet(false)
+SecurityProfile::SecurityProfile(JsonView jsonValue)
+  : SecurityProfile()
 {
   *this = jsonValue;
 }

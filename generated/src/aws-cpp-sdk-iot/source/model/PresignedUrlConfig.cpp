@@ -25,10 +25,8 @@ PresignedUrlConfig::PresignedUrlConfig() :
 {
 }
 
-PresignedUrlConfig::PresignedUrlConfig(JsonView jsonValue) : 
-    m_roleArnHasBeenSet(false),
-    m_expiresInSec(0),
-    m_expiresInSecHasBeenSet(false)
+PresignedUrlConfig::PresignedUrlConfig(JsonView jsonValue)
+  : PresignedUrlConfig()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ UserStackAssociationError::UserStackAssociationError() :
 {
 }
 
-UserStackAssociationError::UserStackAssociationError(JsonView jsonValue) : 
-    m_userStackAssociationHasBeenSet(false),
-    m_errorCode(UserStackAssociationErrorCode::NOT_SET),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
+UserStackAssociationError::UserStackAssociationError(JsonView jsonValue)
+  : UserStackAssociationError()
 {
   *this = jsonValue;
 }

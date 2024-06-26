@@ -26,11 +26,8 @@ CreateAccessConfigRequest::CreateAccessConfigRequest() :
 {
 }
 
-CreateAccessConfigRequest::CreateAccessConfigRequest(JsonView jsonValue) : 
-    m_bootstrapClusterCreatorAdminPermissions(false),
-    m_bootstrapClusterCreatorAdminPermissionsHasBeenSet(false),
-    m_authenticationMode(AuthenticationMode::NOT_SET),
-    m_authenticationModeHasBeenSet(false)
+CreateAccessConfigRequest::CreateAccessConfigRequest(JsonView jsonValue)
+  : CreateAccessConfigRequest()
 {
   *this = jsonValue;
 }

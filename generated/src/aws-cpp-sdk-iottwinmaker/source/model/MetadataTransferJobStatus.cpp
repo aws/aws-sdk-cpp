@@ -27,12 +27,8 @@ MetadataTransferJobStatus::MetadataTransferJobStatus() :
 {
 }
 
-MetadataTransferJobStatus::MetadataTransferJobStatus(JsonView jsonValue) : 
-    m_state(MetadataTransferJobState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_errorHasBeenSet(false),
-    m_queuedPosition(0),
-    m_queuedPositionHasBeenSet(false)
+MetadataTransferJobStatus::MetadataTransferJobStatus(JsonView jsonValue)
+  : MetadataTransferJobStatus()
 {
   *this = jsonValue;
 }

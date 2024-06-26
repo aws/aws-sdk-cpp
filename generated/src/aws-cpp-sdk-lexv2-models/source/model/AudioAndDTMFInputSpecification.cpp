@@ -26,11 +26,8 @@ AudioAndDTMFInputSpecification::AudioAndDTMFInputSpecification() :
 {
 }
 
-AudioAndDTMFInputSpecification::AudioAndDTMFInputSpecification(JsonView jsonValue) : 
-    m_startTimeoutMs(0),
-    m_startTimeoutMsHasBeenSet(false),
-    m_audioSpecificationHasBeenSet(false),
-    m_dtmfSpecificationHasBeenSet(false)
+AudioAndDTMFInputSpecification::AudioAndDTMFInputSpecification(JsonView jsonValue)
+  : AudioAndDTMFInputSpecification()
 {
   *this = jsonValue;
 }

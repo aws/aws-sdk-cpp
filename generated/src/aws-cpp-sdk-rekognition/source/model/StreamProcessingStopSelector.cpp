@@ -24,9 +24,8 @@ StreamProcessingStopSelector::StreamProcessingStopSelector() :
 {
 }
 
-StreamProcessingStopSelector::StreamProcessingStopSelector(JsonView jsonValue) : 
-    m_maxDurationInSeconds(0),
-    m_maxDurationInSecondsHasBeenSet(false)
+StreamProcessingStopSelector::StreamProcessingStopSelector(JsonView jsonValue)
+  : StreamProcessingStopSelector()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ MacSecKey::MacSecKey() :
 {
 }
 
-MacSecKey::MacSecKey(JsonView jsonValue) : 
-    m_secretARNHasBeenSet(false),
-    m_cknHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_startOnHasBeenSet(false)
+MacSecKey::MacSecKey(JsonView jsonValue)
+  : MacSecKey()
 {
   *this = jsonValue;
 }

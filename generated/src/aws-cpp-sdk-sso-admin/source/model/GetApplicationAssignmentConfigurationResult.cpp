@@ -22,8 +22,8 @@ GetApplicationAssignmentConfigurationResult::GetApplicationAssignmentConfigurati
 {
 }
 
-GetApplicationAssignmentConfigurationResult::GetApplicationAssignmentConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_assignmentRequired(false)
+GetApplicationAssignmentConfigurationResult::GetApplicationAssignmentConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetApplicationAssignmentConfigurationResult()
 {
   *this = result;
 }

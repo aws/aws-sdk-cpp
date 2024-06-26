@@ -24,9 +24,8 @@ DataLakeAutoEnableNewAccountConfiguration::DataLakeAutoEnableNewAccountConfigura
 {
 }
 
-DataLakeAutoEnableNewAccountConfiguration::DataLakeAutoEnableNewAccountConfiguration(JsonView jsonValue) : 
-    m_regionHasBeenSet(false),
-    m_sourcesHasBeenSet(false)
+DataLakeAutoEnableNewAccountConfiguration::DataLakeAutoEnableNewAccountConfiguration(JsonView jsonValue)
+  : DataLakeAutoEnableNewAccountConfiguration()
 {
   *this = jsonValue;
 }

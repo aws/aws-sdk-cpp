@@ -24,9 +24,8 @@ EfsStorageConfiguration::EfsStorageConfiguration() :
 {
 }
 
-EfsStorageConfiguration::EfsStorageConfiguration(JsonView jsonValue) : 
-    m_fileSystemIdHasBeenSet(false),
-    m_mountPointHasBeenSet(false)
+EfsStorageConfiguration::EfsStorageConfiguration(JsonView jsonValue)
+  : EfsStorageConfiguration()
 {
   *this = jsonValue;
 }

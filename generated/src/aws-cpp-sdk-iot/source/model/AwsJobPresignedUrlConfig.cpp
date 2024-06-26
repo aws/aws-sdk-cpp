@@ -24,9 +24,8 @@ AwsJobPresignedUrlConfig::AwsJobPresignedUrlConfig() :
 {
 }
 
-AwsJobPresignedUrlConfig::AwsJobPresignedUrlConfig(JsonView jsonValue) : 
-    m_expiresInSec(0),
-    m_expiresInSecHasBeenSet(false)
+AwsJobPresignedUrlConfig::AwsJobPresignedUrlConfig(JsonView jsonValue)
+  : AwsJobPresignedUrlConfig()
 {
   *this = jsonValue;
 }

@@ -23,9 +23,8 @@ DescribeOrganizationOverviewResult::DescribeOrganizationOverviewResult() :
 {
 }
 
-DescribeOrganizationOverviewResult::DescribeOrganizationOverviewResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_reactiveInsights(0),
-    m_proactiveInsights(0)
+DescribeOrganizationOverviewResult::DescribeOrganizationOverviewResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeOrganizationOverviewResult()
 {
   *this = result;
 }

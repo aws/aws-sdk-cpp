@@ -24,9 +24,8 @@ ExecuteCommandSessionConfiguration::ExecuteCommandSessionConfiguration() :
 {
 }
 
-ExecuteCommandSessionConfiguration::ExecuteCommandSessionConfiguration(JsonView jsonValue) : 
-    m_commandHasBeenSet(false),
-    m_argumentsHasBeenSet(false)
+ExecuteCommandSessionConfiguration::ExecuteCommandSessionConfiguration(JsonView jsonValue)
+  : ExecuteCommandSessionConfiguration()
 {
   *this = jsonValue;
 }

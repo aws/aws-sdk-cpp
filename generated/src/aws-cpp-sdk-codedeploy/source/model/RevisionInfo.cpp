@@ -24,9 +24,8 @@ RevisionInfo::RevisionInfo() :
 {
 }
 
-RevisionInfo::RevisionInfo(JsonView jsonValue) : 
-    m_revisionLocationHasBeenSet(false),
-    m_genericRevisionInfoHasBeenSet(false)
+RevisionInfo::RevisionInfo(JsonView jsonValue)
+  : RevisionInfo()
 {
   *this = jsonValue;
 }

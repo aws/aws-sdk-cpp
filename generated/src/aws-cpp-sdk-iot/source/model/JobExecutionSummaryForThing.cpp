@@ -24,9 +24,8 @@ JobExecutionSummaryForThing::JobExecutionSummaryForThing() :
 {
 }
 
-JobExecutionSummaryForThing::JobExecutionSummaryForThing(JsonView jsonValue) : 
-    m_jobIdHasBeenSet(false),
-    m_jobExecutionSummaryHasBeenSet(false)
+JobExecutionSummaryForThing::JobExecutionSummaryForThing(JsonView jsonValue)
+  : JobExecutionSummaryForThing()
 {
   *this = jsonValue;
 }

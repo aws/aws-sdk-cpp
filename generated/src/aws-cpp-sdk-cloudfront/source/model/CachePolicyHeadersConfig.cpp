@@ -27,10 +27,8 @@ CachePolicyHeadersConfig::CachePolicyHeadersConfig() :
 {
 }
 
-CachePolicyHeadersConfig::CachePolicyHeadersConfig(const XmlNode& xmlNode) : 
-    m_headerBehavior(CachePolicyHeaderBehavior::NOT_SET),
-    m_headerBehaviorHasBeenSet(false),
-    m_headersHasBeenSet(false)
+CachePolicyHeadersConfig::CachePolicyHeadersConfig(const XmlNode& xmlNode)
+  : CachePolicyHeadersConfig()
 {
   *this = xmlNode;
 }

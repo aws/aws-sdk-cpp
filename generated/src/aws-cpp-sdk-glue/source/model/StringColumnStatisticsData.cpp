@@ -30,15 +30,8 @@ StringColumnStatisticsData::StringColumnStatisticsData() :
 {
 }
 
-StringColumnStatisticsData::StringColumnStatisticsData(JsonView jsonValue) : 
-    m_maximumLength(0),
-    m_maximumLengthHasBeenSet(false),
-    m_averageLength(0.0),
-    m_averageLengthHasBeenSet(false),
-    m_numberOfNulls(0),
-    m_numberOfNullsHasBeenSet(false),
-    m_numberOfDistinctValues(0),
-    m_numberOfDistinctValuesHasBeenSet(false)
+StringColumnStatisticsData::StringColumnStatisticsData(JsonView jsonValue)
+  : StringColumnStatisticsData()
 {
   *this = jsonValue;
 }

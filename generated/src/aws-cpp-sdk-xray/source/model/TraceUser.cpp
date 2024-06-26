@@ -24,9 +24,8 @@ TraceUser::TraceUser() :
 {
 }
 
-TraceUser::TraceUser(JsonView jsonValue) : 
-    m_userNameHasBeenSet(false),
-    m_serviceIdsHasBeenSet(false)
+TraceUser::TraceUser(JsonView jsonValue)
+  : TraceUser()
 {
   *this = jsonValue;
 }

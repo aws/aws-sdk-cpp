@@ -26,11 +26,8 @@ NewGeolocationDetail::NewGeolocationDetail() :
 {
 }
 
-NewGeolocationDetail::NewGeolocationDetail(JsonView jsonValue) : 
-    m_locationHasBeenSet(false),
-    m_ipAddressHasBeenSet(false),
-    m_isNewForEntireAccount(false),
-    m_isNewForEntireAccountHasBeenSet(false)
+NewGeolocationDetail::NewGeolocationDetail(JsonView jsonValue)
+  : NewGeolocationDetail()
 {
   *this = jsonValue;
 }

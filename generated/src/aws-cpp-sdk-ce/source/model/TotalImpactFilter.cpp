@@ -28,13 +28,8 @@ TotalImpactFilter::TotalImpactFilter() :
 {
 }
 
-TotalImpactFilter::TotalImpactFilter(JsonView jsonValue) : 
-    m_numericOperator(NumericOperator::NOT_SET),
-    m_numericOperatorHasBeenSet(false),
-    m_startValue(0.0),
-    m_startValueHasBeenSet(false),
-    m_endValue(0.0),
-    m_endValueHasBeenSet(false)
+TotalImpactFilter::TotalImpactFilter(JsonView jsonValue)
+  : TotalImpactFilter()
 {
   *this = jsonValue;
 }

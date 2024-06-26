@@ -27,12 +27,8 @@ HierarchyPath::HierarchyPath() :
 {
 }
 
-HierarchyPath::HierarchyPath(JsonView jsonValue) : 
-    m_levelOneHasBeenSet(false),
-    m_levelTwoHasBeenSet(false),
-    m_levelThreeHasBeenSet(false),
-    m_levelFourHasBeenSet(false),
-    m_levelFiveHasBeenSet(false)
+HierarchyPath::HierarchyPath(JsonView jsonValue)
+  : HierarchyPath()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ JiraParameters::JiraParameters() :
 {
 }
 
-JiraParameters::JiraParameters(JsonView jsonValue) : 
-    m_siteBaseUrlHasBeenSet(false)
+JiraParameters::JiraParameters(JsonView jsonValue)
+  : JiraParameters()
 {
   *this = jsonValue;
 }

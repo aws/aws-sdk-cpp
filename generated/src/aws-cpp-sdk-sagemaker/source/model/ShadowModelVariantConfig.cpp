@@ -25,10 +25,8 @@ ShadowModelVariantConfig::ShadowModelVariantConfig() :
 {
 }
 
-ShadowModelVariantConfig::ShadowModelVariantConfig(JsonView jsonValue) : 
-    m_shadowModelVariantNameHasBeenSet(false),
-    m_samplingPercentage(0),
-    m_samplingPercentageHasBeenSet(false)
+ShadowModelVariantConfig::ShadowModelVariantConfig(JsonView jsonValue)
+  : ShadowModelVariantConfig()
 {
   *this = jsonValue;
 }

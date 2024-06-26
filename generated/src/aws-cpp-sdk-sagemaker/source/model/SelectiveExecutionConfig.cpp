@@ -24,9 +24,8 @@ SelectiveExecutionConfig::SelectiveExecutionConfig() :
 {
 }
 
-SelectiveExecutionConfig::SelectiveExecutionConfig(JsonView jsonValue) : 
-    m_sourcePipelineExecutionArnHasBeenSet(false),
-    m_selectedStepsHasBeenSet(false)
+SelectiveExecutionConfig::SelectiveExecutionConfig(JsonView jsonValue)
+  : SelectiveExecutionConfig()
 {
   *this = jsonValue;
 }

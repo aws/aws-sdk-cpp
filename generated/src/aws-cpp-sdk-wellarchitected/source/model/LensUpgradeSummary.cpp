@@ -30,15 +30,8 @@ LensUpgradeSummary::LensUpgradeSummary() :
 {
 }
 
-LensUpgradeSummary::LensUpgradeSummary(JsonView jsonValue) : 
-    m_workloadIdHasBeenSet(false),
-    m_workloadNameHasBeenSet(false),
-    m_lensAliasHasBeenSet(false),
-    m_lensArnHasBeenSet(false),
-    m_currentLensVersionHasBeenSet(false),
-    m_latestLensVersionHasBeenSet(false),
-    m_resourceArnHasBeenSet(false),
-    m_resourceNameHasBeenSet(false)
+LensUpgradeSummary::LensUpgradeSummary(JsonView jsonValue)
+  : LensUpgradeSummary()
 {
   *this = jsonValue;
 }

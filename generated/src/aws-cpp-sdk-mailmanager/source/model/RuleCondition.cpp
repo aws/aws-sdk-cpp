@@ -28,13 +28,8 @@ RuleCondition::RuleCondition() :
 {
 }
 
-RuleCondition::RuleCondition(JsonView jsonValue) : 
-    m_booleanExpressionHasBeenSet(false),
-    m_dmarcExpressionHasBeenSet(false),
-    m_ipExpressionHasBeenSet(false),
-    m_numberExpressionHasBeenSet(false),
-    m_stringExpressionHasBeenSet(false),
-    m_verdictExpressionHasBeenSet(false)
+RuleCondition::RuleCondition(JsonView jsonValue)
+  : RuleCondition()
 {
   *this = jsonValue;
 }

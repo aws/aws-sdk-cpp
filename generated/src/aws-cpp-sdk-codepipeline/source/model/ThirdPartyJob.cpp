@@ -24,9 +24,8 @@ ThirdPartyJob::ThirdPartyJob() :
 {
 }
 
-ThirdPartyJob::ThirdPartyJob(JsonView jsonValue) : 
-    m_clientIdHasBeenSet(false),
-    m_jobIdHasBeenSet(false)
+ThirdPartyJob::ThirdPartyJob(JsonView jsonValue)
+  : ThirdPartyJob()
 {
   *this = jsonValue;
 }

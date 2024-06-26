@@ -25,10 +25,8 @@ GetConnectionsFilter::GetConnectionsFilter() :
 {
 }
 
-GetConnectionsFilter::GetConnectionsFilter(JsonView jsonValue) : 
-    m_matchCriteriaHasBeenSet(false),
-    m_connectionType(ConnectionType::NOT_SET),
-    m_connectionTypeHasBeenSet(false)
+GetConnectionsFilter::GetConnectionsFilter(JsonView jsonValue)
+  : GetConnectionsFilter()
 {
   *this = jsonValue;
 }

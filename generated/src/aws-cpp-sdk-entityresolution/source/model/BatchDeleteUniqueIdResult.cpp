@@ -22,8 +22,8 @@ BatchDeleteUniqueIdResult::BatchDeleteUniqueIdResult() :
 {
 }
 
-BatchDeleteUniqueIdResult::BatchDeleteUniqueIdResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(DeleteUniqueIdStatus::NOT_SET)
+BatchDeleteUniqueIdResult::BatchDeleteUniqueIdResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : BatchDeleteUniqueIdResult()
 {
   *this = result;
 }

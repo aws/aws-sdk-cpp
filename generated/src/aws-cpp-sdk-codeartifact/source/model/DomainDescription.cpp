@@ -34,19 +34,8 @@ DomainDescription::DomainDescription() :
 {
 }
 
-DomainDescription::DomainDescription(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_ownerHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_status(DomainStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_encryptionKeyHasBeenSet(false),
-    m_repositoryCount(0),
-    m_repositoryCountHasBeenSet(false),
-    m_assetSizeBytes(0),
-    m_assetSizeBytesHasBeenSet(false),
-    m_s3BucketArnHasBeenSet(false)
+DomainDescription::DomainDescription(JsonView jsonValue)
+  : DomainDescription()
 {
   *this = jsonValue;
 }

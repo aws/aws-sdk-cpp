@@ -26,11 +26,8 @@ DeviceStats::DeviceStats() :
 {
 }
 
-DeviceStats::DeviceStats(JsonView jsonValue) : 
-    m_connectedDeviceCount(0),
-    m_connectedDeviceCountHasBeenSet(false),
-    m_registeredDeviceCount(0),
-    m_registeredDeviceCountHasBeenSet(false)
+DeviceStats::DeviceStats(JsonView jsonValue)
+  : DeviceStats()
 {
   *this = jsonValue;
 }

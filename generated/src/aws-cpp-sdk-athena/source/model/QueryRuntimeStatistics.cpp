@@ -25,10 +25,8 @@ QueryRuntimeStatistics::QueryRuntimeStatistics() :
 {
 }
 
-QueryRuntimeStatistics::QueryRuntimeStatistics(JsonView jsonValue) : 
-    m_timelineHasBeenSet(false),
-    m_rowsHasBeenSet(false),
-    m_outputStageHasBeenSet(false)
+QueryRuntimeStatistics::QueryRuntimeStatistics(JsonView jsonValue)
+  : QueryRuntimeStatistics()
 {
   *this = jsonValue;
 }

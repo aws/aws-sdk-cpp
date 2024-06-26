@@ -25,10 +25,8 @@ ResourceDataSyncNotFoundException::ResourceDataSyncNotFoundException() :
 {
 }
 
-ResourceDataSyncNotFoundException::ResourceDataSyncNotFoundException(JsonView jsonValue) : 
-    m_syncNameHasBeenSet(false),
-    m_syncTypeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+ResourceDataSyncNotFoundException::ResourceDataSyncNotFoundException(JsonView jsonValue)
+  : ResourceDataSyncNotFoundException()
 {
   *this = jsonValue;
 }

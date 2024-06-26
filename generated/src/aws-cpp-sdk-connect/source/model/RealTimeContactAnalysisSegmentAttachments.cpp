@@ -29,14 +29,8 @@ RealTimeContactAnalysisSegmentAttachments::RealTimeContactAnalysisSegmentAttachm
 {
 }
 
-RealTimeContactAnalysisSegmentAttachments::RealTimeContactAnalysisSegmentAttachments(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_participantIdHasBeenSet(false),
-    m_participantRole(ParticipantRole::NOT_SET),
-    m_participantRoleHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_attachmentsHasBeenSet(false),
-    m_timeHasBeenSet(false)
+RealTimeContactAnalysisSegmentAttachments::RealTimeContactAnalysisSegmentAttachments(JsonView jsonValue)
+  : RealTimeContactAnalysisSegmentAttachments()
 {
   *this = jsonValue;
 }

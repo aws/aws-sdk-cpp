@@ -25,10 +25,8 @@ ExtraParam::ExtraParam() :
 {
 }
 
-ExtraParam::ExtraParam(JsonView jsonValue) : 
-    m_name(ExtraParamName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
+ExtraParam::ExtraParam(JsonView jsonValue)
+  : ExtraParam()
 {
   *this = jsonValue;
 }

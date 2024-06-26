@@ -33,18 +33,8 @@ Evaluation::Evaluation() :
 {
 }
 
-Evaluation::Evaluation(JsonView jsonValue) : 
-    m_evaluationIdHasBeenSet(false),
-    m_evaluationArnHasBeenSet(false),
-    m_metadataHasBeenSet(false),
-    m_answersHasBeenSet(false),
-    m_notesHasBeenSet(false),
-    m_status(EvaluationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_scoresHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+Evaluation::Evaluation(JsonView jsonValue)
+  : Evaluation()
 {
   *this = jsonValue;
 }

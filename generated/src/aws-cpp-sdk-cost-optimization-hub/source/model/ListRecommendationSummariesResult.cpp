@@ -22,8 +22,8 @@ ListRecommendationSummariesResult::ListRecommendationSummariesResult() :
 {
 }
 
-ListRecommendationSummariesResult::ListRecommendationSummariesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_estimatedTotalDedupedSavings(0.0)
+ListRecommendationSummariesResult::ListRecommendationSummariesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ListRecommendationSummariesResult()
 {
   *this = result;
 }

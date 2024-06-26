@@ -24,9 +24,8 @@ KPIComparisonValueConditionalFormatting::KPIComparisonValueConditionalFormatting
 {
 }
 
-KPIComparisonValueConditionalFormatting::KPIComparisonValueConditionalFormatting(JsonView jsonValue) : 
-    m_textColorHasBeenSet(false),
-    m_iconHasBeenSet(false)
+KPIComparisonValueConditionalFormatting::KPIComparisonValueConditionalFormatting(JsonView jsonValue)
+  : KPIComparisonValueConditionalFormatting()
 {
   *this = jsonValue;
 }

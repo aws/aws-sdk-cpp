@@ -24,9 +24,8 @@ HttpEndpointCommonAttribute::HttpEndpointCommonAttribute() :
 {
 }
 
-HttpEndpointCommonAttribute::HttpEndpointCommonAttribute(JsonView jsonValue) : 
-    m_attributeNameHasBeenSet(false),
-    m_attributeValueHasBeenSet(false)
+HttpEndpointCommonAttribute::HttpEndpointCommonAttribute(JsonView jsonValue)
+  : HttpEndpointCommonAttribute()
 {
   *this = jsonValue;
 }

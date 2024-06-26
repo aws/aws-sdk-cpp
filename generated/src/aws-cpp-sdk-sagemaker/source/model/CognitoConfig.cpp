@@ -24,9 +24,8 @@ CognitoConfig::CognitoConfig() :
 {
 }
 
-CognitoConfig::CognitoConfig(JsonView jsonValue) : 
-    m_userPoolHasBeenSet(false),
-    m_clientIdHasBeenSet(false)
+CognitoConfig::CognitoConfig(JsonView jsonValue)
+  : CognitoConfig()
 {
   *this = jsonValue;
 }

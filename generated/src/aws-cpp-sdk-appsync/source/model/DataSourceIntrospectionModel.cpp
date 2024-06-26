@@ -27,12 +27,8 @@ DataSourceIntrospectionModel::DataSourceIntrospectionModel() :
 {
 }
 
-DataSourceIntrospectionModel::DataSourceIntrospectionModel(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_fieldsHasBeenSet(false),
-    m_primaryKeyHasBeenSet(false),
-    m_indexesHasBeenSet(false),
-    m_sdlHasBeenSet(false)
+DataSourceIntrospectionModel::DataSourceIntrospectionModel(JsonView jsonValue)
+  : DataSourceIntrospectionModel()
 {
   *this = jsonValue;
 }

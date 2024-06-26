@@ -38,23 +38,8 @@ InstanceFleet::InstanceFleet() :
 {
 }
 
-InstanceFleet::InstanceFleet(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_instanceFleetType(InstanceFleetType::NOT_SET),
-    m_instanceFleetTypeHasBeenSet(false),
-    m_targetOnDemandCapacity(0),
-    m_targetOnDemandCapacityHasBeenSet(false),
-    m_targetSpotCapacity(0),
-    m_targetSpotCapacityHasBeenSet(false),
-    m_provisionedOnDemandCapacity(0),
-    m_provisionedOnDemandCapacityHasBeenSet(false),
-    m_provisionedSpotCapacity(0),
-    m_provisionedSpotCapacityHasBeenSet(false),
-    m_instanceTypeSpecificationsHasBeenSet(false),
-    m_launchSpecificationsHasBeenSet(false),
-    m_resizeSpecificationsHasBeenSet(false)
+InstanceFleet::InstanceFleet(JsonView jsonValue)
+  : InstanceFleet()
 {
   *this = jsonValue;
 }

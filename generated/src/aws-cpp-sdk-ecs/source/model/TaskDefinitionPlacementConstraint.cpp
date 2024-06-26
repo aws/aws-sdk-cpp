@@ -25,10 +25,8 @@ TaskDefinitionPlacementConstraint::TaskDefinitionPlacementConstraint() :
 {
 }
 
-TaskDefinitionPlacementConstraint::TaskDefinitionPlacementConstraint(JsonView jsonValue) : 
-    m_type(TaskDefinitionPlacementConstraintType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_expressionHasBeenSet(false)
+TaskDefinitionPlacementConstraint::TaskDefinitionPlacementConstraint(JsonView jsonValue)
+  : TaskDefinitionPlacementConstraint()
 {
   *this = jsonValue;
 }

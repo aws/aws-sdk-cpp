@@ -26,11 +26,8 @@ SankeyDiagramChartConfiguration::SankeyDiagramChartConfiguration() :
 {
 }
 
-SankeyDiagramChartConfiguration::SankeyDiagramChartConfiguration(JsonView jsonValue) : 
-    m_fieldWellsHasBeenSet(false),
-    m_sortConfigurationHasBeenSet(false),
-    m_dataLabelsHasBeenSet(false),
-    m_interactionsHasBeenSet(false)
+SankeyDiagramChartConfiguration::SankeyDiagramChartConfiguration(JsonView jsonValue)
+  : SankeyDiagramChartConfiguration()
 {
   *this = jsonValue;
 }

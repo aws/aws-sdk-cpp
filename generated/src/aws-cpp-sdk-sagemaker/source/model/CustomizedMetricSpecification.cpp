@@ -26,11 +26,8 @@ CustomizedMetricSpecification::CustomizedMetricSpecification() :
 {
 }
 
-CustomizedMetricSpecification::CustomizedMetricSpecification(JsonView jsonValue) : 
-    m_metricNameHasBeenSet(false),
-    m_namespaceHasBeenSet(false),
-    m_statistic(Statistic::NOT_SET),
-    m_statisticHasBeenSet(false)
+CustomizedMetricSpecification::CustomizedMetricSpecification(JsonView jsonValue)
+  : CustomizedMetricSpecification()
 {
   *this = jsonValue;
 }

@@ -27,12 +27,8 @@ GlobalSecondaryIndex::GlobalSecondaryIndex() :
 {
 }
 
-GlobalSecondaryIndex::GlobalSecondaryIndex(JsonView jsonValue) : 
-    m_indexNameHasBeenSet(false),
-    m_keySchemaHasBeenSet(false),
-    m_projectionHasBeenSet(false),
-    m_provisionedThroughputHasBeenSet(false),
-    m_onDemandThroughputHasBeenSet(false)
+GlobalSecondaryIndex::GlobalSecondaryIndex(JsonView jsonValue)
+  : GlobalSecondaryIndex()
 {
   *this = jsonValue;
 }

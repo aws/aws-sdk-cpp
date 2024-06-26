@@ -24,9 +24,8 @@ TemplateLocation::TemplateLocation() :
 {
 }
 
-TemplateLocation::TemplateLocation(JsonView jsonValue) : 
-    m_s3BucketHasBeenSet(false),
-    m_s3KeyHasBeenSet(false)
+TemplateLocation::TemplateLocation(JsonView jsonValue)
+  : TemplateLocation()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ SidewalkSingleStartImportInfo::SidewalkSingleStartImportInfo() :
 {
 }
 
-SidewalkSingleStartImportInfo::SidewalkSingleStartImportInfo(JsonView jsonValue) : 
-    m_sidewalkManufacturingSnHasBeenSet(false)
+SidewalkSingleStartImportInfo::SidewalkSingleStartImportInfo(JsonView jsonValue)
+  : SidewalkSingleStartImportInfo()
 {
   *this = jsonValue;
 }

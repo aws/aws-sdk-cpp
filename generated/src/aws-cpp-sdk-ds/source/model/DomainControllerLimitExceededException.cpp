@@ -24,9 +24,8 @@ DomainControllerLimitExceededException::DomainControllerLimitExceededException()
 {
 }
 
-DomainControllerLimitExceededException::DomainControllerLimitExceededException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
+DomainControllerLimitExceededException::DomainControllerLimitExceededException(JsonView jsonValue)
+  : DomainControllerLimitExceededException()
 {
   *this = jsonValue;
 }

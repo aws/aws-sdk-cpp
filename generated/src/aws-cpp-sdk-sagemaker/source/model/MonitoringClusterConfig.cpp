@@ -29,14 +29,8 @@ MonitoringClusterConfig::MonitoringClusterConfig() :
 {
 }
 
-MonitoringClusterConfig::MonitoringClusterConfig(JsonView jsonValue) : 
-    m_instanceCount(0),
-    m_instanceCountHasBeenSet(false),
-    m_instanceType(ProcessingInstanceType::NOT_SET),
-    m_instanceTypeHasBeenSet(false),
-    m_volumeSizeInGB(0),
-    m_volumeSizeInGBHasBeenSet(false),
-    m_volumeKmsKeyIdHasBeenSet(false)
+MonitoringClusterConfig::MonitoringClusterConfig(JsonView jsonValue)
+  : MonitoringClusterConfig()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ FileCacheLustreMetadataConfiguration::FileCacheLustreMetadataConfiguration() :
 {
 }
 
-FileCacheLustreMetadataConfiguration::FileCacheLustreMetadataConfiguration(JsonView jsonValue) : 
-    m_storageCapacity(0),
-    m_storageCapacityHasBeenSet(false)
+FileCacheLustreMetadataConfiguration::FileCacheLustreMetadataConfiguration(JsonView jsonValue)
+  : FileCacheLustreMetadataConfiguration()
 {
   *this = jsonValue;
 }

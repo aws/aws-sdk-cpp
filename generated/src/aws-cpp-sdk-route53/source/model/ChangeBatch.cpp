@@ -26,9 +26,8 @@ ChangeBatch::ChangeBatch() :
 {
 }
 
-ChangeBatch::ChangeBatch(const XmlNode& xmlNode) : 
-    m_commentHasBeenSet(false),
-    m_changesHasBeenSet(false)
+ChangeBatch::ChangeBatch(const XmlNode& xmlNode)
+  : ChangeBatch()
 {
   *this = xmlNode;
 }

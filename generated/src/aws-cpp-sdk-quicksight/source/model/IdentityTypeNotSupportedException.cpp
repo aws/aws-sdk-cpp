@@ -24,9 +24,8 @@ IdentityTypeNotSupportedException::IdentityTypeNotSupportedException() :
 {
 }
 
-IdentityTypeNotSupportedException::IdentityTypeNotSupportedException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
+IdentityTypeNotSupportedException::IdentityTypeNotSupportedException(JsonView jsonValue)
+  : IdentityTypeNotSupportedException()
 {
   *this = jsonValue;
 }

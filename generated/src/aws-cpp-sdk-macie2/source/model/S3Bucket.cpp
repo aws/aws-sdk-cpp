@@ -31,16 +31,8 @@ S3Bucket::S3Bucket() :
 {
 }
 
-S3Bucket::S3Bucket(JsonView jsonValue) : 
-    m_allowsUnencryptedObjectUploads(AllowsUnencryptedObjectUploads::NOT_SET),
-    m_allowsUnencryptedObjectUploadsHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_defaultServerSideEncryptionHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_ownerHasBeenSet(false),
-    m_publicAccessHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+S3Bucket::S3Bucket(JsonView jsonValue)
+  : S3Bucket()
 {
   *this = jsonValue;
 }

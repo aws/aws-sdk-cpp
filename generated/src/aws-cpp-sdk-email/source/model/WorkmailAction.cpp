@@ -26,9 +26,8 @@ WorkmailAction::WorkmailAction() :
 {
 }
 
-WorkmailAction::WorkmailAction(const XmlNode& xmlNode) : 
-    m_topicArnHasBeenSet(false),
-    m_organizationArnHasBeenSet(false)
+WorkmailAction::WorkmailAction(const XmlNode& xmlNode)
+  : WorkmailAction()
 {
   *this = xmlNode;
 }

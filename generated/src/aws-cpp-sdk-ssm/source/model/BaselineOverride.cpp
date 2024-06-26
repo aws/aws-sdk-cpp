@@ -35,20 +35,8 @@ BaselineOverride::BaselineOverride() :
 {
 }
 
-BaselineOverride::BaselineOverride(JsonView jsonValue) : 
-    m_operatingSystem(OperatingSystem::NOT_SET),
-    m_operatingSystemHasBeenSet(false),
-    m_globalFiltersHasBeenSet(false),
-    m_approvalRulesHasBeenSet(false),
-    m_approvedPatchesHasBeenSet(false),
-    m_approvedPatchesComplianceLevel(PatchComplianceLevel::NOT_SET),
-    m_approvedPatchesComplianceLevelHasBeenSet(false),
-    m_rejectedPatchesHasBeenSet(false),
-    m_rejectedPatchesAction(PatchAction::NOT_SET),
-    m_rejectedPatchesActionHasBeenSet(false),
-    m_approvedPatchesEnableNonSecurity(false),
-    m_approvedPatchesEnableNonSecurityHasBeenSet(false),
-    m_sourcesHasBeenSet(false)
+BaselineOverride::BaselineOverride(JsonView jsonValue)
+  : BaselineOverride()
 {
   *this = jsonValue;
 }

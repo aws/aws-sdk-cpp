@@ -24,9 +24,8 @@ DatadogConnectorProfileCredentials::DatadogConnectorProfileCredentials() :
 {
 }
 
-DatadogConnectorProfileCredentials::DatadogConnectorProfileCredentials(JsonView jsonValue) : 
-    m_apiKeyHasBeenSet(false),
-    m_applicationKeyHasBeenSet(false)
+DatadogConnectorProfileCredentials::DatadogConnectorProfileCredentials(JsonView jsonValue)
+  : DatadogConnectorProfileCredentials()
 {
   *this = jsonValue;
 }

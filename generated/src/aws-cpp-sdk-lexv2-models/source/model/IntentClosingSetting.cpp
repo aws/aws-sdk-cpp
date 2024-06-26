@@ -27,12 +27,8 @@ IntentClosingSetting::IntentClosingSetting() :
 {
 }
 
-IntentClosingSetting::IntentClosingSetting(JsonView jsonValue) : 
-    m_closingResponseHasBeenSet(false),
-    m_active(false),
-    m_activeHasBeenSet(false),
-    m_nextStepHasBeenSet(false),
-    m_conditionalHasBeenSet(false)
+IntentClosingSetting::IntentClosingSetting(JsonView jsonValue)
+  : IntentClosingSetting()
 {
   *this = jsonValue;
 }

@@ -23,9 +23,8 @@ UpdateKeysResult::UpdateKeysResult() :
 {
 }
 
-UpdateKeysResult::UpdateKeysResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_itemCount(0),
-    m_totalSizeInBytes(0)
+UpdateKeysResult::UpdateKeysResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateKeysResult()
 {
   *this = result;
 }

@@ -22,8 +22,8 @@ CreateProgramResult::CreateProgramResult() :
 {
 }
 
-CreateProgramResult::CreateProgramResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_durationMillis(0)
+CreateProgramResult::CreateProgramResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateProgramResult()
 {
   *this = result;
 }

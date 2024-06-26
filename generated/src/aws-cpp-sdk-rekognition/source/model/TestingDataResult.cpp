@@ -25,10 +25,8 @@ TestingDataResult::TestingDataResult() :
 {
 }
 
-TestingDataResult::TestingDataResult(JsonView jsonValue) : 
-    m_inputHasBeenSet(false),
-    m_outputHasBeenSet(false),
-    m_validationHasBeenSet(false)
+TestingDataResult::TestingDataResult(JsonView jsonValue)
+  : TestingDataResult()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ LiveTailSessionUpdate::LiveTailSessionUpdate() :
 {
 }
 
-LiveTailSessionUpdate::LiveTailSessionUpdate(JsonView jsonValue) : 
-    m_sessionMetadataHasBeenSet(false),
-    m_sessionResultsHasBeenSet(false)
+LiveTailSessionUpdate::LiveTailSessionUpdate(JsonView jsonValue)
+  : LiveTailSessionUpdate()
 {
   *this = jsonValue;
 }

@@ -28,13 +28,8 @@ Variable::Variable() :
 {
 }
 
-Variable::Variable(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_stringValueHasBeenSet(false),
-    m_doubleValue(0.0),
-    m_doubleValueHasBeenSet(false),
-    m_datasetContentVersionValueHasBeenSet(false),
-    m_outputFileUriValueHasBeenSet(false)
+Variable::Variable(JsonView jsonValue)
+  : Variable()
 {
   *this = jsonValue;
 }

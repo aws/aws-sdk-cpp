@@ -30,15 +30,8 @@ Update::Update() :
 {
 }
 
-Update::Update(JsonView jsonValue) : 
-    m_keyHasBeenSet(false),
-    m_updateExpressionHasBeenSet(false),
-    m_tableNameHasBeenSet(false),
-    m_conditionExpressionHasBeenSet(false),
-    m_expressionAttributeNamesHasBeenSet(false),
-    m_expressionAttributeValuesHasBeenSet(false),
-    m_returnValuesOnConditionCheckFailure(ReturnValuesOnConditionCheckFailure::NOT_SET),
-    m_returnValuesOnConditionCheckFailureHasBeenSet(false)
+Update::Update(JsonView jsonValue)
+  : Update()
 {
   *this = jsonValue;
 }

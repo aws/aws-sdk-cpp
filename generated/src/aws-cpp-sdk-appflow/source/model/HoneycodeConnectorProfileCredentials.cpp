@@ -25,10 +25,8 @@ HoneycodeConnectorProfileCredentials::HoneycodeConnectorProfileCredentials() :
 {
 }
 
-HoneycodeConnectorProfileCredentials::HoneycodeConnectorProfileCredentials(JsonView jsonValue) : 
-    m_accessTokenHasBeenSet(false),
-    m_refreshTokenHasBeenSet(false),
-    m_oAuthRequestHasBeenSet(false)
+HoneycodeConnectorProfileCredentials::HoneycodeConnectorProfileCredentials(JsonView jsonValue)
+  : HoneycodeConnectorProfileCredentials()
 {
   *this = jsonValue;
 }

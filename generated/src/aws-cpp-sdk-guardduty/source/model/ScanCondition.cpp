@@ -23,8 +23,8 @@ ScanCondition::ScanCondition() :
 {
 }
 
-ScanCondition::ScanCondition(JsonView jsonValue) : 
-    m_mapEqualsHasBeenSet(false)
+ScanCondition::ScanCondition(JsonView jsonValue)
+  : ScanCondition()
 {
   *this = jsonValue;
 }

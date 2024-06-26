@@ -28,11 +28,8 @@ ResourceTagSet::ResourceTagSet() :
 {
 }
 
-ResourceTagSet::ResourceTagSet(const XmlNode& xmlNode) : 
-    m_resourceType(TagResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+ResourceTagSet::ResourceTagSet(const XmlNode& xmlNode)
+  : ResourceTagSet()
 {
   *this = xmlNode;
 }

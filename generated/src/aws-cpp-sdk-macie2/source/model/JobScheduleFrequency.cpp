@@ -25,10 +25,8 @@ JobScheduleFrequency::JobScheduleFrequency() :
 {
 }
 
-JobScheduleFrequency::JobScheduleFrequency(JsonView jsonValue) : 
-    m_dailyScheduleHasBeenSet(false),
-    m_monthlyScheduleHasBeenSet(false),
-    m_weeklyScheduleHasBeenSet(false)
+JobScheduleFrequency::JobScheduleFrequency(JsonView jsonValue)
+  : JobScheduleFrequency()
 {
   *this = jsonValue;
 }

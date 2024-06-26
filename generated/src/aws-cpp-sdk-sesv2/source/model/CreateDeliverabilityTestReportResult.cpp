@@ -22,8 +22,8 @@ CreateDeliverabilityTestReportResult::CreateDeliverabilityTestReportResult() :
 {
 }
 
-CreateDeliverabilityTestReportResult::CreateDeliverabilityTestReportResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_deliverabilityTestStatus(DeliverabilityTestStatus::NOT_SET)
+CreateDeliverabilityTestReportResult::CreateDeliverabilityTestReportResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateDeliverabilityTestReportResult()
 {
   *this = result;
 }

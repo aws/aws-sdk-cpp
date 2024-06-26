@@ -25,10 +25,8 @@ EksSecret::EksSecret() :
 {
 }
 
-EksSecret::EksSecret(JsonView jsonValue) : 
-    m_secretNameHasBeenSet(false),
-    m_optional(false),
-    m_optionalHasBeenSet(false)
+EksSecret::EksSecret(JsonView jsonValue)
+  : EksSecret()
 {
   *this = jsonValue;
 }

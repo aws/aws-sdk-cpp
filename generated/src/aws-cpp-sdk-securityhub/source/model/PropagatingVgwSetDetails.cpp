@@ -23,8 +23,8 @@ PropagatingVgwSetDetails::PropagatingVgwSetDetails() :
 {
 }
 
-PropagatingVgwSetDetails::PropagatingVgwSetDetails(JsonView jsonValue) : 
-    m_gatewayIdHasBeenSet(false)
+PropagatingVgwSetDetails::PropagatingVgwSetDetails(JsonView jsonValue)
+  : PropagatingVgwSetDetails()
 {
   *this = jsonValue;
 }

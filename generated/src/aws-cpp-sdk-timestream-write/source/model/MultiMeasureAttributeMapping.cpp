@@ -26,11 +26,8 @@ MultiMeasureAttributeMapping::MultiMeasureAttributeMapping() :
 {
 }
 
-MultiMeasureAttributeMapping::MultiMeasureAttributeMapping(JsonView jsonValue) : 
-    m_sourceColumnHasBeenSet(false),
-    m_targetMultiMeasureAttributeNameHasBeenSet(false),
-    m_measureValueType(ScalarMeasureValueType::NOT_SET),
-    m_measureValueTypeHasBeenSet(false)
+MultiMeasureAttributeMapping::MultiMeasureAttributeMapping(JsonView jsonValue)
+  : MultiMeasureAttributeMapping()
 {
   *this = jsonValue;
 }

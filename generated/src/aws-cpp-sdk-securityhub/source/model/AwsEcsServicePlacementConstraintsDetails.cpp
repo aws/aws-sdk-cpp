@@ -24,9 +24,8 @@ AwsEcsServicePlacementConstraintsDetails::AwsEcsServicePlacementConstraintsDetai
 {
 }
 
-AwsEcsServicePlacementConstraintsDetails::AwsEcsServicePlacementConstraintsDetails(JsonView jsonValue) : 
-    m_expressionHasBeenSet(false),
-    m_typeHasBeenSet(false)
+AwsEcsServicePlacementConstraintsDetails::AwsEcsServicePlacementConstraintsDetails(JsonView jsonValue)
+  : AwsEcsServicePlacementConstraintsDetails()
 {
   *this = jsonValue;
 }

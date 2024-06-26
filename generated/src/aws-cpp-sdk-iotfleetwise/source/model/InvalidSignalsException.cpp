@@ -24,9 +24,8 @@ InvalidSignalsException::InvalidSignalsException() :
 {
 }
 
-InvalidSignalsException::InvalidSignalsException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_invalidSignalsHasBeenSet(false)
+InvalidSignalsException::InvalidSignalsException(JsonView jsonValue)
+  : InvalidSignalsException()
 {
   *this = jsonValue;
 }

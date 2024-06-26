@@ -50,33 +50,8 @@ S3CopyObjectOperation::S3CopyObjectOperation() :
 {
 }
 
-S3CopyObjectOperation::S3CopyObjectOperation(const XmlNode& xmlNode) : 
-    m_targetResourceHasBeenSet(false),
-    m_cannedAccessControlList(S3CannedAccessControlList::NOT_SET),
-    m_cannedAccessControlListHasBeenSet(false),
-    m_accessControlGrantsHasBeenSet(false),
-    m_metadataDirective(S3MetadataDirective::NOT_SET),
-    m_metadataDirectiveHasBeenSet(false),
-    m_modifiedSinceConstraintHasBeenSet(false),
-    m_newObjectMetadataHasBeenSet(false),
-    m_newObjectTaggingHasBeenSet(false),
-    m_redirectLocationHasBeenSet(false),
-    m_requesterPays(false),
-    m_requesterPaysHasBeenSet(false),
-    m_storageClass(S3StorageClass::NOT_SET),
-    m_storageClassHasBeenSet(false),
-    m_unModifiedSinceConstraintHasBeenSet(false),
-    m_sSEAwsKmsKeyIdHasBeenSet(false),
-    m_targetKeyPrefixHasBeenSet(false),
-    m_objectLockLegalHoldStatus(S3ObjectLockLegalHoldStatus::NOT_SET),
-    m_objectLockLegalHoldStatusHasBeenSet(false),
-    m_objectLockMode(S3ObjectLockMode::NOT_SET),
-    m_objectLockModeHasBeenSet(false),
-    m_objectLockRetainUntilDateHasBeenSet(false),
-    m_bucketKeyEnabled(false),
-    m_bucketKeyEnabledHasBeenSet(false),
-    m_checksumAlgorithm(S3ChecksumAlgorithm::NOT_SET),
-    m_checksumAlgorithmHasBeenSet(false)
+S3CopyObjectOperation::S3CopyObjectOperation(const XmlNode& xmlNode)
+  : S3CopyObjectOperation()
 {
   *this = xmlNode;
 }

@@ -24,9 +24,8 @@ NotebookSessionSummary::NotebookSessionSummary() :
 {
 }
 
-NotebookSessionSummary::NotebookSessionSummary(JsonView jsonValue) : 
-    m_sessionIdHasBeenSet(false),
-    m_creationTimeHasBeenSet(false)
+NotebookSessionSummary::NotebookSessionSummary(JsonView jsonValue)
+  : NotebookSessionSummary()
 {
   *this = jsonValue;
 }

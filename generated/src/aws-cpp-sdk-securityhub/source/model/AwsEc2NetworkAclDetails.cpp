@@ -29,14 +29,8 @@ AwsEc2NetworkAclDetails::AwsEc2NetworkAclDetails() :
 {
 }
 
-AwsEc2NetworkAclDetails::AwsEc2NetworkAclDetails(JsonView jsonValue) : 
-    m_isDefault(false),
-    m_isDefaultHasBeenSet(false),
-    m_networkAclIdHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_associationsHasBeenSet(false),
-    m_entriesHasBeenSet(false)
+AwsEc2NetworkAclDetails::AwsEc2NetworkAclDetails(JsonView jsonValue)
+  : AwsEc2NetworkAclDetails()
 {
   *this = jsonValue;
 }

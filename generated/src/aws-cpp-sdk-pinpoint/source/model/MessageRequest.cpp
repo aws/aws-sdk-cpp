@@ -28,13 +28,8 @@ MessageRequest::MessageRequest() :
 {
 }
 
-MessageRequest::MessageRequest(JsonView jsonValue) : 
-    m_addressesHasBeenSet(false),
-    m_contextHasBeenSet(false),
-    m_endpointsHasBeenSet(false),
-    m_messageConfigurationHasBeenSet(false),
-    m_templateConfigurationHasBeenSet(false),
-    m_traceIdHasBeenSet(false)
+MessageRequest::MessageRequest(JsonView jsonValue)
+  : MessageRequest()
 {
   *this = jsonValue;
 }

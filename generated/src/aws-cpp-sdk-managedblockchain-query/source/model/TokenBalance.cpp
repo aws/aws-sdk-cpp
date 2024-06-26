@@ -27,12 +27,8 @@ TokenBalance::TokenBalance() :
 {
 }
 
-TokenBalance::TokenBalance(JsonView jsonValue) : 
-    m_ownerIdentifierHasBeenSet(false),
-    m_tokenIdentifierHasBeenSet(false),
-    m_balanceHasBeenSet(false),
-    m_atBlockchainInstantHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false)
+TokenBalance::TokenBalance(JsonView jsonValue)
+  : TokenBalance()
 {
   *this = jsonValue;
 }

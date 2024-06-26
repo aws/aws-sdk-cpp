@@ -29,14 +29,8 @@ ExplainabilityExportSummary::ExplainabilityExportSummary() :
 {
 }
 
-ExplainabilityExportSummary::ExplainabilityExportSummary(JsonView jsonValue) : 
-    m_explainabilityExportArnHasBeenSet(false),
-    m_explainabilityExportNameHasBeenSet(false),
-    m_destinationHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastModificationTimeHasBeenSet(false)
+ExplainabilityExportSummary::ExplainabilityExportSummary(JsonView jsonValue)
+  : ExplainabilityExportSummary()
 {
   *this = jsonValue;
 }

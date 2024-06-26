@@ -25,10 +25,8 @@ ApiStage::ApiStage() :
 {
 }
 
-ApiStage::ApiStage(JsonView jsonValue) : 
-    m_apiIdHasBeenSet(false),
-    m_stageHasBeenSet(false),
-    m_throttleHasBeenSet(false)
+ApiStage::ApiStage(JsonView jsonValue)
+  : ApiStage()
 {
   *this = jsonValue;
 }

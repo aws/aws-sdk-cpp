@@ -24,9 +24,8 @@ ModelPackageValidationProfile::ModelPackageValidationProfile() :
 {
 }
 
-ModelPackageValidationProfile::ModelPackageValidationProfile(JsonView jsonValue) : 
-    m_profileNameHasBeenSet(false),
-    m_transformJobDefinitionHasBeenSet(false)
+ModelPackageValidationProfile::ModelPackageValidationProfile(JsonView jsonValue)
+  : ModelPackageValidationProfile()
 {
   *this = jsonValue;
 }

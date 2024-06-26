@@ -27,12 +27,8 @@ BatchGetSchemaAnalysisRuleError::BatchGetSchemaAnalysisRuleError() :
 {
 }
 
-BatchGetSchemaAnalysisRuleError::BatchGetSchemaAnalysisRuleError(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_type(AnalysisRuleType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+BatchGetSchemaAnalysisRuleError::BatchGetSchemaAnalysisRuleError(JsonView jsonValue)
+  : BatchGetSchemaAnalysisRuleError()
 {
   *this = jsonValue;
 }

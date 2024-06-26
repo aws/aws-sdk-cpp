@@ -25,10 +25,8 @@ VoiceMessageContent::VoiceMessageContent() :
 {
 }
 
-VoiceMessageContent::VoiceMessageContent(JsonView jsonValue) : 
-    m_callInstructionsMessageHasBeenSet(false),
-    m_plainTextMessageHasBeenSet(false),
-    m_sSMLMessageHasBeenSet(false)
+VoiceMessageContent::VoiceMessageContent(JsonView jsonValue)
+  : VoiceMessageContent()
 {
   *this = jsonValue;
 }

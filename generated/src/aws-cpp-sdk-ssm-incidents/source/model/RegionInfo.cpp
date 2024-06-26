@@ -27,12 +27,8 @@ RegionInfo::RegionInfo() :
 {
 }
 
-RegionInfo::RegionInfo(JsonView jsonValue) : 
-    m_sseKmsKeyIdHasBeenSet(false),
-    m_status(RegionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_statusUpdateDateTimeHasBeenSet(false)
+RegionInfo::RegionInfo(JsonView jsonValue)
+  : RegionInfo()
 {
   *this = jsonValue;
 }

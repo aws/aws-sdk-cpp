@@ -24,9 +24,8 @@ SimulationAppEndpointInfo::SimulationAppEndpointInfo() :
 {
 }
 
-SimulationAppEndpointInfo::SimulationAppEndpointInfo(JsonView jsonValue) : 
-    m_addressHasBeenSet(false),
-    m_ingressPortMappingsHasBeenSet(false)
+SimulationAppEndpointInfo::SimulationAppEndpointInfo(JsonView jsonValue)
+  : SimulationAppEndpointInfo()
 {
   *this = jsonValue;
 }

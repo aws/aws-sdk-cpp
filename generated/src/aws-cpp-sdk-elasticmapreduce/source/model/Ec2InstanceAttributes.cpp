@@ -33,18 +33,8 @@ Ec2InstanceAttributes::Ec2InstanceAttributes() :
 {
 }
 
-Ec2InstanceAttributes::Ec2InstanceAttributes(JsonView jsonValue) : 
-    m_ec2KeyNameHasBeenSet(false),
-    m_ec2SubnetIdHasBeenSet(false),
-    m_requestedEc2SubnetIdsHasBeenSet(false),
-    m_ec2AvailabilityZoneHasBeenSet(false),
-    m_requestedEc2AvailabilityZonesHasBeenSet(false),
-    m_iamInstanceProfileHasBeenSet(false),
-    m_emrManagedMasterSecurityGroupHasBeenSet(false),
-    m_emrManagedSlaveSecurityGroupHasBeenSet(false),
-    m_serviceAccessSecurityGroupHasBeenSet(false),
-    m_additionalMasterSecurityGroupsHasBeenSet(false),
-    m_additionalSlaveSecurityGroupsHasBeenSet(false)
+Ec2InstanceAttributes::Ec2InstanceAttributes(JsonView jsonValue)
+  : Ec2InstanceAttributes()
 {
   *this = jsonValue;
 }

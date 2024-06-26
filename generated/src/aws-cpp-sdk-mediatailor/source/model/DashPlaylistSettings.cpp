@@ -30,15 +30,8 @@ DashPlaylistSettings::DashPlaylistSettings() :
 {
 }
 
-DashPlaylistSettings::DashPlaylistSettings(JsonView jsonValue) : 
-    m_manifestWindowSeconds(0),
-    m_manifestWindowSecondsHasBeenSet(false),
-    m_minBufferTimeSeconds(0),
-    m_minBufferTimeSecondsHasBeenSet(false),
-    m_minUpdatePeriodSeconds(0),
-    m_minUpdatePeriodSecondsHasBeenSet(false),
-    m_suggestedPresentationDelaySeconds(0),
-    m_suggestedPresentationDelaySecondsHasBeenSet(false)
+DashPlaylistSettings::DashPlaylistSettings(JsonView jsonValue)
+  : DashPlaylistSettings()
 {
   *this = jsonValue;
 }

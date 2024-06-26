@@ -28,13 +28,8 @@ AssociatedPackage::AssociatedPackage() :
 {
 }
 
-AssociatedPackage::AssociatedPackage(JsonView jsonValue) : 
-    m_format(PackageFormat::NOT_SET),
-    m_formatHasBeenSet(false),
-    m_namespaceHasBeenSet(false),
-    m_packageHasBeenSet(false),
-    m_associationType(PackageGroupAssociationType::NOT_SET),
-    m_associationTypeHasBeenSet(false)
+AssociatedPackage::AssociatedPackage(JsonView jsonValue)
+  : AssociatedPackage()
 {
   *this = jsonValue;
 }

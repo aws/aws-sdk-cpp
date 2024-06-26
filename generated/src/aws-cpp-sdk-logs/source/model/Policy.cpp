@@ -23,8 +23,8 @@ Policy::Policy() :
 {
 }
 
-Policy::Policy(JsonView jsonValue) : 
-    m_deliveryDestinationPolicyHasBeenSet(false)
+Policy::Policy(JsonView jsonValue)
+  : Policy()
 {
   *this = jsonValue;
 }

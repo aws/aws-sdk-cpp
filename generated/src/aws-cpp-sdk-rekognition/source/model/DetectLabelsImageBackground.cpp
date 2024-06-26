@@ -24,9 +24,8 @@ DetectLabelsImageBackground::DetectLabelsImageBackground() :
 {
 }
 
-DetectLabelsImageBackground::DetectLabelsImageBackground(JsonView jsonValue) : 
-    m_qualityHasBeenSet(false),
-    m_dominantColorsHasBeenSet(false)
+DetectLabelsImageBackground::DetectLabelsImageBackground(JsonView jsonValue)
+  : DetectLabelsImageBackground()
 {
   *this = jsonValue;
 }

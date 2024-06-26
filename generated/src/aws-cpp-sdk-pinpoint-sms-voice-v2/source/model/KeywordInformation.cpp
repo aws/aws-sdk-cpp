@@ -26,11 +26,8 @@ KeywordInformation::KeywordInformation() :
 {
 }
 
-KeywordInformation::KeywordInformation(JsonView jsonValue) : 
-    m_keywordHasBeenSet(false),
-    m_keywordMessageHasBeenSet(false),
-    m_keywordAction(KeywordAction::NOT_SET),
-    m_keywordActionHasBeenSet(false)
+KeywordInformation::KeywordInformation(JsonView jsonValue)
+  : KeywordInformation()
 {
   *this = jsonValue;
 }

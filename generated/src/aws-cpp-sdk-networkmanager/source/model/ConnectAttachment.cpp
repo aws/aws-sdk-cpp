@@ -25,10 +25,8 @@ ConnectAttachment::ConnectAttachment() :
 {
 }
 
-ConnectAttachment::ConnectAttachment(JsonView jsonValue) : 
-    m_attachmentHasBeenSet(false),
-    m_transportAttachmentIdHasBeenSet(false),
-    m_optionsHasBeenSet(false)
+ConnectAttachment::ConnectAttachment(JsonView jsonValue)
+  : ConnectAttachment()
 {
   *this = jsonValue;
 }

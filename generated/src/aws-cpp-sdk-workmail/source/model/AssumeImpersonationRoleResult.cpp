@@ -22,8 +22,8 @@ AssumeImpersonationRoleResult::AssumeImpersonationRoleResult() :
 {
 }
 
-AssumeImpersonationRoleResult::AssumeImpersonationRoleResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_expiresIn(0)
+AssumeImpersonationRoleResult::AssumeImpersonationRoleResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : AssumeImpersonationRoleResult()
 {
   *this = result;
 }

@@ -25,10 +25,8 @@ FaceMatch::FaceMatch() :
 {
 }
 
-FaceMatch::FaceMatch(JsonView jsonValue) : 
-    m_similarity(0.0),
-    m_similarityHasBeenSet(false),
-    m_faceHasBeenSet(false)
+FaceMatch::FaceMatch(JsonView jsonValue)
+  : FaceMatch()
 {
   *this = jsonValue;
 }

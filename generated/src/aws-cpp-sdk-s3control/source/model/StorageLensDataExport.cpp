@@ -26,9 +26,8 @@ StorageLensDataExport::StorageLensDataExport() :
 {
 }
 
-StorageLensDataExport::StorageLensDataExport(const XmlNode& xmlNode) : 
-    m_s3BucketDestinationHasBeenSet(false),
-    m_cloudWatchMetricsHasBeenSet(false)
+StorageLensDataExport::StorageLensDataExport(const XmlNode& xmlNode)
+  : StorageLensDataExport()
 {
   *this = xmlNode;
 }

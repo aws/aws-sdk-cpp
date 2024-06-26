@@ -31,16 +31,8 @@ ImportJobSummary::ImportJobSummary() :
 {
 }
 
-ImportJobSummary::ImportJobSummary(JsonView jsonValue) : 
-    m_jobIdHasBeenSet(false),
-    m_importDestinationHasBeenSet(false),
-    m_jobStatus(JobStatus::NOT_SET),
-    m_jobStatusHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false),
-    m_processedRecordsCount(0),
-    m_processedRecordsCountHasBeenSet(false),
-    m_failedRecordsCount(0),
-    m_failedRecordsCountHasBeenSet(false)
+ImportJobSummary::ImportJobSummary(JsonView jsonValue)
+  : ImportJobSummary()
 {
   *this = jsonValue;
 }

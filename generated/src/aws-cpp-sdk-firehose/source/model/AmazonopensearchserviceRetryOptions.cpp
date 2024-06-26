@@ -24,9 +24,8 @@ AmazonopensearchserviceRetryOptions::AmazonopensearchserviceRetryOptions() :
 {
 }
 
-AmazonopensearchserviceRetryOptions::AmazonopensearchserviceRetryOptions(JsonView jsonValue) : 
-    m_durationInSeconds(0),
-    m_durationInSecondsHasBeenSet(false)
+AmazonopensearchserviceRetryOptions::AmazonopensearchserviceRetryOptions(JsonView jsonValue)
+  : AmazonopensearchserviceRetryOptions()
 {
   *this = jsonValue;
 }

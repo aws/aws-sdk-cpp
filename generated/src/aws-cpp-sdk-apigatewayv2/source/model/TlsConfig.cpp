@@ -23,8 +23,8 @@ TlsConfig::TlsConfig() :
 {
 }
 
-TlsConfig::TlsConfig(JsonView jsonValue) : 
-    m_serverNameToVerifyHasBeenSet(false)
+TlsConfig::TlsConfig(JsonView jsonValue)
+  : TlsConfig()
 {
   *this = jsonValue;
 }

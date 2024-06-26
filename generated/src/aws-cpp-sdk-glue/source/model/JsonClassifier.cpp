@@ -28,13 +28,8 @@ JsonClassifier::JsonClassifier() :
 {
 }
 
-JsonClassifier::JsonClassifier(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastUpdatedHasBeenSet(false),
-    m_version(0),
-    m_versionHasBeenSet(false),
-    m_jsonPathHasBeenSet(false)
+JsonClassifier::JsonClassifier(JsonView jsonValue)
+  : JsonClassifier()
 {
   *this = jsonValue;
 }

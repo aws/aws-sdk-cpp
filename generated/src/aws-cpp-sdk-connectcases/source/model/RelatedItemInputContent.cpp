@@ -25,10 +25,8 @@ RelatedItemInputContent::RelatedItemInputContent() :
 {
 }
 
-RelatedItemInputContent::RelatedItemInputContent(JsonView jsonValue) : 
-    m_commentHasBeenSet(false),
-    m_contactHasBeenSet(false),
-    m_fileHasBeenSet(false)
+RelatedItemInputContent::RelatedItemInputContent(JsonView jsonValue)
+  : RelatedItemInputContent()
 {
   *this = jsonValue;
 }

@@ -48,33 +48,8 @@ Transaction::Transaction() :
 {
 }
 
-Transaction::Transaction(JsonView jsonValue) : 
-    m_network(QueryNetwork::NOT_SET),
-    m_networkHasBeenSet(false),
-    m_blockHashHasBeenSet(false),
-    m_transactionHashHasBeenSet(false),
-    m_blockNumberHasBeenSet(false),
-    m_transactionTimestampHasBeenSet(false),
-    m_transactionIndex(0),
-    m_transactionIndexHasBeenSet(false),
-    m_numberOfTransactions(0),
-    m_numberOfTransactionsHasBeenSet(false),
-    m_toHasBeenSet(false),
-    m_fromHasBeenSet(false),
-    m_contractAddressHasBeenSet(false),
-    m_gasUsedHasBeenSet(false),
-    m_cumulativeGasUsedHasBeenSet(false),
-    m_effectiveGasPriceHasBeenSet(false),
-    m_signatureV(0),
-    m_signatureVHasBeenSet(false),
-    m_signatureRHasBeenSet(false),
-    m_signatureSHasBeenSet(false),
-    m_transactionFeeHasBeenSet(false),
-    m_transactionIdHasBeenSet(false),
-    m_confirmationStatus(ConfirmationStatus::NOT_SET),
-    m_confirmationStatusHasBeenSet(false),
-    m_executionStatus(ExecutionStatus::NOT_SET),
-    m_executionStatusHasBeenSet(false)
+Transaction::Transaction(JsonView jsonValue)
+  : Transaction()
 {
   *this = jsonValue;
 }

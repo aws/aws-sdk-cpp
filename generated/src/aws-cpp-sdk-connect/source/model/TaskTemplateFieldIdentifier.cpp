@@ -23,8 +23,8 @@ TaskTemplateFieldIdentifier::TaskTemplateFieldIdentifier() :
 {
 }
 
-TaskTemplateFieldIdentifier::TaskTemplateFieldIdentifier(JsonView jsonValue) : 
-    m_nameHasBeenSet(false)
+TaskTemplateFieldIdentifier::TaskTemplateFieldIdentifier(JsonView jsonValue)
+  : TaskTemplateFieldIdentifier()
 {
   *this = jsonValue;
 }

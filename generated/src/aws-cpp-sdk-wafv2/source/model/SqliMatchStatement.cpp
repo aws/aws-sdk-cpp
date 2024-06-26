@@ -26,11 +26,8 @@ SqliMatchStatement::SqliMatchStatement() :
 {
 }
 
-SqliMatchStatement::SqliMatchStatement(JsonView jsonValue) : 
-    m_fieldToMatchHasBeenSet(false),
-    m_textTransformationsHasBeenSet(false),
-    m_sensitivityLevel(SensitivityLevel::NOT_SET),
-    m_sensitivityLevelHasBeenSet(false)
+SqliMatchStatement::SqliMatchStatement(JsonView jsonValue)
+  : SqliMatchStatement()
 {
   *this = jsonValue;
 }

@@ -27,12 +27,8 @@ EvaluationAnswerData::EvaluationAnswerData() :
 {
 }
 
-EvaluationAnswerData::EvaluationAnswerData(JsonView jsonValue) : 
-    m_stringValueHasBeenSet(false),
-    m_numericValue(0.0),
-    m_numericValueHasBeenSet(false),
-    m_notApplicable(false),
-    m_notApplicableHasBeenSet(false)
+EvaluationAnswerData::EvaluationAnswerData(JsonView jsonValue)
+  : EvaluationAnswerData()
 {
   *this = jsonValue;
 }

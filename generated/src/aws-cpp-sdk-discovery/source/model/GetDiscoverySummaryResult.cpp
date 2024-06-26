@@ -25,11 +25,8 @@ GetDiscoverySummaryResult::GetDiscoverySummaryResult() :
 {
 }
 
-GetDiscoverySummaryResult::GetDiscoverySummaryResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_servers(0),
-    m_applications(0),
-    m_serversMappedToApplications(0),
-    m_serversMappedtoTags(0)
+GetDiscoverySummaryResult::GetDiscoverySummaryResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetDiscoverySummaryResult()
 {
   *this = result;
 }

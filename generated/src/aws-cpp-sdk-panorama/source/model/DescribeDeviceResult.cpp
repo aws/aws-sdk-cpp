@@ -26,12 +26,8 @@ DescribeDeviceResult::DescribeDeviceResult() :
 {
 }
 
-DescribeDeviceResult::DescribeDeviceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_brand(DeviceBrand::NOT_SET),
-    m_deviceAggregatedStatus(DeviceAggregatedStatus::NOT_SET),
-    m_deviceConnectionStatus(DeviceConnectionStatus::NOT_SET),
-    m_provisioningStatus(DeviceStatus::NOT_SET),
-    m_type(DeviceType::NOT_SET)
+DescribeDeviceResult::DescribeDeviceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeDeviceResult()
 {
   *this = result;
 }

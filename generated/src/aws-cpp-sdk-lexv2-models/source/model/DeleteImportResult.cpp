@@ -22,8 +22,8 @@ DeleteImportResult::DeleteImportResult() :
 {
 }
 
-DeleteImportResult::DeleteImportResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_importStatus(ImportStatus::NOT_SET)
+DeleteImportResult::DeleteImportResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeleteImportResult()
 {
   *this = result;
 }

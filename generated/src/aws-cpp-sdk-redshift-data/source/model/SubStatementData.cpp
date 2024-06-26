@@ -39,24 +39,8 @@ SubStatementData::SubStatementData() :
 {
 }
 
-SubStatementData::SubStatementData(JsonView jsonValue) : 
-    m_createdAtHasBeenSet(false),
-    m_duration(0),
-    m_durationHasBeenSet(false),
-    m_errorHasBeenSet(false),
-    m_hasResultSet(false),
-    m_hasResultSetHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_queryStringHasBeenSet(false),
-    m_redshiftQueryId(0),
-    m_redshiftQueryIdHasBeenSet(false),
-    m_resultRows(0),
-    m_resultRowsHasBeenSet(false),
-    m_resultSize(0),
-    m_resultSizeHasBeenSet(false),
-    m_status(StatementStatusString::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+SubStatementData::SubStatementData(JsonView jsonValue)
+  : SubStatementData()
 {
   *this = jsonValue;
 }

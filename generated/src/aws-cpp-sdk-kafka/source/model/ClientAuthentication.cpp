@@ -25,10 +25,8 @@ ClientAuthentication::ClientAuthentication() :
 {
 }
 
-ClientAuthentication::ClientAuthentication(JsonView jsonValue) : 
-    m_saslHasBeenSet(false),
-    m_tlsHasBeenSet(false),
-    m_unauthenticatedHasBeenSet(false)
+ClientAuthentication::ClientAuthentication(JsonView jsonValue)
+  : ClientAuthentication()
 {
   *this = jsonValue;
 }

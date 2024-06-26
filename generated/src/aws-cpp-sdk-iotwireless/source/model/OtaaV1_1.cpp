@@ -25,10 +25,8 @@ OtaaV1_1::OtaaV1_1() :
 {
 }
 
-OtaaV1_1::OtaaV1_1(JsonView jsonValue) : 
-    m_appKeyHasBeenSet(false),
-    m_nwkKeyHasBeenSet(false),
-    m_joinEuiHasBeenSet(false)
+OtaaV1_1::OtaaV1_1(JsonView jsonValue)
+  : OtaaV1_1()
 {
   *this = jsonValue;
 }

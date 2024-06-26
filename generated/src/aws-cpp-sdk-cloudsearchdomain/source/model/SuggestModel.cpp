@@ -26,11 +26,8 @@ SuggestModel::SuggestModel() :
 {
 }
 
-SuggestModel::SuggestModel(JsonView jsonValue) : 
-    m_queryHasBeenSet(false),
-    m_found(0),
-    m_foundHasBeenSet(false),
-    m_suggestionsHasBeenSet(false)
+SuggestModel::SuggestModel(JsonView jsonValue)
+  : SuggestModel()
 {
   *this = jsonValue;
 }

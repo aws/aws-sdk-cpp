@@ -59,44 +59,8 @@ JobDetail::JobDetail() :
 {
 }
 
-JobDetail::JobDetail(JsonView jsonValue) : 
-    m_jobArnHasBeenSet(false),
-    m_jobNameHasBeenSet(false),
-    m_jobIdHasBeenSet(false),
-    m_jobQueueHasBeenSet(false),
-    m_status(JobStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_shareIdentifierHasBeenSet(false),
-    m_schedulingPriority(0),
-    m_schedulingPriorityHasBeenSet(false),
-    m_attemptsHasBeenSet(false),
-    m_statusReasonHasBeenSet(false),
-    m_createdAt(0),
-    m_createdAtHasBeenSet(false),
-    m_retryStrategyHasBeenSet(false),
-    m_startedAt(0),
-    m_startedAtHasBeenSet(false),
-    m_stoppedAt(0),
-    m_stoppedAtHasBeenSet(false),
-    m_dependsOnHasBeenSet(false),
-    m_jobDefinitionHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_containerHasBeenSet(false),
-    m_nodeDetailsHasBeenSet(false),
-    m_nodePropertiesHasBeenSet(false),
-    m_arrayPropertiesHasBeenSet(false),
-    m_timeoutHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_propagateTags(false),
-    m_propagateTagsHasBeenSet(false),
-    m_platformCapabilitiesHasBeenSet(false),
-    m_eksPropertiesHasBeenSet(false),
-    m_eksAttemptsHasBeenSet(false),
-    m_ecsPropertiesHasBeenSet(false),
-    m_isCancelled(false),
-    m_isCancelledHasBeenSet(false),
-    m_isTerminated(false),
-    m_isTerminatedHasBeenSet(false)
+JobDetail::JobDetail(JsonView jsonValue)
+  : JobDetail()
 {
   *this = jsonValue;
 }

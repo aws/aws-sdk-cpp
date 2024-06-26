@@ -24,9 +24,8 @@ Code::Code() :
 {
 }
 
-Code::Code(JsonView jsonValue) : 
-    m_sourceHasBeenSet(false),
-    m_destinationHasBeenSet(false)
+Code::Code(JsonView jsonValue)
+  : Code()
 {
   *this = jsonValue;
 }

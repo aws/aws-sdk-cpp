@@ -33,18 +33,8 @@ ProvisionedConcurrencyConfigListItem::ProvisionedConcurrencyConfigListItem() :
 {
 }
 
-ProvisionedConcurrencyConfigListItem::ProvisionedConcurrencyConfigListItem(JsonView jsonValue) : 
-    m_functionArnHasBeenSet(false),
-    m_requestedProvisionedConcurrentExecutions(0),
-    m_requestedProvisionedConcurrentExecutionsHasBeenSet(false),
-    m_availableProvisionedConcurrentExecutions(0),
-    m_availableProvisionedConcurrentExecutionsHasBeenSet(false),
-    m_allocatedProvisionedConcurrentExecutions(0),
-    m_allocatedProvisionedConcurrentExecutionsHasBeenSet(false),
-    m_status(ProvisionedConcurrencyStatusEnum::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusReasonHasBeenSet(false),
-    m_lastModifiedHasBeenSet(false)
+ProvisionedConcurrencyConfigListItem::ProvisionedConcurrencyConfigListItem(JsonView jsonValue)
+  : ProvisionedConcurrencyConfigListItem()
 {
   *this = jsonValue;
 }

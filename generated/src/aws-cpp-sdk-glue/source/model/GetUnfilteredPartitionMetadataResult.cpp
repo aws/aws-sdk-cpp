@@ -22,8 +22,8 @@ GetUnfilteredPartitionMetadataResult::GetUnfilteredPartitionMetadataResult() :
 {
 }
 
-GetUnfilteredPartitionMetadataResult::GetUnfilteredPartitionMetadataResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_isRegisteredWithLakeFormation(false)
+GetUnfilteredPartitionMetadataResult::GetUnfilteredPartitionMetadataResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetUnfilteredPartitionMetadataResult()
 {
   *this = result;
 }

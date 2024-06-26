@@ -25,8 +25,8 @@ LabelOptions::LabelOptions() :
 {
 }
 
-LabelOptions::LabelOptions(const XmlNode& xmlNode) : 
-    m_timezoneHasBeenSet(false)
+LabelOptions::LabelOptions(const XmlNode& xmlNode)
+  : LabelOptions()
 {
   *this = xmlNode;
 }

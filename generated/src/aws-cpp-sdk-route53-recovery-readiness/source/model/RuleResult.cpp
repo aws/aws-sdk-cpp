@@ -27,12 +27,8 @@ RuleResult::RuleResult() :
 {
 }
 
-RuleResult::RuleResult(JsonView jsonValue) : 
-    m_lastCheckedTimestampHasBeenSet(false),
-    m_messagesHasBeenSet(false),
-    m_readiness(Readiness::NOT_SET),
-    m_readinessHasBeenSet(false),
-    m_ruleIdHasBeenSet(false)
+RuleResult::RuleResult(JsonView jsonValue)
+  : RuleResult()
 {
   *this = jsonValue;
 }

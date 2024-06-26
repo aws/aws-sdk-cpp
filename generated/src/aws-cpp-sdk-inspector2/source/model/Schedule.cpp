@@ -26,11 +26,8 @@ Schedule::Schedule() :
 {
 }
 
-Schedule::Schedule(JsonView jsonValue) : 
-    m_dailyHasBeenSet(false),
-    m_monthlyHasBeenSet(false),
-    m_oneTimeHasBeenSet(false),
-    m_weeklyHasBeenSet(false)
+Schedule::Schedule(JsonView jsonValue)
+  : Schedule()
 {
   *this = jsonValue;
 }

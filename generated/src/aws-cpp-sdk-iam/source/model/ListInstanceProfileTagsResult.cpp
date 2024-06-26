@@ -22,8 +22,8 @@ ListInstanceProfileTagsResult::ListInstanceProfileTagsResult() :
 {
 }
 
-ListInstanceProfileTagsResult::ListInstanceProfileTagsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_isTruncated(false)
+ListInstanceProfileTagsResult::ListInstanceProfileTagsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : ListInstanceProfileTagsResult()
 {
   *this = result;
 }

@@ -25,10 +25,8 @@ TrailInfo::TrailInfo() :
 {
 }
 
-TrailInfo::TrailInfo(JsonView jsonValue) : 
-    m_trailARNHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_homeRegionHasBeenSet(false)
+TrailInfo::TrailInfo(JsonView jsonValue)
+  : TrailInfo()
 {
   *this = jsonValue;
 }

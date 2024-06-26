@@ -27,12 +27,8 @@ KxSavedownStorageConfiguration::KxSavedownStorageConfiguration() :
 {
 }
 
-KxSavedownStorageConfiguration::KxSavedownStorageConfiguration(JsonView jsonValue) : 
-    m_type(KxSavedownStorageType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_size(0),
-    m_sizeHasBeenSet(false),
-    m_volumeNameHasBeenSet(false)
+KxSavedownStorageConfiguration::KxSavedownStorageConfiguration(JsonView jsonValue)
+  : KxSavedownStorageConfiguration()
 {
   *this = jsonValue;
 }

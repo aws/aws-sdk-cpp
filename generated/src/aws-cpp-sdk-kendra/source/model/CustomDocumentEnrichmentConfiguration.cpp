@@ -26,11 +26,8 @@ CustomDocumentEnrichmentConfiguration::CustomDocumentEnrichmentConfiguration() :
 {
 }
 
-CustomDocumentEnrichmentConfiguration::CustomDocumentEnrichmentConfiguration(JsonView jsonValue) : 
-    m_inlineConfigurationsHasBeenSet(false),
-    m_preExtractionHookConfigurationHasBeenSet(false),
-    m_postExtractionHookConfigurationHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
+CustomDocumentEnrichmentConfiguration::CustomDocumentEnrichmentConfiguration(JsonView jsonValue)
+  : CustomDocumentEnrichmentConfiguration()
 {
   *this = jsonValue;
 }

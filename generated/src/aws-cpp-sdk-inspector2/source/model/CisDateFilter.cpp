@@ -24,9 +24,8 @@ CisDateFilter::CisDateFilter() :
 {
 }
 
-CisDateFilter::CisDateFilter(JsonView jsonValue) : 
-    m_earliestScanStartTimeHasBeenSet(false),
-    m_latestScanStartTimeHasBeenSet(false)
+CisDateFilter::CisDateFilter(JsonView jsonValue)
+  : CisDateFilter()
 {
   *this = jsonValue;
 }

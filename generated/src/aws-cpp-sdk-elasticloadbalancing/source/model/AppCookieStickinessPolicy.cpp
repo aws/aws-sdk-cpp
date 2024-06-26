@@ -26,9 +26,8 @@ AppCookieStickinessPolicy::AppCookieStickinessPolicy() :
 {
 }
 
-AppCookieStickinessPolicy::AppCookieStickinessPolicy(const XmlNode& xmlNode) : 
-    m_policyNameHasBeenSet(false),
-    m_cookieNameHasBeenSet(false)
+AppCookieStickinessPolicy::AppCookieStickinessPolicy(const XmlNode& xmlNode)
+  : AppCookieStickinessPolicy()
 {
   *this = xmlNode;
 }

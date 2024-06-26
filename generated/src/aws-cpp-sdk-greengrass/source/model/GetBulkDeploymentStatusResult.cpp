@@ -22,8 +22,8 @@ GetBulkDeploymentStatusResult::GetBulkDeploymentStatusResult() :
 {
 }
 
-GetBulkDeploymentStatusResult::GetBulkDeploymentStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_bulkDeploymentStatus(BulkDeploymentStatus::NOT_SET)
+GetBulkDeploymentStatusResult::GetBulkDeploymentStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetBulkDeploymentStatusResult()
 {
   *this = result;
 }

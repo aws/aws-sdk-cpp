@@ -24,9 +24,8 @@ GuardianAttributes::GuardianAttributes() :
 {
 }
 
-GuardianAttributes::GuardianAttributes(JsonView jsonValue) : 
-    m_optimizedSharedDelivery(FeatureStatus::NOT_SET),
-    m_optimizedSharedDeliveryHasBeenSet(false)
+GuardianAttributes::GuardianAttributes(JsonView jsonValue)
+  : GuardianAttributes()
 {
   *this = jsonValue;
 }

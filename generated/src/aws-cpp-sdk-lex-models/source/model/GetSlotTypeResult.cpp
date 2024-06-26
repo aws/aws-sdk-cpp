@@ -22,8 +22,8 @@ GetSlotTypeResult::GetSlotTypeResult() :
 {
 }
 
-GetSlotTypeResult::GetSlotTypeResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_valueSelectionStrategy(SlotValueSelectionStrategy::NOT_SET)
+GetSlotTypeResult::GetSlotTypeResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetSlotTypeResult()
 {
   *this = result;
 }

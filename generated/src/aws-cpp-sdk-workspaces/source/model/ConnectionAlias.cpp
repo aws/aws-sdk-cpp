@@ -28,13 +28,8 @@ ConnectionAlias::ConnectionAlias() :
 {
 }
 
-ConnectionAlias::ConnectionAlias(JsonView jsonValue) : 
-    m_connectionStringHasBeenSet(false),
-    m_aliasIdHasBeenSet(false),
-    m_state(ConnectionAliasState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_ownerAccountIdHasBeenSet(false),
-    m_associationsHasBeenSet(false)
+ConnectionAlias::ConnectionAlias(JsonView jsonValue)
+  : ConnectionAlias()
 {
   *this = jsonValue;
 }

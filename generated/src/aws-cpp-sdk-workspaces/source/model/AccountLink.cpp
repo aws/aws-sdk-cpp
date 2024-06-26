@@ -27,12 +27,8 @@ AccountLink::AccountLink() :
 {
 }
 
-AccountLink::AccountLink(JsonView jsonValue) : 
-    m_accountLinkIdHasBeenSet(false),
-    m_accountLinkStatus(AccountLinkStatusEnum::NOT_SET),
-    m_accountLinkStatusHasBeenSet(false),
-    m_sourceAccountIdHasBeenSet(false),
-    m_targetAccountIdHasBeenSet(false)
+AccountLink::AccountLink(JsonView jsonValue)
+  : AccountLink()
 {
   *this = jsonValue;
 }

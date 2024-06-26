@@ -24,9 +24,8 @@ FailureInfo::FailureInfo() :
 {
 }
 
-FailureInfo::FailureInfo(JsonView jsonValue) : 
-    m_failedRecordsS3UrlHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
+FailureInfo::FailureInfo(JsonView jsonValue)
+  : FailureInfo()
 {
   *this = jsonValue;
 }

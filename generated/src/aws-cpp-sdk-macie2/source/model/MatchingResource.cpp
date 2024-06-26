@@ -23,8 +23,8 @@ MatchingResource::MatchingResource() :
 {
 }
 
-MatchingResource::MatchingResource(JsonView jsonValue) : 
-    m_matchingBucketHasBeenSet(false)
+MatchingResource::MatchingResource(JsonView jsonValue)
+  : MatchingResource()
 {
   *this = jsonValue;
 }

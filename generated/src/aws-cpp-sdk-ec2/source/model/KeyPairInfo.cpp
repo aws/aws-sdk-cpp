@@ -32,15 +32,8 @@ KeyPairInfo::KeyPairInfo() :
 {
 }
 
-KeyPairInfo::KeyPairInfo(const XmlNode& xmlNode) : 
-    m_keyPairIdHasBeenSet(false),
-    m_keyFingerprintHasBeenSet(false),
-    m_keyNameHasBeenSet(false),
-    m_keyType(KeyType::NOT_SET),
-    m_keyTypeHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_publicKeyHasBeenSet(false),
-    m_createTimeHasBeenSet(false)
+KeyPairInfo::KeyPairInfo(const XmlNode& xmlNode)
+  : KeyPairInfo()
 {
   *this = xmlNode;
 }

@@ -25,8 +25,8 @@ ReservedInstancesId::ReservedInstancesId() :
 {
 }
 
-ReservedInstancesId::ReservedInstancesId(const XmlNode& xmlNode) : 
-    m_reservedInstancesIdHasBeenSet(false)
+ReservedInstancesId::ReservedInstancesId(const XmlNode& xmlNode)
+  : ReservedInstancesId()
 {
   *this = xmlNode;
 }

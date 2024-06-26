@@ -27,12 +27,8 @@ ProviderDescription::ProviderDescription() :
 {
 }
 
-ProviderDescription::ProviderDescription(JsonView jsonValue) : 
-    m_providerNameHasBeenSet(false),
-    m_providerType(IdentityProviderTypeType::NOT_SET),
-    m_providerTypeHasBeenSet(false),
-    m_lastModifiedDateHasBeenSet(false),
-    m_creationDateHasBeenSet(false)
+ProviderDescription::ProviderDescription(JsonView jsonValue)
+  : ProviderDescription()
 {
   *this = jsonValue;
 }

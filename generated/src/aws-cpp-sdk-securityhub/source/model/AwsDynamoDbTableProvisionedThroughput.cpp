@@ -30,15 +30,8 @@ AwsDynamoDbTableProvisionedThroughput::AwsDynamoDbTableProvisionedThroughput() :
 {
 }
 
-AwsDynamoDbTableProvisionedThroughput::AwsDynamoDbTableProvisionedThroughput(JsonView jsonValue) : 
-    m_lastDecreaseDateTimeHasBeenSet(false),
-    m_lastIncreaseDateTimeHasBeenSet(false),
-    m_numberOfDecreasesToday(0),
-    m_numberOfDecreasesTodayHasBeenSet(false),
-    m_readCapacityUnits(0),
-    m_readCapacityUnitsHasBeenSet(false),
-    m_writeCapacityUnits(0),
-    m_writeCapacityUnitsHasBeenSet(false)
+AwsDynamoDbTableProvisionedThroughput::AwsDynamoDbTableProvisionedThroughput(JsonView jsonValue)
+  : AwsDynamoDbTableProvisionedThroughput()
 {
   *this = jsonValue;
 }

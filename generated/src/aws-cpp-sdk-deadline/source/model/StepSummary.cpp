@@ -39,24 +39,8 @@ StepSummary::StepSummary() :
 {
 }
 
-StepSummary::StepSummary(JsonView jsonValue) : 
-    m_createdAtHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_dependencyCountsHasBeenSet(false),
-    m_endedAtHasBeenSet(false),
-    m_lifecycleStatus(StepLifecycleStatus::NOT_SET),
-    m_lifecycleStatusHasBeenSet(false),
-    m_lifecycleStatusMessageHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_startedAtHasBeenSet(false),
-    m_stepIdHasBeenSet(false),
-    m_targetTaskRunStatus(StepTargetTaskRunStatus::NOT_SET),
-    m_targetTaskRunStatusHasBeenSet(false),
-    m_taskRunStatus(TaskRunStatus::NOT_SET),
-    m_taskRunStatusHasBeenSet(false),
-    m_taskRunStatusCountsHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_updatedByHasBeenSet(false)
+StepSummary::StepSummary(JsonView jsonValue)
+  : StepSummary()
 {
   *this = jsonValue;
 }

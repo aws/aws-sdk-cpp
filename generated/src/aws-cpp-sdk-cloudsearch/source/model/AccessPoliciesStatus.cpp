@@ -26,9 +26,8 @@ AccessPoliciesStatus::AccessPoliciesStatus() :
 {
 }
 
-AccessPoliciesStatus::AccessPoliciesStatus(const XmlNode& xmlNode) : 
-    m_optionsHasBeenSet(false),
-    m_statusHasBeenSet(false)
+AccessPoliciesStatus::AccessPoliciesStatus(const XmlNode& xmlNode)
+  : AccessPoliciesStatus()
 {
   *this = xmlNode;
 }

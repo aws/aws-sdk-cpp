@@ -30,15 +30,8 @@ LocalSecondaryIndexDescription::LocalSecondaryIndexDescription() :
 {
 }
 
-LocalSecondaryIndexDescription::LocalSecondaryIndexDescription(JsonView jsonValue) : 
-    m_indexNameHasBeenSet(false),
-    m_keySchemaHasBeenSet(false),
-    m_projectionHasBeenSet(false),
-    m_indexSizeBytes(0),
-    m_indexSizeBytesHasBeenSet(false),
-    m_itemCount(0),
-    m_itemCountHasBeenSet(false),
-    m_indexArnHasBeenSet(false)
+LocalSecondaryIndexDescription::LocalSecondaryIndexDescription(JsonView jsonValue)
+  : LocalSecondaryIndexDescription()
 {
   *this = jsonValue;
 }

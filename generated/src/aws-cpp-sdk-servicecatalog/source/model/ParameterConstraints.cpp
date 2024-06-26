@@ -29,14 +29,8 @@ ParameterConstraints::ParameterConstraints() :
 {
 }
 
-ParameterConstraints::ParameterConstraints(JsonView jsonValue) : 
-    m_allowedValuesHasBeenSet(false),
-    m_allowedPatternHasBeenSet(false),
-    m_constraintDescriptionHasBeenSet(false),
-    m_maxLengthHasBeenSet(false),
-    m_minLengthHasBeenSet(false),
-    m_maxValueHasBeenSet(false),
-    m_minValueHasBeenSet(false)
+ParameterConstraints::ParameterConstraints(JsonView jsonValue)
+  : ParameterConstraints()
 {
   *this = jsonValue;
 }

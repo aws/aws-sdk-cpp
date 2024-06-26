@@ -27,10 +27,8 @@ VpcCidrBlockState::VpcCidrBlockState() :
 {
 }
 
-VpcCidrBlockState::VpcCidrBlockState(const XmlNode& xmlNode) : 
-    m_state(VpcCidrBlockStateCode::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_statusMessageHasBeenSet(false)
+VpcCidrBlockState::VpcCidrBlockState(const XmlNode& xmlNode)
+  : VpcCidrBlockState()
 {
   *this = xmlNode;
 }

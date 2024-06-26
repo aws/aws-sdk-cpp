@@ -27,12 +27,8 @@ ProcessingOutput::ProcessingOutput() :
 {
 }
 
-ProcessingOutput::ProcessingOutput(JsonView jsonValue) : 
-    m_outputNameHasBeenSet(false),
-    m_s3OutputHasBeenSet(false),
-    m_featureStoreOutputHasBeenSet(false),
-    m_appManaged(false),
-    m_appManagedHasBeenSet(false)
+ProcessingOutput::ProcessingOutput(JsonView jsonValue)
+  : ProcessingOutput()
 {
   *this = jsonValue;
 }

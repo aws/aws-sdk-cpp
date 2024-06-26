@@ -22,8 +22,8 @@ ImportLensResult::ImportLensResult() :
 {
 }
 
-ImportLensResult::ImportLensResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(ImportLensStatus::NOT_SET)
+ImportLensResult::ImportLensResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ImportLensResult()
 {
   *this = result;
 }

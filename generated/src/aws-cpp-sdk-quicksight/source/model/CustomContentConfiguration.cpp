@@ -28,13 +28,8 @@ CustomContentConfiguration::CustomContentConfiguration() :
 {
 }
 
-CustomContentConfiguration::CustomContentConfiguration(JsonView jsonValue) : 
-    m_contentUrlHasBeenSet(false),
-    m_contentType(CustomContentType::NOT_SET),
-    m_contentTypeHasBeenSet(false),
-    m_imageScaling(CustomContentImageScalingConfiguration::NOT_SET),
-    m_imageScalingHasBeenSet(false),
-    m_interactionsHasBeenSet(false)
+CustomContentConfiguration::CustomContentConfiguration(JsonView jsonValue)
+  : CustomContentConfiguration()
 {
   *this = jsonValue;
 }

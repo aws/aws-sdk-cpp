@@ -26,11 +26,8 @@ S3DataAccessAssetSourceEntry::S3DataAccessAssetSourceEntry() :
 {
 }
 
-S3DataAccessAssetSourceEntry::S3DataAccessAssetSourceEntry(JsonView jsonValue) : 
-    m_bucketHasBeenSet(false),
-    m_keyPrefixesHasBeenSet(false),
-    m_keysHasBeenSet(false),
-    m_kmsKeysToGrantHasBeenSet(false)
+S3DataAccessAssetSourceEntry::S3DataAccessAssetSourceEntry(JsonView jsonValue)
+  : S3DataAccessAssetSourceEntry()
 {
   *this = jsonValue;
 }

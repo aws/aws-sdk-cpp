@@ -22,8 +22,8 @@ ListUsersResult::ListUsersResult() :
 {
 }
 
-ListUsersResult::ListUsersResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_isTruncated(false)
+ListUsersResult::ListUsersResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : ListUsersResult()
 {
   *this = result;
 }

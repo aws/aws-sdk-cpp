@@ -30,15 +30,8 @@ Organization::Organization() :
 {
 }
 
-Organization::Organization(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_featureSet(OrganizationFeatureSet::NOT_SET),
-    m_featureSetHasBeenSet(false),
-    m_masterAccountArnHasBeenSet(false),
-    m_masterAccountIdHasBeenSet(false),
-    m_masterAccountEmailHasBeenSet(false),
-    m_availablePolicyTypesHasBeenSet(false)
+Organization::Organization(JsonView jsonValue)
+  : Organization()
 {
   *this = jsonValue;
 }

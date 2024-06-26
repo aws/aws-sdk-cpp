@@ -44,29 +44,8 @@ SolutionVersion::SolutionVersion() :
 {
 }
 
-SolutionVersion::SolutionVersion(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_solutionVersionArnHasBeenSet(false),
-    m_solutionArnHasBeenSet(false),
-    m_performHPO(false),
-    m_performHPOHasBeenSet(false),
-    m_performAutoML(false),
-    m_performAutoMLHasBeenSet(false),
-    m_recipeArnHasBeenSet(false),
-    m_eventTypeHasBeenSet(false),
-    m_datasetGroupArnHasBeenSet(false),
-    m_solutionConfigHasBeenSet(false),
-    m_trainingHours(0.0),
-    m_trainingHoursHasBeenSet(false),
-    m_trainingMode(TrainingMode::NOT_SET),
-    m_trainingModeHasBeenSet(false),
-    m_tunedHPOParamsHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_failureReasonHasBeenSet(false),
-    m_creationDateTimeHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false),
-    m_trainingType(TrainingType::NOT_SET),
-    m_trainingTypeHasBeenSet(false)
+SolutionVersion::SolutionVersion(JsonView jsonValue)
+  : SolutionVersion()
 {
   *this = jsonValue;
 }

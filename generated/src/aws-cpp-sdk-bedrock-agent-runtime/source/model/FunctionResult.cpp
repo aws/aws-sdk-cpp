@@ -27,12 +27,8 @@ FunctionResult::FunctionResult() :
 {
 }
 
-FunctionResult::FunctionResult(JsonView jsonValue) : 
-    m_actionGroupHasBeenSet(false),
-    m_functionHasBeenSet(false),
-    m_responseBodyHasBeenSet(false),
-    m_responseState(ResponseState::NOT_SET),
-    m_responseStateHasBeenSet(false)
+FunctionResult::FunctionResult(JsonView jsonValue)
+  : FunctionResult()
 {
   *this = jsonValue;
 }

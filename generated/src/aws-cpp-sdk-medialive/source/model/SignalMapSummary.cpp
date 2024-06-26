@@ -33,18 +33,8 @@ SignalMapSummary::SignalMapSummary() :
 {
 }
 
-SignalMapSummary::SignalMapSummary(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_modifiedAtHasBeenSet(false),
-    m_monitorDeploymentStatus(SignalMapMonitorDeploymentStatus::NOT_SET),
-    m_monitorDeploymentStatusHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_status(SignalMapStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+SignalMapSummary::SignalMapSummary(JsonView jsonValue)
+  : SignalMapSummary()
 {
   *this = jsonValue;
 }

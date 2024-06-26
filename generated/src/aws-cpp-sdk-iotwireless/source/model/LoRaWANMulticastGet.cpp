@@ -30,15 +30,8 @@ LoRaWANMulticastGet::LoRaWANMulticastGet() :
 {
 }
 
-LoRaWANMulticastGet::LoRaWANMulticastGet(JsonView jsonValue) : 
-    m_rfRegion(SupportedRfRegion::NOT_SET),
-    m_rfRegionHasBeenSet(false),
-    m_dlClass(DlClass::NOT_SET),
-    m_dlClassHasBeenSet(false),
-    m_numberOfDevicesRequested(0),
-    m_numberOfDevicesRequestedHasBeenSet(false),
-    m_numberOfDevicesInGroup(0),
-    m_numberOfDevicesInGroupHasBeenSet(false)
+LoRaWANMulticastGet::LoRaWANMulticastGet(JsonView jsonValue)
+  : LoRaWANMulticastGet()
 {
   *this = jsonValue;
 }

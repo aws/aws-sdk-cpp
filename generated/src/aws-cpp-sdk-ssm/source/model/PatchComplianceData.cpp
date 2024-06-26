@@ -30,15 +30,8 @@ PatchComplianceData::PatchComplianceData() :
 {
 }
 
-PatchComplianceData::PatchComplianceData(JsonView jsonValue) : 
-    m_titleHasBeenSet(false),
-    m_kBIdHasBeenSet(false),
-    m_classificationHasBeenSet(false),
-    m_severityHasBeenSet(false),
-    m_state(PatchComplianceDataState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_installedTimeHasBeenSet(false),
-    m_cVEIdsHasBeenSet(false)
+PatchComplianceData::PatchComplianceData(JsonView jsonValue)
+  : PatchComplianceData()
 {
   *this = jsonValue;
 }

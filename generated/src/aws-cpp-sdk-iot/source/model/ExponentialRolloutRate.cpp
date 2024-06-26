@@ -27,12 +27,8 @@ ExponentialRolloutRate::ExponentialRolloutRate() :
 {
 }
 
-ExponentialRolloutRate::ExponentialRolloutRate(JsonView jsonValue) : 
-    m_baseRatePerMinute(0),
-    m_baseRatePerMinuteHasBeenSet(false),
-    m_incrementFactor(0.0),
-    m_incrementFactorHasBeenSet(false),
-    m_rateIncreaseCriteriaHasBeenSet(false)
+ExponentialRolloutRate::ExponentialRolloutRate(JsonView jsonValue)
+  : ExponentialRolloutRate()
 {
   *this = jsonValue;
 }

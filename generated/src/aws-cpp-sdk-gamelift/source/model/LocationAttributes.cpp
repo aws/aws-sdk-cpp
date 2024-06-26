@@ -26,11 +26,8 @@ LocationAttributes::LocationAttributes() :
 {
 }
 
-LocationAttributes::LocationAttributes(JsonView jsonValue) : 
-    m_locationStateHasBeenSet(false),
-    m_stoppedActionsHasBeenSet(false),
-    m_updateStatus(LocationUpdateStatus::NOT_SET),
-    m_updateStatusHasBeenSet(false)
+LocationAttributes::LocationAttributes(JsonView jsonValue)
+  : LocationAttributes()
 {
   *this = jsonValue;
 }

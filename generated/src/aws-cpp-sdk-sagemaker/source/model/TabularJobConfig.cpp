@@ -33,18 +33,8 @@ TabularJobConfig::TabularJobConfig() :
 {
 }
 
-TabularJobConfig::TabularJobConfig(JsonView jsonValue) : 
-    m_candidateGenerationConfigHasBeenSet(false),
-    m_completionCriteriaHasBeenSet(false),
-    m_featureSpecificationS3UriHasBeenSet(false),
-    m_mode(AutoMLMode::NOT_SET),
-    m_modeHasBeenSet(false),
-    m_generateCandidateDefinitionsOnly(false),
-    m_generateCandidateDefinitionsOnlyHasBeenSet(false),
-    m_problemType(ProblemType::NOT_SET),
-    m_problemTypeHasBeenSet(false),
-    m_targetAttributeNameHasBeenSet(false),
-    m_sampleWeightAttributeNameHasBeenSet(false)
+TabularJobConfig::TabularJobConfig(JsonView jsonValue)
+  : TabularJobConfig()
 {
   *this = jsonValue;
 }

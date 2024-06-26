@@ -24,9 +24,8 @@ CodeEditorAppImageConfig::CodeEditorAppImageConfig() :
 {
 }
 
-CodeEditorAppImageConfig::CodeEditorAppImageConfig(JsonView jsonValue) : 
-    m_fileSystemConfigHasBeenSet(false),
-    m_containerConfigHasBeenSet(false)
+CodeEditorAppImageConfig::CodeEditorAppImageConfig(JsonView jsonValue)
+  : CodeEditorAppImageConfig()
 {
   *this = jsonValue;
 }

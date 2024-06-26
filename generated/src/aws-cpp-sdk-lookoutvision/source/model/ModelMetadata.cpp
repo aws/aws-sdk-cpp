@@ -30,15 +30,8 @@ ModelMetadata::ModelMetadata() :
 {
 }
 
-ModelMetadata::ModelMetadata(JsonView jsonValue) : 
-    m_creationTimestampHasBeenSet(false),
-    m_modelVersionHasBeenSet(false),
-    m_modelArnHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_status(ModelStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_performanceHasBeenSet(false)
+ModelMetadata::ModelMetadata(JsonView jsonValue)
+  : ModelMetadata()
 {
   *this = jsonValue;
 }

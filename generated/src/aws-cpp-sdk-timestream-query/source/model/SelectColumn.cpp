@@ -28,13 +28,8 @@ SelectColumn::SelectColumn() :
 {
 }
 
-SelectColumn::SelectColumn(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_tableNameHasBeenSet(false),
-    m_aliased(false),
-    m_aliasedHasBeenSet(false)
+SelectColumn::SelectColumn(JsonView jsonValue)
+  : SelectColumn()
 {
   *this = jsonValue;
 }

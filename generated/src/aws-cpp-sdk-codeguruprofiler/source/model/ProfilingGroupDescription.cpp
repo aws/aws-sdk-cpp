@@ -31,16 +31,8 @@ ProfilingGroupDescription::ProfilingGroupDescription() :
 {
 }
 
-ProfilingGroupDescription::ProfilingGroupDescription(JsonView jsonValue) : 
-    m_agentOrchestrationConfigHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_computePlatform(ComputePlatform::NOT_SET),
-    m_computePlatformHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_profilingStatusHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+ProfilingGroupDescription::ProfilingGroupDescription(JsonView jsonValue)
+  : ProfilingGroupDescription()
 {
   *this = jsonValue;
 }

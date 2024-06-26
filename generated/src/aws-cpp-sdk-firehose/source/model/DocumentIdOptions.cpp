@@ -24,9 +24,8 @@ DocumentIdOptions::DocumentIdOptions() :
 {
 }
 
-DocumentIdOptions::DocumentIdOptions(JsonView jsonValue) : 
-    m_defaultDocumentIdFormat(DefaultDocumentIdFormat::NOT_SET),
-    m_defaultDocumentIdFormatHasBeenSet(false)
+DocumentIdOptions::DocumentIdOptions(JsonView jsonValue)
+  : DocumentIdOptions()
 {
   *this = jsonValue;
 }

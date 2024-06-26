@@ -31,16 +31,8 @@ AttackProperty::AttackProperty() :
 {
 }
 
-AttackProperty::AttackProperty(JsonView jsonValue) : 
-    m_attackLayer(AttackLayer::NOT_SET),
-    m_attackLayerHasBeenSet(false),
-    m_attackPropertyIdentifier(AttackPropertyIdentifier::NOT_SET),
-    m_attackPropertyIdentifierHasBeenSet(false),
-    m_topContributorsHasBeenSet(false),
-    m_unit(Unit::NOT_SET),
-    m_unitHasBeenSet(false),
-    m_total(0),
-    m_totalHasBeenSet(false)
+AttackProperty::AttackProperty(JsonView jsonValue)
+  : AttackProperty()
 {
   *this = jsonValue;
 }

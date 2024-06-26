@@ -22,8 +22,8 @@ AssociateFacesResult::AssociateFacesResult() :
 {
 }
 
-AssociateFacesResult::AssociateFacesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_userStatus(UserStatus::NOT_SET)
+AssociateFacesResult::AssociateFacesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : AssociateFacesResult()
 {
   *this = result;
 }

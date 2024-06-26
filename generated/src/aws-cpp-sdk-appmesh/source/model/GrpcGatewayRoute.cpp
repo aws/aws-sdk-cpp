@@ -24,9 +24,8 @@ GrpcGatewayRoute::GrpcGatewayRoute() :
 {
 }
 
-GrpcGatewayRoute::GrpcGatewayRoute(JsonView jsonValue) : 
-    m_actionHasBeenSet(false),
-    m_matchHasBeenSet(false)
+GrpcGatewayRoute::GrpcGatewayRoute(JsonView jsonValue)
+  : GrpcGatewayRoute()
 {
   *this = jsonValue;
 }

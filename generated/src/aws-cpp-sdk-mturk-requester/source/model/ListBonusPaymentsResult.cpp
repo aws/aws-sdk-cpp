@@ -22,8 +22,8 @@ ListBonusPaymentsResult::ListBonusPaymentsResult() :
 {
 }
 
-ListBonusPaymentsResult::ListBonusPaymentsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_numResults(0)
+ListBonusPaymentsResult::ListBonusPaymentsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ListBonusPaymentsResult()
 {
   *this = result;
 }

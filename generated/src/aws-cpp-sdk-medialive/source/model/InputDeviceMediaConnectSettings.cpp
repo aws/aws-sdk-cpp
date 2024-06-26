@@ -26,11 +26,8 @@ InputDeviceMediaConnectSettings::InputDeviceMediaConnectSettings() :
 {
 }
 
-InputDeviceMediaConnectSettings::InputDeviceMediaConnectSettings(JsonView jsonValue) : 
-    m_flowArnHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_secretArnHasBeenSet(false),
-    m_sourceNameHasBeenSet(false)
+InputDeviceMediaConnectSettings::InputDeviceMediaConnectSettings(JsonView jsonValue)
+  : InputDeviceMediaConnectSettings()
 {
   *this = jsonValue;
 }

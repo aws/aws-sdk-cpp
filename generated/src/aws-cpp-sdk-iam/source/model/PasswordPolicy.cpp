@@ -44,27 +44,8 @@ PasswordPolicy::PasswordPolicy() :
 {
 }
 
-PasswordPolicy::PasswordPolicy(const XmlNode& xmlNode) : 
-    m_minimumPasswordLength(0),
-    m_minimumPasswordLengthHasBeenSet(false),
-    m_requireSymbols(false),
-    m_requireSymbolsHasBeenSet(false),
-    m_requireNumbers(false),
-    m_requireNumbersHasBeenSet(false),
-    m_requireUppercaseCharacters(false),
-    m_requireUppercaseCharactersHasBeenSet(false),
-    m_requireLowercaseCharacters(false),
-    m_requireLowercaseCharactersHasBeenSet(false),
-    m_allowUsersToChangePassword(false),
-    m_allowUsersToChangePasswordHasBeenSet(false),
-    m_expirePasswords(false),
-    m_expirePasswordsHasBeenSet(false),
-    m_maxPasswordAge(0),
-    m_maxPasswordAgeHasBeenSet(false),
-    m_passwordReusePrevention(0),
-    m_passwordReusePreventionHasBeenSet(false),
-    m_hardExpiry(false),
-    m_hardExpiryHasBeenSet(false)
+PasswordPolicy::PasswordPolicy(const XmlNode& xmlNode)
+  : PasswordPolicy()
 {
   *this = xmlNode;
 }

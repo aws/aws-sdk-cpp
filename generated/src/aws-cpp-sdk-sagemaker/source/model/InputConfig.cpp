@@ -27,12 +27,8 @@ InputConfig::InputConfig() :
 {
 }
 
-InputConfig::InputConfig(JsonView jsonValue) : 
-    m_s3UriHasBeenSet(false),
-    m_dataInputConfigHasBeenSet(false),
-    m_framework(Framework::NOT_SET),
-    m_frameworkHasBeenSet(false),
-    m_frameworkVersionHasBeenSet(false)
+InputConfig::InputConfig(JsonView jsonValue)
+  : InputConfig()
 {
   *this = jsonValue;
 }

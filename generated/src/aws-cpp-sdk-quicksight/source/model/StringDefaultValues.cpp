@@ -24,9 +24,8 @@ StringDefaultValues::StringDefaultValues() :
 {
 }
 
-StringDefaultValues::StringDefaultValues(JsonView jsonValue) : 
-    m_dynamicValueHasBeenSet(false),
-    m_staticValuesHasBeenSet(false)
+StringDefaultValues::StringDefaultValues(JsonView jsonValue)
+  : StringDefaultValues()
 {
   *this = jsonValue;
 }

@@ -35,20 +35,8 @@ ECSTaskSet::ECSTaskSet() :
 {
 }
 
-ECSTaskSet::ECSTaskSet(JsonView jsonValue) : 
-    m_identiferHasBeenSet(false),
-    m_desiredCount(0),
-    m_desiredCountHasBeenSet(false),
-    m_pendingCount(0),
-    m_pendingCountHasBeenSet(false),
-    m_runningCount(0),
-    m_runningCountHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_trafficWeight(0.0),
-    m_trafficWeightHasBeenSet(false),
-    m_targetGroupHasBeenSet(false),
-    m_taskSetLabel(TargetLabel::NOT_SET),
-    m_taskSetLabelHasBeenSet(false)
+ECSTaskSet::ECSTaskSet(JsonView jsonValue)
+  : ECSTaskSet()
 {
   *this = jsonValue;
 }

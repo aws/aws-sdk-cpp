@@ -25,10 +25,8 @@ ThreatIntelligenceDetail::ThreatIntelligenceDetail() :
 {
 }
 
-ThreatIntelligenceDetail::ThreatIntelligenceDetail(JsonView jsonValue) : 
-    m_threatListNameHasBeenSet(false),
-    m_threatNamesHasBeenSet(false),
-    m_threatFileSha256HasBeenSet(false)
+ThreatIntelligenceDetail::ThreatIntelligenceDetail(JsonView jsonValue)
+  : ThreatIntelligenceDetail()
 {
   *this = jsonValue;
 }

@@ -30,15 +30,8 @@ OutboundConnection::OutboundConnection() :
 {
 }
 
-OutboundConnection::OutboundConnection(JsonView jsonValue) : 
-    m_localDomainInfoHasBeenSet(false),
-    m_remoteDomainInfoHasBeenSet(false),
-    m_connectionIdHasBeenSet(false),
-    m_connectionAliasHasBeenSet(false),
-    m_connectionStatusHasBeenSet(false),
-    m_connectionMode(ConnectionMode::NOT_SET),
-    m_connectionModeHasBeenSet(false),
-    m_connectionPropertiesHasBeenSet(false)
+OutboundConnection::OutboundConnection(JsonView jsonValue)
+  : OutboundConnection()
 {
   *this = jsonValue;
 }

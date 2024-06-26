@@ -27,12 +27,8 @@ FairsharePolicy::FairsharePolicy() :
 {
 }
 
-FairsharePolicy::FairsharePolicy(JsonView jsonValue) : 
-    m_shareDecaySeconds(0),
-    m_shareDecaySecondsHasBeenSet(false),
-    m_computeReservation(0),
-    m_computeReservationHasBeenSet(false),
-    m_shareDistributionHasBeenSet(false)
+FairsharePolicy::FairsharePolicy(JsonView jsonValue)
+  : FairsharePolicy()
 {
   *this = jsonValue;
 }

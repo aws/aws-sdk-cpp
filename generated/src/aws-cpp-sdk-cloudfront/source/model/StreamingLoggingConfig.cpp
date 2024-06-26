@@ -28,11 +28,8 @@ StreamingLoggingConfig::StreamingLoggingConfig() :
 {
 }
 
-StreamingLoggingConfig::StreamingLoggingConfig(const XmlNode& xmlNode) : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_bucketHasBeenSet(false),
-    m_prefixHasBeenSet(false)
+StreamingLoggingConfig::StreamingLoggingConfig(const XmlNode& xmlNode)
+  : StreamingLoggingConfig()
 {
   *this = xmlNode;
 }

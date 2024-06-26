@@ -27,12 +27,8 @@ StartSelector::StartSelector() :
 {
 }
 
-StartSelector::StartSelector(JsonView jsonValue) : 
-    m_startSelectorType(StartSelectorType::NOT_SET),
-    m_startSelectorTypeHasBeenSet(false),
-    m_afterFragmentNumberHasBeenSet(false),
-    m_startTimestampHasBeenSet(false),
-    m_continuationTokenHasBeenSet(false)
+StartSelector::StartSelector(JsonView jsonValue)
+  : StartSelector()
 {
   *this = jsonValue;
 }

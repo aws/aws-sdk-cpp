@@ -23,8 +23,8 @@ AlarmEventActions::AlarmEventActions() :
 {
 }
 
-AlarmEventActions::AlarmEventActions(JsonView jsonValue) : 
-    m_alarmActionsHasBeenSet(false)
+AlarmEventActions::AlarmEventActions(JsonView jsonValue)
+  : AlarmEventActions()
 {
   *this = jsonValue;
 }

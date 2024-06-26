@@ -22,8 +22,8 @@ StartAttachedFileUploadResult::StartAttachedFileUploadResult() :
 {
 }
 
-StartAttachedFileUploadResult::StartAttachedFileUploadResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_fileStatus(FileStatusType::NOT_SET)
+StartAttachedFileUploadResult::StartAttachedFileUploadResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : StartAttachedFileUploadResult()
 {
   *this = result;
 }

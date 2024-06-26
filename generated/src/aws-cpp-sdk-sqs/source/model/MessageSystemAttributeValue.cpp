@@ -28,12 +28,8 @@ MessageSystemAttributeValue::MessageSystemAttributeValue() :
 {
 }
 
-MessageSystemAttributeValue::MessageSystemAttributeValue(JsonView jsonValue) : 
-    m_stringValueHasBeenSet(false),
-    m_binaryValueHasBeenSet(false),
-    m_stringListValuesHasBeenSet(false),
-    m_binaryListValuesHasBeenSet(false),
-    m_dataTypeHasBeenSet(false)
+MessageSystemAttributeValue::MessageSystemAttributeValue(JsonView jsonValue)
+  : MessageSystemAttributeValue()
 {
   *this = jsonValue;
 }

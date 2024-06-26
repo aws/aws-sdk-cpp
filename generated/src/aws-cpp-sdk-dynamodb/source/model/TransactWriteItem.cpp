@@ -26,11 +26,8 @@ TransactWriteItem::TransactWriteItem() :
 {
 }
 
-TransactWriteItem::TransactWriteItem(JsonView jsonValue) : 
-    m_conditionCheckHasBeenSet(false),
-    m_putHasBeenSet(false),
-    m_deleteHasBeenSet(false),
-    m_updateHasBeenSet(false)
+TransactWriteItem::TransactWriteItem(JsonView jsonValue)
+  : TransactWriteItem()
 {
   *this = jsonValue;
 }

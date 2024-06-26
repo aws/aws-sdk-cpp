@@ -25,10 +25,8 @@ AssignedTaskRunSessionActionDefinition::AssignedTaskRunSessionActionDefinition()
 {
 }
 
-AssignedTaskRunSessionActionDefinition::AssignedTaskRunSessionActionDefinition(JsonView jsonValue) : 
-    m_parametersHasBeenSet(false),
-    m_stepIdHasBeenSet(false),
-    m_taskIdHasBeenSet(false)
+AssignedTaskRunSessionActionDefinition::AssignedTaskRunSessionActionDefinition(JsonView jsonValue)
+  : AssignedTaskRunSessionActionDefinition()
 {
   *this = jsonValue;
 }

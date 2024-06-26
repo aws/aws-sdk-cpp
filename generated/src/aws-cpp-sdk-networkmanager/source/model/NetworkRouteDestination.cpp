@@ -29,14 +29,8 @@ NetworkRouteDestination::NetworkRouteDestination() :
 {
 }
 
-NetworkRouteDestination::NetworkRouteDestination(JsonView jsonValue) : 
-    m_coreNetworkAttachmentIdHasBeenSet(false),
-    m_transitGatewayAttachmentIdHasBeenSet(false),
-    m_segmentNameHasBeenSet(false),
-    m_networkFunctionGroupNameHasBeenSet(false),
-    m_edgeLocationHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
-    m_resourceIdHasBeenSet(false)
+NetworkRouteDestination::NetworkRouteDestination(JsonView jsonValue)
+  : NetworkRouteDestination()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ StepParameter::StepParameter() :
 {
 }
 
-StepParameter::StepParameter(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_type(StepParameterType::NOT_SET),
-    m_typeHasBeenSet(false)
+StepParameter::StepParameter(JsonView jsonValue)
+  : StepParameter()
 {
   *this = jsonValue;
 }

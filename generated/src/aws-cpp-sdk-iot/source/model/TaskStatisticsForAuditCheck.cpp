@@ -32,17 +32,8 @@ TaskStatisticsForAuditCheck::TaskStatisticsForAuditCheck() :
 {
 }
 
-TaskStatisticsForAuditCheck::TaskStatisticsForAuditCheck(JsonView jsonValue) : 
-    m_totalFindingsCount(0),
-    m_totalFindingsCountHasBeenSet(false),
-    m_failedFindingsCount(0),
-    m_failedFindingsCountHasBeenSet(false),
-    m_succeededFindingsCount(0),
-    m_succeededFindingsCountHasBeenSet(false),
-    m_skippedFindingsCount(0),
-    m_skippedFindingsCountHasBeenSet(false),
-    m_canceledFindingsCount(0),
-    m_canceledFindingsCountHasBeenSet(false)
+TaskStatisticsForAuditCheck::TaskStatisticsForAuditCheck(JsonView jsonValue)
+  : TaskStatisticsForAuditCheck()
 {
   *this = jsonValue;
 }

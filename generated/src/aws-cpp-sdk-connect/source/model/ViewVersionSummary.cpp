@@ -31,16 +31,8 @@ ViewVersionSummary::ViewVersionSummary() :
 {
 }
 
-ViewVersionSummary::ViewVersionSummary(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_type(ViewType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_version(0),
-    m_versionHasBeenSet(false),
-    m_versionDescriptionHasBeenSet(false)
+ViewVersionSummary::ViewVersionSummary(JsonView jsonValue)
+  : ViewVersionSummary()
 {
   *this = jsonValue;
 }

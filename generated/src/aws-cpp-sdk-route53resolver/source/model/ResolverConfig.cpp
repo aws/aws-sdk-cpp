@@ -27,12 +27,8 @@ ResolverConfig::ResolverConfig() :
 {
 }
 
-ResolverConfig::ResolverConfig(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_autodefinedReverse(ResolverAutodefinedReverseStatus::NOT_SET),
-    m_autodefinedReverseHasBeenSet(false)
+ResolverConfig::ResolverConfig(JsonView jsonValue)
+  : ResolverConfig()
 {
   *this = jsonValue;
 }

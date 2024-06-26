@@ -26,11 +26,8 @@ CreateFileSystemLustreMetadataConfiguration::CreateFileSystemLustreMetadataConfi
 {
 }
 
-CreateFileSystemLustreMetadataConfiguration::CreateFileSystemLustreMetadataConfiguration(JsonView jsonValue) : 
-    m_iops(0),
-    m_iopsHasBeenSet(false),
-    m_mode(MetadataConfigurationMode::NOT_SET),
-    m_modeHasBeenSet(false)
+CreateFileSystemLustreMetadataConfiguration::CreateFileSystemLustreMetadataConfiguration(JsonView jsonValue)
+  : CreateFileSystemLustreMetadataConfiguration()
 {
   *this = jsonValue;
 }

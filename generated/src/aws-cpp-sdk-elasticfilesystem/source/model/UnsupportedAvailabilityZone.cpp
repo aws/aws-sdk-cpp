@@ -24,9 +24,8 @@ UnsupportedAvailabilityZone::UnsupportedAvailabilityZone() :
 {
 }
 
-UnsupportedAvailabilityZone::UnsupportedAvailabilityZone(JsonView jsonValue) : 
-    m_errorCodeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+UnsupportedAvailabilityZone::UnsupportedAvailabilityZone(JsonView jsonValue)
+  : UnsupportedAvailabilityZone()
 {
   *this = jsonValue;
 }

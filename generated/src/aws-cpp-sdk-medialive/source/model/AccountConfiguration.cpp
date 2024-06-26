@@ -23,8 +23,8 @@ AccountConfiguration::AccountConfiguration() :
 {
 }
 
-AccountConfiguration::AccountConfiguration(JsonView jsonValue) : 
-    m_kmsKeyIdHasBeenSet(false)
+AccountConfiguration::AccountConfiguration(JsonView jsonValue)
+  : AccountConfiguration()
 {
   *this = jsonValue;
 }

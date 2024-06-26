@@ -30,15 +30,8 @@ QuickResponseQueryField::QuickResponseQueryField() :
 {
 }
 
-QuickResponseQueryField::QuickResponseQueryField(JsonView jsonValue) : 
-    m_allowFuzziness(false),
-    m_allowFuzzinessHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_operator(QuickResponseQueryOperator::NOT_SET),
-    m_operatorHasBeenSet(false),
-    m_priority(Priority::NOT_SET),
-    m_priorityHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+QuickResponseQueryField::QuickResponseQueryField(JsonView jsonValue)
+  : QuickResponseQueryField()
 {
   *this = jsonValue;
 }

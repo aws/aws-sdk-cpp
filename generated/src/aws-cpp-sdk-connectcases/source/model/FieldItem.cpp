@@ -23,8 +23,8 @@ FieldItem::FieldItem() :
 {
 }
 
-FieldItem::FieldItem(JsonView jsonValue) : 
-    m_idHasBeenSet(false)
+FieldItem::FieldItem(JsonView jsonValue)
+  : FieldItem()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ ApplicationSystemRollbackConfiguration::ApplicationSystemRollbackConfiguration()
 {
 }
 
-ApplicationSystemRollbackConfiguration::ApplicationSystemRollbackConfiguration(JsonView jsonValue) : 
-    m_rollbackEnabled(false),
-    m_rollbackEnabledHasBeenSet(false)
+ApplicationSystemRollbackConfiguration::ApplicationSystemRollbackConfiguration(JsonView jsonValue)
+  : ApplicationSystemRollbackConfiguration()
 {
   *this = jsonValue;
 }

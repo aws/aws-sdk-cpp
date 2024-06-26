@@ -27,12 +27,8 @@ DomainInfo::DomainInfo() :
 {
 }
 
-DomainInfo::DomainInfo(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_status(RegistrationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_arnHasBeenSet(false)
+DomainInfo::DomainInfo(JsonView jsonValue)
+  : DomainInfo()
 {
   *this = jsonValue;
 }

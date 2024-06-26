@@ -23,9 +23,8 @@ GetModelVersionResult::GetModelVersionResult() :
 {
 }
 
-GetModelVersionResult::GetModelVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_modelType(ModelTypeEnum::NOT_SET),
-    m_trainingDataSource(TrainingDataSourceEnum::NOT_SET)
+GetModelVersionResult::GetModelVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetModelVersionResult()
 {
   *this = result;
 }

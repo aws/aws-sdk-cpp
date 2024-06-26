@@ -22,8 +22,8 @@ UpdateBillingGroupResult::UpdateBillingGroupResult() :
 {
 }
 
-UpdateBillingGroupResult::UpdateBillingGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_version(0)
+UpdateBillingGroupResult::UpdateBillingGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateBillingGroupResult()
 {
   *this = result;
 }

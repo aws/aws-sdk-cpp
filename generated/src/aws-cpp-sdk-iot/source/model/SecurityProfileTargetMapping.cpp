@@ -24,9 +24,8 @@ SecurityProfileTargetMapping::SecurityProfileTargetMapping() :
 {
 }
 
-SecurityProfileTargetMapping::SecurityProfileTargetMapping(JsonView jsonValue) : 
-    m_securityProfileIdentifierHasBeenSet(false),
-    m_targetHasBeenSet(false)
+SecurityProfileTargetMapping::SecurityProfileTargetMapping(JsonView jsonValue)
+  : SecurityProfileTargetMapping()
 {
   *this = jsonValue;
 }

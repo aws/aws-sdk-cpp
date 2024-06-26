@@ -25,10 +25,8 @@ BatchDetectEntitiesItemResult::BatchDetectEntitiesItemResult() :
 {
 }
 
-BatchDetectEntitiesItemResult::BatchDetectEntitiesItemResult(JsonView jsonValue) : 
-    m_index(0),
-    m_indexHasBeenSet(false),
-    m_entitiesHasBeenSet(false)
+BatchDetectEntitiesItemResult::BatchDetectEntitiesItemResult(JsonView jsonValue)
+  : BatchDetectEntitiesItemResult()
 {
   *this = jsonValue;
 }

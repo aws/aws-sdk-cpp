@@ -29,14 +29,8 @@ ConnectionSummary::ConnectionSummary() :
 {
 }
 
-ConnectionSummary::ConnectionSummary(JsonView jsonValue) : 
-    m_connectionNameHasBeenSet(false),
-    m_connectionArnHasBeenSet(false),
-    m_providerType(ProviderType::NOT_SET),
-    m_providerTypeHasBeenSet(false),
-    m_status(ConnectionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_createdAtHasBeenSet(false)
+ConnectionSummary::ConnectionSummary(JsonView jsonValue)
+  : ConnectionSummary()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ DatadogConnectorProfileProperties::DatadogConnectorProfileProperties() :
 {
 }
 
-DatadogConnectorProfileProperties::DatadogConnectorProfileProperties(JsonView jsonValue) : 
-    m_instanceUrlHasBeenSet(false)
+DatadogConnectorProfileProperties::DatadogConnectorProfileProperties(JsonView jsonValue)
+  : DatadogConnectorProfileProperties()
 {
   *this = jsonValue;
 }

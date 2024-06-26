@@ -24,9 +24,8 @@ ParameterSelectableValues::ParameterSelectableValues() :
 {
 }
 
-ParameterSelectableValues::ParameterSelectableValues(JsonView jsonValue) : 
-    m_valuesHasBeenSet(false),
-    m_linkToDataSetColumnHasBeenSet(false)
+ParameterSelectableValues::ParameterSelectableValues(JsonView jsonValue)
+  : ParameterSelectableValues()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ DeleteSparqlStatisticsResult::DeleteSparqlStatisticsResult() :
 {
 }
 
-DeleteSparqlStatisticsResult::DeleteSparqlStatisticsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_statusCode(0)
+DeleteSparqlStatisticsResult::DeleteSparqlStatisticsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeleteSparqlStatisticsResult()
 {
   *this = result;
 }

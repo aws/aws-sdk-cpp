@@ -23,9 +23,8 @@ ScheduleKeyDeletionResult::ScheduleKeyDeletionResult() :
 {
 }
 
-ScheduleKeyDeletionResult::ScheduleKeyDeletionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_keyState(KeyState::NOT_SET),
-    m_pendingWindowInDays(0)
+ScheduleKeyDeletionResult::ScheduleKeyDeletionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ScheduleKeyDeletionResult()
 {
   *this = result;
 }

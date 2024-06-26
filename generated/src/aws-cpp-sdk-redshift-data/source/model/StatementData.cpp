@@ -34,19 +34,8 @@ StatementData::StatementData() :
 {
 }
 
-StatementData::StatementData(JsonView jsonValue) : 
-    m_createdAtHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_isBatchStatement(false),
-    m_isBatchStatementHasBeenSet(false),
-    m_queryParametersHasBeenSet(false),
-    m_queryStringHasBeenSet(false),
-    m_queryStringsHasBeenSet(false),
-    m_secretArnHasBeenSet(false),
-    m_statementNameHasBeenSet(false),
-    m_status(StatusString::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+StatementData::StatementData(JsonView jsonValue)
+  : StatementData()
 {
   *this = jsonValue;
 }

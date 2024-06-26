@@ -26,11 +26,8 @@ ServiceException::ServiceException() :
 {
 }
 
-ServiceException::ServiceException(JsonView jsonValue) : 
-    m_codeHasBeenSet(false),
-    m_docsHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_tipHasBeenSet(false)
+ServiceException::ServiceException(JsonView jsonValue)
+  : ServiceException()
 {
   *this = jsonValue;
 }

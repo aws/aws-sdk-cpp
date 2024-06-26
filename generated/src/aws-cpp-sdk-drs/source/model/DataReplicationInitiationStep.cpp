@@ -26,11 +26,8 @@ DataReplicationInitiationStep::DataReplicationInitiationStep() :
 {
 }
 
-DataReplicationInitiationStep::DataReplicationInitiationStep(JsonView jsonValue) : 
-    m_name(DataReplicationInitiationStepName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_status(DataReplicationInitiationStepStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+DataReplicationInitiationStep::DataReplicationInitiationStep(JsonView jsonValue)
+  : DataReplicationInitiationStep()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ Selector::Selector() :
 {
 }
 
-Selector::Selector(JsonView jsonValue) : 
-    m_fieldNameHasBeenSet(false),
-    m_operatorHasBeenSet(false)
+Selector::Selector(JsonView jsonValue)
+  : Selector()
 {
   *this = jsonValue;
 }

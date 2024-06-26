@@ -26,11 +26,8 @@ IntegerRange::IntegerRange() :
 {
 }
 
-IntegerRange::IntegerRange(JsonView jsonValue) : 
-    m_maximum(0),
-    m_maximumHasBeenSet(false),
-    m_minimum(0),
-    m_minimumHasBeenSet(false)
+IntegerRange::IntegerRange(JsonView jsonValue)
+  : IntegerRange()
 {
   *this = jsonValue;
 }

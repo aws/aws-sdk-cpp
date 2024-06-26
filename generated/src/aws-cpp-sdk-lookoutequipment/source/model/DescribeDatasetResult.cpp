@@ -22,8 +22,8 @@ DescribeDatasetResult::DescribeDatasetResult() :
 {
 }
 
-DescribeDatasetResult::DescribeDatasetResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(DatasetStatus::NOT_SET)
+DescribeDatasetResult::DescribeDatasetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeDatasetResult()
 {
   *this = result;
 }

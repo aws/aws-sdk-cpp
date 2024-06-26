@@ -24,9 +24,8 @@ RestartBatchJobIdentifier::RestartBatchJobIdentifier() :
 {
 }
 
-RestartBatchJobIdentifier::RestartBatchJobIdentifier(JsonView jsonValue) : 
-    m_executionIdHasBeenSet(false),
-    m_jobStepRestartMarkerHasBeenSet(false)
+RestartBatchJobIdentifier::RestartBatchJobIdentifier(JsonView jsonValue)
+  : RestartBatchJobIdentifier()
 {
   *this = jsonValue;
 }

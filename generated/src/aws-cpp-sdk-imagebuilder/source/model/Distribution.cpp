@@ -29,14 +29,8 @@ Distribution::Distribution() :
 {
 }
 
-Distribution::Distribution(JsonView jsonValue) : 
-    m_regionHasBeenSet(false),
-    m_amiDistributionConfigurationHasBeenSet(false),
-    m_containerDistributionConfigurationHasBeenSet(false),
-    m_licenseConfigurationArnsHasBeenSet(false),
-    m_launchTemplateConfigurationsHasBeenSet(false),
-    m_s3ExportConfigurationHasBeenSet(false),
-    m_fastLaunchConfigurationsHasBeenSet(false)
+Distribution::Distribution(JsonView jsonValue)
+  : Distribution()
 {
   *this = jsonValue;
 }

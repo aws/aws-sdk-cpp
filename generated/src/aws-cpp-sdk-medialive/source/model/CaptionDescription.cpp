@@ -32,17 +32,8 @@ CaptionDescription::CaptionDescription() :
 {
 }
 
-CaptionDescription::CaptionDescription(JsonView jsonValue) : 
-    m_accessibility(AccessibilityType::NOT_SET),
-    m_accessibilityHasBeenSet(false),
-    m_captionSelectorNameHasBeenSet(false),
-    m_destinationSettingsHasBeenSet(false),
-    m_languageCodeHasBeenSet(false),
-    m_languageDescriptionHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_captionDashRolesHasBeenSet(false),
-    m_dvbDashAccessibility(DvbDashAccessibility::NOT_SET),
-    m_dvbDashAccessibilityHasBeenSet(false)
+CaptionDescription::CaptionDescription(JsonView jsonValue)
+  : CaptionDescription()
 {
   *this = jsonValue;
 }

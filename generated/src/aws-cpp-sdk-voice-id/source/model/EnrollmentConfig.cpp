@@ -25,10 +25,8 @@ EnrollmentConfig::EnrollmentConfig() :
 {
 }
 
-EnrollmentConfig::EnrollmentConfig(JsonView jsonValue) : 
-    m_existingEnrollmentAction(ExistingEnrollmentAction::NOT_SET),
-    m_existingEnrollmentActionHasBeenSet(false),
-    m_fraudDetectionConfigHasBeenSet(false)
+EnrollmentConfig::EnrollmentConfig(JsonView jsonValue)
+  : EnrollmentConfig()
 {
   *this = jsonValue;
 }

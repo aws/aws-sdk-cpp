@@ -23,8 +23,8 @@ CapacityUsageSummary::CapacityUsageSummary() :
 {
 }
 
-CapacityUsageSummary::CapacityUsageSummary(JsonView jsonValue) : 
-    m_cIDRsHasBeenSet(false)
+CapacityUsageSummary::CapacityUsageSummary(JsonView jsonValue)
+  : CapacityUsageSummary()
 {
   *this = jsonValue;
 }

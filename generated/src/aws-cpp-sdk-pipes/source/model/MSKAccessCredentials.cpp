@@ -24,9 +24,8 @@ MSKAccessCredentials::MSKAccessCredentials() :
 {
 }
 
-MSKAccessCredentials::MSKAccessCredentials(JsonView jsonValue) : 
-    m_saslScram512AuthHasBeenSet(false),
-    m_clientCertificateTlsAuthHasBeenSet(false)
+MSKAccessCredentials::MSKAccessCredentials(JsonView jsonValue)
+  : MSKAccessCredentials()
 {
   *this = jsonValue;
 }

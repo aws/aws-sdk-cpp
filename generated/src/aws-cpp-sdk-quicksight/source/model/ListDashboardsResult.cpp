@@ -22,8 +22,8 @@ ListDashboardsResult::ListDashboardsResult() :
 {
 }
 
-ListDashboardsResult::ListDashboardsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+ListDashboardsResult::ListDashboardsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ListDashboardsResult()
 {
   *this = result;
 }

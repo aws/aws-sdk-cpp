@@ -23,9 +23,8 @@ DescribeStorageSystemResult::DescribeStorageSystemResult() :
 {
 }
 
-DescribeStorageSystemResult::DescribeStorageSystemResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_systemType(DiscoverySystemType::NOT_SET),
-    m_connectivityStatus(StorageSystemConnectivityStatus::NOT_SET)
+DescribeStorageSystemResult::DescribeStorageSystemResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeStorageSystemResult()
 {
   *this = result;
 }

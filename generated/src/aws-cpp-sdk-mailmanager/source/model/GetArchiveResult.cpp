@@ -22,8 +22,8 @@ GetArchiveResult::GetArchiveResult() :
 {
 }
 
-GetArchiveResult::GetArchiveResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_archiveState(ArchiveState::NOT_SET)
+GetArchiveResult::GetArchiveResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetArchiveResult()
 {
   *this = result;
 }

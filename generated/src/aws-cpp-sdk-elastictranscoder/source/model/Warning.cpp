@@ -24,9 +24,8 @@ Warning::Warning() :
 {
 }
 
-Warning::Warning(JsonView jsonValue) : 
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+Warning::Warning(JsonView jsonValue)
+  : Warning()
 {
   *this = jsonValue;
 }

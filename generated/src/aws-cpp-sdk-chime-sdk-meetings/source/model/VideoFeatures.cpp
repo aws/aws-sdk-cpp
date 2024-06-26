@@ -24,9 +24,8 @@ VideoFeatures::VideoFeatures() :
 {
 }
 
-VideoFeatures::VideoFeatures(JsonView jsonValue) : 
-    m_maxResolution(VideoResolution::NOT_SET),
-    m_maxResolutionHasBeenSet(false)
+VideoFeatures::VideoFeatures(JsonView jsonValue)
+  : VideoFeatures()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ DescribeBotAliasResult::DescribeBotAliasResult() :
 {
 }
 
-DescribeBotAliasResult::DescribeBotAliasResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_botAliasStatus(BotAliasStatus::NOT_SET)
+DescribeBotAliasResult::DescribeBotAliasResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeBotAliasResult()
 {
   *this = result;
 }

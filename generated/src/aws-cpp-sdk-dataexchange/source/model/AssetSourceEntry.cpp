@@ -24,9 +24,8 @@ AssetSourceEntry::AssetSourceEntry() :
 {
 }
 
-AssetSourceEntry::AssetSourceEntry(JsonView jsonValue) : 
-    m_bucketHasBeenSet(false),
-    m_keyHasBeenSet(false)
+AssetSourceEntry::AssetSourceEntry(JsonView jsonValue)
+  : AssetSourceEntry()
 {
   *this = jsonValue;
 }

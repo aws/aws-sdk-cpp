@@ -25,10 +25,8 @@ ListCisScanConfigurationsFilterCriteria::ListCisScanConfigurationsFilterCriteria
 {
 }
 
-ListCisScanConfigurationsFilterCriteria::ListCisScanConfigurationsFilterCriteria(JsonView jsonValue) : 
-    m_scanConfigurationArnFiltersHasBeenSet(false),
-    m_scanNameFiltersHasBeenSet(false),
-    m_targetResourceTagFiltersHasBeenSet(false)
+ListCisScanConfigurationsFilterCriteria::ListCisScanConfigurationsFilterCriteria(JsonView jsonValue)
+  : ListCisScanConfigurationsFilterCriteria()
 {
   *this = jsonValue;
 }

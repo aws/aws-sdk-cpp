@@ -24,9 +24,8 @@ LambdaResource::LambdaResource() :
 {
 }
 
-LambdaResource::LambdaResource(JsonView jsonValue) : 
-    m_lambdaArnHasBeenSet(false),
-    m_eventTriggersHasBeenSet(false)
+LambdaResource::LambdaResource(JsonView jsonValue)
+  : LambdaResource()
 {
   *this = jsonValue;
 }

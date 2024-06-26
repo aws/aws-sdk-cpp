@@ -24,9 +24,8 @@ EntityRecognizerAnnotations::EntityRecognizerAnnotations() :
 {
 }
 
-EntityRecognizerAnnotations::EntityRecognizerAnnotations(JsonView jsonValue) : 
-    m_s3UriHasBeenSet(false),
-    m_testS3UriHasBeenSet(false)
+EntityRecognizerAnnotations::EntityRecognizerAnnotations(JsonView jsonValue)
+  : EntityRecognizerAnnotations()
 {
   *this = jsonValue;
 }

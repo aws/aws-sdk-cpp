@@ -38,23 +38,8 @@ ComputeCapacityStatus::ComputeCapacityStatus() :
 {
 }
 
-ComputeCapacityStatus::ComputeCapacityStatus(JsonView jsonValue) : 
-    m_desired(0),
-    m_desiredHasBeenSet(false),
-    m_running(0),
-    m_runningHasBeenSet(false),
-    m_inUse(0),
-    m_inUseHasBeenSet(false),
-    m_available(0),
-    m_availableHasBeenSet(false),
-    m_desiredUserSessions(0),
-    m_desiredUserSessionsHasBeenSet(false),
-    m_availableUserSessions(0),
-    m_availableUserSessionsHasBeenSet(false),
-    m_activeUserSessions(0),
-    m_activeUserSessionsHasBeenSet(false),
-    m_actualUserSessions(0),
-    m_actualUserSessionsHasBeenSet(false)
+ComputeCapacityStatus::ComputeCapacityStatus(JsonView jsonValue)
+  : ComputeCapacityStatus()
 {
   *this = jsonValue;
 }

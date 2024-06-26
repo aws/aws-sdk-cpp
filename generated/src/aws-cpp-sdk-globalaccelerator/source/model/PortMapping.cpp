@@ -30,15 +30,8 @@ PortMapping::PortMapping() :
 {
 }
 
-PortMapping::PortMapping(JsonView jsonValue) : 
-    m_acceleratorPort(0),
-    m_acceleratorPortHasBeenSet(false),
-    m_endpointGroupArnHasBeenSet(false),
-    m_endpointIdHasBeenSet(false),
-    m_destinationSocketAddressHasBeenSet(false),
-    m_protocolsHasBeenSet(false),
-    m_destinationTrafficState(CustomRoutingDestinationTrafficState::NOT_SET),
-    m_destinationTrafficStateHasBeenSet(false)
+PortMapping::PortMapping(JsonView jsonValue)
+  : PortMapping()
 {
   *this = jsonValue;
 }

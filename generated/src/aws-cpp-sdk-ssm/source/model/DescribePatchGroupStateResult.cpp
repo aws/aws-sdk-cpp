@@ -33,19 +33,8 @@ DescribePatchGroupStateResult::DescribePatchGroupStateResult() :
 {
 }
 
-DescribePatchGroupStateResult::DescribePatchGroupStateResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_instances(0),
-    m_instancesWithInstalledPatches(0),
-    m_instancesWithInstalledOtherPatches(0),
-    m_instancesWithInstalledPendingRebootPatches(0),
-    m_instancesWithInstalledRejectedPatches(0),
-    m_instancesWithMissingPatches(0),
-    m_instancesWithFailedPatches(0),
-    m_instancesWithNotApplicablePatches(0),
-    m_instancesWithUnreportedNotApplicablePatches(0),
-    m_instancesWithCriticalNonCompliantPatches(0),
-    m_instancesWithSecurityNonCompliantPatches(0),
-    m_instancesWithOtherNonCompliantPatches(0)
+DescribePatchGroupStateResult::DescribePatchGroupStateResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribePatchGroupStateResult()
 {
   *this = result;
 }

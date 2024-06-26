@@ -24,9 +24,8 @@ InvalidSourceException::InvalidSourceException() :
 {
 }
 
-InvalidSourceException::InvalidSourceException(JsonView jsonValue) : 
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+InvalidSourceException::InvalidSourceException(JsonView jsonValue)
+  : InvalidSourceException()
 {
   *this = jsonValue;
 }

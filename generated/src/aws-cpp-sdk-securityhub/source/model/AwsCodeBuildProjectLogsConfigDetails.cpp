@@ -24,9 +24,8 @@ AwsCodeBuildProjectLogsConfigDetails::AwsCodeBuildProjectLogsConfigDetails() :
 {
 }
 
-AwsCodeBuildProjectLogsConfigDetails::AwsCodeBuildProjectLogsConfigDetails(JsonView jsonValue) : 
-    m_cloudWatchLogsHasBeenSet(false),
-    m_s3LogsHasBeenSet(false)
+AwsCodeBuildProjectLogsConfigDetails::AwsCodeBuildProjectLogsConfigDetails(JsonView jsonValue)
+  : AwsCodeBuildProjectLogsConfigDetails()
 {
   *this = jsonValue;
 }

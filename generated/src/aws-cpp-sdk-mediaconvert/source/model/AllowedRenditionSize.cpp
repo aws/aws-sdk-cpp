@@ -28,13 +28,8 @@ AllowedRenditionSize::AllowedRenditionSize() :
 {
 }
 
-AllowedRenditionSize::AllowedRenditionSize(JsonView jsonValue) : 
-    m_height(0),
-    m_heightHasBeenSet(false),
-    m_required(RequiredFlag::NOT_SET),
-    m_requiredHasBeenSet(false),
-    m_width(0),
-    m_widthHasBeenSet(false)
+AllowedRenditionSize::AllowedRenditionSize(JsonView jsonValue)
+  : AllowedRenditionSize()
 {
   *this = jsonValue;
 }

@@ -34,19 +34,8 @@ PullRequest::PullRequest() :
 {
 }
 
-PullRequest::PullRequest(JsonView jsonValue) : 
-    m_pullRequestIdHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_lastActivityDateHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_pullRequestStatus(PullRequestStatusEnum::NOT_SET),
-    m_pullRequestStatusHasBeenSet(false),
-    m_authorArnHasBeenSet(false),
-    m_pullRequestTargetsHasBeenSet(false),
-    m_clientRequestTokenHasBeenSet(false),
-    m_revisionIdHasBeenSet(false),
-    m_approvalRulesHasBeenSet(false)
+PullRequest::PullRequest(JsonView jsonValue)
+  : PullRequest()
 {
   *this = jsonValue;
 }

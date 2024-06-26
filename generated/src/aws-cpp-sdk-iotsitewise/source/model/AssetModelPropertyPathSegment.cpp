@@ -24,9 +24,8 @@ AssetModelPropertyPathSegment::AssetModelPropertyPathSegment() :
 {
 }
 
-AssetModelPropertyPathSegment::AssetModelPropertyPathSegment(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false)
+AssetModelPropertyPathSegment::AssetModelPropertyPathSegment(JsonView jsonValue)
+  : AssetModelPropertyPathSegment()
 {
   *this = jsonValue;
 }

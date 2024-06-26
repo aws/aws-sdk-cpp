@@ -26,11 +26,8 @@ ExperimentTemplateLogConfiguration::ExperimentTemplateLogConfiguration() :
 {
 }
 
-ExperimentTemplateLogConfiguration::ExperimentTemplateLogConfiguration(JsonView jsonValue) : 
-    m_cloudWatchLogsConfigurationHasBeenSet(false),
-    m_s3ConfigurationHasBeenSet(false),
-    m_logSchemaVersion(0),
-    m_logSchemaVersionHasBeenSet(false)
+ExperimentTemplateLogConfiguration::ExperimentTemplateLogConfiguration(JsonView jsonValue)
+  : ExperimentTemplateLogConfiguration()
 {
   *this = jsonValue;
 }

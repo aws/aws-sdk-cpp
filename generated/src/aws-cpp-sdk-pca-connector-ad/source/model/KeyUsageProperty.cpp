@@ -25,10 +25,8 @@ KeyUsageProperty::KeyUsageProperty() :
 {
 }
 
-KeyUsageProperty::KeyUsageProperty(JsonView jsonValue) : 
-    m_propertyFlagsHasBeenSet(false),
-    m_propertyType(KeyUsagePropertyType::NOT_SET),
-    m_propertyTypeHasBeenSet(false)
+KeyUsageProperty::KeyUsageProperty(JsonView jsonValue)
+  : KeyUsageProperty()
 {
   *this = jsonValue;
 }

@@ -27,12 +27,8 @@ ListedExecution::ListedExecution() :
 {
 }
 
-ListedExecution::ListedExecution(JsonView jsonValue) : 
-    m_executionIdHasBeenSet(false),
-    m_initialFileLocationHasBeenSet(false),
-    m_serviceMetadataHasBeenSet(false),
-    m_status(ExecutionStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+ListedExecution::ListedExecution(JsonView jsonValue)
+  : ListedExecution()
 {
   *this = jsonValue;
 }

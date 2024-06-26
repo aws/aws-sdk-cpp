@@ -27,12 +27,8 @@ Node::Node() :
 {
 }
 
-Node::Node(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_endpointHasBeenSet(false)
+Node::Node(JsonView jsonValue)
+  : Node()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ EnumerationValue::EnumerationValue() :
 {
 }
 
-EnumerationValue::EnumerationValue(JsonView jsonValue) : 
-    m_valueHasBeenSet(false),
-    m_synonymsHasBeenSet(false)
+EnumerationValue::EnumerationValue(JsonView jsonValue)
+  : EnumerationValue()
 {
   *this = jsonValue;
 }

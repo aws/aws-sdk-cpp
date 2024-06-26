@@ -26,11 +26,8 @@ AccountAssignmentOperationStatusMetadata::AccountAssignmentOperationStatusMetada
 {
 }
 
-AccountAssignmentOperationStatusMetadata::AccountAssignmentOperationStatusMetadata(JsonView jsonValue) : 
-    m_createdDateHasBeenSet(false),
-    m_requestIdHasBeenSet(false),
-    m_status(StatusValues::NOT_SET),
-    m_statusHasBeenSet(false)
+AccountAssignmentOperationStatusMetadata::AccountAssignmentOperationStatusMetadata(JsonView jsonValue)
+  : AccountAssignmentOperationStatusMetadata()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ TransformEncryption::TransformEncryption() :
 {
 }
 
-TransformEncryption::TransformEncryption(JsonView jsonValue) : 
-    m_mlUserDataEncryptionHasBeenSet(false),
-    m_taskRunSecurityConfigurationNameHasBeenSet(false)
+TransformEncryption::TransformEncryption(JsonView jsonValue)
+  : TransformEncryption()
 {
   *this = jsonValue;
 }

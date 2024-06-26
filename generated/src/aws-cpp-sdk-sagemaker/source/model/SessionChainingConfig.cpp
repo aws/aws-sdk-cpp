@@ -24,9 +24,8 @@ SessionChainingConfig::SessionChainingConfig() :
 {
 }
 
-SessionChainingConfig::SessionChainingConfig(JsonView jsonValue) : 
-    m_enableSessionTagChaining(false),
-    m_enableSessionTagChainingHasBeenSet(false)
+SessionChainingConfig::SessionChainingConfig(JsonView jsonValue)
+  : SessionChainingConfig()
 {
   *this = jsonValue;
 }

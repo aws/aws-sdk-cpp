@@ -26,11 +26,8 @@ ProtectedQueryS3OutputConfiguration::ProtectedQueryS3OutputConfiguration() :
 {
 }
 
-ProtectedQueryS3OutputConfiguration::ProtectedQueryS3OutputConfiguration(JsonView jsonValue) : 
-    m_resultFormat(ResultFormat::NOT_SET),
-    m_resultFormatHasBeenSet(false),
-    m_bucketHasBeenSet(false),
-    m_keyPrefixHasBeenSet(false)
+ProtectedQueryS3OutputConfiguration::ProtectedQueryS3OutputConfiguration(JsonView jsonValue)
+  : ProtectedQueryS3OutputConfiguration()
 {
   *this = jsonValue;
 }

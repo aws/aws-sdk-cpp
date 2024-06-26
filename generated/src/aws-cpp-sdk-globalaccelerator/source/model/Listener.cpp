@@ -28,13 +28,8 @@ Listener::Listener() :
 {
 }
 
-Listener::Listener(JsonView jsonValue) : 
-    m_listenerArnHasBeenSet(false),
-    m_portRangesHasBeenSet(false),
-    m_protocol(Protocol::NOT_SET),
-    m_protocolHasBeenSet(false),
-    m_clientAffinity(ClientAffinity::NOT_SET),
-    m_clientAffinityHasBeenSet(false)
+Listener::Listener(JsonView jsonValue)
+  : Listener()
 {
   *this = jsonValue;
 }

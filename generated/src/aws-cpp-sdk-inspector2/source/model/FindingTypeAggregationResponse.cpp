@@ -24,9 +24,8 @@ FindingTypeAggregationResponse::FindingTypeAggregationResponse() :
 {
 }
 
-FindingTypeAggregationResponse::FindingTypeAggregationResponse(JsonView jsonValue) : 
-    m_accountIdHasBeenSet(false),
-    m_severityCountsHasBeenSet(false)
+FindingTypeAggregationResponse::FindingTypeAggregationResponse(JsonView jsonValue)
+  : FindingTypeAggregationResponse()
 {
   *this = jsonValue;
 }

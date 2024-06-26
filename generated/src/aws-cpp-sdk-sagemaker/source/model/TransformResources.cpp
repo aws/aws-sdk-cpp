@@ -27,12 +27,8 @@ TransformResources::TransformResources() :
 {
 }
 
-TransformResources::TransformResources(JsonView jsonValue) : 
-    m_instanceType(TransformInstanceType::NOT_SET),
-    m_instanceTypeHasBeenSet(false),
-    m_instanceCount(0),
-    m_instanceCountHasBeenSet(false),
-    m_volumeKmsKeyIdHasBeenSet(false)
+TransformResources::TransformResources(JsonView jsonValue)
+  : TransformResources()
 {
   *this = jsonValue;
 }

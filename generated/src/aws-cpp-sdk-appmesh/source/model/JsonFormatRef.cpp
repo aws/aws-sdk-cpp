@@ -24,9 +24,8 @@ JsonFormatRef::JsonFormatRef() :
 {
 }
 
-JsonFormatRef::JsonFormatRef(JsonView jsonValue) : 
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false)
+JsonFormatRef::JsonFormatRef(JsonView jsonValue)
+  : JsonFormatRef()
 {
   *this = jsonValue;
 }

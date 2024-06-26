@@ -22,8 +22,8 @@ CancelOpenCypherQueryResult::CancelOpenCypherQueryResult() :
 {
 }
 
-CancelOpenCypherQueryResult::CancelOpenCypherQueryResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_payload(false)
+CancelOpenCypherQueryResult::CancelOpenCypherQueryResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CancelOpenCypherQueryResult()
 {
   *this = result;
 }

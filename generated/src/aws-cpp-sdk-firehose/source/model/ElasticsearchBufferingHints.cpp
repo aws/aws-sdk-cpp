@@ -26,11 +26,8 @@ ElasticsearchBufferingHints::ElasticsearchBufferingHints() :
 {
 }
 
-ElasticsearchBufferingHints::ElasticsearchBufferingHints(JsonView jsonValue) : 
-    m_intervalInSeconds(0),
-    m_intervalInSecondsHasBeenSet(false),
-    m_sizeInMBs(0),
-    m_sizeInMBsHasBeenSet(false)
+ElasticsearchBufferingHints::ElasticsearchBufferingHints(JsonView jsonValue)
+  : ElasticsearchBufferingHints()
 {
   *this = jsonValue;
 }

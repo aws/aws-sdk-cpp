@@ -42,27 +42,8 @@ ContainerRecipe::ContainerRecipe() :
 {
 }
 
-ContainerRecipe::ContainerRecipe(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_containerType(ContainerType::NOT_SET),
-    m_containerTypeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_platform(Platform::NOT_SET),
-    m_platformHasBeenSet(false),
-    m_ownerHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_componentsHasBeenSet(false),
-    m_instanceConfigurationHasBeenSet(false),
-    m_dockerfileTemplateDataHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_encrypted(false),
-    m_encryptedHasBeenSet(false),
-    m_parentImageHasBeenSet(false),
-    m_dateCreatedHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_workingDirectoryHasBeenSet(false),
-    m_targetRepositoryHasBeenSet(false)
+ContainerRecipe::ContainerRecipe(JsonView jsonValue)
+  : ContainerRecipe()
 {
   *this = jsonValue;
 }

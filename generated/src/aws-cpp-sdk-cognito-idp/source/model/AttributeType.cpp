@@ -24,9 +24,8 @@ AttributeType::AttributeType() :
 {
 }
 
-AttributeType::AttributeType(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
+AttributeType::AttributeType(JsonView jsonValue)
+  : AttributeType()
 {
   *this = jsonValue;
 }

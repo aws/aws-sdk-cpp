@@ -26,11 +26,8 @@ EncryptionDecryptionAttributes::EncryptionDecryptionAttributes() :
 {
 }
 
-EncryptionDecryptionAttributes::EncryptionDecryptionAttributes(JsonView jsonValue) : 
-    m_asymmetricHasBeenSet(false),
-    m_dukptHasBeenSet(false),
-    m_emvHasBeenSet(false),
-    m_symmetricHasBeenSet(false)
+EncryptionDecryptionAttributes::EncryptionDecryptionAttributes(JsonView jsonValue)
+  : EncryptionDecryptionAttributes()
 {
   *this = jsonValue;
 }

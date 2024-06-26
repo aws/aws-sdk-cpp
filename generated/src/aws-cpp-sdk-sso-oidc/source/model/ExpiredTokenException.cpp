@@ -24,9 +24,8 @@ ExpiredTokenException::ExpiredTokenException() :
 {
 }
 
-ExpiredTokenException::ExpiredTokenException(JsonView jsonValue) : 
-    m_errorHasBeenSet(false),
-    m_error_descriptionHasBeenSet(false)
+ExpiredTokenException::ExpiredTokenException(JsonView jsonValue)
+  : ExpiredTokenException()
 {
   *this = jsonValue;
 }

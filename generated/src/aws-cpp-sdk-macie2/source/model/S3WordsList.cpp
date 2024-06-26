@@ -24,9 +24,8 @@ S3WordsList::S3WordsList() :
 {
 }
 
-S3WordsList::S3WordsList(JsonView jsonValue) : 
-    m_bucketNameHasBeenSet(false),
-    m_objectKeyHasBeenSet(false)
+S3WordsList::S3WordsList(JsonView jsonValue)
+  : S3WordsList()
 {
   *this = jsonValue;
 }

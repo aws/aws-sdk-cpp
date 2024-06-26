@@ -23,8 +23,8 @@ ChannelStatistics::ChannelStatistics() :
 {
 }
 
-ChannelStatistics::ChannelStatistics(JsonView jsonValue) : 
-    m_sizeHasBeenSet(false)
+ChannelStatistics::ChannelStatistics(JsonView jsonValue)
+  : ChannelStatistics()
 {
   *this = jsonValue;
 }

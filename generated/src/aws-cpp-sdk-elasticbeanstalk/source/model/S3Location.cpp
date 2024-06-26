@@ -26,9 +26,8 @@ S3Location::S3Location() :
 {
 }
 
-S3Location::S3Location(const XmlNode& xmlNode) : 
-    m_s3BucketHasBeenSet(false),
-    m_s3KeyHasBeenSet(false)
+S3Location::S3Location(const XmlNode& xmlNode)
+  : S3Location()
 {
   *this = xmlNode;
 }

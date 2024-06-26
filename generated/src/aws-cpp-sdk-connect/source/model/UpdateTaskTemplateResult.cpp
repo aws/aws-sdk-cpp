@@ -22,8 +22,8 @@ UpdateTaskTemplateResult::UpdateTaskTemplateResult() :
 {
 }
 
-UpdateTaskTemplateResult::UpdateTaskTemplateResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(TaskTemplateStatus::NOT_SET)
+UpdateTaskTemplateResult::UpdateTaskTemplateResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateTaskTemplateResult()
 {
   *this = result;
 }

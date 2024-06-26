@@ -28,11 +28,8 @@ ImportSnapshotTask::ImportSnapshotTask() :
 {
 }
 
-ImportSnapshotTask::ImportSnapshotTask(const XmlNode& xmlNode) : 
-    m_descriptionHasBeenSet(false),
-    m_importTaskIdHasBeenSet(false),
-    m_snapshotTaskDetailHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+ImportSnapshotTask::ImportSnapshotTask(const XmlNode& xmlNode)
+  : ImportSnapshotTask()
 {
   *this = xmlNode;
 }

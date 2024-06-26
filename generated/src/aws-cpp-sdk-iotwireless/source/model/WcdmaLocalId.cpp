@@ -26,11 +26,8 @@ WcdmaLocalId::WcdmaLocalId() :
 {
 }
 
-WcdmaLocalId::WcdmaLocalId(JsonView jsonValue) : 
-    m_uarfcndl(0),
-    m_uarfcndlHasBeenSet(false),
-    m_psc(0),
-    m_pscHasBeenSet(false)
+WcdmaLocalId::WcdmaLocalId(JsonView jsonValue)
+  : WcdmaLocalId()
 {
   *this = jsonValue;
 }

@@ -37,22 +37,8 @@ Flow::Flow() :
 {
 }
 
-Flow::Flow(JsonView jsonValue) : 
-    m_availabilityZoneHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_egressIpHasBeenSet(false),
-    m_entitlementsHasBeenSet(false),
-    m_flowArnHasBeenSet(false),
-    m_mediaStreamsHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_outputsHasBeenSet(false),
-    m_sourceHasBeenSet(false),
-    m_sourceFailoverConfigHasBeenSet(false),
-    m_sourcesHasBeenSet(false),
-    m_status(Status::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_vpcInterfacesHasBeenSet(false),
-    m_maintenanceHasBeenSet(false)
+Flow::Flow(JsonView jsonValue)
+  : Flow()
 {
   *this = jsonValue;
 }

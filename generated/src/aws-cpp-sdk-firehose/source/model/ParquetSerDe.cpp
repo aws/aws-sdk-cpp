@@ -34,19 +34,8 @@ ParquetSerDe::ParquetSerDe() :
 {
 }
 
-ParquetSerDe::ParquetSerDe(JsonView jsonValue) : 
-    m_blockSizeBytes(0),
-    m_blockSizeBytesHasBeenSet(false),
-    m_pageSizeBytes(0),
-    m_pageSizeBytesHasBeenSet(false),
-    m_compression(ParquetCompression::NOT_SET),
-    m_compressionHasBeenSet(false),
-    m_enableDictionaryCompression(false),
-    m_enableDictionaryCompressionHasBeenSet(false),
-    m_maxPaddingBytes(0),
-    m_maxPaddingBytesHasBeenSet(false),
-    m_writerVersion(ParquetWriterVersion::NOT_SET),
-    m_writerVersionHasBeenSet(false)
+ParquetSerDe::ParquetSerDe(JsonView jsonValue)
+  : ParquetSerDe()
 {
   *this = jsonValue;
 }

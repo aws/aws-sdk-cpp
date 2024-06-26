@@ -23,8 +23,8 @@ LaunchOverrides::LaunchOverrides() :
 {
 }
 
-LaunchOverrides::LaunchOverrides(JsonView jsonValue) : 
-    m_launchCommandsHasBeenSet(false)
+LaunchOverrides::LaunchOverrides(JsonView jsonValue)
+  : LaunchOverrides()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ AssetBundleImportJobWarning::AssetBundleImportJobWarning() :
 {
 }
 
-AssetBundleImportJobWarning::AssetBundleImportJobWarning(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_messageHasBeenSet(false)
+AssetBundleImportJobWarning::AssetBundleImportJobWarning(JsonView jsonValue)
+  : AssetBundleImportJobWarning()
 {
   *this = jsonValue;
 }

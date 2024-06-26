@@ -22,8 +22,8 @@ UpdateConnectorResult::UpdateConnectorResult() :
 {
 }
 
-UpdateConnectorResult::UpdateConnectorResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_connectorState(ConnectorState::NOT_SET)
+UpdateConnectorResult::UpdateConnectorResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateConnectorResult()
 {
   *this = result;
 }

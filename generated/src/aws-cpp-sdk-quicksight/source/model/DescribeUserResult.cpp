@@ -22,8 +22,8 @@ DescribeUserResult::DescribeUserResult() :
 {
 }
 
-DescribeUserResult::DescribeUserResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+DescribeUserResult::DescribeUserResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeUserResult()
 {
   *this = result;
 }

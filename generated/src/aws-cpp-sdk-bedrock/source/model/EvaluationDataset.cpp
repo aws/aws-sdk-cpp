@@ -24,9 +24,8 @@ EvaluationDataset::EvaluationDataset() :
 {
 }
 
-EvaluationDataset::EvaluationDataset(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_datasetLocationHasBeenSet(false)
+EvaluationDataset::EvaluationDataset(JsonView jsonValue)
+  : EvaluationDataset()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ ActionTarget::ActionTarget() :
 {
 }
 
-ActionTarget::ActionTarget(JsonView jsonValue) : 
-    m_resourceIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+ActionTarget::ActionTarget(JsonView jsonValue)
+  : ActionTarget()
 {
   *this = jsonValue;
 }

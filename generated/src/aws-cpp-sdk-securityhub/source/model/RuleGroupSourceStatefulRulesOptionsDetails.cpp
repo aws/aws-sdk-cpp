@@ -24,9 +24,8 @@ RuleGroupSourceStatefulRulesOptionsDetails::RuleGroupSourceStatefulRulesOptionsD
 {
 }
 
-RuleGroupSourceStatefulRulesOptionsDetails::RuleGroupSourceStatefulRulesOptionsDetails(JsonView jsonValue) : 
-    m_keywordHasBeenSet(false),
-    m_settingsHasBeenSet(false)
+RuleGroupSourceStatefulRulesOptionsDetails::RuleGroupSourceStatefulRulesOptionsDetails(JsonView jsonValue)
+  : RuleGroupSourceStatefulRulesOptionsDetails()
 {
   *this = jsonValue;
 }

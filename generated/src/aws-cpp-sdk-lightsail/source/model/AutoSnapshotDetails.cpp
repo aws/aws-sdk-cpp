@@ -27,12 +27,8 @@ AutoSnapshotDetails::AutoSnapshotDetails() :
 {
 }
 
-AutoSnapshotDetails::AutoSnapshotDetails(JsonView jsonValue) : 
-    m_dateHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_status(AutoSnapshotStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_fromAttachedDisksHasBeenSet(false)
+AutoSnapshotDetails::AutoSnapshotDetails(JsonView jsonValue)
+  : AutoSnapshotDetails()
 {
   *this = jsonValue;
 }

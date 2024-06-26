@@ -26,11 +26,8 @@ RuleVerdictExpression::RuleVerdictExpression() :
 {
 }
 
-RuleVerdictExpression::RuleVerdictExpression(JsonView jsonValue) : 
-    m_evaluateHasBeenSet(false),
-    m_operator(RuleVerdictOperator::NOT_SET),
-    m_operatorHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+RuleVerdictExpression::RuleVerdictExpression(JsonView jsonValue)
+  : RuleVerdictExpression()
 {
   *this = jsonValue;
 }

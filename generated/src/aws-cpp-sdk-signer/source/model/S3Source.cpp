@@ -25,10 +25,8 @@ S3Source::S3Source() :
 {
 }
 
-S3Source::S3Source(JsonView jsonValue) : 
-    m_bucketNameHasBeenSet(false),
-    m_keyHasBeenSet(false),
-    m_versionHasBeenSet(false)
+S3Source::S3Source(JsonView jsonValue)
+  : S3Source()
 {
   *this = jsonValue;
 }

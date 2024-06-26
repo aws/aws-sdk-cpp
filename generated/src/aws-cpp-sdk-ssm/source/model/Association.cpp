@@ -37,22 +37,8 @@ Association::Association() :
 {
 }
 
-Association::Association(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_associationIdHasBeenSet(false),
-    m_associationVersionHasBeenSet(false),
-    m_documentVersionHasBeenSet(false),
-    m_targetsHasBeenSet(false),
-    m_lastExecutionDateHasBeenSet(false),
-    m_overviewHasBeenSet(false),
-    m_scheduleExpressionHasBeenSet(false),
-    m_associationNameHasBeenSet(false),
-    m_scheduleOffset(0),
-    m_scheduleOffsetHasBeenSet(false),
-    m_duration(0),
-    m_durationHasBeenSet(false),
-    m_targetMapsHasBeenSet(false)
+Association::Association(JsonView jsonValue)
+  : Association()
 {
   *this = jsonValue;
 }

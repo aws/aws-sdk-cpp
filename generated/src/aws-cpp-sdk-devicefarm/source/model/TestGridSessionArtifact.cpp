@@ -26,11 +26,8 @@ TestGridSessionArtifact::TestGridSessionArtifact() :
 {
 }
 
-TestGridSessionArtifact::TestGridSessionArtifact(JsonView jsonValue) : 
-    m_filenameHasBeenSet(false),
-    m_type(TestGridSessionArtifactType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_urlHasBeenSet(false)
+TestGridSessionArtifact::TestGridSessionArtifact(JsonView jsonValue)
+  : TestGridSessionArtifact()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ Ec2Configuration::Ec2Configuration() :
 {
 }
 
-Ec2Configuration::Ec2Configuration(JsonView jsonValue) : 
-    m_scanMode(Ec2ScanMode::NOT_SET),
-    m_scanModeHasBeenSet(false)
+Ec2Configuration::Ec2Configuration(JsonView jsonValue)
+  : Ec2Configuration()
 {
   *this = jsonValue;
 }

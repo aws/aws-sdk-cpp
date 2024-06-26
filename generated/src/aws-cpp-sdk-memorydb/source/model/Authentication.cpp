@@ -26,11 +26,8 @@ Authentication::Authentication() :
 {
 }
 
-Authentication::Authentication(JsonView jsonValue) : 
-    m_type(AuthenticationType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_passwordCount(0),
-    m_passwordCountHasBeenSet(false)
+Authentication::Authentication(JsonView jsonValue)
+  : Authentication()
 {
   *this = jsonValue;
 }

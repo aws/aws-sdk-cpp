@@ -29,14 +29,8 @@ RedshiftParameters::RedshiftParameters() :
 {
 }
 
-RedshiftParameters::RedshiftParameters(JsonView jsonValue) : 
-    m_hostHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_databaseHasBeenSet(false),
-    m_clusterIdHasBeenSet(false),
-    m_iAMParametersHasBeenSet(false),
-    m_identityCenterConfigurationHasBeenSet(false)
+RedshiftParameters::RedshiftParameters(JsonView jsonValue)
+  : RedshiftParameters()
 {
   *this = jsonValue;
 }

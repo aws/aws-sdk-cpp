@@ -33,18 +33,8 @@ Site::Site() :
 {
 }
 
-Site::Site(JsonView jsonValue) : 
-    m_siteIdHasBeenSet(false),
-    m_accountIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_siteArnHasBeenSet(false),
-    m_notesHasBeenSet(false),
-    m_operatingAddressCountryCodeHasBeenSet(false),
-    m_operatingAddressStateOrRegionHasBeenSet(false),
-    m_operatingAddressCityHasBeenSet(false),
-    m_rackPhysicalPropertiesHasBeenSet(false)
+Site::Site(JsonView jsonValue)
+  : Site()
 {
   *this = jsonValue;
 }

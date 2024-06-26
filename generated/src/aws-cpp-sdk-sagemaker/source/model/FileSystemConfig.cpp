@@ -27,12 +27,8 @@ FileSystemConfig::FileSystemConfig() :
 {
 }
 
-FileSystemConfig::FileSystemConfig(JsonView jsonValue) : 
-    m_mountPathHasBeenSet(false),
-    m_defaultUid(0),
-    m_defaultUidHasBeenSet(false),
-    m_defaultGid(0),
-    m_defaultGidHasBeenSet(false)
+FileSystemConfig::FileSystemConfig(JsonView jsonValue)
+  : FileSystemConfig()
 {
   *this = jsonValue;
 }

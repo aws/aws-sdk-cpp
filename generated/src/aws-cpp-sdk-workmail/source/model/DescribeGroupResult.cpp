@@ -23,9 +23,8 @@ DescribeGroupResult::DescribeGroupResult() :
 {
 }
 
-DescribeGroupResult::DescribeGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_state(EntityState::NOT_SET),
-    m_hiddenFromGlobalAddressList(false)
+DescribeGroupResult::DescribeGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeGroupResult()
 {
   *this = result;
 }

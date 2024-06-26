@@ -26,11 +26,8 @@ MariaDbParameters::MariaDbParameters() :
 {
 }
 
-MariaDbParameters::MariaDbParameters(JsonView jsonValue) : 
-    m_hostHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_databaseHasBeenSet(false)
+MariaDbParameters::MariaDbParameters(JsonView jsonValue)
+  : MariaDbParameters()
 {
   *this = jsonValue;
 }

@@ -33,18 +33,8 @@ AwsRedshiftClusterRestoreStatus::AwsRedshiftClusterRestoreStatus() :
 {
 }
 
-AwsRedshiftClusterRestoreStatus::AwsRedshiftClusterRestoreStatus(JsonView jsonValue) : 
-    m_currentRestoreRateInMegaBytesPerSecond(0.0),
-    m_currentRestoreRateInMegaBytesPerSecondHasBeenSet(false),
-    m_elapsedTimeInSeconds(0),
-    m_elapsedTimeInSecondsHasBeenSet(false),
-    m_estimatedTimeToCompletionInSeconds(0),
-    m_estimatedTimeToCompletionInSecondsHasBeenSet(false),
-    m_progressInMegaBytes(0),
-    m_progressInMegaBytesHasBeenSet(false),
-    m_snapshotSizeInMegaBytes(0),
-    m_snapshotSizeInMegaBytesHasBeenSet(false),
-    m_statusHasBeenSet(false)
+AwsRedshiftClusterRestoreStatus::AwsRedshiftClusterRestoreStatus(JsonView jsonValue)
+  : AwsRedshiftClusterRestoreStatus()
 {
   *this = jsonValue;
 }

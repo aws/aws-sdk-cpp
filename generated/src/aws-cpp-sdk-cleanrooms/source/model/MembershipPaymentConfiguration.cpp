@@ -23,8 +23,8 @@ MembershipPaymentConfiguration::MembershipPaymentConfiguration() :
 {
 }
 
-MembershipPaymentConfiguration::MembershipPaymentConfiguration(JsonView jsonValue) : 
-    m_queryComputeHasBeenSet(false)
+MembershipPaymentConfiguration::MembershipPaymentConfiguration(JsonView jsonValue)
+  : MembershipPaymentConfiguration()
 {
   *this = jsonValue;
 }

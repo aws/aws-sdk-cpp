@@ -25,10 +25,8 @@ SavingsPlansCoverage::SavingsPlansCoverage() :
 {
 }
 
-SavingsPlansCoverage::SavingsPlansCoverage(JsonView jsonValue) : 
-    m_attributesHasBeenSet(false),
-    m_coverageHasBeenSet(false),
-    m_timePeriodHasBeenSet(false)
+SavingsPlansCoverage::SavingsPlansCoverage(JsonView jsonValue)
+  : SavingsPlansCoverage()
 {
   *this = jsonValue;
 }

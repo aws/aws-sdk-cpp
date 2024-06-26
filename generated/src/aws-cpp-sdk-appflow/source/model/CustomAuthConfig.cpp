@@ -24,9 +24,8 @@ CustomAuthConfig::CustomAuthConfig() :
 {
 }
 
-CustomAuthConfig::CustomAuthConfig(JsonView jsonValue) : 
-    m_customAuthenticationTypeHasBeenSet(false),
-    m_authParametersHasBeenSet(false)
+CustomAuthConfig::CustomAuthConfig(JsonView jsonValue)
+  : CustomAuthConfig()
 {
   *this = jsonValue;
 }

@@ -33,18 +33,8 @@ EffectiveRecommendationPreferences::EffectiveRecommendationPreferences() :
 {
 }
 
-EffectiveRecommendationPreferences::EffectiveRecommendationPreferences(JsonView jsonValue) : 
-    m_cpuVendorArchitecturesHasBeenSet(false),
-    m_enhancedInfrastructureMetrics(EnhancedInfrastructureMetrics::NOT_SET),
-    m_enhancedInfrastructureMetricsHasBeenSet(false),
-    m_inferredWorkloadTypes(InferredWorkloadTypesPreference::NOT_SET),
-    m_inferredWorkloadTypesHasBeenSet(false),
-    m_externalMetricsPreferenceHasBeenSet(false),
-    m_lookBackPeriod(LookBackPeriodPreference::NOT_SET),
-    m_lookBackPeriodHasBeenSet(false),
-    m_utilizationPreferencesHasBeenSet(false),
-    m_preferredResourcesHasBeenSet(false),
-    m_savingsEstimationModeHasBeenSet(false)
+EffectiveRecommendationPreferences::EffectiveRecommendationPreferences(JsonView jsonValue)
+  : EffectiveRecommendationPreferences()
 {
   *this = jsonValue;
 }

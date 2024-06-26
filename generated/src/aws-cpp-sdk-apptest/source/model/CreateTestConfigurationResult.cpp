@@ -22,8 +22,8 @@ CreateTestConfigurationResult::CreateTestConfigurationResult() :
 {
 }
 
-CreateTestConfigurationResult::CreateTestConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_testConfigurationVersion(0)
+CreateTestConfigurationResult::CreateTestConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateTestConfigurationResult()
 {
   *this = result;
 }

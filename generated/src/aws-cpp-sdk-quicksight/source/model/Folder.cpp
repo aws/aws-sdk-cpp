@@ -32,17 +32,8 @@ Folder::Folder() :
 {
 }
 
-Folder::Folder(JsonView jsonValue) : 
-    m_folderIdHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_folderType(FolderType::NOT_SET),
-    m_folderTypeHasBeenSet(false),
-    m_folderPathHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_sharingModel(SharingModel::NOT_SET),
-    m_sharingModelHasBeenSet(false)
+Folder::Folder(JsonView jsonValue)
+  : Folder()
 {
   *this = jsonValue;
 }

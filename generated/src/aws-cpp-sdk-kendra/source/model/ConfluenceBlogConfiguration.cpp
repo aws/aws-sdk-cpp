@@ -23,8 +23,8 @@ ConfluenceBlogConfiguration::ConfluenceBlogConfiguration() :
 {
 }
 
-ConfluenceBlogConfiguration::ConfluenceBlogConfiguration(JsonView jsonValue) : 
-    m_blogFieldMappingsHasBeenSet(false)
+ConfluenceBlogConfiguration::ConfluenceBlogConfiguration(JsonView jsonValue)
+  : ConfluenceBlogConfiguration()
 {
   *this = jsonValue;
 }

@@ -44,29 +44,8 @@ FileCacheCreating::FileCacheCreating() :
 {
 }
 
-FileCacheCreating::FileCacheCreating(JsonView jsonValue) : 
-    m_ownerIdHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_fileCacheIdHasBeenSet(false),
-    m_fileCacheType(FileCacheType::NOT_SET),
-    m_fileCacheTypeHasBeenSet(false),
-    m_fileCacheTypeVersionHasBeenSet(false),
-    m_lifecycle(FileCacheLifecycle::NOT_SET),
-    m_lifecycleHasBeenSet(false),
-    m_failureDetailsHasBeenSet(false),
-    m_storageCapacity(0),
-    m_storageCapacityHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_subnetIdsHasBeenSet(false),
-    m_networkInterfaceIdsHasBeenSet(false),
-    m_dNSNameHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_resourceARNHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_copyTagsToDataRepositoryAssociations(false),
-    m_copyTagsToDataRepositoryAssociationsHasBeenSet(false),
-    m_lustreConfigurationHasBeenSet(false),
-    m_dataRepositoryAssociationIdsHasBeenSet(false)
+FileCacheCreating::FileCacheCreating(JsonView jsonValue)
+  : FileCacheCreating()
 {
   *this = jsonValue;
 }

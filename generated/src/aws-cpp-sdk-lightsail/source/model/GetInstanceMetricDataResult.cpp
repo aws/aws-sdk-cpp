@@ -22,8 +22,8 @@ GetInstanceMetricDataResult::GetInstanceMetricDataResult() :
 {
 }
 
-GetInstanceMetricDataResult::GetInstanceMetricDataResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_metricName(InstanceMetricName::NOT_SET)
+GetInstanceMetricDataResult::GetInstanceMetricDataResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetInstanceMetricDataResult()
 {
   *this = result;
 }

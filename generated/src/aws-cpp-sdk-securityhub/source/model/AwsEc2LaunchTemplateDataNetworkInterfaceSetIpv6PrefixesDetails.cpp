@@ -23,8 +23,8 @@ AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6PrefixesDetails::AwsEc2LaunchTemp
 {
 }
 
-AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6PrefixesDetails::AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6PrefixesDetails(JsonView jsonValue) : 
-    m_ipv6PrefixHasBeenSet(false)
+AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6PrefixesDetails::AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6PrefixesDetails(JsonView jsonValue)
+  : AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6PrefixesDetails()
 {
   *this = jsonValue;
 }

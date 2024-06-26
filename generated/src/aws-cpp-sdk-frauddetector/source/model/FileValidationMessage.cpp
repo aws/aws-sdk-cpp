@@ -25,10 +25,8 @@ FileValidationMessage::FileValidationMessage() :
 {
 }
 
-FileValidationMessage::FileValidationMessage(JsonView jsonValue) : 
-    m_titleHasBeenSet(false),
-    m_contentHasBeenSet(false),
-    m_typeHasBeenSet(false)
+FileValidationMessage::FileValidationMessage(JsonView jsonValue)
+  : FileValidationMessage()
 {
   *this = jsonValue;
 }

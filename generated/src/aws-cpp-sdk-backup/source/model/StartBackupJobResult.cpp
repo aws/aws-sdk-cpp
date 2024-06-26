@@ -22,8 +22,8 @@ StartBackupJobResult::StartBackupJobResult() :
 {
 }
 
-StartBackupJobResult::StartBackupJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_isParent(false)
+StartBackupJobResult::StartBackupJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : StartBackupJobResult()
 {
   *this = result;
 }

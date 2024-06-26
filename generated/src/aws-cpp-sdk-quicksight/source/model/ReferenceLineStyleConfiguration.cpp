@@ -25,10 +25,8 @@ ReferenceLineStyleConfiguration::ReferenceLineStyleConfiguration() :
 {
 }
 
-ReferenceLineStyleConfiguration::ReferenceLineStyleConfiguration(JsonView jsonValue) : 
-    m_pattern(ReferenceLinePatternType::NOT_SET),
-    m_patternHasBeenSet(false),
-    m_colorHasBeenSet(false)
+ReferenceLineStyleConfiguration::ReferenceLineStyleConfiguration(JsonView jsonValue)
+  : ReferenceLineStyleConfiguration()
 {
   *this = jsonValue;
 }

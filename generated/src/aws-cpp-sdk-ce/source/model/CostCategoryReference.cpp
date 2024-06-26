@@ -31,16 +31,8 @@ CostCategoryReference::CostCategoryReference() :
 {
 }
 
-CostCategoryReference::CostCategoryReference(JsonView jsonValue) : 
-    m_costCategoryArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_effectiveStartHasBeenSet(false),
-    m_effectiveEndHasBeenSet(false),
-    m_numberOfRules(0),
-    m_numberOfRulesHasBeenSet(false),
-    m_processingStatusHasBeenSet(false),
-    m_valuesHasBeenSet(false),
-    m_defaultValueHasBeenSet(false)
+CostCategoryReference::CostCategoryReference(JsonView jsonValue)
+  : CostCategoryReference()
 {
   *this = jsonValue;
 }

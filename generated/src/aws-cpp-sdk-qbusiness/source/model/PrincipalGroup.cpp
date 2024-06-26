@@ -27,12 +27,8 @@ PrincipalGroup::PrincipalGroup() :
 {
 }
 
-PrincipalGroup::PrincipalGroup(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_access(ReadAccessType::NOT_SET),
-    m_accessHasBeenSet(false),
-    m_membershipType(MembershipType::NOT_SET),
-    m_membershipTypeHasBeenSet(false)
+PrincipalGroup::PrincipalGroup(JsonView jsonValue)
+  : PrincipalGroup()
 {
   *this = jsonValue;
 }

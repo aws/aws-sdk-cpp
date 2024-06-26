@@ -24,9 +24,8 @@ TagOptionSummary::TagOptionSummary() :
 {
 }
 
-TagOptionSummary::TagOptionSummary(JsonView jsonValue) : 
-    m_keyHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+TagOptionSummary::TagOptionSummary(JsonView jsonValue)
+  : TagOptionSummary()
 {
   *this = jsonValue;
 }

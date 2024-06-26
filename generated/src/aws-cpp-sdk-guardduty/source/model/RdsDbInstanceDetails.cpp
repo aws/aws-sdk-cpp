@@ -28,13 +28,8 @@ RdsDbInstanceDetails::RdsDbInstanceDetails() :
 {
 }
 
-RdsDbInstanceDetails::RdsDbInstanceDetails(JsonView jsonValue) : 
-    m_dbInstanceIdentifierHasBeenSet(false),
-    m_engineHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_dbClusterIdentifierHasBeenSet(false),
-    m_dbInstanceArnHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+RdsDbInstanceDetails::RdsDbInstanceDetails(JsonView jsonValue)
+  : RdsDbInstanceDetails()
 {
   *this = jsonValue;
 }

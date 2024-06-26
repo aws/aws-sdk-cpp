@@ -29,14 +29,8 @@ NetworkFirewallPolicyDescription::NetworkFirewallPolicyDescription() :
 {
 }
 
-NetworkFirewallPolicyDescription::NetworkFirewallPolicyDescription(JsonView jsonValue) : 
-    m_statelessRuleGroupsHasBeenSet(false),
-    m_statelessDefaultActionsHasBeenSet(false),
-    m_statelessFragmentDefaultActionsHasBeenSet(false),
-    m_statelessCustomActionsHasBeenSet(false),
-    m_statefulRuleGroupsHasBeenSet(false),
-    m_statefulDefaultActionsHasBeenSet(false),
-    m_statefulEngineOptionsHasBeenSet(false)
+NetworkFirewallPolicyDescription::NetworkFirewallPolicyDescription(JsonView jsonValue)
+  : NetworkFirewallPolicyDescription()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ BatchUpdateRecommendationStatusFailedEntry::BatchUpdateRecommendationStatusFaile
 {
 }
 
-BatchUpdateRecommendationStatusFailedEntry::BatchUpdateRecommendationStatusFailedEntry(JsonView jsonValue) : 
-    m_entryIdHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
+BatchUpdateRecommendationStatusFailedEntry::BatchUpdateRecommendationStatusFailedEntry(JsonView jsonValue)
+  : BatchUpdateRecommendationStatusFailedEntry()
 {
   *this = jsonValue;
 }

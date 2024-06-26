@@ -23,8 +23,8 @@ RuleGroupSourceStatelessRuleMatchAttributesSources::RuleGroupSourceStatelessRule
 {
 }
 
-RuleGroupSourceStatelessRuleMatchAttributesSources::RuleGroupSourceStatelessRuleMatchAttributesSources(JsonView jsonValue) : 
-    m_addressDefinitionHasBeenSet(false)
+RuleGroupSourceStatelessRuleMatchAttributesSources::RuleGroupSourceStatelessRuleMatchAttributesSources(JsonView jsonValue)
+  : RuleGroupSourceStatelessRuleMatchAttributesSources()
 {
   *this = jsonValue;
 }

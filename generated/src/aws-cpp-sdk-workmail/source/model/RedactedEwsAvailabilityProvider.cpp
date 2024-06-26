@@ -24,9 +24,8 @@ RedactedEwsAvailabilityProvider::RedactedEwsAvailabilityProvider() :
 {
 }
 
-RedactedEwsAvailabilityProvider::RedactedEwsAvailabilityProvider(JsonView jsonValue) : 
-    m_ewsEndpointHasBeenSet(false),
-    m_ewsUsernameHasBeenSet(false)
+RedactedEwsAvailabilityProvider::RedactedEwsAvailabilityProvider(JsonView jsonValue)
+  : RedactedEwsAvailabilityProvider()
 {
   *this = jsonValue;
 }

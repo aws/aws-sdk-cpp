@@ -23,8 +23,8 @@ ServerCertificate::ServerCertificate() :
 {
 }
 
-ServerCertificate::ServerCertificate(JsonView jsonValue) : 
-    m_resourceArnHasBeenSet(false)
+ServerCertificate::ServerCertificate(JsonView jsonValue)
+  : ServerCertificate()
 {
   *this = jsonValue;
 }

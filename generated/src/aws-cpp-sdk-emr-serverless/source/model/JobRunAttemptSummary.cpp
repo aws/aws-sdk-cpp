@@ -40,25 +40,8 @@ JobRunAttemptSummary::JobRunAttemptSummary() :
 {
 }
 
-JobRunAttemptSummary::JobRunAttemptSummary(JsonView jsonValue) : 
-    m_applicationIdHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_mode(JobRunMode::NOT_SET),
-    m_modeHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_jobCreatedAtHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_executionRoleHasBeenSet(false),
-    m_state(JobRunState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_stateDetailsHasBeenSet(false),
-    m_releaseLabelHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_attempt(0),
-    m_attemptHasBeenSet(false)
+JobRunAttemptSummary::JobRunAttemptSummary(JsonView jsonValue)
+  : JobRunAttemptSummary()
 {
   *this = jsonValue;
 }

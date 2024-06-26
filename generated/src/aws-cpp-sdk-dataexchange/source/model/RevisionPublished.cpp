@@ -23,8 +23,8 @@ RevisionPublished::RevisionPublished() :
 {
 }
 
-RevisionPublished::RevisionPublished(JsonView jsonValue) : 
-    m_dataSetIdHasBeenSet(false)
+RevisionPublished::RevisionPublished(JsonView jsonValue)
+  : RevisionPublished()
 {
   *this = jsonValue;
 }

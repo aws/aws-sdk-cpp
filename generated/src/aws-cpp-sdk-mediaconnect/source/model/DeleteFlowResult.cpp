@@ -22,8 +22,8 @@ DeleteFlowResult::DeleteFlowResult() :
 {
 }
 
-DeleteFlowResult::DeleteFlowResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(Status::NOT_SET)
+DeleteFlowResult::DeleteFlowResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeleteFlowResult()
 {
   *this = result;
 }

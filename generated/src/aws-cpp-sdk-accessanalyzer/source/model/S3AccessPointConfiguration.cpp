@@ -25,10 +25,8 @@ S3AccessPointConfiguration::S3AccessPointConfiguration() :
 {
 }
 
-S3AccessPointConfiguration::S3AccessPointConfiguration(JsonView jsonValue) : 
-    m_accessPointPolicyHasBeenSet(false),
-    m_publicAccessBlockHasBeenSet(false),
-    m_networkOriginHasBeenSet(false)
+S3AccessPointConfiguration::S3AccessPointConfiguration(JsonView jsonValue)
+  : S3AccessPointConfiguration()
 {
   *this = jsonValue;
 }

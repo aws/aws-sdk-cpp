@@ -25,10 +25,8 @@ SavingsPlansAmortizedCommitment::SavingsPlansAmortizedCommitment() :
 {
 }
 
-SavingsPlansAmortizedCommitment::SavingsPlansAmortizedCommitment(JsonView jsonValue) : 
-    m_amortizedRecurringCommitmentHasBeenSet(false),
-    m_amortizedUpfrontCommitmentHasBeenSet(false),
-    m_totalAmortizedCommitmentHasBeenSet(false)
+SavingsPlansAmortizedCommitment::SavingsPlansAmortizedCommitment(JsonView jsonValue)
+  : SavingsPlansAmortizedCommitment()
 {
   *this = jsonValue;
 }

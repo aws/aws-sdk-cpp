@@ -24,9 +24,8 @@ SigningConfiguration::SigningConfiguration() :
 {
 }
 
-SigningConfiguration::SigningConfiguration(JsonView jsonValue) : 
-    m_encryptionAlgorithmOptionsHasBeenSet(false),
-    m_hashAlgorithmOptionsHasBeenSet(false)
+SigningConfiguration::SigningConfiguration(JsonView jsonValue)
+  : SigningConfiguration()
 {
   *this = jsonValue;
 }

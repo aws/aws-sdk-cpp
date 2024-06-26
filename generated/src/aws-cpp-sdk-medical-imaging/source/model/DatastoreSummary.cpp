@@ -29,14 +29,8 @@ DatastoreSummary::DatastoreSummary() :
 {
 }
 
-DatastoreSummary::DatastoreSummary(JsonView jsonValue) : 
-    m_datastoreIdHasBeenSet(false),
-    m_datastoreNameHasBeenSet(false),
-    m_datastoreStatus(DatastoreStatus::NOT_SET),
-    m_datastoreStatusHasBeenSet(false),
-    m_datastoreArnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+DatastoreSummary::DatastoreSummary(JsonView jsonValue)
+  : DatastoreSummary()
 {
   *this = jsonValue;
 }

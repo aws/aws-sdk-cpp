@@ -26,9 +26,8 @@ CapacityReservationOptionsRequest::CapacityReservationOptionsRequest() :
 {
 }
 
-CapacityReservationOptionsRequest::CapacityReservationOptionsRequest(const XmlNode& xmlNode) : 
-    m_usageStrategy(FleetCapacityReservationUsageStrategy::NOT_SET),
-    m_usageStrategyHasBeenSet(false)
+CapacityReservationOptionsRequest::CapacityReservationOptionsRequest(const XmlNode& xmlNode)
+  : CapacityReservationOptionsRequest()
 {
   *this = xmlNode;
 }

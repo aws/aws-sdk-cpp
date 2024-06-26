@@ -22,8 +22,8 @@ GenerateCredentialReportResult::GenerateCredentialReportResult() :
 {
 }
 
-GenerateCredentialReportResult::GenerateCredentialReportResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_state(ReportStateType::NOT_SET)
+GenerateCredentialReportResult::GenerateCredentialReportResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : GenerateCredentialReportResult()
 {
   *this = result;
 }

@@ -46,31 +46,8 @@ ContainerService::ContainerService() :
 {
 }
 
-ContainerService::ContainerService(JsonView jsonValue) : 
-    m_containerServiceNameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_locationHasBeenSet(false),
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_power(ContainerServicePowerName::NOT_SET),
-    m_powerHasBeenSet(false),
-    m_powerIdHasBeenSet(false),
-    m_state(ContainerServiceState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_stateDetailHasBeenSet(false),
-    m_scale(0),
-    m_scaleHasBeenSet(false),
-    m_currentDeploymentHasBeenSet(false),
-    m_nextDeploymentHasBeenSet(false),
-    m_isDisabled(false),
-    m_isDisabledHasBeenSet(false),
-    m_principalArnHasBeenSet(false),
-    m_privateDomainNameHasBeenSet(false),
-    m_publicDomainNamesHasBeenSet(false),
-    m_urlHasBeenSet(false),
-    m_privateRegistryAccessHasBeenSet(false)
+ContainerService::ContainerService(JsonView jsonValue)
+  : ContainerService()
 {
   *this = jsonValue;
 }

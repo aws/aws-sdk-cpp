@@ -25,10 +25,8 @@ ActionLocalPortDetails::ActionLocalPortDetails() :
 {
 }
 
-ActionLocalPortDetails::ActionLocalPortDetails(JsonView jsonValue) : 
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_portNameHasBeenSet(false)
+ActionLocalPortDetails::ActionLocalPortDetails(JsonView jsonValue)
+  : ActionLocalPortDetails()
 {
   *this = jsonValue;
 }

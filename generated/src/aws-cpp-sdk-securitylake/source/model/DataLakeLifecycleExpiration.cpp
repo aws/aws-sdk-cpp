@@ -24,9 +24,8 @@ DataLakeLifecycleExpiration::DataLakeLifecycleExpiration() :
 {
 }
 
-DataLakeLifecycleExpiration::DataLakeLifecycleExpiration(JsonView jsonValue) : 
-    m_days(0),
-    m_daysHasBeenSet(false)
+DataLakeLifecycleExpiration::DataLakeLifecycleExpiration(JsonView jsonValue)
+  : DataLakeLifecycleExpiration()
 {
   *this = jsonValue;
 }

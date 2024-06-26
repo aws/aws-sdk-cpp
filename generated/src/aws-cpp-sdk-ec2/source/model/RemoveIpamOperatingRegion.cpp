@@ -25,8 +25,8 @@ RemoveIpamOperatingRegion::RemoveIpamOperatingRegion() :
 {
 }
 
-RemoveIpamOperatingRegion::RemoveIpamOperatingRegion(const XmlNode& xmlNode) : 
-    m_regionNameHasBeenSet(false)
+RemoveIpamOperatingRegion::RemoveIpamOperatingRegion(const XmlNode& xmlNode)
+  : RemoveIpamOperatingRegion()
 {
   *this = xmlNode;
 }

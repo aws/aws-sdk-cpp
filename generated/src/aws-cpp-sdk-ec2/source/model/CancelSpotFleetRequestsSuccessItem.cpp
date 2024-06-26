@@ -29,12 +29,8 @@ CancelSpotFleetRequestsSuccessItem::CancelSpotFleetRequestsSuccessItem() :
 {
 }
 
-CancelSpotFleetRequestsSuccessItem::CancelSpotFleetRequestsSuccessItem(const XmlNode& xmlNode) : 
-    m_currentSpotFleetRequestState(BatchState::NOT_SET),
-    m_currentSpotFleetRequestStateHasBeenSet(false),
-    m_previousSpotFleetRequestState(BatchState::NOT_SET),
-    m_previousSpotFleetRequestStateHasBeenSet(false),
-    m_spotFleetRequestIdHasBeenSet(false)
+CancelSpotFleetRequestsSuccessItem::CancelSpotFleetRequestsSuccessItem(const XmlNode& xmlNode)
+  : CancelSpotFleetRequestsSuccessItem()
 {
   *this = xmlNode;
 }

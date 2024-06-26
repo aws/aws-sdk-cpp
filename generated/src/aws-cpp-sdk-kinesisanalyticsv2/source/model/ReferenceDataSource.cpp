@@ -25,10 +25,8 @@ ReferenceDataSource::ReferenceDataSource() :
 {
 }
 
-ReferenceDataSource::ReferenceDataSource(JsonView jsonValue) : 
-    m_tableNameHasBeenSet(false),
-    m_s3ReferenceDataSourceHasBeenSet(false),
-    m_referenceSchemaHasBeenSet(false)
+ReferenceDataSource::ReferenceDataSource(JsonView jsonValue)
+  : ReferenceDataSource()
 {
   *this = jsonValue;
 }

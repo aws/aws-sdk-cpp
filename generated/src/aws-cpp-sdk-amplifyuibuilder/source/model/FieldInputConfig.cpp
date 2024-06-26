@@ -45,30 +45,8 @@ FieldInputConfig::FieldInputConfig() :
 {
 }
 
-FieldInputConfig::FieldInputConfig(JsonView jsonValue) : 
-    m_typeHasBeenSet(false),
-    m_required(false),
-    m_requiredHasBeenSet(false),
-    m_readOnly(false),
-    m_readOnlyHasBeenSet(false),
-    m_placeholderHasBeenSet(false),
-    m_defaultValueHasBeenSet(false),
-    m_descriptiveTextHasBeenSet(false),
-    m_defaultChecked(false),
-    m_defaultCheckedHasBeenSet(false),
-    m_defaultCountryCodeHasBeenSet(false),
-    m_valueMappingsHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_minValue(0.0),
-    m_minValueHasBeenSet(false),
-    m_maxValue(0.0),
-    m_maxValueHasBeenSet(false),
-    m_step(0.0),
-    m_stepHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_isArray(false),
-    m_isArrayHasBeenSet(false),
-    m_fileUploaderConfigHasBeenSet(false)
+FieldInputConfig::FieldInputConfig(JsonView jsonValue)
+  : FieldInputConfig()
 {
   *this = jsonValue;
 }

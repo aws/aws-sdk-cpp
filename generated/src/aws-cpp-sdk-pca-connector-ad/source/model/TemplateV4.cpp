@@ -32,17 +32,8 @@ TemplateV4::TemplateV4() :
 {
 }
 
-TemplateV4::TemplateV4(JsonView jsonValue) : 
-    m_certificateValidityHasBeenSet(false),
-    m_enrollmentFlagsHasBeenSet(false),
-    m_extensionsHasBeenSet(false),
-    m_generalFlagsHasBeenSet(false),
-    m_hashAlgorithm(HashAlgorithm::NOT_SET),
-    m_hashAlgorithmHasBeenSet(false),
-    m_privateKeyAttributesHasBeenSet(false),
-    m_privateKeyFlagsHasBeenSet(false),
-    m_subjectNameFlagsHasBeenSet(false),
-    m_supersededTemplatesHasBeenSet(false)
+TemplateV4::TemplateV4(JsonView jsonValue)
+  : TemplateV4()
 {
   *this = jsonValue;
 }

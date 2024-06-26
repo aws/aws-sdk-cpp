@@ -36,19 +36,8 @@ TrafficPolicyInstance::TrafficPolicyInstance() :
 {
 }
 
-TrafficPolicyInstance::TrafficPolicyInstance(const XmlNode& xmlNode) : 
-    m_idHasBeenSet(false),
-    m_hostedZoneIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_tTL(0),
-    m_tTLHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_trafficPolicyIdHasBeenSet(false),
-    m_trafficPolicyVersion(0),
-    m_trafficPolicyVersionHasBeenSet(false),
-    m_trafficPolicyType(RRType::NOT_SET),
-    m_trafficPolicyTypeHasBeenSet(false)
+TrafficPolicyInstance::TrafficPolicyInstance(const XmlNode& xmlNode)
+  : TrafficPolicyInstance()
 {
   *this = xmlNode;
 }

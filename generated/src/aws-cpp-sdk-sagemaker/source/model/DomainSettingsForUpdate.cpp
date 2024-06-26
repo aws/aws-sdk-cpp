@@ -27,12 +27,8 @@ DomainSettingsForUpdate::DomainSettingsForUpdate() :
 {
 }
 
-DomainSettingsForUpdate::DomainSettingsForUpdate(JsonView jsonValue) : 
-    m_rStudioServerProDomainSettingsForUpdateHasBeenSet(false),
-    m_executionRoleIdentityConfig(ExecutionRoleIdentityConfig::NOT_SET),
-    m_executionRoleIdentityConfigHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false),
-    m_dockerSettingsHasBeenSet(false)
+DomainSettingsForUpdate::DomainSettingsForUpdate(JsonView jsonValue)
+  : DomainSettingsForUpdate()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ UpdateEventBridgeRuleTemplateResult::UpdateEventBridgeRuleTemplateResult() :
 {
 }
 
-UpdateEventBridgeRuleTemplateResult::UpdateEventBridgeRuleTemplateResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_eventType(EventBridgeRuleTemplateEventType::NOT_SET)
+UpdateEventBridgeRuleTemplateResult::UpdateEventBridgeRuleTemplateResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateEventBridgeRuleTemplateResult()
 {
   *this = result;
 }

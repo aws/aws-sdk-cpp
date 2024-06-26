@@ -34,19 +34,8 @@ AwsBackupBackupPlanRuleDetails::AwsBackupBackupPlanRuleDetails() :
 {
 }
 
-AwsBackupBackupPlanRuleDetails::AwsBackupBackupPlanRuleDetails(JsonView jsonValue) : 
-    m_targetBackupVaultHasBeenSet(false),
-    m_startWindowMinutes(0),
-    m_startWindowMinutesHasBeenSet(false),
-    m_scheduleExpressionHasBeenSet(false),
-    m_ruleNameHasBeenSet(false),
-    m_ruleIdHasBeenSet(false),
-    m_enableContinuousBackup(false),
-    m_enableContinuousBackupHasBeenSet(false),
-    m_completionWindowMinutes(0),
-    m_completionWindowMinutesHasBeenSet(false),
-    m_copyActionsHasBeenSet(false),
-    m_lifecycleHasBeenSet(false)
+AwsBackupBackupPlanRuleDetails::AwsBackupBackupPlanRuleDetails(JsonView jsonValue)
+  : AwsBackupBackupPlanRuleDetails()
 {
   *this = jsonValue;
 }

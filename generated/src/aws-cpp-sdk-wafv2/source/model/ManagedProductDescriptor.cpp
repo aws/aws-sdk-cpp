@@ -33,18 +33,8 @@ ManagedProductDescriptor::ManagedProductDescriptor() :
 {
 }
 
-ManagedProductDescriptor::ManagedProductDescriptor(JsonView jsonValue) : 
-    m_vendorNameHasBeenSet(false),
-    m_managedRuleSetNameHasBeenSet(false),
-    m_productIdHasBeenSet(false),
-    m_productLinkHasBeenSet(false),
-    m_productTitleHasBeenSet(false),
-    m_productDescriptionHasBeenSet(false),
-    m_snsTopicArnHasBeenSet(false),
-    m_isVersioningSupported(false),
-    m_isVersioningSupportedHasBeenSet(false),
-    m_isAdvancedManagedRuleSet(false),
-    m_isAdvancedManagedRuleSetHasBeenSet(false)
+ManagedProductDescriptor::ManagedProductDescriptor(JsonView jsonValue)
+  : ManagedProductDescriptor()
 {
   *this = jsonValue;
 }

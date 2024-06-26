@@ -32,17 +32,8 @@ AssetModelPropertySummary::AssetModelPropertySummary() :
 {
 }
 
-AssetModelPropertySummary::AssetModelPropertySummary(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_dataType(PropertyDataType::NOT_SET),
-    m_dataTypeHasBeenSet(false),
-    m_dataTypeSpecHasBeenSet(false),
-    m_unitHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_assetModelCompositeModelIdHasBeenSet(false),
-    m_pathHasBeenSet(false),
-    m_externalIdHasBeenSet(false)
+AssetModelPropertySummary::AssetModelPropertySummary(JsonView jsonValue)
+  : AssetModelPropertySummary()
 {
   *this = jsonValue;
 }

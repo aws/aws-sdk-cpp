@@ -29,14 +29,8 @@ DatabaseSummary::DatabaseSummary() :
 {
 }
 
-DatabaseSummary::DatabaseSummary(JsonView jsonValue) : 
-    m_applicationIdHasBeenSet(false),
-    m_componentIdHasBeenSet(false),
-    m_databaseIdHasBeenSet(false),
-    m_databaseType(DatabaseType::NOT_SET),
-    m_databaseTypeHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+DatabaseSummary::DatabaseSummary(JsonView jsonValue)
+  : DatabaseSummary()
 {
   *this = jsonValue;
 }

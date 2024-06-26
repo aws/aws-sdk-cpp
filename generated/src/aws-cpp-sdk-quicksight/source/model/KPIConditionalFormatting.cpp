@@ -23,8 +23,8 @@ KPIConditionalFormatting::KPIConditionalFormatting() :
 {
 }
 
-KPIConditionalFormatting::KPIConditionalFormatting(JsonView jsonValue) : 
-    m_conditionalFormattingOptionsHasBeenSet(false)
+KPIConditionalFormatting::KPIConditionalFormatting(JsonView jsonValue)
+  : KPIConditionalFormatting()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ TestStateResult::TestStateResult() :
 {
 }
 
-TestStateResult::TestStateResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(TestExecutionStatus::NOT_SET)
+TestStateResult::TestStateResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : TestStateResult()
 {
   *this = result;
 }

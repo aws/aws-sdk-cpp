@@ -25,10 +25,8 @@ SigningPlatformOverrides::SigningPlatformOverrides() :
 {
 }
 
-SigningPlatformOverrides::SigningPlatformOverrides(JsonView jsonValue) : 
-    m_signingConfigurationHasBeenSet(false),
-    m_signingImageFormat(ImageFormat::NOT_SET),
-    m_signingImageFormatHasBeenSet(false)
+SigningPlatformOverrides::SigningPlatformOverrides(JsonView jsonValue)
+  : SigningPlatformOverrides()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ CustomImage::CustomImage() :
 {
 }
 
-CustomImage::CustomImage(JsonView jsonValue) : 
-    m_imageNameHasBeenSet(false),
-    m_imageVersionNumber(0),
-    m_imageVersionNumberHasBeenSet(false),
-    m_appImageConfigNameHasBeenSet(false)
+CustomImage::CustomImage(JsonView jsonValue)
+  : CustomImage()
 {
   *this = jsonValue;
 }

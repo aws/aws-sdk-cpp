@@ -23,8 +23,8 @@ EcrRepositoryConfiguration::EcrRepositoryConfiguration() :
 {
 }
 
-EcrRepositoryConfiguration::EcrRepositoryConfiguration(JsonView jsonValue) : 
-    m_repositoryPolicyHasBeenSet(false)
+EcrRepositoryConfiguration::EcrRepositoryConfiguration(JsonView jsonValue)
+  : EcrRepositoryConfiguration()
 {
   *this = jsonValue;
 }

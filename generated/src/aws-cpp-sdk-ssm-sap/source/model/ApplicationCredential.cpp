@@ -26,11 +26,8 @@ ApplicationCredential::ApplicationCredential() :
 {
 }
 
-ApplicationCredential::ApplicationCredential(JsonView jsonValue) : 
-    m_databaseNameHasBeenSet(false),
-    m_credentialType(CredentialType::NOT_SET),
-    m_credentialTypeHasBeenSet(false),
-    m_secretIdHasBeenSet(false)
+ApplicationCredential::ApplicationCredential(JsonView jsonValue)
+  : ApplicationCredential()
 {
   *this = jsonValue;
 }

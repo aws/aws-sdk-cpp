@@ -22,8 +22,8 @@ UpdateThingGroupResult::UpdateThingGroupResult() :
 {
 }
 
-UpdateThingGroupResult::UpdateThingGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_version(0)
+UpdateThingGroupResult::UpdateThingGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateThingGroupResult()
 {
   *this = result;
 }

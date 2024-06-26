@@ -22,8 +22,8 @@ GetEnvironmentResult::GetEnvironmentResult() :
 {
 }
 
-GetEnvironmentResult::GetEnvironmentResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(EnvironmentStatus::NOT_SET)
+GetEnvironmentResult::GetEnvironmentResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetEnvironmentResult()
 {
   *this = result;
 }

@@ -24,9 +24,8 @@ StackConfigurationManager::StackConfigurationManager() :
 {
 }
 
-StackConfigurationManager::StackConfigurationManager(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_versionHasBeenSet(false)
+StackConfigurationManager::StackConfigurationManager(JsonView jsonValue)
+  : StackConfigurationManager()
 {
   *this = jsonValue;
 }

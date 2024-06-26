@@ -25,10 +25,8 @@ EncryptionConfiguration::EncryptionConfiguration() :
 {
 }
 
-EncryptionConfiguration::EncryptionConfiguration(JsonView jsonValue) : 
-    m_s3EncryptionHasBeenSet(false),
-    m_cloudWatchEncryptionHasBeenSet(false),
-    m_jobBookmarksEncryptionHasBeenSet(false)
+EncryptionConfiguration::EncryptionConfiguration(JsonView jsonValue)
+  : EncryptionConfiguration()
 {
   *this = jsonValue;
 }

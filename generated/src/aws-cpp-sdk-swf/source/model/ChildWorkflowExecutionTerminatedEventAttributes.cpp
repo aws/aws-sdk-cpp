@@ -28,13 +28,8 @@ ChildWorkflowExecutionTerminatedEventAttributes::ChildWorkflowExecutionTerminate
 {
 }
 
-ChildWorkflowExecutionTerminatedEventAttributes::ChildWorkflowExecutionTerminatedEventAttributes(JsonView jsonValue) : 
-    m_workflowExecutionHasBeenSet(false),
-    m_workflowTypeHasBeenSet(false),
-    m_initiatedEventId(0),
-    m_initiatedEventIdHasBeenSet(false),
-    m_startedEventId(0),
-    m_startedEventIdHasBeenSet(false)
+ChildWorkflowExecutionTerminatedEventAttributes::ChildWorkflowExecutionTerminatedEventAttributes(JsonView jsonValue)
+  : ChildWorkflowExecutionTerminatedEventAttributes()
 {
   *this = jsonValue;
 }

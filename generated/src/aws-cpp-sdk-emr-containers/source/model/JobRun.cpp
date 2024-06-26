@@ -42,27 +42,8 @@ JobRun::JobRun() :
 {
 }
 
-JobRun::JobRun(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_virtualClusterIdHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_state(JobRunState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_clientTokenHasBeenSet(false),
-    m_executionRoleArnHasBeenSet(false),
-    m_releaseLabelHasBeenSet(false),
-    m_configurationOverridesHasBeenSet(false),
-    m_jobDriverHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_finishedAtHasBeenSet(false),
-    m_stateDetailsHasBeenSet(false),
-    m_failureReason(FailureReason::NOT_SET),
-    m_failureReasonHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_retryPolicyConfigurationHasBeenSet(false),
-    m_retryPolicyExecutionHasBeenSet(false)
+JobRun::JobRun(JsonView jsonValue)
+  : JobRun()
 {
   *this = jsonValue;
 }

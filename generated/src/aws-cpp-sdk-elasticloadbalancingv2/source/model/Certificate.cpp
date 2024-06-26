@@ -27,10 +27,8 @@ Certificate::Certificate() :
 {
 }
 
-Certificate::Certificate(const XmlNode& xmlNode) : 
-    m_certificateArnHasBeenSet(false),
-    m_isDefault(false),
-    m_isDefaultHasBeenSet(false)
+Certificate::Certificate(const XmlNode& xmlNode)
+  : Certificate()
 {
   *this = xmlNode;
 }

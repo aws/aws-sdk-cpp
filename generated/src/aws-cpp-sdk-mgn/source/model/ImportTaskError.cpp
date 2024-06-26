@@ -26,11 +26,8 @@ ImportTaskError::ImportTaskError() :
 {
 }
 
-ImportTaskError::ImportTaskError(JsonView jsonValue) : 
-    m_errorDataHasBeenSet(false),
-    m_errorDateTimeHasBeenSet(false),
-    m_errorType(ImportErrorType::NOT_SET),
-    m_errorTypeHasBeenSet(false)
+ImportTaskError::ImportTaskError(JsonView jsonValue)
+  : ImportTaskError()
 {
   *this = jsonValue;
 }

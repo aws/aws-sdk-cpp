@@ -25,10 +25,8 @@ ContainerDependency::ContainerDependency() :
 {
 }
 
-ContainerDependency::ContainerDependency(JsonView jsonValue) : 
-    m_containerNameHasBeenSet(false),
-    m_condition(ContainerCondition::NOT_SET),
-    m_conditionHasBeenSet(false)
+ContainerDependency::ContainerDependency(JsonView jsonValue)
+  : ContainerDependency()
 {
   *this = jsonValue;
 }

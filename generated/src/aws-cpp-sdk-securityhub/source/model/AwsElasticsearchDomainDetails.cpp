@@ -35,20 +35,8 @@ AwsElasticsearchDomainDetails::AwsElasticsearchDomainDetails() :
 {
 }
 
-AwsElasticsearchDomainDetails::AwsElasticsearchDomainDetails(JsonView jsonValue) : 
-    m_accessPoliciesHasBeenSet(false),
-    m_domainEndpointOptionsHasBeenSet(false),
-    m_domainIdHasBeenSet(false),
-    m_domainNameHasBeenSet(false),
-    m_endpointHasBeenSet(false),
-    m_endpointsHasBeenSet(false),
-    m_elasticsearchVersionHasBeenSet(false),
-    m_elasticsearchClusterConfigHasBeenSet(false),
-    m_encryptionAtRestOptionsHasBeenSet(false),
-    m_logPublishingOptionsHasBeenSet(false),
-    m_nodeToNodeEncryptionOptionsHasBeenSet(false),
-    m_serviceSoftwareOptionsHasBeenSet(false),
-    m_vPCOptionsHasBeenSet(false)
+AwsElasticsearchDomainDetails::AwsElasticsearchDomainDetails(JsonView jsonValue)
+  : AwsElasticsearchDomainDetails()
 {
   *this = jsonValue;
 }

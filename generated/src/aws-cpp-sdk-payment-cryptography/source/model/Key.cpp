@@ -40,25 +40,8 @@ Key::Key() :
 {
 }
 
-Key::Key(JsonView jsonValue) : 
-    m_keyArnHasBeenSet(false),
-    m_keyAttributesHasBeenSet(false),
-    m_keyCheckValueHasBeenSet(false),
-    m_keyCheckValueAlgorithm(KeyCheckValueAlgorithm::NOT_SET),
-    m_keyCheckValueAlgorithmHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_exportable(false),
-    m_exportableHasBeenSet(false),
-    m_keyState(KeyState::NOT_SET),
-    m_keyStateHasBeenSet(false),
-    m_keyOrigin(KeyOrigin::NOT_SET),
-    m_keyOriginHasBeenSet(false),
-    m_createTimestampHasBeenSet(false),
-    m_usageStartTimestampHasBeenSet(false),
-    m_usageStopTimestampHasBeenSet(false),
-    m_deletePendingTimestampHasBeenSet(false),
-    m_deleteTimestampHasBeenSet(false)
+Key::Key(JsonView jsonValue)
+  : Key()
 {
   *this = jsonValue;
 }

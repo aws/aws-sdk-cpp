@@ -25,10 +25,8 @@ ArchiveOutputSettings::ArchiveOutputSettings() :
 {
 }
 
-ArchiveOutputSettings::ArchiveOutputSettings(JsonView jsonValue) : 
-    m_containerSettingsHasBeenSet(false),
-    m_extensionHasBeenSet(false),
-    m_nameModifierHasBeenSet(false)
+ArchiveOutputSettings::ArchiveOutputSettings(JsonView jsonValue)
+  : ArchiveOutputSettings()
 {
   *this = jsonValue;
 }

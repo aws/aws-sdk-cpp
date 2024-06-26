@@ -35,20 +35,8 @@ AuditFinding::AuditFinding() :
 {
 }
 
-AuditFinding::AuditFinding(JsonView jsonValue) : 
-    m_findingIdHasBeenSet(false),
-    m_taskIdHasBeenSet(false),
-    m_checkNameHasBeenSet(false),
-    m_taskStartTimeHasBeenSet(false),
-    m_findingTimeHasBeenSet(false),
-    m_severity(AuditFindingSeverity::NOT_SET),
-    m_severityHasBeenSet(false),
-    m_nonCompliantResourceHasBeenSet(false),
-    m_relatedResourcesHasBeenSet(false),
-    m_reasonForNonComplianceHasBeenSet(false),
-    m_reasonForNonComplianceCodeHasBeenSet(false),
-    m_isSuppressed(false),
-    m_isSuppressedHasBeenSet(false)
+AuditFinding::AuditFinding(JsonView jsonValue)
+  : AuditFinding()
 {
   *this = jsonValue;
 }

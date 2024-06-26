@@ -27,10 +27,8 @@ ClusterAssociatedToSchedule::ClusterAssociatedToSchedule() :
 {
 }
 
-ClusterAssociatedToSchedule::ClusterAssociatedToSchedule(const XmlNode& xmlNode) : 
-    m_clusterIdentifierHasBeenSet(false),
-    m_scheduleAssociationState(ScheduleState::NOT_SET),
-    m_scheduleAssociationStateHasBeenSet(false)
+ClusterAssociatedToSchedule::ClusterAssociatedToSchedule(const XmlNode& xmlNode)
+  : ClusterAssociatedToSchedule()
 {
   *this = xmlNode;
 }

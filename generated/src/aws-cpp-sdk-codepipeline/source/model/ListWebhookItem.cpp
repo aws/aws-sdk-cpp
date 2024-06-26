@@ -29,14 +29,8 @@ ListWebhookItem::ListWebhookItem() :
 {
 }
 
-ListWebhookItem::ListWebhookItem(JsonView jsonValue) : 
-    m_definitionHasBeenSet(false),
-    m_urlHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_errorCodeHasBeenSet(false),
-    m_lastTriggeredHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+ListWebhookItem::ListWebhookItem(JsonView jsonValue)
+  : ListWebhookItem()
 {
   *this = jsonValue;
 }

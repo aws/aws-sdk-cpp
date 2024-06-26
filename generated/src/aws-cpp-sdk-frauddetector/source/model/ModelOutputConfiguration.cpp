@@ -26,11 +26,8 @@ ModelOutputConfiguration::ModelOutputConfiguration() :
 {
 }
 
-ModelOutputConfiguration::ModelOutputConfiguration(JsonView jsonValue) : 
-    m_format(ModelOutputDataFormat::NOT_SET),
-    m_formatHasBeenSet(false),
-    m_jsonKeyToVariableMapHasBeenSet(false),
-    m_csvIndexToVariableMapHasBeenSet(false)
+ModelOutputConfiguration::ModelOutputConfiguration(JsonView jsonValue)
+  : ModelOutputConfiguration()
 {
   *this = jsonValue;
 }

@@ -54,37 +54,8 @@ ReservedInstances::ReservedInstances() :
 {
 }
 
-ReservedInstances::ReservedInstances(const XmlNode& xmlNode) : 
-    m_availabilityZoneHasBeenSet(false),
-    m_duration(0),
-    m_durationHasBeenSet(false),
-    m_endHasBeenSet(false),
-    m_fixedPrice(0.0),
-    m_fixedPriceHasBeenSet(false),
-    m_instanceCount(0),
-    m_instanceCountHasBeenSet(false),
-    m_instanceType(InstanceType::NOT_SET),
-    m_instanceTypeHasBeenSet(false),
-    m_productDescription(RIProductDescription::NOT_SET),
-    m_productDescriptionHasBeenSet(false),
-    m_reservedInstancesIdHasBeenSet(false),
-    m_startHasBeenSet(false),
-    m_state(ReservedInstanceState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_usagePrice(0.0),
-    m_usagePriceHasBeenSet(false),
-    m_currencyCode(CurrencyCodeValues::NOT_SET),
-    m_currencyCodeHasBeenSet(false),
-    m_instanceTenancy(Tenancy::NOT_SET),
-    m_instanceTenancyHasBeenSet(false),
-    m_offeringClass(OfferingClassType::NOT_SET),
-    m_offeringClassHasBeenSet(false),
-    m_offeringType(OfferingTypeValues::NOT_SET),
-    m_offeringTypeHasBeenSet(false),
-    m_recurringChargesHasBeenSet(false),
-    m_scope(Scope::NOT_SET),
-    m_scopeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+ReservedInstances::ReservedInstances(const XmlNode& xmlNode)
+  : ReservedInstances()
 {
   *this = xmlNode;
 }

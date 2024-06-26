@@ -22,8 +22,8 @@ MoveAddressToVpcResponse::MoveAddressToVpcResponse() :
 {
 }
 
-MoveAddressToVpcResponse::MoveAddressToVpcResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_status(Status::NOT_SET)
+MoveAddressToVpcResponse::MoveAddressToVpcResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : MoveAddressToVpcResponse()
 {
   *this = result;
 }

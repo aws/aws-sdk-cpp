@@ -26,11 +26,8 @@ DateTimeFilterExpression::DateTimeFilterExpression() :
 {
 }
 
-DateTimeFilterExpression::DateTimeFilterExpression(JsonView jsonValue) : 
-    m_dateTimeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_operator(ComparisonOperator::NOT_SET),
-    m_operatorHasBeenSet(false)
+DateTimeFilterExpression::DateTimeFilterExpression(JsonView jsonValue)
+  : DateTimeFilterExpression()
 {
   *this = jsonValue;
 }

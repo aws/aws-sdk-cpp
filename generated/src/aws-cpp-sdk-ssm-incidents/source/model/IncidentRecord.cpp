@@ -38,23 +38,8 @@ IncidentRecord::IncidentRecord() :
 {
 }
 
-IncidentRecord::IncidentRecord(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_automationExecutionsHasBeenSet(false),
-    m_chatChannelHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_dedupeStringHasBeenSet(false),
-    m_impact(0),
-    m_impactHasBeenSet(false),
-    m_incidentRecordSourceHasBeenSet(false),
-    m_lastModifiedByHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_notificationTargetsHasBeenSet(false),
-    m_resolvedTimeHasBeenSet(false),
-    m_status(IncidentRecordStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_summaryHasBeenSet(false),
-    m_titleHasBeenSet(false)
+IncidentRecord::IncidentRecord(JsonView jsonValue)
+  : IncidentRecord()
 {
   *this = jsonValue;
 }

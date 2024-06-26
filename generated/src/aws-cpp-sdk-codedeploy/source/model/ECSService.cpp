@@ -24,9 +24,8 @@ ECSService::ECSService() :
 {
 }
 
-ECSService::ECSService(JsonView jsonValue) : 
-    m_serviceNameHasBeenSet(false),
-    m_clusterNameHasBeenSet(false)
+ECSService::ECSService(JsonView jsonValue)
+  : ECSService()
 {
   *this = jsonValue;
 }

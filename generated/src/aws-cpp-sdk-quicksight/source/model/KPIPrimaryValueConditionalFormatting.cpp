@@ -24,9 +24,8 @@ KPIPrimaryValueConditionalFormatting::KPIPrimaryValueConditionalFormatting() :
 {
 }
 
-KPIPrimaryValueConditionalFormatting::KPIPrimaryValueConditionalFormatting(JsonView jsonValue) : 
-    m_textColorHasBeenSet(false),
-    m_iconHasBeenSet(false)
+KPIPrimaryValueConditionalFormatting::KPIPrimaryValueConditionalFormatting(JsonView jsonValue)
+  : KPIPrimaryValueConditionalFormatting()
 {
   *this = jsonValue;
 }

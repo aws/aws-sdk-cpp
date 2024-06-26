@@ -22,8 +22,8 @@ DescribeLabelingJobResult::DescribeLabelingJobResult() :
 {
 }
 
-DescribeLabelingJobResult::DescribeLabelingJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_labelingJobStatus(LabelingJobStatus::NOT_SET)
+DescribeLabelingJobResult::DescribeLabelingJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeLabelingJobResult()
 {
   *this = result;
 }

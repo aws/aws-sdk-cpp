@@ -24,9 +24,8 @@ DownloadUrlMetadata::DownloadUrlMetadata() :
 {
 }
 
-DownloadUrlMetadata::DownloadUrlMetadata(JsonView jsonValue) : 
-    m_urlHasBeenSet(false),
-    m_urlExpiryHasBeenSet(false)
+DownloadUrlMetadata::DownloadUrlMetadata(JsonView jsonValue)
+  : DownloadUrlMetadata()
 {
   *this = jsonValue;
 }

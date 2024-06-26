@@ -26,11 +26,8 @@ FailurePolicy::FailurePolicy() :
 {
 }
 
-FailurePolicy::FailurePolicy(JsonView jsonValue) : 
-    m_rpoInSecs(0),
-    m_rpoInSecsHasBeenSet(false),
-    m_rtoInSecs(0),
-    m_rtoInSecsHasBeenSet(false)
+FailurePolicy::FailurePolicy(JsonView jsonValue)
+  : FailurePolicy()
 {
   *this = jsonValue;
 }

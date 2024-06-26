@@ -33,18 +33,8 @@ AutoMLJobSummary::AutoMLJobSummary() :
 {
 }
 
-AutoMLJobSummary::AutoMLJobSummary(JsonView jsonValue) : 
-    m_autoMLJobNameHasBeenSet(false),
-    m_autoMLJobArnHasBeenSet(false),
-    m_autoMLJobStatus(AutoMLJobStatus::NOT_SET),
-    m_autoMLJobStatusHasBeenSet(false),
-    m_autoMLJobSecondaryStatus(AutoMLJobSecondaryStatus::NOT_SET),
-    m_autoMLJobSecondaryStatusHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_failureReasonHasBeenSet(false),
-    m_partialFailureReasonsHasBeenSet(false)
+AutoMLJobSummary::AutoMLJobSummary(JsonView jsonValue)
+  : AutoMLJobSummary()
 {
   *this = jsonValue;
 }

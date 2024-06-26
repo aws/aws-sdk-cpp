@@ -23,9 +23,8 @@ GetDomainMaintenanceStatusResult::GetDomainMaintenanceStatusResult() :
 {
 }
 
-GetDomainMaintenanceStatusResult::GetDomainMaintenanceStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(MaintenanceStatus::NOT_SET),
-    m_action(MaintenanceType::NOT_SET)
+GetDomainMaintenanceStatusResult::GetDomainMaintenanceStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetDomainMaintenanceStatusResult()
 {
   *this = result;
 }

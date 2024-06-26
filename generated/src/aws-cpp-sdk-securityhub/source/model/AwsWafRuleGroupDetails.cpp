@@ -26,11 +26,8 @@ AwsWafRuleGroupDetails::AwsWafRuleGroupDetails() :
 {
 }
 
-AwsWafRuleGroupDetails::AwsWafRuleGroupDetails(JsonView jsonValue) : 
-    m_metricNameHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_ruleGroupIdHasBeenSet(false),
-    m_rulesHasBeenSet(false)
+AwsWafRuleGroupDetails::AwsWafRuleGroupDetails(JsonView jsonValue)
+  : AwsWafRuleGroupDetails()
 {
   *this = jsonValue;
 }

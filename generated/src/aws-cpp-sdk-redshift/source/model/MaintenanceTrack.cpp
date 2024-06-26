@@ -27,10 +27,8 @@ MaintenanceTrack::MaintenanceTrack() :
 {
 }
 
-MaintenanceTrack::MaintenanceTrack(const XmlNode& xmlNode) : 
-    m_maintenanceTrackNameHasBeenSet(false),
-    m_databaseVersionHasBeenSet(false),
-    m_updateTargetsHasBeenSet(false)
+MaintenanceTrack::MaintenanceTrack(const XmlNode& xmlNode)
+  : MaintenanceTrack()
 {
   *this = xmlNode;
 }

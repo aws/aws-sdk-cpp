@@ -36,21 +36,8 @@ ModelDashboardModelCard::ModelDashboardModelCard() :
 {
 }
 
-ModelDashboardModelCard::ModelDashboardModelCard(JsonView jsonValue) : 
-    m_modelCardArnHasBeenSet(false),
-    m_modelCardNameHasBeenSet(false),
-    m_modelCardVersion(0),
-    m_modelCardVersionHasBeenSet(false),
-    m_modelCardStatus(ModelCardStatus::NOT_SET),
-    m_modelCardStatusHasBeenSet(false),
-    m_securityConfigHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_lastModifiedByHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_modelIdHasBeenSet(false),
-    m_riskRatingHasBeenSet(false)
+ModelDashboardModelCard::ModelDashboardModelCard(JsonView jsonValue)
+  : ModelDashboardModelCard()
 {
   *this = jsonValue;
 }

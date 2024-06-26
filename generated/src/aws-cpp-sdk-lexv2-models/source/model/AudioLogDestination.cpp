@@ -23,8 +23,8 @@ AudioLogDestination::AudioLogDestination() :
 {
 }
 
-AudioLogDestination::AudioLogDestination(JsonView jsonValue) : 
-    m_s3BucketHasBeenSet(false)
+AudioLogDestination::AudioLogDestination(JsonView jsonValue)
+  : AudioLogDestination()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ AmplitudeConnectorProfileCredentials::AmplitudeConnectorProfileCredentials() :
 {
 }
 
-AmplitudeConnectorProfileCredentials::AmplitudeConnectorProfileCredentials(JsonView jsonValue) : 
-    m_apiKeyHasBeenSet(false),
-    m_secretKeyHasBeenSet(false)
+AmplitudeConnectorProfileCredentials::AmplitudeConnectorProfileCredentials(JsonView jsonValue)
+  : AmplitudeConnectorProfileCredentials()
 {
   *this = jsonValue;
 }

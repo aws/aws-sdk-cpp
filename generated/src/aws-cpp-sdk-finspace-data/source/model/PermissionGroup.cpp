@@ -32,17 +32,8 @@ PermissionGroup::PermissionGroup() :
 {
 }
 
-PermissionGroup::PermissionGroup(JsonView jsonValue) : 
-    m_permissionGroupIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_applicationPermissionsHasBeenSet(false),
-    m_createTime(0),
-    m_createTimeHasBeenSet(false),
-    m_lastModifiedTime(0),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_membershipStatus(PermissionGroupMembershipStatus::NOT_SET),
-    m_membershipStatusHasBeenSet(false)
+PermissionGroup::PermissionGroup(JsonView jsonValue)
+  : PermissionGroup()
 {
   *this = jsonValue;
 }

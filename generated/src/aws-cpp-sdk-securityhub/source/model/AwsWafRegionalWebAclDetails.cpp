@@ -27,12 +27,8 @@ AwsWafRegionalWebAclDetails::AwsWafRegionalWebAclDetails() :
 {
 }
 
-AwsWafRegionalWebAclDetails::AwsWafRegionalWebAclDetails(JsonView jsonValue) : 
-    m_defaultActionHasBeenSet(false),
-    m_metricNameHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_rulesListHasBeenSet(false),
-    m_webAclIdHasBeenSet(false)
+AwsWafRegionalWebAclDetails::AwsWafRegionalWebAclDetails(JsonView jsonValue)
+  : AwsWafRegionalWebAclDetails()
 {
   *this = jsonValue;
 }

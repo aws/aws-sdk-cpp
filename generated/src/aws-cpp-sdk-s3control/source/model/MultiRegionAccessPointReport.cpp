@@ -31,14 +31,8 @@ MultiRegionAccessPointReport::MultiRegionAccessPointReport() :
 {
 }
 
-MultiRegionAccessPointReport::MultiRegionAccessPointReport(const XmlNode& xmlNode) : 
-    m_nameHasBeenSet(false),
-    m_aliasHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_publicAccessBlockHasBeenSet(false),
-    m_status(MultiRegionAccessPointStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_regionsHasBeenSet(false)
+MultiRegionAccessPointReport::MultiRegionAccessPointReport(const XmlNode& xmlNode)
+  : MultiRegionAccessPointReport()
 {
   *this = xmlNode;
 }

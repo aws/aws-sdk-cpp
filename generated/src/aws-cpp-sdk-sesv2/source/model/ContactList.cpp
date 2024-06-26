@@ -24,9 +24,8 @@ ContactList::ContactList() :
 {
 }
 
-ContactList::ContactList(JsonView jsonValue) : 
-    m_contactListNameHasBeenSet(false),
-    m_lastUpdatedTimestampHasBeenSet(false)
+ContactList::ContactList(JsonView jsonValue)
+  : ContactList()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ AssetBundleExportJobVPCConnectionOverrideProperties::AssetBundleExportJobVPCConn
 {
 }
 
-AssetBundleExportJobVPCConnectionOverrideProperties::AssetBundleExportJobVPCConnectionOverrideProperties(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_propertiesHasBeenSet(false)
+AssetBundleExportJobVPCConnectionOverrideProperties::AssetBundleExportJobVPCConnectionOverrideProperties(JsonView jsonValue)
+  : AssetBundleExportJobVPCConnectionOverrideProperties()
 {
   *this = jsonValue;
 }

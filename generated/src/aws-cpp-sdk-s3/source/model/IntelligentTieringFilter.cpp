@@ -27,10 +27,8 @@ IntelligentTieringFilter::IntelligentTieringFilter() :
 {
 }
 
-IntelligentTieringFilter::IntelligentTieringFilter(const XmlNode& xmlNode) : 
-    m_prefixHasBeenSet(false),
-    m_tagHasBeenSet(false),
-    m_andHasBeenSet(false)
+IntelligentTieringFilter::IntelligentTieringFilter(const XmlNode& xmlNode)
+  : IntelligentTieringFilter()
 {
   *this = xmlNode;
 }

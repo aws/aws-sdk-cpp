@@ -24,9 +24,8 @@ DataPathType::DataPathType() :
 {
 }
 
-DataPathType::DataPathType(JsonView jsonValue) : 
-    m_pivotTableDataPathType(PivotTableDataPathType::NOT_SET),
-    m_pivotTableDataPathTypeHasBeenSet(false)
+DataPathType::DataPathType(JsonView jsonValue)
+  : DataPathType()
 {
   *this = jsonValue;
 }

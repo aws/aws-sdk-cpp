@@ -24,9 +24,8 @@ DataQualityJobInput::DataQualityJobInput() :
 {
 }
 
-DataQualityJobInput::DataQualityJobInput(JsonView jsonValue) : 
-    m_endpointInputHasBeenSet(false),
-    m_batchTransformInputHasBeenSet(false)
+DataQualityJobInput::DataQualityJobInput(JsonView jsonValue)
+  : DataQualityJobInput()
 {
   *this = jsonValue;
 }

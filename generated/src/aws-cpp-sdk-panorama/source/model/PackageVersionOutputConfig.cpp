@@ -26,11 +26,8 @@ PackageVersionOutputConfig::PackageVersionOutputConfig() :
 {
 }
 
-PackageVersionOutputConfig::PackageVersionOutputConfig(JsonView jsonValue) : 
-    m_markLatest(false),
-    m_markLatestHasBeenSet(false),
-    m_packageNameHasBeenSet(false),
-    m_packageVersionHasBeenSet(false)
+PackageVersionOutputConfig::PackageVersionOutputConfig(JsonView jsonValue)
+  : PackageVersionOutputConfig()
 {
   *this = jsonValue;
 }

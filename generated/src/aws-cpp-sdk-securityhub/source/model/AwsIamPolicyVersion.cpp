@@ -26,11 +26,8 @@ AwsIamPolicyVersion::AwsIamPolicyVersion() :
 {
 }
 
-AwsIamPolicyVersion::AwsIamPolicyVersion(JsonView jsonValue) : 
-    m_versionIdHasBeenSet(false),
-    m_isDefaultVersion(false),
-    m_isDefaultVersionHasBeenSet(false),
-    m_createDateHasBeenSet(false)
+AwsIamPolicyVersion::AwsIamPolicyVersion(JsonView jsonValue)
+  : AwsIamPolicyVersion()
 {
   *this = jsonValue;
 }

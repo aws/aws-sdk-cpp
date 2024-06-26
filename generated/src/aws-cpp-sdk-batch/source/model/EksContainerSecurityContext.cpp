@@ -34,19 +34,8 @@ EksContainerSecurityContext::EksContainerSecurityContext() :
 {
 }
 
-EksContainerSecurityContext::EksContainerSecurityContext(JsonView jsonValue) : 
-    m_runAsUser(0),
-    m_runAsUserHasBeenSet(false),
-    m_runAsGroup(0),
-    m_runAsGroupHasBeenSet(false),
-    m_privileged(false),
-    m_privilegedHasBeenSet(false),
-    m_allowPrivilegeEscalation(false),
-    m_allowPrivilegeEscalationHasBeenSet(false),
-    m_readOnlyRootFilesystem(false),
-    m_readOnlyRootFilesystemHasBeenSet(false),
-    m_runAsNonRoot(false),
-    m_runAsNonRootHasBeenSet(false)
+EksContainerSecurityContext::EksContainerSecurityContext(JsonView jsonValue)
+  : EksContainerSecurityContext()
 {
   *this = jsonValue;
 }

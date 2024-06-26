@@ -25,8 +25,8 @@ ImportImageLicenseConfigurationRequest::ImportImageLicenseConfigurationRequest()
 {
 }
 
-ImportImageLicenseConfigurationRequest::ImportImageLicenseConfigurationRequest(const XmlNode& xmlNode) : 
-    m_licenseConfigurationArnHasBeenSet(false)
+ImportImageLicenseConfigurationRequest::ImportImageLicenseConfigurationRequest(const XmlNode& xmlNode)
+  : ImportImageLicenseConfigurationRequest()
 {
   *this = xmlNode;
 }

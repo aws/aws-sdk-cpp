@@ -42,8 +42,8 @@ GetSolNetworkPackageDescriptorResult& GetSolNetworkPackageDescriptorResult::oper
    return *this;
 }
 
-GetSolNetworkPackageDescriptorResult::GetSolNetworkPackageDescriptorResult(Aws::AmazonWebServiceResult<ResponseStream>&& result) : 
-    m_contentType(DescriptorContentType::NOT_SET)
+GetSolNetworkPackageDescriptorResult::GetSolNetworkPackageDescriptorResult(Aws::AmazonWebServiceResult<ResponseStream>&& result)
+  : GetSolNetworkPackageDescriptorResult()
 {
   *this = std::move(result);
 }

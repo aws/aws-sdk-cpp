@@ -23,8 +23,8 @@ LifeCycleLastCutoverReverted::LifeCycleLastCutoverReverted() :
 {
 }
 
-LifeCycleLastCutoverReverted::LifeCycleLastCutoverReverted(JsonView jsonValue) : 
-    m_apiCallDateTimeHasBeenSet(false)
+LifeCycleLastCutoverReverted::LifeCycleLastCutoverReverted(JsonView jsonValue)
+  : LifeCycleLastCutoverReverted()
 {
   *this = jsonValue;
 }
