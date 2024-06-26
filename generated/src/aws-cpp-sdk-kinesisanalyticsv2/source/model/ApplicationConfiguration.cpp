@@ -24,6 +24,7 @@ ApplicationConfiguration::ApplicationConfiguration() :
     m_environmentPropertiesHasBeenSet(false),
     m_applicationCodeConfigurationHasBeenSet(false),
     m_applicationSnapshotConfigurationHasBeenSet(false),
+    m_applicationSystemRollbackConfigurationHasBeenSet(false),
     m_vpcConfigurationsHasBeenSet(false),
     m_zeppelinApplicationConfigurationHasBeenSet(false)
 {
@@ -35,6 +36,7 @@ ApplicationConfiguration::ApplicationConfiguration(JsonView jsonValue) :
     m_environmentPropertiesHasBeenSet(false),
     m_applicationCodeConfigurationHasBeenSet(false),
     m_applicationSnapshotConfigurationHasBeenSet(false),
+    m_applicationSystemRollbackConfigurationHasBeenSet(false),
     m_vpcConfigurationsHasBeenSet(false),
     m_zeppelinApplicationConfigurationHasBeenSet(false)
 {
@@ -76,6 +78,13 @@ ApplicationConfiguration& ApplicationConfiguration::operator =(JsonView jsonValu
     m_applicationSnapshotConfiguration = jsonValue.GetObject("ApplicationSnapshotConfiguration");
 
     m_applicationSnapshotConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ApplicationSystemRollbackConfiguration"))
+  {
+    m_applicationSystemRollbackConfiguration = jsonValue.GetObject("ApplicationSystemRollbackConfiguration");
+
+    m_applicationSystemRollbackConfigurationHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("VpcConfigurations"))
@@ -129,6 +138,12 @@ JsonValue ApplicationConfiguration::Jsonize() const
   if(m_applicationSnapshotConfigurationHasBeenSet)
   {
    payload.WithObject("ApplicationSnapshotConfiguration", m_applicationSnapshotConfiguration.Jsonize());
+
+  }
+
+  if(m_applicationSystemRollbackConfigurationHasBeenSet)
+  {
+   payload.WithObject("ApplicationSystemRollbackConfiguration", m_applicationSystemRollbackConfiguration.Jsonize());
 
   }
 

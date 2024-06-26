@@ -35,7 +35,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>An input filter for the <code>ListCEnabledControls</code> API that lets you
+     * <p>An input filter for the <code>ListEnabledControls</code> API that lets you
      * select the types of control operations to view.</p>
      */
     inline const EnabledControlFilter& GetFilter() const{ return m_filter; }

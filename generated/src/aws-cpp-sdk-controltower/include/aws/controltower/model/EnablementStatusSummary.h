@@ -25,7 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>The deployment summary of the enabled control.</p><p><h3>See Also:</h3>   <a
+   * <p>The deployment summary of an <code>EnabledControl</code> or
+   * <code>EnabledBaseline</code> resource.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/EnablementStatusSummary">AWS
    * API Reference</a></p>
    */
@@ -40,7 +41,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The last operation identifier for the enabled control.</p>
+     * <p>The last operation identifier for the enabled resource.</p>
      */
     inline const Aws::String& GetLastOperationIdentifier() const{ return m_lastOperationIdentifier; }
     inline bool LastOperationIdentifierHasBeenSet() const { return m_lastOperationIdentifierHasBeenSet; }
@@ -54,12 +55,13 @@ namespace Model
 
     ///@{
     /**
-     * <p> The deployment status of the enabled control.</p> <p>Valid values:</p> <ul>
-     * <li> <p> <code>SUCCEEDED</code>: The <code>enabledControl</code> configuration
-     * was deployed successfully.</p> </li> <li> <p> <code>UNDER_CHANGE</code>: The
-     * <code>enabledControl</code> configuration is changing. </p> </li> <li> <p>
-     * <code>FAILED</code>: The <code>enabledControl</code> configuration failed to
-     * deploy.</p> </li> </ul>
+     * <p> The deployment status of the enabled resource.</p> <p>Valid values:</p> <ul>
+     * <li> <p> <code>SUCCEEDED</code>: The <code>EnabledControl</code> or
+     * <code>EnabledBaseline</code> configuration was deployed successfully.</p> </li>
+     * <li> <p> <code>UNDER_CHANGE</code>: The <code>EnabledControl</code> or
+     * <code>EnabledBaseline</code> configuration is changing. </p> </li> <li> <p>
+     * <code>FAILED</code>: The <code>EnabledControl</code> or
+     * <code>EnabledBaseline</code> configuration failed to deploy.</p> </li> </ul>
      */
     inline const EnablementStatus& GetStatus() const{ return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }

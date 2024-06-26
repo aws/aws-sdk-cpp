@@ -6,9 +6,9 @@
 #pragma once
 #include <aws/controltower/ControlTower_EXPORTS.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/controltower/model/LandingZoneOperationType.h>
 #include <aws/controltower/model/LandingZoneOperationStatus.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -50,6 +50,20 @@ namespace Model
     inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
     inline LandingZoneOperationDetail& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
     inline LandingZoneOperationDetail& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The <code>operationIdentifier</code> of the landing zone operation.</p>
+     */
+    inline const Aws::String& GetOperationIdentifier() const{ return m_operationIdentifier; }
+    inline bool OperationIdentifierHasBeenSet() const { return m_operationIdentifierHasBeenSet; }
+    inline void SetOperationIdentifier(const Aws::String& value) { m_operationIdentifierHasBeenSet = true; m_operationIdentifier = value; }
+    inline void SetOperationIdentifier(Aws::String&& value) { m_operationIdentifierHasBeenSet = true; m_operationIdentifier = std::move(value); }
+    inline void SetOperationIdentifier(const char* value) { m_operationIdentifierHasBeenSet = true; m_operationIdentifier.assign(value); }
+    inline LandingZoneOperationDetail& WithOperationIdentifier(const Aws::String& value) { SetOperationIdentifier(value); return *this;}
+    inline LandingZoneOperationDetail& WithOperationIdentifier(Aws::String&& value) { SetOperationIdentifier(std::move(value)); return *this;}
+    inline LandingZoneOperationDetail& WithOperationIdentifier(const char* value) { SetOperationIdentifier(value); return *this;}
     ///@}
 
     ///@{
@@ -114,6 +128,9 @@ namespace Model
 
     Aws::Utils::DateTime m_endTime;
     bool m_endTimeHasBeenSet = false;
+
+    Aws::String m_operationIdentifier;
+    bool m_operationIdentifierHasBeenSet = false;
 
     LandingZoneOperationType m_operationType;
     bool m_operationTypeHasBeenSet = false;

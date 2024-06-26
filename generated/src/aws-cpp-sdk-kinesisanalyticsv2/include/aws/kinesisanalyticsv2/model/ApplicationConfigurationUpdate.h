@@ -10,6 +10,7 @@
 #include <aws/kinesisanalyticsv2/model/FlinkApplicationConfigurationUpdate.h>
 #include <aws/kinesisanalyticsv2/model/EnvironmentPropertyUpdates.h>
 #include <aws/kinesisanalyticsv2/model/ApplicationSnapshotConfigurationUpdate.h>
+#include <aws/kinesisanalyticsv2/model/ApplicationSystemRollbackConfigurationUpdate.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/kinesisanalyticsv2/model/ZeppelinApplicationConfigurationUpdate.h>
 #include <aws/kinesisanalyticsv2/model/VpcConfigurationUpdate.h>
@@ -110,6 +111,16 @@ namespace Model
     ///@}
 
     ///@{
+    
+    inline const ApplicationSystemRollbackConfigurationUpdate& GetApplicationSystemRollbackConfigurationUpdate() const{ return m_applicationSystemRollbackConfigurationUpdate; }
+    inline bool ApplicationSystemRollbackConfigurationUpdateHasBeenSet() const { return m_applicationSystemRollbackConfigurationUpdateHasBeenSet; }
+    inline void SetApplicationSystemRollbackConfigurationUpdate(const ApplicationSystemRollbackConfigurationUpdate& value) { m_applicationSystemRollbackConfigurationUpdateHasBeenSet = true; m_applicationSystemRollbackConfigurationUpdate = value; }
+    inline void SetApplicationSystemRollbackConfigurationUpdate(ApplicationSystemRollbackConfigurationUpdate&& value) { m_applicationSystemRollbackConfigurationUpdateHasBeenSet = true; m_applicationSystemRollbackConfigurationUpdate = std::move(value); }
+    inline ApplicationConfigurationUpdate& WithApplicationSystemRollbackConfigurationUpdate(const ApplicationSystemRollbackConfigurationUpdate& value) { SetApplicationSystemRollbackConfigurationUpdate(value); return *this;}
+    inline ApplicationConfigurationUpdate& WithApplicationSystemRollbackConfigurationUpdate(ApplicationSystemRollbackConfigurationUpdate&& value) { SetApplicationSystemRollbackConfigurationUpdate(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
     /**
      * <p>Updates to the array of descriptions of VPC configurations available to the
      * application.</p>
@@ -152,6 +163,9 @@ namespace Model
 
     ApplicationSnapshotConfigurationUpdate m_applicationSnapshotConfigurationUpdate;
     bool m_applicationSnapshotConfigurationUpdateHasBeenSet = false;
+
+    ApplicationSystemRollbackConfigurationUpdate m_applicationSystemRollbackConfigurationUpdate;
+    bool m_applicationSystemRollbackConfigurationUpdateHasBeenSet = false;
 
     Aws::Vector<VpcConfigurationUpdate> m_vpcConfigurationUpdates;
     bool m_vpcConfigurationUpdatesHasBeenSet = false;

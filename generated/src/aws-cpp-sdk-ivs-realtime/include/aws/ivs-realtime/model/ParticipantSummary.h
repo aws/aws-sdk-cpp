@@ -110,7 +110,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Participant’s recording state.</p>
+     * <p>The participant’s recording state.</p>
      */
     inline const ParticipantRecordingState& GetRecordingState() const{ return m_recordingState; }
     inline bool RecordingStateHasBeenSet() const { return m_recordingStateHasBeenSet; }

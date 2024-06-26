@@ -1,0 +1,85 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/controltower/ControlTower_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/controltower/model/LandingZoneOperationSummary.h>
+#include <utility>
+
+namespace Aws
+{
+template<typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils
+{
+namespace Json
+{
+  class JsonValue;
+} // namespace Json
+} // namespace Utils
+namespace ControlTower
+{
+namespace Model
+{
+  class ListLandingZoneOperationsResult
+  {
+  public:
+    AWS_CONTROLTOWER_API ListLandingZoneOperationsResult();
+    AWS_CONTROLTOWER_API ListLandingZoneOperationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONTROLTOWER_API ListLandingZoneOperationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+
+    ///@{
+    /**
+     * <p>Lists landing zone operations.</p>
+     */
+    inline const Aws::Vector<LandingZoneOperationSummary>& GetLandingZoneOperations() const{ return m_landingZoneOperations; }
+    inline void SetLandingZoneOperations(const Aws::Vector<LandingZoneOperationSummary>& value) { m_landingZoneOperations = value; }
+    inline void SetLandingZoneOperations(Aws::Vector<LandingZoneOperationSummary>&& value) { m_landingZoneOperations = std::move(value); }
+    inline ListLandingZoneOperationsResult& WithLandingZoneOperations(const Aws::Vector<LandingZoneOperationSummary>& value) { SetLandingZoneOperations(value); return *this;}
+    inline ListLandingZoneOperationsResult& WithLandingZoneOperations(Aws::Vector<LandingZoneOperationSummary>&& value) { SetLandingZoneOperations(std::move(value)); return *this;}
+    inline ListLandingZoneOperationsResult& AddLandingZoneOperations(const LandingZoneOperationSummary& value) { m_landingZoneOperations.push_back(value); return *this; }
+    inline ListLandingZoneOperationsResult& AddLandingZoneOperations(LandingZoneOperationSummary&& value) { m_landingZoneOperations.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>Retrieves the next page of results. If the string is empty, the response is
+     * the end of the results.</p>
+     */
+    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
+    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
+    inline ListLandingZoneOperationsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+    inline ListLandingZoneOperationsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
+    inline ListLandingZoneOperationsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
+
+    ///@{
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+    inline ListLandingZoneOperationsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+    inline ListLandingZoneOperationsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+    inline ListLandingZoneOperationsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    ///@}
+  private:
+
+    Aws::Vector<LandingZoneOperationSummary> m_landingZoneOperations;
+
+    Aws::String m_nextToken;
+
+    Aws::String m_requestId;
+  };
+
+} // namespace Model
+} // namespace ControlTower
+} // namespace Aws

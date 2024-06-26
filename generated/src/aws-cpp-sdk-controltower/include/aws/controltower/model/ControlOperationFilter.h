@@ -27,7 +27,7 @@ namespace Model
 {
 
   /**
-   * <p>A filter object that lets you call <code>ListCOntrolOperations</code> with a
+   * <p>A filter object that lets you call <code>ListControlOperations</code> with a
    * specific filter.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/ControlOperationFilter">AWS
    * API Reference</a></p>

@@ -11,6 +11,7 @@
 #include <aws/kinesisanalyticsv2/model/FlinkApplicationConfigurationDescription.h>
 #include <aws/kinesisanalyticsv2/model/EnvironmentPropertyDescriptions.h>
 #include <aws/kinesisanalyticsv2/model/ApplicationSnapshotConfigurationDescription.h>
+#include <aws/kinesisanalyticsv2/model/ApplicationSystemRollbackConfigurationDescription.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/kinesisanalyticsv2/model/ZeppelinApplicationConfigurationDescription.h>
 #include <aws/kinesisanalyticsv2/model/VpcConfigurationDescription.h>
@@ -124,6 +125,16 @@ namespace Model
     ///@}
 
     ///@{
+    
+    inline const ApplicationSystemRollbackConfigurationDescription& GetApplicationSystemRollbackConfigurationDescription() const{ return m_applicationSystemRollbackConfigurationDescription; }
+    inline bool ApplicationSystemRollbackConfigurationDescriptionHasBeenSet() const { return m_applicationSystemRollbackConfigurationDescriptionHasBeenSet; }
+    inline void SetApplicationSystemRollbackConfigurationDescription(const ApplicationSystemRollbackConfigurationDescription& value) { m_applicationSystemRollbackConfigurationDescriptionHasBeenSet = true; m_applicationSystemRollbackConfigurationDescription = value; }
+    inline void SetApplicationSystemRollbackConfigurationDescription(ApplicationSystemRollbackConfigurationDescription&& value) { m_applicationSystemRollbackConfigurationDescriptionHasBeenSet = true; m_applicationSystemRollbackConfigurationDescription = std::move(value); }
+    inline ApplicationConfigurationDescription& WithApplicationSystemRollbackConfigurationDescription(const ApplicationSystemRollbackConfigurationDescription& value) { SetApplicationSystemRollbackConfigurationDescription(value); return *this;}
+    inline ApplicationConfigurationDescription& WithApplicationSystemRollbackConfigurationDescription(ApplicationSystemRollbackConfigurationDescription&& value) { SetApplicationSystemRollbackConfigurationDescription(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
     /**
      * <p>The array of descriptions of VPC configurations available to the
      * application.</p>
@@ -169,6 +180,9 @@ namespace Model
 
     ApplicationSnapshotConfigurationDescription m_applicationSnapshotConfigurationDescription;
     bool m_applicationSnapshotConfigurationDescriptionHasBeenSet = false;
+
+    ApplicationSystemRollbackConfigurationDescription m_applicationSystemRollbackConfigurationDescription;
+    bool m_applicationSystemRollbackConfigurationDescriptionHasBeenSet = false;
 
     Aws::Vector<VpcConfigurationDescription> m_vpcConfigurationDescriptions;
     bool m_vpcConfigurationDescriptionsHasBeenSet = false;

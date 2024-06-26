@@ -63,9 +63,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Auto-participant-recording configuration object to attach to the stage.
-     * Auto-participant-recording configuration cannot be updated while recording is
-     * active.</p>
+     * <p>Configuration object for individual participant recording, to attach to the
+     * stage. Note that this cannot be updated while recording is active.</p>
      */
     inline const AutoParticipantRecordingConfiguration& GetAutoParticipantRecordingConfiguration() const{ return m_autoParticipantRecordingConfiguration; }
     inline bool AutoParticipantRecordingConfigurationHasBeenSet() const { return m_autoParticipantRecordingConfigurationHasBeenSet; }

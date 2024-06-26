@@ -46,7 +46,8 @@ namespace Model
     /**
      * <p>This attribute name identifies the featured slot. A participant with this
      * attribute set to <code>"true"</code> (as a string value) in
-     * <a>ParticipantTokenConfiguration</a> is placed in the featured slot.</p>
+     * <a>ParticipantTokenConfiguration</a> is placed in the featured slot. Default:
+     * <code>""</code> (no featured participant).</p>
      */
     inline const Aws::String& GetFeaturedParticipantAttribute() const{ return m_featuredParticipantAttribute; }
     inline bool FeaturedParticipantAttributeHasBeenSet() const { return m_featuredParticipantAttributeHasBeenSet; }
@@ -71,8 +72,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>Sets the non-featured participant display mode. Default:
-     * <code>VIDEO</code>.</p>
+     * <p>Sets the non-featured participant display mode, to control the aspect ratio
+     * of video tiles. <code>VIDEO</code> is 16:9, <code>SQUARE</code> is 1:1, and
+     * <code>PORTRAIT</code> is 3:4. Default: <code>VIDEO</code>.</p>
      */
     inline const VideoAspectRatio& GetVideoAspectRatio() const{ return m_videoAspectRatio; }
     inline bool VideoAspectRatioHasBeenSet() const { return m_videoAspectRatioHasBeenSet; }
@@ -84,10 +86,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>Defines how video fits within the participant tile. When not set,
-     * <code>videoFillMode</code> defaults to <code>COVER</code> fill mode for
-     * participants in the grid and to <code>CONTAIN</code> fill mode for featured
-     * participants.</p>
+     * <p>Defines how video content fits within the participant tile: <code>FILL</code>
+     * (stretched), <code>COVER</code> (cropped), or <code>CONTAIN</code>
+     * (letterboxed). When not set, <code>videoFillMode</code> defaults to
+     * <code>COVER</code> fill mode for participants in the grid and to
+     * <code>CONTAIN</code> fill mode for featured participants.</p>
      */
     inline const VideoFillMode& GetVideoFillMode() const{ return m_videoFillMode; }
     inline bool VideoFillModeHasBeenSet() const { return m_videoFillModeHasBeenSet; }

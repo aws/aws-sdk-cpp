@@ -43,6 +43,19 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * Operation ID for tracking RollbackApplication request
+     */
+    inline const Aws::String& GetOperationId() const{ return m_operationId; }
+    inline void SetOperationId(const Aws::String& value) { m_operationId = value; }
+    inline void SetOperationId(Aws::String&& value) { m_operationId = std::move(value); }
+    inline void SetOperationId(const char* value) { m_operationId.assign(value); }
+    inline RollbackApplicationResult& WithOperationId(const Aws::String& value) { SetOperationId(value); return *this;}
+    inline RollbackApplicationResult& WithOperationId(Aws::String&& value) { SetOperationId(std::move(value)); return *this;}
+    inline RollbackApplicationResult& WithOperationId(const char* value) { SetOperationId(value); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -55,6 +68,8 @@ namespace Model
   private:
 
     ApplicationDetail m_applicationDetail;
+
+    Aws::String m_operationId;
 
     Aws::String m_requestId;
   };

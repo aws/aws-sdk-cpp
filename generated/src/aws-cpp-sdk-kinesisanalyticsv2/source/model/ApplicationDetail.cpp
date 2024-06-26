@@ -38,6 +38,7 @@ ApplicationDetail::ApplicationDetail() :
     m_applicationVersionUpdatedFromHasBeenSet(false),
     m_applicationVersionRolledBackFrom(0),
     m_applicationVersionRolledBackFromHasBeenSet(false),
+    m_applicationVersionCreateTimestampHasBeenSet(false),
     m_conditionalTokenHasBeenSet(false),
     m_applicationVersionRolledBackTo(0),
     m_applicationVersionRolledBackToHasBeenSet(false),
@@ -66,6 +67,7 @@ ApplicationDetail::ApplicationDetail(JsonView jsonValue) :
     m_applicationVersionUpdatedFromHasBeenSet(false),
     m_applicationVersionRolledBackFrom(0),
     m_applicationVersionRolledBackFromHasBeenSet(false),
+    m_applicationVersionCreateTimestampHasBeenSet(false),
     m_conditionalTokenHasBeenSet(false),
     m_applicationVersionRolledBackTo(0),
     m_applicationVersionRolledBackToHasBeenSet(false),
@@ -176,6 +178,13 @@ ApplicationDetail& ApplicationDetail::operator =(JsonView jsonValue)
     m_applicationVersionRolledBackFrom = jsonValue.GetInt64("ApplicationVersionRolledBackFrom");
 
     m_applicationVersionRolledBackFromHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ApplicationVersionCreateTimestamp"))
+  {
+    m_applicationVersionCreateTimestamp = jsonValue.GetDouble("ApplicationVersionCreateTimestamp");
+
+    m_applicationVersionCreateTimestampHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ConditionalToken"))
@@ -289,6 +298,11 @@ JsonValue ApplicationDetail::Jsonize() const
   {
    payload.WithInt64("ApplicationVersionRolledBackFrom", m_applicationVersionRolledBackFrom);
 
+  }
+
+  if(m_applicationVersionCreateTimestampHasBeenSet)
+  {
+   payload.WithDouble("ApplicationVersionCreateTimestamp", m_applicationVersionCreateTimestamp.SecondsWithMSPrecision());
   }
 
   if(m_conditionalTokenHasBeenSet)

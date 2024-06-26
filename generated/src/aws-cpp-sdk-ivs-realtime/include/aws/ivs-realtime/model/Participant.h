@@ -219,8 +219,8 @@ namespace Model
     ///@{
     /**
      * <p>Name of the S3 bucket to where the participant is being recorded, if
-     * individual participant recording is enabled, or "" (empty string), if recording
-     * is not enabled.</p>
+     * individual participant recording is enabled, or <code>""</code> (empty string),
+     * if recording is not enabled.</p>
      */
     inline const Aws::String& GetRecordingS3BucketName() const{ return m_recordingS3BucketName; }
     inline bool RecordingS3BucketNameHasBeenSet() const { return m_recordingS3BucketNameHasBeenSet; }
@@ -234,9 +234,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>S3 prefix of the S3 bucket to where the participant is being recorded, if
-     * individual participant recording is enabled, or "" (empty string), if recording
-     * is not enabled.</p>
+     * <p>S3 prefix of the S3 bucket where the participant is being recorded, if
+     * individual participant recording is enabled, or <code>""</code> (empty string),
+     * if recording is not enabled.</p>
      */
     inline const Aws::String& GetRecordingS3Prefix() const{ return m_recordingS3Prefix; }
     inline bool RecordingS3PrefixHasBeenSet() const { return m_recordingS3PrefixHasBeenSet; }
@@ -250,7 +250,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Participant’s recording state.</p>
+     * <p>The participant’s recording state.</p>
      */
     inline const ParticipantRecordingState& GetRecordingState() const{ return m_recordingState; }
     inline bool RecordingStateHasBeenSet() const { return m_recordingStateHasBeenSet; }

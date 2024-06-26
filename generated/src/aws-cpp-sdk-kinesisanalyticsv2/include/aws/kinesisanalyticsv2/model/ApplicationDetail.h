@@ -227,6 +227,18 @@ namespace Model
 
     ///@{
     /**
+     * The current timestamp when the application version was created.
+     */
+    inline const Aws::Utils::DateTime& GetApplicationVersionCreateTimestamp() const{ return m_applicationVersionCreateTimestamp; }
+    inline bool ApplicationVersionCreateTimestampHasBeenSet() const { return m_applicationVersionCreateTimestampHasBeenSet; }
+    inline void SetApplicationVersionCreateTimestamp(const Aws::Utils::DateTime& value) { m_applicationVersionCreateTimestampHasBeenSet = true; m_applicationVersionCreateTimestamp = value; }
+    inline void SetApplicationVersionCreateTimestamp(Aws::Utils::DateTime&& value) { m_applicationVersionCreateTimestampHasBeenSet = true; m_applicationVersionCreateTimestamp = std::move(value); }
+    inline ApplicationDetail& WithApplicationVersionCreateTimestamp(const Aws::Utils::DateTime& value) { SetApplicationVersionCreateTimestamp(value); return *this;}
+    inline ApplicationDetail& WithApplicationVersionCreateTimestamp(Aws::Utils::DateTime&& value) { SetApplicationVersionCreateTimestamp(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>A value you use to implement strong concurrency for application updates.</p>
      */
     inline const Aws::String& GetConditionalToken() const{ return m_conditionalToken; }
@@ -305,6 +317,9 @@ namespace Model
 
     long long m_applicationVersionRolledBackFrom;
     bool m_applicationVersionRolledBackFromHasBeenSet = false;
+
+    Aws::Utils::DateTime m_applicationVersionCreateTimestamp;
+    bool m_applicationVersionCreateTimestampHasBeenSet = false;
 
     Aws::String m_conditionalToken;
     bool m_conditionalTokenHasBeenSet = false;

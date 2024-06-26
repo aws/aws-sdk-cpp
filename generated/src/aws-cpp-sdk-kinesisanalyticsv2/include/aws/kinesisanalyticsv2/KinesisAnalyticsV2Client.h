@@ -574,6 +574,32 @@ namespace KinesisAnalyticsV2
         }
 
         /**
+         * Returns information about a specific operation performed on a Managed Service
+         * for Apache Flink application<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DescribeApplicationOperation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeApplicationOperationOutcome DescribeApplicationOperation(const Model::DescribeApplicationOperationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeApplicationOperation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeApplicationOperationRequestT = Model::DescribeApplicationOperationRequest>
+        Model::DescribeApplicationOperationOutcomeCallable DescribeApplicationOperationCallable(const DescribeApplicationOperationRequestT& request) const
+        {
+            return SubmitCallable(&KinesisAnalyticsV2Client::DescribeApplicationOperation, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeApplicationOperation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeApplicationOperationRequestT = Model::DescribeApplicationOperationRequest>
+        void DescribeApplicationOperationAsync(const DescribeApplicationOperationRequestT& request, const DescribeApplicationOperationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&KinesisAnalyticsV2Client::DescribeApplicationOperation, request, handler, context);
+        }
+
+        /**
          * <p>Returns information about a snapshot of application state data.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DescribeApplicationSnapshot">AWS
@@ -659,6 +685,32 @@ namespace KinesisAnalyticsV2
         void DiscoverInputSchemaAsync(const DiscoverInputSchemaRequestT& request, const DiscoverInputSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&KinesisAnalyticsV2Client::DiscoverInputSchema, request, handler, context);
+        }
+
+        /**
+         * Lists information about operations performed on a Managed Service for Apache
+         * Flink application<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ListApplicationOperations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListApplicationOperationsOutcome ListApplicationOperations(const Model::ListApplicationOperationsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListApplicationOperations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListApplicationOperationsRequestT = Model::ListApplicationOperationsRequest>
+        Model::ListApplicationOperationsOutcomeCallable ListApplicationOperationsCallable(const ListApplicationOperationsRequestT& request) const
+        {
+            return SubmitCallable(&KinesisAnalyticsV2Client::ListApplicationOperations, request);
+        }
+
+        /**
+         * An Async wrapper for ListApplicationOperations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListApplicationOperationsRequestT = Model::ListApplicationOperationsRequest>
+        void ListApplicationOperationsAsync(const ListApplicationOperationsRequestT& request, const ListApplicationOperationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&KinesisAnalyticsV2Client::ListApplicationOperations, request, handler, context);
         }
 
         /**
@@ -776,13 +828,12 @@ namespace KinesisAnalyticsV2
 
         /**
          * <p>Reverts the application to the previous running version. You can roll back an
-         * application if you suspect it is stuck in a transient status. </p> <p>You can
-         * roll back an application only if it is in the <code>UPDATING</code> or
-         * <code>AUTOSCALING</code> status.</p> <p>When you rollback an application, it
-         * loads state data from the last successful snapshot. If the application has no
-         * snapshots, Managed Service for Apache Flink rejects the rollback request.</p>
-         * <p>This action is not supported for Managed Service for Apache Flink for SQL
-         * applications.</p><p><h3>See Also:</h3>   <a
+         * application if you suspect it is stuck in a transient status or in the running
+         * status. </p> <p>You can roll back an application only if it is in the
+         * <code>UPDATING</code>, <code>AUTOSCALING</code>, or <code>RUNNING</code>
+         * statuses.</p> <p>When you rollback an application, it loads state data from the
+         * last successful snapshot. If the application has no snapshots, Managed Service
+         * for Apache Flink rejects the rollback request.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/RollbackApplication">AWS
          * API Reference</a></p>
          */
