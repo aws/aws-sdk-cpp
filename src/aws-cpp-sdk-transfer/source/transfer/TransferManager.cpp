@@ -542,6 +542,12 @@ namespace Aws
 
             auto buffer = m_bufferManager.Acquire();
 
+            //check if upload was canceled while waiting for buffer
+            if (!handle->ShouldContinue()) {
+                m_bufferManager.Release(buffer);
+                return;
+            }
+
             auto lengthToWrite = (std::min)(m_transferConfig.bufferSize, handle->GetBytesTotalSize());
             streamToPut->read((char*)buffer, lengthToWrite);
             auto streamBuf = Aws::New<Aws::Utils::Stream::PreallocatedStreamBuf>(CLASS_TAG, buffer, static_cast<size_t>(lengthToWrite));
