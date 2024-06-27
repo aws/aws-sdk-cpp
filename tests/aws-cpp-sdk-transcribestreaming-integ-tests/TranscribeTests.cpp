@@ -39,7 +39,11 @@ class TranscribeStreamingTests : public Aws::Testing::AwsCppSdkGTestSuite
 public:
     TranscribeStreamingTests()
     {
-        Aws::Internal::AWSHttpResourceClient httpclient;
+        Aws::Client::ClientConfigurationInitValues cfgInit;
+        cfgInit.shouldDisableIMDS = true;
+        Aws::Client::ClientConfiguration config(cfgInit);
+
+        Aws::Internal::AWSHttpResourceClient httpclient(cfgInit);
         const Aws::Vector<Aws::String> TEST_FILE_NAMES = {"transcribe-test-file.wav", "this_is_a_cpp_test_sample_8kHz_2162ms.wav", "Kant_16kHz_17176ms.wav"};
         for(const auto& toDownload : TEST_FILE_NAMES)
         {
@@ -51,7 +55,6 @@ public:
             testFile.close();
         }
 
-        Aws::Client::ClientConfiguration config;
         config.enableHttpClientTrace = true;
 #ifdef _WIN32
         // TODO: remove this once we get H2 working with WinHttp client
@@ -129,6 +132,18 @@ TEST_F(TranscribeStreamingTests, TranscribeAudioFile)
         transcribedResult = alternatives.back().GetTranscript();
     });
 
+    Aws::String operationRequestId;
+    handler.SetInitialResponseCallback([&](const StartStreamTranscriptionInitialResponse& initialResponse)
+    {
+        operationRequestId = initialResponse.GetRequestId();
+        if (operationRequestId.empty()) {
+            AWS_ADD_FAILURE("InitialResponseCallback is called but received empty RequestId");
+            TestTrace(Aws::String("initialResponse was: ") + initialResponse.Jsonize().View().AsString());
+        }
+        std::cout << "Streaming Request-Id: " << operationRequestId << "\n";
+        TestTrace(Aws::String("InitialResponse aws RequestId: ") + operationRequestId);
+        TestTrace(Aws::String("InitialResponse transcribe SessionId: ") + initialResponse.GetSessionId());
+    });
     handler.SetOnErrorCallback([&transcribedResult, this](const Aws::Client::AWSError<TranscribeStreamingServiceErrors>& errors)
     {
         // we will receive an error because the request was abruptly shutdown (via stream.Close()).
@@ -187,6 +202,7 @@ TEST_F(TranscribeStreamingTests, TranscribeAudioFile)
     m_client->StartStreamTranscriptionAsync(request, OnStreamReady, OnResponseCallback, nullptr/*context*/);
     semaphore.WaitOne();
     ASSERT_EQ(0u, transcribedResult.find(EXPECTED_MESSAGE)) << "Received message: " << transcribedResult;
+    EXPECT_FALSE(operationRequestId.empty()) << "Did not receive a request id for the StartStreamTranscription";
 }
 
 TEST_F(TranscribeStreamingTests, TranscribeAudioFileWithErrorServiceResponse)
@@ -356,6 +372,22 @@ Aws::String TranscribeStreamingTests::RunTestLikeSample(size_t timeoutMs,
     Aws::String transcribedResult;
 
     StartStreamTranscriptionHandler handler;
+    Aws::String operationRequestId;
+    handler.SetInitialResponseCallbackEx([&](const StartStreamTranscriptionInitialResponse& initialResponse, const Utils::Event::InitialResponseType eventType)
+                                          {
+                                              if (eventType != Utils::Event::InitialResponseType::ON_RESPONSE) {
+                                                  AWS_ADD_FAILURE("InitialResponseCallback is called with unexpected for transcribe InitialResponseType");
+                                              }
+
+                                              operationRequestId = initialResponse.GetRequestId();
+                                              if (operationRequestId.empty()) {
+                                                  AWS_ADD_FAILURE("InitialResponseCallback is called but received empty RequestId");
+                                                  TestTrace(Aws::String("initialResponse was: ") + initialResponse.Jsonize().View().AsString());
+                                              }
+                                              std::cout << "Streaming Request-Id: " << operationRequestId << "\n";
+                                              TestTrace(Aws::String("InitialResponse aws RequestId: ") + operationRequestId);
+                                              TestTrace(Aws::String("InitialResponse transcribe SessionId: ") + initialResponse.GetSessionId());
+                                          });
     handler.SetOnErrorCallback(
             [&sawRetryableError, this](const Aws::Client::AWSError<TranscribeStreamingServiceErrors> &error) {
                 if (error.ShouldRetry())
@@ -514,6 +546,7 @@ Aws::String TranscribeStreamingTests::RunTestLikeSample(size_t timeoutMs,
     m_client->StartStreamTranscriptionAsync(request, OnStreamReady, OnResponseCallback,
                                          nullptr /*context*/);
 
+    EXPECT_FALSE(operationRequestId.empty()) << "Did not receive a request id for the StartStreamTranscription";
     EXPECT_TRUE(
         signaling.WaitOneFor(timeoutMs)
         ) << "Did not get a response after " << Aws::Utils::StringUtils::to_string(timeoutMs) << " ms";
