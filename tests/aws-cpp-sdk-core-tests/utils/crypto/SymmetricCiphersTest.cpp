@@ -12,9 +12,6 @@
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/crypto/CryptoStream.h>
-#ifdef ENABLE_COMMONCRYPTO_ENCRYPTION
-#include <aws/core/utils/crypto/commoncrypto/CryptoImpl.h>
-#endif
 
 using namespace Aws::Utils;
 using namespace Aws::Utils::Crypto;

@@ -593,6 +593,10 @@ if(BUILD_CURL)
     target_include_directories(${PROJECT_NAME} PRIVATE "${CURL_INCLUDE_DIR}")
 endif()
 
+if(BUILD_OPENSSL)
+    target_include_directories(${PROJECT_NAME} PRIVATE "${OPENSSL_INCLUDE_DIR}")
+endif()
+
 if (BUILD_OPTEL)
     target_include_directories(${PROJECT_NAME} PRIVATE ${OPENTELEMETRY_CPP_INCLUDE_DIRS})
 endif ()
