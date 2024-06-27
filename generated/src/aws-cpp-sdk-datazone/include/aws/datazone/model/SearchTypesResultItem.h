@@ -7,6 +7,7 @@
 #include <aws/datazone/DataZone_EXPORTS.h>
 #include <aws/datazone/model/AssetTypeItem.h>
 #include <aws/datazone/model/FormTypeData.h>
+#include <aws/datazone/model/LineageNodeTypeItem.h>
 #include <utility>
 
 namespace Aws
@@ -64,6 +65,18 @@ namespace Model
     inline SearchTypesResultItem& WithFormTypeItem(const FormTypeData& value) { SetFormTypeItem(value); return *this;}
     inline SearchTypesResultItem& WithFormTypeItem(FormTypeData&& value) { SetFormTypeItem(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The details of a data lineage node type.</p>
+     */
+    inline const LineageNodeTypeItem& GetLineageNodeTypeItem() const{ return m_lineageNodeTypeItem; }
+    inline bool LineageNodeTypeItemHasBeenSet() const { return m_lineageNodeTypeItemHasBeenSet; }
+    inline void SetLineageNodeTypeItem(const LineageNodeTypeItem& value) { m_lineageNodeTypeItemHasBeenSet = true; m_lineageNodeTypeItem = value; }
+    inline void SetLineageNodeTypeItem(LineageNodeTypeItem&& value) { m_lineageNodeTypeItemHasBeenSet = true; m_lineageNodeTypeItem = std::move(value); }
+    inline SearchTypesResultItem& WithLineageNodeTypeItem(const LineageNodeTypeItem& value) { SetLineageNodeTypeItem(value); return *this;}
+    inline SearchTypesResultItem& WithLineageNodeTypeItem(LineageNodeTypeItem&& value) { SetLineageNodeTypeItem(std::move(value)); return *this;}
+    ///@}
   private:
 
     AssetTypeItem m_assetTypeItem;
@@ -71,6 +84,9 @@ namespace Model
 
     FormTypeData m_formTypeItem;
     bool m_formTypeItemHasBeenSet = false;
+
+    LineageNodeTypeItem m_lineageNodeTypeItem;
+    bool m_lineageNodeTypeItemHasBeenSet = false;
   };
 
 } // namespace Model

@@ -41,6 +41,8 @@ AmazonTranscribeProcessorConfiguration::AmazonTranscribeProcessorConfiguration()
     m_filterPartialResultsHasBeenSet(false),
     m_identifyLanguage(false),
     m_identifyLanguageHasBeenSet(false),
+    m_identifyMultipleLanguages(false),
+    m_identifyMultipleLanguagesHasBeenSet(false),
     m_languageOptionsHasBeenSet(false),
     m_preferredLanguage(CallAnalyticsLanguageCode::NOT_SET),
     m_preferredLanguageHasBeenSet(false),
@@ -148,6 +150,13 @@ AmazonTranscribeProcessorConfiguration& AmazonTranscribeProcessorConfiguration::
     m_identifyLanguageHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("IdentifyMultipleLanguages"))
+  {
+    m_identifyMultipleLanguages = jsonValue.GetBool("IdentifyMultipleLanguages");
+
+    m_identifyMultipleLanguagesHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("LanguageOptions"))
   {
     m_languageOptions = jsonValue.GetString("LanguageOptions");
@@ -253,6 +262,12 @@ JsonValue AmazonTranscribeProcessorConfiguration::Jsonize() const
   if(m_identifyLanguageHasBeenSet)
   {
    payload.WithBool("IdentifyLanguage", m_identifyLanguage);
+
+  }
+
+  if(m_identifyMultipleLanguagesHasBeenSet)
+  {
+   payload.WithBool("IdentifyMultipleLanguages", m_identifyMultipleLanguages);
 
   }
 

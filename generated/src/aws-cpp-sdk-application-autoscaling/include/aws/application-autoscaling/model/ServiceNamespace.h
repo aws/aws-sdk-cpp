@@ -29,7 +29,8 @@ namespace Model
     cassandra,
     kafka,
     elasticache,
-    neptune
+    neptune,
+    workspaces
   };
 
 namespace ServiceNamespaceMapper

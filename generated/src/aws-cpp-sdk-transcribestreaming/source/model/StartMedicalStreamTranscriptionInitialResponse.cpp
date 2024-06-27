@@ -32,14 +32,14 @@ StartMedicalStreamTranscriptionInitialResponse::StartMedicalStreamTranscriptionI
     m_showSpeakerLabelHasBeenSet(false),
     m_contentIdentificationType(MedicalContentIdentificationType::NOT_SET),
     m_contentIdentificationTypeHasBeenSet(false),
-    m_mediaSampleRateHertz(0),
-    m_mediaSampleRateHertzHasBeenSet(false),
     m_enableChannelIdentification(false),
     m_enableChannelIdentificationHasBeenSet(false),
-    m_mediaEncoding(MediaEncoding::NOT_SET),
-    m_mediaEncodingHasBeenSet(false),
+    m_mediaSampleRateHertz(0),
+    m_mediaSampleRateHertzHasBeenSet(false),
     m_numberOfChannels(0),
     m_numberOfChannelsHasBeenSet(false),
+    m_mediaEncoding(MediaEncoding::NOT_SET),
+    m_mediaEncodingHasBeenSet(false),
     m_sessionIdHasBeenSet(false)
 {
 }

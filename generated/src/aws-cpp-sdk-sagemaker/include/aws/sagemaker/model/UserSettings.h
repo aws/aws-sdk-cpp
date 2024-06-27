@@ -19,6 +19,7 @@
 #include <aws/sagemaker/model/DefaultSpaceStorageSettings.h>
 #include <aws/sagemaker/model/StudioWebPortal.h>
 #include <aws/sagemaker/model/CustomPosixUserConfig.h>
+#include <aws/sagemaker/model/StudioWebPortalSettings.h>
 #include <aws/sagemaker/model/CustomFileSystemConfig.h>
 #include <utility>
 
@@ -276,6 +277,19 @@ namespace Model
     inline UserSettings& AddCustomFileSystemConfigs(const CustomFileSystemConfig& value) { m_customFileSystemConfigsHasBeenSet = true; m_customFileSystemConfigs.push_back(value); return *this; }
     inline UserSettings& AddCustomFileSystemConfigs(CustomFileSystemConfig&& value) { m_customFileSystemConfigsHasBeenSet = true; m_customFileSystemConfigs.push_back(std::move(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>Studio settings. If these settings are applied on a user level, they take
+     * priority over the settings applied on a domain level.</p>
+     */
+    inline const StudioWebPortalSettings& GetStudioWebPortalSettings() const{ return m_studioWebPortalSettings; }
+    inline bool StudioWebPortalSettingsHasBeenSet() const { return m_studioWebPortalSettingsHasBeenSet; }
+    inline void SetStudioWebPortalSettings(const StudioWebPortalSettings& value) { m_studioWebPortalSettingsHasBeenSet = true; m_studioWebPortalSettings = value; }
+    inline void SetStudioWebPortalSettings(StudioWebPortalSettings&& value) { m_studioWebPortalSettingsHasBeenSet = true; m_studioWebPortalSettings = std::move(value); }
+    inline UserSettings& WithStudioWebPortalSettings(const StudioWebPortalSettings& value) { SetStudioWebPortalSettings(value); return *this;}
+    inline UserSettings& WithStudioWebPortalSettings(StudioWebPortalSettings&& value) { SetStudioWebPortalSettings(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_executionRole;
@@ -325,6 +339,9 @@ namespace Model
 
     Aws::Vector<CustomFileSystemConfig> m_customFileSystemConfigs;
     bool m_customFileSystemConfigsHasBeenSet = false;
+
+    StudioWebPortalSettings m_studioWebPortalSettings;
+    bool m_studioWebPortalSettingsHasBeenSet = false;
   };
 
 } // namespace Model

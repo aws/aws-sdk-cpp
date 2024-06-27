@@ -35,7 +35,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID of the video stream pool.</p>
+     * <p>The unique identifier of the requested resource. Valid values include the
+     * name and ARN of the media pipeline Kinesis Video Stream pool.</p>
      */
     inline const Aws::String& GetIdentifier() const{ return m_identifier; }
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }

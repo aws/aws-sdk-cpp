@@ -22,6 +22,7 @@ namespace Aws
 
         static const int SIMPLE_AD_HASH = HashingUtils::HashString("SIMPLE_AD");
         static const int AD_CONNECTOR_HASH = HashingUtils::HashString("AD_CONNECTOR");
+        static const int CUSTOMER_MANAGED_HASH = HashingUtils::HashString("CUSTOMER_MANAGED");
 
 
         WorkspaceDirectoryType GetWorkspaceDirectoryTypeForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == AD_CONNECTOR_HASH)
           {
             return WorkspaceDirectoryType::AD_CONNECTOR;
+          }
+          else if (hashCode == CUSTOMER_MANAGED_HASH)
+          {
+            return WorkspaceDirectoryType::CUSTOMER_MANAGED;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -55,6 +60,8 @@ namespace Aws
             return "SIMPLE_AD";
           case WorkspaceDirectoryType::AD_CONNECTOR:
             return "AD_CONNECTOR";
+          case WorkspaceDirectoryType::CUSTOMER_MANAGED:
+            return "CUSTOMER_MANAGED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

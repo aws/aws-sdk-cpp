@@ -39,7 +39,16 @@ WorkspaceDirectory::WorkspaceDirectory() :
     m_tenancyHasBeenSet(false),
     m_selfservicePermissionsHasBeenSet(false),
     m_samlPropertiesHasBeenSet(false),
-    m_certificateBasedAuthPropertiesHasBeenSet(false)
+    m_certificateBasedAuthPropertiesHasBeenSet(false),
+    m_workspaceDirectoryNameHasBeenSet(false),
+    m_workspaceDirectoryDescriptionHasBeenSet(false),
+    m_userIdentityType(UserIdentityType::NOT_SET),
+    m_userIdentityTypeHasBeenSet(false),
+    m_workspaceType(WorkspaceType::NOT_SET),
+    m_workspaceTypeHasBeenSet(false),
+    m_activeDirectoryConfigHasBeenSet(false),
+    m_streamingPropertiesHasBeenSet(false),
+    m_errorMessageHasBeenSet(false)
 {
 }
 
@@ -186,6 +195,55 @@ WorkspaceDirectory& WorkspaceDirectory::operator =(JsonView jsonValue)
     m_certificateBasedAuthPropertiesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("WorkspaceDirectoryName"))
+  {
+    m_workspaceDirectoryName = jsonValue.GetString("WorkspaceDirectoryName");
+
+    m_workspaceDirectoryNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("WorkspaceDirectoryDescription"))
+  {
+    m_workspaceDirectoryDescription = jsonValue.GetString("WorkspaceDirectoryDescription");
+
+    m_workspaceDirectoryDescriptionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("UserIdentityType"))
+  {
+    m_userIdentityType = UserIdentityTypeMapper::GetUserIdentityTypeForName(jsonValue.GetString("UserIdentityType"));
+
+    m_userIdentityTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("WorkspaceType"))
+  {
+    m_workspaceType = WorkspaceTypeMapper::GetWorkspaceTypeForName(jsonValue.GetString("WorkspaceType"));
+
+    m_workspaceTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ActiveDirectoryConfig"))
+  {
+    m_activeDirectoryConfig = jsonValue.GetObject("ActiveDirectoryConfig");
+
+    m_activeDirectoryConfigHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("StreamingProperties"))
+  {
+    m_streamingProperties = jsonValue.GetObject("StreamingProperties");
+
+    m_streamingPropertiesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ErrorMessage"))
+  {
+    m_errorMessage = jsonValue.GetString("ErrorMessage");
+
+    m_errorMessageHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -310,6 +368,46 @@ JsonValue WorkspaceDirectory::Jsonize() const
   if(m_certificateBasedAuthPropertiesHasBeenSet)
   {
    payload.WithObject("CertificateBasedAuthProperties", m_certificateBasedAuthProperties.Jsonize());
+
+  }
+
+  if(m_workspaceDirectoryNameHasBeenSet)
+  {
+   payload.WithString("WorkspaceDirectoryName", m_workspaceDirectoryName);
+
+  }
+
+  if(m_workspaceDirectoryDescriptionHasBeenSet)
+  {
+   payload.WithString("WorkspaceDirectoryDescription", m_workspaceDirectoryDescription);
+
+  }
+
+  if(m_userIdentityTypeHasBeenSet)
+  {
+   payload.WithString("UserIdentityType", UserIdentityTypeMapper::GetNameForUserIdentityType(m_userIdentityType));
+  }
+
+  if(m_workspaceTypeHasBeenSet)
+  {
+   payload.WithString("WorkspaceType", WorkspaceTypeMapper::GetNameForWorkspaceType(m_workspaceType));
+  }
+
+  if(m_activeDirectoryConfigHasBeenSet)
+  {
+   payload.WithObject("ActiveDirectoryConfig", m_activeDirectoryConfig.Jsonize());
+
+  }
+
+  if(m_streamingPropertiesHasBeenSet)
+  {
+   payload.WithObject("StreamingProperties", m_streamingProperties.Jsonize());
+
+  }
+
+  if(m_errorMessageHasBeenSet)
+  {
+   payload.WithString("ErrorMessage", m_errorMessage);
 
   }
 

@@ -134,6 +134,20 @@ namespace Model
     inline void SetEnableMaintenanceMode(bool value) { m_enableMaintenanceModeHasBeenSet = true; m_enableMaintenanceMode = value; }
     inline WorkspaceCreationProperties& WithEnableMaintenanceMode(bool value) { SetEnableMaintenanceMode(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Indicates the IAM role ARN of the instance.</p>
+     */
+    inline const Aws::String& GetInstanceIamRoleArn() const{ return m_instanceIamRoleArn; }
+    inline bool InstanceIamRoleArnHasBeenSet() const { return m_instanceIamRoleArnHasBeenSet; }
+    inline void SetInstanceIamRoleArn(const Aws::String& value) { m_instanceIamRoleArnHasBeenSet = true; m_instanceIamRoleArn = value; }
+    inline void SetInstanceIamRoleArn(Aws::String&& value) { m_instanceIamRoleArnHasBeenSet = true; m_instanceIamRoleArn = std::move(value); }
+    inline void SetInstanceIamRoleArn(const char* value) { m_instanceIamRoleArnHasBeenSet = true; m_instanceIamRoleArn.assign(value); }
+    inline WorkspaceCreationProperties& WithInstanceIamRoleArn(const Aws::String& value) { SetInstanceIamRoleArn(value); return *this;}
+    inline WorkspaceCreationProperties& WithInstanceIamRoleArn(Aws::String&& value) { SetInstanceIamRoleArn(std::move(value)); return *this;}
+    inline WorkspaceCreationProperties& WithInstanceIamRoleArn(const char* value) { SetInstanceIamRoleArn(value); return *this;}
+    ///@}
   private:
 
     bool m_enableWorkDocs;
@@ -153,6 +167,9 @@ namespace Model
 
     bool m_enableMaintenanceMode;
     bool m_enableMaintenanceModeHasBeenSet = false;
+
+    Aws::String m_instanceIamRoleArn;
+    bool m_instanceIamRoleArnHasBeenSet = false;
   };
 
 } // namespace Model

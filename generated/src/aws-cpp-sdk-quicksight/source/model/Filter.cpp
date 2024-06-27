@@ -25,7 +25,8 @@ Filter::Filter() :
     m_timeEqualityFilterHasBeenSet(false),
     m_timeRangeFilterHasBeenSet(false),
     m_relativeDatesFilterHasBeenSet(false),
-    m_topBottomFilterHasBeenSet(false)
+    m_topBottomFilterHasBeenSet(false),
+    m_nestedFilterHasBeenSet(false)
 {
 }
 
@@ -86,6 +87,13 @@ Filter& Filter::operator =(JsonView jsonValue)
     m_topBottomFilterHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("NestedFilter"))
+  {
+    m_nestedFilter = jsonValue.GetObject("NestedFilter");
+
+    m_nestedFilterHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -132,6 +140,12 @@ JsonValue Filter::Jsonize() const
   if(m_topBottomFilterHasBeenSet)
   {
    payload.WithObject("TopBottomFilter", m_topBottomFilter.Jsonize());
+
+  }
+
+  if(m_nestedFilterHasBeenSet)
+  {
+   payload.WithObject("NestedFilter", m_nestedFilter.Jsonize());
 
   }
 

@@ -569,6 +569,31 @@ namespace WorkSpaces
         }
 
         /**
+         * <p>Creates a pool of WorkSpaces.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateWorkspacesPool">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateWorkspacesPoolOutcome CreateWorkspacesPool(const Model::CreateWorkspacesPoolRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateWorkspacesPool that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateWorkspacesPoolRequestT = Model::CreateWorkspacesPoolRequest>
+        Model::CreateWorkspacesPoolOutcomeCallable CreateWorkspacesPoolCallable(const CreateWorkspacesPoolRequestT& request) const
+        {
+            return SubmitCallable(&WorkSpacesClient::CreateWorkspacesPool, request);
+        }
+
+        /**
+         * An Async wrapper for CreateWorkspacesPool that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateWorkspacesPoolRequestT = Model::CreateWorkspacesPoolRequest>
+        void CreateWorkspacesPoolAsync(const CreateWorkspacesPoolRequestT& request, const CreateWorkspacesPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&WorkSpacesClient::CreateWorkspacesPool, request, handler, context);
+        }
+
+        /**
          * <p>Deletes the account link invitation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DeleteAccountLinkInvitation">AWS
          * API Reference</a></p>
@@ -1421,6 +1446,57 @@ namespace WorkSpaces
         }
 
         /**
+         * <p>Retrieves a list that describes the streaming sessions for a specified
+         * WorkSpaces pool.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspacesPoolSessions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeWorkspacesPoolSessionsOutcome DescribeWorkspacesPoolSessions(const Model::DescribeWorkspacesPoolSessionsRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeWorkspacesPoolSessions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeWorkspacesPoolSessionsRequestT = Model::DescribeWorkspacesPoolSessionsRequest>
+        Model::DescribeWorkspacesPoolSessionsOutcomeCallable DescribeWorkspacesPoolSessionsCallable(const DescribeWorkspacesPoolSessionsRequestT& request) const
+        {
+            return SubmitCallable(&WorkSpacesClient::DescribeWorkspacesPoolSessions, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeWorkspacesPoolSessions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeWorkspacesPoolSessionsRequestT = Model::DescribeWorkspacesPoolSessionsRequest>
+        void DescribeWorkspacesPoolSessionsAsync(const DescribeWorkspacesPoolSessionsRequestT& request, const DescribeWorkspacesPoolSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&WorkSpacesClient::DescribeWorkspacesPoolSessions, request, handler, context);
+        }
+
+        /**
+         * <p>Describes the specified WorkSpaces pool.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspacesPools">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeWorkspacesPoolsOutcome DescribeWorkspacesPools(const Model::DescribeWorkspacesPoolsRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for DescribeWorkspacesPools that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeWorkspacesPoolsRequestT = Model::DescribeWorkspacesPoolsRequest>
+        Model::DescribeWorkspacesPoolsOutcomeCallable DescribeWorkspacesPoolsCallable(const DescribeWorkspacesPoolsRequestT& request = {}) const
+        {
+            return SubmitCallable(&WorkSpacesClient::DescribeWorkspacesPools, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeWorkspacesPools that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeWorkspacesPoolsRequestT = Model::DescribeWorkspacesPoolsRequest>
+        void DescribeWorkspacesPoolsAsync(const DescribeWorkspacesPoolsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeWorkspacesPoolsRequestT& request = {}) const
+        {
+            return SubmitAsync(&WorkSpacesClient::DescribeWorkspacesPools, request, handler, context);
+        }
+
+        /**
          * <p>Disassociates a connection alias from a directory. Disassociating a
          * connection alias disables cross-Region redirection between two directories in
          * different Regions. For more information, see <a
@@ -1828,6 +1904,31 @@ namespace WorkSpaces
         }
 
         /**
+         * <p>Modifies the specified streaming properties.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyStreamingProperties">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ModifyStreamingPropertiesOutcome ModifyStreamingProperties(const Model::ModifyStreamingPropertiesRequest& request) const;
+
+        /**
+         * A Callable wrapper for ModifyStreamingProperties that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ModifyStreamingPropertiesRequestT = Model::ModifyStreamingPropertiesRequest>
+        Model::ModifyStreamingPropertiesOutcomeCallable ModifyStreamingPropertiesCallable(const ModifyStreamingPropertiesRequestT& request) const
+        {
+            return SubmitCallable(&WorkSpacesClient::ModifyStreamingProperties, request);
+        }
+
+        /**
+         * An Async wrapper for ModifyStreamingProperties that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ModifyStreamingPropertiesRequestT = Model::ModifyStreamingPropertiesRequest>
+        void ModifyStreamingPropertiesAsync(const ModifyStreamingPropertiesRequestT& request, const ModifyStreamingPropertiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&WorkSpacesClient::ModifyStreamingProperties, request, handler, context);
+        }
+
+        /**
          * <p>Specifies which devices and operating systems users can use to access their
          * WorkSpaces. For more information, see <a
          * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/update-directory-details.html#control-device-access">
@@ -2015,13 +2116,13 @@ namespace WorkSpaces
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/RegisterWorkspaceDirectory">AWS
          * API Reference</a></p>
          */
-        virtual Model::RegisterWorkspaceDirectoryOutcome RegisterWorkspaceDirectory(const Model::RegisterWorkspaceDirectoryRequest& request) const;
+        virtual Model::RegisterWorkspaceDirectoryOutcome RegisterWorkspaceDirectory(const Model::RegisterWorkspaceDirectoryRequest& request = {}) const;
 
         /**
          * A Callable wrapper for RegisterWorkspaceDirectory that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename RegisterWorkspaceDirectoryRequestT = Model::RegisterWorkspaceDirectoryRequest>
-        Model::RegisterWorkspaceDirectoryOutcomeCallable RegisterWorkspaceDirectoryCallable(const RegisterWorkspaceDirectoryRequestT& request) const
+        Model::RegisterWorkspaceDirectoryOutcomeCallable RegisterWorkspaceDirectoryCallable(const RegisterWorkspaceDirectoryRequestT& request = {}) const
         {
             return SubmitCallable(&WorkSpacesClient::RegisterWorkspaceDirectory, request);
         }
@@ -2030,7 +2131,7 @@ namespace WorkSpaces
          * An Async wrapper for RegisterWorkspaceDirectory that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename RegisterWorkspaceDirectoryRequestT = Model::RegisterWorkspaceDirectoryRequest>
-        void RegisterWorkspaceDirectoryAsync(const RegisterWorkspaceDirectoryRequestT& request, const RegisterWorkspaceDirectoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void RegisterWorkspaceDirectoryAsync(const RegisterWorkspaceDirectoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const RegisterWorkspaceDirectoryRequestT& request = {}) const
         {
             return SubmitAsync(&WorkSpacesClient::RegisterWorkspaceDirectory, request, handler, context);
         }
@@ -2146,6 +2247,33 @@ namespace WorkSpaces
         }
 
         /**
+         * <p>Starts the specified WorkSpaces pool.</p> <p>You cannot start a WorkSpace
+         * pool unless it has a running mode of <code>AutoStop</code> and a state of
+         * <code>STOPPED</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/StartWorkspacesPool">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartWorkspacesPoolOutcome StartWorkspacesPool(const Model::StartWorkspacesPoolRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartWorkspacesPool that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartWorkspacesPoolRequestT = Model::StartWorkspacesPoolRequest>
+        Model::StartWorkspacesPoolOutcomeCallable StartWorkspacesPoolCallable(const StartWorkspacesPoolRequestT& request) const
+        {
+            return SubmitCallable(&WorkSpacesClient::StartWorkspacesPool, request);
+        }
+
+        /**
+         * An Async wrapper for StartWorkspacesPool that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartWorkspacesPoolRequestT = Model::StartWorkspacesPoolRequest>
+        void StartWorkspacesPoolAsync(const StartWorkspacesPoolRequestT& request, const StartWorkspacesPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&WorkSpacesClient::StartWorkspacesPool, request, handler, context);
+        }
+
+        /**
          * <p> Stops the specified WorkSpaces.</p> <p>You cannot stop a WorkSpace unless it
          * has a running mode of <code>AutoStop</code> and a state of
          * <code>AVAILABLE</code>, <code>IMPAIRED</code>, <code>UNHEALTHY</code>, or
@@ -2171,6 +2299,34 @@ namespace WorkSpaces
         void StopWorkspacesAsync(const StopWorkspacesRequestT& request, const StopWorkspacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&WorkSpacesClient::StopWorkspaces, request, handler, context);
+        }
+
+        /**
+         * <p>Stops the specifiedWorkSpaces pool.</p> <p>You cannot stop a WorkSpace pool
+         * unless it has a running mode of <code>AutoStop</code> and a state of
+         * <code>AVAILABLE</code>, <code>IMPAIRED</code>, <code>UNHEALTHY</code>, or
+         * <code>ERROR</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/StopWorkspacesPool">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StopWorkspacesPoolOutcome StopWorkspacesPool(const Model::StopWorkspacesPoolRequest& request) const;
+
+        /**
+         * A Callable wrapper for StopWorkspacesPool that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StopWorkspacesPoolRequestT = Model::StopWorkspacesPoolRequest>
+        Model::StopWorkspacesPoolOutcomeCallable StopWorkspacesPoolCallable(const StopWorkspacesPoolRequestT& request) const
+        {
+            return SubmitCallable(&WorkSpacesClient::StopWorkspacesPool, request);
+        }
+
+        /**
+         * An Async wrapper for StopWorkspacesPool that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StopWorkspacesPoolRequestT = Model::StopWorkspacesPoolRequest>
+        void StopWorkspacesPoolAsync(const StopWorkspacesPoolRequestT& request, const StopWorkspacesPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&WorkSpacesClient::StopWorkspacesPool, request, handler, context);
         }
 
         /**
@@ -2218,6 +2374,56 @@ namespace WorkSpaces
         void TerminateWorkspacesAsync(const TerminateWorkspacesRequestT& request, const TerminateWorkspacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&WorkSpacesClient::TerminateWorkspaces, request, handler, context);
+        }
+
+        /**
+         * <p>Terminates the specified WorkSpaces pool.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/TerminateWorkspacesPool">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::TerminateWorkspacesPoolOutcome TerminateWorkspacesPool(const Model::TerminateWorkspacesPoolRequest& request) const;
+
+        /**
+         * A Callable wrapper for TerminateWorkspacesPool that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename TerminateWorkspacesPoolRequestT = Model::TerminateWorkspacesPoolRequest>
+        Model::TerminateWorkspacesPoolOutcomeCallable TerminateWorkspacesPoolCallable(const TerminateWorkspacesPoolRequestT& request) const
+        {
+            return SubmitCallable(&WorkSpacesClient::TerminateWorkspacesPool, request);
+        }
+
+        /**
+         * An Async wrapper for TerminateWorkspacesPool that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename TerminateWorkspacesPoolRequestT = Model::TerminateWorkspacesPoolRequest>
+        void TerminateWorkspacesPoolAsync(const TerminateWorkspacesPoolRequestT& request, const TerminateWorkspacesPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&WorkSpacesClient::TerminateWorkspacesPool, request, handler, context);
+        }
+
+        /**
+         * <p>Terminates the WorkSpaces pool session.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/TerminateWorkspacesPoolSession">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::TerminateWorkspacesPoolSessionOutcome TerminateWorkspacesPoolSession(const Model::TerminateWorkspacesPoolSessionRequest& request) const;
+
+        /**
+         * A Callable wrapper for TerminateWorkspacesPoolSession that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename TerminateWorkspacesPoolSessionRequestT = Model::TerminateWorkspacesPoolSessionRequest>
+        Model::TerminateWorkspacesPoolSessionOutcomeCallable TerminateWorkspacesPoolSessionCallable(const TerminateWorkspacesPoolSessionRequestT& request) const
+        {
+            return SubmitCallable(&WorkSpacesClient::TerminateWorkspacesPoolSession, request);
+        }
+
+        /**
+         * An Async wrapper for TerminateWorkspacesPoolSession that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename TerminateWorkspacesPoolSessionRequestT = Model::TerminateWorkspacesPoolSessionRequest>
+        void TerminateWorkspacesPoolSessionAsync(const TerminateWorkspacesPoolSessionRequestT& request, const TerminateWorkspacesPoolSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&WorkSpacesClient::TerminateWorkspacesPoolSession, request, handler, context);
         }
 
         /**
@@ -2385,6 +2591,31 @@ namespace WorkSpaces
         void UpdateWorkspaceImagePermissionAsync(const UpdateWorkspaceImagePermissionRequestT& request, const UpdateWorkspaceImagePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&WorkSpacesClient::UpdateWorkspaceImagePermission, request, handler, context);
+        }
+
+        /**
+         * <p>Updates the specified WorkSpaces pool.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/UpdateWorkspacesPool">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateWorkspacesPoolOutcome UpdateWorkspacesPool(const Model::UpdateWorkspacesPoolRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateWorkspacesPool that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateWorkspacesPoolRequestT = Model::UpdateWorkspacesPoolRequest>
+        Model::UpdateWorkspacesPoolOutcomeCallable UpdateWorkspacesPoolCallable(const UpdateWorkspacesPoolRequestT& request) const
+        {
+            return SubmitCallable(&WorkSpacesClient::UpdateWorkspacesPool, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateWorkspacesPool that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateWorkspacesPoolRequestT = Model::UpdateWorkspacesPoolRequest>
+        void UpdateWorkspacesPoolAsync(const UpdateWorkspacesPoolRequestT& request, const UpdateWorkspacesPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&WorkSpacesClient::UpdateWorkspacesPool, request, handler, context);
         }
 
 

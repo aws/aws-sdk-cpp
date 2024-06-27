@@ -47,9 +47,9 @@ namespace Model
    * class supports configuring the number of CPU cores and threads per core.</p>
    * </li> <li> <p>The current number CPU cores and threads is set to a non-default
    * value.</p> </li> </ul> <p>For more information, see <a
-   * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html#USER_ConfigureProcessor">Configuring
-   * the Processor of the DB Instance Class</a> in the <i>Amazon RDS User Guide. </i>
-   * </p><p><h3>See Also:</h3>   <a
+   * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html#USER_ConfigureProcessor">
+   * Configuring the processor for a DB instance class in RDS for Oracle</a> in the
+   * <i>Amazon RDS User Guide. </i> </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ProcessorFeature">AWS
    * API Reference</a></p>
    */
@@ -81,7 +81,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The value of a processor feature name.</p>
+     * <p>The value of a processor feature.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }

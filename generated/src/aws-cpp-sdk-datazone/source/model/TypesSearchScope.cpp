@@ -22,6 +22,7 @@ namespace Aws
 
         static const int ASSET_TYPE_HASH = HashingUtils::HashString("ASSET_TYPE");
         static const int FORM_TYPE_HASH = HashingUtils::HashString("FORM_TYPE");
+        static const int LINEAGE_NODE_TYPE_HASH = HashingUtils::HashString("LINEAGE_NODE_TYPE");
 
 
         TypesSearchScope GetTypesSearchScopeForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == FORM_TYPE_HASH)
           {
             return TypesSearchScope::FORM_TYPE;
+          }
+          else if (hashCode == LINEAGE_NODE_TYPE_HASH)
+          {
+            return TypesSearchScope::LINEAGE_NODE_TYPE;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -55,6 +60,8 @@ namespace Aws
             return "ASSET_TYPE";
           case TypesSearchScope::FORM_TYPE:
             return "FORM_TYPE";
+          case TypesSearchScope::LINEAGE_NODE_TYPE:
+            return "LINEAGE_NODE_TYPE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

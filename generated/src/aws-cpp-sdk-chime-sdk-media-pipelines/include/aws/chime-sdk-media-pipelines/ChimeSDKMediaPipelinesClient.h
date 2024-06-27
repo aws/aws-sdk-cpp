@@ -209,8 +209,27 @@ namespace ChimeSDKMediaPipelines
         }
 
         /**
-         * <p>Creates an Kinesis video stream pool for the media pipeline.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Creates an Amazon Kinesis Video Stream pool for use with media stream
+         * pipelines.</p>  <p>If a meeting uses an opt-in Region as its <a
+         * href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_meeting-chime_CreateMeeting.html#chimesdk-meeting-chime_CreateMeeting-request-MediaRegion">MediaRegion</a>,
+         * the KVS stream must be in that same Region. For example, if a meeting uses the
+         * <code>af-south-1</code> Region, the KVS stream must also be in
+         * <code>af-south-1</code>. However, if the meeting uses a Region that AWS turns on
+         * by default, the KVS stream can be in any available Region, including an opt-in
+         * Region. For example, if the meeting uses <code>ca-central-1</code>, the KVS
+         * stream can be in <code>eu-west-2</code>, <code>us-east-1</code>,
+         * <code>af-south-1</code>, or any other Region that the Amazon Chime SDK
+         * supports.</p> <p>To learn which AWS Region a meeting uses, call the <a
+         * href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_meeting-chime_GetMeeting.html">GetMeeting</a>
+         * API and use the <a
+         * href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_meeting-chime_CreateMeeting.html#chimesdk-meeting-chime_CreateMeeting-request-MediaRegion">MediaRegion</a>
+         * parameter from the response.</p> <p>For more information about opt-in Regions,
+         * refer to <a
+         * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/sdk-available-regions.html">Available
+         * Regions</a> in the <i>Amazon Chime SDK Developer Guide</i>, and <a
+         * href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-regions.html#rande-manage-enable.html">Specify
+         * which AWS Regions your account can use</a>, in the <i>AWS Account Management
+         * Reference Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/CreateMediaPipelineKinesisVideoStreamPool">AWS
          * API Reference</a></p>
          */
@@ -335,7 +354,7 @@ namespace ChimeSDKMediaPipelines
         }
 
         /**
-         * <p>Deletes an Kinesis video stream pool.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes an Amazon Kinesis Video Stream pool.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/DeleteMediaPipelineKinesisVideoStreamPool">AWS
          * API Reference</a></p>
          */
@@ -856,8 +875,8 @@ namespace ChimeSDKMediaPipelines
         }
 
         /**
-         * <p>Updates an Kinesis video stream pool in a media pipeline.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Updates an Amazon Kinesis Video Stream pool in a media
+         * pipeline.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/UpdateMediaPipelineKinesisVideoStreamPool">AWS
          * API Reference</a></p>
          */

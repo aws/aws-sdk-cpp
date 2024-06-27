@@ -42,7 +42,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ARN of the media stream sink.</p>
+     * <p>The ARN of the Kinesis Video Stream pool returned by the
+     * <a>CreateMediaPipelineKinesisVideoStreamPool</a> API.</p>
      */
     inline const Aws::String& GetSinkArn() const{ return m_sinkArn; }
     inline bool SinkArnHasBeenSet() const { return m_sinkArnHasBeenSet; }

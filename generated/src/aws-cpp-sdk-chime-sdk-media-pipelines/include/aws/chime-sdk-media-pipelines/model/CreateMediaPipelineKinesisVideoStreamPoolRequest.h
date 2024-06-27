@@ -38,7 +38,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The configuration settings for the video stream.</p>
+     * <p>The configuration settings for the stream.</p>
      */
     inline const KinesisVideoStreamConfiguration& GetStreamConfiguration() const{ return m_streamConfiguration; }
     inline bool StreamConfigurationHasBeenSet() const { return m_streamConfigurationHasBeenSet; }
@@ -50,7 +50,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the video stream pool.</p>
+     * <p>The name of the pool.</p>
      */
     inline const Aws::String& GetPoolName() const{ return m_poolName; }
     inline bool PoolNameHasBeenSet() const { return m_poolNameHasBeenSet; }
@@ -78,7 +78,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The tags assigned to the video stream pool.</p>
+     * <p>The tags assigned to the stream pool.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }

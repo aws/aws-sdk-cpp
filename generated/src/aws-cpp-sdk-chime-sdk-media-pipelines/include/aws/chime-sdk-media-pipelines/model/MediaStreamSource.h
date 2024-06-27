@@ -53,7 +53,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ARN of the media stream source. </p>
+     * <p>The ARN of the meeting.</p>
      */
     inline const Aws::String& GetSourceArn() const{ return m_sourceArn; }
     inline bool SourceArnHasBeenSet() const { return m_sourceArnHasBeenSet; }

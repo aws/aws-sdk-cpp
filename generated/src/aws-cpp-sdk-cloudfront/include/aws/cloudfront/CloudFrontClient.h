@@ -2759,7 +2759,10 @@ namespace CloudFront
         }
 
         /**
-         * <p>List tags for a CloudFront resource.</p><p><h3>See Also:</h3>   <a
+         * <p>List tags for a CloudFront resource. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/tagging.html">Tagging
+         * a distribution</a> in the <i>Amazon CloudFront Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListTagsForResource2020_05_31">AWS
          * API Reference</a></p>
          */
@@ -2817,7 +2820,10 @@ namespace CloudFront
         }
 
         /**
-         * <p>Add tags to a CloudFront resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Add tags to a CloudFront resource. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/tagging.html">Tagging
+         * a distribution</a> in the <i>Amazon CloudFront Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/TagResource2020_05_31">AWS
          * API Reference</a></p>
          */
@@ -2879,7 +2885,10 @@ namespace CloudFront
         }
 
         /**
-         * <p>Remove tags from a CloudFront resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Remove tags from a CloudFront resource. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/tagging.html">Tagging
+         * a distribution</a> in the <i>Amazon CloudFront Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UntagResource2020_05_31">AWS
          * API Reference</a></p>
          */
