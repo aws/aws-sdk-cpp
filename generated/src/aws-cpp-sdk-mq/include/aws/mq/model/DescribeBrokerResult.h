@@ -77,9 +77,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>Enables automatic upgrades to new minor versions for brokers, as new versions
+     * <p>Enables automatic upgrades to new patch versions for brokers as new versions
      * are released and supported by Amazon MQ. Automatic upgrades occur during the
-     * scheduled maintenance window of the broker or after a manual broker reboot.</p>
+     * scheduled maintenance window or after a manual broker reboot.</p>
      */
     inline bool GetAutoMinorVersionUpgrade() const{ return m_autoMinorVersionUpgrade; }
     inline void SetAutoMinorVersionUpgrade(bool value) { m_autoMinorVersionUpgrade = value; }
@@ -210,9 +210,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>The broker engine's version. For a list of supported engine versions, see <a
-     * href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported
-     * engines</a>.</p>
+     * <p>The broker engine version. For more information, see the <a
+     * href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/activemq-version-management.html">ActiveMQ
+     * version management</a> and the <a
+     * href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/rabbitmq-version-management.html">RabbitMQ
+     * version management</a> sections in the Amazon MQ Developer Guide.</p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
     inline void SetEngineVersion(const Aws::String& value) { m_engineVersion = value; }
@@ -285,10 +287,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>The broker engine version to upgrade to. For a list of supported engine
-     * versions, see <a
-     * href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported
-     * engines</a>.</p>
+     * <p>The broker engine version to upgrade to. For more information, see the <a
+     * href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/activemq-version-management.html">ActiveMQ
+     * version management</a> and the <a
+     * href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/rabbitmq-version-management.html">RabbitMQ
+     * version management</a> sections in the Amazon MQ Developer Guide.</p>
      */
     inline const Aws::String& GetPendingEngineVersion() const{ return m_pendingEngineVersion; }
     inline void SetPendingEngineVersion(const Aws::String& value) { m_pendingEngineVersion = value; }

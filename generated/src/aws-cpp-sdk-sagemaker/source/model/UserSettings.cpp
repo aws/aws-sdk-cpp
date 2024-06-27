@@ -35,7 +35,8 @@ UserSettings::UserSettings() :
     m_studioWebPortal(StudioWebPortal::NOT_SET),
     m_studioWebPortalHasBeenSet(false),
     m_customPosixUserConfigHasBeenSet(false),
-    m_customFileSystemConfigsHasBeenSet(false)
+    m_customFileSystemConfigsHasBeenSet(false),
+    m_studioWebPortalSettingsHasBeenSet(false)
 {
 }
 
@@ -165,6 +166,13 @@ UserSettings& UserSettings::operator =(JsonView jsonValue)
     m_customFileSystemConfigsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("StudioWebPortalSettings"))
+  {
+    m_studioWebPortalSettings = jsonValue.GetObject("StudioWebPortalSettings");
+
+    m_studioWebPortalSettingsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -274,6 +282,12 @@ JsonValue UserSettings::Jsonize() const
      customFileSystemConfigsJsonList[customFileSystemConfigsIndex].AsObject(m_customFileSystemConfigs[customFileSystemConfigsIndex].Jsonize());
    }
    payload.WithArray("CustomFileSystemConfigs", std::move(customFileSystemConfigsJsonList));
+
+  }
+
+  if(m_studioWebPortalSettingsHasBeenSet)
+  {
+   payload.WithObject("StudioWebPortalSettings", m_studioWebPortalSettings.Jsonize());
 
   }
 

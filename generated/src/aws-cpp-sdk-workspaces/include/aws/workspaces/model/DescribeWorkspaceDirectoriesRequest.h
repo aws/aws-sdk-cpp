@@ -53,6 +53,21 @@ namespace Model
 
     ///@{
     /**
+     * <p>The names of the WorkSpace directories.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetWorkspaceDirectoryNames() const{ return m_workspaceDirectoryNames; }
+    inline bool WorkspaceDirectoryNamesHasBeenSet() const { return m_workspaceDirectoryNamesHasBeenSet; }
+    inline void SetWorkspaceDirectoryNames(const Aws::Vector<Aws::String>& value) { m_workspaceDirectoryNamesHasBeenSet = true; m_workspaceDirectoryNames = value; }
+    inline void SetWorkspaceDirectoryNames(Aws::Vector<Aws::String>&& value) { m_workspaceDirectoryNamesHasBeenSet = true; m_workspaceDirectoryNames = std::move(value); }
+    inline DescribeWorkspaceDirectoriesRequest& WithWorkspaceDirectoryNames(const Aws::Vector<Aws::String>& value) { SetWorkspaceDirectoryNames(value); return *this;}
+    inline DescribeWorkspaceDirectoriesRequest& WithWorkspaceDirectoryNames(Aws::Vector<Aws::String>&& value) { SetWorkspaceDirectoryNames(std::move(value)); return *this;}
+    inline DescribeWorkspaceDirectoriesRequest& AddWorkspaceDirectoryNames(const Aws::String& value) { m_workspaceDirectoryNamesHasBeenSet = true; m_workspaceDirectoryNames.push_back(value); return *this; }
+    inline DescribeWorkspaceDirectoriesRequest& AddWorkspaceDirectoryNames(Aws::String&& value) { m_workspaceDirectoryNamesHasBeenSet = true; m_workspaceDirectoryNames.push_back(std::move(value)); return *this; }
+    inline DescribeWorkspaceDirectoriesRequest& AddWorkspaceDirectoryNames(const char* value) { m_workspaceDirectoryNamesHasBeenSet = true; m_workspaceDirectoryNames.push_back(value); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>The maximum number of directories to return.</p>
      */
     inline int GetLimit() const{ return m_limit; }
@@ -79,6 +94,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_directoryIds;
     bool m_directoryIdsHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_workspaceDirectoryNames;
+    bool m_workspaceDirectoryNamesHasBeenSet = false;
 
     int m_limit;
     bool m_limitHasBeenSet = false;

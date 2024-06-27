@@ -24,18 +24,21 @@
 #include <aws/qconnect/model/CreateAssistantRequest.h>
 #include <aws/qconnect/model/CreateAssistantAssociationRequest.h>
 #include <aws/qconnect/model/CreateContentRequest.h>
+#include <aws/qconnect/model/CreateContentAssociationRequest.h>
 #include <aws/qconnect/model/CreateKnowledgeBaseRequest.h>
 #include <aws/qconnect/model/CreateQuickResponseRequest.h>
 #include <aws/qconnect/model/CreateSessionRequest.h>
 #include <aws/qconnect/model/DeleteAssistantRequest.h>
 #include <aws/qconnect/model/DeleteAssistantAssociationRequest.h>
 #include <aws/qconnect/model/DeleteContentRequest.h>
+#include <aws/qconnect/model/DeleteContentAssociationRequest.h>
 #include <aws/qconnect/model/DeleteImportJobRequest.h>
 #include <aws/qconnect/model/DeleteKnowledgeBaseRequest.h>
 #include <aws/qconnect/model/DeleteQuickResponseRequest.h>
 #include <aws/qconnect/model/GetAssistantRequest.h>
 #include <aws/qconnect/model/GetAssistantAssociationRequest.h>
 #include <aws/qconnect/model/GetContentRequest.h>
+#include <aws/qconnect/model/GetContentAssociationRequest.h>
 #include <aws/qconnect/model/GetContentSummaryRequest.h>
 #include <aws/qconnect/model/GetImportJobRequest.h>
 #include <aws/qconnect/model/GetKnowledgeBaseRequest.h>
@@ -43,6 +46,7 @@
 #include <aws/qconnect/model/GetSessionRequest.h>
 #include <aws/qconnect/model/ListAssistantAssociationsRequest.h>
 #include <aws/qconnect/model/ListAssistantsRequest.h>
+#include <aws/qconnect/model/ListContentAssociationsRequest.h>
 #include <aws/qconnect/model/ListContentsRequest.h>
 #include <aws/qconnect/model/ListImportJobsRequest.h>
 #include <aws/qconnect/model/ListKnowledgeBasesRequest.h>
@@ -298,6 +302,47 @@ CreateContentOutcome QConnectClient::CreateContent(const CreateContentRequest& r
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+CreateContentAssociationOutcome QConnectClient::CreateContentAssociation(const CreateContentAssociationRequest& request) const
+{
+  AWS_OPERATION_GUARD(CreateContentAssociation);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateContentAssociation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.ContentIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateContentAssociation", "Required field: ContentId, is not set");
+    return CreateContentAssociationOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ContentId]", false));
+  }
+  if (!request.KnowledgeBaseIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateContentAssociation", "Required field: KnowledgeBaseId, is not set");
+    return CreateContentAssociationOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [KnowledgeBaseId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, CreateContentAssociation, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, CreateContentAssociation, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".CreateContentAssociation",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<CreateContentAssociationOutcome>(
+    [&]()-> CreateContentAssociationOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateContentAssociation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/knowledgeBases/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetKnowledgeBaseId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/contents/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetContentId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/associations");
+      return CreateContentAssociationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 CreateKnowledgeBaseOutcome QConnectClient::CreateKnowledgeBase(const CreateKnowledgeBaseRequest& request) const
 {
   AWS_OPERATION_GUARD(CreateKnowledgeBase);
@@ -500,6 +545,53 @@ DeleteContentOutcome QConnectClient::DeleteContent(const DeleteContentRequest& r
       endpointResolutionOutcome.GetResult().AddPathSegments("/contents/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetContentId());
       return DeleteContentOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+DeleteContentAssociationOutcome QConnectClient::DeleteContentAssociation(const DeleteContentAssociationRequest& request) const
+{
+  AWS_OPERATION_GUARD(DeleteContentAssociation);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteContentAssociation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.ContentAssociationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteContentAssociation", "Required field: ContentAssociationId, is not set");
+    return DeleteContentAssociationOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ContentAssociationId]", false));
+  }
+  if (!request.ContentIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteContentAssociation", "Required field: ContentId, is not set");
+    return DeleteContentAssociationOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ContentId]", false));
+  }
+  if (!request.KnowledgeBaseIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteContentAssociation", "Required field: KnowledgeBaseId, is not set");
+    return DeleteContentAssociationOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [KnowledgeBaseId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteContentAssociation, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DeleteContentAssociation, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DeleteContentAssociation",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DeleteContentAssociationOutcome>(
+    [&]()-> DeleteContentAssociationOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteContentAssociation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/knowledgeBases/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetKnowledgeBaseId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/contents/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetContentId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/associations/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetContentAssociationId());
+      return DeleteContentAssociationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -726,6 +818,53 @@ GetContentOutcome QConnectClient::GetContent(const GetContentRequest& request) c
       endpointResolutionOutcome.GetResult().AddPathSegments("/contents/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetContentId());
       return GetContentOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+GetContentAssociationOutcome QConnectClient::GetContentAssociation(const GetContentAssociationRequest& request) const
+{
+  AWS_OPERATION_GUARD(GetContentAssociation);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetContentAssociation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.ContentAssociationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetContentAssociation", "Required field: ContentAssociationId, is not set");
+    return GetContentAssociationOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ContentAssociationId]", false));
+  }
+  if (!request.ContentIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetContentAssociation", "Required field: ContentId, is not set");
+    return GetContentAssociationOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ContentId]", false));
+  }
+  if (!request.KnowledgeBaseIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetContentAssociation", "Required field: KnowledgeBaseId, is not set");
+    return GetContentAssociationOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [KnowledgeBaseId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetContentAssociation, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, GetContentAssociation, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetContentAssociation",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<GetContentAssociationOutcome>(
+    [&]()-> GetContentAssociationOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetContentAssociation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/knowledgeBases/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetKnowledgeBaseId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/contents/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetContentId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/associations/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetContentAssociationId());
+      return GetContentAssociationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -981,6 +1120,47 @@ ListAssistantsOutcome QConnectClient::ListAssistants(const ListAssistantsRequest
       AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListAssistants, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
       endpointResolutionOutcome.GetResult().AddPathSegments("/assistants");
       return ListAssistantsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+ListContentAssociationsOutcome QConnectClient::ListContentAssociations(const ListContentAssociationsRequest& request) const
+{
+  AWS_OPERATION_GUARD(ListContentAssociations);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListContentAssociations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.ContentIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListContentAssociations", "Required field: ContentId, is not set");
+    return ListContentAssociationsOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ContentId]", false));
+  }
+  if (!request.KnowledgeBaseIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListContentAssociations", "Required field: KnowledgeBaseId, is not set");
+    return ListContentAssociationsOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [KnowledgeBaseId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListContentAssociations, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListContentAssociations, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListContentAssociations",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListContentAssociationsOutcome>(
+    [&]()-> ListContentAssociationsOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListContentAssociations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/knowledgeBases/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetKnowledgeBaseId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/contents/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetContentId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/associations");
+      return ListContentAssociationsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

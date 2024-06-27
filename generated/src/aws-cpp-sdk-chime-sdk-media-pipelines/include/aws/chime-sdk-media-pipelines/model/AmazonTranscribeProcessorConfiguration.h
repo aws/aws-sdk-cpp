@@ -29,7 +29,11 @@ namespace Model
 
   /**
    * <p>A structure that contains the configuration settings for an Amazon Transcribe
-   * processor.</p><p><h3>See Also:</h3>   <a
+   * processor.</p>  <p>Calls to this API must include a
+   * <code>LanguageCode</code>, <code>IdentifyLanguage</code>, or
+   * <code>IdentifyMultipleLanguages</code> parameter. If you include more than one
+   * of those parameters, your transcription job fails.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/AmazonTranscribeProcessorConfiguration">AWS
    * API Reference</a></p>
    */
@@ -259,6 +263,16 @@ namespace Model
 
     ///@{
     /**
+     * <p>Turns language identification on or off for multiple languages.</p>
+     */
+    inline bool GetIdentifyMultipleLanguages() const{ return m_identifyMultipleLanguages; }
+    inline bool IdentifyMultipleLanguagesHasBeenSet() const { return m_identifyMultipleLanguagesHasBeenSet; }
+    inline void SetIdentifyMultipleLanguages(bool value) { m_identifyMultipleLanguagesHasBeenSet = true; m_identifyMultipleLanguages = value; }
+    inline AmazonTranscribeProcessorConfiguration& WithIdentifyMultipleLanguages(bool value) { SetIdentifyMultipleLanguages(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The language options for the transcription, such as automatic language
      * detection.</p>
      */
@@ -353,6 +367,9 @@ namespace Model
 
     bool m_identifyLanguage;
     bool m_identifyLanguageHasBeenSet = false;
+
+    bool m_identifyMultipleLanguages;
+    bool m_identifyMultipleLanguagesHasBeenSet = false;
 
     Aws::String m_languageOptions;
     bool m_languageOptionsHasBeenSet = false;

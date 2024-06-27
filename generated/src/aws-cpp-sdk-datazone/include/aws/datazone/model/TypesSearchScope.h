@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     ASSET_TYPE,
-    FORM_TYPE
+    FORM_TYPE,
+    LINEAGE_NODE_TYPE
   };
 
 namespace TypesSearchScopeMapper

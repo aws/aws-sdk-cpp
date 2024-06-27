@@ -63,8 +63,7 @@ namespace Model
      * with the specified one.</p> <p>For information about the rules that apply to tag
      * keys and tag values, see <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/allocation-tag-restrictions.html">User-defined
-     * tag restrictions</a> in the <i>Amazon Web Services Billing and Cost Management
-     * User Guide</i>.</p>
+     * tag restrictions</a> in the <i>Amazon Web Services Billing User Guide</i>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }

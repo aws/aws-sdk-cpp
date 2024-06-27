@@ -169,9 +169,8 @@ namespace Model
      * <p>A DB subnet group to associate with this DB cluster.</p> <p>This setting is
      * required to create a Multi-AZ DB cluster.</p> <p>Valid for Cluster Type: Aurora
      * DB clusters and Multi-AZ DB clusters</p> <p>Constraints:</p> <ul> <li> <p>Must
-     * match the name of an existing DB subnet group.</p> </li> <li> <p>Must not be
-     * <code>default</code>.</p> </li> </ul> <p>Example: <code>mydbsubnetgroup</code>
-     * </p>
+     * match the name of an existing DB subnet group.</p> </li> </ul> <p>Example:
+     * <code>mydbsubnetgroup</code> </p>
      */
     inline const Aws::String& GetDBSubnetGroupName() const{ return m_dBSubnetGroupName; }
     inline bool DBSubnetGroupNameHasBeenSet() const { return m_dBSubnetGroupNameHasBeenSet; }

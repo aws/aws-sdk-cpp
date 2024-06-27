@@ -12,6 +12,7 @@
 #include <aws/quicksight/model/TimeRangeFilter.h>
 #include <aws/quicksight/model/RelativeDatesFilter.h>
 #include <aws/quicksight/model/TopBottomFilter.h>
+#include <aws/quicksight/model/NestedFilter.h>
 #include <utility>
 
 namespace Aws
@@ -137,6 +138,19 @@ namespace Model
     inline Filter& WithTopBottomFilter(const TopBottomFilter& value) { SetTopBottomFilter(value); return *this;}
     inline Filter& WithTopBottomFilter(TopBottomFilter&& value) { SetTopBottomFilter(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>A <code>NestedFilter</code> filters data with a subset of data that is
+     * defined by the nested inner filter.</p>
+     */
+    inline const NestedFilter& GetNestedFilter() const{ return m_nestedFilter; }
+    inline bool NestedFilterHasBeenSet() const { return m_nestedFilterHasBeenSet; }
+    inline void SetNestedFilter(const NestedFilter& value) { m_nestedFilterHasBeenSet = true; m_nestedFilter = value; }
+    inline void SetNestedFilter(NestedFilter&& value) { m_nestedFilterHasBeenSet = true; m_nestedFilter = std::move(value); }
+    inline Filter& WithNestedFilter(const NestedFilter& value) { SetNestedFilter(value); return *this;}
+    inline Filter& WithNestedFilter(NestedFilter&& value) { SetNestedFilter(std::move(value)); return *this;}
+    ///@}
   private:
 
     CategoryFilter m_categoryFilter;
@@ -159,6 +173,9 @@ namespace Model
 
     TopBottomFilter m_topBottomFilter;
     bool m_topBottomFilterHasBeenSet = false;
+
+    NestedFilter m_nestedFilter;
+    bool m_nestedFilterHasBeenSet = false;
   };
 
 } // namespace Model

@@ -66,7 +66,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The link to donwload the information of resource data that failed to be
+     * <p>The link to download the information of resource data that failed to be
      * imported.</p>
      */
     inline const Aws::String& GetFailedRecordReport() const{ return m_failedRecordReport; }

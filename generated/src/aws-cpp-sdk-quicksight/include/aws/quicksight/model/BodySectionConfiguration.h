@@ -9,6 +9,7 @@
 #include <aws/quicksight/model/BodySectionContent.h>
 #include <aws/quicksight/model/SectionStyle.h>
 #include <aws/quicksight/model/SectionPageBreakConfiguration.h>
+#include <aws/quicksight/model/BodySectionRepeatConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -89,6 +90,19 @@ namespace Model
     inline BodySectionConfiguration& WithPageBreakConfiguration(const SectionPageBreakConfiguration& value) { SetPageBreakConfiguration(value); return *this;}
     inline BodySectionConfiguration& WithPageBreakConfiguration(SectionPageBreakConfiguration&& value) { SetPageBreakConfiguration(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Describes the configurations that are required to declare a section as
+     * repeating.</p>
+     */
+    inline const BodySectionRepeatConfiguration& GetRepeatConfiguration() const{ return m_repeatConfiguration; }
+    inline bool RepeatConfigurationHasBeenSet() const { return m_repeatConfigurationHasBeenSet; }
+    inline void SetRepeatConfiguration(const BodySectionRepeatConfiguration& value) { m_repeatConfigurationHasBeenSet = true; m_repeatConfiguration = value; }
+    inline void SetRepeatConfiguration(BodySectionRepeatConfiguration&& value) { m_repeatConfigurationHasBeenSet = true; m_repeatConfiguration = std::move(value); }
+    inline BodySectionConfiguration& WithRepeatConfiguration(const BodySectionRepeatConfiguration& value) { SetRepeatConfiguration(value); return *this;}
+    inline BodySectionConfiguration& WithRepeatConfiguration(BodySectionRepeatConfiguration&& value) { SetRepeatConfiguration(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_sectionId;
@@ -102,6 +116,9 @@ namespace Model
 
     SectionPageBreakConfiguration m_pageBreakConfiguration;
     bool m_pageBreakConfigurationHasBeenSet = false;
+
+    BodySectionRepeatConfiguration m_repeatConfiguration;
+    bool m_repeatConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

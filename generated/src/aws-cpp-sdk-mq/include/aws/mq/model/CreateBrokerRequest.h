@@ -65,10 +65,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>Enables automatic upgrades to new minor versions for brokers, as new versions
+     * <p>Enables automatic upgrades to new patch versions for brokers as new versions
      * are released and supported by Amazon MQ. Automatic upgrades occur during the
-     * scheduled maintenance window of the broker or after a manual broker reboot. Set
-     * to true by default, if no value is specified.</p>
+     * scheduled maintenance window or after a manual broker reboot. Set to true by
+     * default, if no value is specified.</p> <p>Must be set to true for ActiveMQ
+     * brokers version 5.18 and above and for RabbitMQ brokers version 3.13 and
+     * above.</p>
      */
     inline bool GetAutoMinorVersionUpgrade() const{ return m_autoMinorVersionUpgrade; }
     inline bool AutoMinorVersionUpgradeHasBeenSet() const { return m_autoMinorVersionUpgradeHasBeenSet; }
@@ -165,10 +167,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>Required. The broker engine's version. For a list of supported engine
-     * versions, see <a
-     * href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported
-     * engines</a>.</p>
+     * <p>The broker engine version. Defaults to the latest available version for the
+     * specified broker engine type. For more information, see the <a
+     * href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/activemq-version-management.html">ActiveMQ
+     * version management</a> and the <a
+     * href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/rabbitmq-version-management.html">RabbitMQ
+     * version management</a> sections in the Amazon MQ Developer Guide.</p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
     inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }

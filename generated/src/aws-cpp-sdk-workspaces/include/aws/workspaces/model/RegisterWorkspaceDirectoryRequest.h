@@ -9,6 +9,9 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/workspaces/model/Tenancy.h>
+#include <aws/workspaces/model/UserIdentityType.h>
+#include <aws/workspaces/model/WorkspaceType.h>
+#include <aws/workspaces/model/ActiveDirectoryConfig.h>
 #include <aws/workspaces/model/Tag.h>
 #include <utility>
 
@@ -129,6 +132,70 @@ namespace Model
     inline RegisterWorkspaceDirectoryRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
     inline RegisterWorkspaceDirectoryRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>The name of the directory to register.</p>
+     */
+    inline const Aws::String& GetWorkspaceDirectoryName() const{ return m_workspaceDirectoryName; }
+    inline bool WorkspaceDirectoryNameHasBeenSet() const { return m_workspaceDirectoryNameHasBeenSet; }
+    inline void SetWorkspaceDirectoryName(const Aws::String& value) { m_workspaceDirectoryNameHasBeenSet = true; m_workspaceDirectoryName = value; }
+    inline void SetWorkspaceDirectoryName(Aws::String&& value) { m_workspaceDirectoryNameHasBeenSet = true; m_workspaceDirectoryName = std::move(value); }
+    inline void SetWorkspaceDirectoryName(const char* value) { m_workspaceDirectoryNameHasBeenSet = true; m_workspaceDirectoryName.assign(value); }
+    inline RegisterWorkspaceDirectoryRequest& WithWorkspaceDirectoryName(const Aws::String& value) { SetWorkspaceDirectoryName(value); return *this;}
+    inline RegisterWorkspaceDirectoryRequest& WithWorkspaceDirectoryName(Aws::String&& value) { SetWorkspaceDirectoryName(std::move(value)); return *this;}
+    inline RegisterWorkspaceDirectoryRequest& WithWorkspaceDirectoryName(const char* value) { SetWorkspaceDirectoryName(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Description of the directory to register.</p>
+     */
+    inline const Aws::String& GetWorkspaceDirectoryDescription() const{ return m_workspaceDirectoryDescription; }
+    inline bool WorkspaceDirectoryDescriptionHasBeenSet() const { return m_workspaceDirectoryDescriptionHasBeenSet; }
+    inline void SetWorkspaceDirectoryDescription(const Aws::String& value) { m_workspaceDirectoryDescriptionHasBeenSet = true; m_workspaceDirectoryDescription = value; }
+    inline void SetWorkspaceDirectoryDescription(Aws::String&& value) { m_workspaceDirectoryDescriptionHasBeenSet = true; m_workspaceDirectoryDescription = std::move(value); }
+    inline void SetWorkspaceDirectoryDescription(const char* value) { m_workspaceDirectoryDescriptionHasBeenSet = true; m_workspaceDirectoryDescription.assign(value); }
+    inline RegisterWorkspaceDirectoryRequest& WithWorkspaceDirectoryDescription(const Aws::String& value) { SetWorkspaceDirectoryDescription(value); return *this;}
+    inline RegisterWorkspaceDirectoryRequest& WithWorkspaceDirectoryDescription(Aws::String&& value) { SetWorkspaceDirectoryDescription(std::move(value)); return *this;}
+    inline RegisterWorkspaceDirectoryRequest& WithWorkspaceDirectoryDescription(const char* value) { SetWorkspaceDirectoryDescription(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The type of identity management the user is using.</p>
+     */
+    inline const UserIdentityType& GetUserIdentityType() const{ return m_userIdentityType; }
+    inline bool UserIdentityTypeHasBeenSet() const { return m_userIdentityTypeHasBeenSet; }
+    inline void SetUserIdentityType(const UserIdentityType& value) { m_userIdentityTypeHasBeenSet = true; m_userIdentityType = value; }
+    inline void SetUserIdentityType(UserIdentityType&& value) { m_userIdentityTypeHasBeenSet = true; m_userIdentityType = std::move(value); }
+    inline RegisterWorkspaceDirectoryRequest& WithUserIdentityType(const UserIdentityType& value) { SetUserIdentityType(value); return *this;}
+    inline RegisterWorkspaceDirectoryRequest& WithUserIdentityType(UserIdentityType&& value) { SetUserIdentityType(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Indicates whether the directory's WorkSpace type is personal or pools.</p>
+     */
+    inline const WorkspaceType& GetWorkspaceType() const{ return m_workspaceType; }
+    inline bool WorkspaceTypeHasBeenSet() const { return m_workspaceTypeHasBeenSet; }
+    inline void SetWorkspaceType(const WorkspaceType& value) { m_workspaceTypeHasBeenSet = true; m_workspaceType = value; }
+    inline void SetWorkspaceType(WorkspaceType&& value) { m_workspaceTypeHasBeenSet = true; m_workspaceType = std::move(value); }
+    inline RegisterWorkspaceDirectoryRequest& WithWorkspaceType(const WorkspaceType& value) { SetWorkspaceType(value); return *this;}
+    inline RegisterWorkspaceDirectoryRequest& WithWorkspaceType(WorkspaceType&& value) { SetWorkspaceType(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The active directory config of the directory.</p>
+     */
+    inline const ActiveDirectoryConfig& GetActiveDirectoryConfig() const{ return m_activeDirectoryConfig; }
+    inline bool ActiveDirectoryConfigHasBeenSet() const { return m_activeDirectoryConfigHasBeenSet; }
+    inline void SetActiveDirectoryConfig(const ActiveDirectoryConfig& value) { m_activeDirectoryConfigHasBeenSet = true; m_activeDirectoryConfig = value; }
+    inline void SetActiveDirectoryConfig(ActiveDirectoryConfig&& value) { m_activeDirectoryConfigHasBeenSet = true; m_activeDirectoryConfig = std::move(value); }
+    inline RegisterWorkspaceDirectoryRequest& WithActiveDirectoryConfig(const ActiveDirectoryConfig& value) { SetActiveDirectoryConfig(value); return *this;}
+    inline RegisterWorkspaceDirectoryRequest& WithActiveDirectoryConfig(ActiveDirectoryConfig&& value) { SetActiveDirectoryConfig(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_directoryId;
@@ -148,6 +215,21 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    Aws::String m_workspaceDirectoryName;
+    bool m_workspaceDirectoryNameHasBeenSet = false;
+
+    Aws::String m_workspaceDirectoryDescription;
+    bool m_workspaceDirectoryDescriptionHasBeenSet = false;
+
+    UserIdentityType m_userIdentityType;
+    bool m_userIdentityTypeHasBeenSet = false;
+
+    WorkspaceType m_workspaceType;
+    bool m_workspaceTypeHasBeenSet = false;
+
+    ActiveDirectoryConfig m_activeDirectoryConfig;
+    bool m_activeDirectoryConfigHasBeenSet = false;
   };
 
 } // namespace Model

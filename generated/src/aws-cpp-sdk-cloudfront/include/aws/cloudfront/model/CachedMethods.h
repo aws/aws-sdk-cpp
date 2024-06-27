@@ -61,7 +61,10 @@ namespace Model
     ///@{
     /**
      * <p>A complex type that contains the HTTP methods that you want CloudFront to
-     * cache responses to.</p>
+     * cache responses to. Valid values for <code>CachedMethods</code> include
+     * <code>GET</code>, <code>HEAD</code>, and <code>OPTIONS</code>, depending on
+     * which caching option you choose. For more information, see the preceding
+     * section.</p>
      */
     inline const Aws::Vector<Method>& GetItems() const{ return m_items; }
     inline bool ItemsHasBeenSet() const { return m_itemsHasBeenSet; }

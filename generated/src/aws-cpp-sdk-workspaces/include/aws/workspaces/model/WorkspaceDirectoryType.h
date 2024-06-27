@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     SIMPLE_AD,
-    AD_CONNECTOR
+    AD_CONNECTOR,
+    CUSTOMER_MANAGED
   };
 
 namespace WorkspaceDirectoryTypeMapper

@@ -35,7 +35,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The configuration for the Kinesis video stream pool.</p>
+     * <p>The configuration for applying the streams to the pool.</p>  <p/>
+     * 
      */
     inline const KinesisVideoStreamPoolConfiguration& GetKinesisVideoStreamPoolConfiguration() const{ return m_kinesisVideoStreamPoolConfiguration; }
     inline void SetKinesisVideoStreamPoolConfiguration(const KinesisVideoStreamPoolConfiguration& value) { m_kinesisVideoStreamPoolConfiguration = value; }

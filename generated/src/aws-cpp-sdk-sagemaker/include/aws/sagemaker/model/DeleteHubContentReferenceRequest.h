@@ -51,7 +51,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The type of hub content to delete.</p>
+     * <p>The type of hub content reference to delete. The only supported type of hub
+     * content reference to delete is <code>ModelReference</code>.</p>
      */
     inline const HubContentType& GetHubContentType() const{ return m_hubContentType; }
     inline bool HubContentTypeHasBeenSet() const { return m_hubContentTypeHasBeenSet; }

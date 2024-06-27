@@ -34,6 +34,7 @@
 #include <aws/workspaces/model/CreateWorkspaceBundleResult.h>
 #include <aws/workspaces/model/CreateWorkspaceImageResult.h>
 #include <aws/workspaces/model/CreateWorkspacesResult.h>
+#include <aws/workspaces/model/CreateWorkspacesPoolResult.h>
 #include <aws/workspaces/model/DeleteAccountLinkInvitationResult.h>
 #include <aws/workspaces/model/DeleteClientBrandingResult.h>
 #include <aws/workspaces/model/DeleteConnectClientAddInResult.h>
@@ -65,6 +66,8 @@
 #include <aws/workspaces/model/DescribeWorkspaceSnapshotsResult.h>
 #include <aws/workspaces/model/DescribeWorkspacesResult.h>
 #include <aws/workspaces/model/DescribeWorkspacesConnectionStatusResult.h>
+#include <aws/workspaces/model/DescribeWorkspacesPoolSessionsResult.h>
+#include <aws/workspaces/model/DescribeWorkspacesPoolsResult.h>
 #include <aws/workspaces/model/DisassociateConnectionAliasResult.h>
 #include <aws/workspaces/model/DisassociateIpGroupsResult.h>
 #include <aws/workspaces/model/DisassociateWorkspaceApplicationResult.h>
@@ -79,6 +82,7 @@
 #include <aws/workspaces/model/ModifyClientPropertiesResult.h>
 #include <aws/workspaces/model/ModifySamlPropertiesResult.h>
 #include <aws/workspaces/model/ModifySelfservicePermissionsResult.h>
+#include <aws/workspaces/model/ModifyStreamingPropertiesResult.h>
 #include <aws/workspaces/model/ModifyWorkspaceAccessPropertiesResult.h>
 #include <aws/workspaces/model/ModifyWorkspaceCreationPropertiesResult.h>
 #include <aws/workspaces/model/ModifyWorkspacePropertiesResult.h>
@@ -90,17 +94,23 @@
 #include <aws/workspaces/model/RestoreWorkspaceResult.h>
 #include <aws/workspaces/model/RevokeIpRulesResult.h>
 #include <aws/workspaces/model/StartWorkspacesResult.h>
+#include <aws/workspaces/model/StartWorkspacesPoolResult.h>
 #include <aws/workspaces/model/StopWorkspacesResult.h>
+#include <aws/workspaces/model/StopWorkspacesPoolResult.h>
 #include <aws/workspaces/model/TerminateWorkspacesResult.h>
+#include <aws/workspaces/model/TerminateWorkspacesPoolResult.h>
+#include <aws/workspaces/model/TerminateWorkspacesPoolSessionResult.h>
 #include <aws/workspaces/model/UpdateConnectClientAddInResult.h>
 #include <aws/workspaces/model/UpdateConnectionAliasPermissionResult.h>
 #include <aws/workspaces/model/UpdateRulesOfIpGroupResult.h>
 #include <aws/workspaces/model/UpdateWorkspaceBundleResult.h>
 #include <aws/workspaces/model/UpdateWorkspaceImagePermissionResult.h>
+#include <aws/workspaces/model/UpdateWorkspacesPoolResult.h>
 #include <aws/workspaces/model/DescribeAccountRequest.h>
 #include <aws/workspaces/model/DescribeWorkspacesConnectionStatusRequest.h>
 #include <aws/workspaces/model/DescribeWorkspaceDirectoriesRequest.h>
 #include <aws/workspaces/model/GetAccountLinkRequest.h>
+#include <aws/workspaces/model/DescribeWorkspacesPoolsRequest.h>
 #include <aws/workspaces/model/DescribeApplicationsRequest.h>
 #include <aws/workspaces/model/DescribeWorkspaceImagesRequest.h>
 #include <aws/workspaces/model/ModifyAccountRequest.h>
@@ -112,6 +122,7 @@
 #include <aws/workspaces/model/DescribeWorkspaceBundlesRequest.h>
 #include <aws/workspaces/model/DescribeAccountModificationsRequest.h>
 #include <aws/workspaces/model/ListAccountLinksRequest.h>
+#include <aws/workspaces/model/RegisterWorkspaceDirectoryRequest.h>
 /* End of service model headers required in WorkSpacesClient header */
 
 namespace Aws
@@ -168,6 +179,7 @@ namespace Aws
       class CreateWorkspaceBundleRequest;
       class CreateWorkspaceImageRequest;
       class CreateWorkspacesRequest;
+      class CreateWorkspacesPoolRequest;
       class DeleteAccountLinkInvitationRequest;
       class DeleteClientBrandingRequest;
       class DeleteConnectClientAddInRequest;
@@ -199,6 +211,8 @@ namespace Aws
       class DescribeWorkspaceSnapshotsRequest;
       class DescribeWorkspacesRequest;
       class DescribeWorkspacesConnectionStatusRequest;
+      class DescribeWorkspacesPoolSessionsRequest;
+      class DescribeWorkspacesPoolsRequest;
       class DisassociateConnectionAliasRequest;
       class DisassociateIpGroupsRequest;
       class DisassociateWorkspaceApplicationRequest;
@@ -213,6 +227,7 @@ namespace Aws
       class ModifyClientPropertiesRequest;
       class ModifySamlPropertiesRequest;
       class ModifySelfservicePermissionsRequest;
+      class ModifyStreamingPropertiesRequest;
       class ModifyWorkspaceAccessPropertiesRequest;
       class ModifyWorkspaceCreationPropertiesRequest;
       class ModifyWorkspacePropertiesRequest;
@@ -224,13 +239,18 @@ namespace Aws
       class RestoreWorkspaceRequest;
       class RevokeIpRulesRequest;
       class StartWorkspacesRequest;
+      class StartWorkspacesPoolRequest;
       class StopWorkspacesRequest;
+      class StopWorkspacesPoolRequest;
       class TerminateWorkspacesRequest;
+      class TerminateWorkspacesPoolRequest;
+      class TerminateWorkspacesPoolSessionRequest;
       class UpdateConnectClientAddInRequest;
       class UpdateConnectionAliasPermissionRequest;
       class UpdateRulesOfIpGroupRequest;
       class UpdateWorkspaceBundleRequest;
       class UpdateWorkspaceImagePermissionRequest;
+      class UpdateWorkspacesPoolRequest;
       /* End of service model forward declarations required in WorkSpacesClient header */
 
       /* Service model Outcome class definitions */
@@ -250,6 +270,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<CreateWorkspaceBundleResult, WorkSpacesError> CreateWorkspaceBundleOutcome;
       typedef Aws::Utils::Outcome<CreateWorkspaceImageResult, WorkSpacesError> CreateWorkspaceImageOutcome;
       typedef Aws::Utils::Outcome<CreateWorkspacesResult, WorkSpacesError> CreateWorkspacesOutcome;
+      typedef Aws::Utils::Outcome<CreateWorkspacesPoolResult, WorkSpacesError> CreateWorkspacesPoolOutcome;
       typedef Aws::Utils::Outcome<DeleteAccountLinkInvitationResult, WorkSpacesError> DeleteAccountLinkInvitationOutcome;
       typedef Aws::Utils::Outcome<DeleteClientBrandingResult, WorkSpacesError> DeleteClientBrandingOutcome;
       typedef Aws::Utils::Outcome<DeleteConnectClientAddInResult, WorkSpacesError> DeleteConnectClientAddInOutcome;
@@ -281,6 +302,8 @@ namespace Aws
       typedef Aws::Utils::Outcome<DescribeWorkspaceSnapshotsResult, WorkSpacesError> DescribeWorkspaceSnapshotsOutcome;
       typedef Aws::Utils::Outcome<DescribeWorkspacesResult, WorkSpacesError> DescribeWorkspacesOutcome;
       typedef Aws::Utils::Outcome<DescribeWorkspacesConnectionStatusResult, WorkSpacesError> DescribeWorkspacesConnectionStatusOutcome;
+      typedef Aws::Utils::Outcome<DescribeWorkspacesPoolSessionsResult, WorkSpacesError> DescribeWorkspacesPoolSessionsOutcome;
+      typedef Aws::Utils::Outcome<DescribeWorkspacesPoolsResult, WorkSpacesError> DescribeWorkspacesPoolsOutcome;
       typedef Aws::Utils::Outcome<DisassociateConnectionAliasResult, WorkSpacesError> DisassociateConnectionAliasOutcome;
       typedef Aws::Utils::Outcome<DisassociateIpGroupsResult, WorkSpacesError> DisassociateIpGroupsOutcome;
       typedef Aws::Utils::Outcome<DisassociateWorkspaceApplicationResult, WorkSpacesError> DisassociateWorkspaceApplicationOutcome;
@@ -295,6 +318,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ModifyClientPropertiesResult, WorkSpacesError> ModifyClientPropertiesOutcome;
       typedef Aws::Utils::Outcome<ModifySamlPropertiesResult, WorkSpacesError> ModifySamlPropertiesOutcome;
       typedef Aws::Utils::Outcome<ModifySelfservicePermissionsResult, WorkSpacesError> ModifySelfservicePermissionsOutcome;
+      typedef Aws::Utils::Outcome<ModifyStreamingPropertiesResult, WorkSpacesError> ModifyStreamingPropertiesOutcome;
       typedef Aws::Utils::Outcome<ModifyWorkspaceAccessPropertiesResult, WorkSpacesError> ModifyWorkspaceAccessPropertiesOutcome;
       typedef Aws::Utils::Outcome<ModifyWorkspaceCreationPropertiesResult, WorkSpacesError> ModifyWorkspaceCreationPropertiesOutcome;
       typedef Aws::Utils::Outcome<ModifyWorkspacePropertiesResult, WorkSpacesError> ModifyWorkspacePropertiesOutcome;
@@ -306,13 +330,18 @@ namespace Aws
       typedef Aws::Utils::Outcome<RestoreWorkspaceResult, WorkSpacesError> RestoreWorkspaceOutcome;
       typedef Aws::Utils::Outcome<RevokeIpRulesResult, WorkSpacesError> RevokeIpRulesOutcome;
       typedef Aws::Utils::Outcome<StartWorkspacesResult, WorkSpacesError> StartWorkspacesOutcome;
+      typedef Aws::Utils::Outcome<StartWorkspacesPoolResult, WorkSpacesError> StartWorkspacesPoolOutcome;
       typedef Aws::Utils::Outcome<StopWorkspacesResult, WorkSpacesError> StopWorkspacesOutcome;
+      typedef Aws::Utils::Outcome<StopWorkspacesPoolResult, WorkSpacesError> StopWorkspacesPoolOutcome;
       typedef Aws::Utils::Outcome<TerminateWorkspacesResult, WorkSpacesError> TerminateWorkspacesOutcome;
+      typedef Aws::Utils::Outcome<TerminateWorkspacesPoolResult, WorkSpacesError> TerminateWorkspacesPoolOutcome;
+      typedef Aws::Utils::Outcome<TerminateWorkspacesPoolSessionResult, WorkSpacesError> TerminateWorkspacesPoolSessionOutcome;
       typedef Aws::Utils::Outcome<UpdateConnectClientAddInResult, WorkSpacesError> UpdateConnectClientAddInOutcome;
       typedef Aws::Utils::Outcome<UpdateConnectionAliasPermissionResult, WorkSpacesError> UpdateConnectionAliasPermissionOutcome;
       typedef Aws::Utils::Outcome<UpdateRulesOfIpGroupResult, WorkSpacesError> UpdateRulesOfIpGroupOutcome;
       typedef Aws::Utils::Outcome<UpdateWorkspaceBundleResult, WorkSpacesError> UpdateWorkspaceBundleOutcome;
       typedef Aws::Utils::Outcome<UpdateWorkspaceImagePermissionResult, WorkSpacesError> UpdateWorkspaceImagePermissionOutcome;
+      typedef Aws::Utils::Outcome<UpdateWorkspacesPoolResult, WorkSpacesError> UpdateWorkspacesPoolOutcome;
       /* End of service model Outcome class definitions */
 
       /* Service model Outcome callable definitions */
@@ -332,6 +361,7 @@ namespace Aws
       typedef std::future<CreateWorkspaceBundleOutcome> CreateWorkspaceBundleOutcomeCallable;
       typedef std::future<CreateWorkspaceImageOutcome> CreateWorkspaceImageOutcomeCallable;
       typedef std::future<CreateWorkspacesOutcome> CreateWorkspacesOutcomeCallable;
+      typedef std::future<CreateWorkspacesPoolOutcome> CreateWorkspacesPoolOutcomeCallable;
       typedef std::future<DeleteAccountLinkInvitationOutcome> DeleteAccountLinkInvitationOutcomeCallable;
       typedef std::future<DeleteClientBrandingOutcome> DeleteClientBrandingOutcomeCallable;
       typedef std::future<DeleteConnectClientAddInOutcome> DeleteConnectClientAddInOutcomeCallable;
@@ -363,6 +393,8 @@ namespace Aws
       typedef std::future<DescribeWorkspaceSnapshotsOutcome> DescribeWorkspaceSnapshotsOutcomeCallable;
       typedef std::future<DescribeWorkspacesOutcome> DescribeWorkspacesOutcomeCallable;
       typedef std::future<DescribeWorkspacesConnectionStatusOutcome> DescribeWorkspacesConnectionStatusOutcomeCallable;
+      typedef std::future<DescribeWorkspacesPoolSessionsOutcome> DescribeWorkspacesPoolSessionsOutcomeCallable;
+      typedef std::future<DescribeWorkspacesPoolsOutcome> DescribeWorkspacesPoolsOutcomeCallable;
       typedef std::future<DisassociateConnectionAliasOutcome> DisassociateConnectionAliasOutcomeCallable;
       typedef std::future<DisassociateIpGroupsOutcome> DisassociateIpGroupsOutcomeCallable;
       typedef std::future<DisassociateWorkspaceApplicationOutcome> DisassociateWorkspaceApplicationOutcomeCallable;
@@ -377,6 +409,7 @@ namespace Aws
       typedef std::future<ModifyClientPropertiesOutcome> ModifyClientPropertiesOutcomeCallable;
       typedef std::future<ModifySamlPropertiesOutcome> ModifySamlPropertiesOutcomeCallable;
       typedef std::future<ModifySelfservicePermissionsOutcome> ModifySelfservicePermissionsOutcomeCallable;
+      typedef std::future<ModifyStreamingPropertiesOutcome> ModifyStreamingPropertiesOutcomeCallable;
       typedef std::future<ModifyWorkspaceAccessPropertiesOutcome> ModifyWorkspaceAccessPropertiesOutcomeCallable;
       typedef std::future<ModifyWorkspaceCreationPropertiesOutcome> ModifyWorkspaceCreationPropertiesOutcomeCallable;
       typedef std::future<ModifyWorkspacePropertiesOutcome> ModifyWorkspacePropertiesOutcomeCallable;
@@ -388,13 +421,18 @@ namespace Aws
       typedef std::future<RestoreWorkspaceOutcome> RestoreWorkspaceOutcomeCallable;
       typedef std::future<RevokeIpRulesOutcome> RevokeIpRulesOutcomeCallable;
       typedef std::future<StartWorkspacesOutcome> StartWorkspacesOutcomeCallable;
+      typedef std::future<StartWorkspacesPoolOutcome> StartWorkspacesPoolOutcomeCallable;
       typedef std::future<StopWorkspacesOutcome> StopWorkspacesOutcomeCallable;
+      typedef std::future<StopWorkspacesPoolOutcome> StopWorkspacesPoolOutcomeCallable;
       typedef std::future<TerminateWorkspacesOutcome> TerminateWorkspacesOutcomeCallable;
+      typedef std::future<TerminateWorkspacesPoolOutcome> TerminateWorkspacesPoolOutcomeCallable;
+      typedef std::future<TerminateWorkspacesPoolSessionOutcome> TerminateWorkspacesPoolSessionOutcomeCallable;
       typedef std::future<UpdateConnectClientAddInOutcome> UpdateConnectClientAddInOutcomeCallable;
       typedef std::future<UpdateConnectionAliasPermissionOutcome> UpdateConnectionAliasPermissionOutcomeCallable;
       typedef std::future<UpdateRulesOfIpGroupOutcome> UpdateRulesOfIpGroupOutcomeCallable;
       typedef std::future<UpdateWorkspaceBundleOutcome> UpdateWorkspaceBundleOutcomeCallable;
       typedef std::future<UpdateWorkspaceImagePermissionOutcome> UpdateWorkspaceImagePermissionOutcomeCallable;
+      typedef std::future<UpdateWorkspacesPoolOutcome> UpdateWorkspacesPoolOutcomeCallable;
       /* End of service model Outcome callable definitions */
     } // namespace Model
 
@@ -417,6 +455,7 @@ namespace Aws
     typedef std::function<void(const WorkSpacesClient*, const Model::CreateWorkspaceBundleRequest&, const Model::CreateWorkspaceBundleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateWorkspaceBundleResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::CreateWorkspaceImageRequest&, const Model::CreateWorkspaceImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateWorkspaceImageResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::CreateWorkspacesRequest&, const Model::CreateWorkspacesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateWorkspacesResponseReceivedHandler;
+    typedef std::function<void(const WorkSpacesClient*, const Model::CreateWorkspacesPoolRequest&, const Model::CreateWorkspacesPoolOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateWorkspacesPoolResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::DeleteAccountLinkInvitationRequest&, const Model::DeleteAccountLinkInvitationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAccountLinkInvitationResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::DeleteClientBrandingRequest&, const Model::DeleteClientBrandingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteClientBrandingResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::DeleteConnectClientAddInRequest&, const Model::DeleteConnectClientAddInOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteConnectClientAddInResponseReceivedHandler;
@@ -448,6 +487,8 @@ namespace Aws
     typedef std::function<void(const WorkSpacesClient*, const Model::DescribeWorkspaceSnapshotsRequest&, const Model::DescribeWorkspaceSnapshotsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeWorkspaceSnapshotsResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::DescribeWorkspacesRequest&, const Model::DescribeWorkspacesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeWorkspacesResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::DescribeWorkspacesConnectionStatusRequest&, const Model::DescribeWorkspacesConnectionStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeWorkspacesConnectionStatusResponseReceivedHandler;
+    typedef std::function<void(const WorkSpacesClient*, const Model::DescribeWorkspacesPoolSessionsRequest&, const Model::DescribeWorkspacesPoolSessionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeWorkspacesPoolSessionsResponseReceivedHandler;
+    typedef std::function<void(const WorkSpacesClient*, const Model::DescribeWorkspacesPoolsRequest&, const Model::DescribeWorkspacesPoolsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeWorkspacesPoolsResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::DisassociateConnectionAliasRequest&, const Model::DisassociateConnectionAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateConnectionAliasResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::DisassociateIpGroupsRequest&, const Model::DisassociateIpGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateIpGroupsResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::DisassociateWorkspaceApplicationRequest&, const Model::DisassociateWorkspaceApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateWorkspaceApplicationResponseReceivedHandler;
@@ -462,6 +503,7 @@ namespace Aws
     typedef std::function<void(const WorkSpacesClient*, const Model::ModifyClientPropertiesRequest&, const Model::ModifyClientPropertiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyClientPropertiesResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::ModifySamlPropertiesRequest&, const Model::ModifySamlPropertiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifySamlPropertiesResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::ModifySelfservicePermissionsRequest&, const Model::ModifySelfservicePermissionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifySelfservicePermissionsResponseReceivedHandler;
+    typedef std::function<void(const WorkSpacesClient*, const Model::ModifyStreamingPropertiesRequest&, const Model::ModifyStreamingPropertiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyStreamingPropertiesResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::ModifyWorkspaceAccessPropertiesRequest&, const Model::ModifyWorkspaceAccessPropertiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyWorkspaceAccessPropertiesResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::ModifyWorkspaceCreationPropertiesRequest&, const Model::ModifyWorkspaceCreationPropertiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyWorkspaceCreationPropertiesResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::ModifyWorkspacePropertiesRequest&, const Model::ModifyWorkspacePropertiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyWorkspacePropertiesResponseReceivedHandler;
@@ -473,13 +515,18 @@ namespace Aws
     typedef std::function<void(const WorkSpacesClient*, const Model::RestoreWorkspaceRequest&, const Model::RestoreWorkspaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RestoreWorkspaceResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::RevokeIpRulesRequest&, const Model::RevokeIpRulesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RevokeIpRulesResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::StartWorkspacesRequest&, const Model::StartWorkspacesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartWorkspacesResponseReceivedHandler;
+    typedef std::function<void(const WorkSpacesClient*, const Model::StartWorkspacesPoolRequest&, const Model::StartWorkspacesPoolOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartWorkspacesPoolResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::StopWorkspacesRequest&, const Model::StopWorkspacesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopWorkspacesResponseReceivedHandler;
+    typedef std::function<void(const WorkSpacesClient*, const Model::StopWorkspacesPoolRequest&, const Model::StopWorkspacesPoolOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopWorkspacesPoolResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::TerminateWorkspacesRequest&, const Model::TerminateWorkspacesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TerminateWorkspacesResponseReceivedHandler;
+    typedef std::function<void(const WorkSpacesClient*, const Model::TerminateWorkspacesPoolRequest&, const Model::TerminateWorkspacesPoolOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TerminateWorkspacesPoolResponseReceivedHandler;
+    typedef std::function<void(const WorkSpacesClient*, const Model::TerminateWorkspacesPoolSessionRequest&, const Model::TerminateWorkspacesPoolSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TerminateWorkspacesPoolSessionResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::UpdateConnectClientAddInRequest&, const Model::UpdateConnectClientAddInOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateConnectClientAddInResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::UpdateConnectionAliasPermissionRequest&, const Model::UpdateConnectionAliasPermissionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateConnectionAliasPermissionResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::UpdateRulesOfIpGroupRequest&, const Model::UpdateRulesOfIpGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateRulesOfIpGroupResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::UpdateWorkspaceBundleRequest&, const Model::UpdateWorkspaceBundleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateWorkspaceBundleResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::UpdateWorkspaceImagePermissionRequest&, const Model::UpdateWorkspaceImagePermissionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateWorkspaceImagePermissionResponseReceivedHandler;
+    typedef std::function<void(const WorkSpacesClient*, const Model::UpdateWorkspacesPoolRequest&, const Model::UpdateWorkspacesPoolOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateWorkspacesPoolResponseReceivedHandler;
     /* End of service model async handlers definitions */
   } // namespace WorkSpaces
 } // namespace Aws

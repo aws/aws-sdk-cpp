@@ -14,6 +14,7 @@ using namespace Aws::Utils;
 
 DescribeWorkspaceDirectoriesRequest::DescribeWorkspaceDirectoriesRequest() : 
     m_directoryIdsHasBeenSet(false),
+    m_workspaceDirectoryNamesHasBeenSet(false),
     m_limit(0),
     m_limitHasBeenSet(false),
     m_nextTokenHasBeenSet(false)
@@ -32,6 +33,17 @@ Aws::String DescribeWorkspaceDirectoriesRequest::SerializePayload() const
      directoryIdsJsonList[directoryIdsIndex].AsString(m_directoryIds[directoryIdsIndex]);
    }
    payload.WithArray("DirectoryIds", std::move(directoryIdsJsonList));
+
+  }
+
+  if(m_workspaceDirectoryNamesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> workspaceDirectoryNamesJsonList(m_workspaceDirectoryNames.size());
+   for(unsigned workspaceDirectoryNamesIndex = 0; workspaceDirectoryNamesIndex < workspaceDirectoryNamesJsonList.GetLength(); ++workspaceDirectoryNamesIndex)
+   {
+     workspaceDirectoryNamesJsonList[workspaceDirectoryNamesIndex].AsString(m_workspaceDirectoryNames[workspaceDirectoryNamesIndex]);
+   }
+   payload.WithArray("WorkspaceDirectoryNames", std::move(workspaceDirectoryNamesJsonList));
 
   }
 

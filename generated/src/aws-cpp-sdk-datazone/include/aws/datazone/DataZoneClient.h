@@ -1558,6 +1558,31 @@ namespace DataZone
         }
 
         /**
+         * <p>Gets the data lineage node.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetLineageNode">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetLineageNodeOutcome GetLineageNode(const Model::GetLineageNodeRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetLineageNode that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetLineageNodeRequestT = Model::GetLineageNodeRequest>
+        Model::GetLineageNodeOutcomeCallable GetLineageNodeCallable(const GetLineageNodeRequestT& request) const
+        {
+            return SubmitCallable(&DataZoneClient::GetLineageNode, request);
+        }
+
+        /**
+         * An Async wrapper for GetLineageNode that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetLineageNodeRequestT = Model::GetLineageNodeRequest>
+        void GetLineageNodeAsync(const GetLineageNodeRequestT& request, const GetLineageNodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DataZoneClient::GetLineageNode, request, handler, context);
+        }
+
+        /**
          * <p>Gets a listing (a record of an asset at a given time).</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetListing">AWS
@@ -2039,6 +2064,32 @@ namespace DataZone
         }
 
         /**
+         * <p>Lists the history of the specified data lineage node.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/ListLineageNodeHistory">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListLineageNodeHistoryOutcome ListLineageNodeHistory(const Model::ListLineageNodeHistoryRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListLineageNodeHistory that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListLineageNodeHistoryRequestT = Model::ListLineageNodeHistoryRequest>
+        Model::ListLineageNodeHistoryOutcomeCallable ListLineageNodeHistoryCallable(const ListLineageNodeHistoryRequestT& request) const
+        {
+            return SubmitCallable(&DataZoneClient::ListLineageNodeHistory, request);
+        }
+
+        /**
+         * An Async wrapper for ListLineageNodeHistory that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListLineageNodeHistoryRequestT = Model::ListLineageNodeHistoryRequest>
+        void ListLineageNodeHistoryAsync(const ListLineageNodeHistoryRequestT& request, const ListLineageNodeHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DataZoneClient::ListLineageNodeHistory, request, handler, context);
+        }
+
+        /**
          * <p>Lists all metadata generation runs.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/ListMetadataGenerationRuns">AWS
          * API Reference</a></p>
@@ -2287,6 +2338,31 @@ namespace DataZone
         void ListTimeSeriesDataPointsAsync(const ListTimeSeriesDataPointsRequestT& request, const ListTimeSeriesDataPointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&DataZoneClient::ListTimeSeriesDataPoints, request, handler, context);
+        }
+
+        /**
+         * <p>Posts a data lineage event.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/PostLineageEvent">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PostLineageEventOutcome PostLineageEvent(const Model::PostLineageEventRequest& request) const;
+
+        /**
+         * A Callable wrapper for PostLineageEvent that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename PostLineageEventRequestT = Model::PostLineageEventRequest>
+        Model::PostLineageEventOutcomeCallable PostLineageEventCallable(const PostLineageEventRequestT& request) const
+        {
+            return SubmitCallable(&DataZoneClient::PostLineageEvent, request);
+        }
+
+        /**
+         * An Async wrapper for PostLineageEvent that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename PostLineageEventRequestT = Model::PostLineageEventRequest>
+        void PostLineageEventAsync(const PostLineageEventRequestT& request, const PostLineageEventResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DataZoneClient::PostLineageEvent, request, handler, context);
         }
 
         /**

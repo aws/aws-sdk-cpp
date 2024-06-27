@@ -28,7 +28,8 @@ WorkspaceCreationProperties::WorkspaceCreationProperties() :
     m_userEnabledAsLocalAdministrator(false),
     m_userEnabledAsLocalAdministratorHasBeenSet(false),
     m_enableMaintenanceMode(false),
-    m_enableMaintenanceModeHasBeenSet(false)
+    m_enableMaintenanceModeHasBeenSet(false),
+    m_instanceIamRoleArnHasBeenSet(false)
 {
 }
 
@@ -82,6 +83,13 @@ WorkspaceCreationProperties& WorkspaceCreationProperties::operator =(JsonView js
     m_enableMaintenanceModeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("InstanceIamRoleArn"))
+  {
+    m_instanceIamRoleArn = jsonValue.GetString("InstanceIamRoleArn");
+
+    m_instanceIamRoleArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -122,6 +130,12 @@ JsonValue WorkspaceCreationProperties::Jsonize() const
   if(m_enableMaintenanceModeHasBeenSet)
   {
    payload.WithBool("EnableMaintenanceMode", m_enableMaintenanceMode);
+
+  }
+
+  if(m_instanceIamRoleArnHasBeenSet)
+  {
+   payload.WithString("InstanceIamRoleArn", m_instanceIamRoleArn);
 
   }
 

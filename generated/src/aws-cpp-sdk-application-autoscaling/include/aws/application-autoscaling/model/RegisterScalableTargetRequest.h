@@ -58,7 +58,7 @@ namespace Model
      * This string consists of the resource type and unique identifier.</p> <ul> <li>
      * <p>ECS service - The resource type is <code>service</code> and the unique
      * identifier is the cluster name and service name. Example:
-     * <code>service/default/sample-webapp</code>.</p> </li> <li> <p>Spot Fleet - The
+     * <code>service/my-cluster/my-service</code>.</p> </li> <li> <p>Spot Fleet - The
      * resource type is <code>spot-fleet-request</code> and the unique identifier is
      * the Spot Fleet request ID. Example:
      * <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p>
@@ -104,13 +104,15 @@ namespace Model
      * group name. Example: <code>replication-group/mycluster</code>.</p> </li> <li>
      * <p>Neptune cluster - The resource type is <code>cluster</code> and the unique
      * identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p>
-     * </li> <li> <p>SageMaker Serverless endpoint - The resource type is
+     * </li> <li> <p>SageMaker serverless endpoint - The resource type is
      * <code>variant</code> and the unique identifier is the resource ID. Example:
      * <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p> </li> <li>
      * <p>SageMaker inference component - The resource type is
      * <code>inference-component</code> and the unique identifier is the resource ID.
-     * Example: <code>inference-component/my-inference-component</code>.</p> </li>
-     * </ul>
+     * Example: <code>inference-component/my-inference-component</code>.</p> </li> <li>
+     * <p>Amazon WorkSpaces - The resource type is <code>workspacespool</code> and the
+     * unique identifier is the pool ID. Example:
+     * <code>workspacespool/wspool-123456</code>.</p> </li> </ul>
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
@@ -126,13 +128,13 @@ namespace Model
     /**
      * <p>The scalable dimension associated with the scalable target. This string
      * consists of the service namespace, resource type, and scaling property.</p> <ul>
-     * <li> <p> <code>ecs:service:DesiredCount</code> - The desired task count of an
-     * ECS service.</p> </li> <li> <p>
+     * <li> <p> <code>ecs:service:DesiredCount</code> - The task count of an ECS
+     * service.</p> </li> <li> <p>
      * <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count
      * of an EMR Instance Group.</p> </li> <li> <p>
      * <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a
      * Spot Fleet.</p> </li> <li> <p> <code>appstream:fleet:DesiredCapacity</code> -
-     * The desired capacity of an AppStream 2.0 fleet.</p> </li> <li> <p>
+     * The capacity of an AppStream 2.0 fleet.</p> </li> <li> <p>
      * <code>dynamodb:table:ReadCapacityUnits</code> - The provisioned read capacity
      * for a DynamoDB table.</p> </li> <li> <p>
      * <code>dynamodb:table:WriteCapacityUnits</code> - The provisioned write capacity
@@ -168,9 +170,11 @@ namespace Model
      * <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an
      * Amazon Neptune DB cluster.</p> </li> <li> <p>
      * <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned
-     * concurrency for a SageMaker Serverless endpoint.</p> </li> <li> <p>
+     * concurrency for a SageMaker serverless endpoint.</p> </li> <li> <p>
      * <code>sagemaker:inference-component:DesiredCopyCount</code> - The number of
-     * copies across an endpoint for a SageMaker inference component.</p> </li> </ul>
+     * copies across an endpoint for a SageMaker inference component.</p> </li> <li>
+     * <p> <code>workspaces:workspacespool:DesiredUserSessions</code> - The capacity of
+     * a WorkSpaces pool.</p> </li> </ul>
      */
     inline const ScalableDimension& GetScalableDimension() const{ return m_scalableDimension; }
     inline bool ScalableDimensionHasBeenSet() const { return m_scalableDimensionHasBeenSet; }
@@ -189,16 +193,16 @@ namespace Model
      * minimum value allowed is 0.</p> <ul> <li> <p>AppStream 2.0 fleets</p> </li> <li>
      * <p> Aurora DB clusters</p> </li> <li> <p>ECS services</p> </li> <li> <p>EMR
      * clusters</p> </li> <li> <p>Lambda provisioned concurrency</p> </li> <li>
-     * <p>SageMaker endpoint variants</p> </li> <li> <p>SageMaker Serverless endpoint
-     * provisioned concurrency</p> </li> <li> <p>Spot Fleets</p> </li> <li> <p>custom
-     * resources</p> </li> </ul> <p>It's strongly recommended that you specify a value
-     * greater than 0. A value greater than 0 means that data points are continuously
-     * reported to CloudWatch that scaling policies can use to scale on a metric like
-     * average CPU utilization.</p> <p>For all other resources, the minimum allowed
-     * value depends on the type of resource that you are using. If you provide a value
-     * that is lower than what a resource can accept, an error occurs. In which case,
-     * the error message will provide the minimum value that the resource can
-     * accept.</p>
+     * <p>SageMaker endpoint variants</p> </li> <li> <p>SageMaker inference
+     * components</p> </li> <li> <p>SageMaker serverless endpoint provisioned
+     * concurrency</p> </li> <li> <p>Spot Fleets</p> </li> <li> <p>custom resources</p>
+     * </li> </ul> <p>It's strongly recommended that you specify a value greater than
+     * 0. A value greater than 0 means that data points are continuously reported to
+     * CloudWatch that scaling policies can use to scale on a metric like average CPU
+     * utilization.</p> <p>For all other resources, the minimum allowed value depends
+     * on the type of resource that you are using. If you provide a value that is lower
+     * than what a resource can accept, an error occurs. In which case, the error
+     * message will provide the minimum value that the resource can accept.</p>
      */
     inline int GetMinCapacity() const{ return m_minCapacity; }
     inline bool MinCapacityHasBeenSet() const { return m_minCapacityHasBeenSet; }
@@ -235,8 +239,8 @@ namespace Model
      * </p> <p>If the service supports service-linked roles, Application Auto Scaling
      * uses a service-linked role, which it creates if it does not yet exist. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/application/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-roles">Application
-     * Auto Scaling IAM roles</a>.</p>
+     * href="https://docs.aws.amazon.com/autoscaling/application/userguide/security_iam_service-with-iam.html">How
+     * Application Auto Scaling works with IAM</a>.</p>
      */
     inline const Aws::String& GetRoleARN() const{ return m_roleARN; }
     inline bool RoleARNHasBeenSet() const { return m_roleARNHasBeenSet; }
@@ -262,8 +266,8 @@ namespace Model
      * suspended.</p> </li> <li> <p>For <code>ScheduledScalingSuspended</code>, while a
      * suspension is in effect, all scaling activities that involve scheduled actions
      * are suspended. </p> </li> </ul> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-suspend-resume-scaling.html">Suspending
-     * and resuming scaling</a> in the <i>Application Auto Scaling User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-suspend-resume-scaling.html">Suspend
+     * and resume scaling</a> in the <i>Application Auto Scaling User Guide</i>.</p>
      */
     inline const SuspendedState& GetSuspendedState() const{ return m_suspendedState; }
     inline bool SuspendedStateHasBeenSet() const { return m_suspendedStateHasBeenSet; }
