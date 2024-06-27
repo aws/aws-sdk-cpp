@@ -29,10 +29,11 @@ namespace Model
 
     StartMedicalStreamTranscriptionHandler::StartMedicalStreamTranscriptionHandler() : EventStreamHandler()
     {
-        m_onInitialResponse = [&](const StartMedicalStreamTranscriptionInitialResponse&)
+        m_onInitialResponse = [&](const StartMedicalStreamTranscriptionInitialResponse&, const Utils::Event::InitialResponseType eventType)
         {
             AWS_LOGSTREAM_TRACE(STARTMEDICALSTREAMTRANSCRIPTION_HANDLER_CLASS_TAG,
-                "StartMedicalStreamTranscription initial response received.");
+                "StartMedicalStreamTranscription initial response received from "
+                << (eventType == Utils::Event::InitialResponseType::ON_EVENT ? "event" : "http headers"));
         };
 
         m_onMedicalTranscriptEvent = [&](const MedicalTranscriptEvent&)
@@ -94,18 +95,11 @@ namespace Model
         }
         switch (StartMedicalStreamTranscriptionEventMapper::GetStartMedicalStreamTranscriptionEventTypeForName(eventTypeHeaderIter->second.GetEventHeaderValueAsString()))
         {
-        
-        case StartMedicalStreamTranscriptionEventType::INITIAL_RESPONSE: 
-        {
-            JsonValue json(GetEventPayloadAsString());
-            if (!json.WasParseSuccessful())
-            {
-                AWS_LOGSTREAM_WARN(STARTMEDICALSTREAMTRANSCRIPTION_HANDLER_CLASS_TAG, "Unable to generate a proper StartMedicalStreamTranscriptionInitialResponse object from the response in JSON format.");
-                break;
-            }
 
-            StartMedicalStreamTranscriptionInitialResponse event(json.View());
-            m_onInitialResponse(event);
+        case StartMedicalStreamTranscriptionEventType::INITIAL_RESPONSE:
+        {
+            StartMedicalStreamTranscriptionInitialResponse event(GetEventHeadersAsHttpHeaders());
+            m_onInitialResponse(event, Utils::Event::InitialResponseType::ON_EVENT);
             break;
         }   
 

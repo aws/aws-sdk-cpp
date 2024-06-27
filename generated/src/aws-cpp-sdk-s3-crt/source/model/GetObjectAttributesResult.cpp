@@ -74,7 +74,7 @@ GetObjectAttributesResult& GetObjectAttributesResult::operator =(const Aws::Amaz
   const auto& lastModifiedIter = headers.find("last-modified");
   if(lastModifiedIter != headers.end())
   {
-    m_lastModified = DateTime(lastModifiedIter->second, Aws::Utils::DateFormat::RFC822);
+    m_lastModified = DateTime(lastModifiedIter->second.c_str(), Aws::Utils::DateFormat::RFC822);
     if(!m_lastModified.WasParseSuccessful())
     {
       AWS_LOGSTREAM_WARN("S3Crt::GetObjectAttributesResult", "Failed to parse lastModified header as an RFC822 timestamp: " << lastModifiedIter->second.c_str());
