@@ -11,6 +11,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/transcribestreaming/model/MedicalContentIdentificationType.h>
 #include <aws/transcribestreaming/model/MediaEncoding.h>
+#include <aws/core/http/HttpTypes.h>
 #include <utility>
 
 namespace Aws
@@ -34,6 +35,7 @@ namespace Model
     AWS_TRANSCRIBESTREAMINGSERVICE_API StartMedicalStreamTranscriptionInitialResponse();
     AWS_TRANSCRIBESTREAMINGSERVICE_API StartMedicalStreamTranscriptionInitialResponse(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSCRIBESTREAMINGSERVICE_API StartMedicalStreamTranscriptionInitialResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSCRIBESTREAMINGSERVICE_API StartMedicalStreamTranscriptionInitialResponse(const Http::HeaderValueCollection& responseHeaders);
     AWS_TRANSCRIBESTREAMINGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 

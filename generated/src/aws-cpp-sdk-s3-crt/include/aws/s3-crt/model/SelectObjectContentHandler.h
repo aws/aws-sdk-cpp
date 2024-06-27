@@ -35,6 +35,7 @@ namespace Model
     class SelectObjectContentHandler : public Aws::Utils::Event::EventStreamHandler
     {
         typedef std::function<void(const SelectObjectContentInitialResponse&)> SelectObjectContentInitialResponseCallback;
+        typedef std::function<void(const SelectObjectContentInitialResponse&, const Utils::Event::InitialResponseType)> SelectObjectContentInitialResponseCallbackEx;
         typedef std::function<void(const RecordsEvent&)> RecordsEventCallback;
         typedef std::function<void(const StatsEvent&)> StatsEventCallback;
         typedef std::function<void(const ProgressEvent&)> ProgressEventCallback;
@@ -48,7 +49,22 @@ namespace Model
 
         AWS_S3CRT_API virtual void OnEvent() override;
 
-        inline void SetInitialResponseCallback(const SelectObjectContentInitialResponseCallback& callback) { m_onInitialResponse = callback; }
+        ///@{
+        /**
+         * Sets an initial response callback. This callback gets called on the initial SelectObjectContent Operation response.
+         *   This can be either "initial-response" decoded event frame or decoded HTTP headers received on connection.
+         *   This callback may get called more than once (i.e. on connection headers received and then on the initial-response event received).
+         * @param callback
+         */
+        inline void SetInitialResponseCallbackEx(const SelectObjectContentInitialResponseCallbackEx& callback) { m_onInitialResponse = callback; }
+        /**
+         * Sets an initial response callback (a legacy one that does not distinguish whether response originates from headers or from the event).
+         */
+        inline void SetInitialResponseCallback(const SelectObjectContentInitialResponseCallback& noArgCallback)
+        {
+            m_onInitialResponse = [noArgCallback](const SelectObjectContentInitialResponse& rs, const Utils::Event::InitialResponseType) { return noArgCallback(rs); };
+        }
+        ///@}
         inline void SetRecordsEventCallback(const RecordsEventCallback& callback) { m_onRecordsEvent = callback; }
         inline void SetStatsEventCallback(const StatsEventCallback& callback) { m_onStatsEvent = callback; }
         inline void SetProgressEventCallback(const ProgressEventCallback& callback) { m_onProgressEvent = callback; }
@@ -56,12 +72,14 @@ namespace Model
         inline void SetEndEventCallback(const EndEventCallback& callback) { m_onEndEvent = callback; }
         inline void SetOnErrorCallback(const ErrorCallback& callback) { m_onError = callback; }
 
+        inline SelectObjectContentInitialResponseCallbackEx& GetInitialResponseCallbackEx() { return m_onInitialResponse; }
+
     private:
         AWS_S3CRT_API void HandleEventInMessage();
         AWS_S3CRT_API void HandleErrorInMessage();
         AWS_S3CRT_API void MarshallError(const Aws::String& errorCode, const Aws::String& errorMessage);
 
-        SelectObjectContentInitialResponseCallback m_onInitialResponse;
+        SelectObjectContentInitialResponseCallbackEx m_onInitialResponse;
         RecordsEventCallback m_onRecordsEvent;
         StatsEventCallback m_onStatsEvent;
         ProgressEventCallback m_onProgressEvent;

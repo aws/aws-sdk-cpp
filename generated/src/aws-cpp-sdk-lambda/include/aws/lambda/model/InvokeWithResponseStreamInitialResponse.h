@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/lambda/Lambda_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/http/HttpTypes.h>
 #include <utility>
 
 namespace Aws
@@ -29,6 +30,7 @@ namespace Model
     AWS_LAMBDA_API InvokeWithResponseStreamInitialResponse();
     AWS_LAMBDA_API InvokeWithResponseStreamInitialResponse(Aws::Utils::Json::JsonView jsonValue);
     AWS_LAMBDA_API InvokeWithResponseStreamInitialResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API InvokeWithResponseStreamInitialResponse(const Http::HeaderValueCollection& responseHeaders);
     AWS_LAMBDA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 

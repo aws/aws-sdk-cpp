@@ -163,7 +163,7 @@ GetObjectResult& GetObjectResult::operator =(Aws::AmazonWebServiceResult<Respons
   const auto& lastModifiedIter = headers.find("last-modified");
   if(lastModifiedIter != headers.end())
   {
-    m_lastModified = DateTime(lastModifiedIter->second, Aws::Utils::DateFormat::RFC822);
+    m_lastModified = DateTime(lastModifiedIter->second.c_str(), Aws::Utils::DateFormat::RFC822);
     if(!m_lastModified.WasParseSuccessful())
     {
       AWS_LOGSTREAM_WARN("S3::GetObjectResult", "Failed to parse lastModified header as an RFC822 timestamp: " << lastModifiedIter->second.c_str());
@@ -257,7 +257,7 @@ GetObjectResult& GetObjectResult::operator =(Aws::AmazonWebServiceResult<Respons
   const auto& expiresIter = headers.find("expires");
   if(expiresIter != headers.end())
   {
-    m_expires = DateTime(expiresIter->second, Aws::Utils::DateFormat::RFC822);
+    m_expires = DateTime(expiresIter->second.c_str(), Aws::Utils::DateFormat::RFC822);
     if(!m_expires.WasParseSuccessful())
     {
       AWS_LOGSTREAM_WARN("S3::GetObjectResult", "Failed to parse expires header as an RFC822 timestamp: " << expiresIter->second.c_str());
@@ -350,7 +350,7 @@ GetObjectResult& GetObjectResult::operator =(Aws::AmazonWebServiceResult<Respons
   const auto& objectLockRetainUntilDateIter = headers.find("x-amz-object-lock-retain-until-date");
   if(objectLockRetainUntilDateIter != headers.end())
   {
-    m_objectLockRetainUntilDate = DateTime(objectLockRetainUntilDateIter->second, Aws::Utils::DateFormat::ISO_8601);
+    m_objectLockRetainUntilDate = DateTime(objectLockRetainUntilDateIter->second.c_str(), Aws::Utils::DateFormat::ISO_8601);
     if(!m_objectLockRetainUntilDate.WasParseSuccessful())
     {
       AWS_LOGSTREAM_WARN("S3::GetObjectResult", "Failed to parse objectLockRetainUntilDate header as an ISO_8601 timestamp: " << objectLockRetainUntilDateIter->second.c_str());

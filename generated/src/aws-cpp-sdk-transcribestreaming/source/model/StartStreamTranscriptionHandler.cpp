@@ -29,10 +29,11 @@ namespace Model
 
     StartStreamTranscriptionHandler::StartStreamTranscriptionHandler() : EventStreamHandler()
     {
-        m_onInitialResponse = [&](const StartStreamTranscriptionInitialResponse&)
+        m_onInitialResponse = [&](const StartStreamTranscriptionInitialResponse&, const Utils::Event::InitialResponseType eventType)
         {
             AWS_LOGSTREAM_TRACE(STARTSTREAMTRANSCRIPTION_HANDLER_CLASS_TAG,
-                "StartStreamTranscription initial response received.");
+                "StartStreamTranscription initial response received from "
+                << (eventType == Utils::Event::InitialResponseType::ON_EVENT ? "event" : "http headers"));
         };
 
         m_onTranscriptEvent = [&](const TranscriptEvent&)
@@ -94,18 +95,11 @@ namespace Model
         }
         switch (StartStreamTranscriptionEventMapper::GetStartStreamTranscriptionEventTypeForName(eventTypeHeaderIter->second.GetEventHeaderValueAsString()))
         {
-        
-        case StartStreamTranscriptionEventType::INITIAL_RESPONSE: 
-        {
-            JsonValue json(GetEventPayloadAsString());
-            if (!json.WasParseSuccessful())
-            {
-                AWS_LOGSTREAM_WARN(STARTSTREAMTRANSCRIPTION_HANDLER_CLASS_TAG, "Unable to generate a proper StartStreamTranscriptionInitialResponse object from the response in JSON format.");
-                break;
-            }
 
-            StartStreamTranscriptionInitialResponse event(json.View());
-            m_onInitialResponse(event);
+        case StartStreamTranscriptionEventType::INITIAL_RESPONSE:
+        {
+            StartStreamTranscriptionInitialResponse event(GetEventHeadersAsHttpHeaders());
+            m_onInitialResponse(event, Utils::Event::InitialResponseType::ON_EVENT);
             break;
         }   
 

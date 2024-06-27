@@ -12,6 +12,7 @@
 #include <aws/transcribestreaming/model/ContentRedactionType.h>
 #include <aws/transcribestreaming/model/ContentIdentificationType.h>
 #include <aws/transcribestreaming/model/VocabularyFilterMethod.h>
+#include <aws/core/http/HttpTypes.h>
 #include <utility>
 
 namespace Aws
@@ -35,6 +36,7 @@ namespace Model
     AWS_TRANSCRIBESTREAMINGSERVICE_API StartCallAnalyticsStreamTranscriptionInitialResponse();
     AWS_TRANSCRIBESTREAMINGSERVICE_API StartCallAnalyticsStreamTranscriptionInitialResponse(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSCRIBESTREAMINGSERVICE_API StartCallAnalyticsStreamTranscriptionInitialResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSCRIBESTREAMINGSERVICE_API StartCallAnalyticsStreamTranscriptionInitialResponse(const Http::HeaderValueCollection& responseHeaders);
     AWS_TRANSCRIBESTREAMINGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 

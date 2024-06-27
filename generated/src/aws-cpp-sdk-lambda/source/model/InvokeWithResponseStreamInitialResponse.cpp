@@ -5,6 +5,8 @@
 
 #include <aws/lambda/model/InvokeWithResponseStreamInitialResponse.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
@@ -37,6 +39,22 @@ InvokeWithResponseStreamInitialResponse& InvokeWithResponseStreamInitialResponse
 {
   AWS_UNREFERENCED_PARAM(jsonValue);
   return *this;
+}
+
+InvokeWithResponseStreamInitialResponse::InvokeWithResponseStreamInitialResponse(const Http::HeaderValueCollection& headers) : InvokeWithResponseStreamInitialResponse()
+{
+  const auto& responseStreamContentTypeIter = headers.find("content-type");
+  if(responseStreamContentTypeIter != headers.end())
+  {
+    m_responseStreamContentType = responseStreamContentTypeIter->second;
+  }
+
+  const auto& executedVersionIter = headers.find("x-amz-executed-version");
+  if(executedVersionIter != headers.end())
+  {
+    m_executedVersion = executedVersionIter->second;
+  }
+
 }
 
 JsonValue InvokeWithResponseStreamInitialResponse::Jsonize() const
