@@ -5,6 +5,8 @@
 
 #include <aws/bedrock-runtime/model/ConverseStreamInitialResponse.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 
 #include <utility>
 
@@ -31,6 +33,11 @@ ConverseStreamInitialResponse& ConverseStreamInitialResponse::operator =(JsonVie
 {
   AWS_UNREFERENCED_PARAM(jsonValue);
   return *this;
+}
+
+ConverseStreamInitialResponse::ConverseStreamInitialResponse(const Http::HeaderValueCollection& headers) : ConverseStreamInitialResponse()
+{
+  AWS_UNREFERENCED_PARAM(headers);
 }
 
 JsonValue ConverseStreamInitialResponse::Jsonize() const

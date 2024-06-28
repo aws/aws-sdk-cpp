@@ -36,7 +36,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The identifier of the WorkSpaces pool.</p>
+     * <p>The identifier of the pool.</p>
      */
     inline const Aws::String& GetPoolId() const{ return m_poolId; }
     inline bool PoolIdHasBeenSet() const { return m_poolIdHasBeenSet; }

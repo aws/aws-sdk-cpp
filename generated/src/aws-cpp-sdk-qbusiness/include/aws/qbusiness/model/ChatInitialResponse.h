@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/qbusiness/QBusiness_EXPORTS.h>
+#include <aws/core/http/HttpTypes.h>
 
 namespace Aws
 {
@@ -27,6 +28,7 @@ namespace Model
     AWS_QBUSINESS_API ChatInitialResponse();
     AWS_QBUSINESS_API ChatInitialResponse(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API ChatInitialResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QBUSINESS_API ChatInitialResponse(const Http::HeaderValueCollection& responseHeaders);
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
   };

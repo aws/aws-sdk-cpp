@@ -101,9 +101,10 @@ namespace Model
     ///@{
     /**
      * <p>Specifies one of the following strategies to launch Spot Instance fleets:
-     * <code>price-capacity-optimized</code>, <code>capacity-optimized</code>,
-     * <code>lowest-price</code>, or <code>diversified</code>. For more information on
-     * the provisioning strategies, see <a
+     * <code>capacity-optimized</code>, <code>price-capacity-optimized</code>,
+     * <code>lowest-price</code>, or <code>diversified</code>, and
+     * <code>capacity-optimized-prioritized</code>. For more information on the
+     * provisioning strategies, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-allocation-strategy.html">Allocation
      * strategies for Spot Instances</a> in the <i>Amazon EC2 User Guide for Linux
      * Instances</i>.</p>  <p>When you launch a Spot Instance fleet with the old

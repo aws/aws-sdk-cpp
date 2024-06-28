@@ -5,6 +5,8 @@
 
 #include <aws/bedrock-agent-runtime/model/InvokeAgentInitialResponse.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
@@ -35,6 +37,22 @@ InvokeAgentInitialResponse& InvokeAgentInitialResponse::operator =(JsonView json
 {
   AWS_UNREFERENCED_PARAM(jsonValue);
   return *this;
+}
+
+InvokeAgentInitialResponse::InvokeAgentInitialResponse(const Http::HeaderValueCollection& headers) : InvokeAgentInitialResponse()
+{
+  const auto& sessionIdIter = headers.find("x-amz-bedrock-agent-session-id");
+  if(sessionIdIter != headers.end())
+  {
+    m_sessionId = sessionIdIter->second;
+  }
+
+  const auto& contentTypeIter = headers.find("x-amzn-bedrock-agent-content-type");
+  if(contentTypeIter != headers.end())
+  {
+    m_contentType = contentTypeIter->second;
+  }
+
 }
 
 JsonValue InvokeAgentInitialResponse::Jsonize() const

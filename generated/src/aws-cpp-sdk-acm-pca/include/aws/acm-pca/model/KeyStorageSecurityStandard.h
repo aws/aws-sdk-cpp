@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     FIPS_140_2_LEVEL_2_OR_HIGHER,
-    FIPS_140_2_LEVEL_3_OR_HIGHER
+    FIPS_140_2_LEVEL_3_OR_HIGHER,
+    CCPC_LEVEL_1_OR_HIGHER
   };
 
 namespace KeyStorageSecurityStandardMapper

@@ -24,7 +24,6 @@
 #include <aws/opensearch/model/SoftwareUpdateOptions.h>
 #include <aws/opensearch/model/DomainProcessingStatusType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/opensearch/model/AIMLOptionsOutput.h>
 #include <aws/opensearch/model/LogType.h>
 #include <aws/opensearch/model/LogPublishingOption.h>
 #include <aws/opensearch/model/ModifyingProperties.h>
@@ -497,19 +496,6 @@ namespace Model
     inline DomainStatus& AddModifyingProperties(const ModifyingProperties& value) { m_modifyingPropertiesHasBeenSet = true; m_modifyingProperties.push_back(value); return *this; }
     inline DomainStatus& AddModifyingProperties(ModifyingProperties&& value) { m_modifyingPropertiesHasBeenSet = true; m_modifyingProperties.push_back(std::move(value)); return *this; }
     ///@}
-
-    ///@{
-    /**
-     * <p>Container for parameters required to enable all machine learning
-     * features.</p>
-     */
-    inline const AIMLOptionsOutput& GetAIMLOptions() const{ return m_aIMLOptions; }
-    inline bool AIMLOptionsHasBeenSet() const { return m_aIMLOptionsHasBeenSet; }
-    inline void SetAIMLOptions(const AIMLOptionsOutput& value) { m_aIMLOptionsHasBeenSet = true; m_aIMLOptions = value; }
-    inline void SetAIMLOptions(AIMLOptionsOutput&& value) { m_aIMLOptionsHasBeenSet = true; m_aIMLOptions = std::move(value); }
-    inline DomainStatus& WithAIMLOptions(const AIMLOptionsOutput& value) { SetAIMLOptions(value); return *this;}
-    inline DomainStatus& WithAIMLOptions(AIMLOptionsOutput&& value) { SetAIMLOptions(std::move(value)); return *this;}
-    ///@}
   private:
 
     Aws::String m_domainId;
@@ -607,9 +593,6 @@ namespace Model
 
     Aws::Vector<ModifyingProperties> m_modifyingProperties;
     bool m_modifyingPropertiesHasBeenSet = false;
-
-    AIMLOptionsOutput m_aIMLOptions;
-    bool m_aIMLOptionsHasBeenSet = false;
   };
 
 } // namespace Model

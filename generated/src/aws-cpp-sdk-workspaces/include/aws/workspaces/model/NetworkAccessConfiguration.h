@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>Describes the network details of a WorkSpaces pool.</p><p><h3>See Also:</h3> 
+   * <p>Describes the network details of a WorkSpaces Pool.</p><p><h3>See Also:</h3> 
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/NetworkAccessConfiguration">AWS
    * API Reference</a></p>

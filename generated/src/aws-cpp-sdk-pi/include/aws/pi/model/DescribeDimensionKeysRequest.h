@@ -200,6 +200,8 @@ namespace Model
      * <p>Any number of filters by the same dimension, as specified in the
      * <code>GroupBy</code> or <code>Partition</code> parameters.</p> </li> <li> <p>A
      * single filter for any other dimension in this dimension group.</p> </li> </ul>
+     *  <p>The <code>db.sql.db_id</code> filter isn't available for RDS for SQL
+     * Server DB instances.</p> 
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetFilter() const{ return m_filter; }
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }

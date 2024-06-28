@@ -95,6 +95,24 @@ namespace Model
 
     ///@{
     /**
+     * <p>Describe backups that are shared with you.</p>  <p>By default when
+     * using this option, the command returns backups that have been shared using a
+     * standard Resource Access Manager resource share. In order for a backup that was
+     * shared using the PutResourcePolicy command to be returned, the share must be
+     * promoted to a standard resource share using the RAM <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/ram/promote-resource-share-created-from-policy.html">PromoteResourceShareCreatedFromPolicy</a>
+     * API operation. For more information about sharing backups, see <a
+     * href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/sharing.html">
+     * Working with shared backups</a> in the CloudHSM User Guide.</p> 
+     */
+    inline bool GetShared() const{ return m_shared; }
+    inline bool SharedHasBeenSet() const { return m_sharedHasBeenSet; }
+    inline void SetShared(bool value) { m_sharedHasBeenSet = true; m_shared = value; }
+    inline DescribeBackupsRequest& WithShared(bool value) { SetShared(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Designates whether or not to sort the return backups by ascending
      * chronological order of generation.</p>
      */
@@ -113,6 +131,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_filters;
     bool m_filtersHasBeenSet = false;
+
+    bool m_shared;
+    bool m_sharedHasBeenSet = false;
 
     bool m_sortAscending;
     bool m_sortAscendingHasBeenSet = false;

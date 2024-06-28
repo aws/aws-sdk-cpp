@@ -29,10 +29,11 @@ namespace Model
 
     ConverseStreamHandler::ConverseStreamHandler() : EventStreamHandler()
     {
-        m_onInitialResponse = [&](const ConverseStreamInitialResponse&)
+        m_onInitialResponse = [&](const ConverseStreamInitialResponse&, const Utils::Event::InitialResponseType eventType)
         {
             AWS_LOGSTREAM_TRACE(CONVERSESTREAM_HANDLER_CLASS_TAG,
-                "ConverseStream initial response received.");
+                "ConverseStream initial response received from "
+                << (eventType == Utils::Event::InitialResponseType::ON_EVENT ? "event" : "http headers"));
         };
 
         m_onMessageStartEvent = [&](const MessageStartEvent&)
@@ -119,18 +120,11 @@ namespace Model
         }
         switch (ConverseStreamEventMapper::GetConverseStreamEventTypeForName(eventTypeHeaderIter->second.GetEventHeaderValueAsString()))
         {
-        
-        case ConverseStreamEventType::INITIAL_RESPONSE: 
-        {
-            JsonValue json(GetEventPayloadAsString());
-            if (!json.WasParseSuccessful())
-            {
-                AWS_LOGSTREAM_WARN(CONVERSESTREAM_HANDLER_CLASS_TAG, "Unable to generate a proper ConverseStreamInitialResponse object from the response in JSON format.");
-                break;
-            }
 
-            ConverseStreamInitialResponse event(json.View());
-            m_onInitialResponse(event);
+        case ConverseStreamEventType::INITIAL_RESPONSE:
+        {
+            ConverseStreamInitialResponse event(GetEventHeadersAsHttpHeaders());
+            m_onInitialResponse(event, Utils::Event::InitialResponseType::ON_EVENT);
             break;
         }   
 

@@ -36,7 +36,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The identifier of the WorkSpaces pool session.</p>
+     * <p>The identifier of the pool session.</p>
      */
     inline const Aws::String& GetSessionId() const{ return m_sessionId; }
     inline bool SessionIdHasBeenSet() const { return m_sessionIdHasBeenSet; }

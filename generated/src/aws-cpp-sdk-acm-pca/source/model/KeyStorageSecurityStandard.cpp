@@ -22,6 +22,7 @@ namespace Aws
 
         static const int FIPS_140_2_LEVEL_2_OR_HIGHER_HASH = HashingUtils::HashString("FIPS_140_2_LEVEL_2_OR_HIGHER");
         static const int FIPS_140_2_LEVEL_3_OR_HIGHER_HASH = HashingUtils::HashString("FIPS_140_2_LEVEL_3_OR_HIGHER");
+        static const int CCPC_LEVEL_1_OR_HIGHER_HASH = HashingUtils::HashString("CCPC_LEVEL_1_OR_HIGHER");
 
 
         KeyStorageSecurityStandard GetKeyStorageSecurityStandardForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == FIPS_140_2_LEVEL_3_OR_HIGHER_HASH)
           {
             return KeyStorageSecurityStandard::FIPS_140_2_LEVEL_3_OR_HIGHER;
+          }
+          else if (hashCode == CCPC_LEVEL_1_OR_HIGHER_HASH)
+          {
+            return KeyStorageSecurityStandard::CCPC_LEVEL_1_OR_HIGHER;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -55,6 +60,8 @@ namespace Aws
             return "FIPS_140_2_LEVEL_2_OR_HIGHER";
           case KeyStorageSecurityStandard::FIPS_140_2_LEVEL_3_OR_HIGHER:
             return "FIPS_140_2_LEVEL_3_OR_HIGHER";
+          case KeyStorageSecurityStandard::CCPC_LEVEL_1_OR_HIGHER:
+            return "CCPC_LEVEL_1_OR_HIGHER";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

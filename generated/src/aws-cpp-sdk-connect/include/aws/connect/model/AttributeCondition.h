@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/connect/model/MatchCriteria.h>
 #include <utility>
 
 namespace Aws
@@ -78,6 +79,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>An object to define <code>AgentsCriteria</code>.</p>
+     */
+    inline const MatchCriteria& GetMatchCriteria() const{ return m_matchCriteria; }
+    inline bool MatchCriteriaHasBeenSet() const { return m_matchCriteriaHasBeenSet; }
+    inline void SetMatchCriteria(const MatchCriteria& value) { m_matchCriteriaHasBeenSet = true; m_matchCriteria = value; }
+    inline void SetMatchCriteria(MatchCriteria&& value) { m_matchCriteriaHasBeenSet = true; m_matchCriteria = std::move(value); }
+    inline AttributeCondition& WithMatchCriteria(const MatchCriteria& value) { SetMatchCriteria(value); return *this;}
+    inline AttributeCondition& WithMatchCriteria(MatchCriteria&& value) { SetMatchCriteria(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The operator of the condition.</p>
      */
     inline const Aws::String& GetComparisonOperator() const{ return m_comparisonOperator; }
@@ -99,6 +112,9 @@ namespace Model
 
     double m_proficiencyLevel;
     bool m_proficiencyLevelHasBeenSet = false;
+
+    MatchCriteria m_matchCriteria;
+    bool m_matchCriteriaHasBeenSet = false;
 
     Aws::String m_comparisonOperator;
     bool m_comparisonOperatorHasBeenSet = false;

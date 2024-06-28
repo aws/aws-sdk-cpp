@@ -5,6 +5,8 @@
 
 #include <aws/sagemaker-runtime/model/InvokeEndpointWithResponseStreamInitialResponse.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
@@ -36,6 +38,28 @@ InvokeEndpointWithResponseStreamInitialResponse& InvokeEndpointWithResponseStrea
 {
   AWS_UNREFERENCED_PARAM(jsonValue);
   return *this;
+}
+
+InvokeEndpointWithResponseStreamInitialResponse::InvokeEndpointWithResponseStreamInitialResponse(const Http::HeaderValueCollection& headers) : InvokeEndpointWithResponseStreamInitialResponse()
+{
+  const auto& customAttributesIter = headers.find("x-amzn-sagemaker-custom-attributes");
+  if(customAttributesIter != headers.end())
+  {
+    m_customAttributes = customAttributesIter->second;
+  }
+
+  const auto& contentTypeIter = headers.find("x-amzn-sagemaker-content-type");
+  if(contentTypeIter != headers.end())
+  {
+    m_contentType = contentTypeIter->second;
+  }
+
+  const auto& invokedProductionVariantIter = headers.find("x-amzn-invoked-production-variant");
+  if(invokedProductionVariantIter != headers.end())
+  {
+    m_invokedProductionVariant = invokedProductionVariantIter->second;
+  }
+
 }
 
 JsonValue InvokeEndpointWithResponseStreamInitialResponse::Jsonize() const

@@ -20,6 +20,7 @@ namespace Model
 
 Backup::Backup() : 
     m_backupIdHasBeenSet(false),
+    m_backupArnHasBeenSet(false),
     m_backupState(BackupState::NOT_SET),
     m_backupStateHasBeenSet(false),
     m_clusterIdHasBeenSet(false),
@@ -51,6 +52,13 @@ Backup& Backup::operator =(JsonView jsonValue)
     m_backupId = jsonValue.GetString("BackupId");
 
     m_backupIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("BackupArn"))
+  {
+    m_backupArn = jsonValue.GetString("BackupArn");
+
+    m_backupArnHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("BackupState"))
@@ -150,6 +158,12 @@ JsonValue Backup::Jsonize() const
   if(m_backupIdHasBeenSet)
   {
    payload.WithString("BackupId", m_backupId);
+
+  }
+
+  if(m_backupArnHasBeenSet)
+  {
+   payload.WithString("BackupArn", m_backupArn);
 
   }
 

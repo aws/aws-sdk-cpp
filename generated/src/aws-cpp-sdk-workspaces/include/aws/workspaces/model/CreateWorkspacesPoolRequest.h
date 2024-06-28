@@ -41,7 +41,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the WorkSpaces pool.</p>
+     * <p>The name of the pool.</p>
      */
     inline const Aws::String& GetPoolName() const{ return m_poolName; }
     inline bool PoolNameHasBeenSet() const { return m_poolNameHasBeenSet; }
@@ -55,7 +55,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The WorkSpaces pool description.</p>
+     * <p>The pool description.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
@@ -69,7 +69,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The identifier of the bundle for the WorkSpaces pool.</p>
+     * <p>The identifier of the bundle for the pool.</p>
      */
     inline const Aws::String& GetBundleId() const{ return m_bundleId; }
     inline bool BundleIdHasBeenSet() const { return m_bundleIdHasBeenSet; }
@@ -83,7 +83,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The identifier of the directory for the WorkSpaces pool.</p>
+     * <p>The identifier of the directory for the pool.</p>
      */
     inline const Aws::String& GetDirectoryId() const{ return m_directoryId; }
     inline bool DirectoryIdHasBeenSet() const { return m_directoryIdHasBeenSet; }
@@ -97,7 +97,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The user capacity of the WorkSpaces pool.</p>
+     * <p>The user capacity of the pool.</p>
      */
     inline const Capacity& GetCapacity() const{ return m_capacity; }
     inline bool CapacityHasBeenSet() const { return m_capacityHasBeenSet; }
@@ -109,7 +109,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The tags for the WorkSpaces pool.</p>
+     * <p>The tags for the pool.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
@@ -123,7 +123,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Indicates the application settings of the WorkSpaces pool.</p>
+     * <p>Indicates the application settings of the pool.</p>
      */
     inline const ApplicationSettingsRequest& GetApplicationSettings() const{ return m_applicationSettings; }
     inline bool ApplicationSettingsHasBeenSet() const { return m_applicationSettingsHasBeenSet; }
@@ -135,7 +135,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Indicates the timeout settings of the WorkSpaces pool.</p>
+     * <p>Indicates the timeout settings of the pool.</p>
      */
     inline const TimeoutSettings& GetTimeoutSettings() const{ return m_timeoutSettings; }
     inline bool TimeoutSettingsHasBeenSet() const { return m_timeoutSettingsHasBeenSet; }

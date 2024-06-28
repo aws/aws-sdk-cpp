@@ -406,31 +406,9 @@ namespace Model
      * <p>Required filter key: CASE_TEMPLATE_ARN</p> <p>Valid groupings and filters:
      * CASE_TEMPLATE_ARN, CASE_STATUS</p> <p>UI name: <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html##cases-created-historical">Cases
-     * created</a> </p> </dd> <dt>CONTACTS_ABANDONED</dt> <dd> <p>Unit: Count</p>
-     * <p>Metric filter: </p> <ul> <li> <p>Valid values: <code>API</code>|
-     * <code>Incoming</code> | <code>Outbound</code> | <code>Transfer</code> |
-     * <code>Callback</code> | <code>Queue_Transfer</code>| <code>Disconnect</code>
-     * </p> </li> </ul> <p>Valid groupings and filters: Queue, Channel, Routing
-     * Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype,
-     * RoutingStepExpression, Q in Connect</p> <p>UI name: <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#contacts-abandoned-historical">Contact
-     * abandoned</a> </p> </dd> <dt>CONTACTS_ABANDONED_IN_X</dt> <dd> <p>Unit:
-     * Count</p> <p>Valid groupings and filters: Queue, Channel, Routing Profile,
-     * contact/segmentAttributes/connect:Subtype, Q in Connect</p> <p>Threshold: For
-     * <code>ThresholdValue</code>, enter any whole number from 1 to 604800
-     * (inclusive), in seconds. For <code>Comparison</code>, you must enter
-     * <code>LT</code> (for "Less than"). </p> <p>UI name: <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#contacts-abandoned-x-historical">Contacts
-     * abandoned in X seconds</a> </p> </dd> <dt>CONTACTS_ANSWERED_IN_X</dt> <dd>
-     * <p>Unit: Count</p> <p>Valid groupings and filters: Queue, Channel, Routing
-     * Profile, contact/segmentAttributes/connect:Subtype, Q in Connect</p>
-     * <p>Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to
-     * 604800 (inclusive), in seconds. For <code>Comparison</code>, you must enter
-     * <code>LT</code> (for "Less than"). </p> <p>UI name: <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#contacts-answered-x-historical">Contacts
-     * answered in X seconds</a> </p> </dd> <dt>CONTACTS_CREATED</dt> <dd> <p>Unit:
-     * Count</p> <p>Valid metric filter key: <code>INITIATION_METHOD</code> </p>
-     * <p>Valid groupings and filters: Queue, Channel, Routing Profile, Feature,
+     * created</a> </p> </dd> <dt>CONTACTS_CREATED</dt> <dd> <p>Unit: Count</p>
+     * <p>Valid metric filter key: <code>INITIATION_METHOD</code> </p> <p>Valid
+     * groupings and filters: Queue, Channel, Routing Profile, Feature,
      * contact/segmentAttributes/connect:Subtype, Q in Connect</p> <p>UI name: <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#contacts-created-historical">Contacts
      * created</a> </p>  <p>Feature is a valid filter but not a valid
@@ -483,7 +461,13 @@ namespace Model
      * Count</p> <p>Valid groupings and filters: Queue, Channel, Agent, Agent
      * Hierarchy, contact/segmentAttributes/connect:Subtype</p> <p>UI name: <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#contacts-queued-by-enqueue-historical">Contacts
-     * queued (enqueue timestamp)</a> </p> </dd> <dt>CONTACTS_RESOLVED_IN_X</dt> <dd>
+     * queued (enqueue timestamp)</a> </p> </dd>
+     * <dt>CONTACTS_REMOVED_FROM_QUEUE_IN_X</dt> <dd> <p>Unit: Count</p> <p>Valid
+     * groupings and filters: Queue, Channel, Routing Profile, Q in Connect</p>
+     * <p>Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to
+     * 604800 (inclusive), in seconds. For <code>Comparison</code>, you must enter
+     * <code>LT</code> (for "Less than").</p> <p>UI name: This metric is not available
+     * in Amazon Connect admin website. </p> </dd> <dt>CONTACTS_RESOLVED_IN_X</dt> <dd>
      * <p>Unit: Count</p> <p>Valid groupings and filters: Queue, Channel, Routing
      * Profile, contact/segmentAttributes/connect:Subtype, Q in Connect</p>
      * <p>Threshold: For <code>ThresholdValue</code> enter any whole number from 1 to
@@ -544,15 +528,17 @@ namespace Model
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#cases-resolved-first-contact-historical">Cases
      * resolved on first contact</a> </p> </dd> <dt>PERCENT_CONTACTS_STEP_EXPIRED</dt>
      * <dd> <p>Unit: Percent</p> <p>Valid groupings and filters: Queue,
-     * RoutingStepExpression</p> <p>UI name: Not available </p> </dd>
+     * RoutingStepExpression</p> <p>UI name: This metric is available in Real-time
+     * Metrics UI but not on the Historical Metrics UI.</p> </dd>
      * <dt>PERCENT_CONTACTS_STEP_JOINED</dt> <dd> <p>Unit: Percent</p> <p>Valid
-     * groupings and filters: Queue, RoutingStepExpression</p> <p>UI name: Not
-     * available </p> </dd> <dt>PERCENT_FLOWS_OUTCOME</dt> <dd> <p>Unit: Percent</p>
-     * <p>Valid metric filter key: <code>FLOWS_OUTCOME_TYPE</code> </p> <p>Valid
-     * groupings and filters: Channel, contact/segmentAttributes/connect:Subtype, Flow
-     * type, Flows module resource ID, Flows next resource ID, Flows next resource
-     * queue ID, Flows outcome type, Flows resource ID, Initiation method, Resource
-     * published timestamp</p> <p>UI name: <a
+     * groupings and filters: Queue, RoutingStepExpression</p> <p>UI name: This metric
+     * is available in Real-time Metrics UI but not on the Historical Metrics UI.</p>
+     * </dd> <dt>PERCENT_FLOWS_OUTCOME</dt> <dd> <p>Unit: Percent</p> <p>Valid metric
+     * filter key: <code>FLOWS_OUTCOME_TYPE</code> </p> <p>Valid groupings and filters:
+     * Channel, contact/segmentAttributes/connect:Subtype, Flow type, Flows module
+     * resource ID, Flows next resource ID, Flows next resource queue ID, Flows outcome
+     * type, Flows resource ID, Initiation method, Resource published timestamp</p>
+     * <p>UI name: <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#flows-outcome-percentage-historical">Flows
      * outcome percentage</a>.</p>  <p>The <code>FLOWS_OUTCOME_TYPE</code> is not
      * a valid grouping.</p>  </dd> <dt>PERCENT_NON_TALK_TIME</dt> <dd> <p>This
@@ -586,7 +572,7 @@ namespace Model
      * reopened</a> </p> </dd> <dt>RESOLVED_CASE_ACTIONS</dt> <dd> <p>Unit: Count</p>
      * <p>Required filter key: CASE_TEMPLATE_ARN</p> <p>Valid groupings and filters:
      * CASE_TEMPLATE_ARN, CASE_STATUS</p> <p>UI name: <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#cases-resolved-historicall">Cases
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#cases-resolved-historical">Cases
      * resolved</a> </p> </dd> <dt>SERVICE_LEVEL</dt> <dd> <p>You can include up to 20
      * SERVICE_LEVEL metrics in a request.</p> <p>Unit: Percent</p> <p>Valid groupings
      * and filters: Queue, Channel, Routing Profile, Q in Connect</p> <p>Threshold: For
@@ -595,8 +581,9 @@ namespace Model
      * <code>LT</code> (for "Less than"). </p> <p>UI name: <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#service-level-historical">Service
      * level X</a> </p> </dd> <dt>STEP_CONTACTS_QUEUED</dt> <dd> <p>Unit: Count</p>
-     * <p>Valid groupings and filters: Queue, RoutingStepExpression</p> <p>UI name: Not
-     * available</p> </dd> <dt>SUM_AFTER_CONTACT_WORK_TIME</dt> <dd> <p>Unit:
+     * <p>Valid groupings and filters: Queue, RoutingStepExpression</p> <p>UI name:
+     * This metric is available in Real-time Metrics UI but not on the Historical
+     * Metrics UI.</p> </dd> <dt>SUM_AFTER_CONTACT_WORK_TIME</dt> <dd> <p>Unit:
      * Seconds</p> <p>Valid groupings and filters: Queue, Channel, Routing Profile,
      * Agent, Agent Hierarchy, Q in Connect</p> <p>UI name: <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#acw-historical">After
@@ -609,13 +596,35 @@ namespace Model
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#htm-agent-api-connecting-time">Agent
      * API connecting time</a> </p>  <p>The <code>Negate</code> key in Metric
      * Level Filters is not applicable for this metric.</p>  </dd>
-     * <dt>SUM_CONTACT_FLOW_TIME</dt> <dd> <p>Unit: Seconds</p> <p>Valid groupings and
-     * filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in
+     * <dt>SUM_CONTACTS_ABANDONED</dt> <dd> <p>Unit: Count</p> <p>Metric filter: </p>
+     * <ul> <li> <p>Valid values: <code>API</code>| <code>Incoming</code> |
+     * <code>Outbound</code> | <code>Transfer</code> | <code>Callback</code> |
+     * <code>Queue_Transfer</code>| <code>Disconnect</code> </p> </li> </ul> <p>Valid
+     * groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
+     * contact/segmentAttributes/connect:Subtype, RoutingStepExpression, Q in
      * Connect</p> <p>UI name: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#contacts-abandoned-historical">Contact
+     * abandoned</a> </p> </dd> <dt>SUM_CONTACTS_ABANDONED_IN_X</dt> <dd> <p>Unit:
+     * Count</p> <p>Valid groupings and filters: Queue, Channel, Routing Profile,
+     * contact/segmentAttributes/connect:Subtype, Q in Connect</p> <p>Threshold: For
+     * <code>ThresholdValue</code>, enter any whole number from 1 to 604800
+     * (inclusive), in seconds. For <code>Comparison</code>, you must enter
+     * <code>LT</code> (for "Less than"). </p> <p>UI name: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#contacts-abandoned-x-historical">Contacts
+     * abandoned in X seconds</a> </p> </dd> <dt>SUM_CONTACTS_ANSWERED_IN_X</dt> <dd>
+     * <p>Unit: Count</p> <p>Valid groupings and filters: Queue, Channel, Routing
+     * Profile, contact/segmentAttributes/connect:Subtype, Q in Connect</p>
+     * <p>Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to
+     * 604800 (inclusive), in seconds. For <code>Comparison</code>, you must enter
+     * <code>LT</code> (for "Less than"). </p> <p>UI name: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#contacts-answered-x-historical">Contacts
+     * answered in X seconds</a> </p> </dd> <dt>SUM_CONTACT_FLOW_TIME</dt> <dd>
+     * <p>Unit: Seconds</p> <p>Valid groupings and filters: Queue, Channel, Routing
+     * Profile, Agent, Agent Hierarchy, Q in Connect</p> <p>UI name: <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#contact-flow-time-historical">Contact
      * flow time</a> </p> </dd> <dt>SUM_CONTACT_TIME_AGENT</dt> <dd> <p>Unit:
-     * Seconds</p> <p>Valid groupings and filters: Queue, Channel, Routing Profile,
-     * Agent, Agent Hierarchy</p> <p>UI name: <a
+     * Seconds</p> <p>Valid groupings and filters: Routing Profile, Agent, Agent
+     * Hierarchy</p> <p>UI name: <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#agent-on-contact-time-historical">Agent
      * on contact time</a> </p> </dd> <dt>SUM_CONTACTS_DISCONNECTED </dt> <dd> <p>Valid
      * metric filter key: <code>DISCONNECT_REASON</code> </p> <p>Unit: Count</p>
@@ -624,8 +633,8 @@ namespace Model
      * name: <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#contact-disconnected-historical">Contact
      * disconnected</a> </p> </dd> <dt>SUM_ERROR_STATUS_TIME_AGENT</dt> <dd> <p>Unit:
-     * Seconds</p> <p>Valid groupings and filters: Queue, Channel, Routing Profile,
-     * Agent, Agent Hierarchy</p> <p>UI name: <a
+     * Seconds</p> <p>Valid groupings and filters: Routing Profile, Agent, Agent
+     * Hierarchy</p> <p>UI name: <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#error-status-time-historical">Error
      * status time</a> </p> </dd> <dt>SUM_HANDLE_TIME</dt> <dd> <p>Unit: Seconds</p>
      * <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent

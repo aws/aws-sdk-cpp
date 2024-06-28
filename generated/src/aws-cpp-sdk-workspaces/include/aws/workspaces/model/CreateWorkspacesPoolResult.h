@@ -35,7 +35,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Indicates the WorkSpaces pool to create.</p>
+     * <p>Indicates the pool to create.</p>
      */
     inline const WorkspacesPool& GetWorkspacesPool() const{ return m_workspacesPool; }
     inline void SetWorkspacesPool(const WorkspacesPool& value) { m_workspacesPool = value; }

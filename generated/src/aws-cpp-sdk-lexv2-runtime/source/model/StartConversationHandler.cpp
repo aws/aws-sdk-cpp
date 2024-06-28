@@ -29,10 +29,11 @@ namespace Model
 
     StartConversationHandler::StartConversationHandler() : EventStreamHandler()
     {
-        m_onInitialResponse = [&](const StartConversationInitialResponse&)
+        m_onInitialResponse = [&](const StartConversationInitialResponse&, const Utils::Event::InitialResponseType eventType)
         {
             AWS_LOGSTREAM_TRACE(STARTCONVERSATION_HANDLER_CLASS_TAG,
-                "StartConversation initial response received.");
+                "StartConversation initial response received from "
+                << (eventType == Utils::Event::InitialResponseType::ON_EVENT ? "event" : "http headers"));
         };
 
         m_onPlaybackInterruptionEvent = [&](const PlaybackInterruptionEvent&)
@@ -119,18 +120,11 @@ namespace Model
         }
         switch (StartConversationEventMapper::GetStartConversationEventTypeForName(eventTypeHeaderIter->second.GetEventHeaderValueAsString()))
         {
-        
-        case StartConversationEventType::INITIAL_RESPONSE: 
-        {
-            JsonValue json(GetEventPayloadAsString());
-            if (!json.WasParseSuccessful())
-            {
-                AWS_LOGSTREAM_WARN(STARTCONVERSATION_HANDLER_CLASS_TAG, "Unable to generate a proper StartConversationInitialResponse object from the response in JSON format.");
-                break;
-            }
 
-            StartConversationInitialResponse event(json.View());
-            m_onInitialResponse(event);
+        case StartConversationEventType::INITIAL_RESPONSE:
+        {
+            StartConversationInitialResponse event(GetEventHeadersAsHttpHeaders());
+            m_onInitialResponse(event, Utils::Event::InitialResponseType::ON_EVENT);
             break;
         }   
 

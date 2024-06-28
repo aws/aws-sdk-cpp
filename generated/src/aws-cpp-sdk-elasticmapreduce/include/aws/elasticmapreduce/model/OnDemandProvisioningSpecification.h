@@ -45,8 +45,11 @@ namespace Model
     ///@{
     /**
      * <p>Specifies the strategy to use in launching On-Demand instance fleets.
-     * Currently, the only option is <code>lowest-price</code> (the default), which
-     * launches the lowest price first.</p>
+     * Available options are <code>lowest-price</code> and <code>prioritized</code>.
+     * <code>lowest-price</code> specifies to launch the instances with the lowest
+     * price first, and <code>prioritized</code> specifies that Amazon EMR should
+     * launch the instances with the highest priority first. The default is
+     * <code>lowest-price</code>.</p>
      */
     inline const OnDemandProvisioningAllocationStrategy& GetAllocationStrategy() const{ return m_allocationStrategy; }
     inline bool AllocationStrategyHasBeenSet() const { return m_allocationStrategyHasBeenSet; }

@@ -22,8 +22,8 @@ namespace Model
 {
 
   /**
-   * <p>Describes the user capacity for a WorkSpaces pool.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>Describes the user capacity for a pool of WorkSpaces.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/Capacity">AWS
    * API Reference</a></p>
    */

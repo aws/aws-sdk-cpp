@@ -97,16 +97,16 @@ StartCallAnalyticsStreamTranscriptionInitialResponse::StartCallAnalyticsStreamTr
     m_partialResultsStability = PartialResultsStabilityMapper::GetPartialResultsStabilityForName(partialResultsStabilityIter->second);
   }
 
-  const auto& languageCodeIter = headers.find("x-amzn-transcribe-language-code");
-  if(languageCodeIter != headers.end())
-  {
-    m_languageCode = CallAnalyticsLanguageCodeMapper::GetCallAnalyticsLanguageCodeForName(languageCodeIter->second);
-  }
-
   const auto& enablePartialResultsStabilizationIter = headers.find("x-amzn-transcribe-enable-partial-results-stabilization");
   if(enablePartialResultsStabilizationIter != headers.end())
   {
      m_enablePartialResultsStabilization = StringUtils::ConvertToBool(enablePartialResultsStabilizationIter->second.c_str());
+  }
+
+  const auto& languageCodeIter = headers.find("x-amzn-transcribe-language-code");
+  if(languageCodeIter != headers.end())
+  {
+    m_languageCode = CallAnalyticsLanguageCodeMapper::GetCallAnalyticsLanguageCodeForName(languageCodeIter->second);
   }
 
   const auto& vocabularyNameIter = headers.find("x-amzn-transcribe-vocabulary-name");

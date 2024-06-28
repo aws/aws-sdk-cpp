@@ -34,8 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>Contains information about an AWS CloudHSM cluster.</p><p><h3>See Also:</h3> 
-   * <a
+   * <p>Contains information about an CloudHSM cluster.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/Cluster">AWS
    * API Reference</a></p>
    */

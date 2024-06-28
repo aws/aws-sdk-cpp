@@ -28,7 +28,7 @@ namespace Model
 {
 
   /**
-   * <p>Describes a WorkSpaces pool session.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes a pool session.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/WorkspacesPoolSession">AWS
    * API Reference</a></p>
    */
@@ -43,7 +43,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The authentication method. The user is authenticated using a WorkSpaces pool
+     * <p>The authentication method. The user is authenticated using a WorkSpaces Pools
      * URL (API) or SAML 2.0 federation (SAML).</p>
      */
     inline const AuthenticationType& GetAuthenticationType() const{ return m_authenticationType; }

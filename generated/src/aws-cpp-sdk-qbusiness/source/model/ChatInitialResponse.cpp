@@ -5,6 +5,8 @@
 
 #include <aws/qbusiness/model/ChatInitialResponse.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 
 #include <utility>
 
@@ -31,6 +33,11 @@ ChatInitialResponse& ChatInitialResponse::operator =(JsonView jsonValue)
 {
   AWS_UNREFERENCED_PARAM(jsonValue);
   return *this;
+}
+
+ChatInitialResponse::ChatInitialResponse(const Http::HeaderValueCollection& headers) : ChatInitialResponse()
+{
+  AWS_UNREFERENCED_PARAM(headers);
 }
 
 JsonValue ChatInitialResponse::Jsonize() const

@@ -39,7 +39,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The identifier of the specified WorkSpaces pool to update.</p>
+     * <p>The identifier of the specified pool to update.</p>
      */
     inline const Aws::String& GetPoolId() const{ return m_poolId; }
     inline bool PoolIdHasBeenSet() const { return m_poolIdHasBeenSet; }
@@ -53,7 +53,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Describes the specified WorkSpaces pool to update.</p>
+     * <p>Describes the specified pool to update.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
@@ -95,7 +95,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The desired capacity for the WorkSpaces pool.</p>
+     * <p>The desired capacity for the pool.</p>
      */
     inline const Capacity& GetCapacity() const{ return m_capacity; }
     inline bool CapacityHasBeenSet() const { return m_capacityHasBeenSet; }
@@ -119,7 +119,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Indicates the timeout settings of the specified WorkSpaces pool.</p>
+     * <p>Indicates the timeout settings of the specified pool.</p>
      */
     inline const TimeoutSettings& GetTimeoutSettings() const{ return m_timeoutSettings; }
     inline bool TimeoutSettingsHasBeenSet() const { return m_timeoutSettingsHasBeenSet; }

@@ -17,6 +17,8 @@ DescribeBackupsRequest::DescribeBackupsRequest() :
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
     m_filtersHasBeenSet(false),
+    m_shared(false),
+    m_sharedHasBeenSet(false),
     m_sortAscending(false),
     m_sortAscendingHasBeenSet(false)
 {
@@ -51,6 +53,12 @@ Aws::String DescribeBackupsRequest::SerializePayload() const
      filtersJsonMap.WithArray(filtersItem.first, std::move(stringsJsonList));
    }
    payload.WithObject("Filters", std::move(filtersJsonMap));
+
+  }
+
+  if(m_sharedHasBeenSet)
+  {
+   payload.WithBool("Shared", m_shared);
 
   }
 

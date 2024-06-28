@@ -3447,7 +3447,23 @@ namespace Connect
          * <p>Imports a claimed phone number from an external service, such as Amazon
          * Pinpoint, into an Amazon Connect instance. You can call this API only in the
          * same Amazon Web Services Region where the Amazon Connect instance was
-         * created.</p><p><h3>See Also:</h3>   <a
+         * created.</p>  <p>Call the <a
+         * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribePhoneNumber.html">DescribePhoneNumber</a>
+         * API to verify the status of a previous <code>ImportPhoneNumber</code> operation.
+         * </p>  <p>If you plan to claim or import numbers and then release
+         * numbers frequently, contact us for a service quota exception. Otherwise, it is
+         * possible you will be blocked from claiming and releasing any more numbers until
+         * up to 180 days past the oldest number released has expired. </p> <p> By default
+         * you can claim or import and then release up to 200% of your maximum number of
+         * active phone numbers. If you claim or import and then release phone numbers
+         * using the UI or API during a rolling 180 day cycle that exceeds 200% of your
+         * phone number service level quota, you will be blocked from claiming or importing
+         * any more numbers until 180 days past the oldest number released has expired.
+         * </p> <p>For example, if you already have 99 claimed or imported numbers and a
+         * service level quota of 99 phone numbers, and in any 180 day period you release
+         * 99, claim 99, and then release 99, you will have exceeded the 200% limit. At
+         * that point you are blocked from claiming any more numbers until you open an
+         * Amazon Web Services Support ticket. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ImportPhoneNumber">AWS
          * API Reference</a></p>
          */
@@ -5353,9 +5369,14 @@ namespace Connect
          * <code>ChatDurationInMinutes</code> parameter and receive a 400 error, your
          * account may not support the ability to configure custom chat durations. For more
          * information, contact Amazon Web Services Support. </p> <p>For more information
-         * about chat, see <a
-         * href="https://docs.aws.amazon.com/connect/latest/adminguide/chat.html">Chat</a>
-         * in the <i>Amazon Connect Administrator Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * about chat, see the following topics in the <i>Amazon Connect Administrator
+         * Guide</i>: </p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/web-and-mobile-chat.html">Concepts:
+         * Web and mobile messaging capabilities in Amazon Connect</a> </p> </li> <li> <p>
+         * <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Amazon
+         * Connect Chat security best practices</a> </p> </li> </ul><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartChatContact">AWS
          * API Reference</a></p>
          */
@@ -5453,7 +5474,14 @@ namespace Connect
          * more information about message streaming, see <a
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-message-streaming.html">Enable
          * real-time chat message streaming</a> in the <i>Amazon Connect Administrator
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Guide</i>.</p> <p>For more information about chat, see the following topics in
+         * the <i>Amazon Connect Administrator Guide</i>: </p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/web-and-mobile-chat.html">Concepts:
+         * Web and mobile messaging capabilities in Amazon Connect</a> </p> </li> <li> <p>
+         * <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Amazon
+         * Connect Chat security best practices</a> </p> </li> </ul><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartContactStreaming">AWS
          * API Reference</a></p>
          */

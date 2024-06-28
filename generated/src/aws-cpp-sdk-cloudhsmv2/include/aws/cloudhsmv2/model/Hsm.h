@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>Contains information about a hardware security module (HSM) in an AWS
-   * CloudHSM cluster.</p><p><h3>See Also:</h3>   <a
+   * <p>Contains information about a hardware security module (HSM) in an CloudHSM
+   * cluster.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/Hsm">AWS API
    * Reference</a></p>
    */
