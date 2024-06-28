@@ -102,28 +102,28 @@ StartMedicalStreamTranscriptionInitialResponse::StartMedicalStreamTranscriptionI
     m_contentIdentificationType = MedicalContentIdentificationTypeMapper::GetMedicalContentIdentificationTypeForName(contentIdentificationTypeIter->second);
   }
 
-  const auto& mediaSampleRateHertzIter = headers.find("x-amzn-transcribe-sample-rate");
-  if(mediaSampleRateHertzIter != headers.end())
-  {
-     m_mediaSampleRateHertz = StringUtils::ConvertToInt32(mediaSampleRateHertzIter->second.c_str());
-  }
-
   const auto& enableChannelIdentificationIter = headers.find("x-amzn-transcribe-enable-channel-identification");
   if(enableChannelIdentificationIter != headers.end())
   {
      m_enableChannelIdentification = StringUtils::ConvertToBool(enableChannelIdentificationIter->second.c_str());
   }
 
-  const auto& mediaEncodingIter = headers.find("x-amzn-transcribe-media-encoding");
-  if(mediaEncodingIter != headers.end())
+  const auto& mediaSampleRateHertzIter = headers.find("x-amzn-transcribe-sample-rate");
+  if(mediaSampleRateHertzIter != headers.end())
   {
-    m_mediaEncoding = MediaEncodingMapper::GetMediaEncodingForName(mediaEncodingIter->second);
+     m_mediaSampleRateHertz = StringUtils::ConvertToInt32(mediaSampleRateHertzIter->second.c_str());
   }
 
   const auto& numberOfChannelsIter = headers.find("x-amzn-transcribe-number-of-channels");
   if(numberOfChannelsIter != headers.end())
   {
      m_numberOfChannels = StringUtils::ConvertToInt32(numberOfChannelsIter->second.c_str());
+  }
+
+  const auto& mediaEncodingIter = headers.find("x-amzn-transcribe-media-encoding");
+  if(mediaEncodingIter != headers.end())
+  {
+    m_mediaEncoding = MediaEncodingMapper::GetMediaEncodingForName(mediaEncodingIter->second);
   }
 
   const auto& sessionIdIter = headers.find("x-amzn-transcribe-session-id");

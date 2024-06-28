@@ -76,16 +76,16 @@ StartStreamTranscriptionInitialResponse& StartStreamTranscriptionInitialResponse
 
 StartStreamTranscriptionInitialResponse::StartStreamTranscriptionInitialResponse(const Http::HeaderValueCollection& headers) : StartStreamTranscriptionInitialResponse()
 {
-  const auto& identifyMultipleLanguagesIter = headers.find("x-amzn-transcribe-identify-multiple-languages");
-  if(identifyMultipleLanguagesIter != headers.end())
-  {
-     m_identifyMultipleLanguages = StringUtils::ConvertToBool(identifyMultipleLanguagesIter->second.c_str());
-  }
-
   const auto& vocabularyNamesIter = headers.find("x-amzn-transcribe-vocabulary-names");
   if(vocabularyNamesIter != headers.end())
   {
     m_vocabularyNames = vocabularyNamesIter->second;
+  }
+
+  const auto& identifyMultipleLanguagesIter = headers.find("x-amzn-transcribe-identify-multiple-languages");
+  if(identifyMultipleLanguagesIter != headers.end())
+  {
+     m_identifyMultipleLanguages = StringUtils::ConvertToBool(identifyMultipleLanguagesIter->second.c_str());
   }
 
   const auto& languageModelNameIter = headers.find("x-amzn-transcribe-language-model-name");
@@ -112,16 +112,16 @@ StartStreamTranscriptionInitialResponse::StartStreamTranscriptionInitialResponse
      m_mediaSampleRateHertz = StringUtils::ConvertToInt32(mediaSampleRateHertzIter->second.c_str());
   }
 
-  const auto& mediaEncodingIter = headers.find("x-amzn-transcribe-media-encoding");
-  if(mediaEncodingIter != headers.end())
-  {
-    m_mediaEncoding = MediaEncodingMapper::GetMediaEncodingForName(mediaEncodingIter->second);
-  }
-
   const auto& identifyLanguageIter = headers.find("x-amzn-transcribe-identify-language");
   if(identifyLanguageIter != headers.end())
   {
      m_identifyLanguage = StringUtils::ConvertToBool(identifyLanguageIter->second.c_str());
+  }
+
+  const auto& mediaEncodingIter = headers.find("x-amzn-transcribe-media-encoding");
+  if(mediaEncodingIter != headers.end())
+  {
+    m_mediaEncoding = MediaEncodingMapper::GetMediaEncodingForName(mediaEncodingIter->second);
   }
 
   const auto& partialResultsStabilityIter = headers.find("x-amzn-transcribe-partial-results-stability");
@@ -142,16 +142,16 @@ StartStreamTranscriptionInitialResponse::StartStreamTranscriptionInitialResponse
     m_vocabularyFilterNames = vocabularyFilterNamesIter->second;
   }
 
-  const auto& languageCodeIter = headers.find("x-amzn-transcribe-language-code");
-  if(languageCodeIter != headers.end())
-  {
-    m_languageCode = LanguageCodeMapper::GetLanguageCodeForName(languageCodeIter->second);
-  }
-
   const auto& enablePartialResultsStabilizationIter = headers.find("x-amzn-transcribe-enable-partial-results-stabilization");
   if(enablePartialResultsStabilizationIter != headers.end())
   {
      m_enablePartialResultsStabilization = StringUtils::ConvertToBool(enablePartialResultsStabilizationIter->second.c_str());
+  }
+
+  const auto& languageCodeIter = headers.find("x-amzn-transcribe-language-code");
+  if(languageCodeIter != headers.end())
+  {
+    m_languageCode = LanguageCodeMapper::GetLanguageCodeForName(languageCodeIter->second);
   }
 
   const auto& vocabularyNameIter = headers.find("x-amzn-transcribe-vocabulary-name");
@@ -178,16 +178,16 @@ StartStreamTranscriptionInitialResponse::StartStreamTranscriptionInitialResponse
     m_contentIdentificationType = ContentIdentificationTypeMapper::GetContentIdentificationTypeForName(contentIdentificationTypeIter->second);
   }
 
-  const auto& piiEntityTypesIter = headers.find("x-amzn-transcribe-pii-entity-types");
-  if(piiEntityTypesIter != headers.end())
-  {
-    m_piiEntityTypes = piiEntityTypesIter->second;
-  }
-
   const auto& preferredLanguageIter = headers.find("x-amzn-transcribe-preferred-language");
   if(preferredLanguageIter != headers.end())
   {
     m_preferredLanguage = LanguageCodeMapper::GetLanguageCodeForName(preferredLanguageIter->second);
+  }
+
+  const auto& piiEntityTypesIter = headers.find("x-amzn-transcribe-pii-entity-types");
+  if(piiEntityTypesIter != headers.end())
+  {
+    m_piiEntityTypes = piiEntityTypesIter->second;
   }
 
   const auto& enableChannelIdentificationIter = headers.find("x-amzn-transcribe-enable-channel-identification");
@@ -196,16 +196,16 @@ StartStreamTranscriptionInitialResponse::StartStreamTranscriptionInitialResponse
      m_enableChannelIdentification = StringUtils::ConvertToBool(enableChannelIdentificationIter->second.c_str());
   }
 
-  const auto& vocabularyFilterMethodIter = headers.find("x-amzn-transcribe-vocabulary-filter-method");
-  if(vocabularyFilterMethodIter != headers.end())
-  {
-    m_vocabularyFilterMethod = VocabularyFilterMethodMapper::GetVocabularyFilterMethodForName(vocabularyFilterMethodIter->second);
-  }
-
   const auto& numberOfChannelsIter = headers.find("x-amzn-transcribe-number-of-channels");
   if(numberOfChannelsIter != headers.end())
   {
      m_numberOfChannels = StringUtils::ConvertToInt32(numberOfChannelsIter->second.c_str());
+  }
+
+  const auto& vocabularyFilterMethodIter = headers.find("x-amzn-transcribe-vocabulary-filter-method");
+  if(vocabularyFilterMethodIter != headers.end())
+  {
+    m_vocabularyFilterMethod = VocabularyFilterMethodMapper::GetVocabularyFilterMethodForName(vocabularyFilterMethodIter->second);
   }
 
   const auto& sessionIdIter = headers.find("x-amzn-transcribe-session-id");

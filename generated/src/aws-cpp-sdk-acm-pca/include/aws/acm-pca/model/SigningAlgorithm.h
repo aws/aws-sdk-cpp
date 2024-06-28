@@ -21,7 +21,8 @@ namespace Model
     SHA512WITHECDSA,
     SHA256WITHRSA,
     SHA384WITHRSA,
-    SHA512WITHRSA
+    SHA512WITHRSA,
+    SM3WITHSM2
   };
 
 namespace SigningAlgorithmMapper

@@ -5,6 +5,8 @@
 
 #include <aws/bedrock-runtime/model/InvokeModelWithResponseStreamInitialResponse.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
@@ -34,6 +36,16 @@ InvokeModelWithResponseStreamInitialResponse& InvokeModelWithResponseStreamIniti
 {
   AWS_UNREFERENCED_PARAM(jsonValue);
   return *this;
+}
+
+InvokeModelWithResponseStreamInitialResponse::InvokeModelWithResponseStreamInitialResponse(const Http::HeaderValueCollection& headers) : InvokeModelWithResponseStreamInitialResponse()
+{
+  const auto& contentTypeIter = headers.find("x-amzn-bedrock-content-type");
+  if(contentTypeIter != headers.end())
+  {
+    m_contentType = contentTypeIter->second;
+  }
+
 }
 
 JsonValue InvokeModelWithResponseStreamInitialResponse::Jsonize() const

@@ -67,9 +67,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>The identifier (ID) of the cluster backup to restore. Use this value to
-     * restore the cluster from a backup instead of creating a new cluster. To find the
-     * backup ID, use <a>DescribeBackups</a>.</p>
+     * <p>The identifier (ID) or the Amazon Resource Name (ARN) of the cluster backup
+     * to restore. Use this value to restore the cluster from a backup instead of
+     * creating a new cluster. To find the backup ID or ARN, use
+     * <a>DescribeBackups</a>. <i>If using a backup in another account, the full ARN
+     * must be supplied.</i> </p>
      */
     inline const Aws::String& GetSourceBackupId() const{ return m_sourceBackupId; }
     inline bool SourceBackupIdHasBeenSet() const { return m_sourceBackupIdHasBeenSet; }

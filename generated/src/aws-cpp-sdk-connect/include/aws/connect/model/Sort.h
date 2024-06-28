@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>A structure that defineds the field name to sort by and a sort
+   * <p>A structure that defines the field name to sort by and a sort
    * order.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/Sort">AWS API
    * Reference</a></p>

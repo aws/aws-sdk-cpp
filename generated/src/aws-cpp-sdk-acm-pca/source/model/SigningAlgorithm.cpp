@@ -26,6 +26,7 @@ namespace Aws
         static const int SHA256WITHRSA_HASH = HashingUtils::HashString("SHA256WITHRSA");
         static const int SHA384WITHRSA_HASH = HashingUtils::HashString("SHA384WITHRSA");
         static const int SHA512WITHRSA_HASH = HashingUtils::HashString("SHA512WITHRSA");
+        static const int SM3WITHSM2_HASH = HashingUtils::HashString("SM3WITHSM2");
 
 
         SigningAlgorithm GetSigningAlgorithmForName(const Aws::String& name)
@@ -55,6 +56,10 @@ namespace Aws
           {
             return SigningAlgorithm::SHA512WITHRSA;
           }
+          else if (hashCode == SM3WITHSM2_HASH)
+          {
+            return SigningAlgorithm::SM3WITHSM2;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -83,6 +88,8 @@ namespace Aws
             return "SHA384WITHRSA";
           case SigningAlgorithm::SHA512WITHRSA:
             return "SHA512WITHRSA";
+          case SigningAlgorithm::SM3WITHSM2:
+            return "SM3WITHSM2";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -23,6 +23,7 @@ AttributeCondition::AttributeCondition() :
     m_valueHasBeenSet(false),
     m_proficiencyLevel(0.0),
     m_proficiencyLevelHasBeenSet(false),
+    m_matchCriteriaHasBeenSet(false),
     m_comparisonOperatorHasBeenSet(false)
 {
 }
@@ -56,6 +57,13 @@ AttributeCondition& AttributeCondition::operator =(JsonView jsonValue)
     m_proficiencyLevelHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("MatchCriteria"))
+  {
+    m_matchCriteria = jsonValue.GetObject("MatchCriteria");
+
+    m_matchCriteriaHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("ComparisonOperator"))
   {
     m_comparisonOperator = jsonValue.GetString("ComparisonOperator");
@@ -85,6 +93,12 @@ JsonValue AttributeCondition::Jsonize() const
   if(m_proficiencyLevelHasBeenSet)
   {
    payload.WithDouble("ProficiencyLevel", m_proficiencyLevel);
+
+  }
+
+  if(m_matchCriteriaHasBeenSet)
+  {
+   payload.WithObject("MatchCriteria", m_matchCriteria.Jsonize());
 
   }
 

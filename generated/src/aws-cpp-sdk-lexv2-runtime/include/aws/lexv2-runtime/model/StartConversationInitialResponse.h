@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/lexv2-runtime/LexRuntimeV2_EXPORTS.h>
+#include <aws/core/http/HttpTypes.h>
 
 namespace Aws
 {
@@ -27,6 +28,7 @@ namespace Model
     AWS_LEXRUNTIMEV2_API StartConversationInitialResponse();
     AWS_LEXRUNTIMEV2_API StartConversationInitialResponse(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXRUNTIMEV2_API StartConversationInitialResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXRUNTIMEV2_API StartConversationInitialResponse(const Http::HeaderValueCollection& responseHeaders);
     AWS_LEXRUNTIMEV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
   };

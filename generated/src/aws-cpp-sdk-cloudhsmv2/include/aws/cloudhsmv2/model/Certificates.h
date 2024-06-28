@@ -69,7 +69,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The HSM hardware certificate issued (signed) by AWS CloudHSM.</p>
+     * <p>The HSM hardware certificate issued (signed) by CloudHSM.</p>
      */
     inline const Aws::String& GetAwsHardwareCertificate() const{ return m_awsHardwareCertificate; }
     inline bool AwsHardwareCertificateHasBeenSet() const { return m_awsHardwareCertificateHasBeenSet; }

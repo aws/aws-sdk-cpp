@@ -18,7 +18,8 @@ GetDatabasesRequest::GetDatabasesRequest() :
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
     m_resourceShareType(ResourceShareType::NOT_SET),
-    m_resourceShareTypeHasBeenSet(false)
+    m_resourceShareTypeHasBeenSet(false),
+    m_attributesToGetHasBeenSet(false)
 {
 }
 
@@ -47,6 +48,17 @@ Aws::String GetDatabasesRequest::SerializePayload() const
   if(m_resourceShareTypeHasBeenSet)
   {
    payload.WithString("ResourceShareType", ResourceShareTypeMapper::GetNameForResourceShareType(m_resourceShareType));
+  }
+
+  if(m_attributesToGetHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> attributesToGetJsonList(m_attributesToGet.size());
+   for(unsigned attributesToGetIndex = 0; attributesToGetIndex < attributesToGetJsonList.GetLength(); ++attributesToGetIndex)
+   {
+     attributesToGetJsonList[attributesToGetIndex].AsString(DatabaseAttributesMapper::GetNameForDatabaseAttributes(m_attributesToGet[attributesToGetIndex]));
+   }
+   payload.WithArray("AttributesToGet", std::move(attributesToGetJsonList));
+
   }
 
   return payload.View().WriteReadable();

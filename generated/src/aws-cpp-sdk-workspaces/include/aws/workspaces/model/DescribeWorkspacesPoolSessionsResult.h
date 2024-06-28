@@ -36,7 +36,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Describes the WorkSpaces pool sessions.</p>
+     * <p>Describes the pool sessions.</p>
      */
     inline const Aws::Vector<WorkspacesPoolSession>& GetSessions() const{ return m_sessions; }
     inline void SetSessions(const Aws::Vector<WorkspacesPoolSession>& value) { m_sessions = value; }

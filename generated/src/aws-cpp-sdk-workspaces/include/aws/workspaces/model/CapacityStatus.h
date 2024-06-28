@@ -22,8 +22,8 @@ namespace Model
 {
 
   /**
-   * <p>Describes the capacity status for a WorkSpaces pool</p><p><h3>See Also:</h3> 
-   * <a
+   * <p>Describes the capacity status for a pool of WorkSpaces.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CapacityStatus">AWS
    * API Reference</a></p>
    */
@@ -61,8 +61,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The total number of session slots that are available for WorkSpaces
-     * pools.</p>
+     * <p>The total number of session slots that are available for a pool of
+     * WorkSpaces.</p>
      */
     inline int GetActualUserSessions() const{ return m_actualUserSessions; }
     inline bool ActualUserSessionsHasBeenSet() const { return m_actualUserSessionsHasBeenSet; }

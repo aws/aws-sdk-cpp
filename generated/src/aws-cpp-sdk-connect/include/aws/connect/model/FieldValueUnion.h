@@ -50,7 +50,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>a Double number value type.</p>
+     * <p>A Double number value type.</p>
      */
     inline double GetDoubleValue() const{ return m_doubleValue; }
     inline bool DoubleValueHasBeenSet() const { return m_doubleValueHasBeenSet; }

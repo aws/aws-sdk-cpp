@@ -8,6 +8,8 @@
 #include <aws/glue/GlueRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/glue/model/ResourceShareType.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/glue/model/DatabaseAttributes.h>
 #include <utility>
 
 namespace Aws
@@ -92,6 +94,22 @@ namespace Model
     inline GetDatabasesRequest& WithResourceShareType(const ResourceShareType& value) { SetResourceShareType(value); return *this;}
     inline GetDatabasesRequest& WithResourceShareType(ResourceShareType&& value) { SetResourceShareType(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Specifies the database fields returned by the <code>GetDatabases</code> call.
+     * This parameter doesn’t accept an empty list. The request must include the
+     * <code>NAME</code>.</p>
+     */
+    inline const Aws::Vector<DatabaseAttributes>& GetAttributesToGet() const{ return m_attributesToGet; }
+    inline bool AttributesToGetHasBeenSet() const { return m_attributesToGetHasBeenSet; }
+    inline void SetAttributesToGet(const Aws::Vector<DatabaseAttributes>& value) { m_attributesToGetHasBeenSet = true; m_attributesToGet = value; }
+    inline void SetAttributesToGet(Aws::Vector<DatabaseAttributes>&& value) { m_attributesToGetHasBeenSet = true; m_attributesToGet = std::move(value); }
+    inline GetDatabasesRequest& WithAttributesToGet(const Aws::Vector<DatabaseAttributes>& value) { SetAttributesToGet(value); return *this;}
+    inline GetDatabasesRequest& WithAttributesToGet(Aws::Vector<DatabaseAttributes>&& value) { SetAttributesToGet(std::move(value)); return *this;}
+    inline GetDatabasesRequest& AddAttributesToGet(const DatabaseAttributes& value) { m_attributesToGetHasBeenSet = true; m_attributesToGet.push_back(value); return *this; }
+    inline GetDatabasesRequest& AddAttributesToGet(DatabaseAttributes&& value) { m_attributesToGetHasBeenSet = true; m_attributesToGet.push_back(std::move(value)); return *this; }
+    ///@}
   private:
 
     Aws::String m_catalogId;
@@ -105,6 +123,9 @@ namespace Model
 
     ResourceShareType m_resourceShareType;
     bool m_resourceShareTypeHasBeenSet = false;
+
+    Aws::Vector<DatabaseAttributes> m_attributesToGet;
+    bool m_attributesToGetHasBeenSet = false;
   };
 
 } // namespace Model

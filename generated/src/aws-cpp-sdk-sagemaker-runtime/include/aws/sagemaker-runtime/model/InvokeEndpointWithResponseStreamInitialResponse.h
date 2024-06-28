@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/sagemaker-runtime/SageMakerRuntime_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/http/HttpTypes.h>
 #include <utility>
 
 namespace Aws
@@ -29,6 +30,7 @@ namespace Model
     AWS_SAGEMAKERRUNTIME_API InvokeEndpointWithResponseStreamInitialResponse();
     AWS_SAGEMAKERRUNTIME_API InvokeEndpointWithResponseStreamInitialResponse(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKERRUNTIME_API InvokeEndpointWithResponseStreamInitialResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKERRUNTIME_API InvokeEndpointWithResponseStreamInitialResponse(const Http::HeaderValueCollection& responseHeaders);
     AWS_SAGEMAKERRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 

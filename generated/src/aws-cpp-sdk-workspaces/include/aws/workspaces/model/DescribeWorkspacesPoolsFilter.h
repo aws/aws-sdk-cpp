@@ -27,8 +27,8 @@ namespace Model
 {
 
   /**
-   * <p>Describes the filter conditions for the WorkSpaces pool to
-   * return.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes the filter conditions for WorkSpaces Pools to return.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspacesPoolsFilter">AWS
    * API Reference</a></p>
    */
@@ -55,7 +55,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The values for filtering WorkSpaces pools.</p>
+     * <p>The values for filtering WorkSpaces Pools.</p>
      */
     inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
@@ -70,7 +70,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The operator values for filtering WorkSpaces pools.</p>
+     * <p>The operator values for filtering WorkSpaces Pools.</p>
      */
     inline const DescribeWorkspacesPoolsFilterOperator& GetOperator() const{ return m_operator; }
     inline bool OperatorHasBeenSet() const { return m_operatorHasBeenSet; }

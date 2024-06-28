@@ -29,10 +29,11 @@ namespace Model
 
     InvokeModelWithResponseStreamHandler::InvokeModelWithResponseStreamHandler() : EventStreamHandler()
     {
-        m_onInitialResponse = [&](const InvokeModelWithResponseStreamInitialResponse&)
+        m_onInitialResponse = [&](const InvokeModelWithResponseStreamInitialResponse&, const Utils::Event::InitialResponseType eventType)
         {
             AWS_LOGSTREAM_TRACE(INVOKEMODELWITHRESPONSESTREAM_HANDLER_CLASS_TAG,
-                "InvokeModelWithResponseStream initial response received.");
+                "InvokeModelWithResponseStream initial response received from "
+                << (eventType == Utils::Event::InitialResponseType::ON_EVENT ? "event" : "http headers"));
         };
 
         m_onPayloadPart = [&](const PayloadPart&)
@@ -94,18 +95,11 @@ namespace Model
         }
         switch (InvokeModelWithResponseStreamEventMapper::GetInvokeModelWithResponseStreamEventTypeForName(eventTypeHeaderIter->second.GetEventHeaderValueAsString()))
         {
-        
-        case InvokeModelWithResponseStreamEventType::INITIAL_RESPONSE: 
-        {
-            JsonValue json(GetEventPayloadAsString());
-            if (!json.WasParseSuccessful())
-            {
-                AWS_LOGSTREAM_WARN(INVOKEMODELWITHRESPONSESTREAM_HANDLER_CLASS_TAG, "Unable to generate a proper InvokeModelWithResponseStreamInitialResponse object from the response in JSON format.");
-                break;
-            }
 
-            InvokeModelWithResponseStreamInitialResponse event(json.View());
-            m_onInitialResponse(event);
+        case InvokeModelWithResponseStreamEventType::INITIAL_RESPONSE:
+        {
+            InvokeModelWithResponseStreamInitialResponse event(GetEventHeadersAsHttpHeaders());
+            m_onInitialResponse(event, Utils::Event::InitialResponseType::ON_EVENT);
             break;
         }   
 

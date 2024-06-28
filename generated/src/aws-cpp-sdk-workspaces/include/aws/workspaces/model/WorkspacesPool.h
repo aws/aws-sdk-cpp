@@ -31,7 +31,7 @@ namespace Model
 {
 
   /**
-   * <p>Describes a WorkSpaces pool.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes a pool of WorkSpaces.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/WorkspacesPool">AWS
    * API Reference</a></p>
    */
@@ -46,7 +46,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The identifier of a WorkSpaces pool.</p>
+     * <p>The identifier of a pool.</p>
      */
     inline const Aws::String& GetPoolId() const{ return m_poolId; }
     inline bool PoolIdHasBeenSet() const { return m_poolIdHasBeenSet; }
@@ -60,7 +60,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) for the WorkSpaces pool.</p>
+     * <p>The Amazon Resource Name (ARN) for the pool.</p>
      */
     inline const Aws::String& GetPoolArn() const{ return m_poolArn; }
     inline bool PoolArnHasBeenSet() const { return m_poolArnHasBeenSet; }

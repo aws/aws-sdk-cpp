@@ -1447,7 +1447,7 @@ namespace WorkSpaces
 
         /**
          * <p>Retrieves a list that describes the streaming sessions for a specified
-         * WorkSpaces pool.</p><p><h3>See Also:</h3>   <a
+         * pool.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspacesPoolSessions">AWS
          * API Reference</a></p>
          */
@@ -1472,7 +1472,7 @@ namespace WorkSpaces
         }
 
         /**
-         * <p>Describes the specified WorkSpaces pool.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes the specified WorkSpaces Pools.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspacesPools">AWS
          * API Reference</a></p>
          */
@@ -2247,8 +2247,8 @@ namespace WorkSpaces
         }
 
         /**
-         * <p>Starts the specified WorkSpaces pool.</p> <p>You cannot start a WorkSpace
-         * pool unless it has a running mode of <code>AutoStop</code> and a state of
+         * <p>Starts the specified pool.</p> <p>You cannot start a pool unless it has a
+         * running mode of <code>AutoStop</code> and a state of
          * <code>STOPPED</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/StartWorkspacesPool">AWS
          * API Reference</a></p>
@@ -2302,8 +2302,8 @@ namespace WorkSpaces
         }
 
         /**
-         * <p>Stops the specifiedWorkSpaces pool.</p> <p>You cannot stop a WorkSpace pool
-         * unless it has a running mode of <code>AutoStop</code> and a state of
+         * <p>Stops the specified pool.</p> <p>You cannot stop a WorkSpace pool unless it
+         * has a running mode of <code>AutoStop</code> and a state of
          * <code>AVAILABLE</code>, <code>IMPAIRED</code>, <code>UNHEALTHY</code>, or
          * <code>ERROR</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/StopWorkspacesPool">AWS
@@ -2377,7 +2377,7 @@ namespace WorkSpaces
         }
 
         /**
-         * <p>Terminates the specified WorkSpaces pool.</p><p><h3>See Also:</h3>   <a
+         * <p>Terminates the specified pool.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/TerminateWorkspacesPool">AWS
          * API Reference</a></p>
          */
@@ -2402,7 +2402,7 @@ namespace WorkSpaces
         }
 
         /**
-         * <p>Terminates the WorkSpaces pool session.</p><p><h3>See Also:</h3>   <a
+         * <p>Terminates the pool session.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/TerminateWorkspacesPoolSession">AWS
          * API Reference</a></p>
          */
@@ -2594,7 +2594,7 @@ namespace WorkSpaces
         }
 
         /**
-         * <p>Updates the specified WorkSpaces pool.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the specified pool.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/UpdateWorkspacesPool">AWS
          * API Reference</a></p>
          */

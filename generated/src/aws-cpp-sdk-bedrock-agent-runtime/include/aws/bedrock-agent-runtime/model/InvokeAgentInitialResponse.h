@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/http/HttpTypes.h>
 #include <utility>
 
 namespace Aws
@@ -29,6 +30,7 @@ namespace Model
     AWS_BEDROCKAGENTRUNTIME_API InvokeAgentInitialResponse();
     AWS_BEDROCKAGENTRUNTIME_API InvokeAgentInitialResponse(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API InvokeAgentInitialResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BEDROCKAGENTRUNTIME_API InvokeAgentInitialResponse(const Http::HeaderValueCollection& responseHeaders);
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 

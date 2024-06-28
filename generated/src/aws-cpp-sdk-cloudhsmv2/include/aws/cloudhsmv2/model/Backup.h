@@ -29,7 +29,7 @@ namespace Model
 {
 
   /**
-   * <p>Contains information about a backup of an AWS CloudHSM cluster. All backup
+   * <p>Contains information about a backup of an CloudHSM cluster. All backup
    * objects contain the <code>BackupId</code>, <code>BackupState</code>,
    * <code>ClusterId</code>, and <code>CreateTimestamp</code> parameters. Backups
    * that were copied into a destination region additionally contain the
@@ -61,6 +61,20 @@ namespace Model
     inline Backup& WithBackupId(const Aws::String& value) { SetBackupId(value); return *this;}
     inline Backup& WithBackupId(Aws::String&& value) { SetBackupId(std::move(value)); return *this;}
     inline Backup& WithBackupId(const char* value) { SetBackupId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The Amazon Resource Name (ARN) of the backup.</p>
+     */
+    inline const Aws::String& GetBackupArn() const{ return m_backupArn; }
+    inline bool BackupArnHasBeenSet() const { return m_backupArnHasBeenSet; }
+    inline void SetBackupArn(const Aws::String& value) { m_backupArnHasBeenSet = true; m_backupArn = value; }
+    inline void SetBackupArn(Aws::String&& value) { m_backupArnHasBeenSet = true; m_backupArn = std::move(value); }
+    inline void SetBackupArn(const char* value) { m_backupArnHasBeenSet = true; m_backupArn.assign(value); }
+    inline Backup& WithBackupArn(const Aws::String& value) { SetBackupArn(value); return *this;}
+    inline Backup& WithBackupArn(Aws::String&& value) { SetBackupArn(std::move(value)); return *this;}
+    inline Backup& WithBackupArn(const char* value) { SetBackupArn(value); return *this;}
     ///@}
 
     ///@{
@@ -199,7 +213,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The HSM type of the cluster that was backed up.</p>
+     * <p>The HSM type used to create the backup.</p>
      */
     inline const Aws::String& GetHsmType() const{ return m_hsmType; }
     inline bool HsmTypeHasBeenSet() const { return m_hsmTypeHasBeenSet; }
@@ -226,6 +240,9 @@ namespace Model
 
     Aws::String m_backupId;
     bool m_backupIdHasBeenSet = false;
+
+    Aws::String m_backupArn;
+    bool m_backupArnHasBeenSet = false;
 
     BackupState m_backupState;
     bool m_backupStateHasBeenSet = false;

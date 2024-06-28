@@ -29,10 +29,11 @@ namespace Model
 
     SubscribeToShardHandler::SubscribeToShardHandler() : EventStreamHandler()
     {
-        m_onInitialResponse = [&](const SubscribeToShardInitialResponse&)
+        m_onInitialResponse = [&](const SubscribeToShardInitialResponse&, const Utils::Event::InitialResponseType eventType)
         {
             AWS_LOGSTREAM_TRACE(SUBSCRIBETOSHARD_HANDLER_CLASS_TAG,
-                "SubscribeToShard initial response received.");
+                "SubscribeToShard initial response received from "
+                << (eventType == Utils::Event::InitialResponseType::ON_EVENT ? "event" : "http headers"));
         };
 
         m_onSubscribeToShardEvent = [&](const SubscribeToShardEvent&)
@@ -94,18 +95,11 @@ namespace Model
         }
         switch (SubscribeToShardEventMapper::GetSubscribeToShardEventTypeForName(eventTypeHeaderIter->second.GetEventHeaderValueAsString()))
         {
-        
-        case SubscribeToShardEventType::INITIAL_RESPONSE: 
-        {
-            JsonValue json(GetEventPayloadAsString());
-            if (!json.WasParseSuccessful())
-            {
-                AWS_LOGSTREAM_WARN(SUBSCRIBETOSHARD_HANDLER_CLASS_TAG, "Unable to generate a proper SubscribeToShardInitialResponse object from the response in JSON format.");
-                break;
-            }
 
-            SubscribeToShardInitialResponse event(json.View());
-            m_onInitialResponse(event);
+        case SubscribeToShardEventType::INITIAL_RESPONSE:
+        {
+            SubscribeToShardInitialResponse event(GetEventHeadersAsHttpHeaders());
+            m_onInitialResponse(event, Utils::Event::InitialResponseType::ON_EVENT);
             break;
         }   
 

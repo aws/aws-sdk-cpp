@@ -19,7 +19,8 @@ namespace Model
     RSA_2048,
     RSA_4096,
     EC_prime256v1,
-    EC_secp384r1
+    EC_secp384r1,
+    SM2
   };
 
 namespace KeyAlgorithmMapper

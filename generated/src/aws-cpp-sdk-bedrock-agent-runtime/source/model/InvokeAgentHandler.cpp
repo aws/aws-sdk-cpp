@@ -29,10 +29,11 @@ namespace Model
 
     InvokeAgentHandler::InvokeAgentHandler() : EventStreamHandler()
     {
-        m_onInitialResponse = [&](const InvokeAgentInitialResponse&)
+        m_onInitialResponse = [&](const InvokeAgentInitialResponse&, const Utils::Event::InitialResponseType eventType)
         {
             AWS_LOGSTREAM_TRACE(INVOKEAGENT_HANDLER_CLASS_TAG,
-                "InvokeAgent initial response received.");
+                "InvokeAgent initial response received from "
+                << (eventType == Utils::Event::InitialResponseType::ON_EVENT ? "event" : "http headers"));
         };
 
         m_onPayloadPart = [&](const PayloadPart&)
@@ -104,18 +105,11 @@ namespace Model
         }
         switch (InvokeAgentEventMapper::GetInvokeAgentEventTypeForName(eventTypeHeaderIter->second.GetEventHeaderValueAsString()))
         {
-        
-        case InvokeAgentEventType::INITIAL_RESPONSE: 
-        {
-            JsonValue json(GetEventPayloadAsString());
-            if (!json.WasParseSuccessful())
-            {
-                AWS_LOGSTREAM_WARN(INVOKEAGENT_HANDLER_CLASS_TAG, "Unable to generate a proper InvokeAgentInitialResponse object from the response in JSON format.");
-                break;
-            }
 
-            InvokeAgentInitialResponse event(json.View());
-            m_onInitialResponse(event);
+        case InvokeAgentEventType::INITIAL_RESPONSE:
+        {
+            InvokeAgentInitialResponse event(GetEventHeadersAsHttpHeaders());
+            m_onInitialResponse(event, Utils::Event::InitialResponseType::ON_EVENT);
             break;
         }   
 

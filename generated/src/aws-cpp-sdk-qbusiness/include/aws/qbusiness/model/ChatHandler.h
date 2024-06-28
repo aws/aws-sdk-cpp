@@ -37,6 +37,7 @@ namespace Model
     class ChatHandler : public Aws::Utils::Event::EventStreamHandler
     {
         typedef std::function<void(const ChatInitialResponse&)> ChatInitialResponseCallback;
+        typedef std::function<void(const ChatInitialResponse&, const Utils::Event::InitialResponseType)> ChatInitialResponseCallbackEx;
         typedef std::function<void(const TextOutputEvent&)> TextOutputEventCallback;
         typedef std::function<void(const MetadataEvent&)> MetadataEventCallback;
         typedef std::function<void(const ActionReviewEvent&)> ActionReviewEventCallback;
@@ -50,7 +51,22 @@ namespace Model
 
         AWS_QBUSINESS_API virtual void OnEvent() override;
 
-        inline void SetInitialResponseCallback(const ChatInitialResponseCallback& callback) { m_onInitialResponse = callback; }
+        ///@{
+        /**
+         * Sets an initial response callback. This callback gets called on the initial Chat Operation response.
+         *   This can be either "initial-response" decoded event frame or decoded HTTP headers received on connection.
+         *   This callback may get called more than once (i.e. on connection headers received and then on the initial-response event received).
+         * @param callback
+         */
+        inline void SetInitialResponseCallbackEx(const ChatInitialResponseCallbackEx& callback) { m_onInitialResponse = callback; }
+        /**
+         * Sets an initial response callback (a legacy one that does not distinguish whether response originates from headers or from the event).
+         */
+        inline void SetInitialResponseCallback(const ChatInitialResponseCallback& noArgCallback)
+        {
+            m_onInitialResponse = [noArgCallback](const ChatInitialResponse& rs, const Utils::Event::InitialResponseType) { return noArgCallback(rs); };
+        }
+        ///@}
         inline void SetTextOutputEventCallback(const TextOutputEventCallback& callback) { m_onTextOutputEvent = callback; }
         inline void SetMetadataEventCallback(const MetadataEventCallback& callback) { m_onMetadataEvent = callback; }
         inline void SetActionReviewEventCallback(const ActionReviewEventCallback& callback) { m_onActionReviewEvent = callback; }
@@ -58,12 +74,14 @@ namespace Model
         inline void SetAuthChallengeRequestEventCallback(const AuthChallengeRequestEventCallback& callback) { m_onAuthChallengeRequestEvent = callback; }
         inline void SetOnErrorCallback(const ErrorCallback& callback) { m_onError = callback; }
 
+        inline ChatInitialResponseCallbackEx& GetInitialResponseCallbackEx() { return m_onInitialResponse; }
+
     private:
         AWS_QBUSINESS_API void HandleEventInMessage();
         AWS_QBUSINESS_API void HandleErrorInMessage();
         AWS_QBUSINESS_API void MarshallError(const Aws::String& errorCode, const Aws::String& errorMessage);
 
-        ChatInitialResponseCallback m_onInitialResponse;
+        ChatInitialResponseCallbackEx m_onInitialResponse;
         TextOutputEventCallback m_onTextOutputEvent;
         MetadataEventCallback m_onMetadataEvent;
         ActionReviewEventCallback m_onActionReviewEvent;

@@ -152,6 +152,18 @@ namespace Model
     inline InstanceTypeSpecification& WithCustomAmiId(Aws::String&& value) { SetCustomAmiId(std::move(value)); return *this;}
     inline InstanceTypeSpecification& WithCustomAmiId(const char* value) { SetCustomAmiId(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The priority at which Amazon EMR launches the Amazon EC2 instances with this
+     * instance type. Priority starts at 0, which is the highest priority. Amazon EMR
+     * considers the highest priority first.</p>
+     */
+    inline double GetPriority() const{ return m_priority; }
+    inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
+    inline void SetPriority(double value) { m_priorityHasBeenSet = true; m_priority = value; }
+    inline InstanceTypeSpecification& WithPriority(double value) { SetPriority(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_instanceType;
@@ -177,6 +189,9 @@ namespace Model
 
     Aws::String m_customAmiId;
     bool m_customAmiIdHasBeenSet = false;
+
+    double m_priority;
+    bool m_priorityHasBeenSet = false;
   };
 
 } // namespace Model

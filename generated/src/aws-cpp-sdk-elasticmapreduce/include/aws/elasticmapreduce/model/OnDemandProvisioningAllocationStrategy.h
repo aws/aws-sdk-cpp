@@ -16,7 +16,8 @@ namespace Model
   enum class OnDemandProvisioningAllocationStrategy
   {
     NOT_SET,
-    lowest_price
+    lowest_price,
+    prioritized
   };
 
 namespace OnDemandProvisioningAllocationStrategyMapper

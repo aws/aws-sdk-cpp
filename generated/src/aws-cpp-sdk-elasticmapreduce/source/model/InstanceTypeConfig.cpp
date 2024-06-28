@@ -27,7 +27,9 @@ InstanceTypeConfig::InstanceTypeConfig() :
     m_bidPriceAsPercentageOfOnDemandPriceHasBeenSet(false),
     m_ebsConfigurationHasBeenSet(false),
     m_configurationsHasBeenSet(false),
-    m_customAmiIdHasBeenSet(false)
+    m_customAmiIdHasBeenSet(false),
+    m_priority(0.0),
+    m_priorityHasBeenSet(false)
 {
 }
 
@@ -91,6 +93,13 @@ InstanceTypeConfig& InstanceTypeConfig::operator =(JsonView jsonValue)
     m_customAmiIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Priority"))
+  {
+    m_priority = jsonValue.GetDouble("Priority");
+
+    m_priorityHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -142,6 +151,12 @@ JsonValue InstanceTypeConfig::Jsonize() const
   if(m_customAmiIdHasBeenSet)
   {
    payload.WithString("CustomAmiId", m_customAmiId);
+
+  }
+
+  if(m_priorityHasBeenSet)
+  {
+   payload.WithDouble("Priority", m_priority);
 
   }
 

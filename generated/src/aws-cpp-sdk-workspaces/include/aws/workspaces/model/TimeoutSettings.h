@@ -22,7 +22,7 @@ namespace Model
 {
 
   /**
-   * <p>Describes the timeout settings for a WorkSpaces pool.</p><p><h3>See
+   * <p>Describes the timeout settings for a pool of WorkSpaces.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/TimeoutSettings">AWS
    * API Reference</a></p>

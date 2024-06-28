@@ -29,10 +29,11 @@ namespace Model
 
     ChatHandler::ChatHandler() : EventStreamHandler()
     {
-        m_onInitialResponse = [&](const ChatInitialResponse&)
+        m_onInitialResponse = [&](const ChatInitialResponse&, const Utils::Event::InitialResponseType eventType)
         {
             AWS_LOGSTREAM_TRACE(CHAT_HANDLER_CLASS_TAG,
-                "Chat initial response received.");
+                "Chat initial response received from "
+                << (eventType == Utils::Event::InitialResponseType::ON_EVENT ? "event" : "http headers"));
         };
 
         m_onTextOutputEvent = [&](const TextOutputEvent&)
@@ -114,18 +115,11 @@ namespace Model
         }
         switch (ChatEventMapper::GetChatEventTypeForName(eventTypeHeaderIter->second.GetEventHeaderValueAsString()))
         {
-        
-        case ChatEventType::INITIAL_RESPONSE: 
-        {
-            JsonValue json(GetEventPayloadAsString());
-            if (!json.WasParseSuccessful())
-            {
-                AWS_LOGSTREAM_WARN(CHAT_HANDLER_CLASS_TAG, "Unable to generate a proper ChatInitialResponse object from the response in JSON format.");
-                break;
-            }
 
-            ChatInitialResponse event(json.View());
-            m_onInitialResponse(event);
+        case ChatEventType::INITIAL_RESPONSE:
+        {
+            ChatInitialResponse event(GetEventHeadersAsHttpHeaders());
+            m_onInitialResponse(event, Utils::Event::InitialResponseType::ON_EVENT);
             break;
         }   
 

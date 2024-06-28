@@ -36,7 +36,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Information about the WorkSpaces pools.</p>
+     * <p>Information about the WorkSpaces Pools.</p>
      */
     inline const Aws::Vector<WorkspacesPool>& GetWorkspacesPools() const{ return m_workspacesPools; }
     inline void SetWorkspacesPools(const Aws::Vector<WorkspacesPool>& value) { m_workspacesPools = value; }

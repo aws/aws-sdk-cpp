@@ -39,6 +39,7 @@ namespace Model
     class StartConversationHandler : public Aws::Utils::Event::EventStreamHandler
     {
         typedef std::function<void(const StartConversationInitialResponse&)> StartConversationInitialResponseCallback;
+        typedef std::function<void(const StartConversationInitialResponse&, const Utils::Event::InitialResponseType)> StartConversationInitialResponseCallbackEx;
         typedef std::function<void(const PlaybackInterruptionEvent&)> PlaybackInterruptionEventCallback;
         typedef std::function<void(const TranscriptEvent&)> TranscriptEventCallback;
         typedef std::function<void(const IntentResultEvent&)> IntentResultEventCallback;
@@ -53,7 +54,22 @@ namespace Model
 
         AWS_LEXRUNTIMEV2_API virtual void OnEvent() override;
 
-        inline void SetInitialResponseCallback(const StartConversationInitialResponseCallback& callback) { m_onInitialResponse = callback; }
+        ///@{
+        /**
+         * Sets an initial response callback. This callback gets called on the initial StartConversation Operation response.
+         *   This can be either "initial-response" decoded event frame or decoded HTTP headers received on connection.
+         *   This callback may get called more than once (i.e. on connection headers received and then on the initial-response event received).
+         * @param callback
+         */
+        inline void SetInitialResponseCallbackEx(const StartConversationInitialResponseCallbackEx& callback) { m_onInitialResponse = callback; }
+        /**
+         * Sets an initial response callback (a legacy one that does not distinguish whether response originates from headers or from the event).
+         */
+        inline void SetInitialResponseCallback(const StartConversationInitialResponseCallback& noArgCallback)
+        {
+            m_onInitialResponse = [noArgCallback](const StartConversationInitialResponse& rs, const Utils::Event::InitialResponseType) { return noArgCallback(rs); };
+        }
+        ///@}
         inline void SetPlaybackInterruptionEventCallback(const PlaybackInterruptionEventCallback& callback) { m_onPlaybackInterruptionEvent = callback; }
         inline void SetTranscriptEventCallback(const TranscriptEventCallback& callback) { m_onTranscriptEvent = callback; }
         inline void SetIntentResultEventCallback(const IntentResultEventCallback& callback) { m_onIntentResultEvent = callback; }
@@ -62,12 +78,14 @@ namespace Model
         inline void SetHeartbeatEventCallback(const HeartbeatEventCallback& callback) { m_onHeartbeatEvent = callback; }
         inline void SetOnErrorCallback(const ErrorCallback& callback) { m_onError = callback; }
 
+        inline StartConversationInitialResponseCallbackEx& GetInitialResponseCallbackEx() { return m_onInitialResponse; }
+
     private:
         AWS_LEXRUNTIMEV2_API void HandleEventInMessage();
         AWS_LEXRUNTIMEV2_API void HandleErrorInMessage();
         AWS_LEXRUNTIMEV2_API void MarshallError(const Aws::String& errorCode, const Aws::String& errorMessage);
 
-        StartConversationInitialResponseCallback m_onInitialResponse;
+        StartConversationInitialResponseCallbackEx m_onInitialResponse;
         PlaybackInterruptionEventCallback m_onPlaybackInterruptionEvent;
         TranscriptEventCallback m_onTranscriptEvent;
         IntentResultEventCallback m_onIntentResultEvent;

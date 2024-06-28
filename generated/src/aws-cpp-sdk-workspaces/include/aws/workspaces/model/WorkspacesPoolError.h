@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>Describes a WorkSpaces pool error.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes a pool error.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/WorkspacesPoolError">AWS
    * API Reference</a></p>
    */

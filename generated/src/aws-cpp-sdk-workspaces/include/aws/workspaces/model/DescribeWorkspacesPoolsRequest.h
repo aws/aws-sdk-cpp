@@ -38,7 +38,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The identifier of the WorkSpaces pool.</p>
+     * <p>The identifier of the WorkSpaces Pools.</p>
      */
     inline const Aws::Vector<Aws::String>& GetPoolIds() const{ return m_poolIds; }
     inline bool PoolIdsHasBeenSet() const { return m_poolIdsHasBeenSet; }
@@ -53,7 +53,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The filter conditions for the WorkSpaces pool to return.</p>
+     * <p>The filter conditions for the WorkSpaces Pool to return.</p>
      */
     inline const Aws::Vector<DescribeWorkspacesPoolsFilter>& GetFilters() const{ return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
