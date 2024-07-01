@@ -3,6 +3,7 @@
 #include <aws/core/auth/AWSCredentials.h>
 #include <aws/s3/S3Client.h>
 #include <aws/s3/model/PutObjectRequest.h>
+#include <aws/s3/model/CopyObjectRequest.h>
 #include <aws/testing/mocks/http/MockHttpClient.h>
 #include <aws/testing/AwsTestHelpers.h>
 #include <aws/testing/MemoryTesting.h>
@@ -177,4 +178,27 @@ TEST_F(S3UnitTest, S3UriPathPreservationOn) {
 
   const auto seenRequest = _mockHttpClient->GetMostRecentHttpRequest();
   EXPECT_EQ("https://velvetunderground.s3.us-east-1.amazonaws.com/////stephanie////says////////////that////////she//wants///////to/know.txt", seenRequest.GetUri().GetURIString());
+}
+
+TEST_F(S3UnitTest, S3EmbeddedErrorTest) {
+  const auto request = CopyObjectRequest()
+    .WithBucket("testBucket")
+    .WithKey("testKey")
+    .WithCopySource("testSource");
+
+  auto mockRequest = Aws::MakeShared<Standard::StandardHttpRequest>(ALLOCATION_TAG, "mockuri", HttpMethod::HTTP_GET);
+  mockRequest->SetResponseStreamFactory([]() -> IOStream* {
+    return Aws::New<StringStream>(ALLOCATION_TAG, R"(<?xml version="1.0" encoding="UTF-8"?><Error><Code>SlowDown</Code><Message>Please reduce your request rate.</Message></Error>)", std::ios_base::in | std::ios_base::binary);
+  });
+  auto mockResponse = Aws::MakeShared<Standard::StandardHttpResponse>(ALLOCATION_TAG, mockRequest);
+  mockResponse->SetResponseCode(HttpResponseCode::OK);
+  mockResponse->AddHeader("Server", "AmazonS3");
+  mockResponse->AddHeader("Connection", "close");
+  mockResponse->AddHeader("Date", "Mon, 1 Nov 2010 20:34:56 GMT");
+  mockResponse->AddHeader("x-amz-request-id", "656c76696e6727732072657175657374");
+  mockResponse->AddHeader("x-amz-id-2", "Uuag1LuByRx9e6j5Onimru9pO4ZVKnJ2Qz7/C1NPcfTWAtRPfTaOFg==");
+  _mockHttpClient->AddResponseToReturn(mockResponse);
+
+  const auto response = _s3Client->CopyObject(request);
+  EXPECT_FALSE(response.IsSuccess());
 }
