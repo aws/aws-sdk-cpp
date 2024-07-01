@@ -13,17 +13,25 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 ReEncryptDataRequest::ReEncryptDataRequest() : 
+    m_incomingKeyIdentifierHasBeenSet(false),
+    m_outgoingKeyIdentifierHasBeenSet(false),
     m_cipherTextHasBeenSet(false),
     m_incomingEncryptionAttributesHasBeenSet(false),
-    m_incomingKeyIdentifierHasBeenSet(false),
     m_outgoingEncryptionAttributesHasBeenSet(false),
-    m_outgoingKeyIdentifierHasBeenSet(false)
+    m_incomingWrappedKeyHasBeenSet(false),
+    m_outgoingWrappedKeyHasBeenSet(false)
 {
 }
 
 Aws::String ReEncryptDataRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_outgoingKeyIdentifierHasBeenSet)
+  {
+   payload.WithString("OutgoingKeyIdentifier", m_outgoingKeyIdentifier);
+
+  }
 
   if(m_cipherTextHasBeenSet)
   {
@@ -43,9 +51,15 @@ Aws::String ReEncryptDataRequest::SerializePayload() const
 
   }
 
-  if(m_outgoingKeyIdentifierHasBeenSet)
+  if(m_incomingWrappedKeyHasBeenSet)
   {
-   payload.WithString("OutgoingKeyIdentifier", m_outgoingKeyIdentifier);
+   payload.WithObject("IncomingWrappedKey", m_incomingWrappedKey.Jsonize());
+
+  }
+
+  if(m_outgoingWrappedKeyHasBeenSet)
+  {
+   payload.WithObject("OutgoingWrappedKey", m_outgoingWrappedKey.Jsonize());
 
   }
 

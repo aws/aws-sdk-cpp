@@ -7,9 +7,9 @@
 #include <aws/payment-cryptography-data/PaymentCryptographyData_EXPORTS.h>
 #include <aws/payment-cryptography-data/PaymentCryptographyDataRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/payment-cryptography-data/model/CryptogramAuthResponse.h>
 #include <aws/payment-cryptography-data/model/MajorKeyDerivationMode.h>
 #include <aws/payment-cryptography-data/model/SessionKeyDerivation.h>
+#include <aws/payment-cryptography-data/model/CryptogramAuthResponse.h>
 #include <utility>
 
 namespace Aws
@@ -37,6 +37,37 @@ namespace Model
 
     ///@{
     /**
+     * <p>The <code>keyARN</code> of the major encryption key that Amazon Web Services
+     * Payment Cryptography uses for ARQC verification.</p>
+     */
+    inline const Aws::String& GetKeyIdentifier() const{ return m_keyIdentifier; }
+    inline bool KeyIdentifierHasBeenSet() const { return m_keyIdentifierHasBeenSet; }
+    inline void SetKeyIdentifier(const Aws::String& value) { m_keyIdentifierHasBeenSet = true; m_keyIdentifier = value; }
+    inline void SetKeyIdentifier(Aws::String&& value) { m_keyIdentifierHasBeenSet = true; m_keyIdentifier = std::move(value); }
+    inline void SetKeyIdentifier(const char* value) { m_keyIdentifierHasBeenSet = true; m_keyIdentifier.assign(value); }
+    inline VerifyAuthRequestCryptogramRequest& WithKeyIdentifier(const Aws::String& value) { SetKeyIdentifier(value); return *this;}
+    inline VerifyAuthRequestCryptogramRequest& WithKeyIdentifier(Aws::String&& value) { SetKeyIdentifier(std::move(value)); return *this;}
+    inline VerifyAuthRequestCryptogramRequest& WithKeyIdentifier(const char* value) { SetKeyIdentifier(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The transaction data that Amazon Web Services Payment Cryptography uses for
+     * ARQC verification. The same transaction is used for ARQC generation outside of
+     * Amazon Web Services Payment Cryptography.</p>
+     */
+    inline const Aws::String& GetTransactionData() const{ return m_transactionData; }
+    inline bool TransactionDataHasBeenSet() const { return m_transactionDataHasBeenSet; }
+    inline void SetTransactionData(const Aws::String& value) { m_transactionDataHasBeenSet = true; m_transactionData = value; }
+    inline void SetTransactionData(Aws::String&& value) { m_transactionDataHasBeenSet = true; m_transactionData = std::move(value); }
+    inline void SetTransactionData(const char* value) { m_transactionDataHasBeenSet = true; m_transactionData.assign(value); }
+    inline VerifyAuthRequestCryptogramRequest& WithTransactionData(const Aws::String& value) { SetTransactionData(value); return *this;}
+    inline VerifyAuthRequestCryptogramRequest& WithTransactionData(Aws::String&& value) { SetTransactionData(std::move(value)); return *this;}
+    inline VerifyAuthRequestCryptogramRequest& WithTransactionData(const char* value) { SetTransactionData(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The auth request cryptogram imported into Amazon Web Services Payment
      * Cryptography for ARQC verification using a major encryption key and transaction
      * data.</p>
@@ -49,35 +80,6 @@ namespace Model
     inline VerifyAuthRequestCryptogramRequest& WithAuthRequestCryptogram(const Aws::String& value) { SetAuthRequestCryptogram(value); return *this;}
     inline VerifyAuthRequestCryptogramRequest& WithAuthRequestCryptogram(Aws::String&& value) { SetAuthRequestCryptogram(std::move(value)); return *this;}
     inline VerifyAuthRequestCryptogramRequest& WithAuthRequestCryptogram(const char* value) { SetAuthRequestCryptogram(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The attributes and values for auth request cryptogram verification. These
-     * parameters are required in case using ARPC Method 1 or Method 2 for ARQC
-     * verification.</p>
-     */
-    inline const CryptogramAuthResponse& GetAuthResponseAttributes() const{ return m_authResponseAttributes; }
-    inline bool AuthResponseAttributesHasBeenSet() const { return m_authResponseAttributesHasBeenSet; }
-    inline void SetAuthResponseAttributes(const CryptogramAuthResponse& value) { m_authResponseAttributesHasBeenSet = true; m_authResponseAttributes = value; }
-    inline void SetAuthResponseAttributes(CryptogramAuthResponse&& value) { m_authResponseAttributesHasBeenSet = true; m_authResponseAttributes = std::move(value); }
-    inline VerifyAuthRequestCryptogramRequest& WithAuthResponseAttributes(const CryptogramAuthResponse& value) { SetAuthResponseAttributes(value); return *this;}
-    inline VerifyAuthRequestCryptogramRequest& WithAuthResponseAttributes(CryptogramAuthResponse&& value) { SetAuthResponseAttributes(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The <code>keyARN</code> of the major encryption key that Amazon Web Services
-     * Payment Cryptography uses for ARQC verification.</p>
-     */
-    inline const Aws::String& GetKeyIdentifier() const{ return m_keyIdentifier; }
-    inline bool KeyIdentifierHasBeenSet() const { return m_keyIdentifierHasBeenSet; }
-    inline void SetKeyIdentifier(const Aws::String& value) { m_keyIdentifierHasBeenSet = true; m_keyIdentifier = value; }
-    inline void SetKeyIdentifier(Aws::String&& value) { m_keyIdentifierHasBeenSet = true; m_keyIdentifier = std::move(value); }
-    inline void SetKeyIdentifier(const char* value) { m_keyIdentifierHasBeenSet = true; m_keyIdentifier.assign(value); }
-    inline VerifyAuthRequestCryptogramRequest& WithKeyIdentifier(const Aws::String& value) { SetKeyIdentifier(value); return *this;}
-    inline VerifyAuthRequestCryptogramRequest& WithKeyIdentifier(Aws::String&& value) { SetKeyIdentifier(std::move(value)); return *this;}
-    inline VerifyAuthRequestCryptogramRequest& WithKeyIdentifier(const char* value) { SetKeyIdentifier(value); return *this;}
     ///@}
 
     ///@{
@@ -112,29 +114,27 @@ namespace Model
 
     ///@{
     /**
-     * <p>The transaction data that Amazon Web Services Payment Cryptography uses for
-     * ARQC verification. The same transaction is used for ARQC generation outside of
-     * Amazon Web Services Payment Cryptography.</p>
+     * <p>The attributes and values for auth request cryptogram verification. These
+     * parameters are required in case using ARPC Method 1 or Method 2 for ARQC
+     * verification.</p>
      */
-    inline const Aws::String& GetTransactionData() const{ return m_transactionData; }
-    inline bool TransactionDataHasBeenSet() const { return m_transactionDataHasBeenSet; }
-    inline void SetTransactionData(const Aws::String& value) { m_transactionDataHasBeenSet = true; m_transactionData = value; }
-    inline void SetTransactionData(Aws::String&& value) { m_transactionDataHasBeenSet = true; m_transactionData = std::move(value); }
-    inline void SetTransactionData(const char* value) { m_transactionDataHasBeenSet = true; m_transactionData.assign(value); }
-    inline VerifyAuthRequestCryptogramRequest& WithTransactionData(const Aws::String& value) { SetTransactionData(value); return *this;}
-    inline VerifyAuthRequestCryptogramRequest& WithTransactionData(Aws::String&& value) { SetTransactionData(std::move(value)); return *this;}
-    inline VerifyAuthRequestCryptogramRequest& WithTransactionData(const char* value) { SetTransactionData(value); return *this;}
+    inline const CryptogramAuthResponse& GetAuthResponseAttributes() const{ return m_authResponseAttributes; }
+    inline bool AuthResponseAttributesHasBeenSet() const { return m_authResponseAttributesHasBeenSet; }
+    inline void SetAuthResponseAttributes(const CryptogramAuthResponse& value) { m_authResponseAttributesHasBeenSet = true; m_authResponseAttributes = value; }
+    inline void SetAuthResponseAttributes(CryptogramAuthResponse&& value) { m_authResponseAttributesHasBeenSet = true; m_authResponseAttributes = std::move(value); }
+    inline VerifyAuthRequestCryptogramRequest& WithAuthResponseAttributes(const CryptogramAuthResponse& value) { SetAuthResponseAttributes(value); return *this;}
+    inline VerifyAuthRequestCryptogramRequest& WithAuthResponseAttributes(CryptogramAuthResponse&& value) { SetAuthResponseAttributes(std::move(value)); return *this;}
     ///@}
   private:
 
-    Aws::String m_authRequestCryptogram;
-    bool m_authRequestCryptogramHasBeenSet = false;
-
-    CryptogramAuthResponse m_authResponseAttributes;
-    bool m_authResponseAttributesHasBeenSet = false;
-
     Aws::String m_keyIdentifier;
     bool m_keyIdentifierHasBeenSet = false;
+
+    Aws::String m_transactionData;
+    bool m_transactionDataHasBeenSet = false;
+
+    Aws::String m_authRequestCryptogram;
+    bool m_authRequestCryptogramHasBeenSet = false;
 
     MajorKeyDerivationMode m_majorKeyDerivationMode;
     bool m_majorKeyDerivationModeHasBeenSet = false;
@@ -142,8 +142,8 @@ namespace Model
     SessionKeyDerivation m_sessionKeyDerivationAttributes;
     bool m_sessionKeyDerivationAttributesHasBeenSet = false;
 
-    Aws::String m_transactionData;
-    bool m_transactionDataHasBeenSet = false;
+    CryptogramAuthResponse m_authResponseAttributes;
+    bool m_authResponseAttributesHasBeenSet = false;
   };
 
 } // namespace Model

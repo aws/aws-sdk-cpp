@@ -34,20 +34,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The result for ARQC verification or ARPC generation within Amazon Web
-     * Services Payment Cryptography.</p>
-     */
-    inline const Aws::String& GetAuthResponseValue() const{ return m_authResponseValue; }
-    inline void SetAuthResponseValue(const Aws::String& value) { m_authResponseValue = value; }
-    inline void SetAuthResponseValue(Aws::String&& value) { m_authResponseValue = std::move(value); }
-    inline void SetAuthResponseValue(const char* value) { m_authResponseValue.assign(value); }
-    inline VerifyAuthRequestCryptogramResult& WithAuthResponseValue(const Aws::String& value) { SetAuthResponseValue(value); return *this;}
-    inline VerifyAuthRequestCryptogramResult& WithAuthResponseValue(Aws::String&& value) { SetAuthResponseValue(std::move(value)); return *this;}
-    inline VerifyAuthRequestCryptogramResult& WithAuthResponseValue(const char* value) { SetAuthResponseValue(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The <code>keyARN</code> of the major encryption key that Amazon Web Services
      * Payment Cryptography uses for ARQC verification.</p>
      */
@@ -77,6 +63,20 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The result for ARQC verification or ARPC generation within Amazon Web
+     * Services Payment Cryptography.</p>
+     */
+    inline const Aws::String& GetAuthResponseValue() const{ return m_authResponseValue; }
+    inline void SetAuthResponseValue(const Aws::String& value) { m_authResponseValue = value; }
+    inline void SetAuthResponseValue(Aws::String&& value) { m_authResponseValue = std::move(value); }
+    inline void SetAuthResponseValue(const char* value) { m_authResponseValue.assign(value); }
+    inline VerifyAuthRequestCryptogramResult& WithAuthResponseValue(const Aws::String& value) { SetAuthResponseValue(value); return *this;}
+    inline VerifyAuthRequestCryptogramResult& WithAuthResponseValue(Aws::String&& value) { SetAuthResponseValue(std::move(value)); return *this;}
+    inline VerifyAuthRequestCryptogramResult& WithAuthResponseValue(const char* value) { SetAuthResponseValue(value); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -88,11 +88,11 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_authResponseValue;
-
     Aws::String m_keyArn;
 
     Aws::String m_keyCheckValue;
+
+    Aws::String m_authResponseValue;
 
     Aws::String m_requestId;
   };

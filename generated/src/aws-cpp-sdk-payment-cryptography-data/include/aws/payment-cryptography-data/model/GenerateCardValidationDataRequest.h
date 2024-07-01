@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/payment-cryptography-data/PaymentCryptographyData_EXPORTS.h>
 #include <aws/payment-cryptography-data/PaymentCryptographyDataRequest.h>
-#include <aws/payment-cryptography-data/model/CardGenerationAttributes.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/payment-cryptography-data/model/CardGenerationAttributes.h>
 #include <utility>
 
 namespace Aws
@@ -32,19 +32,6 @@ namespace Model
 
     AWS_PAYMENTCRYPTOGRAPHYDATA_API Aws::String SerializePayload() const override;
 
-
-    ///@{
-    /**
-     * <p>The algorithm for generating CVV or CSC values for the card within Amazon Web
-     * Services Payment Cryptography.</p>
-     */
-    inline const CardGenerationAttributes& GetGenerationAttributes() const{ return m_generationAttributes; }
-    inline bool GenerationAttributesHasBeenSet() const { return m_generationAttributesHasBeenSet; }
-    inline void SetGenerationAttributes(const CardGenerationAttributes& value) { m_generationAttributesHasBeenSet = true; m_generationAttributes = value; }
-    inline void SetGenerationAttributes(CardGenerationAttributes&& value) { m_generationAttributesHasBeenSet = true; m_generationAttributes = std::move(value); }
-    inline GenerateCardValidationDataRequest& WithGenerationAttributes(const CardGenerationAttributes& value) { SetGenerationAttributes(value); return *this;}
-    inline GenerateCardValidationDataRequest& WithGenerationAttributes(CardGenerationAttributes&& value) { SetGenerationAttributes(std::move(value)); return *this;}
-    ///@}
 
     ///@{
     /**
@@ -78,6 +65,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>The algorithm for generating CVV or CSC values for the card within Amazon Web
+     * Services Payment Cryptography.</p>
+     */
+    inline const CardGenerationAttributes& GetGenerationAttributes() const{ return m_generationAttributes; }
+    inline bool GenerationAttributesHasBeenSet() const { return m_generationAttributesHasBeenSet; }
+    inline void SetGenerationAttributes(const CardGenerationAttributes& value) { m_generationAttributesHasBeenSet = true; m_generationAttributes = value; }
+    inline void SetGenerationAttributes(CardGenerationAttributes&& value) { m_generationAttributesHasBeenSet = true; m_generationAttributes = std::move(value); }
+    inline GenerateCardValidationDataRequest& WithGenerationAttributes(const CardGenerationAttributes& value) { SetGenerationAttributes(value); return *this;}
+    inline GenerateCardValidationDataRequest& WithGenerationAttributes(CardGenerationAttributes&& value) { SetGenerationAttributes(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The length of the CVV or CSC to be generated. The default value is 3.</p>
      */
     inline int GetValidationDataLength() const{ return m_validationDataLength; }
@@ -87,14 +87,14 @@ namespace Model
     ///@}
   private:
 
-    CardGenerationAttributes m_generationAttributes;
-    bool m_generationAttributesHasBeenSet = false;
-
     Aws::String m_keyIdentifier;
     bool m_keyIdentifierHasBeenSet = false;
 
     Aws::String m_primaryAccountNumber;
     bool m_primaryAccountNumberHasBeenSet = false;
+
+    CardGenerationAttributes m_generationAttributes;
+    bool m_generationAttributesHasBeenSet = false;
 
     int m_validationDataLength;
     bool m_validationDataLengthHasBeenSet = false;

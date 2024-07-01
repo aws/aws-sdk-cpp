@@ -7,9 +7,9 @@
 #include <aws/payment-cryptography-data/PaymentCryptographyData_EXPORTS.h>
 #include <aws/payment-cryptography-data/model/AmexCardSecurityCodeVersion1.h>
 #include <aws/payment-cryptography-data/model/AmexCardSecurityCodeVersion2.h>
-#include <aws/payment-cryptography-data/model/CardHolderVerificationValue.h>
 #include <aws/payment-cryptography-data/model/CardVerificationValue1.h>
 #include <aws/payment-cryptography-data/model/CardVerificationValue2.h>
+#include <aws/payment-cryptography-data/model/CardHolderVerificationValue.h>
 #include <aws/payment-cryptography-data/model/DynamicCardVerificationCode.h>
 #include <aws/payment-cryptography-data/model/DynamicCardVerificationValue.h>
 #include <utility>
@@ -70,19 +70,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Card data parameters that are required to generate a cardholder verification
-     * value for the payment card.</p>
-     */
-    inline const CardHolderVerificationValue& GetCardHolderVerificationValue() const{ return m_cardHolderVerificationValue; }
-    inline bool CardHolderVerificationValueHasBeenSet() const { return m_cardHolderVerificationValueHasBeenSet; }
-    inline void SetCardHolderVerificationValue(const CardHolderVerificationValue& value) { m_cardHolderVerificationValueHasBeenSet = true; m_cardHolderVerificationValue = value; }
-    inline void SetCardHolderVerificationValue(CardHolderVerificationValue&& value) { m_cardHolderVerificationValueHasBeenSet = true; m_cardHolderVerificationValue = std::move(value); }
-    inline CardGenerationAttributes& WithCardHolderVerificationValue(const CardHolderVerificationValue& value) { SetCardHolderVerificationValue(value); return *this;}
-    inline CardGenerationAttributes& WithCardHolderVerificationValue(CardHolderVerificationValue&& value) { SetCardHolderVerificationValue(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Card data parameters that are required to generate Card Verification Value
      * (CVV) for the payment card.</p>
      */
@@ -105,6 +92,19 @@ namespace Model
     inline void SetCardVerificationValue2(CardVerificationValue2&& value) { m_cardVerificationValue2HasBeenSet = true; m_cardVerificationValue2 = std::move(value); }
     inline CardGenerationAttributes& WithCardVerificationValue2(const CardVerificationValue2& value) { SetCardVerificationValue2(value); return *this;}
     inline CardGenerationAttributes& WithCardVerificationValue2(CardVerificationValue2&& value) { SetCardVerificationValue2(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Card data parameters that are required to generate a cardholder verification
+     * value for the payment card.</p>
+     */
+    inline const CardHolderVerificationValue& GetCardHolderVerificationValue() const{ return m_cardHolderVerificationValue; }
+    inline bool CardHolderVerificationValueHasBeenSet() const { return m_cardHolderVerificationValueHasBeenSet; }
+    inline void SetCardHolderVerificationValue(const CardHolderVerificationValue& value) { m_cardHolderVerificationValueHasBeenSet = true; m_cardHolderVerificationValue = value; }
+    inline void SetCardHolderVerificationValue(CardHolderVerificationValue&& value) { m_cardHolderVerificationValueHasBeenSet = true; m_cardHolderVerificationValue = std::move(value); }
+    inline CardGenerationAttributes& WithCardHolderVerificationValue(const CardHolderVerificationValue& value) { SetCardHolderVerificationValue(value); return *this;}
+    inline CardGenerationAttributes& WithCardHolderVerificationValue(CardHolderVerificationValue&& value) { SetCardHolderVerificationValue(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -140,14 +140,14 @@ namespace Model
     AmexCardSecurityCodeVersion2 m_amexCardSecurityCodeVersion2;
     bool m_amexCardSecurityCodeVersion2HasBeenSet = false;
 
-    CardHolderVerificationValue m_cardHolderVerificationValue;
-    bool m_cardHolderVerificationValueHasBeenSet = false;
-
     CardVerificationValue1 m_cardVerificationValue1;
     bool m_cardVerificationValue1HasBeenSet = false;
 
     CardVerificationValue2 m_cardVerificationValue2;
     bool m_cardVerificationValue2HasBeenSet = false;
+
+    CardHolderVerificationValue m_cardHolderVerificationValue;
+    bool m_cardHolderVerificationValueHasBeenSet = false;
 
     DynamicCardVerificationCode m_dynamicCardVerificationCode;
     bool m_dynamicCardVerificationCodeHasBeenSet = false;

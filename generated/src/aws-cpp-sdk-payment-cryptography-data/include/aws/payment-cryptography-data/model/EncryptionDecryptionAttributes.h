@@ -5,10 +5,10 @@
 
 #pragma once
 #include <aws/payment-cryptography-data/PaymentCryptographyData_EXPORTS.h>
+#include <aws/payment-cryptography-data/model/SymmetricEncryptionAttributes.h>
 #include <aws/payment-cryptography-data/model/AsymmetricEncryptionAttributes.h>
 #include <aws/payment-cryptography-data/model/DukptEncryptionAttributes.h>
 #include <aws/payment-cryptography-data/model/EmvEncryptionAttributes.h>
-#include <aws/payment-cryptography-data/model/SymmetricEncryptionAttributes.h>
 #include <utility>
 
 namespace Aws
@@ -42,6 +42,19 @@ namespace Model
 
 
     ///@{
+    /**
+     * <p>Parameters that are required to perform encryption and decryption using
+     * symmetric keys.</p>
+     */
+    inline const SymmetricEncryptionAttributes& GetSymmetric() const{ return m_symmetric; }
+    inline bool SymmetricHasBeenSet() const { return m_symmetricHasBeenSet; }
+    inline void SetSymmetric(const SymmetricEncryptionAttributes& value) { m_symmetricHasBeenSet = true; m_symmetric = value; }
+    inline void SetSymmetric(SymmetricEncryptionAttributes&& value) { m_symmetricHasBeenSet = true; m_symmetric = std::move(value); }
+    inline EncryptionDecryptionAttributes& WithSymmetric(const SymmetricEncryptionAttributes& value) { SetSymmetric(value); return *this;}
+    inline EncryptionDecryptionAttributes& WithSymmetric(SymmetricEncryptionAttributes&& value) { SetSymmetric(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const AsymmetricEncryptionAttributes& GetAsymmetric() const{ return m_asymmetric; }
     inline bool AsymmetricHasBeenSet() const { return m_asymmetricHasBeenSet; }
@@ -72,20 +85,10 @@ namespace Model
     inline EncryptionDecryptionAttributes& WithEmv(const EmvEncryptionAttributes& value) { SetEmv(value); return *this;}
     inline EncryptionDecryptionAttributes& WithEmv(EmvEncryptionAttributes&& value) { SetEmv(std::move(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>Parameters that are required to perform encryption and decryption using
-     * symmetric keys.</p>
-     */
-    inline const SymmetricEncryptionAttributes& GetSymmetric() const{ return m_symmetric; }
-    inline bool SymmetricHasBeenSet() const { return m_symmetricHasBeenSet; }
-    inline void SetSymmetric(const SymmetricEncryptionAttributes& value) { m_symmetricHasBeenSet = true; m_symmetric = value; }
-    inline void SetSymmetric(SymmetricEncryptionAttributes&& value) { m_symmetricHasBeenSet = true; m_symmetric = std::move(value); }
-    inline EncryptionDecryptionAttributes& WithSymmetric(const SymmetricEncryptionAttributes& value) { SetSymmetric(value); return *this;}
-    inline EncryptionDecryptionAttributes& WithSymmetric(SymmetricEncryptionAttributes&& value) { SetSymmetric(std::move(value)); return *this;}
-    ///@}
   private:
+
+    SymmetricEncryptionAttributes m_symmetric;
+    bool m_symmetricHasBeenSet = false;
 
     AsymmetricEncryptionAttributes m_asymmetric;
     bool m_asymmetricHasBeenSet = false;
@@ -95,9 +98,6 @@ namespace Model
 
     EmvEncryptionAttributes m_emv;
     bool m_emvHasBeenSet = false;
-
-    SymmetricEncryptionAttributes m_symmetric;
-    bool m_symmetricHasBeenSet = false;
   };
 
 } // namespace Model

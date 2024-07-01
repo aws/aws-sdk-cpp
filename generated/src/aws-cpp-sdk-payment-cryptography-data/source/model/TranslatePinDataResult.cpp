@@ -29,6 +29,12 @@ TranslatePinDataResult::TranslatePinDataResult(const Aws::AmazonWebServiceResult
 TranslatePinDataResult& TranslatePinDataResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("PinBlock"))
+  {
+    m_pinBlock = jsonValue.GetString("PinBlock");
+
+  }
+
   if(jsonValue.ValueExists("KeyArn"))
   {
     m_keyArn = jsonValue.GetString("KeyArn");
@@ -38,12 +44,6 @@ TranslatePinDataResult& TranslatePinDataResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("KeyCheckValue"))
   {
     m_keyCheckValue = jsonValue.GetString("KeyCheckValue");
-
-  }
-
-  if(jsonValue.ValueExists("PinBlock"))
-  {
-    m_pinBlock = jsonValue.GetString("PinBlock");
 
   }
 

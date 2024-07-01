@@ -65,6 +65,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>The algorithm to use for verification of card data within Amazon Web Services
+     * Payment Cryptography.</p>
+     */
+    inline const CardVerificationAttributes& GetVerificationAttributes() const{ return m_verificationAttributes; }
+    inline bool VerificationAttributesHasBeenSet() const { return m_verificationAttributesHasBeenSet; }
+    inline void SetVerificationAttributes(const CardVerificationAttributes& value) { m_verificationAttributesHasBeenSet = true; m_verificationAttributes = value; }
+    inline void SetVerificationAttributes(CardVerificationAttributes&& value) { m_verificationAttributesHasBeenSet = true; m_verificationAttributes = std::move(value); }
+    inline VerifyCardValidationDataRequest& WithVerificationAttributes(const CardVerificationAttributes& value) { SetVerificationAttributes(value); return *this;}
+    inline VerifyCardValidationDataRequest& WithVerificationAttributes(CardVerificationAttributes&& value) { SetVerificationAttributes(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The CVV or CSC value for use for card data verification within Amazon Web
      * Services Payment Cryptography.</p>
      */
@@ -77,19 +90,6 @@ namespace Model
     inline VerifyCardValidationDataRequest& WithValidationData(Aws::String&& value) { SetValidationData(std::move(value)); return *this;}
     inline VerifyCardValidationDataRequest& WithValidationData(const char* value) { SetValidationData(value); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The algorithm to use for verification of card data within Amazon Web Services
-     * Payment Cryptography.</p>
-     */
-    inline const CardVerificationAttributes& GetVerificationAttributes() const{ return m_verificationAttributes; }
-    inline bool VerificationAttributesHasBeenSet() const { return m_verificationAttributesHasBeenSet; }
-    inline void SetVerificationAttributes(const CardVerificationAttributes& value) { m_verificationAttributesHasBeenSet = true; m_verificationAttributes = value; }
-    inline void SetVerificationAttributes(CardVerificationAttributes&& value) { m_verificationAttributesHasBeenSet = true; m_verificationAttributes = std::move(value); }
-    inline VerifyCardValidationDataRequest& WithVerificationAttributes(const CardVerificationAttributes& value) { SetVerificationAttributes(value); return *this;}
-    inline VerifyCardValidationDataRequest& WithVerificationAttributes(CardVerificationAttributes&& value) { SetVerificationAttributes(std::move(value)); return *this;}
-    ///@}
   private:
 
     Aws::String m_keyIdentifier;
@@ -98,11 +98,11 @@ namespace Model
     Aws::String m_primaryAccountNumber;
     bool m_primaryAccountNumberHasBeenSet = false;
 
-    Aws::String m_validationData;
-    bool m_validationDataHasBeenSet = false;
-
     CardVerificationAttributes m_verificationAttributes;
     bool m_verificationAttributesHasBeenSet = false;
+
+    Aws::String m_validationData;
+    bool m_validationDataHasBeenSet = false;
   };
 
 } // namespace Model

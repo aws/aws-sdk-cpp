@@ -19,10 +19,10 @@ namespace Model
 {
 
 DynamicCardVerificationValue::DynamicCardVerificationValue() : 
-    m_applicationTransactionCounterHasBeenSet(false),
-    m_cardExpiryDateHasBeenSet(false),
     m_panSequenceNumberHasBeenSet(false),
-    m_serviceCodeHasBeenSet(false)
+    m_cardExpiryDateHasBeenSet(false),
+    m_serviceCodeHasBeenSet(false),
+    m_applicationTransactionCounterHasBeenSet(false)
 {
 }
 
@@ -34,11 +34,11 @@ DynamicCardVerificationValue::DynamicCardVerificationValue(JsonView jsonValue)
 
 DynamicCardVerificationValue& DynamicCardVerificationValue::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("ApplicationTransactionCounter"))
+  if(jsonValue.ValueExists("PanSequenceNumber"))
   {
-    m_applicationTransactionCounter = jsonValue.GetString("ApplicationTransactionCounter");
+    m_panSequenceNumber = jsonValue.GetString("PanSequenceNumber");
 
-    m_applicationTransactionCounterHasBeenSet = true;
+    m_panSequenceNumberHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("CardExpiryDate"))
@@ -48,18 +48,18 @@ DynamicCardVerificationValue& DynamicCardVerificationValue::operator =(JsonView 
     m_cardExpiryDateHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("PanSequenceNumber"))
-  {
-    m_panSequenceNumber = jsonValue.GetString("PanSequenceNumber");
-
-    m_panSequenceNumberHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("ServiceCode"))
   {
     m_serviceCode = jsonValue.GetString("ServiceCode");
 
     m_serviceCodeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ApplicationTransactionCounter"))
+  {
+    m_applicationTransactionCounter = jsonValue.GetString("ApplicationTransactionCounter");
+
+    m_applicationTransactionCounterHasBeenSet = true;
   }
 
   return *this;
@@ -69,9 +69,9 @@ JsonValue DynamicCardVerificationValue::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_applicationTransactionCounterHasBeenSet)
+  if(m_panSequenceNumberHasBeenSet)
   {
-   payload.WithString("ApplicationTransactionCounter", m_applicationTransactionCounter);
+   payload.WithString("PanSequenceNumber", m_panSequenceNumber);
 
   }
 
@@ -81,15 +81,15 @@ JsonValue DynamicCardVerificationValue::Jsonize() const
 
   }
 
-  if(m_panSequenceNumberHasBeenSet)
-  {
-   payload.WithString("PanSequenceNumber", m_panSequenceNumber);
-
-  }
-
   if(m_serviceCodeHasBeenSet)
   {
    payload.WithString("ServiceCode", m_serviceCode);
+
+  }
+
+  if(m_applicationTransactionCounterHasBeenSet)
+  {
+   payload.WithString("ApplicationTransactionCounter", m_applicationTransactionCounter);
 
   }
 

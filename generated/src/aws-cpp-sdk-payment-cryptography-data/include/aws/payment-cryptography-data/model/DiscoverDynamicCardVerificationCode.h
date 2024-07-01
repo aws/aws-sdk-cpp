@@ -40,20 +40,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The transaction counter value that comes from the terminal.</p>
-     */
-    inline const Aws::String& GetApplicationTransactionCounter() const{ return m_applicationTransactionCounter; }
-    inline bool ApplicationTransactionCounterHasBeenSet() const { return m_applicationTransactionCounterHasBeenSet; }
-    inline void SetApplicationTransactionCounter(const Aws::String& value) { m_applicationTransactionCounterHasBeenSet = true; m_applicationTransactionCounter = value; }
-    inline void SetApplicationTransactionCounter(Aws::String&& value) { m_applicationTransactionCounterHasBeenSet = true; m_applicationTransactionCounter = std::move(value); }
-    inline void SetApplicationTransactionCounter(const char* value) { m_applicationTransactionCounterHasBeenSet = true; m_applicationTransactionCounter.assign(value); }
-    inline DiscoverDynamicCardVerificationCode& WithApplicationTransactionCounter(const Aws::String& value) { SetApplicationTransactionCounter(value); return *this;}
-    inline DiscoverDynamicCardVerificationCode& WithApplicationTransactionCounter(Aws::String&& value) { SetApplicationTransactionCounter(std::move(value)); return *this;}
-    inline DiscoverDynamicCardVerificationCode& WithApplicationTransactionCounter(const char* value) { SetApplicationTransactionCounter(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The expiry date of a payment card.</p>
      */
     inline const Aws::String& GetCardExpiryDate() const{ return m_cardExpiryDate; }
@@ -79,16 +65,30 @@ namespace Model
     inline DiscoverDynamicCardVerificationCode& WithUnpredictableNumber(Aws::String&& value) { SetUnpredictableNumber(std::move(value)); return *this;}
     inline DiscoverDynamicCardVerificationCode& WithUnpredictableNumber(const char* value) { SetUnpredictableNumber(value); return *this;}
     ///@}
-  private:
 
-    Aws::String m_applicationTransactionCounter;
-    bool m_applicationTransactionCounterHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The transaction counter value that comes from the terminal.</p>
+     */
+    inline const Aws::String& GetApplicationTransactionCounter() const{ return m_applicationTransactionCounter; }
+    inline bool ApplicationTransactionCounterHasBeenSet() const { return m_applicationTransactionCounterHasBeenSet; }
+    inline void SetApplicationTransactionCounter(const Aws::String& value) { m_applicationTransactionCounterHasBeenSet = true; m_applicationTransactionCounter = value; }
+    inline void SetApplicationTransactionCounter(Aws::String&& value) { m_applicationTransactionCounterHasBeenSet = true; m_applicationTransactionCounter = std::move(value); }
+    inline void SetApplicationTransactionCounter(const char* value) { m_applicationTransactionCounterHasBeenSet = true; m_applicationTransactionCounter.assign(value); }
+    inline DiscoverDynamicCardVerificationCode& WithApplicationTransactionCounter(const Aws::String& value) { SetApplicationTransactionCounter(value); return *this;}
+    inline DiscoverDynamicCardVerificationCode& WithApplicationTransactionCounter(Aws::String&& value) { SetApplicationTransactionCounter(std::move(value)); return *this;}
+    inline DiscoverDynamicCardVerificationCode& WithApplicationTransactionCounter(const char* value) { SetApplicationTransactionCounter(value); return *this;}
+    ///@}
+  private:
 
     Aws::String m_cardExpiryDate;
     bool m_cardExpiryDateHasBeenSet = false;
 
     Aws::String m_unpredictableNumber;
     bool m_unpredictableNumberHasBeenSet = false;
+
+    Aws::String m_applicationTransactionCounter;
+    bool m_applicationTransactionCounterHasBeenSet = false;
   };
 
 } // namespace Model

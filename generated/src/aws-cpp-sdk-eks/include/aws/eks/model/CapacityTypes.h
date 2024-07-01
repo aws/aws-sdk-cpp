@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     ON_DEMAND,
-    SPOT
+    SPOT,
+    CAPACITY_BLOCK
   };
 
 namespace CapacityTypesMapper

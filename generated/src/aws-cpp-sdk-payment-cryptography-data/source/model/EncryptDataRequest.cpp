@@ -13,9 +13,10 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 EncryptDataRequest::EncryptDataRequest() : 
-    m_encryptionAttributesHasBeenSet(false),
     m_keyIdentifierHasBeenSet(false),
-    m_plainTextHasBeenSet(false)
+    m_plainTextHasBeenSet(false),
+    m_encryptionAttributesHasBeenSet(false),
+    m_wrappedKeyHasBeenSet(false)
 {
 }
 
@@ -23,15 +24,21 @@ Aws::String EncryptDataRequest::SerializePayload() const
 {
   JsonValue payload;
 
+  if(m_plainTextHasBeenSet)
+  {
+   payload.WithString("PlainText", m_plainText);
+
+  }
+
   if(m_encryptionAttributesHasBeenSet)
   {
    payload.WithObject("EncryptionAttributes", m_encryptionAttributes.Jsonize());
 
   }
 
-  if(m_plainTextHasBeenSet)
+  if(m_wrappedKeyHasBeenSet)
   {
-   payload.WithString("PlainText", m_plainText);
+   payload.WithObject("WrappedKey", m_wrappedKey.Jsonize());
 
   }
 

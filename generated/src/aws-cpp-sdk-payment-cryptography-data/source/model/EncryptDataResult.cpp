@@ -29,12 +29,6 @@ EncryptDataResult::EncryptDataResult(const Aws::AmazonWebServiceResult<JsonValue
 EncryptDataResult& EncryptDataResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("CipherText"))
-  {
-    m_cipherText = jsonValue.GetString("CipherText");
-
-  }
-
   if(jsonValue.ValueExists("KeyArn"))
   {
     m_keyArn = jsonValue.GetString("KeyArn");
@@ -44,6 +38,12 @@ EncryptDataResult& EncryptDataResult::operator =(const Aws::AmazonWebServiceResu
   if(jsonValue.ValueExists("KeyCheckValue"))
   {
     m_keyCheckValue = jsonValue.GetString("KeyCheckValue");
+
+  }
+
+  if(jsonValue.ValueExists("CipherText"))
+  {
+    m_cipherText = jsonValue.GetString("CipherText");
 
   }
 

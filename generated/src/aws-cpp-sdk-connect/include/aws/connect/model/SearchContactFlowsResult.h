@@ -36,7 +36,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Information about the contact flows.</p>
+     * <p>Information about the flows.</p>
      */
     inline const Aws::Vector<ContactFlow>& GetContactFlows() const{ return m_contactFlows; }
     inline void SetContactFlows(const Aws::Vector<ContactFlow>& value) { m_contactFlows = value; }

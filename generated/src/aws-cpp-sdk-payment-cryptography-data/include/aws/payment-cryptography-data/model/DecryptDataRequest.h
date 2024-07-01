@@ -8,6 +8,7 @@
 #include <aws/payment-cryptography-data/PaymentCryptographyDataRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/payment-cryptography-data/model/EncryptionDecryptionAttributes.h>
+#include <aws/payment-cryptography-data/model/WrappedKey.h>
 #include <utility>
 
 namespace Aws
@@ -32,6 +33,24 @@ namespace Model
 
     AWS_PAYMENTCRYPTOGRAPHYDATA_API Aws::String SerializePayload() const override;
 
+
+    ///@{
+    /**
+     * <p>The <code>keyARN</code> of the encryption key that Amazon Web Services
+     * Payment Cryptography uses for ciphertext decryption.</p> <p>When a
+     * WrappedKeyBlock is provided, this value will be the identifier to the key
+     * wrapping key. Otherwise, it is the key identifier used to perform the
+     * operation.</p>
+     */
+    inline const Aws::String& GetKeyIdentifier() const{ return m_keyIdentifier; }
+    inline bool KeyIdentifierHasBeenSet() const { return m_keyIdentifierHasBeenSet; }
+    inline void SetKeyIdentifier(const Aws::String& value) { m_keyIdentifierHasBeenSet = true; m_keyIdentifier = value; }
+    inline void SetKeyIdentifier(Aws::String&& value) { m_keyIdentifierHasBeenSet = true; m_keyIdentifier = std::move(value); }
+    inline void SetKeyIdentifier(const char* value) { m_keyIdentifierHasBeenSet = true; m_keyIdentifier.assign(value); }
+    inline DecryptDataRequest& WithKeyIdentifier(const Aws::String& value) { SetKeyIdentifier(value); return *this;}
+    inline DecryptDataRequest& WithKeyIdentifier(Aws::String&& value) { SetKeyIdentifier(std::move(value)); return *this;}
+    inline DecryptDataRequest& WithKeyIdentifier(const char* value) { SetKeyIdentifier(value); return *this;}
+    ///@}
 
     ///@{
     /**
@@ -61,19 +80,20 @@ namespace Model
 
     ///@{
     /**
-     * <p>The <code>keyARN</code> of the encryption key that Amazon Web Services
-     * Payment Cryptography uses for ciphertext decryption.</p>
+     * <p>The WrappedKeyBlock containing the encryption key for ciphertext
+     * decryption.</p>
      */
-    inline const Aws::String& GetKeyIdentifier() const{ return m_keyIdentifier; }
-    inline bool KeyIdentifierHasBeenSet() const { return m_keyIdentifierHasBeenSet; }
-    inline void SetKeyIdentifier(const Aws::String& value) { m_keyIdentifierHasBeenSet = true; m_keyIdentifier = value; }
-    inline void SetKeyIdentifier(Aws::String&& value) { m_keyIdentifierHasBeenSet = true; m_keyIdentifier = std::move(value); }
-    inline void SetKeyIdentifier(const char* value) { m_keyIdentifierHasBeenSet = true; m_keyIdentifier.assign(value); }
-    inline DecryptDataRequest& WithKeyIdentifier(const Aws::String& value) { SetKeyIdentifier(value); return *this;}
-    inline DecryptDataRequest& WithKeyIdentifier(Aws::String&& value) { SetKeyIdentifier(std::move(value)); return *this;}
-    inline DecryptDataRequest& WithKeyIdentifier(const char* value) { SetKeyIdentifier(value); return *this;}
+    inline const WrappedKey& GetWrappedKey() const{ return m_wrappedKey; }
+    inline bool WrappedKeyHasBeenSet() const { return m_wrappedKeyHasBeenSet; }
+    inline void SetWrappedKey(const WrappedKey& value) { m_wrappedKeyHasBeenSet = true; m_wrappedKey = value; }
+    inline void SetWrappedKey(WrappedKey&& value) { m_wrappedKeyHasBeenSet = true; m_wrappedKey = std::move(value); }
+    inline DecryptDataRequest& WithWrappedKey(const WrappedKey& value) { SetWrappedKey(value); return *this;}
+    inline DecryptDataRequest& WithWrappedKey(WrappedKey&& value) { SetWrappedKey(std::move(value)); return *this;}
     ///@}
   private:
+
+    Aws::String m_keyIdentifier;
+    bool m_keyIdentifierHasBeenSet = false;
 
     Aws::String m_cipherText;
     bool m_cipherTextHasBeenSet = false;
@@ -81,8 +101,8 @@ namespace Model
     EncryptionDecryptionAttributes m_decryptionAttributes;
     bool m_decryptionAttributesHasBeenSet = false;
 
-    Aws::String m_keyIdentifier;
-    bool m_keyIdentifierHasBeenSet = false;
+    WrappedKey m_wrappedKey;
+    bool m_wrappedKeyHasBeenSet = false;
   };
 
 } // namespace Model

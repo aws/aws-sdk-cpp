@@ -56,21 +56,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>A number that identifies and differentiates payment cards with the same
-     * Primary Account Number (PAN).</p>
-     */
-    inline const Aws::String& GetPanSequenceNumber() const{ return m_panSequenceNumber; }
-    inline bool PanSequenceNumberHasBeenSet() const { return m_panSequenceNumberHasBeenSet; }
-    inline void SetPanSequenceNumber(const Aws::String& value) { m_panSequenceNumberHasBeenSet = true; m_panSequenceNumber = value; }
-    inline void SetPanSequenceNumber(Aws::String&& value) { m_panSequenceNumberHasBeenSet = true; m_panSequenceNumber = std::move(value); }
-    inline void SetPanSequenceNumber(const char* value) { m_panSequenceNumberHasBeenSet = true; m_panSequenceNumber.assign(value); }
-    inline MacAlgorithmEmv& WithPanSequenceNumber(const Aws::String& value) { SetPanSequenceNumber(value); return *this;}
-    inline MacAlgorithmEmv& WithPanSequenceNumber(Aws::String&& value) { SetPanSequenceNumber(std::move(value)); return *this;}
-    inline MacAlgorithmEmv& WithPanSequenceNumber(const char* value) { SetPanSequenceNumber(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The Primary Account Number (PAN), a unique identifier for a payment credit or
      * debit card and associates the card to a specific account holder.</p>
      */
@@ -82,6 +67,21 @@ namespace Model
     inline MacAlgorithmEmv& WithPrimaryAccountNumber(const Aws::String& value) { SetPrimaryAccountNumber(value); return *this;}
     inline MacAlgorithmEmv& WithPrimaryAccountNumber(Aws::String&& value) { SetPrimaryAccountNumber(std::move(value)); return *this;}
     inline MacAlgorithmEmv& WithPrimaryAccountNumber(const char* value) { SetPrimaryAccountNumber(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>A number that identifies and differentiates payment cards with the same
+     * Primary Account Number (PAN).</p>
+     */
+    inline const Aws::String& GetPanSequenceNumber() const{ return m_panSequenceNumber; }
+    inline bool PanSequenceNumberHasBeenSet() const { return m_panSequenceNumberHasBeenSet; }
+    inline void SetPanSequenceNumber(const Aws::String& value) { m_panSequenceNumberHasBeenSet = true; m_panSequenceNumber = value; }
+    inline void SetPanSequenceNumber(Aws::String&& value) { m_panSequenceNumberHasBeenSet = true; m_panSequenceNumber = std::move(value); }
+    inline void SetPanSequenceNumber(const char* value) { m_panSequenceNumberHasBeenSet = true; m_panSequenceNumber.assign(value); }
+    inline MacAlgorithmEmv& WithPanSequenceNumber(const Aws::String& value) { SetPanSequenceNumber(value); return *this;}
+    inline MacAlgorithmEmv& WithPanSequenceNumber(Aws::String&& value) { SetPanSequenceNumber(std::move(value)); return *this;}
+    inline MacAlgorithmEmv& WithPanSequenceNumber(const char* value) { SetPanSequenceNumber(value); return *this;}
     ///@}
 
     ///@{
@@ -114,11 +114,11 @@ namespace Model
     MajorKeyDerivationMode m_majorKeyDerivationMode;
     bool m_majorKeyDerivationModeHasBeenSet = false;
 
-    Aws::String m_panSequenceNumber;
-    bool m_panSequenceNumberHasBeenSet = false;
-
     Aws::String m_primaryAccountNumber;
     bool m_primaryAccountNumberHasBeenSet = false;
+
+    Aws::String m_panSequenceNumber;
+    bool m_panSequenceNumberHasBeenSet = false;
 
     SessionKeyDerivationMode m_sessionKeyDerivationMode;
     bool m_sessionKeyDerivationModeHasBeenSet = false;

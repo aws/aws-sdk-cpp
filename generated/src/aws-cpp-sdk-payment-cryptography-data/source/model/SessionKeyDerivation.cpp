@@ -19,10 +19,10 @@ namespace Model
 {
 
 SessionKeyDerivation::SessionKeyDerivation() : 
-    m_amexHasBeenSet(false),
-    m_emv2000HasBeenSet(false),
     m_emvCommonHasBeenSet(false),
     m_mastercardHasBeenSet(false),
+    m_emv2000HasBeenSet(false),
+    m_amexHasBeenSet(false),
     m_visaHasBeenSet(false)
 {
 }
@@ -35,20 +35,6 @@ SessionKeyDerivation::SessionKeyDerivation(JsonView jsonValue)
 
 SessionKeyDerivation& SessionKeyDerivation::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("Amex"))
-  {
-    m_amex = jsonValue.GetObject("Amex");
-
-    m_amexHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("Emv2000"))
-  {
-    m_emv2000 = jsonValue.GetObject("Emv2000");
-
-    m_emv2000HasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("EmvCommon"))
   {
     m_emvCommon = jsonValue.GetObject("EmvCommon");
@@ -61,6 +47,20 @@ SessionKeyDerivation& SessionKeyDerivation::operator =(JsonView jsonValue)
     m_mastercard = jsonValue.GetObject("Mastercard");
 
     m_mastercardHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Emv2000"))
+  {
+    m_emv2000 = jsonValue.GetObject("Emv2000");
+
+    m_emv2000HasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Amex"))
+  {
+    m_amex = jsonValue.GetObject("Amex");
+
+    m_amexHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Visa"))
@@ -77,18 +77,6 @@ JsonValue SessionKeyDerivation::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_amexHasBeenSet)
-  {
-   payload.WithObject("Amex", m_amex.Jsonize());
-
-  }
-
-  if(m_emv2000HasBeenSet)
-  {
-   payload.WithObject("Emv2000", m_emv2000.Jsonize());
-
-  }
-
   if(m_emvCommonHasBeenSet)
   {
    payload.WithObject("EmvCommon", m_emvCommon.Jsonize());
@@ -98,6 +86,18 @@ JsonValue SessionKeyDerivation::Jsonize() const
   if(m_mastercardHasBeenSet)
   {
    payload.WithObject("Mastercard", m_mastercard.Jsonize());
+
+  }
+
+  if(m_emv2000HasBeenSet)
+  {
+   payload.WithObject("Emv2000", m_emv2000.Jsonize());
+
+  }
+
+  if(m_amexHasBeenSet)
+  {
+   payload.WithObject("Amex", m_amex.Jsonize());
 
   }
 

@@ -16,14 +16,19 @@ namespace Aws
 namespace Connect
 {
   /**
-   * <p>Amazon Connect is a cloud-based contact center solution that you use to set
-   * up and manage a customer contact center and provide reliable customer engagement
-   * at any scale.</p> <p>Amazon Connect provides metrics and real-time reporting
-   * that enable you to optimize contact routing. You can also resolve customer
-   * issues more efficiently by getting customers in touch with the appropriate
-   * agents.</p> <p>There are limits to the number of Amazon Connect resources that
-   * you can create. There are also limits to the number of requests that you can
-   * make per second. For more information, see <a
+   * <ul> <li> <p> <a
+   * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_Operations_Amazon_Connect_Service.html">Amazon
+   * Connect actions</a> </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_Types_Amazon_Connect_Service.html">Amazon
+   * Connect data types</a> </p> </li> </ul> <p>Amazon Connect is a cloud-based
+   * contact center solution that you use to set up and manage a customer contact
+   * center and provide reliable customer engagement at any scale.</p> <p>Amazon
+   * Connect provides metrics and real-time reporting that enable you to optimize
+   * contact routing. You can also resolve customer issues more efficiently by
+   * getting customers in touch with the appropriate agents.</p> <p>There are limits
+   * to the number of Amazon Connect resources that you can create. There are also
+   * limits to the number of requests that you can make per second. For more
+   * information, see <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon
    * Connect Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
    * <p>You can connect programmatically to an Amazon Web Services service by using
@@ -2104,6 +2109,33 @@ namespace Connect
         }
 
         /**
+         * <p>This API is in preview release for Amazon Connect and is subject to change.
+         * To request access to this API, contact Amazon Web Services Support.</p>
+         * <p>Describes the target authentication profile.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeAuthenticationProfile">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeAuthenticationProfileOutcome DescribeAuthenticationProfile(const Model::DescribeAuthenticationProfileRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeAuthenticationProfile that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeAuthenticationProfileRequestT = Model::DescribeAuthenticationProfileRequest>
+        Model::DescribeAuthenticationProfileOutcomeCallable DescribeAuthenticationProfileCallable(const DescribeAuthenticationProfileRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::DescribeAuthenticationProfile, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeAuthenticationProfile that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeAuthenticationProfileRequestT = Model::DescribeAuthenticationProfileRequest>
+        void DescribeAuthenticationProfileAsync(const DescribeAuthenticationProfileRequestT& request, const DescribeAuthenticationProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::DescribeAuthenticationProfile, request, handler, context);
+        }
+
+        /**
          * <p>This API is in preview release for Amazon Connect and is subject to
          * change.</p> <p>Describes the specified contact. </p>  <p>Contact
          * information remains available in Amazon Connect for 24 months, and then it is
@@ -3565,6 +3597,34 @@ namespace Connect
         void ListApprovedOriginsAsync(const ListApprovedOriginsRequestT& request, const ListApprovedOriginsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ConnectClient::ListApprovedOrigins, request, handler, context);
+        }
+
+        /**
+         * <p>This API is in preview release for Amazon Connect and is subject to change.
+         * To request access to this API, contact Amazon Web Services Support.</p>
+         * <p>Provides summary information about the authentication profiles in a specified
+         * Amazon Connect instance.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListAuthenticationProfiles">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListAuthenticationProfilesOutcome ListAuthenticationProfiles(const Model::ListAuthenticationProfilesRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListAuthenticationProfiles that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListAuthenticationProfilesRequestT = Model::ListAuthenticationProfilesRequest>
+        Model::ListAuthenticationProfilesOutcomeCallable ListAuthenticationProfilesCallable(const ListAuthenticationProfilesRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::ListAuthenticationProfiles, request);
+        }
+
+        /**
+         * An Async wrapper for ListAuthenticationProfiles that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListAuthenticationProfilesRequestT = Model::ListAuthenticationProfilesRequest>
+        void ListAuthenticationProfilesAsync(const ListAuthenticationProfilesRequestT& request, const ListAuthenticationProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::ListAuthenticationProfiles, request, handler, context);
         }
 
         /**
@@ -5324,10 +5384,10 @@ namespace Connect
 
         /**
          * <p>Provides a pre-signed Amazon S3 URL in response for uploading your
-         * content.</p>  <p>You may only use this API to upload attachments to a
-         * <a
-         * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_CreateCase.html">Connect
-         * Case</a>.</p> <p><h3>See Also:</h3>   <a
+         * content.</p>  <p>You may only use this API to upload attachments to
+         * an <a
+         * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_CreateCase.html">Amazon
+         * Connect Case</a>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartAttachedFileUpload">AWS
          * API Reference</a></p>
          */
@@ -5959,6 +6019,33 @@ namespace Connect
         void UpdateAgentStatusAsync(const UpdateAgentStatusRequestT& request, const UpdateAgentStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ConnectClient::UpdateAgentStatus, request, handler, context);
+        }
+
+        /**
+         * <p>This API is in preview release for Amazon Connect and is subject to change.
+         * To request access to this API, contact Amazon Web Services Support.</p>
+         * <p>Updates the selected authentication profile.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateAuthenticationProfile">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateAuthenticationProfileOutcome UpdateAuthenticationProfile(const Model::UpdateAuthenticationProfileRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateAuthenticationProfile that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateAuthenticationProfileRequestT = Model::UpdateAuthenticationProfileRequest>
+        Model::UpdateAuthenticationProfileOutcomeCallable UpdateAuthenticationProfileCallable(const UpdateAuthenticationProfileRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::UpdateAuthenticationProfile, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateAuthenticationProfile that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateAuthenticationProfileRequestT = Model::UpdateAuthenticationProfileRequest>
+        void UpdateAuthenticationProfileAsync(const UpdateAuthenticationProfileRequestT& request, const UpdateAuthenticationProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::UpdateAuthenticationProfile, request, handler, context);
         }
 
         /**

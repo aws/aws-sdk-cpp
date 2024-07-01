@@ -19,10 +19,10 @@ namespace Model
 {
 
 DynamicCardVerificationCode::DynamicCardVerificationCode() : 
-    m_applicationTransactionCounterHasBeenSet(false),
+    m_unpredictableNumberHasBeenSet(false),
     m_panSequenceNumberHasBeenSet(false),
-    m_trackDataHasBeenSet(false),
-    m_unpredictableNumberHasBeenSet(false)
+    m_applicationTransactionCounterHasBeenSet(false),
+    m_trackDataHasBeenSet(false)
 {
 }
 
@@ -34,11 +34,11 @@ DynamicCardVerificationCode::DynamicCardVerificationCode(JsonView jsonValue)
 
 DynamicCardVerificationCode& DynamicCardVerificationCode::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("ApplicationTransactionCounter"))
+  if(jsonValue.ValueExists("UnpredictableNumber"))
   {
-    m_applicationTransactionCounter = jsonValue.GetString("ApplicationTransactionCounter");
+    m_unpredictableNumber = jsonValue.GetString("UnpredictableNumber");
 
-    m_applicationTransactionCounterHasBeenSet = true;
+    m_unpredictableNumberHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("PanSequenceNumber"))
@@ -48,18 +48,18 @@ DynamicCardVerificationCode& DynamicCardVerificationCode::operator =(JsonView js
     m_panSequenceNumberHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ApplicationTransactionCounter"))
+  {
+    m_applicationTransactionCounter = jsonValue.GetString("ApplicationTransactionCounter");
+
+    m_applicationTransactionCounterHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("TrackData"))
   {
     m_trackData = jsonValue.GetString("TrackData");
 
     m_trackDataHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("UnpredictableNumber"))
-  {
-    m_unpredictableNumber = jsonValue.GetString("UnpredictableNumber");
-
-    m_unpredictableNumberHasBeenSet = true;
   }
 
   return *this;
@@ -69,9 +69,9 @@ JsonValue DynamicCardVerificationCode::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_applicationTransactionCounterHasBeenSet)
+  if(m_unpredictableNumberHasBeenSet)
   {
-   payload.WithString("ApplicationTransactionCounter", m_applicationTransactionCounter);
+   payload.WithString("UnpredictableNumber", m_unpredictableNumber);
 
   }
 
@@ -81,15 +81,15 @@ JsonValue DynamicCardVerificationCode::Jsonize() const
 
   }
 
-  if(m_trackDataHasBeenSet)
+  if(m_applicationTransactionCounterHasBeenSet)
   {
-   payload.WithString("TrackData", m_trackData);
+   payload.WithString("ApplicationTransactionCounter", m_applicationTransactionCounter);
 
   }
 
-  if(m_unpredictableNumberHasBeenSet)
+  if(m_trackDataHasBeenSet)
   {
-   payload.WithString("UnpredictableNumber", m_unpredictableNumber);
+   payload.WithString("TrackData", m_trackData);
 
   }
 

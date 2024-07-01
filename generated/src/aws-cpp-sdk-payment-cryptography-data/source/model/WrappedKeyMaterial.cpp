@@ -1,0 +1,59 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/payment-cryptography-data/model/WrappedKeyMaterial.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace PaymentCryptographyData
+{
+namespace Model
+{
+
+WrappedKeyMaterial::WrappedKeyMaterial() : 
+    m_tr31KeyBlockHasBeenSet(false)
+{
+}
+
+WrappedKeyMaterial::WrappedKeyMaterial(JsonView jsonValue)
+  : WrappedKeyMaterial()
+{
+  *this = jsonValue;
+}
+
+WrappedKeyMaterial& WrappedKeyMaterial::operator =(JsonView jsonValue)
+{
+  if(jsonValue.ValueExists("Tr31KeyBlock"))
+  {
+    m_tr31KeyBlock = jsonValue.GetString("Tr31KeyBlock");
+
+    m_tr31KeyBlockHasBeenSet = true;
+  }
+
+  return *this;
+}
+
+JsonValue WrappedKeyMaterial::Jsonize() const
+{
+  JsonValue payload;
+
+  if(m_tr31KeyBlockHasBeenSet)
+  {
+   payload.WithString("Tr31KeyBlock", m_tr31KeyBlock);
+
+  }
+
+  return payload;
+}
+
+} // namespace Model
+} // namespace PaymentCryptographyData
+} // namespace Aws

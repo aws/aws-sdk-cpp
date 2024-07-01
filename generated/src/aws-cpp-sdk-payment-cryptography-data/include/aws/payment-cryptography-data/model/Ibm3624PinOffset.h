@@ -40,22 +40,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The decimalization table to use for IBM 3624 PIN algorithm. The table is used
-     * to convert the algorithm intermediate result from hexadecimal characters to
-     * decimal.</p>
-     */
-    inline const Aws::String& GetDecimalizationTable() const{ return m_decimalizationTable; }
-    inline bool DecimalizationTableHasBeenSet() const { return m_decimalizationTableHasBeenSet; }
-    inline void SetDecimalizationTable(const Aws::String& value) { m_decimalizationTableHasBeenSet = true; m_decimalizationTable = value; }
-    inline void SetDecimalizationTable(Aws::String&& value) { m_decimalizationTableHasBeenSet = true; m_decimalizationTable = std::move(value); }
-    inline void SetDecimalizationTable(const char* value) { m_decimalizationTableHasBeenSet = true; m_decimalizationTable.assign(value); }
-    inline Ibm3624PinOffset& WithDecimalizationTable(const Aws::String& value) { SetDecimalizationTable(value); return *this;}
-    inline Ibm3624PinOffset& WithDecimalizationTable(Aws::String&& value) { SetDecimalizationTable(std::move(value)); return *this;}
-    inline Ibm3624PinOffset& WithDecimalizationTable(const char* value) { SetDecimalizationTable(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The encrypted PIN block data. According to ISO 9564 standard, a PIN Block is
      * an encoded representation of a payment card Personal Account Number (PAN) and
      * the cardholder Personal Identification Number (PIN).</p>
@@ -72,16 +56,18 @@ namespace Model
 
     ///@{
     /**
-     * <p>The unique data for cardholder identification.</p>
+     * <p>The decimalization table to use for IBM 3624 PIN algorithm. The table is used
+     * to convert the algorithm intermediate result from hexadecimal characters to
+     * decimal.</p>
      */
-    inline const Aws::String& GetPinValidationData() const{ return m_pinValidationData; }
-    inline bool PinValidationDataHasBeenSet() const { return m_pinValidationDataHasBeenSet; }
-    inline void SetPinValidationData(const Aws::String& value) { m_pinValidationDataHasBeenSet = true; m_pinValidationData = value; }
-    inline void SetPinValidationData(Aws::String&& value) { m_pinValidationDataHasBeenSet = true; m_pinValidationData = std::move(value); }
-    inline void SetPinValidationData(const char* value) { m_pinValidationDataHasBeenSet = true; m_pinValidationData.assign(value); }
-    inline Ibm3624PinOffset& WithPinValidationData(const Aws::String& value) { SetPinValidationData(value); return *this;}
-    inline Ibm3624PinOffset& WithPinValidationData(Aws::String&& value) { SetPinValidationData(std::move(value)); return *this;}
-    inline Ibm3624PinOffset& WithPinValidationData(const char* value) { SetPinValidationData(value); return *this;}
+    inline const Aws::String& GetDecimalizationTable() const{ return m_decimalizationTable; }
+    inline bool DecimalizationTableHasBeenSet() const { return m_decimalizationTableHasBeenSet; }
+    inline void SetDecimalizationTable(const Aws::String& value) { m_decimalizationTableHasBeenSet = true; m_decimalizationTable = value; }
+    inline void SetDecimalizationTable(Aws::String&& value) { m_decimalizationTableHasBeenSet = true; m_decimalizationTable = std::move(value); }
+    inline void SetDecimalizationTable(const char* value) { m_decimalizationTableHasBeenSet = true; m_decimalizationTable.assign(value); }
+    inline Ibm3624PinOffset& WithDecimalizationTable(const Aws::String& value) { SetDecimalizationTable(value); return *this;}
+    inline Ibm3624PinOffset& WithDecimalizationTable(Aws::String&& value) { SetDecimalizationTable(std::move(value)); return *this;}
+    inline Ibm3624PinOffset& WithDecimalizationTable(const char* value) { SetDecimalizationTable(value); return *this;}
     ///@}
 
     ///@{
@@ -97,19 +83,33 @@ namespace Model
     inline Ibm3624PinOffset& WithPinValidationDataPadCharacter(Aws::String&& value) { SetPinValidationDataPadCharacter(std::move(value)); return *this;}
     inline Ibm3624PinOffset& WithPinValidationDataPadCharacter(const char* value) { SetPinValidationDataPadCharacter(value); return *this;}
     ///@}
-  private:
 
-    Aws::String m_decimalizationTable;
-    bool m_decimalizationTableHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The unique data for cardholder identification.</p>
+     */
+    inline const Aws::String& GetPinValidationData() const{ return m_pinValidationData; }
+    inline bool PinValidationDataHasBeenSet() const { return m_pinValidationDataHasBeenSet; }
+    inline void SetPinValidationData(const Aws::String& value) { m_pinValidationDataHasBeenSet = true; m_pinValidationData = value; }
+    inline void SetPinValidationData(Aws::String&& value) { m_pinValidationDataHasBeenSet = true; m_pinValidationData = std::move(value); }
+    inline void SetPinValidationData(const char* value) { m_pinValidationDataHasBeenSet = true; m_pinValidationData.assign(value); }
+    inline Ibm3624PinOffset& WithPinValidationData(const Aws::String& value) { SetPinValidationData(value); return *this;}
+    inline Ibm3624PinOffset& WithPinValidationData(Aws::String&& value) { SetPinValidationData(std::move(value)); return *this;}
+    inline Ibm3624PinOffset& WithPinValidationData(const char* value) { SetPinValidationData(value); return *this;}
+    ///@}
+  private:
 
     Aws::String m_encryptedPinBlock;
     bool m_encryptedPinBlockHasBeenSet = false;
 
-    Aws::String m_pinValidationData;
-    bool m_pinValidationDataHasBeenSet = false;
+    Aws::String m_decimalizationTable;
+    bool m_decimalizationTableHasBeenSet = false;
 
     Aws::String m_pinValidationDataPadCharacter;
     bool m_pinValidationDataPadCharacterHasBeenSet = false;
+
+    Aws::String m_pinValidationData;
+    bool m_pinValidationDataHasBeenSet = false;
   };
 
 } // namespace Model

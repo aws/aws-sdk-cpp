@@ -29,9 +29,15 @@ GeneratePinDataResult::GeneratePinDataResult(const Aws::AmazonWebServiceResult<J
 GeneratePinDataResult& GeneratePinDataResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("EncryptedPinBlock"))
+  if(jsonValue.ValueExists("GenerationKeyArn"))
   {
-    m_encryptedPinBlock = jsonValue.GetString("EncryptedPinBlock");
+    m_generationKeyArn = jsonValue.GetString("GenerationKeyArn");
+
+  }
+
+  if(jsonValue.ValueExists("GenerationKeyCheckValue"))
+  {
+    m_generationKeyCheckValue = jsonValue.GetString("GenerationKeyCheckValue");
 
   }
 
@@ -47,15 +53,9 @@ GeneratePinDataResult& GeneratePinDataResult::operator =(const Aws::AmazonWebSer
 
   }
 
-  if(jsonValue.ValueExists("GenerationKeyArn"))
+  if(jsonValue.ValueExists("EncryptedPinBlock"))
   {
-    m_generationKeyArn = jsonValue.GetString("GenerationKeyArn");
-
-  }
-
-  if(jsonValue.ValueExists("GenerationKeyCheckValue"))
-  {
-    m_generationKeyCheckValue = jsonValue.GetString("GenerationKeyCheckValue");
+    m_encryptedPinBlock = jsonValue.GetString("EncryptedPinBlock");
 
   }
 

@@ -34,19 +34,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The encrypted ciphertext.</p>
-     */
-    inline const Aws::String& GetCipherText() const{ return m_cipherText; }
-    inline void SetCipherText(const Aws::String& value) { m_cipherText = value; }
-    inline void SetCipherText(Aws::String&& value) { m_cipherText = std::move(value); }
-    inline void SetCipherText(const char* value) { m_cipherText.assign(value); }
-    inline ReEncryptDataResult& WithCipherText(const Aws::String& value) { SetCipherText(value); return *this;}
-    inline ReEncryptDataResult& WithCipherText(Aws::String&& value) { SetCipherText(std::move(value)); return *this;}
-    inline ReEncryptDataResult& WithCipherText(const char* value) { SetCipherText(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The keyARN (Amazon Resource Name) of the encryption key that Amazon Web
      * Services Payment Cryptography uses for plaintext encryption.</p>
      */
@@ -76,6 +63,19 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The encrypted ciphertext.</p>
+     */
+    inline const Aws::String& GetCipherText() const{ return m_cipherText; }
+    inline void SetCipherText(const Aws::String& value) { m_cipherText = value; }
+    inline void SetCipherText(Aws::String&& value) { m_cipherText = std::move(value); }
+    inline void SetCipherText(const char* value) { m_cipherText.assign(value); }
+    inline ReEncryptDataResult& WithCipherText(const Aws::String& value) { SetCipherText(value); return *this;}
+    inline ReEncryptDataResult& WithCipherText(Aws::String&& value) { SetCipherText(std::move(value)); return *this;}
+    inline ReEncryptDataResult& WithCipherText(const char* value) { SetCipherText(value); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -87,11 +87,11 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_cipherText;
-
     Aws::String m_keyArn;
 
     Aws::String m_keyCheckValue;
+
+    Aws::String m_cipherText;
 
     Aws::String m_requestId;
   };

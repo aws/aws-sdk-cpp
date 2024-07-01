@@ -40,21 +40,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>A number that identifies and differentiates payment cards with the same
-     * Primary Account Number (PAN).</p>
-     */
-    inline const Aws::String& GetPanSequenceNumber() const{ return m_panSequenceNumber; }
-    inline bool PanSequenceNumberHasBeenSet() const { return m_panSequenceNumberHasBeenSet; }
-    inline void SetPanSequenceNumber(const Aws::String& value) { m_panSequenceNumberHasBeenSet = true; m_panSequenceNumber = value; }
-    inline void SetPanSequenceNumber(Aws::String&& value) { m_panSequenceNumberHasBeenSet = true; m_panSequenceNumber = std::move(value); }
-    inline void SetPanSequenceNumber(const char* value) { m_panSequenceNumberHasBeenSet = true; m_panSequenceNumber.assign(value); }
-    inline SessionKeyAmex& WithPanSequenceNumber(const Aws::String& value) { SetPanSequenceNumber(value); return *this;}
-    inline SessionKeyAmex& WithPanSequenceNumber(Aws::String&& value) { SetPanSequenceNumber(std::move(value)); return *this;}
-    inline SessionKeyAmex& WithPanSequenceNumber(const char* value) { SetPanSequenceNumber(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The Primary Account Number (PAN) of the cardholder. A PAN is a unique
      * identifier for a payment credit or debit card and associates the card to a
      * specific account holder.</p>
@@ -68,13 +53,28 @@ namespace Model
     inline SessionKeyAmex& WithPrimaryAccountNumber(Aws::String&& value) { SetPrimaryAccountNumber(std::move(value)); return *this;}
     inline SessionKeyAmex& WithPrimaryAccountNumber(const char* value) { SetPrimaryAccountNumber(value); return *this;}
     ///@}
-  private:
 
-    Aws::String m_panSequenceNumber;
-    bool m_panSequenceNumberHasBeenSet = false;
+    ///@{
+    /**
+     * <p>A number that identifies and differentiates payment cards with the same
+     * Primary Account Number (PAN).</p>
+     */
+    inline const Aws::String& GetPanSequenceNumber() const{ return m_panSequenceNumber; }
+    inline bool PanSequenceNumberHasBeenSet() const { return m_panSequenceNumberHasBeenSet; }
+    inline void SetPanSequenceNumber(const Aws::String& value) { m_panSequenceNumberHasBeenSet = true; m_panSequenceNumber = value; }
+    inline void SetPanSequenceNumber(Aws::String&& value) { m_panSequenceNumberHasBeenSet = true; m_panSequenceNumber = std::move(value); }
+    inline void SetPanSequenceNumber(const char* value) { m_panSequenceNumberHasBeenSet = true; m_panSequenceNumber.assign(value); }
+    inline SessionKeyAmex& WithPanSequenceNumber(const Aws::String& value) { SetPanSequenceNumber(value); return *this;}
+    inline SessionKeyAmex& WithPanSequenceNumber(Aws::String&& value) { SetPanSequenceNumber(std::move(value)); return *this;}
+    inline SessionKeyAmex& WithPanSequenceNumber(const char* value) { SetPanSequenceNumber(value); return *this;}
+    ///@}
+  private:
 
     Aws::String m_primaryAccountNumber;
     bool m_primaryAccountNumberHasBeenSet = false;
+
+    Aws::String m_panSequenceNumber;
+    bool m_panSequenceNumberHasBeenSet = false;
   };
 
 } // namespace Model

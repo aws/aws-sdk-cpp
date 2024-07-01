@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/payment-cryptography-data/PaymentCryptographyData_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/payment-cryptography-data/model/DukptDerivationType.h>
 #include <aws/payment-cryptography-data/model/DukptKeyVariant.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -42,6 +42,22 @@ namespace Model
 
     ///@{
     /**
+     * <p>The unique identifier known as Key Serial Number (KSN) that comes from an
+     * encrypting device using DUKPT encryption method. The KSN is derived from the
+     * encrypting device unique identifier and an internal transaction counter.</p>
+     */
+    inline const Aws::String& GetKeySerialNumber() const{ return m_keySerialNumber; }
+    inline bool KeySerialNumberHasBeenSet() const { return m_keySerialNumberHasBeenSet; }
+    inline void SetKeySerialNumber(const Aws::String& value) { m_keySerialNumberHasBeenSet = true; m_keySerialNumber = value; }
+    inline void SetKeySerialNumber(Aws::String&& value) { m_keySerialNumberHasBeenSet = true; m_keySerialNumber = std::move(value); }
+    inline void SetKeySerialNumber(const char* value) { m_keySerialNumberHasBeenSet = true; m_keySerialNumber.assign(value); }
+    inline DukptDerivationAttributes& WithKeySerialNumber(const Aws::String& value) { SetKeySerialNumber(value); return *this;}
+    inline DukptDerivationAttributes& WithKeySerialNumber(Aws::String&& value) { SetKeySerialNumber(std::move(value)); return *this;}
+    inline DukptDerivationAttributes& WithKeySerialNumber(const char* value) { SetKeySerialNumber(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The key type derived using DUKPT from a Base Derivation Key (BDK) and Key
      * Serial Number (KSN). This must be less than or equal to the strength of the BDK.
      * For example, you can't use <code>AES_128</code> as a derivation type for a BDK
@@ -67,32 +83,16 @@ namespace Model
     inline DukptDerivationAttributes& WithDukptKeyVariant(const DukptKeyVariant& value) { SetDukptKeyVariant(value); return *this;}
     inline DukptDerivationAttributes& WithDukptKeyVariant(DukptKeyVariant&& value) { SetDukptKeyVariant(std::move(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The unique identifier known as Key Serial Number (KSN) that comes from an
-     * encrypting device using DUKPT encryption method. The KSN is derived from the
-     * encrypting device unique identifier and an internal transaction counter.</p>
-     */
-    inline const Aws::String& GetKeySerialNumber() const{ return m_keySerialNumber; }
-    inline bool KeySerialNumberHasBeenSet() const { return m_keySerialNumberHasBeenSet; }
-    inline void SetKeySerialNumber(const Aws::String& value) { m_keySerialNumberHasBeenSet = true; m_keySerialNumber = value; }
-    inline void SetKeySerialNumber(Aws::String&& value) { m_keySerialNumberHasBeenSet = true; m_keySerialNumber = std::move(value); }
-    inline void SetKeySerialNumber(const char* value) { m_keySerialNumberHasBeenSet = true; m_keySerialNumber.assign(value); }
-    inline DukptDerivationAttributes& WithKeySerialNumber(const Aws::String& value) { SetKeySerialNumber(value); return *this;}
-    inline DukptDerivationAttributes& WithKeySerialNumber(Aws::String&& value) { SetKeySerialNumber(std::move(value)); return *this;}
-    inline DukptDerivationAttributes& WithKeySerialNumber(const char* value) { SetKeySerialNumber(value); return *this;}
-    ///@}
   private:
+
+    Aws::String m_keySerialNumber;
+    bool m_keySerialNumberHasBeenSet = false;
 
     DukptDerivationType m_dukptKeyDerivationType;
     bool m_dukptKeyDerivationTypeHasBeenSet = false;
 
     DukptKeyVariant m_dukptKeyVariant;
     bool m_dukptKeyVariantHasBeenSet = false;
-
-    Aws::String m_keySerialNumber;
-    bool m_keySerialNumberHasBeenSet = false;
   };
 
 } // namespace Model

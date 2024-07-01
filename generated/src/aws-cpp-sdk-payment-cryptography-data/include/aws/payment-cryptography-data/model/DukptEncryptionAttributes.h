@@ -5,10 +5,10 @@
 
 #pragma once
 #include <aws/payment-cryptography-data/PaymentCryptographyData_EXPORTS.h>
-#include <aws/payment-cryptography-data/model/DukptDerivationType.h>
-#include <aws/payment-cryptography-data/model/DukptKeyVariant.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/payment-cryptography-data/model/DukptEncryptionMode.h>
+#include <aws/payment-cryptography-data/model/DukptDerivationType.h>
+#include <aws/payment-cryptography-data/model/DukptKeyVariant.h>
 #include <utility>
 
 namespace Aws
@@ -40,6 +40,34 @@ namespace Model
     AWS_PAYMENTCRYPTOGRAPHYDATA_API DukptEncryptionAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PAYMENTCRYPTOGRAPHYDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
+
+    ///@{
+    /**
+     * <p>The unique identifier known as Key Serial Number (KSN) that comes from an
+     * encrypting device using DUKPT encryption method. The KSN is derived from the
+     * encrypting device unique identifier and an internal transaction counter.</p>
+     */
+    inline const Aws::String& GetKeySerialNumber() const{ return m_keySerialNumber; }
+    inline bool KeySerialNumberHasBeenSet() const { return m_keySerialNumberHasBeenSet; }
+    inline void SetKeySerialNumber(const Aws::String& value) { m_keySerialNumberHasBeenSet = true; m_keySerialNumber = value; }
+    inline void SetKeySerialNumber(Aws::String&& value) { m_keySerialNumberHasBeenSet = true; m_keySerialNumber = std::move(value); }
+    inline void SetKeySerialNumber(const char* value) { m_keySerialNumberHasBeenSet = true; m_keySerialNumber.assign(value); }
+    inline DukptEncryptionAttributes& WithKeySerialNumber(const Aws::String& value) { SetKeySerialNumber(value); return *this;}
+    inline DukptEncryptionAttributes& WithKeySerialNumber(Aws::String&& value) { SetKeySerialNumber(std::move(value)); return *this;}
+    inline DukptEncryptionAttributes& WithKeySerialNumber(const char* value) { SetKeySerialNumber(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The block cipher method to use for encryption.</p> <p>The default is CBC.</p>
+     */
+    inline const DukptEncryptionMode& GetMode() const{ return m_mode; }
+    inline bool ModeHasBeenSet() const { return m_modeHasBeenSet; }
+    inline void SetMode(const DukptEncryptionMode& value) { m_modeHasBeenSet = true; m_mode = value; }
+    inline void SetMode(DukptEncryptionMode&& value) { m_modeHasBeenSet = true; m_mode = std::move(value); }
+    inline DukptEncryptionAttributes& WithMode(const DukptEncryptionMode& value) { SetMode(value); return *this;}
+    inline DukptEncryptionAttributes& WithMode(DukptEncryptionMode&& value) { SetMode(std::move(value)); return *this;}
+    ///@}
 
     ///@{
     /**
@@ -83,35 +111,13 @@ namespace Model
     inline DukptEncryptionAttributes& WithInitializationVector(Aws::String&& value) { SetInitializationVector(std::move(value)); return *this;}
     inline DukptEncryptionAttributes& WithInitializationVector(const char* value) { SetInitializationVector(value); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The unique identifier known as Key Serial Number (KSN) that comes from an
-     * encrypting device using DUKPT encryption method. The KSN is derived from the
-     * encrypting device unique identifier and an internal transaction counter.</p>
-     */
-    inline const Aws::String& GetKeySerialNumber() const{ return m_keySerialNumber; }
-    inline bool KeySerialNumberHasBeenSet() const { return m_keySerialNumberHasBeenSet; }
-    inline void SetKeySerialNumber(const Aws::String& value) { m_keySerialNumberHasBeenSet = true; m_keySerialNumber = value; }
-    inline void SetKeySerialNumber(Aws::String&& value) { m_keySerialNumberHasBeenSet = true; m_keySerialNumber = std::move(value); }
-    inline void SetKeySerialNumber(const char* value) { m_keySerialNumberHasBeenSet = true; m_keySerialNumber.assign(value); }
-    inline DukptEncryptionAttributes& WithKeySerialNumber(const Aws::String& value) { SetKeySerialNumber(value); return *this;}
-    inline DukptEncryptionAttributes& WithKeySerialNumber(Aws::String&& value) { SetKeySerialNumber(std::move(value)); return *this;}
-    inline DukptEncryptionAttributes& WithKeySerialNumber(const char* value) { SetKeySerialNumber(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The block cipher method to use for encryption.</p> <p>The default is CBC.</p>
-     */
-    inline const DukptEncryptionMode& GetMode() const{ return m_mode; }
-    inline bool ModeHasBeenSet() const { return m_modeHasBeenSet; }
-    inline void SetMode(const DukptEncryptionMode& value) { m_modeHasBeenSet = true; m_mode = value; }
-    inline void SetMode(DukptEncryptionMode&& value) { m_modeHasBeenSet = true; m_mode = std::move(value); }
-    inline DukptEncryptionAttributes& WithMode(const DukptEncryptionMode& value) { SetMode(value); return *this;}
-    inline DukptEncryptionAttributes& WithMode(DukptEncryptionMode&& value) { SetMode(std::move(value)); return *this;}
-    ///@}
   private:
+
+    Aws::String m_keySerialNumber;
+    bool m_keySerialNumberHasBeenSet = false;
+
+    DukptEncryptionMode m_mode;
+    bool m_modeHasBeenSet = false;
 
     DukptDerivationType m_dukptKeyDerivationType;
     bool m_dukptKeyDerivationTypeHasBeenSet = false;
@@ -121,12 +127,6 @@ namespace Model
 
     Aws::String m_initializationVector;
     bool m_initializationVectorHasBeenSet = false;
-
-    Aws::String m_keySerialNumber;
-    bool m_keySerialNumberHasBeenSet = false;
-
-    DukptEncryptionMode m_mode;
-    bool m_modeHasBeenSet = false;
   };
 
 } // namespace Model
