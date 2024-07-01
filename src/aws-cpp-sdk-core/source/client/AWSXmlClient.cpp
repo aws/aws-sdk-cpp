@@ -189,6 +189,9 @@ AWSError<CoreErrors> AWSXMLClient::BuildAWSError(const std::shared_ptr<Http::Htt
 
         Aws::StringStream ss;
         ss << "No response body.";
+        ss << " tellp = "<<httpResponse->GetResponseBody().tellp();
+        ss << "client error:"<<httpResponse->GetClientErrorType();
+        ss << "client error message:"<<httpResponse->GetClientErrorMessage();
         error = AWSError<CoreErrors>(errorCode, "", ss.str(), IsRetryableHttpResponseCode(responseCode));
     }
     else
