@@ -20,9 +20,9 @@ namespace Model
 
 Ibm3624PinFromOffset::Ibm3624PinFromOffset() : 
     m_decimalizationTableHasBeenSet(false),
-    m_pinOffsetHasBeenSet(false),
+    m_pinValidationDataPadCharacterHasBeenSet(false),
     m_pinValidationDataHasBeenSet(false),
-    m_pinValidationDataPadCharacterHasBeenSet(false)
+    m_pinOffsetHasBeenSet(false)
 {
 }
 
@@ -41,11 +41,11 @@ Ibm3624PinFromOffset& Ibm3624PinFromOffset::operator =(JsonView jsonValue)
     m_decimalizationTableHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("PinOffset"))
+  if(jsonValue.ValueExists("PinValidationDataPadCharacter"))
   {
-    m_pinOffset = jsonValue.GetString("PinOffset");
+    m_pinValidationDataPadCharacter = jsonValue.GetString("PinValidationDataPadCharacter");
 
-    m_pinOffsetHasBeenSet = true;
+    m_pinValidationDataPadCharacterHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("PinValidationData"))
@@ -55,11 +55,11 @@ Ibm3624PinFromOffset& Ibm3624PinFromOffset::operator =(JsonView jsonValue)
     m_pinValidationDataHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("PinValidationDataPadCharacter"))
+  if(jsonValue.ValueExists("PinOffset"))
   {
-    m_pinValidationDataPadCharacter = jsonValue.GetString("PinValidationDataPadCharacter");
+    m_pinOffset = jsonValue.GetString("PinOffset");
 
-    m_pinValidationDataPadCharacterHasBeenSet = true;
+    m_pinOffsetHasBeenSet = true;
   }
 
   return *this;
@@ -75,9 +75,9 @@ JsonValue Ibm3624PinFromOffset::Jsonize() const
 
   }
 
-  if(m_pinOffsetHasBeenSet)
+  if(m_pinValidationDataPadCharacterHasBeenSet)
   {
-   payload.WithString("PinOffset", m_pinOffset);
+   payload.WithString("PinValidationDataPadCharacter", m_pinValidationDataPadCharacter);
 
   }
 
@@ -87,9 +87,9 @@ JsonValue Ibm3624PinFromOffset::Jsonize() const
 
   }
 
-  if(m_pinValidationDataPadCharacterHasBeenSet)
+  if(m_pinOffsetHasBeenSet)
   {
-   payload.WithString("PinValidationDataPadCharacter", m_pinValidationDataPadCharacter);
+   payload.WithString("PinOffset", m_pinOffset);
 
   }
 

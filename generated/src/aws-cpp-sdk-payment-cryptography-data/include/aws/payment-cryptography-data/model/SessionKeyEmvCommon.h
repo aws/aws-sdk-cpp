@@ -40,17 +40,18 @@ namespace Model
 
     ///@{
     /**
-     * <p>The transaction counter that is provided by the terminal during transaction
-     * processing.</p>
+     * <p>The Primary Account Number (PAN) of the cardholder. A PAN is a unique
+     * identifier for a payment credit or debit card and associates the card to a
+     * specific account holder.</p>
      */
-    inline const Aws::String& GetApplicationTransactionCounter() const{ return m_applicationTransactionCounter; }
-    inline bool ApplicationTransactionCounterHasBeenSet() const { return m_applicationTransactionCounterHasBeenSet; }
-    inline void SetApplicationTransactionCounter(const Aws::String& value) { m_applicationTransactionCounterHasBeenSet = true; m_applicationTransactionCounter = value; }
-    inline void SetApplicationTransactionCounter(Aws::String&& value) { m_applicationTransactionCounterHasBeenSet = true; m_applicationTransactionCounter = std::move(value); }
-    inline void SetApplicationTransactionCounter(const char* value) { m_applicationTransactionCounterHasBeenSet = true; m_applicationTransactionCounter.assign(value); }
-    inline SessionKeyEmvCommon& WithApplicationTransactionCounter(const Aws::String& value) { SetApplicationTransactionCounter(value); return *this;}
-    inline SessionKeyEmvCommon& WithApplicationTransactionCounter(Aws::String&& value) { SetApplicationTransactionCounter(std::move(value)); return *this;}
-    inline SessionKeyEmvCommon& WithApplicationTransactionCounter(const char* value) { SetApplicationTransactionCounter(value); return *this;}
+    inline const Aws::String& GetPrimaryAccountNumber() const{ return m_primaryAccountNumber; }
+    inline bool PrimaryAccountNumberHasBeenSet() const { return m_primaryAccountNumberHasBeenSet; }
+    inline void SetPrimaryAccountNumber(const Aws::String& value) { m_primaryAccountNumberHasBeenSet = true; m_primaryAccountNumber = value; }
+    inline void SetPrimaryAccountNumber(Aws::String&& value) { m_primaryAccountNumberHasBeenSet = true; m_primaryAccountNumber = std::move(value); }
+    inline void SetPrimaryAccountNumber(const char* value) { m_primaryAccountNumberHasBeenSet = true; m_primaryAccountNumber.assign(value); }
+    inline SessionKeyEmvCommon& WithPrimaryAccountNumber(const Aws::String& value) { SetPrimaryAccountNumber(value); return *this;}
+    inline SessionKeyEmvCommon& WithPrimaryAccountNumber(Aws::String&& value) { SetPrimaryAccountNumber(std::move(value)); return *this;}
+    inline SessionKeyEmvCommon& WithPrimaryAccountNumber(const char* value) { SetPrimaryAccountNumber(value); return *this;}
     ///@}
 
     ///@{
@@ -70,29 +71,28 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Primary Account Number (PAN) of the cardholder. A PAN is a unique
-     * identifier for a payment credit or debit card and associates the card to a
-     * specific account holder.</p>
+     * <p>The transaction counter that is provided by the terminal during transaction
+     * processing.</p>
      */
-    inline const Aws::String& GetPrimaryAccountNumber() const{ return m_primaryAccountNumber; }
-    inline bool PrimaryAccountNumberHasBeenSet() const { return m_primaryAccountNumberHasBeenSet; }
-    inline void SetPrimaryAccountNumber(const Aws::String& value) { m_primaryAccountNumberHasBeenSet = true; m_primaryAccountNumber = value; }
-    inline void SetPrimaryAccountNumber(Aws::String&& value) { m_primaryAccountNumberHasBeenSet = true; m_primaryAccountNumber = std::move(value); }
-    inline void SetPrimaryAccountNumber(const char* value) { m_primaryAccountNumberHasBeenSet = true; m_primaryAccountNumber.assign(value); }
-    inline SessionKeyEmvCommon& WithPrimaryAccountNumber(const Aws::String& value) { SetPrimaryAccountNumber(value); return *this;}
-    inline SessionKeyEmvCommon& WithPrimaryAccountNumber(Aws::String&& value) { SetPrimaryAccountNumber(std::move(value)); return *this;}
-    inline SessionKeyEmvCommon& WithPrimaryAccountNumber(const char* value) { SetPrimaryAccountNumber(value); return *this;}
+    inline const Aws::String& GetApplicationTransactionCounter() const{ return m_applicationTransactionCounter; }
+    inline bool ApplicationTransactionCounterHasBeenSet() const { return m_applicationTransactionCounterHasBeenSet; }
+    inline void SetApplicationTransactionCounter(const Aws::String& value) { m_applicationTransactionCounterHasBeenSet = true; m_applicationTransactionCounter = value; }
+    inline void SetApplicationTransactionCounter(Aws::String&& value) { m_applicationTransactionCounterHasBeenSet = true; m_applicationTransactionCounter = std::move(value); }
+    inline void SetApplicationTransactionCounter(const char* value) { m_applicationTransactionCounterHasBeenSet = true; m_applicationTransactionCounter.assign(value); }
+    inline SessionKeyEmvCommon& WithApplicationTransactionCounter(const Aws::String& value) { SetApplicationTransactionCounter(value); return *this;}
+    inline SessionKeyEmvCommon& WithApplicationTransactionCounter(Aws::String&& value) { SetApplicationTransactionCounter(std::move(value)); return *this;}
+    inline SessionKeyEmvCommon& WithApplicationTransactionCounter(const char* value) { SetApplicationTransactionCounter(value); return *this;}
     ///@}
   private:
 
-    Aws::String m_applicationTransactionCounter;
-    bool m_applicationTransactionCounterHasBeenSet = false;
+    Aws::String m_primaryAccountNumber;
+    bool m_primaryAccountNumberHasBeenSet = false;
 
     Aws::String m_panSequenceNumber;
     bool m_panSequenceNumberHasBeenSet = false;
 
-    Aws::String m_primaryAccountNumber;
-    bool m_primaryAccountNumberHasBeenSet = false;
+    Aws::String m_applicationTransactionCounter;
+    bool m_applicationTransactionCounterHasBeenSet = false;
   };
 
 } // namespace Model

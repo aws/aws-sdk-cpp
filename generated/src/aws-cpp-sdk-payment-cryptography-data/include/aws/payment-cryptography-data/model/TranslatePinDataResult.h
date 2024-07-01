@@ -34,6 +34,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>The outgoing encrypted PIN block data after translation.</p>
+     */
+    inline const Aws::String& GetPinBlock() const{ return m_pinBlock; }
+    inline void SetPinBlock(const Aws::String& value) { m_pinBlock = value; }
+    inline void SetPinBlock(Aws::String&& value) { m_pinBlock = std::move(value); }
+    inline void SetPinBlock(const char* value) { m_pinBlock.assign(value); }
+    inline TranslatePinDataResult& WithPinBlock(const Aws::String& value) { SetPinBlock(value); return *this;}
+    inline TranslatePinDataResult& WithPinBlock(Aws::String&& value) { SetPinBlock(std::move(value)); return *this;}
+    inline TranslatePinDataResult& WithPinBlock(const char* value) { SetPinBlock(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The <code>keyARN</code> of the encryption key that Amazon Web Services
      * Payment Cryptography uses to encrypt outgoing PIN block data after
      * translation.</p>
@@ -64,19 +77,6 @@ namespace Model
     ///@}
 
     ///@{
-    /**
-     * <p>The outgoing encrypted PIN block data after translation.</p>
-     */
-    inline const Aws::String& GetPinBlock() const{ return m_pinBlock; }
-    inline void SetPinBlock(const Aws::String& value) { m_pinBlock = value; }
-    inline void SetPinBlock(Aws::String&& value) { m_pinBlock = std::move(value); }
-    inline void SetPinBlock(const char* value) { m_pinBlock.assign(value); }
-    inline TranslatePinDataResult& WithPinBlock(const Aws::String& value) { SetPinBlock(value); return *this;}
-    inline TranslatePinDataResult& WithPinBlock(Aws::String&& value) { SetPinBlock(std::move(value)); return *this;}
-    inline TranslatePinDataResult& WithPinBlock(const char* value) { SetPinBlock(value); return *this;}
-    ///@}
-
-    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -88,11 +88,11 @@ namespace Model
     ///@}
   private:
 
+    Aws::String m_pinBlock;
+
     Aws::String m_keyArn;
 
     Aws::String m_keyCheckValue;
-
-    Aws::String m_pinBlock;
 
     Aws::String m_requestId;
   };

@@ -19,14 +19,14 @@ namespace Model
 {
 
 DukptEncryptionAttributes::DukptEncryptionAttributes() : 
+    m_keySerialNumberHasBeenSet(false),
+    m_mode(DukptEncryptionMode::NOT_SET),
+    m_modeHasBeenSet(false),
     m_dukptKeyDerivationType(DukptDerivationType::NOT_SET),
     m_dukptKeyDerivationTypeHasBeenSet(false),
     m_dukptKeyVariant(DukptKeyVariant::NOT_SET),
     m_dukptKeyVariantHasBeenSet(false),
-    m_initializationVectorHasBeenSet(false),
-    m_keySerialNumberHasBeenSet(false),
-    m_mode(DukptEncryptionMode::NOT_SET),
-    m_modeHasBeenSet(false)
+    m_initializationVectorHasBeenSet(false)
 {
 }
 
@@ -38,6 +38,20 @@ DukptEncryptionAttributes::DukptEncryptionAttributes(JsonView jsonValue)
 
 DukptEncryptionAttributes& DukptEncryptionAttributes::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("KeySerialNumber"))
+  {
+    m_keySerialNumber = jsonValue.GetString("KeySerialNumber");
+
+    m_keySerialNumberHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Mode"))
+  {
+    m_mode = DukptEncryptionModeMapper::GetDukptEncryptionModeForName(jsonValue.GetString("Mode"));
+
+    m_modeHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("DukptKeyDerivationType"))
   {
     m_dukptKeyDerivationType = DukptDerivationTypeMapper::GetDukptDerivationTypeForName(jsonValue.GetString("DukptKeyDerivationType"));
@@ -59,26 +73,23 @@ DukptEncryptionAttributes& DukptEncryptionAttributes::operator =(JsonView jsonVa
     m_initializationVectorHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("KeySerialNumber"))
-  {
-    m_keySerialNumber = jsonValue.GetString("KeySerialNumber");
-
-    m_keySerialNumberHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("Mode"))
-  {
-    m_mode = DukptEncryptionModeMapper::GetDukptEncryptionModeForName(jsonValue.GetString("Mode"));
-
-    m_modeHasBeenSet = true;
-  }
-
   return *this;
 }
 
 JsonValue DukptEncryptionAttributes::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_keySerialNumberHasBeenSet)
+  {
+   payload.WithString("KeySerialNumber", m_keySerialNumber);
+
+  }
+
+  if(m_modeHasBeenSet)
+  {
+   payload.WithString("Mode", DukptEncryptionModeMapper::GetNameForDukptEncryptionMode(m_mode));
+  }
 
   if(m_dukptKeyDerivationTypeHasBeenSet)
   {
@@ -94,17 +105,6 @@ JsonValue DukptEncryptionAttributes::Jsonize() const
   {
    payload.WithString("InitializationVector", m_initializationVector);
 
-  }
-
-  if(m_keySerialNumberHasBeenSet)
-  {
-   payload.WithString("KeySerialNumber", m_keySerialNumber);
-
-  }
-
-  if(m_modeHasBeenSet)
-  {
-   payload.WithString("Mode", DukptEncryptionModeMapper::GetNameForDukptEncryptionMode(m_mode));
   }
 
   return payload;

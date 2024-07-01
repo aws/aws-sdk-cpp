@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/payment-cryptography-data/PaymentCryptographyData_EXPORTS.h>
-#include <aws/payment-cryptography-data/model/DukptEncryptionAttributes.h>
 #include <aws/payment-cryptography-data/model/SymmetricEncryptionAttributes.h>
+#include <aws/payment-cryptography-data/model/DukptEncryptionAttributes.h>
 #include <utility>
 
 namespace Aws
@@ -40,16 +40,6 @@ namespace Model
 
 
     ///@{
-    
-    inline const DukptEncryptionAttributes& GetDukpt() const{ return m_dukpt; }
-    inline bool DukptHasBeenSet() const { return m_dukptHasBeenSet; }
-    inline void SetDukpt(const DukptEncryptionAttributes& value) { m_dukptHasBeenSet = true; m_dukpt = value; }
-    inline void SetDukpt(DukptEncryptionAttributes&& value) { m_dukptHasBeenSet = true; m_dukpt = std::move(value); }
-    inline ReEncryptionAttributes& WithDukpt(const DukptEncryptionAttributes& value) { SetDukpt(value); return *this;}
-    inline ReEncryptionAttributes& WithDukpt(DukptEncryptionAttributes&& value) { SetDukpt(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
     /**
      * <p>Parameters that are required to encrypt data using symmetric keys.</p>
      */
@@ -60,13 +50,23 @@ namespace Model
     inline ReEncryptionAttributes& WithSymmetric(const SymmetricEncryptionAttributes& value) { SetSymmetric(value); return *this;}
     inline ReEncryptionAttributes& WithSymmetric(SymmetricEncryptionAttributes&& value) { SetSymmetric(std::move(value)); return *this;}
     ///@}
-  private:
 
-    DukptEncryptionAttributes m_dukpt;
-    bool m_dukptHasBeenSet = false;
+    ///@{
+    
+    inline const DukptEncryptionAttributes& GetDukpt() const{ return m_dukpt; }
+    inline bool DukptHasBeenSet() const { return m_dukptHasBeenSet; }
+    inline void SetDukpt(const DukptEncryptionAttributes& value) { m_dukptHasBeenSet = true; m_dukpt = value; }
+    inline void SetDukpt(DukptEncryptionAttributes&& value) { m_dukptHasBeenSet = true; m_dukpt = std::move(value); }
+    inline ReEncryptionAttributes& WithDukpt(const DukptEncryptionAttributes& value) { SetDukpt(value); return *this;}
+    inline ReEncryptionAttributes& WithDukpt(DukptEncryptionAttributes&& value) { SetDukpt(std::move(value)); return *this;}
+    ///@}
+  private:
 
     SymmetricEncryptionAttributes m_symmetric;
     bool m_symmetricHasBeenSet = false;
+
+    DukptEncryptionAttributes m_dukpt;
+    bool m_dukptHasBeenSet = false;
   };
 
 } // namespace Model

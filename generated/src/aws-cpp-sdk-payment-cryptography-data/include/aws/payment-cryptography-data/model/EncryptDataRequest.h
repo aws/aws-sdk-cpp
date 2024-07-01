@@ -6,8 +6,9 @@
 #pragma once
 #include <aws/payment-cryptography-data/PaymentCryptographyData_EXPORTS.h>
 #include <aws/payment-cryptography-data/PaymentCryptographyDataRequest.h>
-#include <aws/payment-cryptography-data/model/EncryptionDecryptionAttributes.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/payment-cryptography-data/model/EncryptionDecryptionAttributes.h>
+#include <aws/payment-cryptography-data/model/WrappedKey.h>
 #include <utility>
 
 namespace Aws
@@ -35,20 +36,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>The encryption key type and attributes for plaintext encryption.</p>
-     */
-    inline const EncryptionDecryptionAttributes& GetEncryptionAttributes() const{ return m_encryptionAttributes; }
-    inline bool EncryptionAttributesHasBeenSet() const { return m_encryptionAttributesHasBeenSet; }
-    inline void SetEncryptionAttributes(const EncryptionDecryptionAttributes& value) { m_encryptionAttributesHasBeenSet = true; m_encryptionAttributes = value; }
-    inline void SetEncryptionAttributes(EncryptionDecryptionAttributes&& value) { m_encryptionAttributesHasBeenSet = true; m_encryptionAttributes = std::move(value); }
-    inline EncryptDataRequest& WithEncryptionAttributes(const EncryptionDecryptionAttributes& value) { SetEncryptionAttributes(value); return *this;}
-    inline EncryptDataRequest& WithEncryptionAttributes(EncryptionDecryptionAttributes&& value) { SetEncryptionAttributes(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The <code>keyARN</code> of the encryption key that Amazon Web Services
-     * Payment Cryptography uses for plaintext encryption.</p>
+     * Payment Cryptography uses for plaintext encryption.</p> <p>When a
+     * WrappedKeyBlock is provided, this value will be the identifier to the key
+     * wrapping key. Otherwise, it is the key identifier used to perform the
+     * operation.</p>
      */
     inline const Aws::String& GetKeyIdentifier() const{ return m_keyIdentifier; }
     inline bool KeyIdentifierHasBeenSet() const { return m_keyIdentifierHasBeenSet; }
@@ -79,16 +71,44 @@ namespace Model
     inline EncryptDataRequest& WithPlainText(Aws::String&& value) { SetPlainText(std::move(value)); return *this;}
     inline EncryptDataRequest& WithPlainText(const char* value) { SetPlainText(value); return *this;}
     ///@}
-  private:
 
-    EncryptionDecryptionAttributes m_encryptionAttributes;
-    bool m_encryptionAttributesHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The encryption key type and attributes for plaintext encryption.</p>
+     */
+    inline const EncryptionDecryptionAttributes& GetEncryptionAttributes() const{ return m_encryptionAttributes; }
+    inline bool EncryptionAttributesHasBeenSet() const { return m_encryptionAttributesHasBeenSet; }
+    inline void SetEncryptionAttributes(const EncryptionDecryptionAttributes& value) { m_encryptionAttributesHasBeenSet = true; m_encryptionAttributes = value; }
+    inline void SetEncryptionAttributes(EncryptionDecryptionAttributes&& value) { m_encryptionAttributesHasBeenSet = true; m_encryptionAttributes = std::move(value); }
+    inline EncryptDataRequest& WithEncryptionAttributes(const EncryptionDecryptionAttributes& value) { SetEncryptionAttributes(value); return *this;}
+    inline EncryptDataRequest& WithEncryptionAttributes(EncryptionDecryptionAttributes&& value) { SetEncryptionAttributes(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The WrappedKeyBlock containing the encryption key for plaintext
+     * encryption.</p>
+     */
+    inline const WrappedKey& GetWrappedKey() const{ return m_wrappedKey; }
+    inline bool WrappedKeyHasBeenSet() const { return m_wrappedKeyHasBeenSet; }
+    inline void SetWrappedKey(const WrappedKey& value) { m_wrappedKeyHasBeenSet = true; m_wrappedKey = value; }
+    inline void SetWrappedKey(WrappedKey&& value) { m_wrappedKeyHasBeenSet = true; m_wrappedKey = std::move(value); }
+    inline EncryptDataRequest& WithWrappedKey(const WrappedKey& value) { SetWrappedKey(value); return *this;}
+    inline EncryptDataRequest& WithWrappedKey(WrappedKey&& value) { SetWrappedKey(std::move(value)); return *this;}
+    ///@}
+  private:
 
     Aws::String m_keyIdentifier;
     bool m_keyIdentifierHasBeenSet = false;
 
     Aws::String m_plainText;
     bool m_plainTextHasBeenSet = false;
+
+    EncryptionDecryptionAttributes m_encryptionAttributes;
+    bool m_encryptionAttributesHasBeenSet = false;
+
+    WrappedKey m_wrappedKey;
+    bool m_wrappedKeyHasBeenSet = false;
   };
 
 } // namespace Model

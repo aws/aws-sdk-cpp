@@ -15,8 +15,8 @@ using namespace Aws::Utils;
 VerifyCardValidationDataRequest::VerifyCardValidationDataRequest() : 
     m_keyIdentifierHasBeenSet(false),
     m_primaryAccountNumberHasBeenSet(false),
-    m_validationDataHasBeenSet(false),
-    m_verificationAttributesHasBeenSet(false)
+    m_verificationAttributesHasBeenSet(false),
+    m_validationDataHasBeenSet(false)
 {
 }
 
@@ -36,15 +36,15 @@ Aws::String VerifyCardValidationDataRequest::SerializePayload() const
 
   }
 
-  if(m_validationDataHasBeenSet)
-  {
-   payload.WithString("ValidationData", m_validationData);
-
-  }
-
   if(m_verificationAttributesHasBeenSet)
   {
    payload.WithObject("VerificationAttributes", m_verificationAttributes.Jsonize());
+
+  }
+
+  if(m_validationDataHasBeenSet)
+  {
+   payload.WithString("ValidationData", m_validationData);
 
   }
 

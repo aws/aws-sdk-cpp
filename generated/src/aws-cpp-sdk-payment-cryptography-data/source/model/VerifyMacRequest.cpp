@@ -14,11 +14,11 @@ using namespace Aws::Utils;
 
 VerifyMacRequest::VerifyMacRequest() : 
     m_keyIdentifierHasBeenSet(false),
-    m_macHasBeenSet(false),
-    m_macLength(0),
-    m_macLengthHasBeenSet(false),
     m_messageDataHasBeenSet(false),
-    m_verificationAttributesHasBeenSet(false)
+    m_macHasBeenSet(false),
+    m_verificationAttributesHasBeenSet(false),
+    m_macLength(0),
+    m_macLengthHasBeenSet(false)
 {
 }
 
@@ -32,27 +32,27 @@ Aws::String VerifyMacRequest::SerializePayload() const
 
   }
 
-  if(m_macHasBeenSet)
-  {
-   payload.WithString("Mac", m_mac);
-
-  }
-
-  if(m_macLengthHasBeenSet)
-  {
-   payload.WithInteger("MacLength", m_macLength);
-
-  }
-
   if(m_messageDataHasBeenSet)
   {
    payload.WithString("MessageData", m_messageData);
 
   }
 
+  if(m_macHasBeenSet)
+  {
+   payload.WithString("Mac", m_mac);
+
+  }
+
   if(m_verificationAttributesHasBeenSet)
   {
    payload.WithObject("VerificationAttributes", m_verificationAttributes.Jsonize());
+
+  }
+
+  if(m_macLengthHasBeenSet)
+  {
+   payload.WithInteger("MacLength", m_macLength);
 
   }
 

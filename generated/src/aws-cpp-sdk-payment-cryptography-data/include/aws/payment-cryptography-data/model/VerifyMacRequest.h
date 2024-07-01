@@ -50,30 +50,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The MAC being verified.</p>
-     */
-    inline const Aws::String& GetMac() const{ return m_mac; }
-    inline bool MacHasBeenSet() const { return m_macHasBeenSet; }
-    inline void SetMac(const Aws::String& value) { m_macHasBeenSet = true; m_mac = value; }
-    inline void SetMac(Aws::String&& value) { m_macHasBeenSet = true; m_mac = std::move(value); }
-    inline void SetMac(const char* value) { m_macHasBeenSet = true; m_mac.assign(value); }
-    inline VerifyMacRequest& WithMac(const Aws::String& value) { SetMac(value); return *this;}
-    inline VerifyMacRequest& WithMac(Aws::String&& value) { SetMac(std::move(value)); return *this;}
-    inline VerifyMacRequest& WithMac(const char* value) { SetMac(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The length of the MAC.</p>
-     */
-    inline int GetMacLength() const{ return m_macLength; }
-    inline bool MacLengthHasBeenSet() const { return m_macLengthHasBeenSet; }
-    inline void SetMacLength(int value) { m_macLengthHasBeenSet = true; m_macLength = value; }
-    inline VerifyMacRequest& WithMacLength(int value) { SetMacLength(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The data on for which MAC is under verification. This value must be
      * hexBinary.</p>
      */
@@ -89,6 +65,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The MAC being verified.</p>
+     */
+    inline const Aws::String& GetMac() const{ return m_mac; }
+    inline bool MacHasBeenSet() const { return m_macHasBeenSet; }
+    inline void SetMac(const Aws::String& value) { m_macHasBeenSet = true; m_mac = value; }
+    inline void SetMac(Aws::String&& value) { m_macHasBeenSet = true; m_mac = std::move(value); }
+    inline void SetMac(const char* value) { m_macHasBeenSet = true; m_mac.assign(value); }
+    inline VerifyMacRequest& WithMac(const Aws::String& value) { SetMac(value); return *this;}
+    inline VerifyMacRequest& WithMac(Aws::String&& value) { SetMac(std::move(value)); return *this;}
+    inline VerifyMacRequest& WithMac(const char* value) { SetMac(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The attributes and data values to use for MAC verification within Amazon Web
      * Services Payment Cryptography.</p>
      */
@@ -99,22 +89,32 @@ namespace Model
     inline VerifyMacRequest& WithVerificationAttributes(const MacAttributes& value) { SetVerificationAttributes(value); return *this;}
     inline VerifyMacRequest& WithVerificationAttributes(MacAttributes&& value) { SetVerificationAttributes(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The length of the MAC.</p>
+     */
+    inline int GetMacLength() const{ return m_macLength; }
+    inline bool MacLengthHasBeenSet() const { return m_macLengthHasBeenSet; }
+    inline void SetMacLength(int value) { m_macLengthHasBeenSet = true; m_macLength = value; }
+    inline VerifyMacRequest& WithMacLength(int value) { SetMacLength(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_keyIdentifier;
     bool m_keyIdentifierHasBeenSet = false;
 
-    Aws::String m_mac;
-    bool m_macHasBeenSet = false;
-
-    int m_macLength;
-    bool m_macLengthHasBeenSet = false;
-
     Aws::String m_messageData;
     bool m_messageDataHasBeenSet = false;
 
+    Aws::String m_mac;
+    bool m_macHasBeenSet = false;
+
     MacAttributes m_verificationAttributes;
     bool m_verificationAttributesHasBeenSet = false;
+
+    int m_macLength;
+    bool m_macLengthHasBeenSet = false;
   };
 
 } // namespace Model

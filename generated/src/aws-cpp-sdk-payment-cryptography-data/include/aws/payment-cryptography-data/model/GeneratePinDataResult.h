@@ -35,18 +35,32 @@ namespace Model
 
     ///@{
     /**
-     * <p>The PIN block encrypted under PEK from Amazon Web Services Payment
-     * Cryptography. The encrypted PIN block is a composite of PAN (Primary Account
-     * Number) and PIN (Personal Identification Number), generated in accordance with
-     * ISO 9564 standard.</p>
+     * <p>The <code>keyARN</code> of the pin data generation key that Amazon Web
+     * Services Payment Cryptography uses for PIN, PVV or PIN Offset generation.</p>
      */
-    inline const Aws::String& GetEncryptedPinBlock() const{ return m_encryptedPinBlock; }
-    inline void SetEncryptedPinBlock(const Aws::String& value) { m_encryptedPinBlock = value; }
-    inline void SetEncryptedPinBlock(Aws::String&& value) { m_encryptedPinBlock = std::move(value); }
-    inline void SetEncryptedPinBlock(const char* value) { m_encryptedPinBlock.assign(value); }
-    inline GeneratePinDataResult& WithEncryptedPinBlock(const Aws::String& value) { SetEncryptedPinBlock(value); return *this;}
-    inline GeneratePinDataResult& WithEncryptedPinBlock(Aws::String&& value) { SetEncryptedPinBlock(std::move(value)); return *this;}
-    inline GeneratePinDataResult& WithEncryptedPinBlock(const char* value) { SetEncryptedPinBlock(value); return *this;}
+    inline const Aws::String& GetGenerationKeyArn() const{ return m_generationKeyArn; }
+    inline void SetGenerationKeyArn(const Aws::String& value) { m_generationKeyArn = value; }
+    inline void SetGenerationKeyArn(Aws::String&& value) { m_generationKeyArn = std::move(value); }
+    inline void SetGenerationKeyArn(const char* value) { m_generationKeyArn.assign(value); }
+    inline GeneratePinDataResult& WithGenerationKeyArn(const Aws::String& value) { SetGenerationKeyArn(value); return *this;}
+    inline GeneratePinDataResult& WithGenerationKeyArn(Aws::String&& value) { SetGenerationKeyArn(std::move(value)); return *this;}
+    inline GeneratePinDataResult& WithGenerationKeyArn(const char* value) { SetGenerationKeyArn(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The key check value (KCV) of the encryption key. The KCV is used to check if
+     * all parties holding a given key have the same key or to detect that a key has
+     * changed.</p> <p>Amazon Web Services Payment Cryptography computes the KCV
+     * according to the CMAC specification.</p>
+     */
+    inline const Aws::String& GetGenerationKeyCheckValue() const{ return m_generationKeyCheckValue; }
+    inline void SetGenerationKeyCheckValue(const Aws::String& value) { m_generationKeyCheckValue = value; }
+    inline void SetGenerationKeyCheckValue(Aws::String&& value) { m_generationKeyCheckValue = std::move(value); }
+    inline void SetGenerationKeyCheckValue(const char* value) { m_generationKeyCheckValue.assign(value); }
+    inline GeneratePinDataResult& WithGenerationKeyCheckValue(const Aws::String& value) { SetGenerationKeyCheckValue(value); return *this;}
+    inline GeneratePinDataResult& WithGenerationKeyCheckValue(Aws::String&& value) { SetGenerationKeyCheckValue(std::move(value)); return *this;}
+    inline GeneratePinDataResult& WithGenerationKeyCheckValue(const char* value) { SetGenerationKeyCheckValue(value); return *this;}
     ///@}
 
     ///@{
@@ -81,32 +95,18 @@ namespace Model
 
     ///@{
     /**
-     * <p>The <code>keyARN</code> of the pin data generation key that Amazon Web
-     * Services Payment Cryptography uses for PIN, PVV or PIN Offset generation.</p>
+     * <p>The PIN block encrypted under PEK from Amazon Web Services Payment
+     * Cryptography. The encrypted PIN block is a composite of PAN (Primary Account
+     * Number) and PIN (Personal Identification Number), generated in accordance with
+     * ISO 9564 standard.</p>
      */
-    inline const Aws::String& GetGenerationKeyArn() const{ return m_generationKeyArn; }
-    inline void SetGenerationKeyArn(const Aws::String& value) { m_generationKeyArn = value; }
-    inline void SetGenerationKeyArn(Aws::String&& value) { m_generationKeyArn = std::move(value); }
-    inline void SetGenerationKeyArn(const char* value) { m_generationKeyArn.assign(value); }
-    inline GeneratePinDataResult& WithGenerationKeyArn(const Aws::String& value) { SetGenerationKeyArn(value); return *this;}
-    inline GeneratePinDataResult& WithGenerationKeyArn(Aws::String&& value) { SetGenerationKeyArn(std::move(value)); return *this;}
-    inline GeneratePinDataResult& WithGenerationKeyArn(const char* value) { SetGenerationKeyArn(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The key check value (KCV) of the encryption key. The KCV is used to check if
-     * all parties holding a given key have the same key or to detect that a key has
-     * changed.</p> <p>Amazon Web Services Payment Cryptography computes the KCV
-     * according to the CMAC specification.</p>
-     */
-    inline const Aws::String& GetGenerationKeyCheckValue() const{ return m_generationKeyCheckValue; }
-    inline void SetGenerationKeyCheckValue(const Aws::String& value) { m_generationKeyCheckValue = value; }
-    inline void SetGenerationKeyCheckValue(Aws::String&& value) { m_generationKeyCheckValue = std::move(value); }
-    inline void SetGenerationKeyCheckValue(const char* value) { m_generationKeyCheckValue.assign(value); }
-    inline GeneratePinDataResult& WithGenerationKeyCheckValue(const Aws::String& value) { SetGenerationKeyCheckValue(value); return *this;}
-    inline GeneratePinDataResult& WithGenerationKeyCheckValue(Aws::String&& value) { SetGenerationKeyCheckValue(std::move(value)); return *this;}
-    inline GeneratePinDataResult& WithGenerationKeyCheckValue(const char* value) { SetGenerationKeyCheckValue(value); return *this;}
+    inline const Aws::String& GetEncryptedPinBlock() const{ return m_encryptedPinBlock; }
+    inline void SetEncryptedPinBlock(const Aws::String& value) { m_encryptedPinBlock = value; }
+    inline void SetEncryptedPinBlock(Aws::String&& value) { m_encryptedPinBlock = std::move(value); }
+    inline void SetEncryptedPinBlock(const char* value) { m_encryptedPinBlock.assign(value); }
+    inline GeneratePinDataResult& WithEncryptedPinBlock(const Aws::String& value) { SetEncryptedPinBlock(value); return *this;}
+    inline GeneratePinDataResult& WithEncryptedPinBlock(Aws::String&& value) { SetEncryptedPinBlock(std::move(value)); return *this;}
+    inline GeneratePinDataResult& WithEncryptedPinBlock(const char* value) { SetEncryptedPinBlock(value); return *this;}
     ///@}
 
     ///@{
@@ -133,15 +133,15 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_encryptedPinBlock;
+    Aws::String m_generationKeyArn;
+
+    Aws::String m_generationKeyCheckValue;
 
     Aws::String m_encryptionKeyArn;
 
     Aws::String m_encryptionKeyCheckValue;
 
-    Aws::String m_generationKeyArn;
-
-    Aws::String m_generationKeyCheckValue;
+    Aws::String m_encryptedPinBlock;
 
     PinData m_pinData;
 

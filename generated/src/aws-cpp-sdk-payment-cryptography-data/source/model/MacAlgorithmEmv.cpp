@@ -21,8 +21,8 @@ namespace Model
 MacAlgorithmEmv::MacAlgorithmEmv() : 
     m_majorKeyDerivationMode(MajorKeyDerivationMode::NOT_SET),
     m_majorKeyDerivationModeHasBeenSet(false),
-    m_panSequenceNumberHasBeenSet(false),
     m_primaryAccountNumberHasBeenSet(false),
+    m_panSequenceNumberHasBeenSet(false),
     m_sessionKeyDerivationMode(SessionKeyDerivationMode::NOT_SET),
     m_sessionKeyDerivationModeHasBeenSet(false),
     m_sessionKeyDerivationValueHasBeenSet(false)
@@ -44,18 +44,18 @@ MacAlgorithmEmv& MacAlgorithmEmv::operator =(JsonView jsonValue)
     m_majorKeyDerivationModeHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("PanSequenceNumber"))
-  {
-    m_panSequenceNumber = jsonValue.GetString("PanSequenceNumber");
-
-    m_panSequenceNumberHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("PrimaryAccountNumber"))
   {
     m_primaryAccountNumber = jsonValue.GetString("PrimaryAccountNumber");
 
     m_primaryAccountNumberHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("PanSequenceNumber"))
+  {
+    m_panSequenceNumber = jsonValue.GetString("PanSequenceNumber");
+
+    m_panSequenceNumberHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("SessionKeyDerivationMode"))
@@ -84,15 +84,15 @@ JsonValue MacAlgorithmEmv::Jsonize() const
    payload.WithString("MajorKeyDerivationMode", MajorKeyDerivationModeMapper::GetNameForMajorKeyDerivationMode(m_majorKeyDerivationMode));
   }
 
-  if(m_panSequenceNumberHasBeenSet)
-  {
-   payload.WithString("PanSequenceNumber", m_panSequenceNumber);
-
-  }
-
   if(m_primaryAccountNumberHasBeenSet)
   {
    payload.WithString("PrimaryAccountNumber", m_primaryAccountNumber);
+
+  }
+
+  if(m_panSequenceNumberHasBeenSet)
+  {
+   payload.WithString("PanSequenceNumber", m_panSequenceNumber);
 
   }
 

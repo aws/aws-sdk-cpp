@@ -19,14 +19,14 @@ namespace Model
 {
 
 EmvEncryptionAttributes::EmvEncryptionAttributes() : 
-    m_initializationVectorHasBeenSet(false),
     m_majorKeyDerivationMode(EmvMajorKeyDerivationMode::NOT_SET),
     m_majorKeyDerivationModeHasBeenSet(false),
+    m_primaryAccountNumberHasBeenSet(false),
+    m_panSequenceNumberHasBeenSet(false),
+    m_sessionDerivationDataHasBeenSet(false),
     m_mode(EmvEncryptionMode::NOT_SET),
     m_modeHasBeenSet(false),
-    m_panSequenceNumberHasBeenSet(false),
-    m_primaryAccountNumberHasBeenSet(false),
-    m_sessionDerivationDataHasBeenSet(false)
+    m_initializationVectorHasBeenSet(false)
 {
 }
 
@@ -38,32 +38,11 @@ EmvEncryptionAttributes::EmvEncryptionAttributes(JsonView jsonValue)
 
 EmvEncryptionAttributes& EmvEncryptionAttributes::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("InitializationVector"))
-  {
-    m_initializationVector = jsonValue.GetString("InitializationVector");
-
-    m_initializationVectorHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("MajorKeyDerivationMode"))
   {
     m_majorKeyDerivationMode = EmvMajorKeyDerivationModeMapper::GetEmvMajorKeyDerivationModeForName(jsonValue.GetString("MajorKeyDerivationMode"));
 
     m_majorKeyDerivationModeHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("Mode"))
-  {
-    m_mode = EmvEncryptionModeMapper::GetEmvEncryptionModeForName(jsonValue.GetString("Mode"));
-
-    m_modeHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("PanSequenceNumber"))
-  {
-    m_panSequenceNumber = jsonValue.GetString("PanSequenceNumber");
-
-    m_panSequenceNumberHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("PrimaryAccountNumber"))
@@ -73,11 +52,32 @@ EmvEncryptionAttributes& EmvEncryptionAttributes::operator =(JsonView jsonValue)
     m_primaryAccountNumberHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("PanSequenceNumber"))
+  {
+    m_panSequenceNumber = jsonValue.GetString("PanSequenceNumber");
+
+    m_panSequenceNumberHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("SessionDerivationData"))
   {
     m_sessionDerivationData = jsonValue.GetString("SessionDerivationData");
 
     m_sessionDerivationDataHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Mode"))
+  {
+    m_mode = EmvEncryptionModeMapper::GetEmvEncryptionModeForName(jsonValue.GetString("Mode"));
+
+    m_modeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("InitializationVector"))
+  {
+    m_initializationVector = jsonValue.GetString("InitializationVector");
+
+    m_initializationVectorHasBeenSet = true;
   }
 
   return *this;
@@ -87,26 +87,9 @@ JsonValue EmvEncryptionAttributes::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_initializationVectorHasBeenSet)
-  {
-   payload.WithString("InitializationVector", m_initializationVector);
-
-  }
-
   if(m_majorKeyDerivationModeHasBeenSet)
   {
    payload.WithString("MajorKeyDerivationMode", EmvMajorKeyDerivationModeMapper::GetNameForEmvMajorKeyDerivationMode(m_majorKeyDerivationMode));
-  }
-
-  if(m_modeHasBeenSet)
-  {
-   payload.WithString("Mode", EmvEncryptionModeMapper::GetNameForEmvEncryptionMode(m_mode));
-  }
-
-  if(m_panSequenceNumberHasBeenSet)
-  {
-   payload.WithString("PanSequenceNumber", m_panSequenceNumber);
-
   }
 
   if(m_primaryAccountNumberHasBeenSet)
@@ -115,9 +98,26 @@ JsonValue EmvEncryptionAttributes::Jsonize() const
 
   }
 
+  if(m_panSequenceNumberHasBeenSet)
+  {
+   payload.WithString("PanSequenceNumber", m_panSequenceNumber);
+
+  }
+
   if(m_sessionDerivationDataHasBeenSet)
   {
    payload.WithString("SessionDerivationData", m_sessionDerivationData);
+
+  }
+
+  if(m_modeHasBeenSet)
+  {
+   payload.WithString("Mode", EmvEncryptionModeMapper::GetNameForEmvEncryptionMode(m_mode));
+  }
+
+  if(m_initializationVectorHasBeenSet)
+  {
+   payload.WithString("InitializationVector", m_initializationVector);
 
   }
 

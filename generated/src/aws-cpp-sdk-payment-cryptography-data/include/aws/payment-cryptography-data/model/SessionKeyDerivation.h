@@ -5,10 +5,10 @@
 
 #pragma once
 #include <aws/payment-cryptography-data/PaymentCryptographyData_EXPORTS.h>
-#include <aws/payment-cryptography-data/model/SessionKeyAmex.h>
-#include <aws/payment-cryptography-data/model/SessionKeyEmv2000.h>
 #include <aws/payment-cryptography-data/model/SessionKeyEmvCommon.h>
 #include <aws/payment-cryptography-data/model/SessionKeyMastercard.h>
+#include <aws/payment-cryptography-data/model/SessionKeyEmv2000.h>
+#include <aws/payment-cryptography-data/model/SessionKeyAmex.h>
 #include <aws/payment-cryptography-data/model/SessionKeyVisa.h>
 #include <utility>
 
@@ -44,32 +44,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Parameters to derive session key for an Amex payment card for ARQC
-     * verification.</p>
-     */
-    inline const SessionKeyAmex& GetAmex() const{ return m_amex; }
-    inline bool AmexHasBeenSet() const { return m_amexHasBeenSet; }
-    inline void SetAmex(const SessionKeyAmex& value) { m_amexHasBeenSet = true; m_amex = value; }
-    inline void SetAmex(SessionKeyAmex&& value) { m_amexHasBeenSet = true; m_amex = std::move(value); }
-    inline SessionKeyDerivation& WithAmex(const SessionKeyAmex& value) { SetAmex(value); return *this;}
-    inline SessionKeyDerivation& WithAmex(SessionKeyAmex&& value) { SetAmex(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Parameters to derive session key for an Emv2000 payment card for ARQC
-     * verification.</p>
-     */
-    inline const SessionKeyEmv2000& GetEmv2000() const{ return m_emv2000; }
-    inline bool Emv2000HasBeenSet() const { return m_emv2000HasBeenSet; }
-    inline void SetEmv2000(const SessionKeyEmv2000& value) { m_emv2000HasBeenSet = true; m_emv2000 = value; }
-    inline void SetEmv2000(SessionKeyEmv2000&& value) { m_emv2000HasBeenSet = true; m_emv2000 = std::move(value); }
-    inline SessionKeyDerivation& WithEmv2000(const SessionKeyEmv2000& value) { SetEmv2000(value); return *this;}
-    inline SessionKeyDerivation& WithEmv2000(SessionKeyEmv2000&& value) { SetEmv2000(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Parameters to derive session key for an Emv common payment card for ARQC
      * verification.</p>
      */
@@ -96,6 +70,32 @@ namespace Model
 
     ///@{
     /**
+     * <p>Parameters to derive session key for an Emv2000 payment card for ARQC
+     * verification.</p>
+     */
+    inline const SessionKeyEmv2000& GetEmv2000() const{ return m_emv2000; }
+    inline bool Emv2000HasBeenSet() const { return m_emv2000HasBeenSet; }
+    inline void SetEmv2000(const SessionKeyEmv2000& value) { m_emv2000HasBeenSet = true; m_emv2000 = value; }
+    inline void SetEmv2000(SessionKeyEmv2000&& value) { m_emv2000HasBeenSet = true; m_emv2000 = std::move(value); }
+    inline SessionKeyDerivation& WithEmv2000(const SessionKeyEmv2000& value) { SetEmv2000(value); return *this;}
+    inline SessionKeyDerivation& WithEmv2000(SessionKeyEmv2000&& value) { SetEmv2000(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Parameters to derive session key for an Amex payment card for ARQC
+     * verification.</p>
+     */
+    inline const SessionKeyAmex& GetAmex() const{ return m_amex; }
+    inline bool AmexHasBeenSet() const { return m_amexHasBeenSet; }
+    inline void SetAmex(const SessionKeyAmex& value) { m_amexHasBeenSet = true; m_amex = value; }
+    inline void SetAmex(SessionKeyAmex&& value) { m_amexHasBeenSet = true; m_amex = std::move(value); }
+    inline SessionKeyDerivation& WithAmex(const SessionKeyAmex& value) { SetAmex(value); return *this;}
+    inline SessionKeyDerivation& WithAmex(SessionKeyAmex&& value) { SetAmex(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Parameters to derive session key for a Visa payment cardfor ARQC
      * verification.</p>
      */
@@ -108,17 +108,17 @@ namespace Model
     ///@}
   private:
 
-    SessionKeyAmex m_amex;
-    bool m_amexHasBeenSet = false;
-
-    SessionKeyEmv2000 m_emv2000;
-    bool m_emv2000HasBeenSet = false;
-
     SessionKeyEmvCommon m_emvCommon;
     bool m_emvCommonHasBeenSet = false;
 
     SessionKeyMastercard m_mastercard;
     bool m_mastercardHasBeenSet = false;
+
+    SessionKeyEmv2000 m_emv2000;
+    bool m_emv2000HasBeenSet = false;
+
+    SessionKeyAmex m_amex;
+    bool m_amexHasBeenSet = false;
 
     SessionKeyVisa m_visa;
     bool m_visaHasBeenSet = false;

@@ -7,12 +7,12 @@
 #include <aws/payment-cryptography-data/PaymentCryptographyData_EXPORTS.h>
 #include <aws/payment-cryptography-data/model/AmexCardSecurityCodeVersion1.h>
 #include <aws/payment-cryptography-data/model/AmexCardSecurityCodeVersion2.h>
-#include <aws/payment-cryptography-data/model/CardHolderVerificationValue.h>
 #include <aws/payment-cryptography-data/model/CardVerificationValue1.h>
 #include <aws/payment-cryptography-data/model/CardVerificationValue2.h>
-#include <aws/payment-cryptography-data/model/DiscoverDynamicCardVerificationCode.h>
+#include <aws/payment-cryptography-data/model/CardHolderVerificationValue.h>
 #include <aws/payment-cryptography-data/model/DynamicCardVerificationCode.h>
 #include <aws/payment-cryptography-data/model/DynamicCardVerificationValue.h>
+#include <aws/payment-cryptography-data/model/DiscoverDynamicCardVerificationCode.h>
 #include <utility>
 
 namespace Aws
@@ -71,19 +71,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Card data parameters that are required to verify a cardholder verification
-     * value for the payment card.</p>
-     */
-    inline const CardHolderVerificationValue& GetCardHolderVerificationValue() const{ return m_cardHolderVerificationValue; }
-    inline bool CardHolderVerificationValueHasBeenSet() const { return m_cardHolderVerificationValueHasBeenSet; }
-    inline void SetCardHolderVerificationValue(const CardHolderVerificationValue& value) { m_cardHolderVerificationValueHasBeenSet = true; m_cardHolderVerificationValue = value; }
-    inline void SetCardHolderVerificationValue(CardHolderVerificationValue&& value) { m_cardHolderVerificationValueHasBeenSet = true; m_cardHolderVerificationValue = std::move(value); }
-    inline CardVerificationAttributes& WithCardHolderVerificationValue(const CardHolderVerificationValue& value) { SetCardHolderVerificationValue(value); return *this;}
-    inline CardVerificationAttributes& WithCardHolderVerificationValue(CardHolderVerificationValue&& value) { SetCardHolderVerificationValue(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Card data parameters that are required to verify Card Verification Value
      * (CVV) for the payment card.</p>
      */
@@ -110,15 +97,15 @@ namespace Model
 
     ///@{
     /**
-     * <p>Card data parameters that are required to verify CDynamic Card Verification
-     * Code (dCVC) for the payment card.</p>
+     * <p>Card data parameters that are required to verify a cardholder verification
+     * value for the payment card.</p>
      */
-    inline const DiscoverDynamicCardVerificationCode& GetDiscoverDynamicCardVerificationCode() const{ return m_discoverDynamicCardVerificationCode; }
-    inline bool DiscoverDynamicCardVerificationCodeHasBeenSet() const { return m_discoverDynamicCardVerificationCodeHasBeenSet; }
-    inline void SetDiscoverDynamicCardVerificationCode(const DiscoverDynamicCardVerificationCode& value) { m_discoverDynamicCardVerificationCodeHasBeenSet = true; m_discoverDynamicCardVerificationCode = value; }
-    inline void SetDiscoverDynamicCardVerificationCode(DiscoverDynamicCardVerificationCode&& value) { m_discoverDynamicCardVerificationCodeHasBeenSet = true; m_discoverDynamicCardVerificationCode = std::move(value); }
-    inline CardVerificationAttributes& WithDiscoverDynamicCardVerificationCode(const DiscoverDynamicCardVerificationCode& value) { SetDiscoverDynamicCardVerificationCode(value); return *this;}
-    inline CardVerificationAttributes& WithDiscoverDynamicCardVerificationCode(DiscoverDynamicCardVerificationCode&& value) { SetDiscoverDynamicCardVerificationCode(std::move(value)); return *this;}
+    inline const CardHolderVerificationValue& GetCardHolderVerificationValue() const{ return m_cardHolderVerificationValue; }
+    inline bool CardHolderVerificationValueHasBeenSet() const { return m_cardHolderVerificationValueHasBeenSet; }
+    inline void SetCardHolderVerificationValue(const CardHolderVerificationValue& value) { m_cardHolderVerificationValueHasBeenSet = true; m_cardHolderVerificationValue = value; }
+    inline void SetCardHolderVerificationValue(CardHolderVerificationValue&& value) { m_cardHolderVerificationValueHasBeenSet = true; m_cardHolderVerificationValue = std::move(value); }
+    inline CardVerificationAttributes& WithCardHolderVerificationValue(const CardHolderVerificationValue& value) { SetCardHolderVerificationValue(value); return *this;}
+    inline CardVerificationAttributes& WithCardHolderVerificationValue(CardHolderVerificationValue&& value) { SetCardHolderVerificationValue(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -146,6 +133,19 @@ namespace Model
     inline CardVerificationAttributes& WithDynamicCardVerificationValue(const DynamicCardVerificationValue& value) { SetDynamicCardVerificationValue(value); return *this;}
     inline CardVerificationAttributes& WithDynamicCardVerificationValue(DynamicCardVerificationValue&& value) { SetDynamicCardVerificationValue(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Card data parameters that are required to verify CDynamic Card Verification
+     * Code (dCVC) for the payment card.</p>
+     */
+    inline const DiscoverDynamicCardVerificationCode& GetDiscoverDynamicCardVerificationCode() const{ return m_discoverDynamicCardVerificationCode; }
+    inline bool DiscoverDynamicCardVerificationCodeHasBeenSet() const { return m_discoverDynamicCardVerificationCodeHasBeenSet; }
+    inline void SetDiscoverDynamicCardVerificationCode(const DiscoverDynamicCardVerificationCode& value) { m_discoverDynamicCardVerificationCodeHasBeenSet = true; m_discoverDynamicCardVerificationCode = value; }
+    inline void SetDiscoverDynamicCardVerificationCode(DiscoverDynamicCardVerificationCode&& value) { m_discoverDynamicCardVerificationCodeHasBeenSet = true; m_discoverDynamicCardVerificationCode = std::move(value); }
+    inline CardVerificationAttributes& WithDiscoverDynamicCardVerificationCode(const DiscoverDynamicCardVerificationCode& value) { SetDiscoverDynamicCardVerificationCode(value); return *this;}
+    inline CardVerificationAttributes& WithDiscoverDynamicCardVerificationCode(DiscoverDynamicCardVerificationCode&& value) { SetDiscoverDynamicCardVerificationCode(std::move(value)); return *this;}
+    ///@}
   private:
 
     AmexCardSecurityCodeVersion1 m_amexCardSecurityCodeVersion1;
@@ -154,23 +154,23 @@ namespace Model
     AmexCardSecurityCodeVersion2 m_amexCardSecurityCodeVersion2;
     bool m_amexCardSecurityCodeVersion2HasBeenSet = false;
 
-    CardHolderVerificationValue m_cardHolderVerificationValue;
-    bool m_cardHolderVerificationValueHasBeenSet = false;
-
     CardVerificationValue1 m_cardVerificationValue1;
     bool m_cardVerificationValue1HasBeenSet = false;
 
     CardVerificationValue2 m_cardVerificationValue2;
     bool m_cardVerificationValue2HasBeenSet = false;
 
-    DiscoverDynamicCardVerificationCode m_discoverDynamicCardVerificationCode;
-    bool m_discoverDynamicCardVerificationCodeHasBeenSet = false;
+    CardHolderVerificationValue m_cardHolderVerificationValue;
+    bool m_cardHolderVerificationValueHasBeenSet = false;
 
     DynamicCardVerificationCode m_dynamicCardVerificationCode;
     bool m_dynamicCardVerificationCodeHasBeenSet = false;
 
     DynamicCardVerificationValue m_dynamicCardVerificationValue;
     bool m_dynamicCardVerificationValueHasBeenSet = false;
+
+    DiscoverDynamicCardVerificationCode m_discoverDynamicCardVerificationCode;
+    bool m_discoverDynamicCardVerificationCodeHasBeenSet = false;
   };
 
 } // namespace Model

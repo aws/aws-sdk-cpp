@@ -13,16 +13,16 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 VerifyPinDataRequest::VerifyPinDataRequest() : 
-    m_dukptAttributesHasBeenSet(false),
-    m_encryptedPinBlockHasBeenSet(false),
+    m_verificationKeyIdentifierHasBeenSet(false),
     m_encryptionKeyIdentifierHasBeenSet(false),
+    m_verificationAttributesHasBeenSet(false),
+    m_encryptedPinBlockHasBeenSet(false),
+    m_primaryAccountNumberHasBeenSet(false),
     m_pinBlockFormat(PinBlockFormatForPinData::NOT_SET),
     m_pinBlockFormatHasBeenSet(false),
     m_pinDataLength(0),
     m_pinDataLengthHasBeenSet(false),
-    m_primaryAccountNumberHasBeenSet(false),
-    m_verificationAttributesHasBeenSet(false),
-    m_verificationKeyIdentifierHasBeenSet(false)
+    m_dukptAttributesHasBeenSet(false)
 {
 }
 
@@ -30,9 +30,21 @@ Aws::String VerifyPinDataRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_dukptAttributesHasBeenSet)
+  if(m_verificationKeyIdentifierHasBeenSet)
   {
-   payload.WithObject("DukptAttributes", m_dukptAttributes.Jsonize());
+   payload.WithString("VerificationKeyIdentifier", m_verificationKeyIdentifier);
+
+  }
+
+  if(m_encryptionKeyIdentifierHasBeenSet)
+  {
+   payload.WithString("EncryptionKeyIdentifier", m_encryptionKeyIdentifier);
+
+  }
+
+  if(m_verificationAttributesHasBeenSet)
+  {
+   payload.WithObject("VerificationAttributes", m_verificationAttributes.Jsonize());
 
   }
 
@@ -42,9 +54,9 @@ Aws::String VerifyPinDataRequest::SerializePayload() const
 
   }
 
-  if(m_encryptionKeyIdentifierHasBeenSet)
+  if(m_primaryAccountNumberHasBeenSet)
   {
-   payload.WithString("EncryptionKeyIdentifier", m_encryptionKeyIdentifier);
+   payload.WithString("PrimaryAccountNumber", m_primaryAccountNumber);
 
   }
 
@@ -59,21 +71,9 @@ Aws::String VerifyPinDataRequest::SerializePayload() const
 
   }
 
-  if(m_primaryAccountNumberHasBeenSet)
+  if(m_dukptAttributesHasBeenSet)
   {
-   payload.WithString("PrimaryAccountNumber", m_primaryAccountNumber);
-
-  }
-
-  if(m_verificationAttributesHasBeenSet)
-  {
-   payload.WithObject("VerificationAttributes", m_verificationAttributes.Jsonize());
-
-  }
-
-  if(m_verificationKeyIdentifierHasBeenSet)
-  {
-   payload.WithString("VerificationKeyIdentifier", m_verificationKeyIdentifier);
+   payload.WithObject("DukptAttributes", m_dukptAttributes.Jsonize());
 
   }
 

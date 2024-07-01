@@ -34,7 +34,9 @@ namespace Model
    * inspect using the rule's inspection criteria. WAF inspects only the parts of the
    * JSON that result from the matches that you indicate. </p> <p>Example JSON:
    * <code>"JsonBody": { "MatchPattern": { "All": {} }, "MatchScope": "ALL" }</code>
-   * </p><p><h3>See Also:</h3>   <a
+   * </p> <p>For additional information about this request component option, see <a
+   * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-rule-statement-fields-list.html#waf-rule-statement-request-component-json-body">JSON
+   * body</a> in the <i>WAF Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/JsonBody">AWS API
    * Reference</a></p>
    */
@@ -89,13 +91,11 @@ namespace Model
      * <code>NO_MATCH</code> - Treat the web request as not matching the rule
      * statement.</p> </li> </ul> <p>If you don't provide this setting, WAF parses and
      * evaluates the content only up to the first parsing failure that it encounters.
-     * </p> <p>WAF does its best to parse the entire JSON body, but might be forced to
-     * stop for reasons such as invalid characters, duplicate keys, truncation, and any
-     * content whose root node isn't an object or an array. </p> <p>WAF parses the JSON
-     * in the following examples as two valid key, value pairs: </p> <ul> <li>
-     * <p>Missing comma: <code>{"key1":"value1""key2":"value2"}</code> </p> </li> <li>
-     * <p>Missing colon: <code>{"key1":"value1","key2""value2"}</code> </p> </li> <li>
-     * <p>Extra colons: <code>{"key1"::"value1","key2""value2"}</code> </p> </li> </ul>
+     * </p>  <p>WAF parsing doesn't fully validate the input JSON string, so
+     * parsing can succeed even for invalid JSON. When parsing succeeds, WAF doesn't
+     * apply the fallback behavior. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-rule-statement-fields-list.html#waf-rule-statement-request-component-json-body">JSON
+     * body</a> in the <i>WAF Developer Guide</i>.</p> 
      */
     inline const BodyParsingFallbackBehavior& GetInvalidFallbackBehavior() const{ return m_invalidFallbackBehavior; }
     inline bool InvalidFallbackBehaviorHasBeenSet() const { return m_invalidFallbackBehaviorHasBeenSet; }

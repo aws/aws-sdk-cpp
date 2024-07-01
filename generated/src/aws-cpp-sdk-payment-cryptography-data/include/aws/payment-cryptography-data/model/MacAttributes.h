@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/payment-cryptography-data/PaymentCryptographyData_EXPORTS.h>
 #include <aws/payment-cryptography-data/model/MacAlgorithm.h>
-#include <aws/payment-cryptography-data/model/MacAlgorithmDukpt.h>
 #include <aws/payment-cryptography-data/model/MacAlgorithmEmv.h>
+#include <aws/payment-cryptography-data/model/MacAlgorithmDukpt.h>
 #include <utility>
 
 namespace Aws
@@ -54,15 +54,15 @@ namespace Model
 
     ///@{
     /**
-     * <p>Parameters that are required for MAC generation or verification using DUKPT
-     * CMAC algorithm.</p>
+     * <p>Parameters that are required for MAC generation or verification using EMV MAC
+     * algorithm.</p>
      */
-    inline const MacAlgorithmDukpt& GetDukptCmac() const{ return m_dukptCmac; }
-    inline bool DukptCmacHasBeenSet() const { return m_dukptCmacHasBeenSet; }
-    inline void SetDukptCmac(const MacAlgorithmDukpt& value) { m_dukptCmacHasBeenSet = true; m_dukptCmac = value; }
-    inline void SetDukptCmac(MacAlgorithmDukpt&& value) { m_dukptCmacHasBeenSet = true; m_dukptCmac = std::move(value); }
-    inline MacAttributes& WithDukptCmac(const MacAlgorithmDukpt& value) { SetDukptCmac(value); return *this;}
-    inline MacAttributes& WithDukptCmac(MacAlgorithmDukpt&& value) { SetDukptCmac(std::move(value)); return *this;}
+    inline const MacAlgorithmEmv& GetEmvMac() const{ return m_emvMac; }
+    inline bool EmvMacHasBeenSet() const { return m_emvMacHasBeenSet; }
+    inline void SetEmvMac(const MacAlgorithmEmv& value) { m_emvMacHasBeenSet = true; m_emvMac = value; }
+    inline void SetEmvMac(MacAlgorithmEmv&& value) { m_emvMacHasBeenSet = true; m_emvMac = std::move(value); }
+    inline MacAttributes& WithEmvMac(const MacAlgorithmEmv& value) { SetEmvMac(value); return *this;}
+    inline MacAttributes& WithEmvMac(MacAlgorithmEmv&& value) { SetEmvMac(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -93,23 +93,23 @@ namespace Model
 
     ///@{
     /**
-     * <p>Parameters that are required for MAC generation or verification using EMV MAC
-     * algorithm.</p>
+     * <p>Parameters that are required for MAC generation or verification using DUKPT
+     * CMAC algorithm.</p>
      */
-    inline const MacAlgorithmEmv& GetEmvMac() const{ return m_emvMac; }
-    inline bool EmvMacHasBeenSet() const { return m_emvMacHasBeenSet; }
-    inline void SetEmvMac(const MacAlgorithmEmv& value) { m_emvMacHasBeenSet = true; m_emvMac = value; }
-    inline void SetEmvMac(MacAlgorithmEmv&& value) { m_emvMacHasBeenSet = true; m_emvMac = std::move(value); }
-    inline MacAttributes& WithEmvMac(const MacAlgorithmEmv& value) { SetEmvMac(value); return *this;}
-    inline MacAttributes& WithEmvMac(MacAlgorithmEmv&& value) { SetEmvMac(std::move(value)); return *this;}
+    inline const MacAlgorithmDukpt& GetDukptCmac() const{ return m_dukptCmac; }
+    inline bool DukptCmacHasBeenSet() const { return m_dukptCmacHasBeenSet; }
+    inline void SetDukptCmac(const MacAlgorithmDukpt& value) { m_dukptCmacHasBeenSet = true; m_dukptCmac = value; }
+    inline void SetDukptCmac(MacAlgorithmDukpt&& value) { m_dukptCmacHasBeenSet = true; m_dukptCmac = std::move(value); }
+    inline MacAttributes& WithDukptCmac(const MacAlgorithmDukpt& value) { SetDukptCmac(value); return *this;}
+    inline MacAttributes& WithDukptCmac(MacAlgorithmDukpt&& value) { SetDukptCmac(std::move(value)); return *this;}
     ///@}
   private:
 
     MacAlgorithm m_algorithm;
     bool m_algorithmHasBeenSet = false;
 
-    MacAlgorithmDukpt m_dukptCmac;
-    bool m_dukptCmacHasBeenSet = false;
+    MacAlgorithmEmv m_emvMac;
+    bool m_emvMacHasBeenSet = false;
 
     MacAlgorithmDukpt m_dukptIso9797Algorithm1;
     bool m_dukptIso9797Algorithm1HasBeenSet = false;
@@ -117,8 +117,8 @@ namespace Model
     MacAlgorithmDukpt m_dukptIso9797Algorithm3;
     bool m_dukptIso9797Algorithm3HasBeenSet = false;
 
-    MacAlgorithmEmv m_emvMac;
-    bool m_emvMacHasBeenSet = false;
+    MacAlgorithmDukpt m_dukptCmac;
+    bool m_dukptCmacHasBeenSet = false;
   };
 
 } // namespace Model

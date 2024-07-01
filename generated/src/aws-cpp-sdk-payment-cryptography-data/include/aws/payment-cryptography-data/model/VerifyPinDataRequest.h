@@ -6,10 +6,10 @@
 #pragma once
 #include <aws/payment-cryptography-data/PaymentCryptographyData_EXPORTS.h>
 #include <aws/payment-cryptography-data/PaymentCryptographyDataRequest.h>
-#include <aws/payment-cryptography-data/model/DukptAttributes.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/payment-cryptography-data/model/PinBlockFormatForPinData.h>
 #include <aws/payment-cryptography-data/model/PinVerificationAttributes.h>
+#include <aws/payment-cryptography-data/model/PinBlockFormatForPinData.h>
+#include <aws/payment-cryptography-data/model/DukptAttributes.h>
 #include <utility>
 
 namespace Aws
@@ -37,14 +37,43 @@ namespace Model
 
     ///@{
     /**
-     * <p>The attributes and values for the DUKPT encrypted PIN block data.</p>
+     * <p>The <code>keyARN</code> of the PIN verification key.</p>
      */
-    inline const DukptAttributes& GetDukptAttributes() const{ return m_dukptAttributes; }
-    inline bool DukptAttributesHasBeenSet() const { return m_dukptAttributesHasBeenSet; }
-    inline void SetDukptAttributes(const DukptAttributes& value) { m_dukptAttributesHasBeenSet = true; m_dukptAttributes = value; }
-    inline void SetDukptAttributes(DukptAttributes&& value) { m_dukptAttributesHasBeenSet = true; m_dukptAttributes = std::move(value); }
-    inline VerifyPinDataRequest& WithDukptAttributes(const DukptAttributes& value) { SetDukptAttributes(value); return *this;}
-    inline VerifyPinDataRequest& WithDukptAttributes(DukptAttributes&& value) { SetDukptAttributes(std::move(value)); return *this;}
+    inline const Aws::String& GetVerificationKeyIdentifier() const{ return m_verificationKeyIdentifier; }
+    inline bool VerificationKeyIdentifierHasBeenSet() const { return m_verificationKeyIdentifierHasBeenSet; }
+    inline void SetVerificationKeyIdentifier(const Aws::String& value) { m_verificationKeyIdentifierHasBeenSet = true; m_verificationKeyIdentifier = value; }
+    inline void SetVerificationKeyIdentifier(Aws::String&& value) { m_verificationKeyIdentifierHasBeenSet = true; m_verificationKeyIdentifier = std::move(value); }
+    inline void SetVerificationKeyIdentifier(const char* value) { m_verificationKeyIdentifierHasBeenSet = true; m_verificationKeyIdentifier.assign(value); }
+    inline VerifyPinDataRequest& WithVerificationKeyIdentifier(const Aws::String& value) { SetVerificationKeyIdentifier(value); return *this;}
+    inline VerifyPinDataRequest& WithVerificationKeyIdentifier(Aws::String&& value) { SetVerificationKeyIdentifier(std::move(value)); return *this;}
+    inline VerifyPinDataRequest& WithVerificationKeyIdentifier(const char* value) { SetVerificationKeyIdentifier(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The <code>keyARN</code> of the encryption key under which the PIN block data
+     * is encrypted. This key type can be PEK or BDK.</p>
+     */
+    inline const Aws::String& GetEncryptionKeyIdentifier() const{ return m_encryptionKeyIdentifier; }
+    inline bool EncryptionKeyIdentifierHasBeenSet() const { return m_encryptionKeyIdentifierHasBeenSet; }
+    inline void SetEncryptionKeyIdentifier(const Aws::String& value) { m_encryptionKeyIdentifierHasBeenSet = true; m_encryptionKeyIdentifier = value; }
+    inline void SetEncryptionKeyIdentifier(Aws::String&& value) { m_encryptionKeyIdentifierHasBeenSet = true; m_encryptionKeyIdentifier = std::move(value); }
+    inline void SetEncryptionKeyIdentifier(const char* value) { m_encryptionKeyIdentifierHasBeenSet = true; m_encryptionKeyIdentifier.assign(value); }
+    inline VerifyPinDataRequest& WithEncryptionKeyIdentifier(const Aws::String& value) { SetEncryptionKeyIdentifier(value); return *this;}
+    inline VerifyPinDataRequest& WithEncryptionKeyIdentifier(Aws::String&& value) { SetEncryptionKeyIdentifier(std::move(value)); return *this;}
+    inline VerifyPinDataRequest& WithEncryptionKeyIdentifier(const char* value) { SetEncryptionKeyIdentifier(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The attributes and values for PIN data verification.</p>
+     */
+    inline const PinVerificationAttributes& GetVerificationAttributes() const{ return m_verificationAttributes; }
+    inline bool VerificationAttributesHasBeenSet() const { return m_verificationAttributesHasBeenSet; }
+    inline void SetVerificationAttributes(const PinVerificationAttributes& value) { m_verificationAttributesHasBeenSet = true; m_verificationAttributes = value; }
+    inline void SetVerificationAttributes(PinVerificationAttributes&& value) { m_verificationAttributesHasBeenSet = true; m_verificationAttributes = std::move(value); }
+    inline VerifyPinDataRequest& WithVerificationAttributes(const PinVerificationAttributes& value) { SetVerificationAttributes(value); return *this;}
+    inline VerifyPinDataRequest& WithVerificationAttributes(PinVerificationAttributes&& value) { SetVerificationAttributes(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,17 +93,17 @@ namespace Model
 
     ///@{
     /**
-     * <p>The <code>keyARN</code> of the encryption key under which the PIN block data
-     * is encrypted. This key type can be PEK or BDK.</p>
+     * <p>The Primary Account Number (PAN), a unique identifier for a payment credit or
+     * debit card that associates the card with a specific account holder.</p>
      */
-    inline const Aws::String& GetEncryptionKeyIdentifier() const{ return m_encryptionKeyIdentifier; }
-    inline bool EncryptionKeyIdentifierHasBeenSet() const { return m_encryptionKeyIdentifierHasBeenSet; }
-    inline void SetEncryptionKeyIdentifier(const Aws::String& value) { m_encryptionKeyIdentifierHasBeenSet = true; m_encryptionKeyIdentifier = value; }
-    inline void SetEncryptionKeyIdentifier(Aws::String&& value) { m_encryptionKeyIdentifierHasBeenSet = true; m_encryptionKeyIdentifier = std::move(value); }
-    inline void SetEncryptionKeyIdentifier(const char* value) { m_encryptionKeyIdentifierHasBeenSet = true; m_encryptionKeyIdentifier.assign(value); }
-    inline VerifyPinDataRequest& WithEncryptionKeyIdentifier(const Aws::String& value) { SetEncryptionKeyIdentifier(value); return *this;}
-    inline VerifyPinDataRequest& WithEncryptionKeyIdentifier(Aws::String&& value) { SetEncryptionKeyIdentifier(std::move(value)); return *this;}
-    inline VerifyPinDataRequest& WithEncryptionKeyIdentifier(const char* value) { SetEncryptionKeyIdentifier(value); return *this;}
+    inline const Aws::String& GetPrimaryAccountNumber() const{ return m_primaryAccountNumber; }
+    inline bool PrimaryAccountNumberHasBeenSet() const { return m_primaryAccountNumberHasBeenSet; }
+    inline void SetPrimaryAccountNumber(const Aws::String& value) { m_primaryAccountNumberHasBeenSet = true; m_primaryAccountNumber = value; }
+    inline void SetPrimaryAccountNumber(Aws::String&& value) { m_primaryAccountNumberHasBeenSet = true; m_primaryAccountNumber = std::move(value); }
+    inline void SetPrimaryAccountNumber(const char* value) { m_primaryAccountNumberHasBeenSet = true; m_primaryAccountNumber.assign(value); }
+    inline VerifyPinDataRequest& WithPrimaryAccountNumber(const Aws::String& value) { SetPrimaryAccountNumber(value); return *this;}
+    inline VerifyPinDataRequest& WithPrimaryAccountNumber(Aws::String&& value) { SetPrimaryAccountNumber(std::move(value)); return *this;}
+    inline VerifyPinDataRequest& WithPrimaryAccountNumber(const char* value) { SetPrimaryAccountNumber(value); return *this;}
     ///@}
 
     ///@{
@@ -108,54 +137,31 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Primary Account Number (PAN), a unique identifier for a payment credit or
-     * debit card that associates the card with a specific account holder.</p>
+     * <p>The attributes and values for the DUKPT encrypted PIN block data.</p>
      */
-    inline const Aws::String& GetPrimaryAccountNumber() const{ return m_primaryAccountNumber; }
-    inline bool PrimaryAccountNumberHasBeenSet() const { return m_primaryAccountNumberHasBeenSet; }
-    inline void SetPrimaryAccountNumber(const Aws::String& value) { m_primaryAccountNumberHasBeenSet = true; m_primaryAccountNumber = value; }
-    inline void SetPrimaryAccountNumber(Aws::String&& value) { m_primaryAccountNumberHasBeenSet = true; m_primaryAccountNumber = std::move(value); }
-    inline void SetPrimaryAccountNumber(const char* value) { m_primaryAccountNumberHasBeenSet = true; m_primaryAccountNumber.assign(value); }
-    inline VerifyPinDataRequest& WithPrimaryAccountNumber(const Aws::String& value) { SetPrimaryAccountNumber(value); return *this;}
-    inline VerifyPinDataRequest& WithPrimaryAccountNumber(Aws::String&& value) { SetPrimaryAccountNumber(std::move(value)); return *this;}
-    inline VerifyPinDataRequest& WithPrimaryAccountNumber(const char* value) { SetPrimaryAccountNumber(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The attributes and values for PIN data verification.</p>
-     */
-    inline const PinVerificationAttributes& GetVerificationAttributes() const{ return m_verificationAttributes; }
-    inline bool VerificationAttributesHasBeenSet() const { return m_verificationAttributesHasBeenSet; }
-    inline void SetVerificationAttributes(const PinVerificationAttributes& value) { m_verificationAttributesHasBeenSet = true; m_verificationAttributes = value; }
-    inline void SetVerificationAttributes(PinVerificationAttributes&& value) { m_verificationAttributesHasBeenSet = true; m_verificationAttributes = std::move(value); }
-    inline VerifyPinDataRequest& WithVerificationAttributes(const PinVerificationAttributes& value) { SetVerificationAttributes(value); return *this;}
-    inline VerifyPinDataRequest& WithVerificationAttributes(PinVerificationAttributes&& value) { SetVerificationAttributes(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The <code>keyARN</code> of the PIN verification key.</p>
-     */
-    inline const Aws::String& GetVerificationKeyIdentifier() const{ return m_verificationKeyIdentifier; }
-    inline bool VerificationKeyIdentifierHasBeenSet() const { return m_verificationKeyIdentifierHasBeenSet; }
-    inline void SetVerificationKeyIdentifier(const Aws::String& value) { m_verificationKeyIdentifierHasBeenSet = true; m_verificationKeyIdentifier = value; }
-    inline void SetVerificationKeyIdentifier(Aws::String&& value) { m_verificationKeyIdentifierHasBeenSet = true; m_verificationKeyIdentifier = std::move(value); }
-    inline void SetVerificationKeyIdentifier(const char* value) { m_verificationKeyIdentifierHasBeenSet = true; m_verificationKeyIdentifier.assign(value); }
-    inline VerifyPinDataRequest& WithVerificationKeyIdentifier(const Aws::String& value) { SetVerificationKeyIdentifier(value); return *this;}
-    inline VerifyPinDataRequest& WithVerificationKeyIdentifier(Aws::String&& value) { SetVerificationKeyIdentifier(std::move(value)); return *this;}
-    inline VerifyPinDataRequest& WithVerificationKeyIdentifier(const char* value) { SetVerificationKeyIdentifier(value); return *this;}
+    inline const DukptAttributes& GetDukptAttributes() const{ return m_dukptAttributes; }
+    inline bool DukptAttributesHasBeenSet() const { return m_dukptAttributesHasBeenSet; }
+    inline void SetDukptAttributes(const DukptAttributes& value) { m_dukptAttributesHasBeenSet = true; m_dukptAttributes = value; }
+    inline void SetDukptAttributes(DukptAttributes&& value) { m_dukptAttributesHasBeenSet = true; m_dukptAttributes = std::move(value); }
+    inline VerifyPinDataRequest& WithDukptAttributes(const DukptAttributes& value) { SetDukptAttributes(value); return *this;}
+    inline VerifyPinDataRequest& WithDukptAttributes(DukptAttributes&& value) { SetDukptAttributes(std::move(value)); return *this;}
     ///@}
   private:
 
-    DukptAttributes m_dukptAttributes;
-    bool m_dukptAttributesHasBeenSet = false;
+    Aws::String m_verificationKeyIdentifier;
+    bool m_verificationKeyIdentifierHasBeenSet = false;
+
+    Aws::String m_encryptionKeyIdentifier;
+    bool m_encryptionKeyIdentifierHasBeenSet = false;
+
+    PinVerificationAttributes m_verificationAttributes;
+    bool m_verificationAttributesHasBeenSet = false;
 
     Aws::String m_encryptedPinBlock;
     bool m_encryptedPinBlockHasBeenSet = false;
 
-    Aws::String m_encryptionKeyIdentifier;
-    bool m_encryptionKeyIdentifierHasBeenSet = false;
+    Aws::String m_primaryAccountNumber;
+    bool m_primaryAccountNumberHasBeenSet = false;
 
     PinBlockFormatForPinData m_pinBlockFormat;
     bool m_pinBlockFormatHasBeenSet = false;
@@ -163,14 +169,8 @@ namespace Model
     int m_pinDataLength;
     bool m_pinDataLengthHasBeenSet = false;
 
-    Aws::String m_primaryAccountNumber;
-    bool m_primaryAccountNumberHasBeenSet = false;
-
-    PinVerificationAttributes m_verificationAttributes;
-    bool m_verificationAttributesHasBeenSet = false;
-
-    Aws::String m_verificationKeyIdentifier;
-    bool m_verificationKeyIdentifierHasBeenSet = false;
+    DukptAttributes m_dukptAttributes;
+    bool m_dukptAttributesHasBeenSet = false;
   };
 
 } // namespace Model

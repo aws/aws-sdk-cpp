@@ -56,20 +56,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The unique data for cardholder identification.</p>
-     */
-    inline const Aws::String& GetPinValidationData() const{ return m_pinValidationData; }
-    inline bool PinValidationDataHasBeenSet() const { return m_pinValidationDataHasBeenSet; }
-    inline void SetPinValidationData(const Aws::String& value) { m_pinValidationDataHasBeenSet = true; m_pinValidationData = value; }
-    inline void SetPinValidationData(Aws::String&& value) { m_pinValidationDataHasBeenSet = true; m_pinValidationData = std::move(value); }
-    inline void SetPinValidationData(const char* value) { m_pinValidationDataHasBeenSet = true; m_pinValidationData.assign(value); }
-    inline Ibm3624NaturalPin& WithPinValidationData(const Aws::String& value) { SetPinValidationData(value); return *this;}
-    inline Ibm3624NaturalPin& WithPinValidationData(Aws::String&& value) { SetPinValidationData(std::move(value)); return *this;}
-    inline Ibm3624NaturalPin& WithPinValidationData(const char* value) { SetPinValidationData(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The padding character for validation data.</p>
      */
     inline const Aws::String& GetPinValidationDataPadCharacter() const{ return m_pinValidationDataPadCharacter; }
@@ -81,16 +67,30 @@ namespace Model
     inline Ibm3624NaturalPin& WithPinValidationDataPadCharacter(Aws::String&& value) { SetPinValidationDataPadCharacter(std::move(value)); return *this;}
     inline Ibm3624NaturalPin& WithPinValidationDataPadCharacter(const char* value) { SetPinValidationDataPadCharacter(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The unique data for cardholder identification.</p>
+     */
+    inline const Aws::String& GetPinValidationData() const{ return m_pinValidationData; }
+    inline bool PinValidationDataHasBeenSet() const { return m_pinValidationDataHasBeenSet; }
+    inline void SetPinValidationData(const Aws::String& value) { m_pinValidationDataHasBeenSet = true; m_pinValidationData = value; }
+    inline void SetPinValidationData(Aws::String&& value) { m_pinValidationDataHasBeenSet = true; m_pinValidationData = std::move(value); }
+    inline void SetPinValidationData(const char* value) { m_pinValidationDataHasBeenSet = true; m_pinValidationData.assign(value); }
+    inline Ibm3624NaturalPin& WithPinValidationData(const Aws::String& value) { SetPinValidationData(value); return *this;}
+    inline Ibm3624NaturalPin& WithPinValidationData(Aws::String&& value) { SetPinValidationData(std::move(value)); return *this;}
+    inline Ibm3624NaturalPin& WithPinValidationData(const char* value) { SetPinValidationData(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_decimalizationTable;
     bool m_decimalizationTableHasBeenSet = false;
 
-    Aws::String m_pinValidationData;
-    bool m_pinValidationDataHasBeenSet = false;
-
     Aws::String m_pinValidationDataPadCharacter;
     bool m_pinValidationDataPadCharacterHasBeenSet = false;
+
+    Aws::String m_pinValidationData;
+    bool m_pinValidationDataHasBeenSet = false;
   };
 
 } // namespace Model

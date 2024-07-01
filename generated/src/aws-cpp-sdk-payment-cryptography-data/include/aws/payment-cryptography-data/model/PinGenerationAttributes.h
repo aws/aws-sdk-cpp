@@ -5,12 +5,12 @@
 
 #pragma once
 #include <aws/payment-cryptography-data/PaymentCryptographyData_EXPORTS.h>
-#include <aws/payment-cryptography-data/model/Ibm3624NaturalPin.h>
-#include <aws/payment-cryptography-data/model/Ibm3624PinFromOffset.h>
-#include <aws/payment-cryptography-data/model/Ibm3624PinOffset.h>
-#include <aws/payment-cryptography-data/model/Ibm3624RandomPin.h>
 #include <aws/payment-cryptography-data/model/VisaPin.h>
 #include <aws/payment-cryptography-data/model/VisaPinVerificationValue.h>
+#include <aws/payment-cryptography-data/model/Ibm3624PinOffset.h>
+#include <aws/payment-cryptography-data/model/Ibm3624NaturalPin.h>
+#include <aws/payment-cryptography-data/model/Ibm3624RandomPin.h>
+#include <aws/payment-cryptography-data/model/Ibm3624PinFromOffset.h>
 #include <utility>
 
 namespace Aws
@@ -45,56 +45,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Parameters that are required to generate or verify Ibm3624 natural PIN.</p>
-     */
-    inline const Ibm3624NaturalPin& GetIbm3624NaturalPin() const{ return m_ibm3624NaturalPin; }
-    inline bool Ibm3624NaturalPinHasBeenSet() const { return m_ibm3624NaturalPinHasBeenSet; }
-    inline void SetIbm3624NaturalPin(const Ibm3624NaturalPin& value) { m_ibm3624NaturalPinHasBeenSet = true; m_ibm3624NaturalPin = value; }
-    inline void SetIbm3624NaturalPin(Ibm3624NaturalPin&& value) { m_ibm3624NaturalPinHasBeenSet = true; m_ibm3624NaturalPin = std::move(value); }
-    inline PinGenerationAttributes& WithIbm3624NaturalPin(const Ibm3624NaturalPin& value) { SetIbm3624NaturalPin(value); return *this;}
-    inline PinGenerationAttributes& WithIbm3624NaturalPin(Ibm3624NaturalPin&& value) { SetIbm3624NaturalPin(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Parameters that are required to generate or verify Ibm3624 PIN from offset
-     * PIN.</p>
-     */
-    inline const Ibm3624PinFromOffset& GetIbm3624PinFromOffset() const{ return m_ibm3624PinFromOffset; }
-    inline bool Ibm3624PinFromOffsetHasBeenSet() const { return m_ibm3624PinFromOffsetHasBeenSet; }
-    inline void SetIbm3624PinFromOffset(const Ibm3624PinFromOffset& value) { m_ibm3624PinFromOffsetHasBeenSet = true; m_ibm3624PinFromOffset = value; }
-    inline void SetIbm3624PinFromOffset(Ibm3624PinFromOffset&& value) { m_ibm3624PinFromOffsetHasBeenSet = true; m_ibm3624PinFromOffset = std::move(value); }
-    inline PinGenerationAttributes& WithIbm3624PinFromOffset(const Ibm3624PinFromOffset& value) { SetIbm3624PinFromOffset(value); return *this;}
-    inline PinGenerationAttributes& WithIbm3624PinFromOffset(Ibm3624PinFromOffset&& value) { SetIbm3624PinFromOffset(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Parameters that are required to generate or verify Ibm3624 PIN offset
-     * PIN.</p>
-     */
-    inline const Ibm3624PinOffset& GetIbm3624PinOffset() const{ return m_ibm3624PinOffset; }
-    inline bool Ibm3624PinOffsetHasBeenSet() const { return m_ibm3624PinOffsetHasBeenSet; }
-    inline void SetIbm3624PinOffset(const Ibm3624PinOffset& value) { m_ibm3624PinOffsetHasBeenSet = true; m_ibm3624PinOffset = value; }
-    inline void SetIbm3624PinOffset(Ibm3624PinOffset&& value) { m_ibm3624PinOffsetHasBeenSet = true; m_ibm3624PinOffset = std::move(value); }
-    inline PinGenerationAttributes& WithIbm3624PinOffset(const Ibm3624PinOffset& value) { SetIbm3624PinOffset(value); return *this;}
-    inline PinGenerationAttributes& WithIbm3624PinOffset(Ibm3624PinOffset&& value) { SetIbm3624PinOffset(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Parameters that are required to generate or verify Ibm3624 random PIN.</p>
-     */
-    inline const Ibm3624RandomPin& GetIbm3624RandomPin() const{ return m_ibm3624RandomPin; }
-    inline bool Ibm3624RandomPinHasBeenSet() const { return m_ibm3624RandomPinHasBeenSet; }
-    inline void SetIbm3624RandomPin(const Ibm3624RandomPin& value) { m_ibm3624RandomPinHasBeenSet = true; m_ibm3624RandomPin = value; }
-    inline void SetIbm3624RandomPin(Ibm3624RandomPin&& value) { m_ibm3624RandomPinHasBeenSet = true; m_ibm3624RandomPin = std::move(value); }
-    inline PinGenerationAttributes& WithIbm3624RandomPin(const Ibm3624RandomPin& value) { SetIbm3624RandomPin(value); return *this;}
-    inline PinGenerationAttributes& WithIbm3624RandomPin(Ibm3624RandomPin&& value) { SetIbm3624RandomPin(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Parameters that are required to generate or verify Visa PIN.</p>
      */
     inline const VisaPin& GetVisaPin() const{ return m_visaPin; }
@@ -117,25 +67,75 @@ namespace Model
     inline PinGenerationAttributes& WithVisaPinVerificationValue(const VisaPinVerificationValue& value) { SetVisaPinVerificationValue(value); return *this;}
     inline PinGenerationAttributes& WithVisaPinVerificationValue(VisaPinVerificationValue&& value) { SetVisaPinVerificationValue(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Parameters that are required to generate or verify Ibm3624 PIN offset
+     * PIN.</p>
+     */
+    inline const Ibm3624PinOffset& GetIbm3624PinOffset() const{ return m_ibm3624PinOffset; }
+    inline bool Ibm3624PinOffsetHasBeenSet() const { return m_ibm3624PinOffsetHasBeenSet; }
+    inline void SetIbm3624PinOffset(const Ibm3624PinOffset& value) { m_ibm3624PinOffsetHasBeenSet = true; m_ibm3624PinOffset = value; }
+    inline void SetIbm3624PinOffset(Ibm3624PinOffset&& value) { m_ibm3624PinOffsetHasBeenSet = true; m_ibm3624PinOffset = std::move(value); }
+    inline PinGenerationAttributes& WithIbm3624PinOffset(const Ibm3624PinOffset& value) { SetIbm3624PinOffset(value); return *this;}
+    inline PinGenerationAttributes& WithIbm3624PinOffset(Ibm3624PinOffset&& value) { SetIbm3624PinOffset(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Parameters that are required to generate or verify Ibm3624 natural PIN.</p>
+     */
+    inline const Ibm3624NaturalPin& GetIbm3624NaturalPin() const{ return m_ibm3624NaturalPin; }
+    inline bool Ibm3624NaturalPinHasBeenSet() const { return m_ibm3624NaturalPinHasBeenSet; }
+    inline void SetIbm3624NaturalPin(const Ibm3624NaturalPin& value) { m_ibm3624NaturalPinHasBeenSet = true; m_ibm3624NaturalPin = value; }
+    inline void SetIbm3624NaturalPin(Ibm3624NaturalPin&& value) { m_ibm3624NaturalPinHasBeenSet = true; m_ibm3624NaturalPin = std::move(value); }
+    inline PinGenerationAttributes& WithIbm3624NaturalPin(const Ibm3624NaturalPin& value) { SetIbm3624NaturalPin(value); return *this;}
+    inline PinGenerationAttributes& WithIbm3624NaturalPin(Ibm3624NaturalPin&& value) { SetIbm3624NaturalPin(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Parameters that are required to generate or verify Ibm3624 random PIN.</p>
+     */
+    inline const Ibm3624RandomPin& GetIbm3624RandomPin() const{ return m_ibm3624RandomPin; }
+    inline bool Ibm3624RandomPinHasBeenSet() const { return m_ibm3624RandomPinHasBeenSet; }
+    inline void SetIbm3624RandomPin(const Ibm3624RandomPin& value) { m_ibm3624RandomPinHasBeenSet = true; m_ibm3624RandomPin = value; }
+    inline void SetIbm3624RandomPin(Ibm3624RandomPin&& value) { m_ibm3624RandomPinHasBeenSet = true; m_ibm3624RandomPin = std::move(value); }
+    inline PinGenerationAttributes& WithIbm3624RandomPin(const Ibm3624RandomPin& value) { SetIbm3624RandomPin(value); return *this;}
+    inline PinGenerationAttributes& WithIbm3624RandomPin(Ibm3624RandomPin&& value) { SetIbm3624RandomPin(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Parameters that are required to generate or verify Ibm3624 PIN from offset
+     * PIN.</p>
+     */
+    inline const Ibm3624PinFromOffset& GetIbm3624PinFromOffset() const{ return m_ibm3624PinFromOffset; }
+    inline bool Ibm3624PinFromOffsetHasBeenSet() const { return m_ibm3624PinFromOffsetHasBeenSet; }
+    inline void SetIbm3624PinFromOffset(const Ibm3624PinFromOffset& value) { m_ibm3624PinFromOffsetHasBeenSet = true; m_ibm3624PinFromOffset = value; }
+    inline void SetIbm3624PinFromOffset(Ibm3624PinFromOffset&& value) { m_ibm3624PinFromOffsetHasBeenSet = true; m_ibm3624PinFromOffset = std::move(value); }
+    inline PinGenerationAttributes& WithIbm3624PinFromOffset(const Ibm3624PinFromOffset& value) { SetIbm3624PinFromOffset(value); return *this;}
+    inline PinGenerationAttributes& WithIbm3624PinFromOffset(Ibm3624PinFromOffset&& value) { SetIbm3624PinFromOffset(std::move(value)); return *this;}
+    ///@}
   private:
-
-    Ibm3624NaturalPin m_ibm3624NaturalPin;
-    bool m_ibm3624NaturalPinHasBeenSet = false;
-
-    Ibm3624PinFromOffset m_ibm3624PinFromOffset;
-    bool m_ibm3624PinFromOffsetHasBeenSet = false;
-
-    Ibm3624PinOffset m_ibm3624PinOffset;
-    bool m_ibm3624PinOffsetHasBeenSet = false;
-
-    Ibm3624RandomPin m_ibm3624RandomPin;
-    bool m_ibm3624RandomPinHasBeenSet = false;
 
     VisaPin m_visaPin;
     bool m_visaPinHasBeenSet = false;
 
     VisaPinVerificationValue m_visaPinVerificationValue;
     bool m_visaPinVerificationValueHasBeenSet = false;
+
+    Ibm3624PinOffset m_ibm3624PinOffset;
+    bool m_ibm3624PinOffsetHasBeenSet = false;
+
+    Ibm3624NaturalPin m_ibm3624NaturalPin;
+    bool m_ibm3624NaturalPinHasBeenSet = false;
+
+    Ibm3624RandomPin m_ibm3624RandomPin;
+    bool m_ibm3624RandomPinHasBeenSet = false;
+
+    Ibm3624PinFromOffset m_ibm3624PinFromOffset;
+    bool m_ibm3624PinFromOffsetHasBeenSet = false;
   };
 
 } // namespace Model

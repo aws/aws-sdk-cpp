@@ -56,16 +56,16 @@ namespace Model
 
     ///@{
     /**
-     * <p>The PIN offset value.</p>
+     * <p>The padding character for validation data.</p>
      */
-    inline const Aws::String& GetPinOffset() const{ return m_pinOffset; }
-    inline bool PinOffsetHasBeenSet() const { return m_pinOffsetHasBeenSet; }
-    inline void SetPinOffset(const Aws::String& value) { m_pinOffsetHasBeenSet = true; m_pinOffset = value; }
-    inline void SetPinOffset(Aws::String&& value) { m_pinOffsetHasBeenSet = true; m_pinOffset = std::move(value); }
-    inline void SetPinOffset(const char* value) { m_pinOffsetHasBeenSet = true; m_pinOffset.assign(value); }
-    inline Ibm3624PinVerification& WithPinOffset(const Aws::String& value) { SetPinOffset(value); return *this;}
-    inline Ibm3624PinVerification& WithPinOffset(Aws::String&& value) { SetPinOffset(std::move(value)); return *this;}
-    inline Ibm3624PinVerification& WithPinOffset(const char* value) { SetPinOffset(value); return *this;}
+    inline const Aws::String& GetPinValidationDataPadCharacter() const{ return m_pinValidationDataPadCharacter; }
+    inline bool PinValidationDataPadCharacterHasBeenSet() const { return m_pinValidationDataPadCharacterHasBeenSet; }
+    inline void SetPinValidationDataPadCharacter(const Aws::String& value) { m_pinValidationDataPadCharacterHasBeenSet = true; m_pinValidationDataPadCharacter = value; }
+    inline void SetPinValidationDataPadCharacter(Aws::String&& value) { m_pinValidationDataPadCharacterHasBeenSet = true; m_pinValidationDataPadCharacter = std::move(value); }
+    inline void SetPinValidationDataPadCharacter(const char* value) { m_pinValidationDataPadCharacterHasBeenSet = true; m_pinValidationDataPadCharacter.assign(value); }
+    inline Ibm3624PinVerification& WithPinValidationDataPadCharacter(const Aws::String& value) { SetPinValidationDataPadCharacter(value); return *this;}
+    inline Ibm3624PinVerification& WithPinValidationDataPadCharacter(Aws::String&& value) { SetPinValidationDataPadCharacter(std::move(value)); return *this;}
+    inline Ibm3624PinVerification& WithPinValidationDataPadCharacter(const char* value) { SetPinValidationDataPadCharacter(value); return *this;}
     ///@}
 
     ///@{
@@ -84,30 +84,30 @@ namespace Model
 
     ///@{
     /**
-     * <p>The padding character for validation data.</p>
+     * <p>The PIN offset value.</p>
      */
-    inline const Aws::String& GetPinValidationDataPadCharacter() const{ return m_pinValidationDataPadCharacter; }
-    inline bool PinValidationDataPadCharacterHasBeenSet() const { return m_pinValidationDataPadCharacterHasBeenSet; }
-    inline void SetPinValidationDataPadCharacter(const Aws::String& value) { m_pinValidationDataPadCharacterHasBeenSet = true; m_pinValidationDataPadCharacter = value; }
-    inline void SetPinValidationDataPadCharacter(Aws::String&& value) { m_pinValidationDataPadCharacterHasBeenSet = true; m_pinValidationDataPadCharacter = std::move(value); }
-    inline void SetPinValidationDataPadCharacter(const char* value) { m_pinValidationDataPadCharacterHasBeenSet = true; m_pinValidationDataPadCharacter.assign(value); }
-    inline Ibm3624PinVerification& WithPinValidationDataPadCharacter(const Aws::String& value) { SetPinValidationDataPadCharacter(value); return *this;}
-    inline Ibm3624PinVerification& WithPinValidationDataPadCharacter(Aws::String&& value) { SetPinValidationDataPadCharacter(std::move(value)); return *this;}
-    inline Ibm3624PinVerification& WithPinValidationDataPadCharacter(const char* value) { SetPinValidationDataPadCharacter(value); return *this;}
+    inline const Aws::String& GetPinOffset() const{ return m_pinOffset; }
+    inline bool PinOffsetHasBeenSet() const { return m_pinOffsetHasBeenSet; }
+    inline void SetPinOffset(const Aws::String& value) { m_pinOffsetHasBeenSet = true; m_pinOffset = value; }
+    inline void SetPinOffset(Aws::String&& value) { m_pinOffsetHasBeenSet = true; m_pinOffset = std::move(value); }
+    inline void SetPinOffset(const char* value) { m_pinOffsetHasBeenSet = true; m_pinOffset.assign(value); }
+    inline Ibm3624PinVerification& WithPinOffset(const Aws::String& value) { SetPinOffset(value); return *this;}
+    inline Ibm3624PinVerification& WithPinOffset(Aws::String&& value) { SetPinOffset(std::move(value)); return *this;}
+    inline Ibm3624PinVerification& WithPinOffset(const char* value) { SetPinOffset(value); return *this;}
     ///@}
   private:
 
     Aws::String m_decimalizationTable;
     bool m_decimalizationTableHasBeenSet = false;
 
-    Aws::String m_pinOffset;
-    bool m_pinOffsetHasBeenSet = false;
+    Aws::String m_pinValidationDataPadCharacter;
+    bool m_pinValidationDataPadCharacterHasBeenSet = false;
 
     Aws::String m_pinValidationData;
     bool m_pinValidationDataHasBeenSet = false;
 
-    Aws::String m_pinValidationDataPadCharacter;
-    bool m_pinValidationDataPadCharacterHasBeenSet = false;
+    Aws::String m_pinOffset;
+    bool m_pinOffsetHasBeenSet = false;
   };
 
 } // namespace Model

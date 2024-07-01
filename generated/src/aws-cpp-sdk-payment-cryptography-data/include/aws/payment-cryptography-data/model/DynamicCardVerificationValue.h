@@ -40,16 +40,17 @@ namespace Model
 
     ///@{
     /**
-     * <p>The transaction counter value that comes from the terminal.</p>
+     * <p>A number that identifies and differentiates payment cards with the same
+     * Primary Account Number (PAN).</p>
      */
-    inline const Aws::String& GetApplicationTransactionCounter() const{ return m_applicationTransactionCounter; }
-    inline bool ApplicationTransactionCounterHasBeenSet() const { return m_applicationTransactionCounterHasBeenSet; }
-    inline void SetApplicationTransactionCounter(const Aws::String& value) { m_applicationTransactionCounterHasBeenSet = true; m_applicationTransactionCounter = value; }
-    inline void SetApplicationTransactionCounter(Aws::String&& value) { m_applicationTransactionCounterHasBeenSet = true; m_applicationTransactionCounter = std::move(value); }
-    inline void SetApplicationTransactionCounter(const char* value) { m_applicationTransactionCounterHasBeenSet = true; m_applicationTransactionCounter.assign(value); }
-    inline DynamicCardVerificationValue& WithApplicationTransactionCounter(const Aws::String& value) { SetApplicationTransactionCounter(value); return *this;}
-    inline DynamicCardVerificationValue& WithApplicationTransactionCounter(Aws::String&& value) { SetApplicationTransactionCounter(std::move(value)); return *this;}
-    inline DynamicCardVerificationValue& WithApplicationTransactionCounter(const char* value) { SetApplicationTransactionCounter(value); return *this;}
+    inline const Aws::String& GetPanSequenceNumber() const{ return m_panSequenceNumber; }
+    inline bool PanSequenceNumberHasBeenSet() const { return m_panSequenceNumberHasBeenSet; }
+    inline void SetPanSequenceNumber(const Aws::String& value) { m_panSequenceNumberHasBeenSet = true; m_panSequenceNumber = value; }
+    inline void SetPanSequenceNumber(Aws::String&& value) { m_panSequenceNumberHasBeenSet = true; m_panSequenceNumber = std::move(value); }
+    inline void SetPanSequenceNumber(const char* value) { m_panSequenceNumberHasBeenSet = true; m_panSequenceNumber.assign(value); }
+    inline DynamicCardVerificationValue& WithPanSequenceNumber(const Aws::String& value) { SetPanSequenceNumber(value); return *this;}
+    inline DynamicCardVerificationValue& WithPanSequenceNumber(Aws::String&& value) { SetPanSequenceNumber(std::move(value)); return *this;}
+    inline DynamicCardVerificationValue& WithPanSequenceNumber(const char* value) { SetPanSequenceNumber(value); return *this;}
     ///@}
 
     ///@{
@@ -68,21 +69,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>A number that identifies and differentiates payment cards with the same
-     * Primary Account Number (PAN).</p>
-     */
-    inline const Aws::String& GetPanSequenceNumber() const{ return m_panSequenceNumber; }
-    inline bool PanSequenceNumberHasBeenSet() const { return m_panSequenceNumberHasBeenSet; }
-    inline void SetPanSequenceNumber(const Aws::String& value) { m_panSequenceNumberHasBeenSet = true; m_panSequenceNumber = value; }
-    inline void SetPanSequenceNumber(Aws::String&& value) { m_panSequenceNumberHasBeenSet = true; m_panSequenceNumber = std::move(value); }
-    inline void SetPanSequenceNumber(const char* value) { m_panSequenceNumberHasBeenSet = true; m_panSequenceNumber.assign(value); }
-    inline DynamicCardVerificationValue& WithPanSequenceNumber(const Aws::String& value) { SetPanSequenceNumber(value); return *this;}
-    inline DynamicCardVerificationValue& WithPanSequenceNumber(Aws::String&& value) { SetPanSequenceNumber(std::move(value)); return *this;}
-    inline DynamicCardVerificationValue& WithPanSequenceNumber(const char* value) { SetPanSequenceNumber(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The service code of the payment card. This is different from Card Security
      * Code (CSC).</p>
      */
@@ -95,19 +81,33 @@ namespace Model
     inline DynamicCardVerificationValue& WithServiceCode(Aws::String&& value) { SetServiceCode(std::move(value)); return *this;}
     inline DynamicCardVerificationValue& WithServiceCode(const char* value) { SetServiceCode(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The transaction counter value that comes from the terminal.</p>
+     */
+    inline const Aws::String& GetApplicationTransactionCounter() const{ return m_applicationTransactionCounter; }
+    inline bool ApplicationTransactionCounterHasBeenSet() const { return m_applicationTransactionCounterHasBeenSet; }
+    inline void SetApplicationTransactionCounter(const Aws::String& value) { m_applicationTransactionCounterHasBeenSet = true; m_applicationTransactionCounter = value; }
+    inline void SetApplicationTransactionCounter(Aws::String&& value) { m_applicationTransactionCounterHasBeenSet = true; m_applicationTransactionCounter = std::move(value); }
+    inline void SetApplicationTransactionCounter(const char* value) { m_applicationTransactionCounterHasBeenSet = true; m_applicationTransactionCounter.assign(value); }
+    inline DynamicCardVerificationValue& WithApplicationTransactionCounter(const Aws::String& value) { SetApplicationTransactionCounter(value); return *this;}
+    inline DynamicCardVerificationValue& WithApplicationTransactionCounter(Aws::String&& value) { SetApplicationTransactionCounter(std::move(value)); return *this;}
+    inline DynamicCardVerificationValue& WithApplicationTransactionCounter(const char* value) { SetApplicationTransactionCounter(value); return *this;}
+    ///@}
   private:
-
-    Aws::String m_applicationTransactionCounter;
-    bool m_applicationTransactionCounterHasBeenSet = false;
-
-    Aws::String m_cardExpiryDate;
-    bool m_cardExpiryDateHasBeenSet = false;
 
     Aws::String m_panSequenceNumber;
     bool m_panSequenceNumberHasBeenSet = false;
 
+    Aws::String m_cardExpiryDate;
+    bool m_cardExpiryDateHasBeenSet = false;
+
     Aws::String m_serviceCode;
     bool m_serviceCodeHasBeenSet = false;
+
+    Aws::String m_applicationTransactionCounter;
+    bool m_applicationTransactionCounterHasBeenSet = false;
   };
 
 } // namespace Model

@@ -13,13 +13,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 VerifyAuthRequestCryptogramRequest::VerifyAuthRequestCryptogramRequest() : 
-    m_authRequestCryptogramHasBeenSet(false),
-    m_authResponseAttributesHasBeenSet(false),
     m_keyIdentifierHasBeenSet(false),
+    m_transactionDataHasBeenSet(false),
+    m_authRequestCryptogramHasBeenSet(false),
     m_majorKeyDerivationMode(MajorKeyDerivationMode::NOT_SET),
     m_majorKeyDerivationModeHasBeenSet(false),
     m_sessionKeyDerivationAttributesHasBeenSet(false),
-    m_transactionDataHasBeenSet(false)
+    m_authResponseAttributesHasBeenSet(false)
 {
 }
 
@@ -27,21 +27,21 @@ Aws::String VerifyAuthRequestCryptogramRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_authRequestCryptogramHasBeenSet)
-  {
-   payload.WithString("AuthRequestCryptogram", m_authRequestCryptogram);
-
-  }
-
-  if(m_authResponseAttributesHasBeenSet)
-  {
-   payload.WithObject("AuthResponseAttributes", m_authResponseAttributes.Jsonize());
-
-  }
-
   if(m_keyIdentifierHasBeenSet)
   {
    payload.WithString("KeyIdentifier", m_keyIdentifier);
+
+  }
+
+  if(m_transactionDataHasBeenSet)
+  {
+   payload.WithString("TransactionData", m_transactionData);
+
+  }
+
+  if(m_authRequestCryptogramHasBeenSet)
+  {
+   payload.WithString("AuthRequestCryptogram", m_authRequestCryptogram);
 
   }
 
@@ -56,9 +56,9 @@ Aws::String VerifyAuthRequestCryptogramRequest::SerializePayload() const
 
   }
 
-  if(m_transactionDataHasBeenSet)
+  if(m_authResponseAttributesHasBeenSet)
   {
-   payload.WithString("TransactionData", m_transactionData);
+   payload.WithObject("AuthResponseAttributes", m_authResponseAttributes.Jsonize());
 
   }
 

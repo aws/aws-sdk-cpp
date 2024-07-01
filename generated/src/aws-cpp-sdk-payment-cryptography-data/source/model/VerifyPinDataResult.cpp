@@ -29,18 +29,6 @@ VerifyPinDataResult::VerifyPinDataResult(const Aws::AmazonWebServiceResult<JsonV
 VerifyPinDataResult& VerifyPinDataResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("EncryptionKeyArn"))
-  {
-    m_encryptionKeyArn = jsonValue.GetString("EncryptionKeyArn");
-
-  }
-
-  if(jsonValue.ValueExists("EncryptionKeyCheckValue"))
-  {
-    m_encryptionKeyCheckValue = jsonValue.GetString("EncryptionKeyCheckValue");
-
-  }
-
   if(jsonValue.ValueExists("VerificationKeyArn"))
   {
     m_verificationKeyArn = jsonValue.GetString("VerificationKeyArn");
@@ -50,6 +38,18 @@ VerifyPinDataResult& VerifyPinDataResult::operator =(const Aws::AmazonWebService
   if(jsonValue.ValueExists("VerificationKeyCheckValue"))
   {
     m_verificationKeyCheckValue = jsonValue.GetString("VerificationKeyCheckValue");
+
+  }
+
+  if(jsonValue.ValueExists("EncryptionKeyArn"))
+  {
+    m_encryptionKeyArn = jsonValue.GetString("EncryptionKeyArn");
+
+  }
+
+  if(jsonValue.ValueExists("EncryptionKeyCheckValue"))
+  {
+    m_encryptionKeyCheckValue = jsonValue.GetString("EncryptionKeyCheckValue");
 
   }
 
