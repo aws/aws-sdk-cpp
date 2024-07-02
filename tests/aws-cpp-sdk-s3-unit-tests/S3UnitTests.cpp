@@ -185,20 +185,27 @@ TEST_F(S3UnitTest, S3EmbeddedErrorTest) {
     .WithBucket("testBucket")
     .WithKey("testKey")
     .WithCopySource("testSource");
-
+  
   auto mockRequest = Aws::MakeShared<Standard::StandardHttpRequest>(ALLOCATION_TAG, "mockuri", HttpMethod::HTTP_GET);
   mockRequest->SetResponseStreamFactory([]() -> IOStream* {
-    return Aws::New<StringStream>(ALLOCATION_TAG, R"(<?xml version="1.0" encoding="UTF-8"?><Error><Code>SlowDown</Code><Message>Please reduce your request rate.</Message></Error>)", std::ios_base::in | std::ios_base::binary);
+    const std::string mockResponseString = "\n         <?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n         <Error>\n          <Code>InternalError</Code>\n          <Message>We encountered an internal error. Please try again.</Message>\n          <RequestId>656c76696e6727732072657175657374</RequestId>\n          <HostId>Uuag1LuByRx9e6j5Onimru9pO4ZVKnJ2Qz7/C1NPcfTWAtRPfTaOFg==</HostId>\n         </Error>\n    ";
+
+    return Aws::New<StringStream>(ALLOCATION_TAG, mockResponseString, std::ios_base::in | std::ios_base::binary);
   });
   auto mockResponse = Aws::MakeShared<Standard::StandardHttpResponse>(ALLOCATION_TAG, mockRequest);
   mockResponse->SetResponseCode(HttpResponseCode::OK);
+
+  /*
   mockResponse->AddHeader("Server", "AmazonS3");
   mockResponse->AddHeader("Connection", "close");
   mockResponse->AddHeader("Date", "Mon, 1 Nov 2010 20:34:56 GMT");
   mockResponse->AddHeader("x-amz-request-id", "656c76696e6727732072657175657374");
   mockResponse->AddHeader("x-amz-id-2", "Uuag1LuByRx9e6j5Onimru9pO4ZVKnJ2Qz7/C1NPcfTWAtRPfTaOFg==");
+  */
   _mockHttpClient->AddResponseToReturn(mockResponse);
 
   const auto response = _s3Client->CopyObject(request);
+  //std::cout<<"Custom Error:"<<response.GetError()<<std::endl;
+
   EXPECT_FALSE(response.IsSuccess());
 }
