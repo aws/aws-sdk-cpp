@@ -86,12 +86,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>Indicates whether your client's IP address is preserved as the source. The
-     * value is <code>true</code> or <code>false</code>.</p> <ul> <li> <p>If
-     * <code>true</code>, your client's IP address is used when you connect to a
-     * resource.</p> </li> <li> <p>If <code>false</code>, the elastic network interface
-     * IP address is used when you connect to a resource.</p> </li> </ul> <p>Default:
-     * <code>true</code> </p>
+     * <p>Indicates whether the client IP address is preserved as the source. The
+     * following are the possible values.</p> <ul> <li> <p> <code>true</code> - Use the
+     * client IP address as the source.</p> </li> <li> <p> <code>false</code> - Use the
+     * network interface IP address as the source.</p> </li> </ul> <p>Default:
+     * <code>false</code> </p>
      */
     inline bool GetPreserveClientIp() const{ return m_preserveClientIp; }
     inline bool PreserveClientIpHasBeenSet() const { return m_preserveClientIpHasBeenSet; }

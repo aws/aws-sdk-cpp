@@ -35,7 +35,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The established temporary security credentials for the created session..</p>
+     * <p>The established temporary security credentials for the created session.</p>
      */
     inline const SessionCredentials& GetCredentials() const{ return m_credentials; }
     inline void SetCredentials(const SessionCredentials& value) { m_credentials = value; }

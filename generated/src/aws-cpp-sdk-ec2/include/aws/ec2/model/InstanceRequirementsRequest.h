@@ -533,7 +533,7 @@ namespace Model
      * selects instance types with your attributes, it will exclude instance types
      * whose price exceeds your specified threshold.</p> <p>The parameter accepts an
      * integer, which Amazon EC2 interprets as a percentage.</p> <p>If you set
-     * <code>DesiredCapacityType</code> to <code>vcpu</code> or
+     * <code>TargetCapacityUnitType</code> to <code>vcpu</code> or
      * <code>memory-mib</code>, the price protection threshold is based on the per vCPU
      * or per memory price instead of the per instance price.</p>  <p>Only one of
      * <code>SpotMaxPricePercentageOverLowestPrice</code> or

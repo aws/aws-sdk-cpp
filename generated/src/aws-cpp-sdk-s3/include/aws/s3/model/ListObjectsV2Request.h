@@ -118,8 +118,8 @@ namespace Model
     /**
      * <p>Encoding type used by Amazon S3 to encode object keys in the response. If
      * using <code>url</code>, non-ASCII characters used in an object's key name will
-     * be URL encoded. For example, the object test_file(3).png will appear as
-     * test_file%283%29.png.</p>
+     * be URL encoded. For example, the object <code>test_file(3).png</code> will
+     * appear as <code>test_file%283%29.png</code>.</p>
      */
     inline const EncodingType& GetEncodingType() const{ return m_encodingType; }
     inline bool EncodingTypeHasBeenSet() const { return m_encodingTypeHasBeenSet; }

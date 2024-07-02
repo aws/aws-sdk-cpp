@@ -20,6 +20,7 @@ namespace Aws
       namespace HostTenancyMapper
       {
 
+        static const int default__HASH = HashingUtils::HashString("default");
         static const int dedicated_HASH = HashingUtils::HashString("dedicated");
         static const int host_HASH = HashingUtils::HashString("host");
 
@@ -27,7 +28,11 @@ namespace Aws
         HostTenancy GetHostTenancyForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == dedicated_HASH)
+          if (hashCode == default__HASH)
+          {
+            return HostTenancy::default_;
+          }
+          else if (hashCode == dedicated_HASH)
           {
             return HostTenancy::dedicated;
           }
@@ -51,6 +56,8 @@ namespace Aws
           {
           case HostTenancy::NOT_SET:
             return {};
+          case HostTenancy::default_:
+            return "default";
           case HostTenancy::dedicated:
             return "dedicated";
           case HostTenancy::host:

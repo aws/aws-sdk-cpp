@@ -87,7 +87,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The volume IDs.</p>
+     * <p>The volume IDs. If not specified, then all volumes are included in the
+     * response.</p>
      */
     inline const Aws::Vector<Aws::String>& GetVolumeIds() const{ return m_volumeIds; }
     inline bool VolumeIdsHasBeenSet() const { return m_volumeIdsHasBeenSet; }

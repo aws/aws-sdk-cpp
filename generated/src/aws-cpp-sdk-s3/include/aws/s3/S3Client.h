@@ -405,17 +405,16 @@ namespace Aws
          * <dt>Response and special errors</dt> <dd> <p>When the request is an HTTP 1.1
          * request, the response is chunk encoded. When the request is not an HTTP 1.1
          * request, the response would not contain the <code>Content-Length</code>. You
-         * always need to read the entire response body to check if the copy succeeds. to
-         * keep the connection alive while we copy the data. </p> <ul> <li> <p>If the copy
-         * is successful, you receive a response with information about the copied
-         * object.</p> </li> <li> <p>A copy request might return an error when Amazon S3
-         * receives the copy request or while Amazon S3 is copying the files. A <code>200
-         * OK</code> response can contain either a success or an error.</p> <ul> <li> <p>If
-         * the error occurs before the copy action starts, you receive a standard Amazon S3
-         * error.</p> </li> <li> <p>If the error occurs during the copy operation, the
-         * error response is embedded in the <code>200 OK</code> response. For example, in
-         * a cross-region copy, you may encounter throttling and receive a <code>200
-         * OK</code> response. For more information, see <a
+         * always need to read the entire response body to check if the copy succeeds. </p>
+         * <ul> <li> <p>If the copy is successful, you receive a response with information
+         * about the copied object.</p> </li> <li> <p>A copy request might return an error
+         * when Amazon S3 receives the copy request or while Amazon S3 is copying the
+         * files. A <code>200 OK</code> response can contain either a success or an
+         * error.</p> <ul> <li> <p>If the error occurs before the copy action starts, you
+         * receive a standard Amazon S3 error.</p> </li> <li> <p>If the error occurs during
+         * the copy operation, the error response is embedded in the <code>200 OK</code>
+         * response. For example, in a cross-region copy, you may encounter throttling and
+         * receive a <code>200 OK</code> response. For more information, see <a
          * href="https://repost.aws/knowledge-center/s3-resolve-200-internalerror">Resolve
          * the Error 200 response when copying objects to Amazon S3</a>. The <code>200
          * OK</code> status code means the copy was accepted, but it doesn't mean the copy
@@ -1635,7 +1634,7 @@ namespace Aws
          * <p> <b> <code>s3:DeleteObject</code> </b> - To delete an object from a bucket,
          * you must always specify the <code>s3:DeleteObject</code> permission.</p> </li>
          * <li> <p> <b> <code>s3:DeleteObjectVersion</code> </b> - To delete a specific
-         * version of an object from a versiong-enabled bucket, you must specify the
+         * version of an object from a versioning-enabled bucket, you must specify the
          * <code>s3:DeleteObjectVersion</code> permission.</p> </li> </ul> </li> <li> <p>
          * <b>Directory bucket permissions</b> - To grant access to this API operation on a
          * directory bucket, we recommend that you use the <a
@@ -6055,14 +6054,14 @@ namespace Aws
          * <code>s3:PutObject</code> </b> permission to write the object copy to the
          * destination bucket. </p> </li> </ul> <p>For information about permissions
          * required to use the multipart upload API, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuAndPermissions.html">Multipart
-         * Upload and Permissions</a> in the <i>Amazon S3 User Guide</i>.</p> </li> <li>
-         * <p> <b>Directory bucket permissions</b> - You must have permissions in a bucket
-         * policy or an IAM identity-based policy based on the source and destination
-         * bucket types in an <code>UploadPartCopy</code> operation.</p> <ul> <li> <p>If
-         * the source object that you want to copy is in a directory bucket, you must have
-         * the <b> <code>s3express:CreateSession</code> </b> permission in the
-         * <code>Action</code> element of a policy to read the object . By default, the
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html#mpuAndPermissions">Multipart
+         * upload API and permissions</a> in the <i>Amazon S3 User Guide</i>.</p> </li>
+         * <li> <p> <b>Directory bucket permissions</b> - You must have permissions in a
+         * bucket policy or an IAM identity-based policy based on the source and
+         * destination bucket types in an <code>UploadPartCopy</code> operation.</p> <ul>
+         * <li> <p>If the source object that you want to copy is in a directory bucket, you
+         * must have the <b> <code>s3express:CreateSession</code> </b> permission in the
+         * <code>Action</code> element of a policy to read the object. By default, the
          * session is in the <code>ReadWrite</code> mode. If you want to restrict the
          * access, you can explicitly set the <code>s3express:SessionMode</code> condition
          * key to <code>ReadOnly</code> on the copy source bucket.</p> </li> <li> <p>If the
