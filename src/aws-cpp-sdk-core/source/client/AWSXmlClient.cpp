@@ -186,12 +186,21 @@ AWSError<CoreErrors> AWSXMLClient::BuildAWSError(const std::shared_ptr<Http::Htt
     {
         auto responseCode = httpResponse->GetResponseCode();
         auto errorCode = AWSClient::GuessBodylessErrorType(responseCode);
-
         Aws::StringStream ss;
-        ss << "No response body.";
-        ss << " tellp = "<<httpResponse->GetResponseBody().tellp();
-        ss << "client error:"<<httpResponse->GetClientErrorType();
-        ss << "client error message:"<<httpResponse->GetClientErrorMessage();
+        
+        if(!httpResponse->GetResponseBody())
+        {
+            ss << "No response body.";
+        }
+        else
+        {
+            Aws::String xmlString((Aws::IStreamBufIterator(httpResponse->GetResponseBody())), Aws::IStreamBufIterator());
+
+            ss <<xmlString;
+            ss << " tellp = "<<httpResponse->GetResponseBody().tellp();
+            ss << "client error:"<<httpResponse->GetClientErrorType();
+            ss << "client error message:"<<httpResponse->GetClientErrorMessage();
+        }
         error = AWSError<CoreErrors>(errorCode, "", ss.str(), IsRetryableHttpResponseCode(responseCode));
     }
     else

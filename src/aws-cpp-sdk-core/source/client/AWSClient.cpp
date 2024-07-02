@@ -591,7 +591,6 @@ HttpResponseOutcome AWSClient::AttemptOneRequest(const std::shared_ptr<Aws::Http
     else if(request.HasEmbeddedError(httpResponse->GetResponseBody(), httpResponse->GetHeaders()))
     {
         Aws::String message{"Error in body of the response"};
-        httpResponse->SetClientErrorType( CoreErrors::INTERNAL_FAILURE);
         //extract error message
         auto& body = httpResponse->GetResponseBody();
 
@@ -604,17 +603,19 @@ HttpResponseOutcome AWSClient::AttemptOneRequest(const std::shared_ptr<Aws::Http
             doc.GetRootElement().GetName() == Aws::String("Error")) 
         {        
             auto messageNode = doc.GetRootElement().FirstChild("Message") ;
-            if(messageNode.IsNull())
+            if(!messageNode.IsNull())
             {
                 message = messageNode.GetText();
             }
-
-            httpResponse->SetClientErrorMessage(message);
-            httpResponse->SetClientErrorType( CoreErrors::INTERNAL_FAILURE);
         }
         body.seekg(readPointer);
+        //httpResponse->SetClientErrorType( CoreErrors::INTERNAL_FAILURE);
+        //httpResponse->SetClientErrorMessage(message);
 
-        AWS_LOGSTREAM_DEBUG(AWS_CLIENT_LOG_TAG, "Request returned error. Attempting to generate appropriate error codes from response");
+        //httpResponse->SetContentType(message);
+        //httpResponse->SetResponseCode(HttpResponseCode::INTERNAL_SERVER_ERROR);
+
+        AWS_LOGSTREAM_DEBUG(AWS_CLIENT_LOG_TAG, message);
         auto error = BuildAWSError(httpResponse);
         return HttpResponseOutcome(std::move(error));
     }
