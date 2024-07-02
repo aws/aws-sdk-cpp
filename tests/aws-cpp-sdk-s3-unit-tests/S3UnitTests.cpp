@@ -194,15 +194,18 @@ TEST_F(S3UnitTest, S3EmbeddedErrorTest) {
   });
   auto mockResponse = Aws::MakeShared<Standard::StandardHttpResponse>(ALLOCATION_TAG, mockRequest);
   mockResponse->SetResponseCode(HttpResponseCode::OK);
+
+  /*
   mockResponse->AddHeader("Server", "AmazonS3");
   mockResponse->AddHeader("Connection", "close");
   mockResponse->AddHeader("Date", "Mon, 1 Nov 2010 20:34:56 GMT");
   mockResponse->AddHeader("x-amz-request-id", "656c76696e6727732072657175657374");
   mockResponse->AddHeader("x-amz-id-2", "Uuag1LuByRx9e6j5Onimru9pO4ZVKnJ2Qz7/C1NPcfTWAtRPfTaOFg==");
+  */
   _mockHttpClient->AddResponseToReturn(mockResponse);
 
   const auto response = _s3Client->CopyObject(request);
-    std::cout<<"Custom Error:"<<response.GetError()<<std::endl;
+  //std::cout<<"Custom Error:"<<response.GetError()<<std::endl;
 
   EXPECT_FALSE(response.IsSuccess());
 }
