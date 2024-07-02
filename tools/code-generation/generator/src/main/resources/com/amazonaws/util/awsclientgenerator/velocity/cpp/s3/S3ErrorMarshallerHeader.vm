@@ -24,6 +24,7 @@ public:
   Aws::Client::AWSError<Aws::Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
   virtual Aws::String ExtractRegion(const AWSError<CoreErrors>&) const override;
   virtual Aws::String ExtractEndpoint(const AWSError<CoreErrors>&) const override;
+  virtual AWSError<Aws::Client::CoreErrors>  Marshall(const Aws::Http::HttpResponse& response) const override;
 };
 
 } // namespace ${serviceNamespace}

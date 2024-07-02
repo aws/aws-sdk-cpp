@@ -276,12 +276,6 @@ namespace Aws
             virtual AWSError<CoreErrors> BuildAWSError(const std::shared_ptr<Aws::Http::HttpResponse>& response) const = 0;
 
             /**
-             * Abstract.  Subclassing clients should override this to tell the client how to marshall error payloads
-             */
-            virtual AWSError<CoreErrors> BuildAWSErrorFromResponseBody(const std::shared_ptr<Aws::Http::HttpResponse>& response) const;
-
-
-            /**
              * Transforms the AmazonWebServicesResult object into an HttpRequest.
              */
             virtual void BuildHttpRequest(const Aws::AmazonWebServiceRequest& request,
