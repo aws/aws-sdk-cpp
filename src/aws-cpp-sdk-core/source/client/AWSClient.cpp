@@ -590,34 +590,7 @@ HttpResponseOutcome AWSClient::AttemptOneRequest(const std::shared_ptr<Aws::Http
     }
     else if(request.HasEmbeddedError(httpResponse->GetResponseBody(), httpResponse->GetHeaders()))
     {
-        Aws::String message{"Error in body of the response"};
-        //extract error message
-        auto& body = httpResponse->GetResponseBody();
-
-        auto readPointer = body.tellg();
-        XmlDocument doc = XmlDocument::CreateFromXmlStream(body);
-
-        
-        if (doc.WasParseSuccessful() &&
-            !doc.GetRootElement().IsNull() && 
-            doc.GetRootElement().GetName() == Aws::String("Error")) 
-        {        
-            auto messageNode = doc.GetRootElement().FirstChild("Message") ;
-            if(!messageNode.IsNull())
-            {
-                message = messageNode.GetText();
-            }
-        }
-        body.seekg(readPointer);
-        //httpResponse->SetClientErrorType( CoreErrors::INTERNAL_FAILURE);
-        //httpResponse->SetClientErrorMessage(message);
-
-        //httpResponse->SetContentType(message);
-        //httpResponse->SetResponseCode(HttpResponseCode::INTERNAL_SERVER_ERROR);
-
-        AWS_LOGSTREAM_DEBUG(AWS_CLIENT_LOG_TAG, message);
-        auto error = BuildAWSError(httpResponse);
-        return HttpResponseOutcome(std::move(error));
+        return HttpResponseOutcome(std::move(BuildAWSErrorFromResponseBody(httpResponse)) );
     }
 
     AWS_LOGSTREAM_DEBUG(AWS_CLIENT_LOG_TAG, "Request returned successful response.");
@@ -1192,4 +1165,45 @@ void AWSClient::AppendRecursionDetectionHeader(std::shared_ptr<Aws::Http::HttpRe
     xAmznTraceIdVal = xAmznTraceIdValEncodedStr.str();
 
     ioRequest->SetHeaderValue(Aws::Http::X_AMZN_TRACE_ID_HEADER, xAmznTraceIdVal);
+}
+
+
+
+AWSError<CoreErrors> AWSClient::BuildAWSErrorFromResponseBody(const std::shared_ptr<Aws::Http::HttpResponse>& httpResponse) const
+{
+
+    Aws::String message{"Error in body of the response"};
+    //extract error message and code in the body
+    auto& body = httpResponse->GetResponseBody();
+    auto responseCode = httpResponse->GetResponseCode();
+    auto readPointer = body.tellg();
+    XmlDocument doc = XmlDocument::CreateFromXmlStream(body);
+    Aws::String bodyError;
+    auto coreErrorCode = CoreErrors::INTERNAL_FAILURE;
+    
+    if (doc.WasParseSuccessful() &&
+        !doc.GetRootElement().IsNull() && 
+        doc.GetRootElement().GetName() == Aws::String("Error")) 
+    {        
+        auto messageNode = doc.GetRootElement().FirstChild("Message") ;
+        if(!messageNode.IsNull())
+        {
+            message = messageNode.GetText();
+        }
+        auto codeNode = doc.GetRootElement().FirstChild("Code") ;
+        if(!codeNode.IsNull())
+        {
+            bodyError = codeNode.GetText();
+            if(bodyError == "SlowDown")
+            {
+                coreErrorCode = CoreErrors::SLOW_DOWN;
+            }
+        }
+    }
+    body.seekg(readPointer);
+
+    AWSError<CoreErrors> error{coreErrorCode, "", message, IsRetryableHttpResponseCode(responseCode)};
+
+    AWS_LOGSTREAM_DEBUG(AWS_CLIENT_LOG_TAG, message);
+    return error;
 }

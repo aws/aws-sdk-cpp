@@ -74,7 +74,7 @@ namespace Aws
          * Abstract AWS Client. Contains most of the functionality necessary to build an http request, get it signed, and send it across the wire.
          */
         class AWS_CORE_API AWSClient
-        {
+        { 
         public:
             /**
              * configuration will be used for http client settings, retry strategy, throttles, and signing information.
@@ -274,6 +274,12 @@ namespace Aws
              * Abstract.  Subclassing clients should override this to tell the client how to marshall error payloads
              */
             virtual AWSError<CoreErrors> BuildAWSError(const std::shared_ptr<Aws::Http::HttpResponse>& response) const = 0;
+
+            /**
+             * Abstract.  Subclassing clients should override this to tell the client how to marshall error payloads
+             */
+            virtual AWSError<CoreErrors> BuildAWSErrorFromResponseBody(const std::shared_ptr<Aws::Http::HttpResponse>& response) const;
+
 
             /**
              * Transforms the AmazonWebServicesResult object into an HttpRequest.

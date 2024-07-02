@@ -131,7 +131,7 @@ public class S3RestXmlCppClientGenerator extends RestXmlCppClientGenerator {
             "SelectObjectContentRequest",
             "UploadPartRequest",
             "UploadPartCopyRequest",
-            "WriteGetObjectResponseRequest",
+            "WriteGetObjectResponseRequest"
     );
 
     private final Set<String> opsThatDoNotSupportBucketArguments = ImmutableSet.of(
