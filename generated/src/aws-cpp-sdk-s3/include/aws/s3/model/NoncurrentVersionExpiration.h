@@ -56,9 +56,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies how many newer noncurrent versions must exist before Amazon S3 can
-     * perform the associated action on a given version. If there are this many more
-     * recent noncurrent versions, Amazon S3 will take the associated action. For more
+     * <p>Specifies how many noncurrent versions Amazon S3 will retain. You can specify
+     * up to 100 noncurrent versions to retain. Amazon S3 will permanently delete any
+     * additional noncurrent versions beyond the specified number to retain. For more
      * information about noncurrent versions, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/intro-lifecycle-rules.html">Lifecycle
      * configuration elements</a> in the <i>Amazon S3 User Guide</i>.</p>

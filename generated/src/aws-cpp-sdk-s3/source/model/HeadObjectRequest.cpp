@@ -24,6 +24,12 @@ HeadObjectRequest::HeadObjectRequest() :
     m_ifUnmodifiedSinceHasBeenSet(false),
     m_keyHasBeenSet(false),
     m_rangeHasBeenSet(false),
+    m_responseCacheControlHasBeenSet(false),
+    m_responseContentDispositionHasBeenSet(false),
+    m_responseContentEncodingHasBeenSet(false),
+    m_responseContentLanguageHasBeenSet(false),
+    m_responseContentTypeHasBeenSet(false),
+    m_responseExpiresHasBeenSet(false),
     m_versionIdHasBeenSet(false),
     m_sSECustomerAlgorithmHasBeenSet(false),
     m_sSECustomerKeyHasBeenSet(false),
@@ -47,6 +53,48 @@ Aws::String HeadObjectRequest::SerializePayload() const
 void HeadObjectRequest::AddQueryStringParameters(URI& uri) const
 {
     Aws::StringStream ss;
+    if(m_responseCacheControlHasBeenSet)
+    {
+      ss << m_responseCacheControl;
+      uri.AddQueryStringParameter("response-cache-control", ss.str());
+      ss.str("");
+    }
+
+    if(m_responseContentDispositionHasBeenSet)
+    {
+      ss << m_responseContentDisposition;
+      uri.AddQueryStringParameter("response-content-disposition", ss.str());
+      ss.str("");
+    }
+
+    if(m_responseContentEncodingHasBeenSet)
+    {
+      ss << m_responseContentEncoding;
+      uri.AddQueryStringParameter("response-content-encoding", ss.str());
+      ss.str("");
+    }
+
+    if(m_responseContentLanguageHasBeenSet)
+    {
+      ss << m_responseContentLanguage;
+      uri.AddQueryStringParameter("response-content-language", ss.str());
+      ss.str("");
+    }
+
+    if(m_responseContentTypeHasBeenSet)
+    {
+      ss << m_responseContentType;
+      uri.AddQueryStringParameter("response-content-type", ss.str());
+      ss.str("");
+    }
+
+    if(m_responseExpiresHasBeenSet)
+    {
+      ss << m_responseExpires.ToGmtString(Aws::Utils::DateFormat::RFC822);
+      uri.AddQueryStringParameter("response-expires", ss.str());
+      ss.str("");
+    }
+
     if(m_versionIdHasBeenSet)
     {
       ss << m_versionId;

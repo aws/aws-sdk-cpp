@@ -209,6 +209,88 @@ namespace Model
 
     ///@{
     /**
+     * <p>Sets the <code>Cache-Control</code> header of the response.</p>
+     */
+    inline const Aws::String& GetResponseCacheControl() const{ return m_responseCacheControl; }
+    inline bool ResponseCacheControlHasBeenSet() const { return m_responseCacheControlHasBeenSet; }
+    inline void SetResponseCacheControl(const Aws::String& value) { m_responseCacheControlHasBeenSet = true; m_responseCacheControl = value; }
+    inline void SetResponseCacheControl(Aws::String&& value) { m_responseCacheControlHasBeenSet = true; m_responseCacheControl = std::move(value); }
+    inline void SetResponseCacheControl(const char* value) { m_responseCacheControlHasBeenSet = true; m_responseCacheControl.assign(value); }
+    inline HeadObjectRequest& WithResponseCacheControl(const Aws::String& value) { SetResponseCacheControl(value); return *this;}
+    inline HeadObjectRequest& WithResponseCacheControl(Aws::String&& value) { SetResponseCacheControl(std::move(value)); return *this;}
+    inline HeadObjectRequest& WithResponseCacheControl(const char* value) { SetResponseCacheControl(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Sets the <code>Content-Disposition</code> header of the response.</p>
+     */
+    inline const Aws::String& GetResponseContentDisposition() const{ return m_responseContentDisposition; }
+    inline bool ResponseContentDispositionHasBeenSet() const { return m_responseContentDispositionHasBeenSet; }
+    inline void SetResponseContentDisposition(const Aws::String& value) { m_responseContentDispositionHasBeenSet = true; m_responseContentDisposition = value; }
+    inline void SetResponseContentDisposition(Aws::String&& value) { m_responseContentDispositionHasBeenSet = true; m_responseContentDisposition = std::move(value); }
+    inline void SetResponseContentDisposition(const char* value) { m_responseContentDispositionHasBeenSet = true; m_responseContentDisposition.assign(value); }
+    inline HeadObjectRequest& WithResponseContentDisposition(const Aws::String& value) { SetResponseContentDisposition(value); return *this;}
+    inline HeadObjectRequest& WithResponseContentDisposition(Aws::String&& value) { SetResponseContentDisposition(std::move(value)); return *this;}
+    inline HeadObjectRequest& WithResponseContentDisposition(const char* value) { SetResponseContentDisposition(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Sets the <code>Content-Encoding</code> header of the response.</p>
+     */
+    inline const Aws::String& GetResponseContentEncoding() const{ return m_responseContentEncoding; }
+    inline bool ResponseContentEncodingHasBeenSet() const { return m_responseContentEncodingHasBeenSet; }
+    inline void SetResponseContentEncoding(const Aws::String& value) { m_responseContentEncodingHasBeenSet = true; m_responseContentEncoding = value; }
+    inline void SetResponseContentEncoding(Aws::String&& value) { m_responseContentEncodingHasBeenSet = true; m_responseContentEncoding = std::move(value); }
+    inline void SetResponseContentEncoding(const char* value) { m_responseContentEncodingHasBeenSet = true; m_responseContentEncoding.assign(value); }
+    inline HeadObjectRequest& WithResponseContentEncoding(const Aws::String& value) { SetResponseContentEncoding(value); return *this;}
+    inline HeadObjectRequest& WithResponseContentEncoding(Aws::String&& value) { SetResponseContentEncoding(std::move(value)); return *this;}
+    inline HeadObjectRequest& WithResponseContentEncoding(const char* value) { SetResponseContentEncoding(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Sets the <code>Content-Language</code> header of the response.</p>
+     */
+    inline const Aws::String& GetResponseContentLanguage() const{ return m_responseContentLanguage; }
+    inline bool ResponseContentLanguageHasBeenSet() const { return m_responseContentLanguageHasBeenSet; }
+    inline void SetResponseContentLanguage(const Aws::String& value) { m_responseContentLanguageHasBeenSet = true; m_responseContentLanguage = value; }
+    inline void SetResponseContentLanguage(Aws::String&& value) { m_responseContentLanguageHasBeenSet = true; m_responseContentLanguage = std::move(value); }
+    inline void SetResponseContentLanguage(const char* value) { m_responseContentLanguageHasBeenSet = true; m_responseContentLanguage.assign(value); }
+    inline HeadObjectRequest& WithResponseContentLanguage(const Aws::String& value) { SetResponseContentLanguage(value); return *this;}
+    inline HeadObjectRequest& WithResponseContentLanguage(Aws::String&& value) { SetResponseContentLanguage(std::move(value)); return *this;}
+    inline HeadObjectRequest& WithResponseContentLanguage(const char* value) { SetResponseContentLanguage(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Sets the <code>Content-Type</code> header of the response.</p>
+     */
+    inline const Aws::String& GetResponseContentType() const{ return m_responseContentType; }
+    inline bool ResponseContentTypeHasBeenSet() const { return m_responseContentTypeHasBeenSet; }
+    inline void SetResponseContentType(const Aws::String& value) { m_responseContentTypeHasBeenSet = true; m_responseContentType = value; }
+    inline void SetResponseContentType(Aws::String&& value) { m_responseContentTypeHasBeenSet = true; m_responseContentType = std::move(value); }
+    inline void SetResponseContentType(const char* value) { m_responseContentTypeHasBeenSet = true; m_responseContentType.assign(value); }
+    inline HeadObjectRequest& WithResponseContentType(const Aws::String& value) { SetResponseContentType(value); return *this;}
+    inline HeadObjectRequest& WithResponseContentType(Aws::String&& value) { SetResponseContentType(std::move(value)); return *this;}
+    inline HeadObjectRequest& WithResponseContentType(const char* value) { SetResponseContentType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Sets the <code>Expires</code> header of the response.</p>
+     */
+    inline const Aws::Utils::DateTime& GetResponseExpires() const{ return m_responseExpires; }
+    inline bool ResponseExpiresHasBeenSet() const { return m_responseExpiresHasBeenSet; }
+    inline void SetResponseExpires(const Aws::Utils::DateTime& value) { m_responseExpiresHasBeenSet = true; m_responseExpires = value; }
+    inline void SetResponseExpires(Aws::Utils::DateTime&& value) { m_responseExpiresHasBeenSet = true; m_responseExpires = std::move(value); }
+    inline HeadObjectRequest& WithResponseExpires(const Aws::Utils::DateTime& value) { SetResponseExpires(value); return *this;}
+    inline HeadObjectRequest& WithResponseExpires(Aws::Utils::DateTime&& value) { SetResponseExpires(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Version ID used to reference a specific version of the object.</p> 
      * <p>For directory buckets in this API operation, only the <code>null</code> value
      * of the version ID is supported.</p> 
@@ -368,6 +450,24 @@ namespace Model
 
     Aws::String m_range;
     bool m_rangeHasBeenSet = false;
+
+    Aws::String m_responseCacheControl;
+    bool m_responseCacheControlHasBeenSet = false;
+
+    Aws::String m_responseContentDisposition;
+    bool m_responseContentDispositionHasBeenSet = false;
+
+    Aws::String m_responseContentEncoding;
+    bool m_responseContentEncodingHasBeenSet = false;
+
+    Aws::String m_responseContentLanguage;
+    bool m_responseContentLanguageHasBeenSet = false;
+
+    Aws::String m_responseContentType;
+    bool m_responseContentTypeHasBeenSet = false;
+
+    Aws::Utils::DateTime m_responseExpires;
+    bool m_responseExpiresHasBeenSet = false;
 
     Aws::String m_versionId;
     bool m_versionIdHasBeenSet = false;
