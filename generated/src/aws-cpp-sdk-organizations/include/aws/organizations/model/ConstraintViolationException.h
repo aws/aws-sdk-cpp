@@ -95,16 +95,15 @@ namespace Model
    * your Amazon Web Services payments</a>.</p> </li> <li>
    * <p>MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in
    * this organization, you first must migrate the organization's management account
-   * to the marketplace that corresponds to the management account's address. For
-   * example, accounts with India addresses must be associated with the AISPL
-   * marketplace. All accounts in an organization must be associated with the same
-   * marketplace.</p> </li> <li> <p>MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE: Applies
-   * only to the Amazon Web Services Regions in China. To create an organization, the
-   * master must have a valid business license. For more information, contact
-   * customer support.</p> </li> <li> <p>MASTER_ACCOUNT_MISSING_CONTACT_INFO: To
-   * complete this operation, you must first provide a valid contact address and
-   * phone number for the management account. Then try the operation again.</p> </li>
-   * <li> <p>MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the
+   * to the marketplace that corresponds to the management account's address. All
+   * accounts in an organization must be associated with the same marketplace.</p>
+   * </li> <li> <p>MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE: Applies only to the
+   * Amazon Web Services Regions in China. To create an organization, the master must
+   * have a valid business license. For more information, contact customer
+   * support.</p> </li> <li> <p>MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this
+   * operation, you must first provide a valid contact address and phone number for
+   * the management account. Then try the operation again.</p> </li> <li>
+   * <p>MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the
    * management account must have an associated account in the Amazon Web Services
    * GovCloud (US-West) Region. For more information, see <a
    * href="https://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">Organizations</a>

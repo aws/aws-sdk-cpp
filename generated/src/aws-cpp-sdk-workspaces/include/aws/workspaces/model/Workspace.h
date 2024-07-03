@@ -114,7 +114,7 @@ namespace Model
      * <code>REBUILDING</code> – The WorkSpace is being rebuilt.</p> </li> <li> <p>
      * <code>RESTORING</code> – The WorkSpace is being restored.</p> </li> <li> <p>
      * <code>MAINTENANCE</code> – The WorkSpace is undergoing scheduled maintenance by
-     * Amazon Web Services.</p> </li> <li> <p> <code>ADMIN_MAINTENANCE</code> �� The
+     * Amazon Web Services.</p> </li> <li> <p> <code>ADMIN_MAINTENANCE</code> – The
      * WorkSpace is undergoing maintenance by the WorkSpaces administrator.</p> </li>
      * <li> <p> <code>TERMINATING</code> – The WorkSpace is being deleted.</p> </li>
      * <li> <p> <code>TERMINATED</code> – The WorkSpace has been deleted.</p> </li>

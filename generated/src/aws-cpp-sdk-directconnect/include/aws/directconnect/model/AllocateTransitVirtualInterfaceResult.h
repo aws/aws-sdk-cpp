@@ -34,7 +34,9 @@ namespace Model
 
 
     ///@{
-    
+    /**
+     * <p>Information about the transit virtual interface.</p>
+     */
     inline const VirtualInterface& GetVirtualInterface() const{ return m_virtualInterface; }
     inline void SetVirtualInterface(const VirtualInterface& value) { m_virtualInterface = value; }
     inline void SetVirtualInterface(VirtualInterface&& value) { m_virtualInterface = std::move(value); }

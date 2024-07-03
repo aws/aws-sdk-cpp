@@ -52,7 +52,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The port bandwidth, in Gbps. The possible values are 1 and 10.</p>
+     * <p>The port bandwidth, in Gbps. The possible values are 1, 10, and 100.</p>
      */
     inline const Aws::String& GetBandwidth() const{ return m_bandwidth; }
     inline bool BandwidthHasBeenSet() const { return m_bandwidthHasBeenSet; }

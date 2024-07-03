@@ -51,7 +51,7 @@ namespace Model
     ///@{
     /**
      * <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500
-     * and 9001. The default value is 1500.</p>
+     * and 8500. The default value is 1500.</p>
      */
     inline int GetMtu() const{ return m_mtu; }
     inline bool MtuHasBeenSet() const { return m_mtuHasBeenSet; }

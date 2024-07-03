@@ -1804,7 +1804,9 @@ namespace Rekognition
          * getting the next set of results. To get the next page of results, call
          * <code>GetlabelDetection</code> and populate the <code>NextToken</code> request
          * parameter with the token value returned from the previous call to
-         * <code>GetLabelDetection</code>.</p><p><h3>See Also:</h3>   <a
+         * <code>GetLabelDetection</code>.</p> <p>If you are retrieving results while using
+         * the Amazon Simple Notification Service, note that you will receive an "ERROR"
+         * notification if the job encounters an issue.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GetLabelDetection">AWS
          * API Reference</a></p>
          */

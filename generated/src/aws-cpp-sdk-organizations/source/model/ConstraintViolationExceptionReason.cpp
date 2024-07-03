@@ -54,6 +54,7 @@ namespace Aws
         static const int SERVICE_ACCESS_NOT_ENABLED_HASH = HashingUtils::HashString("SERVICE_ACCESS_NOT_ENABLED");
         static const int INVALID_PAYMENT_INSTRUMENT_HASH = HashingUtils::HashString("INVALID_PAYMENT_INSTRUMENT");
         static const int ACCOUNT_CREATION_NOT_COMPLETE_HASH = HashingUtils::HashString("ACCOUNT_CREATION_NOT_COMPLETE");
+        static const int CANNOT_REGISTER_SUSPENDED_ACCOUNT_AS_DELEGATED_ADMINISTRATOR_HASH = HashingUtils::HashString("CANNOT_REGISTER_SUSPENDED_ACCOUNT_AS_DELEGATED_ADMINISTRATOR");
 
 
         ConstraintViolationExceptionReason GetConstraintViolationExceptionReasonForName(const Aws::String& name)
@@ -195,6 +196,10 @@ namespace Aws
           {
             return ConstraintViolationExceptionReason::ACCOUNT_CREATION_NOT_COMPLETE;
           }
+          else if (hashCode == CANNOT_REGISTER_SUSPENDED_ACCOUNT_AS_DELEGATED_ADMINISTRATOR_HASH)
+          {
+            return ConstraintViolationExceptionReason::CANNOT_REGISTER_SUSPENDED_ACCOUNT_AS_DELEGATED_ADMINISTRATOR;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -279,6 +284,8 @@ namespace Aws
             return "INVALID_PAYMENT_INSTRUMENT";
           case ConstraintViolationExceptionReason::ACCOUNT_CREATION_NOT_COMPLETE:
             return "ACCOUNT_CREATION_NOT_COMPLETE";
+          case ConstraintViolationExceptionReason::CANNOT_REGISTER_SUSPENDED_ACCOUNT_AS_DELEGATED_ADMINISTRATOR:
+            return "CANNOT_REGISTER_SUSPENDED_ACCOUNT_AS_DELEGATED_ADMINISTRATOR";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

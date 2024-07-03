@@ -68,9 +68,10 @@ namespace Model
     ///@{
     /**
      * <p>The bandwidth of the connection. The possible values are 50Mbps, 100Mbps,
-     * 200Mbps, 300Mbps, 400Mbps, 500Mbps, 1Gbps, 2Gbps, 5Gbps, and 10Gbps. Note that
-     * only those Direct Connect Partners who have met specific requirements are
-     * allowed to create a 1Gbps, 2Gbps, 5Gbps or 10Gbps hosted connection. </p>
+     * 200Mbps, 300Mbps, 400Mbps, 500Mbps, 1Gbps, 2Gbps, 5Gbps, 10Gbps, and 25Gbps.
+     * Note that only those Direct Connect Partners who have met specific requirements
+     * are allowed to create a 1Gbps, 2Gbps, 5Gbps, 10Gbps, or 25Gbps hosted
+     * connection. </p>
      */
     inline const Aws::String& GetBandwidth() const{ return m_bandwidth; }
     inline bool BandwidthHasBeenSet() const { return m_bandwidthHasBeenSet; }
