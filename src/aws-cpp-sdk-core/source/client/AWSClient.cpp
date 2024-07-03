@@ -591,6 +591,7 @@ HttpResponseOutcome AWSClient::AttemptOneRequest(const std::shared_ptr<Aws::Http
     else if(request.HasEmbeddedError(httpResponse->GetResponseBody(), httpResponse->GetHeaders()))
     {
         AWS_LOGSTREAM_DEBUG(AWS_CLIENT_LOG_TAG, "Response has embedded errors");
+
         auto error = GetErrorMarshaller()->Marshall(*httpResponse);
         return HttpResponseOutcome(std::move(error) );
     }
