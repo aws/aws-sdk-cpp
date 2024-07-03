@@ -34,7 +34,10 @@ namespace Model
 
 
     ///@{
-    
+    /**
+     * <p>Informaiton about a Direct Connect gateway, which enables you to connect
+     * virtual interfaces and virtual private gateways or transit gateways.</p>
+     */
     inline const DirectConnectGateway& GetDirectConnectGateway() const{ return m_directConnectGateway; }
     inline void SetDirectConnectGateway(const DirectConnectGateway& value) { m_directConnectGateway = value; }
     inline void SetDirectConnectGateway(DirectConnectGateway&& value) { m_directConnectGateway = std::move(value); }

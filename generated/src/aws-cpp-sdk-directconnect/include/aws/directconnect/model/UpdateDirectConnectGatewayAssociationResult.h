@@ -34,7 +34,10 @@ namespace Model
 
 
     ///@{
-    
+    /**
+     * <p>Information about an association between a Direct Connect gateway and a
+     * virtual private gateway or transit gateway.</p>
+     */
     inline const DirectConnectGatewayAssociation& GetDirectConnectGatewayAssociation() const{ return m_directConnectGatewayAssociation; }
     inline void SetDirectConnectGatewayAssociation(const DirectConnectGatewayAssociation& value) { m_directConnectGatewayAssociation = value; }
     inline void SetDirectConnectGatewayAssociation(DirectConnectGatewayAssociation&& value) { m_directConnectGatewayAssociation = std::move(value); }

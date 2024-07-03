@@ -102,8 +102,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The type of virtual interface. The possible values are <code>private</code>
-     * and <code>public</code>.</p>
+     * <p>The type of virtual interface. The possible values are <code>private</code>,
+     * <code>public</code> and <code>transit</code>.</p>
      */
     inline const Aws::String& GetVirtualInterfaceType() const{ return m_virtualInterfaceType; }
     inline bool VirtualInterfaceTypeHasBeenSet() const { return m_virtualInterfaceTypeHasBeenSet; }

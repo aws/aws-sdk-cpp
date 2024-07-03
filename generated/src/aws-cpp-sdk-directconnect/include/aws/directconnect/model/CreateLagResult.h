@@ -47,7 +47,7 @@ namespace Model
     ///@{
     /**
      * <p>The individual bandwidth of the physical connections bundled by the LAG. The
-     * possible values are 1Gbps and 10Gbps. </p>
+     * possible values are 1Gbps, 10Gbps, 100Gbps, or 400 Gbps.. </p>
      */
     inline const Aws::String& GetConnectionsBandwidth() const{ return m_connectionsBandwidth; }
     inline void SetConnectionsBandwidth(const Aws::String& value) { m_connectionsBandwidth = value; }
@@ -60,8 +60,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The number of physical dedicated connections bundled by the LAG, up to a
-     * maximum of 10.</p>
+     * <p>The number of physical dedicated connections initially provisioned and
+     * bundled by the LAG. You can have a maximum of four connections when the port
+     * speed is 1 Gbps or 10 Gbps, or two when the port speed is 100 Gbps or 400
+     * Gbps.</p>
      */
     inline int GetNumberOfConnections() const{ return m_numberOfConnections; }
     inline void SetNumberOfConnections(int value) { m_numberOfConnections = value; }

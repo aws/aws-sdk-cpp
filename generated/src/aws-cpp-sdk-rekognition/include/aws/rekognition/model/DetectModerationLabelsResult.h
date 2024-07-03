@@ -38,8 +38,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Array of detected Moderation labels and the time, in milliseconds from the
-     * start of the video, they were detected.</p>
+     * <p>Array of detected Moderation labels. For video operations, this includes the
+     * time, in milliseconds from the start of the video, they were detected.</p>
      */
     inline const Aws::Vector<ModerationLabel>& GetModerationLabels() const{ return m_moderationLabels; }
     inline void SetModerationLabels(const Aws::Vector<ModerationLabel>& value) { m_moderationLabels = value; }
