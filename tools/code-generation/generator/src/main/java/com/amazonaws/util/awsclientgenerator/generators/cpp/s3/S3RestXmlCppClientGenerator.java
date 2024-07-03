@@ -39,7 +39,8 @@ public class S3RestXmlCppClientGenerator extends RestXmlCppClientGenerator {
     private static Set<String> s3CrtEnabledOps = new HashSet<>(); // All other ops are in fact regular SDK calls
     private static Set<String> bucketLocationConstraints = new HashSet<>();
     private Set<String> functionsWithEmbeddedErrors = ImmutableSet.of(
-
+    "PutBucketNotificationConfigurationRequest"
+/* 
     "AbortMultipartUploadRequest",
     "CompleteMultipartUploadRequest",
     "CopyObjectRequest",
@@ -133,7 +134,7 @@ public class S3RestXmlCppClientGenerator extends RestXmlCppClientGenerator {
     "UploadPartRequest",
     "UploadPartCopyRequest",
     "WriteGetObjectResponseRequest"
-
+*/
     );
 
     private final Set<String> opsThatDoNotSupportBucketArguments = ImmutableSet.of(
