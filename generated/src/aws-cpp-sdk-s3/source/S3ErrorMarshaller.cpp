@@ -6,9 +6,15 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/s3/S3ErrorMarshaller.h>
 #include <aws/s3/S3Errors.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/logging/LogMacros.h>
+
 
 using namespace Aws::Client;
 using namespace Aws::S3;
+using namespace Aws::Utils::Xml;
+using namespace Aws::Http;
 
 AWSError<CoreErrors> S3ErrorMarshaller::FindErrorByName(const char* errorName) const
 {
@@ -96,4 +102,43 @@ Aws::String S3ErrorMarshaller::ExtractEndpoint(const AWSError<CoreErrors>& error
   }
 
   return {};
+}
+
+AWSError<Aws::Client::CoreErrors> S3ErrorMarshaller::Marshall(const Aws::Http::HttpResponse& httpResponse) const
+{
+
+  Aws::String message{"Error in body of the response"};
+  //extract error message and code in the body
+  auto& body = httpResponse.GetResponseBody();
+  auto responseCode = httpResponse.GetResponseCode();
+  auto readPointer = body.tellg();
+  XmlDocument doc = XmlDocument::CreateFromXmlStream(body);
+  Aws::String bodyError;
+  auto coreErrorCode = Aws::Client::CoreErrors::INTERNAL_FAILURE;
+  
+  if (doc.WasParseSuccessful() &&
+      !doc.GetRootElement().IsNull() && 
+      doc.GetRootElement().GetName() == Aws::String("Error")) 
+  {        
+      auto messageNode = doc.GetRootElement().FirstChild("Message") ;
+      if(!messageNode.IsNull())
+      {
+          message = messageNode.GetText();
+      }
+      auto codeNode = doc.GetRootElement().FirstChild("Code") ;
+      if(!codeNode.IsNull())
+      {
+          bodyError = codeNode.GetText();
+          if(bodyError == "SlowDown")
+          {
+              coreErrorCode = Aws::Client::CoreErrors::SLOW_DOWN;
+          }
+      }
+  }
+  body.seekg(readPointer);
+
+  AWSError<Aws::Client::CoreErrors> error{coreErrorCode, "", message, IsRetryableHttpResponseCode(responseCode)};
+
+  return error;
+
 }

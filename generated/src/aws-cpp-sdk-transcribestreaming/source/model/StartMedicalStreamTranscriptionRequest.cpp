@@ -127,3 +127,5 @@ Aws::Http::HeaderValueCollection StartMedicalStreamTranscriptionRequest::GetRequ
   return headers;
 
 }
+
+
