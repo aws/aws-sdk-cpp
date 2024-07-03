@@ -110,12 +110,10 @@ AWSError<Aws::Client::CoreErrors> S3CrtErrorMarshaller::Marshall(const Aws::Http
   Aws::String message{"Error in body of the response"};
   //extract error message and code in the body
   auto& body = httpResponse.GetResponseBody();
-  auto responseCode = httpResponse.GetResponseCode();
   auto readPointer = body.tellg();
   XmlDocument doc = XmlDocument::CreateFromXmlStream(body);
   Aws::String bodyError;
-  auto coreErrorCode = Aws::Client::CoreErrors::INTERNAL_FAILURE;
-  
+
   if (doc.WasParseSuccessful() &&
       !doc.GetRootElement().IsNull() && 
       doc.GetRootElement().GetName() == Aws::String("Error")) 
@@ -129,15 +127,13 @@ AWSError<Aws::Client::CoreErrors> S3CrtErrorMarshaller::Marshall(const Aws::Http
       if(!codeNode.IsNull())
       {
           bodyError = codeNode.GetText();
-          if(bodyError == "SlowDown")
-          {
-              coreErrorCode = Aws::Client::CoreErrors::SLOW_DOWN;
-          }
       }
   }
   body.seekg(readPointer);
 
-  AWSError<Aws::Client::CoreErrors> error{coreErrorCode, "", message, IsRetryableHttpResponseCode(responseCode)};
+  auto error = FindErrorByName(bodyError.c_str());
+
+  error.SetMessage(message);
 
   return error;
 
