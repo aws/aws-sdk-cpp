@@ -23,6 +23,8 @@
 #include <thread>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/client/AWSErrorMarshaller.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+
 
 using namespace Aws;
 using namespace Aws::Client;
@@ -113,7 +115,9 @@ protected:
         {
             httpResponse->AddHeader(header.first, header.second);
         }
+
         mockHttpClient->AddResponseToReturn(httpResponse);
+
     }
 
     void QueueMockResponse(const AWSError<CoreErrors>& clientError, const HeaderValueCollection& headers)
@@ -154,7 +158,7 @@ class XMLClientTestSuite : public AWSClientTestSuite
         config.scheme = Scheme::HTTP;
         config.connectTimeoutMs = 30000;
         config.requestTimeoutMs = 30000;
-        auto countedRetryStrategy = Aws::MakeShared<CountedRetryStrategy>(ALLOCATION_TAG);
+        auto countedRetryStrategy = Aws::MakeShared<CountedRetryStrategy>(ALLOCATION_TAG,0);
         config.retryStrategy = std::static_pointer_cast<DefaultRetryStrategy>(countedRetryStrategy);
 
         mockHttpClient = Aws::MakeShared<MockHttpClient>(ALLOCATION_TAG);
@@ -515,21 +519,39 @@ TEST_F(AWSClientTestSuite, TestRecursionDetection)
         mockHttpClient->Reset();
     }
 }
-
+using namespace Aws::Utils::Xml;
 TEST_F(XMLClientTestSuite, TestErrorInBodyOfResponse)
 {
     HeaderValueCollection responseHeaders;
     AmazonWebServiceRequestMock request;
-
     QueueMockResponse(HttpResponseCode::OK, responseHeaders, "<?xml version=\"1.0\" encoding=\"UTF-8\"?> <Error><Code>SomeException</Code><Message>TestErrorInBodyOfResponse</Message></Error>");
     
     auto outcome = client->MakeRequest(request);
 
     ASSERT_FALSE(outcome.IsSuccess());
+
     ASSERT_EQ(outcome.GetError().GetErrorType(), CoreErrors::UNKNOWN);
-    //ASSERT_EQ(outcome.GetError().GetMessage(), "TestErrorInBodyOfResponse");
-    //ASSERT_EQ(outcome.GetError().GetExceptionName(), "TestErrorInBodyOfResponse");
+    ASSERT_EQ(outcome.GetError().GetExceptionName(), "SomeException");
+    ASSERT_EQ(outcome.GetError().GetMessage(), "Unable to parse ExceptionName: SomeException Message: TestErrorInBodyOfResponse");
+
 }
+
+TEST_F(XMLClientTestSuite, TestKnownErrorInBodyOfResponse)
+{
+    HeaderValueCollection responseHeaders;
+    AmazonWebServiceRequestMock request;
+    QueueMockResponse(HttpResponseCode::OK, responseHeaders, "<?xml version=\"1.0\" encoding=\"UTF-8\"?> <Error><Code>InternalError</Code><Message>TestErrorInBodyOfResponse</Message></Error>");
+    
+    auto outcome = client->MakeRequest(request);
+
+    ASSERT_FALSE(outcome.IsSuccess());
+
+    ASSERT_EQ(outcome.GetError().GetErrorType(), CoreErrors::INTERNAL_FAILURE);
+    ASSERT_EQ(outcome.GetError().GetExceptionName(), "InternalError");
+    ASSERT_EQ(outcome.GetError().GetMessage(), "TestErrorInBodyOfResponse");
+
+}
+
 
 TEST_F(AWSClientTestSuite, TestBuildHttpRequestWithHeadersOnly)
 {

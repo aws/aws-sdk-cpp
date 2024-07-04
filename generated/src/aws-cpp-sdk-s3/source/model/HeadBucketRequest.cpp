@@ -23,6 +23,28 @@ HeadBucketRequest::HeadBucketRequest() :
 {
 }
 
+bool HeadBucketRequest::HasEmbeddedError(Aws::IOStream &body,
+  const Aws::Http::HeaderValueCollection &header) const
+{
+  // Header is unused
+  (void) header;
+
+  auto readPointer = body.tellg();
+  XmlDocument doc = XmlDocument::CreateFromXmlStream(body);
+
+  if (!doc.WasParseSuccessful()) {
+    body.seekg(readPointer);
+    return false;
+  }
+
+  if (!doc.GetRootElement().IsNull() && doc.GetRootElement().GetName() == Aws::String("Error")) {
+    body.seekg(readPointer);
+    return true;
+  }
+  body.seekg(readPointer);
+  return false;
+}
+
 Aws::String HeadBucketRequest::SerializePayload() const
 {
   return {};

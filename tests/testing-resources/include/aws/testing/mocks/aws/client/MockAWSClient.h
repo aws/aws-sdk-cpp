@@ -43,8 +43,14 @@ public:
     virtual const char* GetServiceRequestName() const override { return "AmazonWebServiceRequestMock"; }
     virtual bool HasEmbeddedError(Aws::IOStream& body, const Aws::Http::HeaderValueCollection& header) const override {
         (void) header;
+        
+        auto readPointer = body.tellg();
+
         std::stringstream ss;
         ss << body.rdbuf();
+
+        body.seekg(readPointer);
+
         auto bodyString = ss.str();
         return bodyString.find("TestErrorInBodyOfResponse") != std::string::npos;
     }
@@ -63,7 +69,7 @@ public:
           m_attemptedRetries(0)
       {}
     CountedRetryStrategy(long maxRetires)
-        : Aws::Client::DefaultRetryStrategy(maxRetires <= 0 ? (std::numeric_limits<long>::max)() : maxRetires),
+        : Aws::Client::DefaultRetryStrategy(maxRetires < 0 ? (std::numeric_limits<long>::max)() : maxRetires),
           m_attemptedRetries(0)
       {}
 
