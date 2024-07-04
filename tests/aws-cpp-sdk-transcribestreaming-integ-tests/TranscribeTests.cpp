@@ -139,7 +139,9 @@ unsigned int LevenshteinDistance(Aws::String s1, Aws::String s2)
 
 TEST_F(TranscribeStreamingTests, TranscribeAudioFile)
 {
-    const char EXPECTED_MESSAGE[] = "But what if somebody decides to break it. Be careful that you keep adequate coverage";
+    const char EXPECTED_MESSAGE[] = "But what if somebody decides to break it. Be careful that you keep adequate coverage," 
+                                    "but look for places to save money. Maybe it's taking longer to get things squared away"
+                                    "then the bankers expected hiring the wife for one's company.";
     Aws::String transcribedResult;
     StartStreamTranscriptionHandler handler;
     handler.SetTranscriptEventCallback([&transcribedResult](const TranscriptEvent& ev)
