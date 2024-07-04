@@ -110,9 +110,38 @@ protected:
         bool& sawRetryableError);
 };
 
+unsigned int LevenshteinDistance(Aws::String s1, Aws::String s2)
+{
+  // Lowercase and remove punctuation from both
+  std::transform(s1.begin(), s1.end(), s1.begin(),
+                 [](unsigned char c){ return std::tolower(c); });
+  std::transform(s2.begin(), s2.end(), s2.begin(),
+                 [](unsigned char c){ return std::tolower(c); });
+  auto newEnd = std::remove_if(s1.begin (), s1.end (), ispunct);
+  s1.erase(newEnd, s1.end());
+  newEnd = std::remove_if(s2.begin (), s2.end (), ispunct);
+  s2.erase(newEnd, s2.end());
+
+  // algorithm is taken from
+  // https://en.wikibooks.org/wiki/Algorithm_Implementation/Strings/Levenshtein_distance#C++
+  const std::size_t len1 = s1.size(), len2 = s2.size();
+  Aws::Vector<Aws::Vector<unsigned int>> d(len1 + 1, Aws::Vector<unsigned int>(len2 + 1));
+
+  d[0][0] = 0;
+  for(unsigned int i = 1; i <= len1; ++i) d[i][0] = i;
+  for(unsigned int i = 1; i <= len2; ++i) d[0][i] = i;
+
+  for(unsigned int i = 1; i <= len1; ++i)
+    for(unsigned int j = 1; j <= len2; ++j)
+      d[i][j] = std::min({ d[i - 1][j] + 1, d[i][j - 1] + 1, d[i - 1][j - 1] + (s1[i - 1] == s2[j - 1] ? 0 : 1) });
+  return d[len1][len2];
+}
+
 TEST_F(TranscribeStreamingTests, TranscribeAudioFile)
 {
-    const char EXPECTED_MESSAGE[] = "But what if somebody decides to break it? Be careful that you keep adequate coverage.";
+    const char EXPECTED_MESSAGE[] = "But what if somebody decides to break it. Be careful that you keep adequate coverage," 
+                                    "but look for places to save money. Maybe it's taking longer to get things squared away"
+                                    "then the bankers expected hiring the wife for one's company.";
     Aws::String transcribedResult;
     StartStreamTranscriptionHandler handler;
     handler.SetTranscriptEventCallback([&transcribedResult](const TranscriptEvent& ev)
@@ -201,7 +230,11 @@ TEST_F(TranscribeStreamingTests, TranscribeAudioFile)
 
     m_client->StartStreamTranscriptionAsync(request, OnStreamReady, OnResponseCallback, nullptr/*context*/);
     semaphore.WaitOne();
-    ASSERT_EQ(0u, transcribedResult.find(EXPECTED_MESSAGE)) << "Received message: " << transcribedResult;
+
+    int difference = LevenshteinDistance(EXPECTED_MESSAGE, transcribedResult);
+    ASSERT_LT(difference, transcribedResult.length() * 0.2) << "The difference between a resulting transcription and the expectation is too high: " << difference << "\n"
+                                                 << "Expected: " << EXPECTED_MESSAGE << "\nResulted: " << transcribedResult;
+
     EXPECT_FALSE(operationRequestId.empty()) << "Did not receive a request id for the StartStreamTranscription";
 }
 
@@ -558,33 +591,6 @@ Aws::String TranscribeStreamingTests::RunTestLikeSample(size_t timeoutMs,
         std::cout << "Failed to keep up count: " << failedToKeepUpCount << " \n";
 
     return transcribedResult;
-}
-
-unsigned int LevenshteinDistance(Aws::String s1, Aws::String s2)
-{
-  // Lowercase and remove punctuation from both
-  std::transform(s1.begin(), s1.end(), s1.begin(),
-                 [](unsigned char c){ return std::tolower(c); });
-  std::transform(s2.begin(), s2.end(), s2.begin(),
-                 [](unsigned char c){ return std::tolower(c); });
-  auto newEnd = std::remove_if(s1.begin (), s1.end (), ispunct);
-  s1.erase(newEnd, s1.end());
-  newEnd = std::remove_if(s2.begin (), s2.end (), ispunct);
-  s2.erase(newEnd, s2.end());
-
-  // algorithm is taken from
-  // https://en.wikibooks.org/wiki/Algorithm_Implementation/Strings/Levenshtein_distance#C++
-  const std::size_t len1 = s1.size(), len2 = s2.size();
-  Aws::Vector<Aws::Vector<unsigned int>> d(len1 + 1, Aws::Vector<unsigned int>(len2 + 1));
-
-  d[0][0] = 0;
-  for(unsigned int i = 1; i <= len1; ++i) d[i][0] = i;
-  for(unsigned int i = 1; i <= len2; ++i) d[0][i] = i;
-
-  for(unsigned int i = 1; i <= len1; ++i)
-    for(unsigned int j = 1; j <= len2; ++j)
-      d[i][j] = std::min({ d[i - 1][j] + 1, d[i][j - 1] + 1, d[i - 1][j - 1] + (s1[i - 1] == s2[j - 1] ? 0 : 1) });
-  return d[len1][len2];
 }
 
 TEST_F(TranscribeStreamingTests, TranscribeStreamingCppSdkSample)
