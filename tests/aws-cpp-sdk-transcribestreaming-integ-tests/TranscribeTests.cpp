@@ -112,7 +112,7 @@ protected:
 
 TEST_F(TranscribeStreamingTests, TranscribeAudioFile)
 {
-    const char EXPECTED_MESSAGE[] = "But what if somebody decides to break it? Be careful that you keep adequate coverage.";
+    const char EXPECTED_MESSAGE[] = "But what if somebody decides to break it. Be careful that you keep adequate coverage";
     Aws::String transcribedResult;
     StartStreamTranscriptionHandler handler;
     handler.SetTranscriptEventCallback([&transcribedResult](const TranscriptEvent& ev)
@@ -202,6 +202,11 @@ TEST_F(TranscribeStreamingTests, TranscribeAudioFile)
     m_client->StartStreamTranscriptionAsync(request, OnStreamReady, OnResponseCallback, nullptr/*context*/);
     semaphore.WaitOne();
     ASSERT_EQ(0u, transcribedResult.find(EXPECTED_MESSAGE)) << "Received message: " << transcribedResult;
+
+    int difference = LevenshteinDistance(EXPECTED_MESSAGE, transcribedResult);
+    ASSERT_LT(difference, transcribedResult.length() * 0.2) << "The difference between a resulting transcription and the expectation is too high: " << difference << "\n"
+                                                 << "Expected: " << EXPECTED_MESSAGE << "\nResulted: " << transcribedResult;
+
     EXPECT_FALSE(operationRequestId.empty()) << "Did not receive a request id for the StartStreamTranscription";
 }
 
