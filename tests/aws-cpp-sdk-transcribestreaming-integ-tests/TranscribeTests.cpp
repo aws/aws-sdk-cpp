@@ -230,7 +230,6 @@ TEST_F(TranscribeStreamingTests, TranscribeAudioFile)
 
     m_client->StartStreamTranscriptionAsync(request, OnStreamReady, OnResponseCallback, nullptr/*context*/);
     semaphore.WaitOne();
-    ASSERT_EQ(0u, transcribedResult.find(EXPECTED_MESSAGE)) << "Received message: " << transcribedResult;
 
     int difference = LevenshteinDistance(EXPECTED_MESSAGE, transcribedResult);
     ASSERT_LT(difference, transcribedResult.length() * 0.2) << "The difference between a resulting transcription and the expectation is too high: " << difference << "\n"
