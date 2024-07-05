@@ -85,12 +85,10 @@ namespace Model
      * certificate. This list contains the domain names that are bound to the public
      * key that is contained in the certificate. The subject alternative names include
      * the canonical domain name (CN) of the certificate and additional domain names
-     * that can be used to connect to the website. </p> <p>When called by <a
-     * href="https://docs.aws.amazon.com/acm/latestAPIReference/API_ListCertificates.html">ListCertificates</a>,
-     * this parameter will only return the first 100 subject alternative names included
-     * in the certificate. To display the full list of subject alternative names, use
-     * <a
-     * href="https://docs.aws.amazon.com/acm/latestAPIReference/API_DescribeCertificate.html">DescribeCertificate</a>.</p>
+     * that can be used to connect to the website. </p> <p>When called by
+     * <a>ListCertificates</a>, this parameter will only return the first 100 subject
+     * alternative names included in the certificate. To display the full list of
+     * subject alternative names, use <a>DescribeCertificate</a>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSubjectAlternativeNameSummaries() const{ return m_subjectAlternativeNameSummaries; }
     inline bool SubjectAlternativeNameSummariesHasBeenSet() const { return m_subjectAlternativeNameSummariesHasBeenSet; }
@@ -105,14 +103,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>When called by <a
-     * href="https://docs.aws.amazon.com/acm/latestAPIReference/API_ListCertificates.html">ListCertificates</a>,
-     * indicates whether the full list of subject alternative names has been included
-     * in the response. If false, the response includes all of the subject alternative
-     * names included in the certificate. If true, the response only includes the first
-     * 100 subject alternative names included in the certificate. To display the full
-     * list of subject alternative names, use <a
-     * href="https://docs.aws.amazon.com/acm/latestAPIReference/API_DescribeCertificate.html">DescribeCertificate</a>.</p>
+     * <p>When called by <a>ListCertificates</a>, indicates whether the full list of
+     * subject alternative names has been included in the response. If false, the
+     * response includes all of the subject alternative names included in the
+     * certificate. If true, the response only includes the first 100 subject
+     * alternative names included in the certificate. To display the full list of
+     * subject alternative names, use <a>DescribeCertificate</a>.</p>
      */
     inline bool GetHasAdditionalSubjectAlternativeNames() const{ return m_hasAdditionalSubjectAlternativeNames; }
     inline bool HasAdditionalSubjectAlternativeNamesHasBeenSet() const { return m_hasAdditionalSubjectAlternativeNamesHasBeenSet; }

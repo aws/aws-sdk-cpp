@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/qbusiness/model/AttachmentsConfiguration.h>
 #include <aws/qbusiness/model/QAppsConfiguration.h>
+#include <aws/qbusiness/model/PersonalizationConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -130,6 +131,21 @@ namespace Model
     inline UpdateApplicationRequest& WithQAppsConfiguration(const QAppsConfiguration& value) { SetQAppsConfiguration(value); return *this;}
     inline UpdateApplicationRequest& WithQAppsConfiguration(QAppsConfiguration&& value) { SetQAppsConfiguration(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Configuration information about chat response personalization. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/personalizing-chat-responses.html">Personalizing
+     * chat responses</a>.</p>
+     */
+    inline const PersonalizationConfiguration& GetPersonalizationConfiguration() const{ return m_personalizationConfiguration; }
+    inline bool PersonalizationConfigurationHasBeenSet() const { return m_personalizationConfigurationHasBeenSet; }
+    inline void SetPersonalizationConfiguration(const PersonalizationConfiguration& value) { m_personalizationConfigurationHasBeenSet = true; m_personalizationConfiguration = value; }
+    inline void SetPersonalizationConfiguration(PersonalizationConfiguration&& value) { m_personalizationConfigurationHasBeenSet = true; m_personalizationConfiguration = std::move(value); }
+    inline UpdateApplicationRequest& WithPersonalizationConfiguration(const PersonalizationConfiguration& value) { SetPersonalizationConfiguration(value); return *this;}
+    inline UpdateApplicationRequest& WithPersonalizationConfiguration(PersonalizationConfiguration&& value) { SetPersonalizationConfiguration(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_applicationId;
@@ -152,6 +168,9 @@ namespace Model
 
     QAppsConfiguration m_qAppsConfiguration;
     bool m_qAppsConfigurationHasBeenSet = false;
+
+    PersonalizationConfiguration m_personalizationConfiguration;
+    bool m_personalizationConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

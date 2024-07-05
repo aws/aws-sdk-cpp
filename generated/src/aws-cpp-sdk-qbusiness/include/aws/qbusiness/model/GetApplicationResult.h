@@ -12,6 +12,7 @@
 #include <aws/qbusiness/model/ErrorDetail.h>
 #include <aws/qbusiness/model/AppliedAttachmentsConfiguration.h>
 #include <aws/qbusiness/model/QAppsConfiguration.h>
+#include <aws/qbusiness/model/PersonalizationConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -202,6 +203,20 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>Configuration information about chat response personalization. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/personalizing-chat-responses.html">Personalizing
+     * chat responses</a>.</p>
+     */
+    inline const PersonalizationConfiguration& GetPersonalizationConfiguration() const{ return m_personalizationConfiguration; }
+    inline void SetPersonalizationConfiguration(const PersonalizationConfiguration& value) { m_personalizationConfiguration = value; }
+    inline void SetPersonalizationConfiguration(PersonalizationConfiguration&& value) { m_personalizationConfiguration = std::move(value); }
+    inline GetApplicationResult& WithPersonalizationConfiguration(const PersonalizationConfiguration& value) { SetPersonalizationConfiguration(value); return *this;}
+    inline GetApplicationResult& WithPersonalizationConfiguration(PersonalizationConfiguration&& value) { SetPersonalizationConfiguration(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -238,6 +253,8 @@ namespace Model
     AppliedAttachmentsConfiguration m_attachmentsConfiguration;
 
     QAppsConfiguration m_qAppsConfiguration;
+
+    PersonalizationConfiguration m_personalizationConfiguration;
 
     Aws::String m_requestId;
   };

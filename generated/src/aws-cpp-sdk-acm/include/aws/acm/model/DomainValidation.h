@@ -90,7 +90,7 @@ namespace Model
     /**
      * <p>The validation status of the domain name. This can be one of the following
      * values:</p> <ul> <li> <p> <code>PENDING_VALIDATION</code> </p> </li> <li> <p>
-     * <code/>SUCCESS</p> </li> <li> <p> <code/>FAILED</p> </li> </ul>
+     * <code>SUCCESS</code> </p> </li> <li> <p> <code>FAILED</code> </p> </li> </ul>
      */
     inline const DomainStatus& GetValidationStatus() const{ return m_validationStatus; }
     inline bool ValidationStatusHasBeenSet() const { return m_validationStatusHasBeenSet; }

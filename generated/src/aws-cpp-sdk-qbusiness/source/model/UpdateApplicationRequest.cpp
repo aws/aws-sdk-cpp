@@ -19,7 +19,8 @@ UpdateApplicationRequest::UpdateApplicationRequest() :
     m_descriptionHasBeenSet(false),
     m_roleArnHasBeenSet(false),
     m_attachmentsConfigurationHasBeenSet(false),
-    m_qAppsConfigurationHasBeenSet(false)
+    m_qAppsConfigurationHasBeenSet(false),
+    m_personalizationConfigurationHasBeenSet(false)
 {
 }
 
@@ -60,6 +61,12 @@ Aws::String UpdateApplicationRequest::SerializePayload() const
   if(m_qAppsConfigurationHasBeenSet)
   {
    payload.WithObject("qAppsConfiguration", m_qAppsConfiguration.Jsonize());
+
+  }
+
+  if(m_personalizationConfigurationHasBeenSet)
+  {
+   payload.WithObject("personalizationConfiguration", m_personalizationConfiguration.Jsonize());
 
   }
 
