@@ -204,7 +204,6 @@ TEST_F(S3UnitTest, S3EmbeddedErrorTest) {
   _mockHttpClient->AddResponseToReturn(mockResponse);
 
   const auto response = _s3Client->CopyObject(request);
-  std::cout<<"Custom Error2:"<<response.GetError()<<std::endl;
 
   EXPECT_FALSE(response.IsSuccess());
 }
