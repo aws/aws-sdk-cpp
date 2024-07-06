@@ -81,8 +81,6 @@ Aws::Http::HeaderValueCollection PutBucketNotificationConfigurationRequest::GetR
   return headers;
 }
 
-
-
 bool PutBucketNotificationConfigurationRequest::HasEmbeddedError(Aws::IOStream &body,
   const Aws::Http::HeaderValueCollection &header) const
 {

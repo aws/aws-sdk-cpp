@@ -141,4 +141,3 @@ Aws::Http::HeaderValueCollection StartCallAnalyticsStreamTranscriptionRequest::G
 
 }
 
-

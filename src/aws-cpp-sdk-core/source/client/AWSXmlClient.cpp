@@ -196,8 +196,7 @@ AWSError<CoreErrors> AWSXMLClient::BuildAWSError(const std::shared_ptr<Http::Htt
         {
             Aws::String xmlString((Aws::IStreamBufIterator(httpResponse->GetResponseBody())), Aws::IStreamBufIterator());
 
-            ss <<xmlString;
-            ss << " current pointer location in stream = "<<httpResponse->GetResponseBody().tellp();
+            //print message for logging
         }
         error = AWSError<CoreErrors>(errorCode, "", ss.str(), IsRetryableHttpResponseCode(responseCode));
     }

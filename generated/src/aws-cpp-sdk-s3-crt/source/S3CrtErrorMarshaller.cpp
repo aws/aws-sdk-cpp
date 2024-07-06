@@ -106,6 +106,11 @@ Aws::String S3CrtErrorMarshaller::ExtractEndpoint(const AWSError<CoreErrors>& er
 
 AWSError<Aws::Client::CoreErrors> S3CrtErrorMarshaller::Marshall(const Aws::Http::HttpResponse& httpResponse) const
 {
+  //if response code not ok, use error marshaller
+  if(httpResponse.GetResponseCode() != HttpResponseCode::OK)
+  {
+    return XmlErrorMarshaller::Marshall(httpResponse);
+  }
 
   Aws::String message{"Error in body of the response"};
   //extract error message and code in the body

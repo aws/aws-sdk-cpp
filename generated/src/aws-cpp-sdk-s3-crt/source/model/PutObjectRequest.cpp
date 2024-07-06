@@ -313,7 +313,6 @@ Aws::Http::HeaderValueCollection PutObjectRequest::GetRequestSpecificHeaders() c
 
 }
 
-
 bool PutObjectRequest::HasEmbeddedError(Aws::IOStream &body,
   const Aws::Http::HeaderValueCollection &header) const
 {

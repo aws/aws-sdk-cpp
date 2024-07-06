@@ -355,7 +355,6 @@ Aws::Http::HeaderValueCollection WriteGetObjectResponseRequest::GetRequestSpecif
 
 }
 
-
 bool WriteGetObjectResponseRequest::HasEmbeddedError(Aws::IOStream &body,
   const Aws::Http::HeaderValueCollection &header) const
 {

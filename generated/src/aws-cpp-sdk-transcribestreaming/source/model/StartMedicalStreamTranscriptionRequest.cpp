@@ -128,4 +128,3 @@ Aws::Http::HeaderValueCollection StartMedicalStreamTranscriptionRequest::GetRequ
 
 }
 
-

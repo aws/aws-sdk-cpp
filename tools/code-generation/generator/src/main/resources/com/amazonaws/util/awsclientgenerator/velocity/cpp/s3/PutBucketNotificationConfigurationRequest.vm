@@ -83,8 +83,6 @@ Aws::Http::HeaderValueCollection ${typeInfo.className}::GetRequestSpecificHeader
   return headers;
 }
 #end
-
-
 #if($shape.hasEmbeddedErrors())
 
 bool ${typeInfo.className}::HasEmbeddedError(Aws::IOStream &body,

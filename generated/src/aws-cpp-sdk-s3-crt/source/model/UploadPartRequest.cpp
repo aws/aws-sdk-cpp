@@ -167,7 +167,6 @@ Aws::Http::HeaderValueCollection UploadPartRequest::GetRequestSpecificHeaders() 
 
 }
 
-
 bool UploadPartRequest::HasEmbeddedError(Aws::IOStream &body,
   const Aws::Http::HeaderValueCollection &header) const
 {

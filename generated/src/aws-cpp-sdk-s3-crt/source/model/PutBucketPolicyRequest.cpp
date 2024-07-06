@@ -85,7 +85,6 @@ Aws::Http::HeaderValueCollection PutBucketPolicyRequest::GetRequestSpecificHeade
 
 }
 
-
 bool PutBucketPolicyRequest::HasEmbeddedError(Aws::IOStream &body,
   const Aws::Http::HeaderValueCollection &header) const
 {

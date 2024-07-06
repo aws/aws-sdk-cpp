@@ -7,6 +7,7 @@
 #include <aws/testing/mocks/http/MockHttpClient.h>
 #include <aws/testing/AwsTestHelpers.h>
 #include <aws/testing/MemoryTesting.h>
+#include <memory>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -16,8 +17,31 @@ using namespace Aws::S3::Model;
 
 const char* ALLOCATION_TAG = "S3UnitTest";
 
+class S3UnitTest_S3EmbeddedErrorTestNonOKResponse_Test;
+
+class S3TestClient : public S3Client
+{
+    public:
+    template <typename ...Args>
+    S3TestClient(Args&& ...args): S3Client(std::forward<Args>(args)...){
+      std::cout<<"S3TestClient constructor"<<std::endl;
+    }
+
+    private:
+    S3TestClient() = default;
+
+
+    friend class S3UnitTest_S3EmbeddedErrorTestNonOKResponse_Test;
+
+
+};
+
+
+
 class S3UnitTest : public testing::Test {
 protected:
+
+
   static void SetUpTestSuite() {
 #ifdef USE_AWS_MEMORY_MANAGEMENT
     _testMemorySystem.reset(new ExactTestMemorySystem(1024, 128));
@@ -32,7 +56,7 @@ protected:
     const auto epProvider = Aws::MakeShared<S3EndpointProvider>(ALLOCATION_TAG);
     S3ClientConfiguration s3Config;
     s3Config.region = "us-east-1";
-    _s3Client = Aws::MakeShared<S3Client>("ALLOCATION_TAG", credentials, epProvider, s3Config);
+    _s3Client = Aws::MakeShared<S3TestClient>("ALLOCATION_TAG", credentials, epProvider, s3Config);
   }
 
   static void TearDownTestSuite() {
@@ -57,7 +81,7 @@ protected:
   static SDKOptions _options;
   static std::shared_ptr<MockHttpClient> _mockHttpClient;
   static std::shared_ptr<MockHttpClientFactory> _mockClientFactory;
-  static std::shared_ptr<S3Client> _s3Client;
+  static std::shared_ptr<S3TestClient> _s3Client;
 #ifdef USE_AWS_MEMORY_MANAGEMENT
   static std::unique_ptr<ExactTestMemorySystem> _testMemorySystem;
 #endif
@@ -66,7 +90,7 @@ protected:
 SDKOptions S3UnitTest::_options;
 std::shared_ptr<MockHttpClient> S3UnitTest::_mockHttpClient = nullptr;
 std::shared_ptr<MockHttpClientFactory> S3UnitTest::_mockClientFactory = nullptr;
-std::shared_ptr<S3Client> S3UnitTest::_s3Client = nullptr;
+std::shared_ptr<S3TestClient> S3UnitTest::_s3Client = nullptr;
 #ifdef USE_AWS_MEMORY_MANAGEMENT
 // this must be std:: because this is an utility to track allocations in the SDK and should not rely on SDK
 std::unique_ptr<ExactTestMemorySystem> S3UnitTest::_testMemorySystem = nullptr;
@@ -208,4 +232,49 @@ TEST_F(S3UnitTest, S3EmbeddedErrorTest) {
   EXPECT_FALSE(response.IsSuccess());
 }
 
+
+#if 0
+TEST_F(S3UnitTest, S3EmbeddedErrorTestNonOKResponse) {
+  const auto request = CopyObjectRequest()
+    .WithBucket("testBucket")
+    .WithKey("testKey")
+    .WithCopySource("testSource");
+  
+  auto mockRequest = Aws::MakeShared<Standard::StandardHttpRequest>(ALLOCATION_TAG, "mockuri", HttpMethod::HTTP_GET);
+  mockRequest->SetResponseStreamFactory([]() -> IOStream* {
+    const std::string mockResponseString = "\n         <?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n         <Error>\n          <Code>InternalError</Code>\n          <Message>We encountered an internal error. Please try again.</Message>\n          <RequestId>656c76696e6727732072657175657374</RequestId>\n          <HostId>Uuag1LuByRx9e6j5Onimru9pO4ZVKnJ2Qz7/C1NPcfTWAtRPfTaOFg==</HostId>\n         </Error>\n    ";
+
+    return Aws::New<StringStream>(ALLOCATION_TAG, mockResponseString, std::ios_base::in | std::ios_base::binary);
+  });
+  auto mockResponse = Aws::MakeShared<Standard::StandardHttpResponse>(ALLOCATION_TAG, mockRequest);
+  mockResponse->SetResponseCode(HttpResponseCode::PROCESSING);
+
+  mockResponse->AddHeader("Server", "AmazonS3");
+  mockResponse->AddHeader("Connection", "close");
+  mockResponse->AddHeader("Date", "Mon, 1 Nov 2010 20:34:56 GMT");
+  mockResponse->AddHeader("x-amz-request-id", "656c76696e6727732072657175657374");
+  mockResponse->AddHeader("x-amz-id-2", "Uuag1LuByRx9e6j5Onimru9pO4ZVKnJ2Qz7/C1NPcfTWAtRPfTaOFg==");
+
+  _mockHttpClient->AddResponseToReturn(mockResponse);
+
+  //const auto response = _s3Client->CopyObject(request);
+  //Aws::MakeShared<S3EndpointProvider>(ALLOCATION_TAG)
+
+ endpointResolutionOutcome.GetResult()
+
+  auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+  Aws::Endpoint::AWSEndpoint endpoint =  _s3Client->accessEndpointProvider()->ResolveEndpoint(request.GetEndpointContextParams()); //_s3Client->OverrideEndpoint("s3.amazonaws.com");
+  
+  //m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+
+  const auto response =  std::static_pointer_cast<S3TestClient>(_s3Client)->Aws::Client::AWSXMLClient::MakeRequest(request, endpoint, Aws::Http::HttpMethod::HTTP_PUT);
+
+  std::cout<<"Exception="<<response.GetError().GetExceptionName()<<std::endl;
+
+  EXPECT_FALSE(response.IsSuccess());
+
+  
+}
+#endif
 

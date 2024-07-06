@@ -217,4 +217,3 @@ Aws::Http::HeaderValueCollection StartStreamTranscriptionRequest::GetRequestSpec
 
 }
 
-
