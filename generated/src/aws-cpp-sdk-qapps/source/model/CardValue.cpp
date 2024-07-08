@@ -1,0 +1,73 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/qapps/model/CardValue.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace QApps
+{
+namespace Model
+{
+
+CardValue::CardValue() : 
+    m_cardIdHasBeenSet(false),
+    m_valueHasBeenSet(false)
+{
+}
+
+CardValue::CardValue(JsonView jsonValue)
+  : CardValue()
+{
+  *this = jsonValue;
+}
+
+CardValue& CardValue::operator =(JsonView jsonValue)
+{
+  if(jsonValue.ValueExists("cardId"))
+  {
+    m_cardId = jsonValue.GetString("cardId");
+
+    m_cardIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("value"))
+  {
+    m_value = jsonValue.GetString("value");
+
+    m_valueHasBeenSet = true;
+  }
+
+  return *this;
+}
+
+JsonValue CardValue::Jsonize() const
+{
+  JsonValue payload;
+
+  if(m_cardIdHasBeenSet)
+  {
+   payload.WithString("cardId", m_cardId);
+
+  }
+
+  if(m_valueHasBeenSet)
+  {
+   payload.WithString("value", m_value);
+
+  }
+
+  return payload;
+}
+
+} // namespace Model
+} // namespace QApps
+} // namespace Aws

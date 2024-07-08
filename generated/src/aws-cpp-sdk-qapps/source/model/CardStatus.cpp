@@ -1,0 +1,73 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/qapps/model/CardStatus.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace QApps
+{
+namespace Model
+{
+
+CardStatus::CardStatus() : 
+    m_currentState(ExecutionStatus::NOT_SET),
+    m_currentStateHasBeenSet(false),
+    m_currentValueHasBeenSet(false)
+{
+}
+
+CardStatus::CardStatus(JsonView jsonValue)
+  : CardStatus()
+{
+  *this = jsonValue;
+}
+
+CardStatus& CardStatus::operator =(JsonView jsonValue)
+{
+  if(jsonValue.ValueExists("currentState"))
+  {
+    m_currentState = ExecutionStatusMapper::GetExecutionStatusForName(jsonValue.GetString("currentState"));
+
+    m_currentStateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("currentValue"))
+  {
+    m_currentValue = jsonValue.GetString("currentValue");
+
+    m_currentValueHasBeenSet = true;
+  }
+
+  return *this;
+}
+
+JsonValue CardStatus::Jsonize() const
+{
+  JsonValue payload;
+
+  if(m_currentStateHasBeenSet)
+  {
+   payload.WithString("currentState", ExecutionStatusMapper::GetNameForExecutionStatus(m_currentState));
+  }
+
+  if(m_currentValueHasBeenSet)
+  {
+   payload.WithString("currentValue", m_currentValue);
+
+  }
+
+  return payload;
+}
+
+} // namespace Model
+} // namespace QApps
+} // namespace Aws
