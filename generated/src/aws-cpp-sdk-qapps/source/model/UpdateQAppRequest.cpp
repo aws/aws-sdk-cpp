@@ -1,0 +1,73 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/qapps/model/UpdateQAppRequest.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
+
+#include <utility>
+
+using namespace Aws::QApps::Model;
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+UpdateQAppRequest::UpdateQAppRequest() : 
+    m_instanceIdHasBeenSet(false),
+    m_appIdHasBeenSet(false),
+    m_titleHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
+    m_appDefinitionHasBeenSet(false)
+{
+}
+
+Aws::String UpdateQAppRequest::SerializePayload() const
+{
+  JsonValue payload;
+
+  if(m_appIdHasBeenSet)
+  {
+   payload.WithString("appId", m_appId);
+
+  }
+
+  if(m_titleHasBeenSet)
+  {
+   payload.WithString("title", m_title);
+
+  }
+
+  if(m_descriptionHasBeenSet)
+  {
+   payload.WithString("description", m_description);
+
+  }
+
+  if(m_appDefinitionHasBeenSet)
+  {
+   payload.WithObject("appDefinition", m_appDefinition.Jsonize());
+
+  }
+
+  return payload.View().WriteReadable();
+}
+
+Aws::Http::HeaderValueCollection UpdateQAppRequest::GetRequestSpecificHeaders() const
+{
+  Aws::Http::HeaderValueCollection headers;
+  Aws::StringStream ss;
+  if(m_instanceIdHasBeenSet)
+  {
+    ss << m_instanceId;
+    headers.emplace("instance-id",  ss.str());
+    ss.str("");
+  }
+
+  return headers;
+
+}
+
+
+
+
