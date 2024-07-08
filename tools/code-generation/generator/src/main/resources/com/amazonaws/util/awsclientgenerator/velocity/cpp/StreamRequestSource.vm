@@ -100,7 +100,6 @@ bool ${typeInfo.className}::HasEmbeddedError(Aws::IOStream &body,
   return false;
 }
 #end
-
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/model/ModelGetEndpointRulesContextParamDefinition.vm")
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ModelClassChecksumMembers.vm")
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ModelClassRequiredCompressionStream.vm")

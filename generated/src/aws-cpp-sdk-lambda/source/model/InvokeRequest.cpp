@@ -65,4 +65,3 @@ Aws::Http::HeaderValueCollection InvokeRequest::GetRequestSpecificHeaders() cons
   return headers;
 
 }
-

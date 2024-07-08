@@ -189,7 +189,6 @@ bool UploadPartRequest::HasEmbeddedError(Aws::IOStream &body,
   return false;
 }
 
-
 UploadPartRequest::EndpointParameters UploadPartRequest::GetEndpointContextParams() const
 {
     EndpointParameters parameters;

@@ -107,7 +107,6 @@ bool PutBucketPolicyRequest::HasEmbeddedError(Aws::IOStream &body,
   return false;
 }
 
-
 PutBucketPolicyRequest::EndpointParameters PutBucketPolicyRequest::GetEndpointContextParams() const
 {
     EndpointParameters parameters;

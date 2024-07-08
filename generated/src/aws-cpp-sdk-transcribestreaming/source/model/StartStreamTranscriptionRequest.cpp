@@ -216,4 +216,3 @@ Aws::Http::HeaderValueCollection StartStreamTranscriptionRequest::GetRequestSpec
   return headers;
 
 }
-

@@ -335,7 +335,6 @@ bool PutObjectRequest::HasEmbeddedError(Aws::IOStream &body,
   return false;
 }
 
-
 PutObjectRequest::EndpointParameters PutObjectRequest::GetEndpointContextParams() const
 {
     EndpointParameters parameters;

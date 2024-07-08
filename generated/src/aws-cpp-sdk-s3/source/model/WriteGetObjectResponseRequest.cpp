@@ -377,7 +377,6 @@ bool WriteGetObjectResponseRequest::HasEmbeddedError(Aws::IOStream &body,
   return false;
 }
 
-
 WriteGetObjectResponseRequest::EndpointParameters WriteGetObjectResponseRequest::GetEndpointContextParams() const
 {
     EndpointParameters parameters;
