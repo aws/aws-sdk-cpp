@@ -10,7 +10,6 @@
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/logging/LogMacros.h>
 
-
 using namespace Aws::Client;
 using namespace Aws::S3;
 using namespace Aws::Utils::Xml;
@@ -103,7 +102,6 @@ Aws::String S3ErrorMarshaller::ExtractEndpoint(const AWSError<CoreErrors>& error
 
   return {};
 }
-
 AWSError<Aws::Client::CoreErrors> S3ErrorMarshaller::Marshall(const Aws::Http::HttpResponse& httpResponse) const
 {
   //if response code not ok, use error marshaller

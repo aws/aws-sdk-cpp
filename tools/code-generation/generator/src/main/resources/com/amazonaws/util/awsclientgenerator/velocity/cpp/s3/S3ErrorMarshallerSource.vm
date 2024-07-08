@@ -10,7 +10,6 @@
 \#include <aws/core/http/HttpResponse.h>
 \#include <aws/core/utils/logging/LogMacros.h>
 
-
 using namespace Aws::Client;
 using namespace ${rootNamespace}::${serviceNamespace};
 using namespace Aws::Utils::Xml;
@@ -103,7 +102,6 @@ Aws::String ${metadata.classNamePrefix}ErrorMarshaller::ExtractEndpoint(const AW
 
   return {};
 }
-
 AWSError<Aws::Client::CoreErrors> ${metadata.classNamePrefix}ErrorMarshaller::Marshall(const Aws::Http::HttpResponse& httpResponse) const
 {
   //if response code not ok, use error marshaller
