@@ -176,7 +176,7 @@ XmlOutcome AWSXMLClient::MakeRequest(const Aws::Http::URI& uri,
 
 AWSError<CoreErrors> AWSXMLClient::BuildAWSError(const std::shared_ptr<Http::HttpResponse>& httpResponse) const
 {
-    AWSError<CoreErrors> error;
+     AWSError<CoreErrors> error;
     if (httpResponse->HasClientError())
     {
         bool retryable = httpResponse->GetClientErrorType() == CoreErrors::NETWORK_CONNECTION ? true : false;

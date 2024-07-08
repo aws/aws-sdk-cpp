@@ -24,12 +24,10 @@ class S3TestClient : public S3Client
     public:
     template <typename ...Args>
     S3TestClient(Args&& ...args): S3Client(std::forward<Args>(args)...){
-      std::cout<<"S3TestClient constructor"<<std::endl;
     }
 
     private:
     S3TestClient() = default;
-
 
     friend class S3UnitTest_S3EmbeddedErrorTestNonOKResponse_Test;
 
@@ -233,7 +231,7 @@ TEST_F(S3UnitTest, S3EmbeddedErrorTest) {
 }
 
 
-#if 0
+//Set http error and error in body in a way to hit generic xml error marshaller, which sets the exception name
 TEST_F(S3UnitTest, S3EmbeddedErrorTestNonOKResponse) {
   const auto request = CopyObjectRequest()
     .WithBucket("testBucket")
@@ -242,12 +240,12 @@ TEST_F(S3UnitTest, S3EmbeddedErrorTestNonOKResponse) {
   
   auto mockRequest = Aws::MakeShared<Standard::StandardHttpRequest>(ALLOCATION_TAG, "mockuri", HttpMethod::HTTP_GET);
   mockRequest->SetResponseStreamFactory([]() -> IOStream* {
-    const std::string mockResponseString = "\n         <?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n         <Error>\n          <Code>InternalError</Code>\n          <Message>We encountered an internal error. Please try again.</Message>\n          <RequestId>656c76696e6727732072657175657374</RequestId>\n          <HostId>Uuag1LuByRx9e6j5Onimru9pO4ZVKnJ2Qz7/C1NPcfTWAtRPfTaOFg==</HostId>\n         </Error>\n    ";
+    const std::string mockResponseString = "\n         <?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n         <Error>\n          <Code>InvalidAction</Code>\n          <Message>We encountered an internal error. Please try again.</Message>\n          <RequestId>656c76696e6727732072657175657374</RequestId>\n          <HostId>Uuag1LuByRx9e6j5Onimru9pO4ZVKnJ2Qz7/C1NPcfTWAtRPfTaOFg==</HostId>\n         </Error>\n    ";
 
     return Aws::New<StringStream>(ALLOCATION_TAG, mockResponseString, std::ios_base::in | std::ios_base::binary);
   });
   auto mockResponse = Aws::MakeShared<Standard::StandardHttpResponse>(ALLOCATION_TAG, mockRequest);
-  mockResponse->SetResponseCode(HttpResponseCode::PROCESSING);
+  mockResponse->SetResponseCode(HttpResponseCode::ACCEPTED);
 
   mockResponse->AddHeader("Server", "AmazonS3");
   mockResponse->AddHeader("Connection", "close");
@@ -256,25 +254,13 @@ TEST_F(S3UnitTest, S3EmbeddedErrorTestNonOKResponse) {
   mockResponse->AddHeader("x-amz-id-2", "Uuag1LuByRx9e6j5Onimru9pO4ZVKnJ2Qz7/C1NPcfTWAtRPfTaOFg==");
 
   _mockHttpClient->AddResponseToReturn(mockResponse);
-
-  //const auto response = _s3Client->CopyObject(request);
-  //Aws::MakeShared<S3EndpointProvider>(ALLOCATION_TAG)
-
- endpointResolutionOutcome.GetResult()
-
-  auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-  Aws::Endpoint::AWSEndpoint endpoint =  _s3Client->accessEndpointProvider()->ResolveEndpoint(request.GetEndpointContextParams()); //_s3Client->OverrideEndpoint("s3.amazonaws.com");
+ 
+  auto endpointResolutionOutcome =    _s3Client->accessEndpointProvider()->ResolveEndpoint(request.GetEndpointContextParams()); //_s3Client->OverrideEndpoint("s3.amazonaws.com");
   
-  //m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  const auto response =  std::static_pointer_cast<S3TestClient>(_s3Client)->Aws::Client::AWSXMLClient::MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT);
 
-  const auto response =  std::static_pointer_cast<S3TestClient>(_s3Client)->Aws::Client::AWSXMLClient::MakeRequest(request, endpoint, Aws::Http::HttpMethod::HTTP_PUT);
-
-  std::cout<<"Exception="<<response.GetError().GetExceptionName()<<std::endl;
+  EXPECT_TRUE(response.GetError().GetExceptionName() == "InvalidAction");
 
   EXPECT_FALSE(response.IsSuccess());
-
-  
 }
-#endif
 
