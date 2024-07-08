@@ -210,9 +210,9 @@ TEST_F(S3UnitTest, S3EmbeddedErrorTest) {
   
   auto mockRequest = Aws::MakeShared<Standard::StandardHttpRequest>(ALLOCATION_TAG, "mockuri", HttpMethod::HTTP_GET);
   mockRequest->SetResponseStreamFactory([]() -> IOStream* {
-    const std::string mockResponseString = "\n         <?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n         <Error>\n          <Code>InternalError</Code>\n          <Message>We encountered an internal error. Please try again.</Message>\n          <RequestId>656c76696e6727732072657175657374</RequestId>\n          <HostId>Uuag1LuByRx9e6j5Onimru9pO4ZVKnJ2Qz7/C1NPcfTWAtRPfTaOFg==</HostId>\n         </Error>\n    ";
+    const Aws::String mockResponseString {"\n         <?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n         <Error>\n          <Code>InternalError</Code>\n          <Message>We encountered an internal error. Please try again.</Message>\n          <RequestId>656c76696e6727732072657175657374</RequestId>\n          <HostId>Uuag1LuByRx9e6j5Onimru9pO4ZVKnJ2Qz7/C1NPcfTWAtRPfTaOFg==</HostId>\n         </Error>\n    "};
 
-    return Aws::New<StringStream>(ALLOCATION_TAG, mockResponseString, std::ios_base::in | std::ios_base::binary);
+    return Aws::New<StringStream>(ALLOCATION_TAG, mockResponseString.c_str(), std::ios_base::in | std::ios_base::binary);
   });
   auto mockResponse = Aws::MakeShared<Standard::StandardHttpResponse>(ALLOCATION_TAG, mockRequest);
   mockResponse->SetResponseCode(HttpResponseCode::OK);
@@ -240,9 +240,9 @@ TEST_F(S3UnitTest, S3EmbeddedErrorTestNonOKResponse) {
   
   auto mockRequest = Aws::MakeShared<Standard::StandardHttpRequest>(ALLOCATION_TAG, "mockuri", HttpMethod::HTTP_GET);
   mockRequest->SetResponseStreamFactory([]() -> IOStream* {
-    const std::string mockResponseString = "\n         <?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n         <Error>\n          <Code>InvalidAction</Code>\n          <Message>We encountered an internal error. Please try again.</Message>\n          <RequestId>656c76696e6727732072657175657374</RequestId>\n          <HostId>Uuag1LuByRx9e6j5Onimru9pO4ZVKnJ2Qz7/C1NPcfTWAtRPfTaOFg==</HostId>\n         </Error>\n    ";
+    const Aws::String mockResponseString {"\n         <?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n         <Error>\n          <Code>InvalidAction</Code>\n          <Message>We encountered an internal error. Please try again.</Message>\n          <RequestId>656c76696e6727732072657175657374</RequestId>\n          <HostId>Uuag1LuByRx9e6j5Onimru9pO4ZVKnJ2Qz7/C1NPcfTWAtRPfTaOFg==</HostId>\n         </Error>\n    "};
 
-    return Aws::New<StringStream>(ALLOCATION_TAG, mockResponseString, std::ios_base::in | std::ios_base::binary);
+    return Aws::New<StringStream>(ALLOCATION_TAG, mockResponseString.c_str(), std::ios_base::in | std::ios_base::binary);
   });
   auto mockResponse = Aws::MakeShared<Standard::StandardHttpResponse>(ALLOCATION_TAG, mockRequest);
   mockResponse->SetResponseCode(HttpResponseCode::ACCEPTED);
