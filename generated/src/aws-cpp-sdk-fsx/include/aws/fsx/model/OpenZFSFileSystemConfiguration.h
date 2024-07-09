@@ -96,8 +96,9 @@ namespace Model
     ///@{
     /**
      * <p>Specifies the file-system deployment type. Amazon FSx for OpenZFS
-     * supports&#x2028; <code>MULTI_AZ_1</code>, <code>SINGLE_AZ_1</code>, and
-     * <code>SINGLE_AZ_2</code>.</p>
+     * supports&#x2028; <code>MULTI_AZ_1</code>, <code>SINGLE_AZ_HA_2</code>,
+     * <code>SINGLE_AZ_HA_1</code>, <code>SINGLE_AZ_2</code>, and
+     * <code>SINGLE_AZ_1</code>.</p>
      */
     inline const OpenZFSDeploymentType& GetDeploymentType() const{ return m_deploymentType; }
     inline bool DeploymentTypeHasBeenSet() const { return m_deploymentTypeHasBeenSet; }

@@ -23,6 +23,7 @@ namespace Aws
         static const int MULTI_AZ_1_HASH = HashingUtils::HashString("MULTI_AZ_1");
         static const int SINGLE_AZ_1_HASH = HashingUtils::HashString("SINGLE_AZ_1");
         static const int SINGLE_AZ_2_HASH = HashingUtils::HashString("SINGLE_AZ_2");
+        static const int MULTI_AZ_2_HASH = HashingUtils::HashString("MULTI_AZ_2");
 
 
         OntapDeploymentType GetOntapDeploymentTypeForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           else if (hashCode == SINGLE_AZ_2_HASH)
           {
             return OntapDeploymentType::SINGLE_AZ_2;
+          }
+          else if (hashCode == MULTI_AZ_2_HASH)
+          {
+            return OntapDeploymentType::MULTI_AZ_2;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -62,6 +67,8 @@ namespace Aws
             return "SINGLE_AZ_1";
           case OntapDeploymentType::SINGLE_AZ_2:
             return "SINGLE_AZ_2";
+          case OntapDeploymentType::MULTI_AZ_2:
+            return "MULTI_AZ_2";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -26,6 +26,7 @@ ContainerDefinition::ContainerDefinition() :
     m_modeHasBeenSet(false),
     m_modelDataUrlHasBeenSet(false),
     m_modelDataSourceHasBeenSet(false),
+    m_additionalModelDataSourcesHasBeenSet(false),
     m_environmentHasBeenSet(false),
     m_modelPackageNameHasBeenSet(false),
     m_inferenceSpecificationNameHasBeenSet(false),
@@ -81,6 +82,16 @@ ContainerDefinition& ContainerDefinition::operator =(JsonView jsonValue)
     m_modelDataSource = jsonValue.GetObject("ModelDataSource");
 
     m_modelDataSourceHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AdditionalModelDataSources"))
+  {
+    Aws::Utils::Array<JsonView> additionalModelDataSourcesJsonList = jsonValue.GetArray("AdditionalModelDataSources");
+    for(unsigned additionalModelDataSourcesIndex = 0; additionalModelDataSourcesIndex < additionalModelDataSourcesJsonList.GetLength(); ++additionalModelDataSourcesIndex)
+    {
+      m_additionalModelDataSources.push_back(additionalModelDataSourcesJsonList[additionalModelDataSourcesIndex].AsObject());
+    }
+    m_additionalModelDataSourcesHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Environment"))
@@ -153,6 +164,17 @@ JsonValue ContainerDefinition::Jsonize() const
   if(m_modelDataSourceHasBeenSet)
   {
    payload.WithObject("ModelDataSource", m_modelDataSource.Jsonize());
+
+  }
+
+  if(m_additionalModelDataSourcesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> additionalModelDataSourcesJsonList(m_additionalModelDataSources.size());
+   for(unsigned additionalModelDataSourcesIndex = 0; additionalModelDataSourcesIndex < additionalModelDataSourcesJsonList.GetLength(); ++additionalModelDataSourcesIndex)
+   {
+     additionalModelDataSourcesJsonList[additionalModelDataSourcesIndex].AsObject(m_additionalModelDataSources[additionalModelDataSourcesIndex].Jsonize());
+   }
+   payload.WithArray("AdditionalModelDataSources", std::move(additionalModelDataSourcesJsonList));
 
   }
 

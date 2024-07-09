@@ -37,7 +37,8 @@ DomainConfig::DomainConfig() :
     m_changeProgressDetailsHasBeenSet(false),
     m_offPeakWindowOptionsHasBeenSet(false),
     m_softwareUpdateOptionsHasBeenSet(false),
-    m_modifyingPropertiesHasBeenSet(false)
+    m_modifyingPropertiesHasBeenSet(false),
+    m_aIMLOptionsHasBeenSet(false)
 {
 }
 
@@ -185,6 +186,13 @@ DomainConfig& DomainConfig::operator =(JsonView jsonValue)
     m_modifyingPropertiesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AIMLOptions"))
+  {
+    m_aIMLOptions = jsonValue.GetObject("AIMLOptions");
+
+    m_aIMLOptionsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -308,6 +316,12 @@ JsonValue DomainConfig::Jsonize() const
      modifyingPropertiesJsonList[modifyingPropertiesIndex].AsObject(m_modifyingProperties[modifyingPropertiesIndex].Jsonize());
    }
    payload.WithArray("ModifyingProperties", std::move(modifyingPropertiesJsonList));
+
+  }
+
+  if(m_aIMLOptionsHasBeenSet)
+  {
+   payload.WithObject("AIMLOptions", m_aIMLOptions.Jsonize());
 
   }
 

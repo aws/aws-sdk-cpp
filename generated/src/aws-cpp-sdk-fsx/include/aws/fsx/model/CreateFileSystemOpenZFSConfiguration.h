@@ -97,25 +97,26 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies the file system deployment type. Single AZ deployment types are
-     * configured for redundancy within a single Availability Zone in an Amazon Web
-     * Services Region . Valid values are the following:</p> <ul> <li> <p>
-     * <code>MULTI_AZ_1</code>- Creates file systems with high availability that are
-     * configured for Multi-AZ redundancy to tolerate temporary unavailability in
-     * Availability Zones (AZs). <code>Multi_AZ_1</code> is available only in the US
-     * East (N. Virginia), US East (Ohio), US West (Oregon), Asia Pacific (Singapore),
-     * Asia Pacific (Tokyo), and Europe (Ireland) Amazon Web Services Regions.</p>
-     * </li> <li> <p> <code>SINGLE_AZ_1</code>- Creates file systems with throughput
-     * capacities of 64 - 4,096 MB/s. <code>Single_AZ_1</code> is available in all
-     * Amazon Web Services Regions where Amazon FSx for OpenZFS is available.</p> </li>
-     * <li> <p> <code>SINGLE_AZ_2</code>- Creates file systems with throughput
-     * capacities of 160 - 10,240 MB/s using an NVMe L2ARC cache.
-     * <code>Single_AZ_2</code> is available only in the US East (N. Virginia), US East
-     * (Ohio), US West (Oregon), Asia Pacific (Singapore), Asia Pacific (Tokyo), and
-     * Europe (Ireland) Amazon Web Services Regions.</p> </li> </ul> <p>For more
-     * information, see <a
+     * <p>Specifies the file system deployment type. Valid values are the
+     * following:</p> <ul> <li> <p> <code>MULTI_AZ_1</code>- Creates file systems with
+     * high availability and durability by replicating your data and supporting
+     * failover across multiple Availability Zones in the same Amazon Web Services
+     * Region.</p> </li> <li> <p> <code>SINGLE_AZ_HA_2</code>- Creates file systems
+     * with high availability and throughput capacities of 160 - 10,240 MB/s using an
+     * NVMe L2ARC cache by deploying a primary and standby file system within the same
+     * Availability Zone.</p> </li> <li> <p> <code>SINGLE_AZ_HA_1</code>- Creates file
+     * systems with high availability and throughput capacities of 64 - 4,096 MB/s by
+     * deploying a primary and standby file system within the same Availability
+     * Zone.</p> </li> <li> <p> <code>SINGLE_AZ_2</code>- Creates file systems with
+     * throughput capacities of 160 - 10,240 MB/s using an NVMe L2ARC cache that
+     * automatically recover within a single Availability Zone.</p> </li> <li> <p>
+     * <code>SINGLE_AZ_1</code>- Creates file systems with throughput capacities of 64
+     * - 4,096 MBs that automatically recover within a single Availability Zone.</p>
+     * </li> </ul> <p>For a list of which Amazon Web Services Regions each deployment
+     * type is available in, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/availability-durability.html#available-aws-regions">Deployment
-     * type availability</a> and <a
+     * type availability</a>. For more information on the differences in performance
+     * between deployment types, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/performance.html#zfs-fs-performance">File
      * system performance</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
      */

@@ -169,21 +169,43 @@ namespace Model
      * <code>ThroughputCapacity</code> cannot be defined in the same API call, but one
      * is required.</p> <p>This field and <code>ThroughputCapacity</code> are the same
      * for file systems with one HA pair.</p> <ul> <li> <p>For <code>SINGLE_AZ_1</code>
-     * and <code>MULTI_AZ_1</code>, valid values are 128, 256, 512, 1024, 2048, or 4096
-     * MBps.</p> </li> <li> <p>For <code>SINGLE_AZ_2</code>, valid values are 3072 or
-     * 6144 MBps.</p> </li> </ul> <p>Amazon FSx responds with an HTTP status code 400
-     * (Bad Request) for the following conditions:</p> <ul> <li> <p>The value of
-     * <code>ThroughputCapacity</code> and <code>ThroughputCapacityPerHAPair</code> are
-     * not the same value for file systems with one HA pair.</p> </li> <li> <p>The
-     * value of deployment type is <code>SINGLE_AZ_2</code> and
-     * <code>ThroughputCapacity</code> / <code>ThroughputCapacityPerHAPair</code> is a
-     * valid HA pair (a value between 2 and 12).</p> </li> <li> <p>The value of
+     * and <code>MULTI_AZ_1</code> file systems, valid values are 128, 256, 512, 1024,
+     * 2048, or 4096 MBps.</p> </li> <li> <p>For <code>SINGLE_AZ_2</code>, valid values
+     * are 1536, 3072, or 6144 MBps.</p> </li> <li> <p>For <code>MULTI_AZ_2</code>,
+     * valid values are 384, 768, 1536, 3072, or 6144 MBps.</p> </li> </ul> <p>Amazon
+     * FSx responds with an HTTP status code 400 (Bad Request) for the following
+     * conditions:</p> <ul> <li> <p>The value of <code>ThroughputCapacity</code> and
+     * <code>ThroughputCapacityPerHAPair</code> are not the same value for file systems
+     * with one HA pair.</p> </li> <li> <p>The value of deployment type is
+     * <code>SINGLE_AZ_2</code> and <code>ThroughputCapacity</code> /
+     * <code>ThroughputCapacityPerHAPair</code> is not a valid HA pair (a value between
+     * 1 and 12).</p> </li> <li> <p>The value of
      * <code>ThroughputCapacityPerHAPair</code> is not a valid value.</p> </li> </ul>
      */
     inline int GetThroughputCapacityPerHAPair() const{ return m_throughputCapacityPerHAPair; }
     inline bool ThroughputCapacityPerHAPairHasBeenSet() const { return m_throughputCapacityPerHAPairHasBeenSet; }
     inline void SetThroughputCapacityPerHAPair(int value) { m_throughputCapacityPerHAPairHasBeenSet = true; m_throughputCapacityPerHAPair = value; }
     inline UpdateFileSystemOntapConfiguration& WithThroughputCapacityPerHAPair(int value) { SetThroughputCapacityPerHAPair(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Use to update the number of high-availability (HA) pairs for a
+     * second-generation single-AZ file system. If you increase the number of HA pairs
+     * for your file system, you must specify proportional increases for
+     * <code>StorageCapacity</code>, <code>Iops</code>, and
+     * <code>ThroughputCapacity</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/administering-file-systems.html#HA-pairs">High-availability
+     * (HA) pairs</a> in the FSx for ONTAP user guide. Block storage protocol support
+     * (iSCSI and NVMe over TCP) is disabled on file systems with more than 6 HA pairs.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/supported-fsx-clients.html#using-block-storage">Using
+     * block storage protocols</a>.</p>
+     */
+    inline int GetHAPairs() const{ return m_hAPairs; }
+    inline bool HAPairsHasBeenSet() const { return m_hAPairsHasBeenSet; }
+    inline void SetHAPairs(int value) { m_hAPairsHasBeenSet = true; m_hAPairs = value; }
+    inline UpdateFileSystemOntapConfiguration& WithHAPairs(int value) { SetHAPairs(value); return *this;}
     ///@}
   private:
 
@@ -213,6 +235,9 @@ namespace Model
 
     int m_throughputCapacityPerHAPair;
     bool m_throughputCapacityPerHAPairHasBeenSet = false;
+
+    int m_hAPairs;
+    bool m_hAPairsHasBeenSet = false;
   };
 
 } // namespace Model

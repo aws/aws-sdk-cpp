@@ -1743,6 +1743,38 @@ namespace SageMaker
         }
 
         /**
+         * <p>Creates a job that optimizes a model for inference performance. To create the
+         * job, you provide the location of a source model, and you provide the settings
+         * for the optimization techniques that you want the job to apply. When the job
+         * completes successfully, SageMaker uploads the new optimized model to the output
+         * destination that you specify.</p> <p>For more information about how to use this
+         * action, and about the supported optimization techniques, see <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-optimize.html">Optimize
+         * model inference with Amazon SageMaker</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateOptimizationJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateOptimizationJobOutcome CreateOptimizationJob(const Model::CreateOptimizationJobRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateOptimizationJob that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateOptimizationJobRequestT = Model::CreateOptimizationJobRequest>
+        Model::CreateOptimizationJobOutcomeCallable CreateOptimizationJobCallable(const CreateOptimizationJobRequestT& request) const
+        {
+            return SubmitCallable(&SageMakerClient::CreateOptimizationJob, request);
+        }
+
+        /**
+         * An Async wrapper for CreateOptimizationJob that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateOptimizationJobRequestT = Model::CreateOptimizationJobRequest>
+        void CreateOptimizationJobAsync(const CreateOptimizationJobRequestT& request, const CreateOptimizationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SageMakerClient::CreateOptimizationJob, request, handler, context);
+        }
+
+        /**
          * <p>Creates a pipeline using a JSON pipeline definition.</p><p><h3>See Also:</h3>
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreatePipeline">AWS
@@ -3383,6 +3415,31 @@ namespace SageMaker
         }
 
         /**
+         * <p>Deletes an optimization job.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteOptimizationJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteOptimizationJobOutcome DeleteOptimizationJob(const Model::DeleteOptimizationJobRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteOptimizationJob that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteOptimizationJobRequestT = Model::DeleteOptimizationJobRequest>
+        Model::DeleteOptimizationJobOutcomeCallable DeleteOptimizationJobCallable(const DeleteOptimizationJobRequestT& request) const
+        {
+            return SubmitCallable(&SageMakerClient::DeleteOptimizationJob, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteOptimizationJob that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteOptimizationJobRequestT = Model::DeleteOptimizationJobRequest>
+        void DeleteOptimizationJobAsync(const DeleteOptimizationJobRequestT& request, const DeleteOptimizationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SageMakerClient::DeleteOptimizationJob, request, handler, context);
+        }
+
+        /**
          * <p>Deletes a pipeline if there are no running instances of the pipeline. To
          * delete a pipeline, you must stop all running instances of the pipeline using the
          * <code>StopPipelineExecution</code> API. When you delete a pipeline, all
@@ -4918,6 +4975,32 @@ namespace SageMaker
         void DescribeNotebookInstanceLifecycleConfigAsync(const DescribeNotebookInstanceLifecycleConfigRequestT& request, const DescribeNotebookInstanceLifecycleConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&SageMakerClient::DescribeNotebookInstanceLifecycleConfig, request, handler, context);
+        }
+
+        /**
+         * <p>Provides the properties of the specified optimization job.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeOptimizationJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeOptimizationJobOutcome DescribeOptimizationJob(const Model::DescribeOptimizationJobRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeOptimizationJob that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeOptimizationJobRequestT = Model::DescribeOptimizationJobRequest>
+        Model::DescribeOptimizationJobOutcomeCallable DescribeOptimizationJobCallable(const DescribeOptimizationJobRequestT& request) const
+        {
+            return SubmitCallable(&SageMakerClient::DescribeOptimizationJob, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeOptimizationJob that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeOptimizationJobRequestT = Model::DescribeOptimizationJobRequest>
+        void DescribeOptimizationJobAsync(const DescribeOptimizationJobRequestT& request, const DescribeOptimizationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SageMakerClient::DescribeOptimizationJob, request, handler, context);
         }
 
         /**
@@ -7040,6 +7123,32 @@ namespace SageMaker
         }
 
         /**
+         * <p>Lists the optimization jobs in your account and their
+         * properties.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListOptimizationJobs">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListOptimizationJobsOutcome ListOptimizationJobs(const Model::ListOptimizationJobsRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for ListOptimizationJobs that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListOptimizationJobsRequestT = Model::ListOptimizationJobsRequest>
+        Model::ListOptimizationJobsOutcomeCallable ListOptimizationJobsCallable(const ListOptimizationJobsRequestT& request = {}) const
+        {
+            return SubmitCallable(&SageMakerClient::ListOptimizationJobs, request);
+        }
+
+        /**
+         * An Async wrapper for ListOptimizationJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListOptimizationJobsRequestT = Model::ListOptimizationJobsRequest>
+        void ListOptimizationJobsAsync(const ListOptimizationJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListOptimizationJobsRequestT& request = {}) const
+        {
+            return SubmitAsync(&SageMakerClient::ListOptimizationJobs, request, handler, context);
+        }
+
+        /**
          * <p>Gets a list of <code>PipeLineExecutionStep</code> objects.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListPipelineExecutionSteps">AWS
@@ -8256,6 +8365,31 @@ namespace SageMaker
         void StopNotebookInstanceAsync(const StopNotebookInstanceRequestT& request, const StopNotebookInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&SageMakerClient::StopNotebookInstance, request, handler, context);
+        }
+
+        /**
+         * <p>Ends a running inference optimization job.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopOptimizationJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StopOptimizationJobOutcome StopOptimizationJob(const Model::StopOptimizationJobRequest& request) const;
+
+        /**
+         * A Callable wrapper for StopOptimizationJob that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StopOptimizationJobRequestT = Model::StopOptimizationJobRequest>
+        Model::StopOptimizationJobOutcomeCallable StopOptimizationJobCallable(const StopOptimizationJobRequestT& request) const
+        {
+            return SubmitCallable(&SageMakerClient::StopOptimizationJob, request);
+        }
+
+        /**
+         * An Async wrapper for StopOptimizationJob that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StopOptimizationJobRequestT = Model::StopOptimizationJobRequest>
+        void StopOptimizationJobAsync(const StopOptimizationJobRequestT& request, const StopOptimizationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SageMakerClient::StopOptimizationJob, request, handler, context);
         }
 
         /**

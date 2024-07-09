@@ -34,7 +34,8 @@ UpdateDomainConfigRequest::UpdateDomainConfigRequest() :
     m_dryRunMode(DryRunMode::NOT_SET),
     m_dryRunModeHasBeenSet(false),
     m_offPeakWindowOptionsHasBeenSet(false),
-    m_softwareUpdateOptionsHasBeenSet(false)
+    m_softwareUpdateOptionsHasBeenSet(false),
+    m_aIMLOptionsHasBeenSet(false)
 {
 }
 
@@ -155,6 +156,12 @@ Aws::String UpdateDomainConfigRequest::SerializePayload() const
   if(m_softwareUpdateOptionsHasBeenSet)
   {
    payload.WithObject("SoftwareUpdateOptions", m_softwareUpdateOptions.Jsonize());
+
+  }
+
+  if(m_aIMLOptionsHasBeenSet)
+  {
+   payload.WithObject("AIMLOptions", m_aIMLOptions.Jsonize());
 
   }
 

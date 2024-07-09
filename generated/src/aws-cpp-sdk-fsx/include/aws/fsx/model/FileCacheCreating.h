@@ -129,7 +129,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>A structure providing details of any failures that occurred.</p>
+     * <p>A structure providing details of any failures that occurred in creating a
+     * cache.</p>
      */
     inline const FileCacheFailureDetails& GetFailureDetails() const{ return m_failureDetails; }
     inline bool FailureDetailsHasBeenSet() const { return m_failureDetailsHasBeenSet; }
