@@ -320,7 +320,7 @@ bool PutObjectRequest::HasEmbeddedError(Aws::IOStream &body,
   AWS_UNREFERENCED_PARAM(header);
 
   auto readPointer = body.tellg();
-  Utils::Xml::XmlDocument doc = XmlDocument::CreateFromXmlStream(body);
+  Utils::Xml::XmlDocument doc = Utils::Xml::XmlDocument::CreateFromXmlStream(body);
 
   if (!doc.WasParseSuccessful()) {
     body.seekg(readPointer);
