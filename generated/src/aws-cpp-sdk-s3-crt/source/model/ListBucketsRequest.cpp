@@ -10,7 +10,6 @@
 #include <utility>
 
 using namespace Aws::S3Crt::Model;
-using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
 ListBucketsRequest::ListBucketsRequest()

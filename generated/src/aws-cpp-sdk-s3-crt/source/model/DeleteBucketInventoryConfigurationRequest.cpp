@@ -12,7 +12,6 @@
 #include <utility>
 
 using namespace Aws::S3Crt::Model;
-using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
@@ -31,7 +30,7 @@ bool DeleteBucketInventoryConfigurationRequest::HasEmbeddedError(Aws::IOStream &
   (void) header;
 
   auto readPointer = body.tellg();
-  XmlDocument doc = XmlDocument::CreateFromXmlStream(body);
+  Utils::Xml::XmlDocument doc = XmlDocument::CreateFromXmlStream(body);
 
   if (!doc.WasParseSuccessful()) {
     body.seekg(readPointer);

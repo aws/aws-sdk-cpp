@@ -12,7 +12,6 @@
 #include <utility>
 
 using namespace Aws::S3::Model;
-using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
@@ -35,7 +34,7 @@ bool PutBucketReplicationRequest::HasEmbeddedError(Aws::IOStream &body,
   (void) header;
 
   auto readPointer = body.tellg();
-  XmlDocument doc = XmlDocument::CreateFromXmlStream(body);
+  Utils::Xml::XmlDocument doc = XmlDocument::CreateFromXmlStream(body);
 
   if (!doc.WasParseSuccessful()) {
     body.seekg(readPointer);

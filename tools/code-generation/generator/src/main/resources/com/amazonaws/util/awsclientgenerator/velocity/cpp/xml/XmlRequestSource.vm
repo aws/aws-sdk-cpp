@@ -24,7 +24,6 @@
 #end
 
 using namespace ${rootNamespace}::${serviceNamespace}::Model;
-using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 #if($shape.hasQueryStringMembers())
 using namespace Aws::Http;
@@ -44,7 +43,7 @@ bool ${typeInfo.className}::HasEmbeddedError(Aws::IOStream &body,
   (void) header;
 
   auto readPointer = body.tellg();
-  XmlDocument doc = XmlDocument::CreateFromXmlStream(body);
+  Utils::Xml::XmlDocument doc = XmlDocument::CreateFromXmlStream(body);
 
   if (!doc.WasParseSuccessful()) {
     body.seekg(readPointer);
