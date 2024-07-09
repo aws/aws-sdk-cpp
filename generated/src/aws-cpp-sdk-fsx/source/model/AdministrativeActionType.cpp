@@ -34,6 +34,7 @@ namespace Aws
         static const int MISCONFIGURED_STATE_RECOVERY_HASH = HashingUtils::HashString("MISCONFIGURED_STATE_RECOVERY");
         static const int VOLUME_UPDATE_WITH_SNAPSHOT_HASH = HashingUtils::HashString("VOLUME_UPDATE_WITH_SNAPSHOT");
         static const int VOLUME_INITIALIZE_WITH_SNAPSHOT_HASH = HashingUtils::HashString("VOLUME_INITIALIZE_WITH_SNAPSHOT");
+        static const int DOWNLOAD_DATA_FROM_BACKUP_HASH = HashingUtils::HashString("DOWNLOAD_DATA_FROM_BACKUP");
 
 
         AdministrativeActionType GetAdministrativeActionTypeForName(const Aws::String& name)
@@ -95,6 +96,10 @@ namespace Aws
           {
             return AdministrativeActionType::VOLUME_INITIALIZE_WITH_SNAPSHOT;
           }
+          else if (hashCode == DOWNLOAD_DATA_FROM_BACKUP_HASH)
+          {
+            return AdministrativeActionType::DOWNLOAD_DATA_FROM_BACKUP;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -139,6 +144,8 @@ namespace Aws
             return "VOLUME_UPDATE_WITH_SNAPSHOT";
           case AdministrativeActionType::VOLUME_INITIALIZE_WITH_SNAPSHOT:
             return "VOLUME_INITIALIZE_WITH_SNAPSHOT";
+          case AdministrativeActionType::DOWNLOAD_DATA_FROM_BACKUP:
+            return "DOWNLOAD_DATA_FROM_BACKUP";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

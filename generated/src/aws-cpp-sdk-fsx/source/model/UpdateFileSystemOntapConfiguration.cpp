@@ -30,7 +30,9 @@ UpdateFileSystemOntapConfiguration::UpdateFileSystemOntapConfiguration() :
     m_addRouteTableIdsHasBeenSet(false),
     m_removeRouteTableIdsHasBeenSet(false),
     m_throughputCapacityPerHAPair(0),
-    m_throughputCapacityPerHAPairHasBeenSet(false)
+    m_throughputCapacityPerHAPairHasBeenSet(false),
+    m_hAPairs(0),
+    m_hAPairsHasBeenSet(false)
 {
 }
 
@@ -111,6 +113,13 @@ UpdateFileSystemOntapConfiguration& UpdateFileSystemOntapConfiguration::operator
     m_throughputCapacityPerHAPairHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("HAPairs"))
+  {
+    m_hAPairs = jsonValue.GetInteger("HAPairs");
+
+    m_hAPairsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -179,6 +188,12 @@ JsonValue UpdateFileSystemOntapConfiguration::Jsonize() const
   if(m_throughputCapacityPerHAPairHasBeenSet)
   {
    payload.WithInteger("ThroughputCapacityPerHAPair", m_throughputCapacityPerHAPair);
+
+  }
+
+  if(m_hAPairsHasBeenSet)
+  {
+   payload.WithInteger("HAPairs", m_hAPairs);
 
   }
 

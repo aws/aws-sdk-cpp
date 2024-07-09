@@ -9,6 +9,7 @@
 #include <aws/sagemaker/model/ExecutionRoleIdentityConfig.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/model/DockerSettings.h>
+#include <aws/sagemaker/model/AmazonQSettings.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -100,6 +101,19 @@ namespace Model
     inline DomainSettingsForUpdate& WithDockerSettings(const DockerSettings& value) { SetDockerSettings(value); return *this;}
     inline DomainSettingsForUpdate& WithDockerSettings(DockerSettings&& value) { SetDockerSettings(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>A collection of settings that configure the Amazon Q experience within the
+     * domain.</p>
+     */
+    inline const AmazonQSettings& GetAmazonQSettings() const{ return m_amazonQSettings; }
+    inline bool AmazonQSettingsHasBeenSet() const { return m_amazonQSettingsHasBeenSet; }
+    inline void SetAmazonQSettings(const AmazonQSettings& value) { m_amazonQSettingsHasBeenSet = true; m_amazonQSettings = value; }
+    inline void SetAmazonQSettings(AmazonQSettings&& value) { m_amazonQSettingsHasBeenSet = true; m_amazonQSettings = std::move(value); }
+    inline DomainSettingsForUpdate& WithAmazonQSettings(const AmazonQSettings& value) { SetAmazonQSettings(value); return *this;}
+    inline DomainSettingsForUpdate& WithAmazonQSettings(AmazonQSettings&& value) { SetAmazonQSettings(std::move(value)); return *this;}
+    ///@}
   private:
 
     RStudioServerProDomainSettingsForUpdate m_rStudioServerProDomainSettingsForUpdate;
@@ -113,6 +127,9 @@ namespace Model
 
     DockerSettings m_dockerSettings;
     bool m_dockerSettingsHasBeenSet = false;
+
+    AmazonQSettings m_amazonQSettings;
+    bool m_amazonQSettingsHasBeenSet = false;
   };
 
 } // namespace Model

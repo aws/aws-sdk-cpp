@@ -48,7 +48,7 @@ namespace Model
      * single entry.</p> <p>Amazon FSx responds with an HTTP status code 400 (Bad
      * Request) for the following conditions:</p> <ul> <li> <p>The strings in the value
      * of <code>Aggregates</code> are not are not formatted as <code>aggrX</code>,
-     * where X is a number between 1 and 6.</p> </li> <li> <p>The value of
+     * where X is a number between 1 and 12.</p> </li> <li> <p>The value of
      * <code>Aggregates</code> contains aggregates that are not present.</p> </li> <li>
      * <p>One or more of the aggregates supplied are too close to the volume limit to
      * support adding more volumes.</p> </li> </ul>

@@ -9,8 +9,10 @@
 #include <aws/sagemaker/model/ImageConfig.h>
 #include <aws/sagemaker/model/ContainerMode.h>
 #include <aws/sagemaker/model/ModelDataSource.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/sagemaker/model/MultiModelConfig.h>
+#include <aws/sagemaker/model/AdditionalModelDataSource.h>
 #include <utility>
 
 namespace Aws
@@ -175,6 +177,22 @@ namespace Model
 
     ///@{
     /**
+     * <p>Data sources that are available to your model in addition to the one that you
+     * specify for <code>ModelDataSource</code> when you use the
+     * <code>CreateModel</code> action.</p>
+     */
+    inline const Aws::Vector<AdditionalModelDataSource>& GetAdditionalModelDataSources() const{ return m_additionalModelDataSources; }
+    inline bool AdditionalModelDataSourcesHasBeenSet() const { return m_additionalModelDataSourcesHasBeenSet; }
+    inline void SetAdditionalModelDataSources(const Aws::Vector<AdditionalModelDataSource>& value) { m_additionalModelDataSourcesHasBeenSet = true; m_additionalModelDataSources = value; }
+    inline void SetAdditionalModelDataSources(Aws::Vector<AdditionalModelDataSource>&& value) { m_additionalModelDataSourcesHasBeenSet = true; m_additionalModelDataSources = std::move(value); }
+    inline ContainerDefinition& WithAdditionalModelDataSources(const Aws::Vector<AdditionalModelDataSource>& value) { SetAdditionalModelDataSources(value); return *this;}
+    inline ContainerDefinition& WithAdditionalModelDataSources(Aws::Vector<AdditionalModelDataSource>&& value) { SetAdditionalModelDataSources(std::move(value)); return *this;}
+    inline ContainerDefinition& AddAdditionalModelDataSources(const AdditionalModelDataSource& value) { m_additionalModelDataSourcesHasBeenSet = true; m_additionalModelDataSources.push_back(value); return *this; }
+    inline ContainerDefinition& AddAdditionalModelDataSources(AdditionalModelDataSource&& value) { m_additionalModelDataSourcesHasBeenSet = true; m_additionalModelDataSources.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>The environment variables to set in the Docker container.</p> <p>The maximum
      * length of each key and value in the <code>Environment</code> map is 1024 bytes.
      * The maximum length of all keys and values in the map, combined, is 32 KB. If you
@@ -255,6 +273,9 @@ namespace Model
 
     ModelDataSource m_modelDataSource;
     bool m_modelDataSourceHasBeenSet = false;
+
+    Aws::Vector<AdditionalModelDataSource> m_additionalModelDataSources;
+    bool m_additionalModelDataSourcesHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_environment;
     bool m_environmentHasBeenSet = false;

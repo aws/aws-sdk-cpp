@@ -6,7 +6,6 @@
 #pragma once
 #include <aws/datazone/DataZone_EXPORTS.h>
 #include <aws/datazone/model/AssetItem.h>
-#include <aws/datazone/model/DataProductSummary.h>
 #include <aws/datazone/model/GlossaryItem.h>
 #include <aws/datazone/model/GlossaryTermItem.h>
 #include <utility>
@@ -54,18 +53,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The data product item included in the search results.</p>
-     */
-    inline const DataProductSummary& GetDataProductItem() const{ return m_dataProductItem; }
-    inline bool DataProductItemHasBeenSet() const { return m_dataProductItemHasBeenSet; }
-    inline void SetDataProductItem(const DataProductSummary& value) { m_dataProductItemHasBeenSet = true; m_dataProductItem = value; }
-    inline void SetDataProductItem(DataProductSummary&& value) { m_dataProductItemHasBeenSet = true; m_dataProductItem = std::move(value); }
-    inline SearchInventoryResultItem& WithDataProductItem(const DataProductSummary& value) { SetDataProductItem(value); return *this;}
-    inline SearchInventoryResultItem& WithDataProductItem(DataProductSummary&& value) { SetDataProductItem(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The glossary item included in the search results.</p>
      */
     inline const GlossaryItem& GetGlossaryItem() const{ return m_glossaryItem; }
@@ -91,9 +78,6 @@ namespace Model
 
     AssetItem m_assetItem;
     bool m_assetItemHasBeenSet = false;
-
-    DataProductSummary m_dataProductItem;
-    bool m_dataProductItemHasBeenSet = false;
 
     GlossaryItem m_glossaryItem;
     bool m_glossaryItemHasBeenSet = false;

@@ -22,6 +22,7 @@
 #include <aws/opensearch/model/AutoTuneOptionsInput.h>
 #include <aws/opensearch/model/OffPeakWindowOptions.h>
 #include <aws/opensearch/model/SoftwareUpdateOptions.h>
+#include <aws/opensearch/model/AIMLOptionsInput.h>
 #include <aws/opensearch/model/LogType.h>
 #include <aws/opensearch/model/LogPublishingOption.h>
 #include <aws/opensearch/model/Tag.h>
@@ -340,6 +341,18 @@ namespace Model
     inline CreateDomainRequest& WithSoftwareUpdateOptions(const SoftwareUpdateOptions& value) { SetSoftwareUpdateOptions(value); return *this;}
     inline CreateDomainRequest& WithSoftwareUpdateOptions(SoftwareUpdateOptions&& value) { SetSoftwareUpdateOptions(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Options for all machine learning features for the specified domain.</p>
+     */
+    inline const AIMLOptionsInput& GetAIMLOptions() const{ return m_aIMLOptions; }
+    inline bool AIMLOptionsHasBeenSet() const { return m_aIMLOptionsHasBeenSet; }
+    inline void SetAIMLOptions(const AIMLOptionsInput& value) { m_aIMLOptionsHasBeenSet = true; m_aIMLOptions = value; }
+    inline void SetAIMLOptions(AIMLOptionsInput&& value) { m_aIMLOptionsHasBeenSet = true; m_aIMLOptions = std::move(value); }
+    inline CreateDomainRequest& WithAIMLOptions(const AIMLOptionsInput& value) { SetAIMLOptions(value); return *this;}
+    inline CreateDomainRequest& WithAIMLOptions(AIMLOptionsInput&& value) { SetAIMLOptions(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_domainName;
@@ -398,6 +411,9 @@ namespace Model
 
     SoftwareUpdateOptions m_softwareUpdateOptions;
     bool m_softwareUpdateOptionsHasBeenSet = false;
+
+    AIMLOptionsInput m_aIMLOptions;
+    bool m_aIMLOptionsHasBeenSet = false;
   };
 
 } // namespace Model
