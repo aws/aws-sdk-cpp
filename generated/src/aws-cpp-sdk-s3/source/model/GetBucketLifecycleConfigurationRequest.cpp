@@ -32,17 +32,14 @@ bool GetBucketLifecycleConfigurationRequest::HasEmbeddedError(Aws::IOStream &bod
 
   auto readPointer = body.tellg();
   Utils::Xml::XmlDocument doc = XmlDocument::CreateFromXmlStream(body);
-
+  body.seekg(readPointer);
   if (!doc.WasParseSuccessful()) {
-    body.seekg(readPointer);
     return false;
   }
 
   if (!doc.GetRootElement().IsNull() && doc.GetRootElement().GetName() == Aws::String("Error")) {
-    body.seekg(readPointer);
     return true;
   }
-  body.seekg(readPointer);
   return false;
 }
 
