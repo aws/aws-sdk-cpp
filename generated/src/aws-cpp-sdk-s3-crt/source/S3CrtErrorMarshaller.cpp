@@ -125,6 +125,7 @@ AWSError<Aws::Client::CoreErrors> S3CrtErrorMarshaller::Marshall(const Aws::Http
 
   auto readPointer = body.tellg();
   XmlDocument doc = XmlDocument::CreateFromXmlStream(body);
+  body.seekg(readPointer);
   Aws::String bodyError;
 
   if (doc.WasParseSuccessful() &&
@@ -147,8 +148,6 @@ AWSError<Aws::Client::CoreErrors> S3CrtErrorMarshaller::Marshall(const Aws::Http
   auto error = FindErrorByName(bodyError.c_str());
 
   error.SetMessage(message);
-    
-  body.seekg(readPointer);
 
   return error;
 
