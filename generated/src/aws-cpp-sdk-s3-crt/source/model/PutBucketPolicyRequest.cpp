@@ -89,7 +89,7 @@ bool PutBucketPolicyRequest::HasEmbeddedError(Aws::IOStream &body,
   const Aws::Http::HeaderValueCollection &header) const
 {
   // Header is unused
-  (void) header;
+  AWS_UNREFERENCED_PARAM(header);
 
   auto readPointer = body.tellg();
   Utils::Xml::XmlDocument doc = XmlDocument::CreateFromXmlStream(body);

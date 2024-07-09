@@ -113,6 +113,16 @@ AWSError<Aws::Client::CoreErrors> S3ErrorMarshaller::Marshall(const Aws::Http::H
   Aws::String message{"Error in body of the response"};
   //extract error message and code in the body
   auto& body = httpResponse.GetResponseBody();
+  
+  if(!body.good())
+  {
+      return  Aws::Client::AWSError<Aws::Client::CoreErrors>(
+                            Aws::Client::CoreErrors::INVALID_PARAMETER_VALUE,
+                            "",
+                            message,
+                            false);
+  }
+
   auto readPointer = body.tellg();
   XmlDocument doc = XmlDocument::CreateFromXmlStream(body);
   Aws::String bodyError;
@@ -121,22 +131,24 @@ AWSError<Aws::Client::CoreErrors> S3ErrorMarshaller::Marshall(const Aws::Http::H
       !doc.GetRootElement().IsNull() && 
       doc.GetRootElement().GetName() == Aws::String("Error")) 
   {        
+      //check if the first node fetched has no children
       auto messageNode = doc.GetRootElement().FirstChild("Message") ;
-      if(!messageNode.IsNull())
+      if(!messageNode.IsNull() && !messageNode.HasChildren())
       {
           message = messageNode.GetText();
       }
       auto codeNode = doc.GetRootElement().FirstChild("Code") ;
-      if(!codeNode.IsNull())
+      if(!codeNode.IsNull() && !codeNode.HasChildren())
       {
           bodyError = codeNode.GetText();
       }
   }
-  body.seekg(readPointer);
 
   auto error = FindErrorByName(bodyError.c_str());
 
   error.SetMessage(message);
+    
+  body.seekg(readPointer);
 
   return error;
 

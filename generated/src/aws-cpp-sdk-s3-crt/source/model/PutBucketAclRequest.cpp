@@ -6,12 +6,14 @@
 #include <aws/s3-crt/model/PutBucketAclRequest.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/URI.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
 using namespace Aws::S3Crt::Model;
+using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
@@ -37,7 +39,7 @@ bool PutBucketAclRequest::HasEmbeddedError(Aws::IOStream &body,
   const Aws::Http::HeaderValueCollection &header) const
 {
   // Header is unused
-  (void) header;
+  AWS_UNREFERENCED_PARAM(header);
 
   auto readPointer = body.tellg();
   Utils::Xml::XmlDocument doc = XmlDocument::CreateFromXmlStream(body);
