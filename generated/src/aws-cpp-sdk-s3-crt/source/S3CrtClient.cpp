@@ -774,7 +774,7 @@ void S3CrtClient::CopyObjectAsync(const CopyObjectRequest& request, const CopyOb
   aws_uri endpoint;
   InitCrtEndpointFromUri(&endpoint, endpointResolutionOutcome.GetResult().GetURI());
   options.endpoint = &endpoint;
-  std::unique_ptr<aws_uri, void(*)(aws_uri*)> endpointCleanup { options.endpoint, &aws_uri_clean_up };
+  std::unique_ptr<aws_uri, void(*)(aws_uri*)> endpointCleanup { &endpoint, &aws_uri_clean_up };
 
   userData->copyResponseHandler = handler;
   userData->asyncCallerContext = handlerContext;
@@ -893,7 +893,7 @@ void S3CrtClient::GetObjectAsync(const GetObjectRequest& request, const GetObjec
   aws_uri endpoint;
   InitCrtEndpointFromUri(&endpoint, endpointResolutionOutcome.GetResult().GetURI());
   options.endpoint = &endpoint;
-  std::unique_ptr<aws_uri, void(*)(aws_uri*)> endpointCleanup { options.endpoint, &aws_uri_clean_up };
+  std::unique_ptr<aws_uri, void(*)(aws_uri*)> endpointCleanup { &endpoint, &aws_uri_clean_up };
 
   userData->getResponseHandler = handler;
   userData->asyncCallerContext = handlerContext;
@@ -1016,7 +1016,7 @@ void S3CrtClient::PutObjectAsync(const PutObjectRequest& request, const PutObjec
   aws_uri endpoint;
   InitCrtEndpointFromUri(&endpoint, endpointResolutionOutcome.GetResult().GetURI());
   options.endpoint = &endpoint;
-  std::unique_ptr<aws_uri, void(*)(aws_uri*)> endpointCleanup { options.endpoint, &aws_uri_clean_up };
+  std::unique_ptr<aws_uri, void(*)(aws_uri*)> endpointCleanup { &endpoint, &aws_uri_clean_up };
 
   userData->putResponseHandler = handler;
   userData->asyncCallerContext = handlerContext;
