@@ -25,7 +25,15 @@ namespace Model
 {
 
   /**
-   * <p>Ephemeris data in Orbit Ephemeris Message (OEM) format.</p><p><h3>See
+   * <p> Ephemeris data in Orbit Ephemeris Message (OEM) format. </p> <p> Position,
+   * velocity, and acceleration units must be represented in <code>km</code>,
+   * <code>km/s</code>, and <code>km/s**2</code>, respectively, in ephemeris data
+   * lines. Covariance matrix line units must be represented in <code>km**2</code> if
+   * computed from two positions, <code>km**2/s</code> if computed from one position
+   * and one velocity, and <code>km**2/s**2</code> if computed from two velocities.
+   * Consult section 7.7.2 of The Consultative Committee for Space Data Systems
+   * (CCSDS) <a href="https://public.ccsds.org/Pubs/502x0b3e1.pdf">Recommended
+   * Standard for Orbit Data Messages</a> for more information. </p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/OEMEphemeris">AWS
    * API Reference</a></p>

@@ -7,6 +7,8 @@
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
 #include <aws/bedrock-agent/model/ChunkingStrategy.h>
 #include <aws/bedrock-agent/model/FixedSizeChunkingConfiguration.h>
+#include <aws/bedrock-agent/model/HierarchicalChunkingConfiguration.h>
+#include <aws/bedrock-agent/model/SemanticChunkingConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -50,9 +52,14 @@ namespace Model
      * <code>FIXED_SIZE</code> – Amazon Bedrock splits your source data into chunks of
      * the approximate size that you set in the
      * <code>fixedSizeChunkingConfiguration</code>.</p> </li> <li> <p>
-     * <code>NONE</code> – Amazon Bedrock treats each file as one chunk. If you choose
-     * this option, you may want to pre-process your documents by splitting them into
-     * separate files.</p> </li> </ul>
+     * <code>HIERARCHICAL</code> – Split documents into layers of chunks where the
+     * first layer contains large chunks, and the second layer contains smaller chunks
+     * derived from the first layer.</p> </li> <li> <p> <code>SEMANTIC</code> – Split
+     * documents into chunks based on groups of similar content derived with natural
+     * language processing.</p> </li> <li> <p> <code>NONE</code> – Amazon Bedrock
+     * treats each file as one chunk. If you choose this option, you may want to
+     * pre-process your documents by splitting them into separate files.</p> </li>
+     * </ul>
      */
     inline const ChunkingStrategy& GetChunkingStrategy() const{ return m_chunkingStrategy; }
     inline bool ChunkingStrategyHasBeenSet() const { return m_chunkingStrategyHasBeenSet; }
@@ -74,6 +81,35 @@ namespace Model
     inline ChunkingConfiguration& WithFixedSizeChunkingConfiguration(const FixedSizeChunkingConfiguration& value) { SetFixedSizeChunkingConfiguration(value); return *this;}
     inline ChunkingConfiguration& WithFixedSizeChunkingConfiguration(FixedSizeChunkingConfiguration&& value) { SetFixedSizeChunkingConfiguration(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Settings for hierarchical document chunking for a data source. Hierarchical
+     * chunking splits documents into layers of chunks where the first layer contains
+     * large chunks, and the second layer contains smaller chunks derived from the
+     * first layer.</p>
+     */
+    inline const HierarchicalChunkingConfiguration& GetHierarchicalChunkingConfiguration() const{ return m_hierarchicalChunkingConfiguration; }
+    inline bool HierarchicalChunkingConfigurationHasBeenSet() const { return m_hierarchicalChunkingConfigurationHasBeenSet; }
+    inline void SetHierarchicalChunkingConfiguration(const HierarchicalChunkingConfiguration& value) { m_hierarchicalChunkingConfigurationHasBeenSet = true; m_hierarchicalChunkingConfiguration = value; }
+    inline void SetHierarchicalChunkingConfiguration(HierarchicalChunkingConfiguration&& value) { m_hierarchicalChunkingConfigurationHasBeenSet = true; m_hierarchicalChunkingConfiguration = std::move(value); }
+    inline ChunkingConfiguration& WithHierarchicalChunkingConfiguration(const HierarchicalChunkingConfiguration& value) { SetHierarchicalChunkingConfiguration(value); return *this;}
+    inline ChunkingConfiguration& WithHierarchicalChunkingConfiguration(HierarchicalChunkingConfiguration&& value) { SetHierarchicalChunkingConfiguration(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Settings for semantic document chunking for a data source. Semantic chunking
+     * splits a document into into smaller documents based on groups of similar content
+     * derived from the text with natural language processing.</p>
+     */
+    inline const SemanticChunkingConfiguration& GetSemanticChunkingConfiguration() const{ return m_semanticChunkingConfiguration; }
+    inline bool SemanticChunkingConfigurationHasBeenSet() const { return m_semanticChunkingConfigurationHasBeenSet; }
+    inline void SetSemanticChunkingConfiguration(const SemanticChunkingConfiguration& value) { m_semanticChunkingConfigurationHasBeenSet = true; m_semanticChunkingConfiguration = value; }
+    inline void SetSemanticChunkingConfiguration(SemanticChunkingConfiguration&& value) { m_semanticChunkingConfigurationHasBeenSet = true; m_semanticChunkingConfiguration = std::move(value); }
+    inline ChunkingConfiguration& WithSemanticChunkingConfiguration(const SemanticChunkingConfiguration& value) { SetSemanticChunkingConfiguration(value); return *this;}
+    inline ChunkingConfiguration& WithSemanticChunkingConfiguration(SemanticChunkingConfiguration&& value) { SetSemanticChunkingConfiguration(std::move(value)); return *this;}
+    ///@}
   private:
 
     ChunkingStrategy m_chunkingStrategy;
@@ -81,6 +117,12 @@ namespace Model
 
     FixedSizeChunkingConfiguration m_fixedSizeChunkingConfiguration;
     bool m_fixedSizeChunkingConfigurationHasBeenSet = false;
+
+    HierarchicalChunkingConfiguration m_hierarchicalChunkingConfiguration;
+    bool m_hierarchicalChunkingConfigurationHasBeenSet = false;
+
+    SemanticChunkingConfiguration m_semanticChunkingConfiguration;
+    bool m_semanticChunkingConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

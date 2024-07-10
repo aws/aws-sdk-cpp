@@ -10,6 +10,7 @@
 #include <aws/bedrock-agent-runtime/model/PayloadPart.h>
 #include <aws/bedrock-agent-runtime/model/ConflictException.h>
 #include <aws/bedrock-agent-runtime/model/DependencyFailedException.h>
+#include <aws/bedrock-agent-runtime/model/FilePart.h>
 #include <aws/bedrock-agent-runtime/model/InternalServerException.h>
 #include <aws/bedrock-agent-runtime/model/ResourceNotFoundException.h>
 #include <aws/bedrock-agent-runtime/model/ReturnControlPayload.h>
@@ -111,6 +112,19 @@ namespace Model
     inline void SetDependencyFailedException(DependencyFailedException&& value) { m_dependencyFailedExceptionHasBeenSet = true; m_dependencyFailedException = std::move(value); }
     inline ResponseStream& WithDependencyFailedException(const DependencyFailedException& value) { SetDependencyFailedException(value); return *this;}
     inline ResponseStream& WithDependencyFailedException(DependencyFailedException&& value) { SetDependencyFailedException(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Contains intermediate response for code interpreter if any files have been
+     * generated.</p>
+     */
+    inline const FilePart& GetFiles() const{ return m_files; }
+    inline bool FilesHasBeenSet() const { return m_filesHasBeenSet; }
+    inline void SetFiles(const FilePart& value) { m_filesHasBeenSet = true; m_files = value; }
+    inline void SetFiles(FilePart&& value) { m_filesHasBeenSet = true; m_files = std::move(value); }
+    inline ResponseStream& WithFiles(const FilePart& value) { SetFiles(value); return *this;}
+    inline ResponseStream& WithFiles(FilePart&& value) { SetFiles(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -222,6 +236,9 @@ namespace Model
 
     DependencyFailedException m_dependencyFailedException;
     bool m_dependencyFailedExceptionHasBeenSet = false;
+
+    FilePart m_files;
+    bool m_filesHasBeenSet = false;
 
     InternalServerException m_internalServerException;
     bool m_internalServerExceptionHasBeenSet = false;

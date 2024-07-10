@@ -50,12 +50,7 @@ namespace Model
    * confidence, and <i>Violence</i> with MEDIUM confidence.</p> <p>For more
    * information, see <a
    * href="https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-filters.html">Guardrails
-   * content filters</a>.</p> <p>This data type is used in the following API
-   * operations:</p> <ul> <li> <p> <a
-   * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_CreateGuardrail.html#API_CreateGuardrail_RequestSyntax">CreateGuardrail
-   * request body</a> </p> </li> <li> <p> <a
-   * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_UpdateGuardrail.html#API_UpdateGuardrail_RequestSyntax">UpdateGuardrail
-   * request body</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * content filters</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GuardrailContentFilterConfig">AWS
    * API Reference</a></p>
    */

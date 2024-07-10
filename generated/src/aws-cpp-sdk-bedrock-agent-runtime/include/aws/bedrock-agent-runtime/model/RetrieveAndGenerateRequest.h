@@ -76,8 +76,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>The unique identifier of the session. Reuse the same value to continue the
-     * same session with the knowledge base.</p>
+     * <p>The unique identifier of the session. When you first make a
+     * <code>RetrieveAndGenerate</code> request, Amazon Bedrock automatically generates
+     * this value. You must reuse this value for all subsequent requests in the same
+     * conversational session. This value allows Amazon Bedrock to maintain context and
+     * knowledge from previous interactions. You can't explicitly set the
+     * <code>sessionId</code> yourself.</p>
      */
     inline const Aws::String& GetSessionId() const{ return m_sessionId; }
     inline bool SessionIdHasBeenSet() const { return m_sessionIdHasBeenSet; }

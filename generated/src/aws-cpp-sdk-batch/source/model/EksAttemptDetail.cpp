@@ -21,6 +21,7 @@ namespace Model
 EksAttemptDetail::EksAttemptDetail() : 
     m_containersHasBeenSet(false),
     m_initContainersHasBeenSet(false),
+    m_eksClusterArnHasBeenSet(false),
     m_podNameHasBeenSet(false),
     m_nodeNameHasBeenSet(false),
     m_startedAt(0),
@@ -57,6 +58,13 @@ EksAttemptDetail& EksAttemptDetail::operator =(JsonView jsonValue)
       m_initContainers.push_back(initContainersJsonList[initContainersIndex].AsObject());
     }
     m_initContainersHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("eksClusterArn"))
+  {
+    m_eksClusterArn = jsonValue.GetString("eksClusterArn");
+
+    m_eksClusterArnHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("podName"))
@@ -120,6 +128,12 @@ JsonValue EksAttemptDetail::Jsonize() const
      initContainersJsonList[initContainersIndex].AsObject(m_initContainers[initContainersIndex].Jsonize());
    }
    payload.WithArray("initContainers", std::move(initContainersJsonList));
+
+  }
+
+  if(m_eksClusterArnHasBeenSet)
+  {
+   payload.WithString("eksClusterArn", m_eksClusterArn);
 
   }
 

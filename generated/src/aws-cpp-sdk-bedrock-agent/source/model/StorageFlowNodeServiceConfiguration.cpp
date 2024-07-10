@@ -1,0 +1,59 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/bedrock-agent/model/StorageFlowNodeServiceConfiguration.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace BedrockAgent
+{
+namespace Model
+{
+
+StorageFlowNodeServiceConfiguration::StorageFlowNodeServiceConfiguration() : 
+    m_s3HasBeenSet(false)
+{
+}
+
+StorageFlowNodeServiceConfiguration::StorageFlowNodeServiceConfiguration(JsonView jsonValue)
+  : StorageFlowNodeServiceConfiguration()
+{
+  *this = jsonValue;
+}
+
+StorageFlowNodeServiceConfiguration& StorageFlowNodeServiceConfiguration::operator =(JsonView jsonValue)
+{
+  if(jsonValue.ValueExists("s3"))
+  {
+    m_s3 = jsonValue.GetObject("s3");
+
+    m_s3HasBeenSet = true;
+  }
+
+  return *this;
+}
+
+JsonValue StorageFlowNodeServiceConfiguration::Jsonize() const
+{
+  JsonValue payload;
+
+  if(m_s3HasBeenSet)
+  {
+   payload.WithObject("s3", m_s3.Jsonize());
+
+  }
+
+  return payload;
+}
+
+} // namespace Model
+} // namespace BedrockAgent
+} // namespace Aws

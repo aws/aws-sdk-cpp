@@ -7,6 +7,7 @@
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
 #include <aws/bedrock-agent-runtime/model/GenerationConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/bedrock-agent-runtime/model/OrchestrationConfiguration.h>
 #include <aws/bedrock-agent-runtime/model/KnowledgeBaseRetrievalConfiguration.h>
 #include <utility>
 
@@ -48,7 +49,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Contains configurations for response generation based on the knowwledge base
+     * <p>Contains configurations for response generation based on the knowledge base
      * query results.</p>
      */
     inline const GenerationConfiguration& GetGenerationConfiguration() const{ return m_generationConfiguration; }
@@ -90,6 +91,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>Settings for how the model processes the prompt prior to retrieval and
+     * generation.</p>
+     */
+    inline const OrchestrationConfiguration& GetOrchestrationConfiguration() const{ return m_orchestrationConfiguration; }
+    inline bool OrchestrationConfigurationHasBeenSet() const { return m_orchestrationConfigurationHasBeenSet; }
+    inline void SetOrchestrationConfiguration(const OrchestrationConfiguration& value) { m_orchestrationConfigurationHasBeenSet = true; m_orchestrationConfiguration = value; }
+    inline void SetOrchestrationConfiguration(OrchestrationConfiguration&& value) { m_orchestrationConfigurationHasBeenSet = true; m_orchestrationConfiguration = std::move(value); }
+    inline KnowledgeBaseRetrieveAndGenerateConfiguration& WithOrchestrationConfiguration(const OrchestrationConfiguration& value) { SetOrchestrationConfiguration(value); return *this;}
+    inline KnowledgeBaseRetrieveAndGenerateConfiguration& WithOrchestrationConfiguration(OrchestrationConfiguration&& value) { SetOrchestrationConfiguration(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Contains configurations for how to retrieve and return the knowledge base
      * query.</p>
      */
@@ -110,6 +124,9 @@ namespace Model
 
     Aws::String m_modelArn;
     bool m_modelArnHasBeenSet = false;
+
+    OrchestrationConfiguration m_orchestrationConfiguration;
+    bool m_orchestrationConfigurationHasBeenSet = false;
 
     KnowledgeBaseRetrievalConfiguration m_retrievalConfiguration;
     bool m_retrievalConfigurationHasBeenSet = false;

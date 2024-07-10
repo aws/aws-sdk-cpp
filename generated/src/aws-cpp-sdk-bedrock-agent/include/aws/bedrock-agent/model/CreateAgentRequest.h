@@ -8,6 +8,7 @@
 #include <aws/bedrock-agent/BedrockAgentRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/bedrock-agent/model/GuardrailConfiguration.h>
+#include <aws/bedrock-agent/model/MemoryConfiguration.h>
 #include <aws/bedrock-agent/model/PromptOverrideConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
@@ -171,6 +172,18 @@ namespace Model
 
     ///@{
     /**
+     * <p> Contains the details of the memory configured for the agent.</p>
+     */
+    inline const MemoryConfiguration& GetMemoryConfiguration() const{ return m_memoryConfiguration; }
+    inline bool MemoryConfigurationHasBeenSet() const { return m_memoryConfigurationHasBeenSet; }
+    inline void SetMemoryConfiguration(const MemoryConfiguration& value) { m_memoryConfigurationHasBeenSet = true; m_memoryConfiguration = value; }
+    inline void SetMemoryConfiguration(MemoryConfiguration&& value) { m_memoryConfigurationHasBeenSet = true; m_memoryConfiguration = std::move(value); }
+    inline CreateAgentRequest& WithMemoryConfiguration(const MemoryConfiguration& value) { SetMemoryConfiguration(value); return *this;}
+    inline CreateAgentRequest& WithMemoryConfiguration(MemoryConfiguration&& value) { SetMemoryConfiguration(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Contains configurations to override prompts in different parts of an agent
      * sequence. For more information, see <a
      * href="https://docs.aws.amazon.com/bedrock/latest/userguide/advanced-prompts.html">Advanced
@@ -230,6 +243,9 @@ namespace Model
 
     Aws::String m_instruction;
     bool m_instructionHasBeenSet = false;
+
+    MemoryConfiguration m_memoryConfiguration;
+    bool m_memoryConfigurationHasBeenSet = false;
 
     PromptOverrideConfiguration m_promptOverrideConfiguration;
     bool m_promptOverrideConfigurationHasBeenSet = false;

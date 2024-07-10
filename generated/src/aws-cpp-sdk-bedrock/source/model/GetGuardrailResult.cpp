@@ -91,6 +91,12 @@ GetGuardrailResult& GetGuardrailResult::operator =(const Aws::AmazonWebServiceRe
 
   }
 
+  if(jsonValue.ValueExists("contextualGroundingPolicy"))
+  {
+    m_contextualGroundingPolicy = jsonValue.GetObject("contextualGroundingPolicy");
+
+  }
+
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetString("createdAt");

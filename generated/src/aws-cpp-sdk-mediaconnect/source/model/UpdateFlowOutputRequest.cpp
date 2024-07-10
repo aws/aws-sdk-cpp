@@ -35,7 +35,9 @@ UpdateFlowOutputRequest::UpdateFlowOutputRequest() :
     m_smoothingLatency(0),
     m_smoothingLatencyHasBeenSet(false),
     m_streamIdHasBeenSet(false),
-    m_vpcInterfaceAttachmentHasBeenSet(false)
+    m_vpcInterfaceAttachmentHasBeenSet(false),
+    m_outputStatus(OutputStatus::NOT_SET),
+    m_outputStatusHasBeenSet(false)
 {
 }
 
@@ -140,6 +142,11 @@ Aws::String UpdateFlowOutputRequest::SerializePayload() const
   {
    payload.WithObject("vpcInterfaceAttachment", m_vpcInterfaceAttachment.Jsonize());
 
+  }
+
+  if(m_outputStatusHasBeenSet)
+  {
+   payload.WithString("outputStatus", OutputStatusMapper::GetNameForOutputStatus(m_outputStatus));
   }
 
   return payload.View().WriteReadable();

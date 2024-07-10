@@ -22,6 +22,7 @@
 #include <aws/bedrock-runtime/BedrockRuntimeClient.h>
 #include <aws/bedrock-runtime/BedrockRuntimeErrorMarshaller.h>
 #include <aws/bedrock-runtime/BedrockRuntimeEndpointProvider.h>
+#include <aws/bedrock-runtime/model/ApplyGuardrailRequest.h>
 #include <aws/bedrock-runtime/model/ConverseRequest.h>
 #include <aws/bedrock-runtime/model/ConverseStreamRequest.h>
 #include <aws/bedrock-runtime/model/InvokeModelRequest.h>
@@ -165,6 +166,47 @@ void BedrockRuntimeClient::OverrideEndpoint(const Aws::String& endpoint)
 {
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->OverrideEndpoint(endpoint);
+}
+
+ApplyGuardrailOutcome BedrockRuntimeClient::ApplyGuardrail(const ApplyGuardrailRequest& request) const
+{
+  AWS_OPERATION_GUARD(ApplyGuardrail);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ApplyGuardrail, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.GuardrailIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ApplyGuardrail", "Required field: GuardrailIdentifier, is not set");
+    return ApplyGuardrailOutcome(Aws::Client::AWSError<BedrockRuntimeErrors>(BedrockRuntimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GuardrailIdentifier]", false));
+  }
+  if (!request.GuardrailVersionHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ApplyGuardrail", "Required field: GuardrailVersion, is not set");
+    return ApplyGuardrailOutcome(Aws::Client::AWSError<BedrockRuntimeErrors>(BedrockRuntimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GuardrailVersion]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ApplyGuardrail, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ApplyGuardrail, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ApplyGuardrail",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ApplyGuardrailOutcome>(
+    [&]()-> ApplyGuardrailOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ApplyGuardrail, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/guardrail/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetGuardrailIdentifier());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/version/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetGuardrailVersion());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/apply");
+      return ApplyGuardrailOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
 ConverseOutcome BedrockRuntimeClient::Converse(const ConverseRequest& request) const

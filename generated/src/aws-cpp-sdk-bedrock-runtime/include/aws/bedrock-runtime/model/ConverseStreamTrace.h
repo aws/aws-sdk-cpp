@@ -24,8 +24,9 @@ namespace Model
 {
 
   /**
-   * <p>The trace object in a response from <a>ConverseStream</a>. Currently, you can
-   * only trace guardrails.</p><p><h3>See Also:</h3>   <a
+   * <p>The trace object in a response from <a
+   * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_ConverseStream.html">ConverseStream</a>.
+   * Currently, you can only trace guardrails.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/ConverseStreamTrace">AWS
    * API Reference</a></p>
    */

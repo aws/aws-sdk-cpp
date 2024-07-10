@@ -5,8 +5,12 @@
 
 #pragma once
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
+#include <aws/bedrock-agent-runtime/model/RetrievalResultConfluenceLocation.h>
 #include <aws/bedrock-agent-runtime/model/RetrievalResultS3Location.h>
+#include <aws/bedrock-agent-runtime/model/RetrievalResultSalesforceLocation.h>
+#include <aws/bedrock-agent-runtime/model/RetrievalResultSharePointLocation.h>
 #include <aws/bedrock-agent-runtime/model/RetrievalResultLocationType.h>
+#include <aws/bedrock-agent-runtime/model/RetrievalResultWebLocation.h>
 #include <utility>
 
 namespace Aws
@@ -25,8 +29,8 @@ namespace Model
 {
 
   /**
-   * <p>Contains information about the location of the data source.</p> <p>This data
-   * type is used in the following API operations:</p> <ul> <li> <p> <a
+   * <p>Contains information about the data source location.</p> <p>This data type is
+   * used in the following API operations:</p> <ul> <li> <p> <a
    * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_Retrieve.html#API_agent-runtime_Retrieve_ResponseSyntax">Retrieve
    * response</a> – in the <code>location</code> field</p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_RetrieveAndGenerate.html#API_agent-runtime_RetrieveAndGenerate_ResponseSyntax">RetrieveAndGenerate
@@ -48,7 +52,19 @@ namespace Model
 
     ///@{
     /**
-     * <p>Contains the S3 location of the data source.</p>
+     * <p>The Confluence data source location.</p>
+     */
+    inline const RetrievalResultConfluenceLocation& GetConfluenceLocation() const{ return m_confluenceLocation; }
+    inline bool ConfluenceLocationHasBeenSet() const { return m_confluenceLocationHasBeenSet; }
+    inline void SetConfluenceLocation(const RetrievalResultConfluenceLocation& value) { m_confluenceLocationHasBeenSet = true; m_confluenceLocation = value; }
+    inline void SetConfluenceLocation(RetrievalResultConfluenceLocation&& value) { m_confluenceLocationHasBeenSet = true; m_confluenceLocation = std::move(value); }
+    inline RetrievalResultLocation& WithConfluenceLocation(const RetrievalResultConfluenceLocation& value) { SetConfluenceLocation(value); return *this;}
+    inline RetrievalResultLocation& WithConfluenceLocation(RetrievalResultConfluenceLocation&& value) { SetConfluenceLocation(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The S3 data source location.</p>
      */
     inline const RetrievalResultS3Location& GetS3Location() const{ return m_s3Location; }
     inline bool S3LocationHasBeenSet() const { return m_s3LocationHasBeenSet; }
@@ -60,7 +76,31 @@ namespace Model
 
     ///@{
     /**
-     * <p>The type of the location of the data source.</p>
+     * <p>The Salesforce data source location.</p>
+     */
+    inline const RetrievalResultSalesforceLocation& GetSalesforceLocation() const{ return m_salesforceLocation; }
+    inline bool SalesforceLocationHasBeenSet() const { return m_salesforceLocationHasBeenSet; }
+    inline void SetSalesforceLocation(const RetrievalResultSalesforceLocation& value) { m_salesforceLocationHasBeenSet = true; m_salesforceLocation = value; }
+    inline void SetSalesforceLocation(RetrievalResultSalesforceLocation&& value) { m_salesforceLocationHasBeenSet = true; m_salesforceLocation = std::move(value); }
+    inline RetrievalResultLocation& WithSalesforceLocation(const RetrievalResultSalesforceLocation& value) { SetSalesforceLocation(value); return *this;}
+    inline RetrievalResultLocation& WithSalesforceLocation(RetrievalResultSalesforceLocation&& value) { SetSalesforceLocation(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The SharePoint data source location.</p>
+     */
+    inline const RetrievalResultSharePointLocation& GetSharePointLocation() const{ return m_sharePointLocation; }
+    inline bool SharePointLocationHasBeenSet() const { return m_sharePointLocationHasBeenSet; }
+    inline void SetSharePointLocation(const RetrievalResultSharePointLocation& value) { m_sharePointLocationHasBeenSet = true; m_sharePointLocation = value; }
+    inline void SetSharePointLocation(RetrievalResultSharePointLocation&& value) { m_sharePointLocationHasBeenSet = true; m_sharePointLocation = std::move(value); }
+    inline RetrievalResultLocation& WithSharePointLocation(const RetrievalResultSharePointLocation& value) { SetSharePointLocation(value); return *this;}
+    inline RetrievalResultLocation& WithSharePointLocation(RetrievalResultSharePointLocation&& value) { SetSharePointLocation(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The type of data source location.</p>
      */
     inline const RetrievalResultLocationType& GetType() const{ return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
@@ -69,13 +109,37 @@ namespace Model
     inline RetrievalResultLocation& WithType(const RetrievalResultLocationType& value) { SetType(value); return *this;}
     inline RetrievalResultLocation& WithType(RetrievalResultLocationType&& value) { SetType(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The web URL/URLs data source location.</p>
+     */
+    inline const RetrievalResultWebLocation& GetWebLocation() const{ return m_webLocation; }
+    inline bool WebLocationHasBeenSet() const { return m_webLocationHasBeenSet; }
+    inline void SetWebLocation(const RetrievalResultWebLocation& value) { m_webLocationHasBeenSet = true; m_webLocation = value; }
+    inline void SetWebLocation(RetrievalResultWebLocation&& value) { m_webLocationHasBeenSet = true; m_webLocation = std::move(value); }
+    inline RetrievalResultLocation& WithWebLocation(const RetrievalResultWebLocation& value) { SetWebLocation(value); return *this;}
+    inline RetrievalResultLocation& WithWebLocation(RetrievalResultWebLocation&& value) { SetWebLocation(std::move(value)); return *this;}
+    ///@}
   private:
+
+    RetrievalResultConfluenceLocation m_confluenceLocation;
+    bool m_confluenceLocationHasBeenSet = false;
 
     RetrievalResultS3Location m_s3Location;
     bool m_s3LocationHasBeenSet = false;
 
+    RetrievalResultSalesforceLocation m_salesforceLocation;
+    bool m_salesforceLocationHasBeenSet = false;
+
+    RetrievalResultSharePointLocation m_sharePointLocation;
+    bool m_sharePointLocationHasBeenSet = false;
+
     RetrievalResultLocationType m_type;
     bool m_typeHasBeenSet = false;
+
+    RetrievalResultWebLocation m_webLocation;
+    bool m_webLocationHasBeenSet = false;
   };
 
 } // namespace Model

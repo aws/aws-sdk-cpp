@@ -39,7 +39,9 @@ AddOutputRequest::AddOutputRequest() :
     m_smoothingLatency(0),
     m_smoothingLatencyHasBeenSet(false),
     m_streamIdHasBeenSet(false),
-    m_vpcInterfaceAttachmentHasBeenSet(false)
+    m_vpcInterfaceAttachmentHasBeenSet(false),
+    m_outputStatus(OutputStatus::NOT_SET),
+    m_outputStatusHasBeenSet(false)
 {
 }
 
@@ -162,6 +164,13 @@ AddOutputRequest& AddOutputRequest::operator =(JsonView jsonValue)
     m_vpcInterfaceAttachmentHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("outputStatus"))
+  {
+    m_outputStatus = OutputStatusMapper::GetOutputStatusForName(jsonValue.GetString("outputStatus"));
+
+    m_outputStatusHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -266,6 +275,11 @@ JsonValue AddOutputRequest::Jsonize() const
   {
    payload.WithObject("vpcInterfaceAttachment", m_vpcInterfaceAttachment.Jsonize());
 
+  }
+
+  if(m_outputStatusHasBeenSet)
+  {
+   payload.WithString("outputStatus", OutputStatusMapper::GetNameForOutputStatus(m_outputStatus));
   }
 
   return payload;

@@ -23,6 +23,7 @@ namespace Model
 
 InvokeAgentInitialResponse::InvokeAgentInitialResponse() : 
     m_sessionIdHasBeenSet(false),
+    m_memoryIdHasBeenSet(false),
     m_contentTypeHasBeenSet(false)
 {
 }
@@ -45,6 +46,12 @@ InvokeAgentInitialResponse::InvokeAgentInitialResponse(const Http::HeaderValueCo
   if(sessionIdIter != headers.end())
   {
     m_sessionId = sessionIdIter->second;
+  }
+
+  const auto& memoryIdIter = headers.find("x-amz-bedrock-agent-memory-id");
+  if(memoryIdIter != headers.end())
+  {
+    m_memoryId = memoryIdIter->second;
   }
 
   const auto& contentTypeIter = headers.find("x-amzn-bedrock-agent-content-type");

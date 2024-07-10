@@ -78,6 +78,31 @@ namespace BedrockRuntime
         virtual ~BedrockRuntimeClient();
 
         /**
+         * <p>The action to apply a guardrail.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/ApplyGuardrail">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ApplyGuardrailOutcome ApplyGuardrail(const Model::ApplyGuardrailRequest& request) const;
+
+        /**
+         * A Callable wrapper for ApplyGuardrail that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ApplyGuardrailRequestT = Model::ApplyGuardrailRequest>
+        Model::ApplyGuardrailOutcomeCallable ApplyGuardrailCallable(const ApplyGuardrailRequestT& request) const
+        {
+            return SubmitCallable(&BedrockRuntimeClient::ApplyGuardrail, request);
+        }
+
+        /**
+         * An Async wrapper for ApplyGuardrail that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ApplyGuardrailRequestT = Model::ApplyGuardrailRequest>
+        void ApplyGuardrailAsync(const ApplyGuardrailRequestT& request, const ApplyGuardrailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockRuntimeClient::ApplyGuardrail, request, handler, context);
+        }
+
+        /**
          * <p>Sends messages to the specified Amazon Bedrock model. <code>Converse</code>
          * provides a consistent interface that works with all models that support
          * messages. This allows you to write code once and use it with different models.

@@ -9,6 +9,7 @@
 #include <aws/batch/model/ContainerProperties.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/batch/model/EcsProperties.h>
+#include <aws/batch/model/EksProperties.h>
 #include <utility>
 
 namespace Aws
@@ -104,6 +105,19 @@ namespace Model
     inline NodeRangeProperty& WithEcsProperties(const EcsProperties& value) { SetEcsProperties(value); return *this;}
     inline NodeRangeProperty& WithEcsProperties(EcsProperties&& value) { SetEcsProperties(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>This is an object that represents the properties of the node range for a
+     * multi-node parallel job.</p>
+     */
+    inline const EksProperties& GetEksProperties() const{ return m_eksProperties; }
+    inline bool EksPropertiesHasBeenSet() const { return m_eksPropertiesHasBeenSet; }
+    inline void SetEksProperties(const EksProperties& value) { m_eksPropertiesHasBeenSet = true; m_eksProperties = value; }
+    inline void SetEksProperties(EksProperties&& value) { m_eksPropertiesHasBeenSet = true; m_eksProperties = std::move(value); }
+    inline NodeRangeProperty& WithEksProperties(const EksProperties& value) { SetEksProperties(value); return *this;}
+    inline NodeRangeProperty& WithEksProperties(EksProperties&& value) { SetEksProperties(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_targetNodes;
@@ -117,6 +131,9 @@ namespace Model
 
     EcsProperties m_ecsProperties;
     bool m_ecsPropertiesHasBeenSet = false;
+
+    EksProperties m_eksProperties;
+    bool m_eksPropertiesHasBeenSet = false;
   };
 
 } // namespace Model

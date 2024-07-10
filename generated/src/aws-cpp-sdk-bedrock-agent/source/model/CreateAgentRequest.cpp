@@ -24,6 +24,7 @@ CreateAgentRequest::CreateAgentRequest() :
     m_idleSessionTTLInSeconds(0),
     m_idleSessionTTLInSecondsHasBeenSet(false),
     m_instructionHasBeenSet(false),
+    m_memoryConfigurationHasBeenSet(false),
     m_promptOverrideConfigurationHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
@@ -84,6 +85,12 @@ Aws::String CreateAgentRequest::SerializePayload() const
   if(m_instructionHasBeenSet)
   {
    payload.WithString("instruction", m_instruction);
+
+  }
+
+  if(m_memoryConfigurationHasBeenSet)
+  {
+   payload.WithObject("memoryConfiguration", m_memoryConfiguration.Jsonize());
 
   }
 

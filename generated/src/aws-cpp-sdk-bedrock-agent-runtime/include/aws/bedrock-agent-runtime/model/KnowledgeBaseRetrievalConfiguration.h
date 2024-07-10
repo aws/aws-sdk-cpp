@@ -24,13 +24,13 @@ namespace Model
 {
 
   /**
-   * <p>Contains configurations for the knowledge base query and retrieval process.
-   * For more information, see <a
+   * <p>Contains configurations for knowledge base query. For more information, see
+   * <a
    * href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html">Query
    * configurations</a>.</p> <p>This data type is used in the following API
    * operations:</p> <ul> <li> <p> <a
    * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_Retrieve.html#API_agent-runtime_Retrieve_RequestSyntax">Retrieve
-   * request</a> – in the <code>retrievalConfiguration</code> field</p> </li> <li>
+   * request</a> �� in the <code>retrievalConfiguration</code> field</p> </li> <li>
    * <p> <a
    * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_RetrieveAndGenerate.html#API_agent-runtime_RetrieveAndGenerate_RequestSyntax">RetrieveAndGenerate
    * request</a> – in the <code>retrievalConfiguration</code> field</p> </li>

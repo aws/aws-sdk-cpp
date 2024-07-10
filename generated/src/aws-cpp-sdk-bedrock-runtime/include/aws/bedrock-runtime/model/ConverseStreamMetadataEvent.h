@@ -65,8 +65,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The trace object in the response from <a>ConverseStream</a> that contains
-     * information about the guardrail behavior.</p>
+     * <p>The trace object in the response from <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_ConverseStream.html">ConverseStream</a>
+     * that contains information about the guardrail behavior.</p>
      */
     inline const ConverseStreamTrace& GetTrace() const{ return m_trace; }
     inline bool TraceHasBeenSet() const { return m_traceHasBeenSet; }

@@ -57,7 +57,15 @@ namespace Model
 
     ///@{
     /**
-     * <p>The message content.</p>
+     * <p>The message content. Note the following restrictions:</p> <ul> <li> <p>You
+     * can include up to 20 images. Each image's size, height, and width must be no
+     * more than 3.75 MB, 8000 px, and 8000 px, respectively.</p> </li> <li> <p>You can
+     * include up to five documents. Each document's size must be no more than 4.5
+     * MB.</p> </li> <li> <p>If you include a <code>ContentBlock</code> with a
+     * <code>document</code> field in the array, you must also include a
+     * <code>ContentBlock</code> with a <code>text</code> field.</p> </li> <li> <p>You
+     * can only include images and documents if the <code>role</code> is
+     * <code>user</code>.</p> </li> </ul>
      */
     inline const Aws::Vector<ContentBlock>& GetContent() const{ return m_content; }
     inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }

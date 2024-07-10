@@ -21,6 +21,10 @@ namespace Aws
       {
 
         static const int S3_HASH = HashingUtils::HashString("S3");
+        static const int WEB_HASH = HashingUtils::HashString("WEB");
+        static const int CONFLUENCE_HASH = HashingUtils::HashString("CONFLUENCE");
+        static const int SALESFORCE_HASH = HashingUtils::HashString("SALESFORCE");
+        static const int SHAREPOINT_HASH = HashingUtils::HashString("SHAREPOINT");
 
 
         DataSourceType GetDataSourceTypeForName(const Aws::String& name)
@@ -29,6 +33,22 @@ namespace Aws
           if (hashCode == S3_HASH)
           {
             return DataSourceType::S3;
+          }
+          else if (hashCode == WEB_HASH)
+          {
+            return DataSourceType::WEB;
+          }
+          else if (hashCode == CONFLUENCE_HASH)
+          {
+            return DataSourceType::CONFLUENCE;
+          }
+          else if (hashCode == SALESFORCE_HASH)
+          {
+            return DataSourceType::SALESFORCE;
+          }
+          else if (hashCode == SHAREPOINT_HASH)
+          {
+            return DataSourceType::SHAREPOINT;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -48,6 +68,14 @@ namespace Aws
             return {};
           case DataSourceType::S3:
             return "S3";
+          case DataSourceType::WEB:
+            return "WEB";
+          case DataSourceType::CONFLUENCE:
+            return "CONFLUENCE";
+          case DataSourceType::SALESFORCE:
+            return "SALESFORCE";
+          case DataSourceType::SHAREPOINT:
+            return "SHAREPOINT";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

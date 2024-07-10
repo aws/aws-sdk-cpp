@@ -262,6 +262,20 @@ namespace Model
     inline IpamResourceCidr& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
     inline IpamResourceCidr& WithVpcId(const char* value) { SetVpcId(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The Availability Zone ID.</p>
+     */
+    inline const Aws::String& GetAvailabilityZoneId() const{ return m_availabilityZoneId; }
+    inline bool AvailabilityZoneIdHasBeenSet() const { return m_availabilityZoneIdHasBeenSet; }
+    inline void SetAvailabilityZoneId(const Aws::String& value) { m_availabilityZoneIdHasBeenSet = true; m_availabilityZoneId = value; }
+    inline void SetAvailabilityZoneId(Aws::String&& value) { m_availabilityZoneIdHasBeenSet = true; m_availabilityZoneId = std::move(value); }
+    inline void SetAvailabilityZoneId(const char* value) { m_availabilityZoneIdHasBeenSet = true; m_availabilityZoneId.assign(value); }
+    inline IpamResourceCidr& WithAvailabilityZoneId(const Aws::String& value) { SetAvailabilityZoneId(value); return *this;}
+    inline IpamResourceCidr& WithAvailabilityZoneId(Aws::String&& value) { SetAvailabilityZoneId(std::move(value)); return *this;}
+    inline IpamResourceCidr& WithAvailabilityZoneId(const char* value) { SetAvailabilityZoneId(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_ipamId;
@@ -308,6 +322,9 @@ namespace Model
 
     Aws::String m_vpcId;
     bool m_vpcIdHasBeenSet = false;
+
+    Aws::String m_availabilityZoneId;
+    bool m_availabilityZoneIdHasBeenSet = false;
   };
 
 } // namespace Model

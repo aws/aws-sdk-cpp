@@ -41,6 +41,11 @@ namespace Model
             AWS_LOGSTREAM_TRACE(INVOKEAGENT_HANDLER_CLASS_TAG, "PayloadPart received.");
         };
 
+        m_onFilePart = [&](const FilePart&)
+        {
+            AWS_LOGSTREAM_TRACE(INVOKEAGENT_HANDLER_CLASS_TAG, "FilePart received.");
+        };
+
         m_onReturnControlPayload = [&](const ReturnControlPayload&)
         {
             AWS_LOGSTREAM_TRACE(INVOKEAGENT_HANDLER_CLASS_TAG, "ReturnControlPayload received.");
@@ -123,6 +128,18 @@ namespace Model
             }
 
             m_onPayloadPart(PayloadPart{json.View()});
+            break;
+        }
+        case InvokeAgentEventType::FILES:
+        {
+            JsonValue json(GetEventPayloadAsString());
+            if (!json.WasParseSuccessful())
+            {
+                AWS_LOGSTREAM_WARN(INVOKEAGENT_HANDLER_CLASS_TAG, "Unable to generate a proper FilePart object from the response in JSON format.");
+                break;
+            }
+
+            m_onFilePart(FilePart{json.View()});
             break;
         }
         case InvokeAgentEventType::RETURNCONTROL:
@@ -243,6 +260,7 @@ namespace InvokeAgentEventMapper
 {
     static const int INITIAL_RESPONSE_HASH = Aws::Utils::HashingUtils::HashString("initial-response");
     static const int CHUNK_HASH = Aws::Utils::HashingUtils::HashString("chunk");
+    static const int FILES_HASH = Aws::Utils::HashingUtils::HashString("files");
     static const int RETURNCONTROL_HASH = Aws::Utils::HashingUtils::HashString("returnControl");
     static const int TRACE_HASH = Aws::Utils::HashingUtils::HashString("trace");
 
@@ -257,6 +275,10 @@ namespace InvokeAgentEventMapper
         else if (hashCode == CHUNK_HASH)
         {
             return InvokeAgentEventType::CHUNK;
+        }
+        else if (hashCode == FILES_HASH)
+        {
+            return InvokeAgentEventType::FILES;
         }
         else if (hashCode == RETURNCONTROL_HASH)
         {
@@ -277,6 +299,8 @@ namespace InvokeAgentEventMapper
             return "initial-response";
         case InvokeAgentEventType::CHUNK:
             return "chunk";
+        case InvokeAgentEventType::FILES:
+            return "files";
         case InvokeAgentEventType::RETURNCONTROL:
             return "returnControl";
         case InvokeAgentEventType::TRACE:

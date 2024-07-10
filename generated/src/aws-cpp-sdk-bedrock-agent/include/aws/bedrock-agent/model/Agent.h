@@ -10,6 +10,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/bedrock-agent/model/GuardrailConfiguration.h>
+#include <aws/bedrock-agent/model/MemoryConfiguration.h>
 #include <aws/bedrock-agent/model/PromptOverrideConfiguration.h>
 #include <utility>
 
@@ -221,7 +222,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The guardrails configuration assigned to the agent.</p>
+     * <p>Details about the guardrail associated with the agent.</p>
      */
     inline const GuardrailConfiguration& GetGuardrailConfiguration() const{ return m_guardrailConfiguration; }
     inline bool GuardrailConfigurationHasBeenSet() const { return m_guardrailConfigurationHasBeenSet; }
@@ -258,6 +259,18 @@ namespace Model
     inline Agent& WithInstruction(const Aws::String& value) { SetInstruction(value); return *this;}
     inline Agent& WithInstruction(Aws::String&& value) { SetInstruction(std::move(value)); return *this;}
     inline Agent& WithInstruction(const char* value) { SetInstruction(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Contains memory configuration for the agent.</p>
+     */
+    inline const MemoryConfiguration& GetMemoryConfiguration() const{ return m_memoryConfiguration; }
+    inline bool MemoryConfigurationHasBeenSet() const { return m_memoryConfigurationHasBeenSet; }
+    inline void SetMemoryConfiguration(const MemoryConfiguration& value) { m_memoryConfigurationHasBeenSet = true; m_memoryConfiguration = value; }
+    inline void SetMemoryConfiguration(MemoryConfiguration&& value) { m_memoryConfigurationHasBeenSet = true; m_memoryConfiguration = std::move(value); }
+    inline Agent& WithMemoryConfiguration(const MemoryConfiguration& value) { SetMemoryConfiguration(value); return *this;}
+    inline Agent& WithMemoryConfiguration(MemoryConfiguration&& value) { SetMemoryConfiguration(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -360,6 +373,9 @@ namespace Model
 
     Aws::String m_instruction;
     bool m_instructionHasBeenSet = false;
+
+    MemoryConfiguration m_memoryConfiguration;
+    bool m_memoryConfigurationHasBeenSet = false;
 
     Aws::Utils::DateTime m_preparedAt;
     bool m_preparedAtHasBeenSet = false;

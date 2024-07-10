@@ -22,6 +22,7 @@ KnowledgeBaseRetrieveAndGenerateConfiguration::KnowledgeBaseRetrieveAndGenerateC
     m_generationConfigurationHasBeenSet(false),
     m_knowledgeBaseIdHasBeenSet(false),
     m_modelArnHasBeenSet(false),
+    m_orchestrationConfigurationHasBeenSet(false),
     m_retrievalConfigurationHasBeenSet(false)
 {
 }
@@ -55,6 +56,13 @@ KnowledgeBaseRetrieveAndGenerateConfiguration& KnowledgeBaseRetrieveAndGenerateC
     m_modelArnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("orchestrationConfiguration"))
+  {
+    m_orchestrationConfiguration = jsonValue.GetObject("orchestrationConfiguration");
+
+    m_orchestrationConfigurationHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("retrievalConfiguration"))
   {
     m_retrievalConfiguration = jsonValue.GetObject("retrievalConfiguration");
@@ -84,6 +92,12 @@ JsonValue KnowledgeBaseRetrieveAndGenerateConfiguration::Jsonize() const
   if(m_modelArnHasBeenSet)
   {
    payload.WithString("modelArn", m_modelArn);
+
+  }
+
+  if(m_orchestrationConfigurationHasBeenSet)
+  {
+   payload.WithObject("orchestrationConfiguration", m_orchestrationConfiguration.Jsonize());
 
   }
 

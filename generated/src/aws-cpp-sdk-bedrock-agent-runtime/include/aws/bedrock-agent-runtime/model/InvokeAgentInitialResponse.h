@@ -50,6 +50,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The unique identifier of the agent memory.</p>
+     */
+    inline const Aws::String& GetMemoryId() const{ return m_memoryId; }
+    inline bool MemoryIdHasBeenSet() const { return m_memoryIdHasBeenSet; }
+    inline void SetMemoryId(const Aws::String& value) { m_memoryIdHasBeenSet = true; m_memoryId = value; }
+    inline void SetMemoryId(Aws::String&& value) { m_memoryIdHasBeenSet = true; m_memoryId = std::move(value); }
+    inline void SetMemoryId(const char* value) { m_memoryIdHasBeenSet = true; m_memoryId.assign(value); }
+    inline InvokeAgentInitialResponse& WithMemoryId(const Aws::String& value) { SetMemoryId(value); return *this;}
+    inline InvokeAgentInitialResponse& WithMemoryId(Aws::String&& value) { SetMemoryId(std::move(value)); return *this;}
+    inline InvokeAgentInitialResponse& WithMemoryId(const char* value) { SetMemoryId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The MIME type of the input data in the request. The default value is
      * <code>application/json</code>.</p>
      */
@@ -66,6 +80,9 @@ namespace Model
 
     Aws::String m_sessionId;
     bool m_sessionIdHasBeenSet = false;
+
+    Aws::String m_memoryId;
+    bool m_memoryIdHasBeenSet = false;
 
     Aws::String m_contentType;
     bool m_contentTypeHasBeenSet = false;

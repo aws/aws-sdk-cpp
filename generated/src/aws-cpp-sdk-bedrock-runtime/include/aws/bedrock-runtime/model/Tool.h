@@ -24,8 +24,11 @@ namespace Model
 {
 
   /**
-   * <p>Information about a tool that you can use with the Converse API.
-   * </p><p><h3>See Also:</h3>   <a
+   * <p>Information about a tool that you can use with the Converse API. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/bedrock/latest/userguide/tool-use.html">Tool
+   * use (function calling)</a> in the Amazon Bedrock User Guide.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/Tool">AWS
    * API Reference</a></p>
    */

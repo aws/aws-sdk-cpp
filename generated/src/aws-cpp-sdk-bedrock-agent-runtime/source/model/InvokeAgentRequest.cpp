@@ -20,6 +20,7 @@ InvokeAgentRequest::InvokeAgentRequest() :
     m_endSession(false),
     m_endSessionHasBeenSet(false),
     m_inputTextHasBeenSet(false),
+    m_memoryIdHasBeenSet(false),
     m_sessionIdHasBeenSet(false),
     m_sessionStateHasBeenSet(false),
     m_handler(), m_decoder(Aws::Utils::Event::EventStreamDecoder(&m_handler))
@@ -45,6 +46,12 @@ Aws::String InvokeAgentRequest::SerializePayload() const
   if(m_inputTextHasBeenSet)
   {
    payload.WithString("inputText", m_inputText);
+
+  }
+
+  if(m_memoryIdHasBeenSet)
+  {
+   payload.WithString("memoryId", m_memoryId);
 
   }
 

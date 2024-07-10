@@ -26,12 +26,7 @@ namespace Model
 
   /**
    * <p>Contains details about topics that the guardrail should identify and
-   * deny.</p> <p>This data type is used in the following API operations:</p> <ul>
-   * <li> <p> <a
-   * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_CreateGuardrail.html#API_CreateGuardrail_RequestSyntax">CreateGuardrail
-   * request body</a> </p> </li> <li> <p> <a
-   * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_UpdateGuardrail.html#API_UpdateGuardrail_RequestSyntax">UpdateGuardrail
-   * request body</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * deny.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GuardrailTopicPolicyConfig">AWS
    * API Reference</a></p>
    */

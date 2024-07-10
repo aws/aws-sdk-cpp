@@ -40,7 +40,7 @@ namespace Model
     ///@{
     /**
      * <p>The raw image bytes for the image. If you use an AWS SDK, you don't need to
-     * base64 encode the image bytes.</p>
+     * encode the image bytes in base64.</p>
      */
     inline const Aws::Utils::ByteBuffer& GetBytes() const{ return m_bytes; }
     inline bool BytesHasBeenSet() const { return m_bytesHasBeenSet; }

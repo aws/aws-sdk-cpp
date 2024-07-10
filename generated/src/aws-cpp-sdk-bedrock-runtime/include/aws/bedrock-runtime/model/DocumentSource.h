@@ -24,11 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>Contains the content of the document included in a message when sending a <a
-   * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_Converse.html">Converse</a>
-   * or <a
-   * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_ConverseStream.html">ConverseStream</a>
-   * request or in the response.</p><p><h3>See Also:</h3>   <a
+   * <p>Contains the content of a document.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/DocumentSource">AWS
    * API Reference</a></p>
    */
@@ -43,8 +39,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>A base64-encoded string of a UTF-8 encoded file, that is the document to
-     * include in the message.</p>
+     * <p>The raw bytes for the document. If you use an Amazon Web Services SDK, you
+     * don't need to encode the bytes in base64.</p>
      */
     inline const Aws::Utils::ByteBuffer& GetBytes() const{ return m_bytes; }
     inline bool BytesHasBeenSet() const { return m_bytesHasBeenSet; }

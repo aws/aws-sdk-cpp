@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
 #include <aws/bedrock-agent-runtime/model/ActionGroupInvocationInput.h>
+#include <aws/bedrock-agent-runtime/model/CodeInterpreterInvocationInput.h>
 #include <aws/bedrock-agent-runtime/model/InvocationType.h>
 #include <aws/bedrock-agent-runtime/model/KnowledgeBaseLookupInput.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -55,6 +56,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>Contains information about the code interpreter to be invoked.</p>
+     */
+    inline const CodeInterpreterInvocationInput& GetCodeInterpreterInvocationInput() const{ return m_codeInterpreterInvocationInput; }
+    inline bool CodeInterpreterInvocationInputHasBeenSet() const { return m_codeInterpreterInvocationInputHasBeenSet; }
+    inline void SetCodeInterpreterInvocationInput(const CodeInterpreterInvocationInput& value) { m_codeInterpreterInvocationInputHasBeenSet = true; m_codeInterpreterInvocationInput = value; }
+    inline void SetCodeInterpreterInvocationInput(CodeInterpreterInvocationInput&& value) { m_codeInterpreterInvocationInputHasBeenSet = true; m_codeInterpreterInvocationInput = std::move(value); }
+    inline InvocationInput& WithCodeInterpreterInvocationInput(const CodeInterpreterInvocationInput& value) { SetCodeInterpreterInvocationInput(value); return *this;}
+    inline InvocationInput& WithCodeInterpreterInvocationInput(CodeInterpreterInvocationInput&& value) { SetCodeInterpreterInvocationInput(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Specifies whether the agent is invoking an action group or a knowledge
      * base.</p>
      */
@@ -96,6 +109,9 @@ namespace Model
 
     ActionGroupInvocationInput m_actionGroupInvocationInput;
     bool m_actionGroupInvocationInputHasBeenSet = false;
+
+    CodeInterpreterInvocationInput m_codeInterpreterInvocationInput;
+    bool m_codeInterpreterInvocationInputHasBeenSet = false;
 
     InvocationType m_invocationType;
     bool m_invocationTypeHasBeenSet = false;

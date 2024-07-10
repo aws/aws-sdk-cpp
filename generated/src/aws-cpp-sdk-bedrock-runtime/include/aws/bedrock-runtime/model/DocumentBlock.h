@@ -26,12 +26,7 @@ namespace Model
 {
 
   /**
-   * <p>A document to include in a message when sending a <a
-   * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_Converse.html">Converse</a>
-   * or <a
-   * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_ConverseStream.html">ConverseStream</a>
-   * request. You can include up to 5 documents in a request. The maximum document
-   * size is 50 MB.</p><p><h3>See Also:</h3>   <a
+   * <p>A document to include in a message.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/DocumentBlock">AWS
    * API Reference</a></p>
    */
@@ -58,7 +53,13 @@ namespace Model
 
     ///@{
     /**
-     * <p>A name for the document.</p>
+     * <p>A name for the document. The name can only contain the following
+     * characters:</p> <ul> <li> <p>Alphanumeric characters</p> </li> <li>
+     * <p>Whitespace characters (no more than one in a row)</p> </li> <li>
+     * <p>Hyphens</p> </li> <li> <p>Parentheses</p> </li> <li> <p>Square brackets</p>
+     * </li> </ul>  <p>This field is vulnerable to prompt injections, because the
+     * model might inadvertently interpret it as instructions. Therefore, we recommend
+     * that you specify a neutral name.</p> 
      */
     inline const Aws::String& GetName() const{ return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }

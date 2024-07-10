@@ -23,6 +23,7 @@ namespace Aws
         static const int ACTION_GROUP_HASH = HashingUtils::HashString("ACTION_GROUP");
         static const int KNOWLEDGE_BASE_HASH = HashingUtils::HashString("KNOWLEDGE_BASE");
         static const int FINISH_HASH = HashingUtils::HashString("FINISH");
+        static const int ACTION_GROUP_CODE_INTERPRETER_HASH = HashingUtils::HashString("ACTION_GROUP_CODE_INTERPRETER");
 
 
         InvocationType GetInvocationTypeForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           else if (hashCode == FINISH_HASH)
           {
             return InvocationType::FINISH;
+          }
+          else if (hashCode == ACTION_GROUP_CODE_INTERPRETER_HASH)
+          {
+            return InvocationType::ACTION_GROUP_CODE_INTERPRETER;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -62,6 +67,8 @@ namespace Aws
             return "KNOWLEDGE_BASE";
           case InvocationType::FINISH:
             return "FINISH";
+          case InvocationType::ACTION_GROUP_CODE_INTERPRETER:
+            return "ACTION_GROUP_CODE_INTERPRETER";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

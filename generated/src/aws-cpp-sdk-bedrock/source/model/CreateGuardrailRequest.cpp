@@ -19,6 +19,7 @@ CreateGuardrailRequest::CreateGuardrailRequest() :
     m_contentPolicyConfigHasBeenSet(false),
     m_wordPolicyConfigHasBeenSet(false),
     m_sensitiveInformationPolicyConfigHasBeenSet(false),
+    m_contextualGroundingPolicyConfigHasBeenSet(false),
     m_blockedInputMessagingHasBeenSet(false),
     m_blockedOutputsMessagingHasBeenSet(false),
     m_kmsKeyIdHasBeenSet(false),
@@ -65,6 +66,12 @@ Aws::String CreateGuardrailRequest::SerializePayload() const
   if(m_sensitiveInformationPolicyConfigHasBeenSet)
   {
    payload.WithObject("sensitiveInformationPolicyConfig", m_sensitiveInformationPolicyConfig.Jsonize());
+
+  }
+
+  if(m_contextualGroundingPolicyConfigHasBeenSet)
+  {
+   payload.WithObject("contextualGroundingPolicyConfig", m_contextualGroundingPolicyConfig.Jsonize());
 
   }
 

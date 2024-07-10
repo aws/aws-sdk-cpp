@@ -61,7 +61,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Maximum number of results to return in a single call.</p>
+     * <p>The maximum items to return in a request.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
@@ -71,7 +71,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Token for the next set of results.</p>
+     * <p>A token to specify where to start paginating. This is the nextToken from a
+     * previously truncated response.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }

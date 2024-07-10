@@ -48,7 +48,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ARN of the guardrail that was created.</p>
+     * <p>The ARN of the guardrail.</p>
      */
     inline const Aws::String& GetGuardrailArn() const{ return m_guardrailArn; }
     inline void SetGuardrailArn(const Aws::String& value) { m_guardrailArn = value; }

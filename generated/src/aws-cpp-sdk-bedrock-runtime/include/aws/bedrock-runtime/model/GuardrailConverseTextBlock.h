@@ -6,6 +6,8 @@
 #pragma once
 #include <aws/bedrock-runtime/BedrockRuntime_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/bedrock-runtime/model/GuardrailConverseContentQualifier.h>
 #include <utility>
 
 namespace Aws
@@ -52,10 +54,27 @@ namespace Model
     inline GuardrailConverseTextBlock& WithText(Aws::String&& value) { SetText(std::move(value)); return *this;}
     inline GuardrailConverseTextBlock& WithText(const char* value) { SetText(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The qualifier details for the guardrails contextual grounding filter.</p>
+     */
+    inline const Aws::Vector<GuardrailConverseContentQualifier>& GetQualifiers() const{ return m_qualifiers; }
+    inline bool QualifiersHasBeenSet() const { return m_qualifiersHasBeenSet; }
+    inline void SetQualifiers(const Aws::Vector<GuardrailConverseContentQualifier>& value) { m_qualifiersHasBeenSet = true; m_qualifiers = value; }
+    inline void SetQualifiers(Aws::Vector<GuardrailConverseContentQualifier>&& value) { m_qualifiersHasBeenSet = true; m_qualifiers = std::move(value); }
+    inline GuardrailConverseTextBlock& WithQualifiers(const Aws::Vector<GuardrailConverseContentQualifier>& value) { SetQualifiers(value); return *this;}
+    inline GuardrailConverseTextBlock& WithQualifiers(Aws::Vector<GuardrailConverseContentQualifier>&& value) { SetQualifiers(std::move(value)); return *this;}
+    inline GuardrailConverseTextBlock& AddQualifiers(const GuardrailConverseContentQualifier& value) { m_qualifiersHasBeenSet = true; m_qualifiers.push_back(value); return *this; }
+    inline GuardrailConverseTextBlock& AddQualifiers(GuardrailConverseContentQualifier&& value) { m_qualifiersHasBeenSet = true; m_qualifiers.push_back(std::move(value)); return *this; }
+    ///@}
   private:
 
     Aws::String m_text;
     bool m_textHasBeenSet = false;
+
+    Aws::Vector<GuardrailConverseContentQualifier> m_qualifiers;
+    bool m_qualifiersHasBeenSet = false;
   };
 
 } // namespace Model

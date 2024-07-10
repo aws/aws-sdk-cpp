@@ -30,8 +30,11 @@ namespace Model
 
   /**
    * <p>A block of content for a message that you pass to, or receive from, a model
-   * with the Converse API (<a>Converse</a> and <a>ConverseStream</a>).</p><p><h3>See
-   * Also:</h3>   <a
+   * with the <a
+   * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_Converse.html">Converse</a>
+   * or <a
+   * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_ConverseStream.html">ConverseStream</a>
+   * API operations.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/ContentBlock">AWS
    * API Reference</a></p>
    */
@@ -85,7 +88,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Information about a tool use request from a model. </p>
+     * <p>Information about a tool use request from a model.</p>
      */
     inline const ToolUseBlock& GetToolUse() const{ return m_toolUse; }
     inline bool ToolUseHasBeenSet() const { return m_toolUseHasBeenSet; }

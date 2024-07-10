@@ -24,8 +24,11 @@ namespace Model
 {
 
   /**
-   * <p/> <p>A content block for selective guarding with the Converse API
-   * (<a>Converse</a> and <a>ConverseStream</a>). </p><p><h3>See Also:</h3>   <a
+   * <p/> <p>A content block for selective guarding with the <a
+   * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_Converse.html">Converse</a>
+   * or <a
+   * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_ConverseStream.html">ConverseStream</a>
+   * API operations. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/GuardrailConverseContentBlock">AWS
    * API Reference</a></p>
    */

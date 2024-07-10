@@ -19,7 +19,8 @@ namespace Model
 {
 
 GuardrailConverseTextBlock::GuardrailConverseTextBlock() : 
-    m_textHasBeenSet(false)
+    m_textHasBeenSet(false),
+    m_qualifiersHasBeenSet(false)
 {
 }
 
@@ -38,6 +39,16 @@ GuardrailConverseTextBlock& GuardrailConverseTextBlock::operator =(JsonView json
     m_textHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("qualifiers"))
+  {
+    Aws::Utils::Array<JsonView> qualifiersJsonList = jsonValue.GetArray("qualifiers");
+    for(unsigned qualifiersIndex = 0; qualifiersIndex < qualifiersJsonList.GetLength(); ++qualifiersIndex)
+    {
+      m_qualifiers.push_back(GuardrailConverseContentQualifierMapper::GetGuardrailConverseContentQualifierForName(qualifiersJsonList[qualifiersIndex].AsString()));
+    }
+    m_qualifiersHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +59,17 @@ JsonValue GuardrailConverseTextBlock::Jsonize() const
   if(m_textHasBeenSet)
   {
    payload.WithString("text", m_text);
+
+  }
+
+  if(m_qualifiersHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> qualifiersJsonList(m_qualifiers.size());
+   for(unsigned qualifiersIndex = 0; qualifiersIndex < qualifiersJsonList.GetLength(); ++qualifiersIndex)
+   {
+     qualifiersJsonList[qualifiersIndex].AsString(GuardrailConverseContentQualifierMapper::GetNameForGuardrailConverseContentQualifier(m_qualifiers[qualifiersIndex]));
+   }
+   payload.WithArray("qualifiers", std::move(qualifiersJsonList));
 
   }
 

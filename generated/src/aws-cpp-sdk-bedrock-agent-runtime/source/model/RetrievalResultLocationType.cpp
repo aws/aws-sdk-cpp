@@ -21,6 +21,10 @@ namespace Aws
       {
 
         static const int S3_HASH = HashingUtils::HashString("S3");
+        static const int WEB_HASH = HashingUtils::HashString("WEB");
+        static const int CONFLUENCE_HASH = HashingUtils::HashString("CONFLUENCE");
+        static const int SALESFORCE_HASH = HashingUtils::HashString("SALESFORCE");
+        static const int SHAREPOINT_HASH = HashingUtils::HashString("SHAREPOINT");
 
 
         RetrievalResultLocationType GetRetrievalResultLocationTypeForName(const Aws::String& name)
@@ -29,6 +33,22 @@ namespace Aws
           if (hashCode == S3_HASH)
           {
             return RetrievalResultLocationType::S3;
+          }
+          else if (hashCode == WEB_HASH)
+          {
+            return RetrievalResultLocationType::WEB;
+          }
+          else if (hashCode == CONFLUENCE_HASH)
+          {
+            return RetrievalResultLocationType::CONFLUENCE;
+          }
+          else if (hashCode == SALESFORCE_HASH)
+          {
+            return RetrievalResultLocationType::SALESFORCE;
+          }
+          else if (hashCode == SHAREPOINT_HASH)
+          {
+            return RetrievalResultLocationType::SHAREPOINT;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -48,6 +68,14 @@ namespace Aws
             return {};
           case RetrievalResultLocationType::S3:
             return "S3";
+          case RetrievalResultLocationType::WEB:
+            return "WEB";
+          case RetrievalResultLocationType::CONFLUENCE:
+            return "CONFLUENCE";
+          case RetrievalResultLocationType::SALESFORCE:
+            return "SALESFORCE";
+          case RetrievalResultLocationType::SHAREPOINT:
+            return "SHAREPOINT";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

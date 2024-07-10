@@ -10,6 +10,7 @@
 #include <aws/mediaconnect/model/Encryption.h>
 #include <aws/mediaconnect/model/Protocol.h>
 #include <aws/mediaconnect/model/VpcInterfaceAttachment.h>
+#include <aws/mediaconnect/model/OutputStatus.h>
 #include <aws/mediaconnect/model/MediaStreamOutputConfigurationRequest.h>
 #include <utility>
 
@@ -239,6 +240,20 @@ namespace Model
     inline AddOutputRequest& WithVpcInterfaceAttachment(const VpcInterfaceAttachment& value) { SetVpcInterfaceAttachment(value); return *this;}
     inline AddOutputRequest& WithVpcInterfaceAttachment(VpcInterfaceAttachment&& value) { SetVpcInterfaceAttachment(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * An indication of whether the new output should be enabled or disabled as soon as
+     * it is created. If you don't specify the outputStatus field in your request,
+     * MediaConnect sets it to ENABLED.
+     */
+    inline const OutputStatus& GetOutputStatus() const{ return m_outputStatus; }
+    inline bool OutputStatusHasBeenSet() const { return m_outputStatusHasBeenSet; }
+    inline void SetOutputStatus(const OutputStatus& value) { m_outputStatusHasBeenSet = true; m_outputStatus = value; }
+    inline void SetOutputStatus(OutputStatus&& value) { m_outputStatusHasBeenSet = true; m_outputStatus = std::move(value); }
+    inline AddOutputRequest& WithOutputStatus(const OutputStatus& value) { SetOutputStatus(value); return *this;}
+    inline AddOutputRequest& WithOutputStatus(OutputStatus&& value) { SetOutputStatus(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_cidrAllowList;
@@ -285,6 +300,9 @@ namespace Model
 
     VpcInterfaceAttachment m_vpcInterfaceAttachment;
     bool m_vpcInterfaceAttachmentHasBeenSet = false;
+
+    OutputStatus m_outputStatus;
+    bool m_outputStatusHasBeenSet = false;
   };
 
 } // namespace Model

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
 #include <aws/bedrock-agent-runtime/model/ActionGroupInvocationOutput.h>
+#include <aws/bedrock-agent-runtime/model/CodeInterpreterInvocationOutput.h>
 #include <aws/bedrock-agent-runtime/model/FinalResponse.h>
 #include <aws/bedrock-agent-runtime/model/KnowledgeBaseLookupOutput.h>
 #include <aws/bedrock-agent-runtime/model/RepromptResponse.h>
@@ -54,6 +55,19 @@ namespace Model
     inline void SetActionGroupInvocationOutput(ActionGroupInvocationOutput&& value) { m_actionGroupInvocationOutputHasBeenSet = true; m_actionGroupInvocationOutput = std::move(value); }
     inline Observation& WithActionGroupInvocationOutput(const ActionGroupInvocationOutput& value) { SetActionGroupInvocationOutput(value); return *this;}
     inline Observation& WithActionGroupInvocationOutput(ActionGroupInvocationOutput&& value) { SetActionGroupInvocationOutput(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Contains the JSON-formatted string returned by the API invoked by the code
+     * interpreter.</p>
+     */
+    inline const CodeInterpreterInvocationOutput& GetCodeInterpreterInvocationOutput() const{ return m_codeInterpreterInvocationOutput; }
+    inline bool CodeInterpreterInvocationOutputHasBeenSet() const { return m_codeInterpreterInvocationOutputHasBeenSet; }
+    inline void SetCodeInterpreterInvocationOutput(const CodeInterpreterInvocationOutput& value) { m_codeInterpreterInvocationOutputHasBeenSet = true; m_codeInterpreterInvocationOutput = value; }
+    inline void SetCodeInterpreterInvocationOutput(CodeInterpreterInvocationOutput&& value) { m_codeInterpreterInvocationOutputHasBeenSet = true; m_codeInterpreterInvocationOutput = std::move(value); }
+    inline Observation& WithCodeInterpreterInvocationOutput(const CodeInterpreterInvocationOutput& value) { SetCodeInterpreterInvocationOutput(value); return *this;}
+    inline Observation& WithCodeInterpreterInvocationOutput(CodeInterpreterInvocationOutput&& value) { SetCodeInterpreterInvocationOutput(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -128,6 +142,9 @@ namespace Model
 
     ActionGroupInvocationOutput m_actionGroupInvocationOutput;
     bool m_actionGroupInvocationOutputHasBeenSet = false;
+
+    CodeInterpreterInvocationOutput m_codeInterpreterInvocationOutput;
+    bool m_codeInterpreterInvocationOutputHasBeenSet = false;
 
     FinalResponse m_finalResponse;
     bool m_finalResponseHasBeenSet = false;

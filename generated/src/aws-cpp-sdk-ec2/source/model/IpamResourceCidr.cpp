@@ -40,7 +40,8 @@ IpamResourceCidr::IpamResourceCidr() :
     m_managementStateHasBeenSet(false),
     m_overlapStatus(IpamOverlapStatus::NOT_SET),
     m_overlapStatusHasBeenSet(false),
-    m_vpcIdHasBeenSet(false)
+    m_vpcIdHasBeenSet(false),
+    m_availabilityZoneIdHasBeenSet(false)
 {
 }
 
@@ -152,6 +153,12 @@ IpamResourceCidr& IpamResourceCidr::operator =(const XmlNode& xmlNode)
       m_vpcId = Aws::Utils::Xml::DecodeEscapedXmlText(vpcIdNode.GetText());
       m_vpcIdHasBeenSet = true;
     }
+    XmlNode availabilityZoneIdNode = resultNode.FirstChild("availabilityZoneId");
+    if(!availabilityZoneIdNode.IsNull())
+    {
+      m_availabilityZoneId = Aws::Utils::Xml::DecodeEscapedXmlText(availabilityZoneIdNode.GetText());
+      m_availabilityZoneIdHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -240,6 +247,11 @@ void IpamResourceCidr::OutputToStream(Aws::OStream& oStream, const char* locatio
       oStream << location << index << locationValue << ".VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
   }
 
+  if(m_availabilityZoneIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".AvailabilityZoneId=" << StringUtils::URLEncode(m_availabilityZoneId.c_str()) << "&";
+  }
+
 }
 
 void IpamResourceCidr::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -309,6 +321,10 @@ void IpamResourceCidr::OutputToStream(Aws::OStream& oStream, const char* locatio
   if(m_vpcIdHasBeenSet)
   {
       oStream << location << ".VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
+  }
+  if(m_availabilityZoneIdHasBeenSet)
+  {
+      oStream << location << ".AvailabilityZoneId=" << StringUtils::URLEncode(m_availabilityZoneId.c_str()) << "&";
   }
 }
 

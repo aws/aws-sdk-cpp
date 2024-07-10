@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>Contains information about the S3 configuration of the data
+   * <p>The configuration information to connect to Amazon S3 as your data
    * source.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/S3DataSourceConfiguration">AWS
    * API Reference</a></p>
@@ -41,8 +41,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of the bucket that contains the data
-     * source.</p>
+     * <p>The Amazon Resource Name (ARN) of the S3 bucket that contains your data.</p>
      */
     inline const Aws::String& GetBucketArn() const{ return m_bucketArn; }
     inline bool BucketArnHasBeenSet() const { return m_bucketArnHasBeenSet; }
@@ -56,7 +55,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The bucket account owner ID for the S3 bucket.</p>
+     * <p>The account ID for the owner of the S3 bucket.</p>
      */
     inline const Aws::String& GetBucketOwnerAccountId() const{ return m_bucketOwnerAccountId; }
     inline bool BucketOwnerAccountIdHasBeenSet() const { return m_bucketOwnerAccountIdHasBeenSet; }
@@ -70,8 +69,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>A list of S3 prefixes that define the object containing the data sources. For
-     * more information, see <a
+     * <p>A list of S3 prefixes to include certain files or content. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-prefixes.html">Organizing
      * objects using prefixes</a>.</p>
      */

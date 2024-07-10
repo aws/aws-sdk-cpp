@@ -32,7 +32,10 @@ IpamDiscoveredResourceCidr::IpamDiscoveredResourceCidr() :
     m_ipUsage(0.0),
     m_ipUsageHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
-    m_sampleTimeHasBeenSet(false)
+    m_networkInterfaceAttachmentStatus(IpamNetworkInterfaceAttachmentStatus::NOT_SET),
+    m_networkInterfaceAttachmentStatusHasBeenSet(false),
+    m_sampleTimeHasBeenSet(false),
+    m_availabilityZoneIdHasBeenSet(false)
 {
 }
 
@@ -108,11 +111,23 @@ IpamDiscoveredResourceCidr& IpamDiscoveredResourceCidr::operator =(const XmlNode
       m_vpcId = Aws::Utils::Xml::DecodeEscapedXmlText(vpcIdNode.GetText());
       m_vpcIdHasBeenSet = true;
     }
+    XmlNode networkInterfaceAttachmentStatusNode = resultNode.FirstChild("networkInterfaceAttachmentStatus");
+    if(!networkInterfaceAttachmentStatusNode.IsNull())
+    {
+      m_networkInterfaceAttachmentStatus = IpamNetworkInterfaceAttachmentStatusMapper::GetIpamNetworkInterfaceAttachmentStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(networkInterfaceAttachmentStatusNode.GetText()).c_str()).c_str());
+      m_networkInterfaceAttachmentStatusHasBeenSet = true;
+    }
     XmlNode sampleTimeNode = resultNode.FirstChild("sampleTime");
     if(!sampleTimeNode.IsNull())
     {
       m_sampleTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(sampleTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_sampleTimeHasBeenSet = true;
+    }
+    XmlNode availabilityZoneIdNode = resultNode.FirstChild("availabilityZoneId");
+    if(!availabilityZoneIdNode.IsNull())
+    {
+      m_availabilityZoneId = Aws::Utils::Xml::DecodeEscapedXmlText(availabilityZoneIdNode.GetText());
+      m_availabilityZoneIdHasBeenSet = true;
     }
   }
 
@@ -172,9 +187,19 @@ void IpamDiscoveredResourceCidr::OutputToStream(Aws::OStream& oStream, const cha
       oStream << location << index << locationValue << ".VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
   }
 
+  if(m_networkInterfaceAttachmentStatusHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".NetworkInterfaceAttachmentStatus=" << IpamNetworkInterfaceAttachmentStatusMapper::GetNameForIpamNetworkInterfaceAttachmentStatus(m_networkInterfaceAttachmentStatus) << "&";
+  }
+
   if(m_sampleTimeHasBeenSet)
   {
       oStream << location << index << locationValue << ".SampleTime=" << StringUtils::URLEncode(m_sampleTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
+  }
+
+  if(m_availabilityZoneIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".AvailabilityZoneId=" << StringUtils::URLEncode(m_availabilityZoneId.c_str()) << "&";
   }
 
 }
@@ -223,9 +248,17 @@ void IpamDiscoveredResourceCidr::OutputToStream(Aws::OStream& oStream, const cha
   {
       oStream << location << ".VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
   }
+  if(m_networkInterfaceAttachmentStatusHasBeenSet)
+  {
+      oStream << location << ".NetworkInterfaceAttachmentStatus=" << IpamNetworkInterfaceAttachmentStatusMapper::GetNameForIpamNetworkInterfaceAttachmentStatus(m_networkInterfaceAttachmentStatus) << "&";
+  }
   if(m_sampleTimeHasBeenSet)
   {
       oStream << location << ".SampleTime=" << StringUtils::URLEncode(m_sampleTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
+  }
+  if(m_availabilityZoneIdHasBeenSet)
+  {
+      oStream << location << ".AvailabilityZoneId=" << StringUtils::URLEncode(m_availabilityZoneId.c_str()) << "&";
   }
 }
 
