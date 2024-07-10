@@ -11,6 +11,7 @@
 #include <aws/bedrock/model/GuardrailContentPolicy.h>
 #include <aws/bedrock/model/GuardrailWordPolicy.h>
 #include <aws/bedrock/model/GuardrailSensitiveInformationPolicy.h>
+#include <aws/bedrock/model/GuardrailContextualGroundingPolicy.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
@@ -80,7 +81,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ARN of the guardrail that was created.</p>
+     * <p>The ARN of the guardrail.</p>
      */
     inline const Aws::String& GetGuardrailArn() const{ return m_guardrailArn; }
     inline void SetGuardrailArn(const Aws::String& value) { m_guardrailArn = value; }
@@ -157,6 +158,17 @@ namespace Model
     inline void SetSensitiveInformationPolicy(GuardrailSensitiveInformationPolicy&& value) { m_sensitiveInformationPolicy = std::move(value); }
     inline GetGuardrailResult& WithSensitiveInformationPolicy(const GuardrailSensitiveInformationPolicy& value) { SetSensitiveInformationPolicy(value); return *this;}
     inline GetGuardrailResult& WithSensitiveInformationPolicy(GuardrailSensitiveInformationPolicy&& value) { SetSensitiveInformationPolicy(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The contextual grounding policy used in the guardrail.</p>
+     */
+    inline const GuardrailContextualGroundingPolicy& GetContextualGroundingPolicy() const{ return m_contextualGroundingPolicy; }
+    inline void SetContextualGroundingPolicy(const GuardrailContextualGroundingPolicy& value) { m_contextualGroundingPolicy = value; }
+    inline void SetContextualGroundingPolicy(GuardrailContextualGroundingPolicy&& value) { m_contextualGroundingPolicy = std::move(value); }
+    inline GetGuardrailResult& WithContextualGroundingPolicy(const GuardrailContextualGroundingPolicy& value) { SetContextualGroundingPolicy(value); return *this;}
+    inline GetGuardrailResult& WithContextualGroundingPolicy(GuardrailContextualGroundingPolicy&& value) { SetContextualGroundingPolicy(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -281,6 +293,8 @@ namespace Model
     GuardrailWordPolicy m_wordPolicy;
 
     GuardrailSensitiveInformationPolicy m_sensitiveInformationPolicy;
+
+    GuardrailContextualGroundingPolicy m_contextualGroundingPolicy;
 
     Aws::Utils::DateTime m_createdAt;
 

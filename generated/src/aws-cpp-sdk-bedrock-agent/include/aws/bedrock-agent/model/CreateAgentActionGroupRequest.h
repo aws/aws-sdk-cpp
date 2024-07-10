@@ -175,6 +175,10 @@ namespace Model
      * <p>To allow your agent to request the user for additional information when
      * trying to complete a task, set this field to <code>AMAZON.UserInput</code>. You
      * must leave the <code>description</code>, <code>apiSchema</code>, and
+     * <code>actionGroupExecutor</code> fields blank for this action group.</p> <p>To
+     * allow your agent to generate, run, and troubleshoot code when trying to complete
+     * a task, set this field to <code>AMAZON.CodeInterpreter</code>. You must leave
+     * the <code>description</code>, <code>apiSchema</code>, and
      * <code>actionGroupExecutor</code> fields blank for this action group.</p>
      * <p>During orchestration, if your agent determines that it needs to invoke an API
      * in an action group, but doesn't have enough information to complete the API

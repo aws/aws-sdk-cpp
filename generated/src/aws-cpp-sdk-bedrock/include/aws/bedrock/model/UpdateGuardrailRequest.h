@@ -11,6 +11,7 @@
 #include <aws/bedrock/model/GuardrailContentPolicyConfig.h>
 #include <aws/bedrock/model/GuardrailWordPolicyConfig.h>
 #include <aws/bedrock/model/GuardrailSensitiveInformationPolicyConfig.h>
+#include <aws/bedrock/model/GuardrailContextualGroundingPolicyConfig.h>
 #include <utility>
 
 namespace Aws
@@ -38,7 +39,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The unique identifier of the guardrail</p>
+     * <p>The unique identifier of the guardrail. This can be an ID or the ARN.</p>
      */
     inline const Aws::String& GetGuardrailIdentifier() const{ return m_guardrailIdentifier; }
     inline bool GuardrailIdentifierHasBeenSet() const { return m_guardrailIdentifierHasBeenSet; }
@@ -128,6 +129,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The contextual grounding policy configuration used to update a guardrail.</p>
+     */
+    inline const GuardrailContextualGroundingPolicyConfig& GetContextualGroundingPolicyConfig() const{ return m_contextualGroundingPolicyConfig; }
+    inline bool ContextualGroundingPolicyConfigHasBeenSet() const { return m_contextualGroundingPolicyConfigHasBeenSet; }
+    inline void SetContextualGroundingPolicyConfig(const GuardrailContextualGroundingPolicyConfig& value) { m_contextualGroundingPolicyConfigHasBeenSet = true; m_contextualGroundingPolicyConfig = value; }
+    inline void SetContextualGroundingPolicyConfig(GuardrailContextualGroundingPolicyConfig&& value) { m_contextualGroundingPolicyConfigHasBeenSet = true; m_contextualGroundingPolicyConfig = std::move(value); }
+    inline UpdateGuardrailRequest& WithContextualGroundingPolicyConfig(const GuardrailContextualGroundingPolicyConfig& value) { SetContextualGroundingPolicyConfig(value); return *this;}
+    inline UpdateGuardrailRequest& WithContextualGroundingPolicyConfig(GuardrailContextualGroundingPolicyConfig&& value) { SetContextualGroundingPolicyConfig(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The message to return when the guardrail blocks a prompt.</p>
      */
     inline const Aws::String& GetBlockedInputMessaging() const{ return m_blockedInputMessaging; }
@@ -189,6 +202,9 @@ namespace Model
 
     GuardrailSensitiveInformationPolicyConfig m_sensitiveInformationPolicyConfig;
     bool m_sensitiveInformationPolicyConfigHasBeenSet = false;
+
+    GuardrailContextualGroundingPolicyConfig m_contextualGroundingPolicyConfig;
+    bool m_contextualGroundingPolicyConfigHasBeenSet = false;
 
     Aws::String m_blockedInputMessaging;
     bool m_blockedInputMessagingHasBeenSet = false;

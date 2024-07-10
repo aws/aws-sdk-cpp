@@ -116,10 +116,13 @@ namespace BedrockAgent
          * agent.</p> </li> <li> <p>(Optional) <code>idleSessionTTLinSeconds</code> –
          * Specify the number of seconds for which the agent should maintain session
          * information. After this time expires, the subsequent <code>InvokeAgent</code>
-         * request begins a new session.</p> </li> </ul> </li> <li> <p>To override the
-         * default prompt behavior for agent orchestration and to use advanced prompts,
-         * include a <code>promptOverrideConfiguration</code> object. For more information,
-         * see <a
+         * request begins a new session.</p> </li> </ul> </li> <li> <p>To enable your agent
+         * to retain conversational context across multiple sessions, include a
+         * <code>memoryConfiguration</code> object. For more information, see <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-configure-memory.html">Configure
+         * memory</a>.</p> </li> <li> <p>To override the default prompt behavior for agent
+         * orchestration and to use advanced prompts, include a
+         * <code>promptOverrideConfiguration</code> object. For more information, see <a
          * href="https://docs.aws.amazon.com/bedrock/latest/userguide/advanced-prompts.html">Advanced
          * prompts</a>.</p> </li> <li> <p>If you agent fails to be created, the response
          * returns a list of <code>failureReasons</code> alongside a list of
@@ -154,12 +157,15 @@ namespace BedrockAgent
          * can call and the logic for calling them.</p> <p>To allow your agent to request
          * the user for additional information when trying to complete a task, add an
          * action group with the <code>parentActionGroupSignature</code> field set to
-         * <code>AMAZON.UserInput</code>. You must leave the <code>description</code>,
-         * <code>apiSchema</code>, and <code>actionGroupExecutor</code> fields blank for
-         * this action group. During orchestration, if your agent determines that it needs
-         * to invoke an API in an action group, but doesn't have enough information to
-         * complete the API request, it will invoke this action group instead and return an
-         * <a
+         * <code>AMAZON.UserInput</code>. </p> <p>To allow your agent to generate, run, and
+         * troubleshoot code when trying to complete a task, add an action group with the
+         * <code>parentActionGroupSignature</code> field set to
+         * <code>AMAZON.CodeInterpreter</code>. </p> <p>You must leave the
+         * <code>description</code>, <code>apiSchema</code>, and
+         * <code>actionGroupExecutor</code> fields blank for this action group. During
+         * orchestration, if your agent determines that it needs to invoke an API in an
+         * action group, but doesn't have enough information to complete the API request,
+         * it will invoke this action group instead and return an <a
          * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_Observation.html">Observation</a>
          * reprompting the user for more information.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/CreateAgentActionGroup">AWS
@@ -212,9 +218,9 @@ namespace BedrockAgent
         }
 
         /**
-         * <p>Sets up a data source to be added to a knowledge base.</p>  <p>You
+         * <p>Creates a data source connector for a knowledge base.</p>  <p>You
          * can't change the <code>chunkingConfiguration</code> after you create the data
-         * source.</p> <p><h3>See Also:</h3>   <a
+         * source connector.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/CreateDataSource">AWS
          * API Reference</a></p>
          */
@@ -236,6 +242,96 @@ namespace BedrockAgent
         void CreateDataSourceAsync(const CreateDataSourceRequestT& request, const CreateDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&BedrockAgentClient::CreateDataSource, request, handler, context);
+        }
+
+        /**
+         * <p>Creates a prompt flow that you can use to send an input through various steps
+         * to yield an output. Configure nodes, each of which corresponds to a step of the
+         * flow, and create connections between the nodes to create paths to different
+         * outputs. For more information, see <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/flows-how-it-works.html">How
+         * it works</a> and <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/flows-create.html">Create
+         * a flow in Amazon Bedrock</a> in the Amazon Bedrock User Guide.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/CreateFlow">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateFlowOutcome CreateFlow(const Model::CreateFlowRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateFlow that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateFlowRequestT = Model::CreateFlowRequest>
+        Model::CreateFlowOutcomeCallable CreateFlowCallable(const CreateFlowRequestT& request) const
+        {
+            return SubmitCallable(&BedrockAgentClient::CreateFlow, request);
+        }
+
+        /**
+         * An Async wrapper for CreateFlow that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateFlowRequestT = Model::CreateFlowRequest>
+        void CreateFlowAsync(const CreateFlowRequestT& request, const CreateFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockAgentClient::CreateFlow, request, handler, context);
+        }
+
+        /**
+         * <p>Creates an alias of a flow for deployment. For more information, see <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/flows-deploy.html">Deploy
+         * a flow in Amazon Bedrock</a> in the Amazon Bedrock User Guide.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/CreateFlowAlias">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateFlowAliasOutcome CreateFlowAlias(const Model::CreateFlowAliasRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateFlowAlias that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateFlowAliasRequestT = Model::CreateFlowAliasRequest>
+        Model::CreateFlowAliasOutcomeCallable CreateFlowAliasCallable(const CreateFlowAliasRequestT& request) const
+        {
+            return SubmitCallable(&BedrockAgentClient::CreateFlowAlias, request);
+        }
+
+        /**
+         * An Async wrapper for CreateFlowAlias that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateFlowAliasRequestT = Model::CreateFlowAliasRequest>
+        void CreateFlowAliasAsync(const CreateFlowAliasRequestT& request, const CreateFlowAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockAgentClient::CreateFlowAlias, request, handler, context);
+        }
+
+        /**
+         * <p>Creates a version of the flow that you can deploy. For more information, see
+         * <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/flows-deploy.html">Deploy
+         * a flow in Amazon Bedrock</a> in the Amazon Bedrock User Guide.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/CreateFlowVersion">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateFlowVersionOutcome CreateFlowVersion(const Model::CreateFlowVersionRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateFlowVersion that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateFlowVersionRequestT = Model::CreateFlowVersionRequest>
+        Model::CreateFlowVersionOutcomeCallable CreateFlowVersionCallable(const CreateFlowVersionRequestT& request) const
+        {
+            return SubmitCallable(&BedrockAgentClient::CreateFlowVersion, request);
+        }
+
+        /**
+         * An Async wrapper for CreateFlowVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateFlowVersionRequestT = Model::CreateFlowVersionRequest>
+        void CreateFlowVersionAsync(const CreateFlowVersionRequestT& request, const CreateFlowVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockAgentClient::CreateFlowVersion, request, handler, context);
         }
 
         /**
@@ -293,6 +389,68 @@ namespace BedrockAgent
         void CreateKnowledgeBaseAsync(const CreateKnowledgeBaseRequestT& request, const CreateKnowledgeBaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&BedrockAgentClient::CreateKnowledgeBase, request, handler, context);
+        }
+
+        /**
+         * <p>Creates a prompt in your prompt library that you can add to a flow. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management.html">Prompt
+         * management in Amazon Bedrock</a>, <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management-create.html">Create
+         * a prompt using Prompt management</a> and <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/flows.html">Prompt
+         * flows in Amazon Bedrock</a> in the Amazon Bedrock User Guide.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/CreatePrompt">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreatePromptOutcome CreatePrompt(const Model::CreatePromptRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreatePrompt that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreatePromptRequestT = Model::CreatePromptRequest>
+        Model::CreatePromptOutcomeCallable CreatePromptCallable(const CreatePromptRequestT& request) const
+        {
+            return SubmitCallable(&BedrockAgentClient::CreatePrompt, request);
+        }
+
+        /**
+         * An Async wrapper for CreatePrompt that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreatePromptRequestT = Model::CreatePromptRequest>
+        void CreatePromptAsync(const CreatePromptRequestT& request, const CreatePromptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockAgentClient::CreatePrompt, request, handler, context);
+        }
+
+        /**
+         * <p>Creates a static snapshot of your prompt that can be deployed to production.
+         * For more information, see <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management-deploy.html">Deploy
+         * prompts using Prompt management by creating versions</a> in the Amazon Bedrock
+         * User Guide.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/CreatePromptVersion">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreatePromptVersionOutcome CreatePromptVersion(const Model::CreatePromptVersionRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreatePromptVersion that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreatePromptVersionRequestT = Model::CreatePromptVersionRequest>
+        Model::CreatePromptVersionOutcomeCallable CreatePromptVersionCallable(const CreatePromptVersionRequestT& request) const
+        {
+            return SubmitCallable(&BedrockAgentClient::CreatePromptVersion, request);
+        }
+
+        /**
+         * An Async wrapper for CreatePromptVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreatePromptVersionRequestT = Model::CreatePromptVersionRequest>
+        void CreatePromptVersionAsync(const CreatePromptVersionRequestT& request, const CreatePromptVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockAgentClient::CreatePromptVersion, request, handler, context);
         }
 
         /**
@@ -421,6 +579,81 @@ namespace BedrockAgent
         }
 
         /**
+         * <p>Deletes a flow.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/DeleteFlow">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteFlowOutcome DeleteFlow(const Model::DeleteFlowRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteFlow that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteFlowRequestT = Model::DeleteFlowRequest>
+        Model::DeleteFlowOutcomeCallable DeleteFlowCallable(const DeleteFlowRequestT& request) const
+        {
+            return SubmitCallable(&BedrockAgentClient::DeleteFlow, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteFlow that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteFlowRequestT = Model::DeleteFlowRequest>
+        void DeleteFlowAsync(const DeleteFlowRequestT& request, const DeleteFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockAgentClient::DeleteFlow, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes an alias of a flow.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/DeleteFlowAlias">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteFlowAliasOutcome DeleteFlowAlias(const Model::DeleteFlowAliasRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteFlowAlias that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteFlowAliasRequestT = Model::DeleteFlowAliasRequest>
+        Model::DeleteFlowAliasOutcomeCallable DeleteFlowAliasCallable(const DeleteFlowAliasRequestT& request) const
+        {
+            return SubmitCallable(&BedrockAgentClient::DeleteFlowAlias, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteFlowAlias that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteFlowAliasRequestT = Model::DeleteFlowAliasRequest>
+        void DeleteFlowAliasAsync(const DeleteFlowAliasRequestT& request, const DeleteFlowAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockAgentClient::DeleteFlowAlias, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes a version of a flow.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/DeleteFlowVersion">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteFlowVersionOutcome DeleteFlowVersion(const Model::DeleteFlowVersionRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteFlowVersion that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteFlowVersionRequestT = Model::DeleteFlowVersionRequest>
+        Model::DeleteFlowVersionOutcomeCallable DeleteFlowVersionCallable(const DeleteFlowVersionRequestT& request) const
+        {
+            return SubmitCallable(&BedrockAgentClient::DeleteFlowVersion, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteFlowVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteFlowVersionRequestT = Model::DeleteFlowVersionRequest>
+        void DeleteFlowVersionAsync(const DeleteFlowVersionRequestT& request, const DeleteFlowVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockAgentClient::DeleteFlowVersion, request, handler, context);
+        }
+
+        /**
          * <p>Deletes a knowledge base. Before deleting a knowledge base, you should
          * disassociate the knowledge base from any agents that it is associated with by
          * making a <a
@@ -447,6 +680,37 @@ namespace BedrockAgent
         void DeleteKnowledgeBaseAsync(const DeleteKnowledgeBaseRequestT& request, const DeleteKnowledgeBaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&BedrockAgentClient::DeleteKnowledgeBase, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes a prompt or a prompt version from the Prompt management tool. For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management-manage.html#prompt-management-delete.html">Delete
+         * prompts from the Prompt management tool</a> and <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management-deploy.html#prompt-management-versions-delete.html">Delete
+         * a version of a prompt from the Prompt management tool</a> in the Amazon Bedrock
+         * User Guide.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/DeletePrompt">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeletePromptOutcome DeletePrompt(const Model::DeletePromptRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeletePrompt that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeletePromptRequestT = Model::DeletePromptRequest>
+        Model::DeletePromptOutcomeCallable DeletePromptCallable(const DeletePromptRequestT& request) const
+        {
+            return SubmitCallable(&BedrockAgentClient::DeletePrompt, request);
+        }
+
+        /**
+         * An Async wrapper for DeletePrompt that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeletePromptRequestT = Model::DeletePromptRequest>
+        void DeletePromptAsync(const DeletePromptRequestT& request, const DeletePromptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockAgentClient::DeletePrompt, request, handler, context);
         }
 
         /**
@@ -627,6 +891,90 @@ namespace BedrockAgent
         }
 
         /**
+         * <p>Retrieves information about a flow. For more information, see <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/flows-manage.html">Manage
+         * a flow in Amazon Bedrock</a> in the Amazon Bedrock User Guide.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/GetFlow">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetFlowOutcome GetFlow(const Model::GetFlowRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetFlow that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetFlowRequestT = Model::GetFlowRequest>
+        Model::GetFlowOutcomeCallable GetFlowCallable(const GetFlowRequestT& request) const
+        {
+            return SubmitCallable(&BedrockAgentClient::GetFlow, request);
+        }
+
+        /**
+         * An Async wrapper for GetFlow that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetFlowRequestT = Model::GetFlowRequest>
+        void GetFlowAsync(const GetFlowRequestT& request, const GetFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockAgentClient::GetFlow, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves information about a flow. For more information, see <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/flows-deploy.html">Deploy
+         * a flow in Amazon Bedrock</a> in the Amazon Bedrock User Guide.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/GetFlowAlias">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetFlowAliasOutcome GetFlowAlias(const Model::GetFlowAliasRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetFlowAlias that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetFlowAliasRequestT = Model::GetFlowAliasRequest>
+        Model::GetFlowAliasOutcomeCallable GetFlowAliasCallable(const GetFlowAliasRequestT& request) const
+        {
+            return SubmitCallable(&BedrockAgentClient::GetFlowAlias, request);
+        }
+
+        /**
+         * An Async wrapper for GetFlowAlias that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetFlowAliasRequestT = Model::GetFlowAliasRequest>
+        void GetFlowAliasAsync(const GetFlowAliasRequestT& request, const GetFlowAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockAgentClient::GetFlowAlias, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves information about a version of a flow. For more information, see <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/flows-deploy.html">Deploy
+         * a flow in Amazon Bedrock</a> in the Amazon Bedrock User Guide.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/GetFlowVersion">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetFlowVersionOutcome GetFlowVersion(const Model::GetFlowVersionRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetFlowVersion that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetFlowVersionRequestT = Model::GetFlowVersionRequest>
+        Model::GetFlowVersionOutcomeCallable GetFlowVersionCallable(const GetFlowVersionRequestT& request) const
+        {
+            return SubmitCallable(&BedrockAgentClient::GetFlowVersion, request);
+        }
+
+        /**
+         * An Async wrapper for GetFlowVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetFlowVersionRequestT = Model::GetFlowVersionRequest>
+        void GetFlowVersionAsync(const GetFlowVersionRequestT& request, const GetFlowVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockAgentClient::GetFlowVersion, request, handler, context);
+        }
+
+        /**
          * <p>Gets information about a ingestion job, in which a data source is added to a
          * knowledge base.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/GetIngestionJob">AWS
@@ -675,6 +1023,37 @@ namespace BedrockAgent
         void GetKnowledgeBaseAsync(const GetKnowledgeBaseRequestT& request, const GetKnowledgeBaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&BedrockAgentClient::GetKnowledgeBase, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves information about a prompt or a version of it. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management-manage.html#prompt-management-view.html">View
+         * information about prompts using Prompt management</a> and <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management-deploy.html#prompt-management-versions-view.html">View
+         * information about a version of your prompt</a> in the Amazon Bedrock User
+         * Guide.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/GetPrompt">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetPromptOutcome GetPrompt(const Model::GetPromptRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetPrompt that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetPromptRequestT = Model::GetPromptRequest>
+        Model::GetPromptOutcomeCallable GetPromptCallable(const GetPromptRequestT& request) const
+        {
+            return SubmitCallable(&BedrockAgentClient::GetPrompt, request);
+        }
+
+        /**
+         * An Async wrapper for GetPrompt that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetPromptRequestT = Model::GetPromptRequest>
+        void GetPromptAsync(const GetPromptRequestT& request, const GetPromptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockAgentClient::GetPrompt, request, handler, context);
         }
 
         /**
@@ -834,6 +1213,88 @@ namespace BedrockAgent
         }
 
         /**
+         * <p>Returns a list of aliases for a flow.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/ListFlowAliases">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListFlowAliasesOutcome ListFlowAliases(const Model::ListFlowAliasesRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListFlowAliases that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListFlowAliasesRequestT = Model::ListFlowAliasesRequest>
+        Model::ListFlowAliasesOutcomeCallable ListFlowAliasesCallable(const ListFlowAliasesRequestT& request) const
+        {
+            return SubmitCallable(&BedrockAgentClient::ListFlowAliases, request);
+        }
+
+        /**
+         * An Async wrapper for ListFlowAliases that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListFlowAliasesRequestT = Model::ListFlowAliasesRequest>
+        void ListFlowAliasesAsync(const ListFlowAliasesRequestT& request, const ListFlowAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockAgentClient::ListFlowAliases, request, handler, context);
+        }
+
+        /**
+         * <p>Returns a list of information about each flow. For more information, see <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/flows-deploy.html">Deploy
+         * a flow in Amazon Bedrock</a> in the Amazon Bedrock User Guide.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/ListFlowVersions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListFlowVersionsOutcome ListFlowVersions(const Model::ListFlowVersionsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListFlowVersions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListFlowVersionsRequestT = Model::ListFlowVersionsRequest>
+        Model::ListFlowVersionsOutcomeCallable ListFlowVersionsCallable(const ListFlowVersionsRequestT& request) const
+        {
+            return SubmitCallable(&BedrockAgentClient::ListFlowVersions, request);
+        }
+
+        /**
+         * An Async wrapper for ListFlowVersions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListFlowVersionsRequestT = Model::ListFlowVersionsRequest>
+        void ListFlowVersionsAsync(const ListFlowVersionsRequestT& request, const ListFlowVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockAgentClient::ListFlowVersions, request, handler, context);
+        }
+
+        /**
+         * <p>Returns a list of flows and information about each flow. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/flows-manage.html">Manage
+         * a flow in Amazon Bedrock</a> in the Amazon Bedrock User Guide.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/ListFlows">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListFlowsOutcome ListFlows(const Model::ListFlowsRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for ListFlows that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListFlowsRequestT = Model::ListFlowsRequest>
+        Model::ListFlowsOutcomeCallable ListFlowsCallable(const ListFlowsRequestT& request = {}) const
+        {
+            return SubmitCallable(&BedrockAgentClient::ListFlows, request);
+        }
+
+        /**
+         * An Async wrapper for ListFlows that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListFlowsRequestT = Model::ListFlowsRequest>
+        void ListFlowsAsync(const ListFlowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListFlowsRequestT& request = {}) const
+        {
+            return SubmitAsync(&BedrockAgentClient::ListFlows, request, handler, context);
+        }
+
+        /**
          * <p>Lists the ingestion jobs for a data source and information about each of
          * them.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/ListIngestionJobs">AWS
@@ -886,6 +1347,35 @@ namespace BedrockAgent
         }
 
         /**
+         * <p>Returns a list of prompts from the Prompt management tool and information
+         * about each prompt. For more information, see <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management-manage.html#prompt-management-view.html">View
+         * information about prompts using Prompt management</a> in the Amazon Bedrock User
+         * Guide.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/ListPrompts">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListPromptsOutcome ListPrompts(const Model::ListPromptsRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for ListPrompts that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListPromptsRequestT = Model::ListPromptsRequest>
+        Model::ListPromptsOutcomeCallable ListPromptsCallable(const ListPromptsRequestT& request = {}) const
+        {
+            return SubmitCallable(&BedrockAgentClient::ListPrompts, request);
+        }
+
+        /**
+         * An Async wrapper for ListPrompts that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListPromptsRequestT = Model::ListPromptsRequest>
+        void ListPromptsAsync(const ListPromptsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListPromptsRequestT& request = {}) const
+        {
+            return SubmitAsync(&BedrockAgentClient::ListPrompts, request, handler, context);
+        }
+
+        /**
          * <p>List all the tags for the resource you specify.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/ListTagsForResource">AWS
          * API Reference</a></p>
@@ -934,6 +1424,35 @@ namespace BedrockAgent
         void PrepareAgentAsync(const PrepareAgentRequestT& request, const PrepareAgentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&BedrockAgentClient::PrepareAgent, request, handler, context);
+        }
+
+        /**
+         * <p>Prepares the <code>DRAFT</code> version of a flow so that it can be invoked.
+         * For more information, see <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/flows-test.html">Test
+         * a flow in Amazon Bedrock</a> in the Amazon Bedrock User Guide.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/PrepareFlow">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PrepareFlowOutcome PrepareFlow(const Model::PrepareFlowRequest& request) const;
+
+        /**
+         * A Callable wrapper for PrepareFlow that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename PrepareFlowRequestT = Model::PrepareFlowRequest>
+        Model::PrepareFlowOutcomeCallable PrepareFlowCallable(const PrepareFlowRequestT& request) const
+        {
+            return SubmitCallable(&BedrockAgentClient::PrepareFlow, request);
+        }
+
+        /**
+         * An Async wrapper for PrepareFlow that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename PrepareFlowRequestT = Model::PrepareFlowRequest>
+        void PrepareFlowAsync(const PrepareFlowRequestT& request, const PrepareFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockAgentClient::PrepareFlow, request, handler, context);
         }
 
         /**
@@ -1118,10 +1637,10 @@ namespace BedrockAgent
         }
 
         /**
-         * <p>Updates configurations for a data source.</p>  <p>You can't change
-         * the <code>chunkingConfiguration</code> after you create the data source. Specify
-         * the existing <code>chunkingConfiguration</code>.</p> <p><h3>See
-         * Also:</h3>   <a
+         * <p>Updates the configurations for a data source connector.</p> 
+         * <p>You can't change the <code>chunkingConfiguration</code> after you create the
+         * data source connector. Specify the existing
+         * <code>chunkingConfiguration</code>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/UpdateDataSource">AWS
          * API Reference</a></p>
          */
@@ -1143,6 +1662,66 @@ namespace BedrockAgent
         void UpdateDataSourceAsync(const UpdateDataSourceRequestT& request, const UpdateDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&BedrockAgentClient::UpdateDataSource, request, handler, context);
+        }
+
+        /**
+         * <p>Modifies a flow. Include both fields that you want to keep and fields that
+         * you want to change. For more information, see <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/flows-how-it-works.html">How
+         * it works</a> and <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/flows-create.html">Create
+         * a flow in Amazon Bedrock</a> in the Amazon Bedrock User Guide.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/UpdateFlow">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateFlowOutcome UpdateFlow(const Model::UpdateFlowRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateFlow that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateFlowRequestT = Model::UpdateFlowRequest>
+        Model::UpdateFlowOutcomeCallable UpdateFlowCallable(const UpdateFlowRequestT& request) const
+        {
+            return SubmitCallable(&BedrockAgentClient::UpdateFlow, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateFlow that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateFlowRequestT = Model::UpdateFlowRequest>
+        void UpdateFlowAsync(const UpdateFlowRequestT& request, const UpdateFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockAgentClient::UpdateFlow, request, handler, context);
+        }
+
+        /**
+         * <p>Modifies the alias of a flow. Include both fields that you want to keep and
+         * ones that you want to change. For more information, see <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/flows-deploy.html">Deploy
+         * a flow in Amazon Bedrock</a> in the Amazon Bedrock User Guide.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/UpdateFlowAlias">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateFlowAliasOutcome UpdateFlowAlias(const Model::UpdateFlowAliasRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateFlowAlias that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateFlowAliasRequestT = Model::UpdateFlowAliasRequest>
+        Model::UpdateFlowAliasOutcomeCallable UpdateFlowAliasCallable(const UpdateFlowAliasRequestT& request) const
+        {
+            return SubmitCallable(&BedrockAgentClient::UpdateFlowAlias, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateFlowAlias that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateFlowAliasRequestT = Model::UpdateFlowAliasRequest>
+        void UpdateFlowAliasAsync(const UpdateFlowAliasRequestT& request, const UpdateFlowAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockAgentClient::UpdateFlowAlias, request, handler, context);
         }
 
         /**
@@ -1177,6 +1756,37 @@ namespace BedrockAgent
         void UpdateKnowledgeBaseAsync(const UpdateKnowledgeBaseRequestT& request, const UpdateKnowledgeBaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&BedrockAgentClient::UpdateKnowledgeBase, request, handler, context);
+        }
+
+        /**
+         * <p>Modifies a prompt in your prompt library. Include both fields that you want
+         * to keep and fields that you want to replace. For more information, see <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management.html">Prompt
+         * management in Amazon Bedrock</a> and <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management-manage.html#prompt-management-edit">Edit
+         * prompts in your prompt library</a> in the Amazon Bedrock User
+         * Guide.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/UpdatePrompt">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdatePromptOutcome UpdatePrompt(const Model::UpdatePromptRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdatePrompt that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdatePromptRequestT = Model::UpdatePromptRequest>
+        Model::UpdatePromptOutcomeCallable UpdatePromptCallable(const UpdatePromptRequestT& request) const
+        {
+            return SubmitCallable(&BedrockAgentClient::UpdatePrompt, request);
+        }
+
+        /**
+         * An Async wrapper for UpdatePrompt that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdatePromptRequestT = Model::UpdatePromptRequest>
+        void UpdatePromptAsync(const UpdatePromptRequestT& request, const UpdatePromptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockAgentClient::UpdatePrompt, request, handler, context);
         }
 
 

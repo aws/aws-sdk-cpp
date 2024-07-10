@@ -9,6 +9,7 @@
 #include <aws/bedrock-runtime/model/GuardrailContentPolicyAssessment.h>
 #include <aws/bedrock-runtime/model/GuardrailWordPolicyAssessment.h>
 #include <aws/bedrock-runtime/model/GuardrailSensitiveInformationPolicyAssessment.h>
+#include <aws/bedrock-runtime/model/GuardrailContextualGroundingPolicyAssessment.h>
 #include <utility>
 
 namespace Aws
@@ -88,6 +89,18 @@ namespace Model
     inline GuardrailAssessment& WithSensitiveInformationPolicy(const GuardrailSensitiveInformationPolicyAssessment& value) { SetSensitiveInformationPolicy(value); return *this;}
     inline GuardrailAssessment& WithSensitiveInformationPolicy(GuardrailSensitiveInformationPolicyAssessment&& value) { SetSensitiveInformationPolicy(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The contextual grounding policy used for the guardrail assessment.</p>
+     */
+    inline const GuardrailContextualGroundingPolicyAssessment& GetContextualGroundingPolicy() const{ return m_contextualGroundingPolicy; }
+    inline bool ContextualGroundingPolicyHasBeenSet() const { return m_contextualGroundingPolicyHasBeenSet; }
+    inline void SetContextualGroundingPolicy(const GuardrailContextualGroundingPolicyAssessment& value) { m_contextualGroundingPolicyHasBeenSet = true; m_contextualGroundingPolicy = value; }
+    inline void SetContextualGroundingPolicy(GuardrailContextualGroundingPolicyAssessment&& value) { m_contextualGroundingPolicyHasBeenSet = true; m_contextualGroundingPolicy = std::move(value); }
+    inline GuardrailAssessment& WithContextualGroundingPolicy(const GuardrailContextualGroundingPolicyAssessment& value) { SetContextualGroundingPolicy(value); return *this;}
+    inline GuardrailAssessment& WithContextualGroundingPolicy(GuardrailContextualGroundingPolicyAssessment&& value) { SetContextualGroundingPolicy(std::move(value)); return *this;}
+    ///@}
   private:
 
     GuardrailTopicPolicyAssessment m_topicPolicy;
@@ -101,6 +114,9 @@ namespace Model
 
     GuardrailSensitiveInformationPolicyAssessment m_sensitiveInformationPolicy;
     bool m_sensitiveInformationPolicyHasBeenSet = false;
+
+    GuardrailContextualGroundingPolicyAssessment m_contextualGroundingPolicy;
+    bool m_contextualGroundingPolicyHasBeenSet = false;
   };
 
 } // namespace Model

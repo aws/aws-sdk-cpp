@@ -40,7 +40,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The unique identifier of the guardrail for which to get details.</p>
+     * <p>The unique identifier of the guardrail for which to get details. This can be
+     * an ID or the ARN.</p>
      */
     inline const Aws::String& GetGuardrailIdentifier() const{ return m_guardrailIdentifier; }
     inline bool GuardrailIdentifierHasBeenSet() const { return m_guardrailIdentifierHasBeenSet; }

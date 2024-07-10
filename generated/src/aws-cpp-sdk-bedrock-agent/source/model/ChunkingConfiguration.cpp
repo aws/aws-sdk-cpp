@@ -21,7 +21,9 @@ namespace Model
 ChunkingConfiguration::ChunkingConfiguration() : 
     m_chunkingStrategy(ChunkingStrategy::NOT_SET),
     m_chunkingStrategyHasBeenSet(false),
-    m_fixedSizeChunkingConfigurationHasBeenSet(false)
+    m_fixedSizeChunkingConfigurationHasBeenSet(false),
+    m_hierarchicalChunkingConfigurationHasBeenSet(false),
+    m_semanticChunkingConfigurationHasBeenSet(false)
 {
 }
 
@@ -47,6 +49,20 @@ ChunkingConfiguration& ChunkingConfiguration::operator =(JsonView jsonValue)
     m_fixedSizeChunkingConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("hierarchicalChunkingConfiguration"))
+  {
+    m_hierarchicalChunkingConfiguration = jsonValue.GetObject("hierarchicalChunkingConfiguration");
+
+    m_hierarchicalChunkingConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("semanticChunkingConfiguration"))
+  {
+    m_semanticChunkingConfiguration = jsonValue.GetObject("semanticChunkingConfiguration");
+
+    m_semanticChunkingConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -62,6 +78,18 @@ JsonValue ChunkingConfiguration::Jsonize() const
   if(m_fixedSizeChunkingConfigurationHasBeenSet)
   {
    payload.WithObject("fixedSizeChunkingConfiguration", m_fixedSizeChunkingConfiguration.Jsonize());
+
+  }
+
+  if(m_hierarchicalChunkingConfigurationHasBeenSet)
+  {
+   payload.WithObject("hierarchicalChunkingConfiguration", m_hierarchicalChunkingConfiguration.Jsonize());
+
+  }
+
+  if(m_semanticChunkingConfigurationHasBeenSet)
+  {
+   payload.WithObject("semanticChunkingConfiguration", m_semanticChunkingConfiguration.Jsonize());
 
   }
 

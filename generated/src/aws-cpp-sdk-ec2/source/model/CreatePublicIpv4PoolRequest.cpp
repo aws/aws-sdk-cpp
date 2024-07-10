@@ -13,7 +13,8 @@ using namespace Aws::Utils;
 CreatePublicIpv4PoolRequest::CreatePublicIpv4PoolRequest() : 
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
-    m_tagSpecificationsHasBeenSet(false)
+    m_tagSpecificationsHasBeenSet(false),
+    m_networkBorderGroupHasBeenSet(false)
 {
 }
 
@@ -34,6 +35,11 @@ Aws::String CreatePublicIpv4PoolRequest::SerializePayload() const
       item.OutputToStream(ss, "TagSpecification.", tagSpecificationsCount, "");
       tagSpecificationsCount++;
     }
+  }
+
+  if(m_networkBorderGroupHasBeenSet)
+  {
+    ss << "NetworkBorderGroup=" << StringUtils::URLEncode(m_networkBorderGroup.c_str()) << "&";
   }
 
   ss << "Version=2016-11-15";

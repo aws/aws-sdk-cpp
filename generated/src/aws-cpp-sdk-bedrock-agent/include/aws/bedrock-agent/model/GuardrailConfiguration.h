@@ -24,7 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>The details of the guardrails configuration.</p><p><h3>See Also:</h3>   <a
+   * <p>Details about the guardrail associated with an agent.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/GuardrailConfiguration">AWS
    * API Reference</a></p>
    */
@@ -39,7 +40,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The guardrails identifier assigned to the guardrails configuration.</p>
+     * <p>The unique identifier of the guardrail.</p>
      */
     inline const Aws::String& GetGuardrailIdentifier() const{ return m_guardrailIdentifier; }
     inline bool GuardrailIdentifierHasBeenSet() const { return m_guardrailIdentifierHasBeenSet; }
@@ -53,7 +54,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The guardrails version assigned to the guardrails configuration.</p>
+     * <p>The version of the guardrail.</p>
      */
     inline const Aws::String& GetGuardrailVersion() const{ return m_guardrailVersion; }
     inline bool GuardrailVersionHasBeenSet() const { return m_guardrailVersionHasBeenSet; }

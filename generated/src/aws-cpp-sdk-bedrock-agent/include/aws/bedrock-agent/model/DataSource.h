@@ -58,7 +58,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The data deletion policy for a data source.</p>
+     * <p>The data deletion policy for the data source.</p>
      */
     inline const DataDeletionPolicy& GetDataDeletionPolicy() const{ return m_dataDeletionPolicy; }
     inline bool DataDeletionPolicyHasBeenSet() const { return m_dataDeletionPolicyHasBeenSet; }
@@ -70,7 +70,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Contains details about how the data source is stored.</p>
+     * <p>The connection configuration for the data source.</p>
      */
     inline const DataSourceConfiguration& GetDataSourceConfiguration() const{ return m_dataSourceConfiguration; }
     inline bool DataSourceConfigurationHasBeenSet() const { return m_dataSourceConfigurationHasBeenSet; }

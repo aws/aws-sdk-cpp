@@ -54,10 +54,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>A content block to assess with the guardrail. Use with the Converse API
-     * (<a>Converse</a> and <a>ConverseStream</a>). </p> <p>For more information, see
-     * <i>Use a guardrail with the Converse API</i> in the <i>Amazon Bedrock User
-     * Guide</i>.</p>
+     * <p>A content block to assess with the guardrail. Use with the <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_Converse.html">Converse</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_ConverseStream.html">ConverseStream</a>
+     * API operations. </p> <p>For more information, see <i>Use a guardrail with the
+     * Converse API</i> in the <i>Amazon Bedrock User Guide</i>.</p>
      */
     inline const GuardrailConverseContentBlock& GetGuardContent() const{ return m_guardContent; }
     inline bool GuardContentHasBeenSet() const { return m_guardContentHasBeenSet; }

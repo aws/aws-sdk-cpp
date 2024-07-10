@@ -35,7 +35,9 @@ Output::Output() :
     m_transportHasBeenSet(false),
     m_vpcInterfaceAttachmentHasBeenSet(false),
     m_bridgeArnHasBeenSet(false),
-    m_bridgePortsHasBeenSet(false)
+    m_bridgePortsHasBeenSet(false),
+    m_outputStatus(OutputStatus::NOT_SET),
+    m_outputStatusHasBeenSet(false)
 {
 }
 
@@ -158,6 +160,13 @@ Output& Output::operator =(JsonView jsonValue)
     m_bridgePortsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("outputStatus"))
+  {
+    m_outputStatus = OutputStatusMapper::GetOutputStatusForName(jsonValue.GetString("outputStatus"));
+
+    m_outputStatusHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -263,6 +272,11 @@ JsonValue Output::Jsonize() const
    }
    payload.WithArray("bridgePorts", std::move(bridgePortsJsonList));
 
+  }
+
+  if(m_outputStatusHasBeenSet)
+  {
+   payload.WithString("outputStatus", OutputStatusMapper::GetNameForOutputStatus(m_outputStatus));
   }
 
   return payload;

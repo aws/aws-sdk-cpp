@@ -69,6 +69,21 @@ namespace Model
 
     ///@{
     /**
+     * <p>Indicates that you have two different license subscriptions for the same
+     * software on your instance.</p>
+     */
+    inline const Aws::String& GetDualSubscription() const{ return m_dualSubscription; }
+    inline bool DualSubscriptionHasBeenSet() const { return m_dualSubscriptionHasBeenSet; }
+    inline void SetDualSubscription(const Aws::String& value) { m_dualSubscriptionHasBeenSet = true; m_dualSubscription = value; }
+    inline void SetDualSubscription(Aws::String&& value) { m_dualSubscriptionHasBeenSet = true; m_dualSubscription = std::move(value); }
+    inline void SetDualSubscription(const char* value) { m_dualSubscriptionHasBeenSet = true; m_dualSubscription.assign(value); }
+    inline Instance& WithDualSubscription(const Aws::String& value) { SetDualSubscription(value); return *this;}
+    inline Instance& WithDualSubscription(Aws::String&& value) { SetDualSubscription(std::move(value)); return *this;}
+    inline Instance& WithDualSubscription(const char* value) { SetDualSubscription(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The instance ID of the resource.</p>
      */
     inline const Aws::String& GetInstanceID() const{ return m_instanceID; }
@@ -111,6 +126,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The operating system software version that runs on your instance.</p>
+     */
+    inline const Aws::String& GetOsVersion() const{ return m_osVersion; }
+    inline bool OsVersionHasBeenSet() const { return m_osVersionHasBeenSet; }
+    inline void SetOsVersion(const Aws::String& value) { m_osVersionHasBeenSet = true; m_osVersion = value; }
+    inline void SetOsVersion(Aws::String&& value) { m_osVersionHasBeenSet = true; m_osVersion = std::move(value); }
+    inline void SetOsVersion(const char* value) { m_osVersionHasBeenSet = true; m_osVersion.assign(value); }
+    inline Instance& WithOsVersion(const Aws::String& value) { SetOsVersion(value); return *this;}
+    inline Instance& WithOsVersion(Aws::String&& value) { SetOsVersion(std::move(value)); return *this;}
+    inline Instance& WithOsVersion(const char* value) { SetOsVersion(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The product code for the instance. For more information, see <a
      * href="https://docs.aws.amazon.com/license-manager/latest/userguide/linux-subscriptions-usage-operation.html">Usage
      * operation values</a> in the <i>License Manager User Guide</i> .</p>
@@ -142,6 +171,22 @@ namespace Model
 
     ///@{
     /**
+     * <p>Indicates that your instance uses a BYOL license subscription from a
+     * third-party Linux subscription provider that you've registered with License
+     * Manager.</p>
+     */
+    inline const Aws::String& GetRegisteredWithSubscriptionProvider() const{ return m_registeredWithSubscriptionProvider; }
+    inline bool RegisteredWithSubscriptionProviderHasBeenSet() const { return m_registeredWithSubscriptionProviderHasBeenSet; }
+    inline void SetRegisteredWithSubscriptionProvider(const Aws::String& value) { m_registeredWithSubscriptionProviderHasBeenSet = true; m_registeredWithSubscriptionProvider = value; }
+    inline void SetRegisteredWithSubscriptionProvider(Aws::String&& value) { m_registeredWithSubscriptionProviderHasBeenSet = true; m_registeredWithSubscriptionProvider = std::move(value); }
+    inline void SetRegisteredWithSubscriptionProvider(const char* value) { m_registeredWithSubscriptionProviderHasBeenSet = true; m_registeredWithSubscriptionProvider.assign(value); }
+    inline Instance& WithRegisteredWithSubscriptionProvider(const Aws::String& value) { SetRegisteredWithSubscriptionProvider(value); return *this;}
+    inline Instance& WithRegisteredWithSubscriptionProvider(Aws::String&& value) { SetRegisteredWithSubscriptionProvider(std::move(value)); return *this;}
+    inline Instance& WithRegisteredWithSubscriptionProvider(const char* value) { SetRegisteredWithSubscriptionProvider(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The status of the instance.</p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
@@ -156,7 +201,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the subscription being used by the instance.</p>
+     * <p>The name of the license subscription that the instance uses.</p>
      */
     inline const Aws::String& GetSubscriptionName() const{ return m_subscriptionName; }
     inline bool SubscriptionNameHasBeenSet() const { return m_subscriptionNameHasBeenSet; }
@@ -166,6 +211,36 @@ namespace Model
     inline Instance& WithSubscriptionName(const Aws::String& value) { SetSubscriptionName(value); return *this;}
     inline Instance& WithSubscriptionName(Aws::String&& value) { SetSubscriptionName(std::move(value)); return *this;}
     inline Instance& WithSubscriptionName(const char* value) { SetSubscriptionName(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The timestamp when you registered the third-party Linux subscription provider
+     * for the subscription that the instance uses.</p>
+     */
+    inline const Aws::String& GetSubscriptionProviderCreateTime() const{ return m_subscriptionProviderCreateTime; }
+    inline bool SubscriptionProviderCreateTimeHasBeenSet() const { return m_subscriptionProviderCreateTimeHasBeenSet; }
+    inline void SetSubscriptionProviderCreateTime(const Aws::String& value) { m_subscriptionProviderCreateTimeHasBeenSet = true; m_subscriptionProviderCreateTime = value; }
+    inline void SetSubscriptionProviderCreateTime(Aws::String&& value) { m_subscriptionProviderCreateTimeHasBeenSet = true; m_subscriptionProviderCreateTime = std::move(value); }
+    inline void SetSubscriptionProviderCreateTime(const char* value) { m_subscriptionProviderCreateTimeHasBeenSet = true; m_subscriptionProviderCreateTime.assign(value); }
+    inline Instance& WithSubscriptionProviderCreateTime(const Aws::String& value) { SetSubscriptionProviderCreateTime(value); return *this;}
+    inline Instance& WithSubscriptionProviderCreateTime(Aws::String&& value) { SetSubscriptionProviderCreateTime(std::move(value)); return *this;}
+    inline Instance& WithSubscriptionProviderCreateTime(const char* value) { SetSubscriptionProviderCreateTime(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The timestamp from the last time that the instance synced with the registered
+     * third-party Linux subscription provider.</p>
+     */
+    inline const Aws::String& GetSubscriptionProviderUpdateTime() const{ return m_subscriptionProviderUpdateTime; }
+    inline bool SubscriptionProviderUpdateTimeHasBeenSet() const { return m_subscriptionProviderUpdateTimeHasBeenSet; }
+    inline void SetSubscriptionProviderUpdateTime(const Aws::String& value) { m_subscriptionProviderUpdateTimeHasBeenSet = true; m_subscriptionProviderUpdateTime = value; }
+    inline void SetSubscriptionProviderUpdateTime(Aws::String&& value) { m_subscriptionProviderUpdateTimeHasBeenSet = true; m_subscriptionProviderUpdateTime = std::move(value); }
+    inline void SetSubscriptionProviderUpdateTime(const char* value) { m_subscriptionProviderUpdateTimeHasBeenSet = true; m_subscriptionProviderUpdateTime.assign(value); }
+    inline Instance& WithSubscriptionProviderUpdateTime(const Aws::String& value) { SetSubscriptionProviderUpdateTime(value); return *this;}
+    inline Instance& WithSubscriptionProviderUpdateTime(Aws::String&& value) { SetSubscriptionProviderUpdateTime(std::move(value)); return *this;}
+    inline Instance& WithSubscriptionProviderUpdateTime(const char* value) { SetSubscriptionProviderUpdateTime(value); return *this;}
     ///@}
 
     ///@{
@@ -192,6 +267,9 @@ namespace Model
     Aws::String m_amiId;
     bool m_amiIdHasBeenSet = false;
 
+    Aws::String m_dualSubscription;
+    bool m_dualSubscriptionHasBeenSet = false;
+
     Aws::String m_instanceID;
     bool m_instanceIDHasBeenSet = false;
 
@@ -201,17 +279,29 @@ namespace Model
     Aws::String m_lastUpdatedTime;
     bool m_lastUpdatedTimeHasBeenSet = false;
 
+    Aws::String m_osVersion;
+    bool m_osVersionHasBeenSet = false;
+
     Aws::Vector<Aws::String> m_productCode;
     bool m_productCodeHasBeenSet = false;
 
     Aws::String m_region;
     bool m_regionHasBeenSet = false;
 
+    Aws::String m_registeredWithSubscriptionProvider;
+    bool m_registeredWithSubscriptionProviderHasBeenSet = false;
+
     Aws::String m_status;
     bool m_statusHasBeenSet = false;
 
     Aws::String m_subscriptionName;
     bool m_subscriptionNameHasBeenSet = false;
+
+    Aws::String m_subscriptionProviderCreateTime;
+    bool m_subscriptionProviderCreateTimeHasBeenSet = false;
+
+    Aws::String m_subscriptionProviderUpdateTime;
+    bool m_subscriptionProviderUpdateTimeHasBeenSet = false;
 
     Aws::String m_usageOperation;
     bool m_usageOperationHasBeenSet = false;

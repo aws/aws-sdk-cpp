@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Contains information about the S3 object containing the
-   * resource.</p><p><h3>See Also:</h3>   <a
+   * <p>The identifier information for an Amazon S3 bucket.</p><p><h3>See Also:</h3> 
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/S3Identifier">AWS
    * API Reference</a></p>
    */
@@ -54,7 +54,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The S3 object key containing the resource.</p>
+     * <p>The S3 object key for the S3 resource.</p>
      */
     inline const Aws::String& GetS3ObjectKey() const{ return m_s3ObjectKey; }
     inline bool S3ObjectKeyHasBeenSet() const { return m_s3ObjectKeyHasBeenSet; }

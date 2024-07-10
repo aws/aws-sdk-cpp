@@ -26,9 +26,12 @@ namespace Model
 {
 
   /**
-   * <p>Configuration information for the tools that you pass to a model.</p> 
-   * <p>This field is only supported by Anthropic Claude 3, Cohere Command R, Cohere
-   * Command R+, and Mistral Large models.</p> <p><h3>See Also:</h3>   <a
+   * <p>Configuration information for the tools that you pass to a model. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/bedrock/latest/userguide/tool-use.html">Tool
+   * use (function calling)</a> in the Amazon Bedrock User Guide.</p>  <p>This
+   * field is only supported by Anthropic Claude 3, Cohere Command R, Cohere Command
+   * R+, and Mistral Large models.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/ToolConfiguration">AWS
    * API Reference</a></p>
    */

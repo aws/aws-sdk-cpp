@@ -22,7 +22,8 @@ GuardrailAssessment::GuardrailAssessment() :
     m_topicPolicyHasBeenSet(false),
     m_contentPolicyHasBeenSet(false),
     m_wordPolicyHasBeenSet(false),
-    m_sensitiveInformationPolicyHasBeenSet(false)
+    m_sensitiveInformationPolicyHasBeenSet(false),
+    m_contextualGroundingPolicyHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,13 @@ GuardrailAssessment& GuardrailAssessment::operator =(JsonView jsonValue)
     m_sensitiveInformationPolicyHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("contextualGroundingPolicy"))
+  {
+    m_contextualGroundingPolicy = jsonValue.GetObject("contextualGroundingPolicy");
+
+    m_contextualGroundingPolicyHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -90,6 +98,12 @@ JsonValue GuardrailAssessment::Jsonize() const
   if(m_sensitiveInformationPolicyHasBeenSet)
   {
    payload.WithObject("sensitiveInformationPolicy", m_sensitiveInformationPolicy.Jsonize());
+
+  }
+
+  if(m_contextualGroundingPolicyHasBeenSet)
+  {
+   payload.WithObject("contextualGroundingPolicy", m_contextualGroundingPolicy.Jsonize());
 
   }
 

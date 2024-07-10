@@ -21,7 +21,10 @@ namespace Model
 ActionGroupInvocationInput::ActionGroupInvocationInput() : 
     m_actionGroupNameHasBeenSet(false),
     m_apiPathHasBeenSet(false),
+    m_executionType(ExecutionType::NOT_SET),
+    m_executionTypeHasBeenSet(false),
     m_functionHasBeenSet(false),
+    m_invocationIdHasBeenSet(false),
     m_parametersHasBeenSet(false),
     m_requestBodyHasBeenSet(false),
     m_verbHasBeenSet(false)
@@ -50,11 +53,25 @@ ActionGroupInvocationInput& ActionGroupInvocationInput::operator =(JsonView json
     m_apiPathHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("executionType"))
+  {
+    m_executionType = ExecutionTypeMapper::GetExecutionTypeForName(jsonValue.GetString("executionType"));
+
+    m_executionTypeHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("function"))
   {
     m_function = jsonValue.GetString("function");
 
     m_functionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("invocationId"))
+  {
+    m_invocationId = jsonValue.GetString("invocationId");
+
+    m_invocationIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("parameters"))
@@ -100,9 +117,20 @@ JsonValue ActionGroupInvocationInput::Jsonize() const
 
   }
 
+  if(m_executionTypeHasBeenSet)
+  {
+   payload.WithString("executionType", ExecutionTypeMapper::GetNameForExecutionType(m_executionType));
+  }
+
   if(m_functionHasBeenSet)
   {
    payload.WithString("function", m_function);
+
+  }
+
+  if(m_invocationIdHasBeenSet)
+  {
+   payload.WithString("invocationId", m_invocationId);
 
   }
 

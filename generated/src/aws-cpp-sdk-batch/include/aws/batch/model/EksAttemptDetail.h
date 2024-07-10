@@ -70,6 +70,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon EKS cluster.</p>
+     */
+    inline const Aws::String& GetEksClusterArn() const{ return m_eksClusterArn; }
+    inline bool EksClusterArnHasBeenSet() const { return m_eksClusterArnHasBeenSet; }
+    inline void SetEksClusterArn(const Aws::String& value) { m_eksClusterArnHasBeenSet = true; m_eksClusterArn = value; }
+    inline void SetEksClusterArn(Aws::String&& value) { m_eksClusterArnHasBeenSet = true; m_eksClusterArn = std::move(value); }
+    inline void SetEksClusterArn(const char* value) { m_eksClusterArnHasBeenSet = true; m_eksClusterArn.assign(value); }
+    inline EksAttemptDetail& WithEksClusterArn(const Aws::String& value) { SetEksClusterArn(value); return *this;}
+    inline EksAttemptDetail& WithEksClusterArn(Aws::String&& value) { SetEksClusterArn(std::move(value)); return *this;}
+    inline EksAttemptDetail& WithEksClusterArn(const char* value) { SetEksClusterArn(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The name of the pod for this job attempt.</p>
      */
     inline const Aws::String& GetPodName() const{ return m_podName; }
@@ -141,6 +155,9 @@ namespace Model
 
     Aws::Vector<EksAttemptContainerDetail> m_initContainers;
     bool m_initContainersHasBeenSet = false;
+
+    Aws::String m_eksClusterArn;
+    bool m_eksClusterArnHasBeenSet = false;
 
     Aws::String m_podName;
     bool m_podNameHasBeenSet = false;

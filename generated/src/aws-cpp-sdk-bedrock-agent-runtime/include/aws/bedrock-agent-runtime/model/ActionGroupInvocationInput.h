@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/bedrock-agent-runtime/model/ExecutionType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/bedrock-agent-runtime/model/RequestBody.h>
 #include <aws/bedrock-agent-runtime/model/Parameter.h>
@@ -73,6 +74,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>How fulfillment of the action is handled. For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/action-handle.html">Handling
+     * fulfillment of the action</a>.</p>
+     */
+    inline const ExecutionType& GetExecutionType() const{ return m_executionType; }
+    inline bool ExecutionTypeHasBeenSet() const { return m_executionTypeHasBeenSet; }
+    inline void SetExecutionType(const ExecutionType& value) { m_executionTypeHasBeenSet = true; m_executionType = value; }
+    inline void SetExecutionType(ExecutionType&& value) { m_executionTypeHasBeenSet = true; m_executionType = std::move(value); }
+    inline ActionGroupInvocationInput& WithExecutionType(const ExecutionType& value) { SetExecutionType(value); return *this;}
+    inline ActionGroupInvocationInput& WithExecutionType(ExecutionType&& value) { SetExecutionType(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The function in the action group to call.</p>
      */
     inline const Aws::String& GetFunction() const{ return m_function; }
@@ -83,6 +98,21 @@ namespace Model
     inline ActionGroupInvocationInput& WithFunction(const Aws::String& value) { SetFunction(value); return *this;}
     inline ActionGroupInvocationInput& WithFunction(Aws::String&& value) { SetFunction(std::move(value)); return *this;}
     inline ActionGroupInvocationInput& WithFunction(const char* value) { SetFunction(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The unique identifier of the invocation. Only returned if the
+     * <code>executionType</code> is <code>RETURN_CONTROL</code>.</p>
+     */
+    inline const Aws::String& GetInvocationId() const{ return m_invocationId; }
+    inline bool InvocationIdHasBeenSet() const { return m_invocationIdHasBeenSet; }
+    inline void SetInvocationId(const Aws::String& value) { m_invocationIdHasBeenSet = true; m_invocationId = value; }
+    inline void SetInvocationId(Aws::String&& value) { m_invocationIdHasBeenSet = true; m_invocationId = std::move(value); }
+    inline void SetInvocationId(const char* value) { m_invocationIdHasBeenSet = true; m_invocationId.assign(value); }
+    inline ActionGroupInvocationInput& WithInvocationId(const Aws::String& value) { SetInvocationId(value); return *this;}
+    inline ActionGroupInvocationInput& WithInvocationId(Aws::String&& value) { SetInvocationId(std::move(value)); return *this;}
+    inline ActionGroupInvocationInput& WithInvocationId(const char* value) { SetInvocationId(value); return *this;}
     ///@}
 
     ///@{
@@ -132,8 +162,14 @@ namespace Model
     Aws::String m_apiPath;
     bool m_apiPathHasBeenSet = false;
 
+    ExecutionType m_executionType;
+    bool m_executionTypeHasBeenSet = false;
+
     Aws::String m_function;
     bool m_functionHasBeenSet = false;
+
+    Aws::String m_invocationId;
+    bool m_invocationIdHasBeenSet = false;
 
     Aws::Vector<Parameter> m_parameters;
     bool m_parametersHasBeenSet = false;

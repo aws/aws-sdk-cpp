@@ -57,7 +57,13 @@ namespace Model
 
     ///@{
     /**
-     * <p>The data deletion policy assigned to the data source.</p>
+     * <p>The data deletion policy for the data source.</p> <p>You can set the data
+     * deletion policy to:</p> <ul> <li> <p>DELETE: Deletes all underlying data
+     * belonging to the data source from the vector store upon deletion of a knowledge
+     * base or data source resource. Note that the vector store itself is not deleted,
+     * only the underlying data. This flag is ignored if an Amazon Web Services account
+     * is deleted.</p> </li> <li> <p>RETAIN: Retains all underlying data in your vector
+     * store upon deletion of a knowledge base or data source resource.</p> </li> </ul>
      */
     inline const DataDeletionPolicy& GetDataDeletionPolicy() const{ return m_dataDeletionPolicy; }
     inline bool DataDeletionPolicyHasBeenSet() const { return m_dataDeletionPolicyHasBeenSet; }
@@ -69,7 +75,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Contains metadata about where the data source is stored.</p>
+     * <p>The connection configuration for the data source.</p>
      */
     inline const DataSourceConfiguration& GetDataSourceConfiguration() const{ return m_dataSourceConfiguration; }
     inline bool DataSourceConfigurationHasBeenSet() const { return m_dataSourceConfigurationHasBeenSet; }

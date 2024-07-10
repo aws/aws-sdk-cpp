@@ -5,9 +5,11 @@
 
 #pragma once
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/bedrock-agent-runtime/model/InputFile.h>
+#include <aws/bedrock-agent-runtime/model/KnowledgeBaseConfiguration.h>
 #include <aws/bedrock-agent-runtime/model/InvocationResultMember.h>
 #include <utility>
 
@@ -52,6 +54,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>Contains information about the files used by code interpreter.</p>
+     */
+    inline const Aws::Vector<InputFile>& GetFiles() const{ return m_files; }
+    inline bool FilesHasBeenSet() const { return m_filesHasBeenSet; }
+    inline void SetFiles(const Aws::Vector<InputFile>& value) { m_filesHasBeenSet = true; m_files = value; }
+    inline void SetFiles(Aws::Vector<InputFile>&& value) { m_filesHasBeenSet = true; m_files = std::move(value); }
+    inline SessionState& WithFiles(const Aws::Vector<InputFile>& value) { SetFiles(value); return *this;}
+    inline SessionState& WithFiles(Aws::Vector<InputFile>&& value) { SetFiles(std::move(value)); return *this;}
+    inline SessionState& AddFiles(const InputFile& value) { m_filesHasBeenSet = true; m_files.push_back(value); return *this; }
+    inline SessionState& AddFiles(InputFile&& value) { m_filesHasBeenSet = true; m_files.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>The identifier of the invocation of an action. This value must match the
      * <code>invocationId</code> returned in the <code>InvokeAgent</code> response for
      * the action whose results are provided in the
@@ -69,6 +85,21 @@ namespace Model
     inline SessionState& WithInvocationId(const Aws::String& value) { SetInvocationId(value); return *this;}
     inline SessionState& WithInvocationId(Aws::String&& value) { SetInvocationId(std::move(value)); return *this;}
     inline SessionState& WithInvocationId(const char* value) { SetInvocationId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>An array of configurations, each of which applies to a knowledge base
+     * attached to the agent.</p>
+     */
+    inline const Aws::Vector<KnowledgeBaseConfiguration>& GetKnowledgeBaseConfigurations() const{ return m_knowledgeBaseConfigurations; }
+    inline bool KnowledgeBaseConfigurationsHasBeenSet() const { return m_knowledgeBaseConfigurationsHasBeenSet; }
+    inline void SetKnowledgeBaseConfigurations(const Aws::Vector<KnowledgeBaseConfiguration>& value) { m_knowledgeBaseConfigurationsHasBeenSet = true; m_knowledgeBaseConfigurations = value; }
+    inline void SetKnowledgeBaseConfigurations(Aws::Vector<KnowledgeBaseConfiguration>&& value) { m_knowledgeBaseConfigurationsHasBeenSet = true; m_knowledgeBaseConfigurations = std::move(value); }
+    inline SessionState& WithKnowledgeBaseConfigurations(const Aws::Vector<KnowledgeBaseConfiguration>& value) { SetKnowledgeBaseConfigurations(value); return *this;}
+    inline SessionState& WithKnowledgeBaseConfigurations(Aws::Vector<KnowledgeBaseConfiguration>&& value) { SetKnowledgeBaseConfigurations(std::move(value)); return *this;}
+    inline SessionState& AddKnowledgeBaseConfigurations(const KnowledgeBaseConfiguration& value) { m_knowledgeBaseConfigurationsHasBeenSet = true; m_knowledgeBaseConfigurations.push_back(value); return *this; }
+    inline SessionState& AddKnowledgeBaseConfigurations(KnowledgeBaseConfiguration&& value) { m_knowledgeBaseConfigurationsHasBeenSet = true; m_knowledgeBaseConfigurations.push_back(std::move(value)); return *this; }
     ///@}
 
     ///@{
@@ -135,8 +166,14 @@ namespace Model
     ///@}
   private:
 
+    Aws::Vector<InputFile> m_files;
+    bool m_filesHasBeenSet = false;
+
     Aws::String m_invocationId;
     bool m_invocationIdHasBeenSet = false;
+
+    Aws::Vector<KnowledgeBaseConfiguration> m_knowledgeBaseConfigurations;
+    bool m_knowledgeBaseConfigurationsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_promptSessionAttributes;
     bool m_promptSessionAttributesHasBeenSet = false;

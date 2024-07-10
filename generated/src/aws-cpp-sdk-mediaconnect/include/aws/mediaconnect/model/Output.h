@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mediaconnect/model/Transport.h>
 #include <aws/mediaconnect/model/VpcInterfaceAttachment.h>
+#include <aws/mediaconnect/model/OutputStatus.h>
 #include <aws/mediaconnect/model/MediaStreamOutputConfiguration.h>
 #include <utility>
 
@@ -243,6 +244,18 @@ namespace Model
     inline Output& WithBridgePorts(Aws::Vector<int>&& value) { SetBridgePorts(std::move(value)); return *this;}
     inline Output& AddBridgePorts(int value) { m_bridgePortsHasBeenSet = true; m_bridgePorts.push_back(value); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * An indication of whether the output is transmitting data or not.
+     */
+    inline const OutputStatus& GetOutputStatus() const{ return m_outputStatus; }
+    inline bool OutputStatusHasBeenSet() const { return m_outputStatusHasBeenSet; }
+    inline void SetOutputStatus(const OutputStatus& value) { m_outputStatusHasBeenSet = true; m_outputStatus = value; }
+    inline void SetOutputStatus(OutputStatus&& value) { m_outputStatusHasBeenSet = true; m_outputStatus = std::move(value); }
+    inline Output& WithOutputStatus(const OutputStatus& value) { SetOutputStatus(value); return *this;}
+    inline Output& WithOutputStatus(OutputStatus&& value) { SetOutputStatus(std::move(value)); return *this;}
+    ///@}
   private:
 
     int m_dataTransferSubscriberFeePercent;
@@ -289,6 +302,9 @@ namespace Model
 
     Aws::Vector<int> m_bridgePorts;
     bool m_bridgePortsHasBeenSet = false;
+
+    OutputStatus m_outputStatus;
+    bool m_outputStatusHasBeenSet = false;
   };
 
 } // namespace Model

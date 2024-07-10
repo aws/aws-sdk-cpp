@@ -9,6 +9,7 @@
 #include <aws/batch/model/ContainerOverrides.h>
 #include <aws/batch/model/EcsPropertiesOverride.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/batch/model/EksPropertiesOverride.h>
 #include <utility>
 
 namespace Aws
@@ -102,6 +103,19 @@ namespace Model
     inline NodePropertyOverride& AddInstanceTypes(Aws::String&& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes.push_back(std::move(value)); return *this; }
     inline NodePropertyOverride& AddInstanceTypes(const char* value) { m_instanceTypesHasBeenSet = true; m_instanceTypes.push_back(value); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>An object that contains the properties that you want to replace for the
+     * existing Amazon EKS resources of a job.</p>
+     */
+    inline const EksPropertiesOverride& GetEksPropertiesOverride() const{ return m_eksPropertiesOverride; }
+    inline bool EksPropertiesOverrideHasBeenSet() const { return m_eksPropertiesOverrideHasBeenSet; }
+    inline void SetEksPropertiesOverride(const EksPropertiesOverride& value) { m_eksPropertiesOverrideHasBeenSet = true; m_eksPropertiesOverride = value; }
+    inline void SetEksPropertiesOverride(EksPropertiesOverride&& value) { m_eksPropertiesOverrideHasBeenSet = true; m_eksPropertiesOverride = std::move(value); }
+    inline NodePropertyOverride& WithEksPropertiesOverride(const EksPropertiesOverride& value) { SetEksPropertiesOverride(value); return *this;}
+    inline NodePropertyOverride& WithEksPropertiesOverride(EksPropertiesOverride&& value) { SetEksPropertiesOverride(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_targetNodes;
@@ -115,6 +129,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_instanceTypes;
     bool m_instanceTypesHasBeenSet = false;
+
+    EksPropertiesOverride m_eksPropertiesOverride;
+    bool m_eksPropertiesOverrideHasBeenSet = false;
   };
 
 } // namespace Model

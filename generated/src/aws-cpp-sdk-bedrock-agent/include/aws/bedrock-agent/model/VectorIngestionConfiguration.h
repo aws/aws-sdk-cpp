@@ -6,6 +6,8 @@
 #pragma once
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
 #include <aws/bedrock-agent/model/ChunkingConfiguration.h>
+#include <aws/bedrock-agent/model/CustomTransformationConfiguration.h>
+#include <aws/bedrock-agent/model/ParsingConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -51,10 +53,40 @@ namespace Model
     inline VectorIngestionConfiguration& WithChunkingConfiguration(const ChunkingConfiguration& value) { SetChunkingConfiguration(value); return *this;}
     inline VectorIngestionConfiguration& WithChunkingConfiguration(ChunkingConfiguration&& value) { SetChunkingConfiguration(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>A custom document transformer for parsed data source documents.</p>
+     */
+    inline const CustomTransformationConfiguration& GetCustomTransformationConfiguration() const{ return m_customTransformationConfiguration; }
+    inline bool CustomTransformationConfigurationHasBeenSet() const { return m_customTransformationConfigurationHasBeenSet; }
+    inline void SetCustomTransformationConfiguration(const CustomTransformationConfiguration& value) { m_customTransformationConfigurationHasBeenSet = true; m_customTransformationConfiguration = value; }
+    inline void SetCustomTransformationConfiguration(CustomTransformationConfiguration&& value) { m_customTransformationConfigurationHasBeenSet = true; m_customTransformationConfiguration = std::move(value); }
+    inline VectorIngestionConfiguration& WithCustomTransformationConfiguration(const CustomTransformationConfiguration& value) { SetCustomTransformationConfiguration(value); return *this;}
+    inline VectorIngestionConfiguration& WithCustomTransformationConfiguration(CustomTransformationConfiguration&& value) { SetCustomTransformationConfiguration(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>A custom parser for data source documents.</p>
+     */
+    inline const ParsingConfiguration& GetParsingConfiguration() const{ return m_parsingConfiguration; }
+    inline bool ParsingConfigurationHasBeenSet() const { return m_parsingConfigurationHasBeenSet; }
+    inline void SetParsingConfiguration(const ParsingConfiguration& value) { m_parsingConfigurationHasBeenSet = true; m_parsingConfiguration = value; }
+    inline void SetParsingConfiguration(ParsingConfiguration&& value) { m_parsingConfigurationHasBeenSet = true; m_parsingConfiguration = std::move(value); }
+    inline VectorIngestionConfiguration& WithParsingConfiguration(const ParsingConfiguration& value) { SetParsingConfiguration(value); return *this;}
+    inline VectorIngestionConfiguration& WithParsingConfiguration(ParsingConfiguration&& value) { SetParsingConfiguration(std::move(value)); return *this;}
+    ///@}
   private:
 
     ChunkingConfiguration m_chunkingConfiguration;
     bool m_chunkingConfigurationHasBeenSet = false;
+
+    CustomTransformationConfiguration m_customTransformationConfiguration;
+    bool m_customTransformationConfigurationHasBeenSet = false;
+
+    ParsingConfiguration m_parsingConfiguration;
+    bool m_parsingConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -20,6 +20,7 @@ namespace Model
 
 InvocationInput::InvocationInput() : 
     m_actionGroupInvocationInputHasBeenSet(false),
+    m_codeInterpreterInvocationInputHasBeenSet(false),
     m_invocationType(InvocationType::NOT_SET),
     m_invocationTypeHasBeenSet(false),
     m_knowledgeBaseLookupInputHasBeenSet(false),
@@ -40,6 +41,13 @@ InvocationInput& InvocationInput::operator =(JsonView jsonValue)
     m_actionGroupInvocationInput = jsonValue.GetObject("actionGroupInvocationInput");
 
     m_actionGroupInvocationInputHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("codeInterpreterInvocationInput"))
+  {
+    m_codeInterpreterInvocationInput = jsonValue.GetObject("codeInterpreterInvocationInput");
+
+    m_codeInterpreterInvocationInputHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("invocationType"))
@@ -73,6 +81,12 @@ JsonValue InvocationInput::Jsonize() const
   if(m_actionGroupInvocationInputHasBeenSet)
   {
    payload.WithObject("actionGroupInvocationInput", m_actionGroupInvocationInput.Jsonize());
+
+  }
+
+  if(m_codeInterpreterInvocationInputHasBeenSet)
+  {
+   payload.WithObject("codeInterpreterInvocationInput", m_codeInterpreterInvocationInput.Jsonize());
 
   }
 

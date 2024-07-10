@@ -62,6 +62,24 @@ namespace Model
     inline DeletePublicIpv4PoolRequest& WithPoolId(Aws::String&& value) { SetPoolId(std::move(value)); return *this;}
     inline DeletePublicIpv4PoolRequest& WithPoolId(const char* value) { SetPoolId(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The Availability Zone (AZ) or Local Zone (LZ) network border group that the
+     * resource that the IP address is assigned to is in. Defaults to an AZ network
+     * border group. For more information on available Local Zones, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html#byoip-zone-avail">Local
+     * Zone availability</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     */
+    inline const Aws::String& GetNetworkBorderGroup() const{ return m_networkBorderGroup; }
+    inline bool NetworkBorderGroupHasBeenSet() const { return m_networkBorderGroupHasBeenSet; }
+    inline void SetNetworkBorderGroup(const Aws::String& value) { m_networkBorderGroupHasBeenSet = true; m_networkBorderGroup = value; }
+    inline void SetNetworkBorderGroup(Aws::String&& value) { m_networkBorderGroupHasBeenSet = true; m_networkBorderGroup = std::move(value); }
+    inline void SetNetworkBorderGroup(const char* value) { m_networkBorderGroupHasBeenSet = true; m_networkBorderGroup.assign(value); }
+    inline DeletePublicIpv4PoolRequest& WithNetworkBorderGroup(const Aws::String& value) { SetNetworkBorderGroup(value); return *this;}
+    inline DeletePublicIpv4PoolRequest& WithNetworkBorderGroup(Aws::String&& value) { SetNetworkBorderGroup(std::move(value)); return *this;}
+    inline DeletePublicIpv4PoolRequest& WithNetworkBorderGroup(const char* value) { SetNetworkBorderGroup(value); return *this;}
+    ///@}
   private:
 
     bool m_dryRun;
@@ -69,6 +87,9 @@ namespace Model
 
     Aws::String m_poolId;
     bool m_poolIdHasBeenSet = false;
+
+    Aws::String m_networkBorderGroup;
+    bool m_networkBorderGroupHasBeenSet = false;
   };
 
 } // namespace Model

@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/glue/model/RecipeReference.h>
+#include <aws/glue/model/RecipeStep.h>
 #include <utility>
 
 namespace Aws
@@ -80,6 +81,20 @@ namespace Model
     inline Recipe& WithRecipeReference(const RecipeReference& value) { SetRecipeReference(value); return *this;}
     inline Recipe& WithRecipeReference(RecipeReference&& value) { SetRecipeReference(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Transform steps used in the recipe node.</p>
+     */
+    inline const Aws::Vector<RecipeStep>& GetRecipeSteps() const{ return m_recipeSteps; }
+    inline bool RecipeStepsHasBeenSet() const { return m_recipeStepsHasBeenSet; }
+    inline void SetRecipeSteps(const Aws::Vector<RecipeStep>& value) { m_recipeStepsHasBeenSet = true; m_recipeSteps = value; }
+    inline void SetRecipeSteps(Aws::Vector<RecipeStep>&& value) { m_recipeStepsHasBeenSet = true; m_recipeSteps = std::move(value); }
+    inline Recipe& WithRecipeSteps(const Aws::Vector<RecipeStep>& value) { SetRecipeSteps(value); return *this;}
+    inline Recipe& WithRecipeSteps(Aws::Vector<RecipeStep>&& value) { SetRecipeSteps(std::move(value)); return *this;}
+    inline Recipe& AddRecipeSteps(const RecipeStep& value) { m_recipeStepsHasBeenSet = true; m_recipeSteps.push_back(value); return *this; }
+    inline Recipe& AddRecipeSteps(RecipeStep&& value) { m_recipeStepsHasBeenSet = true; m_recipeSteps.push_back(std::move(value)); return *this; }
+    ///@}
   private:
 
     Aws::String m_name;
@@ -90,6 +105,9 @@ namespace Model
 
     RecipeReference m_recipeReference;
     bool m_recipeReferenceHasBeenSet = false;
+
+    Aws::Vector<RecipeStep> m_recipeSteps;
+    bool m_recipeStepsHasBeenSet = false;
   };
 
 } // namespace Model

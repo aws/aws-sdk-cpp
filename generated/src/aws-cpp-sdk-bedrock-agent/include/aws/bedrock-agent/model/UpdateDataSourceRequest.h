@@ -38,7 +38,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The data deletion policy of the updated data source.</p>
+     * <p>The data deletion policy for the data source that you want to update.</p>
      */
     inline const DataDeletionPolicy& GetDataDeletionPolicy() const{ return m_dataDeletionPolicy; }
     inline bool DataDeletionPolicyHasBeenSet() const { return m_dataDeletionPolicyHasBeenSet; }
@@ -50,7 +50,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Contains details about the storage configuration of the data source.</p>
+     * <p>The connection configuration for the data source that you want to update.</p>
      */
     inline const DataSourceConfiguration& GetDataSourceConfiguration() const{ return m_dataSourceConfiguration; }
     inline bool DataSourceConfigurationHasBeenSet() const { return m_dataSourceConfigurationHasBeenSet; }
@@ -90,8 +90,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The unique identifier of the knowledge base to which the data source
-     * belongs.</p>
+     * <p>The unique identifier of the knowledge base for the data source.</p>
      */
     inline const Aws::String& GetKnowledgeBaseId() const{ return m_knowledgeBaseId; }
     inline bool KnowledgeBaseIdHasBeenSet() const { return m_knowledgeBaseIdHasBeenSet; }

@@ -108,7 +108,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The details of the guardrails configuration in the agent version summary.</p>
+     * <p>Details about the guardrail associated with the agent.</p>
      */
     inline const GuardrailConfiguration& GetGuardrailConfiguration() const{ return m_guardrailConfiguration; }
     inline bool GuardrailConfigurationHasBeenSet() const { return m_guardrailConfigurationHasBeenSet; }

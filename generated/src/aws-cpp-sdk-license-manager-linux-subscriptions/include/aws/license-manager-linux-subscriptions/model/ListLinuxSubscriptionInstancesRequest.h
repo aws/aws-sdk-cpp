@@ -40,17 +40,20 @@ namespace Model
 
     ///@{
     /**
-     * <p>An array of structures that you can use to filter the results to those that
-     * match one or more sets of key-value pairs that you specify. For example, you can
-     * filter by the name of <code>AmiID</code> with an optional operator to see
-     * subscriptions that match, partially match, or don't match a certain Amazon
-     * Machine Image (AMI) ID.</p> <p>The valid names for this filter are:</p> <ul>
-     * <li> <p> <code>AmiID</code> </p> </li> <li> <p> <code>InstanceID</code> </p>
-     * </li> <li> <p> <code>AccountID</code> </p> </li> <li> <p> <code>Status</code>
-     * </p> </li> <li> <p> <code>Region</code> </p> </li> <li> <p>
-     * <code>UsageOperation</code> </p> </li> <li> <p> <code>ProductCode</code> </p>
-     * </li> <li> <p> <code>InstanceType</code> </p> </li> </ul> <p>The valid Operators
-     * for this filter are:</p> <ul> <li> <p> <code>contains</code> </p> </li> <li> <p>
+     * <p>An array of structures that you can use to filter the results by your
+     * specified criteria. For example, you can specify <code>Region</code> in the
+     * <code>Name</code>, with the <code>contains</code> operator to list all
+     * subscriptions that match a partial string in the <code>Value</code>, such as
+     * <code>us-west</code>.</p> <p>For each filter, you can specify one of the
+     * following values for the <code>Name</code> key to streamline results:</p> <ul>
+     * <li> <p> <code>AccountID</code> </p> </li> <li> <p> <code>AmiID</code> </p>
+     * </li> <li> <p> <code>DualSubscription</code> </p> </li> <li> <p>
+     * <code>InstanceID</code> </p> </li> <li> <p> <code>InstanceType</code> </p> </li>
+     * <li> <p> <code>ProductCode</code> </p> </li> <li> <p> <code>Region</code> </p>
+     * </li> <li> <p> <code>Status</code> </p> </li> <li> <p>
+     * <code>UsageOperation</code> </p> </li> </ul> <p>For each filter, you can use one
+     * of the following <code>Operator</code> values to define the behavior of the
+     * filter:</p> <ul> <li> <p> <code>contains</code> </p> </li> <li> <p>
      * <code>equals</code> </p> </li> <li> <p> <code>Notequal</code> </p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
@@ -65,7 +68,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Maximum number of results to return in a single call.</p>
+     * <p>The maximum items to return in a request.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
@@ -75,7 +78,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Token for the next set of results.</p>
+     * <p>A token to specify where to start paginating. This is the nextToken from a
+     * previously truncated response.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }

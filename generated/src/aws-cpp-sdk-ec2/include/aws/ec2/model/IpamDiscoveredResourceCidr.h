@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/IpamResourceType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ec2/model/IpamNetworkInterfaceAttachmentStatus.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/ec2/model/IpamResourceTag.h>
 #include <utility>
@@ -179,6 +180,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>For elastic IP addresses, this is the status of an attached network
+     * interface.</p>
+     */
+    inline const IpamNetworkInterfaceAttachmentStatus& GetNetworkInterfaceAttachmentStatus() const{ return m_networkInterfaceAttachmentStatus; }
+    inline bool NetworkInterfaceAttachmentStatusHasBeenSet() const { return m_networkInterfaceAttachmentStatusHasBeenSet; }
+    inline void SetNetworkInterfaceAttachmentStatus(const IpamNetworkInterfaceAttachmentStatus& value) { m_networkInterfaceAttachmentStatusHasBeenSet = true; m_networkInterfaceAttachmentStatus = value; }
+    inline void SetNetworkInterfaceAttachmentStatus(IpamNetworkInterfaceAttachmentStatus&& value) { m_networkInterfaceAttachmentStatusHasBeenSet = true; m_networkInterfaceAttachmentStatus = std::move(value); }
+    inline IpamDiscoveredResourceCidr& WithNetworkInterfaceAttachmentStatus(const IpamNetworkInterfaceAttachmentStatus& value) { SetNetworkInterfaceAttachmentStatus(value); return *this;}
+    inline IpamDiscoveredResourceCidr& WithNetworkInterfaceAttachmentStatus(IpamNetworkInterfaceAttachmentStatus&& value) { SetNetworkInterfaceAttachmentStatus(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The last successful resource discovery time.</p>
      */
     inline const Aws::Utils::DateTime& GetSampleTime() const{ return m_sampleTime; }
@@ -187,6 +201,20 @@ namespace Model
     inline void SetSampleTime(Aws::Utils::DateTime&& value) { m_sampleTimeHasBeenSet = true; m_sampleTime = std::move(value); }
     inline IpamDiscoveredResourceCidr& WithSampleTime(const Aws::Utils::DateTime& value) { SetSampleTime(value); return *this;}
     inline IpamDiscoveredResourceCidr& WithSampleTime(Aws::Utils::DateTime&& value) { SetSampleTime(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The Availability Zone ID.</p>
+     */
+    inline const Aws::String& GetAvailabilityZoneId() const{ return m_availabilityZoneId; }
+    inline bool AvailabilityZoneIdHasBeenSet() const { return m_availabilityZoneIdHasBeenSet; }
+    inline void SetAvailabilityZoneId(const Aws::String& value) { m_availabilityZoneIdHasBeenSet = true; m_availabilityZoneId = value; }
+    inline void SetAvailabilityZoneId(Aws::String&& value) { m_availabilityZoneIdHasBeenSet = true; m_availabilityZoneId = std::move(value); }
+    inline void SetAvailabilityZoneId(const char* value) { m_availabilityZoneIdHasBeenSet = true; m_availabilityZoneId.assign(value); }
+    inline IpamDiscoveredResourceCidr& WithAvailabilityZoneId(const Aws::String& value) { SetAvailabilityZoneId(value); return *this;}
+    inline IpamDiscoveredResourceCidr& WithAvailabilityZoneId(Aws::String&& value) { SetAvailabilityZoneId(std::move(value)); return *this;}
+    inline IpamDiscoveredResourceCidr& WithAvailabilityZoneId(const char* value) { SetAvailabilityZoneId(value); return *this;}
     ///@}
   private:
 
@@ -217,8 +245,14 @@ namespace Model
     Aws::String m_vpcId;
     bool m_vpcIdHasBeenSet = false;
 
+    IpamNetworkInterfaceAttachmentStatus m_networkInterfaceAttachmentStatus;
+    bool m_networkInterfaceAttachmentStatusHasBeenSet = false;
+
     Aws::Utils::DateTime m_sampleTime;
     bool m_sampleTimeHasBeenSet = false;
+
+    Aws::String m_availabilityZoneId;
+    bool m_availabilityZoneIdHasBeenSet = false;
   };
 
 } // namespace Model
