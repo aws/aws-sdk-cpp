@@ -679,6 +679,12 @@ Aws::Client::StreamOutcome S3CrtClient::GenerateStreamOutcome(const std::shared_
   return StreamOutcome(std::move(httpOutcome));
 }
 
+void S3CrtClient::InitCrtEndpointFromUri(aws_uri *endpoint_uri, const Aws::Http::URI &uri) const {
+  const auto endpointStr = uri.GetURIString();
+  const auto endpointCursor{ aws_byte_cursor_from_array(endpointStr.c_str(), endpointStr.size()) };
+  aws_uri_init_parse(endpoint_uri, Aws::get_aws_allocator(), &endpointCursor);
+}
+
 void S3CrtClient::InitCommonCrtRequestOption(CrtRequestCallbackUserData *userData,
                                              aws_s3_meta_request_options *options,
                                              const Aws::AmazonWebServiceRequest *request,
@@ -708,9 +714,6 @@ void S3CrtClient::InitCommonCrtRequestOption(CrtRequestCallbackUserData *userDat
   options->body_callback = S3CrtRequestGetBodyCallback;
   options->progress_callback = S3CrtRequestProgressCallback;
   options->finish_callback = S3CrtRequestFinishCallback;
-  const auto endpointStr = uri.GetURIString();
-  const auto endpointCursor{ aws_byte_cursor_from_array(endpointStr.c_str(), endpointStr.size()) };
-  aws_uri_init_parse(options->endpoint, Aws::get_aws_allocator(), &endpointCursor);
 }
 
 static void CopyObjectRequestShutdownCallback(void *user_data)
@@ -769,7 +772,7 @@ void S3CrtClient::CopyObjectAsync(const CopyObjectRequest& request, const CopyOb
   aws_s3_meta_request_options options;
   AWS_ZERO_STRUCT(options);
   aws_uri endpoint;
-  AWS_ZERO_STRUCT(endpoint);
+  InitCrtEndpointFromUri(&endpoint, endpointResolutionOutcome.GetResult().GetURI());
   options.endpoint = &endpoint;
   std::unique_ptr<aws_uri, void(*)(aws_uri*)> endpointCleanup { options.endpoint, &aws_uri_clean_up };
 
@@ -888,7 +891,7 @@ void S3CrtClient::GetObjectAsync(const GetObjectRequest& request, const GetObjec
   aws_s3_meta_request_options options;
   AWS_ZERO_STRUCT(options);
   aws_uri endpoint;
-  AWS_ZERO_STRUCT(endpoint);
+  InitCrtEndpointFromUri(&endpoint, endpointResolutionOutcome.GetResult().GetURI());
   options.endpoint = &endpoint;
   std::unique_ptr<aws_uri, void(*)(aws_uri*)> endpointCleanup { options.endpoint, &aws_uri_clean_up };
 
@@ -1011,7 +1014,7 @@ void S3CrtClient::PutObjectAsync(const PutObjectRequest& request, const PutObjec
   aws_s3_meta_request_options options;
   AWS_ZERO_STRUCT(options);
   aws_uri endpoint;
-  AWS_ZERO_STRUCT(endpoint);
+  InitCrtEndpointFromUri(&endpoint, endpointResolutionOutcome.GetResult().GetURI());
   options.endpoint = &endpoint;
   std::unique_ptr<aws_uri, void(*)(aws_uri*)> endpointCleanup { options.endpoint, &aws_uri_clean_up };
 
