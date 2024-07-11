@@ -74,7 +74,7 @@ namespace Aws
          * Abstract AWS Client. Contains most of the functionality necessary to build an http request, get it signed, and send it across the wire.
          */
         class AWS_CORE_API AWSClient
-        {
+        { 
         public:
             /**
              * configuration will be used for http client settings, retry strategy, throttles, and signing information.
