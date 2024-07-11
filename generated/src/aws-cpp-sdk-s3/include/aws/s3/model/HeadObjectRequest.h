@@ -43,6 +43,7 @@ namespace Model
 
     AWS_S3_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+    AWS_S3_API bool HasEmbeddedError(IOStream &body, const Http::HeaderValueCollection &header) const override;
     /**
      * Helper function to collect parameters (configurable and static hardcoded) required for endpoint computation.
      */

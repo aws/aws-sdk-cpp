@@ -6,6 +6,7 @@
 #include <aws/s3-crt/model/ListBucketMetricsConfigurationsRequest.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/URI.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
@@ -22,6 +23,25 @@ ListBucketMetricsConfigurationsRequest::ListBucketMetricsConfigurationsRequest()
     m_expectedBucketOwnerHasBeenSet(false),
     m_customizedAccessLogTagHasBeenSet(false)
 {
+}
+
+bool ListBucketMetricsConfigurationsRequest::HasEmbeddedError(Aws::IOStream &body,
+  const Aws::Http::HeaderValueCollection &header) const
+{
+  // Header is unused
+  AWS_UNREFERENCED_PARAM(header);
+
+  auto readPointer = body.tellg();
+  Utils::Xml::XmlDocument doc = XmlDocument::CreateFromXmlStream(body);
+  body.seekg(readPointer);
+  if (!doc.WasParseSuccessful()) {
+    return false;
+  }
+
+  if (!doc.GetRootElement().IsNull() && doc.GetRootElement().GetName() == Aws::String("Error")) {
+    return true;
+  }
+  return false;
 }
 
 Aws::String ListBucketMetricsConfigurationsRequest::SerializePayload() const

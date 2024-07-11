@@ -6,9 +6,14 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/s3-crt/S3CrtErrorMarshaller.h>
 #include <aws/s3-crt/S3CrtErrors.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/logging/LogMacros.h>
 
 using namespace Aws::Client;
 using namespace Aws::S3Crt;
+using namespace Aws::Utils::Xml;
+using namespace Aws::Http;
 
 AWSError<CoreErrors> S3CrtErrorMarshaller::FindErrorByName(const char* errorName) const
 {
@@ -96,4 +101,54 @@ Aws::String S3CrtErrorMarshaller::ExtractEndpoint(const AWSError<CoreErrors>& er
   }
 
   return {};
+}
+AWSError<Aws::Client::CoreErrors> S3CrtErrorMarshaller::Marshall(const Aws::Http::HttpResponse& httpResponse) const
+{
+  //if response code not ok, use error marshaller
+  if(httpResponse.GetResponseCode() != HttpResponseCode::OK)
+  {
+    return XmlErrorMarshaller::Marshall(httpResponse);
+  }
+
+  Aws::String message{"Error in body of the response"};
+  //extract error message and code in the body
+  auto& body = httpResponse.GetResponseBody();
+  
+  if(!body.good())
+  {
+      return  Aws::Client::AWSError<Aws::Client::CoreErrors>(
+                            Aws::Client::CoreErrors::INVALID_PARAMETER_VALUE,
+                            "",
+                            message,
+                            false);
+  }
+
+  auto readPointer = body.tellg();
+  XmlDocument doc = XmlDocument::CreateFromXmlStream(body);
+  body.seekg(readPointer);
+  Aws::String bodyError;
+
+  if (doc.WasParseSuccessful() &&
+      !doc.GetRootElement().IsNull() && 
+      doc.GetRootElement().GetName() == Aws::String("Error")) 
+  {        
+      //check if the first node fetched has no children
+      auto messageNode = doc.GetRootElement().FirstChild("Message") ;
+      if(!messageNode.IsNull() && !messageNode.HasChildren())
+      {
+          message = messageNode.GetText();
+      }
+      auto codeNode = doc.GetRootElement().FirstChild("Code") ;
+      if(!codeNode.IsNull() && !codeNode.HasChildren())
+      {
+          bodyError = codeNode.GetText();
+      }
+  }
+
+  auto error = FindErrorByName(bodyError.c_str());
+
+  error.SetMessage(message);
+
+  return error;
+
 }
