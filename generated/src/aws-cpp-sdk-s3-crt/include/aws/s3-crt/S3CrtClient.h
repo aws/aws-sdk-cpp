@@ -6300,7 +6300,7 @@ namespace Aws
           wrappedData->clientShutdownSem->Release();
         }
 
-        void InitCrtEndpointFromUri(aws_uri *endpoint_uri, const Aws::Http::URI &uri) const;
+        void InitCrtEndpointFromUri(aws_uri &endpoint_uri, const Aws::Http::URI &uri) const;
         
         void InitCommonCrtRequestOption(CrtRequestCallbackUserData *userData,
                                         aws_s3_meta_request_options *options,
