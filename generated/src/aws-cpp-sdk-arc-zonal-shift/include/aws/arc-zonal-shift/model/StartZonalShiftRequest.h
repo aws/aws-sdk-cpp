@@ -34,10 +34,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Availability Zone that traffic is moved away from for a resource when you
-     * start a zonal shift. Until the zonal shift expires or you cancel it, traffic for
-     * the resource is instead moved to other Availability Zones in the Amazon Web
-     * Services Region.</p>
+     * <p>The Availability Zone (for example, <code>use1-az1</code>) that traffic is
+     * moved away from for a resource when you start a zonal shift. Until the zonal
+     * shift expires or you cancel it, traffic for the resource is instead moved to
+     * other Availability Zones in the Amazon Web Services Region.</p>
      */
     inline const Aws::String& GetAwayFrom() const{ return m_awayFrom; }
     inline bool AwayFromHasBeenSet() const { return m_awayFromHasBeenSet; }
@@ -93,10 +93,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The identifier for the resource to shift away traffic for. The identifier is
-     * the Amazon Resource Name (ARN) for the resource.</p> <p>At this time, supported
-     * resources are Network Load Balancers and Application Load Balancers with
-     * cross-zone load balancing turned off.</p>
+     * <p>The identifier for the resource that Amazon Web Services shifts traffic for.
+     * The identifier is the Amazon Resource Name (ARN) for the resource.</p> <p>At
+     * this time, supported resources are Network Load Balancers and Application Load
+     * Balancers with cross-zone load balancing turned off.</p>
      */
     inline const Aws::String& GetResourceIdentifier() const{ return m_resourceIdentifier; }
     inline bool ResourceIdentifierHasBeenSet() const { return m_resourceIdentifierHasBeenSet; }

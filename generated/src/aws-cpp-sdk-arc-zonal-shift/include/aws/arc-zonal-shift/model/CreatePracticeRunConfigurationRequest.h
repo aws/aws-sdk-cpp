@@ -118,10 +118,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>The identifier of the resource to shift away traffic for when a practice run
-     * starts a zonal shift. The identifier is the Amazon Resource Name (ARN) for the
-     * resource.</p> <p>At this time, supported resources are Network Load Balancers
-     * and Application Load Balancers with cross-zone load balancing turned off.</p>
+     * <p>The identifier of the resource that Amazon Web Services shifts traffic for
+     * with a practice run zonal shift. The identifier is the Amazon Resource Name
+     * (ARN) for the resource.</p> <p>At this time, supported resources are Network
+     * Load Balancers and Application Load Balancers with cross-zone load balancing
+     * turned off.</p>
      */
     inline const Aws::String& GetResourceIdentifier() const{ return m_resourceIdentifier; }
     inline bool ResourceIdentifierHasBeenSet() const { return m_resourceIdentifierHasBeenSet; }

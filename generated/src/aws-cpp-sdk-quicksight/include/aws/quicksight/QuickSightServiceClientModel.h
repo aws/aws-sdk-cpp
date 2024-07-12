@@ -18,6 +18,8 @@
 /* End of generic header includes */
 
 /* Service model headers required in QuickSightClient header */
+#include <aws/quicksight/model/BatchCreateTopicReviewedAnswerResult.h>
+#include <aws/quicksight/model/BatchDeleteTopicReviewedAnswerResult.h>
 #include <aws/quicksight/model/CancelIngestionResult.h>
 #include <aws/quicksight/model/CreateAccountCustomizationResult.h>
 #include <aws/quicksight/model/CreateAccountSubscriptionResult.h>
@@ -140,6 +142,7 @@
 #include <aws/quicksight/model/ListThemeVersionsResult.h>
 #include <aws/quicksight/model/ListThemesResult.h>
 #include <aws/quicksight/model/ListTopicRefreshSchedulesResult.h>
+#include <aws/quicksight/model/ListTopicReviewedAnswersResult.h>
 #include <aws/quicksight/model/ListTopicsResult.h>
 #include <aws/quicksight/model/ListUserGroupsResult.h>
 #include <aws/quicksight/model/ListUsersResult.h>
@@ -232,6 +235,8 @@ namespace Aws
     namespace Model
     {
       /* Service model forward declarations required in QuickSightClient header */
+      class BatchCreateTopicReviewedAnswerRequest;
+      class BatchDeleteTopicReviewedAnswerRequest;
       class CancelIngestionRequest;
       class CreateAccountCustomizationRequest;
       class CreateAccountSubscriptionRequest;
@@ -354,6 +359,7 @@ namespace Aws
       class ListThemeVersionsRequest;
       class ListThemesRequest;
       class ListTopicRefreshSchedulesRequest;
+      class ListTopicReviewedAnswersRequest;
       class ListTopicsRequest;
       class ListUserGroupsRequest;
       class ListUsersRequest;
@@ -409,6 +415,8 @@ namespace Aws
       /* End of service model forward declarations required in QuickSightClient header */
 
       /* Service model Outcome class definitions */
+      typedef Aws::Utils::Outcome<BatchCreateTopicReviewedAnswerResult, QuickSightError> BatchCreateTopicReviewedAnswerOutcome;
+      typedef Aws::Utils::Outcome<BatchDeleteTopicReviewedAnswerResult, QuickSightError> BatchDeleteTopicReviewedAnswerOutcome;
       typedef Aws::Utils::Outcome<CancelIngestionResult, QuickSightError> CancelIngestionOutcome;
       typedef Aws::Utils::Outcome<CreateAccountCustomizationResult, QuickSightError> CreateAccountCustomizationOutcome;
       typedef Aws::Utils::Outcome<CreateAccountSubscriptionResult, QuickSightError> CreateAccountSubscriptionOutcome;
@@ -531,6 +539,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListThemeVersionsResult, QuickSightError> ListThemeVersionsOutcome;
       typedef Aws::Utils::Outcome<ListThemesResult, QuickSightError> ListThemesOutcome;
       typedef Aws::Utils::Outcome<ListTopicRefreshSchedulesResult, QuickSightError> ListTopicRefreshSchedulesOutcome;
+      typedef Aws::Utils::Outcome<ListTopicReviewedAnswersResult, QuickSightError> ListTopicReviewedAnswersOutcome;
       typedef Aws::Utils::Outcome<ListTopicsResult, QuickSightError> ListTopicsOutcome;
       typedef Aws::Utils::Outcome<ListUserGroupsResult, QuickSightError> ListUserGroupsOutcome;
       typedef Aws::Utils::Outcome<ListUsersResult, QuickSightError> ListUsersOutcome;
@@ -586,6 +595,8 @@ namespace Aws
       /* End of service model Outcome class definitions */
 
       /* Service model Outcome callable definitions */
+      typedef std::future<BatchCreateTopicReviewedAnswerOutcome> BatchCreateTopicReviewedAnswerOutcomeCallable;
+      typedef std::future<BatchDeleteTopicReviewedAnswerOutcome> BatchDeleteTopicReviewedAnswerOutcomeCallable;
       typedef std::future<CancelIngestionOutcome> CancelIngestionOutcomeCallable;
       typedef std::future<CreateAccountCustomizationOutcome> CreateAccountCustomizationOutcomeCallable;
       typedef std::future<CreateAccountSubscriptionOutcome> CreateAccountSubscriptionOutcomeCallable;
@@ -708,6 +719,7 @@ namespace Aws
       typedef std::future<ListThemeVersionsOutcome> ListThemeVersionsOutcomeCallable;
       typedef std::future<ListThemesOutcome> ListThemesOutcomeCallable;
       typedef std::future<ListTopicRefreshSchedulesOutcome> ListTopicRefreshSchedulesOutcomeCallable;
+      typedef std::future<ListTopicReviewedAnswersOutcome> ListTopicReviewedAnswersOutcomeCallable;
       typedef std::future<ListTopicsOutcome> ListTopicsOutcomeCallable;
       typedef std::future<ListUserGroupsOutcome> ListUserGroupsOutcomeCallable;
       typedef std::future<ListUsersOutcome> ListUsersOutcomeCallable;
@@ -766,6 +778,8 @@ namespace Aws
     class QuickSightClient;
 
     /* Service model async handlers definitions */
+    typedef std::function<void(const QuickSightClient*, const Model::BatchCreateTopicReviewedAnswerRequest&, const Model::BatchCreateTopicReviewedAnswerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchCreateTopicReviewedAnswerResponseReceivedHandler;
+    typedef std::function<void(const QuickSightClient*, const Model::BatchDeleteTopicReviewedAnswerRequest&, const Model::BatchDeleteTopicReviewedAnswerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchDeleteTopicReviewedAnswerResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::CancelIngestionRequest&, const Model::CancelIngestionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelIngestionResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::CreateAccountCustomizationRequest&, const Model::CreateAccountCustomizationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAccountCustomizationResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::CreateAccountSubscriptionRequest&, const Model::CreateAccountSubscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAccountSubscriptionResponseReceivedHandler;
@@ -888,6 +902,7 @@ namespace Aws
     typedef std::function<void(const QuickSightClient*, const Model::ListThemeVersionsRequest&, const Model::ListThemeVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListThemeVersionsResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::ListThemesRequest&, const Model::ListThemesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListThemesResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::ListTopicRefreshSchedulesRequest&, const Model::ListTopicRefreshSchedulesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTopicRefreshSchedulesResponseReceivedHandler;
+    typedef std::function<void(const QuickSightClient*, const Model::ListTopicReviewedAnswersRequest&, const Model::ListTopicReviewedAnswersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTopicReviewedAnswersResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::ListTopicsRequest&, const Model::ListTopicsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTopicsResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::ListUserGroupsRequest&, const Model::ListUserGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListUserGroupsResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::ListUsersRequest&, const Model::ListUsersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListUsersResponseReceivedHandler;

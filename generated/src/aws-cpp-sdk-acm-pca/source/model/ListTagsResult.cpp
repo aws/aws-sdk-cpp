@@ -29,6 +29,12 @@ ListTagsResult::ListTagsResult(const Aws::AmazonWebServiceResult<JsonValue>& res
 ListTagsResult& ListTagsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("NextToken"))
+  {
+    m_nextToken = jsonValue.GetString("NextToken");
+
+  }
+
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
@@ -36,12 +42,6 @@ ListTagsResult& ListTagsResult::operator =(const Aws::AmazonWebServiceResult<Jso
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
     }
-  }
-
-  if(jsonValue.ValueExists("NextToken"))
-  {
-    m_nextToken = jsonValue.GetString("NextToken");
-
   }
 
 

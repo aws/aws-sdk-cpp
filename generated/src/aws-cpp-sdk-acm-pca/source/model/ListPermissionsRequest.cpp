@@ -13,10 +13,10 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 ListPermissionsRequest::ListPermissionsRequest() : 
-    m_certificateAuthorityArnHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
     m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
+    m_maxResultsHasBeenSet(false),
+    m_nextTokenHasBeenSet(false),
+    m_certificateAuthorityArnHasBeenSet(false)
 {
 }
 
@@ -24,9 +24,9 @@ Aws::String ListPermissionsRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_certificateAuthorityArnHasBeenSet)
+  if(m_maxResultsHasBeenSet)
   {
-   payload.WithString("CertificateAuthorityArn", m_certificateAuthorityArn);
+   payload.WithInteger("MaxResults", m_maxResults);
 
   }
 
@@ -36,9 +36,9 @@ Aws::String ListPermissionsRequest::SerializePayload() const
 
   }
 
-  if(m_maxResultsHasBeenSet)
+  if(m_certificateAuthorityArnHasBeenSet)
   {
-   payload.WithInteger("MaxResults", m_maxResults);
+   payload.WithString("CertificateAuthorityArn", m_certificateAuthorityArn);
 
   }
 
