@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/acm-pca/ACMPCA_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/acm-pca/model/Permission.h>
 #include <utility>
 
@@ -36,6 +36,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>When the list is truncated, this value is present and should be used for the
+     * <b>NextToken</b> parameter in a subsequent pagination request. </p>
+     */
+    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
+    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
+    inline ListPermissionsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+    inline ListPermissionsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
+    inline ListPermissionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Summary information about each permission assigned by the specified private
      * CA, including the action enabled, the policy provided, and the time of
      * creation.</p>
@@ -50,20 +64,6 @@ namespace Model
     ///@}
 
     ///@{
-    /**
-     * <p>When the list is truncated, this value is present and should be used for the
-     * <b>NextToken</b> parameter in a subsequent pagination request. </p>
-     */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListPermissionsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListPermissionsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListPermissionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
-    ///@}
-
-    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -75,9 +75,9 @@ namespace Model
     ///@}
   private:
 
-    Aws::Vector<Permission> m_permissions;
-
     Aws::String m_nextToken;
+
+    Aws::Vector<Permission> m_permissions;
 
     Aws::String m_requestId;
   };

@@ -47,17 +47,17 @@ namespace Model
     ///@{
     /**
      * <p>The <code>appliedStatus</code> field specifies which application traffic
-     * shift is in effect for a resource when there is more than one traffic shift
-     * active. There can be more than one application traffic shift in progress at the
-     * same time - that is, practice run zonal shifts, customer-started zonal shifts,
-     * or an autoshift. The <code>appliedStatus</code> field for an autoshift for a
-     * resource can have one of two values: <code>APPLIED</code> or
+     * shift is in effect for a resource when there is more than one active traffic
+     * shift. There can be more than one application traffic shift in progress at the
+     * same time - that is, practice run zonal shifts, customer-initiated zonal shifts,
+     * or an autoshift. The <code>appliedStatus</code> field for a shift that is in
+     * progress for a resource can have one of two values: <code>APPLIED</code> or
      * <code>NOT_APPLIED</code>. The zonal shift or autoshift that is currently in
-     * effect for the resource has an applied status set to <code>APPLIED</code>.</p>
-     * <p>The overall principle for precedence is that zonal shifts that you start as a
-     * customer take precedence autoshifts, which take precedence over practice runs.
-     * That is, customer-started zonal shifts &gt; autoshifts &gt; practice run zonal
-     * shifts.</p> <p>For more information, see <a
+     * effect for the resource has an <code>appliedStatus</code> set to
+     * <code>APPLIED</code>.</p> <p>The overall principle for precedence is that zonal
+     * shifts that you start as a customer take precedence autoshifts, which take
+     * precedence over practice runs. That is, customer-initiated zonal shifts &gt;
+     * autoshifts &gt; practice run zonal shifts.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-autoshift.how-it-works.html">How
      * zonal autoshift and practice runs work</a> in the Amazon Route 53 Application
      * Recovery Controller Developer Guide.</p>
@@ -72,12 +72,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Availability Zone that traffic is shifted away from for a resource, when
-     * Amazon Web Services starts an autoshift. Until the autoshift ends, traffic for
-     * the resource is instead directed to other Availability Zones in the Amazon Web
-     * Services Region. An autoshift can end for a resource, for example, when Amazon
-     * Web Services ends the autoshift for the Availability Zone or when you disable
-     * zonal autoshift for the resource.</p>
+     * <p>The Availability Zone (for example, <code>use1-az1</code>) that traffic is
+     * shifted away from for a resource, when Amazon Web Services starts an autoshift.
+     * Until the autoshift ends, traffic for the resource is instead directed to other
+     * Availability Zones in the Amazon Web Services Region. An autoshift can end for a
+     * resource, for example, when Amazon Web Services ends the autoshift for the
+     * Availability Zone or when you disable zonal autoshift for the resource.</p>
      */
     inline const Aws::String& GetAwayFrom() const{ return m_awayFrom; }
     inline bool AwayFromHasBeenSet() const { return m_awayFromHasBeenSet; }

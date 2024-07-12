@@ -30,7 +30,7 @@ namespace Model
    * <p>Lists information about zonal shifts in Amazon Route 53 Application Recovery
    * Controller, including zonal shifts that you start yourself and zonal shifts that
    * Route 53 ARC starts on your behalf for practice runs with zonal autoshift.</p>
-   * <p>Zonal shifts are temporary, including customer-started zonal shifts and the
+   * <p>Zonal shifts are temporary, including customer-initiated zonal shifts and the
    * zonal autoshift practice run zonal shifts that Route 53 ARC starts weekly, on
    * your behalf. A zonal shift that a customer starts can be active for up to three
    * days (72 hours). A practice run zonal shift has a 30 minute
@@ -49,10 +49,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Availability Zone that traffic is moved away from for a resource when you
-     * start a zonal shift. Until the zonal shift expires or you cancel it, traffic for
-     * the resource is instead moved to other Availability Zones in the Amazon Web
-     * Services Region.</p>
+     * <p>The Availability Zone (for example, <code>use1-az1</code>) that traffic is
+     * moved away from for a resource when you start a zonal shift. Until the zonal
+     * shift expires or you cancel it, traffic for the resource is instead moved to
+     * other Availability Zones in the Amazon Web Services Region.</p>
      */
     inline const Aws::String& GetAwayFrom() const{ return m_awayFrom; }
     inline bool AwayFromHasBeenSet() const { return m_awayFromHasBeenSet; }
@@ -82,15 +82,15 @@ namespace Model
 
     ///@{
     /**
-     * <p>The expiry time (expiration time) for a customer-started zonal shift. A zonal
-     * shift is temporary and must be set to expire when you start the zonal shift. You
-     * can initially set a zonal shift to expire in a maximum of three days (72 hours).
-     * However, you can update a zonal shift to set a new expiration at any time. </p>
-     * <p>When you start a zonal shift, you specify how long you want it to be active,
-     * which Route 53 ARC converts to an expiry time (expiration time). You can cancel
-     * a zonal shift when you're ready to restore traffic to the Availability Zone, or
-     * just wait for it to expire. Or you can update the zonal shift to specify another
-     * length of time to expire in.</p>
+     * <p>The expiry time (expiration time) for a customer-initiated zonal shift. A
+     * zonal shift is temporary and must be set to expire when you start the zonal
+     * shift. You can initially set a zonal shift to expire in a maximum of three days
+     * (72 hours). However, you can update a zonal shift to set a new expiration at any
+     * time. </p> <p>When you start a zonal shift, you specify how long you want it to
+     * be active, which Route 53 ARC converts to an expiry time (expiration time). You
+     * can cancel a zonal shift when you're ready to restore traffic to the
+     * Availability Zone, or just wait for it to expire. Or you can update the zonal
+     * shift to specify another length of time to expire in.</p>
      */
     inline const Aws::Utils::DateTime& GetExpiryTime() const{ return m_expiryTime; }
     inline bool ExpiryTimeHasBeenSet() const { return m_expiryTimeHasBeenSet; }

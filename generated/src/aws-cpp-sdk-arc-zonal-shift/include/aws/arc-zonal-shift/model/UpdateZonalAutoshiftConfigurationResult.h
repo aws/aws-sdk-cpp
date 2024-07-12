@@ -50,8 +50,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The zonal autoshift status for the resource that you updated the zonal
-     * autoshift configuration for.</p>
+     * <p>The updated zonal autoshift status for the resource.</p>
      */
     inline const ZonalAutoshiftStatus& GetZonalAutoshiftStatus() const{ return m_zonalAutoshiftStatus; }
     inline void SetZonalAutoshiftStatus(const ZonalAutoshiftStatus& value) { m_zonalAutoshiftStatus = value; }

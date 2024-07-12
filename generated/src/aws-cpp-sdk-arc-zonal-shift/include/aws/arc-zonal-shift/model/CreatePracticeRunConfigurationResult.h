@@ -76,13 +76,13 @@ namespace Model
 
     ///@{
     /**
-     * <p>The status for zonal autoshift for a resource. When you specify the autoshift
-     * status as <code>ENABLED</code>, Amazon Web Services shifts traffic away from
-     * shifts away application resource traffic from an Availability Zone, on your
-     * behalf, when Amazon Web Services determines that there's an issue in the
-     * Availability Zone that could potentially affect customers.</p> <p>When you
-     * enable zonal autoshift, you must also configure practice runs for the
-     * resource.</p>
+     * <p>The status for zonal autoshift for a resource. When you specify
+     * <code>ENABLED</code> for the autoshift status, Amazon Web Services shifts
+     * traffic away from shifts away application resource traffic from an Availability
+     * Zone, on your behalf, when internal telemetry indicates that there is an
+     * Availability Zone impairment that could potentially impact customers.</p>
+     * <p>When you enable zonal autoshift, you must also configure practice runs for
+     * the resource.</p>
      */
     inline const ZonalAutoshiftStatus& GetZonalAutoshiftStatus() const{ return m_zonalAutoshiftStatus; }
     inline void SetZonalAutoshiftStatus(const ZonalAutoshiftStatus& value) { m_zonalAutoshiftStatus = value; }

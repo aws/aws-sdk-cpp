@@ -6,6 +6,7 @@
 #include <aws/route53/model/DeleteQueryLoggingConfigRequest.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/UnreferencedParam.h>
 
 #include <utility>
 

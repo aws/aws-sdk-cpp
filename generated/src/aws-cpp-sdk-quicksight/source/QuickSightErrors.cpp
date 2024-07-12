@@ -6,8 +6,8 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/quicksight/QuickSightErrors.h>
-#include <aws/quicksight/model/ResourceExistsException.h>
 #include <aws/quicksight/model/ConflictException.h>
+#include <aws/quicksight/model/ResourceExistsException.h>
 #include <aws/quicksight/model/ResourceNotFoundException.h>
 #include <aws/quicksight/model/LimitExceededException.h>
 #include <aws/quicksight/model/QuickSightUserNotFoundException.h>
@@ -35,16 +35,16 @@ namespace Aws
 {
 namespace QuickSight
 {
-template<> AWS_QUICKSIGHT_API ResourceExistsException QuickSightError::GetModeledError()
-{
-  assert(this->GetErrorType() == QuickSightErrors::RESOURCE_EXISTS);
-  return ResourceExistsException(this->GetJsonPayload().View());
-}
-
 template<> AWS_QUICKSIGHT_API ConflictException QuickSightError::GetModeledError()
 {
   assert(this->GetErrorType() == QuickSightErrors::CONFLICT);
   return ConflictException(this->GetJsonPayload().View());
+}
+
+template<> AWS_QUICKSIGHT_API ResourceExistsException QuickSightError::GetModeledError()
+{
+  assert(this->GetErrorType() == QuickSightErrors::RESOURCE_EXISTS);
+  return ResourceExistsException(this->GetJsonPayload().View());
 }
 
 template<> AWS_QUICKSIGHT_API ResourceNotFoundException QuickSightError::GetModeledError()
@@ -152,8 +152,8 @@ template<> AWS_QUICKSIGHT_API InvalidRequestException QuickSightError::GetModele
 namespace QuickSightErrorMapper
 {
 
-static const int RESOURCE_EXISTS_HASH = HashingUtils::HashString("ResourceExistsException");
 static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
+static const int RESOURCE_EXISTS_HASH = HashingUtils::HashString("ResourceExistsException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
 static const int QUICK_SIGHT_USER_NOT_FOUND_HASH = HashingUtils::HashString("QuickSightUserNotFoundException");
 static const int IDENTITY_TYPE_NOT_SUPPORTED_HASH = HashingUtils::HashString("IdentityTypeNotSupportedException");
@@ -172,13 +172,13 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == RESOURCE_EXISTS_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(QuickSightErrors::RESOURCE_EXISTS), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == CONFLICT_HASH)
+  if (hashCode == CONFLICT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(QuickSightErrors::CONFLICT), RetryableType::NOT_RETRYABLE);
+  }
+  else if (hashCode == RESOURCE_EXISTS_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(QuickSightErrors::RESOURCE_EXISTS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == LIMIT_EXCEEDED_HASH)
   {

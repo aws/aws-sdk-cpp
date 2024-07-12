@@ -631,20 +631,19 @@ namespace ACMPCA
          * size of a certificate chain is 2 MB.</p> </li> </ul> <p> <i>Enforcement of
          * Critical Constraints</i> </p> <p>Amazon Web Services Private CA allows the
          * following extensions to be marked critical in the imported CA certificate or
-         * chain.</p> <ul> <li> <p>Authority key identifier</p> </li> <li> <p>Basic
-         * constraints (<i>must</i> be marked critical)</p> </li> <li> <p>Certificate
-         * policies</p> </li> <li> <p>Extended key usage</p> </li> <li> <p>Inhibit
-         * anyPolicy</p> </li> <li> <p>Issuer alternative name</p> </li> <li> <p>Key
-         * usage</p> </li> <li> <p>Name constraints</p> </li> <li> <p>Policy mappings</p>
-         * </li> <li> <p>Subject alternative name</p> </li> <li> <p>Subject directory
-         * attributes</p> </li> <li> <p>Subject key identifier</p> </li> <li> <p>Subject
-         * information access</p> </li> </ul> <p>Amazon Web Services Private CA rejects the
-         * following extensions when they are marked critical in an imported CA certificate
-         * or chain.</p> <ul> <li> <p>Authority information access</p> </li> <li> <p>CRL
-         * distribution points</p> </li> <li> <p>Freshest CRL</p> </li> <li> <p>Policy
-         * constraints</p> </li> </ul> <p>Amazon Web Services Private Certificate Authority
-         * will also reject any other extension marked as critical not contained on the
-         * preceding list of allowed extensions.</p><p><h3>See Also:</h3>   <a
+         * chain.</p> <ul> <li> <p>Basic constraints (<i>must</i> be marked critical)</p>
+         * </li> <li> <p>Subject alternative names</p> </li> <li> <p>Key usage</p> </li>
+         * <li> <p>Extended key usage</p> </li> <li> <p>Authority key identifier</p> </li>
+         * <li> <p>Subject key identifier</p> </li> <li> <p>Issuer alternative name</p>
+         * </li> <li> <p>Subject directory attributes</p> </li> <li> <p>Subject information
+         * access</p> </li> <li> <p>Certificate policies</p> </li> <li> <p>Policy
+         * mappings</p> </li> <li> <p>Inhibit anyPolicy</p> </li> </ul> <p>Amazon Web
+         * Services Private CA rejects the following extensions when they are marked
+         * critical in an imported CA certificate or chain.</p> <ul> <li> <p>Name
+         * constraints</p> </li> <li> <p>Policy constraints</p> </li> <li> <p>CRL
+         * distribution points</p> </li> <li> <p>Authority information access</p> </li>
+         * <li> <p>Freshest CRL</p> </li> <li> <p>Any other extension</p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/ImportCertificateAuthorityCertificate">AWS
          * API Reference</a></p>
          */
