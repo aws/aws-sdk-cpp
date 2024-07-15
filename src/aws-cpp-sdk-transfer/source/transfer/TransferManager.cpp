@@ -945,7 +945,7 @@ namespace Aws
 
         void TransferManager::DoDownload(const std::shared_ptr<TransferHandle>& handle)
         {
-            if (!InitializePartsForDownload(handle))
+            if (!handle->ShouldContinue() || !InitializePartsForDownload(handle))
             {
                 return;
             }
