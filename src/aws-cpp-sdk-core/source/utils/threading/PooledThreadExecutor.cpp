@@ -31,7 +31,6 @@ void PooledThreadExecutor::WaitUntilStopped()
         std::lock_guard<std::mutex> locker(m_queueLock);
         m_stopped = true;
     }
-    for(auto threadTask : m_threadTaskHandles)
     {
         std::lock_guard lock(m_queueLock);
 
