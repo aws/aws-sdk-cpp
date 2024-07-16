@@ -13,6 +13,7 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/VersionConfig.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSSet.h>
 
 #define AWS_ASSERT_SUCCESS(awsCppSdkOutcome) \
   ASSERT_TRUE(awsCppSdkOutcome.IsSuccess()) << "Error details: " << awsCppSdkOutcome.GetError() \
@@ -69,3 +70,140 @@ OutcomeT CallOperationWithUnconditionalRetry(const ClientT* client,
     std::function<OutcomeT(void)> func = std::bind(OperationFunc, client, request);
     return CallOperationWithUnconditionalRetry(func, retries, sleepBetween);
 }
+
+
+
+/*
+    This is a simple templated class which executes test functional blocks in order with retries or stop on fail
+*/
+
+
+template<typename CONTEXT>
+class RetryPlanner
+{
+
+    public:
+
+        using RetryFunction_t = std::function<bool (std::shared_ptr<CONTEXT>, const Aws::String& id, int numRetriesLeft)>;
+
+        struct FunctionBlock{
+            Aws::String entryId;
+            RetryFunction_t candidate;
+            size_t retryCount;
+            bool stopOnFail;
+            explicit FunctionBlock(const Aws::String& _entryId, 
+                           RetryFunction_t f, 
+                           int _retryCount = 2, 
+                           bool _stopOnFail = false):
+                           entryId(_entryId), candidate(std::move(f)), retryCount(_retryCount+1), stopOnFail(_stopOnFail)
+            {
+
+            }
+            ~FunctionBlock(){
+                //std::cout<<"destructor for "<<entryId<<" called"<<std::endl;
+            }
+        };
+
+        explicit RetryPlanner(std::shared_ptr<CONTEXT> context):_contextSp{context},_cursor{0}{ }
+    
+        bool addFunction(const FunctionBlock& item)
+        {
+            bool status = false;
+            if(item.candidate)
+            {
+                auto ret = _uniqueFunctionBlockSet.insert(item.entryId);
+
+                if(ret.second)
+                {
+                    _suite.push_back(item);
+                    status = true;
+                }
+            }
+            AWS_LOGSTREAM_TRACE(ALLOCATION_TAG, "added function with id=" << item.entryId<<" num tries="<<item.retryCount<<" stop on fail="<<item.stopOnFail<<std::endl );
+            //std::cout<<"added function with id=" << item.entryId<<std::endl;
+            return status;
+        }
+
+        /*
+        this function executes the functional blocks in order according to user specification
+
+        One can execute from the beginning with appropriate application setup in the context or just resume from after last block executed
+
+        if retry is set for a block, then block will be retried for specified number of times on failure, whereas
+        in case of successful execution, the block will not be tried again
+
+        if stop on fail is set and a block fails even after retries, the execution of test suite ends there
+
+        */
+        bool execute(bool startFromBegin = false)
+        {
+            bool status = !_suite.empty();
+            auto it = _suite.begin();
+            
+            if(!startFromBegin)
+            {
+                std::advance(it, _cursor) ;
+            }
+            else 
+            {
+                _cursor = 0;
+            }
+
+            for(; it != _suite.end();++it)
+            {
+                if(!it->candidate)
+                {
+                    //std::cout<<"invalid function with id=" << it->entryId<<std::endl;
+                    return false;
+                }
+
+                {
+                    //backup count
+                    auto originalRetryCount = it->retryCount;
+                    bool localResult = false;
+
+                    //Try and retry a block
+                    do{}
+                    while( it->retryCount && !(localResult = it->candidate(_contextSp, it->entryId, --it->retryCount) ));
+                    
+                    //set global status from block evaluation
+                    status = status && localResult;
+
+                    //if stop on fail after retries, break and retry from start if available
+                    if(it->stopOnFail && !localResult)
+                    {
+                        break;
+                    } 
+                    //restore state
+                    it->retryCount = originalRetryCount;
+                }  
+                ++_cursor;            
+            }
+
+            AWS_LOGSTREAM_TRACE(ALLOCATION_TAG, "execute overall status="<<status );
+            //std::cout<<"execute overall status="<<status<<std::endl;
+
+            return status;
+        }
+
+        /*
+        this function clears all the functional blocks added and resets the cursor
+        */
+        void clear()
+        {
+            _suite.clear();
+            _cursor = 0;
+        }
+    private:
+        using FunctionSuite = std::list<FunctionBlock>;
+        FunctionSuite _suite;   
+        std::shared_ptr<CONTEXT> _contextSp;
+        Aws::UnorderedSet<Aws::String> _uniqueFunctionBlockSet;
+        size_t _cursor;        
+
+        static const char ALLOCATION_TAG[];
+
+};
+
+template <typename CONTEXT>
+const char RetryPlanner<CONTEXT>::ALLOCATION_TAG[] = "RetryPlanner";

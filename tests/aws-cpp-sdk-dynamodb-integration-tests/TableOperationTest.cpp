@@ -74,130 +74,6 @@ Aws::String BuildTableName(const char* baseName)
     return GetTablePrefix() + baseName;
 }
 
-
-//create a template class which will take the request, response, expected response
-//if response dosnt match expected response retry upto n times
-//try till all have been tried upto n times
-//use a map of reqid to numRetriesLeft
-//req id maps to request functions and their expected responses
-//
-
-
-/*
-    workflow is add requests to queue
-    process them using validator and retry appropriate requests
-
-    add requests with tag in order
-    if any request processing fails validation redo the sequence
-*/
-
-
-template<typename CONTEXT>
-class RetryPlanner
-{
-
-    public:
-
-        using RetryFunction_t = std::function<bool (std::shared_ptr<CONTEXT>, const Aws::String& id, int numRetriesLeft)>;
-
-        struct Entry{
-            Aws::String entryId;
-            RetryFunction_t candidate;
-            int retryCount;
-            bool stopOnFail;
-            ~Entry(){
-                std::cout<<"destructor for "<<entryId<<" called"<<std::endl;
-            }
-        };
-
-        explicit RetryPlanner(std::shared_ptr<CONTEXT> context):_contextSp{context}{}
-    
-        bool addFunction(const Entry& item)
-        {
-            bool status = false;
-            if(item.candidate)
-            {
-                auto ret = _uniqueEntrySet.insert(item.entryId);
-
-                if(ret.second)
-                {
-                    _list.push_back(item);
-                    status = true;
-                }
-            }
-            AWS_LOGSTREAM_TRACE(ALLOCATION_TAG, "added function with id=" << item.entryId );
-            std::cout<<"added function with id=" << item.entryId<<std::endl;
-            return status;
-        }
-
-        //retry jobs to their max retry limit
-        //once all items 
-        bool execute()
-        {
-            bool status = true;
-            int maxAttempt = maxRetryCount;
-            while(maxAttempt > 0 && !_list.empty())
-            {
-                status = true;
-                int attemptsLeft = 0;
-                for(auto it = _list.begin(); it != _list.end();)
-                {
-                    if(!it->candidate)
-                    {
-                        std::cout<<"invalid function with id=" << it->entryId<<std::endl;
-                        break;
-                    }
-
-                    if(it->retryCount < 0)
-                    {
-                        ++it;
-                        continue;
-                    }
-
-                    auto runResult = it->candidate(_contextSp, it->entryId, it->retryCount--);
-
-                    attemptsLeft += it->retryCount;
-
-                    AWS_LOGSTREAM_TRACE(ALLOCATION_TAG, "execute function with id=" << it->entryId<<" result="<<runResult<<" retries left="<< it->retryCount <<" stop on fail="<<
-                    it->stopOnFail
-                    );
-
-                    std::cout<<"execute function with id=" << it->entryId<<" result="<<runResult<<" retries left="<< it->retryCount <<" stop on fail="<<it->stopOnFail<<std::endl;
-                    status = status && runResult;
-
-                    if(runResult)
-                    {
-                        it = _list.erase(it);
-                        continue;
-                    }
-                    else if(it->stopOnFail)
-                    {
-                        return false;
-                    }
-
-                    ++it;
-                }
-
-                if(!attemptsLeft)
-                {
-                    --maxAttempt;
-                }
-
-                AWS_LOGSTREAM_TRACE(ALLOCATION_TAG, "execute attempts left=" << maxAttempt<<" overall status="<<status );
-                std::cout<<"execute attempts left=" << maxAttempt<<" overall status="<<status<<std::endl;
-            } 
-
-            return status;
-        }
-    private:
-        const int maxRetryCount{2};
-        std::shared_ptr<CONTEXT> _contextSp;
-        Aws::UnorderedSet<Aws::String> _uniqueEntrySet;
-        std::list<Entry> _list;    
-
-};
-
-
 class TableOperationTest : public ::testing::Test {
 
 public:
@@ -289,7 +165,7 @@ public:
 
     explicit TableOperationTest(Aws::Http::TransferLibType transferType = Aws::Http::TransferLibType::DEFAULT_CLIENT):m_limiter(Aws::MakeShared<Aws::Utils::RateLimits::DefaultRateLimiter<>>(ALLOCATION_TAG, 200000))
     {
-        std::cout<<"SetUpTestCase called"<<std::endl;
+        //std::cout<<"SetUpTestCase called"<<std::endl;
         // Create a client
         ClientConfiguration config;
         config.endpointOverride = ENDPOINT_OVERRIDE;
@@ -311,7 +187,7 @@ public:
     }
 
     ~TableOperationTest(){
-        std::cout<<"TearDownTestCase called"<<std::endl;
+        //std::cout<<"TearDownTestCase called"<<std::endl;
         for (auto tableName : m_tablesCreated)
         {
             DeleteTable(tableName);
@@ -320,70 +196,7 @@ public:
 
 
 protected:
-/*
-    static void SetUpClient(Aws::Http::TransferLibType transferType)
-    {
-        // Create a client
-        ClientConfiguration config;
-        config.endpointOverride = ENDPOINT_OVERRIDE;
-        config.scheme = Scheme::HTTPS;
-        config.connectTimeoutMs = 30000;
-        config.requestTimeoutMs = 30000;
-        config.readRateLimiter = m_limiter;
-        config.writeRateLimiter = m_limiter;
-        config.httpLibOverride = transferType;
-        config.executor = Aws::MakeShared<Aws::Utils::Threading::PooledThreadExecutor>(ALLOCATION_TAG, 4);
-        config.disableExpectHeader = true;
-        config.enableHttpClientTrace = true;
 
-        //to test proxy functionality, uncomment the next two lines.
-        //config.proxyHost = "localhost";
-        //config.proxyPort = 8080;
-        m_client = Aws::MakeShared<DynamoDBClient>(ALLOCATION_TAG, config);
-    }
-
-    static void CleanupTables()
-    {
-
-        DeleteTable(BuildTableName(BASE_SIMPLE_TABLE));
-        DeleteTable(BuildTableName(BASE_THROUGHPUT_TABLE));
-        DeleteTable(BuildTableName(BASE_CONDITION_TABLE));
-        DeleteTable(BuildTableName(BASE_VALIDATION_TABLE));
-        DeleteTable(BuildTableName(BASE_CRUD_TEST_TABLE));
-        DeleteTable(BuildTableName(BASE_CRUD_CALLBACKS_TEST_TABLE));
-        DeleteTable(BuildTableName(BASE_THROTTLED_TEST_TABLE));
-        DeleteTable(BuildTableName(BASE_LIMITER_TEST_TABLE));
-        DeleteTable(BuildTableName(BASE_ATTRIBUTEVALUE_TEST_TABLE));
-    }
-
-    static void SetUpTestCase()
-    {
-        m_limiter = Aws::MakeShared<Aws::Utils::RateLimits::DefaultRateLimiter<>>(ALLOCATION_TAG, 200000);
-        SetUpClient(Aws::Http::TransferLibType::DEFAULT_CLIENT);
-        DYNAMODB_INTEGRATION_TEST_ID = Aws::String(Aws::Utils::UUID::RandomUUID()).c_str();
-    }
-
-    static void TearDownTestCase()
-    {
-        DeleteAllTables();
-        m_limiter = nullptr;
-        m_client = nullptr;
-    }
-    
-
-    static void DeleteAllTables()
-    {
-        DeleteTable(BuildTableName(BASE_SIMPLE_TABLE));
-        DeleteTable(BuildTableName(BASE_THROUGHPUT_TABLE));
-        DeleteTable(BuildTableName(BASE_CONDITION_TABLE));
-        DeleteTable(BuildTableName(BASE_VALIDATION_TABLE));
-        DeleteTable(BuildTableName(BASE_CRUD_TEST_TABLE));
-        DeleteTable(BuildTableName(BASE_CRUD_CALLBACKS_TEST_TABLE));
-        DeleteTable(BuildTableName(BASE_THROTTLED_TEST_TABLE));
-        DeleteTable(BuildTableName(BASE_LIMITER_TEST_TABLE));
-        DeleteTable(BuildTableName(BASE_ATTRIBUTEVALUE_TEST_TABLE));
-    }
-    */
 
     void CreateTable(Aws::String tableName, long readCap, long writeCap)
     {
@@ -639,14 +452,29 @@ TEST_F(TableOperationTest, TestThrottling)
 
 
 
+
+
 /*
+    after putItem requests have been made, it's not necessary that data is replicated to quorom before getItem is called.
+    
+    By default, getitem doesn't have strong consistency set. 
+    
+    So, it is possible for getItem to not have data available when called
+    
+    Hence, in such a situation, it is better to repeat the getItem for user sepcified times before evaluation
 
-    maintain in context all requests
+    Using RetryPlanner class, we can break down a test suite into smaller parts and set the retry or exit plan accordingly
 
-    on retry, take only leftover requests
+    Idea is that a test suite will have a shareable context which will be available to all the blocks of the test suite
+
+    Like this, the preexisting test case can be made more robust in retrying parts which need retrying 
+
+    In this example, we break the tests into smaller blocks -> lambda functions which utilize context to update data needed for the test
+
+    It is important to note that because Gtest failure is sticky, a successful retry won't supersede the failure. Hence, it is important to 
+    evaluate using gtest macros when either tests pass or on the final retry.
 
 */
-
 
 TEST_F(TableOperationTest, TestCrudOperations2)
 {
@@ -697,7 +525,7 @@ TEST_F(TableOperationTest, TestCrudOperations2)
     {
         AWS_UNREFERENCED_PARAM(id);
         AWS_UNREFERENCED_PARAM(numRetriesLeft);
-        std::cout<<"function with id="<<id<<" called"<<std::endl;
+        //std::cout<<"function with id="<<id<<" called"<<std::endl;
         Aws::StringStream ss;
         for (auto i : requestIds)
         {
@@ -727,25 +555,14 @@ TEST_F(TableOperationTest, TestCrudOperations2)
     };
 
 
-    retryObj.addFunction(RetryPlanner<TestContext>::Entry{
-        "putrequests",
+    retryObj.addFunction(RetryPlanner<TestContext>::FunctionBlock{
+        "putItemRequests",
         putItemReqFunction,
         0,
         true
     });
     
 
-
-
-    //after put requests have been made, it's not necessary that put requests may have been processed to completion before get is called
-    //for a failing read query we attempt it N times before deeming it fail
-    //we can generalize retry of a request 
-
-    //now we get the items we were supposed to be putting and make sure
-    //they were put successfully.
-
-    //add get and verify, ones that fail retry
-    
 
     auto getItemFunc = [this, testValueColumnName, crudTestTableName, numItems , &requestIds](
             std::shared_ptr<TestContext> contextSp, 
@@ -754,6 +571,7 @@ TEST_F(TableOperationTest, TestCrudOperations2)
     {
         AWS_UNREFERENCED_PARAM(id);
         AWS_UNREFERENCED_PARAM(numRetriesLeft);
+        
         Aws::StringStream ss;
         contextSp->getItemOutcomes.clear();
         for (auto i : requestIds)
@@ -775,6 +593,8 @@ TEST_F(TableOperationTest, TestCrudOperations2)
 
         bool status = true;
 
+        //run test expect on last try or when succeeded checks
+
         for (auto it = requestIds.begin(); it != requestIds.end(); )
         {
             auto i = *it;
@@ -783,17 +603,23 @@ TEST_F(TableOperationTest, TestCrudOperations2)
 
             AWS_EXPECT_SUCCESS(outcome);
             GetItemResult result = outcome.GetResult();
-            ss << HASH_KEY_NAME << i;
+
+            Aws::StringStream hashKeyName;
+            hashKeyName << HASH_KEY_NAME << i;
             Aws::Map<Aws::String, AttributeValue> returnedItemCollection = result.GetItem();
-            EXPECT_EQ(ss.str(), returnedItemCollection[HASH_KEY_NAME].GetS());
-            res = res && (ss.str() == returnedItemCollection[HASH_KEY_NAME].GetS());
 
-            ss.str("");
-            ss << testValueColumnName << i;
-            EXPECT_EQ(ss.str(), returnedItemCollection[testValueColumnName].GetS());
-            res = res && (ss.str() == returnedItemCollection[testValueColumnName].GetS());
+            Aws::StringStream testValueColumn;
+            testValueColumn << testValueColumnName << i;
+            
+            res = res && (hashKeyName.str() == returnedItemCollection[HASH_KEY_NAME].GetS());
+            res = res && (testValueColumn.str() == returnedItemCollection[testValueColumnName].GetS());
 
-            ss.str("");
+
+            if(numRetriesLeft == 0 || res)
+            {
+                EXPECT_EQ(testValueColumn.str(), returnedItemCollection[testValueColumnName].GetS());
+                EXPECT_EQ(hashKeyName.str(), returnedItemCollection[HASH_KEY_NAME].GetS());
+            }
 
             status = status && res;
             //if success, remove
@@ -807,13 +633,13 @@ TEST_F(TableOperationTest, TestCrudOperations2)
                 it = requestIds.erase(it);
             }     
         }
-        std::cout<<"function with id="<<id<<" status="<<status<<std::endl;
+        //std::cout<<"function with id="<<id<<" status="<<status<<std::endl;
 
         return status;
     };
 
-    retryObj.addFunction(RetryPlanner<TestContext>::Entry{
-        "getrequests",
+    retryObj.addFunction(RetryPlanner<TestContext>::FunctionBlock{
+        "getItemRequests",
         getItemFunc,
         3,
         false
@@ -821,18 +647,41 @@ TEST_F(TableOperationTest, TestCrudOperations2)
     
     
 
+
+    auto scanItemReqFunction = [testValueColumnName, crudTestTableName, this](
+        std::shared_ptr<TestContext> contextSp, 
+        const Aws::String& id,
+        int numRetriesLeft)
+    {
+        AWS_UNREFERENCED_PARAM(contextSp);
+        AWS_UNREFERENCED_PARAM(id);
+        AWS_UNREFERENCED_PARAM(numRetriesLeft);
+    
+        ScanRequest scanRequest;
+        scanRequest.WithTableName(crudTestTableName);
+
+        ScanOutcome scanOutcome = m_client->Scan(scanRequest);
+
+        bool res = scanOutcome.IsSuccess() && (numItems == scanOutcome.GetResult().GetCount() );
+
+        if(numRetriesLeft == 0 || res)
+        {
+            AWS_EXPECT_SUCCESS(scanOutcome);
+            EXPECT_EQ(numItems, scanOutcome.GetResult().GetCount());
+        }
+        return res;
+    };
+
+    retryObj.addFunction(RetryPlanner<TestContext>::FunctionBlock{
+        "scanItemRequest",
+        scanItemReqFunction,
+        3,
+        true
+    });
+
     EXPECT_EQ(retryObj.execute(), true);
 
     EXPECT_EQ(requestIds.empty(), true);
-
-
-    ScanRequest scanRequest;
-    scanRequest.WithTableName(crudTestTableName);
-
-    ScanOutcome scanOutcome = m_client->Scan(scanRequest);
-    AWS_EXPECT_SUCCESS(scanOutcome);
-    EXPECT_EQ(numItems, scanOutcome.GetResult().GetCount());
-
 
     prepareRequests();
 
@@ -844,7 +693,7 @@ TEST_F(TableOperationTest, TestCrudOperations2)
     {
         AWS_UNREFERENCED_PARAM(id);
         AWS_UNREFERENCED_PARAM(numRetriesLeft);
-        std::cout<<"function with id="<<id<<" called"<<std::endl;
+        //std::cout<<"function with id="<<id<<" called"<<std::endl;
 
         Aws::StringStream ss;
        for (auto i : requestIds)
@@ -876,8 +725,8 @@ TEST_F(TableOperationTest, TestCrudOperations2)
     };
 
 
-    retryObj.addFunction(RetryPlanner<TestContext>::Entry{
-        "updaterequests",
+    retryObj.addFunction(RetryPlanner<TestContext>::FunctionBlock{
+        "updateItemRequests",
         updateItemFunc,
         0,
         true
@@ -920,19 +769,31 @@ TEST_F(TableOperationTest, TestCrudOperations2)
             
             AWS_EXPECT_SUCCESS(outcome);
             GetItemResult result = outcome.GetResult();
-            ss << HASH_KEY_NAME << i;
+
+            Aws::StringStream hashKeyName;
+            hashKeyName << HASH_KEY_NAME << i;
             Aws::Map<Aws::String, AttributeValue> returnedItemCollection = result.GetItem();
-            EXPECT_EQ(ss.str(), returnedItemCollection[HASH_KEY_NAME].GetS());
-            res = res && (ss.str() == returnedItemCollection[HASH_KEY_NAME].GetS());
-            ss.str("");
-            ss << testValueColumnName << i * 2;
-            EXPECT_EQ(ss.str(), returnedItemCollection[testValueColumnName].GetS());
-            res = res && (ss.str() == returnedItemCollection[testValueColumnName].GetS());
-            ss.str("");
+
+            Aws::StringStream testValueColumn;
+            testValueColumn << testValueColumnName << i * 2;
+
+            res = res && (hashKeyName.str() == returnedItemCollection[HASH_KEY_NAME].GetS());
+            res = res && (testValueColumn.str() == returnedItemCollection[testValueColumnName].GetS());
+
+            if(numRetriesLeft > 0)
+            {
+                res = false;
+            }
+            if(numRetriesLeft == 0 || res)
+            {
+                //std::cout<<"i="<<i<< " actual col="<<returnedItemCollection[testValueColumnName].GetS() <<" actual keyname= "<<returnedItemCollection[HASH_KEY_NAME].GetS()<<" expected col="<<testValueColumn.str() <<" expected keyname="<<hashKeyName.str()<<std::endl;
+                EXPECT_EQ(hashKeyName.str(), returnedItemCollection[HASH_KEY_NAME].GetS());
+                EXPECT_EQ(testValueColumn.str(), returnedItemCollection[testValueColumnName].GetS());
+            }
 
             status = status && res;
             //if success, remove
-            //remove from list on success else retian for retry
+            //remove from list on success else retain for retry
             if(!res)
             {
                 ++it;
@@ -942,19 +803,19 @@ TEST_F(TableOperationTest, TestCrudOperations2)
                 it = requestIds.erase(it);
             }     
         }
-        std::cout<<"function with id="<<id<<" status"<<status<<std::endl;
+        //std::cout<<"function with id="<<id<<" status"<<status<<" numRetriesLeft="<<numRetriesLeft<<std::endl;
         return status;
     };
 
-    retryObj.addFunction(RetryPlanner<TestContext>::Entry{
-        "getrequests2",
+    retryObj.addFunction(RetryPlanner<TestContext>::FunctionBlock{
+        "getItemRequests2",
         getItemFunc2,
         3,
         false
     });
 
     
-#if 1
+
 
     //now delete all the items we added.
     auto deleteItemFunc = [this, testValueColumnName, crudTestTableName, numItems, &deleteRequestIds](
@@ -964,7 +825,7 @@ TEST_F(TableOperationTest, TestCrudOperations2)
     {
         AWS_UNREFERENCED_PARAM(id);
         AWS_UNREFERENCED_PARAM(numRetriesLeft);
-        std::cout<<"function with id="<<id<<" called"<<std::endl;
+        //std::cout<<"function with id="<<id<<" called"<<std::endl;
 
         Aws::StringStream ss;
         for (auto i : deleteRequestIds)
@@ -996,14 +857,14 @@ TEST_F(TableOperationTest, TestCrudOperations2)
         return true;
     };
     
-    retryObj.addFunction(RetryPlanner<TestContext>::Entry{
-        "deleterequests",
+    retryObj.addFunction(RetryPlanner<TestContext>::FunctionBlock{
+        "deleteItemRequests",
         deleteItemFunc,
         0,
         true
     });
 
-#endif
+
     EXPECT_EQ(retryObj.execute(), true);
 
 }
