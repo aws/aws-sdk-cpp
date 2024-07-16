@@ -400,17 +400,18 @@ void ${className}::init(const ${clientConfigurationNamespace}::ClientConfigurati
   static const size_t DEFAULT_PART_SIZE = 5 * 1024 * 1024; // 5MB
   s3CrtConfig.part_size = config.partSize < DEFAULT_PART_SIZE ? DEFAULT_PART_SIZE : config.partSize;
 
-  Aws::UniquePtr<Aws::Crt::Io::TlsConnectionOptions> pTlsConnectionOptions;
+  Aws::Crt::Io::TlsConnectionOptions *rawPTlsConnectionOptions = nullptr;
   if (config.tlsConnectionOptions)
   {
-    pTlsConnectionOptions = Aws::MakeUnique<Aws::Crt::Io::TlsConnectionOptions>(ALLOCATION_TAG, *config.tlsConnectionOptions);
+    rawPTlsConnectionOptions = config.tlsConnectionOptions.get();
     if (!config.caPath.empty() || !config.caFile.empty())
     {
       AWS_LOGSTREAM_WARN(ALLOCATION_TAG, "caPath or caFile on client configuration are ignored in case of user-configured TlsConnectionOptions provided");
     }
   }
 
-  if (!pTlsConnectionOptions)
+  Aws::UniquePtr<Aws::Crt::Io::TlsConnectionOptions> pTlsConnectionOptions;
+  if (!rawPTlsConnectionOptions)
   {
     Aws::Crt::Io::TlsContextOptions crtTlsContextOptions = Aws::Crt::Io::TlsContextOptions::InitDefaultClient();
     if (!config.caPath.empty() || !config.caFile.empty())
@@ -425,28 +426,14 @@ void ${className}::init(const ${clientConfigurationNamespace}::ClientConfigurati
     }
     Aws::Crt::Io::TlsContext crtTlsContext(crtTlsContextOptions, Aws::Crt::Io::TlsMode::CLIENT);
     pTlsConnectionOptions = Aws::MakeUnique<Aws::Crt::Io::TlsConnectionOptions>(ALLOCATION_TAG, crtTlsContext.NewConnectionOptions());
+    rawPTlsConnectionOptions = pTlsConnectionOptions.get();
   }
 
-  aws_tls_connection_options nonConstTlsOptions;
-  AWS_ZERO_STRUCT(nonConstTlsOptions);
-  if (pTlsConnectionOptions)
-  {
-    ResolveEndpointOutcome endpointOutcome = m_endpointProvider->ResolveEndpoint({});
-    if (!endpointOutcome.IsSuccess())
-    {
-      AWS_LOGSTREAM_FATAL(ALLOCATION_TAG, "Failed to initialize S3 Crt client: failed to resolve base URI: " << endpointOutcome.GetError().GetMessage());
-      m_isInitialized = false;
-      return;
-    }
-    Aws::Crt::ByteCursor serverName = Aws::Crt::ByteCursorFromCString(endpointOutcome.GetResult().GetURI().GetAuthority().c_str());
-    pTlsConnectionOptions->SetServerName(serverName);
-    aws_tls_connection_options_copy(&nonConstTlsOptions, pTlsConnectionOptions->GetUnderlyingHandle());
-    s3CrtConfig.tls_connection_options = &nonConstTlsOptions;
+  if (!rawPTlsConnectionOptions) {
+    rawPTlsConnectionOptions = Aws::GetDefaultTlsConnectionOptions();
   }
-  else
-  {
-    s3CrtConfig.tls_connection_options = nullptr;
-  }
+
+  s3CrtConfig.tls_connection_options = rawPTlsConnectionOptions ? rawPTlsConnectionOptions->GetUnderlyingHandle() : nullptr;
 
   Aws::Crt::Http::HttpClientConnectionProxyOptions proxyOptions;
   aws_http_proxy_options raw_proxy_options;
@@ -519,10 +506,6 @@ void ${className}::init(const ${clientConfigurationNamespace}::ClientConfigurati
   s3CrtConfig.s3express_provider_override_factory = S3CrtIdentityProviderAdapter::ProviderFactory;
 
   m_s3CrtClient = aws_s3_client_new(Aws::get_aws_allocator(), &s3CrtConfig);
-  if (pTlsConnectionOptions)
-  {
-    aws_tls_connection_options_clean_up(&nonConstTlsOptions);
-  }
   if (!m_s3CrtClient)
   {
     AWS_LOGSTREAM_FATAL(ALLOCATION_TAG, "Failed to allocate aws_s3_client instance, abort.");
