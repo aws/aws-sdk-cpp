@@ -21,12 +21,19 @@ Aws::String DescribeApplicationsRequest::SerializePayload() const
   ss << "Action=DescribeApplications&";
   if(m_applicationNamesHasBeenSet)
   {
-    unsigned applicationNamesCount = 1;
-    for(auto& item : m_applicationNames)
+    if (m_applicationNames.empty())
     {
-      ss << "ApplicationNames.member." << applicationNamesCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      applicationNamesCount++;
+      ss << "ApplicationNames=&";
+    }
+    else
+    {
+      unsigned applicationNamesCount = 1;
+      for(auto& item : m_applicationNames)
+      {
+        ss << "ApplicationNames.member." << applicationNamesCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        applicationNamesCount++;
+      }
     }
   }
 

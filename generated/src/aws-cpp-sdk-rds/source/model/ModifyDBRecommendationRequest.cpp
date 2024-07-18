@@ -39,11 +39,18 @@ Aws::String ModifyDBRecommendationRequest::SerializePayload() const
 
   if(m_recommendedActionUpdatesHasBeenSet)
   {
-    unsigned recommendedActionUpdatesCount = 1;
-    for(auto& item : m_recommendedActionUpdates)
+    if (m_recommendedActionUpdates.empty())
     {
-      item.OutputToStream(ss, "RecommendedActionUpdates.member.", recommendedActionUpdatesCount, "");
-      recommendedActionUpdatesCount++;
+      ss << "RecommendedActionUpdates=&";
+    }
+    else
+    {
+      unsigned recommendedActionUpdatesCount = 1;
+      for(auto& item : m_recommendedActionUpdates)
+      {
+        item.OutputToStream(ss, "RecommendedActionUpdates.member.", recommendedActionUpdatesCount, "");
+        recommendedActionUpdatesCount++;
+      }
     }
   }
 

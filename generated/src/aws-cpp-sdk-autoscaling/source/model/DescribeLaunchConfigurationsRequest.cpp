@@ -24,12 +24,19 @@ Aws::String DescribeLaunchConfigurationsRequest::SerializePayload() const
   ss << "Action=DescribeLaunchConfigurations&";
   if(m_launchConfigurationNamesHasBeenSet)
   {
-    unsigned launchConfigurationNamesCount = 1;
-    for(auto& item : m_launchConfigurationNames)
+    if (m_launchConfigurationNames.empty())
     {
-      ss << "LaunchConfigurationNames.member." << launchConfigurationNamesCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      launchConfigurationNamesCount++;
+      ss << "LaunchConfigurationNames=&";
+    }
+    else
+    {
+      unsigned launchConfigurationNamesCount = 1;
+      for(auto& item : m_launchConfigurationNames)
+      {
+        ss << "LaunchConfigurationNames.member." << launchConfigurationNamesCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        launchConfigurationNamesCount++;
+      }
     }
   }
 

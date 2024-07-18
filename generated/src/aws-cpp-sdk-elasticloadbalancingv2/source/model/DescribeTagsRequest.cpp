@@ -21,12 +21,19 @@ Aws::String DescribeTagsRequest::SerializePayload() const
   ss << "Action=DescribeTags&";
   if(m_resourceArnsHasBeenSet)
   {
-    unsigned resourceArnsCount = 1;
-    for(auto& item : m_resourceArns)
+    if (m_resourceArns.empty())
     {
-      ss << "ResourceArns.member." << resourceArnsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      resourceArnsCount++;
+      ss << "ResourceArns=&";
+    }
+    else
+    {
+      unsigned resourceArnsCount = 1;
+      for(auto& item : m_resourceArns)
+      {
+        ss << "ResourceArns.member." << resourceArnsCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        resourceArnsCount++;
+      }
     }
   }
 

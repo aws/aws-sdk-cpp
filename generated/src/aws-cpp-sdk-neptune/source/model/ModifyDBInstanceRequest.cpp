@@ -90,23 +90,37 @@ Aws::String ModifyDBInstanceRequest::SerializePayload() const
 
   if(m_dBSecurityGroupsHasBeenSet)
   {
-    unsigned dBSecurityGroupsCount = 1;
-    for(auto& item : m_dBSecurityGroups)
+    if (m_dBSecurityGroups.empty())
     {
-      ss << "DBSecurityGroups.member." << dBSecurityGroupsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      dBSecurityGroupsCount++;
+      ss << "DBSecurityGroups=&";
+    }
+    else
+    {
+      unsigned dBSecurityGroupsCount = 1;
+      for(auto& item : m_dBSecurityGroups)
+      {
+        ss << "DBSecurityGroups.member." << dBSecurityGroupsCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        dBSecurityGroupsCount++;
+      }
     }
   }
 
   if(m_vpcSecurityGroupIdsHasBeenSet)
   {
-    unsigned vpcSecurityGroupIdsCount = 1;
-    for(auto& item : m_vpcSecurityGroupIds)
+    if (m_vpcSecurityGroupIds.empty())
     {
-      ss << "VpcSecurityGroupIds.member." << vpcSecurityGroupIdsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      vpcSecurityGroupIdsCount++;
+      ss << "VpcSecurityGroupIds=&";
+    }
+    else
+    {
+      unsigned vpcSecurityGroupIdsCount = 1;
+      for(auto& item : m_vpcSecurityGroupIds)
+      {
+        ss << "VpcSecurityGroupIds.member." << vpcSecurityGroupIdsCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        vpcSecurityGroupIdsCount++;
+      }
     }
   }
 

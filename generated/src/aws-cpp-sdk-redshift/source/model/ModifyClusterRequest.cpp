@@ -80,23 +80,37 @@ Aws::String ModifyClusterRequest::SerializePayload() const
 
   if(m_clusterSecurityGroupsHasBeenSet)
   {
-    unsigned clusterSecurityGroupsCount = 1;
-    for(auto& item : m_clusterSecurityGroups)
+    if (m_clusterSecurityGroups.empty())
     {
-      ss << "ClusterSecurityGroups.member." << clusterSecurityGroupsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      clusterSecurityGroupsCount++;
+      ss << "ClusterSecurityGroups=&";
+    }
+    else
+    {
+      unsigned clusterSecurityGroupsCount = 1;
+      for(auto& item : m_clusterSecurityGroups)
+      {
+        ss << "ClusterSecurityGroups.member." << clusterSecurityGroupsCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        clusterSecurityGroupsCount++;
+      }
     }
   }
 
   if(m_vpcSecurityGroupIdsHasBeenSet)
   {
-    unsigned vpcSecurityGroupIdsCount = 1;
-    for(auto& item : m_vpcSecurityGroupIds)
+    if (m_vpcSecurityGroupIds.empty())
     {
-      ss << "VpcSecurityGroupIds.member." << vpcSecurityGroupIdsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      vpcSecurityGroupIdsCount++;
+      ss << "VpcSecurityGroupIds=&";
+    }
+    else
+    {
+      unsigned vpcSecurityGroupIdsCount = 1;
+      for(auto& item : m_vpcSecurityGroupIds)
+      {
+        ss << "VpcSecurityGroupIds.member." << vpcSecurityGroupIdsCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        vpcSecurityGroupIdsCount++;
+      }
     }
   }
 

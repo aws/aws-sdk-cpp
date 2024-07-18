@@ -43,23 +43,37 @@ Aws::String ModifyEventSubscriptionRequest::SerializePayload() const
 
   if(m_sourceIdsHasBeenSet)
   {
-    unsigned sourceIdsCount = 1;
-    for(auto& item : m_sourceIds)
+    if (m_sourceIds.empty())
     {
-      ss << "SourceIds.member." << sourceIdsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      sourceIdsCount++;
+      ss << "SourceIds=&";
+    }
+    else
+    {
+      unsigned sourceIdsCount = 1;
+      for(auto& item : m_sourceIds)
+      {
+        ss << "SourceIds.member." << sourceIdsCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        sourceIdsCount++;
+      }
     }
   }
 
   if(m_eventCategoriesHasBeenSet)
   {
-    unsigned eventCategoriesCount = 1;
-    for(auto& item : m_eventCategories)
+    if (m_eventCategories.empty())
     {
-      ss << "EventCategories.member." << eventCategoriesCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      eventCategoriesCount++;
+      ss << "EventCategories=&";
+    }
+    else
+    {
+      unsigned eventCategoriesCount = 1;
+      for(auto& item : m_eventCategories)
+      {
+        ss << "EventCategories.member." << eventCategoriesCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        eventCategoriesCount++;
+      }
     }
   }
 

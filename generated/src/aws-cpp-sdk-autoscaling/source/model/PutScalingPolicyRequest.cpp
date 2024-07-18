@@ -85,11 +85,18 @@ Aws::String PutScalingPolicyRequest::SerializePayload() const
 
   if(m_stepAdjustmentsHasBeenSet)
   {
-    unsigned stepAdjustmentsCount = 1;
-    for(auto& item : m_stepAdjustments)
+    if (m_stepAdjustments.empty())
     {
-      item.OutputToStream(ss, "StepAdjustments.member.", stepAdjustmentsCount, "");
-      stepAdjustmentsCount++;
+      ss << "StepAdjustments=&";
+    }
+    else
+    {
+      unsigned stepAdjustmentsCount = 1;
+      for(auto& item : m_stepAdjustments)
+      {
+        item.OutputToStream(ss, "StepAdjustments.member.", stepAdjustmentsCount, "");
+        stepAdjustmentsCount++;
+      }
     }
   }
 

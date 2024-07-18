@@ -30,12 +30,19 @@ Aws::String DescribeListenersRequest::SerializePayload() const
 
   if(m_listenerArnsHasBeenSet)
   {
-    unsigned listenerArnsCount = 1;
-    for(auto& item : m_listenerArns)
+    if (m_listenerArns.empty())
     {
-      ss << "ListenerArns.member." << listenerArnsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      listenerArnsCount++;
+      ss << "ListenerArns=&";
+    }
+    else
+    {
+      unsigned listenerArnsCount = 1;
+      for(auto& item : m_listenerArns)
+      {
+        ss << "ListenerArns.member." << listenerArnsCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        listenerArnsCount++;
+      }
     }
   }
 

@@ -45,12 +45,19 @@ Aws::String ListStackInstanceResourceDriftsRequest::SerializePayload() const
 
   if(m_stackInstanceResourceDriftStatusesHasBeenSet)
   {
-    unsigned stackInstanceResourceDriftStatusesCount = 1;
-    for(auto& item : m_stackInstanceResourceDriftStatuses)
+    if (m_stackInstanceResourceDriftStatuses.empty())
     {
-      ss << "StackInstanceResourceDriftStatuses.member." << stackInstanceResourceDriftStatusesCount << "="
-          << StringUtils::URLEncode(StackResourceDriftStatusMapper::GetNameForStackResourceDriftStatus(item).c_str()) << "&";
-      stackInstanceResourceDriftStatusesCount++;
+      ss << "StackInstanceResourceDriftStatuses=&";
+    }
+    else
+    {
+      unsigned stackInstanceResourceDriftStatusesCount = 1;
+      for(auto& item : m_stackInstanceResourceDriftStatuses)
+      {
+        ss << "StackInstanceResourceDriftStatuses.member." << stackInstanceResourceDriftStatusesCount << "="
+            << StringUtils::URLEncode(StackResourceDriftStatusMapper::GetNameForStackResourceDriftStatus(item).c_str()) << "&";
+        stackInstanceResourceDriftStatusesCount++;
+      }
     }
   }
 

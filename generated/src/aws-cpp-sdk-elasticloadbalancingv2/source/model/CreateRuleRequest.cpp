@@ -31,11 +31,18 @@ Aws::String CreateRuleRequest::SerializePayload() const
 
   if(m_conditionsHasBeenSet)
   {
-    unsigned conditionsCount = 1;
-    for(auto& item : m_conditions)
+    if (m_conditions.empty())
     {
-      item.OutputToStream(ss, "Conditions.member.", conditionsCount, "");
-      conditionsCount++;
+      ss << "Conditions=&";
+    }
+    else
+    {
+      unsigned conditionsCount = 1;
+      for(auto& item : m_conditions)
+      {
+        item.OutputToStream(ss, "Conditions.member.", conditionsCount, "");
+        conditionsCount++;
+      }
     }
   }
 
@@ -46,21 +53,35 @@ Aws::String CreateRuleRequest::SerializePayload() const
 
   if(m_actionsHasBeenSet)
   {
-    unsigned actionsCount = 1;
-    for(auto& item : m_actions)
+    if (m_actions.empty())
     {
-      item.OutputToStream(ss, "Actions.member.", actionsCount, "");
-      actionsCount++;
+      ss << "Actions=&";
+    }
+    else
+    {
+      unsigned actionsCount = 1;
+      for(auto& item : m_actions)
+      {
+        item.OutputToStream(ss, "Actions.member.", actionsCount, "");
+        actionsCount++;
+      }
     }
   }
 
   if(m_tagsHasBeenSet)
   {
-    unsigned tagsCount = 1;
-    for(auto& item : m_tags)
+    if (m_tags.empty())
     {
-      item.OutputToStream(ss, "Tags.member.", tagsCount, "");
-      tagsCount++;
+      ss << "Tags=&";
+    }
+    else
+    {
+      unsigned tagsCount = 1;
+      for(auto& item : m_tags)
+      {
+        item.OutputToStream(ss, "Tags.member.", tagsCount, "");
+        tagsCount++;
+      }
     }
   }
 

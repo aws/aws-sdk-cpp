@@ -58,11 +58,18 @@ Aws::String CreateStackRequest::SerializePayload() const
 
   if(m_parametersHasBeenSet)
   {
-    unsigned parametersCount = 1;
-    for(auto& item : m_parameters)
+    if (m_parameters.empty())
     {
-      item.OutputToStream(ss, "Parameters.member.", parametersCount, "");
-      parametersCount++;
+      ss << "Parameters=&";
+    }
+    else
+    {
+      unsigned parametersCount = 1;
+      for(auto& item : m_parameters)
+      {
+        item.OutputToStream(ss, "Parameters.member.", parametersCount, "");
+        parametersCount++;
+      }
     }
   }
 
@@ -83,34 +90,55 @@ Aws::String CreateStackRequest::SerializePayload() const
 
   if(m_notificationARNsHasBeenSet)
   {
-    unsigned notificationARNsCount = 1;
-    for(auto& item : m_notificationARNs)
+    if (m_notificationARNs.empty())
     {
-      ss << "NotificationARNs.member." << notificationARNsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      notificationARNsCount++;
+      ss << "NotificationARNs=&";
+    }
+    else
+    {
+      unsigned notificationARNsCount = 1;
+      for(auto& item : m_notificationARNs)
+      {
+        ss << "NotificationARNs.member." << notificationARNsCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        notificationARNsCount++;
+      }
     }
   }
 
   if(m_capabilitiesHasBeenSet)
   {
-    unsigned capabilitiesCount = 1;
-    for(auto& item : m_capabilities)
+    if (m_capabilities.empty())
     {
-      ss << "Capabilities.member." << capabilitiesCount << "="
-          << StringUtils::URLEncode(CapabilityMapper::GetNameForCapability(item).c_str()) << "&";
-      capabilitiesCount++;
+      ss << "Capabilities=&";
+    }
+    else
+    {
+      unsigned capabilitiesCount = 1;
+      for(auto& item : m_capabilities)
+      {
+        ss << "Capabilities.member." << capabilitiesCount << "="
+            << StringUtils::URLEncode(CapabilityMapper::GetNameForCapability(item).c_str()) << "&";
+        capabilitiesCount++;
+      }
     }
   }
 
   if(m_resourceTypesHasBeenSet)
   {
-    unsigned resourceTypesCount = 1;
-    for(auto& item : m_resourceTypes)
+    if (m_resourceTypes.empty())
     {
-      ss << "ResourceTypes.member." << resourceTypesCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      resourceTypesCount++;
+      ss << "ResourceTypes=&";
+    }
+    else
+    {
+      unsigned resourceTypesCount = 1;
+      for(auto& item : m_resourceTypes)
+      {
+        ss << "ResourceTypes.member." << resourceTypesCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        resourceTypesCount++;
+      }
     }
   }
 
@@ -136,11 +164,18 @@ Aws::String CreateStackRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-    unsigned tagsCount = 1;
-    for(auto& item : m_tags)
+    if (m_tags.empty())
     {
-      item.OutputToStream(ss, "Tags.member.", tagsCount, "");
-      tagsCount++;
+      ss << "Tags=&";
+    }
+    else
+    {
+      unsigned tagsCount = 1;
+      for(auto& item : m_tags)
+      {
+        item.OutputToStream(ss, "Tags.member.", tagsCount, "");
+        tagsCount++;
+      }
     }
   }
 

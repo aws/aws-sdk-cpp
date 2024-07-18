@@ -25,12 +25,19 @@ Aws::String BatchModifyClusterSnapshotsRequest::SerializePayload() const
   ss << "Action=BatchModifyClusterSnapshots&";
   if(m_snapshotIdentifierListHasBeenSet)
   {
-    unsigned snapshotIdentifierListCount = 1;
-    for(auto& item : m_snapshotIdentifierList)
+    if (m_snapshotIdentifierList.empty())
     {
-      ss << "SnapshotIdentifierList.member." << snapshotIdentifierListCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      snapshotIdentifierListCount++;
+      ss << "SnapshotIdentifierList=&";
+    }
+    else
+    {
+      unsigned snapshotIdentifierListCount = 1;
+      for(auto& item : m_snapshotIdentifierList)
+      {
+        ss << "SnapshotIdentifierList.member." << snapshotIdentifierListCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        snapshotIdentifierListCount++;
+      }
     }
   }
 

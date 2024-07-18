@@ -27,11 +27,18 @@ Aws::String PutMetricDataRequest::SerializePayload() const
 
   if(m_metricDataHasBeenSet)
   {
-    unsigned metricDataCount = 1;
-    for(auto& item : m_metricData)
+    if (m_metricData.empty())
     {
-      item.OutputToStream(ss, "MetricData.member.", metricDataCount, "");
-      metricDataCount++;
+      ss << "MetricData=&";
+    }
+    else
+    {
+      unsigned metricDataCount = 1;
+      for(auto& item : m_metricData)
+      {
+        item.OutputToStream(ss, "MetricData.member.", metricDataCount, "");
+        metricDataCount++;
+      }
     }
   }
 

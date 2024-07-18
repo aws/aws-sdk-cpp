@@ -27,12 +27,19 @@ Aws::String UpdateOpenIDConnectProviderThumbprintRequest::SerializePayload() con
 
   if(m_thumbprintListHasBeenSet)
   {
-    unsigned thumbprintListCount = 1;
-    for(auto& item : m_thumbprintList)
+    if (m_thumbprintList.empty())
     {
-      ss << "ThumbprintList.member." << thumbprintListCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      thumbprintListCount++;
+      ss << "ThumbprintList=&";
+    }
+    else
+    {
+      unsigned thumbprintListCount = 1;
+      for(auto& item : m_thumbprintList)
+      {
+        ss << "ThumbprintList.member." << thumbprintListCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        thumbprintListCount++;
+      }
     }
   }
 

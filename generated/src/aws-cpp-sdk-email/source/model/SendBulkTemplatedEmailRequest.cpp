@@ -41,12 +41,19 @@ Aws::String SendBulkTemplatedEmailRequest::SerializePayload() const
 
   if(m_replyToAddressesHasBeenSet)
   {
-    unsigned replyToAddressesCount = 1;
-    for(auto& item : m_replyToAddresses)
+    if (m_replyToAddresses.empty())
     {
-      ss << "ReplyToAddresses.member." << replyToAddressesCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      replyToAddressesCount++;
+      ss << "ReplyToAddresses=&";
+    }
+    else
+    {
+      unsigned replyToAddressesCount = 1;
+      for(auto& item : m_replyToAddresses)
+      {
+        ss << "ReplyToAddresses.member." << replyToAddressesCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        replyToAddressesCount++;
+      }
     }
   }
 
@@ -67,11 +74,18 @@ Aws::String SendBulkTemplatedEmailRequest::SerializePayload() const
 
   if(m_defaultTagsHasBeenSet)
   {
-    unsigned defaultTagsCount = 1;
-    for(auto& item : m_defaultTags)
+    if (m_defaultTags.empty())
     {
-      item.OutputToStream(ss, "DefaultTags.member.", defaultTagsCount, "");
-      defaultTagsCount++;
+      ss << "DefaultTags=&";
+    }
+    else
+    {
+      unsigned defaultTagsCount = 1;
+      for(auto& item : m_defaultTags)
+      {
+        item.OutputToStream(ss, "DefaultTags.member.", defaultTagsCount, "");
+        defaultTagsCount++;
+      }
     }
   }
 
@@ -92,11 +106,18 @@ Aws::String SendBulkTemplatedEmailRequest::SerializePayload() const
 
   if(m_destinationsHasBeenSet)
   {
-    unsigned destinationsCount = 1;
-    for(auto& item : m_destinations)
+    if (m_destinations.empty())
     {
-      item.OutputToStream(ss, "Destinations.member.", destinationsCount, "");
-      destinationsCount++;
+      ss << "Destinations=&";
+    }
+    else
+    {
+      unsigned destinationsCount = 1;
+      for(auto& item : m_destinations)
+      {
+        item.OutputToStream(ss, "Destinations.member.", destinationsCount, "");
+        destinationsCount++;
+      }
     }
   }
 
