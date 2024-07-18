@@ -8,6 +8,7 @@
 #include <aws/medialive/MediaLiveRequest.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/medialive/model/SrtSettingsRequest.h>
 #include <aws/medialive/model/InputDestinationRequest.h>
 #include <aws/medialive/model/InputDeviceRequest.h>
 #include <aws/medialive/model/MediaConnectFlowRequest.h>
@@ -163,6 +164,18 @@ Only specify sources for PULL type Inputs. Leave
     inline UpdateInputRequest& AddSources(const InputSourceRequest& value) { m_sourcesHasBeenSet = true; m_sources.push_back(value); return *this; }
     inline UpdateInputRequest& AddSources(InputSourceRequest&& value) { m_sourcesHasBeenSet = true; m_sources.push_back(std::move(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * The settings associated with an SRT input.
+     */
+    inline const SrtSettingsRequest& GetSrtSettings() const{ return m_srtSettings; }
+    inline bool SrtSettingsHasBeenSet() const { return m_srtSettingsHasBeenSet; }
+    inline void SetSrtSettings(const SrtSettingsRequest& value) { m_srtSettingsHasBeenSet = true; m_srtSettings = value; }
+    inline void SetSrtSettings(SrtSettingsRequest&& value) { m_srtSettingsHasBeenSet = true; m_srtSettings = std::move(value); }
+    inline UpdateInputRequest& WithSrtSettings(const SrtSettingsRequest& value) { SetSrtSettings(value); return *this;}
+    inline UpdateInputRequest& WithSrtSettings(SrtSettingsRequest&& value) { SetSrtSettings(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::Vector<InputDestinationRequest> m_destinations;
@@ -188,6 +201,9 @@ Only specify sources for PULL type Inputs. Leave
 
     Aws::Vector<InputSourceRequest> m_sources;
     bool m_sourcesHasBeenSet = false;
+
+    SrtSettingsRequest m_srtSettings;
+    bool m_srtSettingsHasBeenSet = false;
   };
 
 } // namespace Model

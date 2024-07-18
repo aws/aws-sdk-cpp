@@ -7,6 +7,7 @@
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/connect/model/StringCondition.h>
+#include <aws/connect/model/ListCondition.h>
 #include <aws/connect/model/HierarchyGroupCondition.h>
 #include <utility>
 
@@ -91,6 +92,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>A leaf node condition which can be used to specify a List condition to search
+     * users with attributes included in Lists like Proficiencies.</p>
+     */
+    inline const ListCondition& GetListCondition() const{ return m_listCondition; }
+    inline bool ListConditionHasBeenSet() const { return m_listConditionHasBeenSet; }
+    inline void SetListCondition(const ListCondition& value) { m_listConditionHasBeenSet = true; m_listCondition = value; }
+    inline void SetListCondition(ListCondition&& value) { m_listConditionHasBeenSet = true; m_listCondition = std::move(value); }
+    inline UserSearchCriteria& WithListCondition(const ListCondition& value) { SetListCondition(value); return *this;}
+    inline UserSearchCriteria& WithListCondition(ListCondition&& value) { SetListCondition(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>A leaf node condition which can be used to specify a hierarchy group
      * condition.</p>
      */
@@ -111,6 +125,9 @@ namespace Model
 
     StringCondition m_stringCondition;
     bool m_stringConditionHasBeenSet = false;
+
+    ListCondition m_listCondition;
+    bool m_listConditionHasBeenSet = false;
 
     HierarchyGroupCondition m_hierarchyGroupCondition;
     bool m_hierarchyGroupConditionHasBeenSet = false;

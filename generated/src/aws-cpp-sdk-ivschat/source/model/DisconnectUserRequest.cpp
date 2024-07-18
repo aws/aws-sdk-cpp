@@ -13,21 +13,15 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 DisconnectUserRequest::DisconnectUserRequest() : 
-    m_reasonHasBeenSet(false),
     m_roomIdentifierHasBeenSet(false),
-    m_userIdHasBeenSet(false)
+    m_userIdHasBeenSet(false),
+    m_reasonHasBeenSet(false)
 {
 }
 
 Aws::String DisconnectUserRequest::SerializePayload() const
 {
   JsonValue payload;
-
-  if(m_reasonHasBeenSet)
-  {
-   payload.WithString("reason", m_reason);
-
-  }
 
   if(m_roomIdentifierHasBeenSet)
   {
@@ -38,6 +32,12 @@ Aws::String DisconnectUserRequest::SerializePayload() const
   if(m_userIdHasBeenSet)
   {
    payload.WithString("userId", m_userId);
+
+  }
+
+  if(m_reasonHasBeenSet)
+  {
+   payload.WithString("reason", m_reason);
 
   }
 

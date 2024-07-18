@@ -12,6 +12,7 @@
 #include <aws/medialive/model/InputState.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/medialive/model/InputType.h>
+#include <aws/medialive/model/SrtSettings.h>
 #include <aws/medialive/model/InputDestination.h>
 #include <aws/medialive/model/InputDeviceSettings.h>
 #include <aws/medialive/model/MediaConnectFlow.h>
@@ -278,6 +279,18 @@ during input switch actions. Presently, this
     inline Input& WithType(const InputType& value) { SetType(value); return *this;}
     inline Input& WithType(InputType&& value) { SetType(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * The settings associated with an SRT input.
+     */
+    inline const SrtSettings& GetSrtSettings() const{ return m_srtSettings; }
+    inline bool SrtSettingsHasBeenSet() const { return m_srtSettingsHasBeenSet; }
+    inline void SetSrtSettings(const SrtSettings& value) { m_srtSettingsHasBeenSet = true; m_srtSettings = value; }
+    inline void SetSrtSettings(SrtSettings&& value) { m_srtSettingsHasBeenSet = true; m_srtSettings = std::move(value); }
+    inline Input& WithSrtSettings(const SrtSettings& value) { SetSrtSettings(value); return *this;}
+    inline Input& WithSrtSettings(SrtSettings&& value) { SetSrtSettings(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_arn;
@@ -327,6 +340,9 @@ during input switch actions. Presently, this
 
     InputType m_type;
     bool m_typeHasBeenSet = false;
+
+    SrtSettings m_srtSettings;
+    bool m_srtSettingsHasBeenSet = false;
   };
 
 } // namespace Model

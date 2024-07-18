@@ -466,9 +466,10 @@ namespace Model
      * groupings and filters: Queue, Channel, Routing Profile, Q in Connect</p>
      * <p>Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to
      * 604800 (inclusive), in seconds. For <code>Comparison</code>, you must enter
-     * <code>LT</code> (for "Less than").</p> <p>UI name: This metric is not available
-     * in Amazon Connect admin website. </p> </dd> <dt>CONTACTS_RESOLVED_IN_X</dt> <dd>
-     * <p>Unit: Count</p> <p>Valid groupings and filters: Queue, Channel, Routing
+     * <code>LT</code> (for "Less than").</p> <p>UI name: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#contacts-removed-historical">Contacts
+     * removed from queue in X seconds</a> </p> </dd> <dt>CONTACTS_RESOLVED_IN_X</dt>
+     * <dd> <p>Unit: Count</p> <p>Valid groupings and filters: Queue, Channel, Routing
      * Profile, contact/segmentAttributes/connect:Subtype, Q in Connect</p>
      * <p>Threshold: For <code>ThresholdValue</code> enter any whole number from 1 to
      * 604800 (inclusive), in seconds. For <code>Comparison</code>, you must enter

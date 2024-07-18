@@ -84,7 +84,27 @@ namespace Model
     ml_c6i_12xlarge,
     ml_c6i_16xlarge,
     ml_c6i_24xlarge,
-    ml_c6i_32xlarge
+    ml_c6i_32xlarge,
+    ml_r5d_large,
+    ml_r5d_xlarge,
+    ml_r5d_2xlarge,
+    ml_r5d_4xlarge,
+    ml_r5d_8xlarge,
+    ml_r5d_12xlarge,
+    ml_r5d_16xlarge,
+    ml_r5d_24xlarge,
+    ml_t3_medium,
+    ml_t3_large,
+    ml_t3_xlarge,
+    ml_t3_2xlarge,
+    ml_r5_large,
+    ml_r5_xlarge,
+    ml_r5_2xlarge,
+    ml_r5_4xlarge,
+    ml_r5_8xlarge,
+    ml_r5_12xlarge,
+    ml_r5_16xlarge,
+    ml_r5_24xlarge
   };
 
 namespace TrainingInstanceTypeMapper

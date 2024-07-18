@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/ivschat/Ivschat_EXPORTS.h>
 #include <aws/ivschat/IvschatRequest.h>
-#include <aws/ivschat/model/DestinationConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ivschat/model/DestinationConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
@@ -36,6 +36,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>Logging-configuration name. The value does not need to be unique.</p>
+     */
+    inline const Aws::String& GetName() const{ return m_name; }
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
+    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
+    inline CreateLoggingConfigurationRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
+    inline CreateLoggingConfigurationRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
+    inline CreateLoggingConfigurationRequest& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>A complex type that contains a destination configuration for where chat
      * content will be logged. There can be only one type of destination
      * (<code>cloudWatchLogs</code>, <code>firehose</code>, or <code>s3</code>) in a
@@ -47,20 +61,6 @@ namespace Model
     inline void SetDestinationConfiguration(DestinationConfiguration&& value) { m_destinationConfigurationHasBeenSet = true; m_destinationConfiguration = std::move(value); }
     inline CreateLoggingConfigurationRequest& WithDestinationConfiguration(const DestinationConfiguration& value) { SetDestinationConfiguration(value); return *this;}
     inline CreateLoggingConfigurationRequest& WithDestinationConfiguration(DestinationConfiguration&& value) { SetDestinationConfiguration(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Logging-configuration name. The value does not need to be unique.</p>
-     */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CreateLoggingConfigurationRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateLoggingConfigurationRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateLoggingConfigurationRequest& WithName(const char* value) { SetName(value); return *this;}
     ///@}
 
     ///@{
@@ -88,11 +88,11 @@ namespace Model
     ///@}
   private:
 
-    DestinationConfiguration m_destinationConfiguration;
-    bool m_destinationConfigurationHasBeenSet = false;
-
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
+
+    DestinationConfiguration m_destinationConfiguration;
+    bool m_destinationConfigurationHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;

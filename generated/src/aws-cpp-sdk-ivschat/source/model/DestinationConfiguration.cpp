@@ -19,9 +19,9 @@ namespace Model
 {
 
 DestinationConfiguration::DestinationConfiguration() : 
+    m_s3HasBeenSet(false),
     m_cloudWatchLogsHasBeenSet(false),
-    m_firehoseHasBeenSet(false),
-    m_s3HasBeenSet(false)
+    m_firehoseHasBeenSet(false)
 {
 }
 
@@ -33,6 +33,13 @@ DestinationConfiguration::DestinationConfiguration(JsonView jsonValue)
 
 DestinationConfiguration& DestinationConfiguration::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("s3"))
+  {
+    m_s3 = jsonValue.GetObject("s3");
+
+    m_s3HasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("cloudWatchLogs"))
   {
     m_cloudWatchLogs = jsonValue.GetObject("cloudWatchLogs");
@@ -47,19 +54,18 @@ DestinationConfiguration& DestinationConfiguration::operator =(JsonView jsonValu
     m_firehoseHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("s3"))
-  {
-    m_s3 = jsonValue.GetObject("s3");
-
-    m_s3HasBeenSet = true;
-  }
-
   return *this;
 }
 
 JsonValue DestinationConfiguration::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_s3HasBeenSet)
+  {
+   payload.WithObject("s3", m_s3.Jsonize());
+
+  }
 
   if(m_cloudWatchLogsHasBeenSet)
   {
@@ -70,12 +76,6 @@ JsonValue DestinationConfiguration::Jsonize() const
   if(m_firehoseHasBeenSet)
   {
    payload.WithObject("firehose", m_firehose.Jsonize());
-
-  }
-
-  if(m_s3HasBeenSet)
-  {
-   payload.WithObject("s3", m_s3.Jsonize());
 
   }
 

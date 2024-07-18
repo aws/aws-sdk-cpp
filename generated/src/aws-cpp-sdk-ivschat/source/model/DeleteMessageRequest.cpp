@@ -13,15 +13,21 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 DeleteMessageRequest::DeleteMessageRequest() : 
+    m_roomIdentifierHasBeenSet(false),
     m_idHasBeenSet(false),
-    m_reasonHasBeenSet(false),
-    m_roomIdentifierHasBeenSet(false)
+    m_reasonHasBeenSet(false)
 {
 }
 
 Aws::String DeleteMessageRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_roomIdentifierHasBeenSet)
+  {
+   payload.WithString("roomIdentifier", m_roomIdentifier);
+
+  }
 
   if(m_idHasBeenSet)
   {
@@ -32,12 +38,6 @@ Aws::String DeleteMessageRequest::SerializePayload() const
   if(m_reasonHasBeenSet)
   {
    payload.WithString("reason", m_reason);
-
-  }
-
-  if(m_roomIdentifierHasBeenSet)
-  {
-   payload.WithString("roomIdentifier", m_roomIdentifier);
 
   }
 

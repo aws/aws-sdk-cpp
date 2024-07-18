@@ -25,7 +25,8 @@ CreateInputRequest::CreateInputRequest() :
     m_tagsHasBeenSet(false),
     m_type(InputType::NOT_SET),
     m_typeHasBeenSet(false),
-    m_vpcHasBeenSet(false)
+    m_vpcHasBeenSet(false),
+    m_srtSettingsHasBeenSet(false)
 {
 }
 
@@ -125,6 +126,12 @@ Aws::String CreateInputRequest::SerializePayload() const
   if(m_vpcHasBeenSet)
   {
    payload.WithObject("vpc", m_vpc.Jsonize());
+
+  }
+
+  if(m_srtSettingsHasBeenSet)
+  {
+   payload.WithObject("srtSettings", m_srtSettings.Jsonize());
 
   }
 

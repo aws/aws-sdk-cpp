@@ -20,7 +20,8 @@ UpdateInputRequest::UpdateInputRequest() :
     m_mediaConnectFlowsHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_roleArnHasBeenSet(false),
-    m_sourcesHasBeenSet(false)
+    m_sourcesHasBeenSet(false),
+    m_srtSettingsHasBeenSet(false)
 {
 }
 
@@ -92,6 +93,12 @@ Aws::String UpdateInputRequest::SerializePayload() const
      sourcesJsonList[sourcesIndex].AsObject(m_sources[sourcesIndex].Jsonize());
    }
    payload.WithArray("sources", std::move(sourcesJsonList));
+
+  }
+
+  if(m_srtSettingsHasBeenSet)
+  {
+   payload.WithObject("srtSettings", m_srtSettings.Jsonize());
 
   }
 

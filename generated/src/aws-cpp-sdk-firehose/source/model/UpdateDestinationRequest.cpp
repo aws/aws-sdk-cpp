@@ -23,7 +23,8 @@ UpdateDestinationRequest::UpdateDestinationRequest() :
     m_splunkDestinationUpdateHasBeenSet(false),
     m_httpEndpointDestinationUpdateHasBeenSet(false),
     m_amazonOpenSearchServerlessDestinationUpdateHasBeenSet(false),
-    m_snowflakeDestinationUpdateHasBeenSet(false)
+    m_snowflakeDestinationUpdateHasBeenSet(false),
+    m_icebergDestinationUpdateHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,12 @@ Aws::String UpdateDestinationRequest::SerializePayload() const
   if(m_snowflakeDestinationUpdateHasBeenSet)
   {
    payload.WithObject("SnowflakeDestinationUpdate", m_snowflakeDestinationUpdate.Jsonize());
+
+  }
+
+  if(m_icebergDestinationUpdateHasBeenSet)
+  {
+   payload.WithObject("IcebergDestinationUpdate", m_icebergDestinationUpdate.Jsonize());
 
   }
 

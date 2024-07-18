@@ -7,8 +7,8 @@
 #include <aws/ivschat/Ivschat_EXPORTS.h>
 #include <aws/ivschat/IvschatRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ivschat/model/MessageReviewHandler.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -50,17 +50,27 @@ namespace Model
 
     ///@{
     /**
-     * <p>Array of logging-configuration identifiers attached to the room.</p>
+     * <p>Room name. The value does not need to be unique.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetLoggingConfigurationIdentifiers() const{ return m_loggingConfigurationIdentifiers; }
-    inline bool LoggingConfigurationIdentifiersHasBeenSet() const { return m_loggingConfigurationIdentifiersHasBeenSet; }
-    inline void SetLoggingConfigurationIdentifiers(const Aws::Vector<Aws::String>& value) { m_loggingConfigurationIdentifiersHasBeenSet = true; m_loggingConfigurationIdentifiers = value; }
-    inline void SetLoggingConfigurationIdentifiers(Aws::Vector<Aws::String>&& value) { m_loggingConfigurationIdentifiersHasBeenSet = true; m_loggingConfigurationIdentifiers = std::move(value); }
-    inline UpdateRoomRequest& WithLoggingConfigurationIdentifiers(const Aws::Vector<Aws::String>& value) { SetLoggingConfigurationIdentifiers(value); return *this;}
-    inline UpdateRoomRequest& WithLoggingConfigurationIdentifiers(Aws::Vector<Aws::String>&& value) { SetLoggingConfigurationIdentifiers(std::move(value)); return *this;}
-    inline UpdateRoomRequest& AddLoggingConfigurationIdentifiers(const Aws::String& value) { m_loggingConfigurationIdentifiersHasBeenSet = true; m_loggingConfigurationIdentifiers.push_back(value); return *this; }
-    inline UpdateRoomRequest& AddLoggingConfigurationIdentifiers(Aws::String&& value) { m_loggingConfigurationIdentifiersHasBeenSet = true; m_loggingConfigurationIdentifiers.push_back(std::move(value)); return *this; }
-    inline UpdateRoomRequest& AddLoggingConfigurationIdentifiers(const char* value) { m_loggingConfigurationIdentifiersHasBeenSet = true; m_loggingConfigurationIdentifiers.push_back(value); return *this; }
+    inline const Aws::String& GetName() const{ return m_name; }
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
+    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
+    inline UpdateRoomRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
+    inline UpdateRoomRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
+    inline UpdateRoomRequest& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Maximum number of messages per second that can be sent to the room (by all
+     * clients). Default: 10.</p>
+     */
+    inline int GetMaximumMessageRatePerSecond() const{ return m_maximumMessageRatePerSecond; }
+    inline bool MaximumMessageRatePerSecondHasBeenSet() const { return m_maximumMessageRatePerSecondHasBeenSet; }
+    inline void SetMaximumMessageRatePerSecond(int value) { m_maximumMessageRatePerSecondHasBeenSet = true; m_maximumMessageRatePerSecond = value; }
+    inline UpdateRoomRequest& WithMaximumMessageRatePerSecond(int value) { SetMaximumMessageRatePerSecond(value); return *this;}
     ///@}
 
     ///@{
@@ -73,17 +83,6 @@ namespace Model
     inline bool MaximumMessageLengthHasBeenSet() const { return m_maximumMessageLengthHasBeenSet; }
     inline void SetMaximumMessageLength(int value) { m_maximumMessageLengthHasBeenSet = true; m_maximumMessageLength = value; }
     inline UpdateRoomRequest& WithMaximumMessageLength(int value) { SetMaximumMessageLength(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Maximum number of messages per second that can be sent to the room (by all
-     * clients). Default: 10.</p>
-     */
-    inline int GetMaximumMessageRatePerSecond() const{ return m_maximumMessageRatePerSecond; }
-    inline bool MaximumMessageRatePerSecondHasBeenSet() const { return m_maximumMessageRatePerSecondHasBeenSet; }
-    inline void SetMaximumMessageRatePerSecond(int value) { m_maximumMessageRatePerSecondHasBeenSet = true; m_maximumMessageRatePerSecond = value; }
-    inline UpdateRoomRequest& WithMaximumMessageRatePerSecond(int value) { SetMaximumMessageRatePerSecond(value); return *this;}
     ///@}
 
     ///@{
@@ -102,36 +101,37 @@ namespace Model
 
     ///@{
     /**
-     * <p>Room name. The value does not need to be unique.</p>
+     * <p>Array of logging-configuration identifiers attached to the room.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline UpdateRoomRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline UpdateRoomRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline UpdateRoomRequest& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::Vector<Aws::String>& GetLoggingConfigurationIdentifiers() const{ return m_loggingConfigurationIdentifiers; }
+    inline bool LoggingConfigurationIdentifiersHasBeenSet() const { return m_loggingConfigurationIdentifiersHasBeenSet; }
+    inline void SetLoggingConfigurationIdentifiers(const Aws::Vector<Aws::String>& value) { m_loggingConfigurationIdentifiersHasBeenSet = true; m_loggingConfigurationIdentifiers = value; }
+    inline void SetLoggingConfigurationIdentifiers(Aws::Vector<Aws::String>&& value) { m_loggingConfigurationIdentifiersHasBeenSet = true; m_loggingConfigurationIdentifiers = std::move(value); }
+    inline UpdateRoomRequest& WithLoggingConfigurationIdentifiers(const Aws::Vector<Aws::String>& value) { SetLoggingConfigurationIdentifiers(value); return *this;}
+    inline UpdateRoomRequest& WithLoggingConfigurationIdentifiers(Aws::Vector<Aws::String>&& value) { SetLoggingConfigurationIdentifiers(std::move(value)); return *this;}
+    inline UpdateRoomRequest& AddLoggingConfigurationIdentifiers(const Aws::String& value) { m_loggingConfigurationIdentifiersHasBeenSet = true; m_loggingConfigurationIdentifiers.push_back(value); return *this; }
+    inline UpdateRoomRequest& AddLoggingConfigurationIdentifiers(Aws::String&& value) { m_loggingConfigurationIdentifiersHasBeenSet = true; m_loggingConfigurationIdentifiers.push_back(std::move(value)); return *this; }
+    inline UpdateRoomRequest& AddLoggingConfigurationIdentifiers(const char* value) { m_loggingConfigurationIdentifiersHasBeenSet = true; m_loggingConfigurationIdentifiers.push_back(value); return *this; }
     ///@}
   private:
 
     Aws::String m_identifier;
     bool m_identifierHasBeenSet = false;
 
-    Aws::Vector<Aws::String> m_loggingConfigurationIdentifiers;
-    bool m_loggingConfigurationIdentifiersHasBeenSet = false;
-
-    int m_maximumMessageLength;
-    bool m_maximumMessageLengthHasBeenSet = false;
+    Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     int m_maximumMessageRatePerSecond;
     bool m_maximumMessageRatePerSecondHasBeenSet = false;
 
+    int m_maximumMessageLength;
+    bool m_maximumMessageLengthHasBeenSet = false;
+
     MessageReviewHandler m_messageReviewHandler;
     bool m_messageReviewHandlerHasBeenSet = false;
 
-    Aws::String m_name;
-    bool m_nameHasBeenSet = false;
+    Aws::Vector<Aws::String> m_loggingConfigurationIdentifiers;
+    bool m_loggingConfigurationIdentifiersHasBeenSet = false;
   };
 
 } // namespace Model

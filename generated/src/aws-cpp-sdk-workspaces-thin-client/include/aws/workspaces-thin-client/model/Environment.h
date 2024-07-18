@@ -304,8 +304,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>"The tag keys and optional values for the newly created devices for this
-     * environment."</p>
+     * <p>The tag keys and optional values for the newly created devices for this
+     * environment.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetDeviceCreationTags() const{ return m_deviceCreationTags; }
     inline bool DeviceCreationTagsHasBeenSet() const { return m_deviceCreationTagsHasBeenSet; }
