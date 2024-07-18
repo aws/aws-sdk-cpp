@@ -240,8 +240,8 @@ namespace Aws
             }
 
         protected:
-            size_t m_capacity;
-            size_t m_length;
+            size_t m_capacity = 0;
+            size_t m_length = 0;
             Aws::UniqueArrayPtr<T> m_data;
         };
 
@@ -260,35 +260,41 @@ namespace Aws
             CryptoBuffer(const ByteBuffer& other) : ByteBuffer(other) {}
             CryptoBuffer(const CryptoBuffer& other) : ByteBuffer(other) {}
             CryptoBuffer(CryptoBuffer&& other) : ByteBuffer(std::move(other)) {}
-            CryptoBuffer& operator=(const CryptoBuffer&) = default;
-            CryptoBuffer& operator=(CryptoBuffer&& other) { ByteBuffer::operator=(std::move(other)); return *this; }
+            CryptoBuffer& operator=(const CryptoBuffer& other) { Zero(); ByteBuffer::operator=(other); return *this; }
+            CryptoBuffer& operator=(CryptoBuffer&& other) { Zero(); ByteBuffer::operator=(std::move(other)); return *this; }
 
             CryptoBuffer(Crt::ByteBuf&& other) noexcept : ByteBuffer(
                 other.len,
                 other.len,
                 nullptr)
             {
+                // Crt::ByteBuf must be allocated using SDK not CRT allocator
+                assert(get_aws_allocator() == other.allocator);
                 m_data.reset(other.buffer);
                 other.capacity = 0;
                 other.len = 0;
                 other.allocator = nullptr;
+                other.buffer = nullptr;
             }
 
             CryptoBuffer& operator=(Crt::ByteBuf&& other) noexcept
             {
+                // Crt::ByteBuf must be allocated using SDK not CRT allocator
+                assert(get_aws_allocator() == other.allocator);
                 m_capacity = other.len;
                 m_length = other.len;
                 m_data.reset(other.buffer);
                 other.capacity = 0;
                 other.len = 0;
                 other.allocator = nullptr;
+                other.buffer = nullptr;
                 return *this;
             }
 
             bool operator==(const CryptoBuffer& other) const { return ByteBuffer::operator==(other); }
             bool operator!=(const CryptoBuffer& other) const { return ByteBuffer::operator!=(other); }
 
-            ~CryptoBuffer() { Zero(); }
+            ~CryptoBuffer() override { Zero(); }
 
             Array<CryptoBuffer> Slice(size_t sizeOfSlice) const;
             CryptoBuffer& operator^(const CryptoBuffer& operand);
