@@ -15,6 +15,7 @@
 #include <aws/firehose/model/HttpEndpointDestinationDescription.h>
 #include <aws/firehose/model/SnowflakeDestinationDescription.h>
 #include <aws/firehose/model/AmazonOpenSearchServerlessDestinationDescription.h>
+#include <aws/firehose/model/IcebergDestinationDescription.h>
 #include <utility>
 
 namespace Aws
@@ -168,6 +169,19 @@ namespace Model
     inline DestinationDescription& WithAmazonOpenSearchServerlessDestinationDescription(const AmazonOpenSearchServerlessDestinationDescription& value) { SetAmazonOpenSearchServerlessDestinationDescription(value); return *this;}
     inline DestinationDescription& WithAmazonOpenSearchServerlessDestinationDescription(AmazonOpenSearchServerlessDestinationDescription&& value) { SetAmazonOpenSearchServerlessDestinationDescription(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p> Describes a destination in Apache Iceberg Tables. </p> <p>Amazon Data
+     * Firehose is in preview release and is subject to change.</p>
+     */
+    inline const IcebergDestinationDescription& GetIcebergDestinationDescription() const{ return m_icebergDestinationDescription; }
+    inline bool IcebergDestinationDescriptionHasBeenSet() const { return m_icebergDestinationDescriptionHasBeenSet; }
+    inline void SetIcebergDestinationDescription(const IcebergDestinationDescription& value) { m_icebergDestinationDescriptionHasBeenSet = true; m_icebergDestinationDescription = value; }
+    inline void SetIcebergDestinationDescription(IcebergDestinationDescription&& value) { m_icebergDestinationDescriptionHasBeenSet = true; m_icebergDestinationDescription = std::move(value); }
+    inline DestinationDescription& WithIcebergDestinationDescription(const IcebergDestinationDescription& value) { SetIcebergDestinationDescription(value); return *this;}
+    inline DestinationDescription& WithIcebergDestinationDescription(IcebergDestinationDescription&& value) { SetIcebergDestinationDescription(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_destinationId;
@@ -199,6 +213,9 @@ namespace Model
 
     AmazonOpenSearchServerlessDestinationDescription m_amazonOpenSearchServerlessDestinationDescription;
     bool m_amazonOpenSearchServerlessDestinationDescriptionHasBeenSet = false;
+
+    IcebergDestinationDescription m_icebergDestinationDescription;
+    bool m_icebergDestinationDescriptionHasBeenSet = false;
   };
 
 } // namespace Model

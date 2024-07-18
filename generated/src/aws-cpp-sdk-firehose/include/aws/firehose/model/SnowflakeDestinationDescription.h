@@ -15,6 +15,7 @@
 #include <aws/firehose/model/SnowflakeS3BackupMode.h>
 #include <aws/firehose/model/S3DestinationDescription.h>
 #include <aws/firehose/model/SecretsManagerConfiguration.h>
+#include <aws/firehose/model/SnowflakeBufferingHints.h>
 #include <utility>
 
 namespace Aws
@@ -272,6 +273,20 @@ namespace Model
     inline SnowflakeDestinationDescription& WithSecretsManagerConfiguration(const SecretsManagerConfiguration& value) { SetSecretsManagerConfiguration(value); return *this;}
     inline SnowflakeDestinationDescription& WithSecretsManagerConfiguration(SecretsManagerConfiguration&& value) { SetSecretsManagerConfiguration(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p> Describes the buffering to perform before delivering data to the Snowflake
+     * destination. If you do not specify any value, Firehose uses the default values.
+     * </p>
+     */
+    inline const SnowflakeBufferingHints& GetBufferingHints() const{ return m_bufferingHints; }
+    inline bool BufferingHintsHasBeenSet() const { return m_bufferingHintsHasBeenSet; }
+    inline void SetBufferingHints(const SnowflakeBufferingHints& value) { m_bufferingHintsHasBeenSet = true; m_bufferingHints = value; }
+    inline void SetBufferingHints(SnowflakeBufferingHints&& value) { m_bufferingHintsHasBeenSet = true; m_bufferingHints = std::move(value); }
+    inline SnowflakeDestinationDescription& WithBufferingHints(const SnowflakeBufferingHints& value) { SetBufferingHints(value); return *this;}
+    inline SnowflakeDestinationDescription& WithBufferingHints(SnowflakeBufferingHints&& value) { SetBufferingHints(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_accountUrl;
@@ -324,6 +339,9 @@ namespace Model
 
     SecretsManagerConfiguration m_secretsManagerConfiguration;
     bool m_secretsManagerConfigurationHasBeenSet = false;
+
+    SnowflakeBufferingHints m_bufferingHints;
+    bool m_bufferingHintsHasBeenSet = false;
   };
 
 } // namespace Model

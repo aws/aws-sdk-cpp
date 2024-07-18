@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/ivschat/Ivschat_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ivschat/model/RoomSummary.h>
 #include <utility>
 
@@ -36,6 +36,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>List of the matching rooms (summary information only).</p>
+     */
+    inline const Aws::Vector<RoomSummary>& GetRooms() const{ return m_rooms; }
+    inline void SetRooms(const Aws::Vector<RoomSummary>& value) { m_rooms = value; }
+    inline void SetRooms(Aws::Vector<RoomSummary>&& value) { m_rooms = std::move(value); }
+    inline ListRoomsResult& WithRooms(const Aws::Vector<RoomSummary>& value) { SetRooms(value); return *this;}
+    inline ListRoomsResult& WithRooms(Aws::Vector<RoomSummary>&& value) { SetRooms(std::move(value)); return *this;}
+    inline ListRoomsResult& AddRooms(const RoomSummary& value) { m_rooms.push_back(value); return *this; }
+    inline ListRoomsResult& AddRooms(RoomSummary&& value) { m_rooms.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>If there are more rooms than <code>maxResults</code>, use
      * <code>nextToken</code> in the request to get the next set.</p>
      */
@@ -46,19 +59,6 @@ namespace Model
     inline ListRoomsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
     inline ListRoomsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
     inline ListRoomsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>List of the matching rooms (summary information only).</p>
-     */
-    inline const Aws::Vector<RoomSummary>& GetRooms() const{ return m_rooms; }
-    inline void SetRooms(const Aws::Vector<RoomSummary>& value) { m_rooms = value; }
-    inline void SetRooms(Aws::Vector<RoomSummary>&& value) { m_rooms = std::move(value); }
-    inline ListRoomsResult& WithRooms(const Aws::Vector<RoomSummary>& value) { SetRooms(value); return *this;}
-    inline ListRoomsResult& WithRooms(Aws::Vector<RoomSummary>&& value) { SetRooms(std::move(value)); return *this;}
-    inline ListRoomsResult& AddRooms(const RoomSummary& value) { m_rooms.push_back(value); return *this; }
-    inline ListRoomsResult& AddRooms(RoomSummary&& value) { m_rooms.push_back(std::move(value)); return *this; }
     ///@}
 
     ///@{
@@ -73,9 +73,9 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_nextToken;
-
     Aws::Vector<RoomSummary> m_rooms;
+
+    Aws::String m_nextToken;
 
     Aws::String m_requestId;
   };

@@ -11,6 +11,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/medialive/model/InputType.h>
 #include <aws/medialive/model/InputVpcRequest.h>
+#include <aws/medialive/model/SrtSettingsRequest.h>
 #include <aws/medialive/model/InputDestinationRequest.h>
 #include <aws/medialive/model/InputDeviceSettings.h>
 #include <aws/medialive/model/MediaConnectFlowRequest.h>
@@ -207,6 +208,18 @@ Only specify sources for PULL type Inputs. Leave
     inline CreateInputRequest& WithVpc(const InputVpcRequest& value) { SetVpc(value); return *this;}
     inline CreateInputRequest& WithVpc(InputVpcRequest&& value) { SetVpc(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * The settings associated with an SRT input.
+     */
+    inline const SrtSettingsRequest& GetSrtSettings() const{ return m_srtSettings; }
+    inline bool SrtSettingsHasBeenSet() const { return m_srtSettingsHasBeenSet; }
+    inline void SetSrtSettings(const SrtSettingsRequest& value) { m_srtSettingsHasBeenSet = true; m_srtSettings = value; }
+    inline void SetSrtSettings(SrtSettingsRequest&& value) { m_srtSettingsHasBeenSet = true; m_srtSettings = std::move(value); }
+    inline CreateInputRequest& WithSrtSettings(const SrtSettingsRequest& value) { SetSrtSettings(value); return *this;}
+    inline CreateInputRequest& WithSrtSettings(SrtSettingsRequest&& value) { SetSrtSettings(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::Vector<InputDestinationRequest> m_destinations;
@@ -241,6 +254,9 @@ Only specify sources for PULL type Inputs. Leave
 
     InputVpcRequest m_vpc;
     bool m_vpcHasBeenSet = false;
+
+    SrtSettingsRequest m_srtSettings;
+    bool m_srtSettingsHasBeenSet = false;
   };
 
 } // namespace Model

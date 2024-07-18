@@ -1,0 +1,64 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/connect/Connect_EXPORTS.h>
+#include <aws/connect/model/ControlPlaneAttributeFilter.h>
+#include <utility>
+
+namespace Aws
+{
+namespace Utils
+{
+namespace Json
+{
+  class JsonValue;
+  class JsonView;
+} // namespace Json
+} // namespace Utils
+namespace Connect
+{
+namespace Model
+{
+
+  /**
+   * <p>Filters to be applied to search results.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AgentStatusSearchFilter">AWS
+   * API Reference</a></p>
+   */
+  class AgentStatusSearchFilter
+  {
+  public:
+    AWS_CONNECT_API AgentStatusSearchFilter();
+    AWS_CONNECT_API AgentStatusSearchFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API AgentStatusSearchFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    ///@{
+    /**
+     * <p>An object that can be used to specify Tag conditions inside the
+     * <code>SearchFilter</code>. This accepts an <code>OR</code> of <code>AND</code>
+     * (List of List) input where: </p> <ul> <li> <p>The top level list specifies
+     * conditions that need to be applied with <code>OR</code> operator.</p> </li> <li>
+     * <p>The inner list specifies conditions that need to be applied with
+     * <code>AND</code> operator.</p> </li> </ul>
+     */
+    inline const ControlPlaneAttributeFilter& GetAttributeFilter() const{ return m_attributeFilter; }
+    inline bool AttributeFilterHasBeenSet() const { return m_attributeFilterHasBeenSet; }
+    inline void SetAttributeFilter(const ControlPlaneAttributeFilter& value) { m_attributeFilterHasBeenSet = true; m_attributeFilter = value; }
+    inline void SetAttributeFilter(ControlPlaneAttributeFilter&& value) { m_attributeFilterHasBeenSet = true; m_attributeFilter = std::move(value); }
+    inline AgentStatusSearchFilter& WithAttributeFilter(const ControlPlaneAttributeFilter& value) { SetAttributeFilter(value); return *this;}
+    inline AgentStatusSearchFilter& WithAttributeFilter(ControlPlaneAttributeFilter&& value) { SetAttributeFilter(std::move(value)); return *this;}
+    ///@}
+  private:
+
+    ControlPlaneAttributeFilter m_attributeFilter;
+    bool m_attributeFilterHasBeenSet = false;
+  };
+
+} // namespace Model
+} // namespace Connect
+} // namespace Aws

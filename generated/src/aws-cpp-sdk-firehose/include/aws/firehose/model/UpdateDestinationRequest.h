@@ -15,6 +15,7 @@
 #include <aws/firehose/model/HttpEndpointDestinationUpdate.h>
 #include <aws/firehose/model/AmazonOpenSearchServerlessDestinationUpdate.h>
 #include <aws/firehose/model/SnowflakeDestinationUpdate.h>
+#include <aws/firehose/model/IcebergDestinationUpdate.h>
 #include <utility>
 
 namespace Aws
@@ -185,6 +186,19 @@ namespace Model
     inline UpdateDestinationRequest& WithSnowflakeDestinationUpdate(const SnowflakeDestinationUpdate& value) { SetSnowflakeDestinationUpdate(value); return *this;}
     inline UpdateDestinationRequest& WithSnowflakeDestinationUpdate(SnowflakeDestinationUpdate&& value) { SetSnowflakeDestinationUpdate(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p> Describes an update for a destination in Apache Iceberg Tables. </p>
+     * <p>Amazon Data Firehose is in preview release and is subject to change.</p>
+     */
+    inline const IcebergDestinationUpdate& GetIcebergDestinationUpdate() const{ return m_icebergDestinationUpdate; }
+    inline bool IcebergDestinationUpdateHasBeenSet() const { return m_icebergDestinationUpdateHasBeenSet; }
+    inline void SetIcebergDestinationUpdate(const IcebergDestinationUpdate& value) { m_icebergDestinationUpdateHasBeenSet = true; m_icebergDestinationUpdate = value; }
+    inline void SetIcebergDestinationUpdate(IcebergDestinationUpdate&& value) { m_icebergDestinationUpdateHasBeenSet = true; m_icebergDestinationUpdate = std::move(value); }
+    inline UpdateDestinationRequest& WithIcebergDestinationUpdate(const IcebergDestinationUpdate& value) { SetIcebergDestinationUpdate(value); return *this;}
+    inline UpdateDestinationRequest& WithIcebergDestinationUpdate(IcebergDestinationUpdate&& value) { SetIcebergDestinationUpdate(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_deliveryStreamName;
@@ -219,6 +233,9 @@ namespace Model
 
     SnowflakeDestinationUpdate m_snowflakeDestinationUpdate;
     bool m_snowflakeDestinationUpdateHasBeenSet = false;
+
+    IcebergDestinationUpdate m_icebergDestinationUpdate;
+    bool m_icebergDestinationUpdateHasBeenSet = false;
   };
 
 } // namespace Model

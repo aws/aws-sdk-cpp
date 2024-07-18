@@ -59,7 +59,23 @@ namespace Model
     ml_g4dn_4xlarge,
     ml_g4dn_8xlarge,
     ml_g4dn_12xlarge,
-    ml_g4dn_16xlarge
+    ml_g4dn_16xlarge,
+    ml_g5_xlarge,
+    ml_g5_2xlarge,
+    ml_g5_4xlarge,
+    ml_g5_8xlarge,
+    ml_g5_16xlarge,
+    ml_g5_12xlarge,
+    ml_g5_24xlarge,
+    ml_g5_48xlarge,
+    ml_r5d_large,
+    ml_r5d_xlarge,
+    ml_r5d_2xlarge,
+    ml_r5d_4xlarge,
+    ml_r5d_8xlarge,
+    ml_r5d_12xlarge,
+    ml_r5d_16xlarge,
+    ml_r5d_24xlarge
   };
 
 namespace ProcessingInstanceTypeMapper

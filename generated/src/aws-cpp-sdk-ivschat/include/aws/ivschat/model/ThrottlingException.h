@@ -39,16 +39,6 @@ namespace Model
 
 
     ///@{
-    /**
-     * <p/>
-     */
-    inline int GetLimit() const{ return m_limit; }
-    inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
-    inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
-    inline ThrottlingException& WithLimit(int value) { SetLimit(value); return *this;}
-    ///@}
-
-    ///@{
     
     inline const Aws::String& GetMessage() const{ return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
@@ -85,10 +75,17 @@ namespace Model
     inline ThrottlingException& WithResourceType(const ResourceType& value) { SetResourceType(value); return *this;}
     inline ThrottlingException& WithResourceType(ResourceType&& value) { SetResourceType(std::move(value)); return *this;}
     ///@}
-  private:
 
-    int m_limit;
-    bool m_limitHasBeenSet = false;
+    ///@{
+    /**
+     * <p/>
+     */
+    inline int GetLimit() const{ return m_limit; }
+    inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
+    inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
+    inline ThrottlingException& WithLimit(int value) { SetLimit(value); return *this;}
+    ///@}
+  private:
 
     Aws::String m_message;
     bool m_messageHasBeenSet = false;
@@ -98,6 +95,9 @@ namespace Model
 
     ResourceType m_resourceType;
     bool m_resourceTypeHasBeenSet = false;
+
+    int m_limit;
+    bool m_limitHasBeenSet = false;
   };
 
 } // namespace Model

@@ -60,8 +60,8 @@ namespace Model
     ///@{
     /**
      * <p>A specific source to return parameters for.</p> <p>Valid Values:</p> <ul>
-     * <li> <p> <code>customer</code> </p> </li> <li> <p> <code>engine</code> </p>
-     * </li> <li> <p> <code>service</code> </p> </li> </ul>
+     * <li> <p> <code>user</code> </p> </li> <li> <p> <code>engine</code> </p> </li>
+     * <li> <p> <code>service</code> </p> </li> </ul>
      */
     inline const Aws::String& GetSource() const{ return m_source; }
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }

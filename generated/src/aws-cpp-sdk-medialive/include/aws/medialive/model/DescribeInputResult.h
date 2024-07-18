@@ -12,6 +12,7 @@
 #include <aws/medialive/model/InputState.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/medialive/model/InputType.h>
+#include <aws/medialive/model/SrtSettings.h>
 #include <aws/medialive/model/InputDestination.h>
 #include <aws/medialive/model/InputDeviceSettings.h>
 #include <aws/medialive/model/MediaConnectFlow.h>
@@ -264,6 +265,17 @@ during input switch actions. Presently, this
     ///@}
 
     ///@{
+    /**
+     * The settings associated with an SRT input.
+     */
+    inline const SrtSettings& GetSrtSettings() const{ return m_srtSettings; }
+    inline void SetSrtSettings(const SrtSettings& value) { m_srtSettings = value; }
+    inline void SetSrtSettings(SrtSettings&& value) { m_srtSettings = std::move(value); }
+    inline DescribeInputResult& WithSrtSettings(const SrtSettings& value) { SetSrtSettings(value); return *this;}
+    inline DescribeInputResult& WithSrtSettings(SrtSettings&& value) { SetSrtSettings(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -306,6 +318,8 @@ during input switch actions. Presently, this
     Aws::Map<Aws::String, Aws::String> m_tags;
 
     InputType m_type;
+
+    SrtSettings m_srtSettings;
 
     Aws::String m_requestId;
   };

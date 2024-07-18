@@ -154,6 +154,12 @@ DescribeInputResult& DescribeInputResult::operator =(const Aws::AmazonWebService
 
   }
 
+  if(jsonValue.ValueExists("srtSettings"))
+  {
+    m_srtSettings = jsonValue.GetObject("srtSettings");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

@@ -38,7 +38,8 @@ Input::Input() :
     m_stateHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_type(InputType::NOT_SET),
-    m_typeHasBeenSet(false)
+    m_typeHasBeenSet(false),
+    m_srtSettingsHasBeenSet(false)
 {
 }
 
@@ -186,6 +187,13 @@ Input& Input::operator =(JsonView jsonValue)
     m_typeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("srtSettings"))
+  {
+    m_srtSettings = jsonValue.GetObject("srtSettings");
+
+    m_srtSettingsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -323,6 +331,12 @@ JsonValue Input::Jsonize() const
   if(m_typeHasBeenSet)
   {
    payload.WithString("type", InputTypeMapper::GetNameForInputType(m_type));
+  }
+
+  if(m_srtSettingsHasBeenSet)
+  {
+   payload.WithObject("srtSettings", m_srtSettings.Jsonize());
+
   }
 
   return payload;

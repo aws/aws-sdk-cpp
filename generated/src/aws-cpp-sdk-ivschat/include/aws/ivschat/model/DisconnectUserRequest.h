@@ -34,20 +34,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Reason for disconnecting the user.</p>
-     */
-    inline const Aws::String& GetReason() const{ return m_reason; }
-    inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
-    inline void SetReason(const Aws::String& value) { m_reasonHasBeenSet = true; m_reason = value; }
-    inline void SetReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
-    inline void SetReason(const char* value) { m_reasonHasBeenSet = true; m_reason.assign(value); }
-    inline DisconnectUserRequest& WithReason(const Aws::String& value) { SetReason(value); return *this;}
-    inline DisconnectUserRequest& WithReason(Aws::String&& value) { SetReason(std::move(value)); return *this;}
-    inline DisconnectUserRequest& WithReason(const char* value) { SetReason(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Identifier of the room from which the user's clients should be disconnected.
      * Currently this must be an ARN.</p>
      */
@@ -74,16 +60,30 @@ namespace Model
     inline DisconnectUserRequest& WithUserId(Aws::String&& value) { SetUserId(std::move(value)); return *this;}
     inline DisconnectUserRequest& WithUserId(const char* value) { SetUserId(value); return *this;}
     ///@}
-  private:
 
-    Aws::String m_reason;
-    bool m_reasonHasBeenSet = false;
+    ///@{
+    /**
+     * <p>Reason for disconnecting the user.</p>
+     */
+    inline const Aws::String& GetReason() const{ return m_reason; }
+    inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
+    inline void SetReason(const Aws::String& value) { m_reasonHasBeenSet = true; m_reason = value; }
+    inline void SetReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
+    inline void SetReason(const char* value) { m_reasonHasBeenSet = true; m_reason.assign(value); }
+    inline DisconnectUserRequest& WithReason(const Aws::String& value) { SetReason(value); return *this;}
+    inline DisconnectUserRequest& WithReason(Aws::String&& value) { SetReason(std::move(value)); return *this;}
+    inline DisconnectUserRequest& WithReason(const char* value) { SetReason(value); return *this;}
+    ///@}
+  private:
 
     Aws::String m_roomIdentifier;
     bool m_roomIdentifierHasBeenSet = false;
 
     Aws::String m_userId;
     bool m_userIdHasBeenSet = false;
+
+    Aws::String m_reason;
+    bool m_reasonHasBeenSet = false;
   };
 
 } // namespace Model

@@ -53,7 +53,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The pricing model for queries in an account.</p>
+     * <p>The pricing model for queries in an account.</p>  <p>The
+     * <code>QueryPricingModel</code> parameter is used by several Timestream
+     * operations; however, the <code>UpdateAccountSettings</code> API operation
+     * doesn't recognize any values other than <code>COMPUTE_UNITS</code>.</p> 
      */
     inline const QueryPricingModel& GetQueryPricingModel() const{ return m_queryPricingModel; }
     inline bool QueryPricingModelHasBeenSet() const { return m_queryPricingModelHasBeenSet; }

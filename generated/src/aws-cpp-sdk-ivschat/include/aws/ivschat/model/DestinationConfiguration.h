@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/ivschat/Ivschat_EXPORTS.h>
+#include <aws/ivschat/model/S3DestinationConfiguration.h>
 #include <aws/ivschat/model/CloudWatchLogsDestinationConfiguration.h>
 #include <aws/ivschat/model/FirehoseDestinationConfiguration.h>
-#include <aws/ivschat/model/S3DestinationConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -44,6 +44,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>An Amazon S3 destination configuration where chat activity will be
+     * logged.</p>
+     */
+    inline const S3DestinationConfiguration& GetS3() const{ return m_s3; }
+    inline bool S3HasBeenSet() const { return m_s3HasBeenSet; }
+    inline void SetS3(const S3DestinationConfiguration& value) { m_s3HasBeenSet = true; m_s3 = value; }
+    inline void SetS3(S3DestinationConfiguration&& value) { m_s3HasBeenSet = true; m_s3 = std::move(value); }
+    inline DestinationConfiguration& WithS3(const S3DestinationConfiguration& value) { SetS3(value); return *this;}
+    inline DestinationConfiguration& WithS3(S3DestinationConfiguration&& value) { SetS3(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>An Amazon CloudWatch Logs destination configuration where chat activity will
      * be logged.</p>
      */
@@ -67,29 +80,16 @@ namespace Model
     inline DestinationConfiguration& WithFirehose(const FirehoseDestinationConfiguration& value) { SetFirehose(value); return *this;}
     inline DestinationConfiguration& WithFirehose(FirehoseDestinationConfiguration&& value) { SetFirehose(std::move(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>An Amazon S3 destination configuration where chat activity will be
-     * logged.</p>
-     */
-    inline const S3DestinationConfiguration& GetS3() const{ return m_s3; }
-    inline bool S3HasBeenSet() const { return m_s3HasBeenSet; }
-    inline void SetS3(const S3DestinationConfiguration& value) { m_s3HasBeenSet = true; m_s3 = value; }
-    inline void SetS3(S3DestinationConfiguration&& value) { m_s3HasBeenSet = true; m_s3 = std::move(value); }
-    inline DestinationConfiguration& WithS3(const S3DestinationConfiguration& value) { SetS3(value); return *this;}
-    inline DestinationConfiguration& WithS3(S3DestinationConfiguration&& value) { SetS3(std::move(value)); return *this;}
-    ///@}
   private:
+
+    S3DestinationConfiguration m_s3;
+    bool m_s3HasBeenSet = false;
 
     CloudWatchLogsDestinationConfiguration m_cloudWatchLogs;
     bool m_cloudWatchLogsHasBeenSet = false;
 
     FirehoseDestinationConfiguration m_firehose;
     bool m_firehoseHasBeenSet = false;
-
-    S3DestinationConfiguration m_s3;
-    bool m_s3HasBeenSet = false;
   };
 
 } // namespace Model

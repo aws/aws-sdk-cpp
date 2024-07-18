@@ -90,6 +90,7 @@
 #include <aws/ec2/model/CreateInstanceExportTaskResponse.h>
 #include <aws/ec2/model/CreateInternetGatewayResponse.h>
 #include <aws/ec2/model/CreateIpamResponse.h>
+#include <aws/ec2/model/CreateIpamExternalResourceVerificationTokenResponse.h>
 #include <aws/ec2/model/CreateIpamPoolResponse.h>
 #include <aws/ec2/model/CreateIpamResourceDiscoveryResponse.h>
 #include <aws/ec2/model/CreateIpamScopeResponse.h>
@@ -160,6 +161,7 @@
 #include <aws/ec2/model/DeleteInstanceConnectEndpointResponse.h>
 #include <aws/ec2/model/DeleteInstanceEventWindowResponse.h>
 #include <aws/ec2/model/DeleteIpamResponse.h>
+#include <aws/ec2/model/DeleteIpamExternalResourceVerificationTokenResponse.h>
 #include <aws/ec2/model/DeleteIpamPoolResponse.h>
 #include <aws/ec2/model/DeleteIpamResourceDiscoveryResponse.h>
 #include <aws/ec2/model/DeleteIpamScopeResponse.h>
@@ -267,6 +269,7 @@
 #include <aws/ec2/model/DescribeInstancesResponse.h>
 #include <aws/ec2/model/DescribeInternetGatewaysResponse.h>
 #include <aws/ec2/model/DescribeIpamByoasnResponse.h>
+#include <aws/ec2/model/DescribeIpamExternalResourceVerificationTokensResponse.h>
 #include <aws/ec2/model/DescribeIpamPoolsResponse.h>
 #include <aws/ec2/model/DescribeIpamResourceDiscoveriesResponse.h>
 #include <aws/ec2/model/DescribeIpamResourceDiscoveryAssociationsResponse.h>
@@ -639,6 +642,7 @@
 #include <aws/ec2/model/DescribeClientVpnEndpointsRequest.h>
 #include <aws/ec2/model/CreateVpcEndpointServiceConfigurationRequest.h>
 #include <aws/ec2/model/DeleteKeyPairRequest.h>
+#include <aws/ec2/model/DescribeIpamExternalResourceVerificationTokensRequest.h>
 #include <aws/ec2/model/DescribeCarrierGatewaysRequest.h>
 #include <aws/ec2/model/DescribeSnapshotTierStatusRequest.h>
 #include <aws/ec2/model/ModifyInstanceMetadataDefaultsRequest.h>
@@ -888,6 +892,7 @@ namespace Aws
       class CreateInstanceExportTaskRequest;
       class CreateInternetGatewayRequest;
       class CreateIpamRequest;
+      class CreateIpamExternalResourceVerificationTokenRequest;
       class CreateIpamPoolRequest;
       class CreateIpamResourceDiscoveryRequest;
       class CreateIpamScopeRequest;
@@ -964,6 +969,7 @@ namespace Aws
       class DeleteInstanceEventWindowRequest;
       class DeleteInternetGatewayRequest;
       class DeleteIpamRequest;
+      class DeleteIpamExternalResourceVerificationTokenRequest;
       class DeleteIpamPoolRequest;
       class DeleteIpamResourceDiscoveryRequest;
       class DeleteIpamScopeRequest;
@@ -1088,6 +1094,7 @@ namespace Aws
       class DescribeInstancesRequest;
       class DescribeInternetGatewaysRequest;
       class DescribeIpamByoasnRequest;
+      class DescribeIpamExternalResourceVerificationTokensRequest;
       class DescribeIpamPoolsRequest;
       class DescribeIpamResourceDiscoveriesRequest;
       class DescribeIpamResourceDiscoveryAssociationsRequest;
@@ -1513,6 +1520,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<CreateInstanceExportTaskResponse, EC2Error> CreateInstanceExportTaskOutcome;
       typedef Aws::Utils::Outcome<CreateInternetGatewayResponse, EC2Error> CreateInternetGatewayOutcome;
       typedef Aws::Utils::Outcome<CreateIpamResponse, EC2Error> CreateIpamOutcome;
+      typedef Aws::Utils::Outcome<CreateIpamExternalResourceVerificationTokenResponse, EC2Error> CreateIpamExternalResourceVerificationTokenOutcome;
       typedef Aws::Utils::Outcome<CreateIpamPoolResponse, EC2Error> CreateIpamPoolOutcome;
       typedef Aws::Utils::Outcome<CreateIpamResourceDiscoveryResponse, EC2Error> CreateIpamResourceDiscoveryOutcome;
       typedef Aws::Utils::Outcome<CreateIpamScopeResponse, EC2Error> CreateIpamScopeOutcome;
@@ -1589,6 +1597,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DeleteInstanceEventWindowResponse, EC2Error> DeleteInstanceEventWindowOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> DeleteInternetGatewayOutcome;
       typedef Aws::Utils::Outcome<DeleteIpamResponse, EC2Error> DeleteIpamOutcome;
+      typedef Aws::Utils::Outcome<DeleteIpamExternalResourceVerificationTokenResponse, EC2Error> DeleteIpamExternalResourceVerificationTokenOutcome;
       typedef Aws::Utils::Outcome<DeleteIpamPoolResponse, EC2Error> DeleteIpamPoolOutcome;
       typedef Aws::Utils::Outcome<DeleteIpamResourceDiscoveryResponse, EC2Error> DeleteIpamResourceDiscoveryOutcome;
       typedef Aws::Utils::Outcome<DeleteIpamScopeResponse, EC2Error> DeleteIpamScopeOutcome;
@@ -1713,6 +1722,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DescribeInstancesResponse, EC2Error> DescribeInstancesOutcome;
       typedef Aws::Utils::Outcome<DescribeInternetGatewaysResponse, EC2Error> DescribeInternetGatewaysOutcome;
       typedef Aws::Utils::Outcome<DescribeIpamByoasnResponse, EC2Error> DescribeIpamByoasnOutcome;
+      typedef Aws::Utils::Outcome<DescribeIpamExternalResourceVerificationTokensResponse, EC2Error> DescribeIpamExternalResourceVerificationTokensOutcome;
       typedef Aws::Utils::Outcome<DescribeIpamPoolsResponse, EC2Error> DescribeIpamPoolsOutcome;
       typedef Aws::Utils::Outcome<DescribeIpamResourceDiscoveriesResponse, EC2Error> DescribeIpamResourceDiscoveriesOutcome;
       typedef Aws::Utils::Outcome<DescribeIpamResourceDiscoveryAssociationsResponse, EC2Error> DescribeIpamResourceDiscoveryAssociationsOutcome;
@@ -2138,6 +2148,7 @@ namespace Aws
       typedef std::future<CreateInstanceExportTaskOutcome> CreateInstanceExportTaskOutcomeCallable;
       typedef std::future<CreateInternetGatewayOutcome> CreateInternetGatewayOutcomeCallable;
       typedef std::future<CreateIpamOutcome> CreateIpamOutcomeCallable;
+      typedef std::future<CreateIpamExternalResourceVerificationTokenOutcome> CreateIpamExternalResourceVerificationTokenOutcomeCallable;
       typedef std::future<CreateIpamPoolOutcome> CreateIpamPoolOutcomeCallable;
       typedef std::future<CreateIpamResourceDiscoveryOutcome> CreateIpamResourceDiscoveryOutcomeCallable;
       typedef std::future<CreateIpamScopeOutcome> CreateIpamScopeOutcomeCallable;
@@ -2214,6 +2225,7 @@ namespace Aws
       typedef std::future<DeleteInstanceEventWindowOutcome> DeleteInstanceEventWindowOutcomeCallable;
       typedef std::future<DeleteInternetGatewayOutcome> DeleteInternetGatewayOutcomeCallable;
       typedef std::future<DeleteIpamOutcome> DeleteIpamOutcomeCallable;
+      typedef std::future<DeleteIpamExternalResourceVerificationTokenOutcome> DeleteIpamExternalResourceVerificationTokenOutcomeCallable;
       typedef std::future<DeleteIpamPoolOutcome> DeleteIpamPoolOutcomeCallable;
       typedef std::future<DeleteIpamResourceDiscoveryOutcome> DeleteIpamResourceDiscoveryOutcomeCallable;
       typedef std::future<DeleteIpamScopeOutcome> DeleteIpamScopeOutcomeCallable;
@@ -2338,6 +2350,7 @@ namespace Aws
       typedef std::future<DescribeInstancesOutcome> DescribeInstancesOutcomeCallable;
       typedef std::future<DescribeInternetGatewaysOutcome> DescribeInternetGatewaysOutcomeCallable;
       typedef std::future<DescribeIpamByoasnOutcome> DescribeIpamByoasnOutcomeCallable;
+      typedef std::future<DescribeIpamExternalResourceVerificationTokensOutcome> DescribeIpamExternalResourceVerificationTokensOutcomeCallable;
       typedef std::future<DescribeIpamPoolsOutcome> DescribeIpamPoolsOutcomeCallable;
       typedef std::future<DescribeIpamResourceDiscoveriesOutcome> DescribeIpamResourceDiscoveriesOutcomeCallable;
       typedef std::future<DescribeIpamResourceDiscoveryAssociationsOutcome> DescribeIpamResourceDiscoveryAssociationsOutcomeCallable;
@@ -2766,6 +2779,7 @@ namespace Aws
     typedef std::function<void(const EC2Client*, const Model::CreateInstanceExportTaskRequest&, const Model::CreateInstanceExportTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateInstanceExportTaskResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateInternetGatewayRequest&, const Model::CreateInternetGatewayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateInternetGatewayResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateIpamRequest&, const Model::CreateIpamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateIpamResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::CreateIpamExternalResourceVerificationTokenRequest&, const Model::CreateIpamExternalResourceVerificationTokenOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateIpamExternalResourceVerificationTokenResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateIpamPoolRequest&, const Model::CreateIpamPoolOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateIpamPoolResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateIpamResourceDiscoveryRequest&, const Model::CreateIpamResourceDiscoveryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateIpamResourceDiscoveryResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateIpamScopeRequest&, const Model::CreateIpamScopeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateIpamScopeResponseReceivedHandler;
@@ -2842,6 +2856,7 @@ namespace Aws
     typedef std::function<void(const EC2Client*, const Model::DeleteInstanceEventWindowRequest&, const Model::DeleteInstanceEventWindowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteInstanceEventWindowResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeleteInternetGatewayRequest&, const Model::DeleteInternetGatewayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteInternetGatewayResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeleteIpamRequest&, const Model::DeleteIpamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteIpamResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DeleteIpamExternalResourceVerificationTokenRequest&, const Model::DeleteIpamExternalResourceVerificationTokenOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteIpamExternalResourceVerificationTokenResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeleteIpamPoolRequest&, const Model::DeleteIpamPoolOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteIpamPoolResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeleteIpamResourceDiscoveryRequest&, const Model::DeleteIpamResourceDiscoveryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteIpamResourceDiscoveryResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeleteIpamScopeRequest&, const Model::DeleteIpamScopeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteIpamScopeResponseReceivedHandler;
@@ -2966,6 +2981,7 @@ namespace Aws
     typedef std::function<void(const EC2Client*, const Model::DescribeInstancesRequest&, const Model::DescribeInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeInstancesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeInternetGatewaysRequest&, const Model::DescribeInternetGatewaysOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeInternetGatewaysResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeIpamByoasnRequest&, const Model::DescribeIpamByoasnOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeIpamByoasnResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DescribeIpamExternalResourceVerificationTokensRequest&, const Model::DescribeIpamExternalResourceVerificationTokensOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeIpamExternalResourceVerificationTokensResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeIpamPoolsRequest&, const Model::DescribeIpamPoolsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeIpamPoolsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeIpamResourceDiscoveriesRequest&, const Model::DescribeIpamResourceDiscoveriesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeIpamResourceDiscoveriesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeIpamResourceDiscoveryAssociationsRequest&, const Model::DescribeIpamResourceDiscoveryAssociationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeIpamResourceDiscoveryAssociationsResponseReceivedHandler;

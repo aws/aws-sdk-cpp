@@ -180,8 +180,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>For elastic IP addresses, this is the status of an attached network
-     * interface.</p>
+     * <p>For elastic network interfaces, this is the status of whether or not the
+     * elastic network interface is attached.</p>
      */
     inline const IpamNetworkInterfaceAttachmentStatus& GetNetworkInterfaceAttachmentStatus() const{ return m_networkInterfaceAttachmentStatus; }
     inline bool NetworkInterfaceAttachmentStatusHasBeenSet() const { return m_networkInterfaceAttachmentStatusHasBeenSet; }

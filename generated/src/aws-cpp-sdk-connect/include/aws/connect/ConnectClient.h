@@ -4981,6 +4981,32 @@ namespace Connect
         }
 
         /**
+         * <p>Searches AgentStatuses in an Amazon Connect instance, with optional
+         * filtering.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchAgentStatuses">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::SearchAgentStatusesOutcome SearchAgentStatuses(const Model::SearchAgentStatusesRequest& request) const;
+
+        /**
+         * A Callable wrapper for SearchAgentStatuses that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename SearchAgentStatusesRequestT = Model::SearchAgentStatusesRequest>
+        Model::SearchAgentStatusesOutcomeCallable SearchAgentStatusesCallable(const SearchAgentStatusesRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::SearchAgentStatuses, request);
+        }
+
+        /**
+         * An Async wrapper for SearchAgentStatuses that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename SearchAgentStatusesRequestT = Model::SearchAgentStatusesRequest>
+        void SearchAgentStatusesAsync(const SearchAgentStatusesRequestT& request, const SearchAgentStatusesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::SearchAgentStatuses, request, handler, context);
+        }
+
+        /**
          * <p>Searches for available phone numbers that you can claim to your Amazon
          * Connect instance or traffic distribution group. If the provided
          * <code>TargetArn</code> is a traffic distribution group, you can call this API in
@@ -5293,6 +5319,35 @@ namespace Connect
         void SearchSecurityProfilesAsync(const SearchSecurityProfilesRequestT& request, const SearchSecurityProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ConnectClient::SearchSecurityProfiles, request, handler, context);
+        }
+
+        /**
+         * <p>Searches UserHierarchyGroups in an Amazon Connect instance, with optional
+         * filtering.</p>  <p>The UserHierarchyGroup with <code>"LevelId":
+         * "0"</code> is the foundation for building levels on top of an instance. It is
+         * not user-definable, nor is it visible in the UI.</p> <p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchUserHierarchyGroups">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::SearchUserHierarchyGroupsOutcome SearchUserHierarchyGroups(const Model::SearchUserHierarchyGroupsRequest& request) const;
+
+        /**
+         * A Callable wrapper for SearchUserHierarchyGroups that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename SearchUserHierarchyGroupsRequestT = Model::SearchUserHierarchyGroupsRequest>
+        Model::SearchUserHierarchyGroupsOutcomeCallable SearchUserHierarchyGroupsCallable(const SearchUserHierarchyGroupsRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::SearchUserHierarchyGroups, request);
+        }
+
+        /**
+         * An Async wrapper for SearchUserHierarchyGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename SearchUserHierarchyGroupsRequestT = Model::SearchUserHierarchyGroupsRequest>
+        void SearchUserHierarchyGroupsAsync(const SearchUserHierarchyGroupsRequestT& request, const SearchUserHierarchyGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::SearchUserHierarchyGroups, request, handler, context);
         }
 
         /**

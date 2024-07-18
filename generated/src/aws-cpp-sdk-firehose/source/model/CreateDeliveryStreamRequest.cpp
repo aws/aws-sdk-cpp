@@ -27,7 +27,8 @@ CreateDeliveryStreamRequest::CreateDeliveryStreamRequest() :
     m_tagsHasBeenSet(false),
     m_amazonOpenSearchServerlessDestinationConfigurationHasBeenSet(false),
     m_mSKSourceConfigurationHasBeenSet(false),
-    m_snowflakeDestinationConfigurationHasBeenSet(false)
+    m_snowflakeDestinationConfigurationHasBeenSet(false),
+    m_icebergDestinationConfigurationHasBeenSet(false)
 {
 }
 
@@ -120,6 +121,12 @@ Aws::String CreateDeliveryStreamRequest::SerializePayload() const
   if(m_snowflakeDestinationConfigurationHasBeenSet)
   {
    payload.WithObject("SnowflakeDestinationConfiguration", m_snowflakeDestinationConfiguration.Jsonize());
+
+  }
+
+  if(m_icebergDestinationConfigurationHasBeenSet)
+  {
+   payload.WithObject("IcebergDestinationConfiguration", m_icebergDestinationConfiguration.Jsonize());
 
   }
 

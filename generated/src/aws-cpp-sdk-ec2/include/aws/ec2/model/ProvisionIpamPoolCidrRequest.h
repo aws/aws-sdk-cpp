@@ -8,6 +8,7 @@
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/IpamCidrAuthorizationContext.h>
+#include <aws/ec2/model/VerificationMethod.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -84,8 +85,8 @@ namespace Model
     ///@{
     /**
      * <p>A signed document that proves that you are authorized to bring a specified IP
-     * address range to Amazon using BYOIP. This option applies to public pools
-     * only.</p>
+     * address range to Amazon using BYOIP. This option only applies to IPv4 and IPv6
+     * pools in the public scope.</p>
      */
     inline const IpamCidrAuthorizationContext& GetCidrAuthorizationContext() const{ return m_cidrAuthorizationContext; }
     inline bool CidrAuthorizationContextHasBeenSet() const { return m_cidrAuthorizationContextHasBeenSet; }
@@ -124,6 +125,35 @@ namespace Model
     inline ProvisionIpamPoolCidrRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
     inline ProvisionIpamPoolCidrRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The method for verifying control of a public IP address range. Defaults to
+     * <code>remarks-x509</code> if not specified. This option only applies to IPv4 and
+     * IPv6 pools in the public scope.</p>
+     */
+    inline const VerificationMethod& GetVerificationMethod() const{ return m_verificationMethod; }
+    inline bool VerificationMethodHasBeenSet() const { return m_verificationMethodHasBeenSet; }
+    inline void SetVerificationMethod(const VerificationMethod& value) { m_verificationMethodHasBeenSet = true; m_verificationMethod = value; }
+    inline void SetVerificationMethod(VerificationMethod&& value) { m_verificationMethodHasBeenSet = true; m_verificationMethod = std::move(value); }
+    inline ProvisionIpamPoolCidrRequest& WithVerificationMethod(const VerificationMethod& value) { SetVerificationMethod(value); return *this;}
+    inline ProvisionIpamPoolCidrRequest& WithVerificationMethod(VerificationMethod&& value) { SetVerificationMethod(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Verification token ID. This option only applies to IPv4 and IPv6 pools in the
+     * public scope.</p>
+     */
+    inline const Aws::String& GetIpamExternalResourceVerificationTokenId() const{ return m_ipamExternalResourceVerificationTokenId; }
+    inline bool IpamExternalResourceVerificationTokenIdHasBeenSet() const { return m_ipamExternalResourceVerificationTokenIdHasBeenSet; }
+    inline void SetIpamExternalResourceVerificationTokenId(const Aws::String& value) { m_ipamExternalResourceVerificationTokenIdHasBeenSet = true; m_ipamExternalResourceVerificationTokenId = value; }
+    inline void SetIpamExternalResourceVerificationTokenId(Aws::String&& value) { m_ipamExternalResourceVerificationTokenIdHasBeenSet = true; m_ipamExternalResourceVerificationTokenId = std::move(value); }
+    inline void SetIpamExternalResourceVerificationTokenId(const char* value) { m_ipamExternalResourceVerificationTokenIdHasBeenSet = true; m_ipamExternalResourceVerificationTokenId.assign(value); }
+    inline ProvisionIpamPoolCidrRequest& WithIpamExternalResourceVerificationTokenId(const Aws::String& value) { SetIpamExternalResourceVerificationTokenId(value); return *this;}
+    inline ProvisionIpamPoolCidrRequest& WithIpamExternalResourceVerificationTokenId(Aws::String&& value) { SetIpamExternalResourceVerificationTokenId(std::move(value)); return *this;}
+    inline ProvisionIpamPoolCidrRequest& WithIpamExternalResourceVerificationTokenId(const char* value) { SetIpamExternalResourceVerificationTokenId(value); return *this;}
+    ///@}
   private:
 
     bool m_dryRun;
@@ -143,6 +173,12 @@ namespace Model
 
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet = false;
+
+    VerificationMethod m_verificationMethod;
+    bool m_verificationMethodHasBeenSet = false;
+
+    Aws::String m_ipamExternalResourceVerificationTokenId;
+    bool m_ipamExternalResourceVerificationTokenIdHasBeenSet = false;
   };
 
 } // namespace Model

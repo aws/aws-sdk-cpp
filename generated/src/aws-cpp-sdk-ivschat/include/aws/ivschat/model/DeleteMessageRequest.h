@@ -34,6 +34,21 @@ namespace Model
 
     ///@{
     /**
+     * <p>Identifier of the room where the message should be deleted. Currently this
+     * must be an ARN. </p>
+     */
+    inline const Aws::String& GetRoomIdentifier() const{ return m_roomIdentifier; }
+    inline bool RoomIdentifierHasBeenSet() const { return m_roomIdentifierHasBeenSet; }
+    inline void SetRoomIdentifier(const Aws::String& value) { m_roomIdentifierHasBeenSet = true; m_roomIdentifier = value; }
+    inline void SetRoomIdentifier(Aws::String&& value) { m_roomIdentifierHasBeenSet = true; m_roomIdentifier = std::move(value); }
+    inline void SetRoomIdentifier(const char* value) { m_roomIdentifierHasBeenSet = true; m_roomIdentifier.assign(value); }
+    inline DeleteMessageRequest& WithRoomIdentifier(const Aws::String& value) { SetRoomIdentifier(value); return *this;}
+    inline DeleteMessageRequest& WithRoomIdentifier(Aws::String&& value) { SetRoomIdentifier(std::move(value)); return *this;}
+    inline DeleteMessageRequest& WithRoomIdentifier(const char* value) { SetRoomIdentifier(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>ID of the message to be deleted. This is the <code>Id</code> field in the
      * received message (see <a
      * href="https://docs.aws.amazon.com/ivs/latest/chatmsgapireference/actions-message-subscribe.html">
@@ -62,31 +77,16 @@ namespace Model
     inline DeleteMessageRequest& WithReason(Aws::String&& value) { SetReason(std::move(value)); return *this;}
     inline DeleteMessageRequest& WithReason(const char* value) { SetReason(value); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>Identifier of the room where the message should be deleted. Currently this
-     * must be an ARN. </p>
-     */
-    inline const Aws::String& GetRoomIdentifier() const{ return m_roomIdentifier; }
-    inline bool RoomIdentifierHasBeenSet() const { return m_roomIdentifierHasBeenSet; }
-    inline void SetRoomIdentifier(const Aws::String& value) { m_roomIdentifierHasBeenSet = true; m_roomIdentifier = value; }
-    inline void SetRoomIdentifier(Aws::String&& value) { m_roomIdentifierHasBeenSet = true; m_roomIdentifier = std::move(value); }
-    inline void SetRoomIdentifier(const char* value) { m_roomIdentifierHasBeenSet = true; m_roomIdentifier.assign(value); }
-    inline DeleteMessageRequest& WithRoomIdentifier(const Aws::String& value) { SetRoomIdentifier(value); return *this;}
-    inline DeleteMessageRequest& WithRoomIdentifier(Aws::String&& value) { SetRoomIdentifier(std::move(value)); return *this;}
-    inline DeleteMessageRequest& WithRoomIdentifier(const char* value) { SetRoomIdentifier(value); return *this;}
-    ///@}
   private:
+
+    Aws::String m_roomIdentifier;
+    bool m_roomIdentifierHasBeenSet = false;
 
     Aws::String m_id;
     bool m_idHasBeenSet = false;
 
     Aws::String m_reason;
     bool m_reasonHasBeenSet = false;
-
-    Aws::String m_roomIdentifier;
-    bool m_roomIdentifierHasBeenSet = false;
   };
 
 } // namespace Model

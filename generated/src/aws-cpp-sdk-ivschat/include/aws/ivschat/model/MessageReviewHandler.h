@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/ivschat/Ivschat_EXPORTS.h>
-#include <aws/ivschat/model/FallbackResult.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ivschat/model/FallbackResult.h>
 #include <utility>
 
 namespace Aws
@@ -41,6 +41,21 @@ namespace Model
 
     ///@{
     /**
+     * <p>Identifier of the message review handler. Currently this must be an ARN of a
+     * lambda function.</p>
+     */
+    inline const Aws::String& GetUri() const{ return m_uri; }
+    inline bool UriHasBeenSet() const { return m_uriHasBeenSet; }
+    inline void SetUri(const Aws::String& value) { m_uriHasBeenSet = true; m_uri = value; }
+    inline void SetUri(Aws::String&& value) { m_uriHasBeenSet = true; m_uri = std::move(value); }
+    inline void SetUri(const char* value) { m_uriHasBeenSet = true; m_uri.assign(value); }
+    inline MessageReviewHandler& WithUri(const Aws::String& value) { SetUri(value); return *this;}
+    inline MessageReviewHandler& WithUri(Aws::String&& value) { SetUri(std::move(value)); return *this;}
+    inline MessageReviewHandler& WithUri(const char* value) { SetUri(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Specifies the fallback behavior (whether the message is allowed or denied) if
      * the handler does not return a valid response, encounters an error, or times out.
      * (For the timeout period, see <a
@@ -56,28 +71,13 @@ namespace Model
     inline MessageReviewHandler& WithFallbackResult(const FallbackResult& value) { SetFallbackResult(value); return *this;}
     inline MessageReviewHandler& WithFallbackResult(FallbackResult&& value) { SetFallbackResult(std::move(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>Identifier of the message review handler. Currently this must be an ARN of a
-     * lambda function.</p>
-     */
-    inline const Aws::String& GetUri() const{ return m_uri; }
-    inline bool UriHasBeenSet() const { return m_uriHasBeenSet; }
-    inline void SetUri(const Aws::String& value) { m_uriHasBeenSet = true; m_uri = value; }
-    inline void SetUri(Aws::String&& value) { m_uriHasBeenSet = true; m_uri = std::move(value); }
-    inline void SetUri(const char* value) { m_uriHasBeenSet = true; m_uri.assign(value); }
-    inline MessageReviewHandler& WithUri(const Aws::String& value) { SetUri(value); return *this;}
-    inline MessageReviewHandler& WithUri(Aws::String&& value) { SetUri(std::move(value)); return *this;}
-    inline MessageReviewHandler& WithUri(const char* value) { SetUri(value); return *this;}
-    ///@}
   private:
-
-    FallbackResult m_fallbackResult;
-    bool m_fallbackResultHasBeenSet = false;
 
     Aws::String m_uri;
     bool m_uriHasBeenSet = false;
+
+    FallbackResult m_fallbackResult;
+    bool m_fallbackResultHasBeenSet = false;
   };
 
 } // namespace Model

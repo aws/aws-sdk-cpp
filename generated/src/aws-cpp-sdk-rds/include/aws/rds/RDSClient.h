@@ -3007,7 +3007,13 @@ namespace Aws
 
         /**
          * <p>Returns a list of resources (for example, DB instances) that have at least
-         * one pending maintenance action.</p><p><h3>See Also:</h3>   <a
+         * one pending maintenance action.</p> <p>This API follows an eventual consistency
+         * model. This means that the result of the
+         * <code>DescribePendingMaintenanceActions</code> command might not be immediately
+         * visible to all subsequent RDS commands. Keep this in mind when you use
+         * <code>DescribePendingMaintenanceActions</code> immediately after using a
+         * previous API command such as
+         * <code>ApplyPendingMaintenanceActions</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribePendingMaintenanceActions">AWS
          * API Reference</a></p>
          */

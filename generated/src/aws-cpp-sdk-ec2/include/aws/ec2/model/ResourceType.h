@@ -102,7 +102,8 @@ namespace Model
     vpc_encryption_control,
     ipam_resource_discovery,
     ipam_resource_discovery_association,
-    instance_connect_endpoint
+    instance_connect_endpoint,
+    ipam_external_resource_verification_token
   };
 
 namespace ResourceTypeMapper
