@@ -109,12 +109,19 @@ Aws::String CreateReplicationGroupRequest::SerializePayload() const
 
   if(m_preferredCacheClusterAZsHasBeenSet)
   {
-    unsigned preferredCacheClusterAZsCount = 1;
-    for(auto& item : m_preferredCacheClusterAZs)
+    if (m_preferredCacheClusterAZs.empty())
     {
-      ss << "PreferredCacheClusterAZs.member." << preferredCacheClusterAZsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      preferredCacheClusterAZsCount++;
+      ss << "PreferredCacheClusterAZs=&";
+    }
+    else
+    {
+      unsigned preferredCacheClusterAZsCount = 1;
+      for(auto& item : m_preferredCacheClusterAZs)
+      {
+        ss << "PreferredCacheClusterAZs.member." << preferredCacheClusterAZsCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        preferredCacheClusterAZsCount++;
+      }
     }
   }
 
@@ -130,11 +137,18 @@ Aws::String CreateReplicationGroupRequest::SerializePayload() const
 
   if(m_nodeGroupConfigurationHasBeenSet)
   {
-    unsigned nodeGroupConfigurationCount = 1;
-    for(auto& item : m_nodeGroupConfiguration)
+    if (m_nodeGroupConfiguration.empty())
     {
-      item.OutputToStream(ss, "NodeGroupConfiguration.member.", nodeGroupConfigurationCount, "");
-      nodeGroupConfigurationCount++;
+      ss << "NodeGroupConfiguration=&";
+    }
+    else
+    {
+      unsigned nodeGroupConfigurationCount = 1;
+      for(auto& item : m_nodeGroupConfiguration)
+      {
+        item.OutputToStream(ss, "NodeGroupConfiguration.member.", nodeGroupConfigurationCount, "");
+        nodeGroupConfigurationCount++;
+      }
     }
   }
 
@@ -165,44 +179,72 @@ Aws::String CreateReplicationGroupRequest::SerializePayload() const
 
   if(m_cacheSecurityGroupNamesHasBeenSet)
   {
-    unsigned cacheSecurityGroupNamesCount = 1;
-    for(auto& item : m_cacheSecurityGroupNames)
+    if (m_cacheSecurityGroupNames.empty())
     {
-      ss << "CacheSecurityGroupNames.member." << cacheSecurityGroupNamesCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      cacheSecurityGroupNamesCount++;
+      ss << "CacheSecurityGroupNames=&";
+    }
+    else
+    {
+      unsigned cacheSecurityGroupNamesCount = 1;
+      for(auto& item : m_cacheSecurityGroupNames)
+      {
+        ss << "CacheSecurityGroupNames.member." << cacheSecurityGroupNamesCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        cacheSecurityGroupNamesCount++;
+      }
     }
   }
 
   if(m_securityGroupIdsHasBeenSet)
   {
-    unsigned securityGroupIdsCount = 1;
-    for(auto& item : m_securityGroupIds)
+    if (m_securityGroupIds.empty())
     {
-      ss << "SecurityGroupIds.member." << securityGroupIdsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      securityGroupIdsCount++;
+      ss << "SecurityGroupIds=&";
+    }
+    else
+    {
+      unsigned securityGroupIdsCount = 1;
+      for(auto& item : m_securityGroupIds)
+      {
+        ss << "SecurityGroupIds.member." << securityGroupIdsCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        securityGroupIdsCount++;
+      }
     }
   }
 
   if(m_tagsHasBeenSet)
   {
-    unsigned tagsCount = 1;
-    for(auto& item : m_tags)
+    if (m_tags.empty())
     {
-      item.OutputToStream(ss, "Tags.member.", tagsCount, "");
-      tagsCount++;
+      ss << "Tags=&";
+    }
+    else
+    {
+      unsigned tagsCount = 1;
+      for(auto& item : m_tags)
+      {
+        item.OutputToStream(ss, "Tags.member.", tagsCount, "");
+        tagsCount++;
+      }
     }
   }
 
   if(m_snapshotArnsHasBeenSet)
   {
-    unsigned snapshotArnsCount = 1;
-    for(auto& item : m_snapshotArns)
+    if (m_snapshotArns.empty())
     {
-      ss << "SnapshotArns.member." << snapshotArnsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      snapshotArnsCount++;
+      ss << "SnapshotArns=&";
+    }
+    else
+    {
+      unsigned snapshotArnsCount = 1;
+      for(auto& item : m_snapshotArns)
+      {
+        ss << "SnapshotArns.member." << snapshotArnsCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        snapshotArnsCount++;
+      }
     }
   }
 
@@ -263,22 +305,36 @@ Aws::String CreateReplicationGroupRequest::SerializePayload() const
 
   if(m_userGroupIdsHasBeenSet)
   {
-    unsigned userGroupIdsCount = 1;
-    for(auto& item : m_userGroupIds)
+    if (m_userGroupIds.empty())
     {
-      ss << "UserGroupIds.member." << userGroupIdsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      userGroupIdsCount++;
+      ss << "UserGroupIds=&";
+    }
+    else
+    {
+      unsigned userGroupIdsCount = 1;
+      for(auto& item : m_userGroupIds)
+      {
+        ss << "UserGroupIds.member." << userGroupIdsCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        userGroupIdsCount++;
+      }
     }
   }
 
   if(m_logDeliveryConfigurationsHasBeenSet)
   {
-    unsigned logDeliveryConfigurationsCount = 1;
-    for(auto& item : m_logDeliveryConfigurations)
+    if (m_logDeliveryConfigurations.empty())
     {
-      item.OutputToStream(ss, "LogDeliveryConfigurations.member.", logDeliveryConfigurationsCount, "");
-      logDeliveryConfigurationsCount++;
+      ss << "LogDeliveryConfigurations=&";
+    }
+    else
+    {
+      unsigned logDeliveryConfigurationsCount = 1;
+      for(auto& item : m_logDeliveryConfigurations)
+      {
+        item.OutputToStream(ss, "LogDeliveryConfigurations.member.", logDeliveryConfigurationsCount, "");
+        logDeliveryConfigurationsCount++;
+      }
     }
   }
 

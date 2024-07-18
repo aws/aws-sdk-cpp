@@ -41,11 +41,18 @@ Aws::String GetMetricStatisticsRequest::SerializePayload() const
 
   if(m_dimensionsHasBeenSet)
   {
-    unsigned dimensionsCount = 1;
-    for(auto& item : m_dimensions)
+    if (m_dimensions.empty())
     {
-      item.OutputToStream(ss, "Dimensions.member.", dimensionsCount, "");
-      dimensionsCount++;
+      ss << "Dimensions=&";
+    }
+    else
+    {
+      unsigned dimensionsCount = 1;
+      for(auto& item : m_dimensions)
+      {
+        item.OutputToStream(ss, "Dimensions.member.", dimensionsCount, "");
+        dimensionsCount++;
+      }
     }
   }
 
@@ -66,23 +73,37 @@ Aws::String GetMetricStatisticsRequest::SerializePayload() const
 
   if(m_statisticsHasBeenSet)
   {
-    unsigned statisticsCount = 1;
-    for(auto& item : m_statistics)
+    if (m_statistics.empty())
     {
-      ss << "Statistics.member." << statisticsCount << "="
-          << StringUtils::URLEncode(StatisticMapper::GetNameForStatistic(item).c_str()) << "&";
-      statisticsCount++;
+      ss << "Statistics=&";
+    }
+    else
+    {
+      unsigned statisticsCount = 1;
+      for(auto& item : m_statistics)
+      {
+        ss << "Statistics.member." << statisticsCount << "="
+            << StringUtils::URLEncode(StatisticMapper::GetNameForStatistic(item).c_str()) << "&";
+        statisticsCount++;
+      }
     }
   }
 
   if(m_extendedStatisticsHasBeenSet)
   {
-    unsigned extendedStatisticsCount = 1;
-    for(auto& item : m_extendedStatistics)
+    if (m_extendedStatistics.empty())
     {
-      ss << "ExtendedStatistics.member." << extendedStatisticsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      extendedStatisticsCount++;
+      ss << "ExtendedStatistics=&";
+    }
+    else
+    {
+      unsigned extendedStatisticsCount = 1;
+      for(auto& item : m_extendedStatistics)
+      {
+        ss << "ExtendedStatistics.member." << extendedStatisticsCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        extendedStatisticsCount++;
+      }
     }
   }
 

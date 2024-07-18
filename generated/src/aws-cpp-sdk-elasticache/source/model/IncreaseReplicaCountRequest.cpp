@@ -36,11 +36,18 @@ Aws::String IncreaseReplicaCountRequest::SerializePayload() const
 
   if(m_replicaConfigurationHasBeenSet)
   {
-    unsigned replicaConfigurationCount = 1;
-    for(auto& item : m_replicaConfiguration)
+    if (m_replicaConfiguration.empty())
     {
-      item.OutputToStream(ss, "ReplicaConfiguration.member.", replicaConfigurationCount, "");
-      replicaConfigurationCount++;
+      ss << "ReplicaConfiguration=&";
+    }
+    else
+    {
+      unsigned replicaConfigurationCount = 1;
+      for(auto& item : m_replicaConfiguration)
+      {
+        item.OutputToStream(ss, "ReplicaConfiguration.member.", replicaConfigurationCount, "");
+        replicaConfigurationCount++;
+      }
     }
   }
 

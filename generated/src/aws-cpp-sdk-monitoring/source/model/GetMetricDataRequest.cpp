@@ -29,11 +29,18 @@ Aws::String GetMetricDataRequest::SerializePayload() const
   ss << "Action=GetMetricData&";
   if(m_metricDataQueriesHasBeenSet)
   {
-    unsigned metricDataQueriesCount = 1;
-    for(auto& item : m_metricDataQueries)
+    if (m_metricDataQueries.empty())
     {
-      item.OutputToStream(ss, "MetricDataQueries.member.", metricDataQueriesCount, "");
-      metricDataQueriesCount++;
+      ss << "MetricDataQueries=&";
+    }
+    else
+    {
+      unsigned metricDataQueriesCount = 1;
+      for(auto& item : m_metricDataQueries)
+      {
+        item.OutputToStream(ss, "MetricDataQueries.member.", metricDataQueriesCount, "");
+        metricDataQueriesCount++;
+      }
     }
   }
 

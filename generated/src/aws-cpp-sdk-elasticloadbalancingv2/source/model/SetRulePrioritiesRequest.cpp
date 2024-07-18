@@ -21,11 +21,18 @@ Aws::String SetRulePrioritiesRequest::SerializePayload() const
   ss << "Action=SetRulePriorities&";
   if(m_rulePrioritiesHasBeenSet)
   {
-    unsigned rulePrioritiesCount = 1;
-    for(auto& item : m_rulePriorities)
+    if (m_rulePriorities.empty())
     {
-      item.OutputToStream(ss, "RulePriorities.member.", rulePrioritiesCount, "");
-      rulePrioritiesCount++;
+      ss << "RulePriorities=&";
+    }
+    else
+    {
+      unsigned rulePrioritiesCount = 1;
+      for(auto& item : m_rulePriorities)
+      {
+        item.OutputToStream(ss, "RulePriorities.member.", rulePrioritiesCount, "");
+        rulePrioritiesCount++;
+      }
     }
   }
 

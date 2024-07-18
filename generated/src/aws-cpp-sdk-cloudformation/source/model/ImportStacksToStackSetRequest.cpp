@@ -34,12 +34,19 @@ Aws::String ImportStacksToStackSetRequest::SerializePayload() const
 
   if(m_stackIdsHasBeenSet)
   {
-    unsigned stackIdsCount = 1;
-    for(auto& item : m_stackIds)
+    if (m_stackIds.empty())
     {
-      ss << "StackIds.member." << stackIdsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      stackIdsCount++;
+      ss << "StackIds=&";
+    }
+    else
+    {
+      unsigned stackIdsCount = 1;
+      for(auto& item : m_stackIds)
+      {
+        ss << "StackIds.member." << stackIdsCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        stackIdsCount++;
+      }
     }
   }
 
@@ -50,12 +57,19 @@ Aws::String ImportStacksToStackSetRequest::SerializePayload() const
 
   if(m_organizationalUnitIdsHasBeenSet)
   {
-    unsigned organizationalUnitIdsCount = 1;
-    for(auto& item : m_organizationalUnitIds)
+    if (m_organizationalUnitIds.empty())
     {
-      ss << "OrganizationalUnitIds.member." << organizationalUnitIdsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      organizationalUnitIdsCount++;
+      ss << "OrganizationalUnitIds=&";
+    }
+    else
+    {
+      unsigned organizationalUnitIdsCount = 1;
+      for(auto& item : m_organizationalUnitIds)
+      {
+        ss << "OrganizationalUnitIds.member." << organizationalUnitIdsCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        organizationalUnitIdsCount++;
+      }
     }
   }
 

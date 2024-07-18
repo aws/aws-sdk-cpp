@@ -27,12 +27,19 @@ Aws::String DetectStackDriftRequest::SerializePayload() const
 
   if(m_logicalResourceIdsHasBeenSet)
   {
-    unsigned logicalResourceIdsCount = 1;
-    for(auto& item : m_logicalResourceIds)
+    if (m_logicalResourceIds.empty())
     {
-      ss << "LogicalResourceIds.member." << logicalResourceIdsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      logicalResourceIdsCount++;
+      ss << "LogicalResourceIds=&";
+    }
+    else
+    {
+      unsigned logicalResourceIdsCount = 1;
+      for(auto& item : m_logicalResourceIds)
+      {
+        ss << "LogicalResourceIds.member." << logicalResourceIdsCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        logicalResourceIdsCount++;
+      }
     }
   }
 

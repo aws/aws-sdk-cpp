@@ -34,11 +34,18 @@ Aws::String PutAttributesRequest::SerializePayload() const
 
   if(m_attributesHasBeenSet)
   {
-    unsigned attributesCount = 1;
-    for(auto& item : m_attributes)
+    if (m_attributes.empty())
     {
-      item.OutputToStream(ss, "Attribute.", attributesCount, "");
-      attributesCount++;
+      ss << "Attributes=&";
+    }
+    else
+    {
+      unsigned attributesCount = 1;
+      for(auto& item : m_attributes)
+      {
+        item.OutputToStream(ss, "Attribute.", attributesCount, "");
+        attributesCount++;
+      }
     }
   }
 

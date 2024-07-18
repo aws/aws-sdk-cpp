@@ -32,12 +32,19 @@ Aws::String GetShippingLabelRequest::SerializePayload() const
   ss << "Action=GetShippingLabel&";
   if(m_jobIdsHasBeenSet)
   {
-    unsigned jobIdsCount = 1;
-    for(auto& item : m_jobIds)
+    if (m_jobIds.empty())
     {
-      ss << "jobIds.member." << jobIdsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      jobIdsCount++;
+      ss << "jobIds=&";
+    }
+    else
+    {
+      unsigned jobIdsCount = 1;
+      for(auto& item : m_jobIds)
+      {
+        ss << "jobIds.member." << jobIdsCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        jobIdsCount++;
+      }
     }
   }
 

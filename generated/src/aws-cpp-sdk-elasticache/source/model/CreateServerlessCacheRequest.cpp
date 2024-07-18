@@ -64,33 +64,54 @@ Aws::String CreateServerlessCacheRequest::SerializePayload() const
 
   if(m_securityGroupIdsHasBeenSet)
   {
-    unsigned securityGroupIdsCount = 1;
-    for(auto& item : m_securityGroupIds)
+    if (m_securityGroupIds.empty())
     {
-      ss << "SecurityGroupIds.member." << securityGroupIdsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      securityGroupIdsCount++;
+      ss << "SecurityGroupIds=&";
+    }
+    else
+    {
+      unsigned securityGroupIdsCount = 1;
+      for(auto& item : m_securityGroupIds)
+      {
+        ss << "SecurityGroupIds.member." << securityGroupIdsCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        securityGroupIdsCount++;
+      }
     }
   }
 
   if(m_snapshotArnsToRestoreHasBeenSet)
   {
-    unsigned snapshotArnsToRestoreCount = 1;
-    for(auto& item : m_snapshotArnsToRestore)
+    if (m_snapshotArnsToRestore.empty())
     {
-      ss << "SnapshotArnsToRestore.member." << snapshotArnsToRestoreCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      snapshotArnsToRestoreCount++;
+      ss << "SnapshotArnsToRestore=&";
+    }
+    else
+    {
+      unsigned snapshotArnsToRestoreCount = 1;
+      for(auto& item : m_snapshotArnsToRestore)
+      {
+        ss << "SnapshotArnsToRestore.member." << snapshotArnsToRestoreCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        snapshotArnsToRestoreCount++;
+      }
     }
   }
 
   if(m_tagsHasBeenSet)
   {
-    unsigned tagsCount = 1;
-    for(auto& item : m_tags)
+    if (m_tags.empty())
     {
-      item.OutputToStream(ss, "Tags.member.", tagsCount, "");
-      tagsCount++;
+      ss << "Tags=&";
+    }
+    else
+    {
+      unsigned tagsCount = 1;
+      for(auto& item : m_tags)
+      {
+        item.OutputToStream(ss, "Tags.member.", tagsCount, "");
+        tagsCount++;
+      }
     }
   }
 
@@ -101,12 +122,19 @@ Aws::String CreateServerlessCacheRequest::SerializePayload() const
 
   if(m_subnetIdsHasBeenSet)
   {
-    unsigned subnetIdsCount = 1;
-    for(auto& item : m_subnetIds)
+    if (m_subnetIds.empty())
     {
-      ss << "SubnetIds.member." << subnetIdsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      subnetIdsCount++;
+      ss << "SubnetIds=&";
+    }
+    else
+    {
+      unsigned subnetIdsCount = 1;
+      for(auto& item : m_subnetIds)
+      {
+        ss << "SubnetIds.member." << subnetIdsCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        subnetIdsCount++;
+      }
     }
   }
 

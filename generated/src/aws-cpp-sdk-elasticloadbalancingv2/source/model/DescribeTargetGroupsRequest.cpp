@@ -31,23 +31,37 @@ Aws::String DescribeTargetGroupsRequest::SerializePayload() const
 
   if(m_targetGroupArnsHasBeenSet)
   {
-    unsigned targetGroupArnsCount = 1;
-    for(auto& item : m_targetGroupArns)
+    if (m_targetGroupArns.empty())
     {
-      ss << "TargetGroupArns.member." << targetGroupArnsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      targetGroupArnsCount++;
+      ss << "TargetGroupArns=&";
+    }
+    else
+    {
+      unsigned targetGroupArnsCount = 1;
+      for(auto& item : m_targetGroupArns)
+      {
+        ss << "TargetGroupArns.member." << targetGroupArnsCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        targetGroupArnsCount++;
+      }
     }
   }
 
   if(m_namesHasBeenSet)
   {
-    unsigned namesCount = 1;
-    for(auto& item : m_names)
+    if (m_names.empty())
     {
-      ss << "Names.member." << namesCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      namesCount++;
+      ss << "Names=&";
+    }
+    else
+    {
+      unsigned namesCount = 1;
+      for(auto& item : m_names)
+      {
+        ss << "Names.member." << namesCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        namesCount++;
+      }
     }
   }
 

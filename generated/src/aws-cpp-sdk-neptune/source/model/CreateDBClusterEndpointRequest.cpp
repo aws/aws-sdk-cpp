@@ -41,33 +41,54 @@ Aws::String CreateDBClusterEndpointRequest::SerializePayload() const
 
   if(m_staticMembersHasBeenSet)
   {
-    unsigned staticMembersCount = 1;
-    for(auto& item : m_staticMembers)
+    if (m_staticMembers.empty())
     {
-      ss << "StaticMembers.member." << staticMembersCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      staticMembersCount++;
+      ss << "StaticMembers=&";
+    }
+    else
+    {
+      unsigned staticMembersCount = 1;
+      for(auto& item : m_staticMembers)
+      {
+        ss << "StaticMembers.member." << staticMembersCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        staticMembersCount++;
+      }
     }
   }
 
   if(m_excludedMembersHasBeenSet)
   {
-    unsigned excludedMembersCount = 1;
-    for(auto& item : m_excludedMembers)
+    if (m_excludedMembers.empty())
     {
-      ss << "ExcludedMembers.member." << excludedMembersCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      excludedMembersCount++;
+      ss << "ExcludedMembers=&";
+    }
+    else
+    {
+      unsigned excludedMembersCount = 1;
+      for(auto& item : m_excludedMembers)
+      {
+        ss << "ExcludedMembers.member." << excludedMembersCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        excludedMembersCount++;
+      }
     }
   }
 
   if(m_tagsHasBeenSet)
   {
-    unsigned tagsCount = 1;
-    for(auto& item : m_tags)
+    if (m_tags.empty())
     {
-      item.OutputToStream(ss, "Tags.member.", tagsCount, "");
-      tagsCount++;
+      ss << "Tags=&";
+    }
+    else
+    {
+      unsigned tagsCount = 1;
+      for(auto& item : m_tags)
+      {
+        item.OutputToStream(ss, "Tags.member.", tagsCount, "");
+        tagsCount++;
+      }
     }
   }
 

@@ -35,12 +35,19 @@ Aws::String GetAttributesRequest::SerializePayload() const
 
   if(m_attributeNamesHasBeenSet)
   {
-    unsigned attributeNamesCount = 1;
-    for(auto& item : m_attributeNames)
+    if (m_attributeNames.empty())
     {
-      ss << "AttributeName." << attributeNamesCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      attributeNamesCount++;
+      ss << "AttributeNames=&";
+    }
+    else
+    {
+      unsigned attributeNamesCount = 1;
+      for(auto& item : m_attributeNames)
+      {
+        ss << "AttributeName." << attributeNamesCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        attributeNamesCount++;
+      }
     }
   }
 

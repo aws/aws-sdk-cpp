@@ -39,11 +39,18 @@ Aws::String ValidateConfigurationSettingsRequest::SerializePayload() const
 
   if(m_optionSettingsHasBeenSet)
   {
-    unsigned optionSettingsCount = 1;
-    for(auto& item : m_optionSettings)
+    if (m_optionSettings.empty())
     {
-      item.OutputToStream(ss, "OptionSettings.member.", optionSettingsCount, "");
-      optionSettingsCount++;
+      ss << "OptionSettings=&";
+    }
+    else
+    {
+      unsigned optionSettingsCount = 1;
+      for(auto& item : m_optionSettings)
+      {
+        item.OutputToStream(ss, "OptionSettings.member.", optionSettingsCount, "");
+        optionSettingsCount++;
+      }
     }
   }
 

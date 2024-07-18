@@ -25,12 +25,19 @@ Aws::String DescribeAutoScalingGroupsRequest::SerializePayload() const
   ss << "Action=DescribeAutoScalingGroups&";
   if(m_autoScalingGroupNamesHasBeenSet)
   {
-    unsigned autoScalingGroupNamesCount = 1;
-    for(auto& item : m_autoScalingGroupNames)
+    if (m_autoScalingGroupNames.empty())
     {
-      ss << "AutoScalingGroupNames.member." << autoScalingGroupNamesCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      autoScalingGroupNamesCount++;
+      ss << "AutoScalingGroupNames=&";
+    }
+    else
+    {
+      unsigned autoScalingGroupNamesCount = 1;
+      for(auto& item : m_autoScalingGroupNames)
+      {
+        ss << "AutoScalingGroupNames.member." << autoScalingGroupNamesCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        autoScalingGroupNamesCount++;
+      }
     }
   }
 
@@ -46,11 +53,18 @@ Aws::String DescribeAutoScalingGroupsRequest::SerializePayload() const
 
   if(m_filtersHasBeenSet)
   {
-    unsigned filtersCount = 1;
-    for(auto& item : m_filters)
+    if (m_filters.empty())
     {
-      item.OutputToStream(ss, "Filters.member.", filtersCount, "");
-      filtersCount++;
+      ss << "Filters=&";
+    }
+    else
+    {
+      unsigned filtersCount = 1;
+      for(auto& item : m_filters)
+      {
+        item.OutputToStream(ss, "Filters.member.", filtersCount, "");
+        filtersCount++;
+      }
     }
   }
 

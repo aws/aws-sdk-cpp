@@ -24,11 +24,18 @@ Aws::String CreateGeneratedTemplateRequest::SerializePayload() const
   ss << "Action=CreateGeneratedTemplate&";
   if(m_resourcesHasBeenSet)
   {
-    unsigned resourcesCount = 1;
-    for(auto& item : m_resources)
+    if (m_resources.empty())
     {
-      item.OutputToStream(ss, "Resources.member.", resourcesCount, "");
-      resourcesCount++;
+      ss << "Resources=&";
+    }
+    else
+    {
+      unsigned resourcesCount = 1;
+      for(auto& item : m_resources)
+      {
+        item.OutputToStream(ss, "Resources.member.", resourcesCount, "");
+        resourcesCount++;
+      }
     }
   }
 

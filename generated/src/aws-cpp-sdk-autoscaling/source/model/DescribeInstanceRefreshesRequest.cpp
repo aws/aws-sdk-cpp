@@ -30,12 +30,19 @@ Aws::String DescribeInstanceRefreshesRequest::SerializePayload() const
 
   if(m_instanceRefreshIdsHasBeenSet)
   {
-    unsigned instanceRefreshIdsCount = 1;
-    for(auto& item : m_instanceRefreshIds)
+    if (m_instanceRefreshIds.empty())
     {
-      ss << "InstanceRefreshIds.member." << instanceRefreshIdsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      instanceRefreshIdsCount++;
+      ss << "InstanceRefreshIds=&";
+    }
+    else
+    {
+      unsigned instanceRefreshIdsCount = 1;
+      for(auto& item : m_instanceRefreshIds)
+      {
+        ss << "InstanceRefreshIds.member." << instanceRefreshIdsCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        instanceRefreshIdsCount++;
+      }
     }
   }
 

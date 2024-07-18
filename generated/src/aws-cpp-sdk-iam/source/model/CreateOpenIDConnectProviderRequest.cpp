@@ -29,33 +29,54 @@ Aws::String CreateOpenIDConnectProviderRequest::SerializePayload() const
 
   if(m_clientIDListHasBeenSet)
   {
-    unsigned clientIDListCount = 1;
-    for(auto& item : m_clientIDList)
+    if (m_clientIDList.empty())
     {
-      ss << "ClientIDList.member." << clientIDListCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      clientIDListCount++;
+      ss << "ClientIDList=&";
+    }
+    else
+    {
+      unsigned clientIDListCount = 1;
+      for(auto& item : m_clientIDList)
+      {
+        ss << "ClientIDList.member." << clientIDListCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        clientIDListCount++;
+      }
     }
   }
 
   if(m_thumbprintListHasBeenSet)
   {
-    unsigned thumbprintListCount = 1;
-    for(auto& item : m_thumbprintList)
+    if (m_thumbprintList.empty())
     {
-      ss << "ThumbprintList.member." << thumbprintListCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      thumbprintListCount++;
+      ss << "ThumbprintList=&";
+    }
+    else
+    {
+      unsigned thumbprintListCount = 1;
+      for(auto& item : m_thumbprintList)
+      {
+        ss << "ThumbprintList.member." << thumbprintListCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        thumbprintListCount++;
+      }
     }
   }
 
   if(m_tagsHasBeenSet)
   {
-    unsigned tagsCount = 1;
-    for(auto& item : m_tags)
+    if (m_tags.empty())
     {
-      item.OutputToStream(ss, "Tags.member.", tagsCount, "");
-      tagsCount++;
+      ss << "Tags=&";
+    }
+    else
+    {
+      unsigned tagsCount = 1;
+      for(auto& item : m_tags)
+      {
+        item.OutputToStream(ss, "Tags.member.", tagsCount, "");
+        tagsCount++;
+      }
     }
   }
 

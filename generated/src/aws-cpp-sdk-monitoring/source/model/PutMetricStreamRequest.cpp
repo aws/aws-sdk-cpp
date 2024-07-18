@@ -36,21 +36,35 @@ Aws::String PutMetricStreamRequest::SerializePayload() const
 
   if(m_includeFiltersHasBeenSet)
   {
-    unsigned includeFiltersCount = 1;
-    for(auto& item : m_includeFilters)
+    if (m_includeFilters.empty())
     {
-      item.OutputToStream(ss, "IncludeFilters.member.", includeFiltersCount, "");
-      includeFiltersCount++;
+      ss << "IncludeFilters=&";
+    }
+    else
+    {
+      unsigned includeFiltersCount = 1;
+      for(auto& item : m_includeFilters)
+      {
+        item.OutputToStream(ss, "IncludeFilters.member.", includeFiltersCount, "");
+        includeFiltersCount++;
+      }
     }
   }
 
   if(m_excludeFiltersHasBeenSet)
   {
-    unsigned excludeFiltersCount = 1;
-    for(auto& item : m_excludeFilters)
+    if (m_excludeFilters.empty())
     {
-      item.OutputToStream(ss, "ExcludeFilters.member.", excludeFiltersCount, "");
-      excludeFiltersCount++;
+      ss << "ExcludeFilters=&";
+    }
+    else
+    {
+      unsigned excludeFiltersCount = 1;
+      for(auto& item : m_excludeFilters)
+      {
+        item.OutputToStream(ss, "ExcludeFilters.member.", excludeFiltersCount, "");
+        excludeFiltersCount++;
+      }
     }
   }
 
@@ -71,21 +85,35 @@ Aws::String PutMetricStreamRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-    unsigned tagsCount = 1;
-    for(auto& item : m_tags)
+    if (m_tags.empty())
     {
-      item.OutputToStream(ss, "Tags.member.", tagsCount, "");
-      tagsCount++;
+      ss << "Tags=&";
+    }
+    else
+    {
+      unsigned tagsCount = 1;
+      for(auto& item : m_tags)
+      {
+        item.OutputToStream(ss, "Tags.member.", tagsCount, "");
+        tagsCount++;
+      }
     }
   }
 
   if(m_statisticsConfigurationsHasBeenSet)
   {
-    unsigned statisticsConfigurationsCount = 1;
-    for(auto& item : m_statisticsConfigurations)
+    if (m_statisticsConfigurations.empty())
     {
-      item.OutputToStream(ss, "StatisticsConfigurations.member.", statisticsConfigurationsCount, "");
-      statisticsConfigurationsCount++;
+      ss << "StatisticsConfigurations=&";
+    }
+    else
+    {
+      unsigned statisticsConfigurationsCount = 1;
+      for(auto& item : m_statisticsConfigurations)
+      {
+        item.OutputToStream(ss, "StatisticsConfigurations.member.", statisticsConfigurationsCount, "");
+        statisticsConfigurationsCount++;
+      }
     }
   }
 

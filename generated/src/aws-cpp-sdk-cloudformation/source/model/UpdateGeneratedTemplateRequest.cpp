@@ -37,22 +37,36 @@ Aws::String UpdateGeneratedTemplateRequest::SerializePayload() const
 
   if(m_addResourcesHasBeenSet)
   {
-    unsigned addResourcesCount = 1;
-    for(auto& item : m_addResources)
+    if (m_addResources.empty())
     {
-      item.OutputToStream(ss, "AddResources.member.", addResourcesCount, "");
-      addResourcesCount++;
+      ss << "AddResources=&";
+    }
+    else
+    {
+      unsigned addResourcesCount = 1;
+      for(auto& item : m_addResources)
+      {
+        item.OutputToStream(ss, "AddResources.member.", addResourcesCount, "");
+        addResourcesCount++;
+      }
     }
   }
 
   if(m_removeResourcesHasBeenSet)
   {
-    unsigned removeResourcesCount = 1;
-    for(auto& item : m_removeResources)
+    if (m_removeResources.empty())
     {
-      ss << "RemoveResources.member." << removeResourcesCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      removeResourcesCount++;
+      ss << "RemoveResources=&";
+    }
+    else
+    {
+      unsigned removeResourcesCount = 1;
+      for(auto& item : m_removeResources)
+      {
+        ss << "RemoveResources.member." << removeResourcesCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        removeResourcesCount++;
+      }
     }
   }
 

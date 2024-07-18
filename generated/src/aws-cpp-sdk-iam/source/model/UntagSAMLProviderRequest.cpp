@@ -27,12 +27,19 @@ Aws::String UntagSAMLProviderRequest::SerializePayload() const
 
   if(m_tagKeysHasBeenSet)
   {
-    unsigned tagKeysCount = 1;
-    for(auto& item : m_tagKeys)
+    if (m_tagKeys.empty())
     {
-      ss << "TagKeys.member." << tagKeysCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      tagKeysCount++;
+      ss << "TagKeys=&";
+    }
+    else
+    {
+      unsigned tagKeysCount = 1;
+      for(auto& item : m_tagKeys)
+      {
+        ss << "TagKeys.member." << tagKeysCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        tagKeysCount++;
+      }
     }
   }
 

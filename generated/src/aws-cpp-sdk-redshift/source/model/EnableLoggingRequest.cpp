@@ -46,12 +46,19 @@ Aws::String EnableLoggingRequest::SerializePayload() const
 
   if(m_logExportsHasBeenSet)
   {
-    unsigned logExportsCount = 1;
-    for(auto& item : m_logExports)
+    if (m_logExports.empty())
     {
-      ss << "LogExports.member." << logExportsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      logExportsCount++;
+      ss << "LogExports=&";
+    }
+    else
+    {
+      unsigned logExportsCount = 1;
+      for(auto& item : m_logExports)
+      {
+        ss << "LogExports.member." << logExportsCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        logExportsCount++;
+      }
     }
   }
 

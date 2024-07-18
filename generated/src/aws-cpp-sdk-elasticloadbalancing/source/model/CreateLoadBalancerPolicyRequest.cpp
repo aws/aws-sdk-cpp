@@ -39,11 +39,18 @@ Aws::String CreateLoadBalancerPolicyRequest::SerializePayload() const
 
   if(m_policyAttributesHasBeenSet)
   {
-    unsigned policyAttributesCount = 1;
-    for(auto& item : m_policyAttributes)
+    if (m_policyAttributes.empty())
     {
-      item.OutputToStream(ss, "PolicyAttributes.member.", policyAttributesCount, "");
-      policyAttributesCount++;
+      ss << "PolicyAttributes=&";
+    }
+    else
+    {
+      unsigned policyAttributesCount = 1;
+      for(auto& item : m_policyAttributes)
+      {
+        item.OutputToStream(ss, "PolicyAttributes.member.", policyAttributesCount, "");
+        policyAttributesCount++;
+      }
     }
   }
 

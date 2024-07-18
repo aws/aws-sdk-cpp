@@ -25,23 +25,37 @@ Aws::String DescribeLoadBalancersRequest::SerializePayload() const
   ss << "Action=DescribeLoadBalancers&";
   if(m_loadBalancerArnsHasBeenSet)
   {
-    unsigned loadBalancerArnsCount = 1;
-    for(auto& item : m_loadBalancerArns)
+    if (m_loadBalancerArns.empty())
     {
-      ss << "LoadBalancerArns.member." << loadBalancerArnsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      loadBalancerArnsCount++;
+      ss << "LoadBalancerArns=&";
+    }
+    else
+    {
+      unsigned loadBalancerArnsCount = 1;
+      for(auto& item : m_loadBalancerArns)
+      {
+        ss << "LoadBalancerArns.member." << loadBalancerArnsCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        loadBalancerArnsCount++;
+      }
     }
   }
 
   if(m_namesHasBeenSet)
   {
-    unsigned namesCount = 1;
-    for(auto& item : m_names)
+    if (m_names.empty())
     {
-      ss << "Names.member." << namesCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      namesCount++;
+      ss << "Names=&";
+    }
+    else
+    {
+      unsigned namesCount = 1;
+      for(auto& item : m_names)
+      {
+        ss << "Names.member." << namesCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        namesCount++;
+      }
     }
   }
 

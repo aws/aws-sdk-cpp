@@ -58,12 +58,19 @@ Aws::String ModifyCacheClusterRequest::SerializePayload() const
 
   if(m_cacheNodeIdsToRemoveHasBeenSet)
   {
-    unsigned cacheNodeIdsToRemoveCount = 1;
-    for(auto& item : m_cacheNodeIdsToRemove)
+    if (m_cacheNodeIdsToRemove.empty())
     {
-      ss << "CacheNodeIdsToRemove.member." << cacheNodeIdsToRemoveCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      cacheNodeIdsToRemoveCount++;
+      ss << "CacheNodeIdsToRemove=&";
+    }
+    else
+    {
+      unsigned cacheNodeIdsToRemoveCount = 1;
+      for(auto& item : m_cacheNodeIdsToRemove)
+      {
+        ss << "CacheNodeIdsToRemove.member." << cacheNodeIdsToRemoveCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        cacheNodeIdsToRemoveCount++;
+      }
     }
   }
 
@@ -74,34 +81,55 @@ Aws::String ModifyCacheClusterRequest::SerializePayload() const
 
   if(m_newAvailabilityZonesHasBeenSet)
   {
-    unsigned newAvailabilityZonesCount = 1;
-    for(auto& item : m_newAvailabilityZones)
+    if (m_newAvailabilityZones.empty())
     {
-      ss << "NewAvailabilityZones.member." << newAvailabilityZonesCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      newAvailabilityZonesCount++;
+      ss << "NewAvailabilityZones=&";
+    }
+    else
+    {
+      unsigned newAvailabilityZonesCount = 1;
+      for(auto& item : m_newAvailabilityZones)
+      {
+        ss << "NewAvailabilityZones.member." << newAvailabilityZonesCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        newAvailabilityZonesCount++;
+      }
     }
   }
 
   if(m_cacheSecurityGroupNamesHasBeenSet)
   {
-    unsigned cacheSecurityGroupNamesCount = 1;
-    for(auto& item : m_cacheSecurityGroupNames)
+    if (m_cacheSecurityGroupNames.empty())
     {
-      ss << "CacheSecurityGroupNames.member." << cacheSecurityGroupNamesCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      cacheSecurityGroupNamesCount++;
+      ss << "CacheSecurityGroupNames=&";
+    }
+    else
+    {
+      unsigned cacheSecurityGroupNamesCount = 1;
+      for(auto& item : m_cacheSecurityGroupNames)
+      {
+        ss << "CacheSecurityGroupNames.member." << cacheSecurityGroupNamesCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        cacheSecurityGroupNamesCount++;
+      }
     }
   }
 
   if(m_securityGroupIdsHasBeenSet)
   {
-    unsigned securityGroupIdsCount = 1;
-    for(auto& item : m_securityGroupIds)
+    if (m_securityGroupIds.empty())
     {
-      ss << "SecurityGroupIds.member." << securityGroupIdsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      securityGroupIdsCount++;
+      ss << "SecurityGroupIds=&";
+    }
+    else
+    {
+      unsigned securityGroupIdsCount = 1;
+      for(auto& item : m_securityGroupIds)
+      {
+        ss << "SecurityGroupIds.member." << securityGroupIdsCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        securityGroupIdsCount++;
+      }
     }
   }
 
@@ -167,11 +195,18 @@ Aws::String ModifyCacheClusterRequest::SerializePayload() const
 
   if(m_logDeliveryConfigurationsHasBeenSet)
   {
-    unsigned logDeliveryConfigurationsCount = 1;
-    for(auto& item : m_logDeliveryConfigurations)
+    if (m_logDeliveryConfigurations.empty())
     {
-      item.OutputToStream(ss, "LogDeliveryConfigurations.member.", logDeliveryConfigurationsCount, "");
-      logDeliveryConfigurationsCount++;
+      ss << "LogDeliveryConfigurations=&";
+    }
+    else
+    {
+      unsigned logDeliveryConfigurationsCount = 1;
+      for(auto& item : m_logDeliveryConfigurations)
+      {
+        item.OutputToStream(ss, "LogDeliveryConfigurations.member.", logDeliveryConfigurationsCount, "");
+        logDeliveryConfigurationsCount++;
+      }
     }
   }
 

@@ -36,11 +36,18 @@ Aws::String GetFederationTokenRequest::SerializePayload() const
 
   if(m_policyArnsHasBeenSet)
   {
-    unsigned policyArnsCount = 1;
-    for(auto& item : m_policyArns)
+    if (m_policyArns.empty())
     {
-      item.OutputToStream(ss, "PolicyArns.member.", policyArnsCount, "");
-      policyArnsCount++;
+      ss << "PolicyArns=&";
+    }
+    else
+    {
+      unsigned policyArnsCount = 1;
+      for(auto& item : m_policyArns)
+      {
+        item.OutputToStream(ss, "PolicyArns.member.", policyArnsCount, "");
+        policyArnsCount++;
+      }
     }
   }
 
@@ -51,11 +58,18 @@ Aws::String GetFederationTokenRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-    unsigned tagsCount = 1;
-    for(auto& item : m_tags)
+    if (m_tags.empty())
     {
-      item.OutputToStream(ss, "Tags.member.", tagsCount, "");
-      tagsCount++;
+      ss << "Tags=&";
+    }
+    else
+    {
+      unsigned tagsCount = 1;
+      for(auto& item : m_tags)
+      {
+        item.OutputToStream(ss, "Tags.member.", tagsCount, "");
+        tagsCount++;
+      }
     }
   }
 

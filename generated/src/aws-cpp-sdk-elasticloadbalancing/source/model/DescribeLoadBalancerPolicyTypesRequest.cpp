@@ -21,12 +21,19 @@ Aws::String DescribeLoadBalancerPolicyTypesRequest::SerializePayload() const
   ss << "Action=DescribeLoadBalancerPolicyTypes&";
   if(m_policyTypeNamesHasBeenSet)
   {
-    unsigned policyTypeNamesCount = 1;
-    for(auto& item : m_policyTypeNames)
+    if (m_policyTypeNames.empty())
     {
-      ss << "PolicyTypeNames.member." << policyTypeNamesCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      policyTypeNamesCount++;
+      ss << "PolicyTypeNames=&";
+    }
+    else
+    {
+      unsigned policyTypeNamesCount = 1;
+      for(auto& item : m_policyTypeNames)
+      {
+        ss << "PolicyTypeNames.member." << policyTypeNamesCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        policyTypeNamesCount++;
+      }
     }
   }
 
