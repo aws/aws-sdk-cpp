@@ -32,44 +32,72 @@ Aws::String CreateLoadBalancerRequest::SerializePayload() const
 
   if(m_listenersHasBeenSet)
   {
-    unsigned listenersCount = 1;
-    for(auto& item : m_listeners)
+    if (m_listeners.empty())
     {
-      item.OutputToStream(ss, "Listeners.member.", listenersCount, "");
-      listenersCount++;
+      ss << "Listeners=&";
+    }
+    else
+    {
+      unsigned listenersCount = 1;
+      for(auto& item : m_listeners)
+      {
+        item.OutputToStream(ss, "Listeners.member.", listenersCount, "");
+        listenersCount++;
+      }
     }
   }
 
   if(m_availabilityZonesHasBeenSet)
   {
-    unsigned availabilityZonesCount = 1;
-    for(auto& item : m_availabilityZones)
+    if (m_availabilityZones.empty())
     {
-      ss << "AvailabilityZones.member." << availabilityZonesCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      availabilityZonesCount++;
+      ss << "AvailabilityZones=&";
+    }
+    else
+    {
+      unsigned availabilityZonesCount = 1;
+      for(auto& item : m_availabilityZones)
+      {
+        ss << "AvailabilityZones.member." << availabilityZonesCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        availabilityZonesCount++;
+      }
     }
   }
 
   if(m_subnetsHasBeenSet)
   {
-    unsigned subnetsCount = 1;
-    for(auto& item : m_subnets)
+    if (m_subnets.empty())
     {
-      ss << "Subnets.member." << subnetsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      subnetsCount++;
+      ss << "Subnets=&";
+    }
+    else
+    {
+      unsigned subnetsCount = 1;
+      for(auto& item : m_subnets)
+      {
+        ss << "Subnets.member." << subnetsCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        subnetsCount++;
+      }
     }
   }
 
   if(m_securityGroupsHasBeenSet)
   {
-    unsigned securityGroupsCount = 1;
-    for(auto& item : m_securityGroups)
+    if (m_securityGroups.empty())
     {
-      ss << "SecurityGroups.member." << securityGroupsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      securityGroupsCount++;
+      ss << "SecurityGroups=&";
+    }
+    else
+    {
+      unsigned securityGroupsCount = 1;
+      for(auto& item : m_securityGroups)
+      {
+        ss << "SecurityGroups.member." << securityGroupsCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        securityGroupsCount++;
+      }
     }
   }
 
@@ -80,11 +108,18 @@ Aws::String CreateLoadBalancerRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-    unsigned tagsCount = 1;
-    for(auto& item : m_tags)
+    if (m_tags.empty())
     {
-      item.OutputToStream(ss, "Tags.member.", tagsCount, "");
-      tagsCount++;
+      ss << "Tags=&";
+    }
+    else
+    {
+      unsigned tagsCount = 1;
+      for(auto& item : m_tags)
+      {
+        item.OutputToStream(ss, "Tags.member.", tagsCount, "");
+        tagsCount++;
+      }
     }
   }
 

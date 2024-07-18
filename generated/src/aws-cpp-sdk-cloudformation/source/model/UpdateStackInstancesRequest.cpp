@@ -35,12 +35,19 @@ Aws::String UpdateStackInstancesRequest::SerializePayload() const
 
   if(m_accountsHasBeenSet)
   {
-    unsigned accountsCount = 1;
-    for(auto& item : m_accounts)
+    if (m_accounts.empty())
     {
-      ss << "Accounts.member." << accountsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      accountsCount++;
+      ss << "Accounts=&";
+    }
+    else
+    {
+      unsigned accountsCount = 1;
+      for(auto& item : m_accounts)
+      {
+        ss << "Accounts.member." << accountsCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        accountsCount++;
+      }
     }
   }
 
@@ -51,22 +58,36 @@ Aws::String UpdateStackInstancesRequest::SerializePayload() const
 
   if(m_regionsHasBeenSet)
   {
-    unsigned regionsCount = 1;
-    for(auto& item : m_regions)
+    if (m_regions.empty())
     {
-      ss << "Regions.member." << regionsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      regionsCount++;
+      ss << "Regions=&";
+    }
+    else
+    {
+      unsigned regionsCount = 1;
+      for(auto& item : m_regions)
+      {
+        ss << "Regions.member." << regionsCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        regionsCount++;
+      }
     }
   }
 
   if(m_parameterOverridesHasBeenSet)
   {
-    unsigned parameterOverridesCount = 1;
-    for(auto& item : m_parameterOverrides)
+    if (m_parameterOverrides.empty())
     {
-      item.OutputToStream(ss, "ParameterOverrides.member.", parameterOverridesCount, "");
-      parameterOverridesCount++;
+      ss << "ParameterOverrides=&";
+    }
+    else
+    {
+      unsigned parameterOverridesCount = 1;
+      for(auto& item : m_parameterOverrides)
+      {
+        item.OutputToStream(ss, "ParameterOverrides.member.", parameterOverridesCount, "");
+        parameterOverridesCount++;
+      }
     }
   }
 

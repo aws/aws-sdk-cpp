@@ -35,12 +35,19 @@ Aws::String RevokeEndpointAccessRequest::SerializePayload() const
 
   if(m_vpcIdsHasBeenSet)
   {
-    unsigned vpcIdsCount = 1;
-    for(auto& item : m_vpcIds)
+    if (m_vpcIds.empty())
     {
-      ss << "VpcIds.member." << vpcIdsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      vpcIdsCount++;
+      ss << "VpcIds=&";
+    }
+    else
+    {
+      unsigned vpcIdsCount = 1;
+      for(auto& item : m_vpcIds)
+      {
+        ss << "VpcIds.member." << vpcIdsCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        vpcIdsCount++;
+      }
     }
   }
 

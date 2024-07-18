@@ -40,23 +40,37 @@ Aws::String DescribeEnvironmentsRequest::SerializePayload() const
 
   if(m_environmentIdsHasBeenSet)
   {
-    unsigned environmentIdsCount = 1;
-    for(auto& item : m_environmentIds)
+    if (m_environmentIds.empty())
     {
-      ss << "EnvironmentIds.member." << environmentIdsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      environmentIdsCount++;
+      ss << "EnvironmentIds=&";
+    }
+    else
+    {
+      unsigned environmentIdsCount = 1;
+      for(auto& item : m_environmentIds)
+      {
+        ss << "EnvironmentIds.member." << environmentIdsCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        environmentIdsCount++;
+      }
     }
   }
 
   if(m_environmentNamesHasBeenSet)
   {
-    unsigned environmentNamesCount = 1;
-    for(auto& item : m_environmentNames)
+    if (m_environmentNames.empty())
     {
-      ss << "EnvironmentNames.member." << environmentNamesCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      environmentNamesCount++;
+      ss << "EnvironmentNames=&";
+    }
+    else
+    {
+      unsigned environmentNamesCount = 1;
+      for(auto& item : m_environmentNames)
+      {
+        ss << "EnvironmentNames.member." << environmentNamesCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        environmentNamesCount++;
+      }
     }
   }
 

@@ -27,12 +27,19 @@ Aws::String RebootCacheClusterRequest::SerializePayload() const
 
   if(m_cacheNodeIdsToRebootHasBeenSet)
   {
-    unsigned cacheNodeIdsToRebootCount = 1;
-    for(auto& item : m_cacheNodeIdsToReboot)
+    if (m_cacheNodeIdsToReboot.empty())
     {
-      ss << "CacheNodeIdsToReboot.member." << cacheNodeIdsToRebootCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      cacheNodeIdsToRebootCount++;
+      ss << "CacheNodeIdsToReboot=&";
+    }
+    else
+    {
+      unsigned cacheNodeIdsToRebootCount = 1;
+      for(auto& item : m_cacheNodeIdsToReboot)
+      {
+        ss << "CacheNodeIdsToReboot.member." << cacheNodeIdsToRebootCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        cacheNodeIdsToRebootCount++;
+      }
     }
   }
 

@@ -37,33 +37,54 @@ Aws::String CreateLoadBalancerRequest::SerializePayload() const
 
   if(m_subnetsHasBeenSet)
   {
-    unsigned subnetsCount = 1;
-    for(auto& item : m_subnets)
+    if (m_subnets.empty())
     {
-      ss << "Subnets.member." << subnetsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      subnetsCount++;
+      ss << "Subnets=&";
+    }
+    else
+    {
+      unsigned subnetsCount = 1;
+      for(auto& item : m_subnets)
+      {
+        ss << "Subnets.member." << subnetsCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        subnetsCount++;
+      }
     }
   }
 
   if(m_subnetMappingsHasBeenSet)
   {
-    unsigned subnetMappingsCount = 1;
-    for(auto& item : m_subnetMappings)
+    if (m_subnetMappings.empty())
     {
-      item.OutputToStream(ss, "SubnetMappings.member.", subnetMappingsCount, "");
-      subnetMappingsCount++;
+      ss << "SubnetMappings=&";
+    }
+    else
+    {
+      unsigned subnetMappingsCount = 1;
+      for(auto& item : m_subnetMappings)
+      {
+        item.OutputToStream(ss, "SubnetMappings.member.", subnetMappingsCount, "");
+        subnetMappingsCount++;
+      }
     }
   }
 
   if(m_securityGroupsHasBeenSet)
   {
-    unsigned securityGroupsCount = 1;
-    for(auto& item : m_securityGroups)
+    if (m_securityGroups.empty())
     {
-      ss << "SecurityGroups.member." << securityGroupsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      securityGroupsCount++;
+      ss << "SecurityGroups=&";
+    }
+    else
+    {
+      unsigned securityGroupsCount = 1;
+      for(auto& item : m_securityGroups)
+      {
+        ss << "SecurityGroups.member." << securityGroupsCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        securityGroupsCount++;
+      }
     }
   }
 
@@ -74,11 +95,18 @@ Aws::String CreateLoadBalancerRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-    unsigned tagsCount = 1;
-    for(auto& item : m_tags)
+    if (m_tags.empty())
     {
-      item.OutputToStream(ss, "Tags.member.", tagsCount, "");
-      tagsCount++;
+      ss << "Tags=&";
+    }
+    else
+    {
+      unsigned tagsCount = 1;
+      for(auto& item : m_tags)
+      {
+        item.OutputToStream(ss, "Tags.member.", tagsCount, "");
+        tagsCount++;
+      }
     }
   }
 

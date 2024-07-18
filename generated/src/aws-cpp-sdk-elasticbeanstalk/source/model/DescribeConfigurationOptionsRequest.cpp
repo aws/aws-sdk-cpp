@@ -51,11 +51,18 @@ Aws::String DescribeConfigurationOptionsRequest::SerializePayload() const
 
   if(m_optionsHasBeenSet)
   {
-    unsigned optionsCount = 1;
-    for(auto& item : m_options)
+    if (m_options.empty())
     {
-      item.OutputToStream(ss, "Options.member.", optionsCount, "");
-      optionsCount++;
+      ss << "Options=&";
+    }
+    else
+    {
+      unsigned optionsCount = 1;
+      for(auto& item : m_options)
+      {
+        item.OutputToStream(ss, "Options.member.", optionsCount, "");
+        optionsCount++;
+      }
     }
   }
 

@@ -31,12 +31,19 @@ Aws::String DeleteStackRequest::SerializePayload() const
 
   if(m_retainResourcesHasBeenSet)
   {
-    unsigned retainResourcesCount = 1;
-    for(auto& item : m_retainResources)
+    if (m_retainResources.empty())
     {
-      ss << "RetainResources.member." << retainResourcesCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      retainResourcesCount++;
+      ss << "RetainResources=&";
+    }
+    else
+    {
+      unsigned retainResourcesCount = 1;
+      for(auto& item : m_retainResources)
+      {
+        ss << "RetainResources.member." << retainResourcesCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        retainResourcesCount++;
+      }
     }
   }
 

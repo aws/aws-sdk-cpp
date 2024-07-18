@@ -27,11 +27,18 @@ Aws::String AddListenerCertificatesRequest::SerializePayload() const
 
   if(m_certificatesHasBeenSet)
   {
-    unsigned certificatesCount = 1;
-    for(auto& item : m_certificates)
+    if (m_certificates.empty())
     {
-      item.OutputToStream(ss, "Certificates.member.", certificatesCount, "");
-      certificatesCount++;
+      ss << "Certificates=&";
+    }
+    else
+    {
+      unsigned certificatesCount = 1;
+      for(auto& item : m_certificates)
+      {
+        item.OutputToStream(ss, "Certificates.member.", certificatesCount, "");
+        certificatesCount++;
+      }
     }
   }
 

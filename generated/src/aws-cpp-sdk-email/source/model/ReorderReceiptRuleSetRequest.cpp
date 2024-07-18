@@ -27,12 +27,19 @@ Aws::String ReorderReceiptRuleSetRequest::SerializePayload() const
 
   if(m_ruleNamesHasBeenSet)
   {
-    unsigned ruleNamesCount = 1;
-    for(auto& item : m_ruleNames)
+    if (m_ruleNames.empty())
     {
-      ss << "RuleNames.member." << ruleNamesCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      ruleNamesCount++;
+      ss << "RuleNames=&";
+    }
+    else
+    {
+      unsigned ruleNamesCount = 1;
+      for(auto& item : m_ruleNames)
+      {
+        ss << "RuleNames.member." << ruleNamesCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        ruleNamesCount++;
+      }
     }
   }
 

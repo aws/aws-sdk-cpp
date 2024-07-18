@@ -42,12 +42,19 @@ Aws::String ModifyUserRequest::SerializePayload() const
 
   if(m_passwordsHasBeenSet)
   {
-    unsigned passwordsCount = 1;
-    for(auto& item : m_passwords)
+    if (m_passwords.empty())
     {
-      ss << "Passwords.member." << passwordsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      passwordsCount++;
+      ss << "Passwords=&";
+    }
+    else
+    {
+      unsigned passwordsCount = 1;
+      for(auto& item : m_passwords)
+      {
+        ss << "Passwords.member." << passwordsCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        passwordsCount++;
+      }
     }
   }
 

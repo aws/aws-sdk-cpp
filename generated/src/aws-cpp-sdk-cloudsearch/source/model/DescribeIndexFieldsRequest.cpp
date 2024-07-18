@@ -29,12 +29,19 @@ Aws::String DescribeIndexFieldsRequest::SerializePayload() const
 
   if(m_fieldNamesHasBeenSet)
   {
-    unsigned fieldNamesCount = 1;
-    for(auto& item : m_fieldNames)
+    if (m_fieldNames.empty())
     {
-      ss << "FieldNames.member." << fieldNamesCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      fieldNamesCount++;
+      ss << "FieldNames=&";
+    }
+    else
+    {
+      unsigned fieldNamesCount = 1;
+      for(auto& item : m_fieldNames)
+      {
+        ss << "FieldNames.member." << fieldNamesCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        fieldNamesCount++;
+      }
     }
   }
 

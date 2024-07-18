@@ -80,23 +80,37 @@ Aws::String DescribeClusterSnapshotsRequest::SerializePayload() const
 
   if(m_tagKeysHasBeenSet)
   {
-    unsigned tagKeysCount = 1;
-    for(auto& item : m_tagKeys)
+    if (m_tagKeys.empty())
     {
-      ss << "TagKeys.member." << tagKeysCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      tagKeysCount++;
+      ss << "TagKeys=&";
+    }
+    else
+    {
+      unsigned tagKeysCount = 1;
+      for(auto& item : m_tagKeys)
+      {
+        ss << "TagKeys.member." << tagKeysCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        tagKeysCount++;
+      }
     }
   }
 
   if(m_tagValuesHasBeenSet)
   {
-    unsigned tagValuesCount = 1;
-    for(auto& item : m_tagValues)
+    if (m_tagValues.empty())
     {
-      ss << "TagValues.member." << tagValuesCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      tagValuesCount++;
+      ss << "TagValues=&";
+    }
+    else
+    {
+      unsigned tagValuesCount = 1;
+      for(auto& item : m_tagValues)
+      {
+        ss << "TagValues.member." << tagValuesCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        tagValuesCount++;
+      }
     }
   }
 
@@ -107,11 +121,18 @@ Aws::String DescribeClusterSnapshotsRequest::SerializePayload() const
 
   if(m_sortingEntitiesHasBeenSet)
   {
-    unsigned sortingEntitiesCount = 1;
-    for(auto& item : m_sortingEntities)
+    if (m_sortingEntities.empty())
     {
-      item.OutputToStream(ss, "SortingEntities.member.", sortingEntitiesCount, "");
-      sortingEntitiesCount++;
+      ss << "SortingEntities=&";
+    }
+    else
+    {
+      unsigned sortingEntitiesCount = 1;
+      for(auto& item : m_sortingEntities)
+      {
+        item.OutputToStream(ss, "SortingEntities.member.", sortingEntitiesCount, "");
+        sortingEntitiesCount++;
+      }
     }
   }
 

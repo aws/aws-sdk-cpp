@@ -24,12 +24,19 @@ Aws::String DescribeNotificationConfigurationsRequest::SerializePayload() const
   ss << "Action=DescribeNotificationConfigurations&";
   if(m_autoScalingGroupNamesHasBeenSet)
   {
-    unsigned autoScalingGroupNamesCount = 1;
-    for(auto& item : m_autoScalingGroupNames)
+    if (m_autoScalingGroupNames.empty())
     {
-      ss << "AutoScalingGroupNames.member." << autoScalingGroupNamesCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      autoScalingGroupNamesCount++;
+      ss << "AutoScalingGroupNames=&";
+    }
+    else
+    {
+      unsigned autoScalingGroupNamesCount = 1;
+      for(auto& item : m_autoScalingGroupNames)
+      {
+        ss << "AutoScalingGroupNames.member." << autoScalingGroupNamesCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        autoScalingGroupNamesCount++;
+      }
     }
   }
 

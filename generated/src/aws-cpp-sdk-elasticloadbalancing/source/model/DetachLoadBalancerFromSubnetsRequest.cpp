@@ -27,12 +27,19 @@ Aws::String DetachLoadBalancerFromSubnetsRequest::SerializePayload() const
 
   if(m_subnetsHasBeenSet)
   {
-    unsigned subnetsCount = 1;
-    for(auto& item : m_subnets)
+    if (m_subnets.empty())
     {
-      ss << "Subnets.member." << subnetsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      subnetsCount++;
+      ss << "Subnets=&";
+    }
+    else
+    {
+      unsigned subnetsCount = 1;
+      for(auto& item : m_subnets)
+      {
+        ss << "Subnets.member." << subnetsCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        subnetsCount++;
+      }
     }
   }
 

@@ -37,22 +37,36 @@ Aws::String DecreaseReplicaCountRequest::SerializePayload() const
 
   if(m_replicaConfigurationHasBeenSet)
   {
-    unsigned replicaConfigurationCount = 1;
-    for(auto& item : m_replicaConfiguration)
+    if (m_replicaConfiguration.empty())
     {
-      item.OutputToStream(ss, "ReplicaConfiguration.member.", replicaConfigurationCount, "");
-      replicaConfigurationCount++;
+      ss << "ReplicaConfiguration=&";
+    }
+    else
+    {
+      unsigned replicaConfigurationCount = 1;
+      for(auto& item : m_replicaConfiguration)
+      {
+        item.OutputToStream(ss, "ReplicaConfiguration.member.", replicaConfigurationCount, "");
+        replicaConfigurationCount++;
+      }
     }
   }
 
   if(m_replicasToRemoveHasBeenSet)
   {
-    unsigned replicasToRemoveCount = 1;
-    for(auto& item : m_replicasToRemove)
+    if (m_replicasToRemove.empty())
     {
-      ss << "ReplicasToRemove.member." << replicasToRemoveCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      replicasToRemoveCount++;
+      ss << "ReplicasToRemove=&";
+    }
+    else
+    {
+      unsigned replicasToRemoveCount = 1;
+      for(auto& item : m_replicasToRemove)
+      {
+        ss << "ReplicasToRemove.member." << replicasToRemoveCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        replicasToRemoveCount++;
+      }
     }
   }
 

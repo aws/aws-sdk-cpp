@@ -27,12 +27,19 @@ Aws::String ResumeProcessesRequest::SerializePayload() const
 
   if(m_scalingProcessesHasBeenSet)
   {
-    unsigned scalingProcessesCount = 1;
-    for(auto& item : m_scalingProcesses)
+    if (m_scalingProcesses.empty())
     {
-      ss << "ScalingProcesses.member." << scalingProcessesCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      scalingProcessesCount++;
+      ss << "ScalingProcesses=&";
+    }
+    else
+    {
+      unsigned scalingProcessesCount = 1;
+      for(auto& item : m_scalingProcesses)
+      {
+        ss << "ScalingProcesses.member." << scalingProcessesCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        scalingProcessesCount++;
+      }
     }
   }
 

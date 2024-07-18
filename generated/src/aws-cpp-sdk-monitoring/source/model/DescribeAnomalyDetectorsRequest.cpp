@@ -47,22 +47,36 @@ Aws::String DescribeAnomalyDetectorsRequest::SerializePayload() const
 
   if(m_dimensionsHasBeenSet)
   {
-    unsigned dimensionsCount = 1;
-    for(auto& item : m_dimensions)
+    if (m_dimensions.empty())
     {
-      item.OutputToStream(ss, "Dimensions.member.", dimensionsCount, "");
-      dimensionsCount++;
+      ss << "Dimensions=&";
+    }
+    else
+    {
+      unsigned dimensionsCount = 1;
+      for(auto& item : m_dimensions)
+      {
+        item.OutputToStream(ss, "Dimensions.member.", dimensionsCount, "");
+        dimensionsCount++;
+      }
     }
   }
 
   if(m_anomalyDetectorTypesHasBeenSet)
   {
-    unsigned anomalyDetectorTypesCount = 1;
-    for(auto& item : m_anomalyDetectorTypes)
+    if (m_anomalyDetectorTypes.empty())
     {
-      ss << "AnomalyDetectorTypes.member." << anomalyDetectorTypesCount << "="
-          << StringUtils::URLEncode(AnomalyDetectorTypeMapper::GetNameForAnomalyDetectorType(item).c_str()) << "&";
-      anomalyDetectorTypesCount++;
+      ss << "AnomalyDetectorTypes=&";
+    }
+    else
+    {
+      unsigned anomalyDetectorTypesCount = 1;
+      for(auto& item : m_anomalyDetectorTypes)
+      {
+        ss << "AnomalyDetectorTypes.member." << anomalyDetectorTypesCount << "="
+            << StringUtils::URLEncode(AnomalyDetectorTypeMapper::GetNameForAnomalyDetectorType(item).c_str()) << "&";
+        anomalyDetectorTypesCount++;
+      }
     }
   }
 

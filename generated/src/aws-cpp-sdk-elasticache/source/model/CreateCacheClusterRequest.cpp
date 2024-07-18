@@ -79,12 +79,19 @@ Aws::String CreateCacheClusterRequest::SerializePayload() const
 
   if(m_preferredAvailabilityZonesHasBeenSet)
   {
-    unsigned preferredAvailabilityZonesCount = 1;
-    for(auto& item : m_preferredAvailabilityZones)
+    if (m_preferredAvailabilityZones.empty())
     {
-      ss << "PreferredAvailabilityZones.member." << preferredAvailabilityZonesCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      preferredAvailabilityZonesCount++;
+      ss << "PreferredAvailabilityZones=&";
+    }
+    else
+    {
+      unsigned preferredAvailabilityZonesCount = 1;
+      for(auto& item : m_preferredAvailabilityZones)
+      {
+        ss << "PreferredAvailabilityZones.member." << preferredAvailabilityZonesCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        preferredAvailabilityZonesCount++;
+      }
     }
   }
 
@@ -120,44 +127,72 @@ Aws::String CreateCacheClusterRequest::SerializePayload() const
 
   if(m_cacheSecurityGroupNamesHasBeenSet)
   {
-    unsigned cacheSecurityGroupNamesCount = 1;
-    for(auto& item : m_cacheSecurityGroupNames)
+    if (m_cacheSecurityGroupNames.empty())
     {
-      ss << "CacheSecurityGroupNames.member." << cacheSecurityGroupNamesCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      cacheSecurityGroupNamesCount++;
+      ss << "CacheSecurityGroupNames=&";
+    }
+    else
+    {
+      unsigned cacheSecurityGroupNamesCount = 1;
+      for(auto& item : m_cacheSecurityGroupNames)
+      {
+        ss << "CacheSecurityGroupNames.member." << cacheSecurityGroupNamesCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        cacheSecurityGroupNamesCount++;
+      }
     }
   }
 
   if(m_securityGroupIdsHasBeenSet)
   {
-    unsigned securityGroupIdsCount = 1;
-    for(auto& item : m_securityGroupIds)
+    if (m_securityGroupIds.empty())
     {
-      ss << "SecurityGroupIds.member." << securityGroupIdsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      securityGroupIdsCount++;
+      ss << "SecurityGroupIds=&";
+    }
+    else
+    {
+      unsigned securityGroupIdsCount = 1;
+      for(auto& item : m_securityGroupIds)
+      {
+        ss << "SecurityGroupIds.member." << securityGroupIdsCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        securityGroupIdsCount++;
+      }
     }
   }
 
   if(m_tagsHasBeenSet)
   {
-    unsigned tagsCount = 1;
-    for(auto& item : m_tags)
+    if (m_tags.empty())
     {
-      item.OutputToStream(ss, "Tags.member.", tagsCount, "");
-      tagsCount++;
+      ss << "Tags=&";
+    }
+    else
+    {
+      unsigned tagsCount = 1;
+      for(auto& item : m_tags)
+      {
+        item.OutputToStream(ss, "Tags.member.", tagsCount, "");
+        tagsCount++;
+      }
     }
   }
 
   if(m_snapshotArnsHasBeenSet)
   {
-    unsigned snapshotArnsCount = 1;
-    for(auto& item : m_snapshotArns)
+    if (m_snapshotArns.empty())
     {
-      ss << "SnapshotArns.member." << snapshotArnsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      snapshotArnsCount++;
+      ss << "SnapshotArns=&";
+    }
+    else
+    {
+      unsigned snapshotArnsCount = 1;
+      for(auto& item : m_snapshotArns)
+      {
+        ss << "SnapshotArns.member." << snapshotArnsCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        snapshotArnsCount++;
+      }
     }
   }
 
@@ -213,22 +248,36 @@ Aws::String CreateCacheClusterRequest::SerializePayload() const
 
   if(m_preferredOutpostArnsHasBeenSet)
   {
-    unsigned preferredOutpostArnsCount = 1;
-    for(auto& item : m_preferredOutpostArns)
+    if (m_preferredOutpostArns.empty())
     {
-      ss << "PreferredOutpostArns.member." << preferredOutpostArnsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      preferredOutpostArnsCount++;
+      ss << "PreferredOutpostArns=&";
+    }
+    else
+    {
+      unsigned preferredOutpostArnsCount = 1;
+      for(auto& item : m_preferredOutpostArns)
+      {
+        ss << "PreferredOutpostArns.member." << preferredOutpostArnsCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        preferredOutpostArnsCount++;
+      }
     }
   }
 
   if(m_logDeliveryConfigurationsHasBeenSet)
   {
-    unsigned logDeliveryConfigurationsCount = 1;
-    for(auto& item : m_logDeliveryConfigurations)
+    if (m_logDeliveryConfigurations.empty())
     {
-      item.OutputToStream(ss, "LogDeliveryConfigurations.member.", logDeliveryConfigurationsCount, "");
-      logDeliveryConfigurationsCount++;
+      ss << "LogDeliveryConfigurations=&";
+    }
+    else
+    {
+      unsigned logDeliveryConfigurationsCount = 1;
+      for(auto& item : m_logDeliveryConfigurations)
+      {
+        item.OutputToStream(ss, "LogDeliveryConfigurations.member.", logDeliveryConfigurationsCount, "");
+        logDeliveryConfigurationsCount++;
+      }
     }
   }
 

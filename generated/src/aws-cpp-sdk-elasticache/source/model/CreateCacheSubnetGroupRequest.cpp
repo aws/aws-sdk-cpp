@@ -34,22 +34,36 @@ Aws::String CreateCacheSubnetGroupRequest::SerializePayload() const
 
   if(m_subnetIdsHasBeenSet)
   {
-    unsigned subnetIdsCount = 1;
-    for(auto& item : m_subnetIds)
+    if (m_subnetIds.empty())
     {
-      ss << "SubnetIds.member." << subnetIdsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      subnetIdsCount++;
+      ss << "SubnetIds=&";
+    }
+    else
+    {
+      unsigned subnetIdsCount = 1;
+      for(auto& item : m_subnetIds)
+      {
+        ss << "SubnetIds.member." << subnetIdsCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        subnetIdsCount++;
+      }
     }
   }
 
   if(m_tagsHasBeenSet)
   {
-    unsigned tagsCount = 1;
-    for(auto& item : m_tags)
+    if (m_tags.empty())
     {
-      item.OutputToStream(ss, "Tags.member.", tagsCount, "");
-      tagsCount++;
+      ss << "Tags=&";
+    }
+    else
+    {
+      unsigned tagsCount = 1;
+      for(auto& item : m_tags)
+      {
+        item.OutputToStream(ss, "Tags.member.", tagsCount, "");
+        tagsCount++;
+      }
     }
   }
 

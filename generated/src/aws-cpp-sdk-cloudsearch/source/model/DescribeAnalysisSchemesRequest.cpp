@@ -29,12 +29,19 @@ Aws::String DescribeAnalysisSchemesRequest::SerializePayload() const
 
   if(m_analysisSchemeNamesHasBeenSet)
   {
-    unsigned analysisSchemeNamesCount = 1;
-    for(auto& item : m_analysisSchemeNames)
+    if (m_analysisSchemeNames.empty())
     {
-      ss << "AnalysisSchemeNames.member." << analysisSchemeNamesCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      analysisSchemeNamesCount++;
+      ss << "AnalysisSchemeNames=&";
+    }
+    else
+    {
+      unsigned analysisSchemeNamesCount = 1;
+      for(auto& item : m_analysisSchemeNames)
+      {
+        ss << "AnalysisSchemeNames.member." << analysisSchemeNamesCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        analysisSchemeNamesCount++;
+      }
     }
   }
 

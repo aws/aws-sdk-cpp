@@ -56,12 +56,19 @@ Aws::String CreateLaunchConfigurationRequest::SerializePayload() const
 
   if(m_securityGroupsHasBeenSet)
   {
-    unsigned securityGroupsCount = 1;
-    for(auto& item : m_securityGroups)
+    if (m_securityGroups.empty())
     {
-      ss << "SecurityGroups.member." << securityGroupsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      securityGroupsCount++;
+      ss << "SecurityGroups=&";
+    }
+    else
+    {
+      unsigned securityGroupsCount = 1;
+      for(auto& item : m_securityGroups)
+      {
+        ss << "SecurityGroups.member." << securityGroupsCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        securityGroupsCount++;
+      }
     }
   }
 
@@ -72,12 +79,19 @@ Aws::String CreateLaunchConfigurationRequest::SerializePayload() const
 
   if(m_classicLinkVPCSecurityGroupsHasBeenSet)
   {
-    unsigned classicLinkVPCSecurityGroupsCount = 1;
-    for(auto& item : m_classicLinkVPCSecurityGroups)
+    if (m_classicLinkVPCSecurityGroups.empty())
     {
-      ss << "ClassicLinkVPCSecurityGroups.member." << classicLinkVPCSecurityGroupsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      classicLinkVPCSecurityGroupsCount++;
+      ss << "ClassicLinkVPCSecurityGroups=&";
+    }
+    else
+    {
+      unsigned classicLinkVPCSecurityGroupsCount = 1;
+      for(auto& item : m_classicLinkVPCSecurityGroups)
+      {
+        ss << "ClassicLinkVPCSecurityGroups.member." << classicLinkVPCSecurityGroupsCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        classicLinkVPCSecurityGroupsCount++;
+      }
     }
   }
 
@@ -108,11 +122,18 @@ Aws::String CreateLaunchConfigurationRequest::SerializePayload() const
 
   if(m_blockDeviceMappingsHasBeenSet)
   {
-    unsigned blockDeviceMappingsCount = 1;
-    for(auto& item : m_blockDeviceMappings)
+    if (m_blockDeviceMappings.empty())
     {
-      item.OutputToStream(ss, "BlockDeviceMappings.member.", blockDeviceMappingsCount, "");
-      blockDeviceMappingsCount++;
+      ss << "BlockDeviceMappings=&";
+    }
+    else
+    {
+      unsigned blockDeviceMappingsCount = 1;
+      for(auto& item : m_blockDeviceMappings)
+      {
+        item.OutputToStream(ss, "BlockDeviceMappings.member.", blockDeviceMappingsCount, "");
+        blockDeviceMappingsCount++;
+      }
     }
   }
 

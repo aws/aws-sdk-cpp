@@ -27,11 +27,18 @@ Aws::String CreateLoadBalancerListenersRequest::SerializePayload() const
 
   if(m_listenersHasBeenSet)
   {
-    unsigned listenersCount = 1;
-    for(auto& item : m_listeners)
+    if (m_listeners.empty())
     {
-      item.OutputToStream(ss, "Listeners.member.", listenersCount, "");
-      listenersCount++;
+      ss << "Listeners=&";
+    }
+    else
+    {
+      unsigned listenersCount = 1;
+      for(auto& item : m_listeners)
+      {
+        item.OutputToStream(ss, "Listeners.member.", listenersCount, "");
+        listenersCount++;
+      }
     }
   }
 

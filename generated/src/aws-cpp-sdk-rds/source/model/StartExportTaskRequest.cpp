@@ -57,12 +57,19 @@ Aws::String StartExportTaskRequest::SerializePayload() const
 
   if(m_exportOnlyHasBeenSet)
   {
-    unsigned exportOnlyCount = 1;
-    for(auto& item : m_exportOnly)
+    if (m_exportOnly.empty())
     {
-      ss << "ExportOnly.member." << exportOnlyCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      exportOnlyCount++;
+      ss << "ExportOnly=&";
+    }
+    else
+    {
+      unsigned exportOnlyCount = 1;
+      for(auto& item : m_exportOnly)
+      {
+        ss << "ExportOnly.member." << exportOnlyCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        exportOnlyCount++;
+      }
     }
   }
 

@@ -24,12 +24,19 @@ Aws::String DescribeLoadBalancersRequest::SerializePayload() const
   ss << "Action=DescribeLoadBalancers&";
   if(m_loadBalancerNamesHasBeenSet)
   {
-    unsigned loadBalancerNamesCount = 1;
-    for(auto& item : m_loadBalancerNames)
+    if (m_loadBalancerNames.empty())
     {
-      ss << "LoadBalancerNames.member." << loadBalancerNamesCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      loadBalancerNamesCount++;
+      ss << "LoadBalancerNames=&";
+    }
+    else
+    {
+      unsigned loadBalancerNamesCount = 1;
+      for(auto& item : m_loadBalancerNames)
+      {
+        ss << "LoadBalancerNames.member." << loadBalancerNamesCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        loadBalancerNamesCount++;
+      }
     }
   }
 
