@@ -96,6 +96,138 @@ namespace
         }
     };
 
+    TEST_F(CloudWatchLogsOperationTest, PutLogEventsTests2)
+    {
+        
+        RetryPlanner<> retryObj;
+
+
+        auto putLogsFunc = [this](const Aws::String& id, int numRetriesLeft) -> bool 
+        {
+            AWS_UNREFERENCED_PARAM(id);
+            AWS_UNREFERENCED_PARAM(numRetriesLeft);
+
+
+            CreateLogStreamRequest createStreamRequest;
+            createStreamRequest.WithLogGroupName(BuildResourceName(BASE_CLOUD_WATCH_LOGS_GROUP))
+                                .WithLogStreamName(BuildResourceName(BASE_CLOUD_WATCH_LOGS_STREAM));
+            auto createStreamOutcome = m_client->CreateLogStream(createStreamRequest);
+            AWS_EXPECT_SUCCESS(createStreamOutcome);
+
+            bool res = createStreamOutcome.IsSuccess();
+
+            PutLogEventsRequest putRequest;
+            putRequest.WithLogGroupName(BuildResourceName(BASE_CLOUD_WATCH_LOGS_GROUP))
+                        .WithLogStreamName(BuildResourceName(BASE_CLOUD_WATCH_LOGS_STREAM));
+
+            auto nowMs = Aws::Utils::DateTime::Now().Millis();
+            InputLogEvent e1;
+            e1.WithTimestamp(nowMs).WithMessage("Test Message 1");
+            InputLogEvent e2;
+            // Make sure the timestamp of e2 is greater than that of e1.
+            e2.WithTimestamp(nowMs+1).WithMessage("Test Message 2");
+
+            putRequest.AddLogEvents(e1).AddLogEvents(e2);
+            auto putOutcome = m_client->PutLogEvents(putRequest);
+
+
+            AWS_EXPECT_SUCCESS(putOutcome);
+            const auto& rejected = putOutcome.GetResult().GetRejectedLogEventsInfo();
+            EXPECT_EQ(rejected.GetExpiredLogEventEndIndex(), 0);
+            EXPECT_EQ(rejected.GetTooNewLogEventStartIndex(), 0);
+            EXPECT_EQ(rejected.GetTooOldLogEventEndIndex(), 0);
+
+
+            res = res && putOutcome.IsSuccess();
+
+            // The log events in the batch must be in chronological order by their timestamp
+            nowMs = nowMs + 2;
+            InputLogEvent e3;
+            e3.WithTimestamp(nowMs).WithMessage("Test Message 3");
+            InputLogEvent e4;
+            // Make sure the timestamp of e4 is greater than that of e3.
+            e4.WithTimestamp(nowMs+1).WithMessage("Test Message 4");
+            putRequest.AddLogEvents(e3).AddLogEvents(e4);
+            putOutcome = m_client->PutLogEvents(putRequest);
+            AWS_EXPECT_SUCCESS(putOutcome);
+            const auto& rejected2 = putOutcome.GetResult().GetRejectedLogEventsInfo();
+            EXPECT_EQ(rejected2.GetExpiredLogEventEndIndex(), 0);
+            EXPECT_EQ(rejected2.GetTooNewLogEventStartIndex(), 0);
+            EXPECT_EQ(rejected2.GetTooOldLogEventEndIndex(), 0);
+
+            return res && putOutcome.IsSuccess();
+
+        };
+
+        retryObj.addFunction(RetryPlanner<>::FunctionBlock{
+            "putLogEvents",
+            putLogsFunc,
+            0,
+            StopStrategy::STOP_ON_FIRST_FAIL
+            });
+
+        size_t eventsCount = 0;
+        auto getLogsFunc = [this,&eventsCount](const Aws::String& id, int numRetriesLeft) -> bool 
+        {
+            AWS_UNREFERENCED_PARAM(id);
+
+            //There should be in total 6 events in the stream. with messages ended with 1,2,1,2,3,4;
+            GetLogEventsRequest getRequest;
+            getRequest.WithLogGroupName(BuildResourceName(BASE_CLOUD_WATCH_LOGS_GROUP))
+                        .WithLogStreamName(BuildResourceName(BASE_CLOUD_WATCH_LOGS_STREAM))
+                        .WithStartFromHead(true);
+            
+            //This is wher contexual retry can be used and we must only evaluate using gtest macros on last retry on success
+            //else the failure will be sticky
+            
+            auto getOutcome = m_client->GetLogEvents(getRequest);
+
+            auto res = getOutcome.IsSuccess();
+            
+            AWS_EXPECT_SUCCESS(getOutcome);
+            auto outputEvents = getOutcome.GetResult().GetEvents();
+            eventsCount = outputEvents.size();
+            res = res && (eventsCount == 6);
+
+            Aws::Vector<Aws::String> msgs = {"Test Message 1", "Test Message 1", "Test Message 2",
+            "Test Message 2","Test Message 3","Test Message 4",};
+
+            Aws::String dummy = "N/A";
+            for (size_t i = 0; i < 6; i++)
+            {
+                //This will make the test not crash and actually log valid failure results
+                auto outputEvent = i < outputEvents.size() ? outputEvents[i].GetMessage() : dummy ;
+                res = res && (msgs[i] == outputEvent );
+            }
+            
+
+            if (res || numRetriesLeft == SECONDS_TO_WAIT-3)
+            {
+                for (size_t i = 0; i < 6; i++)
+                {
+                    //This will make the test not crash and actually log valid failure results
+                    auto outputEvent = i < outputEvents.size() ? outputEvents[i].GetMessage() : dummy ;
+                    EXPECT_STREQ(msgs[i].c_str(), outputEvent.c_str());
+                }
+            }
+
+            std::this_thread::sleep_for(std::chrono::seconds(1));
+            
+            return res;
+            
+        };
+
+        retryObj.addFunction(RetryPlanner<>::FunctionBlock{
+            "getLogEvents",
+            getLogsFunc,
+            SECONDS_TO_WAIT,
+            StopStrategy::STOP_AFTER_ALL_RETRIES
+            });
+
+        EXPECT_EQ(retryObj.execute(), true);
+
+    }
+
     TEST_F(CloudWatchLogsOperationTest, PutLogEventsTests)
     {
         CreateLogStreamRequest createStreamRequest;
@@ -117,6 +249,8 @@ namespace
 
         putRequest.AddLogEvents(e1).AddLogEvents(e2);
         auto putOutcome = m_client->PutLogEvents(putRequest);
+
+
         AWS_ASSERT_SUCCESS(putOutcome);
         const auto& rejected = putOutcome.GetResult().GetRejectedLogEventsInfo();
         EXPECT_EQ(rejected.GetExpiredLogEventEndIndex(), 0);
@@ -132,6 +266,13 @@ namespace
         e4.WithTimestamp(nowMs+1).WithMessage("Test Message 4");
         putRequest.AddLogEvents(e3).AddLogEvents(e4);
 
+        auto logEvents = putRequest.GetLogEvents();
+        for(auto le : logEvents)
+        {
+            std::cout<<"event:"<<le.GetMessage()<<std::endl;
+        }
+
+
         putOutcome = m_client->PutLogEvents(putRequest);
         AWS_ASSERT_SUCCESS(putOutcome);
         const auto& rejected2 = putOutcome.GetResult().GetRejectedLogEventsInfo();
@@ -146,6 +287,7 @@ namespace
                     .WithStartFromHead(true);
         size_t eventsCount = 0;
         size_t retry = 0;
+
         while (retry < SECONDS_TO_WAIT)
         {
             auto getOutcome = m_client->GetLogEvents(getRequest);

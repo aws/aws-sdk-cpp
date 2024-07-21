@@ -559,7 +559,7 @@ TEST_F(TableOperationTest, TestCrudOperations2)
         "putItemRequests",
         putItemReqFunction,
         0,
-        true
+        StopStrategy::STOP_ON_FIRST_FAIL
     });
     
 
@@ -642,7 +642,7 @@ TEST_F(TableOperationTest, TestCrudOperations2)
         "getItemRequests",
         getItemFunc,
         3,
-        false
+        StopStrategy::STOP_AFTER_ALL_RETRIES
     });
     
     
@@ -676,7 +676,7 @@ TEST_F(TableOperationTest, TestCrudOperations2)
         "scanItemRequest",
         scanItemReqFunction,
         3,
-        true
+        StopStrategy::STOP_ON_FIRST_FAIL
     });
 
     EXPECT_EQ(retryObj.execute(), true);
@@ -729,7 +729,7 @@ TEST_F(TableOperationTest, TestCrudOperations2)
         "updateItemRequests",
         updateItemFunc,
         0,
-        true
+        StopStrategy::STOP_AFTER_ALL_RETRIES
     });
 
     auto getItemFunc2 = [this, testValueColumnName, crudTestTableName, numItems , &requestIds](
@@ -811,7 +811,7 @@ TEST_F(TableOperationTest, TestCrudOperations2)
         "getItemRequests2",
         getItemFunc2,
         3,
-        false
+        StopStrategy::STOP_AFTER_ALL_RETRIES
     });
 
     
@@ -861,7 +861,7 @@ TEST_F(TableOperationTest, TestCrudOperations2)
         "deleteItemRequests",
         deleteItemFunc,
         0,
-        true
+        StopStrategy::STOP_ON_FIRST_FAIL
     });
 
 
@@ -905,9 +905,7 @@ TEST_F(TableOperationTest, TestCrudOperations)
         putItemResult.get();
     }
 
-    //after put requests have been made, it's not necessary that put requests may have been processed to completion before get is called
-    //for a failing read query we attempt it N times before deeming it fail
-    //we can generalize retry of a request 
+
 
     //now we get the items we were supposed to be putting and make sure
     //they were put successfully.

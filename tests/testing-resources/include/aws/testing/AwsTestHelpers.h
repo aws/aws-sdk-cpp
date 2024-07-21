@@ -14,6 +14,8 @@
 #include <aws/core/VersionConfig.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSSet.h>
+#include <type_traits>
+#include <ostream>
 
 #define AWS_ASSERT_SUCCESS(awsCppSdkOutcome) \
   ASSERT_TRUE(awsCppSdkOutcome.IsSuccess()) << "Error details: " << awsCppSdkOutcome.GetError() \
@@ -78,33 +80,64 @@ OutcomeT CallOperationWithUnconditionalRetry(const ClientT* client,
 */
 
 
-template<typename CONTEXT>
-class RetryPlanner
+
+namespace{
+    using EmptyClassType = std::nullptr_t;
+}
+
+enum StopStrategy{
+        CONTINUE_AFTER_FAIL,
+        STOP_ON_FIRST_FAIL,
+        STOP_AFTER_ALL_RETRIES
+};
+
+
+template<typename CONTEXT = EmptyClassType>
+class RetryPlanner 
 {
 
     public:
 
-        using RetryFunction_t = std::function<bool (std::shared_ptr<CONTEXT>, const Aws::String& id, int numRetriesLeft)>;
+
+
+        using CONTEXT_TYPE =  std::shared_ptr<CONTEXT>;
+
+
+        //It can work with or without context        
+        using RetryFunction_t = typename std::conditional< std::is_same<CONTEXT, EmptyClassType>::value , 
+                                std::function<bool (const Aws::String& id, int numRetriesLeft)>,
+                                std::function<bool (CONTEXT_TYPE, const Aws::String& id, int numRetriesLeft)>
+                                >::type;
+
+        using BlockIdentifierType = Aws::String;
+
+
 
         struct FunctionBlock{
-            Aws::String entryId;
+            BlockIdentifierType entryId;
             RetryFunction_t candidate;
             size_t retryCount;
-            bool stopOnFail;
-            explicit FunctionBlock(const Aws::String& _entryId, 
+            StopStrategy stopStrategy;
+            explicit FunctionBlock(const BlockIdentifierType& _entryId, 
                            RetryFunction_t f, 
-                           int _retryCount = 2, 
-                           bool _stopOnFail = false):
-                           entryId(_entryId), candidate(std::move(f)), retryCount(_retryCount+1), stopOnFail(_stopOnFail)
+                           size_t _retryCount = 2, 
+                           StopStrategy _stopStrategy = StopStrategy::CONTINUE_AFTER_FAIL        //This ensures break circuit  after all retries and failures
+                           ):
+                           entryId{_entryId}, candidate{std::move(f)}, retryCount{_retryCount+1},stopStrategy{_stopStrategy}
             {
 
+            }
+            friend std::ostream& operator<<(std::ostream& os, FunctionBlock const & block) {
+                return os << "EntryId=" <<block.entryId << " retryCount="<<block.retryCount<<" stopStrategy="<<block.stopStrategy<<std::endl;
             }
             ~FunctionBlock(){
                 //std::cout<<"destructor for "<<entryId<<" called"<<std::endl;
             }
         };
 
-        explicit RetryPlanner(std::shared_ptr<CONTEXT> context):_contextSp{context},_cursor{0}{ }
+        explicit RetryPlanner():_contextSp{nullptr},_cursor{0}{ }
+
+        explicit RetryPlanner(CONTEXT_TYPE context):_contextSp{context},_cursor{0}{ }
     
         bool addFunction(const FunctionBlock& item)
         {
@@ -119,7 +152,7 @@ class RetryPlanner
                     status = true;
                 }
             }
-            AWS_LOGSTREAM_TRACE(ALLOCATION_TAG, "added function with id=" << item.entryId<<" num tries="<<item.retryCount<<" stop on fail="<<item.stopOnFail<<std::endl );
+            AWS_LOGSTREAM_TRACE(ALLOCATION_TAG, "added function block=" << item );
             //std::cout<<"added function with id=" << item.entryId<<std::endl;
             return status;
         }
@@ -163,14 +196,20 @@ class RetryPlanner
                     bool localResult = false;
 
                     //Try and retry a block
-                    do{}
-                    while( it->retryCount && !(localResult = it->candidate(_contextSp, it->entryId, --it->retryCount) ));
+                    do{
+                        AWS_LOGSTREAM_TRACE(ALLOCATION_TAG, "execute block="<<*it );
+                        //std::cout<<"execute block="<<*it<<std::endl;
+                    }
+                    while( it->retryCount && 
+                            !(localResult = invoker<CONTEXT>()(it->candidate, it->entryId, --it->retryCount)) &&
+                            (it->stopStrategy != StopStrategy::STOP_ON_FIRST_FAIL) 
+                         );
                     
                     //set global status from block evaluation
                     status = status && localResult;
 
                     //if stop on fail after retries, break and retry from start if available
-                    if(it->stopOnFail && !localResult)
+                    if(( it->stopStrategy == StopStrategy::STOP_ON_FIRST_FAIL || it->stopStrategy == StopStrategy::STOP_AFTER_ALL_RETRIES ) && !localResult)
                     {
                         break;
                     } 
@@ -197,13 +236,41 @@ class RetryPlanner
     private:
         using FunctionSuite = std::list<FunctionBlock>;
         FunctionSuite _suite;   
-        std::shared_ptr<CONTEXT> _contextSp;
+        CONTEXT_TYPE _contextSp;
         Aws::UnorderedSet<Aws::String> _uniqueFunctionBlockSet;
         size_t _cursor;        
 
         static const char ALLOCATION_TAG[];
 
+        //compile time conditional invoking of callable function with different arguments depending upon available context or not in c++ 11
+        
+        using RetryFunctionWrapped = std::function<bool (const RetryFunction_t& callable, const BlockIdentifierType& , size_t) >;
+        
+        //the second template parameter is only defined for appropriate condition regarding context type is set or not is true
+        //Per SFINAE, the case where the 2nd parameter condition is false won't lead to any substitution error but rather no definition
+        //The second paramter defined is hidden using default value
+        template <typename T, 
+                typename std::enable_if<!std::is_same<T,EmptyClassType>::value, bool >::type = 0  > 
+        RetryFunctionWrapped invoker() 
+        { 
+
+            return [this](const RetryFunction_t& callable, const BlockIdentifierType& id , size_t retriesLeft) {
+                return callable( _contextSp, id, retriesLeft);
+            };
+        }
+
+        template <typename T, 
+                typename std::enable_if<std::is_same<T,EmptyClassType>::value, bool >::type  = 0> 
+        RetryFunctionWrapped invoker() 
+        { 
+            return [](const RetryFunction_t& callable, const BlockIdentifierType& id , size_t retriesLeft) {
+                return callable(id, retriesLeft);
+            };
+        }
+
 };
 
 template <typename CONTEXT>
 const char RetryPlanner<CONTEXT>::ALLOCATION_TAG[] = "RetryPlanner";
+
+
