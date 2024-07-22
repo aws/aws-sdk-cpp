@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/acm-pca/ACMPCA_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/acm-pca/model/CertificateAuthority.h>
 #include <utility>
 
@@ -36,19 +36,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Summary information about each certificate authority you have created.</p>
-     */
-    inline const Aws::Vector<CertificateAuthority>& GetCertificateAuthorities() const{ return m_certificateAuthorities; }
-    inline void SetCertificateAuthorities(const Aws::Vector<CertificateAuthority>& value) { m_certificateAuthorities = value; }
-    inline void SetCertificateAuthorities(Aws::Vector<CertificateAuthority>&& value) { m_certificateAuthorities = std::move(value); }
-    inline ListCertificateAuthoritiesResult& WithCertificateAuthorities(const Aws::Vector<CertificateAuthority>& value) { SetCertificateAuthorities(value); return *this;}
-    inline ListCertificateAuthoritiesResult& WithCertificateAuthorities(Aws::Vector<CertificateAuthority>&& value) { SetCertificateAuthorities(std::move(value)); return *this;}
-    inline ListCertificateAuthoritiesResult& AddCertificateAuthorities(const CertificateAuthority& value) { m_certificateAuthorities.push_back(value); return *this; }
-    inline ListCertificateAuthoritiesResult& AddCertificateAuthorities(CertificateAuthority&& value) { m_certificateAuthorities.push_back(std::move(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
      * <p>When the list is truncated, this value is present and should be used for the
      * <code>NextToken</code> parameter in a subsequent pagination request.</p>
      */
@@ -59,6 +46,19 @@ namespace Model
     inline ListCertificateAuthoritiesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
     inline ListCertificateAuthoritiesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
     inline ListCertificateAuthoritiesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Summary information about each certificate authority you have created.</p>
+     */
+    inline const Aws::Vector<CertificateAuthority>& GetCertificateAuthorities() const{ return m_certificateAuthorities; }
+    inline void SetCertificateAuthorities(const Aws::Vector<CertificateAuthority>& value) { m_certificateAuthorities = value; }
+    inline void SetCertificateAuthorities(Aws::Vector<CertificateAuthority>&& value) { m_certificateAuthorities = std::move(value); }
+    inline ListCertificateAuthoritiesResult& WithCertificateAuthorities(const Aws::Vector<CertificateAuthority>& value) { SetCertificateAuthorities(value); return *this;}
+    inline ListCertificateAuthoritiesResult& WithCertificateAuthorities(Aws::Vector<CertificateAuthority>&& value) { SetCertificateAuthorities(std::move(value)); return *this;}
+    inline ListCertificateAuthoritiesResult& AddCertificateAuthorities(const CertificateAuthority& value) { m_certificateAuthorities.push_back(value); return *this; }
+    inline ListCertificateAuthoritiesResult& AddCertificateAuthorities(CertificateAuthority&& value) { m_certificateAuthorities.push_back(std::move(value)); return *this; }
     ///@}
 
     ///@{
@@ -73,9 +73,9 @@ namespace Model
     ///@}
   private:
 
-    Aws::Vector<CertificateAuthority> m_certificateAuthorities;
-
     Aws::String m_nextToken;
+
+    Aws::Vector<CertificateAuthority> m_certificateAuthorities;
 
     Aws::String m_requestId;
   };

@@ -29,6 +29,12 @@ ListCertificateAuthoritiesResult::ListCertificateAuthoritiesResult(const Aws::Am
 ListCertificateAuthoritiesResult& ListCertificateAuthoritiesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("NextToken"))
+  {
+    m_nextToken = jsonValue.GetString("NextToken");
+
+  }
+
   if(jsonValue.ValueExists("CertificateAuthorities"))
   {
     Aws::Utils::Array<JsonView> certificateAuthoritiesJsonList = jsonValue.GetArray("CertificateAuthorities");
@@ -36,12 +42,6 @@ ListCertificateAuthoritiesResult& ListCertificateAuthoritiesResult::operator =(c
     {
       m_certificateAuthorities.push_back(certificateAuthoritiesJsonList[certificateAuthoritiesIndex].AsObject());
     }
-  }
-
-  if(jsonValue.ValueExists("NextToken"))
-  {
-    m_nextToken = jsonValue.GetString("NextToken");
-
   }
 
 

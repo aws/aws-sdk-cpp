@@ -19,12 +19,12 @@ namespace Model
 {
 
 ServiceQuotaExceededException::ServiceQuotaExceededException() : 
-    m_limit(0),
-    m_limitHasBeenSet(false),
     m_messageHasBeenSet(false),
     m_resourceIdHasBeenSet(false),
     m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false)
+    m_resourceTypeHasBeenSet(false),
+    m_limit(0),
+    m_limitHasBeenSet(false)
 {
 }
 
@@ -36,13 +36,6 @@ ServiceQuotaExceededException::ServiceQuotaExceededException(JsonView jsonValue)
 
 ServiceQuotaExceededException& ServiceQuotaExceededException::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("limit"))
-  {
-    m_limit = jsonValue.GetInteger("limit");
-
-    m_limitHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
@@ -64,18 +57,19 @@ ServiceQuotaExceededException& ServiceQuotaExceededException::operator =(JsonVie
     m_resourceTypeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("limit"))
+  {
+    m_limit = jsonValue.GetInteger("limit");
+
+    m_limitHasBeenSet = true;
+  }
+
   return *this;
 }
 
 JsonValue ServiceQuotaExceededException::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_limitHasBeenSet)
-  {
-   payload.WithInteger("limit", m_limit);
-
-  }
 
   if(m_messageHasBeenSet)
   {
@@ -92,6 +86,12 @@ JsonValue ServiceQuotaExceededException::Jsonize() const
   if(m_resourceTypeHasBeenSet)
   {
    payload.WithString("resourceType", ResourceTypeMapper::GetNameForResourceType(m_resourceType));
+  }
+
+  if(m_limitHasBeenSet)
+  {
+   payload.WithInteger("limit", m_limit);
+
   }
 
   return payload;

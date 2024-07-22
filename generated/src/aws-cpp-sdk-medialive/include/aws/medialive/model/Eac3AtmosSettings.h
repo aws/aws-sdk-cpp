@@ -42,8 +42,6 @@ namespace Model
     ///@{
     /**
      * Average bitrate in bits/second. Valid bitrates depend on the coding mode.
-//  *
-     * @affectsRightSizing true
      */
     inline double GetBitrate() const{ return m_bitrate; }
     inline bool BitrateHasBeenSet() const { return m_bitrateHasBeenSet; }

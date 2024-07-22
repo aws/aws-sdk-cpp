@@ -92,6 +92,23 @@ namespace Model
     inline MSKSourceDescription& WithDeliveryStartTimestamp(const Aws::Utils::DateTime& value) { SetDeliveryStartTimestamp(value); return *this;}
     inline MSKSourceDescription& WithDeliveryStartTimestamp(Aws::Utils::DateTime&& value) { SetDeliveryStartTimestamp(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The start date and time in UTC for the offset position within your MSK topic
+     * from where Firehose begins to read. By default, this is set to timestamp when
+     * Firehose becomes Active. </p> <p>If you want to create a Firehose stream with
+     * Earliest start position from SDK or CLI, you need to set the
+     * <code>ReadFromTimestampUTC</code> parameter to Epoch (1970-01-01T00:00:00Z).
+     * </p>
+     */
+    inline const Aws::Utils::DateTime& GetReadFromTimestamp() const{ return m_readFromTimestamp; }
+    inline bool ReadFromTimestampHasBeenSet() const { return m_readFromTimestampHasBeenSet; }
+    inline void SetReadFromTimestamp(const Aws::Utils::DateTime& value) { m_readFromTimestampHasBeenSet = true; m_readFromTimestamp = value; }
+    inline void SetReadFromTimestamp(Aws::Utils::DateTime&& value) { m_readFromTimestampHasBeenSet = true; m_readFromTimestamp = std::move(value); }
+    inline MSKSourceDescription& WithReadFromTimestamp(const Aws::Utils::DateTime& value) { SetReadFromTimestamp(value); return *this;}
+    inline MSKSourceDescription& WithReadFromTimestamp(Aws::Utils::DateTime&& value) { SetReadFromTimestamp(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_mSKClusterARN;
@@ -105,6 +122,9 @@ namespace Model
 
     Aws::Utils::DateTime m_deliveryStartTimestamp;
     bool m_deliveryStartTimestampHasBeenSet = false;
+
+    Aws::Utils::DateTime m_readFromTimestamp;
+    bool m_readFromTimestampHasBeenSet = false;
   };
 
 } // namespace Model

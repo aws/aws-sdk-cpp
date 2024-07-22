@@ -36,12 +36,19 @@ Aws::String RestoreDBClusterFromSnapshotRequest::SerializePayload() const
   ss << "Action=RestoreDBClusterFromSnapshot&";
   if(m_availabilityZonesHasBeenSet)
   {
-    unsigned availabilityZonesCount = 1;
-    for(auto& item : m_availabilityZones)
+    if (m_availabilityZones.empty())
     {
-      ss << "AvailabilityZones.member." << availabilityZonesCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      availabilityZonesCount++;
+      ss << "AvailabilityZones=&";
+    }
+    else
+    {
+      unsigned availabilityZonesCount = 1;
+      for(auto& item : m_availabilityZones)
+      {
+        ss << "AvailabilityZones.member." << availabilityZonesCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        availabilityZonesCount++;
+      }
     }
   }
 
@@ -77,22 +84,36 @@ Aws::String RestoreDBClusterFromSnapshotRequest::SerializePayload() const
 
   if(m_vpcSecurityGroupIdsHasBeenSet)
   {
-    unsigned vpcSecurityGroupIdsCount = 1;
-    for(auto& item : m_vpcSecurityGroupIds)
+    if (m_vpcSecurityGroupIds.empty())
     {
-      ss << "VpcSecurityGroupIds.member." << vpcSecurityGroupIdsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      vpcSecurityGroupIdsCount++;
+      ss << "VpcSecurityGroupIds=&";
+    }
+    else
+    {
+      unsigned vpcSecurityGroupIdsCount = 1;
+      for(auto& item : m_vpcSecurityGroupIds)
+      {
+        ss << "VpcSecurityGroupIds.member." << vpcSecurityGroupIdsCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        vpcSecurityGroupIdsCount++;
+      }
     }
   }
 
   if(m_tagsHasBeenSet)
   {
-    unsigned tagsCount = 1;
-    for(auto& item : m_tags)
+    if (m_tags.empty())
     {
-      item.OutputToStream(ss, "Tags.member.", tagsCount, "");
-      tagsCount++;
+      ss << "Tags=&";
+    }
+    else
+    {
+      unsigned tagsCount = 1;
+      for(auto& item : m_tags)
+      {
+        item.OutputToStream(ss, "Tags.member.", tagsCount, "");
+        tagsCount++;
+      }
     }
   }
 
@@ -103,12 +124,19 @@ Aws::String RestoreDBClusterFromSnapshotRequest::SerializePayload() const
 
   if(m_enableCloudwatchLogsExportsHasBeenSet)
   {
-    unsigned enableCloudwatchLogsExportsCount = 1;
-    for(auto& item : m_enableCloudwatchLogsExports)
+    if (m_enableCloudwatchLogsExports.empty())
     {
-      ss << "EnableCloudwatchLogsExports.member." << enableCloudwatchLogsExportsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      enableCloudwatchLogsExportsCount++;
+      ss << "EnableCloudwatchLogsExports=&";
+    }
+    else
+    {
+      unsigned enableCloudwatchLogsExportsCount = 1;
+      for(auto& item : m_enableCloudwatchLogsExports)
+      {
+        ss << "EnableCloudwatchLogsExports.member." << enableCloudwatchLogsExportsCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        enableCloudwatchLogsExportsCount++;
+      }
     }
   }
 

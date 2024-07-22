@@ -54,12 +54,19 @@ Aws::String GetClusterCredentialsRequest::SerializePayload() const
 
   if(m_dbGroupsHasBeenSet)
   {
-    unsigned dbGroupsCount = 1;
-    for(auto& item : m_dbGroups)
+    if (m_dbGroups.empty())
     {
-      ss << "DbGroups.member." << dbGroupsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      dbGroupsCount++;
+      ss << "DbGroups=&";
+    }
+    else
+    {
+      unsigned dbGroupsCount = 1;
+      for(auto& item : m_dbGroups)
+      {
+        ss << "DbGroups.member." << dbGroupsCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        dbGroupsCount++;
+      }
     }
   }
 

@@ -27,12 +27,19 @@ Aws::String DescribeScalingActivitiesRequest::SerializePayload() const
   ss << "Action=DescribeScalingActivities&";
   if(m_activityIdsHasBeenSet)
   {
-    unsigned activityIdsCount = 1;
-    for(auto& item : m_activityIds)
+    if (m_activityIds.empty())
     {
-      ss << "ActivityIds.member." << activityIdsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      activityIdsCount++;
+      ss << "ActivityIds=&";
+    }
+    else
+    {
+      unsigned activityIdsCount = 1;
+      for(auto& item : m_activityIds)
+      {
+        ss << "ActivityIds.member." << activityIdsCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        activityIdsCount++;
+      }
     }
   }
 

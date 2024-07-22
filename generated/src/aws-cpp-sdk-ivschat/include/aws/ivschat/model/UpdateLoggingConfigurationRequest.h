@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/ivschat/Ivschat_EXPORTS.h>
 #include <aws/ivschat/IvschatRequest.h>
-#include <aws/ivschat/model/DestinationConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ivschat/model/DestinationConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -32,21 +32,6 @@ namespace Model
 
     AWS_IVSCHAT_API Aws::String SerializePayload() const override;
 
-
-    ///@{
-    /**
-     * <p>A complex type that contains a destination configuration for where chat
-     * content will be logged. There can be only one type of destination
-     * (<code>cloudWatchLogs</code>, <code>firehose</code>, or <code>s3</code>) in a
-     * <code>destinationConfiguration</code>.</p>
-     */
-    inline const DestinationConfiguration& GetDestinationConfiguration() const{ return m_destinationConfiguration; }
-    inline bool DestinationConfigurationHasBeenSet() const { return m_destinationConfigurationHasBeenSet; }
-    inline void SetDestinationConfiguration(const DestinationConfiguration& value) { m_destinationConfigurationHasBeenSet = true; m_destinationConfiguration = value; }
-    inline void SetDestinationConfiguration(DestinationConfiguration&& value) { m_destinationConfigurationHasBeenSet = true; m_destinationConfiguration = std::move(value); }
-    inline UpdateLoggingConfigurationRequest& WithDestinationConfiguration(const DestinationConfiguration& value) { SetDestinationConfiguration(value); return *this;}
-    inline UpdateLoggingConfigurationRequest& WithDestinationConfiguration(DestinationConfiguration&& value) { SetDestinationConfiguration(std::move(value)); return *this;}
-    ///@}
 
     ///@{
     /**
@@ -75,16 +60,31 @@ namespace Model
     inline UpdateLoggingConfigurationRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
     inline UpdateLoggingConfigurationRequest& WithName(const char* value) { SetName(value); return *this;}
     ///@}
-  private:
 
-    DestinationConfiguration m_destinationConfiguration;
-    bool m_destinationConfigurationHasBeenSet = false;
+    ///@{
+    /**
+     * <p>A complex type that contains a destination configuration for where chat
+     * content will be logged. There can be only one type of destination
+     * (<code>cloudWatchLogs</code>, <code>firehose</code>, or <code>s3</code>) in a
+     * <code>destinationConfiguration</code>.</p>
+     */
+    inline const DestinationConfiguration& GetDestinationConfiguration() const{ return m_destinationConfiguration; }
+    inline bool DestinationConfigurationHasBeenSet() const { return m_destinationConfigurationHasBeenSet; }
+    inline void SetDestinationConfiguration(const DestinationConfiguration& value) { m_destinationConfigurationHasBeenSet = true; m_destinationConfiguration = value; }
+    inline void SetDestinationConfiguration(DestinationConfiguration&& value) { m_destinationConfigurationHasBeenSet = true; m_destinationConfiguration = std::move(value); }
+    inline UpdateLoggingConfigurationRequest& WithDestinationConfiguration(const DestinationConfiguration& value) { SetDestinationConfiguration(value); return *this;}
+    inline UpdateLoggingConfigurationRequest& WithDestinationConfiguration(DestinationConfiguration&& value) { SetDestinationConfiguration(std::move(value)); return *this;}
+    ///@}
+  private:
 
     Aws::String m_identifier;
     bool m_identifierHasBeenSet = false;
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
+
+    DestinationConfiguration m_destinationConfiguration;
+    bool m_destinationConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

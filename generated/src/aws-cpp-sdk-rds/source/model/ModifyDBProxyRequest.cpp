@@ -41,11 +41,18 @@ Aws::String ModifyDBProxyRequest::SerializePayload() const
 
   if(m_authHasBeenSet)
   {
-    unsigned authCount = 1;
-    for(auto& item : m_auth)
+    if (m_auth.empty())
     {
-      item.OutputToStream(ss, "Auth.member.", authCount, "");
-      authCount++;
+      ss << "Auth=&";
+    }
+    else
+    {
+      unsigned authCount = 1;
+      for(auto& item : m_auth)
+      {
+        item.OutputToStream(ss, "Auth.member.", authCount, "");
+        authCount++;
+      }
     }
   }
 
@@ -71,12 +78,19 @@ Aws::String ModifyDBProxyRequest::SerializePayload() const
 
   if(m_securityGroupsHasBeenSet)
   {
-    unsigned securityGroupsCount = 1;
-    for(auto& item : m_securityGroups)
+    if (m_securityGroups.empty())
     {
-      ss << "SecurityGroups.member." << securityGroupsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      securityGroupsCount++;
+      ss << "SecurityGroups=&";
+    }
+    else
+    {
+      unsigned securityGroupsCount = 1;
+      for(auto& item : m_securityGroups)
+      {
+        ss << "SecurityGroups.member." << securityGroupsCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        securityGroupsCount++;
+      }
     }
   }
 

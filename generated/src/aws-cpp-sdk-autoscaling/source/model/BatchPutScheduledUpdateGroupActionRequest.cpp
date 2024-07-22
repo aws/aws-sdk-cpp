@@ -27,11 +27,18 @@ Aws::String BatchPutScheduledUpdateGroupActionRequest::SerializePayload() const
 
   if(m_scheduledUpdateGroupActionsHasBeenSet)
   {
-    unsigned scheduledUpdateGroupActionsCount = 1;
-    for(auto& item : m_scheduledUpdateGroupActions)
+    if (m_scheduledUpdateGroupActions.empty())
     {
-      item.OutputToStream(ss, "ScheduledUpdateGroupActions.member.", scheduledUpdateGroupActionsCount, "");
-      scheduledUpdateGroupActionsCount++;
+      ss << "ScheduledUpdateGroupActions=&";
+    }
+    else
+    {
+      unsigned scheduledUpdateGroupActionsCount = 1;
+      for(auto& item : m_scheduledUpdateGroupActions)
+      {
+        item.OutputToStream(ss, "ScheduledUpdateGroupActions.member.", scheduledUpdateGroupActionsCount, "");
+        scheduledUpdateGroupActionsCount++;
+      }
     }
   }
 

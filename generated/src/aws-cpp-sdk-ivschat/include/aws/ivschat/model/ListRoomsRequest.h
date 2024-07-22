@@ -34,16 +34,31 @@ namespace Model
 
     ///@{
     /**
-     * <p>Logging-configuration identifier.</p>
+     * <p>Filters the list to match the specified room name.</p>
      */
-    inline const Aws::String& GetLoggingConfigurationIdentifier() const{ return m_loggingConfigurationIdentifier; }
-    inline bool LoggingConfigurationIdentifierHasBeenSet() const { return m_loggingConfigurationIdentifierHasBeenSet; }
-    inline void SetLoggingConfigurationIdentifier(const Aws::String& value) { m_loggingConfigurationIdentifierHasBeenSet = true; m_loggingConfigurationIdentifier = value; }
-    inline void SetLoggingConfigurationIdentifier(Aws::String&& value) { m_loggingConfigurationIdentifierHasBeenSet = true; m_loggingConfigurationIdentifier = std::move(value); }
-    inline void SetLoggingConfigurationIdentifier(const char* value) { m_loggingConfigurationIdentifierHasBeenSet = true; m_loggingConfigurationIdentifier.assign(value); }
-    inline ListRoomsRequest& WithLoggingConfigurationIdentifier(const Aws::String& value) { SetLoggingConfigurationIdentifier(value); return *this;}
-    inline ListRoomsRequest& WithLoggingConfigurationIdentifier(Aws::String&& value) { SetLoggingConfigurationIdentifier(std::move(value)); return *this;}
-    inline ListRoomsRequest& WithLoggingConfigurationIdentifier(const char* value) { SetLoggingConfigurationIdentifier(value); return *this;}
+    inline const Aws::String& GetName() const{ return m_name; }
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
+    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
+    inline ListRoomsRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
+    inline ListRoomsRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
+    inline ListRoomsRequest& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The first room to retrieve. This is used for pagination; see the
+     * <code>nextToken</code> response field.</p>
+     */
+    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
+    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
+    inline ListRoomsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+    inline ListRoomsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
+    inline ListRoomsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
     ///@}
 
     ///@{
@@ -72,36 +87,24 @@ namespace Model
 
     ///@{
     /**
-     * <p>Filters the list to match the specified room name.</p>
+     * <p>Logging-configuration identifier.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline ListRoomsRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline ListRoomsRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline ListRoomsRequest& WithName(const char* value) { SetName(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The first room to retrieve. This is used for pagination; see the
-     * <code>nextToken</code> response field.</p>
-     */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListRoomsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListRoomsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListRoomsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetLoggingConfigurationIdentifier() const{ return m_loggingConfigurationIdentifier; }
+    inline bool LoggingConfigurationIdentifierHasBeenSet() const { return m_loggingConfigurationIdentifierHasBeenSet; }
+    inline void SetLoggingConfigurationIdentifier(const Aws::String& value) { m_loggingConfigurationIdentifierHasBeenSet = true; m_loggingConfigurationIdentifier = value; }
+    inline void SetLoggingConfigurationIdentifier(Aws::String&& value) { m_loggingConfigurationIdentifierHasBeenSet = true; m_loggingConfigurationIdentifier = std::move(value); }
+    inline void SetLoggingConfigurationIdentifier(const char* value) { m_loggingConfigurationIdentifierHasBeenSet = true; m_loggingConfigurationIdentifier.assign(value); }
+    inline ListRoomsRequest& WithLoggingConfigurationIdentifier(const Aws::String& value) { SetLoggingConfigurationIdentifier(value); return *this;}
+    inline ListRoomsRequest& WithLoggingConfigurationIdentifier(Aws::String&& value) { SetLoggingConfigurationIdentifier(std::move(value)); return *this;}
+    inline ListRoomsRequest& WithLoggingConfigurationIdentifier(const char* value) { SetLoggingConfigurationIdentifier(value); return *this;}
     ///@}
   private:
 
-    Aws::String m_loggingConfigurationIdentifier;
-    bool m_loggingConfigurationIdentifierHasBeenSet = false;
+    Aws::String m_name;
+    bool m_nameHasBeenSet = false;
+
+    Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet = false;
@@ -109,11 +112,8 @@ namespace Model
     Aws::String m_messageReviewHandlerUri;
     bool m_messageReviewHandlerUriHasBeenSet = false;
 
-    Aws::String m_name;
-    bool m_nameHasBeenSet = false;
-
-    Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet = false;
+    Aws::String m_loggingConfigurationIdentifier;
+    bool m_loggingConfigurationIdentifierHasBeenSet = false;
   };
 
 } // namespace Model

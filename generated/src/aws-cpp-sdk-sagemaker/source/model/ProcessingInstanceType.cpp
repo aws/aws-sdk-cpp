@@ -64,6 +64,22 @@ namespace Aws
         static const int ml_g4dn_8xlarge_HASH = HashingUtils::HashString("ml.g4dn.8xlarge");
         static const int ml_g4dn_12xlarge_HASH = HashingUtils::HashString("ml.g4dn.12xlarge");
         static const int ml_g4dn_16xlarge_HASH = HashingUtils::HashString("ml.g4dn.16xlarge");
+        static const int ml_g5_xlarge_HASH = HashingUtils::HashString("ml.g5.xlarge");
+        static const int ml_g5_2xlarge_HASH = HashingUtils::HashString("ml.g5.2xlarge");
+        static const int ml_g5_4xlarge_HASH = HashingUtils::HashString("ml.g5.4xlarge");
+        static const int ml_g5_8xlarge_HASH = HashingUtils::HashString("ml.g5.8xlarge");
+        static const int ml_g5_16xlarge_HASH = HashingUtils::HashString("ml.g5.16xlarge");
+        static const int ml_g5_12xlarge_HASH = HashingUtils::HashString("ml.g5.12xlarge");
+        static const int ml_g5_24xlarge_HASH = HashingUtils::HashString("ml.g5.24xlarge");
+        static const int ml_g5_48xlarge_HASH = HashingUtils::HashString("ml.g5.48xlarge");
+        static const int ml_r5d_large_HASH = HashingUtils::HashString("ml.r5d.large");
+        static const int ml_r5d_xlarge_HASH = HashingUtils::HashString("ml.r5d.xlarge");
+        static const int ml_r5d_2xlarge_HASH = HashingUtils::HashString("ml.r5d.2xlarge");
+        static const int ml_r5d_4xlarge_HASH = HashingUtils::HashString("ml.r5d.4xlarge");
+        static const int ml_r5d_8xlarge_HASH = HashingUtils::HashString("ml.r5d.8xlarge");
+        static const int ml_r5d_12xlarge_HASH = HashingUtils::HashString("ml.r5d.12xlarge");
+        static const int ml_r5d_16xlarge_HASH = HashingUtils::HashString("ml.r5d.16xlarge");
+        static const int ml_r5d_24xlarge_HASH = HashingUtils::HashString("ml.r5d.24xlarge");
 
 
         ProcessingInstanceType GetProcessingInstanceTypeForName(const Aws::String& name)
@@ -245,6 +261,70 @@ namespace Aws
           {
             return ProcessingInstanceType::ml_g4dn_16xlarge;
           }
+          else if (hashCode == ml_g5_xlarge_HASH)
+          {
+            return ProcessingInstanceType::ml_g5_xlarge;
+          }
+          else if (hashCode == ml_g5_2xlarge_HASH)
+          {
+            return ProcessingInstanceType::ml_g5_2xlarge;
+          }
+          else if (hashCode == ml_g5_4xlarge_HASH)
+          {
+            return ProcessingInstanceType::ml_g5_4xlarge;
+          }
+          else if (hashCode == ml_g5_8xlarge_HASH)
+          {
+            return ProcessingInstanceType::ml_g5_8xlarge;
+          }
+          else if (hashCode == ml_g5_16xlarge_HASH)
+          {
+            return ProcessingInstanceType::ml_g5_16xlarge;
+          }
+          else if (hashCode == ml_g5_12xlarge_HASH)
+          {
+            return ProcessingInstanceType::ml_g5_12xlarge;
+          }
+          else if (hashCode == ml_g5_24xlarge_HASH)
+          {
+            return ProcessingInstanceType::ml_g5_24xlarge;
+          }
+          else if (hashCode == ml_g5_48xlarge_HASH)
+          {
+            return ProcessingInstanceType::ml_g5_48xlarge;
+          }
+          else if (hashCode == ml_r5d_large_HASH)
+          {
+            return ProcessingInstanceType::ml_r5d_large;
+          }
+          else if (hashCode == ml_r5d_xlarge_HASH)
+          {
+            return ProcessingInstanceType::ml_r5d_xlarge;
+          }
+          else if (hashCode == ml_r5d_2xlarge_HASH)
+          {
+            return ProcessingInstanceType::ml_r5d_2xlarge;
+          }
+          else if (hashCode == ml_r5d_4xlarge_HASH)
+          {
+            return ProcessingInstanceType::ml_r5d_4xlarge;
+          }
+          else if (hashCode == ml_r5d_8xlarge_HASH)
+          {
+            return ProcessingInstanceType::ml_r5d_8xlarge;
+          }
+          else if (hashCode == ml_r5d_12xlarge_HASH)
+          {
+            return ProcessingInstanceType::ml_r5d_12xlarge;
+          }
+          else if (hashCode == ml_r5d_16xlarge_HASH)
+          {
+            return ProcessingInstanceType::ml_r5d_16xlarge;
+          }
+          else if (hashCode == ml_r5d_24xlarge_HASH)
+          {
+            return ProcessingInstanceType::ml_r5d_24xlarge;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -349,6 +429,38 @@ namespace Aws
             return "ml.g4dn.12xlarge";
           case ProcessingInstanceType::ml_g4dn_16xlarge:
             return "ml.g4dn.16xlarge";
+          case ProcessingInstanceType::ml_g5_xlarge:
+            return "ml.g5.xlarge";
+          case ProcessingInstanceType::ml_g5_2xlarge:
+            return "ml.g5.2xlarge";
+          case ProcessingInstanceType::ml_g5_4xlarge:
+            return "ml.g5.4xlarge";
+          case ProcessingInstanceType::ml_g5_8xlarge:
+            return "ml.g5.8xlarge";
+          case ProcessingInstanceType::ml_g5_16xlarge:
+            return "ml.g5.16xlarge";
+          case ProcessingInstanceType::ml_g5_12xlarge:
+            return "ml.g5.12xlarge";
+          case ProcessingInstanceType::ml_g5_24xlarge:
+            return "ml.g5.24xlarge";
+          case ProcessingInstanceType::ml_g5_48xlarge:
+            return "ml.g5.48xlarge";
+          case ProcessingInstanceType::ml_r5d_large:
+            return "ml.r5d.large";
+          case ProcessingInstanceType::ml_r5d_xlarge:
+            return "ml.r5d.xlarge";
+          case ProcessingInstanceType::ml_r5d_2xlarge:
+            return "ml.r5d.2xlarge";
+          case ProcessingInstanceType::ml_r5d_4xlarge:
+            return "ml.r5d.4xlarge";
+          case ProcessingInstanceType::ml_r5d_8xlarge:
+            return "ml.r5d.8xlarge";
+          case ProcessingInstanceType::ml_r5d_12xlarge:
+            return "ml.r5d.12xlarge";
+          case ProcessingInstanceType::ml_r5d_16xlarge:
+            return "ml.r5d.16xlarge";
+          case ProcessingInstanceType::ml_r5d_24xlarge:
+            return "ml.r5d.24xlarge";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

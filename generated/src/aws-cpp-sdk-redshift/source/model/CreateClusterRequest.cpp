@@ -101,23 +101,37 @@ Aws::String CreateClusterRequest::SerializePayload() const
 
   if(m_clusterSecurityGroupsHasBeenSet)
   {
-    unsigned clusterSecurityGroupsCount = 1;
-    for(auto& item : m_clusterSecurityGroups)
+    if (m_clusterSecurityGroups.empty())
     {
-      ss << "ClusterSecurityGroups.member." << clusterSecurityGroupsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      clusterSecurityGroupsCount++;
+      ss << "ClusterSecurityGroups=&";
+    }
+    else
+    {
+      unsigned clusterSecurityGroupsCount = 1;
+      for(auto& item : m_clusterSecurityGroups)
+      {
+        ss << "ClusterSecurityGroups.member." << clusterSecurityGroupsCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        clusterSecurityGroupsCount++;
+      }
     }
   }
 
   if(m_vpcSecurityGroupIdsHasBeenSet)
   {
-    unsigned vpcSecurityGroupIdsCount = 1;
-    for(auto& item : m_vpcSecurityGroupIds)
+    if (m_vpcSecurityGroupIds.empty())
     {
-      ss << "VpcSecurityGroupIds.member." << vpcSecurityGroupIdsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      vpcSecurityGroupIdsCount++;
+      ss << "VpcSecurityGroupIds=&";
+    }
+    else
+    {
+      unsigned vpcSecurityGroupIdsCount = 1;
+      for(auto& item : m_vpcSecurityGroupIds)
+      {
+        ss << "VpcSecurityGroupIds.member." << vpcSecurityGroupIdsCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        vpcSecurityGroupIdsCount++;
+      }
     }
   }
 
@@ -198,11 +212,18 @@ Aws::String CreateClusterRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-    unsigned tagsCount = 1;
-    for(auto& item : m_tags)
+    if (m_tags.empty())
     {
-      item.OutputToStream(ss, "Tags.member.", tagsCount, "");
-      tagsCount++;
+      ss << "Tags=&";
+    }
+    else
+    {
+      unsigned tagsCount = 1;
+      for(auto& item : m_tags)
+      {
+        item.OutputToStream(ss, "Tags.member.", tagsCount, "");
+        tagsCount++;
+      }
     }
   }
 
@@ -223,12 +244,19 @@ Aws::String CreateClusterRequest::SerializePayload() const
 
   if(m_iamRolesHasBeenSet)
   {
-    unsigned iamRolesCount = 1;
-    for(auto& item : m_iamRoles)
+    if (m_iamRoles.empty())
     {
-      ss << "IamRoles.member." << iamRolesCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      iamRolesCount++;
+      ss << "IamRoles=&";
+    }
+    else
+    {
+      unsigned iamRolesCount = 1;
+      for(auto& item : m_iamRoles)
+      {
+        ss << "IamRoles.member." << iamRolesCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        iamRolesCount++;
+      }
     }
   }
 

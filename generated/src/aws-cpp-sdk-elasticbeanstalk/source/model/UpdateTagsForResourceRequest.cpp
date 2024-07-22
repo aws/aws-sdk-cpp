@@ -28,22 +28,36 @@ Aws::String UpdateTagsForResourceRequest::SerializePayload() const
 
   if(m_tagsToAddHasBeenSet)
   {
-    unsigned tagsToAddCount = 1;
-    for(auto& item : m_tagsToAdd)
+    if (m_tagsToAdd.empty())
     {
-      item.OutputToStream(ss, "TagsToAdd.member.", tagsToAddCount, "");
-      tagsToAddCount++;
+      ss << "TagsToAdd=&";
+    }
+    else
+    {
+      unsigned tagsToAddCount = 1;
+      for(auto& item : m_tagsToAdd)
+      {
+        item.OutputToStream(ss, "TagsToAdd.member.", tagsToAddCount, "");
+        tagsToAddCount++;
+      }
     }
   }
 
   if(m_tagsToRemoveHasBeenSet)
   {
-    unsigned tagsToRemoveCount = 1;
-    for(auto& item : m_tagsToRemove)
+    if (m_tagsToRemove.empty())
     {
-      ss << "TagsToRemove.member." << tagsToRemoveCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      tagsToRemoveCount++;
+      ss << "TagsToRemove=&";
+    }
+    else
+    {
+      unsigned tagsToRemoveCount = 1;
+      for(auto& item : m_tagsToRemove)
+      {
+        ss << "TagsToRemove.member." << tagsToRemoveCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        tagsToRemoveCount++;
+      }
     }
   }
 

@@ -371,17 +371,18 @@ void S3CrtClient::init(const S3Crt::ClientConfiguration& config,
   static const size_t DEFAULT_PART_SIZE = 5 * 1024 * 1024; // 5MB
   s3CrtConfig.part_size = config.partSize < DEFAULT_PART_SIZE ? DEFAULT_PART_SIZE : config.partSize;
 
-  Aws::UniquePtr<Aws::Crt::Io::TlsConnectionOptions> pTlsConnectionOptions;
+  Aws::Crt::Io::TlsConnectionOptions *rawPTlsConnectionOptions = nullptr;
   if (config.tlsConnectionOptions)
   {
-    pTlsConnectionOptions = Aws::MakeUnique<Aws::Crt::Io::TlsConnectionOptions>(ALLOCATION_TAG, *config.tlsConnectionOptions);
+    rawPTlsConnectionOptions = config.tlsConnectionOptions.get();
     if (!config.caPath.empty() || !config.caFile.empty())
     {
       AWS_LOGSTREAM_WARN(ALLOCATION_TAG, "caPath or caFile on client configuration are ignored in case of user-configured TlsConnectionOptions provided");
     }
   }
 
-  if (!pTlsConnectionOptions)
+  Aws::UniquePtr<Aws::Crt::Io::TlsConnectionOptions> pTlsConnectionOptions;
+  if (!rawPTlsConnectionOptions)
   {
     Aws::Crt::Io::TlsContextOptions crtTlsContextOptions = Aws::Crt::Io::TlsContextOptions::InitDefaultClient();
     if (!config.caPath.empty() || !config.caFile.empty())
@@ -396,28 +397,14 @@ void S3CrtClient::init(const S3Crt::ClientConfiguration& config,
     }
     Aws::Crt::Io::TlsContext crtTlsContext(crtTlsContextOptions, Aws::Crt::Io::TlsMode::CLIENT);
     pTlsConnectionOptions = Aws::MakeUnique<Aws::Crt::Io::TlsConnectionOptions>(ALLOCATION_TAG, crtTlsContext.NewConnectionOptions());
+    rawPTlsConnectionOptions = pTlsConnectionOptions.get();
   }
 
-  aws_tls_connection_options nonConstTlsOptions;
-  AWS_ZERO_STRUCT(nonConstTlsOptions);
-  if (pTlsConnectionOptions)
-  {
-    ResolveEndpointOutcome endpointOutcome = m_endpointProvider->ResolveEndpoint({});
-    if (!endpointOutcome.IsSuccess())
-    {
-      AWS_LOGSTREAM_FATAL(ALLOCATION_TAG, "Failed to initialize S3 Crt client: failed to resolve base URI: " << endpointOutcome.GetError().GetMessage());
-      m_isInitialized = false;
-      return;
-    }
-    Aws::Crt::ByteCursor serverName = Aws::Crt::ByteCursorFromCString(endpointOutcome.GetResult().GetURI().GetAuthority().c_str());
-    pTlsConnectionOptions->SetServerName(serverName);
-    aws_tls_connection_options_copy(&nonConstTlsOptions, pTlsConnectionOptions->GetUnderlyingHandle());
-    s3CrtConfig.tls_connection_options = &nonConstTlsOptions;
+  if (!rawPTlsConnectionOptions) {
+    rawPTlsConnectionOptions = Aws::GetDefaultTlsConnectionOptions();
   }
-  else
-  {
-    s3CrtConfig.tls_connection_options = nullptr;
-  }
+
+  s3CrtConfig.tls_connection_options = rawPTlsConnectionOptions ? rawPTlsConnectionOptions->GetUnderlyingHandle() : nullptr;
 
   Aws::Crt::Http::HttpClientConnectionProxyOptions proxyOptions;
   aws_http_proxy_options raw_proxy_options;
@@ -490,10 +477,6 @@ void S3CrtClient::init(const S3Crt::ClientConfiguration& config,
   s3CrtConfig.s3express_provider_override_factory = S3CrtIdentityProviderAdapter::ProviderFactory;
 
   m_s3CrtClient = aws_s3_client_new(Aws::get_aws_allocator(), &s3CrtConfig);
-  if (pTlsConnectionOptions)
-  {
-    aws_tls_connection_options_clean_up(&nonConstTlsOptions);
-  }
   if (!m_s3CrtClient)
   {
     AWS_LOGSTREAM_FATAL(ALLOCATION_TAG, "Failed to allocate aws_s3_client instance, abort.");
@@ -679,6 +662,12 @@ Aws::Client::StreamOutcome S3CrtClient::GenerateStreamOutcome(const std::shared_
   return StreamOutcome(std::move(httpOutcome));
 }
 
+void S3CrtClient::InitCrtEndpointFromUri(aws_uri &endpoint_uri, const Aws::Http::URI &uri) const {
+  const auto endpointStr = uri.GetURIString();
+  const auto endpointCursor{ aws_byte_cursor_from_array(endpointStr.c_str(), endpointStr.size()) };
+  aws_uri_init_parse(&endpoint_uri, Aws::get_aws_allocator(), &endpointCursor);
+}
+
 void S3CrtClient::InitCommonCrtRequestOption(CrtRequestCallbackUserData *userData,
                                              aws_s3_meta_request_options *options,
                                              const Aws::AmazonWebServiceRequest *request,
@@ -708,9 +697,6 @@ void S3CrtClient::InitCommonCrtRequestOption(CrtRequestCallbackUserData *userDat
   options->body_callback = S3CrtRequestGetBodyCallback;
   options->progress_callback = S3CrtRequestProgressCallback;
   options->finish_callback = S3CrtRequestFinishCallback;
-  const auto endpointStr = uri.GetURIString();
-  const auto endpointCursor{ aws_byte_cursor_from_array(endpointStr.c_str(), endpointStr.size()) };
-  aws_uri_init_parse(options->endpoint, Aws::get_aws_allocator(), &endpointCursor);
 }
 
 static void CopyObjectRequestShutdownCallback(void *user_data)
@@ -769,9 +755,9 @@ void S3CrtClient::CopyObjectAsync(const CopyObjectRequest& request, const CopyOb
   aws_s3_meta_request_options options;
   AWS_ZERO_STRUCT(options);
   aws_uri endpoint;
-  AWS_ZERO_STRUCT(endpoint);
+  InitCrtEndpointFromUri(endpoint, endpointResolutionOutcome.GetResult().GetURI());
   options.endpoint = &endpoint;
-  std::unique_ptr<aws_uri, void(*)(aws_uri*)> endpointCleanup { options.endpoint, &aws_uri_clean_up };
+  std::unique_ptr<aws_uri, void(*)(aws_uri*)> endpointCleanup { &endpoint, &aws_uri_clean_up };
 
   userData->copyResponseHandler = handler;
   userData->asyncCallerContext = handlerContext;
@@ -888,9 +874,9 @@ void S3CrtClient::GetObjectAsync(const GetObjectRequest& request, const GetObjec
   aws_s3_meta_request_options options;
   AWS_ZERO_STRUCT(options);
   aws_uri endpoint;
-  AWS_ZERO_STRUCT(endpoint);
+  InitCrtEndpointFromUri(endpoint, endpointResolutionOutcome.GetResult().GetURI());
   options.endpoint = &endpoint;
-  std::unique_ptr<aws_uri, void(*)(aws_uri*)> endpointCleanup { options.endpoint, &aws_uri_clean_up };
+  std::unique_ptr<aws_uri, void(*)(aws_uri*)> endpointCleanup { &endpoint, &aws_uri_clean_up };
 
   userData->getResponseHandler = handler;
   userData->asyncCallerContext = handlerContext;
@@ -1011,9 +997,9 @@ void S3CrtClient::PutObjectAsync(const PutObjectRequest& request, const PutObjec
   aws_s3_meta_request_options options;
   AWS_ZERO_STRUCT(options);
   aws_uri endpoint;
-  AWS_ZERO_STRUCT(endpoint);
+  InitCrtEndpointFromUri(endpoint, endpointResolutionOutcome.GetResult().GetURI());
   options.endpoint = &endpoint;
-  std::unique_ptr<aws_uri, void(*)(aws_uri*)> endpointCleanup { options.endpoint, &aws_uri_clean_up };
+  std::unique_ptr<aws_uri, void(*)(aws_uri*)> endpointCleanup { &endpoint, &aws_uri_clean_up };
 
   userData->putResponseHandler = handler;
   userData->asyncCallerContext = handlerContext;

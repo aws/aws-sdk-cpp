@@ -81,6 +81,56 @@ namespace QuickSight
         virtual ~QuickSightClient();
 
         /**
+         * <p>Creates new reviewed answers for a Q Topic.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/BatchCreateTopicReviewedAnswer">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchCreateTopicReviewedAnswerOutcome BatchCreateTopicReviewedAnswer(const Model::BatchCreateTopicReviewedAnswerRequest& request) const;
+
+        /**
+         * A Callable wrapper for BatchCreateTopicReviewedAnswer that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename BatchCreateTopicReviewedAnswerRequestT = Model::BatchCreateTopicReviewedAnswerRequest>
+        Model::BatchCreateTopicReviewedAnswerOutcomeCallable BatchCreateTopicReviewedAnswerCallable(const BatchCreateTopicReviewedAnswerRequestT& request) const
+        {
+            return SubmitCallable(&QuickSightClient::BatchCreateTopicReviewedAnswer, request);
+        }
+
+        /**
+         * An Async wrapper for BatchCreateTopicReviewedAnswer that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename BatchCreateTopicReviewedAnswerRequestT = Model::BatchCreateTopicReviewedAnswerRequest>
+        void BatchCreateTopicReviewedAnswerAsync(const BatchCreateTopicReviewedAnswerRequestT& request, const BatchCreateTopicReviewedAnswerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QuickSightClient::BatchCreateTopicReviewedAnswer, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes reviewed answers for Q Topic.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/BatchDeleteTopicReviewedAnswer">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchDeleteTopicReviewedAnswerOutcome BatchDeleteTopicReviewedAnswer(const Model::BatchDeleteTopicReviewedAnswerRequest& request) const;
+
+        /**
+         * A Callable wrapper for BatchDeleteTopicReviewedAnswer that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename BatchDeleteTopicReviewedAnswerRequestT = Model::BatchDeleteTopicReviewedAnswerRequest>
+        Model::BatchDeleteTopicReviewedAnswerOutcomeCallable BatchDeleteTopicReviewedAnswerCallable(const BatchDeleteTopicReviewedAnswerRequestT& request) const
+        {
+            return SubmitCallable(&QuickSightClient::BatchDeleteTopicReviewedAnswer, request);
+        }
+
+        /**
+         * An Async wrapper for BatchDeleteTopicReviewedAnswer that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename BatchDeleteTopicReviewedAnswerRequestT = Model::BatchDeleteTopicReviewedAnswerRequest>
+        void BatchDeleteTopicReviewedAnswerAsync(const BatchDeleteTopicReviewedAnswerRequestT& request, const BatchDeleteTopicReviewedAnswerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QuickSightClient::BatchDeleteTopicReviewedAnswer, request, handler, context);
+        }
+
+        /**
          * <p>Cancels an ongoing ingestion of data into SPICE.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CancelIngestion">AWS
@@ -3473,6 +3523,31 @@ namespace QuickSight
         void ListTopicRefreshSchedulesAsync(const ListTopicRefreshSchedulesRequestT& request, const ListTopicRefreshSchedulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&QuickSightClient::ListTopicRefreshSchedules, request, handler, context);
+        }
+
+        /**
+         * <p>Lists all reviewed answers for a Q Topic.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListTopicReviewedAnswers">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTopicReviewedAnswersOutcome ListTopicReviewedAnswers(const Model::ListTopicReviewedAnswersRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListTopicReviewedAnswers that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListTopicReviewedAnswersRequestT = Model::ListTopicReviewedAnswersRequest>
+        Model::ListTopicReviewedAnswersOutcomeCallable ListTopicReviewedAnswersCallable(const ListTopicReviewedAnswersRequestT& request) const
+        {
+            return SubmitCallable(&QuickSightClient::ListTopicReviewedAnswers, request);
+        }
+
+        /**
+         * An Async wrapper for ListTopicReviewedAnswers that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListTopicReviewedAnswersRequestT = Model::ListTopicReviewedAnswersRequest>
+        void ListTopicReviewedAnswersAsync(const ListTopicReviewedAnswersRequestT& request, const ListTopicReviewedAnswersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QuickSightClient::ListTopicReviewedAnswers, request, handler, context);
         }
 
         /**

@@ -249,7 +249,13 @@ namespace SecretsManager
          * and access control in Secrets Manager</a>. </p> <p>To encrypt the secret with a
          * KMS key other than <code>aws/secretsmanager</code>, you need
          * <code>kms:GenerateDataKey</code> and <code>kms:Decrypt</code> permission to the
-         * key. </p><p><h3>See Also:</h3>   <a
+         * key. </p>  <p>When you enter commands in a command shell, there is a
+         * risk of the command history being accessed or utilities having access to your
+         * command parameters. This is a concern if the command includes the value of a
+         * secret. Learn how to <a
+         * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/security_cli-exposure-risks.html">Mitigate
+         * the risks of using command-line tools to store Secrets Manager secrets</a>.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/CreateSecret">AWS
          * API Reference</a></p>
          */
@@ -684,7 +690,13 @@ namespace SecretsManager
          * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions">
          * IAM policy actions for Secrets Manager</a> and <a
          * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
-         * and access control in Secrets Manager</a>. </p><p><h3>See Also:</h3>   <a
+         * and access control in Secrets Manager</a>. </p>  <p>When you enter
+         * commands in a command shell, there is a risk of the command history being
+         * accessed or utilities having access to your command parameters. This is a
+         * concern if the command includes the value of a secret. Learn how to <a
+         * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/security_cli-exposure-risks.html">Mitigate
+         * the risks of using command-line tools to store Secrets Manager secrets</a>.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/PutSecretValue">AWS
          * API Reference</a></p>
          */
@@ -1036,10 +1048,16 @@ namespace SecretsManager
          * you must also have <code>kms:GenerateDataKey</code>, <code>kms:Encrypt</code>,
          * and <code>kms:Decrypt</code> permissions on the key. If you change the KMS key
          * and you don't have <code>kms:Encrypt</code> permission to the new key, Secrets
-         * Manager does not re-ecrypt existing secret versions with the new key. For more
+         * Manager does not re-encrypt existing secret versions with the new key. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/security-encryption.html">
-         * Secret encryption and decryption</a>.</p><p><h3>See Also:</h3>   <a
+         * Secret encryption and decryption</a>.</p>  <p>When you enter commands
+         * in a command shell, there is a risk of the command history being accessed or
+         * utilities having access to your command parameters. This is a concern if the
+         * command includes the value of a secret. Learn how to <a
+         * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/security_cli-exposure-risks.html">Mitigate
+         * the risks of using command-line tools to store Secrets Manager secrets</a>.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/UpdateSecret">AWS
          * API Reference</a></p>
          */

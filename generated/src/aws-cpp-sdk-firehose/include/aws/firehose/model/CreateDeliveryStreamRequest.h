@@ -20,6 +20,7 @@
 #include <aws/firehose/model/AmazonOpenSearchServerlessDestinationConfiguration.h>
 #include <aws/firehose/model/MSKSourceConfiguration.h>
 #include <aws/firehose/model/SnowflakeDestinationConfiguration.h>
+#include <aws/firehose/model/IcebergDestinationConfiguration.h>
 #include <aws/firehose/model/Tag.h>
 #include <utility>
 
@@ -249,6 +250,19 @@ namespace Model
     inline CreateDeliveryStreamRequest& WithSnowflakeDestinationConfiguration(const SnowflakeDestinationConfiguration& value) { SetSnowflakeDestinationConfiguration(value); return *this;}
     inline CreateDeliveryStreamRequest& WithSnowflakeDestinationConfiguration(SnowflakeDestinationConfiguration&& value) { SetSnowflakeDestinationConfiguration(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p> Configure Apache Iceberg Tables destination. </p> <p>Amazon Data Firehose is
+     * in preview release and is subject to change.</p>
+     */
+    inline const IcebergDestinationConfiguration& GetIcebergDestinationConfiguration() const{ return m_icebergDestinationConfiguration; }
+    inline bool IcebergDestinationConfigurationHasBeenSet() const { return m_icebergDestinationConfigurationHasBeenSet; }
+    inline void SetIcebergDestinationConfiguration(const IcebergDestinationConfiguration& value) { m_icebergDestinationConfigurationHasBeenSet = true; m_icebergDestinationConfiguration = value; }
+    inline void SetIcebergDestinationConfiguration(IcebergDestinationConfiguration&& value) { m_icebergDestinationConfigurationHasBeenSet = true; m_icebergDestinationConfiguration = std::move(value); }
+    inline CreateDeliveryStreamRequest& WithIcebergDestinationConfiguration(const IcebergDestinationConfiguration& value) { SetIcebergDestinationConfiguration(value); return *this;}
+    inline CreateDeliveryStreamRequest& WithIcebergDestinationConfiguration(IcebergDestinationConfiguration&& value) { SetIcebergDestinationConfiguration(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_deliveryStreamName;
@@ -292,6 +306,9 @@ namespace Model
 
     SnowflakeDestinationConfiguration m_snowflakeDestinationConfiguration;
     bool m_snowflakeDestinationConfigurationHasBeenSet = false;
+
+    IcebergDestinationConfiguration m_icebergDestinationConfiguration;
+    bool m_icebergDestinationConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

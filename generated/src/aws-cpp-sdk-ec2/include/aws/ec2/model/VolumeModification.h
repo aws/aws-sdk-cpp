@@ -27,8 +27,7 @@ namespace Model
 {
 
   /**
-   * <p>Describes the modification status of an EBS volume.</p> <p>If the volume has
-   * never been modified, some element values will be null.</p><p><h3>See Also:</h3> 
+   * <p>Describes the modification status of an EBS volume.</p><p><h3>See Also:</h3> 
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/VolumeModification">AWS
    * API Reference</a></p>
@@ -60,8 +59,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The current modification state. The modification state is null for unmodified
-     * volumes.</p>
+     * <p>The current modification state.</p>
      */
     inline const VolumeModificationState& GetModificationState() const{ return m_modificationState; }
     inline bool ModificationStateHasBeenSet() const { return m_modificationStateHasBeenSet; }

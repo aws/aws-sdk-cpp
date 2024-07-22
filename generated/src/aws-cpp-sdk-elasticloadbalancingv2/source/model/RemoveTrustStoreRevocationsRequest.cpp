@@ -27,12 +27,19 @@ Aws::String RemoveTrustStoreRevocationsRequest::SerializePayload() const
 
   if(m_revocationIdsHasBeenSet)
   {
-    unsigned revocationIdsCount = 1;
-    for(auto& item : m_revocationIds)
+    if (m_revocationIds.empty())
     {
-      ss << "RevocationIds.member." << revocationIdsCount << "="
-          << item << "&";
-      revocationIdsCount++;
+      ss << "RevocationIds=&";
+    }
+    else
+    {
+      unsigned revocationIdsCount = 1;
+      for(auto& item : m_revocationIds)
+      {
+        ss << "RevocationIds.member." << revocationIdsCount << "="
+            << item << "&";
+        revocationIdsCount++;
+      }
     }
   }
 

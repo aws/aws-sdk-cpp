@@ -34,10 +34,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The identifier for the resource to shift away traffic for. The identifier is
-     * the Amazon Resource Name (ARN) for the resource.</p> <p>At this time, supported
-     * resources are Network Load Balancers and Application Load Balancers with
-     * cross-zone load balancing turned off.</p>
+     * <p>The identifier for the resource that Amazon Web Services shifts traffic for.
+     * The identifier is the Amazon Resource Name (ARN) for the resource.</p> <p>At
+     * this time, supported resources are Network Load Balancers and Application Load
+     * Balancers with cross-zone load balancing turned off.</p>
      */
     inline const Aws::String& GetResourceIdentifier() const{ return m_resourceIdentifier; }
     inline bool ResourceIdentifierHasBeenSet() const { return m_resourceIdentifierHasBeenSet; }

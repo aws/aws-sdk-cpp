@@ -30,22 +30,36 @@ Aws::String SetSubnetsRequest::SerializePayload() const
 
   if(m_subnetsHasBeenSet)
   {
-    unsigned subnetsCount = 1;
-    for(auto& item : m_subnets)
+    if (m_subnets.empty())
     {
-      ss << "Subnets.member." << subnetsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      subnetsCount++;
+      ss << "Subnets=&";
+    }
+    else
+    {
+      unsigned subnetsCount = 1;
+      for(auto& item : m_subnets)
+      {
+        ss << "Subnets.member." << subnetsCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        subnetsCount++;
+      }
     }
   }
 
   if(m_subnetMappingsHasBeenSet)
   {
-    unsigned subnetMappingsCount = 1;
-    for(auto& item : m_subnetMappings)
+    if (m_subnetMappings.empty())
     {
-      item.OutputToStream(ss, "SubnetMappings.member.", subnetMappingsCount, "");
-      subnetMappingsCount++;
+      ss << "SubnetMappings=&";
+    }
+    else
+    {
+      unsigned subnetMappingsCount = 1;
+      for(auto& item : m_subnetMappings)
+      {
+        item.OutputToStream(ss, "SubnetMappings.member.", subnetMappingsCount, "");
+        subnetMappingsCount++;
+      }
     }
   }
 

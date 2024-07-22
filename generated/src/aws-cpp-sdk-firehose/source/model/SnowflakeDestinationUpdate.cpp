@@ -38,7 +38,8 @@ SnowflakeDestinationUpdate::SnowflakeDestinationUpdate() :
     m_s3BackupMode(SnowflakeS3BackupMode::NOT_SET),
     m_s3BackupModeHasBeenSet(false),
     m_s3UpdateHasBeenSet(false),
-    m_secretsManagerConfigurationHasBeenSet(false)
+    m_secretsManagerConfigurationHasBeenSet(false),
+    m_bufferingHintsHasBeenSet(false)
 {
 }
 
@@ -176,6 +177,13 @@ SnowflakeDestinationUpdate& SnowflakeDestinationUpdate::operator =(JsonView json
     m_secretsManagerConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("BufferingHints"))
+  {
+    m_bufferingHints = jsonValue.GetObject("BufferingHints");
+
+    m_bufferingHintsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -286,6 +294,12 @@ JsonValue SnowflakeDestinationUpdate::Jsonize() const
   if(m_secretsManagerConfigurationHasBeenSet)
   {
    payload.WithObject("SecretsManagerConfiguration", m_secretsManagerConfiguration.Jsonize());
+
+  }
+
+  if(m_bufferingHintsHasBeenSet)
+  {
+   payload.WithObject("BufferingHints", m_bufferingHints.Jsonize());
 
   }
 

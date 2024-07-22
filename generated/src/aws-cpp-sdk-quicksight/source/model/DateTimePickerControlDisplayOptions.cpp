@@ -21,7 +21,11 @@ namespace Model
 DateTimePickerControlDisplayOptions::DateTimePickerControlDisplayOptions() : 
     m_titleOptionsHasBeenSet(false),
     m_dateTimeFormatHasBeenSet(false),
-    m_infoIconLabelOptionsHasBeenSet(false)
+    m_infoIconLabelOptionsHasBeenSet(false),
+    m_helperTextVisibility(Visibility::NOT_SET),
+    m_helperTextVisibilityHasBeenSet(false),
+    m_dateIconVisibility(Visibility::NOT_SET),
+    m_dateIconVisibilityHasBeenSet(false)
 {
 }
 
@@ -54,6 +58,20 @@ DateTimePickerControlDisplayOptions& DateTimePickerControlDisplayOptions::operat
     m_infoIconLabelOptionsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("HelperTextVisibility"))
+  {
+    m_helperTextVisibility = VisibilityMapper::GetVisibilityForName(jsonValue.GetString("HelperTextVisibility"));
+
+    m_helperTextVisibilityHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DateIconVisibility"))
+  {
+    m_dateIconVisibility = VisibilityMapper::GetVisibilityForName(jsonValue.GetString("DateIconVisibility"));
+
+    m_dateIconVisibilityHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -77,6 +95,16 @@ JsonValue DateTimePickerControlDisplayOptions::Jsonize() const
   {
    payload.WithObject("InfoIconLabelOptions", m_infoIconLabelOptions.Jsonize());
 
+  }
+
+  if(m_helperTextVisibilityHasBeenSet)
+  {
+   payload.WithString("HelperTextVisibility", VisibilityMapper::GetNameForVisibility(m_helperTextVisibility));
+  }
+
+  if(m_dateIconVisibilityHasBeenSet)
+  {
+   payload.WithString("DateIconVisibility", VisibilityMapper::GetNameForVisibility(m_dateIconVisibility));
   }
 
   return payload;

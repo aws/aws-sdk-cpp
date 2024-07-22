@@ -21,11 +21,18 @@ Aws::String BatchDeleteClusterSnapshotsRequest::SerializePayload() const
   ss << "Action=BatchDeleteClusterSnapshots&";
   if(m_identifiersHasBeenSet)
   {
-    unsigned identifiersCount = 1;
-    for(auto& item : m_identifiers)
+    if (m_identifiers.empty())
     {
-      item.OutputToStream(ss, "Identifiers.member.", identifiersCount, "");
-      identifiersCount++;
+      ss << "Identifiers=&";
+    }
+    else
+    {
+      unsigned identifiersCount = 1;
+      for(auto& item : m_identifiers)
+      {
+        item.OutputToStream(ss, "Identifiers.member.", identifiersCount, "");
+        identifiersCount++;
+      }
     }
   }
 

@@ -38,7 +38,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Number (ARN) of the private CA that will have its policy
      * retrieved. You can find the CA's ARN by calling the ListCertificateAuthorities
-     * action. </p>
+     * action. <pre><code> &lt;/p&gt; </code></pre>
      */
     inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }

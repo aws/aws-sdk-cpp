@@ -2541,6 +2541,35 @@ namespace EC2
         }
 
         /**
+         * <p>Create a verification token. A verification token is an Amazon Web
+         * Services-generated random value that you can use to prove ownership of an
+         * external resource. For example, you can use a verification token to validate
+         * that you control a public IP address range when you bring an IP address range to
+         * Amazon Web Services (BYOIP). </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateIpamExternalResourceVerificationToken">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateIpamExternalResourceVerificationTokenOutcome CreateIpamExternalResourceVerificationToken(const Model::CreateIpamExternalResourceVerificationTokenRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateIpamExternalResourceVerificationToken that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateIpamExternalResourceVerificationTokenRequestT = Model::CreateIpamExternalResourceVerificationTokenRequest>
+        Model::CreateIpamExternalResourceVerificationTokenOutcomeCallable CreateIpamExternalResourceVerificationTokenCallable(const CreateIpamExternalResourceVerificationTokenRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::CreateIpamExternalResourceVerificationToken, request);
+        }
+
+        /**
+         * An Async wrapper for CreateIpamExternalResourceVerificationToken that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateIpamExternalResourceVerificationTokenRequestT = Model::CreateIpamExternalResourceVerificationTokenRequest>
+        void CreateIpamExternalResourceVerificationTokenAsync(const CreateIpamExternalResourceVerificationTokenRequestT& request, const CreateIpamExternalResourceVerificationTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::CreateIpamExternalResourceVerificationToken, request, handler, context);
+        }
+
+        /**
          * <p>Create an IP address pool for Amazon VPC IP Address Manager (IPAM). In IPAM,
          * a pool is a collection of contiguous IP addresses CIDRs. Pools enable you to
          * organize your IP addresses according to your routing and security needs. For
@@ -4948,6 +4977,35 @@ namespace EC2
         void DeleteIpamAsync(const DeleteIpamRequestT& request, const DeleteIpamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&EC2Client::DeleteIpam, request, handler, context);
+        }
+
+        /**
+         * <p>Delete a verification token. A verification token is an Amazon Web
+         * Services-generated random value that you can use to prove ownership of an
+         * external resource. For example, you can use a verification token to validate
+         * that you control a public IP address range when you bring an IP address range to
+         * Amazon Web Services (BYOIP). </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteIpamExternalResourceVerificationToken">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteIpamExternalResourceVerificationTokenOutcome DeleteIpamExternalResourceVerificationToken(const Model::DeleteIpamExternalResourceVerificationTokenRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteIpamExternalResourceVerificationToken that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteIpamExternalResourceVerificationTokenRequestT = Model::DeleteIpamExternalResourceVerificationTokenRequest>
+        Model::DeleteIpamExternalResourceVerificationTokenOutcomeCallable DeleteIpamExternalResourceVerificationTokenCallable(const DeleteIpamExternalResourceVerificationTokenRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::DeleteIpamExternalResourceVerificationToken, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteIpamExternalResourceVerificationToken that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteIpamExternalResourceVerificationTokenRequestT = Model::DeleteIpamExternalResourceVerificationTokenRequest>
+        void DeleteIpamExternalResourceVerificationTokenAsync(const DeleteIpamExternalResourceVerificationTokenRequestT& request, const DeleteIpamExternalResourceVerificationTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::DeleteIpamExternalResourceVerificationToken, request, handler, context);
         }
 
         /**
@@ -8544,6 +8602,35 @@ namespace EC2
         }
 
         /**
+         * <p>Describe verification tokens. A verification token is an Amazon Web
+         * Services-generated random value that you can use to prove ownership of an
+         * external resource. For example, you can use a verification token to validate
+         * that you control a public IP address range when you bring an IP address range to
+         * Amazon Web Services (BYOIP). </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpamExternalResourceVerificationTokens">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeIpamExternalResourceVerificationTokensOutcome DescribeIpamExternalResourceVerificationTokens(const Model::DescribeIpamExternalResourceVerificationTokensRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for DescribeIpamExternalResourceVerificationTokens that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeIpamExternalResourceVerificationTokensRequestT = Model::DescribeIpamExternalResourceVerificationTokensRequest>
+        Model::DescribeIpamExternalResourceVerificationTokensOutcomeCallable DescribeIpamExternalResourceVerificationTokensCallable(const DescribeIpamExternalResourceVerificationTokensRequestT& request = {}) const
+        {
+            return SubmitCallable(&EC2Client::DescribeIpamExternalResourceVerificationTokens, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeIpamExternalResourceVerificationTokens that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeIpamExternalResourceVerificationTokensRequestT = Model::DescribeIpamExternalResourceVerificationTokensRequest>
+        void DescribeIpamExternalResourceVerificationTokensAsync(const DescribeIpamExternalResourceVerificationTokensResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeIpamExternalResourceVerificationTokensRequestT& request = {}) const
+        {
+            return SubmitAsync(&EC2Client::DescribeIpamExternalResourceVerificationTokens, request, handler, context);
+        }
+
+        /**
          * <p>Get information about your IPAM pools.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpamPools">AWS
          * API Reference</a></p>
@@ -9291,8 +9378,12 @@ namespace EC2
         }
 
         /**
-         * <p>Describes the specified placement groups or all of your placement groups. For
-         * more information, see <a
+         * <p>Describes the specified placement groups or all of your placement groups.</p>
+         *  <p>To describe a specific placement group that is <i>shared</i> with your
+         * account, you must specify the ID of the placement group using the
+         * <code>GroupId</code> parameter. Specifying the name of a <i>shared</i> placement
+         * group using the <code>GroupNames</code> parameter will result in an error.</p>
+         *  <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
          * groups</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribePlacementGroups">AWS
@@ -10876,10 +10967,7 @@ namespace EC2
 
         /**
          * <p>Describes the most recent volume modification request for the specified EBS
-         * volumes.</p> <p>If a volume has never been modified, some information in the
-         * output will be null. If a volume has been modified more than once, the output
-         * includes only the most recent modification request.</p> <p>For more information,
-         * see <a
+         * volumes.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/ebs/latest/userguide/monitoring-volume-modifications.html">
          * Monitor the progress of volume modifications</a> in the <i>Amazon EBS User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -13158,13 +13246,7 @@ namespace EC2
          * instance console output displays the exact console output that would normally be
          * displayed on a physical monitor attached to a computer. For Windows instances,
          * the instance console output includes the last three system event log errors.</p>
-         * <p>By default, the console output returns buffered information that was posted
-         * shortly after an instance transition state (start, stop, reboot, or terminate).
-         * This information is available for at least one hour after the most recent post.
-         * Only the most recent 64 KB of console output is available.</p> <p>You can
-         * optionally retrieve the latest serial console output at any time during the
-         * instance lifecycle. This option is supported on instance types that use the
-         * Nitro hypervisor.</p> <p>For more information, see <a
+         * <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-console.html#instance-console-console-output">Instance
          * console output</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See Also:</h3>
          * <a

@@ -27,11 +27,18 @@ Aws::String DetachTrafficSourcesRequest::SerializePayload() const
 
   if(m_trafficSourcesHasBeenSet)
   {
-    unsigned trafficSourcesCount = 1;
-    for(auto& item : m_trafficSources)
+    if (m_trafficSources.empty())
     {
-      item.OutputToStream(ss, "TrafficSources.member.", trafficSourcesCount, "");
-      trafficSourcesCount++;
+      ss << "TrafficSources=&";
+    }
+    else
+    {
+      unsigned trafficSourcesCount = 1;
+      for(auto& item : m_trafficSources)
+      {
+        item.OutputToStream(ss, "TrafficSources.member.", trafficSourcesCount, "");
+        trafficSourcesCount++;
+      }
     }
   }
 

@@ -200,7 +200,11 @@ namespace Aws
             m_tokenRequired(true),
             m_disableIMDSV1(clientConfiguration.disableImdsV1)
         {
-
+#if defined(DISABLE_IMDSV1)
+            AWS_UNREFERENCED_PARAM(m_disableIMDSV1);
+            m_disableIMDSV1 = true;
+            AWS_LOGSTREAM_TRACE(m_logtag.c_str(), "IMDSv1 had been disabled at the SDK build time");
+#endif
         }
 
         EC2MetadataClient::~EC2MetadataClient()

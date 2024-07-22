@@ -32,12 +32,19 @@ Aws::String DescribeScheduledActionsRequest::SerializePayload() const
 
   if(m_scheduledActionNamesHasBeenSet)
   {
-    unsigned scheduledActionNamesCount = 1;
-    for(auto& item : m_scheduledActionNames)
+    if (m_scheduledActionNames.empty())
     {
-      ss << "ScheduledActionNames.member." << scheduledActionNamesCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      scheduledActionNamesCount++;
+      ss << "ScheduledActionNames=&";
+    }
+    else
+    {
+      unsigned scheduledActionNamesCount = 1;
+      for(auto& item : m_scheduledActionNames)
+      {
+        ss << "ScheduledActionNames.member." << scheduledActionNamesCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        scheduledActionNamesCount++;
+      }
     }
   }
 

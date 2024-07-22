@@ -6,6 +6,7 @@
 #include <aws/s3control/model/DeleteBucketTaggingRequest.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>

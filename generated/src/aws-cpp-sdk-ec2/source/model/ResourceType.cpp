@@ -107,6 +107,7 @@ namespace Aws
         static const int ipam_resource_discovery_HASH = HashingUtils::HashString("ipam-resource-discovery");
         static const int ipam_resource_discovery_association_HASH = HashingUtils::HashString("ipam-resource-discovery-association");
         static const int instance_connect_endpoint_HASH = HashingUtils::HashString("instance-connect-endpoint");
+        static const int ipam_external_resource_verification_token_HASH = HashingUtils::HashString("ipam-external-resource-verification-token");
 
 
         ResourceType GetResourceTypeForName(const Aws::String& name)
@@ -460,6 +461,10 @@ namespace Aws
           {
             return ResourceType::instance_connect_endpoint;
           }
+          else if (hashCode == ipam_external_resource_verification_token_HASH)
+          {
+            return ResourceType::ipam_external_resource_verification_token;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -650,6 +655,8 @@ namespace Aws
             return "ipam-resource-discovery-association";
           case ResourceType::instance_connect_endpoint:
             return "instance-connect-endpoint";
+          case ResourceType::ipam_external_resource_verification_token:
+            return "ipam-external-resource-verification-token";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

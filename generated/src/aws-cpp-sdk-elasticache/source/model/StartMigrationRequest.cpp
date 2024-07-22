@@ -27,11 +27,18 @@ Aws::String StartMigrationRequest::SerializePayload() const
 
   if(m_customerNodeEndpointListHasBeenSet)
   {
-    unsigned customerNodeEndpointListCount = 1;
-    for(auto& item : m_customerNodeEndpointList)
+    if (m_customerNodeEndpointList.empty())
     {
-      item.OutputToStream(ss, "CustomerNodeEndpointList.member.", customerNodeEndpointListCount, "");
-      customerNodeEndpointListCount++;
+      ss << "CustomerNodeEndpointList=&";
+    }
+    else
+    {
+      unsigned customerNodeEndpointListCount = 1;
+      for(auto& item : m_customerNodeEndpointList)
+      {
+        item.OutputToStream(ss, "CustomerNodeEndpointList.member.", customerNodeEndpointListCount, "");
+        customerNodeEndpointListCount++;
+      }
     }
   }
 

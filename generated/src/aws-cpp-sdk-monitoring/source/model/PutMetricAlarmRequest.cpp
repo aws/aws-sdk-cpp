@@ -65,34 +65,55 @@ Aws::String PutMetricAlarmRequest::SerializePayload() const
 
   if(m_oKActionsHasBeenSet)
   {
-    unsigned oKActionsCount = 1;
-    for(auto& item : m_oKActions)
+    if (m_oKActions.empty())
     {
-      ss << "OKActions.member." << oKActionsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      oKActionsCount++;
+      ss << "OKActions=&";
+    }
+    else
+    {
+      unsigned oKActionsCount = 1;
+      for(auto& item : m_oKActions)
+      {
+        ss << "OKActions.member." << oKActionsCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        oKActionsCount++;
+      }
     }
   }
 
   if(m_alarmActionsHasBeenSet)
   {
-    unsigned alarmActionsCount = 1;
-    for(auto& item : m_alarmActions)
+    if (m_alarmActions.empty())
     {
-      ss << "AlarmActions.member." << alarmActionsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      alarmActionsCount++;
+      ss << "AlarmActions=&";
+    }
+    else
+    {
+      unsigned alarmActionsCount = 1;
+      for(auto& item : m_alarmActions)
+      {
+        ss << "AlarmActions.member." << alarmActionsCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        alarmActionsCount++;
+      }
     }
   }
 
   if(m_insufficientDataActionsHasBeenSet)
   {
-    unsigned insufficientDataActionsCount = 1;
-    for(auto& item : m_insufficientDataActions)
+    if (m_insufficientDataActions.empty())
     {
-      ss << "InsufficientDataActions.member." << insufficientDataActionsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      insufficientDataActionsCount++;
+      ss << "InsufficientDataActions=&";
+    }
+    else
+    {
+      unsigned insufficientDataActionsCount = 1;
+      for(auto& item : m_insufficientDataActions)
+      {
+        ss << "InsufficientDataActions.member." << insufficientDataActionsCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        insufficientDataActionsCount++;
+      }
     }
   }
 
@@ -118,11 +139,18 @@ Aws::String PutMetricAlarmRequest::SerializePayload() const
 
   if(m_dimensionsHasBeenSet)
   {
-    unsigned dimensionsCount = 1;
-    for(auto& item : m_dimensions)
+    if (m_dimensions.empty())
     {
-      item.OutputToStream(ss, "Dimensions.member.", dimensionsCount, "");
-      dimensionsCount++;
+      ss << "Dimensions=&";
+    }
+    else
+    {
+      unsigned dimensionsCount = 1;
+      for(auto& item : m_dimensions)
+      {
+        item.OutputToStream(ss, "Dimensions.member.", dimensionsCount, "");
+        dimensionsCount++;
+      }
     }
   }
 
@@ -168,21 +196,35 @@ Aws::String PutMetricAlarmRequest::SerializePayload() const
 
   if(m_metricsHasBeenSet)
   {
-    unsigned metricsCount = 1;
-    for(auto& item : m_metrics)
+    if (m_metrics.empty())
     {
-      item.OutputToStream(ss, "Metrics.member.", metricsCount, "");
-      metricsCount++;
+      ss << "Metrics=&";
+    }
+    else
+    {
+      unsigned metricsCount = 1;
+      for(auto& item : m_metrics)
+      {
+        item.OutputToStream(ss, "Metrics.member.", metricsCount, "");
+        metricsCount++;
+      }
     }
   }
 
   if(m_tagsHasBeenSet)
   {
-    unsigned tagsCount = 1;
-    for(auto& item : m_tags)
+    if (m_tags.empty())
     {
-      item.OutputToStream(ss, "Tags.member.", tagsCount, "");
-      tagsCount++;
+      ss << "Tags=&";
+    }
+    else
+    {
+      unsigned tagsCount = 1;
+      for(auto& item : m_tags)
+      {
+        item.OutputToStream(ss, "Tags.member.", tagsCount, "");
+        tagsCount++;
+      }
     }
   }
 

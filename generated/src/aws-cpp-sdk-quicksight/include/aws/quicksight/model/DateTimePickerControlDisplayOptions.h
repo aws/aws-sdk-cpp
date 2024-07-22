@@ -8,6 +8,7 @@
 #include <aws/quicksight/model/LabelOptions.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/quicksight/model/SheetControlInfoIconLabelOptions.h>
+#include <aws/quicksight/model/Visibility.h>
 #include <utility>
 
 namespace Aws
@@ -76,6 +77,32 @@ namespace Model
     inline DateTimePickerControlDisplayOptions& WithInfoIconLabelOptions(const SheetControlInfoIconLabelOptions& value) { SetInfoIconLabelOptions(value); return *this;}
     inline DateTimePickerControlDisplayOptions& WithInfoIconLabelOptions(SheetControlInfoIconLabelOptions&& value) { SetInfoIconLabelOptions(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The helper text visibility of the
+     * <code>DateTimePickerControlDisplayOptions</code>.</p>
+     */
+    inline const Visibility& GetHelperTextVisibility() const{ return m_helperTextVisibility; }
+    inline bool HelperTextVisibilityHasBeenSet() const { return m_helperTextVisibilityHasBeenSet; }
+    inline void SetHelperTextVisibility(const Visibility& value) { m_helperTextVisibilityHasBeenSet = true; m_helperTextVisibility = value; }
+    inline void SetHelperTextVisibility(Visibility&& value) { m_helperTextVisibilityHasBeenSet = true; m_helperTextVisibility = std::move(value); }
+    inline DateTimePickerControlDisplayOptions& WithHelperTextVisibility(const Visibility& value) { SetHelperTextVisibility(value); return *this;}
+    inline DateTimePickerControlDisplayOptions& WithHelperTextVisibility(Visibility&& value) { SetHelperTextVisibility(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The date icon visibility of the
+     * <code>DateTimePickerControlDisplayOptions</code>.</p>
+     */
+    inline const Visibility& GetDateIconVisibility() const{ return m_dateIconVisibility; }
+    inline bool DateIconVisibilityHasBeenSet() const { return m_dateIconVisibilityHasBeenSet; }
+    inline void SetDateIconVisibility(const Visibility& value) { m_dateIconVisibilityHasBeenSet = true; m_dateIconVisibility = value; }
+    inline void SetDateIconVisibility(Visibility&& value) { m_dateIconVisibilityHasBeenSet = true; m_dateIconVisibility = std::move(value); }
+    inline DateTimePickerControlDisplayOptions& WithDateIconVisibility(const Visibility& value) { SetDateIconVisibility(value); return *this;}
+    inline DateTimePickerControlDisplayOptions& WithDateIconVisibility(Visibility&& value) { SetDateIconVisibility(std::move(value)); return *this;}
+    ///@}
   private:
 
     LabelOptions m_titleOptions;
@@ -86,6 +113,12 @@ namespace Model
 
     SheetControlInfoIconLabelOptions m_infoIconLabelOptions;
     bool m_infoIconLabelOptionsHasBeenSet = false;
+
+    Visibility m_helperTextVisibility;
+    bool m_helperTextVisibilityHasBeenSet = false;
+
+    Visibility m_dateIconVisibility;
+    bool m_dateIconVisibilityHasBeenSet = false;
   };
 
 } // namespace Model

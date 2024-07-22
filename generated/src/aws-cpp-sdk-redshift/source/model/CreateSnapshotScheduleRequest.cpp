@@ -28,12 +28,19 @@ Aws::String CreateSnapshotScheduleRequest::SerializePayload() const
   ss << "Action=CreateSnapshotSchedule&";
   if(m_scheduleDefinitionsHasBeenSet)
   {
-    unsigned scheduleDefinitionsCount = 1;
-    for(auto& item : m_scheduleDefinitions)
+    if (m_scheduleDefinitions.empty())
     {
-      ss << "ScheduleDefinitions.member." << scheduleDefinitionsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      scheduleDefinitionsCount++;
+      ss << "ScheduleDefinitions=&";
+    }
+    else
+    {
+      unsigned scheduleDefinitionsCount = 1;
+      for(auto& item : m_scheduleDefinitions)
+      {
+        ss << "ScheduleDefinitions.member." << scheduleDefinitionsCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        scheduleDefinitionsCount++;
+      }
     }
   }
 
@@ -49,11 +56,18 @@ Aws::String CreateSnapshotScheduleRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-    unsigned tagsCount = 1;
-    for(auto& item : m_tags)
+    if (m_tags.empty())
     {
-      item.OutputToStream(ss, "Tags.member.", tagsCount, "");
-      tagsCount++;
+      ss << "Tags=&";
+    }
+    else
+    {
+      unsigned tagsCount = 1;
+      for(auto& item : m_tags)
+      {
+        item.OutputToStream(ss, "Tags.member.", tagsCount, "");
+        tagsCount++;
+      }
     }
   }
 

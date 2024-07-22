@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/ivschat/Ivschat_EXPORTS.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -35,18 +35,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Time after which an end user's session is no longer valid. This is an ISO
-     * 8601 timestamp; <i>note that this is returned as a string</i>.</p>
-     */
-    inline const Aws::Utils::DateTime& GetSessionExpirationTime() const{ return m_sessionExpirationTime; }
-    inline void SetSessionExpirationTime(const Aws::Utils::DateTime& value) { m_sessionExpirationTime = value; }
-    inline void SetSessionExpirationTime(Aws::Utils::DateTime&& value) { m_sessionExpirationTime = std::move(value); }
-    inline CreateChatTokenResult& WithSessionExpirationTime(const Aws::Utils::DateTime& value) { SetSessionExpirationTime(value); return *this;}
-    inline CreateChatTokenResult& WithSessionExpirationTime(Aws::Utils::DateTime&& value) { SetSessionExpirationTime(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The issued client token, encrypted.</p>
      */
     inline const Aws::String& GetToken() const{ return m_token; }
@@ -72,6 +60,18 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>Time after which an end user's session is no longer valid. This is an ISO
+     * 8601 timestamp; <i>note that this is returned as a string</i>.</p>
+     */
+    inline const Aws::Utils::DateTime& GetSessionExpirationTime() const{ return m_sessionExpirationTime; }
+    inline void SetSessionExpirationTime(const Aws::Utils::DateTime& value) { m_sessionExpirationTime = value; }
+    inline void SetSessionExpirationTime(Aws::Utils::DateTime&& value) { m_sessionExpirationTime = std::move(value); }
+    inline CreateChatTokenResult& WithSessionExpirationTime(const Aws::Utils::DateTime& value) { SetSessionExpirationTime(value); return *this;}
+    inline CreateChatTokenResult& WithSessionExpirationTime(Aws::Utils::DateTime&& value) { SetSessionExpirationTime(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -83,11 +83,11 @@ namespace Model
     ///@}
   private:
 
-    Aws::Utils::DateTime m_sessionExpirationTime;
-
     Aws::String m_token;
 
     Aws::Utils::DateTime m_tokenExpirationTime;
+
+    Aws::Utils::DateTime m_sessionExpirationTime;
 
     Aws::String m_requestId;
   };

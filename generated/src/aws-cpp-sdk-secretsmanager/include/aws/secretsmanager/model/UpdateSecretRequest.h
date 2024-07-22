@@ -100,7 +100,7 @@ namespace Model
      * new secret versions as well as any existing versions with the staging labels
      * <code>AWSCURRENT</code>, <code>AWSPENDING</code>, or <code>AWSPREVIOUS</code>.
      * If you don't have <code>kms:Encrypt</code> permission to the new key, Secrets
-     * Manager does not re-ecrypt existing secret versions with the new key. For more
+     * Manager does not re-encrypt existing secret versions with the new key. For more
      * information about versions and staging labels, see <a
      * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/getting-started.html#term_version">Concepts:
      * Version</a>.</p> <p>A key alias is always prefixed by <code>alias/</code>, for

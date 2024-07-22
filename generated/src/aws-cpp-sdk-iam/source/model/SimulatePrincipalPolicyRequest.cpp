@@ -38,45 +38,73 @@ Aws::String SimulatePrincipalPolicyRequest::SerializePayload() const
 
   if(m_policyInputListHasBeenSet)
   {
-    unsigned policyInputListCount = 1;
-    for(auto& item : m_policyInputList)
+    if (m_policyInputList.empty())
     {
-      ss << "PolicyInputList.member." << policyInputListCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      policyInputListCount++;
+      ss << "PolicyInputList=&";
+    }
+    else
+    {
+      unsigned policyInputListCount = 1;
+      for(auto& item : m_policyInputList)
+      {
+        ss << "PolicyInputList.member." << policyInputListCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        policyInputListCount++;
+      }
     }
   }
 
   if(m_permissionsBoundaryPolicyInputListHasBeenSet)
   {
-    unsigned permissionsBoundaryPolicyInputListCount = 1;
-    for(auto& item : m_permissionsBoundaryPolicyInputList)
+    if (m_permissionsBoundaryPolicyInputList.empty())
     {
-      ss << "PermissionsBoundaryPolicyInputList.member." << permissionsBoundaryPolicyInputListCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      permissionsBoundaryPolicyInputListCount++;
+      ss << "PermissionsBoundaryPolicyInputList=&";
+    }
+    else
+    {
+      unsigned permissionsBoundaryPolicyInputListCount = 1;
+      for(auto& item : m_permissionsBoundaryPolicyInputList)
+      {
+        ss << "PermissionsBoundaryPolicyInputList.member." << permissionsBoundaryPolicyInputListCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        permissionsBoundaryPolicyInputListCount++;
+      }
     }
   }
 
   if(m_actionNamesHasBeenSet)
   {
-    unsigned actionNamesCount = 1;
-    for(auto& item : m_actionNames)
+    if (m_actionNames.empty())
     {
-      ss << "ActionNames.member." << actionNamesCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      actionNamesCount++;
+      ss << "ActionNames=&";
+    }
+    else
+    {
+      unsigned actionNamesCount = 1;
+      for(auto& item : m_actionNames)
+      {
+        ss << "ActionNames.member." << actionNamesCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        actionNamesCount++;
+      }
     }
   }
 
   if(m_resourceArnsHasBeenSet)
   {
-    unsigned resourceArnsCount = 1;
-    for(auto& item : m_resourceArns)
+    if (m_resourceArns.empty())
     {
-      ss << "ResourceArns.member." << resourceArnsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      resourceArnsCount++;
+      ss << "ResourceArns=&";
+    }
+    else
+    {
+      unsigned resourceArnsCount = 1;
+      for(auto& item : m_resourceArns)
+      {
+        ss << "ResourceArns.member." << resourceArnsCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        resourceArnsCount++;
+      }
     }
   }
 
@@ -97,11 +125,18 @@ Aws::String SimulatePrincipalPolicyRequest::SerializePayload() const
 
   if(m_contextEntriesHasBeenSet)
   {
-    unsigned contextEntriesCount = 1;
-    for(auto& item : m_contextEntries)
+    if (m_contextEntries.empty())
     {
-      item.OutputToStream(ss, "ContextEntries.member.", contextEntriesCount, "");
-      contextEntriesCount++;
+      ss << "ContextEntries=&";
+    }
+    else
+    {
+      unsigned contextEntriesCount = 1;
+      for(auto& item : m_contextEntries)
+      {
+        item.OutputToStream(ss, "ContextEntries.member.", contextEntriesCount, "");
+        contextEntriesCount++;
+      }
     }
   }
 

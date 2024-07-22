@@ -42,11 +42,18 @@ Aws::String AssumeRoleWithSAMLRequest::SerializePayload() const
 
   if(m_policyArnsHasBeenSet)
   {
-    unsigned policyArnsCount = 1;
-    for(auto& item : m_policyArns)
+    if (m_policyArns.empty())
     {
-      item.OutputToStream(ss, "PolicyArns.member.", policyArnsCount, "");
-      policyArnsCount++;
+      ss << "PolicyArns=&";
+    }
+    else
+    {
+      unsigned policyArnsCount = 1;
+      for(auto& item : m_policyArns)
+      {
+        item.OutputToStream(ss, "PolicyArns.member.", policyArnsCount, "");
+        policyArnsCount++;
+      }
     }
   }
 

@@ -29,12 +29,6 @@ CreateChatTokenResult::CreateChatTokenResult(const Aws::AmazonWebServiceResult<J
 CreateChatTokenResult& CreateChatTokenResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("sessionExpirationTime"))
-  {
-    m_sessionExpirationTime = jsonValue.GetString("sessionExpirationTime");
-
-  }
-
   if(jsonValue.ValueExists("token"))
   {
     m_token = jsonValue.GetString("token");
@@ -44,6 +38,12 @@ CreateChatTokenResult& CreateChatTokenResult::operator =(const Aws::AmazonWebSer
   if(jsonValue.ValueExists("tokenExpirationTime"))
   {
     m_tokenExpirationTime = jsonValue.GetString("tokenExpirationTime");
+
+  }
+
+  if(jsonValue.ValueExists("sessionExpirationTime"))
+  {
+    m_sessionExpirationTime = jsonValue.GetString("sessionExpirationTime");
 
   }
 

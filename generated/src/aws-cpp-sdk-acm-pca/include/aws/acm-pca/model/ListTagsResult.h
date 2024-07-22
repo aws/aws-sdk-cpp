@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/acm-pca/ACMPCA_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/acm-pca/model/Tag.h>
 #include <utility>
 
@@ -36,19 +36,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The tags associated with your private CA.</p>
-     */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tags = std::move(value); }
-    inline ListTagsResult& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline ListTagsResult& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline ListTagsResult& AddTags(const Tag& value) { m_tags.push_back(value); return *this; }
-    inline ListTagsResult& AddTags(Tag&& value) { m_tags.push_back(std::move(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
      * <p>When the list is truncated, this value is present and should be used for the
      * <b>NextToken</b> parameter in a subsequent pagination request. </p>
      */
@@ -59,6 +46,19 @@ namespace Model
     inline ListTagsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
     inline ListTagsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
     inline ListTagsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The tags associated with your private CA.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tags = value; }
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tags = std::move(value); }
+    inline ListTagsResult& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+    inline ListTagsResult& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+    inline ListTagsResult& AddTags(const Tag& value) { m_tags.push_back(value); return *this; }
+    inline ListTagsResult& AddTags(Tag&& value) { m_tags.push_back(std::move(value)); return *this; }
     ///@}
 
     ///@{
@@ -73,9 +73,9 @@ namespace Model
     ///@}
   private:
 
-    Aws::Vector<Tag> m_tags;
-
     Aws::String m_nextToken;
+
+    Aws::Vector<Tag> m_tags;
 
     Aws::String m_requestId;
   };

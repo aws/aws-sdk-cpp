@@ -52,7 +52,9 @@ namespace Model
     ///@{
     /**
      * <p>The zonal autoshift status for the resource that you want to update the zonal
-     * autoshift configuration for.</p>
+     * autoshift configuration for. Choose <code>ENABLED</code> to authorize Amazon Web
+     * Services to shift away resource traffic for an application from an Availability
+     * Zone during events, on your behalf, to help reduce time to recovery.</p>
      */
     inline const ZonalAutoshiftStatus& GetZonalAutoshiftStatus() const{ return m_zonalAutoshiftStatus; }
     inline bool ZonalAutoshiftStatusHasBeenSet() const { return m_zonalAutoshiftStatusHasBeenSet; }

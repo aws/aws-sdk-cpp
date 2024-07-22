@@ -34,23 +34,37 @@ Aws::String ModifyDBSnapshotAttributeRequest::SerializePayload() const
 
   if(m_valuesToAddHasBeenSet)
   {
-    unsigned valuesToAddCount = 1;
-    for(auto& item : m_valuesToAdd)
+    if (m_valuesToAdd.empty())
     {
-      ss << "ValuesToAdd.member." << valuesToAddCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      valuesToAddCount++;
+      ss << "ValuesToAdd=&";
+    }
+    else
+    {
+      unsigned valuesToAddCount = 1;
+      for(auto& item : m_valuesToAdd)
+      {
+        ss << "ValuesToAdd.member." << valuesToAddCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        valuesToAddCount++;
+      }
     }
   }
 
   if(m_valuesToRemoveHasBeenSet)
   {
-    unsigned valuesToRemoveCount = 1;
-    for(auto& item : m_valuesToRemove)
+    if (m_valuesToRemove.empty())
     {
-      ss << "ValuesToRemove.member." << valuesToRemoveCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      valuesToRemoveCount++;
+      ss << "ValuesToRemove=&";
+    }
+    else
+    {
+      unsigned valuesToRemoveCount = 1;
+      for(auto& item : m_valuesToRemove)
+      {
+        ss << "ValuesToRemove.member." << valuesToRemoveCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        valuesToRemoveCount++;
+      }
     }
   }
 

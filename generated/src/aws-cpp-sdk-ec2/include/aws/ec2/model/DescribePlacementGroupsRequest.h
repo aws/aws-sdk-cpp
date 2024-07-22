@@ -83,8 +83,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>The names of the placement groups.</p> <p>Default: Describes all your
-     * placement groups, or only those otherwise specified.</p>
+     * <p>The names of the placement groups.</p> <p>Constraints:</p> <ul> <li> <p>You
+     * can specify a name only if the placement group is owned by your account.</p>
+     * </li> <li> <p>If a placement group is <i>shared</i> with your account,
+     * specifying the name results in an error. You must use the <code>GroupId</code>
+     * parameter instead.</p> </li> </ul>
      */
     inline const Aws::Vector<Aws::String>& GetGroupNames() const{ return m_groupNames; }
     inline bool GroupNamesHasBeenSet() const { return m_groupNamesHasBeenSet; }

@@ -30,8 +30,9 @@ namespace Model
    * CloudWatch alarms, which you create in CloudWatch to use with the practice run.
    * The alarms that you specify are an <i>outcome alarm</i>, to monitor application
    * health during practice runs and, optionally, a <i>blocking alarm</i>, to block
-   * practice runs from starting.</p> <p>Control condition alarms do not apply for
-   * autoshifts.</p> <p>For more information, see <a
+   * practice runs from starting or to interrupt a practice run in progress.</p>
+   * <p>Control condition alarms do not apply for autoshifts.</p> <p>For more
+   * information, see <a
    * href="https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-autoshift.considerations.html">
    * Considerations when you configure zonal autoshift</a> in the Amazon Route 53
    * Application Recovery Controller Developer Guide.</p><p><h3>See Also:</h3>   <a
@@ -49,7 +50,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) for the Amazon CloudWatch alarm that you
+     * <p>The Amazon Resource Name (ARN) for an Amazon CloudWatch alarm that you
      * specify as a control condition for a practice run.</p>
      */
     inline const Aws::String& GetAlarmIdentifier() const{ return m_alarmIdentifier; }
@@ -64,7 +65,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The type of alarm specified for a practice run. The only valid value is
+     * <p>The type of alarm specified for a practice run. You can only specify Amazon
+     * CloudWatch alarms for practice runs, so the only valid value is
      * <code>CLOUDWATCH</code>.</p>
      */
     inline const ControlConditionType& GetType() const{ return m_type; }

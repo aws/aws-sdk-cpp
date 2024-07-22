@@ -46,11 +46,18 @@ Aws::String SendBounceRequest::SerializePayload() const
 
   if(m_bouncedRecipientInfoListHasBeenSet)
   {
-    unsigned bouncedRecipientInfoListCount = 1;
-    for(auto& item : m_bouncedRecipientInfoList)
+    if (m_bouncedRecipientInfoList.empty())
     {
-      item.OutputToStream(ss, "BouncedRecipientInfoList.member.", bouncedRecipientInfoListCount, "");
-      bouncedRecipientInfoListCount++;
+      ss << "BouncedRecipientInfoList=&";
+    }
+    else
+    {
+      unsigned bouncedRecipientInfoListCount = 1;
+      for(auto& item : m_bouncedRecipientInfoList)
+      {
+        item.OutputToStream(ss, "BouncedRecipientInfoList.member.", bouncedRecipientInfoListCount, "");
+        bouncedRecipientInfoListCount++;
+      }
     }
   }
 

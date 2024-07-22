@@ -7,6 +7,7 @@
 #include <aws/firehose/Firehose_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/firehose/model/AuthenticationConfiguration.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -78,6 +79,22 @@ namespace Model
     inline MSKSourceConfiguration& WithAuthenticationConfiguration(const AuthenticationConfiguration& value) { SetAuthenticationConfiguration(value); return *this;}
     inline MSKSourceConfiguration& WithAuthenticationConfiguration(AuthenticationConfiguration&& value) { SetAuthenticationConfiguration(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The start date and time in UTC for the offset position within your MSK topic
+     * from where Firehose begins to read. By default, this is set to timestamp when
+     * Firehose becomes Active. </p> <p>If you want to create a Firehose stream with
+     * Earliest start position from SDK or CLI, you need to set the
+     * <code>ReadFromTimestamp</code> parameter to Epoch (1970-01-01T00:00:00Z). </p>
+     */
+    inline const Aws::Utils::DateTime& GetReadFromTimestamp() const{ return m_readFromTimestamp; }
+    inline bool ReadFromTimestampHasBeenSet() const { return m_readFromTimestampHasBeenSet; }
+    inline void SetReadFromTimestamp(const Aws::Utils::DateTime& value) { m_readFromTimestampHasBeenSet = true; m_readFromTimestamp = value; }
+    inline void SetReadFromTimestamp(Aws::Utils::DateTime&& value) { m_readFromTimestampHasBeenSet = true; m_readFromTimestamp = std::move(value); }
+    inline MSKSourceConfiguration& WithReadFromTimestamp(const Aws::Utils::DateTime& value) { SetReadFromTimestamp(value); return *this;}
+    inline MSKSourceConfiguration& WithReadFromTimestamp(Aws::Utils::DateTime&& value) { SetReadFromTimestamp(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_mSKClusterARN;
@@ -88,6 +105,9 @@ namespace Model
 
     AuthenticationConfiguration m_authenticationConfiguration;
     bool m_authenticationConfigurationHasBeenSet = false;
+
+    Aws::Utils::DateTime m_readFromTimestamp;
+    bool m_readFromTimestampHasBeenSet = false;
   };
 
 } // namespace Model
