@@ -267,10 +267,6 @@ namespace
         putRequest.AddLogEvents(e3).AddLogEvents(e4);
 
         auto logEvents = putRequest.GetLogEvents();
-        for(auto le : logEvents)
-        {
-            std::cout<<"event:"<<le.GetMessage()<<std::endl;
-        }
 
 
         putOutcome = m_client->PutLogEvents(putRequest);
