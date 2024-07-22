@@ -19,9 +19,9 @@ namespace Model
 {
 
 PlaybackRestrictionPolicySummary::PlaybackRestrictionPolicySummary() : 
+    m_arnHasBeenSet(false),
     m_allowedCountriesHasBeenSet(false),
     m_allowedOriginsHasBeenSet(false),
-    m_arnHasBeenSet(false),
     m_enableStrictOriginEnforcement(false),
     m_enableStrictOriginEnforcementHasBeenSet(false),
     m_nameHasBeenSet(false),
@@ -37,6 +37,13 @@ PlaybackRestrictionPolicySummary::PlaybackRestrictionPolicySummary(JsonView json
 
 PlaybackRestrictionPolicySummary& PlaybackRestrictionPolicySummary::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("arn"))
+  {
+    m_arn = jsonValue.GetString("arn");
+
+    m_arnHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("allowedCountries"))
   {
     Aws::Utils::Array<JsonView> allowedCountriesJsonList = jsonValue.GetArray("allowedCountries");
@@ -55,13 +62,6 @@ PlaybackRestrictionPolicySummary& PlaybackRestrictionPolicySummary::operator =(J
       m_allowedOrigins.push_back(allowedOriginsJsonList[allowedOriginsIndex].AsString());
     }
     m_allowedOriginsHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("arn"))
-  {
-    m_arn = jsonValue.GetString("arn");
-
-    m_arnHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("enableStrictOriginEnforcement"))
@@ -95,6 +95,12 @@ JsonValue PlaybackRestrictionPolicySummary::Jsonize() const
 {
   JsonValue payload;
 
+  if(m_arnHasBeenSet)
+  {
+   payload.WithString("arn", m_arn);
+
+  }
+
   if(m_allowedCountriesHasBeenSet)
   {
    Aws::Utils::Array<JsonValue> allowedCountriesJsonList(m_allowedCountries.size());
@@ -114,12 +120,6 @@ JsonValue PlaybackRestrictionPolicySummary::Jsonize() const
      allowedOriginsJsonList[allowedOriginsIndex].AsString(m_allowedOrigins[allowedOriginsIndex]);
    }
    payload.WithArray("allowedOrigins", std::move(allowedOriginsJsonList));
-
-  }
-
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("arn", m_arn);
 
   }
 

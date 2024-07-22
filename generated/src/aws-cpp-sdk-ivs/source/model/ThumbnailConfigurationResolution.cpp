@@ -20,26 +20,26 @@ namespace Aws
       namespace ThumbnailConfigurationResolutionMapper
       {
 
-        static const int FULL_HD_HASH = HashingUtils::HashString("FULL_HD");
-        static const int HD_HASH = HashingUtils::HashString("HD");
         static const int SD_HASH = HashingUtils::HashString("SD");
+        static const int HD_HASH = HashingUtils::HashString("HD");
+        static const int FULL_HD_HASH = HashingUtils::HashString("FULL_HD");
         static const int LOWEST_RESOLUTION_HASH = HashingUtils::HashString("LOWEST_RESOLUTION");
 
 
         ThumbnailConfigurationResolution GetThumbnailConfigurationResolutionForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == FULL_HD_HASH)
+          if (hashCode == SD_HASH)
           {
-            return ThumbnailConfigurationResolution::FULL_HD;
+            return ThumbnailConfigurationResolution::SD;
           }
           else if (hashCode == HD_HASH)
           {
             return ThumbnailConfigurationResolution::HD;
           }
-          else if (hashCode == SD_HASH)
+          else if (hashCode == FULL_HD_HASH)
           {
-            return ThumbnailConfigurationResolution::SD;
+            return ThumbnailConfigurationResolution::FULL_HD;
           }
           else if (hashCode == LOWEST_RESOLUTION_HASH)
           {
@@ -61,12 +61,12 @@ namespace Aws
           {
           case ThumbnailConfigurationResolution::NOT_SET:
             return {};
-          case ThumbnailConfigurationResolution::FULL_HD:
-            return "FULL_HD";
-          case ThumbnailConfigurationResolution::HD:
-            return "HD";
           case ThumbnailConfigurationResolution::SD:
             return "SD";
+          case ThumbnailConfigurationResolution::HD:
+            return "HD";
+          case ThumbnailConfigurationResolution::FULL_HD:
+            return "FULL_HD";
           case ThumbnailConfigurationResolution::LOWEST_RESOLUTION:
             return "LOWEST_RESOLUTION";
           default:

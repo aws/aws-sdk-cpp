@@ -8,8 +8,8 @@
 #include <aws/ivs/IVSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ivs/model/ChannelLatencyMode.h>
-#include <aws/ivs/model/TranscodePreset.h>
 #include <aws/ivs/model/ChannelType.h>
+#include <aws/ivs/model/TranscodePreset.h>
 #include <utility>
 
 namespace Aws
@@ -51,23 +51,16 @@ namespace Model
 
     ///@{
     /**
-     * <p>Whether the channel is private (enabled for playback authorization).</p>
+     * <p>Channel name.</p>
      */
-    inline bool GetAuthorized() const{ return m_authorized; }
-    inline bool AuthorizedHasBeenSet() const { return m_authorizedHasBeenSet; }
-    inline void SetAuthorized(bool value) { m_authorizedHasBeenSet = true; m_authorized = value; }
-    inline UpdateChannelRequest& WithAuthorized(bool value) { SetAuthorized(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Whether the channel allows insecure RTMP and SRT ingest. Default:
-     * <code>false</code>.</p>
-     */
-    inline bool GetInsecureIngest() const{ return m_insecureIngest; }
-    inline bool InsecureIngestHasBeenSet() const { return m_insecureIngestHasBeenSet; }
-    inline void SetInsecureIngest(bool value) { m_insecureIngestHasBeenSet = true; m_insecureIngest = value; }
-    inline UpdateChannelRequest& WithInsecureIngest(bool value) { SetInsecureIngest(value); return *this;}
+    inline const Aws::String& GetName() const{ return m_name; }
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
+    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
+    inline UpdateChannelRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
+    inline UpdateChannelRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
+    inline UpdateChannelRequest& WithName(const char* value) { SetName(value); return *this;}
     ///@}
 
     ///@{
@@ -86,32 +79,55 @@ namespace Model
 
     ///@{
     /**
-     * <p>Channel name.</p>
+     * <p>Channel type, which determines the allowable resolution and bitrate. <i>If
+     * you exceed the allowable input resolution or bitrate, the stream probably will
+     * disconnect immediately.</i> Default: <code>STANDARD</code>. For details, see <a
+     * href="https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/channel-types.html">Channel
+     * Types</a>.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline UpdateChannelRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline UpdateChannelRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline UpdateChannelRequest& WithName(const char* value) { SetName(value); return *this;}
+    inline const ChannelType& GetType() const{ return m_type; }
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+    inline void SetType(const ChannelType& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetType(ChannelType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
+    inline UpdateChannelRequest& WithType(const ChannelType& value) { SetType(value); return *this;}
+    inline UpdateChannelRequest& WithType(ChannelType&& value) { SetType(std::move(value)); return *this;}
     ///@}
 
     ///@{
     /**
-     * <p>Playback-restriction-policy ARN. A valid ARN value here both specifies the
-     * ARN and enables playback restriction. If this is set to an empty string,
-     * playback restriction policy is disabled.</p>
+     * <p>Whether the channel is private (enabled for playback authorization).</p>
      */
-    inline const Aws::String& GetPlaybackRestrictionPolicyArn() const{ return m_playbackRestrictionPolicyArn; }
-    inline bool PlaybackRestrictionPolicyArnHasBeenSet() const { return m_playbackRestrictionPolicyArnHasBeenSet; }
-    inline void SetPlaybackRestrictionPolicyArn(const Aws::String& value) { m_playbackRestrictionPolicyArnHasBeenSet = true; m_playbackRestrictionPolicyArn = value; }
-    inline void SetPlaybackRestrictionPolicyArn(Aws::String&& value) { m_playbackRestrictionPolicyArnHasBeenSet = true; m_playbackRestrictionPolicyArn = std::move(value); }
-    inline void SetPlaybackRestrictionPolicyArn(const char* value) { m_playbackRestrictionPolicyArnHasBeenSet = true; m_playbackRestrictionPolicyArn.assign(value); }
-    inline UpdateChannelRequest& WithPlaybackRestrictionPolicyArn(const Aws::String& value) { SetPlaybackRestrictionPolicyArn(value); return *this;}
-    inline UpdateChannelRequest& WithPlaybackRestrictionPolicyArn(Aws::String&& value) { SetPlaybackRestrictionPolicyArn(std::move(value)); return *this;}
-    inline UpdateChannelRequest& WithPlaybackRestrictionPolicyArn(const char* value) { SetPlaybackRestrictionPolicyArn(value); return *this;}
+    inline bool GetAuthorized() const{ return m_authorized; }
+    inline bool AuthorizedHasBeenSet() const { return m_authorizedHasBeenSet; }
+    inline void SetAuthorized(bool value) { m_authorizedHasBeenSet = true; m_authorized = value; }
+    inline UpdateChannelRequest& WithAuthorized(bool value) { SetAuthorized(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Recording-configuration ARN. A valid ARN value here both specifies the ARN
+     * and enables recording. If this is set to an empty string, recording is
+     * disabled.</p>
+     */
+    inline const Aws::String& GetRecordingConfigurationArn() const{ return m_recordingConfigurationArn; }
+    inline bool RecordingConfigurationArnHasBeenSet() const { return m_recordingConfigurationArnHasBeenSet; }
+    inline void SetRecordingConfigurationArn(const Aws::String& value) { m_recordingConfigurationArnHasBeenSet = true; m_recordingConfigurationArn = value; }
+    inline void SetRecordingConfigurationArn(Aws::String&& value) { m_recordingConfigurationArnHasBeenSet = true; m_recordingConfigurationArn = std::move(value); }
+    inline void SetRecordingConfigurationArn(const char* value) { m_recordingConfigurationArnHasBeenSet = true; m_recordingConfigurationArn.assign(value); }
+    inline UpdateChannelRequest& WithRecordingConfigurationArn(const Aws::String& value) { SetRecordingConfigurationArn(value); return *this;}
+    inline UpdateChannelRequest& WithRecordingConfigurationArn(Aws::String&& value) { SetRecordingConfigurationArn(std::move(value)); return *this;}
+    inline UpdateChannelRequest& WithRecordingConfigurationArn(const char* value) { SetRecordingConfigurationArn(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Whether the channel allows insecure RTMP and SRT ingest. Default:
+     * <code>false</code>.</p>
+     */
+    inline bool GetInsecureIngest() const{ return m_insecureIngest; }
+    inline bool InsecureIngestHasBeenSet() const { return m_insecureIngestHasBeenSet; }
+    inline void SetInsecureIngest(bool value) { m_insecureIngestHasBeenSet = true; m_insecureIngest = value; }
+    inline UpdateChannelRequest& WithInsecureIngest(bool value) { SetInsecureIngest(value); return *this;}
     ///@}
 
     ///@{
@@ -133,63 +149,47 @@ namespace Model
 
     ///@{
     /**
-     * <p>Recording-configuration ARN. A valid ARN value here both specifies the ARN
-     * and enables recording. If this is set to an empty string, recording is
-     * disabled.</p>
+     * <p>Playback-restriction-policy ARN. A valid ARN value here both specifies the
+     * ARN and enables playback restriction. If this is set to an empty string,
+     * playback restriction policy is disabled.</p>
      */
-    inline const Aws::String& GetRecordingConfigurationArn() const{ return m_recordingConfigurationArn; }
-    inline bool RecordingConfigurationArnHasBeenSet() const { return m_recordingConfigurationArnHasBeenSet; }
-    inline void SetRecordingConfigurationArn(const Aws::String& value) { m_recordingConfigurationArnHasBeenSet = true; m_recordingConfigurationArn = value; }
-    inline void SetRecordingConfigurationArn(Aws::String&& value) { m_recordingConfigurationArnHasBeenSet = true; m_recordingConfigurationArn = std::move(value); }
-    inline void SetRecordingConfigurationArn(const char* value) { m_recordingConfigurationArnHasBeenSet = true; m_recordingConfigurationArn.assign(value); }
-    inline UpdateChannelRequest& WithRecordingConfigurationArn(const Aws::String& value) { SetRecordingConfigurationArn(value); return *this;}
-    inline UpdateChannelRequest& WithRecordingConfigurationArn(Aws::String&& value) { SetRecordingConfigurationArn(std::move(value)); return *this;}
-    inline UpdateChannelRequest& WithRecordingConfigurationArn(const char* value) { SetRecordingConfigurationArn(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Channel type, which determines the allowable resolution and bitrate. <i>If
-     * you exceed the allowable input resolution or bitrate, the stream probably will
-     * disconnect immediately.</i> Default: <code>STANDARD</code>. For details, see <a
-     * href="https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/channel-types.html">Channel
-     * Types</a>.</p>
-     */
-    inline const ChannelType& GetType() const{ return m_type; }
-    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const ChannelType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(ChannelType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline UpdateChannelRequest& WithType(const ChannelType& value) { SetType(value); return *this;}
-    inline UpdateChannelRequest& WithType(ChannelType&& value) { SetType(std::move(value)); return *this;}
+    inline const Aws::String& GetPlaybackRestrictionPolicyArn() const{ return m_playbackRestrictionPolicyArn; }
+    inline bool PlaybackRestrictionPolicyArnHasBeenSet() const { return m_playbackRestrictionPolicyArnHasBeenSet; }
+    inline void SetPlaybackRestrictionPolicyArn(const Aws::String& value) { m_playbackRestrictionPolicyArnHasBeenSet = true; m_playbackRestrictionPolicyArn = value; }
+    inline void SetPlaybackRestrictionPolicyArn(Aws::String&& value) { m_playbackRestrictionPolicyArnHasBeenSet = true; m_playbackRestrictionPolicyArn = std::move(value); }
+    inline void SetPlaybackRestrictionPolicyArn(const char* value) { m_playbackRestrictionPolicyArnHasBeenSet = true; m_playbackRestrictionPolicyArn.assign(value); }
+    inline UpdateChannelRequest& WithPlaybackRestrictionPolicyArn(const Aws::String& value) { SetPlaybackRestrictionPolicyArn(value); return *this;}
+    inline UpdateChannelRequest& WithPlaybackRestrictionPolicyArn(Aws::String&& value) { SetPlaybackRestrictionPolicyArn(std::move(value)); return *this;}
+    inline UpdateChannelRequest& WithPlaybackRestrictionPolicyArn(const char* value) { SetPlaybackRestrictionPolicyArn(value); return *this;}
     ///@}
   private:
 
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
 
-    bool m_authorized;
-    bool m_authorizedHasBeenSet = false;
-
-    bool m_insecureIngest;
-    bool m_insecureIngestHasBeenSet = false;
+    Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     ChannelLatencyMode m_latencyMode;
     bool m_latencyModeHasBeenSet = false;
 
-    Aws::String m_name;
-    bool m_nameHasBeenSet = false;
+    ChannelType m_type;
+    bool m_typeHasBeenSet = false;
 
-    Aws::String m_playbackRestrictionPolicyArn;
-    bool m_playbackRestrictionPolicyArnHasBeenSet = false;
-
-    TranscodePreset m_preset;
-    bool m_presetHasBeenSet = false;
+    bool m_authorized;
+    bool m_authorizedHasBeenSet = false;
 
     Aws::String m_recordingConfigurationArn;
     bool m_recordingConfigurationArnHasBeenSet = false;
 
-    ChannelType m_type;
-    bool m_typeHasBeenSet = false;
+    bool m_insecureIngest;
+    bool m_insecureIngestHasBeenSet = false;
+
+    TranscodePreset m_preset;
+    bool m_presetHasBeenSet = false;
+
+    Aws::String m_playbackRestrictionPolicyArn;
+    bool m_playbackRestrictionPolicyArnHasBeenSet = false;
   };
 
 } // namespace Model

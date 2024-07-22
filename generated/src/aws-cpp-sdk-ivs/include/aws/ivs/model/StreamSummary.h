@@ -6,9 +6,9 @@
 #pragma once
 #include <aws/ivs/IVS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ivs/model/StreamState.h>
 #include <aws/ivs/model/StreamHealth.h>
 #include <aws/core/utils/DateTime.h>
-#include <aws/ivs/model/StreamState.h>
 #include <utility>
 
 namespace Aws
@@ -56,27 +56,17 @@ namespace Model
 
     ///@{
     /**
-     * <p>The stream’s health.</p>
+     * <p>Unique identifier for a live or previously live stream in the specified
+     * channel.</p>
      */
-    inline const StreamHealth& GetHealth() const{ return m_health; }
-    inline bool HealthHasBeenSet() const { return m_healthHasBeenSet; }
-    inline void SetHealth(const StreamHealth& value) { m_healthHasBeenSet = true; m_health = value; }
-    inline void SetHealth(StreamHealth&& value) { m_healthHasBeenSet = true; m_health = std::move(value); }
-    inline StreamSummary& WithHealth(const StreamHealth& value) { SetHealth(value); return *this;}
-    inline StreamSummary& WithHealth(StreamHealth&& value) { SetHealth(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Time of the stream’s start. This is an ISO 8601 timestamp; <i>note that this
-     * is returned as a string</i>. </p>
-     */
-    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
-    inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
-    inline StreamSummary& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
-    inline StreamSummary& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+    inline const Aws::String& GetStreamId() const{ return m_streamId; }
+    inline bool StreamIdHasBeenSet() const { return m_streamIdHasBeenSet; }
+    inline void SetStreamId(const Aws::String& value) { m_streamIdHasBeenSet = true; m_streamId = value; }
+    inline void SetStreamId(Aws::String&& value) { m_streamIdHasBeenSet = true; m_streamId = std::move(value); }
+    inline void SetStreamId(const char* value) { m_streamIdHasBeenSet = true; m_streamId.assign(value); }
+    inline StreamSummary& WithStreamId(const Aws::String& value) { SetStreamId(value); return *this;}
+    inline StreamSummary& WithStreamId(Aws::String&& value) { SetStreamId(std::move(value)); return *this;}
+    inline StreamSummary& WithStreamId(const char* value) { SetStreamId(value); return *this;}
     ///@}
 
     ///@{
@@ -95,17 +85,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>Unique identifier for a live or previously live stream in the specified
-     * channel.</p>
+     * <p>The stream’s health.</p>
      */
-    inline const Aws::String& GetStreamId() const{ return m_streamId; }
-    inline bool StreamIdHasBeenSet() const { return m_streamIdHasBeenSet; }
-    inline void SetStreamId(const Aws::String& value) { m_streamIdHasBeenSet = true; m_streamId = value; }
-    inline void SetStreamId(Aws::String&& value) { m_streamIdHasBeenSet = true; m_streamId = std::move(value); }
-    inline void SetStreamId(const char* value) { m_streamIdHasBeenSet = true; m_streamId.assign(value); }
-    inline StreamSummary& WithStreamId(const Aws::String& value) { SetStreamId(value); return *this;}
-    inline StreamSummary& WithStreamId(Aws::String&& value) { SetStreamId(std::move(value)); return *this;}
-    inline StreamSummary& WithStreamId(const char* value) { SetStreamId(value); return *this;}
+    inline const StreamHealth& GetHealth() const{ return m_health; }
+    inline bool HealthHasBeenSet() const { return m_healthHasBeenSet; }
+    inline void SetHealth(const StreamHealth& value) { m_healthHasBeenSet = true; m_health = value; }
+    inline void SetHealth(StreamHealth&& value) { m_healthHasBeenSet = true; m_health = std::move(value); }
+    inline StreamSummary& WithHealth(const StreamHealth& value) { SetHealth(value); return *this;}
+    inline StreamSummary& WithHealth(StreamHealth&& value) { SetHealth(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -121,25 +108,38 @@ namespace Model
     inline void SetViewerCount(long long value) { m_viewerCountHasBeenSet = true; m_viewerCount = value; }
     inline StreamSummary& WithViewerCount(long long value) { SetViewerCount(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Time of the stream’s start. This is an ISO 8601 timestamp; <i>note that this
+     * is returned as a string</i>. </p>
+     */
+    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
+    inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
+    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
+    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
+    inline StreamSummary& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
+    inline StreamSummary& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_channelArn;
     bool m_channelArnHasBeenSet = false;
 
-    StreamHealth m_health;
-    bool m_healthHasBeenSet = false;
-
-    Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet = false;
+    Aws::String m_streamId;
+    bool m_streamIdHasBeenSet = false;
 
     StreamState m_state;
     bool m_stateHasBeenSet = false;
 
-    Aws::String m_streamId;
-    bool m_streamIdHasBeenSet = false;
+    StreamHealth m_health;
+    bool m_healthHasBeenSet = false;
 
     long long m_viewerCount;
     bool m_viewerCountHasBeenSet = false;
+
+    Aws::Utils::DateTime m_startTime;
+    bool m_startTimeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/datazone/model/ProvisioningConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -101,6 +102,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>The provisioning configuration of a blueprint.</p>
+     */
+    inline const Aws::Vector<ProvisioningConfiguration>& GetProvisioningConfigurations() const{ return m_provisioningConfigurations; }
+    inline void SetProvisioningConfigurations(const Aws::Vector<ProvisioningConfiguration>& value) { m_provisioningConfigurations = value; }
+    inline void SetProvisioningConfigurations(Aws::Vector<ProvisioningConfiguration>&& value) { m_provisioningConfigurations = std::move(value); }
+    inline GetEnvironmentBlueprintConfigurationResult& WithProvisioningConfigurations(const Aws::Vector<ProvisioningConfiguration>& value) { SetProvisioningConfigurations(value); return *this;}
+    inline GetEnvironmentBlueprintConfigurationResult& WithProvisioningConfigurations(Aws::Vector<ProvisioningConfiguration>&& value) { SetProvisioningConfigurations(std::move(value)); return *this;}
+    inline GetEnvironmentBlueprintConfigurationResult& AddProvisioningConfigurations(const ProvisioningConfiguration& value) { m_provisioningConfigurations.push_back(value); return *this; }
+    inline GetEnvironmentBlueprintConfigurationResult& AddProvisioningConfigurations(ProvisioningConfiguration&& value) { m_provisioningConfigurations.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>The ARN of the provisioning role with which this blueprint is created.</p>
      */
     inline const Aws::String& GetProvisioningRoleArn() const{ return m_provisioningRoleArn; }
@@ -161,6 +175,8 @@ namespace Model
     Aws::String m_environmentBlueprintId;
 
     Aws::String m_manageAccessRoleArn;
+
+    Aws::Vector<ProvisioningConfiguration> m_provisioningConfigurations;
 
     Aws::String m_provisioningRoleArn;
 

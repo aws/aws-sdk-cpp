@@ -29,21 +29,21 @@ BatchGetStreamKeyResult::BatchGetStreamKeyResult(const Aws::AmazonWebServiceResu
 BatchGetStreamKeyResult& BatchGetStreamKeyResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("errors"))
-  {
-    Aws::Utils::Array<JsonView> errorsJsonList = jsonValue.GetArray("errors");
-    for(unsigned errorsIndex = 0; errorsIndex < errorsJsonList.GetLength(); ++errorsIndex)
-    {
-      m_errors.push_back(errorsJsonList[errorsIndex].AsObject());
-    }
-  }
-
   if(jsonValue.ValueExists("streamKeys"))
   {
     Aws::Utils::Array<JsonView> streamKeysJsonList = jsonValue.GetArray("streamKeys");
     for(unsigned streamKeysIndex = 0; streamKeysIndex < streamKeysJsonList.GetLength(); ++streamKeysIndex)
     {
       m_streamKeys.push_back(streamKeysJsonList[streamKeysIndex].AsObject());
+    }
+  }
+
+  if(jsonValue.ValueExists("errors"))
+  {
+    Aws::Utils::Array<JsonView> errorsJsonList = jsonValue.GetArray("errors");
+    for(unsigned errorsIndex = 0; errorsIndex < errorsJsonList.GetLength(); ++errorsIndex)
+    {
+      m_errors.push_back(errorsJsonList[errorsIndex].AsObject());
     }
   }
 

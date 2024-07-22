@@ -17,6 +17,7 @@ PutEnvironmentBlueprintConfigurationRequest::PutEnvironmentBlueprintConfiguratio
     m_enabledRegionsHasBeenSet(false),
     m_environmentBlueprintIdentifierHasBeenSet(false),
     m_manageAccessRoleArnHasBeenSet(false),
+    m_provisioningConfigurationsHasBeenSet(false),
     m_provisioningRoleArnHasBeenSet(false),
     m_regionalParametersHasBeenSet(false)
 {
@@ -40,6 +41,17 @@ Aws::String PutEnvironmentBlueprintConfigurationRequest::SerializePayload() cons
   if(m_manageAccessRoleArnHasBeenSet)
   {
    payload.WithString("manageAccessRoleArn", m_manageAccessRoleArn);
+
+  }
+
+  if(m_provisioningConfigurationsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> provisioningConfigurationsJsonList(m_provisioningConfigurations.size());
+   for(unsigned provisioningConfigurationsIndex = 0; provisioningConfigurationsIndex < provisioningConfigurationsJsonList.GetLength(); ++provisioningConfigurationsIndex)
+   {
+     provisioningConfigurationsJsonList[provisioningConfigurationsIndex].AsObject(m_provisioningConfigurations[provisioningConfigurationsIndex].Jsonize());
+   }
+   payload.WithArray("provisioningConfigurations", std::move(provisioningConfigurationsJsonList));
 
   }
 

@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/datazone/model/ProvisioningConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -93,6 +94,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The provisioning configuration of a blueprint.</p>
+     */
+    inline const Aws::Vector<ProvisioningConfiguration>& GetProvisioningConfigurations() const{ return m_provisioningConfigurations; }
+    inline bool ProvisioningConfigurationsHasBeenSet() const { return m_provisioningConfigurationsHasBeenSet; }
+    inline void SetProvisioningConfigurations(const Aws::Vector<ProvisioningConfiguration>& value) { m_provisioningConfigurationsHasBeenSet = true; m_provisioningConfigurations = value; }
+    inline void SetProvisioningConfigurations(Aws::Vector<ProvisioningConfiguration>&& value) { m_provisioningConfigurationsHasBeenSet = true; m_provisioningConfigurations = std::move(value); }
+    inline PutEnvironmentBlueprintConfigurationRequest& WithProvisioningConfigurations(const Aws::Vector<ProvisioningConfiguration>& value) { SetProvisioningConfigurations(value); return *this;}
+    inline PutEnvironmentBlueprintConfigurationRequest& WithProvisioningConfigurations(Aws::Vector<ProvisioningConfiguration>&& value) { SetProvisioningConfigurations(std::move(value)); return *this;}
+    inline PutEnvironmentBlueprintConfigurationRequest& AddProvisioningConfigurations(const ProvisioningConfiguration& value) { m_provisioningConfigurationsHasBeenSet = true; m_provisioningConfigurations.push_back(value); return *this; }
+    inline PutEnvironmentBlueprintConfigurationRequest& AddProvisioningConfigurations(ProvisioningConfiguration&& value) { m_provisioningConfigurationsHasBeenSet = true; m_provisioningConfigurations.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>The ARN of the provisioning role.</p>
      */
     inline const Aws::String& GetProvisioningRoleArn() const{ return m_provisioningRoleArn; }
@@ -135,6 +150,9 @@ namespace Model
 
     Aws::String m_manageAccessRoleArn;
     bool m_manageAccessRoleArnHasBeenSet = false;
+
+    Aws::Vector<ProvisioningConfiguration> m_provisioningConfigurations;
+    bool m_provisioningConfigurationsHasBeenSet = false;
 
     Aws::String m_provisioningRoleArn;
     bool m_provisioningRoleArnHasBeenSet = false;

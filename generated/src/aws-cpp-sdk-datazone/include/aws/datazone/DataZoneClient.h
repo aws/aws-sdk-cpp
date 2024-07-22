@@ -236,6 +236,31 @@ namespace DataZone
         }
 
         /**
+         * <p>Creates a data asset filter.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/CreateAssetFilter">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateAssetFilterOutcome CreateAssetFilter(const Model::CreateAssetFilterRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateAssetFilter that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateAssetFilterRequestT = Model::CreateAssetFilterRequest>
+        Model::CreateAssetFilterOutcomeCallable CreateAssetFilterCallable(const CreateAssetFilterRequestT& request) const
+        {
+            return SubmitCallable(&DataZoneClient::CreateAssetFilter, request);
+        }
+
+        /**
+         * An Async wrapper for CreateAssetFilter that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateAssetFilterRequestT = Model::CreateAssetFilterRequest>
+        void CreateAssetFilterAsync(const CreateAssetFilterRequestT& request, const CreateAssetFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DataZoneClient::CreateAssetFilter, request, handler, context);
+        }
+
+        /**
          * <p>Creates a revision of the asset.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/CreateAssetRevision">AWS
          * API Reference</a></p>
@@ -715,6 +740,31 @@ namespace DataZone
         void DeleteAssetAsync(const DeleteAssetRequestT& request, const DeleteAssetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&DataZoneClient::DeleteAsset, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes an asset filter.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/DeleteAssetFilter">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteAssetFilterOutcome DeleteAssetFilter(const Model::DeleteAssetFilterRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteAssetFilter that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteAssetFilterRequestT = Model::DeleteAssetFilterRequest>
+        Model::DeleteAssetFilterOutcomeCallable DeleteAssetFilterCallable(const DeleteAssetFilterRequestT& request) const
+        {
+            return SubmitCallable(&DataZoneClient::DeleteAssetFilter, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteAssetFilter that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteAssetFilterRequestT = Model::DeleteAssetFilterRequest>
+        void DeleteAssetFilterAsync(const DeleteAssetFilterRequestT& request, const DeleteAssetFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DataZoneClient::DeleteAssetFilter, request, handler, context);
         }
 
         /**
@@ -1202,6 +1252,31 @@ namespace DataZone
         void GetAssetAsync(const GetAssetRequestT& request, const GetAssetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&DataZoneClient::GetAsset, request, handler, context);
+        }
+
+        /**
+         * <p>Gets an asset filter.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetAssetFilter">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetAssetFilterOutcome GetAssetFilter(const Model::GetAssetFilterRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetAssetFilter that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetAssetFilterRequestT = Model::GetAssetFilterRequest>
+        Model::GetAssetFilterOutcomeCallable GetAssetFilterCallable(const GetAssetFilterRequestT& request) const
+        {
+            return SubmitCallable(&DataZoneClient::GetAssetFilter, request);
+        }
+
+        /**
+         * An Async wrapper for GetAssetFilter that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetAssetFilterRequestT = Model::GetAssetFilterRequest>
+        void GetAssetFilterAsync(const GetAssetFilterRequestT& request, const GetAssetFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DataZoneClient::GetAssetFilter, request, handler, context);
         }
 
         /**
@@ -1809,6 +1884,31 @@ namespace DataZone
         void GetUserProfileAsync(const GetUserProfileRequestT& request, const GetUserProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&DataZoneClient::GetUserProfile, request, handler, context);
+        }
+
+        /**
+         * <p>Lists asset filters.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/ListAssetFilters">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListAssetFiltersOutcome ListAssetFilters(const Model::ListAssetFiltersRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListAssetFilters that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListAssetFiltersRequestT = Model::ListAssetFiltersRequest>
+        Model::ListAssetFiltersOutcomeCallable ListAssetFiltersCallable(const ListAssetFiltersRequestT& request) const
+        {
+            return SubmitCallable(&DataZoneClient::ListAssetFilters, request);
+        }
+
+        /**
+         * An Async wrapper for ListAssetFilters that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListAssetFiltersRequestT = Model::ListAssetFiltersRequest>
+        void ListAssetFiltersAsync(const ListAssetFiltersRequestT& request, const ListAssetFiltersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DataZoneClient::ListAssetFilters, request, handler, context);
         }
 
         /**
@@ -2719,6 +2819,31 @@ namespace DataZone
         void UntagResourceAsync(const UntagResourceRequestT& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&DataZoneClient::UntagResource, request, handler, context);
+        }
+
+        /**
+         * <p>Updates an asset filter.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/UpdateAssetFilter">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateAssetFilterOutcome UpdateAssetFilter(const Model::UpdateAssetFilterRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateAssetFilter that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateAssetFilterRequestT = Model::UpdateAssetFilterRequest>
+        Model::UpdateAssetFilterOutcomeCallable UpdateAssetFilterCallable(const UpdateAssetFilterRequestT& request) const
+        {
+            return SubmitCallable(&DataZoneClient::UpdateAssetFilter, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateAssetFilter that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateAssetFilterRequestT = Model::UpdateAssetFilterRequest>
+        void UpdateAssetFilterAsync(const UpdateAssetFilterRequestT& request, const UpdateAssetFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DataZoneClient::UpdateAssetFilter, request, handler, context);
         }
 
         /**
