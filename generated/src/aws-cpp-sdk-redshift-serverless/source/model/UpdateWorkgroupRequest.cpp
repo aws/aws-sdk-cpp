@@ -18,6 +18,7 @@ UpdateWorkgroupRequest::UpdateWorkgroupRequest() :
     m_configParametersHasBeenSet(false),
     m_enhancedVpcRouting(false),
     m_enhancedVpcRoutingHasBeenSet(false),
+    m_ipAddressTypeHasBeenSet(false),
     m_maxCapacity(0),
     m_maxCapacityHasBeenSet(false),
     m_port(0),
@@ -54,6 +55,12 @@ Aws::String UpdateWorkgroupRequest::SerializePayload() const
   if(m_enhancedVpcRoutingHasBeenSet)
   {
    payload.WithBool("enhancedVpcRouting", m_enhancedVpcRouting);
+
+  }
+
+  if(m_ipAddressTypeHasBeenSet)
+  {
+   payload.WithString("ipAddressType", m_ipAddressType);
 
   }
 

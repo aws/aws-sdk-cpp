@@ -20,26 +20,26 @@ namespace Aws
       namespace RenditionConfigurationRenditionMapper
       {
 
-        static const int FULL_HD_HASH = HashingUtils::HashString("FULL_HD");
-        static const int HD_HASH = HashingUtils::HashString("HD");
         static const int SD_HASH = HashingUtils::HashString("SD");
+        static const int HD_HASH = HashingUtils::HashString("HD");
+        static const int FULL_HD_HASH = HashingUtils::HashString("FULL_HD");
         static const int LOWEST_RESOLUTION_HASH = HashingUtils::HashString("LOWEST_RESOLUTION");
 
 
         RenditionConfigurationRendition GetRenditionConfigurationRenditionForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == FULL_HD_HASH)
+          if (hashCode == SD_HASH)
           {
-            return RenditionConfigurationRendition::FULL_HD;
+            return RenditionConfigurationRendition::SD;
           }
           else if (hashCode == HD_HASH)
           {
             return RenditionConfigurationRendition::HD;
           }
-          else if (hashCode == SD_HASH)
+          else if (hashCode == FULL_HD_HASH)
           {
-            return RenditionConfigurationRendition::SD;
+            return RenditionConfigurationRendition::FULL_HD;
           }
           else if (hashCode == LOWEST_RESOLUTION_HASH)
           {
@@ -61,12 +61,12 @@ namespace Aws
           {
           case RenditionConfigurationRendition::NOT_SET:
             return {};
-          case RenditionConfigurationRendition::FULL_HD:
-            return "FULL_HD";
-          case RenditionConfigurationRendition::HD:
-            return "HD";
           case RenditionConfigurationRendition::SD:
             return "SD";
+          case RenditionConfigurationRendition::HD:
+            return "HD";
+          case RenditionConfigurationRendition::FULL_HD:
+            return "FULL_HD";
           case RenditionConfigurationRendition::LOWEST_RESOLUTION:
             return "LOWEST_RESOLUTION";
           default:

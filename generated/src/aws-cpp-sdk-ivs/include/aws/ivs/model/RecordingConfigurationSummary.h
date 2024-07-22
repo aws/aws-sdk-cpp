@@ -57,19 +57,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>A complex type that contains information about where recorded video will be
-     * stored.</p>
-     */
-    inline const DestinationConfiguration& GetDestinationConfiguration() const{ return m_destinationConfiguration; }
-    inline bool DestinationConfigurationHasBeenSet() const { return m_destinationConfigurationHasBeenSet; }
-    inline void SetDestinationConfiguration(const DestinationConfiguration& value) { m_destinationConfigurationHasBeenSet = true; m_destinationConfiguration = value; }
-    inline void SetDestinationConfiguration(DestinationConfiguration&& value) { m_destinationConfigurationHasBeenSet = true; m_destinationConfiguration = std::move(value); }
-    inline RecordingConfigurationSummary& WithDestinationConfiguration(const DestinationConfiguration& value) { SetDestinationConfiguration(value); return *this;}
-    inline RecordingConfigurationSummary& WithDestinationConfiguration(DestinationConfiguration&& value) { SetDestinationConfiguration(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Recording-configuration name. The value does not need to be unique.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
@@ -80,6 +67,19 @@ namespace Model
     inline RecordingConfigurationSummary& WithName(const Aws::String& value) { SetName(value); return *this;}
     inline RecordingConfigurationSummary& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
     inline RecordingConfigurationSummary& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>A complex type that contains information about where recorded video will be
+     * stored.</p>
+     */
+    inline const DestinationConfiguration& GetDestinationConfiguration() const{ return m_destinationConfiguration; }
+    inline bool DestinationConfigurationHasBeenSet() const { return m_destinationConfigurationHasBeenSet; }
+    inline void SetDestinationConfiguration(const DestinationConfiguration& value) { m_destinationConfigurationHasBeenSet = true; m_destinationConfiguration = value; }
+    inline void SetDestinationConfiguration(DestinationConfiguration&& value) { m_destinationConfigurationHasBeenSet = true; m_destinationConfiguration = std::move(value); }
+    inline RecordingConfigurationSummary& WithDestinationConfiguration(const DestinationConfiguration& value) { SetDestinationConfiguration(value); return *this;}
+    inline RecordingConfigurationSummary& WithDestinationConfiguration(DestinationConfiguration&& value) { SetDestinationConfiguration(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -124,11 +124,11 @@ namespace Model
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
 
-    DestinationConfiguration m_destinationConfiguration;
-    bool m_destinationConfigurationHasBeenSet = false;
-
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
+
+    DestinationConfiguration m_destinationConfiguration;
+    bool m_destinationConfigurationHasBeenSet = false;
 
     RecordingConfigurationState m_state;
     bool m_stateHasBeenSet = false;

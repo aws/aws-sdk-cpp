@@ -20,6 +20,7 @@ namespace Model
 
 NetworkInterface::NetworkInterface() : 
     m_availabilityZoneHasBeenSet(false),
+    m_ipv6AddressHasBeenSet(false),
     m_networkInterfaceIdHasBeenSet(false),
     m_privateIpAddressHasBeenSet(false),
     m_subnetIdHasBeenSet(false)
@@ -39,6 +40,13 @@ NetworkInterface& NetworkInterface::operator =(JsonView jsonValue)
     m_availabilityZone = jsonValue.GetString("availabilityZone");
 
     m_availabilityZoneHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ipv6Address"))
+  {
+    m_ipv6Address = jsonValue.GetString("ipv6Address");
+
+    m_ipv6AddressHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("networkInterfaceId"))
@@ -72,6 +80,12 @@ JsonValue NetworkInterface::Jsonize() const
   if(m_availabilityZoneHasBeenSet)
   {
    payload.WithString("availabilityZone", m_availabilityZone);
+
+  }
+
+  if(m_ipv6AddressHasBeenSet)
+  {
+   payload.WithString("ipv6Address", m_ipv6Address);
 
   }
 

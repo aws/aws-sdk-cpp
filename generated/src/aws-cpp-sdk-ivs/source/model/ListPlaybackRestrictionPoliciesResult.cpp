@@ -29,12 +29,6 @@ ListPlaybackRestrictionPoliciesResult::ListPlaybackRestrictionPoliciesResult(con
 ListPlaybackRestrictionPoliciesResult& ListPlaybackRestrictionPoliciesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("nextToken"))
-  {
-    m_nextToken = jsonValue.GetString("nextToken");
-
-  }
-
   if(jsonValue.ValueExists("playbackRestrictionPolicies"))
   {
     Aws::Utils::Array<JsonView> playbackRestrictionPoliciesJsonList = jsonValue.GetArray("playbackRestrictionPolicies");
@@ -42,6 +36,12 @@ ListPlaybackRestrictionPoliciesResult& ListPlaybackRestrictionPoliciesResult::op
     {
       m_playbackRestrictionPolicies.push_back(playbackRestrictionPoliciesJsonList[playbackRestrictionPoliciesIndex].AsObject());
     }
+  }
+
+  if(jsonValue.ValueExists("nextToken"))
+  {
+    m_nextToken = jsonValue.GetString("nextToken");
+
   }
 
 

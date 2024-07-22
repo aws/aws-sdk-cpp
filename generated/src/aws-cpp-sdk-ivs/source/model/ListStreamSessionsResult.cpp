@@ -29,12 +29,6 @@ ListStreamSessionsResult::ListStreamSessionsResult(const Aws::AmazonWebServiceRe
 ListStreamSessionsResult& ListStreamSessionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("nextToken"))
-  {
-    m_nextToken = jsonValue.GetString("nextToken");
-
-  }
-
   if(jsonValue.ValueExists("streamSessions"))
   {
     Aws::Utils::Array<JsonView> streamSessionsJsonList = jsonValue.GetArray("streamSessions");
@@ -42,6 +36,12 @@ ListStreamSessionsResult& ListStreamSessionsResult::operator =(const Aws::Amazon
     {
       m_streamSessions.push_back(streamSessionsJsonList[streamSessionsIndex].AsObject());
     }
+  }
+
+  if(jsonValue.ValueExists("nextToken"))
+  {
+    m_nextToken = jsonValue.GetString("nextToken");
+
   }
 
 

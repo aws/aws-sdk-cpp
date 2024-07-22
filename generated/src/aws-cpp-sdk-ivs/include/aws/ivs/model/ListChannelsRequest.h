@@ -48,20 +48,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Filters the channel list to match the specified policy.</p>
-     */
-    inline const Aws::String& GetFilterByPlaybackRestrictionPolicyArn() const{ return m_filterByPlaybackRestrictionPolicyArn; }
-    inline bool FilterByPlaybackRestrictionPolicyArnHasBeenSet() const { return m_filterByPlaybackRestrictionPolicyArnHasBeenSet; }
-    inline void SetFilterByPlaybackRestrictionPolicyArn(const Aws::String& value) { m_filterByPlaybackRestrictionPolicyArnHasBeenSet = true; m_filterByPlaybackRestrictionPolicyArn = value; }
-    inline void SetFilterByPlaybackRestrictionPolicyArn(Aws::String&& value) { m_filterByPlaybackRestrictionPolicyArnHasBeenSet = true; m_filterByPlaybackRestrictionPolicyArn = std::move(value); }
-    inline void SetFilterByPlaybackRestrictionPolicyArn(const char* value) { m_filterByPlaybackRestrictionPolicyArnHasBeenSet = true; m_filterByPlaybackRestrictionPolicyArn.assign(value); }
-    inline ListChannelsRequest& WithFilterByPlaybackRestrictionPolicyArn(const Aws::String& value) { SetFilterByPlaybackRestrictionPolicyArn(value); return *this;}
-    inline ListChannelsRequest& WithFilterByPlaybackRestrictionPolicyArn(Aws::String&& value) { SetFilterByPlaybackRestrictionPolicyArn(std::move(value)); return *this;}
-    inline ListChannelsRequest& WithFilterByPlaybackRestrictionPolicyArn(const char* value) { SetFilterByPlaybackRestrictionPolicyArn(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Filters the channel list to match the specified recording-configuration
      * ARN.</p>
      */
@@ -77,12 +63,16 @@ namespace Model
 
     ///@{
     /**
-     * <p>Maximum number of channels to return. Default: 100.</p>
+     * <p>Filters the channel list to match the specified policy.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
-    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-    inline ListChannelsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    inline const Aws::String& GetFilterByPlaybackRestrictionPolicyArn() const{ return m_filterByPlaybackRestrictionPolicyArn; }
+    inline bool FilterByPlaybackRestrictionPolicyArnHasBeenSet() const { return m_filterByPlaybackRestrictionPolicyArnHasBeenSet; }
+    inline void SetFilterByPlaybackRestrictionPolicyArn(const Aws::String& value) { m_filterByPlaybackRestrictionPolicyArnHasBeenSet = true; m_filterByPlaybackRestrictionPolicyArn = value; }
+    inline void SetFilterByPlaybackRestrictionPolicyArn(Aws::String&& value) { m_filterByPlaybackRestrictionPolicyArnHasBeenSet = true; m_filterByPlaybackRestrictionPolicyArn = std::move(value); }
+    inline void SetFilterByPlaybackRestrictionPolicyArn(const char* value) { m_filterByPlaybackRestrictionPolicyArnHasBeenSet = true; m_filterByPlaybackRestrictionPolicyArn.assign(value); }
+    inline ListChannelsRequest& WithFilterByPlaybackRestrictionPolicyArn(const Aws::String& value) { SetFilterByPlaybackRestrictionPolicyArn(value); return *this;}
+    inline ListChannelsRequest& WithFilterByPlaybackRestrictionPolicyArn(Aws::String&& value) { SetFilterByPlaybackRestrictionPolicyArn(std::move(value)); return *this;}
+    inline ListChannelsRequest& WithFilterByPlaybackRestrictionPolicyArn(const char* value) { SetFilterByPlaybackRestrictionPolicyArn(value); return *this;}
     ///@}
 
     ///@{
@@ -99,22 +89,32 @@ namespace Model
     inline ListChannelsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
     inline ListChannelsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Maximum number of channels to return. Default: 100.</p>
+     */
+    inline int GetMaxResults() const{ return m_maxResults; }
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+    inline ListChannelsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_filterByName;
     bool m_filterByNameHasBeenSet = false;
 
-    Aws::String m_filterByPlaybackRestrictionPolicyArn;
-    bool m_filterByPlaybackRestrictionPolicyArnHasBeenSet = false;
-
     Aws::String m_filterByRecordingConfigurationArn;
     bool m_filterByRecordingConfigurationArnHasBeenSet = false;
 
-    int m_maxResults;
-    bool m_maxResultsHasBeenSet = false;
+    Aws::String m_filterByPlaybackRestrictionPolicyArn;
+    bool m_filterByPlaybackRestrictionPolicyArnHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
+
+    int m_maxResults;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

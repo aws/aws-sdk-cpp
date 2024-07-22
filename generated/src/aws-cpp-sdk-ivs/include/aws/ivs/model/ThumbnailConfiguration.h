@@ -55,6 +55,27 @@ namespace Model
 
     ///@{
     /**
+     * <p>The targeted thumbnail-generation interval in seconds. This is configurable
+     * (and required) only if <code>recordingMode</code> is <code>INTERVAL</code>.
+     * Default: 60.</p> <p> <b>Important:</b> For the <code>BASIC</code> channel type,
+     * setting a value for <code>targetIntervalSeconds</code> does not guarantee that
+     * thumbnails are generated at the specified interval. For thumbnails to be
+     * generated at the <code>targetIntervalSeconds</code> interval, the
+     * <code>IDR/Keyframe</code> value for the input video must be less than the
+     * <code>targetIntervalSeconds</code> value. See <a
+     * href="https://docs.aws.amazon.com/ivs/latest/userguide/streaming-config.html">
+     * Amazon IVS Streaming Configuration</a> for information on setting
+     * <code>IDR/Keyframe</code> to the recommended value in video-encoder
+     * settings.</p>
+     */
+    inline long long GetTargetIntervalSeconds() const{ return m_targetIntervalSeconds; }
+    inline bool TargetIntervalSecondsHasBeenSet() const { return m_targetIntervalSecondsHasBeenSet; }
+    inline void SetTargetIntervalSeconds(long long value) { m_targetIntervalSecondsHasBeenSet = true; m_targetIntervalSeconds = value; }
+    inline ThumbnailConfiguration& WithTargetIntervalSeconds(long long value) { SetTargetIntervalSeconds(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Indicates the desired resolution of recorded thumbnails. Thumbnails are
      * recorded at the selected resolution if the corresponding rendition is available
      * during the stream; otherwise, they are recorded at source resolution. For more
@@ -90,40 +111,19 @@ namespace Model
     inline ThumbnailConfiguration& AddStorage(const ThumbnailConfigurationStorage& value) { m_storageHasBeenSet = true; m_storage.push_back(value); return *this; }
     inline ThumbnailConfiguration& AddStorage(ThumbnailConfigurationStorage&& value) { m_storageHasBeenSet = true; m_storage.push_back(std::move(value)); return *this; }
     ///@}
-
-    ///@{
-    /**
-     * <p>The targeted thumbnail-generation interval in seconds. This is configurable
-     * (and required) only if <code>recordingMode</code> is <code>INTERVAL</code>.
-     * Default: 60.</p> <p> <b>Important:</b> For the <code>BASIC</code> channel type,
-     * setting a value for <code>targetIntervalSeconds</code> does not guarantee that
-     * thumbnails are generated at the specified interval. For thumbnails to be
-     * generated at the <code>targetIntervalSeconds</code> interval, the
-     * <code>IDR/Keyframe</code> value for the input video must be less than the
-     * <code>targetIntervalSeconds</code> value. See <a
-     * href="https://docs.aws.amazon.com/ivs/latest/userguide/streaming-config.html">
-     * Amazon IVS Streaming Configuration</a> for information on setting
-     * <code>IDR/Keyframe</code> to the recommended value in video-encoder
-     * settings.</p>
-     */
-    inline long long GetTargetIntervalSeconds() const{ return m_targetIntervalSeconds; }
-    inline bool TargetIntervalSecondsHasBeenSet() const { return m_targetIntervalSecondsHasBeenSet; }
-    inline void SetTargetIntervalSeconds(long long value) { m_targetIntervalSecondsHasBeenSet = true; m_targetIntervalSeconds = value; }
-    inline ThumbnailConfiguration& WithTargetIntervalSeconds(long long value) { SetTargetIntervalSeconds(value); return *this;}
-    ///@}
   private:
 
     RecordingMode m_recordingMode;
     bool m_recordingModeHasBeenSet = false;
+
+    long long m_targetIntervalSeconds;
+    bool m_targetIntervalSecondsHasBeenSet = false;
 
     ThumbnailConfigurationResolution m_resolution;
     bool m_resolutionHasBeenSet = false;
 
     Aws::Vector<ThumbnailConfigurationStorage> m_storage;
     bool m_storageHasBeenSet = false;
-
-    long long m_targetIntervalSeconds;
-    bool m_targetIntervalSecondsHasBeenSet = false;
   };
 
 } // namespace Model

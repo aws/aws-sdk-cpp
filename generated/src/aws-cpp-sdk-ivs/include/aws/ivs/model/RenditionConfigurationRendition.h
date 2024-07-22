@@ -16,9 +16,9 @@ namespace Model
   enum class RenditionConfigurationRendition
   {
     NOT_SET,
-    FULL_HD,
-    HD,
     SD,
+    HD,
+    FULL_HD,
     LOWEST_RESOLUTION
   };
 

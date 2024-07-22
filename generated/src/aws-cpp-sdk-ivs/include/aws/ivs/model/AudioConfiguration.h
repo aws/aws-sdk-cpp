@@ -42,16 +42,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Number of audio channels.</p>
-     */
-    inline long long GetChannels() const{ return m_channels; }
-    inline bool ChannelsHasBeenSet() const { return m_channelsHasBeenSet; }
-    inline void SetChannels(long long value) { m_channelsHasBeenSet = true; m_channels = value; }
-    inline AudioConfiguration& WithChannels(long long value) { SetChannels(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Codec used for the audio encoding.</p>
      */
     inline const Aws::String& GetCodec() const{ return m_codec; }
@@ -66,6 +56,17 @@ namespace Model
 
     ///@{
     /**
+     * <p>The expected ingest bitrate (bits per second). This is configured in the
+     * encoder.</p>
+     */
+    inline long long GetTargetBitrate() const{ return m_targetBitrate; }
+    inline bool TargetBitrateHasBeenSet() const { return m_targetBitrateHasBeenSet; }
+    inline void SetTargetBitrate(long long value) { m_targetBitrateHasBeenSet = true; m_targetBitrate = value; }
+    inline AudioConfiguration& WithTargetBitrate(long long value) { SetTargetBitrate(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Number of audio samples recorded per second.</p>
      */
     inline long long GetSampleRate() const{ return m_sampleRate; }
@@ -76,27 +77,26 @@ namespace Model
 
     ///@{
     /**
-     * <p>The expected ingest bitrate (bits per second). This is configured in the
-     * encoder.</p>
+     * <p>Number of audio channels.</p>
      */
-    inline long long GetTargetBitrate() const{ return m_targetBitrate; }
-    inline bool TargetBitrateHasBeenSet() const { return m_targetBitrateHasBeenSet; }
-    inline void SetTargetBitrate(long long value) { m_targetBitrateHasBeenSet = true; m_targetBitrate = value; }
-    inline AudioConfiguration& WithTargetBitrate(long long value) { SetTargetBitrate(value); return *this;}
+    inline long long GetChannels() const{ return m_channels; }
+    inline bool ChannelsHasBeenSet() const { return m_channelsHasBeenSet; }
+    inline void SetChannels(long long value) { m_channelsHasBeenSet = true; m_channels = value; }
+    inline AudioConfiguration& WithChannels(long long value) { SetChannels(value); return *this;}
     ///@}
   private:
-
-    long long m_channels;
-    bool m_channelsHasBeenSet = false;
 
     Aws::String m_codec;
     bool m_codecHasBeenSet = false;
 
+    long long m_targetBitrate;
+    bool m_targetBitrateHasBeenSet = false;
+
     long long m_sampleRate;
     bool m_sampleRateHasBeenSet = false;
 
-    long long m_targetBitrate;
-    bool m_targetBitrateHasBeenSet = false;
+    long long m_channels;
+    bool m_channelsHasBeenSet = false;
   };
 
 } // namespace Model

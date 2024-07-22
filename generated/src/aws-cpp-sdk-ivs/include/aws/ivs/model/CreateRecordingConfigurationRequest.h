@@ -6,11 +6,11 @@
 #pragma once
 #include <aws/ivs/IVS_EXPORTS.h>
 #include <aws/ivs/IVSRequest.h>
-#include <aws/ivs/model/DestinationConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/ivs/model/RenditionConfiguration.h>
+#include <aws/ivs/model/DestinationConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/ivs/model/ThumbnailConfiguration.h>
+#include <aws/ivs/model/RenditionConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -38,19 +38,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>A complex type that contains a destination configuration for where recorded
-     * video will be stored.</p>
-     */
-    inline const DestinationConfiguration& GetDestinationConfiguration() const{ return m_destinationConfiguration; }
-    inline bool DestinationConfigurationHasBeenSet() const { return m_destinationConfigurationHasBeenSet; }
-    inline void SetDestinationConfiguration(const DestinationConfiguration& value) { m_destinationConfigurationHasBeenSet = true; m_destinationConfiguration = value; }
-    inline void SetDestinationConfiguration(DestinationConfiguration&& value) { m_destinationConfigurationHasBeenSet = true; m_destinationConfiguration = std::move(value); }
-    inline CreateRecordingConfigurationRequest& WithDestinationConfiguration(const DestinationConfiguration& value) { SetDestinationConfiguration(value); return *this;}
-    inline CreateRecordingConfigurationRequest& WithDestinationConfiguration(DestinationConfiguration&& value) { SetDestinationConfiguration(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Recording-configuration name. The value does not need to be unique.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
@@ -65,26 +52,15 @@ namespace Model
 
     ///@{
     /**
-     * <p>If a broadcast disconnects and then reconnects within the specified interval,
-     * the multiple streams will be considered a single broadcast and merged together.
-     * Default: 0.</p>
+     * <p>A complex type that contains a destination configuration for where recorded
+     * video will be stored.</p>
      */
-    inline int GetRecordingReconnectWindowSeconds() const{ return m_recordingReconnectWindowSeconds; }
-    inline bool RecordingReconnectWindowSecondsHasBeenSet() const { return m_recordingReconnectWindowSecondsHasBeenSet; }
-    inline void SetRecordingReconnectWindowSeconds(int value) { m_recordingReconnectWindowSecondsHasBeenSet = true; m_recordingReconnectWindowSeconds = value; }
-    inline CreateRecordingConfigurationRequest& WithRecordingReconnectWindowSeconds(int value) { SetRecordingReconnectWindowSeconds(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Object that describes which renditions should be recorded for a stream.</p>
-     */
-    inline const RenditionConfiguration& GetRenditionConfiguration() const{ return m_renditionConfiguration; }
-    inline bool RenditionConfigurationHasBeenSet() const { return m_renditionConfigurationHasBeenSet; }
-    inline void SetRenditionConfiguration(const RenditionConfiguration& value) { m_renditionConfigurationHasBeenSet = true; m_renditionConfiguration = value; }
-    inline void SetRenditionConfiguration(RenditionConfiguration&& value) { m_renditionConfigurationHasBeenSet = true; m_renditionConfiguration = std::move(value); }
-    inline CreateRecordingConfigurationRequest& WithRenditionConfiguration(const RenditionConfiguration& value) { SetRenditionConfiguration(value); return *this;}
-    inline CreateRecordingConfigurationRequest& WithRenditionConfiguration(RenditionConfiguration&& value) { SetRenditionConfiguration(std::move(value)); return *this;}
+    inline const DestinationConfiguration& GetDestinationConfiguration() const{ return m_destinationConfiguration; }
+    inline bool DestinationConfigurationHasBeenSet() const { return m_destinationConfigurationHasBeenSet; }
+    inline void SetDestinationConfiguration(const DestinationConfiguration& value) { m_destinationConfigurationHasBeenSet = true; m_destinationConfiguration = value; }
+    inline void SetDestinationConfiguration(DestinationConfiguration&& value) { m_destinationConfigurationHasBeenSet = true; m_destinationConfiguration = std::move(value); }
+    inline CreateRecordingConfigurationRequest& WithDestinationConfiguration(const DestinationConfiguration& value) { SetDestinationConfiguration(value); return *this;}
+    inline CreateRecordingConfigurationRequest& WithDestinationConfiguration(DestinationConfiguration&& value) { SetDestinationConfiguration(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -124,25 +100,49 @@ namespace Model
     inline CreateRecordingConfigurationRequest& WithThumbnailConfiguration(const ThumbnailConfiguration& value) { SetThumbnailConfiguration(value); return *this;}
     inline CreateRecordingConfigurationRequest& WithThumbnailConfiguration(ThumbnailConfiguration&& value) { SetThumbnailConfiguration(std::move(value)); return *this;}
     ///@}
-  private:
 
-    DestinationConfiguration m_destinationConfiguration;
-    bool m_destinationConfigurationHasBeenSet = false;
+    ///@{
+    /**
+     * <p>If a broadcast disconnects and then reconnects within the specified interval,
+     * the multiple streams will be considered a single broadcast and merged together.
+     * Default: 0.</p>
+     */
+    inline int GetRecordingReconnectWindowSeconds() const{ return m_recordingReconnectWindowSeconds; }
+    inline bool RecordingReconnectWindowSecondsHasBeenSet() const { return m_recordingReconnectWindowSecondsHasBeenSet; }
+    inline void SetRecordingReconnectWindowSeconds(int value) { m_recordingReconnectWindowSecondsHasBeenSet = true; m_recordingReconnectWindowSeconds = value; }
+    inline CreateRecordingConfigurationRequest& WithRecordingReconnectWindowSeconds(int value) { SetRecordingReconnectWindowSeconds(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Object that describes which renditions should be recorded for a stream.</p>
+     */
+    inline const RenditionConfiguration& GetRenditionConfiguration() const{ return m_renditionConfiguration; }
+    inline bool RenditionConfigurationHasBeenSet() const { return m_renditionConfigurationHasBeenSet; }
+    inline void SetRenditionConfiguration(const RenditionConfiguration& value) { m_renditionConfigurationHasBeenSet = true; m_renditionConfiguration = value; }
+    inline void SetRenditionConfiguration(RenditionConfiguration&& value) { m_renditionConfigurationHasBeenSet = true; m_renditionConfiguration = std::move(value); }
+    inline CreateRecordingConfigurationRequest& WithRenditionConfiguration(const RenditionConfiguration& value) { SetRenditionConfiguration(value); return *this;}
+    inline CreateRecordingConfigurationRequest& WithRenditionConfiguration(RenditionConfiguration&& value) { SetRenditionConfiguration(std::move(value)); return *this;}
+    ///@}
+  private:
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    int m_recordingReconnectWindowSeconds;
-    bool m_recordingReconnectWindowSecondsHasBeenSet = false;
-
-    RenditionConfiguration m_renditionConfiguration;
-    bool m_renditionConfigurationHasBeenSet = false;
+    DestinationConfiguration m_destinationConfiguration;
+    bool m_destinationConfigurationHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
 
     ThumbnailConfiguration m_thumbnailConfiguration;
     bool m_thumbnailConfigurationHasBeenSet = false;
+
+    int m_recordingReconnectWindowSeconds;
+    bool m_recordingReconnectWindowSecondsHasBeenSet = false;
+
+    RenditionConfiguration m_renditionConfiguration;
+    bool m_renditionConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

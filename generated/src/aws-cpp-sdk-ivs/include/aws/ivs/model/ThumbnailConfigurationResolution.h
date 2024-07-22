@@ -16,9 +16,9 @@ namespace Model
   enum class ThumbnailConfigurationResolution
   {
     NOT_SET,
-    FULL_HD,
-    HD,
     SD,
+    HD,
+    FULL_HD,
     LOWEST_RESOLUTION
   };
 

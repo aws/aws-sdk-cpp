@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/ivs/IVS_EXPORTS.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -42,19 +42,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Time when the event occurred. This is an ISO 8601 timestamp; <i>note that
-     * this is returned as a string</i>.</p>
-     */
-    inline const Aws::Utils::DateTime& GetEventTime() const{ return m_eventTime; }
-    inline bool EventTimeHasBeenSet() const { return m_eventTimeHasBeenSet; }
-    inline void SetEventTime(const Aws::Utils::DateTime& value) { m_eventTimeHasBeenSet = true; m_eventTime = value; }
-    inline void SetEventTime(Aws::Utils::DateTime&& value) { m_eventTimeHasBeenSet = true; m_eventTime = std::move(value); }
-    inline StreamEvent& WithEventTime(const Aws::Utils::DateTime& value) { SetEventTime(value); return *this;}
-    inline StreamEvent& WithEventTime(Aws::Utils::DateTime&& value) { SetEventTime(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Name that identifies the stream event within a <code>type</code>.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
@@ -80,16 +67,29 @@ namespace Model
     inline StreamEvent& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
     inline StreamEvent& WithType(const char* value) { SetType(value); return *this;}
     ///@}
-  private:
 
-    Aws::Utils::DateTime m_eventTime;
-    bool m_eventTimeHasBeenSet = false;
+    ///@{
+    /**
+     * <p>Time when the event occurred. This is an ISO 8601 timestamp; <i>note that
+     * this is returned as a string</i>.</p>
+     */
+    inline const Aws::Utils::DateTime& GetEventTime() const{ return m_eventTime; }
+    inline bool EventTimeHasBeenSet() const { return m_eventTimeHasBeenSet; }
+    inline void SetEventTime(const Aws::Utils::DateTime& value) { m_eventTimeHasBeenSet = true; m_eventTime = value; }
+    inline void SetEventTime(Aws::Utils::DateTime&& value) { m_eventTimeHasBeenSet = true; m_eventTime = std::move(value); }
+    inline StreamEvent& WithEventTime(const Aws::Utils::DateTime& value) { SetEventTime(value); return *this;}
+    inline StreamEvent& WithEventTime(Aws::Utils::DateTime&& value) { SetEventTime(std::move(value)); return *this;}
+    ///@}
+  private:
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
     Aws::String m_type;
     bool m_typeHasBeenSet = false;
+
+    Aws::Utils::DateTime m_eventTime;
+    bool m_eventTimeHasBeenSet = false;
   };
 
 } // namespace Model
