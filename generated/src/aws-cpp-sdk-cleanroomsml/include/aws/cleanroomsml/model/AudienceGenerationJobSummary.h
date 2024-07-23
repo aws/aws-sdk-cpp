@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/cleanroomsml/CleanRoomsML_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/cleanroomsml/model/AudienceGenerationJobStatus.h>
 #include <utility>
 
@@ -42,6 +42,30 @@ namespace Model
 
     ///@{
     /**
+     * <p>The time at which the audience generation job was created.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCreateTime() const{ return m_createTime; }
+    inline bool CreateTimeHasBeenSet() const { return m_createTimeHasBeenSet; }
+    inline void SetCreateTime(const Aws::Utils::DateTime& value) { m_createTimeHasBeenSet = true; m_createTime = value; }
+    inline void SetCreateTime(Aws::Utils::DateTime&& value) { m_createTimeHasBeenSet = true; m_createTime = std::move(value); }
+    inline AudienceGenerationJobSummary& WithCreateTime(const Aws::Utils::DateTime& value) { SetCreateTime(value); return *this;}
+    inline AudienceGenerationJobSummary& WithCreateTime(Aws::Utils::DateTime&& value) { SetCreateTime(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The most recent time at which the audience generation job was updated.</p>
+     */
+    inline const Aws::Utils::DateTime& GetUpdateTime() const{ return m_updateTime; }
+    inline bool UpdateTimeHasBeenSet() const { return m_updateTimeHasBeenSet; }
+    inline void SetUpdateTime(const Aws::Utils::DateTime& value) { m_updateTimeHasBeenSet = true; m_updateTime = value; }
+    inline void SetUpdateTime(Aws::Utils::DateTime&& value) { m_updateTimeHasBeenSet = true; m_updateTime = std::move(value); }
+    inline AudienceGenerationJobSummary& WithUpdateTime(const Aws::Utils::DateTime& value) { SetUpdateTime(value); return *this;}
+    inline AudienceGenerationJobSummary& WithUpdateTime(Aws::Utils::DateTime&& value) { SetUpdateTime(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The Amazon Resource Name (ARN) of the audience generation job.</p>
      */
     inline const Aws::String& GetAudienceGenerationJobArn() const{ return m_audienceGenerationJobArn; }
@@ -56,17 +80,42 @@ namespace Model
 
     ///@{
     /**
-     * <p>The identifier of the collaboration that contains this audience generation
-     * job.</p>
+     * <p>The name of the audience generation job.</p>
      */
-    inline const Aws::String& GetCollaborationId() const{ return m_collaborationId; }
-    inline bool CollaborationIdHasBeenSet() const { return m_collaborationIdHasBeenSet; }
-    inline void SetCollaborationId(const Aws::String& value) { m_collaborationIdHasBeenSet = true; m_collaborationId = value; }
-    inline void SetCollaborationId(Aws::String&& value) { m_collaborationIdHasBeenSet = true; m_collaborationId = std::move(value); }
-    inline void SetCollaborationId(const char* value) { m_collaborationIdHasBeenSet = true; m_collaborationId.assign(value); }
-    inline AudienceGenerationJobSummary& WithCollaborationId(const Aws::String& value) { SetCollaborationId(value); return *this;}
-    inline AudienceGenerationJobSummary& WithCollaborationId(Aws::String&& value) { SetCollaborationId(std::move(value)); return *this;}
-    inline AudienceGenerationJobSummary& WithCollaborationId(const char* value) { SetCollaborationId(value); return *this;}
+    inline const Aws::String& GetName() const{ return m_name; }
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
+    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
+    inline AudienceGenerationJobSummary& WithName(const Aws::String& value) { SetName(value); return *this;}
+    inline AudienceGenerationJobSummary& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
+    inline AudienceGenerationJobSummary& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The description of the audience generation job.</p>
+     */
+    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
+    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
+    inline AudienceGenerationJobSummary& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+    inline AudienceGenerationJobSummary& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
+    inline AudienceGenerationJobSummary& WithDescription(const char* value) { SetDescription(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The status of the audience generation job.</p>
+     */
+    inline const AudienceGenerationJobStatus& GetStatus() const{ return m_status; }
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+    inline void SetStatus(const AudienceGenerationJobStatus& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(AudienceGenerationJobStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
+    inline AudienceGenerationJobSummary& WithStatus(const AudienceGenerationJobStatus& value) { SetStatus(value); return *this;}
+    inline AudienceGenerationJobSummary& WithStatus(AudienceGenerationJobStatus&& value) { SetStatus(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,42 +135,17 @@ namespace Model
 
     ///@{
     /**
-     * <p>The time at which the audience generation job was created.</p>
+     * <p>The identifier of the collaboration that contains this audience generation
+     * job.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreateTime() const{ return m_createTime; }
-    inline bool CreateTimeHasBeenSet() const { return m_createTimeHasBeenSet; }
-    inline void SetCreateTime(const Aws::Utils::DateTime& value) { m_createTimeHasBeenSet = true; m_createTime = value; }
-    inline void SetCreateTime(Aws::Utils::DateTime&& value) { m_createTimeHasBeenSet = true; m_createTime = std::move(value); }
-    inline AudienceGenerationJobSummary& WithCreateTime(const Aws::Utils::DateTime& value) { SetCreateTime(value); return *this;}
-    inline AudienceGenerationJobSummary& WithCreateTime(Aws::Utils::DateTime&& value) { SetCreateTime(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The description of the audience generation job.</p>
-     */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline AudienceGenerationJobSummary& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline AudienceGenerationJobSummary& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline AudienceGenerationJobSummary& WithDescription(const char* value) { SetDescription(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The name of the audience generation job.</p>
-     */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline AudienceGenerationJobSummary& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline AudienceGenerationJobSummary& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline AudienceGenerationJobSummary& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetCollaborationId() const{ return m_collaborationId; }
+    inline bool CollaborationIdHasBeenSet() const { return m_collaborationIdHasBeenSet; }
+    inline void SetCollaborationId(const Aws::String& value) { m_collaborationIdHasBeenSet = true; m_collaborationId = value; }
+    inline void SetCollaborationId(Aws::String&& value) { m_collaborationIdHasBeenSet = true; m_collaborationId = std::move(value); }
+    inline void SetCollaborationId(const char* value) { m_collaborationIdHasBeenSet = true; m_collaborationId.assign(value); }
+    inline AudienceGenerationJobSummary& WithCollaborationId(const Aws::String& value) { SetCollaborationId(value); return *this;}
+    inline AudienceGenerationJobSummary& WithCollaborationId(Aws::String&& value) { SetCollaborationId(std::move(value)); return *this;}
+    inline AudienceGenerationJobSummary& WithCollaborationId(const char* value) { SetCollaborationId(value); return *this;}
     ///@}
 
     ///@{
@@ -137,58 +161,34 @@ namespace Model
     inline AudienceGenerationJobSummary& WithStartedBy(Aws::String&& value) { SetStartedBy(std::move(value)); return *this;}
     inline AudienceGenerationJobSummary& WithStartedBy(const char* value) { SetStartedBy(value); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The status of the audience generation job.</p>
-     */
-    inline const AudienceGenerationJobStatus& GetStatus() const{ return m_status; }
-    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const AudienceGenerationJobStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(AudienceGenerationJobStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline AudienceGenerationJobSummary& WithStatus(const AudienceGenerationJobStatus& value) { SetStatus(value); return *this;}
-    inline AudienceGenerationJobSummary& WithStatus(AudienceGenerationJobStatus&& value) { SetStatus(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The most recent time at which the audience generation job was updated.</p>
-     */
-    inline const Aws::Utils::DateTime& GetUpdateTime() const{ return m_updateTime; }
-    inline bool UpdateTimeHasBeenSet() const { return m_updateTimeHasBeenSet; }
-    inline void SetUpdateTime(const Aws::Utils::DateTime& value) { m_updateTimeHasBeenSet = true; m_updateTime = value; }
-    inline void SetUpdateTime(Aws::Utils::DateTime&& value) { m_updateTimeHasBeenSet = true; m_updateTime = std::move(value); }
-    inline AudienceGenerationJobSummary& WithUpdateTime(const Aws::Utils::DateTime& value) { SetUpdateTime(value); return *this;}
-    inline AudienceGenerationJobSummary& WithUpdateTime(Aws::Utils::DateTime&& value) { SetUpdateTime(std::move(value)); return *this;}
-    ///@}
   private:
-
-    Aws::String m_audienceGenerationJobArn;
-    bool m_audienceGenerationJobArnHasBeenSet = false;
-
-    Aws::String m_collaborationId;
-    bool m_collaborationIdHasBeenSet = false;
-
-    Aws::String m_configuredAudienceModelArn;
-    bool m_configuredAudienceModelArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_createTime;
     bool m_createTimeHasBeenSet = false;
 
-    Aws::String m_description;
-    bool m_descriptionHasBeenSet = false;
+    Aws::Utils::DateTime m_updateTime;
+    bool m_updateTimeHasBeenSet = false;
+
+    Aws::String m_audienceGenerationJobArn;
+    bool m_audienceGenerationJobArnHasBeenSet = false;
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    Aws::String m_startedBy;
-    bool m_startedByHasBeenSet = false;
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
     AudienceGenerationJobStatus m_status;
     bool m_statusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_updateTime;
-    bool m_updateTimeHasBeenSet = false;
+    Aws::String m_configuredAudienceModelArn;
+    bool m_configuredAudienceModelArnHasBeenSet = false;
+
+    Aws::String m_collaborationId;
+    bool m_collaborationIdHasBeenSet = false;
+
+    Aws::String m_startedBy;
+    bool m_startedByHasBeenSet = false;
   };
 
 } // namespace Model

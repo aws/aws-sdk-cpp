@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/cleanroomsml/CleanRoomsML_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/cleanroomsml/model/AudienceExportJobSummary.h>
 #include <utility>
 
@@ -36,19 +36,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The audience export jobs that match the request.</p>
-     */
-    inline const Aws::Vector<AudienceExportJobSummary>& GetAudienceExportJobs() const{ return m_audienceExportJobs; }
-    inline void SetAudienceExportJobs(const Aws::Vector<AudienceExportJobSummary>& value) { m_audienceExportJobs = value; }
-    inline void SetAudienceExportJobs(Aws::Vector<AudienceExportJobSummary>&& value) { m_audienceExportJobs = std::move(value); }
-    inline ListAudienceExportJobsResult& WithAudienceExportJobs(const Aws::Vector<AudienceExportJobSummary>& value) { SetAudienceExportJobs(value); return *this;}
-    inline ListAudienceExportJobsResult& WithAudienceExportJobs(Aws::Vector<AudienceExportJobSummary>&& value) { SetAudienceExportJobs(std::move(value)); return *this;}
-    inline ListAudienceExportJobsResult& AddAudienceExportJobs(const AudienceExportJobSummary& value) { m_audienceExportJobs.push_back(value); return *this; }
-    inline ListAudienceExportJobsResult& AddAudienceExportJobs(AudienceExportJobSummary&& value) { m_audienceExportJobs.push_back(std::move(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
      * <p>The token value retrieved from a previous call to access the next page of
      * results.</p>
      */
@@ -59,6 +46,19 @@ namespace Model
     inline ListAudienceExportJobsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
     inline ListAudienceExportJobsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
     inline ListAudienceExportJobsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The audience export jobs that match the request.</p>
+     */
+    inline const Aws::Vector<AudienceExportJobSummary>& GetAudienceExportJobs() const{ return m_audienceExportJobs; }
+    inline void SetAudienceExportJobs(const Aws::Vector<AudienceExportJobSummary>& value) { m_audienceExportJobs = value; }
+    inline void SetAudienceExportJobs(Aws::Vector<AudienceExportJobSummary>&& value) { m_audienceExportJobs = std::move(value); }
+    inline ListAudienceExportJobsResult& WithAudienceExportJobs(const Aws::Vector<AudienceExportJobSummary>& value) { SetAudienceExportJobs(value); return *this;}
+    inline ListAudienceExportJobsResult& WithAudienceExportJobs(Aws::Vector<AudienceExportJobSummary>&& value) { SetAudienceExportJobs(std::move(value)); return *this;}
+    inline ListAudienceExportJobsResult& AddAudienceExportJobs(const AudienceExportJobSummary& value) { m_audienceExportJobs.push_back(value); return *this; }
+    inline ListAudienceExportJobsResult& AddAudienceExportJobs(AudienceExportJobSummary&& value) { m_audienceExportJobs.push_back(std::move(value)); return *this; }
     ///@}
 
     ///@{
@@ -73,9 +73,9 @@ namespace Model
     ///@}
   private:
 
-    Aws::Vector<AudienceExportJobSummary> m_audienceExportJobs;
-
     Aws::String m_nextToken;
+
+    Aws::Vector<AudienceExportJobSummary> m_audienceExportJobs;
 
     Aws::String m_requestId;
   };

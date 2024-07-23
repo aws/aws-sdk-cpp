@@ -19,9 +19,9 @@ namespace Model
 {
 
 Dataset::Dataset() : 
-    m_inputConfigHasBeenSet(false),
     m_type(DatasetType::NOT_SET),
-    m_typeHasBeenSet(false)
+    m_typeHasBeenSet(false),
+    m_inputConfigHasBeenSet(false)
 {
 }
 
@@ -33,18 +33,18 @@ Dataset::Dataset(JsonView jsonValue)
 
 Dataset& Dataset::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("inputConfig"))
-  {
-    m_inputConfig = jsonValue.GetObject("inputConfig");
-
-    m_inputConfigHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = DatasetTypeMapper::GetDatasetTypeForName(jsonValue.GetString("type"));
 
     m_typeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("inputConfig"))
+  {
+    m_inputConfig = jsonValue.GetObject("inputConfig");
+
+    m_inputConfigHasBeenSet = true;
   }
 
   return *this;
@@ -54,15 +54,15 @@ JsonValue Dataset::Jsonize() const
 {
   JsonValue payload;
 
+  if(m_typeHasBeenSet)
+  {
+   payload.WithString("type", DatasetTypeMapper::GetNameForDatasetType(m_type));
+  }
+
   if(m_inputConfigHasBeenSet)
   {
    payload.WithObject("inputConfig", m_inputConfig.Jsonize());
 
-  }
-
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", DatasetTypeMapper::GetNameForDatasetType(m_type));
   }
 
   return payload;

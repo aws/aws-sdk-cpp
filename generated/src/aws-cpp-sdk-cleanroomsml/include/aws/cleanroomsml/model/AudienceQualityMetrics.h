@@ -41,6 +41,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The relevance scores of the generated audience.</p>
+     */
+    inline const Aws::Vector<RelevanceMetric>& GetRelevanceMetrics() const{ return m_relevanceMetrics; }
+    inline bool RelevanceMetricsHasBeenSet() const { return m_relevanceMetricsHasBeenSet; }
+    inline void SetRelevanceMetrics(const Aws::Vector<RelevanceMetric>& value) { m_relevanceMetricsHasBeenSet = true; m_relevanceMetrics = value; }
+    inline void SetRelevanceMetrics(Aws::Vector<RelevanceMetric>&& value) { m_relevanceMetricsHasBeenSet = true; m_relevanceMetrics = std::move(value); }
+    inline AudienceQualityMetrics& WithRelevanceMetrics(const Aws::Vector<RelevanceMetric>& value) { SetRelevanceMetrics(value); return *this;}
+    inline AudienceQualityMetrics& WithRelevanceMetrics(Aws::Vector<RelevanceMetric>&& value) { SetRelevanceMetrics(std::move(value)); return *this;}
+    inline AudienceQualityMetrics& AddRelevanceMetrics(const RelevanceMetric& value) { m_relevanceMetricsHasBeenSet = true; m_relevanceMetrics.push_back(value); return *this; }
+    inline AudienceQualityMetrics& AddRelevanceMetrics(RelevanceMetric&& value) { m_relevanceMetricsHasBeenSet = true; m_relevanceMetrics.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>The recall score of the generated audience. Recall is the percentage of the
      * most similar users (by default, the most similar 20%) from a sample of the
      * training data that are included in the seed audience by the audience generation
@@ -53,27 +67,13 @@ namespace Model
     inline void SetRecallMetric(double value) { m_recallMetricHasBeenSet = true; m_recallMetric = value; }
     inline AudienceQualityMetrics& WithRecallMetric(double value) { SetRecallMetric(value); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The relevance scores of the generated audience.</p>
-     */
-    inline const Aws::Vector<RelevanceMetric>& GetRelevanceMetrics() const{ return m_relevanceMetrics; }
-    inline bool RelevanceMetricsHasBeenSet() const { return m_relevanceMetricsHasBeenSet; }
-    inline void SetRelevanceMetrics(const Aws::Vector<RelevanceMetric>& value) { m_relevanceMetricsHasBeenSet = true; m_relevanceMetrics = value; }
-    inline void SetRelevanceMetrics(Aws::Vector<RelevanceMetric>&& value) { m_relevanceMetricsHasBeenSet = true; m_relevanceMetrics = std::move(value); }
-    inline AudienceQualityMetrics& WithRelevanceMetrics(const Aws::Vector<RelevanceMetric>& value) { SetRelevanceMetrics(value); return *this;}
-    inline AudienceQualityMetrics& WithRelevanceMetrics(Aws::Vector<RelevanceMetric>&& value) { SetRelevanceMetrics(std::move(value)); return *this;}
-    inline AudienceQualityMetrics& AddRelevanceMetrics(const RelevanceMetric& value) { m_relevanceMetricsHasBeenSet = true; m_relevanceMetrics.push_back(value); return *this; }
-    inline AudienceQualityMetrics& AddRelevanceMetrics(RelevanceMetric&& value) { m_relevanceMetricsHasBeenSet = true; m_relevanceMetrics.push_back(std::move(value)); return *this; }
-    ///@}
   private:
-
-    double m_recallMetric;
-    bool m_recallMetricHasBeenSet = false;
 
     Aws::Vector<RelevanceMetric> m_relevanceMetrics;
     bool m_relevanceMetricsHasBeenSet = false;
+
+    double m_recallMetric;
+    bool m_recallMetricHasBeenSet = false;
   };
 
 } // namespace Model

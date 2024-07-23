@@ -13,17 +13,17 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CreateConfiguredAudienceModelRequest::CreateConfiguredAudienceModelRequest() : 
+    m_nameHasBeenSet(false),
     m_audienceModelArnHasBeenSet(false),
-    m_audienceSizeConfigHasBeenSet(false),
-    m_childResourceTagOnCreatePolicy(TagOnCreatePolicy::NOT_SET),
-    m_childResourceTagOnCreatePolicyHasBeenSet(false),
+    m_outputConfigHasBeenSet(false),
     m_descriptionHasBeenSet(false),
+    m_sharedAudienceMetricsHasBeenSet(false),
     m_minMatchingSeedSize(0),
     m_minMatchingSeedSizeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_outputConfigHasBeenSet(false),
-    m_sharedAudienceMetricsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_audienceSizeConfigHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_childResourceTagOnCreatePolicy(TagOnCreatePolicy::NOT_SET),
+    m_childResourceTagOnCreatePolicyHasBeenSet(false)
 {
 }
 
@@ -31,44 +31,27 @@ Aws::String CreateConfiguredAudienceModelRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_audienceModelArnHasBeenSet)
-  {
-   payload.WithString("audienceModelArn", m_audienceModelArn);
-
-  }
-
-  if(m_audienceSizeConfigHasBeenSet)
-  {
-   payload.WithObject("audienceSizeConfig", m_audienceSizeConfig.Jsonize());
-
-  }
-
-  if(m_childResourceTagOnCreatePolicyHasBeenSet)
-  {
-   payload.WithString("childResourceTagOnCreatePolicy", TagOnCreatePolicyMapper::GetNameForTagOnCreatePolicy(m_childResourceTagOnCreatePolicy));
-  }
-
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
-  }
-
-  if(m_minMatchingSeedSizeHasBeenSet)
-  {
-   payload.WithInteger("minMatchingSeedSize", m_minMatchingSeedSize);
-
-  }
-
   if(m_nameHasBeenSet)
   {
    payload.WithString("name", m_name);
 
   }
 
+  if(m_audienceModelArnHasBeenSet)
+  {
+   payload.WithString("audienceModelArn", m_audienceModelArn);
+
+  }
+
   if(m_outputConfigHasBeenSet)
   {
    payload.WithObject("outputConfig", m_outputConfig.Jsonize());
+
+  }
+
+  if(m_descriptionHasBeenSet)
+  {
+   payload.WithString("description", m_description);
 
   }
 
@@ -83,6 +66,18 @@ Aws::String CreateConfiguredAudienceModelRequest::SerializePayload() const
 
   }
 
+  if(m_minMatchingSeedSizeHasBeenSet)
+  {
+   payload.WithInteger("minMatchingSeedSize", m_minMatchingSeedSize);
+
+  }
+
+  if(m_audienceSizeConfigHasBeenSet)
+  {
+   payload.WithObject("audienceSizeConfig", m_audienceSizeConfig.Jsonize());
+
+  }
+
   if(m_tagsHasBeenSet)
   {
    JsonValue tagsJsonMap;
@@ -92,6 +87,11 @@ Aws::String CreateConfiguredAudienceModelRequest::SerializePayload() const
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
 
+  }
+
+  if(m_childResourceTagOnCreatePolicyHasBeenSet)
+  {
+   payload.WithString("childResourceTagOnCreatePolicy", TagOnCreatePolicyMapper::GetNameForTagOnCreatePolicy(m_childResourceTagOnCreatePolicy));
   }
 
   return payload.View().WriteReadable();

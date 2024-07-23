@@ -184,7 +184,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies the epislon and noise parameters for the privacy budget
+     * <p>Specifies the epsilon and noise parameters for the privacy budget
      * template.</p>
      */
     inline const PrivacyBudgetTemplateParametersOutput& GetParameters() const{ return m_parameters; }

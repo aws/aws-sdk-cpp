@@ -7,6 +7,7 @@
 #include <aws/cleanroomsml/CleanRoomsML_EXPORTS.h>
 #include <aws/cleanroomsml/model/S3ConfigMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/cleanroomsml/model/ProtectedQuerySQLParameters.h>
 #include <utility>
 
 namespace Aws
@@ -56,8 +57,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ARN of the IAM role that can read the Amazon S3 bucket where the training
-     * data is stored.</p>
+     * <p>The ARN of the IAM role that can read the Amazon S3 bucket where the seed
+     * audience is stored.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
@@ -68,6 +69,18 @@ namespace Model
     inline AudienceGenerationJobDataSource& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
     inline AudienceGenerationJobDataSource& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The protected SQL query parameters.</p>
+     */
+    inline const ProtectedQuerySQLParameters& GetSqlParameters() const{ return m_sqlParameters; }
+    inline bool SqlParametersHasBeenSet() const { return m_sqlParametersHasBeenSet; }
+    inline void SetSqlParameters(const ProtectedQuerySQLParameters& value) { m_sqlParametersHasBeenSet = true; m_sqlParameters = value; }
+    inline void SetSqlParameters(ProtectedQuerySQLParameters&& value) { m_sqlParametersHasBeenSet = true; m_sqlParameters = std::move(value); }
+    inline AudienceGenerationJobDataSource& WithSqlParameters(const ProtectedQuerySQLParameters& value) { SetSqlParameters(value); return *this;}
+    inline AudienceGenerationJobDataSource& WithSqlParameters(ProtectedQuerySQLParameters&& value) { SetSqlParameters(std::move(value)); return *this;}
+    ///@}
   private:
 
     S3ConfigMap m_dataSource;
@@ -75,6 +88,9 @@ namespace Model
 
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet = false;
+
+    ProtectedQuerySQLParameters m_sqlParameters;
+    bool m_sqlParametersHasBeenSet = false;
   };
 
 } // namespace Model

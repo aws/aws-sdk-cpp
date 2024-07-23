@@ -20,7 +20,8 @@ namespace Model
     Categories,
     Issues,
     Event,
-    Attachments
+    Attachments,
+    PostContactSummary
   };
 
 namespace RealTimeContactAnalysisSegmentTypeMapper

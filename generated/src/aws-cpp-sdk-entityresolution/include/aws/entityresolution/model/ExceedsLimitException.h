@@ -26,7 +26,7 @@ namespace Model
   /**
    * <p>The request was rejected because it attempted to create resources beyond the
    * current Entity Resolution account limits. The error message describes the limit
-   * exceeded. <code>HTTP Status Code: 402</code> </p><p><h3>See Also:</h3>   <a
+   * exceeded. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/ExceedsLimitException">AWS
    * API Reference</a></p>
    */

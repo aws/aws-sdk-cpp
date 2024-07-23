@@ -29,6 +29,12 @@ ListAudienceModelsResult::ListAudienceModelsResult(const Aws::AmazonWebServiceRe
 ListAudienceModelsResult& ListAudienceModelsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("nextToken"))
+  {
+    m_nextToken = jsonValue.GetString("nextToken");
+
+  }
+
   if(jsonValue.ValueExists("audienceModels"))
   {
     Aws::Utils::Array<JsonView> audienceModelsJsonList = jsonValue.GetArray("audienceModels");
@@ -36,12 +42,6 @@ ListAudienceModelsResult& ListAudienceModelsResult::operator =(const Aws::Amazon
     {
       m_audienceModels.push_back(audienceModelsJsonList[audienceModelsIndex].AsObject());
     }
-  }
-
-  if(jsonValue.ValueExists("nextToken"))
-  {
-    m_nextToken = jsonValue.GetString("nextToken");
-
   }
 
 

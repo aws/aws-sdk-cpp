@@ -36,17 +36,16 @@ namespace Model
 
     ///@{
     /**
-     * <p>The identifier of the collaboration that contains the audience generation
-     * job.</p>
+     * <p>The name of the audience generation job.</p>
      */
-    inline const Aws::String& GetCollaborationId() const{ return m_collaborationId; }
-    inline bool CollaborationIdHasBeenSet() const { return m_collaborationIdHasBeenSet; }
-    inline void SetCollaborationId(const Aws::String& value) { m_collaborationIdHasBeenSet = true; m_collaborationId = value; }
-    inline void SetCollaborationId(Aws::String&& value) { m_collaborationIdHasBeenSet = true; m_collaborationId = std::move(value); }
-    inline void SetCollaborationId(const char* value) { m_collaborationIdHasBeenSet = true; m_collaborationId.assign(value); }
-    inline StartAudienceGenerationJobRequest& WithCollaborationId(const Aws::String& value) { SetCollaborationId(value); return *this;}
-    inline StartAudienceGenerationJobRequest& WithCollaborationId(Aws::String&& value) { SetCollaborationId(std::move(value)); return *this;}
-    inline StartAudienceGenerationJobRequest& WithCollaborationId(const char* value) { SetCollaborationId(value); return *this;}
+    inline const Aws::String& GetName() const{ return m_name; }
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
+    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
+    inline StartAudienceGenerationJobRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
+    inline StartAudienceGenerationJobRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
+    inline StartAudienceGenerationJobRequest& WithName(const char* value) { SetName(value); return *this;}
     ///@}
 
     ///@{
@@ -66,16 +65,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The description of the audience generation job.</p>
+     * <p>The seed audience that is used to generate the audience.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline StartAudienceGenerationJobRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline StartAudienceGenerationJobRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline StartAudienceGenerationJobRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline const AudienceGenerationJobDataSource& GetSeedAudience() const{ return m_seedAudience; }
+    inline bool SeedAudienceHasBeenSet() const { return m_seedAudienceHasBeenSet; }
+    inline void SetSeedAudience(const AudienceGenerationJobDataSource& value) { m_seedAudienceHasBeenSet = true; m_seedAudience = value; }
+    inline void SetSeedAudience(AudienceGenerationJobDataSource&& value) { m_seedAudienceHasBeenSet = true; m_seedAudience = std::move(value); }
+    inline StartAudienceGenerationJobRequest& WithSeedAudience(const AudienceGenerationJobDataSource& value) { SetSeedAudience(value); return *this;}
+    inline StartAudienceGenerationJobRequest& WithSeedAudience(AudienceGenerationJobDataSource&& value) { SetSeedAudience(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -90,28 +87,31 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the audience generation job.</p>
+     * <p>The identifier of the collaboration that contains the audience generation
+     * job.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline StartAudienceGenerationJobRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline StartAudienceGenerationJobRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline StartAudienceGenerationJobRequest& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetCollaborationId() const{ return m_collaborationId; }
+    inline bool CollaborationIdHasBeenSet() const { return m_collaborationIdHasBeenSet; }
+    inline void SetCollaborationId(const Aws::String& value) { m_collaborationIdHasBeenSet = true; m_collaborationId = value; }
+    inline void SetCollaborationId(Aws::String&& value) { m_collaborationIdHasBeenSet = true; m_collaborationId = std::move(value); }
+    inline void SetCollaborationId(const char* value) { m_collaborationIdHasBeenSet = true; m_collaborationId.assign(value); }
+    inline StartAudienceGenerationJobRequest& WithCollaborationId(const Aws::String& value) { SetCollaborationId(value); return *this;}
+    inline StartAudienceGenerationJobRequest& WithCollaborationId(Aws::String&& value) { SetCollaborationId(std::move(value)); return *this;}
+    inline StartAudienceGenerationJobRequest& WithCollaborationId(const char* value) { SetCollaborationId(value); return *this;}
     ///@}
 
     ///@{
     /**
-     * <p>The seed audience that is used to generate the audience.</p>
+     * <p>The description of the audience generation job.</p>
      */
-    inline const AudienceGenerationJobDataSource& GetSeedAudience() const{ return m_seedAudience; }
-    inline bool SeedAudienceHasBeenSet() const { return m_seedAudienceHasBeenSet; }
-    inline void SetSeedAudience(const AudienceGenerationJobDataSource& value) { m_seedAudienceHasBeenSet = true; m_seedAudience = value; }
-    inline void SetSeedAudience(AudienceGenerationJobDataSource&& value) { m_seedAudienceHasBeenSet = true; m_seedAudience = std::move(value); }
-    inline StartAudienceGenerationJobRequest& WithSeedAudience(const AudienceGenerationJobDataSource& value) { SetSeedAudience(value); return *this;}
-    inline StartAudienceGenerationJobRequest& WithSeedAudience(AudienceGenerationJobDataSource&& value) { SetSeedAudience(std::move(value)); return *this;}
+    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
+    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
+    inline StartAudienceGenerationJobRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+    inline StartAudienceGenerationJobRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
+    inline StartAudienceGenerationJobRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
     ///@}
 
     ///@{
@@ -151,23 +151,23 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_collaborationId;
-    bool m_collaborationIdHasBeenSet = false;
+    Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_configuredAudienceModelArn;
     bool m_configuredAudienceModelArnHasBeenSet = false;
 
-    Aws::String m_description;
-    bool m_descriptionHasBeenSet = false;
+    AudienceGenerationJobDataSource m_seedAudience;
+    bool m_seedAudienceHasBeenSet = false;
 
     bool m_includeSeedInOutput;
     bool m_includeSeedInOutputHasBeenSet = false;
 
-    Aws::String m_name;
-    bool m_nameHasBeenSet = false;
+    Aws::String m_collaborationId;
+    bool m_collaborationIdHasBeenSet = false;
 
-    AudienceGenerationJobDataSource m_seedAudience;
-    bool m_seedAudienceHasBeenSet = false;
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;

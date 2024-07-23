@@ -83,7 +83,11 @@ namespace Model
     ///@{
     /**
      * <p>Determines whether the permissions specified in the policy are to be allowed
-     * (<code>Allow</code>) or denied (<code>Deny</code>).</p>
+     * (<code>Allow</code>) or denied (<code>Deny</code>).</p>  <p> If you
+     * set the value of the <code>effect</code> parameter to <code>Deny</code> for the
+     * <code>AddPolicyStatement</code> operation, you must also set the value of the
+     * <code>effect</code> parameter in the <code>policy</code> to <code>Deny</code>
+     * for the <code>PutPolicy</code> operation.</p> 
      */
     inline const StatementEffect& GetEffect() const{ return m_effect; }
     inline bool EffectHasBeenSet() const { return m_effectHasBeenSet; }

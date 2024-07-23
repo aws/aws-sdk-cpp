@@ -40,16 +40,16 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Glue catalog that contains the training data.</p>
+     * <p>The Glue table that contains the training data.</p>
      */
-    inline const Aws::String& GetCatalogId() const{ return m_catalogId; }
-    inline bool CatalogIdHasBeenSet() const { return m_catalogIdHasBeenSet; }
-    inline void SetCatalogId(const Aws::String& value) { m_catalogIdHasBeenSet = true; m_catalogId = value; }
-    inline void SetCatalogId(Aws::String&& value) { m_catalogIdHasBeenSet = true; m_catalogId = std::move(value); }
-    inline void SetCatalogId(const char* value) { m_catalogIdHasBeenSet = true; m_catalogId.assign(value); }
-    inline GlueDataSource& WithCatalogId(const Aws::String& value) { SetCatalogId(value); return *this;}
-    inline GlueDataSource& WithCatalogId(Aws::String&& value) { SetCatalogId(std::move(value)); return *this;}
-    inline GlueDataSource& WithCatalogId(const char* value) { SetCatalogId(value); return *this;}
+    inline const Aws::String& GetTableName() const{ return m_tableName; }
+    inline bool TableNameHasBeenSet() const { return m_tableNameHasBeenSet; }
+    inline void SetTableName(const Aws::String& value) { m_tableNameHasBeenSet = true; m_tableName = value; }
+    inline void SetTableName(Aws::String&& value) { m_tableNameHasBeenSet = true; m_tableName = std::move(value); }
+    inline void SetTableName(const char* value) { m_tableNameHasBeenSet = true; m_tableName.assign(value); }
+    inline GlueDataSource& WithTableName(const Aws::String& value) { SetTableName(value); return *this;}
+    inline GlueDataSource& WithTableName(Aws::String&& value) { SetTableName(std::move(value)); return *this;}
+    inline GlueDataSource& WithTableName(const char* value) { SetTableName(value); return *this;}
     ///@}
 
     ///@{
@@ -68,27 +68,27 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Glue table that contains the training data.</p>
+     * <p>The Glue catalog that contains the training data.</p>
      */
-    inline const Aws::String& GetTableName() const{ return m_tableName; }
-    inline bool TableNameHasBeenSet() const { return m_tableNameHasBeenSet; }
-    inline void SetTableName(const Aws::String& value) { m_tableNameHasBeenSet = true; m_tableName = value; }
-    inline void SetTableName(Aws::String&& value) { m_tableNameHasBeenSet = true; m_tableName = std::move(value); }
-    inline void SetTableName(const char* value) { m_tableNameHasBeenSet = true; m_tableName.assign(value); }
-    inline GlueDataSource& WithTableName(const Aws::String& value) { SetTableName(value); return *this;}
-    inline GlueDataSource& WithTableName(Aws::String&& value) { SetTableName(std::move(value)); return *this;}
-    inline GlueDataSource& WithTableName(const char* value) { SetTableName(value); return *this;}
+    inline const Aws::String& GetCatalogId() const{ return m_catalogId; }
+    inline bool CatalogIdHasBeenSet() const { return m_catalogIdHasBeenSet; }
+    inline void SetCatalogId(const Aws::String& value) { m_catalogIdHasBeenSet = true; m_catalogId = value; }
+    inline void SetCatalogId(Aws::String&& value) { m_catalogIdHasBeenSet = true; m_catalogId = std::move(value); }
+    inline void SetCatalogId(const char* value) { m_catalogIdHasBeenSet = true; m_catalogId.assign(value); }
+    inline GlueDataSource& WithCatalogId(const Aws::String& value) { SetCatalogId(value); return *this;}
+    inline GlueDataSource& WithCatalogId(Aws::String&& value) { SetCatalogId(std::move(value)); return *this;}
+    inline GlueDataSource& WithCatalogId(const char* value) { SetCatalogId(value); return *this;}
     ///@}
   private:
 
-    Aws::String m_catalogId;
-    bool m_catalogIdHasBeenSet = false;
+    Aws::String m_tableName;
+    bool m_tableNameHasBeenSet = false;
 
     Aws::String m_databaseName;
     bool m_databaseNameHasBeenSet = false;
 
-    Aws::String m_tableName;
-    bool m_tableNameHasBeenSet = false;
+    Aws::String m_catalogId;
+    bool m_catalogIdHasBeenSet = false;
   };
 
 } // namespace Model

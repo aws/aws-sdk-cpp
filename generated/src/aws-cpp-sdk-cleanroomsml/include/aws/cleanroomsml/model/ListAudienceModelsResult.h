@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/cleanroomsml/CleanRoomsML_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/cleanroomsml/model/AudienceModelSummary.h>
 #include <utility>
 
@@ -36,19 +36,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The audience models that match the request.</p>
-     */
-    inline const Aws::Vector<AudienceModelSummary>& GetAudienceModels() const{ return m_audienceModels; }
-    inline void SetAudienceModels(const Aws::Vector<AudienceModelSummary>& value) { m_audienceModels = value; }
-    inline void SetAudienceModels(Aws::Vector<AudienceModelSummary>&& value) { m_audienceModels = std::move(value); }
-    inline ListAudienceModelsResult& WithAudienceModels(const Aws::Vector<AudienceModelSummary>& value) { SetAudienceModels(value); return *this;}
-    inline ListAudienceModelsResult& WithAudienceModels(Aws::Vector<AudienceModelSummary>&& value) { SetAudienceModels(std::move(value)); return *this;}
-    inline ListAudienceModelsResult& AddAudienceModels(const AudienceModelSummary& value) { m_audienceModels.push_back(value); return *this; }
-    inline ListAudienceModelsResult& AddAudienceModels(AudienceModelSummary&& value) { m_audienceModels.push_back(std::move(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
      * <p>The token value retrieved from a previous call to access the next page of
      * results.</p>
      */
@@ -59,6 +46,19 @@ namespace Model
     inline ListAudienceModelsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
     inline ListAudienceModelsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
     inline ListAudienceModelsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The audience models that match the request.</p>
+     */
+    inline const Aws::Vector<AudienceModelSummary>& GetAudienceModels() const{ return m_audienceModels; }
+    inline void SetAudienceModels(const Aws::Vector<AudienceModelSummary>& value) { m_audienceModels = value; }
+    inline void SetAudienceModels(Aws::Vector<AudienceModelSummary>&& value) { m_audienceModels = std::move(value); }
+    inline ListAudienceModelsResult& WithAudienceModels(const Aws::Vector<AudienceModelSummary>& value) { SetAudienceModels(value); return *this;}
+    inline ListAudienceModelsResult& WithAudienceModels(Aws::Vector<AudienceModelSummary>&& value) { SetAudienceModels(std::move(value)); return *this;}
+    inline ListAudienceModelsResult& AddAudienceModels(const AudienceModelSummary& value) { m_audienceModels.push_back(value); return *this; }
+    inline ListAudienceModelsResult& AddAudienceModels(AudienceModelSummary&& value) { m_audienceModels.push_back(std::move(value)); return *this; }
     ///@}
 
     ///@{
@@ -73,9 +73,9 @@ namespace Model
     ///@}
   private:
 
-    Aws::Vector<AudienceModelSummary> m_audienceModels;
-
     Aws::String m_nextToken;
+
+    Aws::Vector<AudienceModelSummary> m_audienceModels;
 
     Aws::String m_requestId;
   };

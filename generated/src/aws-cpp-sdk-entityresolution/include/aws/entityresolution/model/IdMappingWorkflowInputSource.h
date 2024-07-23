@@ -41,7 +41,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>An Glue table ARN for the input source table.</p>
+     * <p>An Glue table Amazon Resource Name (ARN) or a matching workflow ARN for the
+     * input source table.</p>
      */
     inline const Aws::String& GetInputSourceARN() const{ return m_inputSourceARN; }
     inline bool InputSourceARNHasBeenSet() const { return m_inputSourceARNHasBeenSet; }
@@ -73,7 +74,7 @@ namespace Model
      * <code>TARGET</code>. </p> <p>The <code>SOURCE</code> contains configurations for
      * <code>sourceId</code> data that will be processed in an ID mapping workflow.
      * </p> <p>The <code>TARGET</code> contains a configuration of
-     * <code>targetId</code> to which all <code>sourceIds</code> will resolve to.</p>
+     * <code>targetId</code> which all <code>sourceIds</code> will resolve to.</p>
      */
     inline const IdNamespaceType& GetType() const{ return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }

@@ -24,6 +24,7 @@ namespace Aws
         static const int ANALYSIS_TEMPLATES_NOT_CONFIGURED_HASH = HashingUtils::HashString("ANALYSIS_TEMPLATES_NOT_CONFIGURED");
         static const int ANALYSIS_PROVIDERS_NOT_CONFIGURED_HASH = HashingUtils::HashString("ANALYSIS_PROVIDERS_NOT_CONFIGURED");
         static const int DIFFERENTIAL_PRIVACY_POLICY_NOT_CONFIGURED_HASH = HashingUtils::HashString("DIFFERENTIAL_PRIVACY_POLICY_NOT_CONFIGURED");
+        static const int ID_MAPPING_TABLE_NOT_POPULATED_HASH = HashingUtils::HashString("ID_MAPPING_TABLE_NOT_POPULATED");
 
 
         SchemaStatusReasonCode GetSchemaStatusReasonCodeForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == DIFFERENTIAL_PRIVACY_POLICY_NOT_CONFIGURED_HASH)
           {
             return SchemaStatusReasonCode::DIFFERENTIAL_PRIVACY_POLICY_NOT_CONFIGURED;
+          }
+          else if (hashCode == ID_MAPPING_TABLE_NOT_POPULATED_HASH)
+          {
+            return SchemaStatusReasonCode::ID_MAPPING_TABLE_NOT_POPULATED;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -69,6 +74,8 @@ namespace Aws
             return "ANALYSIS_PROVIDERS_NOT_CONFIGURED";
           case SchemaStatusReasonCode::DIFFERENTIAL_PRIVACY_POLICY_NOT_CONFIGURED:
             return "DIFFERENTIAL_PRIVACY_POLICY_NOT_CONFIGURED";
+          case SchemaStatusReasonCode::ID_MAPPING_TABLE_NOT_POPULATED:
+            return "ID_MAPPING_TABLE_NOT_POPULATED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -16,7 +16,8 @@ namespace Model
   enum class IdMappingType
   {
     NOT_SET,
-    PROVIDER
+    PROVIDER,
+    RULE_BASED
   };
 
 namespace IdMappingTypeMapper

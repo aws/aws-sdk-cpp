@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int PROVIDER_HASH = HashingUtils::HashString("PROVIDER");
+        static const int RULE_BASED_HASH = HashingUtils::HashString("RULE_BASED");
 
 
         IdMappingType GetIdMappingTypeForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == PROVIDER_HASH)
           {
             return IdMappingType::PROVIDER;
+          }
+          else if (hashCode == RULE_BASED_HASH)
+          {
+            return IdMappingType::RULE_BASED;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -48,6 +53,8 @@ namespace Aws
             return {};
           case IdMappingType::PROVIDER:
             return "PROVIDER";
+          case IdMappingType::RULE_BASED:
+            return "RULE_BASED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

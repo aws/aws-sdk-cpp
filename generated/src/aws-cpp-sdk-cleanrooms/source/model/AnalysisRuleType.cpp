@@ -23,6 +23,7 @@ namespace Aws
         static const int AGGREGATION_HASH = HashingUtils::HashString("AGGREGATION");
         static const int LIST_HASH = HashingUtils::HashString("LIST");
         static const int CUSTOM_HASH = HashingUtils::HashString("CUSTOM");
+        static const int ID_MAPPING_TABLE_HASH = HashingUtils::HashString("ID_MAPPING_TABLE");
 
 
         AnalysisRuleType GetAnalysisRuleTypeForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           else if (hashCode == CUSTOM_HASH)
           {
             return AnalysisRuleType::CUSTOM;
+          }
+          else if (hashCode == ID_MAPPING_TABLE_HASH)
+          {
+            return AnalysisRuleType::ID_MAPPING_TABLE;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -62,6 +67,8 @@ namespace Aws
             return "LIST";
           case AnalysisRuleType::CUSTOM:
             return "CUSTOM";
+          case AnalysisRuleType::ID_MAPPING_TABLE:
+            return "ID_MAPPING_TABLE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

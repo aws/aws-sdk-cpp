@@ -7,6 +7,7 @@
 #include <aws/entityresolution/EntityResolution_EXPORTS.h>
 #include <aws/entityresolution/model/IdMappingType.h>
 #include <aws/entityresolution/model/NamespaceProviderProperties.h>
+#include <aws/entityresolution/model/NamespaceRuleBasedProperties.h>
 #include <utility>
 
 namespace Aws
@@ -25,8 +26,9 @@ namespace Model
 {
 
   /**
-   * <p>An object containing <code>IdMappingType</code> and
-   * <code>ProviderProperties</code>.</p><p><h3>See Also:</h3>   <a
+   * <p>An object containing <code>IdMappingType</code>,
+   * <code>ProviderProperties</code>, and
+   * <code>RuleBasedProperties</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/IdNamespaceIdMappingWorkflowProperties">AWS
    * API Reference</a></p>
    */
@@ -63,6 +65,19 @@ namespace Model
     inline IdNamespaceIdMappingWorkflowProperties& WithProviderProperties(const NamespaceProviderProperties& value) { SetProviderProperties(value); return *this;}
     inline IdNamespaceIdMappingWorkflowProperties& WithProviderProperties(NamespaceProviderProperties&& value) { SetProviderProperties(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p> An object which defines any additional configurations required by rule-based
+     * matching.</p>
+     */
+    inline const NamespaceRuleBasedProperties& GetRuleBasedProperties() const{ return m_ruleBasedProperties; }
+    inline bool RuleBasedPropertiesHasBeenSet() const { return m_ruleBasedPropertiesHasBeenSet; }
+    inline void SetRuleBasedProperties(const NamespaceRuleBasedProperties& value) { m_ruleBasedPropertiesHasBeenSet = true; m_ruleBasedProperties = value; }
+    inline void SetRuleBasedProperties(NamespaceRuleBasedProperties&& value) { m_ruleBasedPropertiesHasBeenSet = true; m_ruleBasedProperties = std::move(value); }
+    inline IdNamespaceIdMappingWorkflowProperties& WithRuleBasedProperties(const NamespaceRuleBasedProperties& value) { SetRuleBasedProperties(value); return *this;}
+    inline IdNamespaceIdMappingWorkflowProperties& WithRuleBasedProperties(NamespaceRuleBasedProperties&& value) { SetRuleBasedProperties(std::move(value)); return *this;}
+    ///@}
   private:
 
     IdMappingType m_idMappingType;
@@ -70,6 +85,9 @@ namespace Model
 
     NamespaceProviderProperties m_providerProperties;
     bool m_providerPropertiesHasBeenSet = false;
+
+    NamespaceRuleBasedProperties m_ruleBasedProperties;
+    bool m_ruleBasedPropertiesHasBeenSet = false;
   };
 
 } // namespace Model
