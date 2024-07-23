@@ -19,8 +19,8 @@ namespace Model
 {
 
 StatusDetails::StatusDetails() : 
-    m_messageHasBeenSet(false),
-    m_statusCodeHasBeenSet(false)
+    m_statusCodeHasBeenSet(false),
+    m_messageHasBeenSet(false)
 {
 }
 
@@ -32,18 +32,18 @@ StatusDetails::StatusDetails(JsonView jsonValue)
 
 StatusDetails& StatusDetails::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("message"))
-  {
-    m_message = jsonValue.GetString("message");
-
-    m_messageHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("statusCode"))
   {
     m_statusCode = jsonValue.GetString("statusCode");
 
     m_statusCodeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("message"))
+  {
+    m_message = jsonValue.GetString("message");
+
+    m_messageHasBeenSet = true;
   }
 
   return *this;
@@ -53,15 +53,15 @@ JsonValue StatusDetails::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_messageHasBeenSet)
-  {
-   payload.WithString("message", m_message);
-
-  }
-
   if(m_statusCodeHasBeenSet)
   {
    payload.WithString("statusCode", m_statusCode);
+
+  }
+
+  if(m_messageHasBeenSet)
+  {
+   payload.WithString("message", m_message);
 
   }
 

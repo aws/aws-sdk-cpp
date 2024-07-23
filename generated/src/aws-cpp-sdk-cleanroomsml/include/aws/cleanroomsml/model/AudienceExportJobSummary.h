@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/cleanroomsml/CleanRoomsML_EXPORTS.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/cleanroomsml/model/AudienceSize.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/cleanroomsml/model/AudienceExportJobStatus.h>
 #include <aws/cleanroomsml/model/StatusDetails.h>
 #include <utility>
@@ -44,6 +44,44 @@ namespace Model
 
     ///@{
     /**
+     * <p>The time at which the audience export job was created.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCreateTime() const{ return m_createTime; }
+    inline bool CreateTimeHasBeenSet() const { return m_createTimeHasBeenSet; }
+    inline void SetCreateTime(const Aws::Utils::DateTime& value) { m_createTimeHasBeenSet = true; m_createTime = value; }
+    inline void SetCreateTime(Aws::Utils::DateTime&& value) { m_createTimeHasBeenSet = true; m_createTime = std::move(value); }
+    inline AudienceExportJobSummary& WithCreateTime(const Aws::Utils::DateTime& value) { SetCreateTime(value); return *this;}
+    inline AudienceExportJobSummary& WithCreateTime(Aws::Utils::DateTime&& value) { SetCreateTime(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The most recent time at which the audience export job was updated.</p>
+     */
+    inline const Aws::Utils::DateTime& GetUpdateTime() const{ return m_updateTime; }
+    inline bool UpdateTimeHasBeenSet() const { return m_updateTimeHasBeenSet; }
+    inline void SetUpdateTime(const Aws::Utils::DateTime& value) { m_updateTimeHasBeenSet = true; m_updateTime = value; }
+    inline void SetUpdateTime(Aws::Utils::DateTime&& value) { m_updateTimeHasBeenSet = true; m_updateTime = std::move(value); }
+    inline AudienceExportJobSummary& WithUpdateTime(const Aws::Utils::DateTime& value) { SetUpdateTime(value); return *this;}
+    inline AudienceExportJobSummary& WithUpdateTime(Aws::Utils::DateTime&& value) { SetUpdateTime(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The name of the audience export job.</p>
+     */
+    inline const Aws::String& GetName() const{ return m_name; }
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
+    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
+    inline AudienceExportJobSummary& WithName(const Aws::String& value) { SetName(value); return *this;}
+    inline AudienceExportJobSummary& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
+    inline AudienceExportJobSummary& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The Amazon Resource Name (ARN) of the audience generation job that was
      * exported.</p>
      */
@@ -69,18 +107,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The time at which the audience export job was created.</p>
-     */
-    inline const Aws::Utils::DateTime& GetCreateTime() const{ return m_createTime; }
-    inline bool CreateTimeHasBeenSet() const { return m_createTimeHasBeenSet; }
-    inline void SetCreateTime(const Aws::Utils::DateTime& value) { m_createTimeHasBeenSet = true; m_createTime = value; }
-    inline void SetCreateTime(Aws::Utils::DateTime&& value) { m_createTimeHasBeenSet = true; m_createTime = std::move(value); }
-    inline AudienceExportJobSummary& WithCreateTime(const Aws::Utils::DateTime& value) { SetCreateTime(value); return *this;}
-    inline AudienceExportJobSummary& WithCreateTime(Aws::Utils::DateTime&& value) { SetCreateTime(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The description of the audience export job.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
@@ -91,34 +117,6 @@ namespace Model
     inline AudienceExportJobSummary& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
     inline AudienceExportJobSummary& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
     inline AudienceExportJobSummary& WithDescription(const char* value) { SetDescription(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The name of the audience export job.</p>
-     */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline AudienceExportJobSummary& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline AudienceExportJobSummary& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline AudienceExportJobSummary& WithName(const char* value) { SetName(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The Amazon S3 bucket where the audience export is stored.</p>
-     */
-    inline const Aws::String& GetOutputLocation() const{ return m_outputLocation; }
-    inline bool OutputLocationHasBeenSet() const { return m_outputLocationHasBeenSet; }
-    inline void SetOutputLocation(const Aws::String& value) { m_outputLocationHasBeenSet = true; m_outputLocation = value; }
-    inline void SetOutputLocation(Aws::String&& value) { m_outputLocationHasBeenSet = true; m_outputLocation = std::move(value); }
-    inline void SetOutputLocation(const char* value) { m_outputLocationHasBeenSet = true; m_outputLocation.assign(value); }
-    inline AudienceExportJobSummary& WithOutputLocation(const Aws::String& value) { SetOutputLocation(value); return *this;}
-    inline AudienceExportJobSummary& WithOutputLocation(Aws::String&& value) { SetOutputLocation(std::move(value)); return *this;}
-    inline AudienceExportJobSummary& WithOutputLocation(const char* value) { SetOutputLocation(value); return *this;}
     ///@}
 
     ///@{
@@ -145,16 +143,27 @@ namespace Model
 
     ///@{
     /**
-     * <p>The most recent time at which the audience export job was updated.</p>
+     * <p>The Amazon S3 bucket where the audience export is stored.</p>
      */
-    inline const Aws::Utils::DateTime& GetUpdateTime() const{ return m_updateTime; }
-    inline bool UpdateTimeHasBeenSet() const { return m_updateTimeHasBeenSet; }
-    inline void SetUpdateTime(const Aws::Utils::DateTime& value) { m_updateTimeHasBeenSet = true; m_updateTime = value; }
-    inline void SetUpdateTime(Aws::Utils::DateTime&& value) { m_updateTimeHasBeenSet = true; m_updateTime = std::move(value); }
-    inline AudienceExportJobSummary& WithUpdateTime(const Aws::Utils::DateTime& value) { SetUpdateTime(value); return *this;}
-    inline AudienceExportJobSummary& WithUpdateTime(Aws::Utils::DateTime&& value) { SetUpdateTime(std::move(value)); return *this;}
+    inline const Aws::String& GetOutputLocation() const{ return m_outputLocation; }
+    inline bool OutputLocationHasBeenSet() const { return m_outputLocationHasBeenSet; }
+    inline void SetOutputLocation(const Aws::String& value) { m_outputLocationHasBeenSet = true; m_outputLocation = value; }
+    inline void SetOutputLocation(Aws::String&& value) { m_outputLocationHasBeenSet = true; m_outputLocation = std::move(value); }
+    inline void SetOutputLocation(const char* value) { m_outputLocationHasBeenSet = true; m_outputLocation.assign(value); }
+    inline AudienceExportJobSummary& WithOutputLocation(const Aws::String& value) { SetOutputLocation(value); return *this;}
+    inline AudienceExportJobSummary& WithOutputLocation(Aws::String&& value) { SetOutputLocation(std::move(value)); return *this;}
+    inline AudienceExportJobSummary& WithOutputLocation(const char* value) { SetOutputLocation(value); return *this;}
     ///@}
   private:
+
+    Aws::Utils::DateTime m_createTime;
+    bool m_createTimeHasBeenSet = false;
+
+    Aws::Utils::DateTime m_updateTime;
+    bool m_updateTimeHasBeenSet = false;
+
+    Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_audienceGenerationJobArn;
     bool m_audienceGenerationJobArnHasBeenSet = false;
@@ -162,17 +171,8 @@ namespace Model
     AudienceSize m_audienceSize;
     bool m_audienceSizeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createTime;
-    bool m_createTimeHasBeenSet = false;
-
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
-
-    Aws::String m_name;
-    bool m_nameHasBeenSet = false;
-
-    Aws::String m_outputLocation;
-    bool m_outputLocationHasBeenSet = false;
 
     AudienceExportJobStatus m_status;
     bool m_statusHasBeenSet = false;
@@ -180,8 +180,8 @@ namespace Model
     StatusDetails m_statusDetails;
     bool m_statusDetailsHasBeenSet = false;
 
-    Aws::Utils::DateTime m_updateTime;
-    bool m_updateTimeHasBeenSet = false;
+    Aws::String m_outputLocation;
+    bool m_outputLocationHasBeenSet = false;
   };
 
 } // namespace Model

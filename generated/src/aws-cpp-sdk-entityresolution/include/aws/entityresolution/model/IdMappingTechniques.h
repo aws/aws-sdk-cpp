@@ -7,6 +7,7 @@
 #include <aws/entityresolution/EntityResolution_EXPORTS.h>
 #include <aws/entityresolution/model/IdMappingType.h>
 #include <aws/entityresolution/model/ProviderProperties.h>
+#include <aws/entityresolution/model/IdMappingRuleBasedProperties.h>
 #include <utility>
 
 namespace Aws
@@ -25,7 +26,7 @@ namespace Model
 {
 
   /**
-   * <p>An object which defines the ID mapping techniques and provider
+   * <p>An object which defines the ID mapping technique and any additional
    * configurations.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/IdMappingTechniques">AWS
    * API Reference</a></p>
@@ -63,6 +64,19 @@ namespace Model
     inline IdMappingTechniques& WithProviderProperties(const ProviderProperties& value) { SetProviderProperties(value); return *this;}
     inline IdMappingTechniques& WithProviderProperties(ProviderProperties&& value) { SetProviderProperties(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p> An object which defines any additional configurations required by rule-based
+     * matching.</p>
+     */
+    inline const IdMappingRuleBasedProperties& GetRuleBasedProperties() const{ return m_ruleBasedProperties; }
+    inline bool RuleBasedPropertiesHasBeenSet() const { return m_ruleBasedPropertiesHasBeenSet; }
+    inline void SetRuleBasedProperties(const IdMappingRuleBasedProperties& value) { m_ruleBasedPropertiesHasBeenSet = true; m_ruleBasedProperties = value; }
+    inline void SetRuleBasedProperties(IdMappingRuleBasedProperties&& value) { m_ruleBasedPropertiesHasBeenSet = true; m_ruleBasedProperties = std::move(value); }
+    inline IdMappingTechniques& WithRuleBasedProperties(const IdMappingRuleBasedProperties& value) { SetRuleBasedProperties(value); return *this;}
+    inline IdMappingTechniques& WithRuleBasedProperties(IdMappingRuleBasedProperties&& value) { SetRuleBasedProperties(std::move(value)); return *this;}
+    ///@}
   private:
 
     IdMappingType m_idMappingType;
@@ -70,6 +84,9 @@ namespace Model
 
     ProviderProperties m_providerProperties;
     bool m_providerPropertiesHasBeenSet = false;
+
+    IdMappingRuleBasedProperties m_ruleBasedProperties;
+    bool m_ruleBasedPropertiesHasBeenSet = false;
   };
 
 } // namespace Model

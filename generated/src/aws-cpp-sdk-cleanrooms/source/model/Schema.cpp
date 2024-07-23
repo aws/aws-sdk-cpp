@@ -33,7 +33,8 @@ Schema::Schema() :
     m_updateTimeHasBeenSet(false),
     m_type(SchemaType::NOT_SET),
     m_typeHasBeenSet(false),
-    m_schemaStatusDetailsHasBeenSet(false)
+    m_schemaStatusDetailsHasBeenSet(false),
+    m_schemaTypePropertiesHasBeenSet(false)
 {
 }
 
@@ -148,6 +149,13 @@ Schema& Schema::operator =(JsonView jsonValue)
     m_schemaStatusDetailsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("schemaTypeProperties"))
+  {
+    m_schemaTypeProperties = jsonValue.GetObject("schemaTypeProperties");
+
+    m_schemaTypePropertiesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -246,6 +254,12 @@ JsonValue Schema::Jsonize() const
      schemaStatusDetailsJsonList[schemaStatusDetailsIndex].AsObject(m_schemaStatusDetails[schemaStatusDetailsIndex].Jsonize());
    }
    payload.WithArray("schemaStatusDetails", std::move(schemaStatusDetailsJsonList));
+
+  }
+
+  if(m_schemaTypePropertiesHasBeenSet)
+  {
+   payload.WithObject("schemaTypeProperties", m_schemaTypeProperties.Jsonize());
 
   }
 

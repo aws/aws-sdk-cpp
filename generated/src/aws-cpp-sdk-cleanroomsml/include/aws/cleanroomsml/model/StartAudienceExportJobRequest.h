@@ -35,6 +35,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The name of the audience export job.</p>
+     */
+    inline const Aws::String& GetName() const{ return m_name; }
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
+    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
+    inline StartAudienceExportJobRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
+    inline StartAudienceExportJobRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
+    inline StartAudienceExportJobRequest& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The Amazon Resource Name (ARN) of the audience generation job that you want
      * to export.</p>
      */
@@ -71,21 +85,10 @@ namespace Model
     inline StartAudienceExportJobRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
     inline StartAudienceExportJobRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The name of the audience export job.</p>
-     */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline StartAudienceExportJobRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline StartAudienceExportJobRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline StartAudienceExportJobRequest& WithName(const char* value) { SetName(value); return *this;}
-    ///@}
   private:
+
+    Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_audienceGenerationJobArn;
     bool m_audienceGenerationJobArnHasBeenSet = false;
@@ -95,9 +98,6 @@ namespace Model
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
-
-    Aws::String m_name;
-    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

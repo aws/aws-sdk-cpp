@@ -20,7 +20,8 @@ namespace Model
 
 RealtimeContactAnalysisSegment::RealtimeContactAnalysisSegment() : 
     m_transcriptHasBeenSet(false),
-    m_categoriesHasBeenSet(false)
+    m_categoriesHasBeenSet(false),
+    m_postContactSummaryHasBeenSet(false)
 {
 }
 
@@ -46,6 +47,13 @@ RealtimeContactAnalysisSegment& RealtimeContactAnalysisSegment::operator =(JsonV
     m_categoriesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("PostContactSummary"))
+  {
+    m_postContactSummary = jsonValue.GetObject("PostContactSummary");
+
+    m_postContactSummaryHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -62,6 +70,12 @@ JsonValue RealtimeContactAnalysisSegment::Jsonize() const
   if(m_categoriesHasBeenSet)
   {
    payload.WithObject("Categories", m_categories.Jsonize());
+
+  }
+
+  if(m_postContactSummaryHasBeenSet)
+  {
+   payload.WithObject("PostContactSummary", m_postContactSummary.Jsonize());
 
   }
 

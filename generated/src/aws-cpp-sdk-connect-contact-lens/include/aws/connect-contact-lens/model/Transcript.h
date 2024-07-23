@@ -56,7 +56,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The identifier of the participant.</p>
+     * <p>The identifier of the participant. Valid values are CUSTOMER or AGENT.</p>
      */
     inline const Aws::String& GetParticipantId() const{ return m_participantId; }
     inline bool ParticipantIdHasBeenSet() const { return m_participantIdHasBeenSet; }
@@ -118,7 +118,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The sentiment of the detected for this piece of transcript.</p>
+     * <p>The sentiment detected for this piece of transcript.</p>
      */
     inline const SentimentValue& GetSentiment() const{ return m_sentiment; }
     inline bool SentimentHasBeenSet() const { return m_sentimentHasBeenSet; }

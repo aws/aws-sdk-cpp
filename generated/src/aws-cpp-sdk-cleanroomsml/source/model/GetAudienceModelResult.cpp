@@ -31,33 +31,45 @@ GetAudienceModelResult::GetAudienceModelResult(const Aws::AmazonWebServiceResult
 GetAudienceModelResult& GetAudienceModelResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("audienceModelArn"))
-  {
-    m_audienceModelArn = jsonValue.GetString("audienceModelArn");
-
-  }
-
   if(jsonValue.ValueExists("createTime"))
   {
     m_createTime = jsonValue.GetString("createTime");
 
   }
 
-  if(jsonValue.ValueExists("description"))
+  if(jsonValue.ValueExists("updateTime"))
   {
-    m_description = jsonValue.GetString("description");
+    m_updateTime = jsonValue.GetString("updateTime");
 
   }
 
-  if(jsonValue.ValueExists("kmsKeyArn"))
+  if(jsonValue.ValueExists("trainingDataStartTime"))
   {
-    m_kmsKeyArn = jsonValue.GetString("kmsKeyArn");
+    m_trainingDataStartTime = jsonValue.GetString("trainingDataStartTime");
+
+  }
+
+  if(jsonValue.ValueExists("trainingDataEndTime"))
+  {
+    m_trainingDataEndTime = jsonValue.GetString("trainingDataEndTime");
+
+  }
+
+  if(jsonValue.ValueExists("audienceModelArn"))
+  {
+    m_audienceModelArn = jsonValue.GetString("audienceModelArn");
 
   }
 
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
+
+  }
+
+  if(jsonValue.ValueExists("trainingDatasetArn"))
+  {
+    m_trainingDatasetArn = jsonValue.GetString("trainingDatasetArn");
 
   }
 
@@ -73,6 +85,12 @@ GetAudienceModelResult& GetAudienceModelResult::operator =(const Aws::AmazonWebS
 
   }
 
+  if(jsonValue.ValueExists("kmsKeyArn"))
+  {
+    m_kmsKeyArn = jsonValue.GetString("kmsKeyArn");
+
+  }
+
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -82,27 +100,9 @@ GetAudienceModelResult& GetAudienceModelResult::operator =(const Aws::AmazonWebS
     }
   }
 
-  if(jsonValue.ValueExists("trainingDataEndTime"))
+  if(jsonValue.ValueExists("description"))
   {
-    m_trainingDataEndTime = jsonValue.GetString("trainingDataEndTime");
-
-  }
-
-  if(jsonValue.ValueExists("trainingDataStartTime"))
-  {
-    m_trainingDataStartTime = jsonValue.GetString("trainingDataStartTime");
-
-  }
-
-  if(jsonValue.ValueExists("trainingDatasetArn"))
-  {
-    m_trainingDatasetArn = jsonValue.GetString("trainingDatasetArn");
-
-  }
-
-  if(jsonValue.ValueExists("updateTime"))
-  {
-    m_updateTime = jsonValue.GetString("updateTime");
+    m_description = jsonValue.GetString("description");
 
   }
 

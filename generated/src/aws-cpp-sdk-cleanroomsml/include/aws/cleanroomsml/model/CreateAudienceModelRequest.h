@@ -6,9 +6,9 @@
 #pragma once
 #include <aws/cleanroomsml/CleanRoomsML_EXPORTS.h>
 #include <aws/cleanroomsml/CleanRoomsMLRequest.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
-#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -36,16 +36,55 @@ namespace Model
 
     ///@{
     /**
-     * <p>The description of the audience model.</p>
+     * <p>The start date and time of the training window.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline CreateAudienceModelRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreateAudienceModelRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreateAudienceModelRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline const Aws::Utils::DateTime& GetTrainingDataStartTime() const{ return m_trainingDataStartTime; }
+    inline bool TrainingDataStartTimeHasBeenSet() const { return m_trainingDataStartTimeHasBeenSet; }
+    inline void SetTrainingDataStartTime(const Aws::Utils::DateTime& value) { m_trainingDataStartTimeHasBeenSet = true; m_trainingDataStartTime = value; }
+    inline void SetTrainingDataStartTime(Aws::Utils::DateTime&& value) { m_trainingDataStartTimeHasBeenSet = true; m_trainingDataStartTime = std::move(value); }
+    inline CreateAudienceModelRequest& WithTrainingDataStartTime(const Aws::Utils::DateTime& value) { SetTrainingDataStartTime(value); return *this;}
+    inline CreateAudienceModelRequest& WithTrainingDataStartTime(Aws::Utils::DateTime&& value) { SetTrainingDataStartTime(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The end date and time of the training window.</p>
+     */
+    inline const Aws::Utils::DateTime& GetTrainingDataEndTime() const{ return m_trainingDataEndTime; }
+    inline bool TrainingDataEndTimeHasBeenSet() const { return m_trainingDataEndTimeHasBeenSet; }
+    inline void SetTrainingDataEndTime(const Aws::Utils::DateTime& value) { m_trainingDataEndTimeHasBeenSet = true; m_trainingDataEndTime = value; }
+    inline void SetTrainingDataEndTime(Aws::Utils::DateTime&& value) { m_trainingDataEndTimeHasBeenSet = true; m_trainingDataEndTime = std::move(value); }
+    inline CreateAudienceModelRequest& WithTrainingDataEndTime(const Aws::Utils::DateTime& value) { SetTrainingDataEndTime(value); return *this;}
+    inline CreateAudienceModelRequest& WithTrainingDataEndTime(Aws::Utils::DateTime&& value) { SetTrainingDataEndTime(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The name of the audience model resource.</p>
+     */
+    inline const Aws::String& GetName() const{ return m_name; }
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
+    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
+    inline CreateAudienceModelRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
+    inline CreateAudienceModelRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
+    inline CreateAudienceModelRequest& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The Amazon Resource Name (ARN) of the training dataset for this audience
+     * model.</p>
+     */
+    inline const Aws::String& GetTrainingDatasetArn() const{ return m_trainingDatasetArn; }
+    inline bool TrainingDatasetArnHasBeenSet() const { return m_trainingDatasetArnHasBeenSet; }
+    inline void SetTrainingDatasetArn(const Aws::String& value) { m_trainingDatasetArnHasBeenSet = true; m_trainingDatasetArn = value; }
+    inline void SetTrainingDatasetArn(Aws::String&& value) { m_trainingDatasetArnHasBeenSet = true; m_trainingDatasetArn = std::move(value); }
+    inline void SetTrainingDatasetArn(const char* value) { m_trainingDatasetArnHasBeenSet = true; m_trainingDatasetArn.assign(value); }
+    inline CreateAudienceModelRequest& WithTrainingDatasetArn(const Aws::String& value) { SetTrainingDatasetArn(value); return *this;}
+    inline CreateAudienceModelRequest& WithTrainingDatasetArn(Aws::String&& value) { SetTrainingDatasetArn(std::move(value)); return *this;}
+    inline CreateAudienceModelRequest& WithTrainingDatasetArn(const char* value) { SetTrainingDatasetArn(value); return *this;}
     ///@}
 
     ///@{
@@ -62,20 +101,6 @@ namespace Model
     inline CreateAudienceModelRequest& WithKmsKeyArn(const Aws::String& value) { SetKmsKeyArn(value); return *this;}
     inline CreateAudienceModelRequest& WithKmsKeyArn(Aws::String&& value) { SetKmsKeyArn(std::move(value)); return *this;}
     inline CreateAudienceModelRequest& WithKmsKeyArn(const char* value) { SetKmsKeyArn(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The name of the audience model resource.</p>
-     */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CreateAudienceModelRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateAudienceModelRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateAudienceModelRequest& WithName(const char* value) { SetName(value); return *this;}
     ///@}
 
     ///@{
@@ -116,64 +141,39 @@ namespace Model
 
     ///@{
     /**
-     * <p>The end date and time of the training window.</p>
+     * <p>The description of the audience model.</p>
      */
-    inline const Aws::Utils::DateTime& GetTrainingDataEndTime() const{ return m_trainingDataEndTime; }
-    inline bool TrainingDataEndTimeHasBeenSet() const { return m_trainingDataEndTimeHasBeenSet; }
-    inline void SetTrainingDataEndTime(const Aws::Utils::DateTime& value) { m_trainingDataEndTimeHasBeenSet = true; m_trainingDataEndTime = value; }
-    inline void SetTrainingDataEndTime(Aws::Utils::DateTime&& value) { m_trainingDataEndTimeHasBeenSet = true; m_trainingDataEndTime = std::move(value); }
-    inline CreateAudienceModelRequest& WithTrainingDataEndTime(const Aws::Utils::DateTime& value) { SetTrainingDataEndTime(value); return *this;}
-    inline CreateAudienceModelRequest& WithTrainingDataEndTime(Aws::Utils::DateTime&& value) { SetTrainingDataEndTime(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The start date and time of the training window.</p>
-     */
-    inline const Aws::Utils::DateTime& GetTrainingDataStartTime() const{ return m_trainingDataStartTime; }
-    inline bool TrainingDataStartTimeHasBeenSet() const { return m_trainingDataStartTimeHasBeenSet; }
-    inline void SetTrainingDataStartTime(const Aws::Utils::DateTime& value) { m_trainingDataStartTimeHasBeenSet = true; m_trainingDataStartTime = value; }
-    inline void SetTrainingDataStartTime(Aws::Utils::DateTime&& value) { m_trainingDataStartTimeHasBeenSet = true; m_trainingDataStartTime = std::move(value); }
-    inline CreateAudienceModelRequest& WithTrainingDataStartTime(const Aws::Utils::DateTime& value) { SetTrainingDataStartTime(value); return *this;}
-    inline CreateAudienceModelRequest& WithTrainingDataStartTime(Aws::Utils::DateTime&& value) { SetTrainingDataStartTime(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The Amazon Resource Name (ARN) of the training dataset for this audience
-     * model.</p>
-     */
-    inline const Aws::String& GetTrainingDatasetArn() const{ return m_trainingDatasetArn; }
-    inline bool TrainingDatasetArnHasBeenSet() const { return m_trainingDatasetArnHasBeenSet; }
-    inline void SetTrainingDatasetArn(const Aws::String& value) { m_trainingDatasetArnHasBeenSet = true; m_trainingDatasetArn = value; }
-    inline void SetTrainingDatasetArn(Aws::String&& value) { m_trainingDatasetArnHasBeenSet = true; m_trainingDatasetArn = std::move(value); }
-    inline void SetTrainingDatasetArn(const char* value) { m_trainingDatasetArnHasBeenSet = true; m_trainingDatasetArn.assign(value); }
-    inline CreateAudienceModelRequest& WithTrainingDatasetArn(const Aws::String& value) { SetTrainingDatasetArn(value); return *this;}
-    inline CreateAudienceModelRequest& WithTrainingDatasetArn(Aws::String&& value) { SetTrainingDatasetArn(std::move(value)); return *this;}
-    inline CreateAudienceModelRequest& WithTrainingDatasetArn(const char* value) { SetTrainingDatasetArn(value); return *this;}
+    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
+    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
+    inline CreateAudienceModelRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+    inline CreateAudienceModelRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
+    inline CreateAudienceModelRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
     ///@}
   private:
-
-    Aws::String m_description;
-    bool m_descriptionHasBeenSet = false;
-
-    Aws::String m_kmsKeyArn;
-    bool m_kmsKeyArnHasBeenSet = false;
-
-    Aws::String m_name;
-    bool m_nameHasBeenSet = false;
-
-    Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet = false;
-
-    Aws::Utils::DateTime m_trainingDataEndTime;
-    bool m_trainingDataEndTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_trainingDataStartTime;
     bool m_trainingDataStartTimeHasBeenSet = false;
 
+    Aws::Utils::DateTime m_trainingDataEndTime;
+    bool m_trainingDataEndTimeHasBeenSet = false;
+
+    Aws::String m_name;
+    bool m_nameHasBeenSet = false;
+
     Aws::String m_trainingDatasetArn;
     bool m_trainingDatasetArnHasBeenSet = false;
+
+    Aws::String m_kmsKeyArn;
+    bool m_kmsKeyArnHasBeenSet = false;
+
+    Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet = false;
+
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
   };
 
 } // namespace Model

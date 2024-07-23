@@ -29,6 +29,12 @@ ListConfiguredAudienceModelsResult::ListConfiguredAudienceModelsResult(const Aws
 ListConfiguredAudienceModelsResult& ListConfiguredAudienceModelsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("nextToken"))
+  {
+    m_nextToken = jsonValue.GetString("nextToken");
+
+  }
+
   if(jsonValue.ValueExists("configuredAudienceModels"))
   {
     Aws::Utils::Array<JsonView> configuredAudienceModelsJsonList = jsonValue.GetArray("configuredAudienceModels");
@@ -36,12 +42,6 @@ ListConfiguredAudienceModelsResult& ListConfiguredAudienceModelsResult::operator
     {
       m_configuredAudienceModels.push_back(configuredAudienceModelsJsonList[configuredAudienceModelsIndex].AsObject());
     }
-  }
-
-  if(jsonValue.ValueExists("nextToken"))
-  {
-    m_nextToken = jsonValue.GetString("nextToken");
-
   }
 
 

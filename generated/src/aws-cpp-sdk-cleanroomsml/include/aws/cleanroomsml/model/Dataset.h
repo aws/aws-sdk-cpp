@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/cleanroomsml/CleanRoomsML_EXPORTS.h>
-#include <aws/cleanroomsml/model/DatasetInputConfig.h>
 #include <aws/cleanroomsml/model/DatasetType.h>
+#include <aws/cleanroomsml/model/DatasetInputConfig.h>
 #include <utility>
 
 namespace Aws
@@ -41,6 +41,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>What type of information is found in the dataset.</p>
+     */
+    inline const DatasetType& GetType() const{ return m_type; }
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+    inline void SetType(const DatasetType& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetType(DatasetType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
+    inline Dataset& WithType(const DatasetType& value) { SetType(value); return *this;}
+    inline Dataset& WithType(DatasetType&& value) { SetType(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>A DatasetInputConfig object that defines the data source and schema
      * mapping.</p>
      */
@@ -51,25 +63,13 @@ namespace Model
     inline Dataset& WithInputConfig(const DatasetInputConfig& value) { SetInputConfig(value); return *this;}
     inline Dataset& WithInputConfig(DatasetInputConfig&& value) { SetInputConfig(std::move(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>What type of information is found in the dataset.</p>
-     */
-    inline const DatasetType& GetType() const{ return m_type; }
-    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const DatasetType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(DatasetType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline Dataset& WithType(const DatasetType& value) { SetType(value); return *this;}
-    inline Dataset& WithType(DatasetType&& value) { SetType(std::move(value)); return *this;}
-    ///@}
   private:
-
-    DatasetInputConfig m_inputConfig;
-    bool m_inputConfigHasBeenSet = false;
 
     DatasetType m_type;
     bool m_typeHasBeenSet = false;
+
+    DatasetInputConfig m_inputConfig;
+    bool m_inputConfigHasBeenSet = false;
   };
 
 } // namespace Model

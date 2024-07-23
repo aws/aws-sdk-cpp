@@ -7,6 +7,7 @@
 #include <aws/connect-contact-lens/ConnectContactLens_EXPORTS.h>
 #include <aws/connect-contact-lens/model/Transcript.h>
 #include <aws/connect-contact-lens/model/Categories.h>
+#include <aws/connect-contact-lens/model/PostContactSummary.h>
 #include <utility>
 
 namespace Aws
@@ -62,6 +63,18 @@ namespace Model
     inline RealtimeContactAnalysisSegment& WithCategories(const Categories& value) { SetCategories(value); return *this;}
     inline RealtimeContactAnalysisSegment& WithCategories(Categories&& value) { SetCategories(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Information about the post-contact summary.</p>
+     */
+    inline const PostContactSummary& GetPostContactSummary() const{ return m_postContactSummary; }
+    inline bool PostContactSummaryHasBeenSet() const { return m_postContactSummaryHasBeenSet; }
+    inline void SetPostContactSummary(const PostContactSummary& value) { m_postContactSummaryHasBeenSet = true; m_postContactSummary = value; }
+    inline void SetPostContactSummary(PostContactSummary&& value) { m_postContactSummaryHasBeenSet = true; m_postContactSummary = std::move(value); }
+    inline RealtimeContactAnalysisSegment& WithPostContactSummary(const PostContactSummary& value) { SetPostContactSummary(value); return *this;}
+    inline RealtimeContactAnalysisSegment& WithPostContactSummary(PostContactSummary&& value) { SetPostContactSummary(std::move(value)); return *this;}
+    ///@}
   private:
 
     Transcript m_transcript;
@@ -69,6 +82,9 @@ namespace Model
 
     Categories m_categories;
     bool m_categoriesHasBeenSet = false;
+
+    PostContactSummary m_postContactSummary;
+    bool m_postContactSummaryHasBeenSet = false;
   };
 
 } // namespace Model

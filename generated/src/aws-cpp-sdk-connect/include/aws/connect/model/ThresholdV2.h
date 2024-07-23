@@ -40,7 +40,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The type of comparison. Only "less than" (LT) comparisons are supported.</p>
+     * <p>The type of comparison. Only "less than" (LT) and "greater than" (GT)
+     * comparisons are supported.</p>
      */
     inline const Aws::String& GetComparison() const{ return m_comparison; }
     inline bool ComparisonHasBeenSet() const { return m_comparisonHasBeenSet; }

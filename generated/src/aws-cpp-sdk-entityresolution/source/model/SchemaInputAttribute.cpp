@@ -21,6 +21,8 @@ namespace Model
 SchemaInputAttribute::SchemaInputAttribute() : 
     m_fieldNameHasBeenSet(false),
     m_groupNameHasBeenSet(false),
+    m_hashed(false),
+    m_hashedHasBeenSet(false),
     m_matchKeyHasBeenSet(false),
     m_subTypeHasBeenSet(false),
     m_type(SchemaAttributeType::NOT_SET),
@@ -48,6 +50,13 @@ SchemaInputAttribute& SchemaInputAttribute::operator =(JsonView jsonValue)
     m_groupName = jsonValue.GetString("groupName");
 
     m_groupNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("hashed"))
+  {
+    m_hashed = jsonValue.GetBool("hashed");
+
+    m_hashedHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("matchKey"))
@@ -87,6 +96,12 @@ JsonValue SchemaInputAttribute::Jsonize() const
   if(m_groupNameHasBeenSet)
   {
    payload.WithString("groupName", m_groupName);
+
+  }
+
+  if(m_hashedHasBeenSet)
+  {
+   payload.WithBool("hashed", m_hashed);
 
   }
 

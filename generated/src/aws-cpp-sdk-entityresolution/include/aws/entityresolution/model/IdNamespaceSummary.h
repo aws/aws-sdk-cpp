@@ -7,7 +7,9 @@
 #include <aws/entityresolution/EntityResolution_EXPORTS.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/entityresolution/model/IdNamespaceType.h>
+#include <aws/entityresolution/model/IdNamespaceIdMappingWorkflowMetadata.h>
 #include <utility>
 
 namespace Aws
@@ -67,6 +69,21 @@ namespace Model
 
     ///@{
     /**
+     * <p>An object which defines any additional configurations required by the ID
+     * mapping workflow.</p>
+     */
+    inline const Aws::Vector<IdNamespaceIdMappingWorkflowMetadata>& GetIdMappingWorkflowProperties() const{ return m_idMappingWorkflowProperties; }
+    inline bool IdMappingWorkflowPropertiesHasBeenSet() const { return m_idMappingWorkflowPropertiesHasBeenSet; }
+    inline void SetIdMappingWorkflowProperties(const Aws::Vector<IdNamespaceIdMappingWorkflowMetadata>& value) { m_idMappingWorkflowPropertiesHasBeenSet = true; m_idMappingWorkflowProperties = value; }
+    inline void SetIdMappingWorkflowProperties(Aws::Vector<IdNamespaceIdMappingWorkflowMetadata>&& value) { m_idMappingWorkflowPropertiesHasBeenSet = true; m_idMappingWorkflowProperties = std::move(value); }
+    inline IdNamespaceSummary& WithIdMappingWorkflowProperties(const Aws::Vector<IdNamespaceIdMappingWorkflowMetadata>& value) { SetIdMappingWorkflowProperties(value); return *this;}
+    inline IdNamespaceSummary& WithIdMappingWorkflowProperties(Aws::Vector<IdNamespaceIdMappingWorkflowMetadata>&& value) { SetIdMappingWorkflowProperties(std::move(value)); return *this;}
+    inline IdNamespaceSummary& AddIdMappingWorkflowProperties(const IdNamespaceIdMappingWorkflowMetadata& value) { m_idMappingWorkflowPropertiesHasBeenSet = true; m_idMappingWorkflowProperties.push_back(value); return *this; }
+    inline IdNamespaceSummary& AddIdMappingWorkflowProperties(IdNamespaceIdMappingWorkflowMetadata&& value) { m_idMappingWorkflowPropertiesHasBeenSet = true; m_idMappingWorkflowProperties.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>The Amazon Resource Name (ARN) of the ID namespace.</p>
      */
     inline const Aws::String& GetIdNamespaceArn() const{ return m_idNamespaceArn; }
@@ -99,7 +116,7 @@ namespace Model
      * <code>TARGET</code>.</p> <p>The <code>SOURCE</code> contains configurations for
      * <code>sourceId</code> data that will be processed in an ID mapping workflow.
      * </p> <p>The <code>TARGET</code> contains a configuration of
-     * <code>targetId</code> to which all <code>sourceIds</code> will resolve to.</p>
+     * <code>targetId</code> which all <code>sourceIds</code> will resolve to.</p>
      */
     inline const IdNamespaceType& GetType() const{ return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
@@ -127,6 +144,9 @@ namespace Model
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
+
+    Aws::Vector<IdNamespaceIdMappingWorkflowMetadata> m_idMappingWorkflowProperties;
+    bool m_idMappingWorkflowPropertiesHasBeenSet = false;
 
     Aws::String m_idNamespaceArn;
     bool m_idNamespaceArnHasBeenSet = false;

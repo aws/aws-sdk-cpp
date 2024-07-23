@@ -13,14 +13,14 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 UpdateConfiguredAudienceModelRequest::UpdateConfiguredAudienceModelRequest() : 
-    m_audienceModelArnHasBeenSet(false),
-    m_audienceSizeConfigHasBeenSet(false),
     m_configuredAudienceModelArnHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
+    m_outputConfigHasBeenSet(false),
+    m_audienceModelArnHasBeenSet(false),
+    m_sharedAudienceMetricsHasBeenSet(false),
     m_minMatchingSeedSize(0),
     m_minMatchingSeedSizeHasBeenSet(false),
-    m_outputConfigHasBeenSet(false),
-    m_sharedAudienceMetricsHasBeenSet(false)
+    m_audienceSizeConfigHasBeenSet(false),
+    m_descriptionHasBeenSet(false)
 {
 }
 
@@ -28,9 +28,32 @@ Aws::String UpdateConfiguredAudienceModelRequest::SerializePayload() const
 {
   JsonValue payload;
 
+  if(m_outputConfigHasBeenSet)
+  {
+   payload.WithObject("outputConfig", m_outputConfig.Jsonize());
+
+  }
+
   if(m_audienceModelArnHasBeenSet)
   {
    payload.WithString("audienceModelArn", m_audienceModelArn);
+
+  }
+
+  if(m_sharedAudienceMetricsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> sharedAudienceMetricsJsonList(m_sharedAudienceMetrics.size());
+   for(unsigned sharedAudienceMetricsIndex = 0; sharedAudienceMetricsIndex < sharedAudienceMetricsJsonList.GetLength(); ++sharedAudienceMetricsIndex)
+   {
+     sharedAudienceMetricsJsonList[sharedAudienceMetricsIndex].AsString(SharedAudienceMetricsMapper::GetNameForSharedAudienceMetrics(m_sharedAudienceMetrics[sharedAudienceMetricsIndex]));
+   }
+   payload.WithArray("sharedAudienceMetrics", std::move(sharedAudienceMetricsJsonList));
+
+  }
+
+  if(m_minMatchingSeedSizeHasBeenSet)
+  {
+   payload.WithInteger("minMatchingSeedSize", m_minMatchingSeedSize);
 
   }
 
@@ -43,29 +66,6 @@ Aws::String UpdateConfiguredAudienceModelRequest::SerializePayload() const
   if(m_descriptionHasBeenSet)
   {
    payload.WithString("description", m_description);
-
-  }
-
-  if(m_minMatchingSeedSizeHasBeenSet)
-  {
-   payload.WithInteger("minMatchingSeedSize", m_minMatchingSeedSize);
-
-  }
-
-  if(m_outputConfigHasBeenSet)
-  {
-   payload.WithObject("outputConfig", m_outputConfig.Jsonize());
-
-  }
-
-  if(m_sharedAudienceMetricsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> sharedAudienceMetricsJsonList(m_sharedAudienceMetrics.size());
-   for(unsigned sharedAudienceMetricsIndex = 0; sharedAudienceMetricsIndex < sharedAudienceMetricsJsonList.GetLength(); ++sharedAudienceMetricsIndex)
-   {
-     sharedAudienceMetricsJsonList[sharedAudienceMetricsIndex].AsString(SharedAudienceMetricsMapper::GetNameForSharedAudienceMetrics(m_sharedAudienceMetrics[sharedAudienceMetricsIndex]));
-   }
-   payload.WithArray("sharedAudienceMetrics", std::move(sharedAudienceMetricsJsonList));
 
   }
 

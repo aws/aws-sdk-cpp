@@ -18,8 +18,8 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 GetAudienceGenerationJobResult::GetAudienceGenerationJobResult() : 
-    m_includeSeedInOutput(false),
-    m_status(AudienceGenerationJobStatus::NOT_SET)
+    m_status(AudienceGenerationJobStatus::NOT_SET),
+    m_includeSeedInOutput(false)
 {
 }
 
@@ -32,45 +32,21 @@ GetAudienceGenerationJobResult::GetAudienceGenerationJobResult(const Aws::Amazon
 GetAudienceGenerationJobResult& GetAudienceGenerationJobResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("audienceGenerationJobArn"))
-  {
-    m_audienceGenerationJobArn = jsonValue.GetString("audienceGenerationJobArn");
-
-  }
-
-  if(jsonValue.ValueExists("collaborationId"))
-  {
-    m_collaborationId = jsonValue.GetString("collaborationId");
-
-  }
-
-  if(jsonValue.ValueExists("configuredAudienceModelArn"))
-  {
-    m_configuredAudienceModelArn = jsonValue.GetString("configuredAudienceModelArn");
-
-  }
-
   if(jsonValue.ValueExists("createTime"))
   {
     m_createTime = jsonValue.GetString("createTime");
 
   }
 
-  if(jsonValue.ValueExists("description"))
+  if(jsonValue.ValueExists("updateTime"))
   {
-    m_description = jsonValue.GetString("description");
+    m_updateTime = jsonValue.GetString("updateTime");
 
   }
 
-  if(jsonValue.ValueExists("includeSeedInOutput"))
+  if(jsonValue.ValueExists("audienceGenerationJobArn"))
   {
-    m_includeSeedInOutput = jsonValue.GetBool("includeSeedInOutput");
-
-  }
-
-  if(jsonValue.ValueExists("metrics"))
-  {
-    m_metrics = jsonValue.GetObject("metrics");
+    m_audienceGenerationJobArn = jsonValue.GetString("audienceGenerationJobArn");
 
   }
 
@@ -80,15 +56,9 @@ GetAudienceGenerationJobResult& GetAudienceGenerationJobResult::operator =(const
 
   }
 
-  if(jsonValue.ValueExists("seedAudience"))
+  if(jsonValue.ValueExists("description"))
   {
-    m_seedAudience = jsonValue.GetObject("seedAudience");
-
-  }
-
-  if(jsonValue.ValueExists("startedBy"))
-  {
-    m_startedBy = jsonValue.GetString("startedBy");
+    m_description = jsonValue.GetString("description");
 
   }
 
@@ -104,6 +74,42 @@ GetAudienceGenerationJobResult& GetAudienceGenerationJobResult::operator =(const
 
   }
 
+  if(jsonValue.ValueExists("configuredAudienceModelArn"))
+  {
+    m_configuredAudienceModelArn = jsonValue.GetString("configuredAudienceModelArn");
+
+  }
+
+  if(jsonValue.ValueExists("seedAudience"))
+  {
+    m_seedAudience = jsonValue.GetObject("seedAudience");
+
+  }
+
+  if(jsonValue.ValueExists("includeSeedInOutput"))
+  {
+    m_includeSeedInOutput = jsonValue.GetBool("includeSeedInOutput");
+
+  }
+
+  if(jsonValue.ValueExists("collaborationId"))
+  {
+    m_collaborationId = jsonValue.GetString("collaborationId");
+
+  }
+
+  if(jsonValue.ValueExists("metrics"))
+  {
+    m_metrics = jsonValue.GetObject("metrics");
+
+  }
+
+  if(jsonValue.ValueExists("startedBy"))
+  {
+    m_startedBy = jsonValue.GetString("startedBy");
+
+  }
+
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -113,9 +119,9 @@ GetAudienceGenerationJobResult& GetAudienceGenerationJobResult::operator =(const
     }
   }
 
-  if(jsonValue.ValueExists("updateTime"))
+  if(jsonValue.ValueExists("protectedQueryIdentifier"))
   {
-    m_updateTime = jsonValue.GetString("updateTime");
+    m_protectedQueryIdentifier = jsonValue.GetString("protectedQueryIdentifier");
 
   }
 

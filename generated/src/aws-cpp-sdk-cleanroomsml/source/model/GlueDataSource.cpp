@@ -19,9 +19,9 @@ namespace Model
 {
 
 GlueDataSource::GlueDataSource() : 
-    m_catalogIdHasBeenSet(false),
+    m_tableNameHasBeenSet(false),
     m_databaseNameHasBeenSet(false),
-    m_tableNameHasBeenSet(false)
+    m_catalogIdHasBeenSet(false)
 {
 }
 
@@ -33,11 +33,11 @@ GlueDataSource::GlueDataSource(JsonView jsonValue)
 
 GlueDataSource& GlueDataSource::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("catalogId"))
+  if(jsonValue.ValueExists("tableName"))
   {
-    m_catalogId = jsonValue.GetString("catalogId");
+    m_tableName = jsonValue.GetString("tableName");
 
-    m_catalogIdHasBeenSet = true;
+    m_tableNameHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("databaseName"))
@@ -47,11 +47,11 @@ GlueDataSource& GlueDataSource::operator =(JsonView jsonValue)
     m_databaseNameHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("tableName"))
+  if(jsonValue.ValueExists("catalogId"))
   {
-    m_tableName = jsonValue.GetString("tableName");
+    m_catalogId = jsonValue.GetString("catalogId");
 
-    m_tableNameHasBeenSet = true;
+    m_catalogIdHasBeenSet = true;
   }
 
   return *this;
@@ -61,9 +61,9 @@ JsonValue GlueDataSource::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_catalogIdHasBeenSet)
+  if(m_tableNameHasBeenSet)
   {
-   payload.WithString("catalogId", m_catalogId);
+   payload.WithString("tableName", m_tableName);
 
   }
 
@@ -73,9 +73,9 @@ JsonValue GlueDataSource::Jsonize() const
 
   }
 
-  if(m_tableNameHasBeenSet)
+  if(m_catalogIdHasBeenSet)
   {
-   payload.WithString("tableName", m_tableName);
+   payload.WithString("catalogId", m_catalogId);
 
   }
 

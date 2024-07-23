@@ -25,6 +25,7 @@ namespace Aws
         static const int Issues_HASH = HashingUtils::HashString("Issues");
         static const int Event_HASH = HashingUtils::HashString("Event");
         static const int Attachments_HASH = HashingUtils::HashString("Attachments");
+        static const int PostContactSummary_HASH = HashingUtils::HashString("PostContactSummary");
 
 
         RealTimeContactAnalysisSegmentType GetRealTimeContactAnalysisSegmentTypeForName(const Aws::String& name)
@@ -49,6 +50,10 @@ namespace Aws
           else if (hashCode == Attachments_HASH)
           {
             return RealTimeContactAnalysisSegmentType::Attachments;
+          }
+          else if (hashCode == PostContactSummary_HASH)
+          {
+            return RealTimeContactAnalysisSegmentType::PostContactSummary;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -76,6 +81,8 @@ namespace Aws
             return "Event";
           case RealTimeContactAnalysisSegmentType::Attachments:
             return "Attachments";
+          case RealTimeContactAnalysisSegmentType::PostContactSummary:
+            return "PostContactSummary";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

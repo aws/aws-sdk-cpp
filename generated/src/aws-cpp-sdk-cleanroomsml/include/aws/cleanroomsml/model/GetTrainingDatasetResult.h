@@ -7,9 +7,9 @@
 #include <aws/cleanroomsml/CleanRoomsML_EXPORTS.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/cleanroomsml/model/TrainingDatasetStatus.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/cleanroomsml/model/Dataset.h>
 #include <utility>
 
@@ -50,15 +50,26 @@ namespace Model
 
     ///@{
     /**
-     * <p>The description of the training dataset.</p>
+     * <p>The most recent time at which the training dataset was updated.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_description.assign(value); }
-    inline GetTrainingDatasetResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline GetTrainingDatasetResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline GetTrainingDatasetResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline const Aws::Utils::DateTime& GetUpdateTime() const{ return m_updateTime; }
+    inline void SetUpdateTime(const Aws::Utils::DateTime& value) { m_updateTime = value; }
+    inline void SetUpdateTime(Aws::Utils::DateTime&& value) { m_updateTime = std::move(value); }
+    inline GetTrainingDatasetResult& WithUpdateTime(const Aws::Utils::DateTime& value) { SetUpdateTime(value); return *this;}
+    inline GetTrainingDatasetResult& WithUpdateTime(Aws::Utils::DateTime&& value) { SetUpdateTime(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The Amazon Resource Name (ARN) of the training dataset.</p>
+     */
+    inline const Aws::String& GetTrainingDatasetArn() const{ return m_trainingDatasetArn; }
+    inline void SetTrainingDatasetArn(const Aws::String& value) { m_trainingDatasetArn = value; }
+    inline void SetTrainingDatasetArn(Aws::String&& value) { m_trainingDatasetArn = std::move(value); }
+    inline void SetTrainingDatasetArn(const char* value) { m_trainingDatasetArn.assign(value); }
+    inline GetTrainingDatasetResult& WithTrainingDatasetArn(const Aws::String& value) { SetTrainingDatasetArn(value); return *this;}
+    inline GetTrainingDatasetResult& WithTrainingDatasetArn(Aws::String&& value) { SetTrainingDatasetArn(std::move(value)); return *this;}
+    inline GetTrainingDatasetResult& WithTrainingDatasetArn(const char* value) { SetTrainingDatasetArn(value); return *this;}
     ///@}
 
     ///@{
@@ -76,15 +87,15 @@ namespace Model
 
     ///@{
     /**
-     * <p>The IAM role used to read the training data.</p>
+     * <p>Metadata about the requested training data. </p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArn.assign(value); }
-    inline GetTrainingDatasetResult& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline GetTrainingDatasetResult& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline GetTrainingDatasetResult& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    inline const Aws::Vector<Dataset>& GetTrainingData() const{ return m_trainingData; }
+    inline void SetTrainingData(const Aws::Vector<Dataset>& value) { m_trainingData = value; }
+    inline void SetTrainingData(Aws::Vector<Dataset>&& value) { m_trainingData = std::move(value); }
+    inline GetTrainingDatasetResult& WithTrainingData(const Aws::Vector<Dataset>& value) { SetTrainingData(value); return *this;}
+    inline GetTrainingDatasetResult& WithTrainingData(Aws::Vector<Dataset>&& value) { SetTrainingData(std::move(value)); return *this;}
+    inline GetTrainingDatasetResult& AddTrainingData(const Dataset& value) { m_trainingData.push_back(value); return *this; }
+    inline GetTrainingDatasetResult& AddTrainingData(Dataset&& value) { m_trainingData.push_back(std::move(value)); return *this; }
     ///@}
 
     ///@{
@@ -96,6 +107,19 @@ namespace Model
     inline void SetStatus(TrainingDatasetStatus&& value) { m_status = std::move(value); }
     inline GetTrainingDatasetResult& WithStatus(const TrainingDatasetStatus& value) { SetStatus(value); return *this;}
     inline GetTrainingDatasetResult& WithStatus(TrainingDatasetStatus&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The IAM role used to read the training data.</p>
+     */
+    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline void SetRoleArn(const Aws::String& value) { m_roleArn = value; }
+    inline void SetRoleArn(Aws::String&& value) { m_roleArn = std::move(value); }
+    inline void SetRoleArn(const char* value) { m_roleArn.assign(value); }
+    inline GetTrainingDatasetResult& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
+    inline GetTrainingDatasetResult& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
+    inline GetTrainingDatasetResult& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
     ///@}
 
     ///@{
@@ -118,39 +142,15 @@ namespace Model
 
     ///@{
     /**
-     * <p>Metadata about the requested training data. </p>
+     * <p>The description of the training dataset.</p>
      */
-    inline const Aws::Vector<Dataset>& GetTrainingData() const{ return m_trainingData; }
-    inline void SetTrainingData(const Aws::Vector<Dataset>& value) { m_trainingData = value; }
-    inline void SetTrainingData(Aws::Vector<Dataset>&& value) { m_trainingData = std::move(value); }
-    inline GetTrainingDatasetResult& WithTrainingData(const Aws::Vector<Dataset>& value) { SetTrainingData(value); return *this;}
-    inline GetTrainingDatasetResult& WithTrainingData(Aws::Vector<Dataset>&& value) { SetTrainingData(std::move(value)); return *this;}
-    inline GetTrainingDatasetResult& AddTrainingData(const Dataset& value) { m_trainingData.push_back(value); return *this; }
-    inline GetTrainingDatasetResult& AddTrainingData(Dataset&& value) { m_trainingData.push_back(std::move(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
-     * <p>The Amazon Resource Name (ARN) of the training dataset.</p>
-     */
-    inline const Aws::String& GetTrainingDatasetArn() const{ return m_trainingDatasetArn; }
-    inline void SetTrainingDatasetArn(const Aws::String& value) { m_trainingDatasetArn = value; }
-    inline void SetTrainingDatasetArn(Aws::String&& value) { m_trainingDatasetArn = std::move(value); }
-    inline void SetTrainingDatasetArn(const char* value) { m_trainingDatasetArn.assign(value); }
-    inline GetTrainingDatasetResult& WithTrainingDatasetArn(const Aws::String& value) { SetTrainingDatasetArn(value); return *this;}
-    inline GetTrainingDatasetResult& WithTrainingDatasetArn(Aws::String&& value) { SetTrainingDatasetArn(std::move(value)); return *this;}
-    inline GetTrainingDatasetResult& WithTrainingDatasetArn(const char* value) { SetTrainingDatasetArn(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The most recent time at which the training dataset was updated.</p>
-     */
-    inline const Aws::Utils::DateTime& GetUpdateTime() const{ return m_updateTime; }
-    inline void SetUpdateTime(const Aws::Utils::DateTime& value) { m_updateTime = value; }
-    inline void SetUpdateTime(Aws::Utils::DateTime&& value) { m_updateTime = std::move(value); }
-    inline GetTrainingDatasetResult& WithUpdateTime(const Aws::Utils::DateTime& value) { SetUpdateTime(value); return *this;}
-    inline GetTrainingDatasetResult& WithUpdateTime(Aws::Utils::DateTime&& value) { SetUpdateTime(std::move(value)); return *this;}
+    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline void SetDescription(const Aws::String& value) { m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
+    inline void SetDescription(const char* value) { m_description.assign(value); }
+    inline GetTrainingDatasetResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+    inline GetTrainingDatasetResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
+    inline GetTrainingDatasetResult& WithDescription(const char* value) { SetDescription(value); return *this;}
     ///@}
 
     ///@{
@@ -167,21 +167,21 @@ namespace Model
 
     Aws::Utils::DateTime m_createTime;
 
-    Aws::String m_description;
-
-    Aws::String m_name;
-
-    Aws::String m_roleArn;
-
-    TrainingDatasetStatus m_status;
-
-    Aws::Map<Aws::String, Aws::String> m_tags;
-
-    Aws::Vector<Dataset> m_trainingData;
+    Aws::Utils::DateTime m_updateTime;
 
     Aws::String m_trainingDatasetArn;
 
-    Aws::Utils::DateTime m_updateTime;
+    Aws::String m_name;
+
+    Aws::Vector<Dataset> m_trainingData;
+
+    TrainingDatasetStatus m_status;
+
+    Aws::String m_roleArn;
+
+    Aws::Map<Aws::String, Aws::String> m_tags;
+
+    Aws::String m_description;
 
     Aws::String m_requestId;
   };

@@ -53,8 +53,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>An object which defines the <code>idMappingType</code> and the
-     * <code>providerProperties</code>.</p>
+     * <p>An object which defines the ID mapping technique and any additional
+     * configurations.</p>
      */
     inline const IdMappingTechniques& GetIdMappingTechniques() const{ return m_idMappingTechniques; }
     inline bool IdMappingTechniquesHasBeenSet() const { return m_idMappingTechniquesHasBeenSet; }

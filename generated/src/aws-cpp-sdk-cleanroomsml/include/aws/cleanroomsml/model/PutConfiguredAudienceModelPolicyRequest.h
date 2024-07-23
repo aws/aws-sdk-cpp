@@ -64,18 +64,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Use this to prevent unexpected concurrent modification of the policy.</p>
-     */
-    inline const PolicyExistenceCondition& GetPolicyExistenceCondition() const{ return m_policyExistenceCondition; }
-    inline bool PolicyExistenceConditionHasBeenSet() const { return m_policyExistenceConditionHasBeenSet; }
-    inline void SetPolicyExistenceCondition(const PolicyExistenceCondition& value) { m_policyExistenceConditionHasBeenSet = true; m_policyExistenceCondition = value; }
-    inline void SetPolicyExistenceCondition(PolicyExistenceCondition&& value) { m_policyExistenceConditionHasBeenSet = true; m_policyExistenceCondition = std::move(value); }
-    inline PutConfiguredAudienceModelPolicyRequest& WithPolicyExistenceCondition(const PolicyExistenceCondition& value) { SetPolicyExistenceCondition(value); return *this;}
-    inline PutConfiguredAudienceModelPolicyRequest& WithPolicyExistenceCondition(PolicyExistenceCondition&& value) { SetPolicyExistenceCondition(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>A cryptographic hash of the contents of the policy used to prevent unexpected
      * concurrent modification of the policy.</p>
      */
@@ -88,6 +76,18 @@ namespace Model
     inline PutConfiguredAudienceModelPolicyRequest& WithPreviousPolicyHash(Aws::String&& value) { SetPreviousPolicyHash(std::move(value)); return *this;}
     inline PutConfiguredAudienceModelPolicyRequest& WithPreviousPolicyHash(const char* value) { SetPreviousPolicyHash(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Use this to prevent unexpected concurrent modification of the policy.</p>
+     */
+    inline const PolicyExistenceCondition& GetPolicyExistenceCondition() const{ return m_policyExistenceCondition; }
+    inline bool PolicyExistenceConditionHasBeenSet() const { return m_policyExistenceConditionHasBeenSet; }
+    inline void SetPolicyExistenceCondition(const PolicyExistenceCondition& value) { m_policyExistenceConditionHasBeenSet = true; m_policyExistenceCondition = value; }
+    inline void SetPolicyExistenceCondition(PolicyExistenceCondition&& value) { m_policyExistenceConditionHasBeenSet = true; m_policyExistenceCondition = std::move(value); }
+    inline PutConfiguredAudienceModelPolicyRequest& WithPolicyExistenceCondition(const PolicyExistenceCondition& value) { SetPolicyExistenceCondition(value); return *this;}
+    inline PutConfiguredAudienceModelPolicyRequest& WithPolicyExistenceCondition(PolicyExistenceCondition&& value) { SetPolicyExistenceCondition(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_configuredAudienceModelArn;
@@ -96,11 +96,11 @@ namespace Model
     Aws::String m_configuredAudienceModelPolicy;
     bool m_configuredAudienceModelPolicyHasBeenSet = false;
 
-    PolicyExistenceCondition m_policyExistenceCondition;
-    bool m_policyExistenceConditionHasBeenSet = false;
-
     Aws::String m_previousPolicyHash;
     bool m_previousPolicyHashHasBeenSet = false;
+
+    PolicyExistenceCondition m_policyExistenceCondition;
+    bool m_policyExistenceConditionHasBeenSet = false;
   };
 
 } // namespace Model

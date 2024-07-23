@@ -10,6 +10,7 @@
 #include <aws/connect/model/RealTimeContactAnalysisSegmentIssues.h>
 #include <aws/connect/model/RealTimeContactAnalysisSegmentEvent.h>
 #include <aws/connect/model/RealTimeContactAnalysisSegmentAttachments.h>
+#include <aws/connect/model/RealTimeContactAnalysisSegmentPostContactSummary.h>
 #include <utility>
 
 namespace Aws
@@ -93,6 +94,18 @@ namespace Model
     inline RealtimeContactAnalysisSegment& WithAttachments(const RealTimeContactAnalysisSegmentAttachments& value) { SetAttachments(value); return *this;}
     inline RealtimeContactAnalysisSegment& WithAttachments(RealTimeContactAnalysisSegmentAttachments&& value) { SetAttachments(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Information about the post-contact summary.</p>
+     */
+    inline const RealTimeContactAnalysisSegmentPostContactSummary& GetPostContactSummary() const{ return m_postContactSummary; }
+    inline bool PostContactSummaryHasBeenSet() const { return m_postContactSummaryHasBeenSet; }
+    inline void SetPostContactSummary(const RealTimeContactAnalysisSegmentPostContactSummary& value) { m_postContactSummaryHasBeenSet = true; m_postContactSummary = value; }
+    inline void SetPostContactSummary(RealTimeContactAnalysisSegmentPostContactSummary&& value) { m_postContactSummaryHasBeenSet = true; m_postContactSummary = std::move(value); }
+    inline RealtimeContactAnalysisSegment& WithPostContactSummary(const RealTimeContactAnalysisSegmentPostContactSummary& value) { SetPostContactSummary(value); return *this;}
+    inline RealtimeContactAnalysisSegment& WithPostContactSummary(RealTimeContactAnalysisSegmentPostContactSummary&& value) { SetPostContactSummary(std::move(value)); return *this;}
+    ///@}
   private:
 
     RealTimeContactAnalysisSegmentTranscript m_transcript;
@@ -109,6 +122,9 @@ namespace Model
 
     RealTimeContactAnalysisSegmentAttachments m_attachments;
     bool m_attachmentsHasBeenSet = false;
+
+    RealTimeContactAnalysisSegmentPostContactSummary m_postContactSummary;
+    bool m_postContactSummaryHasBeenSet = false;
   };
 
 } // namespace Model

@@ -13,16 +13,22 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 StartAudienceExportJobRequest::StartAudienceExportJobRequest() : 
+    m_nameHasBeenSet(false),
     m_audienceGenerationJobArnHasBeenSet(false),
     m_audienceSizeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_descriptionHasBeenSet(false)
 {
 }
 
 Aws::String StartAudienceExportJobRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_nameHasBeenSet)
+  {
+   payload.WithString("name", m_name);
+
+  }
 
   if(m_audienceGenerationJobArnHasBeenSet)
   {
@@ -39,12 +45,6 @@ Aws::String StartAudienceExportJobRequest::SerializePayload() const
   if(m_descriptionHasBeenSet)
   {
    payload.WithString("description", m_description);
-
-  }
-
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
 
   }
 

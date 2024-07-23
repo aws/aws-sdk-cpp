@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/cleanroomsml/CleanRoomsML_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/cleanroomsml/model/AudienceModelStatus.h>
 #include <utility>
 
@@ -41,6 +41,30 @@ namespace Model
 
     ///@{
     /**
+     * <p>The time at which the audience model was created.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCreateTime() const{ return m_createTime; }
+    inline bool CreateTimeHasBeenSet() const { return m_createTimeHasBeenSet; }
+    inline void SetCreateTime(const Aws::Utils::DateTime& value) { m_createTimeHasBeenSet = true; m_createTime = value; }
+    inline void SetCreateTime(Aws::Utils::DateTime&& value) { m_createTimeHasBeenSet = true; m_createTime = std::move(value); }
+    inline AudienceModelSummary& WithCreateTime(const Aws::Utils::DateTime& value) { SetCreateTime(value); return *this;}
+    inline AudienceModelSummary& WithCreateTime(Aws::Utils::DateTime&& value) { SetCreateTime(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The most recent time at which the audience model was updated.</p>
+     */
+    inline const Aws::Utils::DateTime& GetUpdateTime() const{ return m_updateTime; }
+    inline bool UpdateTimeHasBeenSet() const { return m_updateTimeHasBeenSet; }
+    inline void SetUpdateTime(const Aws::Utils::DateTime& value) { m_updateTimeHasBeenSet = true; m_updateTime = value; }
+    inline void SetUpdateTime(Aws::Utils::DateTime&& value) { m_updateTimeHasBeenSet = true; m_updateTime = std::move(value); }
+    inline AudienceModelSummary& WithUpdateTime(const Aws::Utils::DateTime& value) { SetUpdateTime(value); return *this;}
+    inline AudienceModelSummary& WithUpdateTime(Aws::Utils::DateTime&& value) { SetUpdateTime(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The Amazon Resource Name (ARN) of the audience model.</p>
      */
     inline const Aws::String& GetAudienceModelArn() const{ return m_audienceModelArn; }
@@ -55,32 +79,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The time at which the audience model was created.</p>
-     */
-    inline const Aws::Utils::DateTime& GetCreateTime() const{ return m_createTime; }
-    inline bool CreateTimeHasBeenSet() const { return m_createTimeHasBeenSet; }
-    inline void SetCreateTime(const Aws::Utils::DateTime& value) { m_createTimeHasBeenSet = true; m_createTime = value; }
-    inline void SetCreateTime(Aws::Utils::DateTime&& value) { m_createTimeHasBeenSet = true; m_createTime = std::move(value); }
-    inline AudienceModelSummary& WithCreateTime(const Aws::Utils::DateTime& value) { SetCreateTime(value); return *this;}
-    inline AudienceModelSummary& WithCreateTime(Aws::Utils::DateTime&& value) { SetCreateTime(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The description of the audience model.</p>
-     */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline AudienceModelSummary& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline AudienceModelSummary& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline AudienceModelSummary& WithDescription(const char* value) { SetDescription(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The name of the audience model.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
@@ -91,18 +89,6 @@ namespace Model
     inline AudienceModelSummary& WithName(const Aws::String& value) { SetName(value); return *this;}
     inline AudienceModelSummary& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
     inline AudienceModelSummary& WithName(const char* value) { SetName(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The status of the audience model.</p>
-     */
-    inline const AudienceModelStatus& GetStatus() const{ return m_status; }
-    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const AudienceModelStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(AudienceModelStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline AudienceModelSummary& WithStatus(const AudienceModelStatus& value) { SetStatus(value); return *this;}
-    inline AudienceModelSummary& WithStatus(AudienceModelStatus&& value) { SetStatus(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -122,37 +108,51 @@ namespace Model
 
     ///@{
     /**
-     * <p>The most recent time at which the audience model was updated.</p>
+     * <p>The status of the audience model.</p>
      */
-    inline const Aws::Utils::DateTime& GetUpdateTime() const{ return m_updateTime; }
-    inline bool UpdateTimeHasBeenSet() const { return m_updateTimeHasBeenSet; }
-    inline void SetUpdateTime(const Aws::Utils::DateTime& value) { m_updateTimeHasBeenSet = true; m_updateTime = value; }
-    inline void SetUpdateTime(Aws::Utils::DateTime&& value) { m_updateTimeHasBeenSet = true; m_updateTime = std::move(value); }
-    inline AudienceModelSummary& WithUpdateTime(const Aws::Utils::DateTime& value) { SetUpdateTime(value); return *this;}
-    inline AudienceModelSummary& WithUpdateTime(Aws::Utils::DateTime&& value) { SetUpdateTime(std::move(value)); return *this;}
+    inline const AudienceModelStatus& GetStatus() const{ return m_status; }
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+    inline void SetStatus(const AudienceModelStatus& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(AudienceModelStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
+    inline AudienceModelSummary& WithStatus(const AudienceModelStatus& value) { SetStatus(value); return *this;}
+    inline AudienceModelSummary& WithStatus(AudienceModelStatus&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The description of the audience model.</p>
+     */
+    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
+    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
+    inline AudienceModelSummary& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+    inline AudienceModelSummary& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
+    inline AudienceModelSummary& WithDescription(const char* value) { SetDescription(value); return *this;}
     ///@}
   private:
-
-    Aws::String m_audienceModelArn;
-    bool m_audienceModelArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_createTime;
     bool m_createTimeHasBeenSet = false;
 
-    Aws::String m_description;
-    bool m_descriptionHasBeenSet = false;
+    Aws::Utils::DateTime m_updateTime;
+    bool m_updateTimeHasBeenSet = false;
+
+    Aws::String m_audienceModelArn;
+    bool m_audienceModelArnHasBeenSet = false;
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    AudienceModelStatus m_status;
-    bool m_statusHasBeenSet = false;
-
     Aws::String m_trainingDatasetArn;
     bool m_trainingDatasetArnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_updateTime;
-    bool m_updateTimeHasBeenSet = false;
+    AudienceModelStatus m_status;
+    bool m_statusHasBeenSet = false;
+
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
   };
 
 } // namespace Model

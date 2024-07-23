@@ -7,8 +7,8 @@
 #include <aws/cleanroomsml/CleanRoomsML_EXPORTS.h>
 #include <aws/cleanroomsml/CleanRoomsMLRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/cleanroomsml/model/Dataset.h>
 #include <utility>
 
@@ -34,20 +34,6 @@ namespace Model
 
     AWS_CLEANROOMSML_API Aws::String SerializePayload() const override;
 
-
-    ///@{
-    /**
-     * <p>The description of the training dataset.</p>
-     */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline CreateTrainingDatasetRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreateTrainingDatasetRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreateTrainingDatasetRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
-    ///@}
 
     ///@{
     /**
@@ -79,6 +65,22 @@ namespace Model
     inline CreateTrainingDatasetRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
     inline CreateTrainingDatasetRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
     inline CreateTrainingDatasetRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>An array of information that lists the Dataset objects, which specifies the
+     * dataset type and details on its location and schema. You must provide a role
+     * that has read access to these tables.</p>
+     */
+    inline const Aws::Vector<Dataset>& GetTrainingData() const{ return m_trainingData; }
+    inline bool TrainingDataHasBeenSet() const { return m_trainingDataHasBeenSet; }
+    inline void SetTrainingData(const Aws::Vector<Dataset>& value) { m_trainingDataHasBeenSet = true; m_trainingData = value; }
+    inline void SetTrainingData(Aws::Vector<Dataset>&& value) { m_trainingDataHasBeenSet = true; m_trainingData = std::move(value); }
+    inline CreateTrainingDatasetRequest& WithTrainingData(const Aws::Vector<Dataset>& value) { SetTrainingData(value); return *this;}
+    inline CreateTrainingDatasetRequest& WithTrainingData(Aws::Vector<Dataset>&& value) { SetTrainingData(std::move(value)); return *this;}
+    inline CreateTrainingDatasetRequest& AddTrainingData(const Dataset& value) { m_trainingDataHasBeenSet = true; m_trainingData.push_back(value); return *this; }
+    inline CreateTrainingDatasetRequest& AddTrainingData(Dataset&& value) { m_trainingDataHasBeenSet = true; m_trainingData.push_back(std::move(value)); return *this; }
     ///@}
 
     ///@{
@@ -119,23 +121,18 @@ namespace Model
 
     ///@{
     /**
-     * <p>An array of information that lists the Dataset objects, which specifies the
-     * dataset type and details on its location and schema. You must provide a role
-     * that has read access to these tables.</p>
+     * <p>The description of the training dataset.</p>
      */
-    inline const Aws::Vector<Dataset>& GetTrainingData() const{ return m_trainingData; }
-    inline bool TrainingDataHasBeenSet() const { return m_trainingDataHasBeenSet; }
-    inline void SetTrainingData(const Aws::Vector<Dataset>& value) { m_trainingDataHasBeenSet = true; m_trainingData = value; }
-    inline void SetTrainingData(Aws::Vector<Dataset>&& value) { m_trainingDataHasBeenSet = true; m_trainingData = std::move(value); }
-    inline CreateTrainingDatasetRequest& WithTrainingData(const Aws::Vector<Dataset>& value) { SetTrainingData(value); return *this;}
-    inline CreateTrainingDatasetRequest& WithTrainingData(Aws::Vector<Dataset>&& value) { SetTrainingData(std::move(value)); return *this;}
-    inline CreateTrainingDatasetRequest& AddTrainingData(const Dataset& value) { m_trainingDataHasBeenSet = true; m_trainingData.push_back(value); return *this; }
-    inline CreateTrainingDatasetRequest& AddTrainingData(Dataset&& value) { m_trainingDataHasBeenSet = true; m_trainingData.push_back(std::move(value)); return *this; }
+    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
+    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
+    inline CreateTrainingDatasetRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+    inline CreateTrainingDatasetRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
+    inline CreateTrainingDatasetRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
     ///@}
   private:
-
-    Aws::String m_description;
-    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
@@ -143,11 +140,14 @@ namespace Model
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet = false;
 
+    Aws::Vector<Dataset> m_trainingData;
+    bool m_trainingDataHasBeenSet = false;
+
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
 
-    Aws::Vector<Dataset> m_trainingData;
-    bool m_trainingDataHasBeenSet = false;
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
   };
 
 } // namespace Model
