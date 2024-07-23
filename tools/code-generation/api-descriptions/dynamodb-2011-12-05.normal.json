@@ -109,6 +109,26 @@
         {"shape":"ResourceNotFoundException"},
         {"shape":"InternalServerError"}
       ],
+      "waiters": {
+        "TableExists": {
+          "delay": 20,
+          "operation": "DescribeTable",
+          "maxAttempts": 25,
+          "acceptors": [
+            {
+              "expected": "ACTIVE",
+              "matcher": "path",
+              "state": "success",
+              "argument": "Table.TableStatus"
+            },
+            {
+              "expected": "ResourceNotFoundException",
+              "matcher": "error",
+              "state": "retry"
+            }
+          ]
+        }
+      },
       "documentation":"<p>Retrieves information about the table, including the current status of the table, the primary key schema and when the table was created.</p> <p>If the table does not exist, Amazon DynamoDB returns a <code>ResourceNotFoundException</code>.</p>"
     },
     "GetItem":{

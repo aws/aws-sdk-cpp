@@ -674,6 +674,9 @@ public class C2jModelToGeneratorModelTransformer {
 
         operation.setErrors(operationErrors);
 
+        operation.setWaiters(c2jOperation.getWaiters());
+        
+
         return operation;
     }
 

@@ -5,6 +5,7 @@
 
 package com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration;
 
+import com.amazonaws.util.awsclientgenerator.domainmodels.c2j.C2jWaiters;
 import com.amazonaws.util.awsclientgenerator.domainmodels.endpoints.EndpointParameterValue;
 import lombok.Data;
 
@@ -27,7 +28,8 @@ public class Operation {
     private String authorizer;
     private boolean eventStream;
     private boolean supportsChunkedEncoding;
-
+    private Map<String, C2jWaiters> waiters;
+    
     // Endpoint Rule static context parameters
     private Map<String, Map<String, EndpointParameterValue>> staticContextParams;
 
@@ -80,6 +82,7 @@ public class Operation {
 
     // For Requestless Defaults
     private boolean requestlessDefault = false;
+    
 
     public boolean hasRequest() {
         return this.request != null;

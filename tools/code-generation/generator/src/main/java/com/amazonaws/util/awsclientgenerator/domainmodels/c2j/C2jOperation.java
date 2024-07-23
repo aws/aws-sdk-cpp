@@ -33,4 +33,5 @@ public class C2jOperation {
     private boolean endpointoperation; // endpointoperation trait
     private C2jEndpointDiscovery endpointdiscovery; //endpointdiscovery trait
     private C2jRequestCompression requestcompression;
+    private Map<String, C2jWaiters> waiters;
 }
