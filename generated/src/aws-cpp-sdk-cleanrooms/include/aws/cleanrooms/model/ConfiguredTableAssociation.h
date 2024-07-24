@@ -6,7 +6,9 @@
 #pragma once
 #include <aws/cleanrooms/CleanRooms_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/cleanrooms/model/ConfiguredTableAssociationAnalysisRuleType.h>
 #include <utility>
 
 namespace Aws
@@ -172,6 +174,20 @@ namespace Model
 
     ///@{
     /**
+     * <p> The analysis rule types for the configured table association.</p>
+     */
+    inline const Aws::Vector<ConfiguredTableAssociationAnalysisRuleType>& GetAnalysisRuleTypes() const{ return m_analysisRuleTypes; }
+    inline bool AnalysisRuleTypesHasBeenSet() const { return m_analysisRuleTypesHasBeenSet; }
+    inline void SetAnalysisRuleTypes(const Aws::Vector<ConfiguredTableAssociationAnalysisRuleType>& value) { m_analysisRuleTypesHasBeenSet = true; m_analysisRuleTypes = value; }
+    inline void SetAnalysisRuleTypes(Aws::Vector<ConfiguredTableAssociationAnalysisRuleType>&& value) { m_analysisRuleTypesHasBeenSet = true; m_analysisRuleTypes = std::move(value); }
+    inline ConfiguredTableAssociation& WithAnalysisRuleTypes(const Aws::Vector<ConfiguredTableAssociationAnalysisRuleType>& value) { SetAnalysisRuleTypes(value); return *this;}
+    inline ConfiguredTableAssociation& WithAnalysisRuleTypes(Aws::Vector<ConfiguredTableAssociationAnalysisRuleType>&& value) { SetAnalysisRuleTypes(std::move(value)); return *this;}
+    inline ConfiguredTableAssociation& AddAnalysisRuleTypes(const ConfiguredTableAssociationAnalysisRuleType& value) { m_analysisRuleTypesHasBeenSet = true; m_analysisRuleTypes.push_back(value); return *this; }
+    inline ConfiguredTableAssociation& AddAnalysisRuleTypes(ConfiguredTableAssociationAnalysisRuleType&& value) { m_analysisRuleTypesHasBeenSet = true; m_analysisRuleTypes.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>The time the configured table association was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreateTime() const{ return m_createTime; }
@@ -221,6 +237,9 @@ namespace Model
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
+
+    Aws::Vector<ConfiguredTableAssociationAnalysisRuleType> m_analysisRuleTypes;
+    bool m_analysisRuleTypesHasBeenSet = false;
 
     Aws::Utils::DateTime m_createTime;
     bool m_createTimeHasBeenSet = false;

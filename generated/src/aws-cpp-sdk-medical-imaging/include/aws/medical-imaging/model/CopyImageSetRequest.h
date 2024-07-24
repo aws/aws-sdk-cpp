@@ -12,6 +12,10 @@
 
 namespace Aws
 {
+namespace Http
+{
+    class URI;
+} //namespace Http
 namespace MedicalImaging
 {
 namespace Model
@@ -31,6 +35,8 @@ namespace Model
     inline virtual const char* GetServiceRequestName() const override { return "CopyImageSet"; }
 
     AWS_MEDICALIMAGING_API Aws::String SerializePayload() const override;
+
+    AWS_MEDICALIMAGING_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     ///@{
@@ -72,6 +78,18 @@ namespace Model
     inline CopyImageSetRequest& WithCopyImageSetInformation(const CopyImageSetInformation& value) { SetCopyImageSetInformation(value); return *this;}
     inline CopyImageSetRequest& WithCopyImageSetInformation(CopyImageSetInformation&& value) { SetCopyImageSetInformation(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Setting this flag will force the <code>CopyImageSet</code> operation, even if
+     * Patient, Study, or Series level metadata are mismatched across the
+     * <code>sourceImageSet</code> and <code>destinationImageSet</code>.</p>
+     */
+    inline bool GetForce() const{ return m_force; }
+    inline bool ForceHasBeenSet() const { return m_forceHasBeenSet; }
+    inline void SetForce(bool value) { m_forceHasBeenSet = true; m_force = value; }
+    inline CopyImageSetRequest& WithForce(bool value) { SetForce(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_datastoreId;
@@ -82,6 +100,9 @@ namespace Model
 
     CopyImageSetInformation m_copyImageSetInformation;
     bool m_copyImageSetInformationHasBeenSet = false;
+
+    bool m_force;
+    bool m_forceHasBeenSet = false;
   };
 
 } // namespace Model

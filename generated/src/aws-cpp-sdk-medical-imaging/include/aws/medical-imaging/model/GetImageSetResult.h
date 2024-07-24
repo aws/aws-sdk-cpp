@@ -9,6 +9,7 @@
 #include <aws/medical-imaging/model/ImageSetState.h>
 #include <aws/medical-imaging/model/ImageSetWorkflowStatus.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/medical-imaging/model/Overrides.h>
 #include <utility>
 
 namespace Aws
@@ -156,6 +157,20 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>This object contains the details of any overrides used while creating a
+     * specific image set version. If an image set was copied or updated using the
+     * <code>force</code> flag, this object will contain the <code>forced</code>
+     * flag.</p>
+     */
+    inline const Overrides& GetOverrides() const{ return m_overrides; }
+    inline void SetOverrides(const Overrides& value) { m_overrides = value; }
+    inline void SetOverrides(Overrides&& value) { m_overrides = std::move(value); }
+    inline GetImageSetResult& WithOverrides(const Overrides& value) { SetOverrides(value); return *this;}
+    inline GetImageSetResult& WithOverrides(Overrides&& value) { SetOverrides(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -186,6 +201,8 @@ namespace Model
     Aws::String m_message;
 
     Aws::String m_imageSetArn;
+
+    Overrides m_overrides;
 
     Aws::String m_requestId;
   };

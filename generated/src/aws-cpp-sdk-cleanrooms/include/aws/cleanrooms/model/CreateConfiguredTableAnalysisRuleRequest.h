@@ -63,7 +63,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The entire created configured table analysis rule object.</p>
+     * <p>The analysis rule policy that was created for the configured table.</p>
      */
     inline const ConfiguredTableAnalysisRulePolicy& GetAnalysisRulePolicy() const{ return m_analysisRulePolicy; }
     inline bool AnalysisRulePolicyHasBeenSet() const { return m_analysisRulePolicyHasBeenSet; }

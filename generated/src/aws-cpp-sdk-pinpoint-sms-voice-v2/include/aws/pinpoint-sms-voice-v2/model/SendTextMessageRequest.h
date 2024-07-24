@@ -127,7 +127,8 @@ namespace Model
     ///@{
     /**
      * <p>The maximum amount that you want to spend, in US dollars, per each text
-     * message part. A text message can contain multiple parts.</p>
+     * message. If the calculated amount to send the text message is greater than
+     * <code>MaxPrice</code>, the message is not sent and an error is returned.</p>
      */
     inline const Aws::String& GetMaxPrice() const{ return m_maxPrice; }
     inline bool MaxPriceHasBeenSet() const { return m_maxPriceHasBeenSet; }
@@ -141,7 +142,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>How long the text message is valid for. By default this is 72 hours.</p>
+     * <p>How long the text message is valid for, in seconds. By default this is 72
+     * hours. If the messages isn't handed off before the TTL expires we stop
+     * attempting to hand off the message and return <code>TTL_EXPIRED</code>
+     * event.</p>
      */
     inline int GetTimeToLive() const{ return m_timeToLive; }
     inline bool TimeToLiveHasBeenSet() const { return m_timeToLiveHasBeenSet; }
@@ -175,7 +179,15 @@ namespace Model
      * Currently, this setting is only used when you send messages to recipients in
      * India using a sender ID. For more information see <a
      * href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-sms-senderid-india.html">Special
-     * requirements for sending SMS messages to recipients in India</a>. </p>
+     * requirements for sending SMS messages to recipients in India</a>. </p> <ul> <li>
+     * <p> <code>IN_ENTITY_ID</code> The entity ID or Principal Entity (PE) ID that you
+     * received after completing the sender ID registration process.</p> </li> <li> <p>
+     * <code>IN_TEMPLATE_ID</code> The template ID that you received after completing
+     * the sender ID registration process.</p>  <p>Make sure that the
+     * Template ID that you specify matches your message template exactly. If your
+     * message doesn't match the template that you provided during the registration
+     * process, the mobile carriers might reject your message.</p>  </li>
+     * </ul>
      */
     inline const Aws::Map<DestinationCountryParameterKey, Aws::String>& GetDestinationCountryParameters() const{ return m_destinationCountryParameters; }
     inline bool DestinationCountryParametersHasBeenSet() const { return m_destinationCountryParametersHasBeenSet; }
@@ -194,7 +206,13 @@ namespace Model
     ///@{
     /**
      * <p>When set to true, the message is checked and validated, but isn't sent to the
-     * end recipient.</p>
+     * end recipient. You are not charged for using <code>DryRun</code>.</p> <p>The
+     * Message Parts per Second (MPS) limit when using <code>DryRun</code> is five. If
+     * your origination identity has a lower MPS limit then the lower MPS limit is
+     * used. For more information about MPS limits, see <a
+     * href="https://docs.aws.amazon.com/sms-voice/latest/userguide/sms-limitations-mps.html">Message
+     * Parts per Second (MPS) limits</a> in the <i>AWS End User Messaging SMS User
+     * Guide</i>..</p>
      */
     inline bool GetDryRun() const{ return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }

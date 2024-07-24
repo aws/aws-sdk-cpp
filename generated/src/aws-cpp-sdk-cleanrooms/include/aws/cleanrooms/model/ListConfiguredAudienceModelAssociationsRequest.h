@@ -55,7 +55,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The pagination token that's used to fetch the next set of results.</p>
+     * <p>The token value retrieved from a previous call to access the next page of
+     * results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
@@ -69,9 +70,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The maximum number of results that are returned for an API request call. The
-     * service chooses a default number if you don't set one. The service might return
-     * a `nextToken` even if the `maxResults` value has not been met.</p>
+     * <p>The maximum size of the results that is returned per call. Service chooses a
+     * default if it has not been set. Service may return a nextToken even if the
+     * maximum results has not been met.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }

@@ -95,7 +95,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>A unique, friendly name for the composite model.</p>
+     * <p>A unique name for the composite model.</p>
      */
     inline const Aws::String& GetAssetModelCompositeModelName() const{ return m_assetModelCompositeModelName; }
     inline bool AssetModelCompositeModelNameHasBeenSet() const { return m_assetModelCompositeModelNameHasBeenSet; }
@@ -125,9 +125,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>The property definitions of the composite model. For more information, see
-     * &lt;LINK&gt;.</p> <p>You can specify up to 200 properties per composite model.
-     * For more information, see <a
+     * <p>The property definitions of the composite model. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/custom-composite-models.html#inline-composite-models">
+     * Inline custom composite models</a> in the <i>IoT SiteWise User Guide</i>.</p>
+     * <p>You can specify up to 200 properties per composite model. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
      * in the <i>IoT SiteWise User Guide</i>.</p>
      */

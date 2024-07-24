@@ -1,0 +1,94 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/cleanrooms/CleanRooms_EXPORTS.h>
+#include <aws/cleanrooms/model/ConfiguredTableAssociationAnalysisRuleList.h>
+#include <aws/cleanrooms/model/ConfiguredTableAssociationAnalysisRuleAggregation.h>
+#include <aws/cleanrooms/model/ConfiguredTableAssociationAnalysisRuleCustom.h>
+#include <utility>
+
+namespace Aws
+{
+namespace Utils
+{
+namespace Json
+{
+  class JsonValue;
+  class JsonView;
+} // namespace Json
+} // namespace Utils
+namespace CleanRooms
+{
+namespace Model
+{
+
+  /**
+   * <p> Controls on the query specifications that can be run on an associated
+   * configured table.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ConfiguredTableAssociationAnalysisRulePolicyV1">AWS
+   * API Reference</a></p>
+   */
+  class ConfiguredTableAssociationAnalysisRulePolicyV1
+  {
+  public:
+    AWS_CLEANROOMS_API ConfiguredTableAssociationAnalysisRulePolicyV1();
+    AWS_CLEANROOMS_API ConfiguredTableAssociationAnalysisRulePolicyV1(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLEANROOMS_API ConfiguredTableAssociationAnalysisRulePolicyV1& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    ///@{
+    /**
+     * <p> Analysis rule type that enables only list queries on a configured table.</p>
+     */
+    inline const ConfiguredTableAssociationAnalysisRuleList& GetList() const{ return m_list; }
+    inline bool ListHasBeenSet() const { return m_listHasBeenSet; }
+    inline void SetList(const ConfiguredTableAssociationAnalysisRuleList& value) { m_listHasBeenSet = true; m_list = value; }
+    inline void SetList(ConfiguredTableAssociationAnalysisRuleList&& value) { m_listHasBeenSet = true; m_list = std::move(value); }
+    inline ConfiguredTableAssociationAnalysisRulePolicyV1& WithList(const ConfiguredTableAssociationAnalysisRuleList& value) { SetList(value); return *this;}
+    inline ConfiguredTableAssociationAnalysisRulePolicyV1& WithList(ConfiguredTableAssociationAnalysisRuleList&& value) { SetList(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p> Analysis rule type that enables only aggregation queries on a configured
+     * table.</p>
+     */
+    inline const ConfiguredTableAssociationAnalysisRuleAggregation& GetAggregation() const{ return m_aggregation; }
+    inline bool AggregationHasBeenSet() const { return m_aggregationHasBeenSet; }
+    inline void SetAggregation(const ConfiguredTableAssociationAnalysisRuleAggregation& value) { m_aggregationHasBeenSet = true; m_aggregation = value; }
+    inline void SetAggregation(ConfiguredTableAssociationAnalysisRuleAggregation&& value) { m_aggregationHasBeenSet = true; m_aggregation = std::move(value); }
+    inline ConfiguredTableAssociationAnalysisRulePolicyV1& WithAggregation(const ConfiguredTableAssociationAnalysisRuleAggregation& value) { SetAggregation(value); return *this;}
+    inline ConfiguredTableAssociationAnalysisRulePolicyV1& WithAggregation(ConfiguredTableAssociationAnalysisRuleAggregation&& value) { SetAggregation(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p> Analysis rule type that enables the table owner to approve custom SQL
+     * queries on their configured tables. It supports differential privacy.</p>
+     */
+    inline const ConfiguredTableAssociationAnalysisRuleCustom& GetCustom() const{ return m_custom; }
+    inline bool CustomHasBeenSet() const { return m_customHasBeenSet; }
+    inline void SetCustom(const ConfiguredTableAssociationAnalysisRuleCustom& value) { m_customHasBeenSet = true; m_custom = value; }
+    inline void SetCustom(ConfiguredTableAssociationAnalysisRuleCustom&& value) { m_customHasBeenSet = true; m_custom = std::move(value); }
+    inline ConfiguredTableAssociationAnalysisRulePolicyV1& WithCustom(const ConfiguredTableAssociationAnalysisRuleCustom& value) { SetCustom(value); return *this;}
+    inline ConfiguredTableAssociationAnalysisRulePolicyV1& WithCustom(ConfiguredTableAssociationAnalysisRuleCustom&& value) { SetCustom(std::move(value)); return *this;}
+    ///@}
+  private:
+
+    ConfiguredTableAssociationAnalysisRuleList m_list;
+    bool m_listHasBeenSet = false;
+
+    ConfiguredTableAssociationAnalysisRuleAggregation m_aggregation;
+    bool m_aggregationHasBeenSet = false;
+
+    ConfiguredTableAssociationAnalysisRuleCustom m_custom;
+    bool m_customHasBeenSet = false;
+  };
+
+} // namespace Model
+} // namespace CleanRooms
+} // namespace Aws

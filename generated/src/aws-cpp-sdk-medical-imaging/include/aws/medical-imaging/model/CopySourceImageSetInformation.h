@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/medical-imaging/MedicalImaging_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/medical-imaging/model/MetadataCopies.h>
 #include <utility>
 
 namespace Aws
@@ -50,10 +51,26 @@ namespace Model
     inline CopySourceImageSetInformation& WithLatestVersionId(Aws::String&& value) { SetLatestVersionId(std::move(value)); return *this;}
     inline CopySourceImageSetInformation& WithLatestVersionId(const char* value) { SetLatestVersionId(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Contains <code>MetadataCopies</code> structure and wraps information related
+     * to specific copy use cases. For example, when copying subsets.</p>
+     */
+    inline const MetadataCopies& GetDICOMCopies() const{ return m_dICOMCopies; }
+    inline bool DICOMCopiesHasBeenSet() const { return m_dICOMCopiesHasBeenSet; }
+    inline void SetDICOMCopies(const MetadataCopies& value) { m_dICOMCopiesHasBeenSet = true; m_dICOMCopies = value; }
+    inline void SetDICOMCopies(MetadataCopies&& value) { m_dICOMCopiesHasBeenSet = true; m_dICOMCopies = std::move(value); }
+    inline CopySourceImageSetInformation& WithDICOMCopies(const MetadataCopies& value) { SetDICOMCopies(value); return *this;}
+    inline CopySourceImageSetInformation& WithDICOMCopies(MetadataCopies&& value) { SetDICOMCopies(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_latestVersionId;
     bool m_latestVersionIdHasBeenSet = false;
+
+    MetadataCopies m_dICOMCopies;
+    bool m_dICOMCopiesHasBeenSet = false;
   };
 
 } // namespace Model

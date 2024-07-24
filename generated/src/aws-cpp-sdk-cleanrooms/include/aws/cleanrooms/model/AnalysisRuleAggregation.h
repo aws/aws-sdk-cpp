@@ -7,6 +7,7 @@
 #include <aws/cleanrooms/CleanRooms_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/cleanrooms/model/JoinRequiredOption.h>
+#include <aws/cleanrooms/model/AdditionalAnalyses.h>
 #include <aws/cleanrooms/model/AggregateColumn.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/cleanrooms/model/JoinOperator.h>
@@ -147,6 +148,22 @@ namespace Model
     inline AnalysisRuleAggregation& AddOutputConstraints(const AggregationConstraint& value) { m_outputConstraintsHasBeenSet = true; m_outputConstraints.push_back(value); return *this; }
     inline AnalysisRuleAggregation& AddOutputConstraints(AggregationConstraint&& value) { m_outputConstraintsHasBeenSet = true; m_outputConstraints.push_back(std::move(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p> An indicator as to whether additional analyses (such as Clean Rooms ML) can
+     * be applied to the output of the direct query. </p> <p>The
+     * <code>additionalAnalyses</code> parameter is currently supported for the list
+     * analysis rule (<code>AnalysisRuleList</code>) and the custom analysis rule
+     * (<code>AnalysisRuleCustom</code>).</p>
+     */
+    inline const AdditionalAnalyses& GetAdditionalAnalyses() const{ return m_additionalAnalyses; }
+    inline bool AdditionalAnalysesHasBeenSet() const { return m_additionalAnalysesHasBeenSet; }
+    inline void SetAdditionalAnalyses(const AdditionalAnalyses& value) { m_additionalAnalysesHasBeenSet = true; m_additionalAnalyses = value; }
+    inline void SetAdditionalAnalyses(AdditionalAnalyses&& value) { m_additionalAnalysesHasBeenSet = true; m_additionalAnalyses = std::move(value); }
+    inline AnalysisRuleAggregation& WithAdditionalAnalyses(const AdditionalAnalyses& value) { SetAdditionalAnalyses(value); return *this;}
+    inline AnalysisRuleAggregation& WithAdditionalAnalyses(AdditionalAnalyses&& value) { SetAdditionalAnalyses(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::Vector<AggregateColumn> m_aggregateColumns;
@@ -169,6 +186,9 @@ namespace Model
 
     Aws::Vector<AggregationConstraint> m_outputConstraints;
     bool m_outputConstraintsHasBeenSet = false;
+
+    AdditionalAnalyses m_additionalAnalyses;
+    bool m_additionalAnalysesHasBeenSet = false;
   };
 
 } // namespace Model

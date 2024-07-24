@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/cleanrooms/CleanRooms_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/cleanrooms/model/AdditionalAnalyses.h>
 #include <aws/cleanrooms/model/DifferentialPrivacyConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
@@ -76,6 +77,34 @@ namespace Model
 
     ///@{
     /**
+     * <p> An indicator as to whether additional analyses (such as Clean Rooms ML) can
+     * be applied to the output of the direct query.</p>
+     */
+    inline const AdditionalAnalyses& GetAdditionalAnalyses() const{ return m_additionalAnalyses; }
+    inline bool AdditionalAnalysesHasBeenSet() const { return m_additionalAnalysesHasBeenSet; }
+    inline void SetAdditionalAnalyses(const AdditionalAnalyses& value) { m_additionalAnalysesHasBeenSet = true; m_additionalAnalyses = value; }
+    inline void SetAdditionalAnalyses(AdditionalAnalyses&& value) { m_additionalAnalysesHasBeenSet = true; m_additionalAnalyses = std::move(value); }
+    inline AnalysisRuleCustom& WithAdditionalAnalyses(const AdditionalAnalyses& value) { SetAdditionalAnalyses(value); return *this;}
+    inline AnalysisRuleCustom& WithAdditionalAnalyses(AdditionalAnalyses&& value) { SetAdditionalAnalyses(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p> A list of columns that aren't allowed to be shown in the query output.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetDisallowedOutputColumns() const{ return m_disallowedOutputColumns; }
+    inline bool DisallowedOutputColumnsHasBeenSet() const { return m_disallowedOutputColumnsHasBeenSet; }
+    inline void SetDisallowedOutputColumns(const Aws::Vector<Aws::String>& value) { m_disallowedOutputColumnsHasBeenSet = true; m_disallowedOutputColumns = value; }
+    inline void SetDisallowedOutputColumns(Aws::Vector<Aws::String>&& value) { m_disallowedOutputColumnsHasBeenSet = true; m_disallowedOutputColumns = std::move(value); }
+    inline AnalysisRuleCustom& WithDisallowedOutputColumns(const Aws::Vector<Aws::String>& value) { SetDisallowedOutputColumns(value); return *this;}
+    inline AnalysisRuleCustom& WithDisallowedOutputColumns(Aws::Vector<Aws::String>&& value) { SetDisallowedOutputColumns(std::move(value)); return *this;}
+    inline AnalysisRuleCustom& AddDisallowedOutputColumns(const Aws::String& value) { m_disallowedOutputColumnsHasBeenSet = true; m_disallowedOutputColumns.push_back(value); return *this; }
+    inline AnalysisRuleCustom& AddDisallowedOutputColumns(Aws::String&& value) { m_disallowedOutputColumnsHasBeenSet = true; m_disallowedOutputColumns.push_back(std::move(value)); return *this; }
+    inline AnalysisRuleCustom& AddDisallowedOutputColumns(const char* value) { m_disallowedOutputColumnsHasBeenSet = true; m_disallowedOutputColumns.push_back(value); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>The differential privacy configuration.</p>
      */
     inline const DifferentialPrivacyConfiguration& GetDifferentialPrivacy() const{ return m_differentialPrivacy; }
@@ -92,6 +121,12 @@ namespace Model
 
     Aws::Vector<Aws::String> m_allowedAnalysisProviders;
     bool m_allowedAnalysisProvidersHasBeenSet = false;
+
+    AdditionalAnalyses m_additionalAnalyses;
+    bool m_additionalAnalysesHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_disallowedOutputColumns;
+    bool m_disallowedOutputColumnsHasBeenSet = false;
 
     DifferentialPrivacyConfiguration m_differentialPrivacy;
     bool m_differentialPrivacyHasBeenSet = false;

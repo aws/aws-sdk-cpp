@@ -83,6 +83,21 @@ namespace Model
 
     ///@{
     /**
+     * <p>Setting this flag will force the <code>UpdateImageSetMetadata</code>
+     * operation for the following attributes:</p> <ul> <li> <p>
+     * <code>Tag.StudyInstanceUID</code>, <code>Tag.SeriesInstanceUID</code>,
+     * <code>Tag.SOPInstanceUID</code>, and <code>Tag.StudyID</code> </p> </li> <li>
+     * <p>Adding, removing, or updating private tags for an individual SOP Instance</p>
+     * </li> </ul>
+     */
+    inline bool GetForce() const{ return m_force; }
+    inline bool ForceHasBeenSet() const { return m_forceHasBeenSet; }
+    inline void SetForce(bool value) { m_forceHasBeenSet = true; m_force = value; }
+    inline UpdateImageSetMetadataRequest& WithForce(bool value) { SetForce(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Update image set metadata updates.</p>
      */
     inline const MetadataUpdates& GetUpdateImageSetMetadataUpdates() const{ return m_updateImageSetMetadataUpdates; }
@@ -102,6 +117,9 @@ namespace Model
 
     Aws::String m_latestVersionId;
     bool m_latestVersionIdHasBeenSet = false;
+
+    bool m_force;
+    bool m_forceHasBeenSet = false;
 
     MetadataUpdates m_updateImageSetMetadataUpdates;
     bool m_updateImageSetMetadataUpdatesHasBeenSet = false;

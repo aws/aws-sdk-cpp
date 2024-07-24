@@ -24,7 +24,9 @@ SchemaStatusDetail::SchemaStatusDetail() :
     m_reasonsHasBeenSet(false),
     m_analysisRuleType(AnalysisRuleType::NOT_SET),
     m_analysisRuleTypeHasBeenSet(false),
-    m_configurationsHasBeenSet(false)
+    m_configurationsHasBeenSet(false),
+    m_analysisType(AnalysisType::NOT_SET),
+    m_analysisTypeHasBeenSet(false)
 {
 }
 
@@ -70,6 +72,13 @@ SchemaStatusDetail& SchemaStatusDetail::operator =(JsonView jsonValue)
     m_configurationsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("analysisType"))
+  {
+    m_analysisType = AnalysisTypeMapper::GetAnalysisTypeForName(jsonValue.GetString("analysisType"));
+
+    m_analysisTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -107,6 +116,11 @@ JsonValue SchemaStatusDetail::Jsonize() const
    }
    payload.WithArray("configurations", std::move(configurationsJsonList));
 
+  }
+
+  if(m_analysisTypeHasBeenSet)
+  {
+   payload.WithString("analysisType", AnalysisTypeMapper::GetNameForAnalysisType(m_analysisType));
   }
 
   return payload;

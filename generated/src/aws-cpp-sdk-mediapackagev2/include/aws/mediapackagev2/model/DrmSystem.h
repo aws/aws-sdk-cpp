@@ -19,7 +19,8 @@ namespace Model
     CLEAR_KEY_AES_128,
     FAIRPLAY,
     PLAYREADY,
-    WIDEVINE
+    WIDEVINE,
+    IRDETO
   };
 
 namespace DrmSystemMapper

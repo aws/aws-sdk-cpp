@@ -109,7 +109,7 @@ namespace Model
     ///@{
     /**
      * <p>An object that contains information about an event destination for logging to
-     * Kinesis Data Firehose.</p>
+     * Firehose.</p>
      */
     inline const KinesisFirehoseDestination& GetKinesisFirehoseDestination() const{ return m_kinesisFirehoseDestination; }
     inline bool KinesisFirehoseDestinationHasBeenSet() const { return m_kinesisFirehoseDestinationHasBeenSet; }

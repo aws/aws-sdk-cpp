@@ -73,8 +73,8 @@ namespace Model
     ///@{
     /**
      * <p>An array of event types that determine which events to log. If "ALL" is used,
-     * then Amazon Pinpoint logs every event type.</p>  <p>The
-     * <code>TEXT_SENT</code> event type is not supported.</p> 
+     * then AWS End User Messaging SMS and Voice logs every event type.</p> 
+     * <p>The <code>TEXT_SENT</code> event type is not supported.</p> 
      */
     inline const Aws::Vector<EventType>& GetMatchingEventTypes() const{ return m_matchingEventTypes; }
     inline bool MatchingEventTypesHasBeenSet() const { return m_matchingEventTypesHasBeenSet; }
@@ -102,7 +102,7 @@ namespace Model
     ///@{
     /**
      * <p>An object that contains information about an event destination for logging to
-     * Amazon Kinesis Data Firehose.</p>
+     * Amazon Data Firehose.</p>
      */
     inline const KinesisFirehoseDestination& GetKinesisFirehoseDestination() const{ return m_kinesisFirehoseDestination; }
     inline bool KinesisFirehoseDestinationHasBeenSet() const { return m_kinesisFirehoseDestinationHasBeenSet; }

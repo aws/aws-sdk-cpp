@@ -57,7 +57,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>A unique, friendly name for the asset model.</p>
+     * <p>A unique name for the asset model.</p>
      */
     inline const Aws::String& GetAssetModelName() const{ return m_assetModelName; }
     inline bool AssetModelNameHasBeenSet() const { return m_assetModelNameHasBeenSet; }
@@ -133,7 +133,10 @@ namespace Model
      * composite models to define alarms on this asset model.</p>  <p>When
      * creating custom composite models, you need to use <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModelCompositeModel.html">CreateAssetModelCompositeModel</a>.
-     * For more information, see &lt;LINK&gt;.</p> 
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-custom-composite-models.html">Creating
+     * custom composite models (Components)</a> in the <i>IoT SiteWise User
+     * Guide</i>.</p> 
      */
     inline const Aws::Vector<AssetModelCompositeModel>& GetAssetModelCompositeModels() const{ return m_assetModelCompositeModels; }
     inline bool AssetModelCompositeModelsHasBeenSet() const { return m_assetModelCompositeModelsHasBeenSet; }
