@@ -84,6 +84,21 @@ namespace Model
 
     ///@{
     /**
+     * <p>The IP address type that the workgroup supports. Possible values are
+     * <code>ipv4</code> and <code>dualstack</code>.</p>
+     */
+    inline const Aws::String& GetIpAddressType() const{ return m_ipAddressType; }
+    inline bool IpAddressTypeHasBeenSet() const { return m_ipAddressTypeHasBeenSet; }
+    inline void SetIpAddressType(const Aws::String& value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = value; }
+    inline void SetIpAddressType(Aws::String&& value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = std::move(value); }
+    inline void SetIpAddressType(const char* value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType.assign(value); }
+    inline CreateWorkgroupRequest& WithIpAddressType(const Aws::String& value) { SetIpAddressType(value); return *this;}
+    inline CreateWorkgroupRequest& WithIpAddressType(Aws::String&& value) { SetIpAddressType(std::move(value)); return *this;}
+    inline CreateWorkgroupRequest& WithIpAddressType(const char* value) { SetIpAddressType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The maximum data-warehouse capacity Amazon Redshift Serverless uses to serve
      * queries. The max capacity is specified in RPUs.</p>
      */
@@ -196,6 +211,9 @@ namespace Model
 
     bool m_enhancedVpcRouting;
     bool m_enhancedVpcRoutingHasBeenSet = false;
+
+    Aws::String m_ipAddressType;
+    bool m_ipAddressTypeHasBeenSet = false;
 
     int m_maxCapacity;
     bool m_maxCapacityHasBeenSet = false;

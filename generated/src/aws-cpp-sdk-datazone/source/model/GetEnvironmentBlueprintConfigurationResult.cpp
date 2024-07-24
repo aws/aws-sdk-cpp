@@ -62,6 +62,15 @@ GetEnvironmentBlueprintConfigurationResult& GetEnvironmentBlueprintConfiguration
 
   }
 
+  if(jsonValue.ValueExists("provisioningConfigurations"))
+  {
+    Aws::Utils::Array<JsonView> provisioningConfigurationsJsonList = jsonValue.GetArray("provisioningConfigurations");
+    for(unsigned provisioningConfigurationsIndex = 0; provisioningConfigurationsIndex < provisioningConfigurationsJsonList.GetLength(); ++provisioningConfigurationsIndex)
+    {
+      m_provisioningConfigurations.push_back(provisioningConfigurationsJsonList[provisioningConfigurationsIndex].AsObject());
+    }
+  }
+
   if(jsonValue.ValueExists("provisioningRoleArn"))
   {
     m_provisioningRoleArn = jsonValue.GetString("provisioningRoleArn");

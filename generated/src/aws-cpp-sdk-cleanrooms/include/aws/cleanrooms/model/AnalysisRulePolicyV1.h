@@ -8,6 +8,7 @@
 #include <aws/cleanrooms/model/AnalysisRuleList.h>
 #include <aws/cleanrooms/model/AnalysisRuleAggregation.h>
 #include <aws/cleanrooms/model/AnalysisRuleCustom.h>
+#include <aws/cleanrooms/model/AnalysisRuleIdMappingTable.h>
 #include <utility>
 
 namespace Aws
@@ -76,6 +77,18 @@ namespace Model
     inline AnalysisRulePolicyV1& WithCustom(const AnalysisRuleCustom& value) { SetCustom(value); return *this;}
     inline AnalysisRulePolicyV1& WithCustom(AnalysisRuleCustom&& value) { SetCustom(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The ID mapping table.</p>
+     */
+    inline const AnalysisRuleIdMappingTable& GetIdMappingTable() const{ return m_idMappingTable; }
+    inline bool IdMappingTableHasBeenSet() const { return m_idMappingTableHasBeenSet; }
+    inline void SetIdMappingTable(const AnalysisRuleIdMappingTable& value) { m_idMappingTableHasBeenSet = true; m_idMappingTable = value; }
+    inline void SetIdMappingTable(AnalysisRuleIdMappingTable&& value) { m_idMappingTableHasBeenSet = true; m_idMappingTable = std::move(value); }
+    inline AnalysisRulePolicyV1& WithIdMappingTable(const AnalysisRuleIdMappingTable& value) { SetIdMappingTable(value); return *this;}
+    inline AnalysisRulePolicyV1& WithIdMappingTable(AnalysisRuleIdMappingTable&& value) { SetIdMappingTable(std::move(value)); return *this;}
+    ///@}
   private:
 
     AnalysisRuleList m_list;
@@ -86,6 +99,9 @@ namespace Model
 
     AnalysisRuleCustom m_custom;
     bool m_customHasBeenSet = false;
+
+    AnalysisRuleIdMappingTable m_idMappingTable;
+    bool m_idMappingTableHasBeenSet = false;
   };
 
 } // namespace Model

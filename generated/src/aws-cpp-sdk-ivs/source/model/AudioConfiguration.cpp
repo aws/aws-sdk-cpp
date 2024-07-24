@@ -19,13 +19,13 @@ namespace Model
 {
 
 AudioConfiguration::AudioConfiguration() : 
-    m_channels(0),
-    m_channelsHasBeenSet(false),
     m_codecHasBeenSet(false),
+    m_targetBitrate(0),
+    m_targetBitrateHasBeenSet(false),
     m_sampleRate(0),
     m_sampleRateHasBeenSet(false),
-    m_targetBitrate(0),
-    m_targetBitrateHasBeenSet(false)
+    m_channels(0),
+    m_channelsHasBeenSet(false)
 {
 }
 
@@ -37,25 +37,11 @@ AudioConfiguration::AudioConfiguration(JsonView jsonValue)
 
 AudioConfiguration& AudioConfiguration::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("channels"))
-  {
-    m_channels = jsonValue.GetInt64("channels");
-
-    m_channelsHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("codec"))
   {
     m_codec = jsonValue.GetString("codec");
 
     m_codecHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("sampleRate"))
-  {
-    m_sampleRate = jsonValue.GetInt64("sampleRate");
-
-    m_sampleRateHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("targetBitrate"))
@@ -65,6 +51,20 @@ AudioConfiguration& AudioConfiguration::operator =(JsonView jsonValue)
     m_targetBitrateHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("sampleRate"))
+  {
+    m_sampleRate = jsonValue.GetInt64("sampleRate");
+
+    m_sampleRateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("channels"))
+  {
+    m_channels = jsonValue.GetInt64("channels");
+
+    m_channelsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -72,15 +72,15 @@ JsonValue AudioConfiguration::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_channelsHasBeenSet)
-  {
-   payload.WithInt64("channels", m_channels);
-
-  }
-
   if(m_codecHasBeenSet)
   {
    payload.WithString("codec", m_codec);
+
+  }
+
+  if(m_targetBitrateHasBeenSet)
+  {
+   payload.WithInt64("targetBitrate", m_targetBitrate);
 
   }
 
@@ -90,9 +90,9 @@ JsonValue AudioConfiguration::Jsonize() const
 
   }
 
-  if(m_targetBitrateHasBeenSet)
+  if(m_channelsHasBeenSet)
   {
-   payload.WithInt64("targetBitrate", m_targetBitrate);
+   payload.WithInt64("channels", m_channels);
 
   }
 

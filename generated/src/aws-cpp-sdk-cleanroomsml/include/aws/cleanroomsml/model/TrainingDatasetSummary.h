@@ -54,16 +54,28 @@ namespace Model
 
     ///@{
     /**
-     * <p>The description of the training dataset.</p>
+     * <p>The most recent time at which the training dataset was updated.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline TrainingDatasetSummary& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline TrainingDatasetSummary& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline TrainingDatasetSummary& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline const Aws::Utils::DateTime& GetUpdateTime() const{ return m_updateTime; }
+    inline bool UpdateTimeHasBeenSet() const { return m_updateTimeHasBeenSet; }
+    inline void SetUpdateTime(const Aws::Utils::DateTime& value) { m_updateTimeHasBeenSet = true; m_updateTime = value; }
+    inline void SetUpdateTime(Aws::Utils::DateTime&& value) { m_updateTimeHasBeenSet = true; m_updateTime = std::move(value); }
+    inline TrainingDatasetSummary& WithUpdateTime(const Aws::Utils::DateTime& value) { SetUpdateTime(value); return *this;}
+    inline TrainingDatasetSummary& WithUpdateTime(Aws::Utils::DateTime&& value) { SetUpdateTime(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The Amazon Resource Name (ARN) of the training dataset.</p>
+     */
+    inline const Aws::String& GetTrainingDatasetArn() const{ return m_trainingDatasetArn; }
+    inline bool TrainingDatasetArnHasBeenSet() const { return m_trainingDatasetArnHasBeenSet; }
+    inline void SetTrainingDatasetArn(const Aws::String& value) { m_trainingDatasetArnHasBeenSet = true; m_trainingDatasetArn = value; }
+    inline void SetTrainingDatasetArn(Aws::String&& value) { m_trainingDatasetArnHasBeenSet = true; m_trainingDatasetArn = std::move(value); }
+    inline void SetTrainingDatasetArn(const char* value) { m_trainingDatasetArnHasBeenSet = true; m_trainingDatasetArn.assign(value); }
+    inline TrainingDatasetSummary& WithTrainingDatasetArn(const Aws::String& value) { SetTrainingDatasetArn(value); return *this;}
+    inline TrainingDatasetSummary& WithTrainingDatasetArn(Aws::String&& value) { SetTrainingDatasetArn(std::move(value)); return *this;}
+    inline TrainingDatasetSummary& WithTrainingDatasetArn(const char* value) { SetTrainingDatasetArn(value); return *this;}
     ///@}
 
     ///@{
@@ -94,36 +106,27 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of the training dataset.</p>
+     * <p>The description of the training dataset.</p>
      */
-    inline const Aws::String& GetTrainingDatasetArn() const{ return m_trainingDatasetArn; }
-    inline bool TrainingDatasetArnHasBeenSet() const { return m_trainingDatasetArnHasBeenSet; }
-    inline void SetTrainingDatasetArn(const Aws::String& value) { m_trainingDatasetArnHasBeenSet = true; m_trainingDatasetArn = value; }
-    inline void SetTrainingDatasetArn(Aws::String&& value) { m_trainingDatasetArnHasBeenSet = true; m_trainingDatasetArn = std::move(value); }
-    inline void SetTrainingDatasetArn(const char* value) { m_trainingDatasetArnHasBeenSet = true; m_trainingDatasetArn.assign(value); }
-    inline TrainingDatasetSummary& WithTrainingDatasetArn(const Aws::String& value) { SetTrainingDatasetArn(value); return *this;}
-    inline TrainingDatasetSummary& WithTrainingDatasetArn(Aws::String&& value) { SetTrainingDatasetArn(std::move(value)); return *this;}
-    inline TrainingDatasetSummary& WithTrainingDatasetArn(const char* value) { SetTrainingDatasetArn(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The most recent time at which the training dataset was updated.</p>
-     */
-    inline const Aws::Utils::DateTime& GetUpdateTime() const{ return m_updateTime; }
-    inline bool UpdateTimeHasBeenSet() const { return m_updateTimeHasBeenSet; }
-    inline void SetUpdateTime(const Aws::Utils::DateTime& value) { m_updateTimeHasBeenSet = true; m_updateTime = value; }
-    inline void SetUpdateTime(Aws::Utils::DateTime&& value) { m_updateTimeHasBeenSet = true; m_updateTime = std::move(value); }
-    inline TrainingDatasetSummary& WithUpdateTime(const Aws::Utils::DateTime& value) { SetUpdateTime(value); return *this;}
-    inline TrainingDatasetSummary& WithUpdateTime(Aws::Utils::DateTime&& value) { SetUpdateTime(std::move(value)); return *this;}
+    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
+    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
+    inline TrainingDatasetSummary& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+    inline TrainingDatasetSummary& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
+    inline TrainingDatasetSummary& WithDescription(const char* value) { SetDescription(value); return *this;}
     ///@}
   private:
 
     Aws::Utils::DateTime m_createTime;
     bool m_createTimeHasBeenSet = false;
 
-    Aws::String m_description;
-    bool m_descriptionHasBeenSet = false;
+    Aws::Utils::DateTime m_updateTime;
+    bool m_updateTimeHasBeenSet = false;
+
+    Aws::String m_trainingDatasetArn;
+    bool m_trainingDatasetArnHasBeenSet = false;
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
@@ -131,11 +134,8 @@ namespace Model
     TrainingDatasetStatus m_status;
     bool m_statusHasBeenSet = false;
 
-    Aws::String m_trainingDatasetArn;
-    bool m_trainingDatasetArnHasBeenSet = false;
-
-    Aws::Utils::DateTime m_updateTime;
-    bool m_updateTimeHasBeenSet = false;
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -13,13 +13,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 StartAudienceGenerationJobRequest::StartAudienceGenerationJobRequest() : 
-    m_collaborationIdHasBeenSet(false),
+    m_nameHasBeenSet(false),
     m_configuredAudienceModelArnHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
+    m_seedAudienceHasBeenSet(false),
     m_includeSeedInOutput(false),
     m_includeSeedInOutputHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_seedAudienceHasBeenSet(false),
+    m_collaborationIdHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -28,9 +28,9 @@ Aws::String StartAudienceGenerationJobRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_collaborationIdHasBeenSet)
+  if(m_nameHasBeenSet)
   {
-   payload.WithString("collaborationId", m_collaborationId);
+   payload.WithString("name", m_name);
 
   }
 
@@ -40,9 +40,9 @@ Aws::String StartAudienceGenerationJobRequest::SerializePayload() const
 
   }
 
-  if(m_descriptionHasBeenSet)
+  if(m_seedAudienceHasBeenSet)
   {
-   payload.WithString("description", m_description);
+   payload.WithObject("seedAudience", m_seedAudience.Jsonize());
 
   }
 
@@ -52,15 +52,15 @@ Aws::String StartAudienceGenerationJobRequest::SerializePayload() const
 
   }
 
-  if(m_nameHasBeenSet)
+  if(m_collaborationIdHasBeenSet)
   {
-   payload.WithString("name", m_name);
+   payload.WithString("collaborationId", m_collaborationId);
 
   }
 
-  if(m_seedAudienceHasBeenSet)
+  if(m_descriptionHasBeenSet)
   {
-   payload.WithObject("seedAudience", m_seedAudience.Jsonize());
+   payload.WithString("description", m_description);
 
   }
 

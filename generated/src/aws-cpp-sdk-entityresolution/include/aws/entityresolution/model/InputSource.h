@@ -54,7 +54,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>An Glue table ARN for the input source table.</p>
+     * <p>An Glue table Amazon Resource Name (ARN) for the input source table.</p>
      */
     inline const Aws::String& GetInputSourceARN() const{ return m_inputSourceARN; }
     inline bool InputSourceARNHasBeenSet() const { return m_inputSourceARNHasBeenSet; }

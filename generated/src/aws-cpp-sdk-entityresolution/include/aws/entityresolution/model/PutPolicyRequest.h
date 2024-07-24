@@ -49,7 +49,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>The resource-based policy.</p>
+     * <p>The resource-based policy.</p>  <p>If you set the value of the
+     * <code>effect</code> parameter in the <code>policy</code> to <code>Deny</code>
+     * for the <code>PutPolicy</code> operation, you must also set the value of the
+     * <code>effect</code> parameter to <code>Deny</code> for the
+     * <code>AddPolicyStatement</code> operation.</p> 
      */
     inline const Aws::String& GetPolicy() const{ return m_policy; }
     inline bool PolicyHasBeenSet() const { return m_policyHasBeenSet; }

@@ -42,6 +42,21 @@ namespace Model
 
     ///@{
     /**
+     * <p>Indicates to the decoder the requirements for decoding the stream. For
+     * definitions of the valid values, see the H.264 specification.</p>
+     */
+    inline const Aws::String& GetAvcProfile() const{ return m_avcProfile; }
+    inline bool AvcProfileHasBeenSet() const { return m_avcProfileHasBeenSet; }
+    inline void SetAvcProfile(const Aws::String& value) { m_avcProfileHasBeenSet = true; m_avcProfile = value; }
+    inline void SetAvcProfile(Aws::String&& value) { m_avcProfileHasBeenSet = true; m_avcProfile = std::move(value); }
+    inline void SetAvcProfile(const char* value) { m_avcProfileHasBeenSet = true; m_avcProfile.assign(value); }
+    inline VideoConfiguration& WithAvcProfile(const Aws::String& value) { SetAvcProfile(value); return *this;}
+    inline VideoConfiguration& WithAvcProfile(Aws::String&& value) { SetAvcProfile(std::move(value)); return *this;}
+    inline VideoConfiguration& WithAvcProfile(const char* value) { SetAvcProfile(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Indicates the degree of required decoder performance for a profile. Normally
      * this is set automatically by the encoder. For details, see the H.264
      * specification.</p>
@@ -54,21 +69,6 @@ namespace Model
     inline VideoConfiguration& WithAvcLevel(const Aws::String& value) { SetAvcLevel(value); return *this;}
     inline VideoConfiguration& WithAvcLevel(Aws::String&& value) { SetAvcLevel(std::move(value)); return *this;}
     inline VideoConfiguration& WithAvcLevel(const char* value) { SetAvcLevel(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Indicates to the decoder the requirements for decoding the stream. For
-     * definitions of the valid values, see the H.264 specification.</p>
-     */
-    inline const Aws::String& GetAvcProfile() const{ return m_avcProfile; }
-    inline bool AvcProfileHasBeenSet() const { return m_avcProfileHasBeenSet; }
-    inline void SetAvcProfile(const Aws::String& value) { m_avcProfileHasBeenSet = true; m_avcProfile = value; }
-    inline void SetAvcProfile(Aws::String&& value) { m_avcProfileHasBeenSet = true; m_avcProfile = std::move(value); }
-    inline void SetAvcProfile(const char* value) { m_avcProfileHasBeenSet = true; m_avcProfile.assign(value); }
-    inline VideoConfiguration& WithAvcProfile(const Aws::String& value) { SetAvcProfile(value); return *this;}
-    inline VideoConfiguration& WithAvcProfile(Aws::String&& value) { SetAvcProfile(std::move(value)); return *this;}
-    inline VideoConfiguration& WithAvcProfile(const char* value) { SetAvcProfile(value); return *this;}
     ///@}
 
     ///@{
@@ -141,11 +141,11 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_avcLevel;
-    bool m_avcLevelHasBeenSet = false;
-
     Aws::String m_avcProfile;
     bool m_avcProfileHasBeenSet = false;
+
+    Aws::String m_avcLevel;
+    bool m_avcLevelHasBeenSet = false;
 
     Aws::String m_codec;
     bool m_codecHasBeenSet = false;

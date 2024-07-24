@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/ivs/IVS_EXPORTS.h>
 #include <aws/ivs/IVSRequest.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -32,6 +32,20 @@ namespace Model
 
     AWS_IVS_API Aws::String SerializePayload() const override;
 
+
+    ///@{
+    /**
+     * <p>ARN of the playback-restriction-policy to be updated.</p>
+     */
+    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
+    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
+    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
+    inline UpdatePlaybackRestrictionPolicyRequest& WithArn(const Aws::String& value) { SetArn(value); return *this;}
+    inline UpdatePlaybackRestrictionPolicyRequest& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
+    inline UpdatePlaybackRestrictionPolicyRequest& WithArn(const char* value) { SetArn(value); return *this;}
+    ///@}
 
     ///@{
     /**
@@ -71,20 +85,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>ARN of the playback-restriction-policy to be updated.</p>
-     */
-    inline const Aws::String& GetArn() const{ return m_arn; }
-    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline UpdatePlaybackRestrictionPolicyRequest& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline UpdatePlaybackRestrictionPolicyRequest& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline UpdatePlaybackRestrictionPolicyRequest& WithArn(const char* value) { SetArn(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Whether channel playback is constrained by origin site. Default:
      * <code>false</code>.</p>
      */
@@ -109,14 +109,14 @@ namespace Model
     ///@}
   private:
 
+    Aws::String m_arn;
+    bool m_arnHasBeenSet = false;
+
     Aws::Vector<Aws::String> m_allowedCountries;
     bool m_allowedCountriesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_allowedOrigins;
     bool m_allowedOriginsHasBeenSet = false;
-
-    Aws::String m_arn;
-    bool m_arnHasBeenSet = false;
 
     bool m_enableStrictOriginEnforcement;
     bool m_enableStrictOriginEnforcementHasBeenSet = false;

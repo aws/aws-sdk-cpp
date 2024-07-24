@@ -16,7 +16,8 @@ namespace Model
   enum class SchemaType
   {
     NOT_SET,
-    TABLE
+    TABLE,
+    ID_MAPPING_TABLE
   };
 
 namespace SchemaTypeMapper

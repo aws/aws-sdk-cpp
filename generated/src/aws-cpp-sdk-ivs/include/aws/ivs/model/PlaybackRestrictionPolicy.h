@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/ivs/IVS_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
@@ -42,6 +42,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>Playback-restriction-policy ARN</p>
+     */
+    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
+    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
+    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
+    inline PlaybackRestrictionPolicy& WithArn(const Aws::String& value) { SetArn(value); return *this;}
+    inline PlaybackRestrictionPolicy& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
+    inline PlaybackRestrictionPolicy& WithArn(const char* value) { SetArn(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>A list of country codes that control geoblocking restriction. Allowed values
      * are the officially assigned <a
      * href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO 3166-1 alpha-2</a>
@@ -74,20 +88,6 @@ namespace Model
     inline PlaybackRestrictionPolicy& AddAllowedOrigins(const Aws::String& value) { m_allowedOriginsHasBeenSet = true; m_allowedOrigins.push_back(value); return *this; }
     inline PlaybackRestrictionPolicy& AddAllowedOrigins(Aws::String&& value) { m_allowedOriginsHasBeenSet = true; m_allowedOrigins.push_back(std::move(value)); return *this; }
     inline PlaybackRestrictionPolicy& AddAllowedOrigins(const char* value) { m_allowedOriginsHasBeenSet = true; m_allowedOrigins.push_back(value); return *this; }
-    ///@}
-
-    ///@{
-    /**
-     * <p>Playback-restriction-policy ARN</p>
-     */
-    inline const Aws::String& GetArn() const{ return m_arn; }
-    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline PlaybackRestrictionPolicy& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline PlaybackRestrictionPolicy& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline PlaybackRestrictionPolicy& WithArn(const char* value) { SetArn(value); return *this;}
     ///@}
 
     ///@{
@@ -140,14 +140,14 @@ namespace Model
     ///@}
   private:
 
+    Aws::String m_arn;
+    bool m_arnHasBeenSet = false;
+
     Aws::Vector<Aws::String> m_allowedCountries;
     bool m_allowedCountriesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_allowedOrigins;
     bool m_allowedOriginsHasBeenSet = false;
-
-    Aws::String m_arn;
-    bool m_arnHasBeenSet = false;
 
     bool m_enableStrictOriginEnforcement;
     bool m_enableStrictOriginEnforcementHasBeenSet = false;

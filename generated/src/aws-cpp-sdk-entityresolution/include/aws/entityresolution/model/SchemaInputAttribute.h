@@ -26,7 +26,7 @@ namespace Model
 
   /**
    * <p>An object containing <code>FieldName</code>, <code>Type</code>,
-   * <code>GroupName</code>, <code>MatchKey</code>, and
+   * <code>GroupName</code>, <code>MatchKey</code>, <code>Hashing</code>, and
    * <code>SubType</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/SchemaInputAttribute">AWS
    * API Reference</a></p>
@@ -74,12 +74,24 @@ namespace Model
 
     ///@{
     /**
+     * <p> Indicates if the column values are hashed in the schema input. If the value
+     * is set to <code>TRUE</code>, the column values are hashed. If the value is set
+     * to <code>FALSE</code>, the column values are cleartext.</p>
+     */
+    inline bool GetHashed() const{ return m_hashed; }
+    inline bool HashedHasBeenSet() const { return m_hashedHasBeenSet; }
+    inline void SetHashed(bool value) { m_hashedHasBeenSet = true; m_hashed = value; }
+    inline SchemaInputAttribute& WithHashed(bool value) { SetHashed(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>A key that allows grouping of multiple input attributes into a unified
-     * matching group. For example, consider a scenario where the source table contains
-     * various addresses, such as <code>business_address</code> and
+     * matching group. </p> <p>For example, consider a scenario where the source table
+     * contains various addresses, such as <code>business_address</code> and
      * <code>shipping_address</code>. By assigning a <code>matchKey</code> called
      * <code>address</code> to both attributes, Entity Resolution will match records
-     * across these fields to create a consolidated matching group. If no
+     * across these fields to create a consolidated matching group.</p> <p>If no
      * <code>matchKey</code> is specified for a column, it won't be utilized for
      * matching purposes but will still be included in the output table.</p>
      */
@@ -125,6 +137,9 @@ namespace Model
 
     Aws::String m_groupName;
     bool m_groupNameHasBeenSet = false;
+
+    bool m_hashed;
+    bool m_hashedHasBeenSet = false;
 
     Aws::String m_matchKey;
     bool m_matchKeyHasBeenSet = false;

@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/cleanrooms/model/SchemaType.h>
+#include <aws/cleanrooms/model/SchemaTypeProperties.h>
 #include <aws/cleanrooms/model/Column.h>
 #include <aws/cleanrooms/model/AnalysisRuleType.h>
 #include <aws/cleanrooms/model/SchemaStatusDetail.h>
@@ -46,7 +47,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The columns for the relation this schema represents.</p>
+     * <p>The columns for the relation that this schema represents.</p>
      */
     inline const Aws::Vector<Column>& GetColumns() const{ return m_columns; }
     inline bool ColumnsHasBeenSet() const { return m_columnsHasBeenSet; }
@@ -74,8 +75,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The analysis rule types associated with the schema. Currently, only one entry
-     * is present.</p>
+     * <p>The analysis rule types that are associated with the schema. Currently, only
+     * one entry is present.</p>
      */
     inline const Aws::Vector<AnalysisRuleType>& GetAnalysisRuleTypes() const{ return m_analysisRuleTypes; }
     inline bool AnalysisRuleTypesHasBeenSet() const { return m_analysisRuleTypesHasBeenSet; }
@@ -90,7 +91,7 @@ namespace Model
     ///@{
     /**
      * <p>The analysis method for the schema. The only valid value is currently
-     * DIRECT_QUERY.</p>
+     * <code>DIRECT_QUERY</code>.</p>
      */
     inline const AnalysisMethod& GetAnalysisMethod() const{ return m_analysisMethod; }
     inline bool AnalysisMethodHasBeenSet() const { return m_analysisMethodHasBeenSet; }
@@ -146,7 +147,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The unique ARN for the collaboration that the schema belongs to.</p>
+     * <p>The unique Amazon Resource Name (ARN) for the collaboration that the schema
+     * belongs to.</p>
      */
     inline const Aws::String& GetCollaborationArn() const{ return m_collaborationArn; }
     inline bool CollaborationArnHasBeenSet() const { return m_collaborationArnHasBeenSet; }
@@ -174,7 +176,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The time the schema was created.</p>
+     * <p>The time at which the schema was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreateTime() const{ return m_createTime; }
     inline bool CreateTimeHasBeenSet() const { return m_createTimeHasBeenSet; }
@@ -186,7 +188,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The time the schema was last updated.</p>
+     * <p>The most recent time at which the schema was updated.</p>
      */
     inline const Aws::Utils::DateTime& GetUpdateTime() const{ return m_updateTime; }
     inline bool UpdateTimeHasBeenSet() const { return m_updateTimeHasBeenSet; }
@@ -198,7 +200,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The type of schema. The only valid value is currently `TABLE`.</p>
+     * <p>The type of schema.</p>
      */
     inline const SchemaType& GetType() const{ return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
@@ -221,6 +223,18 @@ namespace Model
     inline Schema& WithSchemaStatusDetails(Aws::Vector<SchemaStatusDetail>&& value) { SetSchemaStatusDetails(std::move(value)); return *this;}
     inline Schema& AddSchemaStatusDetails(const SchemaStatusDetail& value) { m_schemaStatusDetailsHasBeenSet = true; m_schemaStatusDetails.push_back(value); return *this; }
     inline Schema& AddSchemaStatusDetails(SchemaStatusDetail&& value) { m_schemaStatusDetailsHasBeenSet = true; m_schemaStatusDetails.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>The schema type properties.</p>
+     */
+    inline const SchemaTypeProperties& GetSchemaTypeProperties() const{ return m_schemaTypeProperties; }
+    inline bool SchemaTypePropertiesHasBeenSet() const { return m_schemaTypePropertiesHasBeenSet; }
+    inline void SetSchemaTypeProperties(const SchemaTypeProperties& value) { m_schemaTypePropertiesHasBeenSet = true; m_schemaTypeProperties = value; }
+    inline void SetSchemaTypeProperties(SchemaTypeProperties&& value) { m_schemaTypePropertiesHasBeenSet = true; m_schemaTypeProperties = std::move(value); }
+    inline Schema& WithSchemaTypeProperties(const SchemaTypeProperties& value) { SetSchemaTypeProperties(value); return *this;}
+    inline Schema& WithSchemaTypeProperties(SchemaTypeProperties&& value) { SetSchemaTypeProperties(std::move(value)); return *this;}
     ///@}
   private:
 
@@ -262,6 +276,9 @@ namespace Model
 
     Aws::Vector<SchemaStatusDetail> m_schemaStatusDetails;
     bool m_schemaStatusDetailsHasBeenSet = false;
+
+    SchemaTypeProperties m_schemaTypeProperties;
+    bool m_schemaTypePropertiesHasBeenSet = false;
   };
 
 } // namespace Model

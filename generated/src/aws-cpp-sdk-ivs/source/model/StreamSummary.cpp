@@ -20,14 +20,14 @@ namespace Model
 
 StreamSummary::StreamSummary() : 
     m_channelArnHasBeenSet(false),
-    m_health(StreamHealth::NOT_SET),
-    m_healthHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
+    m_streamIdHasBeenSet(false),
     m_state(StreamState::NOT_SET),
     m_stateHasBeenSet(false),
-    m_streamIdHasBeenSet(false),
+    m_health(StreamHealth::NOT_SET),
+    m_healthHasBeenSet(false),
     m_viewerCount(0),
-    m_viewerCountHasBeenSet(false)
+    m_viewerCountHasBeenSet(false),
+    m_startTimeHasBeenSet(false)
 {
 }
 
@@ -46,18 +46,11 @@ StreamSummary& StreamSummary::operator =(JsonView jsonValue)
     m_channelArnHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("health"))
+  if(jsonValue.ValueExists("streamId"))
   {
-    m_health = StreamHealthMapper::GetStreamHealthForName(jsonValue.GetString("health"));
+    m_streamId = jsonValue.GetString("streamId");
 
-    m_healthHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("startTime"))
-  {
-    m_startTime = jsonValue.GetString("startTime");
-
-    m_startTimeHasBeenSet = true;
+    m_streamIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("state"))
@@ -67,11 +60,11 @@ StreamSummary& StreamSummary::operator =(JsonView jsonValue)
     m_stateHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("streamId"))
+  if(jsonValue.ValueExists("health"))
   {
-    m_streamId = jsonValue.GetString("streamId");
+    m_health = StreamHealthMapper::GetStreamHealthForName(jsonValue.GetString("health"));
 
-    m_streamIdHasBeenSet = true;
+    m_healthHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("viewerCount"))
@@ -79,6 +72,13 @@ StreamSummary& StreamSummary::operator =(JsonView jsonValue)
     m_viewerCount = jsonValue.GetInt64("viewerCount");
 
     m_viewerCountHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("startTime"))
+  {
+    m_startTime = jsonValue.GetString("startTime");
+
+    m_startTimeHasBeenSet = true;
   }
 
   return *this;
@@ -94,14 +94,10 @@ JsonValue StreamSummary::Jsonize() const
 
   }
 
-  if(m_healthHasBeenSet)
+  if(m_streamIdHasBeenSet)
   {
-   payload.WithString("health", StreamHealthMapper::GetNameForStreamHealth(m_health));
-  }
+   payload.WithString("streamId", m_streamId);
 
-  if(m_startTimeHasBeenSet)
-  {
-   payload.WithString("startTime", m_startTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_stateHasBeenSet)
@@ -109,16 +105,20 @@ JsonValue StreamSummary::Jsonize() const
    payload.WithString("state", StreamStateMapper::GetNameForStreamState(m_state));
   }
 
-  if(m_streamIdHasBeenSet)
+  if(m_healthHasBeenSet)
   {
-   payload.WithString("streamId", m_streamId);
-
+   payload.WithString("health", StreamHealthMapper::GetNameForStreamHealth(m_health));
   }
 
   if(m_viewerCountHasBeenSet)
   {
    payload.WithInt64("viewerCount", m_viewerCount);
 
+  }
+
+  if(m_startTimeHasBeenSet)
+  {
+   payload.WithString("startTime", m_startTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload;

@@ -19,11 +19,11 @@ namespace Model
 {
 
 StreamSessionSummary::StreamSessionSummary() : 
+    m_streamIdHasBeenSet(false),
+    m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
     m_hasErrorEvent(false),
-    m_hasErrorEventHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_streamIdHasBeenSet(false)
+    m_hasErrorEventHasBeenSet(false)
 {
 }
 
@@ -35,6 +35,20 @@ StreamSessionSummary::StreamSessionSummary(JsonView jsonValue)
 
 StreamSessionSummary& StreamSessionSummary::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("streamId"))
+  {
+    m_streamId = jsonValue.GetString("streamId");
+
+    m_streamIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("startTime"))
+  {
+    m_startTime = jsonValue.GetString("startTime");
+
+    m_startTimeHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("endTime"))
   {
     m_endTime = jsonValue.GetString("endTime");
@@ -49,26 +63,23 @@ StreamSessionSummary& StreamSessionSummary::operator =(JsonView jsonValue)
     m_hasErrorEventHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("startTime"))
-  {
-    m_startTime = jsonValue.GetString("startTime");
-
-    m_startTimeHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("streamId"))
-  {
-    m_streamId = jsonValue.GetString("streamId");
-
-    m_streamIdHasBeenSet = true;
-  }
-
   return *this;
 }
 
 JsonValue StreamSessionSummary::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_streamIdHasBeenSet)
+  {
+   payload.WithString("streamId", m_streamId);
+
+  }
+
+  if(m_startTimeHasBeenSet)
+  {
+   payload.WithString("startTime", m_startTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
 
   if(m_endTimeHasBeenSet)
   {
@@ -78,17 +89,6 @@ JsonValue StreamSessionSummary::Jsonize() const
   if(m_hasErrorEventHasBeenSet)
   {
    payload.WithBool("hasErrorEvent", m_hasErrorEvent);
-
-  }
-
-  if(m_startTimeHasBeenSet)
-  {
-   payload.WithString("startTime", m_startTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-  }
-
-  if(m_streamIdHasBeenSet)
-  {
-   payload.WithString("streamId", m_streamId);
 
   }
 

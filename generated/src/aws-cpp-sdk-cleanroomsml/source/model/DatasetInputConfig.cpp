@@ -19,8 +19,8 @@ namespace Model
 {
 
 DatasetInputConfig::DatasetInputConfig() : 
-    m_dataSourceHasBeenSet(false),
-    m_schemaHasBeenSet(false)
+    m_schemaHasBeenSet(false),
+    m_dataSourceHasBeenSet(false)
 {
 }
 
@@ -32,13 +32,6 @@ DatasetInputConfig::DatasetInputConfig(JsonView jsonValue)
 
 DatasetInputConfig& DatasetInputConfig::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("dataSource"))
-  {
-    m_dataSource = jsonValue.GetObject("dataSource");
-
-    m_dataSourceHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("schema"))
   {
     Aws::Utils::Array<JsonView> schemaJsonList = jsonValue.GetArray("schema");
@@ -49,18 +42,19 @@ DatasetInputConfig& DatasetInputConfig::operator =(JsonView jsonValue)
     m_schemaHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("dataSource"))
+  {
+    m_dataSource = jsonValue.GetObject("dataSource");
+
+    m_dataSourceHasBeenSet = true;
+  }
+
   return *this;
 }
 
 JsonValue DatasetInputConfig::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_dataSourceHasBeenSet)
-  {
-   payload.WithObject("dataSource", m_dataSource.Jsonize());
-
-  }
 
   if(m_schemaHasBeenSet)
   {
@@ -70,6 +64,12 @@ JsonValue DatasetInputConfig::Jsonize() const
      schemaJsonList[schemaIndex].AsObject(m_schema[schemaIndex].Jsonize());
    }
    payload.WithArray("schema", std::move(schemaJsonList));
+
+  }
+
+  if(m_dataSourceHasBeenSet)
+  {
+   payload.WithObject("dataSource", m_dataSource.Jsonize());
 
   }
 
