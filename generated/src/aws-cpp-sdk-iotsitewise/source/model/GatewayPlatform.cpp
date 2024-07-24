@@ -20,7 +20,8 @@ namespace Model
 
 GatewayPlatform::GatewayPlatform() : 
     m_greengrassHasBeenSet(false),
-    m_greengrassV2HasBeenSet(false)
+    m_greengrassV2HasBeenSet(false),
+    m_siemensIEHasBeenSet(false)
 {
 }
 
@@ -46,6 +47,13 @@ GatewayPlatform& GatewayPlatform::operator =(JsonView jsonValue)
     m_greengrassV2HasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("siemensIE"))
+  {
+    m_siemensIE = jsonValue.GetObject("siemensIE");
+
+    m_siemensIEHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -62,6 +70,12 @@ JsonValue GatewayPlatform::Jsonize() const
   if(m_greengrassV2HasBeenSet)
   {
    payload.WithObject("greengrassV2", m_greengrassV2.Jsonize());
+
+  }
+
+  if(m_siemensIEHasBeenSet)
+  {
+   payload.WithObject("siemensIE", m_siemensIE.Jsonize());
 
   }
 

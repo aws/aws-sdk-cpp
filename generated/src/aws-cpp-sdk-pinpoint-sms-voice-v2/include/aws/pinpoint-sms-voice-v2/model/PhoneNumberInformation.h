@@ -211,11 +211,11 @@ namespace Model
     ///@{
     /**
      * <p>When set to false an end recipient sends a message that begins with HELP or
-     * STOP to one of your dedicated numbers, Amazon Pinpoint automatically replies
-     * with a customizable message and adds the end recipient to the OptOutList. When
-     * set to true you're responsible for responding to HELP and STOP requests. You're
-     * also responsible for tracking and honoring opt-out request. For more information
-     * see <a
+     * STOP to one of your dedicated numbers, AWS End User Messaging SMS and Voice
+     * automatically replies with a customizable message and adds the end recipient to
+     * the OptOutList. When set to true you're responsible for responding to HELP and
+     * STOP requests. You're also responsible for tracking and honoring opt-out
+     * request. For more information see <a
      * href="https://docs.aws.amazon.com/pinpoint/latest/userguide/settings-sms-managing.html#settings-account-sms-self-managed-opt-out">Self-managed
      * opt-outs</a> </p>
      */

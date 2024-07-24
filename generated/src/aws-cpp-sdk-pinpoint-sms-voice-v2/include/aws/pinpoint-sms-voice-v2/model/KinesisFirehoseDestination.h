@@ -25,10 +25,10 @@ namespace Model
 
   /**
    * <p>Contains the delivery stream Amazon Resource Name (ARN), and the ARN of the
-   * Identity and Access Management (IAM) role associated with a Kinesis Data
-   * Firehose event destination.</p> <p>Event destinations, such as Kinesis Data
-   * Firehose, are associated with configuration sets, which enable you to publish
-   * message sending events.</p><p><h3>See Also:</h3>   <a
+   * Identity and Access Management (IAM) role associated with a Firehose event
+   * destination.</p> <p>Event destinations, such as Firehose, are associated with
+   * configuration sets, which enable you to publish message sending
+   * events.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/KinesisFirehoseDestination">AWS
    * API Reference</a></p>
    */
@@ -44,7 +44,7 @@ namespace Model
     ///@{
     /**
      * <p>The ARN of an Identity and Access Management role that is able to write event
-     * data to an Amazon Kinesis Data Firehose destination.</p>
+     * data to an Amazon Data Firehose destination.</p>
      */
     inline const Aws::String& GetIamRoleArn() const{ return m_iamRoleArn; }
     inline bool IamRoleArnHasBeenSet() const { return m_iamRoleArnHasBeenSet; }

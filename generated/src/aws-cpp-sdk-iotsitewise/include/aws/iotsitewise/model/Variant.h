@@ -54,8 +54,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Asset property data of type integer (number that's greater than or equal to
-     * zero).</p>
+     * <p>Asset property data of type integer (whole number).</p>
      */
     inline int GetIntegerValue() const{ return m_integerValue; }
     inline bool IntegerValueHasBeenSet() const { return m_integerValueHasBeenSet; }

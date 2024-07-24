@@ -48,7 +48,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>A unique, friendly name for the gateway.</p>
+     * <p>A unique name for the gateway.</p>
      */
     inline const Aws::String& GetGatewayName() const{ return m_gatewayName; }
     inline bool GatewayNameHasBeenSet() const { return m_gatewayNameHasBeenSet; }

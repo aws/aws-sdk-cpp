@@ -43,7 +43,9 @@ namespace Model
      * <p>The origination identity to use such as a PhoneNumberId, PhoneNumberArn,
      * SenderId or SenderIdArn. You can use <a>DescribePhoneNumbers</a> to find the
      * values for PhoneNumberId and PhoneNumberArn while <a>DescribeSenderIds</a> can
-     * be used to get the values for SenderId and SenderIdArn.</p>
+     * be used to get the values for SenderId and SenderIdArn.</p> <p>After the pool is
+     * created you can add more origination identities to the pool by using <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_AssociateOriginationIdentity.html">AssociateOriginationIdentity</a>.</p>
      */
     inline const Aws::String& GetOriginationIdentity() const{ return m_originationIdentity; }
     inline bool OriginationIdentityHasBeenSet() const { return m_originationIdentityHasBeenSet; }
@@ -74,7 +76,7 @@ namespace Model
     /**
      * <p>The type of message. Valid values are TRANSACTIONAL for messages that are
      * critical or time-sensitive and PROMOTIONAL for messages that aren't critical or
-     * time-sensitive.</p>
+     * time-sensitive. After the pool is created the MessageType can't be changed.</p>
      */
     inline const MessageType& GetMessageType() const{ return m_messageType; }
     inline bool MessageTypeHasBeenSet() const { return m_messageTypeHasBeenSet; }

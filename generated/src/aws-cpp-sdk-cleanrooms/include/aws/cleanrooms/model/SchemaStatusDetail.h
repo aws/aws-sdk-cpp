@@ -8,6 +8,7 @@
 #include <aws/cleanrooms/model/SchemaStatus.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/cleanrooms/model/AnalysisRuleType.h>
+#include <aws/cleanrooms/model/AnalysisType.h>
 #include <aws/cleanrooms/model/SchemaStatusReason.h>
 #include <aws/cleanrooms/model/SchemaConfiguration.h>
 #include <utility>
@@ -46,7 +47,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The status of the schema.</p>
+     * <p>The status of the schema, indicating if it is ready to query.</p>
      */
     inline const SchemaStatus& GetStatus() const{ return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
@@ -95,6 +96,20 @@ namespace Model
     inline SchemaStatusDetail& AddConfigurations(const SchemaConfiguration& value) { m_configurationsHasBeenSet = true; m_configurations.push_back(value); return *this; }
     inline SchemaStatusDetail& AddConfigurations(SchemaConfiguration&& value) { m_configurationsHasBeenSet = true; m_configurations.push_back(std::move(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>The type of analysis that can be performed on the schema.</p> <p>A schema can
+     * have an <code>analysisType</code> of <code>DIRECT_ANALYSIS</code>,
+     * <code>ADDITIONAL_ANALYSIS_FOR_AUDIENCE_GENERATION</code>, or both.</p>
+     */
+    inline const AnalysisType& GetAnalysisType() const{ return m_analysisType; }
+    inline bool AnalysisTypeHasBeenSet() const { return m_analysisTypeHasBeenSet; }
+    inline void SetAnalysisType(const AnalysisType& value) { m_analysisTypeHasBeenSet = true; m_analysisType = value; }
+    inline void SetAnalysisType(AnalysisType&& value) { m_analysisTypeHasBeenSet = true; m_analysisType = std::move(value); }
+    inline SchemaStatusDetail& WithAnalysisType(const AnalysisType& value) { SetAnalysisType(value); return *this;}
+    inline SchemaStatusDetail& WithAnalysisType(AnalysisType&& value) { SetAnalysisType(std::move(value)); return *this;}
+    ///@}
   private:
 
     SchemaStatus m_status;
@@ -108,6 +123,9 @@ namespace Model
 
     Aws::Vector<SchemaConfiguration> m_configurations;
     bool m_configurationsHasBeenSet = false;
+
+    AnalysisType m_analysisType;
+    bool m_analysisTypeHasBeenSet = false;
   };
 
 } // namespace Model

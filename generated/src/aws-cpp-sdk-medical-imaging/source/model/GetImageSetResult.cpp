@@ -92,6 +92,12 @@ GetImageSetResult& GetImageSetResult::operator =(const Aws::AmazonWebServiceResu
 
   }
 
+  if(jsonValue.ValueExists("overrides"))
+  {
+    m_overrides = jsonValue.GetObject("overrides");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

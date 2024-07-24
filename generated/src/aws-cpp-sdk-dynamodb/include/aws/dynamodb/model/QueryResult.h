@@ -76,7 +76,7 @@ namespace Model
      * applied. A high <code>ScannedCount</code> value with few, or no,
      * <code>Count</code> results indicates an inefficient <code>Query</code>
      * operation. For more information, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count">Count
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Scan.html#Scan.Count">Count
      * and ScannedCount</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> <p>If
      * you did not use a filter in the request, then <code>ScannedCount</code> is the
      * same as <code>Count</code>.</p>

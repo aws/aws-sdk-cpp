@@ -30,6 +30,7 @@
 #include <aws/cleanrooms/model/CreateConfiguredTableRequest.h>
 #include <aws/cleanrooms/model/CreateConfiguredTableAnalysisRuleRequest.h>
 #include <aws/cleanrooms/model/CreateConfiguredTableAssociationRequest.h>
+#include <aws/cleanrooms/model/CreateConfiguredTableAssociationAnalysisRuleRequest.h>
 #include <aws/cleanrooms/model/CreateIdMappingTableRequest.h>
 #include <aws/cleanrooms/model/CreateIdNamespaceAssociationRequest.h>
 #include <aws/cleanrooms/model/CreateMembershipRequest.h>
@@ -40,6 +41,7 @@
 #include <aws/cleanrooms/model/DeleteConfiguredTableRequest.h>
 #include <aws/cleanrooms/model/DeleteConfiguredTableAnalysisRuleRequest.h>
 #include <aws/cleanrooms/model/DeleteConfiguredTableAssociationRequest.h>
+#include <aws/cleanrooms/model/DeleteConfiguredTableAssociationAnalysisRuleRequest.h>
 #include <aws/cleanrooms/model/DeleteIdMappingTableRequest.h>
 #include <aws/cleanrooms/model/DeleteIdNamespaceAssociationRequest.h>
 #include <aws/cleanrooms/model/DeleteMemberRequest.h>
@@ -55,6 +57,7 @@
 #include <aws/cleanrooms/model/GetConfiguredTableRequest.h>
 #include <aws/cleanrooms/model/GetConfiguredTableAnalysisRuleRequest.h>
 #include <aws/cleanrooms/model/GetConfiguredTableAssociationRequest.h>
+#include <aws/cleanrooms/model/GetConfiguredTableAssociationAnalysisRuleRequest.h>
 #include <aws/cleanrooms/model/GetIdMappingTableRequest.h>
 #include <aws/cleanrooms/model/GetIdNamespaceAssociationRequest.h>
 #include <aws/cleanrooms/model/GetMembershipRequest.h>
@@ -92,6 +95,7 @@
 #include <aws/cleanrooms/model/UpdateConfiguredTableRequest.h>
 #include <aws/cleanrooms/model/UpdateConfiguredTableAnalysisRuleRequest.h>
 #include <aws/cleanrooms/model/UpdateConfiguredTableAssociationRequest.h>
+#include <aws/cleanrooms/model/UpdateConfiguredTableAssociationAnalysisRuleRequest.h>
 #include <aws/cleanrooms/model/UpdateIdMappingTableRequest.h>
 #include <aws/cleanrooms/model/UpdateIdNamespaceAssociationRequest.h>
 #include <aws/cleanrooms/model/UpdateMembershipRequest.h>
@@ -530,6 +534,47 @@ CreateConfiguredTableAssociationOutcome CleanRoomsClient::CreateConfiguredTableA
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+CreateConfiguredTableAssociationAnalysisRuleOutcome CleanRoomsClient::CreateConfiguredTableAssociationAnalysisRule(const CreateConfiguredTableAssociationAnalysisRuleRequest& request) const
+{
+  AWS_OPERATION_GUARD(CreateConfiguredTableAssociationAnalysisRule);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateConfiguredTableAssociationAnalysisRule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.MembershipIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateConfiguredTableAssociationAnalysisRule", "Required field: MembershipIdentifier, is not set");
+    return CreateConfiguredTableAssociationAnalysisRuleOutcome(Aws::Client::AWSError<CleanRoomsErrors>(CleanRoomsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MembershipIdentifier]", false));
+  }
+  if (!request.ConfiguredTableAssociationIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateConfiguredTableAssociationAnalysisRule", "Required field: ConfiguredTableAssociationIdentifier, is not set");
+    return CreateConfiguredTableAssociationAnalysisRuleOutcome(Aws::Client::AWSError<CleanRoomsErrors>(CleanRoomsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConfiguredTableAssociationIdentifier]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, CreateConfiguredTableAssociationAnalysisRule, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, CreateConfiguredTableAssociationAnalysisRule, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".CreateConfiguredTableAssociationAnalysisRule",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<CreateConfiguredTableAssociationAnalysisRuleOutcome>(
+    [&]()-> CreateConfiguredTableAssociationAnalysisRuleOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateConfiguredTableAssociationAnalysisRule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/memberships/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMembershipIdentifier());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/configuredTableAssociations/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetConfiguredTableAssociationIdentifier());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/analysisRule");
+      return CreateConfiguredTableAssociationAnalysisRuleOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 CreateIdMappingTableOutcome CleanRoomsClient::CreateIdMappingTable(const CreateIdMappingTableRequest& request) const
 {
   AWS_OPERATION_GUARD(CreateIdMappingTable);
@@ -879,6 +924,53 @@ DeleteConfiguredTableAssociationOutcome CleanRoomsClient::DeleteConfiguredTableA
       endpointResolutionOutcome.GetResult().AddPathSegments("/configuredTableAssociations/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetConfiguredTableAssociationIdentifier());
       return DeleteConfiguredTableAssociationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+DeleteConfiguredTableAssociationAnalysisRuleOutcome CleanRoomsClient::DeleteConfiguredTableAssociationAnalysisRule(const DeleteConfiguredTableAssociationAnalysisRuleRequest& request) const
+{
+  AWS_OPERATION_GUARD(DeleteConfiguredTableAssociationAnalysisRule);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteConfiguredTableAssociationAnalysisRule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.MembershipIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteConfiguredTableAssociationAnalysisRule", "Required field: MembershipIdentifier, is not set");
+    return DeleteConfiguredTableAssociationAnalysisRuleOutcome(Aws::Client::AWSError<CleanRoomsErrors>(CleanRoomsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MembershipIdentifier]", false));
+  }
+  if (!request.ConfiguredTableAssociationIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteConfiguredTableAssociationAnalysisRule", "Required field: ConfiguredTableAssociationIdentifier, is not set");
+    return DeleteConfiguredTableAssociationAnalysisRuleOutcome(Aws::Client::AWSError<CleanRoomsErrors>(CleanRoomsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConfiguredTableAssociationIdentifier]", false));
+  }
+  if (!request.AnalysisRuleTypeHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteConfiguredTableAssociationAnalysisRule", "Required field: AnalysisRuleType, is not set");
+    return DeleteConfiguredTableAssociationAnalysisRuleOutcome(Aws::Client::AWSError<CleanRoomsErrors>(CleanRoomsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AnalysisRuleType]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteConfiguredTableAssociationAnalysisRule, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DeleteConfiguredTableAssociationAnalysisRule, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DeleteConfiguredTableAssociationAnalysisRule",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DeleteConfiguredTableAssociationAnalysisRuleOutcome>(
+    [&]()-> DeleteConfiguredTableAssociationAnalysisRuleOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteConfiguredTableAssociationAnalysisRule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/memberships/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMembershipIdentifier());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/configuredTableAssociations/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetConfiguredTableAssociationIdentifier());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/analysisRule/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(ConfiguredTableAssociationAnalysisRuleTypeMapper::GetNameForConfiguredTableAssociationAnalysisRuleType(request.GetAnalysisRuleType()));
+      return DeleteConfiguredTableAssociationAnalysisRuleOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -1463,6 +1555,53 @@ GetConfiguredTableAssociationOutcome CleanRoomsClient::GetConfiguredTableAssocia
       endpointResolutionOutcome.GetResult().AddPathSegments("/configuredTableAssociations/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetConfiguredTableAssociationIdentifier());
       return GetConfiguredTableAssociationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+GetConfiguredTableAssociationAnalysisRuleOutcome CleanRoomsClient::GetConfiguredTableAssociationAnalysisRule(const GetConfiguredTableAssociationAnalysisRuleRequest& request) const
+{
+  AWS_OPERATION_GUARD(GetConfiguredTableAssociationAnalysisRule);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetConfiguredTableAssociationAnalysisRule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.MembershipIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetConfiguredTableAssociationAnalysisRule", "Required field: MembershipIdentifier, is not set");
+    return GetConfiguredTableAssociationAnalysisRuleOutcome(Aws::Client::AWSError<CleanRoomsErrors>(CleanRoomsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MembershipIdentifier]", false));
+  }
+  if (!request.ConfiguredTableAssociationIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetConfiguredTableAssociationAnalysisRule", "Required field: ConfiguredTableAssociationIdentifier, is not set");
+    return GetConfiguredTableAssociationAnalysisRuleOutcome(Aws::Client::AWSError<CleanRoomsErrors>(CleanRoomsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConfiguredTableAssociationIdentifier]", false));
+  }
+  if (!request.AnalysisRuleTypeHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetConfiguredTableAssociationAnalysisRule", "Required field: AnalysisRuleType, is not set");
+    return GetConfiguredTableAssociationAnalysisRuleOutcome(Aws::Client::AWSError<CleanRoomsErrors>(CleanRoomsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AnalysisRuleType]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetConfiguredTableAssociationAnalysisRule, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, GetConfiguredTableAssociationAnalysisRule, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetConfiguredTableAssociationAnalysisRule",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<GetConfiguredTableAssociationAnalysisRuleOutcome>(
+    [&]()-> GetConfiguredTableAssociationAnalysisRuleOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetConfiguredTableAssociationAnalysisRule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/memberships/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMembershipIdentifier());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/configuredTableAssociations/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetConfiguredTableAssociationIdentifier());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/analysisRule/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(ConfiguredTableAssociationAnalysisRuleTypeMapper::GetNameForConfiguredTableAssociationAnalysisRuleType(request.GetAnalysisRuleType()));
+      return GetConfiguredTableAssociationAnalysisRuleOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -2783,6 +2922,53 @@ UpdateConfiguredTableAssociationOutcome CleanRoomsClient::UpdateConfiguredTableA
       endpointResolutionOutcome.GetResult().AddPathSegments("/configuredTableAssociations/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetConfiguredTableAssociationIdentifier());
       return UpdateConfiguredTableAssociationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+UpdateConfiguredTableAssociationAnalysisRuleOutcome CleanRoomsClient::UpdateConfiguredTableAssociationAnalysisRule(const UpdateConfiguredTableAssociationAnalysisRuleRequest& request) const
+{
+  AWS_OPERATION_GUARD(UpdateConfiguredTableAssociationAnalysisRule);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateConfiguredTableAssociationAnalysisRule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.MembershipIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateConfiguredTableAssociationAnalysisRule", "Required field: MembershipIdentifier, is not set");
+    return UpdateConfiguredTableAssociationAnalysisRuleOutcome(Aws::Client::AWSError<CleanRoomsErrors>(CleanRoomsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MembershipIdentifier]", false));
+  }
+  if (!request.ConfiguredTableAssociationIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateConfiguredTableAssociationAnalysisRule", "Required field: ConfiguredTableAssociationIdentifier, is not set");
+    return UpdateConfiguredTableAssociationAnalysisRuleOutcome(Aws::Client::AWSError<CleanRoomsErrors>(CleanRoomsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConfiguredTableAssociationIdentifier]", false));
+  }
+  if (!request.AnalysisRuleTypeHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateConfiguredTableAssociationAnalysisRule", "Required field: AnalysisRuleType, is not set");
+    return UpdateConfiguredTableAssociationAnalysisRuleOutcome(Aws::Client::AWSError<CleanRoomsErrors>(CleanRoomsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AnalysisRuleType]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, UpdateConfiguredTableAssociationAnalysisRule, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, UpdateConfiguredTableAssociationAnalysisRule, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".UpdateConfiguredTableAssociationAnalysisRule",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<UpdateConfiguredTableAssociationAnalysisRuleOutcome>(
+    [&]()-> UpdateConfiguredTableAssociationAnalysisRuleOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateConfiguredTableAssociationAnalysisRule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/memberships/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMembershipIdentifier());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/configuredTableAssociations/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetConfiguredTableAssociationIdentifier());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/analysisRule/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(ConfiguredTableAssociationAnalysisRuleTypeMapper::GetNameForConfiguredTableAssociationAnalysisRuleType(request.GetAnalysisRuleType()));
+      return UpdateConfiguredTableAssociationAnalysisRuleOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

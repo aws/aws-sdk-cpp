@@ -8,6 +8,8 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/cleanrooms/model/ProtectedQueryStatus.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/cleanrooms/model/ReceiverConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -106,6 +108,20 @@ namespace Model
     inline ProtectedQuerySummary& WithStatus(const ProtectedQueryStatus& value) { SetStatus(value); return *this;}
     inline ProtectedQuerySummary& WithStatus(ProtectedQueryStatus&& value) { SetStatus(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p> The receiver configuration.</p>
+     */
+    inline const Aws::Vector<ReceiverConfiguration>& GetReceiverConfigurations() const{ return m_receiverConfigurations; }
+    inline bool ReceiverConfigurationsHasBeenSet() const { return m_receiverConfigurationsHasBeenSet; }
+    inline void SetReceiverConfigurations(const Aws::Vector<ReceiverConfiguration>& value) { m_receiverConfigurationsHasBeenSet = true; m_receiverConfigurations = value; }
+    inline void SetReceiverConfigurations(Aws::Vector<ReceiverConfiguration>&& value) { m_receiverConfigurationsHasBeenSet = true; m_receiverConfigurations = std::move(value); }
+    inline ProtectedQuerySummary& WithReceiverConfigurations(const Aws::Vector<ReceiverConfiguration>& value) { SetReceiverConfigurations(value); return *this;}
+    inline ProtectedQuerySummary& WithReceiverConfigurations(Aws::Vector<ReceiverConfiguration>&& value) { SetReceiverConfigurations(std::move(value)); return *this;}
+    inline ProtectedQuerySummary& AddReceiverConfigurations(const ReceiverConfiguration& value) { m_receiverConfigurationsHasBeenSet = true; m_receiverConfigurations.push_back(value); return *this; }
+    inline ProtectedQuerySummary& AddReceiverConfigurations(ReceiverConfiguration&& value) { m_receiverConfigurationsHasBeenSet = true; m_receiverConfigurations.push_back(std::move(value)); return *this; }
+    ///@}
   private:
 
     Aws::String m_id;
@@ -122,6 +138,9 @@ namespace Model
 
     ProtectedQueryStatus m_status;
     bool m_statusHasBeenSet = false;
+
+    Aws::Vector<ReceiverConfiguration> m_receiverConfigurations;
+    bool m_receiverConfigurationsHasBeenSet = false;
   };
 
 } // namespace Model

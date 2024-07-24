@@ -21,10 +21,6 @@ namespace Aws
       {
 
         static const int DIFFERENTIAL_PRIVACY_HASH = HashingUtils::HashString("DIFFERENTIAL_PRIVACY");
-        static const int CUSTOM_ANALYSIS_NOT_ALLOWED_HASH = HashingUtils::HashString("CUSTOM_ANALYSIS_NOT_ALLOWED");
-        static const int NO_MEMBER_ACCOUNT_ALLOWED_TO_PROVIDE_ANALYSIS_HASH = HashingUtils::HashString("NO_MEMBER_ACCOUNT_ALLOWED_TO_PROVIDE_ANALYSIS");
-        static const int DIFFERENTIAL_PRIVACY_BUDGET_NOT_CONFIGURED_HASH = HashingUtils::HashString("DIFFERENTIAL_PRIVACY_BUDGET_NOT_CONFIGURED");
-        static const int ID_MAPPING_TABLE_NOT_POPULATED_HASH = HashingUtils::HashString("ID_MAPPING_TABLE_NOT_POPULATED");
 
 
         SchemaConfiguration GetSchemaConfigurationForName(const Aws::String& name)
@@ -33,22 +29,6 @@ namespace Aws
           if (hashCode == DIFFERENTIAL_PRIVACY_HASH)
           {
             return SchemaConfiguration::DIFFERENTIAL_PRIVACY;
-          }
-          else if (hashCode == CUSTOM_ANALYSIS_NOT_ALLOWED_HASH)
-          {
-            return SchemaConfiguration::CUSTOM_ANALYSIS_NOT_ALLOWED;
-          }
-          else if (hashCode == NO_MEMBER_ACCOUNT_ALLOWED_TO_PROVIDE_ANALYSIS_HASH)
-          {
-            return SchemaConfiguration::NO_MEMBER_ACCOUNT_ALLOWED_TO_PROVIDE_ANALYSIS;
-          }
-          else if (hashCode == DIFFERENTIAL_PRIVACY_BUDGET_NOT_CONFIGURED_HASH)
-          {
-            return SchemaConfiguration::DIFFERENTIAL_PRIVACY_BUDGET_NOT_CONFIGURED;
-          }
-          else if (hashCode == ID_MAPPING_TABLE_NOT_POPULATED_HASH)
-          {
-            return SchemaConfiguration::ID_MAPPING_TABLE_NOT_POPULATED;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -68,14 +48,6 @@ namespace Aws
             return {};
           case SchemaConfiguration::DIFFERENTIAL_PRIVACY:
             return "DIFFERENTIAL_PRIVACY";
-          case SchemaConfiguration::CUSTOM_ANALYSIS_NOT_ALLOWED:
-            return "CUSTOM_ANALYSIS_NOT_ALLOWED";
-          case SchemaConfiguration::NO_MEMBER_ACCOUNT_ALLOWED_TO_PROVIDE_ANALYSIS:
-            return "NO_MEMBER_ACCOUNT_ALLOWED_TO_PROVIDE_ANALYSIS";
-          case SchemaConfiguration::DIFFERENTIAL_PRIVACY_BUDGET_NOT_CONFIGURED:
-            return "DIFFERENTIAL_PRIVACY_BUDGET_NOT_CONFIGURED";
-          case SchemaConfiguration::ID_MAPPING_TABLE_NOT_POPULATED:
-            return "ID_MAPPING_TABLE_NOT_POPULATED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

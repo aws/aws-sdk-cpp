@@ -7,6 +7,7 @@
 #include <aws/iotsitewise/IoTSiteWise_EXPORTS.h>
 #include <aws/iotsitewise/model/Greengrass.h>
 #include <aws/iotsitewise/model/GreengrassV2.h>
+#include <aws/iotsitewise/model/SiemensIE.h>
 #include <utility>
 
 namespace Aws
@@ -61,6 +62,18 @@ namespace Model
     inline GatewayPlatform& WithGreengrassV2(const GreengrassV2& value) { SetGreengrassV2(value); return *this;}
     inline GatewayPlatform& WithGreengrassV2(GreengrassV2&& value) { SetGreengrassV2(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>A SiteWise Edge gateway that runs on a Siemens Industrial Edge Device.</p>
+     */
+    inline const SiemensIE& GetSiemensIE() const{ return m_siemensIE; }
+    inline bool SiemensIEHasBeenSet() const { return m_siemensIEHasBeenSet; }
+    inline void SetSiemensIE(const SiemensIE& value) { m_siemensIEHasBeenSet = true; m_siemensIE = value; }
+    inline void SetSiemensIE(SiemensIE&& value) { m_siemensIEHasBeenSet = true; m_siemensIE = std::move(value); }
+    inline GatewayPlatform& WithSiemensIE(const SiemensIE& value) { SetSiemensIE(value); return *this;}
+    inline GatewayPlatform& WithSiemensIE(SiemensIE&& value) { SetSiemensIE(std::move(value)); return *this;}
+    ///@}
   private:
 
     Greengrass m_greengrass;
@@ -68,6 +81,9 @@ namespace Model
 
     GreengrassV2 m_greengrassV2;
     bool m_greengrassV2HasBeenSet = false;
+
+    SiemensIE m_siemensIE;
+    bool m_siemensIEHasBeenSet = false;
   };
 
 } // namespace Model

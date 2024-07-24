@@ -57,7 +57,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the asset.</p>
+     * <p>The name of the gateway.</p>
      */
     inline const Aws::String& GetGatewayName() const{ return m_gatewayName; }
     inline bool GatewayNameHasBeenSet() const { return m_gatewayNameHasBeenSet; }

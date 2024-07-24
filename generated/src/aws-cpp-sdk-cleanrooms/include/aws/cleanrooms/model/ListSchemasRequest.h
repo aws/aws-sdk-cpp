@@ -56,7 +56,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>If present, filter schemas by schema type.</p>
+     * <p>If present, filter schemas by schema type. The only valid schema type is
+     * currently `TABLE`.</p>
      */
     inline const SchemaType& GetSchemaType() const{ return m_schemaType; }
     inline bool SchemaTypeHasBeenSet() const { return m_schemaTypeHasBeenSet; }
@@ -68,7 +69,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The pagination token that's used to fetch the next set of results.</p>
+     * <p>The token value retrieved from a previous call to access the next page of
+     * results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
@@ -82,9 +84,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The maximum number of results that are returned for an API request call. The
-     * service chooses a default number if you don't set one. The service might return
-     * a `nextToken` even if the `maxResults` value has not been met.</p>
+     * <p>The maximum size of the results that is returned per call.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }

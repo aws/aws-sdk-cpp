@@ -9,6 +9,7 @@
 #include <aws/medical-imaging/model/ImageSetState.h>
 #include <aws/medical-imaging/model/ImageSetWorkflowStatus.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/medical-imaging/model/Overrides.h>
 #include <utility>
 
 namespace Aws
@@ -141,6 +142,20 @@ namespace Model
     inline ImageSetProperties& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
     inline ImageSetProperties& WithMessage(const char* value) { SetMessage(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Contains details on overrides used when creating the returned version of an
+     * image set. For example, if <code>forced</code> exists, the <code>forced</code>
+     * flag was used when creating the image set.</p>
+     */
+    inline const Overrides& GetOverrides() const{ return m_overrides; }
+    inline bool OverridesHasBeenSet() const { return m_overridesHasBeenSet; }
+    inline void SetOverrides(const Overrides& value) { m_overridesHasBeenSet = true; m_overrides = value; }
+    inline void SetOverrides(Overrides&& value) { m_overridesHasBeenSet = true; m_overrides = std::move(value); }
+    inline ImageSetProperties& WithOverrides(const Overrides& value) { SetOverrides(value); return *this;}
+    inline ImageSetProperties& WithOverrides(Overrides&& value) { SetOverrides(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_imageSetId;
@@ -166,6 +181,9 @@ namespace Model
 
     Aws::String m_message;
     bool m_messageHasBeenSet = false;
+
+    Overrides m_overrides;
+    bool m_overridesHasBeenSet = false;
   };
 
 } // namespace Model
