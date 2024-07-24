@@ -405,20 +405,20 @@ Aws::String TranscribeStreamingTests::RunTestLikeSample(size_t timeoutMs,
     Aws::String transcribedResult;
 
     StartStreamTranscriptionHandler handler;
-    Aws::String operationRequestId;
+    std::shared_ptr<Aws::String> operationRequestId;
     handler.SetInitialResponseCallbackEx([&](const StartStreamTranscriptionInitialResponse& initialResponse, const Utils::Event::InitialResponseType eventType)
                                           {
                                               if (eventType != Utils::Event::InitialResponseType::ON_RESPONSE) {
                                                   AWS_ADD_FAILURE("InitialResponseCallback is called with unexpected for transcribe InitialResponseType");
                                               }
 
-                                              operationRequestId = initialResponse.GetRequestId();
-                                              if (operationRequestId.empty()) {
+                                              operationRequestId = Aws::MakeShared<Aws::String>(ALLOC_TAG, initialResponse.GetRequestId());
+                                              if (operationRequestId->empty()) {
                                                   AWS_ADD_FAILURE("InitialResponseCallback is called but received empty RequestId");
                                                   TestTrace(Aws::String("initialResponse was: ") + initialResponse.Jsonize().View().AsString());
                                               }
-                                              std::cout << "Streaming Request-Id: " << operationRequestId << "\n";
-                                              TestTrace(Aws::String("InitialResponse aws RequestId: ") + operationRequestId);
+                                              std::cout << "Streaming Request-Id: " << *operationRequestId << "\n";
+                                              TestTrace(Aws::String("InitialResponse aws RequestId: ") + *operationRequestId);
                                               TestTrace(Aws::String("InitialResponse transcribe SessionId: ") + initialResponse.GetSessionId());
                                           });
     handler.SetOnErrorCallback(
@@ -435,13 +435,16 @@ Aws::String TranscribeStreamingTests::RunTestLikeSample(size_t timeoutMs,
             });
     //SetTranscriptEventCallback called for every 'chunk' of file transcripted.
     // Partial results are returned in real time.
-    handler.SetTranscriptEventCallback([&transcribedResult, &testMustEndBeforeMs, this](const TranscriptEvent &ev) {
+    handler.SetTranscriptEventCallback([&transcribedResult, &testMustEndBeforeMs, this, &operationRequestId](const TranscriptEvent &ev) {
             TestTrace(Aws::String("TranscriptEventCallback: ") + ev.Jsonize().View().WriteCompact());
             if(Aws::Utils::DateTime::Now().Millis() > testMustEndBeforeMs)
             {
                 AWS_ADD_FAILURE("Test is taking too long, aborting.");
                 return;
             }
+
+            EXPECT_FALSE(operationRequestId->empty()) << "Did not receive a request id for the StartStreamTranscription";
+
             for (auto &&r: ev.GetTranscript().GetResults()) {
                 Aws::String alternatives;
                 for (auto &&alt: r.GetAlternatives()) {
@@ -579,7 +582,6 @@ Aws::String TranscribeStreamingTests::RunTestLikeSample(size_t timeoutMs,
     m_client->StartStreamTranscriptionAsync(request, OnStreamReady, OnResponseCallback,
                                          nullptr /*context*/);
 
-    EXPECT_FALSE(operationRequestId.empty()) << "Did not receive a request id for the StartStreamTranscription";
     EXPECT_TRUE(
         signaling.WaitOneFor(timeoutMs)
         ) << "Did not get a response after " << Aws::Utils::StringUtils::to_string(timeoutMs) << " ms";
