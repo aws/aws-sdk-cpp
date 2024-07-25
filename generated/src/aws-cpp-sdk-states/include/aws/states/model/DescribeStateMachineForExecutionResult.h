@@ -9,6 +9,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/states/model/LoggingConfiguration.h>
 #include <aws/states/model/TracingConfiguration.h>
+#include <aws/states/model/EncryptionConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -172,6 +173,17 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>Settings to configure server-side encryption. </p>
+     */
+    inline const EncryptionConfiguration& GetEncryptionConfiguration() const{ return m_encryptionConfiguration; }
+    inline void SetEncryptionConfiguration(const EncryptionConfiguration& value) { m_encryptionConfiguration = value; }
+    inline void SetEncryptionConfiguration(EncryptionConfiguration&& value) { m_encryptionConfiguration = std::move(value); }
+    inline DescribeStateMachineForExecutionResult& WithEncryptionConfiguration(const EncryptionConfiguration& value) { SetEncryptionConfiguration(value); return *this;}
+    inline DescribeStateMachineForExecutionResult& WithEncryptionConfiguration(EncryptionConfiguration&& value) { SetEncryptionConfiguration(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -202,6 +214,8 @@ namespace Model
     Aws::String m_label;
 
     Aws::String m_revisionId;
+
+    EncryptionConfiguration m_encryptionConfiguration;
 
     Aws::String m_requestId;
   };

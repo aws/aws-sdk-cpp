@@ -128,6 +128,24 @@ namespace Model
     inline Service& AddMetricReferences(const MetricReference& value) { m_metricReferencesHasBeenSet = true; m_metricReferences.push_back(value); return *this; }
     inline Service& AddMetricReferences(MetricReference&& value) { m_metricReferencesHasBeenSet = true; m_metricReferences.push_back(std::move(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>An array of string-to-string maps that each contain information about one log
+     * group associated with this service. Each string-to-string map includes the
+     * following fields:</p> <ul> <li> <p> <code>"Type": "AWS::Resource"</code> </p>
+     * </li> <li> <p> <code>"ResourceType": "AWS::Logs::LogGroup"</code> </p> </li>
+     * <li> <p> <code>"Identifier": "<i>name-of-log-group</i>"</code> </p> </li> </ul>
+     */
+    inline const Aws::Vector<Aws::Map<Aws::String, Aws::String>>& GetLogGroupReferences() const{ return m_logGroupReferences; }
+    inline bool LogGroupReferencesHasBeenSet() const { return m_logGroupReferencesHasBeenSet; }
+    inline void SetLogGroupReferences(const Aws::Vector<Aws::Map<Aws::String, Aws::String>>& value) { m_logGroupReferencesHasBeenSet = true; m_logGroupReferences = value; }
+    inline void SetLogGroupReferences(Aws::Vector<Aws::Map<Aws::String, Aws::String>>&& value) { m_logGroupReferencesHasBeenSet = true; m_logGroupReferences = std::move(value); }
+    inline Service& WithLogGroupReferences(const Aws::Vector<Aws::Map<Aws::String, Aws::String>>& value) { SetLogGroupReferences(value); return *this;}
+    inline Service& WithLogGroupReferences(Aws::Vector<Aws::Map<Aws::String, Aws::String>>&& value) { SetLogGroupReferences(std::move(value)); return *this;}
+    inline Service& AddLogGroupReferences(const Aws::Map<Aws::String, Aws::String>& value) { m_logGroupReferencesHasBeenSet = true; m_logGroupReferences.push_back(value); return *this; }
+    inline Service& AddLogGroupReferences(Aws::Map<Aws::String, Aws::String>&& value) { m_logGroupReferencesHasBeenSet = true; m_logGroupReferences.push_back(std::move(value)); return *this; }
+    ///@}
   private:
 
     Aws::Map<Aws::String, Aws::String> m_keyAttributes;
@@ -138,6 +156,9 @@ namespace Model
 
     Aws::Vector<MetricReference> m_metricReferences;
     bool m_metricReferencesHasBeenSet = false;
+
+    Aws::Vector<Aws::Map<Aws::String, Aws::String>> m_logGroupReferences;
+    bool m_logGroupReferencesHasBeenSet = false;
   };
 
 } // namespace Model

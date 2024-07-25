@@ -18,7 +18,8 @@ UpdateClusterConfigRequest::UpdateClusterConfigRequest() :
     m_loggingHasBeenSet(false),
     m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientRequestTokenHasBeenSet(true),
-    m_accessConfigHasBeenSet(false)
+    m_accessConfigHasBeenSet(false),
+    m_upgradePolicyHasBeenSet(false)
 {
 }
 
@@ -47,6 +48,12 @@ Aws::String UpdateClusterConfigRequest::SerializePayload() const
   if(m_accessConfigHasBeenSet)
   {
    payload.WithObject("accessConfig", m_accessConfig.Jsonize());
+
+  }
+
+  if(m_upgradePolicyHasBeenSet)
+  {
+   payload.WithObject("upgradePolicy", m_upgradePolicy.Jsonize());
 
   }
 

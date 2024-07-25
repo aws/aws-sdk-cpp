@@ -40,7 +40,8 @@ Cluster::Cluster() :
     m_idHasBeenSet(false),
     m_healthHasBeenSet(false),
     m_outpostConfigHasBeenSet(false),
-    m_accessConfigHasBeenSet(false)
+    m_accessConfigHasBeenSet(false),
+    m_upgradePolicyHasBeenSet(false)
 {
 }
 
@@ -205,6 +206,13 @@ Cluster& Cluster::operator =(JsonView jsonValue)
     m_accessConfigHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("upgradePolicy"))
+  {
+    m_upgradePolicy = jsonValue.GetObject("upgradePolicy");
+
+    m_upgradePolicyHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -343,6 +351,12 @@ JsonValue Cluster::Jsonize() const
   if(m_accessConfigHasBeenSet)
   {
    payload.WithObject("accessConfig", m_accessConfig.Jsonize());
+
+  }
+
+  if(m_upgradePolicyHasBeenSet)
+  {
+   payload.WithObject("upgradePolicy", m_upgradePolicy.Jsonize());
 
   }
 

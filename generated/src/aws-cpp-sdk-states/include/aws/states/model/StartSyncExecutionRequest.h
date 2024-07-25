@@ -7,6 +7,7 @@
 #include <aws/states/SFN_EXPORTS.h>
 #include <aws/states/SFNRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/states/model/IncludedData.h>
 #include <utility>
 
 namespace Aws
@@ -95,6 +96,22 @@ namespace Model
     inline StartSyncExecutionRequest& WithTraceHeader(Aws::String&& value) { SetTraceHeader(std::move(value)); return *this;}
     inline StartSyncExecutionRequest& WithTraceHeader(const char* value) { SetTraceHeader(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>If your state machine definition is encrypted with a KMS key, callers must
+     * have <code>kms:Decrypt</code> permission to decrypt the definition.
+     * Alternatively, you can call the API with <code>includedData =
+     * METADATA_ONLY</code> to get a successful response without the encrypted
+     * definition.</p>
+     */
+    inline const IncludedData& GetIncludedData() const{ return m_includedData; }
+    inline bool IncludedDataHasBeenSet() const { return m_includedDataHasBeenSet; }
+    inline void SetIncludedData(const IncludedData& value) { m_includedDataHasBeenSet = true; m_includedData = value; }
+    inline void SetIncludedData(IncludedData&& value) { m_includedDataHasBeenSet = true; m_includedData = std::move(value); }
+    inline StartSyncExecutionRequest& WithIncludedData(const IncludedData& value) { SetIncludedData(value); return *this;}
+    inline StartSyncExecutionRequest& WithIncludedData(IncludedData&& value) { SetIncludedData(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_stateMachineArn;
@@ -108,6 +125,9 @@ namespace Model
 
     Aws::String m_traceHeader;
     bool m_traceHeaderHasBeenSet = false;
+
+    IncludedData m_includedData;
+    bool m_includedDataHasBeenSet = false;
   };
 
 } // namespace Model

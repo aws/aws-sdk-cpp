@@ -13,7 +13,9 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 DescribeStateMachineRequest::DescribeStateMachineRequest() : 
-    m_stateMachineArnHasBeenSet(false)
+    m_stateMachineArnHasBeenSet(false),
+    m_includedData(IncludedData::NOT_SET),
+    m_includedDataHasBeenSet(false)
 {
 }
 
@@ -25,6 +27,11 @@ Aws::String DescribeStateMachineRequest::SerializePayload() const
   {
    payload.WithString("stateMachineArn", m_stateMachineArn);
 
+  }
+
+  if(m_includedDataHasBeenSet)
+  {
+   payload.WithString("includedData", IncludedDataMapper::GetNameForIncludedData(m_includedData));
   }
 
   return payload.View().WriteReadable();

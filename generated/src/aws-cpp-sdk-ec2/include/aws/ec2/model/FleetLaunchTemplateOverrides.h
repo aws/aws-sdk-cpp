@@ -173,10 +173,26 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID of the AMI. An AMI is required to launch an instance. This parameter
-     * is only available for fleets of type <code>instant</code>. For fleets of type
-     * <code>maintain</code> and <code>request</code>, you must specify the AMI ID in
-     * the launch template.</p>
+     * <p>The ID of the AMI in the format <code>ami-17characters00000</code>.</p>
+     * <p>Alternatively, you can specify a Systems Manager parameter, using one of the
+     * following formats. The Systems Manager parameter will resolve to an AMI ID on
+     * launch.</p> <p>To reference a public parameter:</p> <ul> <li> <p>
+     * <code>resolve:ssm:<i>public-parameter</i> </code> </p> </li> </ul> <p>To
+     * reference a parameter stored in the same account:</p> <ul> <li> <p>
+     * <code>resolve:ssm:<i>parameter-name</i> </code> </p> </li> <li> <p>
+     * <code>resolve:ssm:<i>parameter-name:version-number</i> </code> </p> </li> <li>
+     * <p> <code>resolve:ssm:<i>parameter-name:label</i> </code> </p> </li> </ul> <p>To
+     * reference a parameter shared from another Amazon Web Services account:</p> <ul>
+     * <li> <p> <code>resolve:ssm:<i>parameter-ARN</i> </code> </p> </li> <li> <p>
+     * <code>resolve:ssm:<i>parameter-ARN:version-number</i> </code> </p> </li> <li>
+     * <p> <code>resolve:ssm:<i>parameter-ARN:label</i> </code> </p> </li> </ul> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/create-launch-template.html#use-an-ssm-parameter-instead-of-an-ami-id">Use
+     * a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon EC2 User
+     * Guide</i>.</p>  <p>This parameter is only available for fleets of type
+     * <code>instant</code>. For fleets of type <code>maintain</code> and
+     * <code>request</code>, you must specify the AMI ID in the launch template.</p>
+     * 
      */
     inline const Aws::String& GetImageId() const{ return m_imageId; }
     inline bool ImageIdHasBeenSet() const { return m_imageIdHasBeenSet; }

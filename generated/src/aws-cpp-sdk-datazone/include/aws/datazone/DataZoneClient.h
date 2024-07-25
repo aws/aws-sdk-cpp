@@ -1481,6 +1481,32 @@ namespace DataZone
         }
 
         /**
+         * <p>Gets the credentials of an environment in Amazon DataZone.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetEnvironmentCredentials">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetEnvironmentCredentialsOutcome GetEnvironmentCredentials(const Model::GetEnvironmentCredentialsRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetEnvironmentCredentials that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetEnvironmentCredentialsRequestT = Model::GetEnvironmentCredentialsRequest>
+        Model::GetEnvironmentCredentialsOutcomeCallable GetEnvironmentCredentialsCallable(const GetEnvironmentCredentialsRequestT& request) const
+        {
+            return SubmitCallable(&DataZoneClient::GetEnvironmentCredentials, request);
+        }
+
+        /**
+         * An Async wrapper for GetEnvironmentCredentials that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetEnvironmentCredentialsRequestT = Model::GetEnvironmentCredentialsRequest>
+        void GetEnvironmentCredentialsAsync(const GetEnvironmentCredentialsRequestT& request, const GetEnvironmentCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DataZoneClient::GetEnvironmentCredentials, request, handler, context);
+        }
+
+        /**
          * <p>Gets an evinronment profile in Amazon DataZone.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetEnvironmentProfile">AWS
          * API Reference</a></p>

@@ -67,6 +67,7 @@
 #include <aws/datazone/model/GetEnvironmentActionResult.h>
 #include <aws/datazone/model/GetEnvironmentBlueprintResult.h>
 #include <aws/datazone/model/GetEnvironmentBlueprintConfigurationResult.h>
+#include <aws/datazone/model/GetEnvironmentCredentialsResult.h>
 #include <aws/datazone/model/GetEnvironmentProfileResult.h>
 #include <aws/datazone/model/GetFormTypeResult.h>
 #include <aws/datazone/model/GetGlossaryResult.h>
@@ -231,6 +232,7 @@ namespace Aws
       class GetEnvironmentActionRequest;
       class GetEnvironmentBlueprintRequest;
       class GetEnvironmentBlueprintConfigurationRequest;
+      class GetEnvironmentCredentialsRequest;
       class GetEnvironmentProfileRequest;
       class GetFormTypeRequest;
       class GetGlossaryRequest;
@@ -356,6 +358,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetEnvironmentActionResult, DataZoneError> GetEnvironmentActionOutcome;
       typedef Aws::Utils::Outcome<GetEnvironmentBlueprintResult, DataZoneError> GetEnvironmentBlueprintOutcome;
       typedef Aws::Utils::Outcome<GetEnvironmentBlueprintConfigurationResult, DataZoneError> GetEnvironmentBlueprintConfigurationOutcome;
+      typedef Aws::Utils::Outcome<GetEnvironmentCredentialsResult, DataZoneError> GetEnvironmentCredentialsOutcome;
       typedef Aws::Utils::Outcome<GetEnvironmentProfileResult, DataZoneError> GetEnvironmentProfileOutcome;
       typedef Aws::Utils::Outcome<GetFormTypeResult, DataZoneError> GetFormTypeOutcome;
       typedef Aws::Utils::Outcome<GetGlossaryResult, DataZoneError> GetGlossaryOutcome;
@@ -481,6 +484,7 @@ namespace Aws
       typedef std::future<GetEnvironmentActionOutcome> GetEnvironmentActionOutcomeCallable;
       typedef std::future<GetEnvironmentBlueprintOutcome> GetEnvironmentBlueprintOutcomeCallable;
       typedef std::future<GetEnvironmentBlueprintConfigurationOutcome> GetEnvironmentBlueprintConfigurationOutcomeCallable;
+      typedef std::future<GetEnvironmentCredentialsOutcome> GetEnvironmentCredentialsOutcomeCallable;
       typedef std::future<GetEnvironmentProfileOutcome> GetEnvironmentProfileOutcomeCallable;
       typedef std::future<GetFormTypeOutcome> GetFormTypeOutcomeCallable;
       typedef std::future<GetGlossaryOutcome> GetGlossaryOutcomeCallable;
@@ -609,6 +613,7 @@ namespace Aws
     typedef std::function<void(const DataZoneClient*, const Model::GetEnvironmentActionRequest&, const Model::GetEnvironmentActionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEnvironmentActionResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::GetEnvironmentBlueprintRequest&, const Model::GetEnvironmentBlueprintOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEnvironmentBlueprintResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::GetEnvironmentBlueprintConfigurationRequest&, const Model::GetEnvironmentBlueprintConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEnvironmentBlueprintConfigurationResponseReceivedHandler;
+    typedef std::function<void(const DataZoneClient*, const Model::GetEnvironmentCredentialsRequest&, const Model::GetEnvironmentCredentialsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEnvironmentCredentialsResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::GetEnvironmentProfileRequest&, const Model::GetEnvironmentProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEnvironmentProfileResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::GetFormTypeRequest&, const Model::GetFormTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFormTypeResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::GetGlossaryRequest&, const Model::GetGlossaryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetGlossaryResponseReceivedHandler;

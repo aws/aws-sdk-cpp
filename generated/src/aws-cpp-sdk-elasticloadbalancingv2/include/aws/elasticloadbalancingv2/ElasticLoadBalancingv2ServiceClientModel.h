@@ -29,6 +29,7 @@
 #include <aws/elasticloadbalancingv2/model/DeleteListenerResult.h>
 #include <aws/elasticloadbalancingv2/model/DeleteLoadBalancerResult.h>
 #include <aws/elasticloadbalancingv2/model/DeleteRuleResult.h>
+#include <aws/elasticloadbalancingv2/model/DeleteSharedTrustStoreAssociationResult.h>
 #include <aws/elasticloadbalancingv2/model/DeleteTargetGroupResult.h>
 #include <aws/elasticloadbalancingv2/model/DeleteTrustStoreResult.h>
 #include <aws/elasticloadbalancingv2/model/DeregisterTargetsResult.h>
@@ -46,6 +47,7 @@
 #include <aws/elasticloadbalancingv2/model/DescribeTrustStoreAssociationsResult.h>
 #include <aws/elasticloadbalancingv2/model/DescribeTrustStoreRevocationsResult.h>
 #include <aws/elasticloadbalancingv2/model/DescribeTrustStoresResult.h>
+#include <aws/elasticloadbalancingv2/model/GetResourcePolicyResult.h>
 #include <aws/elasticloadbalancingv2/model/GetTrustStoreCaCertificatesBundleResult.h>
 #include <aws/elasticloadbalancingv2/model/GetTrustStoreRevocationContentResult.h>
 #include <aws/elasticloadbalancingv2/model/ModifyListenerResult.h>
@@ -120,6 +122,7 @@ namespace Aws
       class DeleteListenerRequest;
       class DeleteLoadBalancerRequest;
       class DeleteRuleRequest;
+      class DeleteSharedTrustStoreAssociationRequest;
       class DeleteTargetGroupRequest;
       class DeleteTrustStoreRequest;
       class DeregisterTargetsRequest;
@@ -137,6 +140,7 @@ namespace Aws
       class DescribeTrustStoreAssociationsRequest;
       class DescribeTrustStoreRevocationsRequest;
       class DescribeTrustStoresRequest;
+      class GetResourcePolicyRequest;
       class GetTrustStoreCaCertificatesBundleRequest;
       class GetTrustStoreRevocationContentRequest;
       class ModifyListenerRequest;
@@ -167,6 +171,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DeleteListenerResult, ElasticLoadBalancingv2Error> DeleteListenerOutcome;
       typedef Aws::Utils::Outcome<DeleteLoadBalancerResult, ElasticLoadBalancingv2Error> DeleteLoadBalancerOutcome;
       typedef Aws::Utils::Outcome<DeleteRuleResult, ElasticLoadBalancingv2Error> DeleteRuleOutcome;
+      typedef Aws::Utils::Outcome<DeleteSharedTrustStoreAssociationResult, ElasticLoadBalancingv2Error> DeleteSharedTrustStoreAssociationOutcome;
       typedef Aws::Utils::Outcome<DeleteTargetGroupResult, ElasticLoadBalancingv2Error> DeleteTargetGroupOutcome;
       typedef Aws::Utils::Outcome<DeleteTrustStoreResult, ElasticLoadBalancingv2Error> DeleteTrustStoreOutcome;
       typedef Aws::Utils::Outcome<DeregisterTargetsResult, ElasticLoadBalancingv2Error> DeregisterTargetsOutcome;
@@ -184,6 +189,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DescribeTrustStoreAssociationsResult, ElasticLoadBalancingv2Error> DescribeTrustStoreAssociationsOutcome;
       typedef Aws::Utils::Outcome<DescribeTrustStoreRevocationsResult, ElasticLoadBalancingv2Error> DescribeTrustStoreRevocationsOutcome;
       typedef Aws::Utils::Outcome<DescribeTrustStoresResult, ElasticLoadBalancingv2Error> DescribeTrustStoresOutcome;
+      typedef Aws::Utils::Outcome<GetResourcePolicyResult, ElasticLoadBalancingv2Error> GetResourcePolicyOutcome;
       typedef Aws::Utils::Outcome<GetTrustStoreCaCertificatesBundleResult, ElasticLoadBalancingv2Error> GetTrustStoreCaCertificatesBundleOutcome;
       typedef Aws::Utils::Outcome<GetTrustStoreRevocationContentResult, ElasticLoadBalancingv2Error> GetTrustStoreRevocationContentOutcome;
       typedef Aws::Utils::Outcome<ModifyListenerResult, ElasticLoadBalancingv2Error> ModifyListenerOutcome;
@@ -214,6 +220,7 @@ namespace Aws
       typedef std::future<DeleteListenerOutcome> DeleteListenerOutcomeCallable;
       typedef std::future<DeleteLoadBalancerOutcome> DeleteLoadBalancerOutcomeCallable;
       typedef std::future<DeleteRuleOutcome> DeleteRuleOutcomeCallable;
+      typedef std::future<DeleteSharedTrustStoreAssociationOutcome> DeleteSharedTrustStoreAssociationOutcomeCallable;
       typedef std::future<DeleteTargetGroupOutcome> DeleteTargetGroupOutcomeCallable;
       typedef std::future<DeleteTrustStoreOutcome> DeleteTrustStoreOutcomeCallable;
       typedef std::future<DeregisterTargetsOutcome> DeregisterTargetsOutcomeCallable;
@@ -231,6 +238,7 @@ namespace Aws
       typedef std::future<DescribeTrustStoreAssociationsOutcome> DescribeTrustStoreAssociationsOutcomeCallable;
       typedef std::future<DescribeTrustStoreRevocationsOutcome> DescribeTrustStoreRevocationsOutcomeCallable;
       typedef std::future<DescribeTrustStoresOutcome> DescribeTrustStoresOutcomeCallable;
+      typedef std::future<GetResourcePolicyOutcome> GetResourcePolicyOutcomeCallable;
       typedef std::future<GetTrustStoreCaCertificatesBundleOutcome> GetTrustStoreCaCertificatesBundleOutcomeCallable;
       typedef std::future<GetTrustStoreRevocationContentOutcome> GetTrustStoreRevocationContentOutcomeCallable;
       typedef std::future<ModifyListenerOutcome> ModifyListenerOutcomeCallable;
@@ -264,6 +272,7 @@ namespace Aws
     typedef std::function<void(const ElasticLoadBalancingv2Client*, const Model::DeleteListenerRequest&, const Model::DeleteListenerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteListenerResponseReceivedHandler;
     typedef std::function<void(const ElasticLoadBalancingv2Client*, const Model::DeleteLoadBalancerRequest&, const Model::DeleteLoadBalancerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteLoadBalancerResponseReceivedHandler;
     typedef std::function<void(const ElasticLoadBalancingv2Client*, const Model::DeleteRuleRequest&, const Model::DeleteRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRuleResponseReceivedHandler;
+    typedef std::function<void(const ElasticLoadBalancingv2Client*, const Model::DeleteSharedTrustStoreAssociationRequest&, const Model::DeleteSharedTrustStoreAssociationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSharedTrustStoreAssociationResponseReceivedHandler;
     typedef std::function<void(const ElasticLoadBalancingv2Client*, const Model::DeleteTargetGroupRequest&, const Model::DeleteTargetGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTargetGroupResponseReceivedHandler;
     typedef std::function<void(const ElasticLoadBalancingv2Client*, const Model::DeleteTrustStoreRequest&, const Model::DeleteTrustStoreOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTrustStoreResponseReceivedHandler;
     typedef std::function<void(const ElasticLoadBalancingv2Client*, const Model::DeregisterTargetsRequest&, const Model::DeregisterTargetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeregisterTargetsResponseReceivedHandler;
@@ -281,6 +290,7 @@ namespace Aws
     typedef std::function<void(const ElasticLoadBalancingv2Client*, const Model::DescribeTrustStoreAssociationsRequest&, const Model::DescribeTrustStoreAssociationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTrustStoreAssociationsResponseReceivedHandler;
     typedef std::function<void(const ElasticLoadBalancingv2Client*, const Model::DescribeTrustStoreRevocationsRequest&, const Model::DescribeTrustStoreRevocationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTrustStoreRevocationsResponseReceivedHandler;
     typedef std::function<void(const ElasticLoadBalancingv2Client*, const Model::DescribeTrustStoresRequest&, const Model::DescribeTrustStoresOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTrustStoresResponseReceivedHandler;
+    typedef std::function<void(const ElasticLoadBalancingv2Client*, const Model::GetResourcePolicyRequest&, const Model::GetResourcePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetResourcePolicyResponseReceivedHandler;
     typedef std::function<void(const ElasticLoadBalancingv2Client*, const Model::GetTrustStoreCaCertificatesBundleRequest&, const Model::GetTrustStoreCaCertificatesBundleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTrustStoreCaCertificatesBundleResponseReceivedHandler;
     typedef std::function<void(const ElasticLoadBalancingv2Client*, const Model::GetTrustStoreRevocationContentRequest&, const Model::GetTrustStoreRevocationContentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTrustStoreRevocationContentResponseReceivedHandler;
     typedef std::function<void(const ElasticLoadBalancingv2Client*, const Model::ModifyListenerRequest&, const Model::ModifyListenerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyListenerResponseReceivedHandler;

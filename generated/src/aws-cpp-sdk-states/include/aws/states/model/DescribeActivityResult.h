@@ -7,6 +7,7 @@
 #include <aws/states/SFN_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/states/model/EncryptionConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -77,6 +78,17 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>Settings for configured server-side encryption.</p>
+     */
+    inline const EncryptionConfiguration& GetEncryptionConfiguration() const{ return m_encryptionConfiguration; }
+    inline void SetEncryptionConfiguration(const EncryptionConfiguration& value) { m_encryptionConfiguration = value; }
+    inline void SetEncryptionConfiguration(EncryptionConfiguration&& value) { m_encryptionConfiguration = std::move(value); }
+    inline DescribeActivityResult& WithEncryptionConfiguration(const EncryptionConfiguration& value) { SetEncryptionConfiguration(value); return *this;}
+    inline DescribeActivityResult& WithEncryptionConfiguration(EncryptionConfiguration&& value) { SetEncryptionConfiguration(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -93,6 +105,8 @@ namespace Model
     Aws::String m_name;
 
     Aws::Utils::DateTime m_creationDate;
+
+    EncryptionConfiguration m_encryptionConfiguration;
 
     Aws::String m_requestId;
   };
