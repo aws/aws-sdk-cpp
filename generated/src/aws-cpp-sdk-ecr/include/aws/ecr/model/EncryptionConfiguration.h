@@ -29,8 +29,8 @@ namespace Model
    * contents of your repository are encrypted at rest.</p> <p>By default, when no
    * encryption configuration is set or the <code>AES256</code> encryption type is
    * used, Amazon ECR uses server-side encryption with Amazon S3-managed encryption
-   * keys which encrypts your data at rest using an AES-256 encryption algorithm.
-   * This does not require any action on your part.</p> <p>For more control over the
+   * keys which encrypts your data at rest using an AES256 encryption algorithm. This
+   * does not require any action on your part.</p> <p>For more control over the
    * encryption of the contents of your repository, you can use server-side
    * encryption with Key Management Service key stored in Key Management Service
    * (KMS) to encrypt your images. For more information, see <a
@@ -62,7 +62,7 @@ namespace Model
      * Service (SSE-KMS)</a> in the <i>Amazon Simple Storage Service Console Developer
      * Guide</i>.</p> <p>If you use the <code>AES256</code> encryption type, Amazon ECR
      * uses server-side encryption with Amazon S3-managed encryption keys which
-     * encrypts the images in the repository using an AES-256 encryption algorithm. For
+     * encrypts the images in the repository using an AES256 encryption algorithm. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingServerSideEncryption.html">Protecting
      * data using server-side encryption with Amazon S3-managed encryption keys

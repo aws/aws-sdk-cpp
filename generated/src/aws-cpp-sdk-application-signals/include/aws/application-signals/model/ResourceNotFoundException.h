@@ -53,7 +53,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Cannot find the resource id.</p>
+     * <p>Can't find the resource id.</p>
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }

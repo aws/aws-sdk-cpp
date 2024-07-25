@@ -34,7 +34,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The registry ID.</p>
+     * <p>The registry ID associated with the request.</p>
      */
     inline const Aws::String& GetRegistryId() const{ return m_registryId; }
     inline void SetRegistryId(const Aws::String& value) { m_registryId = value; }

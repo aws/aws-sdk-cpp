@@ -293,6 +293,37 @@ namespace ECR
         }
 
         /**
+         * <p>Creates a repository creation template. This template is used to define the
+         * settings for repositories created by Amazon ECR on your behalf. For example,
+         * repositories created through pull through cache actions. For more information,
+         * see <a
+         * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-creation-templates.html">Private
+         * repository creation templates</a> in the <i>Amazon Elastic Container Registry
+         * User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/CreateRepositoryCreationTemplate">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateRepositoryCreationTemplateOutcome CreateRepositoryCreationTemplate(const Model::CreateRepositoryCreationTemplateRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateRepositoryCreationTemplate that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateRepositoryCreationTemplateRequestT = Model::CreateRepositoryCreationTemplateRequest>
+        Model::CreateRepositoryCreationTemplateOutcomeCallable CreateRepositoryCreationTemplateCallable(const CreateRepositoryCreationTemplateRequestT& request) const
+        {
+            return SubmitCallable(&ECRClient::CreateRepositoryCreationTemplate, request);
+        }
+
+        /**
+         * An Async wrapper for CreateRepositoryCreationTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateRepositoryCreationTemplateRequestT = Model::CreateRepositoryCreationTemplateRequest>
+        void CreateRepositoryCreationTemplateAsync(const CreateRepositoryCreationTemplateRequestT& request, const CreateRepositoryCreationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ECRClient::CreateRepositoryCreationTemplate, request, handler, context);
+        }
+
+        /**
          * <p>Deletes the lifecycle policy associated with the specified
          * repository.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DeleteLifecyclePolicy">AWS
@@ -394,6 +425,31 @@ namespace ECR
         void DeleteRepositoryAsync(const DeleteRepositoryRequestT& request, const DeleteRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ECRClient::DeleteRepository, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes a repository creation template.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DeleteRepositoryCreationTemplate">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteRepositoryCreationTemplateOutcome DeleteRepositoryCreationTemplate(const Model::DeleteRepositoryCreationTemplateRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteRepositoryCreationTemplate that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteRepositoryCreationTemplateRequestT = Model::DeleteRepositoryCreationTemplateRequest>
+        Model::DeleteRepositoryCreationTemplateOutcomeCallable DeleteRepositoryCreationTemplateCallable(const DeleteRepositoryCreationTemplateRequestT& request) const
+        {
+            return SubmitCallable(&ECRClient::DeleteRepositoryCreationTemplate, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteRepositoryCreationTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteRepositoryCreationTemplateRequestT = Model::DeleteRepositoryCreationTemplateRequest>
+        void DeleteRepositoryCreationTemplateAsync(const DeleteRepositoryCreationTemplateRequestT& request, const DeleteRepositoryCreationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ECRClient::DeleteRepositoryCreationTemplate, request, handler, context);
         }
 
         /**
@@ -580,6 +636,33 @@ namespace ECR
         void DescribeRepositoriesAsync(const DescribeRepositoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeRepositoriesRequestT& request = {}) const
         {
             return SubmitAsync(&ECRClient::DescribeRepositories, request, handler, context);
+        }
+
+        /**
+         * <p>Returns details about the repository creation templates in a registry. The
+         * <code>prefixes</code> request parameter can be used to return the details for a
+         * specific repository creation template.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribeRepositoryCreationTemplates">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeRepositoryCreationTemplatesOutcome DescribeRepositoryCreationTemplates(const Model::DescribeRepositoryCreationTemplatesRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for DescribeRepositoryCreationTemplates that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeRepositoryCreationTemplatesRequestT = Model::DescribeRepositoryCreationTemplatesRequest>
+        Model::DescribeRepositoryCreationTemplatesOutcomeCallable DescribeRepositoryCreationTemplatesCallable(const DescribeRepositoryCreationTemplatesRequestT& request = {}) const
+        {
+            return SubmitCallable(&ECRClient::DescribeRepositoryCreationTemplates, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeRepositoryCreationTemplates that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeRepositoryCreationTemplatesRequestT = Model::DescribeRepositoryCreationTemplatesRequest>
+        void DescribeRepositoryCreationTemplatesAsync(const DescribeRepositoryCreationTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeRepositoryCreationTemplatesRequestT& request = {}) const
+        {
+            return SubmitAsync(&ECRClient::DescribeRepositoryCreationTemplates, request, handler, context);
         }
 
         /**
@@ -1049,7 +1132,10 @@ namespace ECR
          * in your account for the replication process. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/using-service-linked-roles.html">Using
          * service-linked roles for Amazon ECR</a> in the <i>Amazon Elastic Container
-         * Registry User Guide</i>.</p>  <p>When configuring cross-account
+         * Registry User Guide</i>. For more information on the custom role for
+         * replication, see <a
+         * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/replication-creation-templates.html#roles-creatingrole-user-console">Creating
+         * an IAM role for replication</a>.</p>  <p>When configuring cross-account
          * replication, the destination account must grant the source account permission to
          * replicate. This permission is controlled using a registry permissions policy.
          * For more information, see <a>PutRegistryPolicy</a>.</p> <p><h3>See
@@ -1238,6 +1324,32 @@ namespace ECR
         void UpdatePullThroughCacheRuleAsync(const UpdatePullThroughCacheRuleRequestT& request, const UpdatePullThroughCacheRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ECRClient::UpdatePullThroughCacheRule, request, handler, context);
+        }
+
+        /**
+         * <p>Updates an existing repository creation template.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/UpdateRepositoryCreationTemplate">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateRepositoryCreationTemplateOutcome UpdateRepositoryCreationTemplate(const Model::UpdateRepositoryCreationTemplateRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateRepositoryCreationTemplate that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateRepositoryCreationTemplateRequestT = Model::UpdateRepositoryCreationTemplateRequest>
+        Model::UpdateRepositoryCreationTemplateOutcomeCallable UpdateRepositoryCreationTemplateCallable(const UpdateRepositoryCreationTemplateRequestT& request) const
+        {
+            return SubmitCallable(&ECRClient::UpdateRepositoryCreationTemplate, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateRepositoryCreationTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateRepositoryCreationTemplateRequestT = Model::UpdateRepositoryCreationTemplateRequest>
+        void UpdateRepositoryCreationTemplateAsync(const UpdateRepositoryCreationTemplateRequestT& request, const UpdateRepositoryCreationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ECRClient::UpdateRepositoryCreationTemplate, request, handler, context);
         }
 
         /**

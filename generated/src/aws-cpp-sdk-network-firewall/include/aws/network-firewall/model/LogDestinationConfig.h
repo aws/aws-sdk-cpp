@@ -29,12 +29,9 @@ namespace Model
   /**
    * <p>Defines where Network Firewall sends logs for the firewall for one log type.
    * This is used in <a>LoggingConfiguration</a>. You can send each type of log to an
-   * Amazon S3 bucket, a CloudWatch log group, or a Kinesis Data Firehose delivery
-   * stream.</p> <p>Network Firewall generates logs for stateful rule groups. You can
-   * save alert and flow log types. The stateful rules engine records flow logs for
-   * all network traffic that it receives. It records alert logs for traffic that
-   * matches stateful rules that have the rule action set to <code>DROP</code> or
-   * <code>ALERT</code>. </p><p><h3>See Also:</h3>   <a
+   * Amazon S3 bucket, a CloudWatch log group, or a Firehose delivery stream.</p>
+   * <p>Network Firewall generates logs for stateful rule groups. You can save alert,
+   * flow, and TLS log types. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/LogDestinationConfig">AWS
    * API Reference</a></p>
    */
@@ -49,9 +46,19 @@ namespace Model
 
     ///@{
     /**
-     * <p>The type of log to send. Alert logs report traffic that matches a
-     * <a>StatefulRule</a> with an action setting that sends an alert log message. Flow
-     * logs are standard network traffic flow logs. </p>
+     * <p>The type of log to record. You can record the following types of logs from
+     * your Network Firewall stateful engine.</p> <ul> <li> <p> <code>ALERT</code> -
+     * Logs for traffic that matches your stateful rules and that have an action that
+     * sends an alert. A stateful rule sends alerts for the rule actions DROP, ALERT,
+     * and REJECT. For more information, see <a>StatefulRule</a>.</p> </li> <li> <p>
+     * <code>FLOW</code> - Standard network traffic flow logs. The stateful rules
+     * engine records flow logs for all network traffic that it receives. Each flow log
+     * record captures the network flow for a specific standard stateless rule
+     * group.</p> </li> <li> <p> <code>TLS</code> - Logs for events that are related to
+     * TLS inspection. For more information, see <a
+     * href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/tls-inspection-configurations.html">Inspecting
+     * SSL/TLS traffic with TLS inspection configurations</a> in the <i>Network
+     * Firewall Developer Guide</i>.</p> </li> </ul>
      */
     inline const LogType& GetLogType() const{ return m_logType; }
     inline bool LogTypeHasBeenSet() const { return m_logTypeHasBeenSet; }
@@ -64,8 +71,7 @@ namespace Model
     ///@{
     /**
      * <p>The type of storage destination to send these logs to. You can send logs to
-     * an Amazon S3 bucket, a CloudWatch log group, or a Kinesis Data Firehose delivery
-     * stream.</p>
+     * an Amazon S3 bucket, a CloudWatch log group, or a Firehose delivery stream.</p>
      */
     inline const LogDestinationType& GetLogDestinationType() const{ return m_logDestinationType; }
     inline bool LogDestinationTypeHasBeenSet() const { return m_logDestinationTypeHasBeenSet; }
@@ -80,17 +86,17 @@ namespace Model
      * <p>The named location for the logs, provided in a key:value mapping that is
      * specific to the chosen destination type. </p> <ul> <li> <p>For an Amazon S3
      * bucket, provide the name of the bucket, with key <code>bucketName</code>, and
-     * optionally provide a prefix, with key <code>prefix</code>. The following example
-     * specifies an Amazon S3 bucket named <code>DOC-EXAMPLE-BUCKET</code> and the
-     * prefix <code>alerts</code>: </p> <p> <code>"LogDestination": { "bucketName":
+     * optionally provide a prefix, with key <code>prefix</code>. </p> <p>The following
+     * example specifies an Amazon S3 bucket named <code>DOC-EXAMPLE-BUCKET</code> and
+     * the prefix <code>alerts</code>: </p> <p> <code>"LogDestination": { "bucketName":
      * "DOC-EXAMPLE-BUCKET", "prefix": "alerts" }</code> </p> </li> <li> <p>For a
      * CloudWatch log group, provide the name of the CloudWatch log group, with key
      * <code>logGroup</code>. The following example specifies a log group named
      * <code>alert-log-group</code>: </p> <p> <code>"LogDestination": { "logGroup":
-     * "alert-log-group" }</code> </p> </li> <li> <p>For a Kinesis Data Firehose
-     * delivery stream, provide the name of the delivery stream, with key
-     * <code>deliveryStream</code>. The following example specifies a delivery stream
-     * named <code>alert-delivery-stream</code>: </p> <p> <code>"LogDestination": {
+     * "alert-log-group" }</code> </p> </li> <li> <p>For a Firehose delivery stream,
+     * provide the name of the delivery stream, with key <code>deliveryStream</code>.
+     * The following example specifies a delivery stream named
+     * <code>alert-delivery-stream</code>: </p> <p> <code>"LogDestination": {
      * "deliveryStream": "alert-delivery-stream" }</code> </p> </li> </ul>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetLogDestination() const{ return m_logDestination; }

@@ -47,6 +47,21 @@ GetServiceResult& GetServiceResult::operator =(const Aws::AmazonWebServiceResult
 
   }
 
+  if(jsonValue.ValueExists("LogGroupReferences"))
+  {
+    Aws::Utils::Array<JsonView> logGroupReferencesJsonList = jsonValue.GetArray("LogGroupReferences");
+    for(unsigned logGroupReferencesIndex = 0; logGroupReferencesIndex < logGroupReferencesJsonList.GetLength(); ++logGroupReferencesIndex)
+    {
+      Aws::Map<Aws::String, JsonView> attributesJsonMap = logGroupReferencesJsonList[logGroupReferencesIndex].GetAllObjects();
+      Aws::Map<Aws::String, Aws::String> attributesMap;
+      for(auto& attributesItem : attributesJsonMap)
+      {
+        attributesMap[attributesItem.first] = attributesItem.second.AsString();
+      }
+      m_logGroupReferences.push_back(std::move(attributesMap));
+    }
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

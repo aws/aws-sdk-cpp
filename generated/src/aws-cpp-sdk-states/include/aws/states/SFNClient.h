@@ -16,22 +16,21 @@ namespace Aws
 namespace SFN
 {
   /**
-   * <fullname>Step Functions</fullname> <p>Step Functions is a service that lets you
-   * coordinate the components of distributed applications and microservices using
-   * visual workflows.</p> <p>You can use Step Functions to build applications from
-   * individual components, each of which performs a discrete function, or
-   * <i>task</i>, allowing you to scale and change applications quickly. Step
-   * Functions provides a console that helps visualize the components of your
-   * application as a series of steps. Step Functions automatically triggers and
-   * tracks each step, and retries steps when there are errors, so your application
-   * executes predictably and in the right order every time. Step Functions logs the
-   * state of each step, so you can quickly diagnose and debug any issues.</p>
-   * <p>Step Functions manages operations and underlying infrastructure to ensure
-   * your application is available at any scale. You can run tasks on Amazon Web
-   * Services, your own servers, or any system that has access to Amazon Web
-   * Services. You can access and use Step Functions using the console, the Amazon
-   * Web Services SDKs, or an HTTP API. For more information about Step Functions,
-   * see the <i> <a
+   * <fullname>Step Functions</fullname> <p>Step Functions coordinates the components
+   * of distributed applications and microservices using visual workflows.</p> <p>You
+   * can use Step Functions to build applications from individual components, each of
+   * which performs a discrete function, or <i>task</i>, allowing you to scale and
+   * change applications quickly. Step Functions provides a console that helps
+   * visualize the components of your application as a series of steps. Step
+   * Functions automatically triggers and tracks each step, and retries steps when
+   * there are errors, so your application executes predictably and in the right
+   * order every time. Step Functions logs the state of each step, so you can quickly
+   * diagnose and debug any issues.</p> <p>Step Functions manages operations and
+   * underlying infrastructure to ensure your application is available at any scale.
+   * You can run tasks on Amazon Web Services, your own servers, or any system that
+   * has access to Amazon Web Services. You can access and use Step Functions using
+   * the console, the Amazon Web Services SDKs, or an HTTP API. For more information
+   * about Step Functions, see the <i> <a
    * href="https://docs.aws.amazon.com/step-functions/latest/dg/welcome.html">Step
    * Functions Developer Guide</a> </i>.</p>  <p>If you use the Step
    * Functions API actions using Amazon Web Services SDK integrations, make sure the
@@ -146,19 +145,25 @@ namespace SFN
          * States Language</a> in the Step Functions User Guide.</p> <p>If you set the
          * <code>publish</code> parameter of this API action to <code>true</code>, it
          * publishes version <code>1</code> as the first revision of the state machine.</p>
-         *  <p>This operation is eventually consistent. The results are best effort
-         * and may not reflect very recent updates and changes.</p>   <p>
+         * <p> For additional control over security, you can encrypt your data using a
+         * <b>customer-managed key</b> for Step Functions state machines. You can configure
+         * a symmetric KMS key and data key reuse period when creating or updating a
+         * <b>State Machine</b>. The execution history and state machine definition will be
+         * encrypted with the key applied to the State Machine. </p>  <p>This
+         * operation is eventually consistent. The results are best effort and may not
+         * reflect very recent updates and changes.</p>   <p>
          * <code>CreateStateMachine</code> is an idempotent API. Subsequent requests won’t
          * create a duplicate resource if it was already created.
          * <code>CreateStateMachine</code>'s idempotency check is based on the state
          * machine <code>name</code>, <code>definition</code>, <code>type</code>,
-         * <code>LoggingConfiguration</code>, and <code>TracingConfiguration</code>. The
-         * check is also based on the <code>publish</code> and
-         * <code>versionDescription</code> parameters. If a following request has a
-         * different <code>roleArn</code> or <code>tags</code>, Step Functions will ignore
-         * these differences and treat it as an idempotent request of the previous. In this
-         * case, <code>roleArn</code> and <code>tags</code> will not be updated, even if
-         * they are different.</p> <p><h3>See Also:</h3>   <a
+         * <code>LoggingConfiguration</code>, <code>TracingConfiguration</code>, and
+         * <code>EncryptionConfiguration</code> The check is also based on the
+         * <code>publish</code> and <code>versionDescription</code> parameters. If a
+         * following request has a different <code>roleArn</code> or <code>tags</code>,
+         * Step Functions will ignore these differences and treat it as an idempotent
+         * request of the previous. In this case, <code>roleArn</code> and
+         * <code>tags</code> will not be updated, even if they are different.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/CreateStateMachine">AWS
          * API Reference</a></p>
          */
@@ -1009,7 +1014,12 @@ namespace SFN
          * pattern, and optionally Task states using the <a
          * href="https://docs.aws.amazon.com/step-functions/latest/dg/connect-to-resource.html#connect-sync">job
          * run</a> pattern to report that the task identified by the <code>taskToken</code>
-         * failed.</p><p><h3>See Also:</h3>   <a
+         * failed.</p> <p>For an execution with encryption enabled, Step Functions will
+         * encrypt the error and cause fields using the KMS key for the execution role.</p>
+         * <p>A caller can mark a task as fail without using any KMS permissions in the
+         * execution role if the caller provides a null value for both <code>error</code>
+         * and <code>cause</code> fields because no data needs to be
+         * encrypted.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/SendTaskFailure">AWS
          * API Reference</a></p>
          */
@@ -1198,7 +1208,12 @@ namespace SFN
 
         /**
          * <p>Stops an execution.</p> <p>This API action is not supported by
-         * <code>EXPRESS</code> state machines.</p><p><h3>See Also:</h3>   <a
+         * <code>EXPRESS</code> state machines.</p> <p>For an execution with encryption
+         * enabled, Step Functions will encrypt the error and cause fields using the KMS
+         * key for the execution role.</p> <p>A caller can stop an execution without using
+         * any KMS permissions in the execution role if the caller provides a null value
+         * for both <code>error</code> and <code>cause</code> fields because no data needs
+         * to be encrypted.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/StopExecution">AWS
          * API Reference</a></p>
          */
@@ -1374,13 +1389,13 @@ namespace SFN
 
         /**
          * <p>Updates an existing state machine by modifying its <code>definition</code>,
-         * <code>roleArn</code>, or <code>loggingConfiguration</code>. Running executions
-         * will continue to use the previous <code>definition</code> and
-         * <code>roleArn</code>. You must include at least one of <code>definition</code>
-         * or <code>roleArn</code> or you will receive a
-         * <code>MissingRequiredParameter</code> error.</p> <p>A qualified state machine
-         * ARN refers to a <i>Distributed Map state</i> defined within a state machine. For
-         * example, the qualified state machine ARN
+         * <code>roleArn</code>, <code>loggingConfiguration</code>, or
+         * <code>EncryptionConfiguration</code>. Running executions will continue to use
+         * the previous <code>definition</code> and <code>roleArn</code>. You must include
+         * at least one of <code>definition</code> or <code>roleArn</code> or you will
+         * receive a <code>MissingRequiredParameter</code> error.</p> <p>A qualified state
+         * machine ARN refers to a <i>Distributed Map state</i> defined within a state
+         * machine. For example, the qualified state machine ARN
          * <code>arn:partition:states:region:account-id:stateMachine:stateMachineName/mapStateLabel</code>
          * refers to a <i>Distributed Map state</i> with a label <code>mapStateLabel</code>
          * in the state machine named <code>stateMachineName</code>.</p> <p>A qualified

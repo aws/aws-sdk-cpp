@@ -152,6 +152,7 @@ static const int SOURCE_AND_DESTINATION_ARE_SAME_HASH = HashingUtils::HashString
 static const int PATH_REQUIRED_HASH = HashingUtils::HashString("PathRequiredException");
 static const int INVALID_DELETION_PARAMETER_HASH = HashingUtils::HashString("InvalidDeletionParameterException");
 static const int INVALID_TAGS_MAP_HASH = HashingUtils::HashString("InvalidTagsMapException");
+static const int OPERATION_NOT_ALLOWED_HASH = HashingUtils::HashString("OperationNotAllowedException");
 static const int INVALID_FILE_LOCATION_HASH = HashingUtils::HashString("InvalidFileLocationException");
 static const int INVALID_BRANCH_NAME_HASH = HashingUtils::HashString("InvalidBranchNameException");
 static const int MAXIMUM_FILE_ENTRIES_EXCEEDED_HASH = HashingUtils::HashString("MaximumFileEntriesExceededException");
@@ -889,6 +890,11 @@ static bool GetErrorForNameHelper1(int hashCode, AWSError<CoreErrors>& error)
   else if (hashCode == INVALID_TAGS_MAP_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_TAGS_MAP), RetryableType::NOT_RETRYABLE);
+    return true;
+  }
+  else if (hashCode == OPERATION_NOT_ALLOWED_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::OPERATION_NOT_ALLOWED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_FILE_LOCATION_HASH)

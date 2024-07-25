@@ -14,6 +14,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/eks/model/OutpostConfigRequest.h>
 #include <aws/eks/model/CreateAccessConfigRequest.h>
+#include <aws/eks/model/UpgradePolicyRequest.h>
 #include <aws/eks/model/EncryptionConfig.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
@@ -235,6 +236,20 @@ namespace Model
     inline void SetBootstrapSelfManagedAddons(bool value) { m_bootstrapSelfManagedAddonsHasBeenSet = true; m_bootstrapSelfManagedAddons = value; }
     inline CreateClusterRequest& WithBootstrapSelfManagedAddons(bool value) { SetBootstrapSelfManagedAddons(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>New clusters, by default, have extended support enabled. You can disable
+     * extended support when creating a cluster by setting this value to
+     * <code>STANDARD</code>.</p>
+     */
+    inline const UpgradePolicyRequest& GetUpgradePolicy() const{ return m_upgradePolicy; }
+    inline bool UpgradePolicyHasBeenSet() const { return m_upgradePolicyHasBeenSet; }
+    inline void SetUpgradePolicy(const UpgradePolicyRequest& value) { m_upgradePolicyHasBeenSet = true; m_upgradePolicy = value; }
+    inline void SetUpgradePolicy(UpgradePolicyRequest&& value) { m_upgradePolicyHasBeenSet = true; m_upgradePolicy = std::move(value); }
+    inline CreateClusterRequest& WithUpgradePolicy(const UpgradePolicyRequest& value) { SetUpgradePolicy(value); return *this;}
+    inline CreateClusterRequest& WithUpgradePolicy(UpgradePolicyRequest&& value) { SetUpgradePolicy(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_name;
@@ -272,6 +287,9 @@ namespace Model
 
     bool m_bootstrapSelfManagedAddons;
     bool m_bootstrapSelfManagedAddonsHasBeenSet = false;
+
+    UpgradePolicyRequest m_upgradePolicy;
+    bool m_upgradePolicyHasBeenSet = false;
   };
 
 } // namespace Model

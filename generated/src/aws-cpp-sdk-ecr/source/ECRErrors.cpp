@@ -48,8 +48,10 @@ static const int LIFECYCLE_POLICY_PREVIEW_NOT_FOUND_HASH = HashingUtils::HashStr
 static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("InvalidParameterException");
 static const int REGISTRY_POLICY_NOT_FOUND_HASH = HashingUtils::HashString("RegistryPolicyNotFoundException");
 static const int INVALID_TAG_PARAMETER_HASH = HashingUtils::HashString("InvalidTagParameterException");
+static const int TEMPLATE_ALREADY_EXISTS_HASH = HashingUtils::HashString("TemplateAlreadyExistsException");
 static const int PULL_THROUGH_CACHE_RULE_NOT_FOUND_HASH = HashingUtils::HashString("PullThroughCacheRuleNotFoundException");
 static const int IMAGE_NOT_FOUND_HASH = HashingUtils::HashString("ImageNotFoundException");
+static const int TEMPLATE_NOT_FOUND_HASH = HashingUtils::HashString("TemplateNotFoundException");
 static const int INVALID_LAYER_HASH = HashingUtils::HashString("InvalidLayerException");
 static const int REFERENCED_IMAGES_NOT_FOUND_HASH = HashingUtils::HashString("ReferencedImagesNotFoundException");
 static const int REPOSITORY_NOT_EMPTY_HASH = HashingUtils::HashString("RepositoryNotEmptyException");
@@ -136,6 +138,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ECRErrors::INVALID_TAG_PARAMETER), RetryableType::NOT_RETRYABLE);
   }
+  else if (hashCode == TEMPLATE_ALREADY_EXISTS_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ECRErrors::TEMPLATE_ALREADY_EXISTS), RetryableType::NOT_RETRYABLE);
+  }
   else if (hashCode == PULL_THROUGH_CACHE_RULE_NOT_FOUND_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ECRErrors::PULL_THROUGH_CACHE_RULE_NOT_FOUND), RetryableType::NOT_RETRYABLE);
@@ -143,6 +149,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == IMAGE_NOT_FOUND_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ECRErrors::IMAGE_NOT_FOUND), RetryableType::NOT_RETRYABLE);
+  }
+  else if (hashCode == TEMPLATE_NOT_FOUND_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ECRErrors::TEMPLATE_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_LAYER_HASH)
   {

@@ -21,7 +21,8 @@ namespace Model
 Service::Service() : 
     m_keyAttributesHasBeenSet(false),
     m_attributeMapsHasBeenSet(false),
-    m_metricReferencesHasBeenSet(false)
+    m_metricReferencesHasBeenSet(false),
+    m_logGroupReferencesHasBeenSet(false)
 {
 }
 
@@ -69,6 +70,22 @@ Service& Service::operator =(JsonView jsonValue)
     m_metricReferencesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("LogGroupReferences"))
+  {
+    Aws::Utils::Array<JsonView> logGroupReferencesJsonList = jsonValue.GetArray("LogGroupReferences");
+    for(unsigned logGroupReferencesIndex = 0; logGroupReferencesIndex < logGroupReferencesJsonList.GetLength(); ++logGroupReferencesIndex)
+    {
+      Aws::Map<Aws::String, JsonView> attributesJsonMap = logGroupReferencesJsonList[logGroupReferencesIndex].GetAllObjects();
+      Aws::Map<Aws::String, Aws::String> attributesMap;
+      for(auto& attributesItem : attributesJsonMap)
+      {
+        attributesMap[attributesItem.first] = attributesItem.second.AsString();
+      }
+      m_logGroupReferences.push_back(std::move(attributesMap));
+    }
+    m_logGroupReferencesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -111,6 +128,22 @@ JsonValue Service::Jsonize() const
      metricReferencesJsonList[metricReferencesIndex].AsObject(m_metricReferences[metricReferencesIndex].Jsonize());
    }
    payload.WithArray("MetricReferences", std::move(metricReferencesJsonList));
+
+  }
+
+  if(m_logGroupReferencesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> logGroupReferencesJsonList(m_logGroupReferences.size());
+   for(unsigned logGroupReferencesIndex = 0; logGroupReferencesIndex < logGroupReferencesJsonList.GetLength(); ++logGroupReferencesIndex)
+   {
+     JsonValue attributesJsonMap;
+     for(auto& attributesItem : m_logGroupReferences[logGroupReferencesIndex])
+     {
+       attributesJsonMap.WithString(attributesItem.first, attributesItem.second);
+     }
+     logGroupReferencesJsonList[logGroupReferencesIndex].AsObject(std::move(attributesJsonMap));
+   }
+   payload.WithArray("LogGroupReferences", std::move(logGroupReferencesJsonList));
 
   }
 

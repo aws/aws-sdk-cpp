@@ -69,7 +69,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Used to inclue anomaly detection information.</p>
+     * <p>Used to include anomaly detection information.</p>
      */
     inline const Aws::Vector<DescribeTargetHealthInputIncludeEnum>& GetInclude() const{ return m_include; }
     inline bool IncludeHasBeenSet() const { return m_includeHasBeenSet; }

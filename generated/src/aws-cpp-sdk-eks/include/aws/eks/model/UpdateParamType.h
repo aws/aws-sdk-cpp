@@ -43,7 +43,8 @@ namespace Model
     SecurityGroups,
     Subnets,
     AuthenticationMode,
-    PodIdentityAssociations
+    PodIdentityAssociations,
+    UpgradePolicy
   };
 
 namespace UpdateParamTypeMapper

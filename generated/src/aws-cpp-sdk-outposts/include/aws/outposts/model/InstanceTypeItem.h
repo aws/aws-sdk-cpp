@@ -48,10 +48,23 @@ namespace Model
     inline InstanceTypeItem& WithInstanceType(Aws::String&& value) { SetInstanceType(std::move(value)); return *this;}
     inline InstanceTypeItem& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The number of default VCPUs in an instance type.</p>
+     */
+    inline int GetVCPUs() const{ return m_vCPUs; }
+    inline bool VCPUsHasBeenSet() const { return m_vCPUsHasBeenSet; }
+    inline void SetVCPUs(int value) { m_vCPUsHasBeenSet = true; m_vCPUs = value; }
+    inline InstanceTypeItem& WithVCPUs(int value) { SetVCPUs(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_instanceType;
     bool m_instanceTypeHasBeenSet = false;
+
+    int m_vCPUs;
+    bool m_vCPUsHasBeenSet = false;
   };
 
 } // namespace Model

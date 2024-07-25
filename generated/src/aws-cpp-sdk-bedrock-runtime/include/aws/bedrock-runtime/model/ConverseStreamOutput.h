@@ -15,6 +15,7 @@
 #include <aws/bedrock-runtime/model/ModelStreamErrorException.h>
 #include <aws/bedrock-runtime/model/ValidationException.h>
 #include <aws/bedrock-runtime/model/ThrottlingException.h>
+#include <aws/bedrock-runtime/model/ServiceUnavailableException.h>
 #include <utility>
 
 namespace Aws
@@ -166,6 +167,18 @@ namespace Model
     inline ConverseStreamOutput& WithThrottlingException(const ThrottlingException& value) { SetThrottlingException(value); return *this;}
     inline ConverseStreamOutput& WithThrottlingException(ThrottlingException&& value) { SetThrottlingException(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The service isn't currently available. Try again later.</p>
+     */
+    inline const ServiceUnavailableException& GetServiceUnavailableException() const{ return m_serviceUnavailableException; }
+    inline bool ServiceUnavailableExceptionHasBeenSet() const { return m_serviceUnavailableExceptionHasBeenSet; }
+    inline void SetServiceUnavailableException(const ServiceUnavailableException& value) { m_serviceUnavailableExceptionHasBeenSet = true; m_serviceUnavailableException = value; }
+    inline void SetServiceUnavailableException(ServiceUnavailableException&& value) { m_serviceUnavailableExceptionHasBeenSet = true; m_serviceUnavailableException = std::move(value); }
+    inline ConverseStreamOutput& WithServiceUnavailableException(const ServiceUnavailableException& value) { SetServiceUnavailableException(value); return *this;}
+    inline ConverseStreamOutput& WithServiceUnavailableException(ServiceUnavailableException&& value) { SetServiceUnavailableException(std::move(value)); return *this;}
+    ///@}
   private:
 
     MessageStartEvent m_messageStart;
@@ -197,6 +210,9 @@ namespace Model
 
     ThrottlingException m_throttlingException;
     bool m_throttlingExceptionHasBeenSet = false;
+
+    ServiceUnavailableException m_serviceUnavailableException;
+    bool m_serviceUnavailableExceptionHasBeenSet = false;
   };
 
 } // namespace Model

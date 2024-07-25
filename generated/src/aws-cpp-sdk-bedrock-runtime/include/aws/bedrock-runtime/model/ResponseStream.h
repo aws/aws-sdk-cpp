@@ -11,6 +11,7 @@
 #include <aws/bedrock-runtime/model/ValidationException.h>
 #include <aws/bedrock-runtime/model/ThrottlingException.h>
 #include <aws/bedrock-runtime/model/ModelTimeoutException.h>
+#include <aws/bedrock-runtime/model/ServiceUnavailableException.h>
 #include <utility>
 
 namespace Aws
@@ -93,8 +94,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The number or frequency of requests exceeds the limit. Resubmit your request
-     * later.</p>
+     * <p>Your request was throttled because of service-wide limitations. Resubmit your
+     * request later or in a different region. You can also purchase <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html">Provisioned
+     * Throughput</a> to increase the rate or number of tokens you can process.</p>
      */
     inline const ThrottlingException& GetThrottlingException() const{ return m_throttlingException; }
     inline bool ThrottlingExceptionHasBeenSet() const { return m_throttlingExceptionHasBeenSet; }
@@ -116,6 +119,16 @@ namespace Model
     inline ResponseStream& WithModelTimeoutException(const ModelTimeoutException& value) { SetModelTimeoutException(value); return *this;}
     inline ResponseStream& WithModelTimeoutException(ModelTimeoutException&& value) { SetModelTimeoutException(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    
+    inline const ServiceUnavailableException& GetServiceUnavailableException() const{ return m_serviceUnavailableException; }
+    inline bool ServiceUnavailableExceptionHasBeenSet() const { return m_serviceUnavailableExceptionHasBeenSet; }
+    inline void SetServiceUnavailableException(const ServiceUnavailableException& value) { m_serviceUnavailableExceptionHasBeenSet = true; m_serviceUnavailableException = value; }
+    inline void SetServiceUnavailableException(ServiceUnavailableException&& value) { m_serviceUnavailableExceptionHasBeenSet = true; m_serviceUnavailableException = std::move(value); }
+    inline ResponseStream& WithServiceUnavailableException(const ServiceUnavailableException& value) { SetServiceUnavailableException(value); return *this;}
+    inline ResponseStream& WithServiceUnavailableException(ServiceUnavailableException&& value) { SetServiceUnavailableException(std::move(value)); return *this;}
+    ///@}
   private:
 
     PayloadPart m_chunk;
@@ -135,6 +148,9 @@ namespace Model
 
     ModelTimeoutException m_modelTimeoutException;
     bool m_modelTimeoutExceptionHasBeenSet = false;
+
+    ServiceUnavailableException m_serviceUnavailableException;
+    bool m_serviceUnavailableExceptionHasBeenSet = false;
   };
 
 } // namespace Model
