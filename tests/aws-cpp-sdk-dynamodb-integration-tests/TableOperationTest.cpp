@@ -60,6 +60,30 @@ static const char BASE_ATTRIBUTEVALUE_TEST_TABLE[] = "AttributeValue";
 
 static const char ALLOCATION_TAG[] = "TableOperationTest";
 
+//=========================
+class RetryTestSuite :public ::testing::Test
+{
+
+    
+
+
+};    
+
+
+//Define test fixture to be tried 3 times
+AWS_TEST_F_N(RetryTestSuite, test, 3)
+{
+    std::cout<<"User specified test. Attempts left="<<attemptsLeft<<std::endl;
+
+    if(attemptsLeft > 0)
+    {
+        result = false;
+    }
+
+    result = true;
+}
+
+
 namespace {
 
 static std::string DYNAMODB_INTEGRATION_TEST_ID;
@@ -264,8 +288,9 @@ protected:
     }
 };
 
-//std::shared_ptr<DynamoDBClient> TableOperationTest::m_client(nullptr);
-//std::shared_ptr<Aws::Utils::RateLimits::RateLimiterInterface> TableOperationTest::m_limiter(nullptr);
+
+
+
 
 TEST_F(TableOperationTest, TestListTable)
 {

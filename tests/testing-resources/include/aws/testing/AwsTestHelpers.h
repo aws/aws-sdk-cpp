@@ -17,6 +17,8 @@
 #include <type_traits>
 #include <ostream>
 
+
+
 #define AWS_ASSERT_SUCCESS(awsCppSdkOutcome) \
   ASSERT_TRUE(awsCppSdkOutcome.IsSuccess()) << "Error details: " << awsCppSdkOutcome.GetError() \
                                             << "\nRetries: " << awsCppSdkOutcome.GetRetryCount() \
@@ -26,6 +28,14 @@
   EXPECT_TRUE(awsCppSdkOutcome.IsSuccess()) << "Error details: " << awsCppSdkOutcome.GetError() \
                                             << "\nRetries: " << awsCppSdkOutcome.GetRetryCount() \
                                             << "\nNow timestamp: " << Aws::Utils::DateTime::Now().ToGmtString(Aws::Utils::DateFormat::ISO_8601_BASIC)
+
+
+#define AWS_GTEST_OVERRIDE(GTEST_MACRO, result, ...) (result) = (result) && GTEST_MACRO(__VA_ARGS__)
+
+
+
+    
+
 
 /**
  * AWS-CPP-SDK test utility helper function to un-conditionally retry not succeeded operation call.
@@ -274,3 +284,66 @@ template <typename CONTEXT>
 const char RetryPlanner<CONTEXT>::ALLOCATION_TAG[] = "RetryPlanner";
 
 
+
+//===============
+// Macro to create a test fixture with retry logic
+#define AWS_TEST_F(test_suite_name, test_name) AWS_TEST_F_N(test_suite_name, test_name, 1)
+#define AWS_VALIDATE_INTEGER(value) static_assert(std::is_integral<decltype(value)>(), "Value must be an integer");
+
+// Helpers
+#define AWS_GTEST_STRINGIFY_HELPER_(name, ...) #name
+#define AWS_GTEST_STRINGIFY_(...) GTEST_STRINGIFY_HELPER_(__VA_ARGS__, )
+
+// Actual implementation
+#define AWS_TEST_F_N(test_suite_name, test_name, MAX_RETRIES)     \
+    static_assert(sizeof(AWS_GTEST_STRINGIFY_(test_suite_name)) > 1,                 \
+                    "test_suite_name must not be empty");                        \
+    static_assert(sizeof(AWS_GTEST_STRINGIFY_(test_name)) > 1,                       \
+                    "test_name must not be empty");  \
+    AWS_VALIDATE_INTEGER ((MAX_RETRIES)) \
+    class GTEST_TEST_CLASS_NAME_(test_suite_name, test_name); \
+    template<typename T> \
+    class RetryWrapper{}; \
+    template<> \
+    class RetryWrapper<GTEST_TEST_CLASS_NAME_(test_suite_name,test_name)> : \
+        public test_suite_name \
+    { \
+    protected: \
+        int maxRetries{MAX_RETRIES}; \
+        std::function<void(int)> delayFunction; \
+    public: \
+        virtual void Retry(bool&, int); \
+        void SetDelayFunction(std::function<void(int)> f) { delayFunction = f; } \
+        static ::testing::TestInfo* const test_info_; \
+    }; \
+    class GTEST_TEST_CLASS_NAME_(test_suite_name, test_name) : \
+        public RetryWrapper<GTEST_TEST_CLASS_NAME_(test_suite_name,test_name)> \
+    {public: \
+        void TestBody() override; \
+    }; \
+    ::testing::TestInfo* const RetryWrapper<GTEST_TEST_CLASS_NAME_(test_suite_name,test_name)>::test_info_ = \
+        ::testing::internal::MakeAndRegisterTestInfo( \
+            #test_suite_name, #test_name, nullptr, nullptr, \
+            ::testing::internal::CodeLocation(__FILE__, __LINE__), \
+            ::testing::internal::GetTypeId<test_suite_name>(), \
+            ::testing::internal::SuiteApiResolver<test_suite_name>::GetSetUpCaseOrSuite(__FILE__, __LINE__), \
+            ::testing::internal::SuiteApiResolver<test_suite_name>::GetTearDownCaseOrSuite(__FILE__, __LINE__), \
+            new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)> \
+        ); \
+    void GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)::TestBody() \
+    { \
+        int attempt = 0; \
+        bool result = true; \
+        while (maxRetries-- && result) \
+        { \
+            std::cout << "invoke retry of base. Attempt " << attempt << std::endl; \
+            result = true; \
+            RetryWrapper<GTEST_TEST_CLASS_NAME_(test_suite_name,test_name)>::Retry(result, maxRetries); \
+            if (delayFunction) \
+            { \
+                delayFunction(attempt++); \
+            } \
+        } \
+        EXPECT_EQ(result, true);\
+    } \
+    void RetryWrapper<GTEST_TEST_CLASS_NAME_(test_suite_name,test_name)>::Retry(__attribute__((unused)) bool& result, __attribute__((unused)) int attemptsLeft)
