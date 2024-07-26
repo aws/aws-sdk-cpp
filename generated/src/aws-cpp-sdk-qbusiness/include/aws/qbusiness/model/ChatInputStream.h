@@ -23,7 +23,7 @@ namespace Model
 {
 
   /**
-   * <p>The streaming input for the <code>Chat</code> API.</p><p><h3>See Also:</h3>  
+   * <p>The streaming input for the <code>Chat</code> API.</p><p><h3>See Also:</h3>
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/ChatInputStream">AWS
    * API Reference</a></p>
@@ -85,7 +85,8 @@ namespace Model
        Aws::Utils::Event::Message msg;
        msg.InsertEventHeader(":message-type", Aws::String("event"));
        msg.InsertEventHeader(":event-type", Aws::String("AuthChallengeResponseEvent"));
-       AWS_UNREFERENCED_PARAM(value);
+       msg.InsertEventHeader(":content-type", Aws::String("application/json"));
+       msg.WriteEventPayload(value.Jsonize().View().WriteCompact());
        WriteEvent(msg);
        return *this;
     }
