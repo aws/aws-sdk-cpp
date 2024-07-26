@@ -147,6 +147,10 @@ public class CppViewHelper {
         return CaseFormat.LOWER_CAMEL.to(CaseFormat.UPPER_CAMEL, lowerCamel);
     }
 
+    public static String convertToUpperSnake(final String string) {
+        return CaseFormat.LOWER_HYPHEN.to(CaseFormat.UPPER_UNDERSCORE, string);
+    }
+
     public static String computeVariableHasBeenSetName(String memberName) {
         return String.format("%sHasBeenSet", computeMemberVariableName(memberName));
     }

@@ -11,7 +11,8 @@
         "Bodyless", "HTTPGET", "ratelimiter", "Ratelimiter", "STDMETHODCALLTYPE", "CANTSAVE", "OLECHAR", "DISPID",
         "UNKNOWNNAME", "DISPPARAMS", "XMLHTTP", "comptr", "Metadataservice", "Streamfn", "HWAVEOUT", "matdesc",
         "Presigner", "xindex", "errortype", "waveout", "WAVEOUTCAPSA", "ALLOWSYNC", "WAVEHDR", "MMSYSERR",
-        "WAVEFORMATEX", "Unprepare", "DDISABLE_IMDSV1", "SENDREQUEST", "threadpool", "stdlib", "ALLOC",
+        "WAVEFORMATEX", "Unprepare", "DDISABLE_IMDSV1", "SENDREQUEST", "threadpool", "stdlib", "ALLOC", "ISOE",
+        "isoe",
         // AWS general
         "Arns", "AMZN", "amzn", "Paulo", "Ningxia", "ISOB", "isob", "AWSXML", "IMDSV", "AWSSTL",
         // AWS Signature
