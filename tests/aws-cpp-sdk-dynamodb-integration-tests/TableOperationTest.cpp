@@ -79,8 +79,10 @@ AWS_TEST_F_N(RetryTestSuite, test, 3)
     {
         result = false;
     }
-
-    result = true;
+    else 
+    {
+        result = true;
+    }
 }
 
 
@@ -473,8 +475,63 @@ TEST_F(TableOperationTest, TestThrottling)
     }
 }
 
+AWS_TEST_F_N(TableOperationTest, TestThrottling2, 3)
+{
+    std::cout<<"TestThrottling test. Attempts left="<<attemptsLeft<<std::endl;
 
+    AWS_LOGSTREAM_TRACE(ALLOCATION_TAG, "TestThrottling")
 
+    Aws::String throttledTestTableName = BuildTableName(BASE_THROTTLED_TEST_TABLE);
+    CreateTable(throttledTestTableName, 1, 1);
+
+    // Blast the table until it throttles
+    Aws::String testValueColumnName = "TestValue";
+    Aws::Vector<PutItemOutcomeCallable> putItemResults;
+    Aws::StringStream ss;
+
+    // Under ideal circumstances, Dynamo can offer up to 300 secs of bursting, so we must exceed that
+    for (unsigned i = 0; i < 500; ++i)
+    {
+        ss << HASH_KEY_NAME << i;
+        PutItemRequest putItemRequest;
+        putItemRequest.SetTableName(throttledTestTableName);
+        AttributeValue hashKeyAttribute;
+        hashKeyAttribute.SetS(ss.str());
+        ss.str("");
+        putItemRequest.AddItem(HASH_KEY_NAME, hashKeyAttribute);
+        AttributeValue testValueAttribute;
+        ss << testValueColumnName << i;
+        testValueAttribute.SetS(ss.str());
+        putItemRequest.AddItem(testValueColumnName, testValueAttribute);
+        ss.str("");
+
+        putItemResults.push_back(m_client->PutItemCallable(putItemRequest));
+    }
+
+    int throttleCount = 0;
+    for (auto& putItemResult : putItemResults)
+    {
+        PutItemOutcome outcome = putItemResult.get();
+        result = result && outcome.IsSuccess();
+        if (!outcome.IsSuccess())
+        {
+            AWSError<DynamoDBErrors> error = outcome.GetError();
+            if (error.GetErrorType() == DynamoDBErrors::PROVISIONED_THROUGHPUT_EXCEEDED)
+            {
+                if (++throttleCount >= 10)
+                {
+                    // Good, the client is doing what it is supposed to do.  No need to beat a dead horse.
+                    // TODO: We need to stop the in-flight requests before the client gets deleted
+                    break;
+                }
+            }
+            else
+            {
+                FAIL() << "Unexpected Error: " << error.GetMessage();
+            }
+        }
+    }
+}
 
 
 

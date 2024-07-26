@@ -333,8 +333,8 @@ const char RetryPlanner<CONTEXT>::ALLOCATION_TAG[] = "RetryPlanner";
     void GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)::TestBody() \
     { \
         int attempt = 0; \
-        bool result = true; \
-        while (maxRetries-- && result) \
+        bool result = false; \
+        while (maxRetries-- && !result) \
         { \
             std::cout << "invoke retry of base. Attempt " << attempt << std::endl; \
             result = true; \
