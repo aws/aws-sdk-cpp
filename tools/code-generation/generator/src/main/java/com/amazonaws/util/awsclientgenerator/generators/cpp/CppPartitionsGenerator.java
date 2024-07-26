@@ -2,11 +2,14 @@ package com.amazonaws.util.awsclientgenerator.generators.cpp;
 
 import com.amazonaws.util.awsclientgenerator.domainmodels.SdkFileEntry;
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.PartitionsModel;
+import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.cpp.CppViewHelper;
 import com.amazonaws.util.awsclientgenerator.generators.PartitionsGenerator;
 import com.amazonaws.util.awsclientgenerator.generators.exceptions.SourceGenerationFailedException;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.common.collect.ImmutableList;
+import org.apache.commons.lang3.tuple.Pair;
 import org.apache.velocity.Template;
 import org.apache.velocity.VelocityContext;
 import org.apache.velocity.app.VelocityEngine;
@@ -18,8 +21,8 @@ import java.io.IOException;
 import java.io.StringWriter;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
+import java.util.Collection;
+import java.util.Comparator;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -32,12 +35,15 @@ import java.util.stream.StreamSupport;
 
 public class CppPartitionsGenerator implements PartitionsGenerator {
 
-    private static String PARTITIONS_INCLUDE_TEMPLATE =
+    private final static String PARTITIONS_INCLUDE_TEMPLATE =
             "/com/amazonaws/util/awsclientgenerator/velocity/cpp/endpoint/partitions/AWSPartitionsHeader.vm";
-    private static String PARTITIONS_SOURCE_TEMPLATE =
+    private final static String PARTITIONS_SOURCE_TEMPLATE =
             "/com/amazonaws/util/awsclientgenerator/velocity/cpp/endpoint/partitions/AWSPartitionsSource.vm";
-    private static String PARTITIONS_HEADER_DIR_PATH = "include/aws/core/endpoint/AWSPartitions.h";
-    private static String PARTITIONS_SOURCE_DIR_PATH = "source/endpoint/AWSPartitions.cpp";
+    private final static String REGION_INCLUDE_TEMPLATE =
+            "/com/amazonaws/util/awsclientgenerator/velocity/cpp/endpoint/region/AWSRegionHeader.vm";
+    private final static String PARTITIONS_HEADER_DIR_PATH = "include/aws/core/endpoint/AWSPartitions.h";
+    private final static String PARTITIONS_SOURCE_DIR_PATH = "source/endpoint/AWSPartitions.cpp";
+    private final static String REGION_HEADER_DIR_PATH = "include/aws/core/Region.h";
 
     protected final VelocityEngine velocityEngine;
 
@@ -81,16 +87,23 @@ public class CppPartitionsGenerator implements PartitionsGenerator {
     protected List<SdkFileEntry> generateModelHeaderFiles(final PartitionsModel partitionsModel) throws Exception {
         VelocityContext context = createContext(partitionsModel);
 
-        Template template = velocityEngine.getTemplate(PARTITIONS_INCLUDE_TEMPLATE, StandardCharsets.UTF_8.name());
-        context.put("partitionsModel", partitionsModel);
-        context.put("serviceModel", partitionsModel); // for compatibility with generic template (Attribution.vm)
+        return ImmutableList.of(Pair.of(PARTITIONS_INCLUDE_TEMPLATE, PARTITIONS_HEADER_DIR_PATH),
+            Pair.of(REGION_INCLUDE_TEMPLATE, REGION_HEADER_DIR_PATH))
+                .stream()
+                .map(templatePair -> {
+                    Template template = velocityEngine.getTemplate(templatePair.getKey(), StandardCharsets.UTF_8.name());
+                    context.put("partitionsModel", partitionsModel);
+                    context.put("serviceModel", partitionsModel); // for compatibility with generic template (Attribution.vm)
+                    context.put("regions", partitionsModel.getPartitions().stream()
+                            .map(partition -> partition.getRegions().entrySet())
+                            .flatMap(Collection::stream)
+                            .sorted(Map.Entry.comparingByKey())
+                            .collect(Collectors.toList()));
+                    context.put("CppViewHelper", CppViewHelper.class);
 
-        String outputFileName = PARTITIONS_HEADER_DIR_PATH;
-        SdkFileEntry headerFile = makeFile(template, context, outputFileName);
-        List<SdkFileEntry> sdkFileEntries = new ArrayList<>();
-        sdkFileEntries.add(headerFile);
-
-        return sdkFileEntries;
+                    return makeFile(template, context, templatePair.getValue());
+                })
+                .collect(Collectors.toList());
     }
 
     protected List<SdkFileEntry> generateModelSourceFiles(final PartitionsModel partitionsModel) throws Exception {
@@ -117,7 +130,7 @@ public class CppPartitionsGenerator implements PartitionsGenerator {
         return context;
     }
 
-    protected static final SdkFileEntry makeFile(Template template, VelocityContext context, String path) throws IOException {
+    protected static final SdkFileEntry makeFile(Template template, VelocityContext context, String path) {
         StringWriter sw = new StringWriter();
         template.merge(context, sw);
 
