@@ -13,7 +13,7 @@ import org.junit.Test;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Map;
-import java.util.List;
+import com.google.common.collect.ImmutableList;
 
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertFalse;
@@ -411,7 +411,7 @@ public class C2jModelToGeneratorModelTransformerTest {
 
         C2jShape enumShape = new C2jShape();
         enumShape.setType("string");
-        enumShape.setEnums(List.of("VALUE"));
+        enumShape.setEnums(ImmutableList.of("VALUE"));
         c2jShapeMap.put("EnumShape", enumShape);
 
         C2jShapeMember enumShapeMember = new C2jShapeMember();
