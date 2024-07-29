@@ -30,11 +30,7 @@
                                             << "\nNow timestamp: " << Aws::Utils::DateTime::Now().ToGmtString(Aws::Utils::DateFormat::ISO_8601_BASIC)
 
 
-#define AWS_GTEST_OVERRIDE(GTEST_MACRO, result, ...) (result) = (result) && GTEST_MACRO(__VA_ARGS__)
-
-
-
-    
+//#define AWS_GTEST_EQ(result, retries_left ...) (result) (result) && GTEST_MACRO(__VA_ARGS__)    
 
 
 /**
@@ -303,25 +299,56 @@ const char RetryPlanner<CONTEXT>::ALLOCATION_TAG[] = "RetryPlanner";
     AWS_VALIDATE_INTEGER ((MAX_RETRIES)) \
     class GTEST_TEST_CLASS_NAME_(test_suite_name, test_name); \
     template<typename T> \
-    class RetryWrapper{}; \
+    class RetryWrapper##_test_suite_name_##test_name{}; \
     template<> \
-    class RetryWrapper<GTEST_TEST_CLASS_NAME_(test_suite_name,test_name)> : \
+    class RetryWrapper##_test_suite_name_##test_name<GTEST_TEST_CLASS_NAME_(test_suite_name,test_name)> : \
         public test_suite_name \
     { \
     protected: \
         int maxRetries{MAX_RETRIES}; \
         std::function<void(int)> delayFunction; \
+        bool result{false}; \
     public: \
         virtual void Retry(bool&, int); \
         void SetDelayFunction(std::function<void(int)> f) { delayFunction = f; } \
         static ::testing::TestInfo* const test_info_; \
+        template<typename T> \
+        inline void AWS_EXPECT_EQ(const T& lhs, const T& rhs){ \
+            if( ((result = result && (lhs == rhs)) || maxRetries == 0 ) ){ EXPECT_EQ(lhs,rhs); } \
+        } \
+        template<typename T> \
+        inline void AWS_EXPECT_GT(const T& lhs, const T& rhs){ \
+            if( ((result = result && (lhs == rhs)) || maxRetries == 0 ) ){ EXPECT_GT(lhs,rhs); } \
+        } \
+        template<typename T> \
+        inline void AWS_EXPECT_LT(const T& lhs, const T& rhs){ \
+            if( ((result = result && (lhs == rhs)) || maxRetries == 0 ) ){ EXPECT_LT(lhs,rhs); } \
+        } \
+        template<typename T> \
+        inline void AWS_EXPECT_GE(const T& lhs, const T& rhs){ \
+            if( ((result = result && (lhs == rhs)) || maxRetries == 0 ) ){ EXPECT_GE(lhs,rhs); } \
+        } \
+        template<typename T> \
+        inline void AWS_EXPECT_LE(const T& lhs, const T& rhs){ \
+            if( ((result = result && (lhs == rhs)) || maxRetries == 0 ) ){ EXPECT_LE(lhs,rhs); } \
+        } \
+        template<typename T> \
+        inline void AWS_EXPECT_NE(const T& lhs, const T& rhs){ \
+            if( ((result = result && (lhs == rhs)) || maxRetries == 0 ) ){ EXPECT_NE(lhs,rhs); } \
+        } \
+        inline void AWS_EXPECT_TRUE(bool condition){ \
+            if( ((result = result && condition) || maxRetries == 0 ) ){ GTEST_EXPECT_TRUE(condition); } \
+        } \
+        inline void AWS_EXPECT_FALSE(bool condition){ \
+            if( ((result = result && !condition)|| maxRetries == 0 ) ){ GTEST_EXPECT_FALSE(condition); } \
+        } \
     }; \
     class GTEST_TEST_CLASS_NAME_(test_suite_name, test_name) : \
-        public RetryWrapper<GTEST_TEST_CLASS_NAME_(test_suite_name,test_name)> \
+        public RetryWrapper##_test_suite_name_##test_name<GTEST_TEST_CLASS_NAME_(test_suite_name,test_name)> \
     {public: \
         void TestBody() override; \
     }; \
-    ::testing::TestInfo* const RetryWrapper<GTEST_TEST_CLASS_NAME_(test_suite_name,test_name)>::test_info_ = \
+    ::testing::TestInfo* const RetryWrapper##_test_suite_name_##test_name<GTEST_TEST_CLASS_NAME_(test_suite_name,test_name)>::test_info_ = \
         ::testing::internal::MakeAndRegisterTestInfo( \
             #test_suite_name, #test_name, nullptr, nullptr, \
             ::testing::internal::CodeLocation(__FILE__, __LINE__), \
@@ -333,12 +360,13 @@ const char RetryPlanner<CONTEXT>::ALLOCATION_TAG[] = "RetryPlanner";
     void GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)::TestBody() \
     { \
         int attempt = 0; \
-        bool result = false; \
+        result = false; \
         while (maxRetries-- && !result) \
         { \
             std::cout << "invoke retry of base. Attempt " << attempt << std::endl; \
             result = true; \
-            RetryWrapper<GTEST_TEST_CLASS_NAME_(test_suite_name,test_name)>::Retry(result, maxRetries); \
+            RetryWrapper##_test_suite_name_##test_name<GTEST_TEST_CLASS_NAME_(test_suite_name,test_name)>::Retry(result, maxRetries); \
+            std::cout << "result= " << result << std::endl; \
             if (delayFunction) \
             { \
                 delayFunction(attempt++); \
@@ -346,4 +374,4 @@ const char RetryPlanner<CONTEXT>::ALLOCATION_TAG[] = "RetryPlanner";
         } \
         EXPECT_EQ(result, true);\
     } \
-    void RetryWrapper<GTEST_TEST_CLASS_NAME_(test_suite_name,test_name)>::Retry(__attribute__((unused)) bool& result, __attribute__((unused)) int attemptsLeft)
+    void RetryWrapper##_test_suite_name_##test_name<GTEST_TEST_CLASS_NAME_(test_suite_name,test_name)>::Retry(__attribute__((unused)) bool& result, __attribute__((unused)) int attemptsLeft)

@@ -75,14 +75,21 @@ AWS_TEST_F_N(RetryTestSuite, test, 3)
 {
     std::cout<<"User specified test. Attempts left="<<attemptsLeft<<std::endl;
 
-    if(attemptsLeft > 0)
+    auto f = [](int ) {
+        std::cout<<"delay "<<std::endl;
+        std::this_thread::sleep_for(std::chrono::seconds(1));
+    };
+
+    SetDelayFunction( f);
+
+    
+    int v = 0;
+    if(attemptsLeft == 0)
     {
-        result = false;
+        v = 1;
     }
-    else 
-    {
-        result = true;
-    }
+    
+    AWS_EXPECT_EQ(1,v);
 }
 
 
@@ -534,7 +541,192 @@ AWS_TEST_F_N(TableOperationTest, TestThrottling2, 3)
 }
 
 
+AWS_TEST_F_N(TableOperationTest, TestCrudOperations3,3)
+{
+    AWS_LOGSTREAM_TRACE(ALLOCATION_TAG, "TestCrudOperations3")
 
+    auto f = [](int ) {
+        std::cout<<"delay "<<std::endl;
+        std::this_thread::sleep_for(std::chrono::seconds(1));
+    };
+
+    SetDelayFunction( f);
+
+    Aws::String crudTestTableName = BuildTableName(BASE_CRUD_TEST_TABLE);
+    CreateTable(crudTestTableName, 50, 50);
+
+    //now put 50 items in the table asynchronously
+    Aws::String testValueColumnName = "TestValue";
+    Aws::Vector<PutItemOutcomeCallable> putItemResults;
+    Aws::StringStream ss;
+    for (unsigned i = 0; i < 50; ++i)
+    {
+        ss << HASH_KEY_NAME << i;
+        PutItemRequest putItemRequest;
+        putItemRequest.SetTableName(crudTestTableName);
+        AttributeValue hashKeyAttribute;
+        hashKeyAttribute.SetS(ss.str());
+        ss.str("");
+        putItemRequest.AddItem(HASH_KEY_NAME, hashKeyAttribute);
+        AttributeValue testValueAttribute;
+        ss << testValueColumnName << i;
+        testValueAttribute.SetS(ss.str());
+        putItemRequest.AddItem(testValueColumnName, testValueAttribute);
+        ss.str("");
+
+        putItemResults.push_back(m_client->PutItemCallable(putItemRequest));
+    }
+
+    //wait for put operations to finish
+    //isn't c++ 11 nice!
+    for (auto& putItemResult : putItemResults)
+    {
+        putItemResult.get();
+    }
+
+
+
+    //now we get the items we were supposed to be putting and make sure
+    //they were put successfully.
+    Aws::Vector<GetItemOutcomeCallable> getItemOutcomes;
+    for (unsigned i = 0; i < 50; ++i)
+    {
+        GetItemRequest getItemRequest;
+        ss << HASH_KEY_NAME << i;
+        AttributeValue hashKey;
+        hashKey.SetS(ss.str());
+        getItemRequest.AddKey(HASH_KEY_NAME, hashKey);
+        getItemRequest.SetTableName(crudTestTableName);
+
+        Aws::Vector<Aws::String> attributesToGet;
+        attributesToGet.push_back(HASH_KEY_NAME);
+        attributesToGet.push_back(testValueColumnName);
+        ss.str("");
+        getItemOutcomes.push_back(m_client->GetItemCallable(getItemRequest));
+    }
+
+    //verify the values
+    for (unsigned i = 0; i < 50; ++i)
+    {
+        GetItemOutcome outcome = getItemOutcomes[i].get();
+        AWS_EXPECT_SUCCESS(outcome);
+        GetItemResult result = outcome.GetResult();
+        ss << HASH_KEY_NAME << i;
+        Aws::Map<Aws::String, AttributeValue> returnedItemCollection = result.GetItem();
+        AWS_EXPECT_EQ(ss.str(), returnedItemCollection[HASH_KEY_NAME].GetS());
+        ss.str("");
+        ss << testValueColumnName << i;
+        AWS_EXPECT_EQ(ss.str(), returnedItemCollection[testValueColumnName].GetS());
+        ss.str("");
+    }
+
+    ScanRequest scanRequest;
+    scanRequest.WithTableName(crudTestTableName);
+
+    ScanOutcome scanOutcome = m_client->Scan(scanRequest);
+    AWS_EXPECT_SUCCESS(scanOutcome);
+    AWS_EXPECT_EQ(50, scanOutcome.GetResult().GetCount());
+
+    //now update the existing values
+    Aws::Vector<UpdateItemOutcomeCallable> updateItemOutcomes;
+    for (unsigned i = 0; i < 50; ++i)
+    {
+        ss << HASH_KEY_NAME << i;
+        AttributeValue hashKeyAttribute;
+        hashKeyAttribute.SetS(ss.str());
+        UpdateItemRequest updateItemRequest;
+        updateItemRequest.SetTableName(crudTestTableName);
+        updateItemRequest.AddKey(HASH_KEY_NAME, AttributeValue(ss.str()));
+        ss.str("");
+        AttributeValueUpdate testValueAttribute;
+        ss << testValueColumnName << i * 2;
+        testValueAttribute.SetAction(AttributeAction::PUT);
+        AttributeValue valueAttribute;
+        valueAttribute.SetS(ss.str());
+        testValueAttribute.SetValue(valueAttribute);
+        updateItemRequest.AddAttributeUpdates(testValueColumnName, testValueAttribute);
+        ss.str("");
+        updateItemOutcomes.push_back(m_client->UpdateItemCallable(updateItemRequest));
+    }
+
+    //wait for operations to finish.
+    for (auto& updateItemOutcome : updateItemOutcomes)
+    {
+        updateItemOutcome.get();
+    }
+
+    //now get the items again, making sure they were properly
+    //updated.
+    getItemOutcomes.clear();
+
+    for (unsigned i = 0; i < 50; ++i)
+    {
+        GetItemRequest getItemRequest;
+        ss << HASH_KEY_NAME << i;
+        AttributeValue hashKey;
+        hashKey.SetS(ss.str());
+        getItemRequest.AddKey(HASH_KEY_NAME, hashKey);
+        getItemRequest.SetTableName(crudTestTableName);
+
+        Aws::Vector<Aws::String> attributesToGet;
+        attributesToGet.push_back(HASH_KEY_NAME);
+        attributesToGet.push_back(testValueColumnName);
+        ss.str("");
+        getItemOutcomes.push_back(m_client->GetItemCallable(getItemRequest));
+    }
+
+    //verify values.
+    for (unsigned i = 0; i < 50; ++i)
+    {
+        GetItemOutcome outcome = getItemOutcomes[i].get();
+        AWS_EXPECT_SUCCESS(outcome);
+        GetItemResult result = outcome.GetResult();
+        ss << HASH_KEY_NAME << i;
+        Aws::Map<Aws::String, AttributeValue> returnedItemCollection = result.GetItem();
+        if (attemptsLeft > 0)
+        {
+            AWS_EXPECT_EQ(1,0);
+        }
+        else
+        {
+            AWS_EXPECT_EQ(ss.str(), returnedItemCollection[HASH_KEY_NAME].GetS());
+        }
+        ss.str("");
+        ss << testValueColumnName << i * 2;
+        AWS_EXPECT_EQ(ss.str(), returnedItemCollection[testValueColumnName].GetS());
+        ss.str("");
+    }
+
+    //now delete all the items we added.
+    Aws::Vector<DeleteItemOutcomeCallable> deleteItemOutcomes;
+    for (unsigned i = 0; i < 50; ++i)
+    {
+        DeleteItemRequest deleteItemRequest;
+        ss << HASH_KEY_NAME << i;
+        AttributeValue hashKey;
+        hashKey.SetS(ss.str());
+        deleteItemRequest.AddKey(HASH_KEY_NAME, hashKey);
+        deleteItemRequest.SetTableName(crudTestTableName);
+        deleteItemRequest.SetReturnValues(ReturnValue::ALL_OLD);
+        ss.str("");
+
+        deleteItemOutcomes.push_back(m_client->DeleteItemCallable(deleteItemRequest));
+    }
+
+    //verify that we properly returned the old values.
+    unsigned count = 0;
+    for (DeleteItemOutcomeCallable& deleteItemOutcome : deleteItemOutcomes)
+    {
+        DeleteItemOutcome outcome = deleteItemOutcome.get();
+        AWS_EXPECT_SUCCESS(outcome);
+        DeleteItemResult deleteItemResult = outcome.GetResult();
+        Aws::Map<Aws::String, AttributeValue> attributes = deleteItemResult.GetAttributes();
+        ss << HASH_KEY_NAME << count++;
+        AWS_EXPECT_EQ(ss.str(), attributes[HASH_KEY_NAME].GetS());
+        ss.str("");
+    }
+
+}
 
 /*
     after putItem requests have been made, it's not necessary that data is replicated to quorom before getItem is called.
@@ -557,6 +749,7 @@ AWS_TEST_F_N(TableOperationTest, TestThrottling2, 3)
     evaluate using gtest macros when either tests pass or on the final retry.
 
 */
+
 
 TEST_F(TableOperationTest, TestCrudOperations2)
 {
