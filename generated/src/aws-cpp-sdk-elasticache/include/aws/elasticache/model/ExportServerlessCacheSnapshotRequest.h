@@ -39,7 +39,7 @@ namespace Model
     ///@{
     /**
      * <p>The identifier of the serverless cache snapshot to be exported to S3.
-     * Available for Redis only.</p>
+     * Available for Redis OSS only.</p>
      */
     inline const Aws::String& GetServerlessCacheSnapshotName() const{ return m_serverlessCacheSnapshotName; }
     inline bool ServerlessCacheSnapshotNameHasBeenSet() const { return m_serverlessCacheSnapshotNameHasBeenSet; }
@@ -54,7 +54,7 @@ namespace Model
     ///@{
     /**
      * <p>Name of the Amazon S3 bucket to export the snapshot to. The Amazon S3 bucket
-     * must also be in same region as the snapshot. Available for Redis only.</p>
+     * must also be in same region as the snapshot. Available for Redis OSS only.</p>
      */
     inline const Aws::String& GetS3BucketName() const{ return m_s3BucketName; }
     inline bool S3BucketNameHasBeenSet() const { return m_s3BucketNameHasBeenSet; }

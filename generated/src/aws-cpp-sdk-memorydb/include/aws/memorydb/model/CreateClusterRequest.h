@@ -307,7 +307,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The version number of the Redis engine to be used for the cluster.</p>
+     * <p>The version number of the Redis OSS engine to be used for the cluster.</p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
     inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }

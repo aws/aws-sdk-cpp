@@ -150,7 +150,7 @@ namespace Model
     ///@{
     /**
      * <p>The ARN(s) of the snapshot that the new serverless cache will be created
-     * from. Available for Redis only.</p>
+     * from. Available for Redis OSS and Serverless Memcached only.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSnapshotArnsToRestore() const{ return m_snapshotArnsToRestore; }
     inline bool SnapshotArnsToRestoreHasBeenSet() const { return m_snapshotArnsToRestoreHasBeenSet; }
@@ -181,7 +181,7 @@ namespace Model
     ///@{
     /**
      * <p>The identifier of the UserGroup to be associated with the serverless cache.
-     * Available for Redis only. Default is NULL.</p>
+     * Available for Redis OSS only. Default is NULL.</p>
      */
     inline const Aws::String& GetUserGroupId() const{ return m_userGroupId; }
     inline bool UserGroupIdHasBeenSet() const { return m_userGroupIdHasBeenSet; }
@@ -214,7 +214,8 @@ namespace Model
     /**
      * <p>The number of snapshots that will be retained for the serverless cache that
      * is being created. As new snapshots beyond this limit are added, the oldest
-     * snapshots will be deleted on a rolling basis. Available for Redis only.</p>
+     * snapshots will be deleted on a rolling basis. Available for Redis OSS and
+     * Serverless Memcached only.</p>
      */
     inline int GetSnapshotRetentionLimit() const{ return m_snapshotRetentionLimit; }
     inline bool SnapshotRetentionLimitHasBeenSet() const { return m_snapshotRetentionLimitHasBeenSet; }
@@ -226,7 +227,8 @@ namespace Model
     /**
      * <p>The daily time that snapshots will be created from the new serverless cache.
      * By default this number is populated with 0, i.e. no snapshots will be created on
-     * an automatic daily basis. Available for Redis only.</p>
+     * an automatic daily basis. Available for Redis OSS and Serverless Memcached
+     * only.</p>
      */
     inline const Aws::String& GetDailySnapshotTime() const{ return m_dailySnapshotTime; }
     inline bool DailySnapshotTimeHasBeenSet() const { return m_dailySnapshotTimeHasBeenSet; }

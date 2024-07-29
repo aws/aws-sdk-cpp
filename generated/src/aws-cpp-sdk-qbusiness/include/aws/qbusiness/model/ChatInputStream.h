@@ -23,7 +23,7 @@ namespace Model
 {
 
   /**
-   * <p>The streaming input for the <code>Chat</code> API.</p><p><h3>See Also:</h3>
+   * <p>The streaming input for the <code>Chat</code> API.</p><p><h3>See Also:</h3>  
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/ChatInputStream">AWS
    * API Reference</a></p>

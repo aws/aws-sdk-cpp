@@ -112,7 +112,7 @@ namespace Model
      * <p>For region availability, see <a
      * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported
      * Node Types</a> </p>  <p> <b>M6g node types</b> (available only for Redis
-     * engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward):
+     * OSS engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward):
      * <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>,
      * <code>cache.m6g.2xlarge</code>, <code>cache.m6g.4xlarge</code>,
      * <code>cache.m6g.8xlarge</code>, <code>cache.m6g.12xlarge</code>,
@@ -123,7 +123,7 @@ namespace Model
      * node types:</b> <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
      * <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>,
      * <code>cache.m4.10xlarge</code> </p> <p> <b>T4g node types</b> (available only
-     * for Redis engine version 5.0.6 onward and Memcached engine version 1.5.16
+     * for Redis OSS engine version 5.0.6 onward and Memcached engine version 1.5.16
      * onward): <code>cache.t4g.micro</code>, <code>cache.t4g.small</code>,
      * <code>cache.t4g.medium</code> </p> <p> <b>T3 node types:</b>
      * <code>cache.t3.micro</code>, <code>cache.t3.small</code>,
@@ -148,7 +148,7 @@ namespace Model
      * <code>cache.r7g.16xlarge</code> </p>  <p>For region availability, see <a
      * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported
      * Node Types</a> </p>  <p> <b>R6g node types</b> (available only for Redis
-     * engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward):
+     * OSS engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward):
      * <code>cache.r6g.large</code>, <code>cache.r6g.xlarge</code>,
      * <code>cache.r6g.2xlarge</code>, <code>cache.r6g.4xlarge</code>,
      * <code>cache.r6g.8xlarge</code>, <code>cache.r6g.12xlarge</code>,
@@ -167,11 +167,11 @@ namespace Model
      * <code>cache.r3.2xlarge</code>, <code>cache.r3.4xlarge</code>,
      * <code>cache.r3.8xlarge</code> </p> </li> </ul> </li> </ul> <p> <b>Additional
      * node type info</b> </p> <ul> <li> <p>All current generation instance types are
-     * created in Amazon VPC by default.</p> </li> <li> <p>Redis append-only files
-     * (AOF) are not supported for T1 or T2 instances.</p> </li> <li> <p>Redis Multi-AZ
-     * with automatic failover is not supported on T1 instances.</p> </li> <li>
-     * <p>Redis configuration variables <code>appendonly</code> and
-     * <code>appendfsync</code> are not supported on Redis version 2.8.22 and
+     * created in Amazon VPC by default.</p> </li> <li> <p>Redis OSS append-only files
+     * (AOF) are not supported for T1 or T2 instances.</p> </li> <li> <p>Redis OSS
+     * Multi-AZ with automatic failover is not supported on T1 instances.</p> </li>
+     * <li> <p>Redis OSS configuration variables <code>appendonly</code> and
+     * <code>appendfsync</code> are not supported on Redis OSS version 2.8.22 and
      * later.</p> </li> </ul>
      */
     inline const Aws::String& GetCacheNodeType() const{ return m_cacheNodeType; }
@@ -233,9 +233,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The number of cache nodes in the cluster.</p> <p>For clusters running Redis,
-     * this value must be 1. For clusters running Memcached, this value must be between
-     * 1 and 40.</p>
+     * <p>The number of cache nodes in the cluster.</p> <p>For clusters running Redis
+     * OSS, this value must be 1. For clusters running Memcached, this value must be
+     * between 1 and 40.</p>
      */
     inline int GetNumCacheNodes() const{ return m_numCacheNodes; }
     inline bool NumCacheNodesHasBeenSet() const { return m_numCacheNodesHasBeenSet; }
@@ -386,9 +386,9 @@ namespace Model
 
     ///@{
     /**
-     * <p> If you are running Redis engine version 6.0 or later, set this parameter to
-     * yes if you want to opt-in to the next auto minor version upgrade campaign. This
-     * parameter is disabled for previous versions.  </p>
+     * <p> If you are running Redis OSS engine version 6.0 or later, set this parameter
+     * to yes if you want to opt-in to the next auto minor version upgrade campaign.
+     * This parameter is disabled for previous versions.  </p>
      */
     inline bool GetAutoMinorVersionUpgrade() const{ return m_autoMinorVersionUpgrade; }
     inline bool AutoMinorVersionUpgradeHasBeenSet() const { return m_autoMinorVersionUpgradeHasBeenSet; }
@@ -458,7 +458,7 @@ namespace Model
     ///@{
     /**
      * <p>A flag that enables using an <code>AuthToken</code> (password) when issuing
-     * Redis commands.</p> <p>Default: <code>false</code> </p>
+     * Redis OSS commands.</p> <p>Default: <code>false</code> </p>
      */
     inline bool GetAuthTokenEnabled() const{ return m_authTokenEnabled; }
     inline bool AuthTokenEnabledHasBeenSet() const { return m_authTokenEnabledHasBeenSet; }
@@ -482,7 +482,7 @@ namespace Model
     /**
      * <p>A flag that enables in-transit encryption when set to <code>true</code>.</p>
      * <p> <b>Required:</b> Only available when creating a replication group in an
-     * Amazon VPC using redis version <code>3.2.6</code>, <code>4.x</code> or
+     * Amazon VPC using Redis OSS version <code>3.2.6</code>, <code>4.x</code> or
      * later.</p> <p>Default: <code>false</code> </p>
      */
     inline bool GetTransitEncryptionEnabled() const{ return m_transitEncryptionEnabled; }
@@ -498,8 +498,8 @@ namespace Model
      * cluster is created. To enable at-rest encryption on a cluster you must set
      * <code>AtRestEncryptionEnabled</code> to <code>true</code> when you create a
      * cluster.</p> <p> <b>Required:</b> Only available when creating a replication
-     * group in an Amazon VPC using redis version <code>3.2.6</code>, <code>4.x</code>
-     * or later.</p> <p>Default: <code>false</code> </p>
+     * group in an Amazon VPC using Redis OSS version <code>3.2.6</code>,
+     * <code>4.x</code> or later.</p> <p>Default: <code>false</code> </p>
      */
     inline bool GetAtRestEncryptionEnabled() const{ return m_atRestEncryptionEnabled; }
     inline bool AtRestEncryptionEnabledHasBeenSet() const { return m_atRestEncryptionEnabledHasBeenSet; }
@@ -549,7 +549,7 @@ namespace Model
     ///@{
     /**
      * <p>Must be either <code>ipv4</code> | <code>ipv6</code> |
-     * <code>dual_stack</code>. IPv6 is supported for workloads using Redis engine
+     * <code>dual_stack</code>. IPv6 is supported for workloads using Redis OSS engine
      * version 6.2 onward or Memcached engine version 1.6.6 on all instances built on
      * the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
      */
@@ -564,9 +564,9 @@ namespace Model
     ///@{
     /**
      * <p>The network type associated with the cluster, either <code>ipv4</code> |
-     * <code>ipv6</code>. IPv6 is supported for workloads using Redis engine version
-     * 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a
-     * href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
+     * <code>ipv6</code>. IPv6 is supported for workloads using Redis OSS engine
+     * version 6.2 onward or Memcached engine version 1.6.6 on all instances built on
+     * the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
      */
     inline const IpDiscovery& GetIpDiscovery() const{ return m_ipDiscovery; }
     inline bool IpDiscoveryHasBeenSet() const { return m_ipDiscoveryHasBeenSet; }

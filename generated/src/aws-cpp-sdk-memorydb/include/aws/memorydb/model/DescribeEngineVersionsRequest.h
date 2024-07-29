@@ -36,7 +36,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Redis engine version</p>
+     * <p>The Redis OSS engine version</p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
     inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }

@@ -29,8 +29,8 @@ namespace Model
 {
 
   /**
-   * <p>Represents a copy of an entire Redis cluster as of the time when the snapshot
-   * was taken.</p><p><h3>See Also:</h3>   <a
+   * <p>Represents a copy of an entire Redis OSS cluster as of the time when the
+   * snapshot was taken.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/Snapshot">AWS
    * API Reference</a></p>
    */
@@ -147,7 +147,7 @@ namespace Model
      * <p>For region availability, see <a
      * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported
      * Node Types</a> </p>  <p> <b>M6g node types</b> (available only for Redis
-     * engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward):
+     * OSS engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward):
      * <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>,
      * <code>cache.m6g.2xlarge</code>, <code>cache.m6g.4xlarge</code>,
      * <code>cache.m6g.8xlarge</code>, <code>cache.m6g.12xlarge</code>,
@@ -158,7 +158,7 @@ namespace Model
      * node types:</b> <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
      * <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>,
      * <code>cache.m4.10xlarge</code> </p> <p> <b>T4g node types</b> (available only
-     * for Redis engine version 5.0.6 onward and Memcached engine version 1.5.16
+     * for Redis OSS engine version 5.0.6 onward and Memcached engine version 1.5.16
      * onward): <code>cache.t4g.micro</code>, <code>cache.t4g.small</code>,
      * <code>cache.t4g.medium</code> </p> <p> <b>T3 node types:</b>
      * <code>cache.t3.micro</code>, <code>cache.t3.small</code>,
@@ -183,7 +183,7 @@ namespace Model
      * <code>cache.r7g.16xlarge</code> </p>  <p>For region availability, see <a
      * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported
      * Node Types</a> </p>  <p> <b>R6g node types</b> (available only for Redis
-     * engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward):
+     * OSS engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward):
      * <code>cache.r6g.large</code>, <code>cache.r6g.xlarge</code>,
      * <code>cache.r6g.2xlarge</code>, <code>cache.r6g.4xlarge</code>,
      * <code>cache.r6g.8xlarge</code>, <code>cache.r6g.12xlarge</code>,
@@ -202,11 +202,11 @@ namespace Model
      * <code>cache.r3.2xlarge</code>, <code>cache.r3.4xlarge</code>,
      * <code>cache.r3.8xlarge</code> </p> </li> </ul> </li> </ul> <p> <b>Additional
      * node type info</b> </p> <ul> <li> <p>All current generation instance types are
-     * created in Amazon VPC by default.</p> </li> <li> <p>Redis append-only files
-     * (AOF) are not supported for T1 or T2 instances.</p> </li> <li> <p>Redis Multi-AZ
-     * with automatic failover is not supported on T1 instances.</p> </li> <li>
-     * <p>Redis configuration variables <code>appendonly</code> and
-     * <code>appendfsync</code> are not supported on Redis version 2.8.22 and
+     * created in Amazon VPC by default.</p> </li> <li> <p>Redis OSS append-only files
+     * (AOF) are not supported for T1 or T2 instances.</p> </li> <li> <p>Redis OSS
+     * Multi-AZ with automatic failover is not supported on T1 instances.</p> </li>
+     * <li> <p>Redis OSS configuration variables <code>appendonly</code> and
+     * <code>appendfsync</code> are not supported on Redis OSS version 2.8.22 and
      * later.</p> </li> </ul>
      */
     inline const Aws::String& GetCacheNodeType() const{ return m_cacheNodeType; }
@@ -252,8 +252,8 @@ namespace Model
     ///@{
     /**
      * <p>The number of cache nodes in the source cluster.</p> <p>For clusters running
-     * Redis, this value must be 1. For clusters running Memcached, this value must be
-     * between 1 and 40.</p>
+     * Redis OSS, this value must be 1. For clusters running Memcached, this value must
+     * be between 1 and 40.</p>
      */
     inline int GetNumCacheNodes() const{ return m_numCacheNodes; }
     inline bool NumCacheNodesHasBeenSet() const { return m_numCacheNodesHasBeenSet; }
@@ -392,9 +392,9 @@ namespace Model
 
     ///@{
     /**
-     * <p> If you are running Redis engine version 6.0 or later, set this parameter to
-     * yes if you want to opt-in to the next auto minor version upgrade campaign. This
-     * parameter is disabled for previous versions.  </p>
+     * <p> If you are running Redis OSS engine version 6.0 or later, set this parameter
+     * to yes if you want to opt-in to the next auto minor version upgrade campaign.
+     * This parameter is disabled for previous versions.  </p>
      */
     inline bool GetAutoMinorVersionUpgrade() const{ return m_autoMinorVersionUpgrade; }
     inline bool AutoMinorVersionUpgradeHasBeenSet() const { return m_autoMinorVersionUpgradeHasBeenSet; }
@@ -447,8 +447,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Indicates the status of automatic failover for the source Redis replication
-     * group.</p>
+     * <p>Indicates the status of automatic failover for the source Redis OSS
+     * replication group.</p>
      */
     inline const AutomaticFailoverStatus& GetAutomaticFailover() const{ return m_automaticFailover; }
     inline bool AutomaticFailoverHasBeenSet() const { return m_automaticFailoverHasBeenSet; }

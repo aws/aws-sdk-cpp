@@ -40,7 +40,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Redis engine. </p>
+     * <p>The Redis OSS engine. </p>
      */
     inline const Aws::String& GetEngine() const{ return m_engine; }
     inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }

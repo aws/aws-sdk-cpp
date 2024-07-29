@@ -27,7 +27,7 @@ namespace Model
 
   /**
    * <p>The resource representing a serverless cache snapshot. Available for Redis
-   * only.</p><p><h3>See Also:</h3>   <a
+   * OSS and Serverless Memcached only.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ServerlessCacheSnapshot">AWS
    * API Reference</a></p>
    */
@@ -44,7 +44,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The identifier of a serverless cache snapshot. Available for Redis only.</p>
+     * <p>The identifier of a serverless cache snapshot. Available for Redis OSS and
+     * Serverless Memcached only.</p>
      */
     inline const Aws::String& GetServerlessCacheSnapshotName() const{ return m_serverlessCacheSnapshotName; }
     inline bool ServerlessCacheSnapshotNameHasBeenSet() const { return m_serverlessCacheSnapshotNameHasBeenSet; }
@@ -59,7 +60,7 @@ namespace Model
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of a serverless cache snapshot. Available for
-     * Redis only.</p>
+     * Redis OSS and Serverless Memcached only.</p>
      */
     inline const Aws::String& GetARN() const{ return m_aRN; }
     inline bool ARNHasBeenSet() const { return m_aRNHasBeenSet; }
@@ -74,7 +75,8 @@ namespace Model
     ///@{
     /**
      * <p>The ID of the Amazon Web Services Key Management Service (KMS) key of a
-     * serverless cache snapshot. Available for Redis only.</p>
+     * serverless cache snapshot. Available for Redis OSS and Serverless Memcached
+     * only.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
@@ -88,7 +90,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The type of snapshot of serverless cache. Available for Redis only.</p>
+     * <p>The type of snapshot of serverless cache. Available for Redis OSS and
+     * Serverless Memcached only.</p>
      */
     inline const Aws::String& GetSnapshotType() const{ return m_snapshotType; }
     inline bool SnapshotTypeHasBeenSet() const { return m_snapshotTypeHasBeenSet; }
@@ -102,7 +105,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The current status of the serverless cache. Available for Redis only.</p>
+     * <p>The current status of the serverless cache. Available for Redis OSS and
+     * Serverless Memcached only.</p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
@@ -117,7 +121,8 @@ namespace Model
     ///@{
     /**
      * <p>The date and time that the source serverless cache's metadata and cache data
-     * set was obtained for the snapshot. Available for Redis only.</p>
+     * set was obtained for the snapshot. Available for Redis OSS and Serverless
+     * Memcached only.</p>
      */
     inline const Aws::Utils::DateTime& GetCreateTime() const{ return m_createTime; }
     inline bool CreateTimeHasBeenSet() const { return m_createTimeHasBeenSet; }
@@ -130,7 +135,7 @@ namespace Model
     ///@{
     /**
      * <p>The time that the serverless cache snapshot will expire. Available for Redis
-     * only.</p>
+     * OSS and Serverless Memcached only.</p>
      */
     inline const Aws::Utils::DateTime& GetExpiryTime() const{ return m_expiryTime; }
     inline bool ExpiryTimeHasBeenSet() const { return m_expiryTimeHasBeenSet; }
@@ -143,7 +148,7 @@ namespace Model
     ///@{
     /**
      * <p>The total size of a serverless cache snapshot, in bytes. Available for Redis
-     * only.</p>
+     * OSS and Serverless Memcached only.</p>
      */
     inline const Aws::String& GetBytesUsedForCache() const{ return m_bytesUsedForCache; }
     inline bool BytesUsedForCacheHasBeenSet() const { return m_bytesUsedForCacheHasBeenSet; }
@@ -158,7 +163,7 @@ namespace Model
     ///@{
     /**
      * <p>The configuration of the serverless cache, at the time the snapshot was
-     * taken. Available for Redis only.</p>
+     * taken. Available for Redis OSS and Serverless Memcached only.</p>
      */
     inline const ServerlessCacheConfiguration& GetServerlessCacheConfiguration() const{ return m_serverlessCacheConfiguration; }
     inline bool ServerlessCacheConfigurationHasBeenSet() const { return m_serverlessCacheConfigurationHasBeenSet; }

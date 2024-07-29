@@ -35,7 +35,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The snapshot to be deleted. Available for Redis only.</p>
+     * <p>The snapshot to be deleted. Available for Redis OSS and Serverless Memcached
+     * only.</p>
      */
     inline const ServerlessCacheSnapshot& GetServerlessCacheSnapshot() const{ return m_serverlessCacheSnapshot; }
     inline void SetServerlessCacheSnapshot(const ServerlessCacheSnapshot& value) { m_serverlessCacheSnapshot = value; }

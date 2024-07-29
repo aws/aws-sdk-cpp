@@ -38,7 +38,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Idenfitier of the snapshot to be deleted. Available for Redis only.</p>
+     * <p>Idenfitier of the snapshot to be deleted. Available for Redis OSS and
+     * Serverless Memcached only.</p>
      */
     inline const Aws::String& GetServerlessCacheSnapshotName() const{ return m_serverlessCacheSnapshotName; }
     inline bool ServerlessCacheSnapshotNameHasBeenSet() const { return m_serverlessCacheSnapshotNameHasBeenSet; }

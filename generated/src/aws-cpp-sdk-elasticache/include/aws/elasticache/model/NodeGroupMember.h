@@ -73,7 +73,7 @@ namespace Model
     ///@{
     /**
      * <p>The information required for client programs to connect to a node for read
-     * operations. The read endpoint is only applicable on Redis (cluster mode
+     * operations. The read endpoint is only applicable on Redis OSS (cluster mode
      * disabled) clusters.</p>
      */
     inline const Endpoint& GetReadEndpoint() const{ return m_readEndpoint; }
@@ -115,7 +115,7 @@ namespace Model
     ///@{
     /**
      * <p>The role that is currently assigned to the node - <code>primary</code> or
-     * <code>replica</code>. This member is only applicable for Redis (cluster mode
+     * <code>replica</code>. This member is only applicable for Redis OSS (cluster mode
      * disabled) replication groups.</p>
      */
     inline const Aws::String& GetCurrentRole() const{ return m_currentRole; }

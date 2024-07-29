@@ -69,9 +69,9 @@ namespace Model
      * nodes, any pending add or remove requests are canceled.</p> <p>If you are
      * removing cache nodes, you must use the <code>CacheNodeIdsToRemove</code>
      * parameter to provide the IDs of the specific cache nodes to remove.</p> <p>For
-     * clusters running Redis, this value must be 1. For clusters running Memcached,
-     * this value must be between 1 and 40.</p>  <p>Adding or removing Memcached
-     * cache nodes can be applied immediately or as a pending operation (see
+     * clusters running Redis OSS, this value must be 1. For clusters running
+     * Memcached, this value must be between 1 and 40.</p>  <p>Adding or removing
+     * Memcached cache nodes can be applied immediately or as a pending operation (see
      * <code>ApplyImmediately</code>).</p> <p>A pending operation to modify the number
      * of cache nodes in a cluster during its maintenance window, whether by adding or
      * removing nodes in accordance with the scale out architecture, is not queued. The
@@ -335,9 +335,9 @@ namespace Model
 
     ///@{
     /**
-     * <p> If you are running Redis engine version 6.0 or later, set this parameter to
-     * yes if you want to opt-in to the next auto minor version upgrade campaign. This
-     * parameter is disabled for previous versions.  </p>
+     * <p> If you are running Redis OSS engine version 6.0 or later, set this parameter
+     * to yes if you want to opt-in to the next auto minor version upgrade campaign.
+     * This parameter is disabled for previous versions.  </p>
      */
     inline bool GetAutoMinorVersionUpgrade() const{ return m_autoMinorVersionUpgrade; }
     inline bool AutoMinorVersionUpgradeHasBeenSet() const { return m_autoMinorVersionUpgradeHasBeenSet; }
@@ -417,7 +417,7 @@ namespace Model
      * <p>SET - allowed only after ROTATE</p> </li> <li> <p>DELETE - allowed only when
      * transitioning to RBAC</p> </li> </ul> <p> For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating
-     * Users with Redis AUTH</a> </p>
+     * Users with Redis OSS AUTH</a> </p>
      */
     inline const AuthTokenUpdateStrategyType& GetAuthTokenUpdateStrategy() const{ return m_authTokenUpdateStrategy; }
     inline bool AuthTokenUpdateStrategyHasBeenSet() const { return m_authTokenUpdateStrategyHasBeenSet; }
@@ -445,7 +445,7 @@ namespace Model
     /**
      * <p>The network type you choose when modifying a cluster, either
      * <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using
-     * Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all
+     * Redis OSS engine version 6.2 onward or Memcached engine version 1.6.6 on all
      * instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro
      * system</a>.</p>
      */

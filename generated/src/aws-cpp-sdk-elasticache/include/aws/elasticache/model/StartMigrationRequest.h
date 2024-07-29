@@ -54,8 +54,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>List of endpoints from which data should be migrated. For Redis (cluster mode
-     * disabled), list should have only one element.</p>
+     * <p>List of endpoints from which data should be migrated. For Redis OSS (cluster
+     * mode disabled), list should have only one element.</p>
      */
     inline const Aws::Vector<CustomerNodeEndpoint>& GetCustomerNodeEndpointList() const{ return m_customerNodeEndpointList; }
     inline bool CustomerNodeEndpointListHasBeenSet() const { return m_customerNodeEndpointListHasBeenSet; }

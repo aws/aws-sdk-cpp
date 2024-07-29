@@ -95,7 +95,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The minimum engine version required, which is Redis 6.0</p>
+     * <p>The minimum engine version required, which is Redis OSS 6.0</p>
      */
     inline const Aws::String& GetMinimumEngineVersion() const{ return m_minimumEngineVersion; }
     inline bool MinimumEngineVersionHasBeenSet() const { return m_minimumEngineVersionHasBeenSet; }
