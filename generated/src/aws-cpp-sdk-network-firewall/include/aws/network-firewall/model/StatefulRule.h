@@ -60,7 +60,11 @@ namespace Model
      * use this action to test a rule that you intend to use to drop traffic. You can
      * enable the rule with <code>ALERT</code> action, verify in the logs that the rule
      * is filtering as you want, then change the action to <code>DROP</code>.</p> </li>
-     * </ul>
+     * <li> <p> <b>REJECT</b> - Drops traffic that matches the conditions of the
+     * stateful rule, and sends a TCP reset packet back to sender of the packet. A TCP
+     * reset packet is a packet with no payload and an RST bit contained in the TCP
+     * header flags. REJECT is available only for TCP traffic. This option doesn't
+     * support FTP or IMAP protocols.</p> </li> </ul>
      */
     inline const StatefulAction& GetAction() const{ return m_action; }
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }

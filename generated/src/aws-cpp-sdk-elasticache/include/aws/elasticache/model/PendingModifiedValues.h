@@ -47,8 +47,8 @@ namespace Model
     ///@{
     /**
      * <p>The new number of cache nodes for the cluster.</p> <p>For clusters running
-     * Redis, this value must be 1. For clusters running Memcached, this value must be
-     * between 1 and 40.</p>
+     * Redis OSS, this value must be 1. For clusters running Memcached, this value must
+     * be between 1 and 40.</p>
      */
     inline int GetNumCacheNodes() const{ return m_numCacheNodes; }
     inline bool NumCacheNodesHasBeenSet() const { return m_numCacheNodesHasBeenSet; }

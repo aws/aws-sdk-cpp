@@ -86,8 +86,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Elasticache engine to which the update applies. Either Redis or Memcached
-     * </p>
+     * <p>The Elasticache engine to which the update applies. Either Redis OSS or
+     * Memcached.</p>
      */
     inline const Aws::String& GetEngine() const{ return m_engine; }
     inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }

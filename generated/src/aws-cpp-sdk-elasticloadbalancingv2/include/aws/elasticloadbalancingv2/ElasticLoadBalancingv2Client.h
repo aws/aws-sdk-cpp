@@ -444,6 +444,31 @@ namespace ElasticLoadBalancingv2
         }
 
         /**
+         * <p>Deletes a shared trust store association.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DeleteSharedTrustStoreAssociation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteSharedTrustStoreAssociationOutcome DeleteSharedTrustStoreAssociation(const Model::DeleteSharedTrustStoreAssociationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteSharedTrustStoreAssociation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteSharedTrustStoreAssociationRequestT = Model::DeleteSharedTrustStoreAssociationRequest>
+        Model::DeleteSharedTrustStoreAssociationOutcomeCallable DeleteSharedTrustStoreAssociationCallable(const DeleteSharedTrustStoreAssociationRequestT& request) const
+        {
+            return SubmitCallable(&ElasticLoadBalancingv2Client::DeleteSharedTrustStoreAssociation, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteSharedTrustStoreAssociation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteSharedTrustStoreAssociationRequestT = Model::DeleteSharedTrustStoreAssociationRequest>
+        void DeleteSharedTrustStoreAssociationAsync(const DeleteSharedTrustStoreAssociationRequestT& request, const DeleteSharedTrustStoreAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ElasticLoadBalancingv2Client::DeleteSharedTrustStoreAssociation, request, handler, context);
+        }
+
+        /**
          * <p>Deletes the specified target group.</p> <p>You can delete a target group if
          * it is not referenced by any actions. Deleting a target group also deletes any
          * associated health checks. Deleting a target group does not affect its registered
@@ -898,8 +923,8 @@ namespace ElasticLoadBalancingv2
         }
 
         /**
-         * <p>Describes the revocation files in use by the specified trust store arn, or
-         * revocation ID.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes the revocation files in use by the specified trust store or
+         * revocation files.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeTrustStoreRevocations">AWS
          * API Reference</a></p>
          */
@@ -924,8 +949,8 @@ namespace ElasticLoadBalancingv2
         }
 
         /**
-         * <p>Describes all trust stores for a given account by trust store arn’s or
-         * name.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes all trust stores for the specified account.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeTrustStores">AWS
          * API Reference</a></p>
          */
@@ -947,6 +972,32 @@ namespace ElasticLoadBalancingv2
         void DescribeTrustStoresAsync(const DescribeTrustStoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeTrustStoresRequestT& request = {}) const
         {
             return SubmitAsync(&ElasticLoadBalancingv2Client::DescribeTrustStores, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves the resource policy for a specified resource.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/GetResourcePolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetResourcePolicyOutcome GetResourcePolicy(const Model::GetResourcePolicyRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetResourcePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetResourcePolicyRequestT = Model::GetResourcePolicyRequest>
+        Model::GetResourcePolicyOutcomeCallable GetResourcePolicyCallable(const GetResourcePolicyRequestT& request) const
+        {
+            return SubmitCallable(&ElasticLoadBalancingv2Client::GetResourcePolicy, request);
+        }
+
+        /**
+         * An Async wrapper for GetResourcePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetResourcePolicyRequestT = Model::GetResourcePolicyRequest>
+        void GetResourcePolicyAsync(const GetResourcePolicyRequestT& request, const GetResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ElasticLoadBalancingv2Client::GetResourcePolicy, request, handler, context);
         }
 
         /**
@@ -1145,7 +1196,7 @@ namespace ElasticLoadBalancingv2
         }
 
         /**
-         * <p>Update the ca certificate bundle for a given trust store.</p><p><h3>See
+         * <p>Update the ca certificate bundle for the specified trust store.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyTrustStore">AWS
          * API Reference</a></p>

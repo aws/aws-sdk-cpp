@@ -19,6 +19,7 @@
 #include <aws/eks/model/ClusterHealth.h>
 #include <aws/eks/model/OutpostConfigResponse.h>
 #include <aws/eks/model/AccessConfigResponse.h>
+#include <aws/eks/model/UpgradePolicyResponse.h>
 #include <aws/eks/model/EncryptionConfig.h>
 #include <utility>
 
@@ -349,6 +350,21 @@ namespace Model
     inline Cluster& WithAccessConfig(const AccessConfigResponse& value) { SetAccessConfig(value); return *this;}
     inline Cluster& WithAccessConfig(AccessConfigResponse&& value) { SetAccessConfig(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>This value indicates if extended support is enabled or disabled for the
+     * cluster.</p> <p> <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/extended-support-control.html">Learn
+     * more about EKS Extended Support in the EKS User Guide.</a> </p>
+     */
+    inline const UpgradePolicyResponse& GetUpgradePolicy() const{ return m_upgradePolicy; }
+    inline bool UpgradePolicyHasBeenSet() const { return m_upgradePolicyHasBeenSet; }
+    inline void SetUpgradePolicy(const UpgradePolicyResponse& value) { m_upgradePolicyHasBeenSet = true; m_upgradePolicy = value; }
+    inline void SetUpgradePolicy(UpgradePolicyResponse&& value) { m_upgradePolicyHasBeenSet = true; m_upgradePolicy = std::move(value); }
+    inline Cluster& WithUpgradePolicy(const UpgradePolicyResponse& value) { SetUpgradePolicy(value); return *this;}
+    inline Cluster& WithUpgradePolicy(UpgradePolicyResponse&& value) { SetUpgradePolicy(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_name;
@@ -413,6 +429,9 @@ namespace Model
 
     AccessConfigResponse m_accessConfig;
     bool m_accessConfigHasBeenSet = false;
+
+    UpgradePolicyResponse m_upgradePolicy;
+    bool m_upgradePolicyHasBeenSet = false;
   };
 
 } // namespace Model

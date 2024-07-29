@@ -11,6 +11,7 @@
 #include <aws/states/model/LoggingConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/states/model/TracingConfiguration.h>
+#include <aws/states/model/EncryptionConfiguration.h>
 #include <aws/states/model/Tag.h>
 #include <utility>
 
@@ -181,6 +182,18 @@ namespace Model
     inline CreateStateMachineRequest& WithVersionDescription(Aws::String&& value) { SetVersionDescription(std::move(value)); return *this;}
     inline CreateStateMachineRequest& WithVersionDescription(const char* value) { SetVersionDescription(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Settings to configure server-side encryption.</p>
+     */
+    inline const EncryptionConfiguration& GetEncryptionConfiguration() const{ return m_encryptionConfiguration; }
+    inline bool EncryptionConfigurationHasBeenSet() const { return m_encryptionConfigurationHasBeenSet; }
+    inline void SetEncryptionConfiguration(const EncryptionConfiguration& value) { m_encryptionConfigurationHasBeenSet = true; m_encryptionConfiguration = value; }
+    inline void SetEncryptionConfiguration(EncryptionConfiguration&& value) { m_encryptionConfigurationHasBeenSet = true; m_encryptionConfiguration = std::move(value); }
+    inline CreateStateMachineRequest& WithEncryptionConfiguration(const EncryptionConfiguration& value) { SetEncryptionConfiguration(value); return *this;}
+    inline CreateStateMachineRequest& WithEncryptionConfiguration(EncryptionConfiguration&& value) { SetEncryptionConfiguration(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_name;
@@ -209,6 +222,9 @@ namespace Model
 
     Aws::String m_versionDescription;
     bool m_versionDescriptionHasBeenSet = false;
+
+    EncryptionConfiguration m_encryptionConfiguration;
+    bool m_encryptionConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

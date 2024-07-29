@@ -8,13 +8,19 @@
 #include <smithy/identity/signer/AwsSignerBase.h>
 
 namespace smithy {
-    template<uint64_t SCHEME_ID_HASH, typename IDENTITY_T>
+    template<typename IDENTITY_T>
     class AuthScheme
     {
     public:
         using IdentityT = IDENTITY_T;
 
-        static const uint64_t schemeId;
+        template<std::size_t N>
+        AuthScheme(char const (&iSchemeId)[N])
+        {
+            memcpy(schemeId, iSchemeId, N);
+        }
+
+        char schemeId[32];
 
         virtual ~AuthScheme() = default;
 

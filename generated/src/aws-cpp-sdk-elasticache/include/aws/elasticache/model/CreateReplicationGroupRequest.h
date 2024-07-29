@@ -116,8 +116,8 @@ namespace Model
     /**
      * <p>Specifies whether a read-only replica is automatically promoted to read/write
      * primary if the existing primary fails.</p> <p>
-     * <code>AutomaticFailoverEnabled</code> must be enabled for Redis (cluster mode
-     * enabled) replication groups.</p> <p>Default: false</p>
+     * <code>AutomaticFailoverEnabled</code> must be enabled for Redis OSS (cluster
+     * mode enabled) replication groups.</p> <p>Default: false</p>
      */
     inline bool GetAutomaticFailoverEnabled() const{ return m_automaticFailoverEnabled; }
     inline bool AutomaticFailoverEnabledHasBeenSet() const { return m_automaticFailoverEnabledHasBeenSet; }
@@ -182,8 +182,8 @@ namespace Model
     ///@{
     /**
      * <p>An optional parameter that specifies the number of node groups (shards) for
-     * this Redis (cluster mode enabled) replication group. For Redis (cluster mode
-     * disabled) either omit this parameter or set it to 1.</p> <p>Default: 1</p>
+     * this Redis OSS (cluster mode enabled) replication group. For Redis OSS (cluster
+     * mode disabled) either omit this parameter or set it to 1.</p> <p>Default: 1</p>
      */
     inline int GetNumNodeGroups() const{ return m_numNodeGroups; }
     inline bool NumNodeGroupsHasBeenSet() const { return m_numNodeGroupsHasBeenSet; }
@@ -207,12 +207,13 @@ namespace Model
      * <p>A list of node group (shard) configuration options. Each node group (shard)
      * configuration has the following members: <code>PrimaryAvailabilityZone</code>,
      * <code>ReplicaAvailabilityZones</code>, <code>ReplicaCount</code>, and
-     * <code>Slots</code>.</p> <p>If you're creating a Redis (cluster mode disabled) or
-     * a Redis (cluster mode enabled) replication group, you can use this parameter to
-     * individually configure each node group (shard), or you can omit this parameter.
-     * However, it is required when seeding a Redis (cluster mode enabled) cluster from
-     * a S3 rdb file. You must configure each node group (shard) using this parameter
-     * because you must specify the slots for each node group.</p>
+     * <code>Slots</code>.</p> <p>If you're creating a Redis OSS (cluster mode
+     * disabled) or a Redis OSS (cluster mode enabled) replication group, you can use
+     * this parameter to individually configure each node group (shard), or you can
+     * omit this parameter. However, it is required when seeding a Redis OSS (cluster
+     * mode enabled) cluster from a S3 rdb file. You must configure each node group
+     * (shard) using this parameter because you must specify the slots for each node
+     * group.</p>
      */
     inline const Aws::Vector<NodeGroupConfiguration>& GetNodeGroupConfiguration() const{ return m_nodeGroupConfiguration; }
     inline bool NodeGroupConfigurationHasBeenSet() const { return m_nodeGroupConfigurationHasBeenSet; }
@@ -238,7 +239,7 @@ namespace Model
      * <p>For region availability, see <a
      * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported
      * Node Types</a> </p>  <p> <b>M6g node types</b> (available only for Redis
-     * engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward):
+     * OSS engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward):
      * <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>,
      * <code>cache.m6g.2xlarge</code>, <code>cache.m6g.4xlarge</code>,
      * <code>cache.m6g.8xlarge</code>, <code>cache.m6g.12xlarge</code>,
@@ -249,7 +250,7 @@ namespace Model
      * node types:</b> <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
      * <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>,
      * <code>cache.m4.10xlarge</code> </p> <p> <b>T4g node types</b> (available only
-     * for Redis engine version 5.0.6 onward and Memcached engine version 1.5.16
+     * for Redis OSS engine version 5.0.6 onward and Memcached engine version 1.5.16
      * onward): <code>cache.t4g.micro</code>, <code>cache.t4g.small</code>,
      * <code>cache.t4g.medium</code> </p> <p> <b>T3 node types:</b>
      * <code>cache.t3.micro</code>, <code>cache.t3.small</code>,
@@ -274,7 +275,7 @@ namespace Model
      * <code>cache.r7g.16xlarge</code> </p>  <p>For region availability, see <a
      * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported
      * Node Types</a> </p>  <p> <b>R6g node types</b> (available only for Redis
-     * engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward):
+     * OSS engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward):
      * <code>cache.r6g.large</code>, <code>cache.r6g.xlarge</code>,
      * <code>cache.r6g.2xlarge</code>, <code>cache.r6g.4xlarge</code>,
      * <code>cache.r6g.8xlarge</code>, <code>cache.r6g.12xlarge</code>,
@@ -293,11 +294,11 @@ namespace Model
      * <code>cache.r3.2xlarge</code>, <code>cache.r3.4xlarge</code>,
      * <code>cache.r3.8xlarge</code> </p> </li> </ul> </li> </ul> <p> <b>Additional
      * node type info</b> </p> <ul> <li> <p>All current generation instance types are
-     * created in Amazon VPC by default.</p> </li> <li> <p>Redis append-only files
-     * (AOF) are not supported for T1 or T2 instances.</p> </li> <li> <p>Redis Multi-AZ
-     * with automatic failover is not supported on T1 instances.</p> </li> <li>
-     * <p>Redis configuration variables <code>appendonly</code> and
-     * <code>appendfsync</code> are not supported on Redis version 2.8.22 and
+     * created in Amazon VPC by default.</p> </li> <li> <p>Redis OSS append-only files
+     * (AOF) are not supported for T1 or T2 instances.</p> </li> <li> <p>Redis OSS
+     * Multi-AZ with automatic failover is not supported on T1 instances.</p> </li>
+     * <li> <p>Redis OSS configuration variables <code>appendonly</code> and
+     * <code>appendfsync</code> are not supported on Redis OSS version 2.8.22 and
      * later.</p> </li> </ul>
      */
     inline const Aws::String& GetCacheNodeType() const{ return m_cacheNodeType; }
@@ -351,12 +352,12 @@ namespace Model
     /**
      * <p>The name of the parameter group to associate with this replication group. If
      * this argument is omitted, the default cache parameter group for the specified
-     * engine is used.</p> <p>If you are running Redis version 3.2.4 or later, only one
-     * node group (shard), and want to use a default parameter group, we recommend that
-     * you specify the parameter group by name. </p> <ul> <li> <p>To create a Redis
-     * (cluster mode disabled) replication group, use
+     * engine is used.</p> <p>If you are running Redis OSS version 3.2.4 or later, only
+     * one node group (shard), and want to use a default parameter group, we recommend
+     * that you specify the parameter group by name. </p> <ul> <li> <p>To create a
+     * Redis OSS (cluster mode disabled) replication group, use
      * <code>CacheParameterGroupName=default.redis3.2</code>.</p> </li> <li> <p>To
-     * create a Redis (cluster mode enabled) replication group, use
+     * create a Redis OSS (cluster mode enabled) replication group, use
      * <code>CacheParameterGroupName=default.redis3.2.cluster.on</code>.</p> </li>
      * </ul>
      */
@@ -443,13 +444,13 @@ namespace Model
 
     ///@{
     /**
-     * <p>A list of Amazon Resource Names (ARN) that uniquely identify the Redis RDB
-     * snapshot files stored in Amazon S3. The snapshot files are used to populate the
-     * new replication group. The Amazon S3 object name in the ARN cannot contain any
-     * commas. The new replication group will have the number of node groups (console:
-     * shards) specified by the parameter <i>NumNodeGroups</i> or the number of node
-     * groups configured by <i>NodeGroupConfiguration</i> regardless of the number of
-     * ARNs specified here.</p> <p>Example of an Amazon S3 ARN:
+     * <p>A list of Amazon Resource Names (ARN) that uniquely identify the Redis OSS
+     * RDB snapshot files stored in Amazon S3. The snapshot files are used to populate
+     * the new replication group. The Amazon S3 object name in the ARN cannot contain
+     * any commas. The new replication group will have the number of node groups
+     * (console: shards) specified by the parameter <i>NumNodeGroups</i> or the number
+     * of node groups configured by <i>NodeGroupConfiguration</i> regardless of the
+     * number of ARNs specified here.</p> <p>Example of an Amazon S3 ARN:
      * <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code> </p>
      */
     inline const Aws::Vector<Aws::String>& GetSnapshotArns() const{ return m_snapshotArns; }
@@ -529,9 +530,9 @@ namespace Model
 
     ///@{
     /**
-     * <p> If you are running Redis engine version 6.0 or later, set this parameter to
-     * yes if you want to opt-in to the next auto minor version upgrade campaign. This
-     * parameter is disabled for previous versions.  </p>
+     * <p> If you are running Redis OSS engine version 6.0 or later, set this parameter
+     * to yes if you want to opt-in to the next auto minor version upgrade campaign.
+     * This parameter is disabled for previous versions.  </p>
      */
     inline bool GetAutoMinorVersionUpgrade() const{ return m_autoMinorVersionUpgrade; }
     inline bool AutoMinorVersionUpgradeHasBeenSet() const { return m_autoMinorVersionUpgradeHasBeenSet; }
@@ -603,8 +604,8 @@ namespace Model
      * <code>3.2.6</code>, <code>4.x</code> or later, and the cluster is being created
      * in an Amazon VPC.</p> <p>If you enable in-transit encryption, you must also
      * specify a value for <code>CacheSubnetGroup</code>.</p> <p> <b>Required:</b> Only
-     * available when creating a replication group in an Amazon VPC using redis version
-     * <code>3.2.6</code>, <code>4.x</code> or later.</p> <p>Default:
+     * available when creating a replication group in an Amazon VPC using Redis OSS
+     * version <code>3.2.6</code>, <code>4.x</code> or later.</p> <p>Default:
      * <code>false</code> </p>  <p>For HIPAA compliance, you must specify
      * <code>TransitEncryptionEnabled</code> as <code>true</code>, an
      * <code>AuthToken</code>, and a <code>CacheSubnetGroup</code>.</p> 
@@ -622,7 +623,7 @@ namespace Model
      * replication group is created. To enable encryption at rest on a replication
      * group you must set <code>AtRestEncryptionEnabled</code> to <code>true</code>
      * when you create the replication group. </p> <p> <b>Required:</b> Only available
-     * when creating a replication group in an Amazon VPC using redis version
+     * when creating a replication group in an Amazon VPC using Redis OSS version
      * <code>3.2.6</code>, <code>4.x</code> or later.</p> <p>Default:
      * <code>false</code> </p>
      */
@@ -692,7 +693,7 @@ namespace Model
     ///@{
     /**
      * <p>Must be either <code>ipv4</code> | <code>ipv6</code> |
-     * <code>dual_stack</code>. IPv6 is supported for workloads using Redis engine
+     * <code>dual_stack</code>. IPv6 is supported for workloads using Redis OSS engine
      * version 6.2 onward or Memcached engine version 1.6.6 on all instances built on
      * the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
      */
@@ -708,7 +709,7 @@ namespace Model
     /**
      * <p>The network type you choose when creating a replication group, either
      * <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using
-     * Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all
+     * Redis OSS engine version 6.2 onward or Memcached engine version 1.6.6 on all
      * instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro
      * system</a>.</p>
      */
@@ -727,7 +728,7 @@ namespace Model
      * <code>TransitEncryptionEnabled</code> to <code>true</code>, you can set your
      * <code>TransitEncryptionMode</code> to <code>preferred</code> in the same
      * request, to allow both encrypted and unencrypted connections at the same time.
-     * Once you migrate all your Redis clients to use encrypted connections you can
+     * Once you migrate all your Redis OSS clients to use encrypted connections you can
      * modify the value to <code>required</code> to allow encrypted connections
      * only.</p> <p>Setting <code>TransitEncryptionMode</code> to <code>required</code>
      * is a two-step process that requires you to first set the
@@ -747,9 +748,10 @@ namespace Model
     /**
      * <p>Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you
      * must first set the cluster mode to Compatible. Compatible mode allows your Redis
-     * clients to connect using both cluster mode enabled and cluster mode disabled.
-     * After you migrate all Redis clients to use cluster mode enabled, you can then
-     * complete cluster mode configuration and set the cluster mode to Enabled.</p>
+     * OSS clients to connect using both cluster mode enabled and cluster mode
+     * disabled. After you migrate all Redis OSS clients to use cluster mode enabled,
+     * you can then complete cluster mode configuration and set the cluster mode to
+     * Enabled.</p>
      */
     inline const ClusterMode& GetClusterMode() const{ return m_clusterMode; }
     inline bool ClusterModeHasBeenSet() const { return m_clusterModeHasBeenSet; }
@@ -762,7 +764,7 @@ namespace Model
     ///@{
     /**
      * <p>The name of the snapshot used to create a replication group. Available for
-     * Redis only.</p>
+     * Redis OSS only.</p>
      */
     inline const Aws::String& GetServerlessCacheSnapshotName() const{ return m_serverlessCacheSnapshotName; }
     inline bool ServerlessCacheSnapshotNameHasBeenSet() const { return m_serverlessCacheSnapshotNameHasBeenSet; }

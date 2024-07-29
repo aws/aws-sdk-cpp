@@ -11,6 +11,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/states/model/LoggingConfiguration.h>
 #include <aws/states/model/TracingConfiguration.h>
+#include <aws/states/model/EncryptionConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -88,7 +89,8 @@ namespace Model
     /**
      * <p>The Amazon States Language definition of the state machine. See <a
      * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon
-     * States Language</a>.</p>
+     * States Language</a>.</p> <p>If called with <code>includedData =
+     * METADATA_ONLY</code>, the returned definition will be <code>{}</code>.</p>
      */
     inline const Aws::String& GetDefinition() const{ return m_definition; }
     inline void SetDefinition(const Aws::String& value) { m_definition = value; }
@@ -203,6 +205,17 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>Settings to configure server-side encryption. </p>
+     */
+    inline const EncryptionConfiguration& GetEncryptionConfiguration() const{ return m_encryptionConfiguration; }
+    inline void SetEncryptionConfiguration(const EncryptionConfiguration& value) { m_encryptionConfiguration = value; }
+    inline void SetEncryptionConfiguration(EncryptionConfiguration&& value) { m_encryptionConfiguration = std::move(value); }
+    inline DescribeStateMachineResult& WithEncryptionConfiguration(const EncryptionConfiguration& value) { SetEncryptionConfiguration(value); return *this;}
+    inline DescribeStateMachineResult& WithEncryptionConfiguration(EncryptionConfiguration&& value) { SetEncryptionConfiguration(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -237,6 +250,8 @@ namespace Model
     Aws::String m_revisionId;
 
     Aws::String m_description;
+
+    EncryptionConfiguration m_encryptionConfiguration;
 
     Aws::String m_requestId;
   };

@@ -26,7 +26,9 @@ AnalysisRuleAggregation::AnalysisRuleAggregation() :
     m_allowedJoinOperatorsHasBeenSet(false),
     m_dimensionColumnsHasBeenSet(false),
     m_scalarFunctionsHasBeenSet(false),
-    m_outputConstraintsHasBeenSet(false)
+    m_outputConstraintsHasBeenSet(false),
+    m_additionalAnalyses(AdditionalAnalyses::NOT_SET),
+    m_additionalAnalysesHasBeenSet(false)
 {
 }
 
@@ -105,6 +107,13 @@ AnalysisRuleAggregation& AnalysisRuleAggregation::operator =(JsonView jsonValue)
     m_outputConstraintsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("additionalAnalyses"))
+  {
+    m_additionalAnalyses = AdditionalAnalysesMapper::GetAdditionalAnalysesForName(jsonValue.GetString("additionalAnalyses"));
+
+    m_additionalAnalysesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -181,6 +190,11 @@ JsonValue AnalysisRuleAggregation::Jsonize() const
    }
    payload.WithArray("outputConstraints", std::move(outputConstraintsJsonList));
 
+  }
+
+  if(m_additionalAnalysesHasBeenSet)
+  {
+   payload.WithString("additionalAnalyses", AdditionalAnalysesMapper::GetNameForAdditionalAnalyses(m_additionalAnalyses));
   }
 
   return payload;

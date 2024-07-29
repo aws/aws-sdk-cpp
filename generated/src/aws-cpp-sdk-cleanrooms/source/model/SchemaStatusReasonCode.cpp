@@ -25,6 +25,12 @@ namespace Aws
         static const int ANALYSIS_PROVIDERS_NOT_CONFIGURED_HASH = HashingUtils::HashString("ANALYSIS_PROVIDERS_NOT_CONFIGURED");
         static const int DIFFERENTIAL_PRIVACY_POLICY_NOT_CONFIGURED_HASH = HashingUtils::HashString("DIFFERENTIAL_PRIVACY_POLICY_NOT_CONFIGURED");
         static const int ID_MAPPING_TABLE_NOT_POPULATED_HASH = HashingUtils::HashString("ID_MAPPING_TABLE_NOT_POPULATED");
+        static const int COLLABORATION_ANALYSIS_RULE_NOT_CONFIGURED_HASH = HashingUtils::HashString("COLLABORATION_ANALYSIS_RULE_NOT_CONFIGURED");
+        static const int ADDITIONAL_ANALYSES_NOT_CONFIGURED_HASH = HashingUtils::HashString("ADDITIONAL_ANALYSES_NOT_CONFIGURED");
+        static const int RESULT_RECEIVERS_NOT_CONFIGURED_HASH = HashingUtils::HashString("RESULT_RECEIVERS_NOT_CONFIGURED");
+        static const int ADDITIONAL_ANALYSES_NOT_ALLOWED_HASH = HashingUtils::HashString("ADDITIONAL_ANALYSES_NOT_ALLOWED");
+        static const int RESULT_RECEIVERS_NOT_ALLOWED_HASH = HashingUtils::HashString("RESULT_RECEIVERS_NOT_ALLOWED");
+        static const int ANALYSIS_RULE_TYPES_NOT_COMPATIBLE_HASH = HashingUtils::HashString("ANALYSIS_RULE_TYPES_NOT_COMPATIBLE");
 
 
         SchemaStatusReasonCode GetSchemaStatusReasonCodeForName(const Aws::String& name)
@@ -49,6 +55,30 @@ namespace Aws
           else if (hashCode == ID_MAPPING_TABLE_NOT_POPULATED_HASH)
           {
             return SchemaStatusReasonCode::ID_MAPPING_TABLE_NOT_POPULATED;
+          }
+          else if (hashCode == COLLABORATION_ANALYSIS_RULE_NOT_CONFIGURED_HASH)
+          {
+            return SchemaStatusReasonCode::COLLABORATION_ANALYSIS_RULE_NOT_CONFIGURED;
+          }
+          else if (hashCode == ADDITIONAL_ANALYSES_NOT_CONFIGURED_HASH)
+          {
+            return SchemaStatusReasonCode::ADDITIONAL_ANALYSES_NOT_CONFIGURED;
+          }
+          else if (hashCode == RESULT_RECEIVERS_NOT_CONFIGURED_HASH)
+          {
+            return SchemaStatusReasonCode::RESULT_RECEIVERS_NOT_CONFIGURED;
+          }
+          else if (hashCode == ADDITIONAL_ANALYSES_NOT_ALLOWED_HASH)
+          {
+            return SchemaStatusReasonCode::ADDITIONAL_ANALYSES_NOT_ALLOWED;
+          }
+          else if (hashCode == RESULT_RECEIVERS_NOT_ALLOWED_HASH)
+          {
+            return SchemaStatusReasonCode::RESULT_RECEIVERS_NOT_ALLOWED;
+          }
+          else if (hashCode == ANALYSIS_RULE_TYPES_NOT_COMPATIBLE_HASH)
+          {
+            return SchemaStatusReasonCode::ANALYSIS_RULE_TYPES_NOT_COMPATIBLE;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -76,6 +106,18 @@ namespace Aws
             return "DIFFERENTIAL_PRIVACY_POLICY_NOT_CONFIGURED";
           case SchemaStatusReasonCode::ID_MAPPING_TABLE_NOT_POPULATED:
             return "ID_MAPPING_TABLE_NOT_POPULATED";
+          case SchemaStatusReasonCode::COLLABORATION_ANALYSIS_RULE_NOT_CONFIGURED:
+            return "COLLABORATION_ANALYSIS_RULE_NOT_CONFIGURED";
+          case SchemaStatusReasonCode::ADDITIONAL_ANALYSES_NOT_CONFIGURED:
+            return "ADDITIONAL_ANALYSES_NOT_CONFIGURED";
+          case SchemaStatusReasonCode::RESULT_RECEIVERS_NOT_CONFIGURED:
+            return "RESULT_RECEIVERS_NOT_CONFIGURED";
+          case SchemaStatusReasonCode::ADDITIONAL_ANALYSES_NOT_ALLOWED:
+            return "ADDITIONAL_ANALYSES_NOT_ALLOWED";
+          case SchemaStatusReasonCode::RESULT_RECEIVERS_NOT_ALLOWED:
+            return "RESULT_RECEIVERS_NOT_ALLOWED";
+          case SchemaStatusReasonCode::ANALYSIS_RULE_TYPES_NOT_COMPATIBLE:
+            return "ANALYSIS_RULE_TYPES_NOT_COMPATIBLE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

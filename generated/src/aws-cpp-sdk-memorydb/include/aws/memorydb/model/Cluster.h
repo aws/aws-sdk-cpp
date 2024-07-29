@@ -165,7 +165,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Redis engine version used by the cluster</p>
+     * <p>The Redis OSS engine version used by the cluster</p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
     inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
@@ -179,7 +179,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Redis engine patch version used by the cluster</p>
+     * <p>The Redis OSS engine patch version used by the cluster</p>
      */
     inline const Aws::String& GetEnginePatchVersion() const{ return m_enginePatchVersion; }
     inline bool EnginePatchVersionHasBeenSet() const { return m_enginePatchVersionHasBeenSet; }

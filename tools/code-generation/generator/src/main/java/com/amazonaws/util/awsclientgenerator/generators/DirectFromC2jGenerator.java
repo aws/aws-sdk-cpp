@@ -21,9 +21,6 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.OutputStream;
-
 
 public class DirectFromC2jGenerator {
 
@@ -69,7 +66,7 @@ public class DirectFromC2jGenerator {
     public ByteArrayOutputStream generatePartitionsSourceFromJson(String rawJson, String languageBinding, String serviceName,
                                                                  String namespace, String licenseText,
                                                                  boolean generateStandalonePackage, boolean enableVirtualOperations) throws Exception {
-        PartitionsModel partitionsBom = new PartitionsModel();
+        PartitionsModel partitionsBom = parsePartitions(rawJson);
         partitionsBom.setPartitionsBlob(rawJson);
 
         return mainClientGenerator.generatePartitionsSourceFromStrBlob(partitionsBom, languageBinding, namespace, licenseText);
@@ -117,6 +114,17 @@ public class DirectFromC2jGenerator {
          */
         DefaultClientConfigs clientConfigBom = gson.fromJson(rawJson, DefaultClientConfigs.class);
         return clientConfigBom;
+    }
+
+    /**
+     * Parse rawJson into a structured Partitions object
+     *
+     * @param rawJson the raw json representation of the partitions object.
+     * @return a parsed object of partitions.
+     */
+    public PartitionsModel parsePartitions(final String rawJson) {
+        Gson gson = new Gson();
+        return gson.fromJson(rawJson, PartitionsModel.class);
     }
 
     /**

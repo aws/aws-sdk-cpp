@@ -28,6 +28,7 @@ ConfiguredTableAssociation::ConfiguredTableAssociation() :
     m_roleArnHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
+    m_analysisRuleTypesHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false)
 {
@@ -104,6 +105,16 @@ ConfiguredTableAssociation& ConfiguredTableAssociation::operator =(JsonView json
     m_descriptionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("analysisRuleTypes"))
+  {
+    Aws::Utils::Array<JsonView> analysisRuleTypesJsonList = jsonValue.GetArray("analysisRuleTypes");
+    for(unsigned analysisRuleTypesIndex = 0; analysisRuleTypesIndex < analysisRuleTypesJsonList.GetLength(); ++analysisRuleTypesIndex)
+    {
+      m_analysisRuleTypes.push_back(ConfiguredTableAssociationAnalysisRuleTypeMapper::GetConfiguredTableAssociationAnalysisRuleTypeForName(analysisRuleTypesJsonList[analysisRuleTypesIndex].AsString()));
+    }
+    m_analysisRuleTypesHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("createTime"))
   {
     m_createTime = jsonValue.GetDouble("createTime");
@@ -176,6 +187,17 @@ JsonValue ConfiguredTableAssociation::Jsonize() const
   if(m_descriptionHasBeenSet)
   {
    payload.WithString("description", m_description);
+
+  }
+
+  if(m_analysisRuleTypesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> analysisRuleTypesJsonList(m_analysisRuleTypes.size());
+   for(unsigned analysisRuleTypesIndex = 0; analysisRuleTypesIndex < analysisRuleTypesJsonList.GetLength(); ++analysisRuleTypesIndex)
+   {
+     analysisRuleTypesJsonList[analysisRuleTypesIndex].AsString(ConfiguredTableAssociationAnalysisRuleTypeMapper::GetNameForConfiguredTableAssociationAnalysisRuleType(m_analysisRuleTypes[analysisRuleTypesIndex]));
+   }
+   payload.WithArray("analysisRuleTypes", std::move(analysisRuleTypesJsonList));
 
   }
 

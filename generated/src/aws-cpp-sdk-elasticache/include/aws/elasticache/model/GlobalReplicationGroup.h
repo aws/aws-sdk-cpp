@@ -105,7 +105,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Elasticache engine. For Redis only.</p>
+     * <p>The Elasticache engine. For Redis OSS only.</p>
      */
     inline const Aws::String& GetEngine() const{ return m_engine; }
     inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
@@ -119,7 +119,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Elasticache Redis engine version.</p>
+     * <p>The Elasticache (Redis OSS) engine version.</p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
     inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
@@ -173,7 +173,7 @@ namespace Model
     ///@{
     /**
      * <p>A flag that enables using an <code>AuthToken</code> (password) when issuing
-     * Redis commands.</p> <p>Default: <code>false</code> </p>
+     * Redis OSS commands.</p> <p>Default: <code>false</code> </p>
      */
     inline bool GetAuthTokenEnabled() const{ return m_authTokenEnabled; }
     inline bool AuthTokenEnabledHasBeenSet() const { return m_authTokenEnabledHasBeenSet; }
@@ -185,7 +185,7 @@ namespace Model
     /**
      * <p>A flag that enables in-transit encryption when set to true.</p> <p>
      * <b>Required:</b> Only available when creating a replication group in an Amazon
-     * VPC using redis version <code>3.2.6</code>, <code>4.x</code> or later.</p>
+     * VPC using Redis OSS version <code>3.2.6</code>, <code>4.x</code> or later.</p>
      */
     inline bool GetTransitEncryptionEnabled() const{ return m_transitEncryptionEnabled; }
     inline bool TransitEncryptionEnabledHasBeenSet() const { return m_transitEncryptionEnabledHasBeenSet; }
@@ -200,7 +200,7 @@ namespace Model
      * replication group is created. To enable encryption at rest on a replication
      * group you must set <code>AtRestEncryptionEnabled</code> to <code>true</code>
      * when you create the replication group. </p> <p> <b>Required:</b> Only available
-     * when creating a replication group in an Amazon VPC using redis version
+     * when creating a replication group in an Amazon VPC using Redis OSS version
      * <code>3.2.6</code>, <code>4.x</code> or later.</p>
      */
     inline bool GetAtRestEncryptionEnabled() const{ return m_atRestEncryptionEnabled; }

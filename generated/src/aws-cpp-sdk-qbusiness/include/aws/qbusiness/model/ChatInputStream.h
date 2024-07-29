@@ -85,7 +85,8 @@ namespace Model
        Aws::Utils::Event::Message msg;
        msg.InsertEventHeader(":message-type", Aws::String("event"));
        msg.InsertEventHeader(":event-type", Aws::String("AuthChallengeResponseEvent"));
-       AWS_UNREFERENCED_PARAM(value);
+       msg.InsertEventHeader(":content-type", Aws::String("application/json"));
+       msg.WriteEventPayload(value.Jsonize().View().WriteCompact());
        WriteEvent(msg);
        return *this;
     }

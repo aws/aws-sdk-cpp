@@ -35,7 +35,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The entire created collaboration object.</p>
+     * <p>The collaboration.</p>
      */
     inline const Collaboration& GetCollaboration() const{ return m_collaboration; }
     inline void SetCollaboration(const Collaboration& value) { m_collaboration = value; }

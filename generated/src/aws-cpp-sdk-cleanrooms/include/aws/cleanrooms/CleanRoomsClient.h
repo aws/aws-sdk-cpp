@@ -319,6 +319,32 @@ namespace CleanRooms
         }
 
         /**
+         * <p> Creates a new analysis rule for an associated configured
+         * table.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/CreateConfiguredTableAssociationAnalysisRule">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateConfiguredTableAssociationAnalysisRuleOutcome CreateConfiguredTableAssociationAnalysisRule(const Model::CreateConfiguredTableAssociationAnalysisRuleRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateConfiguredTableAssociationAnalysisRule that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateConfiguredTableAssociationAnalysisRuleRequestT = Model::CreateConfiguredTableAssociationAnalysisRuleRequest>
+        Model::CreateConfiguredTableAssociationAnalysisRuleOutcomeCallable CreateConfiguredTableAssociationAnalysisRuleCallable(const CreateConfiguredTableAssociationAnalysisRuleRequestT& request) const
+        {
+            return SubmitCallable(&CleanRoomsClient::CreateConfiguredTableAssociationAnalysisRule, request);
+        }
+
+        /**
+         * An Async wrapper for CreateConfiguredTableAssociationAnalysisRule that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateConfiguredTableAssociationAnalysisRuleRequestT = Model::CreateConfiguredTableAssociationAnalysisRuleRequest>
+        void CreateConfiguredTableAssociationAnalysisRuleAsync(const CreateConfiguredTableAssociationAnalysisRuleRequestT& request, const CreateConfiguredTableAssociationAnalysisRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CleanRoomsClient::CreateConfiguredTableAssociationAnalysisRule, request, handler, context);
+        }
+
+        /**
          * <p>Creates an ID mapping table.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/CreateIdMappingTable">AWS
          * API Reference</a></p>
@@ -572,6 +598,32 @@ namespace CleanRooms
         void DeleteConfiguredTableAssociationAsync(const DeleteConfiguredTableAssociationRequestT& request, const DeleteConfiguredTableAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&CleanRoomsClient::DeleteConfiguredTableAssociation, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes an analysis rule for a configured table association.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/DeleteConfiguredTableAssociationAnalysisRule">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteConfiguredTableAssociationAnalysisRuleOutcome DeleteConfiguredTableAssociationAnalysisRule(const Model::DeleteConfiguredTableAssociationAnalysisRuleRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteConfiguredTableAssociationAnalysisRule that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteConfiguredTableAssociationAnalysisRuleRequestT = Model::DeleteConfiguredTableAssociationAnalysisRuleRequest>
+        Model::DeleteConfiguredTableAssociationAnalysisRuleOutcomeCallable DeleteConfiguredTableAssociationAnalysisRuleCallable(const DeleteConfiguredTableAssociationAnalysisRuleRequestT& request) const
+        {
+            return SubmitCallable(&CleanRoomsClient::DeleteConfiguredTableAssociationAnalysisRule, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteConfiguredTableAssociationAnalysisRule that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteConfiguredTableAssociationAnalysisRuleRequestT = Model::DeleteConfiguredTableAssociationAnalysisRuleRequest>
+        void DeleteConfiguredTableAssociationAnalysisRuleAsync(const DeleteConfiguredTableAssociationAnalysisRuleRequestT& request, const DeleteConfiguredTableAssociationAnalysisRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CleanRoomsClient::DeleteConfiguredTableAssociationAnalysisRule, request, handler, context);
         }
 
         /**
@@ -957,6 +1009,32 @@ namespace CleanRooms
         void GetConfiguredTableAssociationAsync(const GetConfiguredTableAssociationRequestT& request, const GetConfiguredTableAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&CleanRoomsClient::GetConfiguredTableAssociation, request, handler, context);
+        }
+
+        /**
+         * <p> Retrieves the analysis rule for a configured table
+         * association.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetConfiguredTableAssociationAnalysisRule">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetConfiguredTableAssociationAnalysisRuleOutcome GetConfiguredTableAssociationAnalysisRule(const Model::GetConfiguredTableAssociationAnalysisRuleRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetConfiguredTableAssociationAnalysisRule that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetConfiguredTableAssociationAnalysisRuleRequestT = Model::GetConfiguredTableAssociationAnalysisRuleRequest>
+        Model::GetConfiguredTableAssociationAnalysisRuleOutcomeCallable GetConfiguredTableAssociationAnalysisRuleCallable(const GetConfiguredTableAssociationAnalysisRuleRequestT& request) const
+        {
+            return SubmitCallable(&CleanRoomsClient::GetConfiguredTableAssociationAnalysisRule, request);
+        }
+
+        /**
+         * An Async wrapper for GetConfiguredTableAssociationAnalysisRule that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetConfiguredTableAssociationAnalysisRuleRequestT = Model::GetConfiguredTableAssociationAnalysisRuleRequest>
+        void GetConfiguredTableAssociationAnalysisRuleAsync(const GetConfiguredTableAssociationAnalysisRuleRequestT& request, const GetConfiguredTableAssociationAnalysisRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CleanRoomsClient::GetConfiguredTableAssociationAnalysisRule, request, handler, context);
         }
 
         /**
@@ -1905,6 +1983,32 @@ namespace CleanRooms
         void UpdateConfiguredTableAssociationAsync(const UpdateConfiguredTableAssociationRequestT& request, const UpdateConfiguredTableAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&CleanRoomsClient::UpdateConfiguredTableAssociation, request, handler, context);
+        }
+
+        /**
+         * <p> Updates the analysis rule for a configured table association.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/UpdateConfiguredTableAssociationAnalysisRule">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateConfiguredTableAssociationAnalysisRuleOutcome UpdateConfiguredTableAssociationAnalysisRule(const Model::UpdateConfiguredTableAssociationAnalysisRuleRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateConfiguredTableAssociationAnalysisRule that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateConfiguredTableAssociationAnalysisRuleRequestT = Model::UpdateConfiguredTableAssociationAnalysisRuleRequest>
+        Model::UpdateConfiguredTableAssociationAnalysisRuleOutcomeCallable UpdateConfiguredTableAssociationAnalysisRuleCallable(const UpdateConfiguredTableAssociationAnalysisRuleRequestT& request) const
+        {
+            return SubmitCallable(&CleanRoomsClient::UpdateConfiguredTableAssociationAnalysisRule, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateConfiguredTableAssociationAnalysisRule that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateConfiguredTableAssociationAnalysisRuleRequestT = Model::UpdateConfiguredTableAssociationAnalysisRuleRequest>
+        void UpdateConfiguredTableAssociationAnalysisRuleAsync(const UpdateConfiguredTableAssociationAnalysisRuleRequestT& request, const UpdateConfiguredTableAssociationAnalysisRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CleanRoomsClient::UpdateConfiguredTableAssociationAnalysisRule, request, handler, context);
         }
 
         /**

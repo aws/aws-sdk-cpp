@@ -191,6 +191,11 @@ if(BUILD_ONLY)
     endforeach()
 endif()
 
+if (BUILD_BENCHMARKS)
+    LIST(APPEND SDK_BUILD_LIST "s3;s3-crt;monitoring;core")
+    add_subdirectory(tests/benchmark)
+endif ()
+
 LIST(REMOVE_DUPLICATES SDK_BUILD_LIST)
 LIST(REMOVE_DUPLICATES SDK_DEPENDENCY_BUILD_LIST)
 
@@ -264,10 +269,6 @@ function(add_sdks)
              unset(NO_HTTP_CLIENT_SKIP_INTEGRATION_TEST)
         endif()
     endif()
-
-    if (BUILD_BENCHMARKS)
-        add_subdirectory(tests/benchmark)
-    endif ()
 
     # the catch-all config needs to list all the targets in a dependency-sorted order
     include(dependencies)

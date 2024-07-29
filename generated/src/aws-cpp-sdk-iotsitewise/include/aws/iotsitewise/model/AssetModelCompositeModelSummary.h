@@ -41,7 +41,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID of the the composite model that this summary describes..</p>
+     * <p>The ID of the composite model that this summary describes..</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
@@ -72,7 +72,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the the composite model that this summary describes..</p>
+     * <p>The name of the composite model that this summary describes..</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
@@ -86,11 +86,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The type of asset model.</p> <ul> <li> <p> <b>ASSET_MODEL</b> – (default) An
-     * asset model that you can use to create assets. Can't be included as a component
-     * in another asset model.</p> </li> <li> <p> <b>COMPONENT_MODEL</b> – A reusable
-     * component that you can include in the composite models of other asset models.
-     * You can't create assets directly from this type of asset model. </p> </li> </ul>
+     * <p>The composite model type. Valid values are <code>AWS/ALARM</code>,
+     * <code>CUSTOM</code>, or <code> AWS/L4E_ANOMALY</code>.</p>
      */
     inline const Aws::String& GetType() const{ return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
@@ -104,7 +101,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The description of the the composite model that this summary describes..</p>
+     * <p>The description of the composite model that this summary describes..</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }

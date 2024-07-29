@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/cleanrooms/CleanRooms_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/cleanrooms/model/AdditionalAnalyses.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/cleanrooms/model/JoinOperator.h>
 #include <utility>
@@ -85,6 +86,19 @@ namespace Model
     inline AnalysisRuleList& AddListColumns(Aws::String&& value) { m_listColumnsHasBeenSet = true; m_listColumns.push_back(std::move(value)); return *this; }
     inline AnalysisRuleList& AddListColumns(const char* value) { m_listColumnsHasBeenSet = true; m_listColumns.push_back(value); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p> An indicator as to whether additional analyses (such as Clean Rooms ML) can
+     * be applied to the output of the direct query.</p>
+     */
+    inline const AdditionalAnalyses& GetAdditionalAnalyses() const{ return m_additionalAnalyses; }
+    inline bool AdditionalAnalysesHasBeenSet() const { return m_additionalAnalysesHasBeenSet; }
+    inline void SetAdditionalAnalyses(const AdditionalAnalyses& value) { m_additionalAnalysesHasBeenSet = true; m_additionalAnalyses = value; }
+    inline void SetAdditionalAnalyses(AdditionalAnalyses&& value) { m_additionalAnalysesHasBeenSet = true; m_additionalAnalyses = std::move(value); }
+    inline AnalysisRuleList& WithAdditionalAnalyses(const AdditionalAnalyses& value) { SetAdditionalAnalyses(value); return *this;}
+    inline AnalysisRuleList& WithAdditionalAnalyses(AdditionalAnalyses&& value) { SetAdditionalAnalyses(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_joinColumns;
@@ -95,6 +109,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_listColumns;
     bool m_listColumnsHasBeenSet = false;
+
+    AdditionalAnalyses m_additionalAnalyses;
+    bool m_additionalAnalysesHasBeenSet = false;
   };
 
 } // namespace Model

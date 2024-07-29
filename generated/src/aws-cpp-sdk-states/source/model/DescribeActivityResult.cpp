@@ -47,6 +47,12 @@ DescribeActivityResult& DescribeActivityResult::operator =(const Aws::AmazonWebS
 
   }
 
+  if(jsonValue.ValueExists("encryptionConfiguration"))
+  {
+    m_encryptionConfiguration = jsonValue.GetObject("encryptionConfiguration");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

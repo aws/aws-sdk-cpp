@@ -95,8 +95,8 @@ namespace Model
     ///@{
     /**
      * <p>The cluster ID that is used as the daily snapshot source for the replication
-     * group. This parameter cannot be set for Redis (cluster mode enabled) replication
-     * groups.</p>
+     * group. This parameter cannot be set for Redis OSS (cluster mode enabled)
+     * replication groups.</p>
      */
     inline const Aws::String& GetSnapshottingClusterId() const{ return m_snapshottingClusterId; }
     inline bool SnapshottingClusterIdHasBeenSet() const { return m_snapshottingClusterIdHasBeenSet; }
@@ -276,9 +276,9 @@ namespace Model
 
     ///@{
     /**
-     * <p> If you are running Redis engine version 6.0 or later, set this parameter to
-     * yes if you want to opt-in to the next auto minor version upgrade campaign. This
-     * parameter is disabled for previous versions.  </p>
+     * <p> If you are running Redis OSS engine version 6.0 or later, set this parameter
+     * to yes if you want to opt-in to the next auto minor version upgrade campaign.
+     * This parameter is disabled for previous versions.  </p>
      */
     inline bool GetAutoMinorVersionUpgrade() const{ return m_autoMinorVersionUpgrade; }
     inline bool AutoMinorVersionUpgradeHasBeenSet() const { return m_autoMinorVersionUpgradeHasBeenSet; }
@@ -361,7 +361,7 @@ namespace Model
      * <p>SET - allowed only after ROTATE</p> </li> <li> <p>DELETE - allowed only when
      * transitioning to RBAC</p> </li> </ul> <p> For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating
-     * Users with Redis AUTH</a> </p>
+     * Users with Redis OSS AUTH</a> </p>
      */
     inline const AuthTokenUpdateStrategyType& GetAuthTokenUpdateStrategy() const{ return m_authTokenUpdateStrategy; }
     inline bool AuthTokenUpdateStrategyHasBeenSet() const { return m_authTokenUpdateStrategyHasBeenSet; }
@@ -430,7 +430,7 @@ namespace Model
     /**
      * <p>The network type you choose when modifying a cluster, either
      * <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using
-     * Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all
+     * Redis OSS engine version 6.2 onward or Memcached engine version 1.6.6 on all
      * instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro
      * system</a>.</p>
      */
@@ -461,8 +461,8 @@ namespace Model
      * <code>TransitEncryptionEnabled</code> to <code>true</code>, for your existing
      * cluster, and set <code>TransitEncryptionMode</code> to <code>preferred</code> in
      * the same request to allow both encrypted and unencrypted connections at the same
-     * time. Once you migrate all your Redis clients to use encrypted connections you
-     * can set the value to <code>required</code> to allow encrypted connections
+     * time. Once you migrate all your Redis OSS clients to use encrypted connections
+     * you can set the value to <code>required</code> to allow encrypted connections
      * only.</p> <p>Setting <code>TransitEncryptionMode</code> to <code>required</code>
      * is a two-step process that requires you to first set the
      * <code>TransitEncryptionMode</code> to <code>preferred</code>, after that you can
@@ -480,9 +480,10 @@ namespace Model
     /**
      * <p>Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you
      * must first set the cluster mode to Compatible. Compatible mode allows your Redis
-     * clients to connect using both cluster mode enabled and cluster mode disabled.
-     * After you migrate all Redis clients to use cluster mode enabled, you can then
-     * complete cluster mode configuration and set the cluster mode to Enabled.</p>
+     * OSS clients to connect using both cluster mode enabled and cluster mode
+     * disabled. After you migrate all Redis OSS clients to use cluster mode enabled,
+     * you can then complete cluster mode configuration and set the cluster mode to
+     * Enabled.</p>
      */
     inline const ClusterMode& GetClusterMode() const{ return m_clusterMode; }
     inline bool ClusterModeHasBeenSet() const { return m_clusterModeHasBeenSet; }

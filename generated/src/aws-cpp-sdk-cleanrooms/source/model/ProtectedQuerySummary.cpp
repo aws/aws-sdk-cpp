@@ -24,7 +24,8 @@ ProtectedQuerySummary::ProtectedQuerySummary() :
     m_membershipArnHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_status(ProtectedQueryStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_receiverConfigurationsHasBeenSet(false)
 {
 }
 
@@ -71,6 +72,16 @@ ProtectedQuerySummary& ProtectedQuerySummary::operator =(JsonView jsonValue)
     m_statusHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("receiverConfigurations"))
+  {
+    Aws::Utils::Array<JsonView> receiverConfigurationsJsonList = jsonValue.GetArray("receiverConfigurations");
+    for(unsigned receiverConfigurationsIndex = 0; receiverConfigurationsIndex < receiverConfigurationsJsonList.GetLength(); ++receiverConfigurationsIndex)
+    {
+      m_receiverConfigurations.push_back(receiverConfigurationsJsonList[receiverConfigurationsIndex].AsObject());
+    }
+    m_receiverConfigurationsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -104,6 +115,17 @@ JsonValue ProtectedQuerySummary::Jsonize() const
   if(m_statusHasBeenSet)
   {
    payload.WithString("status", ProtectedQueryStatusMapper::GetNameForProtectedQueryStatus(m_status));
+  }
+
+  if(m_receiverConfigurationsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> receiverConfigurationsJsonList(m_receiverConfigurations.size());
+   for(unsigned receiverConfigurationsIndex = 0; receiverConfigurationsIndex < receiverConfigurationsJsonList.GetLength(); ++receiverConfigurationsIndex)
+   {
+     receiverConfigurationsJsonList[receiverConfigurationsIndex].AsObject(m_receiverConfigurations[receiverConfigurationsIndex].Jsonize());
+   }
+   payload.WithArray("receiverConfigurations", std::move(receiverConfigurationsJsonList));
+
   }
 
   return payload;

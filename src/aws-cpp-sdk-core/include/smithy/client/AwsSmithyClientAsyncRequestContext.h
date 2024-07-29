@@ -16,50 +16,60 @@
 
 namespace smithy
 {
-    class AwsClientAsyncRequestCtx
+    namespace client
     {
-    public:
-        using AwsCoreError = Aws::Client::AWSError<Aws::Client::CoreErrors>;
-        using HttpResponseOutcome = Aws::Utils::Outcome<std::shared_ptr<Aws::Http::HttpResponse>, AwsCoreError>;
-
-        struct RequestInfo
+        class AwsSmithyClientAsyncRequestContext
         {
-            Aws::Utils::DateTime ttl;
-            long attempt;
-            long maxAttempts;
+        public:
+            using AwsCoreError = Aws::Client::AWSError<Aws::Client::CoreErrors>;
+            using HttpResponseOutcome = Aws::Utils::Outcome<std::shared_ptr<Aws::Http::HttpResponse>, AwsCoreError>;
+            using ResponseHandlerFunc = std::function<void(HttpResponseOutcome&&)>;
 
-            explicit operator Aws::String() const
+            struct RequestInfo
             {
-                Aws::StringStream ss;
-                if (ttl.WasParseSuccessful() && ttl != Aws::Utils::DateTime())
+                Aws::Utils::DateTime ttl;
+                long attempt;
+                long maxAttempts;
+
+                Aws::String ToString() const
                 {
-                    assert(attempt > 1);
-                    ss << "ttl=" << ttl.ToGmtString(Aws::Utils::DateFormat::ISO_8601_BASIC) << "; ";
+                    Aws::StringStream ss;
+                    if (ttl.WasParseSuccessful() && ttl != Aws::Utils::DateTime())
+                    {
+                        assert(attempt > 1);
+                        ss << "ttl=" << ttl.ToGmtString(Aws::Utils::DateFormat::ISO_8601_BASIC) << "; ";
+                    }
+                    ss << "attempt=" << attempt;
+                    if (maxAttempts > 0)
+                    {
+                        ss << "; max=" << maxAttempts;
+                    }
+                    return ss.str();
                 }
-                ss << "attempt=" << attempt;
-                if (maxAttempts > 0)
+
+                explicit operator Aws::String() const
                 {
-                    ss << "; max=" << maxAttempts;
+                    return ToString();
                 }
-                return ss.str();
-            }
+            };
+
+            Aws::String m_invocationId;
+            Aws::Http::HttpMethod m_method;
+            const Aws::AmazonWebServiceRequest* m_pRequest; // optional
+
+            RequestInfo m_requestInfo;
+            Aws::String m_requestName;
+            std::shared_ptr<Aws::Http::HttpRequest> m_httpRequest;
+            AuthSchemeOption m_authSchemeOption;
+            Aws::Endpoint::AWSEndpoint m_endpoint;
+
+            Aws::Crt::Optional<AwsCoreError> m_lastError;
+
+            size_t m_retryCount;
+            Aws::Vector<void*> m_monitoringContexts;
+
+            ResponseHandlerFunc m_responseHandler;
+            std::shared_ptr<Aws::Utils::Threading::Executor> m_pExecutor;
         };
-
-        Aws::String m_invocationId;
-        Aws::Http::HttpMethod m_method;
-        const Aws::AmazonWebServiceRequest* m_pRequest; // optional
-
-        RequestInfo m_requestInfo;
-        Aws::String m_requestName;
-        std::shared_ptr<Aws::Http::HttpRequest> m_httpRequest;
-        Aws::Endpoint::AWSEndpoint m_endpoint;
-
-        Aws::Crt::Optional<AwsCoreError> m_lastError;
-
-        size_t m_retryCount;
-        Aws::Vector<void*> m_monitoringContexts;
-
-        std::function<void(HttpResponseOutcome)> m_responseHandler;
-        std::shared_ptr<Aws::Utils::Threading::Executor> m_pExecutor;
-    };
+    } // namespace client
 } // namespace smithy

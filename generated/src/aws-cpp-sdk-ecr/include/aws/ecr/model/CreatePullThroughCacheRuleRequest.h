@@ -62,9 +62,7 @@ namespace Model
      * Container Registry (<code>github-container-registry</code>) -
      * <code>ghcr.io</code> </p> </li> <li> <p>Microsoft Azure Container Registry
      * (<code>azure-container-registry</code>) - <code>&lt;custom&gt;.azurecr.io</code>
-     * </p> </li> <li> <p>GitLab Container Registry
-     * (<code>gitlab-container-registry</code>) - <code>registry.gitlab.com</code> </p>
-     * </li> </ul>
+     * </p> </li> </ul>
      */
     inline const Aws::String& GetUpstreamRegistryUrl() const{ return m_upstreamRegistryUrl; }
     inline bool UpstreamRegistryUrlHasBeenSet() const { return m_upstreamRegistryUrlHasBeenSet; }

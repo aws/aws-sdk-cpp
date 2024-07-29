@@ -35,7 +35,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The entire configured table association object.</p>
+     * <p>The configured table association.</p>
      */
     inline const ConfiguredTableAssociation& GetConfiguredTableAssociation() const{ return m_configuredTableAssociation; }
     inline void SetConfiguredTableAssociation(const ConfiguredTableAssociation& value) { m_configuredTableAssociation = value; }

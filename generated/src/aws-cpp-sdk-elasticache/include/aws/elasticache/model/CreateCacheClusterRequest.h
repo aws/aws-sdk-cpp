@@ -147,8 +147,8 @@ namespace Model
     ///@{
     /**
      * <p>The initial number of cache nodes that the cluster has.</p> <p>For clusters
-     * running Redis, this value must be 1. For clusters running Memcached, this value
-     * must be between 1 and 40.</p> <p>If you need more than 40 nodes for your
+     * running Redis OSS, this value must be 1. For clusters running Memcached, this
+     * value must be between 1 and 40.</p> <p>If you need more than 40 nodes for your
      * Memcached cluster, please fill out the ElastiCache Limit Increase Request form
      * at <a
      * href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/">http://aws.amazon.com/contact-us/elasticache-node-limit-request/</a>.</p>
@@ -173,7 +173,7 @@ namespace Model
      * <p>For region availability, see <a
      * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported
      * Node Types</a> </p>  <p> <b>M6g node types</b> (available only for Redis
-     * engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward):
+     * OSS engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward):
      * <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>,
      * <code>cache.m6g.2xlarge</code>, <code>cache.m6g.4xlarge</code>,
      * <code>cache.m6g.8xlarge</code>, <code>cache.m6g.12xlarge</code>,
@@ -184,7 +184,7 @@ namespace Model
      * node types:</b> <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
      * <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>,
      * <code>cache.m4.10xlarge</code> </p> <p> <b>T4g node types</b> (available only
-     * for Redis engine version 5.0.6 onward and Memcached engine version 1.5.16
+     * for Redis OSS engine version 5.0.6 onward and Memcached engine version 1.5.16
      * onward): <code>cache.t4g.micro</code>, <code>cache.t4g.small</code>,
      * <code>cache.t4g.medium</code> </p> <p> <b>T3 node types:</b>
      * <code>cache.t3.micro</code>, <code>cache.t3.small</code>,
@@ -209,7 +209,7 @@ namespace Model
      * <code>cache.r7g.16xlarge</code> </p>  <p>For region availability, see <a
      * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported
      * Node Types</a> </p>  <p> <b>R6g node types</b> (available only for Redis
-     * engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward):
+     * OSS engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward):
      * <code>cache.r6g.large</code>, <code>cache.r6g.xlarge</code>,
      * <code>cache.r6g.2xlarge</code>, <code>cache.r6g.4xlarge</code>,
      * <code>cache.r6g.8xlarge</code>, <code>cache.r6g.12xlarge</code>,
@@ -228,11 +228,11 @@ namespace Model
      * <code>cache.r3.2xlarge</code>, <code>cache.r3.4xlarge</code>,
      * <code>cache.r3.8xlarge</code> </p> </li> </ul> </li> </ul> <p> <b>Additional
      * node type info</b> </p> <ul> <li> <p>All current generation instance types are
-     * created in Amazon VPC by default.</p> </li> <li> <p>Redis append-only files
-     * (AOF) are not supported for T1 or T2 instances.</p> </li> <li> <p>Redis Multi-AZ
-     * with automatic failover is not supported on T1 instances.</p> </li> <li>
-     * <p>Redis configuration variables <code>appendonly</code> and
-     * <code>appendfsync</code> are not supported on Redis version 2.8.22 and
+     * created in Amazon VPC by default.</p> </li> <li> <p>Redis OSS append-only files
+     * (AOF) are not supported for T1 or T2 instances.</p> </li> <li> <p>Redis OSS
+     * Multi-AZ with automatic failover is not supported on T1 instances.</p> </li>
+     * <li> <p>Redis OSS configuration variables <code>appendonly</code> and
+     * <code>appendfsync</code> are not supported on Redis OSS version 2.8.22 and
      * later.</p> </li> </ul>
      */
     inline const Aws::String& GetCacheNodeType() const{ return m_cacheNodeType; }
@@ -370,11 +370,12 @@ namespace Model
     ///@{
     /**
      * <p>A single-element string list containing an Amazon Resource Name (ARN) that
-     * uniquely identifies a Redis RDB snapshot file stored in Amazon S3. The snapshot
-     * file is used to populate the node group (shard). The Amazon S3 object name in
-     * the ARN cannot contain any commas.</p>  <p>This parameter is only valid if
-     * the <code>Engine</code> parameter is <code>redis</code>.</p>  <p>Example
-     * of an Amazon S3 ARN: <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code> </p>
+     * uniquely identifies a Redis OSS RDB snapshot file stored in Amazon S3. The
+     * snapshot file is used to populate the node group (shard). The Amazon S3 object
+     * name in the ARN cannot contain any commas.</p>  <p>This parameter is only
+     * valid if the <code>Engine</code> parameter is <code>redis</code>.</p> 
+     * <p>Example of an Amazon S3 ARN:
+     * <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code> </p>
      */
     inline const Aws::Vector<Aws::String>& GetSnapshotArns() const{ return m_snapshotArns; }
     inline bool SnapshotArnsHasBeenSet() const { return m_snapshotArnsHasBeenSet; }
@@ -389,7 +390,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of a Redis snapshot from which to restore data into the new node
+     * <p>The name of a Redis OSS snapshot from which to restore data into the new node
      * group (shard). The snapshot status changes to <code>restoring</code> while the
      * new node group (shard) is being created.</p>  <p>This parameter is only
      * valid if the <code>Engine</code> parameter is <code>redis</code>.</p> 
@@ -448,9 +449,9 @@ namespace Model
 
     ///@{
     /**
-     * <p> If you are running Redis engine version 6.0 or later, set this parameter to
-     * yes if you want to opt-in to the next auto minor version upgrade campaign. This
-     * parameter is disabled for previous versions.  </p>
+     * <p> If you are running Redis OSS engine version 6.0 or later, set this parameter
+     * to yes if you want to opt-in to the next auto minor version upgrade campaign.
+     * This parameter is disabled for previous versions.  </p>
      */
     inline bool GetAutoMinorVersionUpgrade() const{ return m_autoMinorVersionUpgrade; }
     inline bool AutoMinorVersionUpgradeHasBeenSet() const { return m_autoMinorVersionUpgradeHasBeenSet; }
@@ -581,7 +582,7 @@ namespace Model
     ///@{
     /**
      * <p>Must be either <code>ipv4</code> | <code>ipv6</code> |
-     * <code>dual_stack</code>. IPv6 is supported for workloads using Redis engine
+     * <code>dual_stack</code>. IPv6 is supported for workloads using Redis OSS engine
      * version 6.2 onward or Memcached engine version 1.6.6 on all instances built on
      * the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>. </p>
      */
@@ -597,7 +598,7 @@ namespace Model
     /**
      * <p>The network type you choose when modifying a cluster, either
      * <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using
-     * Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all
+     * Redis OSS engine version 6.2 onward or Memcached engine version 1.6.6 on all
      * instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro
      * system</a>.</p>
      */

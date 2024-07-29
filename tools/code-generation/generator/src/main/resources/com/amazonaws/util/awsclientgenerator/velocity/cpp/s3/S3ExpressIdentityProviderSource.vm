@@ -43,8 +43,8 @@ S3ExpressIdentityProvider::getIdentity(
                return {};
            });
     }
-    const auto identity = GetS3ExpressIdentity(params);
-    return identity;
+    auto identity = GetS3ExpressIdentity(params);
+    return Aws::MakeUnique<S3ExpressIdentity>(S3_EXPRESS_IDENTITY_PROVIDER, std::move(identity));
 }
 
 S3ExpressIdentity S3ExpressIdentityProvider::getIdentity(const Aws::String &bucketName) {

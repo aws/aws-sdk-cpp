@@ -44,7 +44,8 @@ namespace Model
     /**
      * <p>The start of the time period to retrieve information about. When used in a
      * raw HTTP Query API, it is formatted as be epoch time in seconds. For example:
-     * <code>1698778057</code> </p>
+     * <code>1698778057</code> </p> <p>Your requested start time will be rounded to the
+     * nearest hour.</p>
      */
     inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
@@ -58,7 +59,8 @@ namespace Model
     /**
      * <p>The end of the time period to retrieve information about. When used in a raw
      * HTTP Query API, it is formatted as be epoch time in seconds. For example:
-     * <code>1698778057</code> </p>
+     * <code>1698778057</code> </p> <p>Your requested start time will be rounded to the
+     * nearest hour.</p>
      */
     inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }

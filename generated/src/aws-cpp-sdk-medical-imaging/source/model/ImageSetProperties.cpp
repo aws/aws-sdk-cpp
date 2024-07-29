@@ -28,7 +28,8 @@ ImageSetProperties::ImageSetProperties() :
     m_createdAtHasBeenSet(false),
     m_updatedAtHasBeenSet(false),
     m_deletedAtHasBeenSet(false),
-    m_messageHasBeenSet(false)
+    m_messageHasBeenSet(false),
+    m_overridesHasBeenSet(false)
 {
 }
 
@@ -96,6 +97,13 @@ ImageSetProperties& ImageSetProperties::operator =(JsonView jsonValue)
     m_messageHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("overrides"))
+  {
+    m_overrides = jsonValue.GetObject("overrides");
+
+    m_overridesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -143,6 +151,12 @@ JsonValue ImageSetProperties::Jsonize() const
   if(m_messageHasBeenSet)
   {
    payload.WithString("message", m_message);
+
+  }
+
+  if(m_overridesHasBeenSet)
+  {
+   payload.WithObject("overrides", m_overrides.Jsonize());
 
   }
 

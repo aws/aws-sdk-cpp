@@ -24,12 +24,11 @@ namespace Model
 {
 
   /**
-   * <p>Describes the current Amazon Pinpoint monthly spend limits for sending voice
-   * and text messages. For more information on increasing your monthly spend limit,
-   * see <a
-   * href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-sms-awssupport-spend-threshold.html">
-   * Requesting increases to your monthly SMS spending quota for Amazon Pinpoint </a>
-   * in the <i>Amazon Pinpoint User Guide</i>. </p><p><h3>See Also:</h3>   <a
+   * <p>Describes the current monthly spend limits for sending voice and text
+   * messages. For more information on increasing your monthly spend limit, see <a
+   * href="https://docs.aws.amazon.com/sms-voice/latest/userguide/awssupport-spend-threshold.html">
+   * Requesting a spending quota increase </a> in the <i>AWS End User Messaging SMS
+   * User Guide</i>. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/SpendLimit">AWS
    * API Reference</a></p>
    */

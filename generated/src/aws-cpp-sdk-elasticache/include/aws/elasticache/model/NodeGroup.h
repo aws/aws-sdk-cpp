@@ -46,11 +46,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>The identifier for the node group (shard). A Redis (cluster mode disabled)
-     * replication group contains only 1 node group; therefore, the node group ID is
-     * 0001. A Redis (cluster mode enabled) replication group contains 1 to 90 node
-     * groups numbered 0001 to 0090. Optionally, the user can provide the id for a node
-     * group. </p>
+     * <p>The identifier for the node group (shard). A Redis OSS (cluster mode
+     * disabled) replication group contains only 1 node group; therefore, the node
+     * group ID is 0001. A Redis OSS (cluster mode enabled) replication group contains
+     * 1 to 90 node groups numbered 0001 to 0090. Optionally, the user can provide the
+     * id for a node group. </p>
      */
     inline const Aws::String& GetNodeGroupId() const{ return m_nodeGroupId; }
     inline bool NodeGroupIdHasBeenSet() const { return m_nodeGroupIdHasBeenSet; }

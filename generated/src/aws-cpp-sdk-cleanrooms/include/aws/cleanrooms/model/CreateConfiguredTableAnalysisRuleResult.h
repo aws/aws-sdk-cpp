@@ -35,7 +35,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The entire created analysis rule.</p>
+     * <p>The analysis rule that was created for the configured table.</p>
      */
     inline const ConfiguredTableAnalysisRule& GetAnalysisRule() const{ return m_analysisRule; }
     inline void SetAnalysisRule(const ConfiguredTableAnalysisRule& value) { m_analysisRule = value; }

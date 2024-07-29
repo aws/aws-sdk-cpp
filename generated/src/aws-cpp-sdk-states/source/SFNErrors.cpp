@@ -7,6 +7,7 @@
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/states/SFNErrors.h>
 #include <aws/states/model/ValidationException.h>
+#include <aws/states/model/KmsInvalidStateException.h>
 #include <aws/states/model/ResourceNotFound.h>
 #include <aws/states/model/TooManyTags.h>
 
@@ -25,6 +26,12 @@ template<> AWS_SFN_API ValidationException SFNError::GetModeledError()
   return ValidationException(this->GetJsonPayload().View());
 }
 
+template<> AWS_SFN_API KmsInvalidStateException SFNError::GetModeledError()
+{
+  assert(this->GetErrorType() == SFNErrors::KMS_INVALID_STATE);
+  return KmsInvalidStateException(this->GetJsonPayload().View());
+}
+
 template<> AWS_SFN_API ResourceNotFound SFNError::GetModeledError()
 {
   assert(this->GetErrorType() == SFNErrors::RESOURCE_NOT_FOUND);
@@ -41,6 +48,8 @@ namespace SFNErrorMapper
 {
 
 static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
+static const int KMS_THROTTLING_HASH = HashingUtils::HashString("KmsThrottlingException");
+static const int KMS_ACCESS_DENIED_HASH = HashingUtils::HashString("KmsAccessDeniedException");
 static const int INVALID_TOKEN_HASH = HashingUtils::HashString("InvalidToken");
 static const int ACTIVITY_WORKER_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ActivityWorkerLimitExceeded");
 static const int INVALID_LOGGING_CONFIGURATION_HASH = HashingUtils::HashString("InvalidLoggingConfiguration");
@@ -50,12 +59,14 @@ static const int INVALID_EXECUTION_INPUT_HASH = HashingUtils::HashString("Invali
 static const int SERVICE_QUOTA_EXCEEDED_HASH = HashingUtils::HashString("ServiceQuotaExceededException");
 static const int STATE_MACHINE_DOES_NOT_EXIST_HASH = HashingUtils::HashString("StateMachineDoesNotExist");
 static const int INVALID_DEFINITION_HASH = HashingUtils::HashString("InvalidDefinition");
+static const int KMS_INVALID_STATE_HASH = HashingUtils::HashString("KmsInvalidStateException");
 static const int EXECUTION_ALREADY_EXISTS_HASH = HashingUtils::HashString("ExecutionAlreadyExists");
 static const int ACTIVITY_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ActivityLimitExceeded");
 static const int STATE_MACHINE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("StateMachineLimitExceeded");
 static const int MISSING_REQUIRED_PARAMETER_HASH = HashingUtils::HashString("MissingRequiredParameter");
 static const int INVALID_ARN_HASH = HashingUtils::HashString("InvalidArn");
 static const int TASK_DOES_NOT_EXIST_HASH = HashingUtils::HashString("TaskDoesNotExist");
+static const int INVALID_ENCRYPTION_CONFIGURATION_HASH = HashingUtils::HashString("InvalidEncryptionConfiguration");
 static const int EXECUTION_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ExecutionLimitExceeded");
 static const int ACTIVITY_DOES_NOT_EXIST_HASH = HashingUtils::HashString("ActivityDoesNotExist");
 static const int INVALID_NAME_HASH = HashingUtils::HashString("InvalidName");
@@ -66,6 +77,7 @@ static const int EXECUTION_DOES_NOT_EXIST_HASH = HashingUtils::HashString("Execu
 static const int INVALID_TRACING_CONFIGURATION_HASH = HashingUtils::HashString("InvalidTracingConfiguration");
 static const int INVALID_OUTPUT_HASH = HashingUtils::HashString("InvalidOutput");
 static const int STATE_MACHINE_ALREADY_EXISTS_HASH = HashingUtils::HashString("StateMachineAlreadyExists");
+static const int ACTIVITY_ALREADY_EXISTS_HASH = HashingUtils::HashString("ActivityAlreadyExists");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
@@ -75,6 +87,14 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   if (hashCode == CONFLICT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SFNErrors::CONFLICT), RetryableType::NOT_RETRYABLE);
+  }
+  else if (hashCode == KMS_THROTTLING_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SFNErrors::KMS_THROTTLING), RetryableType::NOT_RETRYABLE);
+  }
+  else if (hashCode == KMS_ACCESS_DENIED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SFNErrors::KMS_ACCESS_DENIED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_TOKEN_HASH)
   {
@@ -112,6 +132,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SFNErrors::INVALID_DEFINITION), RetryableType::NOT_RETRYABLE);
   }
+  else if (hashCode == KMS_INVALID_STATE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SFNErrors::KMS_INVALID_STATE), RetryableType::NOT_RETRYABLE);
+  }
   else if (hashCode == EXECUTION_ALREADY_EXISTS_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SFNErrors::EXECUTION_ALREADY_EXISTS), RetryableType::NOT_RETRYABLE);
@@ -135,6 +159,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == TASK_DOES_NOT_EXIST_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SFNErrors::TASK_DOES_NOT_EXIST), RetryableType::NOT_RETRYABLE);
+  }
+  else if (hashCode == INVALID_ENCRYPTION_CONFIGURATION_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SFNErrors::INVALID_ENCRYPTION_CONFIGURATION), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == EXECUTION_LIMIT_EXCEEDED_HASH)
   {
@@ -175,6 +203,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == STATE_MACHINE_ALREADY_EXISTS_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SFNErrors::STATE_MACHINE_ALREADY_EXISTS), RetryableType::NOT_RETRYABLE);
+  }
+  else if (hashCode == ACTIVITY_ALREADY_EXISTS_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SFNErrors::ACTIVITY_ALREADY_EXISTS), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

@@ -46,6 +46,7 @@ namespace Aws
             INVALID_ACCESS_KEY_ID = 23,
             REQUEST_TIMEOUT = 24,
             NOT_INITIALIZED = 25,
+            MEMORY_ALLOCATION = 26,
 
             NETWORK_CONNECTION = 99, // General failure to send message to service
 

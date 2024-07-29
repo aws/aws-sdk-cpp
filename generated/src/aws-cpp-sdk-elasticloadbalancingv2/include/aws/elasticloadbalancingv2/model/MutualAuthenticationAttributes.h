@@ -7,6 +7,7 @@
 #include <aws/elasticloadbalancingv2/ElasticLoadBalancingv2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/elasticloadbalancingv2/model/TrustStoreAssociationStatusEnum.h>
 #include <utility>
 
 namespace Aws
@@ -79,6 +80,18 @@ namespace Model
     inline void SetIgnoreClientCertificateExpiry(bool value) { m_ignoreClientCertificateExpiryHasBeenSet = true; m_ignoreClientCertificateExpiry = value; }
     inline MutualAuthenticationAttributes& WithIgnoreClientCertificateExpiry(bool value) { SetIgnoreClientCertificateExpiry(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Indicates a shared trust stores association status.</p>
+     */
+    inline const TrustStoreAssociationStatusEnum& GetTrustStoreAssociationStatus() const{ return m_trustStoreAssociationStatus; }
+    inline bool TrustStoreAssociationStatusHasBeenSet() const { return m_trustStoreAssociationStatusHasBeenSet; }
+    inline void SetTrustStoreAssociationStatus(const TrustStoreAssociationStatusEnum& value) { m_trustStoreAssociationStatusHasBeenSet = true; m_trustStoreAssociationStatus = value; }
+    inline void SetTrustStoreAssociationStatus(TrustStoreAssociationStatusEnum&& value) { m_trustStoreAssociationStatusHasBeenSet = true; m_trustStoreAssociationStatus = std::move(value); }
+    inline MutualAuthenticationAttributes& WithTrustStoreAssociationStatus(const TrustStoreAssociationStatusEnum& value) { SetTrustStoreAssociationStatus(value); return *this;}
+    inline MutualAuthenticationAttributes& WithTrustStoreAssociationStatus(TrustStoreAssociationStatusEnum&& value) { SetTrustStoreAssociationStatus(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_mode;
@@ -89,6 +102,9 @@ namespace Model
 
     bool m_ignoreClientCertificateExpiry;
     bool m_ignoreClientCertificateExpiryHasBeenSet = false;
+
+    TrustStoreAssociationStatusEnum m_trustStoreAssociationStatus;
+    bool m_trustStoreAssociationStatusHasBeenSet = false;
   };
 
 } // namespace Model

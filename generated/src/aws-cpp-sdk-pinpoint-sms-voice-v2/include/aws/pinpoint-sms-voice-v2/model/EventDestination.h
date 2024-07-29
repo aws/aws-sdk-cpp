@@ -31,8 +31,8 @@ namespace Model
   /**
    * <p>Contains information about an event destination.</p> <p>Event destinations
    * are associated with configuration sets, which enable you to publish message
-   * sending events to CloudWatch, Kinesis Data Firehose, or Amazon
-   * SNS.</p><p><h3>See Also:</h3>   <a
+   * sending events to CloudWatch, Firehose, or Amazon SNS.</p><p><h3>See Also:</h3> 
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/EventDestination">AWS
    * API Reference</a></p>
    */
@@ -100,7 +100,7 @@ namespace Model
     ///@{
     /**
      * <p>An object that contains information about an event destination for logging to
-     * Amazon Kinesis Data Firehose.</p>
+     * Amazon Data Firehose.</p>
      */
     inline const KinesisFirehoseDestination& GetKinesisFirehoseDestination() const{ return m_kinesisFirehoseDestination; }
     inline bool KinesisFirehoseDestinationHasBeenSet() const { return m_kinesisFirehoseDestinationHasBeenSet; }

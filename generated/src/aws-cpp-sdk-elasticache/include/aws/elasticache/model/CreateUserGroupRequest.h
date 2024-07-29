@@ -54,7 +54,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The current supported value is Redis. </p>
+     * <p>The current supported value is Redis user. </p>
      */
     inline const Aws::String& GetEngine() const{ return m_engine; }
     inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
@@ -85,7 +85,7 @@ namespace Model
     /**
      * <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag
      * key must be accompanied by a tag value, although null is accepted. Available for
-     * Redis only.</p>
+     * Redis OSS only.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }

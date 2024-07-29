@@ -23,7 +23,8 @@ CreateStateMachineRequest::CreateStateMachineRequest() :
     m_tracingConfigurationHasBeenSet(false),
     m_publish(false),
     m_publishHasBeenSet(false),
-    m_versionDescriptionHasBeenSet(false)
+    m_versionDescriptionHasBeenSet(false),
+    m_encryptionConfigurationHasBeenSet(false)
 {
 }
 
@@ -86,6 +87,12 @@ Aws::String CreateStateMachineRequest::SerializePayload() const
   if(m_versionDescriptionHasBeenSet)
   {
    payload.WithString("versionDescription", m_versionDescription);
+
+  }
+
+  if(m_encryptionConfigurationHasBeenSet)
+  {
+   payload.WithObject("encryptionConfiguration", m_encryptionConfiguration.Jsonize());
 
   }
 

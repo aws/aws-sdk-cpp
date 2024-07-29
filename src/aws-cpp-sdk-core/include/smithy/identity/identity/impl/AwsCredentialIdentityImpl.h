@@ -8,19 +8,19 @@
 #include <smithy/identity/identity/AwsCredentialIdentity.h>
 
 namespace smithy {
-    inline Aws::String AwsCredentialIdentity::accessKeyId() {
+    inline Aws::String AwsCredentialIdentity::accessKeyId() const {
         return m_accessKeyId;
     }
 
-    inline Aws::String AwsCredentialIdentity::secretAccessKey() {
+    inline Aws::String AwsCredentialIdentity::secretAccessKey() const {
         return m_secretAccessKey;
     }
 
-    inline Aws::Crt::Optional<Aws::String> AwsCredentialIdentity::sessionToken() {
+    inline Aws::Crt::Optional<Aws::String> AwsCredentialIdentity::sessionToken() const {
         return m_sessionToken;
     }
 
-    inline Aws::Crt::Optional<AwsIdentity::DateTime> AwsCredentialIdentity::expiration() {
+    inline Aws::Crt::Optional<AwsIdentity::DateTime> AwsCredentialIdentity::expiration() const {
         return m_expiration;
     }
 }

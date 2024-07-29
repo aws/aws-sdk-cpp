@@ -38,7 +38,7 @@ namespace Model
 {
 
   /**
-   * <p>Contains all of the attributes of a specific Redis replication
+   * <p>Contains all of the attributes of a specific Redis OSS replication
    * group.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ReplicationGroup">AWS
    * API Reference</a></p>
@@ -142,10 +142,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>A list of node groups in this replication group. For Redis (cluster mode
-     * disabled) replication groups, this is a single-element list. For Redis (cluster
-     * mode enabled) replication groups, the list contains an entry for each node group
-     * (shard).</p>
+     * <p>A list of node groups in this replication group. For Redis OSS (cluster mode
+     * disabled) replication groups, this is a single-element list. For Redis OSS
+     * (cluster mode enabled) replication groups, the list contains an entry for each
+     * node group (shard).</p>
      */
     inline const Aws::Vector<NodeGroup>& GetNodeGroups() const{ return m_nodeGroups; }
     inline bool NodeGroupsHasBeenSet() const { return m_nodeGroupsHasBeenSet; }
@@ -174,7 +174,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Indicates the status of automatic failover for this Redis replication
+     * <p>Indicates the status of automatic failover for this Redis OSS replication
      * group.</p>
      */
     inline const AutomaticFailoverStatus& GetAutomaticFailover() const{ return m_automaticFailover; }
@@ -276,7 +276,7 @@ namespace Model
     ///@{
     /**
      * <p>A flag that enables using an <code>AuthToken</code> (password) when issuing
-     * Redis commands.</p> <p>Default: <code>false</code> </p>
+     * Redis OSS commands.</p> <p>Default: <code>false</code> </p>
      */
     inline bool GetAuthTokenEnabled() const{ return m_authTokenEnabled; }
     inline bool AuthTokenEnabledHasBeenSet() const { return m_authTokenEnabledHasBeenSet; }
@@ -300,7 +300,7 @@ namespace Model
     /**
      * <p>A flag that enables in-transit encryption when set to <code>true</code>.</p>
      * <p> <b>Required:</b> Only available when creating a replication group in an
-     * Amazon VPC using redis version <code>3.2.6</code>, <code>4.x</code> or
+     * Amazon VPC using Redis OSS version <code>3.2.6</code>, <code>4.x</code> or
      * later.</p> <p>Default: <code>false</code> </p>
      */
     inline bool GetTransitEncryptionEnabled() const{ return m_transitEncryptionEnabled; }
@@ -316,8 +316,8 @@ namespace Model
      * cluster is created. To enable encryption at-rest on a cluster you must set
      * <code>AtRestEncryptionEnabled</code> to <code>true</code> when you create a
      * cluster.</p> <p> <b>Required:</b> Only available when creating a replication
-     * group in an Amazon VPC using redis version <code>3.2.6</code>, <code>4.x</code>
-     * or later.</p> <p>Default: <code>false</code> </p>
+     * group in an Amazon VPC using Redis OSS version <code>3.2.6</code>,
+     * <code>4.x</code> or later.</p> <p>Default: <code>false</code> </p>
      */
     inline bool GetAtRestEncryptionEnabled() const{ return m_atRestEncryptionEnabled; }
     inline bool AtRestEncryptionEnabledHasBeenSet() const { return m_atRestEncryptionEnabledHasBeenSet; }
@@ -427,9 +427,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>If you are running Redis engine version 6.0 or later, set this parameter to
-     * yes if you want to opt-in to the next auto minor version upgrade campaign. This
-     * parameter is disabled for previous versions. </p>
+     * <p>If you are running Redis OSS engine version 6.0 or later, set this parameter
+     * to yes if you want to opt-in to the next auto minor version upgrade campaign.
+     * This parameter is disabled for previous versions. </p>
      */
     inline bool GetAutoMinorVersionUpgrade() const{ return m_autoMinorVersionUpgrade; }
     inline bool AutoMinorVersionUpgradeHasBeenSet() const { return m_autoMinorVersionUpgradeHasBeenSet; }
@@ -440,7 +440,7 @@ namespace Model
     ///@{
     /**
      * <p>Must be either <code>ipv4</code> | <code>ipv6</code> |
-     * <code>dual_stack</code>. IPv6 is supported for workloads using Redis engine
+     * <code>dual_stack</code>. IPv6 is supported for workloads using Redis OSS engine
      * version 6.2 onward or Memcached engine version 1.6.6 on all instances built on
      * the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
      */
@@ -456,7 +456,7 @@ namespace Model
     /**
      * <p>The network type you choose when modifying a cluster, either
      * <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using
-     * Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all
+     * Redis OSS engine version 6.2 onward or Memcached engine version 1.6.6 on all
      * instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro
      * system</a>.</p>
      */
@@ -485,9 +485,10 @@ namespace Model
     /**
      * <p>Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you
      * must first set the cluster mode to Compatible. Compatible mode allows your Redis
-     * clients to connect using both cluster mode enabled and cluster mode disabled.
-     * After you migrate all Redis clients to use cluster mode enabled, you can then
-     * complete cluster mode configuration and set the cluster mode to Enabled.</p>
+     * OSS clients to connect using both cluster mode enabled and cluster mode
+     * disabled. After you migrate all Redis OSS clients to use cluster mode enabled,
+     * you can then complete cluster mode configuration and set the cluster mode to
+     * Enabled.</p>
      */
     inline const ClusterMode& GetClusterMode() const{ return m_clusterMode; }
     inline bool ClusterModeHasBeenSet() const { return m_clusterModeHasBeenSet; }

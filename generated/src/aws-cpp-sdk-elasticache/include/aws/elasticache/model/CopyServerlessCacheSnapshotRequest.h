@@ -41,7 +41,7 @@ namespace Model
     ///@{
     /**
      * <p>The identifier of the existing serverless cache’s snapshot to be copied.
-     * Available for Redis only.</p>
+     * Available for Redis OSS and Serverless Memcached only.</p>
      */
     inline const Aws::String& GetSourceServerlessCacheSnapshotName() const{ return m_sourceServerlessCacheSnapshotName; }
     inline bool SourceServerlessCacheSnapshotNameHasBeenSet() const { return m_sourceServerlessCacheSnapshotNameHasBeenSet; }
@@ -55,7 +55,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The identifier for the snapshot to be created. Available for Redis only.</p>
+     * <p>The identifier for the snapshot to be created. Available for Redis OSS and
+     * Serverless Memcached only.</p>
      */
     inline const Aws::String& GetTargetServerlessCacheSnapshotName() const{ return m_targetServerlessCacheSnapshotName; }
     inline bool TargetServerlessCacheSnapshotNameHasBeenSet() const { return m_targetServerlessCacheSnapshotNameHasBeenSet; }
@@ -70,7 +71,7 @@ namespace Model
     ///@{
     /**
      * <p>The identifier of the KMS key used to encrypt the target snapshot. Available
-     * for Redis only.</p>
+     * for Redis OSS and Serverless Memcached only.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
@@ -85,7 +86,8 @@ namespace Model
     ///@{
     /**
      * <p>A list of tags to be added to the target snapshot resource. A tag is a
-     * key-value pair. Available for Redis only. Default: NULL</p>
+     * key-value pair. Available for Redis OSS and Serverless Memcached only. Default:
+     * NULL</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }

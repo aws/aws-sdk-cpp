@@ -10,6 +10,7 @@
 #include <aws/eks/model/VpcConfigRequest.h>
 #include <aws/eks/model/Logging.h>
 #include <aws/eks/model/UpdateAccessConfigRequest.h>
+#include <aws/eks/model/UpgradePolicyRequest.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -106,6 +107,20 @@ namespace Model
     inline UpdateClusterConfigRequest& WithAccessConfig(const UpdateAccessConfigRequest& value) { SetAccessConfig(value); return *this;}
     inline UpdateClusterConfigRequest& WithAccessConfig(UpdateAccessConfigRequest&& value) { SetAccessConfig(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>You can enable or disable extended support for clusters currently on standard
+     * support. You cannot disable extended support once it starts. You must enable
+     * extended support before your cluster exits standard support.</p>
+     */
+    inline const UpgradePolicyRequest& GetUpgradePolicy() const{ return m_upgradePolicy; }
+    inline bool UpgradePolicyHasBeenSet() const { return m_upgradePolicyHasBeenSet; }
+    inline void SetUpgradePolicy(const UpgradePolicyRequest& value) { m_upgradePolicyHasBeenSet = true; m_upgradePolicy = value; }
+    inline void SetUpgradePolicy(UpgradePolicyRequest&& value) { m_upgradePolicyHasBeenSet = true; m_upgradePolicy = std::move(value); }
+    inline UpdateClusterConfigRequest& WithUpgradePolicy(const UpgradePolicyRequest& value) { SetUpgradePolicy(value); return *this;}
+    inline UpdateClusterConfigRequest& WithUpgradePolicy(UpgradePolicyRequest&& value) { SetUpgradePolicy(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_name;
@@ -122,6 +137,9 @@ namespace Model
 
     UpdateAccessConfigRequest m_accessConfig;
     bool m_accessConfigHasBeenSet = false;
+
+    UpgradePolicyRequest m_upgradePolicy;
+    bool m_upgradePolicyHasBeenSet = false;
   };
 
 } // namespace Model

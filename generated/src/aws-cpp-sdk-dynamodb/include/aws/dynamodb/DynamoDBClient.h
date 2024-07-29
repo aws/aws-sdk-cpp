@@ -96,11 +96,13 @@ namespace DynamoDB
          * DynamoDB, using PartiQL. Each read statement in a
          * <code>BatchExecuteStatement</code> must specify an equality condition on all key
          * attributes. This enforces that each <code>SELECT</code> statement in a batch
-         * returns at most a single item.</p>  <p>The entire batch must consist of
-         * either read statements or write statements, you cannot mix both in one
-         * batch.</p>   <p>A HTTP 200 response does not mean that all
-         * statements in the BatchExecuteStatement succeeded. Error details for individual
-         * statements can be found under the <a
+         * returns at most a single item. For more information, see <a
+         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ql-reference.multiplestatements.batching.html">Running
+         * batch operations with PartiQL for DynamoDB </a>.</p>  <p>The entire batch
+         * must consist of either read statements or write statements, you cannot mix both
+         * in one batch.</p>   <p>A HTTP 200 response does not mean that
+         * all statements in the BatchExecuteStatement succeeded. Error details for
+         * individual statements can be found under the <a
          * href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_BatchStatementResponse.html#DDB-Type-BatchStatementResponse-Error">Error</a>
          * field of the <code>BatchStatementResponse</code> for each statement.</p>
          * <p><h3>See Also:</h3>   <a
@@ -219,17 +221,20 @@ namespace DynamoDB
          * You can investigate and optionally resend the requests. Typically, you would
          * call <code>BatchWriteItem</code> in a loop. Each iteration would check for
          * unprocessed items and submit a new <code>BatchWriteItem</code> request with
-         * those unprocessed items until all items have been processed.</p> <p>If
-         * <i>none</i> of the items can be processed due to insufficient provisioned
-         * throughput on all of the tables in the request, then <code>BatchWriteItem</code>
-         * returns a <code>ProvisionedThroughputExceededException</code>.</p> 
-         * <p>If DynamoDB returns any unprocessed items, you should retry the batch
-         * operation on those items. However, <i>we strongly recommend that you use an
-         * exponential backoff algorithm</i>. If you retry the batch operation immediately,
-         * the underlying read or write requests can still fail due to throttling on the
-         * individual tables. If you delay the batch operation using exponential backoff,
-         * the individual requests in the batch are much more likely to succeed.</p> <p>For
-         * more information, see <a
+         * those unprocessed items until all items have been processed.</p> <p>For tables
+         * and indexes with provisioned capacity, if none of the items can be processed due
+         * to insufficient provisioned throughput on all of the tables in the request, then
+         * <code>BatchWriteItem</code> returns a
+         * <code>ProvisionedThroughputExceededException</code>. For all tables and indexes,
+         * if none of the items can be processed due to other throttling scenarios (such as
+         * exceeding partition level limits), then <code>BatchWriteItem</code> returns a
+         * <code>ThrottlingException</code>.</p>  <p>If DynamoDB returns any
+         * unprocessed items, you should retry the batch operation on those items. However,
+         * <i>we strongly recommend that you use an exponential backoff algorithm</i>. If
+         * you retry the batch operation immediately, the underlying read or write requests
+         * can still fail due to throttling on the individual tables. If you delay the
+         * batch operation using exponential backoff, the individual requests in the batch
+         * are much more likely to succeed.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ErrorHandling.html#Programming.Errors.BatchOperations">Batch
          * Operations and Error Handling</a> in the <i>Amazon DynamoDB Developer
          * Guide</i>.</p>  <p>With <code>BatchWriteItem</code>, you can
@@ -541,12 +546,14 @@ namespace DynamoDB
          * 2019.11.21 (Current version). </p>   <p>DynamoDB might
          * continue to accept data read and write operations, such as <code>GetItem</code>
          * and <code>PutItem</code>, on a table in the <code>DELETING</code> state until
-         * the table deletion is complete.</p>  <p>When you delete a table, any
-         * indexes on that table are also deleted.</p> <p>If you have DynamoDB Streams
-         * enabled on the table, then the corresponding stream on that table goes into the
-         * <code>DISABLED</code> state, and the stream is automatically deleted after 24
-         * hours.</p> <p>Use the <code>DescribeTable</code> action to check the status of
-         * the table. </p><p><h3>See Also:</h3>   <a
+         * the table deletion is complete. For the full list of table states, see <a
+         * href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_TableDescription.html#DDB-Type-TableDescription-TableStatus">TableStatus</a>.</p>
+         *  <p>When you delete a table, any indexes on that table are also
+         * deleted.</p> <p>If you have DynamoDB Streams enabled on the table, then the
+         * corresponding stream on that table goes into the <code>DISABLED</code> state,
+         * and the stream is automatically deleted after 24 hours.</p> <p>Use the
+         * <code>DescribeTable</code> action to check the status of the table.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DeleteTable">AWS
          * API Reference</a></p>
          */

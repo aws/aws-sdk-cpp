@@ -40,7 +40,9 @@ namespace Model
     SageMakerVariantProvisionedConcurrencyUtilization,
     ElastiCacheDatabaseCapacityUsageCountedForEvictPercentage,
     SageMakerInferenceComponentInvocationsPerCopy,
-    WorkSpacesAverageUserSessionsCapacityUtilization
+    WorkSpacesAverageUserSessionsCapacityUtilization,
+    SageMakerInferenceComponentConcurrentRequestsPerCopyHighResolution,
+    SageMakerVariantConcurrentRequestsPerModelHighResolution
   };
 
 namespace MetricTypeMapper

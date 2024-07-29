@@ -14,6 +14,6 @@ namespace smithy {
         using IdentityT = AwsBearerTokenIdentity;
         virtual ~AwsBearerTokenIdentityResolver() = default;
 
-        virtual ResolveIdentityFutureOutcome getIdentity(const IdentityProperties& identityProperties, const AdditionalParameters& additionalParameters) = 0;
+        ResolveIdentityFutureOutcome getIdentity(const IdentityProperties& identityProperties, const AdditionalParameters& additionalParameters) override = 0;
     };
 }

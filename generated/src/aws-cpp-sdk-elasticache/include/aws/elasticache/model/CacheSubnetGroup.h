@@ -118,8 +118,8 @@ namespace Model
     ///@{
     /**
      * <p>Either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6
-     * is supported for workloads using Redis engine version 6.2 onward or Memcached
-     * engine version 1.6.6 on all instances built on the <a
+     * is supported for workloads using Redis OSS engine version 6.2 onward or
+     * Memcached engine version 1.6.6 on all instances built on the <a
      * href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
      */
     inline const Aws::Vector<NetworkType>& GetSupportedNetworkTypes() const{ return m_supportedNetworkTypes; }
