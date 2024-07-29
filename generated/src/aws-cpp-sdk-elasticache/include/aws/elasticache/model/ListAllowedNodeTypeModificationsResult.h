@@ -44,7 +44,7 @@ namespace Model
     /**
      * <p>A string list, each element of which specifies a cache node type which you
      * can use to scale your cluster or replication group.</p> <p>When scaling up a
-     * Redis cluster or replication group using <code>ModifyCacheCluster</code> or
+     * Redis OSS cluster or replication group using <code>ModifyCacheCluster</code> or
      * <code>ModifyReplicationGroup</code>, use a value from this list for the
      * <code>CacheNodeType</code> parameter.</p>
      */
@@ -62,8 +62,9 @@ namespace Model
     /**
      * <p>A string list, each element of which specifies a cache node type which you
      * can use to scale your cluster or replication group. When scaling down a Redis
-     * cluster or replication group using ModifyCacheCluster or ModifyReplicationGroup,
-     * use a value from this list for the CacheNodeType parameter. </p>
+     * OSS cluster or replication group using ModifyCacheCluster or
+     * ModifyReplicationGroup, use a value from this list for the CacheNodeType
+     * parameter. </p>
      */
     inline const Aws::Vector<Aws::String>& GetScaleDownModifications() const{ return m_scaleDownModifications; }
     inline void SetScaleDownModifications(const Aws::Vector<Aws::String>& value) { m_scaleDownModifications = value; }

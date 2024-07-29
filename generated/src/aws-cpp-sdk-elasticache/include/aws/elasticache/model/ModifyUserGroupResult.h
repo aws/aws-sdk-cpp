@@ -64,7 +64,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The current supported value is Redis. </p>
+     * <p>The current supported value is Redis user. </p>
      */
     inline const Aws::String& GetEngine() const{ return m_engine; }
     inline void SetEngine(const Aws::String& value) { m_engine = value; }
@@ -91,7 +91,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The minimum engine version required, which is Redis 6.0</p>
+     * <p>The minimum engine version required, which is Redis OSS 6.0</p>
      */
     inline const Aws::String& GetMinimumEngineVersion() const{ return m_minimumEngineVersion; }
     inline void SetMinimumEngineVersion(const Aws::String& value) { m_minimumEngineVersion = value; }
@@ -130,7 +130,7 @@ namespace Model
     ///@{
     /**
      * <p>Indicates which serverless caches the specified user group is associated
-     * with. Available for Redis only.</p>
+     * with. Available for Redis OSS and Serverless Memcached only.</p>
      */
     inline const Aws::Vector<Aws::String>& GetServerlessCaches() const{ return m_serverlessCaches; }
     inline void SetServerlessCaches(const Aws::Vector<Aws::String>& value) { m_serverlessCaches = value; }

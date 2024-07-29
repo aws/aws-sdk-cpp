@@ -40,7 +40,7 @@ namespace Model
     /**
      * <p>The identifier of serverless cache. If this parameter is specified, only
      * snapshots associated with that specific serverless cache are described.
-     * Available for Redis only.</p>
+     * Available for Redis OSS and Serverless Memcached only.</p>
      */
     inline const Aws::String& GetServerlessCacheName() const{ return m_serverlessCacheName; }
     inline bool ServerlessCacheNameHasBeenSet() const { return m_serverlessCacheNameHasBeenSet; }
@@ -55,7 +55,8 @@ namespace Model
     ///@{
     /**
      * <p>The identifier of the serverless cache’s snapshot. If this parameter is
-     * specified, only this snapshot is described. Available for Redis only.</p>
+     * specified, only this snapshot is described. Available for Redis OSS and
+     * Serverless Memcached only.</p>
      */
     inline const Aws::String& GetServerlessCacheSnapshotName() const{ return m_serverlessCacheSnapshotName; }
     inline bool ServerlessCacheSnapshotNameHasBeenSet() const { return m_serverlessCacheSnapshotNameHasBeenSet; }
@@ -69,7 +70,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The type of snapshot that is being described. Available for Redis only.</p>
+     * <p>The type of snapshot that is being described. Available for Redis OSS and
+     * Serverless Memcached only.</p>
      */
     inline const Aws::String& GetSnapshotType() const{ return m_snapshotType; }
     inline bool SnapshotTypeHasBeenSet() const { return m_snapshotTypeHasBeenSet; }
@@ -86,7 +88,7 @@ namespace Model
      * <p>An optional marker returned from a prior request to support pagination of
      * results from this operation. If this parameter is specified, the response
      * includes only records beyond the marker, up to the value specified by
-     * max-results. Available for Redis only.</p>
+     * max-results. Available for Redis OSS and Serverless Memcached only.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
@@ -102,8 +104,9 @@ namespace Model
     /**
      * <p>The maximum number of records to include in the response. If more records
      * exist than the specified max-results value, a market is included in the response
-     * so that remaining results can be retrieved. Available for Redis only.The default
-     * is 50. The Validation Constraints are a maximum of 50.</p>
+     * so that remaining results can be retrieved. Available for Redis OSS and
+     * Serverless Memcached only.The default is 50. The Validation Constraints are a
+     * maximum of 50.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }

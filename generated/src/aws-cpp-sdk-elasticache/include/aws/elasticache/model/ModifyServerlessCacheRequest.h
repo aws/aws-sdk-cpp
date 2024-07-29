@@ -83,7 +83,7 @@ namespace Model
     ///@{
     /**
      * <p>The identifier of the UserGroup to be removed from association with the Redis
-     * serverless cache. Available for Redis only. Default is NULL.</p>
+     * OSS serverless cache. Available for Redis OSS only. Default is NULL.</p>
      */
     inline bool GetRemoveUserGroup() const{ return m_removeUserGroup; }
     inline bool RemoveUserGroupHasBeenSet() const { return m_removeUserGroupHasBeenSet; }
@@ -94,7 +94,7 @@ namespace Model
     ///@{
     /**
      * <p>The identifier of the UserGroup to be associated with the serverless cache.
-     * Available for Redis only. Default is NULL - the existing UserGroup is not
+     * Available for Redis OSS only. Default is NULL - the existing UserGroup is not
      * removed.</p>
      */
     inline const Aws::String& GetUserGroupId() const{ return m_userGroupId; }
@@ -129,9 +129,9 @@ namespace Model
     ///@{
     /**
      * <p>The number of days for which Elasticache retains automatic snapshots before
-     * deleting them. Available for Redis only. Default = NULL, i.e. the existing
-     * snapshot-retention-limit will not be removed or modified. The maximum value
-     * allowed is 35 days.</p>
+     * deleting them. Available for Redis OSS and Serverless Memcached only. Default =
+     * NULL, i.e. the existing snapshot-retention-limit will not be removed or
+     * modified. The maximum value allowed is 35 days.</p>
      */
     inline int GetSnapshotRetentionLimit() const{ return m_snapshotRetentionLimit; }
     inline bool SnapshotRetentionLimitHasBeenSet() const { return m_snapshotRetentionLimitHasBeenSet; }
@@ -142,8 +142,9 @@ namespace Model
     ///@{
     /**
      * <p>The daily time during which Elasticache begins taking a daily snapshot of the
-     * serverless cache. Available for Redis only. The default is NULL, i.e. the
-     * existing snapshot time configured for the cluster is not removed.</p>
+     * serverless cache. Available for Redis OSS and Serverless Memcached only. The
+     * default is NULL, i.e. the existing snapshot time configured for the cluster is
+     * not removed.</p>
      */
     inline const Aws::String& GetDailySnapshotTime() const{ return m_dailySnapshotTime; }
     inline bool DailySnapshotTimeHasBeenSet() const { return m_dailySnapshotTimeHasBeenSet; }

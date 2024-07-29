@@ -24,7 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Provides details of the Redis engine version</p><p><h3>See Also:</h3>   <a
+   * <p>Provides details of the Redis OSS engine version</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/EngineVersionInfo">AWS
    * API Reference</a></p>
    */
