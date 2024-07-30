@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int ROLLBACK_HASH = HashingUtils::HashString("ROLLBACK");
+        static const int FAIL_HASH = HashingUtils::HashString("FAIL");
 
 
         Result GetResultForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == ROLLBACK_HASH)
           {
             return Result::ROLLBACK;
+          }
+          else if (hashCode == FAIL_HASH)
+          {
+            return Result::FAIL;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -48,6 +53,8 @@ namespace Aws
             return {};
           case Result::ROLLBACK:
             return "ROLLBACK";
+          case Result::FAIL:
+            return "FAIL";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

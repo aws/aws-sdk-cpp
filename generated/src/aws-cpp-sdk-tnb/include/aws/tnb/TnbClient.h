@@ -312,7 +312,7 @@ namespace tnb
         }
 
         /**
-         * <p>Gets the details of a network function instance, including the instantation
+         * <p>Gets the details of a network function instance, including the instantiation
          * state and metadata from the function package descriptor in the network function
          * package.</p> <p>A network function instance is a function in a function package
          * .</p><p><h3>See Also:</h3>   <a
@@ -940,8 +940,9 @@ namespace tnb
         /**
          * <p>Update a network instance.</p> <p>A network instance is a single network
          * created in Amazon Web Services TNB that can be deployed and on which life-cycle
-         * operations (like terminate, update, and delete) can be performed.</p><p><h3>See
-         * Also:</h3>   <a
+         * operations (like terminate, update, and delete) can be performed.</p> <p>Choose
+         * the <i>updateType</i> parameter to target the necessary update of the network
+         * instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/tnb-2008-10-21/UpdateSolNetworkInstance">AWS
          * API Reference</a></p>
          */

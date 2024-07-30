@@ -8,6 +8,8 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/codepipeline/model/FailureConditions.h>
+#include <aws/codepipeline/model/SuccessConditions.h>
+#include <aws/codepipeline/model/BeforeEntryConditions.h>
 #include <aws/codepipeline/model/BlockerDeclaration.h>
 #include <aws/codepipeline/model/ActionDeclaration.h>
 #include <utility>
@@ -97,6 +99,34 @@ namespace Model
     inline StageDeclaration& WithOnFailure(const FailureConditions& value) { SetOnFailure(value); return *this;}
     inline StageDeclaration& WithOnFailure(FailureConditions&& value) { SetOnFailure(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The method to use when a stage has succeeded. For example, configuring this
+     * field for conditions will allow the stage to succeed when the conditions are
+     * met.</p>
+     */
+    inline const SuccessConditions& GetOnSuccess() const{ return m_onSuccess; }
+    inline bool OnSuccessHasBeenSet() const { return m_onSuccessHasBeenSet; }
+    inline void SetOnSuccess(const SuccessConditions& value) { m_onSuccessHasBeenSet = true; m_onSuccess = value; }
+    inline void SetOnSuccess(SuccessConditions&& value) { m_onSuccessHasBeenSet = true; m_onSuccess = std::move(value); }
+    inline StageDeclaration& WithOnSuccess(const SuccessConditions& value) { SetOnSuccess(value); return *this;}
+    inline StageDeclaration& WithOnSuccess(SuccessConditions&& value) { SetOnSuccess(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The method to use when a stage allows entry. For example, configuring this
+     * field for conditions will allow entry to the stage when the conditions are
+     * met.</p>
+     */
+    inline const BeforeEntryConditions& GetBeforeEntry() const{ return m_beforeEntry; }
+    inline bool BeforeEntryHasBeenSet() const { return m_beforeEntryHasBeenSet; }
+    inline void SetBeforeEntry(const BeforeEntryConditions& value) { m_beforeEntryHasBeenSet = true; m_beforeEntry = value; }
+    inline void SetBeforeEntry(BeforeEntryConditions&& value) { m_beforeEntryHasBeenSet = true; m_beforeEntry = std::move(value); }
+    inline StageDeclaration& WithBeforeEntry(const BeforeEntryConditions& value) { SetBeforeEntry(value); return *this;}
+    inline StageDeclaration& WithBeforeEntry(BeforeEntryConditions&& value) { SetBeforeEntry(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_name;
@@ -110,6 +140,12 @@ namespace Model
 
     FailureConditions m_onFailure;
     bool m_onFailureHasBeenSet = false;
+
+    SuccessConditions m_onSuccess;
+    bool m_onSuccessHasBeenSet = false;
+
+    BeforeEntryConditions m_beforeEntry;
+    bool m_beforeEntryHasBeenSet = false;
   };
 
 } // namespace Model

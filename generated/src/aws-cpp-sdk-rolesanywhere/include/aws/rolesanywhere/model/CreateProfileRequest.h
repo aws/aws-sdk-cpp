@@ -36,6 +36,17 @@ namespace Model
 
     ///@{
     /**
+     * <p>Used to determine if a custom role session name will be accepted in a
+     * temporary credential request.</p>
+     */
+    inline bool GetAcceptRoleSessionName() const{ return m_acceptRoleSessionName; }
+    inline bool AcceptRoleSessionNameHasBeenSet() const { return m_acceptRoleSessionNameHasBeenSet; }
+    inline void SetAcceptRoleSessionName(bool value) { m_acceptRoleSessionNameHasBeenSet = true; m_acceptRoleSessionName = value; }
+    inline CreateProfileRequest& WithAcceptRoleSessionName(bool value) { SetAcceptRoleSessionName(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p> Used to determine how long sessions vended using this profile are valid for.
      * See the <code>Expiration</code> section of the <a
      * href="https://docs.aws.amazon.com/rolesanywhere/latest/userguide/authentication-create-session.html#credentials-object">CreateSession
@@ -144,6 +155,9 @@ namespace Model
     inline CreateProfileRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
     ///@}
   private:
+
+    bool m_acceptRoleSessionName;
+    bool m_acceptRoleSessionNameHasBeenSet = false;
 
     int m_durationSeconds;
     bool m_durationSecondsHasBeenSet = false;

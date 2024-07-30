@@ -10,6 +10,7 @@
 #include <aws/tnb/model/LcmOperationType.h>
 #include <aws/tnb/model/ListSolNetworkOperationsMetadata.h>
 #include <aws/tnb/model/NsLcmOperationState.h>
+#include <aws/tnb/model/UpdateSolNetworkType.h>
 #include <utility>
 
 namespace Aws
@@ -130,6 +131,19 @@ namespace Model
     inline ListSolNetworkOperationsInfo& WithOperationState(const NsLcmOperationState& value) { SetOperationState(value); return *this;}
     inline ListSolNetworkOperationsInfo& WithOperationState(NsLcmOperationState&& value) { SetOperationState(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Type of the update. Only present if the network operation lcmOperationType is
+     * <code>UPDATE</code>.</p>
+     */
+    inline const UpdateSolNetworkType& GetUpdateType() const{ return m_updateType; }
+    inline bool UpdateTypeHasBeenSet() const { return m_updateTypeHasBeenSet; }
+    inline void SetUpdateType(const UpdateSolNetworkType& value) { m_updateTypeHasBeenSet = true; m_updateType = value; }
+    inline void SetUpdateType(UpdateSolNetworkType&& value) { m_updateTypeHasBeenSet = true; m_updateType = std::move(value); }
+    inline ListSolNetworkOperationsInfo& WithUpdateType(const UpdateSolNetworkType& value) { SetUpdateType(value); return *this;}
+    inline ListSolNetworkOperationsInfo& WithUpdateType(UpdateSolNetworkType&& value) { SetUpdateType(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_arn;
@@ -152,6 +166,9 @@ namespace Model
 
     NsLcmOperationState m_operationState;
     bool m_operationStateHasBeenSet = false;
+
+    UpdateSolNetworkType m_updateType;
+    bool m_updateTypeHasBeenSet = false;
   };
 
 } // namespace Model

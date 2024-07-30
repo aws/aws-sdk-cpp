@@ -19,7 +19,10 @@ namespace Model
 {
 
 BedrockKnowledgeStoreConfiguration::BedrockKnowledgeStoreConfiguration() : 
-    m_bedrockKnowledgeBaseArnHasBeenSet(false)
+    m_bedrockKnowledgeBaseArnHasBeenSet(false),
+    m_exactResponse(false),
+    m_exactResponseHasBeenSet(false),
+    m_exactResponseFieldsHasBeenSet(false)
 {
 }
 
@@ -38,6 +41,20 @@ BedrockKnowledgeStoreConfiguration& BedrockKnowledgeStoreConfiguration::operator
     m_bedrockKnowledgeBaseArnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("exactResponse"))
+  {
+    m_exactResponse = jsonValue.GetBool("exactResponse");
+
+    m_exactResponseHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("exactResponseFields"))
+  {
+    m_exactResponseFields = jsonValue.GetObject("exactResponseFields");
+
+    m_exactResponseFieldsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +65,18 @@ JsonValue BedrockKnowledgeStoreConfiguration::Jsonize() const
   if(m_bedrockKnowledgeBaseArnHasBeenSet)
   {
    payload.WithString("bedrockKnowledgeBaseArn", m_bedrockKnowledgeBaseArn);
+
+  }
+
+  if(m_exactResponseHasBeenSet)
+  {
+   payload.WithBool("exactResponse", m_exactResponse);
+
+  }
+
+  if(m_exactResponseFieldsHasBeenSet)
+  {
+   payload.WithObject("exactResponseFields", m_exactResponseFields.Jsonize());
 
   }
 

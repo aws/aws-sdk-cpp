@@ -29,11 +29,12 @@ static const int INVALID_ACTION_DECLARATION_HASH = HashingUtils::HashString("Inv
 static const int REQUEST_FAILED_HASH = HashingUtils::HashString("RequestFailedException");
 static const int CONCURRENT_MODIFICATION_HASH = HashingUtils::HashString("ConcurrentModificationException");
 static const int PIPELINE_NAME_IN_USE_HASH = HashingUtils::HashString("PipelineNameInUseException");
-static const int APPROVAL_ALREADY_COMPLETED_HASH = HashingUtils::HashString("ApprovalAlreadyCompletedException");
 static const int CONCURRENT_PIPELINE_EXECUTIONS_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ConcurrentPipelineExecutionsLimitExceededException");
+static const int APPROVAL_ALREADY_COMPLETED_HASH = HashingUtils::HashString("ApprovalAlreadyCompletedException");
 static const int INVALID_NEXT_TOKEN_HASH = HashingUtils::HashString("InvalidNextTokenException");
 static const int INVALID_STRUCTURE_HASH = HashingUtils::HashString("InvalidStructureException");
 static const int PIPELINE_VERSION_NOT_FOUND_HASH = HashingUtils::HashString("PipelineVersionNotFoundException");
+static const int CONDITION_NOT_OVERRIDABLE_HASH = HashingUtils::HashString("ConditionNotOverridableException");
 static const int INVALID_WEBHOOK_FILTER_PATTERN_HASH = HashingUtils::HashString("InvalidWebhookFilterPatternException");
 static const int PIPELINE_NOT_FOUND_HASH = HashingUtils::HashString("PipelineNotFoundException");
 static const int OUTPUT_VARIABLES_SIZE_EXCEEDED_HASH = HashingUtils::HashString("OutputVariablesSizeExceededException");
@@ -105,13 +106,13 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::PIPELINE_NAME_IN_USE), RetryableType::NOT_RETRYABLE);
   }
-  else if (hashCode == APPROVAL_ALREADY_COMPLETED_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::APPROVAL_ALREADY_COMPLETED), RetryableType::NOT_RETRYABLE);
-  }
   else if (hashCode == CONCURRENT_PIPELINE_EXECUTIONS_LIMIT_EXCEEDED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::CONCURRENT_PIPELINE_EXECUTIONS_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
+  }
+  else if (hashCode == APPROVAL_ALREADY_COMPLETED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::APPROVAL_ALREADY_COMPLETED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_NEXT_TOKEN_HASH)
   {
@@ -124,6 +125,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == PIPELINE_VERSION_NOT_FOUND_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::PIPELINE_VERSION_NOT_FOUND), RetryableType::NOT_RETRYABLE);
+  }
+  else if (hashCode == CONDITION_NOT_OVERRIDABLE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::CONDITION_NOT_OVERRIDABLE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_WEBHOOK_FILTER_PATTERN_HASH)
   {

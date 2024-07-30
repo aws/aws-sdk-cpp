@@ -422,8 +422,9 @@ namespace LexModelsV2
          * <p>Adds a new resource policy statement to a bot or bot alias. If a resource
          * policy exists, the statement is added to the current resource policy. If a
          * policy doesn't exist, a new policy is created.</p> <p>You can't create a
-         * resource policy statement that allows cross-account access.</p><p><h3>See
-         * Also:</h3>   <a
+         * resource policy statement that allows cross-account access.</p> <p>You need to
+         * add the <code>CreateResourcePolicy</code> or <code>UpdateResourcePolicy</code>
+         * action to the bot role in order to call the API.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/CreateResourcePolicyStatement">AWS
          * API Reference</a></p>
          */
@@ -828,7 +829,9 @@ namespace LexModelsV2
          * <p>Deletes a policy statement from a resource policy. If you delete the last
          * statement from a policy, the policy is deleted. If you specify a statement ID
          * that doesn't exist in the policy, or if the bot or bot alias doesn't have a
-         * policy attached, Amazon Lex returns an exception.</p><p><h3>See Also:</h3>   <a
+         * policy attached, Amazon Lex returns an exception.</p> <p>You need to add the
+         * <code>DeleteResourcePolicy</code> or <code>UpdateResourcePolicy</code> action to
+         * the bot role in order to call the API.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DeleteResourcePolicyStatement">AWS
          * API Reference</a></p>
          */

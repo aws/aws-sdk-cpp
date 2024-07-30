@@ -176,7 +176,7 @@ namespace Model
      * disconnection or network interruption within this time interval, they are
      * connected to their previous session. Otherwise, they are connected to a new
      * session with a new streaming instance. </p> <p>Specify a value between 60 and
-     * 360000.</p>
+     * 36000.</p>
      */
     inline int GetDisconnectTimeoutInSeconds() const{ return m_disconnectTimeoutInSeconds; }
     inline bool DisconnectTimeoutInSecondsHasBeenSet() const { return m_disconnectTimeoutInSecondsHasBeenSet; }
@@ -249,7 +249,7 @@ namespace Model
      * continue to be idle after the time interval in
      * <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are disconnected. </p>
      * <p>To prevent users from being disconnected due to inactivity, specify a value
-     * of 0. Otherwise, specify a value between 60 and 3600. The default value is
+     * of 0. Otherwise, specify a value between 60 and 36000. The default value is
      * 0.</p>  <p>If you enable this feature, we recommend that you specify a
      * value that corresponds exactly to a whole number of minutes (for example, 60,
      * 120, and 180). If you don't do this, the value is rounded to the nearest minute.

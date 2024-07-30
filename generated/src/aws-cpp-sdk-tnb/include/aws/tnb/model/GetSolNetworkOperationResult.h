@@ -12,6 +12,7 @@
 #include <aws/tnb/model/NsLcmOperationState.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/tnb/model/UpdateSolNetworkType.h>
 #include <aws/tnb/model/GetSolNetworkOperationTaskDetails.h>
 #include <utility>
 
@@ -156,6 +157,18 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>Type of the update. Only present if the network operation lcmOperationType is
+     * <code>UPDATE</code>.</p>
+     */
+    inline const UpdateSolNetworkType& GetUpdateType() const{ return m_updateType; }
+    inline void SetUpdateType(const UpdateSolNetworkType& value) { m_updateType = value; }
+    inline void SetUpdateType(UpdateSolNetworkType&& value) { m_updateType = std::move(value); }
+    inline GetSolNetworkOperationResult& WithUpdateType(const UpdateSolNetworkType& value) { SetUpdateType(value); return *this;}
+    inline GetSolNetworkOperationResult& WithUpdateType(UpdateSolNetworkType&& value) { SetUpdateType(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -184,6 +197,8 @@ namespace Model
     Aws::Map<Aws::String, Aws::String> m_tags;
 
     Aws::Vector<GetSolNetworkOperationTaskDetails> m_tasks;
+
+    UpdateSolNetworkType m_updateType;
 
     Aws::String m_requestId;
   };

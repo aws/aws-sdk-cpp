@@ -16,7 +16,8 @@ namespace Model
   enum class Result
   {
     NOT_SET,
-    ROLLBACK
+    ROLLBACK,
+    FAIL
   };
 
 namespace ResultMapper

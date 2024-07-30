@@ -13,6 +13,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 UpdateProfileRequest::UpdateProfileRequest() : 
+    m_acceptRoleSessionName(false),
+    m_acceptRoleSessionNameHasBeenSet(false),
     m_durationSeconds(0),
     m_durationSecondsHasBeenSet(false),
     m_managedPolicyArnsHasBeenSet(false),
@@ -26,6 +28,12 @@ UpdateProfileRequest::UpdateProfileRequest() :
 Aws::String UpdateProfileRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_acceptRoleSessionNameHasBeenSet)
+  {
+   payload.WithBool("acceptRoleSessionName", m_acceptRoleSessionName);
+
+  }
 
   if(m_durationSecondsHasBeenSet)
   {
