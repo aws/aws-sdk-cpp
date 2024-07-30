@@ -9,6 +9,7 @@
 #include <aws/codepipeline/model/StageExecution.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/codepipeline/model/TransitionState.h>
+#include <aws/codepipeline/model/StageConditionState.h>
 #include <aws/codepipeline/model/ActionState.h>
 #include <utility>
 
@@ -118,6 +119,42 @@ namespace Model
     inline StageState& WithLatestExecution(const StageExecution& value) { SetLatestExecution(value); return *this;}
     inline StageState& WithLatestExecution(StageExecution&& value) { SetLatestExecution(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The state of the entry conditions for a stage.</p>
+     */
+    inline const StageConditionState& GetBeforeEntryConditionState() const{ return m_beforeEntryConditionState; }
+    inline bool BeforeEntryConditionStateHasBeenSet() const { return m_beforeEntryConditionStateHasBeenSet; }
+    inline void SetBeforeEntryConditionState(const StageConditionState& value) { m_beforeEntryConditionStateHasBeenSet = true; m_beforeEntryConditionState = value; }
+    inline void SetBeforeEntryConditionState(StageConditionState&& value) { m_beforeEntryConditionStateHasBeenSet = true; m_beforeEntryConditionState = std::move(value); }
+    inline StageState& WithBeforeEntryConditionState(const StageConditionState& value) { SetBeforeEntryConditionState(value); return *this;}
+    inline StageState& WithBeforeEntryConditionState(StageConditionState&& value) { SetBeforeEntryConditionState(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The state of the success conditions for a stage.</p>
+     */
+    inline const StageConditionState& GetOnSuccessConditionState() const{ return m_onSuccessConditionState; }
+    inline bool OnSuccessConditionStateHasBeenSet() const { return m_onSuccessConditionStateHasBeenSet; }
+    inline void SetOnSuccessConditionState(const StageConditionState& value) { m_onSuccessConditionStateHasBeenSet = true; m_onSuccessConditionState = value; }
+    inline void SetOnSuccessConditionState(StageConditionState&& value) { m_onSuccessConditionStateHasBeenSet = true; m_onSuccessConditionState = std::move(value); }
+    inline StageState& WithOnSuccessConditionState(const StageConditionState& value) { SetOnSuccessConditionState(value); return *this;}
+    inline StageState& WithOnSuccessConditionState(StageConditionState&& value) { SetOnSuccessConditionState(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The state of the failure conditions for a stage.</p>
+     */
+    inline const StageConditionState& GetOnFailureConditionState() const{ return m_onFailureConditionState; }
+    inline bool OnFailureConditionStateHasBeenSet() const { return m_onFailureConditionStateHasBeenSet; }
+    inline void SetOnFailureConditionState(const StageConditionState& value) { m_onFailureConditionStateHasBeenSet = true; m_onFailureConditionState = value; }
+    inline void SetOnFailureConditionState(StageConditionState&& value) { m_onFailureConditionStateHasBeenSet = true; m_onFailureConditionState = std::move(value); }
+    inline StageState& WithOnFailureConditionState(const StageConditionState& value) { SetOnFailureConditionState(value); return *this;}
+    inline StageState& WithOnFailureConditionState(StageConditionState&& value) { SetOnFailureConditionState(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_stageName;
@@ -137,6 +174,15 @@ namespace Model
 
     StageExecution m_latestExecution;
     bool m_latestExecutionHasBeenSet = false;
+
+    StageConditionState m_beforeEntryConditionState;
+    bool m_beforeEntryConditionStateHasBeenSet = false;
+
+    StageConditionState m_onSuccessConditionState;
+    bool m_onSuccessConditionStateHasBeenSet = false;
+
+    StageConditionState m_onFailureConditionState;
+    bool m_onFailureConditionStateHasBeenSet = false;
   };
 
 } // namespace Model

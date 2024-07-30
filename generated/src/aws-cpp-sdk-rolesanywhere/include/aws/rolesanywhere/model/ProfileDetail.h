@@ -43,6 +43,17 @@ namespace Model
 
     ///@{
     /**
+     * <p>Used to determine if a custom role session name will be accepted in a
+     * temporary credential request.</p>
+     */
+    inline bool GetAcceptRoleSessionName() const{ return m_acceptRoleSessionName; }
+    inline bool AcceptRoleSessionNameHasBeenSet() const { return m_acceptRoleSessionNameHasBeenSet; }
+    inline void SetAcceptRoleSessionName(bool value) { m_acceptRoleSessionNameHasBeenSet = true; m_acceptRoleSessionName = value; }
+    inline ProfileDetail& WithAcceptRoleSessionName(bool value) { SetAcceptRoleSessionName(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>A mapping applied to the authenticating end-entity certificate.</p>
      */
     inline const Aws::Vector<AttributeMapping>& GetAttributeMappings() const{ return m_attributeMappings; }
@@ -217,6 +228,9 @@ namespace Model
     inline ProfileDetail& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
     ///@}
   private:
+
+    bool m_acceptRoleSessionName;
+    bool m_acceptRoleSessionNameHasBeenSet = false;
 
     Aws::Vector<AttributeMapping> m_attributeMappings;
     bool m_attributeMappingsHasBeenSet = false;

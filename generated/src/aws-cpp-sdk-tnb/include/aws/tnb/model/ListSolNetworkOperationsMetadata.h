@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/tnb/Tnb_EXPORTS.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -62,6 +63,36 @@ namespace Model
     inline ListSolNetworkOperationsMetadata& WithLastModified(const Aws::Utils::DateTime& value) { SetLastModified(value); return *this;}
     inline ListSolNetworkOperationsMetadata& WithLastModified(Aws::Utils::DateTime&& value) { SetLastModified(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The network service descriptor id used for the operation.</p> <p>Only present
+     * if the updateType is <code>UPDATE_NS</code>.</p>
+     */
+    inline const Aws::String& GetNsdInfoId() const{ return m_nsdInfoId; }
+    inline bool NsdInfoIdHasBeenSet() const { return m_nsdInfoIdHasBeenSet; }
+    inline void SetNsdInfoId(const Aws::String& value) { m_nsdInfoIdHasBeenSet = true; m_nsdInfoId = value; }
+    inline void SetNsdInfoId(Aws::String&& value) { m_nsdInfoIdHasBeenSet = true; m_nsdInfoId = std::move(value); }
+    inline void SetNsdInfoId(const char* value) { m_nsdInfoIdHasBeenSet = true; m_nsdInfoId.assign(value); }
+    inline ListSolNetworkOperationsMetadata& WithNsdInfoId(const Aws::String& value) { SetNsdInfoId(value); return *this;}
+    inline ListSolNetworkOperationsMetadata& WithNsdInfoId(Aws::String&& value) { SetNsdInfoId(std::move(value)); return *this;}
+    inline ListSolNetworkOperationsMetadata& WithNsdInfoId(const char* value) { SetNsdInfoId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The network function id used for the operation.</p> <p>Only present if the
+     * updateType is <code>MODIFY_VNF_INFO</code>.</p>
+     */
+    inline const Aws::String& GetVnfInstanceId() const{ return m_vnfInstanceId; }
+    inline bool VnfInstanceIdHasBeenSet() const { return m_vnfInstanceIdHasBeenSet; }
+    inline void SetVnfInstanceId(const Aws::String& value) { m_vnfInstanceIdHasBeenSet = true; m_vnfInstanceId = value; }
+    inline void SetVnfInstanceId(Aws::String&& value) { m_vnfInstanceIdHasBeenSet = true; m_vnfInstanceId = std::move(value); }
+    inline void SetVnfInstanceId(const char* value) { m_vnfInstanceIdHasBeenSet = true; m_vnfInstanceId.assign(value); }
+    inline ListSolNetworkOperationsMetadata& WithVnfInstanceId(const Aws::String& value) { SetVnfInstanceId(value); return *this;}
+    inline ListSolNetworkOperationsMetadata& WithVnfInstanceId(Aws::String&& value) { SetVnfInstanceId(std::move(value)); return *this;}
+    inline ListSolNetworkOperationsMetadata& WithVnfInstanceId(const char* value) { SetVnfInstanceId(value); return *this;}
+    ///@}
   private:
 
     Aws::Utils::DateTime m_createdAt;
@@ -69,6 +100,12 @@ namespace Model
 
     Aws::Utils::DateTime m_lastModified;
     bool m_lastModifiedHasBeenSet = false;
+
+    Aws::String m_nsdInfoId;
+    bool m_nsdInfoIdHasBeenSet = false;
+
+    Aws::String m_vnfInstanceId;
+    bool m_vnfInstanceIdHasBeenSet = false;
   };
 
 } // namespace Model

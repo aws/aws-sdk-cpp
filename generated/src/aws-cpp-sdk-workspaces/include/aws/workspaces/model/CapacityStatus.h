@@ -38,8 +38,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The number of user sessions currently being used for pool sessions. This only
-     * applies to multi-session pools.</p>
+     * <p>The number of user sessions currently available for streaming from your
+     * pool.</p> <p>AvailableUserSessions = ActualUserSessions - ActiveUserSessions</p>
      */
     inline int GetAvailableUserSessions() const{ return m_availableUserSessions; }
     inline bool AvailableUserSessionsHasBeenSet() const { return m_availableUserSessionsHasBeenSet; }
@@ -61,8 +61,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The total number of session slots that are available for a pool of
-     * WorkSpaces.</p>
+     * <p>The total number of user sessions that are available for streaming or are
+     * currently streaming in your pool.</p> <p>ActualUserSessions =
+     * AvailableUserSessions + ActiveUserSessions</p>
      */
     inline int GetActualUserSessions() const{ return m_actualUserSessions; }
     inline bool ActualUserSessionsHasBeenSet() const { return m_actualUserSessionsHasBeenSet; }
@@ -72,8 +73,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The number of user sessions currently being used for pool sessions. This only
-     * applies to multi-session pools.</p>
+     * <p>The number of user sessions currently being used for your pool.</p>
      */
     inline int GetActiveUserSessions() const{ return m_activeUserSessions; }
     inline bool ActiveUserSessionsHasBeenSet() const { return m_activeUserSessionsHasBeenSet; }

@@ -34,6 +34,8 @@
 #include <aws/codepipeline/model/ListActionTypesResult.h>
 #include <aws/codepipeline/model/ListPipelineExecutionsResult.h>
 #include <aws/codepipeline/model/ListPipelinesResult.h>
+#include <aws/codepipeline/model/ListRuleExecutionsResult.h>
+#include <aws/codepipeline/model/ListRuleTypesResult.h>
 #include <aws/codepipeline/model/ListTagsForResourceResult.h>
 #include <aws/codepipeline/model/ListWebhooksResult.h>
 #include <aws/codepipeline/model/PollForJobsResult.h>
@@ -49,6 +51,7 @@
 #include <aws/codepipeline/model/TagResourceResult.h>
 #include <aws/codepipeline/model/UntagResourceResult.h>
 #include <aws/codepipeline/model/UpdatePipelineResult.h>
+#include <aws/codepipeline/model/ListRuleTypesRequest.h>
 #include <aws/codepipeline/model/DeregisterWebhookWithThirdPartyRequest.h>
 #include <aws/codepipeline/model/RegisterWebhookWithThirdPartyRequest.h>
 #include <aws/codepipeline/model/ListWebhooksRequest.h>
@@ -115,8 +118,11 @@ namespace Aws
       class ListActionTypesRequest;
       class ListPipelineExecutionsRequest;
       class ListPipelinesRequest;
+      class ListRuleExecutionsRequest;
+      class ListRuleTypesRequest;
       class ListTagsForResourceRequest;
       class ListWebhooksRequest;
+      class OverrideStageConditionRequest;
       class PollForJobsRequest;
       class PollForThirdPartyJobsRequest;
       class PutActionRevisionRequest;
@@ -158,8 +164,11 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListActionTypesResult, CodePipelineError> ListActionTypesOutcome;
       typedef Aws::Utils::Outcome<ListPipelineExecutionsResult, CodePipelineError> ListPipelineExecutionsOutcome;
       typedef Aws::Utils::Outcome<ListPipelinesResult, CodePipelineError> ListPipelinesOutcome;
+      typedef Aws::Utils::Outcome<ListRuleExecutionsResult, CodePipelineError> ListRuleExecutionsOutcome;
+      typedef Aws::Utils::Outcome<ListRuleTypesResult, CodePipelineError> ListRuleTypesOutcome;
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, CodePipelineError> ListTagsForResourceOutcome;
       typedef Aws::Utils::Outcome<ListWebhooksResult, CodePipelineError> ListWebhooksOutcome;
+      typedef Aws::Utils::Outcome<Aws::NoResult, CodePipelineError> OverrideStageConditionOutcome;
       typedef Aws::Utils::Outcome<PollForJobsResult, CodePipelineError> PollForJobsOutcome;
       typedef Aws::Utils::Outcome<PollForThirdPartyJobsResult, CodePipelineError> PollForThirdPartyJobsOutcome;
       typedef Aws::Utils::Outcome<PutActionRevisionResult, CodePipelineError> PutActionRevisionOutcome;
@@ -201,8 +210,11 @@ namespace Aws
       typedef std::future<ListActionTypesOutcome> ListActionTypesOutcomeCallable;
       typedef std::future<ListPipelineExecutionsOutcome> ListPipelineExecutionsOutcomeCallable;
       typedef std::future<ListPipelinesOutcome> ListPipelinesOutcomeCallable;
+      typedef std::future<ListRuleExecutionsOutcome> ListRuleExecutionsOutcomeCallable;
+      typedef std::future<ListRuleTypesOutcome> ListRuleTypesOutcomeCallable;
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
       typedef std::future<ListWebhooksOutcome> ListWebhooksOutcomeCallable;
+      typedef std::future<OverrideStageConditionOutcome> OverrideStageConditionOutcomeCallable;
       typedef std::future<PollForJobsOutcome> PollForJobsOutcomeCallable;
       typedef std::future<PollForThirdPartyJobsOutcome> PollForThirdPartyJobsOutcomeCallable;
       typedef std::future<PutActionRevisionOutcome> PutActionRevisionOutcomeCallable;
@@ -247,8 +259,11 @@ namespace Aws
     typedef std::function<void(const CodePipelineClient*, const Model::ListActionTypesRequest&, const Model::ListActionTypesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListActionTypesResponseReceivedHandler;
     typedef std::function<void(const CodePipelineClient*, const Model::ListPipelineExecutionsRequest&, const Model::ListPipelineExecutionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPipelineExecutionsResponseReceivedHandler;
     typedef std::function<void(const CodePipelineClient*, const Model::ListPipelinesRequest&, const Model::ListPipelinesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPipelinesResponseReceivedHandler;
+    typedef std::function<void(const CodePipelineClient*, const Model::ListRuleExecutionsRequest&, const Model::ListRuleExecutionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRuleExecutionsResponseReceivedHandler;
+    typedef std::function<void(const CodePipelineClient*, const Model::ListRuleTypesRequest&, const Model::ListRuleTypesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRuleTypesResponseReceivedHandler;
     typedef std::function<void(const CodePipelineClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const CodePipelineClient*, const Model::ListWebhooksRequest&, const Model::ListWebhooksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListWebhooksResponseReceivedHandler;
+    typedef std::function<void(const CodePipelineClient*, const Model::OverrideStageConditionRequest&, const Model::OverrideStageConditionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > OverrideStageConditionResponseReceivedHandler;
     typedef std::function<void(const CodePipelineClient*, const Model::PollForJobsRequest&, const Model::PollForJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PollForJobsResponseReceivedHandler;
     typedef std::function<void(const CodePipelineClient*, const Model::PollForThirdPartyJobsRequest&, const Model::PollForThirdPartyJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PollForThirdPartyJobsResponseReceivedHandler;
     typedef std::function<void(const CodePipelineClient*, const Model::PutActionRevisionRequest&, const Model::PutActionRevisionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutActionRevisionResponseReceivedHandler;

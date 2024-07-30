@@ -16,7 +16,8 @@ namespace Model
   enum class UpdateSolNetworkType
   {
     NOT_SET,
-    MODIFY_VNF_INFORMATION
+    MODIFY_VNF_INFORMATION,
+    UPDATE_NS
   };
 
 namespace UpdateSolNetworkTypeMapper

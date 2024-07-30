@@ -19,6 +19,8 @@ namespace Model
 {
 
 ProfileDetail::ProfileDetail() : 
+    m_acceptRoleSessionName(false),
+    m_acceptRoleSessionNameHasBeenSet(false),
     m_attributeMappingsHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_createdByHasBeenSet(false),
@@ -46,6 +48,13 @@ ProfileDetail::ProfileDetail(JsonView jsonValue)
 
 ProfileDetail& ProfileDetail::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("acceptRoleSessionName"))
+  {
+    m_acceptRoleSessionName = jsonValue.GetBool("acceptRoleSessionName");
+
+    m_acceptRoleSessionNameHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("attributeMappings"))
   {
     Aws::Utils::Array<JsonView> attributeMappingsJsonList = jsonValue.GetArray("attributeMappings");
@@ -152,6 +161,12 @@ ProfileDetail& ProfileDetail::operator =(JsonView jsonValue)
 JsonValue ProfileDetail::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_acceptRoleSessionNameHasBeenSet)
+  {
+   payload.WithBool("acceptRoleSessionName", m_acceptRoleSessionName);
+
+  }
 
   if(m_attributeMappingsHasBeenSet)
   {

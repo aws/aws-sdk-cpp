@@ -18,7 +18,8 @@ using namespace Aws::Http;
 ListSolNetworkOperationsRequest::ListSolNetworkOperationsRequest() : 
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
+    m_nextTokenHasBeenSet(false),
+    m_nsInstanceIdHasBeenSet(false)
 {
 }
 
@@ -41,6 +42,13 @@ void ListSolNetworkOperationsRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << m_nextToken;
       uri.AddQueryStringParameter("nextpage_opaque_marker", ss.str());
+      ss.str("");
+    }
+
+    if(m_nsInstanceIdHasBeenSet)
+    {
+      ss << m_nsInstanceId;
+      uri.AddQueryStringParameter("nsInstanceId", ss.str());
       ss.str("");
     }
 

@@ -706,6 +706,57 @@ namespace CodePipeline
         }
 
         /**
+         * <p>Lists the rule executions that have occurred in a pipeline configured for
+         * conditions with rules.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListRuleExecutions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListRuleExecutionsOutcome ListRuleExecutions(const Model::ListRuleExecutionsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListRuleExecutions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListRuleExecutionsRequestT = Model::ListRuleExecutionsRequest>
+        Model::ListRuleExecutionsOutcomeCallable ListRuleExecutionsCallable(const ListRuleExecutionsRequestT& request) const
+        {
+            return SubmitCallable(&CodePipelineClient::ListRuleExecutions, request);
+        }
+
+        /**
+         * An Async wrapper for ListRuleExecutions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListRuleExecutionsRequestT = Model::ListRuleExecutionsRequest>
+        void ListRuleExecutionsAsync(const ListRuleExecutionsRequestT& request, const ListRuleExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CodePipelineClient::ListRuleExecutions, request, handler, context);
+        }
+
+        /**
+         * <p>Lists the rules for the condition.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListRuleTypes">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListRuleTypesOutcome ListRuleTypes(const Model::ListRuleTypesRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for ListRuleTypes that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListRuleTypesRequestT = Model::ListRuleTypesRequest>
+        Model::ListRuleTypesOutcomeCallable ListRuleTypesCallable(const ListRuleTypesRequestT& request = {}) const
+        {
+            return SubmitCallable(&CodePipelineClient::ListRuleTypes, request);
+        }
+
+        /**
+         * An Async wrapper for ListRuleTypes that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListRuleTypesRequestT = Model::ListRuleTypesRequest>
+        void ListRuleTypesAsync(const ListRuleTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListRuleTypesRequestT& request = {}) const
+        {
+            return SubmitAsync(&CodePipelineClient::ListRuleTypes, request, handler, context);
+        }
+
+        /**
          * <p>Gets the set of key-value pairs (metadata) that are used to manage the
          * resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListTagsForResource">AWS
@@ -756,6 +807,31 @@ namespace CodePipeline
         void ListWebhooksAsync(const ListWebhooksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListWebhooksRequestT& request = {}) const
         {
             return SubmitAsync(&CodePipelineClient::ListWebhooks, request, handler, context);
+        }
+
+        /**
+         * <p>Used to override a stage condition.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/OverrideStageCondition">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::OverrideStageConditionOutcome OverrideStageCondition(const Model::OverrideStageConditionRequest& request) const;
+
+        /**
+         * A Callable wrapper for OverrideStageCondition that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename OverrideStageConditionRequestT = Model::OverrideStageConditionRequest>
+        Model::OverrideStageConditionOutcomeCallable OverrideStageConditionCallable(const OverrideStageConditionRequestT& request) const
+        {
+            return SubmitCallable(&CodePipelineClient::OverrideStageCondition, request);
+        }
+
+        /**
+         * An Async wrapper for OverrideStageCondition that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename OverrideStageConditionRequestT = Model::OverrideStageConditionRequest>
+        void OverrideStageConditionAsync(const OverrideStageConditionRequestT& request, const OverrideStageConditionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CodePipelineClient::OverrideStageCondition, request, handler, context);
         }
 
         /**

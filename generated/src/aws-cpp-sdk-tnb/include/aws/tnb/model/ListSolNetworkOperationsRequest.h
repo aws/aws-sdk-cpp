@@ -61,6 +61,21 @@ namespace Model
     inline ListSolNetworkOperationsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
     inline ListSolNetworkOperationsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Network instance id filter, to retrieve network operations associated to a
+     * network instance.</p>
+     */
+    inline const Aws::String& GetNsInstanceId() const{ return m_nsInstanceId; }
+    inline bool NsInstanceIdHasBeenSet() const { return m_nsInstanceIdHasBeenSet; }
+    inline void SetNsInstanceId(const Aws::String& value) { m_nsInstanceIdHasBeenSet = true; m_nsInstanceId = value; }
+    inline void SetNsInstanceId(Aws::String&& value) { m_nsInstanceIdHasBeenSet = true; m_nsInstanceId = std::move(value); }
+    inline void SetNsInstanceId(const char* value) { m_nsInstanceIdHasBeenSet = true; m_nsInstanceId.assign(value); }
+    inline ListSolNetworkOperationsRequest& WithNsInstanceId(const Aws::String& value) { SetNsInstanceId(value); return *this;}
+    inline ListSolNetworkOperationsRequest& WithNsInstanceId(Aws::String&& value) { SetNsInstanceId(std::move(value)); return *this;}
+    inline ListSolNetworkOperationsRequest& WithNsInstanceId(const char* value) { SetNsInstanceId(value); return *this;}
+    ///@}
   private:
 
     int m_maxResults;
@@ -68,6 +83,9 @@ namespace Model
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
+
+    Aws::String m_nsInstanceId;
+    bool m_nsInstanceIdHasBeenSet = false;
   };
 
 } // namespace Model

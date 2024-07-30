@@ -6,6 +6,8 @@
 #pragma once
 #include <aws/codepipeline/CodePipeline_EXPORTS.h>
 #include <aws/codepipeline/model/Result.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/codepipeline/model/Condition.h>
 #include <utility>
 
 namespace Aws
@@ -50,10 +52,27 @@ namespace Model
     inline FailureConditions& WithResult(const Result& value) { SetResult(value); return *this;}
     inline FailureConditions& WithResult(Result&& value) { SetResult(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The conditions that are configured as failure conditions.</p>
+     */
+    inline const Aws::Vector<Condition>& GetConditions() const{ return m_conditions; }
+    inline bool ConditionsHasBeenSet() const { return m_conditionsHasBeenSet; }
+    inline void SetConditions(const Aws::Vector<Condition>& value) { m_conditionsHasBeenSet = true; m_conditions = value; }
+    inline void SetConditions(Aws::Vector<Condition>&& value) { m_conditionsHasBeenSet = true; m_conditions = std::move(value); }
+    inline FailureConditions& WithConditions(const Aws::Vector<Condition>& value) { SetConditions(value); return *this;}
+    inline FailureConditions& WithConditions(Aws::Vector<Condition>&& value) { SetConditions(std::move(value)); return *this;}
+    inline FailureConditions& AddConditions(const Condition& value) { m_conditionsHasBeenSet = true; m_conditions.push_back(value); return *this; }
+    inline FailureConditions& AddConditions(Condition&& value) { m_conditionsHasBeenSet = true; m_conditions.push_back(std::move(value)); return *this; }
+    ///@}
   private:
 
     Result m_result;
     bool m_resultHasBeenSet = false;
+
+    Aws::Vector<Condition> m_conditions;
+    bool m_conditionsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -38,8 +38,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The desired number of user sessions for a multi-session pool. This is not
-     * allowed for single-session pools.</p>
+     * <p>The desired number of user sessions for the WorkSpaces in the pool.</p>
      */
     inline int GetDesiredUserSessions() const{ return m_desiredUserSessions; }
     inline bool DesiredUserSessionsHasBeenSet() const { return m_desiredUserSessionsHasBeenSet; }

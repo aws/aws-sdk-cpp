@@ -908,9 +908,11 @@ namespace ElastiCache
          * delete only the read replicas, while retaining the primary by setting
          * <code>RetainPrimaryCluster=true</code>.</p> <p>When you receive a successful
          * response from this operation, Amazon ElastiCache immediately begins deleting the
-         * selected resources; you cannot cancel or revert this operation.</p> 
-         * <p>This operation is valid for Redis OSS only.</p> <p><h3>See Also:</h3> 
-         * <a
+         * selected resources; you cannot cancel or revert this operation.</p>  <ul>
+         * <li> <p> <code>CreateSnapshot</code> permission is required to create a final
+         * snapshot. Without this permission, the API call will fail with an <code>Access
+         * Denied</code> exception.</p> </li> <li> <p>This operation is valid for Redis OSS
+         * only.</p> </li> </ul> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteReplicationGroup">AWS
          * API Reference</a></p>
          */
@@ -935,7 +937,10 @@ namespace ElastiCache
         }
 
         /**
-         * <p>Deletes a specified existing serverless cache.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a specified existing serverless cache.</p>  <p>
+         * <code>CreateServerlessCacheSnapshot</code> permission is required to create a
+         * final snapshot. Without this permission, the API call will fail with an
+         * <code>Access Denied</code> exception.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteServerlessCache">AWS
          * API Reference</a></p>
          */

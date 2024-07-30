@@ -20,7 +20,8 @@ namespace Model
 
 FailureConditions::FailureConditions() : 
     m_result(Result::NOT_SET),
-    m_resultHasBeenSet(false)
+    m_resultHasBeenSet(false),
+    m_conditionsHasBeenSet(false)
 {
 }
 
@@ -39,6 +40,16 @@ FailureConditions& FailureConditions::operator =(JsonView jsonValue)
     m_resultHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("conditions"))
+  {
+    Aws::Utils::Array<JsonView> conditionsJsonList = jsonValue.GetArray("conditions");
+    for(unsigned conditionsIndex = 0; conditionsIndex < conditionsJsonList.GetLength(); ++conditionsIndex)
+    {
+      m_conditions.push_back(conditionsJsonList[conditionsIndex].AsObject());
+    }
+    m_conditionsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -49,6 +60,17 @@ JsonValue FailureConditions::Jsonize() const
   if(m_resultHasBeenSet)
   {
    payload.WithString("result", ResultMapper::GetNameForResult(m_result));
+  }
+
+  if(m_conditionsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> conditionsJsonList(m_conditions.size());
+   for(unsigned conditionsIndex = 0; conditionsIndex < conditionsJsonList.GetLength(); ++conditionsIndex)
+   {
+     conditionsJsonList[conditionsIndex].AsObject(m_conditions[conditionsIndex].Jsonize());
+   }
+   payload.WithArray("conditions", std::move(conditionsJsonList));
+
   }
 
   return payload;

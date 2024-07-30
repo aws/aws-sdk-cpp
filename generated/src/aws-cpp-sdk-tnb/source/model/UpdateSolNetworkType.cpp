@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int MODIFY_VNF_INFORMATION_HASH = HashingUtils::HashString("MODIFY_VNF_INFORMATION");
+        static const int UPDATE_NS_HASH = HashingUtils::HashString("UPDATE_NS");
 
 
         UpdateSolNetworkType GetUpdateSolNetworkTypeForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == MODIFY_VNF_INFORMATION_HASH)
           {
             return UpdateSolNetworkType::MODIFY_VNF_INFORMATION;
+          }
+          else if (hashCode == UPDATE_NS_HASH)
+          {
+            return UpdateSolNetworkType::UPDATE_NS;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -48,6 +53,8 @@ namespace Aws
             return {};
           case UpdateSolNetworkType::MODIFY_VNF_INFORMATION:
             return "MODIFY_VNF_INFORMATION";
+          case UpdateSolNetworkType::UPDATE_NS:
+            return "UPDATE_NS";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

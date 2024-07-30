@@ -83,8 +83,9 @@ namespace Model
     /**
      * <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag
      * consists of a key and an optional value. When you use this API, the tags are
-     * transferred to the network operation that is created. Use tags to search and
-     * filter your resources or track your Amazon Web Services costs.</p>
+     * only applied to the network operation that is created. These tags are not
+     * applied to the network instance. Use tags to search and filter your resources or
+     * track your Amazon Web Services costs.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
