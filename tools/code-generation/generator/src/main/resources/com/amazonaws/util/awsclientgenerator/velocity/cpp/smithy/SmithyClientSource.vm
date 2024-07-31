@@ -1,0 +1,54 @@
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/MacroParseOverrideOrDefault.vm")
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cfamily/Attribution.vm")
+
+#set($metadata = $serviceModel.metadata)
+#set($rootNamespace = $serviceModel.namespace)
+#set($serviceNamespace = $metadata.namespace)
+#set($className = "${metadata.classNamePrefix}Client")
+\#include <aws/core/utils/Outcome.h>
+\#include <aws/core/client/CoreErrors.h>
+\#include <aws/core/client/RetryStrategy.h>
+\#include <aws/core/http/HttpClient.h>
+\#include <aws/core/http/HttpClientFactory.h>
+\#include <aws/core/auth/AWSCredentialsProviderChain.h>
+\#include <aws/core/utils/memory/stl/AWSStringStream.h>
+\#include <aws/core/utils/threading/Executor.h>
+\#include <aws/core/utils/DNS.h>
+\#include <aws/core/utils/logging/LogMacros.h>
+\#include <aws/core/utils/logging/ErrorMacros.h>
+
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientSourceHeaders.vm")
+\#include <smithy/identity/resolver/built-in/SimpleAwsCredentialIdentityResolver.h>
+\#include <smithy/identity/resolver/built-in/DefaultAwsCredentialIdentityResolver.h>
+\#include <smithy/identity/resolver/built-in/AwsCredentialsProviderIdentityResolver.h>
+
+using namespace Aws;
+using namespace Aws::Auth;
+using namespace Aws::Client;
+using namespace ${rootNamespace}::${serviceNamespace};
+using namespace ${rootNamespace}::${serviceNamespace}::Model;
+using namespace Aws::Http;
+using namespace Aws::Utils::Json;
+using namespace smithy::components::tracing;
+using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+#if(!${onlyGeneratedOperations})
+namespace Aws
+{
+  namespace ${metadata.namespace}
+  {
+    const char ALLOCATION_TAG[] = "${className}";
+    const char SERVICE_NAME[] = "${metadata.signingName}";
+  }
+}
+const char* ${className}::GetServiceName() {return SERVICE_NAME;}
+const char* ${className}::GetAllocationTag() {return ALLOCATION_TAG;}
+
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/smithy/SmithyClientSourceInit.vm")
+#end
+
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/smithy/SmithyServiceOperationsSource.vm")
+
+#if($metadata.hasEndpointDiscoveryTrait)
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/smithy/SmithyEndpointDiscoveryDefinition.vm")
+#end

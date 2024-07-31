@@ -148,6 +148,8 @@ namespace client
                                       std::shared_ptr<Aws::Http::HttpResponse> httpResponse) const;
 
         inline virtual const char* GetServiceClientName() const { return m_serviceName.c_str(); }
+        inline virtual const std::shared_ptr<Aws::Http::HttpClient>& GetHttpClient() { return m_httpClient; }
+        virtual void DisableRequestProcessing();
 
         virtual ResolveEndpointOutcome ResolveEndpoint(const Aws::Endpoint::EndpointParameters& endpointParameters, EndpointUpdateCallback&& epCallback) const = 0;
         virtual SelectAuthSchemeOptionOutcome SelectAuthSchemeOption(const AwsSmithyClientAsyncRequestContext& ctx) const = 0;

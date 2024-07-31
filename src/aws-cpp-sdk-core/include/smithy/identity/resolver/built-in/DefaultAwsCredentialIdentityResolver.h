@@ -20,13 +20,18 @@ namespace smithy {
 
         mutable std::shared_ptr<Aws::Auth::AWSCredentialsProviderChain> legacyChain_sp;
 
-        //mutable Aws::Auth::DefaultAWSCredentialsProviderChain legacyCredentialsProvider{};
     public:
         using SigV4AuthSchemeParameters = DefaultAuthSchemeResolverParameters;
 
         DefaultAwsCredentialIdentityResolver(): legacyChain_sp{Aws::MakeShared<Aws::Auth::DefaultAWSCredentialsProviderChain>(ALLOC_ID)}{
 
         };
+
+        DefaultAwsCredentialIdentityResolver(const DefaultAwsCredentialIdentityResolver& other) = delete;
+        DefaultAwsCredentialIdentityResolver(DefaultAwsCredentialIdentityResolver&& other) noexcept = default;
+        DefaultAwsCredentialIdentityResolver& operator=(const DefaultAwsCredentialIdentityResolver& other) = delete;
+        DefaultAwsCredentialIdentityResolver& operator=(DefaultAwsCredentialIdentityResolver&& other) noexcept = default;
+        virtual ~DefaultAwsCredentialIdentityResolver() = default;
 
         DefaultAwsCredentialIdentityResolver(std::shared_ptr<Aws::Auth::AWSCredentialsProviderChain> providerChain): legacyChain_sp{providerChain}
         {
@@ -43,13 +48,10 @@ namespace smithy {
             auto smithyCreds = Aws::MakeUnique<AwsCredentialIdentity>("DefaultAwsCredentialIdentityResolver",
                                                                      legacyCreds.GetAWSAccessKeyId(), 
                                                                      legacyCreds.GetAWSSecretKey(),
-                                                                     legacyCreds.GetSessionToken().empty()? Aws::Crt::Optional<Aws::String>() : legacyCreds.GetSessionToken(), 
+                                                                     legacyCreds.GetSessionToken().empty()? Aws::Crt::Optional<Aws::String>() : legacyCreds.GetSessionToken(),
                                                                      legacyCreds.GetExpiration());
 
             return ResolveIdentityFutureOutcome(std::move(smithyCreds));
         }
-
-        virtual ~DefaultAwsCredentialIdentityResolver() {};
-    
     };
 }

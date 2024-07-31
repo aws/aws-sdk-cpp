@@ -1,0 +1,43 @@
+#set($indent = "  ")
+void ${className}::OptionallyUpdateDescribeEndpointsCache(Aws::Endpoint::AWSEndpoint& resolvedEndpoint,
+    const Aws::String& operationName,
+    const Aws::String& endpointKey,
+    const ${rootNamespace}::${serviceNamespace}::Model::${metadata.endpointOperationName}Request& endpointRequest,
+    bool enforceDiscovery) const
+{
+${indent}const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value() && m_clientConfiguration.endpointOverride.empty();
+${indent}if (enableEndpointDiscovery)
+${indent}{
+${indent}  Aws::String endpoint;
+${indent}  if (m_endpointsCache.Get(endpointKey, endpoint))
+${indent}  {
+${indent}     AWS_LOGSTREAM_TRACE(operationName.c_str(), "Making request to cached endpoint: " << endpoint);
+${indent}     endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + endpoint;
+${indent}     resolvedEndpoint.SetURI(endpoint);
+${indent}  }
+${indent}  else
+${indent}  {
+${indent}    AWS_LOGSTREAM_TRACE(operationName.c_str(), "Endpoint discovery is enabled and there is no usable endpoint in cache. Discovering endpoints from service...");
+${indent}    auto endpointOutcome = ${metadata.endpointOperationName}(endpointRequest);
+${indent}    if (endpointOutcome.IsSuccess() && !endpointOutcome.GetResult().GetEndpoints().empty())
+${indent}    {
+${indent}       const auto& item = endpointOutcome.GetResult().GetEndpoints()[0];
+${indent}       m_endpointsCache.Put(endpointKey, item.GetAddress(), std::chrono::minutes(item.GetCachePeriodInMinutes()));
+${indent}       endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + item.GetAddress();
+${indent}       AWS_LOGSTREAM_TRACE(operationName.c_str(), "Endpoints cache updated. Address: " << item.GetAddress() << ". Valid in: " << item.GetCachePeriodInMinutes() << " minutes. Making request to newly discovered endpoint.");
+${indent}       resolvedEndpoint.SetURI(endpoint);
+${indent}    }
+${indent}    else
+${indent}    {
+${indent}       if(enforceDiscovery)
+${indent}       {
+${indent}          AWS_LOGSTREAM_ERROR(operationName.c_str(), "Failed to discover endpoints " << endpointOutcome.GetError());
+${indent}       }
+${indent}       else
+${indent}       {
+${indent}          AWS_LOGSTREAM_ERROR(operationName.c_str(), "Failed to discover endpoints " << endpointOutcome.GetError() << "\n Endpoint discovery is not required for this operation, falling back to the regional endpoint.");
+${indent}       }
+${indent}    }
+${indent}  }
+${indent}}
+}
