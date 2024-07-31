@@ -83,4 +83,6 @@ public class ServiceModel {
     EndpointRuleSetModel endpointRuleSetModel;
     EndpointTests endpointTests;
     ClientContextParams clientContextParams;
+    boolean useSmithyClient;
+    List<String> authSchemes;
 }

@@ -4,13 +4,12 @@
  */
 #pragma once
 
+#include <smithy/Smithy_EXPORTS.h>
 #include <smithy/identity/auth/AuthSchemeOption.h>
 
 namespace smithy {
     struct SigV4aAuthSchemeOption
     {
-        static AuthSchemeOption sigV4aAuthSchemeOption;
+        static SMITHY_API AuthSchemeOption sigV4aAuthSchemeOption;
     };
-
-    AuthSchemeOption SigV4aAuthSchemeOption::sigV4aAuthSchemeOption = AuthSchemeOption("aws.auth#sigv4a");
 }
