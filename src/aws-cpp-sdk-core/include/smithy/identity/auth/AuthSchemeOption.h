@@ -18,7 +18,7 @@ namespace smithy {
         using EndpointParameters = Aws::Vector<Aws::Endpoint::EndpointParameter>;
         /* note: AuthSchemeOption is not connected with AuthScheme by type system, only by the String of schemeId, this is in accordance with SRA */
     public:
-        AuthSchemeOption(const char* id = nullptr, PropertyBag identityProps = {}, PropertyBag signerProps = {}, EndpointParameters epParams = {})
+        AuthSchemeOption(const char* id = nullptr, PropertyBag identityProps = {{}}, PropertyBag signerProps = {{}}, EndpointParameters epParams = {{}})
             : schemeId(id), identityProperties(identityProps), signerProperties(signerProps), endpointParameters(epParams)
         {
         }
