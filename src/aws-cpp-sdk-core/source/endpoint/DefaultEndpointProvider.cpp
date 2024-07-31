@@ -16,11 +16,9 @@ namespace Endpoint
 /**
  * Instantiate endpoint providers
  */
-template class DefaultEndpointProvider<Aws::Client::GenericClientConfiguration<false>,
+template class DefaultEndpointProvider<Aws::Client::GenericClientConfiguration,
             Aws::Endpoint::BuiltInParameters,
             Aws::Endpoint::ClientContextParameters>;
-
-template class DefaultEndpointProvider<Aws::Client::GenericClientConfiguration<true>>;
 #endif
 
 char CharToDec(const char c)

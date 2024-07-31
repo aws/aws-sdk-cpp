@@ -8,7 +8,7 @@
 
 /* Generic header includes */
 \#include <aws/${metadata.projectName}/${metadata.classNamePrefix}Errors.h>
-#if($serviceModel.endpointRules && $serviceModel.metadata.serviceId == "S3")
+#if($serviceModel.metadata.serviceId == "S3" || $serviceModel.metadata.hasEndpointDiscoveryTrait)
 \#include <aws/${metadata.projectName}/${metadata.classNamePrefix}ClientConfiguration.h>
 #else
 \#include <aws/core/client/GenericClientConfiguration.h>
@@ -83,12 +83,8 @@ namespace ${rootNamespace}
 
   namespace ${metadata.namespace}
   {
-#if($serviceModel.metadata.serviceId != "S3" && $serviceModel.metadata.serviceId != "S3 Control")
-#if(!$metadata.hasEndpointDiscoveryTrait)
-    using ${metadata.classNamePrefix}ClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
-#else
-    using ${metadata.classNamePrefix}ClientConfiguration = Aws::Client::GenericClientConfiguration<true>;
-#end
+#if($serviceModel.metadata.serviceId != "S3" && $serviceModel.metadata.serviceId != "S3 Control" && !$serviceModel.metadata.hasEndpointDiscoveryTrait)
+    using ${metadata.classNamePrefix}ClientConfiguration = Aws::Client::GenericClientConfiguration;
 #end
     using ${metadata.classNamePrefix}EndpointProviderBase = Aws::${metadata.namespace}::Endpoint::${metadata.classNamePrefix}EndpointProviderBase;
     using ${metadata.classNamePrefix}EndpointProvider = Aws::${metadata.namespace}::Endpoint::${metadata.classNamePrefix}EndpointProvider;
