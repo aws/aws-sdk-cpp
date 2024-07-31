@@ -41,6 +41,7 @@ public class main {
     static final String LICENSE_TEXT = "license-text";
     static final String STANDALONE_OPTION = "standalone";
     static final String ENABLE_VIRTUAL_OPERATIONS = "enable-virtual-operations";
+    static final String USE_SMITHY_CLIENT = "use-smithy-client";
 
     public static void main(String[] args) throws IOException {
 
@@ -100,6 +101,8 @@ public class main {
                 outputFileName = argPairs.get(OUTPUT_FILE_NAME);
             }
 
+            boolean useSmithyClient = argPairs.containsKey(USE_SMITHY_CLIENT);
+
             if (arbitraryJson != null && arbitraryJson.length() > 0) {
                 try {
                     ByteArrayOutputStream generated;
@@ -108,7 +111,7 @@ public class main {
                     if (serviceName != null && !serviceName.isEmpty()) {
                         if (!generateTests) {
                             generated = generateService(arbitraryJson, endpointRules, endpointRuleTests, languageBinding, serviceName, namespace,
-                                    licenseText, generateStandalonePackage, enableVirtualOperations);
+                                    licenseText, generateStandalonePackage, enableVirtualOperations, useSmithyClient);
 
                             componentOutputName = String.format("aws-cpp-sdk-%s", serviceName);
                         } else {
@@ -179,7 +182,8 @@ public class main {
                                                          String namespace,
                                                          String licenseText,
                                                          boolean generateStandalonePackage,
-                                                         boolean enableVirtualOperations) throws Exception {
+                                                         boolean enableVirtualOperations,
+                                                         boolean useSmithyClient) throws Exception {
         MainGenerator generator = new MainGenerator();
         DirectFromC2jGenerator directFromC2jGenerator = new DirectFromC2jGenerator(generator);
 
@@ -192,7 +196,8 @@ public class main {
                 namespace,
                 licenseText,
                 generateStandalonePackage,
-                enableVirtualOperations);
+                enableVirtualOperations,
+                useSmithyClient);
         return outputStream;
     }
 

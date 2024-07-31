@@ -1,0 +1,34 @@
+#if($metadata.hasEndpointDiscoveryTrait)
+#set($indent = "        ")
+#if($operation.hasEndpointDiscoveryTrait)
+#set($hasId=false)
+#foreach($memberEntry in $operation.request.shape.members.entrySet())
+#if($memberEntry.value.endpointDiscoveryId)
+#set($hasId=true)
+#break
+#end
+#end
+#if($hasId)
+${indent}Aws::String endpointKey{"${operation.name}."};
+#foreach($memberEntry in $operation.request.shape.members.entrySet())
+#if($memberEntry.value.endpointDiscoveryId)
+${indent}endpointKey += "${memberEntry.key}:" + request.Get${memberEntry.key}() + ".";
+#end
+#end
+#else
+${indent}Aws::String endpointKey{"Shared"};
+#end
+${indent}${metadata.endpointOperationName}Request endpointRequest{};
+#if($hasId)
+${indent} endpointRequest.WithOperation("${operation.name}");
+#end
+#foreach($memberEntry in $operation.request.shape.members.entrySet())
+#if($memberEntry.value.endpointDiscoveryId)
+${indent}endpointRequest.AddIdentifiers("${memberEntry.key}", request.Get${memberEntry.key}());
+#end
+#end
+${indent}this->OptionallyUpdateDescribeEndpointsCache(resolvedEndpoint, request.GetServiceRequestName(), endpointKey, endpointRequest, $operation.requireEndpointDiscovery);
+#else
+${indent}AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+#end
+#end

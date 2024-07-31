@@ -152,6 +152,7 @@ public class C2jModelToGeneratorModelTransformer {
         serviceModel.setVersion(c2jServiceModel.getVersion());
         serviceModel.setDocumentation(formatDocumentation(c2jServiceModel.getDocumentation(), 3));
         serviceModel.setServiceName(c2jServiceModel.getServiceName());
+        serviceModel.setAuthSchemes(c2jServiceModel.getMetadata().getAuth());
 
         convertShapes();
         convertOperations();

@@ -31,7 +31,7 @@ public class MainGenerator {
     public ByteArrayOutputStream generateSourceFromC2jModel(C2jServiceModel c2jModel,
                                                             String serviceName, String languageBinding,
                                                             String namespace, String licenseText, boolean generateStandalonePackage,
-                                                            boolean enableVirtualOperations) throws Exception {
+                                                            boolean enableVirtualOperations, boolean useSmithyClient) throws Exception {
 
         SdkSpec spec = new SdkSpec(languageBinding, serviceName, null);
         // Transform to ServiceModel
@@ -43,6 +43,7 @@ public class MainGenerator {
         serviceModel.setNamespace(namespace);
         serviceModel.setLicenseText(licenseText);
         serviceModel.setEnableVirtualOperations(enableVirtualOperations);
+        serviceModel.setUseSmithyClient(useSmithyClient);
 
         spec.setVersion(serviceModel.getMetadata().getApiVersion());
 

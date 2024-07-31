@@ -54,6 +54,37 @@ class TestCredentialsProviderChain: public Aws::Auth::AWSCredentialsProviderChai
     }
 };
 
+class MockDeserializer
+{
+public:
+  MockDeserializer(std::shared_ptr<smithy::components::tracing::TelemetryProvider> noop) {
+    AWS_UNREFERENCED_PARAM(noop);
+  }
+
+  Aws::String Deserialize(Aws::Client::HttpResponseOutcome&& httpOutcome,
+                          const Aws::String& serviceName,
+                          const Aws::String& requestName)
+    {
+        AWS_UNREFERENCED_PARAM(httpOutcome);
+        AWS_UNREFERENCED_PARAM(serviceName);
+        AWS_UNREFERENCED_PARAM(requestName);
+        if (m_responseQueue.empty())
+        {
+            return {};
+        }
+        const auto response = m_responseQueue.front();
+        m_responseQueue.pop();
+        return response;
+    }
+
+    void PushResponse(Aws::String&& response)
+    {
+        m_responseQueue.emplace(std::move(response));
+    }
+
+private:
+    std::queue<Aws::String> m_responseQueue{};
+};
 
 class SmithyClientTest : public Aws::Testing::AwsCppSdkGTestSuite {
     
@@ -110,6 +141,8 @@ class TestAwsBearerTokenIdentityResolver
 //===============================================================
 const char SmithyClientTest::ALLOCATION_TAG[] = "SmithyClientTest";
 
+
+
 using MySmithyClientConfig = Aws::Client::ClientConfiguration;
 using MyServiceAuthSchemeResolver = smithy::AuthSchemeResolverBase<smithy::DefaultAuthSchemeResolverParameters>; //smithy::SigV4AuthSchemeResolver<>; 
 static constexpr char MyServiceName[] = "MySuperService";
@@ -120,8 +153,9 @@ using MySmithyClient = smithy::client::AwsSmithyClientT<MyServiceName,
                                                         MySmithyClientConfig,
                                                         MyServiceAuthSchemeResolver,
                                                         SigVariant,
-                                                        TestEndPointProvider>;
-
+                                                        TestEndPointProvider,
+                                                        MockDeserializer,
+                                                        Aws::String>;
 
 class TestClient : public MySmithyClient
 {
@@ -183,8 +217,7 @@ TEST_F(SmithyClientTest, testSigV4) {
         errorMarshaller,
         endPointProvider,
         authSchemeResolver,
-        authSchemesMap
-        );
+        authSchemesMap);
     smithy::client::AwsSmithyClientAsyncRequestContext ctx;
     ctx.m_pRequest = nullptr;
 
@@ -236,8 +269,7 @@ TEST_F(SmithyClientTest, testSigV4a) {
         errorMarshaller,
         endPointProvider,
         authSchemeResolver,
-        authSchemesMap
-        );
+        authSchemesMap);
     smithy::client::AwsSmithyClientAsyncRequestContext ctx;
     ctx.m_pRequest = nullptr;
 

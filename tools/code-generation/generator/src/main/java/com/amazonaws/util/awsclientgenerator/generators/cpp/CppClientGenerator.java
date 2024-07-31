@@ -666,6 +666,68 @@ public abstract class CppClientGenerator implements ClientGenerator {
         return new HashSet<String>();
     }
 
+    protected SdkFileEntry generateClientSmithyHeaderFile(final ServiceModel serviceModel) {
+        Template template = velocityEngine.getTemplate("com/amazonaws/util/awsclientgenerator/velocity/cpp/smithy/SmithyClientHeader.vm", StandardCharsets.UTF_8.name());
+
+        VelocityContext context = createContext(serviceModel);
+        context.put("CppViewHelper", CppViewHelper.class);
+        context.put("RequestlessOperations", requestlessOperations);
+        context.put("AuthSchemeResolver", "SigV4AuthSchemeResolver");
+        context.put("AuthSchemeVariants", serviceModel.getAuthSchemes().stream().map(this::mapAuthSchemes).collect(Collectors.joining(",")));
+
+        String fileName = String.format("include/aws/%s/%sClient.h", serviceModel.getMetadata().getProjectName(),
+                serviceModel.getMetadata().getClassNamePrefix());
+
+        return makeFile(template, context, fileName, true);
+    }
+
+    protected List<SdkFileEntry> generateSmithyClientSourceFile(final List<ServiceModel> serviceModels) {
+        List<SdkFileEntry> sourceFiles = new ArrayList<>();
+        for (int i = 0; i < serviceModels.size(); i++) {
+            Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/smithy/SmithyClientSource.vm", StandardCharsets.UTF_8.name());
+
+            VelocityContext context = createContext(serviceModels.get(i));
+            context.put("CppViewHelper", CppViewHelper.class);
+            context.put("AuthSchemeResolver", "SigV4AuthSchemeResolver");
+            context.put("AuthSchemeMapEntries", createAuthSchemeMapEntries(serviceModels.get(i)));
+
+            final String fileName;
+            if (i == 0) {
+                context.put("onlyGeneratedOperations", false);
+                fileName = String.format("source/%sClient.cpp", serviceModels.get(i).getMetadata().getClassNamePrefix());
+            } else {
+                context.put("onlyGeneratedOperations", true);
+                fileName = String.format("source/%sClient%d.cpp", serviceModels.get(i).getMetadata().getClassNamePrefix(), i);
+            }
+            sourceFiles.add(makeFile(template, context, fileName, true));
+        }
+        return sourceFiles;
+    }
+
+    private static final Map<String, String> AuthSchemeMapping = ImmutableMap.of(
+            "aws.auth#sigv4", "smithy::SigV4AuthScheme",
+            "aws.auth#sigv4a", "smithy::SigV4aAuthScheme"
+    );
+
+    protected String mapAuthSchemes(final String authSchemeName) {
+        if (AuthSchemeMapping.containsKey(authSchemeName)) {
+            return AuthSchemeMapping.get(authSchemeName);
+        }
+        throw new RuntimeException(String.format("Unsupported authScheme '%s'", authSchemeName));
+    }
+
+
+    private static final Map<String, String> SchemeIdMapping = ImmutableMap.of(
+            "aws.auth#sigv4", "smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption",
+            "aws.auth#sigv4a", "smithy::SigV4AuthSchemeOption::sigV4aAuthSchemeOption"
+    );
+    private static final String SchemeMapFormat = "%s.schemeId, %s";
+    private List<String> createAuthSchemeMapEntries(final ServiceModel serviceModel) {
+        return serviceModel.getAuthSchemes().stream()
+                .map(authScheme -> String.format(SchemeMapFormat, SchemeIdMapping.get(authScheme), AuthSchemeMapping.get(authScheme)))
+                .collect(Collectors.toList());
+    }
+
     private void addRequestlessRequestObjectS(final ServiceModel serviceModel) {
         serviceModel.getOperations().values().stream()
                 .filter(operation -> !operation.hasRequest() || operation.getRequest().getShape().getMembers().values().stream().noneMatch(ShapeMember::isRequired))

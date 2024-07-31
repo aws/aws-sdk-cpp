@@ -45,6 +45,10 @@ SERVICE_NAME_REMAPS = {"runtime.lex": "lex",
 CORE_COMPONENT_TO_MODEL = {"defaults": DEFAULTS_FILE_LOCATION,
                            "partitions": PARTITIONS_FILE_LOCATION}
 
+SMITHY_SUPPORTED_CLIENTS = [
+    "dynamodb"
+]
+
 DEBUG = False
 
 class ServiceModel(object):
@@ -306,6 +310,9 @@ def generate_single_client(service_name: str,
         run_command += ["--endpoint-tests", f"{endpoints_filepath}/{model_files.endpoint_tests}"]
     run_command += ["--service", service_name]
     run_command += ["--outputfile", output_filename]
+
+    if service_name in SMITHY_SUPPORTED_CLIENTS:
+        run_command += ["--use-smithy-client"]
 
     for key, val in kwargs.items():
         run_command += [f"--{key}", val]

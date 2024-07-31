@@ -143,7 +143,8 @@ void AwsSmithyClientBase::MakeRequestAsync(Aws::AmazonWebServiceRequest const* c
     pRequestCtx->m_authSchemeOption = std::move(authSchemeOptionOutcome.GetResultWithOwnership());
     assert(pRequestCtx->m_authSchemeOption.schemeId);
     Aws::Endpoint::EndpointParameters epParams = request ? request->GetEndpointContextParams() : Aws::Endpoint::EndpointParameters();
-    epParams.insert(epParams.end(), pRequestCtx->m_authSchemeOption.endpointParameters.begin(), pRequestCtx->m_authSchemeOption.endpointParameters.end());
+    const auto authSchemeEpParams = pRequestCtx->m_authSchemeOption.endpointParameters();
+    epParams.insert(epParams.end(), authSchemeEpParams.begin(), authSchemeEpParams.end());
     auto epResolutionOutcome = this->ResolveEndpoint(std::move(epParams), std::move(endpointCallback));
     if (!epResolutionOutcome.IsSuccess())
     {
@@ -478,4 +479,9 @@ AwsSmithyClientBase::MakeRequestSync(Aws::AmazonWebServiceRequest const * const 
     pExecutor->WaitUntilStopped();
 
     return outcome;
+}
+
+void AwsSmithyClientBase::DisableRequestProcessing()
+{
+    m_httpClient->DisableRequestProcessing();
 }

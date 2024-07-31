@@ -114,7 +114,7 @@ namespace smithy
                     return;
                 }
 
-                auto identityResult = identityResolver->getIdentity(m_targetAuthSchemeOption.identityProperties, m_targetAuthSchemeOption.identityProperties);
+                auto identityResult = identityResolver->getIdentity(m_targetAuthSchemeOption.identityProperties(), m_targetAuthSchemeOption.identityProperties());
 
                 if (!identityResult.IsSuccess())
                 {
@@ -133,7 +133,7 @@ namespace smithy
                     return;
                 }
 
-                result.emplace(signer->sign(m_httpRequest, *identity, m_targetAuthSchemeOption.signerProperties));
+                result.emplace(signer->sign(m_httpRequest, *identity, m_targetAuthSchemeOption.signerProperties()));
             }
         };
 

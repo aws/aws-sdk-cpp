@@ -7,6 +7,8 @@ package com.amazonaws.util.awsclientgenerator.domainmodels.c2j;
 
 import lombok.Data;
 
+import java.util.List;
+
 @Data
 public class C2jMetadata {
     private String apiVersion;
@@ -25,4 +27,5 @@ public class C2jMetadata {
     private String timestampFormat;
     private String serviceId;
     private C2jAwsQueryCompatible awsQueryCompatible;
+    private List<String> auth;
 }

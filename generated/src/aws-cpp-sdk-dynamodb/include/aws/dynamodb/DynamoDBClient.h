@@ -6,15 +6,18 @@
 #pragma once
 #include <aws/dynamodb/DynamoDB_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/dynamodb/DynamoDBServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
 
 namespace Aws
 {
 namespace DynamoDB
 {
+  AWS_DYNAMODB_API extern const char SERVICE_NAME[];
   /**
    * <fullname>Amazon DynamoDB</fullname> <p>Amazon DynamoDB is a fully managed NoSQL
    * database service that provides fast and predictable performance with seamless
@@ -33,10 +36,16 @@ namespace DynamoDB
    * Zones in an Amazon Web Services Region, providing built-in high availability and
    * data durability.</p>
    */
-  class AWS_DYNAMODB_API DynamoDBClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<DynamoDBClient>
+  class AWS_DYNAMODB_API DynamoDBClient : smithy::client::AwsSmithyClientT<Aws::DynamoDB::SERVICE_NAME,
+      Aws::DynamoDB::DynamoDBClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      DynamoDBEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome>,
+    Aws::Client::ClientWithAsyncTemplateMethods<DynamoDBClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
 
@@ -2275,9 +2284,12 @@ namespace DynamoDB
       friend class Aws::Client::ClientWithAsyncTemplateMethods<DynamoDBClient>;
       void init(const DynamoDBClientConfiguration& clientConfiguration);
 
+      void OptionallyUpdateDescribeEndpointsCache(Aws::Endpoint::AWSEndpoint& resolvedEndpoint,
+        const Aws::String& operationName,
+        const Aws::String& endpointKey,
+        const Aws::DynamoDB::Model::DescribeEndpointsRequest& endpointRequest,
+        bool enforceDiscovery) const;
       mutable Aws::Utils::ConcurrentCache<Aws::String, Aws::String> m_endpointsCache;
-      DynamoDBClientConfiguration m_clientConfiguration;
-      std::shared_ptr<DynamoDBEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace DynamoDB
