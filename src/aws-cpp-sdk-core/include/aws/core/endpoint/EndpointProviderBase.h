@@ -33,7 +33,7 @@ namespace Aws
           *   EndpointParameters to either an Endpoint or an error.
           * This Base class represents a min interface required to be implemented to override an endpoint provider.
           */
-        template<typename ClientConfigurationT = Aws::Client::GenericClientConfiguration<false>,
+        template<typename ClientConfigurationT = Aws::Client::GenericClientConfiguration,
                  typename BuiltInParametersT = Aws::Endpoint::BuiltInParameters,
                  typename ClientContextParametersT = Aws::Endpoint::ClientContextParameters>
         class AWS_CORE_API EndpointProviderBase
@@ -69,10 +69,5 @@ namespace Aws
              */
             virtual ResolveEndpointOutcome ResolveEndpoint(const EndpointParameters& endpointParameters) const = 0;
         };
-
-        /**
-         * Export endpoint provider symbols for Windows DLL, otherwise declare as extern
-         */
-        AWS_CORE_EXTERN template class AWS_CORE_API EndpointProviderBase<Aws::Client::GenericClientConfiguration<true>>;
     } // namespace Endpoint
 } // namespace Aws

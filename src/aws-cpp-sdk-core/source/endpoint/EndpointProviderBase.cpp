@@ -13,11 +13,9 @@ namespace Endpoint
 /**
  * Instantiate endpoint providers
  */
-template class EndpointProviderBase<Aws::Client::GenericClientConfiguration<false>,
+template class EndpointProviderBase<Aws::Client::GenericClientConfiguration,
             Aws::Endpoint::BuiltInParameters,
             Aws::Endpoint::ClientContextParameters>;
-
-template class EndpointProviderBase<Aws::Client::GenericClientConfiguration<true>>;
 #endif
 } // namespace Endpoint
 } // namespace Aws

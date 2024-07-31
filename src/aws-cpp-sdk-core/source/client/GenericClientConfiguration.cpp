@@ -13,11 +13,11 @@ namespace Aws
 {
 namespace Client
 {
-template struct AWS_CORE_API GenericClientConfiguration<false>;
+struct AWS_CORE_API GenericClientConfiguration;
 
-bool IsEndpointDiscoveryEnabled(const Aws::String& endpointOverride, const Aws::String &profileName)
+bool IsEndpointDiscoveryEnabled(const Aws::String& endpointOverride, const Aws::String &profileName, const bool defaultValue)
 {
-  bool enabled = true;  // default value for AWS Services with enabled discovery trait
+  bool enabled = defaultValue;  // default value for AWS Services with enabled discovery trait
   if (!endpointOverride.empty())
   {
     enabled = false;
@@ -44,12 +44,13 @@ bool IsEndpointDiscoveryEnabled(const Aws::String& endpointOverride, const Aws::
   return enabled;
 }
 
+#if 0
 GenericClientConfiguration<true>::GenericClientConfiguration(const ClientConfigurationInitValues &configuration)
     : ClientConfiguration(configuration),
       enableHostPrefixInjection(ClientConfiguration::enableHostPrefixInjection),
       enableEndpointDiscovery(ClientConfiguration::enableEndpointDiscovery)
 {
-    enableEndpointDiscovery = IsEndpointDiscoveryEnabled(this->endpointOverride, this->profileName);
+    enableEndpointDiscovery = IsEndpointDiscoveryEnabled(this->endpointOverride, this->profileName, EndpointDiscoveryDefaultValue);
     enableHostPrefixInjection = false; // disabled by default in the SDK
 }
 
@@ -98,6 +99,7 @@ GenericClientConfiguration<true>& GenericClientConfiguration<true>::operator=(co
   }
   return *this;
 }
+#endif
 
 } // namespace Client
 } // namespace Aws
