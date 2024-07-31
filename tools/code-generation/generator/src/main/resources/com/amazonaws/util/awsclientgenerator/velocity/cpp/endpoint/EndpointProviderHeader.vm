@@ -66,11 +66,7 @@ using ${epContextClassName} = Aws::Endpoint::ClientContextParameters;
 #end
 
 #if($serviceModel.metadata.serviceId != "S3" && $serviceModel.metadata.serviceId != "S3 Control")
-#if(!$metadata.hasEndpointDiscoveryTrait)
-using ${metadata.classNamePrefix}ClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
-#else
-using ${metadata.classNamePrefix}ClientConfiguration = Aws::Client::GenericClientConfiguration<true>;
-#end
+using ${metadata.classNamePrefix}ClientConfiguration = Aws::Client::GenericClientConfiguration;
 #end
 #if($serviceModel.metadata.serviceId == "S3" || $serviceModel.metadata.serviceId == "S3 Control")
 class ${exportMacro} ${epBuiltInClassName} : public Aws::Endpoint::BuiltInParameters

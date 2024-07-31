@@ -22,11 +22,10 @@ namespace Aws
 
             BuiltInParameters() = default;
             BuiltInParameters(const BuiltInParameters&) = delete; // avoid accidental copy
-            virtual ~BuiltInParameters(){};
+            virtual ~BuiltInParameters() = default;
 
             virtual void SetFromClientConfiguration(const Client::ClientConfiguration& config);
-            virtual void SetFromClientConfiguration(const Client::GenericClientConfiguration<false>& config);
-            virtual void SetFromClientConfiguration(const Client::GenericClientConfiguration<true>& config);
+            virtual void SetFromClientConfiguration(const Client::GenericClientConfiguration& config);
 
             virtual void OverrideEndpoint(const Aws::String& endpoint, const Aws::Http::Scheme& scheme = Aws::Http::Scheme::HTTPS);
 
