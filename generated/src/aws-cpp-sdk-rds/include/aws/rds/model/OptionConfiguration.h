@@ -26,7 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>A list of all available options</p><p><h3>See Also:</h3>   <a
+   * <p>A list of all available options for an option group.</p><p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/OptionConfiguration">AWS
    * API Reference</a></p>
    */
@@ -81,7 +82,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>A list of DBSecurityGroupMembership name strings used for this option.</p>
+     * <p>A list of DB security groups used for this option.</p>
      */
     inline const Aws::Vector<Aws::String>& GetDBSecurityGroupMemberships() const{ return m_dBSecurityGroupMemberships; }
     inline bool DBSecurityGroupMembershipsHasBeenSet() const { return m_dBSecurityGroupMembershipsHasBeenSet; }
@@ -96,7 +97,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>A list of VpcSecurityGroupMembership name strings used for this option.</p>
+     * <p>A list of VPC security group names used for this option.</p>
      */
     inline const Aws::Vector<Aws::String>& GetVpcSecurityGroupMemberships() const{ return m_vpcSecurityGroupMemberships; }
     inline bool VpcSecurityGroupMembershipsHasBeenSet() const { return m_vpcSecurityGroupMembershipsHasBeenSet; }

@@ -22,7 +22,8 @@ JupyterLabAppSettings::JupyterLabAppSettings() :
     m_defaultResourceSpecHasBeenSet(false),
     m_customImagesHasBeenSet(false),
     m_lifecycleConfigArnsHasBeenSet(false),
-    m_codeRepositoriesHasBeenSet(false)
+    m_codeRepositoriesHasBeenSet(false),
+    m_emrSettingsHasBeenSet(false)
 {
 }
 
@@ -71,6 +72,13 @@ JupyterLabAppSettings& JupyterLabAppSettings::operator =(JsonView jsonValue)
     m_codeRepositoriesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("EmrSettings"))
+  {
+    m_emrSettings = jsonValue.GetObject("EmrSettings");
+
+    m_emrSettingsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -114,6 +122,12 @@ JsonValue JupyterLabAppSettings::Jsonize() const
      codeRepositoriesJsonList[codeRepositoriesIndex].AsObject(m_codeRepositories[codeRepositoriesIndex].Jsonize());
    }
    payload.WithArray("CodeRepositories", std::move(codeRepositoriesJsonList));
+
+  }
+
+  if(m_emrSettingsHasBeenSet)
+  {
+   payload.WithObject("EmrSettings", m_emrSettings.Jsonize());
 
   }
 

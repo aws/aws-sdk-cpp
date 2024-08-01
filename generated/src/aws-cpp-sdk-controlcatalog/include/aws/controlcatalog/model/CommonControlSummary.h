@@ -6,9 +6,9 @@
 #pragma once
 #include <aws/controlcatalog/ControlCatalog_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/controlcatalog/model/AssociatedDomainSummary.h>
 #include <aws/controlcatalog/model/AssociatedObjectiveSummary.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -56,14 +56,16 @@ namespace Model
 
     ///@{
     /**
-     * <p>The time when the common control was created.</p>
+     * <p>The name of the common control.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreateTime() const{ return m_createTime; }
-    inline bool CreateTimeHasBeenSet() const { return m_createTimeHasBeenSet; }
-    inline void SetCreateTime(const Aws::Utils::DateTime& value) { m_createTimeHasBeenSet = true; m_createTime = value; }
-    inline void SetCreateTime(Aws::Utils::DateTime&& value) { m_createTimeHasBeenSet = true; m_createTime = std::move(value); }
-    inline CommonControlSummary& WithCreateTime(const Aws::Utils::DateTime& value) { SetCreateTime(value); return *this;}
-    inline CommonControlSummary& WithCreateTime(Aws::Utils::DateTime&& value) { SetCreateTime(std::move(value)); return *this;}
+    inline const Aws::String& GetName() const{ return m_name; }
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
+    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
+    inline CommonControlSummary& WithName(const Aws::String& value) { SetName(value); return *this;}
+    inline CommonControlSummary& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
+    inline CommonControlSummary& WithName(const char* value) { SetName(value); return *this;}
     ///@}
 
     ///@{
@@ -94,32 +96,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The time when the common control was most recently updated.</p>
-     */
-    inline const Aws::Utils::DateTime& GetLastUpdateTime() const{ return m_lastUpdateTime; }
-    inline bool LastUpdateTimeHasBeenSet() const { return m_lastUpdateTimeHasBeenSet; }
-    inline void SetLastUpdateTime(const Aws::Utils::DateTime& value) { m_lastUpdateTimeHasBeenSet = true; m_lastUpdateTime = value; }
-    inline void SetLastUpdateTime(Aws::Utils::DateTime&& value) { m_lastUpdateTimeHasBeenSet = true; m_lastUpdateTime = std::move(value); }
-    inline CommonControlSummary& WithLastUpdateTime(const Aws::Utils::DateTime& value) { SetLastUpdateTime(value); return *this;}
-    inline CommonControlSummary& WithLastUpdateTime(Aws::Utils::DateTime&& value) { SetLastUpdateTime(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The name of the common control.</p>
-     */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CommonControlSummary& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CommonControlSummary& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CommonControlSummary& WithName(const char* value) { SetName(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The objective that the common control belongs to.</p>
      */
     inline const AssociatedObjectiveSummary& GetObjective() const{ return m_objective; }
@@ -129,13 +105,37 @@ namespace Model
     inline CommonControlSummary& WithObjective(const AssociatedObjectiveSummary& value) { SetObjective(value); return *this;}
     inline CommonControlSummary& WithObjective(AssociatedObjectiveSummary&& value) { SetObjective(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The time when the common control was created.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCreateTime() const{ return m_createTime; }
+    inline bool CreateTimeHasBeenSet() const { return m_createTimeHasBeenSet; }
+    inline void SetCreateTime(const Aws::Utils::DateTime& value) { m_createTimeHasBeenSet = true; m_createTime = value; }
+    inline void SetCreateTime(Aws::Utils::DateTime&& value) { m_createTimeHasBeenSet = true; m_createTime = std::move(value); }
+    inline CommonControlSummary& WithCreateTime(const Aws::Utils::DateTime& value) { SetCreateTime(value); return *this;}
+    inline CommonControlSummary& WithCreateTime(Aws::Utils::DateTime&& value) { SetCreateTime(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The time when the common control was most recently updated.</p>
+     */
+    inline const Aws::Utils::DateTime& GetLastUpdateTime() const{ return m_lastUpdateTime; }
+    inline bool LastUpdateTimeHasBeenSet() const { return m_lastUpdateTimeHasBeenSet; }
+    inline void SetLastUpdateTime(const Aws::Utils::DateTime& value) { m_lastUpdateTimeHasBeenSet = true; m_lastUpdateTime = value; }
+    inline void SetLastUpdateTime(Aws::Utils::DateTime&& value) { m_lastUpdateTimeHasBeenSet = true; m_lastUpdateTime = std::move(value); }
+    inline CommonControlSummary& WithLastUpdateTime(const Aws::Utils::DateTime& value) { SetLastUpdateTime(value); return *this;}
+    inline CommonControlSummary& WithLastUpdateTime(Aws::Utils::DateTime&& value) { SetLastUpdateTime(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createTime;
-    bool m_createTimeHasBeenSet = false;
+    Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
@@ -143,14 +143,14 @@ namespace Model
     AssociatedDomainSummary m_domain;
     bool m_domainHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdateTime;
-    bool m_lastUpdateTimeHasBeenSet = false;
-
-    Aws::String m_name;
-    bool m_nameHasBeenSet = false;
-
     AssociatedObjectiveSummary m_objective;
     bool m_objectiveHasBeenSet = false;
+
+    Aws::Utils::DateTime m_createTime;
+    bool m_createTimeHasBeenSet = false;
+
+    Aws::Utils::DateTime m_lastUpdateTime;
+    bool m_lastUpdateTimeHasBeenSet = false;
   };
 
 } // namespace Model

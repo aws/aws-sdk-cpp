@@ -332,7 +332,9 @@ namespace MemoryDB
 
         /**
          * <p>Deletes a cluster. It also deletes all associated nodes and node
-         * endpoints</p><p><h3>See Also:</h3>   <a
+         * endpoints</p>  <p> <code>CreateSnapshot</code> permission is required to
+         * create a final snapshot. Without this permission, the API call will fail with an
+         * <code>Access Denied</code> exception.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/DeleteCluster">AWS
          * API Reference</a></p>
          */

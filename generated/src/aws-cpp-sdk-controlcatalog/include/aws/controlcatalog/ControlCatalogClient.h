@@ -95,6 +95,40 @@ namespace ControlCatalog
         virtual ~ControlCatalogClient();
 
         /**
+         * <p>Returns details about a specific control, most notably a list of Amazon Web
+         * Services Regions where this control is supported. Input a value for the
+         * <i>ControlArn</i> parameter, in ARN form. <code>GetControl</code> accepts
+         * <i>controltower</i> or <i>controlcatalog</i> control ARNs as input. Returns a
+         * <i>controlcatalog</i> ARN format.</p> <p>In the API response, controls that have
+         * the value <code>GLOBAL</code> in the <code>Scope</code> field do not show the
+         * <code>DeployableRegions</code> field, because it does not apply. Controls that
+         * have the value <code>REGIONAL</code> in the <code>Scope</code> field return a
+         * value for the <code>DeployableRegions</code> field, as shown in the
+         * example.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/controlcatalog-2018-05-10/GetControl">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetControlOutcome GetControl(const Model::GetControlRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetControl that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetControlRequestT = Model::GetControlRequest>
+        Model::GetControlOutcomeCallable GetControlCallable(const GetControlRequestT& request) const
+        {
+            return SubmitCallable(&ControlCatalogClient::GetControl, request);
+        }
+
+        /**
+         * An Async wrapper for GetControl that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetControlRequestT = Model::GetControlRequest>
+        void GetControlAsync(const GetControlRequestT& request, const GetControlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ControlCatalogClient::GetControl, request, handler, context);
+        }
+
+        /**
          * <p>Returns a paginated list of common controls from the Amazon Web Services
          * Control Catalog.</p> <p>You can apply an optional filter to see common controls
          * that have a specific objective. If you don’t provide a filter, the operation
@@ -120,6 +154,35 @@ namespace ControlCatalog
         void ListCommonControlsAsync(const ListCommonControlsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListCommonControlsRequestT& request = {}) const
         {
             return SubmitAsync(&ControlCatalogClient::ListCommonControls, request, handler, context);
+        }
+
+        /**
+         * <p>Returns a paginated list of all available controls in the Amazon Web Services
+         * Control Catalog library. Allows you to discover available controls. The list of
+         * controls is given as structures of type <i>controlSummary</i>. The ARN is
+         * returned in the global <i>controlcatalog</i> format, as shown in the
+         * examples.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/controlcatalog-2018-05-10/ListControls">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListControlsOutcome ListControls(const Model::ListControlsRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for ListControls that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListControlsRequestT = Model::ListControlsRequest>
+        Model::ListControlsOutcomeCallable ListControlsCallable(const ListControlsRequestT& request = {}) const
+        {
+            return SubmitCallable(&ControlCatalogClient::ListControls, request);
+        }
+
+        /**
+         * An Async wrapper for ListControls that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListControlsRequestT = Model::ListControlsRequest>
+        void ListControlsAsync(const ListControlsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListControlsRequestT& request = {}) const
+        {
+            return SubmitAsync(&ControlCatalogClient::ListControls, request, handler, context);
         }
 
         /**

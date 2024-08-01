@@ -121,6 +121,20 @@ namespace Model
     inline CustomModelSummary& WithCustomizationType(const CustomizationType& value) { SetCustomizationType(value); return *this;}
     inline CustomModelSummary& WithCustomizationType(CustomizationType&& value) { SetCustomizationType(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The unique identifier of the account that owns the model.</p>
+     */
+    inline const Aws::String& GetOwnerAccountId() const{ return m_ownerAccountId; }
+    inline bool OwnerAccountIdHasBeenSet() const { return m_ownerAccountIdHasBeenSet; }
+    inline void SetOwnerAccountId(const Aws::String& value) { m_ownerAccountIdHasBeenSet = true; m_ownerAccountId = value; }
+    inline void SetOwnerAccountId(Aws::String&& value) { m_ownerAccountIdHasBeenSet = true; m_ownerAccountId = std::move(value); }
+    inline void SetOwnerAccountId(const char* value) { m_ownerAccountIdHasBeenSet = true; m_ownerAccountId.assign(value); }
+    inline CustomModelSummary& WithOwnerAccountId(const Aws::String& value) { SetOwnerAccountId(value); return *this;}
+    inline CustomModelSummary& WithOwnerAccountId(Aws::String&& value) { SetOwnerAccountId(std::move(value)); return *this;}
+    inline CustomModelSummary& WithOwnerAccountId(const char* value) { SetOwnerAccountId(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_modelArn;
@@ -140,6 +154,9 @@ namespace Model
 
     CustomizationType m_customizationType;
     bool m_customizationTypeHasBeenSet = false;
+
+    Aws::String m_ownerAccountId;
+    bool m_ownerAccountIdHasBeenSet = false;
   };
 
 } // namespace Model

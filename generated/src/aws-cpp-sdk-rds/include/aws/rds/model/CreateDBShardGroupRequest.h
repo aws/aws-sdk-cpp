@@ -93,6 +93,17 @@ namespace Model
 
     ///@{
     /**
+     * <p>The minimum capacity of the DB shard group in Aurora capacity units
+     * (ACUs).</p>
+     */
+    inline double GetMinACU() const{ return m_minACU; }
+    inline bool MinACUHasBeenSet() const { return m_minACUHasBeenSet; }
+    inline void SetMinACU(double value) { m_minACUHasBeenSet = true; m_minACU = value; }
+    inline CreateDBShardGroupRequest& WithMinACU(double value) { SetMinACU(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Specifies whether the DB shard group is publicly accessible.</p> <p>When the
      * DB shard group is publicly accessible, its Domain Name System (DNS) endpoint
      * resolves to the private IP address from within the DB shard group's virtual
@@ -133,6 +144,9 @@ namespace Model
 
     double m_maxACU;
     bool m_maxACUHasBeenSet = false;
+
+    double m_minACU;
+    bool m_minACUHasBeenSet = false;
 
     bool m_publiclyAccessible;
     bool m_publiclyAccessibleHasBeenSet = false;

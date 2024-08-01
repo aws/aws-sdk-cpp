@@ -45,6 +45,8 @@ namespace ControlTower
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/controltower/latest/APIReference/API_ListLandingZones.html">ListLandingZones</a>
    * </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/controltower/latest/APIReference/API_ListLandingZoneOperations.html">ListLandingZoneOperations</a>
+   * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/controltower/latest/APIReference/API_ResetLandingZone.html">ResetLandingZone</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/controltower/latest/APIReference/API_UpdateLandingZone.html">UpdateLandingZone</a>
@@ -69,8 +71,8 @@ namespace ControlTower
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/controltower/latest/APIReference/API_UpdateEnabledBaseline.html">UpdateEnabledBaseline</a>
    * </p> </li> </ul> </li> <li> <p> <a
-   * href="https://docs.aws.amazon.com/controltower/latest/controlreference/tagging.html">Tagging</a>
-   * </p> <ul> <li> <p> <a
+   * href="https://docs.aws.amazon.com/controltower/latest/controlreference/tagging.html">
+   * <i>Tagging</i> </a> </p> <ul> <li> <p> <a
    * href="https://docs.aws.amazon.com/controltower/latest/APIReference/API_ListTagsForResource.html">ListTagsForResource</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/controltower/latest/APIReference/API_TagResource.html">TagResource</a>
@@ -93,9 +95,11 @@ namespace ControlTower
    * control:</b> </p> <p>The <code>controlIdentifier</code> is an ARN that is
    * specified for each control. You can view the <code>controlIdentifier</code> in
    * the console on the <b>Control details</b> page, as well as in the
-   * documentation.</p> <p>The <code>controlIdentifier</code> is unique in each
-   * Amazon Web Services Region for each control. You can find the
-   * <code>controlIdentifier</code> for each Region and control in the <a
+   * documentation.</p> <p> <b>About identifiers for Amazon Web Services Control
+   * Tower</b> </p> <p>The Amazon Web Services Control Tower
+   * <code>controlIdentifier</code> is unique in each Amazon Web Services Region for
+   * each control. You can find the <code>controlIdentifier</code> for each Region
+   * and control in the <a
    * href="https://docs.aws.amazon.com/controltower/latest/controlreference/control-metadata-tables.html">Tables
    * of control metadata</a> or the <a
    * href="https://docs.aws.amazon.com/controltower/latest/controlreference/control-region-tables.html">Control
@@ -107,11 +111,23 @@ namespace ControlTower
    * identifiers for APIs and controls</a> in the <a
    * href="https://docs.aws.amazon.com/controltower/latest/controlreference/control-identifiers.html">
    * <i>Amazon Web Services Control Tower Controls Reference Guide</i> </a>. Remember
-   * that <i>Mandatory</i> controls cannot be added or removed.</p>  <p> <b>ARN
-   * format:</b> <code>arn:aws:controltower:{REGION}::control/{CONTROL_NAME}</code>
+   * that <i>Mandatory</i> controls cannot be added or removed.</p>  <p>
+   * <b>Some controls have two identifiers</b> </p> <ul> <li> <p> <b>ARN format for
+   * Amazon Web Services Control Tower:</b>
+   * <code>arn:aws:controltower:{REGION}::control/{CONTROL_TOWER_OPAQUE_ID}</code>
    * </p> <p> <b>Example:</b> </p> <p>
    * <code>arn:aws:controltower:us-west-2::control/AWS-GR_AUTOSCALING_LAUNCH_CONFIG_PUBLIC_IP_DISABLED</code>
-   * </p>  <p> <b>To get the <code>targetIdentifier</code>:</b> </p> <p>The
+   * </p> </li> <li> <p> <b>ARN format for Amazon Web Services Control Catalog:</b>
+   * <code>arn:{PARTITION}:controlcatalog:::control/{CONTROL_CATALOG_OPAQUE_ID}</code>
+   * </p> </li> </ul> <p>You can find the <code>{CONTROL_CATALOG_OPAQUE_ID}</code> in
+   * the <a
+   * href="https://docs.aws.amazon.com/controltower/latest/controlreference/all-global-identifiers.html">
+   * <i>Amazon Web Services Control Tower Controls Reference Guide</i> </a>, or in
+   * the Amazon Web Services Control Tower console, on the <b>Control details</b>
+   * page.</p> <p>The Amazon Web Services Control Tower APIs for enabled controls,
+   * such as <code>GetEnabledControl</code> and <code>ListEnabledControls</code>
+   * always return an ARN of the same type given when the control was enabled.</p>
+   *  <p> <b>To get the <code>targetIdentifier</code>:</b> </p> <p>The
    * <code>targetIdentifier</code> is the ARN for an OU.</p> <p>In the Amazon Web
    * Services Organizations console, you can find the ARN for the OU on the
    * <b>Organizational unit details</b> page associated with that OU.</p>  <p>
@@ -142,8 +158,20 @@ namespace ControlTower
    * href="https://docs.aws.amazon.com/controltower/latest/APIReference/API_Operations.html">API
    * reference manual</a>, in the "Actions" section. For usage examples, see <a
    * href="https://docs.aws.amazon.com/controltower/latest/userguide/baseline-api-examples.html">Baseline
-   * API input and output examples with CLI</a>.</p> <p class="title"> <b>Details and
-   * examples</b> </p> <ul> <li> <p> <a
+   * API input and output examples with CLI</a>.</p> <p> <b> About Amazon Web
+   * Services Control Catalog identifiers</b> </p> <ul> <li> <p>The
+   * <code>EnableControl</code> and <code>DisableControl</code> API operations can be
+   * called by specifying either the Amazon Web Services Control Tower identifer or
+   * the Amazon Web Services Control Catalog identifier. The API response returns the
+   * same type of identifier that you specified when calling the API.</p> </li> <li>
+   * <p>If you use an Amazon Web Services Control Tower identifier to call the
+   * <code>EnableControl</code> API, and then call <code>EnableControl</code> again
+   * with an Amazon Web Services Control Catalog identifier, Amazon Web Services
+   * Control Tower returns an error message stating that the control is already
+   * enabled. Similar behavior applies to the <code>DisableControl</code> API
+   * operation. </p> </li> <li> <p>Mandatory controls and the landing-zone-level
+   * Region deny control have Amazon Web Services Control Tower identifiers only.</p>
+   * </li> </ul> <p class="title"> <b>Details and examples</b> </p> <ul> <li> <p> <a
    * href="https://docs.aws.amazon.com/controltower/latest/controlreference/control-api-examples-short.html">Control
    * API input and output examples with CLI</a> </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/controltower/latest/userguide/baseline-api-examples.html">Baseline

@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/controlcatalog/ControlCatalog_EXPORTS.h>
 #include <aws/controlcatalog/ControlCatalogRequest.h>
-#include <aws/controlcatalog/model/CommonControlFilter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/controlcatalog/model/CommonControlFilter.h>
 #include <utility>
 
 namespace Aws
@@ -41,21 +41,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>An optional filter that narrows the results to a specific objective.</p>
-     * <p>This filter allows you to specify one objective ARN at a time. Passing
-     * multiple ARNs in the <code>CommonControlFilter</code> isn’t currently
-     * supported.</p>
-     */
-    inline const CommonControlFilter& GetCommonControlFilter() const{ return m_commonControlFilter; }
-    inline bool CommonControlFilterHasBeenSet() const { return m_commonControlFilterHasBeenSet; }
-    inline void SetCommonControlFilter(const CommonControlFilter& value) { m_commonControlFilterHasBeenSet = true; m_commonControlFilter = value; }
-    inline void SetCommonControlFilter(CommonControlFilter&& value) { m_commonControlFilterHasBeenSet = true; m_commonControlFilter = std::move(value); }
-    inline ListCommonControlsRequest& WithCommonControlFilter(const CommonControlFilter& value) { SetCommonControlFilter(value); return *this;}
-    inline ListCommonControlsRequest& WithCommonControlFilter(CommonControlFilter&& value) { SetCommonControlFilter(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The maximum number of results on a page or for an API request call.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
@@ -77,16 +62,31 @@ namespace Model
     inline ListCommonControlsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
     inline ListCommonControlsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
     ///@}
-  private:
 
-    CommonControlFilter m_commonControlFilter;
-    bool m_commonControlFilterHasBeenSet = false;
+    ///@{
+    /**
+     * <p>An optional filter that narrows the results to a specific objective.</p>
+     * <p>This filter allows you to specify one objective ARN at a time. Passing
+     * multiple ARNs in the <code>CommonControlFilter</code> isn’t currently
+     * supported.</p>
+     */
+    inline const CommonControlFilter& GetCommonControlFilter() const{ return m_commonControlFilter; }
+    inline bool CommonControlFilterHasBeenSet() const { return m_commonControlFilterHasBeenSet; }
+    inline void SetCommonControlFilter(const CommonControlFilter& value) { m_commonControlFilterHasBeenSet = true; m_commonControlFilter = value; }
+    inline void SetCommonControlFilter(CommonControlFilter&& value) { m_commonControlFilterHasBeenSet = true; m_commonControlFilter = std::move(value); }
+    inline ListCommonControlsRequest& WithCommonControlFilter(const CommonControlFilter& value) { SetCommonControlFilter(value); return *this;}
+    inline ListCommonControlsRequest& WithCommonControlFilter(CommonControlFilter&& value) { SetCommonControlFilter(std::move(value)); return *this;}
+    ///@}
+  private:
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
+
+    CommonControlFilter m_commonControlFilter;
+    bool m_commonControlFilterHasBeenSet = false;
   };
 
 } // namespace Model

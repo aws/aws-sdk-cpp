@@ -20,11 +20,11 @@ namespace Model
 
 ObjectiveSummary::ObjectiveSummary() : 
     m_arnHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
+    m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_domainHasBeenSet(false),
-    m_lastUpdateTimeHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_createTimeHasBeenSet(false),
+    m_lastUpdateTimeHasBeenSet(false)
 {
 }
 
@@ -43,11 +43,11 @@ ObjectiveSummary& ObjectiveSummary::operator =(JsonView jsonValue)
     m_arnHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("CreateTime"))
+  if(jsonValue.ValueExists("Name"))
   {
-    m_createTime = jsonValue.GetDouble("CreateTime");
+    m_name = jsonValue.GetString("Name");
 
-    m_createTimeHasBeenSet = true;
+    m_nameHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Description"))
@@ -64,18 +64,18 @@ ObjectiveSummary& ObjectiveSummary::operator =(JsonView jsonValue)
     m_domainHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CreateTime"))
+  {
+    m_createTime = jsonValue.GetDouble("CreateTime");
+
+    m_createTimeHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("LastUpdateTime"))
   {
     m_lastUpdateTime = jsonValue.GetDouble("LastUpdateTime");
 
     m_lastUpdateTimeHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("Name"))
-  {
-    m_name = jsonValue.GetString("Name");
-
-    m_nameHasBeenSet = true;
   }
 
   return *this;
@@ -91,9 +91,10 @@ JsonValue ObjectiveSummary::Jsonize() const
 
   }
 
-  if(m_createTimeHasBeenSet)
+  if(m_nameHasBeenSet)
   {
-   payload.WithDouble("CreateTime", m_createTime.SecondsWithMSPrecision());
+   payload.WithString("Name", m_name);
+
   }
 
   if(m_descriptionHasBeenSet)
@@ -108,15 +109,14 @@ JsonValue ObjectiveSummary::Jsonize() const
 
   }
 
+  if(m_createTimeHasBeenSet)
+  {
+   payload.WithDouble("CreateTime", m_createTime.SecondsWithMSPrecision());
+  }
+
   if(m_lastUpdateTimeHasBeenSet)
   {
    payload.WithDouble("LastUpdateTime", m_lastUpdateTime.SecondsWithMSPrecision());
-  }
-
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
   }
 
   return payload;

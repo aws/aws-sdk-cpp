@@ -26,7 +26,9 @@ namespace Model
 
   /**
    * <p>An attachment to a case communication. The attachment consists of the file
-   * name and the content of the file.</p><p><h3>See Also:</h3>   <a
+   * name and the content of the file. Each attachment file size should not exceed 5
+   * MB. File types that are supported include the following: pdf, jpeg,.doc, .log,
+   * .text </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/Attachment">AWS
    * API Reference</a></p>
    */

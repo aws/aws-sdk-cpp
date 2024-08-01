@@ -111,7 +111,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>Maximum number of results to return in the response.</p>
+     * <p>The maximum number of results to return in the response. If the total number
+     * of results is greater than this value, use the token returned in the response in
+     * the <code>nextToken</code> field when making another request to return the next
+     * batch of results.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
@@ -121,8 +124,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>Continuation token from the previous response, for Amazon Bedrock to list the
-     * next set of results.</p>
+     * <p>If the total number of results is greater than the <code>maxResults</code>
+     * value provided in the request, enter the token returned in the
+     * <code>nextToken</code> field in the response in this field to return the next
+     * batch of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
@@ -157,6 +162,18 @@ namespace Model
     inline ListCustomModelsRequest& WithSortOrder(const SortOrder& value) { SetSortOrder(value); return *this;}
     inline ListCustomModelsRequest& WithSortOrder(SortOrder&& value) { SetSortOrder(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Return custom models depending on if the current account owns them
+     * (<code>true</code>) or if they were shared with the current account
+     * (<code>false</code>).</p>
+     */
+    inline bool GetIsOwned() const{ return m_isOwned; }
+    inline bool IsOwnedHasBeenSet() const { return m_isOwnedHasBeenSet; }
+    inline void SetIsOwned(bool value) { m_isOwnedHasBeenSet = true; m_isOwned = value; }
+    inline ListCustomModelsRequest& WithIsOwned(bool value) { SetIsOwned(value); return *this;}
+    ///@}
   private:
 
     Aws::Utils::DateTime m_creationTimeBefore;
@@ -185,6 +202,9 @@ namespace Model
 
     SortOrder m_sortOrder;
     bool m_sortOrderHasBeenSet = false;
+
+    bool m_isOwned;
+    bool m_isOwnedHasBeenSet = false;
   };
 
 } // namespace Model

@@ -26,6 +26,8 @@ DBShardGroup::DBShardGroup() :
     m_dBClusterIdentifierHasBeenSet(false),
     m_maxACU(0.0),
     m_maxACUHasBeenSet(false),
+    m_minACU(0.0),
+    m_minACUHasBeenSet(false),
     m_computeRedundancy(0),
     m_computeRedundancyHasBeenSet(false),
     m_statusHasBeenSet(false),
@@ -70,6 +72,12 @@ DBShardGroup& DBShardGroup::operator =(const XmlNode& xmlNode)
     {
       m_maxACU = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maxACUNode.GetText()).c_str()).c_str());
       m_maxACUHasBeenSet = true;
+    }
+    XmlNode minACUNode = resultNode.FirstChild("MinACU");
+    if(!minACUNode.IsNull())
+    {
+      m_minACU = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(minACUNode.GetText()).c_str()).c_str());
+      m_minACUHasBeenSet = true;
     }
     XmlNode computeRedundancyNode = resultNode.FirstChild("ComputeRedundancy");
     if(!computeRedundancyNode.IsNull())
@@ -122,6 +130,11 @@ void DBShardGroup::OutputToStream(Aws::OStream& oStream, const char* location, u
         oStream << location << index << locationValue << ".MaxACU=" << StringUtils::URLEncode(m_maxACU) << "&";
   }
 
+  if(m_minACUHasBeenSet)
+  {
+        oStream << location << index << locationValue << ".MinACU=" << StringUtils::URLEncode(m_minACU) << "&";
+  }
+
   if(m_computeRedundancyHasBeenSet)
   {
       oStream << location << index << locationValue << ".ComputeRedundancy=" << m_computeRedundancy << "&";
@@ -164,6 +177,10 @@ void DBShardGroup::OutputToStream(Aws::OStream& oStream, const char* location) c
   if(m_maxACUHasBeenSet)
   {
         oStream << location << ".MaxACU=" << StringUtils::URLEncode(m_maxACU) << "&";
+  }
+  if(m_minACUHasBeenSet)
+  {
+        oStream << location << ".MinACU=" << StringUtils::URLEncode(m_minACU) << "&";
   }
   if(m_computeRedundancyHasBeenSet)
   {

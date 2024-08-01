@@ -16,10 +16,10 @@ using namespace Aws::Utils;
 using namespace Aws::Http;
 
 ListCommonControlsRequest::ListCommonControlsRequest() : 
-    m_commonControlFilterHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
+    m_nextTokenHasBeenSet(false),
+    m_commonControlFilterHasBeenSet(false)
 {
 }
 

@@ -19,6 +19,7 @@ using namespace Aws;
 
 ModifyDBShardGroupResult::ModifyDBShardGroupResult() : 
     m_maxACU(0.0),
+    m_minACU(0.0),
     m_computeRedundancy(0),
     m_publiclyAccessible(false)
 {
@@ -61,6 +62,11 @@ ModifyDBShardGroupResult& ModifyDBShardGroupResult::operator =(const Aws::Amazon
     if(!maxACUNode.IsNull())
     {
       m_maxACU = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maxACUNode.GetText()).c_str()).c_str());
+    }
+    XmlNode minACUNode = resultNode.FirstChild("MinACU");
+    if(!minACUNode.IsNull())
+    {
+      m_minACU = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(minACUNode.GetText()).c_str()).c_str());
     }
     XmlNode computeRedundancyNode = resultNode.FirstChild("ComputeRedundancy");
     if(!computeRedundancyNode.IsNull())

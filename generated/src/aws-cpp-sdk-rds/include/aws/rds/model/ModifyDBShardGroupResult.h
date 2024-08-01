@@ -85,6 +85,16 @@ namespace Model
 
     ///@{
     /**
+     * <p>The minimum capacity of the DB shard group in Aurora capacity units
+     * (ACUs).</p>
+     */
+    inline double GetMinACU() const{ return m_minACU; }
+    inline void SetMinACU(double value) { m_minACU = value; }
+    inline ModifyDBShardGroupResult& WithMinACU(double value) { SetMinACU(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Specifies whether to create standby instances for the DB shard group. Valid
      * values are the following:</p> <ul> <li> <p>0 - Creates a single, primary DB
      * instance for each physical shard. This is the default value, and the only one
@@ -160,6 +170,8 @@ namespace Model
     Aws::String m_dBClusterIdentifier;
 
     double m_maxACU;
+
+    double m_minACU;
 
     int m_computeRedundancy;
 
