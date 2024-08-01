@@ -35,6 +35,7 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
@@ -93,7 +94,7 @@ public abstract class CppClientGenerator implements ClientGenerator {
                     .entrySet().stream()
                     .map(operationList -> serviceModel.toBuilder()
                             .operations(operationList.getValue().stream()
-                                    .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue)))
+                                    .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (x, y) -> y, LinkedHashMap::new)))
                             .build())
                     .collect(Collectors.toList());
         } else {
@@ -150,7 +151,7 @@ public abstract class CppClientGenerator implements ClientGenerator {
                 .members(
                     operation.getValue().getResult().getShape().getMembers().entrySet().stream()
                         .filter(member -> !member.getValue().getShape().isEventStream())
-                        .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue)))
+                        .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (x, y) -> y, LinkedHashMap::new)))
                 .build())
             .forEach(shape -> serviceModel.getShapes().put(shape.getName(), shape));
     }
