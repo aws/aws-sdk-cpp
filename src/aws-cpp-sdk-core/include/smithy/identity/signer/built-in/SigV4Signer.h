@@ -25,14 +25,12 @@ namespace smithy {
         {
         }
 
-        SigningFutureOutcome sign(std::shared_ptr<HttpRequest> httpRequest, const AwsCredentialIdentityBase& identity, SigningProperties properties, const AdditionalParameters& additionalParameters) override
+        SigningFutureOutcome sign(std::shared_ptr<HttpRequest> httpRequest, const AwsCredentialIdentityBase& identity, SigningProperties properties) override
         {
-            AWS_UNREFERENCED_PARAM(additionalParameters);
-
             Aws::Auth::AWSCredentials legacyCreds(identity.accessKeyId(), identity.secretAccessKey(), *identity.sessionToken(), *identity.expiration());
 
             auto signPayloadIt = properties.find("SignPayload");
-            bool signPayload = signPayloadIt != properties.end() ? signPayloadIt->second == "true" : false;
+            bool signPayload = signPayloadIt != properties.end() ? signPayloadIt->second.get<Aws::String>() == "true" : false;
 
             assert(httpRequest);
             bool success = legacySigner.SignRequestWithCreds(*httpRequest, legacyCreds, parameters.region->c_str(), parameters.serviceName.c_str(), signPayload);

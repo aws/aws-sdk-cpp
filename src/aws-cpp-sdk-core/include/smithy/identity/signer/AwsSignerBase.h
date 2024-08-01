@@ -38,14 +38,14 @@ namespace smithy {
     public:
         using IdentityT = IDENTITY_T;
         static_assert(std::is_base_of<AwsIdentity, IDENTITY_T>::value, "Identity type should inherit AwsIdentity");
-        using SigningProperties = Aws::UnorderedMap<Aws::String, Aws::String>;
+        using SigningProperties = Aws::UnorderedMap<Aws::String, Aws::Crt::Variant<Aws::String, bool>>;
         using AdditionalParameters = Aws::UnorderedMap<Aws::String, Aws::Crt::Variant<Aws::String, bool>>;
         using HttpRequest = Aws::Http::HttpRequest;
         using SigningError = Aws::Client::AWSError<Aws::Client::CoreErrors>;
         using SigningFutureOutcome = Aws::Utils::FutureOutcome<std::shared_ptr<HttpRequest>, SigningError>;
 
         // signer may copy the original httpRequest or create a new one
-        virtual SigningFutureOutcome sign(std::shared_ptr<HttpRequest> httpRequest, const IdentityT& identity, SigningProperties properties, const AdditionalParameters& additionalParameters) = 0;
+        virtual SigningFutureOutcome sign(std::shared_ptr<HttpRequest> httpRequest, const IdentityT& identity, SigningProperties properties) = 0;
 
         virtual ~AwsSignerBase() {};
     };
