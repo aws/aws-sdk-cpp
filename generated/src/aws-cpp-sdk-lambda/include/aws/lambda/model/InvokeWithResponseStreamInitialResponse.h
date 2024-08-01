@@ -36,16 +36,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The type of data the stream is returning.</p>
+     * <p>For a successful request, the HTTP status code is in the 200 range. For the
+     * <code>RequestResponse</code> invocation type, this status code is 200. For the
+     * <code>DryRun</code> invocation type, this status code is 204.</p>
      */
-    inline const Aws::String& GetResponseStreamContentType() const{ return m_responseStreamContentType; }
-    inline bool ResponseStreamContentTypeHasBeenSet() const { return m_responseStreamContentTypeHasBeenSet; }
-    inline void SetResponseStreamContentType(const Aws::String& value) { m_responseStreamContentTypeHasBeenSet = true; m_responseStreamContentType = value; }
-    inline void SetResponseStreamContentType(Aws::String&& value) { m_responseStreamContentTypeHasBeenSet = true; m_responseStreamContentType = std::move(value); }
-    inline void SetResponseStreamContentType(const char* value) { m_responseStreamContentTypeHasBeenSet = true; m_responseStreamContentType.assign(value); }
-    inline InvokeWithResponseStreamInitialResponse& WithResponseStreamContentType(const Aws::String& value) { SetResponseStreamContentType(value); return *this;}
-    inline InvokeWithResponseStreamInitialResponse& WithResponseStreamContentType(Aws::String&& value) { SetResponseStreamContentType(std::move(value)); return *this;}
-    inline InvokeWithResponseStreamInitialResponse& WithResponseStreamContentType(const char* value) { SetResponseStreamContentType(value); return *this;}
+    inline int GetStatusCode() const{ return m_statusCode; }
+    inline bool StatusCodeHasBeenSet() const { return m_statusCodeHasBeenSet; }
+    inline void SetStatusCode(int value) { m_statusCodeHasBeenSet = true; m_statusCode = value; }
+    inline InvokeWithResponseStreamInitialResponse& WithStatusCode(int value) { SetStatusCode(value); return *this;}
     ///@}
 
     ///@{
@@ -65,25 +63,27 @@ namespace Model
 
     ///@{
     /**
-     * <p>For a successful request, the HTTP status code is in the 200 range. For the
-     * <code>RequestResponse</code> invocation type, this status code is 200. For the
-     * <code>DryRun</code> invocation type, this status code is 204.</p>
+     * <p>The type of data the stream is returning.</p>
      */
-    inline int GetStatusCode() const{ return m_statusCode; }
-    inline bool StatusCodeHasBeenSet() const { return m_statusCodeHasBeenSet; }
-    inline void SetStatusCode(int value) { m_statusCodeHasBeenSet = true; m_statusCode = value; }
-    inline InvokeWithResponseStreamInitialResponse& WithStatusCode(int value) { SetStatusCode(value); return *this;}
+    inline const Aws::String& GetResponseStreamContentType() const{ return m_responseStreamContentType; }
+    inline bool ResponseStreamContentTypeHasBeenSet() const { return m_responseStreamContentTypeHasBeenSet; }
+    inline void SetResponseStreamContentType(const Aws::String& value) { m_responseStreamContentTypeHasBeenSet = true; m_responseStreamContentType = value; }
+    inline void SetResponseStreamContentType(Aws::String&& value) { m_responseStreamContentTypeHasBeenSet = true; m_responseStreamContentType = std::move(value); }
+    inline void SetResponseStreamContentType(const char* value) { m_responseStreamContentTypeHasBeenSet = true; m_responseStreamContentType.assign(value); }
+    inline InvokeWithResponseStreamInitialResponse& WithResponseStreamContentType(const Aws::String& value) { SetResponseStreamContentType(value); return *this;}
+    inline InvokeWithResponseStreamInitialResponse& WithResponseStreamContentType(Aws::String&& value) { SetResponseStreamContentType(std::move(value)); return *this;}
+    inline InvokeWithResponseStreamInitialResponse& WithResponseStreamContentType(const char* value) { SetResponseStreamContentType(value); return *this;}
     ///@}
   private:
 
-    Aws::String m_responseStreamContentType;
-    bool m_responseStreamContentTypeHasBeenSet = false;
+    int m_statusCode;
+    bool m_statusCodeHasBeenSet = false;
 
     Aws::String m_executedVersion;
     bool m_executedVersionHasBeenSet = false;
 
-    int m_statusCode;
-    bool m_statusCodeHasBeenSet = false;
+    Aws::String m_responseStreamContentType;
+    bool m_responseStreamContentTypeHasBeenSet = false;
   };
 
 } // namespace Model
