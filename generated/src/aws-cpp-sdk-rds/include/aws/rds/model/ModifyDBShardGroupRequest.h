@@ -60,6 +60,17 @@ namespace Model
     inline void SetMaxACU(double value) { m_maxACUHasBeenSet = true; m_maxACU = value; }
     inline ModifyDBShardGroupRequest& WithMaxACU(double value) { SetMaxACU(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The minimum capacity of the DB shard group in Aurora capacity units
+     * (ACUs).</p>
+     */
+    inline double GetMinACU() const{ return m_minACU; }
+    inline bool MinACUHasBeenSet() const { return m_minACUHasBeenSet; }
+    inline void SetMinACU(double value) { m_minACUHasBeenSet = true; m_minACU = value; }
+    inline ModifyDBShardGroupRequest& WithMinACU(double value) { SetMinACU(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_dBShardGroupIdentifier;
@@ -67,6 +78,9 @@ namespace Model
 
     double m_maxACU;
     bool m_maxACUHasBeenSet = false;
+
+    double m_minACU;
+    bool m_minACUHasBeenSet = false;
   };
 
 } // namespace Model

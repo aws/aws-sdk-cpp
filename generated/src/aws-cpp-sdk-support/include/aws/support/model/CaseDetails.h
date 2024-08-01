@@ -53,14 +53,15 @@ namespace Model
    * <code>normal</code>, <code>high</code>, <code>urgent</code>, and
    * <code>critical</code>.</p> </li> <li> <p> <b>status</b> - The status of the case
    * in the Amazon Web Services Support Center. Valid values:</p> <ul> <li> <p>
-   * <code>opened</code> </p> </li> <li> <p> <code>pending-customer-action</code>
-   * </p> </li> <li> <p> <code>reopened</code> </p> </li> <li> <p>
-   * <code>resolved</code> </p> </li> <li> <p> <code>unassigned</code> </p> </li>
-   * <li> <p> <code>work-in-progress</code> </p> </li> </ul> </li> <li> <p>
-   * <b>subject</b> - The subject line of the case.</p> </li> <li> <p>
-   * <b>submittedBy</b> - The email address of the account that submitted the
-   * case.</p> </li> <li> <p> <b>timeCreated</b> - The time the case was created, in
-   * ISO-8601 format.</p> </li> </ul><p><h3>See Also:</h3>   <a
+   * <code>all-open</code> </p> </li> <li> <p> <code>customer-action-completed</code>
+   * </p> </li> <li> <p> <code>opened</code> </p> </li> <li> <p>
+   * <code>pending-customer-action</code> </p> </li> <li> <p> <code>reopened</code>
+   * </p> </li> <li> <p> <code>resolved</code> </p> </li> <li> <p>
+   * <code>unassigned</code> </p> </li> <li> <p> <code>work-in-progress</code> </p>
+   * </li> </ul> </li> <li> <p> <b>subject</b> - The subject line of the case.</p>
+   * </li> <li> <p> <b>submittedBy</b> - The email address of the account that
+   * submitted the case.</p> </li> <li> <p> <b>timeCreated</b> - The time the case
+   * was created, in ISO-8601 format.</p> </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/CaseDetails">AWS
    * API Reference</a></p>
    */
@@ -121,10 +122,12 @@ namespace Model
     ///@{
     /**
      * <p>The status of the case.</p> <p>Valid values:</p> <ul> <li> <p>
-     * <code>opened</code> </p> </li> <li> <p> <code>pending-customer-action</code>
-     * </p> </li> <li> <p> <code>reopened</code> </p> </li> <li> <p>
-     * <code>resolved</code> </p> </li> <li> <p> <code>unassigned</code> </p> </li>
-     * <li> <p> <code>work-in-progress</code> </p> </li> </ul>
+     * <code>all-open</code> </p> </li> <li> <p> <code>customer-action-completed</code>
+     * </p> </li> <li> <p> <code>opened</code> </p> </li> <li> <p>
+     * <code>pending-customer-action</code> </p> </li> <li> <p> <code>reopened</code>
+     * </p> </li> <li> <p> <code>resolved</code> </p> </li> <li> <p>
+     * <code>unassigned</code> </p> </li> <li> <p> <code>work-in-progress</code> </p>
+     * </li> </ul>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }

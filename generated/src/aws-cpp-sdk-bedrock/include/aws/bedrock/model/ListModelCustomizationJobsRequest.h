@@ -94,7 +94,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>Maximum number of results to return in the response.</p>
+     * <p>The maximum number of results to return in the response. If the total number
+     * of results is greater than this value, use the token returned in the response in
+     * the <code>nextToken</code> field when making another request to return the next
+     * batch of results.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
@@ -104,8 +107,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>Continuation token from the previous response, for Amazon Bedrock to list the
-     * next set of results.</p>
+     * <p>If the total number of results is greater than the <code>maxResults</code>
+     * value provided in the request, enter the token returned in the
+     * <code>nextToken</code> field in the response in this field to return the next
+     * batch of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }

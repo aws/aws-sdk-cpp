@@ -58,12 +58,13 @@ namespace Model
     ///@{
     /**
      * <p>Specifies whether to skip the creation of a final DB cluster snapshot before
-     * the DB cluster is deleted. If skip is specified, no DB cluster snapshot is
-     * created. If skip isn't specified, a DB cluster snapshot is created before the DB
-     * cluster is deleted. By default, skip isn't specified, and the DB cluster
-     * snapshot is created. By default, this parameter is disabled.</p>  <p>You
-     * must specify a <code>FinalDBSnapshotIdentifier</code> parameter if
-     * <code>SkipFinalSnapshot</code> is disabled.</p> 
+     * RDS deletes the DB cluster. If you set this value to <code>true</code>, RDS
+     * doesn't create a final DB cluster snapshot. If you set this value to
+     * <code>false</code> or don't specify it, RDS creates a DB cluster snapshot before
+     * it deletes the DB cluster. By default, this parameter is disabled, so RDS
+     * creates a final DB cluster snapshot.</p>  <p>If
+     * <code>SkipFinalSnapshot</code> is disabled, you must specify a value for the
+     * <code>FinalDBSnapshotIdentifier</code> parameter.</p> 
      */
     inline bool GetSkipFinalSnapshot() const{ return m_skipFinalSnapshot; }
     inline bool SkipFinalSnapshotHasBeenSet() const { return m_skipFinalSnapshotHasBeenSet; }
@@ -74,12 +75,13 @@ namespace Model
     ///@{
     /**
      * <p>The DB cluster snapshot identifier of the new DB cluster snapshot created
-     * when <code>SkipFinalSnapshot</code> is disabled.</p>  <p>Specifying this
-     * parameter and also skipping the creation of a final DB cluster snapshot with the
-     * <code>SkipFinalShapshot</code> parameter results in an error.</p> 
-     * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters, numbers, or
-     * hyphens.</p> </li> <li> <p>First character must be a letter</p> </li> <li>
-     * <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * when <code>SkipFinalSnapshot</code> is disabled.</p>  <p>If you specify
+     * this parameter and also skip the creation of a final DB cluster snapshot with
+     * the <code>SkipFinalShapshot</code> parameter, the request results in an
+     * error.</p>  <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters,
+     * numbers, or hyphens.</p> </li> <li> <p>First character must be a letter</p>
+     * </li> <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p>
+     * </li> </ul>
      */
     inline const Aws::String& GetFinalDBSnapshotIdentifier() const{ return m_finalDBSnapshotIdentifier; }
     inline bool FinalDBSnapshotIdentifierHasBeenSet() const { return m_finalDBSnapshotIdentifierHasBeenSet; }
@@ -95,12 +97,7 @@ namespace Model
     /**
      * <p>Specifies whether to remove automated backups immediately after the DB
      * cluster is deleted. This parameter isn't case-sensitive. The default is to
-     * remove automated backups immediately after the DB cluster is deleted. </p>
-     *  <p>You must delete automated backups for Amazon RDS Multi-AZ DB clusters.
-     * For more information about managing automated backups for RDS Multi-AZ DB
-     * clusters, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ManagingAutomatedBackups.html">Managing
-     * automated backups</a>.</p> 
+     * remove automated backups immediately after the DB cluster is deleted.</p>
      */
     inline bool GetDeleteAutomatedBackups() const{ return m_deleteAutomatedBackups; }
     inline bool DeleteAutomatedBackupsHasBeenSet() const { return m_deleteAutomatedBackupsHasBeenSet; }

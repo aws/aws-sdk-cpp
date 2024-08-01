@@ -82,7 +82,7 @@ namespace Bedrock
          * evaluation jobs and model evaluation jobs that use human workers. To learn more
          * about the requirements for creating a model evaluation job see, <a
          * href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-evaluation.html">Model
-         * evaluations</a>.</p><p><h3>See Also:</h3>   <a
+         * evaluation</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateEvaluationJob">AWS
          * API Reference</a></p>
          */
@@ -178,6 +178,36 @@ namespace Bedrock
         }
 
         /**
+         * <p>Copies a model to another region so that it can be used there. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/copy-model.html">Copy
+         * models to be used in other regions</a> in the <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
+         * Bedrock User Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateModelCopyJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateModelCopyJobOutcome CreateModelCopyJob(const Model::CreateModelCopyJobRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateModelCopyJob that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateModelCopyJobRequestT = Model::CreateModelCopyJobRequest>
+        Model::CreateModelCopyJobOutcomeCallable CreateModelCopyJobCallable(const CreateModelCopyJobRequestT& request) const
+        {
+            return SubmitCallable(&BedrockClient::CreateModelCopyJob, request);
+        }
+
+        /**
+         * An Async wrapper for CreateModelCopyJob that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateModelCopyJobRequestT = Model::CreateModelCopyJobRequest>
+        void CreateModelCopyJobAsync(const CreateModelCopyJobRequestT& request, const CreateModelCopyJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockClient::CreateModelCopyJob, request, handler, context);
+        }
+
+        /**
          * <p>Creates a fine-tuning job to customize a base model.</p> <p>You specify the
          * base foundation model and the location of the training data. After the
          * model-customization job completes successfully, your custom model resource will
@@ -190,7 +220,9 @@ namespace Bedrock
          * To monitor a job, use the <code>GetModelCustomizationJob</code> operation to
          * retrieve the job status.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom
-         * models</a> in the Amazon Bedrock User Guide.</p><p><h3>See Also:</h3>   <a
+         * models</a> in the <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
+         * Bedrock User Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateModelCustomizationJob">AWS
          * API Reference</a></p>
          */
@@ -220,7 +252,9 @@ namespace Bedrock
          * href="http://aws.amazon.com/bedrock/pricing/">Amazon Bedrock Pricing</a>. For
          * more information, see <a
          * href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html">Provisioned
-         * Throughput</a> in the Amazon Bedrock User Guide.</p><p><h3>See Also:</h3>   <a
+         * Throughput</a> in the <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
+         * Bedrock User Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateProvisionedModelThroughput">AWS
          * API Reference</a></p>
          */
@@ -247,7 +281,9 @@ namespace Bedrock
         /**
          * <p>Deletes a custom model that you created earlier. For more information, see <a
          * href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom
-         * models</a> in the Amazon Bedrock User Guide.</p><p><h3>See Also:</h3>   <a
+         * models</a> in the <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
+         * Bedrock User Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/DeleteCustomModel">AWS
          * API Reference</a></p>
          */
@@ -330,7 +366,9 @@ namespace Bedrock
          * <p>Deletes a Provisioned Throughput. You can't delete a Provisioned Throughput
          * before the commitment term is over. For more information, see <a
          * href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html">Provisioned
-         * Throughput</a> in the Amazon Bedrock User Guide.</p><p><h3>See Also:</h3>   <a
+         * Throughput</a> in the <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
+         * Bedrock User Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/DeleteProvisionedModelThroughput">AWS
          * API Reference</a></p>
          */
@@ -358,7 +396,9 @@ namespace Bedrock
          * <p>Get the properties associated with a Amazon Bedrock custom model that you
          * have created.For more information, see <a
          * href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom
-         * models</a> in the Amazon Bedrock User Guide.</p><p><h3>See Also:</h3>   <a
+         * models</a> in the <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
+         * Bedrock User Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetCustomModel">AWS
          * API Reference</a></p>
          */
@@ -385,8 +425,8 @@ namespace Bedrock
         /**
          * <p>Retrieves the properties associated with a model evaluation job, including
          * the status of the job. For more information, see <a
-         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/latest/userguide/model-evaluation.html">Model
-         * evaluations</a>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-evaluation.html">Model
+         * evaluation</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetEvaluationJob">AWS
          * API Reference</a></p>
          */
@@ -464,10 +504,41 @@ namespace Bedrock
         }
 
         /**
+         * <p>Retrieves information about a model copy job. For more information, see <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/copy-model.html">Copy
+         * models to be used in other regions</a> in the <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
+         * Bedrock User Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetModelCopyJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetModelCopyJobOutcome GetModelCopyJob(const Model::GetModelCopyJobRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetModelCopyJob that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetModelCopyJobRequestT = Model::GetModelCopyJobRequest>
+        Model::GetModelCopyJobOutcomeCallable GetModelCopyJobCallable(const GetModelCopyJobRequestT& request) const
+        {
+            return SubmitCallable(&BedrockClient::GetModelCopyJob, request);
+        }
+
+        /**
+         * An Async wrapper for GetModelCopyJob that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetModelCopyJobRequestT = Model::GetModelCopyJobRequest>
+        void GetModelCopyJobAsync(const GetModelCopyJobRequestT& request, const GetModelCopyJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockClient::GetModelCopyJob, request, handler, context);
+        }
+
+        /**
          * <p>Retrieves the properties associated with a model-customization job, including
          * the status of the job. For more information, see <a
          * href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom
-         * models</a> in the Amazon Bedrock User Guide.</p><p><h3>See Also:</h3>   <a
+         * models</a> in the <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
+         * Bedrock User Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetModelCustomizationJob">AWS
          * API Reference</a></p>
          */
@@ -520,7 +591,9 @@ namespace Bedrock
         /**
          * <p>Returns details for a Provisioned Throughput. For more information, see <a
          * href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html">Provisioned
-         * Throughput</a> in the Amazon Bedrock User Guide.</p><p><h3>See Also:</h3>   <a
+         * Throughput</a> in the <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
+         * Bedrock User Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetProvisionedModelThroughput">AWS
          * API Reference</a></p>
          */
@@ -549,7 +622,9 @@ namespace Bedrock
          * <code>CreateModelCustomizationJob</code> operation.</p> <p>For more information,
          * see <a
          * href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom
-         * models</a> in the Amazon Bedrock User Guide.</p><p><h3>See Also:</h3>   <a
+         * models</a> in the <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
+         * Bedrock User Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListCustomModels">AWS
          * API Reference</a></p>
          */
@@ -602,7 +677,9 @@ namespace Bedrock
          * <p>Lists Amazon Bedrock foundation models that you can use. You can filter the
          * results with the request parameters. For more information, see <a
          * href="https://docs.aws.amazon.com/bedrock/latest/userguide/foundation-models.html">Foundation
-         * models</a> in the Amazon Bedrock User Guide.</p><p><h3>See Also:</h3>   <a
+         * models</a> in the <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
+         * Bedrock User Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListFoundationModels">AWS
          * API Reference</a></p>
          */
@@ -660,11 +737,43 @@ namespace Bedrock
         }
 
         /**
+         * <p>Returns a list of model copy jobs that you have submitted. You can filter the
+         * jobs to return based on one or more criteria. For more information, see <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/copy-model.html">Copy
+         * models to be used in other regions</a> in the <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
+         * Bedrock User Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListModelCopyJobs">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListModelCopyJobsOutcome ListModelCopyJobs(const Model::ListModelCopyJobsRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for ListModelCopyJobs that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListModelCopyJobsRequestT = Model::ListModelCopyJobsRequest>
+        Model::ListModelCopyJobsOutcomeCallable ListModelCopyJobsCallable(const ListModelCopyJobsRequestT& request = {}) const
+        {
+            return SubmitCallable(&BedrockClient::ListModelCopyJobs, request);
+        }
+
+        /**
+         * An Async wrapper for ListModelCopyJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListModelCopyJobsRequestT = Model::ListModelCopyJobsRequest>
+        void ListModelCopyJobsAsync(const ListModelCopyJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListModelCopyJobsRequestT& request = {}) const
+        {
+            return SubmitAsync(&BedrockClient::ListModelCopyJobs, request, handler, context);
+        }
+
+        /**
          * <p>Returns a list of model customization jobs that you have submitted. You can
          * filter the jobs to return based on one or more criteria.</p> <p>For more
          * information, see <a
          * href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom
-         * models</a> in the Amazon Bedrock User Guide.</p><p><h3>See Also:</h3>   <a
+         * models</a> in the <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
+         * Bedrock User Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListModelCustomizationJobs">AWS
          * API Reference</a></p>
          */
@@ -692,7 +801,9 @@ namespace Bedrock
          * <p>Lists the Provisioned Throughputs in the account. For more information, see
          * <a
          * href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html">Provisioned
-         * Throughput</a> in the Amazon Bedrock User Guide.</p><p><h3>See Also:</h3>   <a
+         * Throughput</a> in the <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
+         * Bedrock User Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListProvisionedModelThroughputs">AWS
          * API Reference</a></p>
          */
@@ -720,7 +831,9 @@ namespace Bedrock
          * <p>List the tags associated with the specified resource.</p> <p>For more
          * information, see <a
          * href="https://docs.aws.amazon.com/bedrock/latest/userguide/tagging.html">Tagging
-         * resources</a> in the Amazon Bedrock User Guide.</p><p><h3>See Also:</h3>   <a
+         * resources</a> in the <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
+         * Bedrock User Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListTagsForResource">AWS
          * API Reference</a></p>
          */
@@ -798,7 +911,9 @@ namespace Bedrock
         /**
          * <p>Stops an active model customization job. For more information, see <a
          * href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom
-         * models</a> in the Amazon Bedrock User Guide.</p><p><h3>See Also:</h3>   <a
+         * models</a> in the <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
+         * Bedrock User Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/StopModelCustomizationJob">AWS
          * API Reference</a></p>
          */
@@ -825,7 +940,9 @@ namespace Bedrock
         /**
          * <p>Associate tags with a resource. For more information, see <a
          * href="https://docs.aws.amazon.com/bedrock/latest/userguide/tagging.html">Tagging
-         * resources</a> in the Amazon Bedrock User Guide.</p><p><h3>See Also:</h3>   <a
+         * resources</a> in the <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
+         * Bedrock User Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/TagResource">AWS
          * API Reference</a></p>
          */
@@ -852,7 +969,9 @@ namespace Bedrock
         /**
          * <p>Remove one or more tags from a resource. For more information, see <a
          * href="https://docs.aws.amazon.com/bedrock/latest/userguide/tagging.html">Tagging
-         * resources</a> in the Amazon Bedrock User Guide.</p><p><h3>See Also:</h3>   <a
+         * resources</a> in the <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
+         * Bedrock User Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/UntagResource">AWS
          * API Reference</a></p>
          */
@@ -932,7 +1051,9 @@ namespace Bedrock
          * <p>Updates the name or associated model for a Provisioned Throughput. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html">Provisioned
-         * Throughput</a> in the Amazon Bedrock User Guide.</p><p><h3>See Also:</h3>   <a
+         * Throughput</a> in the <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
+         * Bedrock User Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/UpdateProvisionedModelThroughput">AWS
          * API Reference</a></p>
          */

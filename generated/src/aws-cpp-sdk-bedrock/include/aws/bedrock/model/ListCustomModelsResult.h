@@ -36,7 +36,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>Continuation token for the next request to list the next set of results.</p>
+     * <p>If the total number of results is greater than the <code>maxResults</code>
+     * value provided in the request, use this token when making another request in the
+     * <code>nextToken</code> field to return the next batch of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }

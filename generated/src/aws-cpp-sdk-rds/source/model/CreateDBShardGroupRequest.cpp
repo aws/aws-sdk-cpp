@@ -17,6 +17,8 @@ CreateDBShardGroupRequest::CreateDBShardGroupRequest() :
     m_computeRedundancyHasBeenSet(false),
     m_maxACU(0.0),
     m_maxACUHasBeenSet(false),
+    m_minACU(0.0),
+    m_minACUHasBeenSet(false),
     m_publiclyAccessible(false),
     m_publiclyAccessibleHasBeenSet(false)
 {
@@ -44,6 +46,11 @@ Aws::String CreateDBShardGroupRequest::SerializePayload() const
   if(m_maxACUHasBeenSet)
   {
     ss << "MaxACU=" << StringUtils::URLEncode(m_maxACU) << "&";
+  }
+
+  if(m_minACUHasBeenSet)
+  {
+    ss << "MinACU=" << StringUtils::URLEncode(m_minACU) << "&";
   }
 
   if(m_publiclyAccessibleHasBeenSet)

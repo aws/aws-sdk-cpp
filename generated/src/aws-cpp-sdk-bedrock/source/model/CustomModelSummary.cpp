@@ -25,7 +25,8 @@ CustomModelSummary::CustomModelSummary() :
     m_baseModelArnHasBeenSet(false),
     m_baseModelNameHasBeenSet(false),
     m_customizationType(CustomizationType::NOT_SET),
-    m_customizationTypeHasBeenSet(false)
+    m_customizationTypeHasBeenSet(false),
+    m_ownerAccountIdHasBeenSet(false)
 {
 }
 
@@ -79,6 +80,13 @@ CustomModelSummary& CustomModelSummary::operator =(JsonView jsonValue)
     m_customizationTypeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ownerAccountId"))
+  {
+    m_ownerAccountId = jsonValue.GetString("ownerAccountId");
+
+    m_ownerAccountIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -118,6 +126,12 @@ JsonValue CustomModelSummary::Jsonize() const
   if(m_customizationTypeHasBeenSet)
   {
    payload.WithString("customizationType", CustomizationTypeMapper::GetNameForCustomizationType(m_customizationType));
+  }
+
+  if(m_ownerAccountIdHasBeenSet)
+  {
+   payload.WithString("ownerAccountId", m_ownerAccountId);
+
   }
 
   return payload;

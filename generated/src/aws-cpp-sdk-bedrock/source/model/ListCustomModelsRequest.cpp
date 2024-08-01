@@ -27,7 +27,9 @@ ListCustomModelsRequest::ListCustomModelsRequest() :
     m_sortBy(SortModelsBy::NOT_SET),
     m_sortByHasBeenSet(false),
     m_sortOrder(SortOrder::NOT_SET),
-    m_sortOrderHasBeenSet(false)
+    m_sortOrderHasBeenSet(false),
+    m_isOwned(false),
+    m_isOwnedHasBeenSet(false)
 {
 }
 
@@ -99,6 +101,13 @@ void ListCustomModelsRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << SortOrderMapper::GetNameForSortOrder(m_sortOrder);
       uri.AddQueryStringParameter("sortOrder", ss.str());
+      ss.str("");
+    }
+
+    if(m_isOwnedHasBeenSet)
+    {
+      ss << m_isOwned;
+      uri.AddQueryStringParameter("isOwned", ss.str());
       ss.str("");
     }
 

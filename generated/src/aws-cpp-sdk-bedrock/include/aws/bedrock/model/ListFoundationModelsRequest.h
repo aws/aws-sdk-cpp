@@ -60,7 +60,9 @@ namespace Model
      * <p>Return models that support the customization type that you specify. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom
-     * models</a> in the Amazon Bedrock User Guide.</p>
+     * models</a> in the <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
+     * Bedrock User Guide</a>.</p>
      */
     inline const ModelCustomization& GetByCustomizationType() const{ return m_byCustomizationType; }
     inline bool ByCustomizationTypeHasBeenSet() const { return m_byCustomizationTypeHasBeenSet; }
@@ -87,7 +89,9 @@ namespace Model
      * <p>Return models that support the inference type that you specify. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html">Provisioned
-     * Throughput</a> in the Amazon Bedrock User Guide.</p>
+     * Throughput</a> in the <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
+     * Bedrock User Guide</a>.</p>
      */
     inline const InferenceType& GetByInferenceType() const{ return m_byInferenceType; }
     inline bool ByInferenceTypeHasBeenSet() const { return m_byInferenceTypeHasBeenSet; }

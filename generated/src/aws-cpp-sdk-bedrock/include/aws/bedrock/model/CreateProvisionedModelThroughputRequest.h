@@ -66,9 +66,10 @@ namespace Model
      * Web Services support center</a> to request MUs.</p> <p>For model unit quotas,
      * see <a
      * href="https://docs.aws.amazon.com/bedrock/latest/userguide/quotas.html#prov-thru-quotas">Provisioned
-     * Throughput quotas</a> in the Amazon Bedrock User Guide.</p> <p>For more
-     * information about what an MU specifies, contact your Amazon Web Services account
-     * manager.</p>
+     * Throughput quotas</a> in the <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
+     * Bedrock User Guide</a>.</p> <p>For more information about what an MU specifies,
+     * contact your Amazon Web Services account manager.</p>
      */
     inline int GetModelUnits() const{ return m_modelUnits; }
     inline bool ModelUnitsHasBeenSet() const { return m_modelUnitsHasBeenSet; }
@@ -96,8 +97,9 @@ namespace Model
      * Provisioned Throughput. For a list of models for which you can purchase
      * Provisioned Throughput, see <a
      * href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-ids.html#prov-throughput-models">Amazon
-     * Bedrock model IDs for purchasing Provisioned Throughput</a> in the Amazon
-     * Bedrock User Guide.</p>
+     * Bedrock model IDs for purchasing Provisioned Throughput</a> in the <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
+     * Bedrock User Guide</a>.</p>
      */
     inline const Aws::String& GetModelId() const{ return m_modelId; }
     inline bool ModelIdHasBeenSet() const { return m_modelIdHasBeenSet; }
@@ -116,8 +118,9 @@ namespace Model
      * no-commit Provisioned Throughput, omit this field.</p> <p>Custom models support
      * all levels of commitment. To see which base models support no commitment, see <a
      * href="https://docs.aws.amazon.com/bedrock/latest/userguide/pt-supported.html">Supported
-     * regions and models for Provisioned Throughput</a> in the Amazon Bedrock User
-     * Guide</p>
+     * regions and models for Provisioned Throughput</a> in the <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
+     * Bedrock User Guide</a> </p>
      */
     inline const CommitmentDuration& GetCommitmentDuration() const{ return m_commitmentDuration; }
     inline bool CommitmentDurationHasBeenSet() const { return m_commitmentDurationHasBeenSet; }

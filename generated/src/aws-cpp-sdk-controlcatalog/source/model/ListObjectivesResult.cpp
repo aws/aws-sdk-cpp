@@ -29,12 +29,6 @@ ListObjectivesResult::ListObjectivesResult(const Aws::AmazonWebServiceResult<Jso
 ListObjectivesResult& ListObjectivesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("NextToken"))
-  {
-    m_nextToken = jsonValue.GetString("NextToken");
-
-  }
-
   if(jsonValue.ValueExists("Objectives"))
   {
     Aws::Utils::Array<JsonView> objectivesJsonList = jsonValue.GetArray("Objectives");
@@ -42,6 +36,12 @@ ListObjectivesResult& ListObjectivesResult::operator =(const Aws::AmazonWebServi
     {
       m_objectives.push_back(objectivesJsonList[objectivesIndex].AsObject());
     }
+  }
+
+  if(jsonValue.ValueExists("NextToken"))
+  {
+    m_nextToken = jsonValue.GetString("NextToken");
+
   }
 
 

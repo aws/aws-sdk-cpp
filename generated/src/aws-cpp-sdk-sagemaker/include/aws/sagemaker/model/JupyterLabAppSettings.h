@@ -7,6 +7,7 @@
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/sagemaker/model/ResourceSpec.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/sagemaker/model/EmrSettings.h>
 #include <aws/sagemaker/model/CustomImage.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sagemaker/model/CodeRepository.h>
@@ -97,6 +98,22 @@ namespace Model
     inline JupyterLabAppSettings& AddCodeRepositories(const CodeRepository& value) { m_codeRepositoriesHasBeenSet = true; m_codeRepositories.push_back(value); return *this; }
     inline JupyterLabAppSettings& AddCodeRepositories(CodeRepository&& value) { m_codeRepositoriesHasBeenSet = true; m_codeRepositories.push_back(std::move(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>The configuration parameters that specify the IAM roles assumed by the
+     * execution role of SageMaker (assumable roles) and the cluster instances or job
+     * execution environments (execution roles or runtime roles) to manage and access
+     * resources required for running Amazon EMR clusters or Amazon EMR Serverless
+     * applications.</p>
+     */
+    inline const EmrSettings& GetEmrSettings() const{ return m_emrSettings; }
+    inline bool EmrSettingsHasBeenSet() const { return m_emrSettingsHasBeenSet; }
+    inline void SetEmrSettings(const EmrSettings& value) { m_emrSettingsHasBeenSet = true; m_emrSettings = value; }
+    inline void SetEmrSettings(EmrSettings&& value) { m_emrSettingsHasBeenSet = true; m_emrSettings = std::move(value); }
+    inline JupyterLabAppSettings& WithEmrSettings(const EmrSettings& value) { SetEmrSettings(value); return *this;}
+    inline JupyterLabAppSettings& WithEmrSettings(EmrSettings&& value) { SetEmrSettings(std::move(value)); return *this;}
+    ///@}
   private:
 
     ResourceSpec m_defaultResourceSpec;
@@ -110,6 +127,9 @@ namespace Model
 
     Aws::Vector<CodeRepository> m_codeRepositories;
     bool m_codeRepositoriesHasBeenSet = false;
+
+    EmrSettings m_emrSettings;
+    bool m_emrSettingsHasBeenSet = false;
   };
 
 } // namespace Model
