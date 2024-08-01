@@ -36,6 +36,34 @@ namespace Model
 
     ///@{
     /**
+     * <p>The MIME type of the inference returned from the model container.</p>
+     */
+    inline const Aws::String& GetContentType() const{ return m_contentType; }
+    inline bool ContentTypeHasBeenSet() const { return m_contentTypeHasBeenSet; }
+    inline void SetContentType(const Aws::String& value) { m_contentTypeHasBeenSet = true; m_contentType = value; }
+    inline void SetContentType(Aws::String&& value) { m_contentTypeHasBeenSet = true; m_contentType = std::move(value); }
+    inline void SetContentType(const char* value) { m_contentTypeHasBeenSet = true; m_contentType.assign(value); }
+    inline InvokeEndpointWithResponseStreamInitialResponse& WithContentType(const Aws::String& value) { SetContentType(value); return *this;}
+    inline InvokeEndpointWithResponseStreamInitialResponse& WithContentType(Aws::String&& value) { SetContentType(std::move(value)); return *this;}
+    inline InvokeEndpointWithResponseStreamInitialResponse& WithContentType(const char* value) { SetContentType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Identifies the production variant that was invoked.</p>
+     */
+    inline const Aws::String& GetInvokedProductionVariant() const{ return m_invokedProductionVariant; }
+    inline bool InvokedProductionVariantHasBeenSet() const { return m_invokedProductionVariantHasBeenSet; }
+    inline void SetInvokedProductionVariant(const Aws::String& value) { m_invokedProductionVariantHasBeenSet = true; m_invokedProductionVariant = value; }
+    inline void SetInvokedProductionVariant(Aws::String&& value) { m_invokedProductionVariantHasBeenSet = true; m_invokedProductionVariant = std::move(value); }
+    inline void SetInvokedProductionVariant(const char* value) { m_invokedProductionVariantHasBeenSet = true; m_invokedProductionVariant.assign(value); }
+    inline InvokeEndpointWithResponseStreamInitialResponse& WithInvokedProductionVariant(const Aws::String& value) { SetInvokedProductionVariant(value); return *this;}
+    inline InvokeEndpointWithResponseStreamInitialResponse& WithInvokedProductionVariant(Aws::String&& value) { SetInvokedProductionVariant(std::move(value)); return *this;}
+    inline InvokeEndpointWithResponseStreamInitialResponse& WithInvokedProductionVariant(const char* value) { SetInvokedProductionVariant(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Provides additional information in the response about the inference returned
      * by a model hosted at an Amazon SageMaker endpoint. The information is an opaque
      * value that is forwarded verbatim. You could use this value, for example, to
@@ -62,44 +90,16 @@ namespace Model
     inline InvokeEndpointWithResponseStreamInitialResponse& WithCustomAttributes(Aws::String&& value) { SetCustomAttributes(std::move(value)); return *this;}
     inline InvokeEndpointWithResponseStreamInitialResponse& WithCustomAttributes(const char* value) { SetCustomAttributes(value); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The MIME type of the inference returned from the model container.</p>
-     */
-    inline const Aws::String& GetContentType() const{ return m_contentType; }
-    inline bool ContentTypeHasBeenSet() const { return m_contentTypeHasBeenSet; }
-    inline void SetContentType(const Aws::String& value) { m_contentTypeHasBeenSet = true; m_contentType = value; }
-    inline void SetContentType(Aws::String&& value) { m_contentTypeHasBeenSet = true; m_contentType = std::move(value); }
-    inline void SetContentType(const char* value) { m_contentTypeHasBeenSet = true; m_contentType.assign(value); }
-    inline InvokeEndpointWithResponseStreamInitialResponse& WithContentType(const Aws::String& value) { SetContentType(value); return *this;}
-    inline InvokeEndpointWithResponseStreamInitialResponse& WithContentType(Aws::String&& value) { SetContentType(std::move(value)); return *this;}
-    inline InvokeEndpointWithResponseStreamInitialResponse& WithContentType(const char* value) { SetContentType(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Identifies the production variant that was invoked.</p>
-     */
-    inline const Aws::String& GetInvokedProductionVariant() const{ return m_invokedProductionVariant; }
-    inline bool InvokedProductionVariantHasBeenSet() const { return m_invokedProductionVariantHasBeenSet; }
-    inline void SetInvokedProductionVariant(const Aws::String& value) { m_invokedProductionVariantHasBeenSet = true; m_invokedProductionVariant = value; }
-    inline void SetInvokedProductionVariant(Aws::String&& value) { m_invokedProductionVariantHasBeenSet = true; m_invokedProductionVariant = std::move(value); }
-    inline void SetInvokedProductionVariant(const char* value) { m_invokedProductionVariantHasBeenSet = true; m_invokedProductionVariant.assign(value); }
-    inline InvokeEndpointWithResponseStreamInitialResponse& WithInvokedProductionVariant(const Aws::String& value) { SetInvokedProductionVariant(value); return *this;}
-    inline InvokeEndpointWithResponseStreamInitialResponse& WithInvokedProductionVariant(Aws::String&& value) { SetInvokedProductionVariant(std::move(value)); return *this;}
-    inline InvokeEndpointWithResponseStreamInitialResponse& WithInvokedProductionVariant(const char* value) { SetInvokedProductionVariant(value); return *this;}
-    ///@}
   private:
-
-    Aws::String m_customAttributes;
-    bool m_customAttributesHasBeenSet = false;
 
     Aws::String m_contentType;
     bool m_contentTypeHasBeenSet = false;
 
     Aws::String m_invokedProductionVariant;
     bool m_invokedProductionVariantHasBeenSet = false;
+
+    Aws::String m_customAttributes;
+    bool m_customAttributesHasBeenSet = false;
   };
 
 } // namespace Model

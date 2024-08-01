@@ -22,9 +22,9 @@ namespace Model
 {
 
 InvokeEndpointWithResponseStreamInitialResponse::InvokeEndpointWithResponseStreamInitialResponse() : 
-    m_customAttributesHasBeenSet(false),
     m_contentTypeHasBeenSet(false),
-    m_invokedProductionVariantHasBeenSet(false)
+    m_invokedProductionVariantHasBeenSet(false),
+    m_customAttributesHasBeenSet(false)
 {
 }
 
@@ -42,12 +42,6 @@ InvokeEndpointWithResponseStreamInitialResponse& InvokeEndpointWithResponseStrea
 
 InvokeEndpointWithResponseStreamInitialResponse::InvokeEndpointWithResponseStreamInitialResponse(const Http::HeaderValueCollection& headers) : InvokeEndpointWithResponseStreamInitialResponse()
 {
-  const auto& customAttributesIter = headers.find("x-amzn-sagemaker-custom-attributes");
-  if(customAttributesIter != headers.end())
-  {
-    m_customAttributes = customAttributesIter->second;
-  }
-
   const auto& contentTypeIter = headers.find("x-amzn-sagemaker-content-type");
   if(contentTypeIter != headers.end())
   {
@@ -58,6 +52,12 @@ InvokeEndpointWithResponseStreamInitialResponse::InvokeEndpointWithResponseStrea
   if(invokedProductionVariantIter != headers.end())
   {
     m_invokedProductionVariant = invokedProductionVariantIter->second;
+  }
+
+  const auto& customAttributesIter = headers.find("x-amzn-sagemaker-custom-attributes");
+  if(customAttributesIter != headers.end())
+  {
+    m_customAttributes = customAttributesIter->second;
   }
 
 }
