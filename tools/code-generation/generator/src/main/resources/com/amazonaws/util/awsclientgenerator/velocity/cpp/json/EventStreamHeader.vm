@@ -50,7 +50,7 @@ namespace Model
        Aws::Utils::Event::Message msg;
 #if(!$entry.value.shape.eventPayloadType.equals("blob"))
        msg.InsertEventHeader(":message-type", Aws::String("event"));
-       msg.InsertEventHeader(":event-type", Aws::String("${entry.value.shape.name}"));
+       msg.InsertEventHeader(":event-type", Aws::String("${entry.key}"));
 #if($entry.value.shape.eventPayloadType.equals("string"))
        msg.InsertEventHeader(":content-type", Aws::String("text/plain"));
        msg.WriteEventPayload(value.Get$CppViewHelper.capitalizeFirstChar(${entry.value.shape.eventPayloadMemberName})());
@@ -64,7 +64,7 @@ namespace Model
        if(!value.Get$CppViewHelper.capitalizeFirstChar(${entry.value.shape.eventPayloadMemberName})().empty())
        {
            msg.InsertEventHeader(":message-type", Aws::String("event"));
-           msg.InsertEventHeader(":event-type", Aws::String("${entry.value.shape.name}"));
+           msg.InsertEventHeader(":event-type", Aws::String("${entry.key}"));
            msg.InsertEventHeader(":content-type", Aws::String("application/octet-stream"));
            msg.WriteEventPayload(value.Get$CppViewHelper.capitalizeFirstChar(${entry.value.shape.eventPayloadMemberName})());
        }
