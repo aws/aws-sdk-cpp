@@ -2,7 +2,7 @@
 # SPDX-License-Identifier: Apache-2.0.
 #
 
-cmake_minimum_required(VERSION 3.13 FATAL_ERROR)
+cmake_minimum_required(VERSION 3.14 FATAL_ERROR)
 
 option(LEGACY_BUILD "If enabled, the SDK will use 1.11.0 version of CMake files to build" ON)
 if (LEGACY_BUILD)
