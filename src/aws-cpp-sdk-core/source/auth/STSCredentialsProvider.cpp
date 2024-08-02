@@ -100,12 +100,19 @@ STSAssumeRoleWebIdentityCredentialsProvider::STSAssumeRoleWebIdentityCredentials
     Aws::Client::ClientConfiguration config;
     config.scheme = Aws::Http::Scheme::HTTPS;
     config.region = tmpRegion;
+    // Set the Connect Timeout to 30s. Default of 1s causes a timeout when STS is under load.
+    config.connectTimeoutMs = 30000;
 
     Aws::Vector<Aws::String> retryableErrors;
     retryableErrors.push_back("IDPCommunicationError");
     retryableErrors.push_back("InvalidIdentityToken");
 
-    config.retryStrategy = Aws::MakeShared<SpecifiedRetryableErrorsRetryStrategy>(STS_ASSUME_ROLE_WEB_IDENTITY_LOG_TAG, retryableErrors, 3/*maxRetries*/);
+    // The retry parameters are optimized for STS to still respond when under heavy load in production.
+    config.retryStrategy = Aws::MakeShared<SpecifiedRetryableErrorsRetryStrategy>(
+        STS_ASSUME_ROLE_WEB_IDENTITY_LOG_TAG,
+        retryableErrors,
+        9, /*maxRetries*/
+        588 /*scaleFactor*/);
 
     m_client = Aws::MakeUnique<Aws::Internal::STSCredentialsClient>(STS_ASSUME_ROLE_WEB_IDENTITY_LOG_TAG, config);
     m_initialized = true;
