@@ -83,10 +83,36 @@ namespace ResilienceHub
         virtual ~ResilienceHubClient();
 
         /**
+         * <p>Accepts the resource grouping recommendations suggested by Resilience Hub for
+         * your application.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/AcceptResourceGroupingRecommendations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AcceptResourceGroupingRecommendationsOutcome AcceptResourceGroupingRecommendations(const Model::AcceptResourceGroupingRecommendationsRequest& request) const;
+
+        /**
+         * A Callable wrapper for AcceptResourceGroupingRecommendations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename AcceptResourceGroupingRecommendationsRequestT = Model::AcceptResourceGroupingRecommendationsRequest>
+        Model::AcceptResourceGroupingRecommendationsOutcomeCallable AcceptResourceGroupingRecommendationsCallable(const AcceptResourceGroupingRecommendationsRequestT& request) const
+        {
+            return SubmitCallable(&ResilienceHubClient::AcceptResourceGroupingRecommendations, request);
+        }
+
+        /**
+         * An Async wrapper for AcceptResourceGroupingRecommendations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename AcceptResourceGroupingRecommendationsRequestT = Model::AcceptResourceGroupingRecommendationsRequest>
+        void AcceptResourceGroupingRecommendationsAsync(const AcceptResourceGroupingRecommendationsRequestT& request, const AcceptResourceGroupingRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ResilienceHubClient::AcceptResourceGroupingRecommendations, request, handler, context);
+        }
+
+        /**
          * <p>Adds the source of resource-maps to the draft version of an application.
          * During assessment, Resilience Hub will use these resource-maps to resolve the
          * latest physical ID for each resource in the application template. For more
-         * information about different types of resources suported by Resilience Hub and
+         * information about different types of resources supported by Resilience Hub and
          * how to add them in your application, see <a
          * href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/how-app-manage.html">Step
          * 2: How is your application managed?</a> in the Resilience Hub User
@@ -599,7 +625,7 @@ namespace ResilienceHub
 
         /**
          * <p>Describes a resource of the Resilience Hub application.</p>  <p>This
-         * API accepts only one of the following parameters to descibe the resource:</p>
+         * API accepts only one of the following parameters to describe the resource:</p>
          * <ul> <li> <p> <code>resourceName</code> </p> </li> <li> <p>
          * <code>logicalResourceId</code> </p> </li> <li> <p>
          * <code>physicalResourceId</code> (Along with <code>physicalResourceId</code>, you
@@ -737,6 +763,32 @@ namespace ResilienceHub
         void DescribeResiliencyPolicyAsync(const DescribeResiliencyPolicyRequestT& request, const DescribeResiliencyPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ResilienceHubClient::DescribeResiliencyPolicy, request, handler, context);
+        }
+
+        /**
+         * <p>Describes the resource grouping recommendation tasks run by Resilience Hub
+         * for your application.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/DescribeResourceGroupingRecommendationTask">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeResourceGroupingRecommendationTaskOutcome DescribeResourceGroupingRecommendationTask(const Model::DescribeResourceGroupingRecommendationTaskRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeResourceGroupingRecommendationTask that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeResourceGroupingRecommendationTaskRequestT = Model::DescribeResourceGroupingRecommendationTaskRequest>
+        Model::DescribeResourceGroupingRecommendationTaskOutcomeCallable DescribeResourceGroupingRecommendationTaskCallable(const DescribeResourceGroupingRecommendationTaskRequestT& request) const
+        {
+            return SubmitCallable(&ResilienceHubClient::DescribeResourceGroupingRecommendationTask, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeResourceGroupingRecommendationTask that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeResourceGroupingRecommendationTaskRequestT = Model::DescribeResourceGroupingRecommendationTaskRequest>
+        void DescribeResourceGroupingRecommendationTaskAsync(const DescribeResourceGroupingRecommendationTaskRequestT& request, const DescribeResourceGroupingRecommendationTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ResilienceHubClient::DescribeResourceGroupingRecommendationTask, request, handler, context);
         }
 
         /**
@@ -1143,6 +1195,32 @@ namespace ResilienceHub
         }
 
         /**
+         * <p>Lists the resource grouping recommendations suggested by Resilience Hub for
+         * your application.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListResourceGroupingRecommendations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListResourceGroupingRecommendationsOutcome ListResourceGroupingRecommendations(const Model::ListResourceGroupingRecommendationsRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for ListResourceGroupingRecommendations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListResourceGroupingRecommendationsRequestT = Model::ListResourceGroupingRecommendationsRequest>
+        Model::ListResourceGroupingRecommendationsOutcomeCallable ListResourceGroupingRecommendationsCallable(const ListResourceGroupingRecommendationsRequestT& request = {}) const
+        {
+            return SubmitCallable(&ResilienceHubClient::ListResourceGroupingRecommendations, request);
+        }
+
+        /**
+         * An Async wrapper for ListResourceGroupingRecommendations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListResourceGroupingRecommendationsRequestT = Model::ListResourceGroupingRecommendationsRequest>
+        void ListResourceGroupingRecommendationsAsync(const ListResourceGroupingRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListResourceGroupingRecommendationsRequestT& request = {}) const
+        {
+            return SubmitAsync(&ResilienceHubClient::ListResourceGroupingRecommendations, request, handler, context);
+        }
+
+        /**
          * <p>Lists the standard operating procedure (SOP) recommendations for the
          * Resilience Hub applications.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListSopRecommendations">AWS
@@ -1327,6 +1405,31 @@ namespace ResilienceHub
         }
 
         /**
+         * <p>Rejects resource grouping recommendations.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/RejectResourceGroupingRecommendations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::RejectResourceGroupingRecommendationsOutcome RejectResourceGroupingRecommendations(const Model::RejectResourceGroupingRecommendationsRequest& request) const;
+
+        /**
+         * A Callable wrapper for RejectResourceGroupingRecommendations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename RejectResourceGroupingRecommendationsRequestT = Model::RejectResourceGroupingRecommendationsRequest>
+        Model::RejectResourceGroupingRecommendationsOutcomeCallable RejectResourceGroupingRecommendationsCallable(const RejectResourceGroupingRecommendationsRequestT& request) const
+        {
+            return SubmitCallable(&ResilienceHubClient::RejectResourceGroupingRecommendations, request);
+        }
+
+        /**
+         * An Async wrapper for RejectResourceGroupingRecommendations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename RejectResourceGroupingRecommendationsRequestT = Model::RejectResourceGroupingRecommendationsRequest>
+        void RejectResourceGroupingRecommendationsAsync(const RejectResourceGroupingRecommendationsRequestT& request, const RejectResourceGroupingRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ResilienceHubClient::RejectResourceGroupingRecommendations, request, handler, context);
+        }
+
+        /**
          * <p>Removes resource mappings from a draft application version.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/RemoveDraftAppVersionResourceMappings">AWS
@@ -1402,6 +1505,31 @@ namespace ResilienceHub
         void StartAppAssessmentAsync(const StartAppAssessmentRequestT& request, const StartAppAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ResilienceHubClient::StartAppAssessment, request, handler, context);
+        }
+
+        /**
+         * <p>Starts grouping recommendation task.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/StartResourceGroupingRecommendationTask">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartResourceGroupingRecommendationTaskOutcome StartResourceGroupingRecommendationTask(const Model::StartResourceGroupingRecommendationTaskRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartResourceGroupingRecommendationTask that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartResourceGroupingRecommendationTaskRequestT = Model::StartResourceGroupingRecommendationTaskRequest>
+        Model::StartResourceGroupingRecommendationTaskOutcomeCallable StartResourceGroupingRecommendationTaskCallable(const StartResourceGroupingRecommendationTaskRequestT& request) const
+        {
+            return SubmitCallable(&ResilienceHubClient::StartResourceGroupingRecommendationTask, request);
+        }
+
+        /**
+         * An Async wrapper for StartResourceGroupingRecommendationTask that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartResourceGroupingRecommendationTaskRequestT = Model::StartResourceGroupingRecommendationTaskRequest>
+        void StartResourceGroupingRecommendationTaskAsync(const StartResourceGroupingRecommendationTaskRequestT& request, const StartResourceGroupingRecommendationTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ResilienceHubClient::StartResourceGroupingRecommendationTask, request, handler, context);
         }
 
         /**

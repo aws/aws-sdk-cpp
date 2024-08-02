@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using SecurityHubClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using SecurityHubClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using SecurityHubClientConfiguration = Aws::Client::GenericClientConfiguration;
 using SecurityHubBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using RAMClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using RAMClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using RAMClientConfiguration = Aws::Client::GenericClientConfiguration;
 using RAMBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

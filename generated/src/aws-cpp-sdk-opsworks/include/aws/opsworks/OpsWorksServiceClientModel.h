@@ -106,7 +106,7 @@ namespace Aws
 
   namespace OpsWorks
   {
-    using OpsWorksClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using OpsWorksClientConfiguration = Aws::Client::GenericClientConfiguration;
     using OpsWorksEndpointProviderBase = Aws::OpsWorks::Endpoint::OpsWorksEndpointProviderBase;
     using OpsWorksEndpointProvider = Aws::OpsWorks::Endpoint::OpsWorksEndpointProvider;
 

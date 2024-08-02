@@ -96,7 +96,7 @@ namespace Aws
 
   namespace MTurk
   {
-    using MTurkClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using MTurkClientConfiguration = Aws::Client::GenericClientConfiguration;
     using MTurkEndpointProviderBase = Aws::MTurk::Endpoint::MTurkEndpointProviderBase;
     using MTurkEndpointProvider = Aws::MTurk::Endpoint::MTurkEndpointProvider;
 

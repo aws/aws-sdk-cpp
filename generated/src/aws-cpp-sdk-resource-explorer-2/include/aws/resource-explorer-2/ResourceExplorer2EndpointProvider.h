@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using ResourceExplorer2ClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using ResourceExplorer2ClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using ResourceExplorer2ClientConfiguration = Aws::Client::GenericClientConfiguration;
 using ResourceExplorer2BuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

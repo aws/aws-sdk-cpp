@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using InternetMonitorClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using InternetMonitorClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using InternetMonitorClientConfiguration = Aws::Client::GenericClientConfiguration;
 using InternetMonitorBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

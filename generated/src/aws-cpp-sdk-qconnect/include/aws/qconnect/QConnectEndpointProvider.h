@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using QConnectClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using QConnectClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using QConnectClientConfiguration = Aws::Client::GenericClientConfiguration;
 using QConnectBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

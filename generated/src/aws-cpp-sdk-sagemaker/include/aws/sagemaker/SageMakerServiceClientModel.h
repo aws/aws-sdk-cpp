@@ -396,7 +396,7 @@ namespace Aws
 
   namespace SageMaker
   {
-    using SageMakerClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using SageMakerClientConfiguration = Aws::Client::GenericClientConfiguration;
     using SageMakerEndpointProviderBase = Aws::SageMaker::Endpoint::SageMakerEndpointProviderBase;
     using SageMakerEndpointProvider = Aws::SageMaker::Endpoint::SageMakerEndpointProvider;
 

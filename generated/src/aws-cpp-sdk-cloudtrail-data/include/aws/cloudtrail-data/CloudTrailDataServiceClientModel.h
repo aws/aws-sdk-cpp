@@ -52,7 +52,7 @@ namespace Aws
 
   namespace CloudTrailData
   {
-    using CloudTrailDataClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using CloudTrailDataClientConfiguration = Aws::Client::GenericClientConfiguration;
     using CloudTrailDataEndpointProviderBase = Aws::CloudTrailData::Endpoint::CloudTrailDataEndpointProviderBase;
     using CloudTrailDataEndpointProvider = Aws::CloudTrailData::Endpoint::CloudTrailDataEndpointProvider;
 

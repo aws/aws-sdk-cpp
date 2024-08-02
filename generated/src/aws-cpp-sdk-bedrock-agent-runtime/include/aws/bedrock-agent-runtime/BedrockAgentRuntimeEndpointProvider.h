@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using BedrockAgentRuntimeClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using BedrockAgentRuntimeClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using BedrockAgentRuntimeClientConfiguration = Aws::Client::GenericClientConfiguration;
 using BedrockAgentRuntimeBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

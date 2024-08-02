@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using FSxClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using FSxClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using FSxClientConfiguration = Aws::Client::GenericClientConfiguration;
 using FSxBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

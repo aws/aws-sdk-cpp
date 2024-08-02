@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using ApplicationCostProfilerClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using ApplicationCostProfilerClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using ApplicationCostProfilerClientConfiguration = Aws::Client::GenericClientConfiguration;
 using ApplicationCostProfilerBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

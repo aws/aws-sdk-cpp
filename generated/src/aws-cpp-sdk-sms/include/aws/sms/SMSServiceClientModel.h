@@ -109,7 +109,7 @@ namespace Aws
 
   namespace SMS
   {
-    using SMSClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using SMSClientConfiguration = Aws::Client::GenericClientConfiguration;
     using SMSEndpointProviderBase = Aws::SMS::Endpoint::SMSEndpointProviderBase;
     using SMSEndpointProvider = Aws::SMS::Endpoint::SMSEndpointProvider;
 

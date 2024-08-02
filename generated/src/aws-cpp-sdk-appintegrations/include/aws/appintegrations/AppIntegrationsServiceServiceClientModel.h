@@ -75,7 +75,7 @@ namespace Aws
 
   namespace AppIntegrationsService
   {
-    using AppIntegrationsServiceClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using AppIntegrationsServiceClientConfiguration = Aws::Client::GenericClientConfiguration;
     using AppIntegrationsServiceEndpointProviderBase = Aws::AppIntegrationsService::Endpoint::AppIntegrationsServiceEndpointProviderBase;
     using AppIntegrationsServiceEndpointProvider = Aws::AppIntegrationsService::Endpoint::AppIntegrationsServiceEndpointProvider;
 

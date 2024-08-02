@@ -79,7 +79,7 @@ namespace Aws
 
   namespace ECRPublic
   {
-    using ECRPublicClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using ECRPublicClientConfiguration = Aws::Client::GenericClientConfiguration;
     using ECRPublicEndpointProviderBase = Aws::ECRPublic::Endpoint::ECRPublicEndpointProviderBase;
     using ECRPublicEndpointProvider = Aws::ECRPublic::Endpoint::ECRPublicEndpointProvider;
 

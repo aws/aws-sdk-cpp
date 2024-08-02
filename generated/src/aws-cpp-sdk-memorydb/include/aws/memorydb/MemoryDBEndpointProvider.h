@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using MemoryDBClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using MemoryDBClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using MemoryDBClientConfiguration = Aws::Client::GenericClientConfiguration;
 using MemoryDBBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

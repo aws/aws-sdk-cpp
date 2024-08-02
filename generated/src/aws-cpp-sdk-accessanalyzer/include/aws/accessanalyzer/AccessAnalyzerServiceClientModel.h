@@ -81,7 +81,7 @@ namespace Aws
 
   namespace AccessAnalyzer
   {
-    using AccessAnalyzerClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using AccessAnalyzerClientConfiguration = Aws::Client::GenericClientConfiguration;
     using AccessAnalyzerEndpointProviderBase = Aws::AccessAnalyzer::Endpoint::AccessAnalyzerEndpointProviderBase;
     using AccessAnalyzerEndpointProvider = Aws::AccessAnalyzer::Endpoint::AccessAnalyzerEndpointProvider;
 

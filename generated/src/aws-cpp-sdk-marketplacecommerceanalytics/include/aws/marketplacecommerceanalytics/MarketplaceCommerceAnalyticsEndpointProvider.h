@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using MarketplaceCommerceAnalyticsClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using MarketplaceCommerceAnalyticsClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using MarketplaceCommerceAnalyticsClientConfiguration = Aws::Client::GenericClientConfiguration;
 using MarketplaceCommerceAnalyticsBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

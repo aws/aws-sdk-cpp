@@ -115,7 +115,7 @@ namespace Aws
 
   namespace DocDB
   {
-    using DocDBClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using DocDBClientConfiguration = Aws::Client::GenericClientConfiguration;
     using DocDBEndpointProviderBase = Aws::DocDB::Endpoint::DocDBEndpointProviderBase;
     using DocDBEndpointProvider = Aws::DocDB::Endpoint::DocDBEndpointProvider;
 

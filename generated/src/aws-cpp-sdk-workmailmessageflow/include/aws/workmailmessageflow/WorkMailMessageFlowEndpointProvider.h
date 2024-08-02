@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using WorkMailMessageFlowClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using WorkMailMessageFlowClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using WorkMailMessageFlowClientConfiguration = Aws::Client::GenericClientConfiguration;
 using WorkMailMessageFlowBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

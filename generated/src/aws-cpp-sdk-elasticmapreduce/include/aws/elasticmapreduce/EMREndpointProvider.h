@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using EMRClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using EMRClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using EMRClientConfiguration = Aws::Client::GenericClientConfiguration;
 using EMRBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

@@ -92,7 +92,7 @@ namespace Aws
 
   namespace Panorama
   {
-    using PanoramaClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using PanoramaClientConfiguration = Aws::Client::GenericClientConfiguration;
     using PanoramaEndpointProviderBase = Aws::Panorama::Endpoint::PanoramaEndpointProviderBase;
     using PanoramaEndpointProvider = Aws::Panorama::Endpoint::PanoramaEndpointProvider;
 

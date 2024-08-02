@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using SavingsPlansClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using SavingsPlansClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using SavingsPlansClientConfiguration = Aws::Client::GenericClientConfiguration;
 using SavingsPlansBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

@@ -62,7 +62,7 @@ namespace Aws
 
   namespace CostOptimizationHub
   {
-    using CostOptimizationHubClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using CostOptimizationHubClientConfiguration = Aws::Client::GenericClientConfiguration;
     using CostOptimizationHubEndpointProviderBase = Aws::CostOptimizationHub::Endpoint::CostOptimizationHubEndpointProviderBase;
     using CostOptimizationHubEndpointProvider = Aws::CostOptimizationHub::Endpoint::CostOptimizationHubEndpointProvider;
 

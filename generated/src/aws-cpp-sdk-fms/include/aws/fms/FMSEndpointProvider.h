@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using FMSClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using FMSClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using FMSClientConfiguration = Aws::Client::GenericClientConfiguration;
 using FMSBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

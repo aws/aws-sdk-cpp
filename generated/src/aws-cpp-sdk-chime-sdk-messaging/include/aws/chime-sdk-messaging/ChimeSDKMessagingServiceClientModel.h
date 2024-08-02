@@ -93,7 +93,7 @@ namespace Aws
 
   namespace ChimeSDKMessaging
   {
-    using ChimeSDKMessagingClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using ChimeSDKMessagingClientConfiguration = Aws::Client::GenericClientConfiguration;
     using ChimeSDKMessagingEndpointProviderBase = Aws::ChimeSDKMessaging::Endpoint::ChimeSDKMessagingEndpointProviderBase;
     using ChimeSDKMessagingEndpointProvider = Aws::ChimeSDKMessaging::Endpoint::ChimeSDKMessagingEndpointProvider;
 

@@ -68,7 +68,7 @@ namespace Aws
 
   namespace QApps
   {
-    using QAppsClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using QAppsClientConfiguration = Aws::Client::GenericClientConfiguration;
     using QAppsEndpointProviderBase = Aws::QApps::Endpoint::QAppsEndpointProviderBase;
     using QAppsEndpointProvider = Aws::QApps::Endpoint::QAppsEndpointProvider;
 

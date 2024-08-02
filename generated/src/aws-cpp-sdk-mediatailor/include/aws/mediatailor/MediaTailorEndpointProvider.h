@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using MediaTailorClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using MediaTailorClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using MediaTailorClientConfiguration = Aws::Client::GenericClientConfiguration;
 using MediaTailorBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

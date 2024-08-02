@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using KMSClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using KMSClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using KMSClientConfiguration = Aws::Client::GenericClientConfiguration;
 using KMSBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

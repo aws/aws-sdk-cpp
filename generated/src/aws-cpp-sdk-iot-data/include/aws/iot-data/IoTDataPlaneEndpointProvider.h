@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using IoTDataPlaneClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using IoTDataPlaneClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using IoTDataPlaneClientConfiguration = Aws::Client::GenericClientConfiguration;
 using IoTDataPlaneBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

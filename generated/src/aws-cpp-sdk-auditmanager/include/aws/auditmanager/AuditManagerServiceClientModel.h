@@ -126,7 +126,7 @@ namespace Aws
 
   namespace AuditManager
   {
-    using AuditManagerClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using AuditManagerClientConfiguration = Aws::Client::GenericClientConfiguration;
     using AuditManagerEndpointProviderBase = Aws::AuditManager::Endpoint::AuditManagerEndpointProviderBase;
     using AuditManagerEndpointProvider = Aws::AuditManager::Endpoint::AuditManagerEndpointProvider;
 

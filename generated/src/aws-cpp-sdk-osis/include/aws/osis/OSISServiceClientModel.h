@@ -67,7 +67,7 @@ namespace Aws
 
   namespace OSIS
   {
-    using OSISClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using OSISClientConfiguration = Aws::Client::GenericClientConfiguration;
     using OSISEndpointProviderBase = Aws::OSIS::Endpoint::OSISEndpointProviderBase;
     using OSISEndpointProvider = Aws::OSIS::Endpoint::OSISEndpointProvider;
 

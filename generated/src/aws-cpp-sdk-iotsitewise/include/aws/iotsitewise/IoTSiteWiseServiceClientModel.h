@@ -142,7 +142,7 @@ namespace Aws
 
   namespace IoTSiteWise
   {
-    using IoTSiteWiseClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using IoTSiteWiseClientConfiguration = Aws::Client::GenericClientConfiguration;
     using IoTSiteWiseEndpointProviderBase = Aws::IoTSiteWise::Endpoint::IoTSiteWiseEndpointProviderBase;
     using IoTSiteWiseEndpointProvider = Aws::IoTSiteWise::Endpoint::IoTSiteWiseEndpointProvider;
 

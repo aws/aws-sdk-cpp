@@ -92,7 +92,7 @@ namespace Aws
 
   namespace DevOpsGuru
   {
-    using DevOpsGuruClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using DevOpsGuruClientConfiguration = Aws::Client::GenericClientConfiguration;
     using DevOpsGuruEndpointProviderBase = Aws::DevOpsGuru::Endpoint::DevOpsGuruEndpointProviderBase;
     using DevOpsGuruEndpointProvider = Aws::DevOpsGuru::Endpoint::DevOpsGuruEndpointProvider;
 

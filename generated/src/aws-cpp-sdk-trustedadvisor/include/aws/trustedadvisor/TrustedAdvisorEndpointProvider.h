@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using TrustedAdvisorClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using TrustedAdvisorClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using TrustedAdvisorClientConfiguration = Aws::Client::GenericClientConfiguration;
 using TrustedAdvisorBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

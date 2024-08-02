@@ -14,9 +14,9 @@ namespace Aws
 {
     namespace S3Control
     {
-        struct AWS_S3CONTROL_API S3ControlClientConfiguration : public Aws::Client::GenericClientConfiguration</*EndpointDiscoverySupported*/true>
+        struct AWS_S3CONTROL_API S3ControlClientConfiguration : public Aws::Client::GenericClientConfiguration
         {
-            using BaseClientConfigClass = Aws::Client::GenericClientConfiguration</*EndpointDiscoverySupported*/true>;
+            using BaseClientConfigClass = Aws::Client::GenericClientConfiguration;
 
             S3ControlClientConfiguration(const Client::ClientConfigurationInitValues &configuration = {});
 

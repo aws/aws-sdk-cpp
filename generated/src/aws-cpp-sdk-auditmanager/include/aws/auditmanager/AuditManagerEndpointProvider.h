@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using AuditManagerClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using AuditManagerClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using AuditManagerClientConfiguration = Aws::Client::GenericClientConfiguration;
 using AuditManagerBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using ResourceGroupsClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using ResourceGroupsClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using ResourceGroupsClientConfiguration = Aws::Client::GenericClientConfiguration;
 using ResourceGroupsBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

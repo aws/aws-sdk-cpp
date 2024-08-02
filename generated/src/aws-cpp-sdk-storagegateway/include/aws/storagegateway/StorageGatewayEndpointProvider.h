@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using StorageGatewayClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using StorageGatewayClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using StorageGatewayClientConfiguration = Aws::Client::GenericClientConfiguration;
 using StorageGatewayBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

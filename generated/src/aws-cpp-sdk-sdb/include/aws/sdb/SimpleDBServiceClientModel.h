@@ -57,7 +57,7 @@ namespace Aws
 
   namespace SimpleDB
   {
-    using SimpleDBClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using SimpleDBClientConfiguration = Aws::Client::GenericClientConfiguration;
     using SimpleDBEndpointProviderBase = Aws::SimpleDB::Endpoint::SimpleDBEndpointProviderBase;
     using SimpleDBEndpointProvider = Aws::SimpleDB::Endpoint::SimpleDBEndpointProvider;
 

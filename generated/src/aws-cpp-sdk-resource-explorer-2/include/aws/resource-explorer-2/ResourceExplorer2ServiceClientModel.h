@@ -81,7 +81,7 @@ namespace Aws
 
   namespace ResourceExplorer2
   {
-    using ResourceExplorer2ClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using ResourceExplorer2ClientConfiguration = Aws::Client::GenericClientConfiguration;
     using ResourceExplorer2EndpointProviderBase = Aws::ResourceExplorer2::Endpoint::ResourceExplorer2EndpointProviderBase;
     using ResourceExplorer2EndpointProvider = Aws::ResourceExplorer2::Endpoint::ResourceExplorer2EndpointProvider;
 

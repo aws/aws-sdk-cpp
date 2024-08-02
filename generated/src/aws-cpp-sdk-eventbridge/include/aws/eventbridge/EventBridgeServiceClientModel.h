@@ -112,7 +112,7 @@ namespace Aws
 
   namespace EventBridge
   {
-    using EventBridgeClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using EventBridgeClientConfiguration = Aws::Client::GenericClientConfiguration;
     using EventBridgeEndpointProviderBase = Aws::EventBridge::Endpoint::EventBridgeEndpointProviderBase;
     using EventBridgeEndpointProvider = Aws::EventBridge::Endpoint::EventBridgeEndpointProvider;
 

@@ -89,7 +89,7 @@ namespace Aws
 
   namespace IVS
   {
-    using IVSClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using IVSClientConfiguration = Aws::Client::GenericClientConfiguration;
     using IVSEndpointProviderBase = Aws::IVS::Endpoint::IVSEndpointProviderBase;
     using IVSEndpointProvider = Aws::IVS::Endpoint::IVSEndpointProvider;
 

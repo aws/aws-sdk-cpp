@@ -207,7 +207,7 @@ namespace Aws
 
   namespace Redshift
   {
-    using RedshiftClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using RedshiftClientConfiguration = Aws::Client::GenericClientConfiguration;
     using RedshiftEndpointProviderBase = Aws::Redshift::Endpoint::RedshiftEndpointProviderBase;
     using RedshiftEndpointProvider = Aws::Redshift::Endpoint::RedshiftEndpointProvider;
 

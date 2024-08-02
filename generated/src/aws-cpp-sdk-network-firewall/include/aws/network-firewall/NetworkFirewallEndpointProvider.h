@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using NetworkFirewallClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using NetworkFirewallClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using NetworkFirewallClientConfiguration = Aws::Client::GenericClientConfiguration;
 using NetworkFirewallBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

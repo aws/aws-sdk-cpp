@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using MediaPackageVodClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using MediaPackageVodClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using MediaPackageVodClientConfiguration = Aws::Client::GenericClientConfiguration;
 using MediaPackageVodBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

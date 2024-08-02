@@ -61,7 +61,7 @@ namespace Aws
 
   namespace ManagedBlockchainQuery
   {
-    using ManagedBlockchainQueryClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using ManagedBlockchainQueryClientConfiguration = Aws::Client::GenericClientConfiguration;
     using ManagedBlockchainQueryEndpointProviderBase = Aws::ManagedBlockchainQuery::Endpoint::ManagedBlockchainQueryEndpointProviderBase;
     using ManagedBlockchainQueryEndpointProvider = Aws::ManagedBlockchainQuery::Endpoint::ManagedBlockchainQueryEndpointProvider;
 

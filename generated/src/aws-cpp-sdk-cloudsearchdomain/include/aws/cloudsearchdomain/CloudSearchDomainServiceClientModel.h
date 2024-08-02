@@ -54,7 +54,7 @@ namespace Aws
 
   namespace CloudSearchDomain
   {
-    using CloudSearchDomainClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using CloudSearchDomainClientConfiguration = Aws::Client::GenericClientConfiguration;
     using CloudSearchDomainEndpointProviderBase = Aws::CloudSearchDomain::Endpoint::CloudSearchDomainEndpointProviderBase;
     using CloudSearchDomainEndpointProvider = Aws::CloudSearchDomain::Endpoint::CloudSearchDomainEndpointProvider;
 

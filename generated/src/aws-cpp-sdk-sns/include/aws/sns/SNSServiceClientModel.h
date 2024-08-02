@@ -91,7 +91,7 @@ namespace Aws
 
   namespace SNS
   {
-    using SNSClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using SNSClientConfiguration = Aws::Client::GenericClientConfiguration;
     using SNSEndpointProviderBase = Aws::SNS::Endpoint::SNSEndpointProviderBase;
     using SNSEndpointProvider = Aws::SNS::Endpoint::SNSEndpointProvider;
 

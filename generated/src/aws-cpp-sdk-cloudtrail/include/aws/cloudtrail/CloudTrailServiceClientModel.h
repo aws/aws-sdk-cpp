@@ -111,7 +111,7 @@ namespace Aws
 
   namespace CloudTrail
   {
-    using CloudTrailClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using CloudTrailClientConfiguration = Aws::Client::GenericClientConfiguration;
     using CloudTrailEndpointProviderBase = Aws::CloudTrail::Endpoint::CloudTrailEndpointProviderBase;
     using CloudTrailEndpointProvider = Aws::CloudTrail::Endpoint::CloudTrailEndpointProvider;
 

@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using SNSClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using SNSClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using SNSClientConfiguration = Aws::Client::GenericClientConfiguration;
 using SNSBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

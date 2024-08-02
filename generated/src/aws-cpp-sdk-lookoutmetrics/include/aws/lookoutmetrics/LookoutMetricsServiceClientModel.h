@@ -85,7 +85,7 @@ namespace Aws
 
   namespace LookoutMetrics
   {
-    using LookoutMetricsClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using LookoutMetricsClientConfiguration = Aws::Client::GenericClientConfiguration;
     using LookoutMetricsEndpointProviderBase = Aws::LookoutMetrics::Endpoint::LookoutMetricsEndpointProviderBase;
     using LookoutMetricsEndpointProvider = Aws::LookoutMetrics::Endpoint::LookoutMetricsEndpointProvider;
 

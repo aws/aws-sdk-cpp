@@ -77,7 +77,7 @@ namespace Aws
 
   namespace SsmSap
   {
-    using SsmSapClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using SsmSapClientConfiguration = Aws::Client::GenericClientConfiguration;
     using SsmSapEndpointProviderBase = Aws::SsmSap::Endpoint::SsmSapEndpointProviderBase;
     using SsmSapEndpointProvider = Aws::SsmSap::Endpoint::SsmSapEndpointProvider;
 

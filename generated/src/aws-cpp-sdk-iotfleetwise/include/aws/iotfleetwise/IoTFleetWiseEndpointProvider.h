@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using IoTFleetWiseClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using IoTFleetWiseClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using IoTFleetWiseClientConfiguration = Aws::Client::GenericClientConfiguration;
 using IoTFleetWiseBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

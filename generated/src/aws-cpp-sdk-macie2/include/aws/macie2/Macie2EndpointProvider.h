@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using Macie2ClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using Macie2ClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using Macie2ClientConfiguration = Aws::Client::GenericClientConfiguration;
 using Macie2BuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

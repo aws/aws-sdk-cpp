@@ -56,7 +56,7 @@ namespace Aws
 
   namespace BedrockAgentRuntime
   {
-    using BedrockAgentRuntimeClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using BedrockAgentRuntimeClientConfiguration = Aws::Client::GenericClientConfiguration;
     using BedrockAgentRuntimeEndpointProviderBase = Aws::BedrockAgentRuntime::Endpoint::BedrockAgentRuntimeEndpointProviderBase;
     using BedrockAgentRuntimeEndpointProvider = Aws::BedrockAgentRuntime::Endpoint::BedrockAgentRuntimeEndpointProvider;
 

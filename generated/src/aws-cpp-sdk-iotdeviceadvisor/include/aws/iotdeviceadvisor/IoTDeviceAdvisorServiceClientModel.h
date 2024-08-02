@@ -68,7 +68,7 @@ namespace Aws
 
   namespace IoTDeviceAdvisor
   {
-    using IoTDeviceAdvisorClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using IoTDeviceAdvisorClientConfiguration = Aws::Client::GenericClientConfiguration;
     using IoTDeviceAdvisorEndpointProviderBase = Aws::IoTDeviceAdvisor::Endpoint::IoTDeviceAdvisorEndpointProviderBase;
     using IoTDeviceAdvisorEndpointProvider = Aws::IoTDeviceAdvisor::Endpoint::IoTDeviceAdvisorEndpointProvider;
 

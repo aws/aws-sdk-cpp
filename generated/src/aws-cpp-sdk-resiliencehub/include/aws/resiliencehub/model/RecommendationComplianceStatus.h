@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     BreachedUnattainable,
     BreachedCanMeet,
-    MetCanImprove
+    MetCanImprove,
+    MissingPolicy
   };
 
 namespace RecommendationComplianceStatusMapper

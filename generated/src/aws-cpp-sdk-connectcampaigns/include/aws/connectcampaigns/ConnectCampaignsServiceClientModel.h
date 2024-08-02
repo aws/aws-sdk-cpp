@@ -63,7 +63,7 @@ namespace Aws
 
   namespace ConnectCampaigns
   {
-    using ConnectCampaignsClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using ConnectCampaignsClientConfiguration = Aws::Client::GenericClientConfiguration;
     using ConnectCampaignsEndpointProviderBase = Aws::ConnectCampaigns::Endpoint::ConnectCampaignsEndpointProviderBase;
     using ConnectCampaignsEndpointProvider = Aws::ConnectCampaigns::Endpoint::ConnectCampaignsEndpointProvider;
 

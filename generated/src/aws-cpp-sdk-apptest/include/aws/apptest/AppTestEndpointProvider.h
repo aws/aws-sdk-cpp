@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using AppTestClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using AppTestClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using AppTestClientConfiguration = Aws::Client::GenericClientConfiguration;
 using AppTestBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

@@ -16,6 +16,7 @@
 #include <aws/resiliencehub/model/ResiliencyPolicy.h>
 #include <aws/resiliencehub/model/ResiliencyScore.h>
 #include <aws/resiliencehub/model/ResourceErrorsDetails.h>
+#include <aws/resiliencehub/model/AssessmentSummary.h>
 #include <aws/resiliencehub/model/DisruptionType.h>
 #include <aws/resiliencehub/model/DisruptionCompliance.h>
 #include <utility>
@@ -270,6 +271,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>Indicates a concise summary that provides an overview of the Resilience Hub
+     * assessment.</p>
+     */
+    inline const AssessmentSummary& GetSummary() const{ return m_summary; }
+    inline bool SummaryHasBeenSet() const { return m_summaryHasBeenSet; }
+    inline void SetSummary(const AssessmentSummary& value) { m_summaryHasBeenSet = true; m_summary = value; }
+    inline void SetSummary(AssessmentSummary&& value) { m_summaryHasBeenSet = true; m_summary = std::move(value); }
+    inline AppAssessment& WithSummary(const AssessmentSummary& value) { SetSummary(value); return *this;}
+    inline AppAssessment& WithSummary(AssessmentSummary&& value) { SetSummary(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Tags assigned to the resource. A tag is a label that you assign to an Amazon
      * Web Services resource. Each tag consists of a key/value pair.</p>
      */
@@ -350,6 +364,9 @@ namespace Model
 
     Aws::Utils::DateTime m_startTime;
     bool m_startTimeHasBeenSet = false;
+
+    AssessmentSummary m_summary;
+    bool m_summaryHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;

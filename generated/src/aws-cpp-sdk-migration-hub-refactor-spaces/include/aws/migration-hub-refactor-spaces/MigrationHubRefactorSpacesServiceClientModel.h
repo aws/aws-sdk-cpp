@@ -76,7 +76,7 @@ namespace Aws
 
   namespace MigrationHubRefactorSpaces
   {
-    using MigrationHubRefactorSpacesClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using MigrationHubRefactorSpacesClientConfiguration = Aws::Client::GenericClientConfiguration;
     using MigrationHubRefactorSpacesEndpointProviderBase = Aws::MigrationHubRefactorSpaces::Endpoint::MigrationHubRefactorSpacesEndpointProviderBase;
     using MigrationHubRefactorSpacesEndpointProvider = Aws::MigrationHubRefactorSpaces::Endpoint::MigrationHubRefactorSpacesEndpointProvider;
 

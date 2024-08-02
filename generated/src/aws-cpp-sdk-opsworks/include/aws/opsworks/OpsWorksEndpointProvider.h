@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using OpsWorksClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using OpsWorksClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using OpsWorksClientConfiguration = Aws::Client::GenericClientConfiguration;
 using OpsWorksBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

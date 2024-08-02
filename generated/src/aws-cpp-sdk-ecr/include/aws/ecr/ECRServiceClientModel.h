@@ -107,7 +107,7 @@ namespace Aws
 
   namespace ECR
   {
-    using ECRClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using ECRClientConfiguration = Aws::Client::GenericClientConfiguration;
     using ECREndpointProviderBase = Aws::ECR::Endpoint::ECREndpointProviderBase;
     using ECREndpointProvider = Aws::ECR::Endpoint::ECREndpointProvider;
 

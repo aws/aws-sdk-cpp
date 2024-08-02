@@ -67,7 +67,7 @@ namespace Aws
 
   namespace SQS
   {
-    using SQSClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using SQSClientConfiguration = Aws::Client::GenericClientConfiguration;
     using SQSEndpointProviderBase = Aws::SQS::Endpoint::SQSEndpointProviderBase;
     using SQSEndpointProvider = Aws::SQS::Endpoint::SQSEndpointProvider;
 

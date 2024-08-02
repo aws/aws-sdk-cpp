@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using CodeDeployClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using CodeDeployClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using CodeDeployClientConfiguration = Aws::Client::GenericClientConfiguration;
 using CodeDeployBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

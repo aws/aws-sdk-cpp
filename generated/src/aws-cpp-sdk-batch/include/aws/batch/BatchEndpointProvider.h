@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using BatchClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using BatchClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using BatchClientConfiguration = Aws::Client::GenericClientConfiguration;
 using BatchBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

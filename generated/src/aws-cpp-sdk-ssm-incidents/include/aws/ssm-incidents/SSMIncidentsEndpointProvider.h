@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using SSMIncidentsClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using SSMIncidentsClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using SSMIncidentsClientConfiguration = Aws::Client::GenericClientConfiguration;
 using SSMIncidentsBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

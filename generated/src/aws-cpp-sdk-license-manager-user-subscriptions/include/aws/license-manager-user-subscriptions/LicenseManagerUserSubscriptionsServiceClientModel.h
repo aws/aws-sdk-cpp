@@ -64,7 +64,7 @@ namespace Aws
 
   namespace LicenseManagerUserSubscriptions
   {
-    using LicenseManagerUserSubscriptionsClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using LicenseManagerUserSubscriptionsClientConfiguration = Aws::Client::GenericClientConfiguration;
     using LicenseManagerUserSubscriptionsEndpointProviderBase = Aws::LicenseManagerUserSubscriptions::Endpoint::LicenseManagerUserSubscriptionsEndpointProviderBase;
     using LicenseManagerUserSubscriptionsEndpointProvider = Aws::LicenseManagerUserSubscriptions::Endpoint::LicenseManagerUserSubscriptionsEndpointProvider;
 

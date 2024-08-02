@@ -57,7 +57,7 @@ namespace Aws
 
   namespace EBS
   {
-    using EBSClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using EBSClientConfiguration = Aws::Client::GenericClientConfiguration;
     using EBSEndpointProviderBase = Aws::EBS::Endpoint::EBSEndpointProviderBase;
     using EBSEndpointProvider = Aws::EBS::Endpoint::EBSEndpointProvider;
 

@@ -105,7 +105,7 @@ namespace Aws
 
   namespace Transfer
   {
-    using TransferClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using TransferClientConfiguration = Aws::Client::GenericClientConfiguration;
     using TransferEndpointProviderBase = Aws::Transfer::Endpoint::TransferEndpointProviderBase;
     using TransferEndpointProvider = Aws::Transfer::Endpoint::TransferEndpointProvider;
 

@@ -114,7 +114,7 @@ namespace Aws
 
   namespace CodeBuild
   {
-    using CodeBuildClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using CodeBuildClientConfiguration = Aws::Client::GenericClientConfiguration;
     using CodeBuildEndpointProviderBase = Aws::CodeBuild::Endpoint::CodeBuildEndpointProviderBase;
     using CodeBuildEndpointProvider = Aws::CodeBuild::Endpoint::CodeBuildEndpointProvider;
 

@@ -71,7 +71,7 @@ namespace Aws
 
   namespace MigrationHub
   {
-    using MigrationHubClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using MigrationHubClientConfiguration = Aws::Client::GenericClientConfiguration;
     using MigrationHubEndpointProviderBase = Aws::MigrationHub::Endpoint::MigrationHubEndpointProviderBase;
     using MigrationHubEndpointProvider = Aws::MigrationHub::Endpoint::MigrationHubEndpointProvider;
 

@@ -117,7 +117,7 @@ namespace Aws
 
   namespace DataSync
   {
-    using DataSyncClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using DataSyncClientConfiguration = Aws::Client::GenericClientConfiguration;
     using DataSyncEndpointProviderBase = Aws::DataSync::Endpoint::DataSyncEndpointProviderBase;
     using DataSyncEndpointProvider = Aws::DataSync::Endpoint::DataSyncEndpointProvider;
 

@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using MgnClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using MgnClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using MgnClientConfiguration = Aws::Client::GenericClientConfiguration;
 using MgnBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

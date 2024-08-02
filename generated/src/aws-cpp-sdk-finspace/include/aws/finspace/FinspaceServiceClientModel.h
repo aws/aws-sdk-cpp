@@ -97,7 +97,7 @@ namespace Aws
 
   namespace finspace
   {
-    using FinspaceClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using FinspaceClientConfiguration = Aws::Client::GenericClientConfiguration;
     using FinspaceEndpointProviderBase = Aws::finspace::Endpoint::FinspaceEndpointProviderBase;
     using FinspaceEndpointProvider = Aws::finspace::Endpoint::FinspaceEndpointProvider;
 

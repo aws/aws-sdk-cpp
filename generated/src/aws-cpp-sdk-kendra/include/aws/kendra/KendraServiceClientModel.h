@@ -103,7 +103,7 @@ namespace Aws
 
   namespace kendra
   {
-    using KendraClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using KendraClientConfiguration = Aws::Client::GenericClientConfiguration;
     using KendraEndpointProviderBase = Aws::kendra::Endpoint::KendraEndpointProviderBase;
     using KendraEndpointProvider = Aws::kendra::Endpoint::KendraEndpointProvider;
 

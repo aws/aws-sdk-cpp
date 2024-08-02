@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using KafkaClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using KafkaClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using KafkaClientConfiguration = Aws::Client::GenericClientConfiguration;
 using KafkaBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

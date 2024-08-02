@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using SsmSapClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using SsmSapClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using SsmSapClientConfiguration = Aws::Client::GenericClientConfiguration;
 using SsmSapBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

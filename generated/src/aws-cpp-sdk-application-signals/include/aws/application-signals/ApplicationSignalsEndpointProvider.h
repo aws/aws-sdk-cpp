@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using ApplicationSignalsClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using ApplicationSignalsClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using ApplicationSignalsClientConfiguration = Aws::Client::GenericClientConfiguration;
 using ApplicationSignalsBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

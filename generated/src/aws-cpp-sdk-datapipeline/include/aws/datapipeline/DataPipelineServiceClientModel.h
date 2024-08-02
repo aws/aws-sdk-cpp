@@ -70,7 +70,7 @@ namespace Aws
 
   namespace DataPipeline
   {
-    using DataPipelineClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using DataPipelineClientConfiguration = Aws::Client::GenericClientConfiguration;
     using DataPipelineEndpointProviderBase = Aws::DataPipeline::Endpoint::DataPipelineEndpointProviderBase;
     using DataPipelineEndpointProvider = Aws::DataPipeline::Endpoint::DataPipelineEndpointProvider;
 

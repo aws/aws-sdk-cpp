@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using LightsailClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using LightsailClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using LightsailClientConfiguration = Aws::Client::GenericClientConfiguration;
 using LightsailBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

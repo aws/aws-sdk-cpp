@@ -88,7 +88,7 @@ namespace Aws
 
   namespace ApplicationInsights
   {
-    using ApplicationInsightsClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using ApplicationInsightsClientConfiguration = Aws::Client::GenericClientConfiguration;
     using ApplicationInsightsEndpointProviderBase = Aws::ApplicationInsights::Endpoint::ApplicationInsightsEndpointProviderBase;
     using ApplicationInsightsEndpointProvider = Aws::ApplicationInsights::Endpoint::ApplicationInsightsEndpointProvider;
 

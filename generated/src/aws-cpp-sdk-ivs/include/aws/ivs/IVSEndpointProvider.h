@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using IVSClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using IVSClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using IVSClientConfiguration = Aws::Client::GenericClientConfiguration;
 using IVSBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

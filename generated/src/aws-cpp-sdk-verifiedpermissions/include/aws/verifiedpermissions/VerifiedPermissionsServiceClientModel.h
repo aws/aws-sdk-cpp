@@ -78,7 +78,7 @@ namespace Aws
 
   namespace VerifiedPermissions
   {
-    using VerifiedPermissionsClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using VerifiedPermissionsClientConfiguration = Aws::Client::GenericClientConfiguration;
     using VerifiedPermissionsEndpointProviderBase = Aws::VerifiedPermissions::Endpoint::VerifiedPermissionsEndpointProviderBase;
     using VerifiedPermissionsEndpointProvider = Aws::VerifiedPermissions::Endpoint::VerifiedPermissionsEndpointProvider;
 

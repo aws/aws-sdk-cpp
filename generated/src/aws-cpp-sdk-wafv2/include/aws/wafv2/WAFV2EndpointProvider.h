@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using WAFV2ClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using WAFV2ClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using WAFV2ClientConfiguration = Aws::Client::GenericClientConfiguration;
 using WAFV2BuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

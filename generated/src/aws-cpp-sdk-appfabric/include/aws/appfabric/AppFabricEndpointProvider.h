@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using AppFabricClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using AppFabricClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using AppFabricClientConfiguration = Aws::Client::GenericClientConfiguration;
 using AppFabricBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

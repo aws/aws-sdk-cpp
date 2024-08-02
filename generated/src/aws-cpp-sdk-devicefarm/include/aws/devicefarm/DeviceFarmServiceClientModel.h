@@ -140,7 +140,7 @@ namespace Aws
 
   namespace DeviceFarm
   {
-    using DeviceFarmClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using DeviceFarmClientConfiguration = Aws::Client::GenericClientConfiguration;
     using DeviceFarmEndpointProviderBase = Aws::DeviceFarm::Endpoint::DeviceFarmEndpointProviderBase;
     using DeviceFarmEndpointProvider = Aws::DeviceFarm::Endpoint::DeviceFarmEndpointProvider;
 

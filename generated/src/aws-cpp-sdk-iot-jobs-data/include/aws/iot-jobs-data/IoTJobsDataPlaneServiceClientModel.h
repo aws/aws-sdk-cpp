@@ -55,7 +55,7 @@ namespace Aws
 
   namespace IoTJobsDataPlane
   {
-    using IoTJobsDataPlaneClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using IoTJobsDataPlaneClientConfiguration = Aws::Client::GenericClientConfiguration;
     using IoTJobsDataPlaneEndpointProviderBase = Aws::IoTJobsDataPlane::Endpoint::IoTJobsDataPlaneEndpointProviderBase;
     using IoTJobsDataPlaneEndpointProvider = Aws::IoTJobsDataPlane::Endpoint::IoTJobsDataPlaneEndpointProvider;
 

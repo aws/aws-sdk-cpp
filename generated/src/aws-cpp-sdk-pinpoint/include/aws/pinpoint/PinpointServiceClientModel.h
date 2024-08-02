@@ -175,7 +175,7 @@ namespace Aws
 
   namespace Pinpoint
   {
-    using PinpointClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using PinpointClientConfiguration = Aws::Client::GenericClientConfiguration;
     using PinpointEndpointProviderBase = Aws::Pinpoint::Endpoint::PinpointEndpointProviderBase;
     using PinpointEndpointProvider = Aws::Pinpoint::Endpoint::PinpointEndpointProvider;
 

@@ -76,7 +76,7 @@ namespace Aws
 
   namespace ServiceQuotas
   {
-    using ServiceQuotasClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using ServiceQuotasClientConfiguration = Aws::Client::GenericClientConfiguration;
     using ServiceQuotasEndpointProviderBase = Aws::ServiceQuotas::Endpoint::ServiceQuotasEndpointProviderBase;
     using ServiceQuotasEndpointProvider = Aws::ServiceQuotas::Endpoint::ServiceQuotasEndpointProvider;
 

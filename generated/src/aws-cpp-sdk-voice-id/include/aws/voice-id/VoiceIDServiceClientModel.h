@@ -78,7 +78,7 @@ namespace Aws
 
   namespace VoiceID
   {
-    using VoiceIDClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using VoiceIDClientConfiguration = Aws::Client::GenericClientConfiguration;
     using VoiceIDEndpointProviderBase = Aws::VoiceID::Endpoint::VoiceIDEndpointProviderBase;
     using VoiceIDEndpointProvider = Aws::VoiceID::Endpoint::VoiceIDEndpointProvider;
 

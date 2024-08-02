@@ -83,7 +83,7 @@ namespace Aws
 
   namespace MachineLearning
   {
-    using MachineLearningClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using MachineLearningClientConfiguration = Aws::Client::GenericClientConfiguration;
     using MachineLearningEndpointProviderBase = Aws::MachineLearning::Endpoint::MachineLearningEndpointProviderBase;
     using MachineLearningEndpointProvider = Aws::MachineLearning::Endpoint::MachineLearningEndpointProvider;
 

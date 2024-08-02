@@ -80,7 +80,7 @@ namespace Aws
 
   namespace Schemas
   {
-    using SchemasClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using SchemasClientConfiguration = Aws::Client::GenericClientConfiguration;
     using SchemasEndpointProviderBase = Aws::Schemas::Endpoint::SchemasEndpointProviderBase;
     using SchemasEndpointProvider = Aws::Schemas::Endpoint::SchemasEndpointProvider;
 

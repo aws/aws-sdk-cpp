@@ -69,7 +69,7 @@ namespace Aws
 
   namespace CognitoSync
   {
-    using CognitoSyncClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using CognitoSyncClientConfiguration = Aws::Client::GenericClientConfiguration;
     using CognitoSyncEndpointProviderBase = Aws::CognitoSync::Endpoint::CognitoSyncEndpointProviderBase;
     using CognitoSyncEndpointProvider = Aws::CognitoSync::Endpoint::CognitoSyncEndpointProvider;
 

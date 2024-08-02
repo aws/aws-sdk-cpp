@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using QuickSightClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using QuickSightClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using QuickSightClientConfiguration = Aws::Client::GenericClientConfiguration;
 using QuickSightBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

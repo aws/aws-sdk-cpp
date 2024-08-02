@@ -108,7 +108,7 @@ namespace Aws
 
   namespace MediaConnect
   {
-    using MediaConnectClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using MediaConnectClientConfiguration = Aws::Client::GenericClientConfiguration;
     using MediaConnectEndpointProviderBase = Aws::MediaConnect::Endpoint::MediaConnectEndpointProviderBase;
     using MediaConnectEndpointProvider = Aws::MediaConnect::Endpoint::MediaConnectEndpointProvider;
 

@@ -57,7 +57,7 @@ namespace Aws
 
   namespace MediaStoreData
   {
-    using MediaStoreDataClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using MediaStoreDataClientConfiguration = Aws::Client::GenericClientConfiguration;
     using MediaStoreDataEndpointProviderBase = Aws::MediaStoreData::Endpoint::MediaStoreDataEndpointProviderBase;
     using MediaStoreDataEndpointProvider = Aws::MediaStoreData::Endpoint::MediaStoreDataEndpointProvider;
 

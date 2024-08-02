@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using SecurityLakeClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using SecurityLakeClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using SecurityLakeClientConfiguration = Aws::Client::GenericClientConfiguration;
 using SecurityLakeBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

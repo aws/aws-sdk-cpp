@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using ElasticsearchServiceClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using ElasticsearchServiceClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using ElasticsearchServiceClientConfiguration = Aws::Client::GenericClientConfiguration;
 using ElasticsearchServiceBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

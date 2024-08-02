@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using SESV2ClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using SESV2ClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using SESV2ClientConfiguration = Aws::Client::GenericClientConfiguration;
 using SESV2BuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using ComputeOptimizerClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using ComputeOptimizerClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using ComputeOptimizerClientConfiguration = Aws::Client::GenericClientConfiguration;
 using ComputeOptimizerBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

@@ -131,7 +131,7 @@ namespace Aws
 
   namespace Rekognition
   {
-    using RekognitionClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using RekognitionClientConfiguration = Aws::Client::GenericClientConfiguration;
     using RekognitionEndpointProviderBase = Aws::Rekognition::Endpoint::RekognitionEndpointProviderBase;
     using RekognitionEndpointProvider = Aws::Rekognition::Endpoint::RekognitionEndpointProvider;
 

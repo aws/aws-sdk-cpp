@@ -65,7 +65,7 @@ namespace Aws
 
   namespace Scheduler
   {
-    using SchedulerClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using SchedulerClientConfiguration = Aws::Client::GenericClientConfiguration;
     using SchedulerEndpointProviderBase = Aws::Scheduler::Endpoint::SchedulerEndpointProviderBase;
     using SchedulerEndpointProvider = Aws::Scheduler::Endpoint::SchedulerEndpointProvider;
 

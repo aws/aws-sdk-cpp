@@ -96,7 +96,7 @@ namespace Aws
 
   namespace CodeDeploy
   {
-    using CodeDeployClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using CodeDeployClientConfiguration = Aws::Client::GenericClientConfiguration;
     using CodeDeployEndpointProviderBase = Aws::CodeDeploy::Endpoint::CodeDeployEndpointProviderBase;
     using CodeDeployEndpointProvider = Aws::CodeDeploy::Endpoint::CodeDeployEndpointProvider;
 

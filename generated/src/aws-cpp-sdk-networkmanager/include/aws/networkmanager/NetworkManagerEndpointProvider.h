@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using NetworkManagerClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using NetworkManagerClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using NetworkManagerClientConfiguration = Aws::Client::GenericClientConfiguration;
 using NetworkManagerBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

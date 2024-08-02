@@ -76,7 +76,7 @@ namespace Aws
 
   namespace CleanRoomsML
   {
-    using CleanRoomsMLClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using CleanRoomsMLClientConfiguration = Aws::Client::GenericClientConfiguration;
     using CleanRoomsMLEndpointProviderBase = Aws::CleanRoomsML::Endpoint::CleanRoomsMLEndpointProviderBase;
     using CleanRoomsMLEndpointProvider = Aws::CleanRoomsML::Endpoint::CleanRoomsMLEndpointProvider;
 

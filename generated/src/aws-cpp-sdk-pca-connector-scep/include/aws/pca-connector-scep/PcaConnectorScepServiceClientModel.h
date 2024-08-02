@@ -61,7 +61,7 @@ namespace Aws
 
   namespace PcaConnectorScep
   {
-    using PcaConnectorScepClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using PcaConnectorScepClientConfiguration = Aws::Client::GenericClientConfiguration;
     using PcaConnectorScepEndpointProviderBase = Aws::PcaConnectorScep::Endpoint::PcaConnectorScepEndpointProviderBase;
     using PcaConnectorScepEndpointProvider = Aws::PcaConnectorScep::Endpoint::PcaConnectorScepEndpointProvider;
 

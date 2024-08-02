@@ -220,7 +220,7 @@ namespace Aws
 
   namespace SSM
   {
-    using SSMClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using SSMClientConfiguration = Aws::Client::GenericClientConfiguration;
     using SSMEndpointProviderBase = Aws::SSM::Endpoint::SSMEndpointProviderBase;
     using SSMEndpointProvider = Aws::SSM::Endpoint::SSMEndpointProvider;
 

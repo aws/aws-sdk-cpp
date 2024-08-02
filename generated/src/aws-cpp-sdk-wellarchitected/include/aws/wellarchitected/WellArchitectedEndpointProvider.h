@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using WellArchitectedClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using WellArchitectedClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using WellArchitectedClientConfiguration = Aws::Client::GenericClientConfiguration;
 using WellArchitectedBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

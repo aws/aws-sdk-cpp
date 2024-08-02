@@ -64,7 +64,7 @@ namespace Aws
 
   namespace Braket
   {
-    using BraketClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using BraketClientConfiguration = Aws::Client::GenericClientConfiguration;
     using BraketEndpointProviderBase = Aws::Braket::Endpoint::BraketEndpointProviderBase;
     using BraketEndpointProvider = Aws::Braket::Endpoint::BraketEndpointProvider;
 

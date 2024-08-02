@@ -85,7 +85,7 @@ namespace Aws
 
   namespace GreengrassV2
   {
-    using GreengrassV2ClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using GreengrassV2ClientConfiguration = Aws::Client::GenericClientConfiguration;
     using GreengrassV2EndpointProviderBase = Aws::GreengrassV2::Endpoint::GreengrassV2EndpointProviderBase;
     using GreengrassV2EndpointProvider = Aws::GreengrassV2::Endpoint::GreengrassV2EndpointProvider;
 

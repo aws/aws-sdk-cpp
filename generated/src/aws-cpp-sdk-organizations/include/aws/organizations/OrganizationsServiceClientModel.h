@@ -105,7 +105,7 @@ namespace Aws
 
   namespace Organizations
   {
-    using OrganizationsClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using OrganizationsClientConfiguration = Aws::Client::GenericClientConfiguration;
     using OrganizationsEndpointProviderBase = Aws::Organizations::Endpoint::OrganizationsEndpointProviderBase;
     using OrganizationsEndpointProvider = Aws::Organizations::Endpoint::OrganizationsEndpointProvider;
 

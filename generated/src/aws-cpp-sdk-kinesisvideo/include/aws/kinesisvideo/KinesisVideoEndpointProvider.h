@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using KinesisVideoClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using KinesisVideoClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using KinesisVideoClientConfiguration = Aws::Client::GenericClientConfiguration;
 using KinesisVideoBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

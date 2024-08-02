@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using LocationServiceClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using LocationServiceClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using LocationServiceClientConfiguration = Aws::Client::GenericClientConfiguration;
 using LocationServiceBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

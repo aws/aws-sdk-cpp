@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using CodeGuruProfilerClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using CodeGuruProfilerClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using CodeGuruProfilerClientConfiguration = Aws::Client::GenericClientConfiguration;
 using CodeGuruProfilerBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

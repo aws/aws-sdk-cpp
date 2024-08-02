@@ -74,7 +74,7 @@ namespace Aws
 
   namespace LookoutforVision
   {
-    using LookoutforVisionClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using LookoutforVisionClientConfiguration = Aws::Client::GenericClientConfiguration;
     using LookoutforVisionEndpointProviderBase = Aws::LookoutforVision::Endpoint::LookoutforVisionEndpointProviderBase;
     using LookoutforVisionEndpointProvider = Aws::LookoutforVision::Endpoint::LookoutforVisionEndpointProvider;
 

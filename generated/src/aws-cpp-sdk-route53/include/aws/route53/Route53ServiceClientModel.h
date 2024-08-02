@@ -135,7 +135,7 @@ namespace Aws
 
   namespace Route53
   {
-    using Route53ClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using Route53ClientConfiguration = Aws::Client::GenericClientConfiguration;
     using Route53EndpointProviderBase = Aws::Route53::Endpoint::Route53EndpointProviderBase;
     using Route53EndpointProvider = Aws::Route53::Endpoint::Route53EndpointProvider;
 

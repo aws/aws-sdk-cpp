@@ -69,7 +69,7 @@ namespace Aws
 
   namespace InternetMonitor
   {
-    using InternetMonitorClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using InternetMonitorClientConfiguration = Aws::Client::GenericClientConfiguration;
     using InternetMonitorEndpointProviderBase = Aws::InternetMonitor::Endpoint::InternetMonitorEndpointProviderBase;
     using InternetMonitorEndpointProvider = Aws::InternetMonitor::Endpoint::InternetMonitorEndpointProvider;
 

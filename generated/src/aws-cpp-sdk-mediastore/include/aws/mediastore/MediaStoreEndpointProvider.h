@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using MediaStoreClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using MediaStoreClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using MediaStoreClientConfiguration = Aws::Client::GenericClientConfiguration;
 using MediaStoreBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

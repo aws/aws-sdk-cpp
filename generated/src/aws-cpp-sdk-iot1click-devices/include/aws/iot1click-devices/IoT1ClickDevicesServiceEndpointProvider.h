@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using IoT1ClickDevicesServiceClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using IoT1ClickDevicesServiceClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using IoT1ClickDevicesServiceClientConfiguration = Aws::Client::GenericClientConfiguration;
 using IoT1ClickDevicesServiceBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using PipesClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using PipesClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using PipesClientConfiguration = Aws::Client::GenericClientConfiguration;
 using PipesBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

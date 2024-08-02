@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using PcaConnectorScepClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using PcaConnectorScepClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using PcaConnectorScepClientConfiguration = Aws::Client::GenericClientConfiguration;
 using PcaConnectorScepBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

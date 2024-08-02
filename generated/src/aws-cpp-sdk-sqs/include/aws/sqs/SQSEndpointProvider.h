@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using SQSClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using SQSClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using SQSClientConfiguration = Aws::Client::GenericClientConfiguration;
 using SQSBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

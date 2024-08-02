@@ -86,7 +86,7 @@ namespace Aws
 
   namespace Snowball
   {
-    using SnowballClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using SnowballClientConfiguration = Aws::Client::GenericClientConfiguration;
     using SnowballEndpointProviderBase = Aws::Snowball::Endpoint::SnowballEndpointProviderBase;
     using SnowballEndpointProvider = Aws::Snowball::Endpoint::SnowballEndpointProvider;
 

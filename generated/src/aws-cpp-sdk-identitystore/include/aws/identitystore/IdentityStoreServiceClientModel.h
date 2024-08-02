@@ -70,7 +70,7 @@ namespace Aws
 
   namespace IdentityStore
   {
-    using IdentityStoreClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using IdentityStoreClientConfiguration = Aws::Client::GenericClientConfiguration;
     using IdentityStoreEndpointProviderBase = Aws::IdentityStore::Endpoint::IdentityStoreEndpointProviderBase;
     using IdentityStoreEndpointProvider = Aws::IdentityStore::Endpoint::IdentityStoreEndpointProvider;
 

@@ -142,7 +142,7 @@ namespace Aws
 
   namespace ElastiCache
   {
-    using ElastiCacheClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using ElastiCacheClientConfiguration = Aws::Client::GenericClientConfiguration;
     using ElastiCacheEndpointProviderBase = Aws::ElastiCache::Endpoint::ElastiCacheEndpointProviderBase;
     using ElastiCacheEndpointProvider = Aws::ElastiCache::Endpoint::ElastiCacheEndpointProvider;
 

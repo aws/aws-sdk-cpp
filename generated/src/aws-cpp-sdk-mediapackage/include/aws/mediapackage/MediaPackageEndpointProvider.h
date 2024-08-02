@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using MediaPackageClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using MediaPackageClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using MediaPackageClientConfiguration = Aws::Client::GenericClientConfiguration;
 using MediaPackageBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

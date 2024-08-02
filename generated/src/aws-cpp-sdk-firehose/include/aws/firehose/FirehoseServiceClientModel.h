@@ -64,7 +64,7 @@ namespace Aws
 
   namespace Firehose
   {
-    using FirehoseClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using FirehoseClientConfiguration = Aws::Client::GenericClientConfiguration;
     using FirehoseEndpointProviderBase = Aws::Firehose::Endpoint::FirehoseEndpointProviderBase;
     using FirehoseEndpointProvider = Aws::Firehose::Endpoint::FirehoseEndpointProvider;
 

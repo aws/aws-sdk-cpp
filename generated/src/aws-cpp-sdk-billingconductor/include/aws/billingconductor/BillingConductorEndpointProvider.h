@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using BillingConductorClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using BillingConductorClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using BillingConductorClientConfiguration = Aws::Client::GenericClientConfiguration;
 using BillingConductorBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

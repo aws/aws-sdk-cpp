@@ -53,7 +53,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Indicates the maximum number of applications requested.</p>
+     * <p>Indicates the maximum number of compliance drifts requested.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
@@ -63,8 +63,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Indicates the unique token number of the next application to be checked for
-     * compliance and regulatory requirements from the list of applications.</p>
+     * <p>Null, or the token from a previous call to get the next set of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }

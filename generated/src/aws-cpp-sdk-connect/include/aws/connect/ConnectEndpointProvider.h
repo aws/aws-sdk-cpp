@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using ConnectClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using ConnectClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using ConnectClientConfiguration = Aws::Client::GenericClientConfiguration;
 using ConnectBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

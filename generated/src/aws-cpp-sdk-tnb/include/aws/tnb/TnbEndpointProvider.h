@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using TnbClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using TnbClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using TnbClientConfiguration = Aws::Client::GenericClientConfiguration;
 using TnbBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

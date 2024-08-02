@@ -181,7 +181,7 @@ namespace Aws
 
   namespace IoTWireless
   {
-    using IoTWirelessClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using IoTWirelessClientConfiguration = Aws::Client::GenericClientConfiguration;
     using IoTWirelessEndpointProviderBase = Aws::IoTWireless::Endpoint::IoTWirelessEndpointProviderBase;
     using IoTWirelessEndpointProvider = Aws::IoTWireless::Endpoint::IoTWirelessEndpointProvider;
 

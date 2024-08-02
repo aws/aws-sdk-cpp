@@ -103,7 +103,7 @@ namespace Aws
 
   namespace EMR
   {
-    using EMRClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using EMRClientConfiguration = Aws::Client::GenericClientConfiguration;
     using EMREndpointProviderBase = Aws::EMR::Endpoint::EMREndpointProviderBase;
     using EMREndpointProvider = Aws::EMR::Endpoint::EMREndpointProvider;
 

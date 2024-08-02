@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using WorkLinkClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using WorkLinkClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using WorkLinkClientConfiguration = Aws::Client::GenericClientConfiguration;
 using WorkLinkBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

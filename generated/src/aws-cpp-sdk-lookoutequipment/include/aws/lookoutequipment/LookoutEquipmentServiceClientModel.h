@@ -96,7 +96,7 @@ namespace Aws
 
   namespace LookoutEquipment
   {
-    using LookoutEquipmentClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using LookoutEquipmentClientConfiguration = Aws::Client::GenericClientConfiguration;
     using LookoutEquipmentEndpointProviderBase = Aws::LookoutEquipment::Endpoint::LookoutEquipmentEndpointProviderBase;
     using LookoutEquipmentEndpointProvider = Aws::LookoutEquipment::Endpoint::LookoutEquipmentEndpointProvider;
 

@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using Route53ClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using Route53ClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using Route53ClientConfiguration = Aws::Client::GenericClientConfiguration;
 using Route53BuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

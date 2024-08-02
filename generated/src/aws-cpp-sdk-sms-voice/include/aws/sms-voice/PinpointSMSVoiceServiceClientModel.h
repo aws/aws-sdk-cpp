@@ -62,7 +62,7 @@ namespace Aws
 
   namespace PinpointSMSVoice
   {
-    using PinpointSMSVoiceClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using PinpointSMSVoiceClientConfiguration = Aws::Client::GenericClientConfiguration;
     using PinpointSMSVoiceEndpointProviderBase = Aws::PinpointSMSVoice::Endpoint::PinpointSMSVoiceEndpointProviderBase;
     using PinpointSMSVoiceEndpointProvider = Aws::PinpointSMSVoice::Endpoint::PinpointSMSVoiceEndpointProvider;
 

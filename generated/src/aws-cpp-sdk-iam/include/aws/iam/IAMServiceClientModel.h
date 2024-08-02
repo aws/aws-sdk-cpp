@@ -162,7 +162,7 @@ namespace Aws
 
   namespace IAM
   {
-    using IAMClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using IAMClientConfiguration = Aws::Client::GenericClientConfiguration;
     using IAMEndpointProviderBase = Aws::IAM::Endpoint::IAMEndpointProviderBase;
     using IAMEndpointProvider = Aws::IAM::Endpoint::IAMEndpointProvider;
 

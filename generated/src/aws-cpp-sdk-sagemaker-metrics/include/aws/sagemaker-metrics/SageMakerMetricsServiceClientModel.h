@@ -52,7 +52,7 @@ namespace Aws
 
   namespace SageMakerMetrics
   {
-    using SageMakerMetricsClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using SageMakerMetricsClientConfiguration = Aws::Client::GenericClientConfiguration;
     using SageMakerMetricsEndpointProviderBase = Aws::SageMakerMetrics::Endpoint::SageMakerMetricsEndpointProviderBase;
     using SageMakerMetricsEndpointProvider = Aws::SageMakerMetrics::Endpoint::SageMakerMetricsEndpointProvider;
 

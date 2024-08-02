@@ -96,7 +96,7 @@ namespace Aws
 
   namespace KMS
   {
-    using KMSClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using KMSClientConfiguration = Aws::Client::GenericClientConfiguration;
     using KMSEndpointProviderBase = Aws::KMS::Endpoint::KMSEndpointProviderBase;
     using KMSEndpointProvider = Aws::KMS::Endpoint::KMSEndpointProvider;
 

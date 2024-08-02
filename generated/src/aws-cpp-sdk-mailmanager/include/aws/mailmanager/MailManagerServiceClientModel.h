@@ -105,7 +105,7 @@ namespace Aws
 
   namespace MailManager
   {
-    using MailManagerClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using MailManagerClientConfiguration = Aws::Client::GenericClientConfiguration;
     using MailManagerEndpointProviderBase = Aws::MailManager::Endpoint::MailManagerEndpointProviderBase;
     using MailManagerEndpointProvider = Aws::MailManager::Endpoint::MailManagerEndpointProvider;
 

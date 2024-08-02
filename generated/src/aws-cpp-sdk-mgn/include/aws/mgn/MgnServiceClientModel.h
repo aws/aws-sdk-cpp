@@ -131,7 +131,7 @@ namespace Aws
 
   namespace mgn
   {
-    using MgnClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using MgnClientConfiguration = Aws::Client::GenericClientConfiguration;
     using MgnEndpointProviderBase = Aws::mgn::Endpoint::MgnEndpointProviderBase;
     using MgnEndpointProvider = Aws::mgn::Endpoint::MgnEndpointProvider;
 

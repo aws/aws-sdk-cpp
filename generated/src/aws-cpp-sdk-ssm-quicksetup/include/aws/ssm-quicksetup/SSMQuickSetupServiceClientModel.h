@@ -62,7 +62,7 @@ namespace Aws
 
   namespace SSMQuickSetup
   {
-    using SSMQuickSetupClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using SSMQuickSetupClientConfiguration = Aws::Client::GenericClientConfiguration;
     using SSMQuickSetupEndpointProviderBase = Aws::SSMQuickSetup::Endpoint::SSMQuickSetupEndpointProviderBase;
     using SSMQuickSetupEndpointProvider = Aws::SSMQuickSetup::Endpoint::SSMQuickSetupEndpointProvider;
 

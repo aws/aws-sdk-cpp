@@ -137,7 +137,7 @@ namespace Aws
 
   namespace Omics
   {
-    using OmicsClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using OmicsClientConfiguration = Aws::Client::GenericClientConfiguration;
     using OmicsEndpointProviderBase = Aws::Omics::Endpoint::OmicsEndpointProviderBase;
     using OmicsEndpointProvider = Aws::Omics::Endpoint::OmicsEndpointProvider;
 

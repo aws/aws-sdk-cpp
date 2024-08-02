@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using PrivateNetworksClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using PrivateNetworksClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using PrivateNetworksClientConfiguration = Aws::Client::GenericClientConfiguration;
 using PrivateNetworksBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

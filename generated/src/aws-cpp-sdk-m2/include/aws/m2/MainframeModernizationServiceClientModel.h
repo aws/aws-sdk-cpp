@@ -89,7 +89,7 @@ namespace Aws
 
   namespace MainframeModernization
   {
-    using MainframeModernizationClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using MainframeModernizationClientConfiguration = Aws::Client::GenericClientConfiguration;
     using MainframeModernizationEndpointProviderBase = Aws::MainframeModernization::Endpoint::MainframeModernizationEndpointProviderBase;
     using MainframeModernizationEndpointProvider = Aws::MainframeModernization::Endpoint::MainframeModernizationEndpointProvider;
 

@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using KendraClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using KendraClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using KendraClientConfiguration = Aws::Client::GenericClientConfiguration;
 using KendraBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

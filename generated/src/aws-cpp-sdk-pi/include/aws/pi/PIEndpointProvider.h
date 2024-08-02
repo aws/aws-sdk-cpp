@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using PIClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using PIClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using PIClientConfiguration = Aws::Client::GenericClientConfiguration;
 using PIBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

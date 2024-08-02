@@ -65,7 +65,7 @@ namespace Aws
 
   namespace SupportApp
   {
-    using SupportAppClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using SupportAppClientConfiguration = Aws::Client::GenericClientConfiguration;
     using SupportAppEndpointProviderBase = Aws::SupportApp::Endpoint::SupportAppEndpointProviderBase;
     using SupportAppEndpointProvider = Aws::SupportApp::Endpoint::SupportAppEndpointProvider;
 

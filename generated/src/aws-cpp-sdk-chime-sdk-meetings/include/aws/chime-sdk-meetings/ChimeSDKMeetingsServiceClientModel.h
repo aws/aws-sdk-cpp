@@ -63,7 +63,7 @@ namespace Aws
 
   namespace ChimeSDKMeetings
   {
-    using ChimeSDKMeetingsClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using ChimeSDKMeetingsClientConfiguration = Aws::Client::GenericClientConfiguration;
     using ChimeSDKMeetingsEndpointProviderBase = Aws::ChimeSDKMeetings::Endpoint::ChimeSDKMeetingsEndpointProviderBase;
     using ChimeSDKMeetingsEndpointProvider = Aws::ChimeSDKMeetings::Endpoint::ChimeSDKMeetingsEndpointProvider;
 

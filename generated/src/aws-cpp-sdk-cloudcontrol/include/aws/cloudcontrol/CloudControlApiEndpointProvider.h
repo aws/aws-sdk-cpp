@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using CloudControlApiClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using CloudControlApiClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using CloudControlApiClientConfiguration = Aws::Client::GenericClientConfiguration;
 using CloudControlApiBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

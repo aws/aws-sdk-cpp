@@ -56,7 +56,7 @@ namespace Aws
 
   namespace PersonalizeRuntime
   {
-    using PersonalizeRuntimeClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using PersonalizeRuntimeClientConfiguration = Aws::Client::GenericClientConfiguration;
     using PersonalizeRuntimeEndpointProviderBase = Aws::PersonalizeRuntime::Endpoint::PersonalizeRuntimeEndpointProviderBase;
     using PersonalizeRuntimeEndpointProvider = Aws::PersonalizeRuntime::Endpoint::PersonalizeRuntimeEndpointProvider;
 

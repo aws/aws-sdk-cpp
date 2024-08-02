@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using IoTSiteWiseClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using IoTSiteWiseClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using IoTSiteWiseClientConfiguration = Aws::Client::GenericClientConfiguration;
 using IoTSiteWiseBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

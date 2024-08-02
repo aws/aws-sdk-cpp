@@ -110,7 +110,7 @@ namespace Aws
 
   namespace ElasticsearchService
   {
-    using ElasticsearchServiceClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using ElasticsearchServiceClientConfiguration = Aws::Client::GenericClientConfiguration;
     using ElasticsearchServiceEndpointProviderBase = Aws::ElasticsearchService::Endpoint::ElasticsearchServiceEndpointProviderBase;
     using ElasticsearchServiceEndpointProvider = Aws::ElasticsearchService::Endpoint::ElasticsearchServiceEndpointProvider;
 

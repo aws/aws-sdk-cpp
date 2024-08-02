@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using VPCLatticeClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using VPCLatticeClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using VPCLatticeClientConfiguration = Aws::Client::GenericClientConfiguration;
 using VPCLatticeBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

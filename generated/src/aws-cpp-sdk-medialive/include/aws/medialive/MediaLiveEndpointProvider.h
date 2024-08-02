@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using MediaLiveClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using MediaLiveClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using MediaLiveClientConfiguration = Aws::Client::GenericClientConfiguration;
 using MediaLiveBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using GuardDutyClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using GuardDutyClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using GuardDutyClientConfiguration = Aws::Client::GenericClientConfiguration;
 using GuardDutyBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

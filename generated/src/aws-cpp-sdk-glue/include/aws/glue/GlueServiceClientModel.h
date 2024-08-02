@@ -311,7 +311,7 @@ namespace Aws
 
   namespace Glue
   {
-    using GlueClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using GlueClientConfiguration = Aws::Client::GenericClientConfiguration;
     using GlueEndpointProviderBase = Aws::Glue::Endpoint::GlueEndpointProviderBase;
     using GlueEndpointProvider = Aws::Glue::Endpoint::GlueEndpointProvider;
 

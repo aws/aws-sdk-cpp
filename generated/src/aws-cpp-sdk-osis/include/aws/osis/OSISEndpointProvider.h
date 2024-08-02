@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using OSISClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using OSISClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using OSISClientConfiguration = Aws::Client::GenericClientConfiguration;
 using OSISBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

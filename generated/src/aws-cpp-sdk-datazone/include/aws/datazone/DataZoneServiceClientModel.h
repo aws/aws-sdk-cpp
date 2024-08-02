@@ -170,7 +170,7 @@ namespace Aws
 
   namespace DataZone
   {
-    using DataZoneClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using DataZoneClientConfiguration = Aws::Client::GenericClientConfiguration;
     using DataZoneEndpointProviderBase = Aws::DataZone::Endpoint::DataZoneEndpointProviderBase;
     using DataZoneEndpointProvider = Aws::DataZone::Endpoint::DataZoneEndpointProvider;
 

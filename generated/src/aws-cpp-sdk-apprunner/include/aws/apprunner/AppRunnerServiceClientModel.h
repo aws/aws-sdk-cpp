@@ -94,7 +94,7 @@ namespace Aws
 
   namespace AppRunner
   {
-    using AppRunnerClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using AppRunnerClientConfiguration = Aws::Client::GenericClientConfiguration;
     using AppRunnerEndpointProviderBase = Aws::AppRunner::Endpoint::AppRunnerEndpointProviderBase;
     using AppRunnerEndpointProvider = Aws::AppRunner::Endpoint::AppRunnerEndpointProvider;
 

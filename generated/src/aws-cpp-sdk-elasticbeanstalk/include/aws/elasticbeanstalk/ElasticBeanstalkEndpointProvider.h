@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using ElasticBeanstalkClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using ElasticBeanstalkClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using ElasticBeanstalkClientConfiguration = Aws::Client::GenericClientConfiguration;
 using ElasticBeanstalkBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

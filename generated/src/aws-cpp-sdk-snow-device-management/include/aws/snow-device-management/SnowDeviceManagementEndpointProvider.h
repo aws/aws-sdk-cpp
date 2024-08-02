@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using SnowDeviceManagementClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using SnowDeviceManagementClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using SnowDeviceManagementClientConfiguration = Aws::Client::GenericClientConfiguration;
 using SnowDeviceManagementBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

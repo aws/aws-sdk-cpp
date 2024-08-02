@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using LookoutMetricsClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using LookoutMetricsClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using LookoutMetricsClientConfiguration = Aws::Client::GenericClientConfiguration;
 using LookoutMetricsBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

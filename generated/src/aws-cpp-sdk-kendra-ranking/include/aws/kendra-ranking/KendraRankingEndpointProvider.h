@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using KendraRankingClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using KendraRankingClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using KendraRankingClientConfiguration = Aws::Client::GenericClientConfiguration;
 using KendraRankingBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

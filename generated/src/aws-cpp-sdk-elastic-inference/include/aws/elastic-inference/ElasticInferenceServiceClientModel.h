@@ -59,7 +59,7 @@ namespace Aws
 
   namespace ElasticInference
   {
-    using ElasticInferenceClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using ElasticInferenceClientConfiguration = Aws::Client::GenericClientConfiguration;
     using ElasticInferenceEndpointProviderBase = Aws::ElasticInference::Endpoint::ElasticInferenceEndpointProviderBase;
     using ElasticInferenceEndpointProvider = Aws::ElasticInference::Endpoint::ElasticInferenceEndpointProvider;
 

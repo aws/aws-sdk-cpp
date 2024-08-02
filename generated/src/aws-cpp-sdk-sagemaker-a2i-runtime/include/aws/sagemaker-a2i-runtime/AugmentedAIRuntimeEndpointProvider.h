@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using AugmentedAIRuntimeClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using AugmentedAIRuntimeClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using AugmentedAIRuntimeClientConfiguration = Aws::Client::GenericClientConfiguration;
 using AugmentedAIRuntimeBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

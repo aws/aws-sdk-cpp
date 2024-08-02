@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using SupplyChainClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using SupplyChainClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using SupplyChainClientConfiguration = Aws::Client::GenericClientConfiguration;
 using SupplyChainBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

@@ -59,7 +59,7 @@ namespace Aws
 
   namespace CostandUsageReportService
   {
-    using CostandUsageReportServiceClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using CostandUsageReportServiceClientConfiguration = Aws::Client::GenericClientConfiguration;
     using CostandUsageReportServiceEndpointProviderBase = Aws::CostandUsageReportService::Endpoint::CostandUsageReportServiceEndpointProviderBase;
     using CostandUsageReportServiceEndpointProvider = Aws::CostandUsageReportService::Endpoint::CostandUsageReportServiceEndpointProvider;
 

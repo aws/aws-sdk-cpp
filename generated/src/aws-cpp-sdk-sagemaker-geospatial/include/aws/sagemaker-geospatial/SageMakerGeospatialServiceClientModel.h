@@ -73,7 +73,7 @@ namespace Aws
 
   namespace SageMakerGeospatial
   {
-    using SageMakerGeospatialClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using SageMakerGeospatialClientConfiguration = Aws::Client::GenericClientConfiguration;
     using SageMakerGeospatialEndpointProviderBase = Aws::SageMakerGeospatial::Endpoint::SageMakerGeospatialEndpointProviderBase;
     using SageMakerGeospatialEndpointProvider = Aws::SageMakerGeospatial::Endpoint::SageMakerGeospatialEndpointProvider;
 

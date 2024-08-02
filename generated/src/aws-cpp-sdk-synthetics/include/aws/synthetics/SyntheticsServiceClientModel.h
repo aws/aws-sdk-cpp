@@ -76,7 +76,7 @@ namespace Aws
 
   namespace Synthetics
   {
-    using SyntheticsClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using SyntheticsClientConfiguration = Aws::Client::GenericClientConfiguration;
     using SyntheticsEndpointProviderBase = Aws::Synthetics::Endpoint::SyntheticsEndpointProviderBase;
     using SyntheticsEndpointProvider = Aws::Synthetics::Endpoint::SyntheticsEndpointProvider;
 

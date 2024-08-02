@@ -149,7 +149,7 @@ namespace Aws
 
   namespace Proton
   {
-    using ProtonClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using ProtonClientConfiguration = Aws::Client::GenericClientConfiguration;
     using ProtonEndpointProviderBase = Aws::Proton::Endpoint::ProtonEndpointProviderBase;
     using ProtonEndpointProvider = Aws::Proton::Endpoint::ProtonEndpointProvider;
 

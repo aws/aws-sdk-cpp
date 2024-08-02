@@ -160,7 +160,7 @@ namespace Aws
 
   namespace SESV2
   {
-    using SESV2ClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using SESV2ClientConfiguration = Aws::Client::GenericClientConfiguration;
     using SESV2EndpointProviderBase = Aws::SESV2::Endpoint::SESV2EndpointProviderBase;
     using SESV2EndpointProvider = Aws::SESV2::Endpoint::SESV2EndpointProvider;
 
