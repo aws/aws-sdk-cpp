@@ -57,7 +57,7 @@ namespace Aws
 
   namespace TranscribeStreamingService
   {
-    using TranscribeStreamingServiceClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using TranscribeStreamingServiceClientConfiguration = Aws::Client::GenericClientConfiguration;
     using TranscribeStreamingServiceEndpointProviderBase = Aws::TranscribeStreamingService::Endpoint::TranscribeStreamingServiceEndpointProviderBase;
     using TranscribeStreamingServiceEndpointProvider = Aws::TranscribeStreamingService::Endpoint::TranscribeStreamingServiceEndpointProvider;
 

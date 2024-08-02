@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using TimestreamWriteClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using TimestreamWriteClientConfiguration = Aws::Client::GenericClientConfiguration<true>;
+using TimestreamWriteClientConfiguration = Aws::Client::GenericClientConfiguration;
 using TimestreamWriteBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

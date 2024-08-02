@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using CloudWatchLogsClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using CloudWatchLogsClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using CloudWatchLogsClientConfiguration = Aws::Client::GenericClientConfiguration;
 using CloudWatchLogsBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

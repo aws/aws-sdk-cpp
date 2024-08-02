@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using TimestreamQueryClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using TimestreamQueryClientConfiguration = Aws::Client::GenericClientConfiguration<true>;
+using TimestreamQueryClientConfiguration = Aws::Client::GenericClientConfiguration;
 using TimestreamQueryBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**
