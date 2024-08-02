@@ -68,7 +68,7 @@ namespace Aws
 
   namespace ARCZonalShift
   {
-    using ARCZonalShiftClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using ARCZonalShiftClientConfiguration = Aws::Client::GenericClientConfiguration;
     using ARCZonalShiftEndpointProviderBase = Aws::ARCZonalShift::Endpoint::ARCZonalShiftEndpointProviderBase;
     using ARCZonalShiftEndpointProvider = Aws::ARCZonalShift::Endpoint::ARCZonalShiftEndpointProvider;
 

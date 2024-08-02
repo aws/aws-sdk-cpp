@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using OmicsClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using OmicsClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using OmicsClientConfiguration = Aws::Client::GenericClientConfiguration;
 using OmicsBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

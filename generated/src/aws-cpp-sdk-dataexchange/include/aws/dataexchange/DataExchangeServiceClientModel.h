@@ -78,7 +78,7 @@ namespace Aws
 
   namespace DataExchange
   {
-    using DataExchangeClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using DataExchangeClientConfiguration = Aws::Client::GenericClientConfiguration;
     using DataExchangeEndpointProviderBase = Aws::DataExchange::Endpoint::DataExchangeEndpointProviderBase;
     using DataExchangeEndpointProvider = Aws::DataExchange::Endpoint::DataExchangeEndpointProvider;
 

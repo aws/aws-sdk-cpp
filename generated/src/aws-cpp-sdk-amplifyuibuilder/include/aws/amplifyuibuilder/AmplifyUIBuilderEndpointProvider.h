@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using AmplifyUIBuilderClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using AmplifyUIBuilderClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using AmplifyUIBuilderClientConfiguration = Aws::Client::GenericClientConfiguration;
 using AmplifyUIBuilderBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

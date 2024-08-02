@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using WAFRegionalClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using WAFRegionalClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using WAFRegionalClientConfiguration = Aws::Client::GenericClientConfiguration;
 using WAFRegionalBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

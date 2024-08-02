@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using MailManagerClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using MailManagerClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using MailManagerClientConfiguration = Aws::Client::GenericClientConfiguration;
 using MailManagerBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

@@ -66,7 +66,7 @@ namespace Aws
 
   namespace CodeGuruReviewer
   {
-    using CodeGuruReviewerClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using CodeGuruReviewerClientConfiguration = Aws::Client::GenericClientConfiguration;
     using CodeGuruReviewerEndpointProviderBase = Aws::CodeGuruReviewer::Endpoint::CodeGuruReviewerEndpointProviderBase;
     using CodeGuruReviewerEndpointProvider = Aws::CodeGuruReviewer::Endpoint::CodeGuruReviewerEndpointProvider;
 

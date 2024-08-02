@@ -102,7 +102,7 @@ namespace Aws
 
   namespace PinpointEmail
   {
-    using PinpointEmailClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using PinpointEmailClientConfiguration = Aws::Client::GenericClientConfiguration;
     using PinpointEmailEndpointProviderBase = Aws::PinpointEmail::Endpoint::PinpointEmailEndpointProviderBase;
     using PinpointEmailEndpointProvider = Aws::PinpointEmail::Endpoint::PinpointEmailEndpointProvider;
 

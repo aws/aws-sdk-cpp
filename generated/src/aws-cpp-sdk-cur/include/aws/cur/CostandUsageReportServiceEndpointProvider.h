@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using CostandUsageReportServiceClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using CostandUsageReportServiceClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using CostandUsageReportServiceClientConfiguration = Aws::Client::GenericClientConfiguration;
 using CostandUsageReportServiceBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

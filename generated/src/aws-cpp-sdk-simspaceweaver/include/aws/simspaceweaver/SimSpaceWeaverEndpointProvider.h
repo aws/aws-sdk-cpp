@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using SimSpaceWeaverClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using SimSpaceWeaverClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using SimSpaceWeaverClientConfiguration = Aws::Client::GenericClientConfiguration;
 using SimSpaceWeaverBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

@@ -50,8 +50,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Token number of the next application to be checked for compliance and
-     * regulatory requirements from the list of applications.</p>
+     * <p>Null, or the token from a previous call to get the next set of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }

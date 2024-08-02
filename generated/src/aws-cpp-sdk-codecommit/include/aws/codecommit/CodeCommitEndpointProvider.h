@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using CodeCommitClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using CodeCommitClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using CodeCommitClientConfiguration = Aws::Client::GenericClientConfiguration;
 using CodeCommitBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

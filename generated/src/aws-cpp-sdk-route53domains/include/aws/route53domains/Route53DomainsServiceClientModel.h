@@ -90,7 +90,7 @@ namespace Aws
 
   namespace Route53Domains
   {
-    using Route53DomainsClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using Route53DomainsClientConfiguration = Aws::Client::GenericClientConfiguration;
     using Route53DomainsEndpointProviderBase = Aws::Route53Domains::Endpoint::Route53DomainsEndpointProviderBase;
     using Route53DomainsEndpointProvider = Aws::Route53Domains::Endpoint::Route53DomainsEndpointProvider;
 

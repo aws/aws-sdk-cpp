@@ -79,7 +79,7 @@ namespace Aws
 
   namespace AppTest
   {
-    using AppTestClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using AppTestClientConfiguration = Aws::Client::GenericClientConfiguration;
     using AppTestEndpointProviderBase = Aws::AppTest::Endpoint::AppTestEndpointProviderBase;
     using AppTestEndpointProvider = Aws::AppTest::Endpoint::AppTestEndpointProvider;
 

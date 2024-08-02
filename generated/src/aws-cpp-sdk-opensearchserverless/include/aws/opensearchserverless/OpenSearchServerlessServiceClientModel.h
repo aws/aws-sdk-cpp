@@ -94,7 +94,7 @@ namespace Aws
 
   namespace OpenSearchServerless
   {
-    using OpenSearchServerlessClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using OpenSearchServerlessClientConfiguration = Aws::Client::GenericClientConfiguration;
     using OpenSearchServerlessEndpointProviderBase = Aws::OpenSearchServerless::Endpoint::OpenSearchServerlessEndpointProviderBase;
     using OpenSearchServerlessEndpointProvider = Aws::OpenSearchServerless::Endpoint::OpenSearchServerlessEndpointProvider;
 

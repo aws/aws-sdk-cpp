@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using AccessAnalyzerClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using AccessAnalyzerClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using AccessAnalyzerClientConfiguration = Aws::Client::GenericClientConfiguration;
 using AccessAnalyzerBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

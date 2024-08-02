@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using DrsClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using DrsClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using DrsClientConfiguration = Aws::Client::GenericClientConfiguration;
 using DrsBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

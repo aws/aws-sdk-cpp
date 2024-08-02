@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using AppRunnerClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using AppRunnerClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using AppRunnerClientConfiguration = Aws::Client::GenericClientConfiguration;
 using AppRunnerBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

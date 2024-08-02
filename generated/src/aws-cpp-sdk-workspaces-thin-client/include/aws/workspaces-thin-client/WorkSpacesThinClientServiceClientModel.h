@@ -70,7 +70,7 @@ namespace Aws
 
   namespace WorkSpacesThinClient
   {
-    using WorkSpacesThinClientClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using WorkSpacesThinClientClientConfiguration = Aws::Client::GenericClientConfiguration;
     using WorkSpacesThinClientEndpointProviderBase = Aws::WorkSpacesThinClient::Endpoint::WorkSpacesThinClientEndpointProviderBase;
     using WorkSpacesThinClientEndpointProvider = Aws::WorkSpacesThinClient::Endpoint::WorkSpacesThinClientEndpointProvider;
 

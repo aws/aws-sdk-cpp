@@ -93,7 +93,7 @@ namespace Aws
 
   namespace IoTTwinMaker
   {
-    using IoTTwinMakerClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using IoTTwinMakerClientConfiguration = Aws::Client::GenericClientConfiguration;
     using IoTTwinMakerEndpointProviderBase = Aws::IoTTwinMaker::Endpoint::IoTTwinMakerEndpointProviderBase;
     using IoTTwinMakerEndpointProvider = Aws::IoTTwinMaker::Endpoint::IoTTwinMakerEndpointProvider;
 

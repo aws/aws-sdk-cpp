@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using RepostspaceClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using RepostspaceClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using RepostspaceClientConfiguration = Aws::Client::GenericClientConfiguration;
 using RepostspaceBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

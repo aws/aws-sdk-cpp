@@ -53,7 +53,7 @@ namespace Aws
 
   namespace FreeTier
   {
-    using FreeTierClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using FreeTierClientConfiguration = Aws::Client::GenericClientConfiguration;
     using FreeTierEndpointProviderBase = Aws::FreeTier::Endpoint::FreeTierEndpointProviderBase;
     using FreeTierEndpointProvider = Aws::FreeTier::Endpoint::FreeTierEndpointProvider;
 

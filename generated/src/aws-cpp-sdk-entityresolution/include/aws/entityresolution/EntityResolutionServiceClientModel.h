@@ -93,7 +93,7 @@ namespace Aws
 
   namespace EntityResolution
   {
-    using EntityResolutionClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using EntityResolutionClientConfiguration = Aws::Client::GenericClientConfiguration;
     using EntityResolutionEndpointProviderBase = Aws::EntityResolution::Endpoint::EntityResolutionEndpointProviderBase;
     using EntityResolutionEndpointProvider = Aws::EntityResolution::Endpoint::EntityResolutionEndpointProvider;
 

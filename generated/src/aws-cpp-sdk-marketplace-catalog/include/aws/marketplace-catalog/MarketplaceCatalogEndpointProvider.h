@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using MarketplaceCatalogClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using MarketplaceCatalogClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using MarketplaceCatalogClientConfiguration = Aws::Client::GenericClientConfiguration;
 using MarketplaceCatalogBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

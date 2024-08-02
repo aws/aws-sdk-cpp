@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using SagemakerEdgeManagerClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using SagemakerEdgeManagerClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using SagemakerEdgeManagerClientConfiguration = Aws::Client::GenericClientConfiguration;
 using SagemakerEdgeManagerBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

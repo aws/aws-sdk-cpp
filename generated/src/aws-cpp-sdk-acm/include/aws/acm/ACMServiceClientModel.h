@@ -62,7 +62,7 @@ namespace Aws
 
   namespace ACM
   {
-    using ACMClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using ACMClientConfiguration = Aws::Client::GenericClientConfiguration;
     using ACMEndpointProviderBase = Aws::ACM::Endpoint::ACMEndpointProviderBase;
     using ACMEndpointProvider = Aws::ACM::Endpoint::ACMEndpointProvider;
 

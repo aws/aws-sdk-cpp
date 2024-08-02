@@ -104,7 +104,7 @@ namespace Aws
 
   namespace CloudWatchEvents
   {
-    using CloudWatchEventsClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using CloudWatchEventsClientConfiguration = Aws::Client::GenericClientConfiguration;
     using CloudWatchEventsEndpointProviderBase = Aws::CloudWatchEvents::Endpoint::CloudWatchEventsEndpointProviderBase;
     using CloudWatchEventsEndpointProvider = Aws::CloudWatchEvents::Endpoint::CloudWatchEventsEndpointProvider;
 

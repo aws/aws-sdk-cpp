@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using SSMQuickSetupClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using SSMQuickSetupClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using SSMQuickSetupClientConfiguration = Aws::Client::GenericClientConfiguration;
 using SSMQuickSetupBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

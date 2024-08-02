@@ -138,7 +138,7 @@ namespace Aws
 
   namespace FraudDetector
   {
-    using FraudDetectorClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using FraudDetectorClientConfiguration = Aws::Client::GenericClientConfiguration;
     using FraudDetectorEndpointProviderBase = Aws::FraudDetector::Endpoint::FraudDetectorEndpointProviderBase;
     using FraudDetectorEndpointProvider = Aws::FraudDetector::Endpoint::FraudDetectorEndpointProvider;
 

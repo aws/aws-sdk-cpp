@@ -116,7 +116,7 @@ namespace Aws
 
   namespace BedrockAgent
   {
-    using BedrockAgentClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using BedrockAgentClientConfiguration = Aws::Client::GenericClientConfiguration;
     using BedrockAgentEndpointProviderBase = Aws::BedrockAgent::Endpoint::BedrockAgentEndpointProviderBase;
     using BedrockAgentEndpointProvider = Aws::BedrockAgent::Endpoint::BedrockAgentEndpointProvider;
 

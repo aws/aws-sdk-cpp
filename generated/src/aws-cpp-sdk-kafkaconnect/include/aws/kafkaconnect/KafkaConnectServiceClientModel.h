@@ -70,7 +70,7 @@ namespace Aws
 
   namespace KafkaConnect
   {
-    using KafkaConnectClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using KafkaConnectClientConfiguration = Aws::Client::GenericClientConfiguration;
     using KafkaConnectEndpointProviderBase = Aws::KafkaConnect::Endpoint::KafkaConnectEndpointProviderBase;
     using KafkaConnectEndpointProvider = Aws::KafkaConnect::Endpoint::KafkaConnectEndpointProvider;
 

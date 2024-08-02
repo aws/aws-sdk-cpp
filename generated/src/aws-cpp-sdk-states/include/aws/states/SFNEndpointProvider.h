@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using SFNClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using SFNClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using SFNClientConfiguration = Aws::Client::GenericClientConfiguration;
 using SFNBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

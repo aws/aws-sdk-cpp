@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using LaunchWizardClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using LaunchWizardClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using LaunchWizardClientConfiguration = Aws::Client::GenericClientConfiguration;
 using LaunchWizardBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

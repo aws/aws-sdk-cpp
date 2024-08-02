@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using GroundStationClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using GroundStationClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using GroundStationClientConfiguration = Aws::Client::GenericClientConfiguration;
 using GroundStationBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

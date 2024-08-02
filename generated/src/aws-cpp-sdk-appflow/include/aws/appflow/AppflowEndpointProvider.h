@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using AppflowClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using AppflowClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using AppflowClientConfiguration = Aws::Client::GenericClientConfiguration;
 using AppflowBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

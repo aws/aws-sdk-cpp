@@ -97,7 +97,7 @@ namespace Aws
 
   namespace TranscribeService
   {
-    using TranscribeServiceClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using TranscribeServiceClientConfiguration = Aws::Client::GenericClientConfiguration;
     using TranscribeServiceEndpointProviderBase = Aws::TranscribeService::Endpoint::TranscribeServiceEndpointProviderBase;
     using TranscribeServiceEndpointProvider = Aws::TranscribeService::Endpoint::TranscribeServiceEndpointProvider;
 

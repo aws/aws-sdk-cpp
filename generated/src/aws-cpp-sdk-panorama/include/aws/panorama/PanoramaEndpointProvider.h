@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using PanoramaClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using PanoramaClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using PanoramaClientConfiguration = Aws::Client::GenericClientConfiguration;
 using PanoramaBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

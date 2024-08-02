@@ -124,7 +124,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>TCurrent status of compliance for the resiliency policy.</p>
+     * <p>Current status of compliance for the resiliency policy.</p>
      */
     inline const ComplianceStatus& GetComplianceStatus() const{ return m_complianceStatus; }
     inline bool ComplianceStatusHasBeenSet() const { return m_complianceStatusHasBeenSet; }

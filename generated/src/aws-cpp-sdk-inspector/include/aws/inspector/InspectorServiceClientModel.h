@@ -87,7 +87,7 @@ namespace Aws
 
   namespace Inspector
   {
-    using InspectorClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using InspectorClientConfiguration = Aws::Client::GenericClientConfiguration;
     using InspectorEndpointProviderBase = Aws::Inspector::Endpoint::InspectorEndpointProviderBase;
     using InspectorEndpointProvider = Aws::Inspector::Endpoint::InspectorEndpointProvider;
 

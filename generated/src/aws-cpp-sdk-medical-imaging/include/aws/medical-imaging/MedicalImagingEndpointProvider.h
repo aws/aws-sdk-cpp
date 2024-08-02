@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using MedicalImagingClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using MedicalImagingClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using MedicalImagingClientConfiguration = Aws::Client::GenericClientConfiguration;
 using MedicalImagingBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

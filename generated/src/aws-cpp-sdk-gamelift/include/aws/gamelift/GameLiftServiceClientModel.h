@@ -175,7 +175,7 @@ namespace Aws
 
   namespace GameLift
   {
-    using GameLiftClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using GameLiftClientConfiguration = Aws::Client::GenericClientConfiguration;
     using GameLiftEndpointProviderBase = Aws::GameLift::Endpoint::GameLiftEndpointProviderBase;
     using GameLiftEndpointProvider = Aws::GameLift::Endpoint::GameLiftEndpointProvider;
 

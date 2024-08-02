@@ -88,7 +88,7 @@ namespace Aws
 
   namespace ComputeOptimizer
   {
-    using ComputeOptimizerClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using ComputeOptimizerClientConfiguration = Aws::Client::GenericClientConfiguration;
     using ComputeOptimizerEndpointProviderBase = Aws::ComputeOptimizer::Endpoint::ComputeOptimizerEndpointProviderBase;
     using ComputeOptimizerEndpointProvider = Aws::ComputeOptimizer::Endpoint::ComputeOptimizerEndpointProvider;
 

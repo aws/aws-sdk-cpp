@@ -104,7 +104,7 @@ namespace Aws
 
   namespace ElasticLoadBalancingv2
   {
-    using ElasticLoadBalancingv2ClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using ElasticLoadBalancingv2ClientConfiguration = Aws::Client::GenericClientConfiguration;
     using ElasticLoadBalancingv2EndpointProviderBase = Aws::ElasticLoadBalancingv2::Endpoint::ElasticLoadBalancingv2EndpointProviderBase;
     using ElasticLoadBalancingv2EndpointProvider = Aws::ElasticLoadBalancingv2::Endpoint::ElasticLoadBalancingv2EndpointProvider;
 

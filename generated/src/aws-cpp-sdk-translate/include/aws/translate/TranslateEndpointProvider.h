@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using TranslateClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using TranslateClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using TranslateClientConfiguration = Aws::Client::GenericClientConfiguration;
 using TranslateBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

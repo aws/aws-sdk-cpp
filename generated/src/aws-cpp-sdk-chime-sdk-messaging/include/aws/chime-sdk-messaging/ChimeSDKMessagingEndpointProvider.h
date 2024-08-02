@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using ChimeSDKMessagingClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using ChimeSDKMessagingClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using ChimeSDKMessagingClientConfiguration = Aws::Client::GenericClientConfiguration;
 using ChimeSDKMessagingBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

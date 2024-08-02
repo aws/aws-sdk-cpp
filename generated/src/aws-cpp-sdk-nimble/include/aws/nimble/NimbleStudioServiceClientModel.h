@@ -102,7 +102,7 @@ namespace Aws
 
   namespace NimbleStudio
   {
-    using NimbleStudioClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using NimbleStudioClientConfiguration = Aws::Client::GenericClientConfiguration;
     using NimbleStudioEndpointProviderBase = Aws::NimbleStudio::Endpoint::NimbleStudioEndpointProviderBase;
     using NimbleStudioEndpointProvider = Aws::NimbleStudio::Endpoint::NimbleStudioEndpointProvider;
 

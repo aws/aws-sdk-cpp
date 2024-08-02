@@ -73,7 +73,7 @@ namespace Aws
 
   namespace QLDB
   {
-    using QLDBClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using QLDBClientConfiguration = Aws::Client::GenericClientConfiguration;
     using QLDBEndpointProviderBase = Aws::QLDB::Endpoint::QLDBEndpointProviderBase;
     using QLDBEndpointProvider = Aws::QLDB::Endpoint::QLDBEndpointProvider;
 

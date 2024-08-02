@@ -68,7 +68,7 @@ namespace Aws
 
   namespace PcaConnectorAd
   {
-    using PcaConnectorAdClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using PcaConnectorAdClientConfiguration = Aws::Client::GenericClientConfiguration;
     using PcaConnectorAdEndpointProviderBase = Aws::PcaConnectorAd::Endpoint::PcaConnectorAdEndpointProviderBase;
     using PcaConnectorAdEndpointProvider = Aws::PcaConnectorAd::Endpoint::PcaConnectorAdEndpointProvider;
 

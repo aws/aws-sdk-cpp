@@ -77,7 +77,7 @@ namespace Aws
 
   namespace PrometheusService
   {
-    using PrometheusServiceClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using PrometheusServiceClientConfiguration = Aws::Client::GenericClientConfiguration;
     using PrometheusServiceEndpointProviderBase = Aws::PrometheusService::Endpoint::PrometheusServiceEndpointProviderBase;
     using PrometheusServiceEndpointProvider = Aws::PrometheusService::Endpoint::PrometheusServiceEndpointProvider;
 

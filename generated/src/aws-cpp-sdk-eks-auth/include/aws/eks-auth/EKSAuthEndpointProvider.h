@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using EKSAuthClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using EKSAuthClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using EKSAuthClientConfiguration = Aws::Client::GenericClientConfiguration;
 using EKSAuthBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

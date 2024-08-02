@@ -69,7 +69,7 @@ namespace Aws
 
   namespace Route53Profiles
   {
-    using Route53ProfilesClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using Route53ProfilesClientConfiguration = Aws::Client::GenericClientConfiguration;
     using Route53ProfilesEndpointProviderBase = Aws::Route53Profiles::Endpoint::Route53ProfilesEndpointProviderBase;
     using Route53ProfilesEndpointProvider = Aws::Route53Profiles::Endpoint::Route53ProfilesEndpointProvider;
 

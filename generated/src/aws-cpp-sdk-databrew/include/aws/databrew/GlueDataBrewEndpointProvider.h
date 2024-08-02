@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using GlueDataBrewClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using GlueDataBrewClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using GlueDataBrewClientConfiguration = Aws::Client::GenericClientConfiguration;
 using GlueDataBrewBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

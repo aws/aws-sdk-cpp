@@ -79,7 +79,7 @@ namespace Aws
 
   namespace BackupGateway
   {
-    using BackupGatewayClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using BackupGatewayClientConfiguration = Aws::Client::GenericClientConfiguration;
     using BackupGatewayEndpointProviderBase = Aws::BackupGateway::Endpoint::BackupGatewayEndpointProviderBase;
     using BackupGatewayEndpointProvider = Aws::BackupGateway::Endpoint::BackupGatewayEndpointProvider;
 

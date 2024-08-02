@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using IoTWirelessClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using IoTWirelessClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using IoTWirelessClientConfiguration = Aws::Client::GenericClientConfiguration;
 using IoTWirelessBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

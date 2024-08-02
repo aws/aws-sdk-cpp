@@ -58,7 +58,7 @@ namespace Aws
 
   namespace AutoScalingPlans
   {
-    using AutoScalingPlansClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using AutoScalingPlansClientConfiguration = Aws::Client::GenericClientConfiguration;
     using AutoScalingPlansEndpointProviderBase = Aws::AutoScalingPlans::Endpoint::AutoScalingPlansEndpointProviderBase;
     using AutoScalingPlansEndpointProvider = Aws::AutoScalingPlans::Endpoint::AutoScalingPlansEndpointProvider;
 

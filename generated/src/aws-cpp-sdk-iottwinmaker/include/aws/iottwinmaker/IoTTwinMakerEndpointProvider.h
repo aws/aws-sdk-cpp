@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using IoTTwinMakerClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using IoTTwinMakerClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using IoTTwinMakerClientConfiguration = Aws::Client::GenericClientConfiguration;
 using IoTTwinMakerBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

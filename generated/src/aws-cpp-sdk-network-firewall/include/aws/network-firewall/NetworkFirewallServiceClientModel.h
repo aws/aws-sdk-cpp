@@ -104,7 +104,7 @@ namespace Aws
 
   namespace NetworkFirewall
   {
-    using NetworkFirewallClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using NetworkFirewallClientConfiguration = Aws::Client::GenericClientConfiguration;
     using NetworkFirewallEndpointProviderBase = Aws::NetworkFirewall::Endpoint::NetworkFirewallEndpointProviderBase;
     using NetworkFirewallEndpointProvider = Aws::NetworkFirewall::Endpoint::NetworkFirewallEndpointProvider;
 

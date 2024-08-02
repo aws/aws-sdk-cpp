@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using CloudWatchEventsClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using CloudWatchEventsClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using CloudWatchEventsClientConfiguration = Aws::Client::GenericClientConfiguration;
 using CloudWatchEventsBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using DataPipelineClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using DataPipelineClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using DataPipelineClientConfiguration = Aws::Client::GenericClientConfiguration;
 using DataPipelineBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

@@ -73,7 +73,7 @@ namespace Aws
 
   namespace Glacier
   {
-    using GlacierClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using GlacierClientConfiguration = Aws::Client::GenericClientConfiguration;
     using GlacierEndpointProviderBase = Aws::Glacier::Endpoint::GlacierEndpointProviderBase;
     using GlacierEndpointProvider = Aws::Glacier::Endpoint::GlacierEndpointProvider;
 

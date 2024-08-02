@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using CodeBuildClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using CodeBuildClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using CodeBuildClientConfiguration = Aws::Client::GenericClientConfiguration;
 using CodeBuildBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

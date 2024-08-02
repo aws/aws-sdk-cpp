@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using EKSClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using EKSClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using EKSClientConfiguration = Aws::Client::GenericClientConfiguration;
 using EKSBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

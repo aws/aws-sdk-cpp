@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using XRayClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using XRayClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using XRayClientConfiguration = Aws::Client::GenericClientConfiguration;
 using XRayBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

@@ -156,7 +156,7 @@ namespace Aws
 
   namespace WorkSpaces
   {
-    using WorkSpacesClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using WorkSpacesClientConfiguration = Aws::Client::GenericClientConfiguration;
     using WorkSpacesEndpointProviderBase = Aws::WorkSpaces::Endpoint::WorkSpacesEndpointProviderBase;
     using WorkSpacesEndpointProvider = Aws::WorkSpaces::Endpoint::WorkSpacesEndpointProvider;
 

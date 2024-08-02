@@ -89,7 +89,7 @@ namespace Aws
 
   namespace BillingConductor
   {
-    using BillingConductorClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using BillingConductorClientConfiguration = Aws::Client::GenericClientConfiguration;
     using BillingConductorEndpointProviderBase = Aws::BillingConductor::Endpoint::BillingConductorEndpointProviderBase;
     using BillingConductorEndpointProvider = Aws::BillingConductor::Endpoint::BillingConductorEndpointProvider;
 

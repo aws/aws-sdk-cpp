@@ -94,7 +94,7 @@ namespace Aws
 
   namespace KinesisVideo
   {
-    using KinesisVideoClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using KinesisVideoClientConfiguration = Aws::Client::GenericClientConfiguration;
     using KinesisVideoEndpointProviderBase = Aws::KinesisVideo::Endpoint::KinesisVideoEndpointProviderBase;
     using KinesisVideoEndpointProvider = Aws::KinesisVideo::Endpoint::KinesisVideoEndpointProvider;
 

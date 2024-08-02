@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using AmplifyBackendClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using AmplifyBackendClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using AmplifyBackendClientConfiguration = Aws::Client::GenericClientConfiguration;
 using AmplifyBackendBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

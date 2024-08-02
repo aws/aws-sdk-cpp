@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using SecretsManagerClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using SecretsManagerClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using SecretsManagerClientConfiguration = Aws::Client::GenericClientConfiguration;
 using SecretsManagerBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

@@ -77,7 +77,7 @@ namespace Aws
 
   namespace EMRContainers
   {
-    using EMRContainersClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using EMRContainersClientConfiguration = Aws::Client::GenericClientConfiguration;
     using EMRContainersEndpointProviderBase = Aws::EMRContainers::Endpoint::EMRContainersEndpointProviderBase;
     using EMRContainersEndpointProvider = Aws::EMRContainers::Endpoint::EMRContainersEndpointProvider;
 

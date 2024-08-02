@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using B2BIClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using B2BIClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using B2BIClientConfiguration = Aws::Client::GenericClientConfiguration;
 using B2BIBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

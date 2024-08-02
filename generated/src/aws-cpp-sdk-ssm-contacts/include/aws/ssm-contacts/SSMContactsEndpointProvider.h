@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using SSMContactsClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using SSMContactsClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using SSMContactsClientConfiguration = Aws::Client::GenericClientConfiguration;
 using SSMContactsBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

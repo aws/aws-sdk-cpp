@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using TextractClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using TextractClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using TextractClientConfiguration = Aws::Client::GenericClientConfiguration;
 using TextractBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

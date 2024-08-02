@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using SyntheticsClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using SyntheticsClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using SyntheticsClientConfiguration = Aws::Client::GenericClientConfiguration;
 using SyntheticsBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

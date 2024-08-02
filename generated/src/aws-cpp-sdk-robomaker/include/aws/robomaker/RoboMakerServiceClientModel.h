@@ -103,7 +103,7 @@ namespace Aws
 
   namespace RoboMaker
   {
-    using RoboMakerClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using RoboMakerClientConfiguration = Aws::Client::GenericClientConfiguration;
     using RoboMakerEndpointProviderBase = Aws::RoboMaker::Endpoint::RoboMakerEndpointProviderBase;
     using RoboMakerEndpointProvider = Aws::RoboMaker::Endpoint::RoboMakerEndpointProvider;
 

@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using LicenseManagerClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using LicenseManagerClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using LicenseManagerClientConfiguration = Aws::Client::GenericClientConfiguration;
 using LicenseManagerBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

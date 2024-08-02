@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using LakeFormationClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using LakeFormationClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using LakeFormationClientConfiguration = Aws::Client::GenericClientConfiguration;
 using LakeFormationBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

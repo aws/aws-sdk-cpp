@@ -60,7 +60,7 @@ namespace Aws
 
   namespace DLM
   {
-    using DLMClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using DLMClientConfiguration = Aws::Client::GenericClientConfiguration;
     using DLMEndpointProviderBase = Aws::DLM::Endpoint::DLMEndpointProviderBase;
     using DLMEndpointProvider = Aws::DLM::Endpoint::DLMEndpointProvider;
 

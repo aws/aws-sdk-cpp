@@ -54,7 +54,7 @@ namespace Aws
 
   namespace SageMakerRuntime
   {
-    using SageMakerRuntimeClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using SageMakerRuntimeClientConfiguration = Aws::Client::GenericClientConfiguration;
     using SageMakerRuntimeEndpointProviderBase = Aws::SageMakerRuntime::Endpoint::SageMakerRuntimeEndpointProviderBase;
     using SageMakerRuntimeEndpointProvider = Aws::SageMakerRuntime::Endpoint::SageMakerRuntimeEndpointProvider;
 

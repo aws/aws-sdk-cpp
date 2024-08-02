@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using WorkSpacesClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using WorkSpacesClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using WorkSpacesClientConfiguration = Aws::Client::GenericClientConfiguration;
 using WorkSpacesBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using BackupGatewayClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using BackupGatewayClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using BackupGatewayClientConfiguration = Aws::Client::GenericClientConfiguration;
 using BackupGatewayBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

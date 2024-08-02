@@ -68,7 +68,7 @@ namespace Aws
 
   namespace EMRServerless
   {
-    using EMRServerlessClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using EMRServerlessClientConfiguration = Aws::Client::GenericClientConfiguration;
     using EMRServerlessEndpointProviderBase = Aws::EMRServerless::Endpoint::EMRServerlessEndpointProviderBase;
     using EMRServerlessEndpointProvider = Aws::EMRServerless::Endpoint::EMRServerlessEndpointProvider;
 

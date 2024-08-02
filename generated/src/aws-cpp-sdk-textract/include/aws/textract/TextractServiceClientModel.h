@@ -78,7 +78,7 @@ namespace Aws
 
   namespace Textract
   {
-    using TextractClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using TextractClientConfiguration = Aws::Client::GenericClientConfiguration;
     using TextractEndpointProviderBase = Aws::Textract::Endpoint::TextractEndpointProviderBase;
     using TextractEndpointProvider = Aws::Textract::Endpoint::TextractEndpointProvider;
 

@@ -55,7 +55,7 @@ namespace Aws
 
   namespace SSOOIDC
   {
-    using SSOOIDCClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using SSOOIDCClientConfiguration = Aws::Client::GenericClientConfiguration;
     using SSOOIDCEndpointProviderBase = Aws::SSOOIDC::Endpoint::SSOOIDCEndpointProviderBase;
     using SSOOIDCEndpointProvider = Aws::SSOOIDC::Endpoint::SSOOIDCEndpointProvider;
 

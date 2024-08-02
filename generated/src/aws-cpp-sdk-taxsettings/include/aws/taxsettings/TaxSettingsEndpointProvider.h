@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using TaxSettingsClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using TaxSettingsClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using TaxSettingsClientConfiguration = Aws::Client::GenericClientConfiguration;
 using TaxSettingsBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

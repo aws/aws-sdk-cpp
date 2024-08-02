@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using PersonalizeEventsClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using PersonalizeEventsClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using PersonalizeEventsClientConfiguration = Aws::Client::GenericClientConfiguration;
 using PersonalizeEventsBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

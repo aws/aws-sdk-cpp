@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using ManagedBlockchainClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using ManagedBlockchainClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using ManagedBlockchainClientConfiguration = Aws::Client::GenericClientConfiguration;
 using ManagedBlockchainBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

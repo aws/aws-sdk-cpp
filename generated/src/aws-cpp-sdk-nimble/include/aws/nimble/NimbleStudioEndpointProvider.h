@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using NimbleStudioClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using NimbleStudioClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using NimbleStudioClientConfiguration = Aws::Client::GenericClientConfiguration;
 using NimbleStudioBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

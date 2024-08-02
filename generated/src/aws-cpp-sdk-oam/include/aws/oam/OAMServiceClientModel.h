@@ -68,7 +68,7 @@ namespace Aws
 
   namespace OAM
   {
-    using OAMClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using OAMClientConfiguration = Aws::Client::GenericClientConfiguration;
     using OAMEndpointProviderBase = Aws::OAM::Endpoint::OAMEndpointProviderBase;
     using OAMEndpointProvider = Aws::OAM::Endpoint::OAMEndpointProvider;
 

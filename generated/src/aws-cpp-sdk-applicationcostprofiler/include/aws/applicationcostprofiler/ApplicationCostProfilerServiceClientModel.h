@@ -58,7 +58,7 @@ namespace Aws
 
   namespace ApplicationCostProfiler
   {
-    using ApplicationCostProfilerClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using ApplicationCostProfilerClientConfiguration = Aws::Client::GenericClientConfiguration;
     using ApplicationCostProfilerEndpointProviderBase = Aws::ApplicationCostProfiler::Endpoint::ApplicationCostProfilerEndpointProviderBase;
     using ApplicationCostProfilerEndpointProvider = Aws::ApplicationCostProfiler::Endpoint::ApplicationCostProfilerEndpointProvider;
 

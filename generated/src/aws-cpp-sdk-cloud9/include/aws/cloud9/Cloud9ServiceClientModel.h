@@ -66,7 +66,7 @@ namespace Aws
 
   namespace Cloud9
   {
-    using Cloud9ClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using Cloud9ClientConfiguration = Aws::Client::GenericClientConfiguration;
     using Cloud9EndpointProviderBase = Aws::Cloud9::Endpoint::Cloud9EndpointProviderBase;
     using Cloud9EndpointProvider = Aws::Cloud9::Endpoint::Cloud9EndpointProvider;
 

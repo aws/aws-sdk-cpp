@@ -91,7 +91,7 @@ namespace Aws
 
   namespace CodePipeline
   {
-    using CodePipelineClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using CodePipelineClientConfiguration = Aws::Client::GenericClientConfiguration;
     using CodePipelineEndpointProviderBase = Aws::CodePipeline::Endpoint::CodePipelineEndpointProviderBase;
     using CodePipelineEndpointProvider = Aws::CodePipeline::Endpoint::CodePipelineEndpointProvider;
 

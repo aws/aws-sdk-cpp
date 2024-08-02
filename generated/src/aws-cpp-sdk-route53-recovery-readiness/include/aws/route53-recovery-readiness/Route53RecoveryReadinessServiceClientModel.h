@@ -85,7 +85,7 @@ namespace Aws
 
   namespace Route53RecoveryReadiness
   {
-    using Route53RecoveryReadinessClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using Route53RecoveryReadinessClientConfiguration = Aws::Client::GenericClientConfiguration;
     using Route53RecoveryReadinessEndpointProviderBase = Aws::Route53RecoveryReadiness::Endpoint::Route53RecoveryReadinessEndpointProviderBase;
     using Route53RecoveryReadinessEndpointProvider = Aws::Route53RecoveryReadiness::Endpoint::Route53RecoveryReadinessEndpointProvider;
 

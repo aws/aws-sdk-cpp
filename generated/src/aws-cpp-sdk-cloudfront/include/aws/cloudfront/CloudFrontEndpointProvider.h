@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using CloudFrontClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using CloudFrontClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using CloudFrontClientConfiguration = Aws::Client::GenericClientConfiguration;
 using CloudFrontBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

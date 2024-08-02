@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using GlobalAcceleratorClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using GlobalAcceleratorClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using GlobalAcceleratorClientConfiguration = Aws::Client::GenericClientConfiguration;
 using GlobalAcceleratorBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using ElasticTranscoderClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using ElasticTranscoderClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using ElasticTranscoderClientConfiguration = Aws::Client::GenericClientConfiguration;
 using ElasticTranscoderBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

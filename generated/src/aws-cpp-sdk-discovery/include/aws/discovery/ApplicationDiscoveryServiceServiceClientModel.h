@@ -85,7 +85,7 @@ namespace Aws
 
   namespace ApplicationDiscoveryService
   {
-    using ApplicationDiscoveryServiceClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using ApplicationDiscoveryServiceClientConfiguration = Aws::Client::GenericClientConfiguration;
     using ApplicationDiscoveryServiceEndpointProviderBase = Aws::ApplicationDiscoveryService::Endpoint::ApplicationDiscoveryServiceEndpointProviderBase;
     using ApplicationDiscoveryServiceEndpointProvider = Aws::ApplicationDiscoveryService::Endpoint::ApplicationDiscoveryServiceEndpointProvider;
 

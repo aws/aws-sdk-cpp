@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using IvschatClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using IvschatClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using IvschatClientConfiguration = Aws::Client::GenericClientConfiguration;
 using IvschatBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

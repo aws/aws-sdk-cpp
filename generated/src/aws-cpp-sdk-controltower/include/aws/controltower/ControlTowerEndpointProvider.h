@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using ControlTowerClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using ControlTowerClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using ControlTowerClientConfiguration = Aws::Client::GenericClientConfiguration;
 using ControlTowerBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

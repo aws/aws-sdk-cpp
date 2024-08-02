@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using SignerClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using SignerClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using SignerClientConfiguration = Aws::Client::GenericClientConfiguration;
 using SignerBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

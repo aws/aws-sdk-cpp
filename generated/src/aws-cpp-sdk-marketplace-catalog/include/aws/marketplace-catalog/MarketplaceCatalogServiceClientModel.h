@@ -64,7 +64,7 @@ namespace Aws
 
   namespace MarketplaceCatalog
   {
-    using MarketplaceCatalogClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using MarketplaceCatalogClientConfiguration = Aws::Client::GenericClientConfiguration;
     using MarketplaceCatalogEndpointProviderBase = Aws::MarketplaceCatalog::Endpoint::MarketplaceCatalogEndpointProviderBase;
     using MarketplaceCatalogEndpointProvider = Aws::MarketplaceCatalog::Endpoint::MarketplaceCatalogEndpointProvider;
 

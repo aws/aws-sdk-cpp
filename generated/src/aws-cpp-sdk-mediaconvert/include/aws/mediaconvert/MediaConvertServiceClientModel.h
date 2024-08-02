@@ -86,7 +86,7 @@ namespace Aws
 
   namespace MediaConvert
   {
-    using MediaConvertClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using MediaConvertClientConfiguration = Aws::Client::GenericClientConfiguration;
     using MediaConvertEndpointProviderBase = Aws::MediaConvert::Endpoint::MediaConvertEndpointProviderBase;
     using MediaConvertEndpointProvider = Aws::MediaConvert::Endpoint::MediaConvertEndpointProvider;
 

@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using BraketClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using BraketClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using BraketClientConfiguration = Aws::Client::GenericClientConfiguration;
 using BraketBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

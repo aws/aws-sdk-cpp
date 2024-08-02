@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using IvsrealtimeClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using IvsrealtimeClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using IvsrealtimeClientConfiguration = Aws::Client::GenericClientConfiguration;
 using IvsrealtimeBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

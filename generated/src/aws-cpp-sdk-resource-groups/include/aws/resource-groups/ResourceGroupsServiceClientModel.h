@@ -79,7 +79,7 @@ namespace Aws
 
   namespace ResourceGroups
   {
-    using ResourceGroupsClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using ResourceGroupsClientConfiguration = Aws::Client::GenericClientConfiguration;
     using ResourceGroupsEndpointProviderBase = Aws::ResourceGroups::Endpoint::ResourceGroupsEndpointProviderBase;
     using ResourceGroupsEndpointProvider = Aws::ResourceGroups::Endpoint::ResourceGroupsEndpointProvider;
 

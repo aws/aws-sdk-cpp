@@ -55,7 +55,7 @@ namespace Aws
 
   namespace AgreementService
   {
-    using AgreementServiceClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using AgreementServiceClientConfiguration = Aws::Client::GenericClientConfiguration;
     using AgreementServiceEndpointProviderBase = Aws::AgreementService::Endpoint::AgreementServiceEndpointProviderBase;
     using AgreementServiceEndpointProvider = Aws::AgreementService::Endpoint::AgreementServiceEndpointProvider;
 

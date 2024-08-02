@@ -77,7 +77,7 @@ namespace Aws
 
   namespace EFS
   {
-    using EFSClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using EFSClientConfiguration = Aws::Client::GenericClientConfiguration;
     using EFSEndpointProviderBase = Aws::EFS::Endpoint::EFSEndpointProviderBase;
     using EFSEndpointProvider = Aws::EFS::Endpoint::EFSEndpointProvider;
 

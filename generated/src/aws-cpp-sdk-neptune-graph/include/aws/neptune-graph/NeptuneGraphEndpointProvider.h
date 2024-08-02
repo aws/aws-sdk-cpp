@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using NeptuneGraphClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using NeptuneGraphClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using NeptuneGraphClientConfiguration = Aws::Client::GenericClientConfiguration;
 using NeptuneGraphBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

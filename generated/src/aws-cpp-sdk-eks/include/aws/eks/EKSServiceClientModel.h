@@ -111,7 +111,7 @@ namespace Aws
 
   namespace EKS
   {
-    using EKSClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using EKSClientConfiguration = Aws::Client::GenericClientConfiguration;
     using EKSEndpointProviderBase = Aws::EKS::Endpoint::EKSEndpointProviderBase;
     using EKSEndpointProvider = Aws::EKS::Endpoint::EKSEndpointProvider;
 

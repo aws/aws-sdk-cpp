@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using VerifiedPermissionsClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using VerifiedPermissionsClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using VerifiedPermissionsClientConfiguration = Aws::Client::GenericClientConfiguration;
 using VerifiedPermissionsBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

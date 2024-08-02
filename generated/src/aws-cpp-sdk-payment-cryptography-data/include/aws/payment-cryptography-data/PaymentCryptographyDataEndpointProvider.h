@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using PaymentCryptographyDataClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using PaymentCryptographyDataClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using PaymentCryptographyDataClientConfiguration = Aws::Client::GenericClientConfiguration;
 using PaymentCryptographyDataBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

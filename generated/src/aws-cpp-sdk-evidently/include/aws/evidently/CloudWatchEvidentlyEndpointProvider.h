@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using CloudWatchEvidentlyClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using CloudWatchEvidentlyClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using CloudWatchEvidentlyClientConfiguration = Aws::Client::GenericClientConfiguration;
 using CloudWatchEvidentlyBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

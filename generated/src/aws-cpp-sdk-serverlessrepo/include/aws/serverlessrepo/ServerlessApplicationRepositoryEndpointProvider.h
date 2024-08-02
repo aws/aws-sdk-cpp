@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using ServerlessApplicationRepositoryClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using ServerlessApplicationRepositoryClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using ServerlessApplicationRepositoryClientConfiguration = Aws::Client::GenericClientConfiguration;
 using ServerlessApplicationRepositoryBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

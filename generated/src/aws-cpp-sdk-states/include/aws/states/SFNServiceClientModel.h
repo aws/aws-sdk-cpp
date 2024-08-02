@@ -91,7 +91,7 @@ namespace Aws
 
   namespace SFN
   {
-    using SFNClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using SFNClientConfiguration = Aws::Client::GenericClientConfiguration;
     using SFNEndpointProviderBase = Aws::SFN::Endpoint::SFNEndpointProviderBase;
     using SFNEndpointProvider = Aws::SFN::Endpoint::SFNEndpointProvider;
 

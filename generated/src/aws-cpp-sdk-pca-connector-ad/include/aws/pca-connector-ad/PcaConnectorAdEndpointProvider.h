@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using PcaConnectorAdClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using PcaConnectorAdClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using PcaConnectorAdClientConfiguration = Aws::Client::GenericClientConfiguration;
 using PcaConnectorAdBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using MarketplaceDeploymentClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using MarketplaceDeploymentClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using MarketplaceDeploymentClientConfiguration = Aws::Client::GenericClientConfiguration;
 using MarketplaceDeploymentBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

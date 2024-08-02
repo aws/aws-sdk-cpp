@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using MarketplaceEntitlementServiceClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using MarketplaceEntitlementServiceClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using MarketplaceEntitlementServiceClientConfiguration = Aws::Client::GenericClientConfiguration;
 using MarketplaceEntitlementServiceBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

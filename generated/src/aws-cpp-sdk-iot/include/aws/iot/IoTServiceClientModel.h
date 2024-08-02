@@ -335,7 +335,7 @@ namespace Aws
 
   namespace IoT
   {
-    using IoTClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using IoTClientConfiguration = Aws::Client::GenericClientConfiguration;
     using IoTEndpointProviderBase = Aws::IoT::Endpoint::IoTEndpointProviderBase;
     using IoTEndpointProvider = Aws::IoT::Endpoint::IoTEndpointProvider;
 

@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using GameLiftClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using GameLiftClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using GameLiftClientConfiguration = Aws::Client::GenericClientConfiguration;
 using GameLiftBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

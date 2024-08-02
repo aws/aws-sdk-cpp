@@ -41,8 +41,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> This indicates if there are more errors not listed in the resourceErrors
-     * list. </p>
+     * <p> This indicates if there are more errors not listed in the
+     * <code>resourceErrors</code> list. </p>
      */
     inline bool GetHasMoreErrors() const{ return m_hasMoreErrors; }
     inline bool HasMoreErrorsHasBeenSet() const { return m_hasMoreErrorsHasBeenSet; }

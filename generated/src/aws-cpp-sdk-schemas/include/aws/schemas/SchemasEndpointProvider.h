@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using SchemasClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using SchemasClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using SchemasClientConfiguration = Aws::Client::GenericClientConfiguration;
 using SchemasBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

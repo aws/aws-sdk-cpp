@@ -62,7 +62,7 @@ namespace Aws
 
   namespace Pipes
   {
-    using PipesClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using PipesClientConfiguration = Aws::Client::GenericClientConfiguration;
     using PipesEndpointProviderBase = Aws::Pipes::Endpoint::PipesEndpointProviderBase;
     using PipesEndpointProvider = Aws::Pipes::Endpoint::PipesEndpointProvider;
 

@@ -64,7 +64,7 @@ namespace Aws
 
   namespace IoT1ClickDevicesService
   {
-    using IoT1ClickDevicesServiceClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using IoT1ClickDevicesServiceClientConfiguration = Aws::Client::GenericClientConfiguration;
     using IoT1ClickDevicesServiceEndpointProviderBase = Aws::IoT1ClickDevicesService::Endpoint::IoT1ClickDevicesServiceEndpointProviderBase;
     using IoT1ClickDevicesServiceEndpointProvider = Aws::IoT1ClickDevicesService::Endpoint::IoT1ClickDevicesServiceEndpointProvider;
 

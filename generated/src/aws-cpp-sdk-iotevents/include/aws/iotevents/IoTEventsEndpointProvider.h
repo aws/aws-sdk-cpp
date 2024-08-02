@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using IoTEventsClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using IoTEventsClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using IoTEventsClientConfiguration = Aws::Client::GenericClientConfiguration;
 using IoTEventsBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

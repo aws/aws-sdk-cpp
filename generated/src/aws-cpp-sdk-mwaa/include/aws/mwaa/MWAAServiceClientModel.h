@@ -62,7 +62,7 @@ namespace Aws
 
   namespace MWAA
   {
-    using MWAAClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using MWAAClientConfiguration = Aws::Client::GenericClientConfiguration;
     using MWAAEndpointProviderBase = Aws::MWAA::Endpoint::MWAAEndpointProviderBase;
     using MWAAEndpointProvider = Aws::MWAA::Endpoint::MWAAEndpointProvider;
 

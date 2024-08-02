@@ -106,7 +106,7 @@ namespace Aws
 
   namespace WAFV2
   {
-    using WAFV2ClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using WAFV2ClientConfiguration = Aws::Client::GenericClientConfiguration;
     using WAFV2EndpointProviderBase = Aws::WAFV2::Endpoint::WAFV2EndpointProviderBase;
     using WAFV2EndpointProvider = Aws::WAFV2::Endpoint::WAFV2EndpointProvider;
 

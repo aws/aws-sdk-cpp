@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using ChimeSDKMeetingsClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using ChimeSDKMeetingsClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using ChimeSDKMeetingsClientConfiguration = Aws::Client::GenericClientConfiguration;
 using ChimeSDKMeetingsBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

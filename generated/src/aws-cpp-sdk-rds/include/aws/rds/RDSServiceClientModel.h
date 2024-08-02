@@ -241,7 +241,7 @@ namespace Aws
 
   namespace RDS
   {
-    using RDSClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using RDSClientConfiguration = Aws::Client::GenericClientConfiguration;
     using RDSEndpointProviderBase = Aws::RDS::Endpoint::RDSEndpointProviderBase;
     using RDSEndpointProvider = Aws::RDS::Endpoint::RDSEndpointProvider;
 

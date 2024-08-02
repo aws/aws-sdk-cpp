@@ -81,7 +81,7 @@ namespace Aws
 
   namespace CodeStarconnections
   {
-    using CodeStarconnectionsClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using CodeStarconnectionsClientConfiguration = Aws::Client::GenericClientConfiguration;
     using CodeStarconnectionsEndpointProviderBase = Aws::CodeStarconnections::Endpoint::CodeStarconnectionsEndpointProviderBase;
     using CodeStarconnectionsEndpointProvider = Aws::CodeStarconnections::Endpoint::CodeStarconnectionsEndpointProvider;
 

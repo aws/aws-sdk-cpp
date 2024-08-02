@@ -136,7 +136,7 @@ namespace Aws
 
   namespace WorkMail
   {
-    using WorkMailClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using WorkMailClientConfiguration = Aws::Client::GenericClientConfiguration;
     using WorkMailEndpointProviderBase = Aws::WorkMail::Endpoint::WorkMailEndpointProviderBase;
     using WorkMailEndpointProvider = Aws::WorkMail::Endpoint::WorkMailEndpointProvider;
 

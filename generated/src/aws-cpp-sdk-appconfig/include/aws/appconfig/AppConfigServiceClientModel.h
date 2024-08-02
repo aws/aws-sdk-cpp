@@ -88,7 +88,7 @@ namespace Aws
 
   namespace AppConfig
   {
-    using AppConfigClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using AppConfigClientConfiguration = Aws::Client::GenericClientConfiguration;
     using AppConfigEndpointProviderBase = Aws::AppConfig::Endpoint::AppConfigEndpointProviderBase;
     using AppConfigEndpointProvider = Aws::AppConfig::Endpoint::AppConfigEndpointProvider;
 

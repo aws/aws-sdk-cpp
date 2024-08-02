@@ -131,7 +131,7 @@ namespace Aws
 
   namespace Route53Resolver
   {
-    using Route53ResolverClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using Route53ResolverClientConfiguration = Aws::Client::GenericClientConfiguration;
     using Route53ResolverEndpointProviderBase = Aws::Route53Resolver::Endpoint::Route53ResolverEndpointProviderBase;
     using Route53ResolverEndpointProvider = Aws::Route53Resolver::Endpoint::Route53ResolverEndpointProvider;
 

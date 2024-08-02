@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using ConnectCampaignsClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using ConnectCampaignsClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using ConnectCampaignsClientConfiguration = Aws::Client::GenericClientConfiguration;
 using ConnectCampaignsBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

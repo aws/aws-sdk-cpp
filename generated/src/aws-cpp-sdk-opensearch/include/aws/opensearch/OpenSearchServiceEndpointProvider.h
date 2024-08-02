@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using OpenSearchServiceClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using OpenSearchServiceClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using OpenSearchServiceClientConfiguration = Aws::Client::GenericClientConfiguration;
 using OpenSearchServiceBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

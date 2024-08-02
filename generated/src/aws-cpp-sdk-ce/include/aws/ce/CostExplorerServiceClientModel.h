@@ -99,7 +99,7 @@ namespace Aws
 
   namespace CostExplorer
   {
-    using CostExplorerClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using CostExplorerClientConfiguration = Aws::Client::GenericClientConfiguration;
     using CostExplorerEndpointProviderBase = Aws::CostExplorer::Endpoint::CostExplorerEndpointProviderBase;
     using CostExplorerEndpointProvider = Aws::CostExplorer::Endpoint::CostExplorerEndpointProvider;
 

@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using DirectoryServiceClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using DirectoryServiceClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using DirectoryServiceClientConfiguration = Aws::Client::GenericClientConfiguration;
 using DirectoryServiceBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

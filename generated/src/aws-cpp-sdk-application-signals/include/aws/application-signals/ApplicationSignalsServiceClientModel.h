@@ -68,7 +68,7 @@ namespace Aws
 
   namespace ApplicationSignals
   {
-    using ApplicationSignalsClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using ApplicationSignalsClientConfiguration = Aws::Client::GenericClientConfiguration;
     using ApplicationSignalsEndpointProviderBase = Aws::ApplicationSignals::Endpoint::ApplicationSignalsEndpointProviderBase;
     using ApplicationSignalsEndpointProvider = Aws::ApplicationSignals::Endpoint::ApplicationSignalsEndpointProvider;
 

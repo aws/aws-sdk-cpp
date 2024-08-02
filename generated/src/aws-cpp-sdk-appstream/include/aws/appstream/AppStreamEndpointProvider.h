@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using AppStreamClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using AppStreamClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using AppStreamClientConfiguration = Aws::Client::GenericClientConfiguration;
 using AppStreamBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

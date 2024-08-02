@@ -152,7 +152,7 @@ namespace Aws
 
   namespace ConfigService
   {
-    using ConfigServiceClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using ConfigServiceClientConfiguration = Aws::Client::GenericClientConfiguration;
     using ConfigServiceEndpointProviderBase = Aws::ConfigService::Endpoint::ConfigServiceEndpointProviderBase;
     using ConfigServiceEndpointProvider = Aws::ConfigService::Endpoint::ConfigServiceEndpointProvider;
 

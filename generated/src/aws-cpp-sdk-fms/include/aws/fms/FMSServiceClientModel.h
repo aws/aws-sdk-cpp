@@ -94,7 +94,7 @@ namespace Aws
 
   namespace FMS
   {
-    using FMSClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using FMSClientConfiguration = Aws::Client::GenericClientConfiguration;
     using FMSEndpointProviderBase = Aws::FMS::Endpoint::FMSEndpointProviderBase;
     using FMSEndpointProvider = Aws::FMS::Endpoint::FMSEndpointProvider;
 

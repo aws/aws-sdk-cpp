@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using QBusinessClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using QBusinessClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using QBusinessClientConfiguration = Aws::Client::GenericClientConfiguration;
 using QBusinessBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

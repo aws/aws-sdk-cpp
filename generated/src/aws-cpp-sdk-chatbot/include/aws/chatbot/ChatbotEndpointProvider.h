@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using ChatbotClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using ChatbotClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using ChatbotClientConfiguration = Aws::Client::GenericClientConfiguration;
 using ChatbotBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

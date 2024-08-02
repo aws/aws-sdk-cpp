@@ -117,7 +117,7 @@ namespace Aws
 
   namespace WellArchitected
   {
-    using WellArchitectedClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using WellArchitectedClientConfiguration = Aws::Client::GenericClientConfiguration;
     using WellArchitectedEndpointProviderBase = Aws::WellArchitected::Endpoint::WellArchitectedEndpointProviderBase;
     using WellArchitectedEndpointProvider = Aws::WellArchitected::Endpoint::WellArchitectedEndpointProvider;
 

@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using EC2InstanceConnectClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using EC2InstanceConnectClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using EC2InstanceConnectClientConfiguration = Aws::Client::GenericClientConfiguration;
 using EC2InstanceConnectBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using CodePipelineClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using CodePipelineClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using CodePipelineClientConfiguration = Aws::Client::GenericClientConfiguration;
 using CodePipelineBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

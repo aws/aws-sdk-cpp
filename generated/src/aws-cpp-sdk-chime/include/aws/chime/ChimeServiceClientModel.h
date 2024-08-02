@@ -114,7 +114,7 @@ namespace Aws
 
   namespace Chime
   {
-    using ChimeClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using ChimeClientConfiguration = Aws::Client::GenericClientConfiguration;
     using ChimeEndpointProviderBase = Aws::Chime::Endpoint::ChimeEndpointProviderBase;
     using ChimeEndpointProvider = Aws::Chime::Endpoint::ChimeEndpointProvider;
 

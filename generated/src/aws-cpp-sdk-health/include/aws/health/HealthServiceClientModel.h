@@ -72,7 +72,7 @@ namespace Aws
 
   namespace Health
   {
-    using HealthClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using HealthClientConfiguration = Aws::Client::GenericClientConfiguration;
     using HealthEndpointProviderBase = Aws::Health::Endpoint::HealthEndpointProviderBase;
     using HealthEndpointProvider = Aws::Health::Endpoint::HealthEndpointProvider;
 

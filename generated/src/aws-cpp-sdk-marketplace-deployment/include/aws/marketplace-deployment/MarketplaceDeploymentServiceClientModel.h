@@ -55,7 +55,7 @@ namespace Aws
 
   namespace MarketplaceDeployment
   {
-    using MarketplaceDeploymentClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using MarketplaceDeploymentClientConfiguration = Aws::Client::GenericClientConfiguration;
     using MarketplaceDeploymentEndpointProviderBase = Aws::MarketplaceDeployment::Endpoint::MarketplaceDeploymentEndpointProviderBase;
     using MarketplaceDeploymentEndpointProvider = Aws::MarketplaceDeployment::Endpoint::MarketplaceDeploymentEndpointProvider;
 

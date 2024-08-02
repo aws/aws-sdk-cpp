@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using IdentityStoreClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using IdentityStoreClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using IdentityStoreClientConfiguration = Aws::Client::GenericClientConfiguration;
 using IdentityStoreBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

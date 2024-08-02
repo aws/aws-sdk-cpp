@@ -86,7 +86,7 @@ namespace Aws
 
   namespace WorkDocs
   {
-    using WorkDocsClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using WorkDocsClientConfiguration = Aws::Client::GenericClientConfiguration;
     using WorkDocsEndpointProviderBase = Aws::WorkDocs::Endpoint::WorkDocsEndpointProviderBase;
     using WorkDocsEndpointProvider = Aws::WorkDocs::Endpoint::WorkDocsEndpointProvider;
 

@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using CloudWatchRUMClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using CloudWatchRUMClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using CloudWatchRUMClientConfiguration = Aws::Client::GenericClientConfiguration;
 using CloudWatchRUMBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

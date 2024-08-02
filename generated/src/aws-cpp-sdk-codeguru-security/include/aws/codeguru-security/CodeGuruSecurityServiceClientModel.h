@@ -66,7 +66,7 @@ namespace Aws
 
   namespace CodeGuruSecurity
   {
-    using CodeGuruSecurityClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using CodeGuruSecurityClientConfiguration = Aws::Client::GenericClientConfiguration;
     using CodeGuruSecurityEndpointProviderBase = Aws::CodeGuruSecurity::Endpoint::CodeGuruSecurityEndpointProviderBase;
     using CodeGuruSecurityEndpointProvider = Aws::CodeGuruSecurity::Endpoint::CodeGuruSecurityEndpointProvider;
 

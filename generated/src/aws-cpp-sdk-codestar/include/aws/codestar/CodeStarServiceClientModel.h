@@ -71,7 +71,7 @@ namespace Aws
 
   namespace CodeStar
   {
-    using CodeStarClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using CodeStarClientConfiguration = Aws::Client::GenericClientConfiguration;
     using CodeStarEndpointProviderBase = Aws::CodeStar::Endpoint::CodeStarEndpointProviderBase;
     using CodeStarEndpointProvider = Aws::CodeStar::Endpoint::CodeStarEndpointProvider;
 

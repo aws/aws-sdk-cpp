@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using ComprehendMedicalClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using ComprehendMedicalClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using ComprehendMedicalClientConfiguration = Aws::Client::GenericClientConfiguration;
 using ComprehendMedicalBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

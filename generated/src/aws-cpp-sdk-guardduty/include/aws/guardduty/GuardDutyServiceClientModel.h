@@ -127,7 +127,7 @@ namespace Aws
 
   namespace GuardDuty
   {
-    using GuardDutyClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using GuardDutyClientConfiguration = Aws::Client::GenericClientConfiguration;
     using GuardDutyEndpointProviderBase = Aws::GuardDuty::Endpoint::GuardDutyEndpointProviderBase;
     using GuardDutyEndpointProvider = Aws::GuardDuty::Endpoint::GuardDutyEndpointProvider;
 

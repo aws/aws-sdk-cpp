@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using ShieldClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using ShieldClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using ShieldClientConfiguration = Aws::Client::GenericClientConfiguration;
 using ShieldBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

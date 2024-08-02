@@ -51,7 +51,7 @@ namespace Aws
 
   namespace FinSpaceData
   {
-    using FinSpaceDataClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using FinSpaceDataClientConfiguration = Aws::Client::GenericClientConfiguration;
     using FinSpaceDataEndpointProviderBase = Aws::FinSpaceData::Endpoint::FinSpaceDataEndpointProviderBase;
     using FinSpaceDataEndpointProvider = Aws::FinSpaceData::Endpoint::FinSpaceDataEndpointProvider;
 

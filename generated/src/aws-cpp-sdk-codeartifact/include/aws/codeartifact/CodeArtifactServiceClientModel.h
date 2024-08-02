@@ -101,7 +101,7 @@ namespace Aws
 
   namespace CodeArtifact
   {
-    using CodeArtifactClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using CodeArtifactClientConfiguration = Aws::Client::GenericClientConfiguration;
     using CodeArtifactEndpointProviderBase = Aws::CodeArtifact::Endpoint::CodeArtifactEndpointProviderBase;
     using CodeArtifactEndpointProvider = Aws::CodeArtifact::Endpoint::CodeArtifactEndpointProvider;
 

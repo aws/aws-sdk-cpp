@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using RecycleBinClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using RecycleBinClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using RecycleBinClientConfiguration = Aws::Client::GenericClientConfiguration;
 using RecycleBinBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

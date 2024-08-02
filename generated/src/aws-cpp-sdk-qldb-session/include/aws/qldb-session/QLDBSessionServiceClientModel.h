@@ -53,7 +53,7 @@ namespace Aws
 
   namespace QLDBSession
   {
-    using QLDBSessionClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using QLDBSessionClientConfiguration = Aws::Client::GenericClientConfiguration;
     using QLDBSessionEndpointProviderBase = Aws::QLDBSession::Endpoint::QLDBSessionEndpointProviderBase;
     using QLDBSessionEndpointProvider = Aws::QLDBSession::Endpoint::QLDBSessionEndpointProvider;
 

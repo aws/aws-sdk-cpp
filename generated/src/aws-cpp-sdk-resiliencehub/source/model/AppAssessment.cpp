@@ -39,6 +39,7 @@ AppAssessment::AppAssessment() :
     m_resiliencyScoreHasBeenSet(false),
     m_resourceErrorsDetailsHasBeenSet(false),
     m_startTimeHasBeenSet(false),
+    m_summaryHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_versionNameHasBeenSet(false)
 {
@@ -167,6 +168,13 @@ AppAssessment& AppAssessment::operator =(JsonView jsonValue)
     m_startTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("summary"))
+  {
+    m_summary = jsonValue.GetObject("summary");
+
+    m_summaryHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -284,6 +292,12 @@ JsonValue AppAssessment::Jsonize() const
   if(m_startTimeHasBeenSet)
   {
    payload.WithDouble("startTime", m_startTime.SecondsWithMSPrecision());
+  }
+
+  if(m_summaryHasBeenSet)
+  {
+   payload.WithObject("summary", m_summary.Jsonize());
+
   }
 
   if(m_tagsHasBeenSet)
