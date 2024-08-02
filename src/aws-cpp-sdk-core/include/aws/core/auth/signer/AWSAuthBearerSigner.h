@@ -42,7 +42,7 @@ namespace Aws
               : m_bearerTokenProvider(bearerTokenProvider)
             {}
 
-            virtual ~AWSAuthBearerSigner() {};
+            virtual ~AWSAuthBearerSigner() override {}
 
             /**
              * Return the signer's name

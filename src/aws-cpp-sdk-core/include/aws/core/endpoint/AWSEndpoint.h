@@ -32,7 +32,7 @@ namespace Aws
             using EndpointAttributes = Internal::Endpoint::EndpointAttributes;
 
             virtual ~AWSEndpoint()
-            {};
+            {}
 
             Aws::String GetURL() const;
             void SetURL(Aws::String url);

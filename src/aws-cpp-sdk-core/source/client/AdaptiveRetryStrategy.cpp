@@ -215,6 +215,37 @@ namespace Aws
                 case Aws::Client::CoreErrors::THROTTLING:
                 case Aws::Client::CoreErrors::SLOW_DOWN:
                     return true;
+                case CoreErrors::INCOMPLETE_SIGNATURE:
+                case CoreErrors::INTERNAL_FAILURE:
+                case CoreErrors::INVALID_ACTION:
+                case CoreErrors::INVALID_CLIENT_TOKEN_ID:
+                case CoreErrors::INVALID_PARAMETER_COMBINATION:
+                case CoreErrors::INVALID_QUERY_PARAMETER:
+                case CoreErrors::INVALID_PARAMETER_VALUE:
+                case CoreErrors::MISSING_ACTION:
+                case CoreErrors::MISSING_AUTHENTICATION_TOKEN:
+                case CoreErrors::MISSING_PARAMETER:
+                case CoreErrors::OPT_IN_REQUIRED:
+                case CoreErrors::REQUEST_EXPIRED:
+                case CoreErrors::SERVICE_UNAVAILABLE:
+                case CoreErrors::VALIDATION:
+                case CoreErrors::ACCESS_DENIED:
+                case CoreErrors::RESOURCE_NOT_FOUND:
+                case CoreErrors::UNRECOGNIZED_CLIENT:
+                case CoreErrors::MALFORMED_QUERY_STRING:
+                case CoreErrors::REQUEST_TIME_TOO_SKEWED:
+                case CoreErrors::INVALID_SIGNATURE:
+                case CoreErrors::SIGNATURE_DOES_NOT_MATCH:
+                case CoreErrors::INVALID_ACCESS_KEY_ID:
+                case CoreErrors::REQUEST_TIMEOUT:
+                case CoreErrors::NOT_INITIALIZED:
+                case CoreErrors::NETWORK_CONNECTION:
+                case CoreErrors::UNKNOWN:
+                case CoreErrors::CLIENT_SIGNING_FAILURE:
+                case CoreErrors::USER_CANCELLED:
+                case CoreErrors::ENDPOINT_RESOLUTION_FAILURE:
+                case CoreErrors::SERVICE_EXTENSION_START_RANGE:
+                case CoreErrors::OK:
                 default:
                     break;
             }

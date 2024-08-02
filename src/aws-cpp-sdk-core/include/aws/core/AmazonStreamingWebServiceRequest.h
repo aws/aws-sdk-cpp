@@ -32,7 +32,7 @@ namespace Aws
         {
         }
 
-        virtual ~AmazonStreamingWebServiceRequest();
+        virtual ~AmazonStreamingWebServiceRequest() override;
 
         /**
          * Get the user set stream
@@ -72,7 +72,7 @@ namespace Aws
         /**
          * Override this method to put data members from a subclass into the headers collection.
          */
-        virtual Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const { return Aws::Http::HeaderValueCollection(); };
+        virtual Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const { return Aws::Http::HeaderValueCollection(); }
 
     private:
         std::shared_ptr<Aws::IOStream> m_bodyStream;

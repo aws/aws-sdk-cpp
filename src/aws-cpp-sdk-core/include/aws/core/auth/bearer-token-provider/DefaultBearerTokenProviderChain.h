@@ -21,7 +21,7 @@ namespace Aws
         {
         public:
             DefaultBearerTokenProviderChain();
-            virtual ~DefaultBearerTokenProviderChain() = default;
+            virtual ~DefaultBearerTokenProviderChain() override = default;
 
             /**
              * Return bearer token, implementation of a base class interface

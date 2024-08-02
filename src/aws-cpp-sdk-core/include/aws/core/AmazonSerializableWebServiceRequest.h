@@ -39,7 +39,7 @@ namespace Aws
             AWS_UNREFERENCED_PARAM(AMZN_XML_CONTENT_TYPE);
         }
 
-        virtual ~AmazonSerializableWebServiceRequest() {}
+        virtual ~AmazonSerializableWebServiceRequest() override{}
 
         /**
          * Convert payload into String.

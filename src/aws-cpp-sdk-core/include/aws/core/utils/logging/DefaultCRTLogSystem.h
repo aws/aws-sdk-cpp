@@ -24,7 +24,7 @@ namespace Aws
             {
             public:
                 DefaultCRTLogSystem(LogLevel logLevel);
-                virtual ~DefaultCRTLogSystem() = default;
+                virtual ~DefaultCRTLogSystem() override = default;
 
                 DefaultCRTLogSystem(DefaultCRTLogSystem&&) = delete;
                 DefaultCRTLogSystem(const DefaultCRTLogSystem&) = delete;

@@ -25,8 +25,8 @@ namespace Aws
             class AWS_CORE_API HMAC
             {
             public:
-                HMAC() {};
-                virtual ~HMAC() {};
+                HMAC() {}
+                virtual ~HMAC() {}
 
                 /**
                 * Calculates an HMAC digest
