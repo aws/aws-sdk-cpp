@@ -7,7 +7,7 @@
 
 /* Generic header includes */
 #include <aws/timestream-query/TimestreamQueryErrors.h>
-#include <aws/core/client/GenericClientConfiguration.h>
+#include <aws/timestream-query/TimestreamQueryClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
@@ -69,7 +69,6 @@ namespace Aws
 
   namespace TimestreamQuery
   {
-    using TimestreamQueryClientConfiguration = Aws::Client::GenericClientConfiguration<true>;
     using TimestreamQueryEndpointProviderBase = Aws::TimestreamQuery::Endpoint::TimestreamQueryEndpointProviderBase;
     using TimestreamQueryEndpointProvider = Aws::TimestreamQuery::Endpoint::TimestreamQueryEndpointProvider;
 

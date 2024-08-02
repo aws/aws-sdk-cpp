@@ -7,7 +7,7 @@
 
 /* Generic header includes */
 #include <aws/timestream-write/TimestreamWriteErrors.h>
-#include <aws/core/client/GenericClientConfiguration.h>
+#include <aws/timestream-write/TimestreamWriteClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
@@ -74,7 +74,6 @@ namespace Aws
 
   namespace TimestreamWrite
   {
-    using TimestreamWriteClientConfiguration = Aws::Client::GenericClientConfiguration<true>;
     using TimestreamWriteEndpointProviderBase = Aws::TimestreamWrite::Endpoint::TimestreamWriteEndpointProviderBase;
     using TimestreamWriteEndpointProvider = Aws::TimestreamWrite::Endpoint::TimestreamWriteEndpointProvider;
 
