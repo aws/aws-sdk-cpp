@@ -22,9 +22,9 @@ namespace Aws
             REGIONAL //stands for using regional endpoint for us-east-1
         };
 
-        struct AWS_S3CRT_API S3CrtClientConfiguration : public Aws::Client::GenericClientConfiguration</*EndpointDiscoverySupported*/true>
+        struct AWS_S3CRT_API S3CrtClientConfiguration : public Aws::Client::GenericClientConfiguration
         {
-            using BaseClientConfigClass = Aws::Client::GenericClientConfiguration</*EndpointDiscoverySupported*/true>;
+            using BaseClientConfigClass = Aws::Client::GenericClientConfiguration;
 
             S3CrtClientConfiguration(const Client::ClientConfigurationInitValues &configuration = {});
 
