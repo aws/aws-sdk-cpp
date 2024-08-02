@@ -64,6 +64,8 @@ body:
     id: cpp-sdk-version
     attributes:
       label: AWS CPP SDK version used
+      description: |
+        Run `cat VERSION` inside aws-sdk-cpp folder
     validations:
       required: true
 
