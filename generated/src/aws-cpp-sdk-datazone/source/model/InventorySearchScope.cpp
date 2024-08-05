@@ -23,6 +23,7 @@ namespace Aws
         static const int ASSET_HASH = HashingUtils::HashString("ASSET");
         static const int GLOSSARY_HASH = HashingUtils::HashString("GLOSSARY");
         static const int GLOSSARY_TERM_HASH = HashingUtils::HashString("GLOSSARY_TERM");
+        static const int DATA_PRODUCT_HASH = HashingUtils::HashString("DATA_PRODUCT");
 
 
         InventorySearchScope GetInventorySearchScopeForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           else if (hashCode == GLOSSARY_TERM_HASH)
           {
             return InventorySearchScope::GLOSSARY_TERM;
+          }
+          else if (hashCode == DATA_PRODUCT_HASH)
+          {
+            return InventorySearchScope::DATA_PRODUCT;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -62,6 +67,8 @@ namespace Aws
             return "GLOSSARY";
           case InventorySearchScope::GLOSSARY_TERM:
             return "GLOSSARY_TERM";
+          case InventorySearchScope::DATA_PRODUCT:
+            return "DATA_PRODUCT";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

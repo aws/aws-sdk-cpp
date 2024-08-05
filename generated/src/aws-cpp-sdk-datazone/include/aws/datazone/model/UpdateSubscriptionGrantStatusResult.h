@@ -128,19 +128,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The identifier of the subscription.</p>
-     */
-    inline const Aws::String& GetSubscriptionId() const{ return m_subscriptionId; }
-    inline void SetSubscriptionId(const Aws::String& value) { m_subscriptionId = value; }
-    inline void SetSubscriptionId(Aws::String&& value) { m_subscriptionId = std::move(value); }
-    inline void SetSubscriptionId(const char* value) { m_subscriptionId.assign(value); }
-    inline UpdateSubscriptionGrantStatusResult& WithSubscriptionId(const Aws::String& value) { SetSubscriptionId(value); return *this;}
-    inline UpdateSubscriptionGrantStatusResult& WithSubscriptionId(Aws::String&& value) { SetSubscriptionId(std::move(value)); return *this;}
-    inline UpdateSubscriptionGrantStatusResult& WithSubscriptionId(const char* value) { SetSubscriptionId(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The identifier of the subscription target whose subscription grant status is
      * to be updated.</p>
      */
@@ -202,8 +189,6 @@ namespace Model
     Aws::String m_id;
 
     SubscriptionGrantOverallStatus m_status;
-
-    Aws::String m_subscriptionId;
 
     Aws::String m_subscriptionTargetId;
 

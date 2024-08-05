@@ -311,6 +311,56 @@ namespace DataZone
         }
 
         /**
+         * <p>Creates a data product.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/CreateDataProduct">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateDataProductOutcome CreateDataProduct(const Model::CreateDataProductRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateDataProduct that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateDataProductRequestT = Model::CreateDataProductRequest>
+        Model::CreateDataProductOutcomeCallable CreateDataProductCallable(const CreateDataProductRequestT& request) const
+        {
+            return SubmitCallable(&DataZoneClient::CreateDataProduct, request);
+        }
+
+        /**
+         * An Async wrapper for CreateDataProduct that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateDataProductRequestT = Model::CreateDataProductRequest>
+        void CreateDataProductAsync(const CreateDataProductRequestT& request, const CreateDataProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DataZoneClient::CreateDataProduct, request, handler, context);
+        }
+
+        /**
+         * <p>Creates a data product revision.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/CreateDataProductRevision">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateDataProductRevisionOutcome CreateDataProductRevision(const Model::CreateDataProductRevisionRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateDataProductRevision that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateDataProductRevisionRequestT = Model::CreateDataProductRevisionRequest>
+        Model::CreateDataProductRevisionOutcomeCallable CreateDataProductRevisionCallable(const CreateDataProductRevisionRequestT& request) const
+        {
+            return SubmitCallable(&DataZoneClient::CreateDataProductRevision, request);
+        }
+
+        /**
+         * An Async wrapper for CreateDataProductRevision that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateDataProductRevisionRequestT = Model::CreateDataProductRevisionRequest>
+        void CreateDataProductRevisionAsync(const CreateDataProductRevisionRequestT& request, const CreateDataProductRevisionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DataZoneClient::CreateDataProductRevision, request, handler, context);
+        }
+
+        /**
          * <p>Creates an Amazon DataZone data source.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/CreateDataSource">AWS
          * API Reference</a></p>
@@ -718,7 +768,7 @@ namespace DataZone
         }
 
         /**
-         * <p>Delets an asset in Amazon DataZone.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes an asset in Amazon DataZone.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/DeleteAsset">AWS
          * API Reference</a></p>
          */
@@ -790,6 +840,31 @@ namespace DataZone
         void DeleteAssetTypeAsync(const DeleteAssetTypeRequestT& request, const DeleteAssetTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&DataZoneClient::DeleteAssetType, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes an data product in Amazon DataZone.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/DeleteDataProduct">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteDataProductOutcome DeleteDataProduct(const Model::DeleteDataProductRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteDataProduct that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteDataProductRequestT = Model::DeleteDataProductRequest>
+        Model::DeleteDataProductOutcomeCallable DeleteDataProductCallable(const DeleteDataProductRequestT& request) const
+        {
+            return SubmitCallable(&DataZoneClient::DeleteDataProduct, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteDataProduct that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteDataProductRequestT = Model::DeleteDataProductRequest>
+        void DeleteDataProductAsync(const DeleteDataProductRequestT& request, const DeleteDataProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DataZoneClient::DeleteDataProduct, request, handler, context);
         }
 
         /**
@@ -1305,6 +1380,31 @@ namespace DataZone
         }
 
         /**
+         * <p>Gets the data product.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetDataProduct">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetDataProductOutcome GetDataProduct(const Model::GetDataProductRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetDataProduct that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetDataProductRequestT = Model::GetDataProductRequest>
+        Model::GetDataProductOutcomeCallable GetDataProductCallable(const GetDataProductRequestT& request) const
+        {
+            return SubmitCallable(&DataZoneClient::GetDataProduct, request);
+        }
+
+        /**
+         * An Async wrapper for GetDataProduct that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetDataProductRequestT = Model::GetDataProductRequest>
+        void GetDataProductAsync(const GetDataProductRequestT& request, const GetDataProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DataZoneClient::GetDataProduct, request, handler, context);
+        }
+
+        /**
          * <p>Gets an Amazon DataZone data source.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetDataSource">AWS
          * API Reference</a></p>
@@ -1684,8 +1784,9 @@ namespace DataZone
         }
 
         /**
-         * <p>Gets a listing (a record of an asset at a given time).</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Gets a listing (a record of an asset at a given time). If you specify a
+         * listing version, only details that are specific to that version are
+         * returned.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetListing">AWS
          * API Reference</a></p>
          */
@@ -1960,6 +2061,31 @@ namespace DataZone
         void ListAssetRevisionsAsync(const ListAssetRevisionsRequestT& request, const ListAssetRevisionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&DataZoneClient::ListAssetRevisions, request, handler, context);
+        }
+
+        /**
+         * <p>Lists data product revisions.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/ListDataProductRevisions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListDataProductRevisionsOutcome ListDataProductRevisions(const Model::ListDataProductRevisionsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListDataProductRevisions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListDataProductRevisionsRequestT = Model::ListDataProductRevisionsRequest>
+        Model::ListDataProductRevisionsOutcomeCallable ListDataProductRevisionsCallable(const ListDataProductRevisionsRequestT& request) const
+        {
+            return SubmitCallable(&DataZoneClient::ListDataProductRevisions, request);
+        }
+
+        /**
+         * An Async wrapper for ListDataProductRevisions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListDataProductRevisionsRequestT = Model::ListDataProductRevisionsRequest>
+        void ListDataProductRevisionsAsync(const ListDataProductRevisionsRequestT& request, const ListDataProductRevisionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DataZoneClient::ListDataProductRevisions, request, handler, context);
         }
 
         /**

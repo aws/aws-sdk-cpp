@@ -39,6 +39,7 @@
 #include <aws/ecr/model/DescribeRegistryResult.h>
 #include <aws/ecr/model/DescribeRepositoriesResult.h>
 #include <aws/ecr/model/DescribeRepositoryCreationTemplatesResult.h>
+#include <aws/ecr/model/GetAccountSettingResult.h>
 #include <aws/ecr/model/GetAuthorizationTokenResult.h>
 #include <aws/ecr/model/GetDownloadUrlForLayerResult.h>
 #include <aws/ecr/model/GetLifecyclePolicyResult.h>
@@ -49,6 +50,7 @@
 #include <aws/ecr/model/InitiateLayerUploadResult.h>
 #include <aws/ecr/model/ListImagesResult.h>
 #include <aws/ecr/model/ListTagsForResourceResult.h>
+#include <aws/ecr/model/PutAccountSettingResult.h>
 #include <aws/ecr/model/PutImageResult.h>
 #include <aws/ecr/model/PutImageScanningConfigurationResult.h>
 #include <aws/ecr/model/PutImageTagMutabilityResult.h>
@@ -135,6 +137,7 @@ namespace Aws
       class DescribeRegistryRequest;
       class DescribeRepositoriesRequest;
       class DescribeRepositoryCreationTemplatesRequest;
+      class GetAccountSettingRequest;
       class GetAuthorizationTokenRequest;
       class GetDownloadUrlForLayerRequest;
       class GetLifecyclePolicyRequest;
@@ -145,6 +148,7 @@ namespace Aws
       class InitiateLayerUploadRequest;
       class ListImagesRequest;
       class ListTagsForResourceRequest;
+      class PutAccountSettingRequest;
       class PutImageRequest;
       class PutImageScanningConfigurationRequest;
       class PutImageTagMutabilityRequest;
@@ -185,6 +189,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DescribeRegistryResult, ECRError> DescribeRegistryOutcome;
       typedef Aws::Utils::Outcome<DescribeRepositoriesResult, ECRError> DescribeRepositoriesOutcome;
       typedef Aws::Utils::Outcome<DescribeRepositoryCreationTemplatesResult, ECRError> DescribeRepositoryCreationTemplatesOutcome;
+      typedef Aws::Utils::Outcome<GetAccountSettingResult, ECRError> GetAccountSettingOutcome;
       typedef Aws::Utils::Outcome<GetAuthorizationTokenResult, ECRError> GetAuthorizationTokenOutcome;
       typedef Aws::Utils::Outcome<GetDownloadUrlForLayerResult, ECRError> GetDownloadUrlForLayerOutcome;
       typedef Aws::Utils::Outcome<GetLifecyclePolicyResult, ECRError> GetLifecyclePolicyOutcome;
@@ -195,6 +200,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<InitiateLayerUploadResult, ECRError> InitiateLayerUploadOutcome;
       typedef Aws::Utils::Outcome<ListImagesResult, ECRError> ListImagesOutcome;
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, ECRError> ListTagsForResourceOutcome;
+      typedef Aws::Utils::Outcome<PutAccountSettingResult, ECRError> PutAccountSettingOutcome;
       typedef Aws::Utils::Outcome<PutImageResult, ECRError> PutImageOutcome;
       typedef Aws::Utils::Outcome<PutImageScanningConfigurationResult, ECRError> PutImageScanningConfigurationOutcome;
       typedef Aws::Utils::Outcome<PutImageTagMutabilityResult, ECRError> PutImageTagMutabilityOutcome;
@@ -235,6 +241,7 @@ namespace Aws
       typedef std::future<DescribeRegistryOutcome> DescribeRegistryOutcomeCallable;
       typedef std::future<DescribeRepositoriesOutcome> DescribeRepositoriesOutcomeCallable;
       typedef std::future<DescribeRepositoryCreationTemplatesOutcome> DescribeRepositoryCreationTemplatesOutcomeCallable;
+      typedef std::future<GetAccountSettingOutcome> GetAccountSettingOutcomeCallable;
       typedef std::future<GetAuthorizationTokenOutcome> GetAuthorizationTokenOutcomeCallable;
       typedef std::future<GetDownloadUrlForLayerOutcome> GetDownloadUrlForLayerOutcomeCallable;
       typedef std::future<GetLifecyclePolicyOutcome> GetLifecyclePolicyOutcomeCallable;
@@ -245,6 +252,7 @@ namespace Aws
       typedef std::future<InitiateLayerUploadOutcome> InitiateLayerUploadOutcomeCallable;
       typedef std::future<ListImagesOutcome> ListImagesOutcomeCallable;
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
+      typedef std::future<PutAccountSettingOutcome> PutAccountSettingOutcomeCallable;
       typedef std::future<PutImageOutcome> PutImageOutcomeCallable;
       typedef std::future<PutImageScanningConfigurationOutcome> PutImageScanningConfigurationOutcomeCallable;
       typedef std::future<PutImageTagMutabilityOutcome> PutImageTagMutabilityOutcomeCallable;
@@ -288,6 +296,7 @@ namespace Aws
     typedef std::function<void(const ECRClient*, const Model::DescribeRegistryRequest&, const Model::DescribeRegistryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeRegistryResponseReceivedHandler;
     typedef std::function<void(const ECRClient*, const Model::DescribeRepositoriesRequest&, const Model::DescribeRepositoriesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeRepositoriesResponseReceivedHandler;
     typedef std::function<void(const ECRClient*, const Model::DescribeRepositoryCreationTemplatesRequest&, const Model::DescribeRepositoryCreationTemplatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeRepositoryCreationTemplatesResponseReceivedHandler;
+    typedef std::function<void(const ECRClient*, const Model::GetAccountSettingRequest&, const Model::GetAccountSettingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAccountSettingResponseReceivedHandler;
     typedef std::function<void(const ECRClient*, const Model::GetAuthorizationTokenRequest&, const Model::GetAuthorizationTokenOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAuthorizationTokenResponseReceivedHandler;
     typedef std::function<void(const ECRClient*, const Model::GetDownloadUrlForLayerRequest&, const Model::GetDownloadUrlForLayerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDownloadUrlForLayerResponseReceivedHandler;
     typedef std::function<void(const ECRClient*, const Model::GetLifecyclePolicyRequest&, const Model::GetLifecyclePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLifecyclePolicyResponseReceivedHandler;
@@ -298,6 +307,7 @@ namespace Aws
     typedef std::function<void(const ECRClient*, const Model::InitiateLayerUploadRequest&, const Model::InitiateLayerUploadOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > InitiateLayerUploadResponseReceivedHandler;
     typedef std::function<void(const ECRClient*, const Model::ListImagesRequest&, const Model::ListImagesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListImagesResponseReceivedHandler;
     typedef std::function<void(const ECRClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
+    typedef std::function<void(const ECRClient*, const Model::PutAccountSettingRequest&, const Model::PutAccountSettingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutAccountSettingResponseReceivedHandler;
     typedef std::function<void(const ECRClient*, const Model::PutImageRequest&, const Model::PutImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutImageResponseReceivedHandler;
     typedef std::function<void(const ECRClient*, const Model::PutImageScanningConfigurationRequest&, const Model::PutImageScanningConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutImageScanningConfigurationResponseReceivedHandler;
     typedef std::function<void(const ECRClient*, const Model::PutImageTagMutabilityRequest&, const Model::PutImageTagMutabilityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutImageTagMutabilityResponseReceivedHandler;

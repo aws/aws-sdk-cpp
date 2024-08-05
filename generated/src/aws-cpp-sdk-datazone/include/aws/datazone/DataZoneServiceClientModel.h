@@ -27,6 +27,8 @@
 #include <aws/datazone/model/CreateAssetFilterResult.h>
 #include <aws/datazone/model/CreateAssetRevisionResult.h>
 #include <aws/datazone/model/CreateAssetTypeResult.h>
+#include <aws/datazone/model/CreateDataProductResult.h>
+#include <aws/datazone/model/CreateDataProductRevisionResult.h>
 #include <aws/datazone/model/CreateDataSourceResult.h>
 #include <aws/datazone/model/CreateDomainResult.h>
 #include <aws/datazone/model/CreateEnvironmentResult.h>
@@ -45,6 +47,7 @@
 #include <aws/datazone/model/CreateUserProfileResult.h>
 #include <aws/datazone/model/DeleteAssetResult.h>
 #include <aws/datazone/model/DeleteAssetTypeResult.h>
+#include <aws/datazone/model/DeleteDataProductResult.h>
 #include <aws/datazone/model/DeleteDataSourceResult.h>
 #include <aws/datazone/model/DeleteDomainResult.h>
 #include <aws/datazone/model/DeleteEnvironmentBlueprintConfigurationResult.h>
@@ -60,6 +63,7 @@
 #include <aws/datazone/model/GetAssetResult.h>
 #include <aws/datazone/model/GetAssetFilterResult.h>
 #include <aws/datazone/model/GetAssetTypeResult.h>
+#include <aws/datazone/model/GetDataProductResult.h>
 #include <aws/datazone/model/GetDataSourceResult.h>
 #include <aws/datazone/model/GetDataSourceRunResult.h>
 #include <aws/datazone/model/GetDomainResult.h>
@@ -86,6 +90,7 @@
 #include <aws/datazone/model/GetUserProfileResult.h>
 #include <aws/datazone/model/ListAssetFiltersResult.h>
 #include <aws/datazone/model/ListAssetRevisionsResult.h>
+#include <aws/datazone/model/ListDataProductRevisionsResult.h>
 #include <aws/datazone/model/ListDataSourceRunActivitiesResult.h>
 #include <aws/datazone/model/ListDataSourceRunsResult.h>
 #include <aws/datazone/model/ListDataSourcesResult.h>
@@ -186,6 +191,8 @@ namespace Aws
       class CreateAssetFilterRequest;
       class CreateAssetRevisionRequest;
       class CreateAssetTypeRequest;
+      class CreateDataProductRequest;
+      class CreateDataProductRevisionRequest;
       class CreateDataSourceRequest;
       class CreateDomainRequest;
       class CreateEnvironmentRequest;
@@ -205,6 +212,7 @@ namespace Aws
       class DeleteAssetRequest;
       class DeleteAssetFilterRequest;
       class DeleteAssetTypeRequest;
+      class DeleteDataProductRequest;
       class DeleteDataSourceRequest;
       class DeleteDomainRequest;
       class DeleteEnvironmentRequest;
@@ -225,6 +233,7 @@ namespace Aws
       class GetAssetRequest;
       class GetAssetFilterRequest;
       class GetAssetTypeRequest;
+      class GetDataProductRequest;
       class GetDataSourceRequest;
       class GetDataSourceRunRequest;
       class GetDomainRequest;
@@ -251,6 +260,7 @@ namespace Aws
       class GetUserProfileRequest;
       class ListAssetFiltersRequest;
       class ListAssetRevisionsRequest;
+      class ListDataProductRevisionsRequest;
       class ListDataSourceRunActivitiesRequest;
       class ListDataSourceRunsRequest;
       class ListDataSourcesRequest;
@@ -312,6 +322,8 @@ namespace Aws
       typedef Aws::Utils::Outcome<CreateAssetFilterResult, DataZoneError> CreateAssetFilterOutcome;
       typedef Aws::Utils::Outcome<CreateAssetRevisionResult, DataZoneError> CreateAssetRevisionOutcome;
       typedef Aws::Utils::Outcome<CreateAssetTypeResult, DataZoneError> CreateAssetTypeOutcome;
+      typedef Aws::Utils::Outcome<CreateDataProductResult, DataZoneError> CreateDataProductOutcome;
+      typedef Aws::Utils::Outcome<CreateDataProductRevisionResult, DataZoneError> CreateDataProductRevisionOutcome;
       typedef Aws::Utils::Outcome<CreateDataSourceResult, DataZoneError> CreateDataSourceOutcome;
       typedef Aws::Utils::Outcome<CreateDomainResult, DataZoneError> CreateDomainOutcome;
       typedef Aws::Utils::Outcome<CreateEnvironmentResult, DataZoneError> CreateEnvironmentOutcome;
@@ -331,6 +343,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DeleteAssetResult, DataZoneError> DeleteAssetOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, DataZoneError> DeleteAssetFilterOutcome;
       typedef Aws::Utils::Outcome<DeleteAssetTypeResult, DataZoneError> DeleteAssetTypeOutcome;
+      typedef Aws::Utils::Outcome<DeleteDataProductResult, DataZoneError> DeleteDataProductOutcome;
       typedef Aws::Utils::Outcome<DeleteDataSourceResult, DataZoneError> DeleteDataSourceOutcome;
       typedef Aws::Utils::Outcome<DeleteDomainResult, DataZoneError> DeleteDomainOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, DataZoneError> DeleteEnvironmentOutcome;
@@ -351,6 +364,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetAssetResult, DataZoneError> GetAssetOutcome;
       typedef Aws::Utils::Outcome<GetAssetFilterResult, DataZoneError> GetAssetFilterOutcome;
       typedef Aws::Utils::Outcome<GetAssetTypeResult, DataZoneError> GetAssetTypeOutcome;
+      typedef Aws::Utils::Outcome<GetDataProductResult, DataZoneError> GetDataProductOutcome;
       typedef Aws::Utils::Outcome<GetDataSourceResult, DataZoneError> GetDataSourceOutcome;
       typedef Aws::Utils::Outcome<GetDataSourceRunResult, DataZoneError> GetDataSourceRunOutcome;
       typedef Aws::Utils::Outcome<GetDomainResult, DataZoneError> GetDomainOutcome;
@@ -377,6 +391,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetUserProfileResult, DataZoneError> GetUserProfileOutcome;
       typedef Aws::Utils::Outcome<ListAssetFiltersResult, DataZoneError> ListAssetFiltersOutcome;
       typedef Aws::Utils::Outcome<ListAssetRevisionsResult, DataZoneError> ListAssetRevisionsOutcome;
+      typedef Aws::Utils::Outcome<ListDataProductRevisionsResult, DataZoneError> ListDataProductRevisionsOutcome;
       typedef Aws::Utils::Outcome<ListDataSourceRunActivitiesResult, DataZoneError> ListDataSourceRunActivitiesOutcome;
       typedef Aws::Utils::Outcome<ListDataSourceRunsResult, DataZoneError> ListDataSourceRunsOutcome;
       typedef Aws::Utils::Outcome<ListDataSourcesResult, DataZoneError> ListDataSourcesOutcome;
@@ -438,6 +453,8 @@ namespace Aws
       typedef std::future<CreateAssetFilterOutcome> CreateAssetFilterOutcomeCallable;
       typedef std::future<CreateAssetRevisionOutcome> CreateAssetRevisionOutcomeCallable;
       typedef std::future<CreateAssetTypeOutcome> CreateAssetTypeOutcomeCallable;
+      typedef std::future<CreateDataProductOutcome> CreateDataProductOutcomeCallable;
+      typedef std::future<CreateDataProductRevisionOutcome> CreateDataProductRevisionOutcomeCallable;
       typedef std::future<CreateDataSourceOutcome> CreateDataSourceOutcomeCallable;
       typedef std::future<CreateDomainOutcome> CreateDomainOutcomeCallable;
       typedef std::future<CreateEnvironmentOutcome> CreateEnvironmentOutcomeCallable;
@@ -457,6 +474,7 @@ namespace Aws
       typedef std::future<DeleteAssetOutcome> DeleteAssetOutcomeCallable;
       typedef std::future<DeleteAssetFilterOutcome> DeleteAssetFilterOutcomeCallable;
       typedef std::future<DeleteAssetTypeOutcome> DeleteAssetTypeOutcomeCallable;
+      typedef std::future<DeleteDataProductOutcome> DeleteDataProductOutcomeCallable;
       typedef std::future<DeleteDataSourceOutcome> DeleteDataSourceOutcomeCallable;
       typedef std::future<DeleteDomainOutcome> DeleteDomainOutcomeCallable;
       typedef std::future<DeleteEnvironmentOutcome> DeleteEnvironmentOutcomeCallable;
@@ -477,6 +495,7 @@ namespace Aws
       typedef std::future<GetAssetOutcome> GetAssetOutcomeCallable;
       typedef std::future<GetAssetFilterOutcome> GetAssetFilterOutcomeCallable;
       typedef std::future<GetAssetTypeOutcome> GetAssetTypeOutcomeCallable;
+      typedef std::future<GetDataProductOutcome> GetDataProductOutcomeCallable;
       typedef std::future<GetDataSourceOutcome> GetDataSourceOutcomeCallable;
       typedef std::future<GetDataSourceRunOutcome> GetDataSourceRunOutcomeCallable;
       typedef std::future<GetDomainOutcome> GetDomainOutcomeCallable;
@@ -503,6 +522,7 @@ namespace Aws
       typedef std::future<GetUserProfileOutcome> GetUserProfileOutcomeCallable;
       typedef std::future<ListAssetFiltersOutcome> ListAssetFiltersOutcomeCallable;
       typedef std::future<ListAssetRevisionsOutcome> ListAssetRevisionsOutcomeCallable;
+      typedef std::future<ListDataProductRevisionsOutcome> ListDataProductRevisionsOutcomeCallable;
       typedef std::future<ListDataSourceRunActivitiesOutcome> ListDataSourceRunActivitiesOutcomeCallable;
       typedef std::future<ListDataSourceRunsOutcome> ListDataSourceRunsOutcomeCallable;
       typedef std::future<ListDataSourcesOutcome> ListDataSourcesOutcomeCallable;
@@ -567,6 +587,8 @@ namespace Aws
     typedef std::function<void(const DataZoneClient*, const Model::CreateAssetFilterRequest&, const Model::CreateAssetFilterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAssetFilterResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::CreateAssetRevisionRequest&, const Model::CreateAssetRevisionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAssetRevisionResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::CreateAssetTypeRequest&, const Model::CreateAssetTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAssetTypeResponseReceivedHandler;
+    typedef std::function<void(const DataZoneClient*, const Model::CreateDataProductRequest&, const Model::CreateDataProductOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDataProductResponseReceivedHandler;
+    typedef std::function<void(const DataZoneClient*, const Model::CreateDataProductRevisionRequest&, const Model::CreateDataProductRevisionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDataProductRevisionResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::CreateDataSourceRequest&, const Model::CreateDataSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDataSourceResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::CreateDomainRequest&, const Model::CreateDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDomainResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::CreateEnvironmentRequest&, const Model::CreateEnvironmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateEnvironmentResponseReceivedHandler;
@@ -586,6 +608,7 @@ namespace Aws
     typedef std::function<void(const DataZoneClient*, const Model::DeleteAssetRequest&, const Model::DeleteAssetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAssetResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::DeleteAssetFilterRequest&, const Model::DeleteAssetFilterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAssetFilterResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::DeleteAssetTypeRequest&, const Model::DeleteAssetTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAssetTypeResponseReceivedHandler;
+    typedef std::function<void(const DataZoneClient*, const Model::DeleteDataProductRequest&, const Model::DeleteDataProductOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDataProductResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::DeleteDataSourceRequest&, const Model::DeleteDataSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDataSourceResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::DeleteDomainRequest&, const Model::DeleteDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDomainResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::DeleteEnvironmentRequest&, const Model::DeleteEnvironmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEnvironmentResponseReceivedHandler;
@@ -606,6 +629,7 @@ namespace Aws
     typedef std::function<void(const DataZoneClient*, const Model::GetAssetRequest&, const Model::GetAssetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAssetResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::GetAssetFilterRequest&, const Model::GetAssetFilterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAssetFilterResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::GetAssetTypeRequest&, const Model::GetAssetTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAssetTypeResponseReceivedHandler;
+    typedef std::function<void(const DataZoneClient*, const Model::GetDataProductRequest&, const Model::GetDataProductOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDataProductResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::GetDataSourceRequest&, const Model::GetDataSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDataSourceResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::GetDataSourceRunRequest&, const Model::GetDataSourceRunOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDataSourceRunResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::GetDomainRequest&, const Model::GetDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDomainResponseReceivedHandler;
@@ -632,6 +656,7 @@ namespace Aws
     typedef std::function<void(const DataZoneClient*, const Model::GetUserProfileRequest&, const Model::GetUserProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetUserProfileResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::ListAssetFiltersRequest&, const Model::ListAssetFiltersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAssetFiltersResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::ListAssetRevisionsRequest&, const Model::ListAssetRevisionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAssetRevisionsResponseReceivedHandler;
+    typedef std::function<void(const DataZoneClient*, const Model::ListDataProductRevisionsRequest&, const Model::ListDataProductRevisionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDataProductRevisionsResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::ListDataSourceRunActivitiesRequest&, const Model::ListDataSourceRunActivitiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDataSourceRunActivitiesResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::ListDataSourceRunsRequest&, const Model::ListDataSourceRunsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDataSourceRunsResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::ListDataSourcesRequest&, const Model::ListDataSourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDataSourcesResponseReceivedHandler;

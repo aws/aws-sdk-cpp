@@ -105,6 +105,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The ID of the owning project of the subscription grants.</p>
+     */
+    inline const Aws::String& GetOwningProjectId() const{ return m_owningProjectId; }
+    inline bool OwningProjectIdHasBeenSet() const { return m_owningProjectIdHasBeenSet; }
+    inline void SetOwningProjectId(const Aws::String& value) { m_owningProjectIdHasBeenSet = true; m_owningProjectId = value; }
+    inline void SetOwningProjectId(Aws::String&& value) { m_owningProjectIdHasBeenSet = true; m_owningProjectId = std::move(value); }
+    inline void SetOwningProjectId(const char* value) { m_owningProjectIdHasBeenSet = true; m_owningProjectId.assign(value); }
+    inline ListSubscriptionGrantsRequest& WithOwningProjectId(const Aws::String& value) { SetOwningProjectId(value); return *this;}
+    inline ListSubscriptionGrantsRequest& WithOwningProjectId(Aws::String&& value) { SetOwningProjectId(std::move(value)); return *this;}
+    inline ListSubscriptionGrantsRequest& WithOwningProjectId(const char* value) { SetOwningProjectId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Specifies the way of sorting the results of this action.</p>
      */
     inline const SortKey& GetSortBy() const{ return m_sortBy; }
@@ -181,6 +195,9 @@ namespace Model
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
+
+    Aws::String m_owningProjectId;
+    bool m_owningProjectIdHasBeenSet = false;
 
     SortKey m_sortBy;
     bool m_sortByHasBeenSet = false;

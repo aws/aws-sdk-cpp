@@ -76,12 +76,6 @@ GetSubscriptionGrantResult& GetSubscriptionGrantResult::operator =(const Aws::Am
 
   }
 
-  if(jsonValue.ValueExists("subscriptionId"))
-  {
-    m_subscriptionId = jsonValue.GetString("subscriptionId");
-
-  }
-
   if(jsonValue.ValueExists("subscriptionTargetId"))
   {
     m_subscriptionTargetId = jsonValue.GetString("subscriptionTargetId");
