@@ -126,20 +126,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The identifier of the subsctiption whose subscription grant is to be
-     * deleted.</p>
-     */
-    inline const Aws::String& GetSubscriptionId() const{ return m_subscriptionId; }
-    inline void SetSubscriptionId(const Aws::String& value) { m_subscriptionId = value; }
-    inline void SetSubscriptionId(Aws::String&& value) { m_subscriptionId = std::move(value); }
-    inline void SetSubscriptionId(const char* value) { m_subscriptionId.assign(value); }
-    inline DeleteSubscriptionGrantResult& WithSubscriptionId(const Aws::String& value) { SetSubscriptionId(value); return *this;}
-    inline DeleteSubscriptionGrantResult& WithSubscriptionId(Aws::String&& value) { SetSubscriptionId(std::move(value)); return *this;}
-    inline DeleteSubscriptionGrantResult& WithSubscriptionId(const char* value) { SetSubscriptionId(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The ID of the subscription target associated with the subscription grant that
      * is deleted.</p>
      */
@@ -202,8 +188,6 @@ namespace Model
     Aws::String m_id;
 
     SubscriptionGrantOverallStatus m_status;
-
-    Aws::String m_subscriptionId;
 
     Aws::String m_subscriptionTargetId;
 

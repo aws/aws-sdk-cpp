@@ -142,7 +142,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The status of the subscriptions that you want to list.</p>
+     * <p>The status of the subscriptions that you want to list.</p>  <p>This is
+     * not a required parameter, but if not provided, by default, Amazon DataZone
+     * returns only <code>APPROVED</code> subscriptions. </p> 
      */
     inline const SubscriptionStatus& GetStatus() const{ return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }

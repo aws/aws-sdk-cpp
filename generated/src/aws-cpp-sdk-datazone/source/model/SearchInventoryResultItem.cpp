@@ -20,6 +20,7 @@ namespace Model
 
 SearchInventoryResultItem::SearchInventoryResultItem() : 
     m_assetItemHasBeenSet(false),
+    m_dataProductItemHasBeenSet(false),
     m_glossaryItemHasBeenSet(false),
     m_glossaryTermItemHasBeenSet(false)
 {
@@ -38,6 +39,13 @@ SearchInventoryResultItem& SearchInventoryResultItem::operator =(JsonView jsonVa
     m_assetItem = jsonValue.GetObject("assetItem");
 
     m_assetItemHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("dataProductItem"))
+  {
+    m_dataProductItem = jsonValue.GetObject("dataProductItem");
+
+    m_dataProductItemHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("glossaryItem"))
@@ -64,6 +72,12 @@ JsonValue SearchInventoryResultItem::Jsonize() const
   if(m_assetItemHasBeenSet)
   {
    payload.WithObject("assetItem", m_assetItem.Jsonize());
+
+  }
+
+  if(m_dataProductItemHasBeenSet)
+  {
+   payload.WithObject("dataProductItem", m_dataProductItem.Jsonize());
 
   }
 

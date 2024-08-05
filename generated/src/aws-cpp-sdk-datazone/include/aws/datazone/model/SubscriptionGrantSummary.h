@@ -137,20 +137,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID of the subscription grant.</p>
-     */
-    inline const Aws::String& GetSubscriptionId() const{ return m_subscriptionId; }
-    inline bool SubscriptionIdHasBeenSet() const { return m_subscriptionIdHasBeenSet; }
-    inline void SetSubscriptionId(const Aws::String& value) { m_subscriptionIdHasBeenSet = true; m_subscriptionId = value; }
-    inline void SetSubscriptionId(Aws::String&& value) { m_subscriptionIdHasBeenSet = true; m_subscriptionId = std::move(value); }
-    inline void SetSubscriptionId(const char* value) { m_subscriptionIdHasBeenSet = true; m_subscriptionId.assign(value); }
-    inline SubscriptionGrantSummary& WithSubscriptionId(const Aws::String& value) { SetSubscriptionId(value); return *this;}
-    inline SubscriptionGrantSummary& WithSubscriptionId(Aws::String&& value) { SetSubscriptionId(std::move(value)); return *this;}
-    inline SubscriptionGrantSummary& WithSubscriptionId(const char* value) { SetSubscriptionId(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The identifier of the target of the subscription grant.</p>
      */
     inline const Aws::String& GetSubscriptionTargetId() const{ return m_subscriptionTargetId; }
@@ -210,9 +196,6 @@ namespace Model
 
     SubscriptionGrantOverallStatus m_status;
     bool m_statusHasBeenSet = false;
-
-    Aws::String m_subscriptionId;
-    bool m_subscriptionIdHasBeenSet = false;
 
     Aws::String m_subscriptionTargetId;
     bool m_subscriptionTargetIdHasBeenSet = false;
