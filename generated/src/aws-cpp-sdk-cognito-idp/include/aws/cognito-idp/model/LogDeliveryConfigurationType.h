@@ -26,7 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>The logging parameters of a user pool.</p><p><h3>See Also:</h3>   <a
+   * <p>The logging parameters of a user pool returned in response to
+   * <code>GetLogDeliveryConfiguration</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/LogDeliveryConfigurationType">AWS
    * API Reference</a></p>
    */
@@ -41,7 +42,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID of the user pool where you configured detailed activity logging.</p>
+     * <p>The ID of the user pool where you configured logging.</p>
      */
     inline const Aws::String& GetUserPoolId() const{ return m_userPoolId; }
     inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }
@@ -55,7 +56,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The detailed activity logging destination of a user pool.</p>
+     * <p>A logging destination of a user pool. User pools can have multiple logging
+     * destinations for message-delivery and user-activity logs.</p>
      */
     inline const Aws::Vector<LogConfigurationType>& GetLogConfigurations() const{ return m_logConfigurations; }
     inline bool LogConfigurationsHasBeenSet() const { return m_logConfigurationsHasBeenSet; }

@@ -127,8 +127,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">
      * Bring Your Own Windows Desktop Licenses</a>.</p>  <ul> <li> <p>Although
      * this parameter is an array, only one item is allowed at this time.</p> </li>
-     * <li> <p>Windows 11 only supports <code>Microsoft_Office_2019</code>.</p> </li>
-     * </ul> 
+     * <li> <p>During the image import process, non-GPU WSP WorkSpaces with Windows 11
+     * support only <code>Microsoft_Office_2019</code>. GPU WSP WorkSpaces with Windows
+     * 11 do not support Office installation.</p> </li> </ul> 
      */
     inline const Aws::Vector<Application>& GetApplications() const{ return m_applications; }
     inline bool ApplicationsHasBeenSet() const { return m_applicationsHasBeenSet; }

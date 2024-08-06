@@ -51,7 +51,7 @@ namespace Model
     ///@{
     /**
      * <p>The enrollment status of all member accounts in the organization if the
-     * account is the management account.</p>
+     * account is the management account or delegated administrator.</p>
      */
     inline bool GetIncludeMemberAccounts() const{ return m_includeMemberAccounts; }
     inline void SetIncludeMemberAccounts(bool value) { m_includeMemberAccounts = value; }

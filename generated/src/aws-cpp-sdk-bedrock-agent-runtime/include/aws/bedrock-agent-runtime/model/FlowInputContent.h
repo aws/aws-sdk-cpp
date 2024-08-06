@@ -42,7 +42,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The input for the flow input node.</p>
+     * <p>The input to send to the prompt flow input node.</p>
      */
     inline Aws::Utils::DocumentView GetDocument() const{ return m_document; }
     inline bool DocumentHasBeenSet() const { return m_documentHasBeenSet; }

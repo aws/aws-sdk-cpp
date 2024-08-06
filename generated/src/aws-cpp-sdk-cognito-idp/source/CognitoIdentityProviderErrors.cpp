@@ -27,6 +27,7 @@ static const int M_F_A_METHOD_NOT_FOUND_HASH = HashingUtils::HashString("MFAMeth
 static const int CONCURRENT_MODIFICATION_HASH = HashingUtils::HashString("ConcurrentModificationException");
 static const int PASSWORD_RESET_REQUIRED_HASH = HashingUtils::HashString("PasswordResetRequiredException");
 static const int UNEXPECTED_LAMBDA_HASH = HashingUtils::HashString("UnexpectedLambdaException");
+static const int PASSWORD_HISTORY_POLICY_VIOLATION_HASH = HashingUtils::HashString("PasswordHistoryPolicyViolationException");
 static const int INTERNAL_ERROR_HASH = HashingUtils::HashString("InternalErrorException");
 static const int INVALID_SMS_ROLE_TRUST_RELATIONSHIP_HASH = HashingUtils::HashString("InvalidSmsRoleTrustRelationshipException");
 static const int GROUP_EXISTS_HASH = HashingUtils::HashString("GroupExistsException");
@@ -99,6 +100,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == UNEXPECTED_LAMBDA_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoIdentityProviderErrors::UNEXPECTED_LAMBDA), RetryableType::NOT_RETRYABLE);
+  }
+  else if (hashCode == PASSWORD_HISTORY_POLICY_VIOLATION_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoIdentityProviderErrors::PASSWORD_HISTORY_POLICY_VIOLATION), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INTERNAL_ERROR_HASH)
   {

@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int userNotification_HASH = HashingUtils::HashString("userNotification");
+        static const int userAuthEvents_HASH = HashingUtils::HashString("userAuthEvents");
 
 
         EventSourceName GetEventSourceNameForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == userNotification_HASH)
           {
             return EventSourceName::userNotification;
+          }
+          else if (hashCode == userAuthEvents_HASH)
+          {
+            return EventSourceName::userAuthEvents;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -48,6 +53,8 @@ namespace Aws
             return {};
           case EventSourceName::userNotification:
             return "userNotification";
+          case EventSourceName::userAuthEvents:
+            return "userAuthEvents";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

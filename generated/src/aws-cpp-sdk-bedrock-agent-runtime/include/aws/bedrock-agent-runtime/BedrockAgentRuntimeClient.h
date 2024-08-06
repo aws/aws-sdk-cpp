@@ -182,8 +182,9 @@ namespace BedrockAgentRuntime
          * output of each node as a stream. If there's an error, the error is returned. For
          * more information, see <a
          * href="https://docs.aws.amazon.com/bedrock/latest/userguide/flows-test.html">Test
-         * a flow in Amazon Bedrock</a> in the Amazon Bedrock User Guide.</p><p><h3>See
-         * Also:</h3>   <a
+         * a flow in Amazon Bedrock</a> in the Amazon Bedrock User Guide.</p>  <p>The
+         * CLI doesn't support streaming operations in Amazon Bedrock, including
+         * <code>InvokeFlow</code>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/InvokeFlow">AWS
          * API Reference</a></p>
          */

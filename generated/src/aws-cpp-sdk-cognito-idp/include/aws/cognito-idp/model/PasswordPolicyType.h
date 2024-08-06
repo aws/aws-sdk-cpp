@@ -92,6 +92,25 @@ namespace Model
 
     ///@{
     /**
+     * <p>The number of previous passwords that you want Amazon Cognito to restrict
+     * each user from reusing. Users can't set a password that matches any of
+     * <code>n</code> previous passwords, where <code>n</code> is the value of
+     * <code>PasswordHistorySize</code>.</p> <p>Password history isn't enforced and
+     * isn't displayed in <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserPool.html">DescribeUserPool</a>
+     * responses when you set this value to <code>0</code> or don't provide it. To
+     * activate this setting, <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html">
+     * advanced security features</a> must be active in your user pool.</p>
+     */
+    inline int GetPasswordHistorySize() const{ return m_passwordHistorySize; }
+    inline bool PasswordHistorySizeHasBeenSet() const { return m_passwordHistorySizeHasBeenSet; }
+    inline void SetPasswordHistorySize(int value) { m_passwordHistorySizeHasBeenSet = true; m_passwordHistorySize = value; }
+    inline PasswordPolicyType& WithPasswordHistorySize(int value) { SetPasswordHistorySize(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The number of days a temporary password is valid in the password policy. If
      * the user doesn't sign in during this time, an administrator must reset their
      * password. Defaults to <code>7</code>. If you submit a value of <code>0</code>,
@@ -122,6 +141,9 @@ namespace Model
 
     bool m_requireSymbols;
     bool m_requireSymbolsHasBeenSet = false;
+
+    int m_passwordHistorySize;
+    bool m_passwordHistorySizeHasBeenSet = false;
 
     int m_temporaryPasswordValidityDays;
     bool m_temporaryPasswordValidityDaysHasBeenSet = false;
