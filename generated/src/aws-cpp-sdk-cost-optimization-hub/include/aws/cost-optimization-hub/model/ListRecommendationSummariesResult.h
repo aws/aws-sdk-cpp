@@ -7,6 +7,7 @@
 #include <aws/cost-optimization-hub/CostOptimizationHub_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/cost-optimization-hub/model/SummaryMetricsResult.h>
 #include <aws/cost-optimization-hub/model/RecommendationSummary.h>
 #include <utility>
 
@@ -45,7 +46,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>List of all savings recommendations.</p>
+     * <p>A list of all savings recommendations.</p>
      */
     inline const Aws::Vector<RecommendationSummary>& GetItems() const{ return m_items; }
     inline void SetItems(const Aws::Vector<RecommendationSummary>& value) { m_items = value; }
@@ -84,6 +85,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The results or descriptions for the additional metrics, based on whether the
+     * metrics were or were not requested.</p>
+     */
+    inline const SummaryMetricsResult& GetMetrics() const{ return m_metrics; }
+    inline void SetMetrics(const SummaryMetricsResult& value) { m_metrics = value; }
+    inline void SetMetrics(SummaryMetricsResult&& value) { m_metrics = std::move(value); }
+    inline ListRecommendationSummariesResult& WithMetrics(const SummaryMetricsResult& value) { SetMetrics(value); return *this;}
+    inline ListRecommendationSummariesResult& WithMetrics(SummaryMetricsResult&& value) { SetMetrics(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The token to retrieve the next set of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
@@ -114,6 +127,8 @@ namespace Model
     Aws::String m_groupBy;
 
     Aws::String m_currencyCode;
+
+    SummaryMetricsResult m_metrics;
 
     Aws::String m_nextToken;
 

@@ -63,7 +63,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The UUID of the authenticated user. This isn't the same as
+     * <p>The 128-bit ID of the authenticated user. This isn't the same as
      * <code>username</code>.</p>
      */
     inline const Aws::String& GetUserSub() const{ return m_userSub; }

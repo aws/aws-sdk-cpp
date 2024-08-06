@@ -16,7 +16,8 @@ namespace Model
   enum class EventSourceName
   {
     NOT_SET,
-    userNotification
+    userNotification,
+    userAuthEvents
   };
 
 namespace EventSourceNameMapper

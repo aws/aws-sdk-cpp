@@ -104,7 +104,7 @@ namespace Model
      * following token at each point of generation. The value that you set for
      * <code>Top P</code> determines the number of most-likely candidates from which
      * the model chooses the next token in the sequence. For example, if you set
-     * <code>topP</code> to 80, the model only selects the next token from the top 80%
+     * <code>topP</code> to 0.8, the model only selects the next token from the top 80%
      * of the probability distribution of next tokens.</p>
      */
     inline double GetTopP() const{ return m_topP; }

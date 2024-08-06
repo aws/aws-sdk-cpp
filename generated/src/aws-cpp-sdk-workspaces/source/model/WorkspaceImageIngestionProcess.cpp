@@ -25,6 +25,7 @@ namespace Aws
         static const int BYOL_GRAPHICSPRO_HASH = HashingUtils::HashString("BYOL_GRAPHICSPRO");
         static const int BYOL_GRAPHICS_G4DN_HASH = HashingUtils::HashString("BYOL_GRAPHICS_G4DN");
         static const int BYOL_REGULAR_WSP_HASH = HashingUtils::HashString("BYOL_REGULAR_WSP");
+        static const int BYOL_GRAPHICS_G4DN_WSP_HASH = HashingUtils::HashString("BYOL_GRAPHICS_G4DN_WSP");
         static const int BYOL_REGULAR_BYOP_HASH = HashingUtils::HashString("BYOL_REGULAR_BYOP");
         static const int BYOL_GRAPHICS_G4DN_BYOP_HASH = HashingUtils::HashString("BYOL_GRAPHICS_G4DN_BYOP");
 
@@ -51,6 +52,10 @@ namespace Aws
           else if (hashCode == BYOL_REGULAR_WSP_HASH)
           {
             return WorkspaceImageIngestionProcess::BYOL_REGULAR_WSP;
+          }
+          else if (hashCode == BYOL_GRAPHICS_G4DN_WSP_HASH)
+          {
+            return WorkspaceImageIngestionProcess::BYOL_GRAPHICS_G4DN_WSP;
           }
           else if (hashCode == BYOL_REGULAR_BYOP_HASH)
           {
@@ -86,6 +91,8 @@ namespace Aws
             return "BYOL_GRAPHICS_G4DN";
           case WorkspaceImageIngestionProcess::BYOL_REGULAR_WSP:
             return "BYOL_REGULAR_WSP";
+          case WorkspaceImageIngestionProcess::BYOL_GRAPHICS_G4DN_WSP:
+            return "BYOL_GRAPHICS_G4DN_WSP";
           case WorkspaceImageIngestionProcess::BYOL_REGULAR_BYOP:
             return "BYOL_REGULAR_BYOP";
           case WorkspaceImageIngestionProcess::BYOL_GRAPHICS_G4DN_BYOP:

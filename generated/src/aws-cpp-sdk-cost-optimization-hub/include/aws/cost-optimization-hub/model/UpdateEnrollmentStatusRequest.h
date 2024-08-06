@@ -49,7 +49,7 @@ namespace Model
     ///@{
     /**
      * <p>Indicates whether to enroll member accounts of the organization if the
-     * account is the management account.</p>
+     * account is the management account or delegated administrator.</p>
      */
     inline bool GetIncludeMemberAccounts() const{ return m_includeMemberAccounts; }
     inline bool IncludeMemberAccountsHasBeenSet() const { return m_includeMemberAccountsHasBeenSet; }

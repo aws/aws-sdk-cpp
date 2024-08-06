@@ -8,6 +8,8 @@
 #include <aws/cost-optimization-hub/CostOptimizationHubRequest.h>
 #include <aws/cost-optimization-hub/model/Filter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/cost-optimization-hub/model/SummaryMetrics.h>
 #include <utility>
 
 namespace Aws
@@ -61,12 +63,27 @@ namespace Model
 
     ///@{
     /**
-     * <p>The maximum number of recommendations that are returned for the request.</p>
+     * <p>The maximum number of recommendations to be returned for the request.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListRecommendationSummariesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Additional metrics to be returned for the request. The only valid value is
+     * <code>savingsPercentage</code>.</p>
+     */
+    inline const Aws::Vector<SummaryMetrics>& GetMetrics() const{ return m_metrics; }
+    inline bool MetricsHasBeenSet() const { return m_metricsHasBeenSet; }
+    inline void SetMetrics(const Aws::Vector<SummaryMetrics>& value) { m_metricsHasBeenSet = true; m_metrics = value; }
+    inline void SetMetrics(Aws::Vector<SummaryMetrics>&& value) { m_metricsHasBeenSet = true; m_metrics = std::move(value); }
+    inline ListRecommendationSummariesRequest& WithMetrics(const Aws::Vector<SummaryMetrics>& value) { SetMetrics(value); return *this;}
+    inline ListRecommendationSummariesRequest& WithMetrics(Aws::Vector<SummaryMetrics>&& value) { SetMetrics(std::move(value)); return *this;}
+    inline ListRecommendationSummariesRequest& AddMetrics(const SummaryMetrics& value) { m_metricsHasBeenSet = true; m_metrics.push_back(value); return *this; }
+    inline ListRecommendationSummariesRequest& AddMetrics(SummaryMetrics&& value) { m_metricsHasBeenSet = true; m_metrics.push_back(std::move(value)); return *this; }
     ///@}
 
     ///@{
@@ -92,6 +109,9 @@ namespace Model
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet = false;
+
+    Aws::Vector<SummaryMetrics> m_metrics;
+    bool m_metricsHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;

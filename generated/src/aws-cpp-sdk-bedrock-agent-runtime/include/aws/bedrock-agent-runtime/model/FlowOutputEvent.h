@@ -26,8 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>Contains information about an output from flow invoction.</p> <p>This data
-   * type is used in the following API operations:</p> <ul> <li> <p> <a
+   * <p>Contains information about an output from prompt flow invoction.</p> <p>This
+   * data type is used in the following API operations:</p> <ul> <li> <p> <a
    * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_InvokeFlow.html#API_agent_InvokeFlow_ResponseSyntax">InvokeFlow
    * response</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/FlowOutputEvent">AWS
@@ -44,7 +44,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The output of the node.</p>
+     * <p>The content in the output.</p>
      */
     inline const FlowOutputContent& GetContent() const{ return m_content; }
     inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
@@ -56,7 +56,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the node to which input was provided.</p>
+     * <p>The name of the flow output node that the output is from.</p>
      */
     inline const Aws::String& GetNodeName() const{ return m_nodeName; }
     inline bool NodeNameHasBeenSet() const { return m_nodeNameHasBeenSet; }
@@ -70,7 +70,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The type of node to which input was provided.</p>
+     * <p>The type of the node that the output is from.</p>
      */
     inline const NodeType& GetNodeType() const{ return m_nodeType; }
     inline bool NodeTypeHasBeenSet() const { return m_nodeTypeHasBeenSet; }
