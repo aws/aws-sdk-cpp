@@ -33,6 +33,7 @@
 #include <aws/glue/model/BatchGetTableOptimizerResult.h>
 #include <aws/glue/model/BatchGetTriggersResult.h>
 #include <aws/glue/model/BatchGetWorkflowsResult.h>
+#include <aws/glue/model/BatchPutDataQualityStatisticAnnotationResult.h>
 #include <aws/glue/model/BatchStopJobRunResult.h>
 #include <aws/glue/model/BatchUpdatePartitionResult.h>
 #include <aws/glue/model/CancelDataQualityRuleRecommendationRunResult.h>
@@ -107,6 +108,8 @@
 #include <aws/glue/model/GetCrawlersResult.h>
 #include <aws/glue/model/GetCustomEntityTypeResult.h>
 #include <aws/glue/model/GetDataCatalogEncryptionSettingsResult.h>
+#include <aws/glue/model/GetDataQualityModelResult.h>
+#include <aws/glue/model/GetDataQualityModelResultResult.h>
 #include <aws/glue/model/GetDataQualityResultResult.h>
 #include <aws/glue/model/GetDataQualityRuleRecommendationRunResult.h>
 #include <aws/glue/model/GetDataQualityRulesetResult.h>
@@ -169,6 +172,8 @@
 #include <aws/glue/model/ListDataQualityRuleRecommendationRunsResult.h>
 #include <aws/glue/model/ListDataQualityRulesetEvaluationRunsResult.h>
 #include <aws/glue/model/ListDataQualityRulesetsResult.h>
+#include <aws/glue/model/ListDataQualityStatisticAnnotationsResult.h>
+#include <aws/glue/model/ListDataQualityStatisticsResult.h>
 #include <aws/glue/model/ListDevEndpointsResult.h>
 #include <aws/glue/model/ListJobsResult.h>
 #include <aws/glue/model/ListMLTransformsResult.h>
@@ -182,6 +187,7 @@
 #include <aws/glue/model/ListUsageProfilesResult.h>
 #include <aws/glue/model/ListWorkflowsResult.h>
 #include <aws/glue/model/PutDataCatalogEncryptionSettingsResult.h>
+#include <aws/glue/model/PutDataQualityProfileAnnotationResult.h>
 #include <aws/glue/model/PutResourcePolicyResult.h>
 #include <aws/glue/model/PutSchemaVersionMetadataResult.h>
 #include <aws/glue/model/PutWorkflowRunPropertiesResult.h>
@@ -268,11 +274,13 @@
 #include <aws/glue/model/ListDevEndpointsRequest.h>
 #include <aws/glue/model/GetCatalogImportStatusRequest.h>
 #include <aws/glue/model/GetCrawlerMetricsRequest.h>
+#include <aws/glue/model/ListDataQualityStatisticsRequest.h>
 #include <aws/glue/model/GetResourcePoliciesRequest.h>
 #include <aws/glue/model/GetDevEndpointsRequest.h>
 #include <aws/glue/model/GetDatabasesRequest.h>
 #include <aws/glue/model/GetResourcePolicyRequest.h>
 #include <aws/glue/model/ListCrawlersRequest.h>
+#include <aws/glue/model/ListDataQualityStatisticAnnotationsRequest.h>
 #include <aws/glue/model/ListBlueprintsRequest.h>
 #include <aws/glue/model/ImportCatalogToGlueRequest.h>
 #include <aws/glue/model/ListUsageProfilesRequest.h>
@@ -333,6 +341,7 @@ namespace Aws
       class BatchGetTableOptimizerRequest;
       class BatchGetTriggersRequest;
       class BatchGetWorkflowsRequest;
+      class BatchPutDataQualityStatisticAnnotationRequest;
       class BatchStopJobRunRequest;
       class BatchUpdatePartitionRequest;
       class CancelDataQualityRuleRecommendationRunRequest;
@@ -407,6 +416,8 @@ namespace Aws
       class GetCrawlersRequest;
       class GetCustomEntityTypeRequest;
       class GetDataCatalogEncryptionSettingsRequest;
+      class GetDataQualityModelRequest;
+      class GetDataQualityModelResultRequest;
       class GetDataQualityResultRequest;
       class GetDataQualityRuleRecommendationRunRequest;
       class GetDataQualityRulesetRequest;
@@ -469,6 +480,8 @@ namespace Aws
       class ListDataQualityRuleRecommendationRunsRequest;
       class ListDataQualityRulesetEvaluationRunsRequest;
       class ListDataQualityRulesetsRequest;
+      class ListDataQualityStatisticAnnotationsRequest;
+      class ListDataQualityStatisticsRequest;
       class ListDevEndpointsRequest;
       class ListJobsRequest;
       class ListMLTransformsRequest;
@@ -482,6 +495,7 @@ namespace Aws
       class ListUsageProfilesRequest;
       class ListWorkflowsRequest;
       class PutDataCatalogEncryptionSettingsRequest;
+      class PutDataQualityProfileAnnotationRequest;
       class PutResourcePolicyRequest;
       class PutSchemaVersionMetadataRequest;
       class PutWorkflowRunPropertiesRequest;
@@ -554,6 +568,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<BatchGetTableOptimizerResult, GlueError> BatchGetTableOptimizerOutcome;
       typedef Aws::Utils::Outcome<BatchGetTriggersResult, GlueError> BatchGetTriggersOutcome;
       typedef Aws::Utils::Outcome<BatchGetWorkflowsResult, GlueError> BatchGetWorkflowsOutcome;
+      typedef Aws::Utils::Outcome<BatchPutDataQualityStatisticAnnotationResult, GlueError> BatchPutDataQualityStatisticAnnotationOutcome;
       typedef Aws::Utils::Outcome<BatchStopJobRunResult, GlueError> BatchStopJobRunOutcome;
       typedef Aws::Utils::Outcome<BatchUpdatePartitionResult, GlueError> BatchUpdatePartitionOutcome;
       typedef Aws::Utils::Outcome<CancelDataQualityRuleRecommendationRunResult, GlueError> CancelDataQualityRuleRecommendationRunOutcome;
@@ -628,6 +643,8 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetCrawlersResult, GlueError> GetCrawlersOutcome;
       typedef Aws::Utils::Outcome<GetCustomEntityTypeResult, GlueError> GetCustomEntityTypeOutcome;
       typedef Aws::Utils::Outcome<GetDataCatalogEncryptionSettingsResult, GlueError> GetDataCatalogEncryptionSettingsOutcome;
+      typedef Aws::Utils::Outcome<GetDataQualityModelResult, GlueError> GetDataQualityModelOutcome;
+      typedef Aws::Utils::Outcome<GetDataQualityModelResultResult, GlueError> GetDataQualityModelResultOutcome;
       typedef Aws::Utils::Outcome<GetDataQualityResultResult, GlueError> GetDataQualityResultOutcome;
       typedef Aws::Utils::Outcome<GetDataQualityRuleRecommendationRunResult, GlueError> GetDataQualityRuleRecommendationRunOutcome;
       typedef Aws::Utils::Outcome<GetDataQualityRulesetResult, GlueError> GetDataQualityRulesetOutcome;
@@ -690,6 +707,8 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListDataQualityRuleRecommendationRunsResult, GlueError> ListDataQualityRuleRecommendationRunsOutcome;
       typedef Aws::Utils::Outcome<ListDataQualityRulesetEvaluationRunsResult, GlueError> ListDataQualityRulesetEvaluationRunsOutcome;
       typedef Aws::Utils::Outcome<ListDataQualityRulesetsResult, GlueError> ListDataQualityRulesetsOutcome;
+      typedef Aws::Utils::Outcome<ListDataQualityStatisticAnnotationsResult, GlueError> ListDataQualityStatisticAnnotationsOutcome;
+      typedef Aws::Utils::Outcome<ListDataQualityStatisticsResult, GlueError> ListDataQualityStatisticsOutcome;
       typedef Aws::Utils::Outcome<ListDevEndpointsResult, GlueError> ListDevEndpointsOutcome;
       typedef Aws::Utils::Outcome<ListJobsResult, GlueError> ListJobsOutcome;
       typedef Aws::Utils::Outcome<ListMLTransformsResult, GlueError> ListMLTransformsOutcome;
@@ -703,6 +722,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListUsageProfilesResult, GlueError> ListUsageProfilesOutcome;
       typedef Aws::Utils::Outcome<ListWorkflowsResult, GlueError> ListWorkflowsOutcome;
       typedef Aws::Utils::Outcome<PutDataCatalogEncryptionSettingsResult, GlueError> PutDataCatalogEncryptionSettingsOutcome;
+      typedef Aws::Utils::Outcome<PutDataQualityProfileAnnotationResult, GlueError> PutDataQualityProfileAnnotationOutcome;
       typedef Aws::Utils::Outcome<PutResourcePolicyResult, GlueError> PutResourcePolicyOutcome;
       typedef Aws::Utils::Outcome<PutSchemaVersionMetadataResult, GlueError> PutSchemaVersionMetadataOutcome;
       typedef Aws::Utils::Outcome<PutWorkflowRunPropertiesResult, GlueError> PutWorkflowRunPropertiesOutcome;
@@ -775,6 +795,7 @@ namespace Aws
       typedef std::future<BatchGetTableOptimizerOutcome> BatchGetTableOptimizerOutcomeCallable;
       typedef std::future<BatchGetTriggersOutcome> BatchGetTriggersOutcomeCallable;
       typedef std::future<BatchGetWorkflowsOutcome> BatchGetWorkflowsOutcomeCallable;
+      typedef std::future<BatchPutDataQualityStatisticAnnotationOutcome> BatchPutDataQualityStatisticAnnotationOutcomeCallable;
       typedef std::future<BatchStopJobRunOutcome> BatchStopJobRunOutcomeCallable;
       typedef std::future<BatchUpdatePartitionOutcome> BatchUpdatePartitionOutcomeCallable;
       typedef std::future<CancelDataQualityRuleRecommendationRunOutcome> CancelDataQualityRuleRecommendationRunOutcomeCallable;
@@ -849,6 +870,8 @@ namespace Aws
       typedef std::future<GetCrawlersOutcome> GetCrawlersOutcomeCallable;
       typedef std::future<GetCustomEntityTypeOutcome> GetCustomEntityTypeOutcomeCallable;
       typedef std::future<GetDataCatalogEncryptionSettingsOutcome> GetDataCatalogEncryptionSettingsOutcomeCallable;
+      typedef std::future<GetDataQualityModelOutcome> GetDataQualityModelOutcomeCallable;
+      typedef std::future<GetDataQualityModelResultOutcome> GetDataQualityModelResultOutcomeCallable;
       typedef std::future<GetDataQualityResultOutcome> GetDataQualityResultOutcomeCallable;
       typedef std::future<GetDataQualityRuleRecommendationRunOutcome> GetDataQualityRuleRecommendationRunOutcomeCallable;
       typedef std::future<GetDataQualityRulesetOutcome> GetDataQualityRulesetOutcomeCallable;
@@ -911,6 +934,8 @@ namespace Aws
       typedef std::future<ListDataQualityRuleRecommendationRunsOutcome> ListDataQualityRuleRecommendationRunsOutcomeCallable;
       typedef std::future<ListDataQualityRulesetEvaluationRunsOutcome> ListDataQualityRulesetEvaluationRunsOutcomeCallable;
       typedef std::future<ListDataQualityRulesetsOutcome> ListDataQualityRulesetsOutcomeCallable;
+      typedef std::future<ListDataQualityStatisticAnnotationsOutcome> ListDataQualityStatisticAnnotationsOutcomeCallable;
+      typedef std::future<ListDataQualityStatisticsOutcome> ListDataQualityStatisticsOutcomeCallable;
       typedef std::future<ListDevEndpointsOutcome> ListDevEndpointsOutcomeCallable;
       typedef std::future<ListJobsOutcome> ListJobsOutcomeCallable;
       typedef std::future<ListMLTransformsOutcome> ListMLTransformsOutcomeCallable;
@@ -924,6 +949,7 @@ namespace Aws
       typedef std::future<ListUsageProfilesOutcome> ListUsageProfilesOutcomeCallable;
       typedef std::future<ListWorkflowsOutcome> ListWorkflowsOutcomeCallable;
       typedef std::future<PutDataCatalogEncryptionSettingsOutcome> PutDataCatalogEncryptionSettingsOutcomeCallable;
+      typedef std::future<PutDataQualityProfileAnnotationOutcome> PutDataQualityProfileAnnotationOutcomeCallable;
       typedef std::future<PutResourcePolicyOutcome> PutResourcePolicyOutcomeCallable;
       typedef std::future<PutSchemaVersionMetadataOutcome> PutSchemaVersionMetadataOutcomeCallable;
       typedef std::future<PutWorkflowRunPropertiesOutcome> PutWorkflowRunPropertiesOutcomeCallable;
@@ -999,6 +1025,7 @@ namespace Aws
     typedef std::function<void(const GlueClient*, const Model::BatchGetTableOptimizerRequest&, const Model::BatchGetTableOptimizerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetTableOptimizerResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::BatchGetTriggersRequest&, const Model::BatchGetTriggersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetTriggersResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::BatchGetWorkflowsRequest&, const Model::BatchGetWorkflowsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetWorkflowsResponseReceivedHandler;
+    typedef std::function<void(const GlueClient*, const Model::BatchPutDataQualityStatisticAnnotationRequest&, const Model::BatchPutDataQualityStatisticAnnotationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchPutDataQualityStatisticAnnotationResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::BatchStopJobRunRequest&, const Model::BatchStopJobRunOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchStopJobRunResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::BatchUpdatePartitionRequest&, const Model::BatchUpdatePartitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchUpdatePartitionResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::CancelDataQualityRuleRecommendationRunRequest&, const Model::CancelDataQualityRuleRecommendationRunOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelDataQualityRuleRecommendationRunResponseReceivedHandler;
@@ -1073,6 +1100,8 @@ namespace Aws
     typedef std::function<void(const GlueClient*, const Model::GetCrawlersRequest&, const Model::GetCrawlersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCrawlersResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::GetCustomEntityTypeRequest&, const Model::GetCustomEntityTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCustomEntityTypeResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::GetDataCatalogEncryptionSettingsRequest&, const Model::GetDataCatalogEncryptionSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDataCatalogEncryptionSettingsResponseReceivedHandler;
+    typedef std::function<void(const GlueClient*, const Model::GetDataQualityModelRequest&, const Model::GetDataQualityModelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDataQualityModelResponseReceivedHandler;
+    typedef std::function<void(const GlueClient*, const Model::GetDataQualityModelResultRequest&, const Model::GetDataQualityModelResultOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDataQualityModelResultResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::GetDataQualityResultRequest&, const Model::GetDataQualityResultOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDataQualityResultResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::GetDataQualityRuleRecommendationRunRequest&, const Model::GetDataQualityRuleRecommendationRunOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDataQualityRuleRecommendationRunResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::GetDataQualityRulesetRequest&, const Model::GetDataQualityRulesetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDataQualityRulesetResponseReceivedHandler;
@@ -1135,6 +1164,8 @@ namespace Aws
     typedef std::function<void(const GlueClient*, const Model::ListDataQualityRuleRecommendationRunsRequest&, const Model::ListDataQualityRuleRecommendationRunsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDataQualityRuleRecommendationRunsResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::ListDataQualityRulesetEvaluationRunsRequest&, const Model::ListDataQualityRulesetEvaluationRunsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDataQualityRulesetEvaluationRunsResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::ListDataQualityRulesetsRequest&, const Model::ListDataQualityRulesetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDataQualityRulesetsResponseReceivedHandler;
+    typedef std::function<void(const GlueClient*, const Model::ListDataQualityStatisticAnnotationsRequest&, const Model::ListDataQualityStatisticAnnotationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDataQualityStatisticAnnotationsResponseReceivedHandler;
+    typedef std::function<void(const GlueClient*, const Model::ListDataQualityStatisticsRequest&, const Model::ListDataQualityStatisticsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDataQualityStatisticsResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::ListDevEndpointsRequest&, const Model::ListDevEndpointsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDevEndpointsResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::ListJobsRequest&, const Model::ListJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListJobsResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::ListMLTransformsRequest&, const Model::ListMLTransformsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMLTransformsResponseReceivedHandler;
@@ -1148,6 +1179,7 @@ namespace Aws
     typedef std::function<void(const GlueClient*, const Model::ListUsageProfilesRequest&, const Model::ListUsageProfilesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListUsageProfilesResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::ListWorkflowsRequest&, const Model::ListWorkflowsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListWorkflowsResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::PutDataCatalogEncryptionSettingsRequest&, const Model::PutDataCatalogEncryptionSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutDataCatalogEncryptionSettingsResponseReceivedHandler;
+    typedef std::function<void(const GlueClient*, const Model::PutDataQualityProfileAnnotationRequest&, const Model::PutDataQualityProfileAnnotationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutDataQualityProfileAnnotationResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::PutResourcePolicyRequest&, const Model::PutResourcePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutResourcePolicyResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::PutSchemaVersionMetadataRequest&, const Model::PutSchemaVersionMetadataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutSchemaVersionMetadataResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::PutWorkflowRunPropertiesRequest&, const Model::PutWorkflowRunPropertiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutWorkflowRunPropertiesResponseReceivedHandler;

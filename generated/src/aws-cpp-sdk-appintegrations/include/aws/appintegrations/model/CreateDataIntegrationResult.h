@@ -90,7 +90,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The KMS key for the DataIntegration.</p>
+     * <p>The KMS key ARN for the DataIntegration.</p>
      */
     inline const Aws::String& GetKmsKey() const{ return m_kmsKey; }
     inline void SetKmsKey(const Aws::String& value) { m_kmsKey = value; }

@@ -6,6 +6,8 @@
 #pragma once
 #include <aws/appintegrations/AppIntegrationsService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/appintegrations/model/LastExecutionStatus.h>
+#include <aws/appintegrations/model/ExecutionConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -80,6 +82,42 @@ namespace Model
     inline DataIntegrationAssociationSummary& WithClientId(Aws::String&& value) { SetClientId(std::move(value)); return *this;}
     inline DataIntegrationAssociationSummary& WithClientId(const char* value) { SetClientId(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The URI of the data destination.</p>
+     */
+    inline const Aws::String& GetDestinationURI() const{ return m_destinationURI; }
+    inline bool DestinationURIHasBeenSet() const { return m_destinationURIHasBeenSet; }
+    inline void SetDestinationURI(const Aws::String& value) { m_destinationURIHasBeenSet = true; m_destinationURI = value; }
+    inline void SetDestinationURI(Aws::String&& value) { m_destinationURIHasBeenSet = true; m_destinationURI = std::move(value); }
+    inline void SetDestinationURI(const char* value) { m_destinationURIHasBeenSet = true; m_destinationURI.assign(value); }
+    inline DataIntegrationAssociationSummary& WithDestinationURI(const Aws::String& value) { SetDestinationURI(value); return *this;}
+    inline DataIntegrationAssociationSummary& WithDestinationURI(Aws::String&& value) { SetDestinationURI(std::move(value)); return *this;}
+    inline DataIntegrationAssociationSummary& WithDestinationURI(const char* value) { SetDestinationURI(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The execution status of the last job.</p>
+     */
+    inline const LastExecutionStatus& GetLastExecutionStatus() const{ return m_lastExecutionStatus; }
+    inline bool LastExecutionStatusHasBeenSet() const { return m_lastExecutionStatusHasBeenSet; }
+    inline void SetLastExecutionStatus(const LastExecutionStatus& value) { m_lastExecutionStatusHasBeenSet = true; m_lastExecutionStatus = value; }
+    inline void SetLastExecutionStatus(LastExecutionStatus&& value) { m_lastExecutionStatusHasBeenSet = true; m_lastExecutionStatus = std::move(value); }
+    inline DataIntegrationAssociationSummary& WithLastExecutionStatus(const LastExecutionStatus& value) { SetLastExecutionStatus(value); return *this;}
+    inline DataIntegrationAssociationSummary& WithLastExecutionStatus(LastExecutionStatus&& value) { SetLastExecutionStatus(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    
+    inline const ExecutionConfiguration& GetExecutionConfiguration() const{ return m_executionConfiguration; }
+    inline bool ExecutionConfigurationHasBeenSet() const { return m_executionConfigurationHasBeenSet; }
+    inline void SetExecutionConfiguration(const ExecutionConfiguration& value) { m_executionConfigurationHasBeenSet = true; m_executionConfiguration = value; }
+    inline void SetExecutionConfiguration(ExecutionConfiguration&& value) { m_executionConfigurationHasBeenSet = true; m_executionConfiguration = std::move(value); }
+    inline DataIntegrationAssociationSummary& WithExecutionConfiguration(const ExecutionConfiguration& value) { SetExecutionConfiguration(value); return *this;}
+    inline DataIntegrationAssociationSummary& WithExecutionConfiguration(ExecutionConfiguration&& value) { SetExecutionConfiguration(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_dataIntegrationAssociationArn;
@@ -90,6 +128,15 @@ namespace Model
 
     Aws::String m_clientId;
     bool m_clientIdHasBeenSet = false;
+
+    Aws::String m_destinationURI;
+    bool m_destinationURIHasBeenSet = false;
+
+    LastExecutionStatus m_lastExecutionStatus;
+    bool m_lastExecutionStatusHasBeenSet = false;
+
+    ExecutionConfiguration m_executionConfiguration;
+    bool m_executionConfigurationHasBeenSet = false;
   };
 
 } // namespace Model
